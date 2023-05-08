@@ -64,14 +64,6 @@ tag:
 
 :::
 
-## themeColor <Badge text="仅限 Root" type="warning" />
-
-- 类型: `Record<string, string> | false`
-- 默认值: `false`
-- 详情: [界面 → 主题色](../../guide/interface/theme-color.md)
-
-主题色选择器配置。
-
 ## fullscreen
 
 - 类型: `boolean`

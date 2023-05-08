@@ -27,6 +27,10 @@ Responsive breakpoints:
 - `$tablet`
 - `$mobile`
 
+Theme Colors:
+
+- `$theme-colors`: theme colors you want to use besides primary theme color
+
 Code block (Only available with shiki):
 
 - `$code-bg-color`: background color for code blocks

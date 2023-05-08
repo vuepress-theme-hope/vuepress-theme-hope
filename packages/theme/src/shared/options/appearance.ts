@@ -84,13 +84,13 @@ export interface AppearanceOptions {
   darkmode?: DarkmodeOptions;
 
   /**
-   * Theme color picker configuration
+   * Whether enable theme color picker
    *
-   * 主题色选择器配置
+   * 是否启用主题色选择器
    *
    * @default false
    */
-  themeColor?: Record<string, string> | false;
+  themeColor?: boolean;
 
   /**
    * Whether display print button in desktop mode

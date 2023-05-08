@@ -1,6 +1,14 @@
 @use "sass:color";
+@use "sass:list";
+@use "sass:map";
+@use "sass:meta";
 @use "@sass-palette/helper";
-@use "@temp/theme-hope/theme-color";
+@use "@sass-palette/hope-config";
+
+$enable-theme-color: map.has-key(
+  meta.module-variables("hope-config"),
+  "theme-colors"
+);
 
 .theme-color-title {
   display: block;
@@ -49,11 +57,13 @@
   }
 }
 
-@each $color-name, $value in theme-color.$picker {
-  :root.theme-#{$color-name} {
-    --theme-color: #{$value};
-    --theme-color-light: #{color.scale($value, $lightness: 10%)};
-    --theme-color-dark: #{color.scale($value, $lightness: -10%)};
-    --theme-color-mask: #{color.change($value, $alpha: 0.15)};
+@if $enable-theme-color {
+  @each $color in hope-config.$theme-colors {
+    :root.theme-#{list.index(hope-config.$theme-colors, $color)} {
+      --theme-color: #{$color};
+      --theme-color-light: #{color.scale($color, $lightness: 10%)};
+      --theme-color-dark: #{color.scale($color, $lightness: -10%)};
+      --theme-color-mask: #{color.change($color, $alpha: 0.15)};
+    }
   }
 }

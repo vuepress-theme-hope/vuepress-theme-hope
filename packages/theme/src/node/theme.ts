@@ -23,7 +23,6 @@ import {
   prepareSeparatedConfigFile,
   prepareSidebarData,
   prepareSocialMediaIcons,
-  prepareThemeColorScss,
 } from "./prepare/index.js";
 import { type HopeThemeBehaviorOptions } from "./typings/index.js";
 import { TEMPLATE_FOLDER } from "./utils.js";
@@ -97,7 +96,6 @@ export const hopeTheme =
         Promise.all([
           prepareSidebarData(app, themeData, sidebarSorter),
           prepareHighLighterScss(app, plugins),
-          prepareThemeColorScss(app, themeData),
           prepareSocialMediaIcons(app, icons),
         ]).then(() => void 0),
 

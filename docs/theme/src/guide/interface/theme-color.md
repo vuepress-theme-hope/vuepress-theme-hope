@@ -15,7 +15,7 @@ The theme allows you to customize theme color and even provide a picker.
 
 ## Setting Default Theme Color
 
-You should set the default theme color of your site in `.vuepress/styles/palette.scss`:
+You should set the default theme color of your site in `.vuepress/styles/palette.scss` through `$theme-color`:
 
 ```scss
 $theme-color: #f00;
@@ -23,55 +23,11 @@ $theme-color: #f00;
 
 ## Theme Color Picker {#theme-color-picker-title}
 
-You need to set `themeColor` with `{ colorName1: colorValue1, colorName2: colorValue2, ... }` format:
+You should set a list of theme colors you want to use in `.vuepress/styles/config.scss` with `$theme-colors`:
 
-The first color should be the default theme color above.
-
-:::: details Example
-
-::: code-tabs#language
-
-@tab TS
-
-```ts {7-12}
-// .vuepress/config.ts
-import { defineUserConfig } from "vuepress";
-import { hopeTheme } from "vuepress-theme-hope";
-
-export default defineUserConfig({
-  theme: hopeTheme({
-    themeColor: {
-      blue: "#2196f3",
-      red: "#f26d6d",
-      green: "#3eaf7c",
-      orange: "#fb9b5f",
-    },
-  }),
-});
+```scss
+$theme-colors: #2196f3, #f26d6d, #3eaf7c, #fb9b5f;
 ```
-
-@tab JS
-
-```js {7-12}
-// .vuepress/config.ts
-import { defineUserConfig } from "vuepress";
-import { hopeTheme } from "vuepress-theme-hope";
-
-export default defineUserConfig({
-  theme: hopeTheme({
-    themeColor: {
-      blue: "#2196f3",
-      red: "#f26d6d",
-      green: "#3eaf7c",
-      orange: "#fb9b5f",
-    },
-  }),
-});
-```
-
-:::
-
-::::
 
 ### Try it
 
@@ -79,14 +35,12 @@ export default defineUserConfig({
 
 <script setup lang="ts">
 import { computed } from "vue";
-import { useThemeData } from "@theme-hope/composables/index";
+import { entries, fromEntries } from 'vuepress-shared/client';
+import cssVariables from "vuepress-theme-hope/styles/variables.module.scss?module";
+
 import ThemeColorPicker from "@theme-hope/modules/outlook/components/ThemeColorPicker";
 
-const themeData = useThemeData();
-
-const themeColor = computed(() => {
-  const { themeColor } = themeData.value;
-
-  return themeColor === false ? null : themeColor;
-});
+const themeColor = fromEntries(
+  entries(cssVariables).filter(([key]) => key.startsWith("theme-"))
+)
 </script>
