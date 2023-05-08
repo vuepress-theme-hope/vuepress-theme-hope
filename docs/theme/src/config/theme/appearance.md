@@ -107,32 +107,6 @@ Whether show the "full screen" button.
 
 Back to top button customization, setting it to `false` disables the button.
 
-## mobileBreakPoint <Badge text="Root only" type="warning" />
-
-- Type: `number`
-- Default: `719`
-
-Window width switching mobile view and desktop view in pixels
-
-::: warning
-
-You should keep this option same value with `$tablet` in `.vuepress/config.scss`
-
-:::
-
-## pcBreakPoint <Badge text="Root only" type="warning" />
-
-- Type: `number`
-- Default: `1440`
-
-Window width switching wide screen view and desktop view in pixels
-
-::: warning
-
-You should keep this option same value with `$pc` in `.vuepress/config.scss`
-
-:::
-
 ## pure <Badge text="Root only" type="warning" />
 
 - Type: `boolean`

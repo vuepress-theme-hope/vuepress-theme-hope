@@ -1,22 +1,25 @@
 import { useEventListener } from "@vueuse/core";
 import { type Ref, onMounted, ref } from "vue";
 
-import { useThemeData } from "./themeData.js";
+import cssVariables from "../styles/variables.module.scss?module";
+
+const { mobileBreakPoint, pcBreakPoint } = cssVariables;
 
 export interface WindowSizeRef {
   isMobile: Ref<boolean>;
   isPC: Ref<boolean>;
 }
 
+const getPixels = (length: string): number | null =>
+  length.endsWith("px") ? Number(length.slice(0, -2)) : null;
+
 export const useWindowSize = (): WindowSizeRef => {
-  const themeData = useThemeData();
   const isMobile = ref(false);
   const isPC = ref(false);
 
   const windowSizeHandler = (): void => {
-    isMobile.value =
-      window.innerWidth <= (themeData.value.mobileBreakPoint || 719);
-    isPC.value = window.innerWidth >= (themeData.value.pcBreakPoint || 1440);
+    isMobile.value = window.innerWidth <= (getPixels(mobileBreakPoint) ?? 719);
+    isPC.value = window.innerWidth >= (getPixels(pcBreakPoint) ?? 1440);
   };
 
   onMounted(() => {

@@ -1,0 +1,6 @@
+@use "@sass-palette/hope-config";
+
+:export {
+  mobileBreakPoint: hope-config.$tablet;
+  pcBreakPoint: hope-config.$pc;
+}

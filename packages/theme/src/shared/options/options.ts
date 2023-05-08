@@ -3,7 +3,7 @@ import { type ThemeData as DefaultThemeData } from "@vuepress/plugin-theme-data"
 import { type AppearanceConfig, type AppearanceOptions } from "./appearance.js";
 import { type FeatureConfig, type FeatureOptions } from "./feature/index.js";
 import { type InfoOptions } from "./info.js";
-import { type LayoutConfig, type LayoutOptions } from "./layout/index.js";
+import { type LayoutOptions } from "./layout/index.js";
 import { type ThemeLocaleConfig, type ThemeLocaleOptions } from "./locales.js";
 import { type PluginsOptions } from "./plugins/index.js";
 
@@ -19,7 +19,6 @@ export interface ThemeOptions
 export interface ThemeData
   extends AppearanceConfig,
     FeatureConfig,
-    InfoOptions,
-    LayoutConfig {
+    InfoOptions {
   locales: Record<string, ThemeLocaleConfig>;
 }

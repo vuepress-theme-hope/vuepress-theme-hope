@@ -44,4 +44,8 @@ tag:
 - `$tablet`: 平板响应式布局断点，默认为 `768px`
 - `$mobile`: 手机响应式布局断点，默认为 `480px`
 
-特别的，`$tablet` 和 `$pc` 将只能基于像素大小，如果你修改了它们，你需要同时在主题配置中修改 [`mobileBreakPoint`](../../config/theme/appearance.md#mobilebreakpoint) 和 [`pcBreakPoint`](../../config/theme/appearance.md#pcbreakpoint) 为修改后的像素大小。
+::: warning
+
+特别的，`$tablet` 和 `$pc` 将只能基于像素大小。
+
+:::
