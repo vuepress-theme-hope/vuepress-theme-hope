@@ -16,12 +16,6 @@ tag:
 
 `vuepress-theme-hope` 将主题选项中的 `plugins.mdEnhance` 作为插件选项传递给 `vuepress-plugin-md-enhance` 插件。
 
-::: tip
-
-如果你不需要这个功能，请设置为 `false`。
-
-:::
-
 ::: info
 
 `vuepress-theme-hope` 会默认将 `container` 选项设置为 `true`。

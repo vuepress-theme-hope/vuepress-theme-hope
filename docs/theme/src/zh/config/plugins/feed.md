@@ -10,11 +10,9 @@ tag:
   - Feed
 ---
 
-## 介绍 <Badge text="默认启用" />
+## 介绍
 
-`vuepress-theme-hope` 通过 `vuepress-plugin-feed2` 插件提供 Feed 生成支持。
-
-`vuepress-theme-hope` 将主题选项中的 `plugins.feed` 作为插件选项传递给 `vuepress-plugin-feed2` 插件。
+`vuepress-theme-hope` 通过 `vuepress-plugin-feed2` 插件提供 Feed 生成支持。它将主题选项中的 `plugins.feed` 作为插件选项传递给 `vuepress-plugin-feed2` 插件。
 
 `vuepress-plugin-feed2` 插件可为你生成以下三种格式的 feed 文件:
 
@@ -22,7 +20,7 @@ tag:
 - JSON 1.1
 - RSS 2.0
 
-请按照需要生成的格式，在插件选项中设置 `atom`, `json` 或 `rss` 为 `true` 来启用插件。
+请按照需要生成的格式，在 `plugins.feed` 中设置 `atom`, `json` 或 `rss` 为 `true` 来启用插件。
 
 ::: tip
 

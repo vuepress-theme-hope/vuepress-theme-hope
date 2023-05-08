@@ -16,12 +16,6 @@ The `vuepress-plugin-md-enhance` plugin is enabled by default and provides Markd
 
 `vuepress-theme-hope` passes `plugins.mdEnhance` in theme options as plugin options to `vuepress-plugin-md-enhance` plugin.
 
-::: tip
-
-If you don't need this feature, please set to `false`.
-
-:::
-
 ::: info
 
 `vuepress-theme-hope` will set the `container` option to `true` by default.

@@ -10,11 +10,9 @@ tag:
   - Theme Config
 ---
 
-## Intro <Badge text="enabled by default" />
+## Intro
 
-`vuepress-theme-hope` provides feed generation support via the `vuepress-plugin-feed2` plugin.
-
-`vuepress-theme-hope` passes `plugins.feed` in theme options as plugin options to `vuepress-plugin-feed2` plugin.
+`vuepress-theme-hope` provides feed generation support via the `vuepress-plugin-feed2` plugin. It passes `plugins.feed` in theme options as plugin options to `vuepress-plugin-feed2` plugin.
 
 The `vuepress-plugin-feed2` plugin can generate feed files in the following three formats for you:
 
@@ -22,7 +20,7 @@ The `vuepress-plugin-feed2` plugin can generate feed files in the following thre
 - JSON 1.1
 - RSS 2.0
 
-Please enable the plugin by setting `atom`, `json` or `rss` to `true` in the plugin options according to the format you want to generate.
+Please enable the plugin by setting `atom`, `json` or `rss` to `true` in `plugins.feed` according to the format you want to generate.
 
 ::: tip
 
