@@ -134,7 +134,7 @@ export const bundle = (
             "vue",
             "vue-router",
             "vuepress-shared/client",
-            /\.s?css$/,
+            /\.s?css(?:\?module)?$/,
           ]
         : (
             typeof filePath === "object"
