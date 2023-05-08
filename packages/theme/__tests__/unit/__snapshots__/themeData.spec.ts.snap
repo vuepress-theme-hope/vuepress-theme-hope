@@ -5,12 +5,6 @@ exports[`should generate themeData correctly > Should contain basic properties 1
   "encrypt": {},
   "locales": {
     "/": {
-      "encryptLocales": {
-        "errorHint": "Please enter the correct password!",
-        "iconLabel": "Page Encrypted",
-        "placeholder": "Enter password",
-        "remember": "Remember password",
-      },
       "lang": "en-US",
       "metaLocales": {
         "author": "Author",
