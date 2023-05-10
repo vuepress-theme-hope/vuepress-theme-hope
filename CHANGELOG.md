@@ -4,6 +4,27 @@ All notable changes to this project will be documented in this file. See [Conven
 
 <!-- #region recent-beta -->
 
+## [2.0.0-beta.209](https://github.com/vuepress-theme-hope/vuepress-theme-hope/compare/v2.0.0-beta.208...v2.0.0-beta.209) (2023-05-10)
+
+### ⚠ BREAKING CHANGES
+
+- **theme:** you only need to set $theme-colors in config style file for theme color
+
+### Features
+
+- **md-enhance:** improve preview style, close [#3079](https://github.com/vuepress-theme-hope/vuepress-theme-hope/issues/3079) ([566a554](https://github.com/vuepress-theme-hope/vuepress-theme-hope/commit/566a5549833c1504267035690209d71e6a31fb28))
+- **md-enhance:** mark flowchart as deprecated ([e59dbdb](https://github.com/vuepress-theme-hope/vuepress-theme-hope/commit/e59dbdbb0cb4fbcbf2e34d0fdde3dccfa519816f))
+- **search-pro:** add `ctrl + /` hotkey ([2d6a680](https://github.com/vuepress-theme-hope/vuepress-theme-hope/commit/2d6a6801b8ca56b8bb6e4e29ef02c7dea25cfa6f))
+- **search-pro:** support code block index, close [#3080](https://github.com/vuepress-theme-hope/vuepress-theme-hope/issues/3080) ([12d7956](https://github.com/vuepress-theme-hope/vuepress-theme-hope/commit/12d7956f61ccc3a5bb04f3fa0119c440198aa37d))
+- **theme:** rebuild theme color ([d0da5f7](https://github.com/vuepress-theme-hope/vuepress-theme-hope/commit/d0da5f7431c136afb04fcb261677d2df8676fd24))
+- **theme:** remove mobileBreakPoint and pcBreakPoint ([506cd9b](https://github.com/vuepress-theme-hope/vuepress-theme-hope/commit/506cd9b7ee638eeaa87f4cd5ab189bb26af5b4c6))
+
+### Bug Fixes
+
+- **components:** remove logger ([a20b417](https://github.com/vuepress-theme-hope/vuepress-theme-hope/commit/a20b417ef408e02ac76af666d5609c398da93ea4))
+- **md-enhance:** fix pie preset ([42bcba1](https://github.com/vuepress-theme-hope/vuepress-theme-hope/commit/42bcba1879e32b8ada2f70ce5c2dce3e71ea085f))
+- **theme:** improve locales, close [#3117](https://github.com/vuepress-theme-hope/vuepress-theme-hope/issues/3117) ([e4f5fcb](https://github.com/vuepress-theme-hope/vuepress-theme-hope/commit/e4f5fcb74f6694ea60ce55828215f5846248c184))
+
 ## [2.0.0-beta.208](https://github.com/vuepress-theme-hope/vuepress-theme-hope/compare/v2.0.0-beta.207...v2.0.0-beta.208) (2023-05-05)
 
 ### ⚠ BREAKING CHANGES

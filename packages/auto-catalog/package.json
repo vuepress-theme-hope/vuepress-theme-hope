@@ -1,6 +1,6 @@
 {
   "name": "vuepress-plugin-auto-catalog",
-  "version": "2.0.0-beta.208",
+  "version": "2.0.0-beta.209",
   "description": "Generate catalog for VuePress2",
   "keywords": [
     "vuepress",
