@@ -122,8 +122,6 @@ export default defineComponent({
 
       // eslint-disable-next-line
       svgCode.value = (await mermaid.render(props.id, code.value)).svg;
-
-      console.log(svgCode.value);
     };
 
     const preview = (): void => {
@@ -133,11 +131,9 @@ export default defineComponent({
       div.classList.add("mermaid-preview");
 
       div.innerHTML = svgCode.value;
-      console.log(div);
       body.appendChild(div);
 
       div.addEventListener("click", () => {
-        console.log("remove");
         body.removeChild(div);
       });
     };
