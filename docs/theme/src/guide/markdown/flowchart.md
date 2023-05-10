@@ -79,6 +79,10 @@ Available presets for now:
 - `ant`
 - `pie`
 
+## Playground
+
+<FlowChartPlayground />
+
 ## Demo
 
 ```flow
@@ -404,3 +408,9 @@ To emphasize a specific path in your flowchart, you can define it like this:
 ```md
 st@>op1({"stroke":"Red"})@>cond({"stroke":"Red","stroke-width":6,"arrow-end":"classic-wide-long"})@>c2({"stroke":"Red"})@>op2({"stroke":"Red"})@>e({"stroke":"Red"})
 ```
+
+<script setup lang="ts">
+import { defineAsyncComponent } from 'vue';
+
+const FlowChartPlayground = defineAsyncComponent(()=> import('@FlowChartPlayground'));
+</script>
