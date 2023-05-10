@@ -2,6 +2,7 @@
   "name": "md-enhance-docs",
   "version": "2.0.0-beta.181",
   "private": true,
+  "type": "module",
   "description": "Docs for vuepress-plugin-md-enhance",
   "license": "MIT",
   "author": {

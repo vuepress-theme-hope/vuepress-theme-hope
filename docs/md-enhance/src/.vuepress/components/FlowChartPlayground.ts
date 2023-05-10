@@ -1,10 +1,8 @@
-import { ClientOnly } from "@vuepress/client";
 import { useDebounceFn, useEventListener } from "@vueuse/core";
 import { type Chart } from "flowchart.ts";
 import { flowchartPresets } from "vuepress-plugin-md-enhance/client";
 import {
   type VNode,
-  defineAsyncComponent,
   defineComponent,
   h,
   onMounted,
@@ -12,7 +10,7 @@ import {
   shallowRef,
   watch,
 } from "vue";
-import { LoadingIcon, useLocaleConfig } from "vuepress-shared/client";
+import { useLocaleConfig } from "vuepress-shared/client";
 
 declare const MARKDOWN_ENHANCE_DELAY: number;
 
@@ -50,128 +48,125 @@ const locales = {
   },
 };
 
-export default () =>
-  h(ClientOnly, () =>
-    defineAsyncComponent({
-      loadingComponent: LoadingIcon,
-      loader: () =>
-        Promise.all([
-          import("flowchart.ts"),
-          new Promise((resolve) => setTimeout(resolve, MARKDOWN_ENHANCE_DELAY)),
-        ]).then(([{ parse }]) =>
-          defineComponent({
-            name: "FlowChartPlayground",
-            setup() {
-              const locale = useLocaleConfig(locales);
+export default defineComponent({
+  name: "FlowChartPlayground",
+  setup() {
+    const locale = useLocaleConfig(locales);
 
-              let flowchart: Chart | null = null;
-              const element = shallowRef<HTMLDivElement>();
-              const config = ref(DEFAULT_FLOWCHART);
-              const preset = ref<"ant" | "pie" | "vue">("vue");
-              const scale = ref(1);
+    let flowchart: Chart | null = null;
+    const element = shallowRef<HTMLDivElement>();
+    const config = ref(DEFAULT_FLOWCHART);
+    const preset = ref<"ant" | "pie" | "vue">("vue");
+    const scale = ref(1);
 
-              const getScale = (width: number): number =>
-                width < 419 ? 0.8 : width > 1280 ? 1 : 0.9;
+    const getScale = (width: number): number =>
+      width < 419 ? 0.8 : width > 1280 ? 1 : 0.9;
 
-              onMounted(() => {
-                try {
-                  flowchart = parse(config.value);
+    onMounted(() => {
+      let parseAction: ((input?: string | undefined) => Chart) | null = null;
 
-                  // update scale
-                  scale.value = getScale(window.innerWidth);
+      Promise.all([
+        import("flowchart.ts"),
+        new Promise((resolve) => setTimeout(resolve, MARKDOWN_ENHANCE_DELAY)),
+      ]).then(([{ parse }]) => {
+        parseAction = parse;
+        try {
+          flowchart = parse(config.value);
 
-                  // draw svg to #id
-                  flowchart.draw(id, {
-                    ...flowchartPresets[preset.value],
-                    scale: scale.value,
-                  });
-                } catch (err) {
-                  console.log(err);
-                }
+          // update scale
+          scale.value = getScale(window.innerWidth);
 
-                watch([config, preset], () => {
-                  try {
-                    flowchart = parse(config.value);
+          // draw svg to #id
+          flowchart.draw(id, {
+            ...flowchartPresets[preset.value],
+            scale: scale.value,
+          });
+        } catch (err) {
+          console.log(err);
+        }
+      });
 
-                    // update scale
-                    scale.value = getScale(window.innerWidth);
+      watch([config, preset], () => {
+        if (parseAction)
+          try {
+            flowchart = parseAction(config.value);
 
-                    element.value!.innerHTML = "";
+            // update scale
+            scale.value = getScale(window.innerWidth);
 
-                    // draw svg to #id
-                    flowchart.draw(id, {
-                      ...flowchartPresets[preset.value],
-                      scale: scale.value,
-                    });
-                  } catch (err) {
-                    console.log(err);
-                  }
-                });
+            element.value!.innerHTML = "";
 
-                useEventListener(
-                  "resize",
-                  useDebounceFn(() => {
-                    if (flowchart) {
-                      const newScale = getScale(window.innerWidth);
+            // draw svg to #id
+            flowchart.draw(id, {
+              ...flowchartPresets[preset.value],
+              scale: scale.value,
+            });
+          } catch (err) {
+            console.log(err);
+          }
+      });
 
-                      if (scale.value !== newScale) {
-                        scale.value = newScale;
+      useEventListener(
+        "resize",
+        useDebounceFn(() => {
+          if (flowchart) {
+            const newScale = getScale(window.innerWidth);
 
-                        flowchart.draw(id, {
-                          ...flowchartPresets[preset.value],
-                          scale: newScale,
-                        });
-                      }
-                    }
-                  }, 100)
-                );
+            if (scale.value !== newScale) {
+              scale.value = newScale;
+
+              flowchart.draw(id, {
+                ...flowchartPresets[preset.value],
+                scale: newScale,
               });
+            }
+          }
+        }, 100)
+      );
+    });
 
-              return (): VNode =>
-                h("div", { class: "flowchart-playground" }, [
-                  h(
-                    "label",
-                    { for: "flowchart-playground-config" },
-                    `${locale.value.config}:`
-                  ),
-                  h("textarea", {
-                    id: "flowchart-playground-config",
-                    value: config.value,
-                    onInput: ({ target }: InputEvent) => {
-                      config.value = (<HTMLInputElement>target).value;
-                    },
-                  }),
-                  h("div", [
-                    h(
-                      "label",
-                      { for: "flowchart-playground-preset" },
-                      `${locale.value.preset}:`
-                    ),
-                    h(
-                      "select",
-                      {
-                        id: "flowchart-playground-preset",
-                        value: preset.value,
-                        onChange: ({ target }: Event) => {
-                          preset.value = <"ant" | "pie" | "vue">(
-                            (<HTMLSelectElement>target).value
-                          );
-                        },
-                      },
-                      ["ant", "pie", "vue"].map((preset) =>
-                        h("option", { value: preset }, preset)
-                      )
-                    ),
-                  ]),
-                  h("label", { for: id }, `${locale.value.result}:`),
-                  h("div", {
-                    ref: element,
-                    class: ["flowchart-wrapper", preset.value],
-                    id,
-                  }),
-                ]);
-            },
-          })
+    return (): VNode =>
+      h("div", { class: "flowchart-playground" }, [
+        h(
+          "label",
+          { for: "flowchart-playground-config" },
+          `${locale.value.config}:`
         ),
-    })
-  );
+        h("textarea", {
+          id: "flowchart-playground-config",
+          value: config.value,
+          onInput: ({ target }: InputEvent) => {
+            config.value = (<HTMLInputElement>target).value;
+          },
+        }),
+        h("div", [
+          h(
+            "label",
+            { for: "flowchart-playground-preset" },
+            `${locale.value.preset}:`
+          ),
+          h(
+            "select",
+            {
+              id: "flowchart-playground-preset",
+              value: preset.value,
+              onChange: ({ target }: Event) => {
+                preset.value = <"ant" | "pie" | "vue">(
+                  (<HTMLSelectElement>target).value
+                );
+              },
+            },
+            ["ant", "pie", "vue"].map((preset) =>
+              h("option", { value: preset }, preset)
+            )
+          ),
+        ]),
+        h("label", { for: id }, `${locale.value.result}:`),
+        h("div", {
+          ref: element,
+          class: ["flowchart-wrapper", preset.value],
+          id,
+        }),
+      ]);
+  },
+});
