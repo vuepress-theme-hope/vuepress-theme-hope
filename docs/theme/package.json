@@ -24,7 +24,7 @@
     "@vuepress/shared": "2.0.0-beta.61",
     "@vueuse/core": "10.1.2",
     "docs-shared": "workspace:*",
-    "flowchart.ts": "0.1.2",
+    "flowchart.ts": "0.1.6",
     "katex": "0.16.7",
     "sass-loader": "13.2.2",
     "vue": "3.2.47",
