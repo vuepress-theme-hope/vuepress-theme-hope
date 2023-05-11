@@ -58,7 +58,7 @@
     "mitt": "^3.0.0",
     "register-service-worker": "^1.7.2",
     "vue": "^3.3.1",
-    "vue-router": "^4.1.6",
+    "vue-router": "^4.2.0",
     "vuepress-plugin-sass-palette": "workspace:*",
     "vuepress-shared": "workspace:*",
     "workbox-build": "^6.5.4"

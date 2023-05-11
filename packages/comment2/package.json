@@ -63,7 +63,7 @@
     "giscus": "^1.2.8",
     "twikoo": "^1.6.16",
     "vue": "^3.3.1",
-    "vue-router": "^4.1.6",
+    "vue-router": "^4.2.0",
     "vuepress-plugin-sass-palette": "workspace:*",
     "vuepress-shared": "workspace:*"
   },

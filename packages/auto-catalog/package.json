@@ -56,7 +56,7 @@
     "@vuepress/shared": "2.0.0-beta.61",
     "@vuepress/utils": "2.0.0-beta.61",
     "vue": "3.3.1",
-    "vue-router": "4.1.6",
+    "vue-router": "4.2.0",
     "vuepress-plugin-components": "workspace:*",
     "vuepress-plugin-sass-palette": "workspace:*",
     "vuepress-shared": "workspace:*"

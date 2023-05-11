@@ -229,8 +229,8 @@ importers:
         specifier: 3.3.1
         version: 3.3.1
       vue-router:
-        specifier: 4.1.6
-        version: 4.1.6(vue@3.3.1)
+        specifier: 4.2.0
+        version: 4.2.0(vue@3.3.1)
       vuepress-plugin-blog2:
         specifier: workspace:*
         version: link:../../packages/blog2
@@ -1307,8 +1307,8 @@ importers:
         specifier: 3.3.1
         version: 3.3.1
       vue-router:
-        specifier: 4.1.6
-        version: 4.1.6(vue@3.3.1)
+        specifier: 4.2.0
+        version: 4.2.0(vue@3.3.1)
       vuepress:
         specifier: 2.0.0-beta.61
         version: 2.0.0-beta.61(@types/node@20.1.2)(@vuepress/client@2.0.0-beta.61)(sass-loader@13.2.2)(sass@1.62.1)(ts-node@10.9.1)(vue@3.3.1)
@@ -1349,8 +1349,8 @@ importers:
         specifier: ^3.3.1
         version: 3.3.1
       vue-router:
-        specifier: ^4.1.6
-        version: 4.1.6(vue@3.3.1)
+        specifier: ^4.2.0
+        version: 4.2.0(vue@3.3.1)
       vuepress:
         specifier: 2.0.0-beta.61
         version: 2.0.0-beta.61(@types/node@20.1.2)(@vuepress/client@2.0.0-beta.61)(sass-loader@13.2.2)(sass@1.62.1)(ts-node@10.9.1)(vue@3.3.1)
@@ -1394,8 +1394,8 @@ importers:
         specifier: ^3.3.1
         version: 3.3.1
       vue-router:
-        specifier: ^4.1.6
-        version: 4.1.6(vue@3.3.1)
+        specifier: ^4.2.0
+        version: 4.2.0(vue@3.3.1)
       vuepress:
         specifier: 2.0.0-beta.61
         version: 2.0.0-beta.61(@types/node@20.1.2)(@vuepress/client@2.0.0-beta.61)(sass-loader@13.2.2)(sass@1.62.1)(ts-node@10.9.1)(vue@3.3.1)
@@ -1461,8 +1461,8 @@ importers:
         specifier: ^3.3.1
         version: 3.3.1
       vue-router:
-        specifier: ^4.1.6
-        version: 4.1.6(vue@3.3.1)
+        specifier: ^4.2.0
+        version: 4.2.0(vue@3.3.1)
       vuepress:
         specifier: 2.0.0-beta.61
         version: 2.0.0-beta.61(@types/node@20.1.2)(@vuepress/client@2.0.0-beta.61)(sass-loader@13.2.2)(sass@1.62.1)(ts-node@10.9.1)(vue@3.3.1)
@@ -1516,8 +1516,8 @@ importers:
         specifier: ^3.3.1
         version: 3.3.1
       vue-router:
-        specifier: ^4.1.6
-        version: 4.1.6(vue@3.3.1)
+        specifier: ^4.2.0
+        version: 4.2.0(vue@3.3.1)
       vuepress:
         specifier: 2.0.0-beta.61
         version: 2.0.0-beta.61(@types/node@20.1.2)(@vuepress/client@2.0.0-beta.61)(sass-loader@13.2.2)(sass@1.62.1)(ts-node@10.9.1)(vue@3.3.1)
@@ -1556,8 +1556,8 @@ importers:
         specifier: ^3.3.1
         version: 3.3.1
       vue-router:
-        specifier: ^4.1.6
-        version: 4.1.6(vue@3.3.1)
+        specifier: ^4.2.0
+        version: 4.2.0(vue@3.3.1)
       vuepress:
         specifier: 2.0.0-beta.61
         version: 2.0.0-beta.61(@types/node@20.1.2)(@vuepress/client@2.0.0-beta.61)(sass-loader@13.2.2)(sass@1.62.1)(ts-node@10.9.1)(vue@3.3.1)
@@ -1643,8 +1643,8 @@ importers:
         specifier: ^3.3.1
         version: 3.3.1
       vue-router:
-        specifier: ^4.1.6
-        version: 4.1.6(vue@3.3.1)
+        specifier: ^4.2.0
+        version: 4.2.0(vue@3.3.1)
       vuepress:
         specifier: 2.0.0-beta.61
         version: 2.0.0-beta.61(@types/node@20.1.2)(@vuepress/client@2.0.0-beta.61)(sass-loader@13.2.2)(sass@1.62.1)(ts-node@10.9.1)(vue@3.3.1)
@@ -1782,8 +1782,8 @@ importers:
         specifier: ^3.3.1
         version: 3.3.1
       vue-router:
-        specifier: ^4.1.6
-        version: 4.1.6(vue@3.3.1)
+        specifier: ^4.2.0
+        version: 4.2.0(vue@3.3.1)
       vuepress:
         specifier: 2.0.0-beta.61
         version: 2.0.0-beta.61(@types/node@20.1.2)(@vuepress/client@2.0.0-beta.61)(sass-loader@13.2.2)(sass@1.62.1)(ts-node@10.9.1)(vue@3.3.1)
@@ -1840,8 +1840,8 @@ importers:
         specifier: ^3.3.1
         version: 3.3.1
       vue-router:
-        specifier: ^4.1.6
-        version: 4.1.6(vue@3.3.1)
+        specifier: ^4.2.0
+        version: 4.2.0(vue@3.3.1)
       vuepress:
         specifier: 2.0.0-beta.61
         version: 2.0.0-beta.61(@types/node@20.1.2)(@vuepress/client@2.0.0-beta.61)(sass-loader@13.2.2)(sass@1.62.1)(ts-node@10.9.1)(vue@3.3.1)
@@ -1889,8 +1889,8 @@ importers:
         specifier: ^3.3.1
         version: 3.3.1
       vue-router:
-        specifier: ^4.1.6
-        version: 4.1.6(vue@3.3.1)
+        specifier: ^4.2.0
+        version: 4.2.0(vue@3.3.1)
       vuepress:
         specifier: 2.0.0-beta.61
         version: 2.0.0-beta.61(@types/node@20.1.2)(@vuepress/client@2.0.0-beta.61)(sass-loader@13.2.2)(sass@1.62.1)(ts-node@10.9.1)(vue@3.3.1)
@@ -1969,8 +1969,8 @@ importers:
         specifier: ^3.3.1
         version: 3.3.1
       vue-router:
-        specifier: ^4.1.6
-        version: 4.1.6(vue@3.3.1)
+        specifier: ^4.2.0
+        version: 4.2.0(vue@3.3.1)
       vuepress:
         specifier: 2.0.0-beta.61
         version: 2.0.0-beta.61(@types/node@20.1.2)(@vuepress/client@2.0.0-beta.61)(sass-loader@13.2.2)(sass@1.62.1)(ts-node@10.9.1)(vue@3.3.1)
@@ -2113,8 +2113,8 @@ importers:
         specifier: ^3.3.1
         version: 3.3.1
       vue-router:
-        specifier: ^4.1.6
-        version: 4.1.6(vue@3.3.1)
+        specifier: ^4.2.0
+        version: 4.2.0(vue@3.3.1)
       vuepress:
         specifier: 2.0.0-beta.61
         version: 2.0.0-beta.61(@types/node@20.1.2)(@vuepress/client@2.0.0-beta.61)(sass-loader@13.2.2)(sass@1.62.1)(ts-node@10.9.1)(vue@3.3.1)
@@ -2202,8 +2202,8 @@ importers:
         specifier: ^3.3.1
         version: 3.3.1
       vue-router:
-        specifier: ^4.1.6
-        version: 4.1.6(vue@3.3.1)
+        specifier: ^4.2.0
+        version: 4.2.0(vue@3.3.1)
       vuepress:
         specifier: 2.0.0-beta.61
         version: 2.0.0-beta.61(@types/node@20.1.2)(@vuepress/client@2.0.0-beta.61)(sass-loader@13.2.2)(sass@1.62.1)(ts-node@10.9.1)(vue@3.3.1)
@@ -2336,8 +2336,8 @@ importers:
         specifier: ^3.3.1
         version: 3.3.1
       vue-router:
-        specifier: ^4.1.6
-        version: 4.1.6(vue@3.3.1)
+        specifier: ^4.2.0
+        version: 4.2.0(vue@3.3.1)
       vuepress:
         specifier: 2.0.0-beta.61
         version: 2.0.0-beta.61(@types/node@20.1.2)(@vuepress/client@2.0.0-beta.61)(sass-loader@13.2.2)(sass@1.62.1)(ts-node@10.9.1)(vue@3.3.1)
@@ -5389,7 +5389,7 @@ packages:
       rollup: 3.21.6
       vite: 4.3.5(@types/node@20.1.2)(sass@1.62.1)
       vue: 3.3.1
-      vue-router: 4.1.6(vue@3.3.1)
+      vue-router: 4.2.0(vue@3.3.1)
     transitivePeerDependencies:
       - '@types/node'
       - less
@@ -5424,7 +5424,7 @@ packages:
       style-loader: 3.3.2(webpack@5.82.1)
       vue: 3.3.1
       vue-loader: 17.1.1(vue@3.3.1)(webpack@5.82.1)
-      vue-router: 4.1.6(vue@3.3.1)
+      vue-router: 4.2.0(vue@3.3.1)
       webpack: 5.82.1(esbuild@0.17.18)
       webpack-chain: 6.5.1
       webpack-dev-server: 4.15.0(webpack@5.82.1)
@@ -5460,7 +5460,7 @@ packages:
       '@vue/devtools-api': 6.5.0
       '@vuepress/shared': 2.0.0-beta.61
       vue: 3.3.1
-      vue-router: 4.1.6(vue@3.3.1)
+      vue-router: 4.2.0(vue@3.3.1)
 
   /@vuepress/core@2.0.0-beta.61:
     resolution: {integrity: sha512-jPr60d/uadgBmEQhXCRLNOm2M4Ym65lvZhGf/wyZCo14kpacp2YoO7RR8bzp/NEpWe7ndr/U8O/VDjFYTsz80g==}
@@ -5503,7 +5503,7 @@ packages:
       '@vuepress/utils': 2.0.0-beta.61
       ts-debounce: 4.0.0
       vue: 3.3.1
-      vue-router: 4.1.6(vue@3.3.1)
+      vue-router: 4.2.0(vue@3.3.1)
     transitivePeerDependencies:
       - supports-color
 
@@ -5544,7 +5544,7 @@ packages:
       '@vueuse/core': 9.13.0(vue@3.3.1)
       ts-debounce: 4.0.0
       vue: 3.3.1
-      vue-router: 4.1.6(vue@3.3.1)
+      vue-router: 4.2.0(vue@3.3.1)
     transitivePeerDependencies:
       - '@algolia/client-search'
       - '@types/react'
@@ -5592,7 +5592,7 @@ packages:
       '@vuepress/core': 2.0.0-beta.61
       '@vuepress/utils': 2.0.0-beta.61
       vue: 3.3.1
-      vue-router: 4.1.6(vue@3.3.1)
+      vue-router: 4.2.0(vue@3.3.1)
     transitivePeerDependencies:
       - supports-color
 
@@ -5686,7 +5686,7 @@ packages:
       sass: 1.62.1
       sass-loader: 13.2.2(sass@1.62.1)
       vue: 3.3.1
-      vue-router: 4.1.6(vue@3.3.1)
+      vue-router: 4.2.0(vue@3.3.1)
     transitivePeerDependencies:
       - '@vue/composition-api'
       - supports-color
@@ -13989,8 +13989,8 @@ packages:
       watchpack: 2.4.0
       webpack: 5.82.1(esbuild@0.17.18)
 
-  /vue-router@4.1.6(vue@3.3.1):
-    resolution: {integrity: sha512-DYWYwsG6xNPmLq/FmZn8Ip+qrhFEzA14EI12MsMgVxvHFDYvlr4NXpVF5hrRH1wVcDP8fGi5F4rxuJSl8/r+EQ==}
+  /vue-router@4.2.0(vue@3.3.1):
+    resolution: {integrity: sha512-c+usESa6ZoWsm4PPdzRSyenp5A4dsUtnDJnrI03fY1IpIihA9TK3x5ffgkFDpjhLJZewsXoKURapNLFdZjuqTg==}
     peerDependencies:
       vue: ^3.2.0
     dependencies:
