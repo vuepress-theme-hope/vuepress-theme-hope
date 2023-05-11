@@ -106,15 +106,6 @@ export interface AutoCatalogOptions {
   iconRouteMetaKey?: string;
 
   /**
-   * Icon render
-   *
-   * 图标渲染器
-   *
-   * @description icon will be rendered as `<iconComponent :icon="icon" />`
-   */
-  iconComponent?: string;
-
-  /**
    * Page order getter
    *
    * 页面顺序获取器

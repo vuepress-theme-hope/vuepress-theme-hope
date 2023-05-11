@@ -13,12 +13,23 @@ const require = createRequire(import.meta.url);
  */
 export const prepareSeparatedConfigFile = (
   app: App,
-  { enableBlog, enableEncrypt, enableSlide }: ThemeStatus
+  { enableAutoCatalog, enableBlog, enableEncrypt, enableSlide }: ThemeStatus
 ): Promise<string> => {
   const imports: string[] = [];
   const enhances: string[] = [];
   const setups: string[] = [];
+  const actions: string[] = [];
   const layouts = [];
+
+  if (enableAutoCatalog) {
+    imports.push(
+      `import { HopeIcon } from "${CLIENT_FOLDER}export.js";`,
+      `import { defineAutoCatalogIconComponent } from "${path.resolve(
+        require.resolve("vuepress-plugin-auto-catalog/client")
+      )}"`
+    );
+    actions.push(`defineAutoCatalogIconComponent(HopeIcon);`);
+  }
 
   if (enableBlog) {
     imports.push(
@@ -57,7 +68,7 @@ export const prepareSeparatedConfigFile = (
     `\
 import { defineClientConfig } from "@vuepress/client";
 
-import { HopeIcon, Layout, NotFound, useScrollPromise, injectDarkmode, setupDarkmode, setupSidebarItems } from "${CLIENT_FOLDER}export.js";
+import { Layout, NotFound, useScrollPromise, injectDarkmode, setupDarkmode, setupSidebarItems } from "${CLIENT_FOLDER}export.js";
 
 ${imports.join("\n")}
 
@@ -75,9 +86,6 @@ export default defineClientConfig({
 
     // inject global properties
     injectDarkmode(app);
-
-    // render icon for auto-catalog
-    app.component("HopeIcon", HopeIcon);
 
 ${enhances.map((item) => `    ${item}`).join("\n")}
   },

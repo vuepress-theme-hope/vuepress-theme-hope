@@ -9,6 +9,7 @@ import {
 } from "vuepress-shared/client";
 
 import { type AutoCatalogLocaleConfig } from "../../shared/index.js";
+import { useAutoCatalogIconComponent } from "../helpers/index.js";
 
 import "../styles/auto-catalog.scss";
 
@@ -73,7 +74,8 @@ export default defineComponent({
     index: Boolean,
   },
 
-  setup(props, { slots }) {
+  setup(props) {
+    const iconComponent = useAutoCatalogIconComponent();
     const locale = useLocaleConfig(AUTO_CATALOG_LOCALES);
     const page = usePageData();
     const router = useRouter();
@@ -227,7 +229,7 @@ export default defineComponent({
               h("a", { href: `#${title}`, class: "header-anchor" }, "#"),
               h(RouterLink, { class: "catalog-title", to: path }, () => [
                 props.index ? `${mainIndex + 1}.` : null,
-                icon && slots["icon"] ? slots["icon"]({ icon }) : null,
+                icon && iconComponent ? h(iconComponent, { icon }) : null,
                 title || "Unknown",
               ]),
             ]
@@ -259,8 +261,8 @@ export default defineComponent({
                             props.index
                               ? `${mainIndex + 1}.${index + 1}`
                               : null,
-                            icon && slots["icon"]
-                              ? slots["icon"]({ icon })
+                            icon && iconComponent
+                              ? h(iconComponent, { icon })
                               : null,
                             title || "Unknown",
                           ]
@@ -284,8 +286,8 @@ export default defineComponent({
                                       subIndex + 1
                                     }`
                                   : null,
-                                icon && slots["icon"]
-                                  ? slots["icon"]({ icon })
+                                icon && iconComponent
+                                  ? h(iconComponent, { icon })
                                   : null,
                                 title || "Unknown",
                               ]

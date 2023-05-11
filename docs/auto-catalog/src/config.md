@@ -126,35 +126,40 @@ Locales config for catalog component.
 
 :::
 
-## AutoCatalog Component
+## Client options
 
-### Component Props
+### defineAutoCatalogIconComponent
 
-#### base
+```ts
+export type AutoCatalogIconComponent = Component<{
+  icon: string;
+}>;
+export declare const defineAutoCatalogIconComponent: (
+  options: AutoCatalogIconComponent
+) => void;
+```
+
+Customize icon component for auto catalog.
+
+## AutoCatalog Component Props
+
+### base
 
 - Type: `string`
 - Default: `Current route path base`
 
 Catalog Base
 
-#### level
+### level
 
 - Type: `1 | 2 | 3`
 - Default: `3`
 
 Max level of catalog.
 
-#### index
+### index
 
 - Type: `boolean`
 - Default: `false`
 
 Whether display index number for catalog.
-
-### Component Slots
-
-#### icon
-
-- Type: `({ icon }: { icon: string }) => VNode`
-
-Icon slot, used to render icon for catalog.

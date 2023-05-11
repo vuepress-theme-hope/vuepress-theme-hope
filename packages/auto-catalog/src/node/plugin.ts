@@ -18,7 +18,6 @@ export const autoCatalogPlugin =
 
     const {
       component,
-      iconComponent,
       iconRouteMetaKey = "icon",
       indexRouteMetaKey = "index",
       locales,
@@ -36,7 +35,6 @@ export const autoCatalogPlugin =
           default: defaultLocales,
           config: locales,
         }),
-        AUTO_CATALOG_ICON_COMPONENT: iconComponent || "",
         AUTO_CATALOG_TITLE_META_KEY: titleRouteMetaKey,
         AUTO_CATALOG_ICON_META_KEY: iconRouteMetaKey,
         AUTO_CATALOG_ORDER_META_KEY: orderRouteMetaKey,

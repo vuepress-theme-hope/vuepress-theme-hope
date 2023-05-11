@@ -22,7 +22,6 @@ export const getAutoCatalogPlugin = (
     frontmatter: () => ({ article: false, feed: false, sitemap: false }),
     ...(isPlainObject(autoCatalog) ? autoCatalog : {}),
     // inject info
-    iconComponent: "HopeIcon",
     titleRouteMetaKey: ArticleInfoType.title,
     iconRouteMetaKey: ArticleInfoType.icon,
     indexRouteMetaKey: ArticleInfoType.index,
