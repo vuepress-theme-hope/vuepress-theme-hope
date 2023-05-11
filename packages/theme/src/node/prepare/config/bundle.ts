@@ -91,9 +91,6 @@ export default defineClientConfig({
     // inject global properties
     injectDarkmode(app);
 
-    // render icon for auto-catalog
-    app.component("HopeIcon", HopeIcon);
-
 ${enhances.map((item) => `    ${item}`).join("\n")}
   },
   setup: () => {
