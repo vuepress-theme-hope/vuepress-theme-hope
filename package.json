@@ -104,7 +104,6 @@
       "glob-stream": "^7.0.0",
       "glob-parent": "^6.0.2",
       "micromatch": "^4.0.5",
-      "vite": "4.3.5",
       "yargs-parser": "^21.1.1"
     },
     "peerDependencyRules": {
@@ -121,8 +120,7 @@
     },
     "patchedDependencies": {
       "@types/katex@0.16.0": "patches/@types__katex@0.16.0.patch",
-      "mitt@3.0.0": "patches/mitt@3.0.0.patch",
-      "@vuepress/bundler-vite@2.0.0-beta.61": "patches/@vuepress__bundler-vite@2.0.0-beta.61.patch"
+      "mitt@3.0.0": "patches/mitt@3.0.0.patch"
     }
   }
 }

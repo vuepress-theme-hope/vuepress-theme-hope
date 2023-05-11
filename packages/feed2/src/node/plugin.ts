@@ -15,7 +15,7 @@ export const feedPlugin =
     // TODO: Remove this in v2 stable
     if (legacy)
       convertOptions(options as FeedOptions & Record<string, unknown>);
-    checkVersion(app, FEED_GENERATOR, "2.0.0-beta.61");
+    checkVersion(app, FEED_GENERATOR, "2.0.0-beta.62");
 
     if (app.env.isDebug) logger.info("Options:", options);
 

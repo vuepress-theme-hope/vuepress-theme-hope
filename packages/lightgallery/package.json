@@ -51,8 +51,8 @@
     "pnpm": ">=7"
   },
   "dependencies": {
-    "@vuepress/client": "2.0.0-beta.61",
-    "@vuepress/utils": "2.0.0-beta.61",
+    "@vuepress/client": "2.0.0-beta.62",
+    "@vuepress/utils": "2.0.0-beta.62",
     "lightgallery": "^2.7.1",
     "vue": "^3.3.1",
     "vue-router": "^4.2.0",
@@ -60,13 +60,13 @@
     "vuepress-shared": "workspace:*"
   },
   "devDependencies": {
-    "@vuepress/core": "2.0.0-beta.61"
+    "@vuepress/core": "2.0.0-beta.62"
   },
   "peerDependencies": {
     "sass-loader": "^13.2.2",
-    "vuepress": "2.0.0-beta.61",
-    "vuepress-vite": "2.0.0-beta.61",
-    "vuepress-webpack": "2.0.0-beta.61"
+    "vuepress": "2.0.0-beta.62",
+    "vuepress-vite": "2.0.0-beta.62",
+    "vuepress-webpack": "2.0.0-beta.62"
   },
   "peerDependenciesMeta": {
     "sass-loader": {
