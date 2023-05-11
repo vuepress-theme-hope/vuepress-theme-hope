@@ -1,4 +1,5 @@
 import {
+  type SlotsType,
   type VNode,
   defineComponent,
   h,
@@ -16,6 +17,12 @@ import "../styles/sidebar.scss";
 
 export default defineComponent({
   name: "SideBar",
+
+  slots: Object as SlotsType<{
+    default?: () => VNode | VNode[];
+    top?: () => VNode | VNode[];
+    bottom?: () => VNode | VNode[];
+  }>,
 
   setup(_props, { slots }) {
     const route = useRoute();
@@ -70,10 +77,9 @@ export default defineComponent({
           ref: sidebar,
         },
         [
-          slots["top"]?.(),
-          slots["default"]?.() ||
-            h(SidebarLinks, { config: sidebarItems.value }),
-          slots["bottom"]?.(),
+          slots.top?.(),
+          slots.default?.() || h(SidebarLinks, { config: sidebarItems.value }),
+          slots.bottom?.(),
         ]
       );
   },

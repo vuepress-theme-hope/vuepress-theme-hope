@@ -37,7 +37,7 @@ const getImages = (images: HTMLImageElement[]): GalleryItem[] =>
 export default defineComponent({
   name: "LightGallery",
 
-  setup(_props, { slots }) {
+  setup() {
     const lightGalleryOptions = useLightGalleryOptions();
     const page = usePageData();
 
@@ -95,10 +95,6 @@ export default defineComponent({
     onUnmounted(() => instance?.destroy());
 
     return (): VNode =>
-      h(
-        "div",
-        { ref: container, class: "lightgallery-vuepress" },
-        slots["default"]?.()
-      );
+      h("div", { ref: container, class: "lightgallery-vuepress" });
   },
 });

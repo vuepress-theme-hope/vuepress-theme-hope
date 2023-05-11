@@ -7,6 +7,7 @@ import {
 } from "@vueuse/core";
 import {
   type ComponentOptions,
+  type SlotsType,
   Transition,
   type VNode,
   computed,
@@ -60,6 +61,25 @@ export default defineComponent({
      */
     noToc: Boolean,
   },
+
+  slots: Object as SlotsType<{
+    default: () => VNode | VNode[];
+
+    // navbar
+    navbarStartBefore?: () => VNode | VNode[];
+    navbarStartAfter?: () => VNode | VNode[];
+    navbarCenterBefore?: () => VNode | VNode[];
+    navbarCenterAfter?: () => VNode | VNode[];
+    navbarEndBefore?: () => VNode | VNode[];
+    navbarEndAfter?: () => VNode | VNode[];
+    navScreenTop?: () => VNode | VNode[];
+    navScreenBottom?: () => VNode | VNode[];
+
+    // sidebar
+    sidebar?: () => VNode | VNode[];
+    sidebarTop?: () => VNode | VNode[];
+    sidebarBottom?: () => VNode | VNode[];
+  }>,
 
   setup(props, { slots }) {
     const router = useRouter();
@@ -197,11 +217,7 @@ export default defineComponent({
                   "no-navbar": !enableNavbar.value,
                   "no-sidebar":
                     !enableSidebar.value &&
-                    !(
-                      slots["sidebar"] ||
-                      slots["sidebarTop"] ||
-                      slots["sidebarBottom"]
-                    ),
+                    !(slots.sidebar || slots.sidebarTop || slots.sidebarBottom),
                   "has-toc": enableToc.value,
                   "hide-navbar": hideNavbar.value,
                   "sidebar-collapsed":
@@ -222,14 +238,14 @@ export default defineComponent({
                     Navbar,
                     { onToggleSidebar: () => toggleMobileSidebar() },
                     {
-                      startBefore: () => slots["navbarStartBefore"]?.(),
-                      startAfter: () => slots["navbarStartAfter"]?.(),
-                      centerBefore: () => slots["navbarCenterBefore"]?.(),
-                      centerAfter: () => slots["navbarCenterAfter"]?.(),
-                      endBefore: () => slots["navbarEndBefore"]?.(),
-                      endAfter: () => slots["navbarEndAfter"]?.(),
-                      screenTop: () => slots["navScreenTop"]?.(),
-                      screenBottom: () => slots["navScreenBottom"]?.(),
+                      startBefore: () => slots.navbarStartBefore?.(),
+                      startAfter: () => slots.navbarStartAfter?.(),
+                      centerBefore: () => slots.navbarCenterBefore?.(),
+                      centerAfter: () => slots.navbarCenterAfter?.(),
+                      endBefore: () => slots.navbarEndBefore?.(),
+                      endAfter: () => slots.navbarEndAfter?.(),
+                      screenTop: () => slots.navScreenTop?.(),
+                      screenBottom: () => slots.navScreenBottom?.(),
                     }
                   )
                 : null,
@@ -265,17 +281,16 @@ export default defineComponent({
                 Sidebar,
                 {},
                 {
-                  ...(slots["sidebar"]
+                  ...(slots.sidebar
                     ? {
-                        default: (): VNode[] | undefined =>
-                          slots["sidebar"]?.(),
+                        default: (): VNode | VNode[] => slots.sidebar!(),
                       }
                     : {}),
-                  top: () => slots["sidebarTop"]?.(),
-                  bottom: () => slots["sidebarBottom"]?.(),
+                  top: () => slots.sidebarTop?.(),
+                  bottom: () => slots.sidebarBottom?.(),
                 }
               ),
-              slots["default"]?.(),
+              slots.default(),
               h(PageFooter),
             ]
           )

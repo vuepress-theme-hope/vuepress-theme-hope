@@ -1,4 +1,4 @@
-import { type FunctionalComponent, h } from "vue";
+import { type FunctionalComponent, type VNode, h } from "vue";
 
 import "../styles/badge.scss";
 
@@ -9,10 +9,11 @@ export interface BadgeProps {
   color?: string;
 }
 
-const Badge: FunctionalComponent<BadgeProps> = (
-  { type = "info", text = "", vertical = "top", color },
-  { slots }
-) =>
+const Badge: FunctionalComponent<
+  BadgeProps,
+  Record<never, never>,
+  { default?: () => VNode | VNode[] | undefined }
+> = ({ type = "info", text = "", vertical = "top", color }, { slots }) =>
   h(
     "span",
     {
@@ -22,7 +23,7 @@ const Badge: FunctionalComponent<BadgeProps> = (
         ...(color ? { backgroundColor: color } : {}),
       },
     },
-    text || slots["default"]?.()
+    slots.default?.() || text
   );
 
 Badge.displayName = "Badge";

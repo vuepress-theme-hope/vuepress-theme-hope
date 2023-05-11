@@ -1,4 +1,5 @@
 import {
+  type SlotsType,
   Transition,
   type VNode,
   computed,
@@ -17,6 +18,13 @@ import "../styles/popup.scss";
 
 export default defineComponent({
   name: "SWUpdatePopup",
+
+  slots: Object as SlotsType<{
+    default?: (props: {
+      enabled: boolean;
+      reload: () => void;
+    }) => VNode[] | VNode;
+  }>,
 
   setup(_props, { slots }) {
     const locale = useLocaleConfig(locales);
@@ -44,7 +52,7 @@ export default defineComponent({
         Transition,
         { name: "popup" },
         () =>
-          slots["default"]?.({
+          slots.default?.({
             enabled: enabled.value,
             reload,
           }) ||

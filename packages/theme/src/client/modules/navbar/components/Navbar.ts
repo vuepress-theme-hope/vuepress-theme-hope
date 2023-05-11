@@ -2,6 +2,7 @@ import {
   type Component,
   type ComponentOptions,
   type FunctionalComponent,
+  type SlotsType,
   type VNode,
   computed,
   defineComponent,
@@ -38,6 +39,20 @@ export default defineComponent({
   name: "NavBar",
 
   emits: ["toggleSidebar"],
+
+  slots: Object as SlotsType<{
+    default: () => VNode | VNode[];
+
+    // navbar
+    startBefore?: () => VNode | VNode[];
+    startAfter?: () => VNode | VNode[];
+    centerBefore?: () => VNode | VNode[];
+    centerAfter?: () => VNode | VNode[];
+    endBefore?: () => VNode | VNode[];
+    endAfter?: () => VNode | VNode[];
+    screenTop?: () => VNode | VNode[];
+    screenBottom?: () => VNode | VNode[];
+  }>,
 
   setup(_props, { emit, slots }) {
     const themeLocale = useThemeLocaleData();
@@ -110,7 +125,7 @@ export default defineComponent({
                   emit("toggleSidebar");
                 },
               }),
-              slots["startBefore"]?.(),
+              slots.startBefore?.(),
               (navbarLayout.value.start || []).map((item) =>
                 h(
                   <ComponentOptions | FunctionalComponent>(
@@ -118,11 +133,11 @@ export default defineComponent({
                   )
                 )
               ),
-              slots["startAfter"]?.(),
+              slots.startAfter?.(),
             ]),
 
             h("div", { class: "navbar-center" }, [
-              slots["centerBefore"]?.(),
+              slots.centerBefore?.(),
               (navbarLayout.value.center || []).map((item) =>
                 h(
                   <ComponentOptions | FunctionalComponent>(
@@ -130,11 +145,11 @@ export default defineComponent({
                   )
                 )
               ),
-              slots["centerAfter"]?.(),
+              slots.centerAfter?.(),
             ]),
 
             h("div", { class: "navbar-end" }, [
-              slots["endBefore"]?.(),
+              slots.endBefore?.(),
               (navbarLayout.value.end || []).map((item) =>
                 h(
                   <ComponentOptions | FunctionalComponent>(
@@ -142,7 +157,7 @@ export default defineComponent({
                   )
                 )
               ),
-              slots["endAfter"]?.(),
+              slots.endAfter?.(),
 
               h(ToggleNavbarButton, {
                 active: showScreen.value,
@@ -162,8 +177,8 @@ export default defineComponent({
             },
           },
           {
-            before: () => slots["screenTop"]?.(),
-            after: () => slots["screenBottom"]?.(),
+            before: () => slots.screenTop?.(),
+            after: () => slots.screenBottom?.(),
           }
         ),
       ];

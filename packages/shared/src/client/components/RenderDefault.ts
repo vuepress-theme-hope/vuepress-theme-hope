@@ -1,4 +1,7 @@
-import { type FunctionalComponent } from "vue";
+import { type FunctionalComponent, type VNode } from "vue";
 
-export const RenderDefault: FunctionalComponent = (_props, { slots }) =>
-  slots["default"]?.() || null;
+export const RenderDefault: FunctionalComponent<
+  Record<never, never>,
+  Record<never, never>,
+  { default: () => VNode | VNode[] }
+> = (_props, { slots }) => slots.default?.();

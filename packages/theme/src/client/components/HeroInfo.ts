@@ -3,7 +3,7 @@ import {
   useSiteLocaleData,
   withBase,
 } from "@vuepress/client";
-import { type VNode, computed, defineComponent, h } from "vue";
+import { type SlotsType, type VNode, computed, defineComponent, h } from "vue";
 
 import AutoLink from "@theme-hope/components/AutoLink";
 import DropTransition from "@theme-hope/components/transitions/DropTransition";
@@ -14,6 +14,11 @@ import "../styles/hero-info.scss";
 
 export default defineComponent({
   name: "HeroInfo",
+
+  slots: Object as SlotsType<{
+    heroImage?: () => VNode | VNode[];
+    heroInfo?: () => VNode | VNode[];
+  }>,
 
   setup(_props, { slots }) {
     const frontmatter = usePageFrontmatter<ThemeProjectHomePageFrontmatter>();
@@ -55,7 +60,7 @@ export default defineComponent({
 
     return (): VNode =>
       h("header", { class: "hero-info-wrapper" }, [
-        slots["heroImage"]?.() ||
+        slots.heroImage?.() ||
           h(DropTransition, { appear: true, type: "group" }, () => [
             heroImage.value
               ? h("img", {
@@ -74,7 +79,7 @@ export default defineComponent({
                 })
               : null,
           ]),
-        slots["heroInfo"]?.() ||
+        slots.heroInfo?.() ??
           h("div", { class: "hero-info" }, [
             heroText.value
               ? h(DropTransition, { appear: true, delay: 0.04 }, () =>

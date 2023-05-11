@@ -1,5 +1,5 @@
 import { useRouteLocale } from "@vuepress/client";
-import { type VNode, defineComponent, h } from "vue";
+import { type SlotsType, type VNode, defineComponent, h } from "vue";
 import { useLink } from "vue-router";
 
 import CommonWrapper from "@theme-hope/components/CommonWrapper";
@@ -11,6 +11,10 @@ import "../styles/not-found.scss";
 
 export default defineComponent({
   name: "NotFound",
+
+  slots: Object as SlotsType<{
+    default: () => VNode | VNode[];
+  }>,
 
   setup(_props, { slots }) {
     const routeLocale = useRouteLocale();
@@ -26,7 +30,7 @@ export default defineComponent({
         h(
           "main",
           { class: "page not-found", id: "main-content" },
-          slots["default"]?.() || [
+          slots.default?.() || [
             h(NotFoundHint),
             h("div", { class: "actions" }, [
               h(

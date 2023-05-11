@@ -54,7 +54,7 @@
     "@vuepress/client": "2.0.0-beta.61",
     "@vuepress/utils": "2.0.0-beta.61",
     "lightgallery": "^2.7.1",
-    "vue": "^3.2.47",
+    "vue": "^3.3.1",
     "vue-router": "^4.1.6",
     "vuepress-plugin-sass-palette": "workspace:*",
     "vuepress-shared": "workspace:*"

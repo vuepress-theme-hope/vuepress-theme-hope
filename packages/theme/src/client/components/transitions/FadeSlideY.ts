@@ -1,4 +1,10 @@
-import { Transition, type VNode, defineComponent, h } from "vue";
+import {
+  type SlotsType,
+  Transition,
+  type VNode,
+  defineComponent,
+  h,
+} from "vue";
 
 import { useScrollPromise } from "@theme-hope/composables/index";
 
@@ -6,6 +12,10 @@ import "../../styles/fade-slide-y.scss";
 
 export default defineComponent({
   name: "FadeSlideY",
+
+  slots: Object as SlotsType<{
+    default: () => VNode;
+  }>,
 
   setup(_props, { slots }) {
     // handle scrollBehavior with transition
@@ -21,7 +31,7 @@ export default defineComponent({
           onBeforeEnter,
           onBeforeLeave,
         },
-        () => slots["default"]?.()
+        () => slots.default?.()
       );
   },
 });

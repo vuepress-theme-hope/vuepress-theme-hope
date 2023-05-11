@@ -1,5 +1,12 @@
 import { withBase } from "@vuepress/client";
-import { type PropType, type VNode, defineComponent, h, toRef } from "vue";
+import {
+  type PropType,
+  type SlotsType,
+  type VNode,
+  defineComponent,
+  h,
+  toRef,
+} from "vue";
 import { RouterLink } from "vue-router";
 
 import {
@@ -8,7 +15,9 @@ import {
 } from "@theme-hope/modules/blog/components/icons/index";
 import { useArticleInfo } from "@theme-hope/modules/blog/composables/index";
 import { LockIcon } from "@theme-hope/modules/encrypt/components/icons";
-import PageInfo from "@theme-hope/modules/info/components/PageInfo";
+import PageInfo, {
+  PageInfoProps,
+} from "@theme-hope/modules/info/components/PageInfo";
 
 import {
   type ArticleInfo,
@@ -40,6 +49,17 @@ export default defineComponent({
     path: { type: String, required: true },
   },
 
+  slots: Object as SlotsType<{
+    cover?: (props: { cover: string | undefined }) => VNode | VNode[];
+    title?: (props: {
+      title: string;
+      isEncrypted?: boolean;
+      type: string;
+    }) => VNode | VNode[];
+    excerpt?: (props: { excerpt: string | undefined }) => VNode | VNode[];
+    info?: (props: { info: PageInfoProps }) => VNode | VNode[];
+  }>,
+
   setup(props, { slots }) {
     const articleInfo = toRef(props, "info");
     const { info: pageInfo, items } = useArticleInfo(props);
@@ -48,7 +68,7 @@ export default defineComponent({
       const {
         [ArticleInfoType.title]: title,
         [ArticleInfoType.type]: type,
-        [ArticleInfoType.isEncrypted]: isEncrypted,
+        [ArticleInfoType.isEncrypted]: isEncrypted = false,
         [ArticleInfoType.cover]: cover,
         [ArticleInfoType.excerpt]: excerpt,
         [ArticleInfoType.sticky]: sticky,
@@ -66,7 +86,7 @@ export default defineComponent({
             typeof: "Article",
           },
           [
-            slots["cover"]?.({ cover }) ||
+            slots.cover?.({ cover }) ||
               (cover
                 ? [
                     h("img", {
@@ -84,14 +104,14 @@ export default defineComponent({
               RouterLink,
               { to: props.path },
               () =>
-                slots["title"]?.({ title, isEncrypted, type }) ||
+                slots.title?.({ title, isEncrypted, type }) ||
                 h("header", { class: "title" }, [
                   isEncrypted ? h(LockIcon) : null,
                   type === PageType.slide ? h(SlideIcon) : null,
                   h("span", { property: "headline" }, title),
                 ])
             ),
-            slots["excerpt"]?.({ excerpt }) ||
+            slots.excerpt?.({ excerpt }) ||
               (excerpt
                 ? h("div", {
                     class: "article-excerpt",
@@ -99,7 +119,7 @@ export default defineComponent({
                   })
                 : null),
             h("hr", { class: "hr" }),
-            slots["info"]?.({ info }) ||
+            slots.info?.({ info }) ||
               h(PageInfo, {
                 info,
                 ...(items.value ? { items: items.value } : {}),

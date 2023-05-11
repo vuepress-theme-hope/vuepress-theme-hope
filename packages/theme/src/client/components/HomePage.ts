@@ -1,6 +1,6 @@
 import { usePageFrontmatter } from "@vuepress/client";
 import { isArray } from "@vuepress/shared";
-import { type VNode, computed, defineComponent, h } from "vue";
+import { type SlotsType, type VNode, computed, defineComponent, h } from "vue";
 
 import FeaturePanel from "@theme-hope/components/FeaturePanel";
 import HeroInfo from "@theme-hope/components/HeroInfo";
@@ -17,7 +17,13 @@ import {
 import "../styles/home-page.scss";
 
 export default defineComponent({
-  name: "HopePage",
+  name: "HomePage",
+
+  slots: Object as SlotsType<{
+    top?: () => VNode | VNode[];
+    center?: () => VNode | VNode[];
+    bottom?: () => VNode | VNode[];
+  }>,
 
   setup(_props, { slots }) {
     const pure = usePure();
@@ -44,7 +50,7 @@ export default defineComponent({
             frontmatter.value.heroText === null ? undefined : "main-title",
         },
         [
-          slots["top"]?.(),
+          slots.top?.(),
           h(HeroInfo),
           features.value.map(({ header = "", items }, index) =>
             h(
@@ -53,13 +59,13 @@ export default defineComponent({
               () => h(FeaturePanel, { header, items })
             )
           ),
-          slots["center"]?.(),
+          slots.center?.(),
           h(
             DropTransition,
             { appear: true, delay: 0.16 + features.value.length * 0.08 },
             () => h(MarkdownContent)
           ),
-          slots["bottom"]?.(),
+          slots.bottom?.(),
         ]
       );
   },

@@ -4,7 +4,14 @@ import {
   withBase,
 } from "@vuepress/client";
 import { isString } from "@vuepress/shared";
-import { type VNode, computed, defineComponent, h, shallowRef } from "vue";
+import {
+  type SlotsType,
+  type VNode,
+  computed,
+  defineComponent,
+  h,
+  shallowRef,
+} from "vue";
 
 import DropTransition from "@theme-hope/components/transitions/DropTransition";
 
@@ -14,8 +21,29 @@ import defaultHeroBgImagePath from "../assets/hero.jpg";
 
 import "../styles/blog-hero.scss";
 
+export interface HeroInfo {
+  text: string | null;
+  image: string | null;
+  imageDark: string | null;
+  heroStyle: string | Record<string, string> | undefined;
+  alt: string;
+  tagline: string | null;
+  isFullScreen: boolean;
+}
+
+export interface BackgroundInfo {
+  image: string | null;
+  bgStyle: string | Record<string, string> | undefined;
+  isFullScreen: boolean;
+}
+
 export default defineComponent({
   name: "BlogHero",
+
+  slots: Object as SlotsType<{
+    heroBg?: (props: BackgroundInfo) => VNode | VNode[];
+    heroInfo?: (props: HeroInfo) => VNode | VNode[];
+  }>,
 
   setup(_props, { slots }) {
     const title = usePageHeadTitle();
@@ -78,7 +106,7 @@ export default defineComponent({
               ],
             },
             [
-              slots["heroBg"]?.(bgInfo.value) ||
+              slots.heroBg?.(bgInfo.value) ||
                 (bgInfo.value.image
                   ? h("div", {
                       class: "mask",
@@ -90,7 +118,7 @@ export default defineComponent({
                       ],
                     })
                   : null),
-              slots["heroInfo"]?.(heroInfo.value) || [
+              slots.heroInfo?.(heroInfo.value) || [
                 h(
                   DropTransition,
                   { appear: true, type: "group", delay: 0.04 },

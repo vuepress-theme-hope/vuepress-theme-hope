@@ -22,7 +22,7 @@
     "@vuepress/client": "2.0.0-beta.61",
     "docs-shared": "workspace:*",
     "sass-loader": "13.2.2",
-    "vue": "3.2.47",
+    "vue": "3.3.1",
     "vuepress-plugin-photo-swipe": "workspace:*",
     "vuepress-vite": "2.0.0-beta.61",
     "vuepress-webpack": "2.0.0-beta.61"

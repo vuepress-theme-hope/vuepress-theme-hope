@@ -1,6 +1,7 @@
 import { usePageData } from "@vuepress/client";
 import { useScrollLock } from "@vueuse/core";
 import {
+  type SlotsType,
   Transition,
   type VNode,
   defineComponent,
@@ -30,6 +31,11 @@ export default defineComponent({
   },
 
   emits: ["close"],
+
+  slots: Object as SlotsType<{
+    before?: () => VNode | VNode[];
+    after?: () => VNode | VNode[];
+  }>,
 
   setup(props, { emit, slots }) {
     const page = usePageData();
@@ -78,10 +84,10 @@ export default defineComponent({
                 "div",
                 { id: "nav-screen" },
                 h("div", { class: "container" }, [
-                  slots["before"]?.(),
+                  slots.before?.(),
                   h(NavScreenLinks),
                   h("div", { class: "outlook-wrapper" }, h(OutlookSettings)),
-                  slots["after"]?.(),
+                  slots.after?.(),
                 ])
               )
             : null

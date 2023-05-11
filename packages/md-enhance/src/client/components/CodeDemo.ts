@@ -1,6 +1,7 @@
 import { useToggle } from "@vueuse/core";
 import {
   type PropType,
+  type SlotsType,
   type VNode,
   computed,
   defineComponent,
@@ -82,6 +83,10 @@ export default defineComponent({
       required: true,
     },
   },
+
+  slots: Object as SlotsType<{
+    default: () => VNode[];
+  }>,
 
   setup(props, { slots }) {
     const [isExpanded, toggleIsExpand] = useToggle(false);
@@ -290,7 +295,7 @@ export default defineComponent({
               ref: codeContainer,
               class: "code-demo-codes",
             },
-            slots["default"]?.()
+            slots.default?.()
           )
         ),
       ]);

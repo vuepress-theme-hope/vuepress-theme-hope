@@ -1,6 +1,7 @@
 import { useStorage } from "@vueuse/core";
 import {
   type PropType,
+  type SlotsType,
   type VNode,
   defineComponent,
   h,
@@ -64,6 +65,14 @@ export default defineComponent({
       default: "",
     },
   },
+
+  slots: Object as SlotsType<{
+    [slot: `tab${number}`]: (props: {
+      title: string;
+      value: string;
+      isActive: boolean;
+    }) => VNode[];
+  }>,
 
   setup(props, { slots }) {
     // index of current active item
@@ -182,7 +191,7 @@ export default defineComponent({
                   role: "tabpanel",
                   "aria-expanded": isActive,
                 },
-                slots[`tab${index}`]?.({ title, value, isActive })
+                slots[`tab${index}`]({ title, value, isActive })
               );
             }),
           ])

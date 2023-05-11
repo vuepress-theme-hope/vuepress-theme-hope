@@ -1,4 +1,4 @@
-import { type FunctionalComponent, h } from "vue";
+import { type FunctionalComponent, type VNode, h } from "vue";
 
 export interface IconBaseProps {
   name?: string;
@@ -8,10 +8,11 @@ export interface IconBaseProps {
 /**
  * Icon Base Component
  */
-export const IconBase: FunctionalComponent<IconBaseProps> = (
-  { name = "", color = "currentColor" },
-  { slots }
-) =>
+export const IconBase: FunctionalComponent<
+  IconBaseProps,
+  Record<never, never>,
+  { default: () => VNode | VNode[] }
+> = ({ name = "", color = "currentColor" }, { slots }) =>
   h(
     "svg",
     {
@@ -21,7 +22,7 @@ export const IconBase: FunctionalComponent<IconBaseProps> = (
       fill: color,
       "aria-label": `${name} icon`,
     },
-    slots["default"]?.()
+    slots.default?.()
   );
 
 IconBase.displayName = "IconBase";

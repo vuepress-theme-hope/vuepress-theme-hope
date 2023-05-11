@@ -1,6 +1,7 @@
 import { type PageHeader, usePageData } from "@vuepress/client";
 import {
   type PropType,
+  type SlotsType,
   type VNode,
   defineComponent,
   h,
@@ -82,6 +83,11 @@ export default defineComponent({
       default: 2,
     },
   },
+
+  slots: Object as SlotsType<{
+    before?: () => VNode | VNode[];
+    after?: () => VNode | VNode[];
+  }>,
 
   setup(props, { slots }) {
     const route = useRoute();
@@ -172,7 +178,7 @@ export default defineComponent({
       return tocHeaders
         ? h("div", { class: "toc-place-holder" }, [
             h("aside", { id: "toc" }, [
-              slots["before"]?.(),
+              slots.before?.(),
               h("div", { class: "toc-header" }, [
                 metaLocale.value.toc,
                 h(PrintButton),
@@ -186,7 +192,7 @@ export default defineComponent({
                   },
                 }),
               ]),
-              slots["after"]?.(),
+              slots.after?.(),
             ]),
           ])
         : null;

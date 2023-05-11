@@ -3,6 +3,7 @@ import { ExternalLinkIcon } from "@vuepress/plugin-external-link-icon/client";
 import { isLinkHttp, isLinkMailto, isLinkTel } from "@vuepress/shared";
 import {
   type PropType,
+  type SlotsType,
   type VNode,
   computed,
   defineComponent,
@@ -42,6 +43,12 @@ export default defineComponent({
   },
 
   emits: ["focusout"],
+
+  slots: Object as SlotsType<{
+    before?: () => VNode[] | VNode;
+    after?: () => VNode[] | VNode;
+    default?: () => VNode[] | VNode;
+  }>,
 
   setup(props, { attrs, emit, slots }) {
     const route = useRoute();
@@ -115,6 +122,7 @@ export default defineComponent({
     );
 
     return (): VNode => {
+      const { before, after, default: defaultSlot } = slots;
       const { text, icon, link } = config.value;
 
       return renderRouterLink.value
@@ -129,11 +137,9 @@ export default defineComponent({
               onFocusout: () => emit("focusout"),
             },
             () =>
-              slots["default"]?.() || [
-                slots["before"]?.() || h(HopeIcon, { icon }),
-                text,
-                slots["after"]?.(),
-              ]
+              defaultSlot
+                ? defaultSlot()
+                : [before ? before() : h(HopeIcon, { icon }), text, after?.()]
           )
         : h(
             "a",
@@ -147,12 +153,14 @@ export default defineComponent({
               class: ["nav-link", attrs["class"]],
               onFocusout: () => emit("focusout"),
             },
-            slots["default"]?.() || [
-              slots["before"]?.() || h(HopeIcon, { icon }),
-              text,
-              props.noExternalLinkIcon ? null : h(ExternalLinkIcon),
-              slots["after"]?.(),
-            ]
+            defaultSlot
+              ? defaultSlot()
+              : [
+                  before ? before() : h(HopeIcon, { icon }),
+                  text,
+                  props.noExternalLinkIcon ? null : h(ExternalLinkIcon),
+                  after?.(),
+                ]
           );
     };
   },

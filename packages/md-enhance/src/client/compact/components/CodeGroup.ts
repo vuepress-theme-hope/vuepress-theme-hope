@@ -1,6 +1,7 @@
 import {
   type Component,
   type FunctionalComponent,
+  type SlotsType,
   type VNode,
   defineComponent,
   h,
@@ -19,23 +20,28 @@ export interface CodeGroupItemProps {
   active?: boolean;
 }
 
-export const CodeGroupItem: FunctionalComponent<CodeGroupItemProps> = (
-  { active = false },
-  { slots }
-): VNode =>
+export const CodeGroupItem: FunctionalComponent<
+  CodeGroupItemProps,
+  Record<never, never>,
+  { default: () => VNode | VNode[] | undefined }
+> = ({ active = false }, { slots }): VNode =>
   h(
     "div",
     {
       class: ["code-group-item", { active }],
       "aria-selected": active,
     },
-    slots["default"]?.()
+    slots.default?.()
   );
 
 CodeGroupItem.displayName = "CodeGroupItem";
 
 export const CodeGroup = defineComponent({
   name: "CodeGroup",
+
+  slots: Object as SlotsType<{
+    default: () => VNode[];
+  }>,
 
   setup(_props, { slots }) {
     // index of current active item
@@ -83,7 +89,7 @@ export const CodeGroup = defineComponent({
       // `setup()` function of current component is called
 
       // get children code-group-item
-      const items = (slots["default"]?.() || [])
+      const items = (slots.default?.() || [])
         .filter((vNode) => (vNode.type as Component).name === "CodeGroupItem")
         .map((vNode) => {
           if (vNode.props === null) vNode.props = {};
