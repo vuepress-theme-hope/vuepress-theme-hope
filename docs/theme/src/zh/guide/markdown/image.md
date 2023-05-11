@@ -168,5 +168,5 @@ interface ImageMarkOptions {
 ![VuePress Hope 图标](/logo.svg "VuePress Hope 图标" =300x300)
 
 <script setup lang="ts">
-import AppearanceSwitch from "@theme-hope/modules/outlook/components/AppearanceSwitch"
+import AppearanceSwitch from "@theme-hope/modules/outlook/components/AppearanceSwitch";
 </script>

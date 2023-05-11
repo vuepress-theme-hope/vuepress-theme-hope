@@ -231,5 +231,6 @@ export default defineUserConfig({
 :::
 
 <script setup lang="ts">
-import IconDisplay from '@IconDisplay';
+import IconDisplay from "@IconDisplay";
+import HopeIcon from "@theme-hope/components/HopeIcon";
 </script>

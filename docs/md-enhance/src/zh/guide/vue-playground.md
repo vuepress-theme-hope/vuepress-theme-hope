@@ -3,9 +3,17 @@ title: Vue 交互演示
 icon: fab fa-vuejs
 ---
 
-此插件提供 Vue 交互演示支持。
+此插件通过 `@vue/repl` 提供 Vue 交互演示支持。
 
 <!-- more -->
+
+::: tip
+
+由于我们提供了一个运行时编译器，我们引入了带有 TypeScript 支持的整个 `@vue/compiler-sfc` 包，因此整个 Vue Playground 块大于 4MB。 因此，只有在严重依赖交互式 Vue Playground 时才应使用它。
+
+您可以使用 [Vue Demo](./demo/vue.md) 和 [交互演示 Vue 预设](./playground.md#vue) 作为替代。
+
+:::
 
 ## 配置
 

@@ -169,5 +169,5 @@ For details, please follow [fontawesome document](https://fontawesome.com/).
 :::
 
 <script setup lang="ts">
-import IconDisplay from '@IconDisplay';
+import IconDisplay from "@IconDisplay";
 </script>

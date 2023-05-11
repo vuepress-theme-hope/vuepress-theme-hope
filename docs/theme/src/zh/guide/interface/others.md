@@ -91,7 +91,7 @@ interface BackToTopOptions {
 试一试: <ToggleRTLButton />
 
 <script setup lang="ts">
+import ToggleFullScreenButton from "@theme-hope/modules/outlook/components/ToggleFullScreenButton";
 import PrintButton from "@theme-hope/modules/info/components/PrintButton";
 import ToggleRTLButton from "@ToggleRTLButton";
-import ToggleFullScreenButton from "@theme-hope/modules/outlook/components/ToggleFullScreenButton";
 </script>

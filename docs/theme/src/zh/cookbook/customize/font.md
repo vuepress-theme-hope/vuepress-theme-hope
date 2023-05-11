@@ -146,7 +146,7 @@ $font-family: '"Noto Serif SC", serif';
 [^noto-serif-sc]: 基于「开源字体授权发布」，并且在文档中说明可以基于其源代码进行二次修改后使用 (商用或者个人使用)，所以没有任何版权问题。
 
 <script setup lang="ts">
-import { useScriptTag } from '@vueuse/core'
+import { useScriptTag } from "@vueuse/core";
 
 useScriptTag("https://fonts.googleapis.com/css2?family=Noto+Serif+SC:wght@600;900&display=swap");
 </script>

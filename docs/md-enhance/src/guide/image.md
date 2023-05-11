@@ -158,5 +158,5 @@ Will be rendered as:
 ![VuePress Hope Logo](/logo.svg "VuePress Hope Logo" =300x300)
 
 <script setup lang="ts">
-import AppearanceSwitch from "@theme-hope/modules/outlook/components/AppearanceSwitch"
+import AppearanceSwitch from "@theme-hope/modules/outlook/components/AppearanceSwitch";
 </script>

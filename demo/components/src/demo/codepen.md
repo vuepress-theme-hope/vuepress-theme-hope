@@ -53,7 +53,7 @@ A click to run demo:
 ```
 
 <script setup lang="ts">
-import { useDarkMode } from '@vuepress/theme-default/client'
+import { useDarkMode } from "@vuepress/theme-default/client";
 
 const isDarkMode = useDarkMode();
 </script>

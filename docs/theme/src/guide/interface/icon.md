@@ -235,5 +235,6 @@ So we do not recommend you to use multiple iconfont links as assets, if you read
 :::
 
 <script setup lang="ts">
-import IconDisplay from '@IconDisplay';
+import IconDisplay from "@IconDisplay";
+import HopeIcon from "@theme-hope/components/HopeIcon";
 </script>
