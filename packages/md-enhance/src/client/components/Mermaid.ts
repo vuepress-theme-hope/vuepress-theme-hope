@@ -19,59 +19,57 @@ declare const MARKDOWN_ENHANCE_DELAY: number;
 
 const DEFAULT_CHART_OPTIONS = { useMaxWidth: false };
 
-const getThemeVariables = (isDarkmode: boolean): Record<string, unknown> => {
-  return {
-    dark: isDarkmode,
-    background: isDarkmode ? "#1e1e1e" : "#fff",
+const getThemeVariables = (isDarkmode: boolean): Record<string, unknown> => ({
+  dark: isDarkmode,
+  background: isDarkmode ? "#1e1e1e" : "#fff",
 
-    primaryColor: isDarkmode ? "#389d70" : "#4abf8a",
-    primaryBorderColor: isDarkmode ? "#389d70" : "#4abf8a",
-    primaryTextColor: "#fff",
+  primaryColor: isDarkmode ? "#389d70" : "#4abf8a",
+  primaryBorderColor: isDarkmode ? "#389d70" : "#4abf8a",
+  primaryTextColor: "#fff",
 
-    secondaryColor: "#ffb500",
-    secondaryBorderColor: isDarkmode ? "#fff" : "#000",
-    secondaryTextColor: isDarkmode ? "#ddd" : "#333",
+  secondaryColor: "#ffb500",
+  secondaryBorderColor: isDarkmode ? "#fff" : "#000",
+  secondaryTextColor: isDarkmode ? "#ddd" : "#333",
 
-    tertiaryColor: isDarkmode ? "#282828" : "#efeef4",
-    tertiaryBorderColor: isDarkmode ? "#bbb" : "#242424",
-    tertiaryTextColor: isDarkmode ? "#ddd" : "#333",
+  tertiaryColor: isDarkmode ? "#282828" : "#efeef4",
+  tertiaryBorderColor: isDarkmode ? "#bbb" : "#242424",
+  tertiaryTextColor: isDarkmode ? "#ddd" : "#333",
 
-    // note
-    noteBkgColor: isDarkmode ? "#f6d365" : "#fff5ad",
-    noteTextColor: "#242424",
-    noteBorderColor: isDarkmode ? "#f6d365" : "#333",
+  // note
+  noteBkgColor: isDarkmode ? "#f6d365" : "#fff5ad",
+  noteTextColor: "#242424",
+  noteBorderColor: isDarkmode ? "#f6d365" : "#333",
 
-    lineColor: isDarkmode ? "#d3d3d3" : "#333",
-    textColor: isDarkmode ? "#fff" : "#242424",
+  lineColor: isDarkmode ? "#d3d3d3" : "#333",
+  textColor: isDarkmode ? "#fff" : "#242424",
 
-    mainBkg: isDarkmode ? "#389d70" : "#4abf8a",
-    errorBkgColor: "#eb4d5d",
-    errorTextColor: "#fff",
+  mainBkg: isDarkmode ? "#389d70" : "#4abf8a",
+  errorBkgColor: "#eb4d5d",
+  errorTextColor: "#fff",
 
-    // flowchart
-    nodeBorder: isDarkmode ? "#389d70" : "#4abf8a",
-    nodeTextColor: isDarkmode ? "#fff" : "#242424",
+  // flowchart
+  nodeBorder: isDarkmode ? "#389d70" : "#4abf8a",
+  nodeTextColor: isDarkmode ? "#fff" : "#242424",
 
-    // sequence
-    signalTextColor: isDarkmode ? "#9e9e9e" : "#242424",
+  // sequence
+  signalTextColor: isDarkmode ? "#9e9e9e" : "#242424",
 
-    // class
-    classText: "#fff",
+  // class
+  classText: "#fff",
 
-    // state
-    labelColor: "#fff",
+  // state
+  labelColor: "#fff",
 
-    // colors
-    fillType0: isDarkmode ? "#cf1322" : "#f1636e",
-    fillType1: "#f39c12",
-    fillType2: "#2ecc71",
-    fillType3: "#fa541c",
-    fillType4: "#25a55b",
-    fillType5: "#13c2c2",
-    fillType6: "#096dd9",
-    fillType7: "#aa6fe9",
-  };
-};
+  // colors
+  fillType0: isDarkmode ? "#cf1322" : "#f1636e",
+  fillType1: "#f39c12",
+  fillType2: "#2ecc71",
+  fillType3: "#fa541c",
+  fillType4: "#25a55b",
+  fillType5: "#13c2c2",
+  fillType6: "#096dd9",
+  fillType7: "#aa6fe9",
+});
 
 export default defineComponent({
   // eslint-disable-next-line vue/multi-word-component-names
