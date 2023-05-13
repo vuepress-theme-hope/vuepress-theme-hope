@@ -1,4 +1,4 @@
-import { usePageData, usePageFrontmatter } from "@vuepress/client";
+import { usePageData, usePageFrontmatter, withBase } from "@vuepress/client";
 import {
   type ComponentOptions,
   type SlotsType,
@@ -62,7 +62,7 @@ export default defineComponent({
             frontmatter.value.cover
               ? h("img", {
                   class: "page-cover",
-                  src: frontmatter.value.cover,
+                  src: withBase(frontmatter.value.cover),
                   alt: page.value.title,
                   "no-view": "",
                 })
