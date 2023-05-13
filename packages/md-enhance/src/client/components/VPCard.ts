@@ -1,3 +1,4 @@
+import { withBase } from "@vuepress/client";
 import { isLinkExternal } from "@vuepress/shared";
 import { type FunctionalComponent, h } from "vue";
 import { RouterLink } from "vue-router";
@@ -50,7 +51,7 @@ const VPCard: FunctionalComponent<CardProps> = ({
   link = "",
 }) => {
   const children = [
-    h("img", { class: "vp-card-logo", src: logo }),
+    h("img", { class: "vp-card-logo", src: withBase(logo) }),
     h("div", { class: "vp-card-content" }, [
       h("div", { class: "vp-card-title", innerHTML: title }),
       h("hr"),
