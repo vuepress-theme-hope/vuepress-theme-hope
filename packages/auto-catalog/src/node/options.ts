@@ -6,7 +6,35 @@ import {
 
 import { type AutoCatalogLocaleData } from "../shared/index.js";
 
-export interface AutoCatalogOptions {
+export interface DeprecatedAutoCatalogOptions {
+  /**
+   * @deprecated use `defineAutoCatalogIconComponent` instead
+   * @see https://plugin-auto-catalog.vuejs.press/config/#defineautocatalogiconcomponent
+   */
+  iconComponent?: never;
+
+  /**
+   * @deprecated use `titleGetter` instead
+   */
+  getTitle?: never;
+
+  /**
+   * @deprecated use `iconGetter` instead
+   */
+  getIcon?: never;
+
+  /**
+   * @deprecated use `orderGetter` instead
+   */
+  getOrder?: never;
+
+  /**
+   * @deprecated use `shouldIndex` instead
+   */
+  getIndex?: never;
+}
+
+export interface AutoCatalogOptions extends DeprecatedAutoCatalogOptions {
   /**
    * The max level of the generated catalog
    *

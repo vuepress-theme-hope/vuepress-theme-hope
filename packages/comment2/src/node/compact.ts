@@ -1,3 +1,5 @@
+import { colors } from "@vuepress/utils";
+
 import { type CommentPluginOptions } from "./options.js";
 import { logger } from "./utils.js";
 
@@ -10,8 +12,11 @@ export const convertOptions = (
 ): void => {
   // v2 changes
   if ("type" in options) {
-    logger.warn(`"type" is deprecated, please use "provider".`);
-
+    logger.warn(
+      `${colors.magenta(
+        "iconComponent"
+      )} is deprecated, please use ${colors.magenta("provider")}.`
+    );
     if (options["type"] === "waline") options.provider = "Waline";
     else if (options["type"] === "giscus") options.provider = "Giscus";
     else if (options["type"] === "twikoo") options.provider = "Twikoo";
@@ -36,7 +41,11 @@ export const convertOptions = (
     ].forEach(([oldOptions, newOptions]) => {
       if (oldOptions in options) {
         logger.warn(
-          `"${oldOptions}" is deprecated in @waline/client@v2, you should use "${newOptions}" instead.`
+          `"${colors.magenta(
+            oldOptions
+          )}" is deprecated in @waline/client@v2, you should use "${colors.magenta(
+            newOptions
+          )}" instead.`
         );
 
         // @ts-ignore
@@ -66,7 +75,9 @@ export const convertOptions = (
     ].forEach((option) => {
       if (option in options) {
         logger.error(
-          `"${option}" is no longer supported in @waline/client@v2.`
+          `"${colors.magenta(
+            option
+          )}" is no longer supported in @waline/client@v2.`
         );
 
         // @ts-expect-error
