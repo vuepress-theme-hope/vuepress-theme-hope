@@ -86,7 +86,7 @@
   transition: opacity var(--vp-ct);
 }
 
-.fade-enter,
+.fade-enter-from,
 .fade-leave-to {
   opacity: 0;
 }
