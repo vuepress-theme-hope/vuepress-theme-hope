@@ -88,7 +88,6 @@ export default defineComponent({
                       h("circle", {
                         cx: "50%",
                         cy: "50%",
-                        r: "calc(50% - 2px)",
                         style: {
                           "stroke-dasharray": `calc(${
                             Math.PI * progress.value * 100
