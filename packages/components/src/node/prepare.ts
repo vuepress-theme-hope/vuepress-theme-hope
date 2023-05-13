@@ -1,4 +1,7 @@
+import { createRequire } from "node:module";
+
 import { type App } from "@vuepress/core";
+import { path } from "@vuepress/utils";
 import {
   isArray,
   isNumber,
@@ -12,6 +15,8 @@ import {
   type ComponentOptions,
 } from "./options/index.js";
 import { AVAILABLE_COMPONENTS, CLIENT_FOLDER } from "./utils.js";
+
+const require = createRequire(import.meta.url);
 
 export const prepareConfigFile = (
   app: App,
@@ -103,7 +108,9 @@ if(!hasGlobalComponent("Catalog")) app.component("Catalog", Catalog);
     `components/config.js`,
     `\
 import { defineClientConfig } from "@vuepress/client";
-import { hasGlobalComponent } from "${CLIENT_FOLDER}shared.js";
+import { hasGlobalComponent } from "${path.resolve(
+      require.resolve("vuepress-shared/client")
+    )}";
 ${
   shouldImportH
     ? `\
@@ -114,14 +121,18 @@ import { h } from "vue";
 ${
   shouldImportUseScriptTag
     ? `\
-import { useScriptTag } from "${CLIENT_FOLDER}vueuse.js";
+import { useScriptTag } from "${path.resolve(
+        require.resolve("@vueuse/core/index.mjs")
+      )}";
 `
     : ""
 }\
 ${
   shouldImportUseStyleTag
     ? `\
-import { useStyleTag } from "${CLIENT_FOLDER}vueuse.js";
+import { useStyleTag } from "${path.resolve(
+        require.resolve("@vueuse/core/index.mjs")
+      )}";
 `
     : ""
 }\

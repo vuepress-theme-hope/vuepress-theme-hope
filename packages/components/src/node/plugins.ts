@@ -2,7 +2,6 @@ import { type PluginFunction } from "@vuepress/core";
 import { useSassPalettePlugin } from "vuepress-plugin-sass-palette";
 import { checkVersion } from "vuepress-shared/node";
 
-import { extendsBundlerOptions } from "./bundler.js";
 import { convertOptions } from "./compact/index.js";
 import { getDefine } from "./define.js";
 import { type ComponentOptions } from "./options/index.js";
@@ -25,8 +24,6 @@ export const componentsPlugin =
       name: PLUGIN_NAME,
 
       define: getDefine(options, legacy),
-
-      extendsBundlerOptions,
 
       clientConfigFile: (app) => prepareConfigFile(app, options, legacy),
     };
