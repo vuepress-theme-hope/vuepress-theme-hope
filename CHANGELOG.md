@@ -4,6 +4,25 @@ All notable changes to this project will be documented in this file. See [Conven
 
 <!-- #region recent-beta -->
 
+## [2.0.0-beta.211](https://github.com/vuepress-theme-hope/vuepress-theme-hope/compare/v2.0.0-beta.210...v2.0.0-beta.211) (2023-05-15)
+
+### Features
+
+- **auto-catalog:** add compact code ([14c5185](https://github.com/vuepress-theme-hope/vuepress-theme-hope/commit/14c5185c898420ecb3433a785b996014b0b3ab9c))
+
+### Bug Fixes
+
+- **auto-catalog:** fix deps ([1efd698](https://github.com/vuepress-theme-hope/vuepress-theme-hope/commit/1efd698f358e28307b89343ea996d8798febd7df))
+- **components:** fix backToTop button on safari ([80b1503](https://github.com/vuepress-theme-hope/vuepress-theme-hope/commit/80b15037df307922eed77aa50dcf445bf9917772))
+- **components:** fix BackToTop, close [#3132](https://github.com/vuepress-theme-hope/vuepress-theme-hope/issues/3132) ([f9b31e0](https://github.com/vuepress-theme-hope/vuepress-theme-hope/commit/f9b31e026bf26eabbbf580e9c2db6d39e4b24ee6))
+- **deps:** update dependency hls.js to v1.4.3 ([#3127](https://github.com/vuepress-theme-hope/vuepress-theme-hope/issues/3127)) ([d9cb0b3](https://github.com/vuepress-theme-hope/vuepress-theme-hope/commit/d9cb0b3f34ce7fbe7edfeb23ee118b674e7be77d))
+- **md-enhance:** fix card logo ([b593e6a](https://github.com/vuepress-theme-hope/vuepress-theme-hope/commit/b593e6ac71f59690ae37f3d6250126f20381ac6a))
+- **theme:** fix page cover ([1e89768](https://github.com/vuepress-theme-hope/vuepress-theme-hope/commit/1e89768ad67beec8dfb045780c1d6d42e066d17d))
+
+### Performance Improvements
+
+- **components:** optimize import ([b501134](https://github.com/vuepress-theme-hope/vuepress-theme-hope/commit/b501134234e6cb2a45dda44bc2ebc31c31ebb706))
+
 ## [2.0.0-beta.210](https://github.com/vuepress-theme-hope/vuepress-theme-hope/compare/v2.0.0-beta.209...v2.0.0-beta.210) (2023-05-11)
 
 ### Features
