@@ -5,6 +5,7 @@ import {
   type VNode,
   defineComponent,
   h,
+  nextTick,
   onMounted,
   ref,
   shallowRef,
@@ -17,6 +18,7 @@ import "../styles/tabs.scss";
 export interface TabProps extends Record<string, unknown> {
   title: string;
   id?: string;
+  navId?: string;
 }
 
 const tabStore = useStorage<Record<string, string>>("VUEPRESS_TAB_STORE", {});
@@ -127,10 +129,8 @@ export default defineComponent({
       hash = hash?.substring(1);
 
       if (hash) {
-        // match tab id first
-        let index = props.data.findIndex(
-          ({ title, id: value = title }) => hash === value
-        );
+        // match the navId of tabs first
+        let index = props.data.findIndex(({ navId }) => hash === navId);
 
         if (index !== -1) return index;
 
@@ -195,7 +195,7 @@ export default defineComponent({
             h(
               "div",
               { class: "tab-list-nav", role: "tablist" },
-              props.data.map(({ title, id: value = title }, index) => {
+              props.data.map(({ title, navId }, index) => {
                 const isActive = index === activeIndex.value;
 
                 return h(
@@ -206,7 +206,7 @@ export default defineComponent({
                       if (element)
                         tabRefs.value[index] = <HTMLUListElement>element;
                     },
-                    id: value, // set id for vue-router to scroll, avoid the warning
+                    id: navId, // set id for vue-router to scroll, avoid the warning
                     class: ["tab-list-nav-item", { active: isActive }],
                     role: "tab",
                     "aria-controls": `tab-${props.id}-${index}`,

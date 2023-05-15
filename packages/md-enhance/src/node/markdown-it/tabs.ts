@@ -10,9 +10,10 @@ export const tabs: PluginSimple = (md) => {
     tabsOpenRenderer: ({ active, data }, tokens, index) => {
       // eslint-disable-next-line @typescript-eslint/no-unsafe-assignment
       const { meta } = tokens[index];
-      const tabData = data.map(({ title, id }) => ({
+      const tabData = data.map(({ title, id, navId }) => ({
         title,
         ...(id ? { id } : {}),
+        ...(navId ? { navId } : {}),
       }));
 
       return `<Tabs id="${index}" :data='${stringifyProp(tabData)}'${

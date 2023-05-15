@@ -104,7 +104,8 @@
       "glob-stream": "^7.0.0",
       "glob-parent": "^6.0.2",
       "micromatch": "^4.0.5",
-      "yargs-parser": "^21.1.1"
+      "yargs-parser": "^21.1.1",
+      "@mdit/plugin-tab": "file:mdit-plugin-tab-0.4.5.tgz"
     },
     "peerDependencyRules": {
       "ignoreMissing": [
