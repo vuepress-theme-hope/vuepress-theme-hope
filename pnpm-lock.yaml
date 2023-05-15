@@ -1300,10 +1300,10 @@ importers:
         specifier: ^13.2.2
         version: 13.2.2(sass@1.62.1)
       vue:
-        specifier: 3.3.2
+        specifier: ^3.3.2
         version: 3.3.2
       vue-router:
-        specifier: 4.2.0
+        specifier: ^4.2.0
         version: 4.2.0(vue@3.3.2)
       vuepress:
         specifier: 2.0.0-beta.62
