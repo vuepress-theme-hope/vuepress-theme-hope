@@ -18,7 +18,7 @@ VuePress has a default theme out of the box, which is applied to our documentati
 
 If you don't specify the theme to use, the default theme will be used automatically.
 
-To configure the default theme, you need to import and use it in your config file via the [theme](https://v2.vuepress.vuejs.org/reference/config.html#theme) option:
+To configure the default theme, you need to import and use it in your config file via the [theme](https://vuejs.press/reference/config.html#theme) option:
 
 ```js
 import { defaultTheme } from "vuepress";
@@ -36,7 +36,7 @@ export default {
 };
 ```
 
-The default theme provides basic but useful features for documentation site, you can check out [Default Theme Config Reference](https://v2.vuepress.vuejs.org/reference/default-theme/config.html) for a full list of config.
+The default theme provides basic but useful features for documentation site, you can check out [Default Theme Config Reference](https://vuejs.press/reference/default-theme/config.html) for a full list of config.
 
 However, you might think it is not good enough. Or, you want to build a different type of site, for example, a blog, instead of a documentation. Then, you can try to use a community theme or create a local theme.
 
@@ -46,4 +46,4 @@ Community users have created lots of themes and published them to [NPM](https://
 
 ## Local Theme
 
-If you want to use your own custom theme but don't want to publish it, you can create a local theme. Refer to [Advanced > Writing a Theme](https://v2.vuepress.vuejs.org/advanced/theme.html) for how to write your own theme.
+If you want to use your own custom theme but don't want to publish it, you can create a local theme. Refer to [Advanced > Writing a Theme](https://vuejs.press/advanced/theme.html) for how to write your own theme.

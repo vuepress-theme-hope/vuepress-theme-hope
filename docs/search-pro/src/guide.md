@@ -15,7 +15,7 @@ Although client-side search does not require a backend and is easy to add to doc
 
 So you should choose a service provider to provide search services for your site if possible, such as [Algolia](https://www.algolia.com/), or choose an open source search crawler tool and host it on your own server to provide a search service and regularly craw your site. This is necessary for large sites because users send search terms to the search API via network requests and get search results directly.
 
-In particular, [DocSearch](https://docsearch.algolia.com/) is a free search service provided by Algolia for open source projects. If you are creating open source project documentation or an open source technical blog, you can [apply for it](https://docsearch.algolia.com/apply/), and use [`@vuepress/plugin-docsearch`](https://v2.vuepress.vuejs.org/reference/plugin/docsearch.html) plugin to provide search features.
+In particular, [DocSearch](https://docsearch.algolia.com/) is a free search service provided by Algolia for open source projects. If you are creating open source project documentation or an open source technical blog, you can [apply for it](https://docsearch.algolia.com/apply/), and use [`@vuepress/plugin-docsearch`](https://vuejs.press/reference/plugin/docsearch.html) plugin to provide search features.
 
 You should use client-side search only when you **do not meet the applying requirements for DocSearch** and **are not willing to pay for service providers**, **can not set up your own search service**.
 

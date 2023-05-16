@@ -77,7 +77,7 @@ npx vp-update
 
 如果要删除它们，请使用 `--debug` Flag 运行主题，你将收到警告日志，告诉你可能无法识别的标签。
 
-如果你仍然想使用它们，请查看 [此处](https://v2.vuepress.vuejs.org/zh/guide/markdown.html#%E9%9D%9E%E6%A0%87%E5%87%86%E7%9A%84-html-%E6%A0%87%E7%AD%BE) 以获得解决方法。
+如果你仍然想使用它们，请查看 [此处](https://vuejs.press/zh/guide/markdown.html#%E9%9D%9E%E6%A0%87%E5%87%86%E7%9A%84-html-%E6%A0%87%E7%AD%BE) 以获得解决方法。
 
 ## `Hydration completed but contains mismatches.`
 

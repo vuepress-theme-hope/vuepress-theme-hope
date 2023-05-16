@@ -72,7 +72,7 @@ export default {
 
 ::: tip
 
-前往 [配置参考](https://v2.vuepress.vuejs.org/zh/reference/config.html) 查看所有 VuePress 配置。
+前往 [配置参考](https://vuejs.press/zh/reference/config.html) 查看所有 VuePress 配置。
 
 :::
 
@@ -126,6 +126,6 @@ export default defineClientConfig({
 
 和配置文件不同，客户端配置文件不能通过命令行接口的选项来指定。
 
-可以前往 [深入 > Cookbook > 客户端配置的使用方法](https://v2.vuepress.vuejs.org/zh/advanced/cookbook/usage-of-client-config.html) 来了解更多信息。
+可以前往 [深入 > Cookbook > 客户端配置的使用方法](https://vuejs.press/zh/advanced/cookbook/usage-of-client-config.html) 来了解更多信息。
 
 :::

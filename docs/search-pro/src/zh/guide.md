@@ -15,7 +15,7 @@ icon: lightbulb
 
 所以你应该在条件允许的情况下，尽可能选择服务提供商为你的站点提供搜索服务，例如 [Algolia](https://www.algolia.com/)，或者选择开源工具在自己的服务器上加载搜索服务并定期为自己的网站生成索引。对于大型站点这很必要因为用户通过网络请求向搜索 API 发送搜索字词，并直接得到搜索结果。
 
-特别提示，[DocSearch](https://docsearch.algolia.com/) 是 Algolia 为开源项目提供的免费搜索服务。如果你在创建开源项目文档或开源技术博客，你可 [申请它](https://docsearch.algolia.com/apply/)，并使用 [`@vuepress/plugin-docsearch`](https://v2.vuepress.vuejs.org/zh/reference/plugin/docsearch.html) 插件提供搜索。
+特别提示，[DocSearch](https://docsearch.algolia.com/) 是 Algolia 为开源项目提供的免费搜索服务。如果你在创建开源项目文档或开源技术博客，你可 [申请它](https://docsearch.algolia.com/apply/)，并使用 [`@vuepress/plugin-docsearch`](https://vuejs.press/zh/reference/plugin/docsearch.html) 插件提供搜索。
 
 只有当你在**不满足 DocSearch 申请条件**且**不愿意付费使用服务提供商**、**不具备自行构建搜索服务条件**时，你才应该使用客户端搜索。
 

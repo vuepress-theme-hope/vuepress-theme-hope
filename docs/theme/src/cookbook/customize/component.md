@@ -20,7 +20,7 @@ This tutorial will guide you on how to use Vue components and Vue syntax in your
 
 You can automatically register components via the `@vuepress/plugin-register-components` plugin.
 
-For details about how to use the plugin, see [Official Documentation](https://v2.vuepress.vuejs.org/reference/plugin/register-components.html).
+For details about how to use the plugin, see [Official Documentation](https://vuejs.press/reference/plugin/register-components.html).
 
 ### Register via ClientConfigFile
 

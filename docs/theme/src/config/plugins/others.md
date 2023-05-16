@@ -139,4 +139,4 @@ For plugin config, please refer to <ProjectLink name="sitemap2" path="/config.ht
 
 :::
 
-[git-config]: https://v2.vuepress.vuejs.org/reference/plugin/git.html
+[git-config]: https://vuejs.press/reference/plugin/git.html

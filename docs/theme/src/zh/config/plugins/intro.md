@@ -105,11 +105,11 @@ tag:
 
 - [@vuepress/plugin-theme-data][theme-data]: 主题配置的 Composition API 插件
 
-[active-header-links]: https://v2.vuepress.vuejs.org/zh/reference/plugin/active-header-links.html
-[container]: https://v2.vuepress.vuejs.org/zh/reference/plugin/container.html
-[external-link-icon]: https://v2.vuepress.vuejs.org/zh/reference/plugin/external-link-icon.html
-[git]: https://v2.vuepress.vuejs.org/zh/reference/plugin/git.html
-[nprogress]: https://v2.vuepress.vuejs.org/zh/reference/plugin/nprogress.html
-[prismjs]: https://v2.vuepress.vuejs.org/zh/reference/plugin/prismjs.html
-[theme-data]: https://v2.vuepress.vuejs.org/zh/reference/plugin/theme-data.html
-[vuepress]: https://v2.vuepress.vuejs.org/zh/
+[active-header-links]: https://vuejs.press/zh/reference/plugin/active-header-links.html
+[container]: https://vuejs.press/zh/reference/plugin/container.html
+[external-link-icon]: https://vuejs.press/zh/reference/plugin/external-link-icon.html
+[git]: https://vuejs.press/zh/reference/plugin/git.html
+[nprogress]: https://vuejs.press/zh/reference/plugin/nprogress.html
+[prismjs]: https://vuejs.press/zh/reference/plugin/prismjs.html
+[theme-data]: https://vuejs.press/zh/reference/plugin/theme-data.html
+[vuepress]: https://vuejs.press/zh/

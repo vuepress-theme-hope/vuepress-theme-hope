@@ -140,4 +140,4 @@ tag:
 
 :::
 
-[git-config]: https://v2.vuepress.vuejs.org/zh/reference/plugin/git.html
+[git-config]: https://vuejs.press/zh/reference/plugin/git.html

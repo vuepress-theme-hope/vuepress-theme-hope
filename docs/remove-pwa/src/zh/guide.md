@@ -19,4 +19,4 @@ PWA 插件，如 [`@vuepress/plugin-pwa`][official-pwa] 和 <ProjectLink name="p
 
 :::
 
-[official-pwa]: https://v2.vuepress.vuejs.org/zh/reference/plugin/pwa.html
+[official-pwa]: https://vuejs.press/zh/reference/plugin/pwa.html

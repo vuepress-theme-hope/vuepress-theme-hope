@@ -118,13 +118,13 @@ export interface PluginsOptions {
    *
    * @description By default this plugin is only enabled in production mode for performance reasons.
    *
-   * @see https://v2.vuepress.vuejs.org/reference/plugin/git.html
+   * @see https://vuejs.press/reference/plugin/git.html
    *
    * Git 插件配置
    *
    * @description 默认情况下，出于性能原因，此插件仅在生产模式下启用。
    *
-   * @see https://v2.vuepress.vuejs.org/zh/reference/plugin/git.html
+   * @see https://vuejs.press/zh/reference/plugin/git.html
    */
   git?: GitPluginOptions | boolean;
 

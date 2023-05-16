@@ -18,7 +18,7 @@ The Markdown content in VuePress will be parsed by [markdown-it](https://github.
 
 This section will introduce built-in Markdown syntax extensions of VuePress.
 
-You can also configure those built-in extensions, load more markdown-it plugins and implement your own extensions via [markdown](https://v2.vuepress.vuejs.org/reference/config.md#markdown) option and [extendsMarkdown](https://v2.vuepress.vuejs.org/reference/plugin-api.html#extendsmarkdown) option.
+You can also configure those built-in extensions, load more markdown-it plugins and implement your own extensions via [markdown](https://vuejs.press/reference/config.md#markdown) option and [extendsMarkdown](https://vuejs.press/reference/plugin-api.html#extendsmarkdown) option.
 
 ### Embedded
 
@@ -34,7 +34,7 @@ You might have noticed that, a `#` anchor is displayed when you hover the mouse 
 ::: tip
 This header anchors extension is supported by [markdown-it-anchor](https://github.com/valeriangalliat/markdown-it-anchor).
 
-Config reference: [markdown.anchor](https://v2.vuepress.vuejs.org/reference/config.html#markdown-anchor)
+Config reference: [markdown.anchor](https://vuejs.press/reference/config.html#markdown-anchor)
 :::
 
 ### Links
@@ -112,12 +112,12 @@ Try to use relative paths instead of absolute paths for internal links.
 
 - Relative paths are valid links to the target files, and they can navigate correctly when browsing the source files in your editor or repository.
 - Relative paths are consistent in different locales, so you don't need to change the locale path when translating your content.
-- When using absolute paths, if the [base](https://v2.vuepress.vuejs.org/reference/config.html#base) of your site is not `"/"`, you will need to prepend the `base` manually or use [base helper](https://v2.vuepress.vuejs.org/guide/assets.html#base-helper).
+- When using absolute paths, if the [base](https://vuejs.press/reference/config.html#base) of your site is not `"/"`, you will need to prepend the `base` manually or use [base helper](https://vuejs.press/guide/assets.html#base-helper).
 
 ::: tip
 This links extension is supported by our built-in plugin.
 
-Config reference: [markdown.links](https://v2.vuepress.vuejs.org/reference/config.html#markdown-links)
+Config reference: [markdown.links](https://vuejs.press/reference/config.html#markdown-links)
 :::
 
 ### Emoji
@@ -139,7 +139,7 @@ VuePress 2 is out :tada: !
 ::: tip
 This emoji extension is supported by [markdown-it-emoji](https://github.com/markdown-it/markdown-it-emoji).
 
-Config reference: [markdown.emoji](https://v2.vuepress.vuejs.org/reference/config.html#markdown-emoji)
+Config reference: [markdown.emoji](https://vuejs.press/reference/config.html#markdown-emoji)
 :::
 
 ### Table of Contents
@@ -161,7 +161,7 @@ The headers in TOC will link to the corresponding [header anchors](#header-ancho
 ::: tip
 This toc extension is supported by our built-in plugin, which is forked and modified from [markdown-it-toc-done-right](https://github.com/nagaozen/markdown-it-toc-done-right).
 
-Config reference: [markdown.toc](https://v2.vuepress.vuejs.org/reference/config.html#markdown-toc)
+Config reference: [markdown.toc](https://vuejs.press/reference/config.html#markdown-toc)
 :::
 
 ### Code Blocks
@@ -217,7 +217,7 @@ Examples for line ranges mark:
 ::: tip
 This line highlighting extension is supported by our built-in plugin, which is forked and modified from [markdown-it-highlight-lines](https://github.com/egoist/markdown-it-highlight-lines).
 
-Config reference: [markdown.code.highlightLines](https://v2.vuepress.vuejs.org/reference/config.html#markdown-code-highlightlines)
+Config reference: [markdown.code.highlightLines](https://vuejs.press/reference/config.html#markdown-code-highlightlines)
 :::
 
 #### Line Numbers
@@ -259,7 +259,7 @@ const line3 = 'This is line 3'
 ::: tip
 This line numbers extension is supported by our built-in plugin.
 
-Config reference: [markdown.code.lineNumbers](https://v2.vuepress.vuejs.org/reference/config.html#markdown-code-linenumbers)
+Config reference: [markdown.code.lineNumbers](https://vuejs.press/reference/config.html#markdown-code-linenumbers)
 :::
 
 #### Wrap with v-pre
@@ -322,7 +322,7 @@ const onePlusTwoPlusThree = {{ 1 + 2 + 3 }}
 ::: tip
 This v-pre extension is supported by our built-in plugin.
 
-Config reference: [markdown.code.vPre](https://v2.vuepress.vuejs.org/reference/config.html#markdown-vpre)
+Config reference: [markdown.code.vPre](https://vuejs.press/reference/config.html#markdown-vpre)
 :::
 
 ### Import Code Blocks
@@ -396,14 +396,14 @@ export default {
 ::: tip
 This import code extension is supported by our built-in plugin.
 
-Config reference: [markdown.importCode](https://v2.vuepress.vuejs.org/reference/config.html#markdown-importcode)
+Config reference: [markdown.importCode](https://vuejs.press/reference/config.html#markdown-importcode)
 :::
 
 ## Using Vue in Markdown
 
 This section will introduce some basic usage of Vue in Markdown.
 
-Check out [Cookbook > Markdown and Vue SFC](https://v2.vuepress.vuejs.org/advanced/cookbook/markdown-and-vue-sfc.html) for more details.
+Check out [Cookbook > Markdown and Vue SFC](https://vuejs.press/advanced/cookbook/markdown-and-vue-sfc.html) for more details.
 
 ### Template Syntax
 
@@ -448,7 +448,7 @@ This is default theme built-in `<Badge />` component <Badge text="demo" />
 
 ::: tip
 
-Check out the [Built-in Components](https://v2.vuepress.vuejs.org/reference/components.html) for a full list of built-in components.
+Check out the [Built-in Components](https://vuejs.press/reference/components.html) for a full list of built-in components.
 
 :::
 
@@ -464,5 +464,5 @@ You should try to avoid using deprecated HTML tags. However, to use those tags a
 
 - Adding a [v-pre](https://v3.vuejs.org/api/directives.html#v-pre) directive to skip the compilation of the element and its children. Notice that the template syntax would also be invalid.
 - Using [compilerOptions.isCustomElement](https://v3.vuejs.org/api/application-config.html#compileroptions) to tell Vue template compiler not try to resolve them as components.
-  - For `@bundler-webpack`, set [vue.compilerOptions](https://v2.vuepress.vuejs.org/reference/bundler/webpack.html#vue)
-  - For `@bundler-vite`, set [vuePluginOptions.template.compilerOptions](https://v2.vuepress.vuejs.org/reference/bundler/vite.html#vuepluginoptions)
+  - For `@bundler-webpack`, set [vue.compilerOptions](https://vuejs.press/reference/bundler/webpack.html#vue)
+  - For `@bundler-vite`, set [vuePluginOptions.template.compilerOptions](https://vuejs.press/reference/bundler/vite.html#vuepluginoptions)

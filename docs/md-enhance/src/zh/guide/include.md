@@ -401,7 +401,7 @@ export default {
 
 :::
 
-此外，如果你想将 Markdown 文件直接放在实际文件旁边，但不希望它们呈现为页面，你可以在 VuePress 配置中设置 `pagePatterns` 选项。有关详细信息，请参阅 [pagePatterns](https://v2.vuepress.vuejs.org/zh/reference/config.html#pagepatterns)。
+此外，如果你想将 Markdown 文件直接放在实际文件旁边，但不希望它们呈现为页面，你可以在 VuePress 配置中设置 `pagePatterns` 选项。有关详细信息，请参阅 [pagePatterns](https://vuejs.press/zh/reference/config.html#pagepatterns)。
 
 ::: code-tabs#language
 

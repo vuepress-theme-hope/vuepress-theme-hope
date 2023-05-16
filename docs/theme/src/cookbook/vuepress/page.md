@@ -27,7 +27,7 @@ Assuming this is the directory structure of your Markdown files:
    └─ README.md
 ```
 
-Take the `docs` directory as your [sourceDir](https://v2.vuepress.vuejs.org/reference/cli.html), e.g. you are running `vuepress dev docs` command. Then the route paths of your Markdown files would be:
+Take the `docs` directory as your [sourceDir](https://vuejs.press/reference/cli.html), e.g. you are running `vuepress dev docs` command. Then the route paths of your Markdown files would be:
 
 | Relative Path      | Route Path           |
 | ------------------ | -------------------- |
@@ -54,7 +54,7 @@ Also, VuePress has built-in support for some frontmatter fields, and your theme 
 
 ::: tip
 
-Check out the [Frontmatter Reference](https://v2.vuepress.vuejs.org/reference/frontmatter.html) for a full list of VuePress built-in frontmatter.
+Check out the [Frontmatter Reference](https://vuejs.press/reference/frontmatter.html) for a full list of VuePress built-in frontmatter.
 
 Check out the [Config > Frontmatter](../../config/frontmatter/README.md) for the frontmatter of `vuepress-theme-hope`.
 

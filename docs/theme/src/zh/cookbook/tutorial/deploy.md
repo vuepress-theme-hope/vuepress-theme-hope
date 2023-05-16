@@ -24,7 +24,7 @@ tag:
 
 ## 部署到 GitHub Pages
 
-如果你在使用模板，且在创建过程中选择了创建自动部署文档的 GitHub 工作流，那么你唯一要做的就是设置正确的 [base 选项](https://v2.vuepress.vuejs.org/zh/reference/config.html#base)。
+如果你在使用模板，且在创建过程中选择了创建自动部署文档的 GitHub 工作流，那么你唯一要做的就是设置正确的 [base 选项](https://vuejs.press/zh/reference/config.html#base)。
 
 - 如果你准备发布到 `https://<USERNAME>.github.io/`，你必须将整个项目上传至 `https://github.com/<USERNAME>/<USERNAME>.github.io` 仓库。在这种情况下你无需进行任何更改，因为 base 默认就是 `"/"`。
 
@@ -38,7 +38,7 @@ tag:
 
 ## 其他部署方式
 
-关于其他部署方式，请参阅 [VuePress → 部署](https://v2.vuepress.vuejs.org/zh/guide/deployment.html)。
+关于其他部署方式，请参阅 [VuePress → 部署](https://vuejs.press/zh/guide/deployment.html)。
 
 ::: tip Gitee
 
