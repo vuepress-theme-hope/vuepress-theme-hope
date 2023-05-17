@@ -17,7 +17,17 @@ import "../styles/twikoo.scss";
 export default defineComponent({
   name: "TwikooComment",
 
-  setup() {
+  props: {
+    /**
+     * The path of the comment
+     */
+    identifier: {
+      type: String,
+      required: true,
+    },
+  },
+
+  setup(props) {
     const twikooOptions = useTwikooOptions();
     const lang = usePageLang();
     const page = usePageData();
@@ -40,6 +50,7 @@ export default defineComponent({
 
       await init({
         lang: lang.value === "zh-CN" ? "zh-CN" : "en",
+        path: props.identifier,
         ...twikooOptions,
         el: "#twikoo-comment",
       });

@@ -1,9 +1,4 @@
-import {
-  usePageData,
-  usePageFrontmatter,
-  usePageLang,
-  withBase,
-} from "@vuepress/client";
+import { usePageFrontmatter, usePageLang } from "@vuepress/client";
 import { pageviewCount } from "@waline/client/dist/pageview.mjs";
 import {
   type VNode,
@@ -41,9 +36,18 @@ export { pageviewCount };
 export default defineComponent({
   name: "WalineComment",
 
-  setup() {
+  props: {
+    /**
+     * The path of the comment
+     */
+    identifier: {
+      type: String,
+      required: true,
+    },
+  },
+
+  setup(props) {
     const walineOptions = useWalineOptions();
-    const page = usePageData();
     const frontmatter = usePageFrontmatter<CommentPluginFrontmatter>();
     const lang = usePageLang();
     const walineLocale = useLocaleConfig(walineLocales);
@@ -64,19 +68,17 @@ export default defineComponent({
       );
     });
 
-    const walineKey = computed(() => withBase(page.value.path));
-
     const walineProps = computed(() => ({
       lang: lang.value === "zh-CN" ? "zh-CN" : "en",
       locale: walineLocale.value,
       dark: "html.dark",
       ...walineOptions,
-      path: walineKey.value,
+      path: props.identifier,
     }));
 
     onMounted(() => {
       watch(
-        walineKey,
+        () => props.identifier,
         () => {
           abort?.();
 
@@ -85,7 +87,7 @@ export default defineComponent({
               setTimeout(() => {
                 abort = pageviewCount({
                   serverURL: walineOptions.serverURL,
-                  path: walineKey.value,
+                  path: props.identifier,
                 });
               }, walineOptions.delay || 800);
             });

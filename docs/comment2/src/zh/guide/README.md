@@ -12,18 +12,17 @@ icon: lightbulb
 @tab 通过插件选项
 
 ```ts
-// .vuepress/config.ts
-module.exports = {
-  plugins: [
-    [
-      "@vuepress/comment2",
-      {
-        provider: "Artalk", // Artalk | Giscus | Waline | Twikoo
+import { commentPlugin } from "vuepress-plugin-comment2";
 
-        // 在这里放置其他选项
-        // ...
-      },
-    ],
+// .vuepress/config.ts
+export default {
+  plugins: [
+    commentPlugin({
+      provider: "Artalk", // Artalk | Giscus | Waline | Twikoo
+
+      // 在这里放置其他选项
+      // ...
+    }),
   ],
 };
 ```
@@ -79,6 +78,12 @@ export default defineClientConfig({
 - 你可以通过在页面 frontmatter 中设置 `comment: false` 在本地禁用它。
 
 - 要使其全局禁用，请在插件选项中将 `comment` 设置为 `false`。 然后你可以在页面 frontmatter 中设置 comment: true 以在局部启用它。
+
+## 评论标识
+
+您可以在页面 frontmatter 中设置 commentID 选项来自定义评论 ID，该 ID 用于标识要用于页面的评论存储项。
+
+默认情况下，它将是页面的 `path` ，这意味着如果您将站点部署到多个位置，站点间具有相同内容的页面将共享相同的评论数据。
 
 ## 评论服务
 

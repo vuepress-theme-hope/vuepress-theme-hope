@@ -1,4 +1,4 @@
-import { usePageData, usePageLang, withBase } from "@vuepress/client";
+import { usePageLang } from "@vuepress/client";
 import { type VNode, computed, defineComponent, h, onMounted, ref } from "vue";
 import { LoadingIcon } from "vuepress-shared/client";
 
@@ -66,6 +66,14 @@ export default defineComponent({
 
   props: {
     /**
+     * The path of the comment
+     */
+    identifier: {
+      type: String,
+      required: true,
+    },
+
+    /**
      * Whether the component is in darkmode
      *
      * 组件是否处于夜间模式
@@ -75,7 +83,6 @@ export default defineComponent({
 
   setup(props) {
     const giscusOptions = useGiscusOptions();
-    const page = usePageData();
 
     const enableGiscus = Boolean(
       giscusOptions.repo &&
@@ -112,7 +119,7 @@ export default defineComponent({
             ? giscusOptions.darkTheme || "dark"
             : giscusOptions.lightTheme || "light",
           mapping: giscusOptions.mapping || "pathname",
-          term: withBase(page.value.path),
+          term: props.identifier,
           inputPosition: giscusOptions.inputPosition || "top",
           reactionsEnabled:
             giscusOptions.reactionsEnabled === false ? "0" : "1",
