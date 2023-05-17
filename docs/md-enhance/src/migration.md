@@ -13,7 +13,7 @@ You can pass the second argument `true` to enable legacy mode when calling `mdEn
 
   The plugin now check your Markdown links and warn you when broken links are detected.
 
-  You can control this behavior with `linkCheck` option
+  You can control this behavior with `checkLinks` option
 
 - image mark support
 

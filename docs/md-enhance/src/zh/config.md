@@ -46,7 +46,7 @@ icon: gears
 
 :::
 
-### linksCheck
+### checkLinks
 
 - 类型: `LinksCheckOptions`
 

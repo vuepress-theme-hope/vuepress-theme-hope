@@ -59,19 +59,31 @@ Whether to enable custom container including
 - danger
 - details
 
-### linkCheck
+### checkLinks
 
-- Type: `"always" | "dev" | "build" | "never" | boolean`
-- Default: `"dev"`
+- Type: `LinksCheckOptions`
 
-Whether to enable link check.
+  ```ts
+  type LinksCheckStatus = "always" | "dev" | "build" | "never";
 
-::: note
+  interface LinksCheckOptions {
+    /**
+     * Whether check dead links in markdown
+     *
+     * @default "dev"
+     */
+    status?: LinksCheckStatus;
 
-- `true` equals to `'always'`
-- `false` equals to `'never'`
+    /**
+     * Dead links to ignore
+     */
+    ignore?: (string | RegExp)[] | ((link: string, isDev: boolean) => boolean);
+  }
+  ```
 
-:::
+- Default: `{ status: "dev" }`
+
+Whether to enable links check.
 
 ### vPre
 

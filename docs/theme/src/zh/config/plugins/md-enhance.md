@@ -59,19 +59,31 @@ tag:
 - danger
 - details
 
-### linkCheck
+### checkLinks
 
-- 类型: `"always" | "dev" | "build" | "never" | boolean`
-- 默认值: `"dev"`
+- 类型: `LinksCheckOptions`
+
+  ```ts
+  type LinksCheckStatus = "always" | "dev" | "build" | "never";
+
+  interface LinksCheckOptions {
+    /**
+     * 是否检查 Markdown 中的死链
+     *
+     * @default "dev"
+     */
+    status?: LinksCheckStatus;
+
+    /**
+     * 忽略的死链
+     */
+    ignore?: (string | RegExp)[] | ((link: string, isDev: boolean) => boolean);
+  }
+  ```
+
+- 默认值: `{ status: "dev" }`
 
 是否启用链接检查。
-
-::: note
-
-- `true` 等同于 `'always'`
-- `false` 等同于 `'never'`
-
-:::
 
 ### vPre
 

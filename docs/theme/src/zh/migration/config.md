@@ -255,7 +255,7 @@ tag:
 
     该插件现在检查你的 Markdown 链接，并在检测到损坏的链接时警告你。
 
-    你可以通过 `plugins.mdEnhance.linkCheck` 选项控制此行为
+    你可以通过 `plugins.mdEnhance.checkLinks` 选项控制此行为
 
   - 图像标记支持 ![新增](https://img.shields.io/badge/-新增-brightgreen)
 

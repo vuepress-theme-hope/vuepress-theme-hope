@@ -46,7 +46,7 @@ The last 4 items conflict with default theme and will override its style.
 
 :::
 
-### linksCheck
+### checkLinks
 
 - Type: `LinksCheckOptions`
 

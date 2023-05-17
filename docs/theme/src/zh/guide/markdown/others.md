@@ -12,7 +12,31 @@ tag:
 
 主题默认在开发模式下检查你的 Markdown 链接。
 
-你可以在主题选项中通过 `plugins.mdEnhance.linkCheck` 自定义此功能，你可以选择 `'always'`、`'never'`、`'dev'` 和 `'build'`。
+您可以通过插件选项中的 `checkLinks` 自定义此功能。 `checkLinks` 接收一个对象。
+
+- 您可以使用 `checkLinks.status` 自定义链接检查状态，您可以在 `'always'`、`'never'`、`'dev'` 和 `'build'` 中选择。
+- 要忽略某些链接，您可以将 `checkLinks.ignore` 设置为字符串和 RegExp 的数组，或者填入一个接收 link 和 isDev 作为参数并返回一个布尔值以标识是否忽略此链接的函数。
+
+例如:
+
+```js
+export default {
+  plugins: [
+    mdEnhancePlugins({
+      checkLinks: {
+        // 仅在开发模式下检查链接
+        status: "dev",
+        ignore: [
+          // 忽略以 `/api/` 开头的链接
+          /^\/api\//,
+          // 忽略 `/playground.html`
+          "/playground.html",
+        ],
+      },
+    }),
+  ],
+};
+```
 
 ## GFM
 
