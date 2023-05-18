@@ -23,7 +23,7 @@ VuePress 是以 Markdown 为中心的。你项目中的每一个 Markdown 文件
 由于你的项目是通过创建助手生成的，那么你会得到以下文件结构:
 
 ```
-└─ docs
+└─ src
    ├─ guide
    │  ├─ ...
    │  └─ page.md
