@@ -60,8 +60,8 @@
     "mpegts.js": "^1.7.3",
     "plyr": "^3.7.8",
     "qrcode": "^1.5.3",
-    "vue": "^3.3.2",
-    "vue-router": "^4.2.0",
+    "vue": "^3.3.4",
+    "vue-router": "^4.2.1",
     "vuepress-plugin-reading-time2": "workspace:*",
     "vuepress-plugin-sass-palette": "workspace:*",
     "vuepress-shared": "workspace:*"
