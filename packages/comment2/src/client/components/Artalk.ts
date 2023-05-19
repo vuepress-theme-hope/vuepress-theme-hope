@@ -87,7 +87,11 @@ export default defineComponent({
       watch(
         () => page.value.path,
         async () => {
-          artalk?.destroy();
+          try {
+            artalk?.destroy();
+          } catch (err) {
+            // do nothing
+          }
           await initArtalk();
         },
         { immediate: true }
