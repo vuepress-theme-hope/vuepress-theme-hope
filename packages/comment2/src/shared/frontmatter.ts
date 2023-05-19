@@ -11,6 +11,13 @@ export interface CommentPluginFrontmatter extends BasePageFrontMatter {
   comment?: boolean;
 
   /**
+   * Comment identifier
+   *
+   * 评论标识符
+   */
+  commentID?: string;
+
+  /**
    * @description Only available when using valine
    *
    * 是否启用访问量

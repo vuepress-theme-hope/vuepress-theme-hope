@@ -12,18 +12,17 @@ You can both set options with plugin options on Node side and set options in cli
 @tab With Plugin Options
 
 ```ts
-// .vuepress/config.ts
-module.exports = {
-  plugins: [
-    [
-      "@vuepress/comment2",
-      {
-        provider: "Artalk", // Artalk | Giscus | Waline | Twikoo
+import { commentPlugin } from "vuepress-plugin-comment2";
 
-        // other options here
-        // ...
-      },
-    ],
+// .vuepress/config.ts
+export default {
+  plugins: [
+    commentPlugin({
+      provider: "Artalk", // Artalk | Giscus | Waline | Twikoo
+
+      // other options here
+      // ...
+    }),
   ],
 };
 ```
@@ -79,6 +78,12 @@ By default, `<CommentService />` component is enabled globally, and you can use 
 - You can disable it locally by setting `comment: false` in page frontmatter.
 
 - To keep it globally disabled, please set `comment` to `false` in the plugin options. Then you can set `comment: true` in page frontmatter to enable it locally.
+
+## Comment ID
+
+You can set `commentID` option in page frontmatter to customize comment ID, which is used to identify comment storage item to use for a page.
+
+By default it will be the `path` of the page, which means if you are deploying the site to multiple places, page with same content across sites will share the same comment data.
 
 ## Comment Services
 

@@ -1,4 +1,4 @@
-import { usePageFrontmatter } from "@vuepress/client";
+import { usePageData, usePageFrontmatter } from "@vuepress/client";
 import { type VNode, computed, defineComponent, h } from "vue";
 import CommentProvider from "vuepress-plugin-comment2/provider";
 
@@ -19,6 +19,7 @@ export default defineComponent({
 
   setup(props) {
     const commentOptions = useCommentOptions();
+    const page = usePageData();
     const frontmatter = usePageFrontmatter<CommentPluginFrontmatter>();
 
     const enableComment = commentOptions.comment !== false;
@@ -32,6 +33,7 @@ export default defineComponent({
 
     return (): VNode | null =>
       h(CommentProvider, {
+        identifier: frontmatter.value.commentID || page.value.path,
         darkmode: props.darkmode,
         style: { display: enabled.value ? "block" : "none" },
       });

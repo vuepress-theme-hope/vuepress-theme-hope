@@ -22,6 +22,14 @@ export default defineComponent({
 
   props: {
     /**
+     * The path of the comment
+     */
+    identifier: {
+      type: String,
+      required: true,
+    },
+
+    /**
      * Whether the component is in darkmode
      *
      * 组件是否处于夜间模式
@@ -59,7 +67,7 @@ export default defineComponent({
             pageTitle: page.value.title,
             ...artalkOptions,
             el: artalkContainer.value!,
-            pageKey: page.value.path,
+            pageKey: props.identifier,
             darkMode: props.darkmode,
           });
 
