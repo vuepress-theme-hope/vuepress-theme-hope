@@ -70,7 +70,7 @@
     "gulp": "4.0.2",
     "http-server": "14.1.1",
     "husky": "8.0.3",
-    "inquirer": "9.2.4",
+    "inquirer": "9.2.5",
     "magic-string": "0.30.0",
     "markdownlint-cli": "0.34.0",
     "nano-staged": "0.8.0",
