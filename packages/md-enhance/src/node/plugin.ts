@@ -91,9 +91,7 @@ export const mdEnhancePlugin =
       key: keyof MarkdownEnhanceOptions,
       gfm = false
     ): boolean =>
-      key in options
-        ? Boolean(options[key])
-        : (gfm && "gfm" in options && options.gfm) || false;
+      key in options ? Boolean(options[key]) : (gfm && options.gfm) || false;
 
     const locales = getLocales({
       app,
@@ -112,7 +110,7 @@ export const mdEnhancePlugin =
     const mermaidEnable = getStatus("mermaid");
     const presentationEnable = getStatus("presentation");
     const katexEnable = getStatus("katex");
-    const mathjaxEnable = getStatus("mathjax");
+    const mathjaxEnable = getStatus("mathjax", true);
     const vuePlaygroundEnable = getStatus("vuePlayground");
 
     const { enabled: linksCheckEnabled, isIgnoreLink } = getLinksCheckStatus(
@@ -121,6 +119,7 @@ export const mdEnhancePlugin =
     );
 
     const katexOptions: KatexOptions<MarkdownEnv> = {
+      mathFence: options.gfm ?? false,
       macros: {
         // support more symbols
         // eslint-disable-next-line @typescript-eslint/naming-convention
@@ -155,9 +154,10 @@ export const mdEnhancePlugin =
     const mathjaxInstance =
       options.mathjax === false
         ? null
-        : createMathjaxInstance(
-            isPlainObject(options.mathjax) ? options.mathjax : {}
-          );
+        : createMathjaxInstance({
+            mathFence: options.gfm ?? false,
+            ...(isPlainObject(options.mathjax) ? options.mathjax : {}),
+          });
 
     const revealPlugins =
       isPlainObject(options.presentation) &&
