@@ -66,7 +66,10 @@ export default defineComponent({
   },
 
   slots: Object as SlotsType<{
-    [slot: `title${number}`]: () => VNode[];
+    [slot: `title${number}`]: (props: {
+      value: string;
+      isActive: boolean;
+    }) => VNode[];
     [slot: `tab${number}`]: (props: {
       value: string;
       isActive: boolean;
@@ -147,7 +150,7 @@ export default defineComponent({
             h(
               "div",
               { class: "tab-list-nav", role: "tablist" },
-              props.data.map((_item, index) => {
+              props.data.map(({ id }, index) => {
                 const isActive = index === activeIndex.value;
 
                 return h(
@@ -169,7 +172,7 @@ export default defineComponent({
                     onKeydown: (event: KeyboardEvent) =>
                       keyboardHandler(event, index),
                   },
-                  slots[`title${index}`]()
+                  slots[`title${index}`]({ value: id, isActive })
                 );
               })
             ),

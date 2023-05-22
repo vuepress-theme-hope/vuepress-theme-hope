@@ -26,7 +26,7 @@ export const codeTabs: PluginSimple = (md) => {
 ${titles
   .map(
     (title, index) => `\
-<template #title${index}>${title}</template>
+<template #title${index}="{ value, isActive }">${title}</template>
 `
   )
   .join("")}\
@@ -58,7 +58,7 @@ ${titles
       }
 
       return `\
-<template #tab${index}="{ isActive }">
+<template #tab${index}="{ value, isActive }">
 `;
     },
 

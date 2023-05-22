@@ -27,7 +27,7 @@ export const tabs: PluginSimple = (md) => {
 ${titles
   .map(
     (title, index) => `\
-<template #title${index}>${title}</template>
+<template #title${index}="{ value, isActive }">${title}</template>
 `
   )
   .join("")}\
@@ -40,7 +40,7 @@ ${titles
 
     tabOpenRenderer: ({ index }) =>
       `\
-<template #tab${index}="{ isActive }">
+<template #tab${index}="{ value, isActive }">
 `,
 
     tabCloseRenderer: () => `\
