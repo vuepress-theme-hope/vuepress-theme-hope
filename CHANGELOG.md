@@ -4,6 +4,22 @@ All notable changes to this project will be documented in this file. See [Conven
 
 <!-- #region recent-beta -->
 
+## [2.0.0-beta.212](https://github.com/vuepress-theme-hope/vuepress-theme-hope/compare/v2.0.0-beta.211...v2.0.0-beta.212) (2023-05-22)
+
+### Features
+
+- **comment2:** add commentID support in frontmatter, close [#3133](https://github.com/vuepress-theme-hope/vuepress-theme-hope/issues/3133) ([3936315](https://github.com/vuepress-theme-hope/vuepress-theme-hope/commit/39363155a773192b1ba6519f579ea9a185a36570))
+- **md-enhance:** add card container, close [#3121](https://github.com/vuepress-theme-hope/vuepress-theme-hope/issues/3121) ([2ceba34](https://github.com/vuepress-theme-hope/vuepress-theme-hope/commit/2ceba342342227a93e8a66a8da6143531f8f5992))
+- **md-enhance:** add isActive and value for title slots ([b3888a7](https://github.com/vuepress-theme-hope/vuepress-theme-hope/commit/b3888a7a88d73c202922c55dd667281ae3f49df8))
+- **md-enhance:** support markdown syntax in tab title ([f681fd4](https://github.com/vuepress-theme-hope/vuepress-theme-hope/commit/f681fd4fa1f4cad58bc284fb8da3fbba7b419ac3))
+- **md-enhance:** support math block, close [#3143](https://github.com/vuepress-theme-hope/vuepress-theme-hope/issues/3143) ([efb77dc](https://github.com/vuepress-theme-hope/vuepress-theme-hope/commit/efb77dc644f1647bfc71b848322b5ba7186af1de))
+
+### Bug Fixes
+
+- **comment2:** fix artalk, close [#3141](https://github.com/vuepress-theme-hope/vuepress-theme-hope/issues/3141) ([a9e57ea](https://github.com/vuepress-theme-hope/vuepress-theme-hope/commit/a9e57ea551d4b7f8365da9e459b28489ed2f9050))
+- **deps:** update dependency inquirer to v9.2.5 ([#3116](https://github.com/vuepress-theme-hope/vuepress-theme-hope/issues/3116)) ([2c652aa](https://github.com/vuepress-theme-hope/vuepress-theme-hope/commit/2c652aa2ad1443eac9ca1644cd9a969cb9eb133b))
+- **md-enhance:** fix mermaid preview, close [#3142](https://github.com/vuepress-theme-hope/vuepress-theme-hope/issues/3142) ([1f1baaa](https://github.com/vuepress-theme-hope/vuepress-theme-hope/commit/1f1baaa1f92a4432c6f9753f06b1a3922a0e7be5))
+
 ## [2.0.0-beta.211](https://github.com/vuepress-theme-hope/vuepress-theme-hope/compare/v2.0.0-beta.210...v2.0.0-beta.211) (2023-05-15)
 
 ### Features
