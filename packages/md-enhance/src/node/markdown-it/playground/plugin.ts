@@ -224,19 +224,25 @@ const atMarkerRule =
     return true;
   };
 
+const defaultPropsGetter = (
+  playgroundData: PlaygroundData
+): Record<string, string> => ({
+  key: playgroundData.key,
+  title: playgroundData.title || "",
+  files: encodeURIComponent(JSON.stringify(playgroundData.files)),
+  settings: encodeURIComponent(JSON.stringify(playgroundData.settings || {})),
+});
+
 export const playground: PluginWithOptions<PlaygroundOptions> = (
   md,
-  { name = "playground", component = "Playground", propsGetter } = {
+  {
+    name = "playground",
+    component = "Playground",
+    propsGetter = defaultPropsGetter,
+  } = {
     name: "playground",
     component: "Playground",
-    propsGetter: (playgroundData: PlaygroundData): Record<string, string> => ({
-      key: playgroundData.key,
-      title: playgroundData.title || "",
-      files: encodeURIComponent(JSON.stringify(playgroundData.files)),
-      settings: encodeURIComponent(
-        JSON.stringify(playgroundData.settings || {})
-      ),
-    }),
+    propsGetter: defaultPropsGetter,
   }
 ) => {
   md.block.ruler.before("fence", `${name}`, getPlaygroundRule(name), {

@@ -17,7 +17,7 @@ const VUE_SUPPORTED_EXTENSIONS = [
 ];
 
 const DEFAULT_VUE_CDN = "https://sfc.vuejs.org/vue.runtime.esm-browser.js";
-const DEFAULT_VUE_SR_CDN =
+const DEFAULT_VUE_SERVER_RENDERER_CDN =
   "https://sfc.vuejs.org/server-renderer.esm-browser.js";
 
 export const getVuePlaygroundPreset = (
@@ -59,13 +59,16 @@ export const getVuePlaygroundPreset = (
                       ...(settings.ssr
                         ? {
                             // eslint-disable-next-line @typescript-eslint/naming-convention
-                            "vue/server-renderer": DEFAULT_VUE_SR_CDN,
+                            "vue/server-renderer":
+                              DEFAULT_VUE_SERVER_RENDERER_CDN,
                           }
                         : {}),
                     },
                   },
                   importMap
-                )
+                ),
+                null,
+                2
               ),
             ];
           }
@@ -80,7 +83,7 @@ export const getVuePlaygroundPreset = (
           imports: {
             vue: DEFAULT_VUE_CDN,
             // eslint-disable-next-line @typescript-eslint/naming-convention
-            "vue/server-renderer": DEFAULT_VUE_SR_CDN,
+            "vue/server-renderer": DEFAULT_VUE_SERVER_RENDERER_CDN,
           },
         },
         null,

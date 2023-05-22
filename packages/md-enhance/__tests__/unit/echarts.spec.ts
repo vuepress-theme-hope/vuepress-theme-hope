@@ -168,4 +168,18 @@ const option = {
     expect(result).not.toContain('type=""');
     expect(result).toMatchSnapshot();
   });
+
+  it("Should not break markdown fence", () => {
+    const result = markdownIt.render(
+      `
+\`\`\`js
+const a = 1;
+\`\`\`
+`,
+      {}
+    );
+
+    expect(result).toMatch(/<pre.*>[\s\S]*<\/pre>/);
+    expect(result).toMatchSnapshot();
+  });
 });
