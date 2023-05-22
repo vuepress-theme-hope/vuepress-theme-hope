@@ -75,7 +75,27 @@ export default {
 
 卡片数据支持 `title`、`desc`、`logo`、`link` 和 `color` 属性。
 
+如果你想要将多个卡片放在一起，你可以将它们包裹在 `card` 容器中：
+
+````md
+::: card
+
+```card
+# 卡片数据
+```
+
+```card
+# 卡片数据
+```
+
+...
+
+:::
+````
+
 ## 案例
+
+::: card
 
 ```card
 title: Mr.Hope
@@ -94,6 +114,8 @@ color: rgba(253, 230, 138, 0.15)
   "color": "rgba(253, 230, 138, 0.15)"
 }
 ```
+
+:::
 
 ````md
 ```card

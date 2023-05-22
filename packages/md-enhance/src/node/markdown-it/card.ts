@@ -1,3 +1,4 @@
+import { container } from "@mdit/plugin-container";
 import { type MarkdownEnv } from "@vuepress/markdown";
 import { load } from "js-yaml";
 import { type Options, type PluginSimple } from "markdown-it";
@@ -80,6 +81,15 @@ ${content}
 };
 
 export const card: PluginSimple = (md) => {
+  // add card container
+  md.use(container, {
+    name: "card",
+    openRender: () =>
+      `\
+<div class="vp-card-container">
+`,
+  });
+
   // Handle ```card  blocks
   const fence = md.renderer.rules.fence;
 

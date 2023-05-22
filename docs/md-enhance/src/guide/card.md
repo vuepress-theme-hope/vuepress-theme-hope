@@ -67,7 +67,27 @@ By default, you should use YAML format to write card data, but you can also use 
 
 Card data supports `title`, `desc`, `logo`, `link` and `color` properties.
 
+If you want to place multiple cards together, you can wrap them in `card` container:
+
+````md
+::: card
+
+```card
+# card data here
+```
+
+```card
+# card data here
+```
+
+...
+
+:::
+````
+
 ## Demo
+
+::: card
 
 ```card
 title: Mr.Hope
@@ -86,6 +106,8 @@ color: rgba(253, 230, 138, 0.15)
   "color": "rgba(253, 230, 138, 0.15)"
 }
 ```
+
+:::
 
 ````md
 ```card
