@@ -66,8 +66,8 @@ export default defineComponent({
   },
 
   slots: Object as SlotsType<{
+    [slot: `title${number}`]: () => VNode[];
     [slot: `tab${number}`]: (props: {
-      title: string;
       value: string;
       isActive: boolean;
     }) => VNode[];
@@ -82,11 +82,8 @@ export default defineComponent({
 
     // update store
     const updateStore = (): void => {
-      if (props.tabId) {
-        const { title, id: value = title } = props.data[activeIndex.value];
-
-        codeTabStore.value[props.tabId] = value;
-      }
+      if (props.tabId)
+        codeTabStore.value[props.tabId] = props.data[activeIndex.value].id;
     };
 
     // activate next tab
@@ -114,18 +111,14 @@ export default defineComponent({
         activatePrev();
       }
 
-      if (props.tabId) {
-        const { title, id: value = title } = props.data[activeIndex.value];
-
-        codeTabStore.value[props.tabId] = value;
-      }
+      if (props.tabId)
+        codeTabStore.value[props.tabId] = props.data[activeIndex.value].id;
     };
 
     const getInitialIndex = (): number => {
       if (props.tabId) {
         const valueIndex = props.data.findIndex(
-          ({ title, id: value = title }) =>
-            codeTabStore.value[props.tabId] === value
+          ({ id }) => codeTabStore.value[props.tabId] === id
         );
 
         if (valueIndex !== -1) return valueIndex;
@@ -141,9 +134,7 @@ export default defineComponent({
         () => codeTabStore.value[props.tabId],
         (newValue, oldValue) => {
           if (props.tabId && newValue !== oldValue) {
-            const index = props.data.findIndex(
-              ({ title, id: value = title }) => value === newValue
-            );
+            const index = props.data.findIndex(({ id }) => id === newValue);
 
             if (index !== -1) activeIndex.value = index;
           }
@@ -157,7 +148,7 @@ export default defineComponent({
             h(
               "div",
               { class: "code-tabs-nav", role: "tablist" },
-              props.data.map(({ title }, index) => {
+              props.data.map((_item, index) => {
                 const isActive = index === activeIndex.value;
 
                 return h(
@@ -179,11 +170,11 @@ export default defineComponent({
                     onKeydown: (event: KeyboardEvent) =>
                       keyboardHandler(event, index),
                   },
-                  title
+                  slots[`title${index}`]()
                 );
               })
             ),
-            props.data.map(({ title, id: value = title }, index) => {
+            props.data.map(({ id }, index) => {
               const isActive = index === activeIndex.value;
 
               return h(
@@ -194,7 +185,7 @@ export default defineComponent({
                   role: "tabpanel",
                   "aria-expanded": isActive,
                 },
-                slots[`tab${index}`]({ title, value, isActive })
+                slots[`tab${index}`]({ value: id, isActive })
               );
             }),
           ])

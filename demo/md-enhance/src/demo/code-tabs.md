@@ -8,7 +8,7 @@ Install VuePress Theme Hope:
 
 ::: code-tabs#shell
 
-@tab pnpm
+@tab pnpm <Badge text="Recommended" />
 
 ```bash
 pnpm add -D vuepress-theme-hope
@@ -32,7 +32,7 @@ Install VuePress Plugin Markdown Enhance:
 
 ::: code-tabs#shell
 
-@tab pnpm
+@tab pnpm <Badge text="Recommended" />
 
 ```bash
 pnpm add -D vuepress-plugin-md-enhance
