@@ -91,6 +91,11 @@ Icon component name, icon info will be passed to icon props.
      * Catalog title
      */
     title: string;
+
+    /**
+     * Empty hint
+     */
+    empty: string;
   }
 
   interface AutoCatalogLocaleConfig {

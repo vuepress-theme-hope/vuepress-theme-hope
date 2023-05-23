@@ -218,88 +218,94 @@ export default defineComponent({
       h("div", { class: "auto-catalog-wrapper" }, [
         h("h2", { class: "main-title" }, locale.value.title),
 
-        info.value.map(({ children = [], icon, path, title }, mainIndex) => [
-          h(
-            "h3",
-            {
-              id: title,
-              class: ["child-title", { "has-children": children.length }],
-            },
-            [
-              h("a", { href: `#${title}`, class: "header-anchor" }, "#"),
-              h(RouterLink, { class: "catalog-title", to: path }, () => [
-                props.index ? `${mainIndex + 1}.` : null,
-                icon && iconComponent ? h(iconComponent, { icon }) : null,
-                title || "Unknown",
-              ]),
-            ]
-          ),
-          children.length
-            ? h(
-                "ul",
-                { class: "child-catalog-wrapper" },
-                children.map(({ children = [], icon, path, title }, index) =>
-                  h("li", { class: "child-catalog-item" }, [
-                    h(
-                      "div",
-                      {
-                        class: [
-                          "sub-title",
-                          { "has-children": children.length },
-                        ],
-                      },
-                      [
-                        h(
-                          "a",
-                          { href: `#${title}`, class: "header-anchor" },
-                          "#"
-                        ),
-                        h(
-                          RouterLink,
-                          { class: "catalog-title", to: path },
-                          () => [
-                            props.index
-                              ? `${mainIndex + 1}.${index + 1}`
-                              : null,
-                            icon && iconComponent
-                              ? h(iconComponent, { icon })
-                              : null,
-                            title || "Unknown",
-                          ]
-                        ),
-                      ]
-                    ),
-                    children.length
-                      ? h(
-                          "div",
-                          { class: "sub-catalog-wrapper" },
-                          children.map(({ icon, path, title }, subIndex) =>
+        info.value.length
+          ? info.value.map(
+              ({ children = [], icon, path, title }, mainIndex) => [
+                h(
+                  "h3",
+                  {
+                    id: title,
+                    class: ["child-title", { "has-children": children.length }],
+                  },
+                  [
+                    h("a", { href: `#${title}`, class: "header-anchor" }, "#"),
+                    h(RouterLink, { class: "catalog-title", to: path }, () => [
+                      props.index ? `${mainIndex + 1}.` : null,
+                      icon && iconComponent ? h(iconComponent, { icon }) : null,
+                      title || "Unknown",
+                    ]),
+                  ]
+                ),
+                children.length
+                  ? h(
+                      "ul",
+                      { class: "child-catalog-wrapper" },
+                      children.map(
+                        ({ children = [], icon, path, title }, index) =>
+                          h("li", { class: "child-catalog-item" }, [
                             h(
-                              RouterLink,
+                              "div",
                               {
-                                class: "sub-catalog-item",
-                                to: path,
+                                class: [
+                                  "sub-title",
+                                  { "has-children": children.length },
+                                ],
                               },
-                              () => [
-                                props.index
-                                  ? `${mainIndex + 1}.${index + 1}.${
-                                      subIndex + 1
-                                    }`
-                                  : null,
-                                icon && iconComponent
-                                  ? h(iconComponent, { icon })
-                                  : null,
-                                title || "Unknown",
+                              [
+                                h(
+                                  "a",
+                                  { href: `#${title}`, class: "header-anchor" },
+                                  "#"
+                                ),
+                                h(
+                                  RouterLink,
+                                  { class: "catalog-title", to: path },
+                                  () => [
+                                    props.index
+                                      ? `${mainIndex + 1}.${index + 1}`
+                                      : null,
+                                    icon && iconComponent
+                                      ? h(iconComponent, { icon })
+                                      : null,
+                                    title || "Unknown",
+                                  ]
+                                ),
                               ]
-                            )
-                          )
-                        )
-                      : null,
-                  ])
-                )
-              )
-            : null,
-        ]),
+                            ),
+                            children.length
+                              ? h(
+                                  "div",
+                                  { class: "sub-catalog-wrapper" },
+                                  children.map(
+                                    ({ icon, path, title }, subIndex) =>
+                                      h(
+                                        RouterLink,
+                                        {
+                                          class: "sub-catalog-item",
+                                          to: path,
+                                        },
+                                        () => [
+                                          props.index
+                                            ? `${mainIndex + 1}.${index + 1}.${
+                                                subIndex + 1
+                                              }`
+                                            : null,
+                                          icon && iconComponent
+                                            ? h(iconComponent, { icon })
+                                            : null,
+                                          title || "Unknown",
+                                        ]
+                                      )
+                                  )
+                                )
+                              : null,
+                          ])
+                      )
+                    )
+                  : null,
+              ]
+            )
+          : h("p", { class: "empty-catalog" }, locale.value.empty),
       ]);
   },
 });

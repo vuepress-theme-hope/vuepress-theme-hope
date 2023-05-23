@@ -91,6 +91,11 @@ icon: gears
      * 目录标题
      */
     title: string;
+
+    /**
+     * 空目录提示
+     */
+    empty: string;
   }
 
   interface AutoCatalogLocaleConfig {
