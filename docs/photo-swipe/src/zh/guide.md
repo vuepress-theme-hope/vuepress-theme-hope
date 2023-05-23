@@ -88,4 +88,4 @@ export default defineUserConfig({
 });
 ```
 
-For specific options, see [Config → Locale Settings](./config.md#locales).
+对于具体的选项，详见 [配置 → 多语言设置](./config.md#locales).
