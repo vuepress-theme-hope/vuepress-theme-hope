@@ -47,23 +47,25 @@ const cardRender = (
   const language = info.trim().split(":", 2)[1] || "yml";
   let config: unknown = null;
 
-  if (language === "yaml" || language === "yml") config = load(content);
+  if (language === "yaml" || language === "yml")
+    try {
+      config = load(content);
+    } catch (err) {
+      logger.error(`Parsing card YAML config failed:`, err);
+    }
   else if (language === "json")
     try {
       config = <unknown>JSON.parse(content);
     } catch (err) {
       // do nothing
+      logger.error(`Parsing card JSON config failed:`, err);
     }
-
-  if (!config) {
+  else
     logger.error(
       `Can not parse card config ${language}${
         filePathRelative ? `, found in ${filePathRelative}` : ""
       }.`
     );
-
-    return "";
-  }
 
   const cardData = checkCardProps(config);
 

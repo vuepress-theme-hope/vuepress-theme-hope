@@ -97,6 +97,7 @@ color: "#000"
       {}
     );
 
+    expect(result).toContain("VPCard");
     expect(result).not.toContain("unknown");
     expect(result).not.toContain("value");
     expect(result).toMatchSnapshot();
@@ -116,8 +117,34 @@ color: "#000"
       {}
     );
 
+    expect(result).toContain("VPCard");
     expect(result).not.toContain("logo");
     expect(result).toMatchSnapshot();
+  });
+
+  it("Should not throw with invalid syntax", () => {
+    const result1 = markdownIt.render(
+      `
+\`\`\`card
+title: a
+title: b
+\`\`\`
+`,
+      {}
+    );
+
+    const result2 = markdownIt.render(
+      `
+\`\`\`card:json
+title: a
+title: b
+\`\`\`
+`,
+      {}
+    );
+
+    expect(result1).toEqual("");
+    expect(result2).toEqual("");
   });
 
   it("Should not break markdown fence", () => {
