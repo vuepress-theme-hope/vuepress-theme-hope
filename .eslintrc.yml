@@ -372,3 +372,5 @@ overrides:
         - off
       "@typescript-eslint/no-unsafe-member-access":
         - off
+      import/dynamic-import-chunkname:
+        - off

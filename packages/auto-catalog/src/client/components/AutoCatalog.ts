@@ -132,10 +132,7 @@ export default defineComponent({
             path,
           };
         })
-        .filter(
-          ({ title, level }) =>
-            typeof title === "string" && title && level <= props.level
-        )
+        .filter(({ title, level }) => title && level <= props.level)
         .sort(
           (
             { title: titleA, level: levelA, path: pathA, order: orderA },
