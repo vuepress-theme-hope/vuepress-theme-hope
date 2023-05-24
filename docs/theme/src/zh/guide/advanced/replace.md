@@ -30,10 +30,13 @@ import { hopeTheme } from "vuepress-theme-hope";
 const __dirname = getDirname(import.meta.url);
 
 export default defineUserConfig({
-  theme: hopeTheme({
-    // 主题选项
-    // ...
-  }),
+  theme: hopeTheme(
+    {
+      // 主题选项
+      // ...
+    },
+    { custom: true }
+  ),
 
   alias: {
     // 你可以在这里将别名定向到自己的组件
@@ -56,10 +59,13 @@ import { hopeTheme } from "vuepress-theme-hope";
 const __dirname = getDirname(import.meta.url);
 
 export default {
-  theme: hopeTheme({
-    // 主题选项
-    // ...
-  }),
+  theme: hopeTheme(
+    {
+      // 主题选项
+      // ...
+    },
+    { custom: true }
+  ),
 
   alias: {
     // 你可以在这里将别名定向到自己的组件
@@ -249,10 +255,13 @@ import { hopeTheme } from "vuepress-theme-hope";
 const __dirname = getDirname(import.meta.url);
 
 export default defineUserConfig({
-  theme: hopeTheme({
-    // 主题选项
-    // ...
-  }),
+  theme: hopeTheme(
+    {
+      // 主题选项
+      // ...
+    },
+    { custom: true }
+  ),
 
   alias: {
     // 你可以在这里将别名定向到自己的组件

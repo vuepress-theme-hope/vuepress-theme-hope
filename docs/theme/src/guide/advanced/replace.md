@@ -30,9 +30,12 @@ import { hopeTheme } from "vuepress-theme-hope";
 const __dirname = getDirname(import.meta.url);
 
 export default defineUserConfig({
-  theme: hopeTheme({
-    // your theme config here
-  }),
+  theme: hopeTheme(
+    {
+      // your theme config here
+    },
+    { custom: true }
+  ),
 
   alias: {
     // Here you can redirect aliases to your own components
@@ -55,9 +58,12 @@ import { hopeTheme } from "vuepress-theme-hope";
 const __dirname = getDirname(import.meta.url);
 
 export default {
-  theme: hopeTheme({
-    // your theme config here
-  }),
+  theme: hopeTheme(
+    {
+      // your theme config here
+    },
+    { custom: true }
+  ),
 
   alias: {
     // Here you can redirect aliases to your own components
@@ -245,9 +251,12 @@ import { hopeTheme } from "vuepress-theme-hope";
 const __dirname = getDirname(import.meta.url);
 
 export default defineUserConfig({
-  theme: hopeTheme({
-    // your theme config here
-  }),
+  theme: hopeTheme(
+    {
+      // your theme config here
+    },
+    { custom: true }
+  ),
 
   alias: {
     // Here you can direct aliases to your own components

@@ -12,6 +12,12 @@ In order to meet the needs of different users, the theme provides some presets, 
 
 ## Component related
 
+::: tip
+
+To replace component using alias, you need to set `{ custom: true }` as second argument to `hopeTheme`.
+
+:::
+
 ### Bing Wallpapers
 
 Replace the background of your blog's homepage with daily Bing wallpaper.
