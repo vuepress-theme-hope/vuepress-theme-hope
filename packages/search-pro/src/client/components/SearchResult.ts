@@ -23,8 +23,8 @@ import {
 } from "./icons.js";
 import {
   useSearchQueryHistory,
+  useSearchResult,
   useSearchResultHistory,
-  useWorkerSearch,
 } from "../composables/index.js";
 import {
   searchProClientCustomFiledConfig,
@@ -61,7 +61,7 @@ export default defineComponent({
       useSearchResultHistory();
 
     const query = toRef(props, "query");
-    const { results, searching } = useWorkerSearch(query);
+    const { results, searching } = useSearchResult(query);
 
     const activatedResultIndex = ref(0);
     const activatedResultContentIndex = ref(0);

@@ -1,13 +1,13 @@
-import { type SearchOptions } from "minisearch";
+import { type SearchOptions as _SearchOptions } from "minisearch";
 
-export type MiniSearchOptions = Omit<
-  SearchOptions,
+export type SearchOptions = Omit<
+  _SearchOptions,
   // these are handled internally
   "fields"
 >;
 
 export interface MessageData {
   query: string;
-  routeLocale: string;
-  options: MiniSearchOptions;
+  locale: string;
+  options?: SearchOptions;
 }

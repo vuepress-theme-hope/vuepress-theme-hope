@@ -9,7 +9,7 @@ import {
 } from "../../shared/index.js";
 import {
   type MatchedItem,
-  type MiniSearchOptions,
+  type SearchOptions,
   type SearchResult,
 } from "../typings/index.js";
 
@@ -28,7 +28,7 @@ export interface MiniSearchSectionResult extends SectionIndex {
 export const getResults = (
   queryString: string,
   localeIndex: MiniSearch<SearchIndex>,
-  miniSearchOptions: MiniSearchOptions
+  miniSearchOptions: SearchOptions = {}
 ): SearchResult[] => {
   const suggestions: Record<
     string,

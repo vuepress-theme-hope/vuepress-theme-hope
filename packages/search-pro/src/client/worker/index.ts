@@ -7,9 +7,9 @@ import { type SearchIndex } from "../../shared/index.js";
 import { type MessageData } from "../typings/index.js";
 
 self.onmessage = async ({
-  data: { query, routeLocale, options },
+  data: { query, locale, options },
 }: MessageEvent<MessageData>): Promise<void> => {
-  const { default: localeIndex } = await database[routeLocale]();
+  const { default: localeIndex } = await database[locale]();
 
   const searchLocaleIndex = MiniSearch.loadJSON<SearchIndex>(localeIndex, {
     fields: ["title", "header", "text", "customFields"],

@@ -20,7 +20,7 @@ const searchIndex: SearchIndexStore = fromEntries(
 );
 
 self.onmessage = ({
-  data: { query, routeLocale, options },
+  data: { query, locale, options },
 }: MessageEvent<MessageData>): void => {
-  self.postMessage(getResults(query, searchIndex[routeLocale], options));
+  self.postMessage(getResults(query, searchIndex[locale], options));
 };
