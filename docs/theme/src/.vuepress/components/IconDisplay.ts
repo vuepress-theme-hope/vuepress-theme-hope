@@ -1,11 +1,4 @@
-import {
-  type VNode,
-  defineComponent,
-  h,
-  onMounted,
-  ref,
-  shallowRef,
-} from "vue";
+import { type VNode, defineComponent, h, onMounted, shallowRef } from "vue";
 import { type CopyCodeLocaleConfig } from "vuepress-plugin-copy-code2";
 import { Message, useLocaleConfig } from "vuepress-shared/client";
 

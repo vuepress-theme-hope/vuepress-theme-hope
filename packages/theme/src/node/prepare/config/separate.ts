@@ -74,6 +74,8 @@ ${imports.join("\n")}
 
 import "${CLIENT_FOLDER}styles/index.scss";
 
+${actions.join("\n")}
+
 export default defineClientConfig({
   enhance: ({ app, router }) => {
     const { scrollBehavior } = router.options;

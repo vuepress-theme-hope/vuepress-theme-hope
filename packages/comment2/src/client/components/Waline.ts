@@ -101,20 +101,18 @@ export default defineComponent({
         ? h(
             "div",
             { class: "waline-wrapper", id: "comment" },
-            enableWaline
-              ? h(
-                  defineAsyncComponent({
-                    loader: async () =>
-                      (
-                        await import(
-                          /* webpackChunkName: "waline" */ "@waline/client/dist/component.mjs"
-                        )
-                      ).Waline,
-                    loadingComponent: LoadingIcon,
-                  }),
-                  walineProps.value
-                )
-              : []
+            h(
+              defineAsyncComponent({
+                loader: async () =>
+                  (
+                    await import(
+                      /* webpackChunkName: "waline" */ "@waline/client/dist/component.mjs"
+                    )
+                  ).Waline,
+                loadingComponent: LoadingIcon,
+              }),
+              walineProps.value
+            )
           )
         : null;
   },
