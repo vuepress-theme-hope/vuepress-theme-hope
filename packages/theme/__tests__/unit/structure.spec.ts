@@ -3,7 +3,7 @@ import { path } from "@vuepress/utils";
 import { describe, expect, it } from "vitest";
 
 import { emptyTheme } from "./__fixtures__/theme/empty.js";
-import { getStructureInfo } from "../../src/node/prepare/index.js";
+import { getStructureInfo } from "../../src/node/prepare/sidebar/structure.js";
 
 describe("should generate structure info correctly", async () => {
   const app = createBaseApp({

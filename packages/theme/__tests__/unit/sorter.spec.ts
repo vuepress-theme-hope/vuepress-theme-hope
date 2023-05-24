@@ -7,7 +7,7 @@ import {
   sidebarOrderSorter,
   sidebarReadmeSorter,
   sidebarTitleSorter,
-} from "../../src/node/prepare/index.js";
+} from "../../src/node/prepare/sidebar/sorter.js";
 
 it("should handle readme", () => {
   expect(
