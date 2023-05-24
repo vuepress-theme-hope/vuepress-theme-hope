@@ -26,6 +26,7 @@
   "type": "module",
   "exports": {
     ".": "./lib/node/index.js",
+    "./lib/client": "./lib/client/index.js",
     "./lib/client/*": "./lib/client/*",
     "./package.json": "./package.json"
   },

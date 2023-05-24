@@ -1,9 +1,11 @@
 ---
-title: Plugin Options
+title: Config
 icon: gears
 ---
 
-## indexContent
+## Plugin Options
+
+### indexContent
 
 - Type: `boolean`
 - Default: `false`
@@ -16,7 +18,7 @@ By default, only headings and excerpt of the page will be indexed along with you
 
 :::
 
-## customFields
+### customFields
 
 - Type: `SearchProCustomFieldOptions[]`
 
@@ -86,7 +88,7 @@ export default defineUserConfig({
 
 :::
 
-## hotKeys
+### hotKeys
 
 - Type: `SearchProHotKeyOptions[]`
 
@@ -133,21 +135,21 @@ Specify the [event.key](http://keycode.info/) of the hotkeys.
 
 When hotkeys are pressed, the search box input will be focused. Set to an empty array to disable hotkeys.
 
-## queryHistoryCount
+### queryHistoryCount
 
 - Type: `number`
 - Default: `5`
 
 Max stored query history count, set `0` to disable it.
 
-## resultHistoryCount
+### resultHistoryCount
 
 - Type: `number`
 - Default: `5`
 
 Max stored matched result history count, set `0` to disable it.
 
-## delay
+### delay
 
 - Type: `number`
 - Default: `300`
@@ -160,14 +162,14 @@ Performing client search with huge contents could be slow, so under this case yo
 
 :::
 
-## worker
+### worker
 
 - Type: `string`
 - Default: `search-pro.worker.js`
 
 Output Worker filename
 
-## hotReload
+### hotReload
 
 - Type: `boolean`
 - Default: Whether using `--debug` flag
@@ -182,7 +184,7 @@ Usually in development, users do not need to update the index database in real t
 
 :::
 
-## locales
+### locales
 
 - Type: `SearchProLocaleConfig`
 
@@ -264,3 +266,20 @@ Multilingual configuration of the search plugin.
 - **Dutch** (nl-NL)
 
 :::
+
+## Client Config
+
+### defineSearchConfig
+
+Customize search options.
+
+```ts
+// .vuepress/client.ts
+import { defineSearchConfig } from "vuepress-plugin-search-pro/client";
+
+defineSearchConfig({
+  // search options here
+});
+
+export default {};
+```

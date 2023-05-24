@@ -5,22 +5,6 @@ icon: lightbulb
 
 `vuepress-plugin-search-pro` 是一个强大的客户端搜索插件，可以为你的站点添加自定义索引与全文搜索功能。
 
-::: warning 避免使用客户端搜索
-
-尽管客户端搜索无需后端，易于在文档和博客中添加，但是对于大型站点来说，它会带来较为致命的缺点。使用客户端搜索意味着:
-
-1. 你需要在构建阶段为你的网站建立索引，这会增长网站部署时间与网站的构建体积。
-1. 用户在搜索前需要从你的服务器拉取整个索引，会为你的网站服务器带来额外的流量与带宽压力。
-1. 用户必须等待搜索索引下载并在本地解析完毕才可以在本地遍历索引搜索，这会为用户消耗不必要的流量、同时让客户端增加不必要的计算量增加耗电。
-
-所以你应该在条件允许的情况下，尽可能选择服务提供商为你的站点提供搜索服务，例如 [Algolia](https://www.algolia.com/)，或者选择开源工具在自己的服务器上加载搜索服务并定期为自己的网站生成索引。对于大型站点这很必要因为用户通过网络请求向搜索 API 发送搜索字词，并直接得到搜索结果。
-
-特别提示，[DocSearch](https://docsearch.algolia.com/) 是 Algolia 为开源项目提供的免费搜索服务。如果你在创建开源项目文档或开源技术博客，你可 [申请它](https://docsearch.algolia.com/apply/)，并使用 [`@vuepress/plugin-docsearch`](https://vuejs.press/zh/reference/plugin/docsearch.html) 插件提供搜索。
-
-只有当你在**不满足 DocSearch 申请条件**且**不愿意付费使用服务提供商**、**不具备自行构建搜索服务条件**时，你才应该使用客户端搜索。
-
-:::
-
 ## 直接使用
 
 对于小型站点来说，通常情况下你需要一个开箱即用的全文搜索，你可以直接通过 `{ indexContent: true }` 调用 `vuepress-plugin-search-pro` 插件。
@@ -36,7 +20,7 @@ icon: lightbulb
 
 难以理解么？那我们来提供一个简单的例子。
 
-::: tip 在索引中添加作者
+::: info 在索引中添加作者
 
 假定你在 Frontmatter 中通过 `author` 添加作者:
 
@@ -131,14 +115,6 @@ export default defineUserConfig({
 
 默认情况下，搜索快捷键为 `Ctrl + K` 和 `Ctrl + /`。你可以通过 `hotkeys` 选项来自定义搜索快捷键，参见 [配置 → 快捷键](./config.md#hotkeys)。
 
-## 开发服务器中的限制
-
-搜索服务由 Worker 提供支持，在开发模式下我们无法捆绑 Worker 文件。
-
-为了在开发模式下加载搜索索引，我们使用了带有 `type: "module"` 的现代 Worker，但是目前只有 Chrome 支持此功能，Firefox 和 Safari 不支持。 因此，如果你想尝试在 devServer 中搜索，你应该使用 Chrome，请参阅 [CanIUse](https://caniuse.com/mdn-api_worker_worker_options_type_parameter) 了解支持详情。
-
-为了更好的性能，在开发模式下添加/编辑/删除 Markdown 内容不会触发搜索索引的更新。如果你正在校对或优化你的搜索结果，你可以通过设置 `hotReload: true` 选项来启用热重载，参见 [配置 → 热重载](./config.md#hotreload)。
-
 ## 热更新
 
 如果你正在校对或完善你的搜索结果，你可以通过设置 `hotReload: true` 选项来开启热更新，参见 [配置 → 热更新](./config.md#hotreload)。
@@ -181,3 +157,56 @@ export default defineUserConfig({
 ```
 
 具体的选项详见 [配置 → 多语言配置](./config.md#locales)。
+
+## 高级
+
+### 自定义搜索选项
+
+您可以通过在客户端配置文件中导入和调用“defineSearchConfig”来自定义搜索选项：
+
+```ts
+// .vuepress/client.ts
+import { defineClientConfig } from "@vuepress/client";
+import { defineSearchConfig } from "vuepress-plugin-search-pro/client";
+
+defineSearchConfig({
+  // 此处放置搜索选项
+});
+
+export default defineClientConfig({
+  // ...
+});
+```
+
+::: note
+
+由于搜索是在 Web Worker 中完成的，因此不支持设置选项为函数。
+
+:::
+
+### 开发服务器中的限制
+
+搜索服务由 Worker 提供支持，在开发模式下我们无法捆绑 Worker 文件。
+
+为了在开发模式下加载搜索索引，我们使用了带有 `type: "module"` 的现代 Worker，但是目前只有 Chrome 支持此功能，Firefox 和 Safari 不支持。 因此，如果你想尝试在 devServer 中搜索，你应该使用 Chrome，请参阅 [CanIUse](https://caniuse.com/mdn-api_worker_worker_options_type_parameter) 了解支持详情。
+
+为了更好的性能，在开发模式下添加/编辑/删除 Markdown 内容不会触发搜索索引的更新。如果你正在校对或优化你的搜索结果，你可以通过设置 `hotReload: true` 选项来启用热重载，参见 [配置 → 热重载](./config.md#hotreload)。
+
+### 与服务端搜索比较
+
+客户端搜索有优点，比如没有后台服务，容易添加，但你应该知道它也有缺点。
+
+::: warning 缺点
+
+1. 你需要在构建阶段为你的网站建立索引，这会增长网站部署时间与网站的构建体积。
+1. 用户在搜索前需要从你的服务器拉取整个索引，会为你的网站服务器带来额外的流量与带宽压力。这通常比在服务端搜索下执行一个网络请求获得结果要慢得多。
+1. 为了进行一次搜索，用户必须等待搜索索引下载并在本地解析完毕。，这会为用户消耗不必要的流量、同时增加客户点耗电。
+1. 由于搜索是在用户设备上执行的，速度完全取决于设备性能。
+
+:::
+
+在大多数情况，如果你在构建一个大型站点，你应该选择服务提供商为你的站点提供搜索服务，例如 [Algolia](https://www.algolia.com/)，或者选择开源工具在自己的服务器上加载搜索服务并定期为自己的网站生成索引。对于大型站点这很必要因为用户通过网络请求向搜索 API 发送搜索字词，并直接得到搜索结果。
+
+特别提示，[DocSearch](https://docsearch.algolia.com/) 是 Algolia 为开源项目提供的免费搜索服务。如果你在创建开源项目文档或开源技术博客，你可 [申请它](https://docsearch.algolia.com/apply/)，并使用 [`@vuepress/plugin-docsearch`](https://vuejs.press/zh/reference/plugin/docsearch.html) 插件提供搜索。
+
+:::

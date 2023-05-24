@@ -3,19 +3,18 @@ import MiniSearch from "minisearch";
 import database from "@temp/search-pro/index";
 
 import { getResults } from "./result.js";
+import { type SearchIndex } from "../../shared/index.js";
+import { type MessageData } from "../typings/index.js";
 
 self.onmessage = async ({
-  data,
-}: MessageEvent<{ query: string; routeLocale: string }>): Promise<void> => {
-  const { default: localeIndex } = await database[data.routeLocale]();
+  data: { query, routeLocale, options },
+}: MessageEvent<MessageData>): Promise<void> => {
+  const { default: localeIndex } = await database[routeLocale]();
 
-  self.postMessage(
-    getResults(
-      data.query,
-      MiniSearch.loadJSON(localeIndex, {
-        fields: ["title", "header", "text", "customFields"],
-        storeFields: ["title", "header", "text", "customFields"],
-      })
-    )
-  );
+  const searchLocaleIndex = MiniSearch.loadJSON<SearchIndex>(localeIndex, {
+    fields: ["title", "header", "text", "customFields"],
+    storeFields: ["title", "header", "text", "customFields"],
+  });
+
+  self.postMessage(getResults(query, searchLocaleIndex, options));
 };

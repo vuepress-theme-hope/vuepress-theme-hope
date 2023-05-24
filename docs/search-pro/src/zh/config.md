@@ -1,9 +1,11 @@
 ---
-title: 插件选项
+title: 配置
 icon: gears
 ---
 
-## indexContent
+## 插件选项
+
+### indexContent
 
 - 类型: `boolean`
 - 默认值: `false`
@@ -16,7 +18,7 @@ icon: gears
 
 :::
 
-## customFields
+### customFields
 
 - 类型: `SearchProCustomFieldOptions[]`
 
@@ -86,7 +88,7 @@ export default defineUserConfig({
 
 :::
 
-## hotKeys
+### hotKeys
 
 - 类型: `SearchProHotKeyOptions[]`
 
@@ -133,21 +135,21 @@ export default defineUserConfig({
 
 当热键被按下时，搜索框的输入框会被聚焦，设置为空数组以禁用热键。
 
-## queryHistoryCount
+### queryHistoryCount
 
 - 类型: `number`
 - 默认值: `5`
 
 存储搜索查询词历史的最大数量，可以设置为 `0` 以禁用。
 
-## resultHistoryCount
+### resultHistoryCount
 
 - 类型: `number`
 - 默认值: `5`
 
 存储搜索结果历史的最大数量，可以设置为 `0` 以禁用。
 
-## delay
+### delay
 
 - 类型: `number`
 - 默认值: `300`
@@ -160,14 +162,14 @@ export default defineUserConfig({
 
 :::
 
-## worker
+### worker
 
 - 类型: `string`
 - 默认值: `search-pro.worker.js`
 
 输出的 Worker 文件名称
 
-## hotReload
+### hotReload
 
 - 类型: `boolean`
 - 默认值: 是否使用 `--debug` 标记
@@ -182,7 +184,7 @@ export default defineUserConfig({
 
 :::
 
-## locales
+### locales
 
 - 类型: `SearchProLocaleConfig`
 
@@ -240,3 +242,20 @@ export default defineUserConfig({
 - 必填: 否
 
 搜索插件的多语言配置。
+
+## 客户端配置
+
+### defineSearchConfig
+
+自定义搜索选项。
+
+```ts
+// .vuepress/client.ts
+import { defineSearchConfig } from "vuepress-plugin-search-pro/client";
+
+defineSearchConfig({
+  // 此处放置搜索选项
+});
+
+export default {};
+```

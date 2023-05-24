@@ -3,21 +3,23 @@ import { useDebounceFn } from "@vueuse/core";
 import { type Ref, ref, shallowRef, watch } from "vue";
 
 import { searchProOptions } from "../define.js";
-import { type Result } from "../typings/index.js";
+import { useSearchOptions } from "../helpers/index.js";
+import { type SearchResult } from "../typings/index.js";
 
 declare const __VUEPRESS_BASE__: string;
 declare const __VUEPRESS_DEV__: boolean;
 
 export interface SearchRef {
   searching: Ref<boolean>;
-  results: Ref<Result[]>;
+  results: Ref<SearchResult[]>;
 }
 
 export const useWorkerSearch = (query: Ref<string>): SearchRef => {
+  const searchOptions = useSearchOptions();
   const routeLocale = useRouteLocale();
 
   const searching = ref(false);
-  const results = shallowRef<Result[]>([]);
+  const results = shallowRef<SearchResult[]>([]);
 
   let worker: Worker | null;
 
@@ -33,14 +35,18 @@ export const useWorkerSearch = (query: Ref<string>): SearchRef => {
         __VUEPRESS_DEV__ ? { type: "module" } : {}
       );
 
-      worker.addEventListener("message", ({ data }: MessageEvent<Result[]>) => {
-        results.value = data;
-        searching.value = false;
-      });
+      worker.addEventListener(
+        "message",
+        ({ data }: MessageEvent<SearchResult[]>) => {
+          results.value = data;
+          searching.value = false;
+        }
+      );
 
       worker.postMessage({
         query: queryString,
         routeLocale: routeLocale.value,
+        options: searchOptions,
       });
     } else {
       results.value = [];

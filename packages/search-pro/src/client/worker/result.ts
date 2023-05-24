@@ -7,7 +7,11 @@ import {
   type SearchIndex,
   type SectionIndex,
 } from "../../shared/index.js";
-import { type MatchedItem, type Result } from "../typings/index.js";
+import {
+  type MatchedItem,
+  type MiniSearchOptions,
+  type SearchResult,
+} from "../typings/index.js";
 
 export interface MiniSearchPageResult extends PageIndex {
   terms: string[];
@@ -23,8 +27,9 @@ export interface MiniSearchSectionResult extends SectionIndex {
 
 export const getResults = (
   queryString: string,
-  localeIndex: MiniSearch<SearchIndex>
-): Result[] => {
+  localeIndex: MiniSearch<SearchIndex>,
+  miniSearchOptions: MiniSearchOptions
+): SearchResult[] => {
   const suggestions: Record<
     string,
     { title: string; contents: (MatchedItem & { score: number })[] }
@@ -34,6 +39,7 @@ export const getResults = (
     fuzzy: 0.2,
     prefix: true,
     boost: { header: 4, text: 2, title: 1 },
+    ...miniSearchOptions,
   }) as unknown as (MiniSearchPageResult | MiniSearchSectionResult)[];
 
   results.forEach((result) => {

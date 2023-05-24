@@ -32,7 +32,7 @@ export type MatchedItem =
   | ContentMatchedItem
   | CustomMatchedItem;
 
-export interface Result {
+export interface SearchResult {
   title: string;
   contents: MatchedItem[];
 }
