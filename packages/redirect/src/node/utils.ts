@@ -27,23 +27,26 @@ export const CLIENT_FOLDER = ensureEndingSlash(
 
 export const logger = new Logger(PLUGIN_NAME);
 
-const normalizePath = (url: string): string =>
-  url.replace(/\/$/, "/index.html").replace(/(?:\.html)?$/, ".html");
+export const normalizePath = (url: string): string =>
+  url.replace(/\/$/, "/index.html").replace(/(?:\.(md|html))?$/, ".html");
 
-export const handleRedirectTo = (app: App, options: RedirectOptions): void => {
+export const handleRedirectTo = (
+  app: App,
+  { hostname }: RedirectOptions
+): void => {
   const { base } = app.options;
 
   app.pages.forEach(({ frontmatter }) => {
     const { redirectTo } = <RedirectPluginFrontmatterOption>frontmatter;
 
     if (redirectTo) {
-      const redirectUrl = (
+      const redirectUrl = normalizePath(
         isAbsoluteUrl(redirectTo)
           ? `${
-              options.hostname
-                ? isLinkHttp(options.hostname)
-                  ? removeEndingSlash(options.hostname)
-                  : `https://${removeEndingSlash(options.hostname)}`
+              hostname
+                ? isLinkHttp(hostname)
+                  ? removeEndingSlash(hostname)
+                  : `https://${removeEndingSlash(hostname)}`
                 : ""
             }${base}${redirectTo}`
           : redirectTo
