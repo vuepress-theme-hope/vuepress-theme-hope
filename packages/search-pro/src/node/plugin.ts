@@ -55,7 +55,7 @@ export const searchProPlugin =
           default: searchProLocales,
         }),
         SEARCH_PRO_OPTIONS: {
-          delay: options.delay || 300,
+          delay: options.delay || 150,
           queryHistoryCount: options.queryHistoryCount || 5,
           resultHistoryCount: options.resultHistoryCount || 5,
           hotKeys: options.hotKeys || [

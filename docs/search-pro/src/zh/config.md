@@ -152,7 +152,7 @@ export default defineUserConfig({
 ### delay
 
 - 类型: `number`
-- 默认值: `300`
+- 默认值: `150`
 
 结束输入到开始搜索的延时
 

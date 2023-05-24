@@ -73,7 +73,7 @@ export interface SearchProOptions {
    *
    * 结束输入到开始搜索的延时
    *
-   * @default 300
+   * @default 150
    */
   delay?: number;
 

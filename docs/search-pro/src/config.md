@@ -152,7 +152,7 @@ Max stored matched result history count, set `0` to disable it.
 ### delay
 
 - Type: `number`
-- Default: `300`
+- Default: `150`
 
 Delay to start searching after input.
 
