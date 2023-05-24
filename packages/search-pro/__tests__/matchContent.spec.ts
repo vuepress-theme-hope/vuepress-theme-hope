@@ -1,6 +1,6 @@
 import { describe, expect, it } from "vitest";
 
-import { getMatchedContent } from "../src/client/utils/matchContent";
+import { getMatchedContent } from "../src/client/worker/matchContent.js";
 
 describe("matchContent", () => {
   it("Should match content", () => {

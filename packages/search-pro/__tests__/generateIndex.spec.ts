@@ -4,7 +4,7 @@ import { describe, expect, it } from "vitest";
 import { getPageExcerpt } from "vuepress-shared/node";
 
 import { emptyTheme } from "./__fixtures__/theme/empty.js";
-import { generatePageIndex } from "../src/node/generateIndex";
+import { generatePageIndex } from "../src/node/generateIndex.js";
 
 const app = createBaseApp({
   bundler: {} as any,
