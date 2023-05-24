@@ -21,7 +21,7 @@
   "dependencies": {
     "@vuepress/client": "2.0.0-beta.62",
     "docs-shared": "workspace:*",
-    "sass-loader": "13.2.2",
+    "sass-loader": "13.3.0",
     "vue": "3.3.4",
     "vuepress-plugin-photo-swipe": "workspace:*",
     "vuepress-vite": "2.0.0-beta.62",
