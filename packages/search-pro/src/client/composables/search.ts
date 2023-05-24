@@ -3,7 +3,7 @@ import { useDebounceFn } from "@vueuse/core";
 import { type Ref, ref, shallowRef, watch } from "vue";
 
 import { searchProOptions } from "../define.js";
-import { type Result } from "../utils/index.js";
+import { type Result } from "../typings/index.js";
 
 declare const __VUEPRESS_BASE__: string;
 declare const __VUEPRESS_DEV__: boolean;
@@ -25,10 +25,10 @@ export const useWorkerSearch = (query: Ref<string>): SearchRef => {
     searching.value = true;
     worker?.terminate();
     if (queryString) {
+      // service worker with module only works on webkit browsers now, so we only used it in dev
       worker = new Worker(
         __VUEPRESS_DEV__
-          ? // this only works on webkit browsers now, so we only used it in dev
-            new URL("../worker/index.js", import.meta.url)
+          ? new URL("../worker/index.js", import.meta.url)
           : `${__VUEPRESS_BASE__}${searchProOptions.worker}`,
         __VUEPRESS_DEV__ ? { type: "module" } : {}
       );

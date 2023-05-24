@@ -15,7 +15,7 @@ export default [
       copy: [["client/styles", "client"]],
     }
   ),
-  ...bundle("worker/original", {
+  ...bundle("worker/index", {
     resolve: true,
     dts: false,
     external: [/^@internal\//],

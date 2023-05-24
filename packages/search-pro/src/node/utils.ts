@@ -14,3 +14,6 @@ export const WORKER_FOLDER = ensureEndingSlash(
 export const PLUGIN_NAME = "vuepress-plugin-search-pro";
 
 export const logger = new Logger(PLUGIN_NAME);
+
+export const getLocaleChunkName = (locale: string): string =>
+  locale.replace(/\//g, "") || "root";

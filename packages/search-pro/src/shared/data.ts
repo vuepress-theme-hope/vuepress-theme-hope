@@ -1,15 +1,21 @@
-export interface PageHeaderContent {
-  header: string;
-  slug: string;
-  contents: string[];
-}
+import type MiniSearch from "minisearch";
 
 export interface PageIndex {
+  id: string;
   title: string;
-  contents: PageHeaderContent[];
+  text?: string[];
   customFields?: Record<string, string[]>;
 }
 
-export type LocaleIndex = Record<string, PageIndex>;
+export interface SectionIndex {
+  id: string;
+  title: string;
+  header: string;
+  text?: string[];
+}
 
-export type SearchIndex = Record<string, LocaleIndex>;
+export type SearchIndex = PageIndex | SectionIndex;
+
+export type LocaleIndex = Record<string, SearchIndex[]>;
+
+export type SearchIndexStore = Record<string, MiniSearch<SearchIndex>>;

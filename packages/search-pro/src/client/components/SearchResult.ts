@@ -30,7 +30,7 @@ import {
   searchProClientCustomFiledConfig,
   searchProLocales,
 } from "../define.js";
-import { type MatchedItem, type Word } from "../utils/index.js";
+import { type MatchedItem, type Word } from "../typings/index.js";
 
 import "../styles/search-result.scss";
 
@@ -71,6 +71,12 @@ export default defineComponent({
     const activatedResult = computed(
       () => results.value[activatedResultIndex.value] || null
     );
+
+    const getRealPath = (id: string): string => {
+      const [key, anchor] = id.split("#");
+
+      return router.resolve({ name: key, hash: `#${anchor}` }).href;
+    };
 
     const activePreviousResult = (): void => {
       activatedResultIndex.value =
@@ -142,10 +148,12 @@ export default defineComponent({
         const item =
           activatedResult.value.contents[activatedResultContentIndex.value];
 
-        if (page.value.path !== item.path) {
+        const path = getRealPath(item.id);
+
+        if (page.value.path !== path) {
           addQueryHistory(props.query);
           addResultHistory(item);
-          void router.push(item.path);
+          void router.push(path);
           resetSearchResult();
         }
       }
@@ -190,7 +198,7 @@ export default defineComponent({
                     h(
                       RouterLink,
                       {
-                        to: item.path,
+                        to: getRealPath(item.id),
                         class: [
                           "search-pro-result-item",
                           {
@@ -263,7 +271,7 @@ export default defineComponent({
                       return h(
                         RouterLink,
                         {
-                          to: item.path,
+                          to: getRealPath(item.id),
                           class: [
                             "search-pro-result-item",
                             {

@@ -1,24 +1,21 @@
-import { database } from "@temp/search-pro/database";
+import MiniSearch from "minisearch";
 
-import { type SearchIndex } from "../../shared/index.js";
-import { getResults } from "../utils/index.js";
+import database from "@temp/search-pro/index";
 
-// eslint-disable-next-line @typescript-eslint/naming-convention
-declare const __VUEPRESS_DEV__: boolean;
-declare const __VUE_HMR_RUNTIME__: Record<string, unknown>;
+import { getResults } from "./result.js";
 
-let searchIndex = database;
-
-// @ts-ignore
-if (__VUEPRESS_DEV__ && (import.meta.webpackHot || import.meta.hot))
-  __VUE_HMR_RUNTIME__["updateSearchProDatabase"] = (
-    database: SearchIndex
-  ): void => {
-    searchIndex = database;
-  };
-
-self.onmessage = ({
+self.onmessage = async ({
   data,
-}: MessageEvent<{ query: string; routeLocale: string }>): void => {
-  self.postMessage(getResults(data.query, searchIndex[data.routeLocale]));
+}: MessageEvent<{ query: string; routeLocale: string }>): Promise<void> => {
+  const { default: localeIndex } = await database[data.routeLocale]();
+
+  self.postMessage(
+    getResults(
+      data.query,
+      MiniSearch.loadJSON(localeIndex, {
+        fields: ["title", "header", "text", "customFields"],
+        storeFields: ["title", "header", "text", "customFields"],
+      })
+    )
+  );
 };
