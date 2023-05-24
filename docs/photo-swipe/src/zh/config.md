@@ -107,7 +107,7 @@ Photo Swipe 插件的国际化配置。
 
 :::
 
-## Client Config
+## 客户端配置
 
 ### definePhotoSwipeOptions
 
