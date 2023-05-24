@@ -32,6 +32,9 @@ const __dirname = getDirname(import.meta.url);
 export default defineUserConfig({
   theme: hopeTheme({
     // your theme config here
+  },{
+    // Alias only takes effect after setting custom: true
+    custom :true
   }),
 
   alias: {
@@ -57,6 +60,9 @@ const __dirname = getDirname(import.meta.url);
 export default {
   theme: hopeTheme({
     // your theme config here
+  },{
+    // Alias only takes effect after setting custom: true
+    custom :true
   }),
 
   alias: {
@@ -247,6 +253,9 @@ const __dirname = getDirname(import.meta.url);
 export default defineUserConfig({
   theme: hopeTheme({
     // your theme config here
+  },{
+    // Alias only takes effect after setting custom: true
+    custom :true
   }),
 
   alias: {
