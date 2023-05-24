@@ -1,11 +1,15 @@
 import { describe, expect, it } from "vitest";
 
-import { getDateInfo } from "../../src/node/utils/date.js";
+import { compareDate, getDateInfo } from "../../src/node/utils/date.js";
 
 const getCurrentDate = (date: Date): Date =>
   new Date(date.getTime() + new Date().getTimezoneOffset() * 60 * 1000);
 
 describe("getDateInfo()", () => {
+  it("Should return null", () => {
+    expect(getDateInfo(undefined)).toEqual(null);
+  });
+
   describe("Should parse day", () => {
     it("date string", () => {
       expect(getDateInfo("2020-04-04T00:00:00.000Z", "Asia/Shanghai")).toEqual({
@@ -290,5 +294,28 @@ describe("getDateInfo()", () => {
       value: new Date("2020-04-04T00:00:00.000Z"),
       type: "full",
     });
+  });
+});
+
+describe("compareDate()", () => {
+  it("Should compare date", () => {
+    expect(
+      compareDate(
+        new Date("2020-04-04T00:00:00.000Z"),
+        new Date("2020-05-05T00:00:00.000Z")
+      )
+    ).toBeGreaterThan(0);
+    expect(
+      compareDate(
+        new Date("2020-05-05T00:00:00.000Z"),
+        new Date("2020-04-04T00:00:00.000Z")
+      )
+    ).toBeLessThan(0);
+    expect(
+      compareDate(
+        new Date("2020-04-04T00:00:00.000Z"),
+        new Date("2020-04-04T00:00:00.000Z")
+      )
+    ).toBe(0);
   });
 });

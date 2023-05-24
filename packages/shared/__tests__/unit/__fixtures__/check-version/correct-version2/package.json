@@ -1,0 +1,6 @@
+{
+  "name": "version-test",
+  "dependencies": {
+    "vuepress-webpack": "2.0.0-beta.62"
+  }
+}
