@@ -22,7 +22,12 @@ import {
   useSearchQueryHistory,
 } from "../composables/index.js";
 import { searchProLocales } from "../define.js";
-import { DOWN_KEY, ENTER_KEY, ESC_KEY, UP_KEY } from "../utils/index.js";
+import {
+  DOWN_KEY_ICON,
+  ENTER_KEY_ICON,
+  ESC_KEY_ICON,
+  UP_KEY_ICON,
+} from "../utils/index.js";
 
 import "../styles/search-modal.scss";
 
@@ -147,16 +152,16 @@ export default defineComponent({
                 ? null
                 : h("div", { class: "search-pro-hints" }, [
                     h("span", { class: "search-pro-hint" }, [
-                      h("kbd", { innerHTML: ENTER_KEY }),
+                      h("kbd", { innerHTML: ENTER_KEY_ICON }),
                       locale.value.select,
                     ]),
                     h("span", { class: "search-pro-hint" }, [
-                      h("kbd", { innerHTML: UP_KEY }),
-                      h("kbd", { innerHTML: DOWN_KEY }),
+                      h("kbd", { innerHTML: UP_KEY_ICON }),
+                      h("kbd", { innerHTML: DOWN_KEY_ICON }),
                       locale.value.navigate,
                     ]),
                     h("span", { class: "search-pro-hint" }, [
-                      h("kbd", { innerHTML: ESC_KEY }),
+                      h("kbd", { innerHTML: ESC_KEY_ICON }),
                       locale.value.exit,
                     ]),
                   ]),
