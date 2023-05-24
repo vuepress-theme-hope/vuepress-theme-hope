@@ -33,6 +33,9 @@ export default defineUserConfig({
   theme: hopeTheme({
     // 主题选项
     // ...
+  },{
+    // 主题行为选项 设置 custom :true 后，alias才生效
+    custom :true
   }),
 
   alias: {
@@ -59,6 +62,9 @@ export default {
   theme: hopeTheme({
     // 主题选项
     // ...
+  },{
+    // 主题行为选项 设置 custom :true 后，alias才生效
+    custom :true
   }),
 
   alias: {
@@ -252,6 +258,9 @@ export default defineUserConfig({
   theme: hopeTheme({
     // 主题选项
     // ...
+  },{
+    // 主题行为选项 设置 custom :true 后，alias才生效
+    custom :true
   }),
 
   alias: {
