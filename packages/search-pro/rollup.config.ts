@@ -13,6 +13,7 @@ export default [
     {
       external: [
         "@internal/pagesComponents",
+        "minisearch",
         "vuepress-plugin-search-pro/result",
       ],
       copy: [["client/styles", "client"]],
@@ -21,7 +22,7 @@ export default [
   ...bundle("worker/index", {
     resolve: true,
     dts: false,
-    external: [/^@internal\//, "minisearch"],
+    external: [/^@internal\//],
     replace: {
       // eslint-disable-next-line @typescript-eslint/naming-convention
       __VUEPRESS_SSR__: false,
