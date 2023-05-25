@@ -1,4 +1,5 @@
 import { type App } from "@vuepress/core";
+import { addAll, discard, search } from "slimsearch";
 import { entries, keys } from "vuepress-shared/node";
 
 import { generatePageIndex, getSearchIndexStore } from "./generateIndex.js";
@@ -70,11 +71,12 @@ export const updateSearchIndex = async (
       // update index
       if (pageIndexes) {
         // remove previous index
-        localeSearchIndex
-          .search(key, { fields: ["id"] })
-          .forEach(({ id }) => localeSearchIndex.discard(id));
 
-        localeSearchIndex.addAll(pageIndexes);
+        search(localeSearchIndex, key, { fields: ["id"] }).forEach(({ id }) =>
+          discard(localeSearchIndex, id)
+        );
+
+        addAll(localeSearchIndex, pageIndexes);
 
         // search index file content
         const content = `\
@@ -117,9 +119,10 @@ export const removeSearchIndex = async (
       const localeSearchIndex = previousSearchIndexStore[pathLocale];
 
       // remove previous index
-      localeSearchIndex
-        .search(key, { fields: ["id"] })
-        .forEach(({ id }) => localeSearchIndex.discard(id));
+
+      search(localeSearchIndex, key, { fields: ["id"] }).forEach(({ id }) =>
+        discard(localeSearchIndex, id)
+      );
 
       // search index file content
       const content = `\

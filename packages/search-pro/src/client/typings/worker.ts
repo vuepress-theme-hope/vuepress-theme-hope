@@ -1,4 +1,4 @@
-import { type SearchOptions as _SearchOptions } from "minisearch";
+import { type SearchOptions as _SearchOptions } from "slimsearch";
 
 export type SearchOptions = Omit<
   _SearchOptions,

@@ -1,9 +1,9 @@
-import MiniSearch, { type AsPlainObject } from "minisearch";
+import { type AsPlainObject, loadIndex } from "slimsearch";
 import { entries, fromEntries } from "vuepress-shared/client";
 
 import { type MessageData } from "../client/typings/index.js";
 import { getResults } from "../client/worker/result.js";
-import { type SearchIndex, type SearchIndexStore } from "../shared/index.js";
+import { type IndexItem, type SearchIndexStore } from "../shared/index.js";
 
 declare const SEARCH_PRO_INDEX: string;
 
@@ -11,7 +11,7 @@ const searchIndex: SearchIndexStore = fromEntries(
   entries(<Record<string, AsPlainObject>>JSON.parse(SEARCH_PRO_INDEX)).map(
     ([localePath, index]) => [
       localePath,
-      MiniSearch.loadJS<SearchIndex>(index, {
+      loadIndex<IndexItem>(index, {
         fields: ["title", "header", "text", "customFields"],
         storeFields: ["title", "header", "text", "customFields"],
       }),

@@ -1,10 +1,10 @@
-import MiniSearch, { type MatchInfo } from "minisearch";
+import { type MatchInfo, type SearchIndex, search } from "slimsearch";
 import { entries, keys } from "vuepress-shared/client";
 
 import { getMatchedContent } from "./matchContent.js";
 import {
+  type IndexItem,
   type PageIndex,
-  type SearchIndex,
   type SectionIndex,
 } from "../../shared/index.js";
 import {
@@ -27,7 +27,7 @@ export interface MiniSearchSectionResult extends SectionIndex {
 
 export const getResults = (
   query: string,
-  localeIndex: MiniSearch<SearchIndex>,
+  localeIndex: SearchIndex<IndexItem>,
   miniSearchOptions: SearchOptions = {}
 ): SearchResult[] => {
   const suggestions: Record<
@@ -35,7 +35,7 @@ export const getResults = (
     { title: string; contents: (MatchedItem & { score: number })[] }
   > = {};
 
-  const results = localeIndex.search(query, {
+  const results = search(localeIndex, query, {
     fuzzy: 0.2,
     prefix: true,
     boost: { header: 4, text: 2, title: 1 },

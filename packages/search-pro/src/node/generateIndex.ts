@@ -1,6 +1,6 @@
 import { type App, type Page } from "@vuepress/core";
 import { type AnyNode, type Element, load } from "cheerio";
-import MiniSearch from "minisearch";
+import { addAllAsync, createIndex } from "slimsearch";
 import { entries, fromEntries, isArray, keys } from "vuepress-shared/node";
 
 import {
@@ -8,9 +8,9 @@ import {
   type SearchProOptions,
 } from "./options.js";
 import {
+  type IndexItem,
   type LocaleIndex,
   type PageIndex,
-  type SearchIndex,
   type SearchIndexStore,
   type SectionIndex,
 } from "../shared/index.js";
@@ -67,12 +67,12 @@ export const generatePageIndex = (
   page: Page<{ excerpt?: string }>,
   customFieldsGetter: SearchProCustomFieldOptions[] = [],
   indexContent = false
-): SearchIndex[] => {
+): IndexItem[] => {
   const { contentRendered, data, title } = page;
   const hasExcerpt = "excerpt" in data && data["excerpt"].length;
 
   const pageIndex: PageIndex = { id: data.key, title };
-  const results: SearchIndex[] = [];
+  const results: IndexItem[] = [];
 
   // here are some variables holding the current state of the parser
   let shouldIndexContent = hasExcerpt || indexContent;
@@ -193,12 +193,12 @@ export const getSearchIndexStore = async (
 
   await Promise.all(
     entries(indexesByLocale).map(async ([localePath, indexes]) => {
-      const index = new MiniSearch<SearchIndex>({
+      const index = createIndex<IndexItem>({
         fields: ["id", "title", "header", "text", "customFields"],
         storeFields: ["title", "header", "text", "customFields"],
       });
 
-      await index.addAllAsync(indexes);
+      await addAllAsync(index, indexes);
 
       searchIndex[localePath] = index;
     })

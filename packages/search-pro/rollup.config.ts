@@ -2,7 +2,7 @@ import { bundle } from "../../scripts/rollup.js";
 
 export default [
   ...bundle("node/index", {
-    external: ["cheerio", "chokidar", "minisearch"],
+    external: ["cheerio", "chokidar", "slimsearch"],
     dtsExternal: ["vuepress-shared"],
   }),
   ...bundle(
@@ -13,7 +13,7 @@ export default [
     {
       external: [
         "@internal/pagesComponents",
-        "minisearch",
+        "slimsearch",
         "vuepress-plugin-search-pro/result",
       ],
       copy: [["client/styles", "client"]],

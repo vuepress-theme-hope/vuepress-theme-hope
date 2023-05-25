@@ -2102,12 +2102,12 @@ importers:
       chokidar:
         specifier: ^3.5.3
         version: 3.5.3
-      minisearch:
-        specifier: ^6.1.0
-        version: 6.1.0
       sass-loader:
         specifier: ^13.3.0
         version: 13.3.0(sass@1.62.1)(webpack@5.84.0)
+      slimsearch:
+        specifier: 0.0.1
+        version: 0.0.1
       vue:
         specifier: ^3.3.4
         version: 3.3.4
@@ -11021,10 +11021,6 @@ packages:
     engines: {node: '>=16 || 14 >=14.17'}
     dev: true
 
-  /minisearch@6.1.0:
-    resolution: {integrity: sha512-PNxA/X8pWk+TiqPbsoIYH0GQ5Di7m6326/lwU/S4mlo4wGQddIcf/V//1f9TB0V4j59b57b+HZxt8h3iMROGvg==}
-    dev: false
-
   /minizlib@2.1.2:
     resolution: {integrity: sha512-bAxsR8BVfj60DWXHE3u30oHzfl4G7khkSuPW+qvpd7jFRHm7dLxOjUk1EHACJ/hxLY8phGJ0YhYHZo7jil7Qdg==}
     engines: {node: '>= 8'}
@@ -12444,8 +12440,6 @@ packages:
         optional: true
       sass-embedded:
         optional: true
-      webpack:
-        optional: true
     dependencies:
       klona: 2.0.6
       neo-async: 2.6.2
@@ -12671,6 +12665,10 @@ packages:
       astral-regex: 2.0.0
       is-fullwidth-code-point: 3.0.0
     dev: true
+
+  /slimsearch@0.0.1:
+    resolution: {integrity: sha512-OIUA4J7xbAQhlnMfJk3i+H6vxTYPBLESuelUCYIOYYS76FW9MkcjaPI7VS/CeGmqiupp2GdiAycDHGtOjSF3Bg==}
+    dev: false
 
   /sockjs@0.3.24:
     resolution: {integrity: sha512-GJgLTZ7vYb/JtPSSZ10hsOYIvEYsjbNU+zPdIHcUaWVNUEPivzxku31865sSSud0Da0W4lEeOPlmw93zLQchuQ==}

@@ -1,4 +1,4 @@
-import type MiniSearch from "minisearch";
+import { type SearchIndex } from "slimsearch";
 
 export interface PageIndex {
   id: string;
@@ -14,8 +14,8 @@ export interface SectionIndex {
   text?: string[];
 }
 
-export type SearchIndex = PageIndex | SectionIndex;
+export type IndexItem = PageIndex | SectionIndex;
 
-export type LocaleIndex = Record<string, SearchIndex[]>;
+export type LocaleIndex = Record<string, IndexItem[]>;
 
-export type SearchIndexStore = Record<string, MiniSearch<SearchIndex>>;
+export type SearchIndexStore = Record<string, SearchIndex<IndexItem>>;

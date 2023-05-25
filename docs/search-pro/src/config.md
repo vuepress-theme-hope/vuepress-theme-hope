@@ -271,7 +271,7 @@ Multilingual configuration of the search plugin.
 
 ### defineSearchConfig
 
-Customize [search options](https://lucaong.github.io/minisearch/modules/_minisearch_.html#searchoptions-1).
+Customize [search options](https://mister-hope.github.io/slimsearch/types/SearchOptions.html).
 
 ```ts
 // .vuepress/client.ts

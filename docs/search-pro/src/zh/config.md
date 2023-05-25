@@ -247,7 +247,7 @@ export default defineUserConfig({
 
 ### defineSearchConfig
 
-自定义 [搜索选项](https://lucaong.github.io/minisearch/modules/_minisearch_.html#searchoptions-1)。
+自定义 [搜索选项](https://mister-hope.github.io/slimsearch/types/SearchOptions.html)。
 
 ```ts
 // .vuepress/client.ts
