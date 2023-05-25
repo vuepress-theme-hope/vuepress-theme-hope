@@ -2,23 +2,67 @@ import { type PluginSimple } from "markdown-it";
 import type Renderer from "markdown-it/lib/renderer.js";
 import { utoa } from "vuepress-shared/node";
 
-const mermaidRender: Renderer.RenderRule = (tokens, index) =>
+const mermaidRenderer: Renderer.RenderRule = (tokens, index) =>
   `<Mermaid id="mermaid-${index}" code="${utoa(
     tokens[index].content
   )}"></Mermaid>`;
 
-// a hack for sequenceDiagram
-const mermaidHackRender = (
-  name: string,
-  content: string,
-  index: number
-): string =>
+interface MermaidOptions {
+  content: string;
+  diagram?: string;
+  title?: string;
+}
+
+export const getMermaidContent = ({
+  diagram = "mermaid",
+  content,
+  title = "",
+}: MermaidOptions): string => `\
+${
+  title
+    ? `\
+---
+title: ${title}
+---
+
+`
+    : ""
+}\
+${
+  diagram === "mermaid"
+    ? ""
+    : `\
+${diagram}
+`
+}\
+${
+  diagram === "mermaid"
+    ? content
+    : content
+        .split("\n")
+        .map((line) => (line ? `  ${line}` : ""))
+        .join("\n")
+}\
+`;
+
+const getMermaid = (options: MermaidOptions, index: number): string =>
   `<Mermaid id="mermaid-${index}" code="${utoa(
-    `${name}\n${content
-      .split("\n")
-      .map((line) => (line ? `  ${line}` : ""))
-      .join("\n")}`
+    getMermaidContent(options)
   )}"></Mermaid>`;
+
+const DIAGRAM_MAP: Record<string, string> = {
+  class: "classDiagram",
+  c4c: "C4Context",
+  er: "erDiagram",
+  gantt: "gantt",
+  "git-graph": "gitGraph",
+  journey: "journey",
+  mindmap: "mindmap",
+  pie: "pie",
+  sequence: "sequenceDiagram",
+  state: "stateDiagram-v2",
+  timeline: "timeline",
+};
 
 export const mermaid: PluginSimple = (md) => {
   // Handle ```mermaid blocks
@@ -28,31 +72,20 @@ export const mermaid: PluginSimple = (md) => {
     const [tokens, index] = args;
     const { content, info } = tokens[index];
 
-    if (info.trim() === "mermaid") return mermaidRender(...args);
-    if (info.trim() === "sequence")
-      return mermaidHackRender("sequenceDiagram", content, index);
-    if (info.trim() === "class")
-      return mermaidHackRender("classDiagram", content, index);
-    if (info.trim() === "state")
-      return mermaidHackRender("stateDiagram-v2", content, index);
-    if (info.trim() === "er")
-      return mermaidHackRender("erDiagram", content, index);
-    if (info.trim() === "journey")
-      return mermaidHackRender("journey", content, index);
-    if (info.trim() === "gantt")
-      return mermaidHackRender("gantt", content, index);
-    if (info.trim() === "pie") return mermaidHackRender("pie", content, index);
-    if (info.trim() === "git-graph")
-      return mermaidHackRender("gitGraph", content, index);
-    if (info.trim() === "c4c")
-      return mermaidHackRender("C4Context", content, index);
-    if (info.trim() === "mindmap")
-      return mermaidHackRender("mindmap", content, index);
-    if (info.trim() === "timeline")
-      return mermaidHackRender("timeline", content, index);
+    const fenceInfo = info.trim();
+
+    if (fenceInfo === "mermaid") return getMermaid({ content }, index);
+
+    const [name, ...rest] = fenceInfo.split(" ");
+
+    if (DIAGRAM_MAP[name])
+      return getMermaid(
+        { diagram: DIAGRAM_MAP[name], title: rest.join(" "), content },
+        index
+      );
 
     return fence!(...args);
   };
 
-  md.renderer.rules["mermaid"] = mermaidRender;
+  md.renderer.rules["mermaid"] = mermaidRenderer;
 };

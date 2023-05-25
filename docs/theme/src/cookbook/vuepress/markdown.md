@@ -187,10 +187,6 @@ export const config: UserConfig = {
   }),
 };
 ```
-
-```
-
-```
 ````
 
 Output:

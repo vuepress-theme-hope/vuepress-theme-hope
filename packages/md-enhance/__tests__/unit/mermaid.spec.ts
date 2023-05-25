@@ -2,9 +2,15 @@ import MarkdownIt from "markdown-it";
 import { describe, expect, it } from "vitest";
 import { atou } from "vuepress-shared";
 
-import { mermaid } from "../../src/node/markdown-it/index.js";
+import {
+  getMermaidContent,
+  mermaid,
+} from "../../src/node/markdown-it/index.js";
 
-const demo = `flowchart TB
+const title = "Sample Title";
+
+const flowchartDemo = `\
+flowchart TB
   c1-->a2
   subgraph one
   a1-->a2
@@ -17,15 +23,49 @@ const demo = `flowchart TB
   end
   one --> two
   three --> two
-  two --> c2`;
+  two --> c2\
+`;
 
-describe("mermaid", () => {
+const sequenceDemo = `\
+Alice ->> Bob: Hello Bob, how are you?
+Bob-->>John: How about you John?
+Bob--x Alice: I am good thanks!
+Bob-x John: I am good thanks!
+Note right of John: Bob thinks a long<br/>long time, so long<br/>that the text does<br/>not fit on a row.
+
+Bob-->Alice: Checking with John...
+Alice->John: Yes... John, how are you?\
+`;
+
+describe("getMermaidContent()", () => {
+  it("Should work with content", () => {
+    expect(getMermaidContent({ content: flowchartDemo })).toMatchSnapshot();
+    expect(
+      getMermaidContent({ diagram: "sequenceDiagram", content: sequenceDemo })
+    ).toMatchSnapshot();
+  });
+
+  it("Should work with title and content", () => {
+    expect(
+      getMermaidContent({ title, content: flowchartDemo })
+    ).toMatchSnapshot();
+    expect(
+      getMermaidContent({
+        diagram: "sequenceDiagram",
+        title,
+        content: sequenceDemo,
+      })
+    ).toMatchSnapshot();
+  });
+});
+
+describe("mermaid plugin", () => {
   const markdownIt = MarkdownIt({ linkify: true }).use(mermaid);
 
   it("Should render ```mermaid", () => {
     const renderResult = markdownIt.render(`
 \`\`\`mermaid
-${demo}
+${flowchartDemo}
 \`\`\`
 `);
 
@@ -38,28 +78,28 @@ ${demo}
           renderResult
         )?.[1] || ""
       )
-    ).toMatch(demo);
+    ).toMatch(flowchartDemo);
     expect(renderResult).toMatchSnapshot();
   });
 
   it("Should not render", () => {
     expect(
       markdownIt.render(`
-${demo}
+${flowchartDemo}
 `)
     ).toMatchSnapshot();
 
     expect(
       markdownIt.render(`
 \`\`\`md
-${demo}
+${flowchartDemo}
 \`\`\`
 `)
     ).toMatchSnapshot();
   });
 
   it("Should render ```sequence", () => {
-    const renderResult = markdownIt.render(`
+    const renderResult1 = markdownIt.render(`
 \`\`\`sequence
 Alice ->> Bob: Hello Bob, how are you?
 Bob-->>John: How about you John?
@@ -71,8 +111,21 @@ Bob-->Alice: Checking with John...
 Alice->John: Yes... John, how are you?
 \`\`\`
 `);
+    const renderResult2 = markdownIt.render(`
+\`\`\`sequence Greetings
+Alice ->> Bob: Hello Bob, how are you?
+Bob-->>John: How about you John?
+Bob--x Alice: I am good thanks!
+Bob-x John: I am good thanks!
+Note right of John: Bob thinks a long<br/>long time, so long<br/>that the text does<br/>not fit on a row.
 
-    expect(renderResult).toMatchSnapshot();
+Bob-->Alice: Checking with John...
+Alice->John: Yes... John, how are you?
+\`\`\`
+`);
+
+    expect(renderResult1).toMatchSnapshot();
+    expect(renderResult2).toMatchSnapshot();
   });
 
   it("Should render ```class", () => {
