@@ -43,7 +43,7 @@ export const getMatchedContent = (
     contentLength += text.length;
 
     if (!isEnd) {
-      result.push(["strong", queryString]);
+      result.push(["mark", queryString]);
       contentLength += queryString.length;
 
       if (contentLength >= MAX_LENGTH) result.push(" …");

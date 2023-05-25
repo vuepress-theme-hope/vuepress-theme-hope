@@ -26,6 +26,11 @@
       background: var(--vp-tcl);
     }
   }
+
+  mark {
+    border-radius: 0.25em;
+    line-height: 1;
+  }
 }
 
 .search-pro-result-list {

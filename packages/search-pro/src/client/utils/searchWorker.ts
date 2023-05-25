@@ -31,8 +31,6 @@ export const createSearchWorker = (): SearchWorker => {
     ({ data }: MessageEvent<SearchResult[]>) => {
       const { resolve } = queue.shift()!;
 
-      console.log(queue);
-
       resolve(data);
     }
   );

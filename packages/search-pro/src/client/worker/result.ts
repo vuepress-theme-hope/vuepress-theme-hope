@@ -26,7 +26,7 @@ export interface MiniSearchSectionResult extends SectionIndex {
 }
 
 export const getResults = (
-  queryString: string,
+  query: string,
   localeIndex: MiniSearch<SearchIndex>,
   miniSearchOptions: SearchOptions = {}
 ): SearchResult[] => {
@@ -35,7 +35,7 @@ export const getResults = (
     { title: string; contents: (MatchedItem & { score: number })[] }
   > = {};
 
-  const results = localeIndex.search(queryString, {
+  const results = localeIndex.search(query, {
     fuzzy: 0.2,
     prefix: true,
     boost: { header: 4, text: 2, title: 1 },
@@ -43,68 +43,70 @@ export const getResults = (
   }) as unknown as (MiniSearchPageResult | MiniSearchSectionResult)[];
 
   results.forEach((result) => {
-    const { title, id, score } = result;
-
+    const { title, id, terms, score } = result;
     const key = id.split("#")[0];
 
     if (!suggestions[key]) suggestions[key] = { title, contents: [] };
 
     const { contents } = suggestions[key];
 
-    const titleContent = getMatchedContent(result.title, queryString);
+    const collectMatched = (target: string): void => {
+      const titleContent = getMatchedContent(result.title, target);
 
-    if (titleContent)
-      contents.push({
-        type: "title",
-        id,
-        display: titleContent,
-        score,
-      });
-
-    if ("header" in result) {
-      const headerContent = getMatchedContent(result.header, queryString);
-
-      if (headerContent)
+      if (titleContent)
         contents.push({
-          type: "heading",
-          id: id.split("#")[0],
-          display: headerContent,
+          type: "title",
+          id,
+          display: titleContent,
           score,
         });
-    }
 
-    if ("text" in result)
-      for (const text of result.text) {
-        const matchedContent = getMatchedContent(text, queryString);
+      if ("header" in result) {
+        const headerContent = getMatchedContent(result.header, target);
 
-        if (matchedContent)
+        if (headerContent)
           contents.push({
-            type: "content",
-            header: "header" in result ? result.header : result.title,
+            type: "heading",
             id: id.split("#")[0],
-            display: matchedContent,
+            display: headerContent,
             score,
           });
       }
 
-    if ("customFields" in result)
-      entries(result.customFields).forEach(([index, customFields]) => {
-        customFields.forEach((customField) => {
-          const customFieldContent = getMatchedContent(
-            customField,
-            queryString
-          );
+      if ("text" in result)
+        for (const text of result.text) {
+          const matchedContent = getMatchedContent(text, target);
 
-          if (customFieldContent)
+          if (matchedContent)
             contents.push({
-              type: "custom",
-              id,
-              index,
-              display: customFieldContent,
+              type: "content",
+              header: "header" in result ? result.header : result.title,
+              id: id.split("#")[0],
+              display: matchedContent,
               score,
             });
+        }
+
+      if ("customFields" in result)
+        entries(result.customFields).forEach(([index, customFields]) => {
+          customFields.forEach((customField) => {
+            const customFieldContent = getMatchedContent(customField, target);
+
+            if (customFieldContent)
+              contents.push({
+                type: "custom",
+                id,
+                index,
+                display: customFieldContent,
+                score,
+              });
+          });
         });
-      });
+    };
+
+    terms.forEach((term) => {
+      collectMatched(term);
+    });
   });
 
   return keys(suggestions)
