@@ -4,6 +4,17 @@ All notable changes to this project will be documented in this file. See [Conven
 
 <!-- #region recent-beta -->
 
+## [2.0.0-beta.215](https://github.com/vuepress-theme-hope/vuepress-theme-hope/compare/v2.0.0-beta.214...v2.0.0-beta.215) (2023-05-25)
+
+### Features
+
+- **search-pro:** use slimsearch ([d0a37b0](https://github.com/vuepress-theme-hope/vuepress-theme-hope/commit/d0a37b0422ee0fee3abcd5bc67db72022a6deff5))
+- **theme:** support bing copyright, close [#3115](https://github.com/vuepress-theme-hope/vuepress-theme-hope/issues/3115) ([dfd18bb](https://github.com/vuepress-theme-hope/vuepress-theme-hope/commit/dfd18bb325787c3b6a199862dd96f9fb8e1e5370))
+
+### Bug Fixes
+
+- **search-pro:** fix runtime worker ([01db9b1](https://github.com/vuepress-theme-hope/vuepress-theme-hope/commit/01db9b1520d8738716db281b4e4c7ed3894baf37))
+
 ## [2.0.0-beta.214](https://github.com/vuepress-theme-hope/vuepress-theme-hope/compare/v2.0.0-beta.213...v2.0.0-beta.214) (2023-05-25)
 
 ### Bug Fixes
