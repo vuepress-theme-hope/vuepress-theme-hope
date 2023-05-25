@@ -184,6 +184,24 @@ export default defineClientConfig({
 
 :::
 
+### 通过 API 使用
+
+如果你想要使用 API 来搜索，你可以从 `vuepress-plugin-search-pro/client` 中导入 `createSearchWorker` 来获取搜索结果:
+
+```ts
+import { createSearchWorker } from "vuepress-plugin-search-pro/client";
+
+const { search, terminate } = createSearchWorker();
+
+// 使用搜索 API
+search("keyword").then((results) => {
+  // 使用结果
+});
+
+// 当不需要时终止 Worker
+terminate();
+```
+
 ### 开发服务器中的限制
 
 搜索服务由 Worker 提供支持，在开发模式下我们无法捆绑 Worker 文件。

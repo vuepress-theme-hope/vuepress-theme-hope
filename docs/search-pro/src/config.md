@@ -271,7 +271,7 @@ Multilingual configuration of the search plugin.
 
 ### defineSearchConfig
 
-Customize search options.
+Customize [search options](https://lucaong.github.io/minisearch/modules/_minisearch_.html#searchoptions-1).
 
 ```ts
 // .vuepress/client.ts
@@ -282,4 +282,62 @@ defineSearchConfig({
 });
 
 export default {};
+```
+
+### createSearchWorker
+
+Create a search worker so that you can search through API.
+
+```ts
+export type Word = [tag: string, content: string] | string;
+
+export interface TitleMatchedItem {
+  type: "title";
+  id: string;
+  display: Word[];
+}
+
+export interface HeadingMatchedItem {
+  type: "heading";
+  id: string;
+  display: Word[];
+}
+
+export interface CustomMatchedItem {
+  type: "custom";
+  id: string;
+  index: string;
+  display: Word[];
+}
+
+export interface ContentMatchedItem {
+  type: "content";
+  id: string;
+  header: string;
+  display: Word[];
+}
+
+export type MatchedItem =
+  | TitleMatchedItem
+  | HeadingMatchedItem
+  | ContentMatchedItem
+  | CustomMatchedItem;
+
+export interface SearchResult {
+  title: string;
+  contents: MatchedItem[];
+}
+
+export interface SearchWorker {
+  search: (
+    query: string,
+    locale: string,
+    searchOptions?: SearchOptions
+  ) => Promise<SearchResult[]>;
+  terminate: () => void;
+}
+
+declare const createSearchWorker: (
+  options: SearchWorkerOptions
+) => SearchWorker;
 ```
