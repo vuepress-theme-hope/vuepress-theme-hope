@@ -104,7 +104,7 @@ export const bundle = (
       (esbuild as unknown as typeof esbuild.default)({
         charset: "utf8",
         minify: isProduction,
-        target: "node14",
+        target: "node16",
       }),
       copyOptions.length
         ? // FIXME: This is an issue of ts NodeNext
