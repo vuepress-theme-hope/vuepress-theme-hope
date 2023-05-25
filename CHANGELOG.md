@@ -4,6 +4,18 @@ All notable changes to this project will be documented in this file. See [Conven
 
 <!-- #region recent-beta -->
 
+## [2.0.0-beta.213](https://github.com/vuepress-theme-hope/vuepress-theme-hope/compare/v2.0.0-beta.212...v2.0.0-beta.213) (2023-05-25)
+
+### Features
+
+- **auto-catalog:** show empty hint if needed ([6801112](https://github.com/vuepress-theme-hope/vuepress-theme-hope/commit/68011122fa41628e0c431cc6a0159e373abfd2a4))
+- **md-enhance:** use mermaid@10.2, improve title support ([f026b56](https://github.com/vuepress-theme-hope/vuepress-theme-hope/commit/f026b563675575a896acebedf3264aa15d509397))
+- **search-pro:** add createSearchWorker ([44159ea](https://github.com/vuepress-theme-hope/vuepress-theme-hope/commit/44159ea17eb6aee5e200bf2933bbec5a16029904))
+- **search-pro:** improve fuzzy search ([512bce9](https://github.com/vuepress-theme-hope/vuepress-theme-hope/commit/512bce902ea0e511179408b27ab5aefaaf7dbb58))
+- **search-pro:** set delay default to 150 ([a874d93](https://github.com/vuepress-theme-hope/vuepress-theme-hope/commit/a874d93f480e151701aae2c360481b6e89ec9b37))
+- **search-pro:** support defineSearchConfig ([b7b54be](https://github.com/vuepress-theme-hope/vuepress-theme-hope/commit/b7b54be21d3024491d99bb12d9f29e8f1f2e36c9))
+- **search-pro:** use minisearch to boost search speed ([d88abb1](https://github.com/vuepress-theme-hope/vuepress-theme-hope/commit/d88abb1e16bef9e670e762a94c9c8953f0d1b7b8))
+
 ## [2.0.0-beta.212](https://github.com/vuepress-theme-hope/vuepress-theme-hope/compare/v2.0.0-beta.211...v2.0.0-beta.212) (2023-05-22)
 
 ### Features
