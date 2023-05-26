@@ -107,7 +107,7 @@
   input {
     flex: 1;
 
-    min-width: 0;
+    width: 0;
     margin: 0;
 
     // NOTE: Compatible with Android Wechat
@@ -115,7 +115,7 @@
     padding-top: 0.25rem;
     padding-bottom: 0.25rem;
     padding-inline-start: 2.5rem;
-    padding-inline-end: 1rem;
+    padding-inline-end: 2rem;
     border: 0;
     border: 2px solid var(--vp-tc);
     border-radius: 8px;
@@ -129,6 +129,39 @@
 
     -webkit-appearance: none;
     appearance: none;
+
+    &::-webkit-search-cancel-button {
+      display: none;
+    }
+  }
+
+  .clear-button {
+    @include reset.button;
+    position: absolute;
+    top: calc(50% - 10px);
+
+    // NOTE: Compatible with Android Wechat
+    // inset-inline-end: 0.75rem;
+    right: 0.75rem;
+
+    padding: 0;
+
+    color: var(--vp-tc);
+
+    #{hope-config.$rtl-selector} & {
+      right: 0.75rem;
+      left: unset;
+    }
+
+    &:hover {
+      border-radius: 50%;
+      background-color: rgb(0 0 0 / 10%);
+    }
+
+    .close-icon {
+      width: 1.5rem;
+      height: 1.5rem;
+    }
   }
 
   .close-button {

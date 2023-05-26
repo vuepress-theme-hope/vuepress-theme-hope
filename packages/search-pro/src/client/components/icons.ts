@@ -1,15 +1,6 @@
 import { type FunctionalComponent, h } from "vue";
 import { IconBase } from "vuepress-shared/client";
 
-export const CloseIcon: FunctionalComponent = () =>
-  h(IconBase, { name: "close" }, () =>
-    h("path", {
-      d: "M507.168 473.232 716.48 263.936a16 16 0 0 1 22.624 0l11.312 11.312a16 16 0 0 1 0 22.624L541.12 507.168 750.4 716.48a16 16 0 0 1 0 22.624l-11.312 11.312a16 16 0 0 1-22.624 0L507.168 541.12 297.872 750.4a16 16 0 0 1-22.624 0l-11.312-11.312a16 16 0 0 1 0-22.624l209.296-209.312-209.296-209.296a16 16 0 0 1 0-22.624l11.312-11.312a16 16 0 0 1 22.624 0l209.296 209.296z",
-    })
-  );
-
-CloseIcon.displayName = "CloseIcon";
-
 export const HeadingIcon: FunctionalComponent = () =>
   h(IconBase, { name: "heading" }, () =>
     h("path", {

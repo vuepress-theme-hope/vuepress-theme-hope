@@ -23,6 +23,7 @@ import {
 } from "../composables/index.js";
 import { searchProLocales } from "../define.js";
 import {
+  CLOSE_ICON,
   DOWN_KEY_ICON,
   ENTER_KEY_ICON,
   ESC_KEY_ICON,
@@ -115,6 +116,16 @@ export default defineComponent({
                       input.value = (<HTMLInputElement>target).value;
                     },
                   }),
+                  input.value
+                    ? h("button", {
+                        type: "reset",
+                        class: "clear-button",
+                        innerHTML: CLOSE_ICON,
+                        onClick: () => {
+                          input.value = "";
+                        },
+                      })
+                    : null,
                   h(
                     "dataset",
                     { id: "search-pro-dataset" },

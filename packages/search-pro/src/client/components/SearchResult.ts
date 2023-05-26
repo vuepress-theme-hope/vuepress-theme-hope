@@ -14,13 +14,7 @@ import { RouterLink, useRouter } from "vue-router";
 import { useLocaleConfig } from "vuepress-shared/client";
 
 import { SearchLoading } from "./SearchLoading.js";
-import {
-  CloseIcon,
-  HeadingIcon,
-  HeartIcon,
-  HistoryIcon,
-  TitleIcon,
-} from "./icons.js";
+import { HeadingIcon, HeartIcon, HistoryIcon, TitleIcon } from "./icons.js";
 import {
   useSearchQueryHistory,
   useSearchResult,
@@ -31,6 +25,7 @@ import {
   searchProLocales,
 } from "../define.js";
 import { type MatchedItem, type Word } from "../typings/index.js";
+import { CLOSE_ICON } from "../utils/index.js";
 
 import "../styles/search-result.scss";
 
@@ -219,18 +214,15 @@ export default defineComponent({
                             : null,
                           h("div", getDisplay(item)),
                         ]),
-                        h(
-                          "button",
-                          {
-                            class: "search-pro-close-icon",
-                            onClick: (event: Event) => {
-                              event.preventDefault();
-                              event.stopPropagation();
-                              removeResultHistory(historyIndex);
-                            },
+                        h("button", {
+                          class: "search-pro-close-icon",
+                          innerHTML: CLOSE_ICON,
+                          onClick: (event: Event) => {
+                            event.preventDefault();
+                            event.stopPropagation();
+                            removeResultHistory(historyIndex);
                           },
-                          h(CloseIcon)
-                        ),
+                        }),
                       ]
                     )
                   ),
