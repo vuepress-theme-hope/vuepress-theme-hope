@@ -8,11 +8,10 @@ import {
   type SearchProOptions,
 } from "./options.js";
 import {
+  IndexField,
   type IndexItem,
   type LocaleIndex,
-  type PageIndex,
   type SearchIndexStore,
-  type SectionIndex,
 } from "../shared/index.js";
 
 /**
@@ -71,13 +70,13 @@ export const generatePageIndex = (
   const { contentRendered, data, title } = page;
   const hasExcerpt = "excerpt" in data && data["excerpt"].length;
 
-  const pageIndex: PageIndex = { id: data.key, title };
-  const results: IndexItem[] = [];
+  const pageIndex: IndexItem = { id: data.key, [IndexField.heading]: title };
+  const results: IndexItem[] = [pageIndex];
 
   // here are some variables holding the current state of the parser
   let shouldIndexContent = hasExcerpt || indexContent;
   let currentContent = "";
-  let currentSectionIndex: SectionIndex | null = null;
+  let currentSectionIndex: IndexItem | null = null;
   let isContentBeforeFirstHeader = true;
 
   const render = (node: AnyNode, preserveSpace = false): void => {
@@ -85,10 +84,9 @@ export const generatePageIndex = (
       if (HEADING_TAGS.includes(node.name)) {
         if (currentContent && shouldIndexContent) {
           // add last content
-          ((isContentBeforeFirstHeader
-            ? pageIndex
-            : currentSectionIndex!
-          ).text ??= []).push(currentContent.replace(/\s+/gu, " "));
+          ((isContentBeforeFirstHeader ? pageIndex : currentSectionIndex!)[
+            IndexField.text
+          ] ??= []).push(currentContent.replace(/\s+/gu, " "));
           currentContent = "";
         }
 
@@ -98,18 +96,15 @@ export const generatePageIndex = (
         // update current section index
         currentSectionIndex = {
           id: `${data.key}#${node.attribs["id"]}`,
-          title,
-          header: renderHeader(node),
-          text: [],
+          [IndexField.heading]: renderHeader(node),
+          [IndexField.text]: [],
         };
       } else if (CONTENT_BLOCK_TAGS.includes(node.name)) {
         if (currentContent && shouldIndexContent) {
           // add last content
-          ((isContentBeforeFirstHeader
-            ? pageIndex
-            : currentSectionIndex)!.text ??= []).push(
-            currentContent.replace(/\s+/gu, " ")
-          );
+          ((isContentBeforeFirstHeader ? pageIndex : currentSectionIndex)![
+            IndexField.text
+          ] ??= []).push(currentContent.replace(/\s+/gu, " "));
           currentContent = "";
         }
         node.childNodes.forEach((item) =>
@@ -159,16 +154,16 @@ export const generatePageIndex = (
 
   // push contents in last block tags
   if (shouldIndexContent && currentContent)
-    ((isContentBeforeFirstHeader ? pageIndex : currentSectionIndex)!.text ??=
-      []).push(currentContent);
+    ((isContentBeforeFirstHeader ? pageIndex : currentSectionIndex)![
+      IndexField.text
+    ] ??= []).push(currentContent);
 
   // push last section
   if (currentSectionIndex) results.push(currentSectionIndex);
 
   // add custom fields
-  if (keys(customFields).length) pageIndex.customFields = customFields;
-
-  if (pageIndex.text || pageIndex.customFields) results.push(pageIndex);
+  if (keys(customFields).length)
+    pageIndex[IndexField.customFields] = customFields;
 
   return results;
 };
@@ -194,8 +189,17 @@ export const getSearchIndexStore = async (
   await Promise.all(
     entries(indexesByLocale).map(async ([localePath, indexes]) => {
       const index = createIndex<IndexItem>({
-        fields: ["id", "title", "header", "text", "customFields"],
-        storeFields: ["title", "header", "text", "customFields"],
+        fields: [
+          "id",
+          IndexField.heading,
+          IndexField.text,
+          IndexField.customFields,
+        ],
+        storeFields: [
+          IndexField.heading,
+          IndexField.text,
+          IndexField.customFields,
+        ],
       });
 
       await addAllAsync(index, indexes);

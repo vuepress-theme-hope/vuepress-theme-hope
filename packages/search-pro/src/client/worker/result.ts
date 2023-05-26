@@ -1,25 +1,20 @@
-import { type MatchInfo, type SearchIndex, search } from "slimsearch";
+import {
+  type MatchInfo,
+  type SearchIndex,
+  getStoredFields,
+  search,
+} from "slimsearch";
 import { entries, keys } from "vuepress-shared/client";
 
 import { getMatchedContent } from "./matchContent.js";
-import {
-  type IndexItem,
-  type PageIndex,
-  type SectionIndex,
-} from "../../shared/index.js";
+import { IndexField, type IndexItem } from "../../shared/index.js";
 import {
   type MatchedItem,
   type SearchOptions,
   type SearchResult,
 } from "../typings/index.js";
 
-export interface MiniSearchPageResult extends PageIndex {
-  terms: string[];
-  score: number;
-  match: MatchInfo;
-}
-
-export interface MiniSearchSectionResult extends SectionIndex {
+export interface MiniSearchResult extends IndexItem {
   terms: string[];
   score: number;
   match: MatchInfo;
@@ -40,68 +35,65 @@ export const getResults = (
     prefix: true,
     boost: { header: 4, text: 2, title: 1 },
     ...miniSearchOptions,
-  }) as unknown as (MiniSearchPageResult | MiniSearchSectionResult)[];
+  }) as unknown as MiniSearchResult[];
 
   results.forEach((result) => {
-    const { title, id, terms, score } = result;
+    const { id, terms, score } = result;
+    const isPage = id.includes("#");
     const key = id.split("#")[0];
 
-    if (!suggestions[key]) suggestions[key] = { title, contents: [] };
+    if (!suggestions[key]) suggestions[key] = { title: "", contents: [] };
+
+    // set title info
+    if (isPage) suggestions[key].title = result[IndexField.heading];
 
     const { contents } = suggestions[key];
 
     const collectMatched = (target: string): void => {
-      const titleContent = getMatchedContent(result.title, target);
+      const headerContent = getMatchedContent(
+        result[IndexField.heading],
+        target
+      );
 
-      if (titleContent)
+      if (headerContent)
         contents.push({
-          type: "title",
-          id,
-          display: titleContent,
+          type: isPage ? "title" : "heading",
+          id: key,
+          display: headerContent,
           score,
         });
 
-      if ("header" in result) {
-        const headerContent = getMatchedContent(result.header, target);
-
-        if (headerContent)
-          contents.push({
-            type: "heading",
-            id: id.split("#")[0],
-            display: headerContent,
-            score,
-          });
-      }
-
-      if ("text" in result)
-        for (const text of result.text) {
+      if (IndexField.text in result)
+        for (const text of result[IndexField.text]) {
           const matchedContent = getMatchedContent(text, target);
 
           if (matchedContent)
             contents.push({
               type: "content",
-              header: "header" in result ? result.header : result.title,
-              id: id.split("#")[0],
+              header: result[IndexField.heading],
+              id: key,
               display: matchedContent,
               score,
             });
         }
 
-      if ("customFields" in result)
-        entries(result.customFields).forEach(([index, customFields]) => {
-          customFields.forEach((customField) => {
-            const customFieldContent = getMatchedContent(customField, target);
+      if (IndexField.customFields in result)
+        entries(result[IndexField.customFields]).forEach(
+          ([index, customFields]) => {
+            customFields.forEach((customField) => {
+              const customFieldContent = getMatchedContent(customField, target);
 
-            if (customFieldContent)
-              contents.push({
-                type: "custom",
-                id,
-                index,
-                display: customFieldContent,
-                score,
-              });
-          });
-        });
+              if (customFieldContent)
+                contents.push({
+                  type: "custom",
+                  id,
+                  index,
+                  display: customFieldContent,
+                  score,
+                });
+            });
+          }
+        );
     };
 
     terms.forEach((term) => {
@@ -118,5 +110,16 @@ export const getResults = (
         ) -
         suggestions[idA].contents.reduce((total, { score }) => total + score, 0)
     )
-    .map((id) => suggestions[id]);
+    .map((id) => {
+      const item = suggestions[id];
+
+      // search to get title
+      if (!item.title) {
+        const pageIndex = getStoredFields(localeIndex, id);
+
+        if (pageIndex) item.title = <string>pageIndex[IndexField.heading];
+      }
+
+      return item;
+    });
 };

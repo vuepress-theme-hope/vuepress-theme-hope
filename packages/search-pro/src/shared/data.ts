@@ -1,20 +1,17 @@
 import { type SearchIndex } from "slimsearch";
 
-export interface PageIndex {
-  id: string;
-  title: string;
-  text?: string[];
-  customFields?: Record<string, string[]>;
+export const enum IndexField {
+  heading = "h",
+  text = "t",
+  customFields = "c",
 }
 
-export interface SectionIndex {
+export interface IndexItem {
   id: string;
-  title: string;
-  header: string;
-  text?: string[];
+  [IndexField.heading]: string;
+  [IndexField.text]?: string[];
+  [IndexField.customFields]?: Record<string, string[]>;
 }
-
-export type IndexItem = PageIndex | SectionIndex;
 
 export type LocaleIndex = Record<string, IndexItem[]>;
 

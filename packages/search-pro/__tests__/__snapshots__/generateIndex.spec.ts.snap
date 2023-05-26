@@ -3,24 +3,23 @@
 exports[`generateIndex > Should generate full index 1`] = `
 [
   {
-    "header": "Content",
+    "h": "Demo Page",
+    "id": "v-2b30cdfd",
+    "t": [
+      "Here is article excerpt.",
+      "const a = 1; ",
+    ],
+  },
+  {
+    "h": "Content",
     "id": "v-2b30cdfd#content",
-    "text": [
+    "t": [
       "Here is main content of article.",
       "A",
       "B",
       "C",
       "const a = 1; ",
     ],
-    "title": "Demo Page",
-  },
-  {
-    "id": "v-2b30cdfd",
-    "text": [
-      "Here is article excerpt.",
-      "const a = 1; ",
-    ],
-    "title": "Demo Page",
   },
 ]
 `;
@@ -28,83 +27,77 @@ exports[`generateIndex > Should generate full index 1`] = `
 exports[`generateIndex > Should generate full index 2`] = `
 [
   {
-    "header": "Heading 2",
+    "h": "Heading 1",
+    "id": "v-1bb9c728",
+  },
+  {
+    "h": "Heading 2",
     "id": "v-1bb9c728#heading-2",
-    "text": [],
-    "title": "Heading 1",
+    "t": [],
   },
   {
-    "header": "Heading 3",
+    "h": "Heading 3",
     "id": "v-1bb9c728#heading-3",
-    "text": [],
-    "title": "Heading 1",
+    "t": [],
   },
   {
-    "header": "Heading 4",
+    "h": "Heading 4",
     "id": "v-1bb9c728#heading-4",
-    "text": [],
-    "title": "Heading 1",
+    "t": [],
   },
   {
-    "header": "Heading 5",
+    "h": "Heading 5",
     "id": "v-1bb9c728#heading-5",
-    "text": [],
-    "title": "Heading 1",
+    "t": [],
   },
   {
-    "header": "Heading 6",
+    "h": "Heading 6",
     "id": "v-1bb9c728#heading-6",
-    "text": [],
-    "title": "Heading 1",
+    "t": [],
   },
   {
-    "header": "Text",
+    "h": "Text",
     "id": "v-1bb9c728#text",
-    "text": [
+    "t": [
       "This sentence has bold、italic and delete style text.",
     ],
-    "title": "Heading 1",
   },
   {
-    "header": "Paragraph",
+    "h": "Paragraph",
     "id": "v-1bb9c728#paragraph",
-    "text": [
+    "t": [
       "This is a paragraph.",
       "This is another paragraph.",
     ],
-    "title": "Heading 1",
   },
   {
-    "header": "Line Break",
+    "h": "Line Break",
     "id": "v-1bb9c728#line-break",
-    "text": [
+    "t": [
       "I would like to line break at this point",
       "::: tip",
       "In codes above, two spaces are behind at.",
       ":::",
     ],
-    "title": "Heading 1",
   },
   {
-    "header": "Blockquotes",
+    "h": "Blockquotes",
     "id": "v-1bb9c728#blockquotes",
-    "text": [
+    "t": [
       "Blockquotes can also be nested...",
       "...by using greater-than signs right next to each other...",
       "...or with spaces between arrows.",
     ],
-    "title": "Heading 1",
   },
   {
-    "header": "List",
+    "h": "List",
     "id": "v-1bb9c728#list",
-    "text": [],
-    "title": "Heading 1",
+    "t": [],
   },
   {
-    "header": "Unordered List",
+    "h": "Unordered List",
     "id": "v-1bb9c728#unordered-list",
-    "text": [
+    "t": [
       "Create a list by starting a line with -",
       "Make sub-lists by indenting 2 spaces:",
       "Marker character change forces new list start:",
@@ -114,52 +107,46 @@ exports[`generateIndex > Should generate full index 2`] = `
       "New paragraph",
       "It’s easy!",
     ],
-    "title": "Heading 1",
   },
   {
-    "header": "Ordered List",
+    "h": "Ordered List",
     "id": "v-1bb9c728#ordered-list",
-    "text": [
+    "t": [
       "Lorem ipsum dolor sit amet",
       "Consectetur adipiscing elit line break line break again",
       "Integer molestie lorem at massa",
     ],
-    "title": "Heading 1",
   },
   {
-    "header": "HR",
+    "h": "HR",
     "id": "v-1bb9c728#hr",
-    "text": [],
-    "title": "Heading 1",
+    "t": [],
   },
   {
-    "header": "Link",
+    "h": "Link",
     "id": "v-1bb9c728#link",
-    "text": [
+    "t": [
       "Home page using absolute path",
       "Home page using relative path",
     ],
-    "title": "Heading 1",
   },
   {
-    "header": "Image",
+    "h": "Image",
     "id": "v-1bb9c728#image",
-    "text": [],
-    "title": "Heading 1",
+    "t": [],
   },
   {
-    "header": "Emoji",
+    "h": "Emoji",
     "id": "v-1bb9c728#emoji",
-    "text": [
+    "t": [
       "Classic:",
       "😉 😢 😆 😋",
     ],
-    "title": "Heading 1",
   },
   {
-    "header": "Tables",
+    "h": "Tables",
     "id": "v-1bb9c728#tables",
-    "text": [
+    "t": [
       "center",
       "right",
       "left",
@@ -173,19 +160,17 @@ exports[`generateIndex > Should generate full index 2`] = `
       "aaaa",
       "a",
     ],
-    "title": "Heading 1",
   },
   {
-    "header": "Codes",
+    "h": "Codes",
     "id": "v-1bb9c728#codes",
-    "text": [
+    "t": [
       "Inline Code: code",
       "Block code:",
       "Sample text here... ",
       "Syntax highlighting:",
       "var foo = function (bar) { return bar++; }; console.log(foo(5)); ",
     ],
-    "title": "Heading 1",
   },
 ]
 `;
@@ -193,11 +178,11 @@ exports[`generateIndex > Should generate full index 2`] = `
 exports[`generateIndex > Should generate full index 3`] = `
 [
   {
+    "h": "Tag Test",
     "id": "v-6e785e10",
-    "text": [
+    "t": [
       "Markdown content.",
     ],
-    "title": "Tag Test",
   },
 ]
 `;
@@ -205,11 +190,11 @@ exports[`generateIndex > Should generate full index 3`] = `
 exports[`generateIndex > Should generate full index 4`] = `
 [
   {
+    "h": "",
     "id": "v-40f33c88",
-    "text": [
+    "t": [
       "Markdown content.",
     ],
-    "title": "",
   },
 ]
 `;
@@ -219,18 +204,17 @@ exports[`generateIndex > Should generate full index 5`] = `[]`;
 exports[`generateIndex > Should generate index 1`] = `
 [
   {
-    "header": "Content",
-    "id": "v-2b30cdfd#content",
-    "text": [],
-    "title": "Demo Page",
-  },
-  {
+    "h": "Demo Page",
     "id": "v-2b30cdfd",
-    "text": [
+    "t": [
       "Here is article excerpt.",
       "const a = 1; ",
     ],
-    "title": "Demo Page",
+  },
+  {
+    "h": "Content",
+    "id": "v-2b30cdfd#content",
+    "t": [],
   },
 ]
 `;
@@ -238,142 +222,141 @@ exports[`generateIndex > Should generate index 1`] = `
 exports[`generateIndex > Should generate index 2`] = `
 [
   {
-    "header": "Heading 2",
+    "h": "Heading 1",
+    "id": "v-1bb9c728",
+  },
+  {
+    "h": "Heading 2",
     "id": "v-1bb9c728#heading-2",
-    "text": [],
-    "title": "Heading 1",
+    "t": [],
   },
   {
-    "header": "Heading 3",
+    "h": "Heading 3",
     "id": "v-1bb9c728#heading-3",
-    "text": [],
-    "title": "Heading 1",
+    "t": [],
   },
   {
-    "header": "Heading 4",
+    "h": "Heading 4",
     "id": "v-1bb9c728#heading-4",
-    "text": [],
-    "title": "Heading 1",
+    "t": [],
   },
   {
-    "header": "Heading 5",
+    "h": "Heading 5",
     "id": "v-1bb9c728#heading-5",
-    "text": [],
-    "title": "Heading 1",
+    "t": [],
   },
   {
-    "header": "Heading 6",
+    "h": "Heading 6",
     "id": "v-1bb9c728#heading-6",
-    "text": [],
-    "title": "Heading 1",
+    "t": [],
   },
   {
-    "header": "Text",
+    "h": "Text",
     "id": "v-1bb9c728#text",
-    "text": [],
-    "title": "Heading 1",
+    "t": [],
   },
   {
-    "header": "Paragraph",
+    "h": "Paragraph",
     "id": "v-1bb9c728#paragraph",
-    "text": [],
-    "title": "Heading 1",
+    "t": [],
   },
   {
-    "header": "Line Break",
+    "h": "Line Break",
     "id": "v-1bb9c728#line-break",
-    "text": [],
-    "title": "Heading 1",
+    "t": [],
   },
   {
-    "header": "Blockquotes",
+    "h": "Blockquotes",
     "id": "v-1bb9c728#blockquotes",
-    "text": [],
-    "title": "Heading 1",
+    "t": [],
   },
   {
-    "header": "List",
+    "h": "List",
     "id": "v-1bb9c728#list",
-    "text": [],
-    "title": "Heading 1",
+    "t": [],
   },
   {
-    "header": "Unordered List",
+    "h": "Unordered List",
     "id": "v-1bb9c728#unordered-list",
-    "text": [],
-    "title": "Heading 1",
+    "t": [],
   },
   {
-    "header": "Ordered List",
+    "h": "Ordered List",
     "id": "v-1bb9c728#ordered-list",
-    "text": [],
-    "title": "Heading 1",
+    "t": [],
   },
   {
-    "header": "HR",
+    "h": "HR",
     "id": "v-1bb9c728#hr",
-    "text": [],
-    "title": "Heading 1",
+    "t": [],
   },
   {
-    "header": "Link",
+    "h": "Link",
     "id": "v-1bb9c728#link",
-    "text": [],
-    "title": "Heading 1",
+    "t": [],
   },
   {
-    "header": "Image",
+    "h": "Image",
     "id": "v-1bb9c728#image",
-    "text": [],
-    "title": "Heading 1",
+    "t": [],
   },
   {
-    "header": "Emoji",
+    "h": "Emoji",
     "id": "v-1bb9c728#emoji",
-    "text": [],
-    "title": "Heading 1",
+    "t": [],
   },
   {
-    "header": "Tables",
+    "h": "Tables",
     "id": "v-1bb9c728#tables",
-    "text": [],
-    "title": "Heading 1",
+    "t": [],
   },
   {
-    "header": "Codes",
+    "h": "Codes",
     "id": "v-1bb9c728#codes",
-    "text": [],
-    "title": "Heading 1",
+    "t": [],
   },
 ]
 `;
 
-exports[`generateIndex > Should generate index 3`] = `[]`;
+exports[`generateIndex > Should generate index 3`] = `
+[
+  {
+    "h": "Tag Test",
+    "id": "v-6e785e10",
+  },
+]
+`;
 
-exports[`generateIndex > Should generate index 4`] = `[]`;
+exports[`generateIndex > Should generate index 4`] = `
+[
+  {
+    "h": "",
+    "id": "v-40f33c88",
+  },
+]
+`;
 
 exports[`generateIndex > Should generate index 5`] = `[]`;
 
 exports[`generateIndex > Should support customFields 1`] = `
 [
   {
-    "header": "Content",
-    "id": "v-2b30cdfd#content",
-    "text": [],
-    "title": "Demo Page",
-  },
-  {
-    "customFields": {
+    "c": {
       "0": [
         "Demo",
       ],
     },
+    "h": "Demo Page",
     "id": "v-2b30cdfd",
-    "text": [
+    "t": [
       "Here is article excerpt.",
       "const a = 1; ",
     ],
-    "title": "Demo Page",
+  },
+  {
+    "h": "Content",
+    "id": "v-2b30cdfd#content",
+    "t": [],
   },
 ]
 `;
@@ -381,112 +364,98 @@ exports[`generateIndex > Should support customFields 1`] = `
 exports[`generateIndex > Should support customFields 2`] = `
 [
   {
-    "header": "Heading 2",
+    "h": "Heading 1",
+    "id": "v-1bb9c728",
+  },
+  {
+    "h": "Heading 2",
     "id": "v-1bb9c728#heading-2",
-    "text": [],
-    "title": "Heading 1",
+    "t": [],
   },
   {
-    "header": "Heading 3",
+    "h": "Heading 3",
     "id": "v-1bb9c728#heading-3",
-    "text": [],
-    "title": "Heading 1",
+    "t": [],
   },
   {
-    "header": "Heading 4",
+    "h": "Heading 4",
     "id": "v-1bb9c728#heading-4",
-    "text": [],
-    "title": "Heading 1",
+    "t": [],
   },
   {
-    "header": "Heading 5",
+    "h": "Heading 5",
     "id": "v-1bb9c728#heading-5",
-    "text": [],
-    "title": "Heading 1",
+    "t": [],
   },
   {
-    "header": "Heading 6",
+    "h": "Heading 6",
     "id": "v-1bb9c728#heading-6",
-    "text": [],
-    "title": "Heading 1",
+    "t": [],
   },
   {
-    "header": "Text",
+    "h": "Text",
     "id": "v-1bb9c728#text",
-    "text": [],
-    "title": "Heading 1",
+    "t": [],
   },
   {
-    "header": "Paragraph",
+    "h": "Paragraph",
     "id": "v-1bb9c728#paragraph",
-    "text": [],
-    "title": "Heading 1",
+    "t": [],
   },
   {
-    "header": "Line Break",
+    "h": "Line Break",
     "id": "v-1bb9c728#line-break",
-    "text": [],
-    "title": "Heading 1",
+    "t": [],
   },
   {
-    "header": "Blockquotes",
+    "h": "Blockquotes",
     "id": "v-1bb9c728#blockquotes",
-    "text": [],
-    "title": "Heading 1",
+    "t": [],
   },
   {
-    "header": "List",
+    "h": "List",
     "id": "v-1bb9c728#list",
-    "text": [],
-    "title": "Heading 1",
+    "t": [],
   },
   {
-    "header": "Unordered List",
+    "h": "Unordered List",
     "id": "v-1bb9c728#unordered-list",
-    "text": [],
-    "title": "Heading 1",
+    "t": [],
   },
   {
-    "header": "Ordered List",
+    "h": "Ordered List",
     "id": "v-1bb9c728#ordered-list",
-    "text": [],
-    "title": "Heading 1",
+    "t": [],
   },
   {
-    "header": "HR",
+    "h": "HR",
     "id": "v-1bb9c728#hr",
-    "text": [],
-    "title": "Heading 1",
+    "t": [],
   },
   {
-    "header": "Link",
+    "h": "Link",
     "id": "v-1bb9c728#link",
-    "text": [],
-    "title": "Heading 1",
+    "t": [],
   },
   {
-    "header": "Image",
+    "h": "Image",
     "id": "v-1bb9c728#image",
-    "text": [],
-    "title": "Heading 1",
+    "t": [],
   },
   {
-    "header": "Emoji",
+    "h": "Emoji",
     "id": "v-1bb9c728#emoji",
-    "text": [],
-    "title": "Heading 1",
+    "t": [],
   },
   {
-    "header": "Tables",
+    "h": "Tables",
     "id": "v-1bb9c728#tables",
-    "text": [],
-    "title": "Heading 1",
+    "t": [],
   },
   {
-    "header": "Codes",
+    "h": "Codes",
     "id": "v-1bb9c728#codes",
-    "text": [],
-    "title": "Heading 1",
+    "t": [],
   },
 ]
 `;
@@ -494,13 +463,13 @@ exports[`generateIndex > Should support customFields 2`] = `
 exports[`generateIndex > Should support customFields 3`] = `
 [
   {
-    "customFields": {
+    "c": {
       "0": [
         "markdown",
       ],
     },
+    "h": "Tag Test",
     "id": "v-6e785e10",
-    "title": "Tag Test",
   },
 ]
 `;
@@ -508,13 +477,13 @@ exports[`generateIndex > Should support customFields 3`] = `
 exports[`generateIndex > Should support customFields 4`] = `
 [
   {
-    "customFields": {
+    "c": {
       "0": [
         "markdown",
       ],
     },
+    "h": "",
     "id": "v-40f33c88",
-    "title": "",
   },
 ]
 `;
@@ -524,29 +493,28 @@ exports[`generateIndex > Should support customFields 5`] = `[]`;
 exports[`generateIndex > Should support customFields with full index 1`] = `
 [
   {
-    "header": "Content",
+    "c": {
+      "0": [
+        "Demo",
+      ],
+    },
+    "h": "Demo Page",
+    "id": "v-2b30cdfd",
+    "t": [
+      "Here is article excerpt.",
+      "const a = 1; ",
+    ],
+  },
+  {
+    "h": "Content",
     "id": "v-2b30cdfd#content",
-    "text": [
+    "t": [
       "Here is main content of article.",
       "A",
       "B",
       "C",
       "const a = 1; ",
     ],
-    "title": "Demo Page",
-  },
-  {
-    "customFields": {
-      "0": [
-        "Demo",
-      ],
-    },
-    "id": "v-2b30cdfd",
-    "text": [
-      "Here is article excerpt.",
-      "const a = 1; ",
-    ],
-    "title": "Demo Page",
   },
 ]
 `;
@@ -554,83 +522,77 @@ exports[`generateIndex > Should support customFields with full index 1`] = `
 exports[`generateIndex > Should support customFields with full index 2`] = `
 [
   {
-    "header": "Heading 2",
+    "h": "Heading 1",
+    "id": "v-1bb9c728",
+  },
+  {
+    "h": "Heading 2",
     "id": "v-1bb9c728#heading-2",
-    "text": [],
-    "title": "Heading 1",
+    "t": [],
   },
   {
-    "header": "Heading 3",
+    "h": "Heading 3",
     "id": "v-1bb9c728#heading-3",
-    "text": [],
-    "title": "Heading 1",
+    "t": [],
   },
   {
-    "header": "Heading 4",
+    "h": "Heading 4",
     "id": "v-1bb9c728#heading-4",
-    "text": [],
-    "title": "Heading 1",
+    "t": [],
   },
   {
-    "header": "Heading 5",
+    "h": "Heading 5",
     "id": "v-1bb9c728#heading-5",
-    "text": [],
-    "title": "Heading 1",
+    "t": [],
   },
   {
-    "header": "Heading 6",
+    "h": "Heading 6",
     "id": "v-1bb9c728#heading-6",
-    "text": [],
-    "title": "Heading 1",
+    "t": [],
   },
   {
-    "header": "Text",
+    "h": "Text",
     "id": "v-1bb9c728#text",
-    "text": [
+    "t": [
       "This sentence has bold、italic and delete style text.",
     ],
-    "title": "Heading 1",
   },
   {
-    "header": "Paragraph",
+    "h": "Paragraph",
     "id": "v-1bb9c728#paragraph",
-    "text": [
+    "t": [
       "This is a paragraph.",
       "This is another paragraph.",
     ],
-    "title": "Heading 1",
   },
   {
-    "header": "Line Break",
+    "h": "Line Break",
     "id": "v-1bb9c728#line-break",
-    "text": [
+    "t": [
       "I would like to line break at this point",
       "::: tip",
       "In codes above, two spaces are behind at.",
       ":::",
     ],
-    "title": "Heading 1",
   },
   {
-    "header": "Blockquotes",
+    "h": "Blockquotes",
     "id": "v-1bb9c728#blockquotes",
-    "text": [
+    "t": [
       "Blockquotes can also be nested...",
       "...by using greater-than signs right next to each other...",
       "...or with spaces between arrows.",
     ],
-    "title": "Heading 1",
   },
   {
-    "header": "List",
+    "h": "List",
     "id": "v-1bb9c728#list",
-    "text": [],
-    "title": "Heading 1",
+    "t": [],
   },
   {
-    "header": "Unordered List",
+    "h": "Unordered List",
     "id": "v-1bb9c728#unordered-list",
-    "text": [
+    "t": [
       "Create a list by starting a line with -",
       "Make sub-lists by indenting 2 spaces:",
       "Marker character change forces new list start:",
@@ -640,52 +602,46 @@ exports[`generateIndex > Should support customFields with full index 2`] = `
       "New paragraph",
       "It’s easy!",
     ],
-    "title": "Heading 1",
   },
   {
-    "header": "Ordered List",
+    "h": "Ordered List",
     "id": "v-1bb9c728#ordered-list",
-    "text": [
+    "t": [
       "Lorem ipsum dolor sit amet",
       "Consectetur adipiscing elit line break line break again",
       "Integer molestie lorem at massa",
     ],
-    "title": "Heading 1",
   },
   {
-    "header": "HR",
+    "h": "HR",
     "id": "v-1bb9c728#hr",
-    "text": [],
-    "title": "Heading 1",
+    "t": [],
   },
   {
-    "header": "Link",
+    "h": "Link",
     "id": "v-1bb9c728#link",
-    "text": [
+    "t": [
       "Home page using absolute path",
       "Home page using relative path",
     ],
-    "title": "Heading 1",
   },
   {
-    "header": "Image",
+    "h": "Image",
     "id": "v-1bb9c728#image",
-    "text": [],
-    "title": "Heading 1",
+    "t": [],
   },
   {
-    "header": "Emoji",
+    "h": "Emoji",
     "id": "v-1bb9c728#emoji",
-    "text": [
+    "t": [
       "Classic:",
       "😉 😢 😆 😋",
     ],
-    "title": "Heading 1",
   },
   {
-    "header": "Tables",
+    "h": "Tables",
     "id": "v-1bb9c728#tables",
-    "text": [
+    "t": [
       "center",
       "right",
       "left",
@@ -699,19 +655,17 @@ exports[`generateIndex > Should support customFields with full index 2`] = `
       "aaaa",
       "a",
     ],
-    "title": "Heading 1",
   },
   {
-    "header": "Codes",
+    "h": "Codes",
     "id": "v-1bb9c728#codes",
-    "text": [
+    "t": [
       "Inline Code: code",
       "Block code:",
       "Sample text here... ",
       "Syntax highlighting:",
       "var foo = function (bar) { return bar++; }; console.log(foo(5)); ",
     ],
-    "title": "Heading 1",
   },
 ]
 `;
@@ -719,16 +673,16 @@ exports[`generateIndex > Should support customFields with full index 2`] = `
 exports[`generateIndex > Should support customFields with full index 3`] = `
 [
   {
-    "customFields": {
+    "c": {
       "0": [
         "markdown",
       ],
     },
+    "h": "Tag Test",
     "id": "v-6e785e10",
-    "text": [
+    "t": [
       "Markdown content.",
     ],
-    "title": "Tag Test",
   },
 ]
 `;
@@ -736,16 +690,16 @@ exports[`generateIndex > Should support customFields with full index 3`] = `
 exports[`generateIndex > Should support customFields with full index 4`] = `
 [
   {
-    "customFields": {
+    "c": {
       "0": [
         "markdown",
       ],
     },
+    "h": "",
     "id": "v-40f33c88",
-    "text": [
+    "t": [
       "Markdown content.",
     ],
-    "title": "",
   },
 ]
 `;
