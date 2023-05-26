@@ -72,11 +72,11 @@ export default defineComponent({
       () => results.value[activatedResultIndex.value] || null
     );
 
-    const getRealPath = (id: string): string => {
-      const [key, anchor] = id.split("#");
-
-      return router.resolve({ name: key, hash: `#${anchor}` }).href;
-    };
+    const getRealPath = (item: MatchedItem): string =>
+      router.resolve({
+        name: item.key,
+        ...("anchor" in item ? { hash: item.anchor } : {}),
+      }).path;
 
     const activePreviousResult = (): void => {
       activatedResultIndex.value =
@@ -148,7 +148,7 @@ export default defineComponent({
         const item =
           activatedResult.value.contents[activatedResultContentIndex.value];
 
-        const path = getRealPath(item.id);
+        const path = getRealPath(item);
 
         if (page.value.path !== path) {
           addQueryHistory(props.query);
@@ -198,7 +198,7 @@ export default defineComponent({
                     h(
                       RouterLink,
                       {
-                        to: getRealPath(item.id),
+                        to: getRealPath(item),
                         class: [
                           "search-pro-result-item",
                           {
@@ -271,7 +271,7 @@ export default defineComponent({
                       return h(
                         RouterLink,
                         {
-                          to: getRealPath(item.id),
+                          to: getRealPath(item),
                           class: [
                             "search-pro-result-item",
                             {

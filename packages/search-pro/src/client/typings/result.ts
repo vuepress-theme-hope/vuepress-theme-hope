@@ -2,27 +2,29 @@ export type Word = [tag: string, content: string] | string;
 
 export interface TitleMatchedItem {
   type: "title";
-  id: string;
+  key: string;
   display: Word[];
 }
 
 export interface HeadingMatchedItem {
   type: "heading";
-  id: string;
+  key: string;
+  anchor: string;
   display: Word[];
 }
 
 export interface CustomMatchedItem {
   type: "custom";
-  id: string;
+  key: string;
   index: string;
   display: Word[];
 }
 
 export interface ContentMatchedItem {
   type: "content";
-  id: string;
-  header: string;
+  key: string;
+  header?: string;
+  anchor?: string;
   display: Word[];
 }
 

@@ -9,6 +9,8 @@ icon: lightbulb
 
 对于小型站点来说，通常情况下你需要一个开箱即用的全文搜索，你可以直接通过 `{ indexContent: true }` 调用 `vuepress-plugin-search-pro` 插件。
 
+为了提供更好的搜索，你需要 [使用 `nodejs-jisba` 进行分词](#自定义索引生成)。
+
 ## 自定义索引
 
 无论是主题开发者还是用户，在 Frontmatter 中或者通过 `extendsPage` 生命周期为页面添加额外数据是一个常见的操作。很多情况下，你可能希望把这些数据也编入索引，所以我们提供了 `customFields` 选项。
@@ -160,9 +162,71 @@ export default defineUserConfig({
 
 ## 高级
 
+### 自定义索引生成
+
+如果你正在索引其他不使用“单词”的语言，如中文、日语或韩语，你应该设置 `indexOptions` 和 `indexLocaleOptions` 以执行正确的分词。
+
+如果你正在构建中文文档，则可以使用 [nodejs-jieba](https://github.com/Mister-Hope/nodejs-jieba) 进行分词。 (日语和韩语没有内置词典，但你可以提供自己的词典，并使用 `nodejs-jieba` 拆分单词)。
+
+如果你的文档只包含中文，你可以像这样对内容进行标记：
+
+```ts
+import { cut } from "nodejs-jieba";
+import { defineUserConfig } from "vuepress";
+import { searchProPlugin } from "vuepress-plugin-search-pro";
+
+export default defineUserConfig({
+  lang: "zh-CN",
+
+  plugins: [
+    searchProPlugin({
+      // 索引全部内容
+      indexContent: true,
+      indexOptions: {
+        // 使用 nodejs-jieba 进行分词
+        tokenize: (text, fieldName) =>
+          fieldName === "id" ? [text] : cut(text, true),
+      },
+    }),
+  ],
+});
+```
+
+如果你需要在某些语言环境中进行分词，你可以设置 `indexLocaleOptions`:
+
+```ts
+import { cut } from "nodejs-jieba";
+import { defineUserConfig } from "vuepress";
+import { searchProPlugin } from "vuepress-plugin-search-pro";
+
+export default defineUserConfig({
+  locales: {
+    "/": {
+      lang: "en-US",
+    },
+    "/zh/": {
+      lang: "zh-CN",
+    },
+  },
+
+  plugins: [
+    searchProPlugin({
+      indexContent: true,
+      indexLocaleOptions: {
+        "/zh/": {
+          // 使用 nodejs-jieba 进行分词
+          tokenize: (text, fieldName) =>
+            fieldName === "id" ? [text] : cut(text, true),
+        },
+      },
+    }),
+  ],
+});
+```
+
 ### 自定义搜索选项
 
-您可以通过在客户端配置文件中导入和调用“defineSearchConfig”来自定义搜索选项：
+你可以通过在客户端配置文件中导入和调用 `defineSearchConfig` 来自定义搜索选项：
 
 ```ts
 // .vuepress/client.ts
@@ -180,7 +244,7 @@ export default defineClientConfig({
 
 ::: note
 
-由于搜索是在 Web Worker 中完成的，因此不支持设置选项为函数。
+由于搜索是在 Web Worker 中完成的，因此不支持设置选项为函数类型的值。
 
 :::
 

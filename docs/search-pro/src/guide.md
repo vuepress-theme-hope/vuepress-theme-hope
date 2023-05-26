@@ -156,6 +156,68 @@ For specific options, see [Config → Locale Settings](./config.md#locales).
 
 ## Advanced
 
+### Customize Index Generation
+
+If you are indexing other language which is not using "Words", like Chinese, Japanese or Korean, you should set `indexOptions` and `indexLocaleOptions` to perform correct word-splitting.
+
+If you are building a Chinese docs, you can use [nodejs-jieba](https://github.com/Mister-Hope/nodejs-jieba) to perform word splitting. (Japanese and Korean do not have built-in dictionary, but you can provide your own dictionary and split words with `nodejs-jieba`).
+
+If your docs only contain Chinese, you can tokenize the content like this:
+
+```ts
+import { cut } from "nodejs-jieba";
+import { defineUserConfig } from "vuepress";
+import { searchProPlugin } from "vuepress-plugin-search-pro";
+
+export default defineUserConfig({
+  lang: "zh-CN",
+
+  plugins: [
+    searchProPlugin({
+      // index all content
+      indexContent: true,
+      indexOptions: {
+        // tokenize the content with nodejs-jieba
+        tokenize: (text, fieldName) =>
+          fieldName === "id" ? [text] : cut(text, true),
+      },
+    }),
+  ],
+});
+```
+
+If you need word splitting in some locales, you can set `indexLocaleOptions`:
+
+```ts
+import { cut } from "nodejs-jieba";
+import { defineUserConfig } from "vuepress";
+import { searchProPlugin } from "vuepress-plugin-search-pro";
+
+export default defineUserConfig({
+  locales: {
+    "/": {
+      lang: "en-US",
+    },
+    "/zh/": {
+      lang: "zh-CN",
+    },
+  },
+
+  plugins: [
+    searchProPlugin({
+      indexContent: true,
+      indexLocaleOptions: {
+        "/zh/": {
+          // tokenize the content with nodejs-jieba
+          tokenize: (text, fieldName) =>
+            fieldName === "id" ? [text] : cut(text, true),
+        },
+      },
+    }),
+  ],
+});
+```
+
 ### Customize Search Options
 
 You can customize search options by importing and calling `defineSearchConfig` in client config file:
@@ -176,7 +238,7 @@ export default defineClientConfig({
 
 ::: note
 
-Since searching is done in a Web Worker, setting options to function value is not supported.
+Since searching is done in a Web Worker, setting options to function-typed value is not supported.
 
 :::
 

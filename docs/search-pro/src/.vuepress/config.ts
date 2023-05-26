@@ -1,5 +1,6 @@
 import { config } from "docs-shared";
 import { searchProPlugin } from "vuepress-plugin-search-pro";
+import { cut } from "nodejs-jieba";
 import theme from "./theme.js";
 
 export default config(
@@ -23,6 +24,12 @@ export default config(
     plugins: [
       searchProPlugin({
         indexContent: true,
+        indexLocaleOptions: {
+          "/zh/": {
+            tokenize: (text, fieldName) =>
+              fieldName === "id" ? [text] : cut(text, true),
+          },
+        },
       }),
     ],
 

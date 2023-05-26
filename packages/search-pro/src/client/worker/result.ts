@@ -14,6 +14,8 @@ import {
   type SearchResult,
 } from "../typings/index.js";
 
+const CHINESE_CHARACTERS = /[\u4e00-\u9fa5]/g;
+
 export interface MiniSearchResult extends IndexItem {
   terms: string[];
   score: number;
@@ -22,7 +24,7 @@ export interface MiniSearchResult extends IndexItem {
 
 export const getResults = (
   query: string,
-  localeIndex: SearchIndex<IndexItem>,
+  localeIndex: SearchIndex<IndexItem, string>,
   miniSearchOptions: SearchOptions = {}
 ): SearchResult[] => {
   const suggestions: Record<
@@ -30,17 +32,26 @@ export const getResults = (
     { title: string; contents: (MatchedItem & { score: number })[] }
   > = {};
 
-  const results = search(localeIndex, query, {
+  const results = search<IndexItem, string, IndexItem>(localeIndex, query, {
     fuzzy: 0.2,
     prefix: true,
     boost: { header: 4, text: 2, title: 1 },
+    processTerm: (term) => {
+      const chineseCharacters = term.match(CHINESE_CHARACTERS) || [];
+      const englishTerm = term.replace(CHINESE_CHARACTERS, "");
+
+      return englishTerm
+        ? [englishTerm, ...chineseCharacters]
+        : [...chineseCharacters];
+    },
     ...miniSearchOptions,
-  }) as unknown as MiniSearchResult[];
+  });
 
   results.forEach((result) => {
     const { id, terms, score } = result;
-    const isPage = id.includes("#");
+    const isPage = !id.includes("#");
     const key = id.split("#")[0];
+    const anchor = isPage ? "" : `#${id.split("#")[1]}`;
 
     if (!suggestions[key]) suggestions[key] = { title: "", contents: [] };
 
@@ -56,12 +67,22 @@ export const getResults = (
       );
 
       if (headerContent)
-        contents.push({
-          type: isPage ? "title" : "heading",
-          id: key,
-          display: headerContent,
-          score,
-        });
+        contents.push(
+          isPage
+            ? {
+                type: "title",
+                key,
+                display: headerContent,
+                score,
+              }
+            : {
+                type: "heading",
+                key,
+                anchor,
+                display: headerContent,
+                score,
+              }
+        );
 
       if (IndexField.text in result)
         for (const text of result[IndexField.text]) {
@@ -70,8 +91,8 @@ export const getResults = (
           if (matchedContent)
             contents.push({
               type: "content",
-              header: result[IndexField.heading],
-              id: key,
+              key,
+              ...(isPage ? {} : { anchor, header: result[IndexField.heading] }),
               display: matchedContent,
               score,
             });
@@ -86,7 +107,7 @@ export const getResults = (
               if (customFieldContent)
                 contents.push({
                   type: "custom",
-                  id,
+                  key: id,
                   index,
                   display: customFieldContent,
                   score,

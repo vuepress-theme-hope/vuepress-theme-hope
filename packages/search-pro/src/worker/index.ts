@@ -1,4 +1,4 @@
-import { type AsPlainObject, loadIndex } from "slimsearch";
+import { type IndexObject, loadIndex } from "slimsearch";
 import { entries, fromEntries } from "vuepress-shared/client";
 
 import { type MessageData } from "../client/typings/index.js";
@@ -12,16 +12,11 @@ import {
 declare const SEARCH_PRO_INDEX: string;
 
 const searchIndex: SearchIndexStore = fromEntries(
-  entries(<Record<string, AsPlainObject>>JSON.parse(SEARCH_PRO_INDEX)).map(
+  entries(<Record<string, IndexObject>>JSON.parse(SEARCH_PRO_INDEX)).map(
     ([localePath, index]) => [
       localePath,
-      loadIndex<IndexItem>(index, {
-        fields: [
-          "id",
-          IndexField.heading,
-          IndexField.text,
-          IndexField.customFields,
-        ],
+      loadIndex<IndexItem, string>(index, {
+        fields: [IndexField.heading, IndexField.text, IndexField.customFields],
         storeFields: [
           IndexField.heading,
           IndexField.text,

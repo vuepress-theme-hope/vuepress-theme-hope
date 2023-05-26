@@ -6,6 +6,21 @@ import {
   type SearchProLocaleData,
 } from "../shared/index.js";
 
+export interface SearchProIndexOptions {
+  /**
+   * Function to tokenize the index field item.
+   *
+   * 用于对索引字段项进行分词的函数。
+   */
+  tokenize?: (text: string, fieldName?: string) => string[];
+  /**
+   * Function to process or normalize terms in the index field.
+   *
+   * 用于处理或规范索引字段中的术语的函数。
+   */
+  processTerm?: (term: string) => string | string[] | null | undefined | false;
+}
+
 export interface SearchProCustomFieldOptions {
   /**
    * Custom field getter
@@ -126,4 +141,18 @@ export interface SearchProOptions {
    * @see [默认配置](https://github.com/vuepress-theme-hope/vuepress-theme-hope/blob/main/packages/search-pro/src/node/locales.ts)
    */
   locales?: LocaleConfig<SearchProLocaleData>;
+
+  /**
+   * Create Index option
+   *
+   * 创建索引选项
+   */
+  indexOptions?: SearchProIndexOptions;
+
+  /**
+   * Create Index option per locale
+   *
+   * 按语言的创建索引选项
+   */
+  indexLocaleOptions?: Record<string, SearchProIndexOptions>;
 }

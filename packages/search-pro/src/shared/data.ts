@@ -15,4 +15,4 @@ export interface IndexItem {
 
 export type LocaleIndex = Record<string, IndexItem[]>;
 
-export type SearchIndexStore = Record<string, SearchIndex<IndexItem>>;
+export type SearchIndexStore = Record<string, SearchIndex<IndexItem, string>>;

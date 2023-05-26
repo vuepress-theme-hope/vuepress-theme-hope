@@ -170,16 +170,17 @@ export const generatePageIndex = (
 
 export const getSearchIndexStore = async (
   app: App,
-  options: SearchProOptions
+  {
+    customFields,
+    indexContent,
+    indexOptions,
+    indexLocaleOptions,
+  }: SearchProOptions
 ): Promise<SearchIndexStore> => {
   const indexesByLocale: LocaleIndex = {};
 
   app.pages.forEach((page) => {
-    const indexes = generatePageIndex(
-      page,
-      options.customFields,
-      options.indexContent
-    );
+    const indexes = generatePageIndex(page, customFields, indexContent);
 
     (indexesByLocale[page.pathLocale] ??= []).push(...indexes);
   });
@@ -188,13 +189,10 @@ export const getSearchIndexStore = async (
 
   await Promise.all(
     entries(indexesByLocale).map(async ([localePath, indexes]) => {
-      const index = createIndex<IndexItem>({
-        fields: [
-          "id",
-          IndexField.heading,
-          IndexField.text,
-          IndexField.customFields,
-        ],
+      const index = createIndex<IndexItem, string>({
+        ...indexOptions,
+        ...indexLocaleOptions?.[localePath],
+        fields: [IndexField.heading, IndexField.text, IndexField.customFields],
         storeFields: [
           IndexField.heading,
           IndexField.text,

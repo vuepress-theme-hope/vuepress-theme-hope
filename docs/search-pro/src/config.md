@@ -184,6 +184,52 @@ Usually in development, users do not need to update the index database in real t
 
 :::
 
+## indexOptions
+
+- Type: `SearchProIndexOptions`
+
+  ```ts
+  export interface SearchProIndexOptions {
+    /**
+     * Function to tokenize the index field item.
+     */
+    tokenize?: (text: string, fieldName?: string) => string[];
+    /**
+     * Function to process or normalize terms in the index field.
+     */
+    processTerm?: (
+      term: string
+    ) => string | string[] | null | undefined | false;
+  }
+  ```
+
+- Required: No
+
+Options used to create index.
+
+## indexLocaleOptions
+
+- Type: `Record<string, SearchProIndexOptions>`
+
+  ```ts
+  export interface SearchProIndexOptions {
+    /**
+     * Function to tokenize the index field item.
+     */
+    tokenize?: (text: string, fieldName?: string) => string[];
+    /**
+     * Function to process or normalize terms in the index field.
+     */
+    processTerm?: (
+      term: string
+    ) => string | string[] | null | undefined | false;
+  }
+  ```
+
+- Required: No
+
+Options used to create index per locale.
+
 ### locales
 
 - Type: `SearchProLocaleConfig`

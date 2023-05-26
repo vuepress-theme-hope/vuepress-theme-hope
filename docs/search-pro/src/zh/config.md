@@ -184,6 +184,52 @@ export default defineUserConfig({
 
 :::
 
+## indexOptions
+
+- 类型: `SearchProIndexOptions`
+
+  ```ts
+  export interface SearchProIndexOptions {
+    /**
+     * 用于对索引字段项进行分词的函数。
+     */
+    tokenize?: (text: string, fieldName?: string) => string[];
+    /**
+     * 用于处理或规范索引字段中的术语的函数。
+     */
+    processTerm?: (
+      term: string
+    ) => string | string[] | null | undefined | false;
+  }
+  ```
+
+- 必填: 否
+
+创建索引选项。
+
+## indexLocaleOptions
+
+- 类型: `Record<string, SearchProIndexOptions>`
+
+  ```ts
+  export interface SearchProIndexOptions {
+    /**
+     * 用于对索引字段项进行分词的函数。
+     */
+    tokenize?: (text: string, fieldName?: string) => string[];
+    /**
+     * 用于处理或规范索引字段中的术语的函数。
+     */
+    processTerm?: (
+      term: string
+    ) => string | string[] | null | undefined | false;
+  }
+  ```
+
+- 必填: 否
+
+分语言的创建索引选项。
+
 ### locales
 
 - 类型: `SearchProLocaleConfig`

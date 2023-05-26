@@ -64,7 +64,7 @@ export default defineUserConfig({
 
 `vuepress-theme-hope` 添加了一个带进度条的返回顶部按钮，默认向下滚动 100px 后显示。
 
-您可以在主题选项中设置 `backToTop: false` 来禁用它，或者用一个对象来设置它来自定义它的阈值距离和进度条显示：
+你可以在主题选项中设置 `backToTop: false` 来禁用它，或者用一个对象来设置它来自定义它的阈值距离和进度条显示：
 
 ```ts
 interface BackToTopOptions {

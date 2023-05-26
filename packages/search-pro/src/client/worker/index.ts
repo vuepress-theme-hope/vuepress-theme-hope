@@ -11,13 +11,8 @@ self.onmessage = async ({
 }: MessageEvent<MessageData>): Promise<void> => {
   const { default: localeIndex } = await database[locale]();
 
-  const searchLocaleIndex = loadJSONIndex<IndexItem>(localeIndex, {
-    fields: [
-      "id",
-      IndexField.heading,
-      IndexField.text,
-      IndexField.customFields,
-    ],
+  const searchLocaleIndex = loadJSONIndex<IndexItem, string>(localeIndex, {
+    fields: [IndexField.heading, IndexField.text, IndexField.customFields],
     storeFields: [IndexField.heading, IndexField.text, IndexField.customFields],
   });
 
