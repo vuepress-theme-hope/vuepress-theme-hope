@@ -21,20 +21,25 @@ export const useSearchResult = (query: Ref<string>): SearchRef => {
   const searching = ref(false);
   const results = shallowRef<SearchResult[]>([]);
 
+  const endSearch = (): void => {
+    results.value = [];
+    searching.value = false;
+  };
+
   const performSearch = useDebounceFn((queryString: string): void => {
     searching.value = true;
 
-    if (queryString) {
-      void search(queryString, routeLocale.value, searchOptions).then(
-        (searchResults) => {
+    if (queryString)
+      void search(queryString, routeLocale.value, searchOptions)
+        .then((searchResults) => {
           results.value = searchResults;
           searching.value = false;
-        }
-      );
-    } else {
-      results.value = [];
-      searching.value = false;
-    }
+        })
+        .catch((err) => {
+          console.error(err);
+          endSearch();
+        });
+    else endSearch();
   }, searchProOptions.delay);
 
   watch([query, routeLocale], () => performSearch(query.value), {

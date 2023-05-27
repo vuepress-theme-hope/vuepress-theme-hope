@@ -99,21 +99,20 @@ export const getResults = (
     else if (isText) {
       const [headingIndex] = info.split("/");
 
-      const heading =
-        headingIndex === "0"
-          ? // this is content under page
-            ""
-          : <string>(
-              getStoredFields(localeIndex, `${key}#${headingIndex}`)![
-                IndexField.heading
-              ]
-            );
+      const {
+        [IndexField.heading]: heading = "",
+        [IndexField.anchor]: anchor = "",
+      } =
+        (getStoredFields(localeIndex, `${key}#${headingIndex}`) as unknown as
+          | HeadingIndexItem
+          | undefined) || {};
 
       contents.push([
         {
           [ResultField.type]: ResultType.text,
           [ResultField.key]: key,
           [ResultField.header]: heading,
+          [ResultField.anchor]: anchor,
           [ResultField.display]: terms
             .map((term) =>
               getMatchedContent((<TextIndexItem>result)[IndexField.text], term)

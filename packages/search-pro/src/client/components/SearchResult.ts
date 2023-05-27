@@ -78,7 +78,7 @@ export default defineComponent({
         ...(ResultField.anchor in item
           ? { hash: `#${item[ResultField.anchor]}` }
           : {}),
-      }).path;
+      }).fullPath;
 
     const activePreviousResult = (): void => {
       activatedResultIndex.value =
