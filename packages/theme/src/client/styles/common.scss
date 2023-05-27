@@ -48,7 +48,7 @@
   justify-content: space-between;
   min-height: 100vh;
 
-  .page {
+  .vp-page {
     // leave space for navbar
     padding-top: var(--navbar-height);
 
@@ -76,7 +76,7 @@
   }
 
   &.no-navbar {
-    .page {
+    .vp-page {
       // clear space for navbar
       padding-top: 0;
     }
@@ -103,7 +103,7 @@
 
   // close state on desktop
   &.sidebar-collapsed {
-    .page {
+    .vp-page {
       padding-inline-start: 0;
     }
 
@@ -133,7 +133,7 @@
 
   // sidebar is disabled
   &.no-sidebar {
-    .page {
+    .vp-page {
       // NOTE: Compatible with Android Wechat
       // padding-inline: 0;
       padding-inline-start: 0;
@@ -141,7 +141,7 @@
     }
 
     &.has-toc {
-      .page {
+      .vp-page {
         // add padding for anchor
         @media (min-width: hope-config.$pc) {
           padding-inline-end: 16rem;

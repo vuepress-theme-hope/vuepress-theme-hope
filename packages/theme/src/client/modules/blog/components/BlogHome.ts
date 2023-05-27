@@ -17,10 +17,10 @@ export default defineComponent({
     const articles = useArticles();
 
     return (): VNode =>
-      h("div", { class: "page blog" }, [
+      h("div", { class: "vp-page vp-blog" }, [
         h(BlogHero),
         h("div", { class: "blog-page-wrapper" }, [
-          h("main", { class: "blog-home", id: "main-content" }, [
+          h("main", { class: "vp-blog-home", id: "main-content" }, [
             h(DropTransition, { appear: true, delay: 0.16 }, () =>
               h(ProjectPanel)
             ),

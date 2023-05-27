@@ -108,10 +108,10 @@ export default defineComponent({
     return (): VNode =>
       h(
         "div",
-        { class: "pagination-wrapper" },
+        { class: "vp-pagination" },
         enable.value
-          ? h("div", { class: "pagination-list" }, [
-              h("div", { class: "page-number" }, [
+          ? h("div", { class: "vp-pagination-list" }, [
+              h("div", { class: "vp-pagination-number " }, [
                 // prev button
                 props.current > 1
                   ? h(
@@ -182,7 +182,7 @@ export default defineComponent({
                     )
                   : null,
               ]),
-              h("div", { class: "navigate-wrapper" }, [
+              h("div", { class: "vp-pagination-nav" }, [
                 h(
                   "label",
                   { for: "navigation-text" },
@@ -204,7 +204,7 @@ export default defineComponent({
                 h(
                   "button",
                   {
-                    class: "navigate",
+                    class: "vp-pagination-button",
                     role: "navigation",
                     title: locale.value.action,
                     onClick: () => jumpPage(input.value),

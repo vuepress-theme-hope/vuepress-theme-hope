@@ -32,21 +32,24 @@ export default defineComponent({
 
   setup(props) {
     return (): VNode =>
-      h("div", { class: "feature-panel" }, [
+      h("div", { class: "vp-feature-panel" }, [
         props.header
-          ? h("h2", { class: "feature-header" }, props.header)
+          ? h("h2", { class: "vp-feature-title" }, props.header)
           : null,
         props.items.length
           ? h(
               "div",
-              { class: "feature-wrapper" },
+              { class: "vp-features-wrapper" },
               props.items.map((feature) => {
                 const children = [
-                  h("h3", [
+                  h("h3", { class: "vp-feature-header" }, [
                     h(HopeIcon, { icon: feature.icon }),
                     h("span", { innerHTML: feature.title }),
                   ]),
-                  h("p", { innerHTML: feature.details }),
+                  h("p", {
+                    class: "vp-feature-content",
+                    innerHTML: feature.details,
+                  }),
                 ];
 
                 return feature.link
@@ -54,7 +57,7 @@ export default defineComponent({
                     ? h(
                         "a",
                         {
-                          class: "feature-item link",
+                          class: "vp-feature link",
                           href: feature.link,
                           role: "navigation",
                           "aria-label": feature.title,
@@ -65,14 +68,14 @@ export default defineComponent({
                     : h(
                         RouterLink,
                         {
-                          class: "feature-item link",
+                          class: "vp-feature link",
                           to: feature.link,
                           role: "navigation",
                           "aria-label": feature.title,
                         },
                         () => children
                       )
-                  : h("div", { class: "feature-item" }, children);
+                  : h("div", { class: "vp-feature" }, children);
               })
             )
           : null,

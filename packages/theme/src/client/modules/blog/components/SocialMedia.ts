@@ -30,10 +30,10 @@ export default defineComponent({
       mediaLinks.value.length
         ? h(
             "div",
-            { class: "social-media-wrapper" },
+            { class: "vp-social-medias" },
             mediaLinks.value.map(({ name, icon, url }) =>
               h("a", {
-                class: "social-media",
+                class: "vp-social-media",
                 href: url,
                 rel: "noopener noreferrer",
                 target: "_blank",

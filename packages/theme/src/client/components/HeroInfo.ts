@@ -59,13 +59,13 @@ export default defineComponent({
     const actions = computed(() => frontmatter.value.actions ?? []);
 
     return (): VNode =>
-      h("header", { class: "hero-info-wrapper" }, [
+      h("header", { class: "vp-hero-info-wrapper" }, [
         slots.heroImage?.() ||
           h(DropTransition, { appear: true, type: "group" }, () => [
             heroImage.value
               ? h("img", {
                   key: "light",
-                  class: { light: heroImageDark.value },
+                  class: ["vp-hero-image", { light: heroImageDark.value }],
                   src: heroImage.value,
                   alt: heroAlt.value,
                 })
@@ -73,14 +73,14 @@ export default defineComponent({
             heroImageDark.value
               ? h("img", {
                   key: "dark",
-                  class: "dark",
+                  class: "vp-hero-image dark",
                   src: heroImageDark.value,
                   alt: heroAlt.value,
                 })
               : null,
           ]),
         slots.heroInfo?.() ??
-          h("div", { class: "hero-info" }, [
+          h("div", { class: "vp-hero-info" }, [
             heroText.value
               ? h(DropTransition, { appear: true, delay: 0.04 }, () =>
                   h("h1", { id: "main-title" }, <string>heroText.value)
@@ -88,17 +88,17 @@ export default defineComponent({
               : null,
             tagline.value
               ? h(DropTransition, { appear: true, delay: 0.08 }, () =>
-                  h("p", { class: "description" }, <string>tagline.value)
+                  h("p", { class: "vp-description" }, <string>tagline.value)
                 )
               : null,
             actions.value.length
               ? h(DropTransition, { appear: true, delay: 0.12 }, () =>
                   h(
                     "p",
-                    { class: "actions" },
+                    { class: "vp-actions" },
                     actions.value.map((action) =>
                       h(AutoLink, {
-                        class: ["action-button", action.type || "default"],
+                        class: ["vp-action", action.type || "default"],
                         config: action,
                         noExternalLinkIcon: true,
                       })

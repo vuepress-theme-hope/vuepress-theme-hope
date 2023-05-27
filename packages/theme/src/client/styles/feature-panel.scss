@@ -1,41 +1,24 @@
-@keyframes bounce {
-  0% {
-    transform: scale(1) translateY(0);
-  }
+.vp-feature-panel {
+  // margin-inline: auto;
+  margin-inline-start: auto;
+  margin-inline-end: auto;
 
-  10% {
-    transform: scale(1.1, 0.9) translateY(0);
-  }
-
-  30% {
-    transform: scale(0.9, 1.1) translateY(-0.5em);
-  }
-
-  50% {
-    transform: scale(1.05, 0.95) translateY(0);
-  }
-
-  57% {
-    transform: scale(1) translateY(-0.125em);
-  }
-
-  64% {
-    transform: scale(1) translateY(0);
-  }
-
-  100% {
-    transform: scale(1) translateY(0);
-  }
+  // NOTE: Compatible with Android Wechat
+  // padding-inline: 1.5rem;
+  padding-inline-start: 1rem;
+  padding-inline-end: 1rem;
 }
 
-.feature-header {
+.vp-feature-title {
   margin: 0 1.75rem;
+
   font-weight: bold;
   font-size: 1.75rem;
+  font-family: var(--font-family);
   text-align: center;
 }
 
-.feature-wrapper {
+.vp-features-wrapper {
   display: flex;
   flex-wrap: wrap;
   align-content: stretch;
@@ -52,7 +35,7 @@
   }
 }
 
-.feature-item {
+.vp-feature {
   position: relative;
 
   flex-basis: calc(33% - 3rem);
@@ -120,21 +103,24 @@
       flex-basis: 100%;
     }
   }
+}
 
-  h3 {
-    margin: 0.25rem 0 0.5rem;
-    color: var(--text-color-light);
-    font-weight: bold;
-    font-size: 1.3rem;
+.vp-feature-header {
+  margin: 0.25rem 0 0.5rem;
 
-    @media (max-width: hope-config.$mobile) {
-      font-size: 1.2rem;
-    }
+  color: var(--text-color-light);
+
+  font-weight: bold;
+  font-size: 1.3rem;
+  font-family: var(--font-family);
+
+  @media (max-width: hope-config.$mobile) {
+    font-size: 1.2rem;
   }
+}
 
-  p {
-    margin: 0;
-    color: var(--text-color-lighter);
-    line-height: 1.4;
-  }
+.vp-feature-content {
+  margin: 0;
+  color: var(--text-color-lighter);
+  line-height: 1.4;
 }

@@ -98,7 +98,7 @@ export default defineComponent({
             {
               ref: hero,
               class: [
-                "blog-hero",
+                "vp-blog-hero",
                 {
                   fullscreen: isFullScreen.value,
                   "no-bg": !bgInfo.value.image,
@@ -109,7 +109,7 @@ export default defineComponent({
               slots.heroBg?.(bgInfo.value) ||
                 (bgInfo.value.image
                   ? h("div", {
-                      class: "mask",
+                      class: "vp-blog-mask",
                       style: [
                         {
                           background: `url(${bgInfo.value.image}) center/cover no-repeat`,
@@ -127,7 +127,7 @@ export default defineComponent({
                       ? h("img", {
                           key: "light",
                           class: [
-                            "hero-image",
+                            "vp-blog-hero-image",
                             { light: heroInfo.value.imageDark },
                           ],
                           style: heroInfo.value.heroStyle,
@@ -138,7 +138,7 @@ export default defineComponent({
                     heroInfo.value.imageDark
                       ? h("img", {
                           key: "dark",
-                          class: "hero-image dark",
+                          class: "vp-blog-hero-image dark",
                           style: heroInfo.value.heroStyle,
                           src: heroInfo.value.imageDark,
                           alt: heroInfo.value.alt,
@@ -147,12 +147,18 @@ export default defineComponent({
                   ]
                 ),
                 h(DropTransition, { appear: true, delay: 0.08 }, () =>
-                  heroInfo.value.text ? h("h1", heroInfo.value.text) : null
+                  heroInfo.value.text
+                    ? h(
+                        "h1",
+                        { class: "vp-blog-hero-title" },
+                        heroInfo.value.text
+                      )
+                    : null
                 ),
                 h(DropTransition, { appear: true, delay: 0.12 }, () =>
                   heroInfo.value.tagline
                     ? h("p", {
-                        class: "description",
+                        class: "vp-blog-hero-description",
                         innerHTML: heroInfo.value.tagline,
                       })
                     : null

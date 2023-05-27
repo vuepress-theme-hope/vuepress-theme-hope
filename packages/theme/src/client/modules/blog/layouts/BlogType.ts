@@ -45,9 +45,9 @@ export default defineComponent({
       h(BlogWrapper, () =>
         h(
           "div",
-          { class: "page blog" },
+          { class: "vp-page vp-blog" },
           h("div", { class: "blog-page-wrapper" }, [
-            h("main", { class: "blog-main", id: "main-content" }, [
+            h("main", { class: "vp-blog-main", id: "main-content" }, [
               h(DropTransition, () => h(ArticleType)),
               h(DropTransition, { appear: true, delay: 0.24 }, () =>
                 h(ArticleList, { key: page.value.path, items: items.value })

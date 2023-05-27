@@ -77,11 +77,11 @@ export default defineComponent({
 
       return h(
         "div",
-        { class: "article-item" },
+        { class: "vp-article-wrapper" },
         h(
           "article",
           {
-            class: "article",
+            class: "vp-article-item",
             vocab: "https://schema.org/",
             typeof: "Article",
           },
@@ -90,7 +90,7 @@ export default defineComponent({
               (cover
                 ? [
                     h("img", {
-                      class: "article-cover",
+                      class: "vp-article-cover",
                       src: withBase(cover),
                     }),
                     h("meta", {
@@ -105,7 +105,7 @@ export default defineComponent({
               { to: props.path },
               () =>
                 slots.title?.({ title, isEncrypted, type }) ||
-                h("header", { class: "title" }, [
+                h("header", { class: "vp-article-title" }, [
                   isEncrypted ? h(LockIcon) : null,
                   type === PageType.slide ? h(SlideIcon) : null,
                   h("span", { property: "headline" }, title),
@@ -114,11 +114,11 @@ export default defineComponent({
             slots.excerpt?.({ excerpt }) ||
               (excerpt
                 ? h("div", {
-                    class: "article-excerpt",
+                    class: "vp-article-excerpt",
                     innerHTML: excerpt,
                   })
                 : null),
-            h("hr", { class: "hr" }),
+            h("hr", { class: "vp-article-hr" }),
             slots.info?.({ info }) ||
               h(PageInfo, {
                 info,

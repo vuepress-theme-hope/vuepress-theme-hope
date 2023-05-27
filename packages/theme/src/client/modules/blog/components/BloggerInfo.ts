@@ -43,11 +43,19 @@ export default defineComponent({
 
     const intro = computed(() => blogOptions.value.intro);
 
-    return (): VNode =>
-      h(
+    return (): VNode => {
+      const { article, category, tag, timeline } = locale.value;
+      const countItems: [string, number, string][] = [
+        [articles.value.path, articles.value.items.length, article],
+        [categoryMap.value.path, keys(categoryMap.value.map).length, category],
+        [tagMap.value.path, keys(tagMap.value.map).length, tag],
+        [timelines.value.path, timelines.value.items.length, timeline],
+      ];
+
+      return h(
         "div",
         {
-          class: "blogger-info",
+          class: "vp-blogger-info",
           vocab: "https://schema.org/",
           typeof: "Person",
         },
@@ -55,7 +63,7 @@ export default defineComponent({
           h(
             "div",
             {
-              class: "blogger",
+              class: "vp-blogger",
               ...(intro.value
                 ? {
                     style: { cursor: "pointer" },
@@ -70,7 +78,7 @@ export default defineComponent({
               bloggerAvatar.value
                 ? h("img", {
                     class: [
-                      "blogger-avatar",
+                      "vp-blogger-avatar",
                       { round: blogOptions.value.roundAvatar },
                     ],
                     src: withBase(bloggerAvatar.value),
@@ -81,13 +89,13 @@ export default defineComponent({
               bloggerName.value
                 ? h(
                     "div",
-                    { class: "blogger-name", property: "name" },
+                    { class: "vp-blogger-name", property: "name" },
                     bloggerName.value
                   )
                 : null,
               blogOptions.value.description
                 ? h("div", {
-                    class: "blogger-description",
+                    class: "vp-blogger-description",
                     innerHTML: blogOptions.value.description,
                   })
                 : null,
@@ -96,26 +104,19 @@ export default defineComponent({
                 : null,
             ]
           ),
-          h("div", { class: "num-wrapper" }, [
-            h(RouterLink, { to: articles.value.path }, () => [
-              h("div", { class: "num" }, articles.value.items.length),
-              h("div", locale.value.article),
-            ]),
-            h(RouterLink, { to: categoryMap.value.path }, () => [
-              h("div", { class: "num" }, keys(categoryMap.value.map).length),
-              h("div", locale.value.category),
-            ]),
-            h(RouterLink, { to: tagMap.value.path }, () => [
-              h("div", { class: "num" }, keys(tagMap.value.map).length),
-              h("div", locale.value.tag),
-            ]),
-            h(RouterLink, { to: timelines.value.path }, () => [
-              h("div", { class: "num" }, timelines.value.items.length),
-              h("div", locale.value.timeline),
-            ]),
-          ]),
+          h(
+            "div",
+            { class: "vp-blog-counts" },
+            countItems.map(([path, count, locale]) =>
+              h(RouterLink, { class: "vp-blog-count", to: path }, () => [
+                h("div", { class: "count" }, count),
+                h("div", locale),
+              ])
+            )
+          ),
           h(SocialMedia),
         ]
       );
+    };
   },
 });

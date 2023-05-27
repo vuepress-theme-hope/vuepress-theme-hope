@@ -41,13 +41,13 @@ export default defineComponent({
     return (): VNode =>
       h(
         "ul",
-        { class: "article-type-wrapper" },
+        { class: "vp-article-type-wrapper" },
         types.value.map((type) =>
           h(
             "li",
             {
               class: [
-                "article-type",
+                "vp-article-type",
                 { active: type.path === page.value.path },
               ],
             },

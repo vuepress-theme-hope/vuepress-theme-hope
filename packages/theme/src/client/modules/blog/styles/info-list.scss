@@ -1,10 +1,10 @@
 @use "vuepress-shared/styles/reset";
 
-.blog-info-list {
+.vp-blog-infos {
   margin: 8px auto;
   padding: 8px 16px;
 
-  .page & {
+  .vp-page & {
     border-radius: 6px;
     background: var(--bg-color-float);
     box-shadow: 0 1px 3px 1px var(--card-shadow);
@@ -14,136 +14,133 @@
     &:hover {
       box-shadow: 0 2px 6px 2px var(--card-shadow);
     }
-
-    .timeline-list-wrapper {
-      // stylelint-disable selector-max-compound-selectors
-      .content {
-        max-height: 60vh;
-      }
-      // stylelint-enable selector-max-compound-selectors
-    }
   }
 
-  .blog-type-wrapper {
-    display: flex;
-    justify-content: center;
-    margin-bottom: 8px;
-  }
-
-  .blog-type-button {
-    @include reset.button;
-    width: 44px;
-    height: 44px;
-    margin: 0 8px;
-    padding: 4px;
-
-    color: var(--grey3);
-
-    transition: color var(--color-transition);
-
-    &:focus {
-      outline: none;
-    }
-
-    .icon-wrapper {
-      width: 20px;
-      height: 20px;
-      padding: 8px;
-      border-radius: 50%;
-
-      background: rgb(127 127 127 / 15%);
-
-      transition: background var(--color-transition);
-
-      #{hope-config.$dark-selector} & {
-        background: rgb(255 255 255 / 15%);
-      }
-
-      &:hover {
-        cursor: pointer;
-      }
-
-      &.active {
-        background: var(--theme-color-light);
-
-        #{hope-config.$dark-selector} & {
-          background: var(--theme-color-dark);
-        }
-      }
-    }
-
-    .icon {
-      width: 100%;
-      height: 100%;
+  .timeline-list-wrapper {
+    .content {
+      max-height: 60vh;
     }
   }
+}
 
-  // stylelint-disable selector-max-compound-selectors
-  .sticky-article-wrapper,
-  .category-wrapper,
-  .tag-wrapper {
-    padding: 8px 0;
+.vp-blog-type-switcher {
+  display: flex;
+  justify-content: center;
+  margin-bottom: 8px;
+}
 
-    .title {
-      cursor: pointer;
+.vp-blog-type-button {
+  @include reset.button;
+  width: 44px;
+  height: 44px;
+  margin: 0 8px;
+  padding: 4px;
 
-      .icon {
-        position: relative;
-        bottom: -0.125rem;
+  color: var(--grey3);
 
-        width: 16px;
-        height: 16px;
-        margin: 0 6px;
-      }
+  transition: color var(--color-transition);
 
-      .num {
-        position: relative;
-        margin: 0 2px;
-        font-size: 22px;
-        font-family: var(--font-family-heading);
-      }
-    }
+  &:focus {
+    outline: none;
   }
 
-  .sticky-article-list {
-    overflow-y: auto;
-    max-height: 80vh;
-    margin: 8px auto;
-  }
+  .icon-wrapper {
+    width: 20px;
+    height: 20px;
+    padding: 8px;
+    border-radius: 50%;
 
-  .sticky-article {
-    padding: 12px 8px 4px;
-    border-bottom: 1px dashed var(--grey);
-    transition: border-color var(--color-transition),
-      color var(--color-transition);
+    background: rgb(127 127 127 / 15%);
 
-    a {
-      color: inherit;
+    transition: background var(--color-transition);
+
+    #{hope-config.$dark-selector} & {
+      background: rgb(255 255 255 / 15%);
     }
 
     &:hover {
       cursor: pointer;
+    }
 
-      a {
-        color: var(--theme-color);
+    &.active {
+      background: var(--theme-color-light);
+
+      #{hope-config.$dark-selector} & {
+        background: var(--theme-color-dark);
       }
     }
   }
 
-  .category-wrapper {
-    .category-list-wrapper {
-      overflow-y: auto;
-      max-height: 80vh;
-      margin: 8px auto;
+  .icon {
+    width: 100%;
+    height: 100%;
+  }
+}
+
+.vp-sticky-article-wrapper,
+.vp-category-wrapper,
+.vp-tag-wrapper {
+  padding: 8px 0;
+
+  .title {
+    cursor: pointer;
+
+    .icon {
+      position: relative;
+      bottom: -0.125rem;
+
+      width: 16px;
+      height: 16px;
+      margin: 0 6px;
     }
+
+    .num {
+      position: relative;
+      margin: 0 2px;
+      font-size: 22px;
+      font-family: var(--font-family-heading);
+    }
+  }
+}
+
+.vp-sticky-articles {
+  overflow-y: auto;
+  max-height: 80vh;
+  margin: 8px auto;
+  line-height: 1.5;
+}
+
+.vp-sticky-article {
+  padding: 12px 8px 4px;
+  border-bottom: 1px dashed var(--grey);
+  transition: border-color var(--color-transition),
+    color var(--color-transition);
+
+  a {
+    color: inherit;
   }
 
-  .tag-wrapper {
-    .tag-list-wrapper {
-      overflow-y: auto;
-      max-height: 80vh;
-      margin: 8px auto;
+  &:hover {
+    cursor: pointer;
+
+    a {
+      color: var(--theme-color);
     }
   }
-  // stylelint-enable selector-max-compound-selectors
+}
+
+.vp-category-wrapper {
+  .category-list-wrapper {
+    overflow-y: auto;
+    max-height: 80vh;
+    margin: 8px auto;
+  }
+}
+
+.vp-tag-wrapper {
+  .tag-list-wrapper {
+    overflow-y: auto;
+    max-height: 80vh;
+    margin: 8px auto;
+  }
 }

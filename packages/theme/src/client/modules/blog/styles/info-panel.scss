@@ -1,12 +1,12 @@
-.blog-info-wrapper {
+.vp-blog-info-wrapper {
   .sidebar & {
     // hide blogger info in sidebar
-    .blogger-info {
+    .vp-blogger-info {
       display: none;
     }
   }
 
-  .page & {
+  .vp-page & {
     position: sticky;
     top: calc(var(--navbar-height) + 0.75rem);
 
@@ -25,7 +25,7 @@
       display: none;
     }
 
-    .blogger-info {
+    .vp-blogger-info {
       margin-bottom: 16px;
       padding: 8px 0;
       border-radius: 8px;

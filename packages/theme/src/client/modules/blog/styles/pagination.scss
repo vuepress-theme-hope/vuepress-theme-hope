@@ -1,138 +1,138 @@
-.pagination-wrapper {
+.vp-pagination {
   margin: 1.25rem 0 0.75rem;
   font-weight: 600;
   font-size: 15px;
   line-height: 2;
+}
 
-  .pagination-list {
-    display: flex;
-    flex-wrap: wrap;
-    align-items: center;
-    justify-content: space-evenly;
+.vp-pagination-list {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: space-evenly;
 
-    user-select: none;
-  }
+  user-select: none;
+}
 
-  .page-number {
-    display: flex;
-    align-items: stretch;
+.vp-pagination-number {
+  display: flex;
+  align-items: stretch;
 
-    overflow: hidden;
+  overflow: hidden;
 
-    height: 30px;
-    margin: 0 0.5rem;
-    border: 1px solid var(--border-color);
-    border-radius: 0.25rem;
+  height: 30px;
+  margin: 0 0.5rem;
+  border: 1px solid var(--border-color);
+  border-radius: 0.25rem;
 
-    // stylelint-disable max-nesting-depth
-    // stylelint-disable selector-max-compound-selectors
-    div {
-      position: relative;
+  // stylelint-disable max-nesting-depth
+  // stylelint-disable selector-max-compound-selectors
+  div {
+    position: relative;
 
-      padding: 0 0.5rem;
+    padding: 0 0.5rem;
 
-      background: var(--bg-color);
-      color: var(--theme-color);
+    background: var(--bg-color);
+    color: var(--theme-color);
 
-      cursor: pointer;
+    cursor: pointer;
+
+    &::before {
+      content: " ";
+
+      position: absolute;
+      top: 0;
+      bottom: 0;
+
+      // NOTE: Compatible with Android Wechat
+      // inset-inline-start: 0;
+      left: 0;
+
+      width: 1px;
+
+      background: var(--border-color);
+
+      #{hope-config.$rtl-selector} & {
+        right: 0;
+        left: unset;
+      }
+    }
+
+    &:first-child::before {
+      background: transparent;
+    }
+
+    &:hover {
+      color: var(--theme-color-light);
+    }
+
+    &.active {
+      background: var(--theme-color);
+      color: var(--white);
 
       &::before {
-        content: " ";
-
-        position: absolute;
-        top: 0;
-        bottom: 0;
-
-        // NOTE: Compatible with Android Wechat
-        // inset-inline-start: 0;
-        left: 0;
-
-        width: 1px;
-
-        background: var(--border-color);
-
-        #{hope-config.$rtl-selector} & {
-          right: 0;
-          left: unset;
-        }
-      }
-
-      &:first-child::before {
-        background: transparent;
-      }
-
-      &:hover {
-        color: var(--theme-color-light);
-      }
-
-      &.active {
         background: var(--theme-color);
-        color: var(--white);
-
-        &::before {
-          background: var(--theme-color);
-        }
-      }
-
-      &.active + div::before {
-        background: var(--theme-color);
-      }
-
-      &.prev,
-      &.next {
-        font-size: 13px;
-        line-height: 30px;
-      }
-
-      &.active,
-      &.ellipsis {
-        cursor: default;
       }
     }
-    // stylelint-enable max-nesting-depth
-    // stylelint-enable selector-max-compound-selectors
+
+    &.active + div::before {
+      background: var(--theme-color);
+    }
+
+    &.prev,
+    &.next {
+      font-size: 13px;
+      line-height: 30px;
+    }
+
+    &.active,
+    &.ellipsis {
+      cursor: default;
+    }
   }
+  // stylelint-enable max-nesting-depth
+  // stylelint-enable selector-max-compound-selectors
+}
 
-  .navigate-wrapper {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    margin: 0.5rem;
+.vp-pagination-nav {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: 0.5rem;
 
-    input {
-      width: 3.5rem;
-      margin: 6px 5px;
-      border: 1px solid var(--border-color);
-      border-radius: 0.25em;
+  input {
+    width: 3.5rem;
+    margin: 6px 5px;
+    border: 1px solid var(--border-color);
+    border-radius: 0.25em;
 
-      background: var(--bg-color);
-      color: var(--text-color);
-      outline: none;
+    background: var(--bg-color);
+    color: var(--text-color);
+    outline: none;
 
-      line-height: 2;
-      text-align: center;
-    }
+    line-height: 2;
+    text-align: center;
+  }
+}
 
-    .navigate {
-      overflow: hidden;
+.vp-pagination-button {
+  overflow: hidden;
 
-      padding: 0 0.75em;
-      border: 1px solid var(--border-color);
-      border-radius: 0.25em;
+  padding: 0 0.75em;
+  border: 1px solid var(--border-color);
+  border-radius: 0.25em;
 
-      background: var(--bg-color);
-      color: var(--theme-color);
-      outline: none;
+  background: var(--bg-color);
+  color: var(--theme-color);
+  outline: none;
 
-      font-weight: 600;
-      font-size: 15px;
-      line-height: 2;
+  font-weight: 600;
+  font-size: 15px;
+  line-height: 2;
 
-      cursor: pointer;
+  cursor: pointer;
 
-      &:hover {
-        color: var(--theme-color-light);
-      }
-    }
+  &:hover {
+    color: var(--theme-color-light);
   }
 }

@@ -63,7 +63,7 @@ export default defineComponent({
         "a",
         {
           href: `#${props.content}`,
-          class: "skip-link sr-only",
+          class: "vp-skip-link sr-only",
           onClick: focusMainContent,
         },
         themeLocale.value.routeLocales.skipToContent

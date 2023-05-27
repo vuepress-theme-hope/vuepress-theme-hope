@@ -44,7 +44,7 @@ export default defineComponent({
       h(
         "main",
         {
-          class: ["home project", { pure: pure.value }],
+          class: ["vp-project-home ", { pure: pure.value }],
           id: "main-content",
           "aria-labelledby":
             frontmatter.value.heroText === null ? undefined : "main-title",

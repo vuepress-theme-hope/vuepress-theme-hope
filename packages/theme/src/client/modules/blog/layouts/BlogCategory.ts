@@ -69,9 +69,9 @@ export default defineComponent({
       h(BlogWrapper, () =>
         h(
           "div",
-          { class: "page blog" },
+          { class: "vp-page vp-blog" },
           h("div", { class: "blog-page-wrapper" }, [
-            h("main", { class: "blog-main", id: "main-content" }, [
+            h("main", { class: "vp-blog-main", id: "main-content" }, [
               h(DropTransition, () =>
                 componentName.value
                   ? h(resolveComponent(componentName.value))

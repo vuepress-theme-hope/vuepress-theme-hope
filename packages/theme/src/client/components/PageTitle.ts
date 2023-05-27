@@ -19,7 +19,7 @@ export default defineComponent({
     const { info, items } = usePageInfo();
 
     return (): VNode =>
-      h("div", { class: "page-title" }, [
+      h("div", { class: "vp-page-title" }, [
         h("h1", [
           themeLocale.value.titleIcon === false
             ? null

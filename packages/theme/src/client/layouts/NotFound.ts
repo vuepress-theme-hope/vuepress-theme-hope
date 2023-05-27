@@ -29,7 +29,7 @@ export default defineComponent({
       h(CommonWrapper, { noSidebar: true }, () =>
         h(
           "main",
-          { class: "page not-found", id: "main-content" },
+          { class: "vp-page not-found", id: "main-content" },
           slots.default?.() || [
             h(NotFoundHint),
             h("div", { class: "actions" }, [

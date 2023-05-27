@@ -41,11 +41,16 @@ export default defineComponent({
         return h(resolveComponent(`${icon}-icon`));
 
       // it’s a full image link
-      if (isLinkHttp(icon)) return h("img", { src: icon, alt, class: "image" });
+      if (isLinkHttp(icon))
+        return h("img", { class: "vp-project-image", src: icon, alt });
 
       // it’s an absolute image link
       if (isAbsoluteUrl(icon))
-        return h("img", { src: withBase(icon), alt, class: "image" });
+        return h("img", {
+          class: "vp-project-image",
+          src: withBase(icon),
+          alt,
+        });
 
       // render as icon font
       return h(HopeIcon, { icon });
@@ -55,14 +60,14 @@ export default defineComponent({
       frontmatter.value.projects?.length
         ? h(
             "div",
-            { class: "project-panel" },
+            { class: "vp-project-panel" },
             frontmatter.value.projects.map(
               ({ icon, link, name, desc }, index) =>
                 h(
                   "div",
                   {
                     class: [
-                      "project-card",
+                      "vp-project-card",
                       // TODO: magic number 9 is tricky here
                       { [`project${index % 9}`]: !pure.value },
                     ],
@@ -70,8 +75,8 @@ export default defineComponent({
                   },
                   [
                     renderIcon(icon, name),
-                    h("div", { class: "name" }, name),
-                    h("div", { class: "desc" }, desc),
+                    h("div", { class: "vp-project-name" }, name),
+                    h("div", { class: "vp-project-desc" }, desc),
                   ]
                 )
             )

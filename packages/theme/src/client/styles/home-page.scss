@@ -1,46 +1,21 @@
 @use "vuepress-shared/styles/wrapper";
 
-.home.project {
+.vp-project-home {
   --content-width: var(--home-page-width);
   display: block;
   flex: 1;
   padding-top: var(--navbar-height);
 
-  .hero-info-wrapper {
+  .vp-hero-info-wrapper {
     max-width: var(--home-page-width);
-
-    // margin-inline: auto;
-    margin-inline-start: auto;
-    margin-inline-end: auto;
-
-    // NOTE: Compatible with Android Wechat
-    // padding-inline: 2.5rem;
-    padding-inline-start: 2.5rem;
-    padding-inline-end: 2.5rem;
-
-    @media (max-width: hope-config.$pad) {
-      // NOTE: Compatible with Android Wechat
-      // padding-inline: 1.5rem;
-      padding-inline-start: 1.5em;
-      padding-inline-end: 1.5rem;
-    }
 
     @media print {
       max-width: unset;
     }
   }
 
-  .feature-panel {
+  .vp-feature-panel {
     max-width: var(--home-page-width);
-
-    // margin-inline: auto;
-    margin-inline-start: auto;
-    margin-inline-end: auto;
-
-    // NOTE: Compatible with Android Wechat
-    // padding-inline: 1.5rem;
-    padding-inline-start: 1rem;
-    padding-inline-end: 1rem;
 
     @media print {
       max-width: unset;

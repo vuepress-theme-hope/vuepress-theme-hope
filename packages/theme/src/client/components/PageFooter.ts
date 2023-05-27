@@ -50,13 +50,13 @@ export default defineComponent({
 
     return (): VNode | null =>
       enable.value
-        ? h("footer", { class: "footer-wrapper" }, [
+        ? h("footer", { class: "vp-footer-wrapper" }, [
             content.value
-              ? h("div", { class: "footer", innerHTML: content.value })
+              ? h("div", { class: "vp-footer", innerHTML: content.value })
               : null,
             copyright.value
               ? h("div", {
-                  class: "copyright",
+                  class: "vp-copyright",
                   innerHTML: copyright.value,
                 })
               : null,

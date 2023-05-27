@@ -188,6 +188,7 @@ export default defineComponent({
     return (): (VNode | null)[] => [
       !ready.value
         ? h("img", {
+            class: "vp-hero-image",
             src: withBase(frontmatter.value.heroImage!),
             alt: "vuepress-theme-hope",
           })

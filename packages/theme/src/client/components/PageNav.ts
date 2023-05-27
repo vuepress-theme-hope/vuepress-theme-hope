@@ -124,7 +124,7 @@ export default defineComponent({
 
     return (): VNode | null =>
       prevNavLink.value || nextNavLink.value
-        ? h("nav", { class: "page-nav" }, [
+        ? h("nav", { class: "vp-page-nav" }, [
             prevNavLink.value
               ? h(
                   AutoLink,
