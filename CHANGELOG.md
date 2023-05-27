@@ -4,6 +4,30 @@ All notable changes to this project will be documented in this file. See [Conven
 
 <!-- #region recent-beta -->
 
+## [2.0.0-beta.216](https://github.com/vuepress-theme-hope/vuepress-theme-hope/compare/v2.0.0-beta.215...v2.0.0-beta.216) (2023-05-27)
+
+### Features
+
+- **search-pro:** add reset button ([9e94c58](https://github.com/vuepress-theme-hope/vuepress-theme-hope/commit/9e94c583bce2eef3c377c5109af6cf049cdeb5bf))
+- **search-pro:** avoid refreshing in devServer ([56177d4](https://github.com/vuepress-theme-hope/vuepress-theme-hope/commit/56177d4a15a94d3b34ee6e82bd9d2cf692d90dc3))
+- **search-pro:** optimize results ([ac94239](https://github.com/vuepress-theme-hope/vuepress-theme-hope/commit/ac942395324397f9f7709fa475b341c19a5f432d))
+- **search-pro:** support `indexOptions` and `indexLocaleOptions` ([48f71d1](https://github.com/vuepress-theme-hope/vuepress-theme-hope/commit/48f71d1ce1e3d8589c62827eb73aa5843f56060f))
+- **theme:** add `navTitle` option ([c2ba200](https://github.com/vuepress-theme-hope/vuepress-theme-hope/commit/c2ba200b3971c797e4c4985b09f1e0003339cbb4))
+- **theme:** improve feature panel style ([2d07b6a](https://github.com/vuepress-theme-hope/vuepress-theme-hope/commit/2d07b6aab69cafc31b4dcaa505dced36e89c8e22))
+- **theme:** optimize dropdown and page nav style ([3c7c2e3](https://github.com/vuepress-theme-hope/vuepress-theme-hope/commit/3c7c2e3021f18b632d5d4c43c482ccf9529ce346))
+- **theme:** update class with vp prefix ([5e6422b](https://github.com/vuepress-theme-hope/vuepress-theme-hope/commit/5e6422b46ec61d8fdc2282014b86b15d48781744))
+- **theme:** update common class with vp prefix ([9a29777](https://github.com/vuepress-theme-hope/vuepress-theme-hope/commit/9a29777121b8577d009a255c13b90ee021bb370b))
+
+### Bug Fixes
+
+- **deps:** update dependency @types/three to v0.152.1 ([#3163](https://github.com/vuepress-theme-hope/vuepress-theme-hope/issues/3163)) ([455857e](https://github.com/vuepress-theme-hope/vuepress-theme-hope/commit/455857ed24a774c004a6eed7bc6ce162ef3c15ef))
+- **deps:** update dependency hls.js to v1.4.4 ([#3164](https://github.com/vuepress-theme-hope/vuepress-theme-hope/issues/3164)) ([ef0c9f9](https://github.com/vuepress-theme-hope/vuepress-theme-hope/commit/ef0c9f99b059782300fbf584a8f044431a460eea))
+- **search-pro:** fix anchor issue ([f07cf4f](https://github.com/vuepress-theme-hope/vuepress-theme-hope/commit/f07cf4f8e57760b7a5f354a6b372681d3920d6e7))
+
+### Performance Improvements
+
+- **search-pro:** slim index size ([f73e9b8](https://github.com/vuepress-theme-hope/vuepress-theme-hope/commit/f73e9b82a4f7c37c14a3fa8d630b8a9647d4b59b))
+
 ## [2.0.0-beta.215](https://github.com/vuepress-theme-hope/vuepress-theme-hope/compare/v2.0.0-beta.214...v2.0.0-beta.215) (2023-05-25)
 
 ### Features
