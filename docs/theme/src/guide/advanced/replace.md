@@ -236,6 +236,12 @@ Miscellaneous:
 
 Some components provide slots, in this case, you can directly import the original component when overriding the component, and pass in the content you need through the slot.
 
+::: tip
+
+For demo of common slots, please refer [Main Layout Slot demo](../../demo/slot.md)。
+
+:::
+
 For example, if your site has strong social attributes, and you want to display a comment box on the homepage, you can display it like this:
 
 ::: code-tabs

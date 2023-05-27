@@ -96,7 +96,9 @@ export default theme("theme", {
           },
     },
 
-    copyright: true,
+    copyright: {
+      license: "MIT",
+    },
 
     feed: {
       atom: true,
