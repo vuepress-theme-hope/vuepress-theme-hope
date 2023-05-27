@@ -24,7 +24,7 @@ docs:
     url: https://hut.ao/
     logo: https://img.alicdn.com/imgextra/i4/1797064093/O1CN01oaGvKE1g6dut0pICS_!!1797064093.png
     repo: https://github.com/DGP-Studio/Snap.Hutao
-    preview: /assets/image/hu-tao.jpg
+    preview: /assets/image/hutao.jpg
 
   - name: JavaGuide
     desc: 「Java学习+面试指南」一份涵盖大部分 Java 程序员所需要掌握的核心知识。准备 Java 面试，首选 JavaGuide！
@@ -46,6 +46,13 @@ docs:
     url: https://dromara.org/fast-request/
     repo: https://github.com/dromara/fast-request
     preview: /assets/image/fast-request.jpg
+
+  - name: UIGF-org
+    desc: 统一标准化的原神数据格式
+    logo: https://uigf.org/uigf-logo128.png
+    url: https://uigf.org/zh/
+    repo: https://github.com/UIGF-org/UIGF-org.github.io
+    preview: /assets/image/uigf.jpg
 
   - name: ZMusic
     desc: 全功能Minecraft点歌插件
@@ -158,6 +165,13 @@ docs:
     repo: https://github.com/crawlab-team/crawlab-docs
     preview: /assets/image/crawlab-zh.jpg
 
+  - name: CnosDB
+    desc: 一款高性能、高压缩率、高易用性的开源分布式时序数据库
+    logo: https://www.cnosdb.com/wp-content/uploads/2022/05/CnosDB_%E7%99%BD-300x108.png
+    url: https://docs.cnosdb.com/zh/latest/
+    repo: https://github.com/cnosdb/docs
+    preview: /assets/image/cnosdb.jpg
+
   - name: Nonebot-plugin-novelai
     desc: 一个Nonebot的AI绘画插件说明书
     url: https://nb.novelai.dev/
@@ -253,6 +267,13 @@ blog:
     url: https://xiangweizeng.github.io/damone-blog/
     repo: https://github.com/xiangweizeng/damone-blog
     preview: /assets/image/damone.jpg
+
+  - name: 老怪兽
+    desc: 会敲代码的怪兽
+    logo: https://zswei.xyz/logo.png
+    url: https://zswei.xyz/
+    repo: https://github.com/001monster/monster_blog
+    preview: /assets/image/monster.jpg
 
   - name: Java-Navigation
     desc: 记录自学所得，并不断完善、更新。包含：Java基础知识、web开发用到的前端知识以及常用的各种框架和中间件，涵盖计算机基础、数据库、部署工具以及代码风格和规范的全栈知识体系（含面试和实战项目推荐）✨

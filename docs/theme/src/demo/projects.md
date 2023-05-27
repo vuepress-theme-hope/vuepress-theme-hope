@@ -81,6 +81,13 @@ docs:
     repo: https://github.com/dxos/dxos
     preview: /assets/image/dxos.jpg
 
+  - name: UIGF-org
+    desc: Unified Standardized GenshinData Format
+    logo: https://uigf.org/uigf-logo128.png
+    url: https://uigf.org/en/
+    repo: https://github.com/UIGF-org/UIGF-org.github.io
+    preview: /assets/image/uigf.jpg
+
   - name: simple-admin
     desc: A powerful microservice framework for large management system
     url: https://doc.ryansu.pro/
@@ -128,6 +135,13 @@ docs:
     url: https://greenfield.bnbchain.org/
     repo: https://github.com/bnb-chain/greenfield-docs
     preview: /assets/image/bnb-greenfield.jpg
+
+  - name: CnosDB
+    desc: An open source distributed time series database with high performance, high compression rate and high ease of use
+    logo: https://www.cnosdb.com/wp-content/uploads/2022/05/CnosDB_%E7%99%BD-300x108.png
+    url: https://docs.cnosdb.com/en/latest/
+    repo: https://github.com/cnosdb/docs
+    preview: /assets/image/cnosdb.jpg
 
   - name: Suibase
     desc: Open-Source Development Tools and Community Cookbook
