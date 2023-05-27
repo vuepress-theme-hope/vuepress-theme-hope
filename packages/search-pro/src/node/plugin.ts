@@ -2,6 +2,7 @@ import { type PluginFunction } from "@vuepress/core";
 import { watch } from "chokidar";
 import { useSassPalettePlugin } from "vuepress-plugin-sass-palette";
 import {
+  addViteOptimizeDepsInclude,
   addViteSsrNoExternal,
   checkVersion,
   fromEntries,
@@ -69,6 +70,7 @@ export const searchProPlugin =
       clientConfigFile: `${CLIENT_FOLDER}config.js`,
 
       extendsBundlerOptions: (bundlerOptions: unknown, app): void => {
+        addViteOptimizeDepsInclude(bundlerOptions, app, "slimsearch");
         addViteSsrNoExternal(bundlerOptions, app, [
           "fflate",
           "vuepress-shared",
