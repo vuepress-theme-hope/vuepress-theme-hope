@@ -4,22 +4,39 @@ import {
   getStoredFields,
   search,
 } from "slimsearch";
-import { entries, keys } from "vuepress-shared/client";
+import { entries } from "vuepress-shared/client";
 
 import { getMatchedContent } from "./matchContent.js";
-import { IndexField, type IndexItem } from "../../shared/index.js";
+import {
+  type CustomFieldIndexItem,
+  type HeadingIndexItem,
+  IndexField,
+  type IndexItem,
+  type PageIndexItem,
+  type TextIndexItem,
+} from "../../shared/index.js";
 import {
   type MatchedItem,
+  ResultField,
+  ResultType,
   type SearchOptions,
   type SearchResult,
+  type Word,
 } from "../typings/index.js";
 
 const CHINESE_CHARACTERS = /[\u4e00-\u9fa5]/g;
 
-export interface MiniSearchResult extends IndexItem {
+export type MiniSearchResult = IndexItem & {
   terms: string[];
   score: number;
   match: MatchInfo;
+};
+
+interface Suggestions {
+  [key: string]: {
+    title: string;
+    contents: [result: MatchedItem, score: number][];
+  };
 }
 
 export const getResults = (
@@ -27,18 +44,19 @@ export const getResults = (
   localeIndex: SearchIndex<IndexItem, string>,
   miniSearchOptions: SearchOptions = {}
 ): SearchResult[] => {
-  const suggestions: Record<
-    string,
-    { title: string; contents: (MatchedItem & { score: number })[] }
-  > = {};
+  const suggestions: Suggestions = {};
 
   const results = search<IndexItem, string, IndexItem>(localeIndex, query, {
     fuzzy: 0.2,
     prefix: true,
-    boost: { header: 4, text: 2, title: 1 },
+    boost: {
+      [IndexField.heading]: 2,
+      [IndexField.text]: 1,
+      [IndexField.customFields]: 4,
+    },
     processTerm: (term) => {
       const chineseCharacters = term.match(CHINESE_CHARACTERS) || [];
-      const englishTerm = term.replace(CHINESE_CHARACTERS, "");
+      const englishTerm = term.replace(CHINESE_CHARACTERS, "").toLowerCase();
 
       return englishTerm
         ? [englishTerm, ...chineseCharacters]
@@ -49,98 +67,116 @@ export const getResults = (
 
   results.forEach((result) => {
     const { id, terms, score } = result;
-    const isPage = !id.includes("#");
-    const key = id.split("#")[0];
-    const anchor = isPage ? "" : `#${id.split("#")[1]}`;
+    const isText = id.includes("/");
+    const isHeading = !isText && id.includes("#");
+    const isCustomField = id.includes("@");
+    const [key, info] = id.split(/[#@]/);
 
-    if (!suggestions[key]) suggestions[key] = { title: "", contents: [] };
-
-    // set title info
-    if (isPage) suggestions[key].title = result[IndexField.heading];
-
-    const { contents } = suggestions[key];
-
-    const collectMatched = (target: string): void => {
-      const headerContent = getMatchedContent(
-        result[IndexField.heading],
-        target
-      );
-
-      if (headerContent)
-        contents.push(
-          isPage
-            ? {
-                type: "title",
-                key,
-                display: headerContent,
-                score,
-              }
-            : {
-                type: "heading",
-                key,
-                anchor,
-                display: headerContent,
-                score,
-              }
-        );
-
-      if (IndexField.text in result)
-        for (const text of result[IndexField.text]) {
-          const matchedContent = getMatchedContent(text, target);
-
-          if (matchedContent)
-            contents.push({
-              type: "content",
-              key,
-              ...(isPage ? {} : { anchor, header: result[IndexField.heading] }),
-              display: matchedContent,
-              score,
-            });
-        }
-
-      if (IndexField.customFields in result)
-        entries(result[IndexField.customFields]).forEach(
-          ([index, customFields]) => {
-            customFields.forEach((customField) => {
-              const customFieldContent = getMatchedContent(customField, target);
-
-              if (customFieldContent)
-                contents.push({
-                  type: "custom",
-                  key: id,
-                  index,
-                  display: customFieldContent,
-                  score,
-                });
-            });
-          }
-        );
-    };
-
-    terms.forEach((term) => {
-      collectMatched(term);
+    const { contents } = (suggestions[key] ??= {
+      title: "",
+      contents: [],
     });
+
+    if (isHeading) {
+      contents.push([
+        {
+          [ResultField.type]: ResultType.heading,
+          [ResultField.key]: key,
+          [ResultField.anchor]: (<HeadingIndexItem>result)[IndexField.anchor],
+          [ResultField.display]: terms
+            .map((term) =>
+              getMatchedContent(
+                (<HeadingIndexItem>result)[IndexField.heading],
+                term
+              )
+            )
+            .filter((item): item is Word[] => item !== null),
+        },
+        score,
+      ]);
+    }
+    // TextIndexItem
+    else if (isText) {
+      const [headingIndex] = info.split("/");
+
+      const heading =
+        headingIndex === "0"
+          ? // this is content under page
+            ""
+          : <string>(
+              getStoredFields(localeIndex, `${key}#${headingIndex}`)![
+                IndexField.heading
+              ]
+            );
+
+      contents.push([
+        {
+          [ResultField.type]: ResultType.text,
+          [ResultField.key]: key,
+          [ResultField.header]: heading,
+          [ResultField.display]: terms
+            .map((term) =>
+              getMatchedContent((<TextIndexItem>result)[IndexField.text], term)
+            )
+            .filter((item): item is Word[] => item !== null),
+        },
+        score,
+      ]);
+    } else if (isCustomField) {
+      contents.push([
+        {
+          [ResultField.type]: ResultType.custom,
+          [ResultField.key]: key,
+          [ResultField.index]: info,
+          [ResultField.display]: terms
+            .map((term) =>
+              (<CustomFieldIndexItem>result)[IndexField.customFields].map(
+                (field) => getMatchedContent(field, term)
+              )
+            )
+            .flat()
+            .filter((item): item is Word[] => item !== null),
+        },
+        score,
+      ]);
+    }
+    // PageIndexItem
+    else {
+      contents.push([
+        {
+          [ResultField.type]: ResultType.title,
+          [ResultField.key]: key,
+          [ResultField.display]: terms
+            .map((term) =>
+              getMatchedContent(
+                (<PageIndexItem>result)[IndexField.heading],
+                term
+              )
+            )
+            .filter((item): item is Word[] => item !== null),
+        },
+        score,
+      ]);
+    }
   });
 
-  return keys(suggestions)
+  return entries(suggestions)
     .sort(
-      (idA, idB) =>
-        suggestions[idB].contents.reduce(
-          (total, { score }) => total + score,
-          0
-        ) -
-        suggestions[idA].contents.reduce((total, { score }) => total + score, 0)
+      ([, valueA], [, valueB]) =>
+        valueB.contents.reduce((total, [, score]) => total + score, 0) -
+        valueA.contents.reduce((total, [, score]) => total + score, 0)
     )
-    .map((id) => {
-      const item = suggestions[id];
-
+    .map(([id, { title, contents }]) => {
       // search to get title
-      if (!item.title) {
+      if (!title) {
         const pageIndex = getStoredFields(localeIndex, id);
 
-        if (pageIndex) item.title = <string>pageIndex[IndexField.heading];
+        if (pageIndex) title = <string>pageIndex[IndexField.heading];
       }
 
-      return item;
+      return {
+        title,
+        contents: contents.map(([result]) => result),
+      };
     });
 };

@@ -24,7 +24,12 @@ import {
   searchProClientCustomFiledConfig,
   searchProLocales,
 } from "../define.js";
-import { type MatchedItem, type Word } from "../typings/index.js";
+import {
+  type MatchedItem,
+  ResultField,
+  ResultType,
+  type Word,
+} from "../typings/index.js";
 import { CLOSE_ICON } from "../utils/index.js";
 
 import "../styles/search-result.scss";
@@ -69,8 +74,10 @@ export default defineComponent({
 
     const getRealPath = (item: MatchedItem): string =>
       router.resolve({
-        name: item.key,
-        ...("anchor" in item ? { hash: item.anchor } : {}),
+        name: item[ResultField.key],
+        ...(ResultField.anchor in item
+          ? { hash: `#${item[ResultField.anchor]}` }
+          : {}),
       }).path;
 
     const activePreviousResult = (): void => {
@@ -111,18 +118,23 @@ export default defineComponent({
       display.map((word) => (isString(word) ? word : h(word[0], word[1])));
 
     const getDisplay = (matchedItem: MatchedItem): (VNode | string)[] => {
-      if (matchedItem.type === "custom") {
+      if (matchedItem[ResultField.type] === ResultType.custom) {
         const formatterConfig =
-          searchProClientCustomFiledConfig[matchedItem.index] || "$content";
+          searchProClientCustomFiledConfig[matchedItem[ResultField.index]] ||
+          "$content";
 
         const [prefix, suffix = ""] = isPlainObject(formatterConfig)
           ? formatterConfig[routeLocale.value].split("$content")
           : formatterConfig.split("$content");
 
-        return getVNodes([prefix, ...matchedItem.display, suffix]);
+        return matchedItem[ResultField.display]
+          .map((display) => getVNodes([prefix, ...display, suffix]))
+          .flat();
       }
 
-      return getVNodes(matchedItem.display);
+      return matchedItem[ResultField.display]
+        .map((display) => getVNodes(display))
+        .flat();
     };
 
     const resetSearchResult = (): void => {
@@ -209,8 +221,13 @@ export default defineComponent({
                       () => [
                         h(HistoryIcon, { class: "search-pro-result-type" }),
                         h("div", { class: "search-pro-result-content" }, [
-                          item.type === "content" && item.header
-                            ? h("div", { class: "content-header" }, item.header)
+                          item[ResultField.type] === ResultType.text &&
+                          item[ResultField.header]
+                            ? h(
+                                "div",
+                                { class: "content-header" },
+                                item[ResultField.header]
+                              )
                             : null,
                           h("div", getDisplay(item)),
                         ]),
@@ -278,22 +295,24 @@ export default defineComponent({
                           },
                         },
                         () => [
-                          item.type === "content"
+                          item[ResultField.type] === ResultType.text
                             ? null
                             : h(
-                                item.type === "title"
+                                item[ResultField.type] === ResultType.title
                                   ? TitleIcon
-                                  : item.type === "heading"
+                                  : item[ResultField.type] ===
+                                    ResultType.heading
                                   ? HeadingIcon
                                   : HeartIcon,
                                 { class: "search-pro-result-type" }
                               ),
                           h("div", { class: "search-pro-result-content" }, [
-                            item.type === "content" && item.header
+                            item[ResultField.type] === ResultType.text &&
+                            item[ResultField.header]
                               ? h(
                                   "div",
                                   { class: "content-header" },
-                                  item.header
+                                  item[ResultField.header]
                                 )
                               : null,
                             h("div", getDisplay(item)),
