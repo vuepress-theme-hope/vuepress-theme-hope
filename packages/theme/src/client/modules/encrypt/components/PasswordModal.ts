@@ -53,19 +53,19 @@ export default defineComponent({
         "div",
         {
           class: [
-            "password-layer",
+            "vp-decrypt-layer",
             { expand: props.full || frontmatter.value["home"] },
           ],
         },
-        h("div", { class: "password-modal" }, [
+        h("div", { class: "vp-decrypt-modal" }, [
           h(
             "div",
-            { class: ["hint", { tried: hasTried.value }] },
+            { class: ["vp-decrypt-hint", { tried: hasTried.value }] },
             hasTried.value
               ? locale.value.errorHint
               : h(LockIcon, { "aria-label": locale.value.iconLabel })
           ),
-          h("div", { class: "password" }, [
+          h("div", { class: "vp-decrypt-input" }, [
             h("input", {
               type: "password",
               value: password.value,
@@ -78,7 +78,7 @@ export default defineComponent({
               },
             }),
           ]),
-          h("div", { class: "remember-password" }, [
+          h("div", { class: "vp-remember-password" }, [
             h("input", {
               type: "checkbox",
               value: remember.value,
@@ -88,7 +88,11 @@ export default defineComponent({
           ]),
           h(
             "button",
-            { type: "button", class: "submit", onClick: () => verify() },
+            {
+              type: "button",
+              class: "vp-decrypt-submit",
+              onClick: () => verify(),
+            },
             "OK"
           ),
         ])

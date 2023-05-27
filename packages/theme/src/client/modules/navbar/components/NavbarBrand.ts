@@ -32,17 +32,20 @@ export default defineComponent({
     );
 
     return (): VNode =>
-      h(RouterLink, { to: siteBrandLink.value, class: "brand" }, () => [
+      h(RouterLink, { to: siteBrandLink.value, class: "vp-brand" }, () => [
         siteBrandLogo.value
           ? h("img", {
-              class: ["logo", { light: Boolean(siteBrandLogoDark.value) }],
+              class: [
+                "vp-nav-logo",
+                { light: Boolean(siteBrandLogoDark.value) },
+              ],
               src: siteBrandLogo.value,
               alt: siteTitle.value,
             })
           : null,
         siteBrandLogoDark.value
           ? h("img", {
-              class: ["logo dark"],
+              class: ["vp-nav-logo dark"],
               src: siteBrandLogoDark.value,
               alt: siteTitle.value,
             })
@@ -52,7 +55,7 @@ export default defineComponent({
               "span",
               {
                 class: [
-                  "site-name",
+                  "vp-site-name",
                   {
                     "hide-in-pad":
                       siteBrandLogo.value &&

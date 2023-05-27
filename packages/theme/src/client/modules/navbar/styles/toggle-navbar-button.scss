@@ -1,6 +1,6 @@
 @use "vuepress-shared/styles/reset";
 
-.toggle-navbar-button {
+.vp-toggle-navbar-button {
   @include reset.button;
 
   position: relative;
@@ -15,16 +15,16 @@
     display: flex;
   }
 
-  .button-container {
+  > span {
     position: relative;
     overflow: hidden;
     width: 16px;
     height: 14px;
   }
 
-  .button-top,
-  .button-middle,
-  .button-bottom {
+  .vp-top,
+  .vp-middle,
+  .vp-bottom {
     position: absolute;
 
     width: 16px;
@@ -35,38 +35,38 @@
     transition: top 0.25s, background 0.5s, transform 0.25s;
   }
 
-  .button-top {
+  .vp-top {
     top: 0;
     left: 0;
     transform: translateX(0);
   }
 
-  .button-middle {
+  .vp-middle {
     top: 6px;
     left: 0;
     transform: translateX(8px);
   }
 
-  .button-bottom {
+  .vp-bottom {
     top: 12px;
     left: 0;
     transform: translateX(4px);
   }
 
   &:hover {
-    .button-top {
+    .vp-top {
       top: 0;
       left: 0;
       transform: translateX(4px);
     }
 
-    .button-middle {
+    .vp-middle {
       top: 6;
       left: 0;
       transform: translateX(0);
     }
 
-    .button-bottom {
+    .vp-bottom {
       top: 12px;
       left: 0;
       transform: translateX(8px);
@@ -74,25 +74,25 @@
   }
 
   &.is-active {
-    .button-top {
+    .vp-top {
       top: 6px;
       transform: translateX(0) rotate(225deg);
     }
 
-    .button-middle {
+    .vp-middle {
       top: 6px;
       transform: translateX(16px);
     }
 
-    .button-bottom {
+    .vp-bottom {
       top: 6px;
       transform: translateX(0) rotate(135deg);
     }
 
     &:hover {
-      .button-top,
-      .button-middle,
-      .button-bottom {
+      .vp-top,
+      .vp-middle,
+      .vp-bottom {
         background: var(--theme-color);
         transition: top 0.25s, background 0.25s, transform 0.25s;
       }

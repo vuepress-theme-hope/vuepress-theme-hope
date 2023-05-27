@@ -1,6 +1,6 @@
 @use "vuepress-shared/styles/reset";
 
-.toggle-sidebar-button {
+.vp-toggle-sidebar-button {
   @include reset.button;
 
   display: none;

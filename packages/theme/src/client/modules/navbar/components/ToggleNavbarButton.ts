@@ -14,16 +14,16 @@ const ToggleNavbarButton: FunctionalComponent<
     "button",
     {
       type: "button",
-      class: ["toggle-navbar-button", { "is-active": active }],
+      class: ["vp-toggle-navbar-button", { "is-active": active }],
       "aria-label": "Toggle Navbar",
       "aria-expanded": active,
       "aria-controls": "nav-screen",
       onClick: () => emit("toggle"),
     },
-    h("span", { class: "button-container" }, [
-      h("span", { class: "button-top" }),
-      h("span", { class: "button-middle" }),
-      h("span", { class: "button-bottom" }),
+    h("span", [
+      h("span", { class: "vp-top" }),
+      h("span", { class: "vp-middle" }),
+      h("span", { class: "vp-bottom" }),
     ])
   );
 

@@ -16,7 +16,7 @@ export default defineComponent({
       navbarConfig.value.length
         ? h(
             "nav",
-            { class: "nav-links" },
+            { class: "vp-nav-links" },
             navbarConfig.value.map((config) =>
               h(
                 "div",

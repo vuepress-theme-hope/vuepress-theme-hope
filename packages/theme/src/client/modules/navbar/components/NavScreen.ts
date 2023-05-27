@@ -83,10 +83,10 @@ export default defineComponent({
             ? h(
                 "div",
                 { id: "nav-screen" },
-                h("div", { class: "container" }, [
+                h("div", { class: "vp-nav-screen-container" }, [
                   slots.before?.(),
                   h(NavScreenLinks),
-                  h("div", { class: "outlook-wrapper" }, h(OutlookSettings)),
+                  h("div", { class: "vp-outlook-wrapper" }, h(OutlookSettings)),
                   slots.after?.(),
                 ])
               )

@@ -27,7 +27,7 @@ export default defineComponent({
             h(
               "a",
               {
-                class: "repo-link",
+                class: "vp-repo-link",
                 href: repo.value.link,
                 target: "_blank",
                 rel: "noopener noreferrer",

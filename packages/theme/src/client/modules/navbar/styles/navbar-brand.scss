@@ -1,42 +1,40 @@
-.navbar {
-  .logo {
-    vertical-align: top;
-    height: var(--navbar-line-height);
-    margin-inline-end: 0.8rem;
+.vp-nav-logo {
+  vertical-align: top;
+  height: var(--navbar-line-height);
+  margin-inline-end: 0.8rem;
 
+  &.light {
+    display: inline-block;
+  }
+
+  &.dark {
+    display: none;
+  }
+
+  #{hope-config.$dark-selector} & {
     &.light {
-      display: inline-block;
-    }
-
-    &.dark {
       display: none;
     }
 
-    #{hope-config.$dark-selector} & {
-      &.light {
-        display: none;
-      }
-
-      &.dark {
-        display: inline-block;
-      }
+    &.dark {
+      display: inline-block;
     }
   }
+}
 
-  .site-name {
-    position: relative;
-    color: var(--text-color);
-    font-size: 1.25rem;
+.vp-site-name {
+  position: relative;
+  color: var(--text-color);
+  font-size: 1.25rem;
 
-    @media (max-width: hope-config.$tablet) {
-      overflow: hidden;
-      width: calc(100vw - 9.4rem);
-      text-overflow: ellipsis;
-      white-space: nowrap;
-    }
+  @media (max-width: hope-config.$tablet) {
+    overflow: hidden;
+    width: calc(100vw - 9.4rem);
+    text-overflow: ellipsis;
+    white-space: nowrap;
+  }
 
-    .brand:hover & {
-      color: var(--theme-color);
-    }
+  .vp-brand:hover & {
+    color: var(--theme-color);
   }
 }
