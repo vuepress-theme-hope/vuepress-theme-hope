@@ -79,6 +79,15 @@ export interface NavbarLocaleOptions {
   logoDark?: string;
 
   /**
+   * Navbar title
+   *
+   * 导航栏标题
+   *
+   * @default $siteLocale.title
+   */
+  navTitle?: string | false;
+
+  /**
    * Repository link
    *
    * 仓库链接

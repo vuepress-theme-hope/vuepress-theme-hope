@@ -71,9 +71,16 @@ Navbar logo, should be absolute path relative to `.vuepress/public` folder.
 ### logoDark
 
 - Type: `string`
-- Required: No
+- Default: `logo`
 
 Navbar logo in darkmode, should be absolute path relative to `.vuepress/public` folder.
+
+### navTitle
+
+- Type: `string | false`
+- Default: `$siteLocale.title`
+
+Navbar title
 
 ### repo
 
