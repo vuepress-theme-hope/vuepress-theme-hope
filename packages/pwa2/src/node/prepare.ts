@@ -10,16 +10,6 @@ export const prepareConfigFile = (
   let configImport = "";
   let rootComponents = "";
 
-  if (options.showInstall) {
-    configImport += `\
-import PWAInstall from "${CLIENT_FOLDER}components/PWAInstall.js";
-`;
-
-    rootComponents += `\
-PWAInstall,
-`;
-  }
-
   if (options.update === "hint") {
     configImport += `\
 import SWHintPopup from "${

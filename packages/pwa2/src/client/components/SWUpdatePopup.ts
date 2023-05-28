@@ -11,8 +11,9 @@ import {
 import { useLocaleConfig } from "vuepress-shared/client";
 
 import { UpdateIcon } from "../components/icons.js";
-import { usePWAEvent, useSkipWaiting } from "../composables/index.js";
+import { usePWAEvent } from "../composables/index.js";
 import { locales } from "../define.js";
+import { skipWaiting } from "../utils/index.js";
 
 import "../styles/popup.scss";
 
@@ -34,7 +35,7 @@ export default defineComponent({
 
     const reload = (): void => {
       if (registration.value) {
-        useSkipWaiting(registration.value);
+        skipWaiting(registration.value);
         registration.value = undefined;
       }
     };

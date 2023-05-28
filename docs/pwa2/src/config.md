@@ -3,13 +3,6 @@ title: Config
 icon: gears
 ---
 
-## showInstall
-
-- Type: `boolean`
-- Default: `true`
-
-Whether display install button when Service Worker is first registered successfully.
-
 ## manifest
 
 - Type: `ManifestOption`

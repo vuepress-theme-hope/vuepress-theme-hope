@@ -64,15 +64,6 @@ export interface PWAOptions {
   swPath?: string;
 
   /**
-   * Whether display install button
-   *
-   * 是否显示安装按钮
-   *
-   * @default true
-   */
-  showInstall?: boolean;
-
-  /**
    * manifest file Config
    *
    * manifest 文件设置

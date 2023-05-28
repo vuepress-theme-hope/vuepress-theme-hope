@@ -1,9 +1,9 @@
 import mitt from "mitt";
 import { onMounted, provide } from "vue";
 
-import { useForceUpdate } from "./useForceUpdate.js";
 import { pwaEventSymbol } from "./usePWAEvent.js";
-import { useRegister } from "./useRegister.js";
+import { useRegisterSW } from "./useRegisterSW.js";
+import { forceUpdate } from "../utils/index.js";
 
 import { type PWAEvent } from "./index.js";
 
@@ -35,8 +35,8 @@ export const setupPWA = (): void => {
         window.location.reload();
       });
 
-    if (SW_FORCE_UPDATE) useForceUpdate(event);
+    if (SW_FORCE_UPDATE) forceUpdate();
 
-    await useRegister(event);
+    await useRegisterSW(event);
   });
 };
