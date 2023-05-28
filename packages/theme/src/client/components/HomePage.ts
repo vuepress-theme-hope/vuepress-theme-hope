@@ -44,10 +44,10 @@ export default defineComponent({
       h(
         "main",
         {
-          class: ["vp-project-home ", { pure: pure.value }],
           id: "main-content",
+          class: ["vp-project-home ", { pure: pure.value }],
           "aria-labelledby":
-            frontmatter.value.heroText === null ? undefined : "main-title",
+            frontmatter.value.heroText === null ? "" : "main-title",
         },
         [
           slots.top?.(),

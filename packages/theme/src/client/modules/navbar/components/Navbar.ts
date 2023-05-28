@@ -108,6 +108,7 @@ export default defineComponent({
         h(
           "header",
           {
+            id: "navbar",
             class: [
               "vp-navbar",
               {
@@ -115,7 +116,6 @@ export default defineComponent({
                 "hide-icon": themeLocale.value.navbarIcon === false,
               },
             ],
-            id: "navbar",
           },
           [
             h("div", { class: "vp-navbar-start" }, [

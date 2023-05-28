@@ -32,8 +32,8 @@ export default defineComponent({
               "button",
               {
                 type: "button",
-                class: "full-screen",
                 id: "full-screen-switch",
+                class: "full-screen",
                 ariaPressed: isFullscreen.value,
                 onClick: () => toggle(),
               },

@@ -100,7 +100,7 @@ export default defineComponent({
       enableWaline
         ? h(
             "div",
-            { class: "waline-wrapper", id: "comment" },
+            { id: "comment", class: "waline-wrapper" },
             h(
               defineAsyncComponent({
                 loader: async () =>

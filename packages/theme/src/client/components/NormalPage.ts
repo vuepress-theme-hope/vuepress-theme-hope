@@ -52,7 +52,7 @@ export default defineComponent({
     return (): VNode =>
       h(
         "main",
-        { class: "vp-page", id: "main-content" },
+        { id: "main-content", class: "vp-page" },
         h(
           hasGlobalComponent("LocalEncrypt")
             ? <ComponentOptions>resolveComponent("LocalEncrypt")

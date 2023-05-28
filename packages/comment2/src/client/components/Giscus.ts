@@ -139,11 +139,11 @@ export default defineComponent({
         ? h(
             "div",
             {
+              id: "comment",
               class: [
                 "giscus-wrapper",
                 { "input-top": giscusOptions.inputPosition !== "bottom" },
               ],
-              id: "comment",
             },
             loaded.value ? h("giscus-widget", config.value) : h(LoadingIcon)
           )

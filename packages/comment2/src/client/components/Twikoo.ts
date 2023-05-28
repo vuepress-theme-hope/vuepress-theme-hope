@@ -68,7 +68,7 @@ export default defineComponent({
       enableTwikoo
         ? h(
             "div",
-            { class: "twikoo-wrapper", id: "comment" },
+            { id: "comment", class: "twikoo-wrapper" },
             loaded.value ? h("div", { id: "twikoo-comment" }) : h(LoadingIcon)
           )
         : null;

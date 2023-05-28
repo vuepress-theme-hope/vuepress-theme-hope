@@ -69,12 +69,12 @@ export default defineComponent({
       h(
         "aside",
         {
+          ref: sidebar,
+          id: "sidebar",
           class: [
             "sidebar",
             { "hide-icon": themeLocale.value.sidebarIcon === false },
           ],
-          id: "sidebar",
-          ref: sidebar,
         },
         [
           slots.top?.(),

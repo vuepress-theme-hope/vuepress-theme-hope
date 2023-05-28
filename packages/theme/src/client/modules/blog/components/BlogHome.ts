@@ -20,7 +20,7 @@ export default defineComponent({
       h("div", { class: "vp-page vp-blog" }, [
         h(BlogHero),
         h("div", { class: "blog-page-wrapper" }, [
-          h("main", { class: "vp-blog-home", id: "main-content" }, [
+          h("main", { id: "main-content", class: "vp-blog-main" }, [
             h(DropTransition, { appear: true, delay: 0.16 }, () =>
               h(ProjectPanel)
             ),

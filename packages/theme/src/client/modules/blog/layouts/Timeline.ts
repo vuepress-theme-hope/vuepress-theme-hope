@@ -25,7 +25,7 @@ export default defineComponent({
           "div",
           { class: "vp-page vp-blog" },
           h("div", { class: "blog-page-wrapper" }, [
-            h("main", { class: "vp-blog-main", id: "main-content" }, [
+            h("main", { id: "main-content", class: "vp-blog-main" }, [
               h(DropTransition, { appear: true, delay: 0.24 }, () =>
                 h(TimelineItems)
               ),

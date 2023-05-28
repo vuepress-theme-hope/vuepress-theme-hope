@@ -36,7 +36,7 @@ export default defineComponent({
         });
         inError.value = false;
       } catch (err) {
-        result.value = err.toString();
+        result.value = (<Error>err).toString();
         inError.value = true;
       }
     };
