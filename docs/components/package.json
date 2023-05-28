@@ -23,7 +23,7 @@
     "docs-shared": "workspace:*",
     "artplayer-plugin-danmuku": "5.0.1",
     "hls.js": "1.4.4",
-    "sass-loader": "13.3.0",
+    "sass-loader": "13.3.1",
     "vue": "3.3.4",
     "vuepress-plugin-components": "workspace:*",
     "vuepress-shared": "workspace:*",

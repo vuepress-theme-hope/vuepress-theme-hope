@@ -26,7 +26,7 @@
     "docs-shared": "workspace:*",
     "flowchart.ts": "0.1.6",
     "katex": "0.16.7",
-    "sass-loader": "13.3.0",
+    "sass-loader": "13.3.1",
     "vue": "3.3.4",
     "vuepress-plugin-md-enhance": "workspace:*",
     "vuepress-shared": "workspace:*",
