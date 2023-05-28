@@ -70,7 +70,7 @@ export default defineComponent({
               "button",
               {
                 type: "button",
-                class: "back-to-top",
+                class: "vp-back-to-top-button",
                 // hint text
                 "aria-label": locale.value.backToTop,
                 "data-balloon-pos": "left",
@@ -84,7 +84,7 @@ export default defineComponent({
                   ? null
                   : h(
                       "svg",
-                      { class: "scroll-progress" },
+                      { class: "vp-scroll-progress" },
                       h("circle", {
                         cx: "50%",
                         cy: "50%",

@@ -24,7 +24,7 @@ import "../styles/site-info.scss";
 declare const SITE_INFO_LOCALES: SiteInfoLocaleConfig;
 
 export default defineComponent({
-  name: "DemoProject",
+  name: "SiteInfo",
 
   components: {
     BitbucketIcon,
@@ -103,42 +103,42 @@ export default defineComponent({
     );
 
     return (): VNode =>
-      h("div", { class: "site-info" }, [
+      h("div", { class: "vp-site-info" }, [
         h("a", {
-          class: "site-info-navigator",
+          class: "vp-site-info-navigator",
           title: props.name,
           href: props.url,
           target: "_blank",
         }),
         h("div", {
-          class: "site-info-preview",
+          class: "vp-site-info-preview",
           style: {
             background: `url(${withBase(
               props.preview
             )}) center/cover no-repeat`,
           },
         }),
-        h("div", { class: "site-info-detail" }, [
+        h("div", { class: "vp-site-info-detail" }, [
           props.logo
             ? h("img", {
-                class: "site-info-logo",
+                class: "vp-site-info-logo",
                 src: props.logo,
                 alt: props.name,
                 loading: "lazy",
                 "no-view": "",
               })
             : null,
-          h("div", { class: "site-info-name" }, props.name),
-          h("div", { class: "site-info-desc" }, props.desc),
+          h("div", { class: "vp-site-info-name" }, props.name),
+          h("div", { class: "vp-site-info-desc" }, props.desc),
         ]),
         props.repo
           ? h(
               "div",
-              { class: "site-info-source-wrapper" },
+              { class: "vp-site-info-source-wrapper" },
               h(
                 "a",
                 {
-                  class: "site-info-source",
+                  class: "vp-site-info-source",
                   href: props.repo,
                   // hint text
                   "aria-label": locale.value.source,

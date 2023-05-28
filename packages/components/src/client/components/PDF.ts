@@ -114,7 +114,7 @@ export default defineComponent({
 
     return (): VNode => {
       return h("div", {
-        class: "pdf-preview",
+        class: "pdf-viewer-wrapper",
         ref: el,
         style: {
           width: width.value,

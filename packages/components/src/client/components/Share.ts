@@ -131,7 +131,7 @@ export default defineComponent({
       return h(
         "div",
         {
-          class: "share-wrapper",
+          class: "vp-share-buttons",
           style: props.inline ? { display: "inline-block" } : {},
         },
         service.value.map((item) =>

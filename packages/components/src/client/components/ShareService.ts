@@ -212,7 +212,7 @@ export default defineComponent({
           "button",
           {
             type: "button",
-            class: ["share-button", { plain }],
+            class: ["vp-share-button", { plain }],
             "aria-label": name,
             "data-balloon-pos": "up",
             onClick: () => share(),
@@ -222,7 +222,7 @@ export default defineComponent({
             : icon
             ? renderIcon(icon)
             : h("div", {
-                class: "share-icon color-wrapper",
+                class: "vp-share-icon colorful",
                 style: {
                   background: color,
                 },

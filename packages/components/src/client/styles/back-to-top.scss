@@ -1,6 +1,6 @@
 @use "vuepress-shared/styles/reset";
 
-.back-to-top {
+.vp-back-to-top-button {
   @include reset.button;
 
   position: fixed !important;
@@ -49,7 +49,7 @@
   }
 }
 
-.scroll-progress {
+.vp-scroll-progress {
   position: absolute;
   right: -2px;
   bottom: -2px;

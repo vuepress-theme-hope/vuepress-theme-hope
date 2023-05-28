@@ -17,7 +17,7 @@ const Badge: FunctionalComponent<
   h(
     "span",
     {
-      class: ["badge", type, { diy: color }],
+      class: ["vp-badge", type, { diy: color }],
       style: {
         verticalAlign: vertical,
         ...(color ? { backgroundColor: color } : {}),

@@ -130,7 +130,7 @@ export default defineComponent({
         ? [
             h(
               "div",
-              { class: "bili-desc" },
+              { class: "bilibili-desc" },
               h("a", { class: "sr-only", href: videoLink.value }, props.title)
             ),
             h("iframe", {
@@ -138,7 +138,7 @@ export default defineComponent({
               // Tip: `https://www.bilibili.com/blackboard/newplayer.html?bvid=${props.bvid}&as_wide=1&page=1` only support whitelist sites now
               src: videoLink.value,
               title: props.title,
-              class: "bili-iframe",
+              class: "bilibili-iframe",
               allow: videoIframeAllow,
               style: {
                 width: width.value,

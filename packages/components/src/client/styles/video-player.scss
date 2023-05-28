@@ -1,4 +1,4 @@
-.video-player-wrapper {
+.vp-video-player {
   --plyr-audio-controls-background: var(--vp-bg);
   --plyr-audio-control-color: var(--vp-c);
   --plyr-color-main: var(--vp-tc);
@@ -9,12 +9,7 @@
   background: rgb(0 0 0 / 15%);
 
   @media print {
-    height: auto !important;
-    background: transparent;
-
-    a {
-      display: block;
-    }
+    display: none;
   }
 
   video {

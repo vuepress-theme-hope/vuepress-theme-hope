@@ -123,7 +123,7 @@ export default defineComponent({
       h(
         "div",
         {
-          class: "video-player-wrapper",
+          class: "vp-video-player",
           style: {
             width: props.width,
           },

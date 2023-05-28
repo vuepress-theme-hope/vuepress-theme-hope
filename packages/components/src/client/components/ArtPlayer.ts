@@ -296,6 +296,7 @@ export default defineComponent({
         "div",
         {
           ref: el,
+          class: "vp-artplayer",
           style: {
             width: width.value,
             height: height.value,
