@@ -37,25 +37,29 @@ export default defineComponent({
     onClickOutside(menu, closeMenu);
 
     return (): VNode =>
-      h("div", { class: "presentation" }, [
+      h("div", { class: "vp-reveal-page" }, [
         h(Content),
-        h("div", { ref: menu, class: ["menu", { active: showMenu.value }] }, [
-          h(
-            "button",
-            { type: "button", class: "menu-button", onClick: () => toggle() },
-            h("span", { class: "icon" })
-          ),
-          h(
-            "button",
-            { type: "button", class: "back-button", onClick: () => back() },
-            h(BackIcon)
-          ),
-          h(
-            "button",
-            { type: "button", class: "home-button", onClick: () => home() },
-            h(HomeIcon)
-          ),
-        ]),
+        h(
+          "div",
+          { ref: menu, class: ["vp-reveal-menu", { active: showMenu.value }] },
+          [
+            h(
+              "button",
+              { type: "button", class: "menu-button", onClick: () => toggle() },
+              h("span", { class: "icon" })
+            ),
+            h(
+              "button",
+              { type: "button", class: "back-button", onClick: () => back() },
+              h(BackIcon)
+            ),
+            h(
+              "button",
+              { type: "button", class: "home-button", onClick: () => home() },
+              h(HomeIcon)
+            ),
+          ]
+        ),
       ]);
   },
 });

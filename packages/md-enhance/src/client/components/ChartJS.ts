@@ -105,16 +105,16 @@ export default defineComponent({
 
     return (): (VNode | null)[] => [
       props.title
-        ? h("div", { class: "chart-title" }, decodeURIComponent(props.title))
+        ? h("div", { class: "chartjs-title" }, decodeURIComponent(props.title))
         : null,
       loading.value
-        ? h(LoadingIcon, { class: "chart-loading", height: 192 })
+        ? h(LoadingIcon, { class: "chartjs-loading", height: 192 })
         : null,
       h(
         "div",
         {
           ref: chartElement,
-          class: "chart-wrapper",
+          class: "chartjs-wrapper",
           id: props.id,
           style: {
             display: loading.value ? "none" : "block",

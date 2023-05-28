@@ -1,6 +1,6 @@
 @use "vuepress-shared/styles/reset";
 
-.code-tabs-nav {
+.vp-code-tabs-nav {
   overflow-x: auto;
 
   margin: 0.85rem 0 -0.85rem;
@@ -25,7 +25,7 @@
   }
 }
 
-.code-tabs-nav-tab {
+.vp-code-tab-nav {
   @include reset.button;
 
   position: relative;
@@ -71,7 +71,6 @@
   }
 
   &.active {
-    padding: 6px 16px;
     background: var(--code-bg-color, #282c34);
 
     &::before {
@@ -98,7 +97,7 @@
   }
 }
 
-.code-tab {
+.vp-code-tab {
   display: none;
 
   &.active {

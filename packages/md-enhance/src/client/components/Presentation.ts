@@ -124,7 +124,7 @@ export default defineComponent({
     });
 
     return (): VNode =>
-      h("div", { class: "presentation-wrapper" }, [
+      h("div", { class: "vp-reveal" }, [
         h(
           "div",
           {

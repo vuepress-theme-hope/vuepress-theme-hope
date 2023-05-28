@@ -146,10 +146,10 @@ export default defineComponent({
 
     return (): VNode | null =>
       props.data.length
-        ? h("div", { class: "tab-list" }, [
+        ? h("div", { class: "vp-tabs" }, [
             h(
               "div",
-              { class: "tab-list-nav", role: "tablist" },
+              { class: "vp-tabs-nav", role: "tablist" },
               props.data.map(({ id }, index) => {
                 const isActive = index === activeIndex.value;
 
@@ -161,7 +161,7 @@ export default defineComponent({
                       if (element)
                         tabRefs.value[index] = <HTMLUListElement>element;
                     },
-                    class: ["tab-list-nav-item", { active: isActive }],
+                    class: ["vp-tab-nav", { active: isActive }],
                     role: "tab",
                     "aria-controls": `tab-${props.id}-${index}`,
                     "aria-selected": isActive,
@@ -182,7 +182,7 @@ export default defineComponent({
               return h(
                 "div",
                 {
-                  class: ["tab-item", { active: isActive }],
+                  class: ["vp-tab", { active: isActive }],
                   id: `tab-${props.id}-${index}`,
                   role: "tabpanel",
                   "aria-expanded": isActive,

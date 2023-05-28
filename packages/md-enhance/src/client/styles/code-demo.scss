@@ -9,11 +9,7 @@
   --code-demo-header-bg-color: #333;
 }
 
-.code-demo-loading {
-  color: var(--vp-tc);
-}
-
-.code-demo-wrapper {
+.vp-code-demo {
   margin: 10px 0;
   border: 1px solid var(--vp-brc);
   border-radius: 8px;
@@ -24,7 +20,7 @@
   }
 }
 
-.code-demo-header {
+.vp-code-demo-header {
   position: relative;
 
   display: flex;
@@ -37,54 +33,6 @@
   background: var(--code-demo-header-bg-color);
 
   text-align: start;
-
-  .toggle-button {
-    @include reset.button;
-    @include arrow.arrow;
-
-    position: relative;
-
-    margin: 8px 12px 8px 8px;
-    border-color: transparent;
-    border-radius: 50%;
-
-    background-color: #ccc;
-    outline: none;
-
-    font-size: 24px;
-
-    cursor: pointer;
-
-    @media print {
-      display: none;
-    }
-
-    #{hope-config.$dark-selector} & {
-      background-color: #555;
-    }
-
-    &:hover {
-      background-color: #aaa;
-
-      #{hope-config.$dark-selector} & {
-        background-color: #777;
-      }
-    }
-  }
-
-  .title {
-    display: inline-block;
-    vertical-align: top;
-    flex: 1;
-
-    font-weight: 500;
-    font-size: 1.25rem;
-    line-height: 2.5rem;
-
-    &:first-child {
-      margin-left: 16px;
-    }
-  }
 
   .codepen-button,
   .jsfiddle-button {
@@ -138,7 +86,59 @@
   }
 }
 
-.code-demo-container {
+.vp-code-demo-toggle-button {
+  @include reset.button;
+  @include arrow.arrow;
+
+  position: relative;
+
+  margin: 8px 12px 8px 8px;
+  border-color: transparent;
+  border-radius: 50%;
+
+  background-color: #ccc;
+  outline: none;
+
+  font-size: 24px;
+
+  cursor: pointer;
+
+  @media print {
+    display: none;
+  }
+
+  #{hope-config.$dark-selector} & {
+    background-color: #555;
+  }
+
+  &:hover {
+    background-color: #aaa;
+
+    #{hope-config.$dark-selector} & {
+      background-color: #777;
+    }
+  }
+}
+
+.vp-code-demo-title {
+  display: inline-block;
+  vertical-align: top;
+  flex: 1;
+
+  font-weight: 500;
+  font-size: 1.25rem;
+  line-height: 2.5rem;
+
+  &:first-child {
+    margin-left: 16px;
+  }
+}
+
+.vp-code-demo-loading {
+  color: var(--vp-tc);
+}
+
+.vp-code-demo-display {
   position: relative;
 
   overflow: auto;
@@ -152,7 +152,7 @@
   }
 }
 
-.code-demo-code-wrapper {
+.vp-code-demo-code-wrapper {
   overflow: hidden;
   transition: height 0.5s;
 
@@ -161,7 +161,7 @@
   }
 }
 
-.code-demo-codes {
+.vp-code-demo-codes {
   > p {
     margin: 0.75rem;
   }
@@ -197,7 +197,7 @@
       border-radius: 0;
     }
 
-    button.copy-code-button {
+    button.copy-code-button.fancy {
       right: 0;
       bottom: 0;
 

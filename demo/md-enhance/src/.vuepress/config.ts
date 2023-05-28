@@ -41,6 +41,7 @@ export default defineUserConfig({
         "/demo/mermaid",
         "/demo/playground",
         "/demo/presentation",
+        "/demo/slide-page",
         "/demo/stylized",
         "/demo/sup-sub",
         "/demo/tabs",
