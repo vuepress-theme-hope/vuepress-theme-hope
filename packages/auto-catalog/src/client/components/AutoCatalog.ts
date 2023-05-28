@@ -212,8 +212,8 @@ export default defineComponent({
     const info = computed(() => getCatalogInfo());
 
     return (): VNode =>
-      h("div", { class: "auto-catalog-wrapper" }, [
-        h("h2", { class: "main-title" }, locale.value.title),
+      h("div", { class: "vp-catalog" }, [
+        h("h2", { class: "vp-catalog-main-title" }, locale.value.title),
 
         info.value.length
           ? info.value.map(
@@ -222,29 +222,38 @@ export default defineComponent({
                   "h3",
                   {
                     id: title,
-                    class: ["child-title", { "has-children": children.length }],
+                    class: [
+                      "vp-catalog-child-title",
+                      { "has-children": children.length },
+                    ],
                   },
                   [
                     h("a", { href: `#${title}`, class: "header-anchor" }, "#"),
-                    h(RouterLink, { class: "catalog-title", to: path }, () => [
-                      props.index ? `${mainIndex + 1}.` : null,
-                      icon && iconComponent ? h(iconComponent, { icon }) : null,
-                      title || "Unknown",
-                    ]),
+                    h(
+                      RouterLink,
+                      { class: "vp-catalog-title", to: path },
+                      () => [
+                        props.index ? `${mainIndex + 1}.` : null,
+                        icon && iconComponent
+                          ? h(iconComponent, { icon })
+                          : null,
+                        title || path,
+                      ]
+                    ),
                   ]
                 ),
                 children.length
                   ? h(
                       "ul",
-                      { class: "child-catalog-wrapper" },
+                      { class: "vp-catalog-child-catalogs" },
                       children.map(
                         ({ children = [], icon, path, title }, index) =>
-                          h("li", { class: "child-catalog-item" }, [
+                          h("li", { class: "vp-child-catalog" }, [
                             h(
                               "div",
                               {
                                 class: [
-                                  "sub-title",
+                                  "vp-catalog-sub-title",
                                   { "has-children": children.length },
                                 ],
                               },
@@ -256,7 +265,7 @@ export default defineComponent({
                                 ),
                                 h(
                                   RouterLink,
-                                  { class: "catalog-title", to: path },
+                                  { class: "vp-catalog-title", to: path },
                                   () => [
                                     props.index
                                       ? `${mainIndex + 1}.${index + 1}`
@@ -264,7 +273,7 @@ export default defineComponent({
                                     icon && iconComponent
                                       ? h(iconComponent, { icon })
                                       : null,
-                                    title || "Unknown",
+                                    title || path,
                                   ]
                                 ),
                               ]
@@ -272,13 +281,13 @@ export default defineComponent({
                             children.length
                               ? h(
                                   "div",
-                                  { class: "sub-catalog-wrapper" },
+                                  { class: "v-sub-catalogs" },
                                   children.map(
                                     ({ icon, path, title }, subIndex) =>
                                       h(
                                         RouterLink,
                                         {
-                                          class: "sub-catalog-item",
+                                          class: "vp-sub-catalog",
                                           to: path,
                                         },
                                         () => [
@@ -290,7 +299,7 @@ export default defineComponent({
                                           icon && iconComponent
                                             ? h(iconComponent, { icon })
                                             : null,
-                                          title || "Unknown",
+                                          title || path,
                                         ]
                                       )
                                   )
@@ -302,7 +311,7 @@ export default defineComponent({
                   : null,
               ]
             )
-          : h("p", { class: "empty-catalog" }, locale.value.empty),
+          : h("p", { class: "vp-empty-catalog" }, locale.value.empty),
       ]);
   },
 });
