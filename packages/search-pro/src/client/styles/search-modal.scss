@@ -30,20 +30,20 @@
   button {
     @include reset.button;
   }
+}
 
-  .background {
-    position: fixed;
-    top: 0;
-    left: 0;
-    z-index: 998;
+.search-pro-mask {
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: 998;
 
-    width: 100vw;
-    height: 100vh;
+  width: 100vw;
+  height: 100vh;
 
-    animation: 0.25s search-pro-fade-in;
+  animation: 0.25s search-pro-fade-in;
 
-    backdrop-filter: blur(10px);
-  }
+  backdrop-filter: blur(10px);
 }
 
 .search-pro-modal {

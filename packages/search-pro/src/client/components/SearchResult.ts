@@ -183,7 +183,7 @@ export default defineComponent({
         "div",
         {
           class: [
-            "search-pro-result",
+            "search-pro-result-wrapper",
             {
               empty: query.value ? !hasResults.value : !hasHistory.value,
             },

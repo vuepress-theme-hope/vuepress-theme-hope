@@ -84,7 +84,7 @@ export default defineComponent({
       isActive.value
         ? h("div", { class: "search-pro-modal-wrapper" }, [
             h("div", {
-              class: "background",
+              class: "search-pro-mask",
               onClick: () => {
                 isActive.value = false;
                 input.value = "";
