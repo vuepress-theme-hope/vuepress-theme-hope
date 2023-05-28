@@ -251,9 +251,6 @@ rules:
   vue/next-tick-style:
     - error
 
-  vue/no-bare-strings-in-template:
-    - error
-
   vue/no-boolean-default:
     - warn
 
@@ -342,9 +339,6 @@ rules:
     - error
 
   vue/v-for-delimiter-style:
-    - error
-
-  vue/v-on-handler-style:
     - error
 
 overrides:
