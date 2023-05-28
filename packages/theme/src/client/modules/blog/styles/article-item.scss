@@ -145,11 +145,9 @@
     color: var(--theme-color);
   }
 
-  // stylelint-disable no-descending-specificity
   > span {
     word-break: break-word;
   }
-  // stylelint-enable no-descending-specificity
 }
 
 .vp-article-cover {
