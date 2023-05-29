@@ -64,6 +64,10 @@ LoadingIcon.displayName = "LoadingIcon";
 
 export const SearchLoading: FunctionalComponent<{ hint: string }> = ({
   hint,
-}) => h("div", { class: "search-pro-result loading" }, [h(LoadingIcon), hint]);
+}) =>
+  h("div", { class: "search-pro-result-wrapper loading" }, [
+    h(LoadingIcon),
+    hint,
+  ]);
 
 SearchLoading.displayName = "SearchLoading";
