@@ -13,6 +13,15 @@ actions:
   - text: Config 🛠
     link: /config.html
 
+features:
+  - title: Adding Catalog with one line
+    icon: circle-check
+    details: Simply add catalog with out-of-box AutoCatalog component
+
+  - title: Generate catalog page automatically
+    icon: file
+    details: Generate catalog page for every dir
+
 footer: Theme by <a href="https://theme-hope.vuejs.press" target="_blank">VuePress Theme Hope</a> | MIT Licensed, Copyright © 2019-present Mr.Hope
 
 copyright: false
