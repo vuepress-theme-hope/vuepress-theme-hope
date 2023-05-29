@@ -1,5 +1,5 @@
 ---
-title: 选项
+title: 配置
 icon: gears
 ---
 

@@ -1,5 +1,5 @@
 ---
-title: Options
+title: Config
 icon: gears
 ---
 
