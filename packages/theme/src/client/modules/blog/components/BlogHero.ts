@@ -1,6 +1,6 @@
 import {
   usePageFrontmatter,
-  usePageHeadTitle,
+  useSiteLocaleData,
   withBase,
 } from "@vuepress/client";
 import { isString } from "@vuepress/shared";
@@ -46,8 +46,8 @@ export default defineComponent({
   }>,
 
   setup(_props, { slots }) {
-    const title = usePageHeadTitle();
     const frontmatter = usePageFrontmatter<ThemeBlogHomePageFrontmatter>();
+    const siteLocale = useSiteLocaleData();
 
     const hero = shallowRef<HTMLElement>();
 
@@ -62,16 +62,16 @@ export default defineComponent({
         heroImageDark,
         heroAlt,
         heroImageStyle,
-        tagline = null,
+        tagline,
       } = frontmatter.value;
 
       return {
-        text: heroText === false ? null : heroText || title.value,
+        text: heroText ?? siteLocale.value.title ?? "Hello",
         image: heroImage ? withBase(heroImage) : null,
         imageDark: heroImageDark ? withBase(heroImageDark) : null,
         heroStyle: heroImageStyle,
-        alt: heroAlt || "hero image",
-        tagline,
+        alt: heroAlt || heroText || "hero image",
+        tagline: tagline ?? "",
         isFullScreen: isFullScreen.value,
       };
     });

@@ -304,7 +304,12 @@ import HopeHomePage from "vuepress-theme-hope/components/HomePage.js";
 
 - `AutoLink`: `default`, `before`, `after`
 - `CommonWrapper`: `default`, `navbarStartBefore`, `navbarStartAfter`, `navbarCenterBefore`, `navbarCenterAfter`, `navbarEndBefore`, `navbarEndAfter`, `navScreenTop`, `navScreenBottom`, `sidebar`, `sidebarTop`, `sidebarBottom`
-- `HeroInfo`: `heroImage`, `heroInfo`
+- `HeroInfo`: `heroImage`, `heroInfo`, `heroBg`
+
+  - `heroInfo` 插槽将接收 `text` `tagline` 和 `isFullScreen` 属性。
+  - `heroImage` 插槽将接收 `image` `imageDark` `heroStyle` `alt` 和 `isFullScreen` 属性。
+  - `heroBg` 插槽将接收 `image` `bgStyle` 和 `isFullScreen` 属性。
+
 - `HomePage`: `top`, `center`, `bottom`
 - `NormalPage`: `top`, `contentBefore`, `contentAfter`, `bottom`, `tocBefore`, `tocAfter`
 

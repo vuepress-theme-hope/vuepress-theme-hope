@@ -299,7 +299,12 @@ Components that provide slots are as follows:
 
 - `AutoLink`: `default`, `before`, `after`
 - `CommonWrapper`: `default`, `navbarStartBefore`, `navbarStartAfter`, `navbarCenterBefore`, `navbarCenterAfter`, `navbarEndBefore`, `navbarEndAfter`, `navScreenTop`, `navScreenBottom`, `sidebar`, `sidebarTop`, `sidebarBottom`
-- `HeroInfo`: `heroImage`, `heroInfo`
+- `HeroInfo`: `heroImage`, `heroInfo`, `heroBg`
+
+  - `heroInfo` slot will receive `text` `tagline` and `isFullScreen` props.
+  - `heroImage` slot will receive `image` `imageDark` `heroStyle` `alt` and `isFullScreen` props.
+  - `heroBg` slot will receive `image` `bgStyle` and `isFullScreen` props.
+
 - `HomePage`: `top`, `center`, `bottom`
 - `NormalPage`: `top`, `contentBefore`, `contentAfter`, `bottom`, `tocBefore`, `tocAfter`
 

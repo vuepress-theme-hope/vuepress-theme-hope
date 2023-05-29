@@ -4,6 +4,7 @@ import {
   withBase,
 } from "@vuepress/client";
 import { type SlotsType, type VNode, computed, defineComponent, h } from "vue";
+import { isString } from "vuepress-shared/client";
 
 import AutoLink from "@theme-hope/components/AutoLink";
 import DropTransition from "@theme-hope/components/transitions/DropTransition";
@@ -12,101 +13,157 @@ import { type ThemeProjectHomePageFrontmatter } from "../../shared/index.js";
 
 import "../styles/hero-info.scss";
 
+export interface HeroInfo {
+  text: string | null;
+  tagline: string | null;
+  isFullScreen: boolean;
+}
+
+export interface HeroImage {
+  image: string | null;
+  imageDark: string | null;
+  heroStyle: string | Record<string, string> | undefined;
+  alt: string;
+  isFullScreen: boolean;
+}
+
+export interface BackgroundInfo {
+  image: string | null;
+  bgStyle: string | Record<string, string> | undefined;
+  isFullScreen: boolean;
+}
+
 export default defineComponent({
   name: "HeroInfo",
 
   slots: Object as SlotsType<{
-    heroImage?: () => VNode | VNode[];
-    heroInfo?: () => VNode | VNode[];
+    heroBg?: (props: BackgroundInfo) => VNode | VNode[];
+    heroImage?: (props: HeroImage) => VNode | VNode[];
+    heroInfo?: (props: HeroInfo) => VNode | VNode[];
   }>,
 
   setup(_props, { slots }) {
     const frontmatter = usePageFrontmatter<ThemeProjectHomePageFrontmatter>();
     const siteLocale = useSiteLocaleData();
 
-    const heroText = computed(() => {
-      if (frontmatter.value.heroText === false) return false;
+    const isFullScreen = computed(
+      () => frontmatter.value.heroFullScreen ?? false
+    );
 
-      return frontmatter.value.heroText || siteLocale.value.title || "Hello";
-    });
+    const heroInfo = computed(() => {
+      const { heroText, tagline } = frontmatter.value;
 
-    const tagline = computed(() => {
-      if (frontmatter.value.tagline === false) return false;
-
-      return (
-        frontmatter.value.tagline ||
-        siteLocale.value.description ||
-        "Welcome to your VuePress site"
-      );
+      return {
+        text: heroText ?? siteLocale.value.title ?? "Hello",
+        tagline: tagline ?? siteLocale.value.description ?? "",
+        isFullScreen: isFullScreen.value,
+      };
     });
 
     const heroImage = computed(() => {
-      if (!frontmatter.value.heroImage) return null;
+      const { heroText, heroImage, heroImageDark, heroAlt, heroImageStyle } =
+        frontmatter.value;
 
-      return withBase(frontmatter.value.heroImage);
+      return {
+        image: heroImage ? withBase(heroImage) : null,
+        imageDark: heroImageDark ? withBase(heroImageDark) : null,
+        heroStyle: heroImageStyle,
+        alt: heroAlt || heroText || "hero image",
+        isFullScreen: isFullScreen.value,
+      };
     });
 
-    const heroImageDark = computed(() => {
-      if (!frontmatter.value.heroImageDark) return null;
+    const bgInfo = computed(() => {
+      const { bgImage, bgImageStyle } = frontmatter.value;
 
-      return withBase(frontmatter.value.heroImageDark);
+      return {
+        image: isString(bgImage) ? withBase(bgImage) : null,
+        bgStyle: bgImageStyle,
+        isFullScreen: isFullScreen.value,
+      };
     });
-
-    const heroAlt = computed(
-      () => frontmatter.value.heroAlt || heroText.value || "hero"
-    );
 
     const actions = computed(() => frontmatter.value.actions ?? []);
 
     return (): VNode =>
-      h("header", { class: "vp-hero-info-wrapper" }, [
-        slots.heroImage?.() ||
-          h(DropTransition, { appear: true, type: "group" }, () => [
-            heroImage.value
-              ? h("img", {
-                  key: "light",
-                  class: ["vp-hero-image", { light: heroImageDark.value }],
-                  src: heroImage.value,
-                  alt: heroAlt.value,
-                })
-              : null,
-            heroImageDark.value
-              ? h("img", {
-                  key: "dark",
-                  class: "vp-hero-image dark",
-                  src: heroImageDark.value,
-                  alt: heroAlt.value,
-                })
-              : null,
-          ]),
-        slots.heroInfo?.() ??
-          h("div", { class: "vp-hero-info" }, [
-            heroText.value
-              ? h(DropTransition, { appear: true, delay: 0.04 }, () =>
-                  h("h1", { id: "main-title" }, <string>heroText.value)
-                )
-              : null,
-            tagline.value
-              ? h(DropTransition, { appear: true, delay: 0.08 }, () =>
-                  h("p", { class: "vp-description" }, <string>tagline.value)
-                )
-              : null,
-            actions.value.length
-              ? h(DropTransition, { appear: true, delay: 0.12 }, () =>
-                  h(
-                    "p",
-                    { class: "vp-actions" },
-                    actions.value.map((action) =>
-                      h(AutoLink, {
-                        class: ["vp-action", action.type || "default"],
-                        config: action,
-                        noExternalLinkIcon: true,
+      h(
+        "header",
+        { class: ["vp-hero-info-wrapper", { fullscreen: isFullScreen.value }] },
+        h(
+          "div",
+          {
+            class: "vp-hero-info",
+          },
+          [
+            slots.heroBg?.(bgInfo.value) ||
+              (bgInfo.value.image
+                ? h("div", {
+                    class: "vp-hero-mask",
+                    style: [
+                      {
+                        background: `url(${bgInfo.value.image}) center/cover no-repeat`,
+                      },
+                      bgInfo.value.bgStyle,
+                    ],
+                  })
+                : null),
+            slots.heroImage?.(heroImage.value) ||
+              h(DropTransition, { appear: true, type: "group" }, () => [
+                heroImage.value.image
+                  ? h("img", {
+                      key: "light",
+                      class: [
+                        "vp-hero-image",
+                        { light: heroImage.value.imageDark },
+                      ],
+                      style: heroImage.value.heroStyle,
+                      src: heroImage.value.image,
+                      alt: heroImage.value.alt,
+                    })
+                  : null,
+                heroImage.value.imageDark
+                  ? h("img", {
+                      key: "dark",
+                      class: "vp-hero-image dark",
+                      style: heroImage.value.heroStyle,
+                      src: heroImage.value.imageDark,
+                      alt: heroImage.value.alt,
+                    })
+                  : null,
+              ]),
+            slots.heroInfo?.(heroInfo.value) ??
+              h("div", { class: "vp-hero-infos" }, [
+                heroInfo.value.text
+                  ? h(DropTransition, { appear: true, delay: 0.04 }, () =>
+                      h("h1", { id: "main-title" }, heroInfo.value.text)
+                    )
+                  : null,
+                heroInfo.value.tagline
+                  ? h(DropTransition, { appear: true, delay: 0.08 }, () =>
+                      h("p", {
+                        class: "vp-description",
+                        innerHTML: heroInfo.value.tagline,
                       })
                     )
-                  )
-                )
-              : null,
-          ]),
-      ]);
+                  : null,
+                actions.value.length
+                  ? h(DropTransition, { appear: true, delay: 0.12 }, () =>
+                      h(
+                        "p",
+                        { class: "vp-actions" },
+                        actions.value.map((action) =>
+                          h(AutoLink, {
+                            class: ["vp-action", action.type || "default"],
+                            config: action,
+                            noExternalLinkIcon: true,
+                          })
+                        )
+                      )
+                    )
+                  : null,
+              ]),
+          ]
+        )
+      );
   },
 });

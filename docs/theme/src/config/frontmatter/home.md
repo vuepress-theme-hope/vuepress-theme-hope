@@ -58,6 +58,34 @@ Darkmode Home hero (logo) image address, need to fill in the absolute path (pict
 
 Home icon alt text
 
+## heroImageStyle
+
+- Type: `Record<string, string> | string`
+- Required: No
+
+CSS style for home icon
+
+## bgImage
+
+- Type: `string | false`
+- Default: A built-in picture
+
+Link of background image, you must fill in absolute path of full path. If not filled in, a default landscape picture will be automatically applied.
+
+## bgImageStyle
+
+- Type: `Record<string, string> | string`
+- Required: No
+
+The CSS style of the background image.
+
+## heroFullScreen
+
+- Type: `boolean`
+- Default: `false`
+
+Whether Hero is full screen displayed
+
 ## actions
 
 - Type: `ThemeHomeActionOptions[]`

@@ -58,6 +58,13 @@ tag:
 
 深色模式下主页图标 (logo) 地址，需要填入绝对路径 (图片需要放入 `.vuepress/public` 文件夹)，默认同 `heroImage`。
 
+## heroImageStyle
+
+- 类型: `Record<string, string> | string`
+- 必填: 否
+
+首页图标的 CSS 样式
+
 ## heroAlt
 
 - 类型: `string`
@@ -78,13 +85,6 @@ tag:
 - 必填: 否
 
 背景图片的 CSS 样式。
-
-## heroImageStyle
-
-- 类型: `Record<string, string> | string`
-- 必填: 否
-
-首页图标的 CSS 样式
 
 ## heroFullScreen
 

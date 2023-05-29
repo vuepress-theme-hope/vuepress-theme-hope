@@ -6,19 +6,15 @@
   flex: 1;
   padding-top: var(--navbar-height);
 
-  .vp-hero-info-wrapper {
-    max-width: var(--home-page-width);
-
-    @media print {
-      max-width: unset;
+  .vp-hero-info-wrapper:not(.fullscreen) {
+    @media screen {
+      max-width: var(--home-page-width);
     }
   }
 
   .vp-feature-panel {
-    max-width: var(--home-page-width);
-
-    @media print {
-      max-width: unset;
+    @media screen {
+      max-width: var(--home-page-width);
     }
   }
 

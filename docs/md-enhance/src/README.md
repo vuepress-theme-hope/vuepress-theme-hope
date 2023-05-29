@@ -14,117 +14,139 @@ actions:
     link: /config.html
 
 features:
-  - title: Links Check
-    icon: clipboard-check
-    details: Check markdown links
-    link: /guide/others.html#link-check
+  - header: Out of box
+    items:
+      - title: Links Check
+        icon: clipboard-check
+        details: Check markdown links
+        link: /guide/others.html#link-check
 
-  - title: Custom Container
-    icon: box-archive
-    details: Decorate Markdown content with styles
-    link: /guide/container.html
+      - title: Full GFM Support
+        icon: fab fa-github
+        details: Support github flavored markdown
+        link: /guide/others.html#gfm
 
-  - title: Tabs
-    icon: table-columns
-    details: Group similar content with tabs and switch them together
-    link: /guide/tabs.html
+  - header: Marking contents
+    items:
+      - title: Custom Container
+        icon: box-archive
+        details: Decorate Markdown content with styles
+        link: /guide/container.html
 
-  - title: Code Tabs
-    icon: code
-    details: Group similar codes with tabs
-    link: /guide/code-tabs.html
+      - title: Attrs support
+        icon: code
+        details: Allow you to add attributes for Markdown content
+        link: /guide/attrs.html
 
-  - title: Custom Align
-    icon: align-center
-    details: Let you decide to align paragraphs in the way you like
-    link: /guide/align.html
+      - title: Mark Support
+        icon: highlighter
+        details: Mark words and sentences in Markdown
+        link: /guide/mark.html
 
-  - title: Attrs support
-    icon: code
-    details: Allow you to add attributes for Markdown content
-    link: /guide/attrs.html
+      - title: Stylize tokens
+        icon: wand-magic-sparkles
+        details: Stylize tokens into things you want
+        link: /guide/stylize.html
 
-  - title: Superscript and subscript support
-    icon: superscript
-    details: Your Markdown now support superscript and subscript
-    link: /guide/sup-sub.html
+  - header: Writing articles
+    items:
+      - title: Custom Align
+        icon: align-center
+        details: Let you decide to align paragraphs in the way you like
+        link: /guide/align.html
 
-  - title: Footnote support
-    icon: quote-left
-    details: Your Markdown now support footnotes
-    link: /guide/footnote.html
+      - title: Footnote support
+        icon: quote-left
+        details: Your Markdown now support footnotes
+        link: /guide/footnote.html
 
-  - title: Mark Support
-    icon: highlighter
-    details: Mark words and sentences in Markdown
-    link: /guide/mark.html
+      - title: Include snippet Support
+        icon: fab fa-markdown
+        details: split your docs with different parts and import them in Markdown
+        link: /guide/include.html
 
-  - title: Tasklist Support
-    icon: square-check
-    details: Use tasklist in Markdown
-    link: /guide/tasklist.html
+      - title: Customize Image
+        icon: image
+        details: Set size and color scheme for image and covert them to figure
+        link: /guide/image.html
 
-  - title: image syntax
-    icon: image
-    details: improve syntax to specify size and color scheme
-    link: /guide/image.html
+  - header: Richer Your Contents
+    items:
+      - title: Tex Support
+        icon: square-root-variable
+        details: Markdown now have Tex Support so you can write your formula
+        link: /guide/tex.html
 
-  - title: Card Support
-    icon: square
-    details: Add cards in Markdown
-    link: /guide/card.html
+      - title: Presentation Support
+        icon: person-chalkboard
+        details: You can insert presentation in Markdown files directly
+        link: /guide/presentation/
 
-  - title: Chart Support
-    icon: chart-simple
-    details: Display charts in Markdown
-    link: /guide/chart.html
+      - title: Tabs
+        icon: table-columns
+        details: Group similar content with tabs and switch them together
+        link: /guide/tabs.html
 
-  - title: Flowchart Support
-    icon: route
-    details: Create your flowchart in Markdown
-    link: /guide/flowchart.html
+      - title: Superscript and subscript support
+        icon: superscript
+        details: Your Markdown now support superscript and subscript
+        link: /guide/sup-sub.html
 
-  - title: Mermaid Support
-    icon: chart-pie
-    details: Add mermaid diagram in Markdown
-    link: /guide/mermaid.html
+      - title: Tasklist Support
+        icon: square-check
+        details: Use tasklist in Markdown
+        link: /guide/tasklist.html
 
-  - title: Tex Support
-    icon: square-root-variable
-    details: Markdown now have Tex Support so you can write your formula
-    link: /guide/tex.html
+      - title: Card Support
+        icon: square
+        details: Add cards in Markdown
+        link: /guide/card.html
 
-  - title: Include snippet Support
-    icon: fab fa-markdown
-    details: split your docs with different parts and import them in Markdown
-    link: /guide/include.html
+  - header: Inserting Charts in Markdown
+    items:
+      - title: Chart Support
+        icon: chart-simple
+        details: Display charts in Markdown
+        link: /guide/chart.html
 
-  - title: Playground Support
-    icon: code
-    details: You can add playground in Markdown files
-    link: /guide/playground.html
+      - title: Flowchart Support
+        icon: route
+        details: Create your flowchart in Markdown
+        link: /guide/flowchart.html
 
-  - title: Vue playground Support
-    icon: fab fa-vuejs
-    details: Show living vue component in playground
-    link: /guide/vue-playground.html
+      - title: Mermaid Support
+        icon: chart-pie
+        details: Add mermaid diagram in Markdown
+        link: /guide/mermaid.html
 
-  - title: Code Demo Support
-    icon: laptop-code
-    details: You can insert code demo easily
-    link: /guide/demo/
+  - header: Showing your codes and works
+    items:
+      - title: Code Tabs
+        icon: code
+        details: Group similar codes with tabs
+        link: /guide/code-tabs.html
 
-  - title: Presentation Support
-    icon: person-chalkboard
-    details: You can insert presentation in Markdown files directly
-    link: /guide/presentation/
+      - title: Code Demo Support
+        icon: laptop-code
+        details: You can insert code demo easily
+        link: /guide/demo/
+
+      - title: Playground Support
+        icon: code
+        details: You can add playground in Markdown files
+        link: /guide/playground.html
+
+      - title: Vue playground Support
+        icon: fab fa-vuejs
+        details: Show living vue component in playground
+        link: /guide/vue-playground.html
 
 footer: Theme by <a href="https://theme-hope.vuejs.press" target="_blank">VuePress Theme Hope</a> | MIT Licensed, Copyright © 2019-present Mr.Hope
 
 copyright: false
 ---
 
-### Install
+## Install
 
 ::: code-tabs#shell
 
@@ -148,7 +170,7 @@ npm i -D vuepress-plugin-md-enhance
 
 :::
 
-### Usage
+## Usage
 
 ::: code-tabs#language
 

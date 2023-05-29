@@ -1,5 +1,81 @@
 @use "vuepress-shared/styles/reset";
 
+.vp-blog-hero {
+  position: relative;
+
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+
+  height: 450px;
+  margin-bottom: 1rem;
+
+  color: #eee;
+
+  font-family: var(--font-family-heading);
+
+  @media (max-width: hope-config.$tablet) {
+    height: 350px;
+  }
+
+  @media (max-width: hope-config.$mobile) {
+    margin: 0 0 1rem;
+  }
+
+  &.no-bg {
+    color: var(--text-color);
+  }
+
+  > :not(.vp-blog-mask) {
+    position: relative;
+    z-index: 2;
+  }
+
+  .slide-down-button {
+    @include reset.button;
+    position: absolute;
+    bottom: 0;
+    left: calc(50vw - 30px);
+
+    display: none;
+
+    width: 60px;
+    height: 60px;
+    padding: 10px;
+
+    .icon {
+      width: 30px;
+      margin: -15px 0;
+
+      animation-name: bounce-down;
+      animation-duration: 1.5s;
+      animation-timing-function: linear;
+      animation-iteration-count: infinite;
+      animation-direction: alternate;
+
+      &:first-child {
+        color: rgb(255 255 255 / 15%);
+      }
+
+      &:nth-child(2) {
+        color: rgb(255 255 255 / 50%);
+      }
+    }
+  }
+
+  &.fullscreen {
+    height: calc(100vh - var(--navbar-height)) !important;
+
+    .vp-blog-mask {
+      background-position-y: top !important;
+    }
+
+    .slide-down-button {
+      display: block;
+    }
+  }
+}
+
 .vp-blog-mask {
   position: absolute;
   top: 0;
@@ -76,82 +152,6 @@
 
   @media (max-width: hope-config.$tablet) {
     font-size: 1.25rem;
-  }
-}
-
-.vp-blog-hero {
-  position: relative;
-
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-
-  height: 450px;
-  margin-bottom: 1rem;
-
-  color: #eee;
-
-  font-family: var(--font-family-heading);
-
-  @media (max-width: hope-config.$tablet) {
-    height: 350px;
-  }
-
-  @media (max-width: hope-config.$mobile) {
-    margin: 0 0 1rem;
-  }
-
-  &.no-bg {
-    color: var(--text-color);
-  }
-
-  > :not(.vp-blog-mask) {
-    position: relative;
-    z-index: 2;
-  }
-
-  .slide-down-button {
-    @include reset.button;
-    position: absolute;
-    bottom: 0;
-    left: calc(50vw - 30px);
-
-    display: none;
-
-    width: 60px;
-    height: 60px;
-    padding: 10px;
-
-    .icon {
-      width: 30px;
-      margin: -15px 0;
-
-      animation-name: bounce-down;
-      animation-duration: 1.5s;
-      animation-timing-function: linear;
-      animation-iteration-count: infinite;
-      animation-direction: alternate;
-
-      &:first-child {
-        color: rgb(255 255 255 / 15%);
-      }
-
-      &:nth-child(2) {
-        color: rgb(255 255 255 / 50%);
-      }
-    }
-  }
-
-  &.fullscreen {
-    height: calc(100vh - var(--navbar-height)) !important;
-
-    .vp-blog-mask {
-      background-position-y: top !important;
-    }
-
-    .slide-down-button {
-      display: block;
-    }
   }
 }
 

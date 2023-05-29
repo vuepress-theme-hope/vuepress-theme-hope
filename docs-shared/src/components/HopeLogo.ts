@@ -15,6 +15,8 @@ import { type ThemeProjectHomePageFrontmatter } from "vuepress-theme-hope";
 
 // @ts-ignore
 import { useWindowSize } from "@theme-hope/composables/index";
+// @ts-ignore
+import { useDarkmode } from "@theme-hope/modules/outlook/composables/index";
 
 import "../styles/hope-logo.scss";
 
@@ -25,6 +27,7 @@ export default defineComponent({
 
   setup() {
     const frontmatter = usePageFrontmatter<ThemeProjectHomePageFrontmatter>();
+    const { isDarkmode } = useDarkmode();
     const { isMobile } = useWindowSize();
 
     const ready = ref(false);
@@ -53,7 +56,10 @@ export default defineComponent({
       let logo2: Mesh;
 
       // Lights
-      const ambientLight = new three.AmbientLight(0xffffff, 2);
+      const ambientLight = new three.AmbientLight(
+        0xffffff,
+        isDarkmode.value ? 3 : 4
+      );
       const directionalLight = new three.DirectionalLight(0xffffff, 3);
       const directionalLight2 = new three.DirectionalLight(0xffffff, 3);
 
@@ -120,7 +126,7 @@ export default defineComponent({
           stlLoader.load(BASE + "logo1.stl", (geometry) => {
             const material = new three.MeshPhysicalMaterial({
               color: 0x284c39,
-              metalness: 0.45,
+              metalness: 0.3,
               roughness: 0.5,
               roughnessMap: roughnessTexture,
               displacementScale: 0.15,
@@ -181,7 +187,9 @@ export default defineComponent({
       ]).then(([THREE, { OrbitControls }, { STLLoader }]) => {
         void renderLogo(THREE, STLLoader, OrbitControls);
 
-        watch(isMobile, () => renderLogo(THREE, STLLoader, OrbitControls));
+        watch([isDarkmode, isMobile], () =>
+          renderLogo(THREE, STLLoader, OrbitControls)
+        );
       })
     );
 

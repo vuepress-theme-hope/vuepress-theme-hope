@@ -51,6 +51,13 @@ Home hero (logo) image address, need to fill in the absolute path (pictures need
 
 Darkmode Home hero (logo) image address, need to fill in the absolute path (pictures need to be placed in the `.vuepress/public` folder), will be the same as `heroImage` by default.
 
+## heroImageStyle
+
+- Type: `Record<string, string> | string`
+- Required: No
+
+CSS style for home icon
+
 ## heroAlt
 
 - Type: `string`
@@ -71,13 +78,6 @@ Link of background image, you must fill in absolute path of full path. If not fi
 - Required: No
 
 The CSS style of the background image.
-
-## heroImageStyle
-
-- Type: `Record<string, string> | string`
-- Required: No
-
-CSS style for home icon
 
 ## heroFullScreen
 

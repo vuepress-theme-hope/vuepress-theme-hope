@@ -3,10 +3,20 @@
 @use "vuepress-shared/styles/shining";
 
 .vp-hero-info-wrapper {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
   // margin-inline: auto;
   margin-inline-start: auto;
   margin-inline-end: auto;
 
+  &.fullscreen {
+    height: calc(100vh - var(--navbar-height)) !important;
+  }
+}
+
+.vp-hero-info {
   // NOTE: Compatible with Android Wechat
   // padding-inline: 2.5rem;
   padding-inline-start: 2.5rem;
@@ -21,9 +31,14 @@
 
   @media (min-width: hope-config.$pad) {
     display: flex;
+    flex-direction: row-reverse;
     align-items: center;
     justify-content: space-evenly;
   }
+}
+
+.vp-hero-infos {
+  margin: 0 0.5rem;
 }
 
 .vp-hero-image {
