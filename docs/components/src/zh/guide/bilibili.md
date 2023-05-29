@@ -20,8 +20,9 @@ title: BiliBili
 
 <BiliBili aid="34304064" cid="109293122" ratio="9:16" time="60" autoplay page="2" />
 
-````md
-<BiliBili aid="34304064" cid="109293122" ratio="9:16" time="60" autoplay page="2" />```
+```md
+<BiliBili aid="34304064" cid="109293122" ratio="9:16" time="60" autoplay page="2" />
+```
 
 ## 属性
 
