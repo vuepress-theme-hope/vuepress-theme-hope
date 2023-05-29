@@ -91,7 +91,7 @@
     "typescript": "5.0.4",
     "vitest": "0.31.1"
   },
-  "packageManager": "pnpm@8.5.1",
+  "packageManager": "pnpm@8.6.0",
   "engines": {
     "node": ">=16.14.0",
     "npm": ">=8",
