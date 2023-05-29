@@ -1,4 +1,4 @@
-import { searchProOptions } from "../define.js";
+import { clientWorker, searchProOptions } from "../define.js";
 import { type SearchOptions, type SearchResult } from "../typings/index.js";
 
 declare const __VUEPRESS_BASE__: string;
@@ -17,7 +17,7 @@ export const createSearchWorker = (): SearchWorker => {
   // service worker with module only works on webkit browsers now, so we only used it in dev
   const worker = new Worker(
     __VUEPRESS_DEV__
-      ? new URL("../worker/index.js", import.meta.url)
+      ? clientWorker
       : `${__VUEPRESS_BASE__}${searchProOptions.worker}`,
     __VUEPRESS_DEV__ ? { type: "module" } : {}
   );
