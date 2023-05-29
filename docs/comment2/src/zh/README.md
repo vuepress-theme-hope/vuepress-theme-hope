@@ -13,6 +13,27 @@ actions:
   - text: 配置 🛠
     link: /zh/config/
 
+features:
+  - title: Giscus
+    icon: fab fa-github
+    details: 由 GitHub Discussions 提供支持的评论系统
+    link: /zh/guide/giscus.html
+
+  - title: Waline
+    icon: w
+    details: 一个带后端的强大评论系统
+    link: /zh/guide/waline.html
+
+  - title: Twikoo
+    icon: t
+    details: 一个简洁、安全且免费的静态网站评论系统，基于腾讯云开发
+    link: /zh/guide/twikoo.html
+
+  - title: Artalk
+    icon: a
+    details: 一个基于 golang 的简洁自托管评论系统
+    link: /zh/guide/artalk.html
+
 footer: 使用 <a href="https://theme-hope.vuejs.press/zh/" target="_blank">VuePress Theme Hope</a> 主题 | MIT 协议, 版权所有 © 2019-present Mr.Hope
 
 copyright: false

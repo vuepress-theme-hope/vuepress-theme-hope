@@ -13,6 +13,26 @@ actions:
   - text: Config 🛠
     link: /config/
 
+features:
+  - title: Giscus
+    icon: fab fa-github
+    details: A comments system powered by GitHub Discussions.
+    link: /guide/giscus.html
+
+  - title: Waline
+    icon: w
+    details: A powerful comment system with backend
+
+  - title: Twikoo
+    icon: t
+    details: A concise, safe and free static site commenting system, based on Tencent Cloud Development
+    link: /guide/twikoo.html
+
+  - title: Artalk
+    icon: a
+    details: A neat self-hosted commenting system based on golang
+    link: /guide/artalk.html
+
 footer: Theme by <a href="https://theme-hope.vuejs.press" target="_blank">VuePress Theme Hope</a> | MIT Licensed, Copyright © 2019-present Mr.Hope
 
 copyright: false
