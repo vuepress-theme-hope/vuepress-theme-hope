@@ -43,6 +43,13 @@ export default defineComponent({
 
   props: {
     /**
+     * Extra class of container
+     *
+     * 容器额外类名
+     */
+    containerClass: { type: String, default: "" },
+
+    /**
      * Whether disable navbar
      *
      * 是否禁用导航栏
@@ -226,6 +233,7 @@ export default defineComponent({
                     isDesktopSidebarCollapsed.value,
                   "sidebar-open": isMobile.value && isMobileSidebarOpen.value,
                 },
+                props.containerClass,
                 frontmatter.value.containerClass || "",
               ],
               onTouchStart,
