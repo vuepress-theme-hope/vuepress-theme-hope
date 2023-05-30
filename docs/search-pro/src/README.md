@@ -16,7 +16,7 @@ actions:
 features:
   - title: High Performance
     icon: rocket
-    details: High speed searching in a separated worker powered by <a href="https://mister-hope.github.io/slimsearch/" _target="_blank">slimsearch</a>
+    details: High speed searching in a separated worker powered by <strong>slimsearch</strong>
     link: /guide.html#ultra-fast
 
   - title: Full Indexing

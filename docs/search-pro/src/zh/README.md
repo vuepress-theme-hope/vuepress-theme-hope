@@ -16,7 +16,7 @@ actions:
 features:
   - title: 高性能
     icon: rocket
-    details: 在由 <a href="https://mister-hope.github.io/slimsearch/" _target="_blank">slimsearch</a> 提供支持的独立工作人员中进行高速搜索
+    details: 在由 <strong>slimsearch</strong> 提供支持的独立 Worker 中进行高速搜索
     link: /zh/guide.html#极致速度
 
   - title: 全索引
