@@ -19,5 +19,6 @@ export interface ThemeHopePageFrontmatter extends ThemePageFrontmatter {
   tagline?: string;
 
   bgImage?: string | false;
+  bgImageDark?: string | false;
   bgImageStyle?: Record<string, string> | string;
 }

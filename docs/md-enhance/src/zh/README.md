@@ -1,8 +1,15 @@
 ---
+layout: HighlightHomePage
 home: true
 title: 主页
 icon: home
 heroImage: /logo.svg
+bgImage: https://theme-hope-assets.vuejs.press/bg/light6.svg
+bgImageDark: https://theme-hope-assets.vuejs.press/bg/dark6.svg
+bgImageStyle:
+  background-attachment: fixed
+  background-position: bottom 0 left 50%
+  background-size: cover
 heroText: vuepress-plugin-md-enhance
 tagline: 为 VuePress2 提供更多 Markdown 增强功能
 actions:
@@ -13,9 +20,12 @@ actions:
   - text: 配置 🛠
     link: /zh/config.html
 
-features:
+highlights:
   - header: 开箱即用
-    items:
+    image: /assets/image/box.svg
+    bgImage: https://theme-hope-assets.vuejs.press/bg/light1.svg
+    bgImageDark: https://theme-hope-assets.vuejs.press/bg/dark1.svg
+    highlights:
       - title: 链接检查
         icon: clipboard-check
         details: 检查 Markdown 链接
@@ -27,7 +37,13 @@ features:
         link: /zh/guide/others.html#gfm
 
   - header: 标记内容
-    items:
+    image: /assets/image/marker.svg
+    bgImage: https://theme-hope-assets.vuejs.press/bg/light2.svg
+    bgImageDark: https://theme-hope-assets.vuejs.press/bg/dark2.svg
+    bgImageStyle:
+      background-repeat: repeat
+      background-size: initial
+    highlights:
       - title: 自定义容器支持
         icon: box-archive
         details: 用样式装饰 Markdown 内容
@@ -49,7 +65,10 @@ features:
         link: /zh/stylize/mark.html
 
   - header: 创作内容
-    items:
+    image: /assets/image/edit.svg
+    bgImage: https://theme-hope-assets.vuejs.press/bg/light3.svg
+    bgImageDark: https://theme-hope-assets.vuejs.press/bg/dark3.svg
+    highlights:
       - title: 自定义对齐支持
         icon: align-center
         details: 让你在 Markdown 中对段落进行对齐
@@ -71,7 +90,10 @@ features:
         link: /zh/guide/image.html
 
   - header: 丰富你的内容
-    items:
+    image: /assets/image/module.svg
+    bgImage: https://theme-hope-assets.vuejs.press/bg/light4.svg
+    bgImageDark: https://theme-hope-assets.vuejs.press/bg/dark4.svg
+    highlights:
       - title: Tex 支持
         icon: square-root-variable
         details: Markdown 现在也可以支持 Tex 语法以显示公式
@@ -103,7 +125,10 @@ features:
         link: /zh/guide/card.html
 
   - header: 在 Markdown 中嵌入图表
-    items:
+    image: /assets/image/chart.svg
+    bgImage: https://theme-hope-assets.vuejs.press/bg/light5.svg
+    bgImageDark: https://theme-hope-assets.vuejs.press/bg/dark5.svg
+    highlights:
       - title: 图表支持
         icon: chart-simple
         details: 在 Markdown 中展示图表
@@ -120,7 +145,10 @@ features:
         link: /zh/guide/mermaid.html
 
   - header: 展示你的代码和工作
-    items:
+    image: /assets/image/code.svg
+    bgImage: https://theme-hope-assets.vuejs.press/bg/light3.svg
+    bgImageDark: https://theme-hope-assets.vuejs.press/bg/dark3.svg
+    highlights:
       - title: 代码选项卡
         icon: code
         details: 使用选项卡对相似代码进行分组

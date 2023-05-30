@@ -1,0 +1,149 @@
+.vp-highlight-section-wrapper {
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.vp-highlight-section {
+  z-index: 1;
+
+  display: flex;
+  flex: 1;
+  align-items: center;
+  justify-content: flex-end;
+
+  max-width: var(--home-page-width);
+  margin: 0 auto;
+  padding: 1.5rem 2.5rem;
+
+  color: #222;
+
+  @media (max-width: hope-config.$pad) {
+    display: block;
+
+    // NOTE: Compatible with Android Wechat
+    // padding-inline: 1.5rem;
+    padding-inline-start: 1.5rem;
+    padding-inline-end: 1.5rem;
+    text-align: center;
+  }
+
+  #{hope-config.$dark-selector} & {
+    color: #eee;
+  }
+}
+
+.vp-highlight-section-bg {
+  position: absolute;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+
+  background-attachment: fixed;
+  background-position: 50%;
+  background-size: cover;
+
+  &.light {
+    display: inline-block;
+  }
+
+  &.dark {
+    display: none;
+  }
+
+  #{hope-config.$dark-selector} & {
+    &.light {
+      display: none;
+    }
+
+    &.dark {
+      display: inline-block;
+    }
+  }
+}
+
+.vp-highlight-section-image {
+  width: 12rem;
+  margin: 2rem 4rem;
+
+  @media (max-width: hope-config.$pad) {
+    width: 8rem;
+    margin: 0 auto;
+  }
+
+  &.light {
+    display: inline-block;
+  }
+
+  &.dark {
+    display: none;
+  }
+
+  #{hope-config.$dark-selector} & {
+    &.light {
+      display: none;
+    }
+
+    &.dark {
+      display: inline-block;
+    }
+  }
+}
+
+.vp-highlight-info {
+  display: flex;
+  flex: 1;
+  justify-content: center;
+  padding: 2rem;
+
+  &:only-child {
+    flex: initial;
+  }
+}
+
+.vp-highlight-contents {
+  text-align: start;
+}
+
+.vp-highlight-title {
+  margin-bottom: 1.5rem;
+  border-bottom: none;
+  font-size: 2.5rem;
+  font-family: var(--font-family);
+}
+
+.vp-highlight-wrapper {
+  margin: 1rem 0;
+
+  &.link {
+    cursor: pointer;
+    transition: transform var(--color-transition);
+
+    &:hover {
+      transform: scale(1.05);
+    }
+  }
+}
+
+.vp-highlight {
+  color: inherit;
+
+  @media print {
+    text-decoration: none;
+  }
+}
+
+.vp-highlight-header {
+  font-weight: 600;
+  font-size: 18px;
+
+  .icon {
+    margin-inline-end: 0.25rem;
+  }
+}
+
+.vp-highlight-content {
+  margin-top: 0.5rem;
+}

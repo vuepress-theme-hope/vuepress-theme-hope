@@ -1,8 +1,15 @@
 ---
+layout: HighlightHomePage
 home: true
 title: Home
 icon: home
 heroImage: /logo.svg
+bgImage: https://theme-hope-assets.vuejs.press/bg/light6.svg
+bgImageDark: https://theme-hope-assets.vuejs.press/bg/dark6.svg
+bgImageStyle:
+  background-attachment: fixed
+  background-position: bottom 0 left 50%
+  background-size: cover
 heroText: vuepress-plugin-md-enhance
 tagline: Enhancement for Markdown in VuePress
 actions:
@@ -13,9 +20,12 @@ actions:
   - text: Config 🛠
     link: /config.html
 
-features:
+highlights:
   - header: Out of box
-    items:
+    image: /assets/image/box.svg
+    bgImage: https://theme-hope-assets.vuejs.press/bg/light1.svg
+    bgImageDark: https://theme-hope-assets.vuejs.press/bg/dark1.svg
+    highlights:
       - title: Links Check
         icon: clipboard-check
         details: Check markdown links
@@ -27,7 +37,13 @@ features:
         link: /guide/others.html#gfm
 
   - header: Marking contents
-    items:
+    image: /assets/image/marker.svg
+    bgImage: https://theme-hope-assets.vuejs.press/bg/light2.svg
+    bgImageDark: https://theme-hope-assets.vuejs.press/bg/dark2.svg
+    bgImageStyle:
+      background-repeat: repeat
+      background-size: initial
+    highlights:
       - title: Custom Container
         icon: box-archive
         details: Decorate Markdown content with styles
@@ -49,7 +65,10 @@ features:
         link: /guide/stylize.html
 
   - header: Writing articles
-    items:
+    image: /assets/image/edit.svg
+    bgImage: https://theme-hope-assets.vuejs.press/bg/light3.svg
+    bgImageDark: https://theme-hope-assets.vuejs.press/bg/dark3.svg
+    highlights:
       - title: Custom Align
         icon: align-center
         details: Let you decide to align paragraphs in the way you like
@@ -71,7 +90,10 @@ features:
         link: /guide/image.html
 
   - header: Richer Your Contents
-    items:
+    image: /assets/image/module.svg
+    bgImage: https://theme-hope-assets.vuejs.press/bg/light4.svg
+    bgImageDark: https://theme-hope-assets.vuejs.press/bg/dark4.svg
+    highlights:
       - title: Tex Support
         icon: square-root-variable
         details: Markdown now have Tex Support so you can write your formula
@@ -103,7 +125,10 @@ features:
         link: /guide/card.html
 
   - header: Inserting Charts in Markdown
-    items:
+    image: /assets/image/chart.svg
+    bgImage: https://theme-hope-assets.vuejs.press/bg/light5.svg
+    bgImageDark: https://theme-hope-assets.vuejs.press/bg/dark5.svg
+    highlights:
       - title: Chart Support
         icon: chart-simple
         details: Display charts in Markdown
@@ -120,7 +145,10 @@ features:
         link: /guide/mermaid.html
 
   - header: Showing your codes and works
-    items:
+    image: /assets/image/code.svg
+    bgImage: https://theme-hope-assets.vuejs.press/bg/light3.svg
+    bgImageDark: https://theme-hope-assets.vuejs.press/bg/dark3.svg
+    highlights:
       - title: Code Tabs
         icon: code
         details: Group similar codes with tabs
