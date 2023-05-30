@@ -24,12 +24,7 @@ import {
   searchProClientCustomFiledConfig,
   searchProLocales,
 } from "../define.js";
-import {
-  type MatchedItem,
-  ResultField,
-  ResultType,
-  type Word,
-} from "../typings/index.js";
+import { type MatchedItem, type Word } from "../typings/index.js";
 import { CLOSE_ICON } from "../utils/index.js";
 
 import "../styles/search-result.scss";
@@ -95,10 +90,8 @@ export default defineComponent({
 
     const getRealPath = (item: MatchedItem): string =>
       router.resolve({
-        name: item[ResultField.key],
-        ...(ResultField.anchor in item
-          ? { hash: `#${item[ResultField.anchor]}` }
-          : {}),
+        name: item.key,
+        ...("anchor" in item ? { hash: `#${item.anchor}` } : {}),
       }).fullPath;
 
     const activePreviousHistory = (): void => {
@@ -176,23 +169,20 @@ export default defineComponent({
       display.map((word) => (isString(word) ? word : h(word[0], word[1])));
 
     const getDisplay = (matchedItem: MatchedItem): (VNode | string)[] => {
-      if (matchedItem[ResultField.type] === ResultType.custom) {
+      if (matchedItem.type === "customField") {
         const formatterConfig =
-          searchProClientCustomFiledConfig[matchedItem[ResultField.index]] ||
-          "$content";
+          searchProClientCustomFiledConfig[matchedItem.index] || "$content";
 
         const [prefix, suffix = ""] = isPlainObject(formatterConfig)
           ? formatterConfig[routeLocale.value].split("$content")
           : formatterConfig.split("$content");
 
-        return matchedItem[ResultField.display]
+        return matchedItem.display
           .map((display) => getVNodes([prefix, ...display, suffix]))
           .flat();
       }
 
-      return matchedItem[ResultField.display]
-        .map((display) => getVNodes(display))
-        .flat();
+      return matchedItem.display.map((display) => getVNodes(display)).flat();
     };
 
     const resetSearchResult = (): void => {
@@ -233,9 +223,7 @@ export default defineComponent({
             emit("updateQuery", queryHistory.value[index]);
             event.preventDefault();
           } else {
-            const path = getRealPath(resultHistory.value[index]);
-
-            void router.push(path);
+            void router.push(resultHistory.value[index].link);
             resetSearchResult();
           }
         }
@@ -334,7 +322,7 @@ export default defineComponent({
                             h(
                               RouterLink,
                               {
-                                to: getRealPath(item),
+                                to: item.link,
                                 class: [
                                   "search-pro-result-item",
                                   {
@@ -356,16 +344,19 @@ export default defineComponent({
                                   "div",
                                   { class: "search-pro-result-content" },
                                   [
-                                    item[ResultField.type] ===
-                                      ResultType.text &&
-                                    item[ResultField.header]
+                                    item.header
                                       ? h(
                                           "div",
                                           { class: "content-header" },
-                                          item[ResultField.header]
+                                          item.header
                                         )
                                       : null,
-                                    h("div", getDisplay(item)),
+                                    h(
+                                      "div",
+                                      item.display
+                                        .map((display) => getVNodes(display))
+                                        .flat()
+                                    ),
                                   ]
                                 ),
                                 h("button", {
@@ -433,24 +424,22 @@ export default defineComponent({
                           },
                         },
                         () => [
-                          item[ResultField.type] === ResultType.text
+                          item.type === "text"
                             ? null
                             : h(
-                                item[ResultField.type] === ResultType.title
+                                item.type === "title"
                                   ? TitleIcon
-                                  : item[ResultField.type] ===
-                                    ResultType.heading
+                                  : item.type === "heading"
                                   ? HeadingIcon
                                   : HeartIcon,
                                 { class: "search-pro-result-type" }
                               ),
                           h("div", { class: "search-pro-result-content" }, [
-                            item[ResultField.type] === ResultType.text &&
-                            item[ResultField.header]
+                            item.type === "text" && item.header
                               ? h(
                                   "div",
                                   { class: "content-header" },
-                                  item[ResultField.header]
+                                  item.header
                                 )
                               : null,
                             h("div", getDisplay(item)),

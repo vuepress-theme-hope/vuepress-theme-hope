@@ -22,7 +22,7 @@ import {
   useArrayCycle,
   useSearchSuggestions,
 } from "../composables/index.js";
-import { searchProLocales } from "../define.js";
+import { enableAutoSuggestions, searchProLocales } from "../define.js";
 import {
   CLOSE_ICON,
   DOWN_KEY_ICON,
@@ -156,7 +156,9 @@ export default defineComponent({
                         },
                       })
                     : null,
-                  displaySuggestion.value && suggestions.value.length
+                  enableAutoSuggestions &&
+                  displaySuggestion.value &&
+                  suggestions.value.length
                     ? h("div", { class: "search-pro-suggestions-wrapper" }, [
                         h("ul", { class: "search-pro-suggestions" }, [
                           suggestions.value.map((suggestion, index) =>

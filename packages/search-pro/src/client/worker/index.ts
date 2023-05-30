@@ -4,7 +4,7 @@ import database from "@temp/search-pro/index";
 
 import { getResults } from "./result.js";
 import { getSuggestions } from "./suggestion.js";
-import { IndexField, type IndexItem } from "../../shared/index.js";
+import { type IndexItem } from "../../shared/index.js";
 import { type MessageData } from "../typings/index.js";
 
 self.onmessage = async ({
@@ -13,8 +13,8 @@ self.onmessage = async ({
   const { default: localeIndex } = await database[locale]();
 
   const searchLocaleIndex = loadJSONIndex<IndexItem, string>(localeIndex, {
-    fields: [IndexField.heading, IndexField.text, IndexField.customFields],
-    storeFields: [IndexField.heading, IndexField.text, IndexField.customFields],
+    fields: [/** heading */ "h", /** text */ "t", /** customFields */ "c"],
+    storeFields: [/** heading */ "h", /** text */ "t", /** customFields */ "c"],
   });
 
   if (type === "suggest")

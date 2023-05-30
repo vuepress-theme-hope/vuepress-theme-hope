@@ -4,11 +4,7 @@ import { entries, fromEntries } from "vuepress-shared/client";
 import { type MessageData } from "../client/typings/index.js";
 import { getResults } from "../client/worker/result.js";
 import { getSuggestions } from "../client/worker/suggestion.js";
-import {
-  IndexField,
-  type IndexItem,
-  type SearchIndexStore,
-} from "../shared/index.js";
+import { type IndexItem, type SearchIndexStore } from "../shared/index.js";
 
 declare const SEARCH_PRO_INDEX: string;
 
@@ -17,11 +13,11 @@ const searchIndex: SearchIndexStore = fromEntries(
     ([localePath, index]) => [
       localePath,
       loadIndex<IndexItem, string>(index, {
-        fields: [IndexField.heading, IndexField.text, IndexField.customFields],
+        fields: [/** heading */ "h", /** text */ "t", /** customFields */ "c"],
         storeFields: [
-          IndexField.heading,
-          IndexField.text,
-          IndexField.customFields,
+          /** heading */ "h",
+          /** text */ "t",
+          /** customFields */ "c",
         ],
       }),
     ]

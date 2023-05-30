@@ -11,29 +11,29 @@ export type PageIndexId = `v-${string}`;
 
 export interface PageIndexItem {
   id: PageIndexId;
-  [IndexField.heading]: string;
+  /** heading */ h: string;
 }
 
 export type HeadingIndexId = `${PageIndexId}#${number}`;
 
 export interface HeadingIndexItem {
   id: HeadingIndexId;
-  [IndexField.anchor]: string;
-  [IndexField.heading]: string;
+  /** anchor */ a: string;
+  /** heading */ h: string;
 }
 
 export type CustomFieldIndexID = `${PageIndexId}@${number}`;
 
 export interface CustomFieldIndexItem {
   id: string;
-  [IndexField.customFields]: string[];
+  /** customFields */ c: string[];
 }
 
 export type TextIndexID = `${HeadingIndexId}/${number}`;
 
 export interface TextIndexItem {
   id: string;
-  [IndexField.text]: string;
+  /** text */ t: string;
 }
 
 export type IndexItem =

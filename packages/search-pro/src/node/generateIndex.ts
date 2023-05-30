@@ -8,7 +8,6 @@ import {
   type SearchProOptions,
 } from "./options.js";
 import {
-  IndexField,
   type IndexItem,
   type LocaleIndex,
   type PageIndexId,
@@ -72,7 +71,7 @@ export const generatePageIndex = (
   const key = <PageIndexId>page.key;
   const hasExcerpt = "excerpt" in data && data["excerpt"].length;
 
-  const pageIndex: IndexItem = { id: key, [IndexField.heading]: title };
+  const pageIndex: IndexItem = { id: key, h: title };
   const results: IndexItem[] = [pageIndex];
 
   // here are some variables holding the current state of the parser
@@ -89,7 +88,7 @@ export const generatePageIndex = (
           // add last content
           results.push({
             id: `${key}#${currentHeaderIndex}/${currentContentIndex}`,
-            [IndexField.text]: currentContent.replace(/\s+/gu, " "),
+            t: currentContent.replace(/\s+/gu, " "),
           });
           currentContentIndex = 0;
           currentContent = "";
@@ -101,15 +100,15 @@ export const generatePageIndex = (
         currentHeaderIndex += 1;
         results.push({
           id: `${key}#${currentHeaderIndex}`,
-          [IndexField.anchor]: node.attribs["id"],
-          [IndexField.heading]: renderHeader(node),
+          a: node.attribs["id"],
+          h: renderHeader(node),
         });
       } else if (CONTENT_BLOCK_TAGS.includes(node.name)) {
         if (currentContent && shouldIndexContent) {
           // add last content
           results.push({
             id: `${key}#${currentHeaderIndex}/${currentContentIndex}`,
-            [IndexField.text]: currentContent.replace(/\s+/gu, " "),
+            t: currentContent.replace(/\s+/gu, " "),
           });
           currentContentIndex += 1;
           currentContent = "";
@@ -163,14 +162,14 @@ export const generatePageIndex = (
   if (shouldIndexContent && currentContent)
     results.push({
       id: `${key}#${currentHeaderIndex}/${currentContentIndex}`,
-      [IndexField.text]: currentContent.replace(/\s+/gu, " "),
+      t: currentContent.replace(/\s+/gu, " "),
     });
 
   // add custom fields
   entries(customFields).forEach(([customField, values]) => {
     results.push({
       id: `${key}@${customField}`,
-      [IndexField.customFields]: values,
+      c: values,
     });
   });
 
@@ -201,12 +200,12 @@ export const getSearchIndexStore = async (
       const index = createIndex<IndexItem, string>({
         ...indexOptions,
         ...indexLocaleOptions?.[localePath],
-        fields: [IndexField.heading, IndexField.text, IndexField.customFields],
+        fields: [/** heading */ "h", /** text */ "t", /** customFields */ "c"],
         storeFields: [
-          IndexField.heading,
-          IndexField.anchor,
-          IndexField.text,
-          IndexField.customFields,
+          /** heading */ "h",
+          /** anchor */ "a",
+          /** text */ "t",
+          /** customFields */ "c",
         ],
       });
 

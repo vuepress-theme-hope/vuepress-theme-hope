@@ -11,15 +11,12 @@ import { getSearchOptions } from "./utils.js";
 import {
   type CustomFieldIndexItem,
   type HeadingIndexItem,
-  IndexField,
   type IndexItem,
   type PageIndexItem,
   type TextIndexItem,
 } from "../../shared/index.js";
 import {
   type MatchedItem,
-  ResultField,
-  ResultType,
   type SearchOptions,
   type SearchResult,
   type Word,
@@ -50,9 +47,9 @@ export const getResults = (
     query,
     getSearchOptions({
       boost: {
-        [IndexField.heading]: 2,
-        [IndexField.text]: 1,
-        [IndexField.customFields]: 4,
+        [/** heading */ "h"]: 2,
+        [/** text */ "t"]: 1,
+        [/** customFields */ "c"]: 4,
       },
       ...searchOptions,
     })
@@ -73,15 +70,12 @@ export const getResults = (
     if (isHeading) {
       contents.push([
         {
-          [ResultField.type]: ResultType.heading,
-          [ResultField.key]: key,
-          [ResultField.anchor]: (<HeadingIndexItem>result)[IndexField.anchor],
-          [ResultField.display]: terms
+          type: "heading",
+          key: key,
+          anchor: (<HeadingIndexItem>result).a,
+          display: terms
             .map((term) =>
-              getMatchedContent(
-                (<HeadingIndexItem>result)[IndexField.heading],
-                term
-              )
+              getMatchedContent((<HeadingIndexItem>result).h, term)
             )
             .filter((item): item is Word[] => item !== null),
         },
@@ -92,24 +86,19 @@ export const getResults = (
     else if (isText) {
       const [headingIndex] = info.split("/");
 
-      const {
-        [IndexField.heading]: heading = "",
-        [IndexField.anchor]: anchor = "",
-      } =
+      const { h: heading = "", a: anchor = "" } =
         (getStoredFields(localeIndex, `${key}#${headingIndex}`) as unknown as
           | HeadingIndexItem
           | undefined) || {};
 
       contents.push([
         {
-          [ResultField.type]: ResultType.text,
-          [ResultField.key]: key,
-          [ResultField.header]: heading,
-          [ResultField.anchor]: anchor,
-          [ResultField.display]: terms
-            .map((term) =>
-              getMatchedContent((<TextIndexItem>result)[IndexField.text], term)
-            )
+          type: "text",
+          key: key,
+          header: heading,
+          anchor: anchor,
+          display: terms
+            .map((term) => getMatchedContent((<TextIndexItem>result).t, term))
             .filter((item): item is Word[] => item !== null),
         },
         score,
@@ -117,13 +106,13 @@ export const getResults = (
     } else if (isCustomField) {
       contents.push([
         {
-          [ResultField.type]: ResultType.custom,
-          [ResultField.key]: key,
-          [ResultField.index]: info,
-          [ResultField.display]: terms
+          type: "customField",
+          key: key,
+          index: info,
+          display: terms
             .map((term) =>
-              (<CustomFieldIndexItem>result)[IndexField.customFields].map(
-                (field) => getMatchedContent(field, term)
+              (<CustomFieldIndexItem>result).c.map((field) =>
+                getMatchedContent(field, term)
               )
             )
             .flat()
@@ -136,15 +125,10 @@ export const getResults = (
     else {
       contents.push([
         {
-          [ResultField.type]: ResultType.title,
-          [ResultField.key]: key,
-          [ResultField.display]: terms
-            .map((term) =>
-              getMatchedContent(
-                (<PageIndexItem>result)[IndexField.heading],
-                term
-              )
-            )
+          type: "title",
+          key: key,
+          display: terms
+            .map((term) => getMatchedContent((<PageIndexItem>result).h, term))
             .filter((item): item is Word[] => item !== null),
         },
         score,
@@ -161,9 +145,12 @@ export const getResults = (
     .map(([id, { title, contents }]) => {
       // search to get title
       if (!title) {
-        const pageIndex = getStoredFields(localeIndex, id);
+        const pageIndex = getStoredFields(
+          localeIndex,
+          id
+        ) as unknown as PageIndexItem;
 
-        if (pageIndex) title = <string>pageIndex[IndexField.heading];
+        if (pageIndex) title = pageIndex.h;
       }
 
       return {
