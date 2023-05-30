@@ -5,26 +5,58 @@ icon: lightbulb
 
 `vuepress-plugin-search-pro` is a powerful client-side search plugin that can support custom indexing and full-text search.
 
-## Simple Usage
+## Get Started
 
-For small sites, where you usually need a full-text search out of the box, you can call the `vuepress-plugin-search-pro` plugin directly via `{ indexContent: true }`.
+### Index Range
 
-## History for Query and Search
+By default, the plugin will only index headings, article excerpt and custom fields you add. If you want to index all content, you should set `indexContent: true` in the plugin options.
 
-By default the plugin will store 5 last query you type and 5 last search result you choose. This can be changed by setting `queryHistoryCount` and `resultHistoryCount` option. You can disable them by setting them to `0`.
+::: warning
 
-## Auto Suggestions
+When indexing languages that is not word based, like Chinese, Japanese or Korean, you should set `indexOptions` and `indexLocaleOptions` to perform correct word-splitting, see [Customize Index Generation](#customize-index-generation).
+
+:::
+
+### Ultra Fast
+
+With [`slimsearch`](https://mister-hope.github.io/slimsearch/), searching with `vuepress-plugin-search-pro` is ultra fast, even on large sites.
+
+### Highlighting and Context
+
+The plugin highlights keywords in search results and displays context around them.
+
+### Auto Suggestions
 
 The plugin will show related words as suggestions when you type in the search box by default. If you don't need this behavior, please set `autoSuggestions: false`.
 
-## Custom Index Fields
+### Query and Search History
 
-Whether you are a theme developer or a user, it's a common operation to add extra data to a page through Frontmatter or the `extendsPage` lifecycle. In most cases, you may want to index these data as well, so we provide the `customFields` option.
+The plugin will display 5 last query you type and 5 last search result you choose at startup.
+
+This behavior can be changed by setting `queryHistoryCount` and `resultHistoryCount` option, which you can disable them by setting `0`.
+
+### Full Keyboard Support
+
+The plugin supports keyboard navigation out of box, where you can:
+
+- use hotkey to activate the search box
+- use `↑` and `↓` to navigate through search results and auto suggestions
+- use `Tab` to apply suggestions
+- use `Enter` to open the selected result
+- use `Esc` to close suggestions list or the search box
+
+By default, the search hotkey are `Ctrl + K` and `Ctrl + /`. You can customize search hotkeys via the `hotkeys` option, see [Config → Hot Keys](./config.md#hotkeys).
+
+## Custom Fields
+
+Whether you are a theme developer or a user, it's a common operation to add extra data to a page through Frontmatter or the `extendsPage` lifecycle. In most cases, you may want to index these data as well, so here is `customFields` option.
 
 `customFields` accepts an array, each element represents a custom search index configuration item. Each configuration item contains 2 parts:
 
 - `getter`: The getter for this custom field. This function takes `page` object as a parameter and returns the value of the custom field as a string (single), an array of strings (multiple), `null` (the item is missing).
 - `formatter`: a string controlling how the item is displayed in the custom search result, where `$content` is replaced with the actual value returned by `getter`. If you're using multiple languages, you can also set it as an object to set the display format for each language individually.
+
+These data will be added to indexes and the search result will contain them.
 
 Difficult to understand? Here is an example.
 
@@ -118,10 +150,6 @@ export default defineUserConfig({
 ```
 
 :::
-
-## Search Hotkeys
-
-By default, the search hotkey are `Ctrl + K` and `Ctrl + /`. You can customize search hotkeys via the `hotkeys` option, see [Config → Hot Keys](./config.md#hotkeys).
 
 ## Locale Customization
 

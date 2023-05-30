@@ -17,26 +17,32 @@ features:
   - title: High Performance
     icon: rocket
     details: High speed searching in a separated worker powered by <a href="https://mister-hope.github.io/slimsearch/" _target="_blank">slimsearch</a>
+    link: /guide.html#ultra-fast
 
   - title: Full Indexing
     icon: file-zipper
     details: Indexing all contents in your site
+    link: /guide.html#index-range
 
   - title: Highlight and Context
     icon: highlighter
     details: Highlight keywords and show related context in search result
+    link: /guide.html#highlighting-and-context
 
   - title: Auto Suggest
     icon: lightbulb
     details: Get query suggestions while typing
+    link: /guide.html#auto-suggestions
 
   - title: Custom Fields
     icon: gears
     details: Adding data to index with options
+    link: /guide.html#custom-fields
 
   - title: Search History
     icon: clock
     details: Preserve history of queries and results
+    link: /guide.html#query-and-search-history
 
 footer: MIT Licensed | Copyright © 2022-present Mr.Hope
 copyrightText: false
