@@ -7,6 +7,7 @@ import {
 import { entries } from "vuepress-shared/client";
 
 import { getMatchedContent } from "./matchContent.js";
+import { getSearchOptions } from "./utils.js";
 import {
   type CustomFieldIndexItem,
   type HeadingIndexItem,
@@ -24,15 +25,13 @@ import {
   type Word,
 } from "../typings/index.js";
 
-const CHINESE_CHARACTERS = /[\u4e00-\u9fa5]/g;
-
 export type MiniSearchResult = IndexItem & {
   terms: string[];
   score: number;
   match: MatchInfo;
 };
 
-interface Suggestions {
+interface ResultMap {
   [key: string]: {
     title: string;
     contents: [result: MatchedItem, score: number][];
@@ -42,28 +41,22 @@ interface Suggestions {
 export const getResults = (
   query: string,
   localeIndex: SearchIndex<IndexItem, string>,
-  miniSearchOptions: SearchOptions = {}
+  searchOptions: SearchOptions = {}
 ): SearchResult[] => {
-  const suggestions: Suggestions = {};
+  const resultMap: ResultMap = {};
 
-  const results = search<IndexItem, string, IndexItem>(localeIndex, query, {
-    fuzzy: 0.2,
-    prefix: true,
-    boost: {
-      [IndexField.heading]: 2,
-      [IndexField.text]: 1,
-      [IndexField.customFields]: 4,
-    },
-    processTerm: (term) => {
-      const chineseCharacters = term.match(CHINESE_CHARACTERS) || [];
-      const englishTerm = term.replace(CHINESE_CHARACTERS, "").toLowerCase();
-
-      return englishTerm
-        ? [englishTerm, ...chineseCharacters]
-        : [...chineseCharacters];
-    },
-    ...miniSearchOptions,
-  });
+  const results = search<IndexItem, string, IndexItem>(
+    localeIndex,
+    query,
+    getSearchOptions({
+      boost: {
+        [IndexField.heading]: 2,
+        [IndexField.text]: 1,
+        [IndexField.customFields]: 4,
+      },
+      ...searchOptions,
+    })
+  );
 
   results.forEach((result) => {
     const { id, terms, score } = result;
@@ -72,7 +65,7 @@ export const getResults = (
     const isCustomField = id.includes("@");
     const [key, info] = id.split(/[#@]/);
 
-    const { contents } = (suggestions[key] ??= {
+    const { contents } = (resultMap[key] ??= {
       title: "",
       contents: [],
     });
@@ -159,7 +152,7 @@ export const getResults = (
     }
   });
 
-  return entries(suggestions)
+  return entries(resultMap)
     .sort(
       ([, valueA], [, valueB]) =>
         valueB.contents.reduce((total, [, score]) => total + score, 0) -

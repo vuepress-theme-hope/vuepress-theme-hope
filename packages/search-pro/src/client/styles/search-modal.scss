@@ -104,37 +104,6 @@
     }
   }
 
-  input {
-    flex: 1;
-
-    width: 0;
-    margin: 0;
-
-    // NOTE: Compatible with Android Wechat
-    // padding-inline: 2.5rem 1rem;
-    padding-top: 0.25rem;
-    padding-bottom: 0.25rem;
-    padding-inline-start: 2.5rem;
-    padding-inline-end: 2rem;
-    border: 0;
-    border: 2px solid var(--vp-tc);
-    border-radius: 8px;
-
-    background: var(--vp-bg);
-    color: var(--vp-c);
-    outline: none;
-
-    font-size: 1.25rem;
-    line-height: 2.5;
-
-    -webkit-appearance: none;
-    appearance: none;
-
-    &::-webkit-search-cancel-button {
-      display: none;
-    }
-  }
-
   .clear-button {
     @include reset.button;
     position: absolute;
@@ -179,6 +148,122 @@
     @media (max-width: hope-config.$tablet) {
       display: block;
     }
+  }
+}
+
+.search-pro-input {
+  flex: 1;
+
+  width: 0;
+  margin: 0;
+
+  // NOTE: Compatible with Android Wechat
+  // padding-inline: 2.5rem 1rem;
+  padding-top: 0.25rem;
+  padding-bottom: 0.25rem;
+  padding-inline-start: 2.5rem;
+  padding-inline-end: 2rem;
+  border: 0;
+  border: 2px solid var(--vp-tc);
+  border-radius: 8px;
+
+  background: var(--vp-bg);
+  color: var(--vp-c);
+  outline: none;
+
+  font-size: 1.25rem;
+  line-height: 2.5;
+
+  -webkit-appearance: none;
+  appearance: none;
+
+  &::-webkit-search-cancel-button {
+    display: none;
+  }
+}
+
+.search-pro-suggestions-wrapper {
+  position: absolute;
+  top: 100%;
+  right: 2rem;
+  left: 2rem;
+  z-index: 20;
+
+  overflow: hidden;
+
+  padding-bottom: 2rem;
+  border-radius: 0.5rem;
+
+  background-color: var(--vp-bg);
+  list-style: none;
+
+  line-height: 1.5;
+}
+
+.search-pro-suggestions {
+  overflow-y: auto;
+  max-height: 50vh;
+  margin: 0;
+  padding: 0;
+}
+
+.search-pro-suggestion {
+  padding: 0.25rem 1rem;
+  border-top: 1px solid var(--vp-brc);
+  cursor: pointer;
+
+  &:first-child {
+    border-top: none;
+  }
+
+  &.active,
+  &:hover {
+    background-color: var(--vp-bglt);
+  }
+}
+
+.search-pro-close-suggestion {
+  @include reset.button;
+  position: absolute;
+  bottom: 0;
+
+  display: block;
+
+  width: 100%;
+  padding: 4px 1rem 8px;
+
+  color: inherit;
+
+  line-height: 20px;
+
+  cursor: pointer;
+
+  &:hover {
+    background-color: var(--vp-bglt);
+  }
+
+  span {
+    display: inline-block;
+    height: 20px;
+  }
+
+  kbd {
+    margin: 0 0.5rem;
+    padding: 2px;
+    border: 1px solid var(--vp-brc);
+    border-radius: 4px;
+
+    box-shadow: 1px 1px 4px 0 var(--card-shadow);
+
+    + kbd {
+      margin-left: 1rem;
+    }
+  }
+
+  svg {
+    position: relative;
+    bottom: 0.125em;
+    vertical-align: middle;
   }
 }
 

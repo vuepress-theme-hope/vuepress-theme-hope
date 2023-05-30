@@ -54,3 +54,8 @@ export interface SearchResult {
   title: string;
   contents: MatchedItem[];
 }
+
+export interface QueryResult {
+  suggestions: string[];
+  results: SearchResult[];
+}

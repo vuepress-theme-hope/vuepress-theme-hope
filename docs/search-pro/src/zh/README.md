@@ -13,6 +13,31 @@ actions:
   - text: 配置 🛠
     link: /zh/config.html
 
+features:
+  - title: 高性能
+    icon: rocket
+    details: 在由 <a href="https://mister-hope.github.io/slimsearch/" _target="_blank">slimsearch</a> 提供支持的独立工作人员中进行高速搜索
+
+  - title: 全索引
+    icon: file-zipper
+    details: 索引您站点中的所有内容
+
+  - title: 突出显示和上下文
+    icon: highlighter
+    details: 突出显示关键字并在搜索结果中显示相关上下文
+
+  - title: 自动建议
+    icon: lightbulb
+    details: 在输入时获取查询建议
+
+  - title: 自定义字段
+    icon: gears
+    details: 使用选项将数据添加到索引
+
+  - title: 搜索历史
+    icon: clock
+    details: 保留查询和结果的历史记录
+
 footer: MIT Licensed | Copyright © 2022-present Mr.Hope
 copyrightText: false
 ---

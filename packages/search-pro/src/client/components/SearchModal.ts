@@ -19,7 +19,8 @@ import { SearchLoading } from "./SearchLoading.js";
 import { SearchIcon } from "./icons.js";
 import {
   searchModalSymbol,
-  useSearchQueryHistory,
+  useArrayCycle,
+  useSearchSuggestions,
 } from "../composables/index.js";
 import { searchProLocales } from "../define.js";
 import {
@@ -52,20 +53,33 @@ export default defineComponent({
     const siteLocale = useSiteLocaleData();
     const isMobile = useIsMobile();
     const locale = useLocaleConfig(searchProLocales);
-    const { enabled, queryHistory } = useSearchQueryHistory();
 
     const input = ref("");
+    const { suggestions } = useSearchSuggestions(input);
+    const displaySuggestion = ref(false);
+
+    const {
+      index: activeSuggestionIndex,
+      prev: activePreviousSuggestion,
+      next: activeNextSuggestion,
+    } = useArrayCycle(suggestions);
+
     const inputElement = shallowRef<HTMLInputElement>();
 
-    watch(isActive, (value) => {
-      if (value)
-        void nextTick().then(() => {
-          inputElement.value?.focus();
-        });
-    });
+    const applySuggestion = (index = activeSuggestionIndex.value): void => {
+      input.value = suggestions.value[index];
+      displaySuggestion.value = false;
+    };
 
     useEventListener("keydown", (event: KeyboardEvent) => {
-      if (isActive.value && event.key === "Escape") isActive.value = false;
+      if (displaySuggestion.value) {
+        if (event.key === "ArrowUp") activePreviousSuggestion();
+        else if (event.key === "ArrowDown") activeNextSuggestion();
+        else if (event.key === "Enter") applySuggestion();
+        else if (event.key === "Escape") displaySuggestion.value = false;
+      } else if (event.key === "Escape") {
+        isActive.value = false;
+      }
     });
 
     onMounted(() => {
@@ -73,6 +87,10 @@ export default defineComponent({
 
       watch(isActive, (value) => {
         isLocked.value = value;
+        if (value)
+          void nextTick().then(() => {
+            inputElement.value?.focus();
+          });
       });
 
       onUnmounted(() => {
@@ -106,14 +124,26 @@ export default defineComponent({
                     placeholder: locale.value.placeholder,
                     spellcheck: "false",
                     autocapitalize: "off",
+                    autocomplete: "off",
                     autocorrect: "off",
-                    autocomplete: enabled ? "on" : "off",
                     name: `${siteLocale.value.title}-search`,
-                    list: "search-pro-dataset",
                     value: input.value,
                     "aria-controls": "search-pro-results",
+                    onKeydown: (event: KeyboardEvent): void => {
+                      const { key } = event;
+
+                      if (suggestions.value.length)
+                        if (key === "Tab") {
+                          applySuggestion();
+                          event.preventDefault();
+                        } else if (key === "ArrowDown" || key === "ArrowUp") {
+                          event.preventDefault();
+                        }
+                    },
                     onInput: ({ target }: InputEvent) => {
                       input.value = (<HTMLInputElement>target).value;
+                      displaySuggestion.value = true;
+                      activeSuggestionIndex.value = 0;
                     },
                   }),
                   input.value
@@ -126,13 +156,46 @@ export default defineComponent({
                         },
                       })
                     : null,
-                  h(
-                    "dataset",
-                    { id: "search-pro-dataset" },
-                    queryHistory.value.map((item) =>
-                      h("options", { value: item })
-                    )
-                  ),
+                  displaySuggestion.value && suggestions.value.length
+                    ? h("div", { class: "search-pro-suggestions-wrapper" }, [
+                        h("ul", { class: "search-pro-suggestions" }, [
+                          suggestions.value.map((suggestion, index) =>
+                            h(
+                              "li",
+                              {
+                                class: [
+                                  "search-pro-suggestion",
+                                  {
+                                    active:
+                                      index === activeSuggestionIndex.value,
+                                  },
+                                ],
+                                onClick: () => {
+                                  applySuggestion(index);
+                                },
+                              },
+                              suggestion
+                            )
+                          ),
+                        ]),
+                        h(
+                          "button",
+                          {
+                            type: "button",
+                            class: "search-pro-close-suggestion",
+                            onClick: () => {
+                              displaySuggestion.value = false;
+                            },
+                          },
+                          [
+                            h("kbd", "Tab"),
+                            locale.value.autocomplete,
+                            h("kbd", { innerHTML: ESC_KEY_ICON }),
+                            locale.value.exit,
+                          ]
+                        ),
+                      ])
+                    : null,
                 ]),
                 h(
                   "button",
@@ -150,6 +213,7 @@ export default defineComponent({
 
               h(SearchResult, {
                 query: input.value,
+                isFocusing: !displaySuggestion.value,
                 onClose: () => {
                   isActive.value = false;
                 },

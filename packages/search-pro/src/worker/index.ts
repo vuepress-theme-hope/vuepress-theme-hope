@@ -3,6 +3,7 @@ import { entries, fromEntries } from "vuepress-shared/client";
 
 import { type MessageData } from "../client/typings/index.js";
 import { getResults } from "../client/worker/result.js";
+import { getSuggestions } from "../client/worker/suggestion.js";
 import {
   IndexField,
   type IndexItem,
@@ -28,7 +29,15 @@ const searchIndex: SearchIndexStore = fromEntries(
 );
 
 self.onmessage = ({
-  data: { query, locale, options },
+  data: { type = "all", query, locale, options },
 }: MessageEvent<MessageData>): void => {
-  self.postMessage(getResults(query, searchIndex[locale], options));
+  if (type === "suggest")
+    self.postMessage(getSuggestions(query, searchIndex[locale], options));
+  else if (type === "search")
+    self.postMessage(getResults(query, searchIndex[locale], options));
+  else
+    self.postMessage({
+      suggestions: getSuggestions(query, searchIndex[locale], options),
+      results: getResults(query, searchIndex[locale], options),
+    });
 };

@@ -1,15 +1,23 @@
 import { clientWorker, searchProOptions } from "../define.js";
-import { type SearchOptions, type SearchResult } from "../typings/index.js";
+import {
+  type MessageData,
+  type QueryResult,
+  type SearchResult,
+} from "../typings/index.js";
 
 declare const __VUEPRESS_BASE__: string;
 declare const __VUEPRESS_DEV__: boolean;
 
 export interface SearchWorker {
-  search: (
-    query: string,
-    locale: string,
-    searchOptions?: SearchOptions
-  ) => Promise<SearchResult[]>;
+  search: <T extends MessageData>(
+    options: T
+  ) => Promise<
+    T["type"] extends "search"
+      ? SearchResult[]
+      : T["type"] extends "suggest"
+      ? string[]
+      : QueryResult
+  >;
   terminate: () => void;
 }
 
@@ -22,7 +30,8 @@ export const createSearchWorker = (): SearchWorker => {
     __VUEPRESS_DEV__ ? { type: "module" } : {}
   );
   const queue: {
-    resolve: (results: SearchResult[]) => void;
+    // eslint-disable-next-line @typescript-eslint/no-explicit-any
+    resolve: (args: any) => void;
     reject: (err: Error) => void;
   }[] = [];
 
@@ -36,13 +45,17 @@ export const createSearchWorker = (): SearchWorker => {
   );
 
   return {
-    search: (query, locale, searchOptions): Promise<SearchResult[]> =>
+    search: <T extends MessageData>(
+      options: T
+    ): Promise<
+      T["type"] extends "search"
+        ? SearchResult[]
+        : T["type"] extends "suggest"
+        ? string[]
+        : QueryResult
+    > =>
       new Promise((resolve, reject) => {
-        worker.postMessage({
-          query,
-          locale,
-          options: searchOptions,
-        });
+        worker.postMessage(options);
         queue.push({ resolve, reject });
       }),
     terminate: (): void => {

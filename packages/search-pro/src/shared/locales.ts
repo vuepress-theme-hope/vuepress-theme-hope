@@ -35,6 +35,13 @@ export interface SearchProLocaleData {
   cancel: string;
 
   /**
+   * Default title
+   *
+   * 默认标题
+   */
+  defaultTitle: string;
+
+  /**
    * Select hint
    *
    * 选择提示
@@ -47,6 +54,13 @@ export interface SearchProLocaleData {
    * 选择提示
    */
   navigate: string;
+
+  /**
+   * Autocomplete hint
+   *
+   * 自动补全提示
+   */
+  autocomplete: string;
 
   /**
    * Close hint

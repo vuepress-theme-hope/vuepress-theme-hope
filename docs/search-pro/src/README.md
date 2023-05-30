@@ -13,6 +13,31 @@ actions:
   - text: Config 🛠
     link: /config.html
 
+features:
+  - title: High Performance
+    icon: rocket
+    details: High speed searching in a separated worker powered by <a href="https://mister-hope.github.io/slimsearch/" _target="_blank">slimsearch</a>
+
+  - title: Full Indexing
+    icon: file-zipper
+    details: Indexing all contents in your site
+
+  - title: Highlight and Context
+    icon: highlighter
+    details: Highlight keywords and show related context in search result
+
+  - title: Auto Suggest
+    icon: lightbulb
+    details: Get query suggestions while typing
+
+  - title: Custom Fields
+    icon: gears
+    details: Adding data to index with options
+
+  - title: Search History
+    icon: clock
+    details: Preserve history of queries and results
+
 footer: MIT Licensed | Copyright © 2022-present Mr.Hope
 copyrightText: false
 ---

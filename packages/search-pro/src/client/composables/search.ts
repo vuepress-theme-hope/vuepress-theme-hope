@@ -1,6 +1,6 @@
 import { useRouteLocale } from "@vuepress/client";
 import { useDebounceFn } from "@vueuse/core";
-import { type Ref, ref, shallowRef, watch } from "vue";
+import { type Ref, onMounted, onUnmounted, ref, shallowRef, watch } from "vue";
 
 import { searchProOptions } from "../define.js";
 import { useSearchOptions } from "../helpers/index.js";
@@ -10,7 +10,6 @@ import { createSearchWorker } from "../utils/index.js";
 export interface SearchRef {
   searching: Ref<boolean>;
   results: Ref<SearchResult[]>;
-  terminate: () => void;
 }
 
 export const useSearchResult = (query: Ref<string>): SearchRef => {
@@ -21,34 +20,44 @@ export const useSearchResult = (query: Ref<string>): SearchRef => {
   const searching = ref(false);
   const results = shallowRef<SearchResult[]>([]);
 
-  const endSearch = (): void => {
-    results.value = [];
-    searching.value = false;
-  };
+  onMounted(() => {
+    const endSearch = (): void => {
+      results.value = [];
+      searching.value = false;
+    };
 
-  const performSearch = useDebounceFn((queryString: string): void => {
-    searching.value = true;
+    const performSearch = useDebounceFn((queryString: string): void => {
+      searching.value = true;
 
-    if (queryString)
-      void search(queryString, routeLocale.value, searchOptions)
-        .then((searchResults) => {
-          results.value = searchResults;
-          searching.value = false;
+      if (queryString)
+        void search({
+          type: "search",
+          query: queryString,
+          locale: routeLocale.value,
+          options: searchOptions,
         })
-        .catch((err) => {
-          console.error(err);
-          endSearch();
-        });
-    else endSearch();
-  }, searchProOptions.delay);
+          .then((searchResults) => {
+            results.value = searchResults;
+            searching.value = false;
+          })
+          .catch((err) => {
+            console.error(err);
+            endSearch();
+          });
+      else endSearch();
+    }, searchProOptions.searchDelay);
 
-  watch([query, routeLocale], () => performSearch(query.value), {
-    immediate: true,
+    watch([query, routeLocale], () => performSearch(query.value), {
+      immediate: true,
+    });
+
+    onUnmounted(() => {
+      terminate();
+    });
   });
 
   return {
     searching,
     results,
-    terminate,
   };
 };

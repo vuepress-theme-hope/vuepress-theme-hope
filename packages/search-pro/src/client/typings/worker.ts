@@ -7,6 +7,10 @@ export type SearchOptions = Omit<
 >;
 
 export interface MessageData {
+  /**
+   * @default "all"
+   */
+  type?: "search" | "suggest" | "all";
   query: string;
   locale: string;
   options?: SearchOptions;

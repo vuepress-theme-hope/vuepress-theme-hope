@@ -7,7 +7,17 @@ export const convertOptions = (
 ): void => {
   deprecatedLogger({
     options,
+    deprecatedOption: "fullIndex",
+    newOption: "indexContent",
+  });
+  deprecatedLogger({
+    options,
     deprecatedOption: "historyCount",
     newOption: "resultHistoryCount",
+  });
+  deprecatedLogger({
+    options,
+    deprecatedOption: "delay",
+    newOption: "searchDelay",
   });
 };

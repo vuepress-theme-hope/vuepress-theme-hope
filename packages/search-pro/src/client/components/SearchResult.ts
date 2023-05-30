@@ -1,4 +1,4 @@
-import { usePageData, useRouteLocale } from "@vuepress/client";
+import { useRouteLocale } from "@vuepress/client";
 import { isPlainObject, isString } from "@vuepress/shared";
 import { useEventListener } from "@vueuse/core";
 import {
@@ -47,26 +47,47 @@ export default defineComponent({
       type: String,
       required: true,
     },
+
+    /**
+     * Whether is focusing
+     *
+     * 是否被聚焦
+     */
+    isFocusing: Boolean,
   },
 
   emits: ["close", "updateQuery"],
 
   setup(props, { emit }) {
-    const page = usePageData();
     const router = useRouter();
     const routeLocale = useRouteLocale();
     const locale = useLocaleConfig(searchProLocales);
-    const { addQueryHistory } = useSearchQueryHistory();
-    const { enabled, resultHistory, addResultHistory, removeResultHistory } =
-      useSearchResultHistory();
+    const {
+      enabled: enableQueryHistory,
+      addQueryHistory,
+      queryHistory,
+      removeQueryHistory,
+    } = useSearchQueryHistory();
+    const {
+      enabled: enableResultHistory,
+      resultHistory,
+      addResultHistory,
+      removeResultHistory,
+    } = useSearchResultHistory();
+    const enableHistory = enableQueryHistory || enableResultHistory;
 
     const query = toRef(props, "query");
     const { results, searching } = useSearchResult(query);
 
+    const activatedHistoryStatus = ref({ isQuery: true, index: 0 });
     const activatedResultIndex = ref(0);
     const activatedResultContentIndex = ref(0);
 
-    const hasHistory = computed(() => resultHistory.value.length > 0);
+    const hasHistory = computed(
+      () =>
+        enableHistory &&
+        (queryHistory.value.length > 0 || resultHistory.value.length > 0)
+    );
     const hasResults = computed(() => results.value.length > 0);
     const activatedResult = computed(
       () => results.value[activatedResultIndex.value] || null
@@ -79,6 +100,43 @@ export default defineComponent({
           ? { hash: `#${item[ResultField.anchor]}` }
           : {}),
       }).fullPath;
+
+    const activePreviousHistory = (): void => {
+      const { isQuery, index } = activatedHistoryStatus.value;
+
+      if (index === 0)
+        activatedHistoryStatus.value = {
+          isQuery: !isQuery,
+          index: isQuery
+            ? resultHistory.value.length - 1
+            : queryHistory.value.length - 1,
+        };
+      else
+        activatedHistoryStatus.value = {
+          isQuery,
+          index: index - 1,
+        };
+    };
+
+    const activeNextHistory = (): void => {
+      const { isQuery, index } = activatedHistoryStatus.value;
+
+      if (
+        index ===
+        (isQuery
+          ? queryHistory.value.length - 1
+          : resultHistory.value.length - 1)
+      )
+        activatedHistoryStatus.value = {
+          isQuery: !isQuery,
+          index: 0,
+        };
+      else
+        activatedHistoryStatus.value = {
+          isQuery,
+          index: index + 1,
+        };
+    };
 
     const activePreviousResult = (): void => {
       activatedResultIndex.value =
@@ -145,23 +203,41 @@ export default defineComponent({
     };
 
     useEventListener("keydown", (event: KeyboardEvent) => {
-      if (!hasResults.value) return;
+      if (!props.isFocusing) return;
 
-      if (event.key === "ArrowUp") {
-        activePreviousResultContent();
-      } else if (event.key === "ArrowDown") {
-        activeNextResultContent();
-      } else if (event.key === "Enter") {
-        const item =
-          activatedResult.value.contents[activatedResultContentIndex.value];
+      if (hasResults.value) {
+        if (event.key === "ArrowUp") {
+          activePreviousResultContent();
+        } else if (event.key === "ArrowDown") {
+          activeNextResultContent();
+        } else if (event.key === "Enter") {
+          const item =
+            activatedResult.value.contents[activatedResultContentIndex.value];
 
-        const path = getRealPath(item);
+          const path = getRealPath(item);
 
-        if (page.value.path !== path) {
           addQueryHistory(props.query);
           addResultHistory(item);
           void router.push(path);
           resetSearchResult();
+        }
+      } else if (enableResultHistory) {
+        if (event.key === "ArrowUp") {
+          activePreviousHistory();
+        } else if (event.key === "ArrowDown") {
+          activeNextHistory();
+        } else if (event.key === "Enter") {
+          const { index } = activatedHistoryStatus.value;
+
+          if (activatedHistoryStatus.value.isQuery) {
+            emit("updateQuery", queryHistory.value[index]);
+            event.preventDefault();
+          } else {
+            const path = getRealPath(resultHistory.value[index]);
+
+            void router.push(path);
+            resetSearchResult();
+          }
         }
       }
     });
@@ -184,69 +260,131 @@ export default defineComponent({
         {
           class: [
             "search-pro-result-wrapper",
-            {
-              empty: query.value ? !hasResults.value : !hasHistory.value,
-            },
+            { empty: query.value ? !hasResults.value : !hasHistory.value },
           ],
           id: "search-pro-results",
         },
         query.value === ""
-          ? hasHistory.value
-            ? h(
-                "ul",
-                { class: "search-pro-result-list" },
-                h("li", { class: "search-pro-result-list-item" }, [
-                  h(
-                    "div",
-                    { class: "search-pro-result-title" },
-                    locale.value.history
-                  ),
-                  resultHistory.value.map((item, historyIndex) =>
-                    h(
-                      RouterLink,
-                      {
-                        to: getRealPath(item),
-                        class: [
-                          "search-pro-result-item",
-                          {
-                            active:
-                              activatedResultContentIndex.value ===
-                              historyIndex,
-                          },
-                        ],
-                        onClick: () => {
-                          resetSearchResult();
-                        },
-                      },
-                      () => [
-                        h(HistoryIcon, { class: "search-pro-result-type" }),
-                        h("div", { class: "search-pro-result-content" }, [
-                          item[ResultField.type] === ResultType.text &&
-                          item[ResultField.header]
-                            ? h(
-                                "div",
-                                { class: "content-header" },
-                                item[ResultField.header]
-                              )
-                            : null,
-                          h("div", getDisplay(item)),
-                        ]),
-                        h("button", {
-                          class: "search-pro-close-icon",
-                          innerHTML: CLOSE_ICON,
-                          onClick: (event: Event) => {
-                            event.preventDefault();
-                            event.stopPropagation();
-                            removeResultHistory(historyIndex);
-                          },
-                        }),
-                      ]
-                    )
-                  ),
-                ])
-              )
-            : enabled
-            ? locale.value.emptyHistory
+          ? enableHistory
+            ? hasHistory.value
+              ? [
+                  enableQueryHistory
+                    ? h(
+                        "ul",
+                        { class: "search-pro-result-list" },
+                        h("li", { class: "search-pro-result-list-item" }, [
+                          h(
+                            "div",
+                            { class: "search-pro-result-title" },
+                            locale.value.history
+                          ),
+                          queryHistory.value.map((item, historyIndex) =>
+                            h(
+                              "div",
+                              {
+                                class: [
+                                  "search-pro-result-item",
+                                  {
+                                    active:
+                                      activatedHistoryStatus.value.isQuery &&
+                                      activatedHistoryStatus.value.index ===
+                                        historyIndex,
+                                  },
+                                ],
+                                onClick: () => {
+                                  emit("updateQuery", item);
+                                },
+                              },
+                              [
+                                h(HistoryIcon, {
+                                  class: "search-pro-result-type",
+                                }),
+                                h(
+                                  "div",
+                                  { class: "search-pro-result-content" },
+                                  item
+                                ),
+                                h("button", {
+                                  class: "search-pro-close-icon",
+                                  innerHTML: CLOSE_ICON,
+                                  onClick: (event: Event) => {
+                                    event.preventDefault();
+                                    event.stopPropagation();
+                                    removeQueryHistory(historyIndex);
+                                  },
+                                }),
+                              ]
+                            )
+                          ),
+                        ])
+                      )
+                    : null,
+                  enableResultHistory
+                    ? h(
+                        "ul",
+                        { class: "search-pro-result-list" },
+                        h("li", { class: "search-pro-result-list-item" }, [
+                          h(
+                            "div",
+                            { class: "search-pro-result-title" },
+                            locale.value.history
+                          ),
+
+                          resultHistory.value.map((item, historyIndex) =>
+                            h(
+                              RouterLink,
+                              {
+                                to: getRealPath(item),
+                                class: [
+                                  "search-pro-result-item",
+                                  {
+                                    active:
+                                      !activatedHistoryStatus.value.isQuery &&
+                                      activatedHistoryStatus.value.index ===
+                                        historyIndex,
+                                  },
+                                ],
+                                onClick: () => {
+                                  resetSearchResult();
+                                },
+                              },
+                              () => [
+                                h(HistoryIcon, {
+                                  class: "search-pro-result-type",
+                                }),
+                                h(
+                                  "div",
+                                  { class: "search-pro-result-content" },
+                                  [
+                                    item[ResultField.type] ===
+                                      ResultType.text &&
+                                    item[ResultField.header]
+                                      ? h(
+                                          "div",
+                                          { class: "content-header" },
+                                          item[ResultField.header]
+                                        )
+                                      : null,
+                                    h("div", getDisplay(item)),
+                                  ]
+                                ),
+                                h("button", {
+                                  class: "search-pro-close-icon",
+                                  innerHTML: CLOSE_ICON,
+                                  onClick: (event: Event) => {
+                                    event.preventDefault();
+                                    event.stopPropagation();
+                                    removeResultHistory(historyIndex);
+                                  },
+                                }),
+                              ]
+                            )
+                          ),
+                        ])
+                      )
+                    : null,
+                ]
+              : locale.value.emptyHistory
             : locale.value.emptyResult
           : searching.value
           ? h(SearchLoading, { hint: locale.value.searching })
@@ -270,7 +408,7 @@ export default defineComponent({
                     h(
                       "div",
                       { class: "search-pro-result-title" },
-                      title || "Documentation"
+                      title || locale.value.defaultTitle
                     ),
                     contents.map((item, contentIndex) => {
                       const isCurrentContentActive =

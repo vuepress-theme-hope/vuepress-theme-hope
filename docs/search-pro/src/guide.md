@@ -9,6 +9,14 @@ icon: lightbulb
 
 For small sites, where you usually need a full-text search out of the box, you can call the `vuepress-plugin-search-pro` plugin directly via `{ indexContent: true }`.
 
+## History for Query and Search
+
+By default the plugin will store 5 last query you type and 5 last search result you choose. This can be changed by setting `queryHistoryCount` and `resultHistoryCount` option. You can disable them by setting them to `0`.
+
+## Auto Suggestions
+
+The plugin will show related words as suggestions when you type in the search box by default. If you don't need this behavior, please set `autoSuggestions: false`.
+
 ## Custom Index Fields
 
 Whether you are a theme developer or a user, it's a common operation to add extra data to a page through Frontmatter or the `extendsPage` lifecycle. In most cases, you may want to index these data as well, so we provide the `customFields` option.

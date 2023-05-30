@@ -43,7 +43,24 @@ export interface SearchProCustomFieldOptions {
   formatter?: SearchProCustomFieldFormatter;
 }
 
-export interface SearchProOptions {
+export interface DeprecatedSearchProOptions {
+  /**
+   * @deprecated use `indexContent` instead
+   */
+  fullIndex?: never;
+
+  /**
+   * @deprecated use `resultHistoryCount` instead
+   */
+  historyCount?: never;
+
+  /**
+   * @deprecated use `searchDelay` instead
+   */
+  delay?: never;
+}
+
+export interface SearchProOptions extends DeprecatedSearchProOptions {
   /**
    * Whether index page content
    *
@@ -56,6 +73,15 @@ export interface SearchProOptions {
    * @default false
    */
   indexContent?: boolean;
+
+  /**
+   * Whether provide auto suggestions while typing
+   *
+   * 是否在输入时提供自动建议
+   *
+   * @default true
+   */
+  autoSuggestions?: boolean;
 
   /**
    * Max stored query history count
@@ -90,7 +116,16 @@ export interface SearchProOptions {
    *
    * @default 150
    */
-  delay?: number;
+  searchDelay?: number;
+
+  /*
+   * Delay to start auto-suggesting after input
+   *
+   * 结束输入到开始自动建议的延时
+   *
+   * @default 0
+   */
+  suggestDelay?: number;
 
   /**
    * Custom field for search

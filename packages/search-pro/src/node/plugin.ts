@@ -42,6 +42,7 @@ export const searchProPlugin =
       },
 
       define: {
+        SEARCH_PRO_ENABLE_AUTO_SUGGESTIONS: options.autoSuggestions !== false,
         SEARCH_PRO_CUSTOM_FIELDS: fromEntries(
           (options.customFields || [])
             .map(({ formatter }, index) =>
@@ -56,7 +57,8 @@ export const searchProPlugin =
           default: searchProLocales,
         }),
         SEARCH_PRO_OPTIONS: {
-          delay: options.delay || 150,
+          searchDelay: options.searchDelay || 150,
+          suggestDelay: options.suggestDelay || 0,
           queryHistoryCount: options.queryHistoryCount || 5,
           resultHistoryCount: options.resultHistoryCount || 5,
           hotKeys: options.hotKeys || [

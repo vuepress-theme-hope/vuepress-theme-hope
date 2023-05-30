@@ -18,6 +18,13 @@ By default, only headings and excerpt of the page will be indexed along with you
 
 :::
 
+### autoSuggestions
+
+- Type: `boolean`
+- Default: `true`
+
+Whether to show suggestions while searching.
+
 ### customFields
 
 - Type: `SearchProCustomFieldOptions[]`

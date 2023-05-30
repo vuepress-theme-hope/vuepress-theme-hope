@@ -4,7 +4,7 @@ import { type Ref } from "vue";
 import { searchProOptions } from "../define.js";
 import { type MatchedItem } from "../typings/index.js";
 
-const SEARCH_PRO_RESULT_STORAGE = "search-pro-result-history";
+const SEARCH_PRO_HISTORY_RESULT_STORAGE = "SEARCH_PRO_RESULT_HISTORY";
 
 export interface SearchResultHistory {
   enabled: boolean;
@@ -14,7 +14,7 @@ export interface SearchResultHistory {
 }
 
 const searchProResultStorage = useLocalStorage<MatchedItem[]>(
-  SEARCH_PRO_RESULT_STORAGE,
+  SEARCH_PRO_HISTORY_RESULT_STORAGE,
   []
 );
 

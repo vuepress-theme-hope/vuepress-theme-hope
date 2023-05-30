@@ -18,6 +18,13 @@ icon: gears
 
 :::
 
+### autoSuggestions
+
+- 类型: `boolean`
+- 默认值: `false`
+
+是否自动提示搜索建议。
+
 ### customFields
 
 - 类型: `SearchProCustomFieldOptions[]`
