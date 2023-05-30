@@ -40,27 +40,27 @@ export default defineComponent({
           ? h(
               "div",
               { class: "vp-features-wrapper" },
-              props.items.map((feature) => {
+              props.items.map(({ icon, title, details, link }) => {
                 const children = [
                   h("h3", { class: "vp-feature-header" }, [
-                    h(HopeIcon, { icon: feature.icon }),
-                    h("span", { innerHTML: feature.title }),
+                    h(HopeIcon, { icon }),
+                    h("span", { innerHTML: title }),
                   ]),
                   h("p", {
                     class: "vp-feature-content",
-                    innerHTML: feature.details,
+                    innerHTML: details,
                   }),
                 ];
 
-                return feature.link
-                  ? isLinkExternal(feature.link)
+                return link
+                  ? isLinkExternal(link)
                     ? h(
                         "a",
                         {
                           class: "vp-feature link",
-                          href: feature.link,
+                          href: link,
                           role: "navigation",
-                          "aria-label": feature.title,
+                          "aria-label": title,
                           target: "_blank",
                         },
                         children
@@ -69,9 +69,9 @@ export default defineComponent({
                         RouterLink,
                         {
                           class: "vp-feature link",
-                          to: feature.link,
+                          to: link,
                           role: "navigation",
-                          "aria-label": feature.title,
+                          "aria-label": title,
                         },
                         () => children
                       )

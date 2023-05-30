@@ -74,10 +74,11 @@ export default defineComponent({
     });
 
     const bgInfo = computed(() => {
-      const { bgImage, bgImageStyle } = frontmatter.value;
+      const { bgImage, bgImageDark, bgImageStyle } = frontmatter.value;
 
       return {
         image: isString(bgImage) ? withBase(bgImage) : null,
+        imageDark: isString(bgImageDark) ? withBase(bgImageDark) : null,
         bgStyle: bgImageStyle,
         isFullScreen: isFullScreen.value,
       };
@@ -89,24 +90,33 @@ export default defineComponent({
       h(
         "header",
         { class: ["vp-hero-info-wrapper", { fullscreen: isFullScreen.value }] },
-        h(
-          "div",
-          {
-            class: "vp-hero-info",
-          },
-          [
-            slots.heroBg?.(bgInfo.value) ||
-              (bgInfo.value.image
-                ? h("div", {
-                    class: "vp-hero-mask",
-                    style: [
-                      {
-                        background: `url(${bgInfo.value.image}) center/cover no-repeat`,
-                      },
-                      bgInfo.value.bgStyle,
-                    ],
-                  })
-                : null),
+        [
+          slots.heroBg?.(bgInfo.value) || [
+            bgInfo.value.image
+              ? h("div", {
+                  class: ["vp-hero-mask", { light: bgInfo.value.imageDark }],
+                  style: [
+                    {
+                      background: `url(${bgInfo.value.image}) center/cover no-repeat`,
+                    },
+                    bgInfo.value.bgStyle,
+                  ],
+                })
+              : null,
+            bgInfo.value.imageDark
+              ? h("div", {
+                  class: "vp-hero-mask dark",
+                  style: [
+                    {
+                      background: `url(${bgInfo.value.imageDark}) center/cover no-repeat`,
+                    },
+                    bgInfo.value.bgStyle,
+                  ],
+                })
+              : null,
+          ],
+
+          h("div", { class: "vp-hero-info" }, [
             slots.heroImage?.(heroImage.value) ||
               h(DropTransition, { appear: true, type: "group" }, () => [
                 heroImage.value.image
@@ -162,8 +172,8 @@ export default defineComponent({
                     )
                   : null,
               ]),
-          ]
-        )
+          ]),
+        ]
       );
   },
 });

@@ -99,6 +99,22 @@
 
     opacity: 0.2;
   }
+
+  &.light {
+    display: block;
+
+    #{hope-config.$dark-selector} & {
+      display: none;
+    }
+  }
+
+  &.dark {
+    display: none;
+
+    #{hope-config.$dark-selector} & {
+      display: block;
+    }
+  }
 }
 
 .vp-blog-hero-title {

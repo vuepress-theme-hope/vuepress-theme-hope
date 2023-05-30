@@ -77,7 +77,7 @@ export default defineComponent({
     });
 
     const bgInfo = computed(() => {
-      const { bgImage, bgImageStyle } = frontmatter.value;
+      const { bgImage, bgImageDark, bgImageStyle } = frontmatter.value;
 
       return {
         image: isString(bgImage)
@@ -85,6 +85,7 @@ export default defineComponent({
           : bgImage === false
           ? null
           : defaultHeroBgImagePath,
+        imageDark: isString(bgImageDark) ? withBase(bgImageDark) : null,
         bgStyle: bgImageStyle,
         isFullScreen: isFullScreen.value,
       };
@@ -106,10 +107,13 @@ export default defineComponent({
               ],
             },
             [
-              slots.heroBg?.(bgInfo.value) ||
-                (bgInfo.value.image
+              slots.heroBg?.(bgInfo.value) || [
+                bgInfo.value.image
                   ? h("div", {
-                      class: "vp-blog-mask",
+                      class: [
+                        "vp-blog-mask",
+                        { light: bgInfo.value.imageDark },
+                      ],
                       style: [
                         {
                           background: `url(${bgInfo.value.image}) center/cover no-repeat`,
@@ -117,7 +121,19 @@ export default defineComponent({
                         bgInfo.value.bgStyle,
                       ],
                     })
-                  : null),
+                  : null,
+                bgInfo.value.imageDark
+                  ? h("div", {
+                      class: "vp-blog-mask dark",
+                      style: [
+                        {
+                          background: `url(${bgInfo.value.imageDark}) center/cover no-repeat`,
+                        },
+                        bgInfo.value.bgStyle,
+                      ],
+                    })
+                  : null,
+              ],
               slots.heroInfo?.(heroInfo.value) || [
                 h(
                   DropTransition,

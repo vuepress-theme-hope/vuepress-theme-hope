@@ -42,14 +42,14 @@ Short description in hero
 - Type: `string`
 - Required: No
 
-Home hero (logo) image address, need to fill in the absolute path (pictures need to be placed in the `.vuepress/public` folder)
+Home hero (logo) image address, relative path is not supported.
 
 ## heroImageDark
 
 - Type: `string`
-- Required: No
+- Default: `heroImage`
 
-Darkmode Home hero (logo) image address, need to fill in the absolute path (pictures need to be placed in the `.vuepress/public` folder), will be the same as `heroImage` by default.
+Darkmode Home hero (logo) image address, relative path is not supported.
 
 ## heroImageStyle
 
@@ -70,7 +70,14 @@ Home icon alt text
 - Type: `string | false`
 - Default: A built-in picture
 
-Link of background image, you must fill in absolute path of full path. If not filled in, a default landscape picture will be automatically applied.
+Link of background image, relative path is not supported.
+
+## bgImageDark
+
+- Type: `string`
+- Default: `bgImage`
+
+Link of darkmode background image, relative path is not supported.
 
 ## bgImageStyle
 
