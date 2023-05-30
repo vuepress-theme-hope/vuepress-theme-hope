@@ -70,7 +70,7 @@
     }
   }
 
-  .sidebar {
+  .vp-sidebar {
     // add space for navbar
     top: var(--navbar-height);
   }
@@ -81,7 +81,7 @@
       padding-top: 0;
     }
 
-    .sidebar {
+    .vp-sidebar {
       // clear space for navbar
       top: 0;
 
@@ -93,7 +93,7 @@
   }
 
   &.hide-navbar {
-    .sidebar {
+    .vp-sidebar {
       @media (max-width: hope-config.$tablet) {
         // clear space for navbar
         top: 0;
@@ -107,7 +107,7 @@
       padding-inline-start: 0;
     }
 
-    .sidebar {
+    .vp-sidebar {
       // hide box shadow
       box-shadow: none;
 
@@ -156,14 +156,14 @@
     }
 
     // hide sidebar
-    .sidebar {
+    .vp-sidebar {
       display: none;
     }
   }
 
   // open state on mobile
   &.sidebar-open {
-    .sidebar {
+    .vp-sidebar {
       // show box shadow
       box-shadow: 2px 0 8px var(--card-shadow);
 

@@ -7,6 +7,23 @@
     background: var(--bg-color-float);
     transition: background var(--color-transition);
   }
+
+  .vp-sidebar &.mobile {
+    display: none;
+
+    @media (max-width: hope-config.$tablet) {
+      display: block;
+    }
+
+    + hr {
+      display: none;
+
+      @media (max-width: hope-config.$tablet) {
+        display: block;
+        margin-top: 1rem;
+      }
+    }
+  }
 }
 
 .vp-blogger {

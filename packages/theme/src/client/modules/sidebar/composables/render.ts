@@ -34,13 +34,13 @@ export const renderChildren = (
 
   return h(
     "ul",
-    { class: "sidebar-sub-headers" },
+    { class: "vp-sidebar-sub-headers" },
     children.map((child) => {
       const active = isActiveSidebarItem(route, child, true);
 
-      return h("li", { class: "sidebar-sub-header" }, [
+      return h("li", { class: "vp-sidebar-sub-header" }, [
         renderItem(child, {
-          class: ["sidebar-link", "heading", { active }],
+          class: ["vp-sidebar-link", "vp-heading", { active }],
         }),
         renderChildren(child.children),
       ]);

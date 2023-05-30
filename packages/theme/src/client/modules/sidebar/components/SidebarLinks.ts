@@ -47,7 +47,7 @@ export default defineComponent({
     return (): VNode | null =>
       h(
         "ul",
-        { class: "sidebar-links" },
+        { class: "vp-sidebar-links" },
         props.config.map((config, index) =>
           h(
             "li",

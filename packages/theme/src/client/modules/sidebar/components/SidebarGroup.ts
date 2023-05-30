@@ -55,12 +55,12 @@ export default defineComponent({
         text,
       } = props.config;
 
-      return h("section", { class: "sidebar-group" }, [
+      return h("section", { class: "vp-sidebar-group" }, [
         h(
           collapsible ? "button" : "p",
           {
             class: [
-              "sidebar-heading",
+              "vp-sidebar-heading",
               {
                 clickable: collapsible || link,
                 exact: exact.value,
@@ -83,14 +83,14 @@ export default defineComponent({
             // title
             link
               ? h(AutoLink, {
-                  class: "title",
+                  class: "vp-sidebar-title",
                   config: { text, link },
                   noExternalLinkIcon: true,
                 })
-              : h("span", { class: "title" }, text),
+              : h("span", { class: "vp-sidebar-title" }, text),
             // arrow
             collapsible
-              ? h("span", { class: ["arrow", props.open ? "down" : "end"] })
+              ? h("span", { class: ["vp-arrow", props.open ? "down" : "end"] })
               : null,
           ]
         ),

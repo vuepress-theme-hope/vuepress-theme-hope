@@ -38,8 +38,8 @@ export default defineComponent({
     return (): (VNode | null)[] => [
       renderItem(props.config, {
         class: [
-          "sidebar-link",
-          `sidebar-${props.config.type}`,
+          "vp-sidebar-link",
+          `vp-sidebar-${props.config.type}`,
           { active: isActiveSidebarItem(route, props.config, true) },
         ],
         exact: true,

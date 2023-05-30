@@ -38,7 +38,7 @@ export default defineComponent({
         (hash): void => {
           // get the active sidebar item DOM, whose href equals to the current route
           const activeSidebarItem = document.querySelector(
-            `.sidebar a.sidebar-link[href="${route.path}${hash}"]`
+            `.vp-sidebar a.vp-sidebar-link[href="${route.path}${hash}"]`
           );
 
           if (!activeSidebarItem) return;
@@ -72,7 +72,7 @@ export default defineComponent({
           ref: sidebar,
           id: "sidebar",
           class: [
-            "sidebar",
+            "vp-sidebar",
             { "hide-icon": themeLocale.value.sidebarIcon === false },
           ],
         },

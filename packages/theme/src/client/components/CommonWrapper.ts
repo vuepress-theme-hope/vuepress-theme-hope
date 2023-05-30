@@ -261,7 +261,7 @@ export default defineComponent({
               h(Transition, { name: "fade" }, () =>
                 isMobileSidebarOpen.value
                   ? h("div", {
-                      class: "sidebar-mask",
+                      class: "vp-sidebar-mask",
                       onClick: () => toggleMobileSidebar(false),
                     })
                   : null
