@@ -184,9 +184,9 @@
 
 .search-pro-suggestions-wrapper {
   position: absolute;
-  top: 100%;
-  right: 2rem;
-  left: 2rem;
+  top: calc(100% + 4px);
+  right: 0;
+  left: 0;
   z-index: 20;
 
   overflow: hidden;
@@ -235,6 +235,7 @@
   color: inherit;
 
   line-height: 20px;
+  white-space: nowrap;
 
   cursor: pointer;
 
