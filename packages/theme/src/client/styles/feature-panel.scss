@@ -1,30 +1,108 @@
-.vp-feature-panel {
-  // margin-inline: auto;
-  margin-inline-start: auto;
-  margin-inline-end: auto;
-
-  // NOTE: Compatible with Android Wechat
-  // padding-inline: 1.5rem;
-  padding-inline-start: 1rem;
-  padding-inline-end: 1rem;
+.vp-feature-panel-wrapper {
+  position: relative;
 }
 
-.vp-feature-title {
-  margin: 1rem 1.75rem 0.5rem;
-  border-bottom: none;
+.vp-feature-bg {
+  position: absolute;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  z-index: 0;
 
-  font-weight: bold;
-  font-size: 1.75rem;
-  font-family: var(--font-family);
+  background-attachment: fixed;
+  background-position: 50%;
+  background-size: cover;
+
+  &.light {
+    display: inline-block;
+  }
+
+  &.dark {
+    display: none;
+  }
+
+  #{hope-config.$dark-selector} & {
+    &.light {
+      display: none;
+    }
+
+    &.dark {
+      display: inline-block;
+    }
+  }
+}
+
+.vp-feature-panel {
+  position: relative;
+  z-index: 1;
+
+  margin: 0 auto;
+  padding: 2.5rem 1rem 1.5rem;
+
   text-align: center;
 }
 
+.vp-feature-image {
+  height: 10rem;
+  margin: 0 auto;
+
+  @media (max-width: hope-config.$pad) {
+    height: 8rem;
+  }
+
+  &.light {
+    display: inline-block;
+  }
+
+  &.dark {
+    display: none;
+  }
+
+  #{hope-config.$dark-selector} & {
+    &.light {
+      display: none;
+    }
+
+    &.dark {
+      display: inline-block;
+    }
+  }
+}
+
+.vp-feature-title {
+  border-bottom: none;
+
+  font-weight: bold;
+  font-size: 2.5rem;
+  font-family: var(--font-family);
+  text-align: center;
+
+  @media (max-width: hope-config.$pad) {
+    font-size: 2.25rem;
+  }
+
+  @media (max-width: hope-config.$tablet) {
+    font-size: 2rem;
+  }
+
+  @media (max-width: hope-config.$mobile) {
+    font-size: 1.75rem;
+  }
+}
+
 .vp-features-wrapper {
+  z-index: 1;
+
   display: flex;
   flex-wrap: wrap;
   align-content: stretch;
   align-items: stretch;
   justify-content: center;
+
+  margin: 1rem 0;
+
+  text-align: start;
 
   @media print {
     display: block;
@@ -72,6 +150,11 @@
     @media print {
       text-decoration: none;
     }
+
+    &:hover {
+      box-shadow: 0 2px 12px 0 var(--card-shadow);
+      transform: translate(-2px, -2px);
+    }
   }
 
   .icon {
@@ -84,12 +167,6 @@
 
     font-weight: normal;
     font-size: 1.1em;
-  }
-
-  &:hover {
-    background-color: var(--bg-color-secondary);
-    box-shadow: 0 2px 12px 0 var(--card-shadow);
-    transform: scale(1.05);
   }
 
   &:only-child {

@@ -25,7 +25,7 @@ export default defineComponent({
     /**
      * Highlight Section title
      */
-    header: { type: String, required: true },
+    header: { type: String, default: "" },
 
     /**
      * Highlight Section description
@@ -62,7 +62,7 @@ export default defineComponent({
     bgImageDark: { type: String, default: "" },
 
     /**
-     * Highlight Background image ustyle
+     * Highlight Background image style
      */
     bgImageStyle: { type: [String, Object], default: "" },
 
@@ -157,10 +157,12 @@ export default defineComponent({
                 "div",
                 { class: "vp-highlight-info" },
                 h("div", { class: "vp-highlight-contents" }, [
-                  h("h2", {
-                    class: "vp-highlight-title",
-                    innerHTML: header,
-                  }),
+                  header
+                    ? h("h2", {
+                        class: "vp-highlight-title",
+                        innerHTML: header,
+                      })
+                    : null,
                   description
                     ? h("p", {
                         class: "vp-highlight-description",
@@ -178,7 +180,7 @@ export default defineComponent({
                       highlights.map(({ icon, title, details, link }) => {
                         const children = [
                           h(
-                            type === "no-order" ? "dt" : "div",
+                            type === "no-order" ? "dt" : "h3",
                             { class: "vp-highlight-header" },
                             [
                               icon

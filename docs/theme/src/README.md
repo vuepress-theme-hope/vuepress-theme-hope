@@ -40,26 +40,111 @@ highlights:
     bgImageStyle:
       background-repeat: repeat
       background-size: initial
-    highlights:
-      - title: Marking contents
+    features:
+      - title: Links Check
+        icon: clipboard-check
+        details: Check markdown links
+        link: ./guide/markdown/others.html#link-check
+
+      - title: Custom Container
+        icon: box-archive
+        details: Decorate Markdown content with styles
+        link: ./guide/markdown/container.html
+
+      - title: Tabs
+        icon: table-columns
+        details: Group similar content with tabs and switch them together
+        link: ./guide/markdown/tabs.html
+
+      - title: Code Tabs
+        icon: code
+        details: Group similar codes with tabs
+        link: ./guide/markdown/code-tabs.html
+
+      - title: Custom Align
+        icon: align-center
+        details: Let you decide to align paragraphs in the way you like
+        link: ./guide/markdown/align.html
+
+      - title: Attrs support
+        icon: code
+        details: Allow you to add attributes for Markdown content
+        link: ./guide/markdown/attrs.html
+
+      - title: Superscript and subscript support
+        icon: superscript
+        details: Your Markdown now support superscript and subscript
+        link: ./guide/markdown/sup-sub.html
+
+      - title: Footnote support
+        icon: quote-left
+        details: Your Markdown now support footnotes
+        link: ./guide/markdown/footnote.html
+
+      - title: Mark Support
         icon: highlighter
-        details: Custom container, attrs, mark and stylize support
+        details: Mark words and sentences in Markdown
+        link: ./guide/markdown/mark.html
 
-      - title: Writing articles
-        icon: feather
-        details: Custom alignment, footnote, snippets include and new image syntax support
+      - title: Tasklist Support
+        icon: square-check
+        details: Use tasklist in Markdown
+        link: ./guide/markdown/tasklist.html
 
-      - title: Richer Your Contents
-        icon: star
-        details: Tex, presentation, tabs, superscript, subscript, tasklist and card support
+      - title: image syntax
+        icon: image
+        details: improve syntax to specify size and color scheme
+        link: ./guide/markdown/image.html
 
-      - title: Inserting Charts
+      - title: Card Support
+        icon: square
+        details: Add cards in Markdown
+        link: ./guide/markdown/card.html
+
+      - title: Chart Support
         icon: chart-simple
-        details: Chart.js, ECharts, flowchart and Mermaid support
+        details: Display charts in Markdown
+        link: ./guide/markdown/chart.html
 
-      - title: Showing your codes and works
-        icon: lightbulb
-        details: Code tabs, code demo, playground and vue playground
+      - title: Flowchart Support
+        icon: route
+        details: Create your flowchart in Markdown
+        link: ./guide/markdown/flowchart.html
+
+      - title: Mermaid Support
+        icon: chart-pie
+        details: Add mermaid diagram in Markdown
+        link: ./guide/markdown/mermaid.html
+
+      - title: Tex Support
+        icon: square-root-variable
+        details: Markdown now have Tex Support so you can write your formula
+        link: ./guide/markdown/tex.html
+
+      - title: Include snippet Support
+        icon: fab fa-markdown
+        details: split your docs with different parts and import them in Markdown
+        link: ./guide/markdown/include.html
+
+      - title: Playground Support
+        icon: code
+        details: You can add playground in Markdown files
+        link: ./guide/markdown/playground.html
+
+      - title: Vue playground Support
+        icon: fab fa-vuejs
+        details: Show living vue component in playground
+        link: ./guide/markdown/vue-playground.html
+
+      - title: Code Demo Support
+        icon: laptop-code
+        details: You can insert code demo easily
+        link: ./guide/markdown/demo/
+
+      - title: Presentation Support
+        icon: person-chalkboard
+        details: You can insert presentation in Markdown files directly
+        link: ./guide/markdown/presentation/
 
   - header: Improved layouts
     description: An awesome responsive layout with full a11y support.
