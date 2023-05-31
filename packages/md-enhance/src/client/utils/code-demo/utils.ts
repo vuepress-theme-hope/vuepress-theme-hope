@@ -148,7 +148,7 @@ export const injectScript = (
     script.appendChild(
       document.createTextNode(
         // here we are fixing `document` variable back to shadowDOM
-        `{const document=window.document.querySelector('#${id} .code-demo-container').shadowRoot;\n${scriptText}}`
+        `{const document=window.document.querySelector('#${id} .vp-code-demo-display').shadowRoot;\n${scriptText}}`
       )
     );
     shadowRoot.appendChild(script);
