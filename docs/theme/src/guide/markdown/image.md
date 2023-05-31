@@ -84,11 +84,11 @@ GFM supports marking pictures by ID suffix so that pictures are only displayed i
 You can enable it by setting `plugins.mdEnhance.imgMark: true` in theme options.
 
 ```md
-![GitHub Light](/assets/icon/github-light.png#gh-dark-mode-only)
-![GitHub Dark](/assets/icon/github-dark.png#gh-light-mode-only)
+![GitHub Light](/assets/image/github-light.svg#gh-dark-mode-only)
+![GitHub Dark](/assets/image/github-dark.svg#gh-light-mode-only)
 
-![GitHub Light](/assets/icon/github-light.png#dark)
-![GitHub Dark](/assets/icon/github-dark.png#light)
+![GitHub Light](/assets/image/github-light.svg#dark)
+![GitHub Dark](/assets/image/github-dark.svg#light)
 ```
 
 ::: details Case
@@ -97,11 +97,11 @@ The above demo will render the following result
 
 <AppearanceSwitch /> (Try to toggle theme mode)
 
-![GitHub Light](/assets/icon/github-light.png#gh-dark-mode-only)
-![GitHub Dark](/assets/icon/github-dark.png#gh-light-mode-only)
+![GitHub Light](/assets/image/github-light.svg#gh-dark-mode-only)
+![GitHub Dark](/assets/image/github-dark.svg#gh-light-mode-only)
 
-![GitHub Light](/assets/icon/github-light.png#dark)
-![GitHub Dark](/assets/icon/github-dark.png#light)
+![GitHub Light](/assets/image/github-light.svg#dark)
+![GitHub Dark](/assets/image/github-dark.svg#light)
 
 :::
 

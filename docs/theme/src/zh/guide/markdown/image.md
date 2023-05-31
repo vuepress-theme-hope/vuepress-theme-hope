@@ -84,11 +84,11 @@ GFM 支持通过 ID 标记图片，使得图片只在特定的模式显示。我
 你可以通过主题选项中的 `plugins.mdEnhance.imgMark` 选项控制它。
 
 ```md
-![GitHub Light](/assets/icon/github-light.png#gh-dark-mode-only)
-![GitHub Dark](/assets/icon/github-dark.png#gh-light-mode-only)
+![GitHub Light](/assets/image/github-light.svg#gh-dark-mode-only)
+![GitHub Dark](/assets/image/github-dark.svg#gh-light-mode-only)
 
-![GitHub Light](/assets/icon/github-light.png#dark)
-![GitHub Dark](/assets/icon/github-dark.png#light)
+![GitHub Light](/assets/image/github-light.svg#dark)
+![GitHub Dark](/assets/image/github-dark.svg#light)
 ```
 
 ::: details 案例
@@ -97,11 +97,11 @@ GFM 支持通过 ID 标记图片，使得图片只在特定的模式显示。我
 
 <AppearanceSwitch /> (尝试切换主题)
 
-![GitHub Light](/assets/icon/github-light.png#gh-dark-mode-only)
-![GitHub Dark](/assets/icon/github-dark.png#gh-light-mode-only)
+![GitHub Light](/assets/image/github-light.svg#gh-dark-mode-only)
+![GitHub Dark](/assets/image/github-dark.svg#gh-light-mode-only)
 
-![GitHub Light](/assets/icon/github-light.png#dark)
-![GitHub Dark](/assets/icon/github-dark.png#light)
+![GitHub Light](/assets/image/github-light.svg#dark)
+![GitHub Dark](/assets/image/github-dark.svg#light)
 
 :::
 
