@@ -111,7 +111,7 @@ export default defineComponent({
         props.image
           ? h("img", {
               key: "light",
-              class: ["hero-image", { light: props.imageDark }],
+              class: ["vp-blog-hero-image", { light: props.imageDark }],
               style: props.heroStyle,
               src: props.image,
               alt: props.alt,
@@ -120,7 +120,7 @@ export default defineComponent({
         props.imageDark
           ? h("img", {
               key: "dark",
-              class: "hero-image dark",
+              class: "vp-blog-hero-hero-image dark",
               style: props.heroStyle,
               src: props.imageDark,
               alt: props.alt,
@@ -128,7 +128,7 @@ export default defineComponent({
           : null,
       ]),
       h(DropTransition, { appear: true, delay: 0.08 }, () =>
-        props.text ? h("h1", props.text) : null
+        props.text ? h("h1", { class: "vp-blog-hero-title" }, props.text) : null
       ),
       h("div", { class: "hitokoto" }, [
         h("p", { class: "hitokoto-text" }, h("span", display.value)),

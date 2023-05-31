@@ -100,7 +100,7 @@ export default defineComponent({
         url
           ? [
               h("div", {
-                class: "mask",
+                class: "vp-blog-mask",
                 style: {
                   background: `url(${url}) center/cover no-repeat`,
                 },
