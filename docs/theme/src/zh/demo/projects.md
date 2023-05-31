@@ -291,9 +291,9 @@ blog:
 
   - name: CSLN
     desc: CS生涯：读书笔记，集成Java知识体系！
-    logo: https://idea.javaguide.cn/logo.svg
-    url: https://zhiyu1998.github.io/Computer-Science-Learn-Notes/logo.png
-    repo: https://zhiyu1998.github.io/Computer-Science-Learn-Notes/
+    logo: https://zhiyu1998.github.io/Computer-Science-Learn-Notes/logo.png
+    url: https://zhiyu1998.github.io/Computer-Science-Learn-Notes/
+    repo: https://github.com/zhiyu1998/Computer-Science-Learn-Notes
     preview: /assets/image/csln.jpg
 
   - name: Learn Data
