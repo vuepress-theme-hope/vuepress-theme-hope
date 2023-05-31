@@ -1,17 +1,17 @@
-.vp-highlight-section-wrapper {
+.vp-highlight-wrapper {
   position: relative;
   display: flex;
   align-items: center;
   justify-content: center;
 
   &:nth-child(2n) {
-    .vp-highlight-section {
+    .vp-highlight {
       flex-direction: row-reverse;
     }
   }
 }
 
-.vp-highlight-section {
+.vp-highlight {
   z-index: 1;
 
   display: flex;
@@ -40,12 +40,13 @@
   }
 }
 
-.vp-highlight-section-bg {
+.vp-highlight-bg {
   position: absolute;
   top: 0;
   right: 0;
   bottom: 0;
   left: 0;
+  z-index: 0;
 
   background-attachment: fixed;
   background-position: 50%;
@@ -70,7 +71,7 @@
   }
 }
 
-.vp-highlight-section-image {
+.vp-highlight-image {
   width: 12rem;
   margin: 2rem 4rem;
 
@@ -141,7 +142,7 @@
   }
 }
 
-.vp-highlight-wrapper {
+.vp-highlight-item-wrapper {
   margin: 1rem 0;
 
   &.link {
@@ -154,7 +155,7 @@
   }
 }
 
-.vp-highlight {
+.vp-highlight-item {
   color: inherit;
 
   @media print {

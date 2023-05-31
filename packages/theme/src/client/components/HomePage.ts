@@ -4,14 +4,14 @@ import { type SlotsType, type VNode, computed, defineComponent, h } from "vue";
 
 import FeaturePanel from "@theme-hope/components/FeaturePanel";
 import HeroInfo from "@theme-hope/components/HeroInfo";
-import HighlightSection from "@theme-hope/components/HighlightSection";
+import HighlightPanel from "@theme-hope/components/HighlightPanel";
 import MarkdownContent from "@theme-hope/components/MarkdownContent";
 import DropTransition from "@theme-hope/components/transitions/DropTransition";
 import { usePure } from "@theme-hope/composables/index";
 
 import {
-  type ThemeProjectHomeFeatureItemOptions,
   type ThemeProjectHomeFeatureOptions,
+  type ThemeProjectHomeItemOption,
   type ThemeProjectHomePageFrontmatter,
 } from "../../shared/index.js";
 
@@ -35,7 +35,7 @@ export default defineComponent({
 
       if (isArray(features))
         return features.some((item) => !("features" in item))
-          ? [{ features: features as ThemeProjectHomeFeatureItemOptions[] }]
+          ? [{ features: features as ThemeProjectHomeItemOption[] }]
           : (features as ThemeProjectHomeFeatureOptions[]);
 
       return null;
@@ -64,7 +64,7 @@ export default defineComponent({
           highlights.value?.map((highlight) =>
             "features" in highlight
               ? h(FeaturePanel, highlight)
-              : h(HighlightSection, highlight)
+              : h(HighlightPanel, highlight)
           ) ||
             features.value?.map(({ header = "", features }, index) =>
               h(

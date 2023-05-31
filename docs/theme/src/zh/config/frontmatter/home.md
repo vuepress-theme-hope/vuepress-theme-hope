@@ -121,36 +121,135 @@ tag:
 
 主页操作
 
-## features
+## highlights
 
-- 类型: `ThemeHomeFeatureOptions[]`
+- 类型: `ThemeProjectHomeHighlightSection[]`
 
   ```ts
-  interface ThemeHomeFeatureOptions {
+  interface ThemeProjectHomeItemOption {
     /**
-     * 功能名称
+     * 项目名称，支持 HTML 字符串
      */
     title: string;
 
     /**
-     * 功能描述
+     * 项目描述，支持 HTML 字符串
      */
-    details: string;
+    details?: string;
 
     /**
-     * 功能图标
+     * 项目图标
      *
      * @description 支持图片链接或者图标字体类
      */
     icon?: string;
 
     /**
-     * 功能链接
+     * 项目链接
      */
     link?: string;
+  }
+
+  interface ThemeProjectHomeHighlightSection {
+    /**
+     * 高亮标题，支持 HTML 字符串
+     */
+    header: string;
+
+    /**
+     * 高亮描述，支持 HTML 字符串
+     */
+    description?: string;
+
+    /**
+     * 文字颜色
+     */
+    color?: string;
+
+    /**
+     * 高亮图像
+     */
+    image?: string;
+
+    /**
+     * 夜间模式使用的高亮图片
+     *
+     * @default image
+     */
+    imageDark?: string;
+
+    /**
+     * 高亮背景图
+     */
+    bgImage?: string;
+
+    /**
+     * 夜间模式使用的高亮背景图
+     *
+     * @default bgImage
+     */
+    bgImageDark?: string;
+
+    /**
+     * 高亮列表类型
+     *
+     * @default un-order
+     */
+    type?: "order" | "un-order" | "no-order";
+
+    /**
+     * 高亮
+     */
+    highlights?: ThemeProjectHomeItemOption[];
   }
   ```
 
 - 必填: 否
 
-特性说明
+亮点描述。
+
+## features
+
+- 类型: `ThemeHomeFeatureOptions[]`
+
+  ```ts
+  interface ThemeProjectHomeItemOption {
+    /**
+     * 项目名称，支持 HTML 字符串
+     */
+    title: string;
+
+    /**
+     * 项目描述，支持 HTML 字符串
+     */
+    details?: string;
+
+    /**
+     * 项目图标
+     *
+     * @description 支持图片链接或者图标字体类
+     */
+    icon?: string;
+
+    /**
+     * 项目链接
+     */
+    link?: string;
+  }
+
+  interface ThemeProjectHomeFeatureOptions {
+    /**
+     * 功能标题
+     */
+    header?: string;
+
+    /**
+     * 功能配置
+     */
+    features: ThemeProjectHomeItemOption[];
+  }
+  ```
+
+- 必填: 否
+
+功能描述。

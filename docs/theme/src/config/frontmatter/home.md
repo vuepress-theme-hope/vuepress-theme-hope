@@ -121,33 +121,132 @@ Whether Hero is full screen displayed
 
 Home actions
 
-## features
+## highlights
 
-- Type: `ThemeHomeFeatureOptions[]`
+- Type: `ThemeProjectHomeHighlightSection[]`
 
   ```ts
-  interface ThemeHomeFeatureOptions {
+  interface ThemeProjectHomeItemOption {
     /**
-     * Feature name
+     * Item name, supports HTML string
      */
     title: string;
 
     /**
-     * Feature description
+     * Item description, supports HTML string
      */
-    details: string;
+    details?: string;
 
     /**
-     * Feature icon
+     * Item icon
      *
      * @description image link or icon fontClass are supported
      */
     icon?: string;
 
     /**
-     * Feature link
+     * Item link
      */
     link?: string;
+  }
+
+  interface ThemeProjectHomeHighlightSection {
+    /**
+     * Highlight section header, supports HTML string
+     */
+    header: string;
+
+    /**
+     * Highlight section description, supports HTML string
+     */
+    description?: string;
+
+    /**
+     * Text color
+     */
+    color?: string;
+
+    /**
+     * Highlight section image
+     */
+    image?: string;
+
+    /**
+     * Highlight section image used in darkmode
+     *
+     * @default image
+     */
+    imageDark?: string;
+
+    /**
+     * Highlight Background image
+     */
+    bgImage?: string;
+
+    /**
+     * Highlight Background image used in darkmode
+     *
+     * @default bgImage
+     */
+    bgImageDark?: string;
+
+    /**
+     * Highlight section list type
+     *
+     * @default un-order
+     */
+    type?: "order" | "un-order" | "no-order";
+
+    /**
+     * Highlights
+     */
+    highlights?: ThemeProjectHomeItemOption[];
+  }
+  ```
+
+- Required: No
+
+Highlights description.
+
+## features
+
+- Type: `ThemeHomeFeatureOptions[]`
+
+  ```ts
+  interface ThemeProjectHomeItemOption {
+    /**
+     * Item name, supports HTML string
+     */
+    title: string;
+
+    /**
+     * Item description, supports HTML string
+     */
+    details?: string;
+
+    /**
+     * Item icon
+     *
+     * @description image link or icon fontClass are supported
+     */
+    icon?: string;
+
+    /**
+     * Item link
+     */
+    link?: string;
+  }
+
+  interface ThemeProjectHomeFeatureOptions {
+    /**
+     * Feature header
+     */
+    header?: string;
+
+    /**
+     * Feature config
+     */
+    features: ThemeProjectHomeItemOption[];
   }
   ```
 

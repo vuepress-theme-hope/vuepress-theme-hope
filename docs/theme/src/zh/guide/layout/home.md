@@ -38,14 +38,29 @@ tag:
 - `link`: 按钮链接
 - `type`: 按钮类型 (仅支持 `"primary"` 与 `"default"` (默认))
 
-## 项目特性
+## 项目亮点与功能
 
-你可以通过 `features` 设置并展示项目特性，它是一个数组，每个元素都是一个对象，包含以下键值:
+你可以通过 `highlights` 来设置和显示项目亮点，它是一个数组，每个元素都是一个对象，代表一个亮点部分。
 
-- `title`: 标题
-- `details`: 详情
-- `icon`(可选): 可填入完整路径或绝对路径的图片链接，或 FontClass
-- `link`(可选): 链接地址
+你也可以通过 `features` 来设置和显示项目特性，它是一个数组，每个元素都是一个对象，代表一个特性部分。
+
+亮点和功能都支持 `header` 和 `description` 属性。 其中 `header` 是章节的标题，`description` 是章节的描述。 你可以为它们设置 HTML 字符串。
+
+亮点使用 `highlights` 来设置亮点，功能使用 `features` 来设置功能。两者都是数组，每个元素都是一个对象，代表一个亮点或者功能项：
+
+- `title`: 标题，支持 HTML 字符串
+- `details`: 细节，支持 HTML 字符串
+- `icon` (可选)：可以填写完整路径或绝对路径图片链接，或 FontClass
+- `link` (可选)：链接地址
+
+亮点还支持以下属性：
+
+- `color`: 文字颜色
+- `image`: 章节图像
+- `imageDark`：在深色模式中使用的章节图像
+- `bgImage`：章节背景图像
+- `bgImageDark`：在暗深色模式中使用的章节背景图像
+- `type`: `"order"`, `"un-order"` (默认) 或 `"no-order"`
 
 ::: info
 
@@ -55,4 +70,4 @@ tag:
 
 ## 配置案例
 
-@[code{1-116}](../../README.md)
+@[code{1-184}](../../README.md)

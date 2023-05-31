@@ -4,7 +4,7 @@ import { RouterLink } from "vue-router";
 
 import HopeIcon from "@theme-hope/components/HopeIcon";
 
-import { type ThemeProjectHomeFeatureItemOptions } from "../../shared/index.js";
+import { type ThemeProjectHomeItemOption } from "../../shared/index.js";
 
 import "../styles/feature-panel.scss";
 
@@ -16,9 +16,9 @@ export default defineComponent({
      * Feature config
      */
     features: {
-      type: Object as PropType<ThemeProjectHomeFeatureItemOptions[]>,
-      default: (): ThemeProjectHomeFeatureItemOptions[] =>
-        [] as ThemeProjectHomeFeatureItemOptions[],
+      type: Object as PropType<ThemeProjectHomeItemOption[]>,
+      default: (): ThemeProjectHomeItemOption[] =>
+        [] as ThemeProjectHomeItemOption[],
     },
 
     /**

@@ -89,6 +89,7 @@ Components:
 - `@theme-hope/components/CommonWrapper`: basic layout integration
 - `@theme-hope/components/FeaturePanel`: homepage features
 - `@theme-hope/components/HeroInfo`: homepage logo and introduction
+- `@theme-hope/components/HighlightPanel`: homepage highlights
 - `@theme-hope/components/HomePage`: home page
 - `@theme-hope/components/HopeIcon`: icon
 - `@theme-hope/components/MarkdownContent`: Markdown content

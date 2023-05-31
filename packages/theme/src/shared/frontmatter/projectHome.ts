@@ -25,36 +25,36 @@ export interface ThemeProjectHomeActionOptions {
   type?: "primary" | "default";
 }
 
-export interface ThemeProjectHomeFeatureItemOptions {
+export interface ThemeProjectHomeItemOption {
   /**
-   * Feature name, supports HTML string
+   * Item name, supports HTML string
    *
-   * 功能名称，支持 HTML 字符串
+   * 项目名称，支持 HTML 字符串
    */
   title: string;
 
   /**
-   * Feature description, supports HTML string
+   * Item description, supports HTML string
    *
-   * 功能描述，支持 HTML 字符串
+   * 项目描述，支持 HTML 字符串
    */
-  details: string;
+  details?: string;
 
   /**
-   * Feature icon
+   * Item icon
    *
    * @description image link or icon fontClass are supported
    *
-   * 功能图标
+   * 项目图标
    *
    * @description 支持图片链接或者图标字体类
    */
   icon?: string;
 
   /**
-   * Feature link
+   * Item link
    *
-   * 功能链接
+   * 项目链接
    */
   link?: string;
 }
@@ -72,40 +72,10 @@ export interface ThemeProjectHomeFeatureOptions {
    *
    * 功能配置
    */
-  features: ThemeProjectHomeFeatureItemOptions[];
+  features: ThemeProjectHomeItemOption[];
 }
 
-export interface ThemeProjectHomeHighlightItem {
-  /**
-   * Highlight Item title, supports HTML string
-   *
-   * 高亮项目标题，支持 HTML 字符串
-   */
-  title: string;
-
-  /**
-   * Highlight item details, supports HTML string
-   *
-   * 高亮项目详情，支持 HTML 字符串
-   */
-  details?: string;
-
-  /**
-   * Highlight item icon
-   *
-   * 高亮项目图标
-   */
-  icon?: string;
-
-  /**
-   * Highlight item link
-   *
-   * 高亮项目链接
-   */
-  link?: string;
-}
-
-export interface ThemeProjectHomeHighlightSection {
+export interface ThemeProjectHomeHighlightOptions {
   /**
    * Highlight section header, supports HTML string
    *
@@ -173,17 +143,15 @@ export interface ThemeProjectHomeHighlightSection {
    *
    * 高亮
    */
-  highlights?: ThemeProjectHomeHighlightItem[];
+  highlights?: ThemeProjectHomeItemOption[];
 }
 
 export interface ThemeProjectHomePageFrontmatter
   extends ThemeHopePageFrontmatter {
   actions?: ThemeProjectHomeActionOptions[];
-  features?:
-    | ThemeProjectHomeFeatureItemOptions[]
-    | ThemeProjectHomeFeatureOptions[];
+  features?: ThemeProjectHomeItemOption[] | ThemeProjectHomeFeatureOptions[];
   highlights?: (
-    | ThemeProjectHomeHighlightSection
+    | ThemeProjectHomeHighlightOptions
     | ThemeProjectHomeFeatureOptions
   )[];
 }

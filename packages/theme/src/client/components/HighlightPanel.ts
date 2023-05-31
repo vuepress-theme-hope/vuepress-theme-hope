@@ -12,14 +12,14 @@ import { isLinkExternal } from "vuepress-shared/client";
 import HopeIcon from "@theme-hope/components/HopeIcon";
 
 import {
-  ThemeProjectHomeHighlightItem,
-  type ThemeProjectHomeHighlightSection,
+  type ThemeProjectHomeHighlightOptions,
+  type ThemeProjectHomeItemOption,
 } from "../../shared/index.js";
 
-import "../styles/highlight-section.scss";
+import "../styles/highlight-panel.scss";
 
 export default defineComponent({
-  name: "HighlightSection",
+  name: "HighlightPanel",
 
   props: {
     /**
@@ -80,16 +80,16 @@ export default defineComponent({
      * Highlights
      */
     highlights: {
-      type: Array as PropType<ThemeProjectHomeHighlightItem[]>,
+      type: Array as PropType<ThemeProjectHomeItemOption[]>,
       default: () => [],
     },
   },
 
   slots: Object as SlotsType<{
-    image?: (props: ThemeProjectHomeHighlightSection) => VNode[] | VNode | null;
-    info?: (props: ThemeProjectHomeHighlightSection) => VNode[] | VNode | null;
+    image?: (props: ThemeProjectHomeHighlightOptions) => VNode[] | VNode | null;
+    info?: (props: ThemeProjectHomeHighlightOptions) => VNode[] | VNode | null;
     highlights?: (
-      props: ThemeProjectHomeHighlightItem[]
+      props: ThemeProjectHomeItemOption[]
     ) => VNode[] | VNode | null;
   }>,
 
@@ -111,13 +111,13 @@ export default defineComponent({
       return h(
         "div",
         {
-          class: "vp-highlight-section-wrapper",
+          class: "vp-highlight-wrapper",
           style: color ? { color: color } : {},
         },
         [
           bgImage
             ? h("div", {
-                class: ["vp-highlight-section-bg", { light: bgImageDark }],
+                class: ["vp-highlight-bg", { light: bgImageDark }],
                 style: [
                   { "background-image": `url(${bgImage})` },
                   bgImageStyle,
@@ -126,7 +126,7 @@ export default defineComponent({
             : null,
           bgImageDark
             ? h("div", {
-                class: "vp-highlight-section-bg dark",
+                class: "vp-highlight-bg dark",
                 style: [
                   { "background-image": `url(${bgImageDark})` },
                   bgImageStyle,
@@ -134,17 +134,17 @@ export default defineComponent({
               })
             : null,
 
-          h("div", { class: "vp-highlight-section" }, [
+          h("div", { class: "vp-highlight" }, [
             slots.image?.(props) || [
               image
                 ? h("img", {
-                    class: ["vp-highlight-section-image", { light: imageDark }],
+                    class: ["vp-highlight-image", { light: imageDark }],
                     src: withBase(image),
                   })
                 : null,
               imageDark
                 ? h("div", {
-                    class: "vp-highlight-section-image dark",
+                    class: "vp-highlight-image dark",
                     src: withBase(imageDark),
                   })
                 : null,
@@ -199,14 +199,14 @@ export default defineComponent({
                         return h(
                           type === "no-order" ? "div" : "li",
                           {
-                            class: ["vp-highlight-wrapper", { link }],
+                            class: ["vp-highlight-item-wrapper", { link }],
                           },
                           link
                             ? isLinkExternal(link)
                               ? h(
                                   "a",
                                   {
-                                    class: "vp-highlight link",
+                                    class: "vp-highlight-item link",
                                     href: link,
                                     role: "navigation",
                                     "aria-label": title,
@@ -217,14 +217,14 @@ export default defineComponent({
                               : h(
                                   RouterLink,
                                   {
-                                    class: "vp-highlight link",
+                                    class: "vp-highlight-item link",
                                     to: link,
                                     role: "navigation",
                                     "aria-label": title,
                                   },
                                   () => children
                                 )
-                            : h("div", { class: "vp-highlight" }, children)
+                            : h("div", { class: "vp-highlight-item" }, children)
                         );
                       })
                     ),
