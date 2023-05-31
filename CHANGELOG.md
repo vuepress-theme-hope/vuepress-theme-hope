@@ -4,6 +4,27 @@ All notable changes to this project will be documented in this file. See [Conven
 
 <!-- #region recent-beta -->
 
+## [2.0.0-beta.218](https://github.com/vuepress-theme-hope/vuepress-theme-hope/compare/v2.0.0-beta.217...v2.0.0-beta.218) (2023-05-31)
+
+### Features
+
+- **create:** update template ([ecfcfd4](https://github.com/vuepress-theme-hope/vuepress-theme-hope/commit/ecfcfd4dc4183d0fc47e78fcb0bd4c987d240b25))
+- **theme:** improve feature and highlight style ([3409e89](https://github.com/vuepress-theme-hope/vuepress-theme-hope/commit/3409e8946ca89ef7d376b0abc7901b2eceb7586a))
+- **theme:** optimize styles ([9f3ce84](https://github.com/vuepress-theme-hope/vuepress-theme-hope/commit/9f3ce8476af73a07346b206c4afb88086016a05b))
+
+### Bug Fixes
+
+- **auto-catalog:** fix appearance ([a302ba5](https://github.com/vuepress-theme-hope/vuepress-theme-hope/commit/a302ba592ac6840f61656d8309d97fac5e1ba811))
+- **md-enhance:** fix code demo, close [#3175](https://github.com/vuepress-theme-hope/vuepress-theme-hope/issues/3175) ([d62f9c8](https://github.com/vuepress-theme-hope/vuepress-theme-hope/commit/d62f9c857aff50002d42d20e60b1953b97ea5b53))
+- **theme:** fix dd tag style in highlights ([6a9ceba](https://github.com/vuepress-theme-hope/vuepress-theme-hope/commit/6a9cebaaf223714a81482d3a81b9c0fd329bd42c))
+- **theme:** fix extraLocales not working ([92b4310](https://github.com/vuepress-theme-hope/vuepress-theme-hope/commit/92b431032d88da57fe9e92bed32507fc0ffa6659))
+- **theme:** fix hero info ([7a3021f](https://github.com/vuepress-theme-hope/vuepress-theme-hope/commit/7a3021f2168867e8de8c5eff8aea35f419880c7f))
+- **theme:** fix highlight imageDark not working ([36b241d](https://github.com/vuepress-theme-hope/vuepress-theme-hope/commit/36b241df4c813cde0605c47aa505fce8a7f1be75))
+- **theme:** fix highlight panel with slots ([ee947e6](https://github.com/vuepress-theme-hope/vuepress-theme-hope/commit/ee947e699d71da9a3d9f1368b3756b6b4a2d02db))
+- **theme:** fix missing style in bundled mode, close [#3177](https://github.com/vuepress-theme-hope/vuepress-theme-hope/issues/3177) ([149f26e](https://github.com/vuepress-theme-hope/vuepress-theme-hope/commit/149f26e8bd138ef54c814136ddfcac280403cd37))
+- **theme:** fix presets ([6e03c31](https://github.com/vuepress-theme-hope/vuepress-theme-hope/commit/6e03c3170650ab894ec2de3ac91485a5dba518e8))
+- **theme:** improve main title font size on homepage ([b50239c](https://github.com/vuepress-theme-hope/vuepress-theme-hope/commit/b50239c87c0c77f4e3460d9f5704f1d80fa9f6c0))
+
 ## [2.0.0-beta.217](https://github.com/vuepress-theme-hope/vuepress-theme-hope/compare/v2.0.0-beta.216...v2.0.0-beta.217) (2023-05-31)
 
 ### ⚠ BREAKING CHANGES
