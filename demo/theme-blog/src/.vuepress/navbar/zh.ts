@@ -1,9 +1,9 @@
 import { navbar } from "vuepress-theme-hope";
-import { version } from "../version";
+import { version } from "../version.js";
 
 export const zhNavbar = navbar([
   "/zh/",
-  { text: "演示", icon: "discover", link: "/zh/demo/" },
+  "/zh/demo/",
   {
     text: "博文",
     icon: "edit",
@@ -47,7 +47,7 @@ export const zhNavbar = navbar([
   },
   {
     text: version,
-    icon: "note",
+    icon: "book",
     children: [
       {
         text: "V2 文档",

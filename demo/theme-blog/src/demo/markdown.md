@@ -1,6 +1,6 @@
 ---
 title: Markdown Enhance
-icon: markdown
+icon: fab fa-markdown
 order: 2
 category:
   - Guide
@@ -420,4 +420,4 @@ $$
 
 - [View Detail](https://theme-hope.vuejs.press/guide/markdown/presentation.html)
 
-[md-enhance]: https://plugin-md-enhance.vuejs.press/
+[md-enhance]: https://md-enhance.vuejs.press/

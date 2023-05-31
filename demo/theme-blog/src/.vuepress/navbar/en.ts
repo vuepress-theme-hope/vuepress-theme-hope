@@ -1,9 +1,9 @@
 import { navbar } from "vuepress-theme-hope";
-import { version } from "../version";
+import { version } from "../version.js";
 
 export const enNavbar = navbar([
   "/",
-  { text: "Demo", icon: "discover", link: "/demo/" },
+  "/demo/",
   {
     text: "Posts",
     icon: "edit",
@@ -47,7 +47,7 @@ export const enNavbar = navbar([
   },
   {
     text: version,
-    icon: "note",
+    icon: "book",
     children: [
       {
         text: "V2 Docs",

@@ -1,5 +1,5 @@
 import { navbar } from "vuepress-theme-hope";
-import { version } from "../version";
+import { version } from "../version.js";
 
 export const enNavbar = navbar([
   "/",
