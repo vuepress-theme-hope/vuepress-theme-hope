@@ -279,6 +279,8 @@ All notable changes to this project will be documented in this file. See [Conven
 
 - **components:** fix SiteInfo, close [#3015](https://github.com/vuepress-theme-hope/vuepress-theme-hope/issues/3015) ([6e6537c](https://github.com/vuepress-theme-hope/vuepress-theme-hope/commit/6e6537cf9d6dd759cfc52f7a3892bd1c6096c7f6))
 
+<!-- #endregion recent-beta -->
+
 ## [2.0.0-beta.202](https://github.com/vuepress-theme-hope/vuepress-theme-hope/compare/v2.0.0-beta.201...v2.0.0-beta.202) (2023-04-10)
 
 ### Features
@@ -742,7 +744,7 @@ closed 2811
 
 - Catalog component is now inside auto-catalog plugin with name AutoCatalog
 
-  Most people want that catalog pages can be auto generated, and this is beyond a coponent, so we extract it into a plugin.
+  Most people want that catalog pages can be auto generated, and this is beyond a component, so we extract it into a plugin.
 
 ### Features
 
@@ -805,8 +807,6 @@ closed 2811
 - **theme:** fix dropped logger ([cfe7381](https://github.com/vuepress-theme-hope/vuepress-theme-hope/commit/cfe73812917239172a411cc1ec8a07cb0d41e763))
 - **theme:** hide line-numbers on print mode ([0b39671](https://github.com/vuepress-theme-hope/vuepress-theme-hope/commit/0b396712c004d85be55e5150c8c2a2524cdd3647))
 - **theme:** improve legacy logger ([cb449e4](https://github.com/vuepress-theme-hope/vuepress-theme-hope/commit/cb449e467cda6b5596e97dbb4b2a797e2e92f25d))
-
-<!-- #endregion recent-beta -->
 
 ## [2.0.0-beta.166](https://github.com/vuepress-theme-hope/vuepress-theme-hope/compare/v2.0.0-beta.165...v2.0.0-beta.166) (2023-01-23)
 
