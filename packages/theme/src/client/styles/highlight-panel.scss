@@ -153,6 +153,10 @@
       transform: scale(1.05);
     }
   }
+
+  &::marker {
+    font-weight: bold;
+  }
 }
 
 .vp-highlight-item {
@@ -174,4 +178,5 @@
 
 .vp-highlight-content {
   margin-top: 0.5rem;
+  margin-inline-start: 0;
 }
