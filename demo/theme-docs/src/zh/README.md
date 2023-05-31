@@ -175,7 +175,7 @@ highlights:
     image: /assets/image/features.svg
     bgImage: https://theme-hope-assets.vuejs.press/bg/1-light.svg
     bgImageDark: https://theme-hope-assets.vuejs.press/bg/1-dark.svg
-    highlights:
+    features:
       - title: 浏览量与评论
         icon: comment-dots
         details: 配合 Waline 来开启阅读量统计与评论支持

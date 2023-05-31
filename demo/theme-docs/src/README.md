@@ -175,7 +175,7 @@ highlights:
     image: /assets/image/features.svg
     bgImage: https://theme-hope-assets.vuejs.press/bg/1-light.svg
     bgImageDark: https://theme-hope-assets.vuejs.press/bg/1-dark.svg
-    highlights:
+    features:
       - title: Pageviews and Comments
         icon: comment-dots
         details: Start pageview statistics and comment support with Waline

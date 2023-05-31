@@ -1,4 +1,4 @@
-.vp-feature-panel-wrapper {
+.vp-feature-wrapper {
   position: relative;
 }
 
@@ -33,14 +33,28 @@
   }
 }
 
-.vp-feature-panel {
+.vp-feature {
   position: relative;
   z-index: 1;
 
   margin: 0 auto;
   padding: 2.5rem 1rem 1.5rem;
 
+  color: var(--text-color-lighter);
+
   text-align: center;
+
+  .vp-feature-bg + & {
+    color: #222;
+
+    #{hope-config.$dark-selector} & {
+      color: #eee;
+    }
+
+    .icon {
+      color: inherit;
+    }
+  }
 }
 
 .vp-feature-image {
@@ -70,28 +84,32 @@
   }
 }
 
-.vp-feature-title {
+.vp-feature-header {
+  margin-bottom: 1.5rem;
   border-bottom: none;
 
-  font-weight: bold;
-  font-size: 2.5rem;
+  font-size: 3rem;
   font-family: var(--font-family);
   text-align: center;
 
   @media (max-width: hope-config.$pad) {
-    font-size: 2.25rem;
+    font-size: 2.5rem;
   }
 
   @media (max-width: hope-config.$tablet) {
-    font-size: 2rem;
+    font-size: 2.25rem;
   }
 
   @media (max-width: hope-config.$mobile) {
-    font-size: 1.75rem;
+    font-size: 2rem;
   }
 }
 
-.vp-features-wrapper {
+.vp-feature-description {
+  font-size: 1.125rem;
+}
+
+.vp-features {
   z-index: 1;
 
   display: flex;
@@ -114,7 +132,7 @@
   }
 }
 
-.vp-feature {
+.vp-feature-item {
   position: relative;
 
   flex-basis: calc(33% - 3rem);
@@ -122,6 +140,8 @@
   margin: 0.5rem;
   padding: 1rem;
   border-radius: 0.5rem;
+
+  color: inherit;
 
   transition: background var(--color-transition),
     box-shadow var(--color-transition), transform var(--transform-transition);
@@ -183,11 +203,8 @@
   }
 }
 
-.vp-feature-header {
+.vp-feature-title {
   margin: 0.25rem 0 0.5rem;
-
-  color: var(--text-color-light);
-
   font-weight: bold;
   font-size: 1.3rem;
   font-family: var(--font-family);
@@ -197,8 +214,7 @@
   }
 }
 
-.vp-feature-content {
+.vp-feature-details {
   margin: 0;
-  color: var(--text-color-lighter);
   line-height: 1.4;
 }

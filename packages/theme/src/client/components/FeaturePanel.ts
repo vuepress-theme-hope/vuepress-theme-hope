@@ -101,7 +101,7 @@ export default defineComponent({
       return h(
         "div",
         {
-          class: "vp-feature-panel-wrapper",
+          class: "vp-feature-wrapper",
         },
         [
           bgImage
@@ -125,7 +125,7 @@ export default defineComponent({
           h(
             "div",
             {
-              class: "vp-feature-panel",
+              class: "vp-feature",
               style: color ? { color: color } : {},
             },
             [
@@ -147,7 +147,7 @@ export default defineComponent({
               ],
 
               slots.info?.(props) || [
-                header ? h("h2", { class: "vp-feature-title" }, header) : null,
+                header ? h("h2", { class: "vp-feature-header" }, header) : null,
                 description
                   ? h("p", {
                       class: "vp-feature-description",
@@ -158,15 +158,15 @@ export default defineComponent({
               features.length
                 ? h(
                     "div",
-                    { class: "vp-features-wrapper" },
+                    { class: "vp-features" },
                     features.map(({ icon, title, details, link }) => {
                       const children = [
-                        h("h3", { class: "vp-feature-header" }, [
+                        h("h3", { class: "vp-feature-title" }, [
                           h(HopeIcon, { icon }),
                           h("span", { innerHTML: title }),
                         ]),
                         h("p", {
-                          class: "vp-feature-content",
+                          class: "vp-feature-details",
                           innerHTML: details,
                         }),
                       ];
@@ -176,7 +176,7 @@ export default defineComponent({
                           ? h(
                               "a",
                               {
-                                class: "vp-feature link",
+                                class: "vp-feature-item link",
                                 href: link,
                                 role: "navigation",
                                 "aria-label": title,
@@ -187,7 +187,7 @@ export default defineComponent({
                           : h(
                               RouterLink,
                               {
-                                class: "vp-feature link",
+                                class: "vp-feature-item link",
                                 to: link,
                                 role: "navigation",
                                 "aria-label": title,

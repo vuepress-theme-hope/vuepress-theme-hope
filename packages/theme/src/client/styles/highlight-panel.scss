@@ -103,7 +103,7 @@
   }
 }
 
-.vp-highlight-info {
+.vp-highlight-info-wrapper {
   display: flex;
   flex: 1;
   justify-content: center;
@@ -118,11 +118,11 @@
   }
 }
 
-.vp-highlight-contents {
+.vp-highlight-info {
   text-align: start;
 }
 
-.vp-highlight-title {
+.vp-highlight-header {
   margin-bottom: 1.5rem;
   border-bottom: none;
   font-size: 3rem;
@@ -142,7 +142,12 @@
   }
 }
 
+.vp-highlight-description {
+  font-size: 1.125rem;
+}
+
 .vp-highlights {
+  margin-inline-start: -1.25em;
   padding-inline-start: 0;
 }
 
@@ -176,7 +181,7 @@
   }
 }
 
-.vp-highlight-header {
+.vp-highlight-title {
   margin: 0;
   font-weight: 600;
   font-size: 1.125rem;
@@ -187,6 +192,6 @@
   }
 }
 
-.vp-highlight-content {
+.vp-highlight-details {
   margin: 0.5rem 0 0;
 }

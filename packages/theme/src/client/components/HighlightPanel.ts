@@ -155,11 +155,11 @@ export default defineComponent({
             slots.info?.(props) || [
               h(
                 "div",
-                { class: "vp-highlight-info" },
-                h("div", { class: "vp-highlight-contents" }, [
+                { class: "vp-highlight-info-wrapper" },
+                h("div", { class: "vp-highlight-info" }, [
                   header
                     ? h("h2", {
-                        class: "vp-highlight-title",
+                        class: "vp-highlight-header",
                         innerHTML: header,
                       })
                     : null,
@@ -181,7 +181,7 @@ export default defineComponent({
                         const children = [
                           h(
                             type === "no-order" ? "dt" : "h3",
-                            { class: "vp-highlight-header" },
+                            { class: "vp-highlight-title" },
                             [
                               icon
                                 ? h(HopeIcon, {
@@ -194,7 +194,7 @@ export default defineComponent({
                           ),
                           details
                             ? h(type === "no-order" ? "dd" : "p", {
-                                class: "vp-highlight-content",
+                                class: "vp-highlight-details",
                                 innerHTML: details,
                               })
                             : null,
