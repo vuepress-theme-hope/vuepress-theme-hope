@@ -27,9 +27,10 @@ export const useNavbarLanguageDropdown =
 
     return computed(() => {
       const localePaths = keys(siteLocale.value.locales);
+      const extraLocales = entries(themeData.value.extraLocales ?? {});
 
       // do not display language selection dropdown if there is only one language
-      if (localePaths.length < 2) return null;
+      if (localePaths.length < 2 && !extraLocales.length) return null;
 
       const { path, fullPath } = router.currentRoute.value;
       const { navbarLocales } = themeLocale.value;
@@ -78,15 +79,13 @@ export const useNavbarLanguageDropdown =
               link,
             };
           }),
-          ...entries(themeData.value.extraLocales || {}).map(
-            ([text, path]) => ({
-              text,
-              link: path.replace(
-                ":route",
-                route.path.replace(routeLocale.value, "")
-              ),
-            })
-          ),
+          ...extraLocales.map(([text, path]) => ({
+            text,
+            link: path.replace(
+              ":route",
+              route.path.replace(routeLocale.value, "")
+            ),
+          })),
         ],
       };
 
