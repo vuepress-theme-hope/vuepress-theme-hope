@@ -25,7 +25,7 @@
 
   color: #222;
 
-  @media (max-width: hope-config.$pad) {
+  @media (max-width: hope-config.$tablet) {
     display: block;
 
     // NOTE: Compatible with Android Wechat
@@ -75,6 +75,10 @@
   margin: 2rem 4rem;
 
   @media (max-width: hope-config.$pad) {
+    width: 10rem;
+  }
+
+  @media (max-width: hope-config.$tablet) {
     width: 8rem;
     margin: 0 auto;
   }
@@ -104,6 +108,10 @@
   justify-content: center;
   padding: 2rem;
 
+  @media (max-width: hope-config.$tablet) {
+    padding: 1rem 0;
+  }
+
   &:only-child {
     flex: initial;
   }
@@ -116,8 +124,21 @@
 .vp-highlight-title {
   margin-bottom: 1.5rem;
   border-bottom: none;
-  font-size: 2.5rem;
+  font-size: 3rem;
   font-family: var(--font-family);
+
+  @media (max-width: hope-config.$pad) {
+    font-size: 2.5rem;
+  }
+
+  @media (max-width: hope-config.$tablet) {
+    font-size: 2.25rem;
+    text-align: center;
+  }
+
+  @media (max-width: hope-config.$mobile) {
+    font-size: 2rem;
+  }
 }
 
 .vp-highlight-wrapper {

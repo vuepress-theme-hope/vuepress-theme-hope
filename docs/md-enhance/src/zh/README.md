@@ -3,12 +3,10 @@ home: true
 title: 主页
 icon: home
 heroImage: /logo.svg
-bgImage: https://theme-hope-assets.vuejs.press/bg/light6.svg
-bgImageDark: https://theme-hope-assets.vuejs.press/bg/dark6.svg
+bgImage: https://theme-hope-assets.vuejs.press/bg/6-light.svg
+bgImageDark: https://theme-hope-assets.vuejs.press/bg/6-dark.svg
 bgImageStyle:
   background-attachment: fixed
-  background-position: bottom 0 left 50%
-  background-size: cover
 heroText: vuepress-plugin-md-enhance
 tagline: 为 VuePress2 提供更多 Markdown 增强功能
 actions:
@@ -22,8 +20,8 @@ actions:
 highlights:
   - header: 开箱即用
     image: /assets/image/box.svg
-    bgImage: https://theme-hope-assets.vuejs.press/bg/light1.svg
-    bgImageDark: https://theme-hope-assets.vuejs.press/bg/dark1.svg
+    bgImage: https://theme-hope-assets.vuejs.press/bg/1-light.svg
+    bgImageDark: https://theme-hope-assets.vuejs.press/bg/1-dark.svg
     highlights:
       - title: 链接检查
         icon: clipboard-check
@@ -37,8 +35,8 @@ highlights:
 
   - header: 标记内容
     image: /assets/image/marker.svg
-    bgImage: https://theme-hope-assets.vuejs.press/bg/light2.svg
-    bgImageDark: https://theme-hope-assets.vuejs.press/bg/dark2.svg
+    bgImage: https://theme-hope-assets.vuejs.press/bg/2-light.svg
+    bgImageDark: https://theme-hope-assets.vuejs.press/bg/2-dark.svg
     bgImageStyle:
       background-repeat: repeat
       background-size: initial
@@ -65,8 +63,8 @@ highlights:
 
   - header: 创作内容
     image: /assets/image/edit.svg
-    bgImage: https://theme-hope-assets.vuejs.press/bg/light3.svg
-    bgImageDark: https://theme-hope-assets.vuejs.press/bg/dark3.svg
+    bgImage: https://theme-hope-assets.vuejs.press/bg/3-light.svg
+    bgImageDark: https://theme-hope-assets.vuejs.press/bg/3-dark.svg
     highlights:
       - title: 自定义对齐支持
         icon: align-center
@@ -90,8 +88,8 @@ highlights:
 
   - header: 丰富你的内容
     image: /assets/image/module.svg
-    bgImage: https://theme-hope-assets.vuejs.press/bg/light4.svg
-    bgImageDark: https://theme-hope-assets.vuejs.press/bg/dark4.svg
+    bgImage: https://theme-hope-assets.vuejs.press/bg/4-light.svg
+    bgImageDark: https://theme-hope-assets.vuejs.press/bg/4-dark.svg
     highlights:
       - title: Tex 支持
         icon: square-root-variable
@@ -125,8 +123,8 @@ highlights:
 
   - header: 在 Markdown 中嵌入图表
     image: /assets/image/chart.svg
-    bgImage: https://theme-hope-assets.vuejs.press/bg/light5.svg
-    bgImageDark: https://theme-hope-assets.vuejs.press/bg/dark5.svg
+    bgImage: https://theme-hope-assets.vuejs.press/bg/5-light.svg
+    bgImageDark: https://theme-hope-assets.vuejs.press/bg/5-dark.svg
     highlights:
       - title: 图表支持
         icon: chart-simple
@@ -150,8 +148,8 @@ highlights:
 
   - header: 展示你的代码和工作
     image: /assets/image/code.svg
-    bgImage: https://theme-hope-assets.vuejs.press/bg/light3.svg
-    bgImageDark: https://theme-hope-assets.vuejs.press/bg/dark3.svg
+    bgImage: https://theme-hope-assets.vuejs.press/bg/3-light.svg
+    bgImageDark: https://theme-hope-assets.vuejs.press/bg/3-dark.svg
     highlights:
       - title: 代码选项卡
         icon: code

@@ -97,7 +97,7 @@ export default defineComponent({
                   class: ["vp-hero-mask", { light: bgInfo.value.imageDark }],
                   style: [
                     {
-                      background: `url(${bgInfo.value.image}) center/cover no-repeat`,
+                      "background-image": `url(${bgInfo.value.image})`,
                     },
                     bgInfo.value.bgStyle,
                   ],
@@ -108,7 +108,7 @@ export default defineComponent({
                   class: "vp-hero-mask dark",
                   style: [
                     {
-                      background: `url(${bgInfo.value.imageDark}) center/cover no-repeat`,
+                      "background-image": `url(${bgInfo.value.imageDark})`,
                     },
                     bgInfo.value.bgStyle,
                   ],

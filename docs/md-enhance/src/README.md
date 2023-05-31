@@ -3,12 +3,10 @@ home: true
 title: Home
 icon: home
 heroImage: /logo.svg
-bgImage: https://theme-hope-assets.vuejs.press/bg/light6.svg
-bgImageDark: https://theme-hope-assets.vuejs.press/bg/dark6.svg
+bgImage: https://theme-hope-assets.vuejs.press/bg/6-light.svg
+bgImageDark: https://theme-hope-assets.vuejs.press/bg/6-dark.svg
 bgImageStyle:
   background-attachment: fixed
-  background-position: bottom 0 left 50%
-  background-size: cover
 heroText: vuepress-plugin-md-enhance
 tagline: Enhancement for Markdown in VuePress
 actions:
@@ -22,8 +20,8 @@ actions:
 highlights:
   - header: Out of box
     image: /assets/image/box.svg
-    bgImage: https://theme-hope-assets.vuejs.press/bg/light1.svg
-    bgImageDark: https://theme-hope-assets.vuejs.press/bg/dark1.svg
+    bgImage: https://theme-hope-assets.vuejs.press/bg/3-light.svg
+    bgImageDark: https://theme-hope-assets.vuejs.press/bg/3-dark.svg
     highlights:
       - title: Links Check
         icon: clipboard-check
@@ -37,8 +35,8 @@ highlights:
 
   - header: Marking contents
     image: /assets/image/marker.svg
-    bgImage: https://theme-hope-assets.vuejs.press/bg/light2.svg
-    bgImageDark: https://theme-hope-assets.vuejs.press/bg/dark2.svg
+    bgImage: https://theme-hope-assets.vuejs.press/bg/1-light.svg
+    bgImageDark: https://theme-hope-assets.vuejs.press/bg/1-dark.svg
     bgImageStyle:
       background-repeat: repeat
       background-size: initial
@@ -65,8 +63,8 @@ highlights:
 
   - header: Writing articles
     image: /assets/image/edit.svg
-    bgImage: https://theme-hope-assets.vuejs.press/bg/light3.svg
-    bgImageDark: https://theme-hope-assets.vuejs.press/bg/dark3.svg
+    bgImage: https://theme-hope-assets.vuejs.press/bg/9-light.svg
+    bgImageDark: https://theme-hope-assets.vuejs.press/bg/9-dark.svg
     highlights:
       - title: Custom Align
         icon: align-center
@@ -90,8 +88,11 @@ highlights:
 
   - header: Richer Your Contents
     image: /assets/image/module.svg
-    bgImage: https://theme-hope-assets.vuejs.press/bg/light4.svg
-    bgImageDark: https://theme-hope-assets.vuejs.press/bg/dark4.svg
+    bgImage: https://theme-hope-assets.vuejs.press/bg/2-light.svg
+    bgImageDark: https://theme-hope-assets.vuejs.press/bg/2-dark.svg
+    bgImageStyle:
+      background-repeat: repeat
+      background-size: initial
     highlights:
       - title: Tex Support
         icon: square-root-variable
@@ -125,8 +126,8 @@ highlights:
 
   - header: Inserting Charts in Markdown
     image: /assets/image/chart.svg
-    bgImage: https://theme-hope-assets.vuejs.press/bg/light5.svg
-    bgImageDark: https://theme-hope-assets.vuejs.press/bg/dark5.svg
+    bgImage: https://theme-hope-assets.vuejs.press/bg/5-light.svg
+    bgImageDark: https://theme-hope-assets.vuejs.press/bg/5-dark.svg
     highlights:
       - title: Chart Support
         icon: chart-simple
@@ -150,8 +151,8 @@ highlights:
 
   - header: Showing your codes and works
     image: /assets/image/code.svg
-    bgImage: https://theme-hope-assets.vuejs.press/bg/light3.svg
-    bgImageDark: https://theme-hope-assets.vuejs.press/bg/dark3.svg
+    bgImage: https://theme-hope-assets.vuejs.press/bg/4-light.svg
+    bgImageDark: https://theme-hope-assets.vuejs.press/bg/4-dark.svg
     highlights:
       - title: Code Tabs
         icon: code
