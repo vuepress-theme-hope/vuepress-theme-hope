@@ -1,6 +1,6 @@
 ---
 title: Bar feature
-icon: creative
+icon: lightbulb
 ---
 
 ## Introduction

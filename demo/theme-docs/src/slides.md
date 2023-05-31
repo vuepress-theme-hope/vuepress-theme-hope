@@ -1,6 +1,6 @@
 ---
 title: Slide page
-icon: slides
+icon: person-chalkboard
 layout: Slide
 ---
 
