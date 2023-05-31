@@ -140,12 +140,14 @@ export default defineComponent({
                 ? h("img", {
                     class: ["vp-highlight-image", { light: imageDark }],
                     src: withBase(image),
+                    alt: header,
                   })
                 : null,
               imageDark
-                ? h("div", {
+                ? h("img", {
                     class: "vp-highlight-image dark",
                     src: withBase(imageDark),
+                    alt: header,
                   })
                 : null,
             ],
