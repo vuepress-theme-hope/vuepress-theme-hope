@@ -73,7 +73,7 @@
     visibility: hidden;
 
     transition: all 0.18s ease-out;
-    transform: translateY(-1.5rem) scale(0.95);
+    transform: scale(0.9);
 
     #{hope-config.$rtl-selector} & {
       right: unset;
