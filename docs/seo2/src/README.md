@@ -7,11 +7,11 @@ heroText: vuepress-plugin-seo2
 tagline: Full SEO enhance of your site
 actions:
   - text: Guide 💡
-    link: /guide.html
+    link: ./guide.html
     type: primary
 
   - text: Config 🛠
-    link: /config.html
+    link: ./config.html
 
 footer: Theme by <a href="https://theme-hope.vuejs.press" target="_blank">VuePress Theme Hope</a> | MIT Licensed, Copyright © 2019-present Mr.Hope
 

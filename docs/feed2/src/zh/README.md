@@ -7,11 +7,11 @@ heroText: vuepress-plugin-feed2
 tagline: 为 VuePress2 提供 Feed 生成
 actions:
   - text: 快速上手 💡
-    link: /zh/guide.html
+    link: ./guide.html
     type: primary
 
   - text: 配置 🛠
-    link: /zh/config/
+    link: ./config/
 
 footer: 使用 <a href="https://theme-hope.vuejs.press/zh/" target="_blank">VuePress Theme Hope</a> 主题 | MIT 协议, 版权所有 © 2019-present Mr.Hope
 

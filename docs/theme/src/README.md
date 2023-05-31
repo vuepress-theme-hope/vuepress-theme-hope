@@ -11,14 +11,14 @@ heroText: VuePress Theme Hope
 tagline: A VuePress theme with tons of features✨
 actions:
   - text: Tutorial 🧭
-    link: /cookbook/tutorial/
+    link: ./cookbook/tutorial/
     type: primary
 
   - text: Intro 💡
-    link: /guide/get-started/intro.html
+    link: ./guide/get-started/intro.html
 
   - text: Config 🛠
-    link: /config/
+    link: ./config/
 
   - text: Online Demo 🪀
     link: https://stackblitz.com/fork/vuepress-theme-hope
@@ -70,27 +70,27 @@ highlights:
       - title: Layout
         icon: object-group
         details: Improved navbar, sidebar, page nav and new breadcrumb, footer and toc. We also bring you a brand new homepage.
-        link: /guide/layout/
+        link: ./guide/layout/
 
       - title: Dark Mode
         icon: circle-half-stroke
         details: Switch between light and dark modes freely
-        link: /guide/interface/darkmode.html
+        link: ./guide/interface/darkmode.html
 
       - title: Customizable Theme Color
         icon: palette
         details: Customize theme color
-        link: /guide/interface/theme-color.html
+        link: ./guide/interface/theme-color.html
 
       - title: Slide Page
         icon: person-chalkboard
         details: Adding slide pages to display things you like
-        link: /guide/layout/slides
+        link: ./guide/layout/slides
 
       - title: More
         icon: ellipsis
         details: RTL layout, print support, fullscreen button, etc.
-        link: /guide/interface/others.html
+        link: ./guide/interface/others.html
 
   - header: New features
     image: /assets/image/features.svg
@@ -100,32 +100,32 @@ highlights:
       - title: Pageviews and Comments
         icon: comment-dots
         details: Start pageview statistics and comment support with Waline
-        link: /guide/feature/comment.html
+        link: ./guide/feature/comment.html
 
       - title: Article Information
         icon: circle-info
         details: Add author, writing date, reading time, word count and other information to your article
-        link: /guide/feature/page-info.html
+        link: ./guide/feature/page-info.html
 
       - title: Article Encryption
         icon: lock
         details: Encrypt you articles based on page links, so that only the one you want could see them
-        link: /guide/feature/encrypt.html
+        link: ./guide/feature/encrypt.html
 
       - title: Search
         icon: search
         details: Support docsearch and client search
-        link: /guide/feature/search.html
+        link: ./guide/feature/search.html
 
       - title: Copy Code Blocks
         icon: copy
         details: Copy codes with one click in code blocks
-        link: /guide/feature/copy-code.html
+        link: ./guide/feature/copy-code.html
 
       - title: Image Preview
         icon: image
         details: Support viewing, zooming, sharing your page images like a gallery
-        link: /guide/feature/photo-swipe.html
+        link: ./guide/feature/photo-swipe.html
 
   - header: Blogging
     description: Create personal blog with theme
@@ -136,22 +136,22 @@ highlights:
       - title: Blog features
         icon: blog
         details: Listing your articles with their dates, tags and categories
-        link: /guide/blog/intro.html
+        link: ./guide/blog/intro.html
 
       - title: Blog homepage
         icon: blog
         details: New blog homepage
-        link: /guide/blog/home.html
+        link: ./guide/blog/home.html
 
       - title: Blogger info
         icon: circle-info
         details: Customize avatar, name, slogan, introduction and social links
-        link: /guide/blog/blogger.html
+        link: ./guide/blog/blogger.html
 
       - title: Timeline
         icon: clock
         details: Read through blog posts in a timeline
-        link: /guide/blog/timeline.html
+        link: ./guide/blog/timeline.html
 
   - header: Advanced
     description: Advanced features to improve site SEO and user experience
@@ -162,22 +162,22 @@ highlights:
       - title: SEO Enhancement
         icon: dumbbell
         details: Optimize pages for search engines
-        link: /guide/advanced/seo.html
+        link: ./guide/advanced/seo.html
 
       - title: Sitemap
         icon: sitemap
         details: Generate a Sitemap for your site
-        link: /guide/advanced/sitemap.html
+        link: ./guide/advanced/sitemap.html
 
       - title: Feed
         icon: rss
         details: Generate feed to allow users to subscribe it
-        link: /guide/advanced/feed.html
+        link: ./guide/advanced/feed.html
 
       - title: PWA
         icon: mobile-screen
         details: Make your site more like an APP
-        link: /guide/advanced/pwa.html
+        link: ./guide/advanced/pwa.html
 
 copyright: false
 footer: MIT Licensed | Copyright © 2019-present Mr.Hope

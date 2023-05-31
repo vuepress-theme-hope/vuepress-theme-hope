@@ -7,7 +7,7 @@ heroText: vuepress-plugin-md-enhance
 tagline: Enhancement for Markdown in VuePress
 actions:
   - text: Demo
-    link: /demo/
+    link: ./demo/
     type: primary
 
   - text: Docs
