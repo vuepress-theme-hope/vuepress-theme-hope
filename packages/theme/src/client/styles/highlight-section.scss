@@ -3,6 +3,12 @@
   display: flex;
   align-items: center;
   justify-content: center;
+
+  &:nth-child(2n) {
+    .vp-highlight-section {
+      flex-direction: row-reverse;
+    }
+  }
 }
 
 .vp-highlight-section {

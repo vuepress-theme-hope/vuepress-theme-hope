@@ -1,5 +1,4 @@
 ---
-layout: HighlightHomePage
 home: true
 title: 主页
 icon: home
@@ -84,7 +83,7 @@ highlights:
         details: 将你的文档分段，并在 Markdown 中导入
         link: /zh/guide/include.html
 
-      - title: 自定义图片
+      - title: 扩展图片语法
         icon: image
         details: 指定图片大小与颜色模式，并将它们转化为插图
         link: /zh/guide/image.html
@@ -133,6 +132,11 @@ highlights:
         icon: chart-simple
         details: 在 Markdown 中展示图表
         link: /zh/guide/chart.html
+
+      - title: ECharts 支持
+        icon: bar-chart
+        details: 在 Markdown 中展示 ECharts 图表
+        link: /zh/guide/echarts.html
 
       - title: 流程图支持
         icon: route

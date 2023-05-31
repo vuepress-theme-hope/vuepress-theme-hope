@@ -15,7 +15,7 @@ export default defineComponent({
     /**
      * Feature config
      */
-    items: {
+    features: {
       type: Object as PropType<ThemeProjectHomeFeatureItemOptions[]>,
       default: (): ThemeProjectHomeFeatureItemOptions[] =>
         [] as ThemeProjectHomeFeatureItemOptions[],
@@ -36,11 +36,11 @@ export default defineComponent({
         props.header
           ? h("h2", { class: "vp-feature-title" }, props.header)
           : null,
-        props.items.length
+        props.features.length
           ? h(
               "div",
               { class: "vp-features-wrapper" },
-              props.items.map(({ icon, title, details, link }) => {
+              props.features.map(({ icon, title, details, link }) => {
                 const children = [
                   h("h3", { class: "vp-feature-header" }, [
                     h(HopeIcon, { icon }),

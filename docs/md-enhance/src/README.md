@@ -1,5 +1,4 @@
 ---
-layout: HighlightHomePage
 home: true
 title: Home
 icon: home
@@ -84,7 +83,7 @@ highlights:
         details: split your docs with different parts and import them in Markdown
         link: /guide/include.html
 
-      - title: Customize Image
+      - title: Extended Image syntax
         icon: image
         details: Set size and color scheme for image and covert them to figure
         link: /guide/image.html
@@ -133,6 +132,11 @@ highlights:
         icon: chart-simple
         details: Display charts in Markdown
         link: /guide/chart.html
+
+      - title: ECharts Support
+        icon: bar-chart
+        details: Display ECharts in Markdown
+        link: /guide/echarts.html
 
       - title: Flowchart Support
         icon: route

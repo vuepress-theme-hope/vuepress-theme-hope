@@ -11,82 +11,12 @@ import { isLinkExternal } from "vuepress-shared/client";
 
 import HopeIcon from "@theme-hope/components/HopeIcon";
 
-import "./highlight-section.scss";
+import {
+  ThemeProjectHomeHighlightItem,
+  type ThemeProjectHomeHighlightSection,
+} from "../../shared/index.js";
 
-export interface HighlightItem {
-  /**
-   * Highlight Item title
-   */
-  title: string;
-
-  /**
-   * Highlight details
-   */
-  details?: string;
-
-  /**
-   * Highlight icon
-   */
-  icon?: string;
-
-  /**
-   * Highlight link
-   */
-  link?: string;
-}
-
-export interface HighlightSection {
-  /**
-   * Highlight Section title
-   */
-  header: string;
-
-  /**
-   * Highlight Section description
-   */
-  description?: string;
-
-  /**
-   * Text color
-   */
-  color?: string;
-
-  /**
-   * Highlight Section image
-   */
-  image?: string;
-
-  /**
-   * Highlight Background image used in darkmode
-   *
-   * @default image
-   */
-  imageDark?: string;
-
-  /**
-   * Highlight Background image
-   */
-  bgImage?: string;
-
-  /**
-   * Highlight Background image used in darkmode
-   *
-   * @default bgImage
-   */
-  bgImageDark?: string;
-
-  /**
-   * Highlight Section type
-   *
-   * @default un-order
-   */
-  type?: "order" | "un-order" | "no-order";
-
-  /**
-   * Highlights
-   */
-  highlights?: HighlightItem[];
-}
+import "../styles/highlight-section.scss";
 
 export default defineComponent({
   name: "HighlightSection",
@@ -150,15 +80,17 @@ export default defineComponent({
      * Highlights
      */
     highlights: {
-      type: Array as PropType<HighlightItem[]>,
+      type: Array as PropType<ThemeProjectHomeHighlightItem[]>,
       default: () => [],
     },
   },
 
   slots: Object as SlotsType<{
-    image?: (props: HighlightSection) => VNode[] | VNode | null;
-    info?: (props: HighlightSection) => VNode[] | VNode | null;
-    highlights?: (props: HighlightItem[]) => VNode[] | VNode | null;
+    image?: (props: ThemeProjectHomeHighlightSection) => VNode[] | VNode | null;
+    info?: (props: ThemeProjectHomeHighlightSection) => VNode[] | VNode | null;
+    highlights?: (
+      props: ThemeProjectHomeHighlightItem[]
+    ) => VNode[] | VNode | null;
   }>,
 
   setup(props, { slots }) {

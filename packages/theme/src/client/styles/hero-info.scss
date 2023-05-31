@@ -3,6 +3,8 @@
 @use "vuepress-shared/styles/shining";
 
 .vp-hero-info-wrapper {
+  position: relative;
+
   display: flex;
   align-items: center;
   justify-content: center;

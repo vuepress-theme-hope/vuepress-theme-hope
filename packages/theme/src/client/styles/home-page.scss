@@ -7,8 +7,10 @@
   padding-top: var(--navbar-height);
 
   .vp-hero-info-wrapper:not(.fullscreen) {
-    @media screen {
-      max-width: var(--home-page-width);
+    .vp-hero-info {
+      @media screen {
+        max-width: var(--home-page-width);
+      }
     }
   }
 
