@@ -1,7 +1,7 @@
 ---
-title: Features Demo
+title: Features demo
 index: false
-icon: discover
+icon: laptop-code
 category:
   - Guide
 ---

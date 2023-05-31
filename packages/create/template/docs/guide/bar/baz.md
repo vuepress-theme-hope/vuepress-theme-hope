@@ -1,6 +1,6 @@
 ---
 title: Baz
-icon: info
+icon: circle-info
 ---
 
 Feature details here.

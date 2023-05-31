@@ -1,6 +1,6 @@
 ---
 title: Ray
-icon: config
+icon: circle-info
 ---
 
 Feature details here.

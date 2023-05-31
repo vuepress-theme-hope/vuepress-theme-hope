@@ -10,13 +10,13 @@ export default hopeTheme({
     url: "https://mrhope.site",
   },
 
-  iconAssets: "iconfont",
+  iconAssets: "fontawesome-with-brands",
 
   logo: "/logo.svg",
 
   repo: "vuepress-theme-hope/vuepress-theme-hope",
 
-  docsDir: "demo/theme-docs/src",
+  docsDir: "src",
 
   locales: {
     "/": {
@@ -64,12 +64,16 @@ export default hopeTheme({
   },
 
   plugins: {
+    // You should generate and use your own comment service
     comment: {
-      // @ts-expect-error: You should generate and use your own comment service
-      provider: "Waline",
+      provider: "Giscus",
+      repo: "vuepress-theme-hope/giscus-discussions",
+      repoId: "R_kgDOG_Pt2A",
+      category: "Announcements",
+      categoryId: "DIC_kwDOG_Pt2M4COD69",
     },
 
-    // all features are enabled for demo, only preserve features you need here
+    // All features are enabled for demo, only preserve features you need here
     mdEnhance: {
       align: true,
       attrs: true,

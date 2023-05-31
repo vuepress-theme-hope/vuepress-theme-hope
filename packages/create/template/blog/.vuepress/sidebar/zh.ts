@@ -5,14 +5,14 @@ export const zhSidebar = sidebar({
     "",
     {
       text: "如何使用",
-      icon: "creative",
+      icon: "laptop-code",
       prefix: "demo/",
       link: "demo/",
       children: "structure",
     },
     {
       text: "文章",
-      icon: "note",
+      icon: "book",
       prefix: "posts/",
       children: "structure",
     },

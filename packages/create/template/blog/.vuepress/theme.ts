@@ -13,13 +13,13 @@ export default hopeTheme({
     url: "https://mrhope.site",
   },
 
-  iconAssets: "iconfont",
+  iconAssets: "fontawesome-with-brands",
 
   logo: "/logo.svg",
 
   repo: "vuepress-theme-hope/vuepress-theme-hope",
 
-  docsDir: "docs",
+  docsDir: "src",
 
   blog: {
     medias: {
@@ -117,8 +117,9 @@ export default hopeTheme({
     blog: true,
 
     comment: {
-      // @ts-expect-error: You should generate and use your own comment service
-      provider: "Giscus",
+      // You should generate and use your own comment service
+      provider: "Waline",
+      serverURL: "https://waline-comment.vuejs.press",
     },
 
     // all features are enabled for demo, only preserve features you need here

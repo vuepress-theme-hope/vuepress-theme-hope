@@ -1,6 +1,6 @@
 ---
 title: Markdown Enhance
-icon: markdown
+icon: fab fa-markdown
 order: 2
 category:
   - Guide
@@ -20,7 +20,7 @@ If you are a new learner and don't know how to write Markdown, please read [Mark
 
 ## Markdown Config
 
-VuePress introduce configuration for each Markdown page using Frontmatter.
+VuePress introduce configuration for each markdown page using Frontmatter.
 
 ::: info
 

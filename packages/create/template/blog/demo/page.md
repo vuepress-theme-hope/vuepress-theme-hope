@@ -4,7 +4,7 @@ title: Page Config
 # You can customize cover image
 cover: /assets/images/cover1.jpg
 # This is the icon of the page
-icon: page
+icon: file
 # This control sidebar order
 order: 1
 # Set author

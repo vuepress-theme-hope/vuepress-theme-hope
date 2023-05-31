@@ -1,6 +1,6 @@
 ---
 title: Foo feature
-icon: config
+icon: lightbulb
 ---
 
 ## Introduction
