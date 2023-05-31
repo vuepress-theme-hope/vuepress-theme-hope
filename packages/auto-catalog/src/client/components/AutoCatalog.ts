@@ -228,7 +228,15 @@ export default defineComponent({
                     ],
                   },
                   [
-                    h("a", { href: `#${title}`, class: "header-anchor" }, "#"),
+                    h(
+                      "a",
+                      {
+                        href: `#${title}`,
+                        class: "header-anchor",
+                        "aria-hidden": true,
+                      },
+                      "#"
+                    ),
                     h(
                       RouterLink,
                       { class: "vp-catalog-title", to: path },

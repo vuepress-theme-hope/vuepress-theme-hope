@@ -1,4 +1,4 @@
-.vp-auto-catalog {
+.vp-catalog {
   margin-top: 8px;
   margin-bottom: 8px;
 
@@ -6,9 +6,7 @@
     vertical-align: baseline;
     margin-inline-end: 0.25rem;
   }
-}
 
-.vp-catalog {
   &-main-title,
   &-child-title,
   &-sub-title {
@@ -36,7 +34,6 @@
   }
 
   &-sub-title {
-    color: var(--vp-clt);
     font-size: 1.1rem;
   }
 
@@ -80,7 +77,7 @@
   &:hover {
     background-color: var(--vp-tcl);
     color: var(--vp-bg);
-    text-decoration: none;
+    text-decoration: none !important;
   }
 }
 
