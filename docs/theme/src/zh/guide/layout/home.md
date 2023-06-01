@@ -87,7 +87,7 @@ tag:
 
 :::
 
-::: detail 亮点项目主页代码
+::: details 亮点项目主页代码
 
 @[code](../../README.md)
 

@@ -91,7 +91,7 @@ For complete configuration items, see [Home Frontmatter Configuration](../../con
 
 :::
 
-::: detail Highlight Homepage Code
+::: detailsHighlight Homepage Code
 
 @[code](../../README.md)
 
