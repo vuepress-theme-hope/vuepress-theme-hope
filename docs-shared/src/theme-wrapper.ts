@@ -41,6 +41,12 @@ export const theme = (
 
     logo: "/logo.svg",
 
+    navbarLayout: {
+      start: ["Brand"],
+      center: ["Links"],
+      end: ["Language", "Repo", "TelegramLink", "Outlook", "Search"],
+    },
+
     copyright: "MIT Licensed | Copyright © 2019-present Mr.Hope",
     displayFooter: true,
 

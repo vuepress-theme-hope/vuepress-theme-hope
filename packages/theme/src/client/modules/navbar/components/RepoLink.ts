@@ -23,7 +23,7 @@ export default defineComponent({
       repo.value
         ? h(
             "div",
-            { class: "nav-item" },
+            { class: "nav-item vp-repo" },
             h(
               "a",
               {
