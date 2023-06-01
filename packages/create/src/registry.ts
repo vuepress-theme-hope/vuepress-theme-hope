@@ -8,7 +8,7 @@ export interface RegistryAnswer {
   registry: "国内镜像源" | "当前源";
 }
 
-const npmmirrorRegistry = "https://registry.npmmirror.com/";
+const NPM_MIRROR_REGISTRY = "https://registry.npmmirror.com/";
 
 const getUserRegistry = (packageManager: PackageManager): string =>
   execaCommandSync(`${packageManager} config get registry`).stdout;
@@ -18,6 +18,16 @@ export const getRegistry = async (
   lang: Lang
 ): Promise<string> => {
   const userRegistry = getUserRegistry(packageManager);
+
+  if (/https:\/\/registry\.npm\.taobao\.org\//.test(userRegistry)) {
+    console.error(
+      "npm.taobao.org is no longer available, resetting it to npmmirror.com"
+    );
+
+    execaCommandSync(
+      `${packageManager} config set registry ${NPM_MIRROR_REGISTRY}`
+    );
+  }
 
   if (lang === "简体中文") {
     const { registry } = await inquirer.prompt<RegistryAnswer>([
@@ -29,7 +39,7 @@ export const getRegistry = async (
       },
     ]);
 
-    return registry === "国内镜像源" ? npmmirrorRegistry : userRegistry;
+    return registry === "国内镜像源" ? NPM_MIRROR_REGISTRY : userRegistry;
   }
 
   return userRegistry;
