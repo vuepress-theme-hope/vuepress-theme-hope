@@ -63,6 +63,7 @@ export default defineComponent({
       // FIXME: Typescript type issues
       const Artalk = _Artalk as unknown as typeof _Artalk.default;
 
+      loaded.value = true;
       await nextTick();
 
       try {
