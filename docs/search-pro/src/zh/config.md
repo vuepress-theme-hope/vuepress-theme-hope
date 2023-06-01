@@ -257,9 +257,9 @@ export default defineUserConfig({
     search: string;
 
     /**
-     * 关闭文字
-     */
+     * 关闭文字 * 已废弃
     close: string;
+     */
 
     /**
      * 选择提示
@@ -282,9 +282,14 @@ export default defineUserConfig({
     loading: string;
 
     /**
-     * 无结果提示
+     * 无搜索结果提示
      */
-    empty: string;
+    emptyResult: string;
+
+    /**
+     * 无历史结果提示
+     */
+    emptyHistory: string;
   }
 
   interface SearchProLocaleConfig {
