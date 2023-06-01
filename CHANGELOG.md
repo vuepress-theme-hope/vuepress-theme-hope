@@ -4,6 +4,25 @@ All notable changes to this project will be documented in this file. See [Conven
 
 <!-- #region recent-beta -->
 
+## [2.0.0-beta.219](https://github.com/vuepress-theme-hope/vuepress-theme-hope/compare/v2.0.0-beta.218...v2.0.0-beta.219) (2023-06-01)
+
+### Features
+
+- **create:** ensure user not using npm.taobao.org ([eba8d5a](https://github.com/vuepress-theme-hope/vuepress-theme-hope/commit/eba8d5a5c2cf7edba3f0ea94b2063c7214b43d8c))
+- **create:** support i18n config ([003788c](https://github.com/vuepress-theme-hope/vuepress-theme-hope/commit/003788cdf266f1bb1f86e0ea921792d4c6eb5dde))
+- **shared:** fix display issue on custom rem size device ([627ccb9](https://github.com/vuepress-theme-hope/vuepress-theme-hope/commit/627ccb9a82ce98dc06f0a0da4fec7e8112e9cd3b))
+
+### Bug Fixes
+
+- **comment2:** fix loading icon issue ([81e1678](https://github.com/vuepress-theme-hope/vuepress-theme-hope/commit/81e167852c659c948895984a8996b0f9a33ea0f4))
+- **create:** fix blog template navbar ([3d96a4f](https://github.com/vuepress-theme-hope/vuepress-theme-hope/commit/3d96a4f8deda9c8ec4c0a829f1a595f596d75727))
+- **theme:** fix feature style ([f942e5c](https://github.com/vuepress-theme-hope/vuepress-theme-hope/commit/f942e5c0fd5d900340552b5e0ec2ca9f674d02b2))
+- **theme:** fix homepage style ([4acc226](https://github.com/vuepress-theme-hope/vuepress-theme-hope/commit/4acc226a79af85ce11f955838215322184da420f))
+
+### Performance Improvements
+
+- **theme:** use functional component and small tweaks ([42e92e8](https://github.com/vuepress-theme-hope/vuepress-theme-hope/commit/42e92e8de34cab9fe877fc0b34ea9d8274c8c705))
+
 ## [2.0.0-beta.218](https://github.com/vuepress-theme-hope/vuepress-theme-hope/compare/v2.0.0-beta.217...v2.0.0-beta.218) (2023-05-31)
 
 ### Features
