@@ -41,12 +41,14 @@ export default defineComponent({
         import(/* webpackChunkName: "twikoo" */ "twikoo"),
         new Promise<void>((resolve) => {
           setTimeout(() => {
-            void nextTick().then(resolve);
+            resolve();
           }, twikooOptions.delay || 800);
         }),
       ]);
 
       loaded.value = true;
+
+      await nextTick();
 
       await init({
         lang: lang.value === "zh-CN" ? "zh-CN" : "en",
@@ -66,11 +68,10 @@ export default defineComponent({
 
     return (): VNode | null =>
       enableTwikoo
-        ? h(
-            "div",
-            { id: "comment", class: "twikoo-wrapper" },
-            loaded.value ? h("div", { id: "twikoo-comment" }) : h(LoadingIcon)
-          )
+        ? h("div", { id: "comment", class: "twikoo-wrapper" }, [
+            loaded.value ? null : h(LoadingIcon),
+            h("div", { id: "twikoo-comment" }),
+          ])
         : null;
   },
 });
