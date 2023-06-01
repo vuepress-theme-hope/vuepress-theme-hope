@@ -67,7 +67,7 @@ export default defineComponent({
             DropTransition,
             {
               appear: true,
-              delay: 0.16 + (features.value?.length || 0) * 0.08,
+              delay: 0.32,
             },
             () => h(MarkdownContent)
           ),
