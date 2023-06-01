@@ -123,10 +123,10 @@ Home actions
 
 ## highlights
 
-- Type: `ThemeProjectHomeHighlightSection[]`
+- Type: `(ThemeProjectHomeFeatureOptions |ThemeProjectHomeHighlightOptions)[]`
 
   ```ts
-  interface ThemeProjectHomeItemOption {
+  interface ThemeProjectHomeHighlightItem {
     /**
      * Item name, supports HTML string
      */
@@ -148,6 +148,59 @@ Home actions
      * Item link
      */
     link?: string;
+  }
+
+  type ThemeProjectHomeFeatureItem = ThemeProjectHomeHighlightItem;
+
+  interface ThemeProjectHomeFeatureOptions {
+    /**
+     * Feature header
+     */
+    header?: string;
+
+    /**
+     * Feature section description, supports HTML string
+     */
+    description?: string;
+
+    /**
+     * Text color
+     */
+    color?: string;
+
+    /**
+     * Feature section image
+     */
+    image?: string;
+
+    /**
+     * Feature section image used in darkmode
+     *
+     * @default image
+     */
+    imageDark?: string;
+
+    /**
+     * Feature Background image
+     */
+    bgImage?: string;
+
+    /**
+     * Feature Background image used in darkmode
+     *
+     * @default bgImage
+     */
+    bgImageDark?: string;
+
+    /**
+     * Features Background image style
+     */
+    bgImageStyle?: Record<string, string> | string;
+
+    /**
+     * Features
+     */
+    features: ThemeProjectHomeFeatureItem[];
   }
 
   interface ThemeProjectHomeHighlightSection {
@@ -191,6 +244,11 @@ Home actions
     bgImageDark?: string;
 
     /**
+     * Highlight Background image style
+     */
+    bgImageStyle?: Record<string, string> | string;
+
+    /**
      * Highlight section list type
      *
      * @default un-order
@@ -200,7 +258,7 @@ Home actions
     /**
      * Highlights
      */
-    highlights?: ThemeProjectHomeItemOption[];
+    highlights?: ThemeProjectHomeHighlightItem[];
   }
   ```
 
@@ -210,10 +268,10 @@ Highlights description.
 
 ## features
 
-- Type: `ThemeHomeFeatureOptions[]`
+- Type: `ThemeProjectHomeFeatureItem[]`
 
   ```ts
-  interface ThemeProjectHomeItemOption {
+  interface ThemeProjectHomeFeatureItem {
     /**
      * Item name, supports HTML string
      */
@@ -235,18 +293,6 @@ Highlights description.
      * Item link
      */
     link?: string;
-  }
-
-  interface ThemeProjectHomeFeatureOptions {
-    /**
-     * Feature header
-     */
-    header?: string;
-
-    /**
-     * Feature config
-     */
-    features: ThemeProjectHomeItemOption[];
   }
   ```
 

@@ -38,28 +38,39 @@ You can set them via `actions` which is an array where each element is an object
 - `link`: button link
 - `type`: button type (only `"primary"` and `"default"` (default) are supported)
 
+## Project features (legacy)
+
+You can set and display item features through `features`, which is an array, each element is an object, containing the following keys:
+
+- `title`: title
+- `details`: details
+- `icon` (optional): can be filled with full path or absolute path image link, or FontClass
+- `link` (optional): link address
+
 ## Project Highlights and features
 
-You can set and display project highlights through `highlights`, which is an array, each element is an object, representing a highlight section.
+You can set and display project features and highlights through `highlights`, which is an array, each element is an object, representing a highlight or feature section.
 
-You can also set and display project features through `features`, which is an array, each element is an object, representing a feature section.
-
-Both highlights and features support `header` and `description` properties. Where `header` is the title of the section and `description` is the description of the section. You can set HTML string to them.
-
-Highlights use `highlights` to set highlights and features use `features` to set features. Both of them are arrays, each element is an object, representing a highlight or feature item:
+Highlight section use `highlights` to set highlights and feature section use `features` to set features (you should only set one of them). Both of them are arrays, each element is an object, representing a highlight or feature item:
 
 - `title`: title, HTML string is supported
 - `details`: details, HTML string is supported
 - `icon` (optional): can be filled with full path or absolute path image link, or FontClass
 - `link` (optional): link address
 
-Highlights also support the following properties:
+You can also set the following optional keys:
 
+- `header`: section title, supports HTML string
+- `description`: section description, supports HTML string
 - `color`: Text color
 - `image`: Section image
 - `imageDark`: Section image used in darkmode
 - `bgImage`: Section background image
 - `bgImageDark`: Section background image used in darkmode
+- `bgImageStyle`: Section background image styles
+
+Highlights also support the following properties:
+
 - `type`: `"order"`, `"un-order"`(default) or `"no-order"`
 
 ::: info

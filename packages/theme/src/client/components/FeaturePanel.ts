@@ -1,207 +1,143 @@
 import { withBase } from "@vuepress/client";
 import { isLinkExternal } from "@vuepress/shared";
-import {
-  type PropType,
-  type SlotsType,
-  type VNode,
-  defineComponent,
-  h,
-} from "vue";
+import { type FunctionalComponent, type VNode, h } from "vue";
 import { RouterLink } from "vue-router";
 
 import HopeIcon from "@theme-hope/components/HopeIcon";
 
 import {
   type ThemeProjectHomeFeatureOptions,
-  type ThemeProjectHomeItemOption,
+  type ThemeProjectHomeHighlightItem,
 } from "../../shared/index.js";
 
 import "../styles/feature-panel.scss";
 
-export default defineComponent({
-  name: "FeaturePanel",
-
-  props: {
-    /**
-     * Feature config
-     */
-    features: {
-      type: Object as PropType<ThemeProjectHomeItemOption[]>,
-      default: (): ThemeProjectHomeItemOption[] =>
-        [] as ThemeProjectHomeItemOption[],
-    },
-
-    /**
-     * Feature header
-     */
-    header: { type: String, default: "" },
-
-    /**
-     * Feature Section description
-     */
-    description: { type: String, default: "" },
-
-    /**
-     * Feature text color
-     */
-    color: { type: String, default: "" },
-
-    /**
-     * Feature Section image
-     */
-    image: { type: String, default: "" },
-
-    /**
-     * Feature Background image used in darkmode
-     *
-     * @default image
-     */
-    imageDark: { type: String, default: "" },
-
-    /**
-     * Feature Background image
-     */
-    bgImage: { type: String, default: "" },
-
-    /**
-     * Feature Background image used in darkmode
-     *
-     * @default bgImage
-     */
-    bgImageDark: { type: String, default: "" },
-
-    /**
-     * Feature Background image style
-     */
-    bgImageStyle: { type: [String, Object], default: "" },
-  },
-
-  slots: Object as SlotsType<{
+const FeaturePanel: FunctionalComponent<
+  ThemeProjectHomeFeatureOptions,
+  Record<never, never>,
+  {
     image?: (props: ThemeProjectHomeFeatureOptions) => VNode[] | VNode | null;
     info?: (props: ThemeProjectHomeFeatureOptions) => VNode[] | VNode | null;
     highlights?: (
-      props: ThemeProjectHomeItemOption[]
+      props: ThemeProjectHomeHighlightItem[]
     ) => VNode[] | VNode | null;
-  }>,
+  }
+> = (props, { slots }) => {
+  const {
+    bgImage,
+    bgImageDark,
+    bgImageStyle,
+    color,
+    description,
+    image,
+    imageDark,
+    header,
+    features = [],
+  } = props;
 
-  setup(props, { slots }) {
-    return (): VNode => {
-      const {
-        bgImage,
-        bgImageDark,
-        bgImageStyle,
-        color,
-        description,
-        image,
-        imageDark,
-        header,
-        features,
-      } = props;
-
-      return h(
+  return h(
+    "div",
+    {
+      class: "vp-feature-wrapper",
+    },
+    [
+      bgImage
+        ? h("div", {
+            class: ["vp-feature-bg", { light: bgImageDark }],
+            style: [{ "background-image": `url(${bgImage})` }, bgImageStyle],
+          })
+        : null,
+      bgImageDark
+        ? h("div", {
+            class: "vp-feature-bg dark",
+            style: [
+              { "background-image": `url(${bgImageDark})` },
+              bgImageStyle,
+            ],
+          })
+        : null,
+      h(
         "div",
         {
-          class: "vp-feature-wrapper",
+          class: "vp-feature",
+          style: color ? { color: color } : {},
         },
         [
-          bgImage
-            ? h("div", {
-                class: ["vp-feature-bg", { light: bgImageDark }],
-                style: [
-                  { "background-image": `url(${bgImage})` },
-                  bgImageStyle,
-                ],
-              })
-            : null,
-          bgImageDark
-            ? h("div", {
-                class: "vp-feature-bg dark",
-                style: [
-                  { "background-image": `url(${bgImageDark})` },
-                  bgImageStyle,
-                ],
-              })
-            : null,
-          h(
-            "div",
-            {
-              class: "vp-feature",
-              style: color ? { color: color } : {},
-            },
-            [
-              slots.image?.(props) || [
-                image
-                  ? h("img", {
-                      class: ["vp-feature-image", { light: imageDark }],
-                      src: withBase(image),
-                      alt: header,
-                    })
-                  : null,
-                imageDark
-                  ? h("img", {
-                      class: "vp-feature-image dark",
-                      src: withBase(imageDark),
-                      alt: header,
-                    })
-                  : null,
-              ],
+          slots.image?.(props) || [
+            image
+              ? h("img", {
+                  class: ["vp-feature-image", { light: imageDark }],
+                  src: withBase(image),
+                  alt: header,
+                })
+              : null,
+            imageDark
+              ? h("img", {
+                  class: "vp-feature-image dark",
+                  src: withBase(imageDark),
+                  alt: header,
+                })
+              : null,
+          ],
 
-              slots.info?.(props) || [
-                header ? h("h2", { class: "vp-feature-header" }, header) : null,
-                description
-                  ? h("p", {
-                      class: "vp-feature-description",
-                      innerHTML: description,
-                    })
-                  : null,
-              ],
-              features.length
-                ? h(
-                    "div",
-                    { class: "vp-features" },
-                    features.map(({ icon, title, details, link }) => {
-                      const children = [
-                        h("h3", { class: "vp-feature-title" }, [
-                          h(HopeIcon, { icon }),
-                          h("span", { innerHTML: title }),
-                        ]),
-                        h("p", {
-                          class: "vp-feature-details",
-                          innerHTML: details,
-                        }),
-                      ];
+          slots.info?.(props) || [
+            header ? h("h2", { class: "vp-feature-header" }, header) : null,
+            description
+              ? h("p", {
+                  class: "vp-feature-description",
+                  innerHTML: description,
+                })
+              : null,
+          ],
+          features.length
+            ? h(
+                "div",
+                { class: "vp-features" },
+                features.map(({ icon, title, details, link }) => {
+                  const children = [
+                    h("h3", { class: "vp-feature-title" }, [
+                      h(HopeIcon, { icon }),
+                      h("span", { innerHTML: title }),
+                    ]),
+                    h("p", {
+                      class: "vp-feature-details",
+                      innerHTML: details,
+                    }),
+                  ];
 
-                      return link
-                        ? isLinkExternal(link)
-                          ? h(
-                              "a",
-                              {
-                                class: "vp-feature-item link",
-                                href: link,
-                                role: "navigation",
-                                "aria-label": title,
-                                target: "_blank",
-                              },
-                              children
-                            )
-                          : h(
-                              RouterLink,
-                              {
-                                class: "vp-feature-item link",
-                                to: link,
-                                role: "navigation",
-                                "aria-label": title,
-                              },
-                              () => children
-                            )
-                        : h("div", { class: "vp-feature" }, children);
-                    })
-                  )
-                : null,
-            ]
-          ),
+                  return link
+                    ? isLinkExternal(link)
+                      ? h(
+                          "a",
+                          {
+                            class: "vp-feature-item link",
+                            href: link,
+                            role: "navigation",
+                            "aria-label": title,
+                            target: "_blank",
+                          },
+                          children
+                        )
+                      : h(
+                          RouterLink,
+                          {
+                            class: "vp-feature-item link",
+                            to: link,
+                            role: "navigation",
+                            "aria-label": title,
+                          },
+                          () => children
+                        )
+                    : h("div", { class: "vp-feature" }, children);
+                })
+              )
+            : null,
         ]
-      );
-    };
-  },
-});
+      ),
+    ]
+  );
+};
+
+FeaturePanel.displayName = "FeaturePanel";
+
+export default FeaturePanel;

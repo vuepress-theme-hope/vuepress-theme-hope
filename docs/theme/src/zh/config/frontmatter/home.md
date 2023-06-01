@@ -123,41 +123,43 @@ tag:
 
 ## highlights
 
-- 类型: `ThemeProjectHomeHighlightSection[]`
+- 类型: `(ThemeProjectHomeFeatureOptions | ThemeProjectHomeHighlightOptions)[]`
 
   ```ts
-  interface ThemeProjectHomeItemOption {
+  interface ThemeProjectHomeHighlightItem {
     /**
-     * 项目名称，支持 HTML 字符串
+     * Item name, supports HTML string
      */
     title: string;
 
     /**
-     * 项目描述，支持 HTML 字符串
+     * Item description, supports HTML string
      */
     details?: string;
 
     /**
-     * 项目图标
+     * Item icon
      *
-     * @description 支持图片链接或者图标字体类
+     * @description image link or icon fontClass are supported
      */
     icon?: string;
 
     /**
-     * 项目链接
+     * Item link
      */
     link?: string;
   }
 
-  interface ThemeProjectHomeHighlightSection {
+  type ThemeProjectHomeFeatureItem = ThemeProjectHomeHighlightItem;
+
+  interface ThemeProjectHomeFeatureOptions {
     /**
-     * 高亮标题，支持 HTML 字符串
+     * 功能标题
      */
-    header: string;
+    header?: string;
 
     /**
-     * 高亮描述，支持 HTML 字符串
+     * 功能描述，支持 HTML 字符串
      */
     description?: string;
 
@@ -167,40 +169,96 @@ tag:
     color?: string;
 
     /**
-     * 高亮图像
+     * 功能图像
      */
     image?: string;
 
     /**
-     * 夜间模式使用的高亮图片
+     * 夜间模式使用的功能图片
      *
      * @default image
      */
     imageDark?: string;
 
     /**
-     * 高亮背景图
+     * 功能背景图
      */
     bgImage?: string;
 
     /**
-     * 夜间模式使用的高亮背景图
+     * 夜间模式使用的功能背景图
      *
      * @default bgImage
      */
     bgImageDark?: string;
 
     /**
-     * 高亮列表类型
+     * 功能背景图样式
+     */
+    bgImageStyle?: Record<string, string> | string;
+
+    /**
+     * 功能
+     */
+    features: ThemeProjectHomeFeatureItem[];
+  }
+
+  interface ThemeProjectHomeHighlightSection {
+    /**
+     * 亮点标题，支持 HTML 字符串
+     */
+    header: string;
+
+    /**
+     * 亮点描述，支持 HTML 字符串
+     */
+    description?: string;
+
+    /**
+     * 文字颜色
+     */
+    color?: string;
+
+    /**
+     * 亮点图像
+     */
+    image?: string;
+
+    /**
+     * 夜间模式使用的亮点图片
+     *
+     * @default image
+     */
+    imageDark?: string;
+
+    /**
+     * 亮点背景图
+     */
+    bgImage?: string;
+
+    /**
+     * 夜间模式使用的亮点背景图
+     *
+     * @default bgImage
+     */
+    bgImageDark?: string;
+
+    /**
+     * 亮点背景图样式
+     */
+    bgImageStyle?: Record<string, string> | string;
+
+    /**
+     * 亮点列表类型
      *
      * @default un-order
      */
     type?: "order" | "un-order" | "no-order";
 
     /**
-     * 高亮
+     * 亮点
      */
-    highlights?: ThemeProjectHomeItemOption[];
+    highlights?: ThemeProjectHomeHighlightItem[];
   }
   ```
 
@@ -210,10 +268,10 @@ tag:
 
 ## features
 
-- 类型: `ThemeHomeFeatureOptions[]`
+- 类型: `ThemeProjectHomeFeatureItem[]`
 
   ```ts
-  interface ThemeProjectHomeItemOption {
+  interface ThemeProjectHomeFeatureItem {
     /**
      * 项目名称，支持 HTML 字符串
      */
@@ -235,18 +293,6 @@ tag:
      * 项目链接
      */
     link?: string;
-  }
-
-  interface ThemeProjectHomeFeatureOptions {
-    /**
-     * 功能标题
-     */
-    header?: string;
-
-    /**
-     * 功能配置
-     */
-    features: ThemeProjectHomeItemOption[];
   }
   ```
 

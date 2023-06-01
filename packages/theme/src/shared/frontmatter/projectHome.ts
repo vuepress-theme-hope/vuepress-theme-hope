@@ -25,7 +25,7 @@ export interface ThemeProjectHomeActionOptions {
   type?: "primary" | "default";
 }
 
-export interface ThemeProjectHomeItemOption {
+export interface ThemeProjectHomeHighlightItem {
   /**
    * Item name, supports HTML string
    *
@@ -59,34 +59,20 @@ export interface ThemeProjectHomeItemOption {
   link?: string;
 }
 
-export interface ThemeProjectHomeFeatureOptions {
-  /**
-   * Feature header
-   *
-   * 功能标题
-   */
-  header?: string;
-
-  /**
-   * Feature config
-   *
-   * 功能配置
-   */
-  features: ThemeProjectHomeItemOption[];
-}
+export type ThemeProjectHomeFeatureItem = ThemeProjectHomeHighlightItem;
 
 export interface ThemeProjectHomeHighlightOptions {
   /**
    * Highlight section header, supports HTML string
    *
-   * 高亮标题，支持 HTML 字符串
+   * 亮点标题，支持 HTML 字符串
    */
   header: string;
 
   /**
    * Highlight section description, supports HTML string
    *
-   * 高亮描述，支持 HTML 字符串
+   * 亮点描述，支持 HTML 字符串
    */
   description?: string;
 
@@ -100,14 +86,14 @@ export interface ThemeProjectHomeHighlightOptions {
   /**
    * Highlight section image
    *
-   * 高亮图像
+   * 亮点图像
    */
   image?: string;
 
   /**
    * Highlight section image used in darkmode
    *
-   * 夜间模式使用的高亮图片
+   * 夜间模式使用的亮点图片
    *
    * @default image
    */
@@ -116,23 +102,30 @@ export interface ThemeProjectHomeHighlightOptions {
   /**
    * Highlight Background image
    *
-   * 高亮背景图
+   * 亮点背景图
    */
   bgImage?: string;
 
   /**
    * Highlight Background image used in darkmode
    *
-   * 夜间模式使用的高亮背景图
+   * 夜间模式使用的亮点背景图
    *
    * @default bgImage
    */
   bgImageDark?: string;
 
   /**
+   * Highlight Background image style
+   *
+   * 亮点背景图样式
+   */
+  bgImageStyle?: Record<string, string> | string;
+
+  /**
    * Highlight section list type
    *
-   * 高亮列表类型
+   * 亮点列表类型
    *
    * @default un-order
    */
@@ -141,17 +134,86 @@ export interface ThemeProjectHomeHighlightOptions {
   /**
    * Highlights
    *
-   * 高亮
+   * 亮点
    */
-  highlights?: ThemeProjectHomeItemOption[];
+  highlights?: ThemeProjectHomeHighlightItem[];
+}
+
+export interface ThemeProjectHomeFeatureOptions {
+  /**
+   * Feature header
+   *
+   * 功能标题
+   */
+  header?: string;
+
+  /**
+   * Feature section description, supports HTML string
+   *
+   * 功能描述，支持 HTML 字符串
+   */
+  description?: string;
+
+  /**
+   * Text color
+   *
+   * 文字颜色
+   */
+  color?: string;
+
+  /**
+   * Feature section image
+   *
+   * 功能图像
+   */
+  image?: string;
+
+  /**
+   * Feature section image used in darkmode
+   *
+   * 夜间模式使用的功能图片
+   *
+   * @default image
+   */
+  imageDark?: string;
+
+  /**
+   * Feature Background image
+   *
+   * 功能背景图
+   */
+  bgImage?: string;
+
+  /**
+   * Feature Background image used in darkmode
+   *
+   * 夜间模式使用的功能背景图
+   *
+   * @default bgImage
+   */
+  bgImageDark?: string;
+
+  /**
+   * Feature Background image style
+   *
+   * 功能背景图样式
+   */
+  bgImageStyle?: Record<string, string> | string;
+
+  /**
+   * Features
+   *
+   * 功能
+   */
+  features: ThemeProjectHomeFeatureItem[];
 }
 
 export interface ThemeProjectHomePageFrontmatter
   extends ThemeHopePageFrontmatter {
   actions?: ThemeProjectHomeActionOptions[];
-  features?: ThemeProjectHomeItemOption[] | ThemeProjectHomeFeatureOptions[];
+  features?: ThemeProjectHomeFeatureItem[];
   highlights?: (
-    | ThemeProjectHomeHighlightOptions
     | ThemeProjectHomeFeatureOptions
+    | ThemeProjectHomeHighlightOptions
   )[];
 }
