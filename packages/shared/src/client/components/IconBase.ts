@@ -8,6 +8,7 @@ export interface IconBaseProps {
 /**
  * Icon Base Component
  */
+
 export const IconBase: FunctionalComponent<
   IconBaseProps,
   Record<never, never>,
