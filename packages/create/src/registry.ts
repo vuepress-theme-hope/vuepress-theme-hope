@@ -19,7 +19,7 @@ export const getRegistry = async (
 ): Promise<string> => {
   const userRegistry = getUserRegistry(packageManager);
 
-  if (/https:\/\/registry\.npm\.taobao\.org\//.test(userRegistry)) {
+  if (/https:\/\/registry\.npm\.taobao\.org\/?/.test(userRegistry)) {
     console.error(
       "npm.taobao.org is no longer available, resetting it to npmmirror.com"
     );

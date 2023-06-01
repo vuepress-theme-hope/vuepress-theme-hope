@@ -40,6 +40,7 @@ ignorePatterns:
   - "docs-shared/lib/**"
   - "packages/*/assets/**"
   - "packages/*/lib/**"
+  - "packages/create/template/**"
   - "!**/.vuepress/**"
   - "**/.vuepress/.cache/**"
   - "**/.vuepress/.temp/**"
