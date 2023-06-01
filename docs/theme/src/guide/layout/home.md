@@ -81,4 +81,18 @@ For complete configuration items, see [Home Frontmatter Configuration](../../con
 
 ## Demo
 
-@[code{1-184}](../../README.md)
+- [Project HomePage with features](../../demo/project-home.md)
+
+- [Project HomePage with highlights](../../README.md)
+
+::: details Feature Homepage Code
+
+@[code](../../demo/project-home.md)
+
+:::
+
+::: detail Highlight Homepage Code
+
+@[code](../../README.md)
+
+:::

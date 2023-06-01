@@ -15,6 +15,8 @@ category:
 
 ## 即时案例页面
 
+- [使用功能展示的项目主页](./project-home.md)
+
 - [博客主页](./blog-home.md)
 
 - [自定义博客主页](./custom-blog-home.md)

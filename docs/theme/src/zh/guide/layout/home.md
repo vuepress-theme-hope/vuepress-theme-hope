@@ -77,4 +77,18 @@ tag:
 
 ## 配置案例
 
-@[code{1-184}](../../README.md)
+- [使用功能的项目主页](../../demo/project-home.md)
+
+- [使用亮点的项目主页](../../README.md)
+
+::: details 功能项目主页代码
+
+@[code](../../demo/project-home.md)
+
+:::
+
+::: detail 亮点项目主页代码
+
+@[code](../../README.md)
+
+:::

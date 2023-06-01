@@ -1,4 +1,5 @@
 ---
+containerClass: home
 home: true
 icon: home
 title: Home
