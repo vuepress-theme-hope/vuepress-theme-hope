@@ -1,6 +1,5 @@
 import { defineUserConfig } from "@vuepress/cli";
 import { getDirname, path } from "@vuepress/utils";
-import { addViteConfig } from "vuepress-shared";
 
 import theme from "./theme.js";
 
@@ -34,13 +33,5 @@ export default defineUserConfig({
       __dirname,
       "./components/BlogHero.vue"
     ),
-  },
-
-  extendsBundlerOptions: (config, app) => {
-    addViteConfig(config, app, {
-      build: {
-        target: ["es2020", "edge88", "firefox78", "chrome87", "safari14"],
-      },
-    });
   },
 });
