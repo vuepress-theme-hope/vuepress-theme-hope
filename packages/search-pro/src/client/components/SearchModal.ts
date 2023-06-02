@@ -176,7 +176,17 @@ export default defineComponent({
                                   applySuggestion(index);
                                 },
                               },
-                              suggestion
+                              [
+                                h(
+                                  "kbd",
+                                  {
+                                    class: "search-pro-auto-complete",
+                                    title: `Tab ${locale.value.autocomplete}`,
+                                  },
+                                  "Tab"
+                                ),
+                                suggestion,
+                              ]
                             )
                           ),
                         ]),
@@ -190,8 +200,6 @@ export default defineComponent({
                             },
                           },
                           [
-                            h("kbd", "Tab"),
-                            locale.value.autocomplete,
                             h("kbd", { innerHTML: ESC_KEY_ICON }),
                             locale.value.exit,
                           ]

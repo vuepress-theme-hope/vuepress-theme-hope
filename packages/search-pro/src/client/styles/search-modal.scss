@@ -222,6 +222,25 @@
   }
 }
 
+.search-pro-auto-complete {
+  display: none;
+  float: right;
+
+  margin: 0 0.5rem;
+  padding: 4px;
+  border: 1px solid var(--vp-brc);
+  border-radius: 4px;
+
+  box-shadow: 1px 1px 4px 0 var(--card-shadow);
+
+  font-size: 12px;
+  line-height: 1;
+
+  .search-pro-suggestion.active & {
+    display: block;
+  }
+}
+
 .search-pro-close-suggestion {
   @include reset.button;
   position: absolute;
@@ -255,10 +274,6 @@
     border-radius: 4px;
 
     box-shadow: 1px 1px 4px 0 var(--card-shadow);
-
-    + kbd {
-      margin-left: 1rem;
-    }
   }
 
   svg {
