@@ -257,9 +257,19 @@ export default defineUserConfig({
     search: string;
 
     /**
-     * 关闭文字
+     * 搜素中文字
      */
-    close: string;
+    searching: string;
+
+    /**
+     * 取消文字
+     */
+    cancel: string;
+
+    /**
+     * 默认标题
+     */
+    defaultTitle: string;
 
     /**
      * 选择提示
@@ -272,6 +282,11 @@ export default defineUserConfig({
     navigate: string;
 
     /**
+     * 自动补全提示
+     */
+    autocomplete: string;
+
+    /**
      * 关闭提示
      */
     exit: string;
@@ -282,9 +297,19 @@ export default defineUserConfig({
     loading: string;
 
     /**
+     * 搜索历史文字
+     */
+    history: string;
+
+    /**
+     * 无搜索历史提示
+     */
+    emptyHistory: string;
+
+    /**
      * 无结果提示
      */
-    empty: string;
+    emptyResult: string;
   }
 
   interface SearchProLocaleConfig {

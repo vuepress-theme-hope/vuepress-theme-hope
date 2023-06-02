@@ -247,7 +247,7 @@ Options used to create index per locale.
    */
   interface SearchProLocaleData {
     /**
-     * Search box placeholder text
+     * Search box placeholder
      */
     placeholder: string;
 
@@ -257,9 +257,19 @@ Options used to create index per locale.
     search: string;
 
     /**
-     * Close text
+     * Searching text
      */
-    close: string;
+    searching: string;
+
+    /**
+     * Cancel text
+     */
+    cancel: string;
+
+    /**
+     * Default title
+     */
+    defaultTitle: string;
 
     /**
      * Select hint
@@ -272,6 +282,11 @@ Options used to create index per locale.
     navigate: string;
 
     /**
+     * Autocomplete hint
+     */
+    autocomplete: string;
+
+    /**
      * Close hint
      */
     exit: string;
@@ -282,9 +297,19 @@ Options used to create index per locale.
     loading: string;
 
     /**
+     * Search history text
+     */
+    history: string;
+
+    /**
+     * Search history empty hint
+     */
+    emptyHistory: string;
+
+    /**
      * Empty hint
      */
-    empty: string;
+    emptyResult: string;
   }
 
   interface SearchProLocaleConfig {
