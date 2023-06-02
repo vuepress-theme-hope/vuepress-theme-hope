@@ -1,4 +1,3 @@
-import { useScriptTag } from "@vueuse/core";
 import {
   type PropType,
   type VNode,
@@ -8,14 +7,9 @@ import {
   onMounted,
 } from "vue";
 
-import "../styles/code-pen.scss";
+import { loadCodePens } from "../utils/index.js";
 
-declare global {
-  interface Window {
-    // eslint-disable-next-line @typescript-eslint/naming-convention
-    __CPEmbed: (selector: string) => void;
-  }
-}
+import "../styles/code-pen.scss";
 
 export default defineComponent({
   name: "CodePen",
@@ -110,17 +104,9 @@ export default defineComponent({
 
     const slugHash = computed(() => getInfo().slugHash || props.slugHash);
 
-    useScriptTag("https://static.codepen.io/assets/embed/ei.js");
-
     onMounted(() => {
-      if (props.status !== "clicktorun") {
-        const intervalID = setInterval(() => {
-          if (window.__CPEmbed) {
-            window.__CPEmbed(`.codepen-${slugHash.value}`);
-            clearInterval(intervalID);
-          }
-        }, 500);
-      }
+      if (props.status !== "clicktorun")
+        loadCodePens(`.codepen-${slugHash.value}`);
     });
 
     return (): VNode =>
@@ -145,7 +131,7 @@ export default defineComponent({
                   type: "button",
                   class: "codepen-button",
                   onClick: () => {
-                    window.__CPEmbed(`.codepen-${slugHash.value}`);
+                    loadCodePens(`.codepen-${slugHash.value}`);
                   },
                 },
                 "Run Code"
