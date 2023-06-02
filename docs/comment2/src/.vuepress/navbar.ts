@@ -7,7 +7,7 @@ const { version } = fs.readJsonSync(
   )
 );
 
-export const enNavbarConfig = navbar([
+export const enNavbar = navbar([
   "/",
   {
     text: "Guide",
@@ -45,7 +45,7 @@ export const enNavbarConfig = navbar([
     ],
   },
 ]);
-export const zhNavbarConfig = navbar([
+export const zhNavbar = navbar([
   "/zh/",
   {
     text: "指南",

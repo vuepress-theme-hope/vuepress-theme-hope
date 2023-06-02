@@ -3,6 +3,7 @@ import { searchProPlugin } from "vuepress-plugin-search-pro";
 import { cut } from "nodejs-jieba";
 import theme from "./theme.js";
 
+// the config wrapper is located in <root>/docs-shared/src/config-wrapper.ts
 export default config(
   {
     name: "search-pro",

@@ -1,6 +1,7 @@
 import { theme } from "docs-shared";
 
-export default theme("remove-pwa", {
+// the theme wrapper is located in <root>/docs-shared/src/theme-wrapper.ts
+export default theme("rtl", {
   locales: {
     "/": {
       navbar: [],

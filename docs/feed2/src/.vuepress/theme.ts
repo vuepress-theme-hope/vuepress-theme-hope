@@ -5,6 +5,7 @@ const { version } = fs.readJsonSync(
   createRequire(import.meta.url).resolve("vuepress-plugin-feed2/package.json")
 );
 
+// the theme wrapper is located in <root>/docs-shared/src/theme-wrapper.ts
 export default theme("feed2", {
   locales: {
     "/": {
