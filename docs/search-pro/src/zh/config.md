@@ -191,7 +191,7 @@ export default defineUserConfig({
 
 :::
 
-## indexOptions
+### indexOptions
 
 - 类型: `SearchProIndexOptions`
 
@@ -214,7 +214,7 @@ export default defineUserConfig({
 
 创建索引选项。
 
-## indexLocaleOptions
+### indexLocaleOptions
 
 - 类型: `Record<string, SearchProIndexOptions>`
 

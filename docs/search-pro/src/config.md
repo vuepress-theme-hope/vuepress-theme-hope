@@ -191,7 +191,7 @@ Usually in development, users do not need to update the index database in real t
 
 :::
 
-## indexOptions
+### indexOptions
 
 - Type: `SearchProIndexOptions`
 
@@ -214,7 +214,7 @@ Usually in development, users do not need to update the index database in real t
 
 Options used to create index.
 
-## indexLocaleOptions
+### indexLocaleOptions
 
 - Type: `Record<string, SearchProIndexOptions>`
 
