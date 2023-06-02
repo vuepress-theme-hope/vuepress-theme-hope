@@ -220,6 +220,13 @@ blog:
     url: https://mrhope.site
     repo: https://github.com/Mister-Hope/Mister-Hope.github.io
     preview: /assets/image/mrhope.jpg
+    
+  - name: XXXWeii
+    desc: 带着思念期待着下次相见
+    logo: https://xxxweii.github.io/XXXWeiiBlog/assets/images/logo.jpg
+    url: https://xxxweii.github.io/XXXWeiiBlog
+    repo: https://github.com/XXXWeii/XXXWeiiBlog
+    preview: https://xxxweii.github.io/XXXWeiiBlog/assets/images/XXXWeii.png
 
   - name: 墨七
     desc: 简单快乐，理应如此。
