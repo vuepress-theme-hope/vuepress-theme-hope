@@ -19,6 +19,7 @@ export default theme("sass-palette", {
   plugins: {
     mdEnhance: {
       codetabs: true,
+      imgMark: true,
     },
   },
 });

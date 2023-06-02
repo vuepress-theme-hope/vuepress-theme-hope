@@ -19,6 +19,7 @@ export default theme("copyright2", {
   plugins: {
     mdEnhance: {
       codetabs: true,
+      imgMark: true,
     },
   },
 });

@@ -55,6 +55,7 @@ export default theme("sitemap2", {
   plugins: {
     mdEnhance: {
       codetabs: true,
+      imgMark: true,
     },
   },
 });

@@ -18,6 +18,7 @@ export default theme("rtl", {
   plugins: {
     mdEnhance: {
       codetabs: true,
+      imgMark: true,
     },
   },
 });

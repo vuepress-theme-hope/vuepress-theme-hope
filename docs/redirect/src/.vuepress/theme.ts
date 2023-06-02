@@ -18,6 +18,7 @@ export default theme("redirect", {
   plugins: {
     mdEnhance: {
       codetabs: true,
+      imgMark: true,
     },
   },
 });

@@ -58,6 +58,7 @@ export default theme("photo-swipe", {
   plugins: {
     mdEnhance: {
       codetabs: true,
+      imgMark: true,
     },
   },
 });

@@ -18,6 +18,7 @@ export default theme("comment2", {
   plugins: {
     mdEnhance: {
       codetabs: true,
+      imgMark: true,
       tabs: true,
     },
   },

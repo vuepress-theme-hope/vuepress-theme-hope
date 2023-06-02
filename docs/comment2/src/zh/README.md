@@ -146,9 +146,6 @@ export default {
 </template>
 </HighlightPanel>
 
-<NetlifyBadge alt="通过 Netlify 部署" />
-
 <script setup lang="ts">
 import HighlightPanel from "@theme-hope/components/HighlightPanel";
-import NetlifyBadge from "@NetlifyBadge";
 </script>

@@ -85,9 +85,3 @@ export default {
 ## Migrating from V1
 
 For details, see [Migration Guide](./migration.md).
-
-<NetlifyBadge />
-
-<script setup lang="ts">
-import NetlifyBadge from "@NetlifyBadge";
-</script>

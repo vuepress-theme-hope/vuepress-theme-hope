@@ -167,7 +167,6 @@ export const config = (
     ],
 
     alias: {
-      "@NetlifyBadge": path.resolve(__dirname, "./components/NetlifyBadge.js"),
       "@theme-hope/components/HeroInfo": path.resolve(
         __dirname,
         "./components/HopeHero.js"
@@ -187,6 +186,29 @@ export const config = (
         "three/examples/jsm/controls/OrbitControls",
         "three/examples/jsm/loaders/STLLoader",
       ]);
+    },
+
+    onInitialized: (app) => {
+      if (IS_NETLIFY) {
+        app.pages.find((page) => page.path === "/")!.frontmatter["footer"] = `\
+<a href="https://www.netlify.com" target="_blank">
+  <img src="https://www.netlify.com/img/global/badges/netlify-light.svg" alt="Deploys by Netlify" data-mode="lightmode-only">
+  <img src="https://www.netlify.com/img/global/badges/netlify-dark.svg" alt="Deploys by Netlify" data-mode="darkmode-only">
+</a>
+<br/>
+Theme by <a href="https://theme-hope.vuejs.press" target="_blank">VuePress Theme Hope</a> | MIT Licensed, Copyright © 2019-present Mr.Hope
+`;
+        app.pages.find((page) => page.path === "/zh/")!.frontmatter[
+          "footer"
+        ] = `\
+<a href="https://www.netlify.com" target="_blank">
+  <img src="https://www.netlify.com/img/global/badges/netlify-light.svg" alt="由 Netlify 部署" data-mode="lightmode-only">
+  <img src="https://www.netlify.com/img/global/badges/netlify-dark.svg" alt="由 Netlify 部署" data-mode="darkmode-only">
+</a>
+<br/>
+使用 <a href="https://theme-hope.vuejs.press/zh/" target="_blank">VuePress Theme Hope</a> 主题 | MIT 协议, 版权所有 © 2019-present Mr.Hope
+`;
+      }
     },
 
     ...(pwa ? { shouldPrefetch: false } : {}),

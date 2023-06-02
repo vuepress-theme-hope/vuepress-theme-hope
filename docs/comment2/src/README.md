@@ -146,9 +146,6 @@ See [Migration Guide](./migration.md).
 </template>
 </HighlightPanel>
 
-<NetlifyBadge />
-
 <script setup lang="ts">
 import HighlightPanel from "@theme-hope/components/HighlightPanel";
-import NetlifyBadge from "@NetlifyBadge";
 </script>

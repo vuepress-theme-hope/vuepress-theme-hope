@@ -268,9 +268,3 @@ highlights:
 copyright: false
 footer: MIT Licensed | Copyright © 2019-present Mr.Hope
 ---
-
-<NetlifyBadge />
-
-<script setup lang="ts">
-import NetlifyBadge from "@NetlifyBadge";
-</script>

@@ -16,6 +16,7 @@ export default theme("blog2", {
   plugins: {
     mdEnhance: {
       codetabs: true,
+      imgMark: true,
       mermaid: true,
     },
   },

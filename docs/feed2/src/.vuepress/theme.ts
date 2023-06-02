@@ -90,6 +90,7 @@ export default theme("feed2", {
 
     mdEnhance: {
       codetabs: true,
+      imgMark: true,
     },
   },
 });

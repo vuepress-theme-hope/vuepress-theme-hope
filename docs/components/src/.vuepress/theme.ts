@@ -132,6 +132,7 @@ export default theme("components", {
 
     mdEnhance: {
       codetabs: true,
+      imgMark: true,
       include: true,
     },
   },

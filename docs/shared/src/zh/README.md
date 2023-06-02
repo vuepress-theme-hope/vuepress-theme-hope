@@ -47,9 +47,3 @@ VuePress 同时运行在 Node.js 端和浏览器端，我们称之为 `node` 和
 
 - 在 Node 端，你应该从 `vuepress-shared/node` 导入函数。
 - 在客户端，你应该从 `vuepress-shared/client` 导入函数。
-
-<NetlifyBadge alt="通过 Netlify 部署" />
-
-<script setup lang="ts">
-import NetlifyBadge from "@NetlifyBadge";
-</script>

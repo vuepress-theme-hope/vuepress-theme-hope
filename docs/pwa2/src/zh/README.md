@@ -85,9 +85,3 @@ export default {
 如果你正在使用本插件，我们推荐在你的 VuePress 配置文件中设置 `shouldPrefetch: false`。
 
 :::
-
-<NetlifyBadge alt="通过 Netlify 部署" />
-
-<script setup lang="ts">
-import NetlifyBadge from "@NetlifyBadge";
-</script>

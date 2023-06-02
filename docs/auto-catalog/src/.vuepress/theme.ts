@@ -16,6 +16,7 @@ export default theme("auto-catalog", {
   plugins: {
     mdEnhance: {
       codetabs: true,
+      imgMark: true,
     },
   },
 });

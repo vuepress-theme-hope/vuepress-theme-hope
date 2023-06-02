@@ -202,9 +202,3 @@ export default {
 - [点击加入](https://jq.qq.com/?_wv=1027&k=rATJyxGK) (群号: 1003437555)
 
 <!-- markdownlint-disable -->
-
-<NetlifyBadge alt="通过 Netlify 部署" />
-
-<script setup lang="ts">
-import NetlifyBadge from "@NetlifyBadge";
-</script>

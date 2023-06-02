@@ -83,9 +83,3 @@ export default {
 ## 从 V1 迁移
 
 详见 [迁移指南](./migration.md)。
-
-<NetlifyBadge alt="通过 Netlify 部署" />
-
-<script setup lang="ts">
-import NetlifyBadge from "@NetlifyBadge";
-</script>

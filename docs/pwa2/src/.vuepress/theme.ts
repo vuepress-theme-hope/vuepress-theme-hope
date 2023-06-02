@@ -55,6 +55,7 @@ export default theme("pwa2", {
   plugins: {
     mdEnhance: {
       codetabs: true,
+      imgMark: true,
       footnote: true,
     },
 

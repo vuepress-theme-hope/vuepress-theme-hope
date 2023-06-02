@@ -88,9 +88,3 @@ export default {
 ```
 
 :::
-
-<NetlifyBadge />
-
-<script setup lang="ts">
-import NetlifyBadge from "@NetlifyBadge";
-</script>

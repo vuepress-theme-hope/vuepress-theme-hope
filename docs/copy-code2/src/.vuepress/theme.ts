@@ -58,6 +58,7 @@ export default theme("copy-code2", {
   plugins: {
     mdEnhance: {
       codetabs: true,
+      imgMark: true,
     },
   },
 });

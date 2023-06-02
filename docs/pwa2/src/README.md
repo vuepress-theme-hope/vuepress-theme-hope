@@ -85,9 +85,3 @@ export default {
 If you are using this plugin, we recommend you to set `shouldPrefetch: false` in your VuePress config file.
 
 :::
-
-<NetlifyBadge />
-
-<script setup lang="ts">
-import NetlifyBadge from "@NetlifyBadge";
-</script>

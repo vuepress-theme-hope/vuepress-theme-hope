@@ -52,6 +52,7 @@ export default theme("reading-time2", {
   plugins: {
     mdEnhance: {
       codetabs: true,
+      imgMark: true,
     },
   },
 });

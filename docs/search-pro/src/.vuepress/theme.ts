@@ -18,6 +18,7 @@ export default theme("search-pro", {
   plugins: {
     mdEnhance: {
       codetabs: true,
+      imgMark: true,
     },
   },
 });

@@ -88,9 +88,3 @@ export const yourPlugin = (options) => (app) => {
 ```
 
 :::
-
-<NetlifyBadge />
-
-<script setup lang="ts">
-import NetlifyBadge from "@NetlifyBadge";
-</script>

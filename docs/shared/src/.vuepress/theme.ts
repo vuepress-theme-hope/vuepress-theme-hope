@@ -39,6 +39,7 @@ export default theme("shared", {
   plugins: {
     mdEnhance: {
       codetabs: true,
+      imgMark: true,
     },
   },
 });

@@ -56,6 +56,7 @@ export default theme("seo2", {
   plugins: {
     mdEnhance: {
       codetabs: true,
+      imgMark: true,
     },
   },
 });

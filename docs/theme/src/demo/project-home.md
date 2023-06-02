@@ -204,9 +204,3 @@ export default {
 ## Telegram Group
 
 - [vuepressthemehope](https://t.me/vuepressthemehope)
-
-<NetlifyBadge />
-
-<script setup lang="ts">
-import NetlifyBadge from "@NetlifyBadge";
-</script>
