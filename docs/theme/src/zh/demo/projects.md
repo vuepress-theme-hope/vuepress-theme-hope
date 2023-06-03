@@ -223,10 +223,10 @@ blog:
 
   - name: XXXWeii 
    desc: 带着思念期待着下次相见 
-   logo: https://xxxweii.github.io/XXXWeiiBlog/logo.jpg
-   url: https://xxxweii.github.io/XXXWeiiBlog 
-   repo: https://github.com/XXXWeii/XXXWeiiBlog 
-   preview: https://xxxweii.github.io/XXXWeiiBlog/assets/images/XXXWeii.png 
+    logo: https://xxxweii.github.io/XXXWeiiBlog/logo.jpg
+    url: https://xxxweii.github.io/XXXWeiiBlog 
+    repo: https://github.com/XXXWeii/XXXWeiiBlog 
+    preview: https://xxxweii.github.io/XXXWeiiBlog/assets/images/XXXWeii.png 
 
   - name: 墨七
     desc: 简单快乐，理应如此。
