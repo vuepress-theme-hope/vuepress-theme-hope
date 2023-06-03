@@ -128,7 +128,7 @@ const FeaturePanel: FunctionalComponent<
                           },
                           () => children
                         )
-                    : h("div", { class: "vp-feature" }, children);
+                    : h("div", { class: "vp-feature-item" }, children);
                 })
               )
             : null,
