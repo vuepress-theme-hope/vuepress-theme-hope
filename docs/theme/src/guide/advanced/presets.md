@@ -120,6 +120,58 @@ import HitokotoBlogHero from "vuepress-theme-hope/presets/HitokotoBlogHero.js";
 
 :::
 
+## Composable Related
+
+### Running time
+
+Get the running time of the site in footer.
+
+```ts
+export const setupRunningTimeFooter: (
+  /**
+   * The date to calculate the running time
+   */
+  date: string | Date,
+  /**
+   * The locales of running time
+   *
+   * @description :day, :hour, :minute, :second will be replaced by the corresponding value
+   */
+  locales: Record<string, string> = {
+    "/": "Running time: :day days :hour hours :minute minutes :second seconds",
+  },
+  /**
+   * Whether to preserve the original content of the footer
+   *
+   * @default false
+   */
+  preserveContent = false
+) => void;
+```
+
+::: details Code Example
+
+```ts
+// .vuepress/client.ts
+import { defineClientConfig } from "@vuepress/client";
+import { setupRunningTimeFooter } from "vuepress-theme-hope/presets/footerRunningTime.js";
+
+export default defineClientConfig({
+  setup() {
+    setupRunningTimeFooter(
+      new Date("2022-01-01"),
+      {
+        "/": "Running time: :day days :hour hours :minute minutes :second seconds",
+        "/zh/": "已运行 :day 天 :hour 小时 :minute 分钟 :second 秒",
+      },
+      true
+    );
+  },
+});
+```
+
+:::
+
 ## Style Related
 
 You can create a client config file `.vuepress/client.{ts,js}` and import the following files through the `import` statement.
