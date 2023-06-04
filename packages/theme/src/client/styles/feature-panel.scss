@@ -38,7 +38,7 @@
   z-index: 1;
 
   margin: 0 auto;
-  padding: 2.5rem 1rem 1.5rem;
+  padding: 1.5rem 1rem;
 
   color: var(--text-color-lighter);
 
@@ -135,6 +135,7 @@
 .vp-feature-item {
   position: relative;
 
+  display: block;
   flex-basis: calc(33% - 3rem);
 
   margin: 0.5rem;
@@ -170,11 +171,6 @@
     @media print {
       text-decoration: none;
     }
-
-    &:hover {
-      box-shadow: 0 2px 12px 0 var(--card-shadow);
-      transform: translate(-2px, -2px);
-    }
   }
 
   .icon {
@@ -187,6 +183,17 @@
 
     font-weight: normal;
     font-size: 1.1em;
+  }
+
+  &:hover {
+    background-color: var(--bg-color-secondary);
+    box-shadow: 0 2px 12px 0 var(--card-shadow);
+    transform: translate(-2px, -2px);
+    transform: scale(1.05);
+
+    .vp-feature-bg + .vp-feature & {
+      background-color: transparent;
+    }
   }
 
   &:only-child {
