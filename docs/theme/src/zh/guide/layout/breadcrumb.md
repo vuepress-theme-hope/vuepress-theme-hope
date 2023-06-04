@@ -1,7 +1,7 @@
 ---
 title: 路径导航
 icon: bars-progress
-order: 3
+order: 7
 category:
   - 布局
 tag:
@@ -16,14 +16,6 @@ tag:
 你也可以通过 `breadcrumbIcon` 字段 <Badge text="支持页面配置" /> 控制路径导航的图标显示，默认值为 `true`。
 
 <!-- more -->
-
-::: warning 注意事项
-
-为了保证路径导航更好的提示，建议在每一个路径下创建 `README.md` 文件，同时为它们设置标题。否则，路径导航将因对应层级文件夹没有主页，无法生成标题与链接而忽略那一层级。
-
-请尤其注意，为主页也设置一个标题!
-
-:::
 
 [^support-page-config]: **支持页面配置** <Badge text="支持页面配置" />
 

@@ -17,16 +17,6 @@ Without any config, a Breadcrumb that matches the theme color is displayed at th
 
 You can also control the icon display of the path navigation using `breadcrumbIcon` field <Badge text="Support page config" />, the default value is `true`.
 
-::: warning Notice
-
-To ensure Breadcrumb working well, the `README.md` file should be included in each folder.
-
-Otherwise, the Breadcrumb will ignore that folder level because the component can not generate title and link.
-
-Please remember to set a title for **HOME PAGE**!
-
-:::
-
 [^support-page-config]: **Page config support**
 
     **Support local configuration**<Badge text="Support page config" /> means that the theme allows the configuration of the page to override the global configuration.
