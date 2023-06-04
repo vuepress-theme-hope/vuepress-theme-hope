@@ -393,7 +393,7 @@ blog:
     url: https://weigao.cc
     repo: https://github.com/chenweigao/blogv2
     preview: /assets/image/someone.jpg
-    
+
   - name: XXXWeii
     desc: XXXWeii & blog
     logo: https://xxxweii.github.io/XXXWeiiBlog/logo.jpg
