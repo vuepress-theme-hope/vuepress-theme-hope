@@ -393,6 +393,13 @@ blog:
     url: https://weigao.cc
     repo: https://github.com/chenweigao/blogv2
     preview: /assets/image/someone.jpg
+    
+  - name: XXXWeii
+    desc: XXXWeii & blog
+    logo: https://xxxweii.github.io/XXXWeiiBlog/logo.jpg
+    url: https://xxxweii.github.io/XXXWeiiBlog
+    repo: https://github.com/XXXWeii/XXXWeiiBlog
+    preview: https://xxxweii.github.io/XXXWeiiBlog/assets/images/XXXWeii.png
 ---
 
 ## 使用 VuePress Theme Hope 的文档
