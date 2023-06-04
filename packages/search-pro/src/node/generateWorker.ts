@@ -22,7 +22,7 @@ export const generateWorker = async (
     workerFilePath,
     workerFileContent.replace(
       "SEARCH_PRO_INDEX",
-      `${JSON.stringify(searchIndexContent)}`
+      () => `${JSON.stringify(searchIndexContent)}`
     )
   );
 };

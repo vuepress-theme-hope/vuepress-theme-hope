@@ -44,6 +44,10 @@ exports[`generateIndex > Should generate full index 1`] = `
     "h": "Title with Special Characters #@%/",
     "id": "v-2b30cdfd#2",
   },
+  {
+    "id": "v-2b30cdfd#2/7",
+    "t": "Content with regexp sequence 'a$' test.",
+  },
 ]
 `;
 
@@ -994,6 +998,10 @@ exports[`generateIndex > Should support customFields with full index 1`] = `
     "a": "title-with-special-characters",
     "h": "Title with Special Characters #@%/",
     "id": "v-2b30cdfd#2",
+  },
+  {
+    "id": "v-2b30cdfd#2/7",
+    "t": "Content with regexp sequence 'a$' test.",
   },
   {
     "c": [
