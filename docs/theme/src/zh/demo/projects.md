@@ -395,7 +395,7 @@ blog:
     preview: /assets/image/someone.jpg
     
   - name: XXXWeii
-    desc: XXXWeii & blog
+    desc: 带着思念期待着下次相见
     logo: https://xxxweii.github.io/XXXWeiiBlog/logo.jpg
     url: https://xxxweii.github.io/XXXWeiiBlog
     repo: https://github.com/XXXWeii/XXXWeiiBlog
