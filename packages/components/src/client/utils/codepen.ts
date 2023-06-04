@@ -151,9 +151,7 @@ const getActionLink = (options: Options): string => {
     options.user || "anon",
     path,
     slugHash + "?" + encodeOptions(options),
-  ]
-    .join("/")
-    .replace(/\/\//g, "//");
+  ].join("/");
 };
 
 const createElement = <K extends keyof HTMLElementTagNameMap>(
