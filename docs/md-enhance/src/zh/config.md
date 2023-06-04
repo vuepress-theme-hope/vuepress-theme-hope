@@ -270,12 +270,12 @@ interface TaskListOptions {
 
 ### katex
 
-- 类型: `KatexOptions | boolean`
+- 类型: `KatexOptions & { copy?: boolean; mhchem?: boolean } | boolean`
 - 默认值: `false`
 
 是否通过 KaTeX 启用 $\TeX$ 语法支持。你可以传入一个对象作为 KaTeX 的配置选项。
 
-特别低，你可以通过 `katex.mhchem: true` 来启用 mhchem 扩展。
+特别地，你可以通过 `katex.copy: true` 和 `katex.mhchem: true` 来启用 copy 和 mhchem 扩展。
 
 可用的选项，详见 [Katex 文档](https://katex.org/docs/options.html)。
 

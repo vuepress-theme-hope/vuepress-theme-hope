@@ -257,12 +257,12 @@ interface TaskListOptions {
 
 ### katex
 
-- Type: `KatexOptions & { mhchem?: boolean } | boolean`
+- Type: `KatexOptions & { copy?: boolean; mhchem?: boolean } | boolean`
 - Default: `false`
 
 Whether to enable $\TeX$ syntax support through KaTeX. You can pass an object to config KaTeX.
 
-In particular, you can enable the mhchem extension with `katex.mhchem: true`.
+In particular, you can enable the copy and mhchem extensions with `katex.copy: true` and `katex.mhchem: true`.
 
 Please see [Katex Docs](https://katex.org/docs/options.html) for available options.
 

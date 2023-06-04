@@ -122,7 +122,10 @@ Mathjax:
 
 When using KaTeX, you can pass an object to `katex` as `KatexOptions`. It will be passed to KaTeX. Please see [KaTeX Docs](https://katex.org/docs/options.html) for available options.
 
-Also, a special option `mhchem` is supported for you to enable mhchem extension by setting it to `true`.
+Also, 2 special options are supported:
+
+- `copy`: enable copy extension by setting it to `true`.
+- `mhchem`: enable mhchem extension by setting it to `true`.
 
 :::
 

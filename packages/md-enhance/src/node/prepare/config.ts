@@ -2,6 +2,7 @@ import { createRequire } from "node:module";
 
 import { type App } from "@vuepress/core";
 import { path } from "@vuepress/utils";
+import { isPlainObject } from "vuepress-shared/node";
 
 import { type MarkdownEnhanceOptions } from "../options.js";
 import { CLIENT_FOLDER } from "../utils.js";
@@ -15,6 +16,7 @@ export const prepareConfigFile = async (
 ): Promise<string> => {
   const imports: string[] = [];
   const enhances: string[] = [];
+  const setups: string[] = [];
 
   const getStatus = (key: keyof MarkdownEnhanceOptions, gfm = false): boolean =>
     key in options
@@ -126,11 +128,19 @@ export const prepareConfigFile = async (
   if (getStatus("tasklist", true))
     imports.push(`import "${CLIENT_FOLDER}styles/tasklist.scss";`);
 
-  if (getStatus("katex"))
+  if (getStatus("katex")) {
     imports.push(
       `import "${path.resolve(require.resolve("katex/dist/katex.min.css"))}";`,
       `import "${CLIENT_FOLDER}styles/katex.scss";`
     );
+
+    if (isPlainObject(options.katex) && options.katex.copy) {
+      imports.push(
+        `import { useKatexCopy } from "${CLIENT_FOLDER}composables/katex.js";`
+      );
+      setups.push(`useKatexCopy();`);
+    }
+  }
 
   if (getStatus("vuePlayground")) {
     imports.push(
@@ -155,6 +165,9 @@ export default defineClientConfig({
   enhance: ({ app }) => {
 ${enhances.map((item) => `    ${item}`).join("\n")}
   },
+  setup: () => {
+${setups.join("\n")}
+  }
 });
 `
   );

@@ -240,7 +240,16 @@ export interface MarkdownEnhanceOptions {
    *
    * @default false
    */
-  katex?: KatexOptions | boolean;
+  katex?:
+    | (KatexOptions & {
+        /**
+         * whether enable copy plugin
+         *
+         * @default false
+         */
+        copy?: boolean;
+      })
+    | boolean;
 
   /**
    * Whether to enable mathjax support

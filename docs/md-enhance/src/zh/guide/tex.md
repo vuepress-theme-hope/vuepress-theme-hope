@@ -120,7 +120,10 @@ Mathjax:
 
 使用 KaTeX 时，你可以将对象作为 `KatexOptions` 传递给 `katex`。 它将被传递给 KaTeX 有关可用选项，请参阅 [KaTeX Docs](https://katex.org/docs/options.html)。
 
-此外，我们还支持一个特殊选项 `mhchem`，你可以通过将其设置为 `true` 来启用 mhchem 扩展。
+此外，我们还支持两个特殊选项：
+
+- `copy`: 设置为 `true` 来启用 copy 扩展。
+- `mhchem`: 设置为 `true` 来启用 mhchem 扩展。
 
 :::
 
