@@ -4,6 +4,24 @@ All notable changes to this project will be documented in this file. See [Conven
 
 <!-- #region recent-beta -->
 
+## [2.0.0-beta.220](https://github.com/vuepress-theme-hope/vuepress-theme-hope/compare/v2.0.0-beta.219...v2.0.0-beta.220) (2023-06-04)
+
+### Features
+
+- **components:** use built-in library for codepen ([6b1614a](https://github.com/vuepress-theme-hope/vuepress-theme-hope/commit/6b1614ad0c2df475b06f0134395e77cec6a4a21f))
+- **md-enhance:** support katex copy option, close [#2597](https://github.com/vuepress-theme-hope/vuepress-theme-hope/issues/2597) ([ef5af7a](https://github.com/vuepress-theme-hope/vuepress-theme-hope/commit/ef5af7a67420a091c5d495e25377acc64215a490))
+- **search-pro:** improve auto suggestion style ([b316248](https://github.com/vuepress-theme-hope/vuepress-theme-hope/commit/b31624882fbf47a8a94ede3176883084ce220684))
+- **theme:** add runningTime preset, close [#1950](https://github.com/vuepress-theme-hope/vuepress-theme-hope/issues/1950) ([9e467c6](https://github.com/vuepress-theme-hope/vuepress-theme-hope/commit/9e467c6c1e5edac5e82938051a796376f122766e))
+- **theme:** improve homepage ([ef93e67](https://github.com/vuepress-theme-hope/vuepress-theme-hope/commit/ef93e671d31edbd5e7d1b72de737b7acd0730393))
+- **theme:** update BreadCrumb ([f4be5a3](https://github.com/vuepress-theme-hope/vuepress-theme-hope/commit/f4be5a3fd50ae9b97fafc6f488938560dfd64cf7))
+
+### Bug Fixes
+
+- **comment2:** fix artalk loading icon ([f2da175](https://github.com/vuepress-theme-hope/vuepress-theme-hope/commit/f2da175cc95b47d5d518cabbe14518c2a22021cb))
+- **deps:** update dependency mermaid to v10.2.2 ([#3189](https://github.com/vuepress-theme-hope/vuepress-theme-hope/issues/3189)) ([8a32736](https://github.com/vuepress-theme-hope/vuepress-theme-hope/commit/8a327367bc73546d92a31cb27cdec5b351fe6df1))
+- **search-pro:** fix worker issue with regexp sequence ([a85ea8b](https://github.com/vuepress-theme-hope/vuepress-theme-hope/commit/a85ea8b1874ac59e40f40efee865e1b0c2755ccc))
+- **theme:** fix feature panel. close [#3186](https://github.com/vuepress-theme-hope/vuepress-theme-hope/issues/3186) ([477140e](https://github.com/vuepress-theme-hope/vuepress-theme-hope/commit/477140e140e57f3517e1718cecce62c6a61f1a40))
+
 ## [2.0.0-beta.219](https://github.com/vuepress-theme-hope/vuepress-theme-hope/compare/v2.0.0-beta.218...v2.0.0-beta.219) (2023-06-01)
 
 ### Features
