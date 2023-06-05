@@ -23,7 +23,6 @@ export const prepareBundleConfigFile = (
 
   if (enableAutoCatalog) {
     imports.push(
-      `import { HopeIcon } from "${BUNDLE_FOLDER}export.js";`,
       `import { defineAutoCatalogIconComponent } from "${path.resolve(
         require.resolve("vuepress-plugin-auto-catalog/client")
       )}"`
@@ -70,7 +69,7 @@ export const prepareBundleConfigFile = (
     `\
 import { defineClientConfig } from "@vuepress/client";
 
-import { Layout, NotFound, useScrollPromise, injectDarkmode, setupDarkmode, setupSidebarItems } from "${BUNDLE_FOLDER}export.js";
+import { HopeIcon, Layout, NotFound, useScrollPromise, injectDarkmode, setupDarkmode, setupSidebarItems } from "${BUNDLE_FOLDER}export.js";
 
 ${imports.join("\n")}
 
@@ -90,6 +89,9 @@ export default defineClientConfig({
 
     // inject global properties
     injectDarkmode(app);
+
+    // provide HopeIcon as global component
+    app.component("HopeIcon", HopeIcon);
 
 ${enhances.map((item) => `    ${item}`).join("\n")}
   },
