@@ -55,6 +55,7 @@
     "@vueuse/core": "^10.1.2",
     "artplayer": "^5.0.9",
     "balloon-css": "^1.2.0",
+    "create-codepen": "0.0.3",
     "dashjs": "^4.7.0",
     "hls.js": "^1.4.4",
     "mpegts.js": "^1.7.3",

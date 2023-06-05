@@ -1433,6 +1433,9 @@ importers:
       balloon-css:
         specifier: ^1.2.0
         version: 1.2.0
+      create-codepen:
+        specifier: 0.0.3
+        version: 0.0.3
       dashjs:
         specifier: ^4.7.0
         version: 4.7.0
@@ -7307,6 +7310,10 @@ packages:
     transitivePeerDependencies:
       - supports-color
     dev: true
+
+  /create-codepen@0.0.3:
+    resolution: {integrity: sha512-Yr9qDyJEZ32V8rZn+R19zomU/0bjHixp11sB+IgnZ5bEb41XJ86iHT3IXTGdqHF2NVx6dsZ1R4DjpxXvA2/dXg==}
+    dev: false
 
   /create-require@1.1.1:
     resolution: {integrity: sha512-dcKFX3jn0MpIaXjisoRvexIJVEKzaq7z2rZKxf+MSr9TkdmHmsU4m2lcLojrj/FHl8mk5VxMmYA+ftRkP/3oKQ==}

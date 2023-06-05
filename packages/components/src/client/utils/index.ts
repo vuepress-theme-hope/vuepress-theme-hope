@@ -1,4 +1,3 @@
-export * from "./codepen.js";
 export * from "./iframeAllow.js";
 export * from "./getLink.js";
 export * from "./meta.js";
