@@ -40,7 +40,7 @@ export const feedPlugin =
     return {
       ...plugin,
 
-      onPrepared: (app): void => injectLinksToHead(app, feedOptions),
+      onInitialized: (app): void => injectLinksToHead(app, feedOptions),
 
       onGenerated: (app): Promise<void> =>
         new FeedGenerator(app, feedOptions).generateFeed(),

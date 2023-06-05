@@ -37,7 +37,7 @@ export const injectLinksToHead = (
     };
 
     // ensure head exists
-    if (!siteData.head) siteData.head = [];
+    siteData.head ??= [];
 
     // add atom link
     if (atom)
@@ -71,25 +71,23 @@ export const injectLinksToHead = (
           name: string,
           fileName: string,
           type: string
-        ): HeadConfig => {
-          return [
-            "link",
-            {
-              rel: "alternate",
-              type,
-              href: resolveUrl(localeOptions.hostname, base, fileName),
-              title: `${
-                siteData.locales[pathLocale]?.title ||
-                siteData.title ||
-                siteData.locales["/"]?.title ||
-                ""
-              } ${name} Feed`,
-            },
-          ];
-        };
+        ): HeadConfig => [
+          "link",
+          {
+            rel: "alternate",
+            type,
+            href: resolveUrl(localeOptions.hostname, base, fileName),
+            title: `${
+              siteData.locales[pathLocale]?.title ||
+              siteData.title ||
+              siteData.locales["/"]?.title ||
+              ""
+            } ${name} Feed`,
+          },
+        ];
 
         // ensure head exists
-        if (!page.frontmatter.head) page.frontmatter.head = [];
+        page.frontmatter.head ??= [];
 
         // add atom link
         if (localeOptions.atom)
@@ -108,6 +106,8 @@ export const injectLinksToHead = (
           page.frontmatter.head.push(
             getHeadItem("RSS", rssOutputFilename, "application/rss+xml")
           );
+
+        console.log(page.frontmatter.head);
       }
     });
   }
