@@ -211,6 +211,7 @@ Theme by <a href="https://theme-hope.vuejs.press" target="_blank">VuePress Theme
       }
     },
 
+    shouldPreload: false,
     ...(pwa ? { shouldPrefetch: false } : {}),
 
     clientConfigFile: path.resolve(__dirname, "./client.js"),
