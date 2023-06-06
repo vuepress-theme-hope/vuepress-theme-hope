@@ -1,5 +1,5 @@
 import { useSiteLocaleData } from "@vuepress/client";
-import { useEventListener, useScrollLock } from "@vueuse/core";
+import { onClickOutside, useEventListener, useScrollLock } from "@vueuse/core";
 import {
   type VNode,
   defineAsyncComponent,
@@ -65,6 +65,7 @@ export default defineComponent({
     } = useArrayCycle(suggestions);
 
     const inputElement = shallowRef<HTMLInputElement>();
+    const suggestionElement = shallowRef<HTMLDivElement>();
 
     const applySuggestion = (index = activeSuggestionIndex.value): void => {
       input.value = suggestions.value[index];
@@ -91,6 +92,10 @@ export default defineComponent({
           void nextTick().then(() => {
             inputElement.value?.focus();
           });
+      });
+
+      onClickOutside(suggestionElement, () => {
+        displaySuggestion.value = false;
       });
 
       onUnmounted(() => {
@@ -163,52 +168,59 @@ export default defineComponent({
                   enableAutoSuggestions &&
                   displaySuggestion.value &&
                   suggestions.value.length
-                    ? h("div", { class: "search-pro-suggestions-wrapper" }, [
-                        h("ul", { class: "search-pro-suggestions" }, [
-                          suggestions.value.map((suggestion, index) =>
-                            h(
-                              "li",
-                              {
-                                class: [
-                                  "search-pro-suggestion",
-                                  {
-                                    active:
-                                      index === activeSuggestionIndex.value,
+                    ? h(
+                        "div",
+                        {
+                          class: "search-pro-suggestions-wrapper",
+                          ref: suggestionElement,
+                        },
+                        [
+                          h("ul", { class: "search-pro-suggestions" }, [
+                            suggestions.value.map((suggestion, index) =>
+                              h(
+                                "li",
+                                {
+                                  class: [
+                                    "search-pro-suggestion",
+                                    {
+                                      active:
+                                        index === activeSuggestionIndex.value,
+                                    },
+                                  ],
+                                  onClick: () => {
+                                    applySuggestion(index);
                                   },
-                                ],
-                                onClick: () => {
-                                  applySuggestion(index);
                                 },
+                                [
+                                  h(
+                                    "kbd",
+                                    {
+                                      class: "search-pro-auto-complete",
+                                      title: `Tab ${locale.value.autocomplete}`,
+                                    },
+                                    "Tab"
+                                  ),
+                                  suggestion,
+                                ]
+                              )
+                            ),
+                          ]),
+                          h(
+                            "button",
+                            {
+                              type: "button",
+                              class: "search-pro-close-suggestion",
+                              onClick: () => {
+                                displaySuggestion.value = false;
                               },
-                              [
-                                h(
-                                  "kbd",
-                                  {
-                                    class: "search-pro-auto-complete",
-                                    title: `Tab ${locale.value.autocomplete}`,
-                                  },
-                                  "Tab"
-                                ),
-                                suggestion,
-                              ]
-                            )
-                          ),
-                        ]),
-                        h(
-                          "button",
-                          {
-                            type: "button",
-                            class: "search-pro-close-suggestion",
-                            onClick: () => {
-                              displaySuggestion.value = false;
                             },
-                          },
-                          [
-                            h("kbd", { innerHTML: ESC_KEY_ICON }),
-                            locale.value.exit,
-                          ]
-                        ),
-                      ])
+                            [
+                              h("kbd", { innerHTML: ESC_KEY_ICON }),
+                              locale.value.exit,
+                            ]
+                          ),
+                        ]
+                      )
                     : null,
                 ]),
                 h(
