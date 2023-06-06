@@ -89,3 +89,45 @@ export default defineUserConfig({
 ```
 
 For specific options, see [Config → Locale Settings](./config.md#locales).
+
+## Advanced
+
+You can also call photoswipe with apis.
+
+```vue
+<script setup lang="ts">
+import { onMounted, onUnmounted } from 'vue';
+import {
+  createPhotoSwipe,
+  registerPhotoSwipe,
+} from "vuepress-plugin-photo-swipe/client";
+
+let state = null;
+
+const openPhotoSwipe = (index: number) => {
+  state?.open(index);
+};
+
+onMounted(async () => {
+  // create a new photoswipe instance
+  state=  await createPhotoSwipe([
+    'https://exmaple.com/image1.png'
+    'https://exmaple.com/image2.png'
+    'https://exmaple.com/image3.png'
+  ]);
+
+  // register the instance to the global registry
+  registerPhotoSwipe(photoSwipe);
+});
+
+onUnmounted( ()=> {
+  state?.destroy()
+})
+</script>
+
+<template>
+  <button @click="openPhotoSwipe(0)">open photo 1</button>
+  <button @click="openPhotoSwipe(1)">open photo 2</button>
+  <button @click="openPhotoSwipe(2)">open photo 3</button>
+</template>
+```
