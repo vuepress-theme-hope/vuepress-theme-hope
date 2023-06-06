@@ -136,7 +136,11 @@ export default defineComponent({
                         if (key === "Tab") {
                           applySuggestion();
                           event.preventDefault();
-                        } else if (key === "ArrowDown" || key === "ArrowUp") {
+                        } else if (
+                          key === "ArrowDown" ||
+                          key === "ArrowUp" ||
+                          key === "Escape"
+                        ) {
                           event.preventDefault();
                         }
                     },
