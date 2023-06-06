@@ -4,6 +4,19 @@ All notable changes to this project will be documented in this file. See [Conven
 
 <!-- #region recent-beta -->
 
+## [2.0.0-beta.221](https://github.com/vuepress-theme-hope/vuepress-theme-hope/compare/v2.0.0-beta.220...v2.0.0-beta.221) (2023-06-06)
+
+### Features
+
+- **components:** use create-codepen ([6257b4a](https://github.com/vuepress-theme-hope/vuepress-theme-hope/commit/6257b4afdf6dffe760a56a81a57dfa25a65cf553))
+- **search-pro:** add onClickOutside for suggestions ([60f54ba](https://github.com/vuepress-theme-hope/vuepress-theme-hope/commit/60f54ba929fd1db897b8dbba7438f59df33b2f7d))
+- **theme:** register HopeIcon globally ([d412038](https://github.com/vuepress-theme-hope/vuepress-theme-hope/commit/d4120387f5d5c836ebd2e01f337cf5c0f9fb109c))
+
+### Bug Fixes
+
+- **feed2:** fix rss link not generated ([47d635b](https://github.com/vuepress-theme-hope/vuepress-theme-hope/commit/47d635b62545e453cc318389c545c39dc9b84102))
+- **search-pro:** fix autocomplete hot key ([356ce49](https://github.com/vuepress-theme-hope/vuepress-theme-hope/commit/356ce492fd0ebc3847d2e77fa92c70a562dc4ec9))
+
 ## [2.0.0-beta.220](https://github.com/vuepress-theme-hope/vuepress-theme-hope/compare/v2.0.0-beta.219...v2.0.0-beta.220) (2023-06-04)
 
 ### Features
