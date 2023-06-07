@@ -10,15 +10,15 @@ import { getMatchedContent } from "./matchContent.js";
 import { getSearchOptions } from "./utils.js";
 import {
   type CustomFieldIndexItem,
-  type HeadingIndexItem,
   type IndexItem,
   type PageIndexItem,
-  type TextIndexItem,
 } from "../../shared/index.js";
 import {
+  type HeadingMatchedItem,
   type MatchedItem,
   type SearchOptions,
   type SearchResult,
+  type TitleMatchedItem,
   type Word,
 } from "../typings/index.js";
 
@@ -57,9 +57,8 @@ export const getResults = (
 
   results.forEach((result) => {
     const { id, terms, score } = result;
-    const isText = id.includes("/");
-    const isHeading = !isText && id.includes("#");
     const isCustomField = id.includes("@");
+    const isSection = id.includes("#");
     const [key, info] = id.split(/[#@]/);
 
     const { contents } = (resultMap[key] ??= {
@@ -67,43 +66,8 @@ export const getResults = (
       contents: [],
     });
 
-    if (isHeading) {
-      contents.push([
-        {
-          type: "heading",
-          key: key,
-          anchor: (<HeadingIndexItem>result).a,
-          display: terms
-            .map((term) =>
-              getMatchedContent((<HeadingIndexItem>result).h, term)
-            )
-            .filter((item): item is Word[] => item !== null),
-        },
-        score,
-      ]);
-    }
-    // TextIndexItem
-    else if (isText) {
-      const [headingIndex] = info.split("/");
-
-      const { h: heading = "", a: anchor = "" } =
-        (getStoredFields(localeIndex, `${key}#${headingIndex}`) as unknown as
-          | HeadingIndexItem
-          | undefined) || {};
-
-      contents.push([
-        {
-          type: "text",
-          key: key,
-          header: heading,
-          anchor: anchor,
-          display: terms
-            .map((term) => getMatchedContent((<TextIndexItem>result).t, term))
-            .filter((item): item is Word[] => item !== null),
-        },
-        score,
-      ]);
-    } else if (isCustomField) {
+    // CustomFieldIndexItem
+    if (isCustomField) {
       contents.push([
         {
           type: "customField",
@@ -120,19 +84,39 @@ export const getResults = (
         },
         score,
       ]);
-    }
-    // PageIndexItem
-    else {
-      contents.push([
-        {
-          type: "title",
-          key: key,
-          display: terms
-            .map((term) => getMatchedContent((<PageIndexItem>result).h, term))
-            .filter((item): item is Word[] => item !== null),
-        },
-        score,
-      ]);
+    } else {
+      const headerContent = terms
+        .map((term) => getMatchedContent((<PageIndexItem>result).h, term))
+        .filter((item): item is Word[] => item !== null);
+
+      if (headerContent.length)
+        contents.push([
+          <TitleMatchedItem | HeadingMatchedItem>{
+            type: isSection ? "heading" : "title",
+            key: key,
+            ...(isSection && { anchor: info }),
+            display: headerContent,
+          },
+          score,
+        ]);
+
+      if (/** text */ "t" in result)
+        for (const text of result.t) {
+          const matchedContent = terms
+            .map((term) => getMatchedContent(text, term))
+            .filter((item): item is Word[] => item !== null);
+
+          if (matchedContent.length)
+            contents.push([
+              {
+                type: "text",
+                key,
+                ...(isSection && { anchor: info }),
+                display: matchedContent,
+              },
+              score,
+            ]);
+        }
     }
   });
 

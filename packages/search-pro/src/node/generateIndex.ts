@@ -11,7 +11,9 @@ import {
   type IndexItem,
   type LocaleIndex,
   type PageIndexId,
+  type PageIndexItem,
   type SearchIndexStore,
+  type SectionIndexItem,
 } from "../shared/index.js";
 
 /**
@@ -71,13 +73,12 @@ export const generatePageIndex = (
   const key = <PageIndexId>page.key;
   const hasExcerpt = "excerpt" in data && data["excerpt"].length;
 
-  const pageIndex: IndexItem = { id: key, h: title };
+  const pageIndex: PageIndexItem = { id: key, h: title };
   const results: IndexItem[] = [pageIndex];
 
   // here are some variables holding the current state of the parser
   let shouldIndexContent = hasExcerpt || indexContent;
-  let currentHeaderIndex = 0;
-  let currentContentIndex = 0;
+  let currentSectionIndex: SectionIndexItem | null = null;
   let currentContent = "";
   let isContentBeforeFirstHeader = true;
 
@@ -86,31 +87,25 @@ export const generatePageIndex = (
       if (HEADING_TAGS.includes(node.name)) {
         if (currentContent && shouldIndexContent) {
           // add last content
-          results.push({
-            id: `${key}#${currentHeaderIndex}/${currentContentIndex}`,
-            t: currentContent.replace(/\s+/gu, " "),
-          });
-          currentContentIndex = 0;
+          // add last content
+          ((isContentBeforeFirstHeader ? pageIndex : currentSectionIndex!).t ??=
+            []).push(currentContent.replace(/\s+/gu, " "));
           currentContent = "";
         }
 
         if (isContentBeforeFirstHeader) isContentBeforeFirstHeader = false;
+        else results.push(currentSectionIndex!);
 
         // update current section index
-        currentHeaderIndex += 1;
-        results.push({
-          id: `${key}#${currentHeaderIndex}`,
-          a: node.attribs["id"],
+        currentSectionIndex = {
+          id: `${key}#${node.attribs["id"]}`,
           h: renderHeader(node),
-        });
+        };
       } else if (CONTENT_BLOCK_TAGS.includes(node.name)) {
         if (currentContent && shouldIndexContent) {
           // add last content
-          results.push({
-            id: `${key}#${currentHeaderIndex}/${currentContentIndex}`,
-            t: currentContent.replace(/\s+/gu, " "),
-          });
-          currentContentIndex += 1;
+          ((isContentBeforeFirstHeader ? pageIndex : currentSectionIndex)!.t ??=
+            []).push(currentContent.replace(/\s+/gu, " "));
           currentContent = "";
         }
         node.childNodes.forEach((item) =>
@@ -160,10 +155,11 @@ export const generatePageIndex = (
 
   // push contents in last block tags
   if (shouldIndexContent && currentContent)
-    results.push({
-      id: `${key}#${currentHeaderIndex}/${currentContentIndex}`,
-      t: currentContent.replace(/\s+/gu, " "),
-    });
+    ((isContentBeforeFirstHeader ? pageIndex : currentSectionIndex)!.t ??=
+      []).push(currentContent);
+
+  // push last section
+  if (currentSectionIndex) results.push(currentSectionIndex);
 
   // add custom fields
   entries(customFields).forEach(([customField, values]) => {

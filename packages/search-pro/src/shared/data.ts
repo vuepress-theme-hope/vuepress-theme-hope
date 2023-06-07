@@ -12,14 +12,15 @@ export type PageIndexId = `v-${string}`;
 export interface PageIndexItem {
   id: PageIndexId;
   /** heading */ h: string;
+  /** text */ t?: string[];
 }
 
-export type HeadingIndexId = `${PageIndexId}#${number}`;
+export type SectionIndexId = `${PageIndexId}#${string}`;
 
-export interface HeadingIndexItem {
-  id: HeadingIndexId;
-  /** anchor */ a: string;
+export interface SectionIndexItem {
+  id: SectionIndexId;
   /** heading */ h: string;
+  /** text */ t?: string[];
 }
 
 export type CustomFieldIndexID = `${PageIndexId}@${number}`;
@@ -29,18 +30,7 @@ export interface CustomFieldIndexItem {
   /** customFields */ c: string[];
 }
 
-export type TextIndexID = `${HeadingIndexId}/${number}`;
-
-export interface TextIndexItem {
-  id: string;
-  /** text */ t: string;
-}
-
-export type IndexItem =
-  | PageIndexItem
-  | HeadingIndexItem
-  | CustomFieldIndexItem
-  | TextIndexItem;
+export type IndexItem = PageIndexItem | SectionIndexItem | CustomFieldIndexItem;
 
 export type LocaleIndex = Record<string, IndexItem[]>;
 

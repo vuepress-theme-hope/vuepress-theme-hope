@@ -177,12 +177,12 @@ export default defineComponent({
           ? formatterConfig[routeLocale.value].split("$content")
           : formatterConfig.split("$content");
 
-        return matchedItem.display
-          .map((display) => getVNodes([prefix, ...display, suffix]))
-          .flat();
+        return matchedItem.display.map((display) =>
+          h("div", getVNodes([prefix, ...display, suffix]))
+        );
       }
 
-      return matchedItem.display.map((display) => getVNodes(display)).flat();
+      return matchedItem.display.map((display) => h("div", getVNodes(display)));
     };
 
     const resetSearchResult = (): void => {
