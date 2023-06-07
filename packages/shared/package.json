@@ -57,7 +57,7 @@
     "@vuepress/utils": "2.0.0-beta.62",
     "@vueuse/core": "^10.1.2",
     "cheerio": "1.0.0-rc.12",
-    "dayjs": "^1.11.7",
+    "dayjs": "^1.11.8",
     "execa": "^7.1.1",
     "fflate": "^0.8.0",
     "gray-matter": "^4.0.3",
