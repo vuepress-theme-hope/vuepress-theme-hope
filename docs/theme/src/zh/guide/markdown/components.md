@@ -216,8 +216,6 @@ export default {
 
 一个自定义空降地址且自动播放的 B 站视频:
 
-<BiliBili aid="34304064" cid="109293122" ratio="9:16" time="60" autoplay page="2" />
-
 ```md
 <BiliBili aid="34304064" cid="109293122" ratio="9:16" time="60" autoplay page="2" />
 ```
