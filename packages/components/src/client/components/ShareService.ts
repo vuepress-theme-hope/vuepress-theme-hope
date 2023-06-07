@@ -27,7 +27,7 @@ import "../styles/share-service.scss";
 declare const SHARE_CONTENT_SELECTOR: string;
 
 const renderIcon = (content: string, contentClass = ""): VNode => {
-  const className = ["share-icon", contentClass];
+  const className = ["vp-share-icon", contentClass];
 
   // is a link
   if (isLinkHttp(content) || isAbsoluteUrl(content))
