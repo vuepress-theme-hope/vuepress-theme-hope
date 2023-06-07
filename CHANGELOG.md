@@ -4,6 +4,23 @@ All notable changes to this project will be documented in this file. See [Conven
 
 <!-- #region recent-beta -->
 
+## [2.0.0-beta.222](https://github.com/vuepress-theme-hope/vuepress-theme-hope/compare/v2.0.0-beta.221...v2.0.0-beta.222) (2023-06-07)
+
+### Features
+
+- **components:** add VidStack ([6136a62](https://github.com/vuepress-theme-hope/vuepress-theme-hope/commit/6136a624ff7340261506197a508b3059c5a23351))
+- **search-pro:** improve style ([65e7850](https://github.com/vuepress-theme-hope/vuepress-theme-hope/commit/65e785044cb5bad1a71a3b22f85b390afb75ed76))
+
+### Bug Fixes
+
+- **components:** fix Share appearance ([c64efef](https://github.com/vuepress-theme-hope/vuepress-theme-hope/commit/c64efef18d2240334fc9dcf354c9f3cf55197e9f))
+- **md-enhance:** support import code with codeTabs, close [#3199](https://github.com/vuepress-theme-hope/vuepress-theme-hope/issues/3199) ([7d410c4](https://github.com/vuepress-theme-hope/vuepress-theme-hope/commit/7d410c40c3afc057f00b67f11d11083e19fbd166))
+- **search-pro:** fix export ([459cd0b](https://github.com/vuepress-theme-hope/vuepress-theme-hope/commit/459cd0bc7e01a330daf74e63cb5a3fb680dd2839))
+
+### Reverts
+
+- "feat(search-pro): optimize results" ([8ab3c3a](https://github.com/vuepress-theme-hope/vuepress-theme-hope/commit/8ab3c3a90ea096a19767f5bc18156a22d3d7ce04))
+
 ## [2.0.0-beta.221](https://github.com/vuepress-theme-hope/vuepress-theme-hope/compare/v2.0.0-beta.220...v2.0.0-beta.221) (2023-06-06)
 
 ### Features
