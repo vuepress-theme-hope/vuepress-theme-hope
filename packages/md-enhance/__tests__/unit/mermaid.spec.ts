@@ -5,7 +5,7 @@ import { atou } from "vuepress-shared";
 import {
   getMermaidContent,
   mermaid,
-} from "../../src/node/markdown-it/index.js";
+} from "../../src/node/markdown-it/mermaid.js";
 
 const title = "Sample Title";
 

@@ -6,7 +6,7 @@ import {
   getTSPlaygroundPreset,
   getVuePlaygroundPreset,
   playground,
-} from "../../src/node/markdown-it/index.js";
+} from "../../src/node/markdown-it/playground/index.js";
 
 describe("playground", () => {
   it("Should not throw", () => {

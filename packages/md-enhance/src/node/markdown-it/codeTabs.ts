@@ -47,7 +47,7 @@ ${titles
         if (block) {
           if (type === "code-tabs_tab_close") break;
 
-          if (type === "fence" && !foundFence) {
+          if ((type === "fence" || type === "import_code") && !foundFence) {
             foundFence = true;
             continue;
           }
