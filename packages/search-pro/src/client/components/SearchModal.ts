@@ -65,7 +65,7 @@ export default defineComponent({
     } = useArrayCycle(suggestions);
 
     const inputElement = shallowRef<HTMLInputElement>();
-    const suggestionElement = shallowRef<HTMLDivElement>();
+    const suggestionsElement = shallowRef<HTMLDivElement>();
 
     const applySuggestion = (index = activeSuggestionIndex.value): void => {
       input.value = suggestions.value[index];
@@ -94,7 +94,7 @@ export default defineComponent({
           });
       });
 
-      onClickOutside(suggestionElement, () => {
+      onClickOutside(suggestionsElement, () => {
         displaySuggestion.value = false;
       });
 
@@ -158,7 +158,7 @@ export default defineComponent({
                   input.value
                     ? h("button", {
                         type: "reset",
-                        class: "clear-button",
+                        class: "search-pro-clear-button",
                         innerHTML: CLOSE_ICON,
                         onClick: () => {
                           input.value = "";
@@ -172,9 +172,24 @@ export default defineComponent({
                         "div",
                         {
                           class: "search-pro-suggestions-wrapper",
-                          ref: suggestionElement,
+                          ref: suggestionsElement,
                         },
                         [
+                          h(
+                            "button",
+                            {
+                              type: "button",
+                              class: "search-pro-close-suggestion",
+                              title: `ESC ${locale.value.exit}`,
+                              onClick: () => {
+                                displaySuggestion.value = false;
+                              },
+                            },
+                            [
+                              h("span", { innerHTML: CLOSE_ICON }),
+                              h("kbd", { innerHTML: ESC_KEY_ICON }),
+                            ]
+                          ),
                           h("ul", { class: "search-pro-suggestions" }, [
                             suggestions.value.map((suggestion, index) =>
                               h(
@@ -205,20 +220,6 @@ export default defineComponent({
                               )
                             ),
                           ]),
-                          h(
-                            "button",
-                            {
-                              type: "button",
-                              class: "search-pro-close-suggestion",
-                              onClick: () => {
-                                displaySuggestion.value = false;
-                              },
-                            },
-                            [
-                              h("kbd", { innerHTML: ESC_KEY_ICON }),
-                              locale.value.exit,
-                            ]
-                          ),
                         ]
                       )
                     : null,
@@ -227,7 +228,7 @@ export default defineComponent({
                   "button",
                   {
                     type: "button",
-                    class: "close-button",
+                    class: "search-pro-close-button",
                     onClick: () => {
                       isActive.value = false;
                       input.value = "";

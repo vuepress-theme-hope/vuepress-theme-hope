@@ -293,7 +293,7 @@ export default defineComponent({
                                   item
                                 ),
                                 h("button", {
-                                  class: "search-pro-close-icon",
+                                  class: "search-pro-remove-icon",
                                   innerHTML: CLOSE_ICON,
                                   onClick: (event: Event) => {
                                     event.preventDefault();
@@ -360,7 +360,7 @@ export default defineComponent({
                                   ]
                                 ),
                                 h("button", {
-                                  class: "search-pro-close-icon",
+                                  class: "search-pro-remove-icon",
                                   innerHTML: CLOSE_ICON,
                                   onClick: (event: Event) => {
                                     event.preventDefault();
