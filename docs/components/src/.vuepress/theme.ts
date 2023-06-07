@@ -86,6 +86,7 @@ export default theme("components", {
         "Share",
         "SiteInfo",
         "StackBlitz",
+        "VidStack",
         "VideoPlayer",
         "XiGua",
         "YouTube",

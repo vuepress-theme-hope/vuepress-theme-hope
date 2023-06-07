@@ -17,6 +17,7 @@ export const AVAILABLE_COMPONENTS: AvailableComponent[] = [
   "Share",
   "SiteInfo",
   "StackBlitz",
+  "VidStack",
   "VideoPlayer",
   "XiGua",
   "YouTube",

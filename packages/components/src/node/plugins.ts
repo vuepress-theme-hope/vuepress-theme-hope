@@ -1,6 +1,6 @@
 import { type PluginFunction } from "@vuepress/core";
 import { useSassPalettePlugin } from "vuepress-plugin-sass-palette";
-import { checkVersion } from "vuepress-shared/node";
+import { addCustomElement, checkVersion } from "vuepress-shared/node";
 
 import { convertOptions } from "./compact/index.js";
 import { getDefine } from "./define.js";
@@ -24,6 +24,11 @@ export const componentsPlugin =
       name: PLUGIN_NAME,
 
       define: getDefine(options, legacy),
+
+      extendsBundlerOptions: (bundlerOptions, app): void => {
+        if (options?.components?.includes("VidStack"))
+          addCustomElement(bundlerOptions, app, /^media-/);
+      },
 
       clientConfigFile: (app) => prepareConfigFile(app, options, legacy),
     };

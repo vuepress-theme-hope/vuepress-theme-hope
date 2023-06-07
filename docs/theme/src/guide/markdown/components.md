@@ -23,6 +23,7 @@ Available components:
 - Share
 - StackBlitz
 - SiteInfo
+- VidStack
 - VideoPlayer
 - XiGua
 - YouTube
@@ -58,6 +59,7 @@ export default defineUserConfig({
           "Share",
           "SiteInfo",
           "StackBlitz",
+          "VidStack",
           "VideoPlayer",
           "XiGua",
           "YouTube",
@@ -90,6 +92,7 @@ export default {
           "Share",
           "SiteInfo",
           "StackBlitz",
+          "VidStack",
           "VideoPlayer",
           "XiGua",
           "YouTube",
@@ -114,6 +117,13 @@ A video player with poster:
   src="https://vp-demo.u2sb.com/video/caminandes_03_llamigos_720p.mp4"
   poster="/assets/poster.svg"
 />
+
+```md
+<ArtPlayer
+  src="https://vp-demo.u2sb.com/video/caminandes_03_llamigos_720p.mp4"
+  poster="/assets/poster.svg"
+/>
+```
 
 A video player with custom settings:
 
@@ -526,6 +536,88 @@ A StackBlitz project with custom settings:
 :::
 
 See <ProjectLink name="components" path="/guide/stackblitz.html">StackBlitz</ProjectLink> page for available props.
+
+## VidStack
+
+A video player:
+
+<VidStack src="https://vp-demo.u2sb.com/video/caminandes_03_llamigos_720p.mp4" />
+
+A video player with poster and tracks:
+
+<VidStack
+  src="https://upload.wikimedia.org/wikipedia/commons/transcoded/f/f1/Sintel_movie_4K.webm/Sintel_movie_4K.webm.1080p.vp9.webm"
+  title="VidStack video"
+  poster="/poster.svg"
+  :tracks="[
+    {
+      default: true,
+      src: '/en.vtt',
+      kind: 'subtitles',
+      label: 'English',
+      srcLang: 'en',
+    },
+    {
+      src: '//fr.vtt',
+      kind: 'subtitles',
+      label: 'French',
+      srcLang: 'fr',
+    },
+  ]"
+/>
+
+An audio player:
+
+<VidStack
+  src="/sample.mp3"
+  title="A Sample Audio"
+/>
+
+::: details Code
+
+A video player:
+
+```md
+<VidStack src="https://vp-demo.u2sb.com/video/caminandes_03_llamigos_720p.mp4" />
+```
+
+A video player with poster and tracks:
+
+```md
+<VidStack
+  src="https://upload.wikimedia.org/wikipedia/commons/transcoded/f/f1/Sintel_movie_4K.webm/Sintel_movie_4K.webm.1080p.vp9.webm"
+  title="VidStack video"
+  poster="/poster.svg"
+  :tracks="[
+    {
+      default: true,
+      src: '/en.vtt',
+      kind: 'subtitles',
+      label: 'English',
+      srcLang: 'en',
+    },
+    {
+      src: '//fr.vtt',
+      kind: 'subtitles',
+      label: 'French',
+      srcLang: 'fr',
+    },
+  ]"
+/>
+```
+
+An audio player:
+
+```md
+<VidStack
+  src="/sample.mp3"
+  title="A Sample Audio"
+/>
+```
+
+:::
+
+See <ProjectLink name="components" path="/guide/vidstack.html">VidStack</ProjectLink> page for available props.
 
 ## VideoPlayer
 

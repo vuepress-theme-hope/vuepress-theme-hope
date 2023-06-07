@@ -20,6 +20,7 @@ icon: gears
     | "Share"
     | "StackBlitz"
     | "SiteInfo"
+    | "VidStack"
     | "VideoPlayer"
     | "XiGua"
     | "YouTube";
@@ -42,6 +43,7 @@ icon: gears
 - `"Share"`
 - `"StackBlitz"`
 - `"SiteInfo"`
+- `"VidStack"`
 - `"VideoPlayer"`
 - `"XiGua"`
 - `"YouTube"`

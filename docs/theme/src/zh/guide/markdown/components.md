@@ -23,6 +23,7 @@ tag:
 - Share
 - StackBlitz
 - SiteInfo
+- VidStack
 - VideoPlayer
 - XiGua
 - YouTube
@@ -58,6 +59,7 @@ export default defineUserConfig({
           "Share",
           "SiteInfo",
           "StackBlitz",
+          "VidStack",
           "VideoPlayer",
           "XiGua",
           "YouTube",
@@ -90,6 +92,7 @@ export default {
           "Share",
           "SiteInfo",
           "StackBlitz",
+          "VidStack",
           "VideoPlayer",
           "XiGua",
           "YouTube",
@@ -527,6 +530,88 @@ PDF 浏览器组件。
 :::
 
 有关可用属性，请参阅 <ProjectLink name="components" path="/zh/guide/stackblitz.html">StackBlitz</ProjectLink> 页面。
+
+## VidStack
+
+视频播放器:
+
+<VidStack src="https://vp-demo.u2sb.com/video/caminandes_03_llamigos_720p.mp4" />
+
+有封面和音轨的播放器:
+
+<VidStack
+  src="https://upload.wikimedia.org/wikipedia/commons/transcoded/f/f1/Sintel_movie_4K.webm/Sintel_movie_4K.webm.1080p.vp9.webm"
+  title="VidStack video"
+  poster="/poster.svg"
+  :tracks="[
+    {
+      default: true,
+      src: '/en.vtt',
+      kind: 'subtitles',
+      label: 'English',
+      srcLang: 'en',
+    },
+    {
+      src: '//fr.vtt',
+      kind: 'subtitles',
+      label: 'French',
+      srcLang: 'fr',
+    },
+  ]"
+/>
+
+一个音频播放器:
+
+<VidStack
+  src="/sample.mp3"
+  title="A Sample Audio"
+/>
+
+::: details 代码
+
+视频播放器:
+
+```md
+<VidStack src="https://vp-demo.u2sb.com/video/caminandes_03_llamigos_720p.mp4" />
+```
+
+有封面和音轨的播放器:
+
+```md
+<VidStack
+  src="https://upload.wikimedia.org/wikipedia/commons/transcoded/f/f1/Sintel_movie_4K.webm/Sintel_movie_4K.webm.1080p.vp9.webm"
+  title="VidStack video"
+  poster="/poster.svg"
+  :tracks="[
+    {
+      default: true,
+      src: '/en.vtt',
+      kind: 'subtitles',
+      label: 'English',
+      srcLang: 'en',
+    },
+    {
+      src: '//fr.vtt',
+      kind: 'subtitles',
+      label: 'French',
+      srcLang: 'fr',
+    },
+  ]"
+/>
+```
+
+一个音频播放器:
+
+```md
+<VidStack
+  src="/sample.mp3"
+  title="A Sample Audio"
+/>
+```
+
+:::
+
+有关可用属性，请参阅 <ProjectLink name="components" path="/zh/guide/vidstack.html">VidStack</ProjectLink> 页面。
 
 ## VideoPlayer
 

@@ -61,6 +61,7 @@
     "mpegts.js": "^1.7.3",
     "plyr": "^3.7.8",
     "qrcode": "^1.5.3",
+    "vidstack": "^0.6.4",
     "vue": "^3.3.4",
     "vue-router": "^4.2.2",
     "vuepress-plugin-reading-time2": "workspace:*",
