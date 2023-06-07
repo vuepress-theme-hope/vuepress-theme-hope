@@ -28,7 +28,9 @@ export default defineComponent({
               h(ArticleList, { items: articles.value.items })
             ),
           ]),
-          h(DropTransition, { appear: true, delay: 0.16 }, () => h(InfoPanel)),
+          h(DropTransition, { appear: true, delay: 0.16 }, () =>
+            h(InfoPanel, { key: "blog" })
+          ),
         ]),
         h(DropTransition, { appear: true, delay: 0.28 }, () =>
           h(MarkdownContent)

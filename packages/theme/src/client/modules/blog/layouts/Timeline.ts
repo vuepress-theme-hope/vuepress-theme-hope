@@ -30,7 +30,9 @@ export default defineComponent({
                 h(TimelineItems)
               ),
             ]),
-            h(DropTransition, { delay: 0.16 }, () => h(InfoPanel)),
+            h(DropTransition, { delay: 0.16 }, () =>
+              h(InfoPanel, { key: "blog" })
+            ),
           ])
         )
       );

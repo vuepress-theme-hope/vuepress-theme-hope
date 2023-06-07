@@ -83,7 +83,9 @@ export default defineComponent({
                   )
                 : null,
             ]),
-            h(DropTransition, { delay: 0.16 }, () => h(InfoPanel)),
+            h(DropTransition, { delay: 0.16 }, () =>
+              h(InfoPanel, { key: "blog" })
+            ),
           ])
         )
       );

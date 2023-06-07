@@ -53,7 +53,9 @@ export default defineComponent({
                 h(ArticleList, { key: page.value.path, items: items.value })
               ),
             ]),
-            h(DropTransition, { delay: 0.16 }, () => h(InfoPanel)),
+            h(DropTransition, { delay: 0.16 }, () =>
+              h(InfoPanel, { key: "blog" })
+            ),
           ])
         )
       );
