@@ -159,11 +159,9 @@ export const mdEnhancePlugin =
             ...(isPlainObject(options.mathjax) ? options.mathjax : {}),
           });
 
-    const revealPlugins =
-      isPlainObject(options.presentation) &&
-      isArray(options.presentation.plugins)
-        ? options.presentation.plugins
-        : [];
+    const revealPlugins = isArray(options.presentation)
+      ? options.presentation
+      : [];
 
     useSassPalettePlugin(app, { id: "hope" });
 

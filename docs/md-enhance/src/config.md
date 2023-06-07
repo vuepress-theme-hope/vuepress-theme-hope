@@ -577,23 +577,16 @@ Default value: `"https://unpkg.com/react-dom/umd/react-dom.production.min.js"`
 ### presentation
 
 - Type: `PresentationOptions | boolean`
-- Default: `false`
-
-Whether to enable presentation syntax support.
-
-You can set it with an object, the object will be used to config reveal.js.
-
-#### presentation.plugins
-
-- Type: `RevealPlugin[]`
 
   ```ts
   type RevealPlugin = "highlight" | "math" | "search" | "notes" | "zoom";
   ```
 
-- Required: No
+- Default: `false`
 
-Plugins you want to use on reveal.js.
+Whether to enable presentation syntax support.
+
+You can set it with an array, which represents enabled plugins.
 
 Acceptable values are:
 

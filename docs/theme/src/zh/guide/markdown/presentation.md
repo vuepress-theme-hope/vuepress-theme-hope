@@ -55,13 +55,11 @@ export default {
 
 :::
 
-你也可以传入一个对象以进行更详细的配置。
-
-`presentation.plugins` 接收一个字符串数组，可以自由配置是否启用一些预设的插件。
+`presentation` 也接收一个字符串数组，可以自由配置是否启用一些内置插件。
 
 ::: tip
 
-可接受的插件有:
+内置插件包括:
 
 - `"highlight"`
 - `"math"`
@@ -69,15 +67,27 @@ export default {
 - `"notes"`
 - `"zoom"`
 
-<!-- - `"anything"`
-- `"audio"`
-- `"chalkboard"` -->
+注: 为了支持 Markdown 语法，我们总会启用 `markdown` 插件。
 
 :::
 
-你还可以使用 `presentation.revealConfig` 来配置全局传递给 Reveal.js 的配置选项。
-
 Reveal.js 还提供了[更多的插件](https://github.com/hakimel/reveal.js/wiki/Plugins,-Tools-and-Hardware)。如果你需要某个特定的插件，请在 GitHub 上提出 [Feature Request](https://github.com/vuepress-theme-hope/vuepress-theme-hope/issues/new?assignees=Mister-Hope&labels=enhancement&template=feature_request.md&title=%5BFeature+Request%5D)
+
+你可以在客户端配置文件中导入并使用 `defineRevealConfig` 来自定义 reveal.js 的配置:
+
+```ts
+// .vuepress/client.ts
+import { defineClientConfig } from "@vuepress/client";
+import { defineRevealConfig } from "vuepress-plugin-md-enhance/client";
+
+defineRevealConfig({
+  // 在此设置 reveal.js 选项
+});
+
+export default defineClientConfig({
+  // ...
+});
+```
 
 ## 语法
 

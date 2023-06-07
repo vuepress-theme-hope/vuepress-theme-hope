@@ -10,7 +10,7 @@ import {
   type MarkdownEnhanceLocaleData,
   type MathjaxOptions,
   type PlaygroundOptions,
-  type PresentationOptions,
+  type RevealPlugin,
   type StylizeOptions,
   type TSPresetPlaygroundOptions,
   type TasklistOptions,
@@ -327,7 +327,7 @@ export interface MarkdownEnhanceOptions {
    *
    * @default false
    */
-  presentation?: PresentationOptions | boolean;
+  presentation?: RevealPlugin[] | boolean;
 
   /**
    * Keyword enhancement

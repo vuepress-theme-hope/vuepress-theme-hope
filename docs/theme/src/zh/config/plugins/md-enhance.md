@@ -671,24 +671,17 @@ CodePen 编辑器显示情况，第一位代表 HTML ，第二位代表 JS，第
 
 ### presentation
 
-- 类型: `PresentationOptions | boolean`
-- 默认值: `false`
-
-是否启用幻灯片支持。
-
-你可以传入一个对象，这个对象将用于 reveal.js 配置。
-
-#### presentation.plugins
-
-- 类型: `RevealPlugin[]`
+- 类型: `RevealPlugin[] | boolean`
 
   ```ts
   type RevealPlugin = "highlight" | "math" | "search" | "notes" | "zoom";
   ```
 
-- 必填: 否
+- 默认值: `false`
 
-你想启用的 Reveal.js 插件
+是否启用幻灯片支持。
+
+你可以传入一个数组，它将决定启用的 Reveal.js 插件
 
 可接受的插件有:
 
@@ -701,13 +694,6 @@ CodePen 编辑器显示情况，第一位代表 HTML ，第二位代表 JS，第
 <!-- - `"anything"`
 - `"audio"`
 - `"chalkboard"` -->
-
-#### presentation.revealConfig
-
-- 类型: `Partial<RevealOptions>`
-- 必填: 否
-
-你想要传递给 Reveal.js 的配置选项
 
 ### delay
 

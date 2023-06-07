@@ -47,13 +47,11 @@ export default {
 
 :::
 
-你也可以传入一个对象以进行更详细的配置。
-
-`presentation.plugins` 接收一个字符串数组，可以自由配置是否启用一些预设的插件。
+`presentation` 也接收一个字符串数组，可以自由配置是否启用一些内置插件。
 
 ::: tip
 
-可接受的插件有:
+内置插件包括:
 
 - `"highlight"`
 - `"math"`
@@ -64,6 +62,8 @@ export default {
 <!-- - `"anything"`
 - `"audio"`
 - `"chalkboard"` -->
+
+注: 为了支持 Markdown 语法，我们总会启用 `markdown` 插件。
 
 :::
 

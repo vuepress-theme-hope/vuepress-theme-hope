@@ -87,10 +87,6 @@ export default defineComponent({
       const [, revealJS, ...plugins] = await Promise.all(promises);
 
       const reveal = new revealJS.default(container, {
-        plugins: plugins.map(({ default: plugin }) => plugin),
-      });
-
-      await reveal.initialize({
         backgroundTransition: "slide",
         hash: frontmatter.value.layout === "Slide",
         mouseWheel: frontmatter.value.layout === "Slide",
@@ -99,7 +95,14 @@ export default defineComponent({
         ...revealOptions,
         ...(frontmatter.value.reveal || {}),
         embedded: frontmatter.value.layout !== "Slide",
+        plugins: [
+          ...plugins.map(({ default: plugin }) => plugin),
+          // eslint-disable-next-line @typescript-eslint/no-unsafe-assignment
+          ...(revealOptions.plugins ?? []),
+        ],
       });
+
+      await reveal.initialize();
 
       return reveal;
     };

@@ -43,13 +43,11 @@ export default {
 
 :::
 
-You can also pass an object for configuration.
-
-`presentation.plugins` receives an array of strings, allowing you to freely config whether to enable some preset plugins.
+`presentation` also receives an array of strings, allowing you to freely config whether to enable some built-in plugins.
 
 ::: tip
 
-Acceptable plugins are:
+Built-in plugins are:
 
 - `"highlight"`
 - `"math"`
@@ -61,11 +59,13 @@ Acceptable plugins are:
 - `"audio"`
 - `"chalkboard"` -->
 
+Note: `markdown` plugin is enabled anyway to support markdown grammar.
+
 :::
 
 Reveal.js also provides [more plugins](https://github.com/hakimel/reveal.js/wiki/Plugins,-Tools-and-Hardware). If you need a specific plugin, please submit a [Feature Request](https://github.com/vuepress-theme-hope/vuepress-theme-hope/issues/new?assignees=Mister-Hope&labels=enhancement&template=feature_request.md&title=%5BFeature+Request%5D) on GitHub.
 
-You can import and call `defineVuePlaygroundConfig` in client config file to customize reveal.js:
+You can import and call `defineRevealConfig` in client config file to customize reveal.js:
 
 ```ts
 // .vuepress/client.ts
