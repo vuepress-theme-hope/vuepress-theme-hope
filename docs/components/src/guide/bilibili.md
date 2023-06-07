@@ -18,10 +18,10 @@ A bilibili video:
 
 A bilibili video with custom settings:
 
-<BiliBili aid="34304064" cid="109293122" ratio="9:16" time="60" autoplay page="2" />
+<BiliBili aid="34304064" cid="109293122" ratio="9:16" time="60" page="2" />
 
 ```md
-<BiliBili aid="34304064" cid="109293122" ratio="9:16" time="60" autoplay page="2" />
+<BiliBili aid="34304064" cid="109293122" ratio="9:16" time="60" page="2" />
 ```
 
 ## Props

@@ -54,6 +54,7 @@ export default theme("theme", {
         "CodePen",
         "PDF",
         "Replit",
+        "Share",
         "SiteInfo",
         "StackBlitz",
         "VideoPlayer",

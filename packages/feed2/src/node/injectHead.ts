@@ -106,8 +106,6 @@ export const injectLinksToHead = (
           page.frontmatter.head.push(
             getHeadItem("RSS", rssOutputFilename, "application/rss+xml")
           );
-
-        console.log(page.frontmatter.head);
       }
     });
   }

@@ -16,22 +16,22 @@ title: ArtPlayer
 
 一个视频播放器:
 
-<ArtPlayer src="https://mse-demo.u2sb.com/caminandes_03_llamigos_720p.mp4" />
+<ArtPlayer src="https://vp-demo.u2sb.com/video/caminandes_03_llamigos_720p.mp4" />
 
 ```md
-<ArtPlayer src="https://mse-demo.u2sb.com/caminandes_03_llamigos_720p.mp4" />
+<ArtPlayer src="https://vp-demo.u2sb.com/video/caminandes_03_llamigos_720p.mp4" />
 ```
 
 一个包含了封面的播放器:
 
 <ArtPlayer
-  src="https://mse-demo.u2sb.com/caminandes_03_llamigos_720p.mp4"
+  src="https://vp-demo.u2sb.com/video/caminandes_03_llamigos_720p.mp4"
   poster="/poster.svg"
 />
 
 ```md
 <ArtPlayer
-  src="https://mse-demo.u2sb.com/caminandes_03_llamigos_720p.mp4"
+  src="https://vp-demo.u2sb.com/video/caminandes_03_llamigos_720p.mp4"
   poster="/poster.svg"
 />
 ```
@@ -39,7 +39,7 @@ title: ArtPlayer
 一个包含自定义设置的播放器:
 
 <ArtPlayer
-  src="https://mse-demo.u2sb.com/caminandes_03_llamigos_720p.mp4"
+  src="https://vp-demo.u2sb.com/video/caminandes_03_llamigos_720p.mp4"
   airplay
   aspect-ratio
   auto-size
@@ -60,7 +60,7 @@ title: ArtPlayer
 
 ```md
 <ArtPlayer
-  src="https://mse-demo.u2sb.com/caminandes_03_llamigos_720p.mp4"
+  src="https://vp-demo.u2sb.com/video/caminandes_03_llamigos_720p.mp4"
   airplay
   aspect-ratio
   auto-size
@@ -312,14 +312,14 @@ MSE 全称 Media Source Extensions， 详见 [Media Source Extensions API](https
 这是一个添加弹幕库插件的演示:
 
 <ArtPlayer
-  src="https://mse-demo.u2sb.com/caminandes_03_llamigos_720p.mp4"
+  src="https://vp-demo.u2sb.com/video/caminandes_03_llamigos_720p.mp4"
   :config="artPlayerDanmukuConfig"
   :customPlayer="customPlayer"
 />
 
 ```html
 <ArtPlayer
-  src="https://mse-demo.u2sb.com/caminandes_03_llamigos_720p.mp4"
+  src="https://vp-demo.u2sb.com/video/caminandes_03_llamigos_720p.mp4"
   :config="artPlayerDanmukuConfig"
   :customPlayer="customPlayer"
 />

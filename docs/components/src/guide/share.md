@@ -23,7 +23,6 @@ Customize services:
 <Share :services="['qq','weibo']" />
 
 ```md
-<Share />
 <Share services="qq,weibo" />
 <Share :services="['qq','weibo']" />
 ```
