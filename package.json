@@ -89,7 +89,6 @@
     "tslib": "2.5.3",
     "tsx": "3.12.7",
     "typescript": "5.1.3",
-    "vite": "4.3.9",
     "vitest": "0.32.0"
   },
   "packageManager": "pnpm@8.6.1",

@@ -45,18 +45,18 @@
     "pnpm": ">=7"
   },
   "dependencies": {
-    "@vuepress/shared": "2.0.0-beta.62",
-    "@vuepress/utils": "2.0.0-beta.62",
+    "@vuepress/shared": "2.0.0-beta.63",
+    "@vuepress/utils": "2.0.0-beta.63",
     "vuepress-shared": "workspace:*"
   },
   "devDependencies": {
-    "@vuepress/core": "2.0.0-beta.62",
-    "@vuepress/plugin-git": "2.0.0-beta.62"
+    "@vuepress/core": "2.0.0-beta.63",
+    "@vuepress/plugin-git": "2.0.0-beta.63"
   },
   "peerDependencies": {
-    "vuepress": "2.0.0-beta.62",
-    "vuepress-vite": "2.0.0-beta.62",
-    "vuepress-webpack": "2.0.0-beta.62"
+    "vuepress": "2.0.0-beta.63",
+    "vuepress-vite": "2.0.0-beta.63",
+    "vuepress-webpack": "2.0.0-beta.63"
   },
   "peerDependenciesMeta": {
     "vuepress": {

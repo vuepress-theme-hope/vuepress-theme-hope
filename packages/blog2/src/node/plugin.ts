@@ -22,7 +22,7 @@ export const blogPlugin =
     if (legacy)
       convertOptions(options as BlogOptions & Record<string, unknown>);
 
-    checkVersion(app, PLUGIN_NAME, "2.0.0-beta.62");
+    checkVersion(app, PLUGIN_NAME, "2.0.0-beta.63");
 
     const {
       getInfo = (): Record<string, never> => ({}),

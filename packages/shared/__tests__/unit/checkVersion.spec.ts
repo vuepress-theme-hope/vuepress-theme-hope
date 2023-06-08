@@ -23,8 +23,8 @@ it("Should return true", () => {
     theme: emptyTheme,
   });
 
-  expect(checkVersion(app1, "test", "2.0.0-beta.62")).toEqual(true);
-  expect(checkVersion(app2, "test", "2.0.0-beta.62")).toEqual(true);
+  expect(checkVersion(app1, "test", "2.0.0-beta.63")).toEqual(true);
+  expect(checkVersion(app2, "test", "2.0.0-beta.63")).toEqual(true);
 });
 
 it("Should return false", () => {
@@ -52,6 +52,6 @@ describe("Should support nesting", () => {
       theme: emptyTheme,
     });
 
-    expect(checkVersion(app1, "nesting", "2.0.0-beta.62")).toEqual(true);
+    expect(checkVersion(app1, "nesting", "2.0.0-beta.63")).toEqual(true);
   });
 });
