@@ -72,13 +72,16 @@ export default defineComponent({
 
   setup(props, { attrs }) {
     // FIXME: Workaround for https://github.com/vuepress/vuepress-next/issues/1349
-    [
-      "https://cdn.jsdelivr.net/npm/vidstack@0.6/styles/defaults.css",
-      "https://cdn.jsdelivr.net/npm/vidstack@0.6/styles/community-skin/audio.css",
-      "https://cdn.jsdelivr.net/npm/vidstack@0.6/styles/community-skin/video.css",
-    ].forEach((url, index) => {
-      useStyleTag(`@import url("${url}");`, { id: `vidstack-${index}` });
-    });
+    useStyleTag(
+      [
+        "https://cdn.jsdelivr.net/npm/vidstack@0.6/styles/defaults.css",
+        "https://cdn.jsdelivr.net/npm/vidstack@0.6/styles/community-skin/audio.css",
+        "https://cdn.jsdelivr.net/npm/vidstack@0.6/styles/community-skin/video.css",
+      ]
+        .map((url) => `@import url("${url}");`)
+        .join("\n"),
+      { id: "vidstack" }
+    );
 
     onMounted(() => defineCustomElements());
 
