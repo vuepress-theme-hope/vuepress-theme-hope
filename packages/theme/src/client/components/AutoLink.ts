@@ -10,8 +10,8 @@ import {
   h,
   toRef,
 } from "vue";
-import { RouterLink, useRoute } from "vue-router";
-import { keys, startsWith } from "vuepress-shared/client";
+import { useRoute } from "vue-router";
+import { VPLink, keys, startsWith } from "vuepress-shared/client";
 
 import HopeIcon from "@theme-hope/components/HopeIcon";
 
@@ -74,8 +74,8 @@ export default defineComponent({
     // if the `target` attr is "_blank"
     const isBlankTarget = computed(() => linkTarget.value === "_blank");
 
-    // render `<RouterLink>` or not
-    const renderRouterLink = computed(
+    // render `<VPLink>` or not
+    const renderVPLink = computed(
       () =>
         !hasHttpProtocol.value &&
         !hasNonHttpProtocol.value &&
@@ -111,7 +111,7 @@ export default defineComponent({
 
     // if this link is active
     const isActive = computed(() =>
-      renderRouterLink.value
+      renderVPLink.value
         ? config.value.activeMatch
           ? new RegExp(config.value.activeMatch).test(route.path)
           : // if this link is active in subpath
@@ -125,9 +125,9 @@ export default defineComponent({
       const { before, after, default: defaultSlot } = slots;
       const { text, icon, link } = config.value;
 
-      return renderRouterLink.value
+      return renderVPLink.value
         ? h(
-            RouterLink,
+            VPLink,
             {
               to: link,
               "aria-label": linkAriaLabel.value,

@@ -1,7 +1,8 @@
 import { usePageData, useSiteData } from "@vuepress/client";
 import { type VNode, computed, defineComponent, h } from "vue";
-import { type RouteMeta, RouterLink, useRouter } from "vue-router";
+import { type RouteMeta, useRouter } from "vue-router";
 import {
+  VPLink,
   endsWith,
   keys,
   startsWith,
@@ -237,17 +238,11 @@ export default defineComponent({
                       },
                       "#"
                     ),
-                    h(
-                      RouterLink,
-                      { class: "vp-catalog-title", to: path },
-                      () => [
-                        props.index ? `${mainIndex + 1}.` : null,
-                        icon && iconComponent
-                          ? h(iconComponent, { icon })
-                          : null,
-                        title || path,
-                      ]
-                    ),
+                    h(VPLink, { class: "vp-catalog-title", to: path }, () => [
+                      props.index ? `${mainIndex + 1}.` : null,
+                      icon && iconComponent ? h(iconComponent, { icon }) : null,
+                      title || path,
+                    ]),
                   ]
                 ),
                 children.length
@@ -272,7 +267,7 @@ export default defineComponent({
                                   "#"
                                 ),
                                 h(
-                                  RouterLink,
+                                  VPLink,
                                   { class: "vp-catalog-title", to: path },
                                   () => [
                                     props.index
@@ -293,7 +288,7 @@ export default defineComponent({
                                   children.map(
                                     ({ icon, path, title }, subIndex) =>
                                       h(
-                                        RouterLink,
+                                        VPLink,
                                         {
                                           class: "vp-sub-catalog",
                                           to: path,

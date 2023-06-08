@@ -10,8 +10,8 @@ import {
   toRef,
   watch,
 } from "vue";
-import { RouterLink, useRouter } from "vue-router";
-import { useLocaleConfig } from "vuepress-shared/client";
+import { useRouter } from "vue-router";
+import { VPLink, useLocaleConfig } from "vuepress-shared/client";
 
 import { SearchLoading } from "./SearchLoading.js";
 import { HeadingIcon, HeartIcon, HistoryIcon, TitleIcon } from "./icons.js";
@@ -320,7 +320,7 @@ export default defineComponent({
 
                           resultHistory.value.map((item, historyIndex) =>
                             h(
-                              RouterLink,
+                              VPLink,
                               {
                                 to: item.link,
                                 class: [
@@ -407,7 +407,7 @@ export default defineComponent({
                         activatedResultContentIndex.value === contentIndex;
 
                       return h(
-                        RouterLink,
+                        VPLink,
                         {
                           to: getRealPath(item),
                           class: [

@@ -1,7 +1,6 @@
 import { useSiteLocaleData, withBase } from "@vuepress/client";
 import { type VNode, computed, defineComponent, h } from "vue";
-import { RouterLink } from "vue-router";
-import { getAuthor, keys } from "vuepress-shared/client";
+import { VPLink, getAuthor, keys } from "vuepress-shared/client";
 
 import { useNavigate, useThemeLocaleData } from "@theme-hope/composables/index";
 import SocialMedia from "@theme-hope/modules/blog/components/SocialMedia";
@@ -108,7 +107,7 @@ export default defineComponent({
             "div",
             { class: "vp-blog-counts" },
             countItems.map(([path, count, locale]) =>
-              h(RouterLink, { class: "vp-blog-count", to: path }, () => [
+              h(VPLink, { class: "vp-blog-count", to: path }, () => [
                 h("div", { class: "count" }, count),
                 h("div", locale),
               ])

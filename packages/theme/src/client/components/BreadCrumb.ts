@@ -12,8 +12,8 @@ import {
   shallowRef,
   watch,
 } from "vue";
-import { RouterLink, useRouter } from "vue-router";
-import { resolveRouteWithRedirect } from "vuepress-shared/client";
+import { useRouter } from "vue-router";
+import { VPLink, resolveRouteWithRedirect } from "vuepress-shared/client";
 
 import HopeIcon from "@theme-hope/components/HopeIcon";
 import { useThemeLocaleData } from "@theme-hope/composables/index";
@@ -116,7 +116,7 @@ export default defineComponent({
                   },
                   [
                     h(
-                      RouterLink,
+                      VPLink,
                       {
                         to: item.path,
                         property: "item",

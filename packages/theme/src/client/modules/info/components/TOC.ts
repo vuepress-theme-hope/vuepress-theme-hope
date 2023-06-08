@@ -10,8 +10,8 @@ import {
   shallowRef,
   watch,
 } from "vue";
-import { RouterLink, useRoute } from "vue-router";
-import { isActiveLink } from "vuepress-shared/client";
+import { useRoute } from "vue-router";
+import { VPLink, isActiveLink } from "vuepress-shared/client";
 
 import PrintButton from "@theme-hope/modules/info/components/PrintButton";
 import { useMetaLocale } from "@theme-hope/modules/info/composables/index";
@@ -20,7 +20,7 @@ import "../styles/toc.scss";
 
 const renderHeader = ({ title, level, slug }: PageHeader): VNode =>
   h(
-    RouterLink,
+    VPLink,
     {
       to: `#${slug}`,
       class: ["toc-link", `level${level}`],

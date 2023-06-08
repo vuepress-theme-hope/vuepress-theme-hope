@@ -7,7 +7,7 @@ import {
   h,
   toRef,
 } from "vue";
-import { RouterLink } from "vue-router";
+import { VPLink } from "vuepress-shared/client";
 
 import {
   SlideIcon,
@@ -101,7 +101,7 @@ export default defineComponent({
                 : []),
             sticky ? h(StickyIcon) : null,
             h(
-              RouterLink,
+              VPLink,
               { to: props.path },
               () =>
                 slots.title?.({ title, isEncrypted, type }) ||

@@ -6,8 +6,7 @@ import {
   h,
   ref,
 } from "vue";
-import { RouterLink } from "vue-router";
-import { keys } from "vuepress-shared/client";
+import { VPLink, keys } from "vuepress-shared/client";
 
 import DropTransition from "@theme-hope/components/transitions/DropTransition";
 import { useNavigate, useThemeLocaleData } from "@theme-hope/composables/index";
@@ -115,7 +114,7 @@ export default defineComponent({
                           "li",
                           { class: "vp-sticky-article" },
                           h(
-                            RouterLink,
+                            VPLink,
                             { to: path },
                             () => info[ArticleInfoType.title]
                           )

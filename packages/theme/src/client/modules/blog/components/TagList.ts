@@ -1,8 +1,7 @@
 import { usePageFrontmatter } from "@vuepress/client";
 import { type VNode, defineComponent, h } from "vue";
-import { RouterLink } from "vue-router";
 import { type BlogPluginCategoryFrontmatter } from "vuepress-plugin-blog2";
-import { entries, generateIndexFromHash } from "vuepress-shared/client";
+import { VPLink, entries, generateIndexFromHash } from "vuepress-shared/client";
 
 import { useTagMap } from "@theme-hope/modules/blog/composables/index";
 
@@ -33,7 +32,7 @@ export default defineComponent({
                 { active: isActive(tag) },
               ],
             },
-            h(RouterLink, { to: path }, () => [
+            h(VPLink, { to: path }, () => [
               tag,
               h("span", { class: "tag-num" }, items.length),
             ])
