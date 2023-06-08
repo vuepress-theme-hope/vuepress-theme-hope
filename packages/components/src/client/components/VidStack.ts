@@ -80,7 +80,7 @@ export default defineComponent({
       ]
         .map((url) => `@import url("${url}");`)
         .join("\n"),
-      { id: "vidstack" }
+      { id: "vidstack-style" }
     );
 
     onMounted(() => defineCustomElements());
