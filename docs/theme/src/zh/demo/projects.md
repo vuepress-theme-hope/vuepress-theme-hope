@@ -400,6 +400,13 @@ blog:
     url: https://xxxweii.github.io/XXXWeiiBlog
     repo: https://github.com/XXXWeii/XXXWeiiBlog
     preview: https://xxxweii.github.io/XXXWeiiBlog/assets/images/XXXWeii.png
+
+  - name: Yaien Blog
+    desc: Yaien 的 Java 学习笔记
+    logo: https://yanggl.cn/logo.png
+    url: https://yanggl.cn
+    repo: https://github.com/yaien6530/yaien6530.github.io
+    preview: https://yanggl.cn/web_img.jpg
 ---
 
 ## 使用 VuePress Theme Hope 的文档
