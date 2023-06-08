@@ -4,6 +4,16 @@ All notable changes to this project will be documented in this file. See [Conven
 
 <!-- #region recent-beta -->
 
+## [2.0.0-beta.224](https://github.com/vuepress-theme-hope/vuepress-theme-hope/compare/v2.0.0-beta.223...v2.0.0-beta.224) (2023-06-08)
+
+### Features
+
+- **search-pro:** improve auto suggestion ([f6d79db](https://github.com/vuepress-theme-hope/vuepress-theme-hope/commit/f6d79db62ab99216989678bc0446cdd34642e274))
+
+### Performance Improvements
+
+- improve router resolve speed ([33ed2ce](https://github.com/vuepress-theme-hope/vuepress-theme-hope/commit/33ed2ce2d5ac43879efaa62bf15859a1db6ca17d))
+
 ## [2.0.0-beta.223](https://github.com/vuepress-theme-hope/vuepress-theme-hope/compare/v2.0.0-beta.222...v2.0.0-beta.223) (2023-06-08)
 
 ### Features
