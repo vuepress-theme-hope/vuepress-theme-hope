@@ -23,7 +23,7 @@ Available components:
 - Share
 - StackBlitz
 - SiteInfo
-- VidStack
+<!-- - VidStack -->
 - VideoPlayer
 - XiGua
 - YouTube
@@ -59,7 +59,7 @@ export default defineUserConfig({
           "Share",
           "SiteInfo",
           "StackBlitz",
-          "VidStack",
+          // "VidStack",
           "VideoPlayer",
           "XiGua",
           "YouTube",
@@ -92,7 +92,7 @@ export default {
           "Share",
           "SiteInfo",
           "StackBlitz",
-          "VidStack",
+          // "VidStack",
           "VideoPlayer",
           "XiGua",
           "YouTube",
@@ -537,6 +537,7 @@ A StackBlitz project with custom settings:
 
 See <ProjectLink name="components" path="/guide/stackblitz.html">StackBlitz</ProjectLink> page for available props.
 
+<!--
 ## VidStack
 
 A video player:
@@ -617,7 +618,7 @@ An audio player:
 
 :::
 
-See <ProjectLink name="components" path="/guide/vidstack.html">VidStack</ProjectLink> page for available props.
+See <ProjectLink name="components" path="/guide/vidstack.html">VidStack</ProjectLink> page for available props. -->
 
 ## VideoPlayer
 

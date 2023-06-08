@@ -2,6 +2,12 @@
 title: VidStack
 ---
 
+::: warning
+
+VidStack 有一些和 Vue 渲染的已知问题。
+
+:::
+
 在 Markdown 文件中嵌入 [VidStack](https://www.vidstack.io/)。
 
 <!-- more -->
@@ -10,7 +16,7 @@ title: VidStack
 
 视频播放器:
 
-<VidStack src="https://vp-demo.u2sb.com/video/caminandes_03_llamigos_720p.mp4" />
+<!-- <VidStack src="https://vp-demo.u2sb.com/video/caminandes_03_llamigos_720p.mp4" /> -->
 
 ```md
 <VidStack src="https://vp-demo.u2sb.com/video/caminandes_03_llamigos_720p.mp4" />
@@ -18,7 +24,7 @@ title: VidStack
 
 有封面和音轨的播放器:
 
-<VidStack
+<!-- <VidStack
   src="https://upload.wikimedia.org/wikipedia/commons/transcoded/f/f1/Sintel_movie_4K.webm/Sintel_movie_4K.webm.1080p.vp9.webm"
   title="VidStack video"
   poster="/poster.svg"
@@ -37,7 +43,7 @@ title: VidStack
       srcLang: 'fr',
     },
   ]"
-/>
+/> -->
 
 ```md
 <VidStack
@@ -64,10 +70,10 @@ title: VidStack
 
 一个音频播放器:
 
-<VidStack
+<!-- <VidStack
   src="/sample.mp3"
   title="A Sample Audio"
-/>
+/> -->
 
 ```md
 <VidStack

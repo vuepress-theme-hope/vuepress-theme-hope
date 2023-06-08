@@ -4,13 +4,19 @@ title: VidStack
 
 Embed [VidStack](https://www.vidstack.io/) in Markdown files.
 
+::: warning
+
+VidStack has some known issues with Vue. So stop using it until we fixed it.
+
+:::
+
 <!-- more -->
 
 ## Demo
 
 A video player:
 
-<VidStack src="https://vp-demo.u2sb.com/video/caminandes_03_llamigos_720p.mp4" />
+<!-- <VidStack src="https://vp-demo.u2sb.com/video/caminandes_03_llamigos_720p.mp4" /> -->
 
 ```md
 <VidStack src="https://vp-demo.u2sb.com/video/caminandes_03_llamigos_720p.mp4" />
@@ -18,7 +24,7 @@ A video player:
 
 A video player with poster and tracks:
 
-<VidStack
+<!-- <VidStack
   src="https://upload.wikimedia.org/wikipedia/commons/transcoded/f/f1/Sintel_movie_4K.webm/Sintel_movie_4K.webm.1080p.vp9.webm"
   title="VidStack video"
   poster="/poster.svg"
@@ -37,7 +43,7 @@ A video player with poster and tracks:
       srcLang: 'fr',
     },
   ]"
-/>
+/> -->
 
 ```md
 <VidStack
@@ -64,10 +70,10 @@ A video player with poster and tracks:
 
 An audio player:
 
-<VidStack
+<!-- <VidStack
   src="/sample.mp3"
   title="A Sample Audio"
-/>
+/> -->
 
 ```md
 <VidStack

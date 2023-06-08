@@ -57,7 +57,7 @@ export default theme("theme", {
         "Share",
         "SiteInfo",
         "StackBlitz",
-        "VidStack",
+        // "VidStack",
         "VideoPlayer",
         "YouTube",
       ],

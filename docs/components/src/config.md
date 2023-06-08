@@ -20,7 +20,7 @@ icon: gears
     | "Share"
     | "StackBlitz"
     | "SiteInfo"
-    | "VidStack"
+    // | "VidStack"
     | "VideoPlayer"
     | "XiGua"
     | "YouTube";
@@ -43,7 +43,7 @@ Available component names:
 - `"Share"`
 - `"StackBlitz"`
 - `"SiteInfo"`
-- `"VidStack"`
+<!-- - `"VidStack"` -->
 - `"VideoPlayer"`
 - `"XiGua"`
 - `"YouTube"`

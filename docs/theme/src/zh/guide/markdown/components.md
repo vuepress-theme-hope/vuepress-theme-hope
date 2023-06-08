@@ -59,7 +59,7 @@ export default defineUserConfig({
           "Share",
           "SiteInfo",
           "StackBlitz",
-          "VidStack",
+          // "VidStack",
           "VideoPlayer",
           "XiGua",
           "YouTube",
@@ -92,7 +92,7 @@ export default {
           "Share",
           "SiteInfo",
           "StackBlitz",
-          "VidStack",
+          // "VidStack",
           "VideoPlayer",
           "XiGua",
           "YouTube",
@@ -531,6 +531,7 @@ PDF 浏览器组件。
 
 有关可用属性，请参阅 <ProjectLink name="components" path="/zh/guide/stackblitz.html">StackBlitz</ProjectLink> 页面。
 
+<!--
 ## VidStack
 
 视频播放器:
@@ -611,7 +612,7 @@ PDF 浏览器组件。
 
 :::
 
-有关可用属性，请参阅 <ProjectLink name="components" path="/zh/guide/vidstack.html">VidStack</ProjectLink> 页面。
+有关可用属性，请参阅 <ProjectLink name="components" path="/zh/guide/vidstack.html">VidStack</ProjectLink> 页面。 -->
 
 ## VideoPlayer
 
