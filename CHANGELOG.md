@@ -4,6 +4,19 @@ All notable changes to this project will be documented in this file. See [Conven
 
 <!-- #region recent-beta -->
 
+## [2.0.0-beta.223](https://github.com/vuepress-theme-hope/vuepress-theme-hope/compare/v2.0.0-beta.222...v2.0.0-beta.223) (2023-06-08)
+
+### Features
+
+- **components:** add loading state for components ([642c0a9](https://github.com/vuepress-theme-hope/vuepress-theme-hope/commit/642c0a9618f96ccbba4d6c44d667e72761928de5))
+- **md-enhance:** support additional plugins and align docs, close [#3202](https://github.com/vuepress-theme-hope/vuepress-theme-hope/issues/3202) ([254c510](https://github.com/vuepress-theme-hope/vuepress-theme-hope/commit/254c5103f58b830e98060e016d9865077e472709))
+- **shared:** add VPLink ([679e142](https://github.com/vuepress-theme-hope/vuepress-theme-hope/commit/679e142421022094767fea3fcef257c3fe90c7e1))
+- **theme:** key InfoPanel in blog pages ([779779d](https://github.com/vuepress-theme-hope/vuepress-theme-hope/commit/779779da3b52c68c18c99347616cc8bc375be67a))
+
+### Bug Fixes
+
+- **theme:** fix blogger info appearance ([075f23d](https://github.com/vuepress-theme-hope/vuepress-theme-hope/commit/075f23d4d4409f2fe556404be1efb13f5aea6b12))
+
 ## [2.0.0-beta.222](https://github.com/vuepress-theme-hope/vuepress-theme-hope/compare/v2.0.0-beta.221...v2.0.0-beta.222) (2023-06-07)
 
 ### Features
