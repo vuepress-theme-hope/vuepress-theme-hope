@@ -64,23 +64,8 @@ const VPCard: FunctionalComponent<CardProps> = ({
   if (color) props["style"] = { background: color };
 
   return isLinkExternal(link)
-    ? h(
-        "a",
-        {
-          href: link,
-          target: "_blank",
-          ...props,
-        },
-        children
-      )
-    : h(
-        VPLink,
-        {
-          to: link,
-          ...props,
-        },
-        children
-      );
+    ? h("a", { href: link, target: "_blank", ...props }, children)
+    : h(VPLink, { to: link, ...props }, children);
 };
 
 VPCard.displayName = "VPCard";

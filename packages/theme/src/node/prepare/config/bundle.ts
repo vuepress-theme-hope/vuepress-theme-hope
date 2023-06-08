@@ -68,6 +68,9 @@ export const prepareBundleConfigFile = (
     `theme-hope/config.js`,
     `\
 import { defineClientConfig } from "@vuepress/client";
+import { VPLink } from "${path.resolve(
+      require.resolve("vuepress-shared/client")
+    )}";
 
 import { HopeIcon, Layout, NotFound, useScrollPromise, injectDarkmode, setupDarkmode, setupSidebarItems } from "${BUNDLE_FOLDER}export.js";
 
@@ -92,6 +95,8 @@ export default defineClientConfig({
 
     // provide HopeIcon as global component
     app.component("HopeIcon", HopeIcon);
+    // provide VPLink as global component
+    app.component("VPLink", VPLink);
 
 ${enhances.map((item) => `    ${item}`).join("\n")}
   },

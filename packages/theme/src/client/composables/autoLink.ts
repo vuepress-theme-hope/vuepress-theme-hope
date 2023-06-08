@@ -14,6 +14,11 @@ export const useAutoLink = (
   item: string,
   preferFull = false
 ): AutoLinkOptions => {
+  // Performance: try to infer the final path
+  item = item.replace(/(^|\/)(README|index).md$/i, "$1");
+  if (item.endsWith(".md")) item = `${item.slice(0, -3)}.html`;
+  if (item.match(/\/[^/]+$/)) item = `${item}.html`;
+
   const router = useRouter();
   const { fullPath, meta, name } = resolveRouteWithRedirect(
     router,
