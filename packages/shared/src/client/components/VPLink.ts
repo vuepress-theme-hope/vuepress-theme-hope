@@ -86,18 +86,15 @@ export const VPLink = defineComponent({
     const to = toRef(props, "to");
     const linkOptions = useLink(to);
 
-    return (): VNode => {
-      const children = slots.default && slots.default(linkOptions);
-
-      return h(
+    return (): VNode =>
+      h(
         "a",
         {
-          class: linkOptions.isActive.value ? "vp-active" : "",
+          class: ["vp-link", { "vp-active": linkOptions.isActive.value }],
           href: linkOptions.href.value,
           onClick: linkOptions.navigate,
         },
-        children
+        slots.default?.(linkOptions)
       );
-    };
   },
 });
