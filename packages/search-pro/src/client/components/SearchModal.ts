@@ -169,58 +169,38 @@ export default defineComponent({
                   displaySuggestion.value &&
                   suggestions.value.length
                     ? h(
-                        "div",
+                        "ul",
                         {
-                          class: "search-pro-suggestions-wrapper",
+                          class: "search-pro-suggestions",
                           ref: suggestionsElement,
                         },
-                        [
+                        suggestions.value.map((suggestion, index) =>
                           h(
-                            "button",
+                            "li",
                             {
-                              type: "button",
-                              class: "search-pro-close-suggestion",
-                              title: `ESC ${locale.value.exit}`,
+                              class: [
+                                "search-pro-suggestion",
+                                {
+                                  active: index === activeSuggestionIndex.value,
+                                },
+                              ],
                               onClick: () => {
-                                displaySuggestion.value = false;
+                                applySuggestion(index);
                               },
                             },
                             [
-                              h("span", { innerHTML: CLOSE_ICON }),
-                              h("kbd", { innerHTML: ESC_KEY_ICON }),
-                            ]
-                          ),
-                          h("ul", { class: "search-pro-suggestions" }, [
-                            suggestions.value.map((suggestion, index) =>
                               h(
-                                "li",
+                                "kbd",
                                 {
-                                  class: [
-                                    "search-pro-suggestion",
-                                    {
-                                      active:
-                                        index === activeSuggestionIndex.value,
-                                    },
-                                  ],
-                                  onClick: () => {
-                                    applySuggestion(index);
-                                  },
+                                  class: "search-pro-auto-complete",
+                                  title: `Tab ${locale.value.autocomplete}`,
                                 },
-                                [
-                                  h(
-                                    "kbd",
-                                    {
-                                      class: "search-pro-auto-complete",
-                                      title: `Tab ${locale.value.autocomplete}`,
-                                    },
-                                    "Tab"
-                                  ),
-                                  suggestion,
-                                ]
-                              )
-                            ),
-                          ]),
-                        ]
+                                "Tab"
+                              ),
+                              suggestion,
+                            ]
+                          )
+                        )
                       )
                     : null,
                 ]),

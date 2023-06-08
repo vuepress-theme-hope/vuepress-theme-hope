@@ -1,6 +1,7 @@
 import { useRouteLocale } from "@vuepress/client";
 import { useDebounceFn } from "@vueuse/core";
 import { type Ref, onMounted, onUnmounted, ref, watch } from "vue";
+import { startsWith } from "vuepress-shared/client";
 
 import { enableAutoSuggestions, searchProOptions } from "../define.js";
 import { useSearchOptions } from "../helpers/index.js";
@@ -27,7 +28,12 @@ export const useSearchSuggestions = (query: Ref<string>): SuggestionsRef => {
             options: searchOptions,
           })
             .then((_suggestions) => {
-              suggestions.value = _suggestions;
+              suggestions.value = _suggestions.length
+                ? startsWith(_suggestions[0], queryString) &&
+                  !_suggestions[0].slice(queryString.length).includes(" ")
+                  ? _suggestions
+                  : [queryString, ..._suggestions]
+                : [];
             })
             .catch((err) => {
               console.error(err);
