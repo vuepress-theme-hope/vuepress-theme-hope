@@ -1,5 +1,6 @@
 /* eslint-disable vue/no-unused-properties */
-import { type VNode, computed, defineComponent, h } from "vue";
+import { type VNode, computed, defineComponent, h, ref } from "vue";
+import { LoadingIcon } from "vuepress-shared/client";
 
 import { useSize } from "../composables/index.js";
 import { videoIframeAllow } from "../utils/index.js";
@@ -113,6 +114,8 @@ export default defineComponent({
   setup(props) {
     const { el, width, height } = useSize<HTMLIFrameElement>(props);
 
+    const loaded = ref(false);
+
     const videoLink = computed(() => {
       const { aid, bvid, cid, autoplay, time, page } = props;
 
@@ -125,7 +128,7 @@ export default defineComponent({
         : null;
     });
 
-    return (): VNode[] | null =>
+    return (): (VNode | null)[] =>
       videoLink.value
         ? [
             h(
@@ -142,10 +145,14 @@ export default defineComponent({
               allow: videoIframeAllow,
               style: {
                 width: width.value,
-                height: height.value,
+                height: loaded.value ? height.value : 0,
+              },
+              onLoad: () => {
+                loaded.value = true;
               },
             }),
+            loaded.value ? null : h(LoadingIcon),
           ]
-        : null;
+        : [];
   },
 });

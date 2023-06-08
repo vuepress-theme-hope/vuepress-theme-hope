@@ -23,6 +23,8 @@ import {
   registerMseHls,
 } from "../utils/mse.js";
 
+import "../styles/art-player.scss";
+
 const BOOLEAN_TRUE_ATTRS = [
   "no-fullscreen",
   "no-hotkey",
