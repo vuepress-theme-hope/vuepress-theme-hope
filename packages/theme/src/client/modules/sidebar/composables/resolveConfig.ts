@@ -1,27 +1,23 @@
 /* eslint-disable @typescript-eslint/no-unsafe-argument */
-import {
-  type PageHeader,
-  usePageData,
-  usePageFrontmatter,
-  useRouteLocale,
-} from "@vuepress/client";
+import { type PageHeader, usePageData, useRouteLocale } from "@vuepress/client";
 import {
   isArray,
   isLinkExternal,
   isPlainObject,
   isString,
 } from "@vuepress/shared";
+import { useRouter } from "vue-router";
 import { keys, startsWith } from "vuepress-shared/client";
 
 import { sidebarData } from "@temp/theme-hope/sidebar";
-import { useAutoLink, useThemeLocaleData } from "@theme-hope/composables/index";
+import { resolveLinkInfo } from "@theme-hope/utils/index";
 
 import { resolvePrefix } from "./utils.js";
 import {
   type SidebarArrayOptions,
   type SidebarItem,
   type SidebarObjectOptions,
-  type ThemeNormalPageFrontmatter,
+  type SidebarOptions,
 } from "../../../../shared/index.js";
 import {
   type ResolvedSidebarGroupItem,
@@ -74,6 +70,7 @@ export const resolveArraySidebarItems = (
   headerDepth: number,
   prefix = ""
 ): ResolvedSidebarItem[] => {
+  const router = useRouter();
   const page = usePageData();
 
   const handleChildItem = (
@@ -81,12 +78,17 @@ export const resolveArraySidebarItems = (
     pathPrefix = prefix
   ): ResolvedSidebarPageItem | ResolvedSidebarGroupItem => {
     const childItem = isString(item)
-      ? useAutoLink(resolvePrefix(pathPrefix, item))
+      ? resolveLinkInfo(router, resolvePrefix(pathPrefix, item))
       : item.link
       ? {
           ...item,
           ...(!isLinkExternal(item.link)
-            ? { link: useAutoLink(resolvePrefix(pathPrefix, item.link)).link }
+            ? {
+                link: resolveLinkInfo(
+                  router,
+                  resolvePrefix(pathPrefix, item.link)
+                ).link,
+              }
             : {}),
         }
       : item;
@@ -167,17 +169,11 @@ export const resolveMultiSidebarItems = (
  *
  * It should only be resolved and provided once
  */
-export const resolveSidebarItems = (): ResolvedSidebarItem[] => {
+export const resolveSidebarItems = (
+  sidebarConfig: SidebarOptions,
+  headerDepth: number
+): ResolvedSidebarItem[] => {
   const routeLocale = useRouteLocale();
-  const frontmatter = usePageFrontmatter<ThemeNormalPageFrontmatter>();
-  const themeLocale = useThemeLocaleData();
-
-  // get sidebar config from frontmatter > themeConfig
-  const sidebarConfig = frontmatter.value.home
-    ? false
-    : frontmatter.value.sidebar ?? themeLocale.value.sidebar ?? "structure";
-  const headerDepth =
-    frontmatter.value.headerDepth ?? themeLocale.value.headerDepth ?? 2;
 
   // resolve sidebar items according to the config
   return sidebarConfig === false

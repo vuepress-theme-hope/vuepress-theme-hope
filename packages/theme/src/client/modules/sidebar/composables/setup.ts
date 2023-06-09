@@ -1,3 +1,4 @@
+import { usePageFrontmatter } from "@vuepress/client";
 import {
   type ComputedRef,
   type InjectionKey,
@@ -6,7 +7,10 @@ import {
   provide,
 } from "vue";
 
+import { useThemeLocaleData } from "@theme-hope/composables/index";
+
 import { resolveSidebarItems } from "./resolveConfig.js";
+import { type ThemeNormalPageFrontmatter } from "../../../../shared/index.js";
 import { type ResolvedSidebarItem } from "../utils/index.js";
 
 declare const __VUEPRESS_DEV__: boolean;
@@ -21,7 +25,22 @@ export const sidebarItemsSymbol: InjectionKey<SidebarItemsRef> = Symbol(
  * Create sidebar items ref and provide as global computed in setup
  */
 export const setupSidebarItems = (): void => {
-  const sidebarItems = computed(() => resolveSidebarItems());
+  const frontmatter = usePageFrontmatter<ThemeNormalPageFrontmatter>();
+  const themeLocale = useThemeLocaleData();
+
+  // get sidebar config from frontmatter > themeConfig
+  const sidebarConfig = computed(() =>
+    frontmatter.value.home
+      ? false
+      : frontmatter.value.sidebar ?? themeLocale.value.sidebar ?? "structure"
+  );
+  const headerDepth = computed(
+    () => frontmatter.value.headerDepth ?? themeLocale.value.headerDepth ?? 2
+  );
+
+  const sidebarItems = computed(() =>
+    resolveSidebarItems(sidebarConfig.value, headerDepth.value)
+  );
 
   provide(sidebarItemsSymbol, sidebarItems);
 };

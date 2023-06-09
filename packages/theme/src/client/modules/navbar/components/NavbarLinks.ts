@@ -2,7 +2,7 @@ import { type VNode, defineComponent, h } from "vue";
 
 import AutoLink from "@theme-hope/components/AutoLink";
 import DropdownLink from "@theme-hope/modules/navbar/components/DropdownLink";
-import { useNavbarConfig } from "@theme-hope/modules/navbar/composables/index";
+import { useNavbarItems } from "@theme-hope/modules/navbar/composables/index";
 
 import "../styles/navbar-links.scss";
 
@@ -10,7 +10,7 @@ export default defineComponent({
   name: "NavbarLinks",
 
   setup() {
-    const navbarConfig = useNavbarConfig();
+    const navbarConfig = useNavbarItems();
 
     return (): VNode | null =>
       navbarConfig.value.length

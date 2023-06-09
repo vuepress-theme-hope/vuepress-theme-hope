@@ -1,0 +1,41 @@
+diff --git a/lib/client/config.js b/lib/client/config.js
+index 4aee2c7a73bb1d12fc83d859f2c20f1bb476bfcf..f0cf6cac31cb5da19cd3f9761703e39aef19b591 100644
+--- a/lib/client/config.js
++++ b/lib/client/config.js
+@@ -1,13 +1,34 @@
+ import { setupDevtoolsPlugin } from '@vue/devtools-api';
+ import { defineClientConfig, routeLocaleSymbol } from '@vuepress/client';
+-import { computed } from 'vue';
++import { watch, ref } from 'vue';
+ import { resolveThemeLocaleData, themeLocaleDataSymbol, useThemeData, } from './composables/index.js';
+ export default defineClientConfig({
+     enhance({ app }) {
+         // provide theme data & theme locale data
+         const themeData = useThemeData();
+         const routeLocale = app._context.provides[routeLocaleSymbol];
+-        const themeLocaleData = computed(() => resolveThemeLocaleData(themeData.value, routeLocale.value));
++        const themeLocaleData = ref(
++          resolveThemeLocaleData(themeData.value, routeLocale.value)
++        )
++        watch(
++          () => routeLocale.value,
++          (newRouteLocale, oldRouteLocale) => {
++            if (newRouteLocale !== oldRouteLocale)
++              themeLocaleData.value = resolveThemeLocaleData(
++                themeData.value,
++                routeLocale.value
++              )
++          }
++        )
++        watch(
++          () => themeData.value,
++          () => {
++            themeLocaleData.value = resolveThemeLocaleData(
++              themeData.value,
++              routeLocale.value
++            )
++          }
++        )
+         app.provide(themeLocaleDataSymbol, themeLocaleData);
+         Object.defineProperties(app.config.globalProperties, {
+             $theme: {
