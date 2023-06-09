@@ -16,7 +16,7 @@ import {
   useRouter,
 } from "vue-router";
 
-import { guardEvent } from "../utils/index.js";
+import { guardEvent, resolveRouteWithRedirect } from "../utils/index.js";
 
 export interface LinkOptions {
   route: ComputedRef<RouteLocation & { href: string }>;
@@ -29,10 +29,10 @@ export const useLink = (link: string | Ref<string>): LinkOptions => {
   const router = useRouter();
   const currentRoute = useRoute();
 
-  const route = computed(() => router.resolve(unref(link)));
+  const route = computed(() => resolveRouteWithRedirect(router, unref(link)));
 
   const isActive = computed<boolean>(
-    () => route.value.path === currentRoute.path
+    () => route.value.fullPath === currentRoute.fullPath
   );
 
   const navigate = (
