@@ -96,9 +96,7 @@ export default defineComponent({
               ? h("div", {
                   class: ["vp-hero-mask", { light: bgInfo.value.imageDark }],
                   style: [
-                    {
-                      "background-image": `url(${bgInfo.value.image})`,
-                    },
+                    { "background-image": `url(${bgInfo.value.image})` },
                     bgInfo.value.bgStyle,
                   ],
                 })
