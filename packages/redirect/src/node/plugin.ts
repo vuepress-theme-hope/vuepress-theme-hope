@@ -3,19 +3,14 @@ import { useSassPalettePlugin } from "vuepress-plugin-sass-palette";
 import { checkVersion, getLocales } from "vuepress-shared/node";
 
 import { convertOptions } from "./compact/index.js";
+import { CLIENT_FOLDER, PLUGIN_NAME } from "./constant.js";
 import { generateAutoLocaleRedirects, generateRedirects } from "./generate.js";
 import { ensureRootHomePage } from "./homepage.js";
 import { getLocaleConfig } from "./locale.js";
 import { redirectLocales } from "./locales.js";
 import { type RedirectOptions } from "./options.js";
 import { prepareRedirects } from "./prepare.js";
-import {
-  CLIENT_FOLDER,
-  PLUGIN_NAME,
-  getRedirectMap,
-  handleRedirectTo,
-  logger,
-} from "./utils.js";
+import { getRedirectMap, handleRedirectTo, logger } from "./utils/index.js";
 
 export const redirectPlugin =
   (options: RedirectOptions = {}, legacy = true): PluginFunction =>

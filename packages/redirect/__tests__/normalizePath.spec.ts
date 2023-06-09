@@ -1,6 +1,6 @@
 import { expect, it } from "vitest";
 
-import { normalizePath } from "../src/node/utils.js";
+import { normalizePath } from "../src/node/utils/normalizePath.js";
 
 it("Should normalize path", () => {
   const testCases = [
