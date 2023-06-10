@@ -12,7 +12,7 @@ tag:
 
 <!-- markdownlint-disable -->
 
-# Heading 1
+# Heading 1 {style="display: block;"}
 
 <!-- markdownlint-restore -->
 

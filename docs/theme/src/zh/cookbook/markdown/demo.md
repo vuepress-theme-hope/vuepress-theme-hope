@@ -12,7 +12,7 @@ tag:
 
 <!-- markdownlint-disable -->
 
-# 一级标题
+# 一级标题 {style="display: block;"}
 
 <!-- markdownlint-restore -->
 
