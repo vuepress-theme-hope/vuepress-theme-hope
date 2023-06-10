@@ -47,7 +47,7 @@ Badge color, please fill in CSS color strings
 
 ### vertical
 
-- Type: `"top" | "middle"`
-- Default: `"top"`
+- Type: `"top" | "middle" | "baseline" | "bottom"`
+- Required: No
 
 Vertical position of the badge

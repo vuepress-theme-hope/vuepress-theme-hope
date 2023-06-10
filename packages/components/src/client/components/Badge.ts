@@ -42,14 +42,14 @@ const Badge: FunctionalComponent<
   BadgeProps,
   Record<never, never>,
   { default?: () => VNode | VNode[] | undefined }
-> = ({ type = "info", text = "", vertical = "top", color }, { slots }) =>
+> = ({ type = "info", text = "", vertical, color }, { slots }) =>
   h(
     "span",
     {
       class: ["vp-badge", type, { diy: color }],
       style: {
-        verticalAlign: vertical,
-        ...(color ? { backgroundColor: color } : {}),
+        verticalAlign: vertical ?? false,
+        backgroundColor: color ?? false,
       },
     },
     slots.default?.() || text

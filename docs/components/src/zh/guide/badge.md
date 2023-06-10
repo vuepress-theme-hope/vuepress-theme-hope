@@ -47,7 +47,7 @@ Badge Test <Badge text="Building" type="warning" /> <Badge text="MrHope" color="
 
 ### vertical
 
-- 类型: `"top" | "middle"`
-- 默认值: `"top"`
+- 类型: `"top" | "middle" | "baseline" | "bottom"`
+- 必填: 否
 
 徽章的垂直方向的位置
