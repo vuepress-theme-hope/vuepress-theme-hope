@@ -160,14 +160,14 @@ const a = 1;
 | ---- |
 | 内容 |
 
-{.table}
+{.md-table}
 
 ```md
 | 表格 |
 | ---- |
 | 内容 |
 
-{.table}
+{.md-table}
 ```
 
 ### 列表 (list)
@@ -217,7 +217,7 @@ const a = 1;
 .nested,
 .inline-emphasis,
 .inline-bold,
-.table,
+.md-table,
 .fence {
   margin: 4px;
   padding: 4px;
