@@ -9,8 +9,9 @@ import {
   shallowRef,
   watch,
 } from "vue";
-import { LoadingIcon, atou } from "vuepress-shared/client";
+import { LoadingIcon, atou, isFunction } from "vuepress-shared/client";
 
+import type { MermaidThemeVariables } from "../helpers/index.js";
 import { useMermaidOptions } from "../helpers/index.js";
 
 import "../styles/mermaid.scss";
@@ -19,7 +20,7 @@ declare const MARKDOWN_ENHANCE_DELAY: number;
 
 const DEFAULT_CHART_OPTIONS = { useMaxWidth: false };
 
-const getThemeVariables = (isDarkmode: boolean): Record<string, unknown> => ({
+const getThemeVariables = (isDarkmode: boolean): MermaidThemeVariables => ({
   dark: isDarkmode,
   background: isDarkmode ? "#1e1e1e" : "#fff",
 
@@ -90,7 +91,7 @@ export default defineComponent({
   },
 
   setup(props) {
-    const mermaidOptions = useMermaidOptions();
+    const { themeVariables, ...mermaidOptions } = useMermaidOptions();
     const mermaidElement = shallowRef<HTMLElement>();
 
     const code = computed(() => atou(props.code));
@@ -107,7 +108,12 @@ export default defineComponent({
       mermaid.initialize({
         // @ts-ignore
         theme: "base",
-        themeVariables: getThemeVariables(isDarkmode.value),
+        themeVariables: {
+          ...getThemeVariables(isDarkmode.value),
+          ...(isFunction(themeVariables)
+            ? themeVariables(isDarkmode.value)
+            : themeVariables),
+        },
         flowchart: DEFAULT_CHART_OPTIONS,
         sequence: DEFAULT_CHART_OPTIONS,
         journey: DEFAULT_CHART_OPTIONS,
