@@ -47,7 +47,7 @@ The title shows the structure of the article. Insert 1-6 `#` at the beginning of
 - Italic:`*Italics*`
 - Delete:`~~Italics~~`
 - Paragraph: Space one link
-- Line break: enter two space at the end of the line
+- Line break: enter two space or `\` at the end of the line
 - List: add `-` to become a list item
 - Blockquote: `> Blockquote Content`
 - HR: Enter `---` in a single line
