@@ -6,9 +6,6 @@ media-community-skin[data-audio] {
   --audio-time-muted-color: var(--light-grey);
   --audio-play-button-bg: var(--vp-bglt);
   --audio-play-button-color: var(--black);
-
-  // https://github.com/vidstack/player/issues/855
-  --media-button-color: var(--grey3);
 }
 
 :where(media-community-skin[data-audio] [part~="media-ui"]) {

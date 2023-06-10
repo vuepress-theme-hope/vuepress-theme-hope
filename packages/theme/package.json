@@ -117,7 +117,7 @@
     "@vuepress/markdown": "2.0.0-beta.63"
   },
   "peerDependencies": {
-    "sass-loader": "^13.3.1",
+    "sass-loader": "^13.3.2",
     "vuepress": "2.0.0-beta.63",
     "vuepress-vite": "2.0.0-beta.63",
     "vuepress-webpack": "2.0.0-beta.63"
