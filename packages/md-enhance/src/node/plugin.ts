@@ -251,10 +251,10 @@ export const mdEnhancePlugin =
 
       extendsMarkdown: (md): void => {
         // syntax
-        if (getStatus("gfm")) md.options.linkify = true;
         if (getStatus("attrs"))
           md.use(attrs, isPlainObject(options.attrs) ? options.attrs : {});
         if (getStatus("align")) md.use(align);
+        if (getStatus("breaks", true)) md.options.breaks = true;
         if (getStatus("container")) md.use(hint, locales);
         if (getStatus("imgLazyload")) md.use(imgLazyload);
         if (getStatus("figure")) md.use(figure);
@@ -265,6 +265,7 @@ export const mdEnhancePlugin =
           );
 
         if (getStatus("imgSize")) md.use(imgSize);
+        if (getStatus("linkify", true)) md.options.linkify = true;
         if (getStatus("obsidianImgSize")) md.use(obsidianImageSize);
         if (getStatus("sup")) md.use(sup);
         if (getStatus("sub")) md.use(sub);

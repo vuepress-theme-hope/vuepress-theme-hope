@@ -95,6 +95,28 @@ export interface MarkdownEnhanceOptions {
   vPre?: boolean;
 
   /**
+   * Whether convert `\n` in paragraphs into `<br>`s
+   *
+   * 是否将段落中的 `\n` 转换为 `<br>`
+   *
+   * @description enabled in gfm mode
+   *
+   * @default false
+   */
+  breaks?: boolean;
+
+  /**
+   * Whether convert URL-like text into links
+   *
+   * 是否将文字中的链接格式文字转换为链接
+   *
+   * @description enabled in gfm mode
+   *
+   * @default false
+   */
+  linkify?: boolean;
+
+  /**
    * Whether to enable tabs.
    *
    * 是否启用标签页分组。

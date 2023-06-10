@@ -18,7 +18,7 @@ Whether to support full GFM syntax.
 
 For full GFM syntax, see [GFM](https://github.github.com/gfm/).
 
-We are not 100% supporting it to be honestly, we only supply its syntax including footnote, task list, code highlight, image mark and so on.
+We are not 100% supporting it to be honestly, we only supply its syntax including linkify, breaks, footnote, task list, code highlight, image mark, mermaid, mathjax and so on.
 
 Some of the behavior might be different, for example to support Vue syntax, we are not disallowing `<script>` tags. But in most situation, the behavior should be same.
 
@@ -80,6 +80,22 @@ Whether to enable links check.
   - [v-pre wrapper](./guide/others.md#v-pre)
 
 Whether to enable v-pre wrapper.
+
+### breaks
+
+- Type: `boolean`
+- Default: `false`
+- Enabled in GFM: Yes
+
+Whether convert `\n` in paragraphs into `<br>`s
+
+### linkify
+
+- Type: `boolean`
+- Default: `false`
+- Enabled in GFM: Yes
+
+Whether convert URL-like text into links
 
 ### tabs
 
@@ -163,6 +179,7 @@ Whether to enable the lower corner format support.
 
 - Type: `boolean`
 - Default: `false`
+- Enabled in GFM: Yes
 
 Whether to enable footnote format support.
 
@@ -191,6 +208,7 @@ Whether to lazy load every image in page in native way.
 
 - Type: `ImageMarkOptions | boolean`
 - Default: `false`
+- Enabled in GFM: Yes
 
 Whether enable image mark support.
 
@@ -221,6 +239,7 @@ Whether enable obsidian image size support.
 
 - Type: `TaskListOptions | boolean`
 - Default: `false`
+- Enabled in GFM: Yes
 
 Whether to enable tasklist format support. You can pass an object to config task list.
 
@@ -257,6 +276,7 @@ Please see [Katex Docs](https://katex.org/docs/options.html) for available optio
 
 - Type: `MathJaxOptions | boolean`
 - Default: `false`
+- Enabled in GFM: Yes
 
 Whether to enable $\TeX$ syntax support through Math Jax. You can pass an object to config Math Jax.
 
@@ -320,6 +340,7 @@ Whether to enable flowchart support
 
 - Type: `MermaidConfig | boolean`
 - Default: `false`
+- Enabled in GFM: Yes
 
 Whether to enable [Mermaid](https://mermaid.js.org/) support, you can pass in a config object to customize the behavior of Mermaid.
 

@@ -18,7 +18,7 @@ icon: gears
 
 有关完整的 GFM 语法，请参阅 [GFM](https://github.github.com/gfm/)。
 
-老实说，我们并不是 100% 支持它，我们只补全了它的语法，包括任务列表、脚注等。
+老实说，我们并不是 100% 支持它，我们只补全了它的语法，包括链接转换、换行、任务列表、脚注、代码高亮、图片标记、Mermaid、Mathjax 等。
 
 某些行为可能会有所不同，例如，为了允许 Vue 语法，我们并没有禁止 `<script>` 标签。 但在大多数情况下，行为应该是相同的。
 
@@ -80,6 +80,22 @@ icon: gears
   - [v-pre](./guide/others.md#v-pre)
 
 是否启用 v-pre 容器。
+
+### breaks
+
+- 类型: `boolean`
+- 默认值: `false`
+- 在 GFM 中启用: 是
+
+是否将段落中的 `\n` 转换为 `<br>`
+
+### linkify
+
+- 类型: `boolean`
+- 默认值: `false`
+- 在 GFM 中启用: 是
+
+是否将文字中的链接格式文字转换为链接
 
 ### tabs
 
@@ -163,6 +179,7 @@ icon: gears
 
 - 类型: `boolean`
 - 默认值: `false`
+- 在 GFM 中启用: 是
 
 是否启用脚注格式支持。
 
@@ -191,6 +208,7 @@ icon: gears
 
 - 类型: `ImageMarkOptions | boolean`
 - 默认值: `false`
+- 在 GFM 中启用: 是
 
 是否启用图片标注支持
 
@@ -221,6 +239,7 @@ interface ImageMarkOptions {
 
 - 类型: `TaskListOptions | boolean`
 - 默认值: `false`
+- 在 GFM 中启用: 是
 
 是否启用任务列表格式支持。你可以传入一个对象作为任务列表的配置选项。
 
@@ -283,6 +302,7 @@ interface TaskListOptions {
 
 - 类型: `MathJaxOptions | boolean`
 - 默认值: `false`
+- 在 GFM 中启用: 是
 
 是否通过 Math Jax 启用 $\TeX$ 语法支持。你可以传递一个对象来配置 Math Jax。
 
@@ -320,6 +340,7 @@ interface TaskListOptions {
 
 - 类型: `MermaidConfig | boolean`
 - 默认值: `false`
+- 在 GFM 中启用: 是
 
 是否启用 [Mermaid](https://mermaid.js.org/) 支持，你可以传入一个对象作为 Mermaid 的配置选项。
 
