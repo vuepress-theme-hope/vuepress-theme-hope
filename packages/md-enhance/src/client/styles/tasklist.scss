@@ -1,4 +1,9 @@
-input[type="checkbox"].task-list-item-checkbox {
+.task-list-container {
+  padding-inline-start: 0;
+  list-style: none;
+}
+
+.task-list-item-checkbox {
   position: relative;
   width: 0;
   margin-inline-end: 1.5em;
