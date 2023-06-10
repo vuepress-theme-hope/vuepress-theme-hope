@@ -1,21 +1,13 @@
 import { usePageData } from "@vuepress/client";
-import {
-  type PropType,
-  type VNode,
-  computed,
-  defineComponent,
-  h,
-  ref,
-  toRef,
-  watch,
-} from "vue";
+import type { PropType, VNode } from "vue";
+import { computed, defineComponent, h, ref, toRef, watch } from "vue";
 
 import AutoLink from "@theme-hope/components/AutoLink";
 import HopeIcon from "@theme-hope/components/HopeIcon";
 
-import {
-  type AutoLinkOptions as AutoLinkType,
-  type NavGroup,
+import type {
+  AutoLinkOptions as AutoLinkType,
+  NavGroup,
 } from "../../../../shared/index.js";
 
 import "../styles/nav-screen-dropdown.scss";

@@ -1,5 +1,5 @@
 import { uml } from "@mdit/plugin-uml";
-import { type PluginSimple } from "markdown-it";
+import type { PluginSimple } from "markdown-it";
 import { utoa } from "vuepress-shared/node";
 
 export const presentation: PluginSimple = (md) => {

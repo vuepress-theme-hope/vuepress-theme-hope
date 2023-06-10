@@ -3,13 +3,10 @@ import { resolve } from "node:path";
 
 import inquirer from "inquirer";
 
-import { type CreateI18n, version } from "./config/index.js";
-import {
-  PACKAGE_NAME_REG,
-  type PackageManager,
-  VERSION_REG,
-  deepAssign,
-} from "./utils/index.js";
+import type { CreateI18n } from "./config/index.js";
+import { version } from "./config/index.js";
+import type { PackageManager } from "./utils/index.js";
+import { PACKAGE_NAME_REG, VERSION_REG, deepAssign } from "./utils/index.js";
 
 const getScript = (
   packageManager: PackageManager,

@@ -1,6 +1,6 @@
-import { type ViteBundlerOptions } from "@vuepress/bundler-vite";
-import { type WebpackBundlerOptions } from "@vuepress/bundler-webpack";
-import { type App } from "@vuepress/core";
+import type { ViteBundlerOptions } from "@vuepress/bundler-vite";
+import type { WebpackBundlerOptions } from "@vuepress/bundler-webpack";
+import type { App } from "@vuepress/core";
 import {
   addViteConfig,
   addViteOptimizeDepsExclude,

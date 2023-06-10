@@ -1,4 +1,4 @@
-import { type PluginFunction } from "@vuepress/core";
+import type { PluginFunction } from "@vuepress/core";
 import { useSassPalettePlugin } from "vuepress-plugin-sass-palette";
 import { checkVersion, getLocales } from "vuepress-shared/node";
 
@@ -8,7 +8,7 @@ import { generateAutoLocaleRedirects, generateRedirects } from "./generate.js";
 import { ensureRootHomePage } from "./homepage.js";
 import { getLocaleConfig } from "./locale.js";
 import { redirectLocales } from "./locales.js";
-import { type RedirectOptions } from "./options.js";
+import type { RedirectOptions } from "./options.js";
 import { prepareRedirects } from "./prepare.js";
 import { getRedirectMap, handleRedirectTo, logger } from "./utils/index.js";
 

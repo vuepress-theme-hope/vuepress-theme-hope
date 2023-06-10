@@ -1,4 +1,4 @@
-import { type SearchOptions } from "../typings/index.js";
+import type { SearchOptions } from "../typings/index.js";
 
 const CHINESE_CHARACTERS = /[\u4e00-\u9fa5]/g;
 

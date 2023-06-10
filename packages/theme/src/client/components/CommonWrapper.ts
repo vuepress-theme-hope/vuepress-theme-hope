@@ -5,11 +5,9 @@ import {
   useThrottleFn,
   useToggle,
 } from "@vueuse/core";
+import type { ComponentOptions, SlotsType, VNode } from "vue";
 import {
-  type ComponentOptions,
-  type SlotsType,
   Transition,
-  type VNode,
   computed,
   defineComponent,
   h,
@@ -31,9 +29,9 @@ import Navbar from "@theme-hope/modules/navbar/components/Navbar";
 import Sidebar from "@theme-hope/modules/sidebar/components/Sidebar";
 import { useSidebarItems } from "@theme-hope/modules/sidebar/composables/index";
 
-import {
-  type ThemeNormalPageFrontmatter,
-  type ThemeProjectHomePageFrontmatter,
+import type {
+  ThemeNormalPageFrontmatter,
+  ThemeProjectHomePageFrontmatter,
 } from "../../shared/index.js";
 
 import "../styles/common.scss";

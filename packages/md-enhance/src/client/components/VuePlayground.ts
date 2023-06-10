@@ -1,13 +1,6 @@
-import { type Repl, type ReplProps, type ReplStore } from "@vue/repl";
-import {
-  type VNode,
-  computed,
-  defineComponent,
-  h,
-  onMounted,
-  ref,
-  shallowRef,
-} from "vue";
+import type { Repl, ReplProps, ReplStore } from "@vue/repl";
+import type { VNode } from "vue";
+import { computed, defineComponent, h, onMounted, ref, shallowRef } from "vue";
 import { LoadingIcon, deepAssign } from "vuepress-shared/client";
 
 import { useVuePlaygroundConfig } from "../helpers/index.js";

@@ -1,15 +1,8 @@
 import { useRouteLocale } from "@vuepress/client";
 import { isPlainObject, isString } from "@vuepress/shared";
 import { useEventListener } from "@vueuse/core";
-import {
-  type VNode,
-  computed,
-  defineComponent,
-  h,
-  ref,
-  toRef,
-  watch,
-} from "vue";
+import type { VNode } from "vue";
+import { computed, defineComponent, h, ref, toRef, watch } from "vue";
 import { useRouter } from "vue-router";
 import { VPLink, useLocaleConfig } from "vuepress-shared/client";
 
@@ -24,7 +17,7 @@ import {
   searchProClientCustomFiledConfig,
   searchProLocales,
 } from "../define.js";
-import { type MatchedItem, type Word } from "../typings/index.js";
+import type { MatchedItem, Word } from "../typings/index.js";
 import { CLOSE_ICON } from "../utils/index.js";
 
 import "../styles/search-result.scss";

@@ -1,8 +1,8 @@
 import { ClientOnly, usePageLang } from "@vuepress/client";
 import { onClickOutside, useStorage } from "@vueuse/core";
+import type { VNode } from "vue";
 import {
   Transition,
-  type VNode,
   computed,
   defineComponent,
   h,

@@ -1,6 +1,7 @@
 import { useStyleTag } from "@vueuse/core";
 import { defineCustomElements } from "vidstack/elements";
-import { type PropType, type VNode, defineComponent, h, onMounted } from "vue";
+import type { PropType, VNode } from "vue";
+import { defineComponent, h, onMounted } from "vue";
 import { isPlainObject } from "vuepress-shared/client";
 
 // import "vidstack/styles/defaults.css";

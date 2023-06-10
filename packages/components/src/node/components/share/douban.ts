@@ -1,4 +1,4 @@
-import { type ShareServiceConfig } from "../../../shared/index.js";
+import type { ShareServiceConfig } from "../../../shared/index.js";
 
 export const douban: ShareServiceConfig = {
   link: "https://shuo.douban.com/!service/share?href=[url]&name=[title]&text=[description|summary]&image=[cover|image]&starid=0&aid=0&style=11",

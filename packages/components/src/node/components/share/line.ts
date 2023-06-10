@@ -1,4 +1,4 @@
-import { type ShareServiceConfig } from "../../../shared/index.js";
+import type { ShareServiceConfig } from "../../../shared/index.js";
 
 export const line: ShareServiceConfig = {
   link: "https://line.me/R/msg/text/?[title]%0D%0A[url]%0D%0A[description|summary]",

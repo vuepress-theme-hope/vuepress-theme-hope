@@ -1,7 +1,8 @@
-import { type App, type PageFrontmatter, createPage } from "@vuepress/core";
+import type { App, PageFrontmatter } from "@vuepress/core";
+import { createPage } from "@vuepress/core";
 import { getTitleFromFilename } from "vuepress-shared/node";
 
-import { type AutoCatalogOptions } from "./options.js";
+import type { AutoCatalogOptions } from "./options.js";
 import { logger } from "./utils.js";
 
 export const injectCatalogInformation = (

@@ -1,22 +1,22 @@
-import { type LocaleConfig } from "@vuepress/core";
-import { type MermaidConfig } from "mermaid";
+import type { LocaleConfig } from "@vuepress/core";
+import type { MermaidConfig } from "mermaid";
 
-import {
-  type AttrsOptions,
-  type FigureOptions,
-  type ImgMarkOptions,
-  type IncludeOptions,
-  type KatexOptions,
-  type MarkdownEnhanceLocaleData,
-  type MathjaxOptions,
-  type PlaygroundOptions,
-  type RevealPlugin,
-  type StylizeOptions,
-  type TSPresetPlaygroundOptions,
-  type TasklistOptions,
-  type VuePresetPlaygroundOptions,
+import type {
+  AttrsOptions,
+  FigureOptions,
+  ImgMarkOptions,
+  IncludeOptions,
+  KatexOptions,
+  MarkdownEnhanceLocaleData,
+  MathjaxOptions,
+  PlaygroundOptions,
+  RevealPlugin,
+  StylizeOptions,
+  TSPresetPlaygroundOptions,
+  TasklistOptions,
+  VuePresetPlaygroundOptions,
 } from "./typings/index.js";
-import { type CodeDemoOptions } from "../shared/index.js";
+import type { CodeDemoOptions } from "../shared/index.js";
 
 export type LinksCheckStatus = "always" | "dev" | "build" | "never";
 

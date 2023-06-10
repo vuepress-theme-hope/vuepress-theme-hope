@@ -1,6 +1,6 @@
 import { useMutationObserver } from "@vueuse/core";
+import type { VNode } from "vue";
 import {
-  type VNode,
   computed,
   defineComponent,
   h,

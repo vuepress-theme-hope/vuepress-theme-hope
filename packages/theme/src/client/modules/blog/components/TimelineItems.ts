@@ -1,5 +1,6 @@
-import { type PageHeader } from "@vuepress/client";
-import { type VNode, computed, defineComponent, h } from "vue";
+import type { PageHeader } from "@vuepress/client";
+import type { VNode } from "vue";
+import { computed, defineComponent, h } from "vue";
 import { VPLink } from "vuepress-shared/client";
 
 import DropTransition from "@theme-hope/components/transitions/DropTransition";

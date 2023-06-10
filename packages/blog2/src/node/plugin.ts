@@ -1,5 +1,5 @@
+import type { PluginFunction } from "@vuepress/core";
 import {
-  type PluginFunction,
   preparePageComponent,
   preparePageData,
   preparePagesComponents,
@@ -11,7 +11,7 @@ import { checkVersion, getPageExcerpt } from "vuepress-shared/node";
 
 import { prepareCategory } from "./category.js";
 import { convertOptions } from "./compact.js";
-import { type BlogOptions, type PageWithExcerpt } from "./options.js";
+import type { BlogOptions, PageWithExcerpt } from "./options.js";
 import { prepareType } from "./type.js";
 import { PLUGIN_NAME, getPageMap, logger } from "./utils.js";
 

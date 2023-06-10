@@ -3,13 +3,14 @@ import {
   useSiteLocaleData,
   withBase,
 } from "@vuepress/client";
-import { type SlotsType, type VNode, computed, defineComponent, h } from "vue";
+import type { SlotsType, VNode } from "vue";
+import { computed, defineComponent, h } from "vue";
 import { isString } from "vuepress-shared/client";
 
 import AutoLink from "@theme-hope/components/AutoLink";
 import DropTransition from "@theme-hope/components/transitions/DropTransition";
 
-import { type ThemeProjectHomePageFrontmatter } from "../../shared/index.js";
+import type { ThemeProjectHomePageFrontmatter } from "../../shared/index.js";
 
 import "../styles/hero-info.scss";
 

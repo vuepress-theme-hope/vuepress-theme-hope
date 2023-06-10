@@ -1,4 +1,5 @@
-import { type PropType, type VNode, computed, defineComponent, h } from "vue";
+import type { PropType, VNode } from "vue";
+import { computed, defineComponent, h } from "vue";
 import { useRoute } from "vue-router";
 
 import AutoLink from "@theme-hope/components/AutoLink";
@@ -6,7 +7,7 @@ import HopeIcon from "@theme-hope/components/HopeIcon";
 import SidebarLinks from "@theme-hope/modules/sidebar/components/SidebarLinks";
 import { isActiveSidebarItem } from "@theme-hope/modules/sidebar/utils/index";
 
-import { type ResolvedSidebarGroupItem } from "../utils/index.js";
+import type { ResolvedSidebarGroupItem } from "../utils/index.js";
 
 import "../styles/sidebar-group.scss";
 

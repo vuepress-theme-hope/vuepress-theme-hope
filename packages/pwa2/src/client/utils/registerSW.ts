@@ -1,4 +1,4 @@
-import { type Hooks } from "register-service-worker";
+import type { Hooks } from "register-service-worker";
 
 /**
  * Register serviceWorker under `serviceWorkerPath`

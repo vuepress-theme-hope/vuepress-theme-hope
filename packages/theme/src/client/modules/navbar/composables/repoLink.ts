@@ -1,9 +1,7 @@
-import { type ComputedRef, computed } from "vue";
-import {
-  type RepoType,
-  resolveRepoLink,
-  resolveRepoType,
-} from "vuepress-shared/client";
+import type { ComputedRef } from "vue";
+import { computed } from "vue";
+import type { RepoType } from "vuepress-shared/client";
+import { resolveRepoLink, resolveRepoType } from "vuepress-shared/client";
 
 import { useThemeLocaleData } from "@theme-hope/composables/index";
 

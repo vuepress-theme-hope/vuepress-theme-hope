@@ -1,4 +1,4 @@
-import { type ThemeLocaleData } from "../../shared/index.js";
+import type { ThemeLocaleData } from "../../shared/index.js";
 
 export const plLocale: ThemeLocaleData = {
   lang: "pl-PL",

@@ -1,6 +1,6 @@
-import { type RequiredLocaleConfig } from "vuepress-shared/node";
+import type { RequiredLocaleConfig } from "vuepress-shared/node";
 
-import { type MarkdownHintLocaleData } from "./hint.js";
+import type { MarkdownHintLocaleData } from "./hint.js";
 
 export type MarkdownEnhanceLocaleData = MarkdownHintLocaleData;
 

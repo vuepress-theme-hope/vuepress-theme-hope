@@ -2,15 +2,10 @@
 /**
  * @see https://developer.stackblitz.com/platform/api/javascript-sdk
  */
-import sdk, { type UiThemeOption, type UiViewOption } from "@stackblitz/sdk";
-import {
-  type PropType,
-  type VNode,
-  computed,
-  defineComponent,
-  h,
-  onMounted,
-} from "vue";
+import type { UiThemeOption, UiViewOption } from "@stackblitz/sdk";
+import sdk from "@stackblitz/sdk";
+import type { PropType, VNode } from "vue";
+import { computed, defineComponent, h, onMounted } from "vue";
 
 import { useSize } from "../composables/index.js";
 

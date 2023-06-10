@@ -1,14 +1,8 @@
 /* eslint-disable vue/require-default-prop */
 import { usePageData, usePageFrontmatter } from "@vuepress/client";
 import { isArray, isLinkHttp, isString } from "@vuepress/shared";
-import {
-  type PropType,
-  type VNode,
-  defineComponent,
-  h,
-  onMounted,
-  ref,
-} from "vue";
+import type { PropType, VNode } from "vue";
+import { defineComponent, h, onMounted, ref } from "vue";
 import {
   Popup,
   endsWith,
@@ -17,7 +11,7 @@ import {
   startsWith,
 } from "vuepress-shared/client";
 
-import { type ShareServiceOptions } from "../../shared/share.js";
+import type { ShareServiceOptions } from "../../shared/share.js";
 import { getMetaContent } from "../utils/index.js";
 
 import "balloon-css/balloon.css";

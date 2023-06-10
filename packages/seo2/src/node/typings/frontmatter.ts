@@ -1,4 +1,4 @@
-import { type BasePageFrontMatter } from "vuepress-shared/node";
+import type { BasePageFrontMatter } from "vuepress-shared/node";
 
 export interface SEOPluginFrontmatter extends BasePageFrontMatter {
   /**

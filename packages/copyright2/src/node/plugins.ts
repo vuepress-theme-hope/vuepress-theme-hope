@@ -1,11 +1,11 @@
-import { type Page, type PluginFunction } from "@vuepress/core";
+import type { Page, PluginFunction } from "@vuepress/core";
 import { getDirname, path } from "@vuepress/utils";
 import { checkVersion, getLocales, isFunction } from "vuepress-shared/node";
 
 import { copyrightLocales } from "./locales.js";
-import { type CopyrightOptions } from "./options.js";
+import type { CopyrightOptions } from "./options.js";
 import { PLUGIN_NAME, logger } from "./utils.js";
-import { type CopyrightPluginPageData } from "../shared/index.js";
+import type { CopyrightPluginPageData } from "../shared/index.js";
 
 const __dirname = getDirname(import.meta.url);
 

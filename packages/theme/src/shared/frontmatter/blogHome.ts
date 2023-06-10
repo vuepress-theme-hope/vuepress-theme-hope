@@ -1,4 +1,4 @@
-import { type ThemeHopePageFrontmatter } from "./home.js";
+import type { ThemeHopePageFrontmatter } from "./home.js";
 
 export interface ThemeBlogHomeProjectOptions {
   /**

@@ -1,4 +1,4 @@
-import { type SearchIndex } from "slimsearch";
+import type { SearchIndex } from "slimsearch";
 
 export const enum IndexField {
   heading = "h",

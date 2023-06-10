@@ -1,13 +1,6 @@
-import { type ChartConfiguration } from "chart.js";
-import {
-  type PropType,
-  type VNode,
-  defineComponent,
-  h,
-  onMounted,
-  ref,
-  shallowRef,
-} from "vue";
+import type { ChartConfiguration } from "chart.js";
+import type { PropType, VNode } from "vue";
+import { defineComponent, h, onMounted, ref, shallowRef } from "vue";
 import { LoadingIcon, atou } from "vuepress-shared/client";
 
 import "../styles/chart.scss";

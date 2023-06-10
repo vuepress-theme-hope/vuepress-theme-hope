@@ -1,6 +1,8 @@
 import { withBase } from "@vuepress/client";
-import { type FunctionalComponent, type VNode, h } from "vue";
-import { type NavigationFailure, useRouter } from "vue-router";
+import type { FunctionalComponent, VNode } from "vue";
+import { h } from "vue";
+import type { NavigationFailure } from "vue-router";
+import { useRouter } from "vue-router";
 
 import { guardEvent } from "../utils/index.js";
 

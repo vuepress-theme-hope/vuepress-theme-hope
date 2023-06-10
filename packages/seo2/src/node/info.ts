@@ -1,5 +1,5 @@
 /* eslint-disable @typescript-eslint/naming-convention */
-import { type App } from "@vuepress/core";
+import type { App } from "@vuepress/core";
 import {
   getAuthor,
   getDateInfo,
@@ -9,13 +9,13 @@ import {
   removeEndingSlash,
 } from "vuepress-shared/node";
 
-import { type SeoOptions } from "./options.js";
-import {
-  type ArticleSchema,
-  type BlogPostingSchema,
-  type ExtendPage,
-  type SeoContent,
-  type WebPageSchema,
+import type { SeoOptions } from "./options.js";
+import type {
+  ArticleSchema,
+  BlogPostingSchema,
+  ExtendPage,
+  SeoContent,
+  WebPageSchema,
 } from "./typings/index.js";
 import { getAlternateInfo, getCover, getImages, resolveUrl } from "./utils.js";
 

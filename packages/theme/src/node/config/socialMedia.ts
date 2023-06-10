@@ -7,7 +7,7 @@ import {
   values,
 } from "vuepress-shared/node";
 
-import { type ThemeData } from "../../shared/index.js";
+import type { ThemeData } from "../../shared/index.js";
 import { TEMPLATE_FOLDER, logger } from "../utils.js";
 
 /** @private */

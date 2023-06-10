@@ -1,8 +1,8 @@
-import { type Plugin } from "@vuepress/core";
+import type { Plugin } from "@vuepress/core";
 import { rltPlugin } from "vuepress-plugin-rtl";
 import { entries } from "vuepress-shared/node";
 
-import { type ThemeData } from "../../shared/index.js";
+import type { ThemeData } from "../../shared/index.js";
 
 /**
  * @private

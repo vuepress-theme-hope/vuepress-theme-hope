@@ -1,4 +1,4 @@
-import { type App } from "@vuepress/core";
+import type { App } from "@vuepress/core";
 import { useReadingTimePlugin } from "vuepress-plugin-reading-time2";
 import { useSassPalettePlugin } from "vuepress-plugin-sass-palette";
 import { isPlainObject } from "vuepress-shared/node";
@@ -6,8 +6,8 @@ import { isPlainObject } from "vuepress-shared/node";
 import { useGitPlugin } from "./git.js";
 import { useExtendsPagePlugin } from "./pageConverter.js";
 import { usePrismPlugin } from "./prism.js";
-import { type PluginsOptions, type ThemeData } from "../../shared/index.js";
-import { type HopeThemeBehaviorOptions } from "../typings/index.js";
+import type { PluginsOptions, ThemeData } from "../../shared/index.js";
+import type { HopeThemeBehaviorOptions } from "../typings/index.js";
 import { TEMPLATE_FOLDER } from "../utils.js";
 
 /**

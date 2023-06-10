@@ -1,4 +1,4 @@
-import { type AutoLinkOptions, type TextItemOptions } from "./utils.js";
+import type { AutoLinkOptions, TextItemOptions } from "./utils.js";
 
 export type SidebarPageItem = AutoLinkOptions;
 

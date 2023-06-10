@@ -1,10 +1,10 @@
 import { createRequire } from "node:module";
 
-import { type App } from "@vuepress/core";
+import type { App } from "@vuepress/core";
 import { path } from "@vuepress/utils";
 import { isPlainObject } from "vuepress-shared/node";
 
-import { type MarkdownEnhanceOptions } from "../options.js";
+import type { MarkdownEnhanceOptions } from "../options.js";
 import { CLIENT_FOLDER } from "../utils.js";
 
 const require = createRequire(import.meta.url);

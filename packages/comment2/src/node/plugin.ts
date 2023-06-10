@@ -1,4 +1,4 @@
-import { type PluginFunction } from "@vuepress/core";
+import type { PluginFunction } from "@vuepress/core";
 import { getDirname, path } from "@vuepress/utils";
 import { useSassPalettePlugin } from "vuepress-plugin-sass-palette";
 import {
@@ -13,7 +13,7 @@ import {
 import { getProvider } from "./alias.js";
 import { convertOptions } from "./compact.js";
 import { walineLocales } from "./locales.js";
-import { type CommentPluginOptions } from "./options.js";
+import type { CommentPluginOptions } from "./options.js";
 import { PLUGIN_NAME, logger } from "./utils.js";
 
 const __dirname = getDirname(import.meta.url);

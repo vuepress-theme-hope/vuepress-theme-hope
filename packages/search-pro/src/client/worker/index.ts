@@ -4,8 +4,8 @@ import database from "@temp/search-pro/index";
 
 import { getResults } from "./result.js";
 import { getSuggestions } from "./suggestion.js";
-import { type IndexItem } from "../../shared/index.js";
-import { type MessageData } from "../typings/index.js";
+import type { IndexItem } from "../../shared/index.js";
+import type { MessageData } from "../typings/index.js";
 
 self.onmessage = async ({
   data: { type = "all", query, locale, options },

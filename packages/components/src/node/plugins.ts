@@ -1,10 +1,10 @@
-import { type PluginFunction } from "@vuepress/core";
+import type { PluginFunction } from "@vuepress/core";
 import { useSassPalettePlugin } from "vuepress-plugin-sass-palette";
 import { addCustomElement, checkVersion } from "vuepress-shared/node";
 
 import { convertOptions } from "./compact/index.js";
 import { getDefine } from "./define.js";
-import { type ComponentOptions } from "./options/index.js";
+import type { ComponentOptions } from "./options/index.js";
 import { prepareConfigFile } from "./prepare.js";
 import { PLUGIN_NAME, logger } from "./utils.js";
 

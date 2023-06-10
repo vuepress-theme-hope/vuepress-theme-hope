@@ -1,4 +1,4 @@
-import { type App } from "@vuepress/core";
+import type { App } from "@vuepress/core";
 import { prismjsPlugin } from "@vuepress/plugin-prismjs";
 
 /**

@@ -1,25 +1,21 @@
-import {
-  type MatchInfo,
-  type SearchIndex,
-  getStoredFields,
-  search,
-} from "slimsearch";
+import type { MatchInfo, SearchIndex } from "slimsearch";
+import { getStoredFields, search } from "slimsearch";
 import { entries } from "vuepress-shared/client";
 
 import { getMatchedContent } from "./matchContent.js";
 import { getSearchOptions } from "./utils.js";
-import {
-  type CustomFieldIndexItem,
-  type IndexItem,
-  type PageIndexItem,
+import type {
+  CustomFieldIndexItem,
+  IndexItem,
+  PageIndexItem,
 } from "../../shared/index.js";
-import {
-  type HeadingMatchedItem,
-  type MatchedItem,
-  type SearchOptions,
-  type SearchResult,
-  type TitleMatchedItem,
-  type Word,
+import type {
+  HeadingMatchedItem,
+  MatchedItem,
+  SearchOptions,
+  SearchResult,
+  TitleMatchedItem,
+  Word,
 } from "../typings/index.js";
 
 export type MiniSearchResult = IndexItem & {

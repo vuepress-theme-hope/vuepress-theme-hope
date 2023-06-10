@@ -1,7 +1,7 @@
 import { hashSync } from "bcrypt-ts/node";
 import { entries, fromEntries, isArray, isString } from "vuepress-shared/node";
 
-import { type EncryptConfig, type EncryptOptions } from "../../shared/index.js";
+import type { EncryptConfig, EncryptOptions } from "../../shared/index.js";
 import { logger } from "../utils.js";
 
 /** @private */

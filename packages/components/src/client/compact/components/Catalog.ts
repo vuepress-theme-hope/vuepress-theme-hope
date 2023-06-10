@@ -1,6 +1,8 @@
 import { usePageData, useSiteData } from "@vuepress/client";
-import { type PropType, type VNode, computed, defineComponent, h } from "vue";
-import { type RouteMeta, useRouter } from "vue-router";
+import type { PropType, VNode } from "vue";
+import { computed, defineComponent, h } from "vue";
+import type { RouteMeta } from "vue-router";
+import { useRouter } from "vue-router";
 import {
   VPLink,
   endsWith,
@@ -9,7 +11,7 @@ import {
   useLocaleConfig,
 } from "vuepress-shared/client";
 
-import { type CatalogLocaleConfig } from "../../../shared/index.js";
+import type { CatalogLocaleConfig } from "../../../shared/index.js";
 import FontIcon from "../../components/FontIcon.js";
 
 import "../styles/catalog.scss";

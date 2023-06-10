@@ -1,5 +1,5 @@
 import { isFunction, isString } from "@vuepress/shared";
-import { type Router } from "vue-router";
+import type { Router } from "vue-router";
 
 /**
  * Resolve a route with redirection

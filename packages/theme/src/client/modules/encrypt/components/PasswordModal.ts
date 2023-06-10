@@ -1,5 +1,6 @@
 import { usePageFrontmatter } from "@vuepress/client";
-import { type VNode, computed, defineComponent, h, nextTick, ref } from "vue";
+import type { VNode } from "vue";
+import { computed, defineComponent, h, nextTick, ref } from "vue";
 
 import { useThemeLocaleData } from "@theme-hope/composables/index";
 

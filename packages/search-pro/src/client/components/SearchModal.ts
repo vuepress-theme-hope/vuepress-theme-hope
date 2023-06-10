@@ -1,7 +1,7 @@
 import { useSiteLocaleData } from "@vuepress/client";
 import { onClickOutside, useEventListener, useScrollLock } from "@vueuse/core";
+import type { VNode } from "vue";
 import {
-  type VNode,
   defineAsyncComponent,
   defineComponent,
   h,

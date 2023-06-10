@@ -1,7 +1,7 @@
 import { usePageFrontmatter, usePageLang } from "@vuepress/client";
 import { pageviewCount } from "@waline/client/dist/pageview.mjs";
+import type { VNode } from "vue";
 import {
-  type VNode,
   computed,
   defineAsyncComponent,
   defineComponent,
@@ -12,9 +12,9 @@ import {
 } from "vue";
 import { LoadingIcon, useLocaleConfig } from "vuepress-shared/client";
 
-import {
-  type CommentPluginFrontmatter,
-  type WalineLocaleConfig,
+import type {
+  CommentPluginFrontmatter,
+  WalineLocaleConfig,
 } from "../../shared/index.js";
 import { useWalineOptions } from "../helpers/index.js";
 

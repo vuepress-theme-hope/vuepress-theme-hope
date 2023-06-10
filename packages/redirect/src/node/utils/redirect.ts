@@ -1,4 +1,4 @@
-import { type App, type Page } from "@vuepress/core";
+import type { App, Page } from "@vuepress/core";
 import {
   entries,
   fromEntries,
@@ -11,8 +11,8 @@ import {
 } from "vuepress-shared/node";
 
 import { normalizePath } from "./normalizePath.js";
-import { type RedirectOptions } from "../options.js";
-import { type RedirectPluginFrontmatterOption } from "../typings/index.js";
+import type { RedirectOptions } from "../options.js";
+import type { RedirectPluginFrontmatterOption } from "../typings/index.js";
 
 export const handleRedirectTo = (
   app: App,

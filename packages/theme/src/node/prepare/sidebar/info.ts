@@ -1,15 +1,16 @@
-import { type Page } from "@vuepress/core";
+import type { Page } from "@vuepress/core";
 import { sanitizeFileName } from "@vuepress/utils";
 import { getTitleFromFilename, startsWith } from "vuepress-shared/node";
 
-import { type StructureInfo, getStructureInfo } from "./structure.js";
-import {
-  type SidebarDirInfo,
-  type SidebarFileInfo,
-  type SidebarInfo,
-  type SidebarSorterFunction,
-  type ThemeNormalPageFrontmatter,
-  type ThemePageData,
+import type { StructureInfo } from "./structure.js";
+import { getStructureInfo } from "./structure.js";
+import type {
+  SidebarDirInfo,
+  SidebarFileInfo,
+  SidebarInfo,
+  SidebarSorterFunction,
+  ThemeNormalPageFrontmatter,
+  ThemePageData,
 } from "../../../shared/index.js";
 
 export interface FileInfo {

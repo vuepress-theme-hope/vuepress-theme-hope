@@ -1,9 +1,10 @@
-import { type FunctionalComponent, type PropType, h } from "vue";
+import type { FunctionalComponent, PropType } from "vue";
+import { h } from "vue";
 import { useRoute } from "vue-router";
 import { startsWith } from "vuepress-shared/client";
 
 import NoticeItem from "./NoticeItem.js";
-import { type NoticeItemOptions } from "../../shared/index.js";
+import type { NoticeItemOptions } from "../../shared/index.js";
 
 import "../styles/notice.scss";
 

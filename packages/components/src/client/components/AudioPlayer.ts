@@ -1,7 +1,6 @@
-import { type Options as PlyrOptions } from "plyr";
+import type { Options as PlyrOptions } from "plyr";
+import type { PropType, VNode } from "vue";
 import {
-  type PropType,
-  type VNode,
   computed,
   defineComponent,
   h,

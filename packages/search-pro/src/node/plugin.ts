@@ -1,4 +1,4 @@
-import { type PluginFunction } from "@vuepress/core";
+import type { PluginFunction } from "@vuepress/core";
 import { watch } from "chokidar";
 import { useSassPalettePlugin } from "vuepress-plugin-sass-palette";
 import {
@@ -13,7 +13,7 @@ import { convertOptions } from "./compact/index.js";
 import { setPageExcerpt } from "./excerpt.js";
 import { generateWorker } from "./generateWorker.js";
 import { searchProLocales } from "./locales.js";
-import { type SearchProOptions } from "./options.js";
+import type { SearchProOptions } from "./options.js";
 import {
   prepareSearchIndex,
   removeSearchIndex,

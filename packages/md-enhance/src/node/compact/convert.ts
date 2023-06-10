@@ -2,11 +2,8 @@ import { colors } from "@vuepress/utils";
 import { isPlainObject } from "vuepress-shared/node";
 
 import { deprecatedLogger, droppedLogger } from "./utils.js";
-import {
-  type LinksCheckStatus,
-  type MarkdownEnhanceOptions,
-} from "../options.js";
-import { type RevealPlugin } from "../typings/index.js";
+import type { LinksCheckStatus, MarkdownEnhanceOptions } from "../options.js";
+import type { RevealPlugin } from "../typings/index.js";
 import { logger } from "../utils.js";
 
 /** @deprecated */

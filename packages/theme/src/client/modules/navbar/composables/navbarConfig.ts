@@ -1,17 +1,19 @@
 import { isLinkExternal, isString } from "@vuepress/shared";
-import { type Ref, ref, watch } from "vue";
-import { type Router, useRouter } from "vue-router";
+import type { Ref } from "vue";
+import { ref, watch } from "vue";
+import type { Router } from "vue-router";
+import { useRouter } from "vue-router";
 
 import { useThemeLocaleData } from "@theme-hope/composables/index";
 import { resolveLinkInfo } from "@theme-hope/utils/index";
 
-import {
-  type AutoLinkOptions,
-  type NavGroup,
-  type NavbarGroup,
-  type NavbarItem,
+import type {
+  AutoLinkOptions,
+  NavGroup,
+  NavbarGroup,
+  NavbarItem,
 } from "../../../../shared/index.js";
-import { type ResolvedThemeNavbarItem } from "../utils/index.js";
+import type { ResolvedThemeNavbarItem } from "../utils/index.js";
 
 export const resolveNavbarItem = (
   router: Router,

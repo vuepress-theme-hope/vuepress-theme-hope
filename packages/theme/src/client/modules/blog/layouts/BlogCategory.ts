@@ -1,14 +1,9 @@
 import { usePageData, usePageFrontmatter } from "@vuepress/client";
-import {
-  type VNode,
-  computed,
-  defineComponent,
-  h,
-  resolveComponent,
-} from "vue";
-import {
-  type BlogCategoryFrontmatterOptions,
-  type BlogPluginFrontmatter,
+import type { VNode } from "vue";
+import { computed, defineComponent, h, resolveComponent } from "vue";
+import type {
+  BlogCategoryFrontmatterOptions,
+  BlogPluginFrontmatter,
 } from "vuepress-plugin-blog2";
 
 import DropTransition from "@theme-hope/components/transitions/DropTransition";

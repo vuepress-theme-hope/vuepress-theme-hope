@@ -1,10 +1,11 @@
-import { type Router } from "vue-router";
+import type { Router } from "vue-router";
 import {
   inferRoutePath,
   resolveRouteWithRedirect,
 } from "vuepress-shared/client";
 
-import { ArticleInfoType, type AutoLinkOptions } from "../../shared/index.js";
+import type { AutoLinkOptions } from "../../shared/index.js";
+import { ArticleInfoType } from "../../shared/index.js";
 
 /**
  * Resolve AutoLink props from string

@@ -1,4 +1,5 @@
-import { type Ref, computed, ref, watch } from "vue";
+import type { Ref } from "vue";
+import { computed, ref, watch } from "vue";
 
 export interface ArrayCycle<T> {
   index: Ref<number>;

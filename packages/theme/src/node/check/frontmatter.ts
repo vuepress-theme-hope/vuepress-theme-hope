@@ -1,11 +1,11 @@
-import { type Page } from "@vuepress/core";
+import type { Page } from "@vuepress/core";
 import { colors } from "@vuepress/utils";
 import { isArray, isString } from "vuepress-shared/node";
 
-import {
-  type ThemeBlogHomePageFrontmatter,
-  type ThemeNormalPageFrontmatter,
-  type ThemeProjectHomePageFrontmatter,
+import type {
+  ThemeBlogHomePageFrontmatter,
+  ThemeNormalPageFrontmatter,
+  ThemeProjectHomePageFrontmatter,
 } from "../../shared/index.js";
 import { logger } from "../utils.js";
 

@@ -1,13 +1,6 @@
 import { usePageData, usePageFrontmatter, withBase } from "@vuepress/client";
-import {
-  type ComponentOptions,
-  type SlotsType,
-  type VNode,
-  computed,
-  defineComponent,
-  h,
-  resolveComponent,
-} from "vue";
+import type { ComponentOptions, SlotsType, VNode } from "vue";
+import { computed, defineComponent, h, resolveComponent } from "vue";
 import { RenderDefault, hasGlobalComponent } from "vuepress-shared/client";
 
 import BreadCrumb from "@theme-hope/components/BreadCrumb";
@@ -19,7 +12,7 @@ import PageMeta from "@theme-hope/modules/info/components/PageMeta";
 import TOC from "@theme-hope/modules/info/components/TOC";
 import { useDarkmode } from "@theme-hope/modules/outlook/composables/index";
 
-import { type ThemeNormalPageFrontmatter } from "../../shared/index.js";
+import type { ThemeNormalPageFrontmatter } from "../../shared/index.js";
 
 import "../styles/page.scss";
 

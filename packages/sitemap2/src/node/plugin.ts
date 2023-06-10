@@ -1,10 +1,10 @@
-import { type PluginFunction, type PluginObject } from "@vuepress/core";
+import type { PluginFunction, PluginObject } from "@vuepress/core";
 import { colors } from "@vuepress/utils";
 import { checkVersion } from "vuepress-shared/node";
 
 import { convertOptions } from "./compact/index.js";
 import { generateSiteMap } from "./generateSitemap.js";
-import { type SitemapOptions } from "./options.js";
+import type { SitemapOptions } from "./options.js";
 import { PLUGIN_NAME, logger } from "./utils.js";
 
 export const sitemapPlugin =

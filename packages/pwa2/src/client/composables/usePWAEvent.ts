@@ -1,5 +1,6 @@
-import { type Emitter } from "mitt";
-import { type InjectionKey, inject } from "vue";
+import type { Emitter } from "mitt";
+import type { InjectionKey } from "vue";
+import { inject } from "vue";
 
 declare const __VUEPRESS_DEV__: boolean;
 

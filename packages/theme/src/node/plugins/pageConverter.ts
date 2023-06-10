@@ -1,4 +1,4 @@
-import { type App, type Page, type PluginObject } from "@vuepress/core";
+import type { App, Page, PluginObject } from "@vuepress/core";
 import {
   endsWith,
   injectLocalizedDate,
@@ -7,18 +7,17 @@ import {
   startsWith,
 } from "vuepress-shared/node";
 
-import {
-  ArticleInfoType,
-  PageType,
-  type ThemeBlogHomePageFrontmatter,
-  type ThemeData,
-  type ThemeNormalPageFrontmatter,
-  type ThemePageData,
-  type ThemeProjectHomePageFrontmatter,
+import type {
+  ThemeBlogHomePageFrontmatter,
+  ThemeData,
+  ThemeNormalPageFrontmatter,
+  ThemePageData,
+  ThemeProjectHomePageFrontmatter,
 } from "../../shared/index.js";
+import { ArticleInfoType, PageType } from "../../shared/index.js";
 import { checkFrontmatter } from "../check/index.js";
 import { convertFrontmatter } from "../compact/index.js";
-import { type HopeThemeBehaviorOptions } from "../typings/index.js";
+import type { HopeThemeBehaviorOptions } from "../typings/index.js";
 
 /**
  * @private

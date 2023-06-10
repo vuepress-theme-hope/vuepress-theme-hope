@@ -15,9 +15,9 @@ import { telegram } from "./telegram.js";
 import { twitter } from "./twitter.js";
 import { weibo } from "./weibo.js";
 import { whatsapp } from "./whatsapp.js";
-import {
-  type BuiltInShareService,
-  type ShareServiceConfig,
+import type {
+  BuiltInShareService,
+  ShareServiceConfig,
 } from "../../../shared/index.js";
 
 export const SHARE_CONFIG: Record<BuiltInShareService, ShareServiceConfig> = {

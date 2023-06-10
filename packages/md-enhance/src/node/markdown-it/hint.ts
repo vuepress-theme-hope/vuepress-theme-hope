@@ -1,13 +1,11 @@
 import { container } from "@mdit/plugin-container";
-import { type MarkdownEnv } from "@vuepress/markdown";
+import type { MarkdownEnv } from "@vuepress/markdown";
 import { resolveLocalePath } from "@vuepress/shared";
-import { type PluginWithOptions } from "markdown-it";
-import {
-  type RequiredLocaleConfig,
-  ensureLeadingSlash,
-} from "vuepress-shared/node";
+import type { PluginWithOptions } from "markdown-it";
+import type { RequiredLocaleConfig } from "vuepress-shared/node";
+import { ensureLeadingSlash } from "vuepress-shared/node";
 
-import { type MarkdownHintLocaleData } from "../typings/index.js";
+import type { MarkdownHintLocaleData } from "../typings/index.js";
 
 export type MarkdownItHintOptions =
   RequiredLocaleConfig<MarkdownHintLocaleData>;

@@ -1,13 +1,5 @@
-import {
-  type PropType,
-  type VNode,
-  computed,
-  defineComponent,
-  h,
-  onMounted,
-  ref,
-  watch,
-} from "vue";
+import type { PropType, VNode } from "vue";
+import { computed, defineComponent, h, onMounted, ref, watch } from "vue";
 import { useRoute, useRouter } from "vue-router";
 
 import DropTransition from "@theme-hope/components/transitions/DropTransition";
@@ -16,7 +8,7 @@ import Pagination from "@theme-hope/modules/blog/components/Pagination";
 import { EmptyIcon } from "@theme-hope/modules/blog/components/icons/index";
 import { useBlogOptions } from "@theme-hope/modules/blog/composables/index";
 
-import { type ArticleInfo } from "../../../../shared/index.js";
+import type { ArticleInfo } from "../../../../shared/index.js";
 
 import "../styles/article-list.scss";
 

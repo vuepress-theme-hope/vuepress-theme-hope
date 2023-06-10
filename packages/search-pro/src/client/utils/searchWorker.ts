@@ -1,8 +1,8 @@
 import { clientWorker, searchProOptions } from "../define.js";
-import {
-  type MessageData,
-  type QueryResult,
-  type SearchResult,
+import type {
+  MessageData,
+  QueryResult,
+  SearchResult,
 } from "../typings/index.js";
 
 declare const __VUEPRESS_BASE__: string;

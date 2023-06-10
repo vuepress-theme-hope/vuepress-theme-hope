@@ -1,15 +1,6 @@
 import { useStorage } from "@vueuse/core";
-import {
-  type PropType,
-  type SlotsType,
-  type VNode,
-  defineComponent,
-  h,
-  onMounted,
-  ref,
-  shallowRef,
-  watch,
-} from "vue";
+import type { PropType, SlotsType, VNode } from "vue";
+import { defineComponent, h, onMounted, ref, shallowRef, watch } from "vue";
 
 import "../styles/tabs.scss";
 

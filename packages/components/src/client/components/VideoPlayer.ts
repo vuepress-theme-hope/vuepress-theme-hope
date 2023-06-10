@@ -1,8 +1,7 @@
-import { type UseMediaTextTrackSource } from "@vueuse/core";
-import { type Options as PlyrOptions } from "plyr";
+import type { UseMediaTextTrackSource } from "@vueuse/core";
+import type { Options as PlyrOptions } from "plyr";
+import type { PropType, VNode } from "vue";
 import {
-  type PropType,
-  type VNode,
   computed,
   defineComponent,
   h,

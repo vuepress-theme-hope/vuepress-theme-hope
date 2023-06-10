@@ -1,6 +1,6 @@
 import { get } from "node:https";
 
-import { type PackageManager } from "./packageManager.js";
+import type { PackageManager } from "./packageManager.js";
 
 export const getNextVersion = async (
   packageManager: PackageManager,

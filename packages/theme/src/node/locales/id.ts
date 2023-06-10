@@ -1,4 +1,4 @@
-import { type ThemeLocaleData } from "../../shared/index.js";
+import type { ThemeLocaleData } from "../../shared/index.js";
 
 export const idLocale: ThemeLocaleData = {
   lang: "id-ID",

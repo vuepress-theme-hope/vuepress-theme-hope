@@ -1,6 +1,6 @@
 import { pageviewCount } from "@waline/client/dist/pageview.mjs";
 
-import { type WalineOptions } from "../shared/index.js";
+import type { WalineOptions } from "../shared/index.js";
 
 declare const COMMENT_OPTIONS: WalineOptions;
 

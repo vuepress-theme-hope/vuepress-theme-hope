@@ -1,8 +1,9 @@
 import { useRouteLocale } from "@vuepress/client";
-import { type LocaleData } from "@vuepress/shared";
-import { type ComputedRef, computed } from "vue";
+import type { LocaleData } from "@vuepress/shared";
+import type { ComputedRef } from "vue";
+import { computed } from "vue";
 
-import { type RequiredLocaleConfig } from "../../shared/index.js";
+import type { RequiredLocaleConfig } from "../../shared/index.js";
 
 /**
  * Get current locale config

@@ -1,11 +1,6 @@
 import { withBase } from "@vuepress/client";
-import {
-  type VNode,
-  computed,
-  defineComponent,
-  h,
-  resolveComponent,
-} from "vue";
+import type { VNode } from "vue";
+import { computed, defineComponent, h, resolveComponent } from "vue";
 import {
   BitbucketIcon,
   GitHubIcon,
@@ -16,7 +11,7 @@ import {
   useLocaleConfig,
 } from "vuepress-shared/client";
 
-import { type SiteInfoLocaleConfig } from "../../shared/index.js";
+import type { SiteInfoLocaleConfig } from "../../shared/index.js";
 
 import "balloon-css/balloon.css";
 import "../styles/site-info.scss";

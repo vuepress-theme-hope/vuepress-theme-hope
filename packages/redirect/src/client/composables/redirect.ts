@@ -2,7 +2,8 @@ import { useRouteLocale } from "@vuepress/client";
 import { isLinkHttp } from "@vuepress/shared";
 import { usePreferredLanguages } from "@vueuse/core";
 import { computed, watch } from "vue";
-import { type RouteRecordNormalized, useRoute, useRouter } from "vue-router";
+import type { RouteRecordNormalized } from "vue-router";
+import { useRoute, useRouter } from "vue-router";
 import { entries } from "vuepress-shared/client";
 
 import { redirectConfig } from "@temp/redirect/config.js";

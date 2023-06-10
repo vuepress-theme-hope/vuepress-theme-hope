@@ -1,10 +1,11 @@
 import { useRouteLocale } from "@vuepress/client";
 import { useDebounceFn } from "@vueuse/core";
-import { type Ref, onMounted, onUnmounted, ref, shallowRef, watch } from "vue";
+import type { Ref } from "vue";
+import { onMounted, onUnmounted, ref, shallowRef, watch } from "vue";
 
 import { searchProOptions } from "../define.js";
 import { useSearchOptions } from "../helpers/index.js";
-import { type SearchResult } from "../typings/index.js";
+import type { SearchResult } from "../typings/index.js";
 import { createSearchWorker } from "../utils/index.js";
 
 export interface SearchRef {

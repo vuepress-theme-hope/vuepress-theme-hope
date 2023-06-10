@@ -5,7 +5,7 @@ import { pwaEventSymbol } from "./usePWAEvent.js";
 import { useRegisterSW } from "./useRegisterSW.js";
 import { forceUpdate } from "../utils/index.js";
 
-import { type PWAEvent } from "./index.js";
+import type { PWAEvent } from "./index.js";
 
 // eslint-disable-next-line @typescript-eslint/naming-convention
 declare const __VUEPRESS_DEV__: boolean;

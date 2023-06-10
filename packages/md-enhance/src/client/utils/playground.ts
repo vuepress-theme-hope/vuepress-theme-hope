@@ -1,4 +1,4 @@
-import { type VuePlaygroundOptions } from "../typings/index.js";
+import type { VuePlaygroundOptions } from "../typings/index.js";
 
 export const getVuePlaygroundSettings = (
   settings: string

@@ -1,7 +1,7 @@
-import { type HeadConfig } from "@vuepress/core";
+import type { HeadConfig } from "@vuepress/core";
 import { describe, expect, it } from "vitest";
 
-import { type PWAOptions } from "../../src/node/index.js";
+import type { PWAOptions } from "../../src/node/index.js";
 import { injectLinksToHead } from "../../src/node/injectHead.js";
 
 const options: PWAOptions = {

@@ -1,17 +1,12 @@
 import { usePageFrontmatter } from "@vuepress/client";
-import {
-  type ComputedRef,
-  type InjectionKey,
-  computed,
-  inject,
-  provide,
-} from "vue";
+import type { ComputedRef, InjectionKey } from "vue";
+import { computed, inject, provide } from "vue";
 
 import { useThemeLocaleData } from "@theme-hope/composables/index";
 
 import { resolveSidebarItems } from "./resolveConfig.js";
-import { type ThemeNormalPageFrontmatter } from "../../../../shared/index.js";
-import { type ResolvedSidebarItem } from "../utils/index.js";
+import type { ThemeNormalPageFrontmatter } from "../../../../shared/index.js";
+import type { ResolvedSidebarItem } from "../utils/index.js";
 
 declare const __VUEPRESS_DEV__: boolean;
 

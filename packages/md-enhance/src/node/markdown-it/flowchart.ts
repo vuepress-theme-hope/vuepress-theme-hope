@@ -1,4 +1,4 @@
-import { type PluginSimple } from "markdown-it";
+import type { PluginSimple } from "markdown-it";
 import type Token from "markdown-it/lib/token.js";
 import { utoa } from "vuepress-shared/node";
 

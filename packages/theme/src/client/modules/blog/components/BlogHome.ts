@@ -1,4 +1,5 @@
-import { type VNode, defineComponent, h } from "vue";
+import type { VNode } from "vue";
+import { defineComponent, h } from "vue";
 
 import MarkdownContent from "@theme-hope/components/MarkdownContent";
 import DropTransition from "@theme-hope/components/transitions/DropTransition";

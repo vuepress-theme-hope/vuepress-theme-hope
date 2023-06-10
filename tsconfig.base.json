@@ -13,6 +13,7 @@
     "noUncheckedIndexedAccess": false,
     "noUnusedLocals": true,
     "noUnusedParameters": true,
+    "verbatimModuleSyntax": true,
 
     // Modules
     "baseUrl": "./",
@@ -23,13 +24,13 @@
     // Emit
     "downlevelIteration": false,
     "importHelpers": true,
-    "importsNotUsedAsValues": "remove",
     "newLine": "lf",
     "noEmitOnError": true,
     "removeComments": false,
     "inlineSources": true,
     "inlineSourceMap": false,
     "sourceMap": true,
+    "pretty": true,
 
     // JavaScript
     "allowJs": false,
@@ -47,8 +48,6 @@
     // Compiler Diagnostics
     "diagnostics": false,
     "listEmittedFiles": false,
-
-    "skipLibCheck": true,
-    "pretty": true
+    "skipLibCheck": true
   }
 }

@@ -1,4 +1,4 @@
-import { type AutoCatalogLocaleConfig } from "../shared/index.js";
+import type { AutoCatalogLocaleConfig } from "../shared/index.js";
 
 export const locales: AutoCatalogLocaleConfig = {
   "/en/": {

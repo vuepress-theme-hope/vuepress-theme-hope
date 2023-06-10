@@ -1,4 +1,4 @@
-import { type App, type PluginConfig } from "@vuepress/core";
+import type { App, PluginConfig } from "@vuepress/core";
 import { externalLinkIconPlugin } from "@vuepress/plugin-external-link-icon";
 import { nprogressPlugin } from "@vuepress/plugin-nprogress";
 import { themeDataPlugin } from "@vuepress/plugin-theme-data";
@@ -17,10 +17,10 @@ import { getPWAPlugin } from "./pwa.js";
 import { getRtlPlugin } from "./rtl.js";
 import { getSEOPlugin } from "./seo.js";
 import { getSitemapPlugin } from "./sitemap.js";
-import {
-  type PluginsOptions,
-  type ThemeData,
-  type ThemeOptions,
+import type {
+  PluginsOptions,
+  ThemeData,
+  ThemeOptions,
 } from "../../shared/index.js";
 import { checkPluginOptions } from "../check/index.js";
 

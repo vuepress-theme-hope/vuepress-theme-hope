@@ -1,7 +1,7 @@
-import {
-  type SearchProCustomFieldFormatter,
-  type SearchProHotKeyOptions,
-  type SearchProLocaleConfig,
+import type {
+  SearchProCustomFieldFormatter,
+  SearchProHotKeyOptions,
+  SearchProLocaleConfig,
 } from "../shared/index.js";
 
 type SearchProClientCustomFiledConfig = Record<

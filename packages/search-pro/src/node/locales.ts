@@ -1,4 +1,4 @@
-import { type SearchProLocaleConfig } from "../shared/index.js";
+import type { SearchProLocaleConfig } from "../shared/index.js";
 
 /** Multi language config for search-pro popup */
 export const searchProLocales: SearchProLocaleConfig = {

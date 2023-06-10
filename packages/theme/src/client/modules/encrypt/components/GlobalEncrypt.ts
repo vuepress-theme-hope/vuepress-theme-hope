@@ -1,11 +1,5 @@
-import {
-  type SlotsType,
-  type VNode,
-  defineComponent,
-  h,
-  onMounted,
-  ref,
-} from "vue";
+import type { SlotsType, VNode } from "vue";
+import { defineComponent, h, onMounted, ref } from "vue";
 
 import FadeSlideY from "@theme-hope/components/transitions/FadeSlideY";
 import PasswordModal from "@theme-hope/modules/encrypt/components/PasswordModal";

@@ -4,19 +4,13 @@ import {
   withBase,
 } from "@vuepress/client";
 import { isString } from "@vuepress/shared";
-import {
-  type SlotsType,
-  type VNode,
-  computed,
-  defineComponent,
-  h,
-  shallowRef,
-} from "vue";
+import type { SlotsType, VNode } from "vue";
+import { computed, defineComponent, h, shallowRef } from "vue";
 
 import DropTransition from "@theme-hope/components/transitions/DropTransition";
 
 import { SlideDownIcon } from "./icons/icons.js";
-import { type ThemeBlogHomePageFrontmatter } from "../../../../shared/index.js";
+import type { ThemeBlogHomePageFrontmatter } from "../../../../shared/index.js";
 import defaultHeroBgImagePath from "../assets/hero.jpg";
 
 import "../styles/blog-hero.scss";

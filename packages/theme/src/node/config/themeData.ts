@@ -1,13 +1,13 @@
-import { type App } from "@vuepress/core";
+import type { App } from "@vuepress/core";
 import { entries, fromEntries, getLocales } from "vuepress-shared/node";
 
 import { getEncryptConfig } from "./encrypt.js";
-import { type ThemeStatus } from "./status.js";
-import {
-  type ThemeData,
-  type ThemeLocaleConfig,
-  type ThemeLocaleOptions,
-  type ThemeOptions,
+import type { ThemeStatus } from "./status.js";
+import type {
+  ThemeData,
+  ThemeLocaleConfig,
+  ThemeLocaleOptions,
+  ThemeOptions,
 } from "../../shared/index.js";
 import { themeLocalesData } from "../locales/index.js";
 

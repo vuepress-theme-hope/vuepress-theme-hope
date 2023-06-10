@@ -1,9 +1,9 @@
 import { isArray, isFunction, isString, keys } from "vuepress-shared/node";
 
-import {
-  type SidebarInfo,
-  type SidebarSorter,
-  type SidebarSorterFunction,
+import type {
+  SidebarInfo,
+  SidebarSorter,
+  SidebarSorterFunction,
 } from "../../../shared/index.js";
 
 export const sidebarReadmeSorter = (

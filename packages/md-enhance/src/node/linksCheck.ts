@@ -1,4 +1,4 @@
-import { type App, type Page } from "@vuepress/core";
+import type { App, Page } from "@vuepress/core";
 import { logger } from "@vuepress/utils";
 import {
   isAbsoluteUrl,
@@ -7,7 +7,7 @@ import {
   isRegExp,
 } from "vuepress-shared/node";
 
-import { type MarkdownEnhanceOptions } from "./options.js";
+import type { MarkdownEnhanceOptions } from "./options.js";
 
 export const defaultLinkCheck = (): boolean => false;
 

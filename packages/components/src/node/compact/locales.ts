@@ -1,4 +1,4 @@
-import { type CatalogLocaleConfig } from "../../shared/index.js";
+import type { CatalogLocaleConfig } from "../../shared/index.js";
 
 /**
  * @deprecated Use `vuepress-plugin-auto-catalog` instead

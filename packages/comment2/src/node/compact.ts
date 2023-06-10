@@ -1,6 +1,6 @@
 import { colors } from "@vuepress/utils";
 
-import { type CommentPluginOptions } from "./options.js";
+import type { CommentPluginOptions } from "./options.js";
 import { logger } from "./utils.js";
 
 /** @deprecated */

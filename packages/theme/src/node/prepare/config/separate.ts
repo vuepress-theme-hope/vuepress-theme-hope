@@ -1,9 +1,9 @@
 import { createRequire } from "node:module";
 
-import { type App } from "@vuepress/core";
+import type { App } from "@vuepress/core";
 import { path } from "@vuepress/utils";
 
-import { type ThemeStatus } from "../../config/index.js";
+import type { ThemeStatus } from "../../config/index.js";
 import { CLIENT_FOLDER } from "../../utils.js";
 
 const require = createRequire(import.meta.url);

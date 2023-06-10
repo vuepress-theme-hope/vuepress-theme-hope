@@ -1,6 +1,6 @@
 import inquirer from "inquirer";
 
-import { type PackageManager } from "../utils/index.js";
+import type { PackageManager } from "../utils/index.js";
 
 export type Lang = "english (US)" | "简体中文";
 

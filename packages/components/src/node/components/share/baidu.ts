@@ -1,4 +1,4 @@
-import { type ShareServiceConfig } from "../../../shared/index.js";
+import type { ShareServiceConfig } from "../../../shared/index.js";
 
 export const baidu: ShareServiceConfig = {
   link: "http://cang.baidu.com/do/add?it=[title]&iu=[url]",

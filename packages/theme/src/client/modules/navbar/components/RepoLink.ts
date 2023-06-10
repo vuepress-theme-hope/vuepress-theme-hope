@@ -1,4 +1,5 @@
-import { type VNode, defineComponent, h, resolveComponent } from "vue";
+import type { VNode } from "vue";
+import { defineComponent, h, resolveComponent } from "vue";
 import {
   BitbucketIcon,
   GitHubIcon,

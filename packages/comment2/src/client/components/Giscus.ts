@@ -1,12 +1,13 @@
 import { usePageLang } from "@vuepress/client";
-import { type VNode, computed, defineComponent, h, onMounted, ref } from "vue";
+import type { VNode } from "vue";
+import { computed, defineComponent, h, onMounted, ref } from "vue";
 import { LoadingIcon } from "vuepress-shared/client";
 
-import {
-  type GiscusInputPosition,
-  type GiscusMapping,
-  type GiscusRepo,
-  type GiscusTheme,
+import type {
+  GiscusInputPosition,
+  GiscusMapping,
+  GiscusRepo,
+  GiscusTheme,
 } from "../../shared/index.js";
 import { useGiscusOptions } from "../helpers/index.js";
 

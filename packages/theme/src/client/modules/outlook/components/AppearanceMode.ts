@@ -1,4 +1,5 @@
-import { type VNode, computed, defineComponent, h } from "vue";
+import type { VNode } from "vue";
+import { computed, defineComponent, h } from "vue";
 
 import { useThemeLocaleData } from "@theme-hope/composables/index";
 import AppearanceSwitch from "@theme-hope/modules/outlook/components/AppearanceSwitch";

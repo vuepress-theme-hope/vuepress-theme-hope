@@ -1,7 +1,7 @@
 import { colors } from "@vuepress/utils";
 
 import { deprecatedLogger, droppedLogger } from "./utils.js";
-import { type AutoCatalogOptions } from "../options.js";
+import type { AutoCatalogOptions } from "../options.js";
 
 /** @deprecated */
 export const convertOptions = (

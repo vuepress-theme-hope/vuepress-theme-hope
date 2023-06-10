@@ -4,7 +4,7 @@ import { path } from "@vuepress/utils";
 import { describe, expect, it } from "vitest";
 
 import { emptyTheme } from "./__fixtures__/theme/empty.js";
-import { seoPlugin } from "../../src/node";
+import { seoPlugin } from "../../src/node/index.js";
 
 const app = createBaseApp({
   bundler: {} as any,

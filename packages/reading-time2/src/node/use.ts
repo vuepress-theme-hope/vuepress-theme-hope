@@ -1,6 +1,6 @@
-import { type App } from "@vuepress/core";
+import type { App } from "@vuepress/core";
 
-import { type ReadingTimeOptions } from "./options.js";
+import type { ReadingTimeOptions } from "./options.js";
 import { readingTimePlugin } from "./plugin.js";
 
 /**

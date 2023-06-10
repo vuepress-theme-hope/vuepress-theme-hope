@@ -1,9 +1,8 @@
 import { usePageData } from "@vuepress/client";
 import { useScrollLock } from "@vueuse/core";
+import type { SlotsType, VNode } from "vue";
 import {
-  type SlotsType,
   Transition,
-  type VNode,
   defineComponent,
   h,
   onMounted,

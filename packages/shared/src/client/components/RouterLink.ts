@@ -1,20 +1,7 @@
-import {
-  type ComputedRef,
-  type Ref,
-  type SlotsType,
-  type VNode,
-  computed,
-  defineComponent,
-  h,
-  toRef,
-  unref,
-} from "vue";
-import {
-  type NavigationFailure,
-  type RouteLocation,
-  useRoute,
-  useRouter,
-} from "vue-router";
+import type { ComputedRef, Ref, SlotsType, VNode } from "vue";
+import { computed, defineComponent, h, toRef, unref } from "vue";
+import type { NavigationFailure, RouteLocation } from "vue-router";
+import { useRoute, useRouter } from "vue-router";
 
 import { guardEvent, resolveRouteWithRedirect } from "../utils/index.js";
 

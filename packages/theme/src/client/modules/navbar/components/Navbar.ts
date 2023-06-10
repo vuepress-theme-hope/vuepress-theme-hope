@@ -1,15 +1,11 @@
-import {
-  type Component,
-  type ComponentOptions,
-  type FunctionalComponent,
-  type SlotsType,
-  type VNode,
-  computed,
-  defineComponent,
-  h,
-  ref,
-  resolveComponent,
+import type {
+  Component,
+  ComponentOptions,
+  FunctionalComponent,
+  SlotsType,
+  VNode,
 } from "vue";
+import { computed, defineComponent, h, ref, resolveComponent } from "vue";
 import { hasGlobalComponent } from "vuepress-shared/client";
 import noopModule from "vuepress-shared/noopModule";
 
@@ -26,9 +22,9 @@ import ToggleNavbarButton from "@theme-hope/modules/navbar/components/ToggleNavb
 import ToggleSidebarButton from "@theme-hope/modules/navbar/components/ToggleSidebarButton";
 import OutlookButton from "@theme-hope/modules/outlook/components/OutlookButton";
 
-import {
-  type NavbarComponent,
-  type NavbarLayoutOptions,
+import type {
+  NavbarComponent,
+  NavbarLayoutOptions,
 } from "../../../../shared/index.js";
 
 import "../styles/navbar.scss";

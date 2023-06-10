@@ -1,4 +1,5 @@
-import { type VNode, computed, defineComponent, h } from "vue";
+import type { VNode } from "vue";
+import { computed, defineComponent, h } from "vue";
 import { entries } from "vuepress-shared/client";
 
 import { icons } from "@temp/theme-hope/socialMedia";

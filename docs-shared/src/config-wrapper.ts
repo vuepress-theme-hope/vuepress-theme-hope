@@ -1,5 +1,6 @@
-import { type UserConfig, defineUserConfig } from "@vuepress/cli";
-import { type HeadConfig } from "@vuepress/core";
+import type { UserConfig } from "@vuepress/cli";
+import { defineUserConfig } from "@vuepress/cli";
+import type { HeadConfig } from "@vuepress/core";
 import { docsearchPlugin } from "@vuepress/plugin-docsearch";
 import { getDirname, path } from "@vuepress/utils";
 import { redirectPlugin } from "vuepress-plugin-redirect";

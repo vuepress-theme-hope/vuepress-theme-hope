@@ -1,7 +1,8 @@
 import { withBase } from "@vuepress/client";
 import { isString } from "@vuepress/shared";
 import { useMutationObserver } from "@vueuse/core";
-import { type VNode, defineComponent, h, ref, shallowRef } from "vue";
+import type { VNode } from "vue";
+import { defineComponent, h, ref, shallowRef } from "vue";
 import { useRoute } from "vue-router";
 
 import { EyeIcon, FireIcon } from "@theme-hope/modules/info/components/icons";

@@ -6,10 +6,10 @@ import { execaCommandSync } from "execa";
 import inquirer from "inquirer";
 
 import { updateGitIgnore } from "./gitignore.js";
-import { type CreateI18n, type Lang } from "./i18n.js";
+import type { CreateI18n, Lang } from "./i18n.js";
 import { getWorkflowContent } from "./workflow.js";
+import type { PackageManager } from "../utils/index.js";
 import {
-  type PackageManager,
   checkGitInstalled,
   checkGitRepo,
   copy,

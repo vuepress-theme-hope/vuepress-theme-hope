@@ -1,11 +1,11 @@
 /* eslint-disable @typescript-eslint/naming-convention */
-import { type App } from "@vuepress/core";
+import type { App } from "@vuepress/core";
 import { colors, fs, path } from "@vuepress/utils";
 import { getRootLang } from "vuepress-shared/node";
 
-import { type PWAOptions } from "./options.js";
+import type { PWAOptions } from "./options.js";
 import { logger } from "./utils.js";
-import { type ManifestOption } from "../shared/index.js";
+import type { ManifestOption } from "../shared/index.js";
 
 export const getManifest = async (
   app: App,

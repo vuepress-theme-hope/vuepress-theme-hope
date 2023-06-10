@@ -1,9 +1,11 @@
-import { type PageData, usePageData } from "@vuepress/client";
-import { type PropType, type VNode, computed, defineComponent, h } from "vue";
+import type { PageData } from "@vuepress/client";
+import { usePageData } from "@vuepress/client";
+import type { PropType, VNode } from "vue";
+import { computed, defineComponent, h } from "vue";
 import { isFunction, isPlainObject, isString } from "vuepress-shared/client";
 
 import ShareService from "./ShareService.js";
-import { type ShareServiceOptions } from "../../shared/share.js";
+import type { ShareServiceOptions } from "../../shared/share.js";
 
 declare const SHARE_SERVICES: ShareServiceOptions[];
 

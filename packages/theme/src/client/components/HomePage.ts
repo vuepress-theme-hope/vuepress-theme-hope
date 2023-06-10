@@ -1,6 +1,7 @@
 import { usePageFrontmatter } from "@vuepress/client";
 import { isArray } from "@vuepress/shared";
-import { type SlotsType, type VNode, computed, defineComponent, h } from "vue";
+import type { SlotsType, VNode } from "vue";
+import { computed, defineComponent, h } from "vue";
 
 import FeaturePanel from "@theme-hope/components/FeaturePanel";
 import HeroInfo from "@theme-hope/components/HeroInfo";
@@ -9,7 +10,7 @@ import MarkdownContent from "@theme-hope/components/MarkdownContent";
 import DropTransition from "@theme-hope/components/transitions/DropTransition";
 import { usePure } from "@theme-hope/composables/index";
 
-import { type ThemeProjectHomePageFrontmatter } from "../../shared/index.js";
+import type { ThemeProjectHomePageFrontmatter } from "../../shared/index.js";
 
 import "../styles/home-page.scss";
 

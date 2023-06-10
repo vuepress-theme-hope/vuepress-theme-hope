@@ -1,4 +1,4 @@
-import { type Word } from "../typings/index.js";
+import type { Word } from "../typings/index.js";
 
 const MAX_LENGTH = 100;
 const SUFFIX_LENGTH = 20;

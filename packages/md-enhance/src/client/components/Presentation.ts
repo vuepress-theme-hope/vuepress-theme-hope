@@ -1,11 +1,11 @@
 import { usePageFrontmatter } from "@vuepress/client";
-import {
-  type default as Reveal,
-  type RevealOptions,
+import type {
+  // eslint-disable-next-line import/no-named-default
+  default as Reveal,
+  RevealOptions,
 } from "reveal.js/dist/reveal.esm.js";
+import type { PropType, VNode } from "vue";
 import {
-  type PropType,
-  type VNode,
   defineComponent,
   h,
   onMounted,

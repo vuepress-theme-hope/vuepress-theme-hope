@@ -1,14 +1,5 @@
-import {
-  type Component,
-  type FunctionalComponent,
-  type SlotsType,
-  type VNode,
-  defineComponent,
-  h,
-  onBeforeUpdate,
-  ref,
-  shallowRef,
-} from "vue";
+import type { Component, FunctionalComponent, SlotsType, VNode } from "vue";
+import { defineComponent, h, onBeforeUpdate, ref, shallowRef } from "vue";
 
 import "../styles/code-group.scss";
 

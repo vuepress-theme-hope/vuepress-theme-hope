@@ -1,19 +1,12 @@
 /* eslint-disable vue/no-unused-properties */
 import { usePageLang } from "@vuepress/client";
 import type Artplayer from "artplayer";
-import { type Option as ArtPlayerInitOptions } from "artplayer/types/option.js";
-import {
-  type PropType,
-  type VNode,
-  camelize,
-  defineComponent,
-  h,
-  onMounted,
-  onUnmounted,
-} from "vue";
+import type { Option as ArtPlayerInitOptions } from "artplayer/types/option.js";
+import type { PropType, VNode } from "vue";
+import { camelize, defineComponent, h, onMounted, onUnmounted } from "vue";
 import { keys } from "vuepress-shared/client";
 
-import { type ArtPlayerOptions } from "../../shared/index.js";
+import type { ArtPlayerOptions } from "../../shared/index.js";
 import { useSize } from "../composables/index.js";
 import {
   SUPPORTED_VIDEO_TYPES,

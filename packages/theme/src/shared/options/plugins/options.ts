@@ -1,19 +1,19 @@
-import { type GitPluginOptions } from "@vuepress/plugin-git";
-import { type AutoCatalogOptions } from "vuepress-plugin-auto-catalog";
-import { type CommentPluginOptions } from "vuepress-plugin-comment2";
-import { type ComponentOptions } from "vuepress-plugin-components";
-import { type CopyCodeOptions } from "vuepress-plugin-copy-code2";
-import { type CopyrightOptions } from "vuepress-plugin-copyright2";
-import { type FeedOptions } from "vuepress-plugin-feed2";
-import { type MarkdownEnhanceOptions } from "vuepress-plugin-md-enhance";
-import { type PhotoSwipeOptions } from "vuepress-plugin-photo-swipe";
-import { type PWAOptions } from "vuepress-plugin-pwa2";
-import { type ReadingTimeOptions } from "vuepress-plugin-reading-time2";
-import { type SeoOptions } from "vuepress-plugin-seo2";
-import { type SitemapOptions } from "vuepress-plugin-sitemap2";
+import type { GitPluginOptions } from "@vuepress/plugin-git";
+import type { AutoCatalogOptions } from "vuepress-plugin-auto-catalog";
+import type { CommentPluginOptions } from "vuepress-plugin-comment2";
+import type { ComponentOptions } from "vuepress-plugin-components";
+import type { CopyCodeOptions } from "vuepress-plugin-copy-code2";
+import type { CopyrightOptions } from "vuepress-plugin-copyright2";
+import type { FeedOptions } from "vuepress-plugin-feed2";
+import type { MarkdownEnhanceOptions } from "vuepress-plugin-md-enhance";
+import type { PhotoSwipeOptions } from "vuepress-plugin-photo-swipe";
+import type { PWAOptions } from "vuepress-plugin-pwa2";
+import type { ReadingTimeOptions } from "vuepress-plugin-reading-time2";
+import type { SeoOptions } from "vuepress-plugin-seo2";
+import type { SitemapOptions } from "vuepress-plugin-sitemap2";
 
-import { type BlogPluginOptions } from "./blog.js";
-import { type PrismjsOptions } from "./prism.js";
+import type { BlogPluginOptions } from "./blog.js";
+import type { PrismjsOptions } from "./prism.js";
 
 export interface PluginsOptions {
   /**

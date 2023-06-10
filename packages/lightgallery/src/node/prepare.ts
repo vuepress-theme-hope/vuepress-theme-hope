@@ -1,9 +1,9 @@
 import { createRequire } from "node:module";
 
-import { type App } from "@vuepress/core";
+import type { App } from "@vuepress/core";
 import { path } from "@vuepress/utils";
 
-import { type LightGalleryPlugin } from "./options.js";
+import type { LightGalleryPlugin } from "./options.js";
 
 const require = createRequire(import.meta.url);
 

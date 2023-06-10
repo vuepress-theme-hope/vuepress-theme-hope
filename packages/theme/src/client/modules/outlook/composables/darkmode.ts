@@ -1,18 +1,10 @@
 import { usePreferredDark, useStorage } from "@vueuse/core";
-import {
-  type App,
-  type ComputedRef,
-  type InjectionKey,
-  type Ref,
-  computed,
-  inject,
-  onMounted,
-  watch,
-} from "vue";
+import type { App, ComputedRef, InjectionKey, Ref } from "vue";
+import { computed, inject, onMounted, watch } from "vue";
 
 import { useThemeData } from "@theme-hope/composables/index";
 
-import { type DarkmodeOptions } from "../../../../shared/index.js";
+import type { DarkmodeOptions } from "../../../../shared/index.js";
 
 declare const __VUEPRESS_DEV__: boolean;
 

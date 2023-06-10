@@ -1,13 +1,6 @@
 import { useEventListener } from "@vueuse/core";
-import {
-  type VNode,
-  computed,
-  defineComponent,
-  h,
-  inject,
-  onMounted,
-  ref,
-} from "vue";
+import type { VNode } from "vue";
+import { computed, defineComponent, h, inject, onMounted, ref } from "vue";
 import {
   checkIsIOS,
   checkIsMacOS,

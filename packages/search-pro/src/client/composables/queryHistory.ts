@@ -1,5 +1,5 @@
 import { useLocalStorage } from "@vueuse/core";
-import { type Ref } from "vue";
+import type { Ref } from "vue";
 
 import { searchProOptions } from "../define.js";
 

@@ -1,11 +1,5 @@
-import {
-  type FunctionalComponent,
-  type VNode,
-  computed,
-  defineComponent,
-  h,
-  ref,
-} from "vue";
+import type { FunctionalComponent, VNode } from "vue";
+import { computed, defineComponent, h, ref } from "vue";
 import { VPLink, keys } from "vuepress-shared/client";
 
 import DropTransition from "@theme-hope/components/transitions/DropTransition";

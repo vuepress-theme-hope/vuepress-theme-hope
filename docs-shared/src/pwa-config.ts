@@ -1,5 +1,5 @@
 /* eslint-disable @typescript-eslint/naming-convention */
-import { type PluginsOptions } from "vuepress-theme-hope";
+import type { PluginsOptions } from "vuepress-theme-hope";
 
 export interface GeneratePwaOptions {
   name: string;

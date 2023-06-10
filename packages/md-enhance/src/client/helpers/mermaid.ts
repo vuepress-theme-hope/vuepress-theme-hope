@@ -1,5 +1,6 @@
-import { type MermaidConfig } from "mermaid";
-import { type App, inject } from "vue";
+import type { MermaidConfig } from "mermaid";
+import type { App } from "vue";
+import { inject } from "vue";
 
 declare const __VUEPRESS_DEV__: boolean;
 

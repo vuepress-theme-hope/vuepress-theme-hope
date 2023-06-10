@@ -1,6 +1,7 @@
 /* eslint-disable vue/no-unused-properties */
 import { usePageLang } from "@vuepress/client";
-import { type VNode, computed, defineComponent, h, ref } from "vue";
+import type { VNode } from "vue";
+import { computed, defineComponent, h, ref } from "vue";
 import { LoadingIcon, startsWith } from "vuepress-shared/client";
 
 import { useSize } from "../composables/index.js";

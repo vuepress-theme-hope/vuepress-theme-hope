@@ -8,10 +8,10 @@ import {
 } from "vuepress-shared/node";
 
 import { deprecatedLogger, droppedLogger } from "./utils.js";
-import {
-  type SidebarArrayOptions,
-  type SidebarItem,
-  type SidebarOptions,
+import type {
+  SidebarArrayOptions,
+  SidebarItem,
+  SidebarOptions,
 } from "../../shared/index.js";
 import { logger } from "../utils.js";
 

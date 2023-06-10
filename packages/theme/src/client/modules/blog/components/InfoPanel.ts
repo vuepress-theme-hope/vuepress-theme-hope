@@ -1,4 +1,5 @@
-import { type FunctionalComponent, type VNode, h } from "vue";
+import type { FunctionalComponent, VNode } from "vue";
+import { h } from "vue";
 
 import DropTransition from "@theme-hope/components/transitions/DropTransition";
 import BloggerInfo from "@theme-hope/modules/blog/components/BloggerInfo";

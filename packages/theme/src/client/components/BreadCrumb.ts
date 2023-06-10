@@ -3,8 +3,8 @@ import {
   usePageFrontmatter,
   useRouteLocale,
 } from "@vuepress/client";
+import type { VNode } from "vue";
 import {
-  type VNode,
   computed,
   defineComponent,
   h,
@@ -19,10 +19,8 @@ import HopeIcon from "@theme-hope/components/HopeIcon";
 import { useThemeLocaleData } from "@theme-hope/composables/index";
 import { getAncestorLinks } from "@theme-hope/utils/index";
 
-import {
-  ArticleInfoType,
-  type ThemeNormalPageFrontmatter,
-} from "../../shared/index.js";
+import type { ThemeNormalPageFrontmatter } from "../../shared/index.js";
+import { ArticleInfoType } from "../../shared/index.js";
 
 import "../styles/breadcrumb.scss";
 

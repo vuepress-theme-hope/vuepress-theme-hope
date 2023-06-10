@@ -1,7 +1,7 @@
 import { usePageData, useSiteData } from "@vuepress/client";
 import type Artalk from "artalk";
+import type { VNode } from "vue";
 import {
-  type VNode,
   defineComponent,
   h,
   nextTick,

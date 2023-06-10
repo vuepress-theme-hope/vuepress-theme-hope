@@ -1,4 +1,4 @@
-import { type RequiredLocaleConfig } from "vuepress-shared";
+import type { RequiredLocaleConfig } from "vuepress-shared";
 
 /**
  * Multi language config for `vuepress-plugin-search-pro` plugin

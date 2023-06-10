@@ -1,5 +1,5 @@
-import { type MarkdownItIncludeOptions } from "@mdit/plugin-include";
-import { type MarkdownItStylizeConfig } from "@mdit/plugin-stylize";
+import type { MarkdownItIncludeOptions } from "@mdit/plugin-include";
+import type { MarkdownItStylizeConfig } from "@mdit/plugin-stylize";
 
 export { type MarkdownItAttrsOptions as AttrsOptions } from "@mdit/plugin-attrs";
 export { type MarkdownItFigureOptions as FigureOptions } from "@mdit/plugin-figure";

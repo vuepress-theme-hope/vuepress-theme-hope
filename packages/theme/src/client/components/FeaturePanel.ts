@@ -1,13 +1,14 @@
 import { withBase } from "@vuepress/client";
 import { isLinkExternal } from "@vuepress/shared";
-import { type FunctionalComponent, type VNode, h } from "vue";
+import type { FunctionalComponent, VNode } from "vue";
+import { h } from "vue";
 import { VPLink } from "vuepress-shared/client";
 
 import HopeIcon from "@theme-hope/components/HopeIcon";
 
-import {
-  type ThemeProjectHomeFeatureOptions,
-  type ThemeProjectHomeHighlightItem,
+import type {
+  ThemeProjectHomeFeatureOptions,
+  ThemeProjectHomeHighlightItem,
 } from "../../shared/index.js";
 
 import "../styles/feature-panel.scss";

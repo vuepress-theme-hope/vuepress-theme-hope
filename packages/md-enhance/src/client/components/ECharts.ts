@@ -1,8 +1,7 @@
 import { useDebounceFn, useEventListener } from "@vueuse/core";
-import { type EChartsOption, type EChartsType } from "echarts";
+import type { EChartsOption, EChartsType } from "echarts";
+import type { PropType, VNode } from "vue";
 import {
-  type PropType,
-  type VNode,
   defineComponent,
   h,
   onMounted,

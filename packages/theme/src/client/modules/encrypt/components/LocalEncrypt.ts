@@ -1,11 +1,5 @@
-import {
-  type SlotsType,
-  type VNode,
-  defineComponent,
-  h,
-  onMounted,
-  ref,
-} from "vue";
+import type { SlotsType, VNode } from "vue";
+import { defineComponent, h, onMounted, ref } from "vue";
 
 import PasswordModal from "@theme-hope/modules/encrypt/components/PasswordModal";
 import { usePathEncrypt } from "@theme-hope/modules/encrypt/composables/index";

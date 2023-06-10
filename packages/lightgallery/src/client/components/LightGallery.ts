@@ -1,9 +1,9 @@
 import { usePageData } from "@vuepress/client";
-import { type GalleryItem } from "lightgallery/lg-utils.js";
+import type { GalleryItem } from "lightgallery/lg-utils.js";
 import lightGallery from "lightgallery/lightgallery.es5.js";
-import { type LightGallery } from "lightgallery/lightgallery.js";
+import type { LightGallery } from "lightgallery/lightgallery.js";
+import type { VNode } from "vue";
 import {
-  type VNode,
   defineComponent,
   h,
   nextTick,

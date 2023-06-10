@@ -1,5 +1,6 @@
-import { type LightGallerySettings } from "lightgallery/lg-settings.js";
-import { type App, inject } from "vue";
+import type { LightGallerySettings } from "lightgallery/lg-settings.js";
+import type { App } from "vue";
+import { inject } from "vue";
 
 export type LightGalleryOptions = LightGallerySettings;
 

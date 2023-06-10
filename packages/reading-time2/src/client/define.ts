@@ -1,4 +1,4 @@
-import { type ReadingTimeLocaleConfig } from "vuepress-plugin-reading-time2";
+import type { ReadingTimeLocaleConfig } from "vuepress-plugin-reading-time2";
 
 declare const READING_TIME_LOCALES: ReadingTimeLocaleConfig | undefined;
 

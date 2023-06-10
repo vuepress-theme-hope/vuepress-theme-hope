@@ -1,5 +1,6 @@
 import { usePageData } from "@vuepress/client";
-import { type VNode, defineComponent, h } from "vue";
+import type { VNode } from "vue";
+import { defineComponent, h } from "vue";
 import { VPLink, entries, generateIndexFromHash } from "vuepress-shared/client";
 
 import { useCategoryMap } from "@theme-hope/modules/blog/composables/index";

@@ -1,9 +1,9 @@
 import { useLocalStorage } from "@vueuse/core";
-import { type Ref } from "vue";
+import type { Ref } from "vue";
 import { useRouter } from "vue-router";
 
 import { searchProOptions } from "../define.js";
-import { MatchedItem, type Word } from "../typings/index.js";
+import type { MatchedItem, Word } from "../typings/index.js";
 
 const SEARCH_PRO_HISTORY_RESULT_STORAGE = "SEARCH_PRO_RESULT_HISTORY";
 

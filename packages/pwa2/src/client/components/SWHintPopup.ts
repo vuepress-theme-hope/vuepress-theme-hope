@@ -1,12 +1,5 @@
-import {
-  type SlotsType,
-  Transition,
-  type VNode,
-  defineComponent,
-  h,
-  onMounted,
-  ref,
-} from "vue";
+import type { SlotsType, VNode } from "vue";
+import { Transition, defineComponent, h, onMounted, ref } from "vue";
 import { useLocaleConfig } from "vuepress-shared/client";
 
 import { UpdateIcon } from "./icons.js";

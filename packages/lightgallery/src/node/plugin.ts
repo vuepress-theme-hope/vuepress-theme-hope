@@ -1,8 +1,8 @@
-import { type PluginFunction } from "@vuepress/core";
+import type { PluginFunction } from "@vuepress/core";
 import { useSassPalettePlugin } from "vuepress-plugin-sass-palette";
 import { addViteOptimizeDepsExclude, checkVersion } from "vuepress-shared/node";
 
-import { type LightGalleryOptions } from "./options.js";
+import type { LightGalleryOptions } from "./options.js";
 import { prepareLightGalleryPlugins } from "./prepare.js";
 import { CLIENT_FOLDER, PLUGIN_NAME, logger } from "./utils.js";
 

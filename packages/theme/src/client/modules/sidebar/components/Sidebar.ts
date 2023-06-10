@@ -1,12 +1,5 @@
-import {
-  type SlotsType,
-  type VNode,
-  defineComponent,
-  h,
-  onMounted,
-  shallowRef,
-  watch,
-} from "vue";
+import type { SlotsType, VNode } from "vue";
+import { defineComponent, h, onMounted, shallowRef, watch } from "vue";
 import { useRoute } from "vue-router";
 
 import { useThemeLocaleData } from "@theme-hope/composables/index";

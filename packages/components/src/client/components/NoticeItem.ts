@@ -1,7 +1,6 @@
+import type { PropType, VNode } from "vue";
 import {
-  type PropType,
   TransitionGroup,
-  type VNode,
   computed,
   defineComponent,
   h,
@@ -12,7 +11,7 @@ import { useRoute, useRouter } from "vue-router";
 import { isAbsoluteUrl, isLinkHttp, startsWith } from "vuepress-shared/client";
 
 import { CloseIcon } from "./icons.js";
-import { type NoticeActionOption } from "../../shared/index.js";
+import type { NoticeActionOption } from "../../shared/index.js";
 
 import "../styles/notice.scss";
 

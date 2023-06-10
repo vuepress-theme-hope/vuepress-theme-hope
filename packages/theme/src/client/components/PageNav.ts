@@ -1,19 +1,20 @@
 import { usePageData, usePageFrontmatter } from "@vuepress/client";
 import { isPlainObject, isString } from "@vuepress/shared";
 import { useEventListener } from "@vueuse/core";
-import { type VNode, computed, defineComponent, h } from "vue";
+import type { VNode } from "vue";
+import { computed, defineComponent, h } from "vue";
 import { useRouter } from "vue-router";
 
 import AutoLink from "@theme-hope/components/AutoLink";
 import HopeIcon from "@theme-hope/components/HopeIcon";
 import { useNavigate, useThemeLocaleData } from "@theme-hope/composables/index";
 import { useSidebarItems } from "@theme-hope/modules/sidebar/composables/index";
-import { type ResolvedSidebarItem } from "@theme-hope/modules/sidebar/utils/index";
+import type { ResolvedSidebarItem } from "@theme-hope/modules/sidebar/utils/index";
 import { resolveLinkInfo } from "@theme-hope/utils/index";
 
-import {
-  type AutoLinkOptions,
-  type ThemeNormalPageFrontmatter,
+import type {
+  AutoLinkOptions,
+  ThemeNormalPageFrontmatter,
 } from "../../shared/index.js";
 
 import "../styles/page-nav.scss";

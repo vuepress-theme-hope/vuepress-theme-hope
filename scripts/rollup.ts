@@ -1,8 +1,10 @@
-import alias, { type Alias } from "@rollup/plugin-alias";
+import type { Alias } from "@rollup/plugin-alias";
+import alias from "@rollup/plugin-alias";
 import commonjs from "@rollup/plugin-commonjs";
 import { nodeResolve } from "@rollup/plugin-node-resolve";
-import replace, { type RollupReplaceOptions } from "@rollup/plugin-replace";
-import { type ModuleSideEffectsOption, type RollupOptions } from "rollup";
+import type { RollupReplaceOptions } from "@rollup/plugin-replace";
+import replace from "@rollup/plugin-replace";
+import type { ModuleSideEffectsOption, RollupOptions } from "rollup";
 import copy from "rollup-plugin-copy";
 import dts from "rollup-plugin-dts";
 import esbuild from "rollup-plugin-esbuild";

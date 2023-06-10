@@ -1,8 +1,8 @@
-import { type App } from "@vuepress/core";
+import type { App } from "@vuepress/core";
 import { fs, path } from "@vuepress/utils";
 
 import { getSearchIndexStore } from "./generateIndex.js";
-import { type SearchProOptions } from "./options.js";
+import type { SearchProOptions } from "./options.js";
 import { WORKER_FOLDER } from "./utils.js";
 
 export const generateWorker = async (

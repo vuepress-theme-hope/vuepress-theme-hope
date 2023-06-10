@@ -1,4 +1,5 @@
-import { type App, type Component, inject } from "vue";
+import type { App, Component } from "vue";
+import { inject } from "vue";
 
 declare const __VUEPRESS_DEV__: boolean;
 

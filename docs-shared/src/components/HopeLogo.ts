@@ -1,17 +1,11 @@
 import { usePageFrontmatter, withBase } from "@vuepress/client";
-import { type Mesh, type default as Three } from "three";
-import { type OrbitControls } from "three/examples/jsm/controls/OrbitControls.js";
-import { type STLLoader } from "three/examples/jsm/loaders/STLLoader.js";
-import {
-  type VNode,
-  computed,
-  defineComponent,
-  h,
-  onMounted,
-  ref,
-  watch,
-} from "vue";
-import { type ThemeProjectHomePageFrontmatter } from "vuepress-theme-hope";
+// eslint-disable-next-line import/no-named-default
+import type { Mesh, default as Three } from "three";
+import type { OrbitControls } from "three/examples/jsm/controls/OrbitControls.js";
+import type { STLLoader } from "three/examples/jsm/loaders/STLLoader.js";
+import type { VNode } from "vue";
+import { computed, defineComponent, h, onMounted, ref, watch } from "vue";
+import type { ThemeProjectHomePageFrontmatter } from "vuepress-theme-hope";
 
 // @ts-ignore
 import { useWindowSize } from "@theme-hope/composables/index";

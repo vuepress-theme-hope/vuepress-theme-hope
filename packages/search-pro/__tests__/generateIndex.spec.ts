@@ -1,4 +1,5 @@
-import { type Page, createBaseApp } from "@vuepress/core";
+import type { Page } from "@vuepress/core";
+import { createBaseApp } from "@vuepress/core";
 import { path } from "@vuepress/utils";
 import { describe, expect, it } from "vitest";
 import { getPageExcerpt } from "vuepress-shared/node";

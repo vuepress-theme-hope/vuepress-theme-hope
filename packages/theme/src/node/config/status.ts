@@ -1,7 +1,7 @@
-import { type App } from "@vuepress/core";
+import type { App } from "@vuepress/core";
 import { isPlainObject, keys } from "vuepress-shared/node";
 
-import { type ThemeOptions } from "../../shared/index.js";
+import type { ThemeOptions } from "../../shared/index.js";
 
 export interface ThemeStatus {
   enableAutoCatalog: boolean;

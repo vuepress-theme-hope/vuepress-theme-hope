@@ -1,5 +1,6 @@
-import { type PropType, type VNode, defineComponent, h } from "vue";
-import { type AuthorInfo } from "vuepress-shared/client";
+import type { PropType, VNode } from "vue";
+import { defineComponent, h } from "vue";
+import type { AuthorInfo } from "vuepress-shared/client";
 
 import { AuthorIcon } from "@theme-hope/modules/info/components/icons";
 import { useMetaLocale } from "@theme-hope/modules/info/composables/index";

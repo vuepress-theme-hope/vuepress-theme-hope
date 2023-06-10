@@ -1,6 +1,6 @@
-import { type UserConfig } from "@vuepress/cli";
-import { type Plugin, type PluginConfig } from "@vuepress/core";
-import { type MarkdownOptions } from "@vuepress/markdown";
+import type { UserConfig } from "@vuepress/cli";
+import type { Plugin, PluginConfig } from "@vuepress/core";
+import type { MarkdownOptions } from "@vuepress/markdown";
 import { colors } from "@vuepress/utils";
 import {
   isArray,
@@ -12,10 +12,10 @@ import {
 import { defineHopeConfig } from "./helper-v2.js";
 import { convertThemeOptions } from "./theme.js";
 import { deprecatedMsg } from "./utils.js";
-import {
-  type NavbarOptions,
-  type SidebarOptions,
-  type ThemeOptions,
+import type {
+  NavbarOptions,
+  SidebarOptions,
+  ThemeOptions,
 } from "../../shared/index.js";
 import { logger } from "../utils.js";
 

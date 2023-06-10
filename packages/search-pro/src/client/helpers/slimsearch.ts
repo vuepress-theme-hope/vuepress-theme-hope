@@ -1,6 +1,7 @@
-import { type App, inject } from "vue";
+import type { App } from "vue";
+import { inject } from "vue";
 
-import { type SearchOptions } from "../typings/index.js";
+import type { SearchOptions } from "../typings/index.js";
 
 declare const __VUEPRESS_DEV__: boolean;
 

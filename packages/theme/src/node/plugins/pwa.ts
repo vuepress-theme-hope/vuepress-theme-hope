@@ -1,5 +1,6 @@
-import { type Plugin } from "@vuepress/core";
-import { type PWAOptions, pwaPlugin } from "vuepress-plugin-pwa2";
+import type { Plugin } from "@vuepress/core";
+import type { PWAOptions } from "vuepress-plugin-pwa2";
+import { pwaPlugin } from "vuepress-plugin-pwa2";
 import { isPlainObject } from "vuepress-shared/node";
 
 /**

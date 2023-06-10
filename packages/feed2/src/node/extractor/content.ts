@@ -1,6 +1,7 @@
-import { type App, type Page } from "@vuepress/core";
+import type { App, Page } from "@vuepress/core";
 import { fs } from "@vuepress/utils";
-import { type AnyNode, load } from "cheerio";
+import type { AnyNode } from "cheerio";
+import { load } from "cheerio";
 import {
   HTML_TAGS,
   MATHML_TAGS,

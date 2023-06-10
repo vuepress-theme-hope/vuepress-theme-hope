@@ -1,19 +1,20 @@
-import { type App, type Page } from "@vuepress/core";
-import { type AnyNode, type Element, load } from "cheerio";
+import type { App, Page } from "@vuepress/core";
+import type { AnyNode, Element } from "cheerio";
+import { load } from "cheerio";
 import { addAllAsync, createIndex } from "slimsearch";
 import { entries, fromEntries, isArray, keys } from "vuepress-shared/node";
 
-import {
-  type SearchProCustomFieldOptions,
-  type SearchProOptions,
+import type {
+  SearchProCustomFieldOptions,
+  SearchProOptions,
 } from "./options.js";
-import {
-  type IndexItem,
-  type LocaleIndex,
-  type PageIndexId,
-  type PageIndexItem,
-  type SearchIndexStore,
-  type SectionIndexItem,
+import type {
+  IndexItem,
+  LocaleIndex,
+  PageIndexId,
+  PageIndexItem,
+  SearchIndexStore,
+  SectionIndexItem,
 } from "../shared/index.js";
 
 /**

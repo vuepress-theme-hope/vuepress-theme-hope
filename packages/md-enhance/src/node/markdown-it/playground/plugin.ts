@@ -1,12 +1,9 @@
 import { hash } from "@vuepress/utils";
-import { type PluginWithOptions } from "markdown-it";
-import { type RuleBlock } from "markdown-it/lib/parser_block.js";
+import type { PluginWithOptions } from "markdown-it";
+import type { RuleBlock } from "markdown-it/lib/parser_block.js";
 import { entries } from "vuepress-shared/node";
 
-import {
-  type PlaygroundData,
-  type PlaygroundOptions,
-} from "../../typings/index.js";
+import type { PlaygroundData, PlaygroundOptions } from "../../typings/index.js";
 import { escapeHtml } from "../utils.js";
 
 const AT_MARKER = `@`;

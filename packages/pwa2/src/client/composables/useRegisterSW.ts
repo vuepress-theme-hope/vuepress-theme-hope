@@ -1,6 +1,6 @@
 import { withBase } from "@vuepress/client";
 
-import { type PWAEvent } from "./usePWAEvent.js";
+import type { PWAEvent } from "./usePWAEvent.js";
 import { registerSW } from "../utils/index.js";
 
 declare const SW_PATH: string;

@@ -1,9 +1,10 @@
 import { usePageData } from "@vuepress/client";
-import { type ComputedRef, computed } from "vue";
+import type { ComputedRef } from "vue";
+import { computed } from "vue";
 
-import {
-  type ReadingTime,
-  type ReadingTimePluginPageData,
+import type {
+  ReadingTime,
+  ReadingTimePluginPageData,
 } from "../../shared/index.js";
 
 export const useReadingTimeData = (): ComputedRef<ReadingTime | null> => {

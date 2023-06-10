@@ -1,4 +1,4 @@
-import { type PluginFunction } from "@vuepress/core";
+import type { PluginFunction } from "@vuepress/core";
 import { useSassPalettePlugin } from "vuepress-plugin-sass-palette";
 import {
   addViteOptimizeDepsExclude,
@@ -13,7 +13,7 @@ import { generateServiceWorker } from "./generateServiceWorker.js";
 import { appendBase } from "./helper.js";
 import { injectLinksToHead } from "./injectHead.js";
 import { pwaLocales } from "./locales.js";
-import { type PWAOptions } from "./options.js";
+import type { PWAOptions } from "./options.js";
 import { prepareConfigFile } from "./prepare.js";
 import { PLUGIN_NAME, logger } from "./utils.js";
 

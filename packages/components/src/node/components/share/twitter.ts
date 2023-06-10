@@ -1,4 +1,4 @@
-import { type ShareServiceConfig } from "../../../shared/index.js";
+import type { ShareServiceConfig } from "../../../shared/index.js";
 
 export const twitter: ShareServiceConfig = {
   link: "https://twitter.com/intent/tweet?text=[title]&url=[url]&hashtags=[tags][title][twitter-user]",

@@ -1,4 +1,4 @@
-import { type PluginFunction } from "@vuepress/core";
+import type { PluginFunction } from "@vuepress/core";
 import { getDirname, path } from "@vuepress/utils";
 import { useSassPalettePlugin } from "vuepress-plugin-sass-palette";
 import {
@@ -10,7 +10,7 @@ import {
 } from "vuepress-shared/node";
 
 import { photoSwipeLocales } from "./locales.js";
-import { type PhotoSwipeOptions } from "./options.js";
+import type { PhotoSwipeOptions } from "./options.js";
 import { PLUGIN_NAME, logger } from "./utils.js";
 
 const __dirname = getDirname(import.meta.url);

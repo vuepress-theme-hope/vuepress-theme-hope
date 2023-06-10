@@ -1,4 +1,4 @@
-import { type CompilerOptions } from "typescript";
+import type { CompilerOptions } from "typescript";
 
 export interface PlaygroundCodeConfig {
   /**

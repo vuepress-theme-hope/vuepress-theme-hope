@@ -1,6 +1,6 @@
-import { type PluginObject } from "@vuepress/core";
+import type { PluginObject } from "@vuepress/core";
 
-import { type RemovePWAOptions } from "./options.js";
+import type { RemovePWAOptions } from "./options.js";
 import { generateEmptyServiceWorker } from "./serviceWorker.js";
 
 export const removePWAPlugin = (

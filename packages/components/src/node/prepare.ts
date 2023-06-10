@@ -1,6 +1,6 @@
 import { createRequire } from "node:module";
 
-import { type App } from "@vuepress/core";
+import type { App } from "@vuepress/core";
 import { path } from "@vuepress/utils";
 import {
   isArray,
@@ -10,10 +10,7 @@ import {
 } from "vuepress-shared/node";
 
 import { getIconLinks, getNoticeOptions } from "./components/index.js";
-import {
-  type BackToTopOptions,
-  type ComponentOptions,
-} from "./options/index.js";
+import type { BackToTopOptions, ComponentOptions } from "./options/index.js";
 import { AVAILABLE_COMPONENTS, CLIENT_FOLDER } from "./utils.js";
 
 const require = createRequire(import.meta.url);

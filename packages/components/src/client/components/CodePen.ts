@@ -1,12 +1,7 @@
-import { type CodePenOptions, renderCodePen } from "create-codepen";
-import {
-  type PropType,
-  type VNode,
-  computed,
-  defineComponent,
-  h,
-  onMounted,
-} from "vue";
+import type { CodePenOptions } from "create-codepen";
+import { renderCodePen } from "create-codepen";
+import type { PropType, VNode } from "vue";
+import { computed, defineComponent, h, onMounted } from "vue";
 
 import "../styles/code-pen.scss";
 

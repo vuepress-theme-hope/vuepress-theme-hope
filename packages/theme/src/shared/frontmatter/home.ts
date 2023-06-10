@@ -1,4 +1,4 @@
-import { type ThemePageFrontmatter } from "./base.js";
+import type { ThemePageFrontmatter } from "./base.js";
 
 export interface ThemeHopePageFrontmatter extends ThemePageFrontmatter {
   home: true;

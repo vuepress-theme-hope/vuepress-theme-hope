@@ -1,6 +1,6 @@
 import type dayjs from "dayjs";
 
-import { type Locale } from "./locale.js";
+import type { Locale } from "./locale.js";
 
 const locale: Locale = {
   name: "zh-cn",

@@ -13,8 +13,8 @@ import { stylize } from "@mdit/plugin-stylize";
 import { sub } from "@mdit/plugin-sub";
 import { sup } from "@mdit/plugin-sup";
 import { tasklist } from "@mdit/plugin-tasklist";
-import { type PluginFunction } from "@vuepress/core";
-import { type MarkdownEnv } from "@vuepress/markdown";
+import type { PluginFunction } from "@vuepress/core";
+import type { MarkdownEnv } from "@vuepress/markdown";
 import { colors } from "@vuepress/utils";
 import { useSassPalettePlugin } from "vuepress-plugin-sass-palette";
 import {
@@ -62,13 +62,13 @@ import {
   vueDemo,
   vuePlayground,
 } from "./markdown-it/index.js";
-import { type MarkdownEnhanceOptions } from "./options.js";
+import type { MarkdownEnhanceOptions } from "./options.js";
 import {
   prepareConfigFile,
   prepareMathjaxStyleFile,
   prepareRevealPluginFile,
 } from "./prepare/index.js";
-import { type KatexOptions } from "./typings/index.js";
+import type { KatexOptions } from "./typings/index.js";
 import { PLUGIN_NAME, logger } from "./utils.js";
 
 export const mdEnhancePlugin =

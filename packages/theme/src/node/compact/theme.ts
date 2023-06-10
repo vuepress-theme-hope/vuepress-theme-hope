@@ -4,7 +4,7 @@ import { isArray, isPlainObject, values } from "vuepress-shared/node";
 import { convertNavbarOptions } from "./navbar.js";
 import { convertSidebarOptions } from "./sidebar.js";
 import { deprecatedLogger, droppedLogger } from "./utils.js";
-import { type ThemeOptions } from "../../shared/index.js";
+import type { ThemeOptions } from "../../shared/index.js";
 import { logger } from "../utils.js";
 
 const DEPRECATED_THEME_OPTIONS: [string, string][] = [

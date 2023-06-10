@@ -6,7 +6,7 @@ import { emptyTheme } from "./__fixtures__/theme/empty.js";
 import { getStatus } from "../../src/node/config/status.js";
 import { getThemeData } from "../../src/node/config/themeData.js";
 import { getSidebarData } from "../../src/node/prepare/sidebar/index.js";
-import { type ThemeOptions } from "../../src/shared/index.js";
+import type { ThemeOptions } from "../../src/shared/index.js";
 
 describe("should generate sidebarData correctly", async () => {
   const app = createBaseApp({

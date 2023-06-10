@@ -2,11 +2,11 @@ import { colors } from "@vuepress/utils";
 import { isArray, isPlainObject, isString } from "vuepress-shared/node";
 
 import { deprecatedLogger } from "./utils.js";
-import {
-  type AutoLinkOptions,
-  type NavbarGroup,
-  type NavbarItem,
-  type NavbarOptions,
+import type {
+  AutoLinkOptions,
+  NavbarGroup,
+  NavbarItem,
+  NavbarOptions,
 } from "../../shared/index.js";
 import { logger } from "../utils.js";
 

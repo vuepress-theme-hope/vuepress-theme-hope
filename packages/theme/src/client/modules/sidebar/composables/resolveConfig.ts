@@ -1,5 +1,6 @@
 /* eslint-disable @typescript-eslint/no-unsafe-argument */
-import { type PageHeader, usePageData, useRouteLocale } from "@vuepress/client";
+import type { PageHeader } from "@vuepress/client";
+import { usePageData, useRouteLocale } from "@vuepress/client";
 import {
   isArray,
   isLinkExternal,
@@ -13,17 +14,17 @@ import { sidebarData } from "@temp/theme-hope/sidebar";
 import { resolveLinkInfo } from "@theme-hope/utils/index";
 
 import { resolvePrefix } from "./utils.js";
-import {
-  type SidebarArrayOptions,
-  type SidebarItem,
-  type SidebarObjectOptions,
-  type SidebarOptions,
+import type {
+  SidebarArrayOptions,
+  SidebarItem,
+  SidebarObjectOptions,
+  SidebarOptions,
 } from "../../../../shared/index.js";
-import {
-  type ResolvedSidebarGroupItem,
-  type ResolvedSidebarHeaderItem,
-  type ResolvedSidebarItem,
-  type ResolvedSidebarPageItem,
+import type {
+  ResolvedSidebarGroupItem,
+  ResolvedSidebarHeaderItem,
+  ResolvedSidebarItem,
+  ResolvedSidebarPageItem,
 } from "../utils/index.js";
 
 /**

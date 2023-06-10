@@ -1,4 +1,4 @@
-import { type RequiredLocaleConfig } from "vuepress-shared";
+import type { RequiredLocaleConfig } from "vuepress-shared";
 
 /**
  * @deprecated Use `vuepress-plugin-auto-catalog` instead

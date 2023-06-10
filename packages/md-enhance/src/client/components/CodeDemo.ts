@@ -1,19 +1,10 @@
 import { useToggle } from "@vueuse/core";
-import {
-  type PropType,
-  type SlotsType,
-  type VNode,
-  computed,
-  defineComponent,
-  h,
-  onMounted,
-  ref,
-  shallowRef,
-} from "vue";
+import type { PropType, SlotsType, VNode } from "vue";
+import { computed, defineComponent, h, onMounted, ref, shallowRef } from "vue";
 import { LoadingIcon, atou } from "vuepress-shared/client";
 
 import { CODEPEN_SVG, JSFIDDLE_SVG } from "./icons.js";
-import { type CodeDemoOptions } from "../../shared/index.js";
+import type { CodeDemoOptions } from "../../shared/index.js";
 import { loadNormal, loadReact, loadVue } from "../composables/index.js";
 import {
   getCode,

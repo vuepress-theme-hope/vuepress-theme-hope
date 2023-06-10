@@ -1,4 +1,4 @@
-import { type CopyCodeLocaleConfig } from "../shared/index.js";
+import type { CopyCodeLocaleConfig } from "../shared/index.js";
 
 declare const COPY_CODE_FANCY: boolean;
 declare const COPY_CODE_DELAY: number;

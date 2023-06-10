@@ -1,7 +1,6 @@
+import type { SlotsType, VNode } from "vue";
 import {
-  type SlotsType,
   Transition,
-  type VNode,
   computed,
   defineComponent,
   h,

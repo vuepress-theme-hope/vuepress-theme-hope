@@ -1,11 +1,11 @@
-import { type App } from "@vuepress/core";
+import type { App } from "@vuepress/core";
 import { addAll, discard, vacuum } from "slimsearch";
 import { entries, keys } from "vuepress-shared/node";
 
 import { generatePageIndex, getSearchIndexStore } from "./generateIndex.js";
-import { type SearchProOptions } from "./options.js";
+import type { SearchProOptions } from "./options.js";
 import { getLocaleChunkName } from "./utils.js";
-import { type SearchIndexStore } from "../shared/index.js";
+import type { SearchIndexStore } from "../shared/index.js";
 
 let previousSearchIndexStore: SearchIndexStore | null = null;
 

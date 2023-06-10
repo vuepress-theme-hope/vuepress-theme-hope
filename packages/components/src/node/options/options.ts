@@ -1,7 +1,7 @@
-import { type ComponentGlobalOptions } from "./global.js";
-import { type ComponentLocaleOptions } from "./locales.js";
-import { type AvailableComponent } from "./name.js";
-import { type RootComponentOptions } from "./root.js";
+import type { ComponentGlobalOptions } from "./global.js";
+import type { ComponentLocaleOptions } from "./locales.js";
+import type { AvailableComponent } from "./name.js";
+import type { RootComponentOptions } from "./root.js";
 
 export interface ComponentOptions {
   /**

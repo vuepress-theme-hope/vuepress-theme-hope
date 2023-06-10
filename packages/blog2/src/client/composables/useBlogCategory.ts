@@ -3,17 +3,18 @@ import {
   usePageFrontmatter,
   useRouteLocale,
 } from "@vuepress/client";
-import { type ComputedRef, computed, ref } from "vue";
+import type { ComputedRef } from "vue";
+import { computed, ref } from "vue";
 import { useRouter } from "vue-router";
 import { resolveRouteWithRedirect } from "vuepress-shared/client";
 
 import { categoryMap } from "@temp/blog/category";
 
-import {
-  type BlogCategoryFrontmatterOptions,
-  type CategoryMap,
+import type {
+  BlogCategoryFrontmatterOptions,
+  CategoryMap,
 } from "../../shared/index.js";
-import { type BlogCategoryData } from "../typings.js";
+import type { BlogCategoryData } from "../typings.js";
 
 // eslint-disable-next-line
 declare const __VUE_HMR_RUNTIME__: Record<string, any>;

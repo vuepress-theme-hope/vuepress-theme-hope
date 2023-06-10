@@ -1,4 +1,5 @@
-import { type VNode, computed, defineComponent, h } from "vue";
+import type { VNode } from "vue";
+import { computed, defineComponent, h } from "vue";
 import { entries, fromEntries } from "vuepress-shared/client";
 
 import { useThemeLocaleData } from "@theme-hope/composables/index";

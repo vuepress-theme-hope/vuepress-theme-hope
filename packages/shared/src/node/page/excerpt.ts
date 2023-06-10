@@ -1,5 +1,6 @@
-import { type App, type Page } from "@vuepress/core";
-import { type AnyNode, load } from "cheerio";
+import type { App, Page } from "@vuepress/core";
+import type { AnyNode } from "cheerio";
+import { load } from "cheerio";
 import matter from "gray-matter";
 
 import {

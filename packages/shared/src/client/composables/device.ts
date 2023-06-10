@@ -1,5 +1,6 @@
 import { useSupported } from "@vueuse/core";
-import { type ComputedRef, type Ref, computed } from "vue";
+import type { ComputedRef, Ref } from "vue";
+import { computed } from "vue";
 
 export const useSupportUserAgent = (): Ref<boolean> =>
   useSupported(

@@ -1,10 +1,10 @@
-import { type PluginFunction } from "@vuepress/core";
+import type { PluginFunction } from "@vuepress/core";
 import { getDirname, path } from "@vuepress/utils";
 import { watch } from "chokidar";
 import { checkVersion } from "vuepress-shared/node";
 
 import { injectConfigModule } from "./inject.js";
-import { type SassPaletteOptions } from "./options.js";
+import type { SassPaletteOptions } from "./options.js";
 import {
   prepareConfigFile,
   prepareConfigSass,

@@ -3,7 +3,8 @@ import {
   removeEndingSlash,
   removeLeadingSlash,
 } from "@vuepress/shared";
-import { type RepoType, resolveRepoType } from "vuepress-shared/client";
+import type { RepoType } from "vuepress-shared/client";
+import { resolveRepoType } from "vuepress-shared/client";
 
 export const editLinkPatterns: Record<Exclude<RepoType, null>, string> = {
   GitHub: ":repo/edit/:branch/:path",

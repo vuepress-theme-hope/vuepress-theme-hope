@@ -1,9 +1,9 @@
 import type Babel from "@babel/core";
 import { keys } from "vuepress-shared/client";
 
-import { type Code, type CodeType } from "./typings.js";
+import type { Code, CodeType } from "./typings.js";
 import { getConfig, preProcessorConfig } from "./utils.js";
-import { type CodeDemoOptions } from "../../../shared/index.js";
+import type { CodeDemoOptions } from "../../../shared/index.js";
 
 declare global {
   interface Window {

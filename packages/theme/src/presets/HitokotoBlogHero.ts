@@ -1,6 +1,5 @@
+import type { PropType, VNode } from "vue";
 import {
-  type PropType,
-  type VNode,
   defineComponent,
   h,
   nextTick,
