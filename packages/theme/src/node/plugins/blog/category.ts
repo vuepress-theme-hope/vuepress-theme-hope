@@ -38,14 +38,14 @@ export const getBlogCategoryCategory = (
     layout: "BlogCategory",
     frontmatter: (localePath) => ({
       title: themeData.locales[localePath].blogLocales.category,
-      index: false,
+      dir: { index: false },
       feed: false,
       sitemap: false,
     }),
     itemPath: options.categoryItem,
     itemFrontmatter: (name, localePath) => ({
       title: `${name} ${themeData.locales[localePath].blogLocales.category}`,
-      index: false,
+      dir: { index: false },
       feed: false,
       sitemap: false,
     }),
@@ -79,7 +79,7 @@ export const getBlogTagCategory = (
     layout: "BlogCategory",
     frontmatter: (localePath) => ({
       title: themeData.locales[localePath].blogLocales.tag,
-      index: false,
+      dir: { index: false },
       feed: false,
       sitemap: false,
     }),
@@ -87,7 +87,7 @@ export const getBlogTagCategory = (
     itemLayout: "BlogCategory",
     itemFrontmatter: (name, localePath) => ({
       title: `${name} ${themeData.locales[localePath].blogLocales.tag}`,
-      index: false,
+      dir: { index: false },
       feed: false,
       sitemap: false,
     }),
