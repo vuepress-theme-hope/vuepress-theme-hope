@@ -4,6 +4,27 @@ All notable changes to this project will be documented in this file. See [Conven
 
 <!-- #region recent-beta -->
 
+## [2.0.0-beta.225](https://github.com/vuepress-theme-hope/vuepress-theme-hope/compare/v2.0.0-beta.224...v2.0.0-beta.225) (2023-06-11)
+
+### Features
+
+- **components:** optimize badge style ([9d2e984](https://github.com/vuepress-theme-hope/vuepress-theme-hope/commit/9d2e984ff9a5fa69a0c0f806e9536883e37364a5))
+- **md-enhance:** add `breaks` and `linkify` options, close [#3215](https://github.com/vuepress-theme-hope/vuepress-theme-hope/issues/3215) ([def96f1](https://github.com/vuepress-theme-hope/vuepress-theme-hope/commit/def96f1fc528ca7dee6049bfb3b7364d0242b11d))
+- **md-enhance:** special handle themeVariables for mermaid ([f35cd26](https://github.com/vuepress-theme-hope/vuepress-theme-hope/commit/f35cd26c5af40a26be6c0ab2988139a95d2d6238))
+- **shared:** infer route path for VPLink ([ae429ed](https://github.com/vuepress-theme-hope/vuepress-theme-hope/commit/ae429edfce3d95b1571fae4846ec3768fa039377))
+
+### Bug Fixes
+
+- **comment2:** fix type imports ([d6b3503](https://github.com/vuepress-theme-hope/vuepress-theme-hope/commit/d6b35037b6c426e74a8e9c4c6f401bc860a91a06))
+- **md-enhance:** fix code tab style on mobile ([0c11483](https://github.com/vuepress-theme-hope/vuepress-theme-hope/commit/0c11483ca31bc2356430c4281231ec38c826e29e))
+- **md-enhance:** optimize tasklist style, close [#3213](https://github.com/vuepress-theme-hope/vuepress-theme-hope/issues/3213) ([aba5e64](https://github.com/vuepress-theme-hope/vuepress-theme-hope/commit/aba5e64ead0ec788e2ca4a790f93e54e5c8425ec))
+- **theme:** exclude blog from autocatalog ([6320da2](https://github.com/vuepress-theme-hope/vuepress-theme-hope/commit/6320da2f42cfca1ef036a8a083e52604d818cc41))
+- **theme:** fix autolink ([973c9ae](https://github.com/vuepress-theme-hope/vuepress-theme-hope/commit/973c9ae7cf93f5b0231dd0567c5bff7ba70752db))
+
+### Performance Improvements
+
+- **theme:** avoid unnecessary update for navbar links ([600d444](https://github.com/vuepress-theme-hope/vuepress-theme-hope/commit/600d4442164dd9ccefabbd599db45ad02bf29b8c))
+
 ## [2.0.0-beta.224](https://github.com/vuepress-theme-hope/vuepress-theme-hope/compare/v2.0.0-beta.223...v2.0.0-beta.224) (2023-06-08)
 
 ### Features
