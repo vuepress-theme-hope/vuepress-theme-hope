@@ -1,7 +1,7 @@
-import { type LocaleConfig } from "@vuepress/core";
-import { type GenerateSWOptions } from "workbox-build";
+import type { LocaleConfig } from "@vuepress/core";
+import type { GenerateSWOptions } from "workbox-build";
 
-import { type ManifestOption, type PWALocaleData } from "../shared/index.js";
+import type { ManifestOption, PWALocaleData } from "../shared/index.js";
 
 interface ApplePWAOptions {
   /**
@@ -62,15 +62,6 @@ export interface PWAOptions {
    * @default "service-worker.js"
    */
   swPath?: string;
-
-  /**
-   * Whether display install button
-   *
-   * 是否显示安装按钮
-   *
-   * @default true
-   */
-  showInstall?: boolean;
 
   /**
    * manifest file Config

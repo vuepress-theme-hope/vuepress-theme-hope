@@ -2,15 +2,13 @@ import { usePageData, usePageFrontmatter } from "@vuepress/client";
 import { isLinkHttp, isPlainObject, removeEndingSlash } from "@vuepress/shared";
 import { useEventListener } from "@vueuse/core";
 import { computed, onMounted, watchEffect } from "vue";
-import {
-  type RequiredLocaleConfig,
-  useLocaleConfig,
-} from "vuepress-shared/client";
+import type { RequiredLocaleConfig } from "vuepress-shared/client";
+import { useLocaleConfig } from "vuepress-shared/client";
 
-import {
-  type CopyrightLocaleData,
-  type CopyrightPluginFrontmatter,
-  type CopyrightPluginPageData,
+import type {
+  CopyrightLocaleData,
+  CopyrightPluginFrontmatter,
+  CopyrightPluginPageData,
 } from "../../shared/index.js";
 
 declare const COPYRIGHT_CANONICAL: string;

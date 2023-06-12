@@ -1,4 +1,4 @@
-import { type RouteLocationNormalizedLoaded } from "vue-router";
+import type { RouteLocationNormalizedLoaded } from "vue-router";
 
 const HASH_REGEXP = /#.*$/u;
 

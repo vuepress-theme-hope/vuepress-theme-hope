@@ -1,7 +1,7 @@
 // Slovak [sk]
 import type dayjs from "dayjs";
 
-import { type Locale } from "./locale.js";
+import type { Locale } from "./locale.js";
 
 const plural = (n: number): boolean => n > 1 && n < 5 && ~~(n / 10) !== 1;
 

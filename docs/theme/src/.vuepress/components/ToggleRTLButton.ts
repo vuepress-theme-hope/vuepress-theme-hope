@@ -1,4 +1,5 @@
-import { type VNode, defineComponent, h, ref } from "vue";
+import type { VNode } from "vue";
+import { defineComponent, h, ref } from "vue";
 
 import "./toggle-rtl-button.scss";
 

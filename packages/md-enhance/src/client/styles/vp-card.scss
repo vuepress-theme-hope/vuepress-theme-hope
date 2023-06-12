@@ -19,14 +19,14 @@
   }
 
   hr {
-    margin: 0.25rem 0;
+    margin: 0.25em 0;
   }
 }
 
 .vp-card-logo {
-  width: 3rem;
-  height: 3rem;
-  margin-right: 1rem;
+  width: 3em;
+  height: 3em;
+  margin-right: 1em;
   border-radius: 50%;
 }
 
@@ -36,12 +36,38 @@
 
 .vp-card-title {
   font-weight: 500;
-  font-size: 1.1rem;
+  font-size: 1.1em;
 }
 
 .vp-card-desc {
   color: #888;
-  font-size: 0.9rem;
+  font-size: 0.9em;
   line-height: 1.5;
   transition: color var(--vp-ct);
+}
+
+.vp-card-container {
+  display: flex;
+  flex-wrap: wrap;
+  align-content: stretch;
+  align-items: stretch;
+  justify-content: center;
+
+  .vp-card {
+    flex-basis: calc(50% - 3rem);
+    max-width: unset;
+    margin: 0.5rem;
+
+    @media (max-width: hope-config.$pad) {
+      flex-basis: 100%;
+    }
+
+    @media (max-width: hope-config.$tablet) {
+      font-size: 0.95rem;
+    }
+
+    @media (max-width: hope-config.$mobile) {
+      font-size: 0.9rem;
+    }
+  }
 }

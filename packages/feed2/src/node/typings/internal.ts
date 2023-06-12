@@ -1,8 +1,8 @@
-import {
-  type FeedAuthor,
-  type FeedCategory,
-  type FeedChannelOption,
-  type FeedEnclosure,
+import type {
+  FeedAuthor,
+  FeedCategory,
+  FeedChannelOption,
+  FeedEnclosure,
 } from "./feed.js";
 
 export interface FeedItemInformation {

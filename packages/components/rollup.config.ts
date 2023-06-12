@@ -20,11 +20,10 @@ export default [
         "components/Share",
         "components/SiteInfo",
         "components/StackBlitz",
+        "components/VidStack",
         "components/VideoPlayer",
         "components/XiGua",
         "components/YouTube",
-        "shared",
-        "vueuse",
       ],
     },
 

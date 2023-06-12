@@ -1,7 +1,7 @@
 @use "sass:color";
 @use "sass:list";
 
-.category-list-wrapper {
+.vp-category-list {
   position: relative;
   z-index: 2;
 
@@ -10,90 +10,89 @@
   list-style: none;
 
   font-size: 14px;
+}
+
+.vp-category {
+  display: inline-block;
+  vertical-align: middle;
+
+  overflow: hidden;
+
+  margin: 0.3rem 0.6rem 0.8rem;
+  padding: 0.4rem 0.8rem;
+  border-radius: 0.25rem;
+
+  color: var(--dark-grey);
+  box-shadow: 0 1px 4px 0 var(--card-shadow);
+
+  word-break: break-word;
+
+  cursor: pointer;
+
+  transition: background var(--color-transition), color var(--color-transition);
+
+  @media (max-width: hope-config.$mobile) {
+    font-size: 0.9rem;
+  }
 
   a {
     color: inherit;
   }
 
-  .category {
+  .count {
     display: inline-block;
-    vertical-align: middle;
 
-    overflow: hidden;
+    min-width: 1rem;
+    height: 1.2rem;
+    margin-inline-start: 0.2em;
+    padding: 0 0.1rem;
+    border-radius: 0.6rem;
 
-    margin: 0.3rem 0.6rem 0.8rem;
-    padding: 0.4rem 0.8rem;
-    border-radius: 0.25rem;
+    color: var(--white);
 
-    color: var(--dark-grey);
-    box-shadow: 0 1px 4px 0 var(--card-shadow);
-
-    word-break: break-word;
-
-    cursor: pointer;
-
-    transition: background var(--color-transition),
-      color var(--color-transition);
-
-    @media (max-width: hope-config.$mobile) {
-      font-size: 0.9rem;
-    }
-
-    .category-num {
-      display: inline-block;
-
-      min-width: 1rem;
-      height: 1.2rem;
-      margin-inline-start: 0.2em;
-      padding: 0 0.1rem;
-      border-radius: 0.6rem;
-
-      color: var(--white);
-
-      font-size: 0.7rem;
-      line-height: 1.2rem;
-      text-align: center;
-    }
+    font-size: 0.7rem;
+    line-height: 1.2rem;
+    text-align: center;
   }
+}
 
-  @each $color in hope-config.$colors {
-    $index: list.index(hope-config.$colors, $color) - 1;
+@each $color in hope-config.$colors {
+  $index: list.index(hope-config.$colors, $color) - 1;
 
-    .category#{$index} {
-      background: color.scale($color, $lightness: 90%);
-      color: color.scale($color, $lightness: -10%);
+  .vp-category#{$index} {
+    background: color.scale($color, $lightness: 90%);
+    color: color.scale($color, $lightness: -10%);
+
+    #{hope-config.$dark-selector} & {
+      background: color.scale($color, $lightness: -75%);
+      color: color.scale($color, $lightness: 20%);
+    }
+
+    &:hover {
+      background: color.scale($color, $lightness: 75%);
 
       #{hope-config.$dark-selector} & {
-        background: color.scale($color, $lightness: -75%);
-        color: color.scale($color, $lightness: 20%);
+        background: color.scale($color, $lightness: -60%);
+      }
+    }
+
+    &.active {
+      background: $color;
+      color: #fff;
+
+      #{hope-config.$dark-selector} & {
+        background: color.scale($color, $lightness: -20%);
+        color: var(--bg-color);
       }
 
-      &:hover {
-        background: color.scale($color, $lightness: 75%);
-
-        #{hope-config.$dark-selector} & {
-          background: color.scale($color, $lightness: -60%);
-        }
+      .count {
+        background: var(--bg-color);
+        color: $color;
       }
+    }
 
-      &.active {
-        background: $color;
-        color: #fff;
-
-        #{hope-config.$dark-selector} & {
-          background: color.scale($color, $lightness: -20%);
-          color: var(--bg-color);
-        }
-
-        .category-num {
-          background: var(--bg-color);
-          color: $color;
-        }
-      }
-
-      .category-num {
-        background: $color;
-      }
+    .count {
+      background: $color;
     }
   }
 }

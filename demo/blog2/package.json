@@ -2,6 +2,7 @@
   "name": "blog2-demo",
   "version": "2.0.0-beta.181",
   "private": true,
+  "type": "module",
   "description": "Demo for vuepress-plugin-blog2",
   "license": "MIT",
   "author": "Mr.Hope",
@@ -15,16 +16,16 @@
     "demo:webpack-dev": "vuepress-webpack dev src"
   },
   "devDependencies": {
-    "@vuepress/cli": "2.0.0-beta.61",
-    "@vuepress/client": "2.0.0-beta.61",
-    "@vuepress/core": "2.0.0-beta.61",
-    "@vuepress/theme-default": "2.0.0-beta.61",
-    "@vuepress/utils": "2.0.0-beta.61",
-    "sass-loader": "13.2.2",
-    "vue": "3.2.47",
-    "vue-router": "4.1.6",
+    "@vuepress/cli": "2.0.0-beta.63",
+    "@vuepress/client": "2.0.0-beta.63",
+    "@vuepress/core": "2.0.0-beta.63",
+    "@vuepress/theme-default": "2.0.0-beta.63",
+    "@vuepress/utils": "2.0.0-beta.63",
+    "sass-loader": "13.3.2",
+    "vue": "3.3.4",
+    "vue-router": "4.2.2",
     "vuepress-plugin-blog2": "workspace:*",
-    "vuepress-vite": "2.0.0-beta.61",
-    "vuepress-webpack": "2.0.0-beta.61"
+    "vuepress-vite": "2.0.0-beta.63",
+    "vuepress-webpack": "2.0.0-beta.63"
   }
 }

@@ -1,81 +1,144 @@
+import { withBase } from "@vuepress/client";
 import { isLinkExternal } from "@vuepress/shared";
-import { type PropType, type VNode, defineComponent, h } from "vue";
-import { RouterLink } from "vue-router";
+import type { FunctionalComponent, VNode } from "vue";
+import { h } from "vue";
+import { VPLink } from "vuepress-shared/client";
 
 import HopeIcon from "@theme-hope/components/HopeIcon";
 
-import { type ThemeProjectHomeFeatureItemOptions } from "../../shared/index.js";
+import type {
+  ThemeProjectHomeFeatureOptions,
+  ThemeProjectHomeHighlightItem,
+} from "../../shared/index.js";
 
 import "../styles/feature-panel.scss";
 
-export default defineComponent({
-  name: "FeaturePanel",
+const FeaturePanel: FunctionalComponent<
+  ThemeProjectHomeFeatureOptions,
+  Record<never, never>,
+  {
+    image?: (props: ThemeProjectHomeFeatureOptions) => VNode[] | VNode | null;
+    info?: (props: ThemeProjectHomeFeatureOptions) => VNode[] | VNode | null;
+    highlights?: (
+      props: ThemeProjectHomeHighlightItem[]
+    ) => VNode[] | VNode | null;
+  }
+> = (props, { slots }) => {
+  const {
+    bgImage,
+    bgImageDark,
+    bgImageStyle,
+    color,
+    description,
+    image,
+    imageDark,
+    header,
+    features = [],
+  } = props;
 
-  props: {
-    /**
-     * Feature config
-     */
-    items: {
-      type: Object as PropType<ThemeProjectHomeFeatureItemOptions[]>,
-      default: (): ThemeProjectHomeFeatureItemOptions[] =>
-        [] as ThemeProjectHomeFeatureItemOptions[],
+  return h(
+    "div",
+    {
+      class: "vp-feature-wrapper",
     },
+    [
+      bgImage
+        ? h("div", {
+            class: ["vp-feature-bg", { light: bgImageDark }],
+            style: [{ "background-image": `url(${bgImage})` }, bgImageStyle],
+          })
+        : null,
+      bgImageDark
+        ? h("div", {
+            class: "vp-feature-bg dark",
+            style: [
+              { "background-image": `url(${bgImageDark})` },
+              bgImageStyle,
+            ],
+          })
+        : null,
+      h(
+        "div",
+        {
+          class: "vp-feature",
+          style: color ? { color: color } : {},
+        },
+        [
+          slots.image?.(props) || [
+            image
+              ? h("img", {
+                  class: ["vp-feature-image", { light: imageDark }],
+                  src: withBase(image),
+                  alt: header,
+                })
+              : null,
+            imageDark
+              ? h("img", {
+                  class: "vp-feature-image dark",
+                  src: withBase(imageDark),
+                  alt: header,
+                })
+              : null,
+          ],
 
-    /**
-     * Feature header
-     */
-    header: {
-      type: String,
-      default: "",
-    },
-  },
+          slots.info?.(props) || [
+            header ? h("h2", { class: "vp-feature-header" }, header) : null,
+            description
+              ? h("p", {
+                  class: "vp-feature-description",
+                  innerHTML: description,
+                })
+              : null,
+          ],
+          features.length
+            ? h(
+                "div",
+                { class: "vp-features" },
+                features.map(({ icon, title, details, link }) => {
+                  const children = [
+                    h("h3", { class: "vp-feature-title" }, [
+                      h(HopeIcon, { icon }),
+                      h("span", { innerHTML: title }),
+                    ]),
+                    h("p", {
+                      class: "vp-feature-details",
+                      innerHTML: details,
+                    }),
+                  ];
 
-  setup(props) {
-    return (): VNode =>
-      h("div", { class: "feature-panel" }, [
-        props.header
-          ? h("h2", { class: "feature-header" }, props.header)
-          : null,
-        props.items.length
-          ? h(
-              "div",
-              { class: "feature-wrapper" },
-              props.items.map((feature) => {
-                const children = [
-                  h("h3", [
-                    h(HopeIcon, { icon: feature.icon }),
-                    h("span", { innerHTML: feature.title }),
-                  ]),
-                  h("p", { innerHTML: feature.details }),
-                ];
+                  return link
+                    ? isLinkExternal(link)
+                      ? h(
+                          "a",
+                          {
+                            class: "vp-feature-item link",
+                            href: link,
+                            role: "navigation",
+                            "aria-label": title,
+                            target: "_blank",
+                          },
+                          children
+                        )
+                      : h(
+                          VPLink,
+                          {
+                            class: "vp-feature-item link",
+                            to: link,
+                            role: "navigation",
+                            "aria-label": title,
+                          },
+                          () => children
+                        )
+                    : h("div", { class: "vp-feature-item" }, children);
+                })
+              )
+            : null,
+        ]
+      ),
+    ]
+  );
+};
 
-                return feature.link
-                  ? isLinkExternal(feature.link)
-                    ? h(
-                        "a",
-                        {
-                          class: "feature-item link",
-                          href: feature.link,
-                          role: "navigation",
-                          "aria-label": feature.title,
-                          target: "_blank",
-                        },
-                        children
-                      )
-                    : h(
-                        RouterLink,
-                        {
-                          class: "feature-item link",
-                          to: feature.link,
-                          role: "navigation",
-                          "aria-label": feature.title,
-                        },
-                        () => children
-                      )
-                  : h("div", { class: "feature-item" }, children);
-              })
-            )
-          : null,
-      ]);
-  },
-});
+FeaturePanel.displayName = "FeaturePanel";
+
+export default FeaturePanel;

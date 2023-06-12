@@ -1,6 +1,6 @@
-import { type App } from "@vuepress/core";
+import type { App } from "@vuepress/core";
 
-import { type RevealPlugin } from "../typings/index.js";
+import type { RevealPlugin } from "../typings/index.js";
 import { CLIENT_FOLDER } from "../utils.js";
 
 export const prepareRevealPluginFile = async (
@@ -18,7 +18,7 @@ export const prepareRevealPluginFile = async (
   await app.writeTemp(
     "md-enhance/reveal.js",
     `\
-import { ${packages.join(", ")} } from "${CLIENT_FOLDER}reveal/index.js";
+import { ${packages.join(", ")} } from "${CLIENT_FOLDER}index.js";
 
 export const useReveal = () => [${packages
       .map((name) => `${name}()`)

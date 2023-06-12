@@ -1,13 +1,6 @@
-import {
-  type FunctionalComponent,
-  type VNode,
-  computed,
-  defineComponent,
-  h,
-  ref,
-} from "vue";
-import { RouterLink } from "vue-router";
-import { keys } from "vuepress-shared/client";
+import type { FunctionalComponent, VNode } from "vue";
+import { computed, defineComponent, h, ref } from "vue";
+import { VPLink, keys } from "vuepress-shared/client";
 
 import DropTransition from "@theme-hope/components/transitions/DropTransition";
 import { useNavigate, useThemeLocaleData } from "@theme-hope/composables/index";
@@ -59,16 +52,16 @@ export default defineComponent({
     ];
 
     return (): VNode =>
-      h("div", { class: "blog-info-list" }, [
+      h("div", { class: "vp-blog-infos" }, [
         h(
           "div",
-          { class: "blog-type-wrapper" },
+          { class: "vp-blog-type-switcher" },
           buttons.map(([key, icon]) =>
             h(
               "button",
               {
                 type: "button",
-                class: "blog-type-button",
+                class: "vp-blog-type-button",
                 onClick: () => {
                   active.value = key;
                 },
@@ -89,7 +82,7 @@ export default defineComponent({
         h(DropTransition, () =>
           // article
           active.value === "article"
-            ? h("div", { class: "sticky-article-wrapper" }, [
+            ? h("div", { class: "vp-sticky-article-wrapper" }, [
                 h(
                   "div",
                   {
@@ -105,7 +98,7 @@ export default defineComponent({
                 h("hr"),
                 h(
                   "ul",
-                  { class: "sticky-article-list" },
+                  { class: "vp-sticky-articles" },
                   stars.value.items.map(({ info, path }, index) =>
                     h(
                       DropTransition,
@@ -113,9 +106,9 @@ export default defineComponent({
                       () =>
                         h(
                           "li",
-                          { class: "sticky-article" },
+                          { class: "vp-sticky-article" },
                           h(
-                            RouterLink,
+                            VPLink,
                             { to: path },
                             () => info[ArticleInfoType.title]
                           )
@@ -125,7 +118,7 @@ export default defineComponent({
                 ),
               ])
             : active.value === "category"
-            ? h("div", { class: "category-wrapper" }, [
+            ? h("div", { class: "vp-category-wrapper" }, [
                 categoryNumber.value
                   ? h(
                       "div",
@@ -144,7 +137,7 @@ export default defineComponent({
                 h(DropTransition, { delay: 0.04 }, () => h(CategoryList)),
               ])
             : active.value === "tag"
-            ? h("div", { class: "tag-wrapper" }, [
+            ? h("div", { class: "vp-tag-wrapper" }, [
                 tagNumber.value
                   ? h(
                       "div",

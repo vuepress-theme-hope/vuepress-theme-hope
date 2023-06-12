@@ -1,8 +1,8 @@
-import { type Page, type Plugin } from "@vuepress/core";
+import type { Page, Plugin } from "@vuepress/core";
 import { seoPlugin } from "vuepress-plugin-seo2";
 import { isPlainObject, keys } from "vuepress-shared/node";
 
-import { type PluginsOptions, type ThemeData } from "../../shared/index.js";
+import type { PluginsOptions, ThemeData } from "../../shared/index.js";
 
 /**
  * @private

@@ -1,9 +1,9 @@
 import { useLocalStorage } from "@vueuse/core";
-import { type Ref } from "vue";
+import type { Ref } from "vue";
 
 import { searchProOptions } from "../define.js";
 
-const SEARCH_PRO_QUERY_STORAGE = "search-pro-query-history";
+const SEARCH_PRO_HISTORY_QUERY_STORAGE = "SEARCH_PRO_QUERY_HISTORY";
 
 export interface SearchQueryHistory {
   enabled: boolean;
@@ -13,7 +13,7 @@ export interface SearchQueryHistory {
 }
 
 const searchProQueryStorage = useLocalStorage<string[]>(
-  SEARCH_PRO_QUERY_STORAGE,
+  SEARCH_PRO_HISTORY_QUERY_STORAGE,
   []
 );
 

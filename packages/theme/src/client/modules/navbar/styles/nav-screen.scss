@@ -1,3 +1,9 @@
+.vp-nav-screen-container {
+  max-width: 320px;
+  margin: 0 auto;
+  padding: 2rem 0 4rem;
+}
+
 #nav-screen {
   position: fixed;
   top: var(--navbar-height);
@@ -20,17 +26,11 @@
     display: block;
   }
 
-  .container {
-    max-width: 320px;
-    margin: 0 auto;
-    padding: 2rem 0 4rem;
-  }
-
   &.fade-enter-active,
   &.fade-leave-active {
     transition: opacity 0.25s;
 
-    .container {
+    .vp-nav-screen-container {
       transition: transform 0.25s ease;
     }
   }
@@ -39,17 +39,17 @@
   &.fade-leave-to {
     opacity: 0;
 
-    .container {
+    .vp-nav-screen-container {
       transform: translateY(-8px);
     }
-  }
-
-  .outlook-wrapper {
-    display: flex;
-    justify-content: space-around;
   }
 
   .icon {
     margin-inline-end: 0.25em;
   }
+}
+
+.vp-outlook-wrapper {
+  display: flex;
+  justify-content: space-around;
 }

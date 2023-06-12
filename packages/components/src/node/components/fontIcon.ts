@@ -6,7 +6,7 @@ import {
   isString,
 } from "vuepress-shared/node";
 
-import { type FontIconAssets } from "../options/index.js";
+import type { FontIconAssets } from "../options/index.js";
 import { logger } from "../utils.js";
 
 export const FONT_AWESOME_PREFIX = "fas fa-";

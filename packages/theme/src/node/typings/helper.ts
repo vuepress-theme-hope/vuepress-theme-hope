@@ -1,21 +1,21 @@
-import { type GitPluginOptions } from "@vuepress/plugin-git";
-import { type CommentOptions } from "vuepress-plugin-comment2";
-import { type CopyCodeOptions } from "vuepress-plugin-copy-code2";
-import { type CopyrightOptions } from "vuepress-plugin-copyright2";
-import { type FeedOptions } from "vuepress-plugin-feed2";
-import { type MarkdownEnhanceOptions } from "vuepress-plugin-md-enhance";
-import { type PhotoSwipeOptions } from "vuepress-plugin-photo-swipe";
-import { type PWAOptions } from "vuepress-plugin-pwa2";
-import { type ReadingTimeOptions } from "vuepress-plugin-reading-time2";
-import { type SeoOptions } from "vuepress-plugin-seo2";
-import { type SitemapOptions } from "vuepress-plugin-sitemap2";
+import type { GitPluginOptions } from "@vuepress/plugin-git";
+import type { CommentOptions } from "vuepress-plugin-comment2";
+import type { CopyCodeOptions } from "vuepress-plugin-copy-code2";
+import type { CopyrightOptions } from "vuepress-plugin-copyright2";
+import type { FeedOptions } from "vuepress-plugin-feed2";
+import type { MarkdownEnhanceOptions } from "vuepress-plugin-md-enhance";
+import type { PhotoSwipeOptions } from "vuepress-plugin-photo-swipe";
+import type { PWAOptions } from "vuepress-plugin-pwa2";
+import type { ReadingTimeOptions } from "vuepress-plugin-reading-time2";
+import type { SeoOptions } from "vuepress-plugin-seo2";
+import type { SitemapOptions } from "vuepress-plugin-sitemap2";
 
-import {
-  type BlogPluginOptions,
-  type NavbarOptions,
-  type SidebarArrayOptions,
-  type SidebarObjectOptions,
-  type SidebarOptions,
+import type {
+  BlogPluginOptions,
+  NavbarOptions,
+  SidebarArrayOptions,
+  SidebarObjectOptions,
+  SidebarOptions,
 } from "../../shared/index.js";
 
 type Helper<T> = (options: T) => T;

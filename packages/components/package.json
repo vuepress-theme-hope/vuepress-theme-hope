@@ -1,6 +1,6 @@
 {
   "name": "vuepress-plugin-components",
-  "version": "2.0.0-beta.206",
+  "version": "2.0.0-beta.225",
   "description": "Components collection plugin for VuePress2",
   "keywords": [
     "vuepress",
@@ -43,39 +43,41 @@
     "dev:ts": "tsc -b tsconfig.build.json --watch"
   },
   "engines": {
-    "node": "^14.18.0 || >=16.0.0",
+    "node": ">=16.19.0",
     "npm": ">=8",
     "pnpm": ">=7"
   },
   "dependencies": {
     "@stackblitz/sdk": "^1.9.0",
-    "@vuepress/client": "2.0.0-beta.61",
-    "@vuepress/shared": "2.0.0-beta.61",
-    "@vuepress/utils": "2.0.0-beta.61",
-    "@vueuse/core": "^10.1.0",
-    "artplayer": "^5.0.1",
+    "@vuepress/client": "2.0.0-beta.63",
+    "@vuepress/shared": "2.0.0-beta.63",
+    "@vuepress/utils": "2.0.0-beta.63",
+    "@vueuse/core": "^10.1.2",
+    "artplayer": "^5.0.9",
     "balloon-css": "^1.2.0",
-    "dashjs": "^4.6.0",
-    "hls.js": "^1.4.0",
+    "create-codepen": "0.0.3",
+    "dashjs": "^4.7.0",
+    "hls.js": "^1.4.5",
     "mpegts.js": "^1.7.3",
     "plyr": "^3.7.8",
-    "qrcode": "^1.5.1",
-    "vue": "^3.2.47",
-    "vue-router": "^4.1.6",
+    "qrcode": "^1.5.3",
+    "vidstack": "^0.6.9",
+    "vue": "^3.3.4",
+    "vue-router": "^4.2.2",
     "vuepress-plugin-reading-time2": "workspace:*",
     "vuepress-plugin-sass-palette": "workspace:*",
     "vuepress-shared": "workspace:*"
   },
   "devDependencies": {
     "@types/qrcode": "1.5.0",
-    "@vuepress/bundler-vite": "2.0.0-beta.61",
-    "@vuepress/core": "2.0.0-beta.61"
+    "@vuepress/bundler-vite": "2.0.0-beta.63",
+    "@vuepress/core": "2.0.0-beta.63"
   },
   "peerDependencies": {
-    "sass-loader": "^13.2.2",
-    "vuepress": "2.0.0-beta.61",
-    "vuepress-vite": "2.0.0-beta.61",
-    "vuepress-webpack": "2.0.0-beta.61"
+    "sass-loader": "^13.3.2",
+    "vuepress": "2.0.0-beta.63",
+    "vuepress-vite": "2.0.0-beta.63",
+    "vuepress-webpack": "2.0.0-beta.63"
   },
   "peerDependenciesMeta": {
     "sass-loader": {

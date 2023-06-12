@@ -1,19 +1,12 @@
 /* eslint-disable vue/no-unused-properties */
 import { usePageLang } from "@vuepress/client";
 import type Artplayer from "artplayer";
-import { type Option as ArtPlayerInitOptions } from "artplayer/types/option.js";
-import {
-  type PropType,
-  type VNode,
-  camelize,
-  defineComponent,
-  h,
-  onMounted,
-  onUnmounted,
-} from "vue";
+import type { Option as ArtPlayerInitOptions } from "artplayer/types/option.js";
+import type { PropType, VNode } from "vue";
+import { camelize, defineComponent, h, onMounted, onUnmounted } from "vue";
 import { keys } from "vuepress-shared/client";
 
-import { type ArtPlayerOptions } from "../../shared/index.js";
+import type { ArtPlayerOptions } from "../../shared/index.js";
 import { useSize } from "../composables/index.js";
 import {
   SUPPORTED_VIDEO_TYPES,
@@ -22,6 +15,8 @@ import {
   registerMseFlv,
   registerMseHls,
 } from "../utils/mse.js";
+
+import "../styles/art-player.scss";
 
 const BOOLEAN_TRUE_ATTRS = [
   "no-fullscreen",
@@ -53,7 +48,8 @@ const BOOLEAN_FALSE_ATTRS = [
   "subtitle-offset",
 ] as const;
 
-const SUPPORTED_LANG_NAME = ["en", "pl", "cs", "es", "fa"];
+// NOTE: This should be updated with https://github.com/zhw2590582/ArtPlayer/blob/master/packages/artplayer/src/i18n/index.js
+const SUPPORTED_LANG_NAME = ["en", "pl", "cs", "es", "fa", "fr", "id", "ru"];
 const SUPPORTED_LANG_CODE = ["zh-cn", "zh-tw"];
 
 type KebabCaseToCamelCase<
@@ -204,7 +200,6 @@ export default defineComponent({
         theme: "#3eaf7c",
         ...ART_PLAYER_OPTIONS,
         container: el.value!,
-        title: props.title,
         poster: props.poster,
         url: props.src,
         type: props.type || getTypeByUrl(props.src),
@@ -296,6 +291,7 @@ export default defineComponent({
         "div",
         {
           ref: el,
+          class: "vp-artplayer",
           style: {
             width: width.value,
             height: height.value,

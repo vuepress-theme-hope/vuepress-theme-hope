@@ -1,6 +1,7 @@
 import { withBase } from "@vuepress/client";
 import { isLinkHttp } from "@vuepress/shared";
-import { type FunctionalComponent, h, resolveComponent } from "vue";
+import type { FunctionalComponent } from "vue";
+import { h, resolveComponent } from "vue";
 import { isAbsoluteUrl } from "vuepress-shared/client";
 
 export interface IconProps {

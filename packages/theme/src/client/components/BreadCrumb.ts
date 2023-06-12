@@ -3,26 +3,24 @@ import {
   usePageFrontmatter,
   useRouteLocale,
 } from "@vuepress/client";
+import type { VNode } from "vue";
 import {
-  type VNode,
   computed,
   defineComponent,
   h,
   onMounted,
-  ref,
+  shallowRef,
   watch,
 } from "vue";
-import { RouterLink, useRouter } from "vue-router";
-import { resolveRouteWithRedirect } from "vuepress-shared/client";
+import { useRouter } from "vue-router";
+import { VPLink, resolveRouteWithRedirect } from "vuepress-shared/client";
 
 import HopeIcon from "@theme-hope/components/HopeIcon";
 import { useThemeLocaleData } from "@theme-hope/composables/index";
 import { getAncestorLinks } from "@theme-hope/utils/index";
 
-import {
-  ArticleInfoType,
-  type ThemeNormalPageFrontmatter,
-} from "../../shared/index.js";
+import type { ThemeNormalPageFrontmatter } from "../../shared/index.js";
+import { ArticleInfoType } from "../../shared/index.js";
 
 import "../styles/breadcrumb.scss";
 
@@ -42,7 +40,7 @@ export default defineComponent({
     const frontmatter = usePageFrontmatter<ThemeNormalPageFrontmatter>();
     const themeLocale = useThemeLocaleData();
 
-    const config = ref<BreadCrumbConfig[]>([]);
+    const config = shallowRef<BreadCrumbConfig[]>([]);
 
     const enable = computed(
       () =>
@@ -66,20 +64,20 @@ export default defineComponent({
         page.value.path,
         routeLocale.value
       )
-        .map<BreadCrumbConfig | null>((link) => {
+        .map<BreadCrumbConfig | null>(({ link, name }) => {
           const route = routes.find((route) => route.path === link);
 
           if (route) {
             const { meta, path } = resolveRouteWithRedirect(router, route.path);
-            const title =
-              meta[ArticleInfoType.shortTitle] || meta[ArticleInfoType.title];
 
-            if (title)
-              return {
-                title,
-                icon: meta[ArticleInfoType.icon],
-                path,
-              };
+            return {
+              title:
+                meta[ArticleInfoType.shortTitle] ||
+                meta[ArticleInfoType.title] ||
+                name,
+              icon: meta[ArticleInfoType.icon],
+              path,
+            };
           }
 
           return null;
@@ -98,7 +96,7 @@ export default defineComponent({
     return (): VNode =>
       h(
         "nav",
-        { class: ["breadcrumb", { disable: !enable.value }] },
+        { class: ["vp-breadcrumb", { disable: !enable.value }] },
         enable.value
           ? h(
               "ol",
@@ -116,7 +114,7 @@ export default defineComponent({
                   },
                   [
                     h(
-                      RouterLink,
+                      VPLink,
                       {
                         to: item.path,
                         property: "item",

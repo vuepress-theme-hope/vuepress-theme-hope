@@ -1,17 +1,10 @@
 import { useToggle } from "@vueuse/core";
-import {
-  type PropType,
-  type VNode,
-  computed,
-  defineComponent,
-  h,
-  onMounted,
-  ref,
-} from "vue";
+import type { PropType, SlotsType, VNode } from "vue";
+import { computed, defineComponent, h, onMounted, ref, shallowRef } from "vue";
 import { LoadingIcon, atou } from "vuepress-shared/client";
 
 import { CODEPEN_SVG, JSFIDDLE_SVG } from "./icons.js";
-import { type CodeDemoOptions } from "../../shared/index.js";
+import type { CodeDemoOptions } from "../../shared/index.js";
 import { loadNormal, loadReact, loadVue } from "../composables/index.js";
 import {
   getCode,
@@ -82,10 +75,14 @@ export default defineComponent({
     },
   },
 
+  slots: Object as SlotsType<{
+    default: () => VNode[];
+  }>,
+
   setup(props, { slots }) {
     const [isExpanded, toggleIsExpand] = useToggle(false);
-    const demoWrapper = ref<HTMLDivElement>();
-    const codeContainer = ref<HTMLDivElement>();
+    const demoWrapper = shallowRef<HTMLDivElement>();
+    const codeContainer = shallowRef<HTMLDivElement>();
     const height = ref("0");
     const loaded = ref(false);
 
@@ -156,14 +153,17 @@ export default defineComponent({
     });
 
     return (): VNode =>
-      h("div", { class: "code-demo-wrapper", id: props.id }, [
-        h("div", { class: "code-demo-header" }, [
+      h("div", { class: "vp-code-demo", id: props.id }, [
+        h("div", { class: "vp-code-demo-header" }, [
           code.value.isLegal
             ? h("button", {
                 type: "button",
                 title: "toggle",
                 "aria-hidden": true,
-                class: ["toggle-button", isExpanded.value ? "down" : "end"],
+                class: [
+                  "vp-code-demo-toggle-button",
+                  isExpanded.value ? "down" : "end",
+                ],
                 onClick: () => {
                   height.value = isExpanded.value
                     ? "0"
@@ -173,7 +173,11 @@ export default defineComponent({
               })
             : null,
           props.title
-            ? h("span", { class: "title" }, decodeURIComponent(props.title))
+            ? h(
+                "span",
+                { class: "vp-code-demo-title" },
+                decodeURIComponent(props.title)
+              )
             : null,
 
           code.value.isLegal && code.value.jsfiddle !== false
@@ -271,10 +275,10 @@ export default defineComponent({
               )
             : null,
         ]),
-        loaded.value ? null : h(LoadingIcon, { class: "code-demo-loading" }),
+        loaded.value ? null : h(LoadingIcon, { class: "vp-code-demo-loading" }),
         h("div", {
           ref: demoWrapper,
-          class: "code-demo-container",
+          class: "vp-code-demo-display",
           style: {
             display: isLegal.value && loaded.value ? "block" : "none",
           },
@@ -282,14 +286,17 @@ export default defineComponent({
 
         h(
           "div",
-          { class: "code-demo-code-wrapper", style: { height: height.value } },
+          {
+            class: "vp-code-demo-code-wrapper",
+            style: { height: height.value },
+          },
           h(
             "div",
             {
               ref: codeContainer,
-              class: "code-demo-codes",
+              class: "vp-code-demo-codes",
             },
-            slots["default"]?.()
+            slots.default?.()
           )
         ),
       ]);

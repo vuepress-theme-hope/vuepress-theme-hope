@@ -1,5 +1,5 @@
 import { deprecatedLogger } from "./utils.js";
-import { type SearchProOptions } from "../options.js";
+import type { SearchProOptions } from "../options.js";
 
 /** @deprecated */
 export const convertOptions = (
@@ -7,7 +7,17 @@ export const convertOptions = (
 ): void => {
   deprecatedLogger({
     options,
+    deprecatedOption: "fullIndex",
+    newOption: "indexContent",
+  });
+  deprecatedLogger({
+    options,
     deprecatedOption: "historyCount",
     newOption: "resultHistoryCount",
+  });
+  deprecatedLogger({
+    options,
+    deprecatedOption: "delay",
+    newOption: "searchDelay",
   });
 };

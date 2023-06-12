@@ -1,5 +1,5 @@
 /* eslint-disable @typescript-eslint/naming-convention */
-import { type HopeLang } from "./types.js";
+import type { HopeLang } from "./types.js";
 import { fromEntries, keys } from "../../shared/index.js";
 
 export const lang2PathConfig = {

@@ -1,8 +1,6 @@
-import { type Plugin } from "@vuepress/core";
-import {
-  type CopyCodeOptions,
-  copyCodePlugin,
-} from "vuepress-plugin-copy-code2";
+import type { Plugin } from "@vuepress/core";
+import type { CopyCodeOptions } from "vuepress-plugin-copy-code2";
+import { copyCodePlugin } from "vuepress-plugin-copy-code2";
 
 /**
  * @private

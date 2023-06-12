@@ -1,43 +1,126 @@
-@keyframes bounce {
-  0% {
-    transform: scale(1) translateY(0);
+.vp-feature-wrapper {
+  position: relative;
+}
+
+.vp-feature-bg {
+  position: absolute;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  z-index: 0;
+
+  background-attachment: fixed;
+  background-position: 50%;
+  background-size: cover;
+
+  &.light {
+    display: inline-block;
   }
 
-  10% {
-    transform: scale(1.1, 0.9) translateY(0);
+  &.dark {
+    display: none;
   }
 
-  30% {
-    transform: scale(0.9, 1.1) translateY(-0.5em);
-  }
+  #{hope-config.$dark-selector} & {
+    &.light {
+      display: none;
+    }
 
-  50% {
-    transform: scale(1.05, 0.95) translateY(0);
-  }
-
-  57% {
-    transform: scale(1) translateY(-0.125em);
-  }
-
-  64% {
-    transform: scale(1) translateY(0);
-  }
-
-  100% {
-    transform: scale(1) translateY(0);
+    &.dark {
+      display: inline-block;
+    }
   }
 }
 
-.feature-header {
-  margin: 0 1.75rem;
+.vp-feature {
+  position: relative;
+  z-index: 1;
+
+  margin: 0 auto;
+  padding: 1.5rem 1rem;
+
+  color: var(--text-color-lighter);
+
+  text-align: center;
+
+  .vp-feature-bg + & {
+    color: #222;
+
+    #{hope-config.$dark-selector} & {
+      color: #eee;
+    }
+
+    .icon {
+      color: inherit;
+    }
+  }
 }
 
-.feature-wrapper {
+.vp-feature-image {
+  height: 10rem;
+  margin: 0 auto;
+
+  @media (max-width: hope-config.$pad) {
+    height: 8rem;
+  }
+
+  &.light {
+    display: inline-block;
+  }
+
+  &.dark {
+    display: none;
+  }
+
+  #{hope-config.$dark-selector} & {
+    &.light {
+      display: none;
+    }
+
+    &.dark {
+      display: inline-block;
+    }
+  }
+}
+
+.vp-feature-header {
+  margin-bottom: 1.5rem;
+  border-bottom: none;
+
+  font-size: 3rem;
+  font-family: var(--font-family);
+  text-align: center;
+
+  @media (max-width: hope-config.$pad) {
+    font-size: 2.5rem;
+  }
+
+  @media (max-width: hope-config.$tablet) {
+    font-size: 2.25rem;
+  }
+
+  @media (max-width: hope-config.$mobile) {
+    font-size: 2rem;
+  }
+}
+
+.vp-feature-description {
+  font-size: 1.125rem;
+}
+
+.vp-features {
+  z-index: 1;
+
   display: flex;
   flex-wrap: wrap;
   align-content: stretch;
   align-items: stretch;
   justify-content: center;
+
+  margin: 1rem 0;
+
+  text-align: start;
 
   @media print {
     display: block;
@@ -49,14 +132,17 @@
   }
 }
 
-.feature-item {
+.vp-feature-item {
   position: relative;
 
+  display: block;
   flex-basis: calc(33% - 3rem);
 
   margin: 0.5rem;
   padding: 1rem;
   border-radius: 0.5rem;
+
+  color: inherit;
 
   transition: background var(--color-transition),
     box-shadow var(--color-transition), transform var(--transform-transition);
@@ -102,7 +188,12 @@
   &:hover {
     background-color: var(--bg-color-secondary);
     box-shadow: 0 2px 12px 0 var(--card-shadow);
+    transform: translate(-2px, -2px);
     transform: scale(1.05);
+
+    .vp-feature-bg + .vp-feature & {
+      background-color: transparent;
+    }
   }
 
   &:only-child {
@@ -117,21 +208,20 @@
       flex-basis: 100%;
     }
   }
+}
 
-  h3 {
-    margin: 0.25rem 0 0.5rem;
-    color: var(--text-color-light);
-    font-weight: bold;
-    font-size: 1.3rem;
+.vp-feature-title {
+  margin: 0.25rem 0 0.5rem;
+  font-weight: bold;
+  font-size: 1.3rem;
+  font-family: var(--font-family);
 
-    @media (max-width: hope-config.$mobile) {
-      font-size: 1.2rem;
-    }
+  @media (max-width: hope-config.$mobile) {
+    font-size: 1.2rem;
   }
+}
 
-  p {
-    margin: 0;
-    color: var(--text-color-lighter);
-    line-height: 1.4;
-  }
+.vp-feature-details {
+  margin: 0;
+  line-height: 1.4;
 }

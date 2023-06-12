@@ -12,6 +12,12 @@ tag:
 
 ## 组件相关
 
+::: tip
+
+为了通过别名替换组件，你需要将 `{ custom: true }` 作为第二个选项传入 `hopeTheme`。
+
+:::
+
 ### 必应壁纸
 
 将博客主页的背景替换为每日的必应壁纸。
@@ -110,6 +116,58 @@ import HitokotoBlogHero from "vuepress-theme-hope/presets/HitokotoBlogHero.js";
     </template>
   </BlogHero>
 </template>
+```
+
+:::
+
+## 组合式 API 相关
+
+### 运行时间
+
+获取站点的运行时间。
+
+```ts
+export const setupRunningTimeFooter: (
+  /**
+   * 计算运行时间的日期
+   */
+  date: string | Date,
+  /**
+   * 运行时间的本地化文字
+   *
+   * @description :day, :hour, :minute, :second 会被对应的值替换
+   */
+  locales: Record<string, string> = {
+    "/": "Running time: :day days :hour hours :minute minutes :second seconds",
+  },
+  /**
+   * 是否保留页脚的原有内容
+   *
+   * @default false
+   */
+  preserveContent = false
+) => void;
+```
+
+::: details 代码示例
+
+```ts
+// .vuepress/client.ts
+import { defineClientConfig } from "@vuepress/client";
+import { setupRunningTimeFooter } from "vuepress-theme-hope/presets/footerRunningTime.js";
+
+export default defineClientConfig({
+  setup() {
+    setupRunningTimeFooter(
+      new Date("2022-01-01"),
+      {
+        "/": "Running time: :day days :hour hours :minute minutes :second seconds",
+        "/zh/": "已运行 :day 天 :hour 小时 :minute 分钟 :second 秒",
+      },
+      true
+    );
+  },
+});
 ```
 
 :::

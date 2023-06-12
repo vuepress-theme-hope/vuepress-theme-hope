@@ -41,6 +41,7 @@ export default defineUserConfig({
         "/demo/mermaid",
         "/demo/playground",
         "/demo/presentation",
+        "/demo/slide-page",
         "/demo/stylized",
         "/demo/sup-sub",
         "/demo/tabs",
@@ -85,9 +86,7 @@ export default defineUserConfig({
       mathjax: {
         output: "chtml",
       },
-      presentation: {
-        plugins: ["highlight", "math", "search", "notes", "zoom"],
-      },
+      presentation: ["highlight", "math", "search", "notes", "zoom"],
       stylize: [
         {
           matcher: "Recommended",

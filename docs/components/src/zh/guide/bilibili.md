@@ -16,12 +16,13 @@ title: BiliBili
 <BiliBili bvid="BV1kt411o7C3" />
 ```
 
-一个自定义空降地址且自动播放的 B 站视频:
+一个自定义空降地址的 B 站视频:
 
-<BiliBili aid="34304064" cid="109293122" ratio="9:16" time="60" autoplay page="2" />
+<BiliBili aid="34304064" cid="109293122" ratio="9:16" time="60" page="2" />
 
-````md
-<BiliBili aid="34304064" cid="109293122" ratio="9:16" time="60" autoplay page="2" />```
+```md
+<BiliBili aid="34304064" cid="109293122" ratio="9:16" time="60" page="2" />
+```
 
 ## 属性
 
@@ -86,4 +87,3 @@ B 站组件高度宽高比，只有当未指定 `height` 时有效。
 - 默认值: `false`
 
 视频自动播放
-````

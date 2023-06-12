@@ -13,7 +13,7 @@ import { fs, logger, path } from "@vuepress/utils";
 import { cac } from "cac";
 import { removeEndingSlash, removeLeadingSlash } from "vuepress-shared/node";
 
-import { getRedirectHTML } from "../node/utils.js";
+import { getRedirectHTML } from "../node/utils/index.js";
 
 const require = createRequire(import.meta.url);
 

@@ -1,9 +1,10 @@
 import { createRequire } from "node:module";
 
-import { type App } from "@vuepress/core";
+import type { App } from "@vuepress/core";
 import { path } from "@vuepress/utils";
+import { isPlainObject } from "vuepress-shared/node";
 
-import { type MarkdownEnhanceOptions } from "../options.js";
+import type { MarkdownEnhanceOptions } from "../options.js";
 import { CLIENT_FOLDER } from "../utils.js";
 
 const require = createRequire(import.meta.url);
@@ -15,6 +16,7 @@ export const prepareConfigFile = async (
 ): Promise<string> => {
   const imports: string[] = [];
   const enhances: string[] = [];
+  const setups: string[] = [];
 
   const getStatus = (key: keyof MarkdownEnhanceOptions, gfm = false): boolean =>
     key in options
@@ -90,17 +92,25 @@ export const prepareConfigFile = async (
 
   if (getStatus("mermaid")) {
     imports.push(
-      `import Mermaid from "${CLIENT_FOLDER}components/Mermaid.js";`
+      `import Mermaid from "${CLIENT_FOLDER}components/Mermaid.js";`,
+      `import { injectMermaidConfig } from "${CLIENT_FOLDER}/index.js";`
     );
-    enhances.push(`app.component("Mermaid", Mermaid);`);
+    enhances.push(
+      `injectMermaidConfig(app);`,
+      `app.component("Mermaid", Mermaid);`
+    );
   }
 
   if (getStatus("presentation")) {
     imports.push(
       `import "${path.resolve(require.resolve("reveal.js/dist/reveal.css"))}";`,
-      `import Presentation from "${CLIENT_FOLDER}components/Presentation.js";`
+      `import Presentation from "${CLIENT_FOLDER}components/Presentation.js";`,
+      `import { injectRevealConfig } from "${CLIENT_FOLDER}index.js";`
     );
-    enhances.push(`app.component("Presentation", Presentation);`);
+    enhances.push(
+      `injectRevealConfig(app);`,
+      `app.component("Presentation", Presentation);`
+    );
   }
 
   if (getStatus("playground")) {
@@ -118,16 +128,29 @@ export const prepareConfigFile = async (
   if (getStatus("tasklist", true))
     imports.push(`import "${CLIENT_FOLDER}styles/tasklist.scss";`);
 
-  if (getStatus("katex"))
+  if (getStatus("katex")) {
     imports.push(
       `import "${path.resolve(require.resolve("katex/dist/katex.min.css"))}";`,
       `import "${CLIENT_FOLDER}styles/katex.scss";`
     );
 
+    if (isPlainObject(options.katex) && options.katex.copy) {
+      imports.push(
+        `import { useKatexCopy } from "${CLIENT_FOLDER}composables/katex.js";`
+      );
+      setups.push(`useKatexCopy();`);
+    }
+  }
+
   if (getStatus("vuePlayground")) {
-    imports.push(`import { defineAsyncComponent } from "vue";`);
-    enhances.push(`app.component("VuePlayground", defineAsyncComponent(() => import("${CLIENT_FOLDER}components/VuePlayground.js")));
-    `);
+    imports.push(
+      `import { defineAsyncComponent } from "vue";`,
+      `import { injectVuePlaygroundConfig } from "${CLIENT_FOLDER}index.js";`
+    );
+    enhances.push(
+      `injectVuePlaygroundConfig(app);`,
+      `app.component("VuePlayground", defineAsyncComponent(() => import("${CLIENT_FOLDER}components/VuePlayground.js")));`
+    );
   }
 
   if (getStatus("mathjax")) imports.push(`import "./mathjax.css";`);
@@ -142,6 +165,9 @@ export default defineClientConfig({
   enhance: ({ app }) => {
 ${enhances.map((item) => `    ${item}`).join("\n")}
   },
+  setup: () => {
+${setups.join("\n")}
+  }
 });
 `
   );

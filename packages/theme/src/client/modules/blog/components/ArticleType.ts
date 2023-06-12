@@ -1,6 +1,7 @@
 import { usePageData, useRouteLocale } from "@vuepress/client";
-import { type VNode, computed, defineComponent, h } from "vue";
-import { RouterLink } from "vue-router";
+import type { VNode } from "vue";
+import { computed, defineComponent, h } from "vue";
+import { VPLink } from "vuepress-shared/client";
 
 import { useThemeLocaleData } from "@theme-hope/composables/index";
 import {
@@ -41,17 +42,17 @@ export default defineComponent({
     return (): VNode =>
       h(
         "ul",
-        { class: "article-type-wrapper" },
+        { class: "vp-article-type-wrapper" },
         types.value.map((type) =>
           h(
             "li",
             {
               class: [
-                "article-type",
+                "vp-article-type",
                 { active: type.path === page.value.path },
               ],
             },
-            h(RouterLink, { to: type.path }, () => type.text)
+            h(VPLink, { to: type.path }, () => type.text)
           )
         )
       );

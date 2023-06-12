@@ -1,6 +1,7 @@
-import { type App, type Page } from "@vuepress/core";
+import type { App, Page } from "@vuepress/core";
 import { fs } from "@vuepress/utils";
-import { type AnyNode, load } from "cheerio";
+import type { AnyNode } from "cheerio";
+import { load } from "cheerio";
 import {
   HTML_TAGS,
   MATHML_TAGS,
@@ -64,8 +65,8 @@ const handleNode = (
       return node;
     }
 
-    // we shall convert `<RouterLink>` to `<a>` tag
-    if (node.tagName === "routerlink") {
+    // we shall convert `<RouterLink>` and `<VPLink>` to `<a>` tag
+    if (node.tagName === "routerlink" || node.tagName === "vplink") {
       node.tagName = "a";
       node.attribs["href"] = `${removeEndingSlash(base)}${node.attribs["to"]}`;
       node.attribs["target"] = "blank";

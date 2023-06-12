@@ -7,6 +7,7 @@ const { version } = fs.readJsonSync(
   )
 );
 
+// the theme wrapper is located in <root>/docs-shared/src/theme-wrapper.ts
 export default theme("copy-code2", {
   locales: {
     "/": {
@@ -57,6 +58,7 @@ export default theme("copy-code2", {
   plugins: {
     mdEnhance: {
       codetabs: true,
+      imgMark: true,
     },
   },
 });

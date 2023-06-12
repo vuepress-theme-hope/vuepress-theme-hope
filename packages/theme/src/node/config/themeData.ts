@@ -1,13 +1,13 @@
-import { type App } from "@vuepress/core";
+import type { App } from "@vuepress/core";
 import { entries, fromEntries, getLocales } from "vuepress-shared/node";
 
 import { getEncryptConfig } from "./encrypt.js";
-import { type ThemeStatus } from "./status.js";
-import {
-  type ThemeData,
-  type ThemeLocaleConfig,
-  type ThemeLocaleOptions,
-  type ThemeOptions,
+import type { ThemeStatus } from "./status.js";
+import type {
+  ThemeData,
+  ThemeLocaleConfig,
+  ThemeLocaleOptions,
+  ThemeOptions,
 } from "../../shared/index.js";
 import { themeLocalesData } from "../locales/index.js";
 
@@ -17,6 +17,15 @@ const ROOT_DISALLOW_CONFIG = [
   "rtl",
   "langName",
   "selectLangAriaLabel",
+
+  // locales
+  "metaLocales",
+  "navbarLocales",
+  "outlookLocales",
+  "routeLocales",
+  "blogLocales",
+  "encryptLocales",
+  "paginationLocales",
 ];
 
 /**
@@ -27,7 +36,7 @@ const ROOT_DISALLOW_CONFIG = [
 export const getThemeData = (
   app: App,
   themeOptions: ThemeOptions,
-  { enableBlog }: ThemeStatus
+  { enableBlog, enableEncrypt }: ThemeStatus
 ): ThemeData => {
   const themeData: ThemeData = {
     encrypt: {},
@@ -44,7 +53,7 @@ export const getThemeData = (
         name: "vuepress-theme-hope",
         default: fromEntries(
           entries(themeLocalesData).map(([locale, config]) => {
-            // remove blog locales if blog is not enabled
+            // remove locales if their features are not enabled
             if (!enableBlog) {
               // @ts-expect-error
               delete config.blogLocales;
@@ -52,6 +61,10 @@ export const getThemeData = (
               // @ts-expect-error
               delete config.paginationLocales;
             }
+
+            if (!enableEncrypt)
+              // @ts-expect-error
+              delete config.encryptLocales;
 
             return [locale, <ThemeLocaleConfig>config];
           })

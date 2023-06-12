@@ -1,0 +1,20 @@
+@use "sass:list";
+@use "sass:map";
+@use "sass:meta";
+@use "@sass-palette/hope-config";
+
+$enable-theme-color: map.has-key(
+  meta.module-variables("hope-config"),
+  "theme-colors"
+);
+
+:export {
+  mobileBreakPoint: hope-config.$tablet;
+  pcBreakPoint: hope-config.$pc;
+  enableThemeColor: $enable-theme-color;
+  @if ($enable-theme-color) {
+    @each $color in hope-config.$theme-colors {
+      theme-#{list.index(hope-config.$theme-colors, $color)}: $color;
+    }
+  }
+}

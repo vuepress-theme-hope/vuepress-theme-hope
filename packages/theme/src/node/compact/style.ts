@@ -1,4 +1,4 @@
-import { type App } from "@vuepress/core";
+import type { App } from "@vuepress/core";
 import { fs, logger } from "@vuepress/utils";
 
 /**

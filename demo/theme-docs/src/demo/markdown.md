@@ -1,6 +1,6 @@
 ---
 title: Markdown Enhance
-icon: markdown
+icon: fab fa-markdown
 order: 2
 category:
   - Guide

@@ -71,9 +71,16 @@ tag:
 ### logoDark
 
 - 类型: `string`
-- 必填: 否
+- 默认值: `logo`
 
 夜间模式下导航栏图标，应为基于 `.vuepress/public` 文件夹的绝对路径。
+
+### navTitle
+
+- 类型: `string | false`
+- 默认值: `$siteLocale.title`
+
+导航栏标题
 
 ### repo
 

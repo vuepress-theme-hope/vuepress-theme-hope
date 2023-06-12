@@ -1,27 +1,29 @@
 import { usePageFrontmatter } from "@vuepress/client";
-import {
-  type default as Reveal,
-  type RevealOptions,
+import type {
+  // eslint-disable-next-line import/no-named-default
+  default as Reveal,
+  RevealOptions,
 } from "reveal.js/dist/reveal.esm.js";
+import type { PropType, VNode } from "vue";
 import {
-  type PropType,
-  type VNode,
   defineComponent,
   h,
   onMounted,
   onUnmounted,
   ref,
+  shallowRef,
 } from "vue";
 import { LoadingIcon, atou } from "vuepress-shared/client";
 
 import { useReveal } from "@temp/md-enhance/reveal";
+
+import { useRevealConfig } from "../helpers/index.js";
 
 import "../styles/slides/index.scss";
 import "../styles/slides/theme/fonts/league-gothic/league-gothic.css";
 import "../styles/slides/theme/fonts/source-sans-pro/source-sans-pro.css";
 
 declare const MARKDOWN_ENHANCE_DELAY: number;
-declare const REVEAL_CONFIG: Partial<RevealOptions>;
 
 type ThemeType =
   | "auto"
@@ -65,10 +67,11 @@ export default defineComponent({
   },
 
   setup(props) {
+    const revealOptions = useRevealConfig();
     const frontmatter = usePageFrontmatter<{ reveal: RevealOptions }>();
     const code = ref("");
     const loading = ref(true);
-    const presentationContainer = ref<HTMLElement>();
+    const presentationContainer = shallowRef<HTMLElement>();
 
     let reveal: Reveal | null = null;
 
@@ -84,21 +87,22 @@ export default defineComponent({
       const [, revealJS, ...plugins] = await Promise.all(promises);
 
       const reveal = new revealJS.default(container, {
-        plugins: plugins.map(({ default: plugin }) => plugin),
-      });
-
-      await reveal.initialize({
         backgroundTransition: "slide",
         hash: frontmatter.value.layout === "Slide",
         mouseWheel: frontmatter.value.layout === "Slide",
         transition: "slide",
         slideNumber: true,
-        ...REVEAL_CONFIG,
+        ...revealOptions,
         ...(frontmatter.value.reveal || {}),
         embedded: frontmatter.value.layout !== "Slide",
+        plugins: [
+          ...plugins.map(({ default: plugin }) => plugin),
+          // eslint-disable-next-line @typescript-eslint/no-unsafe-assignment
+          ...(revealOptions.plugins ?? []),
+        ],
       });
 
-      reveal.configure({ backgroundTransition: "slide" });
+      await reveal.initialize();
 
       return reveal;
     };
@@ -123,7 +127,7 @@ export default defineComponent({
     });
 
     return (): VNode =>
-      h("div", { class: "presentation-wrapper" }, [
+      h("div", { class: "vp-reveal" }, [
         h(
           "div",
           {

@@ -1,4 +1,11 @@
+.home {
+  .vp-hero-info-wrapper {
+    min-height: 600px;
+  }
+}
+
 .catalog-display-container {
+  overflow-x: visible;
   overflow-y: auto;
 
   max-height: 75vh;

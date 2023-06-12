@@ -401,7 +401,7 @@ export default {
 
 :::
 
-Also, to place your Markdown files directly besides your actual files, but don't want them rendered as pages, you can set `pagePatterns` options in VuePress config. See [pagePatterns](https://v2.vuepress.vuejs.org/reference/config.html#pagepatterns) for more details.
+Also, to place your Markdown files directly besides your actual files, but don't want them rendered as pages, you can set `pagePatterns` options in VuePress config. See [pagePatterns](https://vuejs.press/reference/config.html#pagepatterns) for more details.
 
 ::: code-tabs#language
 
@@ -414,7 +414,7 @@ import { mdEnhancePlugin } from "vuepress-plugin-md-enhance";
 
 export default defineConfig({
   // now any file with `.snippet.md` extension will not be rendered as a page
-  pagePatterns: ["**/*.md", "!*.snippet.md", "!.vuepress", "!node_modules"],
+  pagePatterns: ["**/*.md", "!**/*.snippet.md", "!.vuepress", "!node_modules"],
 
   plugins: [
     mdEnhancePlugin({
@@ -432,7 +432,7 @@ import { mdEnhancePlugin } from "vuepress-plugin-md-enhance";
 
 export default {
   // now any file with `.snippet.md` extension will not be rendered as a page
-  pagePatterns: ["**/*.md", "!*.snippet.md", "!.vuepress", "!node_modules"],
+  pagePatterns: ["**/*.md", "!**/*.snippet.md", "!.vuepress", "!node_modules"],
 
   plugins: [
     mdEnhancePlugin({

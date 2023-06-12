@@ -26,7 +26,7 @@ tag:
 import { defineUserConfig } from "vuepress";
 import { hopeTheme } from "vuepress-theme-hope";
 
-export 默认值 defineUserConfig({
+export default defineUserConfig({
   // 站点选项
   // ...
 
@@ -48,7 +48,7 @@ export 默认值 defineUserConfig({
 // .vuepress/config.js
 import { hopeTheme } from "vuepress-theme-hope";
 
-export 默认值 {
+export default {
   // 站点选项
   // ...
 

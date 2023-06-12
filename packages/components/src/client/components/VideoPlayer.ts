@@ -1,14 +1,13 @@
-import { type UseMediaTextTrackSource } from "@vueuse/core";
-import { type Options as PlyrOptions } from "plyr";
+import type { UseMediaTextTrackSource } from "@vueuse/core";
+import type { Options as PlyrOptions } from "plyr";
+import type { PropType, VNode } from "vue";
 import {
-  type PropType,
-  type VNode,
   computed,
   defineComponent,
   h,
   onBeforeMount,
   onMounted,
-  ref,
+  shallowRef,
 } from "vue";
 
 import { getLink } from "../utils/index.js";
@@ -96,7 +95,7 @@ export default defineComponent({
 
   setup(props) {
     let player: Plyr | null = null;
-    const video = ref<HTMLVideoElement>();
+    const video = shallowRef<HTMLVideoElement>();
 
     const plyrOptions = computed(() => ({
       hideYouTubeDOMError: true,
@@ -123,7 +122,7 @@ export default defineComponent({
       h(
         "div",
         {
-          class: "video-player-wrapper",
+          class: "vp-video-player",
           style: {
             width: props.width,
           },

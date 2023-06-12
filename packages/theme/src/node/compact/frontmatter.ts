@@ -1,7 +1,7 @@
 import { colors } from "@vuepress/utils";
 
 import { deprecatedLogger, droppedLogger } from "./utils.js";
-import { type ThemePageFrontmatter } from "../../shared/index.js";
+import type { ThemePageFrontmatter } from "../../shared/index.js";
 import { logger } from "../utils.js";
 
 const DEPRECATED_FRONTMATTER_OPTIONS: [string, string][] = [

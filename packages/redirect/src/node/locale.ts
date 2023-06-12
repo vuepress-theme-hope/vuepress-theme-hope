@@ -1,4 +1,4 @@
-import { type App } from "@vuepress/core";
+import type { App } from "@vuepress/core";
 import { colors } from "@vuepress/utils";
 import {
   deepAssign,
@@ -9,9 +9,9 @@ import {
   keys,
 } from "vuepress-shared/node";
 
-import { type RedirectOptions } from "./options.js";
-import { logger } from "./utils.js";
-import { type LocaleRedirectConfig } from "../shared/index.js";
+import type { RedirectOptions } from "./options.js";
+import { logger } from "./utils/index.js";
+import type { LocaleRedirectConfig } from "../shared/index.js";
 
 const AVAILABLE_FALLBACK = ["defaultLocale", "homepage", "404"] as const;
 

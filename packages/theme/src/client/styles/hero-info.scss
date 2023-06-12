@@ -2,169 +2,252 @@
 @use "sass:list";
 @use "vuepress-shared/styles/shining";
 
-.hero-info-wrapper {
+.vp-hero-info-wrapper {
+  position: relative;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  // margin-inline: auto;
+  margin-inline-start: auto;
+  margin-inline-end: auto;
+
+  &.fullscreen {
+    height: calc(100vh - var(--navbar-height)) !important;
+  }
+}
+
+.vp-hero-info {
+  z-index: 1;
+  width: 100%;
+
+  // NOTE: Compatible with Android Wechat
+  // padding-inline: 2.5rem;
+  padding-inline-start: 2.5rem;
+  padding-inline-end: 2.5rem;
+
+  @media (max-width: hope-config.$pad) {
+    // NOTE: Compatible with Android Wechat
+    // padding-inline: 1.5rem;
+    padding-inline-start: 1.5em;
+    padding-inline-end: 1.5rem;
+  }
+
   @media (min-width: hope-config.$pad) {
     display: flex;
     align-items: center;
     justify-content: space-evenly;
   }
+}
 
-  img {
+.vp-hero-mask {
+  position: absolute;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  z-index: 0;
+
+  background-position: 50%;
+  background-size: cover;
+
+  &::after {
+    content: " ";
+
+    position: absolute;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    z-index: 1;
+
     display: block;
-    max-width: 100%;
-    max-height: 18rem;
-    margin: 1rem;
+  }
 
-    @media (max-width: hope-config.$pad) {
-      margin: 2rem auto;
-    }
+  &.light {
+    display: block;
 
-    @media (max-width: hope-config.$tablet) {
-      max-height: 16rem;
-      margin: 1.5rem auto;
-    }
-
-    @media (max-width: hope-config.$mobile) {
-      max-height: 14rem;
-    }
-
-    &.light {
-      display: block;
-
-      #{hope-config.$dark-selector} & {
-        display: none;
-      }
-    }
-
-    &.dark {
+    #{hope-config.$dark-selector} & {
       display: none;
-
-      #{hope-config.$dark-selector} & {
-        display: block;
-      }
     }
   }
 
-  h1 {
-    margin: 0.5rem 0;
+  &.dark {
+    display: none;
 
-    background: linear-gradient(
-      120deg,
-      var(--theme-color-light),
-      var(--theme-color) 30%,
-      color.adjust(hope-config.$theme-color, $hue: 60deg) 100%
-    );
-    -webkit-background-clip: text;
-    background-clip: text;
-
-    font-weight: bold;
-    font-size: 3.6rem;
-    line-height: 1.5;
-
-    -webkit-text-fill-color: transparent;
-
-    @media (max-width: hope-config.$tablet) {
-      margin: 0;
-      font-size: 2.5rem;
+    #{hope-config.$dark-selector} & {
+      display: block;
     }
+  }
+}
 
-    @media (max-width: hope-config.$pad) {
-      text-align: center;
-    }
+.vp-hero-infos {
+  z-index: 1;
+  margin: 0 0.5rem;
+}
 
-    @media (max-width: hope-config.$mobile) {
-      margin: 0 auto;
-      font-size: 2rem;
+.vp-hero-image {
+  display: block;
+  max-width: 100%;
+  max-height: 18rem;
+  margin: 1rem;
+
+  @media (max-width: hope-config.$pad) {
+    margin: 2rem auto;
+  }
+
+  @media (max-width: hope-config.$tablet) {
+    max-height: 16rem;
+    margin: 1.5rem auto;
+  }
+
+  @media (max-width: hope-config.$mobile) {
+    max-height: 14rem;
+  }
+
+  &.light {
+    display: block;
+
+    #{hope-config.$dark-selector} & {
+      display: none;
     }
   }
 
-  .description,
-  .actions {
-    margin: 1.8rem 0;
+  &.dark {
+    display: none;
 
-    @media (max-width: hope-config.$tablet) {
-      margin: 1.5rem 0;
-    }
-
-    @media (max-width: hope-config.$pad) {
-      margin: 1.5rem auto;
-      text-align: center;
-    }
-
-    @media (max-width: hope-config.$mobile) {
-      margin: 1.2rem 0;
+    #{hope-config.$dark-selector} & {
+      display: block;
     }
   }
+}
 
-  .description {
-    max-width: 35rem;
+#main-title {
+  margin: 0.5rem 0;
 
-    color: var(--text-color-bright);
+  background: linear-gradient(
+    120deg,
+    var(--theme-color-light),
+    var(--theme-color) 30%,
+    color.adjust(hope-config.$theme-color, $hue: 60deg) 100%
+  );
+  -webkit-background-clip: text;
+  background-clip: text;
 
-    font-weight: 500;
-    font-size: 1.6rem;
-    line-height: 1.3;
+  font-weight: bold;
+  font-size: 3.6rem;
+  font-family: var(--font-family);
+  line-height: 1.5;
 
-    @media (max-width: hope-config.$tablet) {
-      font-size: 1.4rem;
-    }
+  -webkit-text-fill-color: transparent;
 
-    @media (max-width: hope-config.$mobile) {
-      font-size: 1.2rem;
-    }
+  @media (max-width: hope-config.$tablet) {
+    margin: 0;
   }
 
-  .action-button {
-    display: inline-block;
-
-    overflow: hidden;
-
-    min-width: 4rem;
-    margin: 0.5rem;
-    padding: 0.5em 1.5rem;
-    border-radius: 2rem;
-
-    background: var(--bg-color-secondary);
-    color: var(--text-color);
-
-    font-size: 1.2rem;
+  @media (max-width: hope-config.$pad) {
+    font-size: 2.5rem;
     text-align: center;
+  }
 
-    transition: color var(--color-transition), color var(--color-transition),
-      transform var(--transform-transition);
+  @media (max-width: hope-config.$tablet) {
+    font-size: 2.25rem;
+    text-align: center;
+  }
 
-    @media (max-width: hope-config.$tablet) {
-      padding: 0.5rem 1rem;
-      font-size: 1.1rem;
-    }
+  @media (max-width: hope-config.$mobile) {
+    margin: 0 auto;
+    font-size: 2rem;
+  }
+}
 
-    @media (max-width: hope-config.$mobile) {
-      font-size: 1rem;
-    }
+.vp-description,
+.vp-actions {
+  margin: 1.8rem 0;
 
-    @media print {
-      text-decoration: none;
-    }
+  @media (max-width: hope-config.$tablet) {
+    margin: 1.5rem 0;
+  }
 
+  @media (max-width: hope-config.$pad) {
+    margin: 1.5rem auto;
+    text-align: center;
+  }
+
+  @media (max-width: hope-config.$mobile) {
+    margin: 1.2rem 0;
+  }
+}
+
+.vp-description {
+  max-width: 35rem;
+
+  color: var(--text-color-light);
+
+  font-weight: 500;
+  font-size: 1.6rem;
+  line-height: 1.3;
+
+  @media (max-width: hope-config.$tablet) {
+    font-size: 1.4rem;
+  }
+
+  @media (max-width: hope-config.$mobile) {
+    font-size: 1.2rem;
+  }
+}
+
+.vp-action {
+  display: inline-block;
+
+  overflow: hidden;
+
+  min-width: 4rem;
+  margin: 0.5rem;
+  padding: 0.5em 1.5rem;
+  border-radius: 2rem;
+
+  background: var(--bg-color-secondary);
+  color: var(--text-color);
+
+  font-size: 1.2rem;
+  text-align: center;
+
+  transition: color var(--color-transition), color var(--color-transition),
+    transform var(--transform-transition);
+
+  @media (max-width: hope-config.$tablet) {
+    padding: 0.5rem 1rem;
+    font-size: 1.1rem;
+  }
+
+  @media (max-width: hope-config.$mobile) {
+    font-size: 1rem;
+  }
+
+  @media print {
+    text-decoration: none;
+  }
+
+  &:hover {
+    background: var(--bg-color-tertiary);
+  }
+
+  &.primary {
+    border-color: var(--theme-color);
+    background: var(--theme-color);
+    color: var(--white);
+
+    // stylelint-disable max-nesting-depth
     &:hover {
-      background: var(--bg-color-tertiary);
+      border-color: var(--theme-color-light);
+      background: var(--theme-color-light);
     }
+    // stylelint-enable max-nesting-depth
+  }
 
-    &.primary {
-      border-color: var(--theme-color);
-      background: var(--theme-color);
-      color: var(--white);
-
-      // stylelint-disable max-nesting-depth
-      &:hover {
-        border-color: var(--theme-color-light);
-        background: var(--theme-color-light);
-      }
-      // stylelint-enable max-nesting-depth
-    }
-
-    .home.project:not(.pure) &:active {
-      transform: scale(0.96);
-    }
+  .vp-project-home:not(.pure) &:active {
+    transform: scale(0.96);
   }
 }

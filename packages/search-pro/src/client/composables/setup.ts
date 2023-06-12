@@ -1,4 +1,5 @@
-import { type InjectionKey, type Ref, provide, ref } from "vue";
+import type { InjectionKey, Ref } from "vue";
+import { provide, ref } from "vue";
 
 declare const __VUEPRESS_DEV__: boolean;
 

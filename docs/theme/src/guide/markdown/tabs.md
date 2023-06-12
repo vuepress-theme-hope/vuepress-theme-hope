@@ -114,6 +114,8 @@ By default, the title will be used as value of tab, but you can override it usin
 :::
 ```
 
+You can use Vue syntax and components in each tab, and you can access `value` and `isActive`, indicating the tab's binding value and whether the tab is active.
+
 :::: info Switching together and persisting choice
 
 If you want to make some tab groups switch together, you can use same tab id to bind them.

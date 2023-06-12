@@ -7,11 +7,11 @@ heroText: vuepress-plugin-photo-swipe
 tagline: 为 VuePress2 提供图片预览支持
 actions:
   - text: 快速上手 💡
-    link: /zh/guide.html
+    link: ./guide.html
     type: primary
 
   - text: 配置 🛠
-    link: /zh/config.html
+    link: ./config.html
 
 footer: 使用 <a href="https://theme-hope.vuejs.press/zh/" target="_blank">VuePress Theme Hope</a> 主题 | MIT 协议, 版权所有 © 2019-present Mr.Hope
 
@@ -85,9 +85,3 @@ export default {
 ## 从 V1 迁移
 
 详见 [迁移指南](./migration.md)。
-
-<NetlifyBadge alt="通过 Netlify 部署" />
-
-<script setup lang="ts">
-import NetlifyBadge from "@NetlifyBadge";
-</script>

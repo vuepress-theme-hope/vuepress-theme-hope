@@ -1,55 +1,60 @@
 import { useRouteLocale } from "@vuepress/client";
 import { useDebounceFn } from "@vueuse/core";
-import { type Ref, ref, watch } from "vue";
+import type { Ref } from "vue";
+import { onMounted, onUnmounted, ref, shallowRef, watch } from "vue";
 
 import { searchProOptions } from "../define.js";
-import { type Result } from "../utils/index.js";
-
-declare const __VUEPRESS_BASE__: string;
-declare const __VUEPRESS_DEV__: boolean;
+import { useSearchOptions } from "../helpers/index.js";
+import type { SearchResult } from "../typings/index.js";
+import { createSearchWorker } from "../utils/index.js";
 
 export interface SearchRef {
   searching: Ref<boolean>;
-  results: Ref<Result[]>;
+  results: Ref<SearchResult[]>;
 }
 
-export const useWorkerSearch = (query: Ref<string>): SearchRef => {
+export const useSearchResult = (query: Ref<string>): SearchRef => {
+  const searchOptions = useSearchOptions();
   const routeLocale = useRouteLocale();
+  const { search, terminate } = createSearchWorker();
 
   const searching = ref(false);
-  const results = ref<Result[]>([]);
+  const results = shallowRef<SearchResult[]>([]);
 
-  let worker: Worker | null;
-
-  const search = useDebounceFn((queryString: string): void => {
-    searching.value = true;
-    worker?.terminate();
-    if (queryString) {
-      worker = new Worker(
-        __VUEPRESS_DEV__
-          ? // this only works on webkit browsers now, so we only used it in dev
-            new URL("../worker/index.js", import.meta.url)
-          : `${__VUEPRESS_BASE__}${searchProOptions.worker}`,
-        __VUEPRESS_DEV__ ? { type: "module" } : {}
-      );
-
-      worker.addEventListener("message", ({ data }: MessageEvent<Result[]>) => {
-        results.value = data;
-        searching.value = false;
-      });
-
-      worker.postMessage({
-        query: queryString,
-        routeLocale: routeLocale.value,
-      });
-    } else {
+  onMounted(() => {
+    const endSearch = (): void => {
       results.value = [];
       searching.value = false;
-    }
-  }, searchProOptions.delay);
+    };
 
-  watch([query, routeLocale], () => search(query.value), {
-    immediate: true,
+    const performSearch = useDebounceFn((queryString: string): void => {
+      searching.value = true;
+
+      if (queryString)
+        void search({
+          type: "search",
+          query: queryString,
+          locale: routeLocale.value,
+          options: searchOptions,
+        })
+          .then((searchResults) => {
+            results.value = searchResults;
+            searching.value = false;
+          })
+          .catch((err) => {
+            console.error(err);
+            endSearch();
+          });
+      else endSearch();
+    }, searchProOptions.searchDelay);
+
+    watch([query, routeLocale], () => performSearch(query.value), {
+      immediate: true,
+    });
+
+    onUnmounted(() => {
+      terminate();
+    });
   });
 
   return {

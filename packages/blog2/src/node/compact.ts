@@ -1,6 +1,6 @@
 import { colors } from "@vuepress/utils";
 
-import { type BlogOptions } from "./options.js";
+import type { BlogOptions } from "./options.js";
 import { logger } from "./utils.js";
 
 /** @deprecated */

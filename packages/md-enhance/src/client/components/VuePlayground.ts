@@ -1,16 +1,10 @@
-import { type Repl, type ReplProps, type ReplStore } from "@vue/repl";
-import {
-  type VNode,
-  computed,
-  defineComponent,
-  h,
-  onMounted,
-  ref,
-  shallowRef,
-} from "vue";
-import { LoadingIcon } from "vuepress-shared/client";
+import type { Repl, ReplProps, ReplStore } from "@vue/repl";
+import type { VNode } from "vue";
+import { computed, defineComponent, h, onMounted, ref, shallowRef } from "vue";
+import { LoadingIcon, deepAssign } from "vuepress-shared/client";
 
-import { getVuePlaygroundSettings } from "../utils/playground.js";
+import { useVuePlaygroundConfig } from "../helpers/index.js";
+import { getVuePlaygroundSettings } from "../utils/index.js";
 
 import "@vue/repl/style.css";
 import "../styles/vue-playground.scss";
@@ -45,12 +39,17 @@ export default defineComponent({
   },
 
   setup(props) {
+    const vuePlaygroundOptions = useVuePlaygroundConfig();
     const loading = ref(true);
     const component = shallowRef<typeof Repl>();
-    const store = ref<ReplStore>();
+    const store = shallowRef<ReplStore>();
 
     const playgroundOptions = computed(() =>
-      getVuePlaygroundSettings(props.settings)
+      deepAssign(
+        {},
+        vuePlaygroundOptions,
+        getVuePlaygroundSettings(props.settings)
+      )
     );
 
     const setupRepl = async (): Promise<void> => {

@@ -9,6 +9,7 @@ const { version } = fs.readJsonSync(
 
 const IS_NETLIFY = "NETLIFY" in process.env;
 
+// the theme wrapper is located in <root>/docs-shared/src/theme-wrapper.ts
 export default theme("components", {
   locales: {
     "/": {
@@ -85,6 +86,7 @@ export default theme("components", {
         "Share",
         "SiteInfo",
         "StackBlitz",
+        // "VidStack",
         "VideoPlayer",
         "XiGua",
         "YouTube",
@@ -131,6 +133,7 @@ export default theme("components", {
 
     mdEnhance: {
       codetabs: true,
+      imgMark: true,
       include: true,
     },
   },

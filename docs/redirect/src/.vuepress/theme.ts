@@ -1,5 +1,6 @@
 import { theme } from "docs-shared";
 
+// the theme wrapper is located in <root>/docs-shared/src/theme-wrapper.ts
 export default theme("redirect", {
   locales: {
     "/": {
@@ -17,6 +18,7 @@ export default theme("redirect", {
   plugins: {
     mdEnhance: {
       codetabs: true,
+      imgMark: true,
     },
   },
 });

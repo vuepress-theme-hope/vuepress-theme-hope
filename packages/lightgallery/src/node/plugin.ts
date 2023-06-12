@@ -1,17 +1,15 @@
-import { type PluginFunction } from "@vuepress/core";
-import { getDirname, path } from "@vuepress/utils";
+import type { PluginFunction } from "@vuepress/core";
 import { useSassPalettePlugin } from "vuepress-plugin-sass-palette";
 import { addViteOptimizeDepsExclude, checkVersion } from "vuepress-shared/node";
 
-import { type LightGalleryOptions } from "./options.js";
-import { PLUGIN_NAME, logger } from "./utils.js";
-
-const __dirname = getDirname(import.meta.url);
+import type { LightGalleryOptions } from "./options.js";
+import { prepareLightGalleryPlugins } from "./prepare.js";
+import { CLIENT_FOLDER, PLUGIN_NAME, logger } from "./utils.js";
 
 export const lightgalleryPlugin =
   (options: LightGalleryOptions = {}): PluginFunction =>
   (app) => {
-    checkVersion(app, PLUGIN_NAME, "2.0.0-beta.61");
+    checkVersion(app, PLUGIN_NAME, "2.0.0-beta.63");
 
     if (app.env.isDebug) logger.info("Options:", options);
 
@@ -27,7 +25,6 @@ export const lightgalleryPlugin =
           options.selector ||
           ".theme-default-content :not(a) > img:not([no-view])",
         LIGHT_GALLERY_DELAY: options.delay || 800,
-        LIGHT_GALLERY_OPTIONS: options.options || {},
         LIGHT_GALLERY_AUTOPLAY: plugins.includes("autoplay"),
         LIGHT_GALLERY_FULLSCREEN: plugins.includes("fullscreen"),
         LIGHT_GALLERY_PAGER: plugins.includes("pager"),
@@ -47,6 +44,9 @@ export const lightgalleryPlugin =
         addViteOptimizeDepsExclude(bundlerOptions, app, ["lightgallery"]);
       },
 
-      clientConfigFile: path.resolve(__dirname, "../client/config.js"),
+      onPrepared: (app): Promise<void> =>
+        prepareLightGalleryPlugins(app, options.plugins),
+
+      clientConfigFile: `${CLIENT_FOLDER}config.js`,
     };
   };

@@ -2,7 +2,7 @@
 @use "vuepress-shared/styles/arrow";
 @use "@sass-palette/helper";
 
-.sidebar-links {
+.vp-sidebar-links {
   margin: 0;
   padding: 0;
 
@@ -10,7 +10,7 @@
     margin: 0;
     padding: 0;
 
-    &.sidebar-sub-headers {
+    &.vp-sidebar-sub-headers {
       padding-inline-start: 0.75rem;
       font-size: 0.95em;
 
@@ -26,7 +26,7 @@
     list-style-type: none;
   }
 
-  .sidebar > & {
+  .vp-sidebar > & {
     padding: 1.5rem 0;
 
     @media (max-width: hope-config.$tablet) {
@@ -35,7 +35,7 @@
 
     > li {
       // stylelint-disable selector-max-compound-selectors
-      > .sidebar-link {
+      > .vp-sidebar-link {
         font-size: 1.1em;
       }
 

@@ -2,7 +2,7 @@
 import { compareSync } from "bcrypt-ts";
 import { describe, expect, it } from "vitest";
 
-import { getEncryptConfig } from "../../src/node/config/index.js";
+import { getEncryptConfig } from "../../src/node/config/encrypt.js";
 
 const adminSinglePassword = "1234";
 const adminMultiplePassword = ["1234", "abcd"];

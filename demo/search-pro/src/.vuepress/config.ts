@@ -1,5 +1,6 @@
 import { defineUserConfig } from "@vuepress/cli";
 import { defaultTheme } from "@vuepress/theme-default";
+import { cut } from "nodejs-jieba";
 import { searchProPlugin } from "vuepress-plugin-search-pro";
 
 const base = <"/" | `/${string}/`>process.env["BASE"] || "/";
@@ -29,6 +30,10 @@ export default defineUserConfig({
           formatter: `Tag: $content`,
         },
       ],
+      indexOptions: {
+        tokenize: (text, fieldName) =>
+          fieldName === "id" ? [text] : cut(text, true),
+      },
     }),
   ],
 });

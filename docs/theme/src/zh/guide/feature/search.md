@@ -594,5 +594,5 @@ export default {
 
 ::::
 
-[docsearch]: https://v2.vuepress.vuejs.org/zh/reference/plugin/docsearch.html
-[search]: https://v2.vuepress.vuejs.org/zh/reference/plugin/search.html
+[docsearch]: https://vuejs.press/zh/reference/plugin/docsearch.html
+[search]: https://vuejs.press/zh/reference/plugin/search.html

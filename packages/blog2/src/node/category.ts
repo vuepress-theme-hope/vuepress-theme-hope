@@ -1,11 +1,12 @@
-import { type App, type Page, createPage } from "@vuepress/core";
+import type { App, Page } from "@vuepress/core";
+import { createPage } from "@vuepress/core";
 import { colors } from "@vuepress/utils";
 import { isFunction, isString, removeLeadingSlash } from "vuepress-shared/node";
 
-import { type BlogOptions } from "./options.js";
-import { type PageMap } from "./typings/index.js";
+import type { BlogOptions } from "./options.js";
+import type { PageMap } from "./typings/index.js";
 import { logger } from "./utils.js";
-import { type CategoryMap } from "../shared/index.js";
+import type { CategoryMap } from "../shared/index.js";
 
 const HMR_CODE = `
 if (import.meta.webpackHot) {

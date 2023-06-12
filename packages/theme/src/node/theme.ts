@@ -1,4 +1,4 @@
-import { type ThemeFunction } from "@vuepress/core";
+import type { ThemeFunction } from "@vuepress/core";
 import { watch } from "chokidar";
 import { isPlainObject } from "vuepress-shared/node";
 
@@ -23,11 +23,10 @@ import {
   prepareSeparatedConfigFile,
   prepareSidebarData,
   prepareSocialMediaIcons,
-  prepareThemeColorScss,
 } from "./prepare/index.js";
-import { type HopeThemeBehaviorOptions } from "./typings/index.js";
+import type { HopeThemeBehaviorOptions } from "./typings/index.js";
 import { TEMPLATE_FOLDER } from "./utils.js";
-import { type ThemeOptions } from "../shared/index.js";
+import type { ThemeOptions } from "../shared/index.js";
 
 export const hopeTheme =
   (
@@ -97,7 +96,6 @@ export const hopeTheme =
         Promise.all([
           prepareSidebarData(app, themeData, sidebarSorter),
           prepareHighLighterScss(app, plugins),
-          prepareThemeColorScss(app, themeData),
           prepareSocialMediaIcons(app, icons),
         ]).then(() => void 0),
 

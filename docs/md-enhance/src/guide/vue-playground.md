@@ -3,9 +3,17 @@ title: Vue Playground
 icon: fab fa-vuejs
 ---
 
-The plugin provides you vue playground support.
+The plugin provides you vue playground support with `@vue/repl` package.
 
 <!-- more -->
+
+::: tip
+
+Since we are providing a runtime compiler, we are introducing the whole `@vue/compiler-sfc` package with typescript support, so the whole Vue Playground chunk is > 4MB. So you should only use this if you are heavily depending on interactive Vue Playground.
+
+You can use [Vue Demo](./demo/vue.md) and [Playground Vue Preset](./playground.md#vue) as an alternative.
+
+:::
 
 ## Config
 
@@ -56,6 +64,22 @@ In it, you can use 3 directives:
 - `@setting` then a json block to customize settings
 
 You can see the below demos to see more details.
+
+You can import and call `defineVuePlaygroundConfig` in client config file to customize `@vue/repl`:
+
+```ts
+// .vuepress/client.ts
+import { defineClientConfig } from "@vuepress/client";
+import { defineVuePlaygroundConfig } from "vuepress-plugin-md-enhance/client";
+
+defineVuePlaygroundConfig({
+  // `@vue/repl` options here
+});
+
+export default defineClientConfig({
+  // ...
+});
+```
 
 ## Demo
 

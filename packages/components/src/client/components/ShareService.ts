@@ -1,14 +1,8 @@
 /* eslint-disable vue/require-default-prop */
 import { usePageData, usePageFrontmatter } from "@vuepress/client";
 import { isArray, isLinkHttp, isString } from "@vuepress/shared";
-import {
-  type PropType,
-  type VNode,
-  defineComponent,
-  h,
-  onMounted,
-  ref,
-} from "vue";
+import type { PropType, VNode } from "vue";
+import { defineComponent, h, onMounted, ref } from "vue";
 import {
   Popup,
   endsWith,
@@ -17,7 +11,7 @@ import {
   startsWith,
 } from "vuepress-shared/client";
 
-import { type ShareServiceOptions } from "../../shared/share.js";
+import type { ShareServiceOptions } from "../../shared/share.js";
 import { getMetaContent } from "../utils/index.js";
 
 import "balloon-css/balloon.css";
@@ -27,7 +21,7 @@ import "../styles/share-service.scss";
 declare const SHARE_CONTENT_SELECTOR: string;
 
 const renderIcon = (content: string, contentClass = ""): VNode => {
-  const className = ["share-icon", contentClass];
+  const className = ["vp-share-icon", contentClass];
 
   // is a link
   if (isLinkHttp(content) || isAbsoluteUrl(content))
@@ -212,7 +206,7 @@ export default defineComponent({
           "button",
           {
             type: "button",
-            class: ["share-button", { plain }],
+            class: ["vp-share-button", { plain }],
             "aria-label": name,
             "data-balloon-pos": "up",
             onClick: () => share(),
@@ -222,7 +216,7 @@ export default defineComponent({
             : icon
             ? renderIcon(icon)
             : h("div", {
-                class: "share-icon color-wrapper",
+                class: "vp-share-icon colorful",
                 style: {
                   background: color,
                 },

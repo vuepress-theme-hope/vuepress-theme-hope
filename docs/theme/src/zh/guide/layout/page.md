@@ -53,9 +53,9 @@ icon: home
 
 ::: note
 
-有效最大值取决于你通过 [markdown.headers.level](https://v2.vuepress.vuejs.org/zh/reference/config.html#markdown.headers) 提取了哪些级别的标题。
+有效最大值取决于你通过 [markdown.headers.level](https://vuejs.press/zh/reference/config.html#markdown.headers) 提取了哪些级别的标题。
 
-由于 [markdown.headers.level](https://v2.vuepress.vuejs.org/zh/reference/config.html#markdown.headers) 的默认值是 `[2, 3]` ，因此 `headerDepth` 的默认最大值是 `2` 。
+由于 [markdown.headers.level](https://vuejs.press/zh/reference/config.html#markdown.headers) 的默认值是 `[2, 3]` ，因此 `headerDepth` 的默认最大值是 `2` 。
 
 :::
 

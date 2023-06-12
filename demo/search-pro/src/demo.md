@@ -27,3 +27,7 @@ Here is main content of **article**.
 ```js
 const a = 1;
 ```
+
+## Title with Special Characters #@%/
+
+Content with regexp sequence 'a$' test.

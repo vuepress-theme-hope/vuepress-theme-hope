@@ -15,14 +15,20 @@ tag:
 
 可以在 Markdown 中使用的可用组件为:
 
+- `"ArtPlayer"`
 - `"AudioPlayer"`
 - `"Badge"`
 - `"BiliBili"`
 - `"CodePen"`
+- `"FontIcon"`
 - `"PDF"`
 - `"Replit"`
+- `"Share"`
 - `"StackBlitz"`
+<!-- - `"VidStack"` -->
+- `"SiteInfo"`
 - `"VideoPlayer"`
+- `"XiGua"`
 - `"YouTube"`
 
 你可以将 `plugin.components.components` 设置为需要的组件数组，默认情况下为 `["Badge"]`。
@@ -140,4 +146,4 @@ tag:
 
 :::
 
-[git-config]: https://v2.vuepress.vuejs.org/zh/reference/plugin/git.html
+[git-config]: https://vuejs.press/zh/reference/plugin/git.html

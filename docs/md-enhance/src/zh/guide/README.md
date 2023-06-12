@@ -9,7 +9,7 @@ icon: lightbulb
 
 请不用担心你的网站大小，如果你不启用相关功能，最终代码不会包含这些功能相关的代码。
 
-同时 VuePress 本身新增了一些 Markdown 语法，如果你对它们不熟悉，可以 [查看官方文档](https://v2.vuepress.vuejs.org/zh/guide/markdown.html)。
+同时 VuePress 本身新增了一些 Markdown 语法，如果你对它们不熟悉，可以 [查看官方文档](https://vuejs.press/zh/guide/markdown.html)。
 
 :::
 

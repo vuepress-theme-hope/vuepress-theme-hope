@@ -1,9 +1,6 @@
 @use "vuepress-shared/styles/arrow";
-@use "vuepress-shared/styles/wrapper";
 
-.page-nav {
-  @include wrapper.horizontal-wrapper;
-
+.vp-page-nav {
   display: flex;
   flex-wrap: wrap;
 
@@ -11,9 +8,21 @@
   margin-top: 0;
   padding-top: 0.5rem;
   padding-bottom: 0.5rem;
+
+  // NOTE: Compatible with Android Wechat
+  // padding-inline: 2rem;
+  padding-inline-start: 2rem;
+  padding-inline-end: 2rem;
   border-top: 1px solid var(--border-color);
 
   transition: border-top var(--color-transition);
+
+  @media (max-width: hope-config.$pad) {
+    // NOTE: Compatible with Android Wechat
+    // padding-inline: 1rem;
+    padding-inline-start: 1rem;
+    padding-inline-end: 1rem;
+  }
 
   @media print {
     display: none;

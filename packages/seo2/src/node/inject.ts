@@ -1,12 +1,12 @@
-import { type HeadConfig } from "@vuepress/core";
+import type { HeadConfig } from "@vuepress/core";
 import { startsWith } from "vuepress-shared/node";
 
-import {
-  type ArticleSchema,
-  type ArticleSeoContent,
-  type BlogPostingSchema,
-  type SeoContent,
-  type WebPageSchema,
+import type {
+  ArticleSchema,
+  ArticleSeoContent,
+  BlogPostingSchema,
+  SeoContent,
+  WebPageSchema,
 } from "./typings/index.js";
 
 interface MetaOptions {

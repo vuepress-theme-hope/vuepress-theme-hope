@@ -1,9 +1,9 @@
 import { container } from "@mdit/plugin-container";
-import { type PluginSimple } from "markdown-it";
+import type { PluginSimple } from "markdown-it";
 import type Token from "markdown-it/lib/token.js";
 import { utoa } from "vuepress-shared/node";
 
-import { type CodeDemoOptions } from "../../shared/index.js";
+import type { CodeDemoOptions } from "../../shared/index.js";
 
 export const CODE_DEMO_DEFAULT_SETTING: CodeDemoOptions = {
   useBabel: false,

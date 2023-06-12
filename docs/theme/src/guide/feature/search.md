@@ -409,5 +409,5 @@ See [Plugin Docs][search] for available options.
 
 :::
 
-[docsearch]: https://v2.vuepress.vuejs.org/reference/plugin/docsearch.html
-[search]: https://v2.vuepress.vuejs.org/reference/plugin/search.html
+[docsearch]: https://vuejs.press/reference/plugin/docsearch.html
+[search]: https://vuejs.press/reference/plugin/search.html

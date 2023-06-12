@@ -1,31 +1,36 @@
 import { isLinkExternal, isString } from "@vuepress/shared";
-import { type ComputedRef, computed } from "vue";
+import type { Ref } from "vue";
+import { ref, watch } from "vue";
+import type { Router } from "vue-router";
+import { useRouter } from "vue-router";
 
-import { useAutoLink, useThemeLocaleData } from "@theme-hope/composables/index";
+import { useThemeLocaleData } from "@theme-hope/composables/index";
+import { resolveLinkInfo } from "@theme-hope/utils/index";
 
-import {
-  type AutoLinkOptions,
-  type NavGroup,
-  type NavbarGroup,
-  type NavbarItem,
+import type {
+  AutoLinkOptions,
+  NavGroup,
+  NavbarGroup,
+  NavbarItem,
 } from "../../../../shared/index.js";
-import { type ResolvedThemeNavbarItem } from "../utils/index.js";
+import type { ResolvedThemeNavbarItem } from "../utils/index.js";
 
 export const resolveNavbarItem = (
+  router: Router,
   item: NavbarItem | NavbarGroup | string,
   prefix = ""
 ): ResolvedThemeNavbarItem => {
-  if (isString(item)) return useAutoLink(`${prefix}${item}`);
+  if (isString(item)) return resolveLinkInfo(router, `${prefix}${item}`);
 
   if ("children" in item)
     return {
       ...item,
       ...(item.link && !isLinkExternal(item.link)
-        ? useAutoLink(`${prefix}${item.link}`)
+        ? resolveLinkInfo(router, `${prefix}${item.link}`)
         : {}),
       children: item.children.map(
         (child) =>
-          resolveNavbarItem(child, `${prefix}${item.prefix || ""}`) as
+          resolveNavbarItem(router, child, `${prefix}${item.prefix || ""}`) as
             | NavGroup<AutoLinkOptions>
             | AutoLinkOptions
       ),
@@ -35,13 +40,24 @@ export const resolveNavbarItem = (
     ...item,
     link: isLinkExternal(item.link)
       ? item.link
-      : useAutoLink(`${prefix}${item.link}`).link,
+      : resolveLinkInfo(router, `${prefix}${item.link}`).link,
   };
 };
 
-export const useNavbarConfig = (): ComputedRef<ResolvedThemeNavbarItem[]> =>
-  computed(() =>
-    (useThemeLocaleData().value.navbar || []).map((item) =>
-      resolveNavbarItem(item)
-    )
-  );
+export const useNavbarItems = (): Ref<ResolvedThemeNavbarItem[]> => {
+  const themeLocaleData = useThemeLocaleData();
+  const router = useRouter();
+
+  const getNavbarItems = (): ResolvedThemeNavbarItem[] =>
+    (themeLocaleData.value.navbar || []).map((item) =>
+      resolveNavbarItem(router, item)
+    );
+
+  const navbarItems = ref(getNavbarItems());
+
+  watch(themeLocaleData, () => {
+    navbarItems.value = getNavbarItems();
+  });
+
+  return navbarItems;
+};

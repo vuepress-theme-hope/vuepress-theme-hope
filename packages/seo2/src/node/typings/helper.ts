@@ -1,7 +1,7 @@
-import { type Page, type PageFrontmatter } from "@vuepress/core";
-import { type GitData } from "@vuepress/plugin-git";
+import type { Page, PageFrontmatter } from "@vuepress/core";
+import type { GitData } from "@vuepress/plugin-git";
 
-import { SEOPluginFrontmatter } from "./frontmatter.js";
+import type { SEOPluginFrontmatter } from "./frontmatter.js";
 
 export interface SeoPluginPageData
   extends Record<string | number | symbol, unknown> {

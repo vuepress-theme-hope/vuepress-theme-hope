@@ -10,3 +10,4 @@ actions:
 ---
 
 <AutoCatalog />
+<AutoCatalog base="/not-exist/" />

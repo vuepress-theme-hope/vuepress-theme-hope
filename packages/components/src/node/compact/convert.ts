@@ -2,7 +2,7 @@ import { colors } from "@vuepress/utils";
 import { isNumber, isPlainObject } from "vuepress-shared/node";
 
 import { deprecatedLogger, droppedLogger } from "./utils.js";
-import { type ComponentOptions } from "../options/index.js";
+import type { ComponentOptions } from "../options/index.js";
 import { logger } from "../utils.js";
 
 /** @deprecated */

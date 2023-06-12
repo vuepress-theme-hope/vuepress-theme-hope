@@ -1,4 +1,5 @@
-import { type Code, loadScript } from "../utils/index.js";
+import type { Code } from "../utils/index.js";
+import { loadScript } from "../utils/index.js";
 
 export type ScriptLoadState = Record<string, Promise<void>>;
 

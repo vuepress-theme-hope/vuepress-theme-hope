@@ -1,10 +1,5 @@
 /* eslint-disable @typescript-eslint/naming-convention */
-import {
-  type App,
-  type AppDir,
-  type Page,
-  type PageFrontmatter,
-} from "@vuepress/core";
+import type { App, AppDir, Page, PageFrontmatter } from "@vuepress/core";
 import { fs } from "@vuepress/utils";
 
 import {
@@ -19,10 +14,10 @@ import {
   appendCanonical,
   appendJSONLD,
 } from "./inject.js";
-import { type SeoOptions } from "./options.js";
-import {
-  type SEOPluginFrontmatter,
-  type SeoPluginPageData,
+import type { SeoOptions } from "./options.js";
+import type {
+  SEOPluginFrontmatter,
+  SeoPluginPageData,
 } from "./typings/index.js";
 import { logger } from "./utils.js";
 

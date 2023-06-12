@@ -64,14 +64,6 @@ tag:
 
 :::
 
-## themeColor <Badge text="仅限 Root" type="warning" />
-
-- 类型: `Record<string, string> | false`
-- 默认值: `false`
-- 详情: [界面 → 主题色](../../guide/interface/theme-color.md)
-
-主题色选择器配置。
-
 ## fullscreen
 
 - 类型: `boolean`
@@ -105,32 +97,6 @@ tag:
 - 默认值: `true`
 
 自定义返回顶部按钮，将其设置为 `false` 会禁用该按钮。
-
-## mobileBreakPoint <Badge text="仅限 Root" type="warning" />
-
-- 类型: `number`
-- 默认值: `719`
-
-切换桌面布局和移动布局的窗口宽度，单位像素。
-
-::: warning
-
-你需要将此选项和 `.vuepress/config.scss` 中的 `$tablet` 保持一致。
-
-:::
-
-## pcBreakPoint <Badge text="仅限 Root" type="warning" />
-
-- 类型: `number`
-- 默认值: `1440`
-
-切换桌面布局和宽屏布局的窗口宽度，单位像素。
-
-::: warning
-
-你需要将此选项和 `.vuepress/config.scss` 中的 `$pc` 保持一致。
-
-:::
 
 ## pure <Badge text="仅限 Root" type="warning" />
 

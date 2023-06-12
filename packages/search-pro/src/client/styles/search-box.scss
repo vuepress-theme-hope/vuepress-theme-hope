@@ -43,39 +43,39 @@
     width: 1.25rem;
     height: 1.25rem;
   }
+}
 
-  .placeholder {
-    margin-inline: 0.25rem;
-    font-size: 1rem;
+.search-pro-placeholder {
+  margin-inline: 0.25rem;
+  font-size: 1rem;
 
-    @media (max-width: hope-config.$pad) {
-      display: none;
-    }
+  @media (max-width: hope-config.$pad) {
+    display: none;
   }
+}
 
-  .key-hints {
-    font-size: 0.75rem;
+.search-pro-key-hints {
+  font-size: 0.75rem;
 
-    @media (max-width: hope-config.$pad) {
-      display: none;
-    }
-
-    .key {
-      display: inline-block;
-
-      min-width: 1em;
-      margin-inline: 0.125rem;
-      padding: 0.25rem;
-      border: 1px solid var(--vp-brc);
-      border-radius: 4px;
-
-      box-shadow: 1px 1px 4px 0 var(--card-shadow);
-
-      line-height: 1;
-      letter-spacing: -0.1em;
-
-      transition: background var(--vp-ct), color var(--vp-ct),
-        border var(--vp-ct) box-shadow var(--vp-ct);
-    }
+  @media (max-width: hope-config.$pad) {
+    display: none;
   }
+}
+
+.search-pro-key {
+  display: inline-block;
+
+  min-width: 1em;
+  margin-inline: 0.125rem;
+  padding: 0.25rem;
+  border: 1px solid var(--vp-brc);
+  border-radius: 4px;
+
+  box-shadow: 1px 1px 4px 0 var(--card-shadow);
+
+  line-height: 1;
+  letter-spacing: -0.1em;
+
+  transition: background var(--vp-ct), color var(--vp-ct),
+    border var(--vp-ct) box-shadow var(--vp-ct);
 }

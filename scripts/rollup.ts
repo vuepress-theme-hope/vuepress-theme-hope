@@ -1,8 +1,10 @@
-import alias, { type Alias } from "@rollup/plugin-alias";
+import type { Alias } from "@rollup/plugin-alias";
+import alias from "@rollup/plugin-alias";
 import commonjs from "@rollup/plugin-commonjs";
 import { nodeResolve } from "@rollup/plugin-node-resolve";
-import replace, { type RollupReplaceOptions } from "@rollup/plugin-replace";
-import { type ModuleSideEffectsOption, type RollupOptions } from "rollup";
+import type { RollupReplaceOptions } from "@rollup/plugin-replace";
+import replace from "@rollup/plugin-replace";
+import type { ModuleSideEffectsOption, RollupOptions } from "rollup";
 import copy from "rollup-plugin-copy";
 import dts from "rollup-plugin-dts";
 import esbuild from "rollup-plugin-esbuild";
@@ -104,7 +106,7 @@ export const bundle = (
       (esbuild as unknown as typeof esbuild.default)({
         charset: "utf8",
         minify: isProduction,
-        target: "node14",
+        target: "node16",
       }),
       copyOptions.length
         ? // FIXME: This is an issue of ts NodeNext
@@ -134,7 +136,7 @@ export const bundle = (
             "vue",
             "vue-router",
             "vuepress-shared/client",
-            /\.s?css$/,
+            /\.s?css(?:\?module)?$/,
           ]
         : (
             typeof filePath === "object"

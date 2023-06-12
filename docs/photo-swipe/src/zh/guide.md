@@ -31,7 +31,21 @@ icon: lightbulb
 
 ## 自定义 PhotoSwipe 选项
 
-你可以通过 `options` 来将额外选项传递给 [`photo-swipe`](http://photoswipe.com/)
+你可以通过在客户端配置文件中导入和调用 `definePhotoSwipeOptions` 来将选项传递给 [`photo-swipe`](http://photoswipe.com/)：
+
+```ts
+// .vuepress/client.ts
+import { defineClientConfig } from "@vuepress/client";
+import { definePhotoSwipeOptions } from "vuepress-plugin-photo-swipe/client";
+
+definePhotoSwipeOptions({
+  // 在此设置 photoswipe 选项
+});
+
+export default defineClientConfig({
+  // ...
+});
+```
 
 ## 操作延迟
 
@@ -74,4 +88,4 @@ export default defineUserConfig({
 });
 ```
 
-For specific options, see [Config → Locale Settings](./config.md#locales).
+对于具体的选项，详见 [配置 → 多语言设置](./config.md#locales).

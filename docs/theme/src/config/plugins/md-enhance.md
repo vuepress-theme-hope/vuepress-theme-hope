@@ -16,12 +16,6 @@ The `vuepress-plugin-md-enhance` plugin is enabled by default and provides Markd
 
 `vuepress-theme-hope` passes `plugins.mdEnhance` in theme options as plugin options to `vuepress-plugin-md-enhance` plugin.
 
-::: tip
-
-If you don't need this feature, please set to `false`.
-
-:::
-
 ::: info
 
 `vuepress-theme-hope` will set the `container` option to `true` by default.
@@ -65,19 +59,31 @@ Whether to enable custom container including
 - danger
 - details
 
-### linkCheck
+### checkLinks
 
-- Type: `"always" | "dev" | "build" | "never" | boolean`
-- Default: `"dev"`
+- Type: `LinksCheckOptions`
 
-Whether to enable link check.
+  ```ts
+  type LinksCheckStatus = "always" | "dev" | "build" | "never";
 
-::: note
+  interface LinksCheckOptions {
+    /**
+     * Whether check dead links in markdown
+     *
+     * @default "dev"
+     */
+    status?: LinksCheckStatus;
 
-- `true` equals to `'always'`
-- `false` equals to `'never'`
+    /**
+     * Dead links to ignore
+     */
+    ignore?: (string | RegExp)[] | ((link: string, isDev: boolean) => boolean);
+  }
+  ```
 
-:::
+- Default: `{ status: "dev" }`
+
+Whether to enable links check.
 
 ### vPre
 
@@ -251,12 +257,12 @@ interface TaskListOptions {
 
 ### katex
 
-- Type: `KatexOptions & { mhchem?: boolean } | boolean`
+- Type: `KatexOptions & { copy?: boolean; mhchem?: boolean } | boolean`
 - Default: `false`
 
 Whether to enable $\TeX$ syntax support through KaTeX. You can pass an object to config KaTeX.
 
-In particular, you can enable the mhchem extension with `katex.mhchem: true`.
+In particular, you can enable the copy and mhchem extensions with `katex.copy: true` and `katex.mhchem: true`.
 
 Please see [Katex Docs](https://katex.org/docs/options.html) for available options.
 
@@ -655,23 +661,16 @@ Default value: `"https://unpkg.com/react-dom/umd/react-dom.production.min.js"`
 ### presentation
 
 - Type: `PresentationOptions | boolean`
-- Default: `false`
-
-Whether to enable presentation syntax support.
-
-You can set it with an object, the object will be used to config reveal.js.
-
-#### presentation.plugins
-
-- Type: `RevealPlugin[]`
 
   ```ts
   type RevealPlugin = "highlight" | "math" | "search" | "notes" | "zoom";
   ```
 
-- Required: No
+- Default: `false`
 
-Plugins you want to use on reveal.js.
+Whether to enable presentation syntax support.
+
+You can set it with an array, which represents enabled plugins.
 
 Acceptable values are:
 
@@ -684,13 +683,6 @@ Acceptable values are:
 <!-- - `"anything"`
 - `"audio"`
 - `"chalkboard"` -->
-
-#### presentation.revealConfig
-
-- Type: `Partial<RevealOptions>`
-- Required: No
-
-Config which you want to pass to reveal.js.
 
 ### delay
 

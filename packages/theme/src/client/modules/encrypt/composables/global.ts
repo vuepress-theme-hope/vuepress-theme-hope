@@ -1,6 +1,7 @@
 import { useSessionStorage, useStorage } from "@vueuse/core";
 import { compareSync } from "bcrypt-ts/browser";
-import { type ComputedRef, computed } from "vue";
+import type { ComputedRef } from "vue";
+import { computed } from "vue";
 
 import { useEncryptData } from "./utils.js";
 

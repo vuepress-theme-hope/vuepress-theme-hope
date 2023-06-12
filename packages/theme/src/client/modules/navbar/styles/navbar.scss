@@ -1,4 +1,4 @@
-.navbar {
+.vp-navbar {
   --navbar-line-height: calc(
     var(--navbar-height) - var(--navbar-vertical-padding) * 2
   );
@@ -51,14 +51,14 @@
     }
   }
 
-  &.hide-icon .nav-links .icon {
+  &.hide-icon .vp-nav-links .icon {
     display: none !important;
   }
 }
 
-.navbar-start,
-.navbar-end,
-.navbar-center {
+.vp-navbar-start,
+.vp-navbar-end,
+.vp-navbar-center {
   display: flex;
   flex: 1;
   align-items: center;
@@ -77,14 +77,14 @@
   }
 }
 
-.navbar-start {
+.vp-navbar-start {
   justify-content: start;
 }
 
-.navbar-center {
+.vp-navbar-center {
   justify-content: center;
 }
 
-.navbar-end {
+.vp-navbar-end {
   justify-content: end;
 }

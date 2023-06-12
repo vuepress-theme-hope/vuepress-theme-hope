@@ -1,13 +1,11 @@
-import { type Page, type Plugin } from "@vuepress/core";
-import {
-  type CopyrightOptions,
-  copyrightPlugin,
-} from "vuepress-plugin-copyright2";
+import type { Page, Plugin } from "@vuepress/core";
+import type { CopyrightOptions } from "vuepress-plugin-copyright2";
+import { copyrightPlugin } from "vuepress-plugin-copyright2";
 import { getAuthor, isPlainObject } from "vuepress-shared/node";
 
-import {
-  type ThemeData,
-  type ThemeNormalPageFrontmatter,
+import type {
+  ThemeData,
+  ThemeNormalPageFrontmatter,
 } from "../../shared/index.js";
 
 /**

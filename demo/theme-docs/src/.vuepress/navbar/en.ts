@@ -1,31 +1,31 @@
 import { navbar } from "vuepress-theme-hope";
-import { version } from "../version";
+import { version } from "../version.js";
 
 export const enNavbar = navbar([
   "/",
-  { text: "Demo", icon: "discover", link: "/demo/" },
+  "/demo/",
   {
     text: "Guide",
-    icon: "creative",
+    icon: "lightbulb",
     prefix: "/guide/",
     children: [
       {
         text: "Bar",
-        icon: "creative",
+        icon: "lightbulb",
         prefix: "bar/",
-        children: ["baz", { text: "...", icon: "more", link: "" }],
+        children: ["baz", { text: "...", icon: "ellipsis", link: "#" }],
       },
       {
         text: "Foo",
-        icon: "config",
+        icon: "lightbulb",
         prefix: "foo/",
-        children: ["ray", { text: "...", icon: "more", link: "" }],
+        children: ["ray", { text: "...", icon: "ellipsis", link: "#" }],
       },
     ],
   },
   {
     text: version,
-    icon: "note",
+    icon: "book",
     children: [
       {
         text: "V2 Docs",

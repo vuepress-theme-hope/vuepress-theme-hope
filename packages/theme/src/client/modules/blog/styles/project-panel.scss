@@ -1,7 +1,7 @@
 @use "sass:color";
 @use "sass:list";
 
-.project-panel {
+.vp-project-panel {
   position: relative;
   z-index: 2;
 
@@ -14,7 +14,7 @@
   margin-bottom: 12px;
 }
 
-.project-card {
+.vp-project-card {
   position: relative;
 
   width: calc(33% - 40px);
@@ -38,43 +38,6 @@
   &:hover {
     cursor: pointer;
     transform: scale(0.98, 0.98);
-  }
-
-  .name {
-    position: relative;
-    z-index: 2;
-
-    color: var(--grey3);
-
-    font-weight: 500;
-    font-size: 16px;
-
-    transition: color var(--color-transition);
-  }
-
-  .desc {
-    position: relative;
-    z-index: 2;
-
-    margin: 6px 0;
-
-    color: var(--dark-grey);
-
-    font-size: 13px;
-  }
-
-  .image {
-    position: relative;
-    z-index: 2;
-
-    float: right;
-
-    width: 40px;
-    height: 40px;
-
-    #{hope-config.$rtl-selector} & {
-      float: left;
-    }
   }
 
   .icon {
@@ -109,5 +72,42 @@
         }
       }
     }
+  }
+}
+
+.vp-project-name {
+  position: relative;
+  z-index: 2;
+
+  color: var(--grey3);
+
+  font-weight: 500;
+  font-size: 16px;
+
+  transition: color var(--color-transition);
+}
+
+.vp-project-desc {
+  position: relative;
+  z-index: 2;
+
+  margin: 6px 0;
+
+  color: var(--dark-grey);
+
+  font-size: 13px;
+}
+
+.vp-project-image {
+  position: relative;
+  z-index: 2;
+
+  float: right;
+
+  width: 40px;
+  height: 40px;
+
+  #{hope-config.$rtl-selector} & {
+    float: left;
   }
 }

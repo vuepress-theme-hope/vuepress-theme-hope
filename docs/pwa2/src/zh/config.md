@@ -3,13 +3,6 @@ title: 配置
 icon: gears
 ---
 
-## showInstall
-
-- 类型: `boolean`
-- 默认值: `true`
-
-是否在 Service Worker 首次成功注册时显示 PWA 安装按钮
-
 ## manifest
 
 - 类型: `ManifestOption`

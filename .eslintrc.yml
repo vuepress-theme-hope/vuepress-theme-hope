@@ -40,7 +40,8 @@ ignorePatterns:
   - "docs-shared/lib/**"
   - "packages/*/assets/**"
   - "packages/*/lib/**"
-  - "!.vuepress/**"
+  - "packages/create/template/**"
+  - "!**/.vuepress/**"
   - "**/.vuepress/.cache/**"
   - "**/.vuepress/.temp/**"
 
@@ -118,7 +119,7 @@ rules:
 
   import/consistent-type-specifier-style:
     - error
-    - prefer-inline
+    - prefer-top-level
 
   import/dynamic-import-chunkname:
     - error
@@ -138,7 +139,6 @@ rules:
   import/no-duplicates:
     - error
     - considerQueryString: true
-      prefer-inline: true
 
   import/no-named-default:
     - error
@@ -167,7 +167,7 @@ rules:
       newlines-between: always
 
   no-duplicate-imports:
-    - error
+    - off
 
   no-unmodified-loop-condition:
     - error
@@ -249,9 +249,6 @@ rules:
     - error
 
   vue/next-tick-style:
-    - error
-
-  vue/no-bare-strings-in-template:
     - error
 
   vue/no-boolean-default:
@@ -344,9 +341,6 @@ rules:
   vue/v-for-delimiter-style:
     - error
 
-  vue/v-on-handler-style:
-    - error
-
 overrides:
   - files:
       - "*.vue"
@@ -371,4 +365,6 @@ overrides:
       "@typescript-eslint/no-unsafe-assignment":
         - off
       "@typescript-eslint/no-unsafe-member-access":
+        - off
+      import/dynamic-import-chunkname:
         - off

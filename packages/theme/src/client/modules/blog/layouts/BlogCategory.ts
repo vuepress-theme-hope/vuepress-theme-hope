@@ -1,14 +1,9 @@
 import { usePageData, usePageFrontmatter } from "@vuepress/client";
-import {
-  type VNode,
-  computed,
-  defineComponent,
-  h,
-  resolveComponent,
-} from "vue";
-import {
-  type BlogCategoryFrontmatterOptions,
-  type BlogPluginFrontmatter,
+import type { VNode } from "vue";
+import { computed, defineComponent, h, resolveComponent } from "vue";
+import type {
+  BlogCategoryFrontmatterOptions,
+  BlogPluginFrontmatter,
 } from "vuepress-plugin-blog2";
 
 import DropTransition from "@theme-hope/components/transitions/DropTransition";
@@ -69,9 +64,9 @@ export default defineComponent({
       h(BlogWrapper, () =>
         h(
           "div",
-          { class: "page blog" },
+          { class: "vp-page vp-blog" },
           h("div", { class: "blog-page-wrapper" }, [
-            h("main", { class: "blog-main", id: "main-content" }, [
+            h("main", { id: "main-content", class: "vp-blog-main" }, [
               h(DropTransition, () =>
                 componentName.value
                   ? h(resolveComponent(componentName.value))
@@ -83,7 +78,9 @@ export default defineComponent({
                   )
                 : null,
             ]),
-            h(DropTransition, { delay: 0.16 }, () => h(InfoPanel)),
+            h(DropTransition, { delay: 0.16 }, () =>
+              h(InfoPanel, { key: "blog" })
+            ),
           ])
         )
       );

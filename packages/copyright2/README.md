@@ -1,6 +1,6 @@
 # vuepress-plugin-copyright2
 
-[![Version](https://img.shields.io/npm/v/vuepress-plugin-copyright2.svg?style=flat-square&logo=npm) ![Downloads](https://img.shields.io/npm/dm/vuepress-plugin-copyright2.svg?style=flat-square&logo=npm](https://www.npmjs.com/package/vuepress-plugin-copyright2)
+[![Version](https://img.shields.io/npm/v/vuepress-plugin-copyright2.svg?style=flat-square&logo=npm) ![Downloads](https://img.shields.io/npm/dm/vuepress-plugin-copyright2.svg?style=flat-square&logo=npm)](https://www.npmjs.com/package/vuepress-plugin-copyright2)
 
 Copyright plugin for VuePress.
 

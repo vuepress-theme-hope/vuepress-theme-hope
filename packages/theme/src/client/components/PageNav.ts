@@ -1,21 +1,20 @@
 import { usePageData, usePageFrontmatter } from "@vuepress/client";
 import { isPlainObject, isString } from "@vuepress/shared";
 import { useEventListener } from "@vueuse/core";
-import { type VNode, computed, defineComponent, h } from "vue";
+import type { VNode } from "vue";
+import { computed, defineComponent, h } from "vue";
+import { useRouter } from "vue-router";
 
 import AutoLink from "@theme-hope/components/AutoLink";
 import HopeIcon from "@theme-hope/components/HopeIcon";
-import {
-  useAutoLink,
-  useNavigate,
-  useThemeLocaleData,
-} from "@theme-hope/composables/index";
+import { useNavigate, useThemeLocaleData } from "@theme-hope/composables/index";
 import { useSidebarItems } from "@theme-hope/modules/sidebar/composables/index";
-import { type ResolvedSidebarItem } from "@theme-hope/modules/sidebar/utils/index";
+import type { ResolvedSidebarItem } from "@theme-hope/modules/sidebar/utils/index";
+import { resolveLinkInfo } from "@theme-hope/utils/index";
 
-import {
-  type AutoLinkOptions,
-  type ThemeNormalPageFrontmatter,
+import type {
+  AutoLinkOptions,
+  ThemeNormalPageFrontmatter,
 } from "../../shared/index.js";
 
 import "../styles/page-nav.scss";
@@ -26,9 +25,11 @@ import "../styles/page-nav.scss";
 const resolveFromFrontmatterConfig = (
   conf: unknown
 ): AutoLinkOptions | null | false => {
+  const router = useRouter();
+
   if (conf === false) return false;
 
-  if (isString(conf)) return useAutoLink(conf, true);
+  if (isString(conf)) return resolveLinkInfo(router, conf, true);
 
   if (isPlainObject<AutoLinkOptions>(conf)) return conf;
 
@@ -124,7 +125,7 @@ export default defineComponent({
 
     return (): VNode | null =>
       prevNavLink.value || nextNavLink.value
-        ? h("nav", { class: "page-nav" }, [
+        ? h("nav", { class: "vp-page-nav" }, [
             prevNavLink.value
               ? h(
                   AutoLink,

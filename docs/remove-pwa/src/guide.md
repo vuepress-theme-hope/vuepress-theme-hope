@@ -18,4 +18,4 @@ To solve this problem:
 
 :::
 
-[official-pwa]: https://v2.vuepress.vuejs.org/reference/plugin/pwa.html
+[official-pwa]: https://vuejs.press/reference/plugin/pwa.html

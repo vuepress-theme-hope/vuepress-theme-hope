@@ -9,7 +9,7 @@ We strongly recommend you to switch to V2 version, as V2 version provides the fo
 
 ## Overview
 
-V2 is coming together with [_VuePress2_](https://v2.vuepress.vuejs.org), with the power of [_Vite4_](https://vitejs.dev) / [_Webpack5_](https://webpack.js.org) and [_Vue3_](https://vuejs.org).
+V2 is coming together with [_VuePress2_](https://vuejs.press), with the power of [_Vite4_](https://vitejs.dev) / [_Webpack5_](https://webpack.js.org) and [_Vue3_](https://vuejs.org).
 
 V2 is a full rewrite including:
 

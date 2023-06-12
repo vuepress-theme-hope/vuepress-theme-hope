@@ -1,4 +1,4 @@
-import { type BaseCommentOptions } from "./base.js";
+import type { BaseCommentOptions } from "./base.js";
 
 export interface TwikooInitOptions {
   /**
@@ -18,6 +18,4 @@ export interface TwikooInitOptions {
   region?: string;
 }
 
-export interface TwikooOptions extends BaseCommentOptions, TwikooInitOptions {
-  provider: "Twikoo";
-}
+export type TwikooOptions = BaseCommentOptions & TwikooInitOptions;

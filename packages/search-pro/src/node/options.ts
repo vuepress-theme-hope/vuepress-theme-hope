@@ -1,10 +1,25 @@
-import { type LocaleConfig, type Page } from "@vuepress/core";
+import type { LocaleConfig, Page } from "@vuepress/core";
 
-import {
-  type SearchProCustomFieldFormatter,
-  type SearchProHotKeyOptions,
-  type SearchProLocaleData,
+import type {
+  SearchProCustomFieldFormatter,
+  SearchProHotKeyOptions,
+  SearchProLocaleData,
 } from "../shared/index.js";
+
+export interface SearchProIndexOptions {
+  /**
+   * Function to tokenize the index field item.
+   *
+   * 用于对索引字段项进行分词的函数。
+   */
+  tokenize?: (text: string, fieldName?: string) => string[];
+  /**
+   * Function to process or normalize terms in the index field.
+   *
+   * 用于处理或规范索引字段中的术语的函数。
+   */
+  processTerm?: (term: string) => string | string[] | null | undefined | false;
+}
 
 export interface SearchProCustomFieldOptions {
   /**
@@ -28,7 +43,24 @@ export interface SearchProCustomFieldOptions {
   formatter?: SearchProCustomFieldFormatter;
 }
 
-export interface SearchProOptions {
+export interface DeprecatedSearchProOptions {
+  /**
+   * @deprecated use `indexContent` instead
+   */
+  fullIndex?: never;
+
+  /**
+   * @deprecated use `resultHistoryCount` instead
+   */
+  historyCount?: never;
+
+  /**
+   * @deprecated use `searchDelay` instead
+   */
+  delay?: never;
+}
+
+export interface SearchProOptions extends DeprecatedSearchProOptions {
   /**
    * Whether index page content
    *
@@ -41,6 +73,15 @@ export interface SearchProOptions {
    * @default false
    */
   indexContent?: boolean;
+
+  /**
+   * Whether provide auto suggestions while typing
+   *
+   * 是否在输入时提供自动建议
+   *
+   * @default true
+   */
+  autoSuggestions?: boolean;
 
   /**
    * Max stored query history count
@@ -73,9 +114,18 @@ export interface SearchProOptions {
    *
    * 结束输入到开始搜索的延时
    *
-   * @default 300
+   * @default 150
    */
-  delay?: number;
+  searchDelay?: number;
+
+  /*
+   * Delay to start auto-suggesting after input
+   *
+   * 结束输入到开始自动建议的延时
+   *
+   * @default 0
+   */
+  suggestDelay?: number;
 
   /**
    * Custom field for search
@@ -91,7 +141,10 @@ export interface SearchProOptions {
    *
    * @description 当热键被按下时，搜索框的输入框会被聚焦，设置为空数组以禁用热键
    *
-   * @default [{key: "k", ctrl: true}]
+   * @default [
+   *   { key: "k", ctrl: true },
+   *   { key: "/", ctrl: true },
+   *  ]
    */
   hotKeys?: SearchProHotKeyOptions[];
 
@@ -123,4 +176,18 @@ export interface SearchProOptions {
    * @see [默认配置](https://github.com/vuepress-theme-hope/vuepress-theme-hope/blob/main/packages/search-pro/src/node/locales.ts)
    */
   locales?: LocaleConfig<SearchProLocaleData>;
+
+  /**
+   * Create Index option
+   *
+   * 创建索引选项
+   */
+  indexOptions?: SearchProIndexOptions;
+
+  /**
+   * Create Index option per locale
+   *
+   * 按语言的创建索引选项
+   */
+  indexLocaleOptions?: Record<string, SearchProIndexOptions>;
 }

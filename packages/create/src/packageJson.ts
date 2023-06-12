@@ -3,13 +3,10 @@ import { resolve } from "node:path";
 
 import inquirer from "inquirer";
 
-import { type CreateI18n, version } from "./config/index.js";
-import {
-  PACKAGE_NAME_REG,
-  type PackageManager,
-  VERSION_REG,
-  deepAssign,
-} from "./utils/index.js";
+import type { CreateI18n } from "./config/index.js";
+import { version } from "./config/index.js";
+import type { PackageManager } from "./utils/index.js";
+import { PACKAGE_NAME_REG, VERSION_REG, deepAssign } from "./utils/index.js";
 
 const getScript = (
   packageManager: PackageManager,
@@ -40,9 +37,9 @@ export const createPackageJson = async (
   const packageJsonPath = resolve(cwd, "package.json");
   const scripts = getScript(packageManager, source);
   const devDependencies = {
-    "@vuepress/client": "2.0.0-beta.61",
+    "@vuepress/client": "2.0.0-beta.63",
     vue: "^3.2.47",
-    vuepress: "2.0.0-beta.61",
+    vuepress: "2.0.0-beta.63",
     "vuepress-theme-hope": version,
   };
 

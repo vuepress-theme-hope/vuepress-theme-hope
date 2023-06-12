@@ -1,14 +1,7 @@
+@use "vuepress-shared/styles/reset";
+
+.mermaid-preview,
 .mermaid-wrapper {
-  overflow-x: auto;
-  padding: 0.6em 0.4em;
-  text-align: center;
-  transition: all 1s;
-
-  @media (max-width: hope-config.$mobile) {
-    margin: 0 -1.5rem;
-    padding: 0.6em 0;
-  }
-
   // mermaid style fix
   .node rect,
   .clusters rect,
@@ -19,6 +12,23 @@
   }
 }
 
+.mermaid-wrapper {
+  position: relative;
+
+  overflow-x: auto;
+
+  padding: 0.6em 0.4em;
+
+  text-align: center;
+
+  transition: all 1s;
+
+  @media (max-width: hope-config.$mobile) {
+    margin: 0 -1.5rem;
+    padding: 0.6em 0;
+  }
+}
+
 .mermaid-loading {
   color: var(--vp-tc);
 }
@@ -26,5 +36,57 @@
 .mermaid-content {
   @media print {
     page-break-inside: avoid;
+  }
+}
+
+.mermaid-actions {
+  text-align: end;
+}
+
+.mermaid-preview {
+  position: fixed;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  z-index: 800;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  background-color: rgb(255 255 255 / 80%);
+
+  #{hope-config.$dark-selector} & {
+    background-color: rgb(0 0 0 / 80%);
+  }
+
+  svg {
+    max-width: 100%;
+    max-height: 100%;
+  }
+}
+
+.preview-button,
+.download-button {
+  @include reset.button;
+
+  width: 2rem;
+  height: 2rem;
+  padding: 0.25rem;
+  color: var(--dark-grey);
+
+  @media (max-width: hope-config.$tablet) {
+    width: 1.5rem;
+    height: 1.5rem;
+  }
+
+  &:hover {
+    color: var(--vp-tc);
+  }
+
+  svg {
+    width: 100%;
+    height: 100%;
   }
 }

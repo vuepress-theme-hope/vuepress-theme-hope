@@ -3,7 +3,7 @@ title: 插件选项
 icon: gears
 ---
 
-## provider
+## provider <Badge text="仅限插件选项" type="warning"/>
 
 - 类型: `"Artalk" | "Giscus" | "Twikoo" | "Waline" | "None"`
 - 默认值: `"None"`

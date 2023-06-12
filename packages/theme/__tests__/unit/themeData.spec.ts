@@ -4,8 +4,9 @@ import { path } from "@vuepress/utils";
 import { describe, expect, it } from "vitest";
 
 import { emptyTheme } from "./__fixtures__/theme/empty.js";
-import { getStatus, getThemeData } from "../../src/node/config/index.js";
-import { type ThemeOptions } from "../../src/shared/index.js";
+import { getStatus } from "../../src/node/config/status.js";
+import { getThemeData } from "../../src/node/config/themeData.js";
+import type { ThemeOptions } from "../../src/shared/index.js";
 
 describe("should generate themeData correctly", () => {
   it("Should contain basic properties", () => {

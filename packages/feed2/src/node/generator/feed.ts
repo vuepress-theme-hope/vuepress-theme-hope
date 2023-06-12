@@ -1,10 +1,10 @@
 import { renderAtom } from "./atom/index.js";
 import { renderJSON } from "./json/index.js";
 import { renderRSS } from "./rss/index.js";
-import {
-  type FeedContributor,
-  type FeedInitOptions,
-  type FeedItemInformation,
+import type {
+  FeedContributor,
+  FeedInitOptions,
+  FeedItemInformation,
 } from "../typings/index.js";
 
 export class Feed {

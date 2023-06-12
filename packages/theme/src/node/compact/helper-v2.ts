@@ -1,15 +1,15 @@
-import { type UserConfig } from "@vuepress/cli";
+import type { UserConfig } from "@vuepress/cli";
 import { colors } from "@vuepress/utils";
 import { isFunction, isPlainObject } from "vuepress-shared/node";
 
 import { convertThemeOptions } from "./theme.js";
 import { deprecatedMsg } from "./utils.js";
-import {
-  type NavbarOptions,
-  type SidebarArrayOptions,
-  type SidebarObjectOptions,
-  type SidebarOptions,
-  type ThemeOptions,
+import type {
+  NavbarOptions,
+  SidebarArrayOptions,
+  SidebarObjectOptions,
+  SidebarOptions,
+  ThemeOptions,
 } from "../../shared/index.js";
 import { hopeTheme } from "../theme.js";
 import { logger } from "../utils.js";

@@ -105,11 +105,11 @@ Here are some other plugins that are not bundled by the theme, you can enable th
 
 - [@vuepress/plugin-theme-data][theme-data]: Composition API plugin for theme data
 
-[active-header-links]: https://v2.vuepress.vuejs.org/reference/plugin/active-header-links.html
-[container]: https://v2.vuepress.vuejs.org/reference/plugin/container.html
-[external-link-icon]: https://v2.vuepress.vuejs.org/reference/plugin/external-link-icon.html
-[git]: https://v2.vuepress.vuejs.org/reference/plugin/git.html
-[nprogress]: https://v2.vuepress.vuejs.org/reference/plugin/nprogress.html
-[prismjs]: https://v2.vuepress.vuejs.org/reference/plugin/prismjs.html
-[theme-data]: https://v2.vuepress.vuejs.org/reference/plugin/theme-data.html
-[vuepress]: https://v2.vuepress.vuejs.org/
+[active-header-links]: https://vuejs.press/reference/plugin/active-header-links.html
+[container]: https://vuejs.press/reference/plugin/container.html
+[external-link-icon]: https://vuejs.press/reference/plugin/external-link-icon.html
+[git]: https://vuejs.press/reference/plugin/git.html
+[nprogress]: https://vuejs.press/reference/plugin/nprogress.html
+[prismjs]: https://vuejs.press/reference/plugin/prismjs.html
+[theme-data]: https://vuejs.press/reference/plugin/theme-data.html
+[vuepress]: https://vuejs.press/

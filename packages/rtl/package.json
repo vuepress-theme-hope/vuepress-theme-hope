@@ -1,6 +1,6 @@
 {
   "name": "vuepress-plugin-rtl",
-  "version": "2.0.0-beta.206",
+  "version": "2.0.0-beta.225",
   "description": "rtl plugin for VuePress",
   "keywords": [
     "vuepress",
@@ -41,24 +41,24 @@
     "dev:ts": "tsc -b tsconfig.build.json --watch"
   },
   "engines": {
-    "node": "^14.18.0 || >=16.0.0",
+    "node": ">=16.19.0",
     "npm": ">=8",
     "pnpm": ">=7"
   },
   "dependencies": {
-    "@vuepress/client": "2.0.0-beta.61",
-    "@vuepress/shared": "2.0.0-beta.61",
-    "@vuepress/utils": "2.0.0-beta.61",
-    "vue": "^3.2.47",
+    "@vuepress/client": "2.0.0-beta.63",
+    "@vuepress/shared": "2.0.0-beta.63",
+    "@vuepress/utils": "2.0.0-beta.63",
+    "vue": "^3.3.4",
     "vuepress-shared": "workspace:*"
   },
   "devDependencies": {
-    "@vuepress/core": "2.0.0-beta.61"
+    "@vuepress/core": "2.0.0-beta.63"
   },
   "peerDependencies": {
-    "vuepress": "2.0.0-beta.61",
-    "vuepress-vite": "2.0.0-beta.61",
-    "vuepress-webpack": "2.0.0-beta.61"
+    "vuepress": "2.0.0-beta.63",
+    "vuepress-vite": "2.0.0-beta.63",
+    "vuepress-webpack": "2.0.0-beta.63"
   },
   "peerDependenciesMeta": {
     "vuepress": {

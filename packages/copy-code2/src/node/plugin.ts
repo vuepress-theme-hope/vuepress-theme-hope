@@ -1,4 +1,4 @@
-import { type PluginFunction } from "@vuepress/core";
+import type { PluginFunction } from "@vuepress/core";
 import { getDirname, path } from "@vuepress/utils";
 import { useSassPalettePlugin } from "vuepress-plugin-sass-palette";
 import {
@@ -10,7 +10,7 @@ import {
 } from "vuepress-shared/node";
 
 import { copyCodeLocales } from "./locales.js";
-import { type CopyCodeOptions } from "./options.js";
+import type { CopyCodeOptions } from "./options.js";
 import { PLUGIN_NAME, logger } from "./utils.js";
 
 const __dirname = getDirname(import.meta.url);
@@ -18,7 +18,7 @@ const __dirname = getDirname(import.meta.url);
 export const copyCodePlugin =
   (options: CopyCodeOptions = {}): PluginFunction =>
   (app) => {
-    checkVersion(app, PLUGIN_NAME, "2.0.0-beta.61");
+    checkVersion(app, PLUGIN_NAME, "2.0.0-beta.63");
 
     if (app.env.isDebug) logger.info("Options:", options);
 

@@ -91,6 +91,11 @@ icon: gears
      * 目录标题
      */
     title: string;
+
+    /**
+     * 空目录提示
+     */
+    empty: string;
   }
 
   interface AutoCatalogLocaleConfig {
@@ -128,35 +133,40 @@ icon: gears
 
 :::
 
-## AutoCatalog 组件
+## 客户端选项
 
-### 组件属性
+### defineAutoCatalogIconComponent
 
-#### base
+```ts
+export type AutoCatalogIconComponent = Component<{
+  icon: string;
+}>;
+export declare const defineAutoCatalogIconComponent: (
+  options: AutoCatalogIconComponent
+) => void;
+```
+
+自定义目录图标组件。
+
+## AutoCatalog 组件属性
+
+### base
 
 - 类型: `string`
-- 必填: `当前路由的基础路径`
+- 默认值: `当前路由的基础路径`
 
 目录基础路径
 
-#### level
+### level
 
 - 类型: `1 | 2 | 3`
 - 默认值: `3`
 
 Catalog 的最大层级
 
-#### index
+### index
 
 - 类型: `boolean`
 - 默认值: `false`
 
 是否在目录列表中显示索引
-
-### 组件插槽
-
-#### icon
-
-- 类型: `({ icon }: { icon: string }) => VNode`
-
-图标插槽，用于为目录渲染图标。

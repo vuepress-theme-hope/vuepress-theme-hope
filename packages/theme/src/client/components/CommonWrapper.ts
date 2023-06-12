@@ -5,10 +5,9 @@ import {
   useThrottleFn,
   useToggle,
 } from "@vueuse/core";
+import type { ComponentOptions, SlotsType, VNode } from "vue";
 import {
-  type ComponentOptions,
   Transition,
-  type VNode,
   computed,
   defineComponent,
   h,
@@ -30,9 +29,9 @@ import Navbar from "@theme-hope/modules/navbar/components/Navbar";
 import Sidebar from "@theme-hope/modules/sidebar/components/Sidebar";
 import { useSidebarItems } from "@theme-hope/modules/sidebar/composables/index";
 
-import {
-  type ThemeNormalPageFrontmatter,
-  type ThemeProjectHomePageFrontmatter,
+import type {
+  ThemeNormalPageFrontmatter,
+  ThemeProjectHomePageFrontmatter,
 } from "../../shared/index.js";
 
 import "../styles/common.scss";
@@ -41,6 +40,13 @@ export default defineComponent({
   name: "CommonWrapper",
 
   props: {
+    /**
+     * Extra class of container
+     *
+     * 容器额外类名
+     */
+    containerClass: { type: String, default: "" },
+
     /**
      * Whether disable navbar
      *
@@ -54,7 +60,31 @@ export default defineComponent({
      * 是否禁用侧边栏
      */
     noSidebar: Boolean,
+
+    /**
+     * Whether disable toc
+     */
+    noToc: Boolean,
   },
+
+  slots: Object as SlotsType<{
+    default: () => VNode | VNode[];
+
+    // navbar
+    navbarStartBefore?: () => VNode | VNode[];
+    navbarStartAfter?: () => VNode | VNode[];
+    navbarCenterBefore?: () => VNode | VNode[];
+    navbarCenterAfter?: () => VNode | VNode[];
+    navbarEndBefore?: () => VNode | VNode[];
+    navbarEndAfter?: () => VNode | VNode[];
+    navScreenTop?: () => VNode | VNode[];
+    navScreenBottom?: () => VNode | VNode[];
+
+    // sidebar
+    sidebar?: () => VNode | VNode[];
+    sidebarTop?: () => VNode | VNode[];
+    sidebarBottom?: () => VNode | VNode[];
+  }>,
 
   setup(props, { slots }) {
     const router = useRouter();
@@ -100,6 +130,13 @@ export default defineComponent({
       );
     });
 
+    const enableToc = computed(() =>
+      props.noToc || frontmatter.value.home
+        ? false
+        : frontmatter.value.toc ||
+          (themeLocale.value.toc !== false && frontmatter.value.toc !== false)
+    );
+
     const touchStart = { x: 0, y: 0 };
     const onTouchStart = (e: TouchEvent): void => {
       touchStart.x = e.changedTouches[0].clientX;
@@ -117,13 +154,6 @@ export default defineComponent({
         if (dx > 0 && touchStart.x <= 80) toggleMobileSidebar(true);
         else toggleMobileSidebar(false);
     };
-
-    const enableToc = computed(() =>
-      frontmatter.value.home
-        ? false
-        : frontmatter.value.toc ||
-          (themeLocale.value.toc !== false && frontmatter.value.toc !== false)
-    );
 
     /** Get scroll distance */
     const getScrollTop = (): number =>
@@ -192,11 +222,7 @@ export default defineComponent({
                   "no-navbar": !enableNavbar.value,
                   "no-sidebar":
                     !enableSidebar.value &&
-                    !(
-                      slots["sidebar"] ||
-                      slots["sidebarTop"] ||
-                      slots["sidebarBottom"]
-                    ),
+                    !(slots.sidebar || slots.sidebarTop || slots.sidebarBottom),
                   "has-toc": enableToc.value,
                   "hide-navbar": hideNavbar.value,
                   "sidebar-collapsed":
@@ -205,6 +231,7 @@ export default defineComponent({
                     isDesktopSidebarCollapsed.value,
                   "sidebar-open": isMobile.value && isMobileSidebarOpen.value,
                 },
+                props.containerClass,
                 frontmatter.value.containerClass || "",
               ],
               onTouchStart,
@@ -217,14 +244,14 @@ export default defineComponent({
                     Navbar,
                     { onToggleSidebar: () => toggleMobileSidebar() },
                     {
-                      startBefore: () => slots["navbarStartBefore"]?.(),
-                      startAfter: () => slots["navbarStartAfter"]?.(),
-                      centerBefore: () => slots["navbarCenterBefore"]?.(),
-                      centerAfter: () => slots["navbarCenterAfter"]?.(),
-                      endBefore: () => slots["navbarEndBefore"]?.(),
-                      endAfter: () => slots["navbarEndAfter"]?.(),
-                      screenTop: () => slots["navScreenTop"]?.(),
-                      screenBottom: () => slots["navScreenBottom"]?.(),
+                      startBefore: () => slots.navbarStartBefore?.(),
+                      startAfter: () => slots.navbarStartAfter?.(),
+                      centerBefore: () => slots.navbarCenterBefore?.(),
+                      centerAfter: () => slots.navbarCenterAfter?.(),
+                      endBefore: () => slots.navbarEndBefore?.(),
+                      endAfter: () => slots.navbarEndAfter?.(),
+                      screenTop: () => slots.navScreenTop?.(),
+                      screenBottom: () => slots.navScreenBottom?.(),
                     }
                   )
                 : null,
@@ -232,7 +259,7 @@ export default defineComponent({
               h(Transition, { name: "fade" }, () =>
                 isMobileSidebarOpen.value
                   ? h("div", {
-                      class: "sidebar-mask",
+                      class: "vp-sidebar-mask",
                       onClick: () => toggleMobileSidebar(false),
                     })
                   : null
@@ -260,17 +287,16 @@ export default defineComponent({
                 Sidebar,
                 {},
                 {
-                  ...(slots["sidebar"]
+                  ...(slots.sidebar
                     ? {
-                        default: (): VNode[] | undefined =>
-                          slots["sidebar"]?.(),
+                        default: (): VNode | VNode[] => slots.sidebar!(),
                       }
                     : {}),
-                  top: () => slots["sidebarTop"]?.(),
-                  bottom: () => slots["sidebarBottom"]?.(),
+                  top: () => slots.sidebarTop?.(),
+                  bottom: () => slots.sidebarBottom?.(),
                 }
               ),
-              slots["default"]?.(),
+              slots.default(),
               h(PageFooter),
             ]
           )

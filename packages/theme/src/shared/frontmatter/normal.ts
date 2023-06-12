@@ -1,6 +1,6 @@
-import { type ThemePageFrontmatter } from "./base.js";
-import { type PageInfo } from "../info.js";
-import { type AutoLinkOptions } from "../utils.js";
+import type { ThemePageFrontmatter } from "./base.js";
+import type { PageInfo } from "../info.js";
+import type { AutoLinkOptions } from "../utils.js";
 
 export interface ThemeNormalPageFrontmatter extends ThemePageFrontmatter {
   /**

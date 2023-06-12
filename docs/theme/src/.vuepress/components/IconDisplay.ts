@@ -1,5 +1,6 @@
-import { type VNode, defineComponent, h, onMounted, ref } from "vue";
-import { type CopyCodeLocaleConfig } from "vuepress-plugin-copy-code2";
+import type { VNode } from "vue";
+import { defineComponent, h, onMounted, shallowRef } from "vue";
+import type { CopyCodeLocaleConfig } from "vuepress-plugin-copy-code2";
 import { Message, useLocaleConfig } from "vuepress-shared/client";
 
 import "./icon-display.scss";
@@ -28,7 +29,7 @@ export default defineComponent({
 
   setup(props) {
     const locale = useLocaleConfig(COPY_CODE_LOCALES);
-    const icons = ref<string[]>([]);
+    const icons = shallowRef<string[]>([]);
 
     const copyToClipboard = (content: string) => {
       const selection = document.getSelection();

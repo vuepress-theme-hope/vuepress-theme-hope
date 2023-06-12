@@ -12,7 +12,7 @@
   opacity: 0;
 }
 
-.notice-mask {
+.vp-notice-mask {
   position: fixed;
   top: 0;
   left: 0;
@@ -28,7 +28,7 @@
   }
 }
 
-.notice-wrapper {
+.vp-notice-wrapper {
   position: fixed;
   top: 80px;
 
@@ -62,7 +62,7 @@
   }
 }
 
-.notice-title {
+.vp-notice-title {
   position: relative;
 
   margin: 0;
@@ -99,18 +99,18 @@
   }
 }
 
-.notice-content {
+.vp-notice-content {
   margin: 1rem 0.75rem;
   font-size: 14px;
   line-height: 1.5;
 }
 
-.notice-footer {
+.vp-notice-footer {
   padding-bottom: 8px;
   text-align: center;
 }
 
-.notice-footer-action {
+.vp-notice-footer-action {
   display: inline-block;
 
   margin: 4px;

@@ -1,6 +1,6 @@
 ---
 title: 幻灯片页
-icon: slides
+icon: person-chalkboard
 layout: Slide
 ---
 

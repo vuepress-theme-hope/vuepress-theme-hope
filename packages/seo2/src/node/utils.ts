@@ -1,4 +1,4 @@
-import { type App, type Page } from "@vuepress/core";
+import type { App, Page } from "@vuepress/core";
 import {
   Logger,
   entries,
@@ -10,8 +10,8 @@ import {
   removeLeadingSlash,
 } from "vuepress-shared/node";
 
-import { type SeoOptions } from "./options.js";
-import { type ExtendPage } from "./typings/index.js";
+import type { SeoOptions } from "./options.js";
+import type { ExtendPage } from "./typings/index.js";
 
 export const PLUGIN_NAME = "vuepress-plugin-seo2";
 

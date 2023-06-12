@@ -1,12 +1,5 @@
-import {
-  type Component,
-  type FunctionalComponent,
-  type VNode,
-  defineComponent,
-  h,
-  onBeforeUpdate,
-  ref,
-} from "vue";
+import type { Component, FunctionalComponent, SlotsType, VNode } from "vue";
+import { defineComponent, h, onBeforeUpdate, ref, shallowRef } from "vue";
 
 import "../styles/code-group.scss";
 
@@ -18,17 +11,18 @@ export interface CodeGroupItemProps {
   active?: boolean;
 }
 
-export const CodeGroupItem: FunctionalComponent<CodeGroupItemProps> = (
-  { active = false },
-  { slots }
-): VNode =>
+export const CodeGroupItem: FunctionalComponent<
+  CodeGroupItemProps,
+  Record<never, never>,
+  { default: () => VNode | VNode[] | undefined }
+> = ({ active = false }, { slots }): VNode =>
   h(
     "div",
     {
       class: ["code-group-item", { active }],
       "aria-selected": active,
     },
-    slots["default"]?.()
+    slots.default?.()
   );
 
 CodeGroupItem.displayName = "CodeGroupItem";
@@ -36,12 +30,16 @@ CodeGroupItem.displayName = "CodeGroupItem";
 export const CodeGroup = defineComponent({
   name: "CodeGroup",
 
+  slots: Object as SlotsType<{
+    default: () => VNode[];
+  }>,
+
   setup(_props, { slots }) {
     // index of current active item
     const activeIndex = ref(-1);
 
     // refs of the tab buttons
-    const tabRefs = ref<HTMLUListElement[]>([]);
+    const tabRefs = shallowRef<HTMLUListElement[]>([]);
 
     // after removing a code-group-item, we need to clear the ref
     // of the removed item to avoid issues caused by HMR
@@ -82,7 +80,7 @@ export const CodeGroup = defineComponent({
       // `setup()` function of current component is called
 
       // get children code-group-item
-      const items = (slots["default"]?.() || [])
+      const items = (slots.default?.() || [])
         .filter((vNode) => (vNode.type as Component).name === "CodeGroupItem")
         .map((vNode) => {
           if (vNode.props === null) vNode.props = {};

@@ -64,14 +64,6 @@ If you don't need this feature, set `darkmode: "disable"` to disable it.
 
 :::
 
-## themeColor <Badge text="Root only" type="warning" />
-
-- Type: `Record<string, string> | false`
-- Default: `false`
-- Details: [Interface → ThemeColor](../../guide/interface/theme-color.md)
-
-Theme color picker configuration.
-
 ## fullscreen <Badge text="Root only" type="warning" />
 
 - Type: `boolean`
@@ -106,32 +98,6 @@ Whether show the "full screen" button.
 - Details: [Interface → Back to top button](../../guide/interface/others.md#back-to-top-button)
 
 Back to top button customization, setting it to `false` disables the button.
-
-## mobileBreakPoint <Badge text="Root only" type="warning" />
-
-- Type: `number`
-- Default: `719`
-
-Window width switching mobile view and desktop view in pixels
-
-::: warning
-
-You should keep this option same value with `$tablet` in `.vuepress/config.scss`
-
-:::
-
-## pcBreakPoint <Badge text="Root only" type="warning" />
-
-- Type: `number`
-- Default: `1440`
-
-Window width switching wide screen view and desktop view in pixels
-
-::: warning
-
-You should keep this option same value with `$pc` in `.vuepress/config.scss`
-
-:::
 
 ## pure <Badge text="Root only" type="warning" />
 

@@ -1,16 +1,20 @@
-import { type PluginFunction } from "@vuepress/core";
+import type { PluginFunction } from "@vuepress/core";
 import { useSassPalettePlugin } from "vuepress-plugin-sass-palette";
 import { checkVersion, getLocales } from "vuepress-shared/node";
 
 import { generateCatalog, injectCatalogInformation } from "./autoCatalog.js";
+import { convertOptions } from "./compact/index.js";
 import { locales as defaultLocales } from "./locales.js";
-import { type AutoCatalogOptions } from "./options.js";
+import type { AutoCatalogOptions } from "./options.js";
 import { CLIENT_FOLDER, PLUGIN_NAME, logger } from "./utils.js";
 
 export const autoCatalogPlugin =
-  (options: AutoCatalogOptions = {}): PluginFunction =>
+  (options: AutoCatalogOptions = {}, legacy = true): PluginFunction =>
   (app) => {
-    checkVersion(app, PLUGIN_NAME, "2.0.0-beta.61");
+    if (legacy)
+      convertOptions(options as AutoCatalogOptions & Record<string, unknown>);
+
+    checkVersion(app, PLUGIN_NAME, "2.0.0-beta.63");
 
     if (app.env.isDebug) logger.info("Options:", options);
 
@@ -18,7 +22,6 @@ export const autoCatalogPlugin =
 
     const {
       component,
-      iconComponent,
       iconRouteMetaKey = "icon",
       indexRouteMetaKey = "index",
       locales,
@@ -36,7 +39,6 @@ export const autoCatalogPlugin =
           default: defaultLocales,
           config: locales,
         }),
-        AUTO_CATALOG_ICON_COMPONENT: iconComponent || "",
         AUTO_CATALOG_TITLE_META_KEY: titleRouteMetaKey,
         AUTO_CATALOG_ICON_META_KEY: iconRouteMetaKey,
         AUTO_CATALOG_ORDER_META_KEY: orderRouteMetaKey,

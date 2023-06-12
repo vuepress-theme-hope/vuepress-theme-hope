@@ -45,15 +45,15 @@ export default defineUserConfig({
       // getting article info
       getInfo: ({ frontmatter, title, data }) => ({
         title,
-        author: frontmatter.author || "",
+        author: frontmatter["author"] || "",
         date: frontmatter.date || null,
-        category: frontmatter.category || [],
-        tag: frontmatter.tag || [],
+        category: frontmatter["category"] || [],
+        tag: frontmatter["tag"] || [],
         excerpt:
           // support manually set excerpt through frontmatter
-          typeof frontmatter.excerpt === "string"
-            ? frontmatter.excerpt
-            : data?.excerpt || "",
+          typeof frontmatter["excerpt"] === "string"
+            ? frontmatter["excerpt"]
+            : data?.["excerpt"] || "",
       }),
 
       // generate excerpt for all pages excerpt those users choose to disable
@@ -65,7 +65,7 @@ export default defineUserConfig({
       category: [
         {
           key: "category",
-          getter: (page) => <string[]>page.frontmatter.category || [],
+          getter: (page) => <string[]>page.frontmatter["category"] || [],
           layout: "Category",
           itemLayout: "Category",
           frontmatter: () => ({ title: "Categories", sidebar: false }),
@@ -76,7 +76,7 @@ export default defineUserConfig({
         },
         {
           key: "tag",
-          getter: (page) => <string[]>page.frontmatter.tag || [],
+          getter: (page) => <string[]>page.frontmatter["tag"] || [],
           layout: "Tag",
           itemLayout: "Tag",
           frontmatter: () => ({ title: "Tags", sidebar: false }),
@@ -91,22 +91,23 @@ export default defineUserConfig({
         {
           key: "article",
           // remove archive articles
-          filter: (page) => !page.frontmatter.archive,
+          filter: (page) => !page.frontmatter["archive"],
           path: "/article/",
           layout: "Article",
           frontmatter: () => ({ title: "Articles", sidebar: false }),
           // sort pages with time and sticky
           sorter: (pageA, pageB) => {
-            if (pageA.frontmatter.sticky && pageB.frontmatter.sticky)
+            if (pageA.frontmatter["sticky"] && pageB.frontmatter["sticky"])
               return (
-                (pageB.frontmatter.sticky as number) -
-                (pageA.frontmatter.sticky as number)
+                (pageB.frontmatter["sticky"] as number) -
+                (pageA.frontmatter["sticky"] as number)
               );
 
-            if (pageA.frontmatter.sticky && !pageB.frontmatter.sticky)
+            if (pageA.frontmatter["sticky"] && !pageB.frontmatter["sticky"])
               return -1;
 
-            if (!pageA.frontmatter.sticky && pageB.frontmatter.sticky) return 1;
+            if (!pageA.frontmatter["sticky"] && pageB.frontmatter["sticky"])
+              return 1;
 
             if (!pageB.frontmatter.date) return 1;
             if (!pageA.frontmatter.date) return -1;

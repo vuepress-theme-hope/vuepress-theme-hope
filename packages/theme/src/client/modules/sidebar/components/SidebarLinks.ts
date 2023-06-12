@@ -1,11 +1,12 @@
-import { type PropType, type VNode, defineComponent, h, ref, watch } from "vue";
+import type { PropType, VNode } from "vue";
+import { defineComponent, h, ref, watch } from "vue";
 import { useRoute } from "vue-router";
 
 import SidebarChild from "@theme-hope/modules/sidebar/components/SidebarChild";
 import SidebarGroup from "@theme-hope/modules/sidebar/components/SidebarGroup";
 import { isMatchedSidebarItem } from "@theme-hope/modules/sidebar/utils/index";
 
-import { type ResolvedSidebarItem } from "../utils/index.js";
+import type { ResolvedSidebarItem } from "../utils/index.js";
 
 import "../styles/sidebar-links.scss";
 
@@ -47,7 +48,7 @@ export default defineComponent({
     return (): VNode | null =>
       h(
         "ul",
-        { class: "sidebar-links" },
+        { class: "vp-sidebar-links" },
         props.config.map((config, index) =>
           h(
             "li",

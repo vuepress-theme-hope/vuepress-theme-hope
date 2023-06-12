@@ -1,14 +1,14 @@
-import { type App } from "@vuepress/core";
+import type { App } from "@vuepress/core";
 import { colors, fs, path } from "@vuepress/utils";
 import { endsWith } from "vuepress-shared/node";
-import {
-  type ManifestEntry,
-  type ManifestTransform,
-  type ManifestTransformResult,
-  generateSW,
+import type {
+  ManifestEntry,
+  ManifestTransform,
+  ManifestTransformResult,
 } from "workbox-build";
+import { generateSW } from "workbox-build";
 
-import { type PWAOptions } from "./options.js";
+import type { PWAOptions } from "./options.js";
 import { logger } from "./utils.js";
 
 const imageFilter =

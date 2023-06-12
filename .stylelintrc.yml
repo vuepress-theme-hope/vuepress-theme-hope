@@ -5,3 +5,5 @@ rules:
     - true
     - ignoreShorthands:
         - /inset/
+  media-feature-range-notation: prefix
+  no-descending-specificity: null

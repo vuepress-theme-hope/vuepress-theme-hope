@@ -9,7 +9,7 @@
 
 <!-- markdownlint-restore -->
 
-[![Version](https://img.shields.io/npm/v/vuepress-plugin-md-enhance.svg?style=flat-square&logo=npm) ![Downloads](https://img.shields.io/npm/dm/vuepress-plugin-md-enhance.svg?style=flat-square&logo=npm](https://www.npmjs.com/package/vuepress-plugin-md-enhance)
+[![Version](https://img.shields.io/npm/v/vuepress-plugin-md-enhance.svg?style=flat-square&logo=npm) ![Downloads](https://img.shields.io/npm/dm/vuepress-plugin-md-enhance.svg?style=flat-square&logo=npm)](https://www.npmjs.com/package/vuepress-plugin-md-enhance)
 
 Markdown enhancement plugin📄 / Markdown 增强插件 📄
 

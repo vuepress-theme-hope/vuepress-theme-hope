@@ -1,5 +1,5 @@
-import { type App, type Page } from "@vuepress/core";
-import { type GitData } from "@vuepress/plugin-git";
+import type { App, Page } from "@vuepress/core";
+import type { GitData } from "@vuepress/plugin-git";
 import { colors, fs } from "@vuepress/utils";
 import { SitemapStream } from "sitemap";
 import {
@@ -8,13 +8,13 @@ import {
   removeLeadingSlash,
 } from "vuepress-shared/node";
 
-import { type ModifyTimeGetter, type SitemapOptions } from "./options.js";
-import {
-  type SitemapImageOption,
-  type SitemapLinkOption,
-  type SitemapNewsOption,
-  type SitemapPluginFrontmatter,
-  type SitemapVideoOption,
+import type { ModifyTimeGetter, SitemapOptions } from "./options.js";
+import type {
+  SitemapImageOption,
+  SitemapLinkOption,
+  SitemapNewsOption,
+  SitemapPluginFrontmatter,
+  SitemapVideoOption,
 } from "./typings/index.js";
 import { TEMPLATE_FOLDER, logger } from "./utils.js";
 

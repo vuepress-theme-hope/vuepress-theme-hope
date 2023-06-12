@@ -1,37 +1,15 @@
-.auto-catalog-wrapper {
+.vp-catalog {
   margin-top: 8px;
   margin-bottom: 8px;
 
-  .catalog-title {
-    color: inherit;
-    text-decoration: none;
-
-    &:hover {
-      color: var(--vp-tc);
-    }
+  .font-icon {
+    vertical-align: baseline;
+    margin-inline-end: 0.25rem;
   }
 
-  .main-title {
-    font-size: 1.75rem;
-  }
-
-  .child-title {
-    font-size: 1.3rem;
-
-    &.has-children {
-      border-bottom: 1px solid var(--vp-brc);
-      transition: border-color var(--vp-ct);
-    }
-  }
-
-  .sub-title {
-    color: var(--vp-clt);
-    font-size: 1.1rem;
-  }
-
-  .main-title,
-  .child-title,
-  .sub-title {
+  &-main-title,
+  &-child-title,
+  &-sub-title {
     margin-top: calc(0.5rem - var(--navbar-height, 3.6rem));
     margin-bottom: 0.5rem;
     padding-top: var(--navbar-height, 3.6rem);
@@ -42,42 +20,68 @@
     }
   }
 
-  .font-icon {
-    vertical-align: baseline;
-    margin-inline-end: 0.25rem;
+  &-main-title {
+    font-size: 1.75rem;
   }
 
-  .child-catalog-wrapper {
-    margin: 0;
-  }
+  &-child-title {
+    font-size: 1.3rem;
 
-  .child-catalog-item::marker {
-    color: var(--vp-clt);
-  }
-
-  .sub-catalog-wrapper {
-    display: flex;
-    flex-wrap: wrap;
-  }
-
-  .sub-catalog-item {
-    display: inline-block;
-
-    margin: 4px 8px;
-    padding: 4px 8px;
-    border-radius: 6px;
-
-    background-color: var(--vp-bgl);
-
-    line-height: 1.5;
-    overflow-wrap: break-word;
-
-    transition: background-color var(--vp-ct), color var(--vp-ct);
-
-    &:hover {
-      background-color: var(--vp-tcl);
-      color: var(--vp-bg);
-      text-decoration: none;
+    &.has-children {
+      border-bottom: 1px solid var(--vp-brc);
+      transition: border-color var(--vp-ct);
     }
   }
+
+  &-sub-title {
+    font-size: 1.1rem;
+  }
+
+  &-title {
+    color: inherit;
+    text-decoration: none;
+
+    &:hover {
+      color: var(--vp-tc);
+    }
+  }
+}
+
+.vp-child-catalogs {
+  margin: 0;
+}
+
+.vp-child-catalogs::marker {
+  color: var(--vp-clt);
+}
+
+.vp-sub-catalogs {
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.vp-sub-catalog {
+  display: inline-block;
+
+  margin: 4px 8px;
+  padding: 4px 8px;
+  border-radius: 6px;
+
+  background-color: var(--vp-bgl);
+
+  line-height: 1.5;
+  overflow-wrap: break-word;
+
+  transition: background-color var(--vp-ct), color var(--vp-ct);
+
+  &:hover {
+    background-color: var(--vp-tcl);
+    color: var(--vp-bg);
+    text-decoration: none !important;
+  }
+}
+
+.vp-empty-catalog {
+  font-size: 1.25rem;
+  text-align: center;
 }

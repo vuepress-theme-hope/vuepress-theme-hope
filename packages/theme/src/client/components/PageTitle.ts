@@ -1,11 +1,12 @@
 import { usePageData, usePageFrontmatter } from "@vuepress/client";
-import { type VNode, defineComponent, h } from "vue";
+import type { VNode } from "vue";
+import { defineComponent, h } from "vue";
 
 import HopeIcon from "@theme-hope/components/HopeIcon";
 import { usePageInfo, useThemeLocaleData } from "@theme-hope/composables/index";
 import PageInfo from "@theme-hope/modules/info/components/PageInfo";
 
-import { type ThemeNormalPageFrontmatter } from "../../shared/index.js";
+import type { ThemeNormalPageFrontmatter } from "../../shared/index.js";
 
 import "../styles/page-title.scss";
 
@@ -19,7 +20,7 @@ export default defineComponent({
     const { info, items } = usePageInfo();
 
     return (): VNode =>
-      h("div", { class: "page-title" }, [
+      h("div", { class: "vp-page-title" }, [
         h("h1", [
           themeLocale.value.titleIcon === false
             ? null

@@ -1,5 +1,7 @@
 /* eslint-disable vue/no-unused-properties */
-import { type VNode, computed, defineComponent, h } from "vue";
+import type { VNode } from "vue";
+import { computed, defineComponent, h, ref } from "vue";
+import { LoadingIcon } from "vuepress-shared/client";
 
 import { useSize } from "../composables/index.js";
 import { videoIframeAllow } from "../utils/index.js";
@@ -81,6 +83,8 @@ export default defineComponent({
   setup(props) {
     const { el, width, height } = useSize<HTMLIFrameElement>(props);
 
+    const loaded = ref(false);
+
     const videoLink = computed(
       () =>
         `https://www.ixigua.com/iframe/${props.id}?startTime=${
@@ -88,23 +92,30 @@ export default defineComponent({
         }&autoplay=${props.autoplay ? 1 : 0}`
     );
 
-    return (): VNode[] => [
-      h(
-        "div",
-        { class: "xi-gua-desc" },
-        h("a", { class: "sr-only", href: videoLink.value }, props.title)
-      ),
-      h("iframe", {
-        ref: el,
-        src: videoLink.value,
-        title: props.title,
-        class: "xi-gua-iframe",
-        allow: videoIframeAllow,
-        style: {
-          width: width.value,
-          height: height.value,
-        },
-      }),
-    ];
+    return (): (VNode | null)[] =>
+      props.id
+        ? [
+            h(
+              "div",
+              { class: "xi-gua-desc" },
+              h("a", { class: "sr-only", href: videoLink.value }, props.title)
+            ),
+            h("iframe", {
+              ref: el,
+              src: videoLink.value,
+              title: props.title,
+              class: "xi-gua-iframe",
+              allow: videoIframeAllow,
+              style: {
+                width: width.value,
+                height: loaded.value ? height.value : 0,
+              },
+              onLoad: () => {
+                loaded.value = true;
+              },
+            }),
+            loaded.value ? null : h(LoadingIcon),
+          ]
+        : [];
   },
 });

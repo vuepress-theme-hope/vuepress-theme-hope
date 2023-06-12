@@ -1,9 +1,9 @@
 import { createRequire } from "node:module";
 
-import { type App } from "@vuepress/core";
+import type { App } from "@vuepress/core";
 import { path } from "@vuepress/utils";
 
-import { type ThemeStatus } from "../../config/index.js";
+import type { ThemeStatus } from "../../config/index.js";
 import { CLIENT_FOLDER } from "../../utils.js";
 
 const require = createRequire(import.meta.url);
@@ -13,12 +13,22 @@ const require = createRequire(import.meta.url);
  */
 export const prepareSeparatedConfigFile = (
   app: App,
-  { enableBlog, enableEncrypt, enableSlide }: ThemeStatus
+  { enableAutoCatalog, enableBlog, enableEncrypt, enableSlide }: ThemeStatus
 ): Promise<string> => {
   const imports: string[] = [];
   const enhances: string[] = [];
   const setups: string[] = [];
+  const actions: string[] = [];
   const layouts = [];
+
+  if (enableAutoCatalog) {
+    imports.push(
+      `import { defineAutoCatalogIconComponent } from "${path.resolve(
+        require.resolve("vuepress-plugin-auto-catalog/client")
+      )}"`
+    );
+    actions.push(`defineAutoCatalogIconComponent(HopeIcon);`);
+  }
 
   if (enableBlog) {
     imports.push(
@@ -56,12 +66,17 @@ export const prepareSeparatedConfigFile = (
     `theme-hope/config.js`,
     `\
 import { defineClientConfig } from "@vuepress/client";
+import { VPLink } from "${path.resolve(
+      require.resolve("vuepress-shared/client")
+    )}";
 
 import { HopeIcon, Layout, NotFound, useScrollPromise, injectDarkmode, setupDarkmode, setupSidebarItems } from "${CLIENT_FOLDER}export.js";
 
 ${imports.join("\n")}
 
 import "${CLIENT_FOLDER}styles/index.scss";
+
+${actions.join("\n")}
 
 export default defineClientConfig({
   enhance: ({ app, router }) => {
@@ -76,8 +91,10 @@ export default defineClientConfig({
     // inject global properties
     injectDarkmode(app);
 
-    // render icon for auto-catalog
+    // provide HopeIcon as global component
     app.component("HopeIcon", HopeIcon);
+    // provide VPLink as global component
+    app.component("VPLink", VPLink);
 
 ${enhances.map((item) => `    ${item}`).join("\n")}
   },

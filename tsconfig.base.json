@@ -13,6 +13,7 @@
     "noUncheckedIndexedAccess": false,
     "noUnusedLocals": true,
     "noUnusedParameters": true,
+    "verbatimModuleSyntax": true,
 
     // Modules
     "baseUrl": "./",
@@ -23,13 +24,13 @@
     // Emit
     "downlevelIteration": false,
     "importHelpers": true,
-    "importsNotUsedAsValues": "remove",
     "newLine": "lf",
     "noEmitOnError": true,
     "removeComments": false,
     "inlineSources": true,
     "inlineSourceMap": false,
     "sourceMap": true,
+    "pretty": true,
 
     // JavaScript
     "allowJs": false,
@@ -41,16 +42,12 @@
 
     // lib
     "lib": ["DOM", "ESNext"],
-    // minimal node 14 support
-    "target": "ES2020",
     // minimal node 16 support
-    // "target": "ES2021",
+    "target": "ES2021",
 
     // Compiler Diagnostics
     "diagnostics": false,
     "listEmittedFiles": false,
-
-    "skipLibCheck": true,
-    "pretty": true
+    "skipLibCheck": true
   }
 }

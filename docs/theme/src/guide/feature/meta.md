@@ -53,4 +53,4 @@ To hide these items globally, set the corresponding items below to `false` in th
 - `contributors`: whether to show page contributors
 - `editLink`: whether to display "edit page" link
 
-[git]: https://v2.vuepress.vuejs.org/reference/plugin/git.html
+[git]: https://vuejs.press/reference/plugin/git.html

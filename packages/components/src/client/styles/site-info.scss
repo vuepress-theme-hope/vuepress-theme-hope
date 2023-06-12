@@ -1,4 +1,4 @@
-.site-info {
+.vp-site-info {
   position: relative;
 
   display: inline-block;
@@ -31,7 +31,7 @@
   }
 }
 
-.site-info-navigator {
+.vp-site-info-navigator {
   position: absolute;
   top: 0;
   right: 0;
@@ -42,7 +42,7 @@
   display: block;
 }
 
-.site-info-preview {
+.vp-site-info-preview {
   position: absolute;
   top: 0;
   right: 0;
@@ -50,7 +50,7 @@
   left: 0;
 }
 
-.site-info-detail {
+.vp-site-info-detail {
   position: absolute;
   top: 0;
   right: 0;
@@ -84,18 +84,18 @@
     opacity: 0.75;
   }
 
-  .site-info:hover & {
+  .vp-site-info:hover & {
     opacity: 0;
   }
 }
 
-.site-info-logo {
+.vp-site-info-logo {
   z-index: 1;
   height: 3rem;
   margin: 0 auto;
 }
 
-.site-info-name {
+.vp-site-info-name {
   z-index: 1;
 
   margin-bottom: 8px;
@@ -107,7 +107,7 @@
   font-size: 20px;
 }
 
-.site-info-desc {
+.vp-site-info-desc {
   z-index: 1;
 
   flex-shrink: 1;
@@ -121,7 +121,7 @@
   text-overflow: ellipsis;
 }
 
-.site-info-source-wrapper {
+.vp-site-info-source-wrapper {
   position: absolute;
 
   // NOTE: Compatible with Android Wechat
@@ -136,7 +136,7 @@
   }
 }
 
-.site-info-source {
+.vp-site-info-source {
   display: inline-block;
 
   width: 20px;

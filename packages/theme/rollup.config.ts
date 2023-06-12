@@ -14,7 +14,7 @@ export default [
     {
       alias: [
         {
-          find: /^@theme-hope(.*)/,
+          find: /^@theme-hope\/(.*)/,
           replacement: "./src/client/$1.ts",
         },
       ],

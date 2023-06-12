@@ -1,6 +1,6 @@
 ---
 title: Bar 功能
-icon: creative
+icon: lightbulb
 ---
 
 ## 介绍

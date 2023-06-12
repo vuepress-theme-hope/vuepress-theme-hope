@@ -1,7 +1,8 @@
-import { type App, type HeadConfig } from "@vuepress/core";
+import type { App, HeadConfig } from "@vuepress/core";
 import { keys } from "vuepress-shared/node";
 
-import { type ResolvedFeedOptionsMap, getFilename } from "./options.js";
+import type { ResolvedFeedOptionsMap } from "./options.js";
+import { getFilename } from "./options.js";
 import { resolveUrl } from "./utils/index.js";
 
 export const injectLinksToHead = (
@@ -37,7 +38,7 @@ export const injectLinksToHead = (
     };
 
     // ensure head exists
-    if (!siteData.head) siteData.head = [];
+    siteData.head ??= [];
 
     // add atom link
     if (atom)
@@ -71,25 +72,23 @@ export const injectLinksToHead = (
           name: string,
           fileName: string,
           type: string
-        ): HeadConfig => {
-          return [
-            "link",
-            {
-              rel: "alternate",
-              type,
-              href: resolveUrl(localeOptions.hostname, base, fileName),
-              title: `${
-                siteData.locales[pathLocale]?.title ||
-                siteData.title ||
-                siteData.locales["/"]?.title ||
-                ""
-              } ${name} Feed`,
-            },
-          ];
-        };
+        ): HeadConfig => [
+          "link",
+          {
+            rel: "alternate",
+            type,
+            href: resolveUrl(localeOptions.hostname, base, fileName),
+            title: `${
+              siteData.locales[pathLocale]?.title ||
+              siteData.title ||
+              siteData.locales["/"]?.title ||
+              ""
+            } ${name} Feed`,
+          },
+        ];
 
         // ensure head exists
-        if (!page.frontmatter.head) page.frontmatter.head = [];
+        page.frontmatter.head ??= [];
 
         // add atom link
         if (localeOptions.atom)

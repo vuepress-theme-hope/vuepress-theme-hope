@@ -4,8 +4,11 @@ export default [
   ...bundle("node/index", {
     dtsExternal: ["vuepress-shared"],
   }),
-  ...bundle("client/config", {
-    external: ["photoswipe"],
-    copy: [["client/styles", "client"]],
-  }),
+  ...bundle(
+    { base: "client", files: ["config", "index"] },
+    {
+      external: ["photoswipe"],
+      copy: [["client/styles", "client"]],
+    }
+  ),
 ];

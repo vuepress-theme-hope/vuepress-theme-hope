@@ -42,4 +42,4 @@ Routes are generated according to the relative path of your Markdown files. Each
 
 ## VuePress Official Docs
 
-- [VuePress](https://v2.vuepress.vuejs.org/)
+- [VuePress](https://vuejs.press/)

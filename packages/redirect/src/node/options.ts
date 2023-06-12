@@ -1,8 +1,8 @@
-import { type App, type LocaleConfig } from "@vuepress/core";
+import type { App, LocaleConfig } from "@vuepress/core";
 
-import {
-  type LocaleRedirectConfig,
-  type RedirectLocaleData,
+import type {
+  LocaleRedirectConfig,
+  RedirectLocaleData,
 } from "../shared/index.js";
 
 export interface RedirectOptions

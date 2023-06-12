@@ -1,7 +1,7 @@
 import { getDirname, path } from "@vuepress/utils";
 import { Logger, ensureEndingSlash } from "vuepress-shared/node";
 
-import { type AvailableComponent } from "./options/index.js";
+import type { AvailableComponent } from "./options/index.js";
 
 const __dirname = getDirname(import.meta.url);
 
@@ -17,6 +17,7 @@ export const AVAILABLE_COMPONENTS: AvailableComponent[] = [
   "Share",
   "SiteInfo",
   "StackBlitz",
+  "VidStack",
   "VideoPlayer",
   "XiGua",
   "YouTube",

@@ -23,7 +23,6 @@ description: 分享组件，将页面内容分享到社交媒体。
 <Share :services="['qq','weibo']" />
 
 ```md
-<Share />
 <Share services="qq,weibo" />
 <Share :services="['qq','weibo']" />
 ```

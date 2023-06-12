@@ -1,21 +1,16 @@
-import { type PluginFunction } from "@vuepress/core";
+import type { PluginFunction } from "@vuepress/core";
 import { useSassPalettePlugin } from "vuepress-plugin-sass-palette";
 import { checkVersion, getLocales } from "vuepress-shared/node";
 
 import { convertOptions } from "./compact/index.js";
+import { CLIENT_FOLDER, PLUGIN_NAME } from "./constant.js";
 import { generateAutoLocaleRedirects, generateRedirects } from "./generate.js";
 import { ensureRootHomePage } from "./homepage.js";
 import { getLocaleConfig } from "./locale.js";
 import { redirectLocales } from "./locales.js";
-import { type RedirectOptions } from "./options.js";
+import type { RedirectOptions } from "./options.js";
 import { prepareRedirects } from "./prepare.js";
-import {
-  CLIENT_FOLDER,
-  PLUGIN_NAME,
-  getRedirectMap,
-  handleRedirectTo,
-  logger,
-} from "./utils.js";
+import { getRedirectMap, handleRedirectTo, logger } from "./utils/index.js";
 
 export const redirectPlugin =
   (options: RedirectOptions = {}, legacy = true): PluginFunction =>
@@ -23,7 +18,7 @@ export const redirectPlugin =
     // TODO: Remove this in v2 stable
     if (legacy)
       convertOptions(options as RedirectOptions & Record<string, unknown>);
-    checkVersion(app, PLUGIN_NAME, "2.0.0-beta.61");
+    checkVersion(app, PLUGIN_NAME, "2.0.0-beta.63");
 
     if (app.env.isDebug) logger.info("Options:", options);
 

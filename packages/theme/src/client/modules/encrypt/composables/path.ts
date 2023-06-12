@@ -1,7 +1,8 @@
 import { usePageData } from "@vuepress/client";
 import { isPlainObject } from "@vuepress/shared";
 import { useSessionStorage, useStorage } from "@vueuse/core";
-import { type ComputedRef, computed } from "vue";
+import type { ComputedRef } from "vue";
+import { computed } from "vue";
 import { keys, startsWith } from "vuepress-shared/client";
 
 import { checkToken } from "@theme-hope/modules/encrypt/utils/index";

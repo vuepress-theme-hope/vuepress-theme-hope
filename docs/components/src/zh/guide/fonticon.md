@@ -169,5 +169,5 @@ Icon name
 :::
 
 <script setup lang="ts">
-import IconDisplay from '@IconDisplay';
+import IconDisplay from "@IconDisplay";
 </script>

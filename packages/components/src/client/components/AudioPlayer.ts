@@ -1,13 +1,12 @@
-import { type Options as PlyrOptions } from "plyr";
+import type { Options as PlyrOptions } from "plyr";
+import type { PropType, VNode } from "vue";
 import {
-  type PropType,
-  type VNode,
   computed,
   defineComponent,
   h,
   onBeforeMount,
   onMounted,
-  ref,
+  shallowRef,
 } from "vue";
 
 import { getLink } from "../utils/index.js";
@@ -85,7 +84,7 @@ export default defineComponent({
 
   setup(props) {
     let player: Plyr | null = null;
-    const audio = ref<HTMLAudioElement>();
+    const audio = shallowRef<HTMLAudioElement>();
 
     const plyrOptions = computed(() => ({
       hideYouTubeDOMError: true,
@@ -112,27 +111,30 @@ export default defineComponent({
       h(
         "div",
         {
-          class: "audio-player-wrapper",
+          class: "vp-audio-player",
           style: {
             width: props.width,
           },
         },
         [
           h("a", {
-            class: "audio-print",
+            class: "sr-only",
             href: getLink(props.src),
             innerHTML: props.title || "An audio",
           }),
           props.poster
             ? h("img", {
-                class: "audio-poster",
+                class: "vp-audio-player-poster",
                 src: getLink(props.poster),
                 "no-view": "",
               })
             : null,
-          h("div", { class: "audio-info" }, [
+          h("div", { class: "vp-audio-player-info" }, [
             props.title
-              ? h("div", { class: "audio-title", innerHTML: props.title })
+              ? h("div", {
+                  class: "vp-audio-player-title",
+                  innerHTML: props.title,
+                })
               : null,
             h(
               "audio",

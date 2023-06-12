@@ -7,11 +7,11 @@ heroText: vuepress-plugin-blog2
 tagline: Blog plugin for VuePress2
 actions:
   - text: Guide 💡
-    link: /guide.html
+    link: ./guide.html
     type: primary
 
   - text: Config 🛠
-    link: /config.html
+    link: ./config.html
 
 footer: Theme by <a href="https://theme-hope.vuejs.press" target="_blank">VuePress Theme Hope</a> | MIT Licensed, Copyright © 2019-present Mr.Hope
 
@@ -93,9 +93,3 @@ If you were using `@vuepress/plugin-blog` in VuePress1, you should know that thi
 - `vuepress-plugin-blog2` however, is targeting theme developers, and only have < 1kb gzipped client chunk size.
 
   Since `siteData.pages` is no longer available in VuePress2 for scalability reasons, the plugin is only injecting them to routeMeta on node side and provide composition apis for you to get them on client side. While it does not provide any related features such as pagination, feed, sitemap. Mainly, you will get collections through functions returning values from page objects, and you will need to use other plugins to provide other features, and handle pagination yourself.
-
-<NetlifyBadge />
-
-<script setup lang="ts">
-import NetlifyBadge from "@NetlifyBadge";
-</script>

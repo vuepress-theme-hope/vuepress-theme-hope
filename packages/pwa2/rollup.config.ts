@@ -9,10 +9,10 @@ export default [
     {
       base: "client",
       files: [
-        "components/PWAInstall",
         "components/SWUpdatePopup",
         "components/SWHintPopup",
         "composables/setup",
+        "index",
       ],
     },
     {

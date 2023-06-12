@@ -7,11 +7,11 @@ heroText: vuepress-plugin-reading-time2
 tagline: Expect reading time and word count statistics
 actions:
   - text: Guide 💡
-    link: /guide.html
+    link: ./guide.html
     type: primary
 
   - text: Config 🛠
-    link: /config.html
+    link: ./config.html
 
 footer: Theme by <a href="https://theme-hope.vuejs.press" target="_blank">VuePress Theme Hope</a> | MIT Licensed, Copyright © 2019-present Mr.Hope
 
@@ -79,9 +79,3 @@ export default {
 ```
 
 :::
-
-<NetlifyBadge />
-
-<script setup lang="ts">
-import NetlifyBadge from "@NetlifyBadge";
-</script>

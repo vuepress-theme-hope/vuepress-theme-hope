@@ -206,6 +206,42 @@ VuePress 本质上是一个 SPA。这意味着你只需要缓存主页并从主�
 
 你可以酌情根据需要设置它们。详细的选项请见 [配置页](config.md)。
 
+## 辅助函数
+
+该插件还提供了一些辅助函数来帮助您操作 Service Worker，您可以通过 `vuepress-plugin-pwa2/client` 导入它们。
+
+```ts
+/**
+ * 强制更新页面内容
+ */
+export const forceUpdate: () => void;
+
+/**
+ * 在 `serviceWorkerPath` 下注册 Service Worker
+ *
+ * @param serviceWorkerPath Service Worker 路径
+ * @param hooks Service Worker 钩子
+ * @param showStatus 是否在控制台显示状态
+ */
+export const registerSW: (
+  serviceWorkerPath: string,
+  hooks?: Hooks,
+  showStatus?: boolean
+) => Promise<void>;
+
+/**
+ * 在当前等待中的 Service Worker 中调用 `skipWaiting()`
+ */
+export const skipWaiting: (registration: ServiceWorkerRegistration) => void;
+
+/**
+ * 在当前激活的 Service Worker 中调用 `unregister()`
+ *
+ * @returns `true` 表示注销成功，`false` 表示注销失败
+ */
+export const unregisterSW: () => Promise<boolean>;
+```
+
 ## 相关阅读
 
 更多内容，请详见:

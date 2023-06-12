@@ -1,4 +1,4 @@
-import { type PageInfo } from "../../info.js";
+import type { PageInfo } from "../../info.js";
 
 export interface BlogLocaleData extends Record<string, string> {
   /** 文章文字 */

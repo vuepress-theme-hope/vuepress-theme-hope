@@ -1,11 +1,11 @@
-import { type App } from "@vuepress/core";
+import type { App } from "@vuepress/core";
 import { colors } from "@vuepress/utils";
 import { isPlainObject } from "vuepress-shared/node";
 
-import {
-  type PluginsOptions,
-  type PrismjsOptions,
-  type PrismjsTheme,
+import type {
+  PluginsOptions,
+  PrismjsOptions,
+  PrismjsTheme,
 } from "../../shared/index.js";
 import { logger } from "../utils.js";
 

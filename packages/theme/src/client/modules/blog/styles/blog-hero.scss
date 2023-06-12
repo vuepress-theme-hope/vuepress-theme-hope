@@ -1,6 +1,6 @@
 @use "vuepress-shared/styles/reset";
 
-.blog-hero {
+.vp-blog-hero {
   position: relative;
 
   display: flex;
@@ -26,88 +26,9 @@
     color: var(--text-color);
   }
 
-  .mask {
-    position: absolute;
-    top: 0;
-    right: 0;
-    bottom: 0;
-    left: 0;
-
-    &::after {
-      content: " ";
-
-      position: absolute;
-      top: 0;
-      right: 0;
-      bottom: 0;
-      left: 0;
-      z-index: 1;
-
-      display: block;
-
-      background: var(--light-grey);
-
-      opacity: 0.2;
-    }
-  }
-
-  > :not(.mask) {
+  > :not(.vp-blog-mask) {
     position: relative;
     z-index: 2;
-  }
-
-  h1 {
-    margin: 0.5rem auto;
-    font-weight: bold;
-    font-size: 2rem;
-
-    @media (min-width: hope-config.$pc) {
-      font-size: 2.25rem;
-    }
-
-    @media (max-width: hope-config.$tablet) {
-      font-size: 1.75rem;
-    }
-  }
-
-  .hero-image {
-    display: block;
-    max-width: 100%;
-    max-height: 15rem;
-    margin: 1.5rem auto;
-
-    @media (max-width: hope-config.$tablet) {
-      max-height: 12rem;
-    }
-
-    &.light {
-      display: block;
-
-      #{hope-config.$dark-selector} & {
-        display: none;
-      }
-    }
-
-    &.dark {
-      display: none;
-
-      #{hope-config.$dark-selector} & {
-        display: block;
-      }
-    }
-  }
-
-  .hero-image + h1 {
-    margin: 0 auto;
-  }
-
-  .description {
-    margin: 1.2rem auto 0;
-    font-size: 1.5rem;
-
-    @media (max-width: hope-config.$tablet) {
-      font-size: 1.25rem;
-    }
   }
 
   .slide-down-button {
@@ -145,13 +66,108 @@
   &.fullscreen {
     height: calc(100vh - var(--navbar-height)) !important;
 
-    .mask {
+    .vp-blog-mask {
       background-position-y: top !important;
     }
 
     .slide-down-button {
       display: block;
     }
+  }
+}
+
+.vp-blog-mask {
+  position: absolute;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+
+  &::after {
+    content: " ";
+
+    position: absolute;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    z-index: 1;
+
+    display: block;
+
+    background: var(--light-grey);
+
+    opacity: 0.2;
+  }
+
+  &.light {
+    display: block;
+
+    #{hope-config.$dark-selector} & {
+      display: none;
+    }
+  }
+
+  &.dark {
+    display: none;
+
+    #{hope-config.$dark-selector} & {
+      display: block;
+    }
+  }
+}
+
+.vp-blog-hero-title {
+  margin: 0.5rem auto;
+  font-weight: bold;
+  font-size: 2rem;
+
+  @media (min-width: hope-config.$pc) {
+    font-size: 2.25rem;
+  }
+
+  @media (max-width: hope-config.$tablet) {
+    font-size: 1.75rem;
+  }
+}
+
+.vp-blog-hero-image {
+  display: block;
+  max-width: 100%;
+  max-height: 15rem;
+  margin: 1.5rem auto;
+
+  @media (max-width: hope-config.$tablet) {
+    max-height: 12rem;
+  }
+
+  &.light {
+    display: block;
+
+    #{hope-config.$dark-selector} & {
+      display: none;
+    }
+  }
+
+  &.dark {
+    display: none;
+
+    #{hope-config.$dark-selector} & {
+      display: block;
+    }
+  }
+
+  + .vp-blog-hero-title {
+    margin: 0 auto;
+  }
+}
+
+.vp-blog-hero-description {
+  margin: 1.2rem auto 0;
+  font-size: 1.5rem;
+
+  @media (max-width: hope-config.$tablet) {
+    font-size: 1.25rem;
   }
 }
 

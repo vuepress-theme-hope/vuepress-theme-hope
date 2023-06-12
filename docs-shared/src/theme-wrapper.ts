@@ -1,5 +1,6 @@
-import { type ThemeFunction } from "@vuepress/core";
-import { type ThemeOptions, hopeTheme } from "vuepress-theme-hope";
+import type { ThemeFunction } from "@vuepress/core";
+import type { ThemeOptions } from "vuepress-theme-hope";
+import { hopeTheme } from "vuepress-theme-hope";
 
 const IS_GITEE = "GITEE" in process.env;
 const IS_NETLIFY = "NETLIFY" in process.env;
@@ -40,6 +41,12 @@ export const theme = (
     docsDir: `docs/${name}/src`,
 
     logo: "/logo.svg",
+
+    navbarLayout: {
+      start: ["Brand"],
+      center: ["Links"],
+      end: ["Language", "Repo", "TelegramLink", "Outlook", "Search"],
+    },
 
     copyright: "MIT Licensed | Copyright © 2019-present Mr.Hope",
     displayFooter: true,

@@ -1,5 +1,6 @@
-import { type Plugin } from "@vuepress/core";
-import { type FeedOptions, feedPlugin } from "vuepress-plugin-feed2";
+import type { Plugin } from "@vuepress/core";
+import type { FeedOptions } from "vuepress-plugin-feed2";
+import { feedPlugin } from "vuepress-plugin-feed2";
 import {
   deepAssign,
   entries,
@@ -8,7 +9,7 @@ import {
   keys,
 } from "vuepress-shared/node";
 
-import { type ThemeData } from "../../shared/index.js";
+import type { ThemeData } from "../../shared/index.js";
 
 /**
  * @private

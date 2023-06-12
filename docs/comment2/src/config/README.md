@@ -3,7 +3,7 @@ title: Options
 icon: gears
 ---
 
-## provider
+## provider <Badge text="Plugin Option Only" type="warning"/>
 
 - Type: `"Artalk" | "Giscus" | "Twikoo" | "Waline" | "None"`
 - Default: `"None"`

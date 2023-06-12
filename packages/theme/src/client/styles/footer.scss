@@ -1,4 +1,4 @@
-.footer-wrapper {
+.vp-footer-wrapper {
   position: relative;
 
   display: flex;
@@ -42,22 +42,22 @@
   .sidebar-collapsed & {
     padding-inline-start: 2rem;
   }
+}
 
-  .footer {
-    margin: 0.5rem 1rem;
-    font-size: 14px;
+.vp-footer {
+  margin: 0.5rem 1rem;
+  font-size: 14px;
 
-    @media print {
-      display: none;
-    }
-  }
-
-  .copyright {
-    margin: 6px 0;
-    font-size: 13px;
+  @media print {
+    display: none;
   }
 }
 
-.page:not(.not-found) + .footer-wrapper {
+.vp-copyright {
+  margin: 6px 0;
+  font-size: 13px;
+}
+
+.vp-page:not(.not-found) + .vp-footer-wrapper {
   margin-top: -2rem;
 }

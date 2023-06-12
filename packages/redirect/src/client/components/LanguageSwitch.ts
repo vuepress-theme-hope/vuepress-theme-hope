@@ -4,9 +4,9 @@ import {
   useScrollLock,
   useSessionStorage,
 } from "@vueuse/core";
+import type { VNode } from "vue";
 import {
   TransitionGroup,
-  type VNode,
   computed,
   defineComponent,
   h,

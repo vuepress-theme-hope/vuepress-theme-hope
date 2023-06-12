@@ -19,12 +19,12 @@
     "docs:webpack-dev": "vuepress-webpack dev src"
   },
   "dependencies": {
-    "@vuepress/client": "2.0.0-beta.61",
+    "@vuepress/client": "2.0.0-beta.63",
     "docs-shared": "workspace:*",
-    "sass-loader": "13.2.2",
-    "vue": "3.2.47",
+    "sass-loader": "13.3.2",
+    "vue": "3.3.4",
     "vuepress-plugin-reading-time2": "workspace:*",
-    "vuepress-vite": "2.0.0-beta.61",
-    "vuepress-webpack": "2.0.0-beta.61"
+    "vuepress-vite": "2.0.0-beta.63",
+    "vuepress-webpack": "2.0.0-beta.63"
   }
 }

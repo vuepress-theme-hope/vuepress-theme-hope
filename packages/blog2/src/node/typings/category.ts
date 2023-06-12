@@ -1,5 +1,5 @@
 /* eslint-disable @typescript-eslint/no-explicit-any */
-import { type Page } from "@vuepress/core";
+import type { Page } from "@vuepress/core";
 
 export interface BlogCategoryOptions<
   ExtraPageData extends Record<any, any> = Record<never, never>,

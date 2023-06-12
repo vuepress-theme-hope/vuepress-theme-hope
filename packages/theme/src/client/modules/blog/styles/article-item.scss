@@ -1,4 +1,4 @@
-.article-item {
+.vp-article-wrapper {
   position: relative;
 
   box-sizing: border-box;
@@ -16,31 +16,31 @@
   &:last-child {
     margin-bottom: 0;
   }
+}
 
-  .article {
-    display: block;
+.vp-article-item {
+  display: block;
 
-    padding: 0.75rem 1.25rem;
-    border-radius: 0.4rem;
+  padding: 0.75rem 1.25rem;
+  border-radius: 0.4rem;
 
-    background: var(--bg-color-float);
-    color: inherit;
-    box-shadow: 0 1px 3px 1px var(--card-shadow);
+  background: var(--bg-color-float);
+  color: inherit;
+  box-shadow: 0 1px 3px 1px var(--card-shadow);
 
-    transition: background var(--color-transition),
-      box-shadow var(--color-transition);
+  transition: background var(--color-transition),
+    box-shadow var(--color-transition);
 
-    @media (max-width: hope-config.$pad) {
-      padding: 0.75rem 1rem;
-    }
+  @media (max-width: hope-config.$pad) {
+    padding: 0.75rem 1rem;
+  }
 
-    @media (max-width: hope-config.$mobile) {
-      border-radius: 0;
-    }
+  @media (max-width: hope-config.$mobile) {
+    border-radius: 0;
+  }
 
-    &:hover {
-      box-shadow: 0 2px 6px 2px var(--card-shadow);
-    }
+  &:hover {
+    box-shadow: 0 2px 6px 2px var(--card-shadow);
   }
 
   .sticky-icon {
@@ -62,76 +62,6 @@
     }
   }
 
-  .title {
-    position: relative;
-
-    display: inline-block;
-
-    color: var(--text-color);
-
-    font-size: 1.25rem;
-    font-family: var(--font-family-heading);
-    line-height: 1.6;
-
-    cursor: pointer;
-
-    &::after {
-      content: "";
-
-      position: absolute;
-      bottom: 0;
-      left: 0;
-
-      width: 100%;
-      height: 2px;
-
-      background: var(--theme-color);
-
-      visibility: hidden;
-
-      transition: transform 0.3s ease-in-out;
-      transform: scaleX(0);
-    }
-
-    &:hover {
-      cursor: pointer;
-
-      &::after {
-        visibility: visible;
-        transform: scaleX(1);
-      }
-    }
-
-    a {
-      color: inherit;
-      font-weight: 600;
-    }
-
-    .lock-icon,
-    .slides-icon {
-      position: relative;
-      bottom: -0.125em;
-
-      display: inline-block;
-      vertical-align: baseline;
-
-      width: 1em;
-      height: 1em;
-      margin-inline-end: 0.25em;
-
-      color: var(--theme-color);
-    }
-
-    > span {
-      word-break: break-word;
-    }
-  }
-
-  hr {
-    margin-block-start: 0.375em;
-    margin-block-end: 0.375em;
-  }
-
   .page-info {
     > span {
       display: flex;
@@ -150,7 +80,77 @@
   }
 }
 
-.article-cover {
+.vp-article-hr {
+  margin-block-start: 0.375em;
+  margin-block-end: 0.375em;
+}
+
+.vp-article-title {
+  position: relative;
+
+  display: inline-block;
+
+  color: var(--text-color);
+
+  font-size: 1.25rem;
+  font-family: var(--font-family-heading);
+  line-height: 1.6;
+
+  cursor: pointer;
+
+  &::after {
+    content: "";
+
+    position: absolute;
+    bottom: 0;
+    left: 0;
+
+    width: 100%;
+    height: 2px;
+
+    background: var(--theme-color);
+
+    visibility: hidden;
+
+    transition: transform 0.3s ease-in-out;
+    transform: scaleX(0);
+  }
+
+  &:hover {
+    cursor: pointer;
+
+    &::after {
+      visibility: visible;
+      transform: scaleX(1);
+    }
+  }
+
+  a {
+    color: inherit;
+    font-weight: 600;
+  }
+
+  .lock-icon,
+  .slides-icon {
+    position: relative;
+    bottom: -0.125em;
+
+    display: inline-block;
+    vertical-align: baseline;
+
+    width: 1em;
+    height: 1em;
+    margin-inline-end: 0.25em;
+
+    color: var(--theme-color);
+  }
+
+  > span {
+    word-break: break-word;
+  }
+}
+
+.vp-article-cover {
   width: calc(100% + 2.5rem);
   margin: -0.75rem -1.25rem 0.75rem;
   border-top-left-radius: 0.4rem;
@@ -166,7 +166,7 @@
   }
 }
 
-.article-excerpt {
+.vp-article-excerpt {
   overflow: hidden;
   line-height: 1.6;
   cursor: default;

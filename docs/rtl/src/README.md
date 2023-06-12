@@ -98,9 +98,3 @@ Locale path to enable rtl.
 Selector to enable rtl.
 
 The default settings mean that the `dir` attribute of the `html` element will be set to `rtl` in rtl locales.
-
-<NetlifyBadge />
-
-<script setup lang="ts">
-import NetlifyBadge from "@NetlifyBadge";
-</script>

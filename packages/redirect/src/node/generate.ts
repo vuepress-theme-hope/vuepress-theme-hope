@@ -1,4 +1,4 @@
-import { type App } from "@vuepress/core";
+import type { App } from "@vuepress/core";
 import { fs, path, withSpinner } from "@vuepress/utils";
 import {
   entries,
@@ -8,8 +8,8 @@ import {
   removeLeadingSlash,
 } from "vuepress-shared/node";
 
-import { getLocaleRedirectHTML, getRedirectHTML } from "./utils.js";
-import { type LocaleRedirectConfig } from "../shared/index.js";
+import { getLocaleRedirectHTML, getRedirectHTML } from "./utils/index.js";
+import type { LocaleRedirectConfig } from "../shared/index.js";
 
 export const generateAutoLocaleRedirects = async (
   { dir, options, pages }: App,

@@ -1,4 +1,4 @@
-import { type BasePageFrontMatter } from "vuepress-shared";
+import type { BasePageFrontMatter } from "vuepress-shared";
 
 export interface CommentPluginFrontmatter extends BasePageFrontMatter {
   /**
@@ -9,6 +9,13 @@ export interface CommentPluginFrontmatter extends BasePageFrontMatter {
    * @default true
    */
   comment?: boolean;
+
+  /**
+   * Comment identifier
+   *
+   * 评论标识符
+   */
+  commentID?: string;
 
   /**
    * @description Only available when using valine

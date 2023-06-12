@@ -1,4 +1,4 @@
-import { type ShareServiceConfig } from "../../../shared/index.js";
+import type { ShareServiceConfig } from "../../../shared/index.js";
 
 export const email: ShareServiceConfig = {
   link: "mailto:?subject=[title]&body=[url]%0D%0A%0D%0A[description|summary]",

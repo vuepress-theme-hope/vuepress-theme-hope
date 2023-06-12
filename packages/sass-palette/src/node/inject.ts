@@ -1,9 +1,9 @@
-import { type ViteBundlerOptions } from "@vuepress/bundler-vite";
-import {
-  type LoaderOptions,
-  type WebpackBundlerOptions,
+import type { ViteBundlerOptions } from "@vuepress/bundler-vite";
+import type {
+  LoaderOptions,
+  WebpackBundlerOptions,
 } from "@vuepress/bundler-webpack";
-import { type App } from "@vuepress/core";
+import type { App } from "@vuepress/core";
 import {
   getBundlerName,
   isFunction,

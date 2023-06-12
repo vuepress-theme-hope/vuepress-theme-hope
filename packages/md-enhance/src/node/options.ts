@@ -1,25 +1,42 @@
-import { type LocaleConfig } from "@vuepress/core";
-import { type MermaidConfig } from "mermaid";
+import type { LocaleConfig } from "@vuepress/core";
+import type { MermaidConfig } from "mermaid";
 
-import {
-  type AttrsOptions,
-  type FigureOptions,
-  type ImgMarkOptions,
-  type IncludeOptions,
-  type KatexOptions,
-  type MarkdownEnhanceLocaleData,
-  type MathjaxOptions,
-  type PlaygroundOptions,
-  type PresentationOptions,
-  type StylizeOptions,
-  type TSPresetPlaygroundOptions,
-  type TasklistOptions,
-  type VuePresetPlaygroundOptions,
+import type {
+  AttrsOptions,
+  FigureOptions,
+  ImgMarkOptions,
+  IncludeOptions,
+  KatexOptions,
+  MarkdownEnhanceLocaleData,
+  MathjaxOptions,
+  PlaygroundOptions,
+  RevealPlugin,
+  StylizeOptions,
+  TSPresetPlaygroundOptions,
+  TasklistOptions,
+  VuePresetPlaygroundOptions,
 } from "./typings/index.js";
-import {
-  type CodeDemoOptions,
-  type VuePlaygroundOptions,
-} from "../shared/index.js";
+import type { CodeDemoOptions } from "../shared/index.js";
+
+export type LinksCheckStatus = "always" | "dev" | "build" | "never";
+
+export interface LinksCheckOptions {
+  /**
+   * Whether check dead links in markdown
+   *
+   * 是否检查 Markdown 中的死链
+   *
+   * @default "dev"
+   */
+  status?: LinksCheckStatus;
+
+  /**
+   * Dead links to ignore
+   *
+   * 忽略的死链
+   */
+  ignore?: (string | RegExp)[] | ((link: string, isDev: boolean) => boolean);
+}
 
 /**
  * md-enhance plugin configuration
@@ -28,11 +45,9 @@ export interface MarkdownEnhanceOptions {
   /**
    * Whether check dead links in markdown
    *
-   * @description `true` equals to `"always"`, `false` equals to `"never"`
-   *
-   * @default "dev"
+   * @default { status: "dev"}
    */
-  linkCheck?: "always" | "dev" | "build" | "never" | boolean;
+  checkLinks?: LinksCheckOptions;
 
   /**
    * Whether enable standard GFM support
@@ -78,6 +93,28 @@ export interface MarkdownEnhanceOptions {
    * @default false
    */
   vPre?: boolean;
+
+  /**
+   * Whether convert `\n` in paragraphs into `<br>`s
+   *
+   * 是否将段落中的 `\n` 转换为 `<br>`
+   *
+   * @description enabled in gfm mode
+   *
+   * @default false
+   */
+  breaks?: boolean;
+
+  /**
+   * Whether convert URL-like text into links
+   *
+   * 是否将文字中的链接格式文字转换为链接
+   *
+   * @description enabled in gfm mode
+   *
+   * @default false
+   */
+  linkify?: boolean;
 
   /**
    * Whether to enable tabs.
@@ -225,7 +262,16 @@ export interface MarkdownEnhanceOptions {
    *
    * @default false
    */
-  katex?: KatexOptions | boolean;
+  katex?:
+    | (KatexOptions & {
+        /**
+         * whether enable copy plugin
+         *
+         * @default false
+         */
+        copy?: boolean;
+      })
+    | boolean;
 
   /**
    * Whether to enable mathjax support
@@ -272,6 +318,8 @@ export interface MarkdownEnhanceOptions {
    *
    * 是否启用 flowchart 流程图支持
    *
+   * @deprecated The lib is lack of maintenance, use mermaid instead.
+   *
    * @default false
    */
   flowchart?: boolean;
@@ -301,7 +349,7 @@ export interface MarkdownEnhanceOptions {
    *
    * @default false
    */
-  presentation?: PresentationOptions | boolean;
+  presentation?: RevealPlugin[] | boolean;
 
   /**
    * Keyword enhancement
@@ -332,7 +380,7 @@ export interface MarkdownEnhanceOptions {
    *
    * @default false
    */
-  vuePlayground?: VuePlaygroundOptions | boolean;
+  vuePlayground?: boolean;
 
   /**
    * The delay of operating dom, in ms

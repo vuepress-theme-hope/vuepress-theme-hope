@@ -22,7 +22,7 @@ For this, `vuepress-theme-hope` use <ProjectLink name="copy-code2">vuepress-plug
 
 ## Usage
 
-After enabling, this plugin will automatically add a copy button to the bottom right corner of each code block.
+After enabling, this plugin will automatically add a copy button to the top right corner of each code block.
 
 By default, the button is only displayed on desktop mode. To display this button on mobile devices, set `plugins.copyCode.showInMobile` to `true` in theme options.
 

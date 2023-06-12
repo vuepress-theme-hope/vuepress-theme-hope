@@ -1,12 +1,12 @@
-import { type Plugin, type PluginFunction } from "@vuepress/core";
+import type { Plugin, PluginFunction } from "@vuepress/core";
 import { colors } from "@vuepress/utils";
 import { checkVersion } from "vuepress-shared/node";
 
 import { convertOptions } from "./compact/index.js";
 import { generateDescription } from "./description.js";
-import { type SeoOptions } from "./options.js";
+import type { SeoOptions } from "./options.js";
 import { appendSEO, generateRobotsTxt } from "./seo.js";
-import { type ExtendPage } from "./typings/index.js";
+import type { ExtendPage } from "./typings/index.js";
 import { PLUGIN_NAME, logger } from "./utils.js";
 
 export const seoPlugin =
@@ -14,7 +14,7 @@ export const seoPlugin =
   (app) => {
     // TODO: Remove this in v2 stable
     if (legacy) convertOptions(options as SeoOptions & Record<string, unknown>);
-    checkVersion(app, PLUGIN_NAME, "2.0.0-beta.61");
+    checkVersion(app, PLUGIN_NAME, "2.0.0-beta.63");
 
     if (app.env.isDebug) logger.info("Options:", options);
 

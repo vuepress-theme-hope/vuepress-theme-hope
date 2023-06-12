@@ -1,13 +1,14 @@
 import { usePageFrontmatter } from "@vuepress/client";
 import { isString } from "@vuepress/shared";
-import { type VNode, computed, defineComponent, h } from "vue";
+import type { VNode } from "vue";
+import { computed, defineComponent, h } from "vue";
 
 import {
   usePageAuthor,
   useThemeLocaleData,
 } from "@theme-hope/composables/index";
 
-import { type ThemeNormalPageFrontmatter } from "../../shared/index.js";
+import type { ThemeNormalPageFrontmatter } from "../../shared/index.js";
 
 import "../styles/footer.scss";
 
@@ -50,13 +51,13 @@ export default defineComponent({
 
     return (): VNode | null =>
       enable.value
-        ? h("footer", { class: "footer-wrapper" }, [
+        ? h("footer", { class: "vp-footer-wrapper" }, [
             content.value
-              ? h("div", { class: "footer", innerHTML: content.value })
+              ? h("div", { class: "vp-footer", innerHTML: content.value })
               : null,
             copyright.value
               ? h("div", {
-                  class: "copyright",
+                  class: "vp-copyright",
                   innerHTML: copyright.value,
                 })
               : null,

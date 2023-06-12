@@ -8,9 +8,17 @@ tag:
   - Playground
 ---
 
-Let the Markdown file support vue playground in your VuePress site.
+Let the Markdown file support vue playground in your VuePress site with `@vue/repl` package.
 
 <!-- more -->
+
+::: tip
+
+Since we are providing a runtime compiler, we are introducing the whole `@vue/compiler-sfc` package with typescript support, so the whole Vue Playground chunk is > 4MB. So you should only use this if you are heavily depending on interactive Vue Playground.
+
+You can use [Vue Demo](./demo.md#vue) and [Playground Vue Preset](./playground.md#vue) as an alternative.
+
+:::
 
 ## Config
 

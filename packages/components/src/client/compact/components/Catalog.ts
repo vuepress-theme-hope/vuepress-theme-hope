@@ -1,14 +1,17 @@
 import { usePageData, useSiteData } from "@vuepress/client";
-import { type PropType, type VNode, computed, defineComponent, h } from "vue";
-import { type RouteMeta, RouterLink, useRouter } from "vue-router";
+import type { PropType, VNode } from "vue";
+import { computed, defineComponent, h } from "vue";
+import type { RouteMeta } from "vue-router";
+import { useRouter } from "vue-router";
 import {
+  VPLink,
   endsWith,
   keys,
   startsWith,
   useLocaleConfig,
 } from "vuepress-shared/client";
 
-import { type CatalogLocaleConfig } from "../../../shared/index.js";
+import type { CatalogLocaleConfig } from "../../../shared/index.js";
 import FontIcon from "../../components/FontIcon.js";
 
 import "../styles/catalog.scss";
@@ -240,7 +243,7 @@ export default defineComponent({
             },
             [
               h("a", { href: `#${title}`, class: "header-anchor" }, "#"),
-              h(RouterLink, { class: "catalog-title", to: path }, () => [
+              h(VPLink, { class: "catalog-title", to: path }, () => [
                 icon ? h(FontIcon, { icon }) : null,
                 `${mainIndex + 1}. ${title || "Unknown"}`,
               ]),
@@ -266,16 +269,10 @@ export default defineComponent({
                           { href: `#${title}`, class: "header-anchor" },
                           "#"
                         ),
-                        h(
-                          RouterLink,
-                          { class: "catalog-title", to: path },
-                          () => [
-                            icon ? h(FontIcon, { icon }) : null,
-                            `${mainIndex + 1}.${index + 1} ${
-                              title || "Unknown"
-                            }`,
-                          ]
-                        ),
+                        h(VPLink, { class: "catalog-title", to: path }, () => [
+                          icon ? h(FontIcon, { icon }) : null,
+                          `${mainIndex + 1}.${index + 1} ${title || "Unknown"}`,
+                        ]),
                       ]
                     ),
                     children.length
@@ -284,7 +281,7 @@ export default defineComponent({
                           { class: "sub-catalog-wrapper" },
                           children.map(({ icon, path, title }, subIndex) =>
                             h(
-                              RouterLink,
+                              VPLink,
                               {
                                 class: "sub-catalog-item",
                                 to: path,

@@ -1,4 +1,5 @@
-import { type PropType, type VNode, defineComponent } from "vue";
+import type { PropType, VNode } from "vue";
+import { defineComponent } from "vue";
 import { useRoute } from "vue-router";
 
 import {
@@ -7,9 +8,9 @@ import {
 } from "@theme-hope/modules/sidebar/composables/index";
 import { isActiveSidebarItem } from "@theme-hope/modules/sidebar/utils/index";
 
-import {
-  type ResolvedSidebarHeaderItem,
-  type ResolvedSidebarPageItem,
+import type {
+  ResolvedSidebarHeaderItem,
+  ResolvedSidebarPageItem,
 } from "../utils/index.js";
 
 import "../styles/sidebar-child.scss";
@@ -38,8 +39,8 @@ export default defineComponent({
     return (): (VNode | null)[] => [
       renderItem(props.config, {
         class: [
-          "sidebar-link",
-          `sidebar-${props.config.type}`,
+          "vp-sidebar-link",
+          `vp-sidebar-${props.config.type}`,
           { active: isActiveSidebarItem(route, props.config, true) },
         ],
         exact: true,

@@ -1,16 +1,18 @@
 ---
-title: 插件选项
+title: 配置
 icon: gears
 ---
 
-## selector
+## 插件选项
+
+### selector
 
 - 类型: `string`
 - 默认值: `".theme-default-content :not(a) > img:not([no-view])"`
 
 图片选择器
 
-## plugins
+### plugins
 
 - 类型: `string[]`
 - 默认值: `["pager", "share", "zoom"]`
@@ -31,7 +33,7 @@ icon: gears
 
 :::
 
-## delay
+### delay
 
 - 类型: `number`
 - 默认值: `800`
@@ -40,8 +42,19 @@ icon: gears
 
 如果你使用的主题有切换动画，建议配置此选项为 `切换动画时长 + 200`
 
-## options
+## 客户端配置
 
-- 类型: `LightGallerySettings`
+### defineLightGalleryConfig
 
 传递给 [lightgallery](https://www.lightgalleryjs.com/docs/settings/) 的额外选项
+
+```ts
+// .vuepress/client.ts
+import { defineLightGalleryConfig } from "vuepress-plugin-lightgallery/client";
+
+defineLightGalleryConfig({
+  // 在此设置 lightgallery 选项
+});
+
+export default {};
+```

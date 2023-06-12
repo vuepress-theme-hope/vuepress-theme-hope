@@ -7,11 +7,11 @@ heroText: vuepress-plugin-components
 tagline: Useful components for VuePress2
 actions:
   - text: Get Started 💡
-    link: /guide/
+    link: ./guide/
     type: primary
 
   - text: Config 🛠
-    link: /config.html
+    link: ./config.html
 
 footer: Theme by <a href="https://theme-hope.vuejs.press" target="_blank">VuePress Theme Hope</a> | MIT Licensed, Copyright © 2019-present Mr.Hope
 
@@ -77,9 +77,3 @@ export default {
 ```
 
 :::
-
-<NetlifyBadge />
-
-<script setup lang="ts">
-import NetlifyBadge from "@NetlifyBadge";
-</script>

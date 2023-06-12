@@ -48,7 +48,7 @@ const __dirname = getDirname(import.meta.url);
 export default (options) => ({
   name: "vuepress-theme-local",
 
-  extends: hopeTheme(options),
+  extends: hopeTheme(options, { custom: true }),
 
   alias: {
     // 你可以在这里覆盖或新增别名
@@ -73,7 +73,7 @@ const __dirname = getDirname(import.meta.url);
 export default (options) => ({
   name: "vuepress-theme-local",
 
-  extends: hopeTheme(options),
+  extends: hopeTheme(options, { custom: true }),
 
   alias: {
     // 你可以在这里覆盖或新增别名

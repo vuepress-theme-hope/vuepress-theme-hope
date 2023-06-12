@@ -1,4 +1,4 @@
-.sidebar {
+.vp-sidebar {
   position: fixed;
   top: 0;
   bottom: 0;
@@ -77,26 +77,9 @@
   &.hide-icon .icon {
     display: none !important;
   }
-
-  .blogger-info.mobile {
-    display: none;
-
-    @media (max-width: hope-config.$tablet) {
-      display: block;
-    }
-
-    + hr {
-      display: none;
-
-      @media (max-width: hope-config.$tablet) {
-        display: block;
-        margin-top: 1rem;
-      }
-    }
-  }
 }
 
-.sidebar-mask {
+.vp-sidebar-mask {
   position: fixed;
   top: 0;
   left: 0;

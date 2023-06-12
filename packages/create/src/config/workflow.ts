@@ -1,7 +1,7 @@
 import { join } from "node:path";
 
-import { type Lang } from "./i18n.js";
-import { type PackageManager } from "../utils/index.js";
+import type { Lang } from "./i18n.js";
+import type { PackageManager } from "../utils/index.js";
 
 export const getWorkflowContent = (
   packageManager: PackageManager,
@@ -42,7 +42,6 @@ ${
       - name: ${lang === "简体中文" ? "安装 pnpm" : "Install pnpm"}
         uses: pnpm/action-setup@v2
         with:
-          version: 8
           run_install: true
 `
     : ""

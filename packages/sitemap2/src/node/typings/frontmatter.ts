@@ -1,9 +1,9 @@
-import { type PageFrontmatter } from "@vuepress/core";
+import type { PageFrontmatter } from "@vuepress/core";
 
-import {
-  type SitemapImageOption,
-  type SitemapNewsOption,
-  type SitemapVideoOption,
+import type {
+  SitemapImageOption,
+  SitemapNewsOption,
+  SitemapVideoOption,
 } from "./sitemap.js";
 
 export interface SitemapFrontmatterOption {

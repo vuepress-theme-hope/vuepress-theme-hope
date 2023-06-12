@@ -3,10 +3,9 @@ import theme from "./theme.js";
 
 const __dirname = getDirname(import.meta.url);
 
+// the config wrapper is located in <root>/docs-shared/src/config-wrapper.ts
 export default config(
-  {
-    name: "components",
-  },
+  { name: "components" },
   {
     locales: {
       "/": {

@@ -1,6 +1,6 @@
 ---
 title: Markdown 展示
-icon: markdown
+icon: fab fa-markdown
 order: 2
 category:
   - 使用指南
@@ -400,4 +400,4 @@ $$
 
 - [查看详情](https://theme-hope.vuejs.press/zh/guide/markdown/presentation.html)
 
-[md-enhance]: https://theme-hope.vuejs.press/md-enhance/zh/
+[md-enhance]: https://plugin-md-enhance.vuejs.press/zh/

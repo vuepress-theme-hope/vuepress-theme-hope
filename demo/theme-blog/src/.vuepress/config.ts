@@ -1,5 +1,6 @@
 import { defineUserConfig } from "@vuepress/cli";
 import { getDirname, path } from "@vuepress/utils";
+
 import theme from "./theme.js";
 
 const __dirname = getDirname(import.meta.url);

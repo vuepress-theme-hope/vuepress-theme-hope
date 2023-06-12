@@ -110,7 +110,7 @@ We know that every site should have its `lang`, `title` and `description` proper
 
 ::: info Site Config
 
-You can go to [VuePress2 → Reference → Configuration](https://v2.vuepress.vuejs.org/en/reference/config.html) to see all VuePress configuration.
+You can go to [VuePress2 → Reference → Configuration](https://vuejs.press/en/reference/config.html) to see all VuePress configuration.
 
 :::
 

@@ -1,19 +1,19 @@
 @use "vuepress-shared/styles/reset";
 
-.back-to-top {
+.vp-back-to-top-button {
   @include reset.button;
 
   position: fixed !important;
 
   // NOTE: Compatible with Android Wechat
   // inset-inline-end: 1rem;
-  right: 1rem;
-  bottom: 4rem;
+  right: 16px;
+  bottom: 64px;
   z-index: 100;
 
-  width: 3rem;
-  height: 3rem;
-  padding: 0.5rem;
+  width: 48px;
+  height: 48px;
+  padding: 8px;
   border-radius: 50%;
 
   background: var(--vp-bg);
@@ -24,9 +24,8 @@
     box-shadow var(--vp-ct);
 
   @media (max-width: hope-config.$tablet) {
-    width: 2.25rem;
-    height: 2.25rem;
-    padding: 0.25rem;
+    width: 36px;
+    height: 36px;
   }
 
   @media print {
@@ -35,7 +34,7 @@
 
   #{hope-config.$rtl-selector} & {
     right: unset;
-    left: 1rem;
+    left: 16px;
   }
 
   &:hover {
@@ -50,17 +49,17 @@
   }
 }
 
-.scroll-progress {
+.vp-scroll-progress {
   position: absolute;
   right: -2px;
   bottom: -2px;
 
-  width: calc(3rem + 4px);
-  height: calc(3rem + 4px);
+  width: 52px;
+  height: 52px;
 
   @media (max-width: hope-config.$tablet) {
-    width: calc(2.25rem + 4px);
-    height: calc(2.25rem + 4px);
+    width: 40px;
+    height: 40px;
   }
 
   circle {
@@ -71,8 +70,14 @@
     transform: rotate(-90deg);
     transform-origin: 50% 50%;
 
+    r: 22;
+
     stroke-dasharray: 0% 314.1593%;
     stroke-width: 3px;
+
+    @media (max-width: hope-config.$tablet) {
+      r: 18;
+    }
   }
 }
 
@@ -81,7 +86,7 @@
   transition: opacity var(--vp-ct);
 }
 
-.fade-enter,
+.fade-enter-from,
 .fade-leave-to {
   opacity: 0;
 }

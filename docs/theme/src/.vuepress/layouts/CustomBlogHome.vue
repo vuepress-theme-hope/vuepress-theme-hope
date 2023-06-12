@@ -18,7 +18,7 @@ const articles = useArticles();
 
 <template>
   <BlogWrapper>
-    <div class="page blog">
+    <div class="vp-page vp-blog">
       <BlogHero>
         <template #heroInfo="{ tagline, isFullScreen, ...heroInfo }">
           <HitokotoBlogHero v-bind="heroInfo" />
@@ -28,7 +28,7 @@ const articles = useArticles();
         </template>
       </BlogHero>
       <div class="blog-page-wrapper custom">
-        <main class="blog-home" id="main-content">
+        <main class="vp-blog-home" id="main-content">
           <DropTransition appear :delay="0.16">
             <ProjectPanel />
           </DropTransition>

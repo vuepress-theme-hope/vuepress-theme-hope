@@ -16,12 +16,6 @@ tag:
 
 `vuepress-theme-hope` 将主题选项中的 `plugins.mdEnhance` 作为插件选项传递给 `vuepress-plugin-md-enhance` 插件。
 
-::: tip
-
-如果你不需要这个功能，请设置为 `false`。
-
-:::
-
 ::: info
 
 `vuepress-theme-hope` 会默认将 `container` 选项设置为 `true`。
@@ -65,19 +59,31 @@ tag:
 - danger
 - details
 
-### linkCheck
+### checkLinks
 
-- 类型: `"always" | "dev" | "build" | "never" | boolean`
-- 默认值: `"dev"`
+- 类型: `LinksCheckOptions`
+
+  ```ts
+  type LinksCheckStatus = "always" | "dev" | "build" | "never";
+
+  interface LinksCheckOptions {
+    /**
+     * 是否检查 Markdown 中的死链
+     *
+     * @default "dev"
+     */
+    status?: LinksCheckStatus;
+
+    /**
+     * 忽略的死链
+     */
+    ignore?: (string | RegExp)[] | ((link: string, isDev: boolean) => boolean);
+  }
+  ```
+
+- 默认值: `{ status: "dev" }`
 
 是否启用链接检查。
-
-::: note
-
-- `true` 等同于 `'always'`
-- `false` 等同于 `'never'`
-
-:::
 
 ### vPre
 
@@ -277,12 +283,12 @@ interface TaskListOptions {
 
 ### katex
 
-- 类型: `KatexOptions | boolean`
+- 类型: `KatexOptions & { copy?: boolean; mhchem?: boolean } | boolean`
 - 默认值: `false`
 
 是否通过 KaTeX 启用 $\TeX$ 语法支持。你可以传入一个对象作为 KaTeX 的配置选项。
 
-特别低，你可以通过 `katex.mhchem: true` 来启用 mhchem 扩展。
+特别地，你可以通过 `katex.copy: true` 和 `katex.mhchem: true` 来启用 copy 和 mhchem 扩展。
 
 可用的选项，详见 [Katex 文档](https://katex.org/docs/options.html)。
 
@@ -665,24 +671,17 @@ CodePen 编辑器显示情况，第一位代表 HTML ，第二位代表 JS，第
 
 ### presentation
 
-- 类型: `PresentationOptions | boolean`
-- 默认值: `false`
-
-是否启用幻灯片支持。
-
-你可以传入一个对象，这个对象将用于 reveal.js 配置。
-
-#### presentation.plugins
-
-- 类型: `RevealPlugin[]`
+- 类型: `RevealPlugin[] | boolean`
 
   ```ts
   type RevealPlugin = "highlight" | "math" | "search" | "notes" | "zoom";
   ```
 
-- 必填: 否
+- 默认值: `false`
 
-你想启用的 Reveal.js 插件
+是否启用幻灯片支持。
+
+你可以传入一个数组，它将决定启用的 Reveal.js 插件
 
 可接受的插件有:
 
@@ -695,13 +694,6 @@ CodePen 编辑器显示情况，第一位代表 HTML ，第二位代表 JS，第
 <!-- - `"anything"`
 - `"audio"`
 - `"chalkboard"` -->
-
-#### presentation.revealConfig
-
-- 类型: `Partial<RevealOptions>`
-- 必填: 否
-
-你想要传递给 Reveal.js 的配置选项
 
 ### delay
 

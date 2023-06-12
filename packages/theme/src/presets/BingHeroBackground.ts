@@ -1,6 +1,15 @@
 import { ClientOnly, usePageLang } from "@vuepress/client";
-import { useStorage } from "@vueuse/core";
-import { type VNode, computed, defineComponent, h, onMounted } from "vue";
+import { onClickOutside, useStorage } from "@vueuse/core";
+import type { VNode } from "vue";
+import {
+  Transition,
+  computed,
+  defineComponent,
+  h,
+  onMounted,
+  ref,
+  shallowRef,
+} from "vue";
 
 import "./bing-hero-background.scss";
 
@@ -38,12 +47,12 @@ export default defineComponent({
 
   setup() {
     const lang = usePageLang();
+    const bingInfo = shallowRef<HTMLElement>();
+    const showInfo = ref(false);
 
     const currentWallpaper = computed(() => {
       const info = bingStorage.value.data[bingStorage.value.index];
       const langCode = lang.value.toLowerCase().split("-").shift();
-
-      console.log(lang.value, langCode);
 
       if (info) {
         const { url, wallpaper, downloadable, locales } = info;
@@ -60,7 +69,7 @@ export default defineComponent({
     });
 
     const getImage = (): Promise<BingWallpaperInfo[]> => {
-      return fetch("//bing-wallpaper.vuejs.press/api/wallpaper").then(
+      return fetch("https://bing-wallpaper.vuejs.press/api/wallpaper").then(
         (response) => <Promise<BingWallpaperInfo[]>>response.json()
       );
     };
@@ -73,50 +82,78 @@ export default defineComponent({
       bingStorage.value.index++;
     };
 
+    onClickOutside(bingInfo, () => {
+      showInfo.value = false;
+    });
+
     onMounted(() => {
       void getImage().then((res) => {
         bingStorage.value.data = res;
       });
     });
 
-    return (): VNode =>
-      h(ClientOnly, () =>
-        currentWallpaper.value
+    return (): VNode => {
+      const { title, headline, url, backstage, quickFact, copyright } =
+        currentWallpaper.value || {};
+
+      return h(ClientOnly, () =>
+        url
           ? [
               h("div", {
-                class: "mask",
+                class: "vp-blog-mask",
                 style: {
-                  background: `url(${currentWallpaper.value.url}) center/cover no-repeat`,
+                  background: `url(${url}) center/cover no-repeat`,
                 },
               }),
-              h("div", { class: "bing-switch" }, [
-                h(
-                  "a",
-                  {
-                    class: "bing-info",
-                    href: currentWallpaper.value.backstage,
-                    target: "_blank",
+              h(
+                "div",
+                {
+                  class: "bing-switch",
+                  onClick: () => {
+                    showInfo.value = true;
                   },
-                  [
+                },
+                [
+                  h(Transition, { name: "fade" }, () =>
+                    showInfo.value
+                      ? h("div", { class: "bing-info", ref: bingInfo }, [
+                          h(
+                            "a",
+                            {
+                              href: backstage,
+                              target: "_blank",
+                              class: "bing-info-header",
+                            },
+                            headline
+                          ),
+                          h("hr"),
+                          h("div", { class: "bing-info-body" }, quickFact),
+                          h("div", { class: "bing-info-copyright" }, copyright),
+                        ])
+                      : null
+                  ),
+                  h("div", { class: "bing-location" }, [
                     h("span", { class: "bing-location-icon" }),
-                    currentWallpaper.value.title,
-                  ]
-                ),
-                h("button", {
-                  class: "bing-switch-left",
-                  disabled: bingStorage.value.index === 0,
-                  onClick: () => prev(),
-                }),
-                h("button", {
-                  class: "bing-switch-right",
-                  disabled:
-                    bingStorage.value.index ===
-                    bingStorage.value.data.length - 1,
-                  onClick: () => next(),
-                }),
-              ]),
+                    title,
+                  ]),
+
+                  h("button", {
+                    class: "bing-switch-left",
+                    disabled: bingStorage.value.index === 0,
+                    onClick: () => prev(),
+                  }),
+                  h("button", {
+                    class: "bing-switch-right",
+                    disabled:
+                      bingStorage.value.index ===
+                      bingStorage.value.data.length - 1,
+                    onClick: () => next(),
+                  }),
+                ]
+              ),
             ]
           : null
       );
+    };
   },
 });

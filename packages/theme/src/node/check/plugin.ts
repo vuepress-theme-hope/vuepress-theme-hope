@@ -1,8 +1,8 @@
-import { type App } from "@vuepress/core";
+import type { App } from "@vuepress/core";
 import { colors } from "@vuepress/utils";
 import { keys } from "vuepress-shared/node";
 
-import { type PluginsOptions } from "../../shared/index.js";
+import type { PluginsOptions } from "../../shared/index.js";
 import { logger } from "../utils.js";
 
 const PLUGIN_CHECKLIST = [

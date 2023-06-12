@@ -1,4 +1,4 @@
-import { type App, type Page } from "@vuepress/core";
+import type { App, Page } from "@vuepress/core";
 import { getPageExcerpt } from "vuepress-shared/node";
 
 export const setPageExcerpt = (app: App): void => {

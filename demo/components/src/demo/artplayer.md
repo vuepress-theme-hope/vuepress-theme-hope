@@ -4,12 +4,12 @@
 
 A video player:
 
-<ArtPlayer src="https://mse-demo.u2sb.com/caminandes_03_llamigos_720p.mp4" />
+<ArtPlayer src="https://vp-demo.u2sb.com/video/caminandes_03_llamigos_720p.mp4" />
 
 A video player with poster:
 
 <ArtPlayer
-  src="https://mse-demo.u2sb.com/caminandes_03_llamigos_720p.mp4"
+  src="https://vp-demo.u2sb.com/video/caminandes_03_llamigos_720p.mp4"
   title="ArtPlayer"
   poster="/poster.svg"
 />
@@ -17,7 +17,7 @@ A video player with poster:
 A video player with custom settings:
 
 <ArtPlayer
-  src="https://mse-demo.u2sb.com/caminandes_03_llamigos_720p.mp4"
+  src="https://vp-demo.u2sb.com/video/caminandes_03_llamigos_720p.mp4"
   airplay
   aspect-ratio
   auto-size
@@ -55,7 +55,7 @@ CustomType:
 With DanMuKu plugin:
 
 <ArtPlayer
-  src="https://mse-demo.u2sb.com/caminandes_03_llamigos_720p.mp4"
+  src="https://vp-demo.u2sb.com/video/caminandes_03_llamigos_720p.mp4"
   :config="artPlayerDanmukuConfig"
   :customPlayer="customPlayer"
 />

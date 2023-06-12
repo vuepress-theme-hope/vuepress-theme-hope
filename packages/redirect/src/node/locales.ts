@@ -1,4 +1,4 @@
-import { type RedirectLocaleConfig } from "../shared/index.js";
+import type { RedirectLocaleConfig } from "../shared/index.js";
 
 /** Multi language config for redirect popup */
 export const redirectLocales: RedirectLocaleConfig = {

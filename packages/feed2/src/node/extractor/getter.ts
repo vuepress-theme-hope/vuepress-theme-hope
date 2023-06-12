@@ -1,7 +1,7 @@
-import { type App, type Page, type PageFrontmatter } from "@vuepress/core";
-import { type GitData } from "@vuepress/plugin-git";
+import type { App, Page, PageFrontmatter } from "@vuepress/core";
+import type { GitData } from "@vuepress/plugin-git";
+import type { AuthorInfo } from "vuepress-shared/node";
 import {
-  type AuthorInfo,
   getAuthor,
   getCategory,
   getPageExcerpt,
@@ -14,17 +14,17 @@ import {
 } from "vuepress-shared/node";
 
 import { getPageRenderContent } from "./content.js";
-import { type Feed } from "../generator/feed.js";
-import {
-  type FeedAuthor,
-  type FeedCategory,
-  type FeedContributor,
-  type FeedEnclosure,
-  type FeedFrontmatterOption,
-  type FeedGetter,
-  type FeedItemInformation,
-  type FeedOptions,
-  type FeedPluginFrontmatter,
+import type { Feed } from "../generator/feed.js";
+import type {
+  FeedAuthor,
+  FeedCategory,
+  FeedContributor,
+  FeedEnclosure,
+  FeedFrontmatterOption,
+  FeedGetter,
+  FeedItemInformation,
+  FeedOptions,
+  FeedPluginFrontmatter,
 } from "../typings/index.js";
 import { getImageMineType, resolveUrl } from "../utils/index.js";
 

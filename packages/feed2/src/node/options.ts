@@ -1,5 +1,5 @@
-import { type App, type Page } from "@vuepress/core";
-import { type GitData } from "@vuepress/plugin-git";
+import type { App, Page } from "@vuepress/core";
+import type { GitData } from "@vuepress/plugin-git";
 import { getDirname, path } from "@vuepress/utils";
 import {
   deepAssign,
@@ -13,11 +13,11 @@ import {
   values,
 } from "vuepress-shared/node";
 
-import {
-  type BaseFeedOptions,
-  type FeedChannelOption,
-  type FeedLinks,
-  type FeedOptions,
+import type {
+  BaseFeedOptions,
+  FeedChannelOption,
+  FeedLinks,
+  FeedOptions,
 } from "./typings/index.js";
 import { compareDate, resolveUrl } from "./utils/index.js";
 

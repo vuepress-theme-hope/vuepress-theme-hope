@@ -1,14 +1,11 @@
-import {
-  type Component,
-  type ComponentOptions,
-  type FunctionalComponent,
-  type VNode,
-  computed,
-  defineComponent,
-  h,
-  ref,
-  resolveComponent,
+import type {
+  Component,
+  ComponentOptions,
+  FunctionalComponent,
+  SlotsType,
+  VNode,
 } from "vue";
+import { computed, defineComponent, h, ref, resolveComponent } from "vue";
 import { hasGlobalComponent } from "vuepress-shared/client";
 import noopModule from "vuepress-shared/noopModule";
 
@@ -25,9 +22,9 @@ import ToggleNavbarButton from "@theme-hope/modules/navbar/components/ToggleNavb
 import ToggleSidebarButton from "@theme-hope/modules/navbar/components/ToggleSidebarButton";
 import OutlookButton from "@theme-hope/modules/outlook/components/OutlookButton";
 
-import {
-  type NavbarComponent,
-  type NavbarLayoutOptions,
+import type {
+  NavbarComponent,
+  NavbarLayoutOptions,
 } from "../../../../shared/index.js";
 
 import "../styles/navbar.scss";
@@ -38,6 +35,20 @@ export default defineComponent({
   name: "NavBar",
 
   emits: ["toggleSidebar"],
+
+  slots: Object as SlotsType<{
+    default: () => VNode | VNode[];
+
+    // navbar
+    startBefore?: () => VNode | VNode[];
+    startAfter?: () => VNode | VNode[];
+    centerBefore?: () => VNode | VNode[];
+    centerAfter?: () => VNode | VNode[];
+    endBefore?: () => VNode | VNode[];
+    endAfter?: () => VNode | VNode[];
+    screenTop?: () => VNode | VNode[];
+    screenBottom?: () => VNode | VNode[];
+  }>,
 
   setup(_props, { emit, slots }) {
     const themeLocale = useThemeLocaleData();
@@ -93,24 +104,24 @@ export default defineComponent({
         h(
           "header",
           {
+            id: "navbar",
             class: [
-              "navbar",
+              "vp-navbar",
               {
                 "auto-hide": autoHide.value,
                 "hide-icon": themeLocale.value.navbarIcon === false,
               },
             ],
-            id: "navbar",
           },
           [
-            h("div", { class: "navbar-start" }, [
+            h("div", { class: "vp-navbar-start" }, [
               h(ToggleSidebarButton, {
                 onToggle: () => {
                   if (showScreen.value) showScreen.value = false;
                   emit("toggleSidebar");
                 },
               }),
-              slots["startBefore"]?.(),
+              slots.startBefore?.(),
               (navbarLayout.value.start || []).map((item) =>
                 h(
                   <ComponentOptions | FunctionalComponent>(
@@ -118,11 +129,11 @@ export default defineComponent({
                   )
                 )
               ),
-              slots["startAfter"]?.(),
+              slots.startAfter?.(),
             ]),
 
-            h("div", { class: "navbar-center" }, [
-              slots["centerBefore"]?.(),
+            h("div", { class: "vp-navbar-center" }, [
+              slots.centerBefore?.(),
               (navbarLayout.value.center || []).map((item) =>
                 h(
                   <ComponentOptions | FunctionalComponent>(
@@ -130,11 +141,11 @@ export default defineComponent({
                   )
                 )
               ),
-              slots["centerAfter"]?.(),
+              slots.centerAfter?.(),
             ]),
 
-            h("div", { class: "navbar-end" }, [
-              slots["endBefore"]?.(),
+            h("div", { class: "vp-navbar-end" }, [
+              slots.endBefore?.(),
               (navbarLayout.value.end || []).map((item) =>
                 h(
                   <ComponentOptions | FunctionalComponent>(
@@ -142,7 +153,7 @@ export default defineComponent({
                   )
                 )
               ),
-              slots["endAfter"]?.(),
+              slots.endAfter?.(),
 
               h(ToggleNavbarButton, {
                 active: showScreen.value,
@@ -162,8 +173,8 @@ export default defineComponent({
             },
           },
           {
-            before: () => slots["screenTop"]?.(),
-            after: () => slots["screenBottom"]?.(),
+            before: () => slots.screenTop?.(),
+            after: () => slots.screenBottom?.(),
           }
         ),
       ];

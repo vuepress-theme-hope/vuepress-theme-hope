@@ -2,7 +2,7 @@
 # This is the title of the article
 title: Page Config
 # This is the icon of the page
-icon: page
+icon: file
 # This control sidebar order
 order: 1
 # Set author

@@ -14,7 +14,7 @@ footer: MIT Licensed, Copyright © 2019-present Mr.Hope
 
 <template v-if="!isDev">
 
-[Sitemap](/sitemap.xml)
+## [View Sitemap](/sitemap.xml)
 
 </template>
 

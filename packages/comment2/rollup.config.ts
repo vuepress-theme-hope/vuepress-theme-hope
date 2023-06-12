@@ -14,6 +14,7 @@ export default [
         "components/Waline",
         "config",
         "pageview",
+        "index",
       ],
     },
     {

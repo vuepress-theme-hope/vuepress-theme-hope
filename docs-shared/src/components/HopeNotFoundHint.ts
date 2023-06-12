@@ -1,4 +1,5 @@
-import { type VNode, defineComponent, h } from "vue";
+import type { VNode } from "vue";
+import { defineComponent, h } from "vue";
 
 // @ts-ignore
 import { useThemeLocaleData } from "@theme-hope/composables/index";

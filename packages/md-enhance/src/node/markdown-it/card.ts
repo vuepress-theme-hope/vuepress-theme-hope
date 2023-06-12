@@ -1,6 +1,7 @@
-import { type MarkdownEnv } from "@vuepress/markdown";
+import { container } from "@mdit/plugin-container";
+import type { MarkdownEnv } from "@vuepress/markdown";
 import { load } from "js-yaml";
-import { type Options, type PluginSimple } from "markdown-it";
+import type { Options, PluginSimple } from "markdown-it";
 import type Token from "markdown-it/lib/token.js";
 import {
   entries,
@@ -46,23 +47,25 @@ const cardRender = (
   const language = info.trim().split(":", 2)[1] || "yml";
   let config: unknown = null;
 
-  if (language === "yaml" || language === "yml") config = load(content);
+  if (language === "yaml" || language === "yml")
+    try {
+      config = load(content);
+    } catch (err) {
+      logger.error(`Parsing card YAML config failed:`, err);
+    }
   else if (language === "json")
     try {
       config = <unknown>JSON.parse(content);
     } catch (err) {
       // do nothing
+      logger.error(`Parsing card JSON config failed:`, err);
     }
-
-  if (!config) {
+  else
     logger.error(
       `Can not parse card config ${language}${
         filePathRelative ? `, found in ${filePathRelative}` : ""
       }.`
     );
-
-    return "";
-  }
 
   const cardData = checkCardProps(config);
 
@@ -80,6 +83,15 @@ ${content}
 };
 
 export const card: PluginSimple = (md) => {
+  // add card container
+  md.use(container, {
+    name: "card",
+    openRender: () =>
+      `\
+<div class="vp-card-container">
+`,
+  });
+
   // Handle ```card  blocks
   const fence = md.renderer.rules.fence;
 

@@ -1,18 +1,18 @@
 import { usePageFrontmatter } from "@vuepress/client";
 import { useElementSize, useWindowScroll, useWindowSize } from "@vueuse/core";
+import type { VNode } from "vue";
 import {
   Transition,
-  type VNode,
   computed,
   defineComponent,
   h,
   onMounted,
-  ref,
+  shallowRef,
 } from "vue";
 import { useLocaleConfig } from "vuepress-shared/client";
 
 import { BackToTopIcon } from "./icons.js";
-import { type BackToTopLocaleConfig } from "../../shared/index.js";
+import type { BackToTopLocaleConfig } from "../../shared/index.js";
 
 import "balloon-css/balloon.css";
 import "../styles/back-to-top.scss";
@@ -42,7 +42,7 @@ export default defineComponent({
   setup(props) {
     const pageFrontmatter = usePageFrontmatter<{ backToTop?: boolean }>();
     const locale = useLocaleConfig(BACK_TO_TOP_LOCALES);
-    const body = ref<HTMLBodyElement>();
+    const body = shallowRef<HTMLBodyElement>();
     const { height: bodyHeight } = useElementSize(body);
     const { height: windowHeight } = useWindowSize();
 
@@ -70,7 +70,7 @@ export default defineComponent({
               "button",
               {
                 type: "button",
-                class: "back-to-top",
+                class: "vp-back-to-top-button",
                 // hint text
                 "aria-label": locale.value.backToTop,
                 "data-balloon-pos": "left",
@@ -84,15 +84,16 @@ export default defineComponent({
                   ? null
                   : h(
                       "svg",
-                      { class: "scroll-progress" },
+                      { class: "vp-scroll-progress" },
                       h("circle", {
                         cx: "50%",
                         cy: "50%",
-                        r: "calc(50% - 2px)",
                         style: {
-                          "stroke-dasharray": `${
+                          "stroke-dasharray": `calc(${
                             Math.PI * progress.value * 100
-                          }% ${Math.PI * 100}%`,
+                          }% - ${4 * Math.PI}px) calc(${Math.PI * 100}% - ${
+                            4 * Math.PI
+                          }px)`,
                         },
                       })
                     ),

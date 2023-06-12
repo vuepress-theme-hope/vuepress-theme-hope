@@ -12,7 +12,31 @@ tag:
 
 The theme will check your Markdown links in dev mode by default.
 
-You can customize this feature through `plugins.mdEnhance.linkCheck` in theme options, and you can choose from `'always'`, `'never'`, `'dev'` and `'build'`.
+You can customize this feature through `checkLinks` in plugin options. `checkLinks` receives an object.
+
+- You can customize link check status with `checkLinks.status` where you can choose from `'always'`, `'never'`, `'dev'` and `'build'`.
+- To ignore some links, you can set `checkLinks.ignore` with an array of string and RegExp, or a function that receives link and isDev as parameters and returns a boolean value indicating whether to ignore the link.
+
+E.g.:
+
+```js
+export default {
+  plugins: [
+    mdEnhancePlugins({
+      checkLinks: {
+        // only check links in dev mode
+        status: "dev",
+        ignore: [
+          // ignore links starting with `/api/`
+          /^\/api\//,
+          // ignore `/playground.html`
+          "/playground.html",
+        ],
+      },
+    }),
+  ],
+};
+```
 
 ## GFM
 

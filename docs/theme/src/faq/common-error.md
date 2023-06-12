@@ -53,7 +53,7 @@ There are tags like `<center>` or `<font>`, which is in HTML1.0 spec, but marked
 
 To remove them, run theme with `--debug` flag, and you will get warning logs telling you tags that probably not be recognized.
 
-To use them anyway, check [here](https://v2.vuepress.vuejs.org/guide/markdown.html#non-standard-html-tags) to get a workaround.
+To use them anyway, check [here](https://vuejs.press/guide/markdown.html#non-standard-html-tags) to get a workaround.
 
 ## `Hydration completed but contains mismatches.`
 

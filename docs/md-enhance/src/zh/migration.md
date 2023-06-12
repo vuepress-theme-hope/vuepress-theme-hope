@@ -13,7 +13,7 @@ icon: code-compare
 
   该插件现在检查你的 Markdown 链接，并在检测到损坏的链接时警告你。
 
-  你可以通过 `linkCheck` 选项控制此行为
+  你可以通过 `checkLinks` 选项控制此行为
 
 - 图像标记支持
 

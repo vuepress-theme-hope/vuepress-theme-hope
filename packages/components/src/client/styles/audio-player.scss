@@ -1,4 +1,4 @@
-.audio-player-wrapper {
+.vp-audio-player {
   --plyr-audio-controls-background: var(--vp-bg);
   --plyr-audio-control-color: var(--vp-c);
   --plyr-color-main: var(--vp-tc);
@@ -18,24 +18,16 @@
     display: none;
   }
 
-  .audio-print {
-    display: none;
-
-    @media print {
-      display: block;
-    }
-  }
-
-  .audio-poster {
+  &-poster {
     width: 4rem;
     height: 4rem;
   }
 
-  .audio-info {
+  &-info {
     flex: 1;
   }
 
-  .audio-title {
+  &-title {
     padding: 0.5rem 1rem 0.25rem;
     font-weight: 500;
     font-size: 1.125rem;

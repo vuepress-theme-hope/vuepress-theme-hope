@@ -5,11 +5,7 @@ body {
   background: #fff;
 }
 
-body {
-  min-height: 100vh;
-
-  color: #2c3e50;
-
+html {
   font-size: 16px;
 
   font-display: optional;
@@ -21,6 +17,11 @@ body {
   @media print {
     font-size: 12pt;
   }
+}
+
+body {
+  min-height: 100vh;
+  color: #2c3e50;
 }
 
 a {

@@ -1,4 +1,4 @@
-import { type ShareServiceConfig } from "../../../shared/index.js";
+import type { ShareServiceConfig } from "../../../shared/index.js";
 
 export const weibo: ShareServiceConfig = {
   link: "http://service.weibo.com/share/share.php?url=[url]&title=[title]&pic=[cover|image]",

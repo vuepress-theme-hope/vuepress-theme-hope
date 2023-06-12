@@ -1,8 +1,6 @@
-import { type Plugin } from "@vuepress/core";
-import {
-  type AutoCatalogOptions,
-  autoCatalogPlugin,
-} from "vuepress-plugin-auto-catalog";
+import type { Plugin } from "@vuepress/core";
+import type { AutoCatalogOptions } from "vuepress-plugin-auto-catalog";
+import { autoCatalogPlugin } from "vuepress-plugin-auto-catalog";
 import { isPlainObject } from "vuepress-shared/node";
 
 import { ArticleInfoType } from "../index.js";
@@ -22,7 +20,6 @@ export const getAutoCatalogPlugin = (
     frontmatter: () => ({ article: false, feed: false, sitemap: false }),
     ...(isPlainObject(autoCatalog) ? autoCatalog : {}),
     // inject info
-    iconComponent: "HopeIcon",
     titleRouteMetaKey: ArticleInfoType.title,
     iconRouteMetaKey: ArticleInfoType.icon,
     indexRouteMetaKey: ArticleInfoType.index,

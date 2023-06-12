@@ -1,5 +1,5 @@
+import type { PluginFunction } from "@vuepress/core";
 import {
-  type PluginFunction,
   preparePageComponent,
   preparePageData,
   preparePagesComponents,
@@ -11,18 +11,18 @@ import { checkVersion, getPageExcerpt } from "vuepress-shared/node";
 
 import { prepareCategory } from "./category.js";
 import { convertOptions } from "./compact.js";
-import { type BlogOptions, type PageWithExcerpt } from "./options.js";
+import type { BlogOptions, PageWithExcerpt } from "./options.js";
 import { prepareType } from "./type.js";
 import { PLUGIN_NAME, getPageMap, logger } from "./utils.js";
 
 export const blogPlugin =
   (options: BlogOptions, legacy = true): PluginFunction =>
   (app) => {
-    // TODO: remove in V2 Stable
+    // TODO: Remove this in v2 stable
     if (legacy)
       convertOptions(options as BlogOptions & Record<string, unknown>);
 
-    checkVersion(app, PLUGIN_NAME, "2.0.0-beta.61");
+    checkVersion(app, PLUGIN_NAME, "2.0.0-beta.63");
 
     const {
       getInfo = (): Record<string, never> => ({}),

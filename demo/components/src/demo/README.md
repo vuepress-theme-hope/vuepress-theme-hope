@@ -28,6 +28,8 @@
 
 - [StackBlitz](stackblitz.md)
 
+- [VidStack](vidstack.md)
+
 - [VideoPlayer](videoplayer.md)
 
 - [XiGua](xigua.md)

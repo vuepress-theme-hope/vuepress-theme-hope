@@ -13,8 +13,8 @@ import { stylize } from "@mdit/plugin-stylize";
 import { sub } from "@mdit/plugin-sub";
 import { sup } from "@mdit/plugin-sup";
 import { tasklist } from "@mdit/plugin-tasklist";
-import { type PluginFunction } from "@vuepress/core";
-import { type MarkdownEnv } from "@vuepress/markdown";
+import type { PluginFunction } from "@vuepress/core";
+import type { MarkdownEnv } from "@vuepress/markdown";
 import { colors } from "@vuepress/utils";
 import { useSassPalettePlugin } from "vuepress-plugin-sass-palette";
 import {
@@ -26,7 +26,6 @@ import {
   addViteSsrExternal,
   addViteSsrNoExternal,
   checkVersion,
-  deepAssign,
   detectPackageManager,
   getBundlerName,
   getLocales,
@@ -34,7 +33,6 @@ import {
   isPlainObject,
 } from "vuepress-shared/node";
 
-import { checkLinks, getCheckLinksStatus } from "./checkLink.js";
 import {
   convertOptions,
   legacyCodeDemo,
@@ -42,10 +40,10 @@ import {
   legacyFlowchart,
   legacyInclude,
 } from "./compact/index.js";
+import { getLinksCheckStatus, linksCheck } from "./linksCheck.js";
 import { markdownEnhanceLocales } from "./locales.js";
 import {
   CODE_DEMO_DEFAULT_SETTING,
-  DEFAULT_VUE_PLAYGROUND_OPTIONS,
   card,
   chart,
   codeTabs,
@@ -64,13 +62,13 @@ import {
   vueDemo,
   vuePlayground,
 } from "./markdown-it/index.js";
-import { type MarkdownEnhanceOptions } from "./options.js";
+import type { MarkdownEnhanceOptions } from "./options.js";
 import {
   prepareConfigFile,
   prepareMathjaxStyleFile,
   prepareRevealPluginFile,
 } from "./prepare/index.js";
-import { type KatexOptions } from "./typings/index.js";
+import type { KatexOptions } from "./typings/index.js";
 import { PLUGIN_NAME, logger } from "./utils.js";
 
 export const mdEnhancePlugin =
@@ -85,7 +83,7 @@ export const mdEnhancePlugin =
         options as MarkdownEnhanceOptions & Record<string, unknown>
       );
 
-    checkVersion(app, PLUGIN_NAME, "2.0.0-beta.61");
+    checkVersion(app, PLUGIN_NAME, "2.0.0-beta.63");
 
     if (app.env.isDebug) logger.info("Options:", options);
 
@@ -93,9 +91,7 @@ export const mdEnhancePlugin =
       key: keyof MarkdownEnhanceOptions,
       gfm = false
     ): boolean =>
-      key in options
-        ? Boolean(options[key])
-        : (gfm && "gfm" in options && options.gfm) || false;
+      key in options ? Boolean(options[key]) : (gfm && options.gfm) || false;
 
     const locales = getLocales({
       app,
@@ -114,12 +110,16 @@ export const mdEnhancePlugin =
     const mermaidEnable = getStatus("mermaid");
     const presentationEnable = getStatus("presentation");
     const katexEnable = getStatus("katex");
-    const mathjaxEnable = getStatus("mathjax");
+    const mathjaxEnable = getStatus("mathjax", true);
     const vuePlaygroundEnable = getStatus("vuePlayground");
 
-    const shouldCheckLinks = getCheckLinksStatus(app, options);
+    const { enabled: linksCheckEnabled, isIgnoreLink } = getLinksCheckStatus(
+      app,
+      options
+    );
 
     const katexOptions: KatexOptions<MarkdownEnv> = {
+      mathFence: options.gfm ?? false,
       macros: {
         // support more symbols
         // eslint-disable-next-line @typescript-eslint/naming-convention
@@ -154,15 +154,14 @@ export const mdEnhancePlugin =
     const mathjaxInstance =
       options.mathjax === false
         ? null
-        : createMathjaxInstance(
-            isPlainObject(options.mathjax) ? options.mathjax : {}
-          );
+        : createMathjaxInstance({
+            mathFence: options.gfm ?? false,
+            ...(isPlainObject(options.mathjax) ? options.mathjax : {}),
+          });
 
-    const revealPlugins =
-      isPlainObject(options.presentation) &&
-      isArray(options.presentation.plugins)
-        ? options.presentation.plugins
-        : [];
+    const revealPlugins = isArray(options.presentation)
+      ? options.presentation
+      : [];
 
     useSassPalettePlugin(app, { id: "hope" });
 
@@ -177,19 +176,6 @@ export const mdEnhancePlugin =
           ...CODE_DEMO_DEFAULT_SETTING,
           ...(isPlainObject(options.demo) ? options.demo : {}),
         },
-        MERMAID_OPTIONS: isPlainObject(options.mermaid) ? options.mermaid : {},
-        REVEAL_CONFIG:
-          isPlainObject(options.presentation) &&
-          isPlainObject(options.presentation.revealConfig)
-            ? options.presentation.revealConfig
-            : {},
-        VUE_PLAYGROUND_OPTIONS: isPlainObject(options.vuePlayground)
-          ? deepAssign(
-              {},
-              DEFAULT_VUE_PLAYGROUND_OPTIONS,
-              options.vuePlayground
-            )
-          : DEFAULT_VUE_PLAYGROUND_OPTIONS,
       }),
 
       alias: (app): Record<string, string> => ({
@@ -265,10 +251,10 @@ export const mdEnhancePlugin =
 
       extendsMarkdown: (md): void => {
         // syntax
-        if (getStatus("gfm")) md.options.linkify = true;
         if (getStatus("attrs"))
           md.use(attrs, isPlainObject(options.attrs) ? options.attrs : {});
         if (getStatus("align")) md.use(align);
+        if (getStatus("breaks", true)) md.options.breaks = true;
         if (getStatus("container")) md.use(hint, locales);
         if (getStatus("imgLazyload")) md.use(imgLazyload);
         if (getStatus("figure")) md.use(figure);
@@ -279,6 +265,7 @@ export const mdEnhancePlugin =
           );
 
         if (getStatus("imgSize")) md.use(imgSize);
+        if (getStatus("linkify", true)) md.options.linkify = true;
         if (getStatus("obsidianImgSize")) md.use(obsidianImageSize);
         if (getStatus("sup")) md.use(sup);
         if (getStatus("sub")) md.use(sub);
@@ -371,15 +358,16 @@ export const mdEnhancePlugin =
       },
 
       extendsPage: (page, app): void => {
-        if (shouldCheckLinks && isAppInitialized) checkLinks(page, app);
+        if (linksCheckEnabled && isAppInitialized)
+          linksCheck(page, app, isIgnoreLink);
         if (includeEnable)
           page.deps.push(...(<string[]>page.markdownEnv["includedFiles"]));
       },
 
       onInitialized: (app): void => {
         isAppInitialized = true;
-        if (shouldCheckLinks)
-          app.pages.forEach((page) => checkLinks(page, app));
+        if (linksCheckEnabled)
+          app.pages.forEach((page) => linksCheck(page, app, isIgnoreLink));
       },
 
       onPrepared: (app): Promise<void> =>

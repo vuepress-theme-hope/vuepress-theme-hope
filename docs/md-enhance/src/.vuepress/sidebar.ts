@@ -1,6 +1,6 @@
 import { sidebar } from "docs-shared";
 
-export const enSidebarConfig = sidebar({
+export const enSidebar = sidebar({
   "/": [
     "",
     {
@@ -91,7 +91,7 @@ export const enSidebarConfig = sidebar({
   ],
 });
 
-export const zhSidebarConfig = sidebar({
+export const zhSidebar = sidebar({
   "/zh/": [
     "",
     {

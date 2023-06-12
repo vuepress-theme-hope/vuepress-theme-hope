@@ -1,5 +1,5 @@
 import { droppedLogger } from "./utils.js";
-import { type SeoOptions } from "../options.js";
+import type { SeoOptions } from "../options.js";
 
 /** @deprecated */
 export const convertOptions = (

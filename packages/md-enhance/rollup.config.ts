@@ -14,6 +14,7 @@ export default [
     {
       base: "client",
       files: [
+        "index",
         "compact/index",
         "components/ChartJS",
         "components/CodeDemo",
@@ -26,8 +27,8 @@ export default [
         "components/Tabs",
         "components/VPCard",
         "components/VuePlayground",
+        "composables/katex",
         "SlidePage",
-        "reveal/index",
       ],
     },
 

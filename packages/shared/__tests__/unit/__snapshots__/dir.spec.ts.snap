@@ -2,7 +2,20 @@
 
 exports[`should list dir correctly 1`] = `
 [
+  "check-version/correct-version1/package.json",
+  "check-version/correct-version2/package.json",
+  "check-version/nesting/package.json",
+  "check-version/nesting/sub-folder/package.json",
+  "check-version/wrong-version1/package.json",
+  "check-version/wrong-version2/package.json",
   "database.ts",
+  "package-manager/global/package.json",
+  "package-manager/lock-file/npm/package-lock.json",
+  "package-manager/lock-file/npm/package.json",
+  "package-manager/lock-file/pnpm/package.json",
+  "package-manager/lock-file/pnpm/pnpm-lock.yaml",
+  "package-manager/lock-file/yarn/package.json",
+  "package-manager/lock-file/yarn/yarn.lock",
   "src/README.md",
   "src/component.md",
   "src/cut.md",

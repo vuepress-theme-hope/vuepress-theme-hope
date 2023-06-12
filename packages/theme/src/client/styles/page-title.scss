@@ -1,6 +1,6 @@
 @use "vuepress-shared/styles/wrapper";
 
-.page-title {
+.vp-page-title {
   @include wrapper.horizontal-wrapper;
 
   position: relative;

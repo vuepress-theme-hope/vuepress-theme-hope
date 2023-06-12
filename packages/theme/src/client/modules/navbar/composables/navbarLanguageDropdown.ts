@@ -1,5 +1,6 @@
 import { useRouteLocale, useSiteLocaleData } from "@vuepress/client";
-import { type ComputedRef, computed } from "vue";
+import type { ComputedRef } from "vue";
+import { computed } from "vue";
 import { useRoute, useRouter } from "vue-router";
 import { entries, keys } from "vuepress-shared/client";
 
@@ -8,10 +9,7 @@ import {
   useThemeLocaleData,
 } from "@theme-hope/composables/index";
 
-import {
-  type AutoLinkOptions,
-  type NavGroup,
-} from "../../../../shared/index.js";
+import type { AutoLinkOptions, NavGroup } from "../../../../shared/index.js";
 
 /**
  * Get navbar config of select language dropdown
@@ -27,9 +25,10 @@ export const useNavbarLanguageDropdown =
 
     return computed(() => {
       const localePaths = keys(siteLocale.value.locales);
+      const extraLocales = entries(themeData.value.extraLocales ?? {});
 
       // do not display language selection dropdown if there is only one language
-      if (localePaths.length < 2) return null;
+      if (localePaths.length < 2 && !extraLocales.length) return null;
 
       const { path, fullPath } = router.currentRoute.value;
       const { navbarLocales } = themeLocale.value;
@@ -78,15 +77,13 @@ export const useNavbarLanguageDropdown =
               link,
             };
           }),
-          ...entries(themeData.value.extraLocales || {}).map(
-            ([text, path]) => ({
-              text,
-              link: path.replace(
-                ":route",
-                route.path.replace(routeLocale.value, "")
-              ),
-            })
-          ),
+          ...extraLocales.map(([text, path]) => ({
+            text,
+            link: path.replace(
+              ":route",
+              route.path.replace(routeLocale.value, "")
+            ),
+          })),
         ],
       };
 

@@ -1,11 +1,5 @@
-import {
-  type PropType,
-  Transition,
-  TransitionGroup,
-  type VNode,
-  defineComponent,
-  h,
-} from "vue";
+import type { PropType, SlotsType, VNode } from "vue";
+import { Transition, TransitionGroup, defineComponent, h } from "vue";
 
 export default defineComponent({
   name: "DropTransition",
@@ -35,6 +29,10 @@ export default defineComponent({
     appear: Boolean,
   },
 
+  slots: Object as SlotsType<{
+    default: () => VNode | VNode[];
+  }>,
+
   setup(props, { slots }) {
     const setStyle = (item: HTMLElement): void => {
       item.style.transition = `transform ${props.duration}s ease-in-out ${props.delay}s, opacity ${props.duration}s ease-in-out ${props.delay}s`;
@@ -60,7 +58,7 @@ export default defineComponent({
           onAfterEnter: unsetStyle,
           onBeforeLeave: setStyle,
         },
-        () => slots["default"]?.()
+        () => slots.default()
       );
   },
 });

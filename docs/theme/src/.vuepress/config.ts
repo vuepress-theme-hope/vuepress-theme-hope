@@ -3,6 +3,7 @@ import theme from "./theme.js";
 
 const __dirname = getDirname(import.meta.url);
 
+// the config wrapper is located in <root>/docs-shared/src/config-wrapper.ts
 export default config(
   {
     name: "hope",
@@ -43,6 +44,10 @@ export default config(
     ],
 
     alias: {
+      "@FlowChartPlayground": path.resolve(
+        __dirname,
+        "./components/FlowChartPlayground"
+      ),
       "@IconDisplay": path.resolve(__dirname, "./components/IconDisplay"),
       "@KatexPlayground": path.resolve(
         __dirname,

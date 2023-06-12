@@ -1,12 +1,36 @@
-import {
-  type LocaleConfig,
-  type Page,
-  type PageFrontmatter,
-} from "@vuepress/core";
+import type { LocaleConfig, Page, PageFrontmatter } from "@vuepress/core";
 
-import { type AutoCatalogLocaleData } from "../shared/index.js";
+import type { AutoCatalogLocaleData } from "../shared/index.js";
 
-export interface AutoCatalogOptions {
+export interface DeprecatedAutoCatalogOptions {
+  /**
+   * @deprecated use `defineAutoCatalogIconComponent` instead
+   * @see https://plugin-auto-catalog.vuejs.press/config/#defineautocatalogiconcomponent
+   */
+  iconComponent?: never;
+
+  /**
+   * @deprecated use `titleGetter` instead
+   */
+  getTitle?: never;
+
+  /**
+   * @deprecated use `iconGetter` instead
+   */
+  getIcon?: never;
+
+  /**
+   * @deprecated use `orderGetter` instead
+   */
+  getOrder?: never;
+
+  /**
+   * @deprecated use `shouldIndex` instead
+   */
+  getIndex?: never;
+}
+
+export interface AutoCatalogOptions extends DeprecatedAutoCatalogOptions {
   /**
    * The max level of the generated catalog
    *
@@ -104,15 +128,6 @@ export interface AutoCatalogOptions {
    * @default 'icon'
    */
   iconRouteMetaKey?: string;
-
-  /**
-   * Icon render
-   *
-   * 图标渲染器
-   *
-   * @description icon will be rendered as `<iconComponent :icon="icon" />`
-   */
-  iconComponent?: string;
 
   /**
    * Page order getter

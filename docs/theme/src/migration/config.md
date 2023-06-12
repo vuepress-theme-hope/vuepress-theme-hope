@@ -257,7 +257,7 @@ Move all plugin related options under `plugins`.
 
     The plugin now check your Markdown links and warn you when broken links are detected.
 
-    You can control this behavior with `plugins.mdEnhance.linkCheck` option
+    You can control this behavior with `plugins.mdEnhance.checkLinks` option
 
   - image mark support ![New](https://img.shields.io/badge/-New-brightgreen)
 

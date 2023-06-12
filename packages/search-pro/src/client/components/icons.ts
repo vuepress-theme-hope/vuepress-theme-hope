@@ -1,14 +1,6 @@
-import { type FunctionalComponent, h } from "vue";
+import type { FunctionalComponent } from "vue";
+import { h } from "vue";
 import { IconBase } from "vuepress-shared/client";
-
-export const CloseIcon: FunctionalComponent = () =>
-  h(IconBase, { name: "close" }, () =>
-    h("path", {
-      d: "M507.168 473.232 716.48 263.936a16 16 0 0 1 22.624 0l11.312 11.312a16 16 0 0 1 0 22.624L541.12 507.168 750.4 716.48a16 16 0 0 1 0 22.624l-11.312 11.312a16 16 0 0 1-22.624 0L507.168 541.12 297.872 750.4a16 16 0 0 1-22.624 0l-11.312-11.312a16 16 0 0 1 0-22.624l209.296-209.312-209.296-209.296a16 16 0 0 1 0-22.624l11.312-11.312a16 16 0 0 1 22.624 0l209.296 209.296z",
-    })
-  );
-
-CloseIcon.displayName = "CloseIcon";
 
 export const HeadingIcon: FunctionalComponent = () =>
   h(IconBase, { name: "heading" }, () =>
@@ -54,3 +46,65 @@ export const SearchIcon: FunctionalComponent = () =>
   );
 
 SearchIcon.displayName = "SearchIcon";
+
+export const LoadingIcon: FunctionalComponent = () =>
+  h(
+    "svg",
+    {
+      xmlns: "http://www.w3.org/2000/svg",
+      width: "32",
+      height: "32",
+      preserveAspectRatio: "xMidYMid",
+      viewBox: "0 0 100 100",
+    },
+    [
+      h(
+        "circle",
+        { cx: "28", cy: "75", r: "11", fill: "currentColor" },
+        h("animate", {
+          attributeName: "fill-opacity",
+          begin: "0s",
+          dur: "1s",
+          keyTimes: "0;0.2;1",
+          repeatCount: "indefinite",
+          values: "0;1;1",
+        })
+      ),
+      h(
+        "path",
+        {
+          fill: "none",
+          stroke: "#88baf0",
+          "stroke-width": "10",
+          d: "M28 47a28 28 0 0 1 28 28",
+        },
+        h("animate", {
+          attributeName: "stroke-opacity",
+          begin: "0.1s",
+          dur: "1s",
+          keyTimes: "0;0.2;1",
+          repeatCount: "indefinite",
+          values: "0;1;1",
+        })
+      ),
+      h(
+        "path",
+        {
+          fill: "none",
+          stroke: "#88baf0",
+          "stroke-width": "10",
+          d: "M28 25a50 50 0 0 1 50 50",
+        },
+        h("animate", {
+          attributeName: "stroke-opacity",
+          begin: "0.2s",
+          dur: "1s",
+          keyTimes: "0;0.2;1",
+          repeatCount: "indefinite",
+          values: "0;1;1",
+        })
+      ),
+    ]
+  );
+
+LoadingIcon.displayName = "LoadingIcon";

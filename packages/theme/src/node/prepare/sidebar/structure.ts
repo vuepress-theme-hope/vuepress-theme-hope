@@ -1,8 +1,8 @@
-import { type App, type Page } from "@vuepress/core";
+import type { App, Page } from "@vuepress/core";
 import { path } from "@vuepress/utils";
 import { startsWith } from "vuepress-shared/node";
 
-import { type SidebarSorterFunction } from "../../../shared/index.js";
+import type { SidebarSorterFunction } from "../../../shared/index.js";
 
 export interface FileInfo {
   type: "file";

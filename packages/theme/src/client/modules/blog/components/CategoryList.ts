@@ -1,7 +1,7 @@
 import { usePageData } from "@vuepress/client";
-import { type VNode, defineComponent, h } from "vue";
-import { RouterLink } from "vue-router";
-import { entries, generateIndexFromHash } from "vuepress-shared/client";
+import type { VNode } from "vue";
+import { defineComponent, h } from "vue";
+import { VPLink, entries, generateIndexFromHash } from "vuepress-shared/client";
 
 import { useCategoryMap } from "@theme-hope/modules/blog/composables/index";
 
@@ -17,21 +17,21 @@ export default defineComponent({
     return (): VNode =>
       h(
         "ul",
-        { class: "category-list-wrapper" },
+        { class: "vp-category-list" },
         entries(categoryMap.value.map).map(([category, { path, items }]) =>
           h(
             "li",
             {
               class: [
-                "category",
+                "vp-category",
                 // TODO: magic number 9 is tricky here
-                `category${generateIndexFromHash(category, 9)}`,
+                `vp-category${generateIndexFromHash(category, 9)}`,
                 { active: path === page.value.path },
               ],
             },
-            h(RouterLink, { to: path }, () => [
+            h(VPLink, { to: path }, () => [
               category,
-              h("span", { class: "category-num" }, items.length),
+              h("span", { class: "count" }, items.length),
             ])
           )
         )

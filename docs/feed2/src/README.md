@@ -7,11 +7,11 @@ heroText: vuepress-plugin-feed2
 tagline: Feed plugin for VuePress2
 actions:
   - text: Guide 💡
-    link: /guide.html
+    link: ./guide.html
     type: primary
 
   - text: Config 🛠
-    link: /config/
+    link: ./config/
 
 footer: Theme by <a href="https://theme-hope.vuejs.press" target="_blank">VuePress Theme Hope</a> | MIT Licensed, Copyright © 2019-present Mr.Hope
 
@@ -83,9 +83,3 @@ export default {
 ## Migrating from V1
 
 For details, see [Migration Guide](./migration.md).
-
-<NetlifyBadge />
-
-<script setup lang="ts">
-import NetlifyBadge from "@NetlifyBadge";
-</script>

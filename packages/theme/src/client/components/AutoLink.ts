@@ -1,20 +1,14 @@
 import { useSiteData } from "@vuepress/client";
 import { ExternalLinkIcon } from "@vuepress/plugin-external-link-icon/client";
 import { isLinkHttp, isLinkMailto, isLinkTel } from "@vuepress/shared";
-import {
-  type PropType,
-  type VNode,
-  computed,
-  defineComponent,
-  h,
-  toRef,
-} from "vue";
-import { RouterLink, useRoute } from "vue-router";
-import { keys, startsWith } from "vuepress-shared/client";
+import type { PropType, SlotsType, VNode } from "vue";
+import { computed, defineComponent, h, toRef } from "vue";
+import { useRoute } from "vue-router";
+import { VPLink, keys, startsWith } from "vuepress-shared/client";
 
 import HopeIcon from "@theme-hope/components/HopeIcon";
 
-import { type AutoLinkOptions } from "../../shared/index.js";
+import type { AutoLinkOptions } from "../../shared/index.js";
 
 export default defineComponent({
   name: "AutoLink",
@@ -43,6 +37,12 @@ export default defineComponent({
 
   emits: ["focusout"],
 
+  slots: Object as SlotsType<{
+    before?: () => VNode[] | VNode;
+    after?: () => VNode[] | VNode;
+    default?: () => VNode[] | VNode;
+  }>,
+
   setup(props, { attrs, emit, slots }) {
     const route = useRoute();
     const siteData = useSiteData();
@@ -67,8 +67,8 @@ export default defineComponent({
     // if the `target` attr is "_blank"
     const isBlankTarget = computed(() => linkTarget.value === "_blank");
 
-    // render `<RouterLink>` or not
-    const renderRouterLink = computed(
+    // render `<VPLink>` or not
+    const renderVPLink = computed(
       () =>
         !hasHttpProtocol.value &&
         !hasNonHttpProtocol.value &&
@@ -104,7 +104,7 @@ export default defineComponent({
 
     // if this link is active
     const isActive = computed(() =>
-      renderRouterLink.value
+      renderVPLink.value
         ? config.value.activeMatch
           ? new RegExp(config.value.activeMatch).test(route.path)
           : // if this link is active in subpath
@@ -115,11 +115,12 @@ export default defineComponent({
     );
 
     return (): VNode => {
+      const { before, after, default: defaultSlot } = slots;
       const { text, icon, link } = config.value;
 
-      return renderRouterLink.value
+      return renderVPLink.value
         ? h(
-            RouterLink,
+            VPLink,
             {
               to: link,
               "aria-label": linkAriaLabel.value,
@@ -129,11 +130,9 @@ export default defineComponent({
               onFocusout: () => emit("focusout"),
             },
             () =>
-              slots["default"]?.() || [
-                slots["before"]?.() || h(HopeIcon, { icon }),
-                text,
-                slots["after"]?.(),
-              ]
+              defaultSlot
+                ? defaultSlot()
+                : [before ? before() : h(HopeIcon, { icon }), text, after?.()]
           )
         : h(
             "a",
@@ -147,12 +146,14 @@ export default defineComponent({
               class: ["nav-link", attrs["class"]],
               onFocusout: () => emit("focusout"),
             },
-            slots["default"]?.() || [
-              slots["before"]?.() || h(HopeIcon, { icon }),
-              text,
-              props.noExternalLinkIcon ? null : h(ExternalLinkIcon),
-              slots["after"]?.(),
-            ]
+            defaultSlot
+              ? defaultSlot()
+              : [
+                  before ? before() : h(HopeIcon, { icon }),
+                  text,
+                  props.noExternalLinkIcon ? null : h(ExternalLinkIcon),
+                  after?.(),
+                ]
           );
     };
   },

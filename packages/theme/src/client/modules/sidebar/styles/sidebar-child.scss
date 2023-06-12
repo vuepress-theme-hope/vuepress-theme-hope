@@ -2,7 +2,7 @@
 @use "vuepress-shared/styles/arrow";
 @use "@sass-palette/helper";
 
-.sidebar-heading {
+.vp-sidebar-heading {
   display: flex;
   align-items: center;
 
@@ -51,18 +51,18 @@
     margin-inline-end: 0.25em;
   }
 
-  .title {
+  .vp-sidebar-title {
     flex: 1;
   }
 
-  .arrow {
+  .vp-arrow {
     @include arrow.arrow;
 
     font-size: 1.5em;
   }
 }
 
-button.sidebar-heading {
+button.vp-sidebar-heading {
   outline: none;
 
   font-weight: inherit;
@@ -73,7 +73,7 @@ button.sidebar-heading {
   cursor: pointer;
 }
 
-.sidebar-link {
+.vp-sidebar-link {
   display: inline-block;
 
   box-sizing: border-box;
@@ -107,7 +107,7 @@ button.sidebar-heading {
     }
   }
 
-  .sidebar-sub-headers & {
+  .vp-sidebar-sub-headers & {
     padding-top: 0.25rem;
     padding-bottom: 0.25rem;
     border-inline-start: none;

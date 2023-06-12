@@ -8,6 +8,14 @@ tag:
   - 流程图
 ---
 
+::: warning
+
+由于 [flowchart.js](http://flowchart.js.org/) 不再维护，此功能已弃用。
+
+你应该尝试改用 [Mermaid 流程图](./mermaid.md#流程图)。
+
+:::
+
 让你的 VuePress 站点中的 Markdown 文件支持流程图。
 
 我们使用 [flowchart.js](http://flowchart.js.org/) 来支持这一功能。
@@ -72,6 +80,10 @@ export default {
 - `vue` (默认)
 - `ant`
 - `pie`
+
+## 在此尝试
+
+<FlowChartPlayground />
 
 ## 演示
 
@@ -382,3 +394,9 @@ e=>end: End:>http://www.yahoo.com
 ```md
 st@>op1({"stroke":"Red"})@>cond({"stroke":"Red","stroke-width":6,"arrow-end":"classic-wide-long"})@>c2({"stroke":"Red"})@>op2({"stroke":"Red"})@>e({"stroke":"Red"})
 ```
+
+<script setup lang="ts">
+import { defineAsyncComponent } from 'vue';
+
+const FlowChartPlayground = defineAsyncComponent(()=> import('@FlowChartPlayground'));
+</script>

@@ -3,9 +3,11 @@ title: Config
 icon: gears
 ---
 
+## Plugin Options
+
 You can pass these options to the plugin:
 
-## gfm
+### gfm
 
 - Type: `boolean`
 - Default: `false`
@@ -16,13 +18,13 @@ Whether to support full GFM syntax.
 
 For full GFM syntax, see [GFM](https://github.github.com/gfm/).
 
-We are not 100% supporting it to be honestly, we only supply its syntax including footnote, task list, code highlight, image mark and so on.
+We are not 100% supporting it to be honestly, we only supply its syntax including linkify, breaks, footnote, task list, code highlight, image mark, mermaid, mathjax and so on.
 
 Some of the behavior might be different, for example to support Vue syntax, we are not disallowing `<script>` tags. But in most situation, the behavior should be same.
 
 :::
 
-## container
+### container
 
 - Type: `boolean`
 - Default: `false`
@@ -44,21 +46,33 @@ The last 4 items conflict with default theme and will override its style.
 
 :::
 
-## linkCheck
+### checkLinks
 
-- Type: `"always" | "dev" | "build" | "never" | boolean`
-- Default: `"dev"`
+- Type: `LinksCheckOptions`
 
-Whether to enable link check.
+  ```ts
+  type LinksCheckStatus = "always" | "dev" | "build" | "never";
 
-::: note
+  interface LinksCheckOptions {
+    /**
+     * Whether check dead links in markdown
+     *
+     * @default "dev"
+     */
+    status?: LinksCheckStatus;
 
-- `true` equals to `'always'`
-- `false` equals to `'never'`
+    /**
+     * Dead links to ignore
+     */
+    ignore?: (string | RegExp)[] | ((link: string, isDev: boolean) => boolean);
+  }
+  ```
 
-:::
+- Default: `{ status: "dev" }`
 
-## vPre
+Whether to enable links check.
+
+### vPre
 
 - Type: `boolean`
 - Default: `false`
@@ -67,7 +81,23 @@ Whether to enable link check.
 
 Whether to enable v-pre wrapper.
 
-## tabs
+### breaks
+
+- Type: `boolean`
+- Default: `false`
+- Enabled in GFM: Yes
+
+Whether convert `\n` in paragraphs into `<br>`s
+
+### linkify
+
+- Type: `boolean`
+- Default: `false`
+- Enabled in GFM: Yes
+
+Whether convert URL-like text into links
+
+### tabs
 
 - Type: `boolean`
 - Default: `false`
@@ -76,7 +106,7 @@ Whether to enable v-pre wrapper.
 
 Whether to enable tabs.
 
-## codetabs
+### codetabs
 
 - Type: `boolean`
 - Default: `false`
@@ -85,7 +115,7 @@ Whether to enable tabs.
 
 Whether to enable codetabs.
 
-## align
+### align
 
 - Type: `boolean`
 - Default: `false`
@@ -94,7 +124,7 @@ Whether to enable codetabs.
 
 Whether to enable custom align.
 
-## attrs
+### attrs
 
 - Type: `AttrsOptions | boolean`
 
@@ -131,52 +161,54 @@ Whether to enable custom align.
 
 Whether to enable attribute customize support.
 
-## sup
+### sup
 
 - Type: `boolean`
 - Default: `false`
 
 Whether to enable the upper format support.
 
-## sub
+### sub
 
 - Type: `boolean`
 - Default: `false`
 
 Whether to enable the lower corner format support.
 
-## footnote
+### footnote
 
 - Type: `boolean`
 - Default: `false`
+- Enabled in GFM: Yes
 
 Whether to enable footnote format support.
 
-## mark
+### mark
 
 - Type: `boolean`
 - Default: `false`
 
 Whether to enable mark support.
 
-## figure
+### figure
 
 - Type: `boolean`
 - Default: `false`
 
 Whether enable figure support.
 
-## imgLazyload
+### imgLazyload
 
 - Type: `boolean`
 - Default: `false`
 
 Whether to lazy load every image in page in native way.
 
-## imgMark
+### imgMark
 
 - Type: `ImageMarkOptions | boolean`
 - Default: `false`
+- Enabled in GFM: Yes
 
 Whether enable image mark support.
 
@@ -189,24 +221,25 @@ interface ImageMarkOptions {
 }
 ```
 
-## imgSize
+### imgSize
 
 - Type: `boolean`
 - Default: `false`
 
 Whether enable image size support.
 
-## obsidianImgSize
+### obsidianImgSize
 
 - Type: `boolean`
 - Default: `false`
 
 Whether enable obsidian image size support.
 
-## tasklist
+### tasklist
 
 - Type: `TaskListOptions | boolean`
 - Default: `false`
+- Enabled in GFM: Yes
 
 Whether to enable tasklist format support. You can pass an object to config task list.
 
@@ -228,27 +261,28 @@ interface TaskListOptions {
 }
 ```
 
-## katex
+### katex
 
-- Type: `KatexOptions & { mhchem?: boolean } | boolean`
+- Type: `KatexOptions & { copy?: boolean; mhchem?: boolean } | boolean`
 - Default: `false`
 
 Whether to enable $\TeX$ syntax support through KaTeX. You can pass an object to config KaTeX.
 
-In particular, you can enable the mhchem extension with `katex.mhchem: true`.
+In particular, you can enable the copy and mhchem extensions with `katex.copy: true` and `katex.mhchem: true`.
 
 Please see [Katex Docs](https://katex.org/docs/options.html) for available options.
 
-## mathjax
+### mathjax
 
 - Type: `MathJaxOptions | boolean`
 - Default: `false`
+- Enabled in GFM: Yes
 
 Whether to enable $\TeX$ syntax support through Math Jax. You can pass an object to config Math Jax.
 
 Please see [source code](https://github.com/vuepress-theme-hope/vuepress-theme-hope/tree/main/packages/md-enhance/src/shared/mathjax.ts) for available options.
 
-## include
+### include
 
 - Type: `IncludeOptions | boolean`
 
@@ -274,42 +308,43 @@ Please see [source code](https://github.com/vuepress-theme-hope/vuepress-theme-h
 
 Whether to enable Markdown import support. You can pass in a function for path resolution.
 
-## card
+### card
 
 - Type: `boolean`
 - Default: `false`
 
 Whether to enable card support
 
-## chart
+### chart
 
 - Type: `boolean`
 - Default: `false`
 
 Whether to enable chart support
 
-## echarts
+### echarts
 
 - Type: `boolean`
 - Default: `false`
 
 Whether to enable ECharts support
 
-## flowchart
+### flowchart
 
 - Type: `boolean`
 - Default: `false`
 
 Whether to enable flowchart support
 
-## mermaid
+### mermaid
 
 - Type: `MermaidConfig | boolean`
 - Default: `false`
+- Enabled in GFM: Yes
 
 Whether to enable [Mermaid](https://mermaid.js.org/) support, you can pass in a config object to customize the behavior of Mermaid.
 
-## stylize
+### stylize
 
 - Type: `StylizeOptions | false`
 
@@ -355,7 +390,7 @@ Whether to enable [Mermaid](https://mermaid.js.org/) support, you can pass in a 
 
 Stylize inline tokens to create snippet you want.
 
-## playground
+### playground
 
 - Type: `PlaygroundGlobalOptions`
 
@@ -478,99 +513,28 @@ Stylize inline tokens to create snippet you want.
 
 Playground options.
 
-## vuePlayground
+### vuePlayground
 
-- Type: `VuePlaygroundOptions | boolean`
-
-  ```ts
-  interface VuePlaygroundOptions {
-    /**
-     * specify the version of vue
-     */
-    vueVersion?: string;
-
-    /**
-     * specify default URL to import Vue runtime from in the sandbox
-     *
-     * @default "https://unpkg.com/@vue/runtime-dom@${version}/dist/runtime-dom.esm-browser.js"
-     */
-    defaultVueRuntimeURL?: string;
-
-    /**
-     * Specify default URL to import Vue Server Renderer from in the sandbox
-     *
-     * @default "https://unpkg.com/@vue/server-renderer@${version}/dist/server-renderer.esm-browser.js"
-     */
-    defaultVueServerRendererURL?: string;
-
-    /**
-     * Whether to enable repl's editor resizable
-     *
-     * @default true
-     */
-    autoResize?: boolean;
-
-    /**
-     * Whether to show JS, CSS, SSR panel
-     *
-     * @default false
-     */
-    showCompileOutput?: boolean;
-
-    /**
-     * Whether to show import map
-     *
-     * @default true
-     */
-    showImportMap?: boolean;
-
-    /**
-     * Whether to clear console
-     *
-     * @default false
-     */
-    clearConsole?: boolean;
-
-    /**
-     * Layout
-     *
-     * @default 'horizontal'
-     */
-    layout?: "horizontal" | "vertical";
-
-    /**
-     * Options to configure the `vue/compiler-sfc`
-     */
-    sfcOptions?: SFCOptions;
-
-    /**
-     * Whether to enable SSR
-     *
-     * @default true
-     */
-    ssr?: boolean;
-  }
-  ```
-
+- Type: `boolean`
 - Default: `false`
 
 Whether to enable vue playground support.
 
-## demo
+### demo
 
 - Type: `CodeDemoGlobalOptions | boolean`
 - Default: `false`
 
 Whether to enable code demo support.
 
-### demo.jsLib
+#### demo.jsLib
 
 - Type: `string[]`
 - Required: No
 
 CodePen, JsFiddle requires an external JS library for dating.
 
-### demo.cssLib
+#### demo.cssLib
 
 - Type: `string[]`
 - Required: No
@@ -583,74 +547,67 @@ The above two options are only used by third-party code demo service, you need t
 
 :::
 
-### demo.jsfiddle
+#### demo.jsfiddle
 
 - Type: `boolean`
 - Default value: `true`
 
 Whether to display the JSFiddle button
 
-### demo.codepen
+#### demo.codepen
 
 - Type: `boolean`
 - Default value: `true`
 
 Whether to display the CodePen button
 
-### demo.codepenLayout
+#### demo.codepenLayout
 
 - Type: `"top" | "left" | "correct"`
 - Default value: `"left"`
 
 CodePen editor layout
 
-### demo.codepenEditors
+#### demo.codepenEditors
 
 - Type: `string`
 - Default value: `"101"`
 
 CodePen editor status
 
-### others
+#### others
 
 The following are the library links used by the third-party code demo service. Unless your environment cannot visit unpkg or the speed is slow, you probably don't need to override the default values.
 
-#### demo.babel
+##### demo.babel
 
 Default value: `"https://unpkg.com/@babel/standalone/babel.min.js"`
 
-#### demo.vue
+##### demo.vue
 
 Default value: `"https://unpkg.com/vue/dist/vue.global.prod.js"`
 
-#### demo.react
+##### demo.react
 
 Default value: `"https://unpkg.com/react/umd/react.production.min.js"`
 
-#### demo.reactDOM
+##### demo.reactDOM
 
 Default value: `"https://unpkg.com/react-dom/umd/react-dom.production.min.js"`
 
-## presentation
+### presentation
 
 - Type: `PresentationOptions | boolean`
-- Default: `false`
-
-Whether to enable presentation syntax support.
-
-You can set it with an object, the object will be used to config reveal.js.
-
-### presentation.plugins
-
-- Type: `RevealPlugin[]`
 
   ```ts
   type RevealPlugin = "highlight" | "math" | "search" | "notes" | "zoom";
   ```
 
-- Required: No
+- Default: `false`
 
-Plugins you want to use on reveal.js.
+Whether to enable presentation syntax support.
+
+You can set it with an array, which represents enabled plugins.
 
 Acceptable values are:
 
@@ -664,14 +621,7 @@ Acceptable values are:
 - `"audio"`
 - `"chalkboard"` -->
 
-### presentation.revealConfig
-
-- Type: `Partial<RevealOptions>`
-- Required: No
-
-Config which you want to pass to reveal.js.
-
-## delay
+### delay
 
 - Type: `number`
 - Default: `800`
@@ -684,7 +634,7 @@ If the theme you are using has a switching animation, it is recommended to confi
 
 :::
 
-## locales
+### locales
 
 - Type: `MarkdownEnhanceLocaleConfig`
 
@@ -753,3 +703,97 @@ Locales config for Markdown Enhance Plugin.
 - **Dutch** (nl-NL)
 
 :::
+
+## Client Config
+
+### defineMermaidConfig
+
+```ts
+export const defineMermaidConfig: (options: MermaidConfig) => void;
+```
+
+Define config which you want to pass to mermaid.
+
+### defineRevealConfig
+
+```ts
+export const defineRevealConfig: (options: RevealOptions) => void;
+```
+
+Define config which you want to pass to reveal.js.
+
+### defineVuePlaygroundConfig
+
+```ts
+interface VuePlaygroundOptions {
+  /**
+   * specify the version of vue
+   */
+  vueVersion?: string;
+
+  /**
+   * specify default URL to import Vue runtime from in the sandbox
+   *
+   * @default "https://unpkg.com/@vue/runtime-dom@${version}/dist/runtime-dom.esm-browser.js"
+   */
+  defaultVueRuntimeURL?: string;
+
+  /**
+   * Specify default URL to import Vue Server Renderer from in the sandbox
+   *
+   * @default "https://unpkg.com/@vue/server-renderer@${version}/dist/server-renderer.esm-browser.js"
+   */
+  defaultVueServerRendererURL?: string;
+
+  /**
+   * Whether to enable repl's editor resizable
+   *
+   * @default true
+   */
+  autoResize?: boolean;
+
+  /**
+   * Whether to show JS, CSS, SSR panel
+   *
+   * @default false
+   */
+  showCompileOutput?: boolean;
+
+  /**
+   * Whether to show import map
+   *
+   * @default true
+   */
+  showImportMap?: boolean;
+
+  /**
+   * Whether to clear console
+   *
+   * @default false
+   */
+  clearConsole?: boolean;
+
+  /**
+   * Layout
+   *
+   * @default 'horizontal'
+   */
+  layout?: "horizontal" | "vertical";
+
+  /**
+   * Options to configure the `vue/compiler-sfc`
+   */
+  sfcOptions?: SFCOptions;
+
+  /**
+   * Whether to enable SSR
+   *
+   * @default true
+   */
+  ssr?: boolean;
+}
+
+export const defineVuePlaygroundConfig: (options: VuePlaygroundOptions) => void;
+```
+
+Define config which you want to pass to `@vue/repl`.

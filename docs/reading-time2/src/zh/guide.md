@@ -52,7 +52,7 @@ export default {
 
 ## 客户端侧
 
-您可以从 `vuepress-plugin-reading-time2` 导入 `useReadingTimeData` 和 `useReadingTimeLocale` 来获取当前页面的阅读时间数据和语言环境数据：
+你可以从 `vuepress-plugin-reading-time2` 导入 `useReadingTimeData` 和 `useReadingTimeLocale` 来获取当前页面的阅读时间数据和语言环境数据：
 
 ```vue
 <script setup lang="ts">

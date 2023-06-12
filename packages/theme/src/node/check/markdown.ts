@@ -1,8 +1,8 @@
-import { HeadersPluginOptions, type MarkdownOptions } from "@vuepress/markdown";
+import type { HeadersPluginOptions, MarkdownOptions } from "@vuepress/markdown";
 import { colors } from "@vuepress/utils";
 import { isArray, values } from "vuepress-shared/node";
 
-import { type ThemeData } from "../../shared/index.js";
+import type { ThemeData } from "../../shared/index.js";
 import { logger } from "../utils.js";
 
 export const checkHeader = (

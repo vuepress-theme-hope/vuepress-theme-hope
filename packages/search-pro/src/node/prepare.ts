@@ -1,43 +1,43 @@
-import { type App } from "@vuepress/core";
-import { utoa } from "vuepress-shared/node";
+import type { App } from "@vuepress/core";
+import { addAll, discard, vacuum } from "slimsearch";
+import { entries, keys } from "vuepress-shared/node";
 
-import { generatePageIndex, getSearchIndex } from "./generateIndex.js";
-import { type SearchProOptions } from "./options.js";
-import { type SearchIndex } from "../shared/index.js";
+import { generatePageIndex, getSearchIndexStore } from "./generateIndex.js";
+import type { SearchProOptions } from "./options.js";
+import { getLocaleChunkName } from "./utils.js";
+import type { SearchIndexStore } from "../shared/index.js";
 
-const HMR_CODE = `
-if (import.meta.webpackHot) {
-  import.meta.webpackHot.accept()
-  if (__VUE_HMR_RUNTIME__.updateSearchProDatabase)
-    __VUE_HMR_RUNTIME__.updateSearchProDatabase(database)
-}
-
-if (import.meta.hot) {
-  import.meta.hot.accept(({ database }) => {
-    __VUE_HMR_RUNTIME__.updateSearchProDatabase(database);
-  })
-}
-`;
-
-let previousSearchIndex: SearchIndex | null = null;
+let previousSearchIndexStore: SearchIndexStore | null = null;
 
 export const prepareSearchIndex = async (
   app: App,
   options: SearchProOptions
 ): Promise<void> => {
   if (app.env.isDev) {
-    const searchIndex = getSearchIndex(app, options);
+    const searchIndexStore = await getSearchIndexStore(app, options);
 
-    previousSearchIndex = searchIndex;
+    previousSearchIndexStore = searchIndexStore;
 
-    // search index file content
-    const content = `\
-export const database = "${utoa(JSON.stringify(searchIndex))}";
+    await Promise.all(
+      entries(searchIndexStore).map(([locale, documents]) =>
+        app.writeTemp(
+          `search-pro/${getLocaleChunkName(locale)}.js`,
+          `export default ${JSON.stringify(JSON.stringify(documents))};`
+        )
+      )
+    );
 
-${HMR_CODE}
-`;
-
-    await app.writeTemp("search-pro/database.js", content);
+    await app.writeTemp(
+      `search-pro/index.js`,
+      `export default {${keys(searchIndexStore)
+        .map(
+          (locale) =>
+            `${JSON.stringify(locale)}: () => import('./${getLocaleChunkName(
+              locale
+            )}.js')`
+        )
+        .join(",")}}`
+    );
   }
 };
 
@@ -46,13 +46,13 @@ export const updateSearchIndex = async (
   options: SearchProOptions,
   path: string
 ): Promise<void> => {
-  if (previousSearchIndex) {
+  if (previousSearchIndexStore) {
     const actualPath = path
       .replace(/^pages\//, "")
       .replace(/\/index\.html\.vue/, "/readme.md")
       .replace(/\.html\.vue/, ".md");
 
-    const { env, pages, writeTemp } = app;
+    const { pages, writeTemp } = app;
 
     const page = pages.find(
       ({ filePathRelative }) =>
@@ -60,25 +60,34 @@ export const updateSearchIndex = async (
     )!;
 
     if (page) {
-      const pageIndex = generatePageIndex(
+      const pageIndexes = generatePageIndex(
         page,
         options.customFields,
         options.indexContent
       );
+      const { pathLocale, key } = page;
+      const localeSearchIndex = previousSearchIndexStore[pathLocale];
 
       // update index
-      if (pageIndex) {
-        previousSearchIndex[page.pathLocale][page.path] = pageIndex;
+      if (pageIndexes) {
+        // remove previous index
+        Array.from(localeSearchIndex._documentIds.values())
+          .filter((id) => id.startsWith(key))
+          .forEach((id) => discard(localeSearchIndex, id));
+
+        addAll(localeSearchIndex, pageIndexes);
+
+        await vacuum(localeSearchIndex);
 
         // search index file content
-        let content = `\
-export const database = "${utoa(JSON.stringify(previousSearchIndex))}"
+        const content = `\
+export default ${JSON.stringify(JSON.stringify(localeSearchIndex))}
 `;
 
-        // inject HMR code
-        if (env.isDev) content += HMR_CODE;
-
-        await writeTemp("search-pro/database.js", content);
+        await writeTemp(
+          `search-pro/${getLocaleChunkName(pathLocale)}.js`,
+          content
+        );
 
         return;
       }
@@ -93,13 +102,13 @@ export const removeSearchIndex = async (
   options: SearchProOptions,
   path: string
 ): Promise<void> => {
-  if (previousSearchIndex) {
+  if (previousSearchIndexStore) {
     const actualPath = path
       .replace(/^pages\//, "")
       .replace(/\/index\.html\.vue/, "/readme.md")
       .replace(/\.html\.vue/, ".md");
 
-    const { env, pages, writeTemp } = app;
+    const { pages, writeTemp } = app;
 
     const page = pages.find(
       ({ filePathRelative }) =>
@@ -107,18 +116,25 @@ export const removeSearchIndex = async (
     )!;
 
     if (page) {
-      // remove index
-      delete previousSearchIndex[page.pathLocale][page.path];
+      const { pathLocale, key } = page;
+      const localeSearchIndex = previousSearchIndexStore[pathLocale];
+
+      // remove previous index
+      Array.from(localeSearchIndex._documentIds.values())
+        .filter((id) => id.startsWith(key))
+        .forEach((id) => discard(localeSearchIndex, id));
+
+      await vacuum(localeSearchIndex);
 
       // search index file content
-      let content = `\
-export const database = "${utoa(JSON.stringify(previousSearchIndex))}"
+      const content = `\
+export default ${JSON.stringify(JSON.stringify(localeSearchIndex))}
 `;
 
-      // inject HMR code
-      if (env.isDev) content += HMR_CODE;
-
-      await writeTemp("search-pro/database.js", content);
+      await writeTemp(
+        `search-pro/${getLocaleChunkName(pathLocale)}.js`,
+        content
+      );
 
       return;
     }

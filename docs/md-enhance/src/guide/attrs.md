@@ -174,14 +174,14 @@ const a = 1;
 | ------- |
 | content |
 
-{.table}
+{.md-table}
 
 ```md
 | Table   |
 | ------- |
 | content |
 
-{.table}
+{.md-table}
 ```
 
 ### List (list)
@@ -231,7 +231,7 @@ A line with break
 .nested,
 .inline-emphasis,
 .inline-bold,
-.table,
+.md-table,
 .fence {
   margin: 4px;
   padding: 4px;

@@ -3,7 +3,7 @@ import { enNavbar, zhNavbar } from "./navbar/index.js";
 import { enSidebar, zhSidebar } from "./sidebar/index.js";
 
 const hostname =
-  process.env.HOSTNAME || "https://theme-hope-docs-demo.vuejs.press";
+  process.env["HOSTNAME"] || "https://theme-hope-docs-demo.vuejs.press";
 
 export default hopeTheme(
   {
@@ -14,7 +14,7 @@ export default hopeTheme(
       url: "https://mrhope.site",
     },
 
-    iconAssets: "iconfont",
+    iconAssets: "fontawesome-with-brands",
 
     logo: "/logo.svg",
 
@@ -96,9 +96,7 @@ export default hopeTheme(
         playground: {
           presets: ["ts", "vue"],
         },
-        presentation: {
-          plugins: ["highlight", "math", "search", "notes", "zoom"],
-        },
+        presentation: ["highlight", "math", "search", "notes", "zoom"],
         stylize: [
           {
             matcher: "Recommended",

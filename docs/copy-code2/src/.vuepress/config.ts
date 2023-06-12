@@ -1,10 +1,9 @@
 import { config } from "docs-shared";
 import theme from "./theme.js";
 
+// the config wrapper is located in <root>/docs-shared/src/config-wrapper.ts
 export default config(
-  {
-    name: "copy-code2",
-  },
+  { name: "copy-code2" },
   {
     locales: {
       "/": {

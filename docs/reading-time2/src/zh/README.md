@@ -7,11 +7,11 @@ heroText: vuepress-plugin-reading-time2
 tagline: 预计阅读时间与字数统计生成
 actions:
   - text: 快速上手 💡
-    link: /zh/guide.html
+    link: ./guide.html
     type: primary
 
   - text: 配置 🛠
-    link: /zh/config.html
+    link: ./config.html
 
 footer: 使用 <a href="https://theme-hope.vuejs.press/zh/" target="_blank">VuePress Theme Hope</a> 主题 | MIT 协议, 版权所有 © 2019-present Mr.Hope
 
@@ -79,9 +79,3 @@ export default {
 ```
 
 :::
-
-<NetlifyBadge alt="通过 Netlify 部署" />
-
-<script setup lang="ts">
-import NetlifyBadge from "@NetlifyBadge";
-</script>

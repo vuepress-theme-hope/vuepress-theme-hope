@@ -5,7 +5,7 @@
 <h1 align="center">vuepress-plugin-redirectt</h1>
 <h4 align="center">VuePress Redirect plugin🗺️ / VuePress 重定向插件🗺️</h4>
 
-[![Version](https://img.shields.io/npm/v/vuepress-plugin-redirect.svg?style=flat-square&logo=npm) ![Downloads](https://img.shields.io/npm/dm/vuepress-plugin-redirect.svg?style=flat-square&logo=npm](https://www.npmjs.com/package/vuepress-plugin-redirect)
+[![Version](https://img.shields.io/npm/v/vuepress-plugin-redirect.svg?style=flat-square&logo=npm) ![Downloads](https://img.shields.io/npm/dm/vuepress-plugin-redirect.svg?style=flat-square&logo=npm)](https://www.npmjs.com/package/vuepress-plugin-redirect)
 
 <!-- markdownlint-restore -->
 
