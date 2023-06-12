@@ -177,5 +177,6 @@
     "packages/*/lib/**": true
   },
   "vitest.commandLine": "pnpm vitest",
+  "prettier.prettierPath": "./node_modules/prettier",
   "typescript.tsdk": "node_modules/typescript/lib"
 }

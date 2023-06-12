@@ -67,6 +67,7 @@ export const searchProPlugin =
           ],
           worker: options.worker || "search-pro.worker.js",
         },
+        SEARCH_PRO_SORT_STRATEGY: JSON.stringify(options.sortStrategy || "max"),
       },
 
       clientConfigFile: `${CLIENT_FOLDER}config.js`,

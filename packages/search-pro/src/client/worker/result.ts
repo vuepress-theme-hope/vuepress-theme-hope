@@ -18,18 +18,30 @@ import type {
   Word,
 } from "../typings/index.js";
 
+declare const SEARCH_PRO_SORT_STRATEGY: "max" | "total";
+
 export type MiniSearchResult = IndexItem & {
   terms: string[];
   score: number;
   match: MatchInfo;
 };
 
-interface ResultMap {
-  [key: string]: {
-    title: string;
-    contents: [result: MatchedItem, score: number][];
-  };
+interface PageResult {
+  title: string;
+  contents: [result: MatchedItem, score: number][];
 }
+
+interface ResultMap {
+  [key: string]: PageResult;
+}
+
+const sortWithTotal = (valueA: PageResult, valueB: PageResult): number =>
+  valueB.contents.reduce((total, [, score]) => total + score, 0) -
+  valueA.contents.reduce((total, [, score]) => total + score, 0);
+
+const sortWithMax = (valueA: PageResult, valueB: PageResult): number =>
+  Math.max(...valueB.contents.map(([, score]) => score)) -
+  Math.max(...valueA.contents.map(([, score]) => score));
 
 export const getResults = (
   query: string,
@@ -117,10 +129,10 @@ export const getResults = (
   });
 
   return entries(resultMap)
-    .sort(
-      ([, valueA], [, valueB]) =>
-        valueB.contents.reduce((total, [, score]) => total + score, 0) -
-        valueA.contents.reduce((total, [, score]) => total + score, 0)
+    .sort(([, valueA], [, valueB]) =>
+      SEARCH_PRO_SORT_STRATEGY === "total"
+        ? sortWithTotal(valueA, valueB)
+        : sortWithMax(valueA, valueB)
     )
     .map(([id, { title, contents }]) => {
       // search to get title

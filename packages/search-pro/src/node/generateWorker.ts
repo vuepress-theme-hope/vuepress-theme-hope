@@ -20,9 +20,14 @@ export const generateWorker = async (
   await fs.ensureDir(path.dirname(workerFilePath));
   await fs.writeFile(
     workerFilePath,
-    workerFileContent.replace(
-      "SEARCH_PRO_INDEX",
-      () => `${JSON.stringify(searchIndexContent)}`
-    )
+    workerFileContent
+      .replace(
+        "SEARCH_PRO_INDEX",
+        () => `${JSON.stringify(searchIndexContent)}`
+      )
+      .replace(
+        "SEARCH_PRO_SORT_STRATEGY",
+        JSON.stringify(options.sortStrategy || "max")
+      )
   );
 };

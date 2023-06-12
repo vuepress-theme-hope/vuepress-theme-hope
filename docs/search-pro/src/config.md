@@ -169,6 +169,15 @@ Performing client search with huge contents could be slow, so under this case yo
 
 :::
 
+## sortStrategy
+
+- Type: `"max" | "total"`
+- Default: `"max"`
+
+Result Sort strategy.
+
+When there are multiple matched results, the result will be sorted by the strategy. `max` means that page having higher total score will be placed in front. `total` means that page having higher max score will be placed in front.
+
 ### worker
 
 - Type: `string`
