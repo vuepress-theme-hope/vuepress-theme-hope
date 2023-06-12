@@ -32,9 +32,9 @@
 .nav-link,
 // project home
 // project card
-.project-card,// page title
-.page-title h1,
-.home.project .feature-item {
+.vp-project-card,// page title
+.vp-page-title h1,
+.vp-project-home .vp-feature-item {
   &:hover .icon {
     animation-name: bounce;
     animation-duration: 1s;
