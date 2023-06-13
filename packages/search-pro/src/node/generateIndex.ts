@@ -79,13 +79,15 @@ export const generatePageIndex = (
 
   // here are some variables holding the current state of the parser
   let shouldIndexContent = hasExcerpt || indexContent;
-  let currentSectionIndex: SectionIndexItem | null = null;
+  let currentSectionIndex: PageIndexItem | SectionIndexItem | null = null;
   let currentContent = "";
   let isContentBeforeFirstHeader = true;
 
   const render = (node: AnyNode, preserveSpace = false): void => {
     if (node.type === "tag") {
       if (HEADING_TAGS.includes(node.name)) {
+        const id = node.attribs["id"];
+
         if (currentContent && shouldIndexContent) {
           // add last content
           // add last content
@@ -98,10 +100,12 @@ export const generatePageIndex = (
         else results.push(currentSectionIndex!);
 
         // update current section index
-        currentSectionIndex = {
-          id: `${key}#${node.attribs["id"]}`,
-          h: renderHeader(node),
-        };
+        if (id)
+          currentSectionIndex = {
+            id: `${key}#${id}`,
+            h: renderHeader(node),
+          };
+        else currentSectionIndex = pageIndex;
       } else if (CONTENT_BLOCK_TAGS.includes(node.name)) {
         if (currentContent && shouldIndexContent) {
           // add last content
