@@ -4,6 +4,21 @@ All notable changes to this project will be documented in this file. See [Conven
 
 <!-- #region recent-beta -->
 
+## [2.0.0-beta.226](https://github.com/vuepress-theme-hope/vuepress-theme-hope/compare/v2.0.0-beta.225...v2.0.0-beta.226) (2023-06-15)
+
+### Features
+
+- **search-pro:** add sortStrategy options ([34d0734](https://github.com/vuepress-theme-hope/vuepress-theme-hope/commit/34d07346d4384737298ae22b71344584ffad2cda))
+
+### Bug Fixes
+
+- **copy-code2:** improve style ([4f2b685](https://github.com/vuepress-theme-hope/vuepress-theme-hope/commit/4f2b6858073eb5f62e827d7b7bbe260f54c34d17))
+- **search-pro:** fix heading without anchor ([1d66704](https://github.com/vuepress-theme-hope/vuepress-theme-hope/commit/1d66704aeacea2f5da815aab0b666fc6bb1c271e))
+- **theme:** fix active header link ([1cabe8c](https://github.com/vuepress-theme-hope/vuepress-theme-hope/commit/1cabe8cad2672cac27cc24f3db86cf170b23f6f6))
+- **theme:** fix bounce icon preset ([e5d9f10](https://github.com/vuepress-theme-hope/vuepress-theme-hope/commit/e5d9f10a6a834a61a7b6afaf6cc940c3d2546000))
+- **theme:** fix original info style ([4685efa](https://github.com/vuepress-theme-hope/vuepress-theme-hope/commit/4685efad73c353fdbd8d65ce5647eda8cc62d395))
+- **theme:** fix permalink not working, close [#3222](https://github.com/vuepress-theme-hope/vuepress-theme-hope/issues/3222) ([a2a5d9a](https://github.com/vuepress-theme-hope/vuepress-theme-hope/commit/a2a5d9a1d3d27ddfd74a456a364d449ad5d2f3e0))
+
 ## [2.0.0-beta.225](https://github.com/vuepress-theme-hope/vuepress-theme-hope/compare/v2.0.0-beta.224...v2.0.0-beta.225) (2023-06-11)
 
 ### Features
