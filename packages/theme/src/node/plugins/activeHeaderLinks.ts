@@ -12,7 +12,7 @@ export const getActiveHeaderLinksPlugin = (
   if (activeHeaderLinks === false) return null;
 
   return activeHeaderLinksPlugin({
-    headerLinkSelector: ".sidebar-link, .toc-link",
+    headerLinkSelector: ".vp-sidebar-link, .toc-link",
     headerAnchorSelector: ".header-anchor",
   });
 };

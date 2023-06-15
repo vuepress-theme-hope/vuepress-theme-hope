@@ -16,10 +16,14 @@ export const resolveLinkInfo = (
   item: string,
   preferFull = false
 ): AutoLinkOptions => {
-  const { fullPath, meta, name } = resolveRouteWithRedirect(
-    router,
-    inferRoutePath(encodeURI(item))
-  );
+  const encodedPath = encodeURI(item);
+  let result = resolveRouteWithRedirect(router, inferRoutePath(encodedPath));
+
+  // the inferred path may be wrong, so we need to resolve the original path
+  if (result.name === "404")
+    result = resolveRouteWithRedirect(router, encodedPath);
+
+  const { fullPath, meta, name } = result;
 
   return {
     text:
