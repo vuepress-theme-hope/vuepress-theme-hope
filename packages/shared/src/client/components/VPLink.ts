@@ -4,7 +4,7 @@ import { h } from "vue";
 import type { NavigationFailure } from "vue-router";
 import { useRouter } from "vue-router";
 
-import { inferRoutePath } from "../../shared/index.js";
+import { inferRouteLink } from "../../shared/index.js";
 import { guardEvent } from "../utils/index.js";
 
 export interface VPLinkProps {
@@ -26,7 +26,7 @@ export const VPLink: FunctionalComponent<
 
   return h(
     "a",
-    { class: "md-link", href: withBase(inferRoutePath(to)), onClick: navigate },
+    { class: "vp-link", href: withBase(inferRouteLink(to)), onClick: navigate },
     slots.default?.()
   );
 };

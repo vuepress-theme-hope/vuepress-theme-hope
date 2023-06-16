@@ -1,6 +1,6 @@
 import type { Router } from "vue-router";
 import {
-  inferRoutePath,
+  inferRouteLink,
   resolveRouteWithRedirect,
 } from "vuepress-shared/client";
 
@@ -17,7 +17,7 @@ export const resolveLinkInfo = (
   preferFull = false
 ): AutoLinkOptions => {
   const encodedPath = encodeURI(item);
-  let result = resolveRouteWithRedirect(router, inferRoutePath(encodedPath));
+  let result = resolveRouteWithRedirect(router, inferRouteLink(encodedPath));
 
   // the inferred path may be wrong, so we need to resolve the original path
   if (result.name === "404")
