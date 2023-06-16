@@ -3,8 +3,8 @@ import { usePageLang } from "@vuepress/client";
 import type Artplayer from "artplayer";
 import type { Option as ArtPlayerInitOptions } from "artplayer/types/option.js";
 import type { PropType, VNode } from "vue";
-import { camelize, defineComponent, h, onMounted, onUnmounted } from "vue";
-import { keys } from "vuepress-shared/client";
+import { camelize, defineComponent, h, onMounted, onUnmounted, ref } from "vue";
+import { LoadingIcon, keys } from "vuepress-shared/client";
 
 import type { ArtPlayerOptions } from "../../shared/index.js";
 import { useSize } from "../composables/index.js";
@@ -91,6 +91,8 @@ const getLang = (lang: string): string => {
 
 export default defineComponent({
   name: "ArtPlayer",
+
+  inheritAttrs: false,
 
   props: {
     /**
@@ -193,6 +195,7 @@ export default defineComponent({
     const lang = usePageLang();
     const { el, width, height } = useSize<HTMLDivElement>(props, 0);
 
+    const loaded = ref(false);
     let artPlayerInstance: Artplayer;
 
     const getInitOptions = (): ArtPlayerInitOptions => {
@@ -280,24 +283,23 @@ export default defineComponent({
       const player = new Artplayer(getInitOptions());
 
       artPlayerInstance = (await props.customPlayer(player)) || player;
+      loaded.value = true;
     });
 
     onUnmounted(() => {
       artPlayerInstance?.destroy();
     });
 
-    return (): VNode =>
-      h(
-        "div",
-        {
-          ref: el,
-          class: "vp-artplayer",
-          style: {
-            width: width.value,
-            height: height.value,
-          },
+    return (): (VNode | null)[] => [
+      h("div", {
+        ref: el,
+        class: "vp-artplayer",
+        style: {
+          width: width.value,
+          height: height.value,
         },
-        "Loading..."
-      );
+      }),
+      loaded.value ? null : h(LoadingIcon),
+    ];
   },
 });
