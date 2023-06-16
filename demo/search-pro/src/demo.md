@@ -31,3 +31,13 @@ const a = 1;
 ## Title with Special Characters #@%/
 
 Content with regexp sequence 'a$' test.
+
+<!-- markdownlint-disable -->
+
+##
+
+Empty heading 1
+
+##
+
+Empty heading 2

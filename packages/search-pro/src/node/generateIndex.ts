@@ -97,15 +97,19 @@ export const generatePageIndex = (
         }
 
         if (isContentBeforeFirstHeader) isContentBeforeFirstHeader = false;
-        else results.push(currentSectionIndex!);
+        else if (currentSectionIndex !== pageIndex)
+          results.push(currentSectionIndex!);
 
         // update current section index
-        if (id)
+        if (id) {
           currentSectionIndex = {
             id: `${key}#${id}`,
             h: renderHeader(node),
           };
-        else currentSectionIndex = pageIndex;
+        } else {
+          currentSectionIndex = pageIndex;
+          (pageIndex.t ??= []).push(renderHeader(node));
+        }
       } else if (CONTENT_BLOCK_TAGS.includes(node.name)) {
         if (currentContent && shouldIndexContent) {
           // add last content
