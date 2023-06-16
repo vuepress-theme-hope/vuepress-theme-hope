@@ -66,7 +66,7 @@ const VPCard: FunctionalComponent<CardProps> = ({
 
   return isLinkExternal(link)
     ? h("a", { href: link, target: "_blank", ...props }, children)
-    : h(VPLink, { to: link, ...props }, children);
+    : h(VPLink, { to: link, ...props }, () => children);
 };
 
 VPCard.displayName = "VPCard";
