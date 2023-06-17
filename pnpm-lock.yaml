@@ -121,8 +121,8 @@ importers:
         specifier: 0.30.0
         version: 0.30.0
       markdownlint-cli:
-        specifier: 0.34.0
-        version: 0.34.0
+        specifier: 0.35.0
+        version: 0.35.0
       nano-staged:
         specifier: 0.8.0
         version: 0.8.0
@@ -7043,9 +7043,9 @@ packages:
   /colorette@2.0.20:
     resolution: {integrity: sha512-IfEDxwoWIjkeXL1eXcDiow4UbKjhLdq6/EuSVR9GMN7KVH3r9gQ83e73hsz1Nd1T3ijd5xv1wcWRYO+D6kCI2w==}
 
-  /commander@10.0.1:
-    resolution: {integrity: sha512-y4Mg2tXshplEbSGzx7amzPwKKOCGuoSRP/CjEdwwk0FOGlUbq6lKuoyDZTNZkmxHdJtp54hdfY/JUrdL7Xfdug==}
-    engines: {node: '>=14'}
+  /commander@11.0.0:
+    resolution: {integrity: sha512-9HMlXtt/BNoYr8ooyjjNRdIilOTkVJXB+GhxMTtOKwk0R4j4lS4NpjuqmRxroBfnfTSHQIHQB7wryHhXarNjmQ==}
+    engines: {node: '>=16'}
     dev: true
 
   /commander@2.20.3:
@@ -11130,33 +11130,33 @@ packages:
       mdurl: 1.0.1
       uc.micro: 1.0.6
 
-  /markdownlint-cli@0.34.0:
-    resolution: {integrity: sha512-4G9I++VBTZkaye6Yfc/7dU6HQHcyldZEVB+bYyQJLcpJOHKk/q5ZpGqK80oKMIdlxzsA3aWOJLZ4DkoaoUWXbQ==}
-    engines: {node: '>=14'}
+  /markdownlint-cli@0.35.0:
+    resolution: {integrity: sha512-lVIIIV1MrUtjoocgDqXLxUCxlRbn7Ve8rsWppfwciUNwLlNS28AhNiyQ3PU7jjj4Qvj+rWTTvwkqg7AcdG988g==}
+    engines: {node: '>=16'}
     hasBin: true
     dependencies:
-      commander: 10.0.1
+      commander: 11.0.0
       get-stdin: 9.0.0
       glob: 10.2.7
       ignore: 5.2.4
       js-yaml: 4.1.0
       jsonc-parser: 3.2.0
-      markdownlint: 0.28.2
+      markdownlint: 0.29.0
       minimatch: 9.0.1
       run-con: 1.2.11
     dev: true
 
-  /markdownlint-micromark@0.1.2:
-    resolution: {integrity: sha512-jRxlQg8KpOfM2IbCL9RXM8ZiYWz2rv6DlZAnGv8ASJQpUh6byTBnEsbuMZ6T2/uIgntyf7SKg/mEaEBo1164fQ==}
-    engines: {node: '>=14.18.0'}
+  /markdownlint-micromark@0.1.5:
+    resolution: {integrity: sha512-HvofNU4QCvfUCWnocQP1IAWaqop5wpWrB0mKB6SSh0fcpV0PdmQNS6tdUuFew1utpYlUvYYzz84oDkrD76GB9A==}
+    engines: {node: '>=16'}
     dev: true
 
-  /markdownlint@0.28.2:
-    resolution: {integrity: sha512-yYaQXoKKPV1zgrFsyAuZPEQoe+JrY9GDag9ObKpk09twx4OCU5lut+0/kZPrQ3W7w82SmgKhd7D8m34aG1unVw==}
-    engines: {node: '>=14.18.0'}
+  /markdownlint@0.29.0:
+    resolution: {integrity: sha512-ASAzqpODstu/Qsk0xW5BPgWnK/qjpBQ4e7IpsSvvFXcfYIjanLTdwFRJK1SIEEh0fGSMKXcJf/qhaZYHyME0wA==}
+    engines: {node: '>=16'}
     dependencies:
       markdown-it: 13.0.1
-      markdownlint-micromark: 0.1.2
+      markdownlint-micromark: 0.1.5
     dev: true
 
   /marked@4.3.0:
