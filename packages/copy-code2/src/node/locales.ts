@@ -81,9 +81,9 @@ export const copyCodeLocales: CopyCodeLocaleConfig = {
   },
 
   "/ja/": {
-    copy: "コピーコード",
-    copied: "コピー機",
-    hint: "コピーに成功",
+    copy: "コードをコピー",
+    copied: "コピーしました",
+    hint: "コピーに成功しました",
   },
 
   "/tr/": {
