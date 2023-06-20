@@ -4,6 +4,19 @@ All notable changes to this project will be documented in this file. See [Conven
 
 <!-- #region recent-beta -->
 
+## [2.0.0-beta.227](https://github.com/vuepress-theme-hope/vuepress-theme-hope/compare/v2.0.0-beta.226...v2.0.0-beta.227) (2023-06-20)
+
+### Features
+
+- **components:** improve loading state of ArtPlayer ([0b04354](https://github.com/vuepress-theme-hope/vuepress-theme-hope/commit/0b04354dcfe6a2f7391029091da23c3df950a0e5))
+
+### Bug Fixes
+
+- **copy-code2:** update ja locale ([#3240](https://github.com/vuepress-theme-hope/vuepress-theme-hope/issues/3240)) ([06fd31c](https://github.com/vuepress-theme-hope/vuepress-theme-hope/commit/06fd31cbacbd378aab4483c73d6cab9185995124))
+- **md-enhance:** card slots issue ([#3223](https://github.com/vuepress-theme-hope/vuepress-theme-hope/issues/3223)) ([6706473](https://github.com/vuepress-theme-hope/vuepress-theme-hope/commit/6706473ff8d8ced7651e384867d825c4cf9f1c86))
+- **search-pro:** fix empty heading ([b2da658](https://github.com/vuepress-theme-hope/vuepress-theme-hope/commit/b2da658a75be19c1a97e5ef08c5043f44bc4b748))
+- **theme:** fix VPLink ([24c6ece](https://github.com/vuepress-theme-hope/vuepress-theme-hope/commit/24c6ece177594683d1f4ebece8692fe02703a622))
+
 ## [2.0.0-beta.226](https://github.com/vuepress-theme-hope/vuepress-theme-hope/compare/v2.0.0-beta.225...v2.0.0-beta.226) (2023-06-15)
 
 ### Features
