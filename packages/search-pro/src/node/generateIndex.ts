@@ -87,6 +87,7 @@ export const generatePageIndex = (
     if (node.type === "tag") {
       if (HEADING_TAGS.includes(node.name)) {
         const id = node.attribs["id"];
+        const header = renderHeader(node);
 
         if (currentContent && shouldIndexContent) {
           // add last content
@@ -96,19 +97,17 @@ export const generatePageIndex = (
           currentContent = "";
         }
 
-        if (isContentBeforeFirstHeader) isContentBeforeFirstHeader = false;
-        else if (currentSectionIndex !== pageIndex)
-          results.push(currentSectionIndex!);
-
-        // update current section index
+        // update current section index only if it has an id
         if (id) {
+          if (isContentBeforeFirstHeader) isContentBeforeFirstHeader = false;
+          else results.push(currentSectionIndex!);
+
           currentSectionIndex = {
             id: `${key}#${id}`,
-            h: renderHeader(node),
+            h: header,
           };
-        } else {
-          currentSectionIndex = pageIndex;
-          (pageIndex.t ??= []).push(renderHeader(node));
+        } else if (header) {
+          ((currentSectionIndex ?? pageIndex).t ??= []).push(header);
         }
       } else if (CONTENT_BLOCK_TAGS.includes(node.name)) {
         if (currentContent && shouldIndexContent) {
