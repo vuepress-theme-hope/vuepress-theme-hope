@@ -1,6 +1,6 @@
 <!-- markdownlint-disable -->
 <p align="center">
-  <img width="240" src="https://vuepress-theme.mrhope.site/logo.svg" style="text-align: center;">
+  <img width="240" src="https://vuepress-theme.mister-hope.com/logo.svg" style="text-align: center;">
 </p>
 <h1 align="center">vuepress-shared</h1>
 <h4 align="center">Shared Utils for vuepress-theme-hope and its plugins / vuepress-theme-hope 及其插件的共享库</h4>

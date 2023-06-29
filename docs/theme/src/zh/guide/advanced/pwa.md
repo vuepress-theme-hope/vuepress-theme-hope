@@ -101,7 +101,7 @@ Service Worker [^service-worker] (简称 SW) 主要用于获取并托管网站�
 [^ssg]: **SSG**: **S**tatic **S**ite **G**enerating，静态站点生成。
 [^seo]: **SEO**: **S**earch **E**ngine **O**ptimization，搜索引擎增强，
 
-    详见 [SEO 介绍](https://mrhope.site/code/website/html/definition/seo.html)
+    详见 [SEO 介绍](https://mister-hope.com/code/website/html/definition/seo.html)
 
 [^spa]: **SPA**: **S**ingle **P**age **A**pplication, 单页应用
 

@@ -29,7 +29,7 @@ export const theme = (
 
     author: {
       name: "Mr.Hope",
-      url: "https://mrhope.site",
+      url: "https://mister-hope.com",
     },
 
     favicon: "/favicon.ico",

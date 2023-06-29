@@ -92,8 +92,8 @@ export default {
 ```card
 title: Mr.Hope
 desc: Where there is light, there is hope
-logo: https://mrhope.site/logo.svg
-link: https://mrhope.site
+logo: https://mister-hope.com/logo.svg
+link: https://mister-hope.com
 color: rgba(253, 230, 138, 0.15)
 ```
 
@@ -101,8 +101,8 @@ color: rgba(253, 230, 138, 0.15)
 {
   "title": "Mr.Hope",
   "desc": "Where there is light, there is hope",
-  "logo": "https://mrhope.site/logo.svg",
-  "link": "https://mrhope.site",
+  "logo": "https://mister-hope.com/logo.svg",
+  "link": "https://mister-hope.com",
   "color": "rgba(253, 230, 138, 0.15)"
 }
 ```
@@ -111,8 +111,8 @@ color: rgba(253, 230, 138, 0.15)
 ```card
 title: Mr.Hope
 desc: Where there is light, there is hope
-logo: https://mrhope.site/logo.svg
-link: https://mrhope.site
+logo: https://mister-hope.com/logo.svg
+link: https://mister-hope.com
 color: rgba(253, 230, 138, 0.15)
 ```
 
@@ -120,8 +120,8 @@ color: rgba(253, 230, 138, 0.15)
 {
   "title": "Mr.Hope",
   "desc": "Where there is light, there is hope",
-  "logo": "https://mrhope.site/logo.svg",
-  "link": "https://mrhope.site",
+  "logo": "https://mister-hope.com/logo.svg",
+  "link": "https://mister-hope.com",
   "color": "rgba(253, 230, 138, 0.15)"
 }
 ```

@@ -32,7 +32,7 @@ tag:
 
 ::: tip Github 教程
 
-关于 GitHub 的相关教程，你可以参考 [GitHub 简介](https://mrhope.site/code/github/)。
+关于 GitHub 的相关教程，你可以参考 [GitHub 简介](https://mister-hope.com/code/github/)。
 
 :::
 

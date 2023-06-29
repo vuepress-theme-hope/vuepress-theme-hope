@@ -21,7 +21,7 @@ After enabling the blog function, the theme allows you to configure categories, 
 
 ::: tip Demo
 
-[Here is a demo](https://mrhope.site/en/) for you to preview blog sites built with `vuepress-theme-hope`.
+[Here is a demo](https://mister-hope.com/en/) for you to preview blog sites built with `vuepress-theme-hope`.
 
 :::
 

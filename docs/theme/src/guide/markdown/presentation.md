@@ -133,7 +133,7 @@ For details, see <ProjectLink name="md-enhance" path="/guide/presentation/themes
 
 ## Slide 1
 
-A paragraph with some text and a [link](https://mrhope.site)
+A paragraph with some text and a [link](https://mister-hope.com)
 
 ---
 
@@ -165,7 +165,7 @@ $$
 
 ## Slide 1
 
-A paragraph with some text and a [link](https://mrhope.site)
+A paragraph with some text and a [link](https://mister-hope.com)
 
 ---
 

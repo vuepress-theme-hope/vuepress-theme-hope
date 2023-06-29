@@ -58,7 +58,7 @@ Frontmatter 是 VuePress 中很重要的一个概念，它用于承载 Markdown 
 
 ::: info YAML
 
-如果你对 YAML 也不熟悉，你可以查看 [YAML 教程](https://mrhope.site/code/language/yaml/)。
+如果你对 YAML 也不熟悉，你可以查看 [YAML 教程](https://mister-hope.com/code/language/yaml/)。
 
 :::
 

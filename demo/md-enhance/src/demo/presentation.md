@@ -78,7 +78,7 @@ You can use all kinds of markup in slides.
 
 Headings will transform to UPPERCASE by default.
 
-Here is paragraph with some **bold**, _italic_, ~~strike-through~~ text and a [link](https://mrhope.site), and it can auto break itself so you don't need to worry the length.
+Here is paragraph with some **bold**, _italic_, ~~strike-through~~ text and a [link](https://mister-hope.com), and it can auto break itself so you don't need to worry the length.
 
 --
 
@@ -440,7 +440,7 @@ Click again to zoom back out.
 
 ## Slide Title
 
-A paragraph with some text and a [link](https://mrhope.site)
+A paragraph with some text and a [link](https://mister-hope.com)
 
 ---
 
@@ -462,7 +462,7 @@ const add = (a, b) => {
 
 ## Slide Title
 
-A paragraph with some text and a [link](https://mrhope.site)
+A paragraph with some text and a [link](https://mister-hope.com)
 
 ---
 
@@ -484,7 +484,7 @@ const add = (a, b) => {
 
 ## Slide Title
 
-A paragraph with some text and a [link](https://mrhope.site)
+A paragraph with some text and a [link](https://mister-hope.com)
 
 ---
 
@@ -506,7 +506,7 @@ const add = (a, b) => {
 
 ## Slide Title
 
-A paragraph with some text and a [link](https://mrhope.site)
+A paragraph with some text and a [link](https://mister-hope.com)
 
 ---
 
@@ -528,7 +528,7 @@ const add = (a, b) => {
 
 ## Slide Title
 
-A paragraph with some text and a [link](https://mrhope.site)
+A paragraph with some text and a [link](https://mister-hope.com)
 
 ---
 
@@ -550,7 +550,7 @@ const add = (a, b) => {
 
 ## Slide Title
 
-A paragraph with some text and a [link](https://mrhope.site)
+A paragraph with some text and a [link](https://mister-hope.com)
 
 ---
 
@@ -572,7 +572,7 @@ const add = (a, b) => {
 
 ## Slide Title
 
-A paragraph with some text and a [link](https://mrhope.site)
+A paragraph with some text and a [link](https://mister-hope.com)
 
 ---
 
@@ -594,7 +594,7 @@ const add = (a, b) => {
 
 ## Slide Title
 
-A paragraph with some text and a [link](https://mrhope.site)
+A paragraph with some text and a [link](https://mister-hope.com)
 
 ---
 
@@ -616,7 +616,7 @@ const add = (a, b) => {
 
 ## Slide Title
 
-A paragraph with some text and a [link](https://mrhope.site)
+A paragraph with some text and a [link](https://mister-hope.com)
 
 ---
 
@@ -638,7 +638,7 @@ const add = (a, b) => {
 
 ## Slide Title
 
-A paragraph with some text and a [link](https://mrhope.site)
+A paragraph with some text and a [link](https://mister-hope.com)
 
 ---
 
@@ -660,7 +660,7 @@ const add = (a, b) => {
 
 ## Slide Title
 
-A paragraph with some text and a [link](https://mrhope.site)
+A paragraph with some text and a [link](https://mister-hope.com)
 
 ---
 
@@ -682,7 +682,7 @@ const add = (a, b) => {
 
 ## Slide Title
 
-A paragraph with some text and a [link](https://mrhope.site)
+A paragraph with some text and a [link](https://mister-hope.com)
 
 ---
 

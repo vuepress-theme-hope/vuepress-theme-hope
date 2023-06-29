@@ -28,7 +28,7 @@ Available themes:
 
 ## Slide Title
 
-A paragraph with some text and a [link](https://mrhope.site)
+A paragraph with some text and a [link](https://mister-hope.com)
 
 ---
 
@@ -50,7 +50,7 @@ const add = (a, b) => {
 
 ## Slide Title
 
-A paragraph with some text and a [link](https://mrhope.site)
+A paragraph with some text and a [link](https://mister-hope.com)
 
 ---
 
@@ -72,7 +72,7 @@ const add = (a, b) => {
 
 ## Slide Title
 
-A paragraph with some text and a [link](https://mrhope.site)
+A paragraph with some text and a [link](https://mister-hope.com)
 
 ---
 
@@ -94,7 +94,7 @@ const add = (a, b) => {
 
 ## Slide Title
 
-A paragraph with some text and a [link](https://mrhope.site)
+A paragraph with some text and a [link](https://mister-hope.com)
 
 ---
 
@@ -116,7 +116,7 @@ const add = (a, b) => {
 
 ## Slide Title
 
-A paragraph with some text and a [link](https://mrhope.site)
+A paragraph with some text and a [link](https://mister-hope.com)
 
 ---
 
@@ -138,7 +138,7 @@ const add = (a, b) => {
 
 ## Slide Title
 
-A paragraph with some text and a [link](https://mrhope.site)
+A paragraph with some text and a [link](https://mister-hope.com)
 
 ---
 
@@ -160,7 +160,7 @@ const add = (a, b) => {
 
 ## Slide Title
 
-A paragraph with some text and a [link](https://mrhope.site)
+A paragraph with some text and a [link](https://mister-hope.com)
 
 ---
 
@@ -182,7 +182,7 @@ const add = (a, b) => {
 
 ## Slide Title
 
-A paragraph with some text and a [link](https://mrhope.site)
+A paragraph with some text and a [link](https://mister-hope.com)
 
 ---
 
@@ -204,7 +204,7 @@ const add = (a, b) => {
 
 ## Slide Title
 
-A paragraph with some text and a [link](https://mrhope.site)
+A paragraph with some text and a [link](https://mister-hope.com)
 
 ---
 
@@ -226,7 +226,7 @@ const add = (a, b) => {
 
 ## Slide Title
 
-A paragraph with some text and a [link](https://mrhope.site)
+A paragraph with some text and a [link](https://mister-hope.com)
 
 ---
 
@@ -248,7 +248,7 @@ const add = (a, b) => {
 
 ## Slide Title
 
-A paragraph with some text and a [link](https://mrhope.site)
+A paragraph with some text and a [link](https://mister-hope.com)
 
 ---
 
@@ -270,7 +270,7 @@ const add = (a, b) => {
 
 ## Slide Title
 
-A paragraph with some text and a [link](https://mrhope.site)
+A paragraph with some text and a [link](https://mister-hope.com)
 
 ---
 

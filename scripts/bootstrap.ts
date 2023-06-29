@@ -39,7 +39,7 @@ files.forEach((pkgName) => {
       author: {
         name: "Mr.Hope",
         email: "mister-hope@outlook.com",
-        url: "https://mrhope.site",
+        url: "https://mister-hope.com",
       },
       type: "module",
       exports: {

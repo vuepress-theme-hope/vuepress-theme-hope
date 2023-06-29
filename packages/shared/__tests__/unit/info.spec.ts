@@ -7,7 +7,7 @@ const authorNames = [authorName, "Mrs.Hope"];
 const author = {
   name: "Mr.Hope",
   email: "mister-hope@outlook.com",
-  url: "https://mrhope.site",
+  url: "https://mister-hope.com",
 };
 const authors = [
   author,

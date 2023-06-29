@@ -10,7 +10,7 @@ export default hopeTheme({
 
   author: {
     name: "Mr.Hope",
-    url: "https://mrhope.site",
+    url: "https://mister-hope.com",
   },
 
   iconAssets: "fontawesome-with-brands",
@@ -72,7 +72,7 @@ export default hopeTheme({
       Whatsapp: "https://example.com",
       Youtube: "https://example.com",
       Zhihu: "https://example.com",
-      MrHope: ["https://mrhope.site", MR_HOPE_AVATAR],
+      MrHope: ["https://mister-hope.com", MR_HOPE_AVATAR],
     },
   },
 

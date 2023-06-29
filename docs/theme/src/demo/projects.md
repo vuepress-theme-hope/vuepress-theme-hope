@@ -153,8 +153,8 @@ docs:
 blog:
   - name: Mr.Hope's Blog
     desc: Where there is light, there is hope
-    logo: https://mrhope.site/logo.svg
-    url: https://mrhope.site
+    logo: https://mister-hope.com/logo.svg
+    url: https://mister-hope.com
     repo: https://github.com/Mister-Hope/Mister-Hope.github.io
     preview: /assets/image/mrhope.jpg
 

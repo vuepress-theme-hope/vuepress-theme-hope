@@ -2,7 +2,7 @@
 
 exports[`presentation > Should not render 1`] = `
 "<h2>Slide 1</h2>
-<p>A paragraph with some text and a <a href=\\"https://mrhope.site\\">link</a></p>
+<p>A paragraph with some text and a <a href=\\"https://mister-hope.com\\">link</a></p>
 <hr>
 <h2>Slide 2</h2>
 <ul>
@@ -24,7 +24,7 @@ $$</p>
 exports[`presentation > Should not render 2`] = `
 "<p>@slidestar</p>
 <h2>Slide 1</h2>
-<p>A paragraph with some text and a <a href=\\"https://mrhope.site\\">link</a></p>
+<p>A paragraph with some text and a <a href=\\"https://mister-hope.com\\">link</a></p>
 <hr>
 <h2>Slide 2</h2>
 <ul>
@@ -44,4 +44,4 @@ $$</p>
 "
 `;
 
-exports[`presentation > Should render 1`] = `"<Presentation id=\\"presentation-0\\" code=\\"eJxVjc0KwjAQhO/7FAvtoQX7pzelB4969WilDXYx0aYNyYqC+O4mUJDeho9vZiCK8DSonrAC2KMRVtysMBJfiiW6SRMyvRnF2KPA86DGxyWRzMZti0JbORnKnWJKAbIsg//c2gM8MGk/PIeAFs4m96dd190dXKfR+RessdoFFNSF6ctxDMekYUks2nI1hyr1ncY9dftRdfkN0g8aMTop\\" theme=\\"auto\\"></Presentation>"`;
+exports[`presentation > Should render 1`] = `"<Presentation id=\\"presentation-0\\" code=\\"eJxVjb0KwjAUhff7FBfaoQXTH92UDo66OlppQxtMtGlCc0VBfHcTKJRuh4/vnANRhJdB9QJLgCNaPvH7xK3EtyKJzmiBJD6EfOyR43VQ4/OWSCLr9nmulSMxMWmsyDqjUwDGGCyTWw/wREL78TkEtHJ2mT9u2/bhoDOj809YYXkIKKgr05fjGM5JTVIQb4rNHMrUd2r30s1XVcUvSH9FOzuV\\" theme=\\"auto\\"></Presentation>"`;

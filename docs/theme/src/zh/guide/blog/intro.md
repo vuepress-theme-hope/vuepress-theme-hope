@@ -21,7 +21,7 @@ tag:
 
 ::: tip 案例
 
-[这里有一个案例](https://mrhope.site/) 以便你预览使用 `vuepress-theme-hope` 构建的博客站点。
+[这里有一个案例](https://mister-hope.com/) 以便你预览使用 `vuepress-theme-hope` 构建的博客站点。
 
 :::
 
