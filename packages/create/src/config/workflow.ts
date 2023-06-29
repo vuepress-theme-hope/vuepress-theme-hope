@@ -21,6 +21,9 @@ on:
       }
       - main
 
+permissions:
+  contents: write
+
 jobs:
   deploy-gh-pages:
     runs-on: ubuntu-latest
