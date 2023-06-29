@@ -119,7 +119,7 @@ export default defineComponent({
         props.imageDark
           ? h("img", {
               key: "dark",
-              class: "vp-blog-hero-hero-image dark",
+              class: "vp-blog-hero-image dark",
               style: props.heroStyle,
               src: props.imageDark,
               alt: props.alt,
