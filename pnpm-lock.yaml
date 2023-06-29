@@ -962,8 +962,8 @@ importers:
         specifier: 1.0.0
         version: 1.0.0
       katex:
-        specifier: 0.16.7
-        version: 0.16.7
+        specifier: 0.16.8
+        version: 0.16.8
       sass-loader:
         specifier: 13.3.2
         version: 13.3.2(sass@1.63.4)(webpack@5.87.0)
@@ -1256,8 +1256,8 @@ importers:
         specifier: 1.0.0
         version: 1.0.0
       katex:
-        specifier: 0.16.7
-        version: 0.16.7
+        specifier: 0.16.8
+        version: 0.16.8
       sass-loader:
         specifier: 13.3.2
         version: 13.3.2(sass@1.63.4)(webpack@5.87.0)
@@ -4676,7 +4676,7 @@ packages:
       '@mdit/plugin-tex': 0.4.8
       '@types/katex': 0.16.0(patch_hash=dnsp5eyvz2stjhzcvnk27ztvmm)
       '@types/markdown-it': 12.2.3
-      katex: 0.16.7
+      katex: 0.16.8
       markdown-it: 13.0.1
     dev: false
 
@@ -10726,6 +10726,13 @@ packages:
 
   /katex@0.16.7:
     resolution: {integrity: sha512-Xk9C6oGKRwJTfqfIbtr0Kes9OSv6IFsuhFGc7tW4urlpMJtuh+7YhzU6YEG9n8gmWKcMAFzkp7nr+r69kV0zrA==}
+    hasBin: true
+    dependencies:
+      commander: 8.3.0
+    dev: false
+
+  /katex@0.16.8:
+    resolution: {integrity: sha512-ftuDnJbcbOckGY11OO+zg3OofESlbR5DRl2cmN8HeWeeFIV7wTXvAOx8kEjZjobhA+9wh2fbKeO6cdcA9Mnovg==}
     hasBin: true
     dependencies:
       commander: 8.3.0
