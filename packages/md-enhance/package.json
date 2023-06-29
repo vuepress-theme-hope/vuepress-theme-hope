@@ -98,7 +98,7 @@
     "@mdit/plugin-uml": "^0.4.8",
     "@types/js-yaml": "^4.0.5",
     "@types/markdown-it": "^12.2.3",
-    "@vue/repl": "^1.5.0",
+    "@vue/repl": "^2.0.0",
     "@vuepress/client": "2.0.0-beta.63",
     "@vuepress/shared": "2.0.0-beta.63",
     "@vuepress/utils": "2.0.0-beta.63",

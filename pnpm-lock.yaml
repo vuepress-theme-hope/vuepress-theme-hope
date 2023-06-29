@@ -1737,8 +1737,8 @@ importers:
         specifier: ^12.2.3
         version: 12.2.3
       '@vue/repl':
-        specifier: ^1.5.0
-        version: 1.5.0(vue@3.3.4)
+        specifier: ^2.0.0
+        version: 2.0.0
       '@vuepress/client':
         specifier: 2.0.0-beta.63
         version: 2.0.0-beta.63
@@ -5548,12 +5548,8 @@ packages:
     dependencies:
       '@vue/shared': 3.3.4
 
-  /@vue/repl@1.5.0(vue@3.3.4):
-    resolution: {integrity: sha512-qFqKtvA2FM9viYXzbWrpGrL8mDGswsqDsEjfaibr/YOqeza7i49VmO0AKPrOdQDOS2qmq9uV+G6OPX1rGhUSIQ==}
-    peerDependencies:
-      vue: ^3.2.13
-    dependencies:
-      vue: 3.3.4
+  /@vue/repl@2.0.0:
+    resolution: {integrity: sha512-TdWab7vVM+OREjTCT42Nd84KAiS8dKoaXu9BAWgnfZqdrWSscw/QgRnuif4urkDeslzgzTNvpchyCrJRjTTwMw==}
     dev: false
 
   /@vue/runtime-core@3.3.4:
