@@ -37,7 +37,7 @@ Whether display icons in navbar.
 
   ```ts
   /**
-   * Navbar component
+   * Built-in Navbar component
    */
   type NavbarComponent =
     | "Brand"

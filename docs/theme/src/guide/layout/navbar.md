@@ -572,7 +572,7 @@ The following three functions are provided:
 
 `vuepress-theme-hope` allows you to customize navbar layout. You can add components in `start`, `center` and `end` keys under `navbarLayout` options.
 
-Available components:
+Besides global components, the following built-in components are supported:
 
 - Brand: Site Brand
 - Links: Navbar links

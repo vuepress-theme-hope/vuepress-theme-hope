@@ -568,7 +568,7 @@ export default {
 
 主题允许你自定义导航栏布局。 你可以在 `navbarLayout` 选项下的 `start`、`center` 和 `end` 键中添加组件。
 
-可用组件:
+除了全局组件名称之外，可用的内置组件如下:
 
 - Brand: 站点品牌
 - Links: 导航栏链接
