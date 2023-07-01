@@ -110,7 +110,7 @@
     "js-yaml": "^4.1.0",
     "katex": "^0.16.8",
     "markdown-it": "^13.0.1",
-    "mermaid": "10.2.3",
+    "mermaid": "10.2.4",
     "reveal.js": "^4.5.0",
     "vue": "^3.3.4",
     "vue-router": "^4.2.2",
