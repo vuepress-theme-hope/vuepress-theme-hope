@@ -41,7 +41,7 @@ jobs:
 
       - name: ${{ matrix.bundler }} build test
         env:
-          NODE_OPTIONS: --max_old_space_size=4096
+          NODE_OPTIONS: --max_old_space_size=8192
         run: |
           pnpm run -r demo:${{ matrix.bundler }}-build
 
@@ -86,6 +86,6 @@ jobs:
 
       - name: ${{ matrix.bundler }} build test
         env:
-          NODE_OPTIONS: --max_old_space_size=4096
+          NODE_OPTIONS: --max_old_space_size=8192
         run: |
           pnpm run -r demo:${{ matrix.bundler }}-build

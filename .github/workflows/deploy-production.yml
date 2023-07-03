@@ -323,7 +323,7 @@ jobs:
 
       - name: Build Netlify Demo
         env:
-          NODE_OPTIONS: --max_old_space_size=4096
+          NODE_OPTIONS: --max_old_space_size=8192
         run: |-
           pnpm --filter theme-${{ matrix.name }}-demo demo:vite-build
           > demo/theme-${{ matrix.name }}/dist/.nojekyll
@@ -341,7 +341,7 @@ jobs:
         env:
           BASE: /${{ matrix.name }}-demo/
           HOSTNAME: https://vuepress-theme-hope.gitee.io/
-          NODE_OPTIONS: --max_old_space_size=4096
+          NODE_OPTIONS: --max_old_space_size=8192
         run: |-
           pnpm --filter theme-${{ matrix.name }}-demo demo:vite-build
           > demo/theme-${{ matrix.name }}/dist/.nojekyll
@@ -403,7 +403,7 @@ jobs:
 
       - name: Build ${{ matrix.plugin-name }} demo
         env:
-          NODE_OPTIONS: --max_old_space_size=4096
+          NODE_OPTIONS: --max_old_space_size=8192
         run: |-
           pnpm --filter ${{ matrix.plugin-name }}-demo demo:vite-build
 

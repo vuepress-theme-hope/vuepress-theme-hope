@@ -42,7 +42,7 @@ jobs:
         env:
           BASE: /${{ matrix.name }}-demo/
           HOSTNAME: https://vuepress-theme-hope.github.io/
-          NODE_OPTIONS: --max_old_space_size=4096
+          NODE_OPTIONS: --max_old_space_size=8192
         run: |-
           pnpm --filter theme-${{ matrix.name }}-demo demo:vite-build
           > demo/theme-${{ matrix.name }}/dist/.nojekyll
