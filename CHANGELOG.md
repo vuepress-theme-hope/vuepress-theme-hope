@@ -4,6 +4,18 @@ All notable changes to this project will be documented in this file. See [Conven
 
 <!-- #region recent-beta -->
 
+## [2.0.0-beta.229](https://github.com/vuepress-theme-hope/vuepress-theme-hope/compare/v2.0.0-beta.228...v2.0.0-beta.229) (2023-07-03)
+
+### Features
+
+- **md-enhance:** use @vue/repl v2 ([d035b59](https://github.com/vuepress-theme-hope/vuepress-theme-hope/commit/d035b59400b6348685a5fd7c934b502661ee0037))
+
+### Bug Fixes
+
+- correct english spelling of sidebar.ts ([#3265](https://github.com/vuepress-theme-hope/vuepress-theme-hope/issues/3265)) ([9b64367](https://github.com/vuepress-theme-hope/vuepress-theme-hope/commit/9b64367638c9a10c1ea41b795c799192b392e32f))
+- **create:** fix template workflow ([c3f2f65](https://github.com/vuepress-theme-hope/vuepress-theme-hope/commit/c3f2f650bd52a16f6d76cc85130e6975d5d71b3d))
+- **theme:** fix hitokoto preset, close [#3263](https://github.com/vuepress-theme-hope/vuepress-theme-hope/issues/3263) ([7168fd8](https://github.com/vuepress-theme-hope/vuepress-theme-hope/commit/7168fd8c644dc9764998f32ca7bfacae5c486be0))
+
 ## [2.0.0-beta.228](https://github.com/vuepress-theme-hope/vuepress-theme-hope/compare/v2.0.0-beta.227...v2.0.0-beta.228) (2023-06-24)
 
 ### Bug Fixes
