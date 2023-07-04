@@ -144,6 +144,7 @@ export default defineComponent({
 
     const download = (): void => {
       const dataURI = `data:image/svg+xml;charset=utf8,${svgCode.value
+        .replace(/<br>/g, "<br />")
         .replace(/%/g, "%25")
         .replace(/"/g, "%22")
         .replace(/'/g, "%27")
