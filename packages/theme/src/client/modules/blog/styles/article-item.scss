@@ -216,6 +216,10 @@
   }
 
   // code block fix
+  div[class*="language-"] {
+    overflow-x: auto;
+  }
+
   pre {
     margin: 0.85rem 0;
     padding: 1.25rem 1.5rem;
