@@ -46,7 +46,7 @@ The following is an example based on the last modification time of a file.
 ```ts
 // Based on file last modified time
 ({
-   modifyTimeGetter: (page) =>
+   modifyTimeGetter: (page, app) =>
      fs.statSync(app.dir.source(page.filePathRelative)).mtime.toISOString();
 })
 ```

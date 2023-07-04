@@ -1,4 +1,4 @@
-import type { Page } from "@vuepress/core";
+import type { App, Page } from "@vuepress/core";
 import type { GitData } from "@vuepress/plugin-git";
 
 export type ModifyTimeGetter = <
@@ -14,7 +14,8 @@ export type ModifyTimeGetter = <
     never
   >
 >(
-  page: Page<ExtraPageData, ExtraPageFrontmatter, ExtraPageFields>
+  page: Page<ExtraPageData, ExtraPageFrontmatter, ExtraPageFields>,
+  app: App
 ) => string;
 
 export interface SitemapOptions {

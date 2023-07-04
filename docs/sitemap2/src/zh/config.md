@@ -74,7 +74,7 @@ icon: gears
 
 ### modifyTimeGetter
 
-- 类型: `(page: Page) => string`
+- 类型: `(page: Page, app: App) => string`
 - 必填: 否
 
 最后修改事件的获得器，需要返回一个 ISO 字符形式的时间，默认会自动通过 Git 插件生成。

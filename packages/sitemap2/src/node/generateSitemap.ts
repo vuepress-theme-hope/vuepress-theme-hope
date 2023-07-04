@@ -99,7 +99,7 @@ const generatePageMap = (
       )
         return;
 
-      const lastModifyTime = modifyTimeGetter(page);
+      const lastModifyTime = modifyTimeGetter(page, app);
       const { defaultPath } = stripLocalePrefix(page);
       const relatedLocales = pageLocalesMap.get(defaultPath) || [];
 

@@ -46,7 +46,7 @@ icon: lightbulb
 ```ts
 // 基于文件最后修改时间
 ({
-  modifyTimeGetter: (page) =>
+  modifyTimeGetter: (page, app) =>
     fs.statSync(app.dir.source(page.filePathRelative)).mtime.toISOString();
 })
 ```
