@@ -65,7 +65,11 @@ export const commentPlugin =
       extendsBundlerOptions: (bundlerOptions: unknown, app): void => {
         switch (options.provider) {
           case "Artalk": {
-            addViteOptimizeDepsInclude(bundlerOptions, app, "artalk");
+            addViteOptimizeDepsExclude(
+              bundlerOptions,
+              app,
+              "artalk/dist/Artalk.es.js"
+            );
             addViteSsrExternal(bundlerOptions, app, "artalk");
             break;
           }
