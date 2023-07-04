@@ -85,7 +85,7 @@ export const prepareCategory = (
             )}`;
 
             const mainPage = await createPage(app, {
-              path: pagePath,
+              path: encodeURI(pagePath),
               frontmatter: {
                 ...frontmatter(localePath),
                 blog: {

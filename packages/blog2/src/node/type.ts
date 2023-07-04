@@ -68,7 +68,7 @@ export const prepareType = (
             )}`;
 
             const page = await createPage(app, {
-              path: pagePath,
+              path: encodeURI(pagePath),
               frontmatter: {
                 ...frontmatter(localePath),
                 blog: {
