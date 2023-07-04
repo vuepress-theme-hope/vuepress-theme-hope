@@ -74,18 +74,18 @@
     "pnpm": ">=7"
   },
   "dependencies": {
-    "@vuepress/cli": "2.0.0-beta.63",
-    "@vuepress/client": "2.0.0-beta.63",
-    "@vuepress/core": "2.0.0-beta.63",
-    "@vuepress/plugin-active-header-links": "2.0.0-beta.63",
-    "@vuepress/plugin-container": "2.0.0-beta.63",
-    "@vuepress/plugin-external-link-icon": "2.0.0-beta.63",
-    "@vuepress/plugin-git": "2.0.0-beta.63",
-    "@vuepress/plugin-nprogress": "2.0.0-beta.63",
-    "@vuepress/plugin-prismjs": "2.0.0-beta.63",
-    "@vuepress/plugin-theme-data": "2.0.0-beta.63",
-    "@vuepress/shared": "2.0.0-beta.63",
-    "@vuepress/utils": "2.0.0-beta.63",
+    "@vuepress/cli": "2.0.0-beta.64",
+    "@vuepress/client": "2.0.0-beta.64",
+    "@vuepress/core": "2.0.0-beta.64",
+    "@vuepress/plugin-active-header-links": "2.0.0-beta.64",
+    "@vuepress/plugin-container": "2.0.0-beta.64",
+    "@vuepress/plugin-external-link-icon": "2.0.0-beta.64",
+    "@vuepress/plugin-git": "2.0.0-beta.64",
+    "@vuepress/plugin-nprogress": "2.0.0-beta.64",
+    "@vuepress/plugin-prismjs": "2.0.0-beta.64",
+    "@vuepress/plugin-theme-data": "2.0.0-beta.64",
+    "@vuepress/shared": "2.0.0-beta.64",
+    "@vuepress/utils": "2.0.0-beta.64",
     "@vueuse/core": "^10.2.1",
     "balloon-css": "^1.2.0",
     "bcrypt-ts": "^4.0.0",
@@ -112,15 +112,15 @@
     "vuepress-shared": "workspace:*"
   },
   "devDependencies": {
-    "@vuepress/bundler-vite": "2.0.0-beta.63",
-    "@vuepress/bundler-webpack": "2.0.0-beta.63",
-    "@vuepress/markdown": "2.0.0-beta.63"
+    "@vuepress/bundler-vite": "2.0.0-beta.64",
+    "@vuepress/bundler-webpack": "2.0.0-beta.64",
+    "@vuepress/markdown": "2.0.0-beta.64"
   },
   "peerDependencies": {
     "sass-loader": "^13.3.2",
-    "vuepress": "2.0.0-beta.63",
-    "vuepress-vite": "2.0.0-beta.63",
-    "vuepress-webpack": "2.0.0-beta.63"
+    "vuepress": "2.0.0-beta.64",
+    "vuepress-vite": "2.0.0-beta.64",
+    "vuepress-webpack": "2.0.0-beta.64"
   },
   "peerDependenciesMeta": {
     "sass-loader": {
