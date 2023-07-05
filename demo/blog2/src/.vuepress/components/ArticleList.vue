@@ -29,13 +29,25 @@
 </template>
 
 <script lang="ts" setup>
-defineProps({
-  items: {
-    type: Array,
-    default: () => [],
-  },
-  isTimeline: Boolean,
-});
+interface Article {
+  path: string;
+  info: {
+    title: string;
+    author?: string;
+    date: string;
+    category?: string[];
+    tag?: string[];
+    excerpt?: string;
+  };
+}
+
+withDefaults(
+  defineProps<{
+    items: Article[];
+    isTimeline: boolean;
+  }>(),
+  { items: () => [] }
+);
 </script>
 <style lang="scss">
 @use "@vuepress/theme-default/styles/mixins";
