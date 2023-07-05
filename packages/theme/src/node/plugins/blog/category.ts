@@ -86,7 +86,7 @@ export const getBlogTagCategory = (
     itemPath: options.tagItem,
     itemLayout: "BlogCategory",
     itemFrontmatter: (name, localePath) => ({
-      title: `${name} ${themeData.locales[localePath].blogLocales.tag}`,
+      title: `${themeData.locales[localePath].blogLocales.tag}: ${name}`,
       dir: { index: false },
       feed: false,
       sitemap: false,
