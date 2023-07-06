@@ -4,7 +4,6 @@ import type { HeadConfig } from "@vuepress/core";
 import { docsearchPlugin } from "@vuepress/plugin-docsearch";
 import { getDirname, path } from "@vuepress/utils";
 import { redirectPlugin } from "vuepress-plugin-redirect";
-import { removePWAPlugin } from "vuepress-plugin-remove-pwa";
 import { addViteOptimizeDepsInclude } from "vuepress-shared/node";
 
 const __dirname = getDirname(import.meta.url);
@@ -45,8 +44,9 @@ export const config = (
     dest: "./dist",
 
     head: [
-      ...(pwa === false
-        ? <HeadConfig[]>[
+      ...(pwa
+        ? []
+        : <HeadConfig[]>[
             [
               "link",
               {
@@ -98,8 +98,7 @@ export const config = (
                 content: "black",
               },
             ],
-          ]
-        : []),
+          ]),
       ...head,
     ],
     markdown: {
@@ -162,7 +161,6 @@ export const config = (
             }),
           ]
         : []),
-      ...(pwa === false ? [removePWAPlugin()] : []),
       redirectPlugin({ switchLocale: "modal" }),
       ...plugins,
     ],

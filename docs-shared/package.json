@@ -42,7 +42,6 @@
     "three": "0.154.0",
     "vue": "3.3.4",
     "vuepress-plugin-redirect": "workspace:*",
-    "vuepress-plugin-remove-pwa": "workspace:*",
     "vuepress-shared": "workspace:*",
     "vuepress-theme-hope": "workspace:*"
   },

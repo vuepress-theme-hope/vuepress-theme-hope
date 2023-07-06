@@ -727,9 +727,6 @@ importers:
       vuepress-plugin-redirect:
         specifier: workspace:*
         version: link:../packages/redirect
-      vuepress-plugin-remove-pwa:
-        specifier: workspace:*
-        version: link:../packages/remove-pwa
       vuepress-shared:
         specifier: workspace:*
         version: link:../packages/shared
