@@ -48,7 +48,7 @@ describe("generateIndex", () => {
             getter: ({ frontmatter }: Page): string[] | string | null =>
               (frontmatter.tag as string[] | string) || null,
           },
-        ])
+        ]),
       ).toMatchSnapshot();
     });
   });
@@ -64,8 +64,8 @@ describe("generateIndex", () => {
                 (frontmatter.tag as string[] | string) || null,
             },
           ],
-          true
-        )
+          true,
+        ),
       ).toMatchSnapshot();
     });
   });

@@ -11,7 +11,7 @@ export class Logger {
     /**
      * Plugin name
      */
-    private name = ""
+    private name = "",
   ) {}
 
   /**

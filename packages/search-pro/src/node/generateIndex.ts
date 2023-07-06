@@ -31,7 +31,7 @@ const HEADING_TAGS = "h2,h3,h4,h5,h6".split(",");
  */
 const CONTENT_BLOCK_TAGS =
   "header,nav,section,div,dd,dl,dt,figcaption,figure,picture,hr,li,main,ol,p,ul,caption,table,thead,tbody,tfoot,th,tr,td,datalist,fieldset,form,legend,optgroup,option,select,details,dialog,menu,menuitem,summary,blockquote,pre".split(
-    ","
+    ",",
   );
 
 /**
@@ -41,7 +41,7 @@ const CONTENT_BLOCK_TAGS =
  */
 const CONTENT_INLINE_TAGS =
   "routerlink,a,b,abbr,bdi,bdo,cite,code,dfn,em,i,kbd,mark,q,rp,rt,ruby,s,samp,small,span,strong,sub,sup,time,u,var,wbr,del,ins,button,label,legend,meter,optgroup,option,output,progress,select".split(
-    ","
+    ",",
   );
 
 const $ = load("");
@@ -68,7 +68,7 @@ const renderHeader = (node: Element): string =>
 export const generatePageIndex = (
   page: Page<{ excerpt?: string }>,
   customFieldsGetter: SearchProCustomFieldOptions[] = [],
-  indexContent = false
+  indexContent = false,
 ): IndexItem[] => {
   const { contentRendered, data, title } = page;
   const key = <PageIndexId>page.key;
@@ -117,7 +117,7 @@ export const generatePageIndex = (
           currentContent = "";
         }
         node.childNodes.forEach((item) =>
-          render(item, preserveSpace || node.name === "pre")
+          render(item, preserveSpace || node.name === "pre"),
         );
       } else if (CONTENT_INLINE_TAGS.includes(node.name)) {
         node.childNodes.forEach((item) => render(item, preserveSpace));
@@ -150,7 +150,7 @@ export const generatePageIndex = (
           ? [index.toString(), [result]]
           : null;
       })
-      .filter((item): item is [string, string[]] => item !== null)
+      .filter((item): item is [string, string[]] => item !== null),
   );
 
   // no content in page and no customFields
@@ -187,7 +187,7 @@ export const getSearchIndexStore = async (
     indexContent,
     indexOptions,
     indexLocaleOptions,
-  }: SearchProOptions
+  }: SearchProOptions,
 ): Promise<SearchIndexStore> => {
   const indexesByLocale: LocaleIndex = {};
 
@@ -216,7 +216,7 @@ export const getSearchIndexStore = async (
       await addAllAsync(index, indexes);
 
       searchIndex[localePath] = index;
-    })
+    }),
   );
 
   return searchIndex;

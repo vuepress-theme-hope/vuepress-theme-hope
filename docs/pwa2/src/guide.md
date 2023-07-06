@@ -221,7 +221,7 @@ export const forceUpdate: () => void;
 export const registerSW: (
   serviceWorkerPath: string,
   hooks?: Hooks,
-  showStatus?: boolean
+  showStatus?: boolean,
 ) => Promise<void>;
 
 /**

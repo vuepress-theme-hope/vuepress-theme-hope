@@ -15,17 +15,17 @@ const getUserRegistry = (packageManager: PackageManager): string =>
 
 export const getRegistry = async (
   packageManager: PackageManager,
-  lang: Lang
+  lang: Lang,
 ): Promise<string> => {
   const userRegistry = getUserRegistry(packageManager);
 
   if (/https:\/\/registry\.npm\.taobao\.org\/?/.test(userRegistry)) {
     console.error(
-      "npm.taobao.org is no longer available, resetting it to npmmirror.com"
+      "npm.taobao.org is no longer available, resetting it to npmmirror.com",
     );
 
     execaCommandSync(
-      `${packageManager} config set registry ${NPM_MIRROR_REGISTRY}`
+      `${packageManager} config set registry ${NPM_MIRROR_REGISTRY}`,
     );
   }
 

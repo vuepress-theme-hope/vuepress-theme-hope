@@ -6,11 +6,11 @@ import type { Locale } from "./locale.js";
 
 const monthFormat =
   "января_февраля_марта_апреля_мая_июня_июля_августа_сентября_октября_ноября_декабря".split(
-    "_"
+    "_",
   );
 const monthStandalone =
   "январь_февраль_март_апрель_май_июнь_июль_август_сентябрь_октябрь_ноябрь_декабрь".split(
-    "_"
+    "_",
   );
 
 const monthShortFormat =
@@ -33,7 +33,7 @@ const plural = (word: string, num: number): string => {
 const relativeTimeWithPlural = (
   number: number,
   withoutSuffix: boolean,
-  key: string
+  key: string,
 ): string => {
   const format: Record<string, string> = {
     mm: withoutSuffix ? "минута_минуты_минут" : "минуту_минуты_минут",

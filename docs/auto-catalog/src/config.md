@@ -140,7 +140,7 @@ export type AutoCatalogIconComponent = Component<{
   icon: string;
 }>;
 export declare const defineAutoCatalogIconComponent: (
-  options: AutoCatalogIconComponent
+  options: AutoCatalogIconComponent,
 ) => void;
 ```
 

@@ -20,7 +20,7 @@ const FeaturePanel: FunctionalComponent<
     image?: (props: ThemeProjectHomeFeatureOptions) => VNode[] | VNode | null;
     info?: (props: ThemeProjectHomeFeatureOptions) => VNode[] | VNode | null;
     highlights?: (
-      props: ThemeProjectHomeHighlightItem[]
+      props: ThemeProjectHomeHighlightItem[],
     ) => VNode[] | VNode | null;
   }
 > = (props, { slots }) => {
@@ -117,7 +117,7 @@ const FeaturePanel: FunctionalComponent<
                             "aria-label": title,
                             target: "_blank",
                           },
-                          children
+                          children,
                         )
                       : h(
                           VPLink,
@@ -127,15 +127,15 @@ const FeaturePanel: FunctionalComponent<
                             role: "navigation",
                             "aria-label": title,
                           },
-                          () => children
+                          () => children,
                         )
                     : h("div", { class: "vp-feature-item" }, children);
-                })
+                }),
               )
             : null,
-        ]
+        ],
       ),
-    ]
+    ],
   );
 };
 

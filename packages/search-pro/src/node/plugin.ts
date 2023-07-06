@@ -46,9 +46,9 @@ export const searchProPlugin =
         SEARCH_PRO_CUSTOM_FIELDS: fromEntries(
           (options.customFields || [])
             .map(({ formatter }, index) =>
-              formatter ? [index.toString(), formatter] : null
+              formatter ? [index.toString(), formatter] : null,
             )
-            .filter((item): item is [string, string] => item !== null)
+            .filter((item): item is [string, string] => item !== null),
         ),
         SEARCH_PRO_LOCALES: getLocales({
           app,

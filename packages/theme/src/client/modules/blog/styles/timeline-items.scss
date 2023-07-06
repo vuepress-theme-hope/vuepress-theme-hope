@@ -12,7 +12,8 @@
 
   background: var(--dot-color);
 
-  transition: background var(--color-transition),
+  transition:
+    background var(--color-transition),
     border-color var(--color-transition);
 }
 
@@ -193,7 +194,8 @@
     font-size: 16px;
     line-height: 30px;
 
-    transition: color var(--color-transition),
+    transition:
+      color var(--color-transition),
       font-size var(--transform-transition);
   }
 
@@ -218,8 +220,10 @@
 
       .timeline-date {
         font-size: 16px;
-        transition: border-color var(--color-transition),
-          color var(--color-transition), font-size var(--transform-transition);
+        transition:
+          border-color var(--color-transition),
+          color var(--color-transition),
+          font-size var(--transform-transition);
 
         // stylelint-disable max-nesting-depth
         &::before {

@@ -37,7 +37,7 @@ export interface PageExcerptOptions {
 export const getPageExcerpt: (
   app: App,
   page: Page,
-  options: PageExcerptOptions = {}
+  options: PageExcerptOptions = {},
 ) => string;
 ```
 

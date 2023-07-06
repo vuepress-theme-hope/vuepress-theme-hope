@@ -17,7 +17,7 @@ export const injectCatalogInformation = (
     orderRouteMetaKey = "order",
     titleGetter = (page): string => page.title,
     titleRouteMetaKey = "title",
-  }: AutoCatalogOptions
+  }: AutoCatalogOptions,
 ): void => {
   if (!component)
     pages.forEach((page) => {
@@ -46,7 +46,7 @@ export const generateCatalog = async (
     frontmatter = (): PageFrontmatter => ({}),
     level = 3,
     index = false,
-  }: AutoCatalogOptions
+  }: AutoCatalogOptions,
 ): Promise<void> => {
   const {
     env: { isDebug },
@@ -98,7 +98,7 @@ export const generateCatalog = async (
           content,
           path,
         });
-      })
+      }),
   ).then((pages) => {
     app.pages.push(...pages);
   });

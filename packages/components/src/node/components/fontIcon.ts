@@ -41,7 +41,7 @@ export const isIconifyAssets = (assets: FontIconAssets): boolean =>
 
 export const getIconInfo = (
   assets?: FontIconAssets,
-  prefix?: string
+  prefix?: string,
 ): {
   type: "iconfont" | "iconify" | "fontawesome" | "custom";
   prefix: string;

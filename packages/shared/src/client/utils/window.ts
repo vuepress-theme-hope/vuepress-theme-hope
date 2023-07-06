@@ -18,7 +18,7 @@ export const getSize = (): Record<
 export const openPopupWindow = (
   link: string,
   target = "_blank",
-  features = ["resizable", "status"]
+  features = ["resizable", "status"],
 ): void => {
   const { width, height, left, top } = getSize();
 
@@ -27,8 +27,8 @@ export const openPopupWindow = (
       link,
       target,
       `width=${width},height=${height},left=${left},top=${top},${features.join(
-        ","
-      )}`
+        ",",
+      )}`,
     )
     ?.focus?.();
 };

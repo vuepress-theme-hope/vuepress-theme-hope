@@ -51,14 +51,14 @@ export default defineComponent({
             h("main", { id: "main-content", class: "vp-blog-main" }, [
               h(DropTransition, () => h(ArticleType)),
               h(DropTransition, { appear: true, delay: 0.24 }, () =>
-                h(ArticleList, { key: page.value.path, items: items.value })
+                h(ArticleList, { key: page.value.path, items: items.value }),
               ),
             ]),
             h(DropTransition, { delay: 0.16 }, () =>
-              h(InfoPanel, { key: "blog" })
+              h(InfoPanel, { key: "blog" }),
             ),
-          ])
-        )
+          ]),
+        ),
       );
   },
 });

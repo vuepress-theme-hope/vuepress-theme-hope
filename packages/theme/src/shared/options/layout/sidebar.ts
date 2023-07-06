@@ -44,7 +44,7 @@ export type SidebarSorterKeyword =
 
 export type SidebarSorterFunction = (
   infoA: SidebarInfo,
-  infoB: SidebarInfo
+  infoB: SidebarInfo,
 ) => number;
 
 export type SidebarSorter =

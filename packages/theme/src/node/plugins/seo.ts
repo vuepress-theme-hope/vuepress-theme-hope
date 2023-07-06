@@ -13,7 +13,7 @@ export const getSEOPlugin = (
   themeData: ThemeData,
   { seo }: PluginsOptions,
   hostname = "",
-  legacy = false
+  legacy = false,
 ): Plugin | null => {
   if (seo === false) return null;
   const seoOptions = isPlainObject(seo) ? seo : {};
@@ -31,6 +31,6 @@ export const getSEOPlugin = (
         frontmatter["article"] !== false,
       ...seoOptions,
     },
-    legacy
+    legacy,
   );
 };

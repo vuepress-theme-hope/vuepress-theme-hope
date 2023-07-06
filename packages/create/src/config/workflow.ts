@@ -6,7 +6,7 @@ import type { PackageManager } from "../utils/index.js";
 export const getWorkflowContent = (
   packageManager: PackageManager,
   dir: string,
-  lang: Lang
+  lang: Lang,
 ): string =>
   `
 name: ${lang === "简体中文" ? "部署文档" : "Deploy Docs"}

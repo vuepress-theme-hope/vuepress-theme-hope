@@ -46,19 +46,19 @@ export default config(
     alias: {
       "@FlowChartPlayground": path.resolve(
         __dirname,
-        "./components/FlowChartPlayground"
+        "./components/FlowChartPlayground",
       ),
       "@IconDisplay": path.resolve(__dirname, "./components/IconDisplay"),
       "@KatexPlayground": path.resolve(
         __dirname,
-        "./components/KatexPlayground"
+        "./components/KatexPlayground",
       ),
       "@ToggleRTLButton": path.resolve(
         __dirname,
-        "./components/ToggleRTLButton"
+        "./components/ToggleRTLButton",
       ),
     },
 
     clientConfigFile: path.resolve(__dirname, "./client.ts"),
-  }
+  },
 );

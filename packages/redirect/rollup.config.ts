@@ -11,7 +11,7 @@ export default [
     },
     {
       copy: [["client/styles", "client"]],
-    }
+    },
   ),
   ...bundle("node/index"),
 ];

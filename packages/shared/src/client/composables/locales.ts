@@ -12,7 +12,7 @@ import type { RequiredLocaleConfig } from "../../shared/index.js";
  * @returns current locale config
  */
 export const useLocaleConfig = <T extends LocaleData>(
-  localesConfig: RequiredLocaleConfig<T>
+  localesConfig: RequiredLocaleConfig<T>,
 ): ComputedRef<T> => {
   const routeLocale = useRouteLocale();
 

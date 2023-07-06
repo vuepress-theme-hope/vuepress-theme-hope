@@ -24,9 +24,9 @@ export default defineComponent({
                 { class: "nav-item hide-in-mobile" },
                 "children" in config
                   ? h(DropdownLink, { config })
-                  : h(AutoLink, { config })
-              )
-            )
+                  : h(AutoLink, { config }),
+              ),
+            ),
           )
         : null;
   },

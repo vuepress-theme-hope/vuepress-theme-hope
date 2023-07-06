@@ -30,7 +30,7 @@ ${demo}
 `);
 
     expect(flowRenderResult).toMatch(
-      /<FlowChart id="flowchart-.*?" code=".*?" preset="vue"><\/FlowChart>/
+      /<FlowChart id="flowchart-.*?" code=".*?" preset="vue"><\/FlowChart>/,
     );
     expect(flowRenderResult).toMatchSnapshot();
   });
@@ -43,7 +43,7 @@ ${demo}
 `);
 
     expect(flowChartRenderResult).toMatch(
-      /<FlowChart id="flowchart-.*?" code=".*?" preset="vue"><\/FlowChart>/
+      /<FlowChart id="flowchart-.*?" code=".*?" preset="vue"><\/FlowChart>/,
     );
     expect(flowChartRenderResult).toMatchSnapshot();
   });
@@ -52,7 +52,7 @@ ${demo}
     expect(
       markdownIt.render(`
 ${demo}
-`)
+`),
     ).toMatchSnapshot();
 
     expect(
@@ -60,7 +60,7 @@ ${demo}
 \`\`\`md
 ${demo}
 \`\`\`
-`)
+`),
     ).toMatchSnapshot();
   });
 
@@ -72,7 +72,7 @@ ${demo}
 `);
 
     expect(flowRenderResult).toMatch(
-      /<FlowChart id="flowchart-.*?" code=".*?" preset="ant"><\/FlowChart>/
+      /<FlowChart id="flowchart-.*?" code=".*?" preset="ant"><\/FlowChart>/,
     );
     expect(flowRenderResult).toMatchSnapshot();
 
@@ -83,7 +83,7 @@ ${demo}
 `);
 
     expect(flowChartRenderResult).toMatch(
-      /<FlowChart id="flowchart-.*?" code=".*?" preset="ant"><\/FlowChart>/
+      /<FlowChart id="flowchart-.*?" code=".*?" preset="ant"><\/FlowChart>/,
     );
     expect(flowChartRenderResult).toMatchSnapshot();
   });

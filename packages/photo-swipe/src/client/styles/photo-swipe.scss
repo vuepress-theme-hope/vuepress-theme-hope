@@ -31,7 +31,9 @@
 
   background: #fff;
 
-  transition: width var(--vp-tt), color var(--vp-ct);
+  transition:
+    width var(--vp-tt),
+    color var(--vp-ct);
 
   &.active {
     width: 30px;

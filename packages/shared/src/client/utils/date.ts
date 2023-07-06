@@ -1,5 +1,5 @@
 export const getDate = (
-  input: Date | string | number | undefined | null = ""
+  input: Date | string | number | undefined | null = "",
 ): Date | null => {
   if (input) {
     if (typeof input === "number") return new Date(input);

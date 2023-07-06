@@ -56,11 +56,11 @@ export default defineComponent({
           highlights.value?.map((highlight) =>
             "features" in highlight
               ? h(FeaturePanel, highlight)
-              : h(HighlightPanel, highlight)
+              : h(HighlightPanel, highlight),
           ) ||
             (features.value
               ? h(DropTransition, { appear: true, delay: 0.24 }, () =>
-                  h(FeaturePanel, { features: features.value! })
+                  h(FeaturePanel, { features: features.value! }),
                 )
               : null),
           slots.center?.(),
@@ -70,10 +70,10 @@ export default defineComponent({
               appear: true,
               delay: 0.32,
             },
-            () => h(MarkdownContent)
+            () => h(MarkdownContent),
           ),
           slots.bottom?.(),
-        ]
+        ],
       );
   },
 });

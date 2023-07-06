@@ -23,7 +23,7 @@ export const getBlogPlugin = (
   app: App,
   themeData: ThemeData,
   options?: BlogPluginOptions | boolean,
-  hotReload = false
+  hotReload = false,
 ): Plugin | null => {
   if (!options) return null;
 

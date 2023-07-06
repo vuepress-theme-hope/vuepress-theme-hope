@@ -33,8 +33,8 @@ export default defineComponent({
               h(
                 AutoLink,
                 { class: "label", config: editLink.value },
-                { before: () => h(EditIcon) }
-              )
+                { before: () => h(EditIcon) },
+              ),
             )
           : null,
         h("div", { class: "meta-item git-info" }, [
@@ -42,7 +42,7 @@ export default defineComponent({
             ? h("div", { class: "update-time" }, [
                 h("span", { class: "label" }, `${metaLocales.lastUpdated}: `),
                 h(ClientOnly, () =>
-                  h("span", { class: "info" }, <string>updateTime.value)
+                  h("span", { class: "info" }, <string>updateTime.value),
                 ),
               ])
             : null,
@@ -53,7 +53,7 @@ export default defineComponent({
                   h(
                     "span",
                     { class: "contributor", title: `email: ${email}` },
-                    name
+                    name,
                   ),
                   index !== contributors.value!.length - 1 ? "," : "",
                 ]),

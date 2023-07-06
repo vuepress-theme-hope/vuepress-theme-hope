@@ -9,7 +9,8 @@
 
   background: var(--dot-color);
 
-  transition: background var(--color-transition),
+  transition:
+    background var(--color-transition),
     border-color var(--color-transition);
 }
 

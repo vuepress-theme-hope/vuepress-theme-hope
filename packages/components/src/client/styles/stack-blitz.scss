@@ -20,7 +20,9 @@
   font-size: 18;
   line-height: 1.5;
 
-  transition: background var(--vp-ct), color var(--vp-ct);
+  transition:
+    background var(--vp-ct),
+    color var(--vp-ct);
 
   &:hover {
     background: var(--vp-tc);

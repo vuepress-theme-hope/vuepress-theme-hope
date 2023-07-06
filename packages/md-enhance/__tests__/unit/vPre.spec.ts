@@ -8,7 +8,7 @@ describe("v-pre", () => {
     const markdownIt = MarkdownIt({ linkify: true }).use(vPre);
 
     expect(markdownIt.render("::: v-pre\n{{a}}\n:::\n")).toBe(
-      "<div v-pre>\n<p>{{a}}</p>\n</div>\n"
+      "<div v-pre>\n<p>{{a}}</p>\n</div>\n",
     );
   });
 });

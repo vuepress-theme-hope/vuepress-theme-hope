@@ -47,19 +47,19 @@ export default defineComponent({
             h(
               "button",
               { type: "button", class: "menu-button", onClick: () => toggle() },
-              h("span", { class: "icon" })
+              h("span", { class: "icon" }),
             ),
             h(
               "button",
               { type: "button", class: "back-button", onClick: () => back() },
-              h(BackIcon)
+              h(BackIcon),
             ),
             h(
               "button",
               { type: "button", class: "home-button", onClick: () => home() },
-              h(HomeIcon)
+              h(HomeIcon),
             ),
-          ]
+          ],
         ),
       ]);
   },

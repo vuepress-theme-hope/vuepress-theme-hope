@@ -135,7 +135,7 @@ export default defineComponent({
             h(
               "div",
               { class: "bilibili-desc" },
-              h("a", { class: "sr-only", href: videoLink.value }, props.title)
+              h("a", { class: "sr-only", href: videoLink.value }, props.title),
             ),
             h("iframe", {
               ref: el,

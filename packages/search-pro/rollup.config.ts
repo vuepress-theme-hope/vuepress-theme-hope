@@ -17,7 +17,7 @@ export default [
         "vuepress-plugin-search-pro/result",
       ],
       copy: [["client/styles", "client"]],
-    }
+    },
   ),
   ...bundle("worker/index", {
     resolve: true,

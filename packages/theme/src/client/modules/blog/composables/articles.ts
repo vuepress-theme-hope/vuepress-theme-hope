@@ -10,7 +10,7 @@ declare const __VUEPRESS_DEV__: boolean;
 export type ArticlesRef = ComputedRef<BlogTypeData<ArticleInfo>>;
 
 export const articlesSymbol: InjectionKey<ArticlesRef> = Symbol(
-  __VUEPRESS_DEV__ ? "articles" : ""
+  __VUEPRESS_DEV__ ? "articles" : "",
 );
 
 /**

@@ -71,7 +71,7 @@ export default defineComponent({
                 property: "timeRequired",
                 content: readingTimeMeta.value,
               }),
-            ]
+            ],
           )
         : null;
   },

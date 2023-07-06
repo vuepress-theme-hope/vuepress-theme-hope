@@ -33,11 +33,11 @@ export default defineComponent({
               : ["Ctrl", "Shift", "Alt", "Win"]
             ).filter(
               (_, index) =>
-                primaryKey[(["ctrl", "shift", "alt", "meta"] as const)[index]]
+                primaryKey[(["ctrl", "shift", "alt", "meta"] as const)[index]],
             ),
             primaryKey.key.toUpperCase(),
           ]
-        : null
+        : null,
     );
 
     useEventListener("keydown", (event: KeyboardEvent): void => {
@@ -84,11 +84,11 @@ export default defineComponent({
                 "div",
                 { class: "search-pro-key-hints" },
                 controlKeys.value.map((key) =>
-                  h("kbd", { class: "search-pro-key" }, key)
-                )
+                  h("kbd", { class: "search-pro-key" }, key),
+                ),
               )
             : null,
-        ]
+        ],
       ),
     ];
   },

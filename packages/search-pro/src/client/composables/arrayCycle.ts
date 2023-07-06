@@ -10,7 +10,7 @@ export interface ArrayCycle<T> {
 
 export const useArrayCycle = <T>(
   target: Ref<T[]>,
-  preserveIndexWhenChange = false
+  preserveIndexWhenChange = false,
 ): ArrayCycle<T> => {
   const index = ref(0);
   const item = computed(() => target.value[index.value]);

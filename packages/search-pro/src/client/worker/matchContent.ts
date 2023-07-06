@@ -5,7 +5,7 @@ const SUFFIX_LENGTH = 20;
 
 export const getMatchedContent = (
   content: string,
-  queryString: string
+  queryString: string,
 ): Word[] | null => {
   const contentLowerCase = content.toLowerCase();
   const queryStringLowerCase = queryString.toLowerCase();
@@ -35,7 +35,7 @@ export const getMatchedContent = (
       text =
         content.length > SUFFIX_LENGTH
           ? `${content.slice(0, SUFFIX_LENGTH)} … ${content.slice(
-              -SUFFIX_LENGTH
+              -SUFFIX_LENGTH,
             )}`
           : content;
 

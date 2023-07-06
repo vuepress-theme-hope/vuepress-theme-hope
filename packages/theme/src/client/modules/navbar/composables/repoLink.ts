@@ -20,18 +20,18 @@ export const useNavbarRepo = (): ComputedRef<RepoConfig | null> => {
   const repo = computed(() => themeLocale.value.repo || null);
 
   const repoLink = computed(() =>
-    repo.value ? resolveRepoLink(repo.value) : null
+    repo.value ? resolveRepoLink(repo.value) : null,
   );
 
   const repoType = computed(() =>
-    repo.value ? resolveRepoType(repo.value) : null
+    repo.value ? resolveRepoType(repo.value) : null,
   );
 
   const repoLabel = computed(() =>
     repoLink.value
       ? themeLocale.value.repoLabel ??
         (repoType.value === null ? "Source" : repoType.value)
-      : null
+      : null,
   );
 
   return computed(() => {

@@ -183,7 +183,7 @@ export default defineComponent({
         {
           attributeFilter: ["class", "data-theme"],
           attributes: true,
-        }
+        },
       );
 
       watch(isDarkmode, () => renderMermaid());
@@ -216,7 +216,7 @@ export default defineComponent({
           ? // mermaid
             h("div", { class: "mermaid-content", innerHTML: svgCode.value })
           : // loading
-            h(LoadingIcon, { class: "mermaid-loading", height: 96 })
+            h(LoadingIcon, { class: "mermaid-loading", height: 96 }),
       ),
     ];
   },

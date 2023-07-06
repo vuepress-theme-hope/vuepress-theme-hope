@@ -37,7 +37,7 @@ export default defineUserConfig({
     },
     {
       // 主题行为选项 (可选)
-    }
+    },
   ),
 });
 ```
@@ -59,7 +59,7 @@ export default {
     },
     {
       // 主题行为选项 (可选)
-    }
+    },
   ),
 };
 ```

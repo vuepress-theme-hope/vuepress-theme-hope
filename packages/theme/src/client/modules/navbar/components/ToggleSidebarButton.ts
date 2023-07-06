@@ -15,7 +15,7 @@ const ToggleSidebarButton: FunctionalComponent<
       title: "Toggle Sidebar",
       onClick: () => emit("toggle"),
     },
-    h("span", { class: "icon" })
+    h("span", { class: "icon" }),
   );
 
 ToggleSidebarButton.displayName = "ToggleSidebarButton";

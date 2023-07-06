@@ -25,7 +25,7 @@ const ToggleNavbarButton: FunctionalComponent<
       h("span", { class: "vp-top" }),
       h("span", { class: "vp-middle" }),
       h("span", { class: "vp-bottom" }),
-    ])
+    ]),
   );
 
 ToggleNavbarButton.displayName = "ToggleNavbarButton";

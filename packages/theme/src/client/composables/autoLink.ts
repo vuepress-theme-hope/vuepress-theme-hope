@@ -12,7 +12,7 @@ import { resolveLinkInfo } from "../utils/index.js";
  */
 export const useAutoLink = (
   item: string,
-  preferFull = false
+  preferFull = false,
 ): AutoLinkOptions => {
   const router = useRouter();
 

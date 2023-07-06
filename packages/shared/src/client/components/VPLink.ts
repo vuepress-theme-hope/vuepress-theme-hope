@@ -20,14 +20,14 @@ export const VPLink: FunctionalComponent<
 > = ({ to = "" }, { slots }) => {
   const router = useRouter();
   const navigate = (
-    event: MouseEvent = {} as MouseEvent
+    event: MouseEvent = {} as MouseEvent,
   ): Promise<void | NavigationFailure> =>
     guardEvent(event) ? router.push(to).catch() : Promise.resolve();
 
   return h(
     "a",
     { class: "vp-link", href: withBase(inferRouteLink(to)), onClick: navigate },
-    slots.default?.()
+    slots.default?.(),
   );
 };
 

@@ -49,6 +49,6 @@ export default [
         ["client/styles", "client"],
         ["client/compact/styles", "client/compact"],
       ],
-    }
+    },
   ),
 ];

@@ -31,7 +31,9 @@
 
     visibility: visible;
 
-    transition: background var(--vp-ct), border-color var(--vp-ct);
+    transition:
+      background var(--vp-ct),
+      border-color var(--vp-ct);
 
     @media print {
       border-color: var(--vp-c);

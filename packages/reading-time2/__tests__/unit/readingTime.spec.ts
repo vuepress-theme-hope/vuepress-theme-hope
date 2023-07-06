@@ -6,15 +6,15 @@ describe("Words test", () => {
   describe("Should handle english", () => {
     it("Should count words", () => {
       expect(
-        getWordNumber("\n Mr.Hope is handsome, and he is a great man.")
+        getWordNumber("\n Mr.Hope is handsome, and he is a great man."),
       ).toEqual(9);
     });
 
     it("Should ignore marks", () => {
       expect(
         getWordNumber(
-          "\n Mr.Hope ! is #$%^&* handsome, and %^&* he is a great man."
-        )
+          "\n Mr.Hope ! is #$%^&* handsome, and %^&* he is a great man.",
+        ),
       ).toEqual(9);
     });
   });
@@ -32,15 +32,15 @@ describe("Words test", () => {
   describe("Should handle russian", () => {
     it("Should count words", () => {
       expect(
-        getWordNumber("Для меня очень странно было услышать эту причину.")
+        getWordNumber("Для меня очень странно было услышать эту причину."),
       ).toEqual(8);
     });
 
     it("Should ignore marks", () => {
       expect(
         getWordNumber(
-          "Для меня очень **странно** [было][] услышать эту причину."
-        )
+          "Для меня очень **странно** [было][] услышать эту причину.",
+        ),
       ).toEqual(8);
     });
   });
@@ -49,16 +49,16 @@ describe("Words test", () => {
     it("Should count words", () => {
       expect(
         getWordNumber(
-          "  春眠不觉晓，处处闻啼鸟。\n   Mr.Hope is handsome, and he is a great man."
-        )
+          "  春眠不觉晓，处处闻啼鸟。\n   Mr.Hope is handsome, and he is a great man.",
+        ),
       ).toEqual(19);
     });
 
     it("Should ignore marks", () => {
       expect(
         getWordNumber(
-          "春眠^&*(不觉晓，处处闻!#$%啼鸟。\n Mr.Hope ! is #$%^&* handsome, and %^&* he is a great man."
-        )
+          "春眠^&*(不觉晓，处处闻!#$%啼鸟。\n Mr.Hope ! is #$%^&* handsome, and %^&* he is a great man.",
+        ),
       ).toEqual(19);
     });
   });
@@ -68,8 +68,8 @@ describe("Reading Time Test", () => {
   it("Reading Time", () => {
     expect(
       getReadingTime(
-        "\n Mr.Hope ! is #$%^&* handsome, and %^&* he is a great man."
-      )
+        "\n Mr.Hope ! is #$%^&* handsome, and %^&* he is a great man.",
+      ),
     ).toEqual({
       minutes: 0.03,
       words: 9,
@@ -82,8 +82,8 @@ describe("Reading Time Test", () => {
 
     expect(
       getReadingTime(
-        "  春眠不觉晓，处处闻啼鸟。\n   Mr.Hope is handsome, and he is a great man."
-      )
+        "  春眠不觉晓，处处闻啼鸟。\n   Mr.Hope is handsome, and he is a great man.",
+      ),
     ).toEqual({
       minutes: 0.06,
       words: 19,
@@ -91,8 +91,8 @@ describe("Reading Time Test", () => {
 
     expect(
       getReadingTime(
-        "\n  春眠不觉晓，处处闻啼鸟。\n   Mr.Hope is handsome, and he is a great man.\n  春眠不觉晓，处处闻啼鸟。\n   Mr.Hope is handsome, and he is a great man.\n  春眠不觉晓，处处闻啼鸟。\n   Mr.Hope is handsome, and he is a great man.\n  春眠不觉晓，处处闻啼鸟。\n   Mr.Hope is handsome, and he is a great man.\n  春眠不觉晓，处处闻啼鸟。\n   Mr.Hope is handsome, and he is a great man.\n  春眠不觉晓，处处闻啼鸟。\n   Mr.Hope is handsome, and he is a great man.\n  春眠不觉晓，处处闻啼鸟。\n   Mr.Hope is handsome, and he is a great man."
-      )
+        "\n  春眠不觉晓，处处闻啼鸟。\n   Mr.Hope is handsome, and he is a great man.\n  春眠不觉晓，处处闻啼鸟。\n   Mr.Hope is handsome, and he is a great man.\n  春眠不觉晓，处处闻啼鸟。\n   Mr.Hope is handsome, and he is a great man.\n  春眠不觉晓，处处闻啼鸟。\n   Mr.Hope is handsome, and he is a great man.\n  春眠不觉晓，处处闻啼鸟。\n   Mr.Hope is handsome, and he is a great man.\n  春眠不觉晓，处处闻啼鸟。\n   Mr.Hope is handsome, and he is a great man.\n  春眠不觉晓，处处闻啼鸟。\n   Mr.Hope is handsome, and he is a great man.",
+      ),
     ).toEqual({
       minutes: 0.44,
       words: 133,

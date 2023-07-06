@@ -67,9 +67,9 @@ export default defineComponent({
                 [
                   locale.value.hint,
                   h("span", { class: "icon-wrapper" }, h(UpdateIcon)),
-                ]
+                ],
               )
-            : null)
+            : null),
       );
   },
 });

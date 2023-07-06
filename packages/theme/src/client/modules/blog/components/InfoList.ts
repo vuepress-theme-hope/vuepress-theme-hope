@@ -43,7 +43,7 @@ export default defineComponent({
 
     const buttons: [
       "article" | "category" | "tag" | "timeline",
-      FunctionalComponent
+      FunctionalComponent,
     ][] = [
       ["article", ArticleIcon],
       ["category", CategoryIcon],
@@ -73,10 +73,10 @@ export default defineComponent({
                   "aria-label": locale.value[key],
                   "data-balloon-pos": "up",
                 },
-                h(icon)
-              )
-            )
-          )
+                h(icon),
+              ),
+            ),
+          ),
         ),
 
         h(DropTransition, () =>
@@ -93,7 +93,7 @@ export default defineComponent({
                     h(ArticleIcon),
                     h("span", { class: "num" }, articles.value.items.length),
                     locale.value.article,
-                  ]
+                  ],
                 ),
                 h("hr"),
                 h(
@@ -110,11 +110,11 @@ export default defineComponent({
                           h(
                             VPLink,
                             { to: path },
-                            () => info[ArticleInfoType.title]
-                          )
-                        )
-                    )
-                  )
+                            () => info[ArticleInfoType.title],
+                          ),
+                        ),
+                    ),
+                  ),
                 ),
               ])
             : active.value === "category"
@@ -130,7 +130,7 @@ export default defineComponent({
                         h(CategoryIcon),
                         h("span", { class: "num" }, categoryNumber.value),
                         locale.value.category,
-                      ]
+                      ],
                     )
                   : null,
                 h("hr"),
@@ -149,13 +149,13 @@ export default defineComponent({
                         h(TagIcon),
                         h("span", { class: "num" }, tagNumber.value),
                         locale.value.tag,
-                      ]
+                      ],
                     )
                   : null,
                 h("hr"),
                 h(DropTransition, { delay: 0.04 }, () => h(TagList)),
               ])
-            : h(DropTransition, () => h(TimelineList))
+            : h(DropTransition, () => h(TimelineList)),
         ),
       ]);
   },

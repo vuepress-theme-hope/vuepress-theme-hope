@@ -46,7 +46,7 @@ withDefaults(
     items: Article[];
     isTimeline: boolean;
   }>(),
-  { items: () => [] }
+  { items: () => [] },
 );
 </script>
 <style lang="scss">

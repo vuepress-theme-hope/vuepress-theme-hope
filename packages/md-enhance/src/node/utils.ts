@@ -8,5 +8,5 @@ export const PLUGIN_NAME = "vuepress-plugin-md-enhance";
 export const logger = new Logger(PLUGIN_NAME);
 
 export const CLIENT_FOLDER = ensureEndingSlash(
-  path.resolve(__dirname, "../client")
+  path.resolve(__dirname, "../client"),
 );

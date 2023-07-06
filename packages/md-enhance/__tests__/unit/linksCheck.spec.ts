@@ -12,7 +12,7 @@ it("Should get status correctly", async () => {
       source: path.resolve(__dirname, "./__fixtures__/src"),
       theme: emptyTheme,
     },
-    false
+    false,
   );
   const buildApp = createBaseApp(
     {
@@ -20,29 +20,29 @@ it("Should get status correctly", async () => {
       source: path.resolve(__dirname, "./__fixtures__/src"),
       theme: emptyTheme,
     },
-    true
+    true,
   );
 
   await devApp.init();
   await buildApp.init();
 
   expect(
-    getLinksCheckStatus(devApp, { checkLinks: { status: "always" } })
+    getLinksCheckStatus(devApp, { checkLinks: { status: "always" } }),
   ).toContain({
     enabled: true,
   });
   expect(
-    getLinksCheckStatus(buildApp, { checkLinks: { status: "always" } })
+    getLinksCheckStatus(buildApp, { checkLinks: { status: "always" } }),
   ).toContain({
     enabled: true,
   });
   expect(
-    getLinksCheckStatus(devApp, { checkLinks: { status: "dev" } })
+    getLinksCheckStatus(devApp, { checkLinks: { status: "dev" } }),
   ).toContain({
     enabled: true,
   });
   expect(
-    getLinksCheckStatus(buildApp, { checkLinks: { status: "dev" } })
+    getLinksCheckStatus(buildApp, { checkLinks: { status: "dev" } }),
   ).toContain({
     enabled: false,
   });
@@ -74,7 +74,7 @@ it("should check links correctly", async () => {
 
   const { enabled: linksCheckEnabled, isIgnoreLink } = getLinksCheckStatus(
     app,
-    {}
+    {},
   );
 
   if (linksCheckEnabled)

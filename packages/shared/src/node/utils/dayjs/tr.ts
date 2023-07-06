@@ -9,7 +9,7 @@ const locale: Partial<Locale> = {
   weekdaysShort: "Paz_Pzt_Sal_Çar_Per_Cum_Cmt".split("_"),
   months:
     "Ocak_Şubat_Mart_Nisan_Mayıs_Haziran_Temmuz_Ağustos_Eylül_Ekim_Kasım_Aralık".split(
-      "_"
+      "_",
     ),
   monthsShort: "Oca_Şub_Mar_Nis_May_Haz_Tem_Ağu_Eyl_Eki_Kas_Ara".split("_"),
   ordinal: (n) => `${n}.`,

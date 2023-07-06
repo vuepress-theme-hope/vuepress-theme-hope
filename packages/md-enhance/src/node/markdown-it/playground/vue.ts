@@ -21,7 +21,7 @@ const DEFAULT_VUE_SERVER_RENDERER_CDN =
   "https://sfc.vuejs.org/server-renderer.esm-browser.js";
 
 export const getVuePlaygroundPreset = (
-  options: VuePresetPlaygroundOptions = {}
+  options: VuePresetPlaygroundOptions = {},
 ): PlaygroundOptions => ({
   name: "playground#vue",
   propsGetter: (playgroundData: PlaygroundData): Record<string, string> => {
@@ -65,16 +65,16 @@ export const getVuePlaygroundPreset = (
                         : {}),
                     },
                   },
-                  importMap
+                  importMap,
                 ),
                 null,
-                2
+                2,
               ),
             ];
           }
 
           return [key, content];
-        })
+        }),
     );
 
     if (settings.ssr && !fileInfo["import-map.json"])
@@ -87,7 +87,7 @@ export const getVuePlaygroundPreset = (
           },
         },
         null,
-        2
+        2,
       );
 
     return {
@@ -103,7 +103,7 @@ export const getVuePlaygroundPreset = (
         }${
           // code base64
           Buffer.from(JSON.stringify(fileInfo)).toString("base64")
-        }`
+        }`,
       ),
     };
   },

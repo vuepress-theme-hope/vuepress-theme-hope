@@ -44,7 +44,7 @@ const handleNavbarOptions = (config: LegacyNavbarOptions): NavbarOptions =>
  * @deprecated You should use V2 standard navbar config and avoid using it
  */
 export const convertNavbarOptions = (
-  config: NavbarOptions | unknown
+  config: NavbarOptions | unknown,
 ): NavbarOptions | false => {
   if (config === false) return false;
   if (isArray(config)) return handleNavbarOptions(config as NavbarOptions);

@@ -48,7 +48,7 @@ const getPlugin =
 <CodeDemo id="code-demo-${index}" type="${name.split("-")[0]}"${
           title ? ` title="${encodeURIComponent(title)}"` : ""
         }${config ? ` config="${config}"` : ""} code="${utoa(
-          JSON.stringify(code)
+          JSON.stringify(code),
         )}">
 `;
       },

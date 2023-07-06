@@ -60,7 +60,7 @@ export default defineComponent({
         }),
       ]);
 
-      // FIXME: Typescript type issues
+      // FIXME: Types issue
       const Artalk = _Artalk as unknown as typeof _Artalk.default;
 
       loaded.value = true;
@@ -99,14 +99,14 @@ export default defineComponent({
           }
           await initArtalk();
         },
-        { immediate: true }
+        { immediate: true },
       );
 
       watch(
         () => props.darkmode,
         (value) => {
           artalk?.setDarkMode(value);
-        }
+        },
       );
     });
 

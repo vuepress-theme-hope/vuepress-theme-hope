@@ -14,7 +14,7 @@ export type MarkdownHintBoxName = keyof MarkdownHintLocaleData;
 
 export const hint: PluginWithOptions<MarkdownItHintOptions> = (
   md,
-  options = {}
+  options = {},
 ) => {
   const containers: MarkdownHintBoxName[] = [
     "info",
@@ -61,7 +61,7 @@ export const hint: PluginWithOptions<MarkdownItHintOptions> = (
           .trim()
           .slice(
             // length of "details"
-            7
+            7,
           )
           .trim();
 
@@ -79,6 +79,6 @@ export const hint: PluginWithOptions<MarkdownItHintOptions> = (
         }</summary>\n`;
       },
       closeRender: () => "</details>\n",
-    })
+    }),
   );
 };

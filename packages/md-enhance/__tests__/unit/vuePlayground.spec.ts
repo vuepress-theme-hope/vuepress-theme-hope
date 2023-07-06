@@ -6,7 +6,7 @@ import { vuePlayground } from "../../src/node/markdown-it/vuePlayground.js";
 
 const decodeFiles = (content: string): Record<string, string> =>
   JSON.parse(
-    Buffer.from(decodeURIComponent(content), "base64").toString()
+    Buffer.from(decodeURIComponent(content), "base64").toString(),
   ) as Record<string, string>;
 
 const getFiles = (renderResult: string): Record<string, string> | null => {
@@ -64,7 +64,7 @@ const msg = ref('Hello World!')
 \`\`\`
 :::
 `,
-      {}
+      {},
     );
 
     expect(result).toMatchSnapshot();
@@ -135,7 +135,7 @@ const msg = ref('Hello World!')
 
 :::
 `,
-      {}
+      {},
     );
 
     expect(result).toMatchSnapshot();
@@ -203,7 +203,7 @@ const msg = ref('Hello World!')
 
 :::
 `,
-      {}
+      {},
     );
 
     expect(result).toMatchSnapshot();

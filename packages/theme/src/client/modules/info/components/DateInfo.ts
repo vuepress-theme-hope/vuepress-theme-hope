@@ -60,15 +60,15 @@ export default defineComponent({
                   ClientOnly,
                   () =>
                     props.localizedDate ||
-                    props.date!.toLocaleDateString(lang.value)
-                )
+                    props.date!.toLocaleDateString(lang.value),
+                ),
               ),
               h("meta", {
                 property: "datePublished",
                 // ISO Format Date string
                 content: props.date.toISOString() || "",
               }),
-            ]
+            ],
           )
         : null;
   },

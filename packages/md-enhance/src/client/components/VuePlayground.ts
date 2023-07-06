@@ -50,8 +50,8 @@ export default defineComponent({
       deepAssign(
         {},
         vuePlaygroundOptions,
-        getVuePlaygroundSettings(props.settings)
-      )
+        getVuePlaygroundSettings(props.settings),
+      ),
     );
 
     const setupRepl = async (): Promise<void> => {
@@ -100,7 +100,7 @@ export default defineComponent({
                   layout: "horizontal",
                 })
               : null,
-          ]
+          ],
         ),
       ]),
     ];

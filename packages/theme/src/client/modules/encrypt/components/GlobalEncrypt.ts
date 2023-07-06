@@ -29,7 +29,7 @@ export default defineComponent({
               ? slots.default()
               : h(PasswordModal, { full: true, onVerify: validate })
             : null
-          : slots.default()
+          : slots.default(),
       );
   },
 });

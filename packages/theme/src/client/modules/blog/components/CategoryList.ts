@@ -32,9 +32,9 @@ export default defineComponent({
             h(VPLink, { to: path }, () => [
               category,
               h("span", { class: "count" }, items.length),
-            ])
-          )
-        )
+            ]),
+          ),
+        ),
       );
   },
 });

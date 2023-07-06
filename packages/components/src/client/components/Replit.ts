@@ -147,7 +147,7 @@ export default defineComponent({
                       window.open(replLink.value!, "_blank");
                     },
                   },
-                  props.text
+                  props.text,
                 )
               : [
                   h("iframe", {
@@ -163,7 +163,7 @@ export default defineComponent({
                     },
                   }),
                   loaded.value ? null : h(LoadingIcon),
-                ]
+                ],
           )
         : null;
   },

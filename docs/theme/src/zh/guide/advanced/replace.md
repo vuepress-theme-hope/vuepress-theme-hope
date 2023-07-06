@@ -35,7 +35,7 @@ export default defineUserConfig({
       // 主题选项
       // ...
     },
-    { custom: true }
+    { custom: true },
   ),
 
   alias: {
@@ -43,7 +43,7 @@ export default defineUserConfig({
     // 比如这里我们将主题的主页组件改为用户 .vuepress/components 下的 HomePage.vue
     "@theme-hope/components/HomePage": path.resolve(
       __dirname,
-      "./components/HomePage.vue"
+      "./components/HomePage.vue",
     ),
   },
 });
@@ -64,7 +64,7 @@ export default {
       // 主题选项
       // ...
     },
-    { custom: true }
+    { custom: true },
   ),
 
   alias: {
@@ -72,7 +72,7 @@ export default {
     // 比如这里我们将主题的主页组件改为用户 .vuepress/components 下的 HomePage.vue
     "@theme-hope/components/HomePage": path.resolve(
       __dirname,
-      "./components/HomePage.vue"
+      "./components/HomePage.vue",
     ),
   },
 };
@@ -267,7 +267,7 @@ export default defineUserConfig({
       // 主题选项
       // ...
     },
-    { custom: true }
+    { custom: true },
   ),
 
   alias: {
@@ -275,7 +275,7 @@ export default defineUserConfig({
     // 比如这里我们将主题的主页组件改为用户 .vuepress/components 下的 HomePage.vue
     "@theme-hope/components/HomePage": path.resolve(
       __dirname,
-      "./components/HomePage.vue"
+      "./components/HomePage.vue",
     ),
   },
 });

@@ -19,7 +19,7 @@ export const registerMseDash = async (
   src: string,
   registerDestroy: (destroy: () => void) => void,
   autoPlay = false,
-  startTime = 0
+  startTime = 0,
 ): Promise<void> => {
   const dashjs = (
     await import(/* webpackChunkName: "dashjs" */ "dashjs/dist/dash.all.min.js")
@@ -37,7 +37,7 @@ export const registerMseDash = async (
 export const registerMseFlv = async (
   mediaElement: HTMLMediaElement,
   src: string,
-  registerDestroy: (destroy: () => void) => void
+  registerDestroy: (destroy: () => void) => void,
 ): Promise<void> => {
   const mpegts = (
     await import(/* webpackChunkName: "mpegts.js" */ "mpegts.js/dist/mpegts.js")
@@ -59,7 +59,7 @@ export const registerMseFlv = async (
 export const registerMseHls = async (
   mediaElement: HTMLMediaElement,
   src: string,
-  registerDestroy: (destroy: () => void) => void
+  registerDestroy: (destroy: () => void) => void,
 ): Promise<void> => {
   const hls = (
     await import(/* webpackChunkName: "hls.js" */ "hls.js/dist/hls.min.js")

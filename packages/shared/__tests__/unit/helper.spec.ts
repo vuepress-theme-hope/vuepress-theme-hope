@@ -41,7 +41,7 @@ it("isString", () => {
   expect(
     isString(`\
 test
-`)
+`),
   ).toBe(true);
   expect(isString(console)).toBe(false);
   expect(isString(false)).toBe(false);
@@ -78,7 +78,7 @@ it("fromEntries", () => {
     fromEntries([
       ["a", 1],
       ["b", 2],
-    ])
+    ]),
   ).toEqual({ a: 1, b: 2 });
 });
 

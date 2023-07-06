@@ -18,6 +18,6 @@ export default [
     {
       external: ["mitt", "register-service-worker"],
       copy: [["client/styles", "client"]],
-    }
+    },
   ),
 ];

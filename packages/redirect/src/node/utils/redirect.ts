@@ -16,7 +16,7 @@ import type { RedirectPluginFrontmatterOption } from "../typings/index.js";
 
 export const handleRedirectTo = (
   app: App,
-  { hostname }: RedirectOptions
+  { hostname }: RedirectOptions,
 ): void => {
   const { base } = app.options;
 
@@ -33,7 +33,7 @@ export const handleRedirectTo = (
                   : `https://${removeEndingSlash(hostname)}`
                 : ""
             }${base}${redirectTo}`
-          : redirectTo
+          : redirectTo,
       )
         .replace(/\.md$/, ".html")
         .replace(/\/(README|index)\.html/, "/");
@@ -52,7 +52,7 @@ location.href=\`${redirectUrl}\${anchor? \`#\${anchor}\`: ""}\`;\
 
 export const getRedirectMap = (
   app: App,
-  options: RedirectOptions
+  options: RedirectOptions,
 ): Record<string, string> => {
   const config = isFunction(options.config)
     ? options.config(app)
@@ -73,15 +73,15 @@ export const getRedirectMap = (
               ])
             : frontmatter.redirectFrom
             ? [[normalizePath(frontmatter.redirectFrom), path]]
-            : []
+            : [],
         )
-        .flat()
+        .flat(),
     ),
     ...fromEntries(
       entries(config).map(([from, to]) => [
         normalizePath(from),
         normalizePath(to),
-      ])
+      ]),
     ),
   };
 };

@@ -8,14 +8,14 @@ export const convertOptions = (
   options: CommentPluginOptions & {
     /** @deprecated */
     type?: "waline" | "giscus" | "twikoo" | "none";
-  }
+  },
 ): void => {
   // v2 changes
   if ("type" in options) {
     logger.warn(
       `${colors.magenta(
-        "iconComponent"
-      )} is deprecated, please use ${colors.magenta("provider")}.`
+        "iconComponent",
+      )} is deprecated, please use ${colors.magenta("provider")}.`,
     );
     if (options["type"] === "waline") options.provider = "Waline";
     else if (options["type"] === "giscus") options.provider = "Giscus";
@@ -42,10 +42,10 @@ export const convertOptions = (
       if (oldOptions in options) {
         logger.warn(
           `"${colors.magenta(
-            oldOptions
+            oldOptions,
           )}" is deprecated in @waline/client@v2, you should use "${colors.magenta(
-            newOptions
-          )}" instead.`
+            newOptions,
+          )}" instead.`,
         );
 
         // @ts-ignore
@@ -76,8 +76,8 @@ export const convertOptions = (
       if (option in options) {
         logger.error(
           `"${colors.magenta(
-            option
-          )}" is no longer supported in @waline/client@v2.`
+            option,
+          )}" is no longer supported in @waline/client@v2.`,
         );
 
         // @ts-expect-error

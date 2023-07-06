@@ -11,7 +11,7 @@ import { useSize } from "../composables/index.js";
 
 import "../styles/stack-blitz.scss";
 
-// FIXME: This is an issue of ts NodeNext
+// FIXME: Types issue
 const stackblitzSDK = sdk as unknown as typeof sdk.default;
 
 export default defineComponent({
@@ -221,8 +221,8 @@ export default defineComponent({
                   ](props.id, options.value);
                 },
               },
-              props.text
-            )
+              props.text,
+            ),
           );
   },
 });

@@ -188,7 +188,7 @@ Whether show icons in the sidebar
 
   type SidebarSorterFunction = (
     infoA: SidebarInfo,
-    infoB: SidebarInfo
+    infoB: SidebarInfo,
   ) => number;
 
   type SidebarSorter =

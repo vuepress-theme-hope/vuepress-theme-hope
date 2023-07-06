@@ -15,7 +15,7 @@ export type PWAEvent = Emitter<{
 }>;
 
 export const pwaEventSymbol: InjectionKey<PWAEvent> = Symbol(
-  __VUEPRESS_DEV__ ? "PWAEvent" : ""
+  __VUEPRESS_DEV__ ? "PWAEvent" : "",
 );
 
 export const usePWAEvent = (): PWAEvent => {

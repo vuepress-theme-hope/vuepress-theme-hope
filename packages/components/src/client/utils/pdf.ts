@@ -41,7 +41,7 @@ const emptyNodeContents = (node: HTMLElement): void => {
 };
 
 const getTargetElement = (
-  targetSelector: string | HTMLElement | null
+  targetSelector: string | HTMLElement | null,
 ): HTMLElement | null =>
   targetSelector === "string"
     ? document.querySelector(targetSelector)
@@ -51,7 +51,7 @@ const getTargetElement = (
 
 // Create a fragment identifier for using PDF Open parameters when embedding PDF
 const buildURLFragmentString = (
-  options: Record<string, string | number | boolean>
+  options: Record<string, string | number | boolean>,
 ): string => {
   let url = "";
 
@@ -60,7 +60,7 @@ const buildURLFragmentString = (
       .map(([key, value]) =>
         key === "noToolbar"
           ? `toolbar=${value ? 0 : 1}`
-          : `${encodeURIComponent(key)}=${encodeURIComponent(value)}`
+          : `${encodeURIComponent(key)}=${encodeURIComponent(value)}`,
       )
       .join("&");
 
@@ -77,7 +77,7 @@ const addPDFViewer = (
   targetNode: HTMLElement,
   url: string,
   options: Record<string, string | number | boolean>,
-  title: string
+  title: string,
 ): HTMLElement => {
   // Ensure target element is empty first
   emptyNodeContents(targetNode);
@@ -86,11 +86,11 @@ const addPDFViewer = (
 
   if (embedType === "pdfjs") {
     const pdfjsURL = `${ensureEndingSlash(
-      withBase(PDFJS_URL!)
+      withBase(PDFJS_URL!),
     )}web/viewer.html`;
 
     source = `${pdfjsURL}?file=${encodeURIComponent(
-      url
+      url,
     )}${buildURLFragmentString(options)}`;
   }
 
@@ -115,7 +115,7 @@ const addPDFViewer = (
 export const viewPDF = (
   url: string,
   targetSelector: string | HTMLElement | null = null,
-  { title, hint, options = {} }: ViewPDFOptions
+  { title, hint, options = {} }: ViewPDFOptions,
 ): HTMLElement | null => {
   if (typeof window === "undefined" || !window?.navigator?.userAgent)
     return null;

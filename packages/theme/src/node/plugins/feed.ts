@@ -21,7 +21,7 @@ export const getFeedPlugin = (
   options: Omit<FeedOptions, "hostname"> = {},
   hostname?: string,
   favicon?: string,
-  legacy = false
+  legacy = false,
 ): Plugin | null => {
   // disable feed if no options for feed plugin
   if (!keys(options).length) return null;
@@ -54,8 +54,8 @@ export const getFeedPlugin = (
               },
             },
           ];
-        }
-      )
+        },
+      ),
     ),
   };
 

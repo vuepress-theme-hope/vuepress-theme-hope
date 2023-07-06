@@ -72,7 +72,7 @@ export default defineComponent({
           start: ["Brand"],
           center: ["Links"],
           end: ["Language", "Repo", "Outlook", "Search"],
-        }
+        },
     );
 
     const navbarComponentMap: Record<
@@ -92,7 +92,7 @@ export default defineComponent({
     };
 
     const getNavbarComponent = (
-      component: NavbarComponent | string
+      component: NavbarComponent | string,
     ): Component | string =>
       navbarComponentMap[component] ??
       (hasGlobalComponent(component)
@@ -126,8 +126,8 @@ export default defineComponent({
                 h(
                   <ComponentOptions | FunctionalComponent>(
                     getNavbarComponent(item)
-                  )
-                )
+                  ),
+                ),
               ),
               slots.startAfter?.(),
             ]),
@@ -138,8 +138,8 @@ export default defineComponent({
                 h(
                   <ComponentOptions | FunctionalComponent>(
                     getNavbarComponent(item)
-                  )
-                )
+                  ),
+                ),
               ),
               slots.centerAfter?.(),
             ]),
@@ -150,8 +150,8 @@ export default defineComponent({
                 h(
                   <ComponentOptions | FunctionalComponent>(
                     getNavbarComponent(item)
-                  )
-                )
+                  ),
+                ),
               ),
               slots.endAfter?.(),
 
@@ -162,7 +162,7 @@ export default defineComponent({
                 },
               }),
             ]),
-          ]
+          ],
         ),
         h(
           NavScreen,
@@ -175,7 +175,7 @@ export default defineComponent({
           {
             before: () => slots.screenTop?.(),
             after: () => slots.screenBottom?.(),
-          }
+          },
         ),
       ];
     };

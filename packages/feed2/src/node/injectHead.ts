@@ -7,7 +7,7 @@ import { resolveUrl } from "./utils/index.js";
 
 export const injectLinksToHead = (
   app: App,
-  options: ResolvedFeedOptionsMap
+  options: ResolvedFeedOptionsMap,
 ): void => {
   const { base } = app.options;
   const { siteData } = app;
@@ -22,7 +22,7 @@ export const injectLinksToHead = (
     const getHeadItem = (
       name: string,
       fileName: string,
-      type: string
+      type: string,
     ): HeadConfig => {
       return [
         "link",
@@ -43,19 +43,19 @@ export const injectLinksToHead = (
     // add atom link
     if (atom)
       siteData.head.push(
-        getHeadItem("Atom", atomOutputFilename, "application/atom+xml")
+        getHeadItem("Atom", atomOutputFilename, "application/atom+xml"),
       );
 
     // add json link
     if (json)
       siteData.head.push(
-        getHeadItem("JSON", jsonOutputFilename, "application/json")
+        getHeadItem("JSON", jsonOutputFilename, "application/json"),
       );
 
     // add rss link
     if (rss)
       siteData.head.push(
-        getHeadItem("RSS", rssOutputFilename, "application/rss+xml")
+        getHeadItem("RSS", rssOutputFilename, "application/rss+xml"),
       );
   }
   // there are multiple languages, so we should append to page
@@ -71,7 +71,7 @@ export const injectLinksToHead = (
         const getHeadItem = (
           name: string,
           fileName: string,
-          type: string
+          type: string,
         ): HeadConfig => [
           "link",
           {
@@ -93,19 +93,19 @@ export const injectLinksToHead = (
         // add atom link
         if (localeOptions.atom)
           page.frontmatter.head.push(
-            getHeadItem("Atom", atomOutputFilename, "application/atom+xml")
+            getHeadItem("Atom", atomOutputFilename, "application/atom+xml"),
           );
 
         // add json link
         if (localeOptions.json)
           page.frontmatter.head.push(
-            getHeadItem("JSON", jsonOutputFilename, "application/json")
+            getHeadItem("JSON", jsonOutputFilename, "application/json"),
           );
 
         // add rss link
         if (localeOptions.rss)
           page.frontmatter.head.push(
-            getHeadItem("RSS", rssOutputFilename, "application/rss+xml")
+            getHeadItem("RSS", rssOutputFilename, "application/rss+xml"),
           );
       }
     });

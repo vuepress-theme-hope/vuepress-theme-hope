@@ -57,7 +57,7 @@ export default defineComponent({
         () => {
           isLocked.value = false;
           emit("close");
-        }
+        },
       );
     });
 
@@ -87,9 +87,9 @@ export default defineComponent({
                   h(NavScreenLinks),
                   h("div", { class: "vp-outlook-wrapper" }, h(OutlookSettings)),
                   slots.after?.(),
-                ])
+                ]),
               )
-            : null
+            : null,
       );
   },
 });

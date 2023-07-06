@@ -46,7 +46,7 @@ export default defineUserConfig({
     },
     {
       // theme behavior options here (optional)
-    }
+    },
   ),
 });
 ```
@@ -69,7 +69,7 @@ export default defineUserConfig({
     },
     {
       // theme behavior options here (optional)
-    }
+    },
   ),
 });
 ```

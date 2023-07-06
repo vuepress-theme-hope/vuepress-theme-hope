@@ -13,7 +13,7 @@ import type { LocaleRedirectConfig } from "../shared/index.js";
 
 export const generateAutoLocaleRedirects = async (
   { dir, options, pages }: App,
-  localeOptions: LocaleRedirectConfig
+  localeOptions: LocaleRedirectConfig,
 ): Promise<void> => {
   const rootPaths = pages
     .filter(({ pathLocale }) => pathLocale === "/")
@@ -46,19 +46,19 @@ export const generateAutoLocaleRedirects = async (
                   getLocaleRedirectHTML(
                     localeOptions,
                     availableLocales,
-                    options.base
-                  )
-                )
+                    options.base,
+                  ),
+                ),
               );
-      })
-    )
+      }),
+    ),
   );
 };
 
 export const generateRedirects = async (
   { dir, options }: App,
   config: Record<string, string>,
-  hostname = ""
+  hostname = "",
 ): Promise<void> => {
   const resolvedHostname = hostname
     ? isLinkHttp(hostname)
@@ -79,7 +79,7 @@ export const generateRedirects = async (
           : fs
               .ensureDir(path.dirname(filePath))
               .then(() => fs.writeFile(filePath, getRedirectHTML(redirectUrl)));
-      })
-    )
+      }),
+    ),
   );
 };

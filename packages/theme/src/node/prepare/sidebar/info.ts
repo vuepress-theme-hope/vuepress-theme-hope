@@ -37,7 +37,7 @@ export interface ThemeSidebarInfoOptions {
  */
 const getSidebarChildrenInfo = (
   { scope, pages, sorters }: ThemeSidebarInfoOptions,
-  children: StructureInfo[]
+  children: StructureInfo[],
 ): SidebarInfo[] =>
   children
     .map((item) => getSidebarInfoFromStructure({ pages, scope, sorters }, item))
@@ -58,13 +58,13 @@ const getSidebarChildrenInfo = (
  */
 const getSidebarInfoFromStructure = (
   { scope, pages, sorters }: ThemeSidebarInfoOptions,
-  info: StructureInfo
+  info: StructureInfo,
 ): SidebarInfo | null => {
   // handle file
   if (info.type === "file") {
     const page = <Page<ThemePageData, ThemeNormalPageFrontmatter>>(
       pages.find(
-        ({ filePathRelative }) => filePathRelative === `${scope}${info.path}`
+        ({ filePathRelative }) => filePathRelative === `${scope}${info.path}`,
       )!
     );
 
@@ -89,18 +89,18 @@ const getSidebarInfoFromStructure = (
 
   // performance improvements
   const relatedPages = pages.filter(({ filePathRelative }) =>
-    startsWith(filePathRelative, `${scope}${info.path}/`)
+    startsWith(filePathRelative, `${scope}${info.path}/`),
   );
   const READMEFile = info.children.find(
     (info) =>
-      info.type === "file" && info.filename.toLowerCase() === "readme.md"
+      info.type === "file" && info.filename.toLowerCase() === "readme.md",
   );
 
   if (READMEFile) {
     const readmePage = <Page<ThemePageData, ThemeNormalPageFrontmatter>>(
       relatedPages.find(
         ({ filePathRelative }) =>
-          filePathRelative === `${scope}${READMEFile.path}`
+          filePathRelative === `${scope}${READMEFile.path}`,
       )!
     );
 
@@ -125,9 +125,9 @@ const getSidebarInfoFromStructure = (
             info.children.filter(
               (item) =>
                 item.type !== "file" ||
-                item.filename.toLowerCase() !== "readme.md"
+                item.filename.toLowerCase() !== "readme.md",
             )
-          : info.children
+          : info.children,
       ),
 
       title,
@@ -158,7 +158,7 @@ const getSidebarInfoFromStructure = (
     dirname: info.dirname,
     children: getSidebarChildrenInfo(
       { pages: relatedPages, scope, sorters },
-      info.children
+      info.children,
     ),
 
     title: getTitleFromFilename(info.dirname),

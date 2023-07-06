@@ -41,8 +41,8 @@ export default defineComponent({
                 "aria-label": name,
                 ...(isPure.value ? {} : { "data-balloon-pos": "up" }),
                 innerHTML: icon,
-              })
-            )
+              }),
+            ),
           )
         : null;
   },

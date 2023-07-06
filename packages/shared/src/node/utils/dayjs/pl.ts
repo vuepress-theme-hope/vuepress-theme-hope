@@ -10,7 +10,7 @@ const plural = (n: number): boolean =>
 const translate = (
   number: number,
   withoutSuffix: boolean,
-  key: string
+  key: string,
 ): string | void => {
   const result = `${number} `;
 
@@ -37,11 +37,11 @@ const translate = (
 
 const monthFormat =
   "stycznia_lutego_marca_kwietnia_maja_czerwca_lipca_sierpnia_września_października_listopada_grudnia".split(
-    "_"
+    "_",
   );
 const monthStandalone =
   "styczeń_luty_marzec_kwiecień_maj_czerwiec_lipiec_sierpień_wrzesień_październik_listopad_grudzień".split(
-    "_"
+    "_",
   );
 const MONTHS_IN_FORMAT = /D MMMM/;
 
@@ -57,7 +57,7 @@ months.f = monthFormat;
 const locale: Partial<Locale> = {
   name: "pl",
   weekdays: "niedziela_poniedziałek_wtorek_środa_czwartek_piątek_sobota".split(
-    "_"
+    "_",
   ),
   weekdaysShort: "ndz_pon_wt_śr_czw_pt_sob".split("_"),
   weekdaysMin: "Nd_Pn_Wt_Śr_Cz_Pt_So".split("_"),

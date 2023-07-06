@@ -31,7 +31,7 @@ describe("echarts", () => {
 
 :::
 `,
-      {}
+      {},
     );
 
     expect(result).toMatch(/<ECharts.*><\/ECharts>/);
@@ -65,7 +65,7 @@ const option = {
 
 :::
 `,
-      {}
+      {},
     );
 
     expect(result).toMatch(/<ECharts.*><\/ECharts>/);
@@ -99,7 +99,7 @@ const option = {
 
 :::
 `,
-      {}
+      {},
     );
 
     expect(result).toMatch(/<ECharts.*><\/ECharts>/);
@@ -115,7 +115,7 @@ const option = {
 
 :::
 `,
-      {}
+      {},
     );
 
     expect(result).toMatch(/<ECharts.*><\/ECharts>/);
@@ -145,7 +145,7 @@ const option = {
 }
 \`\`\`
 `,
-      {}
+      {},
     );
 
     expect(result).toMatch(/<ECharts.*><\/ECharts>/);
@@ -160,7 +160,7 @@ const option = {
 \`\`\`echarts
 \`\`\`
 `,
-      {}
+      {},
     );
 
     expect(result).toMatch(/<ECharts.*><\/ECharts>/);
@@ -176,7 +176,7 @@ const option = {
 const a = 1;
 \`\`\`
 `,
-      {}
+      {},
     );
 
     expect(result).toMatch(/<pre.*>[\s\S]*<\/pre>/);

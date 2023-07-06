@@ -43,7 +43,7 @@ export default defineComponent({
                     window.history.go(-1);
                   },
                 },
-                themeLocale.value.routeLocales.back
+                themeLocale.value.routeLocales.back,
               ),
               h(
                 "button",
@@ -52,11 +52,11 @@ export default defineComponent({
                   class: "action-button",
                   onClick: () => navigate(),
                 },
-                themeLocale.value.routeLocales.home
+                themeLocale.value.routeLocales.home,
               ),
             ]),
-          ]
-        )
+          ],
+        ),
       ),
     ];
   },

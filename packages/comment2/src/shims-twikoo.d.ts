@@ -131,10 +131,10 @@ declare module "twikoo" {
   export const version: string;
   export const init: (options: TwikooInitOptions) => Promise<void>;
   export const getCommentsCount: (
-    options: TwikooCommentCountOptions
+    options: TwikooCommentCountOptions,
   ) => Promise<TwikooCommentCountResult[]>;
   export const getRecentComments: (
-    options: TwikooRecentCommentsOptions
+    options: TwikooRecentCommentsOptions,
   ) => Promise<TwikooRecentCommentsResult[]>;
 
   export default init;

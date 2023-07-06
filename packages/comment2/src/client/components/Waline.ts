@@ -92,7 +92,7 @@ export default defineComponent({
               }, walineOptions.delay || 800);
             });
         },
-        { immediate: true }
+        { immediate: true },
       );
     });
 
@@ -111,8 +111,8 @@ export default defineComponent({
                   ).Waline,
                 loadingComponent: LoadingIcon,
               }),
-              walineProps.value
-            )
+              walineProps.value,
+            ),
           )
         : null;
   },

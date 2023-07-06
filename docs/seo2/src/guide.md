@@ -98,14 +98,14 @@ function ogp<
   ExtraPageFields extends Record<string | number | symbol, unknown> = Record<
     never,
     never
-  >
+  >,
 >(
   /** OGP Object inferred by plugin */
   ogp: SeoContent,
   /** Page Object */
   page: ExtendPage<ExtraPageData, ExtraPageFrontmatter, ExtraPageFields>,
   /** VuePress App */
-  app: App
+  app: App,
 ): SeoContent;
 ```
 
@@ -139,14 +139,14 @@ function jsonLd<
   ExtraPageFields extends Record<string | number | symbol, unknown> = Record<
     never,
     never
-  >
+  >,
 >(
   /** JSON-LD Object inferred by plugin */
   jsonLD: ArticleJSONLD | null,
   /** Page Object */
   page: ExtendPage<ExtraPageData, ExtraPageFrontmatter, ExtraPageFields>,
   /** VuePress App */
-  app: App
+  app: App,
 ): ArticleJSONLD | null;
 ```
 
@@ -190,14 +190,14 @@ function customHead<
   ExtraPageFields extends Record<string | number | symbol, unknown> = Record<
     never,
     never
-  >
+  >,
 >(
   /** Head tag config */
   head: HeadConfig[],
   /** Page Object */
   page: Page<ExtraPageData, ExtraPageFrontmatter, ExtraPageFields>,
   /** VuePress App */
-  app: App
+  app: App,
 ): void;
 ```
 

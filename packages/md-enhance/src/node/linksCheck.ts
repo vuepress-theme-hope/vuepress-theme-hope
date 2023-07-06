@@ -13,7 +13,7 @@ export const defaultLinkCheck = (): boolean => false;
 
 export const getLinksCheckStatus = (
   app: App,
-  options: Partial<MarkdownEnhanceOptions>
+  options: Partial<MarkdownEnhanceOptions>,
 ): {
   enabled: boolean;
   isIgnoreLink: (link: string) => boolean;
@@ -34,7 +34,7 @@ export const getLinksCheckStatus = (
       : isArray(ignore)
       ? (link: string): boolean =>
           ignore.some((item) =>
-            isRegExp(item) ? item.test(link) : item === link
+            isRegExp(item) ? item.test(link) : item === link,
           )
       : defaultLinkCheck,
   };
@@ -43,13 +43,13 @@ export const getLinksCheckStatus = (
 export const linksCheck = (
   page: Page,
   app: App,
-  isIgnoreLink: (link: string) => boolean
+  isIgnoreLink: (link: string) => boolean,
 ): void => {
   const path = page.filePathRelative || page.path;
   const { pages } = app;
 
   const markdownLinks = page.links.filter(({ raw }) =>
-    raw.match(/.md((?:\?|#).*)?$/)
+    raw.match(/.md((?:\?|#).*)?$/),
   );
 
   const brokenLinks = [
@@ -60,8 +60,8 @@ export const linksCheck = (
         ({ relative }) =>
           // check whether the page exists
           pages.every(
-            ({ filePathRelative }) => filePathRelative !== decodeURI(relative)
-          ) && !isIgnoreLink(relative)
+            ({ filePathRelative }) => filePathRelative !== decodeURI(relative),
+          ) && !isIgnoreLink(relative),
       ),
     ...markdownLinks
       // absolute markdown links
@@ -72,8 +72,8 @@ export const linksCheck = (
           ({ filePathRelative }) =>
             !filePathRelative ||
             (`${app.options.base}${filePathRelative}` !== decodeURI(absolute) &&
-              !isIgnoreLink(absolute))
-        )
+              !isIgnoreLink(absolute)),
+        ),
       ),
   ].map(({ raw }) => raw);
 

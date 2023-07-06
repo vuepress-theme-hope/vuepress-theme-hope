@@ -14,7 +14,7 @@ export interface SearchQueryHistory {
 
 const searchProQueryStorage = useLocalStorage<string[]>(
   SEARCH_PRO_HISTORY_QUERY_STORAGE,
-  []
+  [],
 );
 
 export const useSearchQueryHistory = (): SearchQueryHistory => {
@@ -25,14 +25,14 @@ export const useSearchQueryHistory = (): SearchQueryHistory => {
     if (enabled)
       if (searchProQueryStorage.value.length < queryHistoryCount)
         searchProQueryStorage.value = Array.from(
-          new Set([item, ...searchProQueryStorage.value])
+          new Set([item, ...searchProQueryStorage.value]),
         );
       else
         searchProQueryStorage.value = Array.from(
           new Set([
             item,
             ...searchProQueryStorage.value.slice(0, queryHistoryCount - 1),
-          ])
+          ]),
         );
   };
 

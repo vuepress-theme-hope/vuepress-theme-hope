@@ -23,7 +23,7 @@ import "../styles/page-nav.scss";
  * Resolve `prev` or `next` config from frontmatter
  */
 const resolveFromFrontmatterConfig = (
-  conf: unknown
+  conf: unknown,
 ): AutoLinkOptions | null | false => {
   const router = useRouter();
 
@@ -42,7 +42,7 @@ const resolveFromFrontmatterConfig = (
 const resolveFromSidebarItems = (
   sidebarItems: ResolvedSidebarItem[],
   currentPath: string,
-  offset: number
+  offset: number,
 ): AutoLinkOptions | null => {
   const index = sidebarItems.findIndex((item) => item.link === currentPath);
 
@@ -59,7 +59,7 @@ const resolveFromSidebarItems = (
       const childResult = resolveFromSidebarItems(
         item.children,
         currentPath,
-        offset
+        offset,
       );
 
       if (childResult) return childResult;
@@ -89,7 +89,7 @@ export default defineComponent({
               : resolveFromSidebarItems(
                   sidebarItems.value,
                   page.value.path,
-                  -1
+                  -1,
                 ));
     });
 
@@ -104,7 +104,7 @@ export default defineComponent({
               : resolveFromSidebarItems(
                   sidebarItems.value,
                   page.value.path,
-                  1
+                  1,
                 ));
     });
 
@@ -141,7 +141,7 @@ export default defineComponent({
                       }),
                       prevNavLink.value?.text,
                     ]),
-                  ]
+                  ],
                 )
               : null,
             nextNavLink.value
@@ -159,7 +159,7 @@ export default defineComponent({
                         icon: nextNavLink.value?.icon,
                       }),
                     ]),
-                  ]
+                  ],
                 )
               : null,
           ])

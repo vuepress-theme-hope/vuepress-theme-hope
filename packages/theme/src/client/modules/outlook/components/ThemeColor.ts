@@ -12,7 +12,7 @@ export const enableThemeColor = cssVariables["enableThemeColor"] === "true";
 
 const themeColor = enableThemeColor
   ? fromEntries(
-      entries(cssVariables).filter(([key]) => key.startsWith("theme-"))
+      entries(cssVariables).filter(([key]) => key.startsWith("theme-")),
     )
   : {};
 
@@ -30,7 +30,7 @@ export default defineComponent({
             h(
               "label",
               { class: "theme-color-title", for: "theme-color-picker" },
-              locale.value
+              locale.value,
             ),
             h(ThemeColorPicker, { themeColor }),
           ])

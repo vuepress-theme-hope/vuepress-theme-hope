@@ -28,7 +28,8 @@
   color: inherit;
   box-shadow: 0 1px 3px 1px var(--card-shadow);
 
-  transition: background var(--color-transition),
+  transition:
+    background var(--color-transition),
     box-shadow var(--color-transition);
 
   @media (max-width: hope-config.$pad) {

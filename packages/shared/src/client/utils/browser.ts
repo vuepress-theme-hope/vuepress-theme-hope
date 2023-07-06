@@ -37,5 +37,5 @@ export const checkIsIOS = (ua: string): boolean =>
 
 export const checkIsMacOS = (ua: string): boolean =>
   [/(mac os x) ?([\w. ]*)/i, /(macintosh|mac_powerpc\b)(?!.+haiku)/i].some(
-    (item) => item.test(ua)
+    (item) => item.test(ua),
   );

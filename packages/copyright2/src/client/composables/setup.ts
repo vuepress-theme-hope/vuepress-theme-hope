@@ -28,7 +28,7 @@ export const setupCopyright = (): void => {
   const enabled = computed(
     () =>
       Boolean(frontmatter.value.copy) ||
-      (frontmatter.value.copy !== false && COPYRIGHT_GLOBAL)
+      (frontmatter.value.copy !== false && COPYRIGHT_GLOBAL),
   );
 
   const disableCopy = computed(() => {
@@ -71,9 +71,9 @@ export const setupCopyright = (): void => {
         ":link",
         canonical
           ? `${removeEndingSlash(
-              isLinkHttp(canonical) ? canonical : `https://${canonical}`
+              isLinkHttp(canonical) ? canonical : `https://${canonical}`,
             )}${page.value.path}`
-          : window.location.href
+          : window.location.href,
       ),
     ]
       .filter((item) => item)
@@ -102,14 +102,14 @@ export const setupCopyright = (): void => {
               "text/html",
               `${node.innerHTML}<hr><div class="copyright">${copyright.replace(
                 /\\n/g,
-                "<br>"
-              )}</div>`
+                "<br>",
+              )}</div>`,
             );
             event.clipboardData.setData(
               "text/plain",
               `${
                 selection.getRangeAt(0).cloneContents().textContent || ""
-              }\n------\n${copyright}`
+              }\n------\n${copyright}`,
             );
           }
         }

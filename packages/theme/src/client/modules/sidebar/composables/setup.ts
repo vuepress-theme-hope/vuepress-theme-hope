@@ -13,7 +13,7 @@ declare const __VUEPRESS_DEV__: boolean;
 export type SidebarItemsRef = ComputedRef<ResolvedSidebarItem[]>;
 
 export const sidebarItemsSymbol: InjectionKey<SidebarItemsRef> = Symbol(
-  __VUEPRESS_DEV__ ? "sidebarItems" : ""
+  __VUEPRESS_DEV__ ? "sidebarItems" : "",
 );
 
 /**
@@ -27,14 +27,14 @@ export const setupSidebarItems = (): void => {
   const sidebarConfig = computed(() =>
     frontmatter.value.home
       ? false
-      : frontmatter.value.sidebar ?? themeLocale.value.sidebar ?? "structure"
+      : frontmatter.value.sidebar ?? themeLocale.value.sidebar ?? "structure",
   );
   const headerDepth = computed(
-    () => frontmatter.value.headerDepth ?? themeLocale.value.headerDepth ?? 2
+    () => frontmatter.value.headerDepth ?? themeLocale.value.headerDepth ?? 2,
   );
 
   const sidebarItems = computed(() =>
-    resolveSidebarItems(sidebarConfig.value, headerDepth.value)
+    resolveSidebarItems(sidebarConfig.value, headerDepth.value),
   );
 
   provide(sidebarItemsSymbol, sidebarItems);

@@ -1,7 +1,7 @@
 import type { NoticeClientOptions, NoticeOptions } from "../../shared/index.js";
 
 export const getNoticeOptions = (
-  options: NoticeOptions[]
+  options: NoticeOptions[],
 ): NoticeClientOptions[] =>
   options
     .map(({ key, ...item }) => {
@@ -27,5 +27,5 @@ export const getNoticeOptions = (
           : -1
         : "match" in b
         ? 1
-        : (b.path || "").localeCompare(a.path || "")
+        : (b.path || "").localeCompare(a.path || ""),
     );

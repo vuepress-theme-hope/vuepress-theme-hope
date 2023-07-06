@@ -146,7 +146,7 @@ export const renderAtom = (feed: Feed): string => {
     // contributor
     if (item.contributor)
       entry.contributor = item.contributor.map((contributor) =>
-        getAuthor(contributor)
+        getAuthor(contributor),
       );
 
     // published

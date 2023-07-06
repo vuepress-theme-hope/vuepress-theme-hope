@@ -33,7 +33,7 @@ export default defineComponent({
             h(TimelineIcon),
             h("span", { class: "num" }, timelines.value.items.length),
             hint.value,
-          ]
+          ],
         ),
         h("hr"),
         h(
@@ -58,15 +58,15 @@ export default defineComponent({
                           h(
                             VPLink,
                             { class: "timeline-title", to: path },
-                            () => info[ArticleInfoType.title]
+                            () => info[ArticleInfoType.title],
                           ),
-                        ])
-                      )
+                        ]),
+                      ),
                     ),
-                  ])
-              )
-            )
-          )
+                  ]),
+              ),
+            ),
+          ),
         ),
       ]);
   },

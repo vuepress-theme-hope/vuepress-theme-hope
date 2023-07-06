@@ -78,9 +78,9 @@ export default defineComponent({
                     renderIcon(icon, name),
                     h("div", { class: "vp-project-name" }, name),
                     h("div", { class: "vp-project-desc" }, desc),
-                  ]
-                )
-            )
+                  ],
+                ),
+            ),
           )
         : null;
   },

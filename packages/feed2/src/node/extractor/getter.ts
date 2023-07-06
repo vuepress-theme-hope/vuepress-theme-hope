@@ -42,7 +42,7 @@ export class FeedInfo {
       { excerpt?: string; git?: GitData },
       FeedPluginFrontmatter
     >,
-    private feed: Feed
+    private feed: Feed,
   ) {
     this.base = this.app.options.base;
     this.frontmatter = page.frontmatter;
@@ -53,7 +53,7 @@ export class FeedInfo {
 
       return isArray(preservedElements)
         ? preservedElements.some((item) =>
-            item instanceof RegExp ? item.test(tagName) : item === tagName
+            item instanceof RegExp ? item.test(tagName) : item === tagName,
           )
         : isFunction(preservedElements)
         ? preservedElements(tagName)
@@ -203,7 +203,7 @@ export class FeedInfo {
         return resolveUrl(
           this.options.hostname,
           this.app.options.base,
-          result[1]
+          result[1],
         );
 
       if (isUrl(result[1])) return result[1];

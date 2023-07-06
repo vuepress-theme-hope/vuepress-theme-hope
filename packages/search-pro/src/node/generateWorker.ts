@@ -7,11 +7,11 @@ import { WORKER_FOLDER } from "./utils.js";
 
 export const generateWorker = async (
   app: App,
-  options: SearchProOptions
+  options: SearchProOptions,
 ): Promise<void> => {
   const workerFilePath = app.dir.dest(options.worker || "search-pro.worker.js");
   const searchIndexContent = JSON.stringify(
-    await getSearchIndexStore(app, options)
+    await getSearchIndexStore(app, options),
   );
   const workerPath = `${WORKER_FOLDER}index.js`;
 
@@ -23,11 +23,11 @@ export const generateWorker = async (
     workerFileContent
       .replace(
         "SEARCH_PRO_INDEX",
-        () => `${JSON.stringify(searchIndexContent)}`
+        () => `${JSON.stringify(searchIndexContent)}`,
       )
       .replace(
         "SEARCH_PRO_SORT_STRATEGY",
-        JSON.stringify(options.sortStrategy || "max")
-      )
+        JSON.stringify(options.sortStrategy || "max"),
+      ),
   );
 };

@@ -5,7 +5,7 @@ import type { AutoCatalogOptions } from "../options.js";
 
 /** @deprecated */
 export const convertOptions = (
-  options: AutoCatalogOptions & Record<string, unknown>
+  options: AutoCatalogOptions & Record<string, unknown>,
 ): void => {
   deprecatedLogger({
     options,
@@ -32,7 +32,7 @@ export const convertOptions = (
     options,
     "iconComponent",
     `please use ${colors.magenta(
-      "defineAutoCatalogIconComponent"
-    )} in client config file.`
+      "defineAutoCatalogIconComponent",
+    )} in client config file.`,
   );
 };

@@ -5,6 +5,6 @@ export const useKatexCopy = (): void => {
     () =>
       import(
         /* webpackChunkName: "katex" */ "katex/dist/contrib/copy-tex.min.js"
-      )
+      ),
   );
 };

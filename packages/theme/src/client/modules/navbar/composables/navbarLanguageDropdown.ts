@@ -58,7 +58,7 @@ export const useNavbarLanguageDropdown =
             else {
               const targetLocalePage = path.replace(
                 routeLocale.value,
-                targetLocalePath
+                targetLocalePath,
               );
 
               link =
@@ -81,7 +81,7 @@ export const useNavbarLanguageDropdown =
             text,
             link: path.replace(
               ":route",
-              route.path.replace(routeLocale.value, "")
+              route.path.replace(routeLocale.value, ""),
             ),
           })),
         ],

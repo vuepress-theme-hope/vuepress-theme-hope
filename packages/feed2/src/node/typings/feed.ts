@@ -190,9 +190,9 @@ export interface FeedGetter {
     ExtraPageFields extends Record<string | number | symbol, unknown> = Record<
       never,
       never
-    >
+    >,
   >(
-    page: Page<ExtraPageData, ExtraPageFrontmatter, ExtraPageFields>
+    page: Page<ExtraPageData, ExtraPageFrontmatter, ExtraPageFields>,
   ) => string;
 
   /**
@@ -212,9 +212,9 @@ export interface FeedGetter {
     ExtraPageFields extends Record<string | number | symbol, unknown> = Record<
       never,
       never
-    >
+    >,
   >(
-    page: Page<ExtraPageData, ExtraPageFrontmatter, ExtraPageFields>
+    page: Page<ExtraPageData, ExtraPageFrontmatter, ExtraPageFields>,
   ) => string;
 
   /**
@@ -234,9 +234,9 @@ export interface FeedGetter {
     ExtraPageFields extends Record<string | number | symbol, unknown> = Record<
       never,
       never
-    >
+    >,
   >(
-    page: Page<ExtraPageData, ExtraPageFrontmatter, ExtraPageFields>
+    page: Page<ExtraPageData, ExtraPageFrontmatter, ExtraPageFields>,
   ) => string | null;
 
   /**
@@ -256,9 +256,9 @@ export interface FeedGetter {
     ExtraPageFields extends Record<string | number | symbol, unknown> = Record<
       never,
       never
-    >
+    >,
   >(
-    page: Page<ExtraPageData, ExtraPageFrontmatter, ExtraPageFields>
+    page: Page<ExtraPageData, ExtraPageFrontmatter, ExtraPageFields>,
   ) => string | null;
 
   /**
@@ -278,9 +278,9 @@ export interface FeedGetter {
     ExtraPageFields extends Record<string | number | symbol, unknown> = Record<
       never,
       never
-    >
+    >,
   >(
-    page: Page<ExtraPageData, ExtraPageFrontmatter, ExtraPageFields>
+    page: Page<ExtraPageData, ExtraPageFrontmatter, ExtraPageFields>,
   ) => string;
 
   /**
@@ -304,9 +304,9 @@ export interface FeedGetter {
     ExtraPageFields extends Record<string | number | symbol, unknown> = Record<
       never,
       never
-    >
+    >,
   >(
-    page: Page<ExtraPageData, ExtraPageFrontmatter, ExtraPageFields>
+    page: Page<ExtraPageData, ExtraPageFrontmatter, ExtraPageFields>,
   ) => FeedAuthor[];
 
   /**
@@ -326,9 +326,9 @@ export interface FeedGetter {
     ExtraPageFields extends Record<string | number | symbol, unknown> = Record<
       never,
       never
-    >
+    >,
   >(
-    page: Page<ExtraPageData, ExtraPageFrontmatter, ExtraPageFields>
+    page: Page<ExtraPageData, ExtraPageFrontmatter, ExtraPageFields>,
   ) => FeedCategory[] | null;
 
   /**
@@ -348,9 +348,9 @@ export interface FeedGetter {
     ExtraPageFields extends Record<string | number | symbol, unknown> = Record<
       never,
       never
-    >
+    >,
   >(
-    page: Page<ExtraPageData, ExtraPageFrontmatter, ExtraPageFields>
+    page: Page<ExtraPageData, ExtraPageFrontmatter, ExtraPageFields>,
   ) => FeedEnclosure | null;
 
   /**
@@ -370,9 +370,9 @@ export interface FeedGetter {
     ExtraPageFields extends Record<string | number | symbol, unknown> = Record<
       never,
       never
-    >
+    >,
   >(
-    page: Page<ExtraPageData, ExtraPageFrontmatter, ExtraPageFields>
+    page: Page<ExtraPageData, ExtraPageFrontmatter, ExtraPageFields>,
   ) => Date | null;
 
   /**
@@ -392,9 +392,9 @@ export interface FeedGetter {
     ExtraPageFields extends Record<string | number | symbol, unknown> = Record<
       never,
       never
-    >
+    >,
   >(
-    page: Page<ExtraPageData, ExtraPageFrontmatter, ExtraPageFields>
+    page: Page<ExtraPageData, ExtraPageFrontmatter, ExtraPageFields>,
   ) => Date;
 
   /**
@@ -414,9 +414,9 @@ export interface FeedGetter {
     ExtraPageFields extends Record<string | number | symbol, unknown> = Record<
       never,
       never
-    >
+    >,
   >(
-    page: Page<ExtraPageData, ExtraPageFrontmatter, ExtraPageFields>
+    page: Page<ExtraPageData, ExtraPageFrontmatter, ExtraPageFields>,
   ) => string;
 
   /**
@@ -436,9 +436,9 @@ export interface FeedGetter {
     ExtraPageFields extends Record<string | number | symbol, unknown> = Record<
       never,
       never
-    >
+    >,
   >(
-    page: Page<ExtraPageData, ExtraPageFrontmatter, ExtraPageFields>
+    page: Page<ExtraPageData, ExtraPageFrontmatter, ExtraPageFields>,
   ) => FeedContributor[];
 
   /**
@@ -458,8 +458,8 @@ export interface FeedGetter {
     ExtraPageFields extends Record<string | number | symbol, unknown> = Record<
       never,
       never
-    >
+    >,
   >(
-    page: Page<ExtraPageData, ExtraPageFrontmatter, ExtraPageFields>
+    page: Page<ExtraPageData, ExtraPageFrontmatter, ExtraPageFields>,
   ) => string | null;
 }

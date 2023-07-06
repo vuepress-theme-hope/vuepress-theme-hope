@@ -55,13 +55,13 @@ const DEFAULT_PRISMJS_DARK_THEME: PrismjsTheme = "one-dark";
  */
 export const prepareHighLighterScss = async (
   app: App,
-  { prismjs }: PluginsOptions
+  { prismjs }: PluginsOptions,
 ): Promise<void> => {
   const { plugins: Plugins } = app.pluginApi;
   const prismjsOptions: PrismjsOptions = isPlainObject(prismjs) ? prismjs : {};
 
   const highlighter = Plugins.some(
-    (plugin) => plugin.name === "@vuepress/plugin-prismjs"
+    (plugin) => plugin.name === "@vuepress/plugin-prismjs",
   )
     ? "prismjs"
     : Plugins.some((plugin) => plugin.name === "@vuepress/plugin-shiki")
@@ -79,7 +79,7 @@ $highlighter: "${highlighter}";
         : (logger.warn(
             `Unsupported code theme ${
               prismjsOptions.light
-            } found in ${colors.magenta("plugins.prismjs.light")}`
+            } found in ${colors.magenta("plugins.prismjs.light")}`,
           ),
           DEFAULT_PRISMJS_LIGHT_THEME)
       : DEFAULT_PRISMJS_LIGHT_THEME;
@@ -89,7 +89,7 @@ $highlighter: "${highlighter}";
         : (logger.warn(
             `Unsupported code theme ${
               prismjsOptions.dark
-            } found in ${colors.magenta("plugins.prismjs.dark")}`
+            } found in ${colors.magenta("plugins.prismjs.dark")}`,
           ),
           DEFAULT_PRISMJS_DARK_THEME)
       : DEFAULT_PRISMJS_DARK_THEME;

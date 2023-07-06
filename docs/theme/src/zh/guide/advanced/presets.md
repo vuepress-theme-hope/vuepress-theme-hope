@@ -45,7 +45,7 @@ export default defineUserConfig({
   alias: {
     "@theme-hope/modules/blog/components/BlogHero": path.resolve(
       __dirname,
-      "./components/BlogHero.vue"
+      "./components/BlogHero.vue",
     ),
   },
 });
@@ -96,7 +96,7 @@ export default defineUserConfig({
   alias: {
     "@theme-hope/modules/blog/components/BlogHero": path.resolve(
       __dirname,
-      "./components/BlogHero.vue"
+      "./components/BlogHero.vue",
     ),
   },
 });
@@ -145,7 +145,7 @@ export const setupRunningTimeFooter: (
    *
    * @default false
    */
-  preserveContent = false
+  preserveContent = false,
 ) => void;
 ```
 
@@ -164,7 +164,7 @@ export default defineClientConfig({
         "/": "Running time: :day days :hour hours :minute minutes :second seconds",
         "/zh/": "已运行 :day 天 :hour 小时 :minute 分钟 :second 秒",
       },
-      true
+      true,
     );
   },
 });

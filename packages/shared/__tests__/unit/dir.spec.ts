@@ -6,6 +6,6 @@ import { getDirContents } from "../../src/node/utils/dir.js";
 
 it("should list dir correctly", () => {
   expect(
-    getDirContents(path.resolve(__dirname, "./__fixtures__"))
+    getDirContents(path.resolve(__dirname, "./__fixtures__")),
   ).toMatchSnapshot();
 });

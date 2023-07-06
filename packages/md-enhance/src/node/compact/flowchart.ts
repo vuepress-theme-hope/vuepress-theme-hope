@@ -11,7 +11,7 @@ export const legacyFlowchart: PluginSimple = (md) => {
     close: "flowend",
     render: (tokens, index): string => {
       logger.warn(
-        '"@flowstart ... @flowend" is deprecated, you should use ```flow ... ``` instead.'
+        '"@flowstart ... @flowend" is deprecated, you should use ```flow ... ``` instead.',
       );
 
       const token = tokens[index];

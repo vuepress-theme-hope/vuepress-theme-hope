@@ -32,7 +32,7 @@ export const hopeTheme =
   (
     options: ThemeOptions,
     // TODO: Change default value in v2 stable
-    behavior: HopeThemeBehaviorOptions | boolean = true
+    behavior: HopeThemeBehaviorOptions | boolean = true,
   ): ThemeFunction =>
   (app) => {
     const behaviorOptions = isPlainObject(behavior)
@@ -135,7 +135,7 @@ export const hopeTheme =
           iconPrefix,
           favicon,
         },
-        behaviorOptions.compact
+        behaviorOptions.compact,
       ),
 
       templateBuild: `${TEMPLATE_FOLDER}index.build.html`,

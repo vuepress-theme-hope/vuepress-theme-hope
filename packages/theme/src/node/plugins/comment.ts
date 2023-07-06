@@ -11,7 +11,7 @@ import { VERSION } from "../utils.js";
  */
 export const getCommentPlugin = (
   options?: Partial<CommentPluginOptions> | false,
-  legacy = false
+  legacy = false,
 ): PluginObject | null => {
   if (options === false || !options?.provider) return null;
 
@@ -29,6 +29,6 @@ export const getCommentPlugin = (
         : {}),
       ...(options || {}),
     },
-    legacy
+    legacy,
   );
 };

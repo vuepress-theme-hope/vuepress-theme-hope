@@ -98,8 +98,8 @@ export const setupPhotoSwipe = (): void => {
       import(/* webpackChunkName: "photo-swipe" */ "photoswipe"),
       nextTick().then(() =>
         new Promise<void>((resolve) => setTimeout(resolve, delay)).then(() =>
-          getImages(imageSelector)
-        )
+          getImages(imageSelector),
+        ),
       ),
     ]).then(([{ default: PhotoSwipe }, images]) => {
       const dataSource = images.map<SlideData>((image) => ({
@@ -156,7 +156,7 @@ export const setupPhotoSwipe = (): void => {
 
     watch(
       () => page.value.path,
-      () => initPhotoSwipe()
+      () => initPhotoSwipe(),
     );
   });
 };

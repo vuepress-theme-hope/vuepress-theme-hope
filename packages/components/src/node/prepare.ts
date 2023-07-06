@@ -22,7 +22,7 @@ export const prepareConfigFile = (
     componentOptions = {},
     rootComponents = {},
   }: ComponentOptions,
-  legacy: boolean
+  legacy: boolean,
 ): Promise<string> => {
   const imports: string[] = [];
   let enhance = "";
@@ -35,7 +35,7 @@ export const prepareConfigFile = (
   components.forEach((item) => {
     if (AVAILABLE_COMPONENTS.includes(item)) {
       imports.push(
-        `import ${item} from "${CLIENT_FOLDER}components/${item}.js";`
+        `import ${item} from "${CLIENT_FOLDER}components/${item}.js";`,
       );
 
       enhance += `\
@@ -55,7 +55,7 @@ if(!hasGlobalComponent("${item}")) app.component("${item}", ${item});
 
     if (legacy && (item as unknown) === "Catalog") {
       imports.push(
-        `import Catalog from "${CLIENT_FOLDER}compact/components/Catalog.js";`
+        `import Catalog from "${CLIENT_FOLDER}compact/components/Catalog.js";`,
       );
       enhance += `\
 if(!hasGlobalComponent("Catalog")) app.component("Catalog", Catalog);
@@ -66,7 +66,7 @@ if(!hasGlobalComponent("Catalog")) app.component("Catalog", Catalog);
   if (isString(rootComponents.addThis)) {
     shouldImportUseScriptTag = true;
     setups.push(
-      `useScriptTag(\`https://s7.addthis.com/js/300/addthis_widget.js#pubid=${rootComponents.addThis}\`);`
+      `useScriptTag(\`https://s7.addthis.com/js/300/addthis_widget.js#pubid=${rootComponents.addThis}\`);`,
     );
   }
 
@@ -77,7 +77,7 @@ if(!hasGlobalComponent("Catalog")) app.component("Catalog", Catalog);
 
     shouldImportH = true;
     imports.push(
-      `import BackToTop from "${CLIENT_FOLDER}components/BackToTop.js";`
+      `import BackToTop from "${CLIENT_FOLDER}components/BackToTop.js";`,
     );
 
     const config = isPlainObject(rootComponents.backToTop)
@@ -96,8 +96,8 @@ if(!hasGlobalComponent("Catalog")) app.component("Catalog", Catalog);
 
     configRootComponents.push(
       `() => h(Notice, { config: ${JSON.stringify(
-        getNoticeOptions(rootComponents.notice)
-      )} }),`
+        getNoticeOptions(rootComponents.notice),
+      )} }),`,
     );
   }
 
@@ -106,7 +106,7 @@ if(!hasGlobalComponent("Catalog")) app.component("Catalog", Catalog);
     `\
 import { defineClientConfig } from "@vuepress/client";
 import { hasGlobalComponent } from "${path.resolve(
-      require.resolve("vuepress-shared/client")
+      require.resolve("vuepress-shared/client"),
     )}";
 ${
   shouldImportH
@@ -119,7 +119,7 @@ ${
   shouldImportUseScriptTag
     ? `\
 import { useScriptTag } from "${path.resolve(
-        require.resolve("@vueuse/core/index.mjs")
+        require.resolve("@vueuse/core/index.mjs"),
       )}";
 `
     : ""
@@ -128,7 +128,7 @@ ${
   shouldImportUseStyleTag
     ? `\
 import { useStyleTag } from "${path.resolve(
-        require.resolve("@vueuse/core/index.mjs")
+        require.resolve("@vueuse/core/index.mjs"),
       )}";
 `
     : ""
@@ -151,6 +151,6 @@ ${setups.map((item) => `    ${item}`).join("\n")}
 ${configRootComponents.map((item) => `    ${item}`).join("\n")}
   ],
 });
-`
+`,
   );
 };

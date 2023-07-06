@@ -46,7 +46,7 @@ export default defineComponent({
     const hero = shallowRef<HTMLElement>();
 
     const isFullScreen = computed(
-      () => frontmatter.value.heroFullScreen ?? false
+      () => frontmatter.value.heroFullScreen ?? false,
     );
 
     const heroInfo = computed(() => {
@@ -154,16 +154,16 @@ export default defineComponent({
                           alt: heroInfo.value.alt,
                         })
                       : null,
-                  ]
+                  ],
                 ),
                 h(DropTransition, { appear: true, delay: 0.08 }, () =>
                   heroInfo.value.text
                     ? h(
                         "h1",
                         { class: "vp-blog-hero-title" },
-                        heroInfo.value.text
+                        heroInfo.value.text,
                       )
-                    : null
+                    : null,
                 ),
                 h(DropTransition, { appear: true, delay: 0.12 }, () =>
                   heroInfo.value.tagline
@@ -171,7 +171,7 @@ export default defineComponent({
                         class: "vp-blog-hero-description",
                         innerHTML: heroInfo.value.tagline,
                       })
-                    : null
+                    : null,
                 ),
               ],
               heroInfo.value.isFullScreen
@@ -187,10 +187,10 @@ export default defineComponent({
                         });
                       },
                     },
-                    [h(SlideDownIcon), h(SlideDownIcon)]
+                    [h(SlideDownIcon), h(SlideDownIcon)],
                   )
                 : null,
-            ]
+            ],
           );
   },
 });

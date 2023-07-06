@@ -196,7 +196,7 @@ export default defineComponent({
         ? `?listType=playlist&list=${
             startsWith(props.list, "PL") ? props.list : `PL${props.list}`
           }&`
-        : null
+        : null,
     );
 
     const params = computed(() => {
@@ -226,7 +226,7 @@ export default defineComponent({
     const videoLink = computed(() =>
       coreURL.value
         ? `https://www.youtube.com/embed/${coreURL.value}${params.value}`
-        : null
+        : null,
     );
 
     return (): (VNode | null)[] =>
@@ -235,7 +235,7 @@ export default defineComponent({
             h(
               "div",
               { class: "youtube-desc" },
-              h("a", { class: "sr-only", href: videoLink.value }, props.title)
+              h("a", { class: "sr-only", href: videoLink.value }, props.title),
             ),
             h("iframe", {
               ref: el,

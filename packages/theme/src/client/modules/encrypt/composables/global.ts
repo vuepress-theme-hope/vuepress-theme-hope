@@ -32,13 +32,13 @@ export const useGlobalEncrypt = (): GlobalEncrypt => {
       if (localToken.value)
         // none of the token matches
         return encryptData.value.admin!.some((hash) =>
-          compareSync(localToken.value, hash)
+          compareSync(localToken.value, hash),
         );
 
       if (sessionToken.value)
         // none of the token matches
         return encryptData.value.admin!.some((hash) =>
-          compareSync(sessionToken.value, hash)
+          compareSync(sessionToken.value, hash),
         );
     }
 

@@ -14,7 +14,9 @@
 
 .popup-enter-active,
 .popup-leave-active {
-  transition: opacity 0.3s, transform 0.3s;
+  transition:
+    opacity 0.3s,
+    transform 0.3s;
 }
 
 .popup-enter-from,

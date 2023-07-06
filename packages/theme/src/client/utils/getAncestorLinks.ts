@@ -2,7 +2,7 @@ import { removeEndingSlash } from "@vuepress/shared";
 
 export const getAncestorLinks = (
   path: string,
-  routeLocale: string
+  routeLocale: string,
 ): { link: string; name: string }[] => {
   const routePaths = path.replace(routeLocale, "/").split("/");
   const result: { link: string; name: string }[] = [];

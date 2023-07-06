@@ -662,7 +662,7 @@ declare module "reveal.js/dist/reveal.esm.js" {
      */
     getSlideBackground(
       x: number | HTMLElement,
-      y: number
+      y: number,
     ): HTMLElement[] | undefined;
 
     /**
@@ -738,13 +738,13 @@ declare module "reveal.js/dist/reveal.esm.js" {
     addEventListener(
       type: string,
       listener: () => void,
-      useCapture: boolean
+      useCapture: boolean,
     ): void;
 
     removeEventListener(
       type: string,
       listener: () => void,
-      useCapture: boolean
+      useCapture: boolean,
     ): void;
 
     /**

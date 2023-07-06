@@ -41,20 +41,20 @@ describe("getMermaidContent()", () => {
   it("Should work with content", () => {
     expect(getMermaidContent({ content: flowchartDemo })).toMatchSnapshot();
     expect(
-      getMermaidContent({ diagram: "sequenceDiagram", content: sequenceDemo })
+      getMermaidContent({ diagram: "sequenceDiagram", content: sequenceDemo }),
     ).toMatchSnapshot();
   });
 
   it("Should work with title and content", () => {
     expect(
-      getMermaidContent({ title, content: flowchartDemo })
+      getMermaidContent({ title, content: flowchartDemo }),
     ).toMatchSnapshot();
     expect(
       getMermaidContent({
         diagram: "sequenceDiagram",
         title,
         content: sequenceDemo,
-      })
+      }),
     ).toMatchSnapshot();
   });
 });
@@ -70,14 +70,14 @@ ${flowchartDemo}
 `);
 
     expect(renderResult).toMatch(
-      /<Mermaid id="mermaid.*?" code=".*?"><\/Mermaid>/
+      /<Mermaid id="mermaid.*?" code=".*?"><\/Mermaid>/,
     );
     expect(
       atou(
         /<Mermaid id="mermaid.*?" code="(.*?)"><\/Mermaid>/.exec(
-          renderResult
-        )?.[1] || ""
-      )
+          renderResult,
+        )?.[1] || "",
+      ),
     ).toMatch(flowchartDemo);
     expect(renderResult).toMatchSnapshot();
   });
@@ -86,7 +86,7 @@ ${flowchartDemo}
     expect(
       markdownIt.render(`
 ${flowchartDemo}
-`)
+`),
     ).toMatchSnapshot();
 
     expect(
@@ -94,7 +94,7 @@ ${flowchartDemo}
 \`\`\`md
 ${flowchartDemo}
 \`\`\`
-`)
+`),
     ).toMatchSnapshot();
   });
 

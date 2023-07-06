@@ -9,7 +9,7 @@ import { mdEnhancePlugin } from "vuepress-plugin-md-enhance";
  */
 export const getMdEnhancePlugin = (
   options?: Partial<MarkdownEnhanceOptions> | false,
-  legacy = false
+  legacy = false,
 ): Plugin | null => {
   if (options === false) return null;
 
@@ -18,6 +18,6 @@ export const getMdEnhancePlugin = (
       container: true,
       ...(options || {}),
     },
-    legacy
+    legacy,
   );
 };

@@ -19,7 +19,7 @@ export type PageWithExcerpt<
   // eslint-disable-next-line @typescript-eslint/no-explicit-any
   ExtraPageFrontmatter extends Record<any, any> = Record<string, unknown>,
   // eslint-disable-next-line @typescript-eslint/no-explicit-any
-  ExtraPageFields extends Record<any, any> = Record<string, unknown>
+  ExtraPageFields extends Record<any, any> = Record<string, unknown>,
 > = Page<ExtraPageData, ExtraPageFrontmatter, ExtraPageFields>;
 
 export interface BlogOptions extends PageExcerptOptions {
@@ -40,9 +40,9 @@ export interface BlogOptions extends PageExcerptOptions {
     ExtraPageFields extends Record<string | number | symbol, unknown> = Record<
       never,
       never
-    >
+    >,
   >(
-    page: Page<ExtraPageData, ExtraPageFrontmatter, ExtraPageFields>
+    page: Page<ExtraPageData, ExtraPageFrontmatter, ExtraPageFields>,
   ) => Record<string, unknown>;
 
   /**
@@ -64,9 +64,9 @@ export interface BlogOptions extends PageExcerptOptions {
     ExtraPageFields extends Record<string | number | symbol, unknown> = Record<
       never,
       never
-    >
+    >,
   >(
-    page: Page<ExtraPageData, ExtraPageFrontmatter, ExtraPageFields>
+    page: Page<ExtraPageData, ExtraPageFrontmatter, ExtraPageFields>,
   ) => boolean;
 
   /**
@@ -129,9 +129,9 @@ export interface BlogOptions extends PageExcerptOptions {
     ExtraPageFields extends Record<string | number | symbol, unknown> = Record<
       never,
       never
-    >
+    >,
   >(
-    page: Page<ExtraPageData, ExtraPageFrontmatter, ExtraPageFields>
+    page: Page<ExtraPageData, ExtraPageFrontmatter, ExtraPageFields>,
   ) => boolean;
 
   /**

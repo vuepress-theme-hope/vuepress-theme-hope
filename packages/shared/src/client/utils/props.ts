@@ -6,7 +6,7 @@ declare const __VUEPRESS_SSR__: boolean;
 
 export const utoa = (
   data: string,
-  level: DeflateOptions["level"] = 6
+  level: DeflateOptions["level"] = 6,
 ): string => {
   const buffer = strToU8(data);
   // zlib headers can be found at https://stackoverflow.com/a/54915442

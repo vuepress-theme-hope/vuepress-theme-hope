@@ -19,7 +19,7 @@ import { logger } from "../../utils.js";
 /** Gets a query string representation (hash + queries) */
 export const getURL = (
   code: string,
-  compilerOptions: CompilerOptions = {}
+  compilerOptions: CompilerOptions = {},
 ): string => {
   const hash = `#code/${compressToEncodedURIComponent(code)}`;
 
@@ -66,8 +66,8 @@ export const getTSPlaygroundPreset = ({
       deepAssign(
         {},
         <CompilerOptions>settings || {},
-        <CompilerOptions>compilerOptions
-      )
+        <CompilerOptions>compilerOptions,
+      ),
     )}`;
 
     return {

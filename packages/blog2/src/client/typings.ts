@@ -1,5 +1,5 @@
 export interface Article<
-  T extends Record<string, unknown> = Record<string, unknown>
+  T extends Record<string, unknown> = Record<string, unknown>,
 > {
   /**
    * Article path
@@ -17,7 +17,7 @@ export interface Article<
 }
 
 export interface BlogCategoryData<
-  T extends Record<string, unknown> = Record<string, unknown>
+  T extends Record<string, unknown> = Record<string, unknown>,
 > {
   /**
    * Category path
@@ -64,7 +64,7 @@ export interface BlogCategoryData<
 }
 
 export interface BlogTypeData<
-  T extends Record<string, unknown> = Record<string, unknown>
+  T extends Record<string, unknown> = Record<string, unknown>,
 > {
   /**
    * Type path

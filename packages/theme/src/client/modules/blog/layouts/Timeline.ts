@@ -28,14 +28,14 @@ export default defineComponent({
           h("div", { class: "blog-page-wrapper" }, [
             h("main", { id: "main-content", class: "vp-blog-main" }, [
               h(DropTransition, { appear: true, delay: 0.24 }, () =>
-                h(TimelineItems)
+                h(TimelineItems),
               ),
             ]),
             h(DropTransition, { delay: 0.16 }, () =>
-              h(InfoPanel, { key: "blog" })
+              h(InfoPanel, { key: "blog" }),
             ),
-          ])
-        )
+          ]),
+        ),
       );
   },
 });

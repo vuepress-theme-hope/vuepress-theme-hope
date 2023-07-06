@@ -29,8 +29,8 @@ export default defineComponent({
                       verticalAlign: "middle",
                     },
                   }),
-              }
-            )
+              },
+            ),
           )
         : null;
   },

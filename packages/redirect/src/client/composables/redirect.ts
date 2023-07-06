@@ -33,13 +33,13 @@ export const setupRedirect = (): void => {
     const defaultLocale =
       defaultLocalePath &&
       routes.some(
-        ({ path }) => path === route.path.replace("/", defaultLocalePath)
+        ({ path }) => path === route.path.replace("/", defaultLocalePath),
       )
         ? defaultLocalePath
         : routes.find(
             ({ path }) =>
               route.path.split("/").length >= 3 &&
-              path === route.path.replace(/^\/[^/]+\//, "/")
+              path === route.path.replace(/^\/[^/]+\//, "/"),
           )?.path;
 
     let matchedLocalePath: string | null = null;
@@ -66,7 +66,7 @@ export const setupRedirect = (): void => {
     // a locale matches
     if (matchedLocalePath) {
       const hasLocalePage = routes.some(
-        ({ path }) => route.path.replace("/", matchedLocalePath!) == path
+        ({ path }) => route.path.replace("/", matchedLocalePath!) == path,
       );
       const localeRoute = route.fullPath.replace("/", matchedLocalePath);
 
@@ -106,6 +106,6 @@ export const setupRedirect = (): void => {
       if (autoLocale && isRootLocale.value)
         handleLocaleRedirect(router.getRoutes());
     },
-    { immediate: true }
+    { immediate: true },
   );
 };

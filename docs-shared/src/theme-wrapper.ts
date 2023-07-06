@@ -8,7 +8,7 @@ const IS_GITHUB = !IS_GITEE && !IS_NETLIFY;
 
 export const theme = (
   name: string,
-  { plugins = {}, ...options }: ThemeOptions
+  { plugins = {}, ...options }: ThemeOptions,
 ): ThemeFunction => {
   const subdomain =
     name === "theme"

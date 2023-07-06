@@ -20,7 +20,7 @@ export const usePlugin = (
   themeData: ThemeData,
   plugins: PluginsOptions,
   hotReload: boolean,
-  behavior: HopeThemeBehaviorOptions
+  behavior: HopeThemeBehaviorOptions,
 ): void => {
   // respect git options
   if ("git" in plugins)
@@ -34,7 +34,7 @@ export const usePlugin = (
               updatedTime: true,
             }
           : plugins.git
-        : {}
+        : {},
     );
   // only use git plugin in production or debug mode
   else if (hotReload || app.env.isBuild)
@@ -47,7 +47,7 @@ export const usePlugin = (
   if (plugins.readingTime !== false)
     useReadingTimePlugin(
       app,
-      isPlainObject(plugins.readingTime) ? plugins.readingTime : {}
+      isPlainObject(plugins.readingTime) ? plugins.readingTime : {},
     );
 
   if (plugins.prismjs !== false) usePrismPlugin(app);

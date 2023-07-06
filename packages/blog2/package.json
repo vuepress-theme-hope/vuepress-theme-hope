@@ -52,7 +52,7 @@
     "@vuepress/utils": "2.0.0-beta.64",
     "chokidar": "^3.5.3",
     "vue": "^3.3.4",
-    "vue-router": "^4.2.2",
+    "vue-router": "^4.2.3",
     "vuepress-shared": "workspace:*"
   },
   "peerDependencies": {

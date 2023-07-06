@@ -10,10 +10,10 @@ mjx-container {
 
 export const prepareMathjaxStyleFile = async (
   app: App,
-  mathjaxInstance: MathjaxInstance
+  mathjaxInstance: MathjaxInstance,
 ): Promise<void> => {
   await app.writeTemp(
     "md-enhance/mathjax.css",
-    `${mathjaxInstance.outputStyle()}\n${style}`
+    `${mathjaxInstance.outputStyle()}\n${style}`,
   );
 };

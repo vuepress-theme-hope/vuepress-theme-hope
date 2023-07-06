@@ -22,7 +22,7 @@ export default defineComponent({
             h(
               "label",
               { class: "appearance-title", for: "appearance-switch" },
-              locale.value
+              locale.value,
             ),
             h(AppearanceSwitch),
           ])

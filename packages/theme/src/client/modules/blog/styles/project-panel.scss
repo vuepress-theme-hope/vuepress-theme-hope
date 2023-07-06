@@ -24,7 +24,8 @@
 
   background: var(--bg-color-float);
 
-  transition: background var(--color-transition),
+  transition:
+    background var(--color-transition),
     transform var(--transform-transition);
 
   @media (max-width: hope-config.$pad) {

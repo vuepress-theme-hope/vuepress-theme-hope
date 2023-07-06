@@ -28,7 +28,7 @@ type LoaderContext = Exclude<
 export const injectConfigModule = (
   config: unknown,
   app: App,
-  id: string
+  id: string,
 ): void => {
   const bundlerName = getBundlerName(app);
 
@@ -55,7 +55,7 @@ export const injectConfigModule = (
               charset: false,
               additionalData: async (
                 source: string,
-                file: string
+                file: string,
               ): Promise<string> => {
                 const originalContent = isString(originalAdditionalData)
                   ? `${originalAdditionalData}${source}`
@@ -64,7 +64,7 @@ export const injectConfigModule = (
                   : source;
 
                 return originalContent.match(
-                  new RegExp(`@use\\s+["']@sass-palette\\/${id}-config["'];`)
+                  new RegExp(`@use\\s+["']@sass-palette\\/${id}-config["'];`),
                 )
                   ? originalContent
                   : `@use "@sass-palette/${id}-config";\n${originalContent}`;
@@ -72,7 +72,7 @@ export const injectConfigModule = (
             },
           },
         },
-      }
+      },
     );
   }
 
@@ -86,7 +86,7 @@ export const injectConfigModule = (
 
     const additionalDataHandler = (
       content: string,
-      loaderContext: LoaderContext
+      loaderContext: LoaderContext,
     ): string => {
       const originalContent = isString(additionalData)
         ? `${additionalData}${content}`
@@ -95,7 +95,7 @@ export const injectConfigModule = (
         : content;
 
       return originalContent.match(
-        new RegExp(`@use\\s+(["'])@sass-palette\\/${id}-config\\1;`)
+        new RegExp(`@use\\s+(["'])@sass-palette\\/${id}-config\\1;`),
       )
         ? originalContent
         : `@use "@sass-palette/${id}-config";\n${originalContent}`;

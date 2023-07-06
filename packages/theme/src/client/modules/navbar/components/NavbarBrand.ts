@@ -16,20 +16,20 @@ export default defineComponent({
     const themeLocale = useThemeLocaleData();
 
     const siteBrandLink = computed(
-      () => themeLocale.value.home || routeLocale.value
+      () => themeLocale.value.home || routeLocale.value,
     );
 
     const siteTitle = computed(() => siteLocale.value.title);
     const siteBrandTitle = computed(
-      () => themeLocale.value.navTitle ?? siteTitle.value
+      () => themeLocale.value.navTitle ?? siteTitle.value,
     );
 
     const siteBrandLogo = computed(() =>
-      themeLocale.value.logo ? withBase(themeLocale.value.logo) : null
+      themeLocale.value.logo ? withBase(themeLocale.value.logo) : null,
     );
 
     const siteBrandLogoDark = computed(() =>
-      themeLocale.value.logoDark ? withBase(themeLocale.value.logoDark) : null
+      themeLocale.value.logoDark ? withBase(themeLocale.value.logoDark) : null,
     );
 
     return (): VNode =>
@@ -64,7 +64,7 @@ export default defineComponent({
                   },
                 ],
               },
-              siteBrandTitle.value
+              siteBrandTitle.value,
             )
           : null,
       ]);

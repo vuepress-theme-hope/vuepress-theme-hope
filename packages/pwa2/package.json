@@ -56,10 +56,10 @@
     "@vuepress/shared": "2.0.0-beta.64",
     "@vuepress/utils": "2.0.0-beta.64",
     "@vueuse/core": "^10.2.1",
-    "mitt": "^3.0.0",
+    "mitt": "^3.0.1",
     "register-service-worker": "^1.7.2",
     "vue": "^3.3.4",
-    "vue-router": "^4.2.2",
+    "vue-router": "^4.2.3",
     "vuepress-plugin-sass-palette": "workspace:*",
     "vuepress-shared": "workspace:*",
     "workbox-build": "^7.0.0"

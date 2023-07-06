@@ -4,7 +4,7 @@ import { utoa } from "vuepress-shared/node";
 
 const mermaidRenderer: Renderer.RenderRule = (tokens, index) =>
   `<Mermaid id="mermaid-${index}" code="${utoa(
-    tokens[index].content
+    tokens[index].content,
   )}"></Mermaid>`;
 
 interface MermaidOptions {
@@ -47,7 +47,7 @@ ${
 
 const getMermaid = (options: MermaidOptions, index: number): string =>
   `<Mermaid id="mermaid-${index}" code="${utoa(
-    getMermaidContent(options)
+    getMermaidContent(options),
   )}"></Mermaid>`;
 
 const DIAGRAM_MAP: Record<string, string> = {
@@ -81,7 +81,7 @@ export const mermaid: PluginSimple = (md) => {
     if (DIAGRAM_MAP[name])
       return getMermaid(
         { diagram: DIAGRAM_MAP[name], title: rest.join(" "), content },
-        index
+        index,
       );
 
     return fence!(...args);

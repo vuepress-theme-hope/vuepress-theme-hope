@@ -88,8 +88,8 @@ export default defineComponent({
           h("div", { class: "icon", onClick: () => copyToClipboard(icon) }, [
             h("div", { class: ["iconfont", `${props.iconPrefix}${icon}`] }),
             h("div", { class: "text" }, icon),
-          ])
-        )
+          ]),
+        ),
       );
   },
 });

@@ -188,7 +188,7 @@ tag:
 
   type SidebarSorterFunction = (
     infoA: SidebarInfo,
-    infoB: SidebarInfo
+    infoB: SidebarInfo,
   ) => number;
 
   type SidebarSorter =

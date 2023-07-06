@@ -31,7 +31,7 @@ export default defineComponent({
         (hash): void => {
           // get the active sidebar item DOM, whose href equals to the current route
           const activeSidebarItem = document.querySelector(
-            `.vp-sidebar a.vp-sidebar-link[href="${route.path}${hash}"]`
+            `.vp-sidebar a.vp-sidebar-link[href="${route.path}${hash}"]`,
           );
 
           if (!activeSidebarItem) return;
@@ -54,7 +54,7 @@ export default defineComponent({
           )
             // scroll to the bottom edge of sidebar
             activeSidebarItem.scrollIntoView(false);
-        }
+        },
       );
     });
 
@@ -73,7 +73,7 @@ export default defineComponent({
           slots.top?.(),
           slots.default?.() || h(SidebarLinks, { config: sidebarItems.value }),
           slots.bottom?.(),
-        ]
+        ],
       );
   },
 });

@@ -145,10 +145,10 @@ export default defineComponent({
                 controls: "",
                 ...(props.loop ? { loop: "" } : {}),
               },
-              h("source", { src: getLink(props.src), type: props.type })
+              h("source", { src: getLink(props.src), type: props.type }),
             ),
           ]),
-        ]
+        ],
       );
   },
 });

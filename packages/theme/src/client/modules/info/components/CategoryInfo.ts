@@ -76,14 +76,14 @@ export default defineComponent({
                     role: path ? "navigation" : "",
                     onClick: (event: Event) => navigate(event, path),
                   },
-                  name
-                )
+                  name,
+                ),
               ),
               h("meta", {
                 property: "articleSection",
                 content: props.category.map(({ name }) => name).join(","),
               }),
-            ]
+            ],
           )
         : null;
   },

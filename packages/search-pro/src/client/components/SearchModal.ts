@@ -119,7 +119,7 @@ export default defineComponent({
                   h(
                     "label",
                     { for: "search-pro", "aria-label": locale.value.search },
-                    h(SearchIcon)
+                    h(SearchIcon),
                   ),
                   h("input", {
                     ref: inputElement,
@@ -195,12 +195,12 @@ export default defineComponent({
                                   class: "search-pro-auto-complete",
                                   title: `Tab ${locale.value.autocomplete}`,
                                 },
-                                "Tab"
+                                "Tab",
                               ),
                               suggestion,
-                            ]
-                          )
-                        )
+                            ],
+                          ),
+                        ),
                       )
                     : null,
                 ]),
@@ -214,7 +214,7 @@ export default defineComponent({
                       input.value = "";
                     },
                   },
-                  locale.value.cancel
+                  locale.value.cancel,
                 ),
               ]),
 

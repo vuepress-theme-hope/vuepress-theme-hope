@@ -30,7 +30,7 @@ export const normalizePath = (path: string): string =>
  */
 export const isActiveLink = (
   route: RouteLocationNormalizedLoaded,
-  link?: string
+  link?: string,
 ): boolean => {
   if (link === undefined) return false;
 

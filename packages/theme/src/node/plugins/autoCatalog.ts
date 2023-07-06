@@ -11,7 +11,7 @@ import { ArticleInfoType } from "../index.js";
  * Resolve options for vuepress-plugin-auto-catalog
  */
 export const getAutoCatalogPlugin = (
-  autoCatalog?: AutoCatalogOptions | boolean
+  autoCatalog?: AutoCatalogOptions | boolean,
 ): Plugin | null => {
   if (autoCatalog === false) return null;
 

@@ -42,7 +42,7 @@ export const getPluginConfig = (
     | "iconPrefix"
     | "favicon"
   >,
-  legacy = false
+  legacy = false,
 ): PluginConfig => {
   checkPluginOptions(plugins);
 
@@ -64,7 +64,7 @@ export const getPluginConfig = (
       plugins.feed,
       options.hostname,
       options.favicon,
-      legacy
+      legacy,
     ),
     getMdEnhancePlugin(plugins.mdEnhance, legacy),
     getPhotoSwipePlugin(plugins.photoSwipe),

@@ -29,7 +29,7 @@ export default defineComponent({
                 window.print();
               },
             },
-            h(PrintIcon)
+            h(PrintIcon),
           );
   },
 });

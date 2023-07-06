@@ -125,7 +125,7 @@ export default defineComponent({
       const cover = props.cover ?? getMetaContent("og:image");
       const image = document
         .querySelector<HTMLImageElement>(
-          `${SHARE_CONTENT_SELECTOR} :not(a) > img`
+          `${SHARE_CONTENT_SELECTOR} :not(a) > img`,
         )
         ?.getAttribute("src");
       const tags =
@@ -152,7 +152,7 @@ export default defineComponent({
           }
 
           return "";
-        }
+        },
       );
     };
 
@@ -176,11 +176,11 @@ export default defineComponent({
                 width: 250,
                 scale: 1,
                 margin: 1.5,
-              })
+              }),
             )
             .then((dataURL) => {
               popup.emit(
-                `<img src="${dataURL}" alt="qrcode" class="share-qrcode" />`
+                `<img src="${dataURL}" alt="qrcode" class="share-qrcode" />`,
               );
             });
           break;
@@ -221,7 +221,7 @@ export default defineComponent({
                   background: color,
                 },
                 innerHTML: shape,
-              })
+              }),
         ),
         showPopup.value ? h("div", { class: "share-popup" }) : null,
       ];

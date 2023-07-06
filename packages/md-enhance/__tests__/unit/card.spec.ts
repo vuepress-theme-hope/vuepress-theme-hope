@@ -17,7 +17,7 @@ link: https://example.com
 color: "#000"
 \`\`\`
 `,
-      {}
+      {},
     );
 
     expect(result).toContain("VPCard");
@@ -35,7 +35,7 @@ link: https://example.com
 color: "#000"
 \`\`\`
 `,
-      {}
+      {},
     );
 
     expect(result).toContain("VPCard");
@@ -53,7 +53,7 @@ link: https://example.com
 color: "#000"
 \`\`\`
 `,
-      {}
+      {},
     );
 
     expect(result).toContain("VPCard");
@@ -73,7 +73,7 @@ color: "#000"
 }
 \`\`\`
 `,
-      {}
+      {},
     );
 
     expect(result).toContain("VPCard");
@@ -94,7 +94,7 @@ color: "#000"
 }
 \`\`\`
 `,
-      {}
+      {},
     );
 
     expect(result).toContain("VPCard");
@@ -114,7 +114,7 @@ color: "#000"
 }
 \`\`\`
 `,
-      {}
+      {},
     );
 
     expect(result).toContain("VPCard");
@@ -130,7 +130,7 @@ title: a
 title: b
 \`\`\`
 `,
-      {}
+      {},
     );
 
     const result2 = markdownIt.render(
@@ -140,7 +140,7 @@ title: a
 title: b
 \`\`\`
 `,
-      {}
+      {},
     );
 
     expect(result1).toEqual("");
@@ -154,7 +154,7 @@ title: b
 const a = 1;
 \`\`\`
 `,
-      {}
+      {},
     );
 
     expect(result).toMatch(/<pre.*>[\s\S]*<\/pre>/);

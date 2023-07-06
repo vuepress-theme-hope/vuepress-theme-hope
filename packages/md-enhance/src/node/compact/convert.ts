@@ -8,7 +8,7 @@ import { logger } from "../utils.js";
 
 /** @deprecated */
 export const convertOptions = (
-  options: MarkdownEnhanceOptions & Record<string, unknown>
+  options: MarkdownEnhanceOptions & Record<string, unknown>,
 ): void => {
   deprecatedLogger({
     options,
@@ -62,8 +62,8 @@ export const convertOptions = (
   if ("linkCheck" in options) {
     logger.warn(
       `${colors.magenta(
-        "linkCheck"
-      )} is deprecated, please use ${colors.magenta("checkLinks")} instead`
+        "linkCheck",
+      )} is deprecated, please use ${colors.magenta("checkLinks")} instead`,
     );
 
     options.checkLinks = {
@@ -80,17 +80,17 @@ export const convertOptions = (
     if ("revealConfig" in options.presentation)
       logger.warn(
         `${colors.magenta(
-          "presentation.revealConfig"
+          "presentation.revealConfig",
         )} is deprecated, please import ${colors.magenta(
-          `defineRevealConfig`
-        )} from ${colors.cyan(`vuepress-plugin-md-enhance/client`)} instead.`
+          `defineRevealConfig`,
+        )} from ${colors.cyan(`vuepress-plugin-md-enhance/client`)} instead.`,
       );
 
     if ("plugins" in options.presentation) {
       logger.warn(
         `${colors.magenta(
-          "presentation.plugins"
-        )} is deprecated, please use ${colors.magenta(`presentation`)} instead`
+          "presentation.plugins",
+        )} is deprecated, please use ${colors.magenta(`presentation`)} instead`,
       );
 
       options.presentation = <RevealPlugin[]>options.presentation.plugins;

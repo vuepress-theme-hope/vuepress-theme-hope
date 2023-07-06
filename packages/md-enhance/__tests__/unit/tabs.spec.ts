@@ -18,7 +18,7 @@ const a = 1;
 \`\`\`
 
 :::
-    `)
+    `),
     ).toMatchSnapshot();
 
     expect(
@@ -29,7 +29,7 @@ const a = 1;
 const a = 1;
 \`\`\`
 :::
-    `)
+    `),
     ).toMatchSnapshot();
   });
 
@@ -51,7 +51,7 @@ const a = 1;
 \`\`\`
 
 :::
-`)
+`),
     ).toMatchSnapshot();
 
     expect(
@@ -66,7 +66,7 @@ const a = 1;
 const a = 1;
 \`\`\`
 :::
-`)
+`),
     ).toMatchSnapshot();
   });
 
@@ -82,7 +82,7 @@ const a = 1;
 \`\`\`
 
 :::
-    `)
+    `),
     ).toMatchSnapshot();
 
     expect(
@@ -93,7 +93,7 @@ const a = 1;
 const a = 1;
 \`\`\`
 :::
-    `)
+    `),
     ).toMatchSnapshot();
 
     expect(
@@ -104,7 +104,7 @@ const a = 1;
 const a = 1;
 \`\`\`
 :::
-    `)
+    `),
     ).toMatchSnapshot();
 
     expect(
@@ -115,7 +115,7 @@ const a = 1;
 const a = 1;
 \`\`\`
 :::
-    `)
+    `),
     ).toMatchSnapshot();
   });
 
@@ -131,7 +131,7 @@ const a = 1;
 \`\`\`
 
 :::
-    `)
+    `),
     ).toMatchSnapshot();
 
     expect(
@@ -142,7 +142,7 @@ const a = 1;
 const a = 1;
 \`\`\`
 :::
-    `)
+    `),
     ).toMatchSnapshot();
 
     expect(
@@ -162,7 +162,7 @@ const a = 1;
 \`\`\`
 
 :::
-    `)
+    `),
     ).toMatchSnapshot();
 
     expect(
@@ -177,7 +177,7 @@ const a = 1;
 const a = 1;
 \`\`\`
 :::
-    `)
+    `),
     ).toMatchSnapshot();
   });
 
@@ -201,7 +201,7 @@ const a = 1;
 \`\`\`
 
 :::
-    `)
+    `),
     ).toMatchSnapshot();
 
     expect(
@@ -218,7 +218,7 @@ const a = 1;
 const a = 1;
 \`\`\`
 :::
-    `)
+    `),
     ).toMatchSnapshot();
   });
 });

@@ -40,16 +40,16 @@ export const photoSwipePlugin =
               name: PLUGIN_NAME,
               default: photoSwipeLocales,
               config: options.locales,
-            })
+            }),
           ).map(([localePath, localeOptions]) => [
             localePath,
             fromEntries(
               entries(localeOptions).map(([key, value]) => [
                 `${key}Title`,
                 value,
-              ])
+              ]),
             ),
-          ])
+          ]),
         ),
       }),
 

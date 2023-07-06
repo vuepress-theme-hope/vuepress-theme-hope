@@ -34,7 +34,7 @@ export default defineUserConfig({
     {
       // your theme config here
     },
-    { custom: true }
+    { custom: true },
   ),
 
   alias: {
@@ -42,7 +42,7 @@ export default defineUserConfig({
     // For example, here we change the theme's home page component to HomePage.vue under user .vuepress/components
     "@theme-hope/components/HomePage": path.resolve(
       __dirname,
-      "./components/HomePage.vue"
+      "./components/HomePage.vue",
     ),
   },
 });
@@ -62,7 +62,7 @@ export default {
     {
       // your theme config here
     },
-    { custom: true }
+    { custom: true },
   ),
 
   alias: {
@@ -70,7 +70,7 @@ export default {
     // For example, here we change the theme's home page component to HomePage.vue under user .vuepress/components
     "@theme-hope/components/HomePage": path.resolve(
       __dirname,
-      "./components/HomePage.vue"
+      "./components/HomePage.vue",
     ),
   },
 };
@@ -262,7 +262,7 @@ export default defineUserConfig({
     {
       // your theme config here
     },
-    { custom: true }
+    { custom: true },
   ),
 
   alias: {
@@ -270,7 +270,7 @@ export default defineUserConfig({
     // For example, here we change the theme's home page component to HomePage.vue under user .vuepress/components
     "@theme-hope/components/HomePage": path.resolve(
       __dirname,
-      "./components/HomePage.vue"
+      "./components/HomePage.vue",
     ),
   },
 });

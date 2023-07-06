@@ -10,7 +10,7 @@ let autoCatalogIconComponent: Component = () => null;
 const autoCatalogSymbol = Symbol(__VUEPRESS_DEV__ ? "auto-catalog" : "");
 
 export const defineAutoCatalogIconComponent = (
-  options: AutoCatalogIconComponent
+  options: AutoCatalogIconComponent,
 ): void => {
   autoCatalogIconComponent = options;
 };

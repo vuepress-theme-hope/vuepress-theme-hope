@@ -72,7 +72,7 @@ export const setupCopyCode = (): void => {
       if (codeBlockElement.parentElement)
         codeBlockElement.parentElement.insertBefore(
           copyElement,
-          codeBlockElement
+          codeBlockElement,
         );
 
       codeBlockElement.setAttribute("copy-code-registered", "");
@@ -91,20 +91,20 @@ export const setupCopyCode = (): void => {
             });
             resolve();
           }, copyCodeDelay || 500);
-        })
+        }),
     );
 
   const copyCodeBlockContent = (
     codeContainer: HTMLDivElement,
     codeContent: HTMLPreElement,
-    button: HTMLButtonElement
+    button: HTMLButtonElement,
   ): void => {
     let { innerText: text = "" } = codeContent;
 
     if (
       // is shell
       /language-(shellscript|shell|bash|sh|zsh)/.test(
-        codeContainer.classList.toString()
+        codeContainer.classList.toString(),
       )
     )
       text = text.replace(/^ *(\$|>) /gm, "");
@@ -127,7 +127,7 @@ export const setupCopyCode = (): void => {
 
         message.pop(
           `${CHECK_ICON}<span>${locale.value.hint} 🎉</span>`,
-          copyCodeDuration
+          copyCodeDuration,
         );
       }
     });
@@ -163,7 +163,7 @@ export const setupCopyCode = (): void => {
       () => page.value.path,
       () => {
         if (!isMobile.value || copyCodeShowInMobile) void generateCopyButton();
-      }
+      },
     );
   });
 };

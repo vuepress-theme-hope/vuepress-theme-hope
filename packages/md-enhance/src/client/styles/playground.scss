@@ -32,7 +32,9 @@
 
   font-weight: 500;
 
-  transition: background var(--vp-ct), border-color var(--vp-ct);
+  transition:
+    background var(--vp-ct),
+    border-color var(--vp-ct);
 }
 
 .vp-playground-title {

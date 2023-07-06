@@ -117,7 +117,7 @@ export default defineComponent({
               });
             }
           }
-        }, 100)
+        }, 100),
       );
     });
 
@@ -126,7 +126,7 @@ export default defineComponent({
         h(
           "label",
           { for: "flowchart-playground-config" },
-          `${locale.value.config}:`
+          `${locale.value.config}:`,
         ),
         h("textarea", {
           id: "flowchart-playground-config",
@@ -139,7 +139,7 @@ export default defineComponent({
           h(
             "label",
             { for: "flowchart-playground-preset" },
-            `${locale.value.preset}:`
+            `${locale.value.preset}:`,
           ),
           h(
             "select",
@@ -153,8 +153,8 @@ export default defineComponent({
               },
             },
             ["ant", "pie", "vue"].map((preset) =>
-              h("option", { value: preset }, preset)
-            )
+              h("option", { value: preset }, preset),
+            ),
           ),
         ]),
         h("label", { for: id }, `${locale.value.result}:`),

@@ -11,7 +11,7 @@ export const legacyCodeDemo: PluginSimple = (md) => {
     name: "demo",
     openRender: (tokens: Token[], index: number): string => {
       logger.warn(
-        "demo container is deprecated, you should use normal-demo, react-demo and vue-demo container instead."
+        "demo container is deprecated, you should use normal-demo, react-demo and vue-demo container instead.",
       );
 
       const { info } = tokens[index];
@@ -41,7 +41,7 @@ export const legacyCodeDemo: PluginSimple = (md) => {
 <CodeDemo id="code-demo-${index}" type="${type?.[1] || "normal"}"${
         title ? ` title="${encodeURIComponent(title[1])}"` : ""
       }${config ? ` config="${config}"` : ""} code="${utoa(
-        JSON.stringify(code)
+        JSON.stringify(code),
       )}">
 `;
     },

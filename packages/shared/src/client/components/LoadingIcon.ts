@@ -51,9 +51,9 @@ export const LoadingIcon: FunctionalComponent<{
             repeatCount: "indefinite",
             values: "0;-35px;-125px",
           }),
-        ]
+        ],
       ),
-    ]
+    ],
   );
 
   return wrapper
@@ -63,7 +63,7 @@ export const LoadingIcon: FunctionalComponent<{
           class: "loading-icon-wrapper",
           style: `display:flex;align-items:center;justify-content:center;height:${height}px`,
         },
-        icon
+        icon,
       )
     : icon;
 };

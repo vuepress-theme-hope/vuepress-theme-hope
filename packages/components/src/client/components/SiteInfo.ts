@@ -94,7 +94,7 @@ export default defineComponent({
   setup(props) {
     const locale = useLocaleConfig(SITE_INFO_LOCALES);
     const repoType = computed(() =>
-      props.repo ? resolveRepoType(props.repo) : null
+      props.repo ? resolveRepoType(props.repo) : null,
     );
 
     return (): VNode =>
@@ -109,7 +109,7 @@ export default defineComponent({
           class: "vp-site-info-preview",
           style: {
             background: `url(${withBase(
-              props.preview
+              props.preview,
             )}) center/cover no-repeat`,
           },
         }),
@@ -141,8 +141,8 @@ export default defineComponent({
                   title: locale.value.source,
                   target: "_blank",
                 },
-                h(resolveComponent(`${repoType.value!}Icon`))
-              )
+                h(resolveComponent(`${repoType.value!}Icon`)),
+              ),
             )
           : null,
       ]);

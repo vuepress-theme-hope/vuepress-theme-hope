@@ -4,7 +4,7 @@ import { encodeCDATA, encodeXMLContent } from "../../src/node/utils/encode.js";
 
 it("Should encode CDATA", () => {
   expect(encodeCDATA("Certain tokens like ]]> can be difficult")).toBe(
-    "Certain tokens like ]]]]><![CDATA[> can be difficult"
+    "Certain tokens like ]]]]><![CDATA[> can be difficult",
   );
 });
 

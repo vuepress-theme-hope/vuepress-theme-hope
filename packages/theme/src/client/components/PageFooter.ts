@@ -46,7 +46,7 @@ export default defineComponent({
         ? themeLocale.value.copyright
         : author.value.length
         ? `Copyright © ${new Date().getFullYear()} ${author.value[0].name}`
-        : false
+        : false,
     );
 
     return (): VNode | null =>

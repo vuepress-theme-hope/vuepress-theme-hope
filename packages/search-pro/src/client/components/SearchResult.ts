@@ -74,11 +74,11 @@ export default defineComponent({
     const hasHistory = computed(
       () =>
         enableHistory &&
-        (queryHistory.value.length > 0 || resultHistory.value.length > 0)
+        (queryHistory.value.length > 0 || resultHistory.value.length > 0),
     );
     const hasResults = computed(() => results.value.length > 0);
     const activatedResult = computed(
-      () => results.value[activatedResultIndex.value] || null
+      () => results.value[activatedResultIndex.value] || null,
     );
 
     const getRealPath = (item: MatchedItem): string =>
@@ -171,7 +171,7 @@ export default defineComponent({
           : formatterConfig.split("$content");
 
         return matchedItem.display.map((display) =>
-          h("div", getVNodes([prefix, ...display, suffix]))
+          h("div", getVNodes([prefix, ...display, suffix])),
         );
       }
 
@@ -228,11 +228,11 @@ export default defineComponent({
       () => {
         document
           .querySelector(
-            ".search-pro-result-list-item.active .search-pro-result-item.active"
+            ".search-pro-result-list-item.active .search-pro-result-item.active",
           )
           ?.scrollIntoView(false);
       },
-      { flush: "post" }
+      { flush: "post" },
     );
 
     return (): VNode =>
@@ -257,7 +257,7 @@ export default defineComponent({
                           h(
                             "div",
                             { class: "search-pro-result-title" },
-                            locale.value.history
+                            locale.value.history,
                           ),
                           queryHistory.value.map((item, historyIndex) =>
                             h(
@@ -283,7 +283,7 @@ export default defineComponent({
                                 h(
                                   "div",
                                   { class: "search-pro-result-content" },
-                                  item
+                                  item,
                                 ),
                                 h("button", {
                                   class: "search-pro-remove-icon",
@@ -294,10 +294,10 @@ export default defineComponent({
                                     removeQueryHistory(historyIndex);
                                   },
                                 }),
-                              ]
-                            )
+                              ],
+                            ),
                           ),
-                        ])
+                        ]),
                       )
                     : null,
                   enableResultHistory
@@ -308,7 +308,7 @@ export default defineComponent({
                           h(
                             "div",
                             { class: "search-pro-result-title" },
-                            locale.value.history
+                            locale.value.history,
                           ),
 
                           resultHistory.value.map((item, historyIndex) =>
@@ -341,16 +341,16 @@ export default defineComponent({
                                       ? h(
                                           "div",
                                           { class: "content-header" },
-                                          item.header
+                                          item.header,
                                         )
                                       : null,
                                     h(
                                       "div",
                                       item.display
                                         .map((display) => getVNodes(display))
-                                        .flat()
+                                        .flat(),
                                     ),
-                                  ]
+                                  ],
                                 ),
                                 h("button", {
                                   class: "search-pro-remove-icon",
@@ -361,10 +361,10 @@ export default defineComponent({
                                     removeResultHistory(historyIndex);
                                   },
                                 }),
-                              ]
-                            )
+                              ],
+                            ),
                           ),
-                        ])
+                        ]),
                       )
                     : null,
                 ]
@@ -392,7 +392,7 @@ export default defineComponent({
                     h(
                       "div",
                       { class: "search-pro-result-title" },
-                      title || locale.value.defaultTitle
+                      title || locale.value.defaultTitle,
                     ),
                     contents.map((item, contentIndex) => {
                       const isCurrentContentActive =
@@ -425,26 +425,26 @@ export default defineComponent({
                                   : item.type === "heading"
                                   ? HeadingIcon
                                   : HeartIcon,
-                                { class: "search-pro-result-type" }
+                                { class: "search-pro-result-type" },
                               ),
                           h("div", { class: "search-pro-result-content" }, [
                             item.type === "text" && item.header
                               ? h(
                                   "div",
                                   { class: "content-header" },
-                                  item.header
+                                  item.header,
                                 )
                               : null,
                             h("div", getDisplay(item)),
                           ]),
-                        ]
+                        ],
                       );
                     }),
-                  ]
+                  ],
                 );
-              })
+              }),
             )
-          : locale.value.emptyResult
+          : locale.value.emptyResult,
       );
   },
 });

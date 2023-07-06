@@ -30,7 +30,7 @@ export default {
             name: "playground#language",
             component: "PlaygroundComponent",
             propsGetter: (
-              playgroundData: PlaygroundData
+              playgroundData: PlaygroundData,
             ): Record<string, string> => ({
               // 交互演示属性
             }),

@@ -43,7 +43,7 @@ ${demo}
 `);
 
     expect(renderResult).toMatch(
-      /<Presentation id="presentation-.*?" code=".*?" theme=".*?"><\/Presentation>/
+      /<Presentation id="presentation-.*?" code=".*?" theme=".*?"><\/Presentation>/,
     );
     expect(renderResult).toMatchSnapshot();
   });
@@ -52,7 +52,7 @@ ${demo}
     expect(
       markdownIt.render(`
 ${demo}
-`)
+`),
     ).toMatchSnapshot();
 
     expect(
@@ -60,7 +60,7 @@ ${demo}
 @slidestar
 ${demo}
 @slideend
-`)
+`),
     ).toMatchSnapshot();
   });
 });

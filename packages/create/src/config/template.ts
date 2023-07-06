@@ -35,7 +35,7 @@ export const generateTemplate = async (
     lang: Lang;
     message: CreateI18n;
     preset?: "blog" | "docs" | null;
-  }
+  },
 ): Promise<void> => {
   const { i18n, workflow } = await inquirer.prompt<{
     i18n: boolean;
@@ -75,43 +75,43 @@ export const generateTemplate = async (
   // copy public assets
   copy(
     resolve(__dirname, "../template/public"),
-    resolve(cwd, targetDir, "./.vuepress/public")
+    resolve(cwd, targetDir, "./.vuepress/public"),
   );
   copy(
     resolve(__dirname, "../template", templateFolder, "config/base"),
-    resolve(cwd, targetDir, ".vuepress")
+    resolve(cwd, targetDir, ".vuepress"),
   );
 
   if (i18n) {
     copy(
       resolve(__dirname, "../template", templateFolder, "en"),
-      resolve(cwd, targetDir)
+      resolve(cwd, targetDir),
     );
     copy(
       resolve(__dirname, "../template", templateFolder, "zh"),
-      resolve(cwd, targetDir, "zh")
+      resolve(cwd, targetDir, "zh"),
     );
     copy(
       resolve(__dirname, "../template", templateFolder, "config/multi"),
-      resolve(cwd, targetDir, ".vuepress")
+      resolve(cwd, targetDir, ".vuepress"),
     );
   } else if (lang === "简体中文") {
     copy(
       resolve(__dirname, "../template", templateFolder, "zh"),
-      resolve(cwd, targetDir)
+      resolve(cwd, targetDir),
     );
     copy(
       resolve(__dirname, "../template", templateFolder, "config/zh"),
-      resolve(cwd, targetDir, ".vuepress")
+      resolve(cwd, targetDir, ".vuepress"),
     );
   } else {
     copy(
       resolve(__dirname, "../template", templateFolder, "en"),
-      resolve(cwd, targetDir)
+      resolve(cwd, targetDir),
     );
     copy(
       resolve(__dirname, "../template", templateFolder, "config/en"),
-      resolve(cwd, targetDir, ".vuepress")
+      resolve(cwd, targetDir, ".vuepress"),
     );
   }
 
@@ -123,7 +123,7 @@ export const generateTemplate = async (
     writeFileSync(
       resolve(workflowDir, "deploy-docs.yml"),
       getWorkflowContent(packageManager, targetDir, lang),
-      { encoding: "utf-8" }
+      { encoding: "utf-8" },
     );
   }
 

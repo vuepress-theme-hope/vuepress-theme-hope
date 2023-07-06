@@ -110,13 +110,13 @@ export default defineComponent({
     const key = computed(() =>
       props.noticeKey
         ? `notice-${props.noticeKey}`
-        : `${props.title}${props.content}`
+        : `${props.title}${props.content}`,
     );
 
     const isMatched = computed(() =>
       props.match
         ? new RegExp(props.match).test(route.path)
-        : startsWith(route.path, props.path)
+        : startsWith(route.path, props.path),
     );
 
     onMounted(() => {
@@ -131,7 +131,7 @@ export default defineComponent({
       isVisible.value = false;
       (props.showOnce ? localStorage : sessionStorage).setItem(
         key.value,
-        "true"
+        "true",
       );
     };
 
@@ -185,13 +185,13 @@ export default defineComponent({
                         class: ["vp-notice-footer-action", type],
                         onClick: () => openLink(link),
                         innerHTML: text,
-                      })
-                    )
+                      }),
+                    ),
                   ),
-                ]
+                ],
               ),
             ]
-          : []
+          : [],
       );
   },
 });

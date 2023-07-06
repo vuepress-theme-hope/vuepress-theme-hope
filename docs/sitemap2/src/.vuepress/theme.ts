@@ -3,8 +3,8 @@ import { fs, theme } from "docs-shared";
 
 const { version } = fs.readJsonSync(
   createRequire(import.meta.url).resolve(
-    "vuepress-plugin-sitemap2/package.json"
-  )
+    "vuepress-plugin-sitemap2/package.json",
+  ),
 );
 
 // the theme wrapper is located in <root>/docs-shared/src/theme-wrapper.ts

@@ -7,7 +7,7 @@ export const useSupportUserAgent = (): Ref<boolean> =>
     () =>
       typeof window !== "undefined" &&
       window.navigator &&
-      "userAgent" in window.navigator
+      "userAgent" in window.navigator,
   );
 
 export const useIsMobile = (): ComputedRef<boolean> => {
@@ -16,6 +16,6 @@ export const useIsMobile = (): ComputedRef<boolean> => {
   return computed(
     () =>
       supportUserAgent.value &&
-      /\b(?:Android|iPhone)/i.test(navigator.userAgent)
+      /\b(?:Android|iPhone)/i.test(navigator.userAgent),
   );
 };

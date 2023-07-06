@@ -37,7 +37,9 @@ kbd {
 
 code {
   font-family: var(--font-family-mono);
-  transition: background var(--color-transition), color var(--color-transition);
+  transition:
+    background var(--color-transition),
+    color var(--color-transition);
 
   #{hope-config.$dark-selector} & {
     background: #333;
@@ -51,7 +53,8 @@ code {
 blockquote {
   border-color: #eee;
   color: #666;
-  transition: border-color var(--color-transition),
+  transition:
+    border-color var(--color-transition),
     color var(--color-transition);
 
   #{hope-config.$dark-selector} & {

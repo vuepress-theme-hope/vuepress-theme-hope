@@ -3,7 +3,7 @@ import { strFromU8, strToU8, unzlibSync, zlibSync } from "fflate/node";
 
 export const utoa = (
   data: string,
-  level: DeflateOptions["level"] = 6
+  level: DeflateOptions["level"] = 6,
 ): string => {
   const buffer = strToU8(data);
   // zlib headers can be found at https://stackoverflow.com/a/54915442

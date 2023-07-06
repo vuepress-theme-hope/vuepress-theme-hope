@@ -6,7 +6,7 @@ export const getImages = (selector: string | string[]): HTMLImageElement[] =>
     ? Array.from(document.querySelectorAll<HTMLImageElement>(selector))
     : selector
         .map((item) =>
-          Array.from(document.querySelectorAll<HTMLImageElement>(item))
+          Array.from(document.querySelectorAll<HTMLImageElement>(item)),
         )
         .flat();
 

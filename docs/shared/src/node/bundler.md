@@ -146,8 +146,8 @@ useCustomDevServer(bundlerOptions, app, {
     chainWebpack: (
       config: WebpackChainConfig,
       isServer: boolean,
-      isBuild: boolean
-    ) => void
+      isBuild: boolean,
+    ) => void,
   ) => void;
   ```
 
@@ -188,7 +188,7 @@ useCustomDevServer(bundlerOptions, app, {
 export const addViteOptimizeDepsInclude: (
   bundlerOptions: unknown,
   app: App,
-  module: string | string[]
+  module: string | string[],
 ) => void;
 
 /**
@@ -197,7 +197,7 @@ export const addViteOptimizeDepsInclude: (
 export const addViteOptimizeDepsExclude: (
   bundlerOptions: unknown,
   app: App,
-  module: string | string[]
+  module: string | string[],
 ) => void;
 
 /**
@@ -206,7 +206,7 @@ export const addViteOptimizeDepsExclude: (
 export const addViteSsrExternal: (
   bundlerOptions: unknown,
   app: App,
-  module: string | string[]
+  module: string | string[],
 ) => void;
 
 /**
@@ -215,7 +215,7 @@ export const addViteSsrExternal: (
 export const addViteSsrNoExternal: (
   bundlerOptions: unknown,
   app: App,
-  module: string | string[]
+  module: string | string[],
 ) => void;
 ```
 
@@ -245,7 +245,7 @@ addViteSsrExternal(bundlerOptions, app, "packageA");
   export const addViteConfig: (
     bundlerOptions: unknown,
     app: App,
-    config: Record<string, unknown>
+    config: Record<string, unknown>,
   ) => void;
   ```
 
@@ -270,7 +270,7 @@ addViteSsrExternal(bundlerOptions, app, "packageA");
   ```ts
   export const mergeViteConfig: (
     defaults: Record<string, any>,
-    overrides: Record<string, any>
+    overrides: Record<string, any>,
   ) => Record<string, any>;
   ```
 

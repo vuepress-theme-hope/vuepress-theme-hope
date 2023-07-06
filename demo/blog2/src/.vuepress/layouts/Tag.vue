@@ -57,7 +57,9 @@ const tagMap = useBlogCategory("tag");
 
     cursor: pointer;
 
-    transition: background 0.3s, color 0.3s;
+    transition:
+      background 0.3s,
+      color 0.3s;
 
     @media (max-width: 419px) {
       font-size: 0.9rem;

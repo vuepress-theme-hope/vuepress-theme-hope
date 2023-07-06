@@ -12,7 +12,7 @@ export const convertOptions = (
         json?: { enable?: boolean; path?: string };
         rss?: { enable?: boolean; path?: string };
       };
-    }
+    },
 ): void => {
   const output = options["output"];
 

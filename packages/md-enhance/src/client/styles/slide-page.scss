@@ -48,7 +48,9 @@
     opacity: 0;
     fill: var(--white);
 
-    transition: left 0.2s ease-out, opacity 0.2s ease-out;
+    transition:
+      left 0.2s ease-out,
+      opacity 0.2s ease-out;
   }
 
   .home-button {
@@ -58,7 +60,9 @@
     opacity: 0;
     fill: var(--white);
 
-    transition: left 0.2s ease-out, opacity 0.2s ease-out;
+    transition:
+      left 0.2s ease-out,
+      opacity 0.2s ease-out;
   }
 
   .menu-button,

@@ -20,7 +20,7 @@ const Notice: FunctionalComponent<{
   const item = config.find((item) =>
     "match" in item
       ? new RegExp(item.match).test(route.path)
-      : startsWith(route.path, item.path)
+      : startsWith(route.path, item.path),
   );
 
   return item ? h(NoticeItem, item) : null;

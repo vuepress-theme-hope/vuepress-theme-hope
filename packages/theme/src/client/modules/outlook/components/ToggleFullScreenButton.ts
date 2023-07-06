@@ -18,7 +18,7 @@ export default defineComponent({
     const { isSupported, isFullscreen, toggle } = useFullscreen();
 
     const fullscreenLocale = computed(
-      () => themeLocale.value.outlookLocales.fullscreen
+      () => themeLocale.value.outlookLocales.fullscreen,
     );
 
     return (): VNode | null =>
@@ -27,7 +27,7 @@ export default defineComponent({
             h(
               "label",
               { class: "full-screen-title", for: "full-screen-switch" },
-              fullscreenLocale.value
+              fullscreenLocale.value,
             ),
             h(
               "button",
@@ -40,7 +40,7 @@ export default defineComponent({
               },
               isFullscreen.value
                 ? h(CancelFullScreenIcon)
-                : h(EnterFullScreenIcon)
+                : h(EnterFullScreenIcon),
             ),
           ])
         : null;

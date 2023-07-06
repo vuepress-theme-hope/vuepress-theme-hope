@@ -52,7 +52,7 @@ redirect({
     Object.fromEntries(
       app.pages
         .filter(({ path }) => path.startsWith("/posts/"))
-        .map(({ path }) => [path.replace(/^\/posts\//, "/post/"), path])
+        .map(({ path }) => [path.replace(/^\/posts\//, "/post/"), path]),
     ),
 });
 ```

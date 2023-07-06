@@ -144,8 +144,10 @@
 
   color: inherit;
 
-  transition: background var(--color-transition),
-    box-shadow var(--color-transition), transform var(--transform-transition);
+  transition:
+    background var(--color-transition),
+    box-shadow var(--color-transition),
+    transform var(--transform-transition);
 
   @media (min-width: hope-config.$pc) {
     flex-basis: calc(25% - 3rem);

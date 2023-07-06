@@ -20,7 +20,9 @@
   font-size: 14px;
   line-height: 18px;
 
-  transition: background var(--vp-ct), color var(--vp-ct);
+  transition:
+    background var(--vp-ct),
+    color var(--vp-ct);
 
   & + & {
     margin-inline-start: 5px;

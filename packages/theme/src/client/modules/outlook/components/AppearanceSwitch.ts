@@ -51,7 +51,7 @@ export default defineComponent({
               display: status.value === "light" ? "block" : "none",
             },
           }),
-        ]
+        ],
       );
   },
 });

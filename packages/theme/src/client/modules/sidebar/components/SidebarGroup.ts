@@ -43,7 +43,7 @@ export default defineComponent({
     const active = computed(() => isActiveSidebarItem(route, props.config));
 
     const exact = computed(() =>
-      isActiveSidebarItem(route, props.config, true)
+      isActiveSidebarItem(route, props.config, true),
     );
 
     return (): VNode => {
@@ -93,7 +93,7 @@ export default defineComponent({
             collapsible
               ? h("span", { class: ["vp-arrow", props.open ? "down" : "end"] })
               : null,
-          ]
+          ],
         ),
 
         props.open || !collapsible

@@ -1,6 +1,6 @@
 export const generateIndexFromHash = (
   content: string,
-  total: number
+  total: number,
 ): number => {
   let hash = 1;
 

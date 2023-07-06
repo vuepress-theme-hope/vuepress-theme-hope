@@ -12,8 +12,8 @@ export const addChainWebpack = (
   chainWebpack: (
     config: WebpackChainConfig,
     isServer: boolean,
-    isBuild: boolean
-  ) => void
+    isBuild: boolean,
+  ) => void,
 ): void => {
   if (getBundlerName(app) === "webpack") {
     const webpackBundlerOptions = <WebpackBundlerOptions>bundlerOptions;

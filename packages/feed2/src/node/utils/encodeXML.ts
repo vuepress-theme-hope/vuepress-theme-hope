@@ -19,8 +19,8 @@ export const encodeXML = (content: ElementCompact): ElementCompact =>
               ([key, value]) => [
                 key,
                 value ? encodeXMLContent(value.toString()) : undefined,
-              ]
-            )
+              ],
+            ),
           ),
         ];
 
@@ -36,5 +36,5 @@ export const encodeXML = (content: ElementCompact): ElementCompact =>
         return [key, encodeXML(value as ElementCompact)];
 
       return [key, encodeXMLContent(String(value))];
-    })
+    }),
   ) satisfies ElementCompact;

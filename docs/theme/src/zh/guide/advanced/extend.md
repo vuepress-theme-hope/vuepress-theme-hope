@@ -55,7 +55,7 @@ export default (options) => ({
     // 比如这里我们将 vuepress-theme-hope 主页组件改为自己主题下的 components/HomePage.vue
     "@theme-hope/components/HomePage": path.resolve(
       __dirname,
-      "./components/HomePage.vue"
+      "./components/HomePage.vue",
     ),
   },
 });
@@ -80,7 +80,7 @@ export default (options) => ({
     // 比如这里我们将 vuepress-theme-hope 主页组件改为自己主题下的 components/HomePage.vue
     "@theme-hope/components/HomePage": path.resolve(
       __dirname,
-      "./components/HomePage.vue"
+      "./components/HomePage.vue",
     ),
   },
 });

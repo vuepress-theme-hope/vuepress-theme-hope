@@ -120,7 +120,7 @@ export const renderRSS = (feed: Feed): string => {
    * @see https://validator.w3.org/feed/docs/rss2.html#comments
    */
   content.rss.channel.category = Array.from(feed.categories).map(
-    (category) => ({ _text: category })
+    (category) => ({ _text: category }),
   );
 
   /**

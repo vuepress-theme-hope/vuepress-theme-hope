@@ -52,7 +52,7 @@ const Badge: FunctionalComponent<
         backgroundColor: color ?? false,
       },
     },
-    slots.default?.() || text
+    slots.default?.() || text,
   );
 
 Badge.displayName = "Badge";

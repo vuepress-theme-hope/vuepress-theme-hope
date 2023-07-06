@@ -19,7 +19,7 @@ const a = 1;
 \`\`\`
 
 :::
-    `)
+    `),
     ).toMatchSnapshot();
 
     expect(
@@ -30,7 +30,7 @@ const a = 1;
 const a = 1;
 \`\`\`
 :::
-    `)
+    `),
     ).toMatchSnapshot();
   });
 
@@ -52,7 +52,7 @@ const a = 1;
 \`\`\`
 
 :::
-`)
+`),
     ).toMatchSnapshot();
 
     expect(
@@ -67,7 +67,7 @@ const a = 1;
 const a = 1;
 \`\`\`
 :::
-`)
+`),
     ).toMatchSnapshot();
   });
 
@@ -83,7 +83,7 @@ const a = 1;
 \`\`\`
 
 :::
-    `)
+    `),
     ).toMatchSnapshot();
 
     expect(
@@ -94,7 +94,7 @@ const a = 1;
 const a = 1;
 \`\`\`
 :::
-    `)
+    `),
     ).toMatchSnapshot();
 
     expect(
@@ -105,7 +105,7 @@ const a = 1;
 const a = 1;
 \`\`\`
 :::
-    `)
+    `),
     ).toMatchSnapshot();
 
     expect(
@@ -116,7 +116,7 @@ const a = 1;
 const a = 1;
 \`\`\`
 :::
-    `)
+    `),
     ).toMatchSnapshot();
   });
 
@@ -132,7 +132,7 @@ const a = 1;
 \`\`\`
 
 :::
-    `)
+    `),
     ).toMatchSnapshot();
 
     expect(
@@ -143,7 +143,7 @@ const a = 1;
 const a = 1;
 \`\`\`
 :::
-    `)
+    `),
     ).toMatchSnapshot();
 
     expect(
@@ -163,7 +163,7 @@ const a = 1;
 \`\`\`
 
 :::
-    `)
+    `),
     ).toMatchSnapshot();
 
     expect(
@@ -178,7 +178,7 @@ const a = 1;
 const a = 1;
 \`\`\`
 :::
-    `)
+    `),
     ).toMatchSnapshot();
   });
 
@@ -194,7 +194,7 @@ const a = 1;
 \`\`\`
 
 :::
-    `)
+    `),
     ).toMatchSnapshot();
 
     expect(
@@ -205,7 +205,7 @@ const a = 1;
 const a = 1;
 \`\`\`
 :::
-    `)
+    `),
     ).toMatchSnapshot();
 
     expect(
@@ -225,7 +225,7 @@ const a = 1;
 \`\`\`
 
 :::
-    `)
+    `),
     ).toMatchSnapshot();
 
     expect(
@@ -240,7 +240,7 @@ const a = 1;
 const a = 1;
 \`\`\`
 :::
-    `)
+    `),
     ).toMatchSnapshot();
   });
 
@@ -264,7 +264,7 @@ const a = 1;
 \`\`\`
 
 :::
-    `)
+    `),
     ).toMatchSnapshot();
 
     expect(
@@ -281,7 +281,7 @@ const a = 1;
 const a = 1;
 \`\`\`
 :::
-    `)
+    `),
     ).toMatchSnapshot();
 
     expect(
@@ -309,7 +309,7 @@ const a = 1;
 Another text again
 
 :::
-    `)
+    `),
     ).toMatchSnapshot();
 
     expect(
@@ -328,7 +328,7 @@ const a = 1;
 \`\`\`
 Another text again
 :::
-    `)
+    `),
     ).toMatchSnapshot();
   });
 
@@ -347,7 +347,7 @@ const a = 1;
 @tab:active ts
 @[code](./not-exist.spec.ts)
 :::
-`)
+`),
     ).toMatchSnapshot();
   });
 });

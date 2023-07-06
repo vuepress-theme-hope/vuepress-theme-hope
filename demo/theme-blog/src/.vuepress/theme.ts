@@ -249,5 +249,5 @@ export default hopeTheme(
           : { canonical: "https://theme-hope-blog-demo.vuejs.press" },
     },
   },
-  { custom: true }
+  { custom: true },
 );

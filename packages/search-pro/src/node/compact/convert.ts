@@ -3,7 +3,7 @@ import type { SearchProOptions } from "../options.js";
 
 /** @deprecated */
 export const convertOptions = (
-  options: SearchProOptions & Record<string, unknown>
+  options: SearchProOptions & Record<string, unknown>,
 ): void => {
   deprecatedLogger({
     options,

@@ -19,11 +19,11 @@ export const useLink = (link: string | Ref<string>): LinkOptions => {
   const route = computed(() => resolveRouteWithRedirect(router, unref(link)));
 
   const isActive = computed<boolean>(
-    () => route.value.fullPath === currentRoute.fullPath
+    () => route.value.fullPath === currentRoute.fullPath,
   );
 
   const navigate = (
-    event: MouseEvent = {} as MouseEvent
+    event: MouseEvent = {} as MouseEvent,
   ): Promise<void | NavigationFailure> =>
     guardEvent(event) ? router.push(unref(link)).catch() : Promise.resolve();
 
@@ -64,7 +64,7 @@ export const RouterLink = defineComponent({
           href: linkOptions.href.value,
           onClick: linkOptions.navigate,
         },
-        slots.default?.(linkOptions)
+        slots.default?.(linkOptions),
       );
   },
 });

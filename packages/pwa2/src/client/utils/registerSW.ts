@@ -16,7 +16,7 @@ import type { Hooks } from "register-service-worker";
 export const registerSW = async (
   serviceWorkerPath: string,
   hooks: Hooks = {},
-  showStatus = true
+  showStatus = true,
 ): Promise<void> => {
   const { register } = await import(
     /* webpackChunkName: "register-service-worker" */ "register-service-worker"

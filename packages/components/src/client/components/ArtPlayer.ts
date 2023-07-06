@@ -54,7 +54,7 @@ const SUPPORTED_LANG_CODE = ["zh-cn", "zh-tw"];
 
 type KebabCaseToCamelCase<
   S extends string,
-  Cap extends boolean = false
+  Cap extends boolean = false,
 > = S extends `${infer Head}-${infer Tail}`
   ? `${Cap extends true ? Capitalize<Head> : Head}${KebabCaseToCamelCase<
       Tail,
@@ -183,7 +183,7 @@ export default defineComponent({
     customPlayer: {
       type: Function as PropType<
         (
-          player: Artplayer
+          player: Artplayer,
         ) => Artplayer | void | Promise<Artplayer> | Promise<void>
       >,
 
@@ -236,7 +236,7 @@ export default defineComponent({
               customType[initOptions.type] ??= (
                 video: HTMLVideoElement,
                 src: string,
-                player: Artplayer
+                player: Artplayer,
               ): Promise<void> =>
                 registerMseHls(video, src, (destroy) => {
                   player.on("destroy", destroy);
@@ -247,7 +247,7 @@ export default defineComponent({
               customType[initOptions.type] ??= (
                 video: HTMLVideoElement,
                 src: string,
-                player: Artplayer
+                player: Artplayer,
               ): Promise<void> =>
                 registerMseFlv(video, src, (destroy) => {
                   player.on("destroy", destroy);
@@ -259,7 +259,7 @@ export default defineComponent({
               customType[initOptions.type] ??= (
                 video: HTMLVideoElement,
                 src: string,
-                player: Artplayer
+                player: Artplayer,
               ): Promise<void> =>
                 registerMseDash(video, src, (destroy) => {
                   player.on("destroy", destroy);
@@ -268,14 +268,13 @@ export default defineComponent({
           }
         else
           console.warn(
-            `[components]: ArtPlayer does not support current file type ${initOptions.type}!`
+            `[components]: ArtPlayer does not support current file type ${initOptions.type}!`,
           );
       }
 
       return initOptions;
     };
 
-    // FIXME: Related issue https://github.com/zhw2590582/ArtPlayer/issues/450
     onMounted(async () => {
       const { default: Artplayer } = await import(
         /* webpackChunkName: "artplayer" */ "artplayer"

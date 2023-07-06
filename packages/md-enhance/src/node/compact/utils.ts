@@ -23,7 +23,7 @@ export const deprecatedLogger = ({
         scope ? ` in ${scope}` : ""
       }, please use "${colors.magenta(newOption)}" instead.${
         msg ? `\n${msg}` : ""
-      }`
+      }`,
     );
 
     if (newOption.includes(".")) {
@@ -52,7 +52,7 @@ export const droppedLogger = (
   options: Record<string, unknown>,
   droppedOption: string,
   hint = "",
-  newOption = ""
+  newOption = "",
 ): void => {
   if (droppedOption in options) {
     logger.error(
@@ -60,7 +60,7 @@ export const droppedLogger = (
         newOption
           ? `, please use ${colors.magenta(newOption)} instead.`
           : " and no longer supported"
-      }${hint ? `\n${hint}` : ""}`
+      }${hint ? `\n${hint}` : ""}`,
     );
 
     if (!newOption) delete options[droppedOption];

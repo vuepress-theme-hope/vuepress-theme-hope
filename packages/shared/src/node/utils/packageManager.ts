@@ -27,7 +27,7 @@ const isInstalled = (packageManager: PackageManager): boolean => {
  * @param packageManager package manager
  */
 export const hasGlobalInstallation = (
-  packageManager: PackageManager
+  packageManager: PackageManager,
 ): boolean => {
   const key = `global:${packageManager}`;
 
@@ -53,7 +53,7 @@ export const hasGlobalInstallation = (
  */
 export const getTypeofLockFile = (
   cwd = process.cwd(),
-  deep = true
+  deep = true,
 ): PackageManager | null => {
   const key = `local:${cwd}`;
 
@@ -117,7 +117,7 @@ export const getTypeofLockFile = (
  */
 export const detectPackageManager = (
   cwd = process.cwd(),
-  deep = true
+  deep = true,
 ): PackageManager => {
   const type = getTypeofLockFile(cwd, deep);
 

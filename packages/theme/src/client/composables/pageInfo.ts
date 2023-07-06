@@ -58,7 +58,7 @@ export const usePageCategory = (): ComputedRef<PageCategory[]> => {
         ? inject<CategoryMapRef>(Symbol.for("categoryMap"))?.value.map[name]
             ?.path || ""
         : "",
-    }))
+    })),
   );
 };
 
@@ -72,7 +72,7 @@ export const usePageTag = (): ComputedRef<PageTag[]> => {
       path: ENABLE_BLOG
         ? inject<TagMapRef>(Symbol.for("tagMap"))?.value.map[name]?.path || ""
         : "",
-    }))
+    })),
   );
 };
 
@@ -124,7 +124,7 @@ export const usePageInfo = (): {
         readingTimeLocale: readingTimeLocale.value,
         pageview:
           "pageview" in frontmatter.value ? frontmatter.value.pageview : true,
-      }
+      },
   );
 
   const items = computed(() =>
@@ -132,7 +132,7 @@ export const usePageInfo = (): {
       ? frontmatter.value.pageInfo
       : "pageInfo" in themeLocale.value
       ? themeLocale.value.pageInfo
-      : null
+      : null,
   );
 
   return { info, items };

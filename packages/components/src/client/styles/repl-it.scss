@@ -21,7 +21,9 @@
     font-size: 18;
     line-height: 1.5;
 
-    transition: background 0.3s ease, color 0.3s ease;
+    transition:
+      background 0.3s ease,
+      color 0.3s ease;
 
     &:hover {
       background: var(--vp-tc);

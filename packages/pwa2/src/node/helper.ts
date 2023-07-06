@@ -8,7 +8,7 @@ const appendBaseHelper = (base: string, link: string): string =>
 
 export const appendBaseToManifest = (
   base: string,
-  manifest: ManifestOption
+  manifest: ManifestOption,
 ): ManifestOption => {
   if (manifest.icons)
     manifest.icons = manifest.icons.map((icon) => ({

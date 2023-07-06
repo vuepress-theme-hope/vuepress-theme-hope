@@ -13,7 +13,7 @@ export const path2Lang = (path = "", debug = false): HopeLang => {
 
   if (debug)
     console.warn(
-      `${path} isn’t assign with a lang, and will return "en-US" instead.`
+      `${path} isn’t assign with a lang, and will return "en-US" instead.`,
     );
 
   return "en-US";
@@ -108,7 +108,7 @@ export const getLocales = <T extends LocaleData>({
           deepAssign(
             {},
             defaultLocaleData || defaultLocalesConfig[rootPath] || {},
-            userLocalesConfig[localePath] || {}
+            userLocalesConfig[localePath] || {},
           ),
         ];
       }),
@@ -117,7 +117,7 @@ export const getLocales = <T extends LocaleData>({
       deepAssign(
         {},
         defaultLocalesConfig[rootPath],
-        userLocalesConfig["/"] || userLocalesConfig[rootPath] || {}
+        userLocalesConfig["/"] || userLocalesConfig[rootPath] || {},
       ),
     ],
   ]);

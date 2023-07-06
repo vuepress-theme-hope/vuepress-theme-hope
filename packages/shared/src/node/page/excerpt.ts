@@ -51,7 +51,7 @@ export interface PageExcerptOptions {
 const handleNode = (
   node: AnyNode,
   base: string,
-  isCustomElement: (tagName: string) => boolean
+  isCustomElement: (tagName: string) => boolean,
 ): AnyNode | null => {
   if (node.type === "tag") {
     // image using relative urls shall be dropped
@@ -65,7 +65,7 @@ const handleNode = (
     // toc should be dropped
     if (
       [node.attribs["class"], node.attribs["id"]].some((item) =>
-        ["table-of-contents", "toc"].includes(item)
+        ["table-of-contents", "toc"].includes(item),
       )
     )
       return null;
@@ -84,7 +84,7 @@ const handleNode = (
           (child) =>
             child.type !== "tag" ||
             child.tagName !== "a" ||
-            child.attribs["class"] !== "header-anchor"
+            child.attribs["class"] !== "header-anchor",
         );
       }
 
@@ -120,7 +120,7 @@ const handleNode = (
 const handleNodes = (
   nodes: AnyNode[] | null,
   base: string,
-  isCustomElement: (tagName: string) => boolean
+  isCustomElement: (tagName: string) => boolean,
 ): AnyNode[] =>
   isArray(nodes)
     ? nodes
@@ -137,7 +137,7 @@ export const getPageExcerpt = (
     isCustomElement = (): boolean => false,
     excerptSeparator = "<!-- more -->",
     excerptLength = 300,
-  }: PageExcerptOptions = {}
+  }: PageExcerptOptions = {},
 ): string => {
   // get page content
   const { excerpt } = matter(content, {
@@ -155,11 +155,11 @@ export const getPageExcerpt = (
         filePath,
         filePathRelative,
         frontmatter: { ...frontmatter },
-      }
+      },
     );
 
     return $.html(
-      handleNodes($.parseHTML(renderedContent), base, isCustomElement)
+      handleNodes($.parseHTML(renderedContent), base, isCustomElement),
     );
   } else if (excerptLength > 0) {
     let excerpt = "";

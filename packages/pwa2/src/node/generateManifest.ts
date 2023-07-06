@@ -9,7 +9,7 @@ import type { ManifestOption } from "../shared/index.js";
 
 export const getManifest = async (
   app: App,
-  options: PWAOptions
+  options: PWAOptions,
 ): Promise<ManifestOption> => {
   const { dir, siteData } = app;
 
@@ -25,7 +25,7 @@ export const getManifest = async (
         ? await fs.readFile(userManifestPath, "utf8")
         : fs.existsSync(userManifestJSONPath)
         ? await fs.readFile(userManifestJSONPath, "utf8")
-        : "{}"
+        : "{}",
     )
   );
 
@@ -55,7 +55,7 @@ export const getManifest = async (
 
 export const generateManifest = async (
   app: App,
-  manifest: Promise<ManifestOption>
+  manifest: Promise<ManifestOption>,
 ): Promise<void> => {
   logger.load("Generating manifest.webmanifest");
 
@@ -69,7 +69,7 @@ export const generateManifest = async (
   logger.succeed();
   logger.update(
     `Manifest generated and saved to ${colors.cyan(
-      path.relative(process.cwd(), manifestPath)
-    )}!`
+      path.relative(process.cwd(), manifestPath),
+    )}!`,
   );
 };

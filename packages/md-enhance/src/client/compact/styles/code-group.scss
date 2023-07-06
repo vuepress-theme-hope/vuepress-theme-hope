@@ -38,7 +38,9 @@
 
   cursor: pointer;
 
-  transition: background var(--vp-ct), color var(--vp-ct);
+  transition:
+    background var(--vp-ct),
+    color var(--vp-ct);
 
   &:hover {
     background: var(--code-tabs-nav-hover-color, #434a57);

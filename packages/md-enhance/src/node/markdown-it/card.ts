@@ -28,8 +28,8 @@ const checkCardProps = (config: unknown): CardOptions | null => {
     return fromEntries(
       entries(config).filter(
         (item): item is [string, string] =>
-          CARD_PROPS.includes(item[0]) && isString(item[1])
-      )
+          CARD_PROPS.includes(item[0]) && isString(item[1]),
+      ),
     ) as unknown as CardOptions;
 
   return null;
@@ -39,7 +39,7 @@ const cardRender = (
   tokens: Token[],
   index: number,
   _options: Options,
-  { filePathRelative }: MarkdownEnv
+  { filePathRelative }: MarkdownEnv,
 ): string => {
   const token = tokens[index];
   const { content, info } = token;
@@ -64,7 +64,7 @@ const cardRender = (
     logger.error(
       `Can not parse card config ${language}${
         filePathRelative ? `, found in ${filePathRelative}` : ""
-      }.`
+      }.`,
     );
 
   const cardData = checkCardProps(config);
@@ -76,7 +76,7 @@ const cardRender = (
       filePathRelative ? ` found in ${filePathRelative}` : ""
     }:
 ${content}
-`
+`,
   );
 
   return "";

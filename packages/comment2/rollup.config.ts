@@ -27,6 +27,6 @@ export default [
         "vuepress-plugin-comment2/provider",
       ],
       copy: [["client/styles", "client"]],
-    }
+    },
   ),
 ];

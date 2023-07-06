@@ -21,6 +21,6 @@ export default [
       resolve: true,
       external: ["@vuepress/client", "fflate/browser", "vue", "vue-router"],
       copy: [["client/styles", "client"]],
-    }
+    },
   ),
 ];

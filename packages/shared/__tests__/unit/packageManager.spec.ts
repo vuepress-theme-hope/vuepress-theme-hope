@@ -18,19 +18,19 @@ it("Should detect global package manager", () => {
 describe("Should detect lockfile", () => {
   it("Should be npm", () => {
     expect(
-      detectPackageManager(path.resolve(fixtures, "lock-file/npm"))
+      detectPackageManager(path.resolve(fixtures, "lock-file/npm")),
     ).toEqual("npm");
   });
 
   it("Should be yarn", () => {
     expect(
-      detectPackageManager(path.resolve(fixtures, "lock-file/yarn"))
+      detectPackageManager(path.resolve(fixtures, "lock-file/yarn")),
     ).toEqual("yarn");
   });
 
   it("Should be pnpm", () => {
     expect(
-      detectPackageManager(path.resolve(fixtures, "lock-file/pnpm"))
+      detectPackageManager(path.resolve(fixtures, "lock-file/pnpm")),
     ).toEqual("pnpm");
   });
 });

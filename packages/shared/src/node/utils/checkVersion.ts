@@ -57,8 +57,8 @@ export const checkVersion = (app: App, name: string, range = "v2"): boolean => {
 
     logger.error(
       `Package ${colors.magenta(name)} requires ${colors.cyan(
-        `vuepress@${range}`
-      )}, but found ${colors.cyan(version)}.`
+        `vuepress@${range}`,
+      )}, but found ${colors.cyan(version)}.`,
     );
 
     return false;

@@ -15,10 +15,10 @@ export const generateEmptyServiceWorker = (
   {
     cachePrefix = "workbox",
     swLocation = "service-worker.js",
-  }: RemovePWAOptions
+  }: RemovePWAOptions,
 ): Promise<void> =>
   fs.writeFile(
     app.dir.dest(removeLeadingSlash(swLocation)),
     getEmptyServiceWorker(cachePrefix),
-    "utf-8"
+    "utf-8",
   );

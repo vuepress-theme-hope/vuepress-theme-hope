@@ -79,9 +79,9 @@ export interface SeoOptions {
     ExtraPageFields extends Record<string | number | symbol, unknown> = Record<
       never,
       never
-    >
+    >,
   >(
-    page: ExtendPage<ExtraPageData, ExtraPageFrontmatter, ExtraPageFields>
+    page: ExtendPage<ExtraPageData, ExtraPageFrontmatter, ExtraPageFields>,
   ) => boolean;
 
   /**
@@ -101,7 +101,7 @@ export interface SeoOptions {
     ExtraPageFields extends Record<string | number | symbol, unknown> = Record<
       never,
       never
-    >
+    >,
   >(
     /**
      * OGP Object inferred by plugin
@@ -116,7 +116,7 @@ export interface SeoOptions {
      */
     page: ExtendPage<ExtraPageData, ExtraPageFrontmatter, ExtraPageFields>,
     /** VuePress App */
-    app: App
+    app: App,
   ) => SeoContent;
 
   /**
@@ -136,7 +136,7 @@ export interface SeoOptions {
     ExtraPageFields extends Record<string | number | symbol, unknown> = Record<
       never,
       never
-    >
+    >,
   >(
     /**
      * JSON-LD Object inferred by plugin
@@ -151,7 +151,7 @@ export interface SeoOptions {
      */
     page: ExtendPage<ExtraPageData, ExtraPageFrontmatter, ExtraPageFields>,
     /** VuePress App */
-    app: App
+    app: App,
   ) => ArticleSchema | BlogPostingSchema | WebPageSchema;
 
   /**
@@ -171,7 +171,7 @@ export interface SeoOptions {
     ExtraPageFields extends Record<string | number | symbol, unknown> = Record<
       never,
       never
-    >
+    >,
   >(
     /**
      * Head tag config
@@ -186,7 +186,7 @@ export interface SeoOptions {
      */
     page: Page<ExtraPageData, ExtraPageFrontmatter, ExtraPageFields>,
     /** VuePress App */
-    app: App
+    app: App,
   ) => void;
 
   /**
@@ -208,8 +208,8 @@ export interface SeoOptions {
         ExtraPageFields extends Record<
           string | number | symbol,
           unknown
-        > = Record<never, never>
+        > = Record<never, never>,
       >(
-        page: ExtendPage<ExtraPageData, ExtraPageFrontmatter, ExtraPageFields>
+        page: ExtendPage<ExtraPageData, ExtraPageFrontmatter, ExtraPageFields>,
       ) => string | null);
 }

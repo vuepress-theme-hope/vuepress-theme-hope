@@ -67,7 +67,9 @@
 
 .hint-container {
   position: relative;
-  transition: background var(--vp-ct), border-color var(--vp-ct),
+  transition:
+    background var(--vp-ct),
+    border-color var(--vp-ct),
     color var(--vp-ct);
 
   @media print {
@@ -238,7 +240,9 @@
   background: var(--detail-bg-color);
   color: var(--detail-text-color);
 
-  transition: background var(--vp-tt), color var(--vp-tt);
+  transition:
+    background var(--vp-tt),
+    color var(--vp-tt);
 
   @media print {
     display: none;
@@ -315,7 +319,9 @@
     &::before {
       border-radius: 50%;
       background: #ccc;
-      transition: background var(--vp-ct), transform var(--vp-tt);
+      transition:
+        background var(--vp-ct),
+        transform var(--vp-tt);
 
       #{hope-config.$dark-selector} & {
         background: #555;

@@ -89,7 +89,7 @@ export default defineComponent({
       giscusOptions.repo &&
         giscusOptions.repoId &&
         giscusOptions.category &&
-        giscusOptions.categoryId
+        giscusOptions.categoryId,
     );
 
     const { repo, repoId, category, categoryId } = giscusOptions;
@@ -127,7 +127,7 @@ export default defineComponent({
           strict: giscusOptions.strict === false ? "0" : "1",
           loading: giscusOptions.lazyLoading === false ? "eager" : "lazy",
           emitMetadata: "0",
-        }
+        },
     );
 
     onMounted(async () => {
@@ -146,7 +146,7 @@ export default defineComponent({
                 { "input-top": giscusOptions.inputPosition !== "bottom" },
               ],
             },
-            loaded.value ? h("giscus-widget", config.value) : h(LoadingIcon)
+            loaded.value ? h("giscus-widget", config.value) : h(LoadingIcon),
           )
         : null;
   },

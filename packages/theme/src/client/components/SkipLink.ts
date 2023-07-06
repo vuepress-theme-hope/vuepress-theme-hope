@@ -25,7 +25,7 @@ export default defineComponent({
 
     const focusMainContent = ({ target }: Event): void => {
       const el = document.querySelector(
-        (target as HTMLAnchorElement).hash
+        (target as HTMLAnchorElement).hash,
       ) as HTMLAnchorElement;
 
       if (el) {
@@ -44,7 +44,7 @@ export default defineComponent({
     onMounted(() => {
       watch(
         () => page.value.path,
-        () => skipToMainContent.value!.focus()
+        () => skipToMainContent.value!.focus(),
       );
     });
 
@@ -60,7 +60,7 @@ export default defineComponent({
           class: "vp-skip-link sr-only",
           onClick: focusMainContent,
         },
-        themeLocale.value.routeLocales.skipToContent
+        themeLocale.value.routeLocales.skipToContent,
       ),
     ];
   },

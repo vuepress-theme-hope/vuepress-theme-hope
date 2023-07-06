@@ -136,7 +136,7 @@ corepack prepare pnpm@latest --activate
      └── shared → 客户端和 Node.js 的共享文件
 ```
 
-VuePress 同时运行在客户端和 Node 端。 Node 侧有像 `fs` 这样的 node 模块，而客户端运行在有` document``windows``navigator `等全局变量的浏览器中，你应该清楚一段代码运行在哪里。
+VuePress 同时运行在客户端和 Node 端。 Node 侧有像 `fs` 这样的 node 模块，而客户端运行在有`document``windows``navigator`等全局变量的浏览器中，你应该清楚一段代码运行在哪里。
 
 - `client` 目录存储在浏览器中运行的代码
 - `node` 目录存储在 Node.js 中运行的代码

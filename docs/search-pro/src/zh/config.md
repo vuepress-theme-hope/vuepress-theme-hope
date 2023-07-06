@@ -214,7 +214,7 @@ export default defineUserConfig({
      * 用于处理或规范索引字段中的术语的函数。
      */
     processTerm?: (
-      term: string
+      term: string,
     ) => string | string[] | null | undefined | false;
   }
   ```
@@ -237,7 +237,7 @@ export default defineUserConfig({
      * 用于处理或规范索引字段中的术语的函数。
      */
     processTerm?: (
-      term: string
+      term: string,
     ) => string | string[] | null | undefined | false;
   }
   ```
@@ -395,12 +395,12 @@ export interface SearchWorker {
   search: (
     query: string,
     locale: string,
-    searchOptions?: SearchOptions
+    searchOptions?: SearchOptions,
   ) => Promise<SearchResult[]>;
   terminate: () => void;
 }
 
 declare const createSearchWorker: (
-  options: SearchWorkerOptions
+  options: SearchWorkerOptions,
 ) => SearchWorker;
 ```

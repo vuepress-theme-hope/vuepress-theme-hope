@@ -116,7 +116,7 @@ export default defineComponent({
         page.value.title ||
           themeLocale.value.logo ||
           themeLocale.value.repo ||
-          themeLocale.value.navbar
+          themeLocale.value.navbar,
       );
     });
 
@@ -134,7 +134,7 @@ export default defineComponent({
       props.noToc || frontmatter.value.home
         ? false
         : frontmatter.value.toc ||
-          (themeLocale.value.toc !== false && frontmatter.value.toc !== false)
+          (themeLocale.value.toc !== false && frontmatter.value.toc !== false),
     );
 
     const touchStart = { x: 0, y: 0 };
@@ -181,8 +181,8 @@ export default defineComponent({
           lastDistance = distance;
         },
         300,
-        true
-      )
+        true,
+      ),
     );
 
     watch(isMobile, (value) => {
@@ -252,7 +252,7 @@ export default defineComponent({
                       endAfter: () => slots.navbarEndAfter?.(),
                       screenTop: () => slots.navScreenTop?.(),
                       screenBottom: () => slots.navScreenBottom?.(),
-                    }
+                    },
                   )
                 : null,
               // sidebar mask
@@ -262,7 +262,7 @@ export default defineComponent({
                       class: "vp-sidebar-mask",
                       onClick: () => toggleMobileSidebar(false),
                     })
-                  : null
+                  : null,
               ),
               // toggle sidebar button
               h(Transition, { name: "fade" }, () =>
@@ -279,8 +279,8 @@ export default defineComponent({
                           "arrow",
                           isDesktopSidebarCollapsed.value ? "end" : "start",
                         ],
-                      })
-                    )
+                      }),
+                    ),
               ),
               // sidebar
               h(
@@ -294,12 +294,12 @@ export default defineComponent({
                     : {}),
                   top: () => slots.sidebarTop?.(),
                   bottom: () => slots.sidebarBottom?.(),
-                }
+                },
               ),
               slots.default(),
               h(PageFooter),
-            ]
-          )
+            ],
+          ),
       );
   },
 });

@@ -47,14 +47,14 @@ export default defineComponent({
         (frontmatter.value.breadcrumb ||
           (frontmatter.value.breadcrumb !== false &&
             themeLocale.value.breadcrumb !== false)) &&
-        config.value.length > 1
+        config.value.length > 1,
     );
 
     const iconEnable = computed(
       () =>
         frontmatter.value.breadcrumbIcon ||
         (frontmatter.value.breadcrumbIcon !== false &&
-          themeLocale.value.breadcrumbIcon !== false)
+          themeLocale.value.breadcrumbIcon !== false),
     );
 
     const getBreadCrumbConfig = (): void => {
@@ -62,7 +62,7 @@ export default defineComponent({
 
       const breadcrumbConfig = getAncestorLinks(
         page.value.path,
-        routeLocale.value
+        routeLocale.value,
       )
         .map<BreadCrumbConfig | null>(({ link, name }) => {
           const route = routes.find((route) => route.path === link);
@@ -129,17 +129,17 @@ export default defineComponent({
                         h(
                           "span",
                           { property: "name" },
-                          item.title || "Unknown"
+                          item.title || "Unknown",
                         ),
-                      ]
+                      ],
                     ),
                     // meta
                     h("meta", { property: "position", content: index + 1 }),
-                  ]
-                )
-              )
+                  ],
+                ),
+              ),
             )
-          : []
+          : [],
       );
   },
 });

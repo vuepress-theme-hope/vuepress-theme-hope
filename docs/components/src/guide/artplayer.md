@@ -340,7 +340,7 @@ Here is a demo adding DanMuKu plugin:
         fetch(`${DANMAKU_API}/${DANMAKU_ID}.json`).then((res) => res.json()),
       ])
         .then((res) =>
-          res.filter((r) => r.status === "fulfilled").map((r) => r.value)
+          res.filter((r) => r.status === "fulfilled").map((r) => r.value),
         )
         .then((res) =>
           res
@@ -349,9 +349,9 @@ Here is a demo adding DanMuKu plugin:
                 r["code"] !== undefined &&
                 r["code"] === 0 &&
                 r["data"] !== undefined &&
-                r["data"].length > 0
+                r["data"].length > 0,
             )
-            .reduce((acc, cur) => acc.concat(cur["data"]), [])
+            .reduce((acc, cur) => acc.concat(cur["data"]), []),
         ),
   };
 

@@ -22,7 +22,7 @@ import { getAlternateInfo, getCover, getImages, resolveUrl } from "./utils.js";
 export const getOGP = (
   page: ExtendPage,
   options: SeoOptions,
-  app: App
+  app: App,
 ): SeoContent => {
   const {
     isArticle = (page): boolean =>
@@ -97,7 +97,7 @@ export const getOGP = (
 export const getJSONLD = (
   page: ExtendPage,
   options: SeoOptions,
-  app: App
+  app: App,
 ): ArticleSchema | BlogPostingSchema | WebPageSchema => {
   const {
     isArticle = (page): boolean =>
@@ -140,7 +140,7 @@ export const getJSONLD = (
 
 export const getCanonicalLink = (
   page: ExtendPage,
-  options: SeoOptions
+  options: SeoOptions,
 ): string | null =>
   isFunction(options.canonical)
     ? options.canonical(page)
@@ -151,7 +151,7 @@ export const getCanonicalLink = (
 export const getAlternateLinks = (
   page: ExtendPage,
   { hostname }: SeoOptions,
-  app: App
+  app: App,
 ): { lang: string; path: string }[] =>
   getAlternateInfo(page, app).map(({ lang, path }) => ({
     lang,

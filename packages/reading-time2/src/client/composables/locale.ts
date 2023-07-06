@@ -42,6 +42,6 @@ export const useReadingTimeLocale = (): ComputedRef<ReadingTimeLocale> => {
   return computed(() =>
     readingTime.value && readingTimeLocale.value
       ? getReadingTimeLocale(readingTime.value, readingTimeLocale.value)
-      : DEFAULT_LOCALE
+      : DEFAULT_LOCALE,
   );
 };

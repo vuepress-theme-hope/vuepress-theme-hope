@@ -74,13 +74,13 @@ import { PLUGIN_NAME, logger } from "./utils.js";
 export const mdEnhancePlugin =
   (
     options: MarkdownEnhanceOptions = { gfm: true },
-    legacy = true
+    legacy = true,
   ): PluginFunction =>
   (app) => {
     // TODO: Remove this in v2 stable
     if (legacy)
       convertOptions(
-        options as MarkdownEnhanceOptions & Record<string, unknown>
+        options as MarkdownEnhanceOptions & Record<string, unknown>,
       );
 
     checkVersion(app, PLUGIN_NAME, "2.0.0-beta.64");
@@ -89,7 +89,7 @@ export const mdEnhancePlugin =
 
     const getStatus = (
       key: keyof MarkdownEnhanceOptions,
-      gfm = false
+      gfm = false,
     ): boolean =>
       key in options ? Boolean(options[key]) : (gfm && options.gfm) || false;
 
@@ -115,7 +115,7 @@ export const mdEnhancePlugin =
 
     const { enabled: linksCheckEnabled, isIgnoreLink } = getLinksCheckStatus(
       app,
-      options
+      options,
     );
 
     const katexOptions: KatexOptions<MarkdownEnv> = {
@@ -137,7 +137,7 @@ export const mdEnhancePlugin =
           logger.warn(
             `Found unicode character ${token.text} inside tex${
               filePathRelative ? ` in ${colors.cyan(filePathRelative)}` : ""
-            }. You should use ${colors.magenta(`\\text{${token.text}}`)}`
+            }. You should use ${colors.magenta(`\\text{${token.text}}`)}`,
           );
         else
           logger.warn(
@@ -145,7 +145,7 @@ export const mdEnhancePlugin =
               filePathRelative
                 ? `\nFound in ${colors.cyan(filePathRelative)}`
                 : ""
-            }`
+            }`,
           );
       },
       ...(isPlainObject(options.katex) ? options.katex : {}),
@@ -205,7 +205,7 @@ export const mdEnhancePlugin =
           addViteOptimizeDepsExclude(
             bundlerOptions,
             app,
-            "chart.js/auto/auto.mjs"
+            "chart.js/auto/auto.mjs",
           );
           addViteSsrExternal(bundlerOptions, app, "chart.js");
         }
@@ -230,7 +230,7 @@ export const mdEnhancePlugin =
             "reveal.js/dist/reveal.esm.js",
             "reveal.js/plugin/markdown/markdown.esm.js",
             ...revealPlugins.map(
-              (plugin) => `reveal.js/plugin/${plugin}/${plugin}.esm.js`
+              (plugin) => `reveal.js/plugin/${plugin}/${plugin}.esm.js`,
             ),
           ]);
 
@@ -261,7 +261,7 @@ export const mdEnhancePlugin =
         if (imgMarkEnable)
           md.use(
             imgMark,
-            isPlainObject(options.imgMark) ? options.imgMark : {}
+            isPlainObject(options.imgMark) ? options.imgMark : {},
           );
 
         if (getStatus("imgSize")) md.use(imgSize);

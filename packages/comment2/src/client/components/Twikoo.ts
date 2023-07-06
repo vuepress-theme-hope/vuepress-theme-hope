@@ -55,7 +55,7 @@ export default defineComponent({
       watch(
         () => page.value.path,
         () => initTwikoo(),
-        { immediate: true }
+        { immediate: true },
       );
     });
 

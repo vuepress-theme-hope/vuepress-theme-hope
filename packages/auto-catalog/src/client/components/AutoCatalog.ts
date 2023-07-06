@@ -102,7 +102,7 @@ export default defineComponent({
 
           if (base === "/") {
             const otherLocales = keys(siteData.value.locales).filter(
-              (item) => item !== "/"
+              (item) => item !== "/",
             );
 
             // exclude 404 page and other locales
@@ -139,7 +139,7 @@ export default defineComponent({
         .sort(
           (
             { title: titleA, level: levelA, path: pathA, order: orderA },
-            { title: titleB, level: levelB, path: pathB, order: orderB }
+            { title: titleB, level: levelB, path: pathB, order: orderB },
           ) => {
             const level = levelA - levelB;
 
@@ -176,7 +176,7 @@ export default defineComponent({
             if (orderB < 0) return orderA - orderB;
 
             return 1;
-          }
+          },
         )
         .forEach((info) => {
           const { base, level } = info;
@@ -195,12 +195,12 @@ export default defineComponent({
 
             default: {
               const grandParent = result.find(
-                (item) => item.path === base.replace(/\/[^/]+\/$/, "/")
+                (item) => item.path === base.replace(/\/[^/]+\/$/, "/"),
               );
 
               if (grandParent) {
                 const parent = grandParent.children?.find(
-                  (item) => item.path === base
+                  (item) => item.path === base,
                 );
 
                 if (parent) (parent.children ??= []).push(info);
@@ -238,14 +238,14 @@ export default defineComponent({
                         class: "header-anchor",
                         "aria-hidden": true,
                       },
-                      "#"
+                      "#",
                     ),
                     h(VPLink, { class: "vp-catalog-title", to: path }, () => [
                       props.index ? `${mainIndex + 1}.` : null,
                       icon && iconComponent ? h(iconComponent, { icon }) : null,
                       title || path,
                     ]),
-                  ]
+                  ],
                 ),
                 children.length
                   ? h(
@@ -266,7 +266,7 @@ export default defineComponent({
                                 h(
                                   "a",
                                   { href: `#${title}`, class: "header-anchor" },
-                                  "#"
+                                  "#",
                                 ),
                                 h(
                                   VPLink,
@@ -279,9 +279,9 @@ export default defineComponent({
                                       ? h(iconComponent, { icon })
                                       : null,
                                     title || path,
-                                  ]
+                                  ],
                                 ),
-                              ]
+                              ],
                             ),
                             children.length
                               ? h(
@@ -305,16 +305,16 @@ export default defineComponent({
                                             ? h(iconComponent, { icon })
                                             : null,
                                           title || path,
-                                        ]
-                                      )
-                                  )
+                                        ],
+                                      ),
+                                  ),
                                 )
                               : null,
-                          ])
-                      )
+                          ]),
+                      ),
                     )
                   : null,
-              ]
+              ],
             )
           : h("p", { class: "vp-empty-catalog" }, locale.value.empty),
       ]);

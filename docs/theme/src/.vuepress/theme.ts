@@ -130,7 +130,7 @@ export default theme("theme", {
           if (file.startsWith("@echarts"))
             return file.replace(
               "@echarts",
-              path.resolve(__dirname, "../echarts")
+              path.resolve(__dirname, "../echarts"),
             );
 
           return file;

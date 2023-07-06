@@ -21,8 +21,8 @@ const searchIndex: SearchIndexStore = fromEntries(
           /** customFields */ "c",
         ],
       }),
-    ]
-  )
+    ],
+  ),
 );
 
 self.onmessage = ({

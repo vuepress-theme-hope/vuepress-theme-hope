@@ -11,7 +11,7 @@ export const logger = new Logger(FEED_GENERATOR);
 
 export const compareDate = (
   dateA: Date | string | undefined,
-  dateB: Date | string | undefined
+  dateB: Date | string | undefined,
 ): number => {
   if (!dateA || !(dateA instanceof Date)) return 1;
   if (!dateB || !(dateB instanceof Date)) return -1;

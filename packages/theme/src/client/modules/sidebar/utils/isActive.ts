@@ -6,7 +6,7 @@ import type { ResolvedSidebarItem } from "../utils/index.js";
 export const isActiveSidebarItem = (
   route: RouteLocationNormalizedLoaded,
   item: ResolvedSidebarItem,
-  exact = false
+  exact = false,
 ): boolean => {
   if ("activeMatch" in item)
     return new RegExp(item.activeMatch).test(route.path);
@@ -21,7 +21,7 @@ export const isActiveSidebarItem = (
 
 export const isMatchedSidebarItem = (
   route: RouteLocationNormalizedLoaded,
-  item: ResolvedSidebarItem
+  item: ResolvedSidebarItem,
 ): boolean => {
   if (item.type === "group")
     return (

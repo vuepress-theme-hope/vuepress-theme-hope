@@ -34,7 +34,7 @@ abc
 \`\`\`
 :::
 `,
-      {}
+      {},
     );
 
     expect(result).toMatchSnapshot();
@@ -87,7 +87,7 @@ const msg = ref('Hello World!')
 \`\`\`
 :::
 `,
-        {}
+        {},
       );
     });
 
@@ -127,7 +127,7 @@ const msg = ref('Hello World!')
 
 :::
 `,
-        {}
+        {},
       );
     });
 
@@ -169,7 +169,7 @@ const msg = ref('Hello World!')
 
 :::
 `,
-        {}
+        {},
       );
     });
   });
@@ -177,7 +177,7 @@ const msg = ref('Hello World!')
   describe("ts preset", () => {
     const markdownItWithTSPreset = MarkdownIt({ linkify: true }).use(
       playground,
-      getTSPlaygroundPreset({})
+      getTSPlaygroundPreset({}),
     );
 
     it("Should work", () => {
@@ -230,7 +230,7 @@ speak(msg);
   describe("vue preset", () => {
     const markdownItWithVuePreset = MarkdownIt({ linkify: true }).use(
       playground,
-      getVuePlaygroundPreset({})
+      getVuePlaygroundPreset({}),
     );
 
     const getVueFiles = (content: string): Record<string, string> | null => {

@@ -20,9 +20,9 @@ const encodeFiles = (files: PlaygroundData["files"]): string =>
       fromEntries(
         entries(files)
           .filter(([, { ext }]) => VUE_SUPPORTED_EXTENSIONS.includes(ext))
-          .map(([key, config]) => [key, config.content])
-      )
-    )
+          .map(([key, config]) => [key, config.content]),
+      ),
+    ),
   ).toString("base64");
 
 export const vuePlayground: PluginSimple = (md) => {

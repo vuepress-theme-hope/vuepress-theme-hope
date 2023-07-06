@@ -142,12 +142,12 @@ export default defineComponent({
             },
             [
               props.tracks.map((track) =>
-                h("track", { ...track, src: getLink(track.src) })
+                h("track", { ...track, src: getLink(track.src) }),
               ),
               h("source", { src: getLink(props.src), type: props.type }),
-            ]
+            ],
           ),
-        ]
+        ],
       );
   },
 });

@@ -36,7 +36,9 @@
 
         visibility: hidden;
 
-        transition: left 0.2s ease-in-out, right 0.2s ease-in-out;
+        transition:
+          left 0.2s ease-in-out,
+          right 0.2s ease-in-out;
       }
 
       &.active {

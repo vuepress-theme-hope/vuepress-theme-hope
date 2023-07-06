@@ -24,7 +24,7 @@ export const AVAILABLE_COMPONENTS: AvailableComponent[] = [
 ];
 
 export const CLIENT_FOLDER = ensureEndingSlash(
-  path.resolve(__dirname, "../client")
+  path.resolve(__dirname, "../client"),
 );
 
 export const PLUGIN_NAME = "vuepress-plugin-components";

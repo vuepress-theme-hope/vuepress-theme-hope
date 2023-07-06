@@ -9,6 +9,6 @@ export default [
     {
       external: ["photoswipe"],
       copy: [["client/styles", "client"]],
-    }
+    },
   ),
 ];

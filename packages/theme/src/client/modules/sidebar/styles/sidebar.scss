@@ -21,8 +21,10 @@
 
   font-size: 0.94rem;
 
-  transition: background var(--color-transition),
-    box-shadow var(--color-transition), padding var(--transform-transition),
+  transition:
+    background var(--color-transition),
+    box-shadow var(--color-transition),
+    padding var(--transform-transition),
     transform var(--transform-transition);
 
   backdrop-filter: saturate(150%) blur(12px);

@@ -21,7 +21,7 @@ export type TimelinesRef = ComputedRef<{
 }>;
 
 export const timelinesSymbol: InjectionKey<TimelinesRef> = Symbol(
-  __VUEPRESS_DEV__ ? "timelines" : ""
+  __VUEPRESS_DEV__ ? "timelines" : "",
 );
 
 /**

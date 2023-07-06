@@ -35,7 +35,7 @@ const DROPPED_FRONTMATTER_OPTIONS: [string, string][] = [
  */
 export const convertFrontmatter = (
   frontmatter: Record<string, unknown>,
-  filePathRelative: string | null = null
+  filePathRelative: string | null = null,
 ): ThemePageFrontmatter & Record<string, unknown> => {
   DEPRECATED_FRONTMATTER_OPTIONS.forEach(([deprecatedOption, newOption]) =>
     deprecatedLogger({
@@ -43,24 +43,24 @@ export const convertFrontmatter = (
       deprecatedOption,
       newOption,
       scope: `${filePathRelative || ""} frontmatter`,
-    })
+    }),
   );
 
   DROPPED_FRONTMATTER_OPTIONS.forEach((item) =>
     droppedLogger(
       frontmatter,
       item[0],
-      `${item[1]}${filePathRelative ? ` (found in ${filePathRelative})` : ""}`
-    )
+      `${item[1]}${filePathRelative ? ` (found in ${filePathRelative})` : ""}`,
+    ),
   );
 
   if ("meta" in frontmatter) {
     logger.warn(
       `${colors.magenta(
-        "meta"
+        "meta",
       )} in frontmatter is deprecated in V2, please use ${colors.magenta(
-        "head"
-      )} instead.${filePathRelative ? `Found in ${filePathRelative}` : ""}`
+        "head",
+      )} instead.${filePathRelative ? `Found in ${filePathRelative}` : ""}`,
     );
 
     frontmatter["head"] = [
@@ -74,10 +74,10 @@ export const convertFrontmatter = (
   if ("canonicalUrl" in frontmatter) {
     logger.warn(
       `${colors.magenta(
-        "canonicalUrl"
+        "canonicalUrl",
       )} in frontmatter is deprecated, please use ${colors.magenta(
-        "head"
-      )} instead.${filePathRelative ? `Found in ${filePathRelative}` : ""}`
+        "head",
+      )} instead.${filePathRelative ? `Found in ${filePathRelative}` : ""}`,
     );
 
     frontmatter["head"] = [
@@ -92,10 +92,10 @@ export const convertFrontmatter = (
     if (frontmatter["layout"] === "Blog") {
       logger.warn(
         `${colors.magenta(
-          "layout: Blog"
+          "layout: Blog",
         )} in frontmatter is deprecated, please use ${colors.magenta(
-          "layout: BlogHome"
-        )} instead.${filePathRelative ? `Found in ${filePathRelative}` : ""}`
+          "layout: BlogHome",
+        )} instead.${filePathRelative ? `Found in ${filePathRelative}` : ""}`,
       );
 
       frontmatter["layout"] = "BlogHome";
@@ -110,7 +110,7 @@ export const convertFrontmatter = (
             deprecatedOption,
             newOption,
             scope: `${filePathRelative || ""} frontmatter`,
-          })
+          }),
       );
   }
 

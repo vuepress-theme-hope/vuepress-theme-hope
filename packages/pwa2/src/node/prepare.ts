@@ -5,7 +5,7 @@ import { CLIENT_FOLDER } from "./utils.js";
 
 export const prepareConfigFile = (
   app: App,
-  options: PWAOptions
+  options: PWAOptions,
 ): Promise<string> => {
   let configImport = "";
   let rootComponents = "";
@@ -50,6 +50,6 @@ ${rootComponents
   .join("\n")}
   ],
 });
-`
+`,
   );
 };

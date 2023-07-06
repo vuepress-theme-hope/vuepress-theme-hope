@@ -27,7 +27,7 @@ const AsyncFunction = (async (): Promise<void> => {}).constructor;
 const parseEChartsConfig = (
   config: string,
   type: "js" | "json",
-  myChart: EChartsType
+  myChart: EChartsType,
 ): Promise<EchartsConfig> => {
   if (type === "js") {
     // eslint-disable-next-line
@@ -40,7 +40,7 @@ ${config}
 __echarts_config__={width,height,option};
 }
 return __echarts_config__;
-`
+`,
     );
 
     // eslint-disable-next-line @typescript-eslint/no-unsafe-call
@@ -91,7 +91,7 @@ export default defineComponent({
 
     useEventListener(
       "resize",
-      useDebounceFn(() => chart?.resize(), 100)
+      useDebounceFn(() => chart?.resize(), 100),
     );
 
     onMounted(() => {
@@ -105,7 +105,7 @@ export default defineComponent({
         const { option, ...size } = await parseEChartsConfig(
           atou(props.config),
           props.type,
-          chart
+          chart,
         );
 
         chart.resize(size);

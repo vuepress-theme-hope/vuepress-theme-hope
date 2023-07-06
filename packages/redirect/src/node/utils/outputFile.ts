@@ -10,7 +10,7 @@ export const getLocaleRedirectHTML = (
     localeFallback,
   }: LocaleRedirectConfig,
   availableLocales: string[],
-  base: string
+  base: string,
 ): string => `<!DOCTYPE html>
 <html lang="en">
 <head>
@@ -53,13 +53,13 @@ ${
     
     // default link
     const defaultLink = defaultLocale? \`\${origin}${removeEndingSlash(
-      base
+      base,
     )}\${defaultLocale}\${routePath}\${anchor? \`#\${anchor}\`: ""}\`: null;
 
     // a locale matches
     if (matchedLocalePath) {
       const localeLink = \`\${origin}${removeEndingSlash(
-        base
+        base,
       )}\${matchedLocalePath}\${routePath}\${anchor? \`#\${anchor}\`: ""}\`;
 
       if (availableLocales.includes(matchedLocalePath)) {
@@ -70,7 +70,7 @@ ${
         // locale homepage
         if (defaultBehavior === "homepage") {
           location.href = \`\${origin}${removeEndingSlash(
-            base
+            base,
           )}\${matchedLocalePath}\`;
         }
         // default locale page

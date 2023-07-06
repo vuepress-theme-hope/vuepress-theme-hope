@@ -27,5 +27,5 @@ export default config(
         selector: ".theme-hope-content :not(a) > img:not([no-view])",
       }),
     ],
-  }
+  },
 );

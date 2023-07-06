@@ -92,9 +92,9 @@ export interface AutoCatalogOptions extends DeprecatedAutoCatalogOptions {
     ExtraPageFields extends Record<string | number | symbol, unknown> = Record<
       never,
       never
-    >
+    >,
   >(
-    page: Page<ExtraPageData, ExtraPageFrontmatter, ExtraPageFields>
+    page: Page<ExtraPageData, ExtraPageFrontmatter, ExtraPageFields>,
   ) => string;
 
   /**
@@ -119,9 +119,9 @@ export interface AutoCatalogOptions extends DeprecatedAutoCatalogOptions {
     ExtraPageFields extends Record<string | number | symbol, unknown> = Record<
       never,
       never
-    >
+    >,
   >(
-    page: Page<ExtraPageData, ExtraPageFrontmatter, ExtraPageFields>
+    page: Page<ExtraPageData, ExtraPageFrontmatter, ExtraPageFields>,
   ) => string | null | undefined;
 
   /**
@@ -146,9 +146,9 @@ export interface AutoCatalogOptions extends DeprecatedAutoCatalogOptions {
     ExtraPageFields extends Record<string | number | symbol, unknown> = Record<
       never,
       never
-    >
+    >,
   >(
-    page: Page<ExtraPageData, ExtraPageFrontmatter, ExtraPageFields>
+    page: Page<ExtraPageData, ExtraPageFrontmatter, ExtraPageFields>,
   ) => number | null | undefined;
 
   /**
@@ -177,9 +177,9 @@ export interface AutoCatalogOptions extends DeprecatedAutoCatalogOptions {
     ExtraPageFields extends Record<string | number | symbol, unknown> = Record<
       never,
       never
-    >
+    >,
   >(
-    page: Page<ExtraPageData, ExtraPageFrontmatter, ExtraPageFields>
+    page: Page<ExtraPageData, ExtraPageFrontmatter, ExtraPageFields>,
   ) => boolean;
 
   /**

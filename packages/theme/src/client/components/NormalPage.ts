@@ -39,7 +39,7 @@ export default defineComponent({
     const tocEnable = computed(
       () =>
         frontmatter.value.toc ||
-        (frontmatter.value.toc !== false && themeLocale.value.toc !== false)
+        (frontmatter.value.toc !== false && themeLocale.value.toc !== false),
     );
 
     return (): VNode =>
@@ -74,7 +74,7 @@ export default defineComponent({
                   {
                     before: () => slots.tocBefore?.(),
                     after: () => slots.tocAfter?.(),
-                  }
+                  },
                 )
               : null,
             slots.contentBefore?.(),
@@ -88,8 +88,8 @@ export default defineComponent({
                 })
               : null,
             slots.bottom?.(),
-          ]
-        )
+          ],
+        ),
       );
   },
 });

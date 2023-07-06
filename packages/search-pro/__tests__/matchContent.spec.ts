@@ -38,8 +38,8 @@ describe("matchContent", () => {
     expect(
       getMatchedContent(
         "The apple is red, and it's veeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeery delicious",
-        "apple"
-      )
+        "apple",
+      ),
     ).toEqual([
       "The ",
       ["mark", "apple"],
@@ -49,8 +49,8 @@ describe("matchContent", () => {
     expect(
       getMatchedContent(
         "The apple is red, and it's veeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeery delicious. The banana is yellow, and it's veeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeery delicious",
-        "is"
-      )
+        "is",
+      ),
     ).toEqual([
       "The apple ",
       ["mark", "is"],
@@ -62,8 +62,8 @@ describe("matchContent", () => {
     expect(
       getMatchedContent(
         "The apple is red, and it's veeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeery delicious. The banana is yellow, and it's veeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeery delicious",
-        "The"
-      )
+        "The",
+      ),
     ).toEqual([
       ["mark", "The"],
       " apple is red, and i … eeeeeery delicious. ",
@@ -74,8 +74,8 @@ describe("matchContent", () => {
     expect(
       getMatchedContent(
         "The apple is red, and it's veeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeery delicious. The banana is yellow, and it's veeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeery delicious",
-        "delicious"
-      )
+        "delicious",
+      ),
     ).toEqual([
       "… eeeeeeeeeeeeeeeeery ",
       ["mark", "delicious"],
@@ -86,8 +86,8 @@ describe("matchContent", () => {
     expect(
       getMatchedContent(
         "The apple is red, and it's veeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeery delicious. The banana is yellow, and it's veeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeery delicious",
-        "T"
-      )
+        "T",
+      ),
     ).toEqual([
       ["mark", "T"],
       "he apple is red, and …  apple is red, and i",
@@ -102,8 +102,8 @@ describe("matchContent", () => {
     expect(
       getMatchedContent(
         "The apple is red, and it's veeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeery delicious. The banana is yellow, and it's veeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeery delicious",
-        "h"
-      )
+        "h",
+      ),
     ).toEqual([
       "T",
       ["mark", "h"],
@@ -115,8 +115,8 @@ describe("matchContent", () => {
     expect(
       getMatchedContent(
         "The apple is red, and it's veeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeery delicious. The banana is yellow, and it's veeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeery delicious",
-        "Th"
-      )
+        "Th",
+      ),
     ).toEqual([
       ["mark", "Th"],
       "e apple is red, and  … eeeeeery delicious. ",
@@ -127,8 +127,8 @@ describe("matchContent", () => {
     expect(
       getMatchedContent(
         "The apple is red, and it's veeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeery delicious. The banana is yellow, and it's veeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeery delicious",
-        "e"
-      )
+        "e",
+      ),
     ).toEqual([
       "Th",
       ["mark", "e"],
@@ -217,8 +217,8 @@ describe("matchContent", () => {
     expect(
       getMatchedContent(
         "The apple is red, and it's veeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeery delicious. The banana is yellow, and it's veeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeery delicious",
-        "s"
-      )
+        "s",
+      ),
     ).toEqual([
       "The apple i",
       ["mark", "s"],
@@ -236,8 +236,8 @@ describe("matchContent", () => {
     expect(
       getMatchedContent(
         "The apple is red, and it's veeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeery delicious. The banana is yellow, and it's veeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeery delicious",
-        "u"
-      )
+        "u",
+      ),
     ).toEqual([
       "… eeeeeeeeeery delicio",
       ["mark", "u"],
@@ -249,8 +249,8 @@ describe("matchContent", () => {
     expect(
       getMatchedContent(
         "The apple is red, and it's veeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeery delicious. The banana is yellow, and it's veeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeery delicious",
-        "us"
-      )
+        "us",
+      ),
     ).toEqual([
       "… eeeeeeeeeery delicio",
       ["mark", "us"],

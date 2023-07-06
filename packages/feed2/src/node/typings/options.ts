@@ -77,9 +77,9 @@ export interface BaseFeedOptions {
     ExtraPageFields extends Record<string | number | symbol, unknown> = Record<
       never,
       never
-    >
+    >,
   >(
-    page: Page<ExtraPageData, ExtraPageFrontmatter, ExtraPageFields>
+    page: Page<ExtraPageData, ExtraPageFrontmatter, ExtraPageFields>,
   ) => boolean;
 
   /**
@@ -99,10 +99,10 @@ export interface BaseFeedOptions {
     ExtraPageFields extends Record<string | number | symbol, unknown> = Record<
       never,
       never
-    >
+    >,
   >(
     pageA: Page<ExtraPageData, ExtraPageFrontmatter, ExtraPageFields>,
-    pageB: Page<ExtraPageData, ExtraPageFrontmatter, ExtraPageFields>
+    pageB: Page<ExtraPageData, ExtraPageFrontmatter, ExtraPageFields>,
   ) => number;
 
   /**

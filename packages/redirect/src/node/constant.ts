@@ -6,5 +6,5 @@ const __dirname = getDirname(import.meta.url);
 export const PLUGIN_NAME = "vuepress-plugin-redirect";
 
 export const CLIENT_FOLDER = ensureEndingSlash(
-  path.resolve(__dirname, "../client")
+  path.resolve(__dirname, "../client"),
 );

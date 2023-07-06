@@ -26,14 +26,14 @@ export default defineComponent({
     const open = ref(false);
 
     const enableFullScreen = computed(
-      () => !pure.value && themeData.value.fullscreen && isSupported
+      () => !pure.value && themeData.value.fullscreen && isSupported,
     );
 
     watch(
       () => page.value.path,
       () => {
         open.value = false;
-      }
+      },
     );
 
     return (): VNode | null =>
@@ -58,8 +58,8 @@ export default defineComponent({
                   [
                     h(OutlookIcon),
                     h("div", { class: "outlook-dropdown" }, h(OutlookSettings)),
-                  ]
-                )
+                  ],
+                ),
           )
         : null;
   },

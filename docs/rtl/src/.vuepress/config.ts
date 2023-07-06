@@ -20,5 +20,5 @@ export default config(
     },
 
     theme,
-  }
+  },
 );

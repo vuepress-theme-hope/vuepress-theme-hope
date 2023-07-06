@@ -32,7 +32,7 @@ export default defineComponent({
         h(
           "h1",
           { class: "error-title" },
-          themeLocale.value.routeLocales["notFoundTitle"]
+          themeLocale.value.routeLocales["notFoundTitle"],
         ),
         h("p", { class: "error-hint" }, getMsg()),
       ]);

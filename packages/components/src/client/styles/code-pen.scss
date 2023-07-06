@@ -5,7 +5,9 @@
 
   text-align: center;
 
-  transition: background var(--vp-ct), border var(--vp-ct);
+  transition:
+    background var(--vp-ct),
+    border var(--vp-ct);
 
   .codepen-button {
     display: block;
@@ -22,7 +24,10 @@
 
     cursor: pointer;
 
-    transition: background var(--vp-ct), border var(--vp-ct), color var(--vp-ct);
+    transition:
+      background var(--vp-ct),
+      border var(--vp-ct),
+      color var(--vp-ct);
 
     &:hover {
       background: var(--vp-tcl);

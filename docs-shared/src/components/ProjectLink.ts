@@ -32,7 +32,7 @@ const ProjectLink: FunctionalComponent<
       }`,
       target: "_blank",
     },
-    slots.default()
+    slots.default(),
   );
 };
 

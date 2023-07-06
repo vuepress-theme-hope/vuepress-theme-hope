@@ -85,7 +85,7 @@ describe("should generate themeData correctly", () => {
 
     expect(result.locales).toBeTypeOf("object");
     expect(new Set(Object.keys(result.locales))).toEqual(
-      new Set(["/", "/zh/"])
+      new Set(["/", "/zh/"]),
     );
     expect(result.locales["/"].navbar).toEqual(["/", "/guide", "/about"]);
     expect(result.locales["/zh/"].navbar).toEqual([

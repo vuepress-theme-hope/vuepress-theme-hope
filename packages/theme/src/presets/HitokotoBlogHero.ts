@@ -127,7 +127,9 @@ export default defineComponent({
           : null,
       ]),
       h(DropTransition, { appear: true, delay: 0.08 }, () =>
-        props.text ? h("h1", { class: "vp-blog-hero-title" }, props.text) : null
+        props.text
+          ? h("h1", { class: "vp-blog-hero-title" }, props.text)
+          : null,
       ),
       h("div", { class: "hitokoto" }, [
         h("p", { class: "hitokoto-text" }, h("span", display.value)),
@@ -137,7 +139,7 @@ export default defineComponent({
             class: "hitokoto-author",
             style: { opacity: display.value.length > 4 ? 1 : 0 },
           },
-          `——「${author.value}」`
+          `——「${author.value}」`,
         ),
       ]),
     ];

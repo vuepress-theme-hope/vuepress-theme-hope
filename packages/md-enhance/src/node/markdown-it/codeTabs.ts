@@ -27,7 +27,7 @@ ${titles
   .map(
     (title, index) => `\
 <template #title${index}="{ value, isActive }">${title}</template>
-`
+`,
   )
   .join("")}\
 `;

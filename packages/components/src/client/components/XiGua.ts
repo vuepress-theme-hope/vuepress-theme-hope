@@ -89,7 +89,7 @@ export default defineComponent({
       () =>
         `https://www.ixigua.com/iframe/${props.id}?startTime=${
           props.time
-        }&autoplay=${props.autoplay ? 1 : 0}`
+        }&autoplay=${props.autoplay ? 1 : 0}`,
     );
 
     return (): (VNode | null)[] =>
@@ -98,7 +98,7 @@ export default defineComponent({
             h(
               "div",
               { class: "xi-gua-desc" },
-              h("a", { class: "sr-only", href: videoLink.value }, props.title)
+              h("a", { class: "sr-only", href: videoLink.value }, props.title),
             ),
             h("iframe", {
               ref: el,

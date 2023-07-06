@@ -36,7 +36,7 @@ export interface DateInfo {
  */
 export const getDateInfo: (
   date: string | Date | undefined,
-  timezone?: string
+  timezone?: string,
 ) => DateInfo | null;
 ```
 
@@ -112,7 +112,7 @@ getDateInfo("12:34:56", "Asia/Shanghai");
  */
 export const compareDate = (
   dateA: Date | number | string | undefined,
-  dateB: Date | number | string | undefined
+  dateB: Date | number | string | undefined,
 ) => number;
 ```
 

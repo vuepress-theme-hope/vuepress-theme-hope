@@ -37,12 +37,12 @@ export default defineComponent({
       () => route.path,
       (): void => {
         const index = props.config.findIndex((item) =>
-          isMatchedSidebarItem(route, item)
+          isMatchedSidebarItem(route, item),
         );
 
         openGroupIndex.value = index;
       },
-      { immediate: true, flush: "post" }
+      { immediate: true, flush: "post" },
     );
 
     return (): VNode | null =>
@@ -58,9 +58,9 @@ export default defineComponent({
                   open: index === openGroupIndex.value,
                   onToggle: () => toggleGroup(index),
                 })
-              : h(SidebarChild, { config })
-          )
-        )
+              : h(SidebarChild, { config }),
+          ),
+        ),
       );
   },
 });

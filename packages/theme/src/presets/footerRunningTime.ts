@@ -30,7 +30,7 @@ export const setupRunningTimeFooter = (
    *
    * @default false
    */
-  preserveContent = false
+  preserveContent = false,
 ): void => {
   const initialTimeStamp = (
     date instanceof Date ? date : new Date(date)
@@ -78,7 +78,7 @@ export const setupRunningTimeFooter = (
       {
         flush: "post",
         immediate: true,
-      }
+      },
     );
   });
 };

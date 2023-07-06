@@ -24,7 +24,9 @@
   line-height: var(--navbar-line-height);
   white-space: nowrap;
 
-  transition: transform ease-in-out 0.3s, background var(--color-transition),
+  transition:
+    transform ease-in-out 0.3s,
+    background var(--color-transition),
     box-shadow var(--color-transition);
 
   backdrop-filter: saturate(150%) blur(12px);

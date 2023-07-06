@@ -27,13 +27,15 @@ export default defineComponent({
     const ready = ref(false);
 
     const sizes = computed(() =>
-      isMobile.value ? { width: 220, height: 220 } : { width: 300, height: 300 }
+      isMobile.value
+        ? { width: 220, height: 220 }
+        : { width: 300, height: 300 },
     );
 
     const renderLogo = async (
       three: typeof Three,
       STLLoaderConstructor: typeof STLLoader,
-      OrbitControlsConstructor: typeof OrbitControls
+      OrbitControlsConstructor: typeof OrbitControls,
     ): Promise<void> => {
       const { width, height } = sizes.value;
 
@@ -52,7 +54,7 @@ export default defineComponent({
       // Lights
       const ambientLight = new three.AmbientLight(
         0xffffff,
-        isDarkmode.value ? 3 : 4
+        isDarkmode.value ? 3 : 4,
       );
       const directionalLight = new three.DirectionalLight(0xffffff, 3);
       const directionalLight2 = new three.DirectionalLight(0xffffff, 3);
@@ -137,7 +139,7 @@ export default defineComponent({
             scene.add(logo1);
 
             resolve();
-          })
+          }),
         ),
         new Promise<void>((resolve) =>
           stlLoader.load(BASE + "logo2.stl", (geometry) => {
@@ -160,7 +162,7 @@ export default defineComponent({
             scene.add(logo2);
 
             resolve();
-          })
+          }),
         ),
       ]);
 
@@ -170,7 +172,7 @@ export default defineComponent({
     onMounted(() =>
       Promise.all([
         import(/* webpackChunkName: "hope-logo" */ "three").then(
-          (m) => m.default || m
+          (m) => m.default || m,
         ),
         import(
           /* webpackChunkName: "hope-logo" */ "three/examples/jsm/controls/OrbitControls.js"
@@ -182,9 +184,9 @@ export default defineComponent({
         void renderLogo(THREE, STLLoader, OrbitControls);
 
         watch([isDarkmode, isMobile], () =>
-          renderLogo(THREE, STLLoader, OrbitControls)
+          renderLogo(THREE, STLLoader, OrbitControls),
         );
-      })
+      }),
     );
 
     return (): (VNode | null)[] => [

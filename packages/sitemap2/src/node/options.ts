@@ -12,10 +12,10 @@ export type ModifyTimeGetter = <
   ExtraPageFields extends Record<string | number | symbol, unknown> = Record<
     never,
     never
-  >
+  >,
 >(
   page: Page<ExtraPageData, ExtraPageFrontmatter, ExtraPageFields>,
-  app: App
+  app: App,
 ) => string;
 
 export interface SitemapOptions {

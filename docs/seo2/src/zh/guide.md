@@ -95,14 +95,14 @@ function ogp<
   ExtraPageFields extends Record<string | number | symbol, unknown> = Record<
     never,
     never
-  >
+  >,
 >(
   /** 插件自动推断的 OGP 对象 */
   ogp: SeoContent,
   /** 页面对象 */
   page: ExtendPage<ExtraPageData, ExtraPageFrontmatter, ExtraPageFields>,
   /** VuePress App */
-  app: App
+  app: App,
 ): SeoContent;
 ```
 
@@ -136,14 +136,14 @@ function jsonLd<
   ExtraPageFields extends Record<string | number | symbol, unknown> = Record<
     never,
     never
-  >
+  >,
 >(
   /** 插件自动推断的 JSON-LD 对象 */
   jsonLD: ArticleJSONLD | null,
   /** 页面对象 */
   page: ExtendPage<ExtraPageData, ExtraPageFrontmatter, ExtraPageFields>,
   /** VuePress App */
-  app: App
+  app: App,
 ): ArticleJSONLD | null;
 ```
 
@@ -187,13 +187,13 @@ function customHead<
   ExtraPageFields extends Record<string | number | symbol, unknown> = Record<
     never,
     never
-  >
+  >,
 >(
   head: HeadConfig[],
   /** 页面对象 */
   page: Page<ExtraPageData, ExtraPageFrontmatter, ExtraPageFields>,
   /** VuePress App */
-  app: App
+  app: App,
 ): void;
 ```
 

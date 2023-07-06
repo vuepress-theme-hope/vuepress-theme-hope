@@ -7,7 +7,7 @@ import { logger } from "../utils.js";
 
 /** @deprecated */
 export const convertOptions = (
-  options: ComponentOptions & Record<string, unknown>
+  options: ComponentOptions & Record<string, unknown>,
 ): void => {
   deprecatedLogger({
     options,
@@ -36,8 +36,8 @@ export const convertOptions = (
     if (isNumber(options.rootComponents.backToTop)) {
       logger.error(
         `"${colors.magenta(
-          "rootComponents.backToTop"
-        )}" no longer support number, please check the docs at https://plugin-components.vuejs.press/guide/backtotop.html.`
+          "rootComponents.backToTop",
+        )}" no longer support number, please check the docs at https://plugin-components.vuejs.press/guide/backtotop.html.`,
       );
       options.rootComponents.backToTop = {
         threshold: options.rootComponents.backToTop,
@@ -47,8 +47,8 @@ export const convertOptions = (
     if (isPlainObject(options.rootComponents.notice)) {
       logger.error(
         `"${colors.magenta(
-          "rootComponents.notice"
-        )}" no longer support object config, please check the docs at https://plugin-components.vuejs.press/guide/notice.html.`
+          "rootComponents.notice",
+        )}" no longer support object config, please check the docs at https://plugin-components.vuejs.press/guide/notice.html.`,
       );
       delete options.rootComponents.notice;
     }
@@ -63,11 +63,11 @@ export const convertOptions = (
   if ((options.components as unknown[])?.includes("Catalog"))
     logger.warn(
       `${colors.cyan(
-        "Catalog"
+        "Catalog",
       )} component is deprecated, please use ${colors.cyan(
-        "AutoCatalog"
+        "AutoCatalog",
       )} component from ${colors.magenta(
-        "vuepress-plugin-auto-catalog"
-      )} instead.`
+        "vuepress-plugin-auto-catalog",
+      )} instead.`,
     );
 };

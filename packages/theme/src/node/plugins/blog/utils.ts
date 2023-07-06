@@ -19,7 +19,7 @@ export const defaultPageSorter = (
     { git: GitData },
     ThemeNormalPageFrontmatter,
     { routeMeta: ArticleInfo }
-  >
+  >,
 ): number => {
   const prevKey = pageA.frontmatter.sticky;
   const nextKey = pageB.frontmatter.sticky;
@@ -31,6 +31,6 @@ export const defaultPageSorter = (
 
   return compareDate(
     pageA.routeMeta[ArticleInfoType.date],
-    pageB.routeMeta[ArticleInfoType.date]
+    pageB.routeMeta[ArticleInfoType.date],
   );
 };

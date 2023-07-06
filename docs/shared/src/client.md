@@ -43,7 +43,7 @@ Get current locale config from locales settings.
 
 ```ts
 export const useLocaleConfig: <T extends LocaleData>(
-  localesConfig: RequiredLocaleConfig<T>
+  localesConfig: RequiredLocaleConfig<T>,
 ) => ComputedRef<T>;
 ```
 
@@ -108,6 +108,6 @@ export const checkIsMacOS: (ua: string) => boolean;
  */
 export const isActiveLink: (
   route: RouteLocationNormalizedLoaded,
-  link?: string
+  link?: string,
 ) => boolean;
 ```

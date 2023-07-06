@@ -81,7 +81,7 @@ export default defineComponent({
       ]
         .map((url) => `@import url("${url}");`)
         .join("\n"),
-      { id: "vidstack-style" }
+      { id: "vidstack-style" },
     );
 
     onMounted(() => defineCustomElements());
@@ -98,7 +98,7 @@ export default defineComponent({
             props.sources.map((source) =>
               isPlainObject(source)
                 ? h("source", { src: source.src, type: source.type })
-                : h("source", source)
+                : h("source", source),
             ),
             h("media-gesture", { event: "pointerup", action: "toggle:paused" }),
             h("media-gesture", {
@@ -110,11 +110,11 @@ export default defineComponent({
               : null,
             props.tracks.map(
               ({ src, label, srclang, kind, default: isDefault }) =>
-                h("track", { src, label, srclang, kind, default: isDefault })
+                h("track", { src, label, srclang, kind, default: isDefault }),
             ),
           ]),
           h("media-community-skin"),
-        ]
+        ],
       );
   },
 });

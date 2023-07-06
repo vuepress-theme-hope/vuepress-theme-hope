@@ -5,7 +5,7 @@ import { sassPalettePlugin } from "./plugin.js";
 
 export const useSassPalettePlugin = (
   app: App,
-  options: SassPaletteOptions
+  options: SassPaletteOptions,
 ): void => {
   const { plugins } = app.pluginApi;
 
@@ -13,7 +13,7 @@ export const useSassPalettePlugin = (
     plugins
       .filter<PluginObject & { id: string }>(
         (plugin): plugin is PluginObject & { id: string } =>
-          plugin.name === `vuepress-plugin-sass-palette`
+          plugin.name === `vuepress-plugin-sass-palette`,
       )
       .every((plugin) => plugin.id !== options.id)
   )
@@ -26,7 +26,7 @@ export const removePalettePlugin = (app: App, id: string): void => {
   const index = plugins
     .filter<PluginObject & { id: string }>(
       (plugin): plugin is PluginObject & { id: string } =>
-        plugin.name === `vuepress-plugin-sass-palette`
+        plugin.name === `vuepress-plugin-sass-palette`,
     )
     .findIndex((plugin) => plugin.id === id);
 

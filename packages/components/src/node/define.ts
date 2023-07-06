@@ -13,7 +13,7 @@ import type { ComponentOptions } from "./options/index.js";
 export const getDefine =
   (
     options: ComponentOptions,
-    legacy: boolean
+    legacy: boolean,
   ): ((app: App) => Record<string, unknown>) =>
   (app) => {
     const { assets, prefix } = options.componentOptions?.fontIcon || {};

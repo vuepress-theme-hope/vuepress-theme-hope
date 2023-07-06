@@ -73,14 +73,14 @@ export default defineComponent({
                     role: path ? "navigation" : "",
                     onClick: (event: Event) => navigate(event, path),
                   },
-                  name
-                )
+                  name,
+                ),
               ),
               h("meta", {
                 property: "keywords",
                 content: props.tag.map(({ name }) => name).join(","),
               }),
-            ]
+            ],
           )
         : null;
   },

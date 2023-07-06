@@ -22,7 +22,7 @@ export const sync = (): Promise<void[]> =>
           new Promise<void>((resolve) => {
             const req = request(
               new URL(
-                `https://registry-direct.npmmirror.com/${content["name"]}/sync?sync_upstream=true`
+                `https://registry-direct.npmmirror.com/${content["name"]}/sync?sync_upstream=true`,
               ),
               {
                 method: "PUT",
@@ -30,7 +30,7 @@ export const sync = (): Promise<void[]> =>
                   // eslint-disable-next-line @typescript-eslint/naming-convention
                   "Content-Length": 0,
                 },
-              }
+              },
             );
 
             req.write("");
@@ -40,9 +40,9 @@ export const sync = (): Promise<void[]> =>
             });
 
             req.end();
-          })
-      )
-    )
+          }),
+      ),
+    ),
   );
 
 const npmmirrorSpinner = ora("Syncing npmmirror.com").start();

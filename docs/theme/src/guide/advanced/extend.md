@@ -53,7 +53,7 @@ export default (options: ThemeOptions) => ({
     // For example, here we change the vuepress-theme-hope HomePage component to components/HomePage.vue under our own theme
     "@theme-hope/components/HomePage": path.resolve(
       __dirname,
-      "./components/HomePage.vue"
+      "./components/HomePage.vue",
     ),
   },
 });
@@ -78,7 +78,7 @@ export default (options) => ({
     // For example, here we change the vuepress-theme-hope HomePage component to components/HomePage.vue under our own theme
     "@theme-hope/components/HomePage": path.resolve(
       __dirname,
-      "./components/HomePage.vue"
+      "./components/HomePage.vue",
     ),
   },
 });

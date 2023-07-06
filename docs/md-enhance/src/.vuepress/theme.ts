@@ -39,7 +39,7 @@ export default theme("md-enhance", {
           if (file.startsWith("@echarts"))
             return file.replace(
               "@echarts",
-              path.resolve(__dirname, "../echarts")
+              path.resolve(__dirname, "../echarts"),
             );
 
           return file;

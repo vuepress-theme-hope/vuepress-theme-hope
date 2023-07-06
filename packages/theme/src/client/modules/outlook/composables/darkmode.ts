@@ -22,7 +22,7 @@ export interface DarkMode {
 }
 
 export const darkModeSymbol: InjectionKey<DarkMode> = Symbol(
-  __VUEPRESS_DEV__ ? "darkMode" : ""
+  __VUEPRESS_DEV__ ? "darkMode" : "",
 );
 
 /**
@@ -41,7 +41,7 @@ export const injectDarkmode = (app: App): void => {
   const isDarkPreferred = usePreferredDark();
   const status = useStorage<DarkmodeStatus>(
     "vuepress-theme-hope-scheme",
-    "auto"
+    "auto",
   );
 
   const config = computed(() => themeData.value.darkmode || "switch");
@@ -91,7 +91,7 @@ export const setupDarkmode = (): void => {
   const updateDOM = (isDark = isDarkmode.value): void =>
     document.documentElement.setAttribute(
       "data-theme",
-      isDark ? "dark" : "light"
+      isDark ? "dark" : "light",
     );
 
   onMounted(() => {

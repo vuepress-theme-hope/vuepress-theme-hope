@@ -3,7 +3,7 @@ import type { SitemapOptions } from "../options.js";
 
 /** @deprecated */
 export const convertOptions = (
-  options: SitemapOptions & Record<string, unknown>
+  options: SitemapOptions & Record<string, unknown>,
 ): void => {
   deprecatedLogger({
     options,

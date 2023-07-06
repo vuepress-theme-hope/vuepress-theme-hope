@@ -22,9 +22,9 @@ export interface CopyrightOptions {
         ExtraPageFields extends Record<
           string | number | symbol,
           unknown
-        > = Record<never, never>
+        > = Record<never, never>,
       >(
-        page: Page<ExtraPageData, ExtraPageFrontmatter, ExtraPageFields>
+        page: Page<ExtraPageData, ExtraPageFrontmatter, ExtraPageFields>,
       ) => string);
 
   /**
@@ -46,9 +46,9 @@ export interface CopyrightOptions {
         ExtraPageFields extends Record<
           string | number | symbol,
           unknown
-        > = Record<never, never>
+        > = Record<never, never>,
       >(
-        page: Page<ExtraPageData, ExtraPageFrontmatter, ExtraPageFields>
+        page: Page<ExtraPageData, ExtraPageFrontmatter, ExtraPageFields>,
       ) => string);
 
   /**

@@ -30,7 +30,7 @@ export default defineComponent({
         h("span", {
           key: isRTL.value ? "on" : "off",
           class: [`fas fa-fw fa-2xl fa-toggle-${isRTL.value ? "on" : "off"}`],
-        })
+        }),
       );
   },
 });

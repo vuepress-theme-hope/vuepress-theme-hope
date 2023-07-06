@@ -8,12 +8,12 @@ import type { SearchOptions } from "../typings/index.js";
 export const getSuggestions = (
   query: string,
   localeIndex: SearchIndex<IndexItem, string>,
-  searchOptions: SearchOptions = {}
+  searchOptions: SearchOptions = {},
 ): string[] => {
   const suggestions = autoSuggest<IndexItem, string>(
     localeIndex,
     query,
-    getSearchOptions(searchOptions)
+    getSearchOptions(searchOptions),
   );
 
   return suggestions.map(({ suggestion }) => suggestion);

@@ -99,7 +99,7 @@ export default defineComponent({
                   isEncrypted ? h(LockIcon) : null,
                   type === PageType.slide ? h(SlideIcon) : null,
                   h("span", { property: "headline" }, title),
-                ])
+                ]),
             ),
             slots.excerpt?.({ excerpt }) ||
               (excerpt
@@ -114,8 +114,8 @@ export default defineComponent({
                 info,
                 ...(items.value ? { items: items.value } : {}),
               }),
-          ]
-        )
+          ],
+        ),
       );
     };
   },

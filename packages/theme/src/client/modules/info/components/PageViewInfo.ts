@@ -46,7 +46,7 @@ export default defineComponent({
 
         if (count && !isNaN(Number(count))) pageViews.value = Number(count);
       },
-      { childList: true }
+      { childList: true },
     );
 
     return (): VNode | null =>
@@ -73,9 +73,9 @@ export default defineComponent({
                     ? props.pageview
                     : withBase(route.path),
                 },
-                "..."
+                "...",
               ),
-            ]
+            ],
           )
         : null;
   },

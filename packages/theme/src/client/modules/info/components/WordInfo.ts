@@ -63,7 +63,7 @@ export default defineComponent({
                 property: "wordCount",
                 content: props.readingTime?.words,
               }),
-            ]
+            ],
           )
         : null;
   },

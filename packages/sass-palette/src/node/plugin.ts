@@ -28,12 +28,12 @@ export const sassPalettePlugin =
       config = `.vuepress/styles/${id}-config.scss`,
       defaultConfig = path.resolve(
         __dirname,
-        "../../styles/default/config.scss"
+        "../../styles/default/config.scss",
       ),
       palette = `.vuepress/styles/${id}-palette.scss`,
       defaultPalette = path.resolve(
         __dirname,
-        "../../styles/default/palette.scss"
+        "../../styles/default/palette.scss",
       ),
       generator = path.resolve(__dirname, "../../styles/empty.scss"),
       style = "",
@@ -53,21 +53,21 @@ export const sassPalettePlugin =
       alias: {
         [`@sass-palette/helper`]: path.resolve(
           __dirname,
-          "../../styles/helper.scss"
+          "../../styles/helper.scss",
         ),
         [`@sass-palette/${id}-config`]: app.dir.temp(
-          `sass-palette/${id}-config.scss`
+          `sass-palette/${id}-config.scss`,
         ),
         [`@sass-palette/${id}-inject`]: app.dir.temp(
-          `sass-palette/${id}-inject.scss`
+          `sass-palette/${id}-inject.scss`,
         ),
         [`@sass-palette/${id}-palette`]: app.dir.temp(
-          `sass-palette/${id}-palette.scss`
+          `sass-palette/${id}-palette.scss`,
         ),
         ...(style
           ? {
               [`@sass-palette/${id}-style`]: app.dir.temp(
-                `sass-palette/${id}-style.scss`
+                `sass-palette/${id}-style.scss`,
               ),
             }
           : {}),

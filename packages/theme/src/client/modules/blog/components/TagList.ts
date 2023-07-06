@@ -36,9 +36,9 @@ export default defineComponent({
             h(VPLink, { to: path }, () => [
               tag,
               h("span", { class: "tag-num" }, items.length),
-            ])
-          )
-        )
+            ]),
+          ),
+        ),
       );
   },
 });

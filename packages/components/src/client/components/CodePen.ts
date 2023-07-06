@@ -85,7 +85,7 @@ export default defineComponent({
     } => {
       const result =
         /(?:^(?:https?:)?\/\/codepen.io\/|^\/|^)(.*?)\/(?:pen|embed)\/(.*?)\/?$/.exec(
-          props.link
+          props.link,
         );
 
       return {
@@ -108,7 +108,7 @@ export default defineComponent({
           "pen-title": props.title,
           height: props.height,
           preview: props.status === "preview" ? "true" : "",
-        }
+        },
     );
 
     onMounted(() => {
@@ -133,7 +133,7 @@ export default defineComponent({
                     renderCodePen(options.value, `.codepen-${slugHash.value}`);
                   },
                 },
-                "Run Code"
+                "Run Code",
               )
             : null,
           h("span", [
@@ -145,7 +145,7 @@ export default defineComponent({
             h("a", { href: `https://codepen.io` }, ["CodePen"]),
             ".",
           ]),
-        ]
+        ],
       );
   },
 });

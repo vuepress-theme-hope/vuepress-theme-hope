@@ -302,20 +302,20 @@ describe("compareDate()", () => {
     expect(
       compareDate(
         new Date("2020-04-04T00:00:00.000Z"),
-        new Date("2020-05-05T00:00:00.000Z")
-      )
+        new Date("2020-05-05T00:00:00.000Z"),
+      ),
     ).toBeGreaterThan(0);
     expect(
       compareDate(
         new Date("2020-05-05T00:00:00.000Z"),
-        new Date("2020-04-04T00:00:00.000Z")
-      )
+        new Date("2020-04-04T00:00:00.000Z"),
+      ),
     ).toBeLessThan(0);
     expect(
       compareDate(
         new Date("2020-04-04T00:00:00.000Z"),
-        new Date("2020-04-04T00:00:00.000Z")
-      )
+        new Date("2020-04-04T00:00:00.000Z"),
+      ),
     ).toBe(0);
   });
 });

@@ -51,7 +51,7 @@ export const appendSEO = (app: App, options: SeoOptions): void => {
       }
 
       page.frontmatter.head = head;
-    }
+    },
   );
 };
 

@@ -36,7 +36,7 @@ export default defineComponent({
     const config = toRef(props, "config");
 
     const dropdownAriaLabel = computed(
-      () => config.value.ariaLabel || config.value.text
+      () => config.value.ariaLabel || config.value.text,
     );
 
     const open = ref(false);
@@ -45,7 +45,7 @@ export default defineComponent({
       () => page.value.path,
       () => {
         open.value = false;
-      }
+      },
     );
 
     /**
@@ -105,7 +105,7 @@ export default defineComponent({
                                     open.value = false;
                                 },
                               })
-                            : h("span", child.text)
+                            : h("span", child.text),
                         ),
                         h(
                           "ul",
@@ -124,9 +124,9 @@ export default defineComponent({
                                   )
                                     open.value = false;
                                 },
-                              })
-                            )
-                          )
+                              }),
+                            ),
+                          ),
                         ),
                       ]
                     : h(AutoLink, {
@@ -134,11 +134,11 @@ export default defineComponent({
                         onFocusout: () => {
                           if (isLastChild) open.value = false;
                         },
-                      })
+                      }),
                 );
-              })
+              }),
             ),
-          ]
+          ],
         ),
       ]);
   },

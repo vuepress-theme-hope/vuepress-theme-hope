@@ -16,7 +16,7 @@ let vuePlaygroundOptions: VuePlaygroundOptions = DEFAULT_VUE_PLAYGROUND_OPTIONS;
 const vuePlaygroundSymbol = Symbol(__VUEPRESS_DEV__ ? "vuePlayground" : "");
 
 export const defineVuePlaygroundConfig = (
-  options: VuePlaygroundOptions
+  options: VuePlaygroundOptions,
 ): void => {
   vuePlaygroundOptions = options;
 };

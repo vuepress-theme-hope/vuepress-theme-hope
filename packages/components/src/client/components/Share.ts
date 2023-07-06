@@ -102,7 +102,7 @@ export default defineComponent({
             ? item.name && item.link
               ? item
               : null
-            : shareServices.find(({ name }) => name === item)
+            : shareServices.find(({ name }) => name === item),
         )
         .filter((item): item is ShareServiceOptions => item != null);
     });
@@ -141,8 +141,8 @@ export default defineComponent({
             config: item,
             ...shareData.value,
             plain: !props.colorful,
-          })
-        )
+          }),
+        ),
       );
     };
   },

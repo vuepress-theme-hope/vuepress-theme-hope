@@ -9,7 +9,7 @@ const locale: Partial<Locale> = {
   weekdaysMin: "Mg._Sn._Sl._Rb._Km._Jm._Sb.".split("_"),
   months:
     "Januari_Februari_Maret_April_Mei_Juni_Juli_Agustus_September_Oktober_November_Desember".split(
-      "_"
+      "_",
     ),
   monthsShort:
     "Jan._Feb._Mar._Apr._Mei_Jun._Jul._Agu._Sep._Okt._Nov._Des.".split("_"),

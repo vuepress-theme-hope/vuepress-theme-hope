@@ -34,7 +34,7 @@ export default defineComponent({
       }
 
       classes.remove(
-        ...themes.filter((themeColorClass) => themeColorClass !== theme)
+        ...themes.filter((themeColorClass) => themeColorClass !== theme),
       );
 
       classes.add(theme);
@@ -54,7 +54,7 @@ export default defineComponent({
           h("span", {
             class: "theme-color",
             onClick: () => setThemeColor(),
-          })
+          }),
         ),
         entries(props.themeColor).map(([color, value]) =>
           h(
@@ -62,8 +62,8 @@ export default defineComponent({
             h("span", {
               style: { background: value },
               onClick: () => setThemeColor(color),
-            })
-          )
+            }),
+          ),
         ),
       ]);
   },

@@ -32,11 +32,11 @@ export default defineComponent({
       () =>
         blogOptions.value.name ||
         getAuthor(themeLocale.value.author)[0]?.name ||
-        siteLocale.value.title
+        siteLocale.value.title,
     );
 
     const bloggerAvatar = computed(
-      () => blogOptions.value.avatar || themeLocale.value.logo
+      () => blogOptions.value.avatar || themeLocale.value.logo,
     );
 
     const locale = computed(() => themeLocale.value.blogLocales);
@@ -90,7 +90,7 @@ export default defineComponent({
                 ? h(
                     "div",
                     { class: "vp-blogger-name", property: "name" },
-                    bloggerName.value
+                    bloggerName.value,
                   )
                 : null,
               blogOptions.value.description
@@ -102,7 +102,7 @@ export default defineComponent({
               intro.value
                 ? h("meta", { property: "url", content: withBase(intro.value) })
                 : null,
-            ]
+            ],
           ),
           h(
             "div",
@@ -111,11 +111,11 @@ export default defineComponent({
               h(VPLink, { class: "vp-blog-count", to: path }, () => [
                 h("div", { class: "count" }, count),
                 h("div", locale),
-              ])
-            )
+              ]),
+            ),
           ),
           h(SocialMedia),
-        ]
+        ],
       );
     };
   },

@@ -24,9 +24,9 @@ export default defineComponent({
                 { class: "navbar-links-item" },
                 "children" in config
                   ? h(NavScreenDropdown, { config })
-                  : h(AutoLink, { config })
-              )
-            )
+                  : h(AutoLink, { config }),
+              ),
+            ),
           )
         : null;
   },

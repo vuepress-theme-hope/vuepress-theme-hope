@@ -8,7 +8,7 @@ import { photoSwipePlugin } from "vuepress-plugin-photo-swipe";
  * Resolve options for vuepress-plugin-photo-swipe
  */
 export const getPhotoSwipePlugin = (
-  options?: PhotoSwipeOptions | boolean
+  options?: PhotoSwipeOptions | boolean,
 ): Plugin | null => {
   if (options === false) return null;
 

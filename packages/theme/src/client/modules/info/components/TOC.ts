@@ -17,12 +17,12 @@ const renderHeader = ({ title, level, slug }: PageHeader): VNode =>
       to: `#${slug}`,
       class: ["toc-link", `level${level}`],
     },
-    () => title
+    () => title,
   );
 
 const renderChildren = (
   headers: PageHeader[],
-  headerDepth: number
+  headerDepth: number,
 ): VNode | null => {
   const route = useRoute();
 
@@ -42,11 +42,11 @@ const renderChildren = (
                   { active: isActiveLink(route, `#${header.slug}`) },
                 ],
               },
-              renderHeader(header)
+              renderHeader(header),
             ),
             children ? h("li", children) : null,
           ];
-        })
+        }),
       )
     : null;
 };
@@ -120,7 +120,7 @@ export default defineComponent({
           if (toc.value) {
             // get the active toc item DOM, whose href equals to the current route
             const activeTocItem = document.querySelector(
-              `#toc a.toc-link[href$="${hash}"]`
+              `#toc a.toc-link[href$="${hash}"]`,
             );
 
             if (!activeTocItem) return;
@@ -147,16 +147,16 @@ export default defineComponent({
                   activeTocItemTop +
                   activeTocItemHeight -
                   tocTop -
-                  tocHeight
+                  tocHeight,
               );
           }
-        }
+        },
       );
 
       watch(
         () => route.fullPath,
         () => updateTocMarker(),
-        { flush: "post", immediate: true }
+        { flush: "post", immediate: true },
       );
     });
 

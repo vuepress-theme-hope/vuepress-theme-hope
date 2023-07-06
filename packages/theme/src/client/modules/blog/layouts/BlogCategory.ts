@@ -33,7 +33,7 @@ export default defineComponent({
     const categoryMap = useCategoryMap();
     const tagMap = useTagMap();
     const blogOptions = computed(
-      () => (frontmatter.value.blog || {}) as BlogCategoryFrontmatterOptions
+      () => (frontmatter.value.blog || {}) as BlogCategoryFrontmatterOptions,
     );
 
     const componentName = computed(() => {
@@ -70,19 +70,22 @@ export default defineComponent({
               h(DropTransition, () =>
                 componentName.value
                   ? h(resolveComponent(componentName.value))
-                  : null
+                  : null,
               ),
               blogOptions.value.name
                 ? h(DropTransition, { appear: true, delay: 0.24 }, () =>
-                    h(ArticleList, { key: page.value.path, items: items.value })
+                    h(ArticleList, {
+                      key: page.value.path,
+                      items: items.value,
+                    }),
                   )
                 : null,
             ]),
             h(DropTransition, { delay: 0.16 }, () =>
-              h(InfoPanel, { key: "blog" })
+              h(InfoPanel, { key: "blog" }),
             ),
-          ])
-        )
+          ]),
+        ),
       );
   },
 });

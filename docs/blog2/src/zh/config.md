@@ -200,7 +200,7 @@ interface BlogCategoryOptions {
    */
   itemFrontmatter?: (
     name: string,
-    localePath: string
+    localePath: string,
   ) => Record<string, string>;
 }
 ```
@@ -255,9 +255,9 @@ interface BlogTypeOptions {
 
   ```ts
   declare const useBlogCategory: <
-    T extends Record<string, unknown> = Record<string, unknown>
+    T extends Record<string, unknown> = Record<string, unknown>,
   >(
-    key?: string
+    key?: string,
   ) => ComputedRef<BlogCategoryData<T>>;
   ```
 
@@ -267,9 +267,9 @@ interface BlogTypeOptions {
 
   ```ts
   declare const useBlogType: <
-    T extends Record<string, unknown> = Record<string, unknown>
+    T extends Record<string, unknown> = Record<string, unknown>,
   >(
-    key?: string
+    key?: string,
   ) => ComputedRef<BlogTypeData<T>>;
   ```
 
@@ -286,7 +286,7 @@ interface Article<T extends Record<string, unknown> = Record<string, unknown>> {
 }
 
 interface BlogCategoryData<
-  T extends Record<string, unknown> = Record<string, unknown>
+  T extends Record<string, unknown> = Record<string, unknown>,
 > {
   /** 分类路径 */
   path: string;
@@ -309,7 +309,7 @@ interface BlogCategoryData<
 }
 
 interface BlogTypeData<
-  T extends Record<string, unknown> = Record<string, unknown>
+  T extends Record<string, unknown> = Record<string, unknown>,
 > {
   /** 类别路径 */
   path: string;

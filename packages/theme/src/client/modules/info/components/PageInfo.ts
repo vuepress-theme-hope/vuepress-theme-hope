@@ -153,8 +153,8 @@ export default defineComponent({
               h(resolveComponent(`${item}Info`), {
                 ...props.info,
                 pure: pure.value,
-              })
-            )
+              }),
+            ),
           )
         : null;
   },

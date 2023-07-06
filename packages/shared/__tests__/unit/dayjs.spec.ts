@@ -12,7 +12,7 @@ describe("dayjs()", () => {
     expect(dayjs("2018-4-28").format(format)).toBe("Saturday 28, April");
 
     expect(dayjs("2018-4-28").locale("es").format(format)).toBe(
-      "sábado 28, abril"
+      "sábado 28, abril",
     );
 
     expect(dayjs("2018-4-28").format(format)).toBe("Saturday 28, April");
@@ -54,7 +54,7 @@ describe("dayjs()", () => {
           weekdays: Array(7).fill("week"),
           months: Array(12).fill("month"),
         })
-        .format(format)
+        .format(format),
     ).toBe("week 28, month");
   });
 
@@ -73,7 +73,7 @@ describe("dayjs()", () => {
 
     it("Set", () => {
       expect(esDayjs.set("year", 2017).format(format)).toBe(
-        "viernes 28, abril"
+        "viernes 28, abril",
       );
     });
 
@@ -123,59 +123,59 @@ describe("dayjs()", () => {
 
   it("Support locales", () => {
     expect(dayjs("2018-4-28").locale("de").format(format)).toBe(
-      "Samstag 28, April"
+      "Samstag 28, April",
     );
     expect(dayjs("2018-4-28").locale("de-at").format(format)).toBe(
-      "Samstag 28, April"
+      "Samstag 28, April",
     );
     expect(dayjs("2018-4-28").locale("en").format(format)).toBe(
-      "Saturday 28, April"
+      "Saturday 28, April",
     );
     expect(dayjs("2018-4-28").locale("es").format(format)).toBe(
-      "sábado 28, abril"
+      "sábado 28, abril",
     );
     expect(dayjs("2018-4-28").locale("fr").format(format)).toBe(
-      "samedi 28, avril"
+      "samedi 28, avril",
     );
     expect(dayjs("2018-4-28").locale("id").format(format)).toBe(
-      "Sabtu 28, April"
+      "Sabtu 28, April",
     );
     expect(dayjs("2018-4-28").locale("ja").format(format)).toBe(
-      "土曜日 28, 四月"
+      "土曜日 28, 四月",
     );
     expect(dayjs("2018-4-28").locale("ko").format(format)).toBe(
-      "토요일 28, 4월"
+      "토요일 28, 4월",
     );
     expect(dayjs("2018-4-28").locale("nl").format(format)).toBe(
-      "zaterdag 28, april"
+      "zaterdag 28, april",
     );
     expect(dayjs("2018-4-28").locale("pl").format(format)).toBe(
-      "sobota 28, kwiecień"
+      "sobota 28, kwiecień",
     );
     expect(dayjs("2018-4-28").locale("pt-br").format(format)).toBe(
-      "sábado 28, abril"
+      "sábado 28, abril",
     );
     expect(dayjs("2018-4-28").locale("ru").format(format)).toBe(
-      "суббота 28, апрель"
+      "суббота 28, апрель",
     );
     expect(dayjs("2018-4-28").locale("sk").format(format)).toBe(
-      "sobota 28, apríl"
+      "sobota 28, apríl",
     );
     expect(dayjs("2018-4-28").locale("tr").format(format)).toBe(
-      "Cumartesi 28, Nisan"
+      "Cumartesi 28, Nisan",
     );
     expect(dayjs("2018-4-28").locale("uk").format(format)).toBe(
-      "субота 28, квітень"
+      "субота 28, квітень",
     );
     expect(dayjs("2018-4-28").locale("vi").format(format)).toBe(
-      "thứ bảy 28, tháng 4"
+      "thứ bảy 28, tháng 4",
     );
 
     expect(dayjs("2018-4-28").locale("zh-tw").format(format)).toBe(
-      "星期六 28, 四月"
+      "星期六 28, 四月",
     );
     expect(dayjs("2018-4-28").locale("zh").format(format)).toBe(
-      "星期六 28, 四月"
+      "星期六 28, 四月",
     );
   });
 });

@@ -52,7 +52,7 @@ describe("chart", () => {
 
 :::
 `,
-      {}
+      {},
     );
 
     expect(result).toMatch(/<ChartJS.*><\/ChartJS>/);
@@ -107,7 +107,7 @@ const config = {
 
 :::
 `,
-      {}
+      {},
     );
 
     expect(result).toMatch(/<ChartJS.*><\/ChartJS>/);
@@ -162,7 +162,7 @@ const config = {
 
 :::
 `,
-      {}
+      {},
     );
 
     expect(result).toMatch(/<ChartJS.*><\/ChartJS>/);
@@ -178,7 +178,7 @@ const config = {
 
 :::
 `,
-      {}
+      {},
     );
 
     expect(result).toMatch(/<ChartJS.*><\/ChartJS>/);
@@ -194,7 +194,7 @@ const config = {
 const a = 1;
 \`\`\`
 `,
-      {}
+      {},
     );
 
     expect(result).toMatch(/<pre.*>[\s\S]*<\/pre>/);

@@ -20,7 +20,7 @@ export const getComponentsPlugin = (
     componentOptions = {},
     rootComponents = {},
   }: ComponentOptions = {},
-  legacy = false
+  legacy = false,
 ): Plugin =>
   componentsPlugin(
     {
@@ -42,5 +42,5 @@ export const getComponentsPlugin = (
         ...rootComponents,
       },
     },
-    legacy
+    legacy,
   );

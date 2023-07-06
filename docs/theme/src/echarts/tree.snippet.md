@@ -5,7 +5,7 @@
 
 ```js
 const data = await fetch(
-  "https://theme-hope-assets.vuejs.press/data/flare.json"
+  "https://theme-hope-assets.vuejs.press/data/flare.json",
 ).then((res) => res.json());
 
 const option = {

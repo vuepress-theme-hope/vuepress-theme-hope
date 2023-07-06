@@ -13,9 +13,10 @@ export interface SeoPluginPageData
 export type ExtendPage<
   ExtraPageData extends Record<string | number | symbol, unknown> &
     Partial<SeoPluginPageData> = SeoPluginPageData,
-  ExtraPageFrontmatter extends PageFrontmatter<SEOPluginFrontmatter> = PageFrontmatter<SEOPluginFrontmatter>,
+  ExtraPageFrontmatter extends
+    PageFrontmatter<SEOPluginFrontmatter> = PageFrontmatter<SEOPluginFrontmatter>,
   ExtraPageFields extends Record<string | number | symbol, unknown> = Record<
     never,
     never
-  >
+  >,
 > = Page<ExtraPageData, ExtraPageFrontmatter, ExtraPageFields>;

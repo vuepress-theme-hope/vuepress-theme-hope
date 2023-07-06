@@ -48,7 +48,7 @@ export default defineComponent({
     const siteLocale = useSiteLocaleData();
 
     const isFullScreen = computed(
-      () => frontmatter.value.heroFullScreen ?? false
+      () => frontmatter.value.heroFullScreen ?? false,
     );
 
     const heroInfo = computed(() => {
@@ -144,7 +144,7 @@ export default defineComponent({
               h("div", { class: "vp-hero-infos" }, [
                 heroInfo.value.text
                   ? h(DropTransition, { appear: true, delay: 0.04 }, () =>
-                      h("h1", { id: "main-title" }, heroInfo.value.text)
+                      h("h1", { id: "main-title" }, heroInfo.value.text),
                     )
                   : null,
                 heroInfo.value.tagline
@@ -152,7 +152,7 @@ export default defineComponent({
                       h("p", {
                         class: "vp-description",
                         innerHTML: heroInfo.value.tagline,
-                      })
+                      }),
                     )
                   : null,
                 actions.value.length
@@ -165,14 +165,14 @@ export default defineComponent({
                             class: ["vp-action", action.type || "default"],
                             config: action,
                             noExternalLinkIcon: true,
-                          })
-                        )
-                      )
+                          }),
+                        ),
+                      ),
                     )
                   : null,
               ]),
           ]),
-        ]
+        ],
       );
   },
 });

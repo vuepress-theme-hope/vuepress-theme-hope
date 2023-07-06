@@ -15,7 +15,7 @@ import type {
 
 export const renderItem = (
   config: ResolvedSidebarItem,
-  props: VNode["props"]
+  props: VNode["props"],
 ): VNode =>
   isString(config.link)
     ? // if the item has link, render it as `<AutoLink>`
@@ -27,7 +27,7 @@ export const renderItem = (
       h("p", props, [h(HopeIcon, { icon: config.icon }), config.text]);
 
 export const renderChildren = (
-  children: ResolvedSidebarHeaderItem[]
+  children: ResolvedSidebarHeaderItem[],
 ): VNode | null => {
   const route = useRoute();
 
@@ -45,6 +45,6 @@ export const renderChildren = (
         }),
         renderChildren(child.children),
       ]);
-    })
+    }),
   );
 };

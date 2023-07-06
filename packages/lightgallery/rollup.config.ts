@@ -6,6 +6,6 @@ export default [
     { base: "client", files: ["config", "index"] },
     {
       external: [/^lightgallery/],
-    }
+    },
   ),
 ];

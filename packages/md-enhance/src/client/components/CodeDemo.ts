@@ -90,7 +90,7 @@ export default defineComponent({
       () =>
         <Partial<CodeDemoOptions>>(
           JSON.parse(props.config ? atou(props.config) : "{}")
-        )
+        ),
     );
 
     const codeType = computed(() => {
@@ -104,7 +104,7 @@ export default defineComponent({
         ? getReactCode(codeType.value, config.value)
         : props.type === "vue"
         ? getVueCode(codeType.value, config.value)
-        : getNormalCode(codeType.value, config.value)
+        : getNormalCode(codeType.value, config.value),
     );
 
     const isLegal = computed(() => code.value.isLegal);
@@ -176,7 +176,7 @@ export default defineComponent({
             ? h(
                 "span",
                 { class: "vp-code-demo-title" },
-                decodeURIComponent(props.title)
+                decodeURIComponent(props.title),
               )
             : null,
 
@@ -211,7 +211,7 @@ export default defineComponent({
                     type: "hidden",
                     name: "resources",
                     value: [...code.value.cssLib, ...code.value.jsLib].join(
-                      ","
+                      ",",
                     ),
                   }),
                   h("button", {
@@ -221,7 +221,7 @@ export default defineComponent({
                     "aria-label": "JSFiddle",
                     "data-balloon-pos": "up",
                   }),
-                ]
+                ],
               )
             : null,
 
@@ -271,7 +271,7 @@ export default defineComponent({
                     "aria-label": "Codepen",
                     "data-balloon-pos": "up",
                   }),
-                ]
+                ],
               )
             : null,
         ]),
@@ -296,8 +296,8 @@ export default defineComponent({
               ref: codeContainer,
               class: "vp-code-demo-codes",
             },
-            slots.default?.()
-          )
+            slots.default?.(),
+          ),
         ),
       ]);
   },

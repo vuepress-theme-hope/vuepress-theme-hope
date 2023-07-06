@@ -17,7 +17,7 @@ export const tagHint = (tag: string, isDebug = false): void => {
   )
     console.warn(
       colors.yellow("warning: "),
-      `${tag} is used and it’s not a standard tag or standard custom element name`
+      `${tag} is used and it’s not a standard tag or standard custom element name`,
     );
 };
 
@@ -31,7 +31,7 @@ export const tagHint = (tag: string, isDebug = false): void => {
 export const addCustomElement = (
   bundlerOptions: unknown,
   app: App,
-  customElement: string[] | string | RegExp
+  customElement: string[] | string | RegExp,
 ): void => {
   const customElements = isString(customElement)
     ? [customElement]
@@ -69,7 +69,7 @@ export const addCustomElement = (
     } = ((webpackBundlerConfig.vue ??= {}).compilerOptions ??= {});
 
     webpackBundlerConfig.vue.compilerOptions.isCustomElement = (
-      tag: string
+      tag: string,
     ): boolean | void => {
       if (
         customElements instanceof RegExp

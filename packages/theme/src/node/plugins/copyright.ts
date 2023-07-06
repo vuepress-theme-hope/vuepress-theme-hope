@@ -16,7 +16,7 @@ import type {
 export const getCopyrightPlugin = (
   themeData: ThemeData,
   options?: Partial<CopyrightOptions> | boolean,
-  hostname?: string
+  hostname?: string,
 ): Plugin | null => {
   if (!options) return null;
 

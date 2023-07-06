@@ -90,7 +90,7 @@ export default defineComponent({
               flowchart.draw(props.id, { ...preset.value, scale: newScale });
             }
           }
-        }, 100)
+        }, 100),
       );
     });
 

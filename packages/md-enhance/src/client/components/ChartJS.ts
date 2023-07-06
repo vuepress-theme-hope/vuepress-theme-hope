@@ -9,7 +9,7 @@ declare const MARKDOWN_ENHANCE_DELAY: number;
 
 const parseChartConfig = (
   config: string,
-  type: "js" | "json"
+  type: "js" | "json",
 ): ChartConfiguration => {
   if (type === "json") return <ChartConfiguration>JSON.parse(config);
 
@@ -22,7 +22,7 @@ ${config}
 __chart_js_config__=config;
 }
 return __chart_js_config__;\
-`
+`,
   );
 
   return <ChartConfiguration>runner();
@@ -116,7 +116,7 @@ export default defineComponent({
         h("canvas", {
           ref: chartCanvasElement,
           height: 400,
-        })
+        }),
       ),
     ];
   },

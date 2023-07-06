@@ -78,7 +78,7 @@ export default defineComponent({
     const initRevealJS = async (container: HTMLElement): Promise<Reveal> => {
       const promises: [
         Promise<void>,
-        ...Promise<typeof import("reveal.js/dist/reveal.esm.js")>[]
+        ...Promise<typeof import("reveal.js/dist/reveal.esm.js")>[],
       ] = [
         new Promise((resolve) => setTimeout(resolve, MARKDOWN_ENHANCE_DELAY)),
         ...useReveal(),
@@ -137,7 +137,7 @@ export default defineComponent({
           h("div", {
             class: "slides",
             innerHTML: `<section data-markdown data-separator="^\\r?\\n---\\r?\\n$" data-separator-vertical="^\\r?\\n--\\r?\\n$"><script type="text/template">${code.value}</script></section>`,
-          })
+          }),
         ),
         loading.value
           ? h(LoadingIcon, { class: "reveal-loading", height: 400 })

@@ -33,7 +33,7 @@ export default defineComponent({
         ? themeLocale.value.blog?.sidebarDisplay ||
           themeData.value.blog?.sidebarDisplay ||
           "mobile"
-        : "none"
+        : "none",
     );
 
     return (): VNode[] => [
@@ -52,7 +52,7 @@ export default defineComponent({
           ...(!isMobile.value && sidebarDisplay.value === "always"
             ? { sidebar: () => h(resolveComponent("BloggerInfo")) }
             : {}),
-        }
+        },
       ),
     ];
   },

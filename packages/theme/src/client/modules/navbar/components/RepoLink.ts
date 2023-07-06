@@ -40,8 +40,8 @@ export default defineComponent({
                   height: "1.25rem",
                   verticalAlign: "middle",
                 },
-              })
-            )
+              }),
+            ),
           )
         : null;
   },

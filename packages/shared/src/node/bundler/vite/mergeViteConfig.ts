@@ -106,12 +106,12 @@ const normalizeAlias = (aliasOption: AliasOptions): Alias[] =>
         normalizeSingleAlias({
           find,
           replacement: (<Record<string, string>>aliasOption)[find],
-        })
+        }),
       );
 
 export const mergeAlias = (
   defaults?: AliasOptions,
-  overrides?: AliasOptions
+  overrides?: AliasOptions,
 ): AliasOptions | undefined => {
   if (!defaults) return overrides;
   if (!overrides) return defaults;
@@ -127,7 +127,7 @@ export const mergeAlias = (
 const mergeConfigRecursively = (
   defaults: Record<string, any>,
   overrides: Record<string, any>,
-  rootPath: string
+  rootPath: string,
 ): Record<string, any> => {
   const merged: Record<string, any> = { ...defaults };
 
@@ -167,7 +167,7 @@ const mergeConfigRecursively = (
       merged[key] = mergeConfigRecursively(
         existing,
         value,
-        rootPath ? `${rootPath}.${key}` : key
+        rootPath ? `${rootPath}.${key}` : key,
       );
       continue;
     }
@@ -181,6 +181,6 @@ const mergeConfigRecursively = (
 export const mergeViteConfig = (
   defaults: Record<string, any>,
   overrides: Record<string, any>,
-  isRoot = true
+  isRoot = true,
 ): Record<string, any> =>
   mergeConfigRecursively(defaults, overrides, isRoot ? "" : ".");

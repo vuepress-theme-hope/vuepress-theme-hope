@@ -10,7 +10,7 @@ declare const __VUEPRESS_DEV__: boolean;
 
 export interface SearchWorker {
   search: <T extends MessageData>(
-    options: T
+    options: T,
   ) => Promise<
     T["type"] extends "search"
       ? SearchResult[]
@@ -27,7 +27,7 @@ export const createSearchWorker = (): SearchWorker => {
     __VUEPRESS_DEV__
       ? clientWorker
       : `${__VUEPRESS_BASE__}${searchProOptions.worker}`,
-    __VUEPRESS_DEV__ ? { type: "module" } : {}
+    __VUEPRESS_DEV__ ? { type: "module" } : {},
   );
   const queue: {
     // eslint-disable-next-line @typescript-eslint/no-explicit-any
@@ -41,12 +41,12 @@ export const createSearchWorker = (): SearchWorker => {
       const { resolve } = queue.shift()!;
 
       resolve(data);
-    }
+    },
   );
 
   return {
     search: <T extends MessageData>(
-      options: T
+      options: T,
     ): Promise<
       T["type"] extends "search"
         ? SearchResult[]
@@ -61,7 +61,7 @@ export const createSearchWorker = (): SearchWorker => {
     terminate: (): void => {
       worker.terminate();
       queue.forEach(({ reject }) =>
-        reject(new Error("Worker has been terminated."))
+        reject(new Error("Worker has been terminated.")),
       );
     },
   };

@@ -14,7 +14,7 @@ import { ArticleInfoType } from "../../../shared/index.js";
 /** @private */
 export const getBlogCategoryCategory = (
   options: BlogPluginOptions,
-  themeData: ThemeData
+  themeData: ThemeData,
 ): BlogCategoryOptions<
   { git: GitData },
   ThemeNormalPageFrontmatter,
@@ -55,7 +55,7 @@ export const getBlogCategoryCategory = (
 /** @private */
 export const getBlogTagCategory = (
   options: BlogPluginOptions,
-  themeData: ThemeData
+  themeData: ThemeData,
 ): BlogCategoryOptions<
   { git: GitData },
   ThemeNormalPageFrontmatter,

@@ -22,7 +22,7 @@ export const CodeGroupItem: FunctionalComponent<
       class: ["code-group-item", { active }],
       "aria-selected": active,
     },
-    slots.default?.()
+    slots.default?.(),
   );
 
 CodeGroupItem.displayName = "CodeGroupItem";
@@ -129,9 +129,9 @@ export const CodeGroup = defineComponent({
                 onKeydown: (event: KeyboardEvent) =>
                   keyboardHandler(event, index),
               },
-              <string[]>vNode.props["title"]
+              <string[]>vNode.props["title"],
             );
-          })
+          }),
         ),
         items,
       ]);

@@ -17,8 +17,10 @@
 
   text-align: center;
 
-  transition: border-top-color var(--color-transition),
-    background var(--color-transition), padding var(--transform-transition);
+  transition:
+    border-top-color var(--color-transition),
+    background var(--color-transition),
+    padding var(--transform-transition);
 
   @media (max-width: hope-config.$tablet) {
     padding-inline-start: 2rem;

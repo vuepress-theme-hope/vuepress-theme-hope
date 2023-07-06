@@ -11,7 +11,7 @@ let lightGalleryOptions: LightGalleryOptions = {};
 const lightGallerySymbol = Symbol(__VUEPRESS_DEV__ ? "lightgallery" : "");
 
 export const defineLightGalleryConfig = (
-  options: LightGalleryOptions
+  options: LightGalleryOptions,
 ): void => {
   lightGalleryOptions = options;
 };

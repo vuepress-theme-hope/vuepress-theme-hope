@@ -46,7 +46,7 @@ const sortWithMax = (valueA: PageResult, valueB: PageResult): number =>
 export const getResults = (
   query: string,
   localeIndex: SearchIndex<IndexItem, string>,
-  searchOptions: SearchOptions = {}
+  searchOptions: SearchOptions = {},
 ): SearchResult[] => {
   const resultMap: ResultMap = {};
 
@@ -60,7 +60,7 @@ export const getResults = (
         [/** customFields */ "c"]: 4,
       },
       ...searchOptions,
-    })
+    }),
   );
 
   results.forEach((result) => {
@@ -84,8 +84,8 @@ export const getResults = (
           display: terms
             .map((term) =>
               (<CustomFieldIndexItem>result).c.map((field) =>
-                getMatchedContent(field, term)
-              )
+                getMatchedContent(field, term),
+              ),
             )
             .flat()
             .filter((item): item is Word[] => item !== null),
@@ -132,14 +132,14 @@ export const getResults = (
     .sort(([, valueA], [, valueB]) =>
       SEARCH_PRO_SORT_STRATEGY === "total"
         ? sortWithTotal(valueA, valueB)
-        : sortWithMax(valueA, valueB)
+        : sortWithMax(valueA, valueB),
     )
     .map(([id, { title, contents }]) => {
       // search to get title
       if (!title) {
         const pageIndex = getStoredFields(
           localeIndex,
-          id
+          id,
         ) as unknown as PageIndexItem;
 
         if (pageIndex) title = pageIndex.h;
