@@ -2099,8 +2099,8 @@ importers:
         specifier: ^13.3.2
         version: 13.3.2(sass@1.63.6)(webpack@5.88.1)
       slimsearch:
-        specifier: 0.0.3
-        version: 0.0.3
+        specifier: ^1.0.0
+        version: 1.0.0
       vue:
         specifier: ^3.3.4
         version: 3.3.4
@@ -13561,8 +13561,8 @@ packages:
       is-fullwidth-code-point: 3.0.0
     dev: true
 
-  /slimsearch@0.0.3:
-    resolution: {integrity: sha512-T/HDohHPxnj9wodoxSzvOAaxwSasTAp4sm36ECk3aAL/EGnfMSdG2dvTghJFDQfqRlG1k8vN6+Na4IiS14BB8A==}
+  /slimsearch@1.0.0:
+    resolution: {integrity: sha512-ig1Du+U5LFngeDokhUupBqmEz3aKRJ4v+R2t6ZOi3aPGaFivYxxOiDcJX7fR0xPxjmTe94rAA6RW5gKlX5Gcsg==}
     dev: false
 
   /smart-buffer@4.2.0:

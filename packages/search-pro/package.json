@@ -55,7 +55,7 @@
     "@vueuse/core": "^10.2.1",
     "cheerio": "1.0.0-rc.12",
     "chokidar": "^3.5.3",
-    "slimsearch": "0.0.3",
+    "slimsearch": "^1.0.0",
     "vue": "^3.3.4",
     "vue-router": "^4.2.3",
     "vuepress-plugin-sass-palette": "workspace:*",
