@@ -55,7 +55,7 @@
     "@vueuse/core": "^10.2.1",
     "balloon-css": "^1.2.0",
     "vue": "^3.3.4",
-    "vue-router": "^4.2.3",
+    "vue-router": "^4.2.4",
     "vuepress-plugin-sass-palette": "workspace:*",
     "vuepress-shared": "workspace:*"
   },

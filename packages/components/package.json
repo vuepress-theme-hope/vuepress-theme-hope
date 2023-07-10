@@ -63,7 +63,7 @@
     "qrcode": "^1.5.3",
     "vidstack": "^0.6.13",
     "vue": "^3.3.4",
-    "vue-router": "^4.2.3",
+    "vue-router": "^4.2.4",
     "vuepress-plugin-reading-time2": "workspace:*",
     "vuepress-plugin-sass-palette": "workspace:*",
     "vuepress-shared": "workspace:*"
