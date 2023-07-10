@@ -4,6 +4,19 @@ All notable changes to this project will be documented in this file. See [Conven
 
 <!-- #region recent-beta -->
 
+## [2.0.0-beta.231](https://github.com/vuepress-theme-hope/vuepress-theme-hope/compare/v2.0.0-beta.230...v2.0.0-beta.231) (2023-07-10)
+
+### Features
+
+- **sitemap2:** add app options for modifyTimeGetter ([2c2dcb9](https://github.com/vuepress-theme-hope/vuepress-theme-hope/commit/2c2dcb944105db7bc51d8d0a2d7ea74bfac7131d))
+
+### Bug Fixes
+
+- **blog2:** encode path for blog pages ([587eb6c](https://github.com/vuepress-theme-hope/vuepress-theme-hope/commit/587eb6c0a4a1c9a1e6137d285a234c182d93ef16))
+- **comment2:** fix artalk issue ([7a3110c](https://github.com/vuepress-theme-hope/vuepress-theme-hope/commit/7a3110c5c8a8489b9111e12129f99f18f27b3527))
+- **theme:** fix code block in excerpt, close [#3273](https://github.com/vuepress-theme-hope/vuepress-theme-hope/issues/3273) ([e8ee913](https://github.com/vuepress-theme-hope/vuepress-theme-hope/commit/e8ee913b8ae742dd1d54f439957d01b60988e868))
+- **theme:** improve blog page title ([a66ab7b](https://github.com/vuepress-theme-hope/vuepress-theme-hope/commit/a66ab7bc17a741996a9fcbdb4f1d5d0a18873bd0))
+
 ## [2.0.0-beta.230](https://github.com/vuepress-theme-hope/vuepress-theme-hope/compare/v2.0.0-beta.229...v2.0.0-beta.230) (2023-07-04)
 
 ### Bug Fixes
