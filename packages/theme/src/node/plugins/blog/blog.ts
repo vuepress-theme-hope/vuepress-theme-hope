@@ -91,5 +91,6 @@ export const getBlogPlugin = (
 
     hotReload,
     ...("hotReload" in blogOptions ? { hotReload: blogOptions.hotReload } : {}),
+    ...("slugify" in blogOptions ? { slugify: blogOptions.slugify } : {}),
   });
 };

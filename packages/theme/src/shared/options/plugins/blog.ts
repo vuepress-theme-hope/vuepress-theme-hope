@@ -8,6 +8,7 @@ export interface BlogPluginOptions
       | "excerptLength"
       | "excerptSeparator"
       | "filter"
+      | "slugify"
       | "hotReload"
     >
   > {
