@@ -37,9 +37,9 @@ export const createPackageJson = async (
   const packageJsonPath = resolve(cwd, "package.json");
   const scripts = getScript(packageManager, source);
   const devDependencies = {
-    "@vuepress/client": "2.0.0-beta.64",
+    "@vuepress/client": "2.0.0-beta.66",
     vue: "^3.2.47",
-    vuepress: "2.0.0-beta.64",
+    vuepress: "2.0.0-beta.66",
     "vuepress-theme-hope": version,
   };
 

@@ -48,21 +48,21 @@
     "pnpm": ">=7"
   },
   "dependencies": {
-    "@vuepress/client": "2.0.0-beta.64",
-    "@vuepress/shared": "2.0.0-beta.64",
-    "@vuepress/utils": "2.0.0-beta.64",
+    "@vuepress/client": "2.0.0-beta.66",
+    "@vuepress/shared": "2.0.0-beta.66",
+    "@vuepress/utils": "2.0.0-beta.66",
     "@vueuse/core": "^10.2.1",
     "vue": "^3.3.4",
     "vue-router": "^4.2.4",
     "vuepress-shared": "workspace:*"
   },
   "devDependencies": {
-    "@vuepress/core": "2.0.0-beta.64"
+    "@vuepress/core": "2.0.0-beta.66"
   },
   "peerDependencies": {
-    "vuepress": "2.0.0-beta.64",
-    "vuepress-vite": "2.0.0-beta.64",
-    "vuepress-webpack": "2.0.0-beta.64"
+    "vuepress": "2.0.0-beta.66",
+    "vuepress-vite": "2.0.0-beta.66",
+    "vuepress-webpack": "2.0.0-beta.66"
   },
   "peerDependenciesMeta": {
     "vuepress": {

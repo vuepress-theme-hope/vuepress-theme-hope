@@ -22,7 +22,7 @@
   "dependencies": {
     "@types/katex": "0.16.0",
     "@vueuse/core": "10.2.1",
-    "@vuepress/client": "2.0.0-beta.64",
+    "@vuepress/client": "2.0.0-beta.66",
     "docs-shared": "workspace:*",
     "flowchart.ts": "1.0.0",
     "katex": "0.16.8",
@@ -30,7 +30,7 @@
     "vue": "3.3.4",
     "vuepress-plugin-md-enhance": "workspace:*",
     "vuepress-shared": "workspace:*",
-    "vuepress-vite": "2.0.0-beta.64",
-    "vuepress-webpack": "2.0.0-beta.64"
+    "vuepress-vite": "2.0.0-beta.66",
+    "vuepress-webpack": "2.0.0-beta.66"
   }
 }

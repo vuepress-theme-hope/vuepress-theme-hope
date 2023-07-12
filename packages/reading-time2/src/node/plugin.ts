@@ -11,7 +11,7 @@ import type { ReadingTime } from "../shared/index.js";
 export const readingTimePlugin =
   (options: ReadingTimeOptions): PluginFunction =>
   (app) => {
-    checkVersion(app, PLUGIN_NAME, "2.0.0-beta.64");
+    checkVersion(app, PLUGIN_NAME, "2.0.0-beta.66");
 
     if (app.env.isDebug) logger.info("Options:", options);
 

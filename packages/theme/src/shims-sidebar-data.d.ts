@@ -1,5 +1,6 @@
 declare module "@temp/theme-hope/sidebar" {
-  import type { ThemeSidebarGroupItem } from "vuepress-theme-hope/src/shared/index.js";
+  import type { SidebarGroupItem } from "vuepress-theme-hope/src/shared/index.js";
 
-  export const sidebarData: Record<string, (ThemeSidebarGroupItem | string)[]>;
+  // eslint-disable-next-line @typescript-eslint/no-redundant-type-constituents
+  export const sidebarData: Record<string, (SidebarGroupItem | string)[]>;
 }

@@ -56,7 +56,7 @@ const handleArraySidebarOptions = (
  * @deprecated You should use V2 standard sidebar config and avoid using it
  */
 export const convertSidebarOptions = (
-  config: SidebarOptions | unknown,
+  config: unknown,
 ): SidebarOptions | false => {
   if (config === false || config === "structure" || config === "heading")
     return config;
