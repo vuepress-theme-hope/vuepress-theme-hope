@@ -4,6 +4,12 @@ All notable changes to this project will be documented in this file. See [Conven
 
 <!-- #region recent-beta -->
 
+## [2.0.0-beta.232](https://github.com/vuepress-theme-hope/vuepress-theme-hope/compare/v2.0.0-beta.231...v2.0.0-beta.232) (2023-07-12)
+
+### Features
+
+- **theme:** support slugify for blog ([cad92fe](https://github.com/vuepress-theme-hope/vuepress-theme-hope/commit/cad92fee2b369d9f91309aa14f8594068449e054))
+
 ## [2.0.0-beta.231](https://github.com/vuepress-theme-hope/vuepress-theme-hope/compare/v2.0.0-beta.230...v2.0.0-beta.231) (2023-07-10)
 
 ### Features
