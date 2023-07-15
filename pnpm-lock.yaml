@@ -26,8 +26,8 @@ importers:
         specifier: 5.0.0
         version: 5.0.0(rollup@3.26.2)
       '@rollup/plugin-commonjs':
-        specifier: 25.0.2
-        version: 25.0.2(rollup@3.26.2)
+        specifier: 25.0.3
+        version: 25.0.3(rollup@3.26.2)
       '@rollup/plugin-node-resolve':
         specifier: 15.1.0
         version: 15.1.0(rollup@3.26.2)
@@ -2229,7 +2229,7 @@ importers:
         version: 6.3.1
       vite:
         specifier: 4.4.4
-        version: 4.4.4(@types/node@20.4.2)(sass@1.63.6)
+        version: 4.4.4(@types/node@20.4.2)
 
   packages/sitemap2:
     dependencies:
@@ -5004,8 +5004,8 @@ packages:
       rollup: 2.79.1
     dev: false
 
-  /@rollup/plugin-commonjs@25.0.2(rollup@3.26.2):
-    resolution: {integrity: sha512-NGTwaJxIO0klMs+WSFFtBP7b9TdTJ3K76HZkewT8/+yHzMiUGVQgaPtLQxNVYIgT5F7lxkEyVID+yS3K7bhCow==}
+  /@rollup/plugin-commonjs@25.0.3(rollup@3.26.2):
+    resolution: {integrity: sha512-uBdtWr/H3BVcgm97MUdq2oJmqBR23ny1hOrWe2PKo9FTbjsGqg32jfasJUKYAI5ouqacjRnj65mBB/S79F+GQA==}
     engines: {node: '>=14.0.0'}
     peerDependencies:
       rollup: ^2.68.0||^3.0.0
@@ -15158,7 +15158,7 @@ packages:
       mlly: 1.4.0
       pathe: 1.1.1
       picocolors: 1.0.0
-      vite: 4.4.4(@types/node@20.4.2)(sass@1.63.6)
+      vite: 4.4.4(@types/node@20.4.2)
     transitivePeerDependencies:
       - '@types/node'
       - less
@@ -15206,7 +15206,7 @@ packages:
     optionalDependencies:
       fsevents: 2.3.2
 
-  /vite@4.4.4(@types/node@20.4.2)(sass@1.63.6):
+  /vite@4.4.4(@types/node@20.4.2):
     resolution: {integrity: sha512-4mvsTxjkveWrKDJI70QmelfVqTm+ihFAb6+xf4sjEU2TmUCTlVX87tmg/QooPEMQb/lM9qGHT99ebqPziEd3wg==}
     engines: {node: ^14.18.0 || >=16.0.0}
     hasBin: true
@@ -15238,7 +15238,6 @@ packages:
       esbuild: 0.18.13
       postcss: 8.4.25
       rollup: 3.26.2
-      sass: 1.63.6
     optionalDependencies:
       fsevents: 2.3.2
     dev: true
@@ -15295,7 +15294,7 @@ packages:
       strip-literal: 1.0.1
       tinybench: 2.5.0
       tinypool: 0.6.0
-      vite: 4.4.4(@types/node@20.4.2)(sass@1.63.6)
+      vite: 4.4.4(@types/node@20.4.2)
       vite-node: 0.33.0(@types/node@20.4.2)
       why-is-node-running: 2.2.2
     transitivePeerDependencies:
