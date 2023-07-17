@@ -104,8 +104,8 @@ importers:
         specifier: 8.0.3
         version: 8.0.3
       inquirer:
-        specifier: 9.2.7
-        version: 9.2.7
+        specifier: 9.2.8
+        version: 9.2.8
       magic-string:
         specifier: 0.30.1
         version: 0.30.1
@@ -1573,8 +1573,8 @@ importers:
         specifier: 7.1.1
         version: 7.1.1
       inquirer:
-        specifier: 9.2.7
-        version: 9.2.7
+        specifier: 9.2.8
+        version: 9.2.8
     devDependencies:
       '@types/inquirer':
         specifier: 9.0.3
@@ -10575,8 +10575,8 @@ packages:
       wrap-ansi: 7.0.0
     dev: true
 
-  /inquirer@9.2.7:
-    resolution: {integrity: sha512-Bf52lnfvNxGPJPltiNO2tLBp3zC339KNlGMqOkW+dsvNikBhcVDK5kqU2lVX2FTPzuXUFX5WJDlsw//w3ZwoTw==}
+  /inquirer@9.2.8:
+    resolution: {integrity: sha512-SJ0fVfgIzZL1AD6WvFhivlh5/3hN6WeAvpvPrpPXH/8MOcQHeXhinmSm5CDJNRC2Q+sLh9YJ5k8F8/5APMXSfw==}
     engines: {node: '>=14.18.0'}
     dependencies:
       ansi-escapes: 4.3.2
