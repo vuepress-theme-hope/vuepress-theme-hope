@@ -281,8 +281,8 @@ importers:
         specifier: 5.0.1
         version: 5.0.1
       hls.js:
-        specifier: 1.4.8
-        version: 1.4.8
+        specifier: 1.4.10
+        version: 1.4.10
       sass-loader:
         specifier: 13.3.2
         version: 13.3.2(sass@1.63.6)(webpack@5.88.1)
@@ -816,8 +816,8 @@ importers:
         specifier: workspace:*
         version: link:../../docs-shared
       hls.js:
-        specifier: 1.4.8
-        version: 1.4.8
+        specifier: 1.4.10
+        version: 1.4.10
       sass-loader:
         specifier: 13.3.2
         version: 13.3.2(sass@1.63.6)(webpack@5.88.1)
@@ -10252,8 +10252,12 @@ packages:
     resolution: {integrity: sha512-2bsegYkkHO+h/9MGbn6KWcE45cHZgPANo5LXF7EvWdT0yT2EguSVO1nDgU5c8+ZOPwp2vMNa7YFsJhVcDR9Sdg==}
     dev: false
 
+  /hls.js@1.4.10:
+    resolution: {integrity: sha512-wAVSj4Fm2MqOHy5+BlYnlKxXvJlv5IuZHjlzHu18QmjRzSDFQiUDWdHs5+NsFMQrgKEBwuWDcyvaMC9dUzJ5Uw==}
+
   /hls.js@1.4.8:
     resolution: {integrity: sha512-wYL7W49M6oKv0+P4RW50YkJaxDzgnHMMrN+YoLpow07hVgaedAdX9HfKkehTb04UEfeJhNSef5ucICYPsHOfqg==}
+    dev: false
 
   /homedir-polyfill@1.0.3:
     resolution: {integrity: sha512-eSmmWE5bZTK2Nou4g0AI3zZ9rswp7GRKoKXS1BLUkvPviOqs4YTN1djQIqrXy9k5gEtdLPy86JjRwsNM9tnDcA==}
