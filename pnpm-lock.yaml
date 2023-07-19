@@ -933,8 +933,8 @@ importers:
   docs/md-enhance:
     dependencies:
       '@types/katex':
-        specifier: 0.16.0
-        version: 0.16.0
+        specifier: 0.16.1
+        version: 0.16.1
       '@vuepress/client':
         specifier: 2.0.0-beta.66
         version: 2.0.0-beta.66
@@ -1224,8 +1224,8 @@ importers:
   docs/theme:
     dependencies:
       '@types/katex':
-        specifier: 0.16.0
-        version: 0.16.0
+        specifier: 0.16.1
+        version: 0.16.1
       '@vuepress/client':
         specifier: 2.0.0-beta.66
         version: 2.0.0-beta.66
@@ -4847,7 +4847,7 @@ packages:
     engines: {node: '>= 14'}
     dependencies:
       '@mdit/plugin-tex': 0.4.8
-      '@types/katex': 0.16.0
+      '@types/katex': 0.16.1
       '@types/markdown-it': 12.2.3
       katex: 0.16.8
       markdown-it: 13.0.1
@@ -5304,8 +5304,8 @@ packages:
     dependencies:
       '@types/node': 20.4.2
 
-  /@types/katex@0.16.0:
-    resolution: {integrity: sha512-hz+S3nV6Mym5xPbT9fnO8dDhBFQguMYpY0Ipxv06JMi1ORgnEM4M1ymWDUhUNer3ElLmT583opRo4RzxKmh9jw==}
+  /@types/katex@0.16.1:
+    resolution: {integrity: sha512-cwglq2A63Yk082CQk0t8LIoDhZAVgJqkumLyk3grpg3K8sevaDW//Qsspmxj9Sf+97biqt79CfAlPrvizHlP0w==}
     dev: false
 
   /@types/linkify-it@3.0.2:
