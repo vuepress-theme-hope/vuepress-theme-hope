@@ -93,7 +93,7 @@ Also, you can add or override layout provided by `vuepress-theme-hope` via `layo
 @tab TS
 
 ```ts
-// .vuepress/theme/config.ts
+// .vuepress/client.ts
 import { defineClientConfig } from "@vuepress/client";
 import Changelog from "./layouts/Changelog.vue";
 import Layout from "./layouts/Layout.vue";
@@ -112,7 +112,7 @@ export default defineClientConfig({
 @tab JS
 
 ```js
-// .vuepress/theme/config.js
+// .vuepress/client.js
 import { defineClientConfig } from "@vuepress/client";
 import Changelog from "./layouts/Changelog.vue";
 import Layout from "./layouts/Layout.vue";
