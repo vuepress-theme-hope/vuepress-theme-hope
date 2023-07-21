@@ -8016,7 +8016,7 @@ packages:
       conventional-commit-types: 3.0.0
       lodash.map: 4.6.0
       longest: 2.0.1
-      word-wrap: 1.2.3
+      word-wrap: 1.2.4
     optionalDependencies:
       '@commitlint/load': 17.5.0
     transitivePeerDependencies:
@@ -15761,8 +15761,8 @@ packages:
   /wildcard@2.0.1:
     resolution: {integrity: sha512-CC1bOL87PIWSBhDcTrdeLo6eGT7mCFtrg0uIJtqJUFyK+eJnzl8A1niH56uu7KMa5XFrtiV+AQuHO3n7DsHnLQ==}
 
-  /word-wrap@1.2.3:
-    resolution: {integrity: sha512-Hz/mrNwitNRh/HUAtM/VT/5VH+ygD6DV7mYKZAtHOrbs8U7lvPS6xf7EJKMF0uW1KJCl0H701g3ZGus+muE5vQ==}
+  /word-wrap@1.2.4:
+    resolution: {integrity: sha512-2V81OA4ugVo5pRo46hAoD2ivUJx8jXmWXfUkY4KFNw0hEptvN0QfH3K4nHiwzGeKl5rFKedV48QVoqYavy4YpA==}
     engines: {node: '>=0.10.0'}
     dev: true
 
