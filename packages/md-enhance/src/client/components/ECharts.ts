@@ -100,7 +100,7 @@ export default defineComponent({
         // delay
         new Promise((resolve) => setTimeout(resolve, MARKDOWN_ENHANCE_DELAY)),
       ]).then(async ([echarts]) => {
-        chart = echarts.init(echartsContainer.value!);
+        chart = echarts.init(echartsContainer.value);
 
         const { option, ...size } = await parseEChartsConfig(
           atou(props.config),

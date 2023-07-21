@@ -32,7 +32,7 @@
     "dev:ts": "tsc -b tsconfig.build.json --watch"
   },
   "dependencies": {
-    "@types/three": "0.153.0",
+    "@types/three": "0.154.0",
     "@vuepress/cli": "2.0.0-beta.66",
     "@vuepress/client": "2.0.0-beta.66",
     "@vuepress/core": "2.0.0-beta.66",

@@ -1,6 +1,8 @@
 import { usePageFrontmatter, withBase } from "@vuepress/client";
-// eslint-disable-next-line import/no-named-default
-import type { Mesh, default as Three } from "three";
+// eslint-disable-next-line
+import type * as Three from "three";
+// eslint-disable-next-line
+import type { Mesh } from "three";
 import type { OrbitControls } from "three/examples/jsm/controls/OrbitControls.js";
 import type { STLLoader } from "three/examples/jsm/loaders/STLLoader.js";
 import type { VNode } from "vue";
@@ -171,15 +173,13 @@ export default defineComponent({
 
     onMounted(() =>
       Promise.all([
-        import(/* webpackChunkName: "hope-logo" */ "three").then(
-          (m) => m.default || m,
-        ),
+        import(/* webpackChunkName: "hope-logo" */ "three").then((m) => m),
         import(
           /* webpackChunkName: "hope-logo" */ "three/examples/jsm/controls/OrbitControls.js"
-        ).then((m) => m.default || m),
+        ).then((m) => m),
         import(
           /* webpackChunkName: "hope-logo" */ "three/examples/jsm/loaders/STLLoader.js"
-        ).then((m) => m.default || m),
+        ).then((m) => m),
       ]).then(([THREE, { OrbitControls }, { STLLoader }]) => {
         void renderLogo(THREE, STLLoader, OrbitControls);
 
