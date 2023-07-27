@@ -58,7 +58,7 @@
     "@vueuse/core": "^10.2.1",
     "cheerio": "1.0.0-rc.12",
     "dayjs": "^1.11.9",
-    "execa": "^7.1.1",
+    "execa": "^7.2.0",
     "fflate": "^0.8.0",
     "gray-matter": "^4.0.3",
     "semver": "^7.5.4",
@@ -74,7 +74,7 @@
     "@vuepress/core": "2.0.0-beta.66",
     "@vuepress/plugin-git": "2.0.0-beta.66",
     "ora": "6.3.1",
-    "vite": "4.4.6"
+    "vite": "4.4.7"
   },
   "peerDependencies": {
     "vuepress": "2.0.0-beta.66",

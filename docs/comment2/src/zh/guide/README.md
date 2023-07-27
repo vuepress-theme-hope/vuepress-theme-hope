@@ -37,7 +37,7 @@ import {
   // defineGiscusOptions,
   // defineTwikooOptions,
   // defineWalineOptions,
-} from "@vuepress/plugin-comment2";
+} from "vuepress-plugin-comment2";
 
 defineArtalkOptions({
   // 选项
