@@ -1,6 +1,10 @@
 .task-list-container {
   padding-inline-start: 0;
   list-style: none;
+
+  .task-list-container {
+    padding-inline-start: 1.5em;
+  }
 }
 
 .task-list-item-checkbox {
