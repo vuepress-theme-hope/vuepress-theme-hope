@@ -61,7 +61,7 @@
     "cross-env": "7.0.3",
     "cz-git": "1.7.0",
     "esbuild": "0.18.17",
-    "eslint": "8.45.0",
+    "eslint": "8.46.0",
     "eslint-config-prettier": "8.9.0",
     "eslint-plugin-import": "2.27.5",
     "eslint-plugin-prettier": "5.0.0",
