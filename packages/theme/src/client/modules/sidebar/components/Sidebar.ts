@@ -55,6 +55,7 @@ export default defineComponent({
             // scroll to the bottom edge of sidebar
             activeSidebarItem.scrollIntoView(false);
         },
+        { immediate: true },
       );
     });
 
