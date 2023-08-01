@@ -23,7 +23,7 @@
     "@types/katex": "0.16.2",
     "@vuepress/client": "2.0.0-beta.66",
     "@vuepress/shared": "2.0.0-beta.66",
-    "@vueuse/core": "10.2.1",
+    "@vueuse/core": "10.3.0",
     "docs-shared": "workspace:*",
     "flowchart.ts": "1.0.0",
     "katex": "0.16.8",
