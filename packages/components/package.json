@@ -52,7 +52,7 @@
     "@vuepress/client": "2.0.0-beta.66",
     "@vuepress/shared": "2.0.0-beta.66",
     "@vuepress/utils": "2.0.0-beta.66",
-    "@vueuse/core": "^10.2.1",
+    "@vueuse/core": "^10.3.0",
     "artplayer": "^5.0.9",
     "balloon-css": "^1.2.0",
     "create-codepen": "0.0.3",
