@@ -1,6 +1,7 @@
 import type { PropType, VNode } from "vue";
 import { computed, defineComponent, h, onMounted, ref, watch } from "vue";
 import { useRoute, useRouter } from "vue-router";
+import { updatePageview } from "vuepress-plugin-comment2/pageview";
 
 import DropTransition from "@theme-hope/components/transitions/DropTransition";
 import ArticleItem from "@theme-hope/modules/blog/components/ArticleItem";
@@ -58,7 +59,9 @@ export default defineComponent({
       if (page === 1) delete query["page"];
       else query["page"] = page.toString();
 
-      void router.push({ path: route.path, query });
+      void router.push({ path: route.path, query }).then(() => {
+        updatePageview();
+      });
     };
 
     onMounted(() => {
