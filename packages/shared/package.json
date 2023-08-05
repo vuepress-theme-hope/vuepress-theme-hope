@@ -74,7 +74,7 @@
     "@vuepress/core": "2.0.0-beta.66",
     "@vuepress/plugin-git": "2.0.0-beta.66",
     "ora": "7.0.1",
-    "vite": "4.4.7"
+    "vite": "4.4.8"
   },
   "peerDependencies": {
     "vuepress": "2.0.0-beta.66",
