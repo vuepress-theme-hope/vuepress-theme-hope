@@ -49,7 +49,7 @@ export default theme("md-enhance", {
       mark: true,
       mermaid: true,
       playground: {
-        presets: ["ts", "vue"],
+        presets: ["ts", "vue", "unocss"],
       },
       presentation: ["highlight", "math", "search", "notes", "zoom"],
       stylize: [
