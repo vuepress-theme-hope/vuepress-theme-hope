@@ -41,6 +41,32 @@ icon: code
 
 :::
 
+::: tip import external style
+
+- If you need import external style (e.g., unocss generated css file), You can add `link` tag to import it. Setting in you code demo's html or js block.
+
+::: code-tabs
+
+@tab html example
+
+```html
+<!-- change to your own href -->
+<link rel="stylesheet" href="__uno.css" />
+```
+
+@tab js example
+
+```js
+// add this to js code block, change to your own href
+const linkElem = window.document.createElement("link");
+linkElem.setAttribute("rel", "stylesheet");
+linkElem.setAttribute("href", "__uno.css");
+document.appendChild(linkElem);
+```
+
+:::
+:::
+
 ## Demo
 
 ::: normal-demo Demo
