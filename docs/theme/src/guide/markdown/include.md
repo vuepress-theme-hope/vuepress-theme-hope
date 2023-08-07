@@ -303,6 +303,8 @@ CD /D "%~dp0"
 @tab C#
 
 ```cs
+// This is actually C# code, the tab name is not displayed correctly
+
 using System;
 
 namespace HelloWorldApp {
@@ -322,6 +324,33 @@ namespace HelloWorldApp {
         }
         // #endregion snippet
     }
+}
+```
+
+@tab C/C++
+
+```cpp
+#include <iostream>
+#include <vector>
+
+std::vector<int> v;
+
+#pragma region snippet
+int f() {
+  for (int item : v) std::cout << item << std::endl;
+  return v.size();
+}
+#pragma endregion snippet
+
+int main() {
+  int n, u;
+  std::cin >> n;
+  for (int i = 1; i <= n; ++i) {
+    std::cin >> u;
+    v.push_back(u);
+  }
+  std::cout << f();
+  return 0;
 }
 ```
 
