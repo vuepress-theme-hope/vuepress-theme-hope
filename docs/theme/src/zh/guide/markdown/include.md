@@ -285,11 +285,11 @@ pushd "%CD%"
 CD /D "%~dp0"
 ```
 
-@tab C#
+<!-- 半角 # 无法正常显示 -->
+
+@tab C＃
 
 ```cs
-// 这是 C# 代码，“#”在 tab 名中无法显示
-
 using System;
 
 namespace HelloWorldApp {

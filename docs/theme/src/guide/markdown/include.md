@@ -300,11 +300,11 @@ pushd "%CD%"
 CD /D "%~dp0"
 ```
 
-@tab C#
+<!-- Half width # cannot be displayed properly -->
+
+@tab C＃
 
 ```cs
-// This is actually C# code, the tab name is not displayed correctly
-
 using System;
 
 namespace HelloWorldApp {
