@@ -41,7 +41,7 @@ icon: code
 
 :::
 
-::: tip import external style
+::: tip Import external styles
 
 - If you need import external style (e.g., unocss generated css file), You can add `link` tag to import it. Setting in you code demo's html or js block.
 
