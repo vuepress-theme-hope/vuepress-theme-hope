@@ -143,12 +143,13 @@ Only `service`, `dev` and `ssr` option is available in `@setting` directive.
 
 ::: info UnoCSS Preset
 
-UnoCSS preset is using official playground by default. You can use `@file` to input different content, every file type only support one. You can set three file types as follows:
+UnoCSS preset is using [official playground](<(https://unocss.dev/play)>) by default. You can use `@file` to add three file (`index.html`, `config.js`, `style.css`), . You can set three file types as follows:
 
-- `xxx.html` match `HTML` content. If no html file, The official default value will be used.
-- `xxx.js` match `Config` content. If no config file, The official default value will be used.
-- `xxx.css` match `Custom CSS` content.
+- `@file index.html` match `HTML` content. If no html file, The official default value will be used.
+- `@file config.js` match `Config` content. If no config file, The official default value will be used.
+- `@file style.css` match `Custom CSS` content.
 
+:heavy_exclamation_mark: every file type (html/js/css) only support one file.  
 If you need, you can set your own service url through `playground.config.unocss.service` in config file.
 
 :::
@@ -448,7 +449,7 @@ export default defineConfig({
 });
 ```
 
-@file custom.css
+@file style.css
 
 ```css
 :root {

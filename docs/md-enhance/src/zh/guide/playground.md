@@ -143,12 +143,13 @@ Vue 预设默认使用官方 playground，并不像 [Vue Playground](./vue-playg
 
 ::: info UnoCSS 预设
 
-UnoCSS 预设默认使用官方 playground，通过 `@file` 的不同文件类型，对应官方 playground 的相应输入，每个文件类型仅支持一个文件，具体：
+UnoCSS 预设默认使用[官方 playground](https://unocss.dev/play)，可通过 `@file` 指定添加三个文件（`index.html`, `config.js`, `style.css`），对应官方 playground 的相应输入：
 
-- `xxx.html` 对应 `HTML`，没有对应文件则使用官方的默认值
-- `xxx.js` 对应 `Config`，没有对应文件则会使用官方默认值
-- `xxx.css` 对应 `Custom CSS`
+- `@file index.html` 对应 `HTML`，没有对应文件则会使用官方的默认值
+- `@file config.js` 对应 `Config`，没有对应文件则会使用官方默认值
+- `@file style.css` 对应 `Custom CSS`，没有则为空
 
+:heavy_exclamation_mark: 注意该预设不支持多个 html/js/css 文件
 在配置中，可以通过 `playground.config.unocss` 中的 `service` 选项使用官方交互演示之外的其他服务，以防你想部署自己的交互演示站点
 :::
 
@@ -447,7 +448,7 @@ export default defineConfig({
 });
 ```
 
-@file custom.css
+@file style.css
 
 ```css
 :root {

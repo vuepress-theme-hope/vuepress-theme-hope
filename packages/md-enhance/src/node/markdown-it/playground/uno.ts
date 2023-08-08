@@ -9,21 +9,26 @@ import type {
 import { logger } from "../../utils.js";
 
 /** Gets a query string representation (hash + queries) */
+const getUrlJoinParam = (
+  key: string,
+  value: string,
+  sign: string = "&",
+): string => {
+  if (value) return `${sign}${key}=${encode(value)}`;
+
+  return "";
+};
+
 export const generateUnoURL = (
   service: string,
   inputHTML: string,
   customCSS: string,
   customConfigRaw: string,
 ): string => {
-  const getParam = (key: string, value: string, sign: string = "&"): string => {
-    if (value) return `${sign}${key}=${encode(value)}`;
-
-    return "";
-  };
-  const params = `/${getParam("html", inputHTML, "?")}${getParam(
+  const params = `/${getUrlJoinParam("html", inputHTML, "?")}${getUrlJoinParam(
     "config",
     customConfigRaw,
-  )}${getParam("css", customCSS)}`;
+  )}${getUrlJoinParam("css", customCSS)}`;
 
   return `${service}${params}`;
 };
