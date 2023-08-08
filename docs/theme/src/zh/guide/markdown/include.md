@@ -285,9 +285,7 @@ pushd "%CD%"
 CD /D "%~dp0"
 ```
 
-<!-- 半角 # 无法正常显示 -->
-
-@tab C＃
+@tab C\#
 
 ```cs
 using System;

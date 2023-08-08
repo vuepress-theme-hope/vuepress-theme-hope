@@ -300,9 +300,7 @@ pushd "%CD%"
 CD /D "%~dp0"
 ```
 
-<!-- Half width # cannot be displayed properly -->
-
-@tab C＃
+@tab C\#
 
 ```cs
 using System;
