@@ -104,8 +104,8 @@ importers:
         specifier: 8.0.3
         version: 8.0.3
       inquirer:
-        specifier: 9.2.9
-        version: 9.2.9
+        specifier: 9.2.10
+        version: 9.2.10
       magic-string:
         specifier: 0.30.2
         version: 0.30.2
@@ -1573,8 +1573,8 @@ importers:
         specifier: 7.2.0
         version: 7.2.0
       inquirer:
-        specifier: 9.2.9
-        version: 9.2.9
+        specifier: 9.2.10
+        version: 9.2.10
     devDependencies:
       '@types/inquirer':
         specifier: 9.0.3
@@ -7273,8 +7273,8 @@ packages:
     engines: {node: '>= 10'}
     dev: true
 
-  /cli-width@4.0.0:
-    resolution: {integrity: sha512-ZksGS2xpa/bYkNzN3BAw1wEjsLV/ZKOf/CCrJ/QOBsxx6fOARIkwTutxp1XIOIohi6HKmOFjMoK/XaqDVUpEEw==}
+  /cli-width@4.1.0:
+    resolution: {integrity: sha512-ouuZd4/dm2Sw5Gmqy6bGyNNNe1qt9RpmxveLSO7KcgsTnU7RXfsw+/bukWGo1abgBiMAic068rclZsO4IWmmxQ==}
     engines: {node: '>= 12'}
 
   /cliui@3.2.0:
@@ -10603,15 +10603,15 @@ packages:
       wrap-ansi: 7.0.0
     dev: true
 
-  /inquirer@9.2.9:
-    resolution: {integrity: sha512-0VXHov2GGwWquYxwxlcIcm3yOHvFb2jh/+HkY8/AUXSTWShpo6QJMlSfHi5Xo74NO40UePBM3rQcI3OkzOF/7A==}
+  /inquirer@9.2.10:
+    resolution: {integrity: sha512-tVVNFIXU8qNHoULiazz612GFl+yqNfjMTbLuViNJE/d860Qxrd3NMrse8dm40VUQLOQeULvaQF8lpAhvysjeyA==}
     engines: {node: '>=14.18.0'}
     dependencies:
       '@ljharb/through': 2.3.9
       ansi-escapes: 4.3.2
       chalk: 5.3.0
       cli-cursor: 3.1.0
-      cli-width: 4.0.0
+      cli-width: 4.1.0
       external-editor: 3.1.0
       figures: 5.0.0
       lodash: 4.17.21
