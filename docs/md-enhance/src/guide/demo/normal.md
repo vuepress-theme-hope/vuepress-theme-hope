@@ -59,6 +59,7 @@ icon: code
 ```js
 // add this to js code block, change to your own href
 const linkElem = window.document.createElement("link");
+
 linkElem.setAttribute("rel", "stylesheet");
 linkElem.setAttribute("href", "__uno.css");
 document.appendChild(linkElem);
