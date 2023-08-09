@@ -13,7 +13,7 @@ The plugin provides you playground support.
 
 @tab TS
 
-```ts {8-33}
+```ts {8-36}
 // .vuepress/config.ts
 import { mdEnhance } from "vuepress-plugin-md-enhance";
 
@@ -26,6 +26,7 @@ export default {
         presets: [
           "ts",
           "vue",
+          "unocss",
           {
             name: "playground#language",
             component: "PlaygroundComponent",
@@ -44,6 +45,9 @@ export default {
           vue: {
             // ...
           },
+          unocss: {
+            // ...
+          },
         },
       },
     }),
@@ -53,7 +57,7 @@ export default {
 
 @tab JS
 
-```js {8-33}
+```js {8-36}
 // .vuepress/config.js
 import { mdEnhance } from "vuepress-plugin-md-enhance";
 
@@ -66,6 +70,7 @@ export default {
         presets: [
           "ts",
           "vue",
+          "unocss",
           {
             name: "playground#language",
             component: "PlaygroundComponent",
@@ -82,6 +87,9 @@ export default {
             // ...
           },
           vue: {
+            // ...
+          },
+          unocss: {
             // ...
           },
         },
@@ -109,7 +117,7 @@ You can see the below demos to see more details.
 
 ## Available presets
 
-Currently, we support `ts` and `vue` presets, and we are looking forward to more presets coming from PRs.
+Currently, we support `ts`, `vue` and `unocss` presets, and we are looking forward to more presets coming from PRs.
 
 If you want to add a playground of your own, you can add a preset by you own in [Advanced Section](#advanced), and welcome to open a PR about your fantastic preset.
 
@@ -130,6 +138,19 @@ Vue preset is using the official playground by default, and do not support custo
 But if you only want a few demos instead of bundling a whole vue playground, you can use this preset to create a `<iframe>`.
 
 Only `service`, `dev` and `ssr` option is available in `@setting` directive.
+
+:::
+
+::: info UnoCSS Preset
+
+UnoCSS preset is using [official playground](<(https://unocss.dev/play)>) by default. You can use `@file` to add three file (`index.html`, `config.js`, `style.css`), . You can set three file types as follows:
+
+- `@file index.html` match `HTML` content. If no html file, The official default value will be used.
+- `@file config.js` match `Config` content. If no config file, The official default value will be used.
+- `@file style.css` match `Custom CSS` content.
+
+:heavy_exclamation_mark: every file type (html/js/css) only support one file.  
+If you need, you can set your own service url through `playground.config.unocss.service` in config file.
 
 :::
 
@@ -363,6 +384,76 @@ const msg = ref("Hello Playground!");
 {
   "dev": true,
   "ssr": true
+}
+```
+
+:::
+````
+
+::::
+
+### UnoCSS
+
+::: playground#unocss UnoCSS demo
+
+@file index.html
+
+```html
+<div class="flex flex-col text-center h-full justify-center">
+  <div class="text-red">TEST for default preset</div>
+  <div class="text-$fd-color">TEST for custom css</div>
+</div>
+```
+
+@file config.js
+
+```js
+import { defineConfig, presetUno } from "unocss";
+
+export default defineConfig({
+  presets: [presetUno()],
+});
+```
+
+@file custom.css
+
+```css
+:root {
+  --fd-color: green;
+}
+```
+
+:::
+
+:::: details Code
+
+````md
+::: playground#unocss UnoCSS demo
+
+@file index.html
+
+```html
+<div class="flex flex-col text-center h-full justify-center">
+  <div class="text-red">TEST for default preset</div>
+  <div class="text-$fd-color">TEST for custom css</div>
+</div>
+```
+
+@file config.js
+
+```js
+import { defineConfig, presetUno } from "unocss";
+
+export default defineConfig({
+  presets: [presetUno()],
+});
+```
+
+@file style.css
+
+```css
+:root {
+  --fd-color: green;
 }
 ```
 

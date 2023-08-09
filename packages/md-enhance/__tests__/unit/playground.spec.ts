@@ -4,6 +4,7 @@ import { describe, expect, it } from "vitest";
 
 import {
   getTSPlaygroundPreset,
+  getUnoPlaygroundPreset,
   getVuePlaygroundPreset,
   playground,
 } from "../../src/node/markdown-it/playground/index.js";
@@ -453,6 +454,67 @@ const msg = ref("Hello Playground!");
 }\
 `,
       });
+    });
+  });
+
+  describe("unocss preset", () => {
+    const markdownItWithUnoPreset = MarkdownIt({ linkify: true }).use(
+      playground,
+      getUnoPlaygroundPreset({}),
+    );
+
+    it("Should work", () => {
+      const result1 = markdownItWithUnoPreset.render(`
+::: playground#unocss UnoCSS demo 1
+
+@file index.html
+
+\`\`\`html
+<div class="text-red">UnoCSS TEST</div>
+\`\`\`
+
+:::
+`);
+
+      const result2 = markdownItWithUnoPreset.render(`
+::: playground#unocss UnoCSS demo 2
+
+@file index.html
+
+\`\`\`html
+<div class="text-$fd-color">UnoCSS TEST 2</div>
+\`\`\`
+
+@file config.js
+
+\`\`\`js
+import {
+  defineConfig,
+  presetUno,
+} from 'unocss'
+
+export default defineConfig({
+  presets: [
+    presetUno(),
+  ]
+})
+
+\`\`\`
+
+@file custom.css
+
+\`\`\`css
+:root {
+  --fd-color: red;
+}
+
+\`\`\`
+
+:::
+`);
+
+      expect(result1).toMatchSnapshot();
+      expect(result2).toMatchSnapshot();
     });
   });
 });

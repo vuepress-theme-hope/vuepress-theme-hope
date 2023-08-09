@@ -475,6 +475,17 @@ Stylize inline tokens to create snippet you want.
     service?: string;
   }
 
+  interface UnoPresetPlaygroundOptions {
+    /**
+     * external playground service url
+     *
+     * 交互演示外部地址
+     *
+     * @default "https://unocss.dev/play"
+     */
+    service?: string;
+  }
+
   interface VuePresetPlaygroundOptions {
     /**
      * external playground service url

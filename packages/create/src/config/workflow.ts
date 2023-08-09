@@ -46,6 +46,7 @@ ${
         uses: pnpm/action-setup@v2
         with:
           run_install: true
+          version: 8
 `
     : ""
 }
