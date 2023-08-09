@@ -54,7 +54,7 @@ export const zhNavbarConfig = navbar([
           {
             text: "版权信息插件",
             icon: "copyright",
-            link: linkHelper("copyright"),
+            link: linkHelper("copyright2"),
           },
           {
             text: "Feed 插件",
