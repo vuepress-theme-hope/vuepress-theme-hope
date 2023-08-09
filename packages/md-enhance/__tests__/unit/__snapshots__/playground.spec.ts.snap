@@ -122,6 +122,18 @@ exports[`playground > ts preset > Should work 2`] = `
 "
 `;
 
+exports[`playground > unocss preset > Should work 1`] = `
+"<Playground key=\\"78949b8e\\" title=\\"UnoCSS%20demo%201\\" link=\\"https%3A%2F%2Funocss.dev%2Fplay%2F%3Fhtml%3DDwEwlgbgBAxgNgQwM5ILwCIAuBTAHpgWgCdsR0A%2BAVQDsB7AYQGVGoAVAUUdeAHpwJyAKCA\\">
+</Playground>
+"
+`;
+
+exports[`playground > unocss preset > Should work 2`] = `
+"<Playground key=\\"78949b8c\\" title=\\"UnoCSS%20demo%202\\" link=\\"https%3A%2F%2Funocss.dev%2Fplay%2F%3Fhtml%3DDwEwlgbgBAxgNgQwM5ILwCIAuBTAHpgWgBIAzEAmAezkoCd0A%2BAVQDtKBhAZU6gBUBRTrygAmYAHpwEBgCggA%26config%3DJYWwDg9gTgLgBAbwFBzgEwKYDNgDsMDCEuOA5gDQpxhQYDOGMAqrhJQL5xZQQhwDkAV1YBjOnX5IkGAB6RY6bAENBAG3iYc%2BIiWCkAFMlQ16jOgC44AbSrHaDZq30BKSqgC6Sds6lA%26css%3DFwJw9mAuAEDeBQ1oFpkDMAmyDGYA2YIw0IAphgNzwC%2B88QA\\">
+</Playground>
+"
+`;
+
 exports[`playground > vue preset > Should work 1`] = `
 "<Playground key=\\"68440394\\" title=\\"Vue%20demo%20with%20customized%20imports\\" link=\\"https%3A%2F%2Fsfc.vuejs.org%2F%23eyJBcHAudnVlIjoiPHNjcmlwdCBzZXR1cD5cbmltcG9ydCB7IHJlZiB9IGZyb20gXCJ2dWVcIjtcblxuaW1wb3J0IENvbXAgZnJvbSBcIi4vQ29tcC52dWVcIjtcblxuY29uc3QgbXNnID0gcmVmKFwiSGVsbG8gV29ybGQhXCIpO1xuPC9zY3JpcHQ%2BXG5cbjx0ZW1wbGF0ZT5cbiAgPGgxPnt7IG1zZyB9fTwvaDE%2BXG4gIDxpbnB1dCB2LW1vZGVsPVwibXNnXCIgLz5cbiAgPENvbXAgLz5cbjwvdGVtcGxhdGU%2BXG4iLCJDb21wLnZ1ZSI6Ijx0ZW1wbGF0ZT5cbiAgPGRpdj5Db21wPC9kaXY%2BXG48L3RlbXBsYXRlPlxuIiwiaW1wb3J0LW1hcC5qc29uIjoie1xuICBcImltcG9ydHNcIjoge1xuICAgIFwidnVlXCI6IFwiaHR0cHM6Ly9zZmMudnVlanMub3JnL3Z1ZS5ydW50aW1lLmVzbS1icm93c2VyLmpzXCJcbiAgfVxufSJ9\\">
 </Playground>

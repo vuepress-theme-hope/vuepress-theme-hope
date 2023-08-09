@@ -13,7 +13,7 @@ icon: code
 
 @tab TS
 
-```ts {8-33}
+```ts {8-36}
 // .vuepress/config.ts
 import { mdEnhance } from "vuepress-plugin-md-enhance";
 
@@ -26,6 +26,7 @@ export default {
         presets: [
           "ts",
           "vue",
+          "unocss",
           {
             name: "playground#language",
             component: "PlaygroundComponent",
@@ -44,6 +45,9 @@ export default {
           vue: {
             // ...
           },
+          unocss: {
+            // ...
+          },
         },
       },
     }),
@@ -53,7 +57,7 @@ export default {
 
 @tab JS
 
-```js {8-33}
+```js {8-36}
 // .vuepress/config.js
 import { mdEnhance } from "vuepress-plugin-md-enhance";
 
@@ -66,6 +70,7 @@ export default {
         presets: [
           "ts",
           "vue",
+          "unocss",
           {
             name: "playground#language",
             component: "PlaygroundComponent",
@@ -82,6 +87,9 @@ export default {
             // ...
           },
           vue: {
+            // ...
+          },
+          unocss: {
             // ...
           },
         },
@@ -109,7 +117,7 @@ export default {
 
 ## 可用预设
 
-目前，我们支持 `ts` 和 `vue` 预设，我们期待更多来自 PR 的预设。
+目前，我们支持 `ts`、`vue`和 `unocss` 预设，我们期待更多来自 PR 的预设。
 
 如果你想添加自己的交互演示，可以在 [高级用法](#高级用法) 中添加你自己的预设。同时我们欢迎为你的精彩预设创建 PR。
 
@@ -131,6 +139,18 @@ Vue 预设默认使用官方 playground，并不像 [Vue Playground](./vue-playg
 
 `@setting` 指令中只有 `service`、`dev` 和 `ssr` 选项可用。
 
+:::
+
+::: info UnoCSS 预设
+
+UnoCSS 预设默认使用[官方 playground](https://unocss.dev/play)，可通过 `@file` 指定添加三个文件（`index.html`, `config.js`, `style.css`），对应官方 playground 的相应输入：
+
+- `@file index.html` 对应 `HTML`，没有对应文件则会使用官方的默认值
+- `@file config.js` 对应 `Config`，没有对应文件则会使用官方默认值
+- `@file style.css` 对应 `Custom CSS`，没有则为空
+
+:heavy_exclamation_mark: 注意该预设不支持多个 html/js/css 文件
+在配置中，可以通过 `playground.config.unocss` 中的 `service` 选项使用官方交互演示之外的其他服务，以防你想部署自己的交互演示站点
 :::
 
 ## 案例
@@ -363,6 +383,76 @@ const msg = ref("Hello Playground!");
 {
   "dev": true,
   "ssr": true
+}
+```
+
+:::
+````
+
+::::
+
+### UnoCSS
+
+::: playground#unocss UnoCSS 案例
+
+@file index.html
+
+```html
+<div class="flex flex-col text-center h-full justify-center">
+  <div class="text-red">TEST for default preset</div>
+  <div class="text-$fd-color">TEST for custom css</div>
+</div>
+```
+
+@file config.js
+
+```js
+import { defineConfig, presetUno } from "unocss";
+
+export default defineConfig({
+  presets: [presetUno()],
+});
+```
+
+@file custom.css
+
+```css
+:root {
+  --fd-color: green;
+}
+```
+
+:::
+
+:::: details 代码
+
+````md
+::: playground#unocss UnoCSS 案例
+
+@file index.html
+
+```html
+<div class="flex flex-col text-center h-full justify-center">
+  <div class="text-red">TEST for default preset</div>
+  <div class="text-$fd-color">TEST for custom css</div>
+</div>
+```
+
+@file config.js
+
+```js
+import { defineConfig, presetUno } from "unocss";
+
+export default defineConfig({
+  presets: [presetUno()],
+});
+```
+
+@file style.css
+
+```css
+:root {
+  --fd-color: green;
 }
 ```
 

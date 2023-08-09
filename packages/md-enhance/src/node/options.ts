@@ -14,6 +14,7 @@ import type {
   StylizeOptions,
   TSPresetPlaygroundOptions,
   TasklistOptions,
+  UnoPresetPlaygroundOptions,
   VuePresetPlaygroundOptions,
 } from "./typings/index.js";
 import type { CodeDemoOptions } from "../shared/index.js";
@@ -365,11 +366,12 @@ export interface MarkdownEnhanceOptions {
    */
   playground?: {
     /** Playground presets */
-    presets: ("ts" | "vue" | PlaygroundOptions)[];
+    presets: ("ts" | "vue" | "unocss" | PlaygroundOptions)[];
     /** Playground config */
     config?: {
       ts?: TSPresetPlaygroundOptions;
       vue?: VuePresetPlaygroundOptions;
+      unocss?: UnoPresetPlaygroundOptions;
     };
   };
 

@@ -140,3 +140,14 @@ export interface VuePresetPlaygroundOptions {
    */
   ssr?: boolean;
 }
+
+export interface UnoPresetPlaygroundOptions {
+  /**
+   * external playground service url
+   *
+   * 交互演示外部地址
+   *
+   * @default "https://unocss.dev/play"
+   */
+  service?: string;
+}

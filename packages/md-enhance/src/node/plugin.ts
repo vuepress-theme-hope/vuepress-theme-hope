@@ -50,6 +50,7 @@ import {
   echarts,
   flowchart,
   getTSPlaygroundPreset,
+  getUnoPlaygroundPreset,
   getVuePlaygroundPreset,
   hint,
   mermaid,
@@ -351,6 +352,8 @@ export const mdEnhancePlugin =
               md.use(playground, getTSPlaygroundPreset(config.ts || {}));
             else if (preset === "vue")
               md.use(playground, getVuePlaygroundPreset(config.vue || {}));
+            else if (preset === "unocss")
+              md.use(playground, getUnoPlaygroundPreset(config.unocss || {}));
             else if (isPlainObject(preset)) md.use(playground, preset);
           });
         }
