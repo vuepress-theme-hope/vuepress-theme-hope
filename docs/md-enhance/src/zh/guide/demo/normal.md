@@ -41,7 +41,7 @@ icon: code
 
 :::
 
-::: tip 引入外部样式
+:::: tip 引入外部样式
 
 - 如果需要在演示中引入其他样式 (如 unocss 生成的样式)，可以通过在 html 或 js 中添加 `link` 标签的方式引入。例子：
 
@@ -65,7 +65,7 @@ document.appendChild(linkElem);
 ```
 
 :::
-:::
+::::
 
 ## 例子
 
