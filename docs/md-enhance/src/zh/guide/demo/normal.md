@@ -41,6 +41,32 @@ icon: code
 
 :::
 
+:::: tip 引入外部样式
+
+- 如果需要在演示中引入其他样式 (如 unocss 生成的样式)，可以通过在 html 或 js 中添加 `link` 标签的方式引入。例子：
+
+::: code-tabs
+
+@tab html引入
+
+```html
+<!-- 引入到演示的 html 中，修改为你的 href -->
+<link rel="stylesheet" href="__uno.css" />
+```
+
+@tab js引入
+
+```js
+// 引入下面部分到演示的 js 中，修改为你的 href
+const linkElem = window.document.createElement("link");
+linkElem.setAttribute("rel", "stylesheet");
+linkElem.setAttribute("href", "__uno.css");
+document.appendChild(linkElem);
+```
+
+:::
+::::
+
 ## 例子
 
 ::: normal-demo Demo 演示
