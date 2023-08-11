@@ -4,6 +4,20 @@ All notable changes to this project will be documented in this file. See [Conven
 
 <!-- #region recent-beta -->
 
+## [2.0.0-beta.235](https://github.com/vuepress-theme-hope/vuepress-theme-hope/compare/v2.0.0-beta.234...v2.0.0-beta.235) (2023-08-11)
+
+### Features
+
+- **md-enhance:** add unocss preset to playground ([#3348](https://github.com/vuepress-theme-hope/vuepress-theme-hope/issues/3348)) ([f0736cb](https://github.com/vuepress-theme-hope/vuepress-theme-hope/commit/f0736cbc19fb40896b870b0eeca776623ae7e58d))
+
+### Bug Fixes
+
+- **create:** fix template ([ca6cd86](https://github.com/vuepress-theme-hope/vuepress-theme-hope/commit/ca6cd86b62ed7bf3b06fec79a4679dc633862695))
+- **create:** fix workflow, close [#3332](https://github.com/vuepress-theme-hope/vuepress-theme-hope/issues/3332) ([1614f42](https://github.com/vuepress-theme-hope/vuepress-theme-hope/commit/1614f42d6b1cabc38e6f4e17eb4947ba567a7b64))
+- **deps:** update dependency inquirer to v9.2.10 ([#3322](https://github.com/vuepress-theme-hope/vuepress-theme-hope/issues/3322)) ([dcd807f](https://github.com/vuepress-theme-hope/vuepress-theme-hope/commit/dcd807f0d0bbd88ecb37478f4869ac1b1b34122e))
+- **theme:** fix article list pageview, close [#3331](https://github.com/vuepress-theme-hope/vuepress-theme-hope/issues/3331) ([b5cbaf0](https://github.com/vuepress-theme-hope/vuepress-theme-hope/commit/b5cbaf09836237465a062e67c70b739c21aec80b))
+- **theme:** fix sidebar item scroll, close [#3330](https://github.com/vuepress-theme-hope/vuepress-theme-hope/issues/3330) ([c4bb5f6](https://github.com/vuepress-theme-hope/vuepress-theme-hope/commit/c4bb5f6191c33df8a4b7d517004ebc1566ab4093))
+
 ## [2.0.0-beta.234](https://github.com/vuepress-theme-hope/vuepress-theme-hope/compare/v2.0.0-beta.233...v2.0.0-beta.234) (2023-07-30)
 
 ### Bug Fixes
