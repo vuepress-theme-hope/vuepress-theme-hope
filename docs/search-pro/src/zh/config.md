@@ -156,7 +156,7 @@ export default defineUserConfig({
 
 存储搜索结果历史的最大数量，可以设置为 `0` 以禁用。
 
-### delay
+### searchDelay
 
 - 类型: `number`
 - 默认值: `150`
@@ -169,7 +169,7 @@ export default defineUserConfig({
 
 :::
 
-## sortStrategy
+### sortStrategy
 
 - 类型: `"max" | "total"`
 - 默认值: `"max"`

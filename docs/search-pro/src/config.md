@@ -156,7 +156,7 @@ Max stored query history count, set `0` to disable it.
 
 Max stored matched result history count, set `0` to disable it.
 
-### delay
+### searchDelay
 
 - Type: `number`
 - Default: `150`
@@ -169,7 +169,7 @@ Performing client search with huge contents could be slow, so under this case yo
 
 :::
 
-## sortStrategy
+### sortStrategy
 
 - Type: `"max" | "total"`
 - Default: `"max"`
