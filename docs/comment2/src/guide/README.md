@@ -33,14 +33,14 @@ export default {
 // .vuepress/client.ts
 import { defineClientConfig } from "@vuepress/client";
 import {
-  defineArtalkOptions,
-  // defineGiscusOptions,
-  // defineTwikooOptions,
-  // defineWalineOptions,
-} from "vuepress-plugin-comment2";
+  defineArtalkConfig,
+  // defineGiscusConfig,
+  // defineTwikooConfig,
+  // defineWalineConfig,
+} from "vuepress-plugin-comment2/client";
 
-defineArtalkOptions({
-  // options
+defineArtalkConfig({
+  // 选项
 });
 
 export default defineClientConfig({

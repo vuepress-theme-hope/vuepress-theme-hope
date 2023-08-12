@@ -122,7 +122,7 @@ Waline 的服务端地址。
 
 评论列表分页，每页条数。
 
-## imageUploader
+## imageUploader <Badge text="仅限客户端配置" type="warning"/>
 
 - 类型: `WalineImageUploader | false`
 - 必填: 否
