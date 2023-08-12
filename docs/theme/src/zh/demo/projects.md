@@ -340,8 +340,8 @@ blog:
 
   - name: heStudio
     desc: Welcome to the pit!
-    logo: https://www.hestudio.org/logo.svg
-    url: https://www.hestudio.org/
+    logo: https://www.hestudio.net/logo.svg
+    url: https://www.hestudio.net/
     repo: https://gitlab.com/heStudio/blog-source.git
     preview: /assets/image/hestudio.jpg
 
