@@ -75,6 +75,15 @@ export default defineComponent({
      * 目录是否显示索引
      */
     index: Boolean,
+
+    /**
+     * Wheather hide `Category` title
+     *
+     * 是否隐藏 `目录` 标题
+     *
+     * @default false
+     */
+    hideCategory: Boolean,
   },
 
   setup(props) {
@@ -216,7 +225,9 @@ export default defineComponent({
 
     return (): VNode =>
       h("div", { class: "vp-catalog" }, [
-        h("h2", { class: "vp-catalog-main-title" }, locale.value.title),
+        props.hideCategory
+          ? null
+          : h("h2", { class: "vp-catalog-main-title" }, locale.value.title),
 
         info.value.length
           ? info.value.map(
@@ -249,7 +260,7 @@ export default defineComponent({
                 ),
                 children.length
                   ? h(
-                      "ul",
+                      props.index ? "ol" : "ul",
                       { class: "vp-catalog-child-catalogs" },
                       children.map(
                         ({ children = [], icon, path, title }, index) =>
@@ -272,9 +283,6 @@ export default defineComponent({
                                   VPLink,
                                   { class: "vp-catalog-title", to: path },
                                   () => [
-                                    props.index
-                                      ? `${mainIndex + 1}.${index + 1}`
-                                      : null,
                                     icon && iconComponent
                                       ? h(iconComponent, { icon })
                                       : null,

@@ -168,3 +168,10 @@ Max level of catalog.
 - Default: `false`
 
 Whether display index number for catalog.
+
+### hideCategory
+
+- Type: `boolean`
+- Default: `false`
+
+Whether hide `Category` title.
