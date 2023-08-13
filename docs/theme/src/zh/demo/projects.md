@@ -400,6 +400,14 @@ blog:
     url: https://xxxweii.github.io/XXXWeiiBlog
     repo: https://github.com/XXXWeii/XXXWeiiBlog
     preview: https://xxxweii.github.io/XXXWeiiBlog/assets/images/XXXWeii.png
+
+  - name: 小u的学习笔记
+    desc: 热爱可抵岁月漫长
+    logo: https://mydocs.guoyaxue.top/site_logo.png
+    url: https://mydocs.guoyaxue.top
+    repo: https://github.com/xiaou61/mydocs
+    preview: https://mydocs.guoyaxue.top/site_logo.png
+    
 ---
 
 ## 使用 VuePress Theme Hope 的文档
