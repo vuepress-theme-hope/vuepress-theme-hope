@@ -76,7 +76,7 @@
     "nano-staged": "0.8.0",
     "ora": "7.0.1",
     "picocolors": "1.0.0",
-    "prettier": "3.0.1",
+    "prettier": "3.0.2",
     "rimraf": "5.0.1",
     "rollup": "3.28.0",
     "rollup-plugin-copy": "3.4.0",
