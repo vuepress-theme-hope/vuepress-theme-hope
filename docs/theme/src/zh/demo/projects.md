@@ -360,7 +360,7 @@ blog:
     preview: /assets/image/bing.jpg
 
   - name: Oragekk's Blog
-    desc: 到最后，竟庆幸于夕阳仍留在身上？无聊的思考总是能给人启发，多经历，多记录，多理解
+    desc: 愿人生如剑、立起寒光四射、躺倒四射寒光
     logo: https://oragekk.me/logo.svg
     url: https://oragekk.me/
     repo: https://github.com/OrageKK/oragekk.github.io
