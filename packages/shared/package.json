@@ -58,7 +58,7 @@
     "@vueuse/core": "^10.3.0",
     "cheerio": "1.0.0-rc.12",
     "dayjs": "^1.11.9",
-    "execa": "^7.2.0",
+    "execa": "^8.0.0",
     "fflate": "^0.8.0",
     "gray-matter": "^4.0.3",
     "semver": "^7.5.4",
