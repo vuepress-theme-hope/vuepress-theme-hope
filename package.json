@@ -54,7 +54,7 @@
     "@vitest/coverage-v8": "0.34.2",
     "@vue/eslint-config-typescript": "11.0.3",
     "bumpp": "9.2.0",
-    "commit-and-tag-version": "11.2.2",
+    "commit-and-tag-version": "11.2.3",
     "commitizen": "4.3.0",
     "concurrently": "8.2.0",
     "cpx2": "5.0.0",
