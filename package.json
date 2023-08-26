@@ -78,7 +78,7 @@
     "picocolors": "1.0.0",
     "prettier": "3.0.2",
     "rimraf": "5.0.1",
-    "rollup": "3.28.0",
+    "rollup": "3.28.1",
     "rollup-plugin-copy": "3.4.0",
     "rollup-plugin-dts": "6.0.0",
     "rollup-plugin-esbuild": "5.0.0",
