@@ -71,7 +71,7 @@
     "http-server": "14.1.1",
     "husky": "8.0.3",
     "inquirer": "9.2.10",
-    "magic-string": "0.30.2",
+    "magic-string": "0.30.3",
     "markdownlint-cli": "0.35.0",
     "nano-staged": "0.8.0",
     "ora": "7.0.1",
