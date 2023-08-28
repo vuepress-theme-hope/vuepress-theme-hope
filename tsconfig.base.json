@@ -17,7 +17,7 @@
 
     // Modules
     "baseUrl": "./",
-    "module": "ESNext",
+    "module": "NodeNext",
     "moduleResolution": "NodeNext",
     "resolveJsonModule": true,
 
