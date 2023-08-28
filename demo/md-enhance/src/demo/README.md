@@ -21,6 +21,7 @@ title: Get Started
 - [Mermaid](mermaid.md)
 - [Playground](playground.md)
 - [Presentation](presentation.md)
+- [Sandpack](sandpack.md)
 - [Stylized](stylized.md)
 - [Subscript and Superscript](sup-sub.md)
 - [Tabs](tabs.md)

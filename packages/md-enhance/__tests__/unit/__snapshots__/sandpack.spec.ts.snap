@@ -1,0 +1,19 @@
+// Vitest Snapshot v1, https://vitest.dev/guide/snapshot.html
+
+exports[`Sandpack > Should resolve sandpack info 1`] = `
+"<MdSandpack title=\\"Sandpack%20demo\\" key=\\"47bf4596\\" template=\\"vue\\" files=\\"eyJBcHAudnVlIjoiPHNjcmlwdCBzZXR1cD5cbmltcG9ydCB7IHJlZiB9IGZyb20gJ3Z1ZSdcbmNvbnN0IG1zZyA9IHJlZignSGVsbG8gV29ybGQhJylcbjwvc2NyaXB0PlxuPHRlbXBsYXRlPlxuICA8aDE%2Be3sgbXNnIH19PC9oMT5cbiAgPGlucHV0IHYtbW9kZWw9XCJtc2dcIiAvPlxuPC90ZW1wbGF0ZT5cbiIsIkNvbXAudnVlIjoiPHRlbXBsYXRlPlxuICA8ZGl2PkNvbXA8L2Rpdj5cbjwvdGVtcGxhdGU%2BXG4ifQ%3D%3D\\" options=\\"%7B%7D\\" customSetup=\\"%7B%7D\\">
+</MdSandpack>
+"
+`;
+
+exports[`Sandpack > Should resolve sandpack info with customSetup 1`] = `
+"<MdSandpack title=\\"Sandpack%20demo%20with%20customSetup\\" key=\\"61e23a7c\\" template=\\"vue\\" files=\\"eyJBcHAudnVlIjoiPHNjcmlwdCBzZXR1cD5cbmltcG9ydCB7IHJlZiB9IGZyb20gJ3Z1ZSdcbmNvbnN0IG1zZyA9IHJlZignSGVsbG8gV29ybGQhJylcbjwvc2NyaXB0PlxuPHRlbXBsYXRlPlxuICA8aDE%2Be3sgbXNnIH19PC9oMT5cbiAgPGlucHV0IHYtbW9kZWw9XCJtc2dcIiAvPlxuPC90ZW1wbGF0ZT5cbiJ9\\" options=\\"%7B%22readOnly%22%3Atrue%2C%22showReadOnly%22%3Afalse%7D\\" customSetup=\\"%7B%22entry%22%3A%22%2Findex.js%22%7D\\">
+</MdSandpack>
+"
+`;
+
+exports[`Sandpack > Should resolve sandpack info with options 1`] = `
+"<MdSandpack title=\\"Sandpack%20demo%20with%20options\\" key=\\"8b2108e4\\" template=\\"\\" files=\\"eyJBcHAudnVlIjoiPHNjcmlwdCBzZXR1cD5cbmltcG9ydCB7IHJlZiB9IGZyb20gJ3Z1ZSdcbmNvbnN0IG1zZyA9IHJlZignSGVsbG8gV29ybGQhJylcbjwvc2NyaXB0PlxuPHRlbXBsYXRlPlxuICA8aDE%2Be3sgbXNnIH19PC9oMT5cbiAgPGlucHV0IHYtbW9kZWw9XCJtc2dcIiAvPlxuPC90ZW1wbGF0ZT5cbiIsIkNvbXAudnVlIjoiPHRlbXBsYXRlPlxuICA8ZGl2PkNvbXA8L2Rpdj5cbjwvdGVtcGxhdGU%2BXG4ifQ%3D%3D\\" options=\\"%7B%22readOnly%22%3Atrue%2C%22showReadOnly%22%3Afalse%7D\\" customSetup=\\"%7B%7D\\">
+</MdSandpack>
+"
+`;

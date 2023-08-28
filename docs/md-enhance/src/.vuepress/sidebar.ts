@@ -43,6 +43,7 @@ export const enSidebar = sidebar({
           children: ["", "demo", "themes"],
         },
         "stylize",
+        "sandpack",
         "others",
       ],
     },
@@ -87,6 +88,7 @@ export const enSidebar = sidebar({
       children: ["", "demo", "themes"],
     },
     "stylize",
+    "sandpack",
     "others",
   ],
 });
@@ -134,6 +136,7 @@ export const zhSidebar = sidebar({
           children: ["", "demo", "themes"],
         },
         "stylize",
+        "sandpack",
         "others",
       ],
     },

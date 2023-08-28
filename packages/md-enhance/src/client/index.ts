@@ -1,8 +1,10 @@
 export { defineMermaidConfig, injectMermaidConfig } from "./helpers/index.js";
 export {
   defineRevealConfig,
+  defineSandpackConfig,
   defineVuePlaygroundConfig,
   injectRevealConfig,
+  injectSandpackConfig,
   injectVuePlaygroundConfig,
 } from "./helpers/index.js";
 

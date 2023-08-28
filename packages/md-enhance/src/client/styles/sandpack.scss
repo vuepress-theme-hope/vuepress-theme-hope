@@ -1,0 +1,44 @@
+@use "vuepress-shared/styles/reset";
+
+:root {
+  --sandpack-header-bg-color: #eee;
+}
+
+#{hope-config.$dark-selector} {
+  --sandpack-header-bg-color: #333;
+}
+
+.sandpack-wrapper {
+  overflow: hidden;
+
+  margin-top: 1rem;
+  margin-bottom: 1rem;
+  border: 1px solid var(--vp-brc);
+  border-radius: 6px;
+
+  .header {
+    padding: 0.5rem 0.75rem;
+    border-bottom: 1px solid var(--vp-brc);
+
+    background: var(--sandpack-header-bg-color, #eee);
+
+    font-weight: 500;
+    font-size: 1.1rem;
+    line-height: 1.5;
+    overflow-wrap: break-word;
+
+    transition: background var(--vp-ct) border-color var(--vp-ct);
+  }
+
+  .preview-loading {
+    color: var(--vp-tc);
+  }
+
+  .source-container {
+    display: none;
+
+    &.show {
+      display: block;
+    }
+  }
+}

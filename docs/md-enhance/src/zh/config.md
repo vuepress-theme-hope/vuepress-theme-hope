@@ -714,6 +714,13 @@ CodePen 编辑器显示情况，第一位代表 HTML ，第二位代表 JS，第
 - `"audio"`
 - `"chalkboard"` -->
 
+### sandpack
+
+- 类型: `boolean`
+- 默认值: `false`
+
+是否启用 Sandpack 交互演示。
+
 ### delay
 
 - 类型: `number`
@@ -890,3 +897,30 @@ export const defineVuePlaygroundConfig: (options: VuePlaygroundOptions) => void;
 ```
 
 定义需要传递给 `@vue/repl` 的选项。
+
+### defineSandpackConfig
+
+```ts
+export interface SandpackConfig {
+  /**
+   * 指定模板
+   */
+  template?: string;
+
+  /**
+   * sandpack 配置项
+   */
+  options?: SandpackOptions;
+
+  /**
+   * sandpack customSetup 配置项
+   */
+  customSetup?: SandpackSetup;
+}
+
+export const defineSandpackConfig = (config: SandpackConfig): void => {
+  sandpackConfig = config;
+};
+```
+
+定义需要传递给 `sandpack-vue3` 的选项。
