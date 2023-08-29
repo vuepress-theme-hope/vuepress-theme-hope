@@ -90,7 +90,7 @@ export default defineComponent({
 
     onMounted(() => {
       watch(
-        () => page.value.path,
+        () => props.identifier,
         async () => {
           try {
             artalk?.destroy();
