@@ -19,12 +19,21 @@ icon: gears
 
 协议信息
 
-### triggerWords
+### triggerLength
 
 - 类型: `number`
 - 默认值: `100`
 
-触发附加版权的最小字数
+触发附加版权的最小内容长度
+
+### maxLength
+
+- 类型: `number`
+- 默认值: `0`
+
+允许复制的最大内容长度。
+
+`0` 意味着无限制。
 
 ### global
 
@@ -130,12 +139,21 @@ icon: gears
 
 ## Frontmatter Options
 
-### copy.triggerWords
+### copy.triggerLength
 
 - 类型: `number`
 - 默认值: `100`
 
-触发附加版权的最小字数
+触发附加版权的最小内容长度
+
+### copy.maxLength
+
+- 类型: `number`
+- 默认值: `0`
+
+允许复制的最大内容长度。
+
+`0` 意味着无限制。
 
 ### copy.disableCopy
 
