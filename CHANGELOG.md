@@ -4,6 +4,22 @@ All notable changes to this project will be documented in this file. See [Conven
 
 <!-- #region recent-beta -->
 
+## [2.0.0-beta.236](https://github.com/vuepress-theme-hope/vuepress-theme-hope/compare/v2.0.0-beta.235...v2.0.0-beta.236) (2023-08-29)
+
+### ⚠ BREAKING CHANGES
+
+- **copyright2:** rename `triggerWords` to `triggerLength`
+
+### Features
+
+- **copyright2:** add maxLength ([47d27e9](https://github.com/vuepress-theme-hope/vuepress-theme-hope/commit/47d27e9775a5c98b8523b516e49ef2b0d7b0a05f)), closes [#3388](https://github.com/vuepress-theme-hope/vuepress-theme-hope/issues/3388)
+
+### Bug Fixes
+
+- **comment2:** fix comment update, close [#3391](https://github.com/vuepress-theme-hope/vuepress-theme-hope/issues/3391) ([680265a](https://github.com/vuepress-theme-hope/vuepress-theme-hope/commit/680265a0dad2304ae422ccfea93cb93fe86fba71))
+- **md-enhance:** fix task-list style with normal list item, close [#3373](https://github.com/vuepress-theme-hope/vuepress-theme-hope/issues/3373) ([24adc19](https://github.com/vuepress-theme-hope/vuepress-theme-hope/commit/24adc19b404981da79fc48f23b27f94c523a0f93))
+- **theme:** fix excerpt code block, close [#3405](https://github.com/vuepress-theme-hope/vuepress-theme-hope/issues/3405) ([d66eead](https://github.com/vuepress-theme-hope/vuepress-theme-hope/commit/d66eead23045bdb972a2c77fcbe56690560b47c1))
+
 ## [2.0.0-beta.235](https://github.com/vuepress-theme-hope/vuepress-theme-hope/compare/v2.0.0-beta.234...v2.0.0-beta.235) (2023-08-11)
 
 ### Features

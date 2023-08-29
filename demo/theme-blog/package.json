@@ -1,6 +1,5 @@
 {
   "name": "theme-blog-demo",
-  "version": "2.0.0-beta.181",
   "type": "module",
   "private": true,
   "description": "Blog demo for vuepress-theme-hope",
