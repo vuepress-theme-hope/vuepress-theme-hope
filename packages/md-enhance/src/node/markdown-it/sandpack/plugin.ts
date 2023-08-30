@@ -3,9 +3,11 @@ import type { PluginWithOptions } from "markdown-it";
 import type { RuleBlock } from "markdown-it/lib/parser_block.js";
 import { entries } from "vuepress-shared/node";
 
+import { getFileAttrs } from "./utils.js";
 import type {
   MdSandpackOptions,
   SandpackData,
+  SandpackFile,
   SandpackOptions,
   SandpackPredefinedTemplate,
   SandpackSetup,
@@ -242,7 +244,7 @@ const defaultPropsGetter = (
 ): Record<string, string> => ({
   key: sandpackData.key,
   title: sandpackData.title || "",
-  template: sandpackData.template || "", // todo: 默认值
+  template: sandpackData.template || "",
   files: encodeURIComponent(JSON.stringify(sandpackData.files || {})),
   options: encodeURIComponent(JSON.stringify(sandpackData.options || {})),
   customSetup: encodeURIComponent(
@@ -317,7 +319,17 @@ export const sandpack: PluginWithOptions<MdSandpackOptions> = (
         if (type === "file_open") {
           // File rule must contain a valid file name
           if (!info) continue;
-          currentKey = info;
+          // currentKey = info;
+
+          const attrs = getFileAttrs(info);
+
+          currentKey = attrs["path"]!;
+          sandpackData.files[currentKey] = {
+            code: "",
+            active: !!attrs["active"],
+            hidden: !!attrs["hidden"],
+            readOnly: !!attrs["readOnly"],
+          };
         }
         if (
           type === "file_close" ||
@@ -365,9 +377,10 @@ export const sandpack: PluginWithOptions<MdSandpackOptions> = (
 
         // add code block content
         if (type === "fence" && currentKey)
-          sandpackData.files[currentKey] = {
-            code: content,
-          };
+          // sandpackData.files[currentKey] = {
+          //   code: content,
+          // };
+          (sandpackData.files[currentKey] as SandpackFile).code = content;
 
         tokens[i].type = `${name}_empty`;
         tokens[i].hidden = true;

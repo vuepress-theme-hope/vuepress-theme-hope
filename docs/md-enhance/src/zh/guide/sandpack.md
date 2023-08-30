@@ -1,6 +1,6 @@
 ---
 title: Sandpack 交互演示
-icon: fab fa-codesandbox
+icon: code
 ---
 
 插件为你带来了 Sandpack 交互演示支持。
@@ -57,7 +57,7 @@ export default {
 
 在其中，你可以使用 3 个指令：
 
-- `@file FullPathFile` 紧跟文件的代码块
+- `@file FullPathFile` 紧跟文件的代码块，同时也支持文件选项，例如：`@file FullPathFile {active readOnly hidden}`
 - `@options` 紧跟一个自定义 "options" 的 javascript 代码块
 - `@setup` 紧跟一个自定义 "customSetup" 的 javascript 代码块
 
@@ -81,7 +81,7 @@ export default defineClientConfig({
 
 ## 示例
 
-::: sandpack#vue Vue Demo
+::: sandpack#vue Vue 示例
 
 @file /src/App.vue
 
@@ -103,6 +103,8 @@ const msg = ref("Hello Playground!");
 :::: details 代码
 
 ````md
+::: sandpack#vue Vue 示例
+
 @file /src/App.vue
 
 ```vue
@@ -123,7 +125,7 @@ const msg = ref("Hello Playground!");
 
 ::::
 
-::: sandpack#vue Vue Demo with customized settings
+::: sandpack#vue 带自定义设置的 Vue 示例
 
 @file /src/App.vue
 
@@ -184,7 +186,7 @@ const { charging, level } = useBattery();
 :::: details 代码
 
 ````md
-::: sandpack#vue Vue Demo with customized settings
+::: sandpack#vue 带自定义设置的 Vue 示例
 
 @file /src/App.vue
 
@@ -245,7 +247,113 @@ const { charging, level } = useBattery();
 
 ::::
 
-::: sandpack#react React demo
+::: sandpack#vue 带文件选项的 Vue 示例
+
+@file /src/App.vue {readOnly}
+
+```vue
+<script setup>
+import { ref } from "vue";
+import Comp from "./Comp.vue";
+
+const msg = ref("Hello Playground!");
+</script>
+
+<template>
+  <h1>{{ msg }}</h1>
+  <input v-model="msg" />
+  <Comp />
+</template>
+```
+
+@file /src/Comp.vue {active}
+
+```vue
+<script setup>
+import { useBattery } from "@vueuse/core";
+import { ref } from "vue";
+
+const { charging, level } = useBattery();
+</script>
+
+<template>
+  <h1>Battery status</h1>
+  <p>Charging: {{ charging }}</p>
+  <p>Level: {{ level * 100 }}%</p>
+</template>
+```
+
+@setup
+
+```js
+{
+  dependencies: {
+    "@vueuse/core": "latest",
+    "@vueuse/shared": "latest",
+    "vue-demi": "latest",
+  }
+}
+```
+
+:::
+
+:::: details Code
+
+````md
+::: sandpack#vue 带文件选项的 Vue 示例
+
+@file /src/App.vue {readOnly}
+
+```vue
+<script setup>
+import { ref } from "vue";
+import Comp from "./Comp.vue";
+
+const msg = ref("Hello Playground!");
+</script>
+
+<template>
+  <h1>{{ msg }}</h1>
+  <input v-model="msg" />
+  <Comp />
+</template>
+```
+
+@file /src/Comp.vue {active}
+
+```vue
+<script setup>
+import { useBattery } from "@vueuse/core";
+import { ref } from "vue";
+
+const { charging, level } = useBattery();
+</script>
+
+<template>
+  <h1>Battery status</h1>
+  <p>Charging: {{ charging }}</p>
+  <p>Level: {{ level * 100 }}%</p>
+</template>
+```
+
+@setup
+
+```js
+{
+  dependencies: {
+    "@vueuse/core": "latest",
+    "@vueuse/shared": "latest",
+    "vue-demi": "latest",
+  }
+}
+```
+
+:::
+````
+
+::::
+
+::: sandpack#react React 示例
 
 @file /App.js
 
@@ -260,7 +368,7 @@ export default function App() {
 :::: details 代码
 
 ````md
-::: sandpack#react React demo
+::: sandpack#react React 示例
 
 @file /App.js
 

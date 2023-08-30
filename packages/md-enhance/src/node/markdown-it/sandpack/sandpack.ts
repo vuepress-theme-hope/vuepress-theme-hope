@@ -1,17 +1,8 @@
 import type { PluginSimple } from "markdown-it";
-import { entries, fromEntries } from "vuepress-shared/node";
 
-import { sandpack } from "./sandpack/index.js";
-import type { SandpackData } from "../typings/index.js";
-
-const encodeFiles = (files: SandpackData["files"]): string =>
-  Buffer.from(
-    JSON.stringify(
-      fromEntries(
-        entries(files).map(([key, file]) => [key, file.code || file]),
-      ),
-    ),
-  ).toString("base64");
+import { sandpack } from "./plugin.js";
+import { encodeFiles } from "./utils.js";
+import type { SandpackData } from "../../typings/index.js";
 
 export const mdSandpack: PluginSimple = (md) => {
   md.use(sandpack, {

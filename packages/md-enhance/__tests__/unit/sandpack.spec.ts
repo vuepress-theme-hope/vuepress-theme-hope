@@ -2,7 +2,7 @@
 import MarkdownIt from "markdown-it";
 import { describe, expect, it } from "vitest";
 
-import { mdSandpack } from "../../src/node/markdown-it/sandpack.js";
+import { mdSandpack } from "../../src/node/markdown-it/sandpack/index.js";
 
 const decodeFiles = (content: string): Record<string, string> =>
   JSON.parse(
@@ -251,5 +251,90 @@ const msg = ref('Hello World!')
     expect(customSetup).toEqual({
       entry: "/index.js",
     });
+  });
+
+  it("Should resolve sandpack info with file attrs", () => {
+    const result = markdownIt.render(
+      `
+::: sandpack Sandpack demo with options
+
+@file /src/App.vue {readOnly hidden}
+
+\`\`\`vue
+<script setup>
+import { ref } from 'vue'
+const msg = ref('Hello World!')
+</script>
+<template>
+  <h1>{{ msg }}</h1>
+  <input v-model="msg" />
+</template>
+\`\`\`
+
+@file /src/Comp.vue {active}
+
+\`\`\`vue
+<template>
+  <div>Comp</div>
+</template>
+\`\`\`
+
+@file Comp2.vue \\{hidden}
+
+\`\`\`vue
+<template>
+  <div>Comp2</div>
+</template>
+\`\`\`
+
+:::
+`,
+      {},
+    );
+
+    expect(result).toMatchSnapshot();
+
+    const template = getTemplate(result);
+    const file = getFiles(result);
+    const options = getOptions(result);
+    const customSetup = getCustomSetup(result);
+
+    expect(template).toEqual("");
+
+    expect(file).toEqual({
+      "/src/App.vue": {
+        code: `\
+<script setup>
+import { ref } from 'vue'
+const msg = ref('Hello World!')
+</script>
+<template>
+  <h1>{{ msg }}</h1>
+  <input v-model="msg" />
+</template>
+`,
+        active: false,
+        hidden: true,
+        readOnly: true,
+      },
+      "/src/Comp.vue": {
+        code: `\
+<template>
+  <div>Comp</div>
+</template>
+`,
+        active: true,
+        hidden: false,
+        readOnly: false,
+      },
+      "Comp2.vue": `\
+<template>
+  <div>Comp2</div>
+</template>
+`,
+    });
+    expect(options).toEqual({});
+
+    expect(customSetup).toEqual({});
   });
 });

@@ -5,7 +5,7 @@ import type {
 } from "sandpack-vue3";
 
 export const getSandpackFiles = (files: string): SandpackFiles =>
-  <SandpackFiles>JSON.parse(decodeURIComponent(files));
+  <SandpackFiles>JSON.parse(atob(decodeURIComponent(files)));
 
 export const getSandpackOptions = (options: string): SandpackOptions =>
   <SandpackOptions>JSON.parse(decodeURIComponent(options));

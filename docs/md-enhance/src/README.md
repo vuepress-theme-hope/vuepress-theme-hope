@@ -175,7 +175,7 @@ highlights:
         link: ./guide/vue-playground.html
 
       - title: Sandpack playground Support
-        icon: fab fa-codesandbox
+        icon: code
         details: A live coding environment.
         link: ./guide/sandpack.html
 

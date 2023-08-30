@@ -1,1 +1,1 @@
-export * from "./plugin.js";
+export * from "./sandpack.js";
