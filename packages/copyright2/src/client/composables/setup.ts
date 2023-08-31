@@ -40,8 +40,10 @@ export const setupCopyright = (): void => {
     () => copyOptions.value?.disableCopy ?? COPYRIGHT_DISABLE_COPY,
   );
 
-  const disableSelection = computed(
-    () => copyOptions.value?.disableSelection ?? COPYRIGHT_DISABLE_SELECTION,
+  const disableSelection = computed(() =>
+    enabled.value
+      ? copyOptions.value?.disableSelection ?? COPYRIGHT_DISABLE_SELECTION
+      : false,
   );
 
   const maxLength = computed(() =>
@@ -82,7 +84,10 @@ export const setupCopyright = (): void => {
       if (enabled.value) {
         const textLength = textRange.toString().length;
 
-        if (disableCopy.value || textLength > maxLength.value)
+        if (
+          disableCopy.value ||
+          (maxLength.value && textLength > maxLength.value)
+        )
           return event.preventDefault();
 
         if (textLength >= triggerLength.value) {
