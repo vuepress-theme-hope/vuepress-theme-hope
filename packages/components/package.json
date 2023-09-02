@@ -69,7 +69,7 @@
     "vuepress-shared": "workspace:*"
   },
   "devDependencies": {
-    "@types/qrcode": "1.5.1",
+    "@types/qrcode": "1.5.2",
     "@vuepress/bundler-vite": "2.0.0-beta.67",
     "@vuepress/core": "2.0.0-beta.67"
   },

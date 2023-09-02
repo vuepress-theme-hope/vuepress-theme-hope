@@ -1472,8 +1472,8 @@ importers:
         version: 2.0.0-beta.67(esbuild@0.19.2)(sass@1.66.1)(vue@3.3.4)(webpack@5.88.2)
     devDependencies:
       '@types/qrcode':
-        specifier: 1.5.1
-        version: 1.5.1
+        specifier: 1.5.2
+        version: 1.5.2
       '@vuepress/bundler-vite':
         specifier: 2.0.0-beta.67
         version: 2.0.0-beta.67(@types/node@20.5.7)(sass@1.66.1)(ts-node@10.9.1)
@@ -5158,8 +5158,8 @@ packages:
     resolution: {integrity: sha512-Gj7cI7z+98M282Tqmp2K5EIsoouUEzbBJhQQzDE3jSIRk6r9gsz0oUokqIUR4u1R3dMHo0pDHM7sNOHyhulypw==}
     dev: true
 
-  /@types/qrcode@1.5.1:
-    resolution: {integrity: sha512-HpSN675K0PmxIDRpjMI3Mc2GiKo3dNu+X/F5SoItiaDS1lVfgC6Wac1c5lQDfKWbTJUSHWiHKzpJpBZG7k9gaA==}
+  /@types/qrcode@1.5.2:
+    resolution: {integrity: sha512-W4KDz75m7rJjFbyCctzCtRzZUj+PrUHV+YjqDp50sSRezTbrtEAIq2iTzC6lISARl3qw+8IlcCyljdcVJE0Wug==}
     dependencies:
       '@types/node': 20.5.7
     dev: true
@@ -5190,7 +5190,7 @@ packages:
   /@types/sax@1.2.4:
     resolution: {integrity: sha512-pSAff4IAxJjfAXUG6tFkO7dsSbTmf8CtUpfhhZ5VhkRpC4628tJhh3+V6H1E+/Gs9piSzYKT5yzHO5M4GG9jkw==}
     dependencies:
-      '@types/node': 17.0.45
+      '@types/node': 20.5.7
     dev: false
 
   /@types/semver@7.5.1:
