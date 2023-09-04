@@ -3,7 +3,7 @@ import type { PluginWithOptions } from "markdown-it";
 import type { RuleBlock } from "markdown-it/lib/parser_block.js";
 import { entries } from "vuepress-shared/node";
 
-import { getFileAttrs } from "./utils.js";
+import { encodeFiles, getFileAttrs } from "./utils.js";
 import type {
   MdSandpackOptions,
   SandpackData,
@@ -245,7 +245,7 @@ const defaultPropsGetter = (
   key: sandpackData.key,
   title: sandpackData.title || "",
   template: sandpackData.template || "",
-  files: encodeURIComponent(JSON.stringify(sandpackData.files || {})),
+  files: encodeURIComponent(encodeFiles(sandpackData.files || {})),
   options: encodeURIComponent(JSON.stringify(sandpackData.options || {})),
   customSetup: encodeURIComponent(
     JSON.stringify(sandpackData.customSetup || {}),
@@ -256,11 +256,11 @@ export const sandpack: PluginWithOptions<MdSandpackOptions> = (
   md,
   {
     name = "sandpack",
-    component = "Sandpack",
+    component = "MdSandpack",
     propsGetter = defaultPropsGetter,
   } = {
     name: "sandpack",
-    component: "Sandpack",
+    component: "MdSandpack",
     propsGetter: defaultPropsGetter,
   },
 ) => {

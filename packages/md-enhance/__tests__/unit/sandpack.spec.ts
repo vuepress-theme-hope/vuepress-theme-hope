@@ -2,7 +2,7 @@
 import MarkdownIt from "markdown-it";
 import { describe, expect, it } from "vitest";
 
-import { mdSandpack } from "../../src/node/markdown-it/sandpack/index.js";
+import { sandpack } from "../../src/node/markdown-it/sandpack/index.js";
 
 const decodeFiles = (content: string): Record<string, string> =>
   JSON.parse(
@@ -44,7 +44,7 @@ const getCustomSetup = (
 };
 
 describe("Sandpack", () => {
-  const markdownIt = MarkdownIt({ linkify: true }).use(mdSandpack);
+  const markdownIt = MarkdownIt({ linkify: true }).use(sandpack);
 
   it("Should resolve sandpack info", () => {
     const result = markdownIt.render(
@@ -258,7 +258,7 @@ const msg = ref('Hello World!')
       `
 ::: sandpack Sandpack demo with options
 
-@file /src/App.vue {readOnly hidden}
+@file /src/App.vue [readOnly hidden]
 
 \`\`\`vue
 <script setup>
@@ -271,7 +271,7 @@ const msg = ref('Hello World!')
 </template>
 \`\`\`
 
-@file /src/Comp.vue {active}
+@file /src/Comp.vue [active]
 
 \`\`\`vue
 <template>
@@ -336,5 +336,121 @@ const msg = ref('Hello World!')
     expect(options).toEqual({});
 
     expect(customSetup).toEqual({});
+  });
+
+  it("Should resolve sandpack info with file attrs and customSetup", () => {
+    const result = markdownIt.render(
+      `
+::: sandpack Sandpack demo with file attrs and customSetup
+
+@file /src/App.vue [readOnly]
+
+\`\`\`vue
+<script setup>
+import { ref } from "vue";
+import Comp from "./Comp.vue";
+
+const msg = ref("Hello Playground!");
+</script>
+
+<template>
+  <h1>{{ msg }}</h1>
+  <input v-model="msg" />
+  <Comp />
+</template>
+\`\`\`
+
+@file /src/Comp.vue [active]
+
+\`\`\`vue
+<script setup>
+import { useBattery } from "@vueuse/core";
+import { ref } from "vue";
+
+const { charging, level } = useBattery();
+</script>
+
+<template>
+  <h1>Battery status</h1>
+  <p>Charging: {{ charging }}</p>
+  <p>Level: {{ level * 100 }}%</p>
+</template>
+\`\`\`
+
+@setup
+
+\`\`\`js
+{
+  dependencies: {
+    "@vueuse/core": "latest",
+    "@vueuse/shared": "latest",
+    "vue-demi": "latest",
+  }
+}
+\`\`\`
+
+:::
+`,
+      {},
+    );
+
+    expect(result).toMatchSnapshot();
+
+    const template = getTemplate(result);
+    const file = getFiles(result);
+    const options = getOptions(result);
+    const customSetup = getCustomSetup(result);
+
+    expect(template).toEqual("");
+
+    expect(file).toEqual({
+      "/src/App.vue": {
+        code: `\
+<script setup>
+import { ref } from "vue";
+import Comp from "./Comp.vue";
+
+const msg = ref("Hello Playground!");
+</script>
+
+<template>
+  <h1>{{ msg }}</h1>
+  <input v-model="msg" />
+  <Comp />
+</template>
+`,
+        active: false,
+        hidden: false,
+        readOnly: true,
+      },
+      "/src/Comp.vue": {
+        code: `\
+<script setup>
+import { useBattery } from "@vueuse/core";
+import { ref } from "vue";
+
+const { charging, level } = useBattery();
+</script>
+
+<template>
+  <h1>Battery status</h1>
+  <p>Charging: {{ charging }}</p>
+  <p>Level: {{ level * 100 }}%</p>
+</template>
+`,
+        active: true,
+        hidden: false,
+        readOnly: false,
+      },
+    });
+    expect(options).toEqual({});
+
+    expect(customSetup).toEqual({
+      dependencies: {
+        "@vueuse/core": "latest",
+        "@vueuse/shared": "latest",
+        "vue-demi": "latest",
+      },
+    });
   });
 });

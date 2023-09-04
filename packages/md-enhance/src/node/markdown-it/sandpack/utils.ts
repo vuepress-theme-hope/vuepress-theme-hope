@@ -25,7 +25,7 @@ export const getFileAttrs = (str: string): Record<string, string | null> => {
 
   attrs["path"] = filePath;
 
-  const matches = /.*(?<!\\)\{([^}]*)\}.*/g.exec(str);
+  const matches = /.*(?<!\\)\[([^}]*)\].*/g.exec(str);
 
   if (matches && matches[1]) {
     const arrAttrs = matches[1].split(" ");

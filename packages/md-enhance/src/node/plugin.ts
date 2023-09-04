@@ -53,12 +53,12 @@ import {
   getUnoPlaygroundPreset,
   getVuePlaygroundPreset,
   hint,
-  mdSandpack,
   mermaid,
   normalDemo,
   playground,
   presentation,
   reactDemo,
+  sandpack,
   tabs,
   vPre,
   vueDemo,
@@ -371,7 +371,7 @@ export const mdEnhancePlugin =
           });
         }
         if (vuePlaygroundEnable) md.use(vuePlayground);
-        if (sandpackEnable) md.use(mdSandpack);
+        if (sandpackEnable) md.use(sandpack);
       },
 
       extendsPage: (page, app): void => {

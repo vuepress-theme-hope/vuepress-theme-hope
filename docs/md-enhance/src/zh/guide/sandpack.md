@@ -57,7 +57,7 @@ export default {
 
 在其中，你可以使用 3 个指令：
 
-- `@file FullPathFile` 紧跟文件的代码块，同时也支持文件选项，例如：`@file FullPathFile {active readOnly hidden}`
+- `@file FullPathFile` 紧跟文件的代码块，同时也支持文件选项，例如：`@file FullPathFile [active readOnly hidden]`
 - `@options` 紧跟一个自定义 "options" 的 javascript 代码块
 - `@setup` 紧跟一个自定义 "customSetup" 的 javascript 代码块
 
@@ -249,7 +249,7 @@ const { charging, level } = useBattery();
 
 ::: sandpack#vue 带文件选项的 Vue 示例
 
-@file /src/App.vue {readOnly}
+@file /src/App.vue [readOnly]
 
 ```vue
 <script setup>
@@ -266,7 +266,7 @@ const msg = ref("Hello Playground!");
 </template>
 ```
 
-@file /src/Comp.vue {active}
+@file /src/Comp.vue [active]
 
 ```vue
 <script setup>
@@ -302,7 +302,7 @@ const { charging, level } = useBattery();
 ````md
 ::: sandpack#vue 带文件选项的 Vue 示例
 
-@file /src/App.vue {readOnly}
+@file /src/App.vue [readOnly]
 
 ```vue
 <script setup>
@@ -319,7 +319,7 @@ const msg = ref("Hello Playground!");
 </template>
 ```
 
-@file /src/Comp.vue {active}
+@file /src/Comp.vue [active]
 
 ```vue
 <script setup>

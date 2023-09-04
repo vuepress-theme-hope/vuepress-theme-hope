@@ -57,7 +57,7 @@ To use sandpack playground, you should use a container named `sandpack#template`
 
 In it, you can use 3 directives:
 
-- `@file FullPathFile` then a code block to add files, you can also set the file options, for example: `@file FullPathFile {active readOnly hidden}`
+- `@file FullPathFile` then a code block to add files, you can also set the file options, for example: `@file FullPathFile [active readOnly hidden]`
 - `@options` then a javascript block to customize "options"
 - `@setup` then a javascript block to customize "customSetup"
 
@@ -249,7 +249,7 @@ const { charging, level } = useBattery();
 
 ::: sandpack#vue Vue Demo with file options
 
-@file /src/App.vue {readOnly}
+@file /src/App.vue [readOnly]
 
 ```vue
 <script setup>
@@ -266,7 +266,7 @@ const msg = ref("Hello Playground!");
 </template>
 ```
 
-@file /src/Comp.vue {active}
+@file /src/Comp.vue [active]
 
 ```vue
 <script setup>
@@ -302,7 +302,7 @@ const { charging, level } = useBattery();
 ````md
 ::: sandpack#vue Vue Demo with file options
 
-@file /src/App.vue {readOnly}
+@file /src/App.vue [readOnly]
 
 ```vue
 <script setup>
