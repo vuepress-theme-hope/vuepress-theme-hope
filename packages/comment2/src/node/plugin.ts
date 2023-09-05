@@ -6,6 +6,7 @@ import {
   addViteOptimizeDepsExclude,
   addViteOptimizeDepsInclude,
   addViteSsrExternal,
+  addViteSsrNoExternal,
   checkVersion,
   getLocales,
 } from "vuepress-shared/node";
@@ -93,6 +94,8 @@ export const commentPlugin =
             break;
           }
         }
+
+        addViteSsrNoExternal(bundlerOptions, app, "vuepress-sahre");
       },
 
       clientConfigFile: path.resolve(__dirname, "../client/config.js"),
