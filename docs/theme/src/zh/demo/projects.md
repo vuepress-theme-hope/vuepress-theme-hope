@@ -24,7 +24,7 @@ docs:
     logo: https://wenchao.ren/logo.jpg
     url: https://wenchao.ren/
     repo: https://github.com/xkrivzooh/wenchao.ren
-    preview: /assets/image/wenchao_blog_preview.png    
+    preview: /assets/image/wenchao_blog_preview.png
 
   - name: 胡桃工具箱
     desc: 一个实用的多功能原神工具箱
