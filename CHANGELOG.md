@@ -4,6 +4,17 @@ All notable changes to this project will be documented in this file. See [Conven
 
 <!-- #region recent-beta -->
 
+## [2.0.0-beta.237](https://github.com/vuepress-theme-hope/vuepress-theme-hope/compare/v2.0.0-beta.236...v2.0.0-beta.237) (2023-09-05)
+
+### Bug Fixes
+
+- **comment2:** fix pm issue, close [#3411](https://github.com/vuepress-theme-hope/vuepress-theme-hope/issues/3411) ([6ade149](https://github.com/vuepress-theme-hope/vuepress-theme-hope/commit/6ade149e0d1419dcc5e4c5947172b638fc5196c7))
+- **components:** update fr locale in backToTop ([#3416](https://github.com/vuepress-theme-hope/vuepress-theme-hope/issues/3416)) ([2428691](https://github.com/vuepress-theme-hope/vuepress-theme-hope/commit/2428691a544487b20da31addd04d23f9fd5d2daa))
+- **copyright2:** fix copyright plugin ([c402095](https://github.com/vuepress-theme-hope/vuepress-theme-hope/commit/c4020953415dea6b600b927f5b0c6cef27a09d4b))
+- **search-pro:** avoiding displaying short term if longer term exists ([186e84e](https://github.com/vuepress-theme-hope/vuepress-theme-hope/commit/186e84eb8a1c582bd42388cc65deabf27a1fb407))
+- **shared:** fix VPLink, close [#3430](https://github.com/vuepress-theme-hope/vuepress-theme-hope/issues/3430) ([a6f1dea](https://github.com/vuepress-theme-hope/vuepress-theme-hope/commit/a6f1deaf4df147417fd904604ac55d19b0d2e88a))
+- **theme:** fix excerpt code block style, close [#3413](https://github.com/vuepress-theme-hope/vuepress-theme-hope/issues/3413) ([930f392](https://github.com/vuepress-theme-hope/vuepress-theme-hope/commit/930f3920216535e7769b531b86785a8cf658a455))
+
 ## [2.0.0-beta.236](https://github.com/vuepress-theme-hope/vuepress-theme-hope/compare/v2.0.0-beta.235...v2.0.0-beta.236) (2023-08-29)
 
 ### ⚠ BREAKING CHANGES
