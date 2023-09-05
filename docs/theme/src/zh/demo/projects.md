@@ -19,6 +19,13 @@ docs:
     repo: https://github.com/Mereithhh/vanblog/tree/master/docs
     preview: /assets/image/vanblog.jpg
 
+  - name: 被遗忘的博客
+    desc: 个人博客，记录生活和随想
+    logo: https://wenchao.ren/logo.jpg
+    url: https://wenchao.ren/
+    repo: https://github.com/xkrivzooh/wenchao.ren
+    preview: /assets/image/wenchao_blog_preview.png    
+
   - name: 胡桃工具箱
     desc: 一个实用的多功能原神工具箱
     url: https://hut.ao/
