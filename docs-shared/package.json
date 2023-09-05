@@ -39,7 +39,7 @@
     "@vuepress/plugin-docsearch": "2.0.0-beta.67",
     "@vuepress/shared": "2.0.0-beta.67",
     "@vuepress/utils": "2.0.0-beta.67",
-    "three": "0.155.0",
+    "three": "0.156.0",
     "vue": "3.3.4",
     "vuepress-plugin-redirect": "workspace:*",
     "vuepress-shared": "workspace:*",
