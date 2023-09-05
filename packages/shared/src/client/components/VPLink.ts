@@ -7,7 +7,7 @@ import { useRouter } from "vue-router";
 import { inferRouteLink } from "../../shared/index.js";
 import { guardEvent } from "../utils/index.js";
 
-export interface VPLinkProps extends Record<string, string> {
+export interface VPLinkProps extends Record<string, unknown> {
   to: string;
 }
 
