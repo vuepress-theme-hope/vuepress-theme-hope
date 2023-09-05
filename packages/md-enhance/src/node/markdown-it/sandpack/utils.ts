@@ -18,12 +18,8 @@ export const encodeFiles = (files: SandpackData["files"]): string =>
     ),
   ).toString("base64");
 
-export const getFileAttrs = (str: string): Record<string, string | null> => {
+export const getAttrs = (str: string): Record<string, string | null> => {
   const attrs: Record<string, string | null> = {};
-
-  const filePath = str.trim().split(" ")[0];
-
-  attrs["path"] = filePath;
 
   const matches = /.*(?<!\\)\[([^}]*)\].*/g.exec(str);
 

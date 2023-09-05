@@ -353,7 +353,7 @@ const { charging, level } = useBattery();
 
 ::::
 
-::: sandpack#react React 示例
+::: sandpack#react React 示例 [rtl theme=dark]
 
 @file /App.js
 
@@ -368,7 +368,7 @@ export default function App() {
 :::: details 代码
 
 ````md
-::: sandpack#react React 示例
+::: sandpack#react React 示例 [rtl theme=dark]
 
 @file /App.js
 

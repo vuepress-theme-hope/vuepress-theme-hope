@@ -1,3 +1,4 @@
+import { useMutationObserver } from "@vueuse/core";
 import type { Sandpack, SandpackPredefinedTemplate } from "sandpack-vue3";
 // import { Sandpack } from "sandpack-vue3";
 import type { VNode } from "vue";
@@ -57,6 +58,23 @@ export default defineComponent({
      * 自定义设置
      */
     customSetup: { type: String, default: "{}" },
+
+    /**
+     * RTL layout
+     *
+     * RTL 布局
+     */
+    rtl: { type: Boolean },
+
+    /**
+     * Theme
+     *
+     * 主题
+     */
+    theme: {
+      type: String,
+      default: null,
+    },
   },
 
   setup(props) {
@@ -90,9 +108,32 @@ export default defineComponent({
       component.value = Sandpack;
     };
 
+    const theme = ref(props.theme);
+    const isDarkmode = ref(false);
+
     onMounted(async () => {
       await setupSandpack();
       loading.value = false;
+
+      const html = document.documentElement;
+
+      const getDarkmodeStatus = (): boolean =>
+        html.classList.contains("dark") ||
+        html.getAttribute("data-theme") === "dark";
+
+      isDarkmode.value = getDarkmodeStatus();
+
+      // watch darkmode change
+      useMutationObserver(
+        html,
+        () => {
+          isDarkmode.value = getDarkmodeStatus();
+        },
+        {
+          attributeFilter: ["class", "data-theme"],
+          attributes: true,
+        },
+      );
     });
 
     return (): (VNode | null)[] => [
@@ -120,6 +161,12 @@ export default defineComponent({
                   customSetup: {
                     ...sandpacCustomSetup.value,
                   },
+                  rtl: props.rtl,
+                  theme: theme.value
+                    ? theme.value
+                    : isDarkmode.value
+                    ? "dark"
+                    : "light",
                   // eslint-disable-next-line @typescript-eslint/no-explicit-any
                 } as any)
               : null,

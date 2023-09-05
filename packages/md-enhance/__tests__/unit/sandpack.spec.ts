@@ -341,7 +341,7 @@ const msg = ref('Hello World!')
   it("Should resolve sandpack info with file attrs and customSetup", () => {
     const result = markdownIt.render(
       `
-::: sandpack Sandpack demo with file attrs and customSetup
+::: sandpack Sandpack demo with file attrs and customSetup [rtl theme=dark]
 
 @file /src/App.vue [readOnly]
 
@@ -395,6 +395,8 @@ const { charging, level } = useBattery();
     );
 
     expect(result).toMatchSnapshot();
+    expect(result).includes('rtl="true"');
+    expect(result).includes('theme="dark"');
 
     const template = getTemplate(result);
     const file = getFiles(result);

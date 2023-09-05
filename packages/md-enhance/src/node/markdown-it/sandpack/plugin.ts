@@ -3,7 +3,7 @@ import type { PluginWithOptions } from "markdown-it";
 import type { RuleBlock } from "markdown-it/lib/parser_block.js";
 import { entries } from "vuepress-shared/node";
 
-import { encodeFiles, getFileAttrs } from "./utils.js";
+import { encodeFiles, getAttrs } from "./utils.js";
 import type {
   MdSandpackOptions,
   SandpackData,
@@ -49,7 +49,10 @@ const getSandpackRule =
 
     if (firstSpace > 0) {
       containerName = content.substring(0, firstSpace);
-      title = content.substring(firstSpace + 1);
+      // remove attrs
+      title = content
+        .substring(firstSpace + 1)
+        .replace(/(?<!\\)\[([^}]*)\]/g, "");
     } else {
       containerName = content;
     }
@@ -282,6 +285,8 @@ export const sandpack: PluginWithOptions<MdSandpackOptions> = (
   md.renderer.rules[`${name}_open`] = (tokens, index): string => {
     const { content, info } = tokens[index];
 
+    const attrs = getAttrs(content);
+
     const sandpackData: SandpackData = {
       key: hash(`sandpack${index}-${info}`),
       title: encodeURIComponent(info),
@@ -320,15 +325,15 @@ export const sandpack: PluginWithOptions<MdSandpackOptions> = (
           // File rule must contain a valid file name
           if (!info) continue;
           // currentKey = info;
+          currentKey = info.trim().split(" ")[0];
 
-          const attrs = getFileAttrs(info);
+          const fileAttrs = getAttrs(info);
 
-          currentKey = attrs["path"]!;
           sandpackData.files[currentKey] = {
             code: "",
-            active: !!attrs["active"],
-            hidden: !!attrs["hidden"],
-            readOnly: !!attrs["readOnly"],
+            active: !!fileAttrs["active"],
+            hidden: !!fileAttrs["hidden"],
+            readOnly: !!fileAttrs["readOnly"],
           };
         }
         if (
@@ -388,6 +393,11 @@ export const sandpack: PluginWithOptions<MdSandpackOptions> = (
     }
 
     const props = propsGetter(sandpackData);
+
+    // merge
+    entries(attrs)?.forEach((attr) => {
+      if (!props[attr[0]] && attr[1]) props[attr[0]] = attr[1];
+    });
 
     return `<${component} ${entries(props)
       .map(([attr, value]) => `${attr}="${escapeHtml(value || "")}"`)
