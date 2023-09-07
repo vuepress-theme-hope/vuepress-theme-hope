@@ -719,8 +719,8 @@ importers:
         specifier: 2.0.0-beta.67
         version: 2.0.0-beta.67
       three:
-        specifier: 0.156.0
-        version: 0.156.0
+        specifier: 0.156.1
+        version: 0.156.1
       vue:
         specifier: 3.3.4
         version: 3.3.4
@@ -14466,8 +14466,8 @@ packages:
     resolution: {integrity: sha512-N+8UisAXDGk8PFXP4HAzVR9nbfmVJ3zYLAWiTIoqC5v5isinhr+r5uaO8+7r3BMfuNIufIsA7RdpVgacC2cSpw==}
     dev: true
 
-  /three@0.156.0:
-    resolution: {integrity: sha512-r6meetGWDk3aYjDRh6NpKuUkzoPlI3yldDQe2SkwCcqTTB5NZn7vKQBUXyMExvlwZShaLmvAbsVWaFzp1rkk3A==}
+  /three@0.156.1:
+    resolution: {integrity: sha512-kP7H0FK9d/k6t/XvQ9FO6i+QrePoDcNhwl0I02+wmUJRNSLCUIDMcfObnzQvxb37/0Uc9TDT0T1HgsRRrO6SYQ==}
     dev: false
 
   /through2-filter@3.0.0:
