@@ -104,8 +104,8 @@ importers:
         specifier: 8.0.3
         version: 8.0.3
       inquirer:
-        specifier: 9.2.10
-        version: 9.2.10
+        specifier: 9.2.11
+        version: 9.2.11
       magic-string:
         specifier: 0.30.3
         version: 0.30.3
@@ -736,7 +736,7 @@ importers:
     devDependencies:
       '@vuepress/bundler-vite':
         specifier: 2.0.0-beta.67
-        version: 2.0.0-beta.67(@types/node@20.6.0)(ts-node@10.9.1)
+        version: 2.0.0-beta.67(@types/node@20.6.0)(sass@1.66.1)(ts-node@10.9.1)
 
   docs/auto-catalog:
     dependencies:
@@ -1476,7 +1476,7 @@ importers:
         version: 1.5.2
       '@vuepress/bundler-vite':
         specifier: 2.0.0-beta.67
-        version: 2.0.0-beta.67(@types/node@20.6.0)(ts-node@10.9.1)
+        version: 2.0.0-beta.67(@types/node@20.6.0)(sass@1.66.1)(ts-node@10.9.1)
       '@vuepress/core':
         specifier: 2.0.0-beta.67
         version: 2.0.0-beta.67
@@ -1573,8 +1573,8 @@ importers:
         specifier: 8.0.1
         version: 8.0.1
       inquirer:
-        specifier: 9.2.10
-        version: 9.2.10
+        specifier: 9.2.11
+        version: 9.2.11
     devDependencies:
       '@types/inquirer':
         specifier: 9.0.3
@@ -1794,7 +1794,7 @@ importers:
         version: 7.20.1
       '@vuepress/bundler-vite':
         specifier: 2.0.0-beta.67
-        version: 2.0.0-beta.67(@types/node@20.6.0)(ts-node@10.9.1)
+        version: 2.0.0-beta.67(@types/node@20.6.0)(sass@1.66.1)(ts-node@10.9.1)
       '@vuepress/core':
         specifier: 2.0.0-beta.67
         version: 2.0.0-beta.67
@@ -2214,7 +2214,7 @@ importers:
         version: 7.5.1
       '@vuepress/bundler-vite':
         specifier: 2.0.0-beta.67
-        version: 2.0.0-beta.67(@types/node@20.6.0)(ts-node@10.9.1)
+        version: 2.0.0-beta.67(@types/node@20.6.0)(sass@1.66.1)(ts-node@10.9.1)
       '@vuepress/bundler-webpack':
         specifier: 2.0.0-beta.67
         version: 2.0.0-beta.67(esbuild@0.19.2)(typescript@5.2.2)
@@ -2387,7 +2387,7 @@ importers:
     devDependencies:
       '@vuepress/bundler-vite':
         specifier: 2.0.0-beta.67
-        version: 2.0.0-beta.67(@types/node@20.6.0)(ts-node@10.9.1)
+        version: 2.0.0-beta.67(@types/node@20.6.0)(sass@1.66.1)(ts-node@10.9.1)
       '@vuepress/bundler-webpack':
         specifier: 2.0.0-beta.67
         version: 2.0.0-beta.67(esbuild@0.19.2)(typescript@5.2.2)
@@ -5699,34 +5699,6 @@ packages:
     resolution: {integrity: sha512-7OjdcV8vQ74eiz1TZLzZP4JwqM5fA94K6yntPS5Z25r9HDuGNzaGdgvwKYq6S+MxwF0TFRwe50fIR/MYnakdkQ==}
 
   /@vuepress/bundler-vite@2.0.0-beta.67(@types/node@20.6.0)(sass@1.66.1)(ts-node@10.9.1):
-    resolution: {integrity: sha512-W6YXixxu2G+xPECPFvx4Tzv5fmpBYvApEYVw7qfSNf/5YZ6aeIfV0AMGJZvhk7R/KniofvBTGCjAMSK4fqKp8w==}
-    dependencies:
-      '@vitejs/plugin-vue': 4.3.4(vite@4.4.9)(vue@3.3.4)
-      '@vuepress/client': 2.0.0-beta.67
-      '@vuepress/core': 2.0.0-beta.67
-      '@vuepress/shared': 2.0.0-beta.67
-      '@vuepress/utils': 2.0.0-beta.67
-      autoprefixer: 10.4.15(postcss@8.4.29)
-      connect-history-api-fallback: 2.0.0
-      postcss: 8.4.29
-      postcss-load-config: 4.0.1(postcss@8.4.29)(ts-node@10.9.1)
-      rollup: 3.29.0
-      vite: 4.4.9(@types/node@20.6.0)(sass@1.66.1)
-      vue: 3.3.4
-      vue-router: 4.2.4(vue@3.3.4)
-    transitivePeerDependencies:
-      - '@types/node'
-      - '@vue/composition-api'
-      - less
-      - lightningcss
-      - sass
-      - stylus
-      - sugarss
-      - supports-color
-      - terser
-      - ts-node
-
-  /@vuepress/bundler-vite@2.0.0-beta.67(@types/node@20.6.0)(ts-node@10.9.1):
     resolution: {integrity: sha512-W6YXixxu2G+xPECPFvx4Tzv5fmpBYvApEYVw7qfSNf/5YZ6aeIfV0AMGJZvhk7R/KniofvBTGCjAMSK4fqKp8w==}
     dependencies:
       '@vitejs/plugin-vue': 4.3.4(vite@4.4.9)(vue@3.3.4)
@@ -10450,8 +10422,8 @@ packages:
       wrap-ansi: 7.0.0
     dev: true
 
-  /inquirer@9.2.10:
-    resolution: {integrity: sha512-tVVNFIXU8qNHoULiazz612GFl+yqNfjMTbLuViNJE/d860Qxrd3NMrse8dm40VUQLOQeULvaQF8lpAhvysjeyA==}
+  /inquirer@9.2.11:
+    resolution: {integrity: sha512-B2LafrnnhbRzCWfAdOXisUzL89Kg8cVJlYmhqoi3flSiV/TveO+nsXwgKr9h9PIo+J1hz7nBSk6gegRIMBBf7g==}
     engines: {node: '>=14.18.0'}
     dependencies:
       '@ljharb/through': 2.3.9
@@ -15338,7 +15310,7 @@ packages:
       '@vuepress/client': 2.0.0-beta.67
       vue: ^3.3.4
     dependencies:
-      '@vuepress/bundler-vite': 2.0.0-beta.67(@types/node@20.6.0)(ts-node@10.9.1)
+      '@vuepress/bundler-vite': 2.0.0-beta.67(@types/node@20.6.0)(sass@1.66.1)(ts-node@10.9.1)
       '@vuepress/cli': 2.0.0-beta.67
       '@vuepress/client': 2.0.0-beta.67
       '@vuepress/core': 2.0.0-beta.67
