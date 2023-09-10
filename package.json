@@ -84,7 +84,7 @@
     "rollup-plugin-esbuild": "5.0.0",
     "sort-package-json": "2.5.1",
     "stylelint": "15.10.3",
-    "stylelint-config-hope": "3.0.0",
+    "stylelint-config-hope": "4.0.0",
     "through2": "4.0.2",
     "tslib": "2.6.2",
     "tsx": "3.12.8",
