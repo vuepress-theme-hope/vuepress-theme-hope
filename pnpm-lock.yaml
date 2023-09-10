@@ -134,8 +134,8 @@ importers:
         specifier: 3.5.0
         version: 3.5.0
       rollup-plugin-dts:
-        specifier: 6.0.1
-        version: 6.0.1(rollup@3.29.1)(typescript@5.2.2)
+        specifier: 6.0.2
+        version: 6.0.2(rollup@3.29.1)(typescript@5.2.2)
       rollup-plugin-esbuild:
         specifier: 5.0.0
         version: 5.0.0(esbuild@0.19.2)(rollup@3.29.1)
@@ -13411,9 +13411,9 @@ packages:
       is-plain-object: 3.0.1
     dev: true
 
-  /rollup-plugin-dts@6.0.1(rollup@3.29.1)(typescript@5.2.2):
-    resolution: {integrity: sha512-XJbCldVrp4TLc2Hg4DfrRiJgzJ73uhZB0sPSDizgdlrhSJ1bsIkkRMkwRKNQYgkbfMz4CHLdbnFKVivHE0vsPA==}
-    engines: {node: '>=16'}
+  /rollup-plugin-dts@6.0.2(rollup@3.29.1)(typescript@5.2.2):
+    resolution: {integrity: sha512-GYCCy9DyE5csSuUObktJBpjNpW2iLZMabNDIiAqzQWBl7l/WHzjvtAXevf8Lftk8EA920tuxeB/g8dM8MVMR6A==}
+    engines: {node: '>=v16'}
     peerDependencies:
       rollup: ^3.25
       typescript: ^4.5 || ^5.0
