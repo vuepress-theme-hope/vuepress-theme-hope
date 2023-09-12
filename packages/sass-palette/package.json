@@ -36,8 +36,6 @@
     "./helper.scss": "./styles/helper.scss",
     "./package.json": "./package.json"
   },
-  "main": "lib/node/index.js",
-  "types": "lib/node/index.d.ts",
   "files": [
     "lib",
     "styles"
