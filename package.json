@@ -49,8 +49,8 @@
     "@rollup/plugin-replace": "5.0.2",
     "@types/inquirer": "9.0.3",
     "@types/node": "20.6.0",
-    "@typescript-eslint/eslint-plugin": "6.6.0",
-    "@typescript-eslint/parser": "6.6.0",
+    "@typescript-eslint/eslint-plugin": "6.7.0",
+    "@typescript-eslint/parser": "6.7.0",
     "@vitest/coverage-v8": "0.34.4",
     "@vue/eslint-config-typescript": "11.0.3",
     "bumpp": "9.2.0",
@@ -91,7 +91,7 @@
     "typescript": "5.2.2",
     "vitest": "0.34.4"
   },
-  "packageManager": "pnpm@8.7.4",
+  "packageManager": "pnpm@8.7.5",
   "engines": {
     "node": ">=16.14.0",
     "npm": ">=8",
@@ -103,6 +103,7 @@
       "css": "npm:@adobe/css-tools@^4.2.0",
       "glob-stream": "^7.0.0",
       "glob-parent": "^6.0.2",
+      "markdownlint": "0.31.0",
       "micromatch": "^4.0.5",
       "yargs-parser": "^21.1.1"
     }

@@ -76,7 +76,7 @@
     "pnpm": ">=7"
   },
   "dependencies": {
-    "@babel/core": "^7.22.15",
+    "@babel/core": "^7.22.17",
     "@mdit/plugin-align": "^0.4.8",
     "@mdit/plugin-attrs": "^0.4.8",
     "@mdit/plugin-container": "^0.4.8",
