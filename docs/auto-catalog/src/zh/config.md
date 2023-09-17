@@ -170,3 +170,10 @@ Catalog 的最大层级
 - 默认值: `false`
 
 是否在目录列表中显示索引
+
+### hideHeading
+
+- 类型: `boolean`
+- 默认值: `false`
+
+是否隐藏 `目录` 标题

@@ -169,7 +169,7 @@ Max level of catalog.
 
 Whether display index number for catalog.
 
-### hideCategory
+### hideHeading
 
 - Type: `boolean`
 - Default: `false`

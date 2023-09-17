@@ -260,7 +260,7 @@ export default defineComponent({
                 ),
                 children.length
                   ? h(
-                      props.index ? "ol" : "ul",
+                      "ul",
                       { class: "vp-catalog-child-catalogs" },
                       children.map(
                         ({ children = [], icon, path, title }, index) =>
@@ -283,6 +283,9 @@ export default defineComponent({
                                   VPLink,
                                   { class: "vp-catalog-title", to: path },
                                   () => [
+                                    props.index
+                                      ? `${mainIndex + 1}.${index + 1}`
+                                      : null,
                                     icon && iconComponent
                                       ? h(iconComponent, { icon })
                                       : null,
