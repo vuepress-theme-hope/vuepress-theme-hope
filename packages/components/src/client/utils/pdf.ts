@@ -82,17 +82,13 @@ const addPDFViewer = (
   // Ensure target element is empty first
   emptyNodeContents(targetNode);
 
-  let source = url;
-
-  if (embedType === "pdfjs") {
-    const pdfjsURL = `${ensureEndingSlash(
-      withBase(PDFJS_URL!),
-    )}web/viewer.html`;
-
-    source = `${pdfjsURL}?file=${encodeURIComponent(
-      url,
-    )}${buildURLFragmentString(options)}`;
-  }
+  const source = `${
+    embedType === "pdfjs"
+      ? `${ensureEndingSlash(
+          withBase(PDFJS_URL!),
+        )}web/viewer.html?file=${encodeURIComponent(url)}`
+      : url
+  }${buildURLFragmentString(options)}`;
 
   const elementType =
     embedType === "pdfjs" || embedType === "iframe" ? "iframe" : "embed";

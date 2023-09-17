@@ -19,6 +19,13 @@ docs:
     repo: https://github.com/Mereithhh/vanblog/tree/master/docs
     preview: /assets/image/vanblog.jpg
 
+  - name: 被遗忘的博客
+    desc: 个人博客，记录生活和随想
+    logo: https://wenchao.ren/logo.jpg
+    url: https://wenchao.ren/
+    repo: https://github.com/xkrivzooh/wenchao.ren
+    preview: /assets/image/wenchao_blog_preview.png
+
   - name: 胡桃工具箱
     desc: 一个实用的多功能原神工具箱
     url: https://hut.ao/
@@ -360,7 +367,7 @@ blog:
     preview: /assets/image/bing.jpg
 
   - name: Oragekk's Blog
-    desc: 到最后，竟庆幸于夕阳仍留在身上？无聊的思考总是能给人启发，多经历，多记录，多理解
+    desc: 愿人生如剑、立起寒光四射、躺倒四射寒光
     logo: https://oragekk.me/logo.svg
     url: https://oragekk.me/
     repo: https://github.com/OrageKK/oragekk.github.io
@@ -400,6 +407,13 @@ blog:
     url: https://xxxweii.github.io/XXXWeiiBlog
     repo: https://github.com/XXXWeii/XXXWeiiBlog
     preview: https://xxxweii.github.io/XXXWeiiBlog/assets/images/XXXWeii.png
+
+  - name: xiaou的学习笔记
+    desc: 热爱可抵岁月漫长
+    logo: https://mydocs.guoyaxue.top/site_logo.png
+    url: https://mydocs.guoyaxue.top
+    repo: https://github.com/xiaou61/mydocs
+    preview: https://xiaou-1305448902.cos.ap-nanjing.myqcloud.com/img/202308291337109.png
 ---
 
 ## 使用 VuePress Theme Hope 的文档

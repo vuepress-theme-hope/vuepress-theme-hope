@@ -1,6 +1,5 @@
 {
   "name": "md-enhance-docs",
-  "version": "2.0.0-beta.181",
   "private": true,
   "type": "module",
   "description": "Docs for vuepress-plugin-md-enhance",
@@ -21,8 +20,8 @@
   },
   "dependencies": {
     "@types/katex": "0.16.2",
-    "@vueuse/core": "10.3.0",
-    "@vuepress/client": "2.0.0-beta.66",
+    "@vueuse/core": "10.4.1",
+    "@vuepress/client": "2.0.0-beta.67",
     "docs-shared": "workspace:*",
     "flowchart.ts": "1.0.0",
     "katex": "0.16.8",
@@ -30,7 +29,7 @@
     "vue": "3.3.4",
     "vuepress-plugin-md-enhance": "workspace:*",
     "vuepress-shared": "workspace:*",
-    "vuepress-vite": "2.0.0-beta.66",
-    "vuepress-webpack": "2.0.0-beta.66"
+    "vuepress-vite": "2.0.0-beta.67",
+    "vuepress-webpack": "2.0.0-beta.67"
   }
 }

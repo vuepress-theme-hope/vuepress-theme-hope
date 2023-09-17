@@ -1,6 +1,6 @@
 {
   "name": "vuepress-plugin-redirect",
-  "version": "2.0.0-beta.235",
+  "version": "2.0.0-beta.237",
   "description": "Redirect plugin for vuepress",
   "keywords": [
     "vuepress",
@@ -28,8 +28,6 @@
     ".": "./lib/node/index.js",
     "./package.json": "./package.json"
   },
-  "main": "lib/node/index.js",
-  "types": "lib/node/index.d.ts",
   "bin": {
     "vp-redirect": "./lib/cli/index.js"
   },
@@ -50,12 +48,12 @@
     "pnpm": ">=7"
   },
   "dependencies": {
-    "@vuepress/cli": "2.0.0-beta.66",
-    "@vuepress/client": "2.0.0-beta.66",
-    "@vuepress/core": "2.0.0-beta.66",
-    "@vuepress/shared": "2.0.0-beta.66",
-    "@vuepress/utils": "2.0.0-beta.66",
-    "@vueuse/core": "^10.3.0",
+    "@vuepress/cli": "2.0.0-beta.67",
+    "@vuepress/client": "2.0.0-beta.67",
+    "@vuepress/core": "2.0.0-beta.67",
+    "@vuepress/shared": "2.0.0-beta.67",
+    "@vuepress/utils": "2.0.0-beta.67",
+    "@vueuse/core": "^10.4.1",
     "cac": "^6.7.14",
     "vue": "^3.3.4",
     "vue-router": "^4.2.4",
@@ -64,9 +62,9 @@
   },
   "peerDependencies": {
     "sass-loader": "^13.3.2",
-    "vuepress": "2.0.0-beta.66",
-    "vuepress-vite": "2.0.0-beta.66",
-    "vuepress-webpack": "2.0.0-beta.66"
+    "vuepress": "2.0.0-beta.67",
+    "vuepress-vite": "2.0.0-beta.67",
+    "vuepress-webpack": "2.0.0-beta.67"
   },
   "peerDependenciesMeta": {
     "sass-loader": {

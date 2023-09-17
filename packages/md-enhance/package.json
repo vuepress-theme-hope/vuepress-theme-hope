@@ -1,6 +1,6 @@
 {
   "name": "vuepress-plugin-md-enhance",
-  "version": "2.0.0-beta.235",
+  "version": "2.0.0-beta.237",
   "description": "Markdown enhancement plugin for vuepress",
   "keywords": [
     "vuepress",
@@ -57,8 +57,6 @@
     "./SlidePage": "./lib/client/SlidePage.js",
     "./package.json": "./package.json"
   },
-  "main": "lib/node/index.js",
-  "types": "lib/node/index.d.ts",
   "files": [
     "lib"
   ],
@@ -76,7 +74,7 @@
     "pnpm": ">=7"
   },
   "dependencies": {
-    "@babel/core": "^7.22.10",
+    "@babel/core": "^7.22.17",
     "@mdit/plugin-align": "^0.4.8",
     "@mdit/plugin-attrs": "^0.4.8",
     "@mdit/plugin-container": "^0.4.8",
@@ -97,20 +95,20 @@
     "@mdit/plugin-tex": "^0.4.8",
     "@mdit/plugin-uml": "^0.4.8",
     "@types/js-yaml": "^4.0.5",
-    "@types/markdown-it": "^13.0.0",
+    "@types/markdown-it": "^13.0.1",
     "@vue/repl": "^2.5.8",
-    "@vuepress/client": "2.0.0-beta.66",
-    "@vuepress/shared": "2.0.0-beta.66",
-    "@vuepress/utils": "2.0.0-beta.66",
-    "@vueuse/core": "^10.3.0",
+    "@vuepress/client": "2.0.0-beta.67",
+    "@vuepress/shared": "2.0.0-beta.67",
+    "@vuepress/utils": "2.0.0-beta.67",
+    "@vueuse/core": "^10.4.1",
     "balloon-css": "^1.2.0",
-    "chart.js": "^4.3.3",
+    "chart.js": "^4.4.0",
     "echarts": "^5.4.3",
     "flowchart.ts": "^1.0.0",
     "js-yaml": "^4.1.0",
     "katex": "^0.16.8",
     "markdown-it": "^13.0.1",
-    "mermaid": "10.3.1",
+    "mermaid": "10.4.0",
     "reveal.js": "^4.5.0",
     "vue": "^3.3.4",
     "vue-router": "^4.2.4",
@@ -118,17 +116,17 @@
     "vuepress-shared": "workspace:*"
   },
   "devDependencies": {
-    "@types/babel__core": "7.20.1",
-    "@vuepress/bundler-vite": "2.0.0-beta.66",
-    "@vuepress/core": "2.0.0-beta.66",
-    "@vuepress/markdown": "2.0.0-beta.66",
-    "typescript": "5.1.6"
+    "@types/babel__core": "7.20.2",
+    "@vuepress/bundler-vite": "2.0.0-beta.67",
+    "@vuepress/core": "2.0.0-beta.67",
+    "@vuepress/markdown": "2.0.0-beta.67",
+    "typescript": "5.2.2"
   },
   "peerDependencies": {
     "sass-loader": "^13.3.2",
-    "vuepress": "2.0.0-beta.66",
-    "vuepress-vite": "2.0.0-beta.66",
-    "vuepress-webpack": "2.0.0-beta.66"
+    "vuepress": "2.0.0-beta.67",
+    "vuepress-vite": "2.0.0-beta.67",
+    "vuepress-webpack": "2.0.0-beta.67"
   },
   "peerDependenciesMeta": {
     "sass-loader": {

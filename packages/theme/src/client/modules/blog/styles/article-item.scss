@@ -219,21 +219,22 @@
   // code block fix
   div[class*="language-"] {
     overflow-x: auto;
-  }
+    overflow-y: hidden;
 
-  pre {
-    margin: 0.85rem 0;
-    padding: 1.25rem 1.5rem;
-    line-height: 1.375;
-  }
-
-  // line number fix
-  .line-numbers-mode {
-    // stylelint-disable selector-max-compound-selectors
     pre {
-      padding-left: calc(var(--line-numbers-width) + 1rem);
+      margin: 0.85rem 0;
+      line-height: 1.375;
+
+      code {
+        padding: 0;
+        background: transparent;
+      }
     }
-    // stylelint-enable selector-max-compound-selectors
+
+    // line number fix
+    &.line-numbers-mode .line-numbers {
+      padding: 0.85rem 0;
+    }
   }
 
   // hide code demo

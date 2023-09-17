@@ -1,6 +1,5 @@
 {
   "name": "auto-catalog-demo",
-  "version": "2.0.0-beta.181",
   "private": true,
   "description": "Demo for vuepress-plugin-auto-catalog",
   "license": "MIT",
@@ -15,15 +14,15 @@
     "demo:webpack-dev": "vuepress-webpack dev src"
   },
   "devDependencies": {
-    "@vuepress/cli": "2.0.0-beta.66",
-    "@vuepress/client": "2.0.0-beta.66",
-    "@vuepress/core": "2.0.0-beta.66",
-    "@vuepress/theme-default": "2.0.0-beta.66",
-    "@vuepress/utils": "2.0.0-beta.66",
+    "@vuepress/cli": "2.0.0-beta.67",
+    "@vuepress/client": "2.0.0-beta.67",
+    "@vuepress/core": "2.0.0-beta.67",
+    "@vuepress/theme-default": "2.0.0-beta.67",
+    "@vuepress/utils": "2.0.0-beta.67",
     "sass-loader": "13.3.2",
     "vue": "3.3.4",
     "vuepress-plugin-auto-catalog": "workspace:*",
-    "vuepress-vite": "2.0.0-beta.66",
-    "vuepress-webpack": "2.0.0-beta.66"
+    "vuepress-vite": "2.0.0-beta.67",
+    "vuepress-webpack": "2.0.0-beta.67"
   }
 }

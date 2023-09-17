@@ -1,6 +1,6 @@
 {
   "name": "vuepress-plugin-remove-pwa",
-  "version": "2.0.0-beta.235",
+  "version": "2.0.0-beta.237",
   "description": "Plugin to remove PWA for VuePress",
   "keywords": [
     "vuepress",
@@ -29,8 +29,6 @@
     ".": "./lib/node/index.js",
     "./package.json": "./package.json"
   },
-  "main": "lib/node/index.js",
-  "types": "lib/node/index.d.ts",
   "files": [
     "lib"
   ],
@@ -46,18 +44,18 @@
     "pnpm": ">=7"
   },
   "dependencies": {
-    "@vuepress/client": "2.0.0-beta.66",
-    "@vuepress/shared": "2.0.0-beta.66",
-    "@vuepress/utils": "2.0.0-beta.66",
+    "@vuepress/client": "2.0.0-beta.67",
+    "@vuepress/shared": "2.0.0-beta.67",
+    "@vuepress/utils": "2.0.0-beta.67",
     "vue": "^3.3.4"
   },
   "devDependencies": {
-    "@vuepress/core": "2.0.0-beta.66"
+    "@vuepress/core": "2.0.0-beta.67"
   },
   "peerDependencies": {
-    "vuepress": "2.0.0-beta.66",
-    "vuepress-vite": "2.0.0-beta.66",
-    "vuepress-webpack": "2.0.0-beta.66"
+    "vuepress": "2.0.0-beta.67",
+    "vuepress-vite": "2.0.0-beta.67",
+    "vuepress-webpack": "2.0.0-beta.67"
   },
   "peerDependenciesMeta": {
     "vuepress": {

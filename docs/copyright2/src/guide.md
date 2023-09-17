@@ -11,7 +11,9 @@ This plugin can automatically append copyright information when visitors copy co
 
 This plugin is disabled globally by default, you need to manually enable it by setting `copy: true` in page frontmatter. Of course, you can set `global: true` in the plugin options to make it globally enabled, and set `copy: false` in page frontmatter to disable it.
 
-To avoid disturbing visitors, copyright information will be appended only when the length of content copied by the user is not less than `100`. If you want to change this threshold, please set `triggerWords`, and this option supports being overridden via `copy.triggerWord` in page frontmatter.
+To avoid disturbing visitors, copyright information will be appended only when the length of content copied by the user is not less than `100`. If you want to change this threshold, please set `triggerLength`, and this option supports being overridden via `copy.triggerLength` in page frontmatter.
+
+If you want to prohibit users from copying long content, you can set `maxLength`, and this option supports being overridden via `copy.maxLength` in page frontmatter.
 
 ## Disable Copy and Selection
 
