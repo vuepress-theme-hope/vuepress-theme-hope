@@ -169,6 +169,13 @@ Max level of catalog.
 
 Whether display index number for catalog.
 
+### indexType
+
+- Type: `ul | ol`
+- Default: `ul`
+
+Index type for catalog, only available when `index` is `true`.
+
 ### hideHeading
 
 - Type: `boolean`

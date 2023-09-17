@@ -77,13 +77,25 @@ export default defineComponent({
     index: Boolean,
 
     /**
+     * Index type for catalog, only available when `index` is `true`
+     *
+     * 索引列表的展示类型，仅显示索引时生效
+     *
+     * @default 'ul'
+     */
+    indexType: {
+      type: String,
+      default: "ul",
+    },
+
+    /**
      * Wheather hide `Category` title
      *
      * 是否隐藏 `目录` 标题
      *
      * @default false
      */
-    hideCategory: Boolean,
+    hideHeading: Boolean,
   },
 
   setup(props) {
@@ -225,7 +237,7 @@ export default defineComponent({
 
     return (): VNode =>
       h("div", { class: "vp-catalog" }, [
-        props.hideCategory
+        props.hideHeading
           ? null
           : h("h2", { class: "vp-catalog-main-title" }, locale.value.title),
 
@@ -260,7 +272,7 @@ export default defineComponent({
                 ),
                 children.length
                   ? h(
-                      "ul",
+                      props.index && props.indexType === "ol" ? "ol" : "ul",
                       { class: "vp-catalog-child-catalogs" },
                       children.map(
                         ({ children = [], icon, path, title }, index) =>
@@ -307,7 +319,8 @@ export default defineComponent({
                                           to: path,
                                         },
                                         () => [
-                                          props.index
+                                          props.index &&
+                                          props.indexType !== "ol"
                                             ? `${mainIndex + 1}.${index + 1}.${
                                                 subIndex + 1
                                               }`
