@@ -89,7 +89,7 @@ export default defineComponent({
     },
 
     /**
-     * Wheather hide `Category` title
+     * Whether hide `Category` title
      *
      * 是否隐藏 `目录` 标题
      *
