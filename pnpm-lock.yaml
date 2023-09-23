@@ -15351,6 +15351,7 @@ packages:
       - supports-color
       - terser
       - ts-node
+    dev: false
 
   /vuepress-vite@2.0.0-beta.67(@types/node@20.6.3)(@vuepress/client@2.0.0-beta.67)(sass-loader@13.3.2)(ts-node@10.9.1)(vue@3.3.4):
     resolution: {integrity: sha512-oaak2RPKBP0LeaDpDntlsQWLklCBf2vdeceXtPSLV2IzL/wtMHs5DQ/f7zXxCzvku3h/FIstmgoKq/vC0TvHkA==}
@@ -15438,28 +15439,6 @@ packages:
     hasBin: true
     dependencies:
       vuepress-vite: 2.0.0-beta.67(@types/node@20.6.3)(@vuepress/client@2.0.0-beta.67)(sass-loader@13.3.2)(ts-node@10.9.1)(vue@3.3.4)
-    transitivePeerDependencies:
-      - '@types/node'
-      - '@vue/composition-api'
-      - '@vuepress/client'
-      - less
-      - lightningcss
-      - sass
-      - sass-loader
-      - stylus
-      - sugarss
-      - supports-color
-      - terser
-      - ts-node
-      - vue
-    dev: false
-
-  /vuepress@2.0.0-beta.67(@types/node@20.6.3)(@vuepress/client@2.0.0-beta.67)(ts-node@10.9.1)(vue@3.3.4):
-    resolution: {integrity: sha512-931pKDOph20RKMLZAH5YYlMz+nfx9jcOQio1Gxk0pB7DwuSxAVFxPv2dbIUP4E/4uWOkLppRhLYcrOoxEbVYzA==}
-    engines: {node: '>=16.19.0'}
-    hasBin: true
-    dependencies:
-      vuepress-vite: 2.0.0-beta.67(@types/node@20.6.3)(@vuepress/client@2.0.0-beta.67)(ts-node@10.9.1)(vue@3.3.4)
     transitivePeerDependencies:
       - '@types/node'
       - '@vue/composition-api'
