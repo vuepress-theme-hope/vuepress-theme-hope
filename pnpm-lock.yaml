@@ -138,8 +138,8 @@ importers:
         specifier: 6.0.2
         version: 6.0.2(rollup@3.29.2)(typescript@5.2.2)
       rollup-plugin-esbuild:
-        specifier: 5.0.0
-        version: 5.0.0(esbuild@0.19.3)(rollup@3.29.2)
+        specifier: 6.0.1
+        version: 6.0.1(esbuild@0.19.3)(rollup@3.29.2)
       sort-package-json:
         specifier: 2.5.1
         version: 2.5.1
@@ -13293,11 +13293,11 @@ packages:
       '@babel/code-frame': 7.22.13
     dev: true
 
-  /rollup-plugin-esbuild@5.0.0(esbuild@0.19.3)(rollup@3.29.2):
-    resolution: {integrity: sha512-1cRIOHAPh8WQgdQQyyvFdeOdxuiyk+zB5zJ5+YOwrZP4cJ0MT3Fs48pQxrZeyZHcn+klFherytILVfE4aYrneg==}
-    engines: {node: '>=14.18.0', npm: '>=8.0.0'}
+  /rollup-plugin-esbuild@6.0.1(esbuild@0.19.3)(rollup@3.29.2):
+    resolution: {integrity: sha512-g9QGfRhvcsFDyzn3rhPD0/x/MFjD2TI+u6eDK9rjN6dxNok5kGXKdZr6g63VZOOL1kE0mvdaCC5cwYB/kTaRkA==}
+    engines: {node: '>=14.18.0'}
     peerDependencies:
-      esbuild: '>=0.10.1'
+      esbuild: '>=0.18.0'
       rollup: ^1.20.0 || ^2.0.0 || ^3.0.0
     dependencies:
       '@rollup/pluginutils': 5.0.4(rollup@3.29.2)
@@ -13305,7 +13305,6 @@ packages:
       es-module-lexer: 1.3.1
       esbuild: 0.19.3
       joycon: 3.1.1
-      jsonc-parser: 3.2.0
       rollup: 3.29.2
     transitivePeerDependencies:
       - supports-color
