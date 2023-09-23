@@ -15408,28 +15408,6 @@ packages:
       - vue
     dev: false
 
-  /vuepress@2.0.0-beta.67(@types/node@20.6.3)(@vuepress/client@2.0.0-beta.67)(ts-node@10.9.1)(vue@3.3.4):
-    resolution: {integrity: sha512-931pKDOph20RKMLZAH5YYlMz+nfx9jcOQio1Gxk0pB7DwuSxAVFxPv2dbIUP4E/4uWOkLppRhLYcrOoxEbVYzA==}
-    engines: {node: '>=16.19.0'}
-    hasBin: true
-    dependencies:
-      vuepress-vite: 2.0.0-beta.67(@types/node@20.6.3)(@vuepress/client@2.0.0-beta.67)(ts-node@10.9.1)(vue@3.3.4)
-    transitivePeerDependencies:
-      - '@types/node'
-      - '@vue/composition-api'
-      - '@vuepress/client'
-      - less
-      - lightningcss
-      - sass
-      - sass-loader
-      - stylus
-      - sugarss
-      - supports-color
-      - terser
-      - ts-node
-      - vue
-    dev: false
-
   /watchpack@2.4.0:
     resolution: {integrity: sha512-Lcvm7MGST/4fup+ifyKi2hjyIAwcdI4HRgtvTpIUxBRhB+RFtUh8XtDOxUfctVCnhVi+QQj49i91OyvzkJl6cg==}
     engines: {node: '>=10.13.0'}
