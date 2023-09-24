@@ -156,8 +156,8 @@ importers:
         specifier: 2.6.2
         version: 2.6.2
       tsx:
-        specifier: 3.12.10
-        version: 3.12.10
+        specifier: 3.13.0
+        version: 3.13.0
       typescript:
         specifier: 5.2.2
         version: 5.2.2
@@ -737,7 +737,7 @@ importers:
     devDependencies:
       '@vuepress/bundler-vite':
         specifier: 2.0.0-beta.67
-        version: 2.0.0-beta.67(@types/node@20.6.4)(ts-node@10.9.1)
+        version: 2.0.0-beta.67(@types/node@20.6.4)(sass@1.66.1)(ts-node@10.9.1)
 
   docs/auto-catalog:
     dependencies:
@@ -1477,7 +1477,7 @@ importers:
         version: 1.5.2
       '@vuepress/bundler-vite':
         specifier: 2.0.0-beta.67
-        version: 2.0.0-beta.67(@types/node@20.6.4)(ts-node@10.9.1)
+        version: 2.0.0-beta.67(@types/node@20.6.4)(sass@1.66.1)(ts-node@10.9.1)
       '@vuepress/core':
         specifier: 2.0.0-beta.67
         version: 2.0.0-beta.67
@@ -1795,7 +1795,7 @@ importers:
         version: 7.20.2
       '@vuepress/bundler-vite':
         specifier: 2.0.0-beta.67
-        version: 2.0.0-beta.67(@types/node@20.6.4)(ts-node@10.9.1)
+        version: 2.0.0-beta.67(@types/node@20.6.4)(sass@1.66.1)(ts-node@10.9.1)
       '@vuepress/core':
         specifier: 2.0.0-beta.67
         version: 2.0.0-beta.67
@@ -2215,7 +2215,7 @@ importers:
         version: 7.5.2
       '@vuepress/bundler-vite':
         specifier: 2.0.0-beta.67
-        version: 2.0.0-beta.67(@types/node@20.6.4)(ts-node@10.9.1)
+        version: 2.0.0-beta.67(@types/node@20.6.4)(sass@1.66.1)(ts-node@10.9.1)
       '@vuepress/bundler-webpack':
         specifier: 2.0.0-beta.67
         version: 2.0.0-beta.67(esbuild@0.19.3)(typescript@5.2.2)
@@ -2388,7 +2388,7 @@ importers:
     devDependencies:
       '@vuepress/bundler-vite':
         specifier: 2.0.0-beta.67
-        version: 2.0.0-beta.67(@types/node@20.6.4)(ts-node@10.9.1)
+        version: 2.0.0-beta.67(@types/node@20.6.4)(sass@1.66.1)(ts-node@10.9.1)
       '@vuepress/bundler-webpack':
         specifier: 2.0.0-beta.67
         version: 2.0.0-beta.67(esbuild@0.19.3)(typescript@5.2.2)
@@ -3941,27 +3941,6 @@ packages:
       search-insights: 2.8.2
     transitivePeerDependencies:
       - '@algolia/client-search'
-
-  /@esbuild-kit/cjs-loader@2.4.2:
-    resolution: {integrity: sha512-BDXFbYOJzT/NBEtp71cvsrGPwGAMGRB/349rwKuoxNSiKjPraNNnlK6MIIabViCjqZugu6j+xeMDlEkWdHHJSg==}
-    dependencies:
-      '@esbuild-kit/core-utils': 3.3.0
-      get-tsconfig: 4.7.0
-    dev: true
-
-  /@esbuild-kit/core-utils@3.3.0:
-    resolution: {integrity: sha512-jTtSvVpr5ygNXyPXf9IBbCrKQ0uckq6vWkcGfy1fEr9KjkKdnFn4kFAGjpqZDZim1wsTwh/Be+lhAUemEmxEYA==}
-    dependencies:
-      esbuild: 0.18.20
-      source-map-support: 0.5.21
-    dev: true
-
-  /@esbuild-kit/esm-loader@2.6.4:
-    resolution: {integrity: sha512-xcbyhN97xFFFEdDw6IC4EuzX9Ali3aV3cj2FIYragOQpbPM4X6QA2R5qaP3h7Tr0tuyI6dmJJdMw7oBHxBSXQA==}
-    dependencies:
-      '@esbuild-kit/core-utils': 3.3.0
-      get-tsconfig: 4.7.0
-    dev: true
 
   /@esbuild/android-arm64@0.18.20:
     resolution: {integrity: sha512-Nz4rJcchGDtENV0eMKUNa6L12zz2zBDXuhj/Vjh18zGqB44Bi7MBMSXjgunJgjRhCmKOjnPuZp4Mb6OKqtMHLQ==}
@@ -5564,34 +5543,6 @@ packages:
     resolution: {integrity: sha512-7OjdcV8vQ74eiz1TZLzZP4JwqM5fA94K6yntPS5Z25r9HDuGNzaGdgvwKYq6S+MxwF0TFRwe50fIR/MYnakdkQ==}
 
   /@vuepress/bundler-vite@2.0.0-beta.67(@types/node@20.6.4)(sass@1.66.1)(ts-node@10.9.1):
-    resolution: {integrity: sha512-W6YXixxu2G+xPECPFvx4Tzv5fmpBYvApEYVw7qfSNf/5YZ6aeIfV0AMGJZvhk7R/KniofvBTGCjAMSK4fqKp8w==}
-    dependencies:
-      '@vitejs/plugin-vue': 4.3.4(vite@4.4.9)(vue@3.3.4)
-      '@vuepress/client': 2.0.0-beta.67
-      '@vuepress/core': 2.0.0-beta.67
-      '@vuepress/shared': 2.0.0-beta.67
-      '@vuepress/utils': 2.0.0-beta.67
-      autoprefixer: 10.4.15(postcss@8.4.29)
-      connect-history-api-fallback: 2.0.0
-      postcss: 8.4.29
-      postcss-load-config: 4.0.1(postcss@8.4.29)(ts-node@10.9.1)
-      rollup: 3.29.3
-      vite: 4.4.9(@types/node@20.6.4)(sass@1.66.1)
-      vue: 3.3.4
-      vue-router: 4.2.5(vue@3.3.4)
-    transitivePeerDependencies:
-      - '@types/node'
-      - '@vue/composition-api'
-      - less
-      - lightningcss
-      - sass
-      - stylus
-      - sugarss
-      - supports-color
-      - terser
-      - ts-node
-
-  /@vuepress/bundler-vite@2.0.0-beta.67(@types/node@20.6.4)(ts-node@10.9.1):
     resolution: {integrity: sha512-W6YXixxu2G+xPECPFvx4Tzv5fmpBYvApEYVw7qfSNf/5YZ6aeIfV0AMGJZvhk7R/KniofvBTGCjAMSK4fqKp8w==}
     dependencies:
       '@vitejs/plugin-vue': 4.3.4(vite@4.4.9)(vue@3.3.4)
@@ -9548,6 +9499,12 @@ packages:
     resolution: {integrity: sha512-pmjiZ7xtB8URYm74PlGJozDNyhvsVLUcpBa8DZBG3bWHwaHa9bPiRpiSfovw+fjhwONSCWKRyk+JQHEGZmMrzw==}
     dependencies:
       resolve-pkg-maps: 1.0.0
+
+  /get-tsconfig@4.7.2:
+    resolution: {integrity: sha512-wuMsz4leaj5hbGgg4IvDU0bqJagpftG5l5cXIAvo8uZrqn0NJqwtfupTN00VnkQJPcIRrxYrm1Ue24btpCha2A==}
+    dependencies:
+      resolve-pkg-maps: 1.0.0
+    dev: true
 
   /get-value@2.0.6:
     resolution: {integrity: sha512-Ln0UQDlxH1BapMu3GPtf7CuYNwRZf2gwCuPqbyG6pB8WfmFpzqcy4xtAaAMUhnNqjMKTiCPZG2oMT3YSx8U2NA==}
@@ -14528,13 +14485,13 @@ packages:
   /tslib@2.6.2:
     resolution: {integrity: sha512-AEYxH93jGFPn/a2iVAwW87VuUIkR1FVUKB77NwMF7nBTDkDrrT/Hpt/IrCJ0QXhW27jTBDcf5ZY7w6RiqTMw2Q==}
 
-  /tsx@3.12.10:
-    resolution: {integrity: sha512-2+46h4xvUt1aLDNvk5YBT8Uzw+b7BolGbn7iSMucYqCXZiDc+1IMghLVdw8kKjING32JFOeO+Am9posvjkeclA==}
+  /tsx@3.13.0:
+    resolution: {integrity: sha512-rjmRpTu3as/5fjNq/kOkOtihgLxuIz6pbKdj9xwP4J5jOLkBxw/rjN5ANw+KyrrOXV5uB7HC8+SrrSJxT65y+A==}
     hasBin: true
     dependencies:
-      '@esbuild-kit/cjs-loader': 2.4.2
-      '@esbuild-kit/core-utils': 3.3.0
-      '@esbuild-kit/esm-loader': 2.6.4
+      esbuild: 0.18.20
+      get-tsconfig: 4.7.2
+      source-map-support: 0.5.21
     optionalDependencies:
       fsevents: 2.3.3
     dev: true
@@ -15179,7 +15136,7 @@ packages:
       '@vuepress/client': 2.0.0-beta.67
       vue: ^3.3.4
     dependencies:
-      '@vuepress/bundler-vite': 2.0.0-beta.67(@types/node@20.6.4)(ts-node@10.9.1)
+      '@vuepress/bundler-vite': 2.0.0-beta.67(@types/node@20.6.4)(sass@1.66.1)(ts-node@10.9.1)
       '@vuepress/cli': 2.0.0-beta.67
       '@vuepress/client': 2.0.0-beta.67
       '@vuepress/core': 2.0.0-beta.67
