@@ -55,18 +55,18 @@
     "@vuepress/utils": "2.0.0-beta.67",
     "@vueuse/core": "^10.4.1",
     "cheerio": "1.0.0-rc.12",
-    "dayjs": "^1.11.9",
+    "dayjs": "^1.11.10",
     "execa": "^8.0.1",
-    "fflate": "^0.8.0",
+    "fflate": "^0.8.1",
     "gray-matter": "^4.0.3",
     "semver": "^7.5.4",
     "striptags": "^3.2.0",
     "vue": "^3.3.4",
-    "vue-router": "^4.2.4"
+    "vue-router": "^4.2.5"
   },
   "devDependencies": {
     "@types/connect": "3.4.36",
-    "@types/semver": "7.5.2",
+    "@types/semver": "7.5.3",
     "@vuepress/bundler-vite": "2.0.0-beta.67",
     "@vuepress/bundler-webpack": "2.0.0-beta.67",
     "@vuepress/core": "2.0.0-beta.67",

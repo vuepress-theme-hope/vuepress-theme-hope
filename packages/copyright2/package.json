@@ -51,7 +51,7 @@
     "@vuepress/utils": "2.0.0-beta.67",
     "@vueuse/core": "^10.4.1",
     "vue": "^3.3.4",
-    "vue-router": "^4.2.4",
+    "vue-router": "^4.2.5",
     "vuepress-shared": "workspace:*"
   },
   "devDependencies": {

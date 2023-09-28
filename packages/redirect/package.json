@@ -56,7 +56,7 @@
     "@vueuse/core": "^10.4.1",
     "cac": "^6.7.14",
     "vue": "^3.3.4",
-    "vue-router": "^4.2.4",
+    "vue-router": "^4.2.5",
     "vuepress-plugin-sass-palette": "workspace:*",
     "vuepress-shared": "workspace:*"
   },
