@@ -57,8 +57,8 @@ importers:
         specifier: 9.2.0
         version: 9.2.0
       commit-and-tag-version:
-        specifier: 11.2.3
-        version: 11.2.3
+        specifier: 11.2.4
+        version: 11.2.4
       commitizen:
         specifier: 4.3.0
         version: 4.3.0
@@ -7087,8 +7087,8 @@ packages:
     engines: {node: '>=0.10.0'}
     dev: false
 
-  /commit-and-tag-version@11.2.3:
-    resolution: {integrity: sha512-shL/Z7Di/4nGEDRd8NlixihLI6VwzADcUeGdE24pLJKyxMa/ApnIq2cHyT4A2P87IR0scFj29EuXPQQFwxszkw==}
+  /commit-and-tag-version@11.2.4:
+    resolution: {integrity: sha512-1I4JajhANPbLNTmUzrfF1eQ+YZNfkR0t+d1weFXJHeydhA96v/1ujNf/9AxyrSVd51Xn0fX6XBZ0BH3+xBM+lQ==}
     engines: {node: '>=14'}
     hasBin: true
     dependencies:
