@@ -24,8 +24,8 @@ importers:
         specifier: 17.7.0
         version: 17.7.0
       '@rollup/plugin-alias':
-        specifier: 5.0.0
-        version: 5.0.0(rollup@3.29.4)
+        specifier: 5.0.1
+        version: 5.0.1(rollup@3.29.4)
       '@rollup/plugin-commonjs':
         specifier: 25.0.4
         version: 25.0.4(rollup@3.29.4)
@@ -4724,11 +4724,11 @@ packages:
       tslib: 2.6.2
     dev: true
 
-  /@rollup/plugin-alias@5.0.0(rollup@3.29.4):
-    resolution: {integrity: sha512-l9hY5chSCjuFRPsnRm16twWBiSApl2uYFLsepQYwtBuAxNMQ/1dJqADld40P0Jkqm65GRTLy/AC6hnpVebtLsA==}
+  /@rollup/plugin-alias@5.0.1(rollup@3.29.4):
+    resolution: {integrity: sha512-JObvbWdOHoMy9W7SU0lvGhDtWq9PllP5mjpAy+TUslZG/WzOId9u80Hsqq1vCUn9pFJ0cxpdcnAv+QzU2zFH3Q==}
     engines: {node: '>=14.0.0'}
     peerDependencies:
-      rollup: ^1.20.0||^2.0.0||^3.0.0
+      rollup: ^1.20.0||^2.0.0||^3.0.0||^4.0.0
     peerDependenciesMeta:
       rollup:
         optional: true
