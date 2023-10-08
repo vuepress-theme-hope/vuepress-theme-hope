@@ -102,8 +102,7 @@ export const bundle = (
             (commonjs as unknown as typeof commonjs.default)(),
           ]
         : []),
-      // FIXME: Types issue
-      (esbuild as unknown as typeof esbuild.default)({
+      esbuild({
         charset: "utf8",
         minify: isProduction,
         target: "node16",
