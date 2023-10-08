@@ -933,8 +933,8 @@ importers:
   docs/md-enhance:
     dependencies:
       '@types/katex':
-        specifier: 0.16.2
-        version: 0.16.2
+        specifier: 0.16.3
+        version: 0.16.3
       '@vuepress/client':
         specifier: 2.0.0-beta.67
         version: 2.0.0-beta.67
@@ -948,8 +948,8 @@ importers:
         specifier: 1.0.0
         version: 1.0.0
       katex:
-        specifier: 0.16.8
-        version: 0.16.8
+        specifier: 0.16.9
+        version: 0.16.9
       sass-loader:
         specifier: 13.3.2
         version: 13.3.2(sass@1.66.1)(webpack@5.88.2)
@@ -1224,8 +1224,8 @@ importers:
   docs/theme:
     dependencies:
       '@types/katex':
-        specifier: 0.16.2
-        version: 0.16.2
+        specifier: 0.16.3
+        version: 0.16.3
       '@vuepress/client':
         specifier: 2.0.0-beta.67
         version: 2.0.0-beta.67
@@ -1242,8 +1242,8 @@ importers:
         specifier: 1.0.0
         version: 1.0.0
       katex:
-        specifier: 0.16.8
-        version: 0.16.8
+        specifier: 0.16.9
+        version: 0.16.9
       sass-loader:
         specifier: 13.3.2
         version: 13.3.2(sass@1.66.1)(webpack@5.88.2)
@@ -4622,9 +4622,9 @@ packages:
     engines: {node: '>= 14'}
     dependencies:
       '@mdit/plugin-tex': 0.4.8
-      '@types/katex': 0.16.2
+      '@types/katex': 0.16.3
       '@types/markdown-it': 12.2.3
-      katex: 0.16.8
+      katex: 0.16.9
       markdown-it: 13.0.1
     dev: false
 
@@ -5092,8 +5092,8 @@ packages:
     dependencies:
       '@types/node': 20.5.9
 
-  /@types/katex@0.16.2:
-    resolution: {integrity: sha512-dHsSjSlU/EWEEbeNADr3FtZZOAXPkFPUO457QCnoNqcZQXNqNEu/svQd0Nritvd3wNff4vvC/f4e6xgX3Llt8A==}
+  /@types/katex@0.16.3:
+    resolution: {integrity: sha512-CeVMX9EhVUW8MWnei05eIRks4D5Wscw/W9Byz1s3PA+yJvcdvq9SaDjiUKvRvEgjpdTyJMjQA43ae4KTwsvOPg==}
     dev: false
 
   /@types/linkify-it@3.0.3:
@@ -10993,6 +10993,13 @@ packages:
 
   /katex@0.16.8:
     resolution: {integrity: sha512-ftuDnJbcbOckGY11OO+zg3OofESlbR5DRl2cmN8HeWeeFIV7wTXvAOx8kEjZjobhA+9wh2fbKeO6cdcA9Mnovg==}
+    hasBin: true
+    dependencies:
+      commander: 8.3.0
+    dev: false
+
+  /katex@0.16.9:
+    resolution: {integrity: sha512-fsSYjWS0EEOwvy81j3vRA8TEAhQhKiqO+FQaKWp0m39qwOzHVBgAUBIXWj1pB+O2W3fIpNa6Y9KSKCVbfPhyAQ==}
     hasBin: true
     dependencies:
       commander: 8.3.0
