@@ -1,8 +1,6 @@
-import { createRequire } from "node:module";
-
 import type { App } from "@vuepress/core";
-import { path } from "@vuepress/utils";
 import {
+  getRealPath,
   isArray,
   isNumber,
   isPlainObject,
@@ -13,7 +11,7 @@ import { getIconLinks, getNoticeOptions } from "./components/index.js";
 import type { BackToTopOptions, ComponentOptions } from "./options/index.js";
 import { AVAILABLE_COMPONENTS, CLIENT_FOLDER } from "./utils.js";
 
-const require = createRequire(import.meta.url);
+const { url } = import.meta;
 
 export const prepareConfigFile = (
   app: App,
@@ -105,8 +103,9 @@ if(!hasGlobalComponent("Catalog")) app.component("Catalog", Catalog);
     `components/config.js`,
     `\
 import { defineClientConfig } from "@vuepress/client";
-import { hasGlobalComponent } from "${path.resolve(
-      require.resolve("vuepress-shared/client"),
+import { hasGlobalComponent } from "${getRealPath(
+      "vuepress-shared/client",
+      url,
     )}";
 ${
   shouldImportH
@@ -118,18 +117,14 @@ import { h } from "vue";
 ${
   shouldImportUseScriptTag
     ? `\
-import { useScriptTag } from "${path.resolve(
-        require.resolve("@vueuse/core/index.mjs"),
-      )}";
+import { useScriptTag } from "${getRealPath("@vueuse/core/index.mjs", url)}";
 `
     : ""
 }\
 ${
   shouldImportUseStyleTag
     ? `\
-import { useStyleTag } from "${path.resolve(
-        require.resolve("@vueuse/core/index.mjs"),
-      )}";
+import { useStyleTag } from "${getRealPath("@vueuse/core/index.mjs", url)}";
 `
     : ""
 }\
