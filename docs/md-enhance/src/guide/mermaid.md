@@ -61,7 +61,7 @@ Besides using mermaid, you can also use the following code blocks:
 - c4c: `C4Context`
 - er: `erDiagram`
 - gantt: `gantt`
-- "git-graph": `gitGraph`
+- git-graph: `gitGraph`
 - journey: `journey`
 - mindmap: `mindmap`
 - pie: `pie`
@@ -73,10 +73,12 @@ You do not need to declare diagram type and intent your code.
 
 When the diagram supports setting title, you can add the title directly after fence info:
 
+````md
 ```sequence Chart Title
 sequence diagram body
 ...
 ```
+````
 
 ## Usage
 

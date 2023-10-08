@@ -61,7 +61,7 @@ export default {
 - c4c: `C4Context`
 - er: `erDiagram`
 - gantt: `gantt`
-- "git-graph": `gitGraph`
+- git-graph: `gitGraph`
 - journey: `journey`
 - mindmap: `mindmap`
 - pie: `pie`
@@ -73,10 +73,12 @@ export default {
 
 当图表支持设置标题时，你可以直接在代码块信息后添加标题:
 
+````md
 ```sequence 代码标题
 顺序图代码内容
 ...
 ```
+````
 
 ## 使用
 
