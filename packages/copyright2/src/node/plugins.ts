@@ -1,14 +1,12 @@
 import type { Page, PluginFunction } from "@vuepress/core";
-import { colors, getDirname, path } from "@vuepress/utils";
+import { colors } from "@vuepress/utils";
 import { checkVersion, getLocales, isFunction } from "vuepress-shared/node";
 
 import { convertOptions } from "./compact/index.js";
 import { copyrightLocales } from "./locales.js";
 import type { CopyrightOptions } from "./options.js";
-import { PLUGIN_NAME, logger } from "./utils.js";
+import { CLIENT_FOLDER, PLUGIN_NAME, logger } from "./utils.js";
 import type { CopyrightPluginPageData } from "../shared/index.js";
-
-const __dirname = getDirname(import.meta.url);
 
 export const copyrightPlugin =
   (options: CopyrightOptions, legacy = true): PluginFunction =>
@@ -79,6 +77,6 @@ export const copyrightPlugin =
         };
       },
 
-      clientConfigFile: path.resolve(__dirname, "../client/config.js"),
+      clientConfigFile: `${CLIENT_FOLDER}config.js`,
     };
   };
