@@ -74,8 +74,8 @@ importers:
         specifier: 1.7.1
         version: 1.7.1
       esbuild:
-        specifier: 0.19.2
-        version: 0.19.2
+        specifier: 0.19.4
+        version: 0.19.4
       eslint:
         specifier: 8.48.0
         version: 8.48.0
@@ -138,7 +138,7 @@ importers:
         version: 6.0.1(rollup@3.28.1)(typescript@5.2.2)
       rollup-plugin-esbuild:
         specifier: 5.0.0
-        version: 5.0.0(esbuild@0.19.2)(rollup@3.28.1)
+        version: 5.0.0(esbuild@0.19.4)(rollup@3.28.1)
       sort-package-json:
         specifier: 2.5.1
         version: 2.5.1
@@ -195,7 +195,7 @@ importers:
         version: 2.0.0-beta.67(@types/node@20.5.9)(@vuepress/client@2.0.0-beta.67)(sass-loader@13.3.2)(ts-node@10.9.1)(vue@3.3.4)
       vuepress-webpack:
         specifier: 2.0.0-beta.67
-        version: 2.0.0-beta.67(esbuild@0.19.2)(sass@1.66.1)(typescript@5.2.2)(vue@3.3.4)(webpack@5.88.2)
+        version: 2.0.0-beta.67(esbuild@0.19.4)(sass@1.66.1)(typescript@5.2.2)(vue@3.3.4)(webpack@5.88.2)
 
   demo/blog2:
     devDependencies:
@@ -231,7 +231,7 @@ importers:
         version: 2.0.0-beta.67(@types/node@20.5.9)(@vuepress/client@2.0.0-beta.67)(sass-loader@13.3.2)(ts-node@10.9.1)(vue@3.3.4)
       vuepress-webpack:
         specifier: 2.0.0-beta.67
-        version: 2.0.0-beta.67(esbuild@0.19.2)(sass@1.66.1)(typescript@5.2.2)(vue@3.3.4)(webpack@5.88.2)
+        version: 2.0.0-beta.67(esbuild@0.19.4)(sass@1.66.1)(typescript@5.2.2)(vue@3.3.4)(webpack@5.88.2)
 
   demo/comment2:
     devDependencies:
@@ -264,7 +264,7 @@ importers:
         version: 2.0.0-beta.67(@types/node@20.5.9)(@vuepress/client@2.0.0-beta.67)(sass-loader@13.3.2)(ts-node@10.9.1)(vue@3.3.4)
       vuepress-webpack:
         specifier: 2.0.0-beta.67
-        version: 2.0.0-beta.67(esbuild@0.19.2)(sass@1.66.1)(typescript@5.2.2)(vue@3.3.4)(webpack@5.88.2)
+        version: 2.0.0-beta.67(esbuild@0.19.4)(sass@1.66.1)(typescript@5.2.2)(vue@3.3.4)(webpack@5.88.2)
 
   demo/components:
     devDependencies:
@@ -300,7 +300,7 @@ importers:
         version: 2.0.0-beta.67(@types/node@20.5.9)(@vuepress/client@2.0.0-beta.67)(sass-loader@13.3.2)(ts-node@10.9.1)(vue@3.3.4)
       vuepress-webpack:
         specifier: 2.0.0-beta.67
-        version: 2.0.0-beta.67(esbuild@0.19.2)(sass@1.66.1)(typescript@5.2.2)(vue@3.3.4)(webpack@5.88.2)
+        version: 2.0.0-beta.67(esbuild@0.19.4)(sass@1.66.1)(typescript@5.2.2)(vue@3.3.4)(webpack@5.88.2)
 
   demo/copy-code2:
     devDependencies:
@@ -327,7 +327,7 @@ importers:
         version: 2.0.0-beta.67(@types/node@20.5.9)(@vuepress/client@2.0.0-beta.67)(sass-loader@13.3.2)(ts-node@10.9.1)(vue@3.3.4)
       vuepress-webpack:
         specifier: 2.0.0-beta.67
-        version: 2.0.0-beta.67(esbuild@0.19.2)(sass@1.66.1)(typescript@5.2.2)(vue@3.3.4)(webpack@5.88.2)
+        version: 2.0.0-beta.67(esbuild@0.19.4)(sass@1.66.1)(typescript@5.2.2)(vue@3.3.4)(webpack@5.88.2)
 
   demo/copyright2:
     devDependencies:
@@ -357,7 +357,7 @@ importers:
         version: 2.0.0-beta.67(@types/node@20.5.9)(@vuepress/client@2.0.0-beta.67)(sass-loader@13.3.2)(ts-node@10.9.1)(vue@3.3.4)
       vuepress-webpack:
         specifier: 2.0.0-beta.67
-        version: 2.0.0-beta.67(esbuild@0.19.2)(sass@1.66.1)(typescript@5.2.2)(vue@3.3.4)(webpack@5.88.2)
+        version: 2.0.0-beta.67(esbuild@0.19.4)(sass@1.66.1)(typescript@5.2.2)(vue@3.3.4)(webpack@5.88.2)
 
   demo/feed2:
     devDependencies:
@@ -384,7 +384,7 @@ importers:
         version: 2.0.0-beta.67(@types/node@20.5.9)(@vuepress/client@2.0.0-beta.67)(sass-loader@13.3.2)(ts-node@10.9.1)(vue@3.3.4)
       vuepress-webpack:
         specifier: 2.0.0-beta.67
-        version: 2.0.0-beta.67(esbuild@0.19.2)(sass@1.66.1)(typescript@5.2.2)(vue@3.3.4)(webpack@5.88.2)
+        version: 2.0.0-beta.67(esbuild@0.19.4)(sass@1.66.1)(typescript@5.2.2)(vue@3.3.4)(webpack@5.88.2)
 
   demo/lightgallery:
     devDependencies:
@@ -411,7 +411,7 @@ importers:
         version: 2.0.0-beta.67(@types/node@20.5.9)(@vuepress/client@2.0.0-beta.67)(sass-loader@13.3.2)(ts-node@10.9.1)(vue@3.3.4)
       vuepress-webpack:
         specifier: 2.0.0-beta.67
-        version: 2.0.0-beta.67(esbuild@0.19.2)(sass@1.66.1)(typescript@5.2.2)(vue@3.3.4)(webpack@5.88.2)
+        version: 2.0.0-beta.67(esbuild@0.19.4)(sass@1.66.1)(typescript@5.2.2)(vue@3.3.4)(webpack@5.88.2)
 
   demo/md-enhance:
     devDependencies:
@@ -438,7 +438,7 @@ importers:
         version: 2.0.0-beta.67(@types/node@20.5.9)(@vuepress/client@2.0.0-beta.67)(sass-loader@13.3.2)(ts-node@10.9.1)(vue@3.3.4)
       vuepress-webpack:
         specifier: 2.0.0-beta.67
-        version: 2.0.0-beta.67(esbuild@0.19.2)(sass@1.66.1)(typescript@5.2.2)(vue@3.3.4)(webpack@5.88.2)
+        version: 2.0.0-beta.67(esbuild@0.19.4)(sass@1.66.1)(typescript@5.2.2)(vue@3.3.4)(webpack@5.88.2)
 
   demo/photo-swipe:
     devDependencies:
@@ -465,7 +465,7 @@ importers:
         version: 2.0.0-beta.67(@types/node@20.5.9)(@vuepress/client@2.0.0-beta.67)(sass-loader@13.3.2)(ts-node@10.9.1)(vue@3.3.4)
       vuepress-webpack:
         specifier: 2.0.0-beta.67
-        version: 2.0.0-beta.67(esbuild@0.19.2)(sass@1.66.1)(typescript@5.2.2)(vue@3.3.4)(webpack@5.88.2)
+        version: 2.0.0-beta.67(esbuild@0.19.4)(sass@1.66.1)(typescript@5.2.2)(vue@3.3.4)(webpack@5.88.2)
 
   demo/pwa2:
     devDependencies:
@@ -492,7 +492,7 @@ importers:
         version: 2.0.0-beta.67(@types/node@20.5.9)(@vuepress/client@2.0.0-beta.67)(sass-loader@13.3.2)(ts-node@10.9.1)(vue@3.3.4)
       vuepress-webpack:
         specifier: 2.0.0-beta.67
-        version: 2.0.0-beta.67(esbuild@0.19.2)(sass@1.66.1)(typescript@5.2.2)(vue@3.3.4)(webpack@5.88.2)
+        version: 2.0.0-beta.67(esbuild@0.19.4)(sass@1.66.1)(typescript@5.2.2)(vue@3.3.4)(webpack@5.88.2)
 
   demo/redirect:
     devDependencies:
@@ -519,7 +519,7 @@ importers:
         version: 2.0.0-beta.67(@types/node@20.5.9)(@vuepress/client@2.0.0-beta.67)(sass-loader@13.3.2)(ts-node@10.9.1)(vue@3.3.4)
       vuepress-webpack:
         specifier: 2.0.0-beta.67
-        version: 2.0.0-beta.67(esbuild@0.19.2)(sass@1.66.1)(typescript@5.2.2)(vue@3.3.4)(webpack@5.88.2)
+        version: 2.0.0-beta.67(esbuild@0.19.4)(sass@1.66.1)(typescript@5.2.2)(vue@3.3.4)(webpack@5.88.2)
 
   demo/sass-palette:
     devDependencies:
@@ -546,7 +546,7 @@ importers:
         version: 2.0.0-beta.67(@types/node@20.5.9)(@vuepress/client@2.0.0-beta.67)(sass-loader@13.3.2)(ts-node@10.9.1)(vue@3.3.4)
       vuepress-webpack:
         specifier: 2.0.0-beta.67
-        version: 2.0.0-beta.67(esbuild@0.19.2)(sass@1.66.1)(typescript@5.2.2)(vue@3.3.4)(webpack@5.88.2)
+        version: 2.0.0-beta.67(esbuild@0.19.4)(sass@1.66.1)(typescript@5.2.2)(vue@3.3.4)(webpack@5.88.2)
 
   demo/search-pro:
     devDependencies:
@@ -576,7 +576,7 @@ importers:
         version: 2.0.0-beta.67(@types/node@20.5.9)(@vuepress/client@2.0.0-beta.67)(sass-loader@13.3.2)(ts-node@10.9.1)(vue@3.3.4)
       vuepress-webpack:
         specifier: 2.0.0-beta.67
-        version: 2.0.0-beta.67(esbuild@0.19.2)(sass@1.66.1)(typescript@5.2.2)(vue@3.3.4)(webpack@5.88.2)
+        version: 2.0.0-beta.67(esbuild@0.19.4)(sass@1.66.1)(typescript@5.2.2)(vue@3.3.4)(webpack@5.88.2)
 
   demo/seo2:
     devDependencies:
@@ -603,7 +603,7 @@ importers:
         version: 2.0.0-beta.67(@types/node@20.5.9)(@vuepress/client@2.0.0-beta.67)(sass-loader@13.3.2)(ts-node@10.9.1)(vue@3.3.4)
       vuepress-webpack:
         specifier: 2.0.0-beta.67
-        version: 2.0.0-beta.67(esbuild@0.19.2)(sass@1.66.1)(typescript@5.2.2)(vue@3.3.4)(webpack@5.88.2)
+        version: 2.0.0-beta.67(esbuild@0.19.4)(sass@1.66.1)(typescript@5.2.2)(vue@3.3.4)(webpack@5.88.2)
 
   demo/sitemap2:
     devDependencies:
@@ -630,7 +630,7 @@ importers:
         version: 2.0.0-beta.67(@types/node@20.5.9)(@vuepress/client@2.0.0-beta.67)(sass-loader@13.3.2)(ts-node@10.9.1)(vue@3.3.4)
       vuepress-webpack:
         specifier: 2.0.0-beta.67
-        version: 2.0.0-beta.67(esbuild@0.19.2)(sass@1.66.1)(typescript@5.2.2)(vue@3.3.4)(webpack@5.88.2)
+        version: 2.0.0-beta.67(esbuild@0.19.4)(sass@1.66.1)(typescript@5.2.2)(vue@3.3.4)(webpack@5.88.2)
 
   demo/theme-blog:
     devDependencies:
@@ -663,7 +663,7 @@ importers:
         version: 2.0.0-beta.67(@types/node@20.5.9)(@vuepress/client@2.0.0-beta.67)(sass-loader@13.3.2)(ts-node@10.9.1)(vue@3.3.4)
       vuepress-webpack:
         specifier: 2.0.0-beta.67
-        version: 2.0.0-beta.67(esbuild@0.19.2)(sass@1.66.1)(typescript@5.2.2)(vue@3.3.4)(webpack@5.88.2)
+        version: 2.0.0-beta.67(esbuild@0.19.4)(sass@1.66.1)(typescript@5.2.2)(vue@3.3.4)(webpack@5.88.2)
 
   demo/theme-docs:
     devDependencies:
@@ -693,7 +693,7 @@ importers:
         version: 2.0.0-beta.67(@types/node@20.5.9)(@vuepress/client@2.0.0-beta.67)(sass-loader@13.3.2)(ts-node@10.9.1)(vue@3.3.4)
       vuepress-webpack:
         specifier: 2.0.0-beta.67
-        version: 2.0.0-beta.67(esbuild@0.19.2)(sass@1.66.1)(typescript@5.2.2)(vue@3.3.4)(webpack@5.88.2)
+        version: 2.0.0-beta.67(esbuild@0.19.4)(sass@1.66.1)(typescript@5.2.2)(vue@3.3.4)(webpack@5.88.2)
 
   docs-shared:
     dependencies:
@@ -757,7 +757,7 @@ importers:
         version: 2.0.0-beta.67(@types/node@20.5.9)(@vuepress/client@2.0.0-beta.67)(sass-loader@13.3.2)(ts-node@10.9.1)(vue@3.3.4)
       vuepress-webpack:
         specifier: 2.0.0-beta.67
-        version: 2.0.0-beta.67(esbuild@0.19.2)(sass@1.66.1)(typescript@5.2.2)(vue@3.3.4)(webpack@5.88.2)
+        version: 2.0.0-beta.67(esbuild@0.19.4)(sass@1.66.1)(typescript@5.2.2)(vue@3.3.4)(webpack@5.88.2)
 
   docs/blog2:
     dependencies:
@@ -778,7 +778,7 @@ importers:
         version: 2.0.0-beta.67(@types/node@20.5.9)(@vuepress/client@2.0.0-beta.67)(sass-loader@13.3.2)(ts-node@10.9.1)(vue@3.3.4)
       vuepress-webpack:
         specifier: 2.0.0-beta.67
-        version: 2.0.0-beta.67(esbuild@0.19.2)(sass@1.66.1)(typescript@5.2.2)(vue@3.3.4)(webpack@5.88.2)
+        version: 2.0.0-beta.67(esbuild@0.19.4)(sass@1.66.1)(typescript@5.2.2)(vue@3.3.4)(webpack@5.88.2)
 
   docs/comment2:
     dependencies:
@@ -802,7 +802,7 @@ importers:
         version: 2.0.0-beta.67(@types/node@20.5.9)(@vuepress/client@2.0.0-beta.67)(sass-loader@13.3.2)(ts-node@10.9.1)(vue@3.3.4)
       vuepress-webpack:
         specifier: 2.0.0-beta.67
-        version: 2.0.0-beta.67(esbuild@0.19.2)(sass@1.66.1)(typescript@5.2.2)(vue@3.3.4)(webpack@5.88.2)
+        version: 2.0.0-beta.67(esbuild@0.19.4)(sass@1.66.1)(typescript@5.2.2)(vue@3.3.4)(webpack@5.88.2)
 
   docs/components:
     dependencies:
@@ -835,7 +835,7 @@ importers:
         version: 2.0.0-beta.67(@types/node@20.5.9)(@vuepress/client@2.0.0-beta.67)(sass-loader@13.3.2)(ts-node@10.9.1)(vue@3.3.4)
       vuepress-webpack:
         specifier: 2.0.0-beta.67
-        version: 2.0.0-beta.67(esbuild@0.19.2)(sass@1.66.1)(typescript@5.2.2)(vue@3.3.4)(webpack@5.88.2)
+        version: 2.0.0-beta.67(esbuild@0.19.4)(sass@1.66.1)(typescript@5.2.2)(vue@3.3.4)(webpack@5.88.2)
 
   docs/copy-code2:
     dependencies:
@@ -859,7 +859,7 @@ importers:
         version: 2.0.0-beta.67(@types/node@20.5.9)(@vuepress/client@2.0.0-beta.67)(sass-loader@13.3.2)(ts-node@10.9.1)(vue@3.3.4)
       vuepress-webpack:
         specifier: 2.0.0-beta.67
-        version: 2.0.0-beta.67(esbuild@0.19.2)(sass@1.66.1)(typescript@5.2.2)(vue@3.3.4)(webpack@5.88.2)
+        version: 2.0.0-beta.67(esbuild@0.19.4)(sass@1.66.1)(typescript@5.2.2)(vue@3.3.4)(webpack@5.88.2)
 
   docs/copyright2:
     dependencies:
@@ -880,7 +880,7 @@ importers:
         version: 2.0.0-beta.67(@types/node@20.5.9)(@vuepress/client@2.0.0-beta.67)(sass-loader@13.3.2)(ts-node@10.9.1)(vue@3.3.4)
       vuepress-webpack:
         specifier: 2.0.0-beta.67
-        version: 2.0.0-beta.67(esbuild@0.19.2)(sass@1.66.1)(typescript@5.2.2)(vue@3.3.4)(webpack@5.88.2)
+        version: 2.0.0-beta.67(esbuild@0.19.4)(sass@1.66.1)(typescript@5.2.2)(vue@3.3.4)(webpack@5.88.2)
 
   docs/feed2:
     dependencies:
@@ -904,7 +904,7 @@ importers:
         version: 2.0.0-beta.67(@types/node@20.5.9)(@vuepress/client@2.0.0-beta.67)(sass-loader@13.3.2)(ts-node@10.9.1)(vue@3.3.4)
       vuepress-webpack:
         specifier: 2.0.0-beta.67
-        version: 2.0.0-beta.67(esbuild@0.19.2)(sass@1.66.1)(typescript@5.2.2)(vue@3.3.4)(webpack@5.88.2)
+        version: 2.0.0-beta.67(esbuild@0.19.4)(sass@1.66.1)(typescript@5.2.2)(vue@3.3.4)(webpack@5.88.2)
 
   docs/lightgallery:
     dependencies:
@@ -928,7 +928,7 @@ importers:
         version: 2.0.0-beta.67(@types/node@20.5.9)(@vuepress/client@2.0.0-beta.67)(sass-loader@13.3.2)(ts-node@10.9.1)(vue@3.3.4)
       vuepress-webpack:
         specifier: 2.0.0-beta.67
-        version: 2.0.0-beta.67(esbuild@0.19.2)(sass@1.66.1)(typescript@5.2.2)(vue@3.3.4)(webpack@5.88.2)
+        version: 2.0.0-beta.67(esbuild@0.19.4)(sass@1.66.1)(typescript@5.2.2)(vue@3.3.4)(webpack@5.88.2)
 
   docs/md-enhance:
     dependencies:
@@ -967,7 +967,7 @@ importers:
         version: 2.0.0-beta.67(@types/node@20.5.9)(@vuepress/client@2.0.0-beta.67)(sass-loader@13.3.2)(ts-node@10.9.1)(vue@3.3.4)
       vuepress-webpack:
         specifier: 2.0.0-beta.67
-        version: 2.0.0-beta.67(esbuild@0.19.2)(sass@1.66.1)(typescript@5.2.2)(vue@3.3.4)(webpack@5.88.2)
+        version: 2.0.0-beta.67(esbuild@0.19.4)(sass@1.66.1)(typescript@5.2.2)(vue@3.3.4)(webpack@5.88.2)
 
   docs/photo-swipe:
     dependencies:
@@ -991,7 +991,7 @@ importers:
         version: 2.0.0-beta.67(@types/node@20.5.9)(@vuepress/client@2.0.0-beta.67)(sass-loader@13.3.2)(ts-node@10.9.1)(vue@3.3.4)
       vuepress-webpack:
         specifier: 2.0.0-beta.67
-        version: 2.0.0-beta.67(esbuild@0.19.2)(sass@1.66.1)(typescript@5.2.2)(vue@3.3.4)(webpack@5.88.2)
+        version: 2.0.0-beta.67(esbuild@0.19.4)(sass@1.66.1)(typescript@5.2.2)(vue@3.3.4)(webpack@5.88.2)
 
   docs/pwa2:
     dependencies:
@@ -1015,7 +1015,7 @@ importers:
         version: 2.0.0-beta.67(@types/node@20.5.9)(@vuepress/client@2.0.0-beta.67)(sass-loader@13.3.2)(ts-node@10.9.1)(vue@3.3.4)
       vuepress-webpack:
         specifier: 2.0.0-beta.67
-        version: 2.0.0-beta.67(esbuild@0.19.2)(sass@1.66.1)(typescript@5.2.2)(vue@3.3.4)(webpack@5.88.2)
+        version: 2.0.0-beta.67(esbuild@0.19.4)(sass@1.66.1)(typescript@5.2.2)(vue@3.3.4)(webpack@5.88.2)
 
   docs/reading-time2:
     dependencies:
@@ -1039,7 +1039,7 @@ importers:
         version: 2.0.0-beta.67(@types/node@20.5.9)(@vuepress/client@2.0.0-beta.67)(sass-loader@13.3.2)(ts-node@10.9.1)(vue@3.3.4)
       vuepress-webpack:
         specifier: 2.0.0-beta.67
-        version: 2.0.0-beta.67(esbuild@0.19.2)(sass@1.66.1)(typescript@5.2.2)(vue@3.3.4)(webpack@5.88.2)
+        version: 2.0.0-beta.67(esbuild@0.19.4)(sass@1.66.1)(typescript@5.2.2)(vue@3.3.4)(webpack@5.88.2)
 
   docs/redirect:
     dependencies:
@@ -1060,7 +1060,7 @@ importers:
         version: 2.0.0-beta.67(@types/node@20.5.9)(@vuepress/client@2.0.0-beta.67)(sass-loader@13.3.2)(ts-node@10.9.1)(vue@3.3.4)
       vuepress-webpack:
         specifier: 2.0.0-beta.67
-        version: 2.0.0-beta.67(esbuild@0.19.2)(sass@1.66.1)(typescript@5.2.2)(vue@3.3.4)(webpack@5.88.2)
+        version: 2.0.0-beta.67(esbuild@0.19.4)(sass@1.66.1)(typescript@5.2.2)(vue@3.3.4)(webpack@5.88.2)
 
   docs/remove-pwa:
     dependencies:
@@ -1081,7 +1081,7 @@ importers:
         version: 2.0.0-beta.67(@types/node@20.5.9)(@vuepress/client@2.0.0-beta.67)(sass-loader@13.3.2)(ts-node@10.9.1)(vue@3.3.4)
       vuepress-webpack:
         specifier: 2.0.0-beta.67
-        version: 2.0.0-beta.67(esbuild@0.19.2)(sass@1.66.1)(typescript@5.2.2)(vue@3.3.4)(webpack@5.88.2)
+        version: 2.0.0-beta.67(esbuild@0.19.4)(sass@1.66.1)(typescript@5.2.2)(vue@3.3.4)(webpack@5.88.2)
 
   docs/rtl:
     dependencies:
@@ -1102,7 +1102,7 @@ importers:
         version: 2.0.0-beta.67(@types/node@20.5.9)(@vuepress/client@2.0.0-beta.67)(sass-loader@13.3.2)(ts-node@10.9.1)(vue@3.3.4)
       vuepress-webpack:
         specifier: 2.0.0-beta.67
-        version: 2.0.0-beta.67(esbuild@0.19.2)(sass@1.66.1)(typescript@5.2.2)(vue@3.3.4)(webpack@5.88.2)
+        version: 2.0.0-beta.67(esbuild@0.19.4)(sass@1.66.1)(typescript@5.2.2)(vue@3.3.4)(webpack@5.88.2)
 
   docs/sass-palette:
     dependencies:
@@ -1123,7 +1123,7 @@ importers:
         version: 2.0.0-beta.67(@types/node@20.5.9)(@vuepress/client@2.0.0-beta.67)(sass-loader@13.3.2)(ts-node@10.9.1)(vue@3.3.4)
       vuepress-webpack:
         specifier: 2.0.0-beta.67
-        version: 2.0.0-beta.67(esbuild@0.19.2)(sass@1.66.1)(typescript@5.2.2)(vue@3.3.4)(webpack@5.88.2)
+        version: 2.0.0-beta.67(esbuild@0.19.4)(sass@1.66.1)(typescript@5.2.2)(vue@3.3.4)(webpack@5.88.2)
 
   docs/search-pro:
     dependencies:
@@ -1150,7 +1150,7 @@ importers:
         version: 2.0.0-beta.67(@types/node@20.5.9)(@vuepress/client@2.0.0-beta.67)(sass-loader@13.3.2)(ts-node@10.9.1)(vue@3.3.4)
       vuepress-webpack:
         specifier: 2.0.0-beta.67
-        version: 2.0.0-beta.67(esbuild@0.19.2)(sass@1.66.1)(typescript@5.2.2)(vue@3.3.4)(webpack@5.88.2)
+        version: 2.0.0-beta.67(esbuild@0.19.4)(sass@1.66.1)(typescript@5.2.2)(vue@3.3.4)(webpack@5.88.2)
 
   docs/seo2:
     dependencies:
@@ -1174,7 +1174,7 @@ importers:
         version: 2.0.0-beta.67(@types/node@20.5.9)(@vuepress/client@2.0.0-beta.67)(sass-loader@13.3.2)(ts-node@10.9.1)(vue@3.3.4)
       vuepress-webpack:
         specifier: 2.0.0-beta.67
-        version: 2.0.0-beta.67(esbuild@0.19.2)(sass@1.66.1)(typescript@5.2.2)(vue@3.3.4)(webpack@5.88.2)
+        version: 2.0.0-beta.67(esbuild@0.19.4)(sass@1.66.1)(typescript@5.2.2)(vue@3.3.4)(webpack@5.88.2)
 
   docs/shared:
     dependencies:
@@ -1195,7 +1195,7 @@ importers:
         version: 2.0.0-beta.67(@types/node@20.5.9)(@vuepress/client@2.0.0-beta.67)(sass-loader@13.3.2)(ts-node@10.9.1)(vue@3.3.4)
       vuepress-webpack:
         specifier: 2.0.0-beta.67
-        version: 2.0.0-beta.67(esbuild@0.19.2)(sass@1.66.1)(typescript@5.2.2)(vue@3.3.4)(webpack@5.88.2)
+        version: 2.0.0-beta.67(esbuild@0.19.4)(sass@1.66.1)(typescript@5.2.2)(vue@3.3.4)(webpack@5.88.2)
 
   docs/sitemap2:
     dependencies:
@@ -1219,7 +1219,7 @@ importers:
         version: 2.0.0-beta.67(@types/node@20.5.9)(@vuepress/client@2.0.0-beta.67)(sass-loader@13.3.2)(ts-node@10.9.1)(vue@3.3.4)
       vuepress-webpack:
         specifier: 2.0.0-beta.67
-        version: 2.0.0-beta.67(esbuild@0.19.2)(sass@1.66.1)(typescript@5.2.2)(vue@3.3.4)(webpack@5.88.2)
+        version: 2.0.0-beta.67(esbuild@0.19.4)(sass@1.66.1)(typescript@5.2.2)(vue@3.3.4)(webpack@5.88.2)
 
   docs/theme:
     dependencies:
@@ -1267,7 +1267,7 @@ importers:
         version: 2.0.0-beta.67(@types/node@20.5.9)(@vuepress/client@2.0.0-beta.67)(sass-loader@13.3.2)(ts-node@10.9.1)(vue@3.3.4)
       vuepress-webpack:
         specifier: 2.0.0-beta.67
-        version: 2.0.0-beta.67(esbuild@0.19.2)(sass@1.66.1)(typescript@5.2.2)(vue@3.3.4)(webpack@5.88.2)
+        version: 2.0.0-beta.67(esbuild@0.19.4)(sass@1.66.1)(typescript@5.2.2)(vue@3.3.4)(webpack@5.88.2)
 
   packages/auto-catalog:
     dependencies:
@@ -1309,7 +1309,7 @@ importers:
         version: 2.0.0-beta.67(@types/node@20.5.9)(@vuepress/client@2.0.0-beta.67)(sass-loader@13.3.2)(ts-node@10.9.1)(vue@3.3.4)
       vuepress-webpack:
         specifier: 2.0.0-beta.67
-        version: 2.0.0-beta.67(esbuild@0.19.2)(sass@1.66.1)(typescript@5.2.2)(vue@3.3.4)(webpack@5.88.2)
+        version: 2.0.0-beta.67(esbuild@0.19.4)(sass@1.66.1)(typescript@5.2.2)(vue@3.3.4)(webpack@5.88.2)
 
   packages/blog2:
     dependencies:
@@ -1345,7 +1345,7 @@ importers:
         version: 2.0.0-beta.67(@types/node@20.5.9)(@vuepress/client@2.0.0-beta.67)(sass-loader@13.3.2)(ts-node@10.9.1)(vue@3.3.4)
       vuepress-webpack:
         specifier: 2.0.0-beta.67
-        version: 2.0.0-beta.67(esbuild@0.19.2)(sass@1.66.1)(typescript@5.2.2)(vue@3.3.4)(webpack@5.88.2)
+        version: 2.0.0-beta.67(esbuild@0.19.4)(sass@1.66.1)(typescript@5.2.2)(vue@3.3.4)(webpack@5.88.2)
 
   packages/comment2:
     dependencies:
@@ -1393,7 +1393,7 @@ importers:
         version: 2.0.0-beta.67(@types/node@20.5.9)(@vuepress/client@2.0.0-beta.67)(sass-loader@13.3.2)(ts-node@10.9.1)(vue@3.3.4)
       vuepress-webpack:
         specifier: 2.0.0-beta.67
-        version: 2.0.0-beta.67(esbuild@0.19.2)(sass@1.66.1)(typescript@5.2.2)(vue@3.3.4)(webpack@5.88.2)
+        version: 2.0.0-beta.67(esbuild@0.19.4)(sass@1.66.1)(typescript@5.2.2)(vue@3.3.4)(webpack@5.88.2)
     devDependencies:
       '@vuepress/core':
         specifier: 2.0.0-beta.67
@@ -1469,7 +1469,7 @@ importers:
         version: 2.0.0-beta.67(@types/node@20.5.9)(@vuepress/client@2.0.0-beta.67)(sass-loader@13.3.2)(ts-node@10.9.1)(vue@3.3.4)
       vuepress-webpack:
         specifier: 2.0.0-beta.67
-        version: 2.0.0-beta.67(esbuild@0.19.2)(sass@1.66.1)(typescript@5.2.2)(vue@3.3.4)(webpack@5.88.2)
+        version: 2.0.0-beta.67(esbuild@0.19.4)(sass@1.66.1)(typescript@5.2.2)(vue@3.3.4)(webpack@5.88.2)
     devDependencies:
       '@types/qrcode':
         specifier: 1.5.2
@@ -1521,7 +1521,7 @@ importers:
         version: 2.0.0-beta.67(@types/node@20.5.9)(@vuepress/client@2.0.0-beta.67)(sass-loader@13.3.2)(ts-node@10.9.1)(vue@3.3.4)
       vuepress-webpack:
         specifier: 2.0.0-beta.67
-        version: 2.0.0-beta.67(esbuild@0.19.2)(sass@1.66.1)(typescript@5.2.2)(vue@3.3.4)(webpack@5.88.2)
+        version: 2.0.0-beta.67(esbuild@0.19.4)(sass@1.66.1)(typescript@5.2.2)(vue@3.3.4)(webpack@5.88.2)
     devDependencies:
       '@vuepress/core':
         specifier: 2.0.0-beta.67
@@ -1558,7 +1558,7 @@ importers:
         version: 2.0.0-beta.67(@types/node@20.5.9)(@vuepress/client@2.0.0-beta.67)(sass-loader@13.3.2)(ts-node@10.9.1)(vue@3.3.4)
       vuepress-webpack:
         specifier: 2.0.0-beta.67
-        version: 2.0.0-beta.67(esbuild@0.19.2)(sass@1.66.1)(typescript@5.2.2)(vue@3.3.4)(webpack@5.88.2)
+        version: 2.0.0-beta.67(esbuild@0.19.4)(sass@1.66.1)(typescript@5.2.2)(vue@3.3.4)(webpack@5.88.2)
     devDependencies:
       '@vuepress/core':
         specifier: 2.0.0-beta.67
@@ -1602,7 +1602,7 @@ importers:
         version: 2.0.0-beta.67(@types/node@20.5.9)(@vuepress/client@2.0.0-beta.67)(sass-loader@13.3.2)(ts-node@10.9.1)(vue@3.3.4)
       vuepress-webpack:
         specifier: 2.0.0-beta.67
-        version: 2.0.0-beta.67(esbuild@0.19.2)(sass@1.66.1)(typescript@5.2.2)(vue@3.3.4)(webpack@5.88.2)
+        version: 2.0.0-beta.67(esbuild@0.19.4)(sass@1.66.1)(typescript@5.2.2)(vue@3.3.4)(webpack@5.88.2)
       xml-js:
         specifier: ^1.6.11
         version: 1.6.11
@@ -1648,7 +1648,7 @@ importers:
         version: 2.0.0-beta.67(@types/node@20.5.9)(@vuepress/client@2.0.0-beta.67)(sass-loader@13.3.2)(ts-node@10.9.1)(vue@3.3.4)
       vuepress-webpack:
         specifier: 2.0.0-beta.67
-        version: 2.0.0-beta.67(esbuild@0.19.2)(sass@1.66.1)(typescript@5.2.2)(vue@3.3.4)(webpack@5.88.2)
+        version: 2.0.0-beta.67(esbuild@0.19.4)(sass@1.66.1)(typescript@5.2.2)(vue@3.3.4)(webpack@5.88.2)
     devDependencies:
       '@vuepress/core':
         specifier: 2.0.0-beta.67
@@ -1787,7 +1787,7 @@ importers:
         version: 2.0.0-beta.67(@types/node@20.5.9)(@vuepress/client@2.0.0-beta.67)(sass-loader@13.3.2)(ts-node@10.9.1)(vue@3.3.4)
       vuepress-webpack:
         specifier: 2.0.0-beta.67
-        version: 2.0.0-beta.67(esbuild@0.19.2)(sass@1.66.1)(typescript@5.2.2)(vue@3.3.4)(webpack@5.88.2)
+        version: 2.0.0-beta.67(esbuild@0.19.4)(sass@1.66.1)(typescript@5.2.2)(vue@3.3.4)(webpack@5.88.2)
     devDependencies:
       '@types/babel__core':
         specifier: 7.20.1
@@ -1845,7 +1845,7 @@ importers:
         version: 2.0.0-beta.67(@types/node@20.5.9)(@vuepress/client@2.0.0-beta.67)(sass-loader@13.3.2)(ts-node@10.9.1)(vue@3.3.4)
       vuepress-webpack:
         specifier: 2.0.0-beta.67
-        version: 2.0.0-beta.67(esbuild@0.19.2)(sass@1.66.1)(typescript@5.2.2)(vue@3.3.4)(webpack@5.88.2)
+        version: 2.0.0-beta.67(esbuild@0.19.4)(sass@1.66.1)(typescript@5.2.2)(vue@3.3.4)(webpack@5.88.2)
     devDependencies:
       '@vuepress/core':
         specifier: 2.0.0-beta.67
@@ -1894,7 +1894,7 @@ importers:
         version: 2.0.0-beta.67(@types/node@20.5.9)(@vuepress/client@2.0.0-beta.67)(sass-loader@13.3.2)(ts-node@10.9.1)(vue@3.3.4)
       vuepress-webpack:
         specifier: 2.0.0-beta.67
-        version: 2.0.0-beta.67(esbuild@0.19.2)(sass@1.66.1)(typescript@5.2.2)(vue@3.3.4)(webpack@5.88.2)
+        version: 2.0.0-beta.67(esbuild@0.19.4)(sass@1.66.1)(typescript@5.2.2)(vue@3.3.4)(webpack@5.88.2)
       workbox-build:
         specifier: ^7.0.0
         version: 7.0.0
@@ -1922,7 +1922,7 @@ importers:
         version: 2.0.0-beta.67(@types/node@20.5.9)(@vuepress/client@2.0.0-beta.67)(sass-loader@13.3.2)(ts-node@10.9.1)(vue@3.3.4)
       vuepress-webpack:
         specifier: 2.0.0-beta.67
-        version: 2.0.0-beta.67(esbuild@0.19.2)(sass@1.66.1)(typescript@5.2.2)(vue@3.3.4)(webpack@5.88.2)
+        version: 2.0.0-beta.67(esbuild@0.19.4)(sass@1.66.1)(typescript@5.2.2)(vue@3.3.4)(webpack@5.88.2)
     devDependencies:
       '@vuepress/core':
         specifier: 2.0.0-beta.67
@@ -1974,7 +1974,7 @@ importers:
         version: 2.0.0-beta.67(@types/node@20.5.9)(@vuepress/client@2.0.0-beta.67)(sass-loader@13.3.2)(ts-node@10.9.1)(vue@3.3.4)
       vuepress-webpack:
         specifier: 2.0.0-beta.67
-        version: 2.0.0-beta.67(esbuild@0.19.2)(sass@1.66.1)(typescript@5.2.2)(vue@3.3.4)(webpack@5.88.2)
+        version: 2.0.0-beta.67(esbuild@0.19.4)(sass@1.66.1)(typescript@5.2.2)(vue@3.3.4)(webpack@5.88.2)
 
   packages/remove-pwa:
     dependencies:
@@ -1998,7 +1998,7 @@ importers:
         version: 2.0.0-beta.67(@types/node@20.5.9)(@vuepress/client@2.0.0-beta.67)(sass-loader@13.3.2)(ts-node@10.9.1)(vue@3.3.4)
       vuepress-webpack:
         specifier: 2.0.0-beta.67
-        version: 2.0.0-beta.67(esbuild@0.19.2)(sass@1.66.1)(typescript@5.2.2)(vue@3.3.4)(webpack@5.88.2)
+        version: 2.0.0-beta.67(esbuild@0.19.4)(sass@1.66.1)(typescript@5.2.2)(vue@3.3.4)(webpack@5.88.2)
     devDependencies:
       '@vuepress/core':
         specifier: 2.0.0-beta.67
@@ -2029,7 +2029,7 @@ importers:
         version: 2.0.0-beta.67(@types/node@20.5.9)(@vuepress/client@2.0.0-beta.67)(sass-loader@13.3.2)(ts-node@10.9.1)(vue@3.3.4)
       vuepress-webpack:
         specifier: 2.0.0-beta.67
-        version: 2.0.0-beta.67(esbuild@0.19.2)(sass@1.66.1)(typescript@5.2.2)(vue@3.3.4)(webpack@5.88.2)
+        version: 2.0.0-beta.67(esbuild@0.19.4)(sass@1.66.1)(typescript@5.2.2)(vue@3.3.4)(webpack@5.88.2)
     devDependencies:
       '@vuepress/core':
         specifier: 2.0.0-beta.67
@@ -2063,14 +2063,14 @@ importers:
         version: 2.0.0-beta.67(@types/node@20.5.9)(@vuepress/client@2.0.0-beta.67)(sass-loader@13.3.2)(sass@1.66.1)(ts-node@10.9.1)(vue@3.3.4)
       vuepress-webpack:
         specifier: 2.0.0-beta.67
-        version: 2.0.0-beta.67(esbuild@0.19.2)(sass@1.66.1)(typescript@5.2.2)(vue@3.3.4)(webpack@5.88.2)
+        version: 2.0.0-beta.67(esbuild@0.19.4)(sass@1.66.1)(typescript@5.2.2)(vue@3.3.4)(webpack@5.88.2)
     devDependencies:
       '@vuepress/bundler-vite':
         specifier: 2.0.0-beta.67
         version: 2.0.0-beta.67(@types/node@20.5.9)(sass@1.66.1)(ts-node@10.9.1)
       '@vuepress/bundler-webpack':
         specifier: 2.0.0-beta.67
-        version: 2.0.0-beta.67(esbuild@0.19.2)(typescript@5.2.2)
+        version: 2.0.0-beta.67(esbuild@0.19.4)(typescript@5.2.2)
       '@vuepress/core':
         specifier: 2.0.0-beta.67
         version: 2.0.0-beta.67
@@ -2121,7 +2121,7 @@ importers:
         version: 2.0.0-beta.67(@types/node@20.5.9)(@vuepress/client@2.0.0-beta.67)(sass-loader@13.3.2)(ts-node@10.9.1)(vue@3.3.4)
       vuepress-webpack:
         specifier: 2.0.0-beta.67
-        version: 2.0.0-beta.67(esbuild@0.19.2)(sass@1.66.1)(typescript@5.2.2)(vue@3.3.4)(webpack@5.88.2)
+        version: 2.0.0-beta.67(esbuild@0.19.4)(sass@1.66.1)(typescript@5.2.2)(vue@3.3.4)(webpack@5.88.2)
     devDependencies:
       '@vuepress/core':
         specifier: 2.0.0-beta.67
@@ -2146,7 +2146,7 @@ importers:
         version: 2.0.0-beta.67(@types/node@20.5.9)(@vuepress/client@2.0.0-beta.67)(sass-loader@13.3.2)(ts-node@10.9.1)(vue@3.3.4)
       vuepress-webpack:
         specifier: 2.0.0-beta.67
-        version: 2.0.0-beta.67(esbuild@0.19.2)(sass@1.66.1)(typescript@5.2.2)(vue@3.3.4)(webpack@5.88.2)
+        version: 2.0.0-beta.67(esbuild@0.19.4)(sass@1.66.1)(typescript@5.2.2)(vue@3.3.4)(webpack@5.88.2)
     devDependencies:
       '@vuepress/core':
         specifier: 2.0.0-beta.67
@@ -2204,7 +2204,7 @@ importers:
         version: 2.0.0-beta.67(@types/node@20.5.9)(@vuepress/client@2.0.0-beta.67)(sass-loader@13.3.2)(ts-node@10.9.1)(vue@3.3.4)
       vuepress-webpack:
         specifier: 2.0.0-beta.67
-        version: 2.0.0-beta.67(esbuild@0.19.2)(sass@1.66.1)(typescript@5.2.2)(vue@3.3.4)(webpack@5.88.2)
+        version: 2.0.0-beta.67(esbuild@0.19.4)(sass@1.66.1)(typescript@5.2.2)(vue@3.3.4)(webpack@5.88.2)
     devDependencies:
       '@types/connect':
         specifier: 3.4.36
@@ -2217,7 +2217,7 @@ importers:
         version: 2.0.0-beta.67(@types/node@20.5.9)(sass@1.66.1)(ts-node@10.9.1)
       '@vuepress/bundler-webpack':
         specifier: 2.0.0-beta.67
-        version: 2.0.0-beta.67(esbuild@0.19.2)(typescript@5.2.2)
+        version: 2.0.0-beta.67(esbuild@0.19.4)(typescript@5.2.2)
       '@vuepress/core':
         specifier: 2.0.0-beta.67
         version: 2.0.0-beta.67
@@ -2253,7 +2253,7 @@ importers:
         version: 2.0.0-beta.67(@types/node@20.5.9)(@vuepress/client@2.0.0-beta.67)(sass-loader@13.3.2)(ts-node@10.9.1)(vue@3.3.4)
       vuepress-webpack:
         specifier: 2.0.0-beta.67
-        version: 2.0.0-beta.67(esbuild@0.19.2)(sass@1.66.1)(typescript@5.2.2)(vue@3.3.4)(webpack@5.88.2)
+        version: 2.0.0-beta.67(esbuild@0.19.4)(sass@1.66.1)(typescript@5.2.2)(vue@3.3.4)(webpack@5.88.2)
     devDependencies:
       '@vuepress/core':
         specifier: 2.0.0-beta.67
@@ -2383,14 +2383,14 @@ importers:
         version: 2.0.0-beta.67(@types/node@20.5.9)(@vuepress/client@2.0.0-beta.67)(sass-loader@13.3.2)(ts-node@10.9.1)(vue@3.3.4)
       vuepress-webpack:
         specifier: 2.0.0-beta.67
-        version: 2.0.0-beta.67(esbuild@0.19.2)(sass@1.66.1)(typescript@5.2.2)(vue@3.3.4)(webpack@5.88.2)
+        version: 2.0.0-beta.67(esbuild@0.19.4)(sass@1.66.1)(typescript@5.2.2)(vue@3.3.4)(webpack@5.88.2)
     devDependencies:
       '@vuepress/bundler-vite':
         specifier: 2.0.0-beta.67
         version: 2.0.0-beta.67(@types/node@20.5.9)(sass@1.66.1)(ts-node@10.9.1)
       '@vuepress/bundler-webpack':
         specifier: 2.0.0-beta.67
-        version: 2.0.0-beta.67(esbuild@0.19.2)(typescript@5.2.2)
+        version: 2.0.0-beta.67(esbuild@0.19.4)(typescript@5.2.2)
       '@vuepress/markdown':
         specifier: 2.0.0-beta.67
         version: 2.0.0-beta.67
@@ -3970,8 +3970,8 @@ packages:
     requiresBuild: true
     optional: true
 
-  /@esbuild/android-arm64@0.19.2:
-    resolution: {integrity: sha512-lsB65vAbe90I/Qe10OjkmrdxSX4UJDjosDgb8sZUKcg3oefEuW2OT2Vozz8ef7wrJbMcmhvCC+hciF8jY/uAkw==}
+  /@esbuild/android-arm64@0.19.4:
+    resolution: {integrity: sha512-mRsi2vJsk4Bx/AFsNBqOH2fqedxn5L/moT58xgg51DjX1la64Z3Npicut2VbhvDFO26qjWtPMsVxCd80YTFVeg==}
     engines: {node: '>=12'}
     cpu: [arm64]
     os: [android]
@@ -3986,8 +3986,8 @@ packages:
     requiresBuild: true
     optional: true
 
-  /@esbuild/android-arm@0.19.2:
-    resolution: {integrity: sha512-tM8yLeYVe7pRyAu9VMi/Q7aunpLwD139EY1S99xbQkT4/q2qa6eA4ige/WJQYdJ8GBL1K33pPFhPfPdJ/WzT8Q==}
+  /@esbuild/android-arm@0.19.4:
+    resolution: {integrity: sha512-uBIbiYMeSsy2U0XQoOGVVcpIktjLMEKa7ryz2RLr7L/vTnANNEsPVAh4xOv7ondGz6ac1zVb0F8Jx20rQikffQ==}
     engines: {node: '>=12'}
     cpu: [arm]
     os: [android]
@@ -4002,8 +4002,8 @@ packages:
     requiresBuild: true
     optional: true
 
-  /@esbuild/android-x64@0.19.2:
-    resolution: {integrity: sha512-qK/TpmHt2M/Hg82WXHRc/W/2SGo/l1thtDHZWqFq7oi24AjZ4O/CpPSu6ZuYKFkEgmZlFoa7CooAyYmuvnaG8w==}
+  /@esbuild/android-x64@0.19.4:
+    resolution: {integrity: sha512-4iPufZ1TMOD3oBlGFqHXBpa3KFT46aLl6Vy7gwed0ZSYgHaZ/mihbYb4t7Z9etjkC9Al3ZYIoOaHrU60gcMy7g==}
     engines: {node: '>=12'}
     cpu: [x64]
     os: [android]
@@ -4018,8 +4018,8 @@ packages:
     requiresBuild: true
     optional: true
 
-  /@esbuild/darwin-arm64@0.19.2:
-    resolution: {integrity: sha512-Ora8JokrvrzEPEpZO18ZYXkH4asCdc1DLdcVy8TGf5eWtPO1Ie4WroEJzwI52ZGtpODy3+m0a2yEX9l+KUn0tA==}
+  /@esbuild/darwin-arm64@0.19.4:
+    resolution: {integrity: sha512-Lviw8EzxsVQKpbS+rSt6/6zjn9ashUZ7Tbuvc2YENgRl0yZTktGlachZ9KMJUsVjZEGFVu336kl5lBgDN6PmpA==}
     engines: {node: '>=12'}
     cpu: [arm64]
     os: [darwin]
@@ -4034,8 +4034,8 @@ packages:
     requiresBuild: true
     optional: true
 
-  /@esbuild/darwin-x64@0.19.2:
-    resolution: {integrity: sha512-tP+B5UuIbbFMj2hQaUr6EALlHOIOmlLM2FK7jeFBobPy2ERdohI4Ka6ZFjZ1ZYsrHE/hZimGuU90jusRE0pwDw==}
+  /@esbuild/darwin-x64@0.19.4:
+    resolution: {integrity: sha512-YHbSFlLgDwglFn0lAO3Zsdrife9jcQXQhgRp77YiTDja23FrC2uwnhXMNkAucthsf+Psr7sTwYEryxz6FPAVqw==}
     engines: {node: '>=12'}
     cpu: [x64]
     os: [darwin]
@@ -4050,8 +4050,8 @@ packages:
     requiresBuild: true
     optional: true
 
-  /@esbuild/freebsd-arm64@0.19.2:
-    resolution: {integrity: sha512-YbPY2kc0acfzL1VPVK6EnAlig4f+l8xmq36OZkU0jzBVHcOTyQDhnKQaLzZudNJQyymd9OqQezeaBgkTGdTGeQ==}
+  /@esbuild/freebsd-arm64@0.19.4:
+    resolution: {integrity: sha512-vz59ijyrTG22Hshaj620e5yhs2dU1WJy723ofc+KUgxVCM6zxQESmWdMuVmUzxtGqtj5heHyB44PjV/HKsEmuQ==}
     engines: {node: '>=12'}
     cpu: [arm64]
     os: [freebsd]
@@ -4066,8 +4066,8 @@ packages:
     requiresBuild: true
     optional: true
 
-  /@esbuild/freebsd-x64@0.19.2:
-    resolution: {integrity: sha512-nSO5uZT2clM6hosjWHAsS15hLrwCvIWx+b2e3lZ3MwbYSaXwvfO528OF+dLjas1g3bZonciivI8qKR/Hm7IWGw==}
+  /@esbuild/freebsd-x64@0.19.4:
+    resolution: {integrity: sha512-3sRbQ6W5kAiVQRBWREGJNd1YE7OgzS0AmOGjDmX/qZZecq8NFlQsQH0IfXjjmD0XtUYqr64e0EKNFjMUlPL3Cw==}
     engines: {node: '>=12'}
     cpu: [x64]
     os: [freebsd]
@@ -4082,8 +4082,8 @@ packages:
     requiresBuild: true
     optional: true
 
-  /@esbuild/linux-arm64@0.19.2:
-    resolution: {integrity: sha512-ig2P7GeG//zWlU0AggA3pV1h5gdix0MA3wgB+NsnBXViwiGgY77fuN9Wr5uoCrs2YzaYfogXgsWZbm+HGr09xg==}
+  /@esbuild/linux-arm64@0.19.4:
+    resolution: {integrity: sha512-ZWmWORaPbsPwmyu7eIEATFlaqm0QGt+joRE9sKcnVUG3oBbr/KYdNE2TnkzdQwX6EDRdg/x8Q4EZQTXoClUqqA==}
     engines: {node: '>=12'}
     cpu: [arm64]
     os: [linux]
@@ -4098,8 +4098,8 @@ packages:
     requiresBuild: true
     optional: true
 
-  /@esbuild/linux-arm@0.19.2:
-    resolution: {integrity: sha512-Odalh8hICg7SOD7XCj0YLpYCEc+6mkoq63UnExDCiRA2wXEmGlK5JVrW50vZR9Qz4qkvqnHcpH+OFEggO3PgTg==}
+  /@esbuild/linux-arm@0.19.4:
+    resolution: {integrity: sha512-z/4ArqOo9EImzTi4b6Vq+pthLnepFzJ92BnofU1jgNlcVb+UqynVFdoXMCFreTK7FdhqAzH0vmdwW5373Hm9pg==}
     engines: {node: '>=12'}
     cpu: [arm]
     os: [linux]
@@ -4114,8 +4114,8 @@ packages:
     requiresBuild: true
     optional: true
 
-  /@esbuild/linux-ia32@0.19.2:
-    resolution: {integrity: sha512-mLfp0ziRPOLSTek0Gd9T5B8AtzKAkoZE70fneiiyPlSnUKKI4lp+mGEnQXcQEHLJAcIYDPSyBvsUbKUG2ri/XQ==}
+  /@esbuild/linux-ia32@0.19.4:
+    resolution: {integrity: sha512-EGc4vYM7i1GRUIMqRZNCTzJh25MHePYsnQfKDexD8uPTCm9mK56NIL04LUfX2aaJ+C9vyEp2fJ7jbqFEYgO9lQ==}
     engines: {node: '>=12'}
     cpu: [ia32]
     os: [linux]
@@ -4130,8 +4130,8 @@ packages:
     requiresBuild: true
     optional: true
 
-  /@esbuild/linux-loong64@0.19.2:
-    resolution: {integrity: sha512-hn28+JNDTxxCpnYjdDYVMNTR3SKavyLlCHHkufHV91fkewpIyQchS1d8wSbmXhs1fiYDpNww8KTFlJ1dHsxeSw==}
+  /@esbuild/linux-loong64@0.19.4:
+    resolution: {integrity: sha512-WVhIKO26kmm8lPmNrUikxSpXcgd6HDog0cx12BUfA2PkmURHSgx9G6vA19lrlQOMw+UjMZ+l3PpbtzffCxFDRg==}
     engines: {node: '>=12'}
     cpu: [loong64]
     os: [linux]
@@ -4146,8 +4146,8 @@ packages:
     requiresBuild: true
     optional: true
 
-  /@esbuild/linux-mips64el@0.19.2:
-    resolution: {integrity: sha512-KbXaC0Sejt7vD2fEgPoIKb6nxkfYW9OmFUK9XQE4//PvGIxNIfPk1NmlHmMg6f25x57rpmEFrn1OotASYIAaTg==}
+  /@esbuild/linux-mips64el@0.19.4:
+    resolution: {integrity: sha512-keYY+Hlj5w86hNp5JJPuZNbvW4jql7c1eXdBUHIJGTeN/+0QFutU3GrS+c27L+NTmzi73yhtojHk+lr2+502Mw==}
     engines: {node: '>=12'}
     cpu: [mips64el]
     os: [linux]
@@ -4162,8 +4162,8 @@ packages:
     requiresBuild: true
     optional: true
 
-  /@esbuild/linux-ppc64@0.19.2:
-    resolution: {integrity: sha512-dJ0kE8KTqbiHtA3Fc/zn7lCd7pqVr4JcT0JqOnbj4LLzYnp+7h8Qi4yjfq42ZlHfhOCM42rBh0EwHYLL6LEzcw==}
+  /@esbuild/linux-ppc64@0.19.4:
+    resolution: {integrity: sha512-tQ92n0WMXyEsCH4m32S21fND8VxNiVazUbU4IUGVXQpWiaAxOBvtOtbEt3cXIV3GEBydYsY8pyeRMJx9kn3rvw==}
     engines: {node: '>=12'}
     cpu: [ppc64]
     os: [linux]
@@ -4178,8 +4178,8 @@ packages:
     requiresBuild: true
     optional: true
 
-  /@esbuild/linux-riscv64@0.19.2:
-    resolution: {integrity: sha512-7Z/jKNFufZ/bbu4INqqCN6DDlrmOTmdw6D0gH+6Y7auok2r02Ur661qPuXidPOJ+FSgbEeQnnAGgsVynfLuOEw==}
+  /@esbuild/linux-riscv64@0.19.4:
+    resolution: {integrity: sha512-tRRBey6fG9tqGH6V75xH3lFPpj9E8BH+N+zjSUCnFOX93kEzqS0WdyJHkta/mmJHn7MBaa++9P4ARiU4ykjhig==}
     engines: {node: '>=12'}
     cpu: [riscv64]
     os: [linux]
@@ -4194,8 +4194,8 @@ packages:
     requiresBuild: true
     optional: true
 
-  /@esbuild/linux-s390x@0.19.2:
-    resolution: {integrity: sha512-U+RinR6aXXABFCcAY4gSlv4CL1oOVvSSCdseQmGO66H+XyuQGZIUdhG56SZaDJQcLmrSfRmx5XZOWyCJPRqS7g==}
+  /@esbuild/linux-s390x@0.19.4:
+    resolution: {integrity: sha512-152aLpQqKZYhThiJ+uAM4PcuLCAOxDsCekIbnGzPKVBRUDlgaaAfaUl5NYkB1hgY6WN4sPkejxKlANgVcGl9Qg==}
     engines: {node: '>=12'}
     cpu: [s390x]
     os: [linux]
@@ -4210,8 +4210,8 @@ packages:
     requiresBuild: true
     optional: true
 
-  /@esbuild/linux-x64@0.19.2:
-    resolution: {integrity: sha512-oxzHTEv6VPm3XXNaHPyUTTte+3wGv7qVQtqaZCrgstI16gCuhNOtBXLEBkBREP57YTd68P0VgDgG73jSD8bwXQ==}
+  /@esbuild/linux-x64@0.19.4:
+    resolution: {integrity: sha512-Mi4aNA3rz1BNFtB7aGadMD0MavmzuuXNTaYL6/uiYIs08U7YMPETpgNn5oue3ICr+inKwItOwSsJDYkrE9ekVg==}
     engines: {node: '>=12'}
     cpu: [x64]
     os: [linux]
@@ -4226,8 +4226,8 @@ packages:
     requiresBuild: true
     optional: true
 
-  /@esbuild/netbsd-x64@0.19.2:
-    resolution: {integrity: sha512-WNa5zZk1XpTTwMDompZmvQLHszDDDN7lYjEHCUmAGB83Bgs20EMs7ICD+oKeT6xt4phV4NDdSi/8OfjPbSbZfQ==}
+  /@esbuild/netbsd-x64@0.19.4:
+    resolution: {integrity: sha512-9+Wxx1i5N/CYo505CTT7T+ix4lVzEdz0uCoYGxM5JDVlP2YdDC1Bdz+Khv6IbqmisT0Si928eAxbmGkcbiuM/A==}
     engines: {node: '>=12'}
     cpu: [x64]
     os: [netbsd]
@@ -4242,8 +4242,8 @@ packages:
     requiresBuild: true
     optional: true
 
-  /@esbuild/openbsd-x64@0.19.2:
-    resolution: {integrity: sha512-S6kI1aT3S++Dedb7vxIuUOb3oAxqxk2Rh5rOXOTYnzN8JzW1VzBd+IqPiSpgitu45042SYD3HCoEyhLKQcDFDw==}
+  /@esbuild/openbsd-x64@0.19.4:
+    resolution: {integrity: sha512-MFsHleM5/rWRW9EivFssop+OulYVUoVcqkyOkjiynKBCGBj9Lihl7kh9IzrreDyXa4sNkquei5/DTP4uCk25xw==}
     engines: {node: '>=12'}
     cpu: [x64]
     os: [openbsd]
@@ -4258,8 +4258,8 @@ packages:
     requiresBuild: true
     optional: true
 
-  /@esbuild/sunos-x64@0.19.2:
-    resolution: {integrity: sha512-VXSSMsmb+Z8LbsQGcBMiM+fYObDNRm8p7tkUDMPG/g4fhFX5DEFmjxIEa3N8Zr96SjsJ1woAhF0DUnS3MF3ARw==}
+  /@esbuild/sunos-x64@0.19.4:
+    resolution: {integrity: sha512-6Xq8SpK46yLvrGxjp6HftkDwPP49puU4OF0hEL4dTxqCbfx09LyrbUj/D7tmIRMj5D5FCUPksBbxyQhp8tmHzw==}
     engines: {node: '>=12'}
     cpu: [x64]
     os: [sunos]
@@ -4274,8 +4274,8 @@ packages:
     requiresBuild: true
     optional: true
 
-  /@esbuild/win32-arm64@0.19.2:
-    resolution: {integrity: sha512-5NayUlSAyb5PQYFAU9x3bHdsqB88RC3aM9lKDAz4X1mo/EchMIT1Q+pSeBXNgkfNmRecLXA0O8xP+x8V+g/LKg==}
+  /@esbuild/win32-arm64@0.19.4:
+    resolution: {integrity: sha512-PkIl7Jq4mP6ke7QKwyg4fD4Xvn8PXisagV/+HntWoDEdmerB2LTukRZg728Yd1Fj+LuEX75t/hKXE2Ppk8Hh1w==}
     engines: {node: '>=12'}
     cpu: [arm64]
     os: [win32]
@@ -4290,8 +4290,8 @@ packages:
     requiresBuild: true
     optional: true
 
-  /@esbuild/win32-ia32@0.19.2:
-    resolution: {integrity: sha512-47gL/ek1v36iN0wL9L4Q2MFdujR0poLZMJwhO2/N3gA89jgHp4MR8DKCmwYtGNksbfJb9JoTtbkoe6sDhg2QTA==}
+  /@esbuild/win32-ia32@0.19.4:
+    resolution: {integrity: sha512-ga676Hnvw7/ycdKB53qPusvsKdwrWzEyJ+AtItHGoARszIqvjffTwaaW3b2L6l90i7MO9i+dlAW415INuRhSGg==}
     engines: {node: '>=12'}
     cpu: [ia32]
     os: [win32]
@@ -4306,8 +4306,8 @@ packages:
     requiresBuild: true
     optional: true
 
-  /@esbuild/win32-x64@0.19.2:
-    resolution: {integrity: sha512-tcuhV7ncXBqbt/Ybf0IyrMcwVOAPDckMK9rXNHtF17UTK18OKLpg08glminN06pt2WCoALhXdLfSPbVvK/6fxw==}
+  /@esbuild/win32-x64@0.19.4:
+    resolution: {integrity: sha512-HP0GDNla1T3ZL8Ko/SHAS2GgtjOg+VmWnnYLhuTksr++EnduYB0f3Y2LzHsUwb2iQ13JGoY6G3R8h6Du/WG6uA==}
     engines: {node: '>=12'}
     cpu: [x64]
     os: [win32]
@@ -5723,7 +5723,7 @@ packages:
       - terser
       - ts-node
 
-  /@vuepress/bundler-webpack@2.0.0-beta.67(esbuild@0.19.2)(typescript@5.2.2):
+  /@vuepress/bundler-webpack@2.0.0-beta.67(esbuild@0.19.4)(typescript@5.2.2):
     resolution: {integrity: sha512-MhIdkarTlvz5j6iOzX+aZ+BVjQYBc87Bn9H5kLMmlpe8+YfxApiUvkpb0LZ1ws4i7cq+Zqi1ldCLnelJUYMwIw==}
     dependencies:
       '@types/express': 4.17.17
@@ -5747,7 +5747,7 @@ packages:
       vue: 3.3.4
       vue-loader: 17.2.2(vue@3.3.4)(webpack@5.88.2)
       vue-router: 4.2.4(vue@3.3.4)
-      webpack: 5.88.2(esbuild@0.19.2)
+      webpack: 5.88.2(esbuild@0.19.4)
       webpack-chain: 6.5.1
       webpack-dev-server: 4.15.1(webpack@5.88.2)
       webpack-merge: 5.9.0
@@ -7608,7 +7608,7 @@ packages:
       normalize-path: 3.0.0
       schema-utils: 4.2.0
       serialize-javascript: 6.0.1
-      webpack: 5.88.2(esbuild@0.19.2)
+      webpack: 5.88.2(esbuild@0.19.4)
 
   /core-js-compat@3.32.1:
     resolution: {integrity: sha512-GSvKDv4wE0bPnQtjklV101juQ85g6H3rm5PDP20mqlS5j0kXF3pP97YvAu5hl+uFHqMictp3b2VxOHljWMAtuA==}
@@ -7741,7 +7741,7 @@ packages:
       postcss-modules-values: 4.0.0(postcss@8.4.29)
       postcss-value-parser: 4.2.0
       semver: 7.5.4
-      webpack: 5.88.2(esbuild@0.19.2)
+      webpack: 5.88.2(esbuild@0.19.4)
 
   /css-select@4.3.0:
     resolution: {integrity: sha512-wPpOYtnsVontu2mODhA19JrqWxNsfdatRKd64kmpRbQgh1KtItko5sTnEpPdpSaJszTOhEMlF/RPz28qj4HqhQ==}
@@ -8748,7 +8748,7 @@ packages:
       esbuild: 0.18.20
       get-tsconfig: 4.7.0
       loader-utils: 2.0.4
-      webpack: 5.88.2(esbuild@0.19.2)
+      webpack: 5.88.2(esbuild@0.19.4)
       webpack-sources: 1.4.3
 
   /esbuild@0.18.20:
@@ -8780,34 +8780,34 @@ packages:
       '@esbuild/win32-ia32': 0.18.20
       '@esbuild/win32-x64': 0.18.20
 
-  /esbuild@0.19.2:
-    resolution: {integrity: sha512-G6hPax8UbFakEj3hWO0Vs52LQ8k3lnBhxZWomUJDxfz3rZTLqF5k/FCzuNdLx2RbpBiQQF9H9onlDDH1lZsnjg==}
+  /esbuild@0.19.4:
+    resolution: {integrity: sha512-x7jL0tbRRpv4QUyuDMjONtWFciygUxWaUM1kMX2zWxI0X2YWOt7MSA0g4UdeSiHM8fcYVzpQhKYOycZwxTdZkA==}
     engines: {node: '>=12'}
     hasBin: true
     requiresBuild: true
     optionalDependencies:
-      '@esbuild/android-arm': 0.19.2
-      '@esbuild/android-arm64': 0.19.2
-      '@esbuild/android-x64': 0.19.2
-      '@esbuild/darwin-arm64': 0.19.2
-      '@esbuild/darwin-x64': 0.19.2
-      '@esbuild/freebsd-arm64': 0.19.2
-      '@esbuild/freebsd-x64': 0.19.2
-      '@esbuild/linux-arm': 0.19.2
-      '@esbuild/linux-arm64': 0.19.2
-      '@esbuild/linux-ia32': 0.19.2
-      '@esbuild/linux-loong64': 0.19.2
-      '@esbuild/linux-mips64el': 0.19.2
-      '@esbuild/linux-ppc64': 0.19.2
-      '@esbuild/linux-riscv64': 0.19.2
-      '@esbuild/linux-s390x': 0.19.2
-      '@esbuild/linux-x64': 0.19.2
-      '@esbuild/netbsd-x64': 0.19.2
-      '@esbuild/openbsd-x64': 0.19.2
-      '@esbuild/sunos-x64': 0.19.2
-      '@esbuild/win32-arm64': 0.19.2
-      '@esbuild/win32-ia32': 0.19.2
-      '@esbuild/win32-x64': 0.19.2
+      '@esbuild/android-arm': 0.19.4
+      '@esbuild/android-arm64': 0.19.4
+      '@esbuild/android-x64': 0.19.4
+      '@esbuild/darwin-arm64': 0.19.4
+      '@esbuild/darwin-x64': 0.19.4
+      '@esbuild/freebsd-arm64': 0.19.4
+      '@esbuild/freebsd-x64': 0.19.4
+      '@esbuild/linux-arm': 0.19.4
+      '@esbuild/linux-arm64': 0.19.4
+      '@esbuild/linux-ia32': 0.19.4
+      '@esbuild/linux-loong64': 0.19.4
+      '@esbuild/linux-mips64el': 0.19.4
+      '@esbuild/linux-ppc64': 0.19.4
+      '@esbuild/linux-riscv64': 0.19.4
+      '@esbuild/linux-s390x': 0.19.4
+      '@esbuild/linux-x64': 0.19.4
+      '@esbuild/netbsd-x64': 0.19.4
+      '@esbuild/openbsd-x64': 0.19.4
+      '@esbuild/sunos-x64': 0.19.4
+      '@esbuild/win32-arm64': 0.19.4
+      '@esbuild/win32-ia32': 0.19.4
+      '@esbuild/win32-x64': 0.19.4
 
   /escalade@3.1.1:
     resolution: {integrity: sha512-k0er2gUkLf8O0zKJiAhmkTnJlTvINGv7ygDNPbeIsX/TJjGJZHuh9B2UxbsaEkmlEo9MfhrSzmhIlhRlI2GXnw==}
@@ -10167,7 +10167,7 @@ packages:
       lodash: 4.17.21
       pretty-error: 4.0.0
       tapable: 2.2.1
-      webpack: 5.88.2(esbuild@0.19.2)
+      webpack: 5.88.2(esbuild@0.19.4)
 
   /htmlparser2@6.1.0:
     resolution: {integrity: sha512-gyyPk6rgonLFEDGoeRgQNaEUvdJ4ktTmmUh/h2t7s+M8oPpIPxgNACWa+6ESR57kXstwqPiCut0V8NRpcwgU7A==}
@@ -11893,7 +11893,7 @@ packages:
       webpack: ^5.0.0
     dependencies:
       schema-utils: 4.2.0
-      webpack: 5.88.2(esbuild@0.19.2)
+      webpack: 5.88.2(esbuild@0.19.4)
 
   /minimalistic-assert@1.0.1:
     resolution: {integrity: sha512-UtJcAD4yEaGtjPezWuO9wC4nwUnVH/8/Im3yEHQP4b67cXlD/Qr9hdITCU1xDbSEXg2XKNaP8jsReV7vQd00/A==}
@@ -12806,7 +12806,7 @@ packages:
       jiti: 1.19.3
       postcss: 8.4.29
       semver: 7.5.4
-      webpack: 5.88.2(esbuild@0.19.2)
+      webpack: 5.88.2(esbuild@0.19.4)
     transitivePeerDependencies:
       - typescript
 
@@ -13444,7 +13444,7 @@ packages:
       '@babel/code-frame': 7.22.13
     dev: true
 
-  /rollup-plugin-esbuild@5.0.0(esbuild@0.19.2)(rollup@3.28.1):
+  /rollup-plugin-esbuild@5.0.0(esbuild@0.19.4)(rollup@3.28.1):
     resolution: {integrity: sha512-1cRIOHAPh8WQgdQQyyvFdeOdxuiyk+zB5zJ5+YOwrZP4cJ0MT3Fs48pQxrZeyZHcn+klFherytILVfE4aYrneg==}
     engines: {node: '>=14.18.0', npm: '>=8.0.0'}
     peerDependencies:
@@ -13454,7 +13454,7 @@ packages:
       '@rollup/pluginutils': 5.0.4(rollup@3.28.1)
       debug: 4.3.4
       es-module-lexer: 1.3.0
-      esbuild: 0.19.2
+      esbuild: 0.19.4
       joycon: 3.1.1
       jsonc-parser: 3.2.0
       rollup: 3.28.1
@@ -13583,7 +13583,7 @@ packages:
     dependencies:
       neo-async: 2.6.2
       sass: 1.66.1
-      webpack: 5.88.2(esbuild@0.19.2)
+      webpack: 5.88.2(esbuild@0.19.4)
 
   /sass@1.66.1:
     resolution: {integrity: sha512-50c+zTsZOJVgFfTgwwEzkjA3/QACgdNsKueWPyAR0mRINIvLAStVQBbPg14iuqEQ74NPDbXzJARJ/O4SI1zftA==}
@@ -14177,7 +14177,7 @@ packages:
     peerDependencies:
       webpack: ^5.0.0
     dependencies:
-      webpack: 5.88.2(esbuild@0.19.2)
+      webpack: 5.88.2(esbuild@0.19.4)
 
   /style-search@0.1.0:
     resolution: {integrity: sha512-Dj1Okke1C3uKKwQcetra4jSuk0DqbzbYtXipzFlFMZtowbF1x7BKJwB9AayVMyFARvU8EDrZdcax4At/452cAg==}
@@ -14414,7 +14414,7 @@ packages:
       unique-string: 2.0.0
     dev: false
 
-  /terser-webpack-plugin@5.3.9(esbuild@0.19.2)(webpack@5.88.2):
+  /terser-webpack-plugin@5.3.9(esbuild@0.19.4)(webpack@5.88.2):
     resolution: {integrity: sha512-ZuXsqE07EcggTWQjXUj+Aot/OMcD0bMKGgF63f7UxYcu5/AJF53aIpK1YoP5xR9l6s/Hy2b+t1AM0bLNPRuhwA==}
     engines: {node: '>= 10.13.0'}
     peerDependencies:
@@ -14431,12 +14431,12 @@ packages:
         optional: true
     dependencies:
       '@jridgewell/trace-mapping': 0.3.19
-      esbuild: 0.19.2
+      esbuild: 0.19.4
       jest-worker: 27.5.1
       schema-utils: 3.3.0
       serialize-javascript: 6.0.1
       terser: 5.19.4
-      webpack: 5.88.2(esbuild@0.19.2)
+      webpack: 5.88.2(esbuild@0.19.4)
 
   /terser@5.19.4:
     resolution: {integrity: sha512-6p1DjHeuluwxDXcuT9VR8p64klWJKo1ILiy19s6C9+0Bh2+NWTX6nD9EPppiER4ICkHDVB1RkVpin/YW2nQn/g==}
@@ -15245,7 +15245,7 @@ packages:
       hash-sum: 2.0.0
       vue: 3.3.4
       watchpack: 2.4.0
-      webpack: 5.88.2(esbuild@0.19.2)
+      webpack: 5.88.2(esbuild@0.19.4)
 
   /vue-router@4.2.4(vue@3.3.4):
     resolution: {integrity: sha512-9PISkmaCO02OzPVOMq2w82ilty6+xJmQrarYZDkjZBfl4RvYAlt4PKnEX21oW4KTtWfa9OuO/b3qk1Od3AEdCQ==}
@@ -15319,14 +15319,14 @@ packages:
       - terser
       - ts-node
 
-  /vuepress-webpack@2.0.0-beta.67(esbuild@0.19.2)(sass@1.66.1)(typescript@5.2.2)(vue@3.3.4)(webpack@5.88.2):
+  /vuepress-webpack@2.0.0-beta.67(esbuild@0.19.4)(sass@1.66.1)(typescript@5.2.2)(vue@3.3.4)(webpack@5.88.2):
     resolution: {integrity: sha512-6nA3rSQY6YuK7Sp/a0f4/3IilKl9jy0OeX1fTcFRwOLQtwPCr2LVucYd1G1muJsUTqa3cjrl6CNy0R7RgddDqQ==}
     engines: {node: '>=16.19.0'}
     hasBin: true
     peerDependencies:
       vue: ^3.3.4
     dependencies:
-      '@vuepress/bundler-webpack': 2.0.0-beta.67(esbuild@0.19.2)(typescript@5.2.2)
+      '@vuepress/bundler-webpack': 2.0.0-beta.67(esbuild@0.19.4)(typescript@5.2.2)
       '@vuepress/cli': 2.0.0-beta.67
       '@vuepress/core': 2.0.0-beta.67
       '@vuepress/theme-default': 2.0.0-beta.67(sass-loader@13.3.2)
@@ -15440,7 +15440,7 @@ packages:
       mime-types: 2.1.35
       range-parser: 1.2.1
       schema-utils: 4.2.0
-      webpack: 5.88.2(esbuild@0.19.2)
+      webpack: 5.88.2(esbuild@0.19.4)
 
   /webpack-dev-server@4.15.1(webpack@5.88.2):
     resolution: {integrity: sha512-5hbAst3h3C3L8w6W4P96L5vaV0PxSmJhxZvWKYIdgxOQm8pNZ5dEOmmSLBVpP85ReeyRt6AS1QJNyo/oFFPeVA==}
@@ -15483,7 +15483,7 @@ packages:
       serve-index: 1.9.1
       sockjs: 0.3.24
       spdy: 4.0.2
-      webpack: 5.88.2(esbuild@0.19.2)
+      webpack: 5.88.2(esbuild@0.19.4)
       webpack-dev-middleware: 5.3.3(webpack@5.88.2)
       ws: 8.13.0
     transitivePeerDependencies:
@@ -15509,7 +15509,7 @@ packages:
     resolution: {integrity: sha512-/DyMEOrDgLKKIG0fmvtz+4dUX/3Ghozwgm6iPp8KRhvn+eQf9+Q7GWxVNMk3+uCPWfdXYC4ExGBckIXdFEfH1w==}
     engines: {node: '>=10.13.0'}
 
-  /webpack@5.88.2(esbuild@0.19.2):
+  /webpack@5.88.2(esbuild@0.19.4):
     resolution: {integrity: sha512-JmcgNZ1iKj+aiR0OvTYtWQqJwq37Pf683dY9bVORwVbUrDhLhdn/PlO2sHsFHPkj7sHNQF3JwaAkp49V+Sq1tQ==}
     engines: {node: '>=10.13.0'}
     hasBin: true
@@ -15540,7 +15540,7 @@ packages:
       neo-async: 2.6.2
       schema-utils: 3.3.0
       tapable: 2.2.1
-      terser-webpack-plugin: 5.3.9(esbuild@0.19.2)(webpack@5.88.2)
+      terser-webpack-plugin: 5.3.9(esbuild@0.19.4)(webpack@5.88.2)
       watchpack: 2.4.0
       webpack-sources: 3.2.3
     transitivePeerDependencies:
