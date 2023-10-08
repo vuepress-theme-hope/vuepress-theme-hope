@@ -80,7 +80,7 @@
     "rimraf": "5.0.5",
     "rollup": "3.29.4",
     "rollup-plugin-copy": "3.5.0",
-    "rollup-plugin-dts": "6.0.2",
+    "rollup-plugin-dts": "6.1.0",
     "rollup-plugin-esbuild": "6.0.2",
     "sort-package-json": "2.6.0",
     "stylelint": "15.10.3",
