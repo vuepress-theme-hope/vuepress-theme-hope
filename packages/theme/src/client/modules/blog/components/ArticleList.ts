@@ -1,7 +1,6 @@
 import type { PropType, VNode } from "vue";
 import { computed, defineComponent, h, onMounted, ref, watch } from "vue";
 import { useRoute, useRouter } from "vue-router";
-import { updatePageview } from "vuepress-plugin-comment2/pageview";
 
 import DropTransition from "@theme-hope/components/transitions/DropTransition";
 import ArticleItem from "@theme-hope/modules/blog/components/ArticleItem";
@@ -49,7 +48,7 @@ export default defineComponent({
       ),
     );
 
-    const updatePage = (page: number): void => {
+    const updatePage = async (page: number): Promise<void> => {
       currentPage.value = page;
 
       const query = { ...route.query };
@@ -59,22 +58,21 @@ export default defineComponent({
       if (page === 1) delete query["page"];
       else query["page"] = page.toString();
 
-      void router.push({ path: route.path, query }).then(() => {
+      await router.push({ path: route.path, query });
+
+      if (SUPPORT_PAGEVIEW) {
+        const { updatePageview } = await import(
+          /* webpackChunkName: "pageview" */ "vuepress-plugin-comment2/pageview"
+        );
+
         updatePageview();
-      });
+      }
     };
 
     onMounted(() => {
       const { page } = route.query;
 
-      updatePage(page ? Number(page) : 1);
-
-      if (SUPPORT_PAGEVIEW)
-        void import(
-          /* webpackChunkName: "pageview" */ "vuepress-plugin-comment2/pageview"
-        ).then(({ updatePageview }) => {
-          updatePageview();
-        });
+      void updatePage(page ? Number(page) : 1);
 
       watch(currentPage, () => {
         // list top border distance
@@ -91,7 +89,7 @@ export default defineComponent({
       watch(
         () => route.query,
         ({ page }) => {
-          updatePage(page ? Number(page) : 1);
+          void updatePage(page ? Number(page) : 1);
         },
       );
     });
