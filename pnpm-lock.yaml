@@ -138,8 +138,8 @@ importers:
         specifier: 6.1.0
         version: 6.1.0(rollup@4.0.2)(typescript@5.2.2)
       rollup-plugin-esbuild:
-        specifier: 6.0.2
-        version: 6.0.2(esbuild@0.19.4)(rollup@4.0.2)
+        specifier: 6.1.0
+        version: 6.1.0(esbuild@0.19.4)(rollup@4.0.2)
       sort-package-json:
         specifier: 2.6.0
         version: 2.6.0
@@ -13409,12 +13409,12 @@ packages:
       '@babel/code-frame': 7.22.13
     dev: true
 
-  /rollup-plugin-esbuild@6.0.2(esbuild@0.19.4)(rollup@4.0.2):
-    resolution: {integrity: sha512-SNAFfYS9QbZKBHZDOe4Oa1+dYqIFnmaXGJrsT9PMteGUZqw3T1Z3q0bMgwJhzxmTdiKcziSkJIiIZ7b1zy8RKw==}
+  /rollup-plugin-esbuild@6.1.0(esbuild@0.19.4)(rollup@4.0.2):
+    resolution: {integrity: sha512-HPpXU65V8bSpW8eSYPahtUJaJHmbxJGybuf/M8B3bz/6i11YaYHlNNJIQ38gSEV0FyohQOgVxJ2YMEEZtEmwvA==}
     engines: {node: '>=14.18.0'}
     peerDependencies:
       esbuild: '>=0.18.0'
-      rollup: ^1.20.0 || ^2.0.0 || ^3.0.0
+      rollup: ^1.20.0 || ^2.0.0 || ^3.0.0 || ^4.0.0
     dependencies:
       '@rollup/pluginutils': 5.0.5(rollup@4.0.2)
       debug: 4.3.4
