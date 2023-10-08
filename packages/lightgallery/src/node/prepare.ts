@@ -1,11 +1,9 @@
-import { createRequire } from "node:module";
-
 import type { App } from "@vuepress/core";
-import { path } from "@vuepress/utils";
+import { getRealPath } from "vuepress-shared/node";
 
 import type { LightGalleryPlugin } from "./options.js";
 
-const require = createRequire(import.meta.url);
+const { url } = import.meta;
 
 export const prepareLightGalleryPlugins = async (
   app: App,
@@ -13,17 +11,14 @@ export const prepareLightGalleryPlugins = async (
 ): Promise<void> => {
   const plugins = pluginNames.map(
     (pluginName) =>
-      `import(/* webpackChunkName: "lightgallery" */ "${path.resolve(
-        require.resolve(
-          `lightgallery/plugins/${pluginName}/lg-${pluginName}.es5.js`,
-        ),
+      `import(/* webpackChunkName: "lightgallery" */ "${getRealPath(
+        `lightgallery/plugins/${pluginName}/lg-${pluginName}.es5.js`,
+        url,
       )}")`,
   );
   const pluginsStyles = pluginNames.map(
     (pluginName) =>
-      `import "${path.resolve(
-        require.resolve(`lightgallery/css/lg-${pluginName}.css`),
-      )}";`,
+      `import "${getRealPath(`lightgallery/css/lg-${pluginName}.css`, url)}";`,
   );
 
   await app.writeTemp(
