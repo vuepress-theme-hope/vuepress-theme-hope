@@ -29,8 +29,6 @@
     "./client/*": "./lib/client/*",
     "./package.json": "./package.json"
   },
-  "main": "lib/node/index.js",
-  "types": "lib/node/index.d.ts",
   "files": [
     "lib"
   ],
@@ -51,9 +49,9 @@
     "@vuepress/client": "2.0.0-beta.67",
     "@vuepress/shared": "2.0.0-beta.67",
     "@vuepress/utils": "2.0.0-beta.67",
-    "@vueuse/core": "^10.4.1",
+    "@vueuse/core": "^10.5.0",
     "vue": "^3.3.4",
-    "vue-router": "^4.2.4",
+    "vue-router": "^4.2.5",
     "vuepress-shared": "workspace:*"
   },
   "devDependencies": {

@@ -49,7 +49,7 @@
   "dependencies": {
     "cac": "6.7.14",
     "execa": "8.0.1",
-    "inquirer": "9.2.10"
+    "inquirer": "9.2.11"
   },
   "devDependencies": {
     "@types/inquirer": "9.0.3"
