@@ -28,8 +28,6 @@
     ".": "./lib/node/index.js",
     "./package.json": "./package.json"
   },
-  "main": "lib/node/index.js",
-  "types": "lib/node/index.d.ts",
   "files": [
     "lib"
   ],

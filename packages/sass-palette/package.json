@@ -36,8 +36,6 @@
     "./helper.scss": "./styles/helper.scss",
     "./package.json": "./package.json"
   },
-  "main": "lib/node/index.js",
-  "types": "lib/node/index.d.ts",
   "files": [
     "lib",
     "styles"
@@ -57,7 +55,7 @@
     "@vuepress/shared": "2.0.0-beta.67",
     "@vuepress/utils": "2.0.0-beta.67",
     "chokidar": "^3.5.3",
-    "sass": "^1.66.1",
+    "sass": "^1.69.0",
     "vuepress-shared": "workspace:*"
   },
   "devDependencies": {

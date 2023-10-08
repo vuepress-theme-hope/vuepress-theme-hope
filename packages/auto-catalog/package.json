@@ -31,8 +31,6 @@
     "./client": "./lib/client/index.js",
     "./package.json": "./package.json"
   },
-  "main": "lib/node/index.js",
-  "types": "lib/node/index.d.ts",
   "files": [
     "lib",
     "src"
@@ -56,7 +54,7 @@
     "@vuepress/shared": "2.0.0-beta.67",
     "@vuepress/utils": "2.0.0-beta.67",
     "vue": "^3.3.4",
-    "vue-router": "^4.2.4",
+    "vue-router": "^4.2.5",
     "vuepress-plugin-components": "workspace:*",
     "vuepress-plugin-sass-palette": "workspace:*",
     "vuepress-shared": "workspace:*"
