@@ -50,7 +50,7 @@
     "@vuepress/utils": "2.0.0-beta.67",
     "chokidar": "^3.5.3",
     "vue": "^3.3.4",
-    "vue-router": "^4.2.4",
+    "vue-router": "^4.2.5",
     "vuepress-shared": "workspace:*"
   },
   "peerDependencies": {
