@@ -553,7 +553,7 @@ PDF 浏览器组件。
       srcLang: 'en',
     },
     {
-      src: '//fr.vtt',
+      src: '/fr.vtt',
       kind: 'subtitles',
       label: 'French',
       srcLang: 'fr',
@@ -592,7 +592,7 @@ PDF 浏览器组件。
       srcLang: 'en',
     },
     {
-      src: '//fr.vtt',
+      src: '/fr.vtt',
       kind: 'subtitles',
       label: 'French',
       srcLang: 'fr',

@@ -559,7 +559,7 @@ A video player with poster and tracks:
       srcLang: 'en',
     },
     {
-      src: '//fr.vtt',
+      src: '/fr.vtt',
       kind: 'subtitles',
       label: 'French',
       srcLang: 'fr',
@@ -598,7 +598,7 @@ A video player with poster and tracks:
       srcLang: 'en',
     },
     {
-      src: '//fr.vtt',
+      src: '/fr.vtt',
       kind: 'subtitles',
       label: 'French',
       srcLang: 'fr',

@@ -37,7 +37,7 @@ VidStack 有一些和 Vue 渲染的已知问题。
       srcLang: 'en',
     },
     {
-      src: '//fr.vtt',
+      src: '/fr.vtt',
       kind: 'subtitles',
       label: 'French',
       srcLang: 'fr',
@@ -59,7 +59,7 @@ VidStack 有一些和 Vue 渲染的已知问题。
       srcLang: 'en',
     },
     {
-      src: '//fr.vtt',
+      src: '/fr.vtt',
       kind: 'subtitles',
       label: 'French',
       srcLang: 'fr',
