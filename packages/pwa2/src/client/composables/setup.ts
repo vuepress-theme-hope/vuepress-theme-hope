@@ -17,8 +17,7 @@ export const setupPWA = (): void => {
   if (__VUEPRESS_SSR__) return;
 
   // create event emitter and provide it
-  // FIXME: Types issue
-  const event: PWAEvent = (mitt as unknown as typeof mitt.default)();
+  const event: PWAEvent = mitt();
 
   provide(pwaEventSymbol, event);
 
