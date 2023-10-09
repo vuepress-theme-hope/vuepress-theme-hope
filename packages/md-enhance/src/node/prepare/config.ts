@@ -102,15 +102,15 @@ export const prepareConfigFile = async (
     );
   }
 
-  if (getStatus("presentation")) {
+  if (getStatus("revealjs")) {
     imports.push(
       `import "${getRealPath("reveal.js/dist/reveal.css", url)}";`,
-      `import Presentation from "${CLIENT_FOLDER}components/Presentation.js";`,
-      `import { injectRevealConfig } from "${CLIENT_FOLDER}index.js";`,
+      `import RevealJs from "${CLIENT_FOLDER}components/RevealJs.js";`,
+      `import { injectRevealJsConfig } from "${CLIENT_FOLDER}index.js";`,
     );
     enhances.push(
-      `injectRevealConfig(app);`,
-      `app.component("Presentation", Presentation);`,
+      `injectRevealJsConfig(app);`,
+      `app.component("RevealJs", RevealJs);`,
     );
   }
 

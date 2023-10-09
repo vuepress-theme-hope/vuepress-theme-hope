@@ -29,7 +29,6 @@ import {
   detectPackageManager,
   getBundlerName,
   getLocales,
-  isArray,
   isPlainObject,
 } from "vuepress-shared/node";
 
@@ -56,8 +55,8 @@ import {
   mermaid,
   normalDemo,
   playground,
-  presentation,
   reactDemo,
+  revealJs,
   tabs,
   vPre,
   vueDemo,
@@ -67,7 +66,8 @@ import type { MarkdownEnhanceOptions } from "./options.js";
 import {
   prepareConfigFile,
   prepareMathjaxStyleFile,
-  prepareRevealPluginFile,
+  prepareRevealJsPluginFile,
+  prepareRevealJsStyleFile,
 } from "./prepare/index.js";
 import type { KatexOptions } from "./typings/index.js";
 import { PLUGIN_NAME, logger } from "./utils.js";
@@ -109,7 +109,7 @@ export const mdEnhancePlugin =
     const includeEnable = getStatus("include");
     const tasklistEnable = getStatus("tasklist", true);
     const mermaidEnable = getStatus("mermaid");
-    const presentationEnable = getStatus("presentation");
+    const enableRevealJs = getStatus("revealjs");
     const katexEnable = getStatus("katex");
     const mathjaxEnable = getStatus("mathjax", true);
     const vuePlaygroundEnable = getStatus("vuePlayground");
@@ -160,9 +160,9 @@ export const mdEnhancePlugin =
             ...(isPlainObject(options.mathjax) ? options.mathjax : {}),
           });
 
-    const revealPlugins = isArray(options.presentation)
-      ? options.presentation
-      : [];
+    const revealJsOptions = isPlainObject(options.revealjs)
+      ? options.revealjs
+      : {};
 
     useSassPalettePlugin(app, { id: "hope" });
 
@@ -226,11 +226,11 @@ export const mdEnhancePlugin =
           addViteSsrExternal(bundlerOptions, app, "mermaid");
         }
 
-        if (presentationEnable) {
+        if (enableRevealJs) {
           addViteOptimizeDepsExclude(bundlerOptions, app, [
             "reveal.js/dist/reveal.esm.js",
             "reveal.js/plugin/markdown/markdown.esm.js",
-            ...revealPlugins.map(
+            ...(revealJsOptions?.plugins || []).map(
               (plugin) => `reveal.js/plugin/${plugin}/${plugin}.esm.js`,
             ),
           ]);
@@ -343,7 +343,7 @@ export const mdEnhancePlugin =
           if (legacy) md.use(legacyCodeDemo);
         }
         if (mermaidEnable) md.use(mermaid);
-        if (presentationEnable) md.use(presentation);
+        if (enableRevealJs) md.use(revealJs);
         if (isPlainObject(options.playground)) {
           const { presets = [], config = {} } = options.playground;
 
@@ -375,10 +375,15 @@ export const mdEnhancePlugin =
 
       onPrepared: (app): Promise<void> =>
         Promise.all([
-          mathjaxEnable
-            ? prepareMathjaxStyleFile(app, mathjaxInstance!)
-            : Promise.resolve(),
-          prepareRevealPluginFile(app, revealPlugins),
+          ...(mathjaxEnable
+            ? [prepareMathjaxStyleFile(app, mathjaxInstance!)]
+            : []),
+          ...(enableRevealJs
+            ? [
+                prepareRevealJsPluginFile(app, revealJsOptions.plugins ?? []),
+                prepareRevealJsStyleFile(app, revealJsOptions?.themes),
+              ]
+            : []),
         ]).then(() => void 0),
 
       clientConfigFile: (app) => prepareConfigFile(app, options, legacy),

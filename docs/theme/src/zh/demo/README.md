@@ -23,6 +23,6 @@ category:
 
 - [加密文章](./encrypt.md) (密码: 1234)
 
-- <ProjectLink name="md-enhance" path="/zh/guide/presentation/demo.html">幻灯片页面</ProjectLink>
+- <ProjectLink name="md-enhance" path="/zh/guide/revealjs/demo.html">幻灯片页面</ProjectLink>
 
 - [插槽演示](./slot.md)

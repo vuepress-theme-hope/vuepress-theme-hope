@@ -7,7 +7,7 @@ export * from "./flowchart.js";
 export * from "./hint.js";
 export * from "./mermaid.js";
 export * from "./playground/index.js";
-export * from "./presentation.js";
+export * from "./revealjs.js";
 export * from "./tabs.js";
 export * from "./vPre.js";
 export * from "./vuePlayground.js";

@@ -455,4 +455,4 @@ $$
 
 @slideend
 
-- [View Detail](../markdown/presentation.md)
+- [View Detail](../markdown/revealjs.md)

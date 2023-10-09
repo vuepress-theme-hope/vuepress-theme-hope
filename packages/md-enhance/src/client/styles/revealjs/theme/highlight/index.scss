@@ -1,0 +1,9 @@
+.reveal pre.code-wrapper {
+  margin: var(--r-block-margin) auto;
+  padding: 0;
+  background: transparent;
+
+  code {
+    color: inherit;
+  }
+}

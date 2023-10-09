@@ -10,7 +10,7 @@ import type {
   MarkdownEnhanceLocaleData,
   MathjaxOptions,
   PlaygroundOptions,
-  RevealPlugin,
+  RevealJsOptions,
   StylizeOptions,
   TSPresetPlaygroundOptions,
   TasklistOptions,
@@ -344,13 +344,13 @@ export interface MarkdownEnhanceOptions {
   demo?: Partial<CodeDemoOptions> | boolean;
 
   /**
-   * Whether to enable presentation support
+   * Whether to enable revealjs support
    *
-   * 是否启用幻灯片支持
+   * 是否启用 Reveal.js 支持
    *
    * @default false
    */
-  presentation?: RevealPlugin[] | boolean;
+  revealjs?: RevealJsOptions | boolean;
 
   /**
    * Keyword enhancement

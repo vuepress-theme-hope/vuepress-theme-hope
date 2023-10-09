@@ -98,8 +98,8 @@ highlights:
 
       - title: 幻灯片支持
         icon: person-chalkboard
-        details: 你可以直接在 Markdown 中插入幻灯片
-        link: ./guide/presentation/
+        details: 通过 Reveal.js 在 Markdown 中插入幻灯片
+        link: ./guide/revealjs/
 
       - title: 选项卡
         icon: table-columns

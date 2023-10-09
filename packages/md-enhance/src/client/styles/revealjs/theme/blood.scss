@@ -1,0 +1,101 @@
+/**
+ * Blood theme for reveal.js
+ * Author: Walther http://github.com/Walther
+ *
+ * Designed to be used with highlight.js theme
+ * "monokai_sublime.css" available from
+ * https://github.com/isagalaev/highlight.js/
+ *
+ * For other themes, change $code-background accordingly.
+ *
+ */
+
+@use "sass:color";
+@use "fonts/ubuntu";
+@use "helper/helper";
+@use "highlight/dark";
+
+// Colors used in the theme
+$blood: #a23;
+$coal: #222;
+$code-background: #23241f;
+
+@include helper.theme(
+  "blood",
+  (
+    background-color: $coal,
+
+    // Main text
+    main-font:
+      (
+        ubuntu,
+        "sans-serif",
+      ),
+    main-color: #eee,
+
+    // Headings
+    heading-font:
+      (
+        ubuntu,
+        "sans-serif",
+      ),
+    heading-text-shadow: 2px 2px 2px $coal,
+
+    // h1 shadow, borrowed humbly from
+    // (c) Default theme by Hakim El Hattab
+    heading1-text-shadow:
+      (
+        0 1px 0 #ccc,
+        0 2px 0 #c9c9c9,
+        0 3px 0 #bbb,
+        0 4px 0 #b9b9b9,
+        0 5px 0 #aaa,
+        0 6px 1px rgb(0 0 0 / 10%),
+        0 0 5px rgb(0 0 0 / 10%),
+        0 1px 3px rgb(0 0 0 / 30%),
+        0 3px 5px rgb(0 0 0 / 20%),
+        0 5px 10px rgb(0 0 0 / 25%),
+        0 20px 20px rgb(0 0 0 / 15%),
+      ),
+    // Links
+    link-color: $blood,
+    link-color-hover: color.scale($blood, $lightness: 20%),
+    // Text selection
+    selection-background-color: $blood,
+    selection-color: #fff,
+  )
+) {
+  @include dark.highlight;
+  @include helper.lightmode-text-color(#222);
+
+  // some overrides
+  h1,
+  h2,
+  h3,
+  h4,
+  h5,
+  h6 {
+    font-weight: 700;
+  }
+
+  p {
+    font-weight: 300;
+    text-shadow: 1px 1px $coal;
+
+    code {
+      display: inline-block;
+      border-radius: 7px;
+      background: $code-background;
+    }
+  }
+
+  section.has-light-background {
+    p,
+    h1,
+    h2,
+    h3,
+    h4 {
+      text-shadow: none;
+    }
+  }
+}

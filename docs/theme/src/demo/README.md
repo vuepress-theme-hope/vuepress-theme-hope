@@ -21,4 +21,4 @@ icon: splotch
 
 - [Encrypt Page](./encrypt.md) (Password: 1234)
 
-- <ProjectLink name="md-enhance" path="/guide/presentation/demo.html">Slide Page</ProjectLink>
+- <ProjectLink name="md-enhance" path="/guide/revealjs/demo.html">Slide Page</ProjectLink>

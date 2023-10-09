@@ -606,31 +606,50 @@ Default value: `"https://unpkg.com/react/umd/react.production.min.js"`
 
 Default value: `"https://unpkg.com/react-dom/umd/react-dom.production.min.js"`
 
-### presentation
+### revealJs
 
-- Type: `PresentationOptions | boolean`
+- Type: `RevealJsOptions | boolean`
 
   ```ts
-  type RevealPlugin = "highlight" | "math" | "search" | "notes" | "zoom";
+  type RevealJsPlugin = "highlight" | "math" | "search" | "notes" | "zoom";
+
+  type RevealJsTheme =
+    | "auto"
+    | "beige"
+    | "black"
+    | "blood"
+    | "league"
+    | "moon"
+    | "night"
+    | "serif"
+    | "simple"
+    | "sky"
+    | "solarized"
+    | "white";
+
+  /**
+   * reveal.js options
+   */
+  export interface RevealJsOptions {
+    /**
+     * reveal.js plugins
+     *
+     * @default []
+     */
+    plugins?: RevealJsPlugin[];
+
+    /**
+     * reveal.js themes
+     *
+     * @default ["auto"]
+     */
+    themes?: RevealJsTheme[];
+  }
   ```
 
 - Default: `false`
 
-Whether to enable presentation syntax support.
-
-You can set it with an array, which represents enabled plugins.
-
-Acceptable values are:
-
-- `"highlight"`
-- `"math"`
-- `"search"`
-- `"notes"`
-- `"zoom"`
-
-<!-- - `"anything"`
-- `"audio"`
-- `"chalkboard"` -->
+Whether to enable slides support. You can pass an option to control plugins and themes to import.
 
 ### delay
 

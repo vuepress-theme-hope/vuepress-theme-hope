@@ -101,8 +101,8 @@ highlights:
 
       - title: Presentation Support
         icon: person-chalkboard
-        details: You can insert presentation in Markdown files directly
-        link: ./guide/presentation/
+        details: YInsert presentation in Markdown files via Reveal.js
+        link: ./guide/revealjs/
 
       - title: Tabs
         icon: table-columns
