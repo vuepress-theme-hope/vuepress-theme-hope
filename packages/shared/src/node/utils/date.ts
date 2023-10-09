@@ -135,8 +135,8 @@ export const compareDate = (
     typeof dateB === "number" ? new Date(dateB) : dateB,
   );
 
-  if (!parsedDateA || !parsedDateA.value) return 1;
-  if (!parsedDateB || !parsedDateB.value) return -1;
+  if (!parsedDateA?.value) return parsedDateB?.value ? 1 : 0;
+  if (!parsedDateB?.value) return -1;
 
   return parsedDateB.value.getTime() - parsedDateA.value.getTime();
 };
