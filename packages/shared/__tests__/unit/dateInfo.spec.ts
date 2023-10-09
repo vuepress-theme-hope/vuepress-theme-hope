@@ -353,4 +353,24 @@ describe("compareDate()", () => {
   it("should return 0 if both dates are undefined", () => {
     expect(compareDate(undefined, undefined)).toBe(0);
   });
+
+  it("should be a correct date sorter", () => {
+    const dates = [
+      "2021-01-01",
+      "2022-04-05 08:00:00",
+      undefined,
+      "04:38:45",
+      "19999",
+      "2022-03-08",
+    ];
+
+    expect(dates.sort(compareDate)).toEqual([
+      "2022-04-05 08:00:00",
+      "2022-03-08",
+      "2021-01-01",
+      "19999",
+      "04:38:45",
+      undefined,
+    ]);
+  });
 });
