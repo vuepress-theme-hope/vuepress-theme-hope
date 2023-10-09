@@ -1,7 +1,6 @@
 {
   "extends": "../tsconfig.base.json",
   "compilerOptions": {
-    "module": "NodeNext",
     "rootDir": "./src",
     "paths": {
       "@theme-hope/*": ["../packages/theme/src/client/*.js"]
