@@ -8,7 +8,7 @@ import { FeedInfo } from "../extractor/index.js";
 import type { ResolvedFeedOptionsMap } from "../options.js";
 import { getFeedChannelOption, getFeedLinks, getFilename } from "../options.js";
 import type { FeedPluginFrontmatter } from "../typings/index.js";
-import { compareDate, logger } from "../utils/index.js";
+import { logger } from "../utils/index.js";
 
 export class FeedGenerator {
   /** feed 生成器 */
@@ -32,32 +32,10 @@ export class FeedGenerator {
   addPages(localePath: string): void {
     const feed = this.feedMap[localePath];
     const localeOption = this.options[localePath];
-    const {
-      count: feedCount = 100,
-      filter = ({ frontmatter, filePathRelative }: Page): boolean =>
-        !(
-          frontmatter["home"] ||
-          !filePathRelative ||
-          frontmatter["article"] === false ||
-          frontmatter["feed"] === false
-        ),
-      sorter = (
-        pageA: Page<{ git?: GitData }, Record<string, never>>,
-        pageB: Page<{ git?: GitData }, Record<string, never>>,
-      ): number =>
-        compareDate(
-          pageA.data.git?.createdTime
-            ? new Date(pageA.data.git?.createdTime)
-            : pageA.frontmatter.date,
-          pageB.data.git?.createdTime
-            ? new Date(pageB.data.git?.createdTime)
-            : pageB.frontmatter.date,
-        ),
-    } = localeOption;
+    const { count: feedCount = 100, filter, sorter } = localeOption;
     const pages = this.app.pages
       .filter((page) => page.pathLocale === localePath)
       .filter(filter)
-      // @ts-ignore
       .sort(sorter)
       .slice(0, feedCount);
 
