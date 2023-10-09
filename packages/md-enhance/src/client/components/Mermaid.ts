@@ -61,6 +61,9 @@ const getThemeVariables = (isDarkmode: boolean): MermaidThemeVariables => ({
   // state
   labelColor: "#fff",
 
+  attributeBackgroundColorEven: isDarkmode ? "#0d1117" : "#fff",
+  attributeBackgroundColorOdd: isDarkmode ? "#161b22" : "#f8f8f8",
+
   // colors
   fillType0: isDarkmode ? "#cf1322" : "#f1636e",
   fillType1: "#f39c12",
