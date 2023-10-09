@@ -36,7 +36,7 @@ ${diagram}
 `
 }\
 ${
-  diagram === "mermaid"
+  diagram === "mermaid" || diagram === "sankey-beta"
     ? content
     : content
         .split("\n")
@@ -59,6 +59,9 @@ const DIAGRAM_MAP: Record<string, string> = {
   journey: "journey",
   mindmap: "mindmap",
   pie: "pie",
+  quadrant: "quadrantChart",
+  requirement: "requirementDiagram",
+  sankey: "sankey-beta",
   sequence: "sequenceDiagram",
   state: "stateDiagram-v2",
   timeline: "timeline",
