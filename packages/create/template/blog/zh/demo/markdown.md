@@ -398,6 +398,6 @@ $$
 
 @slideend
 
-- [查看详情](https://theme-hope.vuejs.press/zh/guide/markdown/presentation.html)
+- [查看详情](https://theme-hope.vuejs.press/zh/guide/markdown/revealjs.html)
 
 [md-enhance]: https://plugin-md-enhance.vuejs.press/zh/

@@ -364,6 +364,14 @@ declare module "reveal.js/dist/reveal.esm.js" {
      */
     hideCursorTime: number;
 
+    /** Markdown options */
+    markdown?: {
+      separator?: string;
+      verticalSeparator?: string;
+      notesSeparator?: string;
+      attributes?: string;
+    };
+
     plugins: any[];
   }
 

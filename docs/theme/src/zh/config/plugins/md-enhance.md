@@ -680,31 +680,50 @@ CodePen 编辑器显示情况，第一位代表 HTML ，第二位代表 JS，第
 
 默认值: `"https://unpkg.com/react-dom/umd/react-dom.production.min.js"`
 
-### presentation
+### revealJs
 
-- 类型: `RevealPlugin[] | boolean`
+- 类型: `RevealJsOptions | boolean`
 
   ```ts
-  type RevealPlugin = "highlight" | "math" | "search" | "notes" | "zoom";
+  type RevealJsPlugin = "highlight" | "math" | "search" | "notes" | "zoom";
+
+  type RevealJsTheme =
+    | "auto"
+    | "beige"
+    | "black"
+    | "blood"
+    | "league"
+    | "moon"
+    | "night"
+    | "serif"
+    | "simple"
+    | "sky"
+    | "solarized"
+    | "white";
+
+  /**
+   * reveal.js 选项
+   */
+  export interface RevealJsOptions {
+    /**
+     * reveal.js 插件
+     *
+     * @default []
+     */
+    plugins?: RevealJsPlugin[];
+
+    /**
+     * reveal.js 主题
+     *
+     * @default ["auto"]
+     */
+    themes?: RevealJsTheme[];
+  }
   ```
 
 - 默认值: `false`
 
-是否启用幻灯片支持。
-
-你可以传入一个数组，它将决定启用的 Reveal.js 插件
-
-可接受的插件有:
-
-- `"highlight"`
-- `"math"`
-- `"search"`
-- `"notes"`
-- `"zoom"`
-
-<!-- - `"anything"`
-- `"audio"`
-- `"chalkboard"` -->
+是否启用幻灯片支持。你可以传递选项控制导入的插件和主题。
 
 ### delay
 

@@ -351,4 +351,4 @@ $$
 
 @slideend
 
-- [View Detail](presentation/README.md)
+- [View Detail](revealjs/README.md)

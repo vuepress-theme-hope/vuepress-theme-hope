@@ -1,0 +1,36 @@
+/**
+ * League theme for reveal.js.
+ *
+ * This was the default theme pre-3.0.0.
+ *
+ * Copyright (C) 2011-2012 Hakim El Hattab, http://hakim.se
+ */
+
+@use "fonts/lato";
+@use "helper/helper";
+@use "highlight/dark";
+
+@include helper.theme(
+  "league",
+  (
+    viewport-color:
+      helper.circle-gradient(rgba(28, 30, 32, 1), rgba(85, 90, 95, 1)),
+    heading-text-shadow: 0 0 6px rgb(0 0 0 / 20%),
+    heading1-text-shadow: (
+      0 1px 0 #ccc,
+      0 2px 0 #c9c9c9,
+      0 3px 0 #bbb,
+      0 4px 0 #b9b9b9,
+      0 5px 0 #aaa,
+      0 6px 1px rgb(0 0 0 / 10%),
+      0 0 5px rgb(0 0 0 / 10%),
+      0 1px 3px rgb(0 0 0 / 30%),
+      0 3px 5px rgb(0 0 0 / 20%),
+      0 5px 10px rgb(0 0 0 / 25%),
+      0 20px 20px rgb(0 0 0 / 15%),
+    ),
+  )
+) {
+  @include dark.highlight;
+  @include helper.lightmode-text-color(#222);
+}

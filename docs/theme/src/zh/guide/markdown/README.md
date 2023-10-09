@@ -52,7 +52,7 @@ dir:
 
 - [代码演示](demo.md)
 
-- [幻灯片](presentation.md)
+- [幻灯片](revealjs.md)
 
 - [样式化](stylize.md)
 

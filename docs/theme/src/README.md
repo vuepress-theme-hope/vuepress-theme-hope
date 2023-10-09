@@ -144,8 +144,8 @@ highlights:
 
       - title: Presentation Support
         icon: person-chalkboard
-        details: You can insert presentation in Markdown files directly
-        link: ./guide/markdown/presentation/
+        details: Insert presentation in Markdown files via Reveal.js
+        link: ./guide/markdown/revealjs/
 
   - header: Improved layouts
     description: An awesome responsive layout with full a11y support.

@@ -40,7 +40,7 @@ export default defineUserConfig({
         "/demo/mark",
         "/demo/mermaid",
         "/demo/playground",
-        "/demo/presentation",
+        "/demo/revealjs",
         "/demo/slide-page",
         "/demo/stylized",
         "/demo/sup-sub",
@@ -86,7 +86,23 @@ export default defineUserConfig({
       mathjax: {
         output: "chtml",
       },
-      presentation: ["highlight", "math", "search", "notes", "zoom"],
+      revealjs: {
+        plugins: ["highlight", "math", "search", "notes", "zoom"],
+        themes: [
+          "auto",
+          "beige",
+          "black",
+          "blood",
+          "league",
+          "moon",
+          "night",
+          "serif",
+          "simple",
+          "sky",
+          "solarized",
+          "white",
+        ],
+      },
       stylize: [
         {
           matcher: "Recommended",

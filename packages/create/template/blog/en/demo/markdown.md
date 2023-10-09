@@ -418,6 +418,6 @@ $$
 
 @slideend
 
-- [View Detail](https://theme-hope.vuejs.press/guide/markdown/presentation.html)
+- [View Detail](https://theme-hope.vuejs.press/guide/markdown/revealjs.html)
 
 [md-enhance]: https://md-enhance.vuejs.press/
