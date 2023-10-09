@@ -14,7 +14,7 @@
       srcLang: 'en',
     },
     {
-      src: '//fr.vtt',
+      src: '/fr.vtt',
       kind: 'subtitles',
       label: 'French',
       srcLang: 'fr',

@@ -16,7 +16,7 @@ A video player with poster and tracks:
 
 <VidStack
   src="https://upload.wikimedia.org/wikipedia/commons/transcoded/f/f1/Sintel_movie_4K.webm/Sintel_movie_4K.webm.1080p.vp9.webm"
-  title="VidStack video"
+  title="VidStack Video Demo"
   poster="/poster.svg"
   :tracks="[
     {
@@ -27,7 +27,7 @@ A video player with poster and tracks:
       srcLang: 'en',
     },
     {
-      src: '//fr.vtt',
+      src: '/fr.vtt',
       kind: 'subtitles',
       label: 'French',
       srcLang: 'fr',
@@ -43,5 +43,5 @@ HLS:
 
 <VidStack
   src="/sample.mp3"
-  title="A Sample Audio"
+  title="VidStack Audio Demo"
 />
