@@ -101,20 +101,20 @@ export const mdEnhancePlugin =
       config: options.locales,
     });
 
-    const chartEnable = getStatus("chart");
-    const echartsEnable = getStatus("echarts");
-    const flowchartEnable = getStatus("flowchart");
-    const footnoteEnable = getStatus("footnote", true);
-    const imgMarkEnable = getStatus("imgMark", true);
-    const includeEnable = getStatus("include");
-    const tasklistEnable = getStatus("tasklist", true);
-    const mermaidEnable = getStatus("mermaid");
+    const enableChart = getStatus("chart");
+    const enableEcharts = getStatus("echarts");
+    const enableFlowchart = getStatus("flowchart");
+    const enableFootnote = getStatus("footnote", true);
+    const enableImgMark = getStatus("imgMark", true);
+    const enableInclude = getStatus("include");
+    const enableTasklist = getStatus("tasklist", true);
+    const enableMermaid = getStatus("mermaid");
     const enableRevealJs = getStatus("revealjs");
-    const katexEnable = getStatus("katex");
-    const mathjaxEnable = getStatus("mathjax", true);
-    const vuePlaygroundEnable = getStatus("vuePlayground");
+    const enableKatex = getStatus("katex");
+    const enableMathjax = getStatus("mathjax", true);
+    const enableVuePlayground = getStatus("vuePlayground");
 
-    const { enabled: linksCheckEnabled, isIgnoreLink } = getLinksCheckStatus(
+    const { enabled: enableLinksCheck, isIgnoreLink } = getLinksCheckStatus(
       app,
       options,
     );
@@ -195,14 +195,14 @@ export const mdEnhancePlugin =
           "vuepress-shared",
         ]);
 
-        if (katexEnable && katexOptions.output !== "html") {
+        if (enableKatex && katexOptions.output !== "html") {
           addCustomElement(bundlerOptions, app, MATHML_TAGS);
-        } else if (mathjaxEnable) {
+        } else if (enableMathjax) {
           addCustomElement(bundlerOptions, app, /^mjx-/);
           if (mathjaxInstance?.documentOptions.enableAssistiveMml)
             addCustomElement(bundlerOptions, app, MATHML_TAGS);
         }
-        if (chartEnable) {
+        if (enableChart) {
           addViteOptimizeDepsExclude(
             bundlerOptions,
             app,
@@ -211,17 +211,17 @@ export const mdEnhancePlugin =
           addViteSsrExternal(bundlerOptions, app, "chart.js");
         }
 
-        if (echartsEnable) {
+        if (enableEcharts) {
           addViteOptimizeDepsExclude(bundlerOptions, app, "echarts");
           addViteSsrExternal(bundlerOptions, app, "echarts");
         }
 
-        if (flowchartEnable) {
+        if (enableFlowchart) {
           addViteOptimizeDepsExclude(bundlerOptions, app, "flowchart.ts");
           addViteSsrExternal(bundlerOptions, app, "flowchart.ts");
         }
 
-        if (mermaidEnable) {
+        if (enableMermaid) {
           addViteOptimizeDepsInclude(bundlerOptions, app, "mermaid");
           addViteSsrExternal(bundlerOptions, app, "mermaid");
         }
@@ -238,7 +238,7 @@ export const mdEnhancePlugin =
           addViteSsrExternal(bundlerOptions, app, "reveal.js");
         }
 
-        if (vuePlaygroundEnable) {
+        if (enableVuePlayground) {
           addViteOptimizeDepsInclude(bundlerOptions, app, "@vue/repl");
           addViteSsrExternal(bundlerOptions, app, "@vue/repl");
 
@@ -259,7 +259,7 @@ export const mdEnhancePlugin =
         if (getStatus("container")) md.use(hint, locales);
         if (getStatus("imgLazyload")) md.use(imgLazyload);
         if (getStatus("figure")) md.use(figure);
-        if (imgMarkEnable)
+        if (enableImgMark)
           md.use(
             imgMark,
             isPlainObject(options.imgMark) ? options.imgMark : {},
@@ -270,9 +270,9 @@ export const mdEnhancePlugin =
         if (getStatus("obsidianImgSize")) md.use(obsidianImageSize);
         if (getStatus("sup")) md.use(sup);
         if (getStatus("sub")) md.use(sub);
-        if (footnoteEnable) md.use(footnote);
+        if (enableFootnote) md.use(footnote);
         if (getStatus("mark")) md.use(mark);
-        if (tasklistEnable)
+        if (enableTasklist)
           md.use(tasklist, [
             isPlainObject(options.tasklist) ? options.tasklist : {},
           ]);
@@ -284,9 +284,9 @@ export const mdEnhancePlugin =
           legacy
         )
           md.use(vPre);
-        if (katexEnable) {
+        if (enableKatex) {
           md.use(katex, katexOptions);
-        } else if (mathjaxEnable) {
+        } else if (enableMathjax) {
           md.use(mathjax, mathjaxInstance!);
           // reset after each render
           md.use((md) => {
@@ -302,7 +302,7 @@ export const mdEnhancePlugin =
           });
         }
 
-        if (includeEnable) {
+        if (enableInclude) {
           md.use(include, {
             currentPath: (env: MarkdownEnv) => env.filePath,
             ...(isPlainObject(options.include) ? options.include : {}),
@@ -328,13 +328,13 @@ export const mdEnhancePlugin =
           if (legacy) md.use(legacyCodeGroup);
         }
         if (getStatus("tabs")) md.use(tabs);
-        if (flowchartEnable) {
+        if (enableFlowchart) {
           md.use(flowchart);
           // TODO: Remove this in v2 stable
           if (legacy) md.use(legacyFlowchart);
         }
-        if (chartEnable) md.use(chart);
-        if (echartsEnable) md.use(echarts);
+        if (enableChart) md.use(chart);
+        if (enableEcharts) md.use(echarts);
         if (getStatus("demo")) {
           md.use(normalDemo);
           md.use(vueDemo);
@@ -342,7 +342,7 @@ export const mdEnhancePlugin =
           // TODO: Remove this in v2 stable
           if (legacy) md.use(legacyCodeDemo);
         }
-        if (mermaidEnable) md.use(mermaid);
+        if (enableMermaid) md.use(mermaid);
         if (enableRevealJs) md.use(revealJs);
         if (isPlainObject(options.playground)) {
           const { presets = [], config = {} } = options.playground;
@@ -357,25 +357,25 @@ export const mdEnhancePlugin =
             else if (isPlainObject(preset)) md.use(playground, preset);
           });
         }
-        if (vuePlaygroundEnable) md.use(vuePlayground);
+        if (enableVuePlayground) md.use(vuePlayground);
       },
 
       extendsPage: (page, app): void => {
-        if (linksCheckEnabled && isAppInitialized)
+        if (enableLinksCheck && isAppInitialized)
           linksCheck(page, app, isIgnoreLink);
-        if (includeEnable)
+        if (enableInclude)
           page.deps.push(...(<string[]>page.markdownEnv["includedFiles"]));
       },
 
       onInitialized: (app): void => {
         isAppInitialized = true;
-        if (linksCheckEnabled)
+        if (enableLinksCheck)
           app.pages.forEach((page) => linksCheck(page, app, isIgnoreLink));
       },
 
       onPrepared: (app): Promise<void> =>
         Promise.all([
-          ...(mathjaxEnable
+          ...(enableMathjax
             ? [prepareMathjaxStyleFile(app, mathjaxInstance!)]
             : []),
           ...(enableRevealJs
