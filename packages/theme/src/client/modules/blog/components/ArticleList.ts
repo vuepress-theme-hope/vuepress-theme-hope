@@ -82,16 +82,13 @@ export default defineComponent({
 
         setTimeout(() => {
           window.scrollTo(0, distance);
+
+          if (SUPPORT_PAGEVIEW)
+            void import(
+              /* webpackChunkName: "pageview" */ "vuepress-plugin-comment2/pageview"
+            ).then(({ updatePageview }) => updatePageview());
         }, 100);
       });
-
-      // FIXME: Workaround for https://github.com/vuepress/vuepress-next/issues/1249
-      watch(
-        () => route.query,
-        ({ page }) => {
-          void updatePage(page ? Number(page) : 1);
-        },
-      );
     });
 
     return (): VNode =>
