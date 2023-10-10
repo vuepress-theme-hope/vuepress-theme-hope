@@ -82,9 +82,27 @@ icon: gears
 
 自定义的过滤函数，用于过滤哪些项目在 feed 中显示。
 
-## sort
+## sorter
 
 - 类型: `(pageA: Page, pageB: Page)=> number`
+
+- 默认值:
+
+  ```ts
+  // compareDate 来源于 "vuepress-shared" 包
+  (
+    pageA: Page<{ git?: GitData }, Record<string, never>>,
+    pageB: Page<{ git?: GitData }, Record<string, never>>,
+  ): number =>
+    compareDate(
+      pageA.data.git?.createdTime
+        ? new Date(pageA.data.git?.createdTime)
+        : pageA.frontmatter.date,
+      pageB.data.git?.createdTime
+        ? new Date(pageB.data.git?.createdTime)
+        : pageB.frontmatter.date,
+    );
+  ```
 
 自定义排序函数，用于对站点中的页面进行排序。
 

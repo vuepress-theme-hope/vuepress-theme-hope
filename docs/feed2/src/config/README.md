@@ -82,9 +82,27 @@ By default, all unknown tags will be removed.
 
 A custom filter function, used to filter feed items.
 
-## sort
+## sorter
 
 - Type: `(pageA: Page, pageB: Page)=> number`
+
+- Default:
+
+  ```ts
+  // compareDate is from "vuepress-shared" package
+  (
+    pageA: Page<{ git?: GitData }, Record<string, never>>,
+    pageB: Page<{ git?: GitData }, Record<string, never>>,
+  ): number =>
+    compareDate(
+      pageA.data.git?.createdTime
+        ? new Date(pageA.data.git?.createdTime)
+        : pageA.frontmatter.date,
+      pageB.data.git?.createdTime
+        ? new Date(pageB.data.git?.createdTime)
+        : pageB.frontmatter.date,
+    );
+  ```
 
 A custom sort function, used to sort feed items.
 
