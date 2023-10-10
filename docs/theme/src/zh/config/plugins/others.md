@@ -25,7 +25,7 @@ tag:
 - `"Replit"`
 - `"Share"`
 - `"StackBlitz"`
-<!-- - `"VidStack"` -->
+- `"VidStack"`
 - `"SiteInfo"`
 - `"VideoPlayer"`
 - `"XiGua"`

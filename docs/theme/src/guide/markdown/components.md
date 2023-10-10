@@ -23,7 +23,7 @@ Available components:
 - Share
 - StackBlitz
 - SiteInfo
-<!-- - VidStack -->
+- VidStack
 - VideoPlayer
 - XiGua
 - YouTube
@@ -59,7 +59,7 @@ export default defineUserConfig({
           "Share",
           "SiteInfo",
           "StackBlitz",
-          // "VidStack",
+          "VidStack",
           "VideoPlayer",
           "XiGua",
           "YouTube",
@@ -92,7 +92,7 @@ export default {
           "Share",
           "SiteInfo",
           "StackBlitz",
-          // "VidStack",
+          "VidStack",
           "VideoPlayer",
           "XiGua",
           "YouTube",
@@ -537,7 +537,6 @@ A StackBlitz project with custom settings:
 
 See <ProjectLink name="components" path="/guide/stackblitz.html">StackBlitz</ProjectLink> page for available props.
 
-<!--
 ## VidStack
 
 A video player:
@@ -548,7 +547,7 @@ A video player with poster and tracks:
 
 <VidStack
   src="https://upload.wikimedia.org/wikipedia/commons/transcoded/f/f1/Sintel_movie_4K.webm/Sintel_movie_4K.webm.1080p.vp9.webm"
-  title="VidStack video"
+  title="VidStack Video Demo"
   poster="/poster.svg"
   :tracks="[
     {
@@ -569,10 +568,7 @@ A video player with poster and tracks:
 
 An audio player:
 
-<VidStack
-  src="/sample.mp3"
-  title="A Sample Audio"
-/>
+<VidStack src="/sample.mp3" title="VidStack Audio Demo" />
 
 ::: details Code
 
@@ -587,7 +583,7 @@ A video player with poster and tracks:
 ```md
 <VidStack
   src="https://upload.wikimedia.org/wikipedia/commons/transcoded/f/f1/Sintel_movie_4K.webm/Sintel_movie_4K.webm.1080p.vp9.webm"
-  title="VidStack video"
+  title="VidStack Video Demo"
   poster="/poster.svg"
   :tracks="[
     {
@@ -610,15 +606,12 @@ A video player with poster and tracks:
 An audio player:
 
 ```md
-<VidStack
-  src="/sample.mp3"
-  title="A Sample Audio"
-/>
+<VidStack src="/sample.mp3" title="VidStack Audio Demo" />
 ```
 
 :::
 
-See <ProjectLink name="components" path="/guide/vidstack.html">VidStack</ProjectLink> page for available props. -->
+See <ProjectLink name="components" path="/guide/vidstack.html">VidStack</ProjectLink> page for available props.
 
 ## VideoPlayer
 

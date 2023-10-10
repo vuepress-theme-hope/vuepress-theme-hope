@@ -26,7 +26,7 @@ Available component which can be used in markdown files are:
 - `"Share"`
 - `"StackBlitz"`
 - `"SiteInfo"`
-<!-- - `"VidStack"` -->
+- `"VidStack"`
 - `"VideoPlayer"`
 - `"XiGua"`
 - `"YouTube"`

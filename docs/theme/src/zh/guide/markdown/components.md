@@ -59,7 +59,7 @@ export default defineUserConfig({
           "Share",
           "SiteInfo",
           "StackBlitz",
-          // "VidStack",
+          "VidStack",
           "VideoPlayer",
           "XiGua",
           "YouTube",
@@ -92,7 +92,7 @@ export default {
           "Share",
           "SiteInfo",
           "StackBlitz",
-          // "VidStack",
+          "VidStack",
           "VideoPlayer",
           "XiGua",
           "YouTube",
@@ -531,7 +531,6 @@ PDF 浏览器组件。
 
 有关可用属性，请参阅 <ProjectLink name="components" path="/zh/guide/stackblitz.html">StackBlitz</ProjectLink> 页面。
 
-<!--
 ## VidStack
 
 视频播放器:
@@ -542,7 +541,7 @@ PDF 浏览器组件。
 
 <VidStack
   src="https://upload.wikimedia.org/wikipedia/commons/transcoded/f/f1/Sintel_movie_4K.webm/Sintel_movie_4K.webm.1080p.vp9.webm"
-  title="VidStack video"
+  title="VidStack 示例视频"
   poster="/poster.svg"
   :tracks="[
     {
@@ -563,10 +562,7 @@ PDF 浏览器组件。
 
 一个音频播放器:
 
-<VidStack
-  src="/sample.mp3"
-  title="A Sample Audio"
-/>
+<VidStack src="/sample.mp3" title="VidStack 示例音频" />
 
 ::: details 代码
 
@@ -581,7 +577,7 @@ PDF 浏览器组件。
 ```md
 <VidStack
   src="https://upload.wikimedia.org/wikipedia/commons/transcoded/f/f1/Sintel_movie_4K.webm/Sintel_movie_4K.webm.1080p.vp9.webm"
-  title="VidStack video"
+  title="VidStack 示例视频"
   poster="/poster.svg"
   :tracks="[
     {
@@ -604,15 +600,12 @@ PDF 浏览器组件。
 一个音频播放器:
 
 ```md
-<VidStack
-  src="/sample.mp3"
-  title="A Sample Audio"
-/>
+<VidStack src="/sample.mp3" title="VidStack 示例音频" />
 ```
 
 :::
 
-有关可用属性，请参阅 <ProjectLink name="components" path="/zh/guide/vidstack.html">VidStack</ProjectLink> 页面。 -->
+有关可用属性，请参阅 <ProjectLink name="components" path="/zh/guide/vidstack.html">VidStack</ProjectLink> 页面。
 
 ## VideoPlayer
 

@@ -60,7 +60,7 @@ export default defineUserConfig({
         "Share",
         "SiteInfo",
         "StackBlitz",
-        // "VidStack",
+        "VidStack",
         "VideoPlayer",
         "XiGua",
         "YouTube",
