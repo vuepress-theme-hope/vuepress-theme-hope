@@ -86,7 +86,7 @@
     "@vuepress/utils": "2.0.0-beta.67",
     "@vueuse/core": "^10.5.0",
     "balloon-css": "^1.2.0",
-    "bcrypt-ts": "^4.0.0",
+    "bcrypt-ts": "^4.0.1",
     "cheerio": "1.0.0-rc.12",
     "chokidar": "^3.5.3",
     "gray-matter": "^4.0.3",
