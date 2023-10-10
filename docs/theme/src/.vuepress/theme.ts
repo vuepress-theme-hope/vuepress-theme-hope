@@ -126,7 +126,7 @@ export default theme("theme", {
       imgMark: true,
       imgSize: true,
       include: {
-        resolvePath: (file, cwd) => {
+        resolvePath: (file) => {
           if (file.startsWith("@echarts"))
             return file.replace(
               "@echarts",
