@@ -7,7 +7,7 @@ describe("card", () => {
   const markdownIt = MarkdownIt({ linkify: true }).use(card);
 
   it("Should resolve card fence", () => {
-    const result = markdownIt.render(
+    const result1 = markdownIt.render(
       `
 \`\`\`card
 title: A card
@@ -20,48 +20,7 @@ color: "#000"
       {},
     );
 
-    expect(result).toContain("VPCard");
-    expect(result).toMatchSnapshot();
-  });
-
-  it("Should resolve card:yaml fence", () => {
-    const result = markdownIt.render(
-      `
-\`\`\`card:yaml
-title: A card
-desc: A card desc
-logo: https://example.com/logo.png
-link: https://example.com
-color: "#000"
-\`\`\`
-`,
-      {},
-    );
-
-    expect(result).toContain("VPCard");
-    expect(result).toMatchSnapshot();
-  });
-
-  it("Should resolve card:yml fence", () => {
-    const result = markdownIt.render(
-      `
-\`\`\`card:yml
-title: A card
-desc: A card desc
-logo: https://example.com/logo.png
-link: https://example.com
-color: "#000"
-\`\`\`
-`,
-      {},
-    );
-
-    expect(result).toContain("VPCard");
-    expect(result).toMatchSnapshot();
-  });
-
-  it("Should resolve card:json fence", () => {
-    const result = markdownIt.render(
+    const result2 = markdownIt.render(
       `
 \`\`\`card:json
 {
@@ -76,14 +35,16 @@ color: "#000"
       {},
     );
 
-    expect(result).toContain("VPCard");
-    expect(result).toMatchSnapshot();
+    expect(result1).toContain("VPCard");
+    expect(result1).toMatchSnapshot();
+    expect(result2).toContain("VPCard");
+    expect(result2).toMatchSnapshot();
   });
 
   it("Should drop unknown keys", () => {
     const result = markdownIt.render(
       `
-\`\`\`card:json
+\`\`\`card
 {
   "title": "A card",
   "desc": "A card desc",
@@ -106,7 +67,7 @@ color: "#000"
   it("Should drop invalid keys", () => {
     const result = markdownIt.render(
       `
-\`\`\`card:json
+\`\`\`card
 {
   "title": "A card",
   "desc": "A card desc",
@@ -135,7 +96,7 @@ title: b
 
     const result2 = markdownIt.render(
       `
-\`\`\`card:json
+\`\`\`card
 title: a
 title: b
 \`\`\`

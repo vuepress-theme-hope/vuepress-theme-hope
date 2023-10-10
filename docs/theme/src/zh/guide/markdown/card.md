@@ -55,18 +55,14 @@ export default {
 
 ## 使用
 
-你可以使用卡片代码块来在 Markdown 中添加卡片。
+你可以使用卡片代码块来在 Markdown 中添加卡片。YAML 和 JSON 的卡片数据格式均受支持:
 
 ````md
 ```card
 # 卡片数据
 ```
-````
 
-默认情况下，你应该使用 YAML 格式来编写卡片数据，但你也可以通过在代码块后添加 `:json` 后缀来使用 JSON 格式。
-
-````md
-```card:json
+```card
 {
   // 卡片数据
 }
@@ -105,7 +101,7 @@ link: https://mister-hope.com
 color: rgba(253, 230, 138, 0.15)
 ```
 
-```card:json
+```card
 {
   "title": "Mr.Hope",
   "desc": "Where there is light, there is hope",
@@ -126,7 +122,7 @@ link: https://mister-hope.com
 color: rgba(253, 230, 138, 0.15)
 ```
 
-```card:json
+```card
 {
   "title": "Mr.Hope",
   "desc": "Where there is light, there is hope",

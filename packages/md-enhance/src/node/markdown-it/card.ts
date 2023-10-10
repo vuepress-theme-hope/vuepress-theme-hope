@@ -42,30 +42,23 @@ const cardRender = (
   { filePathRelative }: MarkdownEnv,
 ): string => {
   const token = tokens[index];
-  const { content, info } = token;
+  const { content } = token;
 
-  const language = info.trim().split(":", 2)[1] || "yml";
   let config: unknown = null;
 
-  if (language === "yaml" || language === "yml")
-    try {
-      config = load(content);
-    } catch (err) {
-      logger.error(`Parsing card YAML config failed:`, err);
-    }
-  else if (language === "json")
+  if (content.trim().startsWith("{"))
     try {
       config = <unknown>JSON.parse(content);
     } catch (err) {
       // do nothing
-      logger.error(`Parsing card JSON config failed:`, err);
+      logger.error(`Parsing card as JSON config failed:`, err);
     }
   else
-    logger.error(
-      `Can not parse card config ${language}${
-        filePathRelative ? `, found in ${filePathRelative}` : ""
-      }.`,
-    );
+    try {
+      config = load(content);
+    } catch (err) {
+      logger.error(`Parsing card as YAML config failed:`, err);
+    }
 
   const cardData = checkCardProps(config);
 
@@ -99,10 +92,19 @@ export const card: PluginSimple = (md) => {
     // eslint-disable-next-line @typescript-eslint/no-unsafe-assignment
     const [tokens, index, options, env] = args;
     const { info } = tokens[index];
+
+    if (info === "card")
+      return cardRender(tokens, index, options, <MarkdownEnv>env);
+
     const realInfo = info.split(":", 2)[0];
 
-    if (realInfo === "card")
+    if (realInfo === "card") {
+      logger.warn(
+        "Language declaration for card is deprecated, please remove them.",
+      );
+
       return cardRender(tokens, index, options, <MarkdownEnv>env);
+    }
 
     return fence!(...args);
   };
