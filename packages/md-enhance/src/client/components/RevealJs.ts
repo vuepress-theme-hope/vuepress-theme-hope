@@ -16,8 +16,9 @@ import { useRevealJs } from "@temp/md-enhance/revealjs-plugins.js";
 
 import { useRevealJsConfig } from "../helpers/index.js";
 
-import "../styles/revealjs/theme/fonts/league-gothic/league-gothic.css";
 import "../styles/revealjs/index.scss";
+import "../styles/revealjs/theme/fonts/league-gothic/league-gothic.css";
+import "../styles/revealjs/theme/fonts/source-sans-pro/source-sans-pro.css";
 
 declare const MARKDOWN_ENHANCE_DELAY: number;
 
