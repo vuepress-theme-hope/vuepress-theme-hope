@@ -4,6 +4,32 @@ All notable changes to this project will be documented in this file. See [Conven
 
 <!-- #region recent-beta -->
 
+## [2.0.0-beta.238](https://github.com/vuepress-theme-hope/vuepress-theme-hope/compare/v2.0.0-beta.237...v2.0.0-beta.238) (2023-10-10)
+
+### ⚠ BREAKING CHANGES
+
+- **md-enhance:** `presentation` option is no longer supported, use `revealJs` instead
+
+### Features
+
+- **auto-catalog:** add hideHeading and indexType ([#3367](https://github.com/vuepress-theme-hope/vuepress-theme-hope/issues/3367)) ([998d1cc](https://github.com/vuepress-theme-hope/vuepress-theme-hope/commit/998d1cce174b35969e2337f709379eb741a0aa47))
+- **components:** support vidstack@v1 ([d3b1629](https://github.com/vuepress-theme-hope/vuepress-theme-hope/commit/d3b1629bb8592f8dfae939a98576147e526b7198))
+- **md-enhance:** rebuild presentation to revealJs ([539b39f](https://github.com/vuepress-theme-hope/vuepress-theme-hope/commit/539b39fa05002d4e5c24738999135a3e13b23b50))
+- **md-enhance:** support new mermaid diagrams ([505a1cb](https://github.com/vuepress-theme-hope/vuepress-theme-hope/commit/505a1cb009b2329e378912b372d7fc9797e560b1))
+- **shared:** add getRealPath utils ([2386fee](https://github.com/vuepress-theme-hope/vuepress-theme-hope/commit/2386feeca297c8aeb167d47c2b02d4030a162c01))
+
+### Bug Fixes
+
+- **components:** fix pdf component ([0af92a4](https://github.com/vuepress-theme-hope/vuepress-theme-hope/commit/0af92a43a4f28a0bfde4dfac899de5d1da8aec2e))
+- **deps:** update dependency @types/three to v0.157.0 ([#3485](https://github.com/vuepress-theme-hope/vuepress-theme-hope/issues/3485)) ([fc756d7](https://github.com/vuepress-theme-hope/vuepress-theme-hope/commit/fc756d7182af0d8750f52472e0e7ad9184222531))
+- **deps:** update dependency three to v0.156.1 ([#3400](https://github.com/vuepress-theme-hope/vuepress-theme-hope/issues/3400)) ([91b84fb](https://github.com/vuepress-theme-hope/vuepress-theme-hope/commit/91b84fbc59dade54ac05189a87fed28172a06855))
+- **feed2:** use compareDate utils ([1837738](https://github.com/vuepress-theme-hope/vuepress-theme-hope/commit/18377386a088134fefbe2a5729b16309f6b72af6))
+- **md-enhance:** fix er chart darkmode ([7b8ce62](https://github.com/vuepress-theme-hope/vuepress-theme-hope/commit/7b8ce620180b594b597ebbce7d8588061c9230f3))
+- **md-enhance:** fix webpack issue ([c00ac31](https://github.com/vuepress-theme-hope/vuepress-theme-hope/commit/c00ac312a1fba8267e8c7727a3fabedf0e5435eb))
+- **shared:** improve compareDate ([fd9494b](https://github.com/vuepress-theme-hope/vuepress-theme-hope/commit/fd9494b47836bf9dfa7cacfcea585617625e2cb2))
+- **theme:** remove workaround ([eba8720](https://github.com/vuepress-theme-hope/vuepress-theme-hope/commit/eba872022688890656264fab720de14a0108fe51))
+- **theme:** split pageview chunk ([a9bc830](https://github.com/vuepress-theme-hope/vuepress-theme-hope/commit/a9bc830c327c1e02a4659edb08e0a7f87c989928))
+
 ## [2.0.0-beta.237](https://github.com/vuepress-theme-hope/vuepress-theme-hope/compare/v2.0.0-beta.236...v2.0.0-beta.237) (2023-09-05)
 
 ### Bug Fixes
