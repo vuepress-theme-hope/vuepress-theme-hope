@@ -32,6 +32,12 @@ docs:
     repo: https://github.com/listr2/listr2
     preview: /assets/image/plusar.jpg
 
+  - name: ZLMediaKit
+    desc: An high-performance, enterprise-level streaming media service framework based on C++11.
+    url: https://docs.zlmediakit.com/
+    repo: https://github.com/ZLMediaKit/docs
+    preview: /assets/image/zlmediakit.jpg
+
   - name: abapGit
     desc: A git client for ABAP developed in ABAP
     logo: https://docs.abapgit.org/logo-dark.svg
