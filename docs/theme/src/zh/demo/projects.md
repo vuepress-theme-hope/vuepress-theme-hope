@@ -218,7 +218,7 @@ docs:
     logo: https://aydk-xcc.github.io/monaco-editor-docs/logo.png
     url: https://aydk-xcc.github.io/monaco-editor-docs/
     repo: https://github.com/aydk-xcc/monaco-editor-docs
-    preview: /assets/image/monaco-editor.jpg
+    preview: https://javaxiaobear-1301481032.cos.ap-guangzhou.myqcloud.com/picture-bed/javaxiaobear.png
 
 blog:
   - name: Mr.Hope's Blog
