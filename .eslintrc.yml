@@ -41,6 +41,7 @@ ignorePatterns:
   - "packages/*/assets/**"
   - "packages/*/lib/**"
   - "packages/create/template/**"
+  - "tools/*/lib/**"
   - "!**/.vuepress/**"
   - "**/.vuepress/.cache/**"
   - "**/.vuepress/.temp/**"
