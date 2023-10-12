@@ -22,7 +22,8 @@
     { "path": "./packages/seo2/tsconfig.build.json" },
     { "path": "./packages/shared/tsconfig.build.json" },
     { "path": "./packages/sitemap2/tsconfig.build.json" },
-    { "path": "./packages/theme/tsconfig.build.json" }
+    { "path": "./packages/theme/tsconfig.build.json" },
+    { "path": "./tools/vscode-extension/tsconfig.build.json" }
   ],
   "files": []
 }

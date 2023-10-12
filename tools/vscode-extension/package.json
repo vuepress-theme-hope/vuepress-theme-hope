@@ -1,0 +1,42 @@
+{
+  "name": "vuepress-enhance-preview",
+  "version": "0.0.1",
+  "description": "Adding vuepress-plugin-md-enhance preview support to markdown",
+  "private": true,
+  "license": "MIT",
+  "scripts": {
+    "build": "rollup -c rollup.config.ts --configPlugin esbuild",
+    "dev": "pnpm dev:ts",
+    "dev:ts": "tsc -b tsconfig.build.json --watch",
+    "vscode:prepublish": "webpack --mode production"
+  },
+  "devDependencies": {
+    "@mdit/plugin-align": "^0.4.8",
+    "@mdit/plugin-attrs": "^0.4.8",
+    "@mdit/plugin-container": "^0.4.8",
+    "@mdit/plugin-figure": "^0.4.8",
+    "@types/markdown-it": "13.0.2",
+    "@types/vscode": "1.83.0",
+    "@types/vscode-notebook-renderer": "1.72.1",
+    "@vuepress/markdown": "2.0.0-beta.67"
+  },
+  "engines": {
+    "vscode": "^1.73.0"
+  },
+  "displayName": "notebook-extend-markdown-renderer-sample",
+  "categories": [
+    "Other"
+  ],
+  "contributes": {
+    "notebookRenderer": [
+      {
+        "id": "vuepress.markdown-it.md-enhance-preview",
+        "displayName": "Markdown Enhance Renderer",
+        "entrypoint": {
+          "extends": "vscode.markdown-it-renderer",
+          "path": "./lib/node/index.js"
+        }
+      }
+    ]
+  }
+}

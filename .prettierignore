@@ -16,6 +16,7 @@ coverage/
 # Build files
 docs-shared/lib/
 packages/*/lib/
+tools/*/lib/
 
 # pnpm lock file
 pnpm-lock.yaml

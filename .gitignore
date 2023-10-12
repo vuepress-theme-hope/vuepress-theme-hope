@@ -4,6 +4,7 @@
 # Build files
 docs-shared/lib/
 packages/*/lib/
+tools/*/lib/
 
 # Vuepress Cache
 **/.vuepress/.cache/**

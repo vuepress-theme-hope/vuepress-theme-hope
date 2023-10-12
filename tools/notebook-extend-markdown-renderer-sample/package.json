@@ -1,0 +1,46 @@
+{
+  "name": "notebook-extend-markdown-renderer-sample",
+  "displayName": "notebook-extend-markdown-renderer-sample",
+  "description": "Example of a Notebook renderer that extends VS Code's built-in notebook markdown rendering with :emoji: support.",
+  "version": "0.0.1",
+  "private": true,
+  "license": "MIT",
+  "engines": {
+    "vscode": "^1.69.0"
+  },
+  "categories": [
+    "Other"
+  ],
+  "contributes": {
+    "notebookRenderer": [
+      {
+        "id": "vscode-samples.markdown-it.emoji-extension",
+        "displayName": "Markdown it Emoji renderer",
+        "entrypoint": {
+          "extends": "vscode.markdown-it-renderer",
+          "path": "./lib/emoji.js"
+        }
+      }
+    ]
+  },
+  "scripts": {
+    "vscode:prepublish": "webpack --mode production",
+    "webpack": "webpack --mode development",
+    "webpack-dev": "webpack --mode development --watch",
+    "test-compile": "tsc -p ./",
+    "lint": "eslint src --ext .ts"
+  },
+  "devDependencies": {
+    "@types/markdown-it": "^13.0.2",
+    "@types/vscode-notebook-renderer": "^1.72.1",
+    "@types/webpack-env": "^1.18.2",
+    "@typescript-eslint/eslint-plugin": "^6.7.5",
+    "@typescript-eslint/parser": "^6.7.5",
+    "eslint": "^8.51.0",
+    "markdown-it-emoji": "^2.0.2",
+    "ts-loader": "^9.5.0",
+    "typescript": "^5.2.2",
+    "webpack": "^5.88.2",
+    "webpack-cli": "^5.1.4"
+  }
+}

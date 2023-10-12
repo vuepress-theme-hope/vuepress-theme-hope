@@ -10,6 +10,29 @@
       "args": ["run", "${relativeFile}"],
       "smartStep": true,
       "console": "integratedTerminal"
+    },
+    {
+      "type": "extensionHost",
+      "request": "launch",
+      "name": "Launch Extension",
+      "runtimeExecutable": "${execPath}",
+      "args": [
+        "--extensionDevelopmentPath=${workspaceFolder}/tools/vscode-extension",
+        "--folder-uri=${workspaceFolder}/tools/vscode-extension/sample/",
+        "${workspaceFolder}/tools/vscode-extension/sample/README.md"
+      ]
+    },
+    {
+      "type": "extensionHost",
+      "request": "launch",
+      "name": "Launch Test Extension",
+      "runtimeExecutable": "${execPath}",
+      "args": [
+        "--extensionDevelopmentPath=${workspaceFolder}/tools/notebook-extend-markdown-renderer-sample",
+        "--folder-uri=${workspaceFolder}/tools/notebook-extend-markdown-renderer-sample/sample/",
+        "${workspaceFolder}/tools/notebook-extend-markdown-renderer-sample/sample/README.md"
+      ],
+      "outFiles": ["${workspaceFolder}/dist/**/*.js"]
     }
   ]
 }
