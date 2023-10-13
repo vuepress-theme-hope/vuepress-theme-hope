@@ -123,7 +123,7 @@ export default defineComponent({
       return aid && cid
         ? `${VIDEO_LINK}?aid=${aid}&cid=${cid}&t=${time}&autoplay=${
             autoplay ? 1 : 0
-          }&page=${page}`
+          }&p=${page}`
         : bvid
         ? `${VIDEO_LINK}?bvid=${bvid}&t=${time}&autoplay=${autoplay ? 1 : 0}`
         : null;
