@@ -235,6 +235,36 @@ export default defineComponent({
 
     const info = computed(() => getCatalogInfo());
 
+    function olList(values: CatalogInfo[]) {
+      return h(
+        "ol",
+        {},
+        values.map(({ children = [], path, title }) => [
+          h("li", {}, [h(VPLink, { to: path }, () => [title || path])]),
+          children.length
+            ? h(
+                "ol",
+                {},
+                children.map(({ children = [], path, title }) =>
+                  h("li", {}, [
+                    h(VPLink, { to: path }, () => [title || path]),
+                    children.length
+                      ? h(
+                          "ol",
+                          {},
+                          children.map(({ path, title }) =>
+                            h(VPLink, { to: path }, () => [title || path]),
+                          ),
+                        )
+                      : null,
+                  ]),
+                ),
+              )
+            : null,
+        ]),
+      );
+    }
+
     return (): VNode =>
       h("div", { class: "vp-catalog" }, [
         props.hideHeading
@@ -242,104 +272,110 @@ export default defineComponent({
           : h("h2", { class: "vp-catalog-main-title" }, locale.value.title),
 
         info.value.length
-          ? info.value.map(
-              ({ children = [], icon, path, title }, mainIndex) => [
-                h(
-                  "h3",
-                  {
-                    id: title,
-                    class: [
-                      "vp-catalog-child-title",
-                      { "has-children": children.length },
-                    ],
-                  },
-                  [
-                    h(
-                      "a",
-                      {
-                        href: `#${title}`,
-                        class: "header-anchor",
-                        "aria-hidden": true,
-                      },
-                      "#",
-                    ),
-                    h(VPLink, { class: "vp-catalog-title", to: path }, () => [
-                      props.index ? `${mainIndex + 1}.` : null,
-                      icon && iconComponent ? h(iconComponent, { icon }) : null,
-                      title || path,
-                    ]),
-                  ],
-                ),
-                children.length
-                  ? h(
-                      props.index && props.indexType === "ol" ? "ol" : "ul",
-                      { class: "vp-catalog-child-catalogs" },
-                      children.map(
-                        ({ children = [], icon, path, title }, index) =>
-                          h("li", { class: "vp-child-catalog" }, [
-                            h(
-                              "div",
-                              {
-                                class: [
-                                  "vp-catalog-sub-title",
-                                  { "has-children": children.length },
-                                ],
-                              },
-                              [
-                                h(
-                                  "a",
-                                  { href: `#${title}`, class: "header-anchor" },
-                                  "#",
-                                ),
-                                h(
-                                  VPLink,
-                                  { class: "vp-catalog-title", to: path },
-                                  () => [
-                                    props.index
-                                      ? `${mainIndex + 1}.${index + 1}`
-                                      : null,
-                                    icon && iconComponent
-                                      ? h(iconComponent, { icon })
-                                      : null,
-                                    title || path,
-                                  ],
-                                ),
-                              ],
-                            ),
-                            children.length
-                              ? h(
-                                  "div",
-                                  { class: "v-sub-catalogs" },
-                                  children.map(
-                                    ({ icon, path, title }, subIndex) =>
-                                      h(
-                                        VPLink,
-                                        {
-                                          class: "vp-sub-catalog",
-                                          to: path,
-                                        },
-                                        () => [
-                                          props.index &&
-                                          props.indexType !== "ol"
-                                            ? `${mainIndex + 1}.${index + 1}.${
-                                                subIndex + 1
-                                              }`
-                                            : null,
-                                          icon && iconComponent
-                                            ? h(iconComponent, { icon })
-                                            : null,
-                                          title || path,
-                                        ],
-                                      ),
-                                  ),
-                                )
-                              : null,
-                          ]),
+          ? props.index && props.indexType === "ol"
+            ? olList(info.value)
+            : info.value.map(
+                ({ children = [], icon, path, title }, mainIndex) => [
+                  h(
+                    "h3",
+                    {
+                      id: title,
+                      class: [
+                        "vp-catalog-child-title",
+                        { "has-children": children.length },
+                      ],
+                    },
+                    [
+                      h(
+                        "a",
+                        {
+                          href: `#${title}`,
+                          class: "header-anchor",
+                          "aria-hidden": true,
+                        },
+                        "#",
                       ),
-                    )
-                  : null,
-              ],
-            )
+                      h(VPLink, { class: "vp-catalog-title", to: path }, () => [
+                        props.index ? `${mainIndex + 1}.` : null,
+                        icon && iconComponent
+                          ? h(iconComponent, { icon })
+                          : null,
+                        title || path,
+                      ]),
+                    ],
+                  ),
+                  children.length
+                    ? h(
+                        "ul",
+                        { class: "vp-catalog-child-catalogs" },
+                        children.map(
+                          ({ children = [], icon, path, title }, index) =>
+                            h("li", { class: "vp-child-catalog" }, [
+                              h(
+                                "div",
+                                {
+                                  class: [
+                                    "vp-catalog-sub-title",
+                                    { "has-children": children.length },
+                                  ],
+                                },
+                                [
+                                  h(
+                                    "a",
+                                    {
+                                      href: `#${title}`,
+                                      class: "header-anchor",
+                                    },
+                                    "#",
+                                  ),
+                                  h(
+                                    VPLink,
+                                    { class: "vp-catalog-title", to: path },
+                                    () => [
+                                      props.index
+                                        ? `${mainIndex + 1}.${index + 1}`
+                                        : null,
+                                      icon && iconComponent
+                                        ? h(iconComponent, { icon })
+                                        : null,
+                                      title || path,
+                                    ],
+                                  ),
+                                ],
+                              ),
+                              children.length
+                                ? h(
+                                    "div",
+                                    { class: "v-sub-catalogs" },
+                                    children.map(
+                                      ({ icon, path, title }, subIndex) =>
+                                        h(
+                                          VPLink,
+                                          {
+                                            class: "vp-sub-catalog",
+                                            to: path,
+                                          },
+                                          () => [
+                                            props.index
+                                              ? `${mainIndex + 1}.${
+                                                  index + 1
+                                                }.${subIndex + 1}`
+                                              : null,
+                                            icon && iconComponent
+                                              ? h(iconComponent, { icon })
+                                              : null,
+                                            title || path,
+                                          ],
+                                        ),
+                                    ),
+                                  )
+                                : null,
+                            ]),
+                        ),
+                      )
+                    : null,
+                ],
+              )
           : h("p", { class: "vp-empty-catalog" }, locale.value.empty),
       ]);
   },
