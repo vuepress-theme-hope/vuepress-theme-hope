@@ -33,7 +33,7 @@ Available component which can be used in markdown files are:
 
 You can set `plugin.components.components` with an array of components you want, by default it will be `["Badge"]`.
 
-Also, you can set `plugin.components.rootComponents` to enable some root components, such as addThis and notice.
+Also, you can set `plugin.components.rootComponents` to enable some root components, such as Notice.
 
 ::: info
 

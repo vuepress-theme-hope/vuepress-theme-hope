@@ -1,7 +1,5 @@
 # Demo
 
-- AddThis (Root Components)
-
 - BackToTop (Root Components)
 
 - Notice (Root Components)

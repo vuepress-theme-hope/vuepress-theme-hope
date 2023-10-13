@@ -4,7 +4,6 @@ import {
   isArray,
   isNumber,
   isPlainObject,
-  isString,
 } from "vuepress-shared/node";
 
 import { getIconLinks, getNoticeOptions } from "./components/index.js";
@@ -60,13 +59,6 @@ if(!hasGlobalComponent("Catalog")) app.component("Catalog", Catalog);
 `;
     }
   });
-
-  if (isString(rootComponents.addThis)) {
-    shouldImportUseScriptTag = true;
-    setups.push(
-      `useScriptTag(\`https://s7.addthis.com/js/300/addthis_widget.js#pubid=${rootComponents.addThis}\`);`,
-    );
-  }
 
   if (rootComponents.backToTop) {
     const { threshold, progress } = isPlainObject(rootComponents.backToTop)

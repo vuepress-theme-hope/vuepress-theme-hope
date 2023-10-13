@@ -46,9 +46,7 @@ This plugin support 14 components:
 
 - [YouTube](youtube.md)
 
-And 3 root components:
-
-- [AddThis](addthis.md)
+And 2 root components:
 
 - [BackToTop](backtotop.md)
 
