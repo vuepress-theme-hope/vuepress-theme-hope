@@ -946,8 +946,8 @@ importers:
         specifier: workspace:*
         version: link:../../docs-shared
       flowchart.ts:
-        specifier: 1.0.0
-        version: 1.0.0
+        specifier: 1.0.1
+        version: 1.0.1
       katex:
         specifier: 0.16.9
         version: 0.16.9
@@ -1240,8 +1240,8 @@ importers:
         specifier: workspace:*
         version: link:../../docs-shared
       flowchart.ts:
-        specifier: 1.0.0
-        version: 1.0.0
+        specifier: 1.0.1
+        version: 1.0.1
       katex:
         specifier: 0.16.9
         version: 0.16.9
@@ -9397,6 +9397,14 @@ packages:
 
   /flowchart.ts@1.0.0:
     resolution: {integrity: sha512-U8FN9kg/U1xPdQ5xW3e/hZBSX7y/07zGESCrJ2mjlT8CLuhzPXHXRJrJ+VyFW0DEJLdj4O7MvJImg3sXeRGt1A==}
+    dependencies:
+      '@types/raphael': 2.3.5
+      raphael: 2.3.0
+      tslib: 2.6.2
+    dev: false
+
+  /flowchart.ts@1.0.1:
+    resolution: {integrity: sha512-J0Sqob1Kt2MO+lKUH48h2uCIsTfEahXflKiOgVuG48T6p6oosVgaCl6TvjqNjP4pW1w8FVF4L1DbqHCxoxj5mA==}
     dependencies:
       '@types/raphael': 2.3.5
       raphael: 2.3.0
