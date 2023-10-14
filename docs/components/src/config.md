@@ -129,15 +129,6 @@ Location to pdfjs viewer.
 
 Components to be mounted at root.
 
-### rootComponents.addThis
-
-- Type: `string | false`
-- Default: `false`
-- Details:
-  - [Guide → AddThis](./guide/addthis.md#usage)
-
-Public ID of addThis.
-
 ### rootComponents.backToTop
 
 - Type: `BackToTopOptions | boolean`

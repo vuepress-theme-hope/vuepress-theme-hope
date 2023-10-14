@@ -46,9 +46,7 @@ index: false
 
 - [YouTube](youtube.md)
 
-和三个根组件:
-
-- [AddThis](addthis.md)
+和两个根组件:
 
 - [BackToTop](backtotop.md)
 
