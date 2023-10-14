@@ -1424,8 +1424,8 @@ importers:
         specifier: ^1.2.0
         version: 1.2.0
       create-codepen:
-        specifier: 0.0.3
-        version: 0.0.3
+        specifier: 1.0.1
+        version: 1.0.1
       dashjs:
         specifier: ^4.7.2
         version: 4.7.2
@@ -7652,8 +7652,8 @@ packages:
       - supports-color
     dev: true
 
-  /create-codepen@0.0.3:
-    resolution: {integrity: sha512-Yr9qDyJEZ32V8rZn+R19zomU/0bjHixp11sB+IgnZ5bEb41XJ86iHT3IXTGdqHF2NVx6dsZ1R4DjpxXvA2/dXg==}
+  /create-codepen@1.0.1:
+    resolution: {integrity: sha512-XzSWwGCFNeOnNGp3KdCDGaKq4Cp1SvjzpPGQqO0tj1HT3BhksLdl/xQ2ZEY4+0MQ3m1I/K1Fvpm4GGMthtamyA==}
     dev: false
 
   /create-require@1.1.1:
