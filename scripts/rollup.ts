@@ -98,7 +98,7 @@ export const bundle = (
       esbuild({
         charset: "utf8",
         minify: isProduction,
-        target: "node16",
+        target: "node18",
       }),
       copyOptions.length
         ? copy({

@@ -44,7 +44,7 @@
     "dev:ts": "tsc -b tsconfig.build.json --watch"
   },
   "engines": {
-    "node": ">=16.19.0",
+    "node": ">=18.16.0",
     "npm": ">=8",
     "pnpm": ">=7"
   },

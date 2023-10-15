@@ -69,12 +69,12 @@
     "dev:ts": "tsc -b tsconfig.build.json --watch"
   },
   "engines": {
-    "node": ">=16.19.0",
+    "node": ">=18.16.0",
     "npm": ">=8",
     "pnpm": ">=7"
   },
   "dependencies": {
-    "@babel/core": "^7.23.0",
+    "@babel/core": "^7.23.2",
     "@mdit/plugin-align": "^0.4.8",
     "@mdit/plugin-attrs": "^0.4.8",
     "@mdit/plugin-container": "^0.4.8",
@@ -94,7 +94,7 @@
     "@mdit/plugin-tasklist": "^0.4.8",
     "@mdit/plugin-tex": "^0.4.8",
     "@mdit/plugin-uml": "^0.4.8",
-    "@types/js-yaml": "^4.0.6",
+    "@types/js-yaml": "^4.0.7",
     "@types/markdown-it": "^13.0.2",
     "@vue/repl": "^2.5.8",
     "@vuepress/client": "2.0.0-beta.67",
@@ -104,11 +104,11 @@
     "balloon-css": "^1.2.0",
     "chart.js": "^4.4.0",
     "echarts": "^5.4.3",
-    "flowchart.ts": "^1.0.0",
+    "flowchart.ts": "^1.0.1",
     "js-yaml": "^4.1.0",
     "katex": "^0.16.9",
     "markdown-it": "^13.0.2",
-    "mermaid": "10.5.0",
+    "mermaid": "^10.5.0",
     "reveal.js": "^4.6.1",
     "vue": "^3.3.4",
     "vue-router": "^4.2.5",

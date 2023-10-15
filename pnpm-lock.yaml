@@ -18,11 +18,11 @@ importers:
   .:
     devDependencies:
       '@commitlint/cli':
-        specifier: 17.7.2
-        version: 17.7.2
+        specifier: 17.8.0
+        version: 17.8.0
       '@commitlint/config-conventional':
-        specifier: 17.7.0
-        version: 17.7.0
+        specifier: 17.8.0
+        version: 17.8.0
       '@rollup/plugin-alias':
         specifier: 5.0.1
         version: 5.0.1(rollup@4.1.0)
@@ -184,7 +184,7 @@ importers:
         version: 2.0.0-beta.67
       sass-loader:
         specifier: 13.3.2
-        version: 13.3.2(sass@1.69.1)(webpack@5.88.2)
+        version: 13.3.2(sass@1.69.3)(webpack@5.88.2)
       vue:
         specifier: 3.3.4
         version: 3.3.4
@@ -193,10 +193,10 @@ importers:
         version: link:../../packages/auto-catalog
       vuepress-vite:
         specifier: 2.0.0-beta.67
-        version: 2.0.0-beta.67(@types/node@20.8.6)(@vuepress/client@2.0.0-beta.67)(sass-loader@13.3.2)(ts-node@10.9.1)(vue@3.3.4)
+        version: 2.0.0-beta.67(@types/node@20.8.6)(@vuepress/client@2.0.0-beta.67)(sass-loader@13.3.2)(sass@1.69.3)(ts-node@10.9.1)(vue@3.3.4)
       vuepress-webpack:
         specifier: 2.0.0-beta.67
-        version: 2.0.0-beta.67(esbuild@0.19.4)(sass@1.69.1)(typescript@5.2.2)(vue@3.3.4)(webpack@5.88.2)
+        version: 2.0.0-beta.67(esbuild@0.19.4)(sass@1.69.3)(typescript@5.2.2)(vue@3.3.4)(webpack@5.88.2)
 
   demo/blog2:
     devDependencies:
@@ -217,7 +217,7 @@ importers:
         version: 2.0.0-beta.67
       sass-loader:
         specifier: 13.3.2
-        version: 13.3.2(sass@1.69.1)(webpack@5.88.2)
+        version: 13.3.2(sass@1.69.3)(webpack@5.88.2)
       vue:
         specifier: 3.3.4
         version: 3.3.4
@@ -229,10 +229,10 @@ importers:
         version: link:../../packages/blog2
       vuepress-vite:
         specifier: 2.0.0-beta.67
-        version: 2.0.0-beta.67(@types/node@20.8.6)(@vuepress/client@2.0.0-beta.67)(sass-loader@13.3.2)(ts-node@10.9.1)(vue@3.3.4)
+        version: 2.0.0-beta.67(@types/node@20.8.6)(@vuepress/client@2.0.0-beta.67)(sass-loader@13.3.2)(sass@1.69.3)(ts-node@10.9.1)(vue@3.3.4)
       vuepress-webpack:
         specifier: 2.0.0-beta.67
-        version: 2.0.0-beta.67(esbuild@0.19.4)(sass@1.69.1)(typescript@5.2.2)(vue@3.3.4)(webpack@5.88.2)
+        version: 2.0.0-beta.67(esbuild@0.19.4)(sass@1.69.3)(typescript@5.2.2)(vue@3.3.4)(webpack@5.88.2)
 
   demo/comment2:
     devDependencies:
@@ -253,7 +253,7 @@ importers:
         version: 2.0.0-beta.67
       sass-loader:
         specifier: 13.3.2
-        version: 13.3.2(sass@1.69.1)(webpack@5.88.2)
+        version: 13.3.2(sass@1.69.3)(webpack@5.88.2)
       vue:
         specifier: 3.3.4
         version: 3.3.4
@@ -262,10 +262,10 @@ importers:
         version: link:../../packages/comment2
       vuepress-vite:
         specifier: 2.0.0-beta.67
-        version: 2.0.0-beta.67(@types/node@20.8.6)(@vuepress/client@2.0.0-beta.67)(sass-loader@13.3.2)(ts-node@10.9.1)(vue@3.3.4)
+        version: 2.0.0-beta.67(@types/node@20.8.6)(@vuepress/client@2.0.0-beta.67)(sass-loader@13.3.2)(sass@1.69.3)(ts-node@10.9.1)(vue@3.3.4)
       vuepress-webpack:
         specifier: 2.0.0-beta.67
-        version: 2.0.0-beta.67(esbuild@0.19.4)(sass@1.69.1)(typescript@5.2.2)(vue@3.3.4)(webpack@5.88.2)
+        version: 2.0.0-beta.67(esbuild@0.19.4)(sass@1.69.3)(typescript@5.2.2)(vue@3.3.4)(webpack@5.88.2)
 
   demo/components:
     devDependencies:
@@ -286,7 +286,7 @@ importers:
         version: 1.4.12
       sass-loader:
         specifier: 13.3.2
-        version: 13.3.2(sass@1.69.1)(webpack@5.88.2)
+        version: 13.3.2(sass@1.69.3)(webpack@5.88.2)
       vue:
         specifier: 3.3.4
         version: 3.3.4
@@ -298,10 +298,10 @@ importers:
         version: link:../../packages/shared
       vuepress-vite:
         specifier: 2.0.0-beta.67
-        version: 2.0.0-beta.67(@types/node@20.8.6)(@vuepress/client@2.0.0-beta.67)(sass-loader@13.3.2)(ts-node@10.9.1)(vue@3.3.4)
+        version: 2.0.0-beta.67(@types/node@20.8.6)(@vuepress/client@2.0.0-beta.67)(sass-loader@13.3.2)(sass@1.69.3)(ts-node@10.9.1)(vue@3.3.4)
       vuepress-webpack:
         specifier: 2.0.0-beta.67
-        version: 2.0.0-beta.67(esbuild@0.19.4)(sass@1.69.1)(typescript@5.2.2)(vue@3.3.4)(webpack@5.88.2)
+        version: 2.0.0-beta.67(esbuild@0.19.4)(sass@1.69.3)(typescript@5.2.2)(vue@3.3.4)(webpack@5.88.2)
 
   demo/copy-code2:
     devDependencies:
@@ -316,7 +316,7 @@ importers:
         version: 2.0.0-beta.67(sass-loader@13.3.2)
       sass-loader:
         specifier: 13.3.2
-        version: 13.3.2(sass@1.69.1)(webpack@5.88.2)
+        version: 13.3.2(sass@1.69.3)(webpack@5.88.2)
       vue:
         specifier: 3.3.4
         version: 3.3.4
@@ -325,10 +325,10 @@ importers:
         version: link:../../packages/copy-code2
       vuepress-vite:
         specifier: 2.0.0-beta.67
-        version: 2.0.0-beta.67(@types/node@20.8.6)(@vuepress/client@2.0.0-beta.67)(sass-loader@13.3.2)(ts-node@10.9.1)(vue@3.3.4)
+        version: 2.0.0-beta.67(@types/node@20.8.6)(@vuepress/client@2.0.0-beta.67)(sass-loader@13.3.2)(sass@1.69.3)(ts-node@10.9.1)(vue@3.3.4)
       vuepress-webpack:
         specifier: 2.0.0-beta.67
-        version: 2.0.0-beta.67(esbuild@0.19.4)(sass@1.69.1)(typescript@5.2.2)(vue@3.3.4)(webpack@5.88.2)
+        version: 2.0.0-beta.67(esbuild@0.19.4)(sass@1.69.3)(typescript@5.2.2)(vue@3.3.4)(webpack@5.88.2)
 
   demo/copyright2:
     devDependencies:
@@ -346,7 +346,7 @@ importers:
         version: 2.0.0-beta.67
       sass-loader:
         specifier: 13.3.2
-        version: 13.3.2(sass@1.69.1)(webpack@5.88.2)
+        version: 13.3.2(sass@1.69.3)(webpack@5.88.2)
       vue:
         specifier: 3.3.4
         version: 3.3.4
@@ -355,10 +355,10 @@ importers:
         version: link:../../packages/copyright2
       vuepress-vite:
         specifier: 2.0.0-beta.67
-        version: 2.0.0-beta.67(@types/node@20.8.6)(@vuepress/client@2.0.0-beta.67)(sass-loader@13.3.2)(ts-node@10.9.1)(vue@3.3.4)
+        version: 2.0.0-beta.67(@types/node@20.8.6)(@vuepress/client@2.0.0-beta.67)(sass-loader@13.3.2)(sass@1.69.3)(ts-node@10.9.1)(vue@3.3.4)
       vuepress-webpack:
         specifier: 2.0.0-beta.67
-        version: 2.0.0-beta.67(esbuild@0.19.4)(sass@1.69.1)(typescript@5.2.2)(vue@3.3.4)(webpack@5.88.2)
+        version: 2.0.0-beta.67(esbuild@0.19.4)(sass@1.69.3)(typescript@5.2.2)(vue@3.3.4)(webpack@5.88.2)
 
   demo/feed2:
     devDependencies:
@@ -373,7 +373,7 @@ importers:
         version: 2.0.0-beta.67(sass-loader@13.3.2)
       sass-loader:
         specifier: 13.3.2
-        version: 13.3.2(sass@1.69.1)(webpack@5.88.2)
+        version: 13.3.2(sass@1.69.3)(webpack@5.88.2)
       vue:
         specifier: 3.3.4
         version: 3.3.4
@@ -382,10 +382,10 @@ importers:
         version: link:../../packages/feed2
       vuepress-vite:
         specifier: 2.0.0-beta.67
-        version: 2.0.0-beta.67(@types/node@20.8.6)(@vuepress/client@2.0.0-beta.67)(sass-loader@13.3.2)(ts-node@10.9.1)(vue@3.3.4)
+        version: 2.0.0-beta.67(@types/node@20.8.6)(@vuepress/client@2.0.0-beta.67)(sass-loader@13.3.2)(sass@1.69.3)(ts-node@10.9.1)(vue@3.3.4)
       vuepress-webpack:
         specifier: 2.0.0-beta.67
-        version: 2.0.0-beta.67(esbuild@0.19.4)(sass@1.69.1)(typescript@5.2.2)(vue@3.3.4)(webpack@5.88.2)
+        version: 2.0.0-beta.67(esbuild@0.19.4)(sass@1.69.3)(typescript@5.2.2)(vue@3.3.4)(webpack@5.88.2)
 
   demo/lightgallery:
     devDependencies:
@@ -400,7 +400,7 @@ importers:
         version: 2.0.0-beta.67(sass-loader@13.3.2)
       sass-loader:
         specifier: 13.3.2
-        version: 13.3.2(sass@1.69.1)(webpack@5.88.2)
+        version: 13.3.2(sass@1.69.3)(webpack@5.88.2)
       vue:
         specifier: 3.3.4
         version: 3.3.4
@@ -409,10 +409,10 @@ importers:
         version: link:../../packages/lightgallery
       vuepress-vite:
         specifier: 2.0.0-beta.67
-        version: 2.0.0-beta.67(@types/node@20.8.6)(@vuepress/client@2.0.0-beta.67)(sass-loader@13.3.2)(ts-node@10.9.1)(vue@3.3.4)
+        version: 2.0.0-beta.67(@types/node@20.8.6)(@vuepress/client@2.0.0-beta.67)(sass-loader@13.3.2)(sass@1.69.3)(ts-node@10.9.1)(vue@3.3.4)
       vuepress-webpack:
         specifier: 2.0.0-beta.67
-        version: 2.0.0-beta.67(esbuild@0.19.4)(sass@1.69.1)(typescript@5.2.2)(vue@3.3.4)(webpack@5.88.2)
+        version: 2.0.0-beta.67(esbuild@0.19.4)(sass@1.69.3)(typescript@5.2.2)(vue@3.3.4)(webpack@5.88.2)
 
   demo/md-enhance:
     devDependencies:
@@ -427,7 +427,7 @@ importers:
         version: 2.0.0-beta.67(sass-loader@13.3.2)
       sass-loader:
         specifier: 13.3.2
-        version: 13.3.2(sass@1.69.1)(webpack@5.88.2)
+        version: 13.3.2(sass@1.69.3)(webpack@5.88.2)
       vue:
         specifier: 3.3.4
         version: 3.3.4
@@ -436,10 +436,10 @@ importers:
         version: link:../../packages/md-enhance
       vuepress-vite:
         specifier: 2.0.0-beta.67
-        version: 2.0.0-beta.67(@types/node@20.8.6)(@vuepress/client@2.0.0-beta.67)(sass-loader@13.3.2)(ts-node@10.9.1)(vue@3.3.4)
+        version: 2.0.0-beta.67(@types/node@20.8.6)(@vuepress/client@2.0.0-beta.67)(sass-loader@13.3.2)(sass@1.69.3)(ts-node@10.9.1)(vue@3.3.4)
       vuepress-webpack:
         specifier: 2.0.0-beta.67
-        version: 2.0.0-beta.67(esbuild@0.19.4)(sass@1.69.1)(typescript@5.2.2)(vue@3.3.4)(webpack@5.88.2)
+        version: 2.0.0-beta.67(esbuild@0.19.4)(sass@1.69.3)(typescript@5.2.2)(vue@3.3.4)(webpack@5.88.2)
 
   demo/photo-swipe:
     devDependencies:
@@ -454,7 +454,7 @@ importers:
         version: 2.0.0-beta.67(sass-loader@13.3.2)
       sass-loader:
         specifier: 13.3.2
-        version: 13.3.2(sass@1.69.1)(webpack@5.88.2)
+        version: 13.3.2(sass@1.69.3)(webpack@5.88.2)
       vue:
         specifier: 3.3.4
         version: 3.3.4
@@ -463,10 +463,10 @@ importers:
         version: link:../../packages/photo-swipe
       vuepress-vite:
         specifier: 2.0.0-beta.67
-        version: 2.0.0-beta.67(@types/node@20.8.6)(@vuepress/client@2.0.0-beta.67)(sass-loader@13.3.2)(ts-node@10.9.1)(vue@3.3.4)
+        version: 2.0.0-beta.67(@types/node@20.8.6)(@vuepress/client@2.0.0-beta.67)(sass-loader@13.3.2)(sass@1.69.3)(ts-node@10.9.1)(vue@3.3.4)
       vuepress-webpack:
         specifier: 2.0.0-beta.67
-        version: 2.0.0-beta.67(esbuild@0.19.4)(sass@1.69.1)(typescript@5.2.2)(vue@3.3.4)(webpack@5.88.2)
+        version: 2.0.0-beta.67(esbuild@0.19.4)(sass@1.69.3)(typescript@5.2.2)(vue@3.3.4)(webpack@5.88.2)
 
   demo/pwa2:
     devDependencies:
@@ -481,7 +481,7 @@ importers:
         version: 2.0.0-beta.67(sass-loader@13.3.2)
       sass-loader:
         specifier: 13.3.2
-        version: 13.3.2(sass@1.69.1)(webpack@5.88.2)
+        version: 13.3.2(sass@1.69.3)(webpack@5.88.2)
       vue:
         specifier: 3.3.4
         version: 3.3.4
@@ -490,10 +490,10 @@ importers:
         version: link:../../packages/pwa2
       vuepress-vite:
         specifier: 2.0.0-beta.67
-        version: 2.0.0-beta.67(@types/node@20.8.6)(@vuepress/client@2.0.0-beta.67)(sass-loader@13.3.2)(ts-node@10.9.1)(vue@3.3.4)
+        version: 2.0.0-beta.67(@types/node@20.8.6)(@vuepress/client@2.0.0-beta.67)(sass-loader@13.3.2)(sass@1.69.3)(ts-node@10.9.1)(vue@3.3.4)
       vuepress-webpack:
         specifier: 2.0.0-beta.67
-        version: 2.0.0-beta.67(esbuild@0.19.4)(sass@1.69.1)(typescript@5.2.2)(vue@3.3.4)(webpack@5.88.2)
+        version: 2.0.0-beta.67(esbuild@0.19.4)(sass@1.69.3)(typescript@5.2.2)(vue@3.3.4)(webpack@5.88.2)
 
   demo/redirect:
     devDependencies:
@@ -508,7 +508,7 @@ importers:
         version: 2.0.0-beta.67(sass-loader@13.3.2)
       sass-loader:
         specifier: 13.3.2
-        version: 13.3.2(sass@1.69.1)(webpack@5.88.2)
+        version: 13.3.2(sass@1.69.3)(webpack@5.88.2)
       vue:
         specifier: 3.3.4
         version: 3.3.4
@@ -517,10 +517,10 @@ importers:
         version: link:../../packages/redirect
       vuepress-vite:
         specifier: 2.0.0-beta.67
-        version: 2.0.0-beta.67(@types/node@20.8.6)(@vuepress/client@2.0.0-beta.67)(sass-loader@13.3.2)(ts-node@10.9.1)(vue@3.3.4)
+        version: 2.0.0-beta.67(@types/node@20.8.6)(@vuepress/client@2.0.0-beta.67)(sass-loader@13.3.2)(sass@1.69.3)(ts-node@10.9.1)(vue@3.3.4)
       vuepress-webpack:
         specifier: 2.0.0-beta.67
-        version: 2.0.0-beta.67(esbuild@0.19.4)(sass@1.69.1)(typescript@5.2.2)(vue@3.3.4)(webpack@5.88.2)
+        version: 2.0.0-beta.67(esbuild@0.19.4)(sass@1.69.3)(typescript@5.2.2)(vue@3.3.4)(webpack@5.88.2)
 
   demo/sass-palette:
     devDependencies:
@@ -535,7 +535,7 @@ importers:
         version: 2.0.0-beta.67(sass-loader@13.3.2)
       sass-loader:
         specifier: 13.3.2
-        version: 13.3.2(sass@1.69.1)(webpack@5.88.2)
+        version: 13.3.2(sass@1.69.3)(webpack@5.88.2)
       vue:
         specifier: 3.3.4
         version: 3.3.4
@@ -544,10 +544,10 @@ importers:
         version: link:../../packages/sass-palette
       vuepress-vite:
         specifier: 2.0.0-beta.67
-        version: 2.0.0-beta.67(@types/node@20.8.6)(@vuepress/client@2.0.0-beta.67)(sass-loader@13.3.2)(ts-node@10.9.1)(vue@3.3.4)
+        version: 2.0.0-beta.67(@types/node@20.8.6)(@vuepress/client@2.0.0-beta.67)(sass-loader@13.3.2)(sass@1.69.3)(ts-node@10.9.1)(vue@3.3.4)
       vuepress-webpack:
         specifier: 2.0.0-beta.67
-        version: 2.0.0-beta.67(esbuild@0.19.4)(sass@1.69.1)(typescript@5.2.2)(vue@3.3.4)(webpack@5.88.2)
+        version: 2.0.0-beta.67(esbuild@0.19.4)(sass@1.69.3)(typescript@5.2.2)(vue@3.3.4)(webpack@5.88.2)
 
   demo/search-pro:
     devDependencies:
@@ -565,7 +565,7 @@ importers:
         version: 0.0.2
       sass-loader:
         specifier: 13.3.2
-        version: 13.3.2(sass@1.69.1)(webpack@5.88.2)
+        version: 13.3.2(sass@1.69.3)(webpack@5.88.2)
       vue:
         specifier: 3.3.4
         version: 3.3.4
@@ -574,10 +574,10 @@ importers:
         version: link:../../packages/search-pro
       vuepress-vite:
         specifier: 2.0.0-beta.67
-        version: 2.0.0-beta.67(@types/node@20.8.6)(@vuepress/client@2.0.0-beta.67)(sass-loader@13.3.2)(ts-node@10.9.1)(vue@3.3.4)
+        version: 2.0.0-beta.67(@types/node@20.8.6)(@vuepress/client@2.0.0-beta.67)(sass-loader@13.3.2)(sass@1.69.3)(ts-node@10.9.1)(vue@3.3.4)
       vuepress-webpack:
         specifier: 2.0.0-beta.67
-        version: 2.0.0-beta.67(esbuild@0.19.4)(sass@1.69.1)(typescript@5.2.2)(vue@3.3.4)(webpack@5.88.2)
+        version: 2.0.0-beta.67(esbuild@0.19.4)(sass@1.69.3)(typescript@5.2.2)(vue@3.3.4)(webpack@5.88.2)
 
   demo/seo2:
     devDependencies:
@@ -592,7 +592,7 @@ importers:
         version: 2.0.0-beta.67(sass-loader@13.3.2)
       sass-loader:
         specifier: 13.3.2
-        version: 13.3.2(sass@1.69.1)(webpack@5.88.2)
+        version: 13.3.2(sass@1.69.3)(webpack@5.88.2)
       vue:
         specifier: 3.3.4
         version: 3.3.4
@@ -601,10 +601,10 @@ importers:
         version: link:../../packages/seo2
       vuepress-vite:
         specifier: 2.0.0-beta.67
-        version: 2.0.0-beta.67(@types/node@20.8.6)(@vuepress/client@2.0.0-beta.67)(sass-loader@13.3.2)(ts-node@10.9.1)(vue@3.3.4)
+        version: 2.0.0-beta.67(@types/node@20.8.6)(@vuepress/client@2.0.0-beta.67)(sass-loader@13.3.2)(sass@1.69.3)(ts-node@10.9.1)(vue@3.3.4)
       vuepress-webpack:
         specifier: 2.0.0-beta.67
-        version: 2.0.0-beta.67(esbuild@0.19.4)(sass@1.69.1)(typescript@5.2.2)(vue@3.3.4)(webpack@5.88.2)
+        version: 2.0.0-beta.67(esbuild@0.19.4)(sass@1.69.3)(typescript@5.2.2)(vue@3.3.4)(webpack@5.88.2)
 
   demo/sitemap2:
     devDependencies:
@@ -619,7 +619,7 @@ importers:
         version: 2.0.0-beta.67(sass-loader@13.3.2)
       sass-loader:
         specifier: 13.3.2
-        version: 13.3.2(sass@1.69.1)(webpack@5.88.2)
+        version: 13.3.2(sass@1.69.3)(webpack@5.88.2)
       vue:
         specifier: 3.3.4
         version: 3.3.4
@@ -628,10 +628,10 @@ importers:
         version: link:../../packages/sitemap2
       vuepress-vite:
         specifier: 2.0.0-beta.67
-        version: 2.0.0-beta.67(@types/node@20.8.6)(@vuepress/client@2.0.0-beta.67)(sass-loader@13.3.2)(ts-node@10.9.1)(vue@3.3.4)
+        version: 2.0.0-beta.67(@types/node@20.8.6)(@vuepress/client@2.0.0-beta.67)(sass-loader@13.3.2)(sass@1.69.3)(ts-node@10.9.1)(vue@3.3.4)
       vuepress-webpack:
         specifier: 2.0.0-beta.67
-        version: 2.0.0-beta.67(esbuild@0.19.4)(sass@1.69.1)(typescript@5.2.2)(vue@3.3.4)(webpack@5.88.2)
+        version: 2.0.0-beta.67(esbuild@0.19.4)(sass@1.69.3)(typescript@5.2.2)(vue@3.3.4)(webpack@5.88.2)
 
   demo/theme-blog:
     devDependencies:
@@ -643,13 +643,13 @@ importers:
         version: 2.0.0-beta.67
       '@vuepress/plugin-docsearch':
         specifier: 2.0.0-beta.67
-        version: 2.0.0-beta.67(@algolia/client-search@4.20.0)(search-insights@2.8.3)
+        version: 2.0.0-beta.67(@algolia/client-search@4.20.0)(search-insights@2.9.0)
       '@vuepress/utils':
         specifier: 2.0.0-beta.67
         version: 2.0.0-beta.67
       sass-loader:
         specifier: 13.3.2
-        version: 13.3.2(sass@1.69.1)(webpack@5.88.2)
+        version: 13.3.2(sass@1.69.3)(webpack@5.88.2)
       vue:
         specifier: 3.3.4
         version: 3.3.4
@@ -661,10 +661,10 @@ importers:
         version: link:../../packages/theme
       vuepress-vite:
         specifier: 2.0.0-beta.67
-        version: 2.0.0-beta.67(@types/node@20.8.6)(@vuepress/client@2.0.0-beta.67)(sass-loader@13.3.2)(ts-node@10.9.1)(vue@3.3.4)
+        version: 2.0.0-beta.67(@types/node@20.8.6)(@vuepress/client@2.0.0-beta.67)(sass-loader@13.3.2)(sass@1.69.3)(ts-node@10.9.1)(vue@3.3.4)
       vuepress-webpack:
         specifier: 2.0.0-beta.67
-        version: 2.0.0-beta.67(esbuild@0.19.4)(sass@1.69.1)(typescript@5.2.2)(vue@3.3.4)(webpack@5.88.2)
+        version: 2.0.0-beta.67(esbuild@0.19.4)(sass@1.69.3)(typescript@5.2.2)(vue@3.3.4)(webpack@5.88.2)
 
   demo/theme-docs:
     devDependencies:
@@ -676,13 +676,13 @@ importers:
         version: 2.0.0-beta.67
       '@vuepress/plugin-docsearch':
         specifier: 2.0.0-beta.67
-        version: 2.0.0-beta.67(@algolia/client-search@4.20.0)(search-insights@2.8.3)
+        version: 2.0.0-beta.67(@algolia/client-search@4.20.0)(search-insights@2.9.0)
       '@vuepress/utils':
         specifier: 2.0.0-beta.67
         version: 2.0.0-beta.67
       sass-loader:
         specifier: 13.3.2
-        version: 13.3.2(sass@1.69.1)(webpack@5.88.2)
+        version: 13.3.2(sass@1.69.3)(webpack@5.88.2)
       vue:
         specifier: 3.3.4
         version: 3.3.4
@@ -691,10 +691,10 @@ importers:
         version: link:../../packages/theme
       vuepress-vite:
         specifier: 2.0.0-beta.67
-        version: 2.0.0-beta.67(@types/node@20.8.6)(@vuepress/client@2.0.0-beta.67)(sass-loader@13.3.2)(ts-node@10.9.1)(vue@3.3.4)
+        version: 2.0.0-beta.67(@types/node@20.8.6)(@vuepress/client@2.0.0-beta.67)(sass-loader@13.3.2)(sass@1.69.3)(ts-node@10.9.1)(vue@3.3.4)
       vuepress-webpack:
         specifier: 2.0.0-beta.67
-        version: 2.0.0-beta.67(esbuild@0.19.4)(sass@1.69.1)(typescript@5.2.2)(vue@3.3.4)(webpack@5.88.2)
+        version: 2.0.0-beta.67(esbuild@0.19.4)(sass@1.69.3)(typescript@5.2.2)(vue@3.3.4)(webpack@5.88.2)
 
   docs-shared:
     dependencies:
@@ -712,7 +712,7 @@ importers:
         version: 2.0.0-beta.67
       '@vuepress/plugin-docsearch':
         specifier: 2.0.0-beta.67
-        version: 2.0.0-beta.67(@algolia/client-search@4.20.0)(search-insights@2.8.3)
+        version: 2.0.0-beta.67(@algolia/client-search@4.20.0)(search-insights@2.9.0)
       '@vuepress/shared':
         specifier: 2.0.0-beta.67
         version: 2.0.0-beta.67
@@ -737,7 +737,7 @@ importers:
     devDependencies:
       '@vuepress/bundler-vite':
         specifier: 2.0.0-beta.67
-        version: 2.0.0-beta.67(@types/node@20.8.6)(sass@1.69.1)(ts-node@10.9.1)
+        version: 2.0.0-beta.67(@types/node@20.8.6)(sass@1.69.3)(ts-node@10.9.1)
 
   docs/auto-catalog:
     dependencies:
@@ -749,16 +749,16 @@ importers:
         version: link:../../docs-shared
       sass-loader:
         specifier: 13.3.2
-        version: 13.3.2(sass@1.69.1)(webpack@5.88.2)
+        version: 13.3.2(sass@1.69.3)(webpack@5.88.2)
       vue:
         specifier: 3.3.4
         version: 3.3.4
       vuepress-vite:
         specifier: 2.0.0-beta.67
-        version: 2.0.0-beta.67(@types/node@20.8.6)(@vuepress/client@2.0.0-beta.67)(sass-loader@13.3.2)(ts-node@10.9.1)(vue@3.3.4)
+        version: 2.0.0-beta.67(@types/node@20.8.6)(@vuepress/client@2.0.0-beta.67)(sass-loader@13.3.2)(sass@1.69.3)(ts-node@10.9.1)(vue@3.3.4)
       vuepress-webpack:
         specifier: 2.0.0-beta.67
-        version: 2.0.0-beta.67(esbuild@0.19.4)(sass@1.69.1)(typescript@5.2.2)(vue@3.3.4)(webpack@5.88.2)
+        version: 2.0.0-beta.67(esbuild@0.19.4)(sass@1.69.3)(typescript@5.2.2)(vue@3.3.4)(webpack@5.88.2)
 
   docs/blog2:
     dependencies:
@@ -770,16 +770,16 @@ importers:
         version: link:../../docs-shared
       sass-loader:
         specifier: 13.3.2
-        version: 13.3.2(sass@1.69.1)(webpack@5.88.2)
+        version: 13.3.2(sass@1.69.3)(webpack@5.88.2)
       vue:
         specifier: 3.3.4
         version: 3.3.4
       vuepress-vite:
         specifier: 2.0.0-beta.67
-        version: 2.0.0-beta.67(@types/node@20.8.6)(@vuepress/client@2.0.0-beta.67)(sass-loader@13.3.2)(ts-node@10.9.1)(vue@3.3.4)
+        version: 2.0.0-beta.67(@types/node@20.8.6)(@vuepress/client@2.0.0-beta.67)(sass-loader@13.3.2)(sass@1.69.3)(ts-node@10.9.1)(vue@3.3.4)
       vuepress-webpack:
         specifier: 2.0.0-beta.67
-        version: 2.0.0-beta.67(esbuild@0.19.4)(sass@1.69.1)(typescript@5.2.2)(vue@3.3.4)(webpack@5.88.2)
+        version: 2.0.0-beta.67(esbuild@0.19.4)(sass@1.69.3)(typescript@5.2.2)(vue@3.3.4)(webpack@5.88.2)
 
   docs/comment2:
     dependencies:
@@ -791,7 +791,7 @@ importers:
         version: link:../../docs-shared
       sass-loader:
         specifier: 13.3.2
-        version: 13.3.2(sass@1.69.1)(webpack@5.88.2)
+        version: 13.3.2(sass@1.69.3)(webpack@5.88.2)
       vue:
         specifier: 3.3.4
         version: 3.3.4
@@ -800,10 +800,10 @@ importers:
         version: link:../../packages/comment2
       vuepress-vite:
         specifier: 2.0.0-beta.67
-        version: 2.0.0-beta.67(@types/node@20.8.6)(@vuepress/client@2.0.0-beta.67)(sass-loader@13.3.2)(ts-node@10.9.1)(vue@3.3.4)
+        version: 2.0.0-beta.67(@types/node@20.8.6)(@vuepress/client@2.0.0-beta.67)(sass-loader@13.3.2)(sass@1.69.3)(ts-node@10.9.1)(vue@3.3.4)
       vuepress-webpack:
         specifier: 2.0.0-beta.67
-        version: 2.0.0-beta.67(esbuild@0.19.4)(sass@1.69.1)(typescript@5.2.2)(vue@3.3.4)(webpack@5.88.2)
+        version: 2.0.0-beta.67(esbuild@0.19.4)(sass@1.69.3)(typescript@5.2.2)(vue@3.3.4)(webpack@5.88.2)
 
   docs/components:
     dependencies:
@@ -821,7 +821,7 @@ importers:
         version: 1.4.12
       sass-loader:
         specifier: 13.3.2
-        version: 13.3.2(sass@1.69.1)(webpack@5.88.2)
+        version: 13.3.2(sass@1.69.3)(webpack@5.88.2)
       vue:
         specifier: 3.3.4
         version: 3.3.4
@@ -833,10 +833,10 @@ importers:
         version: link:../../packages/shared
       vuepress-vite:
         specifier: 2.0.0-beta.67
-        version: 2.0.0-beta.67(@types/node@20.8.6)(@vuepress/client@2.0.0-beta.67)(sass-loader@13.3.2)(ts-node@10.9.1)(vue@3.3.4)
+        version: 2.0.0-beta.67(@types/node@20.8.6)(@vuepress/client@2.0.0-beta.67)(sass-loader@13.3.2)(sass@1.69.3)(ts-node@10.9.1)(vue@3.3.4)
       vuepress-webpack:
         specifier: 2.0.0-beta.67
-        version: 2.0.0-beta.67(esbuild@0.19.4)(sass@1.69.1)(typescript@5.2.2)(vue@3.3.4)(webpack@5.88.2)
+        version: 2.0.0-beta.67(esbuild@0.19.4)(sass@1.69.3)(typescript@5.2.2)(vue@3.3.4)(webpack@5.88.2)
 
   docs/copy-code2:
     dependencies:
@@ -848,7 +848,7 @@ importers:
         version: link:../../docs-shared
       sass-loader:
         specifier: 13.3.2
-        version: 13.3.2(sass@1.69.1)(webpack@5.88.2)
+        version: 13.3.2(sass@1.69.3)(webpack@5.88.2)
       vue:
         specifier: 3.3.4
         version: 3.3.4
@@ -857,10 +857,10 @@ importers:
         version: link:../../packages/copy-code2
       vuepress-vite:
         specifier: 2.0.0-beta.67
-        version: 2.0.0-beta.67(@types/node@20.8.6)(@vuepress/client@2.0.0-beta.67)(sass-loader@13.3.2)(ts-node@10.9.1)(vue@3.3.4)
+        version: 2.0.0-beta.67(@types/node@20.8.6)(@vuepress/client@2.0.0-beta.67)(sass-loader@13.3.2)(sass@1.69.3)(ts-node@10.9.1)(vue@3.3.4)
       vuepress-webpack:
         specifier: 2.0.0-beta.67
-        version: 2.0.0-beta.67(esbuild@0.19.4)(sass@1.69.1)(typescript@5.2.2)(vue@3.3.4)(webpack@5.88.2)
+        version: 2.0.0-beta.67(esbuild@0.19.4)(sass@1.69.3)(typescript@5.2.2)(vue@3.3.4)(webpack@5.88.2)
 
   docs/copyright2:
     dependencies:
@@ -872,16 +872,16 @@ importers:
         version: link:../../docs-shared
       sass-loader:
         specifier: 13.3.2
-        version: 13.3.2(sass@1.69.1)(webpack@5.88.2)
+        version: 13.3.2(sass@1.69.3)(webpack@5.88.2)
       vue:
         specifier: 3.3.4
         version: 3.3.4
       vuepress-vite:
         specifier: 2.0.0-beta.67
-        version: 2.0.0-beta.67(@types/node@20.8.6)(@vuepress/client@2.0.0-beta.67)(sass-loader@13.3.2)(ts-node@10.9.1)(vue@3.3.4)
+        version: 2.0.0-beta.67(@types/node@20.8.6)(@vuepress/client@2.0.0-beta.67)(sass-loader@13.3.2)(sass@1.69.3)(ts-node@10.9.1)(vue@3.3.4)
       vuepress-webpack:
         specifier: 2.0.0-beta.67
-        version: 2.0.0-beta.67(esbuild@0.19.4)(sass@1.69.1)(typescript@5.2.2)(vue@3.3.4)(webpack@5.88.2)
+        version: 2.0.0-beta.67(esbuild@0.19.4)(sass@1.69.3)(typescript@5.2.2)(vue@3.3.4)(webpack@5.88.2)
 
   docs/feed2:
     dependencies:
@@ -893,7 +893,7 @@ importers:
         version: link:../../docs-shared
       sass-loader:
         specifier: 13.3.2
-        version: 13.3.2(sass@1.69.1)(webpack@5.88.2)
+        version: 13.3.2(sass@1.69.3)(webpack@5.88.2)
       vue:
         specifier: 3.3.4
         version: 3.3.4
@@ -902,10 +902,10 @@ importers:
         version: link:../../packages/feed2
       vuepress-vite:
         specifier: 2.0.0-beta.67
-        version: 2.0.0-beta.67(@types/node@20.8.6)(@vuepress/client@2.0.0-beta.67)(sass-loader@13.3.2)(ts-node@10.9.1)(vue@3.3.4)
+        version: 2.0.0-beta.67(@types/node@20.8.6)(@vuepress/client@2.0.0-beta.67)(sass-loader@13.3.2)(sass@1.69.3)(ts-node@10.9.1)(vue@3.3.4)
       vuepress-webpack:
         specifier: 2.0.0-beta.67
-        version: 2.0.0-beta.67(esbuild@0.19.4)(sass@1.69.1)(typescript@5.2.2)(vue@3.3.4)(webpack@5.88.2)
+        version: 2.0.0-beta.67(esbuild@0.19.4)(sass@1.69.3)(typescript@5.2.2)(vue@3.3.4)(webpack@5.88.2)
 
   docs/lightgallery:
     dependencies:
@@ -917,7 +917,7 @@ importers:
         version: link:../../docs-shared
       sass-loader:
         specifier: 13.3.2
-        version: 13.3.2(sass@1.69.1)(webpack@5.88.2)
+        version: 13.3.2(sass@1.69.3)(webpack@5.88.2)
       vue:
         specifier: 3.3.4
         version: 3.3.4
@@ -926,10 +926,10 @@ importers:
         version: link:../../packages/lightgallery
       vuepress-vite:
         specifier: 2.0.0-beta.67
-        version: 2.0.0-beta.67(@types/node@20.8.6)(@vuepress/client@2.0.0-beta.67)(sass-loader@13.3.2)(ts-node@10.9.1)(vue@3.3.4)
+        version: 2.0.0-beta.67(@types/node@20.8.6)(@vuepress/client@2.0.0-beta.67)(sass-loader@13.3.2)(sass@1.69.3)(ts-node@10.9.1)(vue@3.3.4)
       vuepress-webpack:
         specifier: 2.0.0-beta.67
-        version: 2.0.0-beta.67(esbuild@0.19.4)(sass@1.69.1)(typescript@5.2.2)(vue@3.3.4)(webpack@5.88.2)
+        version: 2.0.0-beta.67(esbuild@0.19.4)(sass@1.69.3)(typescript@5.2.2)(vue@3.3.4)(webpack@5.88.2)
 
   docs/md-enhance:
     dependencies:
@@ -951,9 +951,12 @@ importers:
       katex:
         specifier: 0.16.9
         version: 0.16.9
+      mermaid:
+        specifier: 10.5.0
+        version: 10.5.0
       sass-loader:
         specifier: 13.3.2
-        version: 13.3.2(sass@1.69.1)(webpack@5.88.2)
+        version: 13.3.2(sass@1.69.3)(webpack@5.88.2)
       vue:
         specifier: 3.3.4
         version: 3.3.4
@@ -965,10 +968,10 @@ importers:
         version: link:../../packages/shared
       vuepress-vite:
         specifier: 2.0.0-beta.67
-        version: 2.0.0-beta.67(@types/node@20.8.6)(@vuepress/client@2.0.0-beta.67)(sass-loader@13.3.2)(ts-node@10.9.1)(vue@3.3.4)
+        version: 2.0.0-beta.67(@types/node@20.8.6)(@vuepress/client@2.0.0-beta.67)(sass-loader@13.3.2)(sass@1.69.3)(ts-node@10.9.1)(vue@3.3.4)
       vuepress-webpack:
         specifier: 2.0.0-beta.67
-        version: 2.0.0-beta.67(esbuild@0.19.4)(sass@1.69.1)(typescript@5.2.2)(vue@3.3.4)(webpack@5.88.2)
+        version: 2.0.0-beta.67(esbuild@0.19.4)(sass@1.69.3)(typescript@5.2.2)(vue@3.3.4)(webpack@5.88.2)
 
   docs/photo-swipe:
     dependencies:
@@ -980,7 +983,7 @@ importers:
         version: link:../../docs-shared
       sass-loader:
         specifier: 13.3.2
-        version: 13.3.2(sass@1.69.1)(webpack@5.88.2)
+        version: 13.3.2(sass@1.69.3)(webpack@5.88.2)
       vue:
         specifier: 3.3.4
         version: 3.3.4
@@ -989,10 +992,10 @@ importers:
         version: link:../../packages/photo-swipe
       vuepress-vite:
         specifier: 2.0.0-beta.67
-        version: 2.0.0-beta.67(@types/node@20.8.6)(@vuepress/client@2.0.0-beta.67)(sass-loader@13.3.2)(ts-node@10.9.1)(vue@3.3.4)
+        version: 2.0.0-beta.67(@types/node@20.8.6)(@vuepress/client@2.0.0-beta.67)(sass-loader@13.3.2)(sass@1.69.3)(ts-node@10.9.1)(vue@3.3.4)
       vuepress-webpack:
         specifier: 2.0.0-beta.67
-        version: 2.0.0-beta.67(esbuild@0.19.4)(sass@1.69.1)(typescript@5.2.2)(vue@3.3.4)(webpack@5.88.2)
+        version: 2.0.0-beta.67(esbuild@0.19.4)(sass@1.69.3)(typescript@5.2.2)(vue@3.3.4)(webpack@5.88.2)
 
   docs/pwa2:
     dependencies:
@@ -1004,7 +1007,7 @@ importers:
         version: link:../../docs-shared
       sass-loader:
         specifier: 13.3.2
-        version: 13.3.2(sass@1.69.1)(webpack@5.88.2)
+        version: 13.3.2(sass@1.69.3)(webpack@5.88.2)
       vue:
         specifier: 3.3.4
         version: 3.3.4
@@ -1013,10 +1016,10 @@ importers:
         version: link:../../packages/pwa2
       vuepress-vite:
         specifier: 2.0.0-beta.67
-        version: 2.0.0-beta.67(@types/node@20.8.6)(@vuepress/client@2.0.0-beta.67)(sass-loader@13.3.2)(ts-node@10.9.1)(vue@3.3.4)
+        version: 2.0.0-beta.67(@types/node@20.8.6)(@vuepress/client@2.0.0-beta.67)(sass-loader@13.3.2)(sass@1.69.3)(ts-node@10.9.1)(vue@3.3.4)
       vuepress-webpack:
         specifier: 2.0.0-beta.67
-        version: 2.0.0-beta.67(esbuild@0.19.4)(sass@1.69.1)(typescript@5.2.2)(vue@3.3.4)(webpack@5.88.2)
+        version: 2.0.0-beta.67(esbuild@0.19.4)(sass@1.69.3)(typescript@5.2.2)(vue@3.3.4)(webpack@5.88.2)
 
   docs/reading-time2:
     dependencies:
@@ -1028,7 +1031,7 @@ importers:
         version: link:../../docs-shared
       sass-loader:
         specifier: 13.3.2
-        version: 13.3.2(sass@1.69.1)(webpack@5.88.2)
+        version: 13.3.2(sass@1.69.3)(webpack@5.88.2)
       vue:
         specifier: 3.3.4
         version: 3.3.4
@@ -1037,10 +1040,10 @@ importers:
         version: link:../../packages/reading-time2
       vuepress-vite:
         specifier: 2.0.0-beta.67
-        version: 2.0.0-beta.67(@types/node@20.8.6)(@vuepress/client@2.0.0-beta.67)(sass-loader@13.3.2)(ts-node@10.9.1)(vue@3.3.4)
+        version: 2.0.0-beta.67(@types/node@20.8.6)(@vuepress/client@2.0.0-beta.67)(sass-loader@13.3.2)(sass@1.69.3)(ts-node@10.9.1)(vue@3.3.4)
       vuepress-webpack:
         specifier: 2.0.0-beta.67
-        version: 2.0.0-beta.67(esbuild@0.19.4)(sass@1.69.1)(typescript@5.2.2)(vue@3.3.4)(webpack@5.88.2)
+        version: 2.0.0-beta.67(esbuild@0.19.4)(sass@1.69.3)(typescript@5.2.2)(vue@3.3.4)(webpack@5.88.2)
 
   docs/redirect:
     dependencies:
@@ -1052,16 +1055,16 @@ importers:
         version: link:../../docs-shared
       sass-loader:
         specifier: 13.3.2
-        version: 13.3.2(sass@1.69.1)(webpack@5.88.2)
+        version: 13.3.2(sass@1.69.3)(webpack@5.88.2)
       vue:
         specifier: 3.3.4
         version: 3.3.4
       vuepress-vite:
         specifier: 2.0.0-beta.67
-        version: 2.0.0-beta.67(@types/node@20.8.6)(@vuepress/client@2.0.0-beta.67)(sass-loader@13.3.2)(ts-node@10.9.1)(vue@3.3.4)
+        version: 2.0.0-beta.67(@types/node@20.8.6)(@vuepress/client@2.0.0-beta.67)(sass-loader@13.3.2)(sass@1.69.3)(ts-node@10.9.1)(vue@3.3.4)
       vuepress-webpack:
         specifier: 2.0.0-beta.67
-        version: 2.0.0-beta.67(esbuild@0.19.4)(sass@1.69.1)(typescript@5.2.2)(vue@3.3.4)(webpack@5.88.2)
+        version: 2.0.0-beta.67(esbuild@0.19.4)(sass@1.69.3)(typescript@5.2.2)(vue@3.3.4)(webpack@5.88.2)
 
   docs/remove-pwa:
     dependencies:
@@ -1073,16 +1076,16 @@ importers:
         version: link:../../docs-shared
       sass-loader:
         specifier: 13.3.2
-        version: 13.3.2(sass@1.69.1)(webpack@5.88.2)
+        version: 13.3.2(sass@1.69.3)(webpack@5.88.2)
       vue:
         specifier: 3.3.4
         version: 3.3.4
       vuepress-vite:
         specifier: 2.0.0-beta.67
-        version: 2.0.0-beta.67(@types/node@20.8.6)(@vuepress/client@2.0.0-beta.67)(sass-loader@13.3.2)(ts-node@10.9.1)(vue@3.3.4)
+        version: 2.0.0-beta.67(@types/node@20.8.6)(@vuepress/client@2.0.0-beta.67)(sass-loader@13.3.2)(sass@1.69.3)(ts-node@10.9.1)(vue@3.3.4)
       vuepress-webpack:
         specifier: 2.0.0-beta.67
-        version: 2.0.0-beta.67(esbuild@0.19.4)(sass@1.69.1)(typescript@5.2.2)(vue@3.3.4)(webpack@5.88.2)
+        version: 2.0.0-beta.67(esbuild@0.19.4)(sass@1.69.3)(typescript@5.2.2)(vue@3.3.4)(webpack@5.88.2)
 
   docs/rtl:
     dependencies:
@@ -1094,16 +1097,16 @@ importers:
         version: link:../../docs-shared
       sass-loader:
         specifier: 13.3.2
-        version: 13.3.2(sass@1.69.1)(webpack@5.88.2)
+        version: 13.3.2(sass@1.69.3)(webpack@5.88.2)
       vue:
         specifier: 3.3.4
         version: 3.3.4
       vuepress-vite:
         specifier: 2.0.0-beta.67
-        version: 2.0.0-beta.67(@types/node@20.8.6)(@vuepress/client@2.0.0-beta.67)(sass-loader@13.3.2)(ts-node@10.9.1)(vue@3.3.4)
+        version: 2.0.0-beta.67(@types/node@20.8.6)(@vuepress/client@2.0.0-beta.67)(sass-loader@13.3.2)(sass@1.69.3)(ts-node@10.9.1)(vue@3.3.4)
       vuepress-webpack:
         specifier: 2.0.0-beta.67
-        version: 2.0.0-beta.67(esbuild@0.19.4)(sass@1.69.1)(typescript@5.2.2)(vue@3.3.4)(webpack@5.88.2)
+        version: 2.0.0-beta.67(esbuild@0.19.4)(sass@1.69.3)(typescript@5.2.2)(vue@3.3.4)(webpack@5.88.2)
 
   docs/sass-palette:
     dependencies:
@@ -1115,16 +1118,16 @@ importers:
         version: link:../../docs-shared
       sass-loader:
         specifier: 13.3.2
-        version: 13.3.2(sass@1.69.1)(webpack@5.88.2)
+        version: 13.3.2(sass@1.69.3)(webpack@5.88.2)
       vue:
         specifier: 3.3.4
         version: 3.3.4
       vuepress-vite:
         specifier: 2.0.0-beta.67
-        version: 2.0.0-beta.67(@types/node@20.8.6)(@vuepress/client@2.0.0-beta.67)(sass-loader@13.3.2)(ts-node@10.9.1)(vue@3.3.4)
+        version: 2.0.0-beta.67(@types/node@20.8.6)(@vuepress/client@2.0.0-beta.67)(sass-loader@13.3.2)(sass@1.69.3)(ts-node@10.9.1)(vue@3.3.4)
       vuepress-webpack:
         specifier: 2.0.0-beta.67
-        version: 2.0.0-beta.67(esbuild@0.19.4)(sass@1.69.1)(typescript@5.2.2)(vue@3.3.4)(webpack@5.88.2)
+        version: 2.0.0-beta.67(esbuild@0.19.4)(sass@1.69.3)(typescript@5.2.2)(vue@3.3.4)(webpack@5.88.2)
 
   docs/search-pro:
     dependencies:
@@ -1139,7 +1142,7 @@ importers:
         version: 0.0.2
       sass-loader:
         specifier: 13.3.2
-        version: 13.3.2(sass@1.69.1)(webpack@5.88.2)
+        version: 13.3.2(sass@1.69.3)(webpack@5.88.2)
       vue:
         specifier: 3.3.4
         version: 3.3.4
@@ -1148,10 +1151,10 @@ importers:
         version: link:../../packages/search-pro
       vuepress-vite:
         specifier: 2.0.0-beta.67
-        version: 2.0.0-beta.67(@types/node@20.8.6)(@vuepress/client@2.0.0-beta.67)(sass-loader@13.3.2)(ts-node@10.9.1)(vue@3.3.4)
+        version: 2.0.0-beta.67(@types/node@20.8.6)(@vuepress/client@2.0.0-beta.67)(sass-loader@13.3.2)(sass@1.69.3)(ts-node@10.9.1)(vue@3.3.4)
       vuepress-webpack:
         specifier: 2.0.0-beta.67
-        version: 2.0.0-beta.67(esbuild@0.19.4)(sass@1.69.1)(typescript@5.2.2)(vue@3.3.4)(webpack@5.88.2)
+        version: 2.0.0-beta.67(esbuild@0.19.4)(sass@1.69.3)(typescript@5.2.2)(vue@3.3.4)(webpack@5.88.2)
 
   docs/seo2:
     dependencies:
@@ -1163,7 +1166,7 @@ importers:
         version: link:../../docs-shared
       sass-loader:
         specifier: 13.3.2
-        version: 13.3.2(sass@1.69.1)(webpack@5.88.2)
+        version: 13.3.2(sass@1.69.3)(webpack@5.88.2)
       vue:
         specifier: 3.3.4
         version: 3.3.4
@@ -1172,10 +1175,10 @@ importers:
         version: link:../../packages/seo2
       vuepress-vite:
         specifier: 2.0.0-beta.67
-        version: 2.0.0-beta.67(@types/node@20.8.6)(@vuepress/client@2.0.0-beta.67)(sass-loader@13.3.2)(ts-node@10.9.1)(vue@3.3.4)
+        version: 2.0.0-beta.67(@types/node@20.8.6)(@vuepress/client@2.0.0-beta.67)(sass-loader@13.3.2)(sass@1.69.3)(ts-node@10.9.1)(vue@3.3.4)
       vuepress-webpack:
         specifier: 2.0.0-beta.67
-        version: 2.0.0-beta.67(esbuild@0.19.4)(sass@1.69.1)(typescript@5.2.2)(vue@3.3.4)(webpack@5.88.2)
+        version: 2.0.0-beta.67(esbuild@0.19.4)(sass@1.69.3)(typescript@5.2.2)(vue@3.3.4)(webpack@5.88.2)
 
   docs/shared:
     dependencies:
@@ -1187,16 +1190,16 @@ importers:
         version: link:../../docs-shared
       sass-loader:
         specifier: 13.3.2
-        version: 13.3.2(sass@1.69.1)(webpack@5.88.2)
+        version: 13.3.2(sass@1.69.3)(webpack@5.88.2)
       vue:
         specifier: 3.3.4
         version: 3.3.4
       vuepress-vite:
         specifier: 2.0.0-beta.67
-        version: 2.0.0-beta.67(@types/node@20.8.6)(@vuepress/client@2.0.0-beta.67)(sass-loader@13.3.2)(ts-node@10.9.1)(vue@3.3.4)
+        version: 2.0.0-beta.67(@types/node@20.8.6)(@vuepress/client@2.0.0-beta.67)(sass-loader@13.3.2)(sass@1.69.3)(ts-node@10.9.1)(vue@3.3.4)
       vuepress-webpack:
         specifier: 2.0.0-beta.67
-        version: 2.0.0-beta.67(esbuild@0.19.4)(sass@1.69.1)(typescript@5.2.2)(vue@3.3.4)(webpack@5.88.2)
+        version: 2.0.0-beta.67(esbuild@0.19.4)(sass@1.69.3)(typescript@5.2.2)(vue@3.3.4)(webpack@5.88.2)
 
   docs/sitemap2:
     dependencies:
@@ -1208,7 +1211,7 @@ importers:
         version: link:../../docs-shared
       sass-loader:
         specifier: 13.3.2
-        version: 13.3.2(sass@1.69.1)(webpack@5.88.2)
+        version: 13.3.2(sass@1.69.3)(webpack@5.88.2)
       vue:
         specifier: 3.3.4
         version: 3.3.4
@@ -1217,10 +1220,10 @@ importers:
         version: link:../../packages/sitemap2
       vuepress-vite:
         specifier: 2.0.0-beta.67
-        version: 2.0.0-beta.67(@types/node@20.8.6)(@vuepress/client@2.0.0-beta.67)(sass-loader@13.3.2)(ts-node@10.9.1)(vue@3.3.4)
+        version: 2.0.0-beta.67(@types/node@20.8.6)(@vuepress/client@2.0.0-beta.67)(sass-loader@13.3.2)(sass@1.69.3)(ts-node@10.9.1)(vue@3.3.4)
       vuepress-webpack:
         specifier: 2.0.0-beta.67
-        version: 2.0.0-beta.67(esbuild@0.19.4)(sass@1.69.1)(typescript@5.2.2)(vue@3.3.4)(webpack@5.88.2)
+        version: 2.0.0-beta.67(esbuild@0.19.4)(sass@1.69.3)(typescript@5.2.2)(vue@3.3.4)(webpack@5.88.2)
 
   docs/theme:
     dependencies:
@@ -1247,7 +1250,7 @@ importers:
         version: 0.16.9
       sass-loader:
         specifier: 13.3.2
-        version: 13.3.2(sass@1.69.1)(webpack@5.88.2)
+        version: 13.3.2(sass@1.69.3)(webpack@5.88.2)
       vue:
         specifier: 3.3.4
         version: 3.3.4
@@ -1265,10 +1268,10 @@ importers:
         version: link:../../packages/theme
       vuepress-vite:
         specifier: 2.0.0-beta.67
-        version: 2.0.0-beta.67(@types/node@20.8.6)(@vuepress/client@2.0.0-beta.67)(sass-loader@13.3.2)(ts-node@10.9.1)(vue@3.3.4)
+        version: 2.0.0-beta.67(@types/node@20.8.6)(@vuepress/client@2.0.0-beta.67)(sass-loader@13.3.2)(sass@1.69.3)(ts-node@10.9.1)(vue@3.3.4)
       vuepress-webpack:
         specifier: 2.0.0-beta.67
-        version: 2.0.0-beta.67(esbuild@0.19.4)(sass@1.69.1)(typescript@5.2.2)(vue@3.3.4)(webpack@5.88.2)
+        version: 2.0.0-beta.67(esbuild@0.19.4)(sass@1.69.3)(typescript@5.2.2)(vue@3.3.4)(webpack@5.88.2)
 
   packages/auto-catalog:
     dependencies:
@@ -1286,7 +1289,7 @@ importers:
         version: 2.0.0-beta.67
       sass-loader:
         specifier: ^13.3.2
-        version: 13.3.2(sass@1.69.1)(webpack@5.88.2)
+        version: 13.3.2(sass@1.69.3)(webpack@5.88.2)
       vue:
         specifier: ^3.3.4
         version: 3.3.4
@@ -1307,10 +1310,10 @@ importers:
         version: link:../shared
       vuepress-vite:
         specifier: 2.0.0-beta.67
-        version: 2.0.0-beta.67(@types/node@20.8.6)(@vuepress/client@2.0.0-beta.67)(sass-loader@13.3.2)(ts-node@10.9.1)(vue@3.3.4)
+        version: 2.0.0-beta.67(@types/node@20.8.6)(@vuepress/client@2.0.0-beta.67)(sass-loader@13.3.2)(sass@1.69.3)(ts-node@10.9.1)(vue@3.3.4)
       vuepress-webpack:
         specifier: 2.0.0-beta.67
-        version: 2.0.0-beta.67(esbuild@0.19.4)(sass@1.69.1)(typescript@5.2.2)(vue@3.3.4)(webpack@5.88.2)
+        version: 2.0.0-beta.67(esbuild@0.19.4)(sass@1.69.3)(typescript@5.2.2)(vue@3.3.4)(webpack@5.88.2)
 
   packages/blog2:
     dependencies:
@@ -1337,16 +1340,16 @@ importers:
         version: 4.2.5(vue@3.3.4)
       vuepress:
         specifier: 2.0.0-beta.67
-        version: 2.0.0-beta.67(@types/node@20.8.6)(@vuepress/client@2.0.0-beta.67)(sass-loader@13.3.2)(ts-node@10.9.1)(vue@3.3.4)
+        version: 2.0.0-beta.67(@types/node@20.8.6)(@vuepress/client@2.0.0-beta.67)(ts-node@10.9.1)(vue@3.3.4)
       vuepress-shared:
         specifier: workspace:*
         version: link:../shared
       vuepress-vite:
         specifier: 2.0.0-beta.67
-        version: 2.0.0-beta.67(@types/node@20.8.6)(@vuepress/client@2.0.0-beta.67)(sass-loader@13.3.2)(ts-node@10.9.1)(vue@3.3.4)
+        version: 2.0.0-beta.67(@types/node@20.8.6)(@vuepress/client@2.0.0-beta.67)(ts-node@10.9.1)(vue@3.3.4)
       vuepress-webpack:
         specifier: 2.0.0-beta.67
-        version: 2.0.0-beta.67(esbuild@0.19.4)(sass@1.69.1)(typescript@5.2.2)(vue@3.3.4)(webpack@5.88.2)
+        version: 2.0.0-beta.67(esbuild@0.19.4)(sass@1.69.3)(typescript@5.2.2)(vue@3.3.4)(webpack@5.88.2)
 
   packages/comment2:
     dependencies:
@@ -1363,14 +1366,14 @@ importers:
         specifier: ^2.15.8
         version: 2.15.8
       artalk:
-        specifier: ^2.6.3
-        version: 2.6.3
+        specifier: ^2.6.4
+        version: 2.6.4
       giscus:
         specifier: ^1.3.0
         version: 1.3.0
       sass-loader:
         specifier: ^13.3.2
-        version: 13.3.2(sass@1.69.1)(webpack@5.88.2)
+        version: 13.3.2(sass@1.69.3)(webpack@5.88.2)
       twikoo:
         specifier: ^1.6.22
         version: 1.6.22
@@ -1391,10 +1394,10 @@ importers:
         version: link:../shared
       vuepress-vite:
         specifier: 2.0.0-beta.67
-        version: 2.0.0-beta.67(@types/node@20.8.6)(@vuepress/client@2.0.0-beta.67)(sass-loader@13.3.2)(ts-node@10.9.1)(vue@3.3.4)
+        version: 2.0.0-beta.67(@types/node@20.8.6)(@vuepress/client@2.0.0-beta.67)(sass-loader@13.3.2)(sass@1.69.3)(ts-node@10.9.1)(vue@3.3.4)
       vuepress-webpack:
         specifier: 2.0.0-beta.67
-        version: 2.0.0-beta.67(esbuild@0.19.4)(sass@1.69.1)(typescript@5.2.2)(vue@3.3.4)(webpack@5.88.2)
+        version: 2.0.0-beta.67(esbuild@0.19.4)(sass@1.69.3)(typescript@5.2.2)(vue@3.3.4)(webpack@5.88.2)
     devDependencies:
       '@vuepress/core':
         specifier: 2.0.0-beta.67
@@ -1443,7 +1446,7 @@ importers:
         version: 1.5.3
       sass-loader:
         specifier: ^13.3.2
-        version: 13.3.2(sass@1.69.1)(webpack@5.88.2)
+        version: 13.3.2(sass@1.69.3)(webpack@5.88.2)
       vidstack:
         specifier: ^1.1.10
         version: 1.1.10
@@ -1467,17 +1470,17 @@ importers:
         version: link:../shared
       vuepress-vite:
         specifier: 2.0.0-beta.67
-        version: 2.0.0-beta.67(@types/node@20.8.6)(@vuepress/client@2.0.0-beta.67)(sass-loader@13.3.2)(ts-node@10.9.1)(vue@3.3.4)
+        version: 2.0.0-beta.67(@types/node@20.8.6)(@vuepress/client@2.0.0-beta.67)(sass-loader@13.3.2)(sass@1.69.3)(ts-node@10.9.1)(vue@3.3.4)
       vuepress-webpack:
         specifier: 2.0.0-beta.67
-        version: 2.0.0-beta.67(esbuild@0.19.4)(sass@1.69.1)(typescript@5.2.2)(vue@3.3.4)(webpack@5.88.2)
+        version: 2.0.0-beta.67(esbuild@0.19.4)(sass@1.69.3)(typescript@5.2.2)(vue@3.3.4)(webpack@5.88.2)
     devDependencies:
       '@types/qrcode':
         specifier: 1.5.2
         version: 1.5.2
       '@vuepress/bundler-vite':
         specifier: 2.0.0-beta.67
-        version: 2.0.0-beta.67(@types/node@20.8.6)(sass@1.69.1)(ts-node@10.9.1)
+        version: 2.0.0-beta.67(@types/node@20.8.6)(sass@1.69.3)(ts-node@10.9.1)
       '@vuepress/core':
         specifier: 2.0.0-beta.67
         version: 2.0.0-beta.67
@@ -1501,7 +1504,7 @@ importers:
         version: 1.2.0
       sass-loader:
         specifier: ^13.3.2
-        version: 13.3.2(sass@1.69.1)(webpack@5.88.2)
+        version: 13.3.2(sass@1.69.3)(webpack@5.88.2)
       vue:
         specifier: ^3.3.4
         version: 3.3.4
@@ -1519,10 +1522,10 @@ importers:
         version: link:../shared
       vuepress-vite:
         specifier: 2.0.0-beta.67
-        version: 2.0.0-beta.67(@types/node@20.8.6)(@vuepress/client@2.0.0-beta.67)(sass-loader@13.3.2)(ts-node@10.9.1)(vue@3.3.4)
+        version: 2.0.0-beta.67(@types/node@20.8.6)(@vuepress/client@2.0.0-beta.67)(sass-loader@13.3.2)(sass@1.69.3)(ts-node@10.9.1)(vue@3.3.4)
       vuepress-webpack:
         specifier: 2.0.0-beta.67
-        version: 2.0.0-beta.67(esbuild@0.19.4)(sass@1.69.1)(typescript@5.2.2)(vue@3.3.4)(webpack@5.88.2)
+        version: 2.0.0-beta.67(esbuild@0.19.4)(sass@1.69.3)(typescript@5.2.2)(vue@3.3.4)(webpack@5.88.2)
     devDependencies:
       '@vuepress/core':
         specifier: 2.0.0-beta.67
@@ -1550,16 +1553,16 @@ importers:
         version: 4.2.5(vue@3.3.4)
       vuepress:
         specifier: 2.0.0-beta.67
-        version: 2.0.0-beta.67(@types/node@20.8.6)(@vuepress/client@2.0.0-beta.67)(sass-loader@13.3.2)(ts-node@10.9.1)(vue@3.3.4)
+        version: 2.0.0-beta.67(@types/node@20.8.6)(@vuepress/client@2.0.0-beta.67)(ts-node@10.9.1)(vue@3.3.4)
       vuepress-shared:
         specifier: workspace:*
         version: link:../shared
       vuepress-vite:
         specifier: 2.0.0-beta.67
-        version: 2.0.0-beta.67(@types/node@20.8.6)(@vuepress/client@2.0.0-beta.67)(sass-loader@13.3.2)(ts-node@10.9.1)(vue@3.3.4)
+        version: 2.0.0-beta.67(@types/node@20.8.6)(@vuepress/client@2.0.0-beta.67)(ts-node@10.9.1)(vue@3.3.4)
       vuepress-webpack:
         specifier: 2.0.0-beta.67
-        version: 2.0.0-beta.67(esbuild@0.19.4)(sass@1.69.1)(typescript@5.2.2)(vue@3.3.4)(webpack@5.88.2)
+        version: 2.0.0-beta.67(esbuild@0.19.4)(sass@1.69.3)(typescript@5.2.2)(vue@3.3.4)(webpack@5.88.2)
     devDependencies:
       '@vuepress/core':
         specifier: 2.0.0-beta.67
@@ -1594,16 +1597,16 @@ importers:
         version: 1.0.0-rc.12
       vuepress:
         specifier: 2.0.0-beta.67
-        version: 2.0.0-beta.67(@types/node@20.8.6)(@vuepress/client@2.0.0-beta.67)(sass-loader@13.3.2)(ts-node@10.9.1)(vue@3.3.4)
+        version: 2.0.0-beta.67(@types/node@20.8.6)(@vuepress/client@2.0.0-beta.67)(ts-node@10.9.1)(vue@3.3.4)
       vuepress-shared:
         specifier: workspace:*
         version: link:../shared
       vuepress-vite:
         specifier: 2.0.0-beta.67
-        version: 2.0.0-beta.67(@types/node@20.8.6)(@vuepress/client@2.0.0-beta.67)(sass-loader@13.3.2)(ts-node@10.9.1)(vue@3.3.4)
+        version: 2.0.0-beta.67(@types/node@20.8.6)(@vuepress/client@2.0.0-beta.67)(ts-node@10.9.1)(vue@3.3.4)
       vuepress-webpack:
         specifier: 2.0.0-beta.67
-        version: 2.0.0-beta.67(esbuild@0.19.4)(sass@1.69.1)(typescript@5.2.2)(vue@3.3.4)(webpack@5.88.2)
+        version: 2.0.0-beta.67(esbuild@0.19.4)(sass@1.69.3)(typescript@5.2.2)(vue@3.3.4)(webpack@5.88.2)
       xml-js:
         specifier: ^1.6.11
         version: 1.6.11
@@ -1628,7 +1631,7 @@ importers:
         version: 2.7.2
       sass-loader:
         specifier: ^13.3.2
-        version: 13.3.2(sass@1.69.1)(webpack@5.88.2)
+        version: 13.3.2(sass@1.69.3)(webpack@5.88.2)
       vue:
         specifier: ^3.3.4
         version: 3.3.4
@@ -1646,10 +1649,10 @@ importers:
         version: link:../shared
       vuepress-vite:
         specifier: 2.0.0-beta.67
-        version: 2.0.0-beta.67(@types/node@20.8.6)(@vuepress/client@2.0.0-beta.67)(sass-loader@13.3.2)(ts-node@10.9.1)(vue@3.3.4)
+        version: 2.0.0-beta.67(@types/node@20.8.6)(@vuepress/client@2.0.0-beta.67)(sass-loader@13.3.2)(sass@1.69.3)(ts-node@10.9.1)(vue@3.3.4)
       vuepress-webpack:
         specifier: 2.0.0-beta.67
-        version: 2.0.0-beta.67(esbuild@0.19.4)(sass@1.69.1)(typescript@5.2.2)(vue@3.3.4)(webpack@5.88.2)
+        version: 2.0.0-beta.67(esbuild@0.19.4)(sass@1.69.3)(typescript@5.2.2)(vue@3.3.4)(webpack@5.88.2)
     devDependencies:
       '@vuepress/core':
         specifier: 2.0.0-beta.67
@@ -1658,8 +1661,8 @@ importers:
   packages/md-enhance:
     dependencies:
       '@babel/core':
-        specifier: ^7.23.0
-        version: 7.23.0
+        specifier: ^7.23.2
+        version: 7.23.2
       '@mdit/plugin-align':
         specifier: ^0.4.8
         version: 0.4.8
@@ -1718,8 +1721,8 @@ importers:
         specifier: ^0.4.8
         version: 0.4.8
       '@types/js-yaml':
-        specifier: ^4.0.6
-        version: 4.0.6
+        specifier: ^4.0.7
+        version: 4.0.7
       '@types/markdown-it':
         specifier: ^13.0.2
         version: 13.0.2
@@ -1748,8 +1751,8 @@ importers:
         specifier: ^5.4.3
         version: 5.4.3
       flowchart.ts:
-        specifier: ^1.0.0
-        version: 1.0.0
+        specifier: ^1.0.1
+        version: 1.0.1
       js-yaml:
         specifier: ^4.1.0
         version: 4.1.0
@@ -1760,14 +1763,14 @@ importers:
         specifier: ^13.0.2
         version: 13.0.2
       mermaid:
-        specifier: 10.5.0
+        specifier: ^10.5.0
         version: 10.5.0
       reveal.js:
         specifier: ^4.6.1
         version: 4.6.1
       sass-loader:
         specifier: ^13.3.2
-        version: 13.3.2(sass@1.69.1)(webpack@5.88.2)
+        version: 13.3.2(sass@1.69.3)(webpack@5.88.2)
       vue:
         specifier: ^3.3.4
         version: 3.3.4
@@ -1785,17 +1788,17 @@ importers:
         version: link:../shared
       vuepress-vite:
         specifier: 2.0.0-beta.67
-        version: 2.0.0-beta.67(@types/node@20.8.6)(@vuepress/client@2.0.0-beta.67)(sass-loader@13.3.2)(ts-node@10.9.1)(vue@3.3.4)
+        version: 2.0.0-beta.67(@types/node@20.8.6)(@vuepress/client@2.0.0-beta.67)(sass-loader@13.3.2)(sass@1.69.3)(ts-node@10.9.1)(vue@3.3.4)
       vuepress-webpack:
         specifier: 2.0.0-beta.67
-        version: 2.0.0-beta.67(esbuild@0.19.4)(sass@1.69.1)(typescript@5.2.2)(vue@3.3.4)(webpack@5.88.2)
+        version: 2.0.0-beta.67(esbuild@0.19.4)(sass@1.69.3)(typescript@5.2.2)(vue@3.3.4)(webpack@5.88.2)
     devDependencies:
       '@types/babel__core':
         specifier: 7.20.2
         version: 7.20.2
       '@vuepress/bundler-vite':
         specifier: 2.0.0-beta.67
-        version: 2.0.0-beta.67(@types/node@20.8.6)(sass@1.69.1)(ts-node@10.9.1)
+        version: 2.0.0-beta.67(@types/node@20.8.6)(sass@1.69.3)(ts-node@10.9.1)
       '@vuepress/core':
         specifier: 2.0.0-beta.67
         version: 2.0.0-beta.67
@@ -1825,7 +1828,7 @@ importers:
         version: 5.4.2
       sass-loader:
         specifier: ^13.3.2
-        version: 13.3.2(sass@1.69.1)(webpack@5.88.2)
+        version: 13.3.2(sass@1.69.3)(webpack@5.88.2)
       vue:
         specifier: ^3.3.4
         version: 3.3.4
@@ -1843,10 +1846,10 @@ importers:
         version: link:../shared
       vuepress-vite:
         specifier: 2.0.0-beta.67
-        version: 2.0.0-beta.67(@types/node@20.8.6)(@vuepress/client@2.0.0-beta.67)(sass-loader@13.3.2)(ts-node@10.9.1)(vue@3.3.4)
+        version: 2.0.0-beta.67(@types/node@20.8.6)(@vuepress/client@2.0.0-beta.67)(sass-loader@13.3.2)(sass@1.69.3)(ts-node@10.9.1)(vue@3.3.4)
       vuepress-webpack:
         specifier: 2.0.0-beta.67
-        version: 2.0.0-beta.67(esbuild@0.19.4)(sass@1.69.1)(typescript@5.2.2)(vue@3.3.4)(webpack@5.88.2)
+        version: 2.0.0-beta.67(esbuild@0.19.4)(sass@1.69.3)(typescript@5.2.2)(vue@3.3.4)(webpack@5.88.2)
     devDependencies:
       '@vuepress/core':
         specifier: 2.0.0-beta.67
@@ -1874,7 +1877,7 @@ importers:
         version: 1.7.2
       sass-loader:
         specifier: ^13.3.2
-        version: 13.3.2(sass@1.69.1)(webpack@5.88.2)
+        version: 13.3.2(sass@1.69.3)(webpack@5.88.2)
       vue:
         specifier: ^3.3.4
         version: 3.3.4
@@ -1892,10 +1895,10 @@ importers:
         version: link:../shared
       vuepress-vite:
         specifier: 2.0.0-beta.67
-        version: 2.0.0-beta.67(@types/node@20.8.6)(@vuepress/client@2.0.0-beta.67)(sass-loader@13.3.2)(ts-node@10.9.1)(vue@3.3.4)
+        version: 2.0.0-beta.67(@types/node@20.8.6)(@vuepress/client@2.0.0-beta.67)(sass-loader@13.3.2)(sass@1.69.3)(ts-node@10.9.1)(vue@3.3.4)
       vuepress-webpack:
         specifier: 2.0.0-beta.67
-        version: 2.0.0-beta.67(esbuild@0.19.4)(sass@1.69.1)(typescript@5.2.2)(vue@3.3.4)(webpack@5.88.2)
+        version: 2.0.0-beta.67(esbuild@0.19.4)(sass@1.69.3)(typescript@5.2.2)(vue@3.3.4)(webpack@5.88.2)
       workbox-build:
         specifier: ^7.0.0
         version: 7.0.0
@@ -1914,16 +1917,16 @@ importers:
         version: 3.3.4
       vuepress:
         specifier: 2.0.0-beta.67
-        version: 2.0.0-beta.67(@types/node@20.8.6)(@vuepress/client@2.0.0-beta.67)(sass-loader@13.3.2)(ts-node@10.9.1)(vue@3.3.4)
+        version: 2.0.0-beta.67(@types/node@20.8.6)(@vuepress/client@2.0.0-beta.67)(ts-node@10.9.1)(vue@3.3.4)
       vuepress-shared:
         specifier: workspace:*
         version: link:../shared
       vuepress-vite:
         specifier: 2.0.0-beta.67
-        version: 2.0.0-beta.67(@types/node@20.8.6)(@vuepress/client@2.0.0-beta.67)(sass-loader@13.3.2)(ts-node@10.9.1)(vue@3.3.4)
+        version: 2.0.0-beta.67(@types/node@20.8.6)(@vuepress/client@2.0.0-beta.67)(ts-node@10.9.1)(vue@3.3.4)
       vuepress-webpack:
         specifier: 2.0.0-beta.67
-        version: 2.0.0-beta.67(esbuild@0.19.4)(sass@1.69.1)(typescript@5.2.2)(vue@3.3.4)(webpack@5.88.2)
+        version: 2.0.0-beta.67(esbuild@0.19.4)(sass@1.69.3)(typescript@5.2.2)(vue@3.3.4)(webpack@5.88.2)
     devDependencies:
       '@vuepress/core':
         specifier: 2.0.0-beta.67
@@ -1954,7 +1957,7 @@ importers:
         version: 6.7.14
       sass-loader:
         specifier: ^13.3.2
-        version: 13.3.2(sass@1.69.1)(webpack@5.88.2)
+        version: 13.3.2(sass@1.69.3)(webpack@5.88.2)
       vue:
         specifier: ^3.3.4
         version: 3.3.4
@@ -1972,10 +1975,10 @@ importers:
         version: link:../shared
       vuepress-vite:
         specifier: 2.0.0-beta.67
-        version: 2.0.0-beta.67(@types/node@20.8.6)(@vuepress/client@2.0.0-beta.67)(sass-loader@13.3.2)(ts-node@10.9.1)(vue@3.3.4)
+        version: 2.0.0-beta.67(@types/node@20.8.6)(@vuepress/client@2.0.0-beta.67)(sass-loader@13.3.2)(sass@1.69.3)(ts-node@10.9.1)(vue@3.3.4)
       vuepress-webpack:
         specifier: 2.0.0-beta.67
-        version: 2.0.0-beta.67(esbuild@0.19.4)(sass@1.69.1)(typescript@5.2.2)(vue@3.3.4)(webpack@5.88.2)
+        version: 2.0.0-beta.67(esbuild@0.19.4)(sass@1.69.3)(typescript@5.2.2)(vue@3.3.4)(webpack@5.88.2)
 
   packages/remove-pwa:
     dependencies:
@@ -1993,13 +1996,13 @@ importers:
         version: 3.3.4
       vuepress:
         specifier: 2.0.0-beta.67
-        version: 2.0.0-beta.67(@types/node@20.8.6)(@vuepress/client@2.0.0-beta.67)(sass-loader@13.3.2)(ts-node@10.9.1)(vue@3.3.4)
+        version: 2.0.0-beta.67(@types/node@20.8.6)(@vuepress/client@2.0.0-beta.67)(ts-node@10.9.1)(vue@3.3.4)
       vuepress-vite:
         specifier: 2.0.0-beta.67
-        version: 2.0.0-beta.67(@types/node@20.8.6)(@vuepress/client@2.0.0-beta.67)(sass-loader@13.3.2)(ts-node@10.9.1)(vue@3.3.4)
+        version: 2.0.0-beta.67(@types/node@20.8.6)(@vuepress/client@2.0.0-beta.67)(ts-node@10.9.1)(vue@3.3.4)
       vuepress-webpack:
         specifier: 2.0.0-beta.67
-        version: 2.0.0-beta.67(esbuild@0.19.4)(sass@1.69.1)(typescript@5.2.2)(vue@3.3.4)(webpack@5.88.2)
+        version: 2.0.0-beta.67(esbuild@0.19.4)(sass@1.69.3)(typescript@5.2.2)(vue@3.3.4)(webpack@5.88.2)
     devDependencies:
       '@vuepress/core':
         specifier: 2.0.0-beta.67
@@ -2021,16 +2024,16 @@ importers:
         version: 3.3.4
       vuepress:
         specifier: 2.0.0-beta.67
-        version: 2.0.0-beta.67(@types/node@20.8.6)(@vuepress/client@2.0.0-beta.67)(sass-loader@13.3.2)(ts-node@10.9.1)(vue@3.3.4)
+        version: 2.0.0-beta.67(@types/node@20.8.6)(@vuepress/client@2.0.0-beta.67)(ts-node@10.9.1)(vue@3.3.4)
       vuepress-shared:
         specifier: workspace:*
         version: link:../shared
       vuepress-vite:
         specifier: 2.0.0-beta.67
-        version: 2.0.0-beta.67(@types/node@20.8.6)(@vuepress/client@2.0.0-beta.67)(sass-loader@13.3.2)(ts-node@10.9.1)(vue@3.3.4)
+        version: 2.0.0-beta.67(@types/node@20.8.6)(@vuepress/client@2.0.0-beta.67)(ts-node@10.9.1)(vue@3.3.4)
       vuepress-webpack:
         specifier: 2.0.0-beta.67
-        version: 2.0.0-beta.67(esbuild@0.19.4)(sass@1.69.1)(typescript@5.2.2)(vue@3.3.4)(webpack@5.88.2)
+        version: 2.0.0-beta.67(esbuild@0.19.4)(sass@1.69.3)(typescript@5.2.2)(vue@3.3.4)(webpack@5.88.2)
     devDependencies:
       '@vuepress/core':
         specifier: 2.0.0-beta.67
@@ -2048,27 +2051,27 @@ importers:
         specifier: ^3.5.3
         version: 3.5.3
       sass:
-        specifier: ^1.69.1
-        version: 1.69.1
+        specifier: ^1.69.3
+        version: 1.69.3
       sass-loader:
         specifier: ^13.3.2
-        version: 13.3.2(sass@1.69.1)(webpack@5.88.2)
+        version: 13.3.2(sass@1.69.3)(webpack@5.88.2)
       vuepress:
         specifier: 2.0.0-beta.67
-        version: 2.0.0-beta.67(@types/node@20.8.6)(@vuepress/client@2.0.0-beta.67)(sass-loader@13.3.2)(sass@1.69.1)(ts-node@10.9.1)(vue@3.3.4)
+        version: 2.0.0-beta.67(@types/node@20.8.6)(@vuepress/client@2.0.0-beta.67)(sass-loader@13.3.2)(sass@1.69.3)(ts-node@10.9.1)(vue@3.3.4)
       vuepress-shared:
         specifier: workspace:*
         version: link:../shared
       vuepress-vite:
         specifier: 2.0.0-beta.67
-        version: 2.0.0-beta.67(@types/node@20.8.6)(@vuepress/client@2.0.0-beta.67)(sass-loader@13.3.2)(sass@1.69.1)(ts-node@10.9.1)(vue@3.3.4)
+        version: 2.0.0-beta.67(@types/node@20.8.6)(@vuepress/client@2.0.0-beta.67)(sass-loader@13.3.2)(sass@1.69.3)(ts-node@10.9.1)(vue@3.3.4)
       vuepress-webpack:
         specifier: 2.0.0-beta.67
-        version: 2.0.0-beta.67(esbuild@0.19.4)(sass@1.69.1)(typescript@5.2.2)(vue@3.3.4)(webpack@5.88.2)
+        version: 2.0.0-beta.67(esbuild@0.19.4)(sass@1.69.3)(typescript@5.2.2)(vue@3.3.4)(webpack@5.88.2)
     devDependencies:
       '@vuepress/bundler-vite':
         specifier: 2.0.0-beta.67
-        version: 2.0.0-beta.67(@types/node@20.8.6)(sass@1.69.1)(ts-node@10.9.1)
+        version: 2.0.0-beta.67(@types/node@20.8.6)(sass@1.69.3)(ts-node@10.9.1)
       '@vuepress/bundler-webpack':
         specifier: 2.0.0-beta.67
         version: 2.0.0-beta.67(esbuild@0.19.4)(typescript@5.2.2)
@@ -2098,7 +2101,7 @@ importers:
         version: 3.5.3
       sass-loader:
         specifier: ^13.3.2
-        version: 13.3.2(sass@1.69.1)(webpack@5.88.2)
+        version: 13.3.2(sass@1.69.3)(webpack@5.88.2)
       slimsearch:
         specifier: ^1.0.0
         version: 1.0.0
@@ -2119,10 +2122,10 @@ importers:
         version: link:../shared
       vuepress-vite:
         specifier: 2.0.0-beta.67
-        version: 2.0.0-beta.67(@types/node@20.8.6)(@vuepress/client@2.0.0-beta.67)(sass-loader@13.3.2)(ts-node@10.9.1)(vue@3.3.4)
+        version: 2.0.0-beta.67(@types/node@20.8.6)(@vuepress/client@2.0.0-beta.67)(sass-loader@13.3.2)(sass@1.69.3)(ts-node@10.9.1)(vue@3.3.4)
       vuepress-webpack:
         specifier: 2.0.0-beta.67
-        version: 2.0.0-beta.67(esbuild@0.19.4)(sass@1.69.1)(typescript@5.2.2)(vue@3.3.4)(webpack@5.88.2)
+        version: 2.0.0-beta.67(esbuild@0.19.4)(sass@1.69.3)(typescript@5.2.2)(vue@3.3.4)(webpack@5.88.2)
     devDependencies:
       '@vuepress/core':
         specifier: 2.0.0-beta.67
@@ -2138,16 +2141,16 @@ importers:
         version: 2.0.0-beta.67
       vuepress:
         specifier: 2.0.0-beta.67
-        version: 2.0.0-beta.67(@types/node@20.8.6)(@vuepress/client@2.0.0-beta.67)(sass-loader@13.3.2)(ts-node@10.9.1)(vue@3.3.4)
+        version: 2.0.0-beta.67(@types/node@20.8.6)(@vuepress/client@2.0.0-beta.67)(ts-node@10.9.1)(vue@3.3.4)
       vuepress-shared:
         specifier: workspace:*
         version: link:../shared
       vuepress-vite:
         specifier: 2.0.0-beta.67
-        version: 2.0.0-beta.67(@types/node@20.8.6)(@vuepress/client@2.0.0-beta.67)(sass-loader@13.3.2)(ts-node@10.9.1)(vue@3.3.4)
+        version: 2.0.0-beta.67(@types/node@20.8.6)(@vuepress/client@2.0.0-beta.67)(ts-node@10.9.1)(vue@3.3.4)
       vuepress-webpack:
         specifier: 2.0.0-beta.67
-        version: 2.0.0-beta.67(esbuild@0.19.4)(sass@1.69.1)(typescript@5.2.2)(vue@3.3.4)(webpack@5.88.2)
+        version: 2.0.0-beta.67(esbuild@0.19.4)(sass@1.69.3)(typescript@5.2.2)(vue@3.3.4)(webpack@5.88.2)
     devDependencies:
       '@vuepress/core':
         specifier: 2.0.0-beta.67
@@ -2199,13 +2202,13 @@ importers:
         version: 4.2.5(vue@3.3.4)
       vuepress:
         specifier: 2.0.0-beta.67
-        version: 2.0.0-beta.67(@types/node@20.8.6)(@vuepress/client@2.0.0-beta.67)(sass-loader@13.3.2)(ts-node@10.9.1)(vue@3.3.4)
+        version: 2.0.0-beta.67(@types/node@20.8.6)(@vuepress/client@2.0.0-beta.67)(ts-node@10.9.1)(vue@3.3.4)
       vuepress-vite:
         specifier: 2.0.0-beta.67
-        version: 2.0.0-beta.67(@types/node@20.8.6)(@vuepress/client@2.0.0-beta.67)(sass-loader@13.3.2)(ts-node@10.9.1)(vue@3.3.4)
+        version: 2.0.0-beta.67(@types/node@20.8.6)(@vuepress/client@2.0.0-beta.67)(ts-node@10.9.1)(vue@3.3.4)
       vuepress-webpack:
         specifier: 2.0.0-beta.67
-        version: 2.0.0-beta.67(esbuild@0.19.4)(sass@1.69.1)(typescript@5.2.2)(vue@3.3.4)(webpack@5.88.2)
+        version: 2.0.0-beta.67(esbuild@0.19.4)(sass@1.69.3)(typescript@5.2.2)(vue@3.3.4)(webpack@5.88.2)
     devDependencies:
       '@types/connect':
         specifier: 3.4.36
@@ -2215,7 +2218,7 @@ importers:
         version: 7.5.3
       '@vuepress/bundler-vite':
         specifier: 2.0.0-beta.67
-        version: 2.0.0-beta.67(@types/node@20.8.6)(sass@1.69.1)(ts-node@10.9.1)
+        version: 2.0.0-beta.67(@types/node@20.8.6)(sass@1.69.3)(ts-node@10.9.1)
       '@vuepress/bundler-webpack':
         specifier: 2.0.0-beta.67
         version: 2.0.0-beta.67(esbuild@0.19.4)(typescript@5.2.2)
@@ -2230,7 +2233,7 @@ importers:
         version: 7.0.1
       vite:
         specifier: 4.4.11
-        version: 4.4.11(@types/node@20.8.6)(sass@1.69.1)
+        version: 4.4.11(@types/node@20.8.6)(sass@1.69.3)
 
   packages/sitemap2:
     dependencies:
@@ -2245,16 +2248,16 @@ importers:
         version: 7.1.1
       vuepress:
         specifier: 2.0.0-beta.67
-        version: 2.0.0-beta.67(@types/node@20.8.6)(@vuepress/client@2.0.0-beta.67)(sass-loader@13.3.2)(ts-node@10.9.1)(vue@3.3.4)
+        version: 2.0.0-beta.67(@types/node@20.8.6)(@vuepress/client@2.0.0-beta.67)(ts-node@10.9.1)(vue@3.3.4)
       vuepress-shared:
         specifier: workspace:*
         version: link:../shared
       vuepress-vite:
         specifier: 2.0.0-beta.67
-        version: 2.0.0-beta.67(@types/node@20.8.6)(@vuepress/client@2.0.0-beta.67)(sass-loader@13.3.2)(ts-node@10.9.1)(vue@3.3.4)
+        version: 2.0.0-beta.67(@types/node@20.8.6)(@vuepress/client@2.0.0-beta.67)(ts-node@10.9.1)(vue@3.3.4)
       vuepress-webpack:
         specifier: 2.0.0-beta.67
-        version: 2.0.0-beta.67(esbuild@0.19.4)(sass@1.69.1)(typescript@5.2.2)(vue@3.3.4)(webpack@5.88.2)
+        version: 2.0.0-beta.67(esbuild@0.19.4)(sass@1.69.3)(typescript@5.2.2)(vue@3.3.4)(webpack@5.88.2)
     devDependencies:
       '@vuepress/core':
         specifier: 2.0.0-beta.67
@@ -2321,7 +2324,7 @@ importers:
         version: 4.0.3
       sass-loader:
         specifier: ^13.3.2
-        version: 13.3.2(sass@1.69.1)(webpack@5.88.2)
+        version: 13.3.2(sass@1.69.3)(webpack@5.88.2)
       vue:
         specifier: ^3.3.4
         version: 3.3.4
@@ -2381,14 +2384,14 @@ importers:
         version: link:../shared
       vuepress-vite:
         specifier: 2.0.0-beta.67
-        version: 2.0.0-beta.67(@types/node@20.8.6)(@vuepress/client@2.0.0-beta.67)(sass-loader@13.3.2)(ts-node@10.9.1)(vue@3.3.4)
+        version: 2.0.0-beta.67(@types/node@20.8.6)(@vuepress/client@2.0.0-beta.67)(sass-loader@13.3.2)(sass@1.69.3)(ts-node@10.9.1)(vue@3.3.4)
       vuepress-webpack:
         specifier: 2.0.0-beta.67
-        version: 2.0.0-beta.67(esbuild@0.19.4)(sass@1.69.1)(typescript@5.2.2)(vue@3.3.4)(webpack@5.88.2)
+        version: 2.0.0-beta.67(esbuild@0.19.4)(sass@1.69.3)(typescript@5.2.2)(vue@3.3.4)(webpack@5.88.2)
     devDependencies:
       '@vuepress/bundler-vite':
         specifier: 2.0.0-beta.67
-        version: 2.0.0-beta.67(@types/node@20.8.6)(sass@1.69.1)(ts-node@10.9.1)
+        version: 2.0.0-beta.67(@types/node@20.8.6)(sass@1.69.3)(ts-node@10.9.1)
       '@vuepress/bundler-webpack':
         specifier: 2.0.0-beta.67
         version: 2.0.0-beta.67(esbuild@0.19.4)(typescript@5.2.2)
@@ -2403,23 +2406,23 @@ packages:
     engines: {node: '>=0.10.0'}
     dev: true
 
-  /@algolia/autocomplete-core@1.9.3(@algolia/client-search@4.20.0)(algoliasearch@4.20.0)(search-insights@2.8.3):
+  /@algolia/autocomplete-core@1.9.3(@algolia/client-search@4.20.0)(algoliasearch@4.20.0)(search-insights@2.9.0):
     resolution: {integrity: sha512-009HdfugtGCdC4JdXUbVJClA0q0zh24yyePn+KUGk3rP7j8FEe/m5Yo/z65gn6nP/cM39PxpzqKrL7A6fP6PPw==}
     dependencies:
-      '@algolia/autocomplete-plugin-algolia-insights': 1.9.3(@algolia/client-search@4.20.0)(algoliasearch@4.20.0)(search-insights@2.8.3)
+      '@algolia/autocomplete-plugin-algolia-insights': 1.9.3(@algolia/client-search@4.20.0)(algoliasearch@4.20.0)(search-insights@2.9.0)
       '@algolia/autocomplete-shared': 1.9.3(@algolia/client-search@4.20.0)(algoliasearch@4.20.0)
     transitivePeerDependencies:
       - '@algolia/client-search'
       - algoliasearch
       - search-insights
 
-  /@algolia/autocomplete-plugin-algolia-insights@1.9.3(@algolia/client-search@4.20.0)(algoliasearch@4.20.0)(search-insights@2.8.3):
+  /@algolia/autocomplete-plugin-algolia-insights@1.9.3(@algolia/client-search@4.20.0)(algoliasearch@4.20.0)(search-insights@2.9.0):
     resolution: {integrity: sha512-a/yTUkcO/Vyy+JffmAnTWbr4/90cLzw+CC3bRbhnULr/EM0fGNvM13oQQ14f2moLMcVDyAx/leczLlAOovhSZg==}
     peerDependencies:
       search-insights: '>= 1 < 3'
     dependencies:
       '@algolia/autocomplete-shared': 1.9.3(@algolia/client-search@4.20.0)(algoliasearch@4.20.0)
-      search-insights: 2.8.3
+      search-insights: 2.9.0
     transitivePeerDependencies:
       - '@algolia/client-search'
       - algoliasearch
@@ -2550,19 +2553,19 @@ packages:
     engines: {node: '>=6.9.0'}
     dev: false
 
-  /@babel/core@7.23.0:
-    resolution: {integrity: sha512-97z/ju/Jy1rZmDxybphrBuI+jtJjFVoz7Mr9yUQVVVi+DNZE333uFQeMOqcCIy1x3WYBIbWftUSLmbNXNT7qFQ==}
+  /@babel/core@7.23.2:
+    resolution: {integrity: sha512-n7s51eWdaWZ3vGT2tD4T7J6eJs3QoBXydv7vkUM06Bf1cbVD2Kc2UrkzhiQwobfV7NwOnQXYL7UBJ5VPU+RGoQ==}
     engines: {node: '>=6.9.0'}
     dependencies:
       '@ampproject/remapping': 2.2.1
       '@babel/code-frame': 7.22.13
       '@babel/generator': 7.23.0
       '@babel/helper-compilation-targets': 7.22.15
-      '@babel/helper-module-transforms': 7.23.0(@babel/core@7.23.0)
-      '@babel/helpers': 7.23.1
+      '@babel/helper-module-transforms': 7.23.0(@babel/core@7.23.2)
+      '@babel/helpers': 7.23.2
       '@babel/parser': 7.23.0
       '@babel/template': 7.22.15
-      '@babel/traverse': 7.23.0
+      '@babel/traverse': 7.23.2
       '@babel/types': 7.23.0
       convert-source-map: 2.0.0
       debug: 4.3.4
@@ -2608,42 +2611,42 @@ packages:
       semver: 6.3.1
     dev: false
 
-  /@babel/helper-create-class-features-plugin@7.22.15(@babel/core@7.23.0):
+  /@babel/helper-create-class-features-plugin@7.22.15(@babel/core@7.23.2):
     resolution: {integrity: sha512-jKkwA59IXcvSaiK2UN45kKwSC9o+KuoXsBDvHvU/7BecYIp8GQ2UwrVvFgJASUT+hBnwJx6MhvMCuMzwZZ7jlg==}
     engines: {node: '>=6.9.0'}
     peerDependencies:
       '@babel/core': ^7.0.0
     dependencies:
-      '@babel/core': 7.23.0
+      '@babel/core': 7.23.2
       '@babel/helper-annotate-as-pure': 7.22.5
       '@babel/helper-environment-visitor': 7.22.20
       '@babel/helper-function-name': 7.23.0
       '@babel/helper-member-expression-to-functions': 7.23.0
       '@babel/helper-optimise-call-expression': 7.22.5
-      '@babel/helper-replace-supers': 7.22.20(@babel/core@7.23.0)
+      '@babel/helper-replace-supers': 7.22.20(@babel/core@7.23.2)
       '@babel/helper-skip-transparent-expression-wrappers': 7.22.5
       '@babel/helper-split-export-declaration': 7.22.6
       semver: 6.3.1
     dev: false
 
-  /@babel/helper-create-regexp-features-plugin@7.22.15(@babel/core@7.23.0):
+  /@babel/helper-create-regexp-features-plugin@7.22.15(@babel/core@7.23.2):
     resolution: {integrity: sha512-29FkPLFjn4TPEa3RE7GpW+qbE8tlsu3jntNYNfcGsc49LphF1PQIiD+vMZ1z1xVOKt+93khA9tc2JBs3kBjA7w==}
     engines: {node: '>=6.9.0'}
     peerDependencies:
       '@babel/core': ^7.0.0
     dependencies:
-      '@babel/core': 7.23.0
+      '@babel/core': 7.23.2
       '@babel/helper-annotate-as-pure': 7.22.5
       regexpu-core: 5.3.2
       semver: 6.3.1
     dev: false
 
-  /@babel/helper-define-polyfill-provider@0.4.2(@babel/core@7.23.0):
+  /@babel/helper-define-polyfill-provider@0.4.2(@babel/core@7.23.2):
     resolution: {integrity: sha512-k0qnnOqHn5dK9pZpfD5XXZ9SojAITdCKRn2Lp6rnDGzIbaP0rHyMPk/4wsSxVBVz4RfN0q6VpXWP2pDGIoQ7hw==}
     peerDependencies:
       '@babel/core': ^7.4.0 || ^8.0.0-0 <8.0.0
     dependencies:
-      '@babel/core': 7.23.0
+      '@babel/core': 7.23.2
       '@babel/helper-compilation-targets': 7.22.15
       '@babel/helper-plugin-utils': 7.22.5
       debug: 4.3.4
@@ -2687,13 +2690,13 @@ packages:
       '@babel/types': 7.23.0
     dev: false
 
-  /@babel/helper-module-transforms@7.23.0(@babel/core@7.23.0):
+  /@babel/helper-module-transforms@7.23.0(@babel/core@7.23.2):
     resolution: {integrity: sha512-WhDWw1tdrlT0gMgUJSlX0IQvoO1eN279zrAUbVB+KpV2c3Tylz8+GnKOLllCS6Z/iZQEyVYxhZVUdPTqs2YYPw==}
     engines: {node: '>=6.9.0'}
     peerDependencies:
       '@babel/core': ^7.0.0
     dependencies:
-      '@babel/core': 7.23.0
+      '@babel/core': 7.23.2
       '@babel/helper-environment-visitor': 7.22.20
       '@babel/helper-module-imports': 7.22.15
       '@babel/helper-simple-access': 7.22.5
@@ -2713,25 +2716,25 @@ packages:
     engines: {node: '>=6.9.0'}
     dev: false
 
-  /@babel/helper-remap-async-to-generator@7.22.20(@babel/core@7.23.0):
+  /@babel/helper-remap-async-to-generator@7.22.20(@babel/core@7.23.2):
     resolution: {integrity: sha512-pBGyV4uBqOns+0UvhsTO8qgl8hO89PmiDYv+/COyp1aeMcmfrfruz+/nCMFiYyFF/Knn0yfrC85ZzNFjembFTw==}
     engines: {node: '>=6.9.0'}
     peerDependencies:
       '@babel/core': ^7.0.0
     dependencies:
-      '@babel/core': 7.23.0
+      '@babel/core': 7.23.2
       '@babel/helper-annotate-as-pure': 7.22.5
       '@babel/helper-environment-visitor': 7.22.20
       '@babel/helper-wrap-function': 7.22.20
     dev: false
 
-  /@babel/helper-replace-supers@7.22.20(@babel/core@7.23.0):
+  /@babel/helper-replace-supers@7.22.20(@babel/core@7.23.2):
     resolution: {integrity: sha512-qsW0In3dbwQUbK8kejJ4R7IHVGwHJlV6lpG6UA7a9hSa2YEiAib+N1T2kr6PEeUT+Fl7najmSOS6SmAwCHK6Tw==}
     engines: {node: '>=6.9.0'}
     peerDependencies:
       '@babel/core': ^7.0.0
     dependencies:
-      '@babel/core': 7.23.0
+      '@babel/core': 7.23.2
       '@babel/helper-environment-visitor': 7.22.20
       '@babel/helper-member-expression-to-functions': 7.23.0
       '@babel/helper-optimise-call-expression': 7.22.5
@@ -2780,12 +2783,12 @@ packages:
       '@babel/types': 7.23.0
     dev: false
 
-  /@babel/helpers@7.23.1:
-    resolution: {integrity: sha512-chNpneuK18yW5Oxsr+t553UZzzAs3aZnFm4bxhebsNTeshrC95yA7l5yl7GBAG+JG1rF0F7zzD2EixK9mWSDoA==}
+  /@babel/helpers@7.23.2:
+    resolution: {integrity: sha512-lzchcp8SjTSVe/fPmLwtWVBFC7+Tbn8LGHDVfDp9JGxpAY5opSaEFgt8UQvrnECWOTdji2mOWMz1rOhkHscmGQ==}
     engines: {node: '>=6.9.0'}
     dependencies:
       '@babel/template': 7.22.15
-      '@babel/traverse': 7.23.0
+      '@babel/traverse': 7.23.2
       '@babel/types': 7.23.0
     transitivePeerDependencies:
       - supports-color
@@ -2806,835 +2809,835 @@ packages:
     dependencies:
       '@babel/types': 7.23.0
 
-  /@babel/plugin-bugfix-safari-id-destructuring-collision-in-function-expression@7.22.15(@babel/core@7.23.0):
+  /@babel/plugin-bugfix-safari-id-destructuring-collision-in-function-expression@7.22.15(@babel/core@7.23.2):
     resolution: {integrity: sha512-FB9iYlz7rURmRJyXRKEnalYPPdn87H5no108cyuQQyMwlpJ2SJtpIUBI27kdTin956pz+LPypkPVPUTlxOmrsg==}
     engines: {node: '>=6.9.0'}
     peerDependencies:
       '@babel/core': ^7.0.0
     dependencies:
-      '@babel/core': 7.23.0
+      '@babel/core': 7.23.2
       '@babel/helper-plugin-utils': 7.22.5
     dev: false
 
-  /@babel/plugin-bugfix-v8-spread-parameters-in-optional-chaining@7.22.15(@babel/core@7.23.0):
+  /@babel/plugin-bugfix-v8-spread-parameters-in-optional-chaining@7.22.15(@babel/core@7.23.2):
     resolution: {integrity: sha512-Hyph9LseGvAeeXzikV88bczhsrLrIZqDPxO+sSmAunMPaGrBGhfMWzCPYTtiW9t+HzSE2wtV8e5cc5P6r1xMDQ==}
     engines: {node: '>=6.9.0'}
     peerDependencies:
       '@babel/core': ^7.13.0
     dependencies:
-      '@babel/core': 7.23.0
+      '@babel/core': 7.23.2
       '@babel/helper-plugin-utils': 7.22.5
       '@babel/helper-skip-transparent-expression-wrappers': 7.22.5
-      '@babel/plugin-transform-optional-chaining': 7.23.0(@babel/core@7.23.0)
+      '@babel/plugin-transform-optional-chaining': 7.23.0(@babel/core@7.23.2)
     dev: false
 
-  /@babel/plugin-proposal-private-property-in-object@7.21.0-placeholder-for-preset-env.2(@babel/core@7.23.0):
+  /@babel/plugin-proposal-private-property-in-object@7.21.0-placeholder-for-preset-env.2(@babel/core@7.23.2):
     resolution: {integrity: sha512-SOSkfJDddaM7mak6cPEpswyTRnuRltl429hMraQEglW+OkovnCzsiszTmsrlY//qLFjCpQDFRvjdm2wA5pPm9w==}
     engines: {node: '>=6.9.0'}
     peerDependencies:
       '@babel/core': ^7.0.0-0
     dependencies:
-      '@babel/core': 7.23.0
+      '@babel/core': 7.23.2
     dev: false
 
-  /@babel/plugin-syntax-async-generators@7.8.4(@babel/core@7.23.0):
+  /@babel/plugin-syntax-async-generators@7.8.4(@babel/core@7.23.2):
     resolution: {integrity: sha512-tycmZxkGfZaxhMRbXlPXuVFpdWlXpir2W4AMhSJgRKzk/eDlIXOhb2LHWoLpDF7TEHylV5zNhykX6KAgHJmTNw==}
     peerDependencies:
       '@babel/core': ^7.0.0-0
     dependencies:
-      '@babel/core': 7.23.0
+      '@babel/core': 7.23.2
       '@babel/helper-plugin-utils': 7.22.5
     dev: false
 
-  /@babel/plugin-syntax-class-properties@7.12.13(@babel/core@7.23.0):
+  /@babel/plugin-syntax-class-properties@7.12.13(@babel/core@7.23.2):
     resolution: {integrity: sha512-fm4idjKla0YahUNgFNLCB0qySdsoPiZP3iQE3rky0mBUtMZ23yDJ9SJdg6dXTSDnulOVqiF3Hgr9nbXvXTQZYA==}
     peerDependencies:
       '@babel/core': ^7.0.0-0
     dependencies:
-      '@babel/core': 7.23.0
+      '@babel/core': 7.23.2
       '@babel/helper-plugin-utils': 7.22.5
     dev: false
 
-  /@babel/plugin-syntax-class-static-block@7.14.5(@babel/core@7.23.0):
+  /@babel/plugin-syntax-class-static-block@7.14.5(@babel/core@7.23.2):
     resolution: {integrity: sha512-b+YyPmr6ldyNnM6sqYeMWE+bgJcJpO6yS4QD7ymxgH34GBPNDM/THBh8iunyvKIZztiwLH4CJZ0RxTk9emgpjw==}
     engines: {node: '>=6.9.0'}
     peerDependencies:
       '@babel/core': ^7.0.0-0
     dependencies:
-      '@babel/core': 7.23.0
+      '@babel/core': 7.23.2
       '@babel/helper-plugin-utils': 7.22.5
     dev: false
 
-  /@babel/plugin-syntax-dynamic-import@7.8.3(@babel/core@7.23.0):
+  /@babel/plugin-syntax-dynamic-import@7.8.3(@babel/core@7.23.2):
     resolution: {integrity: sha512-5gdGbFon+PszYzqs83S3E5mpi7/y/8M9eC90MRTZfduQOYW76ig6SOSPNe41IG5LoP3FGBn2N0RjVDSQiS94kQ==}
     peerDependencies:
       '@babel/core': ^7.0.0-0
     dependencies:
-      '@babel/core': 7.23.0
+      '@babel/core': 7.23.2
       '@babel/helper-plugin-utils': 7.22.5
     dev: false
 
-  /@babel/plugin-syntax-export-namespace-from@7.8.3(@babel/core@7.23.0):
+  /@babel/plugin-syntax-export-namespace-from@7.8.3(@babel/core@7.23.2):
     resolution: {integrity: sha512-MXf5laXo6c1IbEbegDmzGPwGNTsHZmEy6QGznu5Sh2UCWvueywb2ee+CCE4zQiZstxU9BMoQO9i6zUFSY0Kj0Q==}
     peerDependencies:
       '@babel/core': ^7.0.0-0
     dependencies:
-      '@babel/core': 7.23.0
+      '@babel/core': 7.23.2
       '@babel/helper-plugin-utils': 7.22.5
     dev: false
 
-  /@babel/plugin-syntax-import-assertions@7.22.5(@babel/core@7.23.0):
+  /@babel/plugin-syntax-import-assertions@7.22.5(@babel/core@7.23.2):
     resolution: {integrity: sha512-rdV97N7KqsRzeNGoWUOK6yUsWarLjE5Su/Snk9IYPU9CwkWHs4t+rTGOvffTR8XGkJMTAdLfO0xVnXm8wugIJg==}
     engines: {node: '>=6.9.0'}
     peerDependencies:
       '@babel/core': ^7.0.0-0
     dependencies:
-      '@babel/core': 7.23.0
+      '@babel/core': 7.23.2
       '@babel/helper-plugin-utils': 7.22.5
     dev: false
 
-  /@babel/plugin-syntax-import-attributes@7.22.5(@babel/core@7.23.0):
+  /@babel/plugin-syntax-import-attributes@7.22.5(@babel/core@7.23.2):
     resolution: {integrity: sha512-KwvoWDeNKPETmozyFE0P2rOLqh39EoQHNjqizrI5B8Vt0ZNS7M56s7dAiAqbYfiAYOuIzIh96z3iR2ktgu3tEg==}
     engines: {node: '>=6.9.0'}
     peerDependencies:
       '@babel/core': ^7.0.0-0
     dependencies:
-      '@babel/core': 7.23.0
+      '@babel/core': 7.23.2
       '@babel/helper-plugin-utils': 7.22.5
     dev: false
 
-  /@babel/plugin-syntax-import-meta@7.10.4(@babel/core@7.23.0):
+  /@babel/plugin-syntax-import-meta@7.10.4(@babel/core@7.23.2):
     resolution: {integrity: sha512-Yqfm+XDx0+Prh3VSeEQCPU81yC+JWZ2pDPFSS4ZdpfZhp4MkFMaDC1UqseovEKwSUpnIL7+vK+Clp7bfh0iD7g==}
     peerDependencies:
       '@babel/core': ^7.0.0-0
     dependencies:
-      '@babel/core': 7.23.0
+      '@babel/core': 7.23.2
       '@babel/helper-plugin-utils': 7.22.5
     dev: false
 
-  /@babel/plugin-syntax-json-strings@7.8.3(@babel/core@7.23.0):
+  /@babel/plugin-syntax-json-strings@7.8.3(@babel/core@7.23.2):
     resolution: {integrity: sha512-lY6kdGpWHvjoe2vk4WrAapEuBR69EMxZl+RoGRhrFGNYVK8mOPAW8VfbT/ZgrFbXlDNiiaxQnAtgVCZ6jv30EA==}
     peerDependencies:
       '@babel/core': ^7.0.0-0
     dependencies:
-      '@babel/core': 7.23.0
+      '@babel/core': 7.23.2
       '@babel/helper-plugin-utils': 7.22.5
     dev: false
 
-  /@babel/plugin-syntax-logical-assignment-operators@7.10.4(@babel/core@7.23.0):
+  /@babel/plugin-syntax-logical-assignment-operators@7.10.4(@babel/core@7.23.2):
     resolution: {integrity: sha512-d8waShlpFDinQ5MtvGU9xDAOzKH47+FFoney2baFIoMr952hKOLp1HR7VszoZvOsV/4+RRszNY7D17ba0te0ig==}
     peerDependencies:
       '@babel/core': ^7.0.0-0
     dependencies:
-      '@babel/core': 7.23.0
+      '@babel/core': 7.23.2
       '@babel/helper-plugin-utils': 7.22.5
     dev: false
 
-  /@babel/plugin-syntax-nullish-coalescing-operator@7.8.3(@babel/core@7.23.0):
+  /@babel/plugin-syntax-nullish-coalescing-operator@7.8.3(@babel/core@7.23.2):
     resolution: {integrity: sha512-aSff4zPII1u2QD7y+F8oDsz19ew4IGEJg9SVW+bqwpwtfFleiQDMdzA/R+UlWDzfnHFCxxleFT0PMIrR36XLNQ==}
     peerDependencies:
       '@babel/core': ^7.0.0-0
     dependencies:
-      '@babel/core': 7.23.0
+      '@babel/core': 7.23.2
       '@babel/helper-plugin-utils': 7.22.5
     dev: false
 
-  /@babel/plugin-syntax-numeric-separator@7.10.4(@babel/core@7.23.0):
+  /@babel/plugin-syntax-numeric-separator@7.10.4(@babel/core@7.23.2):
     resolution: {integrity: sha512-9H6YdfkcK/uOnY/K7/aA2xpzaAgkQn37yzWUMRK7OaPOqOpGS1+n0H5hxT9AUw9EsSjPW8SVyMJwYRtWs3X3ug==}
     peerDependencies:
       '@babel/core': ^7.0.0-0
     dependencies:
-      '@babel/core': 7.23.0
+      '@babel/core': 7.23.2
       '@babel/helper-plugin-utils': 7.22.5
     dev: false
 
-  /@babel/plugin-syntax-object-rest-spread@7.8.3(@babel/core@7.23.0):
+  /@babel/plugin-syntax-object-rest-spread@7.8.3(@babel/core@7.23.2):
     resolution: {integrity: sha512-XoqMijGZb9y3y2XskN+P1wUGiVwWZ5JmoDRwx5+3GmEplNyVM2s2Dg8ILFQm8rWM48orGy5YpI5Bl8U1y7ydlA==}
     peerDependencies:
       '@babel/core': ^7.0.0-0
     dependencies:
-      '@babel/core': 7.23.0
+      '@babel/core': 7.23.2
       '@babel/helper-plugin-utils': 7.22.5
     dev: false
 
-  /@babel/plugin-syntax-optional-catch-binding@7.8.3(@babel/core@7.23.0):
+  /@babel/plugin-syntax-optional-catch-binding@7.8.3(@babel/core@7.23.2):
     resolution: {integrity: sha512-6VPD0Pc1lpTqw0aKoeRTMiB+kWhAoT24PA+ksWSBrFtl5SIRVpZlwN3NNPQjehA2E/91FV3RjLWoVTglWcSV3Q==}
     peerDependencies:
       '@babel/core': ^7.0.0-0
     dependencies:
-      '@babel/core': 7.23.0
+      '@babel/core': 7.23.2
       '@babel/helper-plugin-utils': 7.22.5
     dev: false
 
-  /@babel/plugin-syntax-optional-chaining@7.8.3(@babel/core@7.23.0):
+  /@babel/plugin-syntax-optional-chaining@7.8.3(@babel/core@7.23.2):
     resolution: {integrity: sha512-KoK9ErH1MBlCPxV0VANkXW2/dw4vlbGDrFgz8bmUsBGYkFRcbRwMh6cIJubdPrkxRwuGdtCk0v/wPTKbQgBjkg==}
     peerDependencies:
       '@babel/core': ^7.0.0-0
     dependencies:
-      '@babel/core': 7.23.0
+      '@babel/core': 7.23.2
       '@babel/helper-plugin-utils': 7.22.5
     dev: false
 
-  /@babel/plugin-syntax-private-property-in-object@7.14.5(@babel/core@7.23.0):
+  /@babel/plugin-syntax-private-property-in-object@7.14.5(@babel/core@7.23.2):
     resolution: {integrity: sha512-0wVnp9dxJ72ZUJDV27ZfbSj6iHLoytYZmh3rFcxNnvsJF3ktkzLDZPy/mA17HGsaQT3/DQsWYX1f1QGWkCoVUg==}
     engines: {node: '>=6.9.0'}
     peerDependencies:
       '@babel/core': ^7.0.0-0
     dependencies:
-      '@babel/core': 7.23.0
+      '@babel/core': 7.23.2
       '@babel/helper-plugin-utils': 7.22.5
     dev: false
 
-  /@babel/plugin-syntax-top-level-await@7.14.5(@babel/core@7.23.0):
+  /@babel/plugin-syntax-top-level-await@7.14.5(@babel/core@7.23.2):
     resolution: {integrity: sha512-hx++upLv5U1rgYfwe1xBQUhRmU41NEvpUvrp8jkrSCdvGSnM5/qdRMtylJ6PG5OFkBaHkbTAKTnd3/YyESRHFw==}
     engines: {node: '>=6.9.0'}
     peerDependencies:
       '@babel/core': ^7.0.0-0
     dependencies:
-      '@babel/core': 7.23.0
+      '@babel/core': 7.23.2
       '@babel/helper-plugin-utils': 7.22.5
     dev: false
 
-  /@babel/plugin-syntax-unicode-sets-regex@7.18.6(@babel/core@7.23.0):
+  /@babel/plugin-syntax-unicode-sets-regex@7.18.6(@babel/core@7.23.2):
     resolution: {integrity: sha512-727YkEAPwSIQTv5im8QHz3upqp92JTWhidIC81Tdx4VJYIte/VndKf1qKrfnnhPLiPghStWfvC/iFaMCQu7Nqg==}
     engines: {node: '>=6.9.0'}
     peerDependencies:
       '@babel/core': ^7.0.0
     dependencies:
-      '@babel/core': 7.23.0
-      '@babel/helper-create-regexp-features-plugin': 7.22.15(@babel/core@7.23.0)
+      '@babel/core': 7.23.2
+      '@babel/helper-create-regexp-features-plugin': 7.22.15(@babel/core@7.23.2)
       '@babel/helper-plugin-utils': 7.22.5
     dev: false
 
-  /@babel/plugin-transform-arrow-functions@7.22.5(@babel/core@7.23.0):
+  /@babel/plugin-transform-arrow-functions@7.22.5(@babel/core@7.23.2):
     resolution: {integrity: sha512-26lTNXoVRdAnsaDXPpvCNUq+OVWEVC6bx7Vvz9rC53F2bagUWW4u4ii2+h8Fejfh7RYqPxn+libeFBBck9muEw==}
     engines: {node: '>=6.9.0'}
     peerDependencies:
       '@babel/core': ^7.0.0-0
     dependencies:
-      '@babel/core': 7.23.0
+      '@babel/core': 7.23.2
       '@babel/helper-plugin-utils': 7.22.5
     dev: false
 
-  /@babel/plugin-transform-async-generator-functions@7.22.15(@babel/core@7.23.0):
+  /@babel/plugin-transform-async-generator-functions@7.22.15(@babel/core@7.23.2):
     resolution: {integrity: sha512-jBm1Es25Y+tVoTi5rfd5t1KLmL8ogLKpXszboWOTTtGFGz2RKnQe2yn7HbZ+kb/B8N0FVSGQo874NSlOU1T4+w==}
     engines: {node: '>=6.9.0'}
     peerDependencies:
       '@babel/core': ^7.0.0-0
     dependencies:
-      '@babel/core': 7.23.0
+      '@babel/core': 7.23.2
       '@babel/helper-environment-visitor': 7.22.20
       '@babel/helper-plugin-utils': 7.22.5
-      '@babel/helper-remap-async-to-generator': 7.22.20(@babel/core@7.23.0)
-      '@babel/plugin-syntax-async-generators': 7.8.4(@babel/core@7.23.0)
+      '@babel/helper-remap-async-to-generator': 7.22.20(@babel/core@7.23.2)
+      '@babel/plugin-syntax-async-generators': 7.8.4(@babel/core@7.23.2)
     dev: false
 
-  /@babel/plugin-transform-async-to-generator@7.22.5(@babel/core@7.23.0):
+  /@babel/plugin-transform-async-to-generator@7.22.5(@babel/core@7.23.2):
     resolution: {integrity: sha512-b1A8D8ZzE/VhNDoV1MSJTnpKkCG5bJo+19R4o4oy03zM7ws8yEMK755j61Dc3EyvdysbqH5BOOTquJ7ZX9C6vQ==}
     engines: {node: '>=6.9.0'}
     peerDependencies:
       '@babel/core': ^7.0.0-0
     dependencies:
-      '@babel/core': 7.23.0
+      '@babel/core': 7.23.2
       '@babel/helper-module-imports': 7.22.15
       '@babel/helper-plugin-utils': 7.22.5
-      '@babel/helper-remap-async-to-generator': 7.22.20(@babel/core@7.23.0)
+      '@babel/helper-remap-async-to-generator': 7.22.20(@babel/core@7.23.2)
     dev: false
 
-  /@babel/plugin-transform-block-scoped-functions@7.22.5(@babel/core@7.23.0):
+  /@babel/plugin-transform-block-scoped-functions@7.22.5(@babel/core@7.23.2):
     resolution: {integrity: sha512-tdXZ2UdknEKQWKJP1KMNmuF5Lx3MymtMN/pvA+p/VEkhK8jVcQ1fzSy8KM9qRYhAf2/lV33hoMPKI/xaI9sADA==}
     engines: {node: '>=6.9.0'}
     peerDependencies:
       '@babel/core': ^7.0.0-0
     dependencies:
-      '@babel/core': 7.23.0
+      '@babel/core': 7.23.2
       '@babel/helper-plugin-utils': 7.22.5
     dev: false
 
-  /@babel/plugin-transform-block-scoping@7.23.0(@babel/core@7.23.0):
+  /@babel/plugin-transform-block-scoping@7.23.0(@babel/core@7.23.2):
     resolution: {integrity: sha512-cOsrbmIOXmf+5YbL99/S49Y3j46k/T16b9ml8bm9lP6N9US5iQ2yBK7gpui1pg0V/WMcXdkfKbTb7HXq9u+v4g==}
     engines: {node: '>=6.9.0'}
     peerDependencies:
       '@babel/core': ^7.0.0-0
     dependencies:
-      '@babel/core': 7.23.0
+      '@babel/core': 7.23.2
       '@babel/helper-plugin-utils': 7.22.5
     dev: false
 
-  /@babel/plugin-transform-class-properties@7.22.5(@babel/core@7.23.0):
+  /@babel/plugin-transform-class-properties@7.22.5(@babel/core@7.23.2):
     resolution: {integrity: sha512-nDkQ0NfkOhPTq8YCLiWNxp1+f9fCobEjCb0n8WdbNUBc4IB5V7P1QnX9IjpSoquKrXF5SKojHleVNs2vGeHCHQ==}
     engines: {node: '>=6.9.0'}
     peerDependencies:
       '@babel/core': ^7.0.0-0
     dependencies:
-      '@babel/core': 7.23.0
-      '@babel/helper-create-class-features-plugin': 7.22.15(@babel/core@7.23.0)
+      '@babel/core': 7.23.2
+      '@babel/helper-create-class-features-plugin': 7.22.15(@babel/core@7.23.2)
       '@babel/helper-plugin-utils': 7.22.5
     dev: false
 
-  /@babel/plugin-transform-class-static-block@7.22.11(@babel/core@7.23.0):
+  /@babel/plugin-transform-class-static-block@7.22.11(@babel/core@7.23.2):
     resolution: {integrity: sha512-GMM8gGmqI7guS/llMFk1bJDkKfn3v3C4KHK9Yg1ey5qcHcOlKb0QvcMrgzvxo+T03/4szNh5lghY+fEC98Kq9g==}
     engines: {node: '>=6.9.0'}
     peerDependencies:
       '@babel/core': ^7.12.0
     dependencies:
-      '@babel/core': 7.23.0
-      '@babel/helper-create-class-features-plugin': 7.22.15(@babel/core@7.23.0)
+      '@babel/core': 7.23.2
+      '@babel/helper-create-class-features-plugin': 7.22.15(@babel/core@7.23.2)
       '@babel/helper-plugin-utils': 7.22.5
-      '@babel/plugin-syntax-class-static-block': 7.14.5(@babel/core@7.23.0)
+      '@babel/plugin-syntax-class-static-block': 7.14.5(@babel/core@7.23.2)
     dev: false
 
-  /@babel/plugin-transform-classes@7.22.15(@babel/core@7.23.0):
+  /@babel/plugin-transform-classes@7.22.15(@babel/core@7.23.2):
     resolution: {integrity: sha512-VbbC3PGjBdE0wAWDdHM9G8Gm977pnYI0XpqMd6LrKISj8/DJXEsWqgRuTYaNE9Bv0JGhTZUzHDlMk18IpOuoqw==}
     engines: {node: '>=6.9.0'}
     peerDependencies:
       '@babel/core': ^7.0.0-0
     dependencies:
-      '@babel/core': 7.23.0
+      '@babel/core': 7.23.2
       '@babel/helper-annotate-as-pure': 7.22.5
       '@babel/helper-compilation-targets': 7.22.15
       '@babel/helper-environment-visitor': 7.22.20
       '@babel/helper-function-name': 7.23.0
       '@babel/helper-optimise-call-expression': 7.22.5
       '@babel/helper-plugin-utils': 7.22.5
-      '@babel/helper-replace-supers': 7.22.20(@babel/core@7.23.0)
+      '@babel/helper-replace-supers': 7.22.20(@babel/core@7.23.2)
       '@babel/helper-split-export-declaration': 7.22.6
       globals: 11.12.0
     dev: false
 
-  /@babel/plugin-transform-computed-properties@7.22.5(@babel/core@7.23.0):
+  /@babel/plugin-transform-computed-properties@7.22.5(@babel/core@7.23.2):
     resolution: {integrity: sha512-4GHWBgRf0krxPX+AaPtgBAlTgTeZmqDynokHOX7aqqAB4tHs3U2Y02zH6ETFdLZGcg9UQSD1WCmkVrE9ErHeOg==}
     engines: {node: '>=6.9.0'}
     peerDependencies:
       '@babel/core': ^7.0.0-0
     dependencies:
-      '@babel/core': 7.23.0
+      '@babel/core': 7.23.2
       '@babel/helper-plugin-utils': 7.22.5
       '@babel/template': 7.22.15
     dev: false
 
-  /@babel/plugin-transform-destructuring@7.23.0(@babel/core@7.23.0):
+  /@babel/plugin-transform-destructuring@7.23.0(@babel/core@7.23.2):
     resolution: {integrity: sha512-vaMdgNXFkYrB+8lbgniSYWHsgqK5gjaMNcc84bMIOMRLH0L9AqYq3hwMdvnyqj1OPqea8UtjPEuS/DCenah1wg==}
     engines: {node: '>=6.9.0'}
     peerDependencies:
       '@babel/core': ^7.0.0-0
     dependencies:
-      '@babel/core': 7.23.0
+      '@babel/core': 7.23.2
       '@babel/helper-plugin-utils': 7.22.5
     dev: false
 
-  /@babel/plugin-transform-dotall-regex@7.22.5(@babel/core@7.23.0):
+  /@babel/plugin-transform-dotall-regex@7.22.5(@babel/core@7.23.2):
     resolution: {integrity: sha512-5/Yk9QxCQCl+sOIB1WelKnVRxTJDSAIxtJLL2/pqL14ZVlbH0fUQUZa/T5/UnQtBNgghR7mfB8ERBKyKPCi7Vw==}
     engines: {node: '>=6.9.0'}
     peerDependencies:
       '@babel/core': ^7.0.0-0
     dependencies:
-      '@babel/core': 7.23.0
-      '@babel/helper-create-regexp-features-plugin': 7.22.15(@babel/core@7.23.0)
+      '@babel/core': 7.23.2
+      '@babel/helper-create-regexp-features-plugin': 7.22.15(@babel/core@7.23.2)
       '@babel/helper-plugin-utils': 7.22.5
     dev: false
 
-  /@babel/plugin-transform-duplicate-keys@7.22.5(@babel/core@7.23.0):
+  /@babel/plugin-transform-duplicate-keys@7.22.5(@babel/core@7.23.2):
     resolution: {integrity: sha512-dEnYD+9BBgld5VBXHnF/DbYGp3fqGMsyxKbtD1mDyIA7AkTSpKXFhCVuj/oQVOoALfBs77DudA0BE4d5mcpmqw==}
     engines: {node: '>=6.9.0'}
     peerDependencies:
       '@babel/core': ^7.0.0-0
     dependencies:
-      '@babel/core': 7.23.0
+      '@babel/core': 7.23.2
       '@babel/helper-plugin-utils': 7.22.5
     dev: false
 
-  /@babel/plugin-transform-dynamic-import@7.22.11(@babel/core@7.23.0):
+  /@babel/plugin-transform-dynamic-import@7.22.11(@babel/core@7.23.2):
     resolution: {integrity: sha512-g/21plo58sfteWjaO0ZNVb+uEOkJNjAaHhbejrnBmu011l/eNDScmkbjCC3l4FKb10ViaGU4aOkFznSu2zRHgA==}
     engines: {node: '>=6.9.0'}
     peerDependencies:
       '@babel/core': ^7.0.0-0
     dependencies:
-      '@babel/core': 7.23.0
+      '@babel/core': 7.23.2
       '@babel/helper-plugin-utils': 7.22.5
-      '@babel/plugin-syntax-dynamic-import': 7.8.3(@babel/core@7.23.0)
+      '@babel/plugin-syntax-dynamic-import': 7.8.3(@babel/core@7.23.2)
     dev: false
 
-  /@babel/plugin-transform-exponentiation-operator@7.22.5(@babel/core@7.23.0):
+  /@babel/plugin-transform-exponentiation-operator@7.22.5(@babel/core@7.23.2):
     resolution: {integrity: sha512-vIpJFNM/FjZ4rh1myqIya9jXwrwwgFRHPjT3DkUA9ZLHuzox8jiXkOLvwm1H+PQIP3CqfC++WPKeuDi0Sjdj1g==}
     engines: {node: '>=6.9.0'}
     peerDependencies:
       '@babel/core': ^7.0.0-0
     dependencies:
-      '@babel/core': 7.23.0
+      '@babel/core': 7.23.2
       '@babel/helper-builder-binary-assignment-operator-visitor': 7.22.15
       '@babel/helper-plugin-utils': 7.22.5
     dev: false
 
-  /@babel/plugin-transform-export-namespace-from@7.22.11(@babel/core@7.23.0):
+  /@babel/plugin-transform-export-namespace-from@7.22.11(@babel/core@7.23.2):
     resolution: {integrity: sha512-xa7aad7q7OiT8oNZ1mU7NrISjlSkVdMbNxn9IuLZyL9AJEhs1Apba3I+u5riX1dIkdptP5EKDG5XDPByWxtehw==}
     engines: {node: '>=6.9.0'}
     peerDependencies:
       '@babel/core': ^7.0.0-0
     dependencies:
-      '@babel/core': 7.23.0
+      '@babel/core': 7.23.2
       '@babel/helper-plugin-utils': 7.22.5
-      '@babel/plugin-syntax-export-namespace-from': 7.8.3(@babel/core@7.23.0)
+      '@babel/plugin-syntax-export-namespace-from': 7.8.3(@babel/core@7.23.2)
     dev: false
 
-  /@babel/plugin-transform-for-of@7.22.15(@babel/core@7.23.0):
+  /@babel/plugin-transform-for-of@7.22.15(@babel/core@7.23.2):
     resolution: {integrity: sha512-me6VGeHsx30+xh9fbDLLPi0J1HzmeIIyenoOQHuw2D4m2SAU3NrspX5XxJLBpqn5yrLzrlw2Iy3RA//Bx27iOA==}
     engines: {node: '>=6.9.0'}
     peerDependencies:
       '@babel/core': ^7.0.0-0
     dependencies:
-      '@babel/core': 7.23.0
+      '@babel/core': 7.23.2
       '@babel/helper-plugin-utils': 7.22.5
     dev: false
 
-  /@babel/plugin-transform-function-name@7.22.5(@babel/core@7.23.0):
+  /@babel/plugin-transform-function-name@7.22.5(@babel/core@7.23.2):
     resolution: {integrity: sha512-UIzQNMS0p0HHiQm3oelztj+ECwFnj+ZRV4KnguvlsD2of1whUeM6o7wGNj6oLwcDoAXQ8gEqfgC24D+VdIcevg==}
     engines: {node: '>=6.9.0'}
     peerDependencies:
       '@babel/core': ^7.0.0-0
     dependencies:
-      '@babel/core': 7.23.0
+      '@babel/core': 7.23.2
       '@babel/helper-compilation-targets': 7.22.15
       '@babel/helper-function-name': 7.23.0
       '@babel/helper-plugin-utils': 7.22.5
     dev: false
 
-  /@babel/plugin-transform-json-strings@7.22.11(@babel/core@7.23.0):
+  /@babel/plugin-transform-json-strings@7.22.11(@babel/core@7.23.2):
     resolution: {integrity: sha512-CxT5tCqpA9/jXFlme9xIBCc5RPtdDq3JpkkhgHQqtDdiTnTI0jtZ0QzXhr5DILeYifDPp2wvY2ad+7+hLMW5Pw==}
     engines: {node: '>=6.9.0'}
     peerDependencies:
       '@babel/core': ^7.0.0-0
     dependencies:
-      '@babel/core': 7.23.0
+      '@babel/core': 7.23.2
       '@babel/helper-plugin-utils': 7.22.5
-      '@babel/plugin-syntax-json-strings': 7.8.3(@babel/core@7.23.0)
+      '@babel/plugin-syntax-json-strings': 7.8.3(@babel/core@7.23.2)
     dev: false
 
-  /@babel/plugin-transform-literals@7.22.5(@babel/core@7.23.0):
+  /@babel/plugin-transform-literals@7.22.5(@babel/core@7.23.2):
     resolution: {integrity: sha512-fTLj4D79M+mepcw3dgFBTIDYpbcB9Sm0bpm4ppXPaO+U+PKFFyV9MGRvS0gvGw62sd10kT5lRMKXAADb9pWy8g==}
     engines: {node: '>=6.9.0'}
     peerDependencies:
       '@babel/core': ^7.0.0-0
     dependencies:
-      '@babel/core': 7.23.0
+      '@babel/core': 7.23.2
       '@babel/helper-plugin-utils': 7.22.5
     dev: false
 
-  /@babel/plugin-transform-logical-assignment-operators@7.22.11(@babel/core@7.23.0):
+  /@babel/plugin-transform-logical-assignment-operators@7.22.11(@babel/core@7.23.2):
     resolution: {integrity: sha512-qQwRTP4+6xFCDV5k7gZBF3C31K34ut0tbEcTKxlX/0KXxm9GLcO14p570aWxFvVzx6QAfPgq7gaeIHXJC8LswQ==}
     engines: {node: '>=6.9.0'}
     peerDependencies:
       '@babel/core': ^7.0.0-0
     dependencies:
-      '@babel/core': 7.23.0
+      '@babel/core': 7.23.2
       '@babel/helper-plugin-utils': 7.22.5
-      '@babel/plugin-syntax-logical-assignment-operators': 7.10.4(@babel/core@7.23.0)
+      '@babel/plugin-syntax-logical-assignment-operators': 7.10.4(@babel/core@7.23.2)
     dev: false
 
-  /@babel/plugin-transform-member-expression-literals@7.22.5(@babel/core@7.23.0):
+  /@babel/plugin-transform-member-expression-literals@7.22.5(@babel/core@7.23.2):
     resolution: {integrity: sha512-RZEdkNtzzYCFl9SE9ATaUMTj2hqMb4StarOJLrZRbqqU4HSBE7UlBw9WBWQiDzrJZJdUWiMTVDI6Gv/8DPvfew==}
     engines: {node: '>=6.9.0'}
     peerDependencies:
       '@babel/core': ^7.0.0-0
     dependencies:
-      '@babel/core': 7.23.0
+      '@babel/core': 7.23.2
       '@babel/helper-plugin-utils': 7.22.5
     dev: false
 
-  /@babel/plugin-transform-modules-amd@7.23.0(@babel/core@7.23.0):
+  /@babel/plugin-transform-modules-amd@7.23.0(@babel/core@7.23.2):
     resolution: {integrity: sha512-xWT5gefv2HGSm4QHtgc1sYPbseOyf+FFDo2JbpE25GWl5BqTGO9IMwTYJRoIdjsF85GE+VegHxSCUt5EvoYTAw==}
     engines: {node: '>=6.9.0'}
     peerDependencies:
       '@babel/core': ^7.0.0-0
     dependencies:
-      '@babel/core': 7.23.0
-      '@babel/helper-module-transforms': 7.23.0(@babel/core@7.23.0)
+      '@babel/core': 7.23.2
+      '@babel/helper-module-transforms': 7.23.0(@babel/core@7.23.2)
       '@babel/helper-plugin-utils': 7.22.5
     dev: false
 
-  /@babel/plugin-transform-modules-commonjs@7.23.0(@babel/core@7.23.0):
+  /@babel/plugin-transform-modules-commonjs@7.23.0(@babel/core@7.23.2):
     resolution: {integrity: sha512-32Xzss14/UVc7k9g775yMIvkVK8xwKE0DPdP5JTapr3+Z9w4tzeOuLNY6BXDQR6BdnzIlXnCGAzsk/ICHBLVWQ==}
     engines: {node: '>=6.9.0'}
     peerDependencies:
       '@babel/core': ^7.0.0-0
     dependencies:
-      '@babel/core': 7.23.0
-      '@babel/helper-module-transforms': 7.23.0(@babel/core@7.23.0)
+      '@babel/core': 7.23.2
+      '@babel/helper-module-transforms': 7.23.0(@babel/core@7.23.2)
       '@babel/helper-plugin-utils': 7.22.5
       '@babel/helper-simple-access': 7.22.5
     dev: false
 
-  /@babel/plugin-transform-modules-systemjs@7.23.0(@babel/core@7.23.0):
+  /@babel/plugin-transform-modules-systemjs@7.23.0(@babel/core@7.23.2):
     resolution: {integrity: sha512-qBej6ctXZD2f+DhlOC9yO47yEYgUh5CZNz/aBoH4j/3NOlRfJXJbY7xDQCqQVf9KbrqGzIWER1f23doHGrIHFg==}
     engines: {node: '>=6.9.0'}
     peerDependencies:
       '@babel/core': ^7.0.0-0
     dependencies:
-      '@babel/core': 7.23.0
+      '@babel/core': 7.23.2
       '@babel/helper-hoist-variables': 7.22.5
-      '@babel/helper-module-transforms': 7.23.0(@babel/core@7.23.0)
+      '@babel/helper-module-transforms': 7.23.0(@babel/core@7.23.2)
       '@babel/helper-plugin-utils': 7.22.5
       '@babel/helper-validator-identifier': 7.22.20
     dev: false
 
-  /@babel/plugin-transform-modules-umd@7.22.5(@babel/core@7.23.0):
+  /@babel/plugin-transform-modules-umd@7.22.5(@babel/core@7.23.2):
     resolution: {integrity: sha512-+S6kzefN/E1vkSsKx8kmQuqeQsvCKCd1fraCM7zXm4SFoggI099Tr4G8U81+5gtMdUeMQ4ipdQffbKLX0/7dBQ==}
     engines: {node: '>=6.9.0'}
     peerDependencies:
       '@babel/core': ^7.0.0-0
     dependencies:
-      '@babel/core': 7.23.0
-      '@babel/helper-module-transforms': 7.23.0(@babel/core@7.23.0)
+      '@babel/core': 7.23.2
+      '@babel/helper-module-transforms': 7.23.0(@babel/core@7.23.2)
       '@babel/helper-plugin-utils': 7.22.5
     dev: false
 
-  /@babel/plugin-transform-named-capturing-groups-regex@7.22.5(@babel/core@7.23.0):
+  /@babel/plugin-transform-named-capturing-groups-regex@7.22.5(@babel/core@7.23.2):
     resolution: {integrity: sha512-YgLLKmS3aUBhHaxp5hi1WJTgOUb/NCuDHzGT9z9WTt3YG+CPRhJs6nprbStx6DnWM4dh6gt7SU3sZodbZ08adQ==}
     engines: {node: '>=6.9.0'}
     peerDependencies:
       '@babel/core': ^7.0.0
     dependencies:
-      '@babel/core': 7.23.0
-      '@babel/helper-create-regexp-features-plugin': 7.22.15(@babel/core@7.23.0)
+      '@babel/core': 7.23.2
+      '@babel/helper-create-regexp-features-plugin': 7.22.15(@babel/core@7.23.2)
       '@babel/helper-plugin-utils': 7.22.5
     dev: false
 
-  /@babel/plugin-transform-new-target@7.22.5(@babel/core@7.23.0):
+  /@babel/plugin-transform-new-target@7.22.5(@babel/core@7.23.2):
     resolution: {integrity: sha512-AsF7K0Fx/cNKVyk3a+DW0JLo+Ua598/NxMRvxDnkpCIGFh43+h/v2xyhRUYf6oD8gE4QtL83C7zZVghMjHd+iw==}
     engines: {node: '>=6.9.0'}
     peerDependencies:
       '@babel/core': ^7.0.0-0
     dependencies:
-      '@babel/core': 7.23.0
+      '@babel/core': 7.23.2
       '@babel/helper-plugin-utils': 7.22.5
     dev: false
 
-  /@babel/plugin-transform-nullish-coalescing-operator@7.22.11(@babel/core@7.23.0):
+  /@babel/plugin-transform-nullish-coalescing-operator@7.22.11(@babel/core@7.23.2):
     resolution: {integrity: sha512-YZWOw4HxXrotb5xsjMJUDlLgcDXSfO9eCmdl1bgW4+/lAGdkjaEvOnQ4p5WKKdUgSzO39dgPl0pTnfxm0OAXcg==}
     engines: {node: '>=6.9.0'}
     peerDependencies:
       '@babel/core': ^7.0.0-0
     dependencies:
-      '@babel/core': 7.23.0
+      '@babel/core': 7.23.2
       '@babel/helper-plugin-utils': 7.22.5
-      '@babel/plugin-syntax-nullish-coalescing-operator': 7.8.3(@babel/core@7.23.0)
+      '@babel/plugin-syntax-nullish-coalescing-operator': 7.8.3(@babel/core@7.23.2)
     dev: false
 
-  /@babel/plugin-transform-numeric-separator@7.22.11(@babel/core@7.23.0):
+  /@babel/plugin-transform-numeric-separator@7.22.11(@babel/core@7.23.2):
     resolution: {integrity: sha512-3dzU4QGPsILdJbASKhF/V2TVP+gJya1PsueQCxIPCEcerqF21oEcrob4mzjsp2Py/1nLfF5m+xYNMDpmA8vffg==}
     engines: {node: '>=6.9.0'}
     peerDependencies:
       '@babel/core': ^7.0.0-0
     dependencies:
-      '@babel/core': 7.23.0
+      '@babel/core': 7.23.2
       '@babel/helper-plugin-utils': 7.22.5
-      '@babel/plugin-syntax-numeric-separator': 7.10.4(@babel/core@7.23.0)
+      '@babel/plugin-syntax-numeric-separator': 7.10.4(@babel/core@7.23.2)
     dev: false
 
-  /@babel/plugin-transform-object-rest-spread@7.22.15(@babel/core@7.23.0):
+  /@babel/plugin-transform-object-rest-spread@7.22.15(@babel/core@7.23.2):
     resolution: {integrity: sha512-fEB+I1+gAmfAyxZcX1+ZUwLeAuuf8VIg67CTznZE0MqVFumWkh8xWtn58I4dxdVf080wn7gzWoF8vndOViJe9Q==}
     engines: {node: '>=6.9.0'}
     peerDependencies:
       '@babel/core': ^7.0.0-0
     dependencies:
       '@babel/compat-data': 7.22.20
-      '@babel/core': 7.23.0
+      '@babel/core': 7.23.2
       '@babel/helper-compilation-targets': 7.22.15
       '@babel/helper-plugin-utils': 7.22.5
-      '@babel/plugin-syntax-object-rest-spread': 7.8.3(@babel/core@7.23.0)
-      '@babel/plugin-transform-parameters': 7.22.15(@babel/core@7.23.0)
+      '@babel/plugin-syntax-object-rest-spread': 7.8.3(@babel/core@7.23.2)
+      '@babel/plugin-transform-parameters': 7.22.15(@babel/core@7.23.2)
     dev: false
 
-  /@babel/plugin-transform-object-super@7.22.5(@babel/core@7.23.0):
+  /@babel/plugin-transform-object-super@7.22.5(@babel/core@7.23.2):
     resolution: {integrity: sha512-klXqyaT9trSjIUrcsYIfETAzmOEZL3cBYqOYLJxBHfMFFggmXOv+NYSX/Jbs9mzMVESw/WycLFPRx8ba/b2Ipw==}
     engines: {node: '>=6.9.0'}
     peerDependencies:
       '@babel/core': ^7.0.0-0
     dependencies:
-      '@babel/core': 7.23.0
+      '@babel/core': 7.23.2
       '@babel/helper-plugin-utils': 7.22.5
-      '@babel/helper-replace-supers': 7.22.20(@babel/core@7.23.0)
+      '@babel/helper-replace-supers': 7.22.20(@babel/core@7.23.2)
     dev: false
 
-  /@babel/plugin-transform-optional-catch-binding@7.22.11(@babel/core@7.23.0):
+  /@babel/plugin-transform-optional-catch-binding@7.22.11(@babel/core@7.23.2):
     resolution: {integrity: sha512-rli0WxesXUeCJnMYhzAglEjLWVDF6ahb45HuprcmQuLidBJFWjNnOzssk2kuc6e33FlLaiZhG/kUIzUMWdBKaQ==}
     engines: {node: '>=6.9.0'}
     peerDependencies:
       '@babel/core': ^7.0.0-0
     dependencies:
-      '@babel/core': 7.23.0
+      '@babel/core': 7.23.2
       '@babel/helper-plugin-utils': 7.22.5
-      '@babel/plugin-syntax-optional-catch-binding': 7.8.3(@babel/core@7.23.0)
+      '@babel/plugin-syntax-optional-catch-binding': 7.8.3(@babel/core@7.23.2)
     dev: false
 
-  /@babel/plugin-transform-optional-chaining@7.23.0(@babel/core@7.23.0):
+  /@babel/plugin-transform-optional-chaining@7.23.0(@babel/core@7.23.2):
     resolution: {integrity: sha512-sBBGXbLJjxTzLBF5rFWaikMnOGOk/BmK6vVByIdEggZ7Vn6CvWXZyRkkLFK6WE0IF8jSliyOkUN6SScFgzCM0g==}
     engines: {node: '>=6.9.0'}
     peerDependencies:
       '@babel/core': ^7.0.0-0
     dependencies:
-      '@babel/core': 7.23.0
+      '@babel/core': 7.23.2
       '@babel/helper-plugin-utils': 7.22.5
       '@babel/helper-skip-transparent-expression-wrappers': 7.22.5
-      '@babel/plugin-syntax-optional-chaining': 7.8.3(@babel/core@7.23.0)
+      '@babel/plugin-syntax-optional-chaining': 7.8.3(@babel/core@7.23.2)
     dev: false
 
-  /@babel/plugin-transform-parameters@7.22.15(@babel/core@7.23.0):
+  /@babel/plugin-transform-parameters@7.22.15(@babel/core@7.23.2):
     resolution: {integrity: sha512-hjk7qKIqhyzhhUvRT683TYQOFa/4cQKwQy7ALvTpODswN40MljzNDa0YldevS6tGbxwaEKVn502JmY0dP7qEtQ==}
     engines: {node: '>=6.9.0'}
     peerDependencies:
       '@babel/core': ^7.0.0-0
     dependencies:
-      '@babel/core': 7.23.0
+      '@babel/core': 7.23.2
       '@babel/helper-plugin-utils': 7.22.5
     dev: false
 
-  /@babel/plugin-transform-private-methods@7.22.5(@babel/core@7.23.0):
+  /@babel/plugin-transform-private-methods@7.22.5(@babel/core@7.23.2):
     resolution: {integrity: sha512-PPjh4gyrQnGe97JTalgRGMuU4icsZFnWkzicB/fUtzlKUqvsWBKEpPPfr5a2JiyirZkHxnAqkQMO5Z5B2kK3fA==}
     engines: {node: '>=6.9.0'}
     peerDependencies:
       '@babel/core': ^7.0.0-0
     dependencies:
-      '@babel/core': 7.23.0
-      '@babel/helper-create-class-features-plugin': 7.22.15(@babel/core@7.23.0)
+      '@babel/core': 7.23.2
+      '@babel/helper-create-class-features-plugin': 7.22.15(@babel/core@7.23.2)
       '@babel/helper-plugin-utils': 7.22.5
     dev: false
 
-  /@babel/plugin-transform-private-property-in-object@7.22.11(@babel/core@7.23.0):
+  /@babel/plugin-transform-private-property-in-object@7.22.11(@babel/core@7.23.2):
     resolution: {integrity: sha512-sSCbqZDBKHetvjSwpyWzhuHkmW5RummxJBVbYLkGkaiTOWGxml7SXt0iWa03bzxFIx7wOj3g/ILRd0RcJKBeSQ==}
     engines: {node: '>=6.9.0'}
     peerDependencies:
       '@babel/core': ^7.0.0-0
     dependencies:
-      '@babel/core': 7.23.0
+      '@babel/core': 7.23.2
       '@babel/helper-annotate-as-pure': 7.22.5
-      '@babel/helper-create-class-features-plugin': 7.22.15(@babel/core@7.23.0)
+      '@babel/helper-create-class-features-plugin': 7.22.15(@babel/core@7.23.2)
       '@babel/helper-plugin-utils': 7.22.5
-      '@babel/plugin-syntax-private-property-in-object': 7.14.5(@babel/core@7.23.0)
+      '@babel/plugin-syntax-private-property-in-object': 7.14.5(@babel/core@7.23.2)
     dev: false
 
-  /@babel/plugin-transform-property-literals@7.22.5(@babel/core@7.23.0):
+  /@babel/plugin-transform-property-literals@7.22.5(@babel/core@7.23.2):
     resolution: {integrity: sha512-TiOArgddK3mK/x1Qwf5hay2pxI6wCZnvQqrFSqbtg1GLl2JcNMitVH/YnqjP+M31pLUeTfzY1HAXFDnUBV30rQ==}
     engines: {node: '>=6.9.0'}
     peerDependencies:
       '@babel/core': ^7.0.0-0
     dependencies:
-      '@babel/core': 7.23.0
+      '@babel/core': 7.23.2
       '@babel/helper-plugin-utils': 7.22.5
     dev: false
 
-  /@babel/plugin-transform-regenerator@7.22.10(@babel/core@7.23.0):
+  /@babel/plugin-transform-regenerator@7.22.10(@babel/core@7.23.2):
     resolution: {integrity: sha512-F28b1mDt8KcT5bUyJc/U9nwzw6cV+UmTeRlXYIl2TNqMMJif0Jeey9/RQ3C4NOd2zp0/TRsDns9ttj2L523rsw==}
     engines: {node: '>=6.9.0'}
     peerDependencies:
       '@babel/core': ^7.0.0-0
     dependencies:
-      '@babel/core': 7.23.0
+      '@babel/core': 7.23.2
       '@babel/helper-plugin-utils': 7.22.5
       regenerator-transform: 0.15.2
     dev: false
 
-  /@babel/plugin-transform-reserved-words@7.22.5(@babel/core@7.23.0):
+  /@babel/plugin-transform-reserved-words@7.22.5(@babel/core@7.23.2):
     resolution: {integrity: sha512-DTtGKFRQUDm8svigJzZHzb/2xatPc6TzNvAIJ5GqOKDsGFYgAskjRulbR/vGsPKq3OPqtexnz327qYpP57RFyA==}
     engines: {node: '>=6.9.0'}
     peerDependencies:
       '@babel/core': ^7.0.0-0
     dependencies:
-      '@babel/core': 7.23.0
+      '@babel/core': 7.23.2
       '@babel/helper-plugin-utils': 7.22.5
     dev: false
 
-  /@babel/plugin-transform-shorthand-properties@7.22.5(@babel/core@7.23.0):
+  /@babel/plugin-transform-shorthand-properties@7.22.5(@babel/core@7.23.2):
     resolution: {integrity: sha512-vM4fq9IXHscXVKzDv5itkO1X52SmdFBFcMIBZ2FRn2nqVYqw6dBexUgMvAjHW+KXpPPViD/Yo3GrDEBaRC0QYA==}
     engines: {node: '>=6.9.0'}
     peerDependencies:
       '@babel/core': ^7.0.0-0
     dependencies:
-      '@babel/core': 7.23.0
+      '@babel/core': 7.23.2
       '@babel/helper-plugin-utils': 7.22.5
     dev: false
 
-  /@babel/plugin-transform-spread@7.22.5(@babel/core@7.23.0):
+  /@babel/plugin-transform-spread@7.22.5(@babel/core@7.23.2):
     resolution: {integrity: sha512-5ZzDQIGyvN4w8+dMmpohL6MBo+l2G7tfC/O2Dg7/hjpgeWvUx8FzfeOKxGog9IimPa4YekaQ9PlDqTLOljkcxg==}
     engines: {node: '>=6.9.0'}
     peerDependencies:
       '@babel/core': ^7.0.0-0
     dependencies:
-      '@babel/core': 7.23.0
+      '@babel/core': 7.23.2
       '@babel/helper-plugin-utils': 7.22.5
       '@babel/helper-skip-transparent-expression-wrappers': 7.22.5
     dev: false
 
-  /@babel/plugin-transform-sticky-regex@7.22.5(@babel/core@7.23.0):
+  /@babel/plugin-transform-sticky-regex@7.22.5(@babel/core@7.23.2):
     resolution: {integrity: sha512-zf7LuNpHG0iEeiyCNwX4j3gDg1jgt1k3ZdXBKbZSoA3BbGQGvMiSvfbZRR3Dr3aeJe3ooWFZxOOG3IRStYp2Bw==}
     engines: {node: '>=6.9.0'}
     peerDependencies:
       '@babel/core': ^7.0.0-0
     dependencies:
-      '@babel/core': 7.23.0
+      '@babel/core': 7.23.2
       '@babel/helper-plugin-utils': 7.22.5
     dev: false
 
-  /@babel/plugin-transform-template-literals@7.22.5(@babel/core@7.23.0):
+  /@babel/plugin-transform-template-literals@7.22.5(@babel/core@7.23.2):
     resolution: {integrity: sha512-5ciOehRNf+EyUeewo8NkbQiUs4d6ZxiHo6BcBcnFlgiJfu16q0bQUw9Jvo0b0gBKFG1SMhDSjeKXSYuJLeFSMA==}
     engines: {node: '>=6.9.0'}
     peerDependencies:
       '@babel/core': ^7.0.0-0
     dependencies:
-      '@babel/core': 7.23.0
+      '@babel/core': 7.23.2
       '@babel/helper-plugin-utils': 7.22.5
     dev: false
 
-  /@babel/plugin-transform-typeof-symbol@7.22.5(@babel/core@7.23.0):
+  /@babel/plugin-transform-typeof-symbol@7.22.5(@babel/core@7.23.2):
     resolution: {integrity: sha512-bYkI5lMzL4kPii4HHEEChkD0rkc+nvnlR6+o/qdqR6zrm0Sv/nodmyLhlq2DO0YKLUNd2VePmPRjJXSBh9OIdA==}
     engines: {node: '>=6.9.0'}
     peerDependencies:
       '@babel/core': ^7.0.0-0
     dependencies:
-      '@babel/core': 7.23.0
+      '@babel/core': 7.23.2
       '@babel/helper-plugin-utils': 7.22.5
     dev: false
 
-  /@babel/plugin-transform-unicode-escapes@7.22.10(@babel/core@7.23.0):
+  /@babel/plugin-transform-unicode-escapes@7.22.10(@babel/core@7.23.2):
     resolution: {integrity: sha512-lRfaRKGZCBqDlRU3UIFovdp9c9mEvlylmpod0/OatICsSfuQ9YFthRo1tpTkGsklEefZdqlEFdY4A2dwTb6ohg==}
     engines: {node: '>=6.9.0'}
     peerDependencies:
       '@babel/core': ^7.0.0-0
     dependencies:
-      '@babel/core': 7.23.0
+      '@babel/core': 7.23.2
       '@babel/helper-plugin-utils': 7.22.5
     dev: false
 
-  /@babel/plugin-transform-unicode-property-regex@7.22.5(@babel/core@7.23.0):
+  /@babel/plugin-transform-unicode-property-regex@7.22.5(@babel/core@7.23.2):
     resolution: {integrity: sha512-HCCIb+CbJIAE6sXn5CjFQXMwkCClcOfPCzTlilJ8cUatfzwHlWQkbtV0zD338u9dZskwvuOYTuuaMaA8J5EI5A==}
     engines: {node: '>=6.9.0'}
     peerDependencies:
       '@babel/core': ^7.0.0-0
     dependencies:
-      '@babel/core': 7.23.0
-      '@babel/helper-create-regexp-features-plugin': 7.22.15(@babel/core@7.23.0)
+      '@babel/core': 7.23.2
+      '@babel/helper-create-regexp-features-plugin': 7.22.15(@babel/core@7.23.2)
       '@babel/helper-plugin-utils': 7.22.5
     dev: false
 
-  /@babel/plugin-transform-unicode-regex@7.22.5(@babel/core@7.23.0):
+  /@babel/plugin-transform-unicode-regex@7.22.5(@babel/core@7.23.2):
     resolution: {integrity: sha512-028laaOKptN5vHJf9/Arr/HiJekMd41hOEZYvNsrsXqJ7YPYuX2bQxh31fkZzGmq3YqHRJzYFFAVYvKfMPKqyg==}
     engines: {node: '>=6.9.0'}
     peerDependencies:
       '@babel/core': ^7.0.0-0
     dependencies:
-      '@babel/core': 7.23.0
-      '@babel/helper-create-regexp-features-plugin': 7.22.15(@babel/core@7.23.0)
+      '@babel/core': 7.23.2
+      '@babel/helper-create-regexp-features-plugin': 7.22.15(@babel/core@7.23.2)
       '@babel/helper-plugin-utils': 7.22.5
     dev: false
 
-  /@babel/plugin-transform-unicode-sets-regex@7.22.5(@babel/core@7.23.0):
+  /@babel/plugin-transform-unicode-sets-regex@7.22.5(@babel/core@7.23.2):
     resolution: {integrity: sha512-lhMfi4FC15j13eKrh3DnYHjpGj6UKQHtNKTbtc1igvAhRy4+kLhV07OpLcsN0VgDEw/MjAvJO4BdMJsHwMhzCg==}
     engines: {node: '>=6.9.0'}
     peerDependencies:
       '@babel/core': ^7.0.0
     dependencies:
-      '@babel/core': 7.23.0
-      '@babel/helper-create-regexp-features-plugin': 7.22.15(@babel/core@7.23.0)
+      '@babel/core': 7.23.2
+      '@babel/helper-create-regexp-features-plugin': 7.22.15(@babel/core@7.23.2)
       '@babel/helper-plugin-utils': 7.22.5
     dev: false
 
-  /@babel/preset-env@7.22.20(@babel/core@7.23.0):
+  /@babel/preset-env@7.22.20(@babel/core@7.23.2):
     resolution: {integrity: sha512-11MY04gGC4kSzlPHRfvVkNAZhUxOvm7DCJ37hPDnUENwe06npjIRAfInEMTGSb4LZK5ZgDFkv5hw0lGebHeTyg==}
     engines: {node: '>=6.9.0'}
     peerDependencies:
       '@babel/core': ^7.0.0-0
     dependencies:
       '@babel/compat-data': 7.22.20
-      '@babel/core': 7.23.0
+      '@babel/core': 7.23.2
       '@babel/helper-compilation-targets': 7.22.15
       '@babel/helper-plugin-utils': 7.22.5
       '@babel/helper-validator-option': 7.22.15
-      '@babel/plugin-bugfix-safari-id-destructuring-collision-in-function-expression': 7.22.15(@babel/core@7.23.0)
-      '@babel/plugin-bugfix-v8-spread-parameters-in-optional-chaining': 7.22.15(@babel/core@7.23.0)
-      '@babel/plugin-proposal-private-property-in-object': 7.21.0-placeholder-for-preset-env.2(@babel/core@7.23.0)
-      '@babel/plugin-syntax-async-generators': 7.8.4(@babel/core@7.23.0)
-      '@babel/plugin-syntax-class-properties': 7.12.13(@babel/core@7.23.0)
-      '@babel/plugin-syntax-class-static-block': 7.14.5(@babel/core@7.23.0)
-      '@babel/plugin-syntax-dynamic-import': 7.8.3(@babel/core@7.23.0)
-      '@babel/plugin-syntax-export-namespace-from': 7.8.3(@babel/core@7.23.0)
-      '@babel/plugin-syntax-import-assertions': 7.22.5(@babel/core@7.23.0)
-      '@babel/plugin-syntax-import-attributes': 7.22.5(@babel/core@7.23.0)
-      '@babel/plugin-syntax-import-meta': 7.10.4(@babel/core@7.23.0)
-      '@babel/plugin-syntax-json-strings': 7.8.3(@babel/core@7.23.0)
-      '@babel/plugin-syntax-logical-assignment-operators': 7.10.4(@babel/core@7.23.0)
-      '@babel/plugin-syntax-nullish-coalescing-operator': 7.8.3(@babel/core@7.23.0)
-      '@babel/plugin-syntax-numeric-separator': 7.10.4(@babel/core@7.23.0)
-      '@babel/plugin-syntax-object-rest-spread': 7.8.3(@babel/core@7.23.0)
-      '@babel/plugin-syntax-optional-catch-binding': 7.8.3(@babel/core@7.23.0)
-      '@babel/plugin-syntax-optional-chaining': 7.8.3(@babel/core@7.23.0)
-      '@babel/plugin-syntax-private-property-in-object': 7.14.5(@babel/core@7.23.0)
-      '@babel/plugin-syntax-top-level-await': 7.14.5(@babel/core@7.23.0)
-      '@babel/plugin-syntax-unicode-sets-regex': 7.18.6(@babel/core@7.23.0)
-      '@babel/plugin-transform-arrow-functions': 7.22.5(@babel/core@7.23.0)
-      '@babel/plugin-transform-async-generator-functions': 7.22.15(@babel/core@7.23.0)
-      '@babel/plugin-transform-async-to-generator': 7.22.5(@babel/core@7.23.0)
-      '@babel/plugin-transform-block-scoped-functions': 7.22.5(@babel/core@7.23.0)
-      '@babel/plugin-transform-block-scoping': 7.23.0(@babel/core@7.23.0)
-      '@babel/plugin-transform-class-properties': 7.22.5(@babel/core@7.23.0)
-      '@babel/plugin-transform-class-static-block': 7.22.11(@babel/core@7.23.0)
-      '@babel/plugin-transform-classes': 7.22.15(@babel/core@7.23.0)
-      '@babel/plugin-transform-computed-properties': 7.22.5(@babel/core@7.23.0)
-      '@babel/plugin-transform-destructuring': 7.23.0(@babel/core@7.23.0)
-      '@babel/plugin-transform-dotall-regex': 7.22.5(@babel/core@7.23.0)
-      '@babel/plugin-transform-duplicate-keys': 7.22.5(@babel/core@7.23.0)
-      '@babel/plugin-transform-dynamic-import': 7.22.11(@babel/core@7.23.0)
-      '@babel/plugin-transform-exponentiation-operator': 7.22.5(@babel/core@7.23.0)
-      '@babel/plugin-transform-export-namespace-from': 7.22.11(@babel/core@7.23.0)
-      '@babel/plugin-transform-for-of': 7.22.15(@babel/core@7.23.0)
-      '@babel/plugin-transform-function-name': 7.22.5(@babel/core@7.23.0)
-      '@babel/plugin-transform-json-strings': 7.22.11(@babel/core@7.23.0)
-      '@babel/plugin-transform-literals': 7.22.5(@babel/core@7.23.0)
-      '@babel/plugin-transform-logical-assignment-operators': 7.22.11(@babel/core@7.23.0)
-      '@babel/plugin-transform-member-expression-literals': 7.22.5(@babel/core@7.23.0)
-      '@babel/plugin-transform-modules-amd': 7.23.0(@babel/core@7.23.0)
-      '@babel/plugin-transform-modules-commonjs': 7.23.0(@babel/core@7.23.0)
-      '@babel/plugin-transform-modules-systemjs': 7.23.0(@babel/core@7.23.0)
-      '@babel/plugin-transform-modules-umd': 7.22.5(@babel/core@7.23.0)
-      '@babel/plugin-transform-named-capturing-groups-regex': 7.22.5(@babel/core@7.23.0)
-      '@babel/plugin-transform-new-target': 7.22.5(@babel/core@7.23.0)
-      '@babel/plugin-transform-nullish-coalescing-operator': 7.22.11(@babel/core@7.23.0)
-      '@babel/plugin-transform-numeric-separator': 7.22.11(@babel/core@7.23.0)
-      '@babel/plugin-transform-object-rest-spread': 7.22.15(@babel/core@7.23.0)
-      '@babel/plugin-transform-object-super': 7.22.5(@babel/core@7.23.0)
-      '@babel/plugin-transform-optional-catch-binding': 7.22.11(@babel/core@7.23.0)
-      '@babel/plugin-transform-optional-chaining': 7.23.0(@babel/core@7.23.0)
-      '@babel/plugin-transform-parameters': 7.22.15(@babel/core@7.23.0)
-      '@babel/plugin-transform-private-methods': 7.22.5(@babel/core@7.23.0)
-      '@babel/plugin-transform-private-property-in-object': 7.22.11(@babel/core@7.23.0)
-      '@babel/plugin-transform-property-literals': 7.22.5(@babel/core@7.23.0)
-      '@babel/plugin-transform-regenerator': 7.22.10(@babel/core@7.23.0)
-      '@babel/plugin-transform-reserved-words': 7.22.5(@babel/core@7.23.0)
-      '@babel/plugin-transform-shorthand-properties': 7.22.5(@babel/core@7.23.0)
-      '@babel/plugin-transform-spread': 7.22.5(@babel/core@7.23.0)
-      '@babel/plugin-transform-sticky-regex': 7.22.5(@babel/core@7.23.0)
-      '@babel/plugin-transform-template-literals': 7.22.5(@babel/core@7.23.0)
-      '@babel/plugin-transform-typeof-symbol': 7.22.5(@babel/core@7.23.0)
-      '@babel/plugin-transform-unicode-escapes': 7.22.10(@babel/core@7.23.0)
-      '@babel/plugin-transform-unicode-property-regex': 7.22.5(@babel/core@7.23.0)
-      '@babel/plugin-transform-unicode-regex': 7.22.5(@babel/core@7.23.0)
-      '@babel/plugin-transform-unicode-sets-regex': 7.22.5(@babel/core@7.23.0)
-      '@babel/preset-modules': 0.1.6-no-external-plugins(@babel/core@7.23.0)
+      '@babel/plugin-bugfix-safari-id-destructuring-collision-in-function-expression': 7.22.15(@babel/core@7.23.2)
+      '@babel/plugin-bugfix-v8-spread-parameters-in-optional-chaining': 7.22.15(@babel/core@7.23.2)
+      '@babel/plugin-proposal-private-property-in-object': 7.21.0-placeholder-for-preset-env.2(@babel/core@7.23.2)
+      '@babel/plugin-syntax-async-generators': 7.8.4(@babel/core@7.23.2)
+      '@babel/plugin-syntax-class-properties': 7.12.13(@babel/core@7.23.2)
+      '@babel/plugin-syntax-class-static-block': 7.14.5(@babel/core@7.23.2)
+      '@babel/plugin-syntax-dynamic-import': 7.8.3(@babel/core@7.23.2)
+      '@babel/plugin-syntax-export-namespace-from': 7.8.3(@babel/core@7.23.2)
+      '@babel/plugin-syntax-import-assertions': 7.22.5(@babel/core@7.23.2)
+      '@babel/plugin-syntax-import-attributes': 7.22.5(@babel/core@7.23.2)
+      '@babel/plugin-syntax-import-meta': 7.10.4(@babel/core@7.23.2)
+      '@babel/plugin-syntax-json-strings': 7.8.3(@babel/core@7.23.2)
+      '@babel/plugin-syntax-logical-assignment-operators': 7.10.4(@babel/core@7.23.2)
+      '@babel/plugin-syntax-nullish-coalescing-operator': 7.8.3(@babel/core@7.23.2)
+      '@babel/plugin-syntax-numeric-separator': 7.10.4(@babel/core@7.23.2)
+      '@babel/plugin-syntax-object-rest-spread': 7.8.3(@babel/core@7.23.2)
+      '@babel/plugin-syntax-optional-catch-binding': 7.8.3(@babel/core@7.23.2)
+      '@babel/plugin-syntax-optional-chaining': 7.8.3(@babel/core@7.23.2)
+      '@babel/plugin-syntax-private-property-in-object': 7.14.5(@babel/core@7.23.2)
+      '@babel/plugin-syntax-top-level-await': 7.14.5(@babel/core@7.23.2)
+      '@babel/plugin-syntax-unicode-sets-regex': 7.18.6(@babel/core@7.23.2)
+      '@babel/plugin-transform-arrow-functions': 7.22.5(@babel/core@7.23.2)
+      '@babel/plugin-transform-async-generator-functions': 7.22.15(@babel/core@7.23.2)
+      '@babel/plugin-transform-async-to-generator': 7.22.5(@babel/core@7.23.2)
+      '@babel/plugin-transform-block-scoped-functions': 7.22.5(@babel/core@7.23.2)
+      '@babel/plugin-transform-block-scoping': 7.23.0(@babel/core@7.23.2)
+      '@babel/plugin-transform-class-properties': 7.22.5(@babel/core@7.23.2)
+      '@babel/plugin-transform-class-static-block': 7.22.11(@babel/core@7.23.2)
+      '@babel/plugin-transform-classes': 7.22.15(@babel/core@7.23.2)
+      '@babel/plugin-transform-computed-properties': 7.22.5(@babel/core@7.23.2)
+      '@babel/plugin-transform-destructuring': 7.23.0(@babel/core@7.23.2)
+      '@babel/plugin-transform-dotall-regex': 7.22.5(@babel/core@7.23.2)
+      '@babel/plugin-transform-duplicate-keys': 7.22.5(@babel/core@7.23.2)
+      '@babel/plugin-transform-dynamic-import': 7.22.11(@babel/core@7.23.2)
+      '@babel/plugin-transform-exponentiation-operator': 7.22.5(@babel/core@7.23.2)
+      '@babel/plugin-transform-export-namespace-from': 7.22.11(@babel/core@7.23.2)
+      '@babel/plugin-transform-for-of': 7.22.15(@babel/core@7.23.2)
+      '@babel/plugin-transform-function-name': 7.22.5(@babel/core@7.23.2)
+      '@babel/plugin-transform-json-strings': 7.22.11(@babel/core@7.23.2)
+      '@babel/plugin-transform-literals': 7.22.5(@babel/core@7.23.2)
+      '@babel/plugin-transform-logical-assignment-operators': 7.22.11(@babel/core@7.23.2)
+      '@babel/plugin-transform-member-expression-literals': 7.22.5(@babel/core@7.23.2)
+      '@babel/plugin-transform-modules-amd': 7.23.0(@babel/core@7.23.2)
+      '@babel/plugin-transform-modules-commonjs': 7.23.0(@babel/core@7.23.2)
+      '@babel/plugin-transform-modules-systemjs': 7.23.0(@babel/core@7.23.2)
+      '@babel/plugin-transform-modules-umd': 7.22.5(@babel/core@7.23.2)
+      '@babel/plugin-transform-named-capturing-groups-regex': 7.22.5(@babel/core@7.23.2)
+      '@babel/plugin-transform-new-target': 7.22.5(@babel/core@7.23.2)
+      '@babel/plugin-transform-nullish-coalescing-operator': 7.22.11(@babel/core@7.23.2)
+      '@babel/plugin-transform-numeric-separator': 7.22.11(@babel/core@7.23.2)
+      '@babel/plugin-transform-object-rest-spread': 7.22.15(@babel/core@7.23.2)
+      '@babel/plugin-transform-object-super': 7.22.5(@babel/core@7.23.2)
+      '@babel/plugin-transform-optional-catch-binding': 7.22.11(@babel/core@7.23.2)
+      '@babel/plugin-transform-optional-chaining': 7.23.0(@babel/core@7.23.2)
+      '@babel/plugin-transform-parameters': 7.22.15(@babel/core@7.23.2)
+      '@babel/plugin-transform-private-methods': 7.22.5(@babel/core@7.23.2)
+      '@babel/plugin-transform-private-property-in-object': 7.22.11(@babel/core@7.23.2)
+      '@babel/plugin-transform-property-literals': 7.22.5(@babel/core@7.23.2)
+      '@babel/plugin-transform-regenerator': 7.22.10(@babel/core@7.23.2)
+      '@babel/plugin-transform-reserved-words': 7.22.5(@babel/core@7.23.2)
+      '@babel/plugin-transform-shorthand-properties': 7.22.5(@babel/core@7.23.2)
+      '@babel/plugin-transform-spread': 7.22.5(@babel/core@7.23.2)
+      '@babel/plugin-transform-sticky-regex': 7.22.5(@babel/core@7.23.2)
+      '@babel/plugin-transform-template-literals': 7.22.5(@babel/core@7.23.2)
+      '@babel/plugin-transform-typeof-symbol': 7.22.5(@babel/core@7.23.2)
+      '@babel/plugin-transform-unicode-escapes': 7.22.10(@babel/core@7.23.2)
+      '@babel/plugin-transform-unicode-property-regex': 7.22.5(@babel/core@7.23.2)
+      '@babel/plugin-transform-unicode-regex': 7.22.5(@babel/core@7.23.2)
+      '@babel/plugin-transform-unicode-sets-regex': 7.22.5(@babel/core@7.23.2)
+      '@babel/preset-modules': 0.1.6-no-external-plugins(@babel/core@7.23.2)
       '@babel/types': 7.23.0
-      babel-plugin-polyfill-corejs2: 0.4.5(@babel/core@7.23.0)
-      babel-plugin-polyfill-corejs3: 0.8.4(@babel/core@7.23.0)
-      babel-plugin-polyfill-regenerator: 0.5.2(@babel/core@7.23.0)
+      babel-plugin-polyfill-corejs2: 0.4.5(@babel/core@7.23.2)
+      babel-plugin-polyfill-corejs3: 0.8.4(@babel/core@7.23.2)
+      babel-plugin-polyfill-regenerator: 0.5.2(@babel/core@7.23.2)
       core-js-compat: 3.33.0
       semver: 6.3.1
     transitivePeerDependencies:
       - supports-color
     dev: false
 
-  /@babel/preset-modules@0.1.6-no-external-plugins(@babel/core@7.23.0):
+  /@babel/preset-modules@0.1.6-no-external-plugins(@babel/core@7.23.2):
     resolution: {integrity: sha512-HrcgcIESLm9aIR842yhJ5RWan/gebQUJ6E/E5+rf0y9o6oj7w0Br+sWuL6kEQ/o/AdfvR1Je9jG18/gnpwjEyA==}
     peerDependencies:
       '@babel/core': ^7.0.0-0 || ^8.0.0-0 <8.0.0
     dependencies:
-      '@babel/core': 7.23.0
+      '@babel/core': 7.23.2
       '@babel/helper-plugin-utils': 7.22.5
       '@babel/types': 7.23.0
       esutils: 2.0.3
@@ -3659,8 +3662,8 @@ packages:
       '@babel/types': 7.23.0
     dev: false
 
-  /@babel/traverse@7.23.0:
-    resolution: {integrity: sha512-t/QaEvyIoIkwzpiZ7aoSKK8kObQYeF7T2v+dazAYCb8SXtp58zEVkWW7zAnju8FNKNdr4ScAOEDmMItbyOmEYw==}
+  /@babel/traverse@7.23.2:
+    resolution: {integrity: sha512-azpe59SQ48qG6nu2CzcMLbxUudtN+dOM9kDbUqGq3HXUJRlo7i8fvPoxQUzYgLZ4cMVmuZgm8vvBpNeRhd6XSw==}
     engines: {node: '>=6.9.0'}
     dependencies:
       '@babel/code-frame': 7.22.13
@@ -3693,14 +3696,14 @@ packages:
     resolution: {integrity: sha512-s3jaWicZd0pkP0jf5ysyHUI/RE7MHos6qlToFcGWXVp+ykHOy77OUMrfbgJ9it2C5bow7OIQwYYaHjk9XlBQ2A==}
     dev: false
 
-  /@commitlint/cli@17.7.2:
-    resolution: {integrity: sha512-t3N7TZq7lOeqTOyEgfGcaltHqEJf7YDlPg75MldeVPPyz14jZq/+mbGF9tueDLFX8R6RwdymrN6D+U5XwZ8Iwg==}
+  /@commitlint/cli@17.8.0:
+    resolution: {integrity: sha512-D3LdyZYbiRyAChfJMNlAd9f2P9vNQ7GWbI9gN2o7L5hF07QJDqj4z/pcJF3PjDbJWOaUUXla287RdDmmKqH2WQ==}
     engines: {node: '>=v14'}
     hasBin: true
     dependencies:
       '@commitlint/format': 17.4.4
-      '@commitlint/lint': 17.7.0
-      '@commitlint/load': 17.7.2
+      '@commitlint/lint': 17.8.0
+      '@commitlint/load': 17.8.0
       '@commitlint/read': 17.5.1
       '@commitlint/types': 17.4.4
       execa: 5.1.1
@@ -3713,8 +3716,8 @@ packages:
       - '@swc/wasm'
     dev: true
 
-  /@commitlint/config-conventional@17.7.0:
-    resolution: {integrity: sha512-iicqh2o6et+9kWaqsQiEYZzfLbtoWv9uZl8kbI8EGfnc0HeGafQBF7AJ0ylN9D/2kj6txltsdyQs8+2fTMwWEw==}
+  /@commitlint/config-conventional@17.8.0:
+    resolution: {integrity: sha512-MgiFXujmqAvi7M33C7OSMTznwrVkckrbXe/aZWQ/+KFGLLF6IE50XIcjGrW0/uiDGb/im5qbqF2dh1dCFNa+sQ==}
     engines: {node: '>=v14'}
     dependencies:
       conventional-changelog-conventionalcommits: 6.1.0
@@ -3753,26 +3756,26 @@ packages:
       chalk: 4.1.2
     dev: true
 
-  /@commitlint/is-ignored@17.7.0:
-    resolution: {integrity: sha512-043rA7m45tyEfW7Zv2vZHF++176MLHH9h70fnPoYlB1slKBeKl8BwNIlnPg4xBdRBVNPaCqvXxWswx2GR4c9Hw==}
+  /@commitlint/is-ignored@17.8.0:
+    resolution: {integrity: sha512-8bR6rxNcWaNprPBdE4ePIOwbxutTQGOsRPYWssX+zjGxnEljzaZSGzFUOMxapYILlf8Tts/O1wPQgG549Rdvdg==}
     engines: {node: '>=v14'}
     dependencies:
       '@commitlint/types': 17.4.4
       semver: 7.5.4
     dev: true
 
-  /@commitlint/lint@17.7.0:
-    resolution: {integrity: sha512-TCQihm7/uszA5z1Ux1vw+Nf3yHTgicus/+9HiUQk+kRSQawByxZNESeQoX9ujfVd3r4Sa+3fn0JQAguG4xvvbA==}
+  /@commitlint/lint@17.8.0:
+    resolution: {integrity: sha512-4ihwnqOY4TcJN6iz5Jv1LeYavvBllONwFyGxOIWmCT5s4PNMb43cws2TUdbXTZL1Vq59etGKd5LWYDFPVbs5EA==}
     engines: {node: '>=v14'}
     dependencies:
-      '@commitlint/is-ignored': 17.7.0
+      '@commitlint/is-ignored': 17.8.0
       '@commitlint/parse': 17.7.0
       '@commitlint/rules': 17.7.0
       '@commitlint/types': 17.4.4
     dev: true
 
-  /@commitlint/load@17.7.2:
-    resolution: {integrity: sha512-XA7WTnsjHZ4YH6ZYsrnxgLdXzriwMMq+utZUET6spbOEEIPBCDLdOQXS26P+v3TTO4hUHOEhzUquaBv3jbBixw==}
+  /@commitlint/load@17.8.0:
+    resolution: {integrity: sha512-9VnGXYJCP4tXmR4YrwP8n5oX6T5ZsHfPQq6WuUQOvAI+QsDQMaTGgTRXr7us+xsjz+b+mMBSagogqfUx2aixyw==}
     engines: {node: '>=v14'}
     dependencies:
       '@commitlint/config-validator': 17.6.7
@@ -3905,10 +3908,10 @@ packages:
   /@docsearch/css@3.5.2:
     resolution: {integrity: sha512-SPiDHaWKQZpwR2siD0KQUwlStvIAnEyK6tAE2h2Wuoq8ue9skzhlyVQ1ddzOxX6khULnAALDiR/isSF3bnuciA==}
 
-  /@docsearch/js@3.5.2(@algolia/client-search@4.20.0)(search-insights@2.8.3):
+  /@docsearch/js@3.5.2(@algolia/client-search@4.20.0)(search-insights@2.9.0):
     resolution: {integrity: sha512-p1YFTCDflk8ieHgFJYfmyHBki1D61+U9idwrLh+GQQMrBSP3DLGKpy0XUJtPjAOPltcVbqsTjiPFfH7JImjUNg==}
     dependencies:
-      '@docsearch/react': 3.5.2(@algolia/client-search@4.20.0)(search-insights@2.8.3)
+      '@docsearch/react': 3.5.2(@algolia/client-search@4.20.0)(search-insights@2.9.0)
       preact: 10.18.1
     transitivePeerDependencies:
       - '@algolia/client-search'
@@ -3917,7 +3920,7 @@ packages:
       - react-dom
       - search-insights
 
-  /@docsearch/react@3.5.2(@algolia/client-search@4.20.0)(search-insights@2.8.3):
+  /@docsearch/react@3.5.2(@algolia/client-search@4.20.0)(search-insights@2.9.0):
     resolution: {integrity: sha512-9Ahcrs5z2jq/DcAvYtvlqEBHImbm4YJI8M9y0x6Tqg598P40HTEkX7hsMcIuThI+hTFxRGZ9hll0Wygm2yEjng==}
     peerDependencies:
       '@types/react': '>= 16.8.0 < 19.0.0'
@@ -3934,11 +3937,11 @@ packages:
       search-insights:
         optional: true
     dependencies:
-      '@algolia/autocomplete-core': 1.9.3(@algolia/client-search@4.20.0)(algoliasearch@4.20.0)(search-insights@2.8.3)
+      '@algolia/autocomplete-core': 1.9.3(@algolia/client-search@4.20.0)(algoliasearch@4.20.0)(search-insights@2.9.0)
       '@algolia/autocomplete-preset-algolia': 1.9.3(@algolia/client-search@4.20.0)(algoliasearch@4.20.0)
       '@docsearch/css': 3.5.2
       algoliasearch: 4.20.0
-      search-insights: 2.8.3
+      search-insights: 2.9.0
     transitivePeerDependencies:
       - '@algolia/client-search'
 
@@ -4733,7 +4736,7 @@ packages:
       slash: 4.0.0
     dev: true
 
-  /@rollup/plugin-babel@5.3.1(@babel/core@7.23.0)(rollup@2.79.1):
+  /@rollup/plugin-babel@5.3.1(@babel/core@7.23.2)(rollup@2.79.1):
     resolution: {integrity: sha512-WFfdLWU/xVWKeRQnKmIAQULUI7Il0gZnBIH/ZFO069wYIfPu+8zrfp/KMW0atmELoRDq8FbiP3VCss9MhCut7Q==}
     engines: {node: '>= 10.0.0'}
     peerDependencies:
@@ -4744,7 +4747,7 @@ packages:
       '@types/babel__core':
         optional: true
     dependencies:
-      '@babel/core': 7.23.0
+      '@babel/core': 7.23.2
       '@babel/helper-module-imports': 7.22.15
       '@rollup/pluginutils': 3.1.0(rollup@2.79.1)
       rollup: 2.79.1
@@ -5144,8 +5147,8 @@ packages:
     resolution: {integrity: sha512-z/QT1XN4K4KYuslS23k62yDIDLwLFkzxOuMplDtObz0+y7VqJCaO2o+SPwHCvLFZh7xazvvoor2tA/hPz9ee7g==}
     dev: true
 
-  /@types/js-yaml@4.0.6:
-    resolution: {integrity: sha512-ACTuifTSIIbyksx2HTon3aFtCKWcID7/h3XEmRpDYdMCXxPbl+m9GteOJeaAkiAta/NJaSFuA7ahZ0NkwajDSw==}
+  /@types/js-yaml@4.0.7:
+    resolution: {integrity: sha512-RJZP9WAMMr1514KbdSXkLRrKvYQacjr1+HWnY8pui/uBTBoSgD9ZGR17u/d4nb9NpERp0FkdLBe7hq8NIPBgkg==}
     dev: false
 
   /@types/json-schema@7.0.13:
@@ -5475,7 +5478,7 @@ packages:
       vite: ^4.0.0
       vue: ^3.2.25
     dependencies:
-      vite: 4.4.11(@types/node@20.8.6)(sass@1.69.1)
+      vite: 4.4.11(@types/node@20.8.6)(sass@1.69.3)
       vue: 3.3.4
 
   /@vitest/coverage-v8@0.34.6(vitest@0.34.6):
@@ -5638,7 +5641,7 @@ packages:
   /@vue/shared@3.3.4:
     resolution: {integrity: sha512-7OjdcV8vQ74eiz1TZLzZP4JwqM5fA94K6yntPS5Z25r9HDuGNzaGdgvwKYq6S+MxwF0TFRwe50fIR/MYnakdkQ==}
 
-  /@vuepress/bundler-vite@2.0.0-beta.67(@types/node@20.8.6)(sass@1.69.1)(ts-node@10.9.1):
+  /@vuepress/bundler-vite@2.0.0-beta.67(@types/node@20.8.6)(sass@1.69.3)(ts-node@10.9.1):
     resolution: {integrity: sha512-W6YXixxu2G+xPECPFvx4Tzv5fmpBYvApEYVw7qfSNf/5YZ6aeIfV0AMGJZvhk7R/KniofvBTGCjAMSK4fqKp8w==}
     dependencies:
       '@vitejs/plugin-vue': 4.4.0(vite@4.4.11)(vue@3.3.4)
@@ -5651,7 +5654,7 @@ packages:
       postcss: 8.4.31
       postcss-load-config: 4.0.1(postcss@8.4.31)(ts-node@10.9.1)
       rollup: 3.29.4
-      vite: 4.4.11(@types/node@20.8.6)(sass@1.69.1)
+      vite: 4.4.11(@types/node@20.8.6)(sass@1.69.3)
       vue: 3.3.4
       vue-router: 4.2.5(vue@3.3.4)
     transitivePeerDependencies:
@@ -5806,12 +5809,12 @@ packages:
       - '@vue/composition-api'
       - supports-color
 
-  /@vuepress/plugin-docsearch@2.0.0-beta.67(@algolia/client-search@4.20.0)(search-insights@2.8.3):
+  /@vuepress/plugin-docsearch@2.0.0-beta.67(@algolia/client-search@4.20.0)(search-insights@2.9.0):
     resolution: {integrity: sha512-s1lvIfEN5U7wzNpCLjIUIkHMdrBp4GzogJ+KM0LDNB56NE3DJf2brTB+UbGbcHCe8ispkTqCOXgHAbVFMPKv/Q==}
     dependencies:
       '@docsearch/css': 3.5.2
-      '@docsearch/js': 3.5.2(@algolia/client-search@4.20.0)(search-insights@2.8.3)
-      '@docsearch/react': 3.5.2(@algolia/client-search@4.20.0)(search-insights@2.8.3)
+      '@docsearch/js': 3.5.2(@algolia/client-search@4.20.0)(search-insights@2.9.0)
+      '@docsearch/react': 3.5.2(@algolia/client-search@4.20.0)(search-insights@2.9.0)
       '@vuepress/client': 2.0.0-beta.67
       '@vuepress/core': 2.0.0-beta.67
       '@vuepress/shared': 2.0.0-beta.67
@@ -5914,6 +5917,37 @@ packages:
       '@mdit-vue/types': 0.12.0
       '@vue/shared': 3.3.4
 
+  /@vuepress/theme-default@2.0.0-beta.67:
+    resolution: {integrity: sha512-t8wfKaf/WUAifcKTYfnpsUxTVF5C4LUSiX2DH+JTt0lB/bv4SKQstuZtLvLiV9C4q2ekjGpitaW85T4KDnshug==}
+    peerDependencies:
+      sass-loader: ^13.2.1
+    peerDependenciesMeta:
+      sass-loader:
+        optional: true
+    dependencies:
+      '@vuepress/client': 2.0.0-beta.67
+      '@vuepress/core': 2.0.0-beta.67
+      '@vuepress/plugin-active-header-links': 2.0.0-beta.67
+      '@vuepress/plugin-back-to-top': 2.0.0-beta.67
+      '@vuepress/plugin-container': 2.0.0-beta.67
+      '@vuepress/plugin-external-link-icon': 2.0.0-beta.67
+      '@vuepress/plugin-git': 2.0.0-beta.67
+      '@vuepress/plugin-medium-zoom': 2.0.0-beta.67
+      '@vuepress/plugin-nprogress': 2.0.0-beta.67
+      '@vuepress/plugin-palette': 2.0.0-beta.67
+      '@vuepress/plugin-prismjs': 2.0.0-beta.67
+      '@vuepress/plugin-theme-data': 2.0.0-beta.67
+      '@vuepress/shared': 2.0.0-beta.67
+      '@vuepress/utils': 2.0.0-beta.67
+      '@vueuse/core': 10.5.0(vue@3.3.4)
+      sass: 1.69.3
+      vue: 3.3.4
+      vue-router: 4.2.5(vue@3.3.4)
+    transitivePeerDependencies:
+      - '@vue/composition-api'
+      - supports-color
+    dev: false
+
   /@vuepress/theme-default@2.0.0-beta.67(sass-loader@13.3.2):
     resolution: {integrity: sha512-t8wfKaf/WUAifcKTYfnpsUxTVF5C4LUSiX2DH+JTt0lB/bv4SKQstuZtLvLiV9C4q2ekjGpitaW85T4KDnshug==}
     peerDependencies:
@@ -5938,7 +5972,7 @@ packages:
       '@vuepress/utils': 2.0.0-beta.67
       '@vueuse/core': 10.5.0(vue@3.3.4)
       sass: 1.69.1
-      sass-loader: 13.3.2(sass@1.69.1)(webpack@5.88.2)
+      sass-loader: 13.3.2(sass@1.69.3)(webpack@5.88.2)
       vue: 3.3.4
       vue-router: 4.2.5(vue@3.3.4)
     transitivePeerDependencies:
@@ -6487,8 +6521,8 @@ packages:
     engines: {node: '>=0.10.0'}
     dev: true
 
-  /artalk@2.6.3:
-    resolution: {integrity: sha512-4VIwT+wZ+eU+CfnsBpUtP3a2G6G8etWityPZTrBxuUMNFFGQP6OTFYo/p6S6TwcevyQcjHMRJHfmKJ8vKDY4vQ==}
+  /artalk@2.6.4:
+    resolution: {integrity: sha512-26mnU1gL7aoM2g5i0AkgPgwoQ7+xvbkqbs9xs+ZFdT6BMeyC1lpMVIPLLui7VIRtJnJAq6sUQxMb4Lq6F2AVZA==}
     dependencies:
       abortcontroller-polyfill: 1.7.5
       hanabi: 0.4.0
@@ -6572,38 +6606,38 @@ packages:
     resolution: {integrity: sha512-DMD0KiN46eipeziST1LPP/STfDU0sufISXmjSgvVsoU2tqxctQeASejWcfNtxYKqETM1UxQ8sp2OrSBWpHY6sw==}
     engines: {node: '>= 0.4'}
 
-  /babel-plugin-polyfill-corejs2@0.4.5(@babel/core@7.23.0):
+  /babel-plugin-polyfill-corejs2@0.4.5(@babel/core@7.23.2):
     resolution: {integrity: sha512-19hwUH5FKl49JEsvyTcoHakh6BE0wgXLLptIyKZ3PijHc/Ci521wygORCUCCred+E/twuqRyAkE02BAWPmsHOg==}
     peerDependencies:
       '@babel/core': ^7.4.0 || ^8.0.0-0 <8.0.0
     dependencies:
       '@babel/compat-data': 7.22.20
-      '@babel/core': 7.23.0
-      '@babel/helper-define-polyfill-provider': 0.4.2(@babel/core@7.23.0)
+      '@babel/core': 7.23.2
+      '@babel/helper-define-polyfill-provider': 0.4.2(@babel/core@7.23.2)
       semver: 6.3.1
     transitivePeerDependencies:
       - supports-color
     dev: false
 
-  /babel-plugin-polyfill-corejs3@0.8.4(@babel/core@7.23.0):
+  /babel-plugin-polyfill-corejs3@0.8.4(@babel/core@7.23.2):
     resolution: {integrity: sha512-9l//BZZsPR+5XjyJMPtZSK4jv0BsTO1zDac2GC6ygx9WLGlcsnRd1Co0B2zT5fF5Ic6BZy+9m3HNZ3QcOeDKfg==}
     peerDependencies:
       '@babel/core': ^7.4.0 || ^8.0.0-0 <8.0.0
     dependencies:
-      '@babel/core': 7.23.0
-      '@babel/helper-define-polyfill-provider': 0.4.2(@babel/core@7.23.0)
+      '@babel/core': 7.23.2
+      '@babel/helper-define-polyfill-provider': 0.4.2(@babel/core@7.23.2)
       core-js-compat: 3.33.0
     transitivePeerDependencies:
       - supports-color
     dev: false
 
-  /babel-plugin-polyfill-regenerator@0.5.2(@babel/core@7.23.0):
+  /babel-plugin-polyfill-regenerator@0.5.2(@babel/core@7.23.2):
     resolution: {integrity: sha512-tAlOptU0Xj34V1Y2PNTL4Y0FOJMDB6bZmoW39FeCQIhigGLkqu3Fj6uiXpxIf6Ij274ENdYx64y6Au+ZKlb1IA==}
     peerDependencies:
       '@babel/core': ^7.4.0 || ^8.0.0-0 <8.0.0
     dependencies:
-      '@babel/core': 7.23.0
-      '@babel/helper-define-polyfill-provider': 0.4.2(@babel/core@7.23.0)
+      '@babel/core': 7.23.2
+      '@babel/helper-define-polyfill-provider': 0.4.2(@babel/core@7.23.2)
     transitivePeerDependencies:
       - supports-color
     dev: false
@@ -7795,7 +7829,7 @@ packages:
       longest: 2.0.1
       word-wrap: 1.2.5
     optionalDependencies:
-      '@commitlint/load': 17.7.2
+      '@commitlint/load': 17.8.0
     transitivePeerDependencies:
       - '@swc/core'
       - '@swc/wasm'
@@ -9395,14 +9429,6 @@ packages:
     resolution: {integrity: sha512-36yxDn5H7OFZQla0/jFJmbIKTdZAQHngCedGxiMmpNfEZM0sdEeT+WczLQrjK6D7o2aiyLYDnkw0R3JK0Qv1RQ==}
     dev: true
 
-  /flowchart.ts@1.0.0:
-    resolution: {integrity: sha512-U8FN9kg/U1xPdQ5xW3e/hZBSX7y/07zGESCrJ2mjlT8CLuhzPXHXRJrJ+VyFW0DEJLdj4O7MvJImg3sXeRGt1A==}
-    dependencies:
-      '@types/raphael': 2.3.5
-      raphael: 2.3.0
-      tslib: 2.6.2
-    dev: false
-
   /flowchart.ts@1.0.1:
     resolution: {integrity: sha512-J0Sqob1Kt2MO+lKUH48h2uCIsTfEahXflKiOgVuG48T6p6oosVgaCl6TvjqNjP4pW1w8FVF4L1DbqHCxoxj5mA==}
     dependencies:
@@ -10971,8 +10997,8 @@ packages:
       json-buffer: 3.0.1
     dev: true
 
-  /khroma@2.0.0:
-    resolution: {integrity: sha512-2J8rDNlQWbtiNYThZRvmMv5yt44ZakX+Tz5ZIp/mN1pt4snn+m030Va5Z4v8xA0cQFDXBwO/8i42xL4QPsVk3g==}
+  /khroma@2.1.0:
+    resolution: {integrity: sha512-Ls993zuzfayK269Svk9hzpeGUKob/sIgZzyHYdjQoAdQetRKpOLj+k/QQQ/6Qi0Yz65mlROrfd+Ev+1+7dz9Kw==}
     dev: false
 
   /kind-of@5.1.0:
@@ -11618,7 +11644,7 @@ packages:
       dayjs: 1.11.10
       dompurify: 3.0.6
       elkjs: 0.8.2
-      khroma: 2.0.0
+      khroma: 2.1.0
       lodash-es: 4.17.21
       mdast-util-from-markdown: 1.3.1
       non-layered-tidy-tree-layout: 2.0.2
@@ -13543,7 +13569,7 @@ packages:
   /safer-buffer@2.1.2:
     resolution: {integrity: sha512-YZo3K82SD7Riyi0E1EQPojLz7kpepnSQI9IyPbHHg1XXXevb5dJI7tpyN2ADxGcQbHG7vcyRHk0cbwqcQriUtg==}
 
-  /sass-loader@13.3.2(sass@1.69.1)(webpack@5.88.2):
+  /sass-loader@13.3.2(sass@1.69.3)(webpack@5.88.2):
     resolution: {integrity: sha512-CQbKl57kdEv+KDLquhC+gE3pXt74LEAzm+tzywcA0/aHZuub8wTErbjAoNI57rPUWRYRNC5WUnNl8eGJNbDdwg==}
     engines: {node: '>= 14.15.0'}
     peerDependencies:
@@ -13563,11 +13589,20 @@ packages:
         optional: true
     dependencies:
       neo-async: 2.6.2
-      sass: 1.69.1
+      sass: 1.69.3
       webpack: 5.88.2(esbuild@0.19.4)
 
   /sass@1.69.1:
     resolution: {integrity: sha512-nc969GvTVz38oqKgYYVHM/Iq7Yl33IILy5uqaH2CWSiSUmRCvw+UR7tA3845Sp4BD5ykCUimvrT3k1EjTwpVUA==}
+    engines: {node: '>=14.0.0'}
+    hasBin: true
+    dependencies:
+      chokidar: 3.5.3
+      immutable: 4.3.4
+      source-map-js: 1.0.2
+
+  /sass@1.69.3:
+    resolution: {integrity: sha512-X99+a2iGdXkdWn1akFPs0ZmelUzyAQfvqYc2P/MPTrJRuIRoTffGzT9W9nFqG00S+c8hXzVmgxhUuHFdrwxkhQ==}
     engines: {node: '>=14.0.0'}
     hasBin: true
     dependencies:
@@ -13600,8 +13635,8 @@ packages:
       ajv-formats: 2.1.1(ajv@8.12.0)
       ajv-keywords: 5.1.0(ajv@8.12.0)
 
-  /search-insights@2.8.3:
-    resolution: {integrity: sha512-W9rZfQ9XEfF0O6ntgQOTI7Txc8nkZrO4eJ/pTHK0Br6wWND2sPGPoWg+yGhdIW7wMbLqk8dc23IyEtLlNGpeNw==}
+  /search-insights@2.9.0:
+    resolution: {integrity: sha512-bkWW9nIHOFkLwjQ1xqVaMbjjO5vhP26ERsH9Y3pKr8imthofEFIxlnOabkmGcw6ksRj9jWidcI65vvjJH/nTGg==}
 
   /section-matter@1.0.0:
     resolution: {integrity: sha512-vfD3pmTzGpufjScBh50YHKzEu2lxBWhVEHsNGoEXmCmn2hKGfeNLYMzCJpe8cD7gqX7TJluOVpBkAequ6dgMmA==}
@@ -15059,7 +15094,7 @@ packages:
       mlly: 1.4.2
       pathe: 1.1.1
       picocolors: 1.0.0
-      vite: 4.4.11(@types/node@20.8.6)(sass@1.69.1)
+      vite: 4.4.11(@types/node@20.8.6)(sass@1.69.3)
     transitivePeerDependencies:
       - '@types/node'
       - less
@@ -15071,7 +15106,7 @@ packages:
       - terser
     dev: true
 
-  /vite@4.4.11(@types/node@20.8.6)(sass@1.69.1):
+  /vite@4.4.11(@types/node@20.8.6)(sass@1.69.3):
     resolution: {integrity: sha512-ksNZJlkcU9b0lBwAGZGGaZHCMqHsc8OpgtoYhsQ4/I2v5cnpmmmqe5pM4nv/4Hn6G/2GhTdj0DhZh2e+Er1q5A==}
     engines: {node: ^14.18.0 || >=16.0.0}
     hasBin: true
@@ -15103,7 +15138,7 @@ packages:
       esbuild: 0.18.20
       postcss: 8.4.31
       rollup: 3.29.4
-      sass: 1.69.1
+      sass: 1.69.3
     optionalDependencies:
       fsevents: 2.3.3
 
@@ -15159,7 +15194,7 @@ packages:
       strip-literal: 1.3.0
       tinybench: 2.5.1
       tinypool: 0.7.0
-      vite: 4.4.11(@types/node@20.8.6)(sass@1.69.1)
+      vite: 4.4.11(@types/node@20.8.6)(sass@1.69.3)
       vite-node: 0.34.6(@types/node@20.8.6)
       why-is-node-running: 2.2.2
     transitivePeerDependencies:
@@ -15239,7 +15274,7 @@ packages:
       '@vue/server-renderer': 3.3.4(vue@3.3.4)
       '@vue/shared': 3.3.4
 
-  /vuepress-vite@2.0.0-beta.67(@types/node@20.8.6)(@vuepress/client@2.0.0-beta.67)(sass-loader@13.3.2)(sass@1.69.1)(ts-node@10.9.1)(vue@3.3.4):
+  /vuepress-vite@2.0.0-beta.67(@types/node@20.8.6)(@vuepress/client@2.0.0-beta.67)(sass-loader@13.3.2)(sass@1.69.3)(ts-node@10.9.1)(vue@3.3.4):
     resolution: {integrity: sha512-oaak2RPKBP0LeaDpDntlsQWLklCBf2vdeceXtPSLV2IzL/wtMHs5DQ/f7zXxCzvku3h/FIstmgoKq/vC0TvHkA==}
     engines: {node: '>=16.19.0'}
     hasBin: true
@@ -15247,7 +15282,34 @@ packages:
       '@vuepress/client': 2.0.0-beta.67
       vue: ^3.3.4
     dependencies:
-      '@vuepress/bundler-vite': 2.0.0-beta.67(@types/node@20.8.6)(sass@1.69.1)(ts-node@10.9.1)
+      '@vuepress/bundler-vite': 2.0.0-beta.67(@types/node@20.8.6)(sass@1.69.3)(ts-node@10.9.1)
+      '@vuepress/cli': 2.0.0-beta.67
+      '@vuepress/client': 2.0.0-beta.67
+      '@vuepress/core': 2.0.0-beta.67
+      '@vuepress/theme-default': 2.0.0-beta.67(sass-loader@13.3.2)
+      vue: 3.3.4
+    transitivePeerDependencies:
+      - '@types/node'
+      - '@vue/composition-api'
+      - less
+      - lightningcss
+      - sass
+      - sass-loader
+      - stylus
+      - sugarss
+      - supports-color
+      - terser
+      - ts-node
+
+  /vuepress-vite@2.0.0-beta.67(@types/node@20.8.6)(@vuepress/client@2.0.0-beta.67)(sass-loader@13.3.2)(ts-node@10.9.1)(vue@3.3.4):
+    resolution: {integrity: sha512-oaak2RPKBP0LeaDpDntlsQWLklCBf2vdeceXtPSLV2IzL/wtMHs5DQ/f7zXxCzvku3h/FIstmgoKq/vC0TvHkA==}
+    engines: {node: '>=16.19.0'}
+    hasBin: true
+    peerDependencies:
+      '@vuepress/client': 2.0.0-beta.67
+      vue: ^3.3.4
+    dependencies:
+      '@vuepress/bundler-vite': 2.0.0-beta.67(@types/node@20.8.6)(sass@1.69.3)(ts-node@10.9.1)
       '@vuepress/cli': 2.0.0-beta.67
       '@vuepress/client': 2.0.0-beta.67
       '@vuepress/core': 2.0.0-beta.67
@@ -15267,7 +15329,7 @@ packages:
       - ts-node
     dev: false
 
-  /vuepress-vite@2.0.0-beta.67(@types/node@20.8.6)(@vuepress/client@2.0.0-beta.67)(sass-loader@13.3.2)(ts-node@10.9.1)(vue@3.3.4):
+  /vuepress-vite@2.0.0-beta.67(@types/node@20.8.6)(@vuepress/client@2.0.0-beta.67)(ts-node@10.9.1)(vue@3.3.4):
     resolution: {integrity: sha512-oaak2RPKBP0LeaDpDntlsQWLklCBf2vdeceXtPSLV2IzL/wtMHs5DQ/f7zXxCzvku3h/FIstmgoKq/vC0TvHkA==}
     engines: {node: '>=16.19.0'}
     hasBin: true
@@ -15275,11 +15337,11 @@ packages:
       '@vuepress/client': 2.0.0-beta.67
       vue: ^3.3.4
     dependencies:
-      '@vuepress/bundler-vite': 2.0.0-beta.67(@types/node@20.8.6)(sass@1.69.1)(ts-node@10.9.1)
+      '@vuepress/bundler-vite': 2.0.0-beta.67(@types/node@20.8.6)(sass@1.69.3)(ts-node@10.9.1)
       '@vuepress/cli': 2.0.0-beta.67
       '@vuepress/client': 2.0.0-beta.67
       '@vuepress/core': 2.0.0-beta.67
-      '@vuepress/theme-default': 2.0.0-beta.67(sass-loader@13.3.2)
+      '@vuepress/theme-default': 2.0.0-beta.67
       vue: 3.3.4
     transitivePeerDependencies:
       - '@types/node'
@@ -15293,8 +15355,9 @@ packages:
       - supports-color
       - terser
       - ts-node
+    dev: false
 
-  /vuepress-webpack@2.0.0-beta.67(esbuild@0.19.4)(sass@1.69.1)(typescript@5.2.2)(vue@3.3.4)(webpack@5.88.2):
+  /vuepress-webpack@2.0.0-beta.67(esbuild@0.19.4)(sass@1.69.3)(typescript@5.2.2)(vue@3.3.4)(webpack@5.88.2):
     resolution: {integrity: sha512-6nA3rSQY6YuK7Sp/a0f4/3IilKl9jy0OeX1fTcFRwOLQtwPCr2LVucYd1G1muJsUTqa3cjrl6CNy0R7RgddDqQ==}
     engines: {node: '>=16.19.0'}
     hasBin: true
@@ -15305,7 +15368,7 @@ packages:
       '@vuepress/cli': 2.0.0-beta.67
       '@vuepress/core': 2.0.0-beta.67
       '@vuepress/theme-default': 2.0.0-beta.67(sass-loader@13.3.2)
-      sass-loader: 13.3.2(sass@1.69.1)(webpack@5.88.2)
+      sass-loader: 13.3.2(sass@1.69.3)(webpack@5.88.2)
       vue: 3.3.4
     transitivePeerDependencies:
       - '@swc/core'
@@ -15325,12 +15388,12 @@ packages:
       - webpack
       - webpack-cli
 
-  /vuepress@2.0.0-beta.67(@types/node@20.8.6)(@vuepress/client@2.0.0-beta.67)(sass-loader@13.3.2)(sass@1.69.1)(ts-node@10.9.1)(vue@3.3.4):
+  /vuepress@2.0.0-beta.67(@types/node@20.8.6)(@vuepress/client@2.0.0-beta.67)(sass-loader@13.3.2)(sass@1.69.3)(ts-node@10.9.1)(vue@3.3.4):
     resolution: {integrity: sha512-931pKDOph20RKMLZAH5YYlMz+nfx9jcOQio1Gxk0pB7DwuSxAVFxPv2dbIUP4E/4uWOkLppRhLYcrOoxEbVYzA==}
     engines: {node: '>=16.19.0'}
     hasBin: true
     dependencies:
-      vuepress-vite: 2.0.0-beta.67(@types/node@20.8.6)(@vuepress/client@2.0.0-beta.67)(sass-loader@13.3.2)(sass@1.69.1)(ts-node@10.9.1)(vue@3.3.4)
+      vuepress-vite: 2.0.0-beta.67(@types/node@20.8.6)(@vuepress/client@2.0.0-beta.67)(sass-loader@13.3.2)(sass@1.69.3)(ts-node@10.9.1)(vue@3.3.4)
     transitivePeerDependencies:
       - '@types/node'
       - '@vue/composition-api'
@@ -15353,6 +15416,28 @@ packages:
     hasBin: true
     dependencies:
       vuepress-vite: 2.0.0-beta.67(@types/node@20.8.6)(@vuepress/client@2.0.0-beta.67)(sass-loader@13.3.2)(ts-node@10.9.1)(vue@3.3.4)
+    transitivePeerDependencies:
+      - '@types/node'
+      - '@vue/composition-api'
+      - '@vuepress/client'
+      - less
+      - lightningcss
+      - sass
+      - sass-loader
+      - stylus
+      - sugarss
+      - supports-color
+      - terser
+      - ts-node
+      - vue
+    dev: false
+
+  /vuepress@2.0.0-beta.67(@types/node@20.8.6)(@vuepress/client@2.0.0-beta.67)(ts-node@10.9.1)(vue@3.3.4):
+    resolution: {integrity: sha512-931pKDOph20RKMLZAH5YYlMz+nfx9jcOQio1Gxk0pB7DwuSxAVFxPv2dbIUP4E/4uWOkLppRhLYcrOoxEbVYzA==}
+    engines: {node: '>=16.19.0'}
+    hasBin: true
+    dependencies:
+      vuepress-vite: 2.0.0-beta.67(@types/node@20.8.6)(@vuepress/client@2.0.0-beta.67)(ts-node@10.9.1)(vue@3.3.4)
     transitivePeerDependencies:
       - '@types/node'
       - '@vue/composition-api'
@@ -15649,10 +15734,10 @@ packages:
     engines: {node: '>=16.0.0'}
     dependencies:
       '@apideck/better-ajv-errors': 0.3.6(ajv@8.12.0)
-      '@babel/core': 7.23.0
-      '@babel/preset-env': 7.22.20(@babel/core@7.23.0)
+      '@babel/core': 7.23.2
+      '@babel/preset-env': 7.22.20(@babel/core@7.23.2)
       '@babel/runtime': 7.23.1
-      '@rollup/plugin-babel': 5.3.1(@babel/core@7.23.0)(rollup@2.79.1)
+      '@rollup/plugin-babel': 5.3.1(@babel/core@7.23.2)(rollup@2.79.1)
       '@rollup/plugin-node-resolve': 11.2.1(rollup@2.79.1)
       '@rollup/plugin-replace': 2.4.2(rollup@2.79.1)
       '@surma/rollup-plugin-off-main-thread': 2.2.3
