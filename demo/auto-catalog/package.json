@@ -1,6 +1,7 @@
 {
   "name": "auto-catalog-demo",
   "private": true,
+  "type": "module",
   "description": "Demo for vuepress-plugin-auto-catalog",
   "license": "MIT",
   "author": "Mr.Hope",
