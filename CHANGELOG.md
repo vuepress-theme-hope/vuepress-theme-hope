@@ -271,6 +271,8 @@ All notable changes to this project will be documented in this file. See [Conven
 
 - **theme:** use functional component and small tweaks ([42e92e8](https://github.com/vuepress-theme-hope/vuepress-theme-hope/commit/42e92e8de34cab9fe877fc0b34ea9d8274c8c705))
 
+<!-- #endregion recent-beta -->
+
 ## [2.0.0-beta.218](https://github.com/vuepress-theme-hope/vuepress-theme-hope/compare/v2.0.0-beta.217...v2.0.0-beta.218) (2023-05-31)
 
 ### Features
@@ -566,8 +568,6 @@ All notable changes to this project will be documented in this file. See [Conven
 ### Bug Fixes
 
 - **components:** fix SiteInfo, close [#3015](https://github.com/vuepress-theme-hope/vuepress-theme-hope/issues/3015) ([6e6537c](https://github.com/vuepress-theme-hope/vuepress-theme-hope/commit/6e6537cf9d6dd759cfc52f7a3892bd1c6096c7f6))
-
-<!-- #endregion recent-beta -->
 
 ## [2.0.0-beta.202](https://github.com/vuepress-theme-hope/vuepress-theme-hope/compare/v2.0.0-beta.201...v2.0.0-beta.202) (2023-04-10)
 
