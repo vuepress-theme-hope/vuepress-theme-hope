@@ -19,12 +19,12 @@ import { colors } from "@vuepress/utils";
 import { useSassPalettePlugin } from "vuepress-plugin-sass-palette";
 import {
   MATHML_TAGS,
-  addChainWebpack,
   addCustomElement,
   addViteOptimizeDepsExclude,
   addViteOptimizeDepsInclude,
   addViteSsrExternal,
   addViteSsrNoExternal,
+  chainWebpack,
   checkVersion,
   detectPackageManager,
   getBundlerName,
@@ -250,7 +250,7 @@ export const mdEnhancePlugin =
           addViteSsrExternal(bundlerOptions, app, "@vue/repl");
 
           // hide webpack warnings
-          addChainWebpack(bundlerOptions, app, (config) => {
+          chainWebpack(bundlerOptions, app, (config) => {
             config.module.set("exprContextCritical", false);
             config.module.set("unknownContextCritical", false);
           });
