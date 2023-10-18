@@ -10,10 +10,10 @@ import {
   shallowRef,
   watch,
 } from "vue";
+import { useRoute } from "vue-router";
 import { LoadingIcon, isString } from "vuepress-shared/client";
 
 import { useArtalkOptions } from "../helpers/index.js";
-
 import "artalk/dist/Artalk.css";
 import "../styles/artalk.scss";
 
@@ -85,19 +85,22 @@ export default defineComponent({
       }
     };
 
+    const route = useRoute();
+
+    // destroy, reinitialize the artalk system
+    const loadArtalkInit = async (): Promise<void> => {
+      try {
+        artalk?.destroy();
+      } catch (err) {
+        // do nothing
+      }
+      await initArtalk();
+    };
+
     onMounted(() => {
-      watch(
-        () => props.identifier,
-        async () => {
-          try {
-            artalk?.destroy();
-          } catch (err) {
-            // do nothing
-          }
-          await initArtalk();
-        },
-        { immediate: true },
-      );
+      watch(() => props.identifier, loadArtalkInit, {
+        immediate: true,
+      });
 
       watch(
         () => props.darkmode,
@@ -105,6 +108,9 @@ export default defineComponent({
           artalk?.setDarkMode(value);
         },
       );
+
+      // fix a bug , when the route is switched, Artalk does not display the problem and needs to be refreshed again
+      watch(() => route.path, loadArtalkInit);
     });
 
     return (): VNode | null =>
