@@ -1,6 +1,5 @@
 export { fs, getDirname, path } from "@vuepress/utils";
 export {
-  addChainWebpack,
   addCustomElement,
   addViteConfig,
   addViteOptimizeDepsExclude,

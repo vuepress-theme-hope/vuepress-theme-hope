@@ -135,12 +135,12 @@ useCustomDevServer(bundlerOptions, app, {
 
 ## Webpack Related
 
-- addChainWebpack
+- chainWebpack
 
   Chain webpack config.
 
   ```ts
-  export const addChainWebpack: (
+  export const chainWebpack: (
     bundlerOptions: unknown,
     app: App,
     chainWebpack: (
@@ -154,9 +154,37 @@ useCustomDevServer(bundlerOptions, app, {
   ::: details Example
 
   ```ts
-  import { addChainWebpack } from "vuepress-shared/node";
+  import { chainWebpack } from "vuepress-shared/node";
 
-  addChainWebpack(bundlerOptions, app, (config, isServer, isBuild) => {
+  chainWebpack(bundlerOptions, app, (config, isServer, isBuild) => {
+    // do some customize here
+  });
+  ```
+
+  :::
+
+- configWebpack
+
+  Config Webpack
+
+  ```ts
+  export const configWebpack: (
+    bundlerOptions: unknown,
+    app: App,
+    configureWebpack: (
+      config: WebpackConfiguration,
+      isServer: boolean,
+      isBuild: boolean,
+    ) => void,
+  ) => void;
+  ```
+
+  ::: details Example
+
+  ```ts
+  import { configWebpack } from "vuepress-shared/node";
+
+  configWebpack(bundlerOptions, app, (config, isServer, isBuild) => {
     // do some customize here
   });
   ```

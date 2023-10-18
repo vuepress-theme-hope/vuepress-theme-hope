@@ -19,17 +19,18 @@ import { colors } from "@vuepress/utils";
 import { useSassPalettePlugin } from "vuepress-plugin-sass-palette";
 import {
   MATHML_TAGS,
-  addChainWebpack,
   addCustomElement,
   addViteOptimizeDepsExclude,
   addViteOptimizeDepsInclude,
   addViteSsrExternal,
   addViteSsrNoExternal,
+  chainWebpack,
   checkVersion,
   detectPackageManager,
   getBundlerName,
   getLocales,
   isPlainObject,
+  noopModule,
 } from "vuepress-shared/node";
 
 import {
@@ -70,7 +71,7 @@ import {
   prepareRevealJsStyleFile,
 } from "./prepare/index.js";
 import type { KatexOptions } from "./typings/index.js";
-import { PLUGIN_NAME, logger } from "./utils.js";
+import { PLUGIN_NAME, isInstalled, logger } from "./utils.js";
 
 export const mdEnhancePlugin =
   (
@@ -91,8 +92,13 @@ export const mdEnhancePlugin =
     const getStatus = (
       key: keyof MarkdownEnhanceOptions,
       gfm = false,
-    ): boolean =>
-      key in options ? Boolean(options[key]) : (gfm && options.gfm) || false;
+      pkg = "",
+    ): boolean => {
+      const enabled =
+        key in options ? Boolean(options[key]) : (gfm && options.gfm) || false;
+
+      return enabled && pkg ? isInstalled(pkg) : true;
+    };
 
     const locales = getLocales({
       app,
@@ -101,18 +107,18 @@ export const mdEnhancePlugin =
       config: options.locales,
     });
 
-    const enableChart = getStatus("chart");
-    const enableEcharts = getStatus("echarts");
-    const enableFlowchart = getStatus("flowchart");
+    const enableChart = getStatus("chart", false, "chart.js");
+    const enableEcharts = getStatus("echarts", false, "echarts");
+    const enableFlowchart = getStatus("flowchart", false, "flowchart.ts");
     const enableFootnote = getStatus("footnote", true);
     const enableImgMark = getStatus("imgMark", true);
     const enableInclude = getStatus("include");
     const enableTasklist = getStatus("tasklist", true);
-    const enableMermaid = getStatus("mermaid");
-    const enableRevealJs = getStatus("revealjs");
-    const enableKatex = getStatus("katex");
-    const enableMathjax = getStatus("mathjax", true);
-    const enableVuePlayground = getStatus("vuePlayground");
+    const enableMermaid = getStatus("mermaid", false, "mermaid");
+    const enableRevealJs = getStatus("revealjs", false, "reveal.js");
+    const enableKatex = getStatus("katex", false, "katex");
+    const enableMathjax = getStatus("mathjax", true, "mathjax-full");
+    const enableVuePlayground = getStatus("vuePlayground", false, "@vue/repl");
 
     const { enabled: enableLinksCheck, isIgnoreLink } = getLinksCheckStatus(
       app,
@@ -181,12 +187,13 @@ export const mdEnhancePlugin =
 
       alias: (app): Record<string, string> => ({
         // we can not let vite force optimize deps with pnpm, so we use a full bundle in devServer here
-        "@mermaid":
-          app.env.isDev &&
-          detectPackageManager() === "pnpm" &&
-          getBundlerName(app) === "vite"
+        "@mermaid": enableMermaid
+          ? app.env.isDev &&
+            detectPackageManager() === "pnpm" &&
+            getBundlerName(app) === "vite"
             ? "mermaid/dist/mermaid.esm.min.mjs"
-            : "mermaid",
+            : "mermaid"
+          : noopModule,
       }),
 
       extendsBundlerOptions: (bundlerOptions: unknown, app): void => {
@@ -243,7 +250,7 @@ export const mdEnhancePlugin =
           addViteSsrExternal(bundlerOptions, app, "@vue/repl");
 
           // hide webpack warnings
-          addChainWebpack(bundlerOptions, app, (config) => {
+          chainWebpack(bundlerOptions, app, (config) => {
             config.module.set("exprContextCritical", false);
             config.module.set("unknownContextCritical", false);
           });
