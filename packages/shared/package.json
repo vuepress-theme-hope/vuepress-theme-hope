@@ -65,7 +65,7 @@
     "vue-router": "^4.2.5"
   },
   "devDependencies": {
-    "@types/connect": "3.4.36",
+    "@types/connect": "3.4.37",
     "@types/semver": "7.5.3",
     "@vuepress/bundler-vite": "2.0.0-beta.67",
     "@vuepress/bundler-webpack": "2.0.0-beta.67",
