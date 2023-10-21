@@ -66,7 +66,7 @@
   },
   "devDependencies": {
     "@types/connect": "3.4.37",
-    "@types/semver": "7.5.3",
+    "@types/semver": "7.5.4",
     "@vuepress/bundler-vite": "2.0.0-beta.67",
     "@vuepress/bundler-webpack": "2.0.0-beta.67",
     "@vuepress/core": "2.0.0-beta.67",
