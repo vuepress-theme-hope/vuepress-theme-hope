@@ -36,8 +36,8 @@ importers:
         specifier: 5.0.4
         version: 5.0.4(rollup@4.1.3)
       '@types/inquirer':
-        specifier: 9.0.4
-        version: 9.0.4
+        specifier: 9.0.6
+        version: 9.0.6
       '@types/node':
         specifier: 20.8.6
         version: 20.8.6
@@ -1602,8 +1602,8 @@ importers:
         version: 9.2.11
     devDependencies:
       '@types/inquirer':
-        specifier: 9.0.4
-        version: 9.0.4
+        specifier: 9.0.6
+        version: 9.0.6
 
   packages/feed2:
     dependencies:
@@ -5255,8 +5255,8 @@ packages:
     dependencies:
       '@types/node': 20.8.6
 
-  /@types/inquirer@9.0.4:
-    resolution: {integrity: sha512-x8UgutCLm5tsp995aeYB8dlT+sGBCtv0zE43tHvo7OljtlA2Rn4+COyLKe9+YjB20uy0G14y0C9vCD2KtNtyGA==}
+  /@types/inquirer@9.0.6:
+    resolution: {integrity: sha512-1Go1AAP/yOy3Pth5Xf1DC3nfZ03cJLCPx6E2YnSN/5I3w1jHBVH4170DkZ+JxfmA7c9kL9+bf9z3FRGa4kNAqg==}
     dependencies:
       '@types/through': 0.0.31
       rxjs: 7.8.1

@@ -52,6 +52,6 @@
     "inquirer": "9.2.11"
   },
   "devDependencies": {
-    "@types/inquirer": "9.0.4"
+    "@types/inquirer": "9.0.6"
   }
 }
