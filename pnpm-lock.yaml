@@ -1497,8 +1497,8 @@ importers:
         version: 2.0.0-beta.67(esbuild@0.19.4)(sass@1.69.3)(typescript@5.2.2)(vue@3.3.4)(webpack@5.89.0)
     devDependencies:
       '@types/qrcode':
-        specifier: 1.5.2
-        version: 1.5.2
+        specifier: 1.5.4
+        version: 1.5.4
       '@vuepress/bundler-vite':
         specifier: 2.0.0-beta.67
         version: 2.0.0-beta.67(@types/node@20.8.7)(sass@1.69.3)(ts-node@10.9.1)
@@ -5347,10 +5347,10 @@ packages:
     resolution: {integrity: sha512-lqa4UEhhv/2sjjIQgjX8B+RBjj47eo0mzGasklVJ78UKGQY1r0VpB9XHDaZZO9qzEFDdy4MrXLuEaSmPrPSe/A==}
     dev: true
 
-  /@types/qrcode@1.5.2:
-    resolution: {integrity: sha512-W4KDz75m7rJjFbyCctzCtRzZUj+PrUHV+YjqDp50sSRezTbrtEAIq2iTzC6lISARl3qw+8IlcCyljdcVJE0Wug==}
+  /@types/qrcode@1.5.4:
+    resolution: {integrity: sha512-ufYqUO7wUBq49hugJry+oIYKscvxIQerJSmXeny215aJKfrepN04DDZP8FCgxvV82kOqKPULCE4PIW3qUmZrRA==}
     dependencies:
-      '@types/node': 20.8.6
+      '@types/node': 20.8.7
     dev: true
 
   /@types/qs@6.9.8:
