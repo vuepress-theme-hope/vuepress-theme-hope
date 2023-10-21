@@ -2235,8 +2235,8 @@ importers:
         version: 2.0.0-beta.67(esbuild@0.19.4)(sass@1.69.3)(typescript@5.2.2)(vue@3.3.4)(webpack@5.89.0)
     devDependencies:
       '@types/connect':
-        specifier: 3.4.36
-        version: 3.4.36
+        specifier: 3.4.37
+        version: 3.4.37
       '@types/semver':
         specifier: 7.5.3
         version: 7.5.3
@@ -5142,7 +5142,7 @@ packages:
   /@types/body-parser@1.19.3:
     resolution: {integrity: sha512-oyl4jvAfTGX9Bt6Or4H9ni1Z447/tQuxnZsytsCaExKlmJiU8sFgnIBRzJUpKwB5eWn9HuBYlUlVA74q/yN0eQ==}
     dependencies:
-      '@types/connect': 3.4.36
+      '@types/connect': 3.4.37
       '@types/node': 20.8.6
 
   /@types/bonjour@3.5.11:
@@ -5166,8 +5166,8 @@ packages:
       '@types/express-serve-static-core': 4.17.37
       '@types/node': 20.8.6
 
-  /@types/connect@3.4.36:
-    resolution: {integrity: sha512-P63Zd/JUGq+PdrM1lv0Wv5SBYeA2+CORvbrXbngriYY0jzLUWfQMQQxOhjONEz/wlHOAxOdY7CY65rgQdTjq2w==}
+  /@types/connect@3.4.37:
+    resolution: {integrity: sha512-zBUSRqkfZ59OcwXon4HVxhx5oWCJmc0OtBTK05M+p0dYjgN6iTwIL2T/WbsQZrEsdnwaF9cWQ+azOnpPvIqY3Q==}
     dependencies:
       '@types/node': 20.8.6
 
@@ -5374,7 +5374,7 @@ packages:
   /@types/sax@1.2.5:
     resolution: {integrity: sha512-9jWta97bBVC027/MShr3gLab8gPhKy4l6qpb+UJLF5pDm3501NvA7uvqVCW+REFtx00oTi6Cq9JzLwgq6evVgw==}
     dependencies:
-      '@types/node': 17.0.45
+      '@types/node': 20.8.6
     dev: false
 
   /@types/semver@7.5.3:
