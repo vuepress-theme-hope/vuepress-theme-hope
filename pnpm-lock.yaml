@@ -1818,8 +1818,8 @@ importers:
         version: 2.0.0-beta.67(esbuild@0.19.4)(sass@1.69.3)(typescript@5.2.2)(vue@3.3.4)(webpack@5.89.0)
     devDependencies:
       '@types/babel__core':
-        specifier: 7.20.2
-        version: 7.20.2
+        specifier: 7.20.3
+        version: 7.20.3
       '@vuepress/bundler-vite':
         specifier: 2.0.0-beta.67
         version: 2.0.0-beta.67(@types/node@20.8.6)(sass@1.69.3)(ts-node@10.9.1)
@@ -5110,8 +5110,8 @@ packages:
     resolution: {integrity: sha512-vxhUy4J8lyeyinH7Azl1pdd43GJhZH/tP2weN8TntQblOY+A0XbT8DJk1/oCPuOOyg/Ja757rG0CgHcWC8OfMA==}
     requiresBuild: true
 
-  /@types/babel__core@7.20.2:
-    resolution: {integrity: sha512-pNpr1T1xLUc2l3xJKuPtsEky3ybxN3m4fJkknfIpTCTfIZCDW57oAg+EfCgIIp2rvCe0Wn++/FfodDS4YXxBwA==}
+  /@types/babel__core@7.20.3:
+    resolution: {integrity: sha512-54fjTSeSHwfan8AyHWrKbfBWiEUrNTZsUwPTDSNaaP1QDQIZbeNUg3a59E9D+375MzUw/x1vx2/0F5LBz+AeYA==}
     dependencies:
       '@babel/parser': 7.23.0
       '@babel/types': 7.23.0
