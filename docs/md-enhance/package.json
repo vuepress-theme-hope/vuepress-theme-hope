@@ -24,7 +24,7 @@
     "@vuepress/client": "2.0.0-beta.67",
     "docs-shared": "workspace:*",
     "flowchart.ts": "1.0.1",
-    "mermaid": "10.5.0",
+    "mermaid": "10.5.1",
     "katex": "0.16.9",
     "sass-loader": "13.3.2",
     "vue": "3.3.6",
