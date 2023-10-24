@@ -97,7 +97,12 @@ export const mdEnhancePlugin =
       const enabled =
         key in options ? Boolean(options[key]) : (gfm && options.gfm) || false;
 
-      return enabled && pkg ? isInstalled(pkg) : true;
+      return (
+        enabled &&
+        (pkg
+          ? isInstalled(pkg, Boolean(options[key]) || (gfm && options.gfm))
+          : true)
+      );
     };
 
     const locales = getLocales({
