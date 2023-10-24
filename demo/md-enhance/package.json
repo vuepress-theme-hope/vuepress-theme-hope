@@ -23,10 +23,10 @@
     "echarts": "5.4.3",
     "katex": "0.16.9",
     "mathjax-full": "3.2.2",
-    "mermaid": "10.5.1",
+    "mermaid": "10.6.0",
     "reveal.js": "4.6.1",
     "sass-loader": "13.3.2",
-    "vue": "3.3.6",
+    "vue": "3.3.7",
     "vuepress-plugin-md-enhance": "workspace:*",
     "vuepress-vite": "2.0.0-beta.67",
     "vuepress-webpack": "2.0.0-beta.67"

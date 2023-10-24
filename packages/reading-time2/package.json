@@ -46,7 +46,7 @@
   },
   "dependencies": {
     "@vuepress/client": "2.0.0-beta.67",
-    "vue": "^3.3.6",
+    "vue": "^3.3.7",
     "vuepress-shared": "workspace:*"
   },
   "devDependencies": {

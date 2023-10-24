@@ -370,6 +370,7 @@ export const mdEnhancePlugin =
       extendsPage: (page, app): void => {
         if (enableLinksCheck && isAppInitialized)
           linksCheck(page, app, isIgnoreLink);
+
         if (enableInclude)
           page.deps.push(...(<string[]>page.markdownEnv["includedFiles"]));
       },
@@ -380,18 +381,20 @@ export const mdEnhancePlugin =
           app.pages.forEach((page) => linksCheck(page, app, isIgnoreLink));
       },
 
-      onPrepared: (app): Promise<void> =>
-        Promise.all([
-          ...(enableMathjax
-            ? [prepareMathjaxStyleFile(app, mathjaxInstance!)]
-            : []),
-          ...(enableRevealJs
-            ? [
-                prepareRevealJsPluginFile(app, revealJsOptions.plugins ?? []),
-                prepareRevealJsStyleFile(app, revealJsOptions?.themes),
-              ]
-            : []),
-        ]).then(() => void 0),
+      onPrepared: async (app): Promise<void> => {
+        const promises = [];
+
+        if (enableMathjax)
+          promises.push(prepareMathjaxStyleFile(app, mathjaxInstance!));
+
+        if (enableRevealJs)
+          promises.push(
+            prepareRevealJsPluginFile(app, revealJsOptions.plugins ?? []),
+            prepareRevealJsStyleFile(app, revealJsOptions?.themes),
+          );
+
+        await Promise.all(promises);
+      },
 
       clientConfigFile: (app) => prepareConfigFile(app, options, legacy),
     };
