@@ -16,12 +16,14 @@ import "../styles/giscus.scss";
 // Note: Should be updated with https://github.com/giscus/giscus/tree/main/locales
 const SUPPORTED_LANGUAGES = [
   "ar",
+  "ca",
   "de",
-  "gsw",
   "en",
+  "eo",
   "es",
   "fa",
   "fr",
+  "he",
   "id",
   "it",
   "ja",
