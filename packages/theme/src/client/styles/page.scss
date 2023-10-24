@@ -16,7 +16,7 @@
   object-fit: cover;
   width: calc(100% + 2rem);
   max-height: 25vh;
-  margin-left: -2rem;
+  margin-inline-start: -2rem;
 
   @media (max-width: hope-config.$tablet) {
     width: 100%;
@@ -32,6 +32,6 @@
 
   .sidebar-collapsed {
     width: 100%;
-    margin-left: 0;
+    margin-inline-start: 0;
   }
 }

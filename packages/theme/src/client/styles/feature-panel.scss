@@ -4,15 +4,13 @@
 
 .vp-feature-bg {
   position: absolute;
-  top: 0;
-  right: 0;
-  bottom: 0;
-  left: 0;
   z-index: 0;
 
   background-attachment: fixed;
   background-position: 50%;
   background-size: cover;
+
+  inset: 0;
 
   &.light {
     display: inline-block;
@@ -114,13 +112,13 @@
 
   display: flex;
   flex-wrap: wrap;
-  align-content: stretch;
   align-items: stretch;
-  justify-content: center;
 
   margin: 1rem 0;
 
   text-align: start;
+
+  place-content: stretch center;
 
   @media print {
     display: block;

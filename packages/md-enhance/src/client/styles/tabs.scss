@@ -19,8 +19,7 @@
 
   @media (max-width: hope-config.$mobile) {
     #{hope-config.$content-class} > & {
-      margin-right: -1.5rem;
-      margin-left: -1.5rem;
+      margin-inline: -1.5rem;
       border-radius: 0;
     }
   }

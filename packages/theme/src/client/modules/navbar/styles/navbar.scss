@@ -4,9 +4,6 @@
   );
 
   position: fixed;
-  top: 0;
-  right: 0;
-  left: 0;
   z-index: 175;
 
   display: flex;
@@ -30,6 +27,7 @@
     box-shadow var(--color-transition);
 
   backdrop-filter: saturate(150%) blur(12px);
+  inset: 0 0 auto;
 
   @media print {
     display: none;

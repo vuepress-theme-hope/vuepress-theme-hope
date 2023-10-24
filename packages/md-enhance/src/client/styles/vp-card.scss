@@ -28,7 +28,7 @@
 .vp-card-logo {
   width: 3em;
   height: 3em;
-  margin-right: 1em;
+  margin-inline-end: 1em;
   border-radius: 50%;
 }
 
@@ -51,9 +51,8 @@
 .vp-card-container {
   display: flex;
   flex-wrap: wrap;
-  align-content: stretch;
   align-items: stretch;
-  justify-content: center;
+  place-content: stretch center;
 
   .vp-card {
     flex-basis: calc(50% - 3rem);

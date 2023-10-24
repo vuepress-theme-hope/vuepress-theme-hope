@@ -9,9 +9,7 @@
   align-items: center;
   justify-content: center;
 
-  // margin-inline: auto;
-  margin-inline-start: auto;
-  margin-inline-end: auto;
+  margin-inline: auto;
 
   &.fullscreen {
     height: calc(100vh - var(--navbar-height)) !important;
@@ -21,17 +19,10 @@
 .vp-hero-info {
   z-index: 1;
   width: 100%;
-
-  // NOTE: Compatible with Android Wechat
-  // padding-inline: 2.5rem;
-  padding-inline-start: 2.5rem;
-  padding-inline-end: 2.5rem;
+  padding-inline: 2.5rem;
 
   @media (max-width: hope-config.$pad) {
-    // NOTE: Compatible with Android Wechat
-    // padding-inline: 1.5rem;
-    padding-inline-start: 1.5em;
-    padding-inline-end: 1.5rem;
+    padding-inline: 1.5rem;
   }
 
   @media (min-width: hope-config.$pad) {
@@ -43,26 +34,22 @@
 
 .vp-hero-mask {
   position: absolute;
-  top: 0;
-  right: 0;
-  bottom: 0;
-  left: 0;
   z-index: 0;
 
   background-position: 50%;
   background-size: cover;
 
+  inset: 0;
+
   &::after {
     content: " ";
 
     position: absolute;
-    top: 0;
-    right: 0;
-    bottom: 0;
-    left: 0;
     z-index: 1;
 
     display: block;
+
+    inset: 0;
   }
 
   &.light {

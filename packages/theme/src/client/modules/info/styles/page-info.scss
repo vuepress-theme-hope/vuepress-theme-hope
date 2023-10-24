@@ -3,13 +3,13 @@
 .page-info {
   display: flex;
   flex-wrap: wrap;
-  align-content: stretch;
   align-items: center;
-  justify-content: flex-start;
 
   color: var(--dark-grey);
 
   font-size: 14px;
+
+  place-content: stretch flex-start;
 
   @media print {
     display: flex !important;
