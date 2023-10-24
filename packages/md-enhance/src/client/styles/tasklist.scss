@@ -75,10 +75,7 @@
 
       position: absolute;
       top: 0.1em;
-
-      // NOTE: Compatible with Android Wechat
-      // inset-inline-start: 0.4em;
-      left: 0.4em;
+      inset-inline-start: 0.4em;
       z-index: 1;
 
       width: 0.2em;
@@ -90,11 +87,6 @@
 
       @media print {
         border-color: var(--vp-c);
-      }
-
-      #{hope-config.$rtl-selector} & {
-        right: 0.4em;
-        left: unset;
       }
     }
   }

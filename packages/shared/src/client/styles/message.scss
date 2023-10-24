@@ -24,11 +24,8 @@
 
 #message-container {
   position: fixed;
-  top: calc(var(--navbar-height, 3.6rem) + 1rem);
-  right: 0;
-  left: 0;
+  inset: calc(var(--navbar-height, 3.6rem) + 1rem) 0 auto;
   z-index: 75;
-
   text-align: center;
 
   .message {

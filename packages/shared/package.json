@@ -1,6 +1,6 @@
 {
   "name": "vuepress-shared",
-  "version": "2.0.0-beta.238",
+  "version": "2.0.0-beta.239",
   "description": "Shared files for vuepress2",
   "keywords": [
     "vuepress",
@@ -61,12 +61,12 @@
     "gray-matter": "^4.0.3",
     "semver": "^7.5.4",
     "striptags": "^3.2.0",
-    "vue": "^3.3.4",
+    "vue": "^3.3.6",
     "vue-router": "^4.2.5"
   },
   "devDependencies": {
-    "@types/connect": "3.4.36",
-    "@types/semver": "7.5.3",
+    "@types/connect": "3.4.37",
+    "@types/semver": "7.5.4",
     "@vuepress/bundler-vite": "2.0.0-beta.67",
     "@vuepress/bundler-webpack": "2.0.0-beta.67",
     "@vuepress/core": "2.0.0-beta.67",

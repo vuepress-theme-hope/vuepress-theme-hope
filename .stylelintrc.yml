@@ -1,9 +1,6 @@
 extends:
   - stylelint-config-hope
 rules:
-  declaration-block-no-redundant-longhand-properties:
-    - true
-    - ignoreShorthands:
-        - /inset/
+  declaration-block-no-redundant-longhand-properties: true
   media-feature-range-notation: prefix
   no-descending-specificity: null

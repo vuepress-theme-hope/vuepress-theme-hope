@@ -138,12 +138,12 @@ export default defineComponent({
                   ]),
 
                   h("button", {
-                    class: "bing-switch-left",
+                    class: "bing-switch-prev",
                     disabled: bingStorage.value.index === 0,
                     onClick: () => prev(),
                   }),
                   h("button", {
-                    class: "bing-switch-right",
+                    class: "bing-switch-next",
                     disabled:
                       bingStorage.value.index ===
                       bingStorage.value.data.length - 1,

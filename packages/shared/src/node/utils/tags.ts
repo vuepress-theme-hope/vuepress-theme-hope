@@ -1,5 +1,7 @@
 /**
- * Copied from https://github.com/vuejs/core/blob/b2bac9fa1763ab895f9bea18ef83d58673e1a4ec/packages/shared/src/domTagConfig.ts#L6-L28
+ * Note: Sync with https://github.com/vuejs/core/blob/main/packages/shared/src/domTagConfig.ts#L6-L28
+ *
+ * Copied from https://github.com/vuejs/core/blob/main/packages/shared/src/domTagConfig.ts#L6-L28
  */
 
 /**
@@ -7,7 +9,7 @@
  */
 export const HTML_TAGS = (
   "html,body,base,head,link,meta,style,title,address,article,aside,footer," +
-  "header,h1,h2,h3,h4,h5,h6,nav,section,div,dd,dl,dt,figcaption," +
+  "header,hgroup,h1,h2,h3,h4,h5,h6,nav,section,div,dd,dl,dt,figcaption," +
   "figure,picture,hr,img,li,main,ol,p,pre,ul,a,b,abbr,bdi,bdo,br,cite,code," +
   "data,dfn,em,i,kbd,mark,q,rp,rt,ruby,s,samp,small,span,strong,sub,sup," +
   "time,u,var,wbr,area,audio,map,track,video,embed,object,param,source," +
@@ -24,7 +26,7 @@ export const SVG_TAGS = (
   "svg,animate,animateMotion,animateTransform,circle,clipPath,color-profile," +
   "defs,desc,discard,ellipse,feBlend,feColorMatrix,feComponentTransfer," +
   "feComposite,feConvolveMatrix,feDiffuseLighting,feDisplacementMap," +
-  "feDistanceLight,feDropShadow,feFlood,feFuncA,feFuncB,feFuncG,feFuncR," +
+  "feDistantLight,feDropShadow,feFlood,feFuncA,feFuncB,feFuncG,feFuncR," +
   "feGaussianBlur,feImage,feMerge,feMergeNode,feMorphology,feOffset," +
   "fePointLight,feSpecularLighting,feSpotLight,feTile,feTurbulence,filter," +
   "foreignObject,g,hatch,hatchpath,image,line,linearGradient,marker,mask," +
@@ -34,12 +36,12 @@ export const SVG_TAGS = (
 ).split(",");
 
 /**
+ * Note: Sync with https://developer.mozilla.org/en-US/docs/Web/MathML/Element
+ *
  * @see https://developer.mozilla.org/en-US/docs/Web/MathML/Element
  */
 export const MATHML_TAGS = (
-  "math,maction,maligngroup,malignmark,menclose,merror,mfenced,mfrac,mglyph," +
-  "mi,mlabeledtr,mlongdiv,mmutiscripts,mn,mo,mover,mpadded,mphantom,mroot," +
-  "mrow,ms,mscarries,mscarry,msgroup,msline,mspace,msqrt,msrow,mstack,mstyle," +
-  "msub,msup,msubsup,mtable,mtd,mtext,mtr,munder,munderover,semantics," +
-  "annotation,annotation-xml"
+  "math,mi,mn,mo,ms,mspace,mtext,mclose,merror,mfenced,mfrac,mpadded,mphantom," +
+  "mroot,mrow,msqrt,mstyle,mmutiscripts,mover,mprescripts,msub,msubsup,msup," +
+  "munder,munderover,mtable,mtd,mtr,annotation,annotation-xml,semantics"
 ).split(",");

@@ -70,7 +70,7 @@ const tagMap = useBlogCategory("tag");
 
       min-width: 1rem;
       height: 1.2rem;
-      margin-left: 0.2em;
+      margin-inline-start: 0.2em;
       padding: 0 0.1rem;
       border-radius: 0.6rem;
 

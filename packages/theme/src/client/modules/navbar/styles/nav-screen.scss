@@ -6,10 +6,7 @@
 
 #nav-screen {
   position: fixed;
-  top: var(--navbar-height);
-  right: 0;
-  bottom: 0;
-  left: 0;
+  inset: var(--navbar-height) 0 0 0;
   z-index: 150;
 
   display: none;
