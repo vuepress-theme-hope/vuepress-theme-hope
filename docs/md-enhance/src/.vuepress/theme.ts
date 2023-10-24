@@ -51,7 +51,7 @@ export default theme("md-enhance", {
       playground: {
         presets: ["ts", "vue", "unocss"],
       },
-      revealjs: {
+      revealJs: {
         plugins: ["highlight", "math", "search", "notes", "zoom"],
         themes: [
           "auto",

@@ -120,7 +120,7 @@ export const mdEnhancePlugin =
     const enableInclude = getStatus("include");
     const enableTasklist = getStatus("tasklist", true);
     const enableMermaid = getStatus("mermaid", false, "mermaid");
-    const enableRevealJs = getStatus("revealjs", false, "reveal.js");
+    const enableRevealJs = getStatus("revealJs", false, "reveal.js");
     const enableKatex = getStatus("katex", false, "katex");
     const enableMathjax = getStatus("mathjax", true, "mathjax-full");
     const enableVuePlayground = getStatus("vuePlayground", false, "@vue/repl");
@@ -171,8 +171,8 @@ export const mdEnhancePlugin =
             ...(isPlainObject(options.mathjax) ? options.mathjax : {}),
           });
 
-    const revealJsOptions = isPlainObject(options.revealjs)
-      ? options.revealjs
+    const revealJsOptions = isPlainObject(options.revealJs)
+      ? options.revealJs
       : {};
 
     useSassPalettePlugin(app, { id: "hope" });

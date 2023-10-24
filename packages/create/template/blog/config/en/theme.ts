@@ -130,7 +130,7 @@ export default hopeTheme({
       },
 
       // install reveal.js before enabling it
-      // revealjs: {
+      // revealJs: {
       //   plugins: ["highlight", "math", "search", "notes", "zoom"],
       // },
 

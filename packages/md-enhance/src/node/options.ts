@@ -344,13 +344,13 @@ export interface MarkdownEnhanceOptions {
   demo?: Partial<CodeDemoOptions> | boolean;
 
   /**
-   * Whether to enable revealjs support
+   * Whether to enable reveal.js support
    *
    * 是否启用 Reveal.js 支持
    *
    * @default false
    */
-  revealjs?: RevealJsOptions | boolean;
+  revealJs?: RevealJsOptions | boolean;
 
   /**
    * Keyword enhancement
