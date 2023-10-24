@@ -103,7 +103,6 @@
       "css": "npm:@adobe/css-tools@^4.2.0",
       "glob-stream": "^7.0.0",
       "glob-parent": "^6.0.2",
-      "markdownlint": "0.29.0",
       "micromatch": "^4.0.5",
       "yargs-parser": "^21.1.1"
     }
