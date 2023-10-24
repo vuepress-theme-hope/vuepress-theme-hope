@@ -60,7 +60,7 @@
     "artalk": "^2.6.4",
     "giscus": "^1.3.0",
     "twikoo": "^1.6.22",
-    "vue": "^3.3.4",
+    "vue": "^3.3.6",
     "vue-router": "^4.2.5",
     "vuepress-plugin-sass-palette": "workspace:*",
     "vuepress-shared": "workspace:*"

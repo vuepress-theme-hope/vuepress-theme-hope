@@ -52,7 +52,7 @@
     "@vuepress/utils": "2.0.0-beta.67",
     "@vueuse/core": "^10.5.0",
     "balloon-css": "^1.2.0",
-    "vue": "^3.3.4",
+    "vue": "^3.3.6",
     "vue-router": "^4.2.5",
     "vuepress-plugin-sass-palette": "workspace:*",
     "vuepress-shared": "workspace:*"

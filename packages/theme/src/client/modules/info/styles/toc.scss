@@ -49,8 +49,7 @@ $headings: (2, 3, 4, 5, 6);
   .toc-wrapper {
     position: relative;
 
-    overflow-x: hidden;
-    overflow-y: auto;
+    overflow: hidden auto;
 
     max-height: 75vh;
     margin: 0 0.5rem;

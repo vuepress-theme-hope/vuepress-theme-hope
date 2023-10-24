@@ -5,5 +5,11 @@ rules:
     - true
     - ignoreShorthands:
         - /inset/
+        - margin-block
+        # Android wechat browser support
+        - margin-inline
+        # Android wechat browser support
+        - padding-inline
+        - place-content
   media-feature-range-notation: prefix
   no-descending-specificity: null

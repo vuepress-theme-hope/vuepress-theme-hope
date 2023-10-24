@@ -218,8 +218,7 @@
 
   // code block fix
   div[class*="language-"] {
-    overflow-x: auto;
-    overflow-y: hidden;
+    overflow: auto hidden;
 
     pre {
       margin: 0.85rem 0;
