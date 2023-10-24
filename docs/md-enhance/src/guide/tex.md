@@ -7,7 +7,39 @@ Let the Markdown file in your VuePress site support the $\TeX$ syntax.
 
 <!-- more -->
 
-## Config
+## Settings
+
+Install related $\TeX$ package [katex](https://katex.org) or [mathjax-full](https://docs.mathjax.org/en/latest/) in your project:
+
+::: code-tabs#shell
+
+@tab pnpm
+
+```bash
+pnpm add -D katex
+# or
+pnpm add -D mathjax-full
+```
+
+@tab yarn
+
+```bash
+yarn add -D katex
+# or
+yarn add -D mathjax-full
+```
+
+@tab npm
+
+```bash
+npm i -D katex
+# or
+npm i -D mathjax-full
+```
+
+:::
+
+Then enabling via:
 
 ::: code-tabs#language
 

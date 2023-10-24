@@ -12,7 +12,33 @@ Let the Markdown file support [mermaid](https://mermaid.js.org/) in your VuePres
 
 <!-- more -->
 
-## Config
+## Settings
+
+Install [mermaid](https://mermaid.js.org/) in your project:
+
+::: code-tabs#shell
+
+@tab pnpm
+
+```bash
+pnpm add -D mermaid
+```
+
+@tab yarn
+
+```bash
+yarn add -D mermaid
+```
+
+@tab npm
+
+```bash
+npm i -D mermaid
+```
+
+:::
+
+Then enabling via:
 
 ::: code-tabs#language
 

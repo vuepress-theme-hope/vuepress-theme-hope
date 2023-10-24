@@ -8,11 +8,37 @@ tag:
   - Slides
 ---
 
-Add presentation in your VuePress site via [Reveal.js](https://revealjs.com/).
+Add presentation in your VuePress site.
 
 <!-- more -->
 
-## Config
+## Settings
+
+Install [Reveal.js](https://revealjs.com/) in your project:
+
+::: code-tabs#shell
+
+@tab pnpm
+
+```bash
+pnpm add -D reveal.js
+```
+
+@tab yarn
+
+```bash
+yarn add -D reveal.js
+```
+
+@tab npm
+
+```bash
+npm i -D reveal.js
+```
+
+:::
+
+Then enabling via:
 
 ::: code-tabs#language
 

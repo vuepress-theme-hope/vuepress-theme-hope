@@ -12,7 +12,7 @@ Customize content alignment.
 
 <!-- more -->
 
-## Config
+## Settings
 
 ::: code-tabs#language
 

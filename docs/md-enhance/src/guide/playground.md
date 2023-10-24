@@ -7,7 +7,7 @@ The plugin provides you playground support.
 
 <!-- more -->
 
-## Config
+## Settings
 
 ::: code-tabs#config
 

@@ -9,6 +9,32 @@ icon: chart-pie
 
 ## 配置
 
+在你的项目中安装 [mermaid](https://mermaid.js.org/):
+
+::: code-tabs#shell
+
+@tab pnpm
+
+```bash
+pnpm add -D mermaid
+```
+
+@tab yarn
+
+```bash
+yarn add -D mermaid
+```
+
+@tab npm
+
+```bash
+npm i -D mermaid
+```
+
+:::
+
+之后启用它:
+
 ::: code-tabs#language
 
 @tab TS

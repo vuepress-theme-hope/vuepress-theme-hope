@@ -20,7 +20,33 @@ Let the Markdown file support flow chart in your VuePress site
 
 <!-- more -->
 
-## Config
+## Settings
+
+Install [flowchart.ts](http://flowchart.js.org/) in your project:
+
+::: code-tabs#shell
+
+@tab pnpm
+
+```bash
+pnpm add -D flowchart.ts
+```
+
+@tab yarn
+
+```bash
+yarn add -D flowchart.ts
+```
+
+@tab npm
+
+```bash
+npm i -D flowchart.ts
+```
+
+:::
+
+Then enabling via:
 
 ::: code-tabs#language
 

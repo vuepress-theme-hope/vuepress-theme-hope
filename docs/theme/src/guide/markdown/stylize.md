@@ -12,7 +12,7 @@ Create inline snippet by stylize inline tokens including changing tags, adding a
 
 <!-- more -->
 
-## Config
+## Settings
 
 ::: code-tabs#language
 

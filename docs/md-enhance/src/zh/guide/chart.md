@@ -5,11 +5,35 @@ icon: chart-simple
 
 让你 VuePress 站点中的 Markdown 文件支持图表。
 
-此插件使用 [chart.js](https://www.chartjs.org/docs/latest/) 提供相应功能。
-
 <!-- more -->
 
 ## 配置
+
+在你的项目中安装 [chart.js](https://www.chartjs.org/docs/latest/):
+
+::: code-tabs#shell
+
+@tab pnpm
+
+```bash
+pnpm add -D chart.js
+```
+
+@tab yarn
+
+```bash
+yarn add -D chart.js
+```
+
+@tab npm
+
+```bash
+npm i -D chart.js
+```
+
+:::
+
+之后启用它:
 
 ::: code-tabs#language
 

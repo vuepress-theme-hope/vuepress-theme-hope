@@ -13,11 +13,35 @@ icon: route
 
 让你的 VuePress 站点中的 Markdown 文件支持流程图。
 
-本插件利用了 [flowchart.js](http://flowchart.js.org/) 来支持这一功能。
-
 <!-- more -->
 
 ## 配置
+
+在你的项目中安装 [flowchart.ts](http://flowchart.js.org/):
+
+::: code-tabs#shell
+
+@tab pnpm
+
+```bash
+pnpm add -D flowchart.ts
+```
+
+@tab yarn
+
+```bash
+yarn add -D flowchart.ts
+```
+
+@tab npm
+
+```bash
+npm i -D flowchart.ts
+```
+
+:::
+
+之后启用它:
 
 ::: code-tabs#language
 

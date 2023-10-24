@@ -10,11 +10,35 @@ tag:
 
 Let the Markdown file support chart in your VuePress site.
 
-`vuepress-plugin-md-enhance` uses [ECharts](https://echarts.apache.org/en/index.html) to support this feature.
-
 <!-- more -->
 
-## Config
+## Settings
+
+Install [echarts](https://echarts.apache.org/en/index.html) in your project:
+
+::: code-tabs#shell
+
+@tab pnpm
+
+```bash
+pnpm add -D echarts
+```
+
+@tab yarn
+
+```bash
+yarn add -D echarts
+```
+
+@tab npm
+
+```bash
+npm i -D echarts
+```
+
+:::
+
+Then enabling via:
 
 ::: code-tabs#language
 

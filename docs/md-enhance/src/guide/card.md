@@ -7,7 +7,7 @@ You can add cards in Markdown content.
 
 <!-- more -->
 
-## Config
+## Settings
 
 ::: code-tabs#language
 

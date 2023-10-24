@@ -10,11 +10,35 @@ tag:
 
 让你 VuePress 站点中的 Markdown 文件支持图表。
 
-此插件使用 [ECharts](https://echarts.apache.org/zh/index.html) 提供相应功能。
-
 <!-- more -->
 
 ## 配置
+
+在你的项目中安装 [ECharts](https://echarts.apache.org/zh/index.html):
+
+::: code-tabs#shell
+
+@tab pnpm
+
+```bash
+pnpm add -D echarts
+```
+
+@tab yarn
+
+```bash
+yarn add -D echarts
+```
+
+@tab npm
+
+```bash
+npm i -D echarts
+```
+
+:::
+
+之后启用它:
 
 ::: code-tabs#language
 
