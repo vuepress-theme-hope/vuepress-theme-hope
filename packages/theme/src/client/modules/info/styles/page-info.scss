@@ -4,12 +4,11 @@
   display: flex;
   flex-wrap: wrap;
   align-items: center;
+  place-content: stretch flex-start;
 
   color: var(--dark-grey);
 
   font-size: 14px;
-
-  place-content: stretch flex-start;
 
   @media print {
     display: flex !important;

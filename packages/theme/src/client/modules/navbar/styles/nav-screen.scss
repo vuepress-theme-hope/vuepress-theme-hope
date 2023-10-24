@@ -6,6 +6,7 @@
 
 #nav-screen {
   position: fixed;
+  inset: var(--navbar-height) 0 0 0;
   z-index: 150;
 
   display: none;
@@ -17,8 +18,6 @@
   background: var(--bg-color);
 
   transition: background 0.5s;
-
-  inset: var(--navbar-height) 0 0 0;
 
   @media (max-width: hope-config.$tablet) {
     display: block;

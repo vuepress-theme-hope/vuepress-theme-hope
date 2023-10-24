@@ -84,6 +84,7 @@
     content: " ";
 
     position: absolute;
+    inset: 0;
     z-index: 1;
 
     display: block;
@@ -91,8 +92,6 @@
     background: var(--light-grey);
 
     opacity: 0.2;
-
-    inset: 0;
   }
 
   &.light {

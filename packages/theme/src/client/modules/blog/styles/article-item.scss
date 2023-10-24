@@ -94,6 +94,7 @@
     content: "";
 
     position: absolute;
+    inset: auto 0 0;
 
     height: 2px;
 
@@ -103,8 +104,6 @@
 
     transition: transform 0.3s ease-in-out;
     transform: scaleX(0);
-
-    inset: auto 0 0;
   }
 
   &:hover {

@@ -38,13 +38,12 @@
 
 .vp-highlight-bg {
   position: absolute;
+  inset: 0;
   z-index: 0;
 
   background-attachment: fixed;
   background-position: 50%;
   background-size: cover;
-
-  inset: 0;
 
   &.light {
     display: inline-block;

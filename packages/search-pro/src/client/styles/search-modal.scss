@@ -12,6 +12,7 @@
 
 .search-pro-modal-wrapper {
   position: fixed;
+  inset: 0;
   z-index: 997;
 
   display: flex;
@@ -21,18 +22,16 @@
   overflow: auto;
 
   cursor: default;
-
-  inset: 0;
 }
 
 .search-pro-mask {
   position: fixed;
+  inset: 0;
   z-index: 998;
 
   animation: 0.25s search-pro-fade-in;
 
   backdrop-filter: blur(10px);
-  inset: 0;
 }
 
 .search-pro-modal {
@@ -146,6 +145,7 @@
 
 .search-pro-suggestions {
   position: absolute;
+  inset: calc(100% + 4px) 0 auto;
   z-index: 20;
 
   overflow: visible;
@@ -161,8 +161,6 @@
   list-style: none;
 
   line-height: 1.5;
-
-  inset: calc(100% + 4px) 0 auto;
 }
 
 .search-pro-suggestion {

@@ -34,22 +34,20 @@
 
 .vp-hero-mask {
   position: absolute;
+  inset: 0;
   z-index: 0;
 
   background-position: 50%;
   background-size: cover;
 
-  inset: 0;
-
   &::after {
     content: " ";
 
     position: absolute;
+    inset: 0;
     z-index: 1;
 
     display: block;
-
-    inset: 0;
   }
 
   &.light {

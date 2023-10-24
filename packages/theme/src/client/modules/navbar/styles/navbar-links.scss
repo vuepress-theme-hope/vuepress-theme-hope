@@ -25,6 +25,7 @@
         content: " ";
 
         position: absolute;
+        inset: auto 50% 0;
 
         height: 2px;
         border-radius: 1px;
@@ -34,8 +35,6 @@
         visibility: hidden;
 
         transition: inset 0.2s ease-in-out;
-
-        inset: auto 50% 0;
       }
 
       &.active {
@@ -46,8 +45,8 @@
       &.active {
         // stylelint-disable max-nesting-depth
         &::after {
-          visibility: visible;
           inset: auto 0 0;
+          visibility: visible;
         }
         // stylelint-enable max-nesting-depth
       }

@@ -8,10 +8,9 @@
   display: flex;
   flex-wrap: wrap;
   align-items: stretch;
+  place-content: stretch flex-start;
 
   margin-bottom: 12px;
-
-  place-content: stretch flex-start;
 }
 
 .vp-project-card {

@@ -25,6 +25,7 @@
 #popup-container {
   .popup-wrapper {
     position: fixed;
+    inset: 0;
     z-index: 200;
 
     display: flex;
@@ -32,8 +33,6 @@
     justify-content: center;
 
     background: rgb(0 0 0 / 20%);
-
-    inset: 0;
 
     &.appear {
       .popup-container {

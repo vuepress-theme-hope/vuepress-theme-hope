@@ -6,7 +6,6 @@ settings:
 
 overrides:
   chokidar: ^3.5.3
-  css: npm:@adobe/css-tools@^4.2.0
   glob-stream: ^7.0.0
   glob-parent: ^6.0.2
   micromatch: ^4.0.5
@@ -146,8 +145,8 @@ importers:
         specifier: 15.11.0
         version: 15.11.0(typescript@5.2.2)
       stylelint-config-hope:
-        specifier: 4.0.0
-        version: 4.0.0(stylelint@15.11.0)
+        specifier: 4.1.0
+        version: 4.1.0(stylelint@15.11.0)
       through2:
         specifier: 4.0.2
         version: 4.0.2
@@ -14257,8 +14256,8 @@ packages:
     resolution: {integrity: sha512-Dj1Okke1C3uKKwQcetra4jSuk0DqbzbYtXipzFlFMZtowbF1x7BKJwB9AayVMyFARvU8EDrZdcax4At/452cAg==}
     dev: true
 
-  /stylelint-config-hope@4.0.0(stylelint@15.11.0):
-    resolution: {integrity: sha512-KtJpLFGo51xueydakCHL4YkVafY4NY+Y1/KhxfKV9LlO5ne+3GE6CIhsktgBGvMVO9NHLacsX4q84zFOH5xzig==}
+  /stylelint-config-hope@4.1.0(stylelint@15.11.0):
+    resolution: {integrity: sha512-Sm/5T9PBqBj9eo2tUkR56DVFWPkqpx7JQpjV1BiDyl9VP+DouYYi1kfAeX0uDKHteZuezkoDc7Crs+P7THkbWQ==}
     peerDependencies:
       stylelint: ^15.10.0
     dependencies:

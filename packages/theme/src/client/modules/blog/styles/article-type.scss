@@ -33,6 +33,7 @@
     content: " ";
 
     position: absolute;
+    inset: auto 50% -6px;
 
     height: 2px;
     border-radius: 1px;
@@ -42,8 +43,6 @@
     visibility: hidden;
 
     transition: inset 0.2s ease-in-out;
-
-    inset: auto 50% -6px;
   }
 
   a {
@@ -64,8 +63,8 @@
   &:hover,
   &.active {
     &::after {
-      visibility: visible;
       inset: auto calc(50% - 8px) -6px;
+      visibility: visible;
     }
   }
 }

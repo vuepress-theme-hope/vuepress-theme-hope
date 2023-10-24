@@ -105,6 +105,7 @@ $location-icon: '<svg viewBox="0 0 12 12"><path d="M6.5 3A1.5 1.5 0 1 0 8 4.5 1.
 
 .bing-info {
   position: absolute;
+  inset: auto 0 calc(100% + 4px);
   z-index: 200;
 
   padding: 0.5rem;
@@ -119,8 +120,6 @@ $location-icon: '<svg viewBox="0 0 12 12"><path d="M6.5 3A1.5 1.5 0 1 0 8 4.5 1.
   cursor: default;
 
   transition: opacity var(--vp-tt);
-
-  inset: auto 0 calc(100% + 4px);
 
   hr {
     border-color: #eee;
