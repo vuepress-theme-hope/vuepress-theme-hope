@@ -19,8 +19,7 @@
   }
 
   @media (max-width: hope-config.$mobile) {
-    margin-right: -1.5rem;
-    margin-left: -1.5rem;
+    margin-inline: -1.5rem;
     border-radius: 0;
   }
 }
@@ -95,6 +94,16 @@
   &:first-child {
     &::before {
       display: none;
+    }
+
+    #{hope-config.$rtl-selector} & {
+      &::before {
+        display: block;
+      }
+
+      &::after {
+        display: none;
+      }
     }
   }
 }

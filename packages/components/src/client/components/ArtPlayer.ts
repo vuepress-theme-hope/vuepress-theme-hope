@@ -48,8 +48,18 @@ const BOOLEAN_FALSE_ATTRS = [
   "subtitle-offset",
 ] as const;
 
-// NOTE: This should be updated with https://github.com/zhw2590582/ArtPlayer/blob/master/packages/artplayer/src/i18n/index.js
-const SUPPORTED_LANG_NAME = ["en", "pl", "cs", "es", "fa", "fr", "id", "ru"];
+// Note: This should be updated with https://github.com/zhw2590582/ArtPlayer/blob/master/packages/artplayer/src/i18n/index.js
+const SUPPORTED_LANG_NAME = [
+  "en",
+  "pl",
+  "cs",
+  "es",
+  "fa",
+  "fr",
+  "id",
+  "ru",
+  "tr",
+];
 const SUPPORTED_LANG_CODE = ["zh-cn", "zh-tw"];
 
 type KebabCaseToCamelCase<

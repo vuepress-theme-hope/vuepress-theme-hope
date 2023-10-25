@@ -4,6 +4,31 @@ All notable changes to this project will be documented in this file. See [Conven
 
 <!-- #region recent-beta -->
 
+## [2.0.0-beta.239](https://github.com/vuepress-theme-hope/vuepress-theme-hope/compare/v2.0.0-beta.238...v2.0.0-beta.239) (2023-10-24)
+
+### ⚠ BREAKING CHANGES
+
+- drop Node 16, minimal requirement is 18.16.0
+- **components:** addThis is removed
+
+### Features
+
+- **comment2:** update Giscus langcode ([06702f9](https://github.com/vuepress-theme-hope/vuepress-theme-hope/commit/06702f92b5eeffa8255a2e2ed5ae025b6674de45))
+- **components:** remove addThis ([dfc5260](https://github.com/vuepress-theme-hope/vuepress-theme-hope/commit/dfc5260382037a19af457ee6683960527c6aa35b))
+- **components:** update artplayer locale support ([6aa0c96](https://github.com/vuepress-theme-hope/vuepress-theme-hope/commit/6aa0c9698551fdfa5697e479d7020bf2694070c2))
+- drop node16 ([a179757](https://github.com/vuepress-theme-hope/vuepress-theme-hope/commit/a179757bee6bd729f873047d0374cec00469090b))
+- **md-enhance:** auto detect card format ([de04a60](https://github.com/vuepress-theme-hope/vuepress-theme-hope/commit/de04a600aa463bd0f15fbb4715c4df89c4230b75))
+- **md-enhance:** mark deps optional ([fd302ef](https://github.com/vuepress-theme-hope/vuepress-theme-hope/commit/fd302ef9336ffd87a579e2907243716994857510))
+- **shared:** update tags ([5fca95c](https://github.com/vuepress-theme-hope/vuepress-theme-hope/commit/5fca95c1c169fcd1af3935f75c4edd55c800a800))
+- **shared:** update webpack utils ([49a2b27](https://github.com/vuepress-theme-hope/vuepress-theme-hope/commit/49a2b27da7bf57265abbd42e43cf6539d8c1749e))
+- use modern css for better rtl support ([5e77a1e](https://github.com/vuepress-theme-hope/vuepress-theme-hope/commit/5e77a1e50ac6fd7873eac4e1b56f32d98931cb69))
+
+### Bug Fixes
+
+- **components:** align with Bilibili params ([f832c2b](https://github.com/vuepress-theme-hope/vuepress-theme-hope/commit/f832c2b9e4ef6ba3e0abaa90288d7486a5897eee))
+- **deps:** update dependency create-codepen to v1 ([#3543](https://github.com/vuepress-theme-hope/vuepress-theme-hope/issues/3543)) ([e742406](https://github.com/vuepress-theme-hope/vuepress-theme-hope/commit/e7424066040a1fab080d5e49d951e686cd931974))
+- **deps:** update dependency flowchart.ts to v1.0.1 ([#3541](https://github.com/vuepress-theme-hope/vuepress-theme-hope/issues/3541)) ([0430752](https://github.com/vuepress-theme-hope/vuepress-theme-hope/commit/0430752bf154ebf54b343a0c164d5a9227eca76a))
+
 ## [2.0.0-beta.238](https://github.com/vuepress-theme-hope/vuepress-theme-hope/compare/v2.0.0-beta.237...v2.0.0-beta.238) (2023-10-10)
 
 ### ⚠ BREAKING CHANGES

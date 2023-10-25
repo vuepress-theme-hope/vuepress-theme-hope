@@ -66,10 +66,7 @@
 
       position: absolute;
       top: 14px;
-
-      // NOTE: Compatible with Android Wechat
-      // inset-inline-start: 0;
-      left: 0;
+      inset-inline-start: 0;
       z-index: -1;
 
       width: 4px;
@@ -79,11 +76,6 @@
       background: var(--dot-bar-color);
 
       transition: background var(--color-transition);
-
-      #{hope-config.$rtl-selector} & {
-        right: 0;
-        left: unset;
-      }
     }
   }
 
@@ -101,20 +93,12 @@
       @include dot;
 
       top: 50%;
-
-      // NOTE: Compatible with Android Wechat
-      // inset-inline-start: -20px;
-      left: -20px;
+      inset-inline-start: -20px;
 
       width: 8px;
       height: 8px;
       margin-top: -4px;
       margin-inline-start: -4px;
-
-      #{hope-config.$rtl-selector} & {
-        right: -20px;
-        left: unset;
-      }
     }
   }
 
@@ -136,19 +120,11 @@
     &::before {
       @include dot;
       top: 24px;
-
-      // NOTE: Compatible with Android Wechat
-      // inset-inline-start: -19px;
-      left: -19px;
+      inset-inline-start: -19px;
 
       width: 6px;
       height: 6px;
       margin-inline-start: -4px;
-
-      #{hope-config.$rtl-selector} & {
-        right: -19px;
-        left: unset;
-      }
     }
   }
 

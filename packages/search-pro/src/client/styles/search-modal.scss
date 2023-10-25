@@ -12,8 +12,7 @@
 
 .search-pro-modal-wrapper {
   position: fixed;
-  top: 0;
-  left: 0;
+  inset: 0;
   z-index: 997;
 
   display: flex;
@@ -22,20 +21,13 @@
 
   overflow: auto;
 
-  width: 100vw;
-  height: 100vh;
-
   cursor: default;
 }
 
 .search-pro-mask {
   position: fixed;
-  top: 0;
-  left: 0;
+  inset: 0;
   z-index: 998;
-
-  width: 100vw;
-  height: 100vh;
 
   animation: 0.25s search-pro-fade-in;
 
@@ -83,16 +75,8 @@
   label {
     position: absolute;
     top: calc(50% - 0.75rem);
-
-    // NOTE: Compatible with Android Wechat
-    // inset-inline-start: 0.5rem;
-    left: 0.5rem;
+    inset-inline-start: 0.5rem;
     color: var(--vp-tc);
-
-    #{hope-config.$rtl-selector} & {
-      right: 0.5rem;
-      left: unset;
-    }
 
     .search-icon {
       width: 1.5rem;
@@ -105,19 +89,11 @@
   @include reset.button;
   position: absolute;
   top: calc(50% - 10px);
-
-  // NOTE: Compatible with Android Wechat
-  // inset-inline-end: 0.75rem;
-  right: 0.75rem;
+  inset-inline-end: 0.75rem;
 
   padding: 0;
 
   color: var(--vp-tc);
-
-  #{hope-config.$rtl-selector} & {
-    right: 0.75rem;
-    left: unset;
-  }
 
   &:hover {
     border-radius: 50%;
@@ -129,10 +105,7 @@
   @include reset.button;
   display: none;
 
-  // NOTE: Compatible with Android Wechat
-  // margin-inline: 0.5rem -0.5rem;
-  margin-inline-start: 0.5rem;
-  margin-inline-end: -0.5rem;
+  margin-inline: 0.5rem -0.5rem;
   padding: 0.5rem;
 
   color: var(--grey3);
@@ -149,13 +122,8 @@
 
   width: 0;
   margin: 0;
-
-  // NOTE: Compatible with Android Wechat
-  // padding-inline: 2.5rem 1rem;
-  padding-top: 0.25rem;
-  padding-bottom: 0.25rem;
-  padding-inline-start: 2.5rem;
-  padding-inline-end: 2rem;
+  padding-block: 0.25rem;
+  padding-inline: 2.5rem 2rem;
   border: 0;
   border: 2px solid var(--vp-tc);
   border-radius: 8px;
@@ -177,9 +145,7 @@
 
 .search-pro-suggestions {
   position: absolute;
-  top: calc(100% + 4px);
-  right: 0;
-  left: 0;
+  inset: calc(100% + 4px) 0 auto;
   z-index: 20;
 
   overflow: visible;

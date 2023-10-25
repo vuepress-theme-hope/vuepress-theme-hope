@@ -1,6 +1,6 @@
 {
   "name": "vuepress-plugin-components",
-  "version": "2.0.0-beta.238",
+  "version": "2.0.0-beta.239",
   "description": "Components collection plugin for VuePress2",
   "keywords": [
     "vuepress",
@@ -59,8 +59,8 @@
     "mpegts.js": "^1.7.3",
     "plyr": "^3.7.8",
     "qrcode": "^1.5.3",
-    "vidstack": "^1.2.0",
-    "vue": "^3.3.4",
+    "vidstack": "^1.4.6",
+    "vue": "^3.3.6",
     "vue-router": "^4.2.5",
     "vuepress-plugin-reading-time2": "workspace:*",
     "vuepress-plugin-sass-palette": "workspace:*",

@@ -47,20 +47,12 @@
   .sticky-icon {
     position: absolute;
     top: 0;
-
-    // NOTE: Compatible with Android Wechat
-    // inset-inline-end: 0;
-    right: 0;
+    inset-inline-end: 0;
 
     width: 1.5rem;
     height: 1.5rem;
 
     color: var(--theme-color);
-
-    #{hope-config.$rtl-selector} & {
-      right: unset;
-      left: 0;
-    }
   }
 
   .page-info {
@@ -82,8 +74,7 @@
 }
 
 .vp-article-hr {
-  margin-block-start: 0.375em;
-  margin-block-end: 0.375em;
+  margin-block: 0.375em 0.375em;
 }
 
 .vp-article-title {
@@ -103,10 +94,8 @@
     content: "";
 
     position: absolute;
-    bottom: 0;
-    left: 0;
+    inset: auto 0 0;
 
-    width: 100%;
     height: 2px;
 
     background: var(--theme-color);
@@ -218,8 +207,7 @@
 
   // code block fix
   div[class*="language-"] {
-    overflow-x: auto;
-    overflow-y: hidden;
+    overflow: auto hidden;
 
     pre {
       margin: 0.85rem 0;

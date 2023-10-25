@@ -43,19 +43,11 @@
       position: absolute;
       top: 0;
       bottom: 0;
-
-      // NOTE: Compatible with Android Wechat
-      // inset-inline-start: 0;
-      left: 0;
+      inset-inline-start: 0;
 
       width: 1px;
 
       background: var(--border-color);
-
-      #{hope-config.$rtl-selector} & {
-        right: 0;
-        left: unset;
-      }
     }
 
     &:first-child::before {

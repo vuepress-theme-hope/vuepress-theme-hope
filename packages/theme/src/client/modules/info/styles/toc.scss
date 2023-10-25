@@ -17,7 +17,7 @@ $headings: (2, 3, 4, 5, 6);
 
 #toc {
   position: absolute;
-  left: calc(100% + 1rem);
+  inset-inline-start: calc(100% + 1rem);
 
   display: none;
 
@@ -34,11 +34,6 @@ $headings: (2, 3, 4, 5, 6);
     display: none !important;
   }
 
-  #{hope-config.$rtl-selector} & {
-    right: calc(100% + 1rem);
-    left: unset;
-  }
-
   .toc-header {
     margin-bottom: 0.75rem;
     margin-inline-start: 0.5rem;
@@ -49,8 +44,7 @@ $headings: (2, 3, 4, 5, 6);
   .toc-wrapper {
     position: relative;
 
-    overflow-x: hidden;
-    overflow-y: auto;
+    overflow: hidden auto;
 
     max-height: 75vh;
     margin: 0 0.5rem;
@@ -83,20 +77,12 @@ $headings: (2, 3, 4, 5, 6);
       position: absolute;
       top: 0;
       bottom: 0;
-
-      // NOTE: Compatible with Android Wechat
-      // inset-inline-start: 0;
-      left: 0;
+      inset-inline-start: 0;
       z-index: -1;
 
       width: 2px;
 
       background: var(--border-color);
-
-      #{hope-config.$rtl-selector} & {
-        right: 0;
-        left: unset;
-      }
     }
   }
 
@@ -115,10 +101,7 @@ $headings: (2, 3, 4, 5, 6);
 
     position: absolute;
     top: 0;
-
-    // NOTE: Compatible with Android Wechat
-    // inset-inline-start: -8px;
-    left: 0;
+    inset-inline-start: -8px;
     z-index: 2;
 
     width: 2px;
@@ -127,11 +110,6 @@ $headings: (2, 3, 4, 5, 6);
     background: var(--theme-color);
 
     transition: top var(--vp-tt);
-
-    #{hope-config.$rtl-selector} & {
-      right: 0;
-      left: unset;
-    }
   }
 
   .toc-link {

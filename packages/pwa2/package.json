@@ -1,6 +1,6 @@
 {
   "name": "vuepress-plugin-pwa2",
-  "version": "2.0.0-beta.238",
+  "version": "2.0.0-beta.239",
   "description": "Powerful PWA plugin for vuepress",
   "keywords": [
     "vuepress",
@@ -56,7 +56,7 @@
     "@vueuse/core": "^10.5.0",
     "mitt": "^3.0.1",
     "register-service-worker": "^1.7.2",
-    "vue": "^3.3.4",
+    "vue": "^3.3.6",
     "vue-router": "^4.2.5",
     "vuepress-plugin-sass-palette": "workspace:*",
     "vuepress-shared": "workspace:*",

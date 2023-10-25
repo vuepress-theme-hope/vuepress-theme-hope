@@ -10,13 +10,8 @@
 
 .lang-modal-mask {
   position: fixed;
-  top: 0;
-  left: 0;
+  inset: 0;
   z-index: 1499;
-
-  width: 100vw;
-  height: 100vh;
-
   backdrop-filter: blur(10px);
 
   @media print {
@@ -26,7 +21,6 @@
 
 .lang-modal-wrapper {
   position: fixed;
-  top: 80px;
   top: 50vh;
   right: 50vw;
   left: unset;
