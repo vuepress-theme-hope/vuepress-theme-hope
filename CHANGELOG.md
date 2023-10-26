@@ -4,6 +4,25 @@ All notable changes to this project will be documented in this file. See [Conven
 
 <!-- #region recent-beta -->
 
+## [2.0.0-beta.241](https://github.com/vuepress-theme-hope/vuepress-theme-hope/compare/v2.0.0-beta.240...v2.0.0-beta.241) (2023-10-26)
+
+### Features
+
+- **comment2:** make comment pkg optional ([f590ea0](https://github.com/vuepress-theme-hope/vuepress-theme-hope/commit/f590ea05db3e14a3c0f9f4e2e7ade37e65795ae3))
+- **components:** improve VidStack ([5a136a0](https://github.com/vuepress-theme-hope/vuepress-theme-hope/commit/5a136a07c31cc83097069010f9974c0de9c1b6ff))
+- **components:** make some deps optional ([aa14ccf](https://github.com/vuepress-theme-hope/vuepress-theme-hope/commit/aa14ccfd466507851c0514ad244eff5f0b8e5140))
+- **components:** update video player ([d09ab0e](https://github.com/vuepress-theme-hope/vuepress-theme-hope/commit/d09ab0e8a7804f4602d628c3ad9bb3a5ebb7022b))
+- **md-enhance:** support xychart ([4a8a94c](https://github.com/vuepress-theme-hope/vuepress-theme-hope/commit/4a8a94c3fb17978260b801262719082b615c9602))
+
+### Bug Fixes
+
+- **md-enhance:** ensure deps are optional ([9d33f6b](https://github.com/vuepress-theme-hope/vuepress-theme-hope/commit/9d33f6b5631ff83fd0d32e39c5581c592ea39142))
+- **md-enhance:** fix mermaid theme ([4436295](https://github.com/vuepress-theme-hope/vuepress-theme-hope/commit/443629593221cff37ca966246a7629e75c9ccf5a))
+
+### Performance Improvements
+
+- update watch and computed ([a573a8e](https://github.com/vuepress-theme-hope/vuepress-theme-hope/commit/a573a8ecb39dcbc982a43f00816f37cbed4953d1))
+
 ## [2.0.0-beta.240](https://github.com/vuepress-theme-hope/vuepress-theme-hope/compare/v2.0.0-beta.239...v2.0.0-beta.240) (2023-10-26)
 
 ### Features
