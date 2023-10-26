@@ -1,5 +1,4 @@
 import type { LocaleConfig } from "@vuepress/core";
-import type { MermaidConfig } from "mermaid";
 
 import type {
   AttrsOptions,
@@ -332,7 +331,7 @@ export interface MarkdownEnhanceOptions {
    *
    * @default false
    */
-  mermaid?: MermaidConfig | boolean;
+  mermaid?: boolean;
 
   /**
    * Whether to enable code-demo support

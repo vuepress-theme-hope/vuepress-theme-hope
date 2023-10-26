@@ -11,8 +11,8 @@ import {
 } from "vue";
 import { LoadingIcon, atou, isFunction } from "vuepress-shared/client";
 
-import type { MermaidThemeVariables } from "../helpers/index.js";
 import { useMermaidOptions } from "../helpers/index.js";
+import type { MermaidThemeVariables } from "../typings/index.js";
 
 import "../styles/mermaid.scss";
 
@@ -26,7 +26,7 @@ const getThemeVariables = (isDarkmode: boolean): MermaidThemeVariables => ({
 
   primaryColor: isDarkmode ? "#389d70" : "#4abf8a",
   primaryBorderColor: isDarkmode ? "#389d70" : "#4abf8a",
-  primaryTextColor: "#fff",
+  primaryTextColor: isDarkmode ? "#fff" : "#000",
 
   secondaryColor: "#ffb500",
   secondaryBorderColor: isDarkmode ? "#fff" : "#000",
