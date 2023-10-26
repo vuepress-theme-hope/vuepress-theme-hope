@@ -8,7 +8,7 @@ Embed Replit demo in Markdown files.
 
 ## Demo
 
-An embedded repl:
+A replit:
 
 <Replit user="FuckDoctors" repl="Java-Test" />
 
@@ -16,7 +16,7 @@ An embedded repl:
 <Replit user="FuckDoctors" repl="Java-Test" />
 ```
 
-An embedded repl with opening file:
+A replit with opening file:
 
 <Replit user="FuckDoctors" repl="Java-Test" file="Main.java" />
 
@@ -24,15 +24,15 @@ An embedded repl with opening file:
 <Replit user="FuckDoctors" repl="Java-Test" file="Main.java" />
 ```
 
-A repl link:
+An autoload replit:
 
-<Replit user="FuckDoctors" repl="Java-Test" plain />
+<Replit user="FuckDoctors" repl="Java-Test" auto-load />
 
 ```md
-<Replit user="FuckDoctors" repl="Java-Test" plain />
+<Replit user="FuckDoctors" repl="Java-Test" auto-load />
 ```
 
-Another repl link:
+A repl with link:
 
 <Replit link="https://replit.com/@FuckDoctors/Java-Test" />
 
@@ -91,12 +91,26 @@ Replit component height.
 
 Replit component ratio, ONLY valid when `height` not set.
 
+### autoLoad
+
+- Type: `boolean`
+- Default: `false`
+
+Wether auto-load ReplIt.
+
+### text
+
+- Type: `string`
+- Default: `"Load ReplIt"`
+
+Load button text.
+
 ### theme
 
 - Type: `string`
 - Default: `"light"`
 
-Replit theme. (Only available without `plain`)
+Replit theme.
 
 ### file
 
@@ -104,17 +118,3 @@ Replit theme. (Only available without `plain`)
 - Required: No
 
 The default file to have open in the editor.
-
-### plain
-
-- Type: `boolean`
-- Default: `false`
-
-Display Replit as a button instead of an iframe.
-
-### text
-
-- Type: `string`
-- Default: `"Open on Replit"`
-
-Text to display on the button. (Only available with `plain`)

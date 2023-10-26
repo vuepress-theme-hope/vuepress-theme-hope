@@ -383,36 +383,36 @@ PDF 浏览器组件。
 
 ## Replit
 
-一个嵌入的 repl:
+一个 replit:
 
 <Replit user="FuckDoctors" repl="Java-Test" />
 
-一个嵌入的 repl，并且显示指定的文件:
+一个 replit，并且显示指定的文件:
 
 <Replit user="FuckDoctors" repl="Java-Test" file="Main.java" />
 
-一个 repl 链接:
+一个自动加载的 replit:
 
-<Replit user="FuckDoctors" repl="Java-Test" plain />
+<Replit user="FuckDoctors" repl="Java-Test" auto-load />
 
 ::: details 代码
 
-一个嵌入的 repl:
+一个 replit:
 
 ```md
 <Replit user="FuckDoctors" repl="Java-Test" />
 ```
 
-一个嵌入的 repl，并且显示指定的文件:
+一个 replit，并且显示指定的文件:
 
 ```md
 <Replit user="FuckDoctors" repl="Java-Test" file="Main.java" />
 ```
 
-一个 repl 链接:
+一个自动加载的 replit:
 
 ```md
-<Replit user="FuckDoctors" repl="Java-Test" plain />
+<Replit user="FuckDoctors" repl="Java-Test" auto-load />
 ```
 
 :::

@@ -60,7 +60,7 @@ title: VideoPlayer
 />
 ```
 
-## Props
+## 属性
 
 ### src
 

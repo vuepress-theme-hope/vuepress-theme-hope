@@ -389,36 +389,36 @@ See <ProjectLink name="components" path="/guide/pdf.html">PDF</ProjectLink> page
 
 ## Replit
 
-An embedded repl:
+A replit:
 
 <Replit user="FuckDoctors" repl="Java-Test" />
 
-An embedded repl with opening file:
+A replit with opening file:
 
 <Replit user="FuckDoctors" repl="Java-Test" file="Main.java" />
 
-A repl link:
+An autoload replit:
 
-<Replit user="FuckDoctors" repl="Java-Test" plain />
+<Replit user="FuckDoctors" repl="Java-Test" auto-load />
 
 ::: details Code
 
-An embedded repl:
+An replit:
 
 ```md
 <Replit user="FuckDoctors" repl="Java-Test" />
 ```
 
-An embedded repl with opening file:
+An replit with opening file:
 
 ```md
 <Replit user="FuckDoctors" repl="Java-Test" file="Main.java" />
 ```
 
-A repl link:
+An autoload replit:
 
 ```md
-<Replit user="FuckDoctors" repl="Java-Test" plain />
+<Replit user="FuckDoctors" repl="Java-Test" auto-load />
 ```
 
 :::
@@ -718,3 +718,7 @@ A YouTube play list:
 :::
 
 See <ProjectLink name="components" path="/guide/youtube.html">YouTube</ProjectLink> page for available props.
+
+```
+
+```

@@ -32,7 +32,7 @@ title: XiGua
 />
 ```
 
-## Props
+## 属性
 
 ### id
 

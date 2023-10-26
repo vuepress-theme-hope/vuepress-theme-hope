@@ -32,7 +32,7 @@ title: AudioPlayer
 />
 ```
 
-## Props
+## 属性
 
 ### src
 
