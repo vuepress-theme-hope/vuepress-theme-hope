@@ -4,6 +4,20 @@ All notable changes to this project will be documented in this file. See [Conven
 
 <!-- #region recent-beta -->
 
+## [2.0.0-beta.240](https://github.com/vuepress-theme-hope/vuepress-theme-hope/compare/v2.0.0-beta.239...v2.0.0-beta.240) (2023-10-26)
+
+### Features
+
+- **components:** improve ReplIt loading, close [#3406](https://github.com/vuepress-theme-hope/vuepress-theme-hope/issues/3406) ([34452a4](https://github.com/vuepress-theme-hope/vuepress-theme-hope/commit/34452a402d9cf780d7c911fbaec100ef01cd3910))
+
+### Bug Fixes
+
+- **components:** ensure radio ([f1564bf](https://github.com/vuepress-theme-hope/vuepress-theme-hope/commit/f1564bf5e2cbe227e1353d4be89537740b2ace1b))
+- **create:** fix template ([84c004d](https://github.com/vuepress-theme-hope/vuepress-theme-hope/commit/84c004ddb3963ea1d17e7b14d54ece9630ec02a8))
+- fix pm issue, close [#3534](https://github.com/vuepress-theme-hope/vuepress-theme-hope/issues/3534) ([d875a14](https://github.com/vuepress-theme-hope/vuepress-theme-hope/commit/d875a1440f0f99fa0f48b572277c838d44ba5f15))
+- **md-enhance:** correct revealJs config name, close [#3575](https://github.com/vuepress-theme-hope/vuepress-theme-hope/issues/3575) ([76118c3](https://github.com/vuepress-theme-hope/vuepress-theme-hope/commit/76118c3b404b02c36af0e6d1a9ae50e1919f8aa9))
+- **md-enhance:** fix feature detecting ([a179011](https://github.com/vuepress-theme-hope/vuepress-theme-hope/commit/a179011c2edb3e0e331c61cd40fb500f54987d3c))
+
 ## [2.0.0-beta.239](https://github.com/vuepress-theme-hope/vuepress-theme-hope/compare/v2.0.0-beta.238...v2.0.0-beta.239) (2023-10-24)
 
 ### ⚠ BREAKING CHANGES
