@@ -65,6 +65,7 @@ const DIAGRAM_MAP: Record<string, string> = {
   sequence: "sequenceDiagram",
   state: "stateDiagram-v2",
   timeline: "timeline",
+  xy: "xychart-beta",
 };
 
 export const mermaid: PluginSimple = (md) => {
