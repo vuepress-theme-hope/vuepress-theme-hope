@@ -7,6 +7,30 @@ icon: t
 
 <!-- more -->
 
+## 安装
+
+::: code-tabs#shell
+
+@tab pnpm
+
+```bash
+pnpm add -D twikoo
+```
+
+@tab yarn
+
+```bash
+yarn add -D twikoo
+```
+
+@tab npm
+
+```bash
+npm i -D twikoo
+```
+
+:::
+
 ## 快速上手
 
 部署共有四种方式。

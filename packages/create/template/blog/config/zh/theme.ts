@@ -84,11 +84,13 @@ export default hopeTheme({
   plugins: {
     blog: true,
 
-    comment: {
-      // You should generate and use your own comment service
-      provider: "Waline",
-      serverURL: "https://waline-comment.vuejs.press",
-    },
+    // install @waline/client before enabling it
+    // WARNING: This is a test server for demo only.
+    // You should create and use your own comment service in production.
+    // comment: {
+    //   provider: "Waline",
+    //   serverURL: "https://waline-comment.vuejs.press",
+    // },
 
     // all features are enabled for demo, only preserve features you need here
     mdEnhance: {

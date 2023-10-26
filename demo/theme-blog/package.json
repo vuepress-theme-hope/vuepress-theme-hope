@@ -20,6 +20,7 @@
     "@vuepress/client": "2.0.0-beta.67",
     "@vuepress/plugin-docsearch": "2.0.0-beta.67",
     "@vuepress/utils": "2.0.0-beta.67",
+    "@waline/client": "2.15.8",
     "chart.js": "4.4.0",
     "echarts": "5.4.3",
     "katex": "0.16.9",
