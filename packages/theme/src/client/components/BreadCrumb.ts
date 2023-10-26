@@ -88,9 +88,7 @@ export default defineComponent({
     };
 
     onMounted(() => {
-      getBreadCrumbConfig();
-
-      watch(() => page.value.path, getBreadCrumbConfig);
+      watch(() => page.value.path, getBreadCrumbConfig, { immediate: true });
     });
 
     return (): VNode =>

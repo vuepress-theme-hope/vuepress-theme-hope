@@ -84,12 +84,7 @@ export default defineComponent({
     };
 
     onMounted(() => {
-      void initLightGallery();
-
-      watch(
-        () => page.value.path,
-        () => initLightGallery(),
-      );
+      watch(() => page.value.path, initLightGallery, { immediate: true });
     });
 
     onUnmounted(() => instance?.destroy());

@@ -86,12 +86,12 @@ export default defineComponent({
     onMounted(() => {
       const isLocked = useScrollLock(document.body);
 
-      watch(isActive, (value) => {
+      watch(isActive, async (value) => {
         isLocked.value = value;
-        if (value)
-          void nextTick().then(() => {
-            inputElement.value?.focus();
-          });
+        if (value) {
+          await nextTick();
+          inputElement.value?.focus();
+        }
       });
 
       onClickOutside(suggestionsElement, () => {
