@@ -171,23 +171,24 @@ export default defineComponent({
       ready.value = true;
     };
 
-    onMounted(() =>
-      Promise.all([
-        import(/* webpackChunkName: "hope-logo" */ "three").then((m) => m),
-        import(
-          /* webpackChunkName: "hope-logo" */ "three/examples/jsm/controls/OrbitControls.js"
-        ).then((m) => m),
-        import(
-          /* webpackChunkName: "hope-logo" */ "three/examples/jsm/loaders/STLLoader.js"
-        ).then((m) => m),
-      ]).then(([THREE, { OrbitControls }, { STLLoader }]) => {
-        void renderLogo(THREE, STLLoader, OrbitControls);
-
-        watch([isDarkmode, isMobile], () =>
-          renderLogo(THREE, STLLoader, OrbitControls),
-        );
-      }),
-    );
+    onMounted(() => {
+      watch(
+        [isDarkmode, isMobile],
+        () =>
+          Promise.all([
+            import(/* webpackChunkName: "hope-logo" */ "three").then((m) => m),
+            import(
+              /* webpackChunkName: "hope-logo" */ "three/examples/jsm/controls/OrbitControls.js"
+            ).then((m) => m),
+            import(
+              /* webpackChunkName: "hope-logo" */ "three/examples/jsm/loaders/STLLoader.js"
+            ).then((m) => m),
+          ]).then(([THREE, { OrbitControls }, { STLLoader }]) =>
+            renderLogo(THREE, STLLoader, OrbitControls),
+          ),
+        { immediate: true },
+      );
+    });
 
     return (): (VNode | null)[] => [
       !ready.value
