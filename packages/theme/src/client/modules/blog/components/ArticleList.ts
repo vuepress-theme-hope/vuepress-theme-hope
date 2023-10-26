@@ -65,7 +65,7 @@ export default defineComponent({
           /* webpackChunkName: "pageview" */ "vuepress-plugin-comment2/pageview"
         );
 
-        updatePageview();
+        await updatePageview();
       }
     };
 
