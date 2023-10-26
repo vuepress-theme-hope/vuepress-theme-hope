@@ -7,7 +7,11 @@ import {
   preparePagesRoutes,
 } from "@vuepress/core";
 import { watch } from "chokidar";
-import { checkVersion, getPageExcerpt } from "vuepress-shared/node";
+import {
+  addViteSsrNoExternal,
+  checkVersion,
+  getPageExcerpt,
+} from "vuepress-shared/node";
 
 import { prepareCategory } from "./category.js";
 import { convertOptions } from "./compact.js";
@@ -62,6 +66,10 @@ export const blogPlugin =
             excerptSeparator,
             excerptLength,
           });
+      },
+
+      extendsBundlerOptions: (bundlerOptions: unknown, app): void => {
+        addViteSsrNoExternal(bundlerOptions, app, "vuepress-shared");
       },
 
       onInitialized: (app): Promise<void> => {

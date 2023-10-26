@@ -92,7 +92,7 @@ export const commentPlugin =
           }
         }
 
-        addViteSsrNoExternal(bundlerOptions, app, "vuepress-sahre");
+        addViteSsrNoExternal(bundlerOptions, app, "vuepress-shared");
       },
 
       clientConfigFile: `${CLIENT_FOLDER}config.js`,
