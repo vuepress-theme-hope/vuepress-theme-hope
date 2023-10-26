@@ -229,7 +229,31 @@ And you can still override them in component.
 
 The full name of MSE is Media Source Extensions, see [Media Source Extensions API](https://developer.mozilla.org/zh-CN/docs/Web/API/Media_Source_Extensions_API) for details.
 
-Component has extended media support via [hls.js](https://github.com/video-dev/hls.js), [mpegts.js](https://github.com/xqq/mpegts.js) and [dash.js](https://github.com/Dash-Industry-Forum/dash.js).
+Component has extended media support via [hls.js](https://github.com/video-dev/hls.js), [mpegts.js](https://github.com/xqq/mpegts.js) and [dashjs](https://github.com/Dash-Industry-Forum/dash.js).
+
+To support the following types, install above packages in your project:
+
+::: code-tabs#shell
+
+@tab pnpm
+
+```bash
+pnpm add -D dashjs hls.js mpegts.js
+```
+
+@tab yarn
+
+```bash
+yarn add -D dashjs hls.js mpegts.js
+```
+
+@tab npm
+
+```bash
+npm i -D dashjs hls.js mpegts.js
+```
+
+:::
 
 - HLS
 

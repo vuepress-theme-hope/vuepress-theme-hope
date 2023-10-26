@@ -4,6 +4,30 @@ title: VidStack
 
 Embed [VidStack](https://www.vidstack.io/) in Markdown files.
 
+Install `vidstack` package in your project first to use this component:
+
+::: code-tabs#shell
+
+@tab pnpm
+
+```bash
+pnpm add -D vidstack
+```
+
+@tab yarn
+
+```bash
+yarn add -D vidstack
+```
+
+@tab npm
+
+```bash
+npm i -D vidstack
+```
+
+:::
+
 <!-- more -->
 
 ## Demo

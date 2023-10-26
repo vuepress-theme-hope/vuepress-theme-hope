@@ -4,6 +4,30 @@ title: VideoPlayer
 
 Embed videos in Markdown files.
 
+Install `plyr` package in your project first to use this component:
+
+::: code-tabs#shell
+
+@tab pnpm
+
+```bash
+pnpm add -D plyr
+```
+
+@tab yarn
+
+```bash
+yarn add -D plyr
+```
+
+@tab npm
+
+```bash
+npm i -D plyr
+```
+
+:::
+
 <!-- more -->
 
 ## Demo

@@ -254,6 +254,7 @@ export default defineComponent({
               break;
 
             case "flv":
+            case "ts":
               customType[initOptions.type] ??= (
                 video: HTMLVideoElement,
                 src: string,
