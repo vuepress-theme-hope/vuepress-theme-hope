@@ -98,7 +98,7 @@ export default defineComponent({
   },
 
   setup(props) {
-    const { el, width, height } = useSize<HTMLDivElement>(props);
+    const { el, width, height, resize } = useSize<HTMLDivElement>(props);
     const locales = useLocaleConfig(PDF_LOCALES);
 
     onMounted(() => {
@@ -111,6 +111,7 @@ export default defineComponent({
           zoom: props.zoom,
         },
       });
+      resize();
     });
 
     return (): VNode => {
