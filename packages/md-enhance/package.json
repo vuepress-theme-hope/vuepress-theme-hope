@@ -135,6 +135,12 @@
     "@vue/repl": {
       "optional": true
     },
+    "chart.js": {
+      "optional": true
+    },
+    "echarts": {
+      "optional": true
+    },
     "flowchart.ts": {
       "optional": true
     },
@@ -147,10 +153,10 @@
     "mermaid": {
       "optional": true
     },
-    "sass-loader": {
+    "reveal.js": {
       "optional": true
     },
-    "reveal.js": {
+    "sass-loader": {
       "optional": true
     },
     "vuepress": {
