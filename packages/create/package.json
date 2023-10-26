@@ -28,8 +28,8 @@
   "exports": {
     "./package.json": "./package.json"
   },
-  "main": "./lib/index.js",
-  "types": "./lib/index.d.ts",
+  "main": "./lib/node/index.js",
+  "types": "./lib/node/index.d.ts",
   "bin": {
     "create-vuepress-theme-hope": "./lib/index.js"
   },
