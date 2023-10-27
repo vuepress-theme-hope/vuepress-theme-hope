@@ -118,6 +118,7 @@
     "typescript": "5.2.2"
   },
   "peerDependencies": {
+    "@types/reveal.js": "^4.4.5",
     "@vue/repl": "^2.5.8",
     "chart.js": "^4.4.0",
     "echarts": "^5.4.3",
@@ -125,13 +126,16 @@
     "katex": "^0.16.9",
     "mathjax-full": "^3.2.2",
     "mermaid": "^10.5.0",
-    "reveal.js": "^4.6.1",
+    "reveal.js": "^5.0.0",
     "sass-loader": "^13.3.2",
     "vuepress": "2.0.0-beta.67",
     "vuepress-vite": "2.0.0-beta.67",
     "vuepress-webpack": "2.0.0-beta.67"
   },
   "peerDependenciesMeta": {
+    "@types/reveal.js": {
+      "optional": true
+    },
     "@vue/repl": {
       "optional": true
     },

@@ -1,6 +1,5 @@
 import { usePageFrontmatter } from "@vuepress/client";
 import type Reveal from "reveal.js/dist/reveal.esm.js";
-import type { RevealOptions } from "reveal.js/dist/reveal.esm.js";
 import type { PropType, VNode } from "vue";
 import {
   defineComponent,
@@ -65,25 +64,24 @@ export default defineComponent({
 
   setup(props) {
     const revealOptions = useRevealJsConfig();
-    const frontmatter = usePageFrontmatter<{ revealJs: RevealOptions }>();
+    const frontmatter = usePageFrontmatter<{ revealJs: Reveal.Options }>();
     const code = ref("");
     const loading = ref(true);
     const presentationContainer = shallowRef<HTMLElement>();
 
-    let reveal: Reveal | null = null;
+    let reveal: Reveal.Api | null = null;
 
-    const initRevealJs = async (container: HTMLElement): Promise<Reveal> => {
-      const promises: [
-        Promise<void>,
-        ...Promise<typeof import("reveal.js/dist/reveal.esm.js")>[],
-      ] = [
+    const initRevealJs = async (
+      container: HTMLElement,
+    ): Promise<Reveal.Api> => {
+      const promises: [Promise<void>, ...ReturnType<typeof useRevealJs>] = [
         new Promise((resolve) => setTimeout(resolve, MARKDOWN_ENHANCE_DELAY)),
         ...useRevealJs(),
       ];
 
-      const [, revealJS, ...plugins] = await Promise.all(promises);
+      const [, revealJs, ...plugins] = await Promise.all(promises);
 
-      const reveal = new revealJS.default(container, {
+      const reveal = new revealJs.default(container, {
         backgroundTransition: "slide",
         hash: frontmatter.value.layout === "Slide",
         mouseWheel: frontmatter.value.layout === "Slide",
@@ -93,7 +91,10 @@ export default defineComponent({
         ...(frontmatter.value.revealJs || {}),
         embedded: frontmatter.value.layout !== "Slide",
         markdown: {
+          // FIXME: https://github.com/DefinitelyTyped/DefinitelyTyped/pull/67226
+          // @ts-ignore
           separator: "^\r?\\n---\r?\n$",
+          // @ts-ignore
           verticalSeparator: "^\r?\n--\r?\n$",
         },
 
