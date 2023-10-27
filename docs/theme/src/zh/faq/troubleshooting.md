@@ -7,11 +7,17 @@ category:
 
 ## 确认使用正确的环境
 
-`vuepress-theme-hope` 仅支持 `>=16.0.0` 版本的 Node.js。
+`vuepress-theme-hope` 仅支持 `>=18.16.0` 版本的 Node.js。
 
 你可以通过 `node -v` 查看它的版本，如果不满足要求，请 [下载并安装 LTS 版本的 Node.js](../cookbook/tutorial/env.md#nodejs)。
 
-同时，你应该使用满足下方要求的包管理器:
+同时，你应该使用满足下方要求的包管理器 (推荐 `pnpm@v8`):
+
+- pnpm: >= 7
+
+  检查: `pnpm -v`
+
+  安装: `npm i -g pnpm`
 
 - npm: >= 8
 
@@ -24,12 +30,6 @@ category:
   检查: `yarn -v`
 
   安装: `npm i -g yarn`
-
-- pnpm: >= 7
-
-  检查: `pnpm -v`
-
-  安装: `npm i -g pnpm`
 
 ## 确定使用最新版本与正确的依赖树
 
