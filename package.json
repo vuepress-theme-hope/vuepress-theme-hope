@@ -99,10 +99,21 @@
   },
   "pnpm": {
     "overrides": {
+      "@vue/compiler-core": "3.4.0-alpha.1",
+      "@vue/compiler-dorm": "3.4.0-alpha.1",
+      "@vue/compiler-sfc": "3.4.0-alpha.1",
+      "@vue/compiler-ssr": "3.4.0-alpha.1",
+      "@vue/reactivity-transform": "3.4.0-alpha.1",
+      "@vue/reactivity": "3.4.0-alpha.1",
+      "@vue/runtime-core": "3.4.0-alpha.1",
+      "@vue/runtime-dom": "3.4.0-alpha.1",
+      "@vue/server-renderer": "3.4.0-alpha.1",
+      "@vue/shared": "3.4.0-alpha.1",
       "chokidar": "^3.5.3",
       "glob-stream": "^7.0.0",
       "glob-parent": "^6.0.2",
       "micromatch": "^4.0.5",
+      "vue": "3.4.0-alpha.1",
       "yargs-parser": "^21.1.1"
     }
   }
