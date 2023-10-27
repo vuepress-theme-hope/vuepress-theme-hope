@@ -3,13 +3,6 @@ import type { NoticeOptions } from "../../shared/index.js";
 
 export interface RootComponentOptions {
   /**
-   * Add This 的公开 ID
-   *
-   * Public ID for add this
-   */
-  addThis?: string;
-
-  /**
    * Back to top button config
    *
    * 返回顶部按钮配置

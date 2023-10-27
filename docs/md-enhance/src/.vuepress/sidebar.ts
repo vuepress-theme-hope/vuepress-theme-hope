@@ -38,7 +38,7 @@ export const enSidebar = sidebar({
         {
           text: "Presentation",
           icon: "person-chalkboard",
-          prefix: "presentation/",
+          prefix: "revealjs/",
           collapsible: true,
           children: ["", "demo", "themes"],
         },
@@ -83,7 +83,7 @@ export const enSidebar = sidebar({
     {
       text: "Presentation",
       icon: "person-chalkboard",
-      prefix: "presentation/",
+      prefix: "revealjs/",
       collapsible: true,
       children: ["", "demo", "themes"],
     },
@@ -131,7 +131,7 @@ export const zhSidebar = sidebar({
         {
           text: "幻灯片",
           icon: "person-chalkboard",
-          prefix: "presentation/",
+          prefix: "revealjs/",
           collapsible: true,
           children: ["", "demo", "themes"],
         },
@@ -176,7 +176,7 @@ export const zhSidebar = sidebar({
     {
       text: "幻灯片",
       icon: "person-chalkboard",
-      prefix: "presentation/",
+      prefix: "revealjs/",
       collapsible: true,
       children: ["", "demo", "themes"],
     },

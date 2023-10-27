@@ -83,34 +83,25 @@ export const bundle = (
 
     plugins: [
       typeof replaceOptions === "object"
-        ? (replace as unknown as typeof replace.default)({
+        ? replace({
             preventAssignment: true,
             ...replaceOptions,
           })
         : null,
       entries
-        ? // FIXME: Types issue
-          (alias as unknown as typeof alias.default)({
+        ? alias({
             entries,
           })
         : null,
       preserveShebang ? shebangPlugin() : null,
-      ...(resolve
-        ? [
-            nodeResolve({ preferBuiltins: true }),
-            // FIXME: Types issue
-            (commonjs as unknown as typeof commonjs.default)(),
-          ]
-        : []),
-      // FIXME: Types issue
-      (esbuild as unknown as typeof esbuild.default)({
+      ...(resolve ? [nodeResolve({ preferBuiltins: true }), commonjs()] : []),
+      esbuild({
         charset: "utf8",
         minify: isProduction,
-        target: "node16",
+        target: "node18",
       }),
       copyOptions.length
-        ? // FIXME: Types issue
-          (copy as unknown as typeof copy.default)({
+        ? copy({
             targets: copyOptions.map((item) =>
               typeof item === "string"
                 ? { src: `./src/${item}`, dest: `./lib/${item}` }
@@ -188,8 +179,7 @@ export const bundle = (
           ],
           plugins: [
             entries
-              ? // FIXME: Types issue
-                (alias as unknown as typeof alias.default)({
+              ? alias({
                   entries,
                 })
               : null,

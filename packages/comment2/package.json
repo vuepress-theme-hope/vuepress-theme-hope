@@ -1,6 +1,6 @@
 {
   "name": "vuepress-plugin-comment2",
-  "version": "2.0.0-beta.235",
+  "version": "2.0.0-beta.242",
   "description": "A comment plugin for vuepress",
   "keywords": [
     "vuepress",
@@ -36,8 +36,8 @@
     "./pageview": "./lib/client/pageview.js",
     "./package.json": "./package.json"
   },
-  "main": "lib/node/index.js",
-  "types": "lib/node/index.d.ts",
+  "main": "./lib/node/index.js",
+  "types": "./lib/node/index.d.ts",
   "files": [
     "lib"
   ],
@@ -50,34 +50,43 @@
     "dev:ts": "tsc -b tsconfig.build.json --watch"
   },
   "engines": {
-    "node": ">=16.19.0",
+    "node": ">=18.16.0",
     "npm": ">=8",
     "pnpm": ">=7"
   },
   "dependencies": {
-    "@vuepress/client": "2.0.0-beta.66",
-    "@vuepress/shared": "2.0.0-beta.66",
-    "@vuepress/utils": "2.0.0-beta.66",
-    "@waline/client": "^2.15.6",
-    "artalk": "^2.5.5",
+    "@vuepress/client": "2.0.0-beta.67",
+    "@vuepress/shared": "2.0.0-beta.67",
+    "@vuepress/utils": "2.0.0-beta.67",
     "giscus": "^1.3.0",
-    "twikoo": "^1.6.17",
-    "vue": "^3.3.4",
-    "vue-router": "^4.2.4",
+    "vue": "^3.3.7",
+    "vue-router": "^4.2.5",
     "vuepress-plugin-sass-palette": "workspace:*",
     "vuepress-shared": "workspace:*"
   },
   "devDependencies": {
-    "@vuepress/core": "2.0.0-beta.66"
+    "@vuepress/core": "2.0.0-beta.67"
   },
   "peerDependencies": {
+    "@waline/client": "^2.15.8",
+    "artalk": "^2.6.4",
     "sass-loader": "^13.3.2",
-    "vuepress": "2.0.0-beta.66",
-    "vuepress-vite": "2.0.0-beta.66",
-    "vuepress-webpack": "2.0.0-beta.66"
+    "twikoo": "^1.6.22",
+    "vuepress": "2.0.0-beta.67",
+    "vuepress-vite": "2.0.0-beta.67",
+    "vuepress-webpack": "2.0.0-beta.67"
   },
   "peerDependenciesMeta": {
+    "@waline/client": {
+      "optional": true
+    },
+    "artalk": {
+      "optional": true
+    },
     "sass-loader": {
+      "optional": true
+    },
+    "twikoo": {
       "optional": true
     },
     "vuepress": {

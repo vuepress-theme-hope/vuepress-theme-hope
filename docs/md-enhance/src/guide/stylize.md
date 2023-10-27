@@ -9,7 +9,7 @@ It's useful for you to create inline snippet with it.
 
 <!-- more -->
 
-## Config
+## Settings
 
 ::: code-tabs#language
 

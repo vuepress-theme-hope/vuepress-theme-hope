@@ -29,7 +29,7 @@ export const getStatus = (
       themeOptions.encrypt &&
         ("admin" in themeOptions.encrypt || "config" in themeOptions.encrypt),
     ),
-    enableSlide: Boolean(plugins.mdEnhance && plugins.mdEnhance.presentation),
+    enableSlide: Boolean(plugins.mdEnhance && plugins.mdEnhance.revealJs),
     enableReadingTime: plugins.readingTime !== false,
     blogType: isPlainObject(plugins.blog)
       ? plugins.blog?.type?.map(({ key, path }) => ({

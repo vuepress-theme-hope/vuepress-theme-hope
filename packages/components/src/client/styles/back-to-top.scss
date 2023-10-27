@@ -4,11 +4,8 @@
   @include reset.button;
 
   position: fixed !important;
-
-  // NOTE: Compatible with Android Wechat
-  // inset-inline-end: 1rem;
-  right: 16px;
   bottom: 64px;
+  inset-inline-end: 1rem;
   z-index: 100;
 
   width: 48px;
@@ -32,11 +29,6 @@
 
   @media print {
     display: none;
-  }
-
-  #{hope-config.$rtl-selector} & {
-    right: unset;
-    left: 16px;
   }
 
   &:hover {

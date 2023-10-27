@@ -18,7 +18,7 @@
     // Modules
     "baseUrl": "./",
     "module": "ESNext",
-    "moduleResolution": "NodeNext",
+    "moduleResolution": "Bundler",
     "resolveJsonModule": true,
 
     // Emit

@@ -37,17 +37,8 @@
   }
 
   #toc {
-    // NOTE: Compatible with Android Wechat
-    // inset-inline-start: 0;
-    // inset-inline-end: unset;
-    right: 0;
-    left: unset;
+    inset-inline: unset 0;
     min-width: 0;
-
-    #{hope-config.$rtl-selector} & {
-      right: unset;
-      left: 0;
-    }
   }
 
   .toc-wrapper {
@@ -66,10 +57,7 @@
 
       position: absolute;
       top: 14px;
-
-      // NOTE: Compatible with Android Wechat
-      // inset-inline-start: 64px;
-      left: 64px;
+      inset-inline-start: 64px;
       z-index: -1;
 
       width: 4px;
@@ -79,11 +67,6 @@
       background: var(--dot-bar-color);
 
       transition: background var(--color-transition);
-
-      #{hope-config.$rtl-selector} & {
-        right: 64px;
-        left: unset;
-      }
     }
   }
 
@@ -100,16 +83,9 @@
     &::before {
       @include dot;
 
-      // NOTE: Compatible with Android Wechat
-      // inset-inline-start: -10px;
-      left: -10px;
+      inset-inline-start: -10px;
       width: 8px;
       height: 8px;
-
-      #{hope-config.$rtl-selector} & {
-        right: -10px;
-        left: unset;
-      }
     }
   }
 
@@ -132,16 +108,9 @@
       &::before {
         @include dot;
 
-        // NOTE: Compatible with Android Wechat
-        // inset-inline-start: -10px;
-        left: -10px;
+        inset-inline-start: -10px;
         width: 8px;
         height: 8px;
-
-        #{hope-config.$rtl-selector} & {
-          right: -10px;
-          left: unset;
-        }
       }
     }
   }
@@ -152,10 +121,7 @@
 
   .timeline-date {
     position: absolute;
-
-    // NOTE: Compatible with Android Wechat
-    // inset-inline-end: calc(100% + 24px);
-    right: calc(100% + 24px);
+    inset-inline-end: calc(100% + 24px);
 
     width: 50px;
 
@@ -163,24 +129,12 @@
     line-height: 30px;
     text-align: end;
 
-    #{hope-config.$rtl-selector} & {
-      right: unset;
-      left: calc(100% + 24px);
-    }
-
     &::before {
       @include dot;
 
-      // NOTE: Compatible with Android Wechat
-      // inset-inline-end: -19px;
-      right: -19px;
+      inset-inline-end: -19px;
       width: 6px;
       height: 6px;
-
-      #{hope-config.$rtl-selector} & {
-        right: unset;
-        left: -19px;
-      }
     }
   }
 

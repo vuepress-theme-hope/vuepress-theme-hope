@@ -298,24 +298,79 @@ describe("getDateInfo()", () => {
 });
 
 describe("compareDate()", () => {
-  it("Should compare date", () => {
-    expect(
-      compareDate(
-        new Date("2020-04-04T00:00:00.000Z"),
-        new Date("2020-05-05T00:00:00.000Z"),
-      ),
-    ).toBeGreaterThan(0);
-    expect(
-      compareDate(
-        new Date("2020-05-05T00:00:00.000Z"),
-        new Date("2020-04-04T00:00:00.000Z"),
-      ),
-    ).toBeLessThan(0);
+  it("should return 0 if both dates are the same", () => {
+    const date = new Date("2022-01-01");
+
+    expect(compareDate(date, date)).toBe(0);
+
     expect(
       compareDate(
         new Date("2020-04-04T00:00:00.000Z"),
         new Date("2020-04-04T00:00:00.000Z"),
       ),
     ).toBe(0);
+  });
+
+  it("should return a positive number if dateA is older than dateB", () => {
+    const dateA = new Date("2022-01-01");
+    const dateB = new Date("2022-01-02");
+
+    expect(compareDate(dateA, dateB)).toBeGreaterThan(0);
+
+    expect(
+      compareDate(
+        new Date("2020-04-04T00:00:00.000Z"),
+        new Date("2020-05-05T00:00:00.000Z"),
+      ),
+    ).toBeGreaterThan(0);
+  });
+
+  it("should return a negative number if dateA is newer than dateB", () => {
+    const dateA = new Date("2022-01-02");
+    const dateB = new Date("2022-01-01");
+
+    expect(compareDate(dateA, dateB)).toBeLessThan(0);
+    expect(
+      compareDate(
+        new Date("2020-05-05T00:00:00.000Z"),
+        new Date("2020-04-04T00:00:00.000Z"),
+      ),
+    ).toBeLessThan(0);
+  });
+
+  it("should return 1 if dateA is undefined", () => {
+    const dateB = new Date("2022-01-01");
+
+    expect(compareDate(undefined, dateB)).toBe(1);
+  });
+
+  it("should return -1 if dateB is undefined", () => {
+    const dateA = new Date("2022-01-01");
+
+    expect(compareDate(dateA, undefined)).toBe(-1);
+  });
+
+  it("should return 0 if both dates are undefined", () => {
+    expect(compareDate(undefined, undefined)).toBe(0);
+  });
+
+  it("should be a correct date sorter", () => {
+    const dates = [
+      "2021-01-01",
+      "2022-04-05 08:00:00",
+      undefined,
+      "04:38:45",
+      "19999",
+      "2022-03-08",
+    ];
+
+    expect(dates.sort(compareDate)).toEqual([
+      "2022-04-05 08:00:00",
+      "2022-03-08",
+      "2021-01-01",
+      "19999",
+      "04:38:45",
+      undefined,
+    ]);
   });
 });

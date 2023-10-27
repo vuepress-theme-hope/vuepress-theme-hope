@@ -1,6 +1,6 @@
 {
   "name": "vuepress-plugin-seo2",
-  "version": "2.0.0-beta.235",
+  "version": "2.0.0-beta.242",
   "description": "SEO plugin for vuepress",
   "keywords": [
     "vuepress",
@@ -28,8 +28,8 @@
     ".": "./lib/node/index.js",
     "./package.json": "./package.json"
   },
-  "main": "lib/node/index.js",
-  "types": "lib/node/index.d.ts",
+  "main": "./lib/node/index.js",
+  "types": "./lib/node/index.d.ts",
   "files": [
     "lib"
   ],
@@ -40,23 +40,23 @@
     "dev:ts": "tsc -b tsconfig.build.json --watch"
   },
   "engines": {
-    "node": ">=16.19.0",
+    "node": ">=18.16.0",
     "npm": ">=8",
     "pnpm": ">=7"
   },
   "dependencies": {
-    "@vuepress/shared": "2.0.0-beta.66",
-    "@vuepress/utils": "2.0.0-beta.66",
+    "@vuepress/shared": "2.0.0-beta.67",
+    "@vuepress/utils": "2.0.0-beta.67",
     "vuepress-shared": "workspace:*"
   },
   "devDependencies": {
-    "@vuepress/core": "2.0.0-beta.66",
-    "@vuepress/plugin-git": "2.0.0-beta.66"
+    "@vuepress/core": "2.0.0-beta.67",
+    "@vuepress/plugin-git": "2.0.0-beta.67"
   },
   "peerDependencies": {
-    "vuepress": "2.0.0-beta.66",
-    "vuepress-vite": "2.0.0-beta.66",
-    "vuepress-webpack": "2.0.0-beta.66"
+    "vuepress": "2.0.0-beta.67",
+    "vuepress-vite": "2.0.0-beta.67",
+    "vuepress-webpack": "2.0.0-beta.67"
   },
   "peerDependenciesMeta": {
     "vuepress": {

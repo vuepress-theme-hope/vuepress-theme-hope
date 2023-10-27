@@ -12,7 +12,7 @@ Let the Markdown file support playground in your VuePress site.
 
 <!-- more -->
 
-## Config
+## Settings
 
 ::: code-tabs#config
 

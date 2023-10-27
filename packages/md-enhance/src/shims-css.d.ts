@@ -1,5 +1,5 @@
 declare module "*.css" {
-  const content: undefined;
+  const content: string;
 
   export default content;
 }

@@ -1,6 +1,10 @@
 import type { PluginFunction } from "@vuepress/core";
 import { useSassPalettePlugin } from "vuepress-plugin-sass-palette";
-import { checkVersion, getLocales } from "vuepress-shared/node";
+import {
+  addViteSsrNoExternal,
+  checkVersion,
+  getLocales,
+} from "vuepress-shared/node";
 
 import { convertOptions } from "./compact/index.js";
 import { CLIENT_FOLDER, PLUGIN_NAME } from "./constant.js";
@@ -18,7 +22,7 @@ export const redirectPlugin =
     // TODO: Remove this in v2 stable
     if (legacy)
       convertOptions(options as RedirectOptions & Record<string, unknown>);
-    checkVersion(app, PLUGIN_NAME, "2.0.0-beta.66");
+    checkVersion(app, PLUGIN_NAME, "2.0.0-beta.67");
 
     if (app.env.isDebug) logger.info("Options:", options);
 
@@ -39,6 +43,10 @@ export const redirectPlugin =
           config: options.locales,
           default: redirectLocales,
         }),
+      },
+
+      extendsBundlerOptions: (bundlerOptions: unknown, app): void => {
+        addViteSsrNoExternal(bundlerOptions, app, "vuepress-shared");
       },
 
       onInitialized: async (app): Promise<void> => {

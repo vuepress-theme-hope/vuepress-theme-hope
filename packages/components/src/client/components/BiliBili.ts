@@ -113,7 +113,7 @@ export default defineComponent({
   },
 
   setup(props) {
-    const { el, width, height } = useSize<HTMLIFrameElement>(props);
+    const { el, width, height, resize } = useSize<HTMLIFrameElement>(props);
 
     const loaded = ref(false);
 
@@ -123,7 +123,7 @@ export default defineComponent({
       return aid && cid
         ? `${VIDEO_LINK}?aid=${aid}&cid=${cid}&t=${time}&autoplay=${
             autoplay ? 1 : 0
-          }&page=${page}`
+          }&p=${page}`
         : bvid
         ? `${VIDEO_LINK}?bvid=${bvid}&t=${time}&autoplay=${autoplay ? 1 : 0}`
         : null;
@@ -150,6 +150,7 @@ export default defineComponent({
               },
               onLoad: () => {
                 loaded.value = true;
+                resize();
               },
             }),
             loaded.value ? null : h(LoadingIcon),

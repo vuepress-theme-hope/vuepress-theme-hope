@@ -40,7 +40,7 @@ export default defineUserConfig({
         "/demo/mark",
         "/demo/mermaid",
         "/demo/playground",
-        "/demo/presentation",
+        "/demo/revealjs",
         "/demo/sandpack",
         "/demo/slide-page",
         "/demo/stylized",
@@ -88,7 +88,6 @@ export default defineUserConfig({
         output: "chtml",
       },
       presentation: ["highlight", "math", "search", "notes", "zoom"],
-      sandpack: true,
       stylize: [
         {
           matcher: "Recommended",

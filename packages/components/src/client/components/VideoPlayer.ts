@@ -1,3 +1,4 @@
+import { isArray } from "@vuepress/shared";
 import type { UseMediaTextTrackSource } from "@vueuse/core";
 import type { Options as PlyrOptions } from "plyr";
 import type { PropType, VNode } from "vue";
@@ -31,7 +32,7 @@ export default defineComponent({
      * 视频源
      */
     src: {
-      type: String,
+      type: [String, Array] as PropType<string | string[]>,
       required: true,
     },
 
@@ -128,7 +129,14 @@ export default defineComponent({
           },
         },
         [
-          h("a", { class: "sr-only", href: getLink(props.src) }, props.title),
+          h(
+            "a",
+            {
+              class: "sr-only",
+              href: getLink(isArray(props.src) ? props.src[0] : props.src),
+            },
+            props.title,
+          ),
           h(
             "video",
             {
@@ -144,7 +152,9 @@ export default defineComponent({
               props.tracks.map((track) =>
                 h("track", { ...track, src: getLink(track.src) }),
               ),
-              h("source", { src: getLink(props.src), type: props.type }),
+              isArray(props.src)
+                ? props.src.map((item) => h("source", item))
+                : h("source", { src: getLink(props.src), type: props.type }),
             ],
           ),
         ],

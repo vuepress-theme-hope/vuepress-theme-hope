@@ -10,11 +10,35 @@ tag:
 
 Let the Markdown file support chart in your VuePress site.
 
-`vuepress-plugin-md-enhance` uses [chart.js](https://www.chartjs.org/docs/latest/) to support this feature.
-
 <!-- more -->
 
-## Config
+## Settings
+
+Install [chart.js](https://www.chartjs.org/docs/latest/) in your project:
+
+::: code-tabs#shell
+
+@tab pnpm
+
+```bash
+pnpm add -D chart.js
+```
+
+@tab yarn
+
+```bash
+yarn add -D chart.js
+```
+
+@tab npm
+
+```bash
+npm i -D chart.js
+```
+
+:::
+
+Then enabling via:
 
 ::: code-tabs#language
 

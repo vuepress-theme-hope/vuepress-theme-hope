@@ -7,7 +7,7 @@ import { useRouter } from "vue-router";
 import { inferRouteLink } from "../../shared/index.js";
 import { guardEvent } from "../utils/index.js";
 
-export interface VPLinkProps {
+export interface VPLinkProps extends Record<string, unknown> {
   to: string;
 }
 
@@ -17,7 +17,7 @@ export const VPLink: FunctionalComponent<
   {
     default: () => string | VNode | (string | VNode)[];
   }
-> = ({ to = "" }, { slots }) => {
+> = ({ to = "", class: className = "", ...attrs }, { slots }) => {
   const router = useRouter();
   const navigate = (
     event: MouseEvent = {} as MouseEvent,
@@ -26,7 +26,12 @@ export const VPLink: FunctionalComponent<
 
   return h(
     "a",
-    { class: "vp-link", href: withBase(inferRouteLink(to)), onClick: navigate },
+    {
+      ...attrs,
+      class: ["vp-link", className],
+      href: withBase(inferRouteLink(to)),
+      onClick: navigate,
+    },
     slots.default?.(),
   );
 };

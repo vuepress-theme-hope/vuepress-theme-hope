@@ -48,10 +48,7 @@ export default defineClientConfig({
     };
 
     onMounted(() => {
-      toggleRTL(routeLocale.value);
-      watch(routeLocale, (value) => {
-        toggleRTL(value);
-      });
+      watch(routeLocale, toggleRTL, { immediate: true });
     });
   },
 });

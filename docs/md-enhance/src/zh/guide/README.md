@@ -374,4 +374,4 @@ $$
 
 @slideend
 
-- [查看详情](presentation/README.md)
+- [查看详情](revealjs/README.md)

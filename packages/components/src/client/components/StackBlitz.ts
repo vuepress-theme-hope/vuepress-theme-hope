@@ -11,9 +11,6 @@ import { useSize } from "../composables/index.js";
 
 import "../styles/stack-blitz.scss";
 
-// FIXME: Types issue
-const stackblitzSDK = sdk as unknown as typeof sdk.default;
-
 export default defineComponent({
   name: "StackBlitz",
 
@@ -175,7 +172,7 @@ export default defineComponent({
   },
 
   setup(props) {
-    const { el, width, height } = useSize<HTMLIFrameElement>(props);
+    const { el, width, height, resize } = useSize<HTMLIFrameElement>(props);
 
     const options = computed(() => ({
       openFile: props.file,
@@ -188,11 +185,13 @@ export default defineComponent({
       initialPath: props.initialPath,
     }));
 
-    onMounted(() => {
-      if (props.embed)
-        void stackblitzSDK[
+    onMounted(async () => {
+      if (props.embed) {
+        await sdk[
           props.type === "github" ? "embedGithubProject" : "embedProjectId"
         ](el.value!, props.id, options.value);
+        resize();
+      }
     });
 
     return (): VNode =>
@@ -214,7 +213,7 @@ export default defineComponent({
                 type: "button",
                 class: "stackblitz-button",
                 onClick: () => {
-                  stackblitzSDK[
+                  sdk[
                     props.type === "github"
                       ? "openGithubProject"
                       : "openProjectId"

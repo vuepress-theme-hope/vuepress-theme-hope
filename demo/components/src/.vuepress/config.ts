@@ -60,7 +60,7 @@ export default defineUserConfig({
         "Share",
         "SiteInfo",
         "StackBlitz",
-        // "VidStack",
+        "VidStack",
         "VideoPlayer",
         "XiGua",
         "YouTube",
@@ -76,7 +76,6 @@ export default defineUserConfig({
       },
 
       rootComponents: {
-        addThis: "ra-5f829c59e6c6bc9a",
         backToTop: true,
         notice: [
           {

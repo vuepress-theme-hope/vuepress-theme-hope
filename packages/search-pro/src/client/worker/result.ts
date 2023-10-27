@@ -69,6 +69,12 @@ export const getResults = (
     const isSection = id.includes("#");
     const [key, info] = id.split(/[#@]/);
 
+    const displayTerms = terms
+      .sort((a, b) => a.length - b.length)
+      .filter((item, index) =>
+        terms.slice(index + 1).every((term) => !term.includes(item)),
+      );
+
     const { contents } = (resultMap[key] ??= {
       title: "",
       contents: [],
@@ -81,7 +87,7 @@ export const getResults = (
           type: "customField",
           key: key,
           index: info,
-          display: terms
+          display: displayTerms
             .map((term) =>
               (<CustomFieldIndexItem>result).c.map((field) =>
                 getMatchedContent(field, term),
@@ -93,7 +99,7 @@ export const getResults = (
         score,
       ]);
     } else {
-      const headerContent = terms
+      const headerContent = displayTerms
         .map((term) => getMatchedContent((<PageIndexItem>result).h, term))
         .filter((item): item is Word[] => item !== null);
 
@@ -110,7 +116,7 @@ export const getResults = (
 
       if (/** text */ "t" in result)
         for (const text of result.t) {
-          const matchedContent = terms
+          const matchedContent = displayTerms
             .map((term) => getMatchedContent(text, term))
             .filter((item): item is Word[] => item !== null);
 

@@ -459,6 +459,6 @@ $$
 
 @slideend
 
-- [查看详情](../markdown/presentation.md)
+- [查看详情](../markdown/revealjs.md)
 
 - [查看详情](../markdown/stylize.md)

@@ -20,7 +20,7 @@ icon: gears
     | "Share"
     | "StackBlitz"
     | "SiteInfo"
-    // | "VidStack"
+    | "VidStack"
     | "VideoPlayer"
     | "XiGua"
     | "YouTube";
@@ -43,7 +43,7 @@ icon: gears
 - `"Share"`
 - `"StackBlitz"`
 - `"SiteInfo"`
-<!-- - `"VidStack"` -->
+- `"VidStack"`
 - `"VideoPlayer"`
 - `"XiGua"`
 - `"YouTube"`
@@ -128,15 +128,6 @@ Twitter 用户名。
 ## rootComponents
 
 会被挂载到根节点的组件。
-
-### rootComponents.addThis
-
-- 类型: `string | false`
-- 默认值: `false`
-- 详情:
-  - [指南 → AddThis](./guide/addthis.md#使用)
-
-AddThis 的公开 ID。
 
 ### rootComponents.backToTop
 

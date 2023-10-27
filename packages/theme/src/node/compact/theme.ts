@@ -230,14 +230,7 @@ export const convertThemeOptions = (
       )} instead.`,
     );
 
-  // handle addThis
-  if (themeOptions["addThis"])
-    deprecatedLogger({
-      options: themeOptions,
-      deprecatedOption: "addThis",
-      newOption: "plugins.components.rootComponents.addThis",
-      scope: "themeConfig",
-    });
+  if (themeOptions["addThis"]) droppedLogger(themeOptions, "addThis");
 
   // handle encrypt
   if (isPlainObject(themeOptions["encrypt"]) && themeOptions["encrypt"]) {

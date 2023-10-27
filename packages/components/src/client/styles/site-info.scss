@@ -33,29 +33,19 @@
 
 .vp-site-info-navigator {
   position: absolute;
-  top: 0;
-  right: 0;
-  bottom: 0;
-  left: 0;
+  inset: 0;
   z-index: 2;
-
   display: block;
 }
 
 .vp-site-info-preview {
   position: absolute;
-  top: 0;
-  right: 0;
-  bottom: 0;
-  left: 0;
+  inset: 0;
 }
 
 .vp-site-info-detail {
   position: absolute;
-  top: 0;
-  right: 0;
-  bottom: 0;
-  left: 0;
+  inset: 0;
 
   display: flex;
   flex-direction: column;
@@ -74,10 +64,7 @@
     content: " ";
 
     position: absolute;
-    top: 0;
-    right: 0;
-    bottom: 0;
-    left: 0;
+    inset: 0;
 
     background-color: var(--vp-bg);
 
@@ -123,17 +110,9 @@
 
 .vp-site-info-source-wrapper {
   position: absolute;
-
-  // NOTE: Compatible with Android Wechat
-  // inset-inline-end: 16px;
-  right: 16px;
   bottom: 16px;
+  inset-inline-end: 16px;
   z-index: 3;
-
-  #{hope-config.$rtl-selector} & {
-    right: unset;
-    left: 16px;
-  }
 }
 
 .vp-site-info-source {

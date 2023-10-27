@@ -12,7 +12,7 @@ Let you insert code demos in your Markdown file.
 
 <!-- more -->
 
-## Config
+## Settings
 
 ::: code-tabs#language
 

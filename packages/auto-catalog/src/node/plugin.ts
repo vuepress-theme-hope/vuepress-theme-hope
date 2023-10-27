@@ -1,6 +1,10 @@
 import type { PluginFunction } from "@vuepress/core";
 import { useSassPalettePlugin } from "vuepress-plugin-sass-palette";
-import { checkVersion, getLocales } from "vuepress-shared/node";
+import {
+  addViteSsrNoExternal,
+  checkVersion,
+  getLocales,
+} from "vuepress-shared/node";
 
 import { generateCatalog, injectCatalogInformation } from "./autoCatalog.js";
 import { convertOptions } from "./compact/index.js";
@@ -14,7 +18,7 @@ export const autoCatalogPlugin =
     if (legacy)
       convertOptions(options as AutoCatalogOptions & Record<string, unknown>);
 
-    checkVersion(app, PLUGIN_NAME, "2.0.0-beta.66");
+    checkVersion(app, PLUGIN_NAME, "2.0.0-beta.67");
 
     if (app.env.isDebug) logger.info("Options:", options);
 
@@ -48,6 +52,10 @@ export const autoCatalogPlugin =
       onInitialized: async (app): Promise<void> => {
         injectCatalogInformation(app, options);
         await generateCatalog(app, options);
+      },
+
+      extendsBundlerOptions: (bundlerOptions: unknown, app): void => {
+        addViteSsrNoExternal(bundlerOptions, app, "vuepress-shared");
       },
 
       ...(component ? {} : { clientConfigFile: `${CLIENT_FOLDER}config.js` }),

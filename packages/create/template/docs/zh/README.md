@@ -137,8 +137,8 @@ highlights:
 
       - title: 幻灯片支持
         icon: person-chalkboard
-        details: 你可以直接在 Markdown 中插入幻灯片
-        link: https://theme-hope.vuejs.press/zh/guide/markdown/presentation/
+        details: 通过 Reveal.js 在 Markdown 中插入幻灯片
+        link: https://theme-hope.vuejs.press/zh/guide/markdown/revealjs/
 
   - header: 布局
     description: 一个带有完整无障碍支持的响应式布局。

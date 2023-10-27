@@ -41,7 +41,7 @@ tag:
 - [Tex 支持](markdown/tex.md)
 - [文件导入](markdown/include.md)
 - [代码演示](markdown/demo.md)
-- [幻灯片](markdown/presentation.md)
+- [幻灯片](markdown/revealjs.md)
 - [样式化](markdown/stylize.md)
 - [交互演示](markdown/playground.md)
 - [Vue 交互演示](markdown/vue-playground.md)

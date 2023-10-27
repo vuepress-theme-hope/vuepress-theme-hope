@@ -2,6 +2,7 @@ import type { App, Page } from "@vuepress/core";
 import type { GitData } from "@vuepress/plugin-git";
 import { getDirname, path } from "@vuepress/utils";
 import {
+  compareDate,
   deepAssign,
   ensureEndingSlash,
   fromEntries,
@@ -19,7 +20,7 @@ import type {
   FeedLinks,
   FeedOptions,
 } from "./typings/index.js";
-import { compareDate, resolveUrl } from "./utils/index.js";
+import { resolveUrl } from "./utils/index.js";
 
 const __dirname = getDirname(import.meta.url);
 
@@ -27,7 +28,11 @@ const TEMPLATE_FOLDER = ensureEndingSlash(
   path.resolve(__dirname, "../../templates"),
 );
 
-export type ResolvedFeedOptions = BaseFeedOptions & { hostname: string };
+export interface ResolvedFeedOptions
+  extends Omit<BaseFeedOptions, "sorter" | "filter">,
+    Required<Pick<BaseFeedOptions, "sorter" | "filter">> {
+  hostname: string;
+}
 
 export type ResolvedFeedOptionsMap = Record<string, ResolvedFeedOptions>;
 
@@ -181,7 +186,7 @@ export const getFilename = (
 
 export const getFeedLinks = (
   { options: { base } }: App,
-  options: FeedOptions,
+  options: ResolvedFeedOptions,
   localePath: string,
 ): FeedLinks => {
   const { hostname } = options;

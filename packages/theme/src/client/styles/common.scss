@@ -5,10 +5,7 @@
   position: fixed;
   top: var(--navbar-height);
   bottom: 0;
-
-  // NOTE: Compatible with Android Wechat
-  // inset-inline-start: 0;
-  left: var(--sidebar-space);
+  inset-inline-start: var(--sidebar-space);
   z-index: 100;
 
   display: flex;
@@ -17,7 +14,7 @@
 
   font-size: 2rem;
 
-  transition: left var(--transform-transition);
+  transition: inset-inline-start var(--transform-transition);
 
   @media (max-width: hope-config.$tablet) {
     display: none;
@@ -25,11 +22,6 @@
 
   @media (min-width: hope-config.$pc) {
     display: none;
-  }
-
-  #{hope-config.$rtl-selector} & {
-    right: var(--sidebar-space);
-    left: unset;
   }
 
   &:hover {
@@ -57,10 +49,7 @@
 
     // do not leave space for sidebar on wide mobile
     @media (max-width: hope-config.$tablet) {
-      // NOTE: Compatible with Android Wechat
-      // padding-inline: 0;
-      padding-inline-start: 0;
-      padding-inline-end: 0;
+      padding-inline: 0;
     }
 
     @media (min-width: hope-config.$pc) {
@@ -120,24 +109,14 @@
     }
 
     .toggle-sidebar-wrapper {
-      // NOTE: Compatible with Android Wechat
-      // inset-inline-start: 0;
-      left: 0;
-
-      #{hope-config.$rtl-selector} & {
-        right: 0;
-        left: unset;
-      }
+      inset-inline-start: 0;
     }
   }
 
   // sidebar is disabled
   &.no-sidebar {
     .vp-page {
-      // NOTE: Compatible with Android Wechat
-      // padding-inline: 0;
-      padding-inline-start: 0;
-      padding-inline-end: 0;
+      padding-inline: 0;
     }
 
     &.has-toc {

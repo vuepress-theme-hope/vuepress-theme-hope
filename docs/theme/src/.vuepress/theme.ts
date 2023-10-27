@@ -57,7 +57,7 @@ export default theme("theme", {
         "Share",
         "SiteInfo",
         "StackBlitz",
-        // "VidStack",
+        "VidStack",
         "VideoPlayer",
         "YouTube",
       ],
@@ -126,7 +126,7 @@ export default theme("theme", {
       imgMark: true,
       imgSize: true,
       include: {
-        resolvePath: (file, cwd) => {
+        resolvePath: (file) => {
           if (file.startsWith("@echarts"))
             return file.replace(
               "@echarts",
@@ -142,7 +142,23 @@ export default theme("theme", {
       playground: {
         presets: ["ts", "vue", "unocss"],
       },
-      presentation: ["highlight", "math", "search", "notes", "zoom"],
+      revealJs: {
+        plugins: ["highlight", "math", "search", "notes", "zoom"],
+        themes: [
+          "auto",
+          "beige",
+          "black",
+          "blood",
+          "league",
+          "moon",
+          "night",
+          "serif",
+          "simple",
+          "sky",
+          "solarized",
+          "white",
+        ],
+      },
       stylize: [
         {
           matcher: "Recommended",

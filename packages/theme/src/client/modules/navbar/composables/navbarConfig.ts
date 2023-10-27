@@ -1,6 +1,6 @@
 import { isLinkExternal, isString } from "@vuepress/shared";
-import type { Ref } from "vue";
-import { ref, watch } from "vue";
+import type { ComputedRefWithControl } from "@vueuse/core";
+import { computedWithControl } from "@vueuse/core";
 import type { Router } from "vue-router";
 import { useRouter } from "vue-router";
 
@@ -44,7 +44,9 @@ export const resolveNavbarItem = (
   };
 };
 
-export const useNavbarItems = (): Ref<ResolvedThemeNavbarItem[]> => {
+export const useNavbarItems = (): ComputedRefWithControl<
+  ResolvedThemeNavbarItem[]
+> => {
   const themeLocaleData = useThemeLocaleData();
   const router = useRouter();
 
@@ -53,11 +55,10 @@ export const useNavbarItems = (): Ref<ResolvedThemeNavbarItem[]> => {
       resolveNavbarItem(router, item),
     );
 
-  const navbarItems = ref(getNavbarItems());
-
-  watch(themeLocaleData, () => {
-    navbarItems.value = getNavbarItems();
-  });
+  const navbarItems = computedWithControl(
+    () => themeLocaleData.value.navbar,
+    () => getNavbarItems(),
+  );
 
   return navbarItems;
 };

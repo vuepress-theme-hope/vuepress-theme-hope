@@ -1,17 +1,16 @@
-import { useStyleTag } from "@vueuse/core";
-import { defineCustomElements } from "vidstack/elements";
 import type { PropType, VNode } from "vue";
 import { defineComponent, h, onMounted } from "vue";
 import { isPlainObject } from "vuepress-shared/client";
 
-// import "vidstack/styles/defaults.css";
-// import "vidstack/styles/community-skin/audio.css";
-// import "vidstack/styles/community-skin/video.css";
+import "vidstack/player/styles/default/theme.css";
+import "vidstack/player/styles/default/layouts/audio.css";
+import "vidstack/player/styles/default/layouts/video.css";
 import "../styles/vidstack.scss";
 
 export interface VidStackSource {
   src: string;
   type: string;
+  size: string | number;
 }
 
 export interface VidStackTrack {
@@ -72,49 +71,32 @@ export default defineComponent({
   },
 
   setup(props, { attrs }) {
-    // FIXME: Workaround for https://github.com/vuepress/vuepress-next/issues/1349
-    useStyleTag(
-      [
-        "https://cdn.jsdelivr.net/npm/vidstack@0.6/styles/defaults.css",
-        "https://cdn.jsdelivr.net/npm/vidstack@0.6/styles/community-skin/audio.css",
-        "https://cdn.jsdelivr.net/npm/vidstack@0.6/styles/community-skin/video.css",
-      ]
-        .map((url) => `@import url("${url}");`)
-        .join("\n"),
-      { id: "vidstack-style" },
-    );
-
-    onMounted(() => defineCustomElements());
+    onMounted(async () => {
+      await Promise.all([
+        import(/* webpackChunkName: "vidstack" */ "vidstack/player"),
+        import(/* webpackChunkName: "vidstack" */ "vidstack/player/layouts"),
+        import(/* webpackChunkName: "vidstack" */ "vidstack/player/ui"),
+      ]);
+    });
 
     return (): VNode =>
-      h(
-        "media-player",
-        {
-          crossorigin: "",
-          ...attrs,
-        },
-        [
-          h("media-outlet", [
-            props.sources.map((source) =>
-              isPlainObject(source)
-                ? h("source", { src: source.src, type: source.type })
-                : h("source", source),
-            ),
-            h("media-gesture", { event: "pointerup", action: "toggle:paused" }),
-            h("media-gesture", {
-              event: "dblclick",
-              action: "toggle:fullscreen",
-            }),
-            attrs["poster"]
-              ? h("media-poster", { alt: attrs["alt"] || attrs["title"] })
-              : null,
-            props.tracks.map(
-              ({ src, label, srclang, kind, default: isDefault }) =>
-                h("track", { src, label, srclang, kind, default: isDefault }),
-            ),
-          ]),
-          h("media-community-skin"),
-        ],
-      );
+      h("media-player", attrs, [
+        h("media-provider", [
+          attrs["poster"]
+            ? h("media-poster", {
+                class: "vds-poster",
+                alt: attrs["alt"] || attrs["title"],
+              })
+            : null,
+          props.sources.map((source) =>
+            isPlainObject(source)
+              ? h("source", source)
+              : h("source", { src: source }),
+          ),
+          props.tracks.map((tracks) => h("track", tracks)),
+        ]),
+        h("media-audio-layout"),
+        h("media-video-layout", attrs),
+      ]);
   },
 });

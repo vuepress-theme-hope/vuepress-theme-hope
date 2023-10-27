@@ -50,7 +50,7 @@ Besides Markdown syntaxes VuePress itself adds, `vuepress-theme-hope` enables mo
 
 - [Code demo](demo.md)
 
-- [Presentation](presentation.md)
+- [Presentation](revealjs.md)
 
 - [Stylize](stylize.md)
 

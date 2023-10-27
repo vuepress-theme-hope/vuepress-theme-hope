@@ -152,11 +152,6 @@ export const setupPhotoSwipe = (): void => {
         instance?.close();
       });
 
-    void initPhotoSwipe();
-
-    watch(
-      () => page.value.path,
-      () => initPhotoSwipe(),
-    );
+    watch(() => page.value.path, initPhotoSwipe, { immediate: true });
   });
 };

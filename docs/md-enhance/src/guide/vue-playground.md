@@ -3,7 +3,7 @@ title: Vue Playground
 icon: fab fa-vuejs
 ---
 
-The plugin provides you vue playground support with `@vue/repl` package.
+The plugin provides you vue playground support.
 
 <!-- more -->
 
@@ -15,7 +15,33 @@ You can use [Vue Demo](./demo/vue.md) and [Playground Vue Preset](./playground.m
 
 :::
 
-## Config
+## Settings
+
+Install `@vue/repl` in your project:
+
+::: code-tabs#shell
+
+@tab pnpm
+
+```bash
+pnpm add -D @vue/repl
+```
+
+@tab yarn
+
+```bash
+yarn add -D @vue/repl
+```
+
+@tab npm
+
+```bash
+npm i -D @vue/repl
+```
+
+:::
+
+Then enabling via:
 
 ::: code-tabs#config
 

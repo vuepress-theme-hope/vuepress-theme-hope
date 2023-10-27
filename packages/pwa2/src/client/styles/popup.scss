@@ -28,11 +28,8 @@
 .sw-hint-popup,
 .sw-update-popup {
   position: fixed;
-
-  // NOTE: Compatible with Android Wechat
-  // inset-inline-end: 1rem;
-  right: 1rem;
   bottom: 1rem;
+  inset-inline-end: 1rem;
   z-index: 300;
 
   padding: 0.5rem 0.75rem;
@@ -52,18 +49,13 @@
     display: none;
   }
 
-  #{hope-config.$rtl-selector} & {
-    right: unset;
-    left: 1rem;
-  }
-
   .icon-wrapper {
     display: inline-block;
     vertical-align: middle;
 
     width: 1.5rem;
     height: 1.5rem;
-    margin-left: 0.4rem;
+    margin-inline-start: 0.4rem;
     border-radius: 0.75rem;
 
     background: var(--vp-tc);

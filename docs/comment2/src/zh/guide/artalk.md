@@ -9,6 +9,30 @@ Artalk 是一款简洁的自托管评论系统，你可以在服务器上轻松�
 
 <!-- more -->
 
+## 安装
+
+::: code-tabs#shell
+
+@tab pnpm
+
+```bash
+pnpm add -D artalk
+```
+
+@tab yarn
+
+```bash
+yarn add -D artalk
+```
+
+@tab npm
+
+```bash
+npm i -D artalk
+```
+
+:::
+
 ## 部署 Artalk 服务端
 
 请参见 [Artalk 文档](https://artalk.js.org/guide/deploy.html)。

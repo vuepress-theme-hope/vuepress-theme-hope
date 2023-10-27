@@ -1,13 +1,10 @@
-import { createRequire } from "node:module";
-
 import type { App } from "@vuepress/core";
-import { path } from "@vuepress/utils";
-import { isPlainObject } from "vuepress-shared/node";
+import { getRealPath, isPlainObject } from "vuepress-shared/node";
 
 import type { MarkdownEnhanceOptions } from "../options.js";
 import { CLIENT_FOLDER } from "../utils.js";
 
-const require = createRequire(import.meta.url);
+const { url } = import.meta;
 
 export const prepareConfigFile = async (
   app: App,
@@ -47,8 +44,9 @@ export const prepareConfigFile = async (
     // TODO: Remove this in v2 stable
     if (legacy) {
       imports.push(
-        `import { hasGlobalComponent } from "${path.resolve(
-          require.resolve("vuepress-shared/client"),
+        `import { hasGlobalComponent } from "${getRealPath(
+          "vuepress-shared/client",
+          url,
         )}";`,
         `import { CodeGroup, CodeGroupItem } from "${CLIENT_FOLDER}compact/index.js";`,
       );
@@ -104,15 +102,15 @@ export const prepareConfigFile = async (
     );
   }
 
-  if (getStatus("presentation")) {
+  if (getStatus("revealJs")) {
     imports.push(
-      `import "${path.resolve(require.resolve("reveal.js/dist/reveal.css"))}";`,
-      `import Presentation from "${CLIENT_FOLDER}components/Presentation.js";`,
-      `import { injectRevealConfig } from "${CLIENT_FOLDER}index.js";`,
+      `import "${getRealPath("reveal.js/dist/reveal.css", url)}";`,
+      `import RevealJs from "${CLIENT_FOLDER}components/RevealJs.js";`,
+      `import { injectRevealJsConfig } from "${CLIENT_FOLDER}index.js";`,
     );
     enhances.push(
-      `injectRevealConfig(app);`,
-      `app.component("Presentation", Presentation);`,
+      `injectRevealJsConfig(app);`,
+      `app.component("RevealJs", RevealJs);`,
     );
   }
 
@@ -133,7 +131,7 @@ export const prepareConfigFile = async (
 
   if (getStatus("katex")) {
     imports.push(
-      `import "${path.resolve(require.resolve("katex/dist/katex.min.css"))}";`,
+      `import "${getRealPath("katex/dist/katex.min.css", url)}";`,
       `import "${CLIENT_FOLDER}styles/katex.scss";`,
     );
 

@@ -1,6 +1,6 @@
 {
   "name": "vuepress-plugin-md-enhance",
-  "version": "2.0.0-beta.235",
+  "version": "2.0.0-beta.242",
   "description": "Markdown enhancement plugin for vuepress",
   "keywords": [
     "vuepress",
@@ -57,8 +57,8 @@
     "./SlidePage": "./lib/client/SlidePage.js",
     "./package.json": "./package.json"
   },
-  "main": "lib/node/index.js",
-  "types": "lib/node/index.d.ts",
+  "main": "./lib/node/index.js",
+  "types": "./lib/node/index.d.ts",
   "files": [
     "lib"
   ],
@@ -71,67 +71,96 @@
     "dev:ts": "tsc -b tsconfig.build.json --watch"
   },
   "engines": {
-    "node": ">=16.19.0",
+    "node": ">=18.16.0",
     "npm": ">=8",
     "pnpm": ">=7"
   },
   "dependencies": {
-    "@babel/core": "^7.22.10",
-    "@mdit/plugin-align": "^0.4.8",
-    "@mdit/plugin-attrs": "^0.4.8",
-    "@mdit/plugin-container": "^0.4.8",
-    "@mdit/plugin-figure": "^0.4.8",
-    "@mdit/plugin-footnote": "^0.4.8",
-    "@mdit/plugin-img-lazyload": "^0.4.8",
-    "@mdit/plugin-img-mark": "^0.4.8",
-    "@mdit/plugin-img-size": "^0.4.8",
-    "@mdit/plugin-include": "^0.4.8",
-    "@mdit/plugin-katex": "^0.4.8",
-    "@mdit/plugin-mark": "^0.4.8",
-    "@mdit/plugin-mathjax": "^0.4.8",
-    "@mdit/plugin-stylize": "^0.4.8",
-    "@mdit/plugin-sub": "^0.4.8",
-    "@mdit/plugin-sup": "^0.4.8",
-    "@mdit/plugin-tab": "^0.4.8",
-    "@mdit/plugin-tasklist": "^0.4.8",
-    "@mdit/plugin-tex": "^0.4.8",
-    "@mdit/plugin-uml": "^0.4.8",
-    "@types/js-yaml": "^4.0.5",
-    "@types/markdown-it": "^13.0.0",
-    "@vue/repl": "^2.5.8",
-    "@vuepress/client": "2.0.0-beta.66",
-    "@vuepress/shared": "2.0.0-beta.66",
-    "@vuepress/utils": "2.0.0-beta.66",
-    "@vueuse/core": "^10.3.0",
+    "@babel/core": "^7.23.2",
+    "@mdit/plugin-align": "^0.5.2",
+    "@mdit/plugin-attrs": "^0.5.2",
+    "@mdit/plugin-container": "^0.5.2",
+    "@mdit/plugin-figure": "^0.5.2",
+    "@mdit/plugin-footnote": "^0.5.2",
+    "@mdit/plugin-img-lazyload": "^0.5.2",
+    "@mdit/plugin-img-mark": "^0.5.2",
+    "@mdit/plugin-img-size": "^0.5.2",
+    "@mdit/plugin-include": "^0.5.2",
+    "@mdit/plugin-katex": "^0.5.2",
+    "@mdit/plugin-mark": "^0.5.2",
+    "@mdit/plugin-mathjax": "^0.5.2",
+    "@mdit/plugin-stylize": "^0.5.2",
+    "@mdit/plugin-sub": "^0.5.2",
+    "@mdit/plugin-sup": "^0.5.2",
+    "@mdit/plugin-tab": "^0.5.2",
+    "@mdit/plugin-tasklist": "^0.5.2",
+    "@mdit/plugin-tex": "^0.5.2",
+    "@mdit/plugin-uml": "^0.5.2",
+    "@types/js-yaml": "^4.0.8",
+    "@types/markdown-it": "^13.0.5",
+    "@vuepress/client": "2.0.0-beta.67",
+    "@vuepress/shared": "2.0.0-beta.67",
+    "@vuepress/utils": "2.0.0-beta.67",
+    "@vueuse/core": "^10.5.0",
     "balloon-css": "^1.2.0",
-    "chart.js": "^4.3.3",
-    "echarts": "^5.4.3",
-    "flowchart.ts": "^1.0.0",
     "js-yaml": "^4.1.0",
-    "katex": "^0.16.8",
-    "markdown-it": "^13.0.1",
-    "mermaid": "10.3.1",
-    "reveal.js": "^4.5.0",
+    "markdown-it": "^13.0.2",
     "sandpack-vue3": "^3.1.6",
-    "vue": "^3.3.4",
-    "vue-router": "^4.2.4",
+    "vue": "^3.3.7",
+    "vue-router": "^4.2.5",
     "vuepress-plugin-sass-palette": "workspace:*",
     "vuepress-shared": "workspace:*"
   },
   "devDependencies": {
-    "@types/babel__core": "7.20.1",
-    "@vuepress/bundler-vite": "2.0.0-beta.66",
-    "@vuepress/core": "2.0.0-beta.66",
-    "@vuepress/markdown": "2.0.0-beta.66",
-    "typescript": "5.1.6"
+    "@types/babel__core": "7.20.3",
+    "@vuepress/bundler-vite": "2.0.0-beta.67",
+    "@vuepress/core": "2.0.0-beta.67",
+    "@vuepress/markdown": "2.0.0-beta.67",
+    "typescript": "5.2.2"
   },
   "peerDependencies": {
+    "@types/reveal.js": "^4.4.5",
+    "@vue/repl": "^2.5.8",
+    "chart.js": "^4.4.0",
+    "echarts": "^5.4.3",
+    "flowchart.ts": "^1.0.1",
+    "katex": "^0.16.9",
+    "mathjax-full": "^3.2.2",
+    "mermaid": "^10.5.0",
+    "reveal.js": "^5.0.0",
     "sass-loader": "^13.3.2",
-    "vuepress": "2.0.0-beta.66",
-    "vuepress-vite": "2.0.0-beta.66",
-    "vuepress-webpack": "2.0.0-beta.66"
+    "vuepress": "2.0.0-beta.67",
+    "vuepress-vite": "2.0.0-beta.67",
+    "vuepress-webpack": "2.0.0-beta.67"
   },
   "peerDependenciesMeta": {
+    "@types/reveal.js": {
+      "optional": true
+    },
+    "@vue/repl": {
+      "optional": true
+    },
+    "chart.js": {
+      "optional": true
+    },
+    "echarts": {
+      "optional": true
+    },
+    "flowchart.ts": {
+      "optional": true
+    },
+    "katex": {
+      "optional": true
+    },
+    "mathjax-full": {
+      "optional": true
+    },
+    "mermaid": {
+      "optional": true
+    },
+    "reveal.js": {
+      "optional": true
+    },
     "sass-loader": {
       "optional": true
     },

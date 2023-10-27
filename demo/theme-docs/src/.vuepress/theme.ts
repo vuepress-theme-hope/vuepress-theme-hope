@@ -80,6 +80,7 @@ export default hopeTheme(
       mdEnhance: {
         align: true,
         attrs: true,
+        card: true,
         chart: true,
         codetabs: true,
         demo: true,
@@ -96,7 +97,9 @@ export default hopeTheme(
         playground: {
           presets: ["ts", "vue"],
         },
-        presentation: ["highlight", "math", "search", "notes", "zoom"],
+        revealJs: {
+          plugins: ["highlight", "math", "search", "notes", "zoom"],
+        },
         stylize: [
           {
             matcher: "Recommended",

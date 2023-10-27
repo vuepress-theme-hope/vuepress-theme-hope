@@ -69,7 +69,7 @@ withDefaults(
   border-radius: 0.4rem;
   color: var(--c-text);
 
-  text-align: left;
+  text-align: start;
 
   @media (max-width: 419px) {
     border-radius: 0;
@@ -92,7 +92,7 @@ withDefaults(
 
       position: absolute;
       bottom: 0;
-      left: 0;
+      inset-inline-start: 0;
 
       width: 100%;
       height: 2px;
@@ -122,7 +122,7 @@ withDefaults(
     flex-shrink: 0;
 
     > span {
-      margin-right: 0.5em;
+      margin-inline-end: 0.5em;
       line-height: 1.8;
     }
   }

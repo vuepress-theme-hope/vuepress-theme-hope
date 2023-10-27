@@ -9,6 +9,38 @@ icon: square-root-variable
 
 ## 配置
 
+在你的项目中安装相关的 $\TeX$ 包 [katex](https://katex.org) 或 [mathjax-full](https://docs.mathjax.org/en/latest/):
+
+::: code-tabs#shell
+
+@tab pnpm
+
+```bash
+pnpm add -D katex
+# or
+pnpm add -D mathjax-full
+```
+
+@tab yarn
+
+```bash
+yarn add -D katex
+# or
+yarn add -D mathjax-full
+```
+
+@tab npm
+
+```bash
+npm i -D katex
+# or
+npm i -D mathjax-full
+```
+
+:::
+
+之后启用它:
+
 ::: code-tabs#language
 
 @tab TS

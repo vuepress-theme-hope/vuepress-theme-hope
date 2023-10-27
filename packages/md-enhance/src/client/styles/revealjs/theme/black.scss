@@ -1,0 +1,46 @@
+/**
+ * Black theme for reveal.js. This is the opposite of the 'white' theme.
+ *
+ * By Hakim El Hattab, http://hakim.se
+ */
+
+@use "sass:color";
+@use "@sass-palette/hope-config";
+@use "helper/helper";
+@use "highlight/dark";
+
+$link-color: #42affa;
+
+@include helper.theme(
+  "black",
+  (
+    background-color: #191919,
+    main-color: #fff,
+    heading-color: #fff,
+    main-font-size: 42px,
+    main-font: (
+      "Source Sans Pro",
+      helvetica,
+      sans-serif,
+    ),
+    heading-font: (
+      "Source Sans Pro",
+      helvetica,
+      sans-serif,
+    ),
+    heading-text-shadow: none,
+    heading-letter-spacing: normal,
+    heading-text-transform: uppercase,
+    heading-font-weight: 600,
+    link-color: $link-color,
+    link-color-hover: color.scale($link-color, $lightness: 15%),
+    selection-background-color: color.scale($link-color, $lightness: 25%),
+    heading1-size: 2.5em,
+    heading2-size: 1.6em,
+    heading3-size: 1.3em,
+    heading4-size: 1em,
+  )
+) {
+  @include dark.highlight;
+  @include helper.lightmode-text-color(#222);
+}

@@ -1,5 +1,4 @@
 import type { PluginFunction } from "@vuepress/core";
-import { getDirname, path } from "@vuepress/utils";
 import { useSassPalettePlugin } from "vuepress-plugin-sass-palette";
 import {
   addViteSsrNoExternal,
@@ -11,14 +10,12 @@ import {
 
 import { copyCodeLocales } from "./locales.js";
 import type { CopyCodeOptions } from "./options.js";
-import { PLUGIN_NAME, logger } from "./utils.js";
-
-const __dirname = getDirname(import.meta.url);
+import { CLIENT_FOLDER, PLUGIN_NAME, logger } from "./utils.js";
 
 export const copyCodePlugin =
   (options: CopyCodeOptions = {}): PluginFunction =>
   (app) => {
-    checkVersion(app, PLUGIN_NAME, "2.0.0-beta.66");
+    checkVersion(app, PLUGIN_NAME, "2.0.0-beta.67");
 
     if (app.env.isDebug) logger.info("Options:", options);
 
@@ -51,6 +48,6 @@ export const copyCodePlugin =
         addViteSsrNoExternal(bundlerOptions, app, "vuepress-shared");
       },
 
-      clientConfigFile: path.resolve(__dirname, "../client/config.js"),
+      clientConfigFile: `${CLIENT_FOLDER}config.js`,
     };
   };

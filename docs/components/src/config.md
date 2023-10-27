@@ -20,7 +20,7 @@ icon: gears
     | "Share"
     | "StackBlitz"
     | "SiteInfo"
-    // | "VidStack"
+    | "VidStack"
     | "VideoPlayer"
     | "XiGua"
     | "YouTube";
@@ -43,7 +43,7 @@ Available component names:
 - `"Share"`
 - `"StackBlitz"`
 - `"SiteInfo"`
-<!-- - `"VidStack"` -->
+- `"VidStack"`
 - `"VideoPlayer"`
 - `"XiGua"`
 - `"YouTube"`
@@ -128,15 +128,6 @@ Location to pdfjs viewer.
 ## rootComponents
 
 Components to be mounted at root.
-
-### rootComponents.addThis
-
-- Type: `string | false`
-- Default: `false`
-- Details:
-  - [Guide → AddThis](./guide/addthis.md#usage)
-
-Public ID of addThis.
 
 ### rootComponents.backToTop
 

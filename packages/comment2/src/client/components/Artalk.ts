@@ -46,12 +46,12 @@ export default defineComponent({
     const loaded = ref(false);
     const artalkContainer = shallowRef<HTMLDivElement>();
 
-    let artalk: Artalk.default | null = null;
+    let artalk: Artalk | null = null;
 
     const enableArtalk = isString(artalkOptions.server);
 
     const initArtalk = async (): Promise<void> => {
-      const [{ default: _Artalk }] = await Promise.all([
+      const [{ default: Artalk }] = await Promise.all([
         import(/* webpackChunkName: "artalk" */ "artalk/dist/Artalk.es.js"),
         new Promise<void>((resolve) => {
           setTimeout(() => {
@@ -59,9 +59,6 @@ export default defineComponent({
           }, artalkOptions.delay || 800);
         }),
       ]);
-
-      // FIXME: Types issue
-      const Artalk = _Artalk as unknown as typeof _Artalk.default;
 
       loaded.value = true;
       await nextTick();
@@ -90,7 +87,7 @@ export default defineComponent({
 
     onMounted(() => {
       watch(
-        () => page.value.path,
+        () => props.identifier,
         async () => {
           try {
             artalk?.destroy();

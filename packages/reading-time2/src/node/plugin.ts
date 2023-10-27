@@ -1,5 +1,9 @@
 import type { Page, PluginFunction } from "@vuepress/core";
-import { checkVersion, getLocales } from "vuepress-shared/node";
+import {
+  addViteSsrNoExternal,
+  checkVersion,
+  getLocales,
+} from "vuepress-shared/node";
 
 import { readingTimeLocales } from "./locales.js";
 import type { ReadingTimeOptions } from "./options.js";
@@ -11,7 +15,7 @@ import type { ReadingTime } from "../shared/index.js";
 export const readingTimePlugin =
   (options: ReadingTimeOptions): PluginFunction =>
   (app) => {
-    checkVersion(app, PLUGIN_NAME, "2.0.0-beta.66");
+    checkVersion(app, PLUGIN_NAME, "2.0.0-beta.67");
 
     if (app.env.isDebug) logger.info("Options:", options);
 
@@ -32,6 +36,10 @@ export const readingTimePlugin =
           page.content,
           options.wordPerMinute || 300,
         );
+      },
+
+      extendsBundlerOptions: (bundlerOptions: unknown, app): void => {
+        addViteSsrNoExternal(bundlerOptions, app, "vuepress-shared");
       },
     };
   };

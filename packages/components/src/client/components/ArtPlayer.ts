@@ -48,8 +48,18 @@ const BOOLEAN_FALSE_ATTRS = [
   "subtitle-offset",
 ] as const;
 
-// NOTE: This should be updated with https://github.com/zhw2590582/ArtPlayer/blob/master/packages/artplayer/src/i18n/index.js
-const SUPPORTED_LANG_NAME = ["en", "pl", "cs", "es", "fa", "fr", "id", "ru"];
+// Note: This should be updated with https://github.com/zhw2590582/ArtPlayer/blob/master/packages/artplayer/src/i18n/index.js
+const SUPPORTED_LANG_NAME = [
+  "en",
+  "pl",
+  "cs",
+  "es",
+  "fa",
+  "fr",
+  "id",
+  "ru",
+  "tr",
+];
 const SUPPORTED_LANG_CODE = ["zh-cn", "zh-tw"];
 
 type KebabCaseToCamelCase<
@@ -193,7 +203,7 @@ export default defineComponent({
 
   setup(props, { attrs }) {
     const lang = usePageLang();
-    const { el, width, height } = useSize<HTMLDivElement>(props, 0);
+    const { el, width, height, resize } = useSize<HTMLDivElement>(props, 0);
 
     const loaded = ref(false);
     let artPlayerInstance: Artplayer;
@@ -244,6 +254,7 @@ export default defineComponent({
               break;
 
             case "flv":
+            case "ts":
               customType[initOptions.type] ??= (
                 video: HTMLVideoElement,
                 src: string,
@@ -283,6 +294,7 @@ export default defineComponent({
 
       artPlayerInstance = (await props.customPlayer(player)) || player;
       loaded.value = true;
+      resize();
     });
 
     onUnmounted(() => {

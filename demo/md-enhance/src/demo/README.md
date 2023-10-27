@@ -20,7 +20,7 @@ title: Get Started
 - [Mark](mark.md)
 - [Mermaid](mermaid.md)
 - [Playground](playground.md)
-- [Presentation](presentation.md)
+- [Presentation](revealjs.md)
 - [Sandpack](sandpack.md)
 - [Stylized](stylized.md)
 - [Subscript and Superscript](sup-sub.md)

@@ -1,6 +1,5 @@
 {
   "name": "theme-blog-demo",
-  "version": "2.0.0-beta.181",
   "type": "module",
   "private": true,
   "description": "Blog demo for vuepress-theme-hope",
@@ -16,15 +15,23 @@
     "demo:webpack-dev": "vuepress-webpack dev src"
   },
   "devDependencies": {
-    "@vuepress/cli": "2.0.0-beta.66",
-    "@vuepress/client": "2.0.0-beta.66",
-    "@vuepress/plugin-docsearch": "2.0.0-beta.66",
-    "@vuepress/utils": "2.0.0-beta.66",
+    "@vue/repl": "2.6.1",
+    "@vuepress/cli": "2.0.0-beta.67",
+    "@vuepress/client": "2.0.0-beta.67",
+    "@vuepress/plugin-docsearch": "2.0.0-beta.67",
+    "@vuepress/utils": "2.0.0-beta.67",
+    "@waline/client": "2.15.8",
+    "chart.js": "4.4.0",
+    "echarts": "5.4.3",
+    "katex": "0.16.9",
+    "mathjax-full": "3.2.2",
+    "mermaid": "10.6.0",
+    "reveal.js": "5.0.0",
     "sass-loader": "13.3.2",
-    "vue": "3.3.4",
+    "vue": "3.3.7",
     "vuepress-shared": "workspace:*",
     "vuepress-theme-hope": "workspace:*",
-    "vuepress-vite": "2.0.0-beta.66",
-    "vuepress-webpack": "2.0.0-beta.66"
+    "vuepress-vite": "2.0.0-beta.67",
+    "vuepress-webpack": "2.0.0-beta.67"
   }
 }

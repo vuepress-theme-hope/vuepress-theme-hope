@@ -13,7 +13,7 @@ The theme provides you code tabs support.
 
 <!-- more -->
 
-## Config
+## Settings
 
 ::: code-tabs#language
 

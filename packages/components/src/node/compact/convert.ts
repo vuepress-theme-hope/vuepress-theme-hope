@@ -21,18 +21,16 @@ export const convertOptions = (
   });
   deprecatedLogger({
     options,
-    deprecatedOption: "addThis",
-    newOption: "rootComponents.addThis",
-  });
-  deprecatedLogger({
-    options,
     deprecatedOption: "backToTop",
     newOption: "rootComponents.backToTop",
   });
 
   droppedLogger(options, "notice", "", "rootComponents.notice");
+  droppedLogger(options, "addThis");
 
   if (isPlainObject(options.rootComponents)) {
+    droppedLogger(<Record<string, unknown>>options.rootComponents, "addThis");
+
     if (isNumber(options.rootComponents.backToTop)) {
       logger.error(
         `"${colors.magenta(

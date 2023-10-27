@@ -2,10 +2,7 @@
   position: fixed;
   top: 0;
   bottom: 0;
-
-  // NOTE: Compatible with Android Wechat
-  // inset-inline-start: 0;
-  left: 0;
+  inset-inline-start: 0;
 
   // this prevents footer issue on tablet
   z-index: 1;
@@ -51,7 +48,7 @@
   }
 
   @media (min-width: hope-config.$pc) {
-    // this value should be greater than footer height, and users should manually override it
+    // WARNING: this value should be greater than footer height, and users should manually override it
     padding-bottom: 3rem;
     box-shadow: none;
     font-size: 1rem;
@@ -59,11 +56,6 @@
 
   @media print {
     display: none;
-  }
-
-  #{hope-config.$rtl-selector} & {
-    right: 0;
-    left: unset;
   }
 
   a {
@@ -83,13 +75,8 @@
 
 .vp-sidebar-mask {
   position: fixed;
-  top: 0;
-  left: 0;
+  inset: 0;
   z-index: 9;
-
-  width: 100vw;
-  height: 100vh;
-
   background: rgb(0 0 0 / 15%);
 
   &.fade-enter-active,

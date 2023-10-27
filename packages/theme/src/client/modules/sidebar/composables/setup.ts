@@ -1,4 +1,5 @@
-import { usePageFrontmatter } from "@vuepress/client";
+import { usePageData, usePageFrontmatter } from "@vuepress/client";
+import { computedWithControl } from "@vueuse/core";
 import type { ComputedRef, InjectionKey } from "vue";
 import { computed, inject, provide } from "vue";
 
@@ -22,6 +23,7 @@ export const sidebarItemsSymbol: InjectionKey<SidebarItemsRef> = Symbol(
 export const setupSidebarItems = (): void => {
   const frontmatter = usePageFrontmatter<ThemeNormalPageFrontmatter>();
   const themeLocale = useThemeLocaleData();
+  const page = usePageData();
 
   // get sidebar config from frontmatter > themeConfig
   const sidebarConfig = computed(() =>
@@ -33,8 +35,14 @@ export const setupSidebarItems = (): void => {
     () => frontmatter.value.headerDepth ?? themeLocale.value.headerDepth ?? 2,
   );
 
-  const sidebarItems = computed(() =>
-    resolveSidebarItems(sidebarConfig.value, headerDepth.value),
+  const sidebarItems = computedWithControl(
+    () => [
+      sidebarConfig.value,
+      headerDepth.value,
+      page.value.path,
+      __VUEPRESS_DEV__ ? page.value.headers : null,
+    ],
+    () => resolveSidebarItems(sidebarConfig.value, headerDepth.value),
   );
 
   provide(sidebarItemsSymbol, sidebarItems);

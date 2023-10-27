@@ -31,14 +31,10 @@ export default defineComponent({
 
     const katexRender = () => {
       try {
-        result.value = // FIXME: Type issues
-          (katex as unknown as typeof katex.default).renderToString(
-            input.value,
-            {
-              displayMode: true,
-              throwOnError: true,
-            },
-          );
+        result.value = katex.renderToString(input.value, {
+          displayMode: true,
+          throwOnError: true,
+        });
         inError.value = false;
       } catch (err) {
         result.value = (<Error>err).toString();

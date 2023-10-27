@@ -1,12 +1,10 @@
-import { createRequire } from "node:module";
-
 import type { App } from "@vuepress/core";
-import { path } from "@vuepress/utils";
+import { getRealPath } from "vuepress-shared/node";
 
 import type { ThemeStatus } from "../../config/index.js";
 import { CLIENT_FOLDER } from "../../utils.js";
 
-const require = createRequire(import.meta.url);
+const { url } = import.meta;
 
 /**
  * @private
@@ -23,8 +21,9 @@ export const prepareSeparatedConfigFile = (
 
   if (enableAutoCatalog) {
     imports.push(
-      `import { defineAutoCatalogIconComponent } from "${path.resolve(
-        require.resolve("vuepress-plugin-auto-catalog/client"),
+      `import { defineAutoCatalogIconComponent } from "${getRealPath(
+        "vuepress-plugin-auto-catalog/client",
+        url,
       )}"`,
     );
     actions.push(`defineAutoCatalogIconComponent(HopeIcon);`);
@@ -55,8 +54,9 @@ export const prepareSeparatedConfigFile = (
 
   if (enableSlide) {
     imports.push(
-      `import Slide from "${path.resolve(
-        require.resolve("vuepress-plugin-md-enhance/SlidePage"),
+      `import Slide from "${getRealPath(
+        "vuepress-plugin-md-enhance/SlidePage",
+        url,
       )}";`,
     );
     layouts.push("Slide,");
@@ -66,9 +66,7 @@ export const prepareSeparatedConfigFile = (
     `theme-hope/config.js`,
     `\
 import { defineClientConfig } from "@vuepress/client";
-import { VPLink } from "${path.resolve(
-      require.resolve("vuepress-shared/client"),
-    )}";
+import { VPLink } from "${getRealPath("vuepress-shared/client", url)}";
 
 import { HopeIcon, Layout, NotFound, useScrollPromise, injectDarkmode, setupDarkmode, setupSidebarItems } from "${CLIENT_FOLDER}export.js";
 

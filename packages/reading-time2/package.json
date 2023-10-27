@@ -1,6 +1,6 @@
 {
   "name": "vuepress-plugin-reading-time2",
-  "version": "2.0.0-beta.235",
+  "version": "2.0.0-beta.242",
   "description": "Reading time plugin for VuePress",
   "keywords": [
     "vuepress",
@@ -30,8 +30,8 @@
     "./client": "./lib/client/index.js",
     "./package.json": "./package.json"
   },
-  "main": "lib/node/index.js",
-  "types": "lib/node/index.d.ts",
+  "main": "./lib/node/index.js",
+  "types": "./lib/node/index.d.ts",
   "files": [
     "lib"
   ],
@@ -42,22 +42,22 @@
     "dev:ts": "tsc -b tsconfig.build.json --watch"
   },
   "engines": {
-    "node": ">=16.19.0",
+    "node": ">=18.16.0",
     "npm": ">=8",
     "pnpm": ">=7"
   },
   "dependencies": {
-    "@vuepress/client": "2.0.0-beta.66",
-    "vue": "^3.3.4",
+    "@vuepress/client": "2.0.0-beta.67",
+    "vue": "^3.3.7",
     "vuepress-shared": "workspace:*"
   },
   "devDependencies": {
-    "@vuepress/core": "2.0.0-beta.66"
+    "@vuepress/core": "2.0.0-beta.67"
   },
   "peerDependencies": {
-    "vuepress": "2.0.0-beta.66",
-    "vuepress-vite": "2.0.0-beta.66",
-    "vuepress-webpack": "2.0.0-beta.66"
+    "vuepress": "2.0.0-beta.67",
+    "vuepress-vite": "2.0.0-beta.67",
+    "vuepress-webpack": "2.0.0-beta.67"
   },
   "peerDependenciesMeta": {
     "vuepress": {

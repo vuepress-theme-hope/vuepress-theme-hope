@@ -1,6 +1,6 @@
 {
   "name": "vuepress-plugin-feed2",
-  "version": "2.0.0-beta.235",
+  "version": "2.0.0-beta.242",
   "description": "Feed plugin for vuepress-theme-hope",
   "keywords": [
     "vuepress",
@@ -29,8 +29,8 @@
     "./templates/*": "./templates/*",
     "./package.json": "./package.json"
   },
-  "main": "lib/node/index.js",
-  "types": "lib/node/index.d.ts",
+  "main": "./lib/node/index.js",
+  "types": "./lib/node/index.d.ts",
   "files": [
     "lib",
     "templates"
@@ -42,25 +42,25 @@
     "dev:ts": "tsc -b tsconfig.build.json --watch"
   },
   "engines": {
-    "node": ">=16.19.0",
+    "node": ">=18.16.0",
     "npm": ">=8",
     "pnpm": ">=7"
   },
   "dependencies": {
-    "@vuepress/shared": "2.0.0-beta.66",
-    "@vuepress/utils": "2.0.0-beta.66",
+    "@vuepress/shared": "2.0.0-beta.67",
+    "@vuepress/utils": "2.0.0-beta.67",
     "cheerio": "1.0.0-rc.12",
     "vuepress-shared": "workspace:*",
     "xml-js": "^1.6.11"
   },
   "devDependencies": {
-    "@vuepress/core": "2.0.0-beta.66",
-    "@vuepress/plugin-git": "2.0.0-beta.66"
+    "@vuepress/core": "2.0.0-beta.67",
+    "@vuepress/plugin-git": "2.0.0-beta.67"
   },
   "peerDependencies": {
-    "vuepress": "2.0.0-beta.66",
-    "vuepress-vite": "2.0.0-beta.66",
-    "vuepress-webpack": "2.0.0-beta.66"
+    "vuepress": "2.0.0-beta.67",
+    "vuepress-vite": "2.0.0-beta.67",
+    "vuepress-webpack": "2.0.0-beta.67"
   },
   "peerDependenciesMeta": {
     "vuepress": {

@@ -10,7 +10,7 @@ const adminMultiplePassword = ["1234", "abcd"];
 const userSinglePassword = "5678";
 const userMultiplePassword = ["5678", "apple"];
 
-describe.skip("Should resolve encrypt option correctly", () => {
+describe("Should resolve encrypt option correctly", () => {
   it("should encrypt admin password", () => {
     const result1 = getEncryptConfig({ admin: adminSinglePassword });
 

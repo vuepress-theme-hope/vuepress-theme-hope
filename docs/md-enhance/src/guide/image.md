@@ -7,7 +7,7 @@ Improve image syntax in Markdown to support color scheme and size.
 
 <!-- more -->
 
-## Config
+## Settings
 
 ::: code-tabs#language
 

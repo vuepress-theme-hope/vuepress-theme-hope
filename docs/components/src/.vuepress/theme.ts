@@ -86,7 +86,7 @@ export default theme("components", {
         "Share",
         "SiteInfo",
         "StackBlitz",
-        // "VidStack",
+        "VidStack",
         "VideoPlayer",
         "XiGua",
         "YouTube",
@@ -99,7 +99,6 @@ export default theme("components", {
       },
 
       rootComponents: {
-        addThis: "ra-5f829c59e6c6bc9a",
         ...(IS_NETLIFY
           ? {}
           : {

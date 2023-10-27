@@ -25,7 +25,7 @@ tag:
 - `"Replit"`
 - `"Share"`
 - `"StackBlitz"`
-<!-- - `"VidStack"` -->
+- `"VidStack"`
 - `"SiteInfo"`
 - `"VideoPlayer"`
 - `"XiGua"`
@@ -33,7 +33,7 @@ tag:
 
 你可以将 `plugin.components.components` 设置为需要的组件数组，默认情况下为 `["Badge"]`。
 
-同时，你可以设置 `plugin.components.rootComponents` 来启用一些根组件，例如 addThis 和 notice。
+同时，你可以设置 `plugin.components.rootComponents` 来启用一些根组件，例如 Notice。
 
 ::: info
 
