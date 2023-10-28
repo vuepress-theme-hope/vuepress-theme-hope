@@ -47,10 +47,6 @@
     }
   }
 
-  .icon {
-    margin-inline-end: 0.25em;
-  }
-
   .vp-sidebar-title {
     flex: 1;
   }
@@ -88,10 +84,6 @@ button.vp-sidebar-heading {
   font-weight: 400;
   font-size: 1em;
   line-height: 1.5;
-
-  .icon {
-    margin-inline-end: 0.25em;
-  }
 
   &:hover {
     background: var(--bg-color-secondary);
