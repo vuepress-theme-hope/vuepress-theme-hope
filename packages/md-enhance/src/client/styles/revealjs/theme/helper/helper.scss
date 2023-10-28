@@ -70,6 +70,8 @@ $default-variables: meta.module-variables("vars");
     "selection-background-color"
   );
   $selection-color: map.get($variables, "selection-color");
+  $overlay-element-bg-color: map.get($variables, "overlay-element-bg-color");
+  $overlay-element-fg-color: map.get($variables, "overlay-element-fg-color");
 
   .reveal[data-theme="#{$theme}"] {
     --r-background-color: #{$background-color};
@@ -95,6 +97,8 @@ $default-variables: meta.module-variables("vars");
     --r-link-color-hover: #{$link-color-hover};
     --r-selection-background-color: #{$selection-background-color};
     --r-selection-color: #{$selection-color};
+    --r-overlay-element-bg-color: #{$overlay-element-bg-color};
+    --r-overlay-element-fg-color: #{$overlay-element-fg-color};
 
     @content;
 

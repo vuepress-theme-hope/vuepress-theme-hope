@@ -39,6 +39,16 @@ $link-color: #2a76dd;
     heading2-size: 1.6em,
     heading3-size: 1.3em,
     heading4-size: 1em,
+    overlay-element-bg-color: (
+      240,
+      240,
+      240,
+    ),
+    overlay-element-fg-color: (
+      0,
+      0,
+      0,
+    ),
   )
 ) {
   @include light.highlight;

@@ -36,6 +36,16 @@ $link-color: #51483d;
     link-color: $link-color,
     link-color-hover: color.scale($link-color, $lightness: 20%),
     selection-background-color: #26351c,
+    overlay-element-bg-color: (
+      240,
+      240,
+      240,
+    ),
+    overlay-element-fg-color: (
+      0,
+      0,
+      0,
+    ),
   )
 ) {
   @include light.highlight;
