@@ -1,5 +1,9 @@
 import type { Page, PluginFunction } from "@vuepress/core";
-import { checkVersion, getLocales } from "vuepress-shared/node";
+import {
+  addViteSsrNoExternal,
+  checkVersion,
+  getLocales,
+} from "vuepress-shared/node";
 
 import { readingTimeLocales } from "./locales.js";
 import type { ReadingTimeOptions } from "./options.js";
@@ -32,6 +36,10 @@ export const readingTimePlugin =
           page.content,
           options.wordPerMinute || 300,
         );
+      },
+
+      extendsBundlerOptions: (bundlerOptions: unknown, app): void => {
+        addViteSsrNoExternal(bundlerOptions, app, "vuepress-shared");
       },
     };
   };

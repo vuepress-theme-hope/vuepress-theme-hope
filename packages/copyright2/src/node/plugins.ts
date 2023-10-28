@@ -1,6 +1,11 @@
 import type { Page, PluginFunction } from "@vuepress/core";
 import { colors } from "@vuepress/utils";
-import { checkVersion, getLocales, isFunction } from "vuepress-shared/node";
+import {
+  addViteSsrNoExternal,
+  checkVersion,
+  getLocales,
+  isFunction,
+} from "vuepress-shared/node";
 
 import { convertOptions } from "./compact/index.js";
 import { copyrightLocales } from "./locales.js";
@@ -75,6 +80,10 @@ export const copyrightPlugin =
           ...(authorText ? { author: authorText } : {}),
           ...(licenseText ? { license: licenseText } : {}),
         };
+      },
+
+      extendsBundlerOptions: (bundlerOptions: unknown, app): void => {
+        addViteSsrNoExternal(bundlerOptions, app, "vuepress-shared");
       },
 
       clientConfigFile: `${CLIENT_FOLDER}config.js`,

@@ -7,7 +7,7 @@ Let the Markdown file in your VuePress site support footnotes.
 
 <!-- more -->
 
-## Config
+## Settings
 
 ::: code-tabs#language
 

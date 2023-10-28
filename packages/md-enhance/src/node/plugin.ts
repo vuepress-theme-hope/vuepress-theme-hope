@@ -97,7 +97,12 @@ export const mdEnhancePlugin =
       const enabled =
         key in options ? Boolean(options[key]) : (gfm && options.gfm) || false;
 
-      return enabled && pkg ? isInstalled(pkg) : true;
+      return (
+        enabled &&
+        (pkg
+          ? isInstalled(pkg, Boolean(options[key]) || (gfm && options.gfm))
+          : true)
+      );
     };
 
     const locales = getLocales({
@@ -115,7 +120,7 @@ export const mdEnhancePlugin =
     const enableInclude = getStatus("include");
     const enableTasklist = getStatus("tasklist", true);
     const enableMermaid = getStatus("mermaid", false, "mermaid");
-    const enableRevealJs = getStatus("revealjs", false, "reveal.js");
+    const enableRevealJs = getStatus("revealJs", false, "reveal.js");
     const enableKatex = getStatus("katex", false, "katex");
     const enableMathjax = getStatus("mathjax", true, "mathjax-full");
     const enableVuePlayground = getStatus("vuePlayground", false, "@vue/repl");
@@ -166,8 +171,8 @@ export const mdEnhancePlugin =
             ...(isPlainObject(options.mathjax) ? options.mathjax : {}),
           });
 
-    const revealJsOptions = isPlainObject(options.revealjs)
-      ? options.revealjs
+    const revealJsOptions = isPlainObject(options.revealJs)
+      ? options.revealJs
       : {};
 
     useSassPalettePlugin(app, { id: "hope" });
@@ -370,6 +375,7 @@ export const mdEnhancePlugin =
       extendsPage: (page, app): void => {
         if (enableLinksCheck && isAppInitialized)
           linksCheck(page, app, isIgnoreLink);
+
         if (enableInclude)
           page.deps.push(...(<string[]>page.markdownEnv["includedFiles"]));
       },
@@ -380,18 +386,20 @@ export const mdEnhancePlugin =
           app.pages.forEach((page) => linksCheck(page, app, isIgnoreLink));
       },
 
-      onPrepared: (app): Promise<void> =>
-        Promise.all([
-          ...(enableMathjax
-            ? [prepareMathjaxStyleFile(app, mathjaxInstance!)]
-            : []),
-          ...(enableRevealJs
-            ? [
-                prepareRevealJsPluginFile(app, revealJsOptions.plugins ?? []),
-                prepareRevealJsStyleFile(app, revealJsOptions?.themes),
-              ]
-            : []),
-        ]).then(() => void 0),
+      onPrepared: async (app): Promise<void> => {
+        const promises = [];
+
+        if (enableMathjax)
+          promises.push(prepareMathjaxStyleFile(app, mathjaxInstance!));
+
+        if (enableRevealJs)
+          promises.push(
+            prepareRevealJsPluginFile(app, revealJsOptions.plugins ?? []),
+            prepareRevealJsStyleFile(app, revealJsOptions?.themes),
+          );
+
+        await Promise.all(promises);
+      },
 
       clientConfigFile: (app) => prepareConfigFile(app, options, legacy),
     };

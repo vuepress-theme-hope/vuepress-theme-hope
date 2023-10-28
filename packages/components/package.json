@@ -1,6 +1,6 @@
 {
   "name": "vuepress-plugin-components",
-  "version": "2.0.0-beta.239",
+  "version": "2.0.0-beta.242",
   "description": "Components collection plugin for VuePress2",
   "keywords": [
     "vuepress",
@@ -29,6 +29,8 @@
     "./client/*": "./lib/client/*",
     "./package.json": "./package.json"
   },
+  "main": "./lib/node/index.js",
+  "types": "./lib/node/index.d.ts",
   "files": [
     "lib"
   ],
@@ -54,13 +56,8 @@
     "artplayer": "^5.0.9",
     "balloon-css": "^1.2.0",
     "create-codepen": "1.0.1",
-    "dashjs": "^4.7.2",
-    "hls.js": "^1.4.12",
-    "mpegts.js": "^1.7.3",
-    "plyr": "^3.7.8",
     "qrcode": "^1.5.3",
-    "vidstack": "^1.4.6",
-    "vue": "^3.3.6",
+    "vue": "^3.3.7",
     "vue-router": "^4.2.5",
     "vuepress-plugin-reading-time2": "workspace:*",
     "vuepress-plugin-sass-palette": "workspace:*",
@@ -72,13 +69,33 @@
     "@vuepress/core": "2.0.0-beta.67"
   },
   "peerDependencies": {
+    "dashjs": "^4.7.2",
+    "hls.js": "^1.4.12",
+    "mpegts.js": "^1.7.3",
+    "plyr": "^3.7.8",
     "sass-loader": "^13.3.2",
+    "vidstack": "^1.4.7",
     "vuepress": "2.0.0-beta.67",
     "vuepress-vite": "2.0.0-beta.67",
     "vuepress-webpack": "2.0.0-beta.67"
   },
   "peerDependenciesMeta": {
+    "dashjs": {
+      "optional": true
+    },
+    "hls.js": {
+      "optional": true
+    },
+    "mpegts.js": {
+      "optional": true
+    },
+    "plyr": {
+      "optional": true
+    },
     "sass-loader": {
+      "optional": true
+    },
+    "vidstack": {
       "optional": true
     },
     "vuepress": {

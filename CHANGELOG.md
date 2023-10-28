@@ -4,6 +4,45 @@ All notable changes to this project will be documented in this file. See [Conven
 
 <!-- #region recent-beta -->
 
+## [2.0.0-beta.242](https://github.com/vuepress-theme-hope/vuepress-theme-hope/compare/v2.0.0-beta.241...v2.0.0-beta.242) (2023-10-26)
+
+### Bug Fixes
+
+- fix broken main and type field ([a890e64](https://github.com/vuepress-theme-hope/vuepress-theme-hope/commit/a890e64912adbd4b91995a1d70a542e31f16775f))
+
+## [2.0.0-beta.241](https://github.com/vuepress-theme-hope/vuepress-theme-hope/compare/v2.0.0-beta.240...v2.0.0-beta.241) (2023-10-26)
+
+### Features
+
+- **comment2:** make comment pkg optional ([f590ea0](https://github.com/vuepress-theme-hope/vuepress-theme-hope/commit/f590ea05db3e14a3c0f9f4e2e7ade37e65795ae3))
+- **components:** improve VidStack ([5a136a0](https://github.com/vuepress-theme-hope/vuepress-theme-hope/commit/5a136a07c31cc83097069010f9974c0de9c1b6ff))
+- **components:** make some deps optional ([aa14ccf](https://github.com/vuepress-theme-hope/vuepress-theme-hope/commit/aa14ccfd466507851c0514ad244eff5f0b8e5140))
+- **components:** update video player ([d09ab0e](https://github.com/vuepress-theme-hope/vuepress-theme-hope/commit/d09ab0e8a7804f4602d628c3ad9bb3a5ebb7022b))
+- **md-enhance:** support xychart ([4a8a94c](https://github.com/vuepress-theme-hope/vuepress-theme-hope/commit/4a8a94c3fb17978260b801262719082b615c9602))
+
+### Bug Fixes
+
+- **md-enhance:** ensure deps are optional ([9d33f6b](https://github.com/vuepress-theme-hope/vuepress-theme-hope/commit/9d33f6b5631ff83fd0d32e39c5581c592ea39142))
+- **md-enhance:** fix mermaid theme ([4436295](https://github.com/vuepress-theme-hope/vuepress-theme-hope/commit/443629593221cff37ca966246a7629e75c9ccf5a))
+
+### Performance Improvements
+
+- update watch and computed ([a573a8e](https://github.com/vuepress-theme-hope/vuepress-theme-hope/commit/a573a8ecb39dcbc982a43f00816f37cbed4953d1))
+
+## [2.0.0-beta.240](https://github.com/vuepress-theme-hope/vuepress-theme-hope/compare/v2.0.0-beta.239...v2.0.0-beta.240) (2023-10-26)
+
+### Features
+
+- **components:** improve ReplIt loading, close [#3406](https://github.com/vuepress-theme-hope/vuepress-theme-hope/issues/3406) ([34452a4](https://github.com/vuepress-theme-hope/vuepress-theme-hope/commit/34452a402d9cf780d7c911fbaec100ef01cd3910))
+
+### Bug Fixes
+
+- **components:** ensure radio ([f1564bf](https://github.com/vuepress-theme-hope/vuepress-theme-hope/commit/f1564bf5e2cbe227e1353d4be89537740b2ace1b))
+- **create:** fix template ([84c004d](https://github.com/vuepress-theme-hope/vuepress-theme-hope/commit/84c004ddb3963ea1d17e7b14d54ece9630ec02a8))
+- fix pm issue, close [#3534](https://github.com/vuepress-theme-hope/vuepress-theme-hope/issues/3534) ([d875a14](https://github.com/vuepress-theme-hope/vuepress-theme-hope/commit/d875a1440f0f99fa0f48b572277c838d44ba5f15))
+- **md-enhance:** correct revealJs config name, close [#3575](https://github.com/vuepress-theme-hope/vuepress-theme-hope/issues/3575) ([76118c3](https://github.com/vuepress-theme-hope/vuepress-theme-hope/commit/76118c3b404b02c36af0e6d1a9ae50e1919f8aa9))
+- **md-enhance:** fix feature detecting ([a179011](https://github.com/vuepress-theme-hope/vuepress-theme-hope/commit/a179011c2edb3e0e331c61cd40fb500f54987d3c))
+
 ## [2.0.0-beta.239](https://github.com/vuepress-theme-hope/vuepress-theme-hope/compare/v2.0.0-beta.238...v2.0.0-beta.239) (2023-10-24)
 
 ### ⚠ BREAKING CHANGES

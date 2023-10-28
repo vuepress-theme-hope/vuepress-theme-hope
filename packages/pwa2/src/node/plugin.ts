@@ -2,6 +2,7 @@ import type { PluginFunction } from "@vuepress/core";
 import { useSassPalettePlugin } from "vuepress-plugin-sass-palette";
 import {
   addViteOptimizeDepsExclude,
+  addViteSsrNoExternal,
   checkVersion,
   getLocales,
   useCustomDevServer,
@@ -60,6 +61,7 @@ export const pwaPlugin =
           "mitt",
           "register-service-worker",
         ]);
+        addViteSsrNoExternal(bundlerOptions, app, "vuepress-shared");
 
         useCustomDevServer(bundlerOptions, app, {
           path: "/manifest.webmanifest",

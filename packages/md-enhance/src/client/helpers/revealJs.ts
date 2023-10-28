@@ -1,11 +1,10 @@
+import type Reveal from "reveal.js";
 import type { App } from "vue";
 import { inject } from "vue";
 
-import type { RevealJsOptions as OriginalRevealJsOptions } from "../typings/index.js";
-
 declare const __VUEPRESS_DEV__: boolean;
 
-export type RevealJsOptions = Omit<OriginalRevealJsOptions, "embedded">;
+export type RevealJsOptions = Omit<Reveal.Options, "embedded">;
 
 let revealOptions: Partial<RevealJsOptions> = {};
 

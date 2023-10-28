@@ -3,7 +3,7 @@ title: Vue 交互演示
 icon: fab fa-vuejs
 ---
 
-此插件通过 `@vue/repl` 提供 Vue 交互演示支持。
+此插件提供 Vue 交互演示支持。
 
 <!-- more -->
 
@@ -16,6 +16,32 @@ icon: fab fa-vuejs
 :::
 
 ## 配置
+
+在你的项目中安装 `@vue/repl`:
+
+::: code-tabs#shell
+
+@tab pnpm
+
+```bash
+pnpm add -D @vue/repl
+```
+
+@tab yarn
+
+```bash
+yarn add -D @vue/repl
+```
+
+@tab npm
+
+```bash
+npm i -D @vue/repl
+```
+
+:::
+
+之后启用它:
 
 ::: code-tabs#config
 

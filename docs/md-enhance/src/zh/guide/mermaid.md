@@ -9,6 +9,32 @@ icon: chart-pie
 
 ## 配置
 
+在你的项目中安装 [mermaid](https://mermaid.js.org/):
+
+::: code-tabs#shell
+
+@tab pnpm
+
+```bash
+pnpm add -D mermaid
+```
+
+@tab yarn
+
+```bash
+yarn add -D mermaid
+```
+
+@tab npm
+
+```bash
+npm i -D mermaid
+```
+
+:::
+
+之后启用它:
+
 ::: code-tabs#language
 
 @tab TS
@@ -71,6 +97,7 @@ export default {
 - sequence: `sequenceDiagram`
 - state: `stateDiagram-v2`
 - timeline: `timeline`
+- xy: `xychart-beta`
 
 你不需要再声明图表类型，也不需要缩进图表代码。
 
@@ -916,6 +943,16 @@ Campaign F: [0.35, 0.78]
 ````
 
 :::
+
+### XY 图
+
+```xy
+title "Sales Revenue"
+x-axis [jan, feb, mar, apr, may, jun, jul, aug, sep, oct, nov, dec]
+y-axis "Revenue (in $)" 4000 --> 11000
+bar [5000, 6000, 7500, 8200, 9500, 10500, 11000, 10200, 9200, 8500, 7000, 6000]
+line [5000, 6000, 7500, 8200, 9500, 10500, 11000, 10200, 9200, 8500, 7000, 6000]
+```
 
 ### 一个复杂的案例
 

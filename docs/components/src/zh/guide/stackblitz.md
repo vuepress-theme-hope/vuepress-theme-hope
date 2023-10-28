@@ -24,7 +24,7 @@ title: StackBlitz
 <StackBlitz id="vuepress-theme-hope" hideExplorer hideNavigation hideDevtools />
 ```
 
-## Props
+## 属性
 
 ### id
 

@@ -105,6 +105,28 @@ Giscus 是一个基于 GitHub Discussion 的评论系统，启用简便。
 
 ## Waline
 
+::: code-tabs#shell
+
+@tab pnpm
+
+```bash
+pnpm add -D @waline/client
+```
+
+@tab yarn
+
+```bash
+yarn add -D @waline/client
+```
+
+@tab npm
+
+```bash
+npm i -D @waline/client
+```
+
+:::
+
 ### 获取 APP ID 和 APP Key
 
 请先 [登录](https://console.leancloud.app/login) 或 [注册](https://console.leancloud.app/register) `LeanCloud 国际版`, 进入 [控制台](https://console.leancloud.app/applist.html#/apps) 后点击左下角 [创建应用](https://console.leancloud.app/applist.html#/newapp)。创建应用后进入该应用，选择左下角的 `设置` > `应用Key`，然后记下 `APP ID`,`APP Key` 和 `Master Key`。
@@ -168,6 +190,28 @@ Waline 评论的其他配置将在 <ProjectLink name="comment2" path="/zh/config
 
 ## Twikoo
 
+::: code-tabs#shell
+
+@tab pnpm
+
+```bash
+pnpm add -D twikoo
+```
+
+@tab yarn
+
+```bash
+yarn add -D twikoo
+```
+
+@tab npm
+
+```bash
+npm i -D twikoo
+```
+
+:::
+
 ### Vercel 部署
 
 [查看视频教程](https://www.bilibili.com/video/BV1Fh411e7ZH)
@@ -185,6 +229,28 @@ Waline 评论的其他配置将在 <ProjectLink name="comment2" path="/zh/config
 1. Vercel Domains (包含 `https://` 前缀，例如 `https://xxx.vercel.app`) 即为你的环境 ID
 
 ## Artalk
+
+::: code-tabs#shell
+
+@tab pnpm
+
+```bash
+pnpm add -D artalk
+```
+
+@tab yarn
+
+```bash
+yarn add -D artalk
+```
+
+@tab npm
+
+```bash
+npm i -D artalk
+```
+
+:::
 
 ### 部署 Artalk 服务端
 

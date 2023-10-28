@@ -20,8 +20,11 @@
     "@vuepress/core": "2.0.0-beta.67",
     "@vuepress/theme-default": "2.0.0-beta.67",
     "@vuepress/utils": "2.0.0-beta.67",
+    "@waline/client": "2.15.8",
+    "artalk": "2.6.4",
     "sass-loader": "13.3.2",
-    "vue": "3.3.6",
+    "twikoo": "1.6.22",
+    "vue": "3.3.7",
     "vuepress-plugin-comment2": "workspace:*",
     "vuepress-vite": "2.0.0-beta.67",
     "vuepress-webpack": "2.0.0-beta.67"

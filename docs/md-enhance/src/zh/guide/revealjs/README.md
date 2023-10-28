@@ -3,11 +3,37 @@ title: 幻灯片支持
 icon: person-chalkboard
 ---
 
-通过 [reveal.js](https://revealjs.com/) 让你的 VuePress 站点中添加幻灯片。
+在你的 VuePress 站点中添加幻灯片。
 
 <!-- more -->
 
 ## 配置
+
+在你的项目中安装 [Reveal.js](https://revealjs.com/):
+
+::: code-tabs#shell
+
+@tab pnpm
+
+```bash
+pnpm add -D reveal.js
+```
+
+@tab yarn
+
+```bash
+yarn add -D reveal.js
+```
+
+@tab npm
+
+```bash
+npm i -D reveal.js
+```
+
+:::
+
+之后启用它:
 
 ::: code-tabs#language
 

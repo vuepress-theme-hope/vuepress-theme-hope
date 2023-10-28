@@ -27,7 +27,7 @@
     "flowchart.ts": "1.0.1",
     "katex": "0.16.9",
     "sass-loader": "13.3.2",
-    "vue": "3.3.6",
+    "vue": "3.3.7",
     "vuepress-plugin-copy-code2": "workspace:*",
     "vuepress-plugin-md-enhance": "workspace:*",
     "vuepress-shared": "workspace:*",

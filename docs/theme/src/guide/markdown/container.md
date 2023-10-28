@@ -12,7 +12,7 @@ The theme adds tip, note, info, warning, danger and detail container.
 
 <!-- more -->
 
-## Config
+## Settings
 
 ::: code-tabs#language
 

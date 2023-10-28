@@ -1,6 +1,6 @@
 {
   "name": "vuepress-plugin-redirect",
-  "version": "2.0.0-beta.239",
+  "version": "2.0.0-beta.242",
   "description": "Redirect plugin for vuepress",
   "keywords": [
     "vuepress",
@@ -28,6 +28,8 @@
     ".": "./lib/node/index.js",
     "./package.json": "./package.json"
   },
+  "main": "./lib/node/index.js",
+  "types": "./lib/node/index.d.ts",
   "bin": {
     "vp-redirect": "./lib/cli/index.js"
   },
@@ -55,7 +57,7 @@
     "@vuepress/utils": "2.0.0-beta.67",
     "@vueuse/core": "^10.5.0",
     "cac": "^6.7.14",
-    "vue": "^3.3.6",
+    "vue": "^3.3.7",
     "vue-router": "^4.2.5",
     "vuepress-plugin-sass-palette": "workspace:*",
     "vuepress-shared": "workspace:*"

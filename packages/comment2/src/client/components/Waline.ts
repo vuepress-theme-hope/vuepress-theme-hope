@@ -1,5 +1,5 @@
 import { usePageFrontmatter, usePageLang } from "@vuepress/client";
-import { pageviewCount } from "@waline/client/dist/pageview.mjs";
+import { pageviewCount } from "@waline/client/pageview";
 import type { VNode } from "vue";
 import {
   computed,
@@ -30,8 +30,6 @@ if (WALINE_META)
   import(
     /* webpackChunkName: "waline" */ "@waline/client/dist/waline-meta.css"
   );
-
-export { pageviewCount };
 
 export default defineComponent({
   name: "WalineComment",

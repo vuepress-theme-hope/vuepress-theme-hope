@@ -86,7 +86,7 @@ export default defineUserConfig({
       mathjax: {
         output: "chtml",
       },
-      revealjs: {
+      revealJs: {
         plugins: ["highlight", "math", "search", "notes", "zoom"],
         themes: [
           "auto",

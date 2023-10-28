@@ -13,7 +13,7 @@ Let the Markdown file in your VuePress site support Subscript and Superscript.
 
 <!-- more -->
 
-## Config
+## Settings
 
 ::: code-tabs#language
 

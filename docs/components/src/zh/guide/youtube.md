@@ -32,7 +32,7 @@ title: YouTube
 <YouTube list-type="playlist" list="PLJNLwTPak6dhCRzVelZIs2-DfBp01NX_1" />
 ```
 
-## Props
+## 属性
 
 ### id
 

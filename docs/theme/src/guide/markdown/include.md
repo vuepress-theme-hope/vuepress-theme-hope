@@ -12,7 +12,7 @@ Let the Markdown file in your VuePress site support including other files.
 
 <!-- more -->
 
-## Config
+## Settingsgsgs
 
 ::: code-tabs#language
 

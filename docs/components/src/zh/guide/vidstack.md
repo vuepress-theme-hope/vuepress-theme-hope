@@ -4,6 +4,30 @@ title: VidStack
 
 在 Markdown 文件中嵌入 [VidStack](https://www.vidstack.io/)。
 
+使用本组件前，请先在你的项目中安装 `vidstack` 包:
+
+::: code-tabs#shell
+
+@tab pnpm
+
+```bash
+pnpm add -D vidstack
+```
+
+@tab yarn
+
+```bash
+yarn add -D vidstack
+```
+
+@tab npm
+
+```bash
+npm i -D vidstack
+```
+
+:::
+
 <!-- more -->
 
 ## 示例
@@ -16,49 +40,95 @@ title: VidStack
 <VidStack src="https://vp-demo.u2sb.com/video/caminandes_03_llamigos_720p.mp4" />
 ```
 
-有封面和音轨的播放器:
+有封面、章节、缩略图和音轨的播放器:
 
 <VidStack
-  src="https://upload.wikimedia.org/wikipedia/commons/transcoded/f/f1/Sintel_movie_4K.webm/Sintel_movie_4K.webm.1080p.vp9.webm"
-  title="VidStack 示例视频"
-  poster="/poster.svg"
-  :tracks="[
+  src="https://media-files.vidstack.io/720p.mp4"
+  title="Agent 327 Operation Barber Shop"
+  poster="https://media-files.vidstack.io/poster-2.png"
+  :sourses="[
     {
-      default: true,
-      src: '/en.vtt',
-      kind: 'subtitles',
-      label: 'English',
-      srcLang: 'en',
+      src: 'https://media-files.vidstack.io/720p.mp4',
+      type: 'video/mp4',
     },
     {
-      src: '/fr.vtt',
-      kind: 'subtitles',
-      label: 'French',
-      srcLang: 'fr',
+      src:  'https://media-files.vidstack.io/720p.avi',
+      type: 'video/avi',
+    },
+    {
+      src:  'https://media-files.vidstack.io/720p.ogv',
+      type: 'video/ogg',
     },
   ]"
+  :tracks="[
+    {
+      src: 'https://media-files.vidstack.io/subs/english.vtt',
+      label: 'English',
+      language: 'en-US',
+      kind: 'subtitles',
+      default: true,
+    },
+    {
+      src: 'https://media-files.vidstack.io/subs/spanish.vtt',
+      label: 'Spanish',
+      language: 'es-ES',
+      kind: 'subtitles',
+    },
+    // Chapters
+    {
+      src: 'https://media-files.vidstack.io/chapters.vtt',
+      kind: 'chapters',
+      language: 'en-US',
+      default: true,
+    },
+  ]"
+  thumbnails="https://media-files.vidstack.io/thumbnails.vtt"
+  crossorigin
 />
 
 ```md
 <VidStack
-  src="https://upload.wikimedia.org/wikipedia/commons/transcoded/f/f1/Sintel_movie_4K.webm/Sintel_movie_4K.webm.1080p.vp9.webm"
-  title="VidStack 示例视频"
-  poster="/poster.svg"
-  :tracks="[
+  src="https://media-files.vidstack.io/720p.mp4"
+  title="Agent 327 Operation Barber Shop"
+  poster="https://media-files.vidstack.io/poster-2.png"
+  :sourses="[
     {
-      default: true,
-      src: '/en.vtt',
-      kind: 'subtitles',
-      label: 'English',
-      srcLang: 'en',
+      src: 'https://media-files.vidstack.io/720p.mp4',
+      type: 'video/mp4',
     },
     {
-      src: '/fr.vtt',
-      kind: 'subtitles',
-      label: 'French',
-      srcLang: 'fr',
+      src:  'https://media-files.vidstack.io/720p.avi',
+      type: 'video/avi',
+    },
+    {
+      src:  'https://media-files.vidstack.io/720p.ogv',
+      type: 'video/ogg',
     },
   ]"
+  :tracks="[
+    {
+      src: 'https://media-files.vidstack.io/subs/english.vtt',
+      label: 'English',
+      language: 'en-US',
+      kind: 'subtitles',
+      default: true,
+    },
+    {
+      src: 'https://media-files.vidstack.io/subs/spanish.vtt',
+      label: 'Spanish',
+      language: 'es-ES',
+      kind: 'subtitles',
+    },
+    // Chapters
+    {
+      src: 'https://media-files.vidstack.io/chapters.vtt',
+      kind: 'chapters',
+      language: 'en-US',
+      default: true,
+    },
+  ]"
+  thumbnails="https://media-files.vidstack.io/thumbnails.vtt"
+  crossorigin
 />
 ```
 

@@ -83,35 +83,61 @@ export default hopeTheme({
   plugins: {
     blog: true,
 
-    comment: {
-      // You should generate and use your own comment service
-      provider: "Waline",
-      serverURL: "https://waline-comment.vuejs.press",
-    },
+    // install @waline/client before enabling it
+    // WARNING: This is a test server for demo only.
+    // You should create and use your own comment service in production.
+    // comment: {
+    //   provider: "Waline",
+    //   serverURL: "https://waline-comment.vuejs.press",
+    // },
 
     // all features are enabled for demo, only preserve features you need here
     mdEnhance: {
       align: true,
       attrs: true,
-      chart: true,
+      card: true,
+
+      // install chart.js before enabling it
+      // chart: true,
+
       codetabs: true,
       demo: true,
-      echarts: true,
+
+      // install echarts before enabling it
+      // echarts: true,
+
       figure: true,
-      flowchart: true,
-      gfm: true,
+
+      // install flowchart.ts before enabling it
+      // flowchart: true,
+
+      // gfm requires mathjax-full to provide tex support
+      // gfm: true,
+
       imgLazyload: true,
       imgSize: true,
       include: true,
-      katex: true,
+
+      // install katex before enabling it
+      // katex: true,
+
+      // install mathjax-full before enabling it
+      // mathjax: true,
+
       mark: true,
-      mermaid: true,
+
+      // install mermaid before enabling it
+      // mermaid: true,
+
       playground: {
         presets: ["ts", "vue"],
       },
-      revealjs: {
-        plugins: ["highlight", "math", "search", "notes", "zoom"],
-      },
+
+      // install reveal.js before enabling it
+      // revealJs: {
+      //   plugins: ["highlight", "math", "search", "notes", "zoom"],
+      // },
+
       stylize: [
         {
           matcher: "Recommended",
@@ -129,7 +155,9 @@ export default hopeTheme({
       sup: true,
       tabs: true,
       vPre: true,
-      vuePlayground: true,
+
+      // install @vue/repl before enabling it
+      // vuePlayground: true,
     },
 
     // uncomment these if you want a PWA

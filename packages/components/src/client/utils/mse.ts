@@ -1,15 +1,17 @@
-export const SUPPORTED_VIDEO_TYPES = [
-  "mp4",
-  "mp3",
-  "webm",
-  "ogg",
-  "m3u8",
-  "hls",
-  "ts",
-  "flv",
-  "mpd",
-  "dash",
-];
+declare const DASHJS_INSTALLED: boolean;
+declare const HLS_JS_INSTALLED: boolean;
+declare const MPEGTS_JS_INSTALLED: boolean;
+
+export const SUPPORTED_VIDEO_TYPES = ["mp4", "mp3", "webm", "ogg"];
+
+if (typeof DASHJS_INSTALLED !== "undefined" && DASHJS_INSTALLED)
+  SUPPORTED_VIDEO_TYPES.push("mpd", "dash");
+
+if (typeof HLS_JS_INSTALLED !== "undefined" && HLS_JS_INSTALLED)
+  SUPPORTED_VIDEO_TYPES.push("m3u8", "hls");
+
+if (typeof MPEGTS_JS_INSTALLED !== "undefined" && MPEGTS_JS_INSTALLED)
+  SUPPORTED_VIDEO_TYPES.push("ts", "flv");
 
 export const getTypeByUrl = (url: string): string =>
   url?.split(".").pop() || "";
@@ -17,67 +19,77 @@ export const getTypeByUrl = (url: string): string =>
 export const registerMseDash = async (
   mediaElement: HTMLMediaElement,
   src: string,
-  registerDestroy: (destroy: () => void) => void,
+  onDestroy: (destroy: () => void) => void,
   autoPlay = false,
   startTime = 0,
 ): Promise<void> => {
-  const dashjs = (
-    await import(/* webpackChunkName: "dashjs" */ "dashjs/dist/dash.all.min.js")
-  ).default;
+  if (typeof DASHJS_INSTALLED !== "undefined" && DASHJS_INSTALLED) {
+    const dashjs = (
+      await import(
+        /* webpackChunkName: "dashjs" */ "dashjs/dist/dash.all.min.js"
+      )
+    ).default;
 
-  if (dashjs.supportsMediaSource()) {
-    const dashPlayer = dashjs.MediaPlayer().create();
+    if (dashjs.supportsMediaSource()) {
+      const dashPlayer = dashjs.MediaPlayer().create();
 
-    dashPlayer.initialize(mediaElement, src, autoPlay, startTime);
+      dashPlayer.initialize(mediaElement, src, autoPlay, startTime);
 
-    registerDestroy(() => dashPlayer.destroy());
+      onDestroy(() => dashPlayer.destroy());
+    }
   }
 };
 
 export const registerMseFlv = async (
   mediaElement: HTMLMediaElement,
   src: string,
-  registerDestroy: (destroy: () => void) => void,
+  onDestroy: (destroy: () => void) => void,
 ): Promise<void> => {
-  const mpegts = (
-    await import(/* webpackChunkName: "mpegts.js" */ "mpegts.js/dist/mpegts.js")
-  ).default;
+  if (typeof MPEGTS_JS_INSTALLED !== "undefined" && MPEGTS_JS_INSTALLED) {
+    const mpegts = (
+      await import(
+        /* webpackChunkName: "mpegts.js" */ "mpegts.js/dist/mpegts.js"
+      )
+    ).default;
 
-  if (mpegts.isSupported()) {
-    const flvPlayer = mpegts.createPlayer({
-      type: "flv",
-      url: src,
-    });
+    if (mpegts.isSupported()) {
+      const flvPlayer = mpegts.createPlayer({
+        type: "flv",
+        url: src,
+      });
 
-    flvPlayer.attachMediaElement(mediaElement);
-    flvPlayer.load();
+      flvPlayer.attachMediaElement(mediaElement);
+      flvPlayer.load();
 
-    registerDestroy(() => flvPlayer.destroy());
+      onDestroy(() => flvPlayer.destroy());
+    }
   }
 };
 
 export const registerMseHls = async (
   mediaElement: HTMLMediaElement,
   src: string,
-  registerDestroy: (destroy: () => void) => void,
+  onDestroy: (destroy: () => void) => void,
 ): Promise<void> => {
-  const hls = (
-    await import(/* webpackChunkName: "hls.js" */ "hls.js/dist/hls.min.js")
-  ).default;
-
   if (
     mediaElement.canPlayType("application/x-mpegURL") ||
     mediaElement.canPlayType("application/vnd.apple.mpegURL")
   ) {
     mediaElement.src = src;
-  } else if (hls.isSupported()) {
-    const hlsInstance = new hls();
+  } else if (typeof HLS_JS_INSTALLED !== "undefined" && HLS_JS_INSTALLED) {
+    const hls = (
+      await import(/* webpackChunkName: "hls.js" */ "hls.js/dist/hls.min.js")
+    ).default;
 
-    hlsInstance.attachMedia(mediaElement);
-    hlsInstance.on(hls.Events.MEDIA_ATTACHED, function () {
-      hlsInstance.loadSource(src);
-    });
+    if (hls.isSupported()) {
+      const hlsInstance = new hls();
 
-    registerDestroy(() => hlsInstance.destroy());
+      hlsInstance.attachMedia(mediaElement);
+      hlsInstance.on(hls.Events.MEDIA_ATTACHED, function () {
+        hlsInstance.loadSource(src);
+      });
+
+      onDestroy(() => hlsInstance.destroy());
+    }
   }
 };

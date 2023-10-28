@@ -8,7 +8,7 @@ tag:
   - Playground
 ---
 
-Let the Markdown file support vue playground in your VuePress site with `@vue/repl` package.
+Let the Markdown file support vue playground in your VuePress site.
 
 <!-- more -->
 
@@ -20,7 +20,33 @@ You can use [Vue Demo](./demo.md#vue) and [Playground Vue Preset](./playground.m
 
 :::
 
-## Config
+## Settings
+
+Install `@vue/repl` in your project:
+
+::: code-tabs#shell
+
+@tab pnpm
+
+```bash
+pnpm add -D @vue/repl
+```
+
+@tab yarn
+
+```bash
+yarn add -D @vue/repl
+```
+
+@tab npm
+
+```bash
+npm i -D @vue/repl
+```
+
+:::
+
+Then enabling via:
 
 ::: code-tabs#config
 

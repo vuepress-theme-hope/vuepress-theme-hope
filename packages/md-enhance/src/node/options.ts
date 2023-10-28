@@ -1,5 +1,4 @@
 import type { LocaleConfig } from "@vuepress/core";
-import type { MermaidConfig } from "mermaid";
 
 import type {
   AttrsOptions,
@@ -332,7 +331,7 @@ export interface MarkdownEnhanceOptions {
    *
    * @default false
    */
-  mermaid?: MermaidConfig | boolean;
+  mermaid?: boolean;
 
   /**
    * Whether to enable code-demo support
@@ -344,13 +343,13 @@ export interface MarkdownEnhanceOptions {
   demo?: Partial<CodeDemoOptions> | boolean;
 
   /**
-   * Whether to enable revealjs support
+   * Whether to enable reveal.js support
    *
    * 是否启用 Reveal.js 支持
    *
    * @default false
    */
-  revealjs?: RevealJsOptions | boolean;
+  revealJs?: RevealJsOptions | boolean;
 
   /**
    * Keyword enhancement

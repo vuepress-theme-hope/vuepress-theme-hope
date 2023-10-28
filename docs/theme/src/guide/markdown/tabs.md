@@ -13,7 +13,7 @@ Let the Markdown file in your VuePress site support tabs.
 
 <!-- more -->
 
-## Config
+## Settings
 
 ::: code-tabs#language
 

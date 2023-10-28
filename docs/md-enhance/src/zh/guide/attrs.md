@@ -7,7 +7,7 @@ icon: code
 
 <!-- more -->
 
-## Config
+## Settings
 
 ::: code-tabs#language
 

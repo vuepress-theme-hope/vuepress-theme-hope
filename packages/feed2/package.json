@@ -1,6 +1,6 @@
 {
   "name": "vuepress-plugin-feed2",
-  "version": "2.0.0-beta.239",
+  "version": "2.0.0-beta.242",
   "description": "Feed plugin for vuepress-theme-hope",
   "keywords": [
     "vuepress",
@@ -29,6 +29,8 @@
     "./templates/*": "./templates/*",
     "./package.json": "./package.json"
   },
+  "main": "./lib/node/index.js",
+  "types": "./lib/node/index.d.ts",
   "files": [
     "lib",
     "templates"

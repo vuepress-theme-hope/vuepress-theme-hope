@@ -389,36 +389,36 @@ See <ProjectLink name="components" path="/guide/pdf.html">PDF</ProjectLink> page
 
 ## Replit
 
-An embedded repl:
+A replit:
 
 <Replit user="FuckDoctors" repl="Java-Test" />
 
-An embedded repl with opening file:
+A replit with opening file:
 
 <Replit user="FuckDoctors" repl="Java-Test" file="Main.java" />
 
-A repl link:
+An autoload replit:
 
-<Replit user="FuckDoctors" repl="Java-Test" plain />
+<Replit user="FuckDoctors" repl="Java-Test" auto-load />
 
 ::: details Code
 
-An embedded repl:
+An replit:
 
 ```md
 <Replit user="FuckDoctors" repl="Java-Test" />
 ```
 
-An embedded repl with opening file:
+An replit with opening file:
 
 ```md
 <Replit user="FuckDoctors" repl="Java-Test" file="Main.java" />
 ```
 
-A repl link:
+An autoload replit:
 
 ```md
-<Replit user="FuckDoctors" repl="Java-Test" plain />
+<Replit user="FuckDoctors" repl="Java-Test" auto-load />
 ```
 
 :::
@@ -543,29 +543,51 @@ A video player:
 
 <VidStack src="https://vp-demo.u2sb.com/video/caminandes_03_llamigos_720p.mp4" />
 
-A video player with poster and tracks:
+A video player with poster, thumbnail, chapter and tracks:
 
 <VidStack
-  src="https://upload.wikimedia.org/wikipedia/commons/transcoded/f/f1/Sintel_movie_4K.webm/Sintel_movie_4K.webm.1080p.vp9.webm"
-  title="VidStack Video Demo"
-  poster="/poster.svg"
-  :tracks="[
+  src="https://media-files.vidstack.io/720p.mp4"
+  title="Agent 327 Operation Barber Shop"
+  poster="https://media-files.vidstack.io/poster-2.png"
+  :sourses="[
     {
-      default: true,
-      src: '/en.vtt',
-      kind: 'subtitles',
-      label: 'English',
-      srcLang: 'en',
+      src: 'https://media-files.vidstack.io/720p.mp4',
+      type: 'video/mp4',
     },
     {
-      src: '/fr.vtt',
-      kind: 'subtitles',
-      label: 'French',
-      srcLang: 'fr',
+      src:  'https://media-files.vidstack.io/720p.avi',
+      type: 'video/avi',
+    },
+    {
+      src:  'https://media-files.vidstack.io/720p.ogv',
+      type: 'video/ogg',
     },
   ]"
+  :tracks="[
+    {
+      src: 'https://media-files.vidstack.io/subs/english.vtt',
+      label: 'English',
+      language: 'en-US',
+      kind: 'subtitles',
+      default: true,
+    },
+    {
+      src: 'https://media-files.vidstack.io/subs/spanish.vtt',
+      label: 'Spanish',
+      language: 'es-ES',
+      kind: 'subtitles',
+    },
+    // Chapters
+    {
+      src: 'https://media-files.vidstack.io/chapters.vtt',
+      kind: 'chapters',
+      language: 'en-US',
+      default: true,
+    },
+  ]"
+  thumbnails="https://media-files.vidstack.io/thumbnails.vtt"
+  crossorigin
 />
-
 An audio player:
 
 <VidStack src="/sample.mp3" title="VidStack Audio Demo" />
@@ -582,24 +604,47 @@ A video player with poster and tracks:
 
 ```md
 <VidStack
-  src="https://upload.wikimedia.org/wikipedia/commons/transcoded/f/f1/Sintel_movie_4K.webm/Sintel_movie_4K.webm.1080p.vp9.webm"
-  title="VidStack Video Demo"
-  poster="/poster.svg"
-  :tracks="[
+  src="https://media-files.vidstack.io/720p.mp4"
+  title="Agent 327 Operation Barber Shop"
+  poster="https://media-files.vidstack.io/poster-2.png"
+  :sourses="[
     {
-      default: true,
-      src: '/en.vtt',
-      kind: 'subtitles',
-      label: 'English',
-      srcLang: 'en',
+      src: 'https://media-files.vidstack.io/720p.mp4',
+      type: 'video/mp4',
     },
     {
-      src: '/fr.vtt',
-      kind: 'subtitles',
-      label: 'French',
-      srcLang: 'fr',
+      src:  'https://media-files.vidstack.io/720p.avi',
+      type: 'video/avi',
+    },
+    {
+      src:  'https://media-files.vidstack.io/720p.ogv',
+      type: 'video/ogg',
     },
   ]"
+  :tracks="[
+    {
+      src: 'https://media-files.vidstack.io/subs/english.vtt',
+      label: 'English',
+      language: 'en-US',
+      kind: 'subtitles',
+      default: true,
+    },
+    {
+      src: 'https://media-files.vidstack.io/subs/spanish.vtt',
+      label: 'Spanish',
+      language: 'es-ES',
+      kind: 'subtitles',
+    },
+    // Chapters
+    {
+      src: 'https://media-files.vidstack.io/chapters.vtt',
+      kind: 'chapters',
+      language: 'en-US',
+      default: true,
+    },
+  ]"
+  thumbnails="https://media-files.vidstack.io/thumbnails.vtt"
+  crossorigin
 />
 ```
 
@@ -619,28 +664,97 @@ Embed videos in Markdown files.
 
 A video player:
 
-<VideoPlayer src="https://upload.wikimedia.org/wikipedia/commons/transcoded/f/f1/Sintel_movie_4K.webm/Sintel_movie_4K.webm.1080p.vp9.webm" />
+<VideoPlayer src="https://cdn.plyr.io/static/demo/View_From_A_Blue_Moon_Trailer-720p.mp4" />
 
-A video player with tracks and poster:
+A video player with poster, multiple sources, tracks, thumbnails and markers:
 
 <VideoPlayer
-  src="https://upload.wikimedia.org/wikipedia/commons/transcoded/f/f1/Sintel_movie_4K.webm/Sintel_movie_4K.webm.1080p.vp9.webm"
-  poster="/assets/poster.svg"
-  :tracks="[
+  :src="[
     {
-      default: true,
-      src: '/assets/subtitles/en.vtt',
-      kind: 'subtitles',
-      label: 'English',
-      srcLang: 'en',
+      src: 'https://cdn.plyr.io/static/demo/View_From_A_Blue_Moon_Trailer-576p.mp4',
+      type: 'video/mp4',
+      size: 576,
     },
     {
-      src: '/assets/subtitles/fr.vtt',
-      kind: 'subtitles',
-      label: 'French',
-      srcLang: 'fr',
+      src: 'https://cdn.plyr.io/static/demo/View_From_A_Blue_Moon_Trailer-720p.mp4',
+      type: 'video/mp4',
+      size: 720,
+    },
+    {
+      src: 'https://cdn.plyr.io/static/demo/View_From_A_Blue_Moon_Trailer-1080p.mp4',
+      type: 'video/mp4',
+      size: 1080,
     },
   ]"
+  poster="https://cdn.plyr.io/static/demo/View_From_A_Blue_Moon_Trailer-HD.jpg"
+  :tracks="[
+    {
+      src: 'https://cdn.plyr.io/static/demo/View_From_A_Blue_Moon_Trailer-HD.en.vtt',
+      label: 'English',
+      language: 'en',
+      kind: 'subtitles',
+      default: true,
+    },
+    {
+      src: 'https://cdn.plyr.io/static/demo/View_From_A_Blue_Moon_Trailer-HD.fr.vtt',
+      label: 'French',
+      language: 'fr',
+      kind: 'subtitles',
+    },
+  ]"
+  crossorigin
+  :options="{
+    title: 'View From A Blue Moon',
+    iconUrl: 'https://cdn.plyr.io/3.7.8/demo.svg',
+    keyboard: {
+      global: true,
+    },
+    tooltips: {
+      controls: true,
+    },
+    captions: {
+      active: true,
+    },
+    previewThumbnails: {
+      enabled: true,
+      src: [
+        'https://cdn.plyr.io/static/demo/thumbs/100p.vtt',
+        'https://cdn.plyr.io/static/demo/thumbs/240p.vtt'
+      ],
+    },
+    vimeo: {
+      referrerPolicy: 'no-referrer',
+    },
+    mediaMetadata: {
+      title: 'View From A Blue Moon',
+      album: 'Sports',
+      artist: 'Brainfarm',
+      artwork: [
+        {
+          src: 'https://cdn.plyr.io/static/demo/View_From_A_Blue_Moon_Trailer-HD.jpg',
+          type: 'image/jpeg',
+        },
+      ],
+    },
+    markers: {
+      enabled: true,
+      points: [
+        {
+          time: 10,
+          label: 'first marker',
+        },
+        {
+          time: 40,
+          label: 'second marker',
+        },
+        {
+          time: 120,
+          label: '<strong>third</strong> marker',
+        }
+      ],
+    },
+  }
+  "
 />
 
 ::: details Code
@@ -648,30 +762,99 @@ A video player with tracks and poster:
 A video player:
 
 ```md
-<VideoPlayer src="https://upload.wikimedia.org/wikipedia/commons/transcoded/f/f1/Sintel_movie_4K.webm/Sintel_movie_4K.webm.1080p.vp9.webm" />
+<VideoPlayer src="https://cdn.plyr.io/static/demo/View_From_A_Blue_Moon_Trailer-720p.mp4" />
 ```
 
-A video player with tracks and poster:
+A video player with poster, multiple sources, tracks, thumbnails and markers:
 
 ```md
 <VideoPlayer
-  src="https://upload.wikimedia.org/wikipedia/commons/transcoded/f/f1/Sintel_movie_4K.webm/Sintel_movie_4K.webm.1080p.vp9.webm"
-  poster="/assets/poster.svg"
-  :tracks="[
+  :src="[
     {
-      default: true,
-      src: '/assets/subtitles/en.vtt',
-      kind: 'subtitles',
-      label: 'English',
-      srcLang: 'en',
+      src: 'https://cdn.plyr.io/static/demo/View_From_A_Blue_Moon_Trailer-576p.mp4',
+      type: 'video/mp4',
+      size: 576,
     },
     {
-      src: '/assets/subtitles/fr.vtt',
-      kind: 'subtitles',
-      label: 'French',
-      srcLang: 'fr',
+      src: 'https://cdn.plyr.io/static/demo/View_From_A_Blue_Moon_Trailer-720p.mp4',
+      type: 'video/mp4',
+      size: 720,
+    },
+    {
+      src: 'https://cdn.plyr.io/static/demo/View_From_A_Blue_Moon_Trailer-1080p.mp4',
+      type: 'video/mp4',
+      size: 1080,
     },
   ]"
+  poster="https://cdn.plyr.io/static/demo/View_From_A_Blue_Moon_Trailer-HD.jpg"
+  :tracks="[
+    {
+      src: 'https://cdn.plyr.io/static/demo/View_From_A_Blue_Moon_Trailer-HD.en.vtt',
+      label: 'English',
+      language: 'en',
+      kind: 'subtitles',
+      default: true,
+    },
+    {
+      src: 'https://cdn.plyr.io/static/demo/View_From_A_Blue_Moon_Trailer-HD.fr.vtt',
+      label: 'French',
+      language: 'fr',
+      kind: 'subtitles',
+    },
+  ]"
+  crossorigin
+  :options="{
+    title: 'View From A Blue Moon',
+    iconUrl: 'https://cdn.plyr.io/3.7.8/demo.svg',
+    keyboard: {
+      global: true,
+    },
+    tooltips: {
+      controls: true,
+    },
+    captions: {
+      active: true,
+    },
+    previewThumbnails: {
+      enabled: true,
+      src: [
+        'https://cdn.plyr.io/static/demo/thumbs/100p.vtt',
+        'https://cdn.plyr.io/static/demo/thumbs/240p.vtt'
+      ],
+    },
+    vimeo: {
+      referrerPolicy: 'no-referrer',
+    },
+    mediaMetadata: {
+      title: 'View From A Blue Moon',
+      album: 'Sports',
+      artist: 'Brainfarm',
+      artwork: [
+        {
+          src: 'https://cdn.plyr.io/static/demo/View_From_A_Blue_Moon_Trailer-HD.jpg',
+          type: 'image/jpeg',
+        },
+      ],
+    },
+    markers: {
+      enabled: true,
+      points: [
+        {
+          time: 10,
+          label: 'first marker',
+        },
+        {
+          time: 40,
+          label: 'second marker',
+        },
+        {
+          time: 120,
+          label: '<strong>third</strong> marker',
+        }
+      ],
+    },
+  }
+  "
 />
 ```
 

@@ -199,6 +199,61 @@ color: rgba(253, 230, 138, 0.15)
 
 - [View Detail](https://theme-hope.vuejs.press/guide/markdown/card.html)
 
+#### Include files
+
+<!-- @include: ./README.md{11-17} -->
+
+- [View Detail](https://theme-hope.vuejs.press/guide/markdown/include.html)
+
+#### Code Demo
+
+::: normal-demo A normal demo
+
+```html
+<h1>VuePress Theme Hope</h1>
+<p>Is <span id="very">very</span> powerful!</p>
+```
+
+```js
+document.querySelector("#very").addEventListener("click", () => {
+  alert("Very powerful!");
+});
+```
+
+```css
+span {
+  color: red;
+}
+```
+
+:::
+
+- [View Detail](https://theme-hope.vuejs.press/guide/markdown/demo.html)
+
+#### Stylize
+
+Donate Mr.Hope a cup of coffee. _Recommended_
+
+- [View Detail](https://theme-hope.vuejs.press/guide/markdown/stylize.html)
+
+#### Playground
+
+::: playground#ts TS demo
+
+@file index.ts
+
+```ts
+const msg = "hello world";
+
+const speak = (msg: string) => console.log(msg);
+
+speak(msg);
+```
+
+:::
+
+- [View Detail](https://theme-hope.vuejs.press/guide/markdown/playground.html)
+
 #### Chart
 
 ::: chart A Scatter Chart
@@ -306,61 +361,6 @@ $$
 $$
 
 - [View Detail](https://theme-hope.vuejs.press/guide/markdown/tex.html)
-
-#### Include files
-
-<!-- @include: ./README.md{11-17} -->
-
-- [View Detail](https://theme-hope.vuejs.press/guide/markdown/include.html)
-
-#### Code Demo
-
-::: normal-demo A normal demo
-
-```html
-<h1>VuePress Theme Hope</h1>
-<p>Is <span id="very">very</span> powerful!</p>
-```
-
-```js
-document.querySelector("#very").addEventListener("click", () => {
-  alert("Very powerful!");
-});
-```
-
-```css
-span {
-  color: red;
-}
-```
-
-:::
-
-- [View Detail](https://theme-hope.vuejs.press/guide/markdown/demo.html)
-
-#### Stylize
-
-Donate Mr.Hope a cup of coffee. _Recommended_
-
-- [View Detail](https://theme-hope.vuejs.press/guide/markdown/stylize.html)
-
-#### Playground
-
-::: playground#ts TS demo
-
-@file index.ts
-
-```ts
-const msg = "hello world";
-
-const speak = (msg: string) => console.log(msg);
-
-speak(msg);
-```
-
-:::
-
-- [View Detail](https://theme-hope.vuejs.press/guide/markdown/playground.html)
 
 #### Vue Playground
 

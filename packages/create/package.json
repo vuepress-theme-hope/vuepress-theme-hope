@@ -1,6 +1,6 @@
 {
   "name": "create-vuepress-theme-hope",
-  "version": "2.0.0-beta.239",
+  "version": "2.0.0-beta.242",
   "description": "Create vuepress-theme-hope demo project helper",
   "keywords": [
     "create",
@@ -28,6 +28,8 @@
   "exports": {
     "./package.json": "./package.json"
   },
+  "main": "./lib/node/index.js",
+  "types": "./lib/node/index.d.ts",
   "bin": {
     "create-vuepress-theme-hope": "./lib/index.js"
   },

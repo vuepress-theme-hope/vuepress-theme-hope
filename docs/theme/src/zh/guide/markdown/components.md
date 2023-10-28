@@ -383,36 +383,36 @@ PDF 浏览器组件。
 
 ## Replit
 
-一个嵌入的 repl:
+一个 replit:
 
 <Replit user="FuckDoctors" repl="Java-Test" />
 
-一个嵌入的 repl，并且显示指定的文件:
+一个 replit，并且显示指定的文件:
 
 <Replit user="FuckDoctors" repl="Java-Test" file="Main.java" />
 
-一个 repl 链接:
+一个自动加载的 replit:
 
-<Replit user="FuckDoctors" repl="Java-Test" plain />
+<Replit user="FuckDoctors" repl="Java-Test" auto-load />
 
 ::: details 代码
 
-一个嵌入的 repl:
+一个 replit:
 
 ```md
 <Replit user="FuckDoctors" repl="Java-Test" />
 ```
 
-一个嵌入的 repl，并且显示指定的文件:
+一个 replit，并且显示指定的文件:
 
 ```md
 <Replit user="FuckDoctors" repl="Java-Test" file="Main.java" />
 ```
 
-一个 repl 链接:
+一个自动加载的 replit:
 
 ```md
-<Replit user="FuckDoctors" repl="Java-Test" plain />
+<Replit user="FuckDoctors" repl="Java-Test" auto-load />
 ```
 
 :::
@@ -537,27 +537,50 @@ PDF 浏览器组件。
 
 <VidStack src="https://vp-demo.u2sb.com/video/caminandes_03_llamigos_720p.mp4" />
 
-有封面和音轨的播放器:
+有封面、章节、缩略图和音轨的播放器:
 
 <VidStack
-  src="https://upload.wikimedia.org/wikipedia/commons/transcoded/f/f1/Sintel_movie_4K.webm/Sintel_movie_4K.webm.1080p.vp9.webm"
-  title="VidStack 示例视频"
-  poster="/poster.svg"
-  :tracks="[
+  src="https://media-files.vidstack.io/720p.mp4"
+  title="Agent 327 Operation Barber Shop"
+  poster="https://media-files.vidstack.io/poster-2.png"
+  :sourses="[
     {
-      default: true,
-      src: '/en.vtt',
-      kind: 'subtitles',
-      label: 'English',
-      srcLang: 'en',
+      src: 'https://media-files.vidstack.io/720p.mp4',
+      type: 'video/mp4',
     },
     {
-      src: '/fr.vtt',
-      kind: 'subtitles',
-      label: 'French',
-      srcLang: 'fr',
+      src:  'https://media-files.vidstack.io/720p.avi',
+      type: 'video/avi',
+    },
+    {
+      src:  'https://media-files.vidstack.io/720p.ogv',
+      type: 'video/ogg',
     },
   ]"
+  :tracks="[
+    {
+      src: 'https://media-files.vidstack.io/subs/english.vtt',
+      label: 'English',
+      language: 'en-US',
+      kind: 'subtitles',
+      default: true,
+    },
+    {
+      src: 'https://media-files.vidstack.io/subs/spanish.vtt',
+      label: 'Spanish',
+      language: 'es-ES',
+      kind: 'subtitles',
+    },
+    // Chapters
+    {
+      src: 'https://media-files.vidstack.io/chapters.vtt',
+      kind: 'chapters',
+      language: 'en-US',
+      default: true,
+    },
+  ]"
+  thumbnails="https://media-files.vidstack.io/thumbnails.vtt"
+  crossorigin
 />
 
 一个音频播放器:
@@ -572,28 +595,51 @@ PDF 浏览器组件。
 <VidStack src="https://vp-demo.u2sb.com/video/caminandes_03_llamigos_720p.mp4" />
 ```
 
-有封面和音轨的播放器:
+有封面、章节、缩略图和音轨的播放器:
 
 ```md
 <VidStack
-  src="https://upload.wikimedia.org/wikipedia/commons/transcoded/f/f1/Sintel_movie_4K.webm/Sintel_movie_4K.webm.1080p.vp9.webm"
-  title="VidStack 示例视频"
-  poster="/poster.svg"
-  :tracks="[
+  src="https://media-files.vidstack.io/720p.mp4"
+  title="Agent 327 Operation Barber Shop"
+  poster="https://media-files.vidstack.io/poster-2.png"
+  :sourses="[
     {
-      default: true,
-      src: '/en.vtt',
-      kind: 'subtitles',
-      label: 'English',
-      srcLang: 'en',
+      src: 'https://media-files.vidstack.io/720p.mp4',
+      type: 'video/mp4',
     },
     {
-      src: '/fr.vtt',
-      kind: 'subtitles',
-      label: 'French',
-      srcLang: 'fr',
+      src:  'https://media-files.vidstack.io/720p.avi',
+      type: 'video/avi',
+    },
+    {
+      src:  'https://media-files.vidstack.io/720p.ogv',
+      type: 'video/ogg',
     },
   ]"
+  :tracks="[
+    {
+      src: 'https://media-files.vidstack.io/subs/english.vtt',
+      label: 'English',
+      language: 'en-US',
+      kind: 'subtitles',
+      default: true,
+    },
+    {
+      src: 'https://media-files.vidstack.io/subs/spanish.vtt',
+      label: 'Spanish',
+      language: 'es-ES',
+      kind: 'subtitles',
+    },
+    // Chapters
+    {
+      src: 'https://media-files.vidstack.io/chapters.vtt',
+      kind: 'chapters',
+      language: 'en-US',
+      default: true,
+    },
+  ]"
+  thumbnails="https://media-files.vidstack.io/thumbnails.vtt"
+  crossorigin
 />
 ```
 
@@ -611,30 +657,99 @@ PDF 浏览器组件。
 
 在 Markdown 文件中嵌入视频。
 
-一个视频播放器:
+A video player:
 
-<VideoPlayer src="https://upload.wikimedia.org/wikipedia/commons/transcoded/f/f1/Sintel_movie_4K.webm/Sintel_movie_4K.webm.1080p.vp9.webm" />
+<VideoPlayer src="https://cdn.plyr.io/static/demo/View_From_A_Blue_Moon_Trailer-720p.mp4" />
 
-一个包含了封面和字幕的播放器:
+一个包含了封面、多个源、缩略图、字幕和标记点的播放器:
 
 <VideoPlayer
-  src="https://upload.wikimedia.org/wikipedia/commons/transcoded/f/f1/Sintel_movie_4K.webm/Sintel_movie_4K.webm.1080p.vp9.webm"
-  poster="/assets/poster.svg"
-  :tracks="[
+  :src="[
     {
-      default: true,
-      src: '/assets/subtitles/en.vtt',
-      kind: 'subtitles',
-      label: 'English',
-      srcLang: 'en',
+      src: 'https://cdn.plyr.io/static/demo/View_From_A_Blue_Moon_Trailer-576p.mp4',
+      type: 'video/mp4',
+      size: 576,
     },
     {
-      src: '/assets/subtitles/fr.vtt',
-      kind: 'subtitles',
-      label: 'French',
-      srcLang: 'fr',
+      src: 'https://cdn.plyr.io/static/demo/View_From_A_Blue_Moon_Trailer-720p.mp4',
+      type: 'video/mp4',
+      size: 720,
+    },
+    {
+      src: 'https://cdn.plyr.io/static/demo/View_From_A_Blue_Moon_Trailer-1080p.mp4',
+      type: 'video/mp4',
+      size: 1080,
     },
   ]"
+  poster="https://cdn.plyr.io/static/demo/View_From_A_Blue_Moon_Trailer-HD.jpg"
+  :tracks="[
+    {
+      src: 'https://cdn.plyr.io/static/demo/View_From_A_Blue_Moon_Trailer-HD.en.vtt',
+      label: 'English',
+      language: 'en',
+      kind: 'subtitles',
+      default: true,
+    },
+    {
+      src: 'https://cdn.plyr.io/static/demo/View_From_A_Blue_Moon_Trailer-HD.fr.vtt',
+      label: 'French',
+      language: 'fr',
+      kind: 'subtitles',
+    },
+  ]"
+  crossorigin
+  :options="{
+    title: 'View From A Blue Moon',
+    iconUrl: 'https://cdn.plyr.io/3.7.8/demo.svg',
+    keyboard: {
+      global: true,
+    },
+    tooltips: {
+      controls: true,
+    },
+    captions: {
+      active: true,
+    },
+    previewThumbnails: {
+      enabled: true,
+      src: [
+        'https://cdn.plyr.io/static/demo/thumbs/100p.vtt',
+        'https://cdn.plyr.io/static/demo/thumbs/240p.vtt'
+      ],
+    },
+    vimeo: {
+      referrerPolicy: 'no-referrer',
+    },
+    mediaMetadata: {
+      title: 'View From A Blue Moon',
+      album: 'Sports',
+      artist: 'Brainfarm',
+      artwork: [
+        {
+          src: 'https://cdn.plyr.io/static/demo/View_From_A_Blue_Moon_Trailer-HD.jpg',
+          type: 'image/jpeg',
+        },
+      ],
+    },
+    markers: {
+      enabled: true,
+      points: [
+        {
+          time: 10,
+          label: 'first marker',
+        },
+        {
+          time: 40,
+          label: 'second marker',
+        },
+        {
+          time: 120,
+          label: '<strong>third</strong> marker',
+        }
+      ],
+    },
+  }
+  "
 />
 
 ::: details 代码
@@ -642,30 +757,99 @@ PDF 浏览器组件。
 一个视频播放器:
 
 ```md
-<VideoPlayer src="https://upload.wikimedia.org/wikipedia/commons/transcoded/f/f1/Sintel_movie_4K.webm/Sintel_movie_4K.webm.1080p.vp9.webm" />
+<VideoPlayer src="https://cdn.plyr.io/static/demo/View_From_A_Blue_Moon_Trailer-720p.mp4" />
 ```
 
-一个包含了封面和字幕的播放器:
+一个包含了封面、多个源、缩略图、字幕和标记点的播放器:
 
 ```md
 <VideoPlayer
-  src="https://upload.wikimedia.org/wikipedia/commons/transcoded/f/f1/Sintel_movie_4K.webm/Sintel_movie_4K.webm.1080p.vp9.webm"
-  poster="/assets/poster.svg"
-  :tracks="[
+  :src="[
     {
-      default: true,
-      src: '/assets/subtitles/en.vtt',
-      kind: 'subtitles',
-      label: 'English',
-      srcLang: 'en',
+      src: 'https://cdn.plyr.io/static/demo/View_From_A_Blue_Moon_Trailer-576p.mp4',
+      type: 'video/mp4',
+      size: 576,
     },
     {
-      src: '/assets/subtitles/fr.vtt',
-      kind: 'subtitles',
-      label: 'French',
-      srcLang: 'fr',
+      src: 'https://cdn.plyr.io/static/demo/View_From_A_Blue_Moon_Trailer-720p.mp4',
+      type: 'video/mp4',
+      size: 720,
+    },
+    {
+      src: 'https://cdn.plyr.io/static/demo/View_From_A_Blue_Moon_Trailer-1080p.mp4',
+      type: 'video/mp4',
+      size: 1080,
     },
   ]"
+  poster="https://cdn.plyr.io/static/demo/View_From_A_Blue_Moon_Trailer-HD.jpg"
+  :tracks="[
+    {
+      src: 'https://cdn.plyr.io/static/demo/View_From_A_Blue_Moon_Trailer-HD.en.vtt',
+      label: 'English',
+      language: 'en',
+      kind: 'subtitles',
+      default: true,
+    },
+    {
+      src: 'https://cdn.plyr.io/static/demo/View_From_A_Blue_Moon_Trailer-HD.fr.vtt',
+      label: 'French',
+      language: 'fr',
+      kind: 'subtitles',
+    },
+  ]"
+  crossorigin
+  :options="{
+    title: 'View From A Blue Moon',
+    iconUrl: 'https://cdn.plyr.io/3.7.8/demo.svg',
+    keyboard: {
+      global: true,
+    },
+    tooltips: {
+      controls: true,
+    },
+    captions: {
+      active: true,
+    },
+    previewThumbnails: {
+      enabled: true,
+      src: [
+        'https://cdn.plyr.io/static/demo/thumbs/100p.vtt',
+        'https://cdn.plyr.io/static/demo/thumbs/240p.vtt'
+      ],
+    },
+    vimeo: {
+      referrerPolicy: 'no-referrer',
+    },
+    mediaMetadata: {
+      title: 'View From A Blue Moon',
+      album: 'Sports',
+      artist: 'Brainfarm',
+      artwork: [
+        {
+          src: 'https://cdn.plyr.io/static/demo/View_From_A_Blue_Moon_Trailer-HD.jpg',
+          type: 'image/jpeg',
+        },
+      ],
+    },
+    markers: {
+      enabled: true,
+      points: [
+        {
+          time: 10,
+          label: 'first marker',
+        },
+        {
+          time: 40,
+          label: 'second marker',
+        },
+        {
+          time: 120,
+          label: '<strong>third</strong> marker',
+        }
+      ],
+    },
+  }
+  "
 />
 ```
 

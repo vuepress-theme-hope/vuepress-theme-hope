@@ -172,7 +172,7 @@ export default defineComponent({
   },
 
   setup(props) {
-    const { el, width, height } = useSize<HTMLIFrameElement>(props);
+    const { el, width, height, resize } = useSize<HTMLIFrameElement>(props);
 
     const options = computed(() => ({
       openFile: props.file,
@@ -185,11 +185,13 @@ export default defineComponent({
       initialPath: props.initialPath,
     }));
 
-    onMounted(() => {
-      if (props.embed)
-        void sdk[
+    onMounted(async () => {
+      if (props.embed) {
+        await sdk[
           props.type === "github" ? "embedGithubProject" : "embedProjectId"
         ](el.value!, props.id, options.value);
+        resize();
+      }
     });
 
     return (): VNode =>

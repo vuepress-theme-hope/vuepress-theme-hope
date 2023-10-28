@@ -6,7 +6,7 @@
 
 <Replit user="FuckDoctors" repl="Java-Test" file="Main.java" />
 
-<Replit user="FuckDoctors" repl="Java-Test" plain />
+<Replit user="FuckDoctors" repl="Java-Test" auto-load />
 
 <Replit link="https://replit.com/@FuckDoctors/Java-Test" />
 

@@ -7,7 +7,33 @@ Let the Markdown file support [mermaid](https://mermaid.js.org/) in your VuePres
 
 <!-- more -->
 
-## Config
+## Settings
+
+Install [mermaid](https://mermaid.js.org/) in your project:
+
+::: code-tabs#shell
+
+@tab pnpm
+
+```bash
+pnpm add -D mermaid
+```
+
+@tab yarn
+
+```bash
+yarn add -D mermaid
+```
+
+@tab npm
+
+```bash
+npm i -D mermaid
+```
+
+:::
+
+Then enabling via:
 
 ::: code-tabs#language
 
@@ -71,6 +97,7 @@ Besides using mermaid, you can also use the following code blocks:
 - sequence: `sequenceDiagram`
 - state: `stateDiagram-v2`
 - timeline: `timeline`
+- xy: `xychart-beta`
 
 You do not need to declare diagram type and intent your code.
 
@@ -916,6 +943,16 @@ Campaign F: [0.35, 0.78]
 ````
 
 :::
+
+### XY Chart
+
+```xy
+title "Sales Revenue"
+x-axis [jan, feb, mar, apr, may, jun, jul, aug, sep, oct, nov, dec]
+y-axis "Revenue (in $)" 4000 --> 11000
+bar [5000, 6000, 7500, 8200, 9500, 10500, 11000, 10200, 9200, 8500, 7000, 6000]
+line [5000, 6000, 7500, 8200, 9500, 10500, 11000, 10200, 9200, 8500, 7000, 6000]
+```
 
 ### A Complex Example
 

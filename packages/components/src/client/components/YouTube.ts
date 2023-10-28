@@ -185,7 +185,7 @@ export default defineComponent({
 
   setup(props) {
     const lang = usePageLang();
-    const { el, width, height } = useSize<HTMLIFrameElement>(props);
+    const { el, width, height, resize } = useSize<HTMLIFrameElement>(props);
 
     const loaded = ref(false);
 
@@ -249,6 +249,7 @@ export default defineComponent({
               },
               onLoad: () => {
                 loaded.value = true;
+                resize();
               },
             }),
             loaded.value ? null : h(LoadingIcon),

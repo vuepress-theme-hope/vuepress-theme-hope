@@ -17,6 +17,7 @@ export interface SizeInfo<E extends HTMLElement> {
   el: ShallowRef<E | undefined>;
   width: Ref<string>;
   height: Ref<string>;
+  resize: () => void;
 }
 
 export const useSize = <E extends HTMLElement>(
@@ -62,5 +63,6 @@ export const useSize = <E extends HTMLElement>(
     el,
     width,
     height,
+    resize: updateHeight,
   };
 };

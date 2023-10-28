@@ -179,6 +179,61 @@ color: rgba(253, 230, 138, 0.15)
 
 - [查看详情](https://theme-hope.vuejs.press/zh/guide/markdown/card.html)
 
+#### 导入文件
+
+<!-- @include: ./README.md{11-17} -->
+
+- [查看详情](https://theme-hope.vuejs.press/zh/guide/markdown/include.html)
+
+#### 代码演示
+
+::: normal-demo 一个普通 Demo
+
+```html
+<h1>VuePress Theme Hope</h1>
+<p><span id="very">非常</span>强大!</p>
+```
+
+```js
+document.querySelector("#very").addEventListener("click", () => {
+  alert("非常强大");
+});
+```
+
+```css
+span {
+  color: red;
+}
+```
+
+:::
+
+- [查看详情](https://theme-hope.vuejs.press/zh/guide/markdown/demo.html)
+
+#### 样式化
+
+向 Mr.Hope 捐赠一杯咖啡。 _Recommended_
+
+- [查看详情](https://theme-hope.vuejs.press/zh/guide/markdown/stylize.html)
+
+#### 交互演示
+
+::: playground#ts TS 案例
+
+@file index.ts
+
+```ts
+const msg = "hello world";
+
+const speak = (msg: string) => console.log(msg);
+
+speak(msg);
+```
+
+:::
+
+- [查看详情](https://theme-hope.vuejs.press/zh/guide/markdown/playground.html)
+
 #### 图表
 
 ::: chart 一个散点图案例
@@ -286,61 +341,6 @@ $$
 $$
 
 - [查看详情](https://theme-hope.vuejs.press/zh/guide/markdown/tex.html)
-
-#### 导入文件
-
-<!-- @include: ./README.md{11-17} -->
-
-- [查看详情](https://theme-hope.vuejs.press/zh/guide/markdown/include.html)
-
-#### 代码演示
-
-::: normal-demo 一个普通 Demo
-
-```html
-<h1>VuePress Theme Hope</h1>
-<p><span id="very">非常</span>强大!</p>
-```
-
-```js
-document.querySelector("#very").addEventListener("click", () => {
-  alert("非常强大");
-});
-```
-
-```css
-span {
-  color: red;
-}
-```
-
-:::
-
-- [查看详情](https://theme-hope.vuejs.press/zh/guide/markdown/demo.html)
-
-#### 样式化
-
-向 Mr.Hope 捐赠一杯咖啡。 _Recommended_
-
-- [查看详情](https://theme-hope.vuejs.press/zh/guide/markdown/stylize.html)
-
-#### 交互演示
-
-::: playground#ts TS 案例
-
-@file index.ts
-
-```ts
-const msg = "hello world";
-
-const speak = (msg: string) => console.log(msg);
-
-speak(msg);
-```
-
-:::
-
-- [查看详情](https://theme-hope.vuejs.press/zh/guide/markdown/playground.html)
 
 #### Vue 交互演示
 

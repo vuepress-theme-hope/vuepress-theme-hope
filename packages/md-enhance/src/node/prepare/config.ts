@@ -102,7 +102,7 @@ export const prepareConfigFile = async (
     );
   }
 
-  if (getStatus("revealjs")) {
+  if (getStatus("revealJs")) {
     imports.push(
       `import "${getRealPath("reveal.js/dist/reveal.css", url)}";`,
       `import RevealJs from "${CLIENT_FOLDER}components/RevealJs.js";`,

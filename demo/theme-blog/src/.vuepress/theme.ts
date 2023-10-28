@@ -150,6 +150,7 @@ export default hopeTheme(
       mdEnhance: {
         align: true,
         attrs: true,
+        card: true,
         chart: true,
         codetabs: true,
         demo: true,
@@ -166,7 +167,7 @@ export default hopeTheme(
         playground: {
           presets: ["ts", "vue"],
         },
-        revealjs: {
+        revealJs: {
           plugins: ["highlight", "math", "search", "notes", "zoom"],
         },
         stylize: [

@@ -7,7 +7,7 @@ You can use custom syntax to add attrs for Markdown content.
 
 <!-- more -->
 
-## Config
+## Settings
 
 ::: code-tabs#language
 

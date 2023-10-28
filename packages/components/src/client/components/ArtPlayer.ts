@@ -203,7 +203,7 @@ export default defineComponent({
 
   setup(props, { attrs }) {
     const lang = usePageLang();
-    const { el, width, height } = useSize<HTMLDivElement>(props, 0);
+    const { el, width, height, resize } = useSize<HTMLDivElement>(props, 0);
 
     const loaded = ref(false);
     let artPlayerInstance: Artplayer;
@@ -254,6 +254,7 @@ export default defineComponent({
               break;
 
             case "flv":
+            case "ts":
               customType[initOptions.type] ??= (
                 video: HTMLVideoElement,
                 src: string,
@@ -293,6 +294,7 @@ export default defineComponent({
 
       artPlayerInstance = (await props.customPlayer(player)) || player;
       loaded.value = true;
+      resize();
     });
 
     onUnmounted(() => {

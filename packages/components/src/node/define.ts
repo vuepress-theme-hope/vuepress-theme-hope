@@ -9,6 +9,7 @@ import {
   siteInfoLocaleConfig,
 } from "./locales/index.js";
 import type { ComponentOptions } from "./options/index.js";
+import { isInstalled } from "./utils.js";
 
 export const getDefine =
   (
@@ -34,13 +35,17 @@ export const getDefine =
       result["FONT_ICON_PREFIX"] = iconPrefix;
     }
 
-    if (options.components?.includes("ArtPlayer"))
+    if (options.components?.includes("ArtPlayer")) {
       result["ART_PLAYER_OPTIONS"] = {
         fullscreen: true,
         playbackRate: true,
         setting: true,
         ...(options.componentOptions?.artPlayer || {}),
       };
+      result["DASHJS_INSTALLED"] = isInstalled("dashjs");
+      result["HLS_JS_INSTALLED"] = isInstalled("hls.js");
+      result["MPEGTS_JS_INSTALLED"] = isInstalled("mpegts.js");
+    }
 
     if (options.components?.includes("PDF")) {
       result["PDF_LOCALES"] = getLocales({

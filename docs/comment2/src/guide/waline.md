@@ -3,9 +3,33 @@ title: Waline
 icon: w
 ---
 
-Welcome to Waline. In just a few steps, you can enable Waline to provide comments and page views on your site.
+A safe comment system with backend.
 
 <!-- more -->
+
+## Install
+
+::: code-tabs#shell
+
+@tab pnpm
+
+```bash
+pnpm add -D @waline/client
+```
+
+@tab yarn
+
+```bash
+yarn add -D @waline/client
+```
+
+@tab npm
+
+```bash
+npm i -D @waline/client
+```
+
+:::
 
 ## LeanCloud Settings (Database)
 

@@ -10,29 +10,55 @@ VidStack has some known issues with Vue. So stop using it until we fixed it.
 
 A video player:
 
-<VidStack src="https://vp-demo.u2sb.com/video/caminandes_03_llamigos_720p.mp4" />
+<VidStack
+  src="https://cdn.plyr.io/static/demo/View_From_A_Blue_Moon_Trailer-720p.mp4"
+  poster="https://cdn.plyr.io/static/demo/View_From_A_Blue_Moon_Trailer-HD.jpg"
+/>
 
 A video player with poster and tracks:
 
 <VidStack
-  src="https://upload.wikimedia.org/wikipedia/commons/transcoded/f/f1/Sintel_movie_4K.webm/Sintel_movie_4K.webm.1080p.vp9.webm"
-  title="VidStack Video Demo"
-  poster="/poster.svg"
-  :tracks="[
+  src="https://media-files.vidstack.io/720p.mp4"
+  title="Agent 327 Operation Barber Shop"
+  poster="https://media-files.vidstack.io/poster-2.png"
+  :sourses="[
     {
-      default: true,
-      src: '/en.vtt',
-      kind: 'subtitles',
-      label: 'English',
-      srcLang: 'en',
+      src: 'https://media-files.vidstack.io/720p.mp4',
+      type: 'video/mp4',
     },
     {
-      src: '/fr.vtt',
-      kind: 'subtitles',
-      label: 'French',
-      srcLang: 'fr',
+      src:  'https://media-files.vidstack.io/720p.avi',
+      type: 'video/avi',
+    },
+    {
+      src:  'https://media-files.vidstack.io/720p.ogv',
+      type: 'video/ogg',
     },
   ]"
+  :tracks="[
+    {
+      src: 'https://media-files.vidstack.io/subs/english.vtt',
+      label: 'English',
+      language: 'en-US',
+      kind: 'subtitles',
+      default: true,
+    },
+    {
+      src: 'https://media-files.vidstack.io/subs/spanish.vtt',
+      label: 'Spanish',
+      language: 'es-ES',
+      kind: 'subtitles',
+    },
+    // Chapters
+    {
+      src: 'https://media-files.vidstack.io/chapters.vtt',
+      kind: 'chapters',
+      language: 'en-US',
+      default: true,
+    },
+  ]"
+  thumbnails="https://media-files.vidstack.io/thumbnails.vtt"
+  crossorigin
 />
 
 HLS:

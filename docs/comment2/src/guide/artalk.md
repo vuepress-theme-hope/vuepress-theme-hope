@@ -9,6 +9,30 @@ Come to your blog, or anywhere, place the Artalk comment box, so that the page h
 
 <!-- more -->
 
+## Install
+
+::: code-tabs#shell
+
+@tab pnpm
+
+```bash
+pnpm add -D artalk
+```
+
+@tab yarn
+
+```bash
+yarn add -D artalk
+```
+
+@tab npm
+
+```bash
+npm i -D artalk
+```
+
+:::
+
 ## Deploy Artalk Server
 
 See the [Artalk documentation](https://artalk.js.org/guide/deploy.html).

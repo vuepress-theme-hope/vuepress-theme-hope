@@ -1,2 +1,2 @@
-export * from "./revealJs.js";
+export * from "./mermaid.js";
 export * from "./vuePlayground.js";

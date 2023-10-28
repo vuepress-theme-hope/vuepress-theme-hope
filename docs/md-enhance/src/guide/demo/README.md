@@ -15,7 +15,7 @@ So, this means you do not have access to internal components in your project. Ne
 
 :::
 
-## Config
+## Settings
 
 ::: code-tabs#language
 

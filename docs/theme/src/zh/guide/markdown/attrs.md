@@ -12,7 +12,7 @@ tag:
 
 <!-- more -->
 
-## Config
+## Settings
 
 ::: code-tabs#language
 

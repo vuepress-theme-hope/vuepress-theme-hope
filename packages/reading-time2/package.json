@@ -1,6 +1,6 @@
 {
   "name": "vuepress-plugin-reading-time2",
-  "version": "2.0.0-beta.239",
+  "version": "2.0.0-beta.242",
   "description": "Reading time plugin for VuePress",
   "keywords": [
     "vuepress",
@@ -30,6 +30,8 @@
     "./client": "./lib/client/index.js",
     "./package.json": "./package.json"
   },
+  "main": "./lib/node/index.js",
+  "types": "./lib/node/index.d.ts",
   "files": [
     "lib"
   ],
@@ -46,7 +48,7 @@
   },
   "dependencies": {
     "@vuepress/client": "2.0.0-beta.67",
-    "vue": "^3.3.6",
+    "vue": "^3.3.7",
     "vuepress-shared": "workspace:*"
   },
   "devDependencies": {

@@ -153,11 +153,10 @@ export default defineComponent({
         },
       );
 
-      watch(
-        () => route.fullPath,
-        () => updateTocMarker(),
-        { flush: "post", immediate: true },
-      );
+      watch(() => route.fullPath, updateTocMarker, {
+        flush: "post",
+        immediate: true,
+      });
     });
 
     return (): VNode | null => {

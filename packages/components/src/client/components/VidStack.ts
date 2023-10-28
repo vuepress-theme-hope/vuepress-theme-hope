@@ -10,6 +10,7 @@ import "../styles/vidstack.scss";
 export interface VidStackSource {
   src: string;
   type: string;
+  size: string | number;
 }
 
 export interface VidStackTrack {
@@ -80,27 +81,22 @@ export default defineComponent({
 
     return (): VNode =>
       h("media-player", attrs, [
-        attrs["poster"]
-          ? h("media-poster", { alt: attrs["alt"] || attrs["title"] })
-          : null,
         h("media-provider", [
+          attrs["poster"]
+            ? h("media-poster", {
+                class: "vds-poster",
+                alt: attrs["alt"] || attrs["title"],
+              })
+            : null,
           props.sources.map((source) =>
             isPlainObject(source)
-              ? h("source", { src: source.src, type: source.type })
-              : h("source", source),
+              ? h("source", source)
+              : h("source", { src: source }),
           ),
-          props.tracks.map(
-            ({ src, label, srclang, kind, default: isDefault }) =>
-              h("track", { src, label, srclang, kind, default: isDefault }),
-          ),
-          h("media-gesture", { event: "pointerup", action: "toggle:paused" }),
-          h("media-gesture", {
-            event: "dblclick",
-            action: "toggle:fullscreen",
-          }),
+          props.tracks.map((tracks) => h("track", tracks)),
         ]),
         h("media-audio-layout"),
-        h("media-video-layout"),
+        h("media-video-layout", attrs),
       ]);
   },
 });

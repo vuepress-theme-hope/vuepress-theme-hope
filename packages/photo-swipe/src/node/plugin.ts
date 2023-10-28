@@ -2,6 +2,7 @@ import type { PluginFunction } from "@vuepress/core";
 import { useSassPalettePlugin } from "vuepress-plugin-sass-palette";
 import {
   addViteOptimizeDepsExclude,
+  addViteSsrNoExternal,
   checkVersion,
   entries,
   fromEntries,
@@ -52,6 +53,7 @@ export const photoSwipePlugin =
 
       extendsBundlerOptions: (bundlerOptions: unknown, app): void => {
         addViteOptimizeDepsExclude(bundlerOptions, app, "photoswipe");
+        addViteSsrNoExternal(bundlerOptions, app, "vuepress-shared");
       },
 
       clientConfigFile: `${CLIENT_FOLDER}config.js`,

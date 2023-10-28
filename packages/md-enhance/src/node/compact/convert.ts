@@ -79,7 +79,7 @@ export const convertOptions = (
       `${colors.magenta(
         "presentation",
       )} is no longer supported, please use ${colors.magenta(
-        `revealjs`,
+        "revealJs",
       )} instead.`,
     );
 };

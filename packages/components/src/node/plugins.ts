@@ -1,6 +1,10 @@
 import type { PluginFunction } from "@vuepress/core";
 import { useSassPalettePlugin } from "vuepress-plugin-sass-palette";
-import { addCustomElement, checkVersion } from "vuepress-shared/node";
+import {
+  addCustomElement,
+  addViteSsrNoExternal,
+  checkVersion,
+} from "vuepress-shared/node";
 
 import { convertOptions } from "./compact/index.js";
 import { getDefine } from "./define.js";
@@ -28,6 +32,8 @@ export const componentsPlugin =
       extendsBundlerOptions: (bundlerOptions, app): void => {
         if (options?.components?.includes("VidStack"))
           addCustomElement(bundlerOptions, app, /^media-/);
+
+        addViteSsrNoExternal(bundlerOptions, app, "vuepress-shared");
       },
 
       clientConfigFile: (app) => prepareConfigFile(app, options, legacy),
