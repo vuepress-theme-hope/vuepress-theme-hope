@@ -10,4 +10,5 @@ actions:
 ---
 
 <AutoCatalog />
+<AutoCatalog index />
 <AutoCatalog base="/not-exist/" />

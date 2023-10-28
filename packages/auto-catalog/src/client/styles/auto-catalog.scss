@@ -1,40 +1,92 @@
-.vp-catalog {
+.vp-catalog-wrapper {
   margin-top: 8px;
   margin-bottom: 8px;
+
+  &.index {
+    ol {
+      padding-inline-start: 0;
+    }
+
+    li {
+      list-style-type: none;
+    }
+
+    .vp-child-catalogs {
+      counter-reset: child-catalog;
+    }
+
+    .vp-child-catalog {
+      counter-increment: child-catalog;
+
+      .vp-catalog-title::before {
+        content: counter(catalog-item) "." counter(child-catalog) " ";
+      }
+    }
+
+    .vp-sub-catalogs {
+      padding-inline-start: 0.5rem;
+    }
+  }
+}
+
+.vp-catalogs {
+  margin: 0;
+  padding-inline-start: 0;
+  counter-reset: catalog-item;
 
   .font-icon {
     vertical-align: baseline;
     margin-inline-end: 0.25rem;
   }
+}
 
-  &-main-title,
-  &-child-title,
-  &-sub-title {
+.vp-catalog {
+  counter-increment: catalog-item;
+
+  &-main-title {
     margin-top: calc(0.5rem - var(--navbar-height, 3.6rem));
     margin-bottom: 0.5rem;
     padding-top: var(--navbar-height, 3.6rem);
+
     font-weight: 500;
+    font-size: 1.75rem;
 
     &:first-child {
-      margin-bottom: 0.5rem;
+      margin-bottom: 0.5rem !important;
+    }
+
+    &:only-child {
+      margin-bottom: 0 !important;
     }
   }
 
-  &-main-title {
-    font-size: 1.75rem;
-  }
+  &-child-title.has-children {
+    margin-top: calc(0.5rem - var(--navbar-height, 3.6rem));
+    margin-bottom: 0.5rem;
+    padding-top: var(--navbar-height, 3.6rem);
+    border-bottom: 1px solid var(--vp-brc);
 
-  &-child-title {
+    font-weight: 500;
     font-size: 1.3rem;
 
-    &.has-children {
-      border-bottom: 1px solid var(--vp-brc);
-      transition: border-color var(--vp-ct);
+    transition: border-color var(--vp-ct);
+
+    &:first-child {
+      margin-bottom: 0.5rem !important;
+    }
+
+    &:only-child {
+      margin-bottom: 0 !important;
     }
   }
 
   &-sub-title {
+    font-weight: 500;
     font-size: 1.1rem;
+
+    &:only-child {
+      margin-bottom: 0 !important;
+    }
   }
 
   &-title {
@@ -45,22 +97,35 @@
       color: var(--vp-tc);
     }
   }
+
+  .vp-catalog-title::before {
+    content: "§" counter(catalog-item, upper-roman) " ";
+  }
 }
 
 .vp-child-catalogs {
   margin: 0;
 }
 
-.vp-child-catalogs::marker {
-  color: var(--vp-clt);
+.vp-sub-catalogs {
+  counter-reset: sub-catalog;
 }
 
-.vp-sub-catalogs {
+.vp-sub-catalog {
+  counter-increment: sub-catalog;
+
+  .vp-link::before {
+    content: counter(catalog-item) "." counter(child-catalog) "."
+      counter(sub-catalog) " ";
+  }
+}
+
+.vp-sub-catalogs-wrapper {
   display: flex;
   flex-wrap: wrap;
 }
 
-.vp-sub-catalog {
+.vp-sub-catalog-link {
   display: inline-block;
 
   margin: 4px 8px;
