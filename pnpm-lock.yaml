@@ -2334,8 +2334,8 @@ importers:
         specifier: 7.0.1
         version: 7.0.1
       vite:
-        specifier: 4.4.11
-        version: 4.4.11(@types/node@20.8.9)(sass@1.69.5)
+        specifier: 4.5.0
+        version: 4.5.0(@types/node@20.8.9)
 
   packages/sitemap2:
     dependencies:
