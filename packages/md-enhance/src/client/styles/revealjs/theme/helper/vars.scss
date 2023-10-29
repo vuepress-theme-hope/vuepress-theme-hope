@@ -37,3 +37,8 @@ $link-color-hover: color.scale($link-color, $lightness: 20%);
 // Text selection
 $selection-background-color: #ff5e99;
 $selection-color: #fff;
+
+// Colors used for UI elements that are overlaid on top of
+// the presentation
+$overlay-element-bg-color: 240, 240, 240;
+$overlay-element-fg-color: 0, 0, 0;

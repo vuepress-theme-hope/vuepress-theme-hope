@@ -20,6 +20,16 @@ $link-color: #42affa;
     link-color: $link-color,
     link-color-hover: color.scale($link-color, $lightness: 20%),
     selection-background-color: rgb(79 64 28 / 99%),
+    overlay-element-bg-color: (
+      240,
+      240,
+      240,
+    ),
+    overlay-element-fg-color: (
+      0,
+      0,
+      0,
+    ),
     heading1-text-shadow: (
       0 1px 0 #ccc,
       0 2px 0 #c9c9c9,
