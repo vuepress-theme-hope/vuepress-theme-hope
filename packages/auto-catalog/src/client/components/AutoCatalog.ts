@@ -94,7 +94,7 @@ export default defineComponent({
     const siteData = useSiteData();
 
     const CatalogIcon = (icon?: string | null): VNode | null =>
-      icon && iconComponent ? h(iconComponent, { icon }) : null;
+      icon ? h(iconComponent, { icon }) : null;
 
     const CatalogLink = ({
       title,

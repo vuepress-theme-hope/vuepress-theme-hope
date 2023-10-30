@@ -833,10 +833,10 @@ export const defineMermaidConfig: (options: MermaidConfig) => void;
 
 定义需要传递给 Mermaid 的配置选项。
 
-### defineRevealConfig
+### defineRevealJsConfig
 
 ```ts
-export const defineRevealConfig: (options: RevealOptions) => void;
+export const defineRevealJsConfig: (options: RevealOptions) => void;
 ```
 
 定义需要传递给 Reveal.js 的配置选项。

@@ -751,10 +751,10 @@ export const defineMermaidConfig: (options: MermaidConfig) => void;
 
 Define config which you want to pass to mermaid.
 
-### defineRevealConfig
+### defineRevealJsConfig
 
 ```ts
-export const defineRevealConfig: (options: RevealOptions) => void;
+export const defineRevealJsConfig: (options: RevealOptions) => void;
 ```
 
 Define config which you want to pass to reveal.js.
