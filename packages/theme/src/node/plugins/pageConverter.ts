@@ -102,8 +102,11 @@ export const extendsPagePlugin = (
 
       const isEncrypted = isPageEncrypted(page);
 
-      // encrypt page shall not have seo
-      if (isEncrypted) page.frontmatter["seo"] = false;
+      // encrypt page shall not appear in feed items or perform seo
+      if (isEncrypted) {
+        page.frontmatter["feed"] = false;
+        page.frontmatter["seo"] = false;
+      }
 
       injectPageInfo(<Page<ThemePageData>>page);
       injectLocalizedDate(page);
