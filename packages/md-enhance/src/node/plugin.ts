@@ -125,7 +125,7 @@ export const mdEnhancePlugin =
     const enableKatex = getStatus("katex", false, "katex");
     const enableMathjax = getStatus("mathjax", true, "mathjax-full");
     const enableVuePlayground = getStatus("vuePlayground", false, "@vue/repl");
-    const enableSandpack = getStatus("sandpack");
+    const enableSandpack = getStatus("sandpack", false, "sandpack-vue3");
 
     const { enabled: enableLinksCheck, isIgnoreLink } = getLinksCheckStatus(
       app,
