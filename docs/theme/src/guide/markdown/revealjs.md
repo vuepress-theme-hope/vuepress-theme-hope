@@ -213,14 +213,14 @@ For detailed demo, please see <ProjectLink name="md-enhance" path="/guide/reveal
 
 ## Customize Reveal.js
 
-You can also import and call `defineRevealConfig` in client config file to customize reveal.js:
+You can also import and call `defineRevealJsConfig` in client config file to customize reveal.js:
 
 ```ts
 // .vuepress/client.ts
 import { defineClientConfig } from "@vuepress/client";
-import { defineRevealConfig } from "vuepress-plugin-md-enhance/client";
+import { defineRevealJsConfig } from "vuepress-plugin-md-enhance/client";
 
-defineRevealConfig({
+defineRevealJsConfig({
   // reveal.js options here
 });
 
@@ -231,7 +231,7 @@ export default defineClientConfig({
 
 ::: note
 
-Reveal.js also provides [more plugins](https://github.com/hakimel/reveal.js/wiki/Plugins,-Tools-and-Hardware), you can add them via `plugin` option in `defineRevealConfig`. Built-in plugins you request at node side will be added automatically.
+Reveal.js also provides [more plugins](https://github.com/hakimel/reveal.js/wiki/Plugins,-Tools-and-Hardware), you can add them via `plugin` option in `defineRevealJsConfig`. Built-in plugins you request at node side will be added automatically.
 
 :::
 

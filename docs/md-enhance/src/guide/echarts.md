@@ -113,6 +113,30 @@ You can use top-level await and `fetch` to get data from network requests.
 
 :::
 
+## Advanced
+
+You can import and call `defineEchartsConfig` in client config file to customize echarts.
+
+```ts
+// .vuepress/client.ts
+import { defineClientConfig } from "@vuepress/client";
+import { defineEchartsConfig } from "vuepress-plugin-md-enhance/client";
+
+defineEchartsConfig({
+  options: {
+    // global echarts options
+  },
+  setup: async () => {
+    // echarts setup
+    // e.g.: import('echarts-wordcloud')
+  },
+});
+
+export default defineClientConfig({
+  // ...
+});
+```
+
 ## Docs
 
 For details, please see [ECharts Docs](https://echarts.apache.org/handbook/en/get-started/).
@@ -216,5 +240,15 @@ For details, please see [ECharts Docs](https://echarts.apache.org/handbook/en/ge
 :::: details Code
 
 <!-- @include: @echarts/multiple.snippet.md -->
+
+::::
+
+### WordCloud (with setup)
+
+<!-- @include: @echarts/wordcloud.snippet.md#demo -->
+
+:::: details Code
+
+<!-- @include: @echarts/wordcloud.snippet.md -->
 
 ::::

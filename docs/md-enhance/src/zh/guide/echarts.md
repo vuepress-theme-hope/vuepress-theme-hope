@@ -113,6 +113,30 @@ const option = {
 
 :::
 
+## 高级
+
+你可以在客户端配置文件中导入并使用 `defineEchartsConfig` 来自定义 Echarts:
+
+```ts
+// .vuepress/client.ts
+import { defineClientConfig } from "@vuepress/client";
+import { defineEchartsConfig } from "vuepress-plugin-md-enhance/client";
+
+defineEchartsConfig({
+  options: {
+    // 全局 Echarts 配置
+  },
+  setup: async () => {
+    // Echarts 设置
+    // 例如: import('echarts-wordcloud')
+  },
+});
+
+export default defineClientConfig({
+  // ...
+});
+```
+
 ## 文档
 
 相关详情，详见 [ECharts 文档](https://echarts.apache.org/handbook/zh/get-started/).
@@ -206,6 +230,16 @@ const option = {
 :::: details Code
 
 <!-- @include: @echarts/tree.snippet.md -->
+
+::::
+
+### 词云 (通过设置函数)
+
+<!-- @include: @echarts/wordcloud.snippet.md#demo -->
+
+:::: details Code
+
+<!-- @include: @echarts/wordcloud.snippet.md -->
 
 ::::
 

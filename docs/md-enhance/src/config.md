@@ -736,6 +736,26 @@ Locales config for Markdown Enhance Plugin.
 
 ## Client Config
 
+### defineEchartsConfig
+
+```ts
+export interface EchartsConfig {
+  /**
+   * Echarts global options
+   */
+  option?: EChartsOption;
+
+  /**
+   * Echarts setup function
+   */
+  setup?: () => Promise<void>;
+}
+
+export const defineEchartsConfig: (config: EchartsConfig) => void;
+```
+
+Define global options and setup for Echarts.
+
 ### defineMermaidConfig
 
 ```ts
@@ -744,10 +764,10 @@ export const defineMermaidConfig: (options: MermaidConfig) => void;
 
 Define config which you want to pass to mermaid.
 
-### defineRevealConfig
+### defineRevealJsConfig
 
 ```ts
-export const defineRevealConfig: (options: RevealOptions) => void;
+export const defineRevealJsConfig: (options: RevealOptions) => void;
 ```
 
 Define config which you want to pass to reveal.js.
