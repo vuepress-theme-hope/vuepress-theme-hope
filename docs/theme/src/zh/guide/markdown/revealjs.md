@@ -213,14 +213,14 @@ $$
 
 ## 自定义 Reveal.js
 
-你也可以在客户端配置文件中导入并调用 `defineRevealConfig` 来自定义 reveal.js:
+你也可以在客户端配置文件中导入并调用 `defineRevealJsConfig` 来自定义 reveal.js:
 
 ```ts
 // .vuepress/client.ts
 import { defineClientConfig } from "@vuepress/client";
-import { defineRevealConfig } from "vuepress-plugin-md-enhance/client";
+import { defineRevealJsConfig } from "vuepress-plugin-md-enhance/client";
 
-defineRevealConfig({
+defineRevealJsConfig({
   // 在此设置 reveal.js 选项
 });
 
@@ -231,7 +231,7 @@ export default defineClientConfig({
 
 ::: note
 
-Reveal.js 还提供了[更多的插件](https://github.com/hakimel/reveal.js/wiki/Plugins,-Tools-and-Hardware)，你可以通过 `plugin` 选项在 `defineRevealConfig` 中添加它们。在 Node 一侧要求的内置插件将自动添加。
+Reveal.js 还提供了[更多的插件](https://github.com/hakimel/reveal.js/wiki/Plugins,-Tools-and-Hardware)，你可以通过 `plugin` 选项在 `defineRevealJsConfig` 中添加它们。在 Node 一侧要求的内置插件将自动添加。
 
 :::
 
