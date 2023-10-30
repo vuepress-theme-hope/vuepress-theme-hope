@@ -26,7 +26,7 @@
     "katex": "0.16.9",
     "mathjax-full": "3.2.2",
     "mermaid": "10.6.0",
-    "reveal.js": "5.0.0",
+    "reveal.js": "5.0.1",
     "sass-loader": "13.3.2",
     "vue": "3.3.7",
     "vuepress-shared": "workspace:*",
