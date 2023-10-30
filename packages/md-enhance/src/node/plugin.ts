@@ -273,17 +273,6 @@ export const mdEnhancePlugin =
             config.module.set("unknownContextCritical", false);
           });
         }
-
-        if (enableSandpack) {
-          addViteOptimizeDepsInclude(bundlerOptions, app, "sandpack-vue3");
-          addViteSsrExternal(bundlerOptions, app, "sandpack-vue3");
-
-          // hide webpack warnings
-          chainWebpack(bundlerOptions, app, (config) => {
-            config.module.set("exprContextCritical", false);
-            config.module.set("unknownContextCritical", false);
-          });
-        }
       },
 
       extendsMarkdown: (md): void => {

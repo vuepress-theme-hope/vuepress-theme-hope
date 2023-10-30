@@ -1,6 +1,5 @@
 import { useMutationObserver } from "@vueuse/core";
 import type { Sandpack, SandpackPredefinedTemplate } from "sandpack-vue3";
-// import { Sandpack } from "sandpack-vue3";
 import type { VNode } from "vue";
 import { computed, defineComponent, h, onMounted, ref, shallowRef } from "vue";
 import { LoadingIcon, deepAssign } from "vuepress-shared/client";
@@ -15,7 +14,7 @@ import {
 import "../styles/sandpack.scss";
 
 export default defineComponent({
-  name: "MdSandpack",
+  name: "SandPack",
 
   props: {
     /**

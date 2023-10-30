@@ -36,6 +36,16 @@ $green: #859900;
     link-color: $blue,
     link-color-hover: color.scale($blue, $lightness: 20%),
     selection-background-color: $magenta,
+    overlay-element-bg-color: (
+      240,
+      240,
+      240,
+    ),
+    overlay-element-fg-color: (
+      0,
+      0,
+      0,
+    ),
   )
 ) {
   @include light.highlight;

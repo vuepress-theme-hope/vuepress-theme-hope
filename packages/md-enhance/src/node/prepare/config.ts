@@ -171,7 +171,7 @@ export const prepareConfigFile = async (
     );
     enhances.push(
       `injectSandpackConfig(app);`,
-      `app.component("MdSandpack", defineAsyncComponent(() => import("${CLIENT_FOLDER}components/Sandpack.js")));`,
+      `app.component("SandPack", defineAsyncComponent(() => import("${CLIENT_FOLDER}components/Sandpack.js")));`,
     );
   }
 

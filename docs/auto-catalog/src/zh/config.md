@@ -171,13 +171,6 @@ Catalog 的最大层级
 
 是否在目录列表中显示索引
 
-### indexType
-
-- 类型: `ul | ol`
-- 默认值: `ul`
-
-索引列表的展示类型，仅显示索引时生效
-
 ### hideHeading
 
 - 类型: `boolean`

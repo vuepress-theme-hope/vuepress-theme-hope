@@ -5,7 +5,7 @@ import { entries } from "vuepress-shared/node";
 
 import { encodeFiles, getAttrs } from "./utils.js";
 import type {
-  MdSandpackOptions,
+  SandPackOptions,
   SandpackData,
   SandpackFile,
   SandpackOptions,
@@ -255,15 +255,15 @@ const defaultPropsGetter = (
   ),
 });
 
-export const sandpack: PluginWithOptions<MdSandpackOptions> = (
+export const sandpack: PluginWithOptions<SandPackOptions> = (
   md,
   {
     name = "sandpack",
-    component = "MdSandpack",
+    component = "SandPack",
     propsGetter = defaultPropsGetter,
   } = {
     name: "sandpack",
-    component: "MdSandpack",
+    component: "SandPack",
     propsGetter: defaultPropsGetter,
   },
 ) => {

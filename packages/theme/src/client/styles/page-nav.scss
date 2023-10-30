@@ -51,6 +51,12 @@
 
     .icon {
       margin-inline-end: 0.25em;
+      font-size: 1em;
+    }
+
+    img.icon {
+      vertical-align: text-bottom;
+      height: 1em;
     }
   }
 
@@ -59,6 +65,12 @@
 
     .icon {
       margin-inline-start: 0.25em;
+      font-size: 1em;
+    }
+
+    img.icon {
+      vertical-align: text-bottom;
+      height: 1em;
     }
   }
 }

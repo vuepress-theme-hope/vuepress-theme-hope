@@ -1,4 +1,4 @@
-export interface MdSandpackOptions {
+export interface SandPackOptions {
   /**
    * Sandpack container name
    *

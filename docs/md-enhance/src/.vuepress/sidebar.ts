@@ -181,6 +181,7 @@ export const zhSidebar = sidebar({
       children: ["", "demo", "themes"],
     },
     "stylize",
+    "sandpack",
     "others",
   ],
 });
