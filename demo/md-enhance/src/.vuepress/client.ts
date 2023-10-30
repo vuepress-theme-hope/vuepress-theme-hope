@@ -4,7 +4,7 @@ import SlidePage from "vuepress-plugin-md-enhance/SlidePage";
 
 defineEchartsConfig({
   setup: async () => {
-    import("echarts-wordcloud");
+    await import("echarts-wordcloud");
   },
 });
 

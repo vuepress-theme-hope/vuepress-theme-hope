@@ -128,7 +128,7 @@ defineEchartsConfig({
   },
   setup: async () => {
     // Echarts 设置
-    // 例如: import('echarts-wordcloud')
+    // 例如: await import("echarts-wordcloud")
   },
 });
 
