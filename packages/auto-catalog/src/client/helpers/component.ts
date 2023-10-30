@@ -15,9 +15,8 @@ export const defineAutoCatalogIconComponent = (
   autoCatalogIconComponent = options;
 };
 
-export const useAutoCatalogIconComponent = ():
-  | AutoCatalogIconComponent
-  | undefined => inject(autoCatalogSymbol);
+export const useAutoCatalogIconComponent = (): AutoCatalogIconComponent =>
+  inject(autoCatalogSymbol)!;
 
 export const injectAutoCatalogIconComponent = (app: App): void => {
   app.provide(autoCatalogSymbol, autoCatalogIconComponent);
