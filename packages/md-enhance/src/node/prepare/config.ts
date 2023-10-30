@@ -144,8 +144,12 @@ export const prepareConfigFile = async (
   }
 
   if (getStatus("vuePlayground")) {
+    const asyncImports = `import { defineAsyncComponent } from "vue";`;
+
+    if (!imports.includes(asyncImports))
+      imports.push(`import { defineAsyncComponent } from "vue";`);
+
     imports.push(
-      `import { defineAsyncComponent } from "vue";`,
       `import { injectVuePlaygroundConfig } from "${CLIENT_FOLDER}index.js";`,
     );
     enhances.push(
@@ -155,6 +159,21 @@ export const prepareConfigFile = async (
   }
 
   if (getStatus("mathjax")) imports.push(`import "./mathjax.css";`);
+
+  if (getStatus("sandpack")) {
+    const asyncImports = `import { defineAsyncComponent } from "vue";`;
+
+    if (!imports.includes(asyncImports))
+      imports.push(`import { defineAsyncComponent } from "vue";`);
+
+    imports.push(
+      `import { injectSandpackConfig } from "${CLIENT_FOLDER}index.js";`,
+    );
+    enhances.push(
+      `injectSandpackConfig(app);`,
+      `app.component("MdSandpack", defineAsyncComponent(() => import("${CLIENT_FOLDER}components/Sandpack.js")));`,
+    );
+  }
 
   return app.writeTemp(
     `md-enhance/config.js`,

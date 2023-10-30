@@ -1,0 +1,31 @@
+// Vitest Snapshot v1, https://vitest.dev/guide/snapshot.html
+
+exports[`Sandpack > Should resolve sandpack info 1`] = `
+"<MdSandpack key=\\"47bf4596\\" title=\\"Sandpack%20demo\\" template=\\"vue\\" files=\\"eyJBcHAudnVlIjoiPHNjcmlwdCBzZXR1cD5cbmltcG9ydCB7IHJlZiB9IGZyb20gJ3Z1ZSdcbmNvbnN0IG1zZyA9IHJlZignSGVsbG8gV29ybGQhJylcbjwvc2NyaXB0PlxuPHRlbXBsYXRlPlxuICA8aDE%2Be3sgbXNnIH19PC9oMT5cbiAgPGlucHV0IHYtbW9kZWw9XCJtc2dcIiAvPlxuPC90ZW1wbGF0ZT5cbiIsIkNvbXAudnVlIjoiPHRlbXBsYXRlPlxuICA8ZGl2PkNvbXA8L2Rpdj5cbjwvdGVtcGxhdGU%2BXG4ifQ%3D%3D\\" options=\\"%7B%7D\\" customSetup=\\"%7B%7D\\">
+</MdSandpack>
+"
+`;
+
+exports[`Sandpack > Should resolve sandpack info with customSetup 1`] = `
+"<MdSandpack key=\\"61e23a7c\\" title=\\"Sandpack%20demo%20with%20customSetup\\" template=\\"vue\\" files=\\"eyJBcHAudnVlIjoiPHNjcmlwdCBzZXR1cD5cbmltcG9ydCB7IHJlZiB9IGZyb20gJ3Z1ZSdcbmNvbnN0IG1zZyA9IHJlZignSGVsbG8gV29ybGQhJylcbjwvc2NyaXB0PlxuPHRlbXBsYXRlPlxuICA8aDE%2Be3sgbXNnIH19PC9oMT5cbiAgPGlucHV0IHYtbW9kZWw9XCJtc2dcIiAvPlxuPC90ZW1wbGF0ZT5cbiJ9\\" options=\\"%7B%22readOnly%22%3Atrue%2C%22showReadOnly%22%3Afalse%7D\\" customSetup=\\"%7B%22entry%22%3A%22%2Findex.js%22%7D\\">
+</MdSandpack>
+"
+`;
+
+exports[`Sandpack > Should resolve sandpack info with file attrs 1`] = `
+"<MdSandpack key=\\"8b2108e4\\" title=\\"Sandpack%20demo%20with%20options\\" template=\\"\\" files=\\"eyIvc3JjL0FwcC52dWUiOnsiY29kZSI6IjxzY3JpcHQgc2V0dXA%2BXG5pbXBvcnQgeyByZWYgfSBmcm9tICd2dWUnXG5jb25zdCBtc2cgPSByZWYoJ0hlbGxvIFdvcmxkIScpXG48L3NjcmlwdD5cbjx0ZW1wbGF0ZT5cbiAgPGgxPnt7IG1zZyB9fTwvaDE%2BXG4gIDxpbnB1dCB2LW1vZGVsPVwibXNnXCIgLz5cbjwvdGVtcGxhdGU%2BXG4iLCJhY3RpdmUiOmZhbHNlLCJoaWRkZW4iOnRydWUsInJlYWRPbmx5Ijp0cnVlfSwiL3NyYy9Db21wLnZ1ZSI6eyJjb2RlIjoiPHRlbXBsYXRlPlxuICA8ZGl2PkNvbXA8L2Rpdj5cbjwvdGVtcGxhdGU%2BXG4iLCJhY3RpdmUiOnRydWUsImhpZGRlbiI6ZmFsc2UsInJlYWRPbmx5IjpmYWxzZX0sIkNvbXAyLnZ1ZSI6Ijx0ZW1wbGF0ZT5cbiAgPGRpdj5Db21wMjwvZGl2PlxuPC90ZW1wbGF0ZT5cbiJ9\\" options=\\"%7B%7D\\" customSetup=\\"%7B%7D\\">
+</MdSandpack>
+"
+`;
+
+exports[`Sandpack > Should resolve sandpack info with file attrs and customSetup 1`] = `
+"<MdSandpack key=\\"0886d0e2\\" title=\\"Sandpack%20demo%20with%20file%20attrs%20and%20customSetup%20\\" template=\\"\\" files=\\"eyIvc3JjL0FwcC52dWUiOnsiY29kZSI6IjxzY3JpcHQgc2V0dXA%2BXG5pbXBvcnQgeyByZWYgfSBmcm9tIFwidnVlXCI7XG5pbXBvcnQgQ29tcCBmcm9tIFwiLi9Db21wLnZ1ZVwiO1xuXG5jb25zdCBtc2cgPSByZWYoXCJIZWxsbyBQbGF5Z3JvdW5kIVwiKTtcbjwvc2NyaXB0PlxuXG48dGVtcGxhdGU%2BXG4gIDxoMT57eyBtc2cgfX08L2gxPlxuICA8aW5wdXQgdi1tb2RlbD1cIm1zZ1wiIC8%2BXG4gIDxDb21wIC8%2BXG48L3RlbXBsYXRlPlxuIiwiYWN0aXZlIjpmYWxzZSwiaGlkZGVuIjpmYWxzZSwicmVhZE9ubHkiOnRydWV9LCIvc3JjL0NvbXAudnVlIjp7ImNvZGUiOiI8c2NyaXB0IHNldHVwPlxuaW1wb3J0IHsgdXNlQmF0dGVyeSB9IGZyb20gXCJAdnVldXNlL2NvcmVcIjtcbmltcG9ydCB7IHJlZiB9IGZyb20gXCJ2dWVcIjtcblxuY29uc3QgeyBjaGFyZ2luZywgbGV2ZWwgfSA9IHVzZUJhdHRlcnkoKTtcbjwvc2NyaXB0PlxuXG48dGVtcGxhdGU%2BXG4gIDxoMT5CYXR0ZXJ5IHN0YXR1czwvaDE%2BXG4gIDxwPkNoYXJnaW5nOiB7eyBjaGFyZ2luZyB9fTwvcD5cbiAgPHA%2BTGV2ZWw6IHt7IGxldmVsICogMTAwIH19JTwvcD5cbjwvdGVtcGxhdGU%2BXG4iLCJhY3RpdmUiOnRydWUsImhpZGRlbiI6ZmFsc2UsInJlYWRPbmx5IjpmYWxzZX19\\" options=\\"%7B%7D\\" customSetup=\\"%7B%22dependencies%22%3A%7B%22%40vueuse%2Fcore%22%3A%22latest%22%2C%22%40vueuse%2Fshared%22%3A%22latest%22%2C%22vue-demi%22%3A%22latest%22%7D%7D\\" rtl=\\"true\\" theme=\\"dark\\">
+</MdSandpack>
+"
+`;
+
+exports[`Sandpack > Should resolve sandpack info with options 1`] = `
+"<MdSandpack key=\\"8b2108e4\\" title=\\"Sandpack%20demo%20with%20options\\" template=\\"\\" files=\\"eyJBcHAudnVlIjoiPHNjcmlwdCBzZXR1cD5cbmltcG9ydCB7IHJlZiB9IGZyb20gJ3Z1ZSdcbmNvbnN0IG1zZyA9IHJlZignSGVsbG8gV29ybGQhJylcbjwvc2NyaXB0PlxuPHRlbXBsYXRlPlxuICA8aDE%2Be3sgbXNnIH19PC9oMT5cbiAgPGlucHV0IHYtbW9kZWw9XCJtc2dcIiAvPlxuPC90ZW1wbGF0ZT5cbiIsIkNvbXAudnVlIjoiPHRlbXBsYXRlPlxuICA8ZGl2PkNvbXA8L2Rpdj5cbjwvdGVtcGxhdGU%2BXG4ifQ%3D%3D\\" options=\\"%7B%22readOnly%22%3Atrue%2C%22showReadOnly%22%3Afalse%7D\\" customSetup=\\"%7B%7D\\">
+</MdSandpack>
+"
+`;

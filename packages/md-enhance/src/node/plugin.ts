@@ -58,6 +58,7 @@ import {
   playground,
   reactDemo,
   revealJs,
+  sandpack,
   tabs,
   vPre,
   vueDemo,
@@ -124,6 +125,7 @@ export const mdEnhancePlugin =
     const enableKatex = getStatus("katex", false, "katex");
     const enableMathjax = getStatus("mathjax", true, "mathjax-full");
     const enableVuePlayground = getStatus("vuePlayground", false, "@vue/repl");
+    const enableSandpack = getStatus("sandpack");
 
     const { enabled: enableLinksCheck, isIgnoreLink } = getLinksCheckStatus(
       app,
@@ -260,6 +262,17 @@ export const mdEnhancePlugin =
             config.module.set("unknownContextCritical", false);
           });
         }
+
+        if (enableSandpack) {
+          addViteOptimizeDepsInclude(bundlerOptions, app, "sandpack-vue3");
+          addViteSsrExternal(bundlerOptions, app, "sandpack-vue3");
+
+          // hide webpack warnings
+          chainWebpack(bundlerOptions, app, (config) => {
+            config.module.set("exprContextCritical", false);
+            config.module.set("unknownContextCritical", false);
+          });
+        }
       },
 
       extendsMarkdown: (md): void => {
@@ -370,6 +383,7 @@ export const mdEnhancePlugin =
           });
         }
         if (enableVuePlayground) md.use(vuePlayground);
+        if (enableSandpack) md.use(sandpack);
       },
 
       extendsPage: (page, app): void => {

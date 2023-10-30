@@ -86,6 +86,7 @@ export default theme("md-enhance", {
       tabs: true,
       vPre: true,
       vuePlayground: true,
+      sandpack: true,
     },
   },
 });

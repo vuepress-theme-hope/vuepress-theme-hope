@@ -24,6 +24,7 @@ export default [
         "components/Mermaid",
         "components/Playground",
         "components/RevealJs",
+        "components/Sandpack",
         "components/Tabs",
         "components/VPCard",
         "components/VuePlayground",
@@ -44,6 +45,7 @@ export default [
         "katex/dist/contrib/copy-tex.min.js",
         "mermaid",
         /^reveal\.js/,
+        "sandpack-vue3",
       ],
       copy: [
         ["client/styles", "client"],

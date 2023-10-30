@@ -171,6 +171,11 @@ highlights:
         details: 在交互演示中展示 Vue 组件
         link: ./guide/vue-playground.html
 
+      - title: Sandpack 交互演示支持
+        icon: fab fa-sandpackbox
+        details: 一个实时的编码环境
+        link: ./guide/sandpack.html
+
 footer: 使用 <a href="https://theme-hope.vuejs.press/zh/" target="_blank">VuePress Theme Hope</a> 主题 | MIT 协议, 版权所有 © 2019-present Mr.Hope
 
 copyright: false

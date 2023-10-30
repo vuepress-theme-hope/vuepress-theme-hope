@@ -651,6 +651,13 @@ Default value: `"https://unpkg.com/react-dom/umd/react-dom.production.min.js"`
 
 Whether to enable slides support. You can pass an option to control plugins and themes to import.
 
+### sandpack
+
+- Type: `boolean`
+- Default: `false`
+
+Whether to enable sandpack playground support.
+
 ### delay
 
 - Type: `number`
@@ -827,3 +834,36 @@ export const defineVuePlaygroundConfig: (options: VuePlaygroundOptions) => void;
 ```
 
 Define config which you want to pass to `@vue/repl`.
+
+### defineSandpackConfig
+
+```ts
+export interface SandpackConfig {
+  /**
+   * specify the template
+   *
+   * 指定模板
+   */
+  template?: string;
+
+  /**
+   * Options to configure the sandpack
+   *
+   * sandpack 配置项
+   */
+  options?: SandpackOptions;
+
+  /**
+   * Options to configure the customSetup
+   *
+   * sandpack customSetup 配置项
+   */
+  customSetup?: SandpackSetup;
+}
+
+export const defineSandpackConfig = (config: SandpackConfig): void => {
+  sandpackConfig = config;
+};
+```
+
+Define config which you want to pass to `sandpack-vue3`.

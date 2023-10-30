@@ -3,6 +3,8 @@ export {
   injectMermaidConfig,
   defineRevealJsConfig,
   injectRevealJsConfig,
+  defineSandpackConfig,
+  injectSandpackConfig,
   defineVuePlaygroundConfig,
   injectVuePlaygroundConfig,
 } from "./helpers/index.js";
