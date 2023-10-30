@@ -251,8 +251,8 @@ export const playground: PluginWithOptions<PlaygroundOptions> = (
 
     // @ts-ignore
     // eslint-disable-next-line
-    if (!md.block.ruler.__rules__.find(({ name }) => name === "marker"))
-      md.block.ruler.before("fence", "tab", atMarkerRule(marker), {
+    if (!md.block.ruler.__rules__.find(({ name }) => name === `at-${marker}`))
+      md.block.ruler.before("fence", `at-${marker}`, atMarkerRule(marker), {
         alt: ["paragraph", "reference", "blockquote", "list"],
       });
   });
