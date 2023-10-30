@@ -42,8 +42,8 @@ importers:
         specifier: 15.2.3
         version: 15.2.3(rollup@4.1.5)
       '@rollup/plugin-replace':
-        specifier: 5.0.4
-        version: 5.0.4(rollup@4.1.5)
+        specifier: 5.0.5
+        version: 5.0.5(rollup@4.1.5)
       '@types/inquirer':
         specifier: 9.0.6
         version: 9.0.6
@@ -315,8 +315,8 @@ importers:
         specifier: 13.3.2
         version: 13.3.2(sass@1.69.5)(webpack@5.89.0)
       vidstack:
-        specifier: 1.4.7
-        version: 1.4.7
+        specifier: 1.4.9
+        version: 1.4.9
       vue:
         specifier: 3.4.0-alpha.1
         version: 3.4.0-alpha.1(typescript@5.2.2)
@@ -5010,8 +5010,8 @@ packages:
       rollup: 2.79.1
     dev: false
 
-  /@rollup/plugin-replace@5.0.4(rollup@4.1.5):
-    resolution: {integrity: sha512-E2hmRnlh09K8HGT0rOnnri9OTh+BILGr7NVJGB30S4E3cLRn3J0xjdiyOZ74adPs4NiAMgrjUMGAZNJDBgsdmQ==}
+  /@rollup/plugin-replace@5.0.5(rollup@4.1.5):
+    resolution: {integrity: sha512-rYO4fOi8lMaTg/z5Jb+hKnrHHVn8j2lwkqwyS4kTRhKyWOLf2wST2sWXr4WzWiTcoHTp2sTjqUbqIj2E39slKQ==}
     engines: {node: '>=14.0.0'}
     peerDependencies:
       rollup: ^1.20.0||^2.0.0||^3.0.0||^4.0.0
@@ -15047,6 +15047,14 @@ packages:
     engines: {node: '>=18'}
     dependencies:
       media-captions: 1.0.0
+    dev: false
+
+  /vidstack@1.4.9:
+    resolution: {integrity: sha512-CRZJzPy4WQXOgfftNPpon6GZKNptrKPXyiFzTnCNq5CyB50yiIiOVHQMz8qJRP/QuorTLu6uAMFpSP249Y1V+A==}
+    engines: {node: '>=18'}
+    dependencies:
+      media-captions: 1.0.0
+    dev: true
 
   /vinyl-fs@3.0.3:
     resolution: {integrity: sha512-vIu34EkyNyJxmP0jscNzWBSygh7VWhqun6RmqVfXePrOwi9lhvRs//dOaGOTRUQr4tx7/zd26Tk5WeSVZitgng==}
