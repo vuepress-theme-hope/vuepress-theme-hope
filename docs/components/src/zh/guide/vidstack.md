@@ -4,26 +4,26 @@ title: VidStack
 
 在 Markdown 文件中嵌入 [VidStack](https://www.vidstack.io/)。
 
-使用本组件前，请先在你的项目中安装 `vidstack` 包:
+使用本组件前，请先在你的项目中安装 `vidstack@1` 包:
 
 ::: code-tabs#shell
 
 @tab pnpm
 
 ```bash
-pnpm add -D vidstack
+pnpm add -D vidstack@1
 ```
 
 @tab yarn
 
 ```bash
-yarn add -D vidstack
+yarn add -D vidstack@1
 ```
 
 @tab npm
 
 ```bash
-npm i -D vidstack
+npm i -D vidstack@1
 ```
 
 :::

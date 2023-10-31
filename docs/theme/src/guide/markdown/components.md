@@ -107,6 +107,8 @@ export default {
 
 ## ArtPlayer
 
+> Install `artplayer` first.
+
 A video player:
 
 <ArtPlayer src="https://vp-demo.u2sb.com/video/caminandes_03_llamigos_720p.mp4" />
@@ -193,6 +195,8 @@ A video player with custom settings:
 See <ProjectLink name="components" path="/guide/artplayer.html">ArtPlayer</ProjectLink> page for available props.
 
 ## AudioPlayer
+
+> Install `plyr` first.
 
 An audio player:
 
@@ -539,6 +543,8 @@ See <ProjectLink name="components" path="/guide/stackblitz.html">StackBlitz</Pro
 
 ## VidStack
 
+> Install `vidstack@1` first.
+
 A video player:
 
 <VidStack src="https://vp-demo.u2sb.com/video/caminandes_03_llamigos_720p.mp4" />
@@ -659,6 +665,8 @@ An audio player:
 See <ProjectLink name="components" path="/guide/vidstack.html">VidStack</ProjectLink> page for available props.
 
 ## VideoPlayer
+
+> Install `plyr` first.
 
 Embed videos in Markdown files.
 

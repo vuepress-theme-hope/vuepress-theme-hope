@@ -4,6 +4,30 @@ title: ArtPlayer
 
 在 Markdown 文件中嵌入 [ArtPlayer](https://github.com/zhw2590582/ArtPlayer)。
 
+使用本组件前，请先在你的项目中安装 `plyr` 包:
+
+::: code-tabs#shell
+
+@tab pnpm
+
+```bash
+pnpm add -D plyr
+```
+
+@tab yarn
+
+```bash
+yarn add -D plyr
+```
+
+@tab npm
+
+```bash
+npm i -D plyr
+```
+
+:::
+
 <!-- more -->
 
 ::: tip
