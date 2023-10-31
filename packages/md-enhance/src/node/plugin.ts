@@ -122,7 +122,8 @@ export const mdEnhancePlugin =
     const enableMermaid = getStatus("mermaid", false, "mermaid");
     const enableRevealJs = getStatus("revealJs", false, "reveal.js");
     const enableKatex = getStatus("katex", false, "katex");
-    const enableMathjax = getStatus("mathjax", true, "mathjax-full");
+    const enableMathjax =
+      !options.katex && getStatus("mathjax", true, "mathjax-full");
     const enableVuePlayground = getStatus("vuePlayground", false, "@vue/repl");
 
     const { enabled: enableLinksCheck, isIgnoreLink } = getLinksCheckStatus(
@@ -163,13 +164,12 @@ export const mdEnhancePlugin =
       ...(isPlainObject(options.katex) ? options.katex : {}),
     };
 
-    const mathjaxInstance =
-      options.mathjax === false
-        ? null
-        : createMathjaxInstance({
-            mathFence: options.gfm ?? false,
-            ...(isPlainObject(options.mathjax) ? options.mathjax : {}),
-          });
+    const mathjaxInstance = enableMathjax
+      ? createMathjaxInstance({
+          mathFence: options.gfm ?? false,
+          ...(isPlainObject(options.mathjax) ? options.mathjax : {}),
+        })
+      : null;
 
     const revealJsOptions = isPlainObject(options.revealJs)
       ? options.revealJs
