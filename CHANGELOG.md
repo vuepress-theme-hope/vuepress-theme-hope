@@ -4,6 +4,23 @@ All notable changes to this project will be documented in this file. See [Conven
 
 <!-- #region recent-beta -->
 
+## [2.0.0-beta.243](https://github.com/vuepress-theme-hope/vuepress-theme-hope/compare/v2.0.0-beta.242...v2.0.0-beta.243) (2023-10-31)
+
+### Features
+
+- **auto-catalog:** remove `indexType` prop, close [#3537](https://github.com/vuepress-theme-hope/vuepress-theme-hope/issues/3537) ([add17d9](https://github.com/vuepress-theme-hope/vuepress-theme-hope/commit/add17d92a713cbc0917153ff8b7ce9997fe72583))
+- **md-enhance:** update reveal style ([3979c84](https://github.com/vuepress-theme-hope/vuepress-theme-hope/commit/3979c8490869b87f60bfd3dbf0bea6b20a94fe6a))
+- **md-enhance:** use reveal.js v5 ([31538f4](https://github.com/vuepress-theme-hope/vuepress-theme-hope/commit/31538f472793eabb26f8f696e4ef27d51e14adec))
+
+### Bug Fixes
+
+- **create:** fix template ([814c083](https://github.com/vuepress-theme-hope/vuepress-theme-hope/commit/814c083f043b55994f8e2ab20e3833541e523645))
+- **deps:** update dependency three to v0.158.0 ([#3581](https://github.com/vuepress-theme-hope/vuepress-theme-hope/issues/3581)) ([a25764f](https://github.com/vuepress-theme-hope/vuepress-theme-hope/commit/a25764f1a778416e22d6ea6c7c1e1ba334372eff))
+- **md-enhance:** fix playground rule ([0d1f200](https://github.com/vuepress-theme-hope/vuepress-theme-hope/commit/0d1f2001af533f672c014f19984a6fe6c917c8b9))
+- **md-enhance:** fix tasklist on firefox, close [#3259](https://github.com/vuepress-theme-hope/vuepress-theme-hope/issues/3259) ([2c5943c](https://github.com/vuepress-theme-hope/vuepress-theme-hope/commit/2c5943c6d98e3f807af3f771f003249aada18892))
+- **theme:** fix encrypt page feed ([7288e0e](https://github.com/vuepress-theme-hope/vuepress-theme-hope/commit/7288e0ef0ee3bf1f19594723b197d06c765db4cf))
+- **theme:** fix icon style ([76d19b0](https://github.com/vuepress-theme-hope/vuepress-theme-hope/commit/76d19b040dfb778540c3b0cebefd2865e09814ac))
+
 ## [2.0.0-beta.242](https://github.com/vuepress-theme-hope/vuepress-theme-hope/compare/v2.0.0-beta.241...v2.0.0-beta.242) (2023-10-26)
 
 ### Bug Fixes
