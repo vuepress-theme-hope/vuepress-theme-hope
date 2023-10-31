@@ -66,7 +66,7 @@ export default defineUserConfig({
 
 @tab JS
 
-```js {10}
+```js {9}
 // .vuepress/config.js
 import { mdEnhance } from "vuepress-plugin-md-enhance";
 

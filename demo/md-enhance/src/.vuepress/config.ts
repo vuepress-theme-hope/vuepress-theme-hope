@@ -88,6 +88,7 @@ export default defineUserConfig({
         output: "chtml",
       },
       presentation: ["highlight", "math", "search", "notes", "zoom"],
+      sandpack: true,
       stylize: [
         {
           matcher: "Recommended",

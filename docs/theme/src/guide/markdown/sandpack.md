@@ -1,21 +1,26 @@
 ---
-title: Sandpack 交互演示
+title: Sandpack Playground
 icon: code
+category:
+  - Markdown
+tag:
+  - Markdown
+  - Playground
 ---
 
-插件为你带来了 Sandpack 交互演示支持。
+The plugin provides you sandpack playground support with `sandpack-vue3` package.
 
 <!-- more -->
 
 ::: tip
 
-如果你需要重度依赖 Sandpack 交互演示，你才应该使用本插件。
+You should only use this if you are heavily depending on interactive Sandpack Playground.
 
 :::
 
-## 配置
+## Settings
 
-在你的项目中安装 `sandpack-vue3`:
+Install `sandpack-vue3` in your project:
 
 ::: code-tabs#shell
 
@@ -39,57 +44,62 @@ npm i -D sandpack-vue3
 
 :::
 
-之后启用它:
+Then enabling via:
 
 ::: code-tabs#config
 
 @tab TS
 
-```ts {8}
+```ts {10}
 // .vuepress/config.ts
-import { mdEnhance } from "vuepress-plugin-md-enhance";
+import { defineUserConfig } from "vuepress";
+import { hopeTheme } from "vuepress-theme-hope";
 
-export default {
-  plugins: [
-    mdEnhance({
-      // 启用 Sandpack 交互演示
-      sandpack: true,
-    }),
-  ],
-};
+export default defineUserConfig({
+  theme: hopeTheme({
+    plugins: {
+      mdEnhance: {
+        // enable sandpack playground
+        sandpack: true,
+      },
+    },
+  }),
+});
 ```
 
 @tab JS
 
-```js {8}
+```js {9}
 // .vuepress/config.js
 import { mdEnhance } from "vuepress-plugin-md-enhance";
 
 export default {
-  plugins: [
-    mdEnhance({
-      // 启用 Sandpack 交互演示
-      sandpack: true,
-    }),
-  ],
+  theme: hopeTheme({
+    plugins: {
+      mdEnhance: {
+        // enable sandpack playground
+        sandpack: true,
+      },
+    },
+  }),
 };
 ```
 
 :::
 
-## 使用
+## Usage
 
-要使用交互演示，你应该使用一个名为 `sandpack#template` 的容器。
+To use sandpack playground, you should use a container named `sandpack#template`.
 
-在其中，你可以使用 3 个指令：
+In it, you can use 3 directives:
 
-- `@file FullPathFile` 紧跟文件的代码块，同时也支持文件选项，例如：`@file FullPathFile [active readOnly hidden]`
-- `@options` 紧跟一个自定义 "options" 的 javascript 代码块
-- `@setup` 紧跟一个自定义 "customSetup" 的 javascript 代码块
+- `@file FullPathFile` then a code block to add files, you can also set the file options, for example: `@file FullPathFile {active readOnly hidden}`
+- `@options` then a javascript block to customize "options"
+- `@setup` then a javascript block to customize "customSetup"
 
-你可以查看以下演示以查看更多详细信息。
+You can see the below demos to see more details.
 
-你可以在客户端配置文件中引入并调用 `defineSandpackConfig` 来自定义 `sandpack-vue3` ：
+You can import and call `defineSandpackConfig` in client config file to customize `sandpack-vue3`:
 
 ```ts
 // .vuepress/client.ts
@@ -97,7 +107,7 @@ import { defineClientConfig } from "@vuepress/client";
 import { defineSandpackConfig } from "vuepress-plugin-md-enhance/client";
 
 defineSandpackConfig({
-  // 这里是 sandpack 配置
+  // sandpack config here
 });
 
 export default defineClientConfig({
@@ -105,9 +115,9 @@ export default defineClientConfig({
 });
 ```
 
-## 示例
+## Demo
 
-::: sandpack#vue Vue 示例
+::: sandpack#vue Vue Demo
 
 @file /src/App.vue
 
@@ -126,10 +136,10 @@ const msg = ref("Hello Playground!");
 
 :::
 
-:::: details 代码
+:::: details Code
 
 ````md
-::: sandpack#vue Vue 示例
+::: sandpack#vue Vue Demo
 
 @file /src/App.vue
 
@@ -151,7 +161,7 @@ const msg = ref("Hello Playground!");
 
 ::::
 
-::: sandpack#vue 带自定义设置的 Vue 示例
+::: sandpack#vue Vue Demo with customized settings
 
 @file /src/App.vue
 
@@ -209,10 +219,10 @@ const { charging, level } = useBattery();
 
 :::
 
-:::: details 代码
+:::: details Code
 
 ````md
-::: sandpack#vue 带自定义设置的 Vue 示例
+::: sandpack#vue Vue Demo with customized settings
 
 @file /src/App.vue
 
@@ -273,9 +283,9 @@ const { charging, level } = useBattery();
 
 ::::
 
-::: sandpack#vue 带文件选项的 Vue 示例
+::: sandpack#vue Vue Demo with file options
 
-@file /src/App.vue [readOnly]
+@file /src/App.vue {readOnly}
 
 ```vue
 <script setup>
@@ -292,7 +302,7 @@ const msg = ref("Hello Playground!");
 </template>
 ```
 
-@file /src/Comp.vue [active]
+@file /src/Comp.vue {active}
 
 ```vue
 <script setup>
@@ -326,9 +336,9 @@ const { charging, level } = useBattery();
 :::: details Code
 
 ````md
-::: sandpack#vue 带文件选项的 Vue 示例
+::: sandpack#vue Vue Demo with file options
 
-@file /src/App.vue [readOnly]
+@file /src/App.vue {readOnly}
 
 ```vue
 <script setup>
@@ -345,7 +355,7 @@ const msg = ref("Hello Playground!");
 </template>
 ```
 
-@file /src/Comp.vue [active]
+@file /src/Comp.vue {active}
 
 ```vue
 <script setup>
@@ -379,7 +389,7 @@ const { charging, level } = useBattery();
 
 ::::
 
-::: sandpack#react React 示例 [rtl theme=dark]
+::: sandpack#react React demo {rtl theme=dark}
 
 @file /App.js
 
@@ -391,10 +401,10 @@ export default function App() {
 
 :::
 
-:::: details 代码
+:::: details Code
 
 ````md
-::: sandpack#react React 示例 [rtl theme=dark]
+::: sandpack#react React demo {rtl theme="dark"}
 
 @file /App.js
 

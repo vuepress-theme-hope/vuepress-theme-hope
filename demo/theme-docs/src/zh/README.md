@@ -130,6 +130,11 @@ highlights:
         details: 在交互演示中展示 Vue 组件
         link: https://theme-hope.vuejs.press/zh/guide/markdown/vue-playground.html
 
+      - title: Sandpack 交互演示支持
+        icon: code
+        details: 你可以在 Markdown 中添加 Sandpack 交互演示
+        link: https://theme-hope.vuejs.press/zh/guide/markdown/sandpack.html
+
       - title: 代码案例支持
         icon: laptop-code
         details: 你可以很方便的插入代码案例

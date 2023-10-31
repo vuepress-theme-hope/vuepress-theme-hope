@@ -60,6 +60,8 @@ dir:
 
 - [Vue 交互演示](vue-playground.md)
 
+- [Sandpack 交互演示](sandpack.md)
+
 - [组件](components.md)
 
 - [其他](others.md)

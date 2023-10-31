@@ -140,6 +140,9 @@ export default hopeTheme({
 
       // install @vue/repl before enabling it
       // vuePlayground: true,
+
+      // install sandpack-vue3 before enabling it
+      // sandpack: true,
     },
 
     // uncomment these if you want a pwa

@@ -45,6 +45,7 @@ Added more syntax to Markdown, enriching documentation and blog writing:
 - [Stylize](markdown/stylize.md)
 - [Playground](markdown/playground.md)
 - [Vue Playground](markdown/vue-playground.md)
+- [Sandpack Playground](markdown/sandpack.md)
 - [Components out of box](markdown/components.md)
 - [Customized Themes](interface/code-theme.md)
 

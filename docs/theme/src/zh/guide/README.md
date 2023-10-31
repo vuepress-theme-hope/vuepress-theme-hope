@@ -45,6 +45,7 @@ tag:
 - [样式化](markdown/stylize.md)
 - [交互演示](markdown/playground.md)
 - [Vue 交互演示](markdown/vue-playground.md)
+- [Sandpack 交互演示](markdown/sandpack.md)
 - [开箱即用的组件](markdown/components.md)
 - [自定义主题](interface/code-theme.md)
 

@@ -385,7 +385,7 @@ span {
 
 <!-- markdownlint-enable MD033 -->
 
-### 交互演示
+#### 交互演示
 
 ::: playground#ts TS 案例
 
@@ -403,7 +403,7 @@ speak(msg);
 
 - [查看详情](../markdown/playground.md)
 
-### Vue 交互演示
+#### Vue 交互演示
 
 ::: vue-playground Vue 交互演示
 
@@ -425,6 +425,29 @@ const msg = ref("Hello World!");
 :::
 
 - [查看详情](../markdown/vue-playground.md)
+
+#### Sandpack 交换演示
+
+::: sandpack#vue Vue 示例
+
+@file /src/App.vue
+
+```vue
+<script setup>
+import { ref } from "vue";
+
+const msg = ref("Hello Playground!");
+</script>
+
+<template>
+  <h1>{{ msg }}</h1>
+  <input v-model="msg" />
+</template>
+```
+
+:::
+
+- [查看详情](../markdown/sandpack.md)
 
 #### 幻灯片
 

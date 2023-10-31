@@ -172,7 +172,7 @@ highlights:
         link: ./guide/vue-playground.html
 
       - title: Sandpack 交互演示支持
-        icon: fab fa-sandpackbox
+        icon: code
         details: 一个实时的编码环境
         link: ./guide/sandpack.html
 

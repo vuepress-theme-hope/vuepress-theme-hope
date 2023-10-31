@@ -258,7 +258,7 @@ const msg = ref('Hello World!')
       `
 ::: sandpack Sandpack demo with options
 
-@file /src/App.vue {readOnly hidden}
+@file /src/App.vue [readOnly hidden]
 
 \`\`\`vue
 <script setup>
@@ -271,7 +271,7 @@ const msg = ref('Hello World!')
 </template>
 \`\`\`
 
-@file /src/Comp.vue {active}
+@file /src/Comp.vue [active]
 
 \`\`\`vue
 <template>
@@ -279,7 +279,7 @@ const msg = ref('Hello World!')
 </template>
 \`\`\`
 
-@file Comp2.vue \\{hidden}
+@file Comp2.vue \\[hidden]
 
 \`\`\`vue
 <template>
@@ -341,9 +341,9 @@ const msg = ref('Hello World!')
   it("Should resolve sandpack info with file attrs and customSetup", () => {
     const result = markdownIt.render(
       `
-::: sandpack Sandpack demo with file attrs and customSetup {rtl theme=dark}
+::: sandpack Sandpack demo with file attrs and customSetup [rtl theme=dark]
 
-@file /src/App.vue {readOnly}
+@file /src/App.vue [readOnly]
 
 \`\`\`vue
 <script setup>
@@ -360,7 +360,7 @@ const msg = ref("Hello Playground!");
 </template>
 \`\`\`
 
-@file /src/Comp.vue {active}
+@file /src/Comp.vue [active]
 
 \`\`\`vue
 <script setup>
