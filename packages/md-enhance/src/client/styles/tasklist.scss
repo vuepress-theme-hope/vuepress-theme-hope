@@ -11,10 +11,13 @@
   list-style: none;
 }
 
+// FIXME: Firefox does not support ::before and ::after on input[type=checkbox]
+// this can be a bug
 .task-list-item-checkbox {
   position: relative;
-  width: 0;
-  margin-inline-end: 1.5em;
+
+  // width: 0;
+  // margin-inline-end: 1.5em;
   cursor: pointer;
 
   &::after {
