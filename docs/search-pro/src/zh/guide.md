@@ -304,7 +304,7 @@ terminate();
 
 搜索服务由 Worker 提供支持，在开发模式下我们无法捆绑 Worker 文件。
 
-为了在开发模式下加载搜索索引，我们使用了带有 `type: "module"` 的现代 Worker，但是目前只有 Chrome 支持此功能，Firefox 和 Safari 不支持。 因此，如果你想尝试在 devServer 中搜索，你应该使用 Chrome，请参阅 [CanIUse](https://caniuse.com/mdn-api_worker_worker_options_type_parameter) 了解支持详情。
+为了在开发模式下加载搜索索引，我们使用了带有 `type: "module"` 的现代 Worker，但是目前 Safari 不支持此功能。 因此，如果你想尝试在 devServer 中搜索，你应该使用支持的浏览器，请参阅 [CanIUse](https://caniuse.com/mdn-api_worker_worker_options_type_parameter) 了解支持详情。
 
 为了更好的性能，在开发模式下添加/编辑/删除 Markdown 内容不会触发搜索索引的更新。如果你正在校对或优化你的搜索结果，你可以通过设置 `hotReload: true` 选项来启用热重载，参见 [配置 → 热重载](./config.md#hotreload)。
 

@@ -10,7 +10,7 @@ tag:
 
 ::: tip
 
-If you met a bug while using, you can open an issue [here](https://github.com/vuepress-theme-hope/vuepress-theme-hope/issues)
+If you meet a bug while using, you can [open an issue](https://github.com/vuepress-theme-hope/vuepress-theme-hope/issues). If you meet problems, you can [create a discussion](https://github.com/orgs/vuepress-theme-hope/discussions) or [ask in our telegram group](https://t.me/vuepressthemehope).
 
 :::
 
@@ -83,7 +83,7 @@ Layout Optimization:
 
 - [Back to top button](interface/others.md#back-to-top-button)
 
-### Page Enhance
+### Features
 
 - [One-click copy code](feature/copy-code.md)
 

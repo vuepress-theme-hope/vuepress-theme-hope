@@ -358,7 +358,7 @@ Multilingual configuration of the search plugin.
 
 ### defineSearchConfig
 
-Customize [search options](https://mister-hope.github.io/slimsearch/types/SearchOptions.html).
+Customize [search options](https://mister-hope.github.io/slimsearch/interfaces/SearchOptions.html).
 
 ```ts
 // .vuepress/client.ts
@@ -424,7 +424,5 @@ export interface SearchWorker {
   terminate: () => void;
 }
 
-declare const createSearchWorker: (
-  options: SearchWorkerOptions,
-) => SearchWorker;
+declare const createSearchWorker: () => SearchWorker;
 ```

@@ -10,7 +10,7 @@ tag:
 
 ::: tip
 
-如果你在使用过程中遇到了 bug，可以 [提一个 issue](https://github.com/vuepress-theme-hope/vuepress-theme-hope/issues) 或者 [加入 QQ 群](https://jq.qq.com/?_wv=1027&k=rATJyxGK) (群号: 1003437555) 进行反馈。
+如果你在使用过程中遇到了 bug，可以 [提一个 issue](https://github.com/vuepress-theme-hope/vuepress-theme-hope/issues)。如果你遇到了使用问题，可以 [开一个讨论](https://github.com/orgs/vuepress-theme-hope/discussions) 或者 [加入 QQ 群](https://jq.qq.com/?_wv=1027&k=rATJyxGK) (群号: 1003437555) 进行反馈。
 
 :::
 
@@ -83,7 +83,7 @@ tag:
 
 - [返回顶部按钮](interface/others.md#返回顶部按钮)
 
-### 页面增强
+### 功能
 
 - [一键复制代码](feature/copy-code.md)
 

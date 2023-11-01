@@ -10,6 +10,12 @@ tag:
   - Usage
 ---
 
+## Requirement
+
+- LTS Versions of Node.js (18, 20)
+- A supported package manager: npm >= 8, yarn >= 2, pnpm >= 7
+- A VuePress2 project using Vue3
+
 ## Install
 
 Create a new vuepress-theme-hope project in `[dir]` folder:
