@@ -4,6 +4,18 @@ All notable changes to this project will be documented in this file. See [Conven
 
 <!-- #region recent-beta -->
 
+## [2.0.0-beta.244](https://github.com/vuepress-theme-hope/vuepress-theme-hope/compare/v2.0.0-beta.243...v2.0.0-beta.244) (2023-11-01)
+
+### Features
+
+- **components:** add optional pkg check ([6ac0015](https://github.com/vuepress-theme-hope/vuepress-theme-hope/commit/6ac0015f1245296d0bdab81875617d4e9b8b1c89))
+
+### Bug Fixes
+
+- **md-enhance:** fix mathjax hint ([1bdeee1](https://github.com/vuepress-theme-hope/vuepress-theme-hope/commit/1bdeee1008e29b17c86fe7483c87a034cf14edea))
+- **theme:** ensure line number align ([13e40c4](https://github.com/vuepress-theme-hope/vuepress-theme-hope/commit/13e40c40f11ac328c59c813fcf3d5c9148a826b6))
+- **theme:** fix img icon align ([4ae8465](https://github.com/vuepress-theme-hope/vuepress-theme-hope/commit/4ae84659816f65758e8f247fb6f3c7b2b04d65f4))
+
 ## [2.0.0-beta.243](https://github.com/vuepress-theme-hope/vuepress-theme-hope/compare/v2.0.0-beta.242...v2.0.0-beta.243) (2023-10-31)
 
 ### Features

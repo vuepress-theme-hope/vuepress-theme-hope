@@ -107,6 +107,8 @@ export default {
 
 ## ArtPlayer
 
+> 先安装 `artplayer` 。
+
 一个视频播放器:
 
 <ArtPlayer src="https://vp-demo.u2sb.com/video/caminandes_03_llamigos_720p.mp4" />
@@ -186,6 +188,8 @@ export default {
 有关可用属性，请参阅 <ProjectLink name="components" path="/zh/guide/artplayer.html">ArtPlayer</ProjectLink> 页面。
 
 ## AudioPlayer
+
+> 先安装 `plyr` 。
 
 一个音频播放器:
 
@@ -533,6 +537,8 @@ PDF 浏览器组件。
 
 ## VidStack
 
+> 先安装 `vidstack@1` 。
+
 视频播放器:
 
 <VidStack src="https://vp-demo.u2sb.com/video/caminandes_03_llamigos_720p.mp4" />
@@ -654,6 +660,8 @@ PDF 浏览器组件。
 有关可用属性，请参阅 <ProjectLink name="components" path="/zh/guide/vidstack.html">VidStack</ProjectLink> 页面。
 
 ## VideoPlayer
+
+> 先安装 `plyr` 。
 
 在 Markdown 文件中嵌入视频。
 

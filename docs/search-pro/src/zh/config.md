@@ -334,7 +334,7 @@ export default defineUserConfig({
 
 ### defineSearchConfig
 
-自定义 [搜索选项](https://mister-hope.github.io/slimsearch/types/SearchOptions.html)。
+自定义 [搜索选项](https://mister-hope.github.io/slimsearch/interfaces/SearchOptions.html)。
 
 ```ts
 // .vuepress/client.ts
@@ -400,7 +400,5 @@ export interface SearchWorker {
   terminate: () => void;
 }
 
-declare const createSearchWorker: (
-  options: SearchWorkerOptions,
-) => SearchWorker;
+declare const createSearchWorker: () => SearchWorker;
 ```

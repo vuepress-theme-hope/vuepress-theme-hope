@@ -299,9 +299,9 @@ terminate();
 
 ### Limitations in DevServer
 
-The search service is powered by a worker, and in dev mode we cannot bundle the work file.
+The search service is powered by a worker, and in dev mode we cannot bundle the worker file.
 
-In order to load search indexes in dev mode, we are using a modern service worker with `type: "module"`, however currently this feature is only supported by Chrome, and not available in Firefox and Safari. So if you want to try searching in devServer, you should use Chrome, see [CanIUse](https://caniuse.com/mdn-api_worker_worker_options_type_parameter) for support details.
+In order to load search indexes in dev mode, we are using a modern service worker with `type: "module"`, however currently this feature is not available in Firefox and Safari. So if you want to try searching in devServer, you should use a supported browser, see [CanIUse](https://caniuse.com/mdn-api_worker_worker_options_type_parameter) for support details.
 
 For better performance, adding/editing/deleting markdown contents will not trigger update for search index in dev mode. If you are proofreading or refining your search results, you can enable hot reloading by setting the `hotReload: true` option, see [Config → Hot Reload](./config.md#hotreload).
 

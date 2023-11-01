@@ -10,6 +10,12 @@ tag:
   - 使用
 ---
 
+## 要求
+
+- LTS 版本 的 Node.js（18、20）
+- 支持的包管理器: npm >= 8、yarn >= 2 或 pnpm >= 7
+- 使用 Vue3 的 VuePress2 项目
+
 ## 安装
 
 在 `[dir]` 文件夹内新建 vuepress-theme-hope 项目:

@@ -11,7 +11,7 @@ category:
 
 If the output of `node -v` does not satisfy the requirement, you should [download and install the LTS version of Node.js](../cookbook/tutorial/env.md#nodejs).
 
-Also, you should use a package manager satisfying the following requirements (`pnpm@v8` recommended):
+Also, you should use a package manager satisfying the following requirements (`pnpm@8` recommended):
 
 - pnpm: >= 7
 
@@ -25,11 +25,11 @@ Also, you should use a package manager satisfying the following requirements (`p
 
   Install: `npm i -g npm`
 
-- yarn: >= 1.22.15
+- yarn: >= 2
 
   Check: `yarn -v`
 
-  Install: `npm i -g yarn`
+  Install: `npm i -g yarn@2`
 
 ## Ensure using the latest version and having correct deps tree
 

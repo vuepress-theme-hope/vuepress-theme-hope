@@ -4,26 +4,26 @@ title: VidStack
 
 Embed [VidStack](https://www.vidstack.io/) in Markdown files.
 
-Install `vidstack` package in your project first to use this component:
+Install `vidstack@1` package in your project first to use this component:
 
 ::: code-tabs#shell
 
 @tab pnpm
 
 ```bash
-pnpm add -D vidstack
+pnpm add -D vidstack@1
 ```
 
 @tab yarn
 
 ```bash
-yarn add -D vidstack
+yarn add -D vidstack@1
 ```
 
 @tab npm
 
 ```bash
-npm i -D vidstack
+npm i -D vidstack@1
 ```
 
 :::
@@ -140,8 +140,6 @@ An audio player:
 <VidStack src="/sample.mp3" title="VidStack Audio Demo" />
 ```
 
-````
-
 ## Props
 
 ### src
@@ -200,4 +198,3 @@ Video thumbnails (not working with audio)
 - Required: No
 
 Video aspect ratio (not working with audio). E.g.: `16/9`
-````

@@ -8,7 +8,12 @@ import {
 
 import { getIconLinks, getNoticeOptions } from "./components/index.js";
 import type { BackToTopOptions, ComponentOptions } from "./options/index.js";
-import { AVAILABLE_COMPONENTS, CLIENT_FOLDER } from "./utils.js";
+import {
+  AVAILABLE_COMPONENTS,
+  CLIENT_FOLDER,
+  COMPONENT_PKG,
+  isInstalled,
+} from "./utils.js";
 
 const { url } = import.meta;
 
@@ -30,7 +35,11 @@ export const prepareConfigFile = (
   let shouldImportUseStyleTag = false;
 
   components.forEach((item) => {
-    if (AVAILABLE_COMPONENTS.includes(item)) {
+    if (
+      AVAILABLE_COMPONENTS.includes(item) &&
+      (!COMPONENT_PKG[item] ||
+        COMPONENT_PKG[item].every((pkg) => isInstalled(pkg, true)))
+    ) {
       imports.push(
         `import ${item} from "${CLIENT_FOLDER}components/${item}.js";`,
       );
