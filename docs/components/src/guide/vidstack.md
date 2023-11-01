@@ -140,8 +140,6 @@ An audio player:
 <VidStack src="/sample.mp3" title="VidStack Audio Demo" />
 ```
 
-````
-
 ## Props
 
 ### src
@@ -200,4 +198,3 @@ Video thumbnails (not working with audio)
 - Required: No
 
 Video aspect ratio (not working with audio). E.g.: `16/9`
-````
