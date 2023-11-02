@@ -8,37 +8,29 @@ title: Replit
 
 ## 示例
 
-一个 replit:
+::: md-demo 一个 replit
 
 <Replit user="FuckDoctors" repl="Java-Test" />
 
-```md
-<Replit user="FuckDoctors" repl="Java-Test" />
-```
+:::
 
-一个 replit，并且显示指定的文件:
+::: md-demo 一个 replit，并且显示指定的文件
 
 <Replit user="FuckDoctors" repl="Java-Test" file="Main.java" />
 
-```md
-<Replit user="FuckDoctors" repl="Java-Test" file="Main.java" />
-```
+:::
 
-一个自动加载的 replit:
+::: md-demo 一个自动加载的 replit
 
 <Replit user="FuckDoctors" repl="Java-Test" auto-load />
 
-```md
-<Replit user="FuckDoctors" repl="Java-Test" auto-load />
-```
+:::
 
-一个 replit 链接:
+::: md-demo 一个 replit 链接
 
 <Replit link="https://replit.com/@FuckDoctors/Java-Test" />
 
-```md
-<Replit link="https://replit.com/@FuckDoctors/Java-Test" />
-```
+:::
 
 ## 属性
 

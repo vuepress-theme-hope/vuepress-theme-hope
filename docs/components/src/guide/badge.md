@@ -10,11 +10,13 @@ You can use it in Markdown to add some status for titles or links.
 
 ## Demo
 
+::: md-demo
+
+## Heading Badge <Badge text="New" type="tip" /> <Badge text="MrHope" color="grey" />
+
 Badge Test <Badge text="Building" type="warning" /> <Badge text="MrHope" color="grey" />
 
-```md
-Badge Test <Badge text="Building" type="warning" /> <Badge text="MrHope" color="grey" />
-```
+:::
 
 ## Props
 

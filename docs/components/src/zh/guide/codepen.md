@@ -10,11 +10,8 @@ CodePen 演示组件。
 
 ## 示例
 
-一个使用用户和 Slug Hash 的案例:
+::: md-demo 一个使用用户和 Slug Hash 的案例
 
-<CodePen user="kowlor" slug-hash="ZYYQoy" title="Solar System animation - Pure CSS" :default-tab="['css','result']" :theme="$isDarkmode? 'dark': 'light'" />
-
-```md
 <CodePen
   user="kowlor"
   slug-hash="ZYYQoy"
@@ -22,33 +19,30 @@ CodePen 演示组件。
   :default-tab="['css','result']"
   :theme="$isDarkmode? 'dark': 'light'"
 />
-```
 
-一个使用链接的案例:
+:::
 
-<CodePen link="https://codepen.io/kowlor/pen/ZYYQoy" title="Solar System animation - Pure CSS" :default-tab="['css','result']" :theme="$isDarkmode? 'dark': 'light'" />
+::: md-demo 一个使用链接的案例
 
-```md
 <CodePen
   link="https://codepen.io/kowlor/pen/ZYYQoy"
   title="Solar System animation - Pure CSS"
   :default-tab="['css','result']"
   :theme="$isDarkmode? 'dark': 'light'"
 />
-```
 
-一个加载运行的案例:
+:::
 
-<CodePen link="https://codepen.io/keginaring/pen/XWZazwW" title="Solar System animation - Pure CSS" status="clicktorun" :theme="$isDarkmode? 'dark': 'light'" />
+::: md-demo 一个加载运行的案例
 
-```md
 <CodePen
   link="https://codepen.io/kowlor/pen/ZYYQoy"
   title="Envelope w/ Hearts"
   status="clicktorun"
   :theme="$isDarkmode? 'dark': 'light'"
 />
-```
+
+:::
 
 ## 属性
 

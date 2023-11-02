@@ -10,11 +10,8 @@ You can use it in Markdown to add an embed demo.
 
 ## Demo
 
-A demo with user and slug hash:
+::: md-demo A demo with user and slug hash
 
-<CodePen user="kowlor" slug-hash="ZYYQoy" title="Solar System animation - Pure CSS" :default-tab="['css','result']" :theme="$isDarkmode? 'dark': 'light'" />
-
-```md
 <CodePen
   user="kowlor"
   slug-hash="ZYYQoy"
@@ -22,26 +19,22 @@ A demo with user and slug hash:
   :default-tab="['css','result']"
   :theme="$isDarkmode? 'dark': 'light'"
 />
-```
 
-A demo with link:
+:::
 
-<CodePen link="https://codepen.io/kowlor/pen/ZYYQoy" title="Solar System animation - Pure CSS" :default-tab="['css','result']" :theme="$isDarkmode? 'dark': 'light'" />
+::: md-demo A demo with link
 
-```md
 <CodePen
   link="https://codepen.io/kowlor/pen/ZYYQoy"
   title="Solar System animation - Pure CSS"
   :default-tab="['css','result']"
   :theme="$isDarkmode? 'dark': 'light'"
 />
-```
 
-A click to run demo:
+:::
 
-<CodePen link="https://codepen.io/keginaring/pen/XWZazwW" title="Solar System animation - Pure CSS" status="clicktorun" :theme="$isDarkmode? 'dark': 'light'" />
+::: md-demo A click to run demo
 
-```md
 <CodePen
   link="https://codepen.io/kowlor/pen/ZYYQoy"
   title="Envelope w/ Hearts"
@@ -49,7 +42,8 @@ A click to run demo:
   :default-tab="['css','result']"
   :theme="$isDarkmode? 'dark': 'light'"
 />
-```
+
+:::
 
 ## Props
 

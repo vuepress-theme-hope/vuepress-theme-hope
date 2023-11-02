@@ -9,31 +9,24 @@ Share component, share page content to social media.
 
 ## Demo
 
-Basic share:
+::: md-demo Basic share
 
 <Share />
 
-```md
-<Share />
-```
+:::
 
-Customize services:
+::: md-demo Customize services
 
 <Share services="qq,weibo" />
 <Share :services="['qq','weibo']" />
 
-```md
-<Share services="qq,weibo" />
-<Share :services="['qq','weibo']" />
-```
+:::
 
-Colorful icon:
+::: md-demo Colorful icon
 
 <Share colorful />
 
-```md
-<Share colorful />
-```
+:::
 
 ## Setting Component
 

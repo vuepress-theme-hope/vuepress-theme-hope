@@ -9,31 +9,24 @@ description: 分享组件，将页面内容分享到社交媒体。
 
 ## 示例
 
-基础分享:
+::: md-demo 基础分享
 
 <Share />
 
-```md
-<Share />
-```
+:::
 
-自定义分享服务:
+::: md-demo 自定义分享服务
 
 <Share services="qq,weibo" />
 <Share :services="['qq','weibo']" />
 
-```md
-<Share services="qq,weibo" />
-<Share :services="['qq','weibo']" />
-```
+:::
 
-彩色图标:
+::: md-demo 彩色图标
 
 <Share colorful />
 
-```md
-<Share colorful />
-```
+:::
 
 ## 设置组件
 

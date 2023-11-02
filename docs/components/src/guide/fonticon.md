@@ -14,15 +14,13 @@ You can use it in Markdown to add an icon.
 
 ## Demo
 
+::: md-demo
+
 - Home icon: <FontIcon icon="home" />
 
 - A big and green share icon: <FontIcon icon="share" color="#3eaf7c" size="32" />
 
-```md
-- Home icon: <FontIcon icon="home" />
-
-- A big and green share icon: <FontIcon icon="share" color="#3eaf7c" size="32" />
-```
+:::
 
 ## Props
 

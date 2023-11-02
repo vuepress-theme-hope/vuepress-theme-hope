@@ -8,21 +8,17 @@ title: BiliBili
 
 ## 案例
 
-一个 B 站视频:
+::: md-demo 一个 B 站视频
 
 <BiliBili bvid="BV1kt411o7C3" />
 
-```md
-<BiliBili bvid="BV1kt411o7C3" />
-```
+:::
 
-一个自定义空降地址的 B 站视频:
+::: md-demo 一个自定义空降地址的 B 站视频
 
 <BiliBili aid="34304064" cid="109293122" ratio="9:16" time="60" page="2" />
 
-```md
-<BiliBili aid="34304064" cid="109293122" ratio="9:16" time="60" page="2" />
-```
+:::
 
 ## 属性
 

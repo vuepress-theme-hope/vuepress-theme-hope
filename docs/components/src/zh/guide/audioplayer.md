@@ -8,15 +8,13 @@ title: AudioPlayer
 
 ## 示例
 
-一个音频播放器:
+::: md-demo 一个音频播放器
 
 <AudioPlayer src="/sample.mp3" />
 
-```md
-<AudioPlayer src="/sample.mp3" />
-```
+:::
 
-一个拥有标题和封面的音频播放器:
+::: md-demo 一个拥有标题和封面的音频播放器
 
 <AudioPlayer
   src="/sample.mp3"
@@ -24,13 +22,7 @@ title: AudioPlayer
   poster="/logo.svg"
 />
 
-```md
-<AudioPlayer
-  src="/sample.mp3"
-  title="A Sample Audio"
-  poster="/logo.svg"
-/>
-```
+:::
 
 ## 属性
 

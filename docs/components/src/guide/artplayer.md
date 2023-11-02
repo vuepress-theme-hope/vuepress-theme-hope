@@ -14,29 +14,22 @@ Embed [ArtPlayer](https://github.com/zhw2590582/ArtPlayer) in Markdown files.
 
 ## Demo
 
-A video player:
+::: md-demo A video player
 
 <ArtPlayer src="https://vp-demo.u2sb.com/video/caminandes_03_llamigos_720p.mp4" />
 
-```md
-<ArtPlayer src="https://vp-demo.u2sb.com/video/caminandes_03_llamigos_720p.mp4" />
-```
+:::
 
-A video player with poster:
+::: md-demo A video player with poster
 
 <ArtPlayer
   src="https://vp-demo.u2sb.com/video/caminandes_03_llamigos_720p.mp4"
   poster="/poster.svg"
 />
 
-```md
-<ArtPlayer
-  src="https://vp-demo.u2sb.com/video/caminandes_03_llamigos_720p.mp4"
-  poster="/poster.svg"
-/>
-```
+:::
 
-A video player with custom settings:
+::: md-demo A video player with custom settings:
 
 <ArtPlayer
   src="https://vp-demo.u2sb.com/video/caminandes_03_llamigos_720p.mp4"
@@ -58,27 +51,7 @@ A video player with custom settings:
   subtitle-offset
 />
 
-```md
-<ArtPlayer
-  src="https://vp-demo.u2sb.com/video/caminandes_03_llamigos_720p.mp4"
-  airplay
-  aspect-ratio
-  auto-size
-  auto-orientation
-  auto-playback
-  fast-forward
-  flip
-  fullscreen-web
-  lock
-  loop
-  is-live
-  muted
-  mini-progress-bar
-  pip
-  screenshot
-  subtitle-offset
-/>
-```
+:::
 
 ## Props
 
@@ -255,29 +228,23 @@ npm i -D dashjs hls.js mpegts.js
 
 :::
 
-- HLS
+::: md-demo HLS
 
-  <ArtPlayer src="https://mse-demo.u2sb.com/dash/master.m3u8" />
+<ArtPlayer src="https://mse-demo.u2sb.com/dash/master.m3u8" />
 
-  ```md
-  <ArtPlayer src="https://mse-demo.u2sb.com/dash/master.m3u8" />
-  ```
+:::
 
-- FLV
+::: md-demo FLV
 
-  <ArtPlayer src="https://mse-demo.u2sb.com/caminandes_03_llamigos_720p.flv" />
+ <ArtPlayer src="https://mse-demo.u2sb.com/caminandes_03_llamigos_720p.flv" />
 
-  ```md
-  <ArtPlayer src="https://mse-demo.u2sb.com/caminandes_03_llamigos_720p.flv" />
-  ```
+:::
 
-- DASH
+::: md-demo DASH
 
-  <ArtPlayer src="https://mse-demo.u2sb.com/dash/caminandes_03_llamigos_720p.mpd" />
+<ArtPlayer src="https://mse-demo.u2sb.com/dash/caminandes_03_llamigos_720p.mpd" />
 
-  ```md
-  <ArtPlayer src="https://mse-demo.u2sb.com/dash/caminandes_03_llamigos_720p.mpd" />
-  ```
+:::
 
 ::: tip
 

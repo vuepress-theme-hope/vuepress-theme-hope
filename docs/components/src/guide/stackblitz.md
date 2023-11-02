@@ -8,21 +8,17 @@ Embed StackBlitz demo in Markdown files.
 
 ## Demo
 
-A StackBlitz project:
+::: md-demo A StackBlitz project
 
 <StackBlitz id="vuepress-theme-hope" />
 
-```md
-<StackBlitz id="vuepress-theme-hope" />
-```
+:::
 
-A StackBlitz project with custom settings:
+::: md-demo A StackBlitz project with custom settings
 
 <StackBlitz id="vuepress-theme-hope" hideExplorer hideNavigation hideDevtools />
 
-```md
-<StackBlitz id="vuepress-theme-hope" hideExplorer hideNavigation hideDevtools />
-```
+:::
 
 ## Props
 

@@ -8,37 +8,29 @@ Embed Replit demo in Markdown files.
 
 ## Demo
 
-A replit:
+::: md-demo A replit
 
 <Replit user="FuckDoctors" repl="Java-Test" />
 
-```md
-<Replit user="FuckDoctors" repl="Java-Test" />
-```
+:::
 
-A replit with opening file:
+::: md-demo A replit with opening file
 
 <Replit user="FuckDoctors" repl="Java-Test" file="Main.java" />
 
-```md
-<Replit user="FuckDoctors" repl="Java-Test" file="Main.java" />
-```
+:::
 
-An autoload replit:
+::: md-demo An autoload replit
 
 <Replit user="FuckDoctors" repl="Java-Test" auto-load />
 
-```md
-<Replit user="FuckDoctors" repl="Java-Test" auto-load />
-```
+:::
 
-A repl with link:
+::: md-demo A repl with link
 
 <Replit link="https://replit.com/@FuckDoctors/Java-Test" />
 
-```md
-<Replit link="https://replit.com/@FuckDoctors/Java-Test" />
-```
+:::
 
 ## Props
 

@@ -14,15 +14,13 @@ head:
 
 ## 示例
 
+::: md-demo
+
 - 主页图标: <FontIcon icon="home" />
 
 - 一个大绿分享图标: <FontIcon icon="share" color="#3eaf7c" size="32" />
 
-```md
-- 主页图标: <FontIcon icon="home" />
-
-- 一个大绿分享图标: <FontIcon icon="share" color="#3eaf7c" size="32" />
-```
+:::
 
 ## 属性
 

@@ -10,11 +10,13 @@ title: Badge
 
 ## 示例
 
-Badge Test <Badge text="Building" type="warning" /> <Badge text="MrHope" color="grey" />
+::: md-demo
 
-```md
-Badge Test <Badge text="Building" type="warning" /> <Badge text="MrHope" color="grey" />
-```
+## 标题勋章 <Badge text="新" type="tip" /> <Badge text="MrHope" color="grey" />
+
+勋章测试 <Badge text="构建中" type="warning" /> <Badge text="MrHope" color="grey" />
+
+:::
 
 ## 属性
 

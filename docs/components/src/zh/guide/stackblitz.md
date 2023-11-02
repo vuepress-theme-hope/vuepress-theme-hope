@@ -8,21 +8,17 @@ title: StackBlitz
 
 ## 示例
 
-一个 StackBlitz 项目:
+::: md-demo 一个 StackBlitz 项目
 
 <StackBlitz id="vuepress-theme-hope" />
 
-```md
-<StackBlitz id="vuepress-theme-hope" />
-```
+:::
 
-一个自定义设置的 StackBlitz 项目:
+::: md-demo 一个自定义设置的 StackBlitz 项目
 
 <StackBlitz id="vuepress-theme-hope" hideExplorer hideNavigation hideDevtools />
 
-```md
-<StackBlitz id="vuepress-theme-hope" hideExplorer hideNavigation hideDevtools />
-```
+:::
 
 ## 属性
 

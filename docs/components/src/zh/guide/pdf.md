@@ -10,21 +10,17 @@ PDF 预览组件。
 
 ## 示例
 
-默认 PDF 阅读器:
+::: md-demo 默认 PDF 阅读器
 
 <PDF url="/sample.pdf" />
 
-```md
-<PDF url="/sample.pdf" />
-```
+:::
 
-禁用工具栏且初始页面为第二页的阅读器:
+::: md-demo 禁用工具栏且初始页面为第二页的阅读器
 
 <PDF url="/sample.pdf" page="2" no-toolbar />
 
-```md
-<PDF url="/sample.pdf" page="2" no-toolbar />
-```
+:::
 
 ## PDFJS 查看器
 

@@ -32,15 +32,13 @@ npm i -D vidstack@1
 
 ## 示例
 
-视频播放器:
+::: md-demo 视频播放器
 
 <VidStack src="https://vp-demo.u2sb.com/video/caminandes_03_llamigos_720p.mp4" />
 
-```md
-<VidStack src="https://vp-demo.u2sb.com/video/caminandes_03_llamigos_720p.mp4" />
-```
+:::
 
-有封面、章节、缩略图和音轨的播放器:
+::: md-demo 有封面、章节、缩略图和音轨的播放器
 
 <VidStack
   src="https://media-files.vidstack.io/720p.mp4"
@@ -86,59 +84,13 @@ npm i -D vidstack@1
   crossorigin
 />
 
-```md
-<VidStack
-  src="https://media-files.vidstack.io/720p.mp4"
-  title="Agent 327 Operation Barber Shop"
-  poster="https://media-files.vidstack.io/poster-2.png"
-  :sourses="[
-    {
-      src: 'https://media-files.vidstack.io/720p.mp4',
-      type: 'video/mp4',
-    },
-    {
-      src:  'https://media-files.vidstack.io/720p.avi',
-      type: 'video/avi',
-    },
-    {
-      src:  'https://media-files.vidstack.io/720p.ogv',
-      type: 'video/ogg',
-    },
-  ]"
-  :tracks="[
-    {
-      src: 'https://media-files.vidstack.io/subs/english.vtt',
-      label: 'English',
-      language: 'en-US',
-      kind: 'subtitles',
-      default: true,
-    },
-    {
-      src: 'https://media-files.vidstack.io/subs/spanish.vtt',
-      label: 'Spanish',
-      language: 'es-ES',
-      kind: 'subtitles',
-    },
-    // Chapters
-    {
-      src: 'https://media-files.vidstack.io/chapters.vtt',
-      kind: 'chapters',
-      language: 'en-US',
-      default: true,
-    },
-  ]"
-  thumbnails="https://media-files.vidstack.io/thumbnails.vtt"
-  crossorigin
-/>
-```
+:::
 
-一个音频播放器:
+::: md-demo 一个音频播放器
 
 <VidStack src="/sample.mp3" title="VidStack 示例音频" />
 
-```md
-<VidStack src="/sample.mp3" title="VidStack 示例音频" />
-```
+:::
 
 ## 属性
 

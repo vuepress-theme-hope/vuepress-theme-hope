@@ -8,15 +8,13 @@ Embed XiGua videos in Markdown files.
 
 ## Demo
 
-A XiGua video:
+::: md-demo A XiGua video
 
 <XiGua id="7004391080330428964" />
 
-```md
-<XiGua id="7004391080330428964" />
-```
+:::
 
-A XiGua video with custom settings:
+::: md-demo A XiGua video with custom settings
 
 <XiGua
   id="7004391080330428964"
@@ -24,13 +22,7 @@ A XiGua video with custom settings:
   time="60"
 />
 
-```md
-<XiGua
-  id="7004391080330428964"
-  autoplay
-  time="60"
-/>
-```
+:::
 
 ## Props
 
