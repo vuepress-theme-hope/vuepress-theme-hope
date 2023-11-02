@@ -70,6 +70,8 @@ document.appendChild(linkElem);
 
 ## Demo
 
+:::: md-demo Normal demo
+
 ::: normal-demo Demo
 
 ```html
@@ -90,30 +92,5 @@ span {
 ```
 
 :::
-
-:::: details Code
-
-````md
-::: normal-demo Demo
-
-```html
-<h1>VuePress Theme Hope</h1>
-<p>is <span id="very">very</span> powerful!</p>
-```
-
-```js
-document.querySelector("#very").addEventListener("click", () => {
-  alert("Very powerful");
-});
-```
-
-```css
-span {
-  color: red;
-}
-```
-
-:::
-````
 
 ::::

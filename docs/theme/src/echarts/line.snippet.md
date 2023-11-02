@@ -1,6 +1,3 @@
-````md
-<!-- #region demo -->
-
 ::: echarts Dynamic Data & Time Axis
 
 ```js
@@ -99,6 +96,3 @@ setInterval(() => {
 ```
 
 :::
-
-<!-- #endregion demo -->
-````

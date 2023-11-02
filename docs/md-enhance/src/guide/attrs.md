@@ -140,35 +140,27 @@ interface MarkdownItAttrsOptions {
 
 > All class are styled with `margin: 4px;padding: 4px;border: 1px solid red;` to show the effect.
 
-### Inline (inline)
+::: md-demo Inline
 
 Text with `inline code`{.inline-code} and ![favicon](/favicon.ico){.image}, also supporting _emphasis_{.inline-emphasis} and **bold**{.inline-bold}.
 
-```md
-Text with `inline code`{.inline-code} and ![favicon](/favicon.ico){.image}, also supporting _emphasis_{.inline-emphasis} and **bold**{.inline-bold}.
-```
+:::
 
-### Block (block)
+::: md-demo Block
 
 block content {.block}
 
-```md
-block content {.block}
-```
+:::
 
-### Fence (fence)
+::: md-demo Fence
 
 ```js {.fence}
 const a = 1;
 ```
 
-````md
-```js {.fence}
-const a = 1;
-```
-````
+:::
 
-### Table (table)
+::: md-demo Table
 
 | Table   |
 | ------- |
@@ -176,15 +168,9 @@ const a = 1;
 
 {.md-table}
 
-```md
-| Table   |
-| ------- |
-| content |
+:::
 
-{.md-table}
-```
-
-### List (list)
+::: md-demo List
 
 - list item{.list-item}
 
@@ -193,32 +179,20 @@ const a = 1;
 
 {.list-wrapper}
 
-```md
-- list item{.list-item}
+:::
 
-  - nested list item
-    {.nested}
-
-{.list-wrapper}
-```
-
-### Horizontal (hr)
+::: md-demo Horizontal
 
 --- {.horizontal}
 
-```md
---- {.horizontal}
-```
+:::
 
-### Softbreak (softbreak)
+::: md-demo Softbreak
 
 A line with break
 {.break}
 
-```md
-A line with break
-{.break}
-```
+:::
 
 <style scope>
 .block,

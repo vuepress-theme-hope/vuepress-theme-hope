@@ -119,101 +119,61 @@ For details, please see [ECharts Docs](https://echarts.apache.org/handbook/en/ge
 
 ## Demo
 
-### Line Chart
-
-<!-- @include: @echarts/line.snippet.md#demo -->
-
-:::: details Code
+:::: md-demo Line Chart
 
 <!-- @include: @echarts/line.snippet.md -->
 
 ::::
 
-### Bar Chart
-
-<!-- @include: @echarts/bar.snippet.md#demo -->
-
-:::: details Code
+:::: md-demo Bar Chart
 
 <!-- @include: @echarts/bar.snippet.md -->
 
 ::::
 
-### Pie Chart
-
-<!-- @include: @echarts/pie.snippet.md#demo -->
-
-:::: details Code
+:::: md-demo Pie Chart
 
 <!-- @include: @echarts/pie.snippet.md -->
 
 ::::
 
-### Scatter Chart
-
-<!-- @include: @echarts/scatter.snippet.md#demo -->
-
-:::: details Code
+:::: md-demo Scatter Chart
 
 <!-- @include: @echarts/scatter.snippet.md -->
 
 ::::
 
-### Polar Chart
-
-<!-- @include: @echarts/polar.snippet.md#demo -->
-
-:::: details Code
+:::: md-demo Polar Chart
 
 <!-- @include: @echarts/polar.snippet.md -->
 
 ::::
 
-### Candlestick Chart
-
-<!-- @include: @echarts/candlestick.snippet.md#demo -->
-
-:::: details Code
+:::: md-demo Candlestick Chart
 
 <!-- @include: @echarts/candlestick.snippet.md -->
 
 ::::
 
-### Radar Chart
-
-<!-- @include: @echarts/radar.snippet.md#demo -->
-
-:::: details Code
+:::: md-demo Radar Chart
 
 <!-- @include: @echarts/radar.snippet.md -->
 
 ::::
 
-### Heat Map
-
-<!-- @include: @echarts/heat-map.snippet.md#demo -->
-
-:::: details Code
+:::: md-demo Heat Map
 
 <!-- @include: @echarts/heat-map.snippet.md -->
 
 ::::
 
-### Tree Chart
-
-<!-- @include: @echarts/tree.snippet.md#demo -->
-
-:::: details Code
+:::: md-demo Tree Chart
 
 <!-- @include: @echarts/tree.snippet.md -->
 
 ::::
 
-### Multiple Chart
-
-<!-- @include: @echarts/multiple.snippet.md#demo -->
-
-:::: details Code
+:::: md-demo Multiple Chart
 
 <!-- @include: @echarts/multiple.snippet.md -->
 

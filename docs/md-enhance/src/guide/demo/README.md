@@ -125,7 +125,9 @@ Available CSS languages:
 
 ### Not Supported Language Demo
 
-::: normal-demo A demo using language not supported by browsers
+:::: md-demo A demo using language not supported by browsers
+
+::: normal-demo Normal demo
 
 ```md
 # Title
@@ -150,35 +152,5 @@ h1 {
 ```
 
 :::
-
-:::: details Code
-
-````md
-::: normal-demo A normal demo
-
-```md
-# Title
-
-is very powerful!
-```
-
-```ts
-const message: string = "VuePress Theme Hope";
-
-document.querySelector("h1").innerHTML = message;
-```
-
-```scss
-h1 {
-  font-style: italic;
-
-  + p {
-    color: red;
-  }
-}
-```
-
-:::
-````
 
 ::::

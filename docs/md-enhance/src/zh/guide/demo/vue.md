@@ -40,7 +40,9 @@ export default {
 
 ## 演示
 
-::: vue-demo 一个 Vue Composition 演示
+:::: md-demo 一个 Vue Composition 演示
+
+::: vue-demo Vue 演示 1
 
 ```vue
 <template>
@@ -76,51 +78,12 @@ export default {
 ```
 
 :::
-
-:::: details Code
-
-````md
-::: vue-demo 一个 Vue Composition 演示
-
-```vue
-<template>
-  <div class="box">
-    <code>vuepress-theme-hope</code> is
-    <span @click="handler">{{ message }}</span
-    >!
-  </div>
-</template>
-<script>
-const { ref } = Vue;
-
-export default {
-  setup() {
-    const message = ref("powerful");
-
-    const handler = () => {
-      message.value = "very " + message.value;
-    };
-
-    return {
-      message,
-      handler,
-    };
-  },
-};
-</script>
-<style>
-.box span {
-  color: red;
-}
-</style>
-```
-
-:::
-````
 
 ::::
 
-::: vue-demo 一个 Vue Option 演示
+:::: md-demo 一个 Vue Option 演示
+
+::: vue-demo Vue 演示 2
 
 ```vue
 <template>
@@ -148,38 +111,5 @@ export default {
 ```
 
 :::
-
-:::: details Code
-
-````md
-::: vue-demo 一个 Vue Option 演示
-
-```vue
-<template>
-  <div class="box">
-    <code>vuepress-theme-hope</code> is
-    <span @click="handler">{{ message }}</span
-    >!
-  </div>
-</template>
-<script>
-export default {
-  data: () => ({ message: "powerful" }),
-  methods: {
-    handler() {
-      this.message = "very " + this.message;
-    },
-  },
-};
-</script>
-<style>
-.box span {
-  color: red;
-}
-</style>
-```
-
-:::
-````
 
 ::::

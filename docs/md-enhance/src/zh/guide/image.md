@@ -73,6 +73,10 @@ GFM 支持通过 ID 标记图片，使得图片只在特定的模式显示。我
 
 你可以通过 `imgMark` 选项控制它。
 
+::: md-demo ID 标记 案例
+
+<AppearanceSwitch /> (尝试切换主题)
+
 ```md
 ![GitHub Light](/assets/image/github-light.svg#gh-dark-mode-only)
 ![GitHub Dark](/assets/image/github-dark.svg#gh-light-mode-only)
@@ -80,18 +84,6 @@ GFM 支持通过 ID 标记图片，使得图片只在特定的模式显示。我
 ![GitHub Light](/assets/image/github-light.svg#dark)
 ![GitHub Dark](/assets/image/github-dark.svg#light)
 ```
-
-::: details 案例
-
-上述演示会渲染如下结果
-
-<AppearanceSwitch /> (尝试切换主题)
-
-![GitHub Light](/assets/image/github-light.svg#gh-dark-mode-only)
-![GitHub Dark](/assets/image/github-dark.svg#gh-light-mode-only)
-
-![GitHub Light](/assets/image/github-light.svg#dark)
-![GitHub Dark](/assets/image/github-dark.svg#light)
 
 :::
 
@@ -133,19 +125,7 @@ interface ImageMarkOptions {
 
 这样当你单独将图片至于一行 (也可同时嵌套链接)，图像将显示为 `<figure>` ，标题或图片替代文字将显示为 `<figcaption>`。
 
-```md
-![VuePress Hope 图标](/favicon.ico)
-
-[![VuePress Hope 图标](/favicon.ico)](https://theme-hope.vuejs.press/)
-
-![VuePress Hope 图标](/favicon.ico "VuePress Hope 图标")
-
-[![VuePress Hope 图标](/favicon.ico "VuePress Hope 图标")](https://theme-hope.vuejs.press/)
-
-![VuePress Hope 图标](/logo.svg "VuePress Hope 图标" =300x300)
-```
-
-将呈现为：
+::: md-demo Figure 案例
 
 ![VuePress Hope 图标](/favicon.ico)
 
@@ -156,6 +136,8 @@ interface ImageMarkOptions {
 [![VuePress Hope 图标](/favicon.ico "VuePress Hope 图标")](https://theme-hope.vuejs.press/)
 
 ![VuePress Hope 图标](/logo.svg "VuePress Hope 图标" =300x300)
+
+:::
 
 <script setup lang="ts">
 import AppearanceSwitch from "@theme-hope/modules/outlook/components/AppearanceSwitch";

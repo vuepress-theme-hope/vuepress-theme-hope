@@ -61,7 +61,7 @@ export default {
 ![img](link/to/image.png) {.full-width}
 ```
 
-同时，其他属性也收到支持:
+同时也支持其他属性:
 
 ```md
 一个包含文字的段落。 {#p .a .b align=center customize-attr="content with spaces"}
@@ -126,35 +126,27 @@ interface MarkdownItAttrsOptions {
 
 > 所有的 class 都使用 `margin: 4px;padding: 4px;border: 1px solid red;` 进行显示以展示效果。
 
-### 行内元素 (inline)
+::: md-demo 行内元素
 
 包含 `行内代码`{.inline-code} 和 ![favicon](/favicon.ico){.image} 的文字，也支持 _强调_{.inline-emphasis} 和 **加粗**{.inline-bold}。
 
-```md
-包含 `行内代码`{.inline-code} 和 ![favicon](/favicon.ico){.image} 的文字，也支持 _强调_{.inline-emphasis} 和 **加粗**{.inline-bold}。
-```
+:::
 
-### 块级元素 (block)
+::: md-demo 块级元素
 
 块级元素 {.block}
 
-```md
-块级元素 {.block}
-```
+:::
 
-### 代码块 (fence)
+::: md-demo 代码块
 
 ```js {.fence}
 const a = 1;
 ```
 
-````md
-```js {.fence}
-const a = 1;
-```
-````
+:::
 
-### 表格 (table)
+::: md-demo 表格
 
 | 表格 |
 | ---- |
@@ -162,15 +154,9 @@ const a = 1;
 
 {.md-table}
 
-```md
-| 表格 |
-| ---- |
-| 内容 |
+:::
 
-{.md-table}
-```
-
-### 列表 (list)
+::: md-demo 列表
 
 - 列表内容{.list-item}
 
@@ -179,32 +165,20 @@ const a = 1;
 
 {.list-wrapper}
 
-```md
-- 列表内容{.list-item}
+:::
 
-  - 嵌套列表内容
-    {.nested}
-
-{.list-wrapper}
-```
-
-### 水平线 (hr)
+::: md-demo 水平线
 
 --- {.horizontal}
 
-```md
---- {.horizontal}
-```
+:::
 
-### 换行 (softbreak)
+::: md-demo 换行
 
 一行换行的文字  
 {.break}
 
-```md
-一行换行的文字  
-{.break}
-```
+:::
 
 <style scope>
 .block,

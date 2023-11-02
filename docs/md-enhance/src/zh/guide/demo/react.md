@@ -33,7 +33,9 @@ icon: fab fa-react
 
 ## 演示
 
-::: react-demo 一个函数式 React Demo
+:::: md-demo 一个函数式 React Demo
+
+::: react-demo React 演示 1
 
 ```js
 const { useState } = React;
@@ -63,45 +65,12 @@ export default () => {
 ```
 
 :::
-
-:::: details 代码
-
-````md
-::: react-demo 一个函数式 React Demo
-
-```js
-const { useState } = React;
-
-export default () => {
-  const [message, setMessage] = useState(" 强大");
-
-  const handler = () => {
-    setMessage(`十分${message}`);
-  };
-
-  return (
-    <div className="box">
-      <code>vuepress-theme-hope</code>
-      <span id="powerful" onClick={handler}>
-        {message}
-      </span>
-    </div>
-  );
-};
-```
-
-```css
-.box #powerful {
-  color: blue;
-}
-```
-
-:::
-````
 
 ::::
 
-::: react-demo 一个类式 React Demo
+:::: md-demo 一个类式 React Demo
+
+::: react-demo React 演示 2
 
 ```js
 export default class App extends React.Component {
@@ -134,43 +103,5 @@ export default class App extends React.Component {
 ```
 
 :::
-
-:::: details 代码
-
-````md
-::: react-demo 一个类式 React Demo
-
-```js
-export default class App extends React.Component {
-  constructor(props) {
-    super(props);
-    this.state = { message: "强大" };
-  }
-  handler() {
-    this.setState((state) => ({
-      message: `十分${state.message}`,
-    }));
-  }
-  render() {
-    return (
-      <div className="box">
-        <code>vuepress-theme-hope</code>
-        <span id="powerful" onClick={this.handler.bind(this)}>
-          {this.state.message}
-        </span>
-      </div>
-    );
-  }
-}
-```
-
-```css
-.box #powerful {
-  color: blue;
-}
-```
-
-:::
-````
 
 ::::

@@ -103,6 +103,8 @@ Available presets for now:
 
 ## Demo
 
+::: md-demo Vue theme
+
 ```flow
 st=>start: Start|past:>http://www.google.com[blank]
 e=>end: End|future:>http://www.google.com
@@ -120,6 +122,10 @@ cond(no)->sub1(left)->op1
 c2(yes)->io->e
 c2(no)->op2->e
 ```
+
+:::
+
+::: md-demo Ant theme
 
 ```flow:ant
 st=>start: Start|past:>http://www.google.com[blank]
@@ -139,6 +145,10 @@ c2(yes)->io->e
 c2(no)->op2->e
 ```
 
+:::
+
+::: md-demo Pie theme
+
 ```flow:pie
 st=>start: Start|past:>http://www.google.com[blank]
 e=>end: End|future:>http://www.google.com
@@ -157,25 +167,7 @@ c2(yes)->io->e
 c2(no)->op2->e
 ```
 
-````md
-```flow
-st=>start: Start|past:>http://www.google.com[blank]
-e=>end: End|future:>http://www.google.com
-op1=>operation: My Operation|past
-op2=>operation: Stuff|current
-sub1=>subroutine: My Subroutine|invalid
-cond=>condition: Yes
-or No?|approved:>http://www.google.com
-c2=>condition: Good idea|rejected
-io=>inputoutput: catch something...|future
-
-st->op1(right)->cond
-cond(yes, right)->c2
-cond(no)->sub1(left)->op1
-c2(yes)->io->e
-c2(no)->op2->e
-```
-````
+:::
 
 ## Flowchart Intro
 
@@ -183,26 +175,17 @@ c2(no)->op2->e
 
 Defines the shape that the node will take.
 
-### Start & End
-
-Used as the first node where flows start from.
-Default text is `Start`.
+::: md-demo Start & End
 
 - `[Variable]->start: [Text]`
 
-Used as the last node where a flow ends.
-Default text is `End`.
+  Used as the first node where flows start from.
+  Default text is `Start`.
 
 - `[Variable]->end: [Text]`
 
-````md
-```flow
-st=>start: Start
-e=>end: End
-
-st->e
-```
-````
+  Used as the last node where a flow ends.
+  Default text is `End`.
 
 ```flow
 st=>start: Start
@@ -211,21 +194,14 @@ e=>end: End
 st->e
 ```
 
-### Operation
+:::
+
+::: md-demo Operation
 
 Indicates that an operation needs to happen in the flow.
 
 - `[Variable]->operation: [Text]`
 
-````md
-```flow
-process=>operation: Operation
-e=>end: End
-
-process->e
-```
-````
-
 ```flow
 process=>operation: Operation
 e=>end: End
@@ -233,21 +209,14 @@ e=>end: End
 process->e
 ```
 
-### Input / Output
+:::
+
+::: md-demo Input / Output
 
 Indicates that IO happens in a flow.
 
 - `[Variable]->inputoutput: [Text]`
 
-````md
-```flow
-process=>inputoutput: Inputoutput
-e=>end: End
-
-process->e
-```
-````
-
 ```flow
 process=>inputoutput: Inputoutput
 e=>end: End
@@ -255,21 +224,14 @@ e=>end: End
 process->e
 ```
 
-### Subroutine
+:::
+
+::: md-demo Subroutine
 
 Indicates that a subroutine happens in the flow and that there should be another flowchart that documents this subroutine.
 
 - `[Variable]->subroutine: [Text]`
 
-````md
-```flow
-process=>subroutine: Subroutine
-e=>end: End
-
-process->e
-```
-````
-
 ```flow
 process=>subroutine: Subroutine
 e=>end: End
@@ -277,7 +239,9 @@ e=>end: End
 process->e
 ```
 
-### Condition
+:::
+
+::: md-demo Condition
 
 Allows for a conditional or logical statement to direct the flow into one of two or more paths.
 
@@ -286,17 +250,6 @@ Allows for a conditional or logical statement to direct the flow into one of two
 - `[Variable]([yesText])->[Position]`
 - `[Variable]([noText])->[Position]`
 
-````md
-```flow
-cond=>condition: Process?
-process=>operation: Process
-e=>end: End
-
-cond(yes)->process->e
-cond(no)->e
-```
-````
-
 ```flow
 cond=>condition: Process?
 process=>operation: Process
@@ -306,7 +259,9 @@ cond(yes)->process->e
 cond(no)->e
 ```
 
-### Parallel
+:::
+
+::: md-demo Parallel
 
 Allows for multiple flows to happen simultaneously.
 
@@ -314,7 +269,6 @@ Allows for multiple flows to happen simultaneously.
 - `[Variable](path1, direction)->[Position]`
 - `[Variable](path1, direction)->[Position]`
 
-````md
 ```flow
 para=>parallel: parallel tasks
 process=>operation: Process
@@ -323,16 +277,8 @@ e=>end: End
 para(path1, bottom)->process->e
 para(path2)->e
 ```
-````
 
-```flow
-para=>parallel: parallel tasks
-process=>operation: Process
-e=>end: End
-
-para(path1, bottom)->process->e
-para(path2)->e
-```
+:::
 
 ## Connections
 

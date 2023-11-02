@@ -119,101 +119,61 @@ const option = {
 
 ## 案例
 
-### 线图
-
-<!-- @include: @echarts/line.snippet.md#demo -->
-
-:::: details 代码
+:::: md-demo 线图
 
 <!-- @include: @echarts/line.snippet.md -->
 
 ::::
 
-### 柱状图
-
-<!-- @include: @echarts/bar.snippet.md#demo -->
-
-:::: details Code
+:::: md-demo 柱状图
 
 <!-- @include: @echarts/bar.snippet.md -->
 
 ::::
 
-### 饼图
-
-<!-- @include: @echarts/pie.snippet.md#demo -->
-
-:::: details Code
+:::: md-demo 饼图
 
 <!-- @include: @echarts/pie.snippet.md -->
 
 ::::
 
-### 散点图
-
-<!-- @include: @echarts/scatter.snippet.md#demo -->
-
-:::: details Code
+:::: md-demo 散点图
 
 <!-- @include: @echarts/scatter.snippet.md -->
 
 ::::
 
-### 极坐标图
-
-<!-- @include: @echarts/polar.snippet.md#demo -->
-
-:::: details Code
+:::: md-demo 极坐标图
 
 <!-- @include: @echarts/polar.snippet.md -->
 
 ::::
 
-### 烛台图
-
-<!-- @include: @echarts/candlestick.snippet.md#demo -->
-
-:::: details Code
+:::: md-demo 烛台图
 
 <!-- @include: @echarts/candlestick.snippet.md -->
 
 ::::
 
-### 雷达图
-
-<!-- @include: @echarts/radar.snippet.md#demo -->
-
-:::: details Code
+:::: md-demo 雷达图
 
 <!-- @include: @echarts/radar.snippet.md -->
 
 ::::
 
-### 热力图
-
-<!-- @include: @echarts/heat-map.snippet.md#demo -->
-
-:::: details Code
+:::: md-demo 热力图
 
 <!-- @include: @echarts/heat-map.snippet.md -->
 
 ::::
 
-### 树图
-
-<!-- @include: @echarts/tree.snippet.md#demo -->
-
-:::: details Code
+:::: md-demo 树图
 
 <!-- @include: @echarts/tree.snippet.md -->
 
 ::::
 
-### 多图
-
-<!-- @include: @echarts/multiple.snippet.md#demo -->
-
-:::: details Code
+:::: md-demo 多图
 
 <!-- @include: @echarts/multiple.snippet.md -->
 

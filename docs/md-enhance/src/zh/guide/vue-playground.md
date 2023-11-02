@@ -111,7 +111,9 @@ export default defineClientConfig({
 
 ## 案例
 
-::: vue-playground Vue 交互演示
+:::: md-demo 简单的 Vue 交互演示
+
+::: vue-playground Vue 交互演示 1
 
 @file App.vue
 
@@ -129,33 +131,12 @@ const msg = ref("你好交互演示!");
 ```
 
 :::
-
-:::: details Code
-
-````md
-::: vue-playground Vue 交互演示
-
-@file App.vue
-
-```vue
-<script setup>
-import { ref } from "vue";
-
-const msg = ref("你好交互演示!");
-</script>
-
-<template>
-  <h1>{{ msg }}</h1>
-  <input v-model="msg" />
-</template>
-```
-
-:::
-````
 
 ::::
 
-::: vue-playground 自定义导入与映射的 Vue 交互演示
+:::: md-demo 自定义导入与映射的 Vue 交互演示
+
+::: vue-playground Vue 交互演示 2
 
 @file App.vue
 
@@ -212,67 +193,5 @@ const { charging, level } = useBattery();
 ```
 
 :::
-
-:::: details Code
-
-````md
-::: vue-playground 自定义导入与映射的 Vue 交互演示
-
-@file App.vue
-
-```vue
-<script setup>
-import { ref } from "vue";
-import Comp from "./Comp.vue";
-
-const msg = ref("Hello Playground!");
-</script>
-
-<template>
-  <h1>{{ msg }}</h1>
-  <input v-model="msg" />
-  <Comp />
-</template>
-```
-
-@file Comp.vue
-
-```vue
-<script setup>
-import { useBattery } from "@vueuse/core";
-import { ref } from "vue";
-
-const { charging, level } = useBattery();
-</script>
-
-<template>
-  <h1>Battery status</h1>
-  <p>Charging: {{ charging }}</p>
-  <p>Level: {{ level * 100 }}%</p>
-</template>
-```
-
-@import
-
-```json
-{
-  "imports": {
-    "@vueuse/core": "https://unpkg.com/@vueuse/core/index.mjs",
-    "@vueuse/shared": "https://unpkg.com/@vueuse/shared/index.mjs",
-    "vue-demi": "https://unpkg.com/vue-demi/lib/index.mjs"
-  }
-}
-```
-
-@setting
-
-```json
-{
-  "showCompileOutput": true
-}
-```
-
-:::
-````
 
 ::::

@@ -157,6 +157,8 @@ UnoCSS 预设默认使用[官方 playground](https://unocss.dev/play)，可通�
 
 ### TS
 
+:::: md-demo
+
 ::: playground#ts TS 案例 1
 
 @file index.ts
@@ -170,27 +172,11 @@ speak(msg);
 ```
 
 :::
-
-:::: details 代码
-
-````md
-::: playground#ts TS 案例 1
-
-@file index.ts
-
-```ts
-const msg = "你好世界";
-
-const speak = (msg: string) => console.log(msg);
-
-speak(msg);
-```
-
-:::
-````
 
 ::::
 
+:::: md-demo
+
 ::: playground#ts TS 案例 2
 
 @file index.ts
@@ -212,37 +198,13 @@ speak(msg);
 ```
 
 :::
-
-:::: details 代码
-
-````md
-::: playground#ts TS 案例 2
-
-@file index.ts
-
-```ts
-const msg = "你好世界";
-
-const speak = (msg: string) => console.log(msg);
-
-speak(msg);
-```
-
-@setting
-
-```json
-{
-  "target": "es5"
-}
-```
-
-:::
-````
 
 ::::
 
 ### Vue
 
+:::: md-demo
+
 ::: playground#vue 使用自定义导入的 Vue 案例
 
 @file App.vue
@@ -282,53 +244,11 @@ const msg = ref("Hello World!");
 ```
 
 :::
-
-:::: details 代码
-
-````md
-::: playground#vue 使用自定义导入的 Vue 案例
-
-@file App.vue
-
-```vue
-<script setup>
-import { ref } from "vue";
-
-import Comp from "./Comp.vue";
-
-const msg = ref("Hello World!");
-</script>
-
-<template>
-  <h1>{{ msg }}</h1>
-  <input v-model="msg" />
-  <Comp />
-</template>
-```
-
-@file Comp.vue
-
-```vue
-<template>
-  <div>Comp</div>
-</template>
-```
-
-@import
-
-```json
-{
-  "imports": {
-    "vue": "https://sfc.vuejs.org/vue.runtime.esm-browser.js"
-  }
-}
-```
-
-:::
-````
 
 ::::
 
+:::: md-demo
+
 ::: playground#vue 使用自定义设置的 Vue 案例
 
 @file App.vue
@@ -356,42 +276,12 @@ const msg = ref("Hello Playground!");
 ```
 
 :::
-
-:::: details 代码
-
-````md
-::: playground#vue 使用自定义设置的 Vue 案例
-
-@file App.vue
-
-```vue
-<script setup>
-import { ref } from "vue";
-
-const msg = ref("Hello Playground!");
-</script>
-
-<template>
-  <h1>{{ msg }}</h1>
-  <input v-model="msg" />
-</template>
-```
-
-@setting
-
-```json
-{
-  "dev": true,
-  "ssr": true
-}
-```
-
-:::
-````
 
 ::::
 
 ### UnoCSS
+
+:::: md-demo
 
 ::: playground#unocss UnoCSS 案例
 
@@ -423,41 +313,6 @@ export default defineConfig({
 ```
 
 :::
-
-:::: details 代码
-
-````md
-::: playground#unocss UnoCSS 案例
-
-@file index.html
-
-```html
-<div class="flex flex-col text-center h-full justify-center">
-  <div class="text-red">TEST for default preset</div>
-  <div class="text-$fd-color">TEST for custom css</div>
-</div>
-```
-
-@file config.js
-
-```js
-import { defineConfig, presetUno } from "unocss";
-
-export default defineConfig({
-  presets: [presetUno()],
-});
-```
-
-@file style.css
-
-```css
-:root {
-  --fd-color: green;
-}
-```
-
-:::
-````
 
 ::::
 

@@ -153,6 +153,8 @@ pnpm add -D vuepress-plugin-md-enhance
 
 ## Demo
 
+:::: md-demo
+
 A tab of fruit:
 
 ::: tabs#fruit
@@ -166,20 +168,6 @@ Apple
 Banana
 
 :::
-
-```md
-::: tabs#fruit
-
-@tab apple#apple
-
-Apple
-
-@tab banana#banana
-
-Banana
-
-:::
-```
 
 Another tab of fruit:
 
@@ -199,24 +187,6 @@ Orange
 
 :::
 
-```md
-::: tabs#fruit
-
-@tab apple
-
-Apple
-
-@tab banana
-
-Banana
-
-@tab orange
-
-Orange
-
-:::
-```
-
 A tab of fruit without id:
 
 ::: tabs
@@ -235,20 +205,4 @@ Orange
 
 :::
 
-```md
-::: tabs
-
-@tab apple
-
-Apple
-
-@tab banana
-
-Banana
-
-@tab orange
-
-Orange
-
-:::
-```
+::::

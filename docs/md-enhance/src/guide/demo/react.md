@@ -33,7 +33,9 @@ icon: fab fa-react
 
 ## Demo
 
-::: react-demo A function-based React Demo
+:::: md-demo A function-based React Demo
+
+::: react-demo React demo 1
 
 ```js
 const { useState } = React;
@@ -63,45 +65,12 @@ export default () => {
 ```
 
 :::
-
-:::: details Code
-
-````md
-::: react-demo A function-based React Demo
-
-```js
-const { useState } = React;
-
-export default () => {
-  const [message, setMessage] = useState(" powerful");
-
-  const handler = () => {
-    setMessage(` very${message}`);
-  };
-
-  return (
-    <div className="box">
-      <code>vuepress-theme-hope</code> is
-      <span id="powerful" onClick={handler}>
-        {message}
-      </span>!
-    </div>
-  );
-};
-```
-
-```css
-.box #powerful {
-  color: blue;
-}
-```
-
-:::
-````
 
 ::::
 
-::: react-demo A class-based React Demo
+:::: md-demo A class-based React Demo
+
+::: react-demo React demo 2
 
 ```js
 export default class App extends React.Component {
@@ -134,43 +103,5 @@ export default class App extends React.Component {
 ```
 
 :::
-
-:::: details Code
-
-````md
-::: react-demo A class-based React Demo
-
-```js
-export default class App extends React.Component {
-  constructor(props) {
-    super(props);
-    this.state = { message: " powerful" };
-  }
-  handler() {
-    this.setState((state) => ({
-      message: ` very${state.message}`,
-    }));
-  }
-  render() {
-    return (
-      <div className="box">
-        <code>vuepress-theme-hope</code> is
-        <span id="powerful" onClick={this.handler.bind(this)}>
-          {this.state.message}!
-        </span>
-      </div>
-    );
-  }
-}
-```
-
-```css
-.box #powerful {
-  color: blue;
-}
-```
-
-:::
-````
 
 ::::

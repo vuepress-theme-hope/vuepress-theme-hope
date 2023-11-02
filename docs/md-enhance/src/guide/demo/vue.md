@@ -40,7 +40,9 @@ export default {
 
 ## Demo
 
-::: vue-demo A Vue Composition Demo
+:::: md-demo A Vue Composition Demo
+
+::: vue-demo Vue demo 1
 
 ```vue
 <template>
@@ -76,51 +78,12 @@ export default {
 ```
 
 :::
-
-:::: details Code
-
-````md
-::: vue-demo A Vue Composition Demo
-
-```vue
-<template>
-  <div class="box">
-    <code>vuepress-theme-hope</code> is
-    <span @click="handler">{{ message }}</span
-    >!
-  </div>
-</template>
-<script>
-const { ref } = Vue;
-
-export default {
-  setup() {
-    const message = ref("powerful");
-
-    const handler = () => {
-      message.value = "very " + message.value;
-    };
-
-    return {
-      message,
-      handler,
-    };
-  },
-};
-</script>
-<style>
-.box span {
-  color: red;
-}
-</style>
-```
-
-:::
-````
 
 ::::
 
-::: vue-demo A Vue Option Demo
+:::: md-demo A Vue Option Demo
+
+::: vue-demo Vue demo 2
 
 ```vue
 <template>
@@ -148,38 +111,5 @@ export default {
 ```
 
 :::
-
-:::: details Code
-
-````md
-::: vue-demo A Vue Option Demo
-
-```vue
-<template>
-  <div class="box">
-    <code>vuepress-theme-hope</code> is
-    <span @click="handler">{{ message }}</span
-    >!
-  </div>
-</template>
-<script>
-export default {
-  data: () => ({ message: "powerful" }),
-  methods: {
-    handler() {
-      this.message = "very " + this.message;
-    },
-  },
-};
-</script>
-<style>
-.box span {
-  color: red;
-}
-</style>
-```
-
-:::
-````
 
 ::::

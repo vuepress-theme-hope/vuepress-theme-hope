@@ -73,17 +73,7 @@ GFM supports marking pictures by ID suffix so that pictures are only displayed i
 
 You can enable it using `imgMark` option.
 
-```md
-![GitHub Light](/assets/image/github-light.svg#gh-dark-mode-only)
-![GitHub Dark](/assets/image/github-dark.svg#gh-light-mode-only)
-
-![GitHub Light](/assets/image/github-light.svg#dark)
-![GitHub Dark](/assets/image/github-dark.svg#light)
-```
-
-::: details Case
-
-The above demo will render the following result
+::: md-demo Image mark demo
 
 <AppearanceSwitch /> (Try to toggle theme mode)
 
@@ -133,19 +123,7 @@ Sometimes, you may want to add a description with image and place it between con
 
 If the image is standalone in a line, wrapped or not wrapped by link, it will be displayed as `<figure>` and title (or alt) will be displayed as `<figcaption>`.
 
-```md
-![VuePress Hope Logo](/favicon.ico)
-
-[![VuePress Hope Logo](/favicon.ico)](https://theme-hope.vuejs.press/)
-
-![VuePress Hope Logo](/favicon.ico "VuePress Hope Logo")
-
-[![VuePress Hope Logo](/favicon.ico "VuePress Hope Logo")](https://theme-hope.vuejs.press/)
-
-![VuePress Hope Logo](/logo.svg "VuePress Hope Logo" =300x300)
-```
-
-Will be rendered as:
+::: md-demo Figure demo
 
 ![VuePress Hope Logo](/favicon.ico)
 
@@ -156,6 +134,8 @@ Will be rendered as:
 [![VuePress Hope Logo](/favicon.ico "VuePress Hope Logo")](https://theme-hope.vuejs.press/)
 
 ![VuePress Hope Logo](/logo.svg "VuePress Hope Logo" =300x300)
+
+:::
 
 <script setup lang="ts">
 import AppearanceSwitch from "@theme-hope/modules/outlook/components/AppearanceSwitch";

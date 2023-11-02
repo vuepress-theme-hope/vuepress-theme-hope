@@ -103,6 +103,8 @@ export default {
 
 ## 演示
 
+::: md-demo Vue 主题
+
 ```flow
 st=>start: 开始|past:>http://www.google.com[blank]
 e=>end: 结束|future:>http://www.google.com
@@ -119,6 +121,10 @@ cond(no)->sub1(left)->op1
 c2(yes)->io->e
 c2(no)->op2->e
 ```
+
+:::
+
+::: md-demo Ant 主题
 
 ```flow:ant
 st=>start: 开始|past:>http://www.google.com[blank]
@@ -137,6 +143,10 @@ c2(yes)->io->e
 c2(no)->op2->e
 ```
 
+:::
+
+::: md-demo Pie 主题
+
 ```flow:pie
 st=>start: 开始|past:>http://www.google.com[blank]
 e=>end: 结束|future:>http://www.google.com
@@ -154,24 +164,7 @@ c2(yes)->io->e
 c2(no)->op2->e
 ```
 
-````md
-```flow
-st=>start: 开始|past:>http://www.google.com[blank]
-e=>end: 结束|future:>http://www.google.com
-op1=>operation: 操作1|past
-op2=>operation: 操作2|current
-sub1=>subroutine: 子程序|invalid
-cond=>condition: 是/否?|approved:>http://www.google.com
-c2=>condition: 判断2|rejected
-io=>inputoutput: 进行反思...|future
-
-st->op1(right)->cond
-cond(yes, right)->c2
-cond(no)->sub1(left)->op1
-c2(yes)->io->e
-c2(no)->op2->e
-```
-````
+:::
 
 ## 流程图介绍
 
@@ -179,26 +172,17 @@ c2(no)->op2->e
 
 定义了结点形状
 
-#### 开始 & 结束
-
-被用于流程开始的第一个节点。
-默认文字为 `Start`.
+::: md-demo 开始 & 结束
 
 - `[Variable]->start: [Text]`
 
-被用于流程结束的最后一个节点。
-默认文字为 `End`.
+  被用于流程开始的第一个节点。
+  默认文字为 `Start`.
 
 - `[Variable]->end: [Text]`
 
-````md
-```flow
-st=>start: 开始
-e=>end: 结束
-
-st->e
-```
-````
+  被用于流程结束的最后一个节点。
+  默认文字为 `End`.
 
 ```flow
 st=>start: 开始
@@ -207,19 +191,12 @@ e=>end: 结束
 st->e
 ```
 
-#### 操作
+:::
+
+::: md-demo 操作
 
 - `[Variable]->operation: [Text]`
 
-````md
-```flow
-process=>operation: 操作
-e=>end: 结束
-
-process->e
-```
-````
-
 ```flow
 process=>operation: 操作
 e=>end: 结束
@@ -227,19 +204,12 @@ e=>end: 结束
 process->e
 ```
 
-#### 输入输出
+:::
+
+::: md-demo 输入输出
 
 - `[Variable]->inputoutput: [Text]`
 
-````md
-```flow
-process=>inputoutput: 输入输出
-e=>end: 结束
-
-process->e
-```
-````
-
 ```flow
 process=>inputoutput: 输入输出
 e=>end: 结束
@@ -247,19 +217,12 @@ e=>end: 结束
 process->e
 ```
 
-#### 子程序
+:::
+
+::: md-demo 子程序
 
 - `[Variable]->subroutine: [Text]`
 
-````md
-```flow
-process=>subroutine: 子程序
-e=>end: 结束
-
-process->e
-```
-````
-
 ```flow
 process=>subroutine: 子程序
 e=>end: 结束
@@ -267,24 +230,15 @@ e=>end: 结束
 process->e
 ```
 
-#### 条件
+:::
+
+::: md-demo 条件
 
 - `[Variable]->condition: [Text]`
 
 - `[Variable]([yesText])->[Position]`
 - `[Variable]([noText])->[Position]`
 
-````md
-```flow
-cond=>condition: 是否执行操作?
-process=>operation: 操作
-e=>end: 结束
-
-cond(yes)->process->e
-cond(no)->e
-```
-````
-
 ```flow
 cond=>condition: 是否执行操作?
 process=>operation: 操作
@@ -294,7 +248,9 @@ cond(yes)->process->e
 cond(no)->e
 ```
 
-#### 平行
+:::
+
+::: md-demo 平行
 
 定义同时开始的多个程序。
 
@@ -302,7 +258,6 @@ cond(no)->e
 - `[Variable](path1, direction)->[Position]`
 - `[Variable](path1, direction)->[Position]`
 
-````md
 ```flow
 para=>parallel: 平行任务
 process=>operation: 操作
@@ -311,16 +266,8 @@ e=>end: 结束
 para(path1, bottom)->process->e
 para(path2)->e
 ```
-````
 
-```flow
-para=>parallel: 平行任务
-process=>operation: 操作
-e=>end: 结束
-
-para(path1, bottom)->process->e
-para(path2)->e
-```
+:::
 
 ### 链接
 

@@ -1,6 +1,3 @@
-````md
-<!-- #region demo -->
-
 ::: echarts A bar chart
 
 ```js
@@ -76,6 +73,3 @@ setInterval(() => {
 ```
 
 :::
-
-<!-- #endregion demo -->
-````

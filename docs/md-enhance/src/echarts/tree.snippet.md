@@ -1,6 +1,3 @@
-````md
-<!-- #region demo -->
-
 ::: echarts Tree
 
 ```js
@@ -35,6 +32,3 @@ const height = 600;
 ```
 
 :::
-
-<!-- #endregion demo -->
-````

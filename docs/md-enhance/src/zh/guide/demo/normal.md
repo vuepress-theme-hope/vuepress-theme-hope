@@ -69,7 +69,9 @@ document.appendChild(linkElem);
 
 ## 例子
 
-::: normal-demo Demo 演示
+:::: md-mode 普通演示
+
+::: normal-demo 演示
 
 ```html
 <h1>VuePress Theme Hope</h1>
@@ -89,30 +91,5 @@ span {
 ```
 
 :::
-
-:::: details 代码
-
-````md
-::: normal-demo Demo 演示
-
-```html
-<h1>VuePress Theme Hope</h1>
-<p><span id="very">非常</span>强大!</p>
-```
-
-```js
-document.querySelector("#very").addEventListener("click", () => {
-  alert("非常强大");
-});
-```
-
-```css
-span {
-  color: red;
-}
-```
-
-:::
-````
 
 ::::
