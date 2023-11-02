@@ -53,6 +53,7 @@ import {
   getUnoPlaygroundPreset,
   getVuePlaygroundPreset,
   hint,
+  mdDemo,
   mermaid,
   normalDemo,
   playground,
@@ -348,6 +349,7 @@ export const mdEnhancePlugin =
         if (enableChart) md.use(chart);
         if (enableEcharts) md.use(echarts);
         if (getStatus("demo")) {
+          md.use(mdDemo);
           md.use(normalDemo);
           md.use(vueDemo);
           md.use(reactDemo);

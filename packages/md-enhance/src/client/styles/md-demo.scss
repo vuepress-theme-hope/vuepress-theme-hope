@@ -2,15 +2,15 @@
 @use "vuepress-shared/styles/reset";
 
 :root {
-  --code-demo-header-bg-color: #eee;
+  --md-demo-header-bg-color: #eee;
 }
 
 #{hope-config.$dark-selector} {
-  --code-demo-header-bg-color: #333;
+  --md-demo-header-bg-color: #333;
 }
 
-.vp-code-demo {
-  margin: 8px 0;
+.vp-md-demo {
+  margin: 8px -8px;
   border: 1px solid var(--vp-brc);
   border-radius: 8px;
   transition: all 0.2s;
@@ -20,73 +20,21 @@
   }
 }
 
-.vp-code-demo-header {
+.vp-md-demo-header {
   position: relative;
-
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
 
   padding: 8px 12px;
   border-radius: 8px 8px 0 0;
 
   background: var(--code-demo-header-bg-color);
 
+  font-weight: 500;
+  font-size: 1.25rem;
+  line-height: 2.5rem;
   text-align: start;
-
-  .codepen-button,
-  .jsfiddle-button {
-    @include reset.button;
-    position: relative;
-
-    box-sizing: content-box;
-
-    width: 1.25rem;
-    height: 1.25rem;
-    margin: 0 4px;
-    padding: 4px;
-    border-radius: 50%;
-
-    background: #ccc;
-    outline: none;
-
-    @media print {
-      display: none;
-    }
-
-    #{hope-config.$dark-selector} & {
-      background: #555;
-    }
-
-    svg {
-      width: 1.25rem;
-      height: 1.25rem;
-      fill: #777;
-
-      #{hope-config.$dark-selector} & {
-        fill: #aaa;
-      }
-    }
-
-    &:hover {
-      background: #aaa;
-
-      #{hope-config.$dark-selector} & {
-        background: #777;
-      }
-
-      svg {
-        fill: #333;
-
-        #{hope-config.$dark-selector} & {
-          fill: #fff;
-        }
-      }
-    }
-  }
 }
 
-.vp-code-demo-toggle-button {
+.vp-md-demo-toggle-button {
   @include reset.button;
   @include arrow.arrow;
 
@@ -120,39 +68,17 @@
   }
 }
 
-.vp-code-demo-title {
-  display: inline-block;
-  vertical-align: top;
-  flex: 1;
-
-  font-weight: 500;
-  font-size: 1.25rem;
-  line-height: 2.5rem;
-
-  &:first-child {
-    margin-inline-start: 0.5rem;
-  }
-}
-
-.vp-code-demo-loading {
-  color: var(--vp-tc);
-}
-
-.vp-code-demo-display {
+.vp-md-demo-display {
   position: relative;
-
   overflow: auto;
-
-  max-height: 400px;
-  padding: 20px;
-  border-bottom: 1px solid var(--vp-brc);
+  padding: 8px;
 
   @media print {
     page-break-inside: avoid;
   }
 }
 
-.vp-code-demo-code-wrapper {
+.vp-md-demo-code-wrapper {
   overflow: hidden;
   transition: height 0.5s;
 
@@ -161,11 +87,7 @@
   }
 }
 
-.vp-code-demo-codes {
-  > p {
-    margin: 0.75rem;
-  }
-
+.vp-md-demo-codes {
   > div[class*="language-"] {
     border-radius: 0;
 
@@ -185,12 +107,8 @@
       }
     }
 
-    &:first-child pre {
-      margin-top: 0 !important;
-    }
-
-    &.language-json {
-      display: none;
+    pre {
+      margin-block: 0 !important;
     }
 
     &.line-numbers-mode::after {

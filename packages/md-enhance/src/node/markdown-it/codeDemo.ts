@@ -1,8 +1,10 @@
 import { container } from "@mdit/plugin-container";
+import { demo } from "@mdit/plugin-demo";
 import type { PluginSimple } from "markdown-it";
 import type Token from "markdown-it/lib/token.js";
 import { utoa } from "vuepress-shared/node";
 
+import { escapeHtml } from "./utils.js";
 import type { CodeDemoOptions } from "../../shared/index.js";
 
 export const CODE_DEMO_DEFAULT_SETTING: CodeDemoOptions = {
@@ -60,3 +62,27 @@ export const normalDemo: PluginSimple = getPlugin("normal-demo");
 export const vueDemo: PluginSimple = getPlugin("vue-demo");
 
 export const reactDemo: PluginSimple = getPlugin("react-demo");
+
+export const mdDemo: PluginSimple = (md) => {
+  md.use(demo, {
+    name: "md-demo",
+    openRender: (tokens, index) =>
+      `<MdDemo title="${escapeHtml(
+        tokens[index].info,
+      )}" id="md-demo-${index}"><template #default>\n`,
+    codeRender: (tokens, index, options, _env, self) => {
+      tokens[index].type = "fence";
+      tokens[index].info = "md";
+      tokens[index].markup = "```";
+
+      return `</template><template #code>\n${self.rules.fence!(
+        tokens,
+        index,
+        options,
+        _env,
+        self,
+      )}`;
+    },
+    closeRender: () => "</template></MdDemo>",
+  });
+};

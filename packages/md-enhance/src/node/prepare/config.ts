@@ -63,8 +63,12 @@ export const prepareConfigFile = async (
   if (getStatus("demo")) {
     imports.push(
       `import CodeDemo from "${CLIENT_FOLDER}components/CodeDemo.js";`,
+      `import MdDemo from "${CLIENT_FOLDER}components/MdDemo.js";`,
     );
-    enhances.push(`app.component("CodeDemo", CodeDemo);`);
+    enhances.push(
+      `app.component("CodeDemo", CodeDemo);`,
+      `app.component("MdDemo", MdDemo);`,
+    );
   }
 
   if (getStatus("echarts")) {
