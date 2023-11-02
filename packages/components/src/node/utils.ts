@@ -27,7 +27,7 @@ export const AVAILABLE_COMPONENTS: AvailableComponent[] = [
 ];
 
 export const COMPONENT_PKG: Record<string, string[]> = {
-  ArtPlayer: ["artPlayer"],
+  ArtPlayer: ["artplayer"],
   AudioPlayer: ["plyr"],
   VidStack: ["vidstack"],
   VideoPlayer: ["plyr"],

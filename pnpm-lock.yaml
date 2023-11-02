@@ -296,6 +296,9 @@ importers:
       '@vuepress/theme-default':
         specifier: 2.0.0-beta.67
         version: 2.0.0-beta.67(sass-loader@13.3.2)(typescript@5.2.2)
+      artplayer:
+        specifier: 5.0.9
+        version: 5.0.9
       artplayer-plugin-danmuku:
         specifier: 5.0.1
         version: 5.0.1
@@ -6710,7 +6713,6 @@ packages:
     resolution: {integrity: sha512-IM/DShYdmKFEA9jl08LYbTK2Jfz9s7qIjEH0xWjnxvVArUKZZKcoqwr6i54U0c4grtc/Uvb4wtCd78kvtSVlgw==}
     dependencies:
       option-validator: 2.0.6
-    dev: false
 
   /assertion-error@1.1.0:
     resolution: {integrity: sha512-jgsaNduz+ndvGyFt3uSuWqvy4lCnIJiovtouQN5JZHOKCS2QuhEdbcQHFhVksz2N2U9hXJo8odG7ETyWlEeuDw==}
@@ -12447,7 +12449,6 @@ packages:
     resolution: {integrity: sha512-tmZDan2LRIRQyhUGvkff68/O0R8UmF+Btmiiz0SmSw2ng3CfPZB9wJlIjHpe/MKUZqyIZkVIXCrwr1tIN+0Dzg==}
     dependencies:
       kind-of: 6.0.3
-    dev: false
 
   /optionator@0.9.3:
     resolution: {integrity: sha512-JjCoypp+jKn1ttEFExxhetCKeJt9zhAgAve5FXHixTvFDW/5aEktX9bufBKLRRMdU7bNtpLfcGu94B3cdEJgjg==}
