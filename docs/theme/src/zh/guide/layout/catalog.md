@@ -21,18 +21,17 @@ VuePress Theme Hope 默认使用 <ProjectLink name="auto-catalog" path="/zh/">`v
 
 有关详细信息，请参阅 <ProjectLink name="auto-catalog" path="/zh/">Auto Catalog 插件文档</ProjectLink>。
 
-## 示例
-
-主页目录:
+## 案例
 
 <!-- markdownlint-disable MD033 -->
 
+::: md-demo 主页目录
+
+<!-- 用于限制高度 -->
 <div class="catalog-display-container">
   <AutoCatalog base='/zh/' />
 </div>
 
-<!-- markdownlint-enable MD033 -->
+:::
 
-```md
-<AutoCatalog base='/zh/' />
-```
+<!-- markdownlint-enable MD033 -->

@@ -13,6 +13,8 @@ icon: lightbulb
 
     它允许网站通过支持该特性的浏览器将网站作为 App 安装在对应平台上。
 
+<!-- #region intro -->
+
 ## 介绍
 
 Service Worker [^service-worker] (简称 SW) 主要用于获取并托管网站内容。
@@ -199,6 +201,8 @@ VuePress 本质上是一个 SPA。这意味着你只需要缓存主页并从主�
 但是，如果你需要的所有东西都在 base 文件夹下，你可以在插件选项中设置 `appendBase: true` 让插件将 `base` 自动附加到任何地址。
 
 :::
+
+<!-- #endregion intro -->
 
 ## 其他选项
 

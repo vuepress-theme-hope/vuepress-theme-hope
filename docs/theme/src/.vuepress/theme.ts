@@ -146,6 +146,12 @@ export default theme("theme", {
               path.resolve(__dirname, "../../../md-enhance/src"),
             );
 
+          if (file.startsWith("@pwa/"))
+            return file.replace(
+              "@pwa",
+              path.resolve(__dirname, "../../../pwa2/src"),
+            );
+
           return file;
         },
       },

@@ -23,16 +23,15 @@ For more details, see <ProjectLink name="auto-catalog">Auto Catalog Plugin Docs<
 
 ## Demo
 
-Home page catalog:
-
 <!-- markdownlint-disable MD033 -->
 
+::: md-demo Home page catalog
+
+<!-- Used to limit height -->
 <div class="catalog-display-container">
   <AutoCatalog base='/' />
 </div>
 
-<!-- markdownlint-enable MD033 -->
+:::
 
-```md
-<AutoCatalog base='/' />
-```
+<!-- markdownlint-enable MD033 -->

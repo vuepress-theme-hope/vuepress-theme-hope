@@ -13,6 +13,8 @@ The plugin brings enhanced PWA support to VuePress [^pwa-intro].
 
     It allows sites to install the site as an App on supported platform through a browser that supports this feature.
 
+<!-- #region intro -->
+
 ## Intro
 
 Service Worker [^service-worker] (SW for short) is mainly used to cache and proxy site content.
@@ -194,6 +196,8 @@ Besides the plugin does not process anything in the manifest by default, but out
 If everything you need is all under `base` directory, you can set `appendBase: true` in plugin options to let the plugin append `base` to any links in manifest.
 
 :::
+
+<!-- #endregion intro -->
 
 ## Other Options
 
