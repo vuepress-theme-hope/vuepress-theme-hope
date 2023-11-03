@@ -4,6 +4,18 @@ All notable changes to this project will be documented in this file. See [Conven
 
 <!-- #region recent-beta -->
 
+## [2.0.0-beta.245](https://github.com/vuepress-theme-hope/vuepress-theme-hope/compare/v2.0.0-beta.244...v2.0.0-beta.245) (2023-11-03)
+
+### Features
+
+- **md-enhance:** add md-demo ([df9a9a6](https://github.com/vuepress-theme-hope/vuepress-theme-hope/commit/df9a9a6949cb8ece68965771f8b177298ee2cfaa))
+
+### Bug Fixes
+
+- **components:** fix artplayer package name ([1c09595](https://github.com/vuepress-theme-hope/vuepress-theme-hope/commit/1c0959535f69e929a02f74799b716c0d55f2d911))
+- **components:** fix replit button ([0696434](https://github.com/vuepress-theme-hope/vuepress-theme-hope/commit/0696434513edb788cf7e06d1d7402b71da0bf60a))
+- **md-enhance:** update details style ([b26d51c](https://github.com/vuepress-theme-hope/vuepress-theme-hope/commit/b26d51c46baeed69037485b25da059a6c592958a))
+
 ## [2.0.0-beta.244](https://github.com/vuepress-theme-hope/vuepress-theme-hope/compare/v2.0.0-beta.243...v2.0.0-beta.244) (2023-11-01)
 
 ### Features
