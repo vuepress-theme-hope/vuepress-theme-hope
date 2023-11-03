@@ -32,6 +32,8 @@ npm i -D vidstack@1
 
 ## Demo
 
+<!-- #region demo -->
+
 ::: md-demo A video player
 
 <VidStack src="https://vp-demo.u2sb.com/video/caminandes_03_llamigos_720p.mp4" />
@@ -88,9 +90,11 @@ npm i -D vidstack@1
 
 ::: md-demo An audio player
 
-<VidStack src="/sample.mp3" title="VidStack Audio Demo" />
+<VidStack src="/assets/sample.mp3" title="VidStack Audio Demo" />
 
 :::
+
+<!-- #endregion demo -->
 
 ## Props
 

@@ -53,10 +53,12 @@ Besides, custom container is enabled by default in `@vuepress/theme-default` and
 
 Since VuePress2 has removed V1's v-pre container in core, the plugin provides `vPre` option to support it. That is, you can use any Mustache syntax in the container below.
 
-```md
+:::: md-demo
+
 ::: v-pre
 
 {{ abc }}
 
 :::
-```
+
+::::

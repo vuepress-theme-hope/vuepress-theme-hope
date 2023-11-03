@@ -591,7 +591,7 @@ PDF 浏览器组件。
 
 一个音频播放器:
 
-<VidStack src="/sample.mp3" title="VidStack 示例音频" />
+<VidStack src="/assets/sample.mp3" title="VidStack 示例音频" />
 
 ::: details 代码
 
@@ -652,7 +652,7 @@ PDF 浏览器组件。
 一个音频播放器:
 
 ```md
-<VidStack src="/sample.mp3" title="VidStack 示例音频" />
+<VidStack src="/assets/sample.mp3" title="VidStack 示例音频" />
 ```
 
 :::

@@ -3,6 +3,8 @@ title: Mermaid
 icon: chart-pie
 ---
 
+<!-- #region before -->
+
 Let the Markdown file support [mermaid](https://mermaid.js.org/) in your VuePress site.
 
 <!-- more -->
@@ -34,6 +36,8 @@ npm i -D mermaid
 :::
 
 Then enabling via:
+
+<!-- #endregion before -->
 
 ::: code-tabs#language
 
@@ -70,6 +74,8 @@ export default {
 ```
 
 :::
+
+<!-- #region after -->
 
 ## Syntax
 
@@ -578,3 +584,5 @@ graph TB
 ```
 
 :::
+
+<!-- #endregion after -->

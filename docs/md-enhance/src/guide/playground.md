@@ -101,6 +101,8 @@ export default {
 
 :::
 
+<!-- #region middle -->
+
 ## Usage
 
 You should add presets through `playground.presets` in plugin options.
@@ -133,7 +135,11 @@ Meanwhile, you can customize the default compilerOption through `playground.conf
 
 ::: info Vue Preset
 
+<!-- #endregion middle -->
+
 Vue preset is using the official playground by default, and do not support customizing options like [Vue Playground](./vue-playground.md). So if you are heavily relying on interacting vue playground, we suggest you to use [Vue Playground](./vue-playground.md) instead.
+
+<!-- #region after -->
 
 But if you only want a few demos instead of bundling a whole vue playground, you can use this preset to create a `<iframe>`.
 
@@ -143,22 +149,20 @@ Only `service`, `dev` and `ssr` option is available in `@setting` directive.
 
 ::: info UnoCSS Preset
 
-UnoCSS preset is using [official playground](<(https://unocss.dev/play)>) by default. You can use `@file` to add three file (`index.html`, `config.js`, `style.css`), . You can set three file types as follows:
+UnoCSS preset is using [official playground](https://unocss.dev/play) by default. You can use `@file` to add three file (`index.html`, `config.js`, `style.css`), . You can set three file types as follows:
 
 - `@file index.html` match `HTML` content. If no html file, The official default value will be used.
 - `@file config.js` match `Config` content. If no config file, The official default value will be used.
 - `@file style.css` match `Custom CSS` content.
 
-:heavy_exclamation_mark: every file type (html/js/css) only support one file.  
+❗Every file type (html/js/css) only support one file.  
 If you need, you can set your own service url through `playground.config.unocss.service` in config file.
 
 :::
 
 ## Demo
 
-### TS
-
-:::: md-demo
+:::: md-demo TS
 
 ::: playground#ts TS demo 1
 
@@ -173,10 +177,6 @@ speak(msg);
 ```
 
 :::
-
-::::
-
-:::: md-demo
 
 ::: playground#ts TS demo 2
 
@@ -202,9 +202,7 @@ speak(msg);
 
 ::::
 
-### Vue
-
-:::: md-demo
+:::: md-demo Vue
 
 ::: playground#vue Vue demo with customized imports
 
@@ -246,10 +244,6 @@ const msg = ref("Hello World!");
 
 :::
 
-::::
-
-:::: md-demo
-
 ::: playground#vue Vue demo with customized settings
 
 @file App.vue
@@ -280,9 +274,7 @@ const msg = ref("Hello Playground!");
 
 ::::
 
-### UnoCSS
-
-:::: md-demo
+:::: md-demo UnoCSS
 
 ::: playground#unocss UnoCSS demo
 
@@ -397,3 +389,5 @@ Basically, we provide a `playgroundData` object to `getter` function, and you ar
 - A container name via `name` option
 - A client component name via `component` option
 - A function receiving playgroundData and returning a props map with `attr` → `value` via `propsGetter` option
+
+<!-- #endregion after -->

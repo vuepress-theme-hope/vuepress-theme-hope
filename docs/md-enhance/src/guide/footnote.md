@@ -45,6 +45,8 @@ export default {
 
 :::
 
+<!-- #region after -->
+
 ## Syntax
 
 - Use `[^Anchor text]` in Markdown to define a footnote
@@ -72,3 +74,5 @@ Duplicated footnote reference[^second].
 [^second]: Footnote text.
 
 :::
+
+<!-- #endregion after -->

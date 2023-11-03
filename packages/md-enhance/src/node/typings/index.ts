@@ -8,7 +8,7 @@ export { type MarkdownItMathjaxOptions as MathjaxOptions } from "@mdit/plugin-ma
 export { type MarkdownItKatexOptions as KatexOptions } from "@mdit/plugin-katex";
 export { type MarkdownItTaskListOptions as TasklistOptions } from "@mdit/plugin-tasklist";
 
-export type IncludeOptions = Omit<MarkdownItIncludeOptions, "getCurrentPath">;
+export type IncludeOptions = Omit<MarkdownItIncludeOptions, "currentPath">;
 export type StylizeOptions = MarkdownItStylizeConfig[];
 
 export * from "./hint.js";

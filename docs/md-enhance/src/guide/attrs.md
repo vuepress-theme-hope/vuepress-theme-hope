@@ -45,6 +45,8 @@ export default {
 
 :::
 
+<!-- #region after -->
+
 ## Usage
 
 You can use `{attrs}` to add attrs to Markdown content.
@@ -212,3 +214,5 @@ A line with break
   border: 1px solid red;
 }
 </style>
+
+<!-- #endregion after -->

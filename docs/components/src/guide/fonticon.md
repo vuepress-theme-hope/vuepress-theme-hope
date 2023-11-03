@@ -14,6 +14,8 @@ You can use it in Markdown to add an icon.
 
 ## Demo
 
+<!-- #region demo -->
+
 ::: md-demo
 
 - Home icon: <FontIcon icon="home" />
@@ -21,6 +23,8 @@ You can use it in Markdown to add an icon.
 - A big and green share icon: <FontIcon icon="share" color="#3eaf7c" size="32" />
 
 :::
+
+<!-- #endregion demo -->
 
 ## Props
 

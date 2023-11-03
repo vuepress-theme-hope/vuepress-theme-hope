@@ -8,6 +8,8 @@ Embed StackBlitz demo in Markdown files.
 
 ## Demo
 
+<!-- #region demo -->
+
 ::: md-demo A StackBlitz project
 
 <StackBlitz id="vuepress-theme-hope" />
@@ -19,6 +21,8 @@ Embed StackBlitz demo in Markdown files.
 <StackBlitz id="vuepress-theme-hope" hideExplorer hideNavigation hideDevtools />
 
 :::
+
+<!-- #endregion demo -->
 
 ## Props
 

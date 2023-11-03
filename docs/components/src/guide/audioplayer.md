@@ -32,21 +32,25 @@ npm i -D plyr
 
 ## Demo
 
+<!-- #region demo -->
+
 ::: md-demo An audio player
 
-<AudioPlayer src="/sample.mp3" />
+<AudioPlayer src="/assets/sample.mp3" />
 
 :::
 
 ::: md-demo An audio player with poster and title
 
 <AudioPlayer
-  src="/sample.mp3"
+  src="/assets/sample.mp3"
   title="A Sample Audio"
   poster="/logo.svg"
 />
 
 :::
+
+<!-- #endregion demo -->
 
 ## Props
 

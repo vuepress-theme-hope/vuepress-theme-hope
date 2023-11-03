@@ -45,6 +45,8 @@ export default {
 
 :::
 
+<!-- #region after -->
+
 ## Syntax
 
 Use `<!-- @include: filename -->` to include a file.
@@ -359,18 +361,37 @@ interface IncludeOptions {
    *
    * @default (path) => path
    */
-  resolvePath?: (path: string, cwd: string) => string;
-
+  resolvePath?: (path: string, cwd: string | null) => string;
   /**
    * Whether deep include files in included Markdown files
    *
    * @default false
    */
   deep?: boolean;
+  /**
+   * Whether use `<!-- @include: xxx -->` instead of `@include: xxx` to include files
+   *
+   * @default true
+   */
+  useComment?: boolean;
+  /**
+   * Whether resolve the image related path in the included Markdown file
+   *
+   * @default true
+   */
+  resolveImagePath?: boolean;
+  /**
+   * Whether resolve the related file link path in the included Markdown file
+   *
+   * @default true
+   */
+  resolveLinkPath?: boolean;
 }
 ```
 
 E.g.: you can use `@src` as an alias for your source directory.
+
+<!-- #endregion after -->
 
 ::: code-tabs#language
 

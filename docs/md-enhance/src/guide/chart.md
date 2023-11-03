@@ -3,6 +3,8 @@ title: Chart
 icon: chart-simple
 ---
 
+<!-- #region before -->
+
 Let the Markdown file support chart in your VuePress site.
 
 <!-- more -->
@@ -34,6 +36,8 @@ npm i -D chart.js
 :::
 
 Then enabling via:
+
+<!-- #endregion before -->
 
 ::: code-tabs#language
 
@@ -70,6 +74,8 @@ export default {
 ```
 
 :::
+
+<!-- region after -->
 
 ## Syntax
 
@@ -313,3 +319,5 @@ export default {
 ## Docs
 
 For details, please see [Chart.js Docs](https://www.chartjs.org/docs/latest/).
+
+<!-- endregion after -->

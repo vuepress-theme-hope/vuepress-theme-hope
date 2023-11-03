@@ -5,6 +5,8 @@ icon: fab fa-react
 
 ## Syntax
 
+<!-- #region syntax -->
+
 ````md
 ::: react-demo Optional title text
 
@@ -23,6 +25,8 @@ icon: fab fa-react
 :::
 ````
 
+<!-- #endregion syntax -->
+
 ::: warning Attention
 
 - Babel must be loaded when using react to parse JSX, this is done by the plugin automatically
@@ -32,6 +36,8 @@ icon: fab fa-react
 :::
 
 ## Demo
+
+<!-- #region demo -->
 
 :::: md-demo A function-based React Demo
 
@@ -105,3 +111,5 @@ export default class App extends React.Component {
 :::
 
 ::::
+
+<!-- #endregion demo -->

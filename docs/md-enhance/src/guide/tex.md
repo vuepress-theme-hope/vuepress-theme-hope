@@ -3,6 +3,8 @@ title: TeX
 icon: square-root-variable
 ---
 
+<!-- #region before -->
+
 Let the Markdown file in your VuePress site support the $\TeX$ syntax.
 
 <!-- more -->
@@ -40,6 +42,8 @@ npm i -D mathjax-full
 :::
 
 Then enabling via:
+
+<!-- #endregion before -->
 
 ::: code-tabs#language
 
@@ -80,6 +84,8 @@ export default {
 ```
 
 :::
+
+<!-- #region after -->
 
 You can only enable ONE of them, and katex has a higher priority.
 
@@ -174,3 +180,5 @@ import { defineAsyncComponent } from 'vue';
 
 const KatexPlayground = defineAsyncComponent(()=> import('@KatexPlayground'));
 </script>
+
+<!-- #endregion after -->

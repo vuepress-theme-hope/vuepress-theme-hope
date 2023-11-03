@@ -11,9 +11,11 @@ The plugin provides you vue playground support.
 
 Since we are providing a runtime compiler, we are introducing the whole `@vue/compiler-sfc` package with typescript support, so the whole Vue Playground chunk is > 4MB. So you should only use this if you are heavily depending on interactive Vue Playground.
 
-You can use [Vue Demo](./demo/vue.md) and [Playground Vue Preset](./playground.md#vue) as an alternative.
+You can use [Vue Demo](./demo/vue.md) and [Playground Vue Preset](./playground.md) as an alternative.
 
 :::
+
+<!-- #region settings -->
 
 ## Settings
 
@@ -42,6 +44,8 @@ npm i -D @vue/repl
 :::
 
 Then enabling via:
+
+<!-- #endregion settings -->
 
 ::: code-tabs#config
 
@@ -78,6 +82,8 @@ export default {
 ```
 
 :::
+
+<!-- #region after -->
 
 ## Usage
 
@@ -193,3 +199,5 @@ const { charging, level } = useBattery();
 :::
 
 ::::
+
+<!-- #endregion after -->

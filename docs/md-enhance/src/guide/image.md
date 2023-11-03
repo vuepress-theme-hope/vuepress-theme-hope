@@ -57,15 +57,11 @@ export default {
 
 :::
 
+<!-- #region after -->
+
 ## Image Lazyload
 
-If you want to lazyload images in your pages, you can set `imgLazyload: true` in plugin options.
-
-::: note
-
 We are enabling lazyload using native HTML5 features, so your browser must support [loading=lazy attribute](https://caniuse.com/loading-lazy-attr).
-
-:::
 
 ## Image Mark
 
@@ -140,3 +136,5 @@ If the image is standalone in a line, wrapped or not wrapped by link, it will be
 <script setup lang="ts">
 import AppearanceSwitch from "@theme-hope/modules/outlook/components/AppearanceSwitch";
 </script>
+
+<!-- #endregion after -->

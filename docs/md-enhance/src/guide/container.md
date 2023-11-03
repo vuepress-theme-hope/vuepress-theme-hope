@@ -45,6 +45,8 @@ export default {
 
 :::
 
+<!-- #region after -->
+
 ## Demo
 
 :::: md-demo Container with default title
@@ -157,3 +159,5 @@ const a = 1;
 :::
 
 ::::
+
+<!-- #endregion after -->

@@ -8,6 +8,8 @@ Embed XiGua videos in Markdown files.
 
 ## Demo
 
+<!-- #region demo -->
+
 ::: md-demo A XiGua video
 
 <XiGua id="7004391080330428964" />
@@ -23,6 +25,8 @@ Embed XiGua videos in Markdown files.
 />
 
 :::
+
+<!-- #endregion demo -->
 
 ## Props
 

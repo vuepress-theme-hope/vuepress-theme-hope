@@ -5,6 +5,8 @@ icon: code
 
 ## Syntax
 
+<!-- #region syntax -->
+
 ````md
 ::: normal-demo Optional title text
 
@@ -32,8 +34,10 @@ icon: code
 }
 ```
 
-::::
+:::
 ````
+
+<!-- #endregion syntax -->
 
 ::: warning Attention
 
@@ -70,6 +74,8 @@ document.appendChild(linkElem);
 
 ## Demo
 
+<!-- #region demo -->
+
 :::: md-demo Normal demo
 
 ::: normal-demo Demo
@@ -94,3 +100,5 @@ span {
 :::
 
 ::::
+
+<!-- #endregion demo -->

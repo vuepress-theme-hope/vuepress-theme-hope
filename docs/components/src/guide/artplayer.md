@@ -14,6 +14,8 @@ Embed [ArtPlayer](https://github.com/zhw2590582/ArtPlayer) in Markdown files.
 
 ## Demo
 
+<!-- #region demo -->
+
 ::: md-demo A video player
 
 <ArtPlayer src="https://vp-demo.u2sb.com/video/caminandes_03_llamigos_720p.mp4" />
@@ -52,6 +54,8 @@ Embed [ArtPlayer](https://github.com/zhw2590582/ArtPlayer) in Markdown files.
 />
 
 :::
+
+<!-- #endregion demo -->
 
 ## Props
 

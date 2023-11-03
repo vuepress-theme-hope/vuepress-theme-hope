@@ -8,6 +8,8 @@ Embed Replit demo in Markdown files.
 
 ## Demo
 
+<!-- #region demo -->
+
 ::: md-demo A replit
 
 <Replit user="FuckDoctors" repl="Java-Test" />
@@ -31,6 +33,8 @@ Embed Replit demo in Markdown files.
 <Replit link="https://replit.com/@FuckDoctors/Java-Test" />
 
 :::
+
+<!-- #endregion demo -->
 
 ## Props
 

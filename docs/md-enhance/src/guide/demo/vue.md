@@ -5,6 +5,8 @@ icon: fab fa-vuejs
 
 ## Syntax
 
+<!-- #region syntax -->
+
 ````md
 ::: vue-demo Optional title text
 
@@ -30,6 +32,8 @@ export default {
 :::
 ````
 
+<!-- #endregion syntax -->
+
 ::: warning Attention
 
 - We only support Vue3
@@ -39,6 +43,8 @@ export default {
 :::
 
 ## Demo
+
+<!-- #region demo -->
 
 :::: md-demo A Vue Composition Demo
 
@@ -113,3 +119,5 @@ export default {
 :::
 
 ::::
+
+<!-- #endregion demo -->

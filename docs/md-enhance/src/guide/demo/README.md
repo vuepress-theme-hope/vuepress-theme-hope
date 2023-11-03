@@ -53,6 +53,8 @@ export default {
 
 :::
 
+<!-- #region syntax -->
+
 ## Syntax
 
 You should use the following syntax:
@@ -87,6 +89,10 @@ The plugin support three types:
 - normal
 - vue
 - react
+
+<!-- #endregion syntax -->
+
+<!-- #region language -->
 
 ## Available Languages
 
@@ -123,7 +129,11 @@ Available CSS languages:
 
 > You can also use `styl` in code block.
 
+<!-- #endregion language -->
+
 ### Not Supported Language Demo
+
+<!-- #region demo -->
 
 :::: md-demo A demo using language not supported by browsers
 
@@ -154,3 +164,5 @@ h1 {
 :::
 
 ::::
+
+<!-- #endregion demo -->

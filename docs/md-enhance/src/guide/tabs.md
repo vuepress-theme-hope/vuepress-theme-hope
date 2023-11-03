@@ -45,6 +45,8 @@ export default {
 
 :::
 
+<!-- #region after -->
+
 ## Usage
 
 You need to wrap your tabs in `tabs` container.
@@ -206,3 +208,5 @@ Orange
 :::
 
 ::::
+
+<!-- #endregion after -->

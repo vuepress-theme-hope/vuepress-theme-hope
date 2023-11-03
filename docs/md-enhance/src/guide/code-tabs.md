@@ -45,9 +45,11 @@ export default {
 
 :::
 
+<!-- region after -->
+
 ## Usage
 
-This is the same as [tabs feature](./tabs.md), but it's special built for code blocks.
+This is the same as tabs feature, but it's special built for code blocks.
 
 Only code fence after `@tab` marker is allowed inside code tabs, other Markdown content will be ignored.
 
@@ -104,3 +106,5 @@ npm i -D vuepress-plugin-md-enhance
 :::
 
 ::::
+
+<!-- endregion after -->

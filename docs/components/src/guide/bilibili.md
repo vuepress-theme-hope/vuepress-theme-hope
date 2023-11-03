@@ -8,6 +8,8 @@ Embed BiliBili videos in Markdown files.
 
 ## Demo
 
+<!-- #region demo -->
+
 ::: md-demo A bilibili video
 
 <BiliBili bvid="BV1kt411o7C3" />
@@ -19,6 +21,8 @@ Embed BiliBili videos in Markdown files.
 <BiliBili aid="34304064" cid="109293122" ratio="9:16" time="60" page="2" />
 
 :::
+
+<!-- #endregion demo -->
 
 ## Props
 

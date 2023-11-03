@@ -8,6 +8,8 @@ SiteInfo component, can be used as friend link or project display.
 
 ## Demo
 
+<!-- #region demo -->
+
 ::: md-demo Basic site info
 
 <SiteInfo name="Mr.Hope's Blog" url="https://mister-hope.com" preview="https://theme-hope.vuejs.press/assets/image/mrhope.jpg" />
@@ -26,6 +28,8 @@ SiteInfo component, can be used as friend link or project display.
 />
 
 :::
+
+<!-- #endregion demo -->
 
 ## Props
 

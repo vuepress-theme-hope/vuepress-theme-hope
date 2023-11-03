@@ -32,6 +32,8 @@ npm i -D plyr
 
 ## Demo
 
+<!-- #region demo -->
+
 ::: md-demo A video player
 
 <VideoPlayer src="https://cdn.plyr.io/static/demo/View_From_A_Blue_Moon_Trailer-720p.mp4" />
@@ -130,6 +132,8 @@ npm i -D plyr
 />
 
 :::
+
+<!-- #endregion demo -->
 
 ## Props
 

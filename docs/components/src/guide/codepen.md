@@ -10,6 +10,8 @@ You can use it in Markdown to add an embed demo.
 
 ## Demo
 
+<!-- #region demo -->
+
 ::: md-demo A demo with user and slug hash
 
 <CodePen
@@ -44,6 +46,8 @@ You can use it in Markdown to add an embed demo.
 />
 
 :::
+
+<!-- #endregion demo -->
 
 ## Props
 

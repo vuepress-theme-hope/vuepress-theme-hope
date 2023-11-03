@@ -45,6 +45,8 @@ export default {
 
 :::
 
+<!-- #region after -->
+
 ## Syntax
 
 ```md
@@ -91,7 +93,7 @@ Escaping can be done by adding `\` to escape the marker
 
 ## Demo
 
-::::: md-demo
+::::: md-demo Real life example
 
 :::: danger
 VuePress Theme Hope V2 version is still in W.I.P, the API may have
@@ -108,3 +110,5 @@ If you meet a bug during usage, you can
 ::::
 
 :::::
+
+<!-- #endregion after -->

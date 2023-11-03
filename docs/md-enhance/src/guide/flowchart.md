@@ -3,13 +3,7 @@ title: Flowchart
 icon: route
 ---
 
-::: warning
-
-This feature is deprecated due to the [flowchart.js](http://flowchart.js.org/) is no longer maintained.
-
-You should try to use [mermaid flowchart](./mermaid.md#flowchart) instead.
-
-:::
+<!-- #region before -->
 
 Let the Markdown file support flow chart in your VuePress site.
 
@@ -42,6 +36,8 @@ npm i -D flowchart.ts
 :::
 
 Then enabling via:
+
+<!-- #endregion before -->
 
 ::: code-tabs#language
 
@@ -78,6 +74,8 @@ export default {
 ```
 
 :::
+
+<!-- #region after -->
 
 ## Syntax
 
@@ -378,3 +376,5 @@ import { defineAsyncComponent } from 'vue';
 
 const FlowChartPlayground = defineAsyncComponent(()=> import('@FlowChartPlayground'));
 </script>
+
+<!-- #endregion after -->

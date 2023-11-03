@@ -45,6 +45,8 @@ export default {
 
 :::
 
+<!-- #region after -->
+
 ## Usage
 
 You can use card fence block to add a card into your markdown content. Both YAML and JSON format card data are supported:
@@ -108,3 +110,5 @@ color: rgba(253, 230, 138, 0.15)
 :::
 
 ::::
+
+<!-- #endregion after -->

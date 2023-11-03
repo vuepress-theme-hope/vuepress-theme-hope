@@ -7,6 +7,8 @@ Let the Markdown file support chart in your VuePress site.
 
 <!-- more -->
 
+<!-- #region before -->
+
 ## Settings
 
 Install [echarts](https://echarts.apache.org/en/index.html) in your project:
@@ -34,6 +36,8 @@ npm i -D echarts
 :::
 
 Then enabling via:
+
+<!-- #endregion before -->
 
 ::: code-tabs#language
 
@@ -70,6 +74,8 @@ export default {
 ```
 
 :::
+
+<!-- #region after -->
 
 ## Syntax
 
@@ -178,3 +184,5 @@ For details, please see [ECharts Docs](https://echarts.apache.org/handbook/en/ge
 <!-- @include: @echarts/multiple.snippet.md -->
 
 ::::
+
+<!-- #endregion after -->

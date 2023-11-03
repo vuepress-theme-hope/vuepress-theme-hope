@@ -8,6 +8,8 @@ Embed YouTube videos in Markdown files.
 
 ## Demo
 
+<!-- #region demo -->
+
 ::: md-demo A YouTube video
 
 <YouTube id="0JJPfz5dg20" />
@@ -25,6 +27,8 @@ Embed YouTube videos in Markdown files.
 <YouTube list-type="playlist" list="PLJNLwTPak6dhCRzVelZIs2-DfBp01NX_1" />
 
 :::
+
+<!-- #endregion demo -->
 
 ## Props
 

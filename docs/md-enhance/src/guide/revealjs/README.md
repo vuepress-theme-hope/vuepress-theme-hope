@@ -3,7 +3,11 @@ title: Presentation
 icon: person-chalkboard
 ---
 
+<!-- #region before -->
+
 Add presentation in your VuePress site.
+
+<!-- more -->
 
 ## Settings
 
@@ -32,6 +36,8 @@ npm i -D reveal.js
 :::
 
 Then enabling via:
+
+<!-- #endregion before -->
 
 ::: code-tabs#language
 
@@ -68,6 +74,8 @@ export default {
 ```
 
 :::
+
+<!-- #region options -->
 
 ## Plugins and themes
 
@@ -127,11 +135,15 @@ By default, only auto theme is enabled.
 
 By default, we use `auto` theme to render the presentation, but you can also use other themes with `@slidestart theme-you-want`.
 
+<!-- #endregion options -->
+
 For the appearance of each theme, see [Themes demo](themes.md).
 
 ## Demo
 
 Please see [Slides Demo](demo.md)
+
+<!-- #region customize -->
 
 ## Customize Reveal.js
 
@@ -160,3 +172,5 @@ Reveal.js also provides [more plugins](https://github.com/hakimel/reveal.js/wiki
 You can also set `revealJs` to pass options to reveal.js per page in frontmatter.
 
 For reveal.js options, see [reveal.js config](https://revealjs.com/config/). For reveal.js usage, see [reveal.js documentation](https://revealjs.com/)
+
+<!-- #endregion customize -->

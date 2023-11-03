@@ -45,6 +45,8 @@ export default {
 
 :::
 
+<!-- #region after -->
+
 ## Syntax
 
 - Use `- [ ] some text` to render an unchecked task item.
@@ -78,3 +80,5 @@ interface TaskListOptions {
   label?: boolean;
 }
 ```
+
+<!-- #endregion after -->

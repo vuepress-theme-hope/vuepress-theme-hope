@@ -10,17 +10,21 @@ You can use this component to embed a PDF viewer.
 
 ## Demo
 
+<!-- #region demo -->
+
 ::: md-demo Default PDF viewer
 
-<PDF url="/sample.pdf" />
+<PDF url="/assets/sample.pdf" />
 
 :::
 
 ::: md-demo PDF viewer starting with page 2 and without toolbar
 
-<PDF url="/sample.pdf" page="2" no-toolbar />
+<PDF url="/assets/sample.pdf" page="2" no-toolbar />
 
 :::
+
+<!-- #endregion demo -->
 
 ## PDFJS Viewer
 

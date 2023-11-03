@@ -8,7 +8,7 @@ tag:
   - Markdown
 ---
 
-Create inline snippet by stylize inline tokens including changing tags, adding attributes and modifying content.
+Stylize inline tokens including changing tags, adding attributes and modifying content.
 
 <!-- more -->
 

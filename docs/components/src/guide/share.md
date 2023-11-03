@@ -9,6 +9,8 @@ Share component, share page content to social media.
 
 ## Demo
 
+<!-- #region demo -->
+
 ::: md-demo Basic share
 
 <Share />
@@ -27,6 +29,8 @@ Share component, share page content to social media.
 <Share colorful />
 
 :::
+
+<!-- #endregion demo -->
 
 ## Setting Component
 
