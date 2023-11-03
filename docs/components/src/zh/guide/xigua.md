@@ -8,6 +8,8 @@ title: XiGua
 
 ## Demo
 
+<!-- #region demo -->
+
 ::: md-demo 西瓜视频
 
 <XiGua id="7004391080330428964" />
@@ -23,6 +25,8 @@ title: XiGua
 />
 
 :::
+
+<!-- #endregion demo -->
 
 ## 属性
 

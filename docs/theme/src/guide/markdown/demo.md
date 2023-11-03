@@ -55,6 +55,18 @@ export default {
 
 <!-- @include: @md-enhance/guide/demo/README.md#syntax -->
 
+::: tip
+
+The json block is optional, for config please see [config](../../config/plugins/md-enhance.md#demo).
+
+:::
+
+The plugin support three types:
+
+- normal
+- vue
+- react
+
 :::: code-tabs
 
 @tab Normal

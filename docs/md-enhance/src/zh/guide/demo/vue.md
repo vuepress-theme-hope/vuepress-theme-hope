@@ -5,6 +5,8 @@ icon: fab fa-vuejs
 
 ## 格式
 
+<!-- #region syntax -->
+
 ````md
 ::: vue-demo 可选的标题文字
 
@@ -30,6 +32,8 @@ export default {
 :::
 ````
 
+<!-- #endregion syntax -->
+
 ::: warning 注意事项
 
 - 你只能使用 Vue3。
@@ -39,6 +43,8 @@ export default {
 :::
 
 ## 演示
+
+<!-- #region demo -->
 
 :::: md-demo 一个 Vue Composition 演示
 
@@ -113,3 +119,5 @@ export default {
 :::
 
 ::::
+
+<!-- #endregion demo -->

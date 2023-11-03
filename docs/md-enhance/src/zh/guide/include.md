@@ -45,6 +45,8 @@ export default {
 
 :::
 
+<!-- #region after -->
+
 ## 语法
 
 使用 `<!-- @include: filename -->` 导入文件。
@@ -388,6 +390,8 @@ interface IncludeOptions {
 ```
 
 例如: 你可以使用 `@src` 作为源文件夹的别名。
+
+<!-- #endregion after -->
 
 ::: code-tabs#language
 

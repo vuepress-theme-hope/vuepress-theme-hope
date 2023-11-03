@@ -53,6 +53,8 @@ export default {
 
 :::
 
+<!-- #region syntax -->
+
 ## 语法
 
 请使用以下语法:
@@ -76,6 +78,8 @@ export default {
 :::
 ````
 
+<!-- #endregion syntax -->
+
 ::: tip
 
 JSON 块是可选的，可用的配置详见 [配置](../../config.md#demo)。
@@ -87,6 +91,8 @@ JSON 块是可选的，可用的配置详见 [配置](../../config.md#demo)。
 - normal
 - vue
 - react
+
+<!-- #region language -->
 
 ## 可用的语言
 
@@ -123,8 +129,14 @@ JSON 块是可选的，可用的配置详见 [配置](../../config.md#demo)。
 
 > 你也可以在代码块中使用 `styl`。
 
+<!-- #endregion language -->
+
 ### 不支持的语言演示
 
+<!-- #region demo -->
+
+:::: md-demo
+
 ::: normal-demo 一个使用浏览器不支持解析语言 Demo
 
 ```md
@@ -148,37 +160,7 @@ h1 {
   }
 }
 ```
-
-:::
-
-:::: details 代码
-
-````md
-::: normal-demo 一个使用浏览器不支持解析语言 Demo
-
-```md
-# 标题
-
-十分强大
-```
-
-```ts
-const message: string = "VuePress Theme Hope";
-
-document.querySelector("h1").innerHTML = message;
-```
-
-```scss
-h1 {
-  font-style: italic;
-
-  + p {
-    color: red;
-  }
-}
-```
-
-:::
-````
 
 ::::
+
+<!-- #endregion demo -->

@@ -8,6 +8,8 @@ title: AudioPlayer
 
 ## 示例
 
+<!-- #region demo -->
+
 ::: md-demo 一个音频播放器
 
 <AudioPlayer src="/assets/sample.mp3" />
@@ -23,6 +25,8 @@ title: AudioPlayer
 />
 
 :::
+
+<!-- #endregion demo -->
 
 ## 属性
 

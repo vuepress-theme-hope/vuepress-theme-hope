@@ -10,6 +10,8 @@ PDF 预览组件。
 
 ## 示例
 
+<!-- #region demo -->
+
 ::: md-demo 默认 PDF 阅读器
 
 <PDF url="/assets/sample.pdf" />
@@ -21,6 +23,8 @@ PDF 预览组件。
 <PDF url="/assets/sample.pdf" page="2" no-toolbar />
 
 :::
+
+<!-- #endregion demo -->
 
 ## PDFJS 查看器
 

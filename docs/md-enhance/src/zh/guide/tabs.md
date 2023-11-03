@@ -45,6 +45,8 @@ export default {
 
 :::
 
+<!-- #region after -->
+
 ## 用法
 
 你需要将选项卡包装在 `tabs` 容器中。
@@ -206,3 +208,5 @@ Orange
 :::
 
 ::::
+
+<!-- #endregion after -->

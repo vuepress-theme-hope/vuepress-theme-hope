@@ -3,6 +3,8 @@ title: Mermaid
 icon: chart-pie
 ---
 
+<!-- #region before -->
+
 让你的 VuePress 站点中的 Markdown 文件支持 [mermaid](https://mermaid.js.org/)。
 
 <!-- more -->
@@ -34,6 +36,8 @@ npm i -D mermaid
 :::
 
 之后启用它:
+
+<!-- #endregion before -->
 
 ::: code-tabs#language
 
@@ -70,6 +74,8 @@ export default {
 ```
 
 :::
+
+<!-- #region after -->
 
 ## 语法
 
@@ -578,3 +584,5 @@ graph TB
 ```
 
 :::
+
+<!-- #endregion after -->

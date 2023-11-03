@@ -9,6 +9,8 @@ description: 分享组件，将页面内容分享到社交媒体。
 
 ## 示例
 
+<!-- #region demo -->
+
 ::: md-demo 基础分享
 
 <Share />
@@ -27,6 +29,8 @@ description: 分享组件，将页面内容分享到社交媒体。
 <Share colorful />
 
 :::
+
+<!-- #endregion demo -->
 
 ## 设置组件
 

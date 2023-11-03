@@ -57,9 +57,9 @@ export default {
 
 :::
 
-## 图片懒加载
+<!-- #region after -->
 
-如果你想在你的页面中延迟加载图片，你可以在插件选项中设置 `imgLazyload: true`。
+## 图片懒加载
 
 ::: note
 
@@ -142,3 +142,5 @@ interface ImageMarkOptions {
 <script setup lang="ts">
 import AppearanceSwitch from "@theme-hope/modules/outlook/components/AppearanceSwitch";
 </script>
+
+<!-- #endregion after -->

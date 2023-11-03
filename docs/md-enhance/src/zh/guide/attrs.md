@@ -7,7 +7,7 @@ icon: code
 
 <!-- more -->
 
-## Settings
+## 配置
 
 ::: code-tabs#language
 
@@ -44,6 +44,8 @@ export default {
 ```
 
 :::
+
+<!-- #region after -->
 
 ## 使用
 
@@ -198,3 +200,5 @@ const a = 1;
   border: 1px solid red;
 }
 </style>
+
+<!-- #endregion after -->

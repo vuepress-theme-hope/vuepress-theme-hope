@@ -78,6 +78,8 @@ You should use the following syntax:
 :::
 ````
 
+<!-- #endregion syntax -->
+
 ::: tip
 
 The json block is optional, for config please see [config](../../config.md#demo).
@@ -89,8 +91,6 @@ The plugin support three types:
 - normal
 - vue
 - react
-
-<!-- #endregion syntax -->
 
 <!-- #region language -->
 

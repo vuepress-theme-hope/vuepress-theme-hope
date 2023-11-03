@@ -45,6 +45,8 @@ export default {
 
 :::
 
+<!-- #region after -->
+
 ## 语法
 
 ```md
@@ -109,3 +111,5 @@ VuePress Theme Hope V2 版本仍在制作中，API 可能会有
 ::::
 
 :::::
+
+<!-- #endregion after -->

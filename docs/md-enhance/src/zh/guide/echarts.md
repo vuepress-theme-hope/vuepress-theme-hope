@@ -3,6 +3,8 @@ title: ECharts
 icon: chart-simple
 ---
 
+<!-- #region before -->
+
 让你 VuePress 站点中的 Markdown 文件支持图表。
 
 <!-- more -->
@@ -34,6 +36,8 @@ npm i -D echarts
 :::
 
 之后启用它:
+
+<!-- #endregion before -->
 
 ::: code-tabs#language
 
@@ -70,6 +74,8 @@ export default {
 ```
 
 :::
+
+<!-- #region after -->
 
 ## 格式
 
@@ -178,3 +184,5 @@ const option = {
 <!-- @include: @echarts/multiple.snippet.md -->
 
 ::::
+
+<!-- #endregion after -->

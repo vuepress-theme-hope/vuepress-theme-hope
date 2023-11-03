@@ -38,6 +38,8 @@ npm i -D plyr
 
 ## 案例
 
+<!-- #region demo -->
+
 ::: md-demo 一个视频播放器
 
 <ArtPlayer src="https://vp-demo.u2sb.com/video/caminandes_03_llamigos_720p.mp4" />
@@ -76,6 +78,8 @@ npm i -D plyr
 />
 
 :::
+
+<!-- #endregion demo -->
 
 ## 属性
 

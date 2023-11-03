@@ -15,6 +15,8 @@ icon: fab fa-vuejs
 
 :::
 
+<!-- #region before -->
+
 ## 配置
 
 在你的项目中安装 `@vue/repl`:
@@ -42,6 +44,8 @@ npm i -D @vue/repl
 :::
 
 之后启用它:
+
+<!-- #endregion before -->
 
 ::: code-tabs#config
 
@@ -78,6 +82,8 @@ export default {
 ```
 
 :::
+
+<!-- #region after -->
 
 ## 用法
 
@@ -195,3 +201,5 @@ const { charging, level } = useBattery();
 :::
 
 ::::
+
+<!-- #endregion after -->

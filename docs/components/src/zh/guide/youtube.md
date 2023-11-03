@@ -8,6 +8,8 @@ title: YouTube
 
 ## 示例
 
+<!-- #region demo -->
+
 ::: md-demo 一个 YouTube 视频
 
 <YouTube id="0JJPfz5dg20" />
@@ -25,6 +27,8 @@ title: YouTube
 <YouTube list-type="playlist" list="PLJNLwTPak6dhCRzVelZIs2-DfBp01NX_1" />
 
 :::
+
+<!-- #endregion demo -->
 
 ## 属性
 

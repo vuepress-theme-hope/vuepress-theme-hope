@@ -10,6 +10,8 @@ CodePen 演示组件。
 
 ## 示例
 
+<!-- #region demo -->
+
 ::: md-demo 一个使用用户和 Slug Hash 的案例
 
 <CodePen
@@ -43,6 +45,8 @@ CodePen 演示组件。
 />
 
 :::
+
+<!-- #endregion demo -->
 
 ## 属性
 

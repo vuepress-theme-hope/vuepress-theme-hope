@@ -5,6 +5,8 @@ icon: fab fa-react
 
 ## 格式
 
+<!-- #region syntax -->
+
 ````md
 ::: react-demo 可选的标题文字
 
@@ -23,6 +25,8 @@ icon: fab fa-react
 :::
 ````
 
+<!-- #endregion syntax -->
+
 ::: warning 注意事项
 
 - 使用 React 的时候，为了解析 JSX 必须引入 Babel，此过程由插件自动完成。
@@ -32,6 +36,8 @@ icon: fab fa-react
 :::
 
 ## 演示
+
+<!-- #region demo -->
 
 :::: md-demo 一个函数式 React Demo
 
@@ -105,3 +111,5 @@ export default class App extends React.Component {
 :::
 
 ::::
+
+<!-- #endregion demo -->

@@ -5,6 +5,8 @@ icon: code
 
 ## 格式
 
+<!-- #region syntax -->
+
 ````md
 ::: normal-demo 可选的标题文字
 
@@ -34,6 +36,8 @@ icon: code
 
 :::
 ````
+
+<!-- #endregion syntax -->
 
 ::: warning 注意事项
 
@@ -69,7 +73,9 @@ document.appendChild(linkElem);
 
 ## 例子
 
-:::: md-mode 普通演示
+<!-- #region demo -->
+
+:::: md-demo 普通演示
 
 ::: normal-demo 演示
 
@@ -93,3 +99,5 @@ span {
 :::
 
 ::::
+
+<!-- #endregion demo -->

@@ -3,6 +3,8 @@ title: Tex 语法
 icon: square-root-variable
 ---
 
+<!-- #region before -->
+
 让你的 VuePress 站点中的 Markdown 文件支持 $\TeX$ 语法。
 
 <!-- more -->
@@ -40,6 +42,8 @@ npm i -D mathjax-full
 :::
 
 之后启用它:
+
+<!-- #endregion before -->
 
 ::: code-tabs#language
 
@@ -80,6 +84,8 @@ export default {
 ```
 
 :::
+
+<!-- #region after -->
 
 你只能启用其中一个，并且 katex 具有更高的优先级。
 
@@ -170,3 +176,5 @@ import { defineAsyncComponent } from 'vue';
 
 const KatexPlayground = defineAsyncComponent(()=> import('@KatexPlayground'));
 </script>
+
+<!-- #endregion after -->

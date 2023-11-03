@@ -45,6 +45,8 @@ export default {
 
 :::
 
+<!-- #region after -->
+
 ## 语法
 
 - 在 Markdown 中使用 `[^锚点文字]` 来定义脚注。
@@ -72,3 +74,5 @@ export default {
 [^second]: 脚注文字。
 
 :::
+
+<!-- #endregion after -->

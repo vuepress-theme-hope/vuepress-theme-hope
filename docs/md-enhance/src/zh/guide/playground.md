@@ -101,6 +101,8 @@ export default {
 
 :::
 
+<!-- #region middle -->
+
 ## 使用
 
 你应该通过插件选项中的 `playground.presets` 添加预设。
@@ -133,7 +135,11 @@ TS 预设默认使用官方交互演示，不支持多个 ts 文件，所以你�
 
 ::: info Vue 预设
 
+<!-- #endregion middle -->
+
 Vue 预设默认使用官方 playground，并不像 [Vue Playground](./vue-playground.md) 支持自定义选项。因此，如果你严重依赖 Vue 交互演示，我们建议你改用 [Vue 交互演示](./vue-playground.md)。
+
+<!-- #region after -->
 
 但是如果你只想要几个演示而不是捆绑整个 Vue 交互演示，你可以使用这个预设来创建一个 `<iframe>`。
 
@@ -155,9 +161,7 @@ UnoCSS 预设默认使用[官方 playground](https://unocss.dev/play)，可通�
 
 ## 案例
 
-### TS
-
-:::: md-demo
+:::: md-demo TS
 
 ::: playground#ts TS 案例 1
 
@@ -172,10 +176,6 @@ speak(msg);
 ```
 
 :::
-
-::::
-
-:::: md-demo
 
 ::: playground#ts TS 案例 2
 
@@ -201,9 +201,7 @@ speak(msg);
 
 ::::
 
-### Vue
-
-:::: md-demo
+:::: md-demo Vue
 
 ::: playground#vue 使用自定义导入的 Vue 案例
 
@@ -245,10 +243,6 @@ const msg = ref("Hello World!");
 
 :::
 
-::::
-
-:::: md-demo
-
 ::: playground#vue 使用自定义设置的 Vue 案例
 
 @file App.vue
@@ -279,9 +273,7 @@ const msg = ref("Hello Playground!");
 
 ::::
 
-### UnoCSS
-
-:::: md-demo
+:::: md-demo UnoCSS
 
 ::: playground#unocss UnoCSS 案例
 
@@ -400,3 +392,5 @@ interface PlaygroundOptions {
 - 通过 `name` 选项提供容器名称
 - 通过 `component` 选项提供客户端组件名称
 - 通过 `propsGetter` 选项提供一个接收 playgroundData 并返回格式为 `attr` → `value` 属性映射的函数
+
+<!-- #endregion after -->

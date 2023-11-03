@@ -8,6 +8,8 @@ title: StackBlitz
 
 ## 示例
 
+<!-- #region demo -->
+
 ::: md-demo 一个 StackBlitz 项目
 
 <StackBlitz id="vuepress-theme-hope" />
@@ -19,6 +21,8 @@ title: StackBlitz
 <StackBlitz id="vuepress-theme-hope" hideExplorer hideNavigation hideDevtools />
 
 :::
+
+<!-- #endregion demo -->
 
 ## 属性
 

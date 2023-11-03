@@ -3,13 +3,7 @@ title: 流程图
 icon: route
 ---
 
-::: warning
-
-由于 [flowchart.js](http://flowchart.js.org/) 不再维护，此功能已弃用。
-
-你应该尝试改用 [Mermaid 流程图](./mermaid.md#流程图)。
-
-:::
+<!-- #region before -->
 
 让你的 VuePress 站点中的 Markdown 文件支持流程图。
 
@@ -42,6 +36,8 @@ npm i -D flowchart.ts
 :::
 
 之后启用它:
+
+<!-- #endregion before -->
 
 ::: code-tabs#language
 
@@ -78,6 +74,8 @@ export default {
 ```
 
 :::
+
+<!-- #region after -->
 
 ## 语法
 
@@ -363,3 +361,5 @@ import { defineAsyncComponent } from 'vue';
 
 const FlowChartPlayground = defineAsyncComponent(()=> import('@FlowChartPlayground'));
 </script>
+
+<!-- #endregion after -->

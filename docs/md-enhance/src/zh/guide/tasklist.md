@@ -45,6 +45,8 @@ export default {
 
 :::
 
+<!-- #region after -->
+
 ## 语法
 
 - 使用 `- [ ] 一些文字` 渲染一个未勾选的任务项
@@ -78,3 +80,5 @@ interface TaskListOptions {
   label?: boolean;
 }
 ```
+
+<!-- #endregion after -->

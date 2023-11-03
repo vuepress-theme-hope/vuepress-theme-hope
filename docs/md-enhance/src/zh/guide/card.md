@@ -45,6 +45,8 @@ export default {
 
 :::
 
+<!-- #region after -->
+
 ## 使用
 
 你可以使用卡片代码块来在 Markdown 中添加卡片。YAML 和 JSON 的卡片数据格式均受支持:
@@ -108,3 +110,5 @@ color: rgba(253, 230, 138, 0.15)
 :::
 
 ::::
+
+<!-- #endregion after -->

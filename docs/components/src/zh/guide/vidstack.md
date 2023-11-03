@@ -32,6 +32,8 @@ npm i -D vidstack@1
 
 ## 示例
 
+<!-- #region demo -->
+
 ::: md-demo 视频播放器
 
 <VidStack src="https://vp-demo.u2sb.com/video/caminandes_03_llamigos_720p.mp4" />
@@ -91,6 +93,8 @@ npm i -D vidstack@1
 <VidStack src="/assets/sample.mp3" title="VidStack 示例音频" />
 
 :::
+
+<!-- #endregion demo -->
 
 ## 属性
 

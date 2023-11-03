@@ -8,6 +8,8 @@ title: Replit
 
 ## 示例
 
+<!-- #region demo -->
+
 ::: md-demo 一个 replit
 
 <Replit user="FuckDoctors" repl="Java-Test" />
@@ -31,6 +33,8 @@ title: Replit
 <Replit link="https://replit.com/@FuckDoctors/Java-Test" />
 
 :::
+
+<!-- #endregion demo -->
 
 ## 属性
 

@@ -3,6 +3,8 @@ title: 幻灯片支持
 icon: person-chalkboard
 ---
 
+<!-- #region before -->
+
 在你的 VuePress 站点中添加幻灯片。
 
 <!-- more -->
@@ -34,6 +36,8 @@ npm i -D reveal.js
 :::
 
 之后启用它:
+
+<!-- #endregion before -->
 
 ::: code-tabs#language
 
@@ -70,6 +74,8 @@ export default {
 ```
 
 :::
+
+<!-- #region options -->
 
 ## 插件与主题
 
@@ -129,11 +135,15 @@ export default {
 
 默认情况下，我们使用 `auto` 主题来渲染幻灯片，你也可以通过 `@slidestart 主题名称` 使用其他主题。
 
+<!-- #endregion options -->
+
 各主题的外观，详见 [幻灯片主题](themes.md)
 
 ## 演示
 
 请见 [幻灯片演示](demo.md)。
+
+<!-- #region customize -->
 
 ## 自定义 Reveal.js
 
@@ -162,3 +172,5 @@ Reveal.js 还提供了[更多的插件](https://github.com/hakimel/reveal.js/wik
 你也可以在 Frontmatter 设置 `revealJs` 以设置特定页面的 reveal.js 选项。
 
 Reveal.js 选项，请参见[reveal.js config](https://revealjs.com/config/)，Reveal.js 用法，请参阅 [reveal.js 文档](https://revealjs.com/)。
+
+<!-- #endregion customize -->
