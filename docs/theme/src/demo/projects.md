@@ -30,7 +30,7 @@ docs:
     desc: Create beautiful CLI interfaces via easy and logical-to-implement task lists that feel alive and interactive.
     url: https://listr2.kilic.dev/
     repo: https://github.com/listr2/listr2
-    preview: /assets/image/plusar.jpg
+    preview: /assets/image/listr2.jpg
 
   - name: ZLMediaKit
     desc: An high-performance, enterprise-level streaming media service framework based on C++11.
@@ -58,6 +58,13 @@ docs:
     url: https://docs.crawlab.cn/en/guide/
     repo: https://github.com/crawlab-team/crawlab-docs
     preview: /assets/image/crawlab.jpg
+
+  - name: Nosana
+    desc: Next Gen CI/CD
+    logo: https://nosana.io/img/NOS_logo.png
+    url: https://docs.nosana.io/
+    repo: https://github.com/nosana-ci/docs.nosana.io
+    preview: /assets/image/nosana.jpg
 
   - name: Pulsar
     desc: A Community-led Hyper-Hackable Text Editor
@@ -121,26 +128,12 @@ docs:
     repo: https://github.com/gorse-io/docs
     preview: /assets/image/gorse.jpg
 
-  - name: Nosana
-    desc: Next Gen CI/CD
-    logo: https://nosana.io/img/NOS_logo.png
-    url: https://docs.nosana.io/
-    repo: https://github.com/nosana-ci/docs.nosana.io
-    preview: /assets/image/nosana.jpg
-
   - name: zkSync Era
     desc: A trustless protocol that uses cryptographic validity proofs to provide scalable and low-cost transactions on Ethereum
     logo: https://era.zksync.io/docs/zk-sync-era-line-light.svg
     url: https://era.zksync.io/docs/
     repo: https://github.com/matter-labs/zksync-web-era-docs
     preview: /assets/image/era.jpg
-
-  - name: Greenfield
-    desc: A decentralized storage platform
-    logo: https://greenfield.bnbchain.org/docs/logo.svg
-    url: https://greenfield.bnbchain.org/
-    repo: https://github.com/bnb-chain/greenfield-docs
-    preview: /assets/image/bnb-greenfield.jpg
 
   - name: CnosDB
     desc: An open source distributed time series database with high performance, high compression rate and high ease of use
@@ -155,6 +148,21 @@ docs:
     url: https://suibase.io/
     repo: https://github.com/ChainMovers/suibase
     preview: /assets/image/suibase.jpg
+
+  - name: TimeHelper
+    desc: a smart PHP datetime helper library ✨
+    logo: https://time.zjkal.cn/logo.svg
+    url: https://time.zjkal.cn/en/
+    repo: https://github.com/zjkal/time-helper
+    preview: /assets/image/bruce-fees.jpg
+
+  - name: Rundeck
+    desc: |-
+      Enable Self-Service Operations: Give specific users access to your existing tools, services, and script
+    logo: https://docs.rundeck.com/docs/images/RundeckbyPagerDuty.svg
+    url: https://docs.rundeck.com/docs/
+    repo: https://github.com/rundeck/docs
+    preview: /assets/image/rundeck.jpg
 
 blog:
   - name: Mr.Hope's Blog

@@ -19,13 +19,6 @@ docs:
     repo: https://github.com/Mereithhh/vanblog/tree/master/docs
     preview: /assets/image/vanblog.jpg
 
-  - name: 被遗忘的博客
-    desc: 个人博客，记录生活和随想
-    logo: https://wenchao.ren/logo.jpg
-    url: https://wenchao.ren/
-    repo: https://github.com/xkrivzooh/wenchao.ren
-    preview: /assets/image/wenchao_blog_preview.png
-
   - name: 胡桃工具箱
     desc: 一个实用的多功能原神工具箱
     url: https://hut.ao/
@@ -179,6 +172,20 @@ docs:
     repo: https://github.com/cnosdb/docs
     preview: /assets/image/cnosdb.jpg
 
+  - name: Bruce FEES
+    desc: 前端工程化多包管理解决方案
+    logo: https://jowayyoung.github.io/static/bruce/logo.svg
+    url: https://jowayyoung.github.io/bruce/
+    repo: https://github.com/JowayYoung/bruce/tree/main/packages/doc
+    preview: /assets/image/bruce-fees.jpg
+
+  - name: TimeHelper
+    desc: 一个简单快捷的PHP日期时间助手类库 ✨
+    logo: https://time.zjkal.cn/logo.svg
+    url: https://time.zjkal.cn/
+    repo: https://github.com/zjkal/time-helper
+    preview: /assets/image/bruce-fees.jpg
+
   - name: Nonebot-plugin-novelai
     desc: 一个Nonebot的AI绘画插件说明书
     url: https://nb.novelai.dev/
@@ -191,20 +198,6 @@ docs:
     url: https://dunhuixiao.github.io/LiyuTargetMon/
     repo: https://github.com/dunhuixiao/LiyuTargetMon
     preview: /assets/image/liyu.jpg
-
-  - name: 小派蒙
-    desc: 基于 NoneBot2 的原神多功能QQ机器人
-    logo: https://s1.ax1x.com/2023/02/05/pS62DJK.png
-    url: https://docs.paimon.cherishmoon.fun/
-    repo: https://github.com/CMHopeSunshine/LittlePaimon-Docs
-    preview: /assets/image/paimon.jpg
-
-  - name: 云崽 Yunzai-Bot
-    desc: 基于 nodejs 的原神 QQ 群机器人
-    logo: https://docs.yunzai.org/logo.png
-    url: https://docs.yunzai.org/
-    repo: https://github.com/Xm798/Yunzai-Bot-Docs
-    preview: /assets/image/yunzai.jpg
 
   - name: ComWeChat Client
     desc: PC hook微信的协议端
@@ -234,6 +227,13 @@ blog:
     url: https://blog.mo7.cc
     repo: https://github.com/mo7cc/BlogSource.git
     preview: https://file.mo7.cc/disk/blog_preview.png
+
+  - name: 被遗忘的博客
+    desc: 个人博客，记录生活和随想
+    logo: https://wenchao.ren/logo.jpg
+    url: https://wenchao.ren/
+    repo: https://github.com/xkrivzooh/wenchao.ren
+    preview: /assets/image/wenchao_blog_preview.png
 
   - name: zfh's blog
     desc: 无他，唯手熟尔
