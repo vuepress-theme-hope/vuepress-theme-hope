@@ -66,8 +66,8 @@ importers:
         specifier: 9.2.0
         version: 9.2.0
       commit-and-tag-version:
-        specifier: 11.3.0
-        version: 11.3.0
+        specifier: 12.0.0
+        version: 12.0.0
       commitizen:
         specifier: 4.3.0
         version: 4.3.0(typescript@5.2.2)
@@ -7399,8 +7399,8 @@ packages:
     resolution: {integrity: sha512-IWlN//Yfby92tOIje7J18HkNmWRR7JESA/BK8W7wqY/akITpU5B0JQWnbTjCfdChSrDNb0DrdA9jfAxiiBXyiQ==}
     engines: {node: '>=0.10.0'}
 
-  /commit-and-tag-version@11.3.0:
-    resolution: {integrity: sha512-hh3wV9pcuQRuUNdPZ3TfF29VjgbkWJxJ6sQKDls1k71hMZHTjbsdPFbr2gBTUUwW/ArGGZNxejWDTomPZtEq/g==}
+  /commit-and-tag-version@12.0.0:
+    resolution: {integrity: sha512-ynzs3Zojw3Z0hyBuA4prkDUvfODRUoqbsk7RFpFc28I12vXxhrAv+N5/9W4O0htdi9sxL6xvzxozXUapBeGXTQ==}
     engines: {node: '>=14'}
     hasBin: true
     dependencies:
