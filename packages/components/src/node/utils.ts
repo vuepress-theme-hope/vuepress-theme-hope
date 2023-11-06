@@ -47,7 +47,10 @@ export const isInstalled = (pkg: string, hint = false): boolean => {
 
     return true;
   } catch (error) {
-    if (hint) logger.error(`Package ${pkg} is not installed.`);
+    if (hint)
+      logger.error(
+        `Package ${pkg} is not installed, please install it manually!`,
+      );
 
     return false;
   }
