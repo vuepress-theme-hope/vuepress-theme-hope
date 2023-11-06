@@ -13,6 +13,7 @@ import { LoadingIcon, atou, isFunction } from "vuepress-shared/client";
 
 import { useMermaidOptions } from "../helpers/index.js";
 import type { MermaidThemeVariables } from "../typings/index.js";
+import { getDarkmodeStatus } from "../utils/index.js";
 
 import "../styles/mermaid.scss";
 
@@ -101,11 +102,17 @@ export default defineComponent({
 
     const svgCode = ref("");
     const isDarkmode = ref(false);
+    let loaded = false;
 
     const renderMermaid = async (): Promise<void> => {
       const [{ default: mermaid }] = await Promise.all([
         import(/* webpackChunkName: "mermaid" */ "@mermaid"),
-        new Promise((resolve) => setTimeout(resolve, MARKDOWN_ENHANCE_DELAY)),
+        loaded
+          ? Promise.resolve()
+          : ((loaded = true),
+            new Promise((resolve) =>
+              setTimeout(resolve, MARKDOWN_ENHANCE_DELAY),
+            )),
       ]);
 
       mermaid.initialize({
@@ -166,20 +173,13 @@ export default defineComponent({
     };
 
     onMounted(() => {
-      const html = document.documentElement;
-
-      const getDarkmodeStatus = (): boolean =>
-        html.classList.contains("dark") ||
-        html.getAttribute("data-theme") === "dark";
-
-      // FIXME: Should correct handle dark selector
       isDarkmode.value = getDarkmodeStatus();
 
       void renderMermaid();
 
       // watch darkmode change
       useMutationObserver(
-        html,
+        document.documentElement,
         () => {
           isDarkmode.value = getDarkmodeStatus();
         },
