@@ -154,7 +154,7 @@ export const handleInclude = (
 
 export const resolveInclude = (
   content: string,
-  options: Required<MarkdownItIncludeOptions>,
+  options: Required<Omit<MarkdownItIncludeOptions, "useComment">>,
   { currentPath, cwd, includedFiles }: IncludeInfo,
 ): string =>
   content
@@ -208,7 +208,7 @@ export const resolveInclude = (
     .join("\n");
 
 export const createIncludeCoreRule =
-  (options: Required<MarkdownItIncludeOptions>): RuleCore =>
+  (options: Required<Omit<MarkdownItIncludeOptions, "useComment">>): RuleCore =>
   (state): void => {
     const env = <IncludeEnv & MarkdownEnv>state.env;
     const includedFiles = env.includedFiles || (env.includedFiles = []);
