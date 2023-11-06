@@ -15,6 +15,47 @@ tag:
 
 By default, we use `one-light` and `one-dark` for lightmode and darkmode respectively, and you can change them by setting `light` and `dark` in `plugin.prismjs`.
 
+::: code-tabs#language
+
+@tab TS
+
+```ts {7-12}
+// .vuepress/config.ts
+import { defineUserConfig } from "vuepress";
+import { hopeTheme } from "vuepress-theme-hope";
+
+export default defineUserConfig({
+  theme: hopeTheme({
+    plugins: {
+      prismjs: {
+        light: "light theme keyword",
+        dark: "dark theme keyword",
+      },
+    },
+  }),
+});
+```
+
+@tab JS
+
+```js {7-12}
+// .vuepress/config.js
+import { hopeTheme } from "vuepress-theme-hope";
+
+export default {
+  theme: hopeTheme({
+    plugins: {
+      prismjs: {
+        light: "light theme keyword",
+        dark: "dark theme keyword",
+      },
+    },
+  }),
+};
+```
+
+:::
+
 ::: tip
 
 Due to output size consideration, we will not import all styles globally to support code theme config per code block.

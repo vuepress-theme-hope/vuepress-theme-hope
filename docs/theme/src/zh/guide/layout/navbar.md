@@ -25,7 +25,7 @@ tag:
 
 @tab TS
 
-```ts
+```ts {7}
 // .vuepress/config.ts
 import { defineUserConfig } from "vuepress";
 import { hopeTheme } from "vuepress-theme-hope";
@@ -41,20 +41,21 @@ export default defineUserConfig({
 
 ```js
 // .vuepress/config.js
+import { defineUserConfig } from "vuepress";
 import { hopeTheme } from "vuepress-theme-hope";
 
-export default {
+export default defineUserConfig({
   theme: hopeTheme({
     navbar: ["/zh/guide/README.md", "/zh/config/README.md", "/zh/faq.md"],
   }),
-};
+});
 ```
 
 :::
 
 ::: tip
 
-你可以省略 `.md` 扩展名，以 `/` 结尾的路径会被推断为 `/README.md`。
+我们推荐你省略 `.md` 扩展名，以 `/` 结尾的路径会被推断为 `/README.md`。
 
 :::
 

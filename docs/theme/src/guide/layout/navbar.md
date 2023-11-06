@@ -25,7 +25,7 @@ The easiest way to configure the navbar is to fill in the paths of the page file
 
 @tab TS
 
-```ts
+```ts {7}
 // .vuepress/config.ts
 import { defineUserConfig } from "vuepress";
 import { hopeTheme } from "vuepress-theme-hope";
@@ -39,22 +39,23 @@ export default defineUserConfig({
 
 @tab JS
 
-```js
+```js {7}
 // .vuepress/config.js
+import { defineUserConfig } from "vuepress";
 import { hopeTheme } from "vuepress-theme-hope";
 
-export default {
+export default defineUserConfig({
   theme: hopeTheme({
     navbar: ["/guide/README.md", "/config/README.md", "/faq.md"],
   }),
-};
+});
 ```
 
 :::
 
 ::: tip
 
-You can omit the `.md` extension, and paths ending with `/` are inferred as `/README.md`.
+We recommend you to omit the `.md` extension, and paths ending with `/` are inferred as `/README.md`.
 
 :::
 
