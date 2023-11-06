@@ -22,7 +22,7 @@
   ],
   "lockFileMaintenance": {
     "enabled": true,
-    "commitMessageAction": "chore: update lockfile",
+    "commitMessageAction": "update lockfile",
     "platformAutomerge": true,
     "extends": ["group:allNonMajor", "schedule:weekly"],
     "packageRules": [
