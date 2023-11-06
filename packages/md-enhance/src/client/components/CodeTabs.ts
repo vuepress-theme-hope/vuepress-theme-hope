@@ -180,7 +180,14 @@ export default defineComponent({
                   role: "tabpanel",
                   "aria-expanded": isActive,
                 },
-                slots[`tab${index}`]({ value: id, isActive }),
+                [
+                  h(
+                    "div",
+                    { class: "vp-code-tab-title" },
+                    slots[`title${index}`]({ value: id, isActive }),
+                  ),
+                  slots[`tab${index}`]({ value: id, isActive }),
+                ],
               );
             }),
           ])

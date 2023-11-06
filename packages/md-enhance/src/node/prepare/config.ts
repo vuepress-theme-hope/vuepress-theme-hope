@@ -11,9 +11,9 @@ export const prepareConfigFile = async (
   options: MarkdownEnhanceOptions,
   legacy = true,
 ): Promise<string> => {
-  const imports: string[] = [];
-  const enhances: string[] = [];
-  const setups: string[] = [];
+  const imports = new Set<string>();
+  const enhances = new Set<string>();
+  const setups = new Set<string>();
 
   const getStatus = (
     key: keyof MarkdownEnhanceOptions,
@@ -24,154 +24,155 @@ export const prepareConfigFile = async (
       : (gfm && "gfm" in options && options.gfm) || false;
 
   if (getStatus("card")) {
-    imports.push(`import VPCard from "${CLIENT_FOLDER}components/VPCard.js";`);
-    enhances.push(`app.component("VPCard", VPCard)`);
+    imports.add(`import VPCard from "${CLIENT_FOLDER}components/VPCard.js";`);
+    enhances.add(`app.component("VPCard", VPCard)`);
   }
 
   if (getStatus("chart")) {
-    imports.push(
-      `import ChartJS from "${CLIENT_FOLDER}components/ChartJS.js";`,
-    );
-    enhances.push(`app.component("ChartJS", ChartJS)`);
+    imports.add(`import ChartJS from "${CLIENT_FOLDER}components/ChartJS.js";`);
+    enhances.add(`app.component("ChartJS", ChartJS)`);
   }
 
   if (getStatus("codetabs")) {
-    imports.push(
+    imports.add(
       `import CodeTabs from "${CLIENT_FOLDER}components/CodeTabs.js";`,
     );
-    enhances.push(`app.component("CodeTabs", CodeTabs);`);
+    enhances.add(`app.component("CodeTabs", CodeTabs);`);
 
     // TODO: Remove this in v2 stable
     if (legacy) {
-      imports.push(
+      imports.add(
         `import { hasGlobalComponent } from "${getRealPath(
           "vuepress-shared/client",
           url,
         )}";`,
+      );
+      imports.add(
         `import { CodeGroup, CodeGroupItem } from "${CLIENT_FOLDER}compact/index.js";`,
       );
-      enhances.push(
+      enhances.add(
         `if(!hasGlobalComponent("CodeGroup", app)) app.component("CodeGroup", CodeGroup);`,
+      );
+      enhances.add(
         `if(!hasGlobalComponent("CodeGroupItem", app)) app.component("CodeGroupItem", CodeGroupItem);`,
       );
     }
   }
 
-  if (getStatus("container"))
-    imports.push(`import "${CLIENT_FOLDER}styles/container/index.scss";`);
+  if (getStatus("container")) {
+    imports.add(
+      `import { useContainer } from "${CLIENT_FOLDER}composables/container.js";`,
+    );
+    imports.add(`import "${CLIENT_FOLDER}styles/container/index.scss";`);
+    setups.add("useContainer();");
+  }
 
   if (getStatus("demo")) {
-    imports.push(
+    imports.add(
       `import CodeDemo from "${CLIENT_FOLDER}components/CodeDemo.js";`,
-      `import MdDemo from "${CLIENT_FOLDER}components/MdDemo.js";`,
     );
-    enhances.push(
-      `app.component("CodeDemo", CodeDemo);`,
-      `app.component("MdDemo", MdDemo);`,
-    );
+    imports.add(`import MdDemo from "${CLIENT_FOLDER}components/MdDemo.js";`);
+    enhances.add(`app.component("CodeDemo", CodeDemo);`);
+    enhances.add(`app.component("MdDemo", MdDemo);`);
   }
 
   if (getStatus("echarts")) {
-    imports.push(
-      `import ECharts from "${CLIENT_FOLDER}components/ECharts.js";`,
-    );
-    enhances.push(`app.component("ECharts", ECharts);`);
+    imports.add(`import ECharts from "${CLIENT_FOLDER}components/ECharts.js";`);
+    enhances.add(`app.component("ECharts", ECharts);`);
   }
 
   if (getStatus("figure", true))
-    imports.push(`import "${CLIENT_FOLDER}styles/figure.scss";`);
+    imports.add(`import "${CLIENT_FOLDER}styles/figure.scss";`);
 
   if (getStatus("flowchart")) {
-    imports.push(
+    imports.add(
       `import FlowChart from "${CLIENT_FOLDER}components/FlowChart.js";`,
     );
 
-    enhances.push(`app.component("FlowChart", FlowChart);`);
+    enhances.add(`app.component("FlowChart", FlowChart);`);
   }
 
   if (getStatus("footnote", true))
-    imports.push(`import "${CLIENT_FOLDER}styles/footnote.scss";`);
+    imports.add(`import "${CLIENT_FOLDER}styles/footnote.scss";`);
 
   if (getStatus("imgMark", true))
-    imports.push(`import "${CLIENT_FOLDER}styles/image-mark.scss"`);
+    imports.add(`import "${CLIENT_FOLDER}styles/image-mark.scss"`);
 
   if (getStatus("mermaid")) {
-    imports.push(
-      `import Mermaid from "${CLIENT_FOLDER}components/Mermaid.js";`,
+    imports.add(`import Mermaid from "${CLIENT_FOLDER}components/Mermaid.js";`);
+    imports.add(
       `import { injectMermaidConfig } from "${CLIENT_FOLDER}/index.js";`,
     );
-    enhances.push(
-      `injectMermaidConfig(app);`,
-      `app.component("Mermaid", Mermaid);`,
-    );
+    enhances.add(`injectMermaidConfig(app);`);
+    enhances.add(`app.component("Mermaid", Mermaid);`);
   }
 
   if (getStatus("revealJs")) {
-    imports.push(
-      `import "${getRealPath("reveal.js/dist/reveal.css", url)}";`,
+    imports.add(`import "${getRealPath("reveal.js/dist/reveal.css", url)}";`);
+    imports.add(
       `import RevealJs from "${CLIENT_FOLDER}components/RevealJs.js";`,
+    );
+    imports.add(
       `import { injectRevealJsConfig } from "${CLIENT_FOLDER}index.js";`,
     );
-    enhances.push(
-      `injectRevealJsConfig(app);`,
-      `app.component("RevealJs", RevealJs);`,
-    );
+    enhances.add(`injectRevealJsConfig(app);`);
+    enhances.add(`app.component("RevealJs", RevealJs);`);
   }
 
   if (getStatus("playground")) {
-    imports.push(
+    imports.add(
       `import Playground from "${CLIENT_FOLDER}components/Playground.js";`,
     );
-    enhances.push(`app.component("Playground", Playground);`);
+    enhances.add(`app.component("Playground", Playground);`);
   }
 
   if (getStatus("tabs")) {
-    imports.push(`import Tabs from "${CLIENT_FOLDER}components/Tabs.js";`);
-    enhances.push(`app.component("Tabs", Tabs);`);
+    imports.add(`import Tabs from "${CLIENT_FOLDER}components/Tabs.js";`);
+    enhances.add(`app.component("Tabs", Tabs);`);
   }
 
   if (getStatus("tasklist", true))
-    imports.push(`import "${CLIENT_FOLDER}styles/tasklist.scss";`);
+    imports.add(`import "${CLIENT_FOLDER}styles/tasklist.scss";`);
 
   if (getStatus("katex")) {
-    imports.push(
-      `import "${getRealPath("katex/dist/katex.min.css", url)}";`,
-      `import "${CLIENT_FOLDER}styles/katex.scss";`,
-    );
+    imports.add(`import "${getRealPath("katex/dist/katex.min.css", url)}";`);
+    imports.add(`import "${CLIENT_FOLDER}styles/katex.scss";`);
 
     if (isPlainObject(options.katex) && options.katex.copy) {
-      imports.push(
+      imports.add(
         `import { useKatexCopy } from "${CLIENT_FOLDER}composables/katex.js";`,
       );
-      setups.push(`useKatexCopy();`);
+      setups.add(`useKatexCopy();`);
     }
   }
 
   if (getStatus("vuePlayground")) {
-    imports.push(
-      `import { defineAsyncComponent } from "vue";`,
+    imports.add(`import { defineAsyncComponent } from "vue";`);
+    imports.add(
       `import { injectVuePlaygroundConfig } from "${CLIENT_FOLDER}index.js";`,
     );
-    enhances.push(
-      `injectVuePlaygroundConfig(app);`,
+    enhances.add(`injectVuePlaygroundConfig(app);`);
+    enhances.add(
       `app.component("VuePlayground", defineAsyncComponent(() => import("${CLIENT_FOLDER}components/VuePlayground.js")));`,
     );
   }
 
-  if (getStatus("mathjax")) imports.push(`import "./mathjax.css";`);
+  if (getStatus("mathjax")) imports.add(`import "./mathjax.css";`);
 
   return app.writeTemp(
     `md-enhance/config.js`,
     `\
 import { defineClientConfig } from "@vuepress/client";
-${imports.join("\n")}
+${Array.from(imports.values()).join("\n")}
 
 export default defineClientConfig({
   enhance: ({ app }) => {
-${enhances.map((item) => `    ${item}`).join("\n")}
+${Array.from(enhances.values())
+  .map((item) => `    ${item}`)
+  .join("\n")}
   },
   setup: () => {
-${setups.join("\n")}
+${Array.from(setups.values()).join("\n")}
   }
 });
 `,

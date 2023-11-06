@@ -1,4 +1,4 @@
-import { useToggle } from "@vueuse/core";
+import { useEventListener, useToggle } from "@vueuse/core";
 import type { SlotsType, VNode } from "vue";
 import { defineComponent, h, ref, shallowRef } from "vue";
 
@@ -38,6 +38,10 @@ export default defineComponent({
     const [isExpanded, toggleIsExpand] = useToggle(false);
     const codeContainer = shallowRef<HTMLDivElement>();
     const height = ref("0");
+
+    useEventListener("beforeprint", () => {
+      toggleIsExpand(true);
+    });
 
     return (): VNode =>
       h("div", { class: "vp-md-demo", id: props.id }, [

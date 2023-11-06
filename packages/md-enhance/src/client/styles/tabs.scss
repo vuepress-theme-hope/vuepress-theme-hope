@@ -128,7 +128,27 @@
   background: var(--tab-bg-color);
   transition: background var(--vp-ct);
 
+  @media print {
+    display: block;
+    padding: 0.5rem;
+  }
+
   &.active {
+    display: block;
+  }
+
+  &:nth-child(2) .vp-tab-title {
+    border-top: none;
+  }
+}
+
+.vp-tab-title {
+  display: none;
+  padding: 0.25rem 0;
+  border-top: 1px solid var(--vp-brc);
+  font-weight: 500;
+
+  @media print {
     display: block;
   }
 }

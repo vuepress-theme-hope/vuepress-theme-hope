@@ -41,6 +41,10 @@
 
 .mermaid-actions {
   text-align: end;
+
+  @media print {
+    display: none;
+  }
 }
 
 .mermaid-preview {

@@ -28,6 +28,7 @@ export default [
         "components/Tabs",
         "components/VPCard",
         "components/VuePlayground",
+        "composables/container",
         "composables/katex",
         "SlidePage",
       ],

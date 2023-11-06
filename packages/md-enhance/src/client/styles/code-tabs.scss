@@ -111,6 +111,10 @@
 .vp-code-tab {
   display: none;
 
+  @media print {
+    display: block;
+  }
+
   &.active {
     display: block;
   }
@@ -129,5 +133,14 @@
         white-space: pre-wrap;
       }
     }
+  }
+}
+
+.vp-code-tab-title {
+  display: none;
+  font-weight: 500;
+
+  @media print {
+    display: block;
   }
 }
