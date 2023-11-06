@@ -24,10 +24,10 @@
     "echarts": "5.4.3",
     "katex": "0.16.9",
     "mathjax-full": "3.2.2",
-    "mermaid": "10.6.0",
+    "mermaid": "10.6.1",
     "reveal.js": "5.0.1",
     "sass-loader": "13.3.2",
-    "vue": "3.3.7",
+    "vue": "3.3.8",
     "vuepress-theme-hope": "workspace:*",
     "vuepress-vite": "2.0.0-beta.67",
     "vuepress-webpack": "2.0.0-beta.67"
