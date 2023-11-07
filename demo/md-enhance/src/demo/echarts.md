@@ -749,6 +749,10 @@ const option = {
 
 ```js
 const option = {
+  // canvas background color
+  backgroundColor: "#ffa",
+  // The mouse pointer hangs to display the value
+  tooltip: {},
   series: [
     {
       type: "wordCloud",
@@ -837,12 +841,27 @@ const option = {
       },
 
       // Data is an array. Each array item must have name and value property.
+      // textStyle must not be empty
       data: [
         {
-          name: "Farrah Abraham",
-          value: 366,
+          name: "vuepress theme hope",
+          value: 8888,
           // Style of single text
-          textStyle: {},
+          //textStyle: {},
+        },
+        {
+          name: "Mr.Hope",
+          value: 10000,
+          textStyle: {
+            color: "black",
+          },
+          emphasis: {
+            textStyle: {
+              color: "#BDBEFA",
+              shadowBlur: 4,
+              shadowOffsetY: 14,
+            },
+          },
         },
       ],
     },
