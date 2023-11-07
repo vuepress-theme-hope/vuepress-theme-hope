@@ -46,9 +46,9 @@ ${
 `;
 
 const getMermaid = (options: MermaidOptions, index: number): string =>
-  `<Mermaid id="mermaid-${index}" code="${utoa(
-    getMermaidContent(options),
-  )}"></Mermaid>`;
+  `<Mermaid id="mermaid-${index}" code="${utoa(getMermaidContent(options))}"${
+    options.title ? ` title="${utoa(options.title)}"` : ""
+  }></Mermaid>`;
 
 const DIAGRAM_MAP: Record<string, string> = {
   class: "classDiagram",

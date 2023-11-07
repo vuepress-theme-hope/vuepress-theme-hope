@@ -92,6 +92,13 @@ export default defineComponent({
      * Mermaid 配置
      */
     code: { type: String, required: true },
+
+    /**
+     * Mermaid title
+     *
+     * Mermaid 标题
+     */
+    title: { type: String, default: "" },
   },
 
   setup(props) {
@@ -168,7 +175,10 @@ export default defineComponent({
       const a = document.createElement("a");
 
       a.setAttribute("href", dataURI);
-      a.setAttribute("download", `${props.id}.svg`);
+      a.setAttribute(
+        "download",
+        `${props.title ? atou(props.title) : props.id}.svg`,
+      );
       a.click();
     };
 
