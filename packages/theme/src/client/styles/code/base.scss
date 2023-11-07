@@ -168,7 +168,6 @@ div[class*="language-"] {
 
       display: flex;
       flex-direction: column;
-      justify-content: space-evenly;
 
       width: var(--line-numbers-width);
       padding: 1rem 0;
@@ -188,11 +187,21 @@ div[class*="language-"] {
     .line-number {
       position: relative;
       z-index: 4;
+
+      display: flex;
+      flex: 1;
+      align-items: center;
+      justify-content: center;
+
       user-select: none;
 
       &::before {
         content: counter(line-number);
+
+        display: block;
+
         font-size: 0.8em;
+        line-height: 1;
         counter-increment: line-number;
       }
     }
