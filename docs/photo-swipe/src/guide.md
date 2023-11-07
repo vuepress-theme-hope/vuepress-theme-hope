@@ -47,6 +47,13 @@ export default defineClientConfig({
 });
 ```
 
+## Page level settings
+
+You can set `photoSwipe` in frontmatter to customize the behavior of the current page:
+
+- String: Image selector for the current page
+- `false`: disable photo-swipe in the current page.
+
 ## Operation Delay
 
 If your theme adds animations when switching pages, you may need to delay when photo-swipe re-finds page images. You can configure this delay via the `delay` option, the default value is `800` (in milliseconds).
