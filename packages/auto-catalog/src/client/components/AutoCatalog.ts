@@ -247,108 +247,6 @@ export default defineComponent({
     return (): VNode => {
       const isDeep = info.value.some((item) => item.children);
 
-      const items = info.value.map(({ children = [], icon, path, title }) => {
-        const childLink = CatalogLink({
-          title,
-          path,
-          icon,
-          class: "vp-catalog-title",
-        });
-
-        return isDeep
-          ? [
-              h(
-                "h3",
-                {
-                  id: title,
-                  class: [
-                    "vp-catalog-child-title",
-                    { "has-children": children.length },
-                  ],
-                },
-                [
-                  h(
-                    "a",
-                    {
-                      href: `#${title}`,
-                      class: "header-anchor",
-                      "aria-hidden": true,
-                    },
-                    "#",
-                  ),
-                  childLink,
-                ],
-              ),
-              children.length
-                ? h(
-                    props.index ? "ol" : "ul",
-                    { class: "vp-child-catalogs" },
-                    children.map(({ children = [], icon, path, title }) =>
-                      h("li", { class: "vp-child-catalog" }, [
-                        h(
-                          "div",
-                          {
-                            class: [
-                              "vp-catalog-sub-title",
-                              { "has-children": children.length },
-                            ],
-                          },
-                          [
-                            h(
-                              "a",
-                              {
-                                href: `#${title}`,
-                                class: "header-anchor",
-                              },
-                              "#",
-                            ),
-                            h(CatalogLink, {
-                              title,
-                              path,
-                              icon,
-                              class: "vp-catalog-title",
-                            }),
-                          ],
-                        ),
-                        children.length
-                          ? h(
-                              props.index ? "ol" : "div",
-                              {
-                                class: props.index
-                                  ? "vp-sub-catalogs"
-                                  : "vp-sub-catalogs-wrapper",
-                              },
-                              children.map(({ icon, path, title }) => {
-                                const subLink = h(CatalogLink, {
-                                  title,
-                                  path,
-                                  icon,
-                                  class: "",
-                                });
-
-                                return props.index
-                                  ? h(
-                                      "li",
-                                      { class: "vp-sub-catalog" },
-                                      subLink,
-                                    )
-                                  : h(CatalogLink, {
-                                      title,
-                                      path,
-                                      icon,
-                                      class: "vp-sub-catalog-link",
-                                    });
-                              }),
-                            )
-                          : null,
-                      ]),
-                    ),
-                  )
-                : null,
-            ]
-          : h("div", { class: "vp-catalog-child-title" }, childLink);
-      });
-
       return h(
         "div",
         { class: ["vp-catalog-wrapper", { index: props.index }] },
@@ -357,13 +255,125 @@ export default defineComponent({
             ? null
             : h("h2", { class: "vp-catalog-main-title" }, locale.value.title),
           info.value.length
-            ? props.index
-              ? h(
-                  "ol",
-                  { class: "vp-catalogs" },
-                  items.map((item) => h("li", { class: "vp-catalog" }, item)),
-                )
-              : items
+            ? h(
+                props.index ? "ol" : "ul",
+                { class: ["vp-catalogs", { deep: isDeep }] },
+                info.value.map(({ children = [], icon, path, title }) => {
+                  const childLink = CatalogLink({
+                    title,
+                    path,
+                    icon,
+                    class: "vp-catalog-title",
+                  });
+
+                  return h(
+                    "li",
+                    { class: "vp-catalog" },
+                    isDeep
+                      ? [
+                          h(
+                            "h3",
+                            {
+                              id: title,
+                              class: [
+                                "vp-catalog-child-title",
+                                { "has-children": children.length },
+                              ],
+                            },
+                            [
+                              h(
+                                "a",
+                                {
+                                  href: `#${title}`,
+                                  class: "header-anchor",
+                                  "aria-hidden": true,
+                                },
+                                "#",
+                              ),
+                              childLink,
+                            ],
+                          ),
+                          children.length
+                            ? h(
+                                props.index ? "ol" : "ul",
+                                { class: "vp-child-catalogs" },
+                                children.map(
+                                  ({ children = [], icon, path, title }) =>
+                                    h("li", { class: "vp-child-catalog" }, [
+                                      h(
+                                        "div",
+                                        {
+                                          class: [
+                                            "vp-catalog-sub-title",
+                                            { "has-children": children.length },
+                                          ],
+                                        },
+                                        [
+                                          h(
+                                            "a",
+                                            {
+                                              href: `#${title}`,
+                                              class: "header-anchor",
+                                            },
+                                            "#",
+                                          ),
+                                          h(CatalogLink, {
+                                            title,
+                                            path,
+                                            icon,
+                                            class: "vp-catalog-title",
+                                          }),
+                                        ],
+                                      ),
+                                      children.length
+                                        ? h(
+                                            props.index ? "ol" : "div",
+                                            {
+                                              class: props.index
+                                                ? "vp-sub-catalogs"
+                                                : "vp-sub-catalogs-wrapper",
+                                            },
+                                            children.map(
+                                              ({ icon, path, title }) => {
+                                                const subLink = h(CatalogLink, {
+                                                  title,
+                                                  path,
+                                                  icon,
+                                                  class: "",
+                                                });
+
+                                                return props.index
+                                                  ? h(
+                                                      "li",
+                                                      {
+                                                        class: "vp-sub-catalog",
+                                                      },
+                                                      subLink,
+                                                    )
+                                                  : h(CatalogLink, {
+                                                      title,
+                                                      path,
+                                                      icon,
+                                                      class:
+                                                        "vp-sub-catalog-link",
+                                                    });
+                                              },
+                                            ),
+                                          )
+                                        : null,
+                                    ]),
+                                ),
+                              )
+                            : null,
+                        ]
+                      : h(
+                          "div",
+                          { class: "vp-catalog-child-title" },
+                          childLink,
+                        ),
+                  );
+                }),
+              )
             : h("p", { class: "vp-empty-catalog" }, locale.value.empty),
         ],
       );

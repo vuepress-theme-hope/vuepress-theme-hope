@@ -11,6 +11,14 @@
       list-style-type: none;
     }
 
+    .vp-catalogs {
+      padding-inline-start: 0;
+    }
+
+    .vp-catalog-title::before {
+      content: "§" counter(catalog-item, upper-roman) " ";
+    }
+
     .vp-child-catalogs {
       counter-reset: child-catalog;
     }
@@ -31,8 +39,15 @@
 
 .vp-catalogs {
   margin: 0;
-  padding-inline-start: 0;
   counter-reset: catalog-item;
+
+  &.deep {
+    padding-inline-start: 0;
+  }
+
+  .vp-catalog {
+    list-style-type: none;
+  }
 
   .font-icon {
     vertical-align: baseline;
@@ -97,14 +112,14 @@
       color: var(--vp-tc);
     }
   }
-
-  .vp-catalog-title::before {
-    content: "§" counter(catalog-item, upper-roman) " ";
-  }
 }
 
 .vp-child-catalogs {
   margin: 0;
+}
+
+.vp-child-catalog {
+  list-style-type: disc;
 }
 
 .vp-sub-catalogs {
