@@ -13,7 +13,7 @@ export const defaultLinkCheck = (): boolean => false;
 
 export const getLinksCheckStatus = (
   app: App,
-  options: Partial<MarkdownEnhanceOptions>,
+  options: Partial<MarkdownEnhanceOptions> = {},
 ): {
   enabled: boolean;
   isIgnoreLink: (link: string) => boolean;

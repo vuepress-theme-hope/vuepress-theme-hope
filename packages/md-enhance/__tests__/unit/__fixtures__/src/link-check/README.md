@@ -21,3 +21,7 @@
 - [b](sub-folder/b.md)
 - [中文](sub-folder/中文.md)
 - [Not exist](sub-folder/not-exist.md)
+
+## Absolute Path
+
+- [include](/include.md)

@@ -108,6 +108,19 @@ title: b
     expect(result2).toEqual("");
   });
 
+  it("Should drop when receiving a invalid syntax", () => {
+    const result = markdownIt.render(
+      `
+\`\`\`card
+{a:1}
+\`\`\`
+`,
+      {},
+    );
+
+    expect(result).toMatch("");
+  });
+
   it("Should not break markdown fence", () => {
     const result = markdownIt.render(
       `
