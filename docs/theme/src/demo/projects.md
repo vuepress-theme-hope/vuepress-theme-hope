@@ -166,7 +166,7 @@ docs:
 
   - name: SubQuery
     desc: |-
-      Enable Self-Service Operations: Give specific users access to your existing tools, services, and script
+      SubQuery is a leading web3 data indexer that provides fast, flexible, and decentralised APIs for web3 projects
     logo: https://static.subquery.network/icon.png
     url: https://academy.subquery.network
     repo: https://github.com/subquery/documentation
