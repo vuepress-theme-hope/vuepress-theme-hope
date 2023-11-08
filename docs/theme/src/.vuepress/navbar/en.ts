@@ -4,6 +4,7 @@ import { getLinkHelper } from "./utils.js";
 const linkHelper = getLinkHelper();
 
 export const enNavbarConfig = navbar([
+  "/get-started/",
   "/guide/",
   "/config/",
   "/faq/",
@@ -11,15 +12,15 @@ export const enNavbarConfig = navbar([
     text: "Cookbook",
     icon: "signs-post",
     prefix: "/cookbook/",
-    children: ["tutorial/", "markdown/", "vuepress/", "customize/"],
+    children: ["markdown/", "vuepress/", "customize/"],
   },
-  "/migration/",
+  "/demo/",
   {
     text: "Project",
     icon: "circle-info",
     children: [
       "/changelog",
-      "/demo/",
+      "/migration/",
       "/contribution",
       {
         text: "Plugins",

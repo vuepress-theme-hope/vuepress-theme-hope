@@ -4,6 +4,7 @@ import { getLinkHelper } from "./utils.js";
 const linkHelper = getLinkHelper("/zh/");
 
 export const zhNavbarConfig = navbar([
+  "/zh/get-started/",
   "/zh/guide/",
   "/zh/config/",
   "/zh/faq/",
@@ -11,16 +12,16 @@ export const zhNavbarConfig = navbar([
     text: "教程",
     icon: "signs-post",
     prefix: "/zh/cookbook/",
-    children: ["tutorial/", "markdown/", "vuepress/", "customize/"],
+    children: ["markdown/", "vuepress/", "customize/"],
   },
-  "/zh/migration/",
+  "/zh/demo/",
   {
     text: "项目",
     icon: "circle-info",
     prefix: "/zh/",
     children: [
       "changelog",
-      "demo/",
+      "migration/",
       "contribution",
       {
         text: "插件",

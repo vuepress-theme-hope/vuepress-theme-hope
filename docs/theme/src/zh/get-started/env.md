@@ -1,5 +1,5 @@
 ---
-title: 准备运行环境
+title: 运行环境
 icon: leaf
 order: 1
 category:
@@ -7,7 +7,7 @@ category:
   - 基础知识
   - 教程
 tag:
-  - 准备运行环境
+  - 运行环境
 ---
 
 本教程将指导你如何搭建 VuePress 的运行环境。

@@ -118,7 +118,7 @@ You can go to [VuePress2 → Reference → Configuration](https://vuejs.press/en
 
 Theme config is the object you pass to `hopeTheme` function, which will be handled by VuePress Theme Hope.
 
-You can find all the theme config in [Config → Theme Config](../../config/README.md).
+You can find all the theme config in [Config → Theme Config](../config/README.md).
 
 ::: tip Hints and Checks
 
@@ -145,9 +145,9 @@ If you are using an editor that supports TS/JS language features (such as VSCode
 
 ::: info Plugin Config
 
-VuePress Theme Hope bundles some plugins, you can pass plugin options through `plugins.PLUGIN_NAME` in theme options, see [Config → Theme Plugin](../../config/plugins/README.md) for more details.
+VuePress Theme Hope bundles some plugins, you can pass plugin options through `plugins.PLUGIN_NAME` in theme options, see [Config → Theme Plugin](../config/plugins/README.md) for more details.
 
-If you want to use additional plugins, please import the plugin yourself and pass plugin options, see [VuePress → plugins](../vuepress/plugin.md) for details.
+If you want to use additional plugins, please import the plugin yourself and pass plugin options, see [VuePress → plugins](../cookbook/vuepress/plugin.md) for details.
 
 :::
 
@@ -161,7 +161,7 @@ In this folder you can:
 - Create `config.scss` for styling config
 - Create `palette.scss` to set color and layout
 
-For more details, see [Config → Style](../../config/style.md).
+For more details, see [Config → Style](../config/style.md).
 
 :::
 

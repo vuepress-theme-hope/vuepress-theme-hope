@@ -118,7 +118,7 @@ export default defineUserConfig({
 
 主题配置是你传递给 `hopeTheme` 函数的对象，它将由 VuePress Theme Hope 处理。
 
-你可以在 [配置 → 主题配置](../../config/README.md) 中找到全部的主题配置。
+你可以在 [配置 → 主题配置](../config/README.md) 中找到全部的主题配置。
 
 ::: tip 提示与检查
 
@@ -145,9 +145,9 @@ export default defineUserConfig({
 
 ::: info 插件配置
 
-VuePress Theme Hope 主题捆绑了一些插件，你可以在主题选项中通过 `plugins.插件名称` 来传递插件选项，详见 [配置 → 主题插件配置](../../config/plugins/README.md)。
+VuePress Theme Hope 主题捆绑了一些插件，你可以在主题选项中通过 `plugins.插件名称` 来传递插件选项，详见 [配置 → 主题插件配置](../config/plugins/README.md)。
 
-如果你想要额外使用插件，请自行调用插件并传递插件选项，详见 [VuePress → 插件](../vuepress/plugin.md)。
+如果你想要额外使用插件，请自行调用插件并传递插件选项，详见 [VuePress → 插件](../../cookbook/vuepress/plugin.md)。
 
 :::
 
@@ -161,7 +161,7 @@ VuePress Theme Hope 主题按照约定俗称，使用 `.vuepress/styles` 文件�
 - 创建 `config.scss` 来进行样式配置
 - 创建 `palette.scss` 来配置颜色与布局
 
-更多详情，详见 [配置 → 样式配置](../../config/style.md)。
+更多详情，详见 [配置 → 样式配置](../config/style.md)。
 
 :::
 

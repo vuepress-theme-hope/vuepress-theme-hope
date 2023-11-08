@@ -1,5 +1,5 @@
 ---
-title: Setting Environment
+title: Environment
 icon: leaf
 order: 1
 category:
@@ -7,7 +7,7 @@ category:
   - Tutorial
   - Get Started
 tag:
-  - Setting Environment
+  - Environment
 ---
 
 This tutorial will guide you on how to set up a VuePress runtime environment.

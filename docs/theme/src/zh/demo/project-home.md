@@ -6,12 +6,12 @@ heroImage: /logo.svg
 heroText: VuePress Theme Hope
 tagline: 一个具有强大功能的 vuepress 主题✨
 actions:
-  - text: 使用教程 🧭
-    link: /zh/cookbook/tutorial/
+  - text: 快速上手 💡
+    link: /zh/get-started/
     type: primary
 
-  - text: 介绍 💡
-    link: /zh/guide/get-started/intro.html
+  - text: 指南 🗺️
+    link: /zh/guide/
 
   - text: 配置 🛠
     link: /zh/config/
@@ -192,10 +192,6 @@ export default {
 ```
 
 :::
-
-## 使用教程
-
-- [详细小白教程](../cookbook/tutorial/README.md)
 
 ## 官方 QQ 群
 

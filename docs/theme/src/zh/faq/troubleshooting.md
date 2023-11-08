@@ -9,7 +9,7 @@ category:
 
 `vuepress-theme-hope` 仅支持 `>=18.16.0` 版本的 Node.js。
 
-你可以通过 `node -v` 查看它的版本，如果不满足要求，请 [下载并安装 LTS 版本的 Node.js](../cookbook/tutorial/env.md#nodejs)。
+你可以通过 `node -v` 查看它的版本，如果不满足要求，请 [下载并安装 LTS 版本的 Node.js](../get-started/env.md#nodejs)。
 
 同时，你应该使用满足下方要求的包管理器 (推荐 `pnpm@8`):
 

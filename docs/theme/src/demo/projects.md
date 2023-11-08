@@ -1,6 +1,7 @@
 ---
 title: Real Projects
 icon: splotch
+order: 1
 category:
   - Demo
 

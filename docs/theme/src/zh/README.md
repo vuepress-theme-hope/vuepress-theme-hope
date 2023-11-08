@@ -11,18 +11,15 @@ bgImageStyle:
 heroText: VuePress Theme Hope
 tagline: 一个具有强大功能的 vuepress 主题✨
 actions:
-  - text: 使用教程 🧭
-    link: ./cookbook/tutorial/
+  - text: 快速上手 💡
+    link: ./get-started/
     type: primary
 
-  - text: 介绍 💡
-    link: ./guide/get-started/intro.html
+  - text: 指南 🗺️
+    link: ./guide/
 
-  - text: 配置 🛠
-    link: ./config/
-
-  - text: 在线案例 🪀
-    link: https://stackblitz.com/fork/vuepress-theme-hope
+  - text: 案例 🪀
+    link: ./demo/
 
 highlights:
   - header: 易于安装

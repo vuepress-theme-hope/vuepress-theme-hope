@@ -1,5 +1,5 @@
 ---
-title: Step by Step Tutorial
+title: Get Started
 icon: signs-post
 star: true
 sticky: 10

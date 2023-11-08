@@ -78,7 +78,7 @@ Each Markdown file will be processed by VuePress Theme Hope to render the conten
 
 ::: tip Markdown Syntax
 
-If you don't know Markdown yet, check out the [Markdown Tutorial](../markdown/README.md).
+If you don't know Markdown yet, check out the [Markdown Tutorial](../cookbook/markdown/README.md).
 
 In about fifteen minutes, you can learn how to write Markdown, remember to come back after reading it!
 
@@ -88,8 +88,8 @@ You can try editing the Markdown file yourself to modify the content of the temp
 
 ::: info Markdown Extension
 
-- VuePress itself extends some Markdown syntax. For details, see [VuePress → Markdown](../vuepress/markdown.md).
+- VuePress itself extends some Markdown syntax. For details, see [VuePress → Markdown](../cookbook/vuepress/markdown.md).
 
-- The theme additionally enables some syntax extensions via `vuepress-plugin-md-enhance`, see [Guide → Markdown](../../guide/get-started/markdown.md).
+- The theme additionally enables some syntax extensions via `vuepress-plugin-md-enhance`, see [Guide → Markdown](../guide/get-started/markdown.md).
 
 :::

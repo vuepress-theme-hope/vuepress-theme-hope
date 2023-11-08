@@ -1,5 +1,5 @@
 ---
-title: 小白教程
+title: 快速上手
 icon: lightbulb
 star: true
 sticky: 10

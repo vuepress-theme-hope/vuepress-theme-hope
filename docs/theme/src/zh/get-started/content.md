@@ -84,7 +84,7 @@ description: 页面的描述
 
 ::: tip Markdown 语法
 
-如果你尚不了解 Markdown，请查看 [Markdown 教程](../markdown/README.md)。
+如果你尚不了解 Markdown，请查看 [Markdown 教程](../cookbook/markdown/README.md)。
 
 大概十五分钟，你就可以学会如何书写 Markdown，看完之后记得回来！
 
@@ -94,8 +94,8 @@ description: 页面的描述
 
 ::: info Markdown 语法扩展
 
-- VuePress 自身对 Markdown 语法进行了一些扩展，关于这些扩展的语法，详见 [VuePress → Markdown](../vuepress/markdown.md)。
+- VuePress 自身对 Markdown 语法进行了一些扩展，关于这些扩展的语法，详见 [VuePress → Markdown](../cookbook/vuepress/markdown.md)。
 
-- 主题通过 `vuepress-plugin-md-enhance` 额外启用了一些语法扩展，详见 [指南 → Markdown](../../guide/get-started/markdown.md)。
+- 主题通过 `vuepress-plugin-md-enhance` 额外启用了一些语法扩展，详见 [指南 → Markdown](../guide/get-started/markdown.md)。
 
 :::

@@ -6,12 +6,12 @@ heroImage: /logo.svg
 heroText: VuePress Theme Hope
 tagline: A VuePress theme with tons of features✨
 actions:
-  - text: Tutorial 🧭
-    link: /cookbook/tutorial/
+  - text: Get Started 💡
+    link: /get-started/
     type: primary
 
-  - text: Intro 💡
-    link: /guide/get-started/intro.html
+  - text: Guide 🗺️
+    link: /guide/
 
   - text: Config 🛠
     link: /config/
@@ -196,10 +196,6 @@ export default {
 ```
 
 :::
-
-## Step-by-Step Tutorial
-
-- [Tutorial](../cookbook/tutorial/README.md)
 
 ## Telegram Group
 

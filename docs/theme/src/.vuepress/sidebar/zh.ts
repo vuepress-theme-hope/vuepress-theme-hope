@@ -3,6 +3,7 @@ import { sidebar } from "docs-shared";
 export const zhSidebarConfig = sidebar({
   "/zh/": [
     "",
+    "get-started/",
     {
       text: "指南",
       icon: "lightbulb",
@@ -34,7 +35,14 @@ export const zhSidebarConfig = sidebar({
       text: "教程",
       icon: "signs-post",
       prefix: "cookbook/",
-      children: ["tutorial/", "markdown/", "vuepress/", "customize/"],
+      children: ["markdown/", "vuepress/", "customize/"],
+    },
+    "demo/",
+    {
+      text: "常见问题",
+      icon: "circle-question",
+      prefix: "faq/",
+      children: ["", "troubleshooting", "common-error", "vite", "safari"],
     },
     {
       text: "迁移",
@@ -42,16 +50,11 @@ export const zhSidebarConfig = sidebar({
       prefix: "migration/",
       children: ["highlight", "config", "page", "style"],
     },
-    {
-      text: "常见问题",
-      icon: "circle-question",
-      prefix: "faq/",
-      children: ["", "troubleshooting", "common-error", "vite", "safari"],
-    },
-    "demo/",
     "changelog",
     "contribution",
   ],
+
+  "/zh/get-started/": "structure",
 
   "/zh/guide/": "structure",
 

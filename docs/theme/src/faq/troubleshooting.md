@@ -9,7 +9,7 @@ category:
 
 `vuepress-theme-hope` only supports node version of `>=18.16.0`.
 
-If the output of `node -v` does not satisfy the requirement, you should [download and install the LTS version of Node.js](../cookbook/tutorial/env.md#nodejs).
+If the output of `node -v` does not satisfy the requirement, you should [download and install the LTS version of Node.js](../get-started/env.md#nodejs).
 
 Also, you should use a package manager satisfying the following requirements (`pnpm@8` recommended):
 

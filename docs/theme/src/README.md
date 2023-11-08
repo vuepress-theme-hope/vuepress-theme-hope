@@ -11,18 +11,15 @@ bgImageStyle:
 heroText: VuePress Theme Hope
 tagline: A VuePress theme with tons of features✨
 actions:
-  - text: Tutorial 🧭
-    link: ./cookbook/tutorial/
+  - text: Get Started 💡
+    link: ./get-started/
     type: primary
 
-  - text: Intro 💡
-    link: ./guide/get-started/intro.html
+  - text: Guide 🗺️
+    link: ./guide/
 
-  - text: Config 🛠
-    link: ./config/
-
-  - text: Online Demo 🪀
-    link: https://stackblitz.com/fork/vuepress-theme-hope
+  - text: Demos 🪀
+    link: ./demo/
 
 highlights:
   - header: Easy to install
