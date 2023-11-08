@@ -1,4 +1,5 @@
 export { default as stripTags } from "striptags";
+export * from "./checkInstalled.js";
 export * from "./checkVersion.js";
 export * from "./date.js";
 export * from "./dir.js";

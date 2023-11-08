@@ -1,12 +1,13 @@
-import { createRequire } from "node:module";
-
 import { getDirname, path } from "@vuepress/utils";
-import { Logger, ensureEndingSlash } from "vuepress-shared/node";
+import {
+  Logger,
+  checkInstalled,
+  ensureEndingSlash,
+} from "vuepress-shared/node";
 
 import type { AvailableComponent } from "./options/index.js";
 
 const __dirname = getDirname(import.meta.url);
-const require = createRequire(import.meta.url);
 
 export const AVAILABLE_COMPONENTS: AvailableComponent[] = [
   "ArtPlayer",
@@ -41,17 +42,13 @@ export const PLUGIN_NAME = "vuepress-plugin-components";
 
 export const logger = new Logger(PLUGIN_NAME);
 
-export const isInstalled = (pkg: string, hint = false): boolean => {
-  try {
-    require.resolve(pkg);
+export const isInstalled = (pkg: string, hint = true): boolean => {
+  const isInstalled = checkInstalled(pkg, import.meta.url);
 
-    return true;
-  } catch (error) {
-    if (hint)
-      logger.error(
-        `Package ${pkg} is not installed, please install it manually!`,
-      );
+  if (hint && !isInstalled)
+    logger.error(
+      `Package ${pkg} is not installed, please install it manually!`,
+    );
 
-    return false;
-  }
+  return isInstalled;
 };

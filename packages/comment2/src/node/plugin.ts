@@ -6,6 +6,7 @@ import {
   addViteOptimizeDepsInclude,
   addViteSsrExternal,
   addViteSsrNoExternal,
+  checkInstalled,
   checkVersion,
   getLocales,
 } from "vuepress-shared/node";
@@ -14,13 +15,7 @@ import { getProvider } from "./alias.js";
 import { convertOptions } from "./compact.js";
 import { walineLocales } from "./locales.js";
 import type { CommentPluginOptions } from "./options.js";
-import {
-  CLIENT_FOLDER,
-  PLUGIN_NAME,
-  getPackage,
-  isInstalled,
-  logger,
-} from "./utils.js";
+import { CLIENT_FOLDER, PLUGIN_NAME, getPackage, logger } from "./utils.js";
 
 /** Comment Plugin */
 export const commentPlugin =
@@ -35,7 +30,7 @@ export const commentPlugin =
 
     const pkg = getPackage(options.provider);
 
-    if (pkg && !isInstalled(pkg)) {
+    if (pkg && !checkInstalled(pkg, import.meta.url)) {
       logger.error(
         `Package ${pkg} is not installed, please install it manually!`,
       );
