@@ -47,7 +47,8 @@
   "engines": {
     "node": ">=18.16.0",
     "npm": ">=8",
-    "pnpm": ">=7"
+    "pnpm": ">=7",
+    "yarn": ">=2"
   },
   "dependencies": {
     "@vuepress/cli": "2.0.0-beta.67",
