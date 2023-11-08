@@ -4,6 +4,21 @@ All notable changes to this project will be documented in this file. See [Conven
 
 <!-- #region recent-beta -->
 
+## [2.0.0-beta.247](https://github.com/vuepress-theme-hope/vuepress-theme-hope/compare/v2.0.0-beta.246...v2.0.0-beta.247) (2023-11-08)
+
+### Features
+
+- **md-enhance:** add setup for echarts ([#3588](https://github.com/vuepress-theme-hope/vuepress-theme-hope/issues/3588)) ([f55f286](https://github.com/vuepress-theme-hope/vuepress-theme-hope/commit/f55f28673e44a16ef6588da5ca9181e3ab723789))
+- **md-enhance:** improve mermaid download filename ([97a8772](https://github.com/vuepress-theme-hope/vuepress-theme-hope/commit/97a87728c423fb37dcac1da19fc5de04f916d002))
+- **md-enhance:** support darkmode in Chart.js, close [#2090](https://github.com/vuepress-theme-hope/vuepress-theme-hope/issues/2090) ([4df6e34](https://github.com/vuepress-theme-hope/vuepress-theme-hope/commit/4df6e344f7c3651f46b9097e47fbc096a53244dd))
+- **photo-swipe:** support frontmatter ([607bb68](https://github.com/vuepress-theme-hope/vuepress-theme-hope/commit/607bb68d11db39821cceb559869955b3a0e95d7b))
+- **theme:** improve line number ([9f1721e](https://github.com/vuepress-theme-hope/vuepress-theme-hope/commit/9f1721ee211714fe2bf65ce9c39c720530b223aa))
+
+### Bug Fixes
+
+- **shared:** update arrow style ([636d97d](https://github.com/vuepress-theme-hope/vuepress-theme-hope/commit/636d97dd100dde7b437c3c9144a579f546138248))
+- **theme:** fix background in template with darkmode only ([b3db538](https://github.com/vuepress-theme-hope/vuepress-theme-hope/commit/b3db538abf9768744649a265a947a076ca4a15ca))
+
 ## [2.0.0-beta.246](https://github.com/vuepress-theme-hope/vuepress-theme-hope/compare/v2.0.0-beta.245...v2.0.0-beta.246) (2023-11-06)
 
 ### Features
