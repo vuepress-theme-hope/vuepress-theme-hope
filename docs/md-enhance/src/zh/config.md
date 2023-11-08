@@ -818,6 +818,26 @@ Markdown 增强插件的国际化配置。
 
 ## 客户端配置
 
+### defineEchartsConfig
+
+```ts
+export interface EchartsConfig {
+  /**
+   * Echarts 全局选项
+   */
+  option?: EChartsOption;
+
+  /**
+   * Echarts 初始化函数
+   */
+  setup?: () => Promise<void>;
+}
+
+export const defineEchartsConfig: (config: EchartsConfig) => void;
+```
+
+定义需要传递给 Echarts 的全局配置选项和设置函数。
+
 ### defineMermaidConfig
 
 ```ts

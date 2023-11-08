@@ -40,5 +40,7 @@ export default config(
         "./components/KatexPlayground",
       ),
     },
+
+    clientConfigFile: path.resolve(__dirname, "./client.ts"),
   },
 );
