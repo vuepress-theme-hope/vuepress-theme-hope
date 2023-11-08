@@ -9,6 +9,18 @@ tag:
   - 主题配置
 ---
 
+## autoCatalog
+
+控制 `vuepress-plugin-auto-catalog`，提供目录的自动生成。
+
+该插件默认启用。
+
+::: info
+
+有关插件选项，请参阅 <ProjectLink name="auto-catalog" path="/zh/config.html">auto-catalog 插件选项</ProjectLink>。
+
+:::
+
 ## components
 
 控制 `vuepress-plugin-components`，为 Markdown 提供一组组件。

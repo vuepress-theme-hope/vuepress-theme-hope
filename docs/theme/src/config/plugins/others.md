@@ -9,6 +9,18 @@ tag:
   - Theme Config
 ---
 
+## autoCatalog
+
+Controls `vuepress-plugin-auto-catalog`, providing automatic generation of catalog.
+
+This plugin is enabled by default.
+
+::: info
+
+For plugin options, please refer to <ProjectLink name="auto-catalog" path="/config.html">auto catalog plugin options</ProjectLink>.
+
+:::
+
 ## components
 
 Controls `vuepress-plugin-components`, providing a set of components for Markdown.
