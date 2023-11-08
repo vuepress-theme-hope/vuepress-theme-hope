@@ -164,6 +164,14 @@ docs:
     repo: https://github.com/rundeck/docs
     preview: /assets/image/rundeck.jpg
 
+  - name: SubQuery
+    desc: |-
+      SubQuery is a leading web3 data indexer that provides fast, flexible, and decentralised APIs for web3 projects
+    logo: https://static.subquery.network/icon.png
+    url: https://academy.subquery.network
+    repo: https://github.com/subquery/documentation
+    preview: /assets/image/subquery.jpg
+
 blog:
   - name: Mr.Hope's Blog
     desc: Where there is light, there is hope
