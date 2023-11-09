@@ -15,6 +15,7 @@ export const zhSidebarConfig = sidebar({
         "markdown/",
         "feature/",
         "blog/",
+        "customize/",
         "advanced/",
       ],
     },
@@ -35,7 +36,7 @@ export const zhSidebarConfig = sidebar({
       text: "教程",
       icon: "signs-post",
       prefix: "cookbook/",
-      children: ["markdown/", "vuepress/", "customize/"],
+      children: ["markdown/", "vuepress/"],
     },
     "demo/",
     {

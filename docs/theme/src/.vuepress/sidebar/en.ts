@@ -15,6 +15,7 @@ export const enSidebarConfig = sidebar({
         "markdown/",
         "feature/",
         "blog/",
+        "customize/",
         "advanced/",
       ],
     },
@@ -35,7 +36,7 @@ export const enSidebarConfig = sidebar({
       text: "Cookbook",
       icon: "signs-post",
       prefix: "cookbook/",
-      children: ["markdown/", "vuepress/", "customize/"],
+      children: ["markdown/", "vuepress/"],
     },
 
     "demo/",

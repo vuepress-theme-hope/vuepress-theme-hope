@@ -1,10 +1,11 @@
 ---
 title: Theme Presets
 icon: palette
+order: 6
 category:
-  - Advanced
+  - Customize
 tag:
-  - Advanced
+  - Customize
   - Preset
 ---
 

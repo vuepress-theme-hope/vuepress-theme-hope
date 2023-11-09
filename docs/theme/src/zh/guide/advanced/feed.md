@@ -1,6 +1,7 @@
 ---
 title: Feed 支持
 icon: rss
+order: 4
 category:
   - 高级
 tag:

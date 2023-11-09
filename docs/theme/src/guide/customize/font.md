@@ -1,6 +1,7 @@
 ---
 title: Customizing Fonts
 icon: font
+order: 2
 category:
   - Cookbook
   - Customize

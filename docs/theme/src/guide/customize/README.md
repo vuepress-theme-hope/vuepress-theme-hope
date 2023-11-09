@@ -2,22 +2,14 @@
 title: Customize
 icon: gear
 dir:
-  order: 4
+  order: 7
 category:
-  - Cookbook
   - Customize
 tag:
   - Customize
-article: false
 ---
 
 This section shows you the relevant codes involved in common customization.
-
-## Adding Component
-
-Each markdown file will be converted to a Vue component in VuePress, so you and import and use Vue components easily.
-
-- [Adding Components](./component.md)
 
 ## How to Customize Styles
 
@@ -33,12 +25,26 @@ You can create three files under `.vuepress/styles` folder in your own document 
 
 For the complete config list supported by the above files, see [Config → Style](../../config/style.md).
 
-## Details
+## Basic Tutorials
 
-- [Customizing layouts](./layout.md)
+- [Customizing colors](color.md)
 
-- [Customizing colors](./color.md)
+- [Customizing fonts](font.md)
 
-- [Customizing fonts](./font.md)
+- [Customizing effects](effect.md)
 
-- [Customizing effects](./effect.md)
+- [Adding Component](component.md)
+
+- [Customize Layouts](layout.md)
+
+- [Using Presets](presets.md)
+
+- [Adding External Scripts and Styles](external.md)
+
+## Advanced Usage
+
+- [Client Config File](../advanced/client.md)
+
+- [Replacing Component](../advanced/replace.md)
+
+- [Theme Extending](../advanced/extend.md)

@@ -2,7 +2,8 @@
 title: Markdown 介绍
 icon: fab fa-markdown
 dir:
-  order: 2
+  collapsible: false
+  order: 1
 category:
   - 教程知识
   - Markdown

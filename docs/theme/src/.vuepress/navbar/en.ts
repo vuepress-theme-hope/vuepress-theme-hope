@@ -8,17 +8,17 @@ export const enNavbarConfig = navbar([
   "/guide/",
   "/config/",
   "/faq/",
-  {
-    text: "Cookbook",
-    icon: "signs-post",
-    prefix: "/cookbook/",
-    children: ["markdown/", "vuepress/", "customize/"],
-  },
   "/demo/",
   {
-    text: "Project",
+    text: "Others",
     icon: "circle-info",
     children: [
+      {
+        text: "Cookbook",
+        icon: "signs-post",
+        prefix: "/cookbook/",
+        children: ["markdown/", "vuepress/"],
+      },
       "/changelog",
       "/migration/",
       "/contribution",

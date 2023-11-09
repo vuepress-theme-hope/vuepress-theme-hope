@@ -20,7 +20,7 @@ const articles = useArticles();
   <BlogWrapper>
     <div class="vp-page vp-blog">
       <BlogHero>
-        <template #heroInfo="{ tagline, isFullScreen, ...heroInfo }">
+        <template #heroInfo="heroInfo">
           <HitokotoBlogHero v-bind="heroInfo" />
         </template>
         <template #heroBg>

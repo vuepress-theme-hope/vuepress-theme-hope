@@ -1,6 +1,7 @@
 ---
 title: PWA
 icon: mobile-screen
+order: 3
 category:
   - Advanced
 tag:

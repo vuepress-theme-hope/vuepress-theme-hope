@@ -1,6 +1,7 @@
 ---
 title: Feed Support
 icon: rss
+order: 4
 category:
   - Advanced
 tag:

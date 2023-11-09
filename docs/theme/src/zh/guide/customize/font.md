@@ -1,6 +1,7 @@
 ---
 title: 修改字体
 icon: font
+order: 2
 category:
   - 教程知识
   - 自定义

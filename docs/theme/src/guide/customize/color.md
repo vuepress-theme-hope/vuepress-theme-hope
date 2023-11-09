@@ -1,6 +1,7 @@
 ---
 title: Customize color
 icon: palette
+order: 1
 category:
   - Cookbook
   - Customize

@@ -1,6 +1,7 @@
 ---
 title: 修改颜色
 icon: palette
+order: 1
 category:
   - 教程知识
   - 自定义

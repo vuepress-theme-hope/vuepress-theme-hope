@@ -14,20 +14,4 @@ dir:
 
 :::
 
-## 目录
-
-- [页面信息](page-info.md)
-
-- [评论功能](comment.md)
-
-- [一键复制](copy-code.md)
-
-- [图片预览](photo-swipe.md)
-
-- [页面元信息](meta.md)
-
-- [搜索功能](search.md)
-
-- [版权信息](copyright.md)
-
-- [文章加密](encrypt.md)
+<AutoCatalog />

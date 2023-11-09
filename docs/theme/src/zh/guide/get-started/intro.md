@@ -98,8 +98,6 @@ VuePress 默认主题只是一个提供基础文档布局的主题。 例如：�
 
 - [全新主页外观，支持特性与亮点](../layout/home.md)
 
-- [自动生成目录页](../layout/catalog.md)
-
 - 更多:
 
   增加 [路径导航](../layout/breadcrumb.md), [页面标题](../layout/page#标题列表) 与 [页脚](../layout/footer.md) 支持。
@@ -121,6 +119,8 @@ VuePress 默认主题只是一个提供基础文档布局的主题。 例如：�
 ### 功能
 
 - [图片预览](../feature/photo-swipe.md) 支持缩放、拖动、幻灯片浏览、分享和下载
+
+- [自动生成目录页](../feature/catalog.md)
 
 - 搜索功能
 

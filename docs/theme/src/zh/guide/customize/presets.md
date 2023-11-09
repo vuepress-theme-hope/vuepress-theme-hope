@@ -2,9 +2,9 @@
 title: 主题预设
 icon: palette
 category:
-  - 高级
+  - 自定义
 tag:
-  - 高级
+  - 自定义
   - 预设
 ---
 

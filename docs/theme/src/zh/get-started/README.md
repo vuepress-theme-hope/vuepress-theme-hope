@@ -1,6 +1,6 @@
 ---
 title: 快速上手
-icon: lightbulb
+icon: signs-post
 star: true
 sticky: 10
 dir:

@@ -8,18 +8,18 @@ export const zhNavbarConfig = navbar([
   "/zh/guide/",
   "/zh/config/",
   "/zh/faq/",
-  {
-    text: "教程",
-    icon: "signs-post",
-    prefix: "/zh/cookbook/",
-    children: ["markdown/", "vuepress/", "customize/"],
-  },
   "/zh/demo/",
   {
     text: "项目",
     icon: "circle-info",
     prefix: "/zh/",
     children: [
+      {
+        text: "教程",
+        icon: "signs-post",
+        prefix: "cookbook/",
+        children: ["markdown/", "vuepress/"],
+      },
       "changelog",
       "migration/",
       "contribution",

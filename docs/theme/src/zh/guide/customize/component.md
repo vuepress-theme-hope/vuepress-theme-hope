@@ -1,7 +1,7 @@
 ---
 title: 使用组件
 icon: puzzle-piece
-order: 1
+order: 4
 category:
   - 教程知识
   - 自定义
@@ -40,7 +40,7 @@ export default defineClientConfig({
 
 ## 在 Markdown 中使用 Vue 语法与组件
 
-你可以直接在 Markdown 中使用 Vue 语法。关于具体的使用方式，详见 [VuePress → Markdown](../vuepress/markdown.md#在-markdown-中使用-vue)
+你可以直接在 Markdown 中使用 Vue 语法。关于具体的使用方式，详见 [VuePress → Markdown](../../cookbook/vuepress/markdown.md#在-markdown-中使用-vue)
 
 如果你需要在 Markdown 中导入 Vue 组件，请注意你不能使用相对路径进行导入，也不能书写多个 `<script>` 块。
 

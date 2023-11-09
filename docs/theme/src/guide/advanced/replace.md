@@ -1,5 +1,5 @@
 ---
-title: Replacing Theme Components
+title: Replace Components
 icon: boxes-packing
 order: -2
 category:
@@ -13,7 +13,7 @@ When setting `{ custom: true }` in [Behavior options](../../config/theme/behavio
 
 <!-- more -->
 
-## Replace Components
+## How to Replace via Alias
 
 You need to replace the component alias used in the theme with `alias` option in your own VuePress config file.
 

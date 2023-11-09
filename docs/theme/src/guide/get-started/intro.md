@@ -98,8 +98,6 @@ In short, anyone can enjoy the convenience of Markdown's enhanced syntax.
 
 - [Brand-new Homepage with features and highlights](../layout/home.md)
 
-- [Catalog Page auto-generation](../layout/catalog.md)
-
 - More:
 
   Adds [breadcrumb](../layout/breadcrumb.md), [toc](../layout/page.md#header-list) and [footer](../layout/footer.md) support.
@@ -121,6 +119,8 @@ In short, anyone can enjoy the convenience of Markdown's enhanced syntax.
 ### New Features
 
 - [Picture Preview](../feature/photo-swipe.md) which supports zooming, dragging, slides browsing, sharing and downloading
+
+- [Catalog Page auto-generation](../feature/catalog.md)
 
 - Search feature
 

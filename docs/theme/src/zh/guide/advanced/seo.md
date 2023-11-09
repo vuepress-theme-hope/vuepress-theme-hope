@@ -1,6 +1,7 @@
 ---
 title: SEO
 icon: dumbbell
+order: 1
 category:
   - 高级
 tag:
