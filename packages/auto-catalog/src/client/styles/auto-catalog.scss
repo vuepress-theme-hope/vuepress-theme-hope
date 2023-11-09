@@ -15,6 +15,10 @@
       padding-inline-start: 0;
     }
 
+    .vp-catalog {
+      list-style-type: none;
+    }
+
     .vp-catalog-title::before {
       content: "§" counter(catalog-item, upper-roman) " ";
     }
@@ -43,10 +47,10 @@
 
   &.deep {
     padding-inline-start: 0;
-  }
 
-  .vp-catalog {
-    list-style-type: none;
+    .vp-catalog {
+      list-style-type: none;
+    }
   }
 
   .font-icon {
