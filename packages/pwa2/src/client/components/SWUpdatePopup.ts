@@ -23,7 +23,7 @@ export default defineComponent({
     default?: (props: {
       enabled: boolean;
       reload: () => void;
-    }) => VNode[] | VNode;
+    }) => VNode[] | VNode | null;
   }>,
 
   setup(_props, { slots }) {

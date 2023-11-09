@@ -12,9 +12,9 @@ export default defineComponent({
   name: "SideBar",
 
   slots: Object as SlotsType<{
-    default?: () => VNode | VNode[];
-    top?: () => VNode | VNode[];
-    bottom?: () => VNode | VNode[];
+    default?: () => VNode[] | VNode | null;
+    top?: () => VNode[] | VNode | null;
+    bottom?: () => VNode[] | VNode | null;
   }>,
 
   setup(_props, { slots }) {

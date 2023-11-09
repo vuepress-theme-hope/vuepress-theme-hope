@@ -38,9 +38,9 @@ export default defineComponent({
   emits: ["focusout"],
 
   slots: Object as SlotsType<{
-    before?: () => VNode[] | VNode;
-    after?: () => VNode[] | VNode;
-    default?: () => VNode[] | VNode;
+    before?: () => VNode[] | VNode | null;
+    after?: () => VNode[] | VNode | null;
+    default?: () => VNode[] | VNode | null;
   }>,
 
   setup(props, { attrs, emit, slots }) {

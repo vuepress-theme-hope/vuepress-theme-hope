@@ -38,9 +38,9 @@ export default defineComponent({
   name: "HeroInfo",
 
   slots: Object as SlotsType<{
-    heroBg?: (props: BackgroundInfo) => VNode | VNode[];
-    heroImage?: (props: HeroImage) => VNode | VNode[];
-    heroInfo?: (props: HeroInfo) => VNode | VNode[];
+    heroBg?: (props: BackgroundInfo) => VNode[] | VNode | null;
+    heroImage?: (props: HeroImage) => VNode[] | VNode | null;
+    heroInfo?: (props: HeroInfo) => VNode[] | VNode | null;
   }>,
 
   setup(_props, { slots }) {

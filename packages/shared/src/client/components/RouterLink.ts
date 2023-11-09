@@ -49,7 +49,7 @@ export const RouterLink = defineComponent({
   },
 
   slots: Object as SlotsType<{
-    default: (linkOptions: LinkOptions) => VNode | VNode[];
+    default: (linkOptions: LinkOptions) => VNode | VNode[] | undefined;
   }>,
 
   setup(props, { slots }) {

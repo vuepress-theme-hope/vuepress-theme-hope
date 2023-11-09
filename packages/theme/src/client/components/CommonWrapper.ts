@@ -68,22 +68,22 @@ export default defineComponent({
   },
 
   slots: Object as SlotsType<{
-    default: () => VNode | VNode[];
+    default: () => VNode[] | VNode | null;
 
     // navbar
-    navbarStartBefore?: () => VNode | VNode[];
-    navbarStartAfter?: () => VNode | VNode[];
-    navbarCenterBefore?: () => VNode | VNode[];
-    navbarCenterAfter?: () => VNode | VNode[];
-    navbarEndBefore?: () => VNode | VNode[];
-    navbarEndAfter?: () => VNode | VNode[];
-    navScreenTop?: () => VNode | VNode[];
-    navScreenBottom?: () => VNode | VNode[];
+    navbarStartBefore?: () => VNode[] | VNode | null;
+    navbarStartAfter?: () => VNode[] | VNode | null;
+    navbarCenterBefore?: () => VNode[] | VNode | null;
+    navbarCenterAfter?: () => VNode[] | VNode | null;
+    navbarEndBefore?: () => VNode[] | VNode | null;
+    navbarEndAfter?: () => VNode[] | VNode | null;
+    navScreenTop?: () => VNode[] | VNode | null;
+    navScreenBottom?: () => VNode[] | VNode | null;
 
     // sidebar
-    sidebar?: () => VNode | VNode[];
-    sidebarTop?: () => VNode | VNode[];
-    sidebarBottom?: () => VNode | VNode[];
+    sidebar?: () => VNode[] | VNode | null;
+    sidebarTop?: () => VNode[] | VNode | null;
+    sidebarBottom?: () => VNode[] | VNode | null;
   }>,
 
   setup(props, { slots }) {
@@ -289,7 +289,7 @@ export default defineComponent({
                 {
                   ...(slots.sidebar
                     ? {
-                        default: (): VNode | VNode[] => slots.sidebar!(),
+                        default: (): VNode | VNode[] | null => slots.sidebar!(),
                       }
                     : {}),
                   top: () => slots.sidebarTop?.(),

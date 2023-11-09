@@ -13,7 +13,7 @@ export default defineComponent({
   name: "BlogWrapper",
 
   slots: Object as SlotsType<{
-    default: () => VNode | VNode[];
+    default: () => VNode[] | VNode | null;
   }>,
 
   setup(_props, { slots }) {

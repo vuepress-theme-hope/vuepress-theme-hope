@@ -34,17 +34,17 @@ export default defineComponent({
   emits: ["toggleSidebar"],
 
   slots: Object as SlotsType<{
-    default: () => VNode | VNode[];
+    default: () => VNode[] | VNode | null;
 
     // navbar
-    startBefore?: () => VNode | VNode[];
-    startAfter?: () => VNode | VNode[];
-    centerBefore?: () => VNode | VNode[];
-    centerAfter?: () => VNode | VNode[];
-    endBefore?: () => VNode | VNode[];
-    endAfter?: () => VNode | VNode[];
-    screenTop?: () => VNode | VNode[];
-    screenBottom?: () => VNode | VNode[];
+    startBefore?: () => VNode[] | VNode | null;
+    startAfter?: () => VNode[] | VNode | null;
+    centerBefore?: () => VNode[] | VNode | null;
+    centerAfter?: () => VNode[] | VNode | null;
+    endBefore?: () => VNode[] | VNode | null;
+    endAfter?: () => VNode[] | VNode | null;
+    screenTop?: () => VNode[] | VNode | null;
+    screenBottom?: () => VNode[] | VNode | null;
   }>,
 
   setup(_props, { emit, slots }) {

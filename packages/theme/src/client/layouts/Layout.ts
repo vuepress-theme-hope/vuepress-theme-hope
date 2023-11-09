@@ -1,5 +1,5 @@
 import { usePageData, usePageFrontmatter } from "@vuepress/client";
-import type { VNode } from "vue";
+import type { SlotsType, VNode } from "vue";
 import { computed, defineComponent, h, resolveComponent } from "vue";
 
 import CommonWrapper from "@theme-hope/components/CommonWrapper";
@@ -21,7 +21,20 @@ export default defineComponent({
   // eslint-disable-next-line vue/multi-word-component-names
   name: "Layout",
 
-  setup() {
+  slots: Object as SlotsType<{
+    default?: () => VNode | VNode[] | null;
+
+    top?: () => VNode[] | VNode | null;
+    bottom?: () => VNode[] | VNode | null;
+
+    contentBefore?: () => VNode[] | VNode | null;
+    contentAfter?: () => VNode[] | VNode | null;
+
+    tocBefore?: () => VNode[] | VNode | null;
+    tocAfter?: () => VNode[] | VNode | null;
+  }>,
+
+  setup(_props, { slots }) {
     const themeData = useThemeData();
     const themeLocale = useThemeLocaleData();
     const page = usePageData();
@@ -43,9 +56,23 @@ export default defineComponent({
         {},
         {
           default: () =>
-            frontmatter.value.home
+            slots.default?.() ||
+            (frontmatter.value.home
               ? h(HomePage)
-              : h(FadeSlideY, () => h(NormalPage, { key: page.value.path })),
+              : h(FadeSlideY, () =>
+                  h(
+                    NormalPage,
+                    { key: page.value.path },
+                    {
+                      top: () => slots.top?.(),
+                      bottom: () => slots.bottom?.(),
+                      contentBefore: () => slots.contentBefore?.(),
+                      contentAfter: () => slots.contentAfter?.(),
+                      tocBefore: () => slots.tocBefore?.(),
+                      tocAfter: () => slots.tocAfter?.(),
+                    },
+                  ),
+                )),
           ...(sidebarDisplay.value !== "none"
             ? { navScreenBottom: () => h(resolveComponent("BloggerInfo")) }
             : {}),
