@@ -81,7 +81,7 @@ export default defineComponent({
     navScreenBottom?: () => VNode[] | VNode | null;
 
     // sidebar
-    sidebar?: () => VNode[] | VNode | null;
+    sidebar?: () => VNode[] | VNode;
     sidebarTop?: () => VNode[] | VNode | null;
     sidebarBottom?: () => VNode[] | VNode | null;
   }>,
@@ -287,11 +287,7 @@ export default defineComponent({
                 Sidebar,
                 {},
                 {
-                  ...(slots.sidebar
-                    ? {
-                        default: (): VNode | VNode[] | null => slots.sidebar!(),
-                      }
-                    : {}),
+                  ...(slots.sidebar ? { default: () => slots.sidebar!() } : {}),
                   top: () => slots.sidebarTop?.(),
                   bottom: () => slots.sidebarBottom?.(),
                 },

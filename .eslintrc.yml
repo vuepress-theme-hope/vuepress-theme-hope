@@ -98,6 +98,11 @@ rules:
       leadingUnderscore: allow
       trailingUnderscore: allow
 
+    - selector: import
+      format:
+        - PascalCase
+        - camelCase
+
     - selector: typeLike
       format:
         - PascalCase

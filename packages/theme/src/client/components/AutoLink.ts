@@ -40,7 +40,7 @@ export default defineComponent({
   slots: Object as SlotsType<{
     before?: () => VNode[] | VNode | null;
     after?: () => VNode[] | VNode | null;
-    default?: () => VNode[] | VNode | null;
+    default?: () => VNode[] | VNode;
   }>,
 
   setup(props, { attrs, emit, slots }) {
