@@ -1,6 +1,7 @@
 import type { Page } from "@vuepress/core";
 
 import type { FeedChannelOption, FeedGetter } from "./feed.js";
+import type { FeedPluginFrontmatter } from "./frontmatter.js";
 
 export interface BaseFeedOptions {
   /**
@@ -66,20 +67,18 @@ export interface BaseFeedOptions {
    * Feed 项目过滤器
    */
   filter?: <
-    ExtraPageData extends Record<string | number | symbol, unknown> = Record<
-      never,
-      never
-    >,
-    ExtraPageFrontmatter extends Record<
-      string | number | symbol,
+    ExtraPageData extends Record<string, unknown> = Record<never, never>,
+    ExtraPageFrontmatter extends Record<string, unknown> = Record<
+      string,
       unknown
-    > = Record<string, unknown>,
-    ExtraPageFields extends Record<string | number | symbol, unknown> = Record<
-      never,
-      never
     >,
+    ExtraPageFields extends Record<string, unknown> = Record<never, never>,
   >(
-    page: Page<ExtraPageData, ExtraPageFrontmatter, ExtraPageFields>,
+    page: Page<
+      ExtraPageData,
+      ExtraPageFrontmatter & FeedPluginFrontmatter,
+      ExtraPageFields
+    >,
   ) => boolean;
 
   /**
@@ -88,21 +87,23 @@ export interface BaseFeedOptions {
    * Feed 项目排序器
    */
   sorter?: <
-    ExtraPageData extends Record<string | number | symbol, unknown> = Record<
-      never,
-      never
-    >,
-    ExtraPageFrontmatter extends Record<
-      string | number | symbol,
+    ExtraPageData extends Record<string, unknown> = Record<never, never>,
+    ExtraPageFrontmatter extends Record<string, unknown> = Record<
+      string,
       unknown
-    > = Record<string, unknown>,
-    ExtraPageFields extends Record<string | number | symbol, unknown> = Record<
-      never,
-      never
     >,
+    ExtraPageFields extends Record<string, unknown> = Record<never, never>,
   >(
-    pageA: Page<ExtraPageData, ExtraPageFrontmatter, ExtraPageFields>,
-    pageB: Page<ExtraPageData, ExtraPageFrontmatter, ExtraPageFields>,
+    pageA: Page<
+      ExtraPageData,
+      ExtraPageFrontmatter & FeedPluginFrontmatter,
+      ExtraPageFields
+    >,
+    pageB: Page<
+      ExtraPageData,
+      ExtraPageFrontmatter & FeedPluginFrontmatter,
+      ExtraPageFields
+    >,
   ) => number;
 
   /**

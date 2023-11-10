@@ -29,18 +29,12 @@ export interface BlogOptions extends PageExcerptOptions {
    * 获取文章信息的函数。
    */
   getInfo?: <
-    ExtraPageData extends Record<string | number | symbol, unknown> = Record<
-      never,
-      never
-    >,
-    ExtraPageFrontmatter extends Record<
-      string | number | symbol,
+    ExtraPageData extends Record<string, unknown> = Record<never, never>,
+    ExtraPageFrontmatter extends Record<string, unknown> = Record<
+      string,
       unknown
-    > = Record<string, unknown>,
-    ExtraPageFields extends Record<string | number | symbol, unknown> = Record<
-      never,
-      never
     >,
+    ExtraPageFields extends Record<string, unknown> = Record<never, never>,
   >(
     page: Page<ExtraPageData, ExtraPageFrontmatter, ExtraPageFields>,
   ) => Record<string, unknown>;
@@ -53,18 +47,12 @@ export interface BlogOptions extends PageExcerptOptions {
    * @default (page) => Boolean(page.filePathRelative) && !page.frontmatter.home
    */
   filter?: <
-    ExtraPageData extends Record<string | number | symbol, unknown> = Record<
-      never,
-      never
-    >,
-    ExtraPageFrontmatter extends Record<
-      string | number | symbol,
+    ExtraPageData extends Record<string, unknown> = Record<never, never>,
+    ExtraPageFrontmatter extends Record<string, unknown> = Record<
+      string,
       unknown
-    > = Record<string, unknown>,
-    ExtraPageFields extends Record<string | number | symbol, unknown> = Record<
-      never,
-      never
     >,
+    ExtraPageFields extends Record<string, unknown> = Record<never, never>,
   >(
     page: Page<ExtraPageData, ExtraPageFrontmatter, ExtraPageFields>,
   ) => boolean;
@@ -118,18 +106,12 @@ export interface BlogOptions extends PageExcerptOptions {
    * @default options.filter
    */
   excerptFilter?: <
-    ExtraPageData extends Record<string | number | symbol, unknown> = Record<
-      never,
-      never
-    >,
-    ExtraPageFrontmatter extends Record<
-      string | number | symbol,
+    ExtraPageData extends Record<string, unknown> = Record<never, never>,
+    ExtraPageFrontmatter extends Record<string, unknown> = Record<
+      string,
       unknown
-    > = Record<string, unknown>,
-    ExtraPageFields extends Record<string | number | symbol, unknown> = Record<
-      never,
-      never
     >,
+    ExtraPageFields extends Record<string, unknown> = Record<never, never>,
   >(
     page: Page<ExtraPageData, ExtraPageFrontmatter, ExtraPageFields>,
   ) => boolean;

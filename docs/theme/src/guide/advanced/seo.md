@@ -105,18 +105,12 @@ You can use options `plugins.seo.ogp` in theme options. To pass in a function to
 
 ```ts
 function ogp<
-  ExtraPageData extends Record<string | number | symbol, unknown> = Record<
-    never,
-    never
-  >,
-  ExtraPageFrontmatter extends Record<
-    string | number | symbol,
+  ExtraPageData extends Record<string, unknown> = Record<never, never>,
+  ExtraPageFrontmatter extends Record<string, unknown> = Record<
+    string,
     unknown
-  > = Record<string, unknown>,
-  ExtraPageFields extends Record<string | number | symbol, unknown> = Record<
-    never,
-    never
   >,
+  ExtraPageFields extends Record<string, unknown> = Record<never, never>,
 >(
   /** OGP Object inferred by plugin */
   ogp: SeoContent,
@@ -146,18 +140,12 @@ Like OGP, you can use `plugins.seo.jsonLd` options in theme options to pass in a
 
 ```ts
 function jsonLd<
-  ExtraPageData extends Record<string | number | symbol, unknown> = Record<
-    never,
-    never
-  >,
-  ExtraPageFrontmatter extends Record<
-    string | number | symbol,
+  ExtraPageData extends Record<string, unknown> = Record<never, never>,
+  ExtraPageFrontmatter extends Record<string, unknown> = Record<
+    string,
     unknown
-  > = Record<string, unknown>,
-  ExtraPageFields extends Record<string | number | symbol, unknown> = Record<
-    never,
-    never
   >,
+  ExtraPageFields extends Record<string, unknown> = Record<never, never>,
 >(
   /** JSON-LD Object inferred by plugin */
   jsonLD: ArticleJSONLD | null,
@@ -197,23 +185,17 @@ Sometimes you may need to fit other protocols or provide the corresponding SEO t
 
 ```ts
 function customHead<
-  ExtraPageData extends Record<string | number | symbol, unknown> = Record<
-    never,
-    never
-  >,
-  ExtraPageFrontmatter extends Record<
-    string | number | symbol,
+  ExtraPageData extends Record<string, unknown> = Record<never, never>,
+  ExtraPageFrontmatter extends Record<string, unknown> = Record<
+    string,
     unknown
-  > = Record<string, unknown>,
-  ExtraPageFields extends Record<string | number | symbol, unknown> = Record<
-    never,
-    never
   >,
+  ExtraPageFields extends Record<string, unknown> = Record<never, never>,
 >(
   /** Head config */
   head: HeadConfig[],
   /** Page Object */
-  page: Page<ExtraPageData, ExtraPageFrontmatter, ExtraPageFields>,
+  page: ExtendPage<ExtraPageData, ExtraPageFrontmatter, ExtraPageFields>,
   /** VuePress App */
   app: App,
 ): void;

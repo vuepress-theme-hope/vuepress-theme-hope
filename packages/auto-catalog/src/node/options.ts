@@ -81,18 +81,12 @@ export interface AutoCatalogOptions extends DeprecatedAutoCatalogOptions {
    * 页面标题获取器
    */
   titleGetter?: <
-    ExtraPageData extends Record<string | number | symbol, unknown> = Record<
-      never,
-      never
-    >,
-    ExtraPageFrontmatter extends Record<
-      string | number | symbol,
+    ExtraPageData extends Record<string, unknown> = Record<never, never>,
+    ExtraPageFrontmatter extends Record<string, unknown> = Record<
+      string,
       unknown
-    > = Record<string, unknown>,
-    ExtraPageFields extends Record<string | number | symbol, unknown> = Record<
-      never,
-      never
     >,
+    ExtraPageFields extends Record<string, unknown> = Record<never, never>,
   >(
     page: Page<ExtraPageData, ExtraPageFrontmatter, ExtraPageFields>,
   ) => string;
@@ -108,18 +102,12 @@ export interface AutoCatalogOptions extends DeprecatedAutoCatalogOptions {
    * 页面图标获取器
    */
   iconGetter?: <
-    ExtraPageData extends Record<string | number | symbol, unknown> = Record<
-      never,
-      never
-    >,
-    ExtraPageFrontmatter extends Record<
-      string | number | symbol,
+    ExtraPageData extends Record<string, unknown> = Record<never, never>,
+    ExtraPageFrontmatter extends Record<string, unknown> = Record<
+      string,
       unknown
-    > = Record<string, unknown>,
-    ExtraPageFields extends Record<string | number | symbol, unknown> = Record<
-      never,
-      never
     >,
+    ExtraPageFields extends Record<string, unknown> = Record<never, never>,
   >(
     page: Page<ExtraPageData, ExtraPageFrontmatter, ExtraPageFields>,
   ) => string | null | undefined;
@@ -135,18 +123,12 @@ export interface AutoCatalogOptions extends DeprecatedAutoCatalogOptions {
    * 页面顺序获取器
    */
   orderGetter?: <
-    ExtraPageData extends Record<string | number | symbol, unknown> = Record<
-      never,
-      never
-    >,
-    ExtraPageFrontmatter extends Record<
-      string | number | symbol,
+    ExtraPageData extends Record<string, unknown> = Record<never, never>,
+    ExtraPageFrontmatter extends Record<string, unknown> = Record<
+      string,
       unknown
-    > = Record<string, unknown>,
-    ExtraPageFields extends Record<string | number | symbol, unknown> = Record<
-      never,
-      never
     >,
+    ExtraPageFields extends Record<string, unknown> = Record<never, never>,
   >(
     page: Page<ExtraPageData, ExtraPageFrontmatter, ExtraPageFields>,
   ) => number | null | undefined;
@@ -166,18 +148,12 @@ export interface AutoCatalogOptions extends DeprecatedAutoCatalogOptions {
    * @description 返回一个布尔值，用于指示页面是否应该包含在目录中
    */
   shouldIndex?: <
-    ExtraPageData extends Record<string | number | symbol, unknown> = Record<
-      never,
-      never
-    >,
-    ExtraPageFrontmatter extends Record<
-      string | number | symbol,
+    ExtraPageData extends Record<string, unknown> = Record<never, never>,
+    ExtraPageFrontmatter extends Record<string, unknown> = Record<
+      string,
       unknown
-    > = Record<string, unknown>,
-    ExtraPageFields extends Record<string | number | symbol, unknown> = Record<
-      never,
-      never
     >,
+    ExtraPageFields extends Record<string, unknown> = Record<never, never>,
   >(
     page: Page<ExtraPageData, ExtraPageFrontmatter, ExtraPageFields>,
   ) => boolean;
