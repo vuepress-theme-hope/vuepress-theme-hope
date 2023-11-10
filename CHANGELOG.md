@@ -4,6 +4,26 @@ All notable changes to this project will be documented in this file. See [Conven
 
 <!-- #region recent-beta -->
 
+## [2.0.0-beta.248](https://github.com/vuepress-theme-hope/vuepress-theme-hope/compare/v2.0.0-beta.247...v2.0.0-beta.248) (2023-11-10)
+
+### ⚠ BREAKING CHANGES
+
+- **md-enhance:** card option is no longer supported
+
+### Features
+
+- add append-date plugin ([6254da3](https://github.com/vuepress-theme-hope/vuepress-theme-hope/commit/6254da339ac509279528de6112807dd7b8a84e3d))
+- **auto-catalog:** improve style ([1353f7e](https://github.com/vuepress-theme-hope/vuepress-theme-hope/commit/1353f7e6c7f86d9ded2ae4c176f143a833ef47ce))
+- **components:** add VPBanner and VPCard ([0739cf6](https://github.com/vuepress-theme-hope/vuepress-theme-hope/commit/0739cf69dc64282128c0dfb826b0f4f4358a7b3d))
+- **components:** improve SiteInfo outlook ([4579065](https://github.com/vuepress-theme-hope/vuepress-theme-hope/commit/4579065bb7b776c6b028a79ac5ec76023c7bb060))
+- **md-enhance:** remove card and add component option ([2dbddb9](https://github.com/vuepress-theme-hope/vuepress-theme-hope/commit/2dbddb906566a62a77feda0a704345dbd9d8b456))
+- **theme:** improve plugin check ([d4b0b94](https://github.com/vuepress-theme-hope/vuepress-theme-hope/commit/d4b0b94cff633d977b6751b2f0e27b64a52fbb72))
+- **theme:** update slot ([221ad22](https://github.com/vuepress-theme-hope/vuepress-theme-hope/commit/221ad225b63f68f70a2806d885a407f55101a9d6))
+
+### Bug Fixes
+
+- **auto-catalog:** fix style ([d02d423](https://github.com/vuepress-theme-hope/vuepress-theme-hope/commit/d02d423faa232037a7be1f302b258481ba44e95a))
+
 ## [2.0.0-beta.247](https://github.com/vuepress-theme-hope/vuepress-theme-hope/compare/v2.0.0-beta.246...v2.0.0-beta.247) (2023-11-08)
 
 ### Features
