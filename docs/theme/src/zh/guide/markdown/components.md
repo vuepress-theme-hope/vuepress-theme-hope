@@ -119,102 +119,102 @@ export default {
 
 :::
 
-有关可用属性，请参阅 <ProjectLink name="components" path="/zh/guide/badge.html">Badge</ProjectLink> 页面。
+有关可用属性，请参阅 <ProjectLink name="components" path="/zh/guide/utilities/badge.html">Badge</ProjectLink> 页面。
 
 ## BiliBili
 
 在 Markdown 文件中嵌入 B 站视频。
 
-<!-- @include: @components/zh/guide/bilibili.md#demo -->
+<!-- @include: @components/zh/guide/media/bili-bili.md#demo -->
 
-有关可用属性，请参阅 <ProjectLink name="components" path="/zh/guide/bilibili.html">BiliBili</ProjectLink> 页面。
+有关可用属性，请参阅 <ProjectLink name="components" path="/zh/guide/media/bili-bili.html">BiliBili</ProjectLink> 页面。
 
 ## CodePen
 
 一个允许你嵌入 CodePen 演示的组件。
 
-<!-- @include: @components/zh/guide/codepen.md#demo -->
+<!-- @include: @components/zh/guide/code/code-pen.md#demo -->
 
-有关可用属性，请参阅 <ProjectLink name="components" path="/zh/guide/codepen.html">CodePen</ProjectLink> 页面。
+有关可用属性，请参阅 <ProjectLink name="components" path="/zh/guide/code/code-pen.html">CodePen</ProjectLink> 页面。
 
 ## FontIcon
 
 允许你显示字体图标的组件。
 
-<!-- @include: @components/zh/guide/fonticon.md#demo -->
+<!-- @include: @components/zh/guide/utilities/font-icon.md#demo -->
 
-有关可用属性，请参阅 <ProjectLink name="components" path="/zh/guide/fonticon.html">FontIcon</ProjectLink> 页面。
+有关可用属性，请参阅 <ProjectLink name="components" path="/zh/guide/utilities/font-icon.html">FontIcon</ProjectLink> 页面。
 
 ## PDF
 
 PDF 浏览器组件。
 
-<!-- @include: @components/zh/guide/pdf.md#demo -->
+<!-- @include: @components/zh/guide/media/p-d-f.md#demo -->
 
-有关可用属性，请参阅 <ProjectLink name="components" path="/zh/guide/pdf.html">PDF</ProjectLink> 页面。
+有关可用属性，请参阅 <ProjectLink name="components" path="/zh/guide/media/p-d-f.html">PDF</ProjectLink> 页面。
 
 ## Replit
 
-<!-- @include: @components/zh/guide/replit.md#demo -->
+<!-- @include: @components/zh/guide/code/repl-it.md#demo -->
 
-有关可用属性，请参阅 <ProjectLink name="components" path="/zh/guide/replit.html">Replit</ProjectLink> 页面。
+有关可用属性，请参阅 <ProjectLink name="components" path="/zh/guide/code/repl-it.html">Replit</ProjectLink> 页面。
 
 ## Share
 
-<!-- @include: @components/zh/guide/share.md#demo -->
+<!-- @include: @components/zh/guide/utilities/share.md#demo -->
 
-有关可用属性，请参阅 <ProjectLink name="components" path="/zh/guide/share.html">Share</ProjectLink> 页面。
+有关可用属性，请参阅 <ProjectLink name="components" path="/zh/guide/utilities/share.html">Share</ProjectLink> 页面。
 
 ## SiteInfo
 
-<!-- @include: @components/zh/guide/siteinfo.md#demo -->
+<!-- @include: @components/zh/guide/content/site-info.md#demo -->
 
-有关可用属性，请参阅 <ProjectLink name="components" path="/zh/guide/siteinfo.html">SiteInfo</ProjectLink> 页面。
+有关可用属性，请参阅 <ProjectLink name="components" path="/zh/guide/content/site-info.html">SiteInfo</ProjectLink> 页面。
 
 ## StackBlitz
 
 在 Markdown 文件中嵌入 StackBlitz 演示。
 
-<!-- @include: @components/zh/guide/stackblitz.md#demo -->
+<!-- @include: @components/zh/guide/code/stack-blitz.md#demo -->
 
-有关可用属性，请参阅 <ProjectLink name="components" path="/zh/guide/stackblitz.html">StackBlitz</ProjectLink> 页面。
+有关可用属性，请参阅 <ProjectLink name="components" path="/zh/guide/code/stack-blitz.html">StackBlitz</ProjectLink> 页面。
 
 ## VidStack
 
 > 先安装 `vidstack@1` 。
 
-<!-- @include: @components/zh/guide/vidstack.md#demo -->
+<!-- @include: @components/zh/guide/media/vid-stack.md#demo -->
 
-有关可用属性，请参阅 <ProjectLink name="components" path="/zh/guide/vidstack.html">VidStack</ProjectLink> 页面。
+有关可用属性，请参阅 <ProjectLink name="components" path="/zh/guide/media/vid-stack.html">VidStack</ProjectLink> 页面。
 
 ## VideoPlayer
 
 > 先安装 `plyr` 。
 
-<!-- @include: @components/zh/guide/videoplayer.md#demo -->
+<!-- @include: @components/zh/guide/media/video-player.md#demo -->
 
-有关可用属性，请参阅 <ProjectLink name="components" path="/zh/guide/videoplayer.html">VideoPlayer</ProjectLink> 页面。
+有关可用属性，请参阅 <ProjectLink name="components" path="/zh/guide/media/video-player.html">VideoPlayer</ProjectLink> 页面。
 
 ## YouTube
 
 在 Markdown 文件中嵌入 YouTube 视频。
 
-<!-- @include: @components/zh/guide/youtube.md#demo -->
+<!-- @include: @components/zh/guide/media/you-tube.md#demo -->
 
-有关可用属性，请参阅 <ProjectLink name="components" path="/zh/guide/youtube.html">YouTube</ProjectLink> 页面。
+有关可用属性，请参阅 <ProjectLink name="components" path="/zh/guide/media/you-tube.html">YouTube</ProjectLink> 页面。
 
 ## ArtPlayer
 
 > 先安装 `artplayer` 。
 
-<!-- @include: @components/zh/guide/artplayer.md#demo -->
+<!-- @include: @components/zh/guide/media/art-player.md#demo -->
 
-有关可用属性，请参阅 <ProjectLink name="components" path="/zh/guide/artplayer.html">ArtPlayer</ProjectLink> 页面。
+有关可用属性，请参阅 <ProjectLink name="components" path="/zh/guide/media/art-player.html">ArtPlayer</ProjectLink> 页面。
 
 ## AudioPlayer
 
 > 先安装 `plyr` 。
 
-<!-- @include: @components/zh/guide/audioplayer.md#demo -->
+<!-- @include: @components/zh/guide/media/audio-player.md#demo -->
 
-有关可用属性，请参阅 <ProjectLink name="components" path="/zh/guide/audioplayer.html">AudioPlayer</ProjectLink> 页面。
+有关可用属性，请参阅 <ProjectLink name="components" path="/zh/guide/media/audio-player.html">AudioPlayer</ProjectLink> 页面。

@@ -117,73 +117,73 @@ export default {
 
 :::
 
-See <ProjectLink name="components" path="/guide/badge.html">Badge</ProjectLink> page for available props.
+See <ProjectLink name="components" path="/guide/utilities/badge.html">Badge</ProjectLink> page for available props.
 
 ## BiliBili
 
 Embed BiliBili videos in Markdown files.
 
-<!-- @include: @components/guide/bilibili.md#demo -->
+<!-- @include: @components/guide/media/bili-bili.md#demo -->
 
-See <ProjectLink name="components" path="/guide/bilibili.html">BiliBili</ProjectLink> page for available props.
+See <ProjectLink name="components" path="/guide/media/bili-bili.html">BiliBili</ProjectLink> page for available props.
 
 ## CodePen
 
 A component which allows you to embed CodePen demo.
 
-<!-- @include: @components/guide/codepen.md#demo -->
+<!-- @include: @components/guide/code/code-pen.md#demo -->
 
-See <ProjectLink name="components" path="/guide/codepen.html">CodePen</ProjectLink> page for available props.
+See <ProjectLink name="components" path="/guide/code/code-pen.html">CodePen</ProjectLink> page for available props.
 
 ## FontIcon
 
 Component which allows you to display font icons.
 
-<!-- @include: @components/guide/fonticon.md#demo -->
+<!-- @include: @components/guide/utilities/font-icon.md#demo -->
 
-See <ProjectLink name="components" path="/guide/fonticon.html">FontIcon</ProjectLink> page for available props.
+See <ProjectLink name="components" path="/guide/utilities/font-icon.html">FontIcon</ProjectLink> page for available props.
 
 ## PDF
 
 PDF viewer component.
 
-<!-- @include: @components/guide/pdf.md#demo -->
+<!-- @include: @components/guide/media/p-d-f.md#demo -->
 
-See <ProjectLink name="components" path="/guide/pdf.html">PDF</ProjectLink> page for available props.
+See <ProjectLink name="components" path="/guide/media/p-d-f.html">PDF</ProjectLink> page for available props.
 
 ## Replit
 
-<!-- @include: @components/guide/replit.md#demo -->
+<!-- @include: @components/guide/code/repl-it.md#demo -->
 
-See <ProjectLink name="components" path="/guide/replit.html">Replit</ProjectLink> page for available props.
+See <ProjectLink name="components" path="/guide/code/repl-it.html">Replit</ProjectLink> page for available props.
 
 ## Share
 
-<!-- @include: @components/guide/share.md#demo -->
+<!-- @include: @components/guide/utilities/share.md#demo -->
 
-See <ProjectLink name="components" path="/guide/share.html">Share</ProjectLink> page for available props.
+See <ProjectLink name="components" path="/guide/utilities/share.html">Share</ProjectLink> page for available props.
 
 ## SiteInfo
 
-<!-- @include: @components/guide/siteinfo.md#demo -->
+<!-- @include: @components/guide/content/site-info.md#demo -->
 
-See <ProjectLink name="components" path="/guide/siteinfo.html">SiteInfo</ProjectLink> page for available props.
+See <ProjectLink name="components" path="/guide/content/site-info.html">SiteInfo</ProjectLink> page for available props.
 
 ## StackBlitz
 
 Embed StackBlitz demo in Markdown files.
 
-<!-- @include: @components/guide/stackblitz.md#demo -->
+<!-- @include: @components/guide/code/stack-blitz.md#demo -->
 
-See <ProjectLink name="components" path="/guide/stackblitz.html">StackBlitz</ProjectLink> page for available props.
+See <ProjectLink name="components" path="/guide/code/stack-blitz.html">StackBlitz</ProjectLink> page for available props.
 
 ## VidStack
 
 > Install `vidstack@1` first.
 
-<!-- @include: @components/guide/vidstack.md#demo -->
+<!-- @include: @components/guide/media/vid-stack.md#demo -->
 
-See <ProjectLink name="components" path="/guide/vidstack.html">VidStack</ProjectLink> page for available props.
+See <ProjectLink name="components" path="/guide/media/vid-stack.html">VidStack</ProjectLink> page for available props.
 
 ## VideoPlayer
 
@@ -191,30 +191,30 @@ See <ProjectLink name="components" path="/guide/vidstack.html">VidStack</Project
 
 Embed videos in Markdown files.
 
-<!-- @include: @components/guide/videoplayer.md#demo -->
+<!-- @include: @components/guide/media/video-player.md#demo -->
 
-See <ProjectLink name="components" path="/guide/videoplayer.html">VideoPlayer</ProjectLink> page for available props.
+See <ProjectLink name="components" path="/guide/media/video-player.html">VideoPlayer</ProjectLink> page for available props.
 
 ## YouTube
 
 Embed YouTube video in Markdown files.
 
-<!-- @include: @components/guide/youtube.md#demo -->
+<!-- @include: @components/guide/media/you-tube.md#demo -->
 
-See <ProjectLink name="components" path="/guide/youtube.html">YouTube</ProjectLink> page for available props.
+See <ProjectLink name="components" path="/guide/media/you-tube.html">YouTube</ProjectLink> page for available props.
 
 ## ArtPlayer
 
 > Install `artplayer` first.
 
-<!-- @include: @components/guide/artplayer.md#demo -->
+<!-- @include: @components/guide/media/art-player.md#demo -->
 
-See <ProjectLink name="components" path="/guide/artplayer.html">ArtPlayer</ProjectLink> page for available props.
+See <ProjectLink name="components" path="/guide/media/art-player.html">ArtPlayer</ProjectLink> page for available props.
 
 ## AudioPlayer
 
 > Install `plyr` first.
 
-<!-- @include: @components/guide/audioplayer.md#demo -->
+<!-- @include: @components/guide/media/audio-player.md#demo -->
 
-See <ProjectLink name="components" path="/guide/audioplayer.html">AudioPlayer</ProjectLink> page for available props.
+See <ProjectLink name="components" path="/guide/media/audio-player.html">AudioPlayer</ProjectLink> page for available props.

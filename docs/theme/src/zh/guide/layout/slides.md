@@ -17,7 +17,7 @@ tag:
 
 ## 演示
 
-<ProjectLink name="md-enhance" path="/zh/guide/revealjs/demo.html">这里是一个展示了所有幻灯片功能的案例</ProjectLink>.
+<ProjectLink name="md-enhance" path="/zh/guide/content/revealjs/demo.html">这里是一个展示了所有幻灯片功能的案例</ProjectLink>.
 
 ![幻灯片页截图](./assets/slides-light.png#light)
 ![幻灯片页截图](./assets/slides-dark.png#dark)
