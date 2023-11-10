@@ -1,3 +1,6 @@
-import { bundle } from "../../scripts/rollup.js";
+import { rollupBundle } from "../../scripts/rollup.js";
 
-export default [...bundle("node/index"), ...bundle("client/config")];
+export default [
+  ...rollupBundle("node/index"),
+  ...rollupBundle("client/config"),
+];

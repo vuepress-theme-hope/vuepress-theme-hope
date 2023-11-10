@@ -1,3 +1,3 @@
-import { bundle } from "../../scripts/rollup.js";
+import { rollupBundle } from "../../scripts/rollup.js";
 
-export default bundle("node/index");
+export default rollupBundle("node/index");

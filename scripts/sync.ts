@@ -7,8 +7,10 @@ import ora from "ora";
 const packagesDir = resolve(process.cwd(), "packages");
 const packages = readdirSync(packagesDir);
 
-export const sync = (): Promise<void[]> =>
-  Promise.all(
+const sync = async (): Promise<void> => {
+  const npmmirrorSpinner = ora("Syncing npmmirror.com").start();
+
+  await Promise.all(
     packages.map((packageName) =>
       // eslint-disable-next-line import/dynamic-import-chunkname
       import(`../packages/${packageName}/package.json`, {
@@ -45,10 +47,9 @@ export const sync = (): Promise<void[]> =>
     ),
   );
 
-const npmmirrorSpinner = ora("Syncing npmmirror.com").start();
-
-void sync().then(() => {
   npmmirrorSpinner.succeed();
 
   ora("Release complete").succeed();
-});
+};
+
+await sync();

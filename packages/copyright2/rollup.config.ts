@@ -1,8 +1,8 @@
-import { bundle } from "../../scripts/rollup.js";
+import { rollupBundle } from "../../scripts/rollup.js";
 
 export default [
-  ...bundle("node/index", {
+  ...rollupBundle("node/index", {
     dtsExternal: ["vuepress-shared"],
   }),
-  ...bundle("client/config"),
+  ...rollupBundle("client/config"),
 ];

@@ -33,7 +33,7 @@ export interface BundleOptions {
   moduleSideEffects?: ModuleSideEffectsOption;
 }
 
-export const bundle = (
+export const rollupBundle = (
   filePath: string | FileInfo,
   {
     dts: enableDts = typeof filePath === "object"
