@@ -3,9 +3,16 @@ title: Demos
 icon: splotch
 ---
 
-## Living Demo
-
-- [stackblitz](https://stackblitz.com/fork/vuepress-theme-hope)
+```component VPBanner
+title: Living Demo
+content: Online template driven by StackBlitz
+logo: /assets/image/stackblitz.svg
+background: var(--banner-bg)
+color: var(--black)
+actions:
+  - text: Try it
+    link: https://stackblitz.com/fork/vuepress-theme-hope
+```
 
 ## Open Source Projects
 

@@ -57,6 +57,7 @@ export default theme("theme", {
         "Share",
         "SiteInfo",
         "StackBlitz",
+        "VPBanner",
         "VPCard",
         "VidStack",
         "VideoPlayer",

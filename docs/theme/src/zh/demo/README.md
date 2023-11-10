@@ -5,9 +5,16 @@ category:
   - 案例
 ---
 
-## 即时案例
-
-- [stackblitz](https://stackblitz.com/fork/vuepress-theme-hope)
+```component VPBanner
+title: 即时案例
+content: StackBlitz 驱动的在线模板
+logo: /assets/image/stackblitz.svg
+background: var(--banner-bg)
+color: var(--black)
+actions:
+  - text: 前往体验
+    link: https://stackblitz.com/fork/vuepress-theme-hope
+```
 
 ## 开源项目
 
