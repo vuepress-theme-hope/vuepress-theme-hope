@@ -270,7 +270,7 @@ color: rgba(253, 230, 138, 0.15)
 
 :::
 
-- [View Detail](../markdown/chart.md)
+- [View Detail](../markdown/chartjs.md)
 
 #### Echarts
 

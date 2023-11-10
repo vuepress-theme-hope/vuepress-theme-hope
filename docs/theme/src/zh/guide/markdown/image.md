@@ -67,4 +67,4 @@ export default {
 
 :::
 
-<!-- @include: @md-enhance/zh/guide/image.md#after -->
+<!-- @include: @md-enhance/zh/guide/grammar/image.md#after -->

@@ -8,7 +8,7 @@ tag:
   - Markdown
 ---
 
-<!-- @include: @md-enhance/guide/flowchart.md#before -->
+<!-- @include: @md-enhance/guide/chart/flowchart.md#before -->
 
 ::: code-tabs#language
 
@@ -49,4 +49,4 @@ export default {
 
 :::
 
-<!-- @include: @md-enhance/guide/flowchart.md#after -->
+<!-- @include: @md-enhance/guide/chart/flowchart.md#after -->

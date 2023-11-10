@@ -107,8 +107,8 @@ export default {
 
 :::
 
-<!-- @include: @md-enhance/zh/guide/playground.md#middle -->
+<!-- @include: @md-enhance/zh/guide/code/playground.md#middle -->
 
 Vue 预设默认使用官方交互演示，并不像 [Vue 交互演示](./vue-playground.md) 支持自定义选项。因此，如果你严重依赖 Vue 交互演示，我们建议你改用 [Vue 交互演示](./vue-playground.md)。
 
-<!-- @include: @md-enhance/zh/guide/playground.md#after -->
+<!-- @include: @md-enhance/zh/guide/code/playground.md#after -->

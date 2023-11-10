@@ -20,7 +20,7 @@ You can use [Vue Demo](./demo.md#vue) and [Playground Vue Preset](./playground.m
 
 :::
 
-<!-- @include: @md-enhance/guide/vue-playground.md#settings -->
+<!-- @include: @md-enhance/guide/code/vue-playground.md#settings -->
 
 ::: code-tabs#config
 
@@ -63,4 +63,4 @@ export default {
 
 :::
 
-<!-- @include: @md-enhance/guide/vue-playground.md#after -->
+<!-- @include: @md-enhance/guide/code/vue-playground.md#after -->

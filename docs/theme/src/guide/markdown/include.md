@@ -53,7 +53,7 @@ export default {
 
 :::
 
-<!-- @include: @md-enhance/guide/include.md#after -->
+<!-- @include: @md-enhance/guide/content/include.md#after -->
 
 ::: code-tabs#language
 

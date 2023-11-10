@@ -270,7 +270,7 @@ color: rgba(253, 230, 138, 0.15)
 
 :::
 
-- [查看详情](../markdown/chart.md)
+- [查看详情](../markdown/chartjs.md)
 
 #### Echarts
 

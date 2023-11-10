@@ -62,7 +62,7 @@ The theme provides a lot of extended syntax support for Markdown, allowing you t
 
 - If you are a programmer and need to show a lot of codes and demos, this theme provides light and dark themes for code blocks, [code tabs](../markdown/code-tabs.md) and the ["one-click copy" button](../feature/copy-code.md). At the same time, we also provide the [Code Demo](../markdown/demo.md), [Playground](../markdown/playground.md) and [Vue Playground](../markdown/vue-playground.md) functions, which is convenient for you to show your own Vue, React components or other demos and provide playground for visitors.
 
-- If you are providing product documentation and presentation, the theme provides [tabs](../markdown/tabs.md), [slide](../markdown/revealjs.md), [chart](../markdown/chart.md), [echarts](../markdown/echarts.md), [flowchart](../markdown/flowchart.md), [mermaid diagram](../markdown/mermaid.md) functions.
+- If you are providing product documentation and presentation, the theme provides [tabs](../markdown/tabs.md), [slide](../markdown/revealjs.md), [chart](../markdown/chartjs.md), [echarts](../markdown/echarts.md), [flowchart](../markdown/flowchart.md), [mermaid diagram](../markdown/mermaid.md) functions.
 
 - To reorganize your content, the theme provides [File Include](../markdown/include.md) function.
 

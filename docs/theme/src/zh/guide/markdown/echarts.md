@@ -8,7 +8,7 @@ tag:
   - Markdown
 ---
 
-<!-- @include: @md-enhance/zh/guide/echarts.md#before -->
+<!-- @include: @md-enhance/zh/guide/chart/echarts.md#before -->
 
 ::: code-tabs#language
 
@@ -49,4 +49,4 @@ export default {
 
 :::
 
-<!-- @include: @md-enhance/zh/guide/echarts.md#after -->
+<!-- @include: @md-enhance/zh/guide/chart/echarts.md#after -->

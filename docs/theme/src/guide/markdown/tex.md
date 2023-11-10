@@ -8,7 +8,7 @@ tag:
   - TEX
 ---
 
-<!-- @include: @md-enhance/guide/tex.md#before -->
+<!-- @include: @md-enhance/guide/grammar/tex.md#before -->
 
 ::: code-tabs#language
 
@@ -55,4 +55,4 @@ export default {
 
 :::
 
-<!-- @include: @md-enhance/guide/tex.md#after -->
+<!-- @include: @md-enhance/guide/grammar/tex.md#after -->

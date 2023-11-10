@@ -8,7 +8,7 @@ tag:
   - Markdown
 ---
 
-<!-- @include: @md-enhance/guide/mermaid.md#before -->
+<!-- @include: @md-enhance/guide/chart/mermaid.md#before -->
 
 ::: code-tabs#language
 
@@ -49,4 +49,4 @@ export default {
 
 :::
 
-<!-- @include: @md-enhance/guide/mermaid.md#after -->
+<!-- @include: @md-enhance/guide/chart/mermaid.md#after -->

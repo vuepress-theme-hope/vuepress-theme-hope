@@ -111,8 +111,8 @@ export default {
 
 :::
 
-<!-- @include: @md-enhance/guide/playground.md#middle -->
+<!-- @include: @md-enhance/guide/code/playground.md#middle -->
 
 Vue preset is using the official playground by default, and do not support customizing options like [Vue Playground](./vue-playground.md). So if you are heavily relying on interacting vue playground, we suggest you to use [Vue Playground](./vue-playground.md) instead.
 
-<!-- @include: @md-enhance/guide/playground.md#after -->
+<!-- @include: @md-enhance/guide/code/playground.md#after -->

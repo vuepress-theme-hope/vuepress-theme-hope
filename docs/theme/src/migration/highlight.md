@@ -159,7 +159,7 @@ The following new features are added:
 
 - [GFM](../guide/markdown/others.md#gfm)
 
-- [Chart.js](../guide/markdown/chart.md)
+- [Chart.js](../guide/markdown/chartjs.md)
 
 - [ECharts](../guide/markdown/echarts.md)
 

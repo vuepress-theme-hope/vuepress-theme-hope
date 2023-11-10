@@ -53,4 +53,4 @@ export default {
 
 :::
 
-<!-- @include: @md-enhance/guide/card.md#after -->
+<!-- @include: @md-enhance/guide/content/card.md#after -->

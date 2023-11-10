@@ -160,7 +160,7 @@ VuePressThemeHope@v2 使用组合 API 重写，其样式系统从 stylus 迁移�
 
 - [GFM](../guide/markdown/others.md#gfm)
 
-- [Chart.js](../guide/markdown/chart.md)
+- [Chart.js](../guide/markdown/chartjs.md)
 
 - [ECharts](../guide/markdown/echarts.md)
 

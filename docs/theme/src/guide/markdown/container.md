@@ -55,4 +55,4 @@ export default {
 
 :::
 
-<!-- @include: @md-enhance/guide/container.md#after -->
+<!-- @include: @md-enhance/guide/stylize/container.md#after -->

@@ -36,7 +36,7 @@ Besides Markdown syntaxes VuePress itself adds, `vuepress-theme-hope` enables mo
 
 - [Mark](mark.md)
 
-- [Chart](chart.md)
+- [Chart](chartjs.md)
 
 - [Echarts](echarts.md)
 

@@ -8,7 +8,7 @@ tag:
   - 流程图
 ---
 
-<!-- @include: @md-enhance/zh/guide/flowchart.md#before -->
+<!-- @include: @md-enhance/zh/guide/chart/flowchart.md#before -->
 
 ::: code-tabs#language
 
@@ -49,4 +49,4 @@ export default {
 
 :::
 
-<!-- @include: @md-enhance/zh/guide/flowchart.md#after -->
+<!-- @include: @md-enhance/zh/guide/chart/flowchart.md#after -->

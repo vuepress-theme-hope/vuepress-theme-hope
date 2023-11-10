@@ -58,4 +58,4 @@ export default {
 
 此功能和[选项卡功能](./tabs.md)相同，但它是专门为代码块构建的。
 
-<!-- @include: @md-enhance/zh/guide/code-tabs.md#after -->
+<!-- @include: @md-enhance/zh/guide/code/code-tabs.md#after -->

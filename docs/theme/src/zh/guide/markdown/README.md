@@ -38,7 +38,7 @@ dir:
 
 - [标记](mark.md)
 
-- [图表](chart.md)
+- [图表](chartjs.md)
 
 - [Echarts](echarts.md)
 

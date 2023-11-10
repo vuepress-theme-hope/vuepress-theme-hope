@@ -56,4 +56,4 @@ export default {
 
 :::
 
-<!-- @include: @md-enhance/zh/guide/tabs.md#after -->
+<!-- @include: @md-enhance/zh/guide/content/tabs.md#after -->

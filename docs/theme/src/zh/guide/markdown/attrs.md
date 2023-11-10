@@ -53,4 +53,4 @@ export default {
 
 :::
 
-<!-- @include: @md-enhance/zh/guide/attrs.md#after -->
+<!-- @include: @md-enhance/zh/guide/stylize/attrs.md#after -->

@@ -1,6 +1,7 @@
 ---
 title: 配置
 icon: gears
+order: 2
 ---
 
 ## 插件配置
@@ -11,6 +12,8 @@ icon: gears
 
 - 类型: `boolean`
 - 默认值: `false`
+- 详情:
+  - [GFM](./guide/others.md#gfm)
 
 是否支持完整的 GFM 语法。
 
@@ -29,7 +32,7 @@ icon: gears
 - 类型: `boolean`
 - 默认值: `false`
 - 详情:
-  - [自定义容器](./guide/container.md)
+  - [自定义容器](./guide/stylize/container.md)
 
 是否启用自定义容器支持:
 
@@ -69,6 +72,8 @@ icon: gears
   ```
 
 - 默认值: `{ status: "dev" }`
+- 详情:
+  - [链接检查](./guide/others.md#链接检查)
 
 是否启用链接检查。
 
@@ -102,7 +107,7 @@ icon: gears
 - 类型: `boolean`
 - 默认值: `false`
 - 详情:
-  - [选项卡](./guide/tabs.md)
+  - [选项卡](./guide/content/tabs.md)
 
 是否启用选项卡。
 
@@ -111,7 +116,7 @@ icon: gears
 - 类型: `boolean`
 - 默认值: `false`
 - 详情:
-  - [代码组](./guide/code-tabs.md)
+  - [代码组](./guide/code/code-tabs.md)
 
 是否启用代码组。
 
@@ -120,7 +125,7 @@ icon: gears
 - 类型: `boolean`
 - 默认值: `false`
 - 详情:
-  - [自定义对齐](./guide/align.md)
+  - [自定义对齐](./guide/stylize/align.md)
 
 是否启用自定义对齐格式支持。
 
@@ -157,7 +162,7 @@ icon: gears
 
 - 默认值: `false`
 - 详情:
-  - [定义属性](./guide/attrs.md)
+  - [定义属性](./guide/stylize/attrs.md)
 
 是否启用自定义属性支持。
 
@@ -165,6 +170,8 @@ icon: gears
 
 - 类型: `boolean`
 - 默认值: `false`
+- 详情:
+  - [上角标](./guide/grammar/sup-sub.md)
 
 是否启用上角标格式支持。
 
@@ -172,6 +179,8 @@ icon: gears
 
 - 类型: `boolean`
 - 默认值: `false`
+- 详情:
+  - [下角标](./guide/grammar/sup-sub.md)
 
 是否启用下角标格式支持。
 
@@ -180,6 +189,8 @@ icon: gears
 - 类型: `boolean`
 - 默认值: `false`
 - 在 GFM 中启用: 是
+- 详情:
+  - [脚注](./guide/content/footnote.md)
 
 是否启用脚注格式支持。
 
@@ -187,6 +198,8 @@ icon: gears
 
 - 类型: `boolean`
 - 默认值: `false`
+- 详情:
+  - [标记](./guide/stylize/mark.md)
 
 是否启用标记格式支持。
 
@@ -194,6 +207,8 @@ icon: gears
 
 - 类型: `boolean`
 - 默认值: `false`
+- 详情:
+  - [Figure](./guide/grammar/image.md#图片-figure)
 
 是否启用图片 Figure 支持。
 
@@ -201,30 +216,37 @@ icon: gears
 
 - 类型: `boolean`
 - 默认值: `false`
+- 详情:
+  - [图片懒加载](./guide/grammar/image.md#图片懒加载)
 
 是否使用原生方式懒加载页面图片。
 
 ### imgMark
 
 - 类型: `ImageMarkOptions | boolean`
+
+  ```ts
+  interface ImageMarkOptions {
+    /** 日间模式的 ID */
+    light?: string[];
+    /** 夜间模式的 ID */
+    dark?: string[];
+  }
+  ```
+
 - 默认值: `false`
 - 在 GFM 中启用: 是
+- 详情:
+  - [图片标记](./guide/grammar/image.md#图片-id-标记)
 
 是否启用图片标注支持
-
-```ts
-interface ImageMarkOptions {
-  /** 日间模式的 ID */
-  light?: string[];
-  /** 夜间模式的 ID */
-  dark?: string[];
-}
-```
 
 ### imgSize
 
 - 类型: `boolean`
 - 默认值: `false`
+- 详情:
+  - [图片尺寸](./guide/grammar/image.md#图片尺寸)
 
 是否启用图片尺寸支持。
 
@@ -232,34 +254,39 @@ interface ImageMarkOptions {
 
 - 类型: `boolean`
 - 默认值: `false`
+- 详情:
+  - [图片尺寸](./guide/grammar/image.md#图片尺寸)
 
 是否启用 obsidian 图片尺寸支持。
 
 ### tasklist
 
 - 类型: `TaskListOptions | boolean`
+
+  ```ts
+  interface TaskListOptions {
+    /**
+     * 是否禁用 checkbox
+     *
+     * @default true
+     */
+    disabled?: boolean;
+
+    /**
+     * 是否使用 `<label>` 来包裹文字
+     *
+     * @default true
+     */
+    label?: boolean;
+  }
+  ```
+
 - 默认值: `false`
 - 在 GFM 中启用: 是
+- 详情:
+  - [任务列表](./guide/grammar/tasklist.md)
 
 是否启用任务列表格式支持。你可以传入一个对象作为任务列表的配置选项。
-
-```ts
-interface TaskListOptions {
-  /**
-   * 是否禁用 checkbox
-   *
-   * @default true
-   */
-  disabled?: boolean;
-
-  /**
-   * 是否使用 `<label>` 来包裹文字
-   *
-   * @default true
-   */
-  label?: boolean;
-}
-```
 
 ### include
 
@@ -284,6 +311,8 @@ interface TaskListOptions {
   ```
 
 - 默认值: `false`
+- 详情:
+  - [文件导入](./guide/content/include.md)
 
 是否启用 Markdown 导入支持。你可以传入一个函数进行路径解析。
 
@@ -291,6 +320,8 @@ interface TaskListOptions {
 
 - 类型: `KatexOptions & { copy?: boolean; mhchem?: boolean } | boolean`
 - 默认值: `false`
+- 详情:
+  - [TeX](./guide/grammar/tex.md)
 
 是否通过 KaTeX 启用 $\TeX$ 语法支持。你可以传入一个对象作为 KaTeX 的配置选项。
 
@@ -303,6 +334,8 @@ interface TaskListOptions {
 - 类型: `MathJaxOptions | boolean`
 - 默认值: `false`
 - 在 GFM 中启用: 是
+- 详情:
+  - [TeX](./guide/grammar/tex.md)
 
 是否通过 Math Jax 启用 $\TeX$ 语法支持。你可以传递一个对象来配置 Math Jax。
 
@@ -312,6 +345,8 @@ interface TaskListOptions {
 
 - 类型: `boolean`
 - 默认值: `false`
+- 详情:
+  - [卡片](./guide/content/card.md)
 
 是否启用卡片支持。
 
@@ -319,6 +354,8 @@ interface TaskListOptions {
 
 - 类型: `boolean`
 - 默认值: `false`
+- 详情:
+  - [Chart.js](./guide/chart/chartjs.md)
 
 是否启用图表支持。
 
@@ -326,6 +363,8 @@ interface TaskListOptions {
 
 - 类型: `boolean`
 - 默认值: `false`
+- 详情:
+  - [Echarts](./guide/chart/echarts.md)
 
 是否启用 ECharts 图表支持。
 
@@ -333,6 +372,8 @@ interface TaskListOptions {
 
 - 类型: `boolean`
 - 默认值: `false`
+- 详情:
+  - [流程图](./guide/chart/flowchart.md)
 
 是否启用流程图支持。
 
@@ -341,6 +382,8 @@ interface TaskListOptions {
 - 类型: `MermaidConfig | boolean`
 - 默认值: `false`
 - 在 GFM 中启用: 是
+- 详情:
+  - [Mermaid](./guide/chart/mermaid.md)
 
 是否启用 [Mermaid](https://mermaid.js.org/) 支持，你可以传入一个对象作为 Mermaid 的配置选项。
 
@@ -387,6 +430,8 @@ interface TaskListOptions {
   ```
 
 - 默认值: `false`
+- 详情:
+  - [样式化](./guide/stylize/stylize.md)
 
 对行内语法进行样式化以创建代码片段
 
@@ -525,6 +570,8 @@ interface TaskListOptions {
   ```
 
 - 必填: 否
+- 详情:
+  - [交互演示](./guide/code/playground.md)
 
 交互演示选项。
 
@@ -603,6 +650,8 @@ interface TaskListOptions {
   ```
 
 - 默认值: `false`
+- 详情:
+  - [Vue 交互演示](./guide/code/vue-playground.md)
 
 是否启用 Vue 交互演示支持。
 
@@ -610,6 +659,8 @@ interface TaskListOptions {
 
 - 类型: `CodeDemoGlobalOptions | boolean`
 - 默认值: `false`
+- 详情:
+  - [代码案例](./guide/code/demo/README.md)
 
 是否启用代码案例支持。
 
@@ -730,6 +781,8 @@ CodePen 编辑器显示情况，第一位代表 HTML ，第二位代表 JS，第
   ```
 
 - 默认值: `false`
+- 详情:
+  - [Reveal.js](./guide/content/revealjs/README.md)
 
 是否启用幻灯片支持。你可以传递选项控制导入的插件和主题。
 

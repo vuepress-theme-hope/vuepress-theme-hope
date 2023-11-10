@@ -62,7 +62,7 @@ VuePress 默认主题只是一个提供基础文档布局的主题。 例如：�
 
 - 如果你是一名程序员需要大量展示代码与 demo，本主题为代码块提供了浅色与深色两种主题，[代码组](../markdown/code-tabs.md) 与 ["一键复制" 按钮](../feature/copy-code.md)。同时我们还提供 [代码演示](../markdown/demo.md)，[Playground](../markdown/playground.md) 和 [Vue Playground](../markdown/vue-playground.md) 功能，方便你展示自己的 Vue、React 组件或者其他 demo。
 
-- 如果你需要提供产品文档与展示，主题提供了 [选项卡](../markdown/tabs.md)、[幻灯片](../markdown/revealjs.md)、[图表](../markdown/chart.md)、[echarts](../markdown/echarts.md)、[流程图](../markdown/flowchart.md) 与 [Mermaid 图表](../markdown/mermaid.md) 功能。
+- 如果你需要提供产品文档与展示，主题提供了 [选项卡](../markdown/tabs.md)、[幻灯片](../markdown/revealjs.md)、[图表](../markdown/chartjs.md)、[echarts](../markdown/echarts.md)、[流程图](../markdown/flowchart.md) 与 [Mermaid 图表](../markdown/mermaid.md) 功能。
 
 - 为了重新组织您的内容，主题提供了[文件包含](../markdown/include.md)功能。
 

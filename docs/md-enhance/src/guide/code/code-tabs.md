@@ -1,13 +1,13 @@
 ---
-title: 代码块分组
+title: Code Tabs
 icon: code
 ---
 
-插件为你带来了代码块分组支持。
+The plugin provides you code tabs support.
 
 <!-- more -->
 
-## 配置
+## Settings
 
 ::: code-tabs#language
 
@@ -20,7 +20,7 @@ import { mdEnhancePlugin } from "vuepress-plugin-md-enhance";
 export default {
   plugins: [
     mdEnhancePlugin({
-      // 启用代码块分组
+      // adds code tabs support
       codetabs: true,
     }),
   ],
@@ -36,7 +36,7 @@ import { mdEnhancePlugin } from "vuepress-plugin-md-enhance";
 export default {
   plugins: [
     mdEnhancePlugin({
-      // 启用代码块分组
+      // adds code tabs support
       codetabs: true,
     }),
   ],
@@ -45,19 +45,19 @@ export default {
 
 :::
 
-## 使用
+## Usage
 
-此功能和 [选项卡功能](./tabs.md) 相同，但它是专门为代码块构建的。
+This is the same as [tabs feature](../content/tabs.md), but it's special built for code blocks.
 
-<!-- #region after -->
+<!-- region after -->
 
-代码选项卡只会渲染 `@tab` 标记后的代码块，其他 Markdown 内容将被忽略。
+Only code fence after `@tab` marker is allowed inside code tabs, other Markdown content will be ignored.
 
-## 演示
+## Demo
 
 :::: md-demo
 
-安装 VuePress Theme Hope:
+Install VuePress Theme Hope:
 
 ::: code-tabs#shell
 
@@ -81,7 +81,7 @@ npm i -D vuepress-theme-hope
 
 :::
 
-安装 VuePress Plugin Markdown Enhance:
+Install VuePress Plugin Markdown Enhance:
 
 ::: code-tabs#shell
 
@@ -107,4 +107,4 @@ npm i -D vuepress-plugin-md-enhance
 
 ::::
 
-<!-- #endregion after -->
+<!-- endregion after -->

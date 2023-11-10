@@ -1,6 +1,7 @@
 ---
 title: Config
 icon: gears
+order: 2
 ---
 
 ## Plugin Options
@@ -11,6 +12,8 @@ You can pass these options to the plugin:
 
 - Type: `boolean`
 - Default: `false`
+- Details:
+  - [GFM](./guide/others.md#gfm)
 
 Whether to support full GFM syntax.
 
@@ -29,7 +32,7 @@ Some of the behavior might be different, for example to support Vue syntax, we a
 - Type: `boolean`
 - Default: `false`
 - Details:
-  - [Custom Container](./guide/container.md)
+  - [Custom Container](./guide/stylize/container.md)
 
 Whether to enable custom container including
 
@@ -69,6 +72,8 @@ The last 4 items conflict with default theme and will override its style.
   ```
 
 - Default: `{ status: "dev" }`
+- Details:
+  - [Link Check](./guide/others.md#link-check)
 
 Whether to enable links check.
 
@@ -102,7 +107,7 @@ Whether convert URL-like text into links
 - Type: `boolean`
 - Default: `false`
 - Details:
-  - [Tabs](./guide/tabs.md)
+  - [Tabs](./guide/content/tabs.md)
 
 Whether to enable tabs.
 
@@ -111,7 +116,7 @@ Whether to enable tabs.
 - Type: `boolean`
 - Default: `false`
 - Details:
-  - [Code Tabs](./guide/code-tabs.md)
+  - [Code Tabs](./guide/code/code-tabs.md)
 
 Whether to enable codetabs.
 
@@ -120,7 +125,7 @@ Whether to enable codetabs.
 - Type: `boolean`
 - Default: `false`
 - Details:
-  - [Align](./guide/align.md)
+  - [Align](./guide/stylize/align.md)
 
 Whether to enable custom align.
 
@@ -157,7 +162,7 @@ Whether to enable custom align.
 
 - Default: `false`
 - Details:
-  - [Attrs](./guide/attrs.md)
+  - [Attrs](./guide/stylize/attrs.md)
 
 Whether to enable attribute customize support.
 
@@ -165,6 +170,8 @@ Whether to enable attribute customize support.
 
 - Type: `boolean`
 - Default: `false`
+- Details:
+  - [Superscript](./guide/grammar/sup-sub.md)
 
 Whether to enable the upper format support.
 
@@ -172,6 +179,8 @@ Whether to enable the upper format support.
 
 - Type: `boolean`
 - Default: `false`
+- Details:
+  - [Subscript](./guide/grammar/sup-sub.md)
 
 Whether to enable the lower corner format support.
 
@@ -180,6 +189,8 @@ Whether to enable the lower corner format support.
 - Type: `boolean`
 - Default: `false`
 - Enabled in GFM: Yes
+- Details:
+  - [Footnote](./guide/content/footnote.md)
 
 Whether to enable footnote format support.
 
@@ -187,6 +198,8 @@ Whether to enable footnote format support.
 
 - Type: `boolean`
 - Default: `false`
+- Details:
+  - [Mark](./guide/stylize/mark.md)
 
 Whether to enable mark support.
 
@@ -194,6 +207,8 @@ Whether to enable mark support.
 
 - Type: `boolean`
 - Default: `false`
+- Details:
+  - [Figure](./guide/grammar/image.md#figure)
 
 Whether enable figure support.
 
@@ -201,30 +216,37 @@ Whether enable figure support.
 
 - Type: `boolean`
 - Default: `false`
+- Details:
+  - [Image Lazyload](./guide/grammar/image.md#image-lazyload)
 
 Whether to lazy load every image in page in native way.
 
 ### imgMark
 
 - Type: `ImageMarkOptions | boolean`
+
+  ```ts
+  interface ImageMarkOptions {
+    /** lightmode only IDs */
+    light?: string[];
+    /** darkmode only IDs */
+    dark?: string[];
+  }
+  ```
+
 - Default: `false`
 - Enabled in GFM: Yes
+- Details:
+  - [Image Mark](./guide/grammar/image.md#image-mark)
 
 Whether enable image mark support.
-
-```ts
-interface ImageMarkOptions {
-  /** lightmode only IDs */
-  light?: string[];
-  /** darkmode only IDs */
-  dark?: string[];
-}
-```
 
 ### imgSize
 
 - Type: `boolean`
 - Default: `false`
+- Details:
+  - [Image Size](./guide/grammar/image.md#image-size)
 
 Whether enable image size support.
 
@@ -232,55 +254,39 @@ Whether enable image size support.
 
 - Type: `boolean`
 - Default: `false`
+- Details:
+  - [Image Size](./guide/grammar/image.md#image-size)
 
 Whether enable obsidian image size support.
 
 ### tasklist
 
 - Type: `TaskListOptions | boolean`
+
+  ```ts
+  interface TaskListOptions {
+    /**
+     * Whether disable checkbox
+     *
+     * @default true
+     */
+    disabled?: boolean;
+
+    /**
+     * Whether use `<label>` to wrap text
+     *
+     * @default true
+     */
+    label?: boolean;
+  }
+  ```
+
 - Default: `false`
 - Enabled in GFM: Yes
+- Details:
+  - [Tasklist](./guide/grammar/tasklist.md)
 
 Whether to enable tasklist format support. You can pass an object to config task list.
-
-```ts
-interface TaskListOptions {
-  /**
-   * Whether disable checkbox
-   *
-   * @default true
-   */
-  disabled?: boolean;
-
-  /**
-   * Whether use `<label>` to wrap text
-   *
-   * @default true
-   */
-  label?: boolean;
-}
-```
-
-### katex
-
-- Type: `KatexOptions & { copy?: boolean; mhchem?: boolean } | boolean`
-- Default: `false`
-
-Whether to enable $\TeX$ syntax support through KaTeX. You can pass an object to config KaTeX.
-
-In particular, you can enable the copy and mhchem extensions with `katex.copy: true` and `katex.mhchem: true`.
-
-Please see [Katex Docs](https://katex.org/docs/options.html) for available options.
-
-### mathjax
-
-- Type: `MathJaxOptions | boolean`
-- Default: `false`
-- Enabled in GFM: Yes
-
-Whether to enable $\TeX$ syntax support through Math Jax. You can pass an object to config Math Jax.
-
-Please see [source code](https://github.com/vuepress-theme-hope/vuepress-theme-hope/tree/main/packages/md-enhance/src/shared/mathjax.ts) for available options.
 
 ### include
 
@@ -305,13 +311,42 @@ Please see [source code](https://github.com/vuepress-theme-hope/vuepress-theme-h
   ```
 
 - Default: `false`
+- Details:
+  - [Include files](./guide/content/include.md)
 
 Whether to enable Markdown import support. You can pass in a function for path resolution.
+
+### katex
+
+- Type: `KatexOptions & { copy?: boolean; mhchem?: boolean } | boolean`
+- Default: `false`
+- Details:
+  - [TeX](./guide/grammar/tex.md)
+
+Whether to enable $\TeX$ syntax support through KaTeX. You can pass an object to config KaTeX.
+
+In particular, you can enable the copy and mhchem extensions with `katex.copy: true` and `katex.mhchem: true`.
+
+Please see [Katex Docs](https://katex.org/docs/options.html) for available options.
+
+### mathjax
+
+- Type: `MathJaxOptions | boolean`
+- Default: `false`
+- Enabled in GFM: Yes
+- Details:
+  - [TeX](./guide/grammar/tex.md)
+
+Whether to enable $\TeX$ syntax support through Math Jax. You can pass an object to config Math Jax.
+
+Please see [source code](https://github.com/vuepress-theme-hope/vuepress-theme-hope/tree/main/packages/md-enhance/src/shared/mathjax.ts) for available options.
 
 ### card
 
 - Type: `boolean`
 - Default: `false`
+- Details:
+  - [Card](./guide/content/card.md)
 
 Whether to enable card support
 
@@ -319,6 +354,8 @@ Whether to enable card support
 
 - Type: `boolean`
 - Default: `false`
+- Details:
+  - [Chart.js](./guide/chart/chartjs.md)
 
 Whether to enable chart support
 
@@ -326,6 +363,8 @@ Whether to enable chart support
 
 - Type: `boolean`
 - Default: `false`
+- Details:
+  - [Echarts](./guide/chart/echarts.md)
 
 Whether to enable ECharts support
 
@@ -333,6 +372,8 @@ Whether to enable ECharts support
 
 - Type: `boolean`
 - Default: `false`
+- Details:
+  - [Flowchart](./guide/chart/flowchart.md)
 
 Whether to enable flowchart support
 
@@ -341,6 +382,8 @@ Whether to enable flowchart support
 - Type: `MermaidConfig | boolean`
 - Default: `false`
 - Enabled in GFM: Yes
+- Details:
+  - [Mermaid](./guide/chart/mermaid.md)
 
 Whether to enable [Mermaid](https://mermaid.js.org/) support, you can pass in a config object to customize the behavior of Mermaid.
 
@@ -387,6 +430,8 @@ Whether to enable [Mermaid](https://mermaid.js.org/) support, you can pass in a 
   ```
 
 - Default: `false`
+- Details:
+  - [Stylize](./guide/stylize/stylize.md)
 
 Stylize inline tokens to create snippet you want.
 
@@ -521,13 +566,88 @@ Stylize inline tokens to create snippet you want.
   ```
 
 - Required: No
+- Details:
+  - [Playground](./guide/code/playground.md)
 
 Playground options.
 
 ### vuePlayground
 
-- Type: `boolean`
+- Type: `VuePlaygroundOptions | boolean`
+
+  ```ts
+  interface VuePlaygroundOptions {
+    /**
+     * specify the version of vue
+     */
+    vueVersion?: string;
+
+    /**
+     * specify default URL to import Vue runtime from in the sandbox
+     *
+     * @default "https://unpkg.com/@vue/runtime-dom@${version}/dist/runtime-dom.esm-browser.js"
+     */
+    defaultVueRuntimeURL?: string;
+
+    /**
+     * Specify default URL to import Vue Server Renderer from in the sandbox
+     *
+     * @default "https://unpkg.com/@vue/server-renderer@${version}/dist/server-renderer.esm-browser.js"
+     */
+    defaultVueServerRendererURL?: string;
+
+    /**
+     * Whether to enable repl's editor resizable
+     *
+     * @default true
+     */
+    autoResize?: boolean;
+
+    /**
+     * Whether to show JS, CSS, SSR panel
+     *
+     * @default false
+     */
+    showCompileOutput?: boolean;
+
+    /**
+     * Whether to show import map
+     *
+     * @default true
+     */
+    showImportMap?: boolean;
+
+    /**
+     * Whether to clear console
+     *
+     * @default false
+     */
+    clearConsole?: boolean;
+
+    /**
+     * Layout
+     *
+     * @default 'horizontal'
+     */
+    layout?: "horizontal" | "vertical";
+
+    /**
+     * Options to configure the `vue/compiler-sfc`
+     */
+    sfcOptions?: SFCOptions;
+
+    /**
+     * Whether to enable SSR
+     *
+     * @default true
+     */
+    ssr?: boolean;
+  }
+  ```
+
 - Default: `false`
+- Details:
+  - [Vue Playground](./guide/code/vue-playground.md)
 
 Whether to enable vue playground support.
 
@@ -535,6 +655,8 @@ Whether to enable vue playground support.
 
 - Type: `CodeDemoGlobalOptions | boolean`
 - Default: `false`
+- Details:
+  - [Code Demo](./guide/code/demo/README.md)
 
 Whether to enable code demo support.
 
@@ -648,6 +770,8 @@ Default value: `"https://unpkg.com/react-dom/umd/react-dom.production.min.js"`
   ```
 
 - Default: `false`
+- Details:
+  - [Reveal.js](./guide/content/revealjs/README.md)
 
 Whether to enable slides support. You can pass an option to control plugins and themes to import.
 

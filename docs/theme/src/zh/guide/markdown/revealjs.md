@@ -8,7 +8,7 @@ tag:
   - 幻灯片
 ---
 
-<!-- @include: @md-enhance/zh/guide/revealjs/README.md#before -->
+<!-- @include: @md-enhance/zh/guide/content/revealjs/README.md#before -->
 
 ::: code-tabs#language
 
@@ -49,9 +49,9 @@ export default {
 
 :::
 
-<!-- @include: @md-enhance/zh/guide/revealjs/README.md#options -->
+<!-- @include: @md-enhance/zh/guide/content/revealjs/README.md#options -->
 
-各主题的外观，详见 <ProjectLink name="md-enhance" path="/zh/guide/revealjs/themes.html">幻灯片主题</ProjectLink>。
+各主题的外观，详见 <ProjectLink name="md-enhance" path="/zh/guide/content/revealjs/themes.html">幻灯片主题</ProjectLink>。
 
 ## 演示
 
@@ -92,8 +92,8 @@ $$
 
 ::: tip
 
-详细与完整的演示详见 <ProjectLink name="md-enhance" path="/zh/guide/revealjs/demo.html">幻灯片演示</ProjectLink>。
+详细与完整的演示详见 <ProjectLink name="md-enhance" path="/zh/guide/content/revealjs/demo.html">幻灯片演示</ProjectLink>。
 
 :::
 
-<!-- @include: @md-enhance/zh/guide/revealjs/README.md#customize -->
+<!-- @include: @md-enhance/zh/guide/content/revealjs/README.md#customize -->

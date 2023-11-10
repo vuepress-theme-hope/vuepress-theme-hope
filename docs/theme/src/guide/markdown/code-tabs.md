@@ -58,4 +58,4 @@ export default {
 
 This is the same as [tabs feature](./tabs.md), but it's special built for code blocks.
 
-<!-- @include: @md-enhance/guide/code-tabs.md#after -->
+<!-- @include: @md-enhance/guide/code/code-tabs.md#after -->

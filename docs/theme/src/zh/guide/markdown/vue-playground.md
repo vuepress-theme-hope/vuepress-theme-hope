@@ -3,7 +3,7 @@ title: Vue 交互演示
 icon: fab fa-vuejs
 ---
 
-<!-- @include: @md-enhance/zh/guide/vue-playground.md#before -->
+<!-- @include: @md-enhance/zh/guide/code/vue-playground.md#before -->
 
 ::: code-tabs#config
 
@@ -46,4 +46,4 @@ export default {
 
 :::
 
-<!-- @include: @md-enhance/zh/guide/vue-playground.md#after -->
+<!-- @include: @md-enhance/zh/guide/code/vue-playground.md#after -->

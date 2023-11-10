@@ -53,4 +53,4 @@ export default {
 
 :::
 
-<!-- @include: @md-enhance/zh/guide/align.md#after -->
+<!-- @include: @md-enhance/zh/guide/stylize/align.md#after -->

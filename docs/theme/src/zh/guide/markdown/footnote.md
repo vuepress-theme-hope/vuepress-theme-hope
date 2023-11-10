@@ -53,4 +53,4 @@ export default {
 
 :::
 
-<!-- @include: @md-enhance/zh/guide/footnote.md#after -->
+<!-- @include: @md-enhance/zh/guide/content/footnote.md#after -->

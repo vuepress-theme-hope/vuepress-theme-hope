@@ -8,7 +8,7 @@ tag:
   - 图表
 ---
 
-<!-- @include: @md-enhance/zh/guide/mermaid.md#before -->
+<!-- @include: @md-enhance/zh/guide/chart/mermaid.md#before -->
 
 ::: code-tabs#language
 
@@ -49,4 +49,4 @@ export default {
 
 :::
 
-<!-- @include: @md-enhance/zh/guide/mermaid.md#after -->
+<!-- @include: @md-enhance/zh/guide/chart/mermaid.md#after -->

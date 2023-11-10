@@ -53,7 +53,7 @@ export default {
 
 :::
 
-<!-- @include: @md-enhance/guide/demo/README.md#syntax -->
+<!-- @include: @md-enhance/guide/code/demo/README.md#syntax -->
 
 ::: tip
 
@@ -71,23 +71,23 @@ The plugin support three types:
 
 @tab Normal
 
-<!-- @include: @md-enhance/guide/demo/normal.md#syntax -->
+<!-- @include: @md-enhance/guide/code/demo/normal.md#syntax -->
 
 @tab Vue
 
-<!-- @include: @md-enhance/guide/demo/vue.md#syntax -->
+<!-- @include: @md-enhance/guide/code/demo/vue.md#syntax -->
 
 @tab React
 
-<!-- @include: @md-enhance/guide/demo/react.md#syntax -->
+<!-- @include: @md-enhance/guide/code/demo/react.md#syntax -->
 
 ::::
 
-<!-- @include: @md-enhance/guide/demo/README.md#language -->
+<!-- @include: @md-enhance/guide/code/demo/README.md#language -->
 
 ## Demo
 
-<!-- @include: @md-enhance/guide/demo/normal.md#demo -->
-<!-- @include: @md-enhance/guide/demo/vue.md#demo -->
-<!-- @include: @md-enhance/guide/demo/react.md#demo -->
-<!-- @include: @md-enhance/guide/demo/README.md#demo -->
+<!-- @include: @md-enhance/guide/code/demo/normal.md#demo -->
+<!-- @include: @md-enhance/guide/code/demo/vue.md#demo -->
+<!-- @include: @md-enhance/guide/code/demo/react.md#demo -->
+<!-- @include: @md-enhance/guide/code/demo/README.md#demo -->
