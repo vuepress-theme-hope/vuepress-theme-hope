@@ -35,35 +35,35 @@ SiteInfo component, can be used as friend link or project display.
 
 ### name
 
-- 类型: `string`
-- 必填: 是
+- Type: `string`
+- Required: Yes
 
-站点名称
+Site name
 
 ### preview
 
-- 类型: `string`
-- 必填: 是
+- Type: `string`
+- Required: Yes
 
-站点预览图片，必须为绝对路径或完整路径
+Site preview image, must be absolute path or complete URL.
 
 ### desc
 
-- 类型: `string`
-- 默认值: `''`
+- Type: `string`
+- Required: No
 
-站点详情
+Site description
 
 ### logo
 
-- 类型: `string`
-- 默认值: `''`
+- Type: `string`
+- Required: No
 
-站点图标
+Site logo
 
 ### repo
 
-- 类型: `string`
-- 默认值: `''`
+- Type: `string`
+- Required: No
 
-站点原仓库。
+Site repository

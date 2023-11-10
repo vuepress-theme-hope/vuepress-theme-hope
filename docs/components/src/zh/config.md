@@ -20,6 +20,8 @@ icon: gears
     | "Share"
     | "StackBlitz"
     | "SiteInfo"
+    | "VPBanner"
+    | "VPCard"
     | "VidStack"
     | "VideoPlayer"
     | "XiGua"
@@ -43,6 +45,8 @@ icon: gears
 - `"Share"`
 - `"StackBlitz"`
 - `"SiteInfo"`
+- `"VPBanner"`
+- `"VPCard"`
 - `"VidStack"`
 - `"VideoPlayer"`
 - `"XiGua"`

@@ -4,7 +4,7 @@ icon: lightbulb
 index: false
 ---
 
-::: info Tree Shakable
+## 大小优化
 
 这个插件完全支持 tree-shaking。
 
@@ -12,4 +12,6 @@ index: false
 
 例如，如果你使用 `{ rootComponents: { backToTop: true } }` 调用此插件，则仅注入 `<BackToTop />` 组件。
 
-:::
+## 搭配增强语法
+
+我们推荐你搭配 [md-enhance component 语法](https://plugin-md-enhance.vuejs.press/zh/guide/content/component.html) 使用插件。

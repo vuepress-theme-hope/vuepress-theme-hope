@@ -37,9 +37,16 @@ export interface CardProps {
   link?: string;
 
   /**
-   * Card color
+   * Card background
    *
-   * 卡片链颜色
+   * 卡片背景
+   */
+  background?: string;
+
+  /**
+   * Card font color
+   *
+   * 卡片字体颜色
    */
   color?: string;
 }
@@ -47,12 +54,13 @@ export interface CardProps {
 const VPCard: FunctionalComponent<CardProps> = ({
   title,
   desc = "",
-  logo = "",
-  color = "",
-  link = "",
+  logo,
+  background,
+  color,
+  link,
 }) => {
   const children = [
-    h("img", { class: "vp-card-logo", src: withBase(logo) }),
+    logo ? h("img", { class: "vp-card-logo", src: withBase(logo) }) : null,
     h("div", { class: "vp-card-content" }, [
       h("div", { class: "vp-card-title", innerHTML: title }),
       h("hr"),
@@ -60,13 +68,20 @@ const VPCard: FunctionalComponent<CardProps> = ({
     ]),
   ];
 
-  const props: Record<string, unknown> = { class: "vp-card" };
+  const style: Record<string, string> = {};
 
-  if (color) props["style"] = { background: color };
+  if (background) style["background"] = background;
+  if (color) style["color"] = color;
 
-  return isLinkExternal(link)
-    ? h("a", { href: link, target: "_blank", ...props }, children)
-    : h(VPLink, { to: link, ...props }, () => children);
+  return link
+    ? isLinkExternal(link)
+      ? h(
+          "a",
+          { class: "vp-card", href: link, target: "_blank", style },
+          children,
+        )
+      : h(VPLink, { to: link, class: "vp-card", style }, () => children)
+    : h("div", { class: "vp-card", style }, children);
 };
 
 VPCard.displayName = "VPCard";

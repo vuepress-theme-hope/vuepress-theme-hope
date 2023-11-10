@@ -86,6 +86,8 @@ export default theme("components", {
         "Share",
         "SiteInfo",
         "StackBlitz",
+        "VPBanner",
+        "VPCard",
         "VidStack",
         "VideoPlayer",
         "XiGua",
