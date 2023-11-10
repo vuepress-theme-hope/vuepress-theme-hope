@@ -1,58 +1,52 @@
-import type { VNode } from "vue";
-import { defineComponent, h } from "vue";
+import type { FunctionalComponent } from "vue";
+import { h } from "vue";
 
 import { PLAY_SVG } from "./icons.js";
 
 import "../styles/playground.scss";
 
-export default defineComponent({
-  // eslint-disable-next-line vue/multi-word-component-names
-  name: "Playground",
+export interface PlaygroundProps {
+  /**
+   * Playground title
+   *
+   * 演示标题
+   */
+  title?: string;
+  /**
+   * Playground link
+   *
+   * 演示链接
+   */
+  link: string;
+}
 
-  props: {
-    /**
-     * Playground title
-     *
-     * 演示标题
-     */
-    title: { type: String, default: "" },
-
-    /**
-     * Playground link
-     *
-     * 演示链接
-     */
-    link: { type: String, required: true },
-  },
-
-  setup(props) {
-    return (): (VNode | null)[] => [
-      h("div", { class: "vp-playground" }, [
-        h("div", { class: "vp-playground-header" }, [
-          props.title
-            ? h(
-                "div",
-                { class: "vp-playground-title" },
-                decodeURIComponent(props.title),
-              )
-            : null,
-          h("div", { class: "vp-playground-actions" }, [
-            h("a", {
-              class: "vp-playground-action",
-              href: decodeURIComponent(props.link),
-              target: "_blank",
-              innerHTML: PLAY_SVG,
-            }),
-          ]),
-        ]),
-        h(
-          "div",
-          { class: "vp-playground-container" },
-          h("iframe", {
-            src: decodeURIComponent(props.link),
-          }),
-        ),
+const Playground: FunctionalComponent<PlaygroundProps> = ({
+  title = "",
+  link,
+}) =>
+  h("div", { class: "vp-playground" }, [
+    h("div", { class: "vp-playground-header" }, [
+      title
+        ? h("div", { class: "vp-playground-title" }, decodeURIComponent(title))
+        : null,
+      h("div", { class: "vp-playground-actions" }, [
+        h("a", {
+          class: "vp-playground-action",
+          href: decodeURIComponent(link),
+          target: "_blank",
+          innerHTML: PLAY_SVG,
+        }),
       ]),
-    ];
-  },
-});
+    ]),
+    h(
+      "div",
+      { class: "vp-playground-container" },
+      h("iframe", {
+        src: decodeURIComponent(link),
+      }),
+    ),
+  ]);
+
+Playground.displayName = "Playground";
+
+export default Playground;

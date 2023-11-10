@@ -91,85 +91,83 @@ export default defineComponent({
         ? resolveComponent(component)
         : noopModule);
 
-    return (): VNode[] => {
-      return [
-        h(
-          "header",
-          {
-            id: "navbar",
-            class: [
-              "vp-navbar",
-              {
-                "auto-hide": autoHide.value,
-                "hide-icon": themeLocale.value.navbarIcon === false,
-              },
-            ],
-          },
-          [
-            h("div", { class: "vp-navbar-start" }, [
-              h(ToggleSidebarButton, {
-                onToggle: () => {
-                  if (showScreen.value) showScreen.value = false;
-                  emit("toggleSidebar");
-                },
-              }),
-              slots.startBefore?.(),
-              (navbarLayout.value.start || []).map((item) =>
-                h(
-                  <ComponentOptions | FunctionalComponent>(
-                    getNavbarComponent(item)
-                  ),
-                ),
-              ),
-              slots.startAfter?.(),
-            ]),
-
-            h("div", { class: "vp-navbar-center" }, [
-              slots.centerBefore?.(),
-              (navbarLayout.value.center || []).map((item) =>
-                h(
-                  <ComponentOptions | FunctionalComponent>(
-                    getNavbarComponent(item)
-                  ),
-                ),
-              ),
-              slots.centerAfter?.(),
-            ]),
-
-            h("div", { class: "vp-navbar-end" }, [
-              slots.endBefore?.(),
-              (navbarLayout.value.end || []).map((item) =>
-                h(
-                  <ComponentOptions | FunctionalComponent>(
-                    getNavbarComponent(item)
-                  ),
-                ),
-              ),
-              slots.endAfter?.(),
-
-              h(ToggleNavbarButton, {
-                active: showScreen.value,
-                onToggle: () => {
-                  showScreen.value = !showScreen.value;
-                },
-              }),
-            ]),
-          ],
-        ),
-        h(
-          NavScreen,
-          {
-            show: showScreen.value,
-            onClose: () => {
-              showScreen.value = false;
+    return (): VNode[] => [
+      h(
+        "header",
+        {
+          id: "navbar",
+          class: [
+            "vp-navbar",
+            {
+              "auto-hide": autoHide.value,
+              "hide-icon": themeLocale.value.navbarIcon === false,
             },
+          ],
+        },
+        [
+          h("div", { class: "vp-navbar-start" }, [
+            h(ToggleSidebarButton, {
+              onToggle: () => {
+                if (showScreen.value) showScreen.value = false;
+                emit("toggleSidebar");
+              },
+            }),
+            slots.startBefore?.(),
+            (navbarLayout.value.start || []).map((item) =>
+              h(
+                <ComponentOptions | FunctionalComponent>(
+                  getNavbarComponent(item)
+                ),
+              ),
+            ),
+            slots.startAfter?.(),
+          ]),
+
+          h("div", { class: "vp-navbar-center" }, [
+            slots.centerBefore?.(),
+            (navbarLayout.value.center || []).map((item) =>
+              h(
+                <ComponentOptions | FunctionalComponent>(
+                  getNavbarComponent(item)
+                ),
+              ),
+            ),
+            slots.centerAfter?.(),
+          ]),
+
+          h("div", { class: "vp-navbar-end" }, [
+            slots.endBefore?.(),
+            (navbarLayout.value.end || []).map((item) =>
+              h(
+                <ComponentOptions | FunctionalComponent>(
+                  getNavbarComponent(item)
+                ),
+              ),
+            ),
+            slots.endAfter?.(),
+
+            h(ToggleNavbarButton, {
+              active: showScreen.value,
+              onToggle: () => {
+                showScreen.value = !showScreen.value;
+              },
+            }),
+          ]),
+        ],
+      ),
+      h(
+        NavScreen,
+        {
+          show: showScreen.value,
+          onClose: () => {
+            showScreen.value = false;
           },
-          {
-            before: () => slots.screenTop?.(),
-            after: () => slots.screenBottom?.(),
-          },
-        ),
-      ];
-    };
+        },
+        {
+          before: () => slots.screenTop?.(),
+          after: () => slots.screenBottom?.(),
+        },
+      ),
+    ];
   },
 });

@@ -77,8 +77,8 @@ export const sassPalettePlugin =
         injectConfigModule(config, app, id);
       },
 
-      onInitialized: (): Promise<void> => {
-        return Promise.all([
+      onInitialized: (): Promise<void> =>
+        Promise.all([
           prepareInjectSass(app, id),
 
           prepareConfigSass(app, {
@@ -100,8 +100,7 @@ export const sassPalettePlugin =
           prepareStyleSass(app, { id, userStyle }),
         ]).then(() => {
           if (app.env.isDebug) logger.info(`Style file for ${id} generated`);
-        });
-      },
+        }),
 
       onWatched: (app, watchers): void => {
         const configWatcher = watch(userConfig, {

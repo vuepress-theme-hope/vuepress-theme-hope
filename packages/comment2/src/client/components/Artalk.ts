@@ -38,7 +38,7 @@ export default defineComponent({
     darkmode: Boolean,
   },
 
-  setup: (props) => {
+  setup(props) {
     const artalkOptions = useArtalkOptions();
     const page = usePageData();
     const site = useSiteData();

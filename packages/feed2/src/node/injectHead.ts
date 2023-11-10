@@ -23,19 +23,17 @@ export const injectLinksToHead = (
       name: string,
       fileName: string,
       type: string,
-    ): HeadConfig => {
-      return [
-        "link",
-        {
-          rel: "alternate",
-          type,
-          href: resolveUrl(hostname, base, fileName),
-          title: `${
-            siteData.title || siteData.locales["/"]?.title || ""
-          } ${name} Feed`,
-        },
-      ];
-    };
+    ): HeadConfig => [
+      "link",
+      {
+        rel: "alternate",
+        type,
+        href: resolveUrl(hostname, base, fileName),
+        title: `${
+          siteData.title || siteData.locales["/"]?.title || ""
+        } ${name} Feed`,
+      },
+    ];
 
     // ensure head exists
     siteData.head ??= [];

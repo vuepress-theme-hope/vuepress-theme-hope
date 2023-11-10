@@ -114,8 +114,8 @@ export default defineComponent({
       resize();
     });
 
-    return (): VNode => {
-      return h("div", {
+    return (): VNode =>
+      h("div", {
         class: "pdf-viewer-wrapper",
         ref: el,
         style: {
@@ -123,6 +123,5 @@ export default defineComponent({
           height: height.value,
         },
       });
-    };
   },
 });

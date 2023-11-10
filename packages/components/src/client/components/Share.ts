@@ -129,8 +129,8 @@ export default defineComponent({
       return result;
     });
 
-    return (): VNode => {
-      return h(
+    return (): VNode =>
+      h(
         "div",
         {
           class: "vp-share-buttons",
@@ -144,6 +144,5 @@ export default defineComponent({
           }),
         ),
       );
-    };
   },
 });
