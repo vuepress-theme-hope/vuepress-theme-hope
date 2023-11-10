@@ -1,4 +1,5 @@
 import type { ThemeFunction } from "@vuepress/core";
+import { TEMPLATE_RENDERER_OUTLETS, fs } from "@vuepress/utils";
 import { watch } from "chokidar";
 import { isPlainObject } from "vuepress-shared/node";
 
@@ -27,6 +28,10 @@ import {
 import type { HopeThemeBehaviorOptions } from "./typings/index.js";
 import { TEMPLATE_FOLDER } from "./utils.js";
 import type { ThemeOptions } from "../shared/index.js";
+
+const { version: themeVersion } = <{ version: string }>(
+  fs.readJsonSync("../../package.json")
+);
 
 export const hopeTheme =
   (
@@ -139,6 +144,21 @@ export const hopeTheme =
       ),
 
       templateBuild: `${TEMPLATE_FOLDER}index.build.html`,
+
+      templateBuildRenderer: (
+        template: string,
+        { content, head, lang, prefetch, preload, scripts, styles, version },
+      ): string =>
+        template
+          .replace(TEMPLATE_RENDERER_OUTLETS.CONTENT, () => content)
+          .replace(TEMPLATE_RENDERER_OUTLETS.HEAD, head)
+          .replace("{{ themeVersion }}", themeVersion)
+          .replace(TEMPLATE_RENDERER_OUTLETS.LANG, lang)
+          .replace(TEMPLATE_RENDERER_OUTLETS.PREFETCH, prefetch)
+          .replace(TEMPLATE_RENDERER_OUTLETS.PRELOAD, preload)
+          .replace(TEMPLATE_RENDERER_OUTLETS.SCRIPTS, scripts)
+          .replace(TEMPLATE_RENDERER_OUTLETS.STYLES, styles)
+          .replace(TEMPLATE_RENDERER_OUTLETS.VERSION, version),
 
       clientConfigFile: (app) =>
         behaviorOptions.custom

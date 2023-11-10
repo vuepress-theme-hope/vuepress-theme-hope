@@ -146,6 +146,10 @@ export default hopeTheme(
         serverURL: "https://waline-comment.vuejs.press",
       },
 
+      components: {
+        components: ["VPCard"],
+      },
+
       // all features are enabled for demo, only preserve features you need here
       mdEnhance: {
         align: true,

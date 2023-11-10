@@ -33,12 +33,12 @@
   },
   "dependencies": {
     "@types/three": "0.158.2",
-    "@vuepress/cli": "2.0.0-beta.67",
-    "@vuepress/client": "2.0.0-beta.67",
-    "@vuepress/core": "2.0.0-beta.67",
-    "@vuepress/plugin-docsearch": "2.0.0-beta.67",
-    "@vuepress/shared": "2.0.0-beta.67",
-    "@vuepress/utils": "2.0.0-beta.67",
+    "@vuepress/cli": "2.0.0-beta.68",
+    "@vuepress/client": "2.0.0-beta.68",
+    "@vuepress/core": "2.0.0-beta.68",
+    "@vuepress/plugin-docsearch": "2.0.0-beta.68",
+    "@vuepress/shared": "2.0.0-beta.68",
+    "@vuepress/utils": "2.0.0-beta.68",
     "three": "0.158.0",
     "vue": "3.3.8",
     "vuepress-plugin-redirect": "workspace:*",
@@ -46,6 +46,6 @@
     "vuepress-theme-hope": "workspace:*"
   },
   "devDependencies": {
-    "@vuepress/bundler-vite": "2.0.0-beta.67"
+    "@vuepress/bundler-vite": "2.0.0-beta.68"
   }
 }
