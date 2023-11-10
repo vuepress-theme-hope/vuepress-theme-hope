@@ -30,16 +30,13 @@ PDF 预览组件。
 
 并非所有浏览器都支持嵌入 PDF 查看器 (如: 现在没有移动浏览器支持此功能)，因此我们添加了对 PDFJS 查看器的支持。
 
-由于 PDFJS 查看器 很大，你需要从 [Github](https://github.com/mozilla/pdf.js/releases) 手动下载它：
-
-- 如果你只想在移动设备上添加对现代浏览器的支持，请下载 `pdfjs-3.1.81-dist.zip`
-- 如果你想添加对大多数浏览器的支持，请下载 `pdfjs-3.1.81-legacy-dist.zip`
+由于 PDFJS 查看器 很大，你需要从 [Github](https://github.com/mozilla/pdf.js/releases) 手动下载它。
 
 下载完成后，请在 `.vuepress/public` 文件夹中解压到你想要的位置，然后在组件选项中将 `componentOptions.pdf.pdfjs` 设置为相对于 `.vuepress/public` 的路径。
 
 ::: details 示例
 
-如果你下载 `pdfjs-3.1.81-legacy-dist.zip` 并解压到 `.vuepress/public/assets/lib/pdfjs` ，你应该设置：
+如果你将 PDFJS 解压到 `.vuepress/public/assets/lib/pdfjs` ，你应该设置：
 
 ```ts
 // .vuepress/config.ts
@@ -66,7 +63,7 @@ export default {
 
 ```html
 <!-- ... -->
-<script src="../build/pdf.js"></script>
+<link rel="stylesheet" href="viewer.css" />
 
 <!-- ========== 下面是你应该添加的内容 ============= -->
 
@@ -82,7 +79,7 @@ export default {
 
 <!-- ========== 以上是你应该添加的 ============= -->
 
-<script src="viewer.js"></script>
+<script src="viewer.mjs"></script>
 <!-- ... -->
 ```
 

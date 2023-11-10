@@ -30,16 +30,13 @@ You can use this component to embed a PDF viewer.
 
 Not all browsers support embed PDF viewer (E.g.: No mobile browser supports this now), so we add support for PDFJS Viewer.
 
-Since PDFJS Viewer is large, you will need to manually download it from [GitHub](https://github.com/mozilla/pdf.js/releases):
-
-- If you only want to add support for modern browsers on mobile, download `pdfjs-3.1.81-dist.zip`
-- If you want to add support for most browsers, download `pdfjs-3.1.81-legacy-dist.zip`
+Since PDFJS Viewer is large, you will need to manually download it from [GitHub](https://github.com/mozilla/pdf.js/releases)
 
 After finish downloading, unzip it to a location you want in `.vuepress/public` folder, then set destination relative to `.vuepress/public` to `componentOptions.pdf.pdfjs` in component options.
 
 ::: details Example
 
-If you download `pdfjs-3.1.81-legacy-dist.zip` and unzip to `.vuepress/public/assets/lib/pdfjs`, you shall set:
+If you unzip pdfjs to `.vuepress/public/assets/lib/pdfjs`, you shall set:
 
 ```ts
 // .vuepress/config.ts
@@ -66,7 +63,7 @@ The default PDFJS viewer does not support toolbar customization, if you want to 
 
 ```html
 <!-- ... -->
-<script src="../build/pdf.js"></script>
+<link rel="stylesheet" href="viewer.css" />
 
 <!-- ========== Below is what you should add ============= -->
 
@@ -82,7 +79,7 @@ The default PDFJS viewer does not support toolbar customization, if you want to 
 
 <!-- ========== Above is what you should add ============= -->
 
-<script src="viewer.js"></script>
+<script src="viewer.mjs"></script>
 <!-- ... -->
 ```
 
