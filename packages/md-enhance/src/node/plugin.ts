@@ -44,9 +44,9 @@ import { getLinksCheckStatus, linksCheck } from "./linksCheck.js";
 import { markdownEnhanceLocales } from "./locales.js";
 import {
   CODE_DEMO_DEFAULT_SETTING,
-  card,
   chart,
   codeTabs,
+  component,
   echarts,
   flowchart,
   getTSPlaygroundPreset,
@@ -334,7 +334,7 @@ export const mdEnhancePlugin =
           });
 
         // features
-        if (getStatus("card")) md.use(card);
+        if (getStatus("component")) md.use(component);
         if (getStatus("codetabs")) {
           md.use(codeTabs);
           // TODO: Remove this in v2 stable

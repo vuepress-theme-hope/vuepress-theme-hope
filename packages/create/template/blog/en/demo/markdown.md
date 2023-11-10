@@ -187,9 +187,9 @@ Support setting color scheme and size
 
 - [View Detail](https://theme-hope.vuejs.press/guide/markdown/image.html)
 
-#### Card
+#### Component
 
-```card
+```component VPCard
 title: Mr.Hope
 desc: Where there is light, there is hope
 logo: https://mister-hope.com/logo.svg
@@ -197,7 +197,7 @@ link: https://mister-hope.com
 color: rgba(253, 230, 138, 0.15)
 ```
 
-- [View Detail](https://theme-hope.vuejs.press/guide/markdown/card.html)
+- [View Detail](https://theme-hope.vuejs.press/guide/markdown/component.html)
 
 #### Include files
 

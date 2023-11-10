@@ -86,10 +86,10 @@ highlights:
         details: Group similar content with tabs and switch them together
         link: ./guide/content/tabs.html
 
-      - title: Card Support
-        icon: square
-        details: Add cards in Markdown
-        link: ./guide/content/card.html
+      - title: Component Support
+        icon: puzzle-piece
+        details: Easily insert components in Markdown
+        link: ./guide/content/component.html
 
   - header: Stylizing contents
     image: /assets/image/marker.svg

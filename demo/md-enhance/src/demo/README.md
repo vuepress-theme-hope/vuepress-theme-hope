@@ -10,6 +10,7 @@ title: Get Started
 - [ECharts](echarts.md)
 - [Code Demo](code-demo.md)
 - [Code Tabs](code-tabs.md)
+- [Component](component.md)
 - [Container](container.md)
 - [Figure](figure.md)
 - [Flowchart](flowchart.md)

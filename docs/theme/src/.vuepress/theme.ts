@@ -57,6 +57,7 @@ export default theme("theme", {
         "Share",
         "SiteInfo",
         "StackBlitz",
+        "VPCard",
         "VidStack",
         "VideoPlayer",
         "YouTube",
@@ -114,9 +115,9 @@ export default theme("theme", {
     mdEnhance: {
       align: true,
       attrs: true,
-      card: true,
       chart: true,
       codetabs: true,
+      component: true,
       demo: true,
       echarts: true,
       figure: true,

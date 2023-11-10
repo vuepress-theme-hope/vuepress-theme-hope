@@ -20,6 +20,7 @@ export default [
         "components/Share",
         "components/SiteInfo",
         "components/StackBlitz",
+        "components/VPCard",
         "components/VidStack",
         "components/VideoPlayer",
         "components/XiGua",

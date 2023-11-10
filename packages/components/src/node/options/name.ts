@@ -10,6 +10,7 @@ export type AvailableComponent =
   | "Share"
   | "StackBlitz"
   | "SiteInfo"
+  | "VPCard"
   | "VidStack"
   | "VideoPlayer"
   | "XiGua"

@@ -150,9 +150,9 @@ export default hopeTheme(
       mdEnhance: {
         align: true,
         attrs: true,
-        card: true,
         chart: true,
         codetabs: true,
+        component: true,
         demo: true,
         echarts: true,
         figure: true,

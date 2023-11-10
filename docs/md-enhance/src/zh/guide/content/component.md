@@ -1,13 +1,13 @@
 ---
-title: Card
-icon: square
+title: 组件
+icon: puzzle-piece
 ---
 
-You can add cards in Markdown content.
+你可以在 Markdown 中轻松添加组件。
 
 <!-- more -->
 
-## Settings
+## 配置
 
 ::: code-tabs#language
 
@@ -20,8 +20,8 @@ import { mdEnhancePlugin } from "vuepress-plugin-md-enhance";
 export default {
   plugins: [
     mdEnhancePlugin({
-      // Enable card support
-      card: true,
+      // 开启组件支持
+      component: true,
     }),
   ],
 };
@@ -36,8 +36,8 @@ import { mdEnhancePlugin } from "vuepress-plugin-md-enhance";
 export default {
   plugins: [
     mdEnhancePlugin({
-      // Enable card support
-      card: true,
+      // 开启组件支持
+      component: true,
     }),
   ],
 };
@@ -47,49 +47,27 @@ export default {
 
 <!-- #region after -->
 
-## Usage
+## 使用
 
-You can use card fence block to add a card into your markdown content. Both YAML and JSON format card data are supported:
+你可以使用 component 代码块来在 Markdown 中添加组件。YAML 和 JSON 的卡片数据格式均受支持:
 
 ````md
-```card
-# card data here
+```component 组件名称
+# 组件数据
 ```
 
-```card
+```component 组件名称
 {
-  // card data here
+  // 组件数据
 }
 ```
 ````
 
-Card data supports `title`, `desc`, `logo`, `link` and `color` properties.
+## 案例
 
-If you want to place multiple cards together, you can wrap them in `card` container:
+::: md-demo
 
-````md
-::: card
-
-```card
-# card data here
-```
-
-```card
-# card data here
-```
-
-...
-
-:::
-````
-
-## Demo
-
-:::: md-demo
-
-::: card
-
-```card
+```component VPCard
 title: Mr.Hope
 desc: Where there is light, there is hope
 logo: https://mister-hope.com/logo.svg
@@ -97,7 +75,7 @@ link: https://mister-hope.com
 color: rgba(253, 230, 138, 0.15)
 ```
 
-```card
+```component VPCard
 {
   "title": "Mr.Hope",
   "desc": "Where there is light, there is hope",
@@ -108,7 +86,5 @@ color: rgba(253, 230, 138, 0.15)
 ```
 
 :::
-
-::::
 
 <!-- #endregion after -->

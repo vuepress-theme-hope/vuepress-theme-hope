@@ -90,10 +90,10 @@ highlights:
         details: 使用改进的语法指定图片大小与颜色模式
         link: https://theme-hope.vuejs.press/zh/guide/markdown/image.html
 
-      - title: 卡片支持
-        icon: square
-        details: 在 Markdown 中展示卡片
-        link: https://theme-hope.vuejs.press/zh/guide/markdown/card.html
+      - title: 组件支持
+        icon: puzzle-piece
+        details: 在 Markdown 中轻松插入组件
+        link: https://theme-hope.vuejs.press/zh/guide/markdown/component.html
 
       - title: 图表支持
         icon: chart-simple

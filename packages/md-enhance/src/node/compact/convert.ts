@@ -74,6 +74,15 @@ export const convertOptions = (
     };
   }
 
+  if (options["card"])
+    logger.error(
+      `${colors.magenta(
+        "card",
+      )} is no longer supported, please use ${colors.magenta(
+        "components",
+      )} instead.`,
+    );
+
   if (options["presentation"])
     logger.error(
       `${colors.magenta(

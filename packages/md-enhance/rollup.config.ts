@@ -26,7 +26,6 @@ export default [
         "components/Playground",
         "components/RevealJs",
         "components/Tabs",
-        "components/VPCard",
         "components/VuePlayground",
         "composables/container",
         "composables/katex",

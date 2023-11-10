@@ -1,13 +1,13 @@
 ---
-title: 卡片
-icon: square
+title: Component
+icon: puzzle-piece
 ---
 
-你可以在 Markdown 中添加卡片。
+You can add components easily in Markdown content.
 
 <!-- more -->
 
-## 配置
+## Settings
 
 ::: code-tabs#language
 
@@ -20,8 +20,8 @@ import { mdEnhancePlugin } from "vuepress-plugin-md-enhance";
 export default {
   plugins: [
     mdEnhancePlugin({
-      // 开启卡片支持
-      card: true,
+      // Enable component support
+      component: true,
     }),
   ],
 };
@@ -36,8 +36,8 @@ import { mdEnhancePlugin } from "vuepress-plugin-md-enhance";
 export default {
   plugins: [
     mdEnhancePlugin({
-      // 开启卡片支持
-      card: true,
+      // Enable component support
+      component: true,
     }),
   ],
 };
@@ -47,49 +47,27 @@ export default {
 
 <!-- #region after -->
 
-## 使用
+## Usage
 
-你可以使用卡片代码块来在 Markdown 中添加卡片。YAML 和 JSON 的卡片数据格式均受支持:
+You can use component fence block to add a component into your markdown content. Both YAML and JSON format props data are supported:
 
 ````md
-```card
-# 卡片数据
+```component ComponentName
+# component data here
 ```
 
-```card
+```component ComponentName
 {
-  // 卡片数据
+  // component data here
 }
 ```
 ````
 
-卡片数据支持 `title`、`desc`、`logo`、`link` 和 `color` 属性。
+## Demo
 
-如果你想要将多个卡片放在一起，你可以将它们包裹在 `card` 容器中：
+::: md-demo
 
-````md
-::: card
-
-```card
-# 卡片数据
-```
-
-```card
-# 卡片数据
-```
-
-...
-
-:::
-````
-
-## 案例
-
-:::: md-demo
-
-::: card
-
-```card
+```component VPCard
 title: Mr.Hope
 desc: Where there is light, there is hope
 logo: https://mister-hope.com/logo.svg
@@ -97,7 +75,7 @@ link: https://mister-hope.com
 color: rgba(253, 230, 138, 0.15)
 ```
 
-```card
+```component VPCard
 {
   "title": "Mr.Hope",
   "desc": "Where there is light, there is hope",
@@ -108,7 +86,5 @@ color: rgba(253, 230, 138, 0.15)
 ```
 
 :::
-
-::::
 
 <!-- #endregion after -->

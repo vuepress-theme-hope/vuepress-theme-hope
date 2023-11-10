@@ -60,6 +60,8 @@ dir:
 
 - [Vue 交互演示](vue-playground.md)
 
+- [组件语法](component.md)
+
 - [组件](components.md)
 
 - [其他](others.md)

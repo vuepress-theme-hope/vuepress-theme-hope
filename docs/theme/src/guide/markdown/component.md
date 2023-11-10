@@ -1,18 +1,18 @@
 ---
-title: 卡片
-icon: square
+title: Component
+icon: puzzle-piece
 category:
   - Markdown
 tag:
+  - Component
   - Markdown
-  - 对齐
 ---
 
-你可以在 Markdown 中添加卡片。
+You can add easily components in Markdown content.
 
 <!-- more -->
 
-## 配置
+## Settings
 
 ::: code-tabs#language
 
@@ -27,7 +27,7 @@ export default defineUserConfig({
   theme: hopeTheme({
     plugins: {
       mdEnhance: {
-        card: true,
+        components: true,
       },
     },
   }),
@@ -44,7 +44,7 @@ export default {
   theme: hopeTheme({
     plugins: {
       mdEnhance: {
-        card: true,
+        components: true,
       },
     },
   }),
@@ -53,4 +53,4 @@ export default {
 
 :::
 
-<!-- @include: @md-enhance/zh/guide/content/card.md#after -->
+<!-- @include: @md-enhance/guide/content/component.md#after -->

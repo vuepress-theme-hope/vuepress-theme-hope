@@ -24,9 +24,9 @@ index: false
 
 <!-- #region demo -->
 
-### 卡片
+### 组件
 
-```card
+```component VPCard
 title: Mr.Hope
 desc: Where there is light, there is hope
 logo: https://mister-hope.com/logo.svg
@@ -34,7 +34,7 @@ link: https://mister-hope.com
 color: rgba(253, 230, 138, 0.15)
 ```
 
-- [查看详情](./card.md)
+- [查看详情](./component.md)
 
 ### 脚注
 

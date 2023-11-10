@@ -341,14 +341,14 @@ Whether to enable $\TeX$ syntax support through Math Jax. You can pass an object
 
 Please see [source code](https://github.com/vuepress-theme-hope/vuepress-theme-hope/tree/main/packages/md-enhance/src/shared/mathjax.ts) for available options.
 
-### card
+### component
 
 - Type: `boolean`
 - Default: `false`
 - Details:
-  - [Card](./guide/content/card.md)
+  - [Component](./guide/content/component.md)
 
-Whether to enable card support
+Whether to enable component support
 
 ### chart
 

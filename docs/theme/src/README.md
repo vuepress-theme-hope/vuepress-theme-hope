@@ -94,10 +94,10 @@ highlights:
         details: improve syntax to specify size and color scheme
         link: ./guide/markdown/image.html
 
-      - title: Card Support
+      - title: Component Support
         icon: square
-        details: Add cards in Markdown
-        link: ./guide/markdown/card.html
+        details: Easily insert components in Markdown
+        link: ./guide/markdown/component.html
 
       - title: Chart Support
         icon: chart-simple

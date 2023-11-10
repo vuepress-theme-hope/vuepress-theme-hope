@@ -25,11 +25,11 @@ export default defineUserConfig({
       "/demo/": [
         "/demo/align",
         "/demo/attrs",
-        "/demo/card",
         "/demo/chart",
         "/demo/echarts",
         "/demo/code-demo",
         "/demo/code-tabs",
+        "/demo/component",
         "/demo/container",
         "/demo/figure",
         "/demo/flowchart",
@@ -65,9 +65,9 @@ export default defineUserConfig({
     mdEnhancePlugin({
       align: true,
       attrs: true,
-      card: true,
       chart: true,
       codetabs: true,
+      component: true,
       container: true,
       demo: true,
       echarts: true,

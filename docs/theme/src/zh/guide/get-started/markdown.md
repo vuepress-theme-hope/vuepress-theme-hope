@@ -224,9 +224,9 @@ npm i -D vuepress-theme-hope
 
 - [查看详情](../markdown/image.md)
 
-#### 卡片
+#### 组件
 
-```card
+```component VPCard
 title: Mr.Hope
 desc: Where there is light, there is hope
 logo: https://mister-hope.com/logo.svg
@@ -234,7 +234,7 @@ link: https://mister-hope.com
 color: rgba(253, 230, 138, 0.15)
 ```
 
-- [查看详情](../markdown/card.md)
+- [查看详情](../markdown/component.md)
 
 #### 图表
 

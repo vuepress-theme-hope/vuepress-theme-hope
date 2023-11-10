@@ -341,14 +341,14 @@ order: 2
 
 可用的选项，详见 [源代码](https://github.com/vuepress-theme-hope/vuepress-theme-hope/tree/main/packages/md-enhance/src/shared/mathjax.ts)。
 
-### card
+### component
 
 - 类型: `boolean`
 - 默认值: `false`
 - 详情:
-  - [卡片](./guide/content/card.md)
+  - [组件](./guide/content/component.md)
 
-是否启用卡片支持。
+是否启用组件支持。
 
 ### chart
 

@@ -19,12 +19,16 @@ export default theme("md-enhance", {
   },
 
   plugins: {
+    components: {
+      components: ["VPCard"],
+    },
+
     mdEnhance: {
       align: true,
       attrs: true,
-      card: true,
       chart: true,
       codetabs: true,
+      component: true,
       container: true,
       demo: true,
       echarts: true,

@@ -301,12 +301,12 @@ Please see [source code](https://github.com/vuepress-theme-hope/vuepress-theme-h
 
 Whether to enable Markdown import support. You can pass in a function for path resolution.
 
-### card
+### component
 
 - Type: `boolean`
 - Default: `false`
 
-Whether to enable card support
+Whether to enable component support
 
 ### chart
 

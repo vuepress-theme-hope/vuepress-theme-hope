@@ -21,6 +21,7 @@ export const AVAILABLE_COMPONENTS: AvailableComponent[] = [
   "Share",
   "SiteInfo",
   "StackBlitz",
+  "VPCard",
   "VidStack",
   "VideoPlayer",
   "XiGua",

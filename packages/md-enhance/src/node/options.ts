@@ -287,13 +287,13 @@ export interface MarkdownEnhanceOptions {
   mathjax?: MathjaxOptions | boolean;
 
   /**
-   * Whether to enable card support
+   * Whether to enable component support
    *
-   * 是否启用卡片支持
+   * 是否启用组件支持
    *
    * @default false
    */
-  card?: boolean;
+  component?: boolean;
 
   /**
    * Whether to enable chart support

@@ -90,10 +90,10 @@ highlights:
         details: improve syntax to specify size and color scheme
         link: https://theme-hope.vuejs.press/guide/markdown/image.html
 
-      - title: Card Support
+      - title: Component Support
         icon: square
-        details: Add cards in Markdown
-        link: https://theme-hope.vuejs.press/guide/markdown/card.html
+        details: Add component easily in Markdown
+        link: https://theme-hope.vuejs.press/guide/markdown/component.html
 
       - title: Chart Support
         icon: chart-simple

@@ -83,10 +83,10 @@ highlights:
         details: 使用选项卡对相似内容进行分组
         link: ./guide/content/tabs.html
 
-      - title: 卡片
-        icon: square
-        details: 在 Markdown 中展示卡片
-        link: ./guide/content/card.html
+      - title: 组件
+        icon: puzzle-piece
+        details: 在 Markdown 中快速插入组件
+        link: ./guide/content/component.html
 
   - header: 样式化内容
     image: /assets/image/marker.svg

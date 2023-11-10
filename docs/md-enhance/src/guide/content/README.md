@@ -11,7 +11,7 @@ index: false
 
 This plugin provides the following ways to enrich your content.
 
-- Cards: quickly create cards
+- Component: quickly insert component in M.
 - Footnotes: Supplementary explanation of key content
 - Import files: Easily split or reuse files
 - Slideshow: Show content
@@ -24,9 +24,9 @@ This plugin provides the following ways to enrich your content.
 
 <!-- #region demo -->
 
-### Card
+### component
 
-```card
+```component VPCard
 title: Mr.Hope
 desc: Where there is light, there is hope
 logo: https://mister-hope.com/logo.svg
@@ -34,7 +34,7 @@ link: https://mister-hope.com
 color: rgba(253, 230, 138, 0.15)
 ```
 
-- [View Detail](./card.md)
+- [View Detail](./component.md)
 
 ### Footnote
 
