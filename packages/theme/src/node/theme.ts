@@ -26,7 +26,7 @@ import {
   prepareSocialMediaIcons,
 } from "./prepare/index.js";
 import type { HopeThemeBehaviorOptions } from "./typings/index.js";
-import { TEMPLATE_FOLDER, THEME_VERSION } from "./utils.js";
+import { TEMPLATE_FOLDER, VERSION } from "./utils.js";
 import type { ThemeOptions } from "../shared/index.js";
 
 export const hopeTheme =
@@ -148,7 +148,7 @@ export const hopeTheme =
         template
           .replace(TEMPLATE_RENDERER_OUTLETS.CONTENT, () => content)
           .replace(TEMPLATE_RENDERER_OUTLETS.HEAD, head)
-          .replace("{{ themeVersion }}", THEME_VERSION)
+          .replace("{{ themeVersion }}", VERSION)
           .replace(TEMPLATE_RENDERER_OUTLETS.LANG, lang)
           .replace(TEMPLATE_RENDERER_OUTLETS.PREFETCH, prefetch)
           .replace(TEMPLATE_RENDERER_OUTLETS.PRELOAD, preload)
