@@ -12,6 +12,11 @@
     background var(--vp-ct),
     box-shadow var(--vp-ct);
 
+  @media (max-width: hope-config.$tablet) {
+    margin: 0.75rem 0;
+    padding: 1rem 1.5rem;
+  }
+
   &-logo {
     float: right;
 
@@ -25,11 +30,19 @@
     font-weight: 500;
     font-size: 2rem;
     line-height: 1.5;
+
+    @media (max-width: hope-config.$tablet) {
+      font-size: 1.75rem;
+    }
   }
 
   &-content {
     max-width: 80%;
-    font-size: 18px;
+    font-size: 1.125rem;
+
+    @media (max-width: hope-config.$tablet) {
+      font-size: 1rem;
+    }
   }
 
   &-actions {
@@ -49,6 +62,11 @@
     font-size: 1rem;
     line-height: 3;
     text-decoration: none !important;
+
+    @media (max-width: hope-config.$tablet) {
+      height: 2.5rem;
+      line-height: 2.5;
+    }
 
     &:hover {
       background-color: var(--c-border);
