@@ -174,39 +174,6 @@ importers:
         specifier: 0.34.6
         version: 0.34.6
 
-  demo/append-date:
-    devDependencies:
-      '@vuepress/cli':
-        specifier: 2.0.0-beta.67
-        version: 2.0.0-beta.67(typescript@5.2.2)
-      '@vuepress/client':
-        specifier: 2.0.0-beta.67
-        version: 2.0.0-beta.67(typescript@5.2.2)
-      '@vuepress/core':
-        specifier: 2.0.0-beta.67
-        version: 2.0.0-beta.67(typescript@5.2.2)
-      '@vuepress/plugin-git':
-        specifier: 2.0.0-beta.67
-        version: 2.0.0-beta.67(typescript@5.2.2)
-      '@vuepress/theme-default':
-        specifier: 2.0.0-beta.67
-        version: 2.0.0-beta.67(sass-loader@13.3.2)(typescript@5.2.2)
-      '@vuepress/utils':
-        specifier: 2.0.0-beta.67
-        version: 2.0.0-beta.67
-      vue:
-        specifier: 3.4.0-alpha.1
-        version: 3.4.0-alpha.1(typescript@5.2.2)
-      vuepress-plugin-append-date:
-        specifier: workspace:*
-        version: link:../../packages/append-date
-      vuepress-vite:
-        specifier: 2.0.0-beta.67
-        version: 2.0.0-beta.67(@types/node@20.9.0)(@vuepress/client@2.0.0-beta.67)(sass-loader@13.3.2)(typescript@5.2.2)(vue@3.4.0-alpha.1)
-      vuepress-webpack:
-        specifier: 2.0.0-beta.67
-        version: 2.0.0-beta.67(esbuild@0.19.5)(sass@1.69.5)(typescript@5.2.2)(vue@3.4.0-alpha.1)(webpack@5.89.0)
-
   demo/auto-catalog:
     devDependencies:
       '@vuepress/cli':
@@ -513,8 +480,8 @@ importers:
         specifier: 10.6.1
         version: 10.6.1
       reveal.js:
-        specifier: 5.0.1
-        version: 5.0.1
+        specifier: 5.0.2
+        version: 5.0.2
       sass-loader:
         specifier: 13.3.2
         version: 13.3.2(sass@1.69.5)(webpack@5.89.0)
@@ -759,8 +726,8 @@ importers:
         specifier: 10.6.1
         version: 10.6.1
       reveal.js:
-        specifier: 5.0.1
-        version: 5.0.1
+        specifier: 5.0.2
+        version: 5.0.2
       sass-loader:
         specifier: 13.3.2
         version: 13.3.2(sass@1.69.5)(webpack@5.89.0)
@@ -813,8 +780,8 @@ importers:
         specifier: 10.6.1
         version: 10.6.1
       reveal.js:
-        specifier: 5.0.1
-        version: 5.0.1
+        specifier: 5.0.2
+        version: 5.0.2
       sass-loader:
         specifier: 13.3.2
         version: 13.3.2(sass@1.69.5)(webpack@5.89.0)
@@ -13544,6 +13511,12 @@ packages:
   /reveal.js@5.0.1:
     resolution: {integrity: sha512-cgbEasV/Yh8QIRyCCiOHRtio6uxAwmOAhyr80vegX2P69/iwE1FX77EXJ9NAPvcODxoIyYrgvxAaPxR5TKcsFw==}
     engines: {node: '>=18.0.0'}
+    dev: false
+
+  /reveal.js@5.0.2:
+    resolution: {integrity: sha512-G5dhsr/2wormdrYPtZBfRamvnPrHc/8TtYVH3EpIzfMyKSiTprFwn61nFZbcmeK4iKKdLq2MMiiMNqlRmkBU4A==}
+    engines: {node: '>=18.0.0'}
+    dev: true
 
   /rimraf@3.0.2:
     resolution: {integrity: sha512-JZkJMZkAGFFPP2YqXZXPbMlMBgsxzE8ILs4lMIX/2o0L9UBw9O/Y3o6wFw/i9YLapcUJWwqbi3kdxIPdC62TIA==}
