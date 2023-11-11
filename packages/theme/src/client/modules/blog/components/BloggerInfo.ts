@@ -84,6 +84,7 @@ export default defineComponent({
                     src: withBase(bloggerAvatar.value),
                     property: "image",
                     alt: "Blogger Avatar",
+                    loading: "lazy",
                   })
                 : null,
               bloggerName.value

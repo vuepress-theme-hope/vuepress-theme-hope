@@ -25,7 +25,12 @@ const renderIcon = (content: string, contentClass = ""): VNode => {
 
   // is a link
   if (isLinkHttp(content) || isAbsoluteUrl(content))
-    return h("img", { class: className, src: content, "no-view": "" });
+    return h("img", {
+      class: className,
+      src: content,
+      loading: "lazy",
+      "no-view": "",
+    });
 
   // is html content
   if (startsWith(content, "<") && endsWith(content, ">"))

@@ -126,6 +126,7 @@ export default defineComponent({
             ? h("img", {
                 class: "vp-audio-player-poster",
                 src: getLink(props.poster),
+                loading: "lazy",
                 "no-view": "",
               })
             : null,

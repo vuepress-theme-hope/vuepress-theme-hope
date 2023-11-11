@@ -84,6 +84,7 @@ export default defineComponent({
                     h("img", {
                       class: "vp-article-cover",
                       src: withBase(cover),
+                      loading: "lazy",
                     }),
                     h("meta", {
                       property: "image",

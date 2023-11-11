@@ -73,7 +73,14 @@ const VPBanner: FunctionalComponent<BannerProps> = ({
   if (color) style["color"] = color;
 
   return h("div", { class: "vp-banner", style }, [
-    logo ? h("img", { class: "vp-banner-logo", src: withBase(logo) }) : null,
+    logo
+      ? h("img", {
+          class: "vp-banner-logo",
+          src: withBase(logo),
+          loading: "lazy",
+          "no-view": "",
+        })
+      : null,
     h("div", { class: "vp-banner-body" }, [
       h("div", { class: "vp-banner-title", innerHTML: title }),
       h("p", { class: "vp-banner-content", innerHTML: content }),

@@ -60,7 +60,14 @@ const VPCard: FunctionalComponent<CardProps> = ({
   link,
 }) => {
   const children = [
-    logo ? h("img", { class: "vp-card-logo", src: withBase(logo) }) : null,
+    logo
+      ? h("img", {
+          class: "vp-card-logo",
+          src: withBase(logo),
+          loading: "lazy",
+          "no-view": "",
+        })
+      : null,
     h("div", { class: "vp-card-content" }, [
       h("div", { class: "vp-card-title", innerHTML: title }),
       h("hr"),
