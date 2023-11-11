@@ -15,9 +15,16 @@ You should create and write Markdown files, so that VuePress can convert them to
 
 <!-- more -->
 
-## Markdown Introduction
-
-If you are a newcomer and don't know how to write Markdown, please read [Markdown Intro](../../cookbook/markdown/README.md) and [Markdown Demo](../../cookbook/markdown/demo.md).
+```component VPBanner
+title: Markdown Introduction
+content: If you are a newcomer and don't know how to write Markdown, please read the following section.
+logo: /assets/image/markdown.svg
+background: var(--bg-2)
+color: var(--banner-text)
+actions:
+  - text: Markdown Tutorial
+    link: ../../cookbook/markdown/
+```
 
 ## Markdown Config
 

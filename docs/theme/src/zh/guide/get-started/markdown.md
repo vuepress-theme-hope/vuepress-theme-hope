@@ -15,9 +15,16 @@ VuePress 主要从 Markdown 文件生成页面。因此，你可以使用它轻�
 
 <!-- more -->
 
-## Markdown 介绍
-
-如果你是一个新手，还不会编写 Markdown，请先阅读 [Markdown 介绍](../../cookbook/markdown/README.md) 和 [Markdown 演示](../../cookbook/markdown/demo.md)。
+```component VPBanner
+title: Markdown 介绍
+content: 如果你是一个新手，还不会编写 Markdown，请先阅读下方板块。
+logo: /assets/image/markdown.svg
+background: var(--bg-2)
+color: var(--banner-text)
+actions:
+  - text: Markdown 教程
+    link: ../../cookbook/markdown/
+```
 
 ## Markdown 配置
 

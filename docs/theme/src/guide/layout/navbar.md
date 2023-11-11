@@ -9,7 +9,16 @@ tag:
   - Navbar
 ---
 
-The Navbar may contain your site title, [Search Box](#search-box), [Navbar Links](#navbar-links), [I18n](https://vuejs.press/guide/i18n.html), [Repository Link](#git-repository-and-edit-links) and [Outlook Popup](#outlook-popup). They all depend on your configuration.
+The Navbar contains:
+
+- Site title
+- [Search Box](#search-box)
+- [Navbar Links](#navbar-links)
+- [Language dropdown](https://vuejs.press/guide/i18n.html)
+- [Repository Link](#git-repository-and-edit-links)
+- [Outlook Popup](#outlook-popup)
+
+All of them are customizable, and you can also [fully customize Navbar layout](#layout-config).
 
 <!-- more -->
 
@@ -573,7 +582,7 @@ The following three functions are provided:
 
 `vuepress-theme-hope` allows you to customize navbar layout. You can add components in `start`, `center` and `end` keys under `navbarLayout` options.
 
-Besides global components, the following built-in components are supported:
+Navbar has the following built-in components that can be used:
 
 - Brand: Site Brand
 - Links: Navbar links
@@ -582,7 +591,9 @@ Besides global components, the following built-in components are supported:
 - Outlook: Outlook Popup
 - Repo: Project Repo
 
-By default, we are using the following options:
+And you can also use your own component names after you register them globally.
+
+We use the following options by default:
 
 ::: code-tabs#language
 

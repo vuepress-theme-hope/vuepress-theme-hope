@@ -8,7 +8,7 @@ tag:
   - 对齐
 ---
 
-你可以在 Markdown 中添加卡片组件。
+你可以在 Markdown 中通过 component 代码块快速添加组件。
 
 <!-- more -->
 

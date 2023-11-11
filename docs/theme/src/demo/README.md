@@ -7,8 +7,8 @@ icon: splotch
 title: Living Demo
 content: Online template driven by StackBlitz
 logo: /assets/image/stackblitz.svg
-background: var(--banner-bg)
-color: var(--black)
+background: var(--bg-2)
+color: var(--banner-text)
 actions:
   - text: Try it
     link: https://stackblitz.com/fork/vuepress-theme-hope

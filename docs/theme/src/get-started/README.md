@@ -11,9 +11,15 @@ category:
   - Get Started
 ---
 
-This is a step-by-step tutorial for newcomers.
-
-<!-- more -->
+```component VPBanner
+title: Step-by-step tutorial
+content: This section is for newcomers which is not familiar with Frontend, Vue or VuePress.<br> If you already have experience with them, get started with guide.
+background: var(--bg-10)
+color: var(--banner-text)
+actions:
+  - text: Guide
+    link: ../guide/get-started/intro.html
+```
 
 ## Tutorial Chapters
 

@@ -95,9 +95,14 @@ highlights:
         link: ./guide/markdown/image.html
 
       - title: Component Support
-        icon: square
+        icon: puzzle-piece
         details: Easily insert components in Markdown
         link: ./guide/markdown/component.html
+
+      - title: Components
+        icon: puzzle-piece
+        details: Common components out fo box
+        link: ./guide/markdown/components.html
 
       - title: Chart Support
         icon: chart-simple
@@ -144,17 +149,12 @@ highlights:
         details: Insert presentation in Markdown files via Reveal.js
         link: ./guide/markdown/revealjs/
 
-  - header: Improved layouts
-    description: An awesome responsive layout with full a11y support.
-    image: /assets/image/layout.svg
-    bgImage: https://theme-hope-assets.vuejs.press/bg/5-light.svg
-    bgImageDark: https://theme-hope-assets.vuejs.press/bg/5-dark.svg
+  - header: Customizable UI
+    description: Customizable outlook with full a11y support.
+    image: /assets/image/ui.svg
+    bgImage: https://theme-hope-assets.vuejs.press/bg/9-light.svg
+    bgImageDark: https://theme-hope-assets.vuejs.press/bg/9-dark.svg
     highlights:
-      - title: Layout
-        icon: object-group
-        details: Improved navbar, sidebar, page nav and new breadcrumb, footer and toc. We also bring you a brand new homepage.
-        link: ./guide/layout/
-
       - title: Dark Mode
         icon: circle-half-stroke
         details: Switch between light and dark modes freely
@@ -162,27 +162,58 @@ highlights:
 
       - title: Customizable Theme Color
         icon: palette
-        details: Customize theme color
+        details: Set theme color with the brand color and even a picker
         link: ./guide/interface/theme-color.html
 
-      - title: Slide Page
-        icon: person-chalkboard
-        details: Adding slide pages to display things you like
-        link: ./guide/layout/slides
+      - title: Code Block Themes
+        icon: wand-magic-sparkles
+        details: Customize code block themes
+        link: ./guide/interface/code-theme.html
 
       - title: More
         icon: ellipsis
         details: RTL layout, print support, fullscreen button, etc.
         link: ./guide/interface/others.html
 
+  - header: Improved layouts
+    description: An awesome responsive layout
+    image: /assets/image/layout.svg
+    bgImage: https://theme-hope-assets.vuejs.press/bg/5-light.svg
+    bgImageDark: https://theme-hope-assets.vuejs.press/bg/5-dark.svg
+    highlights:
+      - title: Navbar
+        icon: window-maximize
+        details: Fully customizable navbar with improved mobile support
+        link: ./guide/interface/navbar.html
+
+      - title: Sidebar
+        icon: fas fa-window-maximize fa-rotate-270
+        details: Generate sidebar based on page headings and file structure
+        link: ./guide/interface/sidebar.html
+
+      - title: Slide Page
+        icon: person-chalkboard
+        details: Adding slide pages to display things you like
+        link: ./guide/layout/slides.html
+
+      - title: Other Layout Improvement
+        icon: object-group
+        details: Improved page nav and new breadcrumb, footer and toc. We also bring you a brand new homepage.
+        link: ./guide/layout/
+
   - header: New features
     image: /assets/image/features.svg
     bgImage: https://theme-hope-assets.vuejs.press/bg/1-light.svg
     bgImageDark: https://theme-hope-assets.vuejs.press/bg/1-dark.svg
     features:
+      - title: Catalog Page
+        icon: network-wired
+        details: Auto generating catalog page and out of box catalog component
+        link: ./guide/feature/catalog.html
+
       - title: Pageviews and Comments
         icon: comment-dots
-        details: Start pageview statistics and comment support with Waline
+        details: Pageview statistics and comment support with 4 comment service
         link: ./guide/feature/comment.html
 
       - title: Article Information

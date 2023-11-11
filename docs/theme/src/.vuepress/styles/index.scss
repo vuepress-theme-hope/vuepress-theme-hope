@@ -1,10 +1,22 @@
 :root {
-  --banner-bg: url("https://theme-hope-assets.vuejs.press/bg/3-light.svg")
+  --banner-text: #111;
+  --bg-2: url("https://theme-hope-assets.vuejs.press/bg/2-light.svg");
+  --bg-9: url("https://theme-hope-assets.vuejs.press/bg/9-light.svg") no-repeat
+    center/cover;
+  --bg-10: url("https://theme-hope-assets.vuejs.press/bg/10-light.svg")
+    no-repeat center/cover;
+  --bg-10-inverse: url("https://theme-hope-assets.vuejs.press/bg/10-dark.svg")
     no-repeat center/cover;
 }
 
 html[data-theme="dark"] {
-  --banner-bg: url("https://theme-hope-assets.vuejs.press/bg/3-dark.svg")
+  --banner-text: #eee;
+  --bg-2: url("https://theme-hope-assets.vuejs.press/bg/2-dark.svg");
+  --bg-9: url("https://theme-hope-assets.vuejs.press/bg/9-dark.svg") no-repeat
+    center/cover;
+  --bg-10: url("https://theme-hope-assets.vuejs.press/bg/10-dark.svg") no-repeat
+    center/cover;
+  --bg-10-inverse: url("https://theme-hope-assets.vuejs.press/bg/10-light.svg")
     no-repeat center/cover;
 }
 

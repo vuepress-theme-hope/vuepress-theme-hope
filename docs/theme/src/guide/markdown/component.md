@@ -8,7 +8,7 @@ tag:
   - Markdown
 ---
 
-You can add easily components in Markdown content.
+You can easily insert components in Markdown content with component code block.
 
 <!-- more -->
 

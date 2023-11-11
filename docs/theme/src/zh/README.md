@@ -99,6 +99,11 @@ highlights:
         details: 在 Markdown 中轻松插入组件
         link: ./guide/markdown/component.html
 
+      - title: 组件
+        icon: puzzle-piece
+        details: 开箱即用的常用组件
+        link: ./guide/markdown/components.html
+
       - title: 图表支持
         icon: chart-simple
         details: 在 Markdown 中展示图表
@@ -144,17 +149,12 @@ highlights:
         details: 通过 Reveal.js 在 Markdown 中插入幻灯片
         link: ./guide/markdown/revealjs/
 
-  - header: 布局
-    description: 一个带有完整无障碍支持的响应式布局。
-    image: /assets/image/layout.svg
-    bgImage: https://theme-hope-assets.vuejs.press/bg/5-light.svg
-    bgImageDark: https://theme-hope-assets.vuejs.press/bg/5-dark.svg
+  - header: 可定制的页面
+    description: 完整无障碍支持的可定制外观
+    image: /assets/image/ui.svg
+    bgImage: https://theme-hope-assets.vuejs.press/bg/9-light.svg
+    bgImageDark: https://theme-hope-assets.vuejs.press/bg/9-dark.svg
     highlights:
-      - title: 布局增强
-        icon: object-group
-        details: 添加路径导航、页脚、改进的导航栏、改进的页面导航等。
-        link: ./guide/layout/
-
       - title: 深色模式
         icon: circle-half-stroke
         details: 可以自由切换浅色模式与深色模式
@@ -165,10 +165,41 @@ highlights:
         details: 支持自定义主题色并允许用户在预设的主题颜色之间切换
         link: ./guide/interface/theme-color.html
 
+      - title: 代码块主题
+        icon: wand-magic-sparkles
+        details: 自定义代码块主题
+        link: ./guide/interface/code-theme.html
+
+      - title: 更多
+        icon: ellipsis
+        details: RTL 布局，打印支持，全局按钮等
+        link: ./guide/interface/others.html
+
+  - header: 布局
+    description: 一个完美的响应式布局。
+    image: /assets/image/layout.svg
+    bgImage: https://theme-hope-assets.vuejs.press/bg/5-light.svg
+    bgImageDark: https://theme-hope-assets.vuejs.press/bg/5-dark.svg
+    highlights:
+      - title: 导航栏
+        icon: window-maximize
+        details: 完全可定制的导航栏以及改进的移动端外观
+        link: ./guide/interface/navbar.html
+
+      - title: 侧边栏
+        icon: fas fa-window-maximize fa-rotate-270
+        details: 从文档标题或文件结构中自动生成侧边栏
+        link: ./guide/interface/sidebar.html
+
       - title: 幻灯片页面
         icon: person-chalkboard
         details: 添加幻灯片页面以显示你喜欢的内容
-        link: ./guide/layout/slides
+        link: ./guide/layout/slides.html
+
+      - title: 布局增强
+        icon: object-group
+        details: 添加路径导航、页脚、改进的导航栏、改进的页面导航等。
+        link: ./guide/layout/
 
       - title: 更多
         icon: ellipsis
@@ -180,9 +211,14 @@ highlights:
     bgImage: https://theme-hope-assets.vuejs.press/bg/1-light.svg
     bgImageDark: https://theme-hope-assets.vuejs.press/bg/1-dark.svg
     features:
+      - title: 目录页面
+        icon: network-wired
+        details: 自动生成目录页以及开箱即用的目录组件
+        link: ./guide/feature/catalog.html
+
       - title: 浏览量与评论
         icon: comment-dots
-        details: 配合 Waline 来开启阅读量统计与评论支持
+        details: 配合 4 个评论服务开启阅读量统计与评论支持
         link: ./guide/feature/comment.html
 
       - title: 文章信息

@@ -9,8 +9,8 @@ category:
 title: 即时案例
 content: StackBlitz 驱动的在线模板
 logo: /assets/image/stackblitz.svg
-background: var(--banner-bg)
-color: var(--black)
+background: var(--bg-2)
+color: var(--banner-text)
 actions:
   - text: 前往体验
     link: https://stackblitz.com/fork/vuepress-theme-hope
