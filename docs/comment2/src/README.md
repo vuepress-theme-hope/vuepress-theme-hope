@@ -10,11 +10,13 @@ bgImageStyle:
 heroText: vuepress-plugin-comment2
 tagline: Comment and pageview plugin for VuePress2
 actions:
-  - text: Get Started 💡
+  - text: Guide
+    icon: lightbulb
     link: ./guide/
     type: primary
 
-  - text: Config 🛠
+  - text: Config
+    icon: tools
     link: ./config/
 
 highlights:

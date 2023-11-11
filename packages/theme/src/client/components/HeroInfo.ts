@@ -10,6 +10,7 @@ import { isString } from "vuepress-shared/client";
 import AutoLink from "@theme-hope/components/AutoLink";
 import DropTransition from "@theme-hope/components/transitions/DropTransition";
 
+import HopeIcon from "./HopeIcon.js";
 import type { ThemeProjectHomePageFrontmatter } from "../../shared/index.js";
 
 import "../styles/hero-info.scss";
@@ -150,7 +151,7 @@ export default defineComponent({
                 heroInfo.value.tagline
                   ? h(DropTransition, { appear: true, delay: 0.08 }, () =>
                       h("p", {
-                        class: "vp-description",
+                        id: "main-description",
                         innerHTML: heroInfo.value.tagline,
                       }),
                     )
@@ -159,13 +160,25 @@ export default defineComponent({
                   ? h(DropTransition, { appear: true, delay: 0.12 }, () =>
                       h(
                         "p",
-                        { class: "vp-actions" },
+                        { class: "vp-hero-actions" },
                         actions.value.map((action) =>
-                          h(AutoLink, {
-                            class: ["vp-action", action.type || "default"],
-                            config: action,
-                            noExternalLinkIcon: true,
-                          }),
+                          h(
+                            AutoLink,
+                            {
+                              class: [
+                                "vp-hero-action",
+                                action.type || "default",
+                              ],
+                              config: action,
+                              noExternalLinkIcon: true,
+                            },
+                            action.icon
+                              ? {
+                                  before: () =>
+                                    h(HopeIcon, { icon: action.icon }),
+                                }
+                              : {},
+                          ),
                         ),
                       ),
                     )

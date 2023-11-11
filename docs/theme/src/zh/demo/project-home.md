@@ -6,18 +6,18 @@ heroImage: /logo.svg
 heroText: VuePress Theme Hope
 tagline: 一个具有强大功能的 vuepress 主题✨
 actions:
-  - text: 快速上手 💡
-    link: /zh/get-started/
+  - text: 快速上手
+    link: ./get-started/
+    icon: signs-post
     type: primary
 
-  - text: 指南 🗺️
-    link: /zh/guide/
+  - text: 指南
+    icon: lightbulb
+    link: ./guide/
 
-  - text: 配置 🛠
-    link: /zh/config/
-
-  - text: 在线案例 🪀
-    link: https://stackblitz.com/fork/vuepress-theme-hope
+  - text: 案例
+    icon: star
+    link: ./demo/
 
 features:
   - title: Markdown 增强

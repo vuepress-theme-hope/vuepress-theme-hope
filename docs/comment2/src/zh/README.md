@@ -10,11 +10,13 @@ bgImageStyle:
 heroText: vuepress-plugin-comment2
 tagline: 评论与阅读量插件
 actions:
-  - text: 快速上手 💡
+  - text: 快速上手
+    icon: lightbulb
     link: ./guide/
     type: primary
 
-  - text: 配置 🛠
+  - text: 配置
+    icon: tools
     link: ./config/
 
 highlights:

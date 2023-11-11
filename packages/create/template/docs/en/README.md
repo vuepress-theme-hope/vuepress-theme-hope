@@ -10,7 +10,8 @@ bgImageStyle:
 heroText: Project name
 tagline: You can place the description of the project here.
 actions:
-  - text: How to Use 💡
+  - text: How to Use
+    icon: lightbulb
     link: ./demo/
     type: primary
 

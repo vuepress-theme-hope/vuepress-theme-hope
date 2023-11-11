@@ -10,11 +10,13 @@ bgImageStyle:
 heroText: vuepress-plugin-md-enhance
 tagline: 为 VuePress2 提供更多 Markdown 增强功能
 actions:
-  - text: 指南 💡
+  - text: 指南
+    icon: lightbulb
     link: ./guide/
     type: primary
 
-  - text: 配置 🛠
+  - text: 配置
+    icon: tools
     link: ./config.html
 
 highlights:

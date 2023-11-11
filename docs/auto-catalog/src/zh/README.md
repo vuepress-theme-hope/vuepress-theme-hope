@@ -6,11 +6,13 @@ heroImage: /logo.svg
 heroText: vuepress-plugin-auto-catalog
 tagline: 为 VuePress2 提供自动目录页生成
 actions:
-  - text: 快速上手 💡
+  - text: 快速上手
+    icon: lightbulb
     link: ./guide.html
     type: primary
 
-  - text: 配置 🛠
+  - text: 配置
+    icon: tools
     link: ./config.html
 
 features:

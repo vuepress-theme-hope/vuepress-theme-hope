@@ -11,14 +11,17 @@ bgImageStyle:
 heroText: VuePress Theme Hope
 tagline: A VuePress theme with tons of features✨
 actions:
-  - text: Get Started 💡
+  - text: Get Started
     link: ./get-started/
+    icon: signs-post
     type: primary
 
-  - text: Guide 🗺️
+  - text: Guide
+    icon: lightbulb
     link: ./guide/
 
-  - text: Demos 🪀
+  - text: Demos
+    icon: star
     link: ./demo/
 
 highlights:

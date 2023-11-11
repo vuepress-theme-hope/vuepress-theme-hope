@@ -6,18 +6,18 @@ heroImage: /logo.svg
 heroText: VuePress Theme Hope
 tagline: A VuePress theme with tons of features✨
 actions:
-  - text: Get Started 💡
-    link: /get-started/
+  - text: Get Started
+    link: ./get-started/
+    icon: signs-post
     type: primary
 
-  - text: Guide 🗺️
-    link: /guide/
+  - text: Guide
+    icon: lightbulb
+    link: ./guide/
 
-  - text: Config 🛠
-    link: /config/
-
-  - text: Online Demo 🪀
-    link: https://stackblitz.com/fork/vuepress-theme-hope
+  - text: Demos
+    icon: star
+    link: ./demo/
 
 features:
   - title: Markdown Enhance

@@ -6,11 +6,13 @@ heroImage: /logo.svg
 heroText: vuepress-plugin-copyright2
 tagline: Append copyright info during copy
 actions:
-  - text: Guide 💡
+  - text: Get Started
+    icon: lightbulb
     link: ./guide.html
     type: primary
 
-  - text: Config 🛠
+  - text: Config
+    icon: tools
     link: ./config.html
 
 footer: Theme by <a href="https://theme-hope.vuejs.press" target="_blank">VuePress Theme Hope</a> | MIT Licensed, Copyright © 2019-present Mr.Hope

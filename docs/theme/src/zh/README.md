@@ -11,14 +11,17 @@ bgImageStyle:
 heroText: VuePress Theme Hope
 tagline: 一个具有强大功能的 vuepress 主题✨
 actions:
-  - text: 快速上手 💡
+  - text: 快速上手
     link: ./get-started/
+    icon: signs-post
     type: primary
 
-  - text: 指南 🗺️
+  - text: 指南
+    icon: lightbulb
     link: ./guide/
 
-  - text: 案例 🪀
+  - text: 案例
+    icon: star
     link: ./demo/
 
 highlights:

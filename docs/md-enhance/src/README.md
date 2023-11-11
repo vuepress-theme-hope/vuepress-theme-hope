@@ -10,11 +10,13 @@ bgImageStyle:
 heroText: vuepress-plugin-md-enhance
 tagline: Enhancement for Markdown in VuePress
 actions:
-  - text: Guide 💡
+  - text: Guide
+    icon: lightbulb
     link: ./guide/
     type: primary
 
-  - text: Config 🛠
+  - text: Config
+    icon: tools
     link: ./config.html
 
 highlights:
