@@ -17,7 +17,7 @@ You need to set `layout: Slide` in the frontmatter of the corresponding page to 
 
 ## Demo
 
-<ProjectLink name="md-enhance" path="/guide/revealjs/demo.html">Here is a demo containing all the slide features</ProjectLink>.
+<ProjectLink name="md-enhance" path="/guide/content/revealjs/demo.html">Here is a demo containing all the slide features</ProjectLink>.
 
 ![Slide page screenshot](./assets/slides-light.png#light)
 ![Slide page screenshot](./assets/slides-dark.png#dark)

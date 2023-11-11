@@ -98,7 +98,7 @@ highlights:
       - title: 图表支持
         icon: chart-simple
         details: 在 Markdown 中展示图表
-        link: https://theme-hope.vuejs.press/zh/guide/markdown/chart.html
+        link: https://theme-hope.vuejs.press/zh/guide/markdown/chartjs.html
 
       - title: 流程图支持
         icon: route
@@ -133,7 +133,7 @@ highlights:
       - title: 代码案例支持
         icon: laptop-code
         details: 你可以很方便的插入代码案例
-        link: https://theme-hope.vuejs.press/zh/guide/markdown/demo/
+        link: https://theme-hope.vuejs.press/zh/guide/markdown/demo.html
 
       - title: 幻灯片支持
         icon: person-chalkboard

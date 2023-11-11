@@ -107,7 +107,7 @@ highlights:
       - title: 图表支持
         icon: chart-simple
         details: 在 Markdown 中展示图表
-        link: ./guide/markdown/chart.html
+        link: ./guide/markdown/chartjs.html
 
       - title: 流程图支持
         icon: route
@@ -142,12 +142,12 @@ highlights:
       - title: 代码案例支持
         icon: laptop-code
         details: 你可以很方便的插入代码案例
-        link: ./guide/markdown/demo/
+        link: ./guide/markdown/demo.html
 
       - title: 幻灯片支持
         icon: person-chalkboard
         details: 通过 Reveal.js 在 Markdown 中插入幻灯片
-        link: ./guide/markdown/revealjs/
+        link: ./guide/markdown/revealjs.html
 
   - header: 可定制的页面
     description: 完整无障碍支持的可定制外观
@@ -184,12 +184,12 @@ highlights:
       - title: 导航栏
         icon: window-maximize
         details: 完全可定制的导航栏以及改进的移动端外观
-        link: ./guide/interface/navbar.html
+        link: ./guide/layout/navbar.html
 
       - title: 侧边栏
         icon: fas fa-window-maximize fa-rotate-270
         details: 从文档标题或文件结构中自动生成侧边栏
-        link: ./guide/interface/sidebar.html
+        link: ./guide/layout/sidebar.html
 
       - title: 幻灯片页面
         icon: person-chalkboard

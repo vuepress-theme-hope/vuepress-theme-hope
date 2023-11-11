@@ -288,7 +288,7 @@ speak(msg);
 
 :::
 
-- [View Detail](https://theme-hope.vuejs.press/guide/markdown/chart.html)
+- [View Detail](https://theme-hope.vuejs.press/guide/markdown/chartjs.html)
 
 #### Echarts
 

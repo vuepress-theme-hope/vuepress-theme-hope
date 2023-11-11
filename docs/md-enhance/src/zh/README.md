@@ -119,7 +119,7 @@ highlights:
       - title: 样式化字符
         icon: wand-magic-sparkles
         details: 以你想要的方式样式化字符
-        link: ./stylize/stylize/stylize.html
+        link: ./guide/stylize/stylize.html
 
   - header: 嵌入图表
     image: /assets/image/chart.svg

@@ -268,7 +268,7 @@ speak(msg);
 
 :::
 
-- [查看详情](https://theme-hope.vuejs.press/zh/guide/markdown/chart.html)
+- [查看详情](https://theme-hope.vuejs.press/zh/guide/markdown/chartjs.html)
 
 #### Echarts
 

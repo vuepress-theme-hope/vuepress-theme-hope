@@ -98,7 +98,7 @@ highlights:
       - title: Chart Support
         icon: chart-simple
         details: Display charts in Markdown
-        link: https://theme-hope.vuejs.press/guide/markdown/chart.html
+        link: https://theme-hope.vuejs.press/guide/markdown/chartjs.html
 
       - title: Flowchart Support
         icon: route
@@ -133,7 +133,7 @@ highlights:
       - title: Code Demo Support
         icon: laptop-code
         details: You can insert code demo easily
-        link: https://theme-hope.vuejs.press/guide/markdown/demo/
+        link: https://theme-hope.vuejs.press/guide/markdown/demo.html
 
       - title: Presentation Support
         icon: person-chalkboard

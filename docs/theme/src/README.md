@@ -107,7 +107,7 @@ highlights:
       - title: Chart Support
         icon: chart-simple
         details: Display charts in Markdown
-        link: ./guide/markdown/chart.html
+        link: ./guide/markdown/chartjs.html
 
       - title: Flowchart Support
         icon: route
@@ -142,12 +142,12 @@ highlights:
       - title: Code Demo Support
         icon: laptop-code
         details: You can insert code demo easily
-        link: ./guide/markdown/demo/
+        link: ./guide/markdown/demo.html
 
       - title: Presentation Support
         icon: person-chalkboard
         details: Insert presentation in Markdown files via Reveal.js
-        link: ./guide/markdown/revealjs/
+        link: ./guide/markdown/revealjs.html
 
   - header: Customizable UI
     description: Customizable outlook with full a11y support.
@@ -184,12 +184,12 @@ highlights:
       - title: Navbar
         icon: window-maximize
         details: Fully customizable navbar with improved mobile support
-        link: ./guide/interface/navbar.html
+        link: ./guide/layout/navbar.html
 
       - title: Sidebar
         icon: fas fa-window-maximize fa-rotate-270
         details: Generate sidebar based on page headings and file structure
-        link: ./guide/interface/sidebar.html
+        link: ./guide/layout/sidebar.html
 
       - title: Slide Page
         icon: person-chalkboard
