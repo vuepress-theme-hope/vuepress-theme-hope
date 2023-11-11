@@ -4,6 +4,16 @@ All notable changes to this project will be documented in this file. See [Conven
 
 <!-- #region recent-beta -->
 
+## [2.0.0-beta.249](https://github.com/vuepress-theme-hope/vuepress-theme-hope/compare/v2.0.0-beta.248...v2.0.0-beta.249) (2023-11-11)
+
+### Bug Fixes
+
+- **photo-swipe:** fix dynamic chunk ([9e6fde6](https://github.com/vuepress-theme-hope/vuepress-theme-hope/commit/9e6fde6b7ea10e2b14e30dd77a8d35792dd67de3))
+
+### Performance Improvements
+
+- use functional component ([df24921](https://github.com/vuepress-theme-hope/vuepress-theme-hope/commit/df24921570b7b65d506ce99313d146ecfbc47660))
+
 ## [2.0.0-beta.248](https://github.com/vuepress-theme-hope/vuepress-theme-hope/compare/v2.0.0-beta.247...v2.0.0-beta.248) (2023-11-10)
 
 ### ⚠ BREAKING CHANGES
