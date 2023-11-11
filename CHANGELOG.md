@@ -4,6 +4,14 @@ All notable changes to this project will be documented in this file. See [Conven
 
 <!-- #region recent-beta -->
 
+## [2.0.0-beta.250](https://github.com/vuepress-theme-hope/vuepress-theme-hope/compare/v2.0.0-beta.249...v2.0.0-beta.250) (2023-11-11)
+
+### Bug Fixes
+
+- **components:** fix VideoPlayer a11y link ([cbcc84d](https://github.com/vuepress-theme-hope/vuepress-theme-hope/commit/cbcc84db7e8e0b2a1f1e4dd43645e78b8b6cac6c))
+- **shared:** fix VPLink ([ce580d8](https://github.com/vuepress-theme-hope/vuepress-theme-hope/commit/ce580d89ebee03a5ce6515d9dbc6f2c95e02f019))
+- **theme:** fix theme version reading ([b1fd968](https://github.com/vuepress-theme-hope/vuepress-theme-hope/commit/b1fd968d88bd1bdb5f43618ef25e4b4461e19d7f))
+
 ## [2.0.0-beta.249](https://github.com/vuepress-theme-hope/vuepress-theme-hope/compare/v2.0.0-beta.248...v2.0.0-beta.249) (2023-11-11)
 
 ### Bug Fixes
