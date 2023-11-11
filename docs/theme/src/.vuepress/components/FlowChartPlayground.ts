@@ -132,7 +132,7 @@ export default defineComponent({
           id: "flowchart-playground-config",
           value: config.value,
           onInput: ({ target }: InputEvent) => {
-            config.value = (<HTMLInputElement>target).value;
+            config.value = (target as HTMLInputElement).value;
           },
         }),
         h("div", [
@@ -147,9 +147,10 @@ export default defineComponent({
               id: "flowchart-playground-preset",
               value: preset.value,
               onChange: ({ target }: Event) => {
-                preset.value = <"ant" | "pie" | "vue">(
-                  (<HTMLSelectElement>target).value
-                );
+                preset.value = (target as HTMLSelectElement).value as
+                  | "ant"
+                  | "pie"
+                  | "vue";
               },
             },
             ["ant", "pie", "vue"].map((preset) =>
