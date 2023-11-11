@@ -1,5 +1,5 @@
 import type { ThemeFunction } from "@vuepress/core";
-import { TEMPLATE_RENDERER_OUTLETS, fs } from "@vuepress/utils";
+import { TEMPLATE_RENDERER_OUTLETS } from "@vuepress/utils";
 import { watch } from "chokidar";
 import { isPlainObject } from "vuepress-shared/node";
 
@@ -26,12 +26,8 @@ import {
   prepareSocialMediaIcons,
 } from "./prepare/index.js";
 import type { HopeThemeBehaviorOptions } from "./typings/index.js";
-import { TEMPLATE_FOLDER } from "./utils.js";
+import { TEMPLATE_FOLDER, THEME_VERSION } from "./utils.js";
 import type { ThemeOptions } from "../shared/index.js";
-
-const { version: themeVersion } = <{ version: string }>(
-  fs.readJsonSync("../../package.json")
-);
 
 export const hopeTheme =
   (
@@ -152,7 +148,7 @@ export const hopeTheme =
         template
           .replace(TEMPLATE_RENDERER_OUTLETS.CONTENT, () => content)
           .replace(TEMPLATE_RENDERER_OUTLETS.HEAD, head)
-          .replace("{{ themeVersion }}", themeVersion)
+          .replace("{{ themeVersion }}", THEME_VERSION)
           .replace(TEMPLATE_RENDERER_OUTLETS.LANG, lang)
           .replace(TEMPLATE_RENDERER_OUTLETS.PREFETCH, prefetch)
           .replace(TEMPLATE_RENDERER_OUTLETS.PRELOAD, preload)
