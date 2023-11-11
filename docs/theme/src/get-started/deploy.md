@@ -22,6 +22,8 @@ If you are using theme template, the website content will be output to the `.vue
 
 You can deploy the contents of this folder to your website's server. The easiest way to do this is to upload to GitHub and start GitHub Pages.
 
+After the action finishes, you should go to GitHub repo settings to choose `gh-pages` as source of GitHub Pages.
+
 ## Deploy to GitHub Pages
 
 If you're using theme template, and you choose to create GitHub workflow during setup, the only thing you need to do is set the correct [base option](https://vuejs.press/reference/config.html#base).

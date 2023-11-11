@@ -1,5 +1,5 @@
 ---
-title: Environment
+title: Runtime Setup
 icon: leaf
 order: 1
 category:
@@ -7,56 +7,18 @@ category:
   - Tutorial
   - Get Started
 tag:
-  - Environment
+  - Runtime
 ---
 
 This tutorial will guide you on how to set up a VuePress runtime environment.
 
 <!-- more -->
 
-## Node.js
-
-[Node.js®](https://nodejs.org/en/) is a JavaScript runtime built on [Chrome's V8 JavaScript engine](https://v8.dev/).
-
-You need to download and install the latest long-term maintenance release on your computer.
-
-### Download Node.js LTS
-
-[Download link](https://nodejs.org/en/).
-
-::: note
-
-In the opened page, click the green button (LTS) on the left to complete the download.
-
-:::
-
-### Install Node.js LTS
-
-During the installation process, keep all the default settings and go all the way to the next step.
-
-::: warning
-
-If you are a real novice, please do not change the default installation directory.
-
-Node.js itself will only take up a few dozen megabytes of space!
-
-:::
-
 ## Editor
 
 You need an editor to edit your project, and we recommend using VSCode to write and run your VuePress projects.
 
-### Download VSCode
-
-[Download link](https://code.visualstudio.com/)
-
-::: tip
-
-Please click the blue button on the left to complete the download.
-
-:::
-
-### Install VSCode
+1. Click the blue button on the left of [Download page](https://code.visualstudio.com/) to download.
 
 1. Double-click the installation package to open
 
@@ -68,9 +30,35 @@ Please click the blue button on the left to complete the download.
 
 1. After the initial startup of VS Code, if Git is not installed in advance, it may prompt that the Git software is not found, just ignore it.
 
-## Pnpm
+## Node.js
 
-After you install Node.js, please install [pnpm](https://pnpm.io).
+::: info Introduction
+
+[Node.js®](https://nodejs.org/en/) is a JavaScript runtime built on [Chrome's V8 JavaScript engine](https://v8.dev/).
+
+:::
+
+You need to download and install the latest long-term maintenance release.
+
+1. Click the green button (LTS) on the left of [Download page](https://nodejs.org/en/).
+1. Run the installer, keep all the default settings and go all the way from next step to finish.
+
+::: warning
+
+If you are a real novice, please do not change the default installation directory.
+
+Node.js itself will only take up a few dozen megabytes of space!
+
+:::
+
+## pnpm
+
+After you install Node.js, please install [pnpm](https://pnpm.io) as package manager by entering the following command in the terminal:
+
+```sh
+corepack enable
+corepack prepare pnpm@latest --activate
+```
 
 ::: tip
 
@@ -79,12 +67,3 @@ We recommend you to choose pnpm as package manager, because VuePress and VuePres
 Some features of pnpm ensure that you have the correct dependencies, also it can speed up your installation.
 
 :::
-
-### Install Pnpm
-
-Install pnpm by entering the following command in the terminal:
-
-```sh
-corepack enable
-corepack prepare pnpm@latest --activate
-```

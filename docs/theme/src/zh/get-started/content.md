@@ -10,7 +10,7 @@ tag:
   - 项目内容
 ---
 
-本教程指引你如何在 VuePress 项目中控制内容生成。
+本教程指引你如何在 VuePress 项目中生成页面。
 
 <!-- more -->
 
@@ -52,6 +52,28 @@ VuePress 是以 Markdown 为中心的。你项目中的每一个 Markdown 文件
 
 :::
 
+## Markdown
+
+每一个 Markdown 文件都会被 VuePress Theme Hope 处理，将文件内容渲染为网页内容。
+
+你可以尝试自己编辑 Markdown 文件来修改模板的内容。如果你已启动开发服务器，那么修改后的结果会被实时同步到开发服务器上。
+
+::: tip Markdown 语法
+
+如果你尚不了解 Markdown，请查看 [Markdown 教程](../cookbook/markdown/README.md)。
+
+大概十五分钟，你就可以学会如何书写 Markdown，看完之后记得回来！
+
+:::
+
+::: info Markdown 语法扩展
+
+- VuePress 自身对 Markdown 语法进行了一些扩展，关于这些扩展的语法，详见 [VuePress → Markdown](../cookbook/vuepress/markdown.md)。
+
+- 主题通过 `vuepress-plugin-md-enhance` 额外启用了一些语法扩展，详见 [指南 → Markdown](../guide/get-started/markdown.md)。
+
+:::
+
 ## Frontmatter
 
 Frontmatter 是 VuePress 中很重要的一个概念，它用于承载 Markdown 文件的配置。Markdown 文件可以包含一个 [YAML](https://yaml.org/) Frontmatter。
@@ -76,26 +98,4 @@ description: 页面的描述
 ...
 ```
 
-你肯定注意到 Frontmatter 中的字段和 VuePress 配置文件十分类似。你可以通过 Frontmatter 来覆盖当前页面的 `lang`, `title`, `description` 等属性。因此，你可以把 Frontmatter 当作页面级作用域的配置，它通常具有最高优先级，所作配置仅对当前页面生效。
-
-## Markdown
-
-每一个 Markdown 文件都会被 VuePress Theme Hope 处理，将文件内容渲染为网页内容。
-
-::: tip Markdown 语法
-
-如果你尚不了解 Markdown，请查看 [Markdown 教程](../cookbook/markdown/README.md)。
-
-大概十五分钟，你就可以学会如何书写 Markdown，看完之后记得回来！
-
-:::
-
-你可以尝试自己编辑 Markdown 文件来修改模板的内容。如果你已启动开发服务器，那么修改后的结果会被实时同步到开发服务器上。
-
-::: info Markdown 语法扩展
-
-- VuePress 自身对 Markdown 语法进行了一些扩展，关于这些扩展的语法，详见 [VuePress → Markdown](../cookbook/vuepress/markdown.md)。
-
-- 主题通过 `vuepress-plugin-md-enhance` 额外启用了一些语法扩展，详见 [指南 → Markdown](../guide/get-started/markdown.md)。
-
-:::
+你也许注意到案例中 Frontmatter 中的字段和 VuePress 配置文件十分类似。你可以通过 Frontmatter 来覆盖当前页面的 `lang`, `title`, `description` 等属性。因此，你可以把 Frontmatter 当作页面级作用域的配置，它通常具有最高优先级，所作配置仅对当前页面生效。

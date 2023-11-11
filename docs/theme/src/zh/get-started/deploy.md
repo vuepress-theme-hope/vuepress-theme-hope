@@ -30,6 +30,8 @@ tag:
 
 - 如果你的仓库地址是一个普通的形如 `https://github.com/<USERNAME>/<REPO>` 的格式，网站将会被发布到 `https://<USERNAME>.github.io/<REPO>/` ，也就是说，你需要将 base 设置为 `"/<REPO>/"`。
 
+- 当操作完成后，你应该前往 GitHub 仓库的设置页面，选择 `gh-pages` 作为 GitHub Pages 的源。
+
 ::: tip Github 教程
 
 关于 GitHub 的相关教程，你可以参考 [GitHub 简介](https://mister-hope.com/code/github/)。

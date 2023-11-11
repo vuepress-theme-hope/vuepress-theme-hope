@@ -16,7 +16,7 @@ It is designed to be a powerful and extensible theme with a lot of theme plugins
 
 To begin with, you should already have a basic understanding of:
 
-- [Markdown](../cookbook/markdown/README.md) (Including YAML Frontmatter concept)
+- [Markdown](../cookbook/markdown/README.md) (Including [YAML Frontmatter](../cookbook/vuepress/page.md#frontmatter) concept)
 - [VuePress Basic knowledge](../cookbook/vuepress/README.md)
 
 ::: tip

@@ -14,15 +14,15 @@ This tutorial will guide you through creating a VuePress Theme Hope project.
 
 <!-- more -->
 
-## Choose an Appropriate Location
+## 1. Choose an Appropriate Location
 
 To avoid accidentally triggering some strange problems that you cannot solve by yourself, please try to avoid using file paths that contain CJK characters, emoji or spaces (e.g. `C:\Users\毛泽东\Desktop\VuePress Project\Hope theme ❤️\`).
 
 It is recommended to use plain English paths (e.g. `D:\projects\vuepress-theme-hope\`).
 
-## Initialize Project
+## 2. Create Project template
 
-Open a terminal in the folder in the chosen location.
+Open a terminal in the chosen folder.
 
 ::: tip Opening terminal on Windows
 
@@ -32,16 +32,27 @@ Please use file explorer to open that folder, then enter `cmd` in the address ba
 
 Execute one of the following command in terminal:
 
-```sh
-# pnpm
+::: code-tabs#shell
+
+@tab pnpm
+
+```bash
 pnpm create vuepress-theme-hope my-docs
+```
 
-# yarn
+@tab yarn
+
+```bash
 yarn create vuepress-theme-hope my-docs
+```
 
-# npm
+@tab npm
+
+```bash
 npm init vuepress-theme-hope my-docs
 ```
+
+:::
 
 ::: tip Folder Argument
 

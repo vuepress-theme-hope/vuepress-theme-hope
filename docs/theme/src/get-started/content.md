@@ -10,7 +10,7 @@ tag:
   - Project Content
 ---
 
-This tutorial guides you on how to write content in a VuePress project.
+This tutorial guides you on how to generate page in a VuePress project.
 
 <!-- more -->
 
@@ -52,6 +52,28 @@ This should be easy to understand.
 
 :::
 
+## Markdown
+
+Each Markdown file will be processed by VuePress Theme Hope to render file content as webpage content.
+
+You can try editing the Markdown file yourself to modify the content of the template. If you have started the development server, the modified results will be synced to the development server in real time.
+
+::: tip Markdown Syntax
+
+If you don't know Markdown yet, check out the [Markdown Tutorial](../cookbook/markdown/README.md).
+
+In about fifteen minutes, you can learn how to write Markdown, remember to come back after reading it!
+
+:::
+
+::: info Markdown Extension
+
+- VuePress itself extends some Markdown syntax. For details, see [VuePress → Markdown](../cookbook/vuepress/markdown.md).
+
+- The theme additionally enables some syntax extensions via `vuepress-plugin-md-enhance`, see [Guide → Markdown](../guide/get-started/markdown.md).
+
+:::
+
 ## Frontmatter
 
 Frontmatter is a very important concept in VuePress, it is used to carry config of Markdown files. Markdown files can contain a [YAML](https://yaml.org/) Frontmatter.
@@ -70,26 +92,4 @@ description: the description of the page
 ...
 ```
 
-You must have noticed that the fields in Frontmatter are very similar to VuePress config files. You can override the `lang`, `title`, `description` and other properties of the current page through Frontmatter. Therefore, you can think of Frontmatter as a page-level scope config, which usually has the highest priority, and the config only takes effect on the current page.
-
-## Markdown
-
-Each Markdown file will be processed by VuePress Theme Hope to render the content of the file as web content.
-
-::: tip Markdown Syntax
-
-If you don't know Markdown yet, check out the [Markdown Tutorial](../cookbook/markdown/README.md).
-
-In about fifteen minutes, you can learn how to write Markdown, remember to come back after reading it!
-
-:::
-
-You can try editing the Markdown file yourself to modify the content of the template. If you have started the development server, the modified results will be synced to the development server in real time.
-
-::: info Markdown Extension
-
-- VuePress itself extends some Markdown syntax. For details, see [VuePress → Markdown](../cookbook/vuepress/markdown.md).
-
-- The theme additionally enables some syntax extensions via `vuepress-plugin-md-enhance`, see [Guide → Markdown](../guide/get-started/markdown.md).
-
-:::
+You may noticed that fields in demo Frontmatter are very similar to VuePress config files. You can override the `lang`, `title`, `description` and other properties of the current page through Frontmatter. Therefore, you can think of Frontmatter as a page-level scope config, which usually has the highest priority, and the config only takes effect on the current page.

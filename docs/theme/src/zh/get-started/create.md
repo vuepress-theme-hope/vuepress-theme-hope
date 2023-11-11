@@ -14,34 +14,45 @@ tag:
 
 <!-- more -->
 
-## 选择合适的项目位置
+## 1. 选择合适的项目位置
 
 为了避免偶然间触发一些奇怪的问题，而你自己不会解决，请尽量避免使用包含中文文字、表情符号或空格的文件路径 (如: `C:\Users\小张\Desktop\VuePress 项目\Hope 主题❤️\`)。
 
 建议使用纯英文路径 (如: `D:\projects\vuepress-theme-hope\`)。
 
-## 初始化项目
+## 2. 创建项目模板
 
-在选定的位置所在文件夹中打开终端。
+在选定的文件夹中打开终端。
 
 ::: tip 在 Windows 上打开终端
 
-请使用文件管理器打开对应文件夹，之后在上方的地址栏中输入 `cmd` 之后按下回车。
+请使用文件管理器打开对应文件夹，然后在上方的地址栏中输入 `cmd` 并按下回车。
 
 :::
 
 在终端中执行下列命令之一:
 
-```sh
-# pnpm
+::: code-tabs#shell
+
+@tab pnpm
+
+```bash
 pnpm create vuepress-theme-hope my-docs
+```
 
-# yarn
+@tab yarn
+
+```bash
 yarn create vuepress-theme-hope my-docs
+```
 
-# npm
+@tab npm
+
+```bash
 npm init vuepress-theme-hope my-docs
 ```
+
+:::
 
 ::: tip 文件夹参数
 
