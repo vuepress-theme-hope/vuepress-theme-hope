@@ -1,5 +1,5 @@
 ---
-title: VPCard
+title: VPBanner
 ---
 
 Banner 组件，用于展示 banner。

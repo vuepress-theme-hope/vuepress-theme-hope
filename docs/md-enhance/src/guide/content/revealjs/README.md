@@ -1,11 +1,11 @@
 ---
-title: Presentation
+title: Reveal.js
 icon: person-chalkboard
 ---
 
 <!-- #region before -->
 
-Add presentation in your VuePress site.
+Add presentation in your VuePress site via Reveal.js.
 
 <!-- more -->
 
@@ -50,7 +50,7 @@ import { mdEnhancePlugin } from "vuepress-plugin-md-enhance";
 export default {
   plugins: [
     mdEnhancePlugin({
-      // Enable presentation
+      // Enable reveal.js
       revealJs: true,
     }),
   ],
@@ -66,7 +66,7 @@ import { mdEnhancePlugin } from "vuepress-plugin-md-enhance";
 export default {
   plugins: [
     mdEnhancePlugin({
-      // Enable presentation
+      // Enable reveal.js
       revealJs: true,
     }),
   ],

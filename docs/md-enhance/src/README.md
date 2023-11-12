@@ -80,7 +80,7 @@ highlights:
 
       - title: Presentation Support
         icon: person-chalkboard
-        details: YInsert presentation in Markdown files via Reveal.js
+        details: Insert presentation in Markdown files via Reveal.js
         link: ./guide/content/revealjs/
 
       - title: Tabs

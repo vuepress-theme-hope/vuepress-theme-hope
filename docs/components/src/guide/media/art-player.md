@@ -4,6 +4,30 @@ title: ArtPlayer
 
 Embed [ArtPlayer](https://github.com/zhw2590582/ArtPlayer) in Markdown files.
 
+Install `artplayer` package in your project before using this component:
+
+::: code-tabs#shell
+
+@tab pnpm
+
+```bash
+pnpm add -D artplayer
+```
+
+@tab yarn
+
+```bash
+yarn add -D artplayer
+```
+
+@tab npm
+
+```bash
+npm i -D artplayer
+```
+
+:::
+
 <!-- more -->
 
 ::: tip

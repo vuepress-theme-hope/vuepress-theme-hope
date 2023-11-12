@@ -1,5 +1,5 @@
 ---
-title: Presentation Themes
+title: Reveal.js Themes
 icon: palette
 ---
 

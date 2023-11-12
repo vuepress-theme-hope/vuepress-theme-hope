@@ -11,8 +11,8 @@ VidStack has some known issues with Vue. So stop using it until we fixed it.
 A video player:
 
 <VidStack
-  src="https://cdn.plyr.io/static/demo/View_From_A_Blue_Moon_Trailer-720p.mp4"
-  poster="https://cdn.plyr.io/static/demo/View_From_A_Blue_Moon_Trailer-HD.jpg"
+  src="https://media-files.vidstack.io/720p.mp4"
+  poster="https://media-files.vidstack.io/poster-2.png"
 />
 
 A video player with poster and tracks:

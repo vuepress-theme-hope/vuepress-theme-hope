@@ -131,7 +131,7 @@ The theme provides the following layouts:
 
   - `default`: 404 content slot
 
-- Slide (Only available when presentation is enabled)
+- Slide (Only available when reveal.js is enabled)
 - BlogCategory (Only available when blog is enabled)
 - BlogHome (Only available when blog is enabled)
 - BlogType (Only available when blog is enabled)
