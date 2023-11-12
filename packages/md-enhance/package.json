@@ -121,7 +121,7 @@
   "peerDependencies": {
     "@types/js-yaml": "^4.0.9",
     "@types/reveal.js": "^4.4.5",
-    "@vue/repl": "^2.5.8",
+    "@vue/repl": "^2.7.0",
     "chart.js": "^4.4.0",
     "echarts": "^5.4.3",
     "flowchart.ts": "^1.0.1",

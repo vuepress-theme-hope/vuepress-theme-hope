@@ -41,7 +41,7 @@
     }
   },
   "devDependencies": {
-    "@commitlint/cli": "18.4.0",
+    "@commitlint/cli": "18.4.1",
     "@commitlint/config-conventional": "18.4.0",
     "@rollup/plugin-alias": "5.0.1",
     "@rollup/plugin-commonjs": "25.0.7",
@@ -78,7 +78,7 @@
     "picocolors": "1.0.0",
     "prettier": "3.0.3",
     "rimraf": "5.0.5",
-    "rollup": "4.3.0",
+    "rollup": "4.4.0",
     "rollup-plugin-copy": "3.5.0",
     "rollup-plugin-dts": "6.1.0",
     "rollup-plugin-esbuild": "6.1.0",
@@ -101,6 +101,7 @@
       "glob-stream": "^7.0.0",
       "glob-parent": "^6.0.2",
       "micromatch": "^4.0.5",
+      "vue": "3.3.8",
       "yargs-parser": "^21.1.1"
     }
   }
