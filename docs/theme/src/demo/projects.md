@@ -6,19 +6,19 @@ category:
   - Demo
 
 docs:
-  - name: Fast Request
-    desc: Born to simplify debugging APIs
-    logo: https://dromara.org/fast-request/img/logo/logo.svg
-    url: https://dromara.org/fast-request/en/
-    repo: https://github.com/dromara/fast-request
-    preview: /assets/image/fast-request.jpg
-
   - name: Waline
     desc: A Simple, Safe Comment System.
     logo: https://waline.js.org/logo.png
     url: https://waline.js.org/en/
     repo: https://github.com/walinejs/waline
     preview: /assets/image/waline.jpg
+
+  - name: mdit-plugins
+    desc: Plugin collections of MarkdownIt
+    logo: https://mdit-plugins.github.io/logo.svg
+    url: https://mdit-plugins.github.io/
+    repo: https://github.com/mdit-plugins/mdit-plugins/
+    preview: /assets/image/mdit-plugins.jpg
 
   - name: Apache IoTDB
     desc: An IoT native database with high performance for data management and analysis
@@ -52,6 +52,13 @@ docs:
     url: https://bytedance.github.io/bitsail/
     repo: https://github.com/bytedance/bitsail
     preview: /assets/image/bitsail.jpg
+
+  - name: Fast Request
+    desc: Born to simplify debugging APIs
+    logo: https://dromara.org/fast-request/img/logo/logo.svg
+    url: https://dromara.org/fast-request/en/
+    repo: https://github.com/dromara/fast-request
+    preview: /assets/image/fast-request.jpg
 
   - name: Crawlab
     desc: A powerful Web Crawler Management Platform (WCMP)

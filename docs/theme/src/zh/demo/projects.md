@@ -13,6 +13,27 @@ docs:
     repo: https://github.com/walinejs/waline
     preview: /assets/image/waline.jpg
 
+  - name: in东师
+    desc: 最全东师新生攻略
+    logo: https://innenu.com/logo.svg
+    url: https://innenu.com
+    repo: https://github.com/inNENU/resource/
+    preview: /assets/image/innenu.jpg
+
+  - name: MPTool
+    desc: 极其轻量的小程序增强框架
+    logo: https://miniapp-tool.github.io/logo.svg
+    url: https://miniapp-tool.github.io
+    repo: https://github.com/miniapp-tool/mptool/
+    preview: /assets/image/mptool.jpg
+
+  - name: mdit-plugins
+    desc: MarkdownIt 的插件集合
+    logo: https://mdit-plugins.github.io/logo.svg
+    url: https://mdit-plugins.github.io/zh/
+    repo: https://github.com/mdit-plugins/mdit-plugins/
+    preview: /assets/image/mdit-plugins.jpg
+
   - name: VanBlog
     desc: 一款简洁实用优雅的高性能个人博客系统。
     logo: https://vanblog.mereith.com/logo.svg
