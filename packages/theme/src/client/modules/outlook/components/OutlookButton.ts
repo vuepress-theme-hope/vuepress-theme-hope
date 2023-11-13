@@ -45,21 +45,25 @@ export default defineComponent({
             canToggle.value && !enableFullScreen.value && !enableThemeColor
               ? h(AppearanceSwitch)
               : // only FullScreen is enabled
-              enableFullScreen.value && !canToggle.value && !enableThemeColor
-              ? h(ToggleFullScreenButton)
-              : h(
-                  "button",
-                  {
-                    type: "button",
-                    class: ["outlook-button", { open: open.value }],
-                    tabindex: "-1",
-                    "aria-hidden": true,
-                  },
-                  [
-                    h(OutlookIcon),
-                    h("div", { class: "outlook-dropdown" }, h(OutlookSettings)),
-                  ],
-                ),
+                enableFullScreen.value && !canToggle.value && !enableThemeColor
+                ? h(ToggleFullScreenButton)
+                : h(
+                    "button",
+                    {
+                      type: "button",
+                      class: ["outlook-button", { open: open.value }],
+                      tabindex: "-1",
+                      "aria-hidden": true,
+                    },
+                    [
+                      h(OutlookIcon),
+                      h(
+                        "div",
+                        { class: "outlook-dropdown" },
+                        h(OutlookSettings),
+                      ),
+                    ],
+                  ),
           )
         : null;
   },

@@ -21,8 +21,8 @@ const HopeIcon: FunctionalComponent<IconProps> = (props) => {
   return isLinkHttp(icon)
     ? h("img", { class: "icon", src: icon, "no-view": "", style })
     : isAbsoluteUrl(icon)
-    ? h("img", { class: "icon", src: withBase(icon), "no-view": "", style })
-    : h(resolveComponent("FontIcon"), props);
+      ? h("img", { class: "icon", src: withBase(icon), "no-view": "", style })
+      : h(resolveComponent("FontIcon"), props);
 };
 
 HopeIcon.displayName = "HopeIcon";

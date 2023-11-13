@@ -81,18 +81,18 @@ export const resolveArraySidebarItems = (
     const childItem = isString(item)
       ? resolveLinkInfo(router, resolvePrefix(pathPrefix, item))
       : item.link
-      ? {
-          ...item,
-          ...(!isLinkExternal(item.link)
-            ? {
-                link: resolveLinkInfo(
-                  router,
-                  resolvePrefix(pathPrefix, item.link),
-                ).link,
-              }
-            : {}),
-        }
-      : item;
+        ? {
+            ...item,
+            ...(!isLinkExternal(item.link)
+              ? {
+                  link: resolveLinkInfo(
+                    router,
+                    resolvePrefix(pathPrefix, item.link),
+                  ).link,
+                }
+              : {}),
+          }
+        : item;
 
     // resolved group item
     if ("children" in childItem) {
@@ -152,8 +152,8 @@ export const resolveMultiSidebarItems = (
             matchedConfig === "structure"
               ? sidebarData[base]
               : matchedConfig === "heading"
-              ? resolveHeadingSidebarItems(headerDepth)
-              : matchedConfig,
+                ? resolveHeadingSidebarItems(headerDepth)
+                : matchedConfig,
             headerDepth,
             base,
           )
@@ -180,16 +180,16 @@ export const resolveSidebarItems = (
   return sidebarConfig === false
     ? []
     : sidebarConfig === "heading"
-    ? resolveHeadingSidebarItems(headerDepth)
-    : sidebarConfig === "structure"
-    ? resolveArraySidebarItems(
-        sidebarData[routeLocale.value],
-        headerDepth,
-        routeLocale.value,
-      )
-    : isArray(sidebarConfig)
-    ? resolveArraySidebarItems(sidebarConfig, headerDepth)
-    : isPlainObject(sidebarConfig)
-    ? resolveMultiSidebarItems(sidebarConfig, headerDepth)
-    : [];
+      ? resolveHeadingSidebarItems(headerDepth)
+      : sidebarConfig === "structure"
+        ? resolveArraySidebarItems(
+            sidebarData[routeLocale.value],
+            headerDepth,
+            routeLocale.value,
+          )
+        : isArray(sidebarConfig)
+          ? resolveArraySidebarItems(sidebarConfig, headerDepth)
+          : isPlainObject(sidebarConfig)
+            ? resolveMultiSidebarItems(sidebarConfig, headerDepth)
+            : [];
 };

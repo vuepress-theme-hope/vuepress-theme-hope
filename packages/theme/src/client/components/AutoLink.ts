@@ -108,9 +108,9 @@ export default defineComponent({
         ? config.value.activeMatch
           ? new RegExp(config.value.activeMatch).test(route.path)
           : // if this link is active in subpath
-          !shouldBeActiveInSubpath.value
-          ? route.path === config.value.link
-          : startsWith(route.path, config.value.link)
+            !shouldBeActiveInSubpath.value
+            ? route.path === config.value.link
+            : startsWith(route.path, config.value.link)
         : false,
     );
 

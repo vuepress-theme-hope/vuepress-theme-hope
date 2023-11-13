@@ -371,80 +371,80 @@ export default defineComponent({
               : locale.value.emptyHistory
             : locale.value.emptyResult
           : searching.value
-          ? h(SearchLoading, { hint: locale.value.searching })
-          : hasResults.value
-          ? h(
-              "ul",
-              { class: "search-pro-result-list" },
-              results.value.map(({ title, contents }, index) => {
-                const isCurrentResultActive =
-                  activatedResultIndex.value === index;
+            ? h(SearchLoading, { hint: locale.value.searching })
+            : hasResults.value
+              ? h(
+                  "ul",
+                  { class: "search-pro-result-list" },
+                  results.value.map(({ title, contents }, index) => {
+                    const isCurrentResultActive =
+                      activatedResultIndex.value === index;
 
-                return h(
-                  "li",
-                  {
-                    class: [
-                      "search-pro-result-list-item",
-                      { active: isCurrentResultActive },
-                    ],
-                  },
-                  [
-                    h(
-                      "div",
-                      { class: "search-pro-result-title" },
-                      title || locale.value.defaultTitle,
-                    ),
-                    contents.map((item, contentIndex) => {
-                      const isCurrentContentActive =
-                        isCurrentResultActive &&
-                        activatedResultContentIndex.value === contentIndex;
-
-                      return h(
-                        VPLink,
-                        {
-                          to: getRealPath(item),
-                          class: [
-                            "search-pro-result-item",
-                            {
-                              active: isCurrentContentActive,
-                              "aria-selected": isCurrentContentActive,
-                            },
-                          ],
-                          onClick: () => {
-                            addQueryHistory(props.query);
-                            addResultHistory(item);
-                            resetSearchResult();
-                          },
-                        },
-                        () => [
-                          item.type === "text"
-                            ? null
-                            : h(
-                                item.type === "title"
-                                  ? TitleIcon
-                                  : item.type === "heading"
-                                  ? HeadingIcon
-                                  : HeartIcon,
-                                { class: "search-pro-result-type" },
-                              ),
-                          h("div", { class: "search-pro-result-content" }, [
-                            item.type === "text" && item.header
-                              ? h(
-                                  "div",
-                                  { class: "content-header" },
-                                  item.header,
-                                )
-                              : null,
-                            h("div", getDisplay(item)),
-                          ]),
+                    return h(
+                      "li",
+                      {
+                        class: [
+                          "search-pro-result-list-item",
+                          { active: isCurrentResultActive },
                         ],
-                      );
-                    }),
-                  ],
-                );
-              }),
-            )
-          : locale.value.emptyResult,
+                      },
+                      [
+                        h(
+                          "div",
+                          { class: "search-pro-result-title" },
+                          title || locale.value.defaultTitle,
+                        ),
+                        contents.map((item, contentIndex) => {
+                          const isCurrentContentActive =
+                            isCurrentResultActive &&
+                            activatedResultContentIndex.value === contentIndex;
+
+                          return h(
+                            VPLink,
+                            {
+                              to: getRealPath(item),
+                              class: [
+                                "search-pro-result-item",
+                                {
+                                  active: isCurrentContentActive,
+                                  "aria-selected": isCurrentContentActive,
+                                },
+                              ],
+                              onClick: () => {
+                                addQueryHistory(props.query);
+                                addResultHistory(item);
+                                resetSearchResult();
+                              },
+                            },
+                            () => [
+                              item.type === "text"
+                                ? null
+                                : h(
+                                    item.type === "title"
+                                      ? TitleIcon
+                                      : item.type === "heading"
+                                        ? HeadingIcon
+                                        : HeartIcon,
+                                    { class: "search-pro-result-type" },
+                                  ),
+                              h("div", { class: "search-pro-result-content" }, [
+                                item.type === "text" && item.header
+                                  ? h(
+                                      "div",
+                                      { class: "content-header" },
+                                      item.header,
+                                    )
+                                  : null,
+                                h("div", getDisplay(item)),
+                              ]),
+                            ],
+                          );
+                        }),
+                      ],
+                    );
+                  }),
+                )
+              : locale.value.emptyResult,
       );
   },
 });

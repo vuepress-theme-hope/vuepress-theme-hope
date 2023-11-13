@@ -42,8 +42,8 @@ export default defineComponent({
       return key === "category"
         ? "CategoryList"
         : key === "tag"
-        ? "TagList"
-        : null;
+          ? "TagList"
+          : null;
     });
 
     const items = computed(() => {
@@ -54,10 +54,10 @@ export default defineComponent({
           ? categoryMap.value.map[name].items
           : []
         : key === "tag"
-        ? name
-          ? tagMap.value.map[name].items
-          : []
-        : [];
+          ? name
+            ? tagMap.value.map[name].items
+            : []
+          : [];
     });
 
     return (): VNode =>

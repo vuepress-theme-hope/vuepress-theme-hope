@@ -194,8 +194,8 @@ export const resolveInclude = (
                 cwd: path.isAbsolute(actualPath)
                   ? path.dirname(actualPath)
                   : cwd
-                  ? path.resolve(cwd, path.dirname(actualPath))
-                  : null,
+                    ? path.resolve(cwd, path.dirname(actualPath))
+                    : null,
                 currentPath: currentPath ?? "",
                 includedFiles,
               })

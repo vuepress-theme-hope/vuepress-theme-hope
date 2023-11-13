@@ -103,8 +103,8 @@ export default defineComponent({
       props.type === "react"
         ? getReactCode(codeType.value, config.value)
         : props.type === "vue"
-        ? getVueCode(codeType.value, config.value)
-        : getNormalCode(codeType.value, config.value),
+          ? getVueCode(codeType.value, config.value)
+          : getNormalCode(codeType.value, config.value),
     );
 
     const isLegal = computed(() => code.value.isLegal);
@@ -259,8 +259,8 @@ export default defineComponent({
                       js_pre_processor: codeType.value
                         ? codeType.value.js[1]
                         : code.value.jsx
-                        ? "babel"
-                        : "none",
+                          ? "babel"
+                          : "none",
                       // eslint-disable-next-line @typescript-eslint/naming-convention
                       css_pre_processor: codeType.value
                         ? codeType.value.css[1]

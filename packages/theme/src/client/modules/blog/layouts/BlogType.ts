@@ -38,8 +38,8 @@ export default defineComponent({
       return key === "star"
         ? stars.value.items
         : type === "type" && key
-        ? blogType.value.items
-        : articles.value.items;
+          ? blogType.value.items
+          : articles.value.items;
     });
 
     return (): VNode =>

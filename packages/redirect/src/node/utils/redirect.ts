@@ -57,8 +57,8 @@ export const getRedirectMap = (
   const config = isFunction(options.config)
     ? options.config(app)
     : isPlainObject(options.config)
-    ? options.config
-    : {};
+      ? options.config
+      : {};
 
   return {
     ...fromEntries(
@@ -72,8 +72,8 @@ export const getRedirectMap = (
                 path,
               ])
             : frontmatter.redirectFrom
-            ? [[normalizePath(frontmatter.redirectFrom), path]]
-            : [],
+              ? [[normalizePath(frontmatter.redirectFrom), path]]
+              : [],
         )
         .flat(),
     ),

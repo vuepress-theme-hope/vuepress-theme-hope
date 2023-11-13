@@ -40,8 +40,8 @@ export const copyCodePlugin =
         COPY_CODE_SELECTOR: isArray(options.selector)
           ? options.selector
           : isString(options.selector)
-          ? [options.selector]
-          : ['.theme-default-content div[class*="language-"] pre'],
+            ? [options.selector]
+            : ['.theme-default-content div[class*="language-"] pre'],
       }),
 
       extendsBundlerOptions: (bundlerOptions: unknown, app): void => {

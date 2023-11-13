@@ -105,8 +105,12 @@ export const getDateInfo = (
         info: isDate
           ? { year: detail.year, month: detail.month, day: detail.day }
           : isTime
-          ? { hour: detail.hour, minute: detail.minute, second: detail.second }
-          : detail,
+            ? {
+                hour: detail.hour,
+                minute: detail.minute,
+                second: detail.second,
+              }
+            : detail,
         type: isTime ? "time" : isDate ? "date" : "full",
       };
     }

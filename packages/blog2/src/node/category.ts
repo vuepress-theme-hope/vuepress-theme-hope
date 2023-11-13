@@ -72,11 +72,11 @@ export const prepareCategory = (
         const getItemPath = isFunction(itemPath)
           ? itemPath
           : isString(itemPath)
-          ? (name: string): string =>
-              itemPath
-                .replace(/:key/g, slugify(key))
-                .replace(/:name/g, slugify(name))
-          : (): null => null;
+            ? (name: string): string =>
+                itemPath
+                  .replace(/:key/g, slugify(key))
+                  .replace(/:name/g, slugify(name))
+            : (): null => null;
 
         for (const localePath in pageMap) {
           if (path) {

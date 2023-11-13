@@ -39,8 +39,8 @@ export const hopeTheme =
     const behaviorOptions = isPlainObject(behavior)
       ? behavior
       : behavior
-      ? { compact: true, check: true }
-      : {};
+        ? { compact: true, check: true }
+        : {};
     const isDebug = behaviorOptions.debug ? (app.env.isDebug = true) : false;
 
     const {

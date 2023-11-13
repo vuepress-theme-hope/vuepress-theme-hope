@@ -14,15 +14,15 @@ export const theme = (
     name === "theme"
       ? "theme-hope"
       : name === "shared"
-      ? "shared"
-      : `plugin-${name}`;
+        ? "shared"
+        : `plugin-${name}`;
   const canonical = `https://${subdomain}.vuejs.press`;
 
   const hostname = IS_GITHUB
     ? "https://vuepress-theme-hope.github.io"
     : IS_GITEE
-    ? "https://vuepress-theme-hope.gitee.io"
-    : canonical;
+      ? "https://vuepress-theme-hope.gitee.io"
+      : canonical;
 
   const themeOptions: ThemeOptions = {
     hostname,

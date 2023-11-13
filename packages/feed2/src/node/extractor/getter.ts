@@ -56,8 +56,8 @@ export class FeedInfo {
             item instanceof RegExp ? item.test(tagName) : item === tagName,
           )
         : isFunction(preservedElements)
-        ? preservedElements(tagName)
-        : false;
+          ? preservedElements(tagName)
+          : false;
     };
   }
 
@@ -98,10 +98,10 @@ export class FeedInfo {
     return this.frontmatter.author === false
       ? []
       : this.frontmatter.author
-      ? getAuthor(this.frontmatter.author)
-      : this.options.channel?.author
-      ? getAuthor(<AuthorInfo>this.options.channel?.author)
-      : [];
+        ? getAuthor(this.frontmatter.author)
+        : this.options.channel?.author
+          ? getAuthor(<AuthorInfo>this.options.channel?.author)
+          : [];
   }
 
   get category(): FeedCategory[] | null {
@@ -146,8 +146,8 @@ export class FeedInfo {
     return date && date instanceof Date
       ? date
       : createdTime
-      ? new Date(createdTime)
-      : null;
+        ? new Date(createdTime)
+        : null;
   }
 
   get lastUpdated(): Date {

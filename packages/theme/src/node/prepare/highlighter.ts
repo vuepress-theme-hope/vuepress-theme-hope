@@ -65,8 +65,8 @@ export const prepareHighLighterScss = async (
   )
     ? "prismjs"
     : Plugins.some((plugin) => plugin.name === "@vuepress/plugin-shiki")
-    ? "shiki"
-    : "none";
+      ? "shiki"
+      : "none";
 
   let content = `\
 $highlighter: "${highlighter}";

@@ -77,8 +77,8 @@ export default defineComponent({
         image: isString(bgImage)
           ? withBase(bgImage)
           : bgImage === false
-          ? null
-          : defaultHeroBgImagePath,
+            ? null
+            : defaultHeroBgImagePath,
         imageDark: isString(bgImageDark) ? withBase(bgImageDark) : null,
         bgStyle: bgImageStyle,
         isFullScreen: isFullScreen.value,

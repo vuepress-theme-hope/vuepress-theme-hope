@@ -42,10 +42,10 @@ export const injectPageInfo = (page: Page<ThemePageData>): void => {
   page.routeMeta[ArticleInfoType.type] = frontmatter.home
     ? PageType.home
     : isSlide
-    ? PageType.slide
-    : isArticle
-    ? PageType.article
-    : PageType.page;
+      ? PageType.slide
+      : isArticle
+        ? PageType.article
+        : PageType.page;
 
   // save relative file path into page data to generate edit link
   page.data.filePathRelative = filePathRelative;

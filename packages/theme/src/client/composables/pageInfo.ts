@@ -131,8 +131,8 @@ export const usePageInfo = (): {
     "pageInfo" in frontmatter.value
       ? frontmatter.value.pageInfo
       : "pageInfo" in themeLocale.value
-      ? themeLocale.value.pageInfo
-      : null,
+        ? themeLocale.value.pageInfo
+        : null,
   );
 
   return { info, items };

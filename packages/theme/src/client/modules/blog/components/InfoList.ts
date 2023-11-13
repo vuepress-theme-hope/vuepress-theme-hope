@@ -118,44 +118,44 @@ export default defineComponent({
                 ),
               ])
             : active.value === "category"
-            ? h("div", { class: "vp-category-wrapper" }, [
-                categoryNumber.value
-                  ? h(
-                      "div",
-                      {
-                        class: "title",
-                        onClick: () => navigate(categoryMap.value.path),
-                      },
-                      [
-                        h(CategoryIcon),
-                        h("span", { class: "num" }, categoryNumber.value),
-                        locale.value.category,
-                      ],
-                    )
-                  : null,
-                h("hr"),
-                h(DropTransition, { delay: 0.04 }, () => h(CategoryList)),
-              ])
-            : active.value === "tag"
-            ? h("div", { class: "vp-tag-wrapper" }, [
-                tagNumber.value
-                  ? h(
-                      "div",
-                      {
-                        class: "title",
-                        onClick: () => navigate(tagMap.value.path),
-                      },
-                      [
-                        h(TagIcon),
-                        h("span", { class: "num" }, tagNumber.value),
-                        locale.value.tag,
-                      ],
-                    )
-                  : null,
-                h("hr"),
-                h(DropTransition, { delay: 0.04 }, () => h(TagList)),
-              ])
-            : h(DropTransition, () => h(TimelineList)),
+              ? h("div", { class: "vp-category-wrapper" }, [
+                  categoryNumber.value
+                    ? h(
+                        "div",
+                        {
+                          class: "title",
+                          onClick: () => navigate(categoryMap.value.path),
+                        },
+                        [
+                          h(CategoryIcon),
+                          h("span", { class: "num" }, categoryNumber.value),
+                          locale.value.category,
+                        ],
+                      )
+                    : null,
+                  h("hr"),
+                  h(DropTransition, { delay: 0.04 }, () => h(CategoryList)),
+                ])
+              : active.value === "tag"
+                ? h("div", { class: "vp-tag-wrapper" }, [
+                    tagNumber.value
+                      ? h(
+                          "div",
+                          {
+                            class: "title",
+                            onClick: () => navigate(tagMap.value.path),
+                          },
+                          [
+                            h(TagIcon),
+                            h("span", { class: "num" }, tagNumber.value),
+                            locale.value.tag,
+                          ],
+                        )
+                      : null,
+                    h("hr"),
+                    h(DropTransition, { delay: 0.04 }, () => h(TagList)),
+                  ])
+                : h(DropTransition, () => h(TimelineList)),
         ),
       ]);
   },

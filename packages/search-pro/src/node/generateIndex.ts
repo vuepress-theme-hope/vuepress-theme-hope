@@ -147,8 +147,8 @@ export const generatePageIndex = (
         return isArray(result)
           ? [index.toString(), result]
           : result
-          ? [index.toString(), [result]]
-          : null;
+            ? [index.toString(), [result]]
+            : null;
       })
       .filter((item): item is [string, string[]] => item !== null),
   );

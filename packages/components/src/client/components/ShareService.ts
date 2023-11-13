@@ -138,8 +138,8 @@ export default defineComponent({
       const tag = isArray(tags)
         ? tags.filter(isString).join(",")
         : isString(tags)
-        ? tags
-        : null;
+          ? tags
+          : null;
 
       return props.config.link.replace(
         /\[([^\]]+)\]/g,
@@ -219,14 +219,14 @@ export default defineComponent({
           plain
             ? renderIcon(shape, "plain")
             : icon
-            ? renderIcon(icon)
-            : h("div", {
-                class: "vp-share-icon colorful",
-                style: {
-                  background: color,
-                },
-                innerHTML: shape,
-              }),
+              ? renderIcon(icon)
+              : h("div", {
+                  class: "vp-share-icon colorful",
+                  style: {
+                    background: color,
+                  },
+                  innerHTML: shape,
+                }),
         ),
         showPopup.value ? h("div", { class: "share-popup" }) : null,
       ];

@@ -35,8 +35,8 @@ export const renderJSON = (feed: Feed): string => {
     isArray(channel.author)
       ? channel.author
       : channel.author
-      ? [channel.author]
-      : []
+        ? [channel.author]
+        : []
   ).filter((author) => Boolean(author?.name));
 
   if (channelAuthors.length)

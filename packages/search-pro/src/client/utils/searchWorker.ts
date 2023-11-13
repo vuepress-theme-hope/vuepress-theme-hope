@@ -15,8 +15,8 @@ export interface SearchWorker {
     T["type"] extends "search"
       ? SearchResult[]
       : T["type"] extends "suggest"
-      ? string[]
-      : QueryResult
+        ? string[]
+        : QueryResult
   >;
   terminate: () => void;
 }
@@ -51,8 +51,8 @@ export const createSearchWorker = (): SearchWorker => {
       T["type"] extends "search"
         ? SearchResult[]
         : T["type"] extends "suggest"
-        ? string[]
-        : QueryResult
+          ? string[]
+          : QueryResult
     > =>
       new Promise((resolve, reject) => {
         worker.postMessage(options);

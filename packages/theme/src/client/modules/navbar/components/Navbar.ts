@@ -81,8 +81,8 @@ export default defineComponent({
       Search: hasGlobalComponent("Docsearch")
         ? resolveComponent("Docsearch")
         : hasGlobalComponent("SearchBox")
-        ? resolveComponent("SearchBox")
-        : noopModule,
+          ? resolveComponent("SearchBox")
+          : noopModule,
     };
 
     const getNavbarComponent = (component: string): Component | string =>

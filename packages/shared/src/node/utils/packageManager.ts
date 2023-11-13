@@ -126,7 +126,7 @@ export const detectPackageManager = (
     (hasGlobalInstallation("pnpm")
       ? "pnpm"
       : hasGlobalInstallation("yarn")
-      ? "yarn"
-      : "npm")
+        ? "yarn"
+        : "npm")
   );
 };

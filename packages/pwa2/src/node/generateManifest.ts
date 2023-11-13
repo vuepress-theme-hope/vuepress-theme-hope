@@ -24,8 +24,8 @@ export const getManifest = async (
       fs.existsSync(userManifestPath)
         ? await fs.readFile(userManifestPath, "utf8")
         : fs.existsSync(userManifestJSONPath)
-        ? await fs.readFile(userManifestJSONPath, "utf8")
-        : "{}",
+          ? await fs.readFile(userManifestJSONPath, "utf8")
+          : "{}",
     )
   );
 

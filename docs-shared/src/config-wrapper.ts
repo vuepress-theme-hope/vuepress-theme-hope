@@ -33,8 +33,8 @@ export const config = (
   const docsBase = IS_NETLIFY
     ? "/"
     : base
-    ? <`/${string}/`>`/v2/${base}/`
-    : "/v2/";
+      ? <`/${string}/`>`/v2/${base}/`
+      : "/v2/";
   const docsearchIndexName =
     indexName === false ? false : `vuepress-theme-hope-${indexName || name}`;
 
@@ -197,9 +197,8 @@ export const config = (
 <br/>
 Theme by <a href="https://theme-hope.vuejs.press" target="_blank">VuePress Theme Hope</a> | MIT Licensed, Copyright © 2019-present Mr.Hope
 `;
-        app.pages.find((page) => page.path === "/zh/")!.frontmatter[
-          "footer"
-        ] = `\
+        app.pages.find((page) => page.path === "/zh/")!.frontmatter["footer"] =
+          `\
 <a href="https://www.netlify.com" target="_blank">
   <img src="https://www.netlify.com/img/global/badges/netlify-light.svg" alt="由 Netlify 部署" data-mode="lightmode-only">
   <img src="https://www.netlify.com/img/global/badges/netlify-dark.svg" alt="由 Netlify 部署" data-mode="darkmode-only">
