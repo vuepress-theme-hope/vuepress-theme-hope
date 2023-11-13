@@ -10,14 +10,25 @@ export interface RegistryAnswer {
 
 const NPM_MIRROR_REGISTRY = "https://registry.npmmirror.com/";
 
-const getUserRegistry = (packageManager: PackageManager): string =>
-  execaCommandSync(`${packageManager} config get registry`).stdout;
+const getUserRegistry = (
+  packageManager: PackageManager,
+  isYarnModern: boolean,
+): string =>
+  execaCommandSync(
+    `${packageManager} config get ${
+      isYarnModern ? "npmRegistryServer" : "registry"
+    }}`,
+  ).stdout;
 
 export const getRegistry = async (
   packageManager: PackageManager,
   lang: Lang,
 ): Promise<string> => {
-  const userRegistry = getUserRegistry(packageManager);
+  const isYarnModern =
+    packageManager === "yarn" &&
+    !execaCommandSync("yarn --version").stdout.startsWith("1");
+
+  const userRegistry = getUserRegistry(packageManager, isYarnModern);
 
   if (/https:\/\/registry\.npm\.taobao\.org\/?/.test(userRegistry)) {
     console.error(
@@ -25,7 +36,9 @@ export const getRegistry = async (
     );
 
     execaCommandSync(
-      `${packageManager} config set registry ${NPM_MIRROR_REGISTRY}`,
+      `${packageManager} config set ${
+        isYarnModern ? "npmRegistryServer" : "registry"
+      }} ${NPM_MIRROR_REGISTRY}`,
     );
   }
 
