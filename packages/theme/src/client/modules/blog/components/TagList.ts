@@ -22,23 +22,26 @@ export default defineComponent({
       h(
         "ul",
         { class: "tag-list-wrapper" },
-        entries(tagMap.value.map).map(([tag, { path, items }]) =>
-          h(
-            "li",
-            {
-              class: [
-                "tag",
-                // TODO: magic number 9 is tricky here
-                `tag${generateIndexFromHash(tag, 9)}`,
-                { active: isActive(tag) },
-              ],
-            },
-            h(VPLink, { to: path }, () => [
-              tag,
-              h("span", { class: "tag-num" }, items.length),
-            ]),
+        entries(tagMap.value.map)
+          // sort from more to less
+          .sort(([, a], [, b]) => b.items.length - a.items.length)
+          .map(([tag, { path, items }]) =>
+            h(
+              "li",
+              {
+                class: [
+                  "tag",
+                  // TODO: magic number 9 is tricky here
+                  `tag${generateIndexFromHash(tag, 9)}`,
+                  { active: isActive(tag) },
+                ],
+              },
+              h(VPLink, { to: path }, () => [
+                tag,
+                h("span", { class: "tag-num" }, items.length),
+              ]),
+            ),
           ),
-        ),
       );
   },
 });

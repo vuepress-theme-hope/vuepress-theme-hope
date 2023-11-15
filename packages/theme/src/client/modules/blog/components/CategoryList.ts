@@ -18,23 +18,26 @@ export default defineComponent({
       h(
         "ul",
         { class: "vp-category-list" },
-        entries(categoryMap.value.map).map(([category, { path, items }]) =>
-          h(
-            "li",
-            {
-              class: [
-                "vp-category",
-                // TODO: magic number 9 is tricky here
-                `vp-category${generateIndexFromHash(category, 9)}`,
-                { active: path === page.value.path },
-              ],
-            },
-            h(VPLink, { to: path }, () => [
-              category,
-              h("span", { class: "count" }, items.length),
-            ]),
+        entries(categoryMap.value.map)
+          // sort from more to less
+          .sort(([, a], [, b]) => b.items.length - a.items.length)
+          .map(([category, { path, items }]) =>
+            h(
+              "li",
+              {
+                class: [
+                  "vp-category",
+                  // TODO: magic number 9 is tricky here
+                  `vp-category${generateIndexFromHash(category, 9)}`,
+                  { active: path === page.value.path },
+                ],
+              },
+              h(VPLink, { to: path }, () => [
+                category,
+                h("span", { class: "count" }, items.length),
+              ]),
+            ),
           ),
-        ),
       );
   },
 });
