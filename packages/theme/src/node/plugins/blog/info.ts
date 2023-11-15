@@ -12,7 +12,7 @@ import { ArticleInfoType } from "../../../shared/index.js";
 /** @private */
 export const injectBlogBasicInfo = (
   page: Page<ThemePageData>,
-  info: Record<string, unknown>
+  info: Record<string, unknown>,
 ): void => {
   const frontmatter = page.frontmatter as
     | ThemeProjectHomePageFrontmatter
