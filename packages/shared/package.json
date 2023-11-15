@@ -56,7 +56,7 @@
     "@vuepress/client": "2.0.0-beta.68",
     "@vuepress/shared": "2.0.0-beta.68",
     "@vuepress/utils": "2.0.0-beta.68",
-    "@vueuse/core": "^10.6.0",
+    "@vueuse/core": "^10.6.1",
     "cheerio": "1.0.0-rc.12",
     "dayjs": "^1.11.10",
     "execa": "^8.0.1",

@@ -21,7 +21,7 @@
   "dependencies": {
     "@types/katex": "0.16.6",
     "@vuepress/client": "2.0.0-beta.68",
-    "@vueuse/core": "10.6.0",
+    "@vueuse/core": "10.6.1",
     "docs-shared": "workspace:*",
     "echarts-wordcloud": "2.1.0",
     "flowchart.ts": "1.0.1",
