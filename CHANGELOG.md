@@ -4,6 +4,20 @@ All notable changes to this project will be documented in this file. See [Conven
 
 <!-- #region recent-beta -->
 
+## [2.0.0-beta.251](https://github.com/vuepress-theme-hope/vuepress-theme-hope/compare/v2.0.0-beta.250...v2.0.0-beta.251) (2023-11-15)
+
+### Features
+
+- **components:** improve VPBanner style on mobile ([ff6222c](https://github.com/vuepress-theme-hope/vuepress-theme-hope/commit/ff6222c001c3195817ac123ca24cee15878ce3f3))
+- mark image lazyload ([3824b89](https://github.com/vuepress-theme-hope/vuepress-theme-hope/commit/3824b892972e6d339480a13fe20ef59074874b8a))
+- **theme:** sort catalog and tag list ([21d3f2f](https://github.com/vuepress-theme-hope/vuepress-theme-hope/commit/21d3f2fbc769359ccfc6e9fab6c1d480cfa0bbfa))
+- **theme:** support icon in actions, close [#3631](https://github.com/vuepress-theme-hope/vuepress-theme-hope/issues/3631) ([66e89ad](https://github.com/vuepress-theme-hope/vuepress-theme-hope/commit/66e89ad2604d312b9ff6c226177f32ca952b1331))
+
+### Bug Fixes
+
+- **create:** fix yarn2+ registry command ([1554f01](https://github.com/vuepress-theme-hope/vuepress-theme-hope/commit/1554f01e2c7277435c705d56153e859e4f9dcf59))
+- **theme:** fix excerpt generation ([c2707b4](https://github.com/vuepress-theme-hope/vuepress-theme-hope/commit/c2707b4edb5219eb3f34ddbe31d5d54bde8bcc14))
+
 ## [2.0.0-beta.250](https://github.com/vuepress-theme-hope/vuepress-theme-hope/compare/v2.0.0-beta.249...v2.0.0-beta.250) (2023-11-11)
 
 ### Bug Fixes
