@@ -16,7 +16,7 @@ export default defineUserConfig({
 
     repo: "vuepress-theme-hope/vuepress-theme-hope/tree/main/demo/auto-catalog/",
 
-    navbar: ["/", "/feature/", "/post/"],
+    navbar: ["/", "/demo", "/feature/", "/post/"],
   }),
 
   plugins: [autoCatalogPlugin()],

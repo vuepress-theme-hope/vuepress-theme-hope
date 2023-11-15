@@ -457,10 +457,10 @@ export default {
 
 ```ts {6-7}
 // .vuepress/config.ts
-import { defineConfig } from "vuepress";
+import { defineUserConfig } from "vuepress";
 import { mdEnhancePlugin } from "vuepress-plugin-md-enhance";
 
-export default defineConfig({
+export default defineUserConfig({
   // 现在任何带有 `.snippet.md` 扩展名的文件都不会呈现为页面
   pagePatterns: ["**/*.md", "!**/*.snippet.md", "!.vuepress", "!node_modules"],
 

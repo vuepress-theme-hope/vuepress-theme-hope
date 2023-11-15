@@ -457,10 +457,10 @@ Also, to place your Markdown files directly besides your actual files, but don't
 
 ```ts {6-7}
 // .vuepress/config.ts
-import { defineConfig } from "vuepress";
+import { defineUserConfig } from "vuepress";
 import { mdEnhancePlugin } from "vuepress-plugin-md-enhance";
 
-export default defineConfig({
+export default defineUserConfig({
   // now any file with `.snippet.md` extension will not be rendered as a page
   pagePatterns: ["**/*.md", "!**/*.snippet.md", "!.vuepress", "!node_modules"],
 

@@ -74,13 +74,6 @@ Whether page should be indexed getter
 
 Catalog component name.
 
-### iconComponent
-
-- Type: `string`
-- Required: No
-
-Icon component name, icon info will be passed to icon props.
-
 ### locales
 
 - Type: `AutoCatalogLocaleConfig`

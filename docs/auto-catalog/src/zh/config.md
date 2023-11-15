@@ -74,13 +74,6 @@ icon: gears
 
 使用的目录组件名称。
 
-### iconComponent
-
-- 类型: `string`
-- 必填: 否
-
-使用的图标组件名称，图标信息会作为 `icon` 属性传入相关组件进行渲染。
-
 ### locales
 
 - 类型: `AutoCatalogLocaleConfig`

@@ -4,7 +4,7 @@ title: Home
 icon: home
 heroImage: /logo.svg
 heroText: vuepress-plugin-auto-catalog
-tagline: Generate Catalog pages for VuePress2
+tagline: Catalog generation and component for VuePress2
 actions:
   - text: Guide
     icon: lightbulb
@@ -22,7 +22,7 @@ features:
 
   - title: Generate catalog page automatically
     icon: file
-    details: Generate catalog page for every dir
+    details: Generate catalog page for every folder
 
 footer: Theme by <a href="https://theme-hope.vuejs.press" target="_blank">VuePress Theme Hope</a> | MIT Licensed, Copyright © 2019-present Mr.Hope
 
@@ -63,15 +63,16 @@ npm i -D vuepress-plugin-auto-catalog
 
 ```ts
 // .vuepress/config.ts
+import { defineUserConfig } from "vuepress";
 import { autoCatalogPlugin } from "vuepress-plugin-auto-catalog";
 
-export default {
+export default defineUserConfig({
   plugins: [
     autoCatalogPlugin({
       // your options
     }),
   ],
-};
+});
 ```
 
 @tab JS
