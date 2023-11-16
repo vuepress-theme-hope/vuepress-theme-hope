@@ -90,7 +90,7 @@ Frontmatter key.
 
 ### format
 
-- Type: `date | time`
+- Type: `"date" | "time" | "full"`
 - Default: `"date"`
 
 Format of the date.

@@ -12,6 +12,8 @@ export interface AppendDateOptions {
    * Date format
    *
    * 日期格式
+   *
+   * @default 'date'
    */
-  format?: "date" | "time";
+  format?: "date" | "time" | "full";
 }

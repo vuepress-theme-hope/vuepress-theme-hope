@@ -1,10 +1,20 @@
+import { createRequire } from "node:module";
+
 import type { Page, PluginFunction } from "@vuepress/core";
 import type { GitPluginPageData } from "@vuepress/plugin-git";
 import { fs } from "@vuepress/utils";
-import { checkVersion, startsWith } from "vuepress-shared/node";
+import {
+  checkVersion,
+  getDateString,
+  getFullDateString,
+  getTimeString,
+  startsWith,
+} from "vuepress-shared/node";
 
 import type { AppendDateOptions } from "./options.js";
 import { PLUGIN_NAME, logger } from "./utils.js";
+
+const require = createRequire(import.meta.url);
 
 export const appendDatePlugin =
   ({ key = "date", format = "date" }: AppendDateOptions = {}): PluginFunction =>
@@ -20,7 +30,15 @@ export const appendDatePlugin =
             (plugin) => plugin.name !== "@vuepress/plugin-git",
           )
         ) {
-          logger.error(`[append-date] @vuepress/plugin-git is not installed`);
+          try {
+            require.resolve("@vuepress/plugin-git");
+
+            logger.info(`@vuepress/plugin-git is not enabled.`);
+          } catch (err) {
+            logger.error(
+              `@vuepress/plugin-git is required for this plugin, please install it.`,
+            );
+          }
 
           return;
         }
@@ -35,19 +53,22 @@ export const appendDatePlugin =
               if (!createdTime) return;
 
               const date = new Date(createdTime);
-              const dateText = `${date.getFullYear()}-${date.getMonth()}-${date.getDate()}`;
-              const timeText = `${date.getHours()}:${date.getMinutes()}:${date.getSeconds()}`;
+
               const text =
-                format === "date" ? dateText : `${dateText} ${timeText}`;
+                format === "time"
+                  ? getTimeString(date)
+                  : format === "full"
+                    ? getFullDateString(date)
+                    : getDateString(date);
 
               frontmatter[key] = new Date(createdTime);
 
-              const content = await fs.readFile(filePath, "utf-8");
+              const markdownContent = await fs.readFile(filePath, "utf-8");
 
               await fs.writeFile(
                 filePath,
-                startsWith(content, "---\n")
-                  ? `---\n${key}: ${text}\n${content.substring(4)}`
+                startsWith(markdownContent, "---\n")
+                  ? `---\n${key}: ${text}\n${markdownContent.substring(4)}`
                   : `---\n${key}: ${text}\n---\n\n`,
                 "utf-8",
               );

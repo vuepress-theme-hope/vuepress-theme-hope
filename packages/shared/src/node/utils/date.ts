@@ -203,3 +203,12 @@ export const injectLocalizedDate = (
       );
     }
 };
+
+export const getDateString = (date: Date): string =>
+  dayjs(date).format("YYYY-MM-DD");
+
+export const getTimeString = (date: Date): string =>
+  dayjs(date).format("HH:mm:ss");
+
+export const getFullDateString = (date: Date): string =>
+  dayjs(date).format("YYYY-MM-DD HH:mm:ss");

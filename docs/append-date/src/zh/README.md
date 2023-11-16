@@ -90,7 +90,7 @@ Frontmatter 键名。
 
 ### format
 
-- 类型: `date | time`
+- 类型: `"date" | "time" | "full"`
 - 默认值: `"date"`
 
 日期格式。

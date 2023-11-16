@@ -1,6 +1,10 @@
 {
   "*.vue": ["eslint --fix", "prettier --write"],
-  "*.{js,ts}": ["eslint --fix", "prettier --write", "vitest related --run"],
+  "*.{js,ts}": [
+    "eslint --fix",
+    "prettier --write",
+    "cross-env TZ=Etc/UTC vitest related --run"
+  ],
   "*.md": ["markdownlint", "prettier --write"],
   "*.{json,yml}": ["prettier --write"],
   "*.scss": ["stylelint --fix", "prettier --write"],
