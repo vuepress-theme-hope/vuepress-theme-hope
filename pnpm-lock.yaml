@@ -170,8 +170,8 @@ importers:
         specifier: 2.0.0-beta.68
         version: 2.0.0-beta.68(typescript@5.2.2)
       '@vuepress/client':
-        specifier: 2.0.0-beta.68
-        version: 2.0.0-beta.68(typescript@5.2.2)
+        specifier: 2.0.0-rc.0
+        version: 2.0.0-rc.0(typescript@5.2.2)
       '@vuepress/core':
         specifier: 2.0.0-beta.68
         version: 2.0.0-beta.68(typescript@5.2.2)
@@ -192,7 +192,7 @@ importers:
         version: link:../../packages/auto-catalog
       vuepress-vite:
         specifier: 2.0.0-beta.68
-        version: 2.0.0-beta.68(@types/node@20.9.0)(@vuepress/client@2.0.0-beta.68)(sass-loader@13.3.2)(typescript@5.2.2)(vue@3.3.8)
+        version: 2.0.0-beta.68(@types/node@20.9.0)(@vuepress/client@2.0.0-rc.0)(sass-loader@13.3.2)(typescript@5.2.2)(vue@3.3.8)
       vuepress-webpack:
         specifier: 2.0.0-beta.68
         version: 2.0.0-beta.68(esbuild@0.19.5)(sass@1.69.5)(typescript@5.2.2)(vue@3.3.8)(webpack@5.89.0)
@@ -203,8 +203,8 @@ importers:
         specifier: 2.0.0-beta.68
         version: 2.0.0-beta.68(typescript@5.2.2)
       '@vuepress/client':
-        specifier: 2.0.0-beta.68
-        version: 2.0.0-beta.68(typescript@5.2.2)
+        specifier: 2.0.0-rc.0
+        version: 2.0.0-rc.0(typescript@5.2.2)
       '@vuepress/core':
         specifier: 2.0.0-beta.68
         version: 2.0.0-beta.68(typescript@5.2.2)
@@ -228,7 +228,7 @@ importers:
         version: link:../../packages/blog2
       vuepress-vite:
         specifier: 2.0.0-beta.68
-        version: 2.0.0-beta.68(@types/node@20.9.0)(@vuepress/client@2.0.0-beta.68)(sass-loader@13.3.2)(typescript@5.2.2)(vue@3.3.8)
+        version: 2.0.0-beta.68(@types/node@20.9.0)(@vuepress/client@2.0.0-rc.0)(sass-loader@13.3.2)(typescript@5.2.2)(vue@3.3.8)
       vuepress-webpack:
         specifier: 2.0.0-beta.68
         version: 2.0.0-beta.68(esbuild@0.19.5)(sass@1.69.5)(typescript@5.2.2)(vue@3.3.8)(webpack@5.89.0)
@@ -239,8 +239,8 @@ importers:
         specifier: 2.0.0-beta.68
         version: 2.0.0-beta.68(typescript@5.2.2)
       '@vuepress/client':
-        specifier: 2.0.0-beta.68
-        version: 2.0.0-beta.68(typescript@5.2.2)
+        specifier: 2.0.0-rc.0
+        version: 2.0.0-rc.0(typescript@5.2.2)
       '@vuepress/core':
         specifier: 2.0.0-beta.68
         version: 2.0.0-beta.68(typescript@5.2.2)
@@ -270,7 +270,7 @@ importers:
         version: link:../../packages/comment2
       vuepress-vite:
         specifier: 2.0.0-beta.68
-        version: 2.0.0-beta.68(@types/node@20.9.0)(@vuepress/client@2.0.0-beta.68)(sass-loader@13.3.2)(typescript@5.2.2)(vue@3.3.8)
+        version: 2.0.0-beta.68(@types/node@20.9.0)(@vuepress/client@2.0.0-rc.0)(sass-loader@13.3.2)(typescript@5.2.2)(vue@3.3.8)
       vuepress-webpack:
         specifier: 2.0.0-beta.68
         version: 2.0.0-beta.68(esbuild@0.19.5)(sass@1.69.5)(typescript@5.2.2)(vue@3.3.8)(webpack@5.89.0)
@@ -281,8 +281,8 @@ importers:
         specifier: 2.0.0-beta.68
         version: 2.0.0-beta.68(typescript@5.2.2)
       '@vuepress/client':
-        specifier: 2.0.0-beta.68
-        version: 2.0.0-beta.68(typescript@5.2.2)
+        specifier: 2.0.0-rc.0
+        version: 2.0.0-rc.0(typescript@5.2.2)
       '@vuepress/theme-default':
         specifier: 2.0.0-beta.68
         version: 2.0.0-beta.68(sass-loader@13.3.2)(typescript@5.2.2)
@@ -321,7 +321,7 @@ importers:
         version: link:../../packages/shared
       vuepress-vite:
         specifier: 2.0.0-beta.68
-        version: 2.0.0-beta.68(@types/node@20.9.0)(@vuepress/client@2.0.0-beta.68)(sass-loader@13.3.2)(typescript@5.2.2)(vue@3.3.8)
+        version: 2.0.0-beta.68(@types/node@20.9.0)(@vuepress/client@2.0.0-rc.0)(sass-loader@13.3.2)(typescript@5.2.2)(vue@3.3.8)
       vuepress-webpack:
         specifier: 2.0.0-beta.68
         version: 2.0.0-beta.68(esbuild@0.19.5)(sass@1.69.5)(typescript@5.2.2)(vue@3.3.8)(webpack@5.89.0)
@@ -332,8 +332,8 @@ importers:
         specifier: 2.0.0-beta.68
         version: 2.0.0-beta.68(typescript@5.2.2)
       '@vuepress/client':
-        specifier: 2.0.0-beta.68
-        version: 2.0.0-beta.68(typescript@5.2.2)
+        specifier: 2.0.0-rc.0
+        version: 2.0.0-rc.0(typescript@5.2.2)
       '@vuepress/theme-default':
         specifier: 2.0.0-beta.68
         version: 2.0.0-beta.68(sass-loader@13.3.2)(typescript@5.2.2)
@@ -348,7 +348,7 @@ importers:
         version: link:../../packages/copy-code2
       vuepress-vite:
         specifier: 2.0.0-beta.68
-        version: 2.0.0-beta.68(@types/node@20.9.0)(@vuepress/client@2.0.0-beta.68)(sass-loader@13.3.2)(typescript@5.2.2)(vue@3.3.8)
+        version: 2.0.0-beta.68(@types/node@20.9.0)(@vuepress/client@2.0.0-rc.0)(sass-loader@13.3.2)(typescript@5.2.2)(vue@3.3.8)
       vuepress-webpack:
         specifier: 2.0.0-beta.68
         version: 2.0.0-beta.68(esbuild@0.19.5)(sass@1.69.5)(typescript@5.2.2)(vue@3.3.8)(webpack@5.89.0)
@@ -359,8 +359,8 @@ importers:
         specifier: 2.0.0-beta.68
         version: 2.0.0-beta.68(typescript@5.2.2)
       '@vuepress/client':
-        specifier: 2.0.0-beta.68
-        version: 2.0.0-beta.68(typescript@5.2.2)
+        specifier: 2.0.0-rc.0
+        version: 2.0.0-rc.0(typescript@5.2.2)
       '@vuepress/theme-default':
         specifier: 2.0.0-beta.68
         version: 2.0.0-beta.68(sass-loader@13.3.2)(typescript@5.2.2)
@@ -378,7 +378,7 @@ importers:
         version: link:../../packages/copyright2
       vuepress-vite:
         specifier: 2.0.0-beta.68
-        version: 2.0.0-beta.68(@types/node@20.9.0)(@vuepress/client@2.0.0-beta.68)(sass-loader@13.3.2)(typescript@5.2.2)(vue@3.3.8)
+        version: 2.0.0-beta.68(@types/node@20.9.0)(@vuepress/client@2.0.0-rc.0)(sass-loader@13.3.2)(typescript@5.2.2)(vue@3.3.8)
       vuepress-webpack:
         specifier: 2.0.0-beta.68
         version: 2.0.0-beta.68(esbuild@0.19.5)(sass@1.69.5)(typescript@5.2.2)(vue@3.3.8)(webpack@5.89.0)
@@ -389,8 +389,8 @@ importers:
         specifier: 2.0.0-beta.68
         version: 2.0.0-beta.68(typescript@5.2.2)
       '@vuepress/client':
-        specifier: 2.0.0-beta.68
-        version: 2.0.0-beta.68(typescript@5.2.2)
+        specifier: 2.0.0-rc.0
+        version: 2.0.0-rc.0(typescript@5.2.2)
       '@vuepress/theme-default':
         specifier: 2.0.0-beta.68
         version: 2.0.0-beta.68(sass-loader@13.3.2)(typescript@5.2.2)
@@ -405,7 +405,7 @@ importers:
         version: link:../../packages/feed2
       vuepress-vite:
         specifier: 2.0.0-beta.68
-        version: 2.0.0-beta.68(@types/node@20.9.0)(@vuepress/client@2.0.0-beta.68)(sass-loader@13.3.2)(typescript@5.2.2)(vue@3.3.8)
+        version: 2.0.0-beta.68(@types/node@20.9.0)(@vuepress/client@2.0.0-rc.0)(sass-loader@13.3.2)(typescript@5.2.2)(vue@3.3.8)
       vuepress-webpack:
         specifier: 2.0.0-beta.68
         version: 2.0.0-beta.68(esbuild@0.19.5)(sass@1.69.5)(typescript@5.2.2)(vue@3.3.8)(webpack@5.89.0)
@@ -416,8 +416,8 @@ importers:
         specifier: 2.0.0-beta.68
         version: 2.0.0-beta.68(typescript@5.2.2)
       '@vuepress/client':
-        specifier: 2.0.0-beta.68
-        version: 2.0.0-beta.68(typescript@5.2.2)
+        specifier: 2.0.0-rc.0
+        version: 2.0.0-rc.0(typescript@5.2.2)
       '@vuepress/theme-default':
         specifier: 2.0.0-beta.68
         version: 2.0.0-beta.68(sass-loader@13.3.2)(typescript@5.2.2)
@@ -432,7 +432,7 @@ importers:
         version: link:../../packages/lightgallery
       vuepress-vite:
         specifier: 2.0.0-beta.68
-        version: 2.0.0-beta.68(@types/node@20.9.0)(@vuepress/client@2.0.0-beta.68)(sass-loader@13.3.2)(typescript@5.2.2)(vue@3.3.8)
+        version: 2.0.0-beta.68(@types/node@20.9.0)(@vuepress/client@2.0.0-rc.0)(sass-loader@13.3.2)(typescript@5.2.2)(vue@3.3.8)
       vuepress-webpack:
         specifier: 2.0.0-beta.68
         version: 2.0.0-beta.68(esbuild@0.19.5)(sass@1.69.5)(typescript@5.2.2)(vue@3.3.8)(webpack@5.89.0)
@@ -446,8 +446,8 @@ importers:
         specifier: 2.0.0-beta.68
         version: 2.0.0-beta.68(typescript@5.2.2)
       '@vuepress/client':
-        specifier: 2.0.0-beta.68
-        version: 2.0.0-beta.68(typescript@5.2.2)
+        specifier: 2.0.0-rc.0
+        version: 2.0.0-rc.0(typescript@5.2.2)
       '@vuepress/theme-default':
         specifier: 2.0.0-beta.68
         version: 2.0.0-beta.68(sass-loader@13.3.2)(typescript@5.2.2)
@@ -483,7 +483,7 @@ importers:
         version: link:../../packages/md-enhance
       vuepress-vite:
         specifier: 2.0.0-beta.68
-        version: 2.0.0-beta.68(@types/node@20.9.0)(@vuepress/client@2.0.0-beta.68)(sass-loader@13.3.2)(typescript@5.2.2)(vue@3.3.8)
+        version: 2.0.0-beta.68(@types/node@20.9.0)(@vuepress/client@2.0.0-rc.0)(sass-loader@13.3.2)(typescript@5.2.2)(vue@3.3.8)
       vuepress-webpack:
         specifier: 2.0.0-beta.68
         version: 2.0.0-beta.68(esbuild@0.19.5)(sass@1.69.5)(typescript@5.2.2)(vue@3.3.8)(webpack@5.89.0)
@@ -494,8 +494,8 @@ importers:
         specifier: 2.0.0-beta.68
         version: 2.0.0-beta.68(typescript@5.2.2)
       '@vuepress/client':
-        specifier: 2.0.0-beta.68
-        version: 2.0.0-beta.68(typescript@5.2.2)
+        specifier: 2.0.0-rc.0
+        version: 2.0.0-rc.0(typescript@5.2.2)
       '@vuepress/theme-default':
         specifier: 2.0.0-beta.68
         version: 2.0.0-beta.68(sass-loader@13.3.2)(typescript@5.2.2)
@@ -510,7 +510,7 @@ importers:
         version: link:../../packages/photo-swipe
       vuepress-vite:
         specifier: 2.0.0-beta.68
-        version: 2.0.0-beta.68(@types/node@20.9.0)(@vuepress/client@2.0.0-beta.68)(sass-loader@13.3.2)(typescript@5.2.2)(vue@3.3.8)
+        version: 2.0.0-beta.68(@types/node@20.9.0)(@vuepress/client@2.0.0-rc.0)(sass-loader@13.3.2)(typescript@5.2.2)(vue@3.3.8)
       vuepress-webpack:
         specifier: 2.0.0-beta.68
         version: 2.0.0-beta.68(esbuild@0.19.5)(sass@1.69.5)(typescript@5.2.2)(vue@3.3.8)(webpack@5.89.0)
@@ -521,8 +521,8 @@ importers:
         specifier: 2.0.0-beta.68
         version: 2.0.0-beta.68(typescript@5.2.2)
       '@vuepress/client':
-        specifier: 2.0.0-beta.68
-        version: 2.0.0-beta.68(typescript@5.2.2)
+        specifier: 2.0.0-rc.0
+        version: 2.0.0-rc.0(typescript@5.2.2)
       '@vuepress/theme-default':
         specifier: 2.0.0-beta.68
         version: 2.0.0-beta.68(sass-loader@13.3.2)(typescript@5.2.2)
@@ -537,7 +537,7 @@ importers:
         version: link:../../packages/pwa2
       vuepress-vite:
         specifier: 2.0.0-beta.68
-        version: 2.0.0-beta.68(@types/node@20.9.0)(@vuepress/client@2.0.0-beta.68)(sass-loader@13.3.2)(typescript@5.2.2)(vue@3.3.8)
+        version: 2.0.0-beta.68(@types/node@20.9.0)(@vuepress/client@2.0.0-rc.0)(sass-loader@13.3.2)(typescript@5.2.2)(vue@3.3.8)
       vuepress-webpack:
         specifier: 2.0.0-beta.68
         version: 2.0.0-beta.68(esbuild@0.19.5)(sass@1.69.5)(typescript@5.2.2)(vue@3.3.8)(webpack@5.89.0)
@@ -548,8 +548,8 @@ importers:
         specifier: 2.0.0-beta.68
         version: 2.0.0-beta.68(typescript@5.2.2)
       '@vuepress/client':
-        specifier: 2.0.0-beta.68
-        version: 2.0.0-beta.68(typescript@5.2.2)
+        specifier: 2.0.0-rc.0
+        version: 2.0.0-rc.0(typescript@5.2.2)
       '@vuepress/theme-default':
         specifier: 2.0.0-beta.68
         version: 2.0.0-beta.68(sass-loader@13.3.2)(typescript@5.2.2)
@@ -564,7 +564,7 @@ importers:
         version: link:../../packages/redirect
       vuepress-vite:
         specifier: 2.0.0-beta.68
-        version: 2.0.0-beta.68(@types/node@20.9.0)(@vuepress/client@2.0.0-beta.68)(sass-loader@13.3.2)(typescript@5.2.2)(vue@3.3.8)
+        version: 2.0.0-beta.68(@types/node@20.9.0)(@vuepress/client@2.0.0-rc.0)(sass-loader@13.3.2)(typescript@5.2.2)(vue@3.3.8)
       vuepress-webpack:
         specifier: 2.0.0-beta.68
         version: 2.0.0-beta.68(esbuild@0.19.5)(sass@1.69.5)(typescript@5.2.2)(vue@3.3.8)(webpack@5.89.0)
@@ -575,8 +575,8 @@ importers:
         specifier: 2.0.0-beta.68
         version: 2.0.0-beta.68(typescript@5.2.2)
       '@vuepress/client':
-        specifier: 2.0.0-beta.68
-        version: 2.0.0-beta.68(typescript@5.2.2)
+        specifier: 2.0.0-rc.0
+        version: 2.0.0-rc.0(typescript@5.2.2)
       '@vuepress/theme-default':
         specifier: 2.0.0-beta.68
         version: 2.0.0-beta.68(sass-loader@13.3.2)(typescript@5.2.2)
@@ -591,7 +591,7 @@ importers:
         version: link:../../packages/sass-palette
       vuepress-vite:
         specifier: 2.0.0-beta.68
-        version: 2.0.0-beta.68(@types/node@20.9.0)(@vuepress/client@2.0.0-beta.68)(sass-loader@13.3.2)(typescript@5.2.2)(vue@3.3.8)
+        version: 2.0.0-beta.68(@types/node@20.9.0)(@vuepress/client@2.0.0-rc.0)(sass-loader@13.3.2)(typescript@5.2.2)(vue@3.3.8)
       vuepress-webpack:
         specifier: 2.0.0-beta.68
         version: 2.0.0-beta.68(esbuild@0.19.5)(sass@1.69.5)(typescript@5.2.2)(vue@3.3.8)(webpack@5.89.0)
@@ -602,8 +602,8 @@ importers:
         specifier: 2.0.0-beta.68
         version: 2.0.0-beta.68(typescript@5.2.2)
       '@vuepress/client':
-        specifier: 2.0.0-beta.68
-        version: 2.0.0-beta.68(typescript@5.2.2)
+        specifier: 2.0.0-rc.0
+        version: 2.0.0-rc.0(typescript@5.2.2)
       '@vuepress/theme-default':
         specifier: 2.0.0-beta.68
         version: 2.0.0-beta.68(sass-loader@13.3.2)(typescript@5.2.2)
@@ -621,7 +621,7 @@ importers:
         version: link:../../packages/search-pro
       vuepress-vite:
         specifier: 2.0.0-beta.68
-        version: 2.0.0-beta.68(@types/node@20.9.0)(@vuepress/client@2.0.0-beta.68)(sass-loader@13.3.2)(typescript@5.2.2)(vue@3.3.8)
+        version: 2.0.0-beta.68(@types/node@20.9.0)(@vuepress/client@2.0.0-rc.0)(sass-loader@13.3.2)(typescript@5.2.2)(vue@3.3.8)
       vuepress-webpack:
         specifier: 2.0.0-beta.68
         version: 2.0.0-beta.68(esbuild@0.19.5)(sass@1.69.5)(typescript@5.2.2)(vue@3.3.8)(webpack@5.89.0)
@@ -632,8 +632,8 @@ importers:
         specifier: 2.0.0-beta.68
         version: 2.0.0-beta.68(typescript@5.2.2)
       '@vuepress/client':
-        specifier: 2.0.0-beta.68
-        version: 2.0.0-beta.68(typescript@5.2.2)
+        specifier: 2.0.0-rc.0
+        version: 2.0.0-rc.0(typescript@5.2.2)
       '@vuepress/theme-default':
         specifier: 2.0.0-beta.68
         version: 2.0.0-beta.68(sass-loader@13.3.2)(typescript@5.2.2)
@@ -648,7 +648,7 @@ importers:
         version: link:../../packages/seo2
       vuepress-vite:
         specifier: 2.0.0-beta.68
-        version: 2.0.0-beta.68(@types/node@20.9.0)(@vuepress/client@2.0.0-beta.68)(sass-loader@13.3.2)(typescript@5.2.2)(vue@3.3.8)
+        version: 2.0.0-beta.68(@types/node@20.9.0)(@vuepress/client@2.0.0-rc.0)(sass-loader@13.3.2)(typescript@5.2.2)(vue@3.3.8)
       vuepress-webpack:
         specifier: 2.0.0-beta.68
         version: 2.0.0-beta.68(esbuild@0.19.5)(sass@1.69.5)(typescript@5.2.2)(vue@3.3.8)(webpack@5.89.0)
@@ -659,8 +659,8 @@ importers:
         specifier: 2.0.0-beta.68
         version: 2.0.0-beta.68(typescript@5.2.2)
       '@vuepress/client':
-        specifier: 2.0.0-beta.68
-        version: 2.0.0-beta.68(typescript@5.2.2)
+        specifier: 2.0.0-rc.0
+        version: 2.0.0-rc.0(typescript@5.2.2)
       '@vuepress/theme-default':
         specifier: 2.0.0-beta.68
         version: 2.0.0-beta.68(sass-loader@13.3.2)(typescript@5.2.2)
@@ -675,7 +675,7 @@ importers:
         version: link:../../packages/sitemap2
       vuepress-vite:
         specifier: 2.0.0-beta.68
-        version: 2.0.0-beta.68(@types/node@20.9.0)(@vuepress/client@2.0.0-beta.68)(sass-loader@13.3.2)(typescript@5.2.2)(vue@3.3.8)
+        version: 2.0.0-beta.68(@types/node@20.9.0)(@vuepress/client@2.0.0-rc.0)(sass-loader@13.3.2)(typescript@5.2.2)(vue@3.3.8)
       vuepress-webpack:
         specifier: 2.0.0-beta.68
         version: 2.0.0-beta.68(esbuild@0.19.5)(sass@1.69.5)(typescript@5.2.2)(vue@3.3.8)(webpack@5.89.0)
@@ -689,8 +689,8 @@ importers:
         specifier: 2.0.0-beta.68
         version: 2.0.0-beta.68(typescript@5.2.2)
       '@vuepress/client':
-        specifier: 2.0.0-beta.68
-        version: 2.0.0-beta.68(typescript@5.2.2)
+        specifier: 2.0.0-rc.0
+        version: 2.0.0-rc.0(typescript@5.2.2)
       '@vuepress/plugin-docsearch':
         specifier: 2.0.0-beta.68
         version: 2.0.0-beta.68(@algolia/client-search@4.20.0)(search-insights@2.10.0)(typescript@5.2.2)
@@ -732,7 +732,7 @@ importers:
         version: link:../../packages/theme
       vuepress-vite:
         specifier: 2.0.0-beta.68
-        version: 2.0.0-beta.68(@types/node@20.9.0)(@vuepress/client@2.0.0-beta.68)(sass-loader@13.3.2)(typescript@5.2.2)(vue@3.3.8)
+        version: 2.0.0-beta.68(@types/node@20.9.0)(@vuepress/client@2.0.0-rc.0)(sass-loader@13.3.2)(typescript@5.2.2)(vue@3.3.8)
       vuepress-webpack:
         specifier: 2.0.0-beta.68
         version: 2.0.0-beta.68(esbuild@0.19.5)(sass@1.69.5)(typescript@5.2.2)(vue@3.3.8)(webpack@5.89.0)
@@ -746,8 +746,8 @@ importers:
         specifier: 2.0.0-beta.68
         version: 2.0.0-beta.68(typescript@5.2.2)
       '@vuepress/client':
-        specifier: 2.0.0-beta.68
-        version: 2.0.0-beta.68(typescript@5.2.2)
+        specifier: 2.0.0-rc.0
+        version: 2.0.0-rc.0(typescript@5.2.2)
       '@vuepress/plugin-docsearch':
         specifier: 2.0.0-beta.68
         version: 2.0.0-beta.68(@algolia/client-search@4.20.0)(search-insights@2.10.0)(typescript@5.2.2)
@@ -783,7 +783,7 @@ importers:
         version: link:../../packages/theme
       vuepress-vite:
         specifier: 2.0.0-beta.68
-        version: 2.0.0-beta.68(@types/node@20.9.0)(@vuepress/client@2.0.0-beta.68)(sass-loader@13.3.2)(typescript@5.2.2)(vue@3.3.8)
+        version: 2.0.0-beta.68(@types/node@20.9.0)(@vuepress/client@2.0.0-rc.0)(sass-loader@13.3.2)(typescript@5.2.2)(vue@3.3.8)
       vuepress-webpack:
         specifier: 2.0.0-beta.68
         version: 2.0.0-beta.68(esbuild@0.19.5)(sass@1.69.5)(typescript@5.2.2)(vue@3.3.8)(webpack@5.89.0)
@@ -797,8 +797,8 @@ importers:
         specifier: 2.0.0-beta.68
         version: 2.0.0-beta.68(typescript@5.2.2)
       '@vuepress/client':
-        specifier: 2.0.0-beta.68
-        version: 2.0.0-beta.68(typescript@5.2.2)
+        specifier: 2.0.0-rc.0
+        version: 2.0.0-rc.0(typescript@5.2.2)
       '@vuepress/core':
         specifier: 2.0.0-beta.68
         version: 2.0.0-beta.68(typescript@5.2.2)
@@ -834,8 +834,8 @@ importers:
   docs/append-date:
     dependencies:
       '@vuepress/client':
-        specifier: 2.0.0-beta.68
-        version: 2.0.0-beta.68(typescript@5.2.2)
+        specifier: 2.0.0-rc.0
+        version: 2.0.0-rc.0(typescript@5.2.2)
       docs-shared:
         specifier: workspace:*
         version: link:../../docs-shared
@@ -847,7 +847,7 @@ importers:
         version: 3.3.8(typescript@5.2.2)
       vuepress-vite:
         specifier: 2.0.0-beta.68
-        version: 2.0.0-beta.68(@types/node@20.9.0)(@vuepress/client@2.0.0-beta.68)(sass-loader@13.3.2)(typescript@5.2.2)(vue@3.3.8)
+        version: 2.0.0-beta.68(@types/node@20.9.0)(@vuepress/client@2.0.0-rc.0)(sass-loader@13.3.2)(typescript@5.2.2)(vue@3.3.8)
       vuepress-webpack:
         specifier: 2.0.0-beta.68
         version: 2.0.0-beta.68(esbuild@0.19.5)(sass@1.69.5)(typescript@5.2.2)(vue@3.3.8)(webpack@5.89.0)
@@ -855,8 +855,8 @@ importers:
   docs/auto-catalog:
     dependencies:
       '@vuepress/client':
-        specifier: 2.0.0-beta.68
-        version: 2.0.0-beta.68(typescript@5.2.2)
+        specifier: 2.0.0-rc.0
+        version: 2.0.0-rc.0(typescript@5.2.2)
       docs-shared:
         specifier: workspace:*
         version: link:../../docs-shared
@@ -868,7 +868,7 @@ importers:
         version: 3.3.8(typescript@5.2.2)
       vuepress-vite:
         specifier: 2.0.0-beta.68
-        version: 2.0.0-beta.68(@types/node@20.9.0)(@vuepress/client@2.0.0-beta.68)(sass-loader@13.3.2)(typescript@5.2.2)(vue@3.3.8)
+        version: 2.0.0-beta.68(@types/node@20.9.0)(@vuepress/client@2.0.0-rc.0)(sass-loader@13.3.2)(typescript@5.2.2)(vue@3.3.8)
       vuepress-webpack:
         specifier: 2.0.0-beta.68
         version: 2.0.0-beta.68(esbuild@0.19.5)(sass@1.69.5)(typescript@5.2.2)(vue@3.3.8)(webpack@5.89.0)
@@ -876,8 +876,8 @@ importers:
   docs/blog2:
     dependencies:
       '@vuepress/client':
-        specifier: 2.0.0-beta.68
-        version: 2.0.0-beta.68(typescript@5.2.2)
+        specifier: 2.0.0-rc.0
+        version: 2.0.0-rc.0(typescript@5.2.2)
       docs-shared:
         specifier: workspace:*
         version: link:../../docs-shared
@@ -889,7 +889,7 @@ importers:
         version: 3.3.8(typescript@5.2.2)
       vuepress-vite:
         specifier: 2.0.0-beta.68
-        version: 2.0.0-beta.68(@types/node@20.9.0)(@vuepress/client@2.0.0-beta.68)(sass-loader@13.3.2)(typescript@5.2.2)(vue@3.3.8)
+        version: 2.0.0-beta.68(@types/node@20.9.0)(@vuepress/client@2.0.0-rc.0)(sass-loader@13.3.2)(typescript@5.2.2)(vue@3.3.8)
       vuepress-webpack:
         specifier: 2.0.0-beta.68
         version: 2.0.0-beta.68(esbuild@0.19.5)(sass@1.69.5)(typescript@5.2.2)(vue@3.3.8)(webpack@5.89.0)
@@ -897,8 +897,8 @@ importers:
   docs/comment2:
     dependencies:
       '@vuepress/client':
-        specifier: 2.0.0-beta.68
-        version: 2.0.0-beta.68(typescript@5.2.2)
+        specifier: 2.0.0-rc.0
+        version: 2.0.0-rc.0(typescript@5.2.2)
       docs-shared:
         specifier: workspace:*
         version: link:../../docs-shared
@@ -913,7 +913,7 @@ importers:
         version: link:../../packages/comment2
       vuepress-vite:
         specifier: 2.0.0-beta.68
-        version: 2.0.0-beta.68(@types/node@20.9.0)(@vuepress/client@2.0.0-beta.68)(sass-loader@13.3.2)(typescript@5.2.2)(vue@3.3.8)
+        version: 2.0.0-beta.68(@types/node@20.9.0)(@vuepress/client@2.0.0-rc.0)(sass-loader@13.3.2)(typescript@5.2.2)(vue@3.3.8)
       vuepress-webpack:
         specifier: 2.0.0-beta.68
         version: 2.0.0-beta.68(esbuild@0.19.5)(sass@1.69.5)(typescript@5.2.2)(vue@3.3.8)(webpack@5.89.0)
@@ -921,8 +921,8 @@ importers:
   docs/components:
     dependencies:
       '@vuepress/client':
-        specifier: 2.0.0-beta.68
-        version: 2.0.0-beta.68(typescript@5.2.2)
+        specifier: 2.0.0-rc.0
+        version: 2.0.0-rc.0(typescript@5.2.2)
       artplayer-plugin-danmuku:
         specifier: 5.0.1
         version: 5.0.1
@@ -946,7 +946,7 @@ importers:
         version: link:../../packages/shared
       vuepress-vite:
         specifier: 2.0.0-beta.68
-        version: 2.0.0-beta.68(@types/node@20.9.0)(@vuepress/client@2.0.0-beta.68)(sass-loader@13.3.2)(typescript@5.2.2)(vue@3.3.8)
+        version: 2.0.0-beta.68(@types/node@20.9.0)(@vuepress/client@2.0.0-rc.0)(sass-loader@13.3.2)(typescript@5.2.2)(vue@3.3.8)
       vuepress-webpack:
         specifier: 2.0.0-beta.68
         version: 2.0.0-beta.68(esbuild@0.19.5)(sass@1.69.5)(typescript@5.2.2)(vue@3.3.8)(webpack@5.89.0)
@@ -954,8 +954,8 @@ importers:
   docs/copy-code2:
     dependencies:
       '@vuepress/client':
-        specifier: 2.0.0-beta.68
-        version: 2.0.0-beta.68(typescript@5.2.2)
+        specifier: 2.0.0-rc.0
+        version: 2.0.0-rc.0(typescript@5.2.2)
       docs-shared:
         specifier: workspace:*
         version: link:../../docs-shared
@@ -970,7 +970,7 @@ importers:
         version: link:../../packages/copy-code2
       vuepress-vite:
         specifier: 2.0.0-beta.68
-        version: 2.0.0-beta.68(@types/node@20.9.0)(@vuepress/client@2.0.0-beta.68)(sass-loader@13.3.2)(typescript@5.2.2)(vue@3.3.8)
+        version: 2.0.0-beta.68(@types/node@20.9.0)(@vuepress/client@2.0.0-rc.0)(sass-loader@13.3.2)(typescript@5.2.2)(vue@3.3.8)
       vuepress-webpack:
         specifier: 2.0.0-beta.68
         version: 2.0.0-beta.68(esbuild@0.19.5)(sass@1.69.5)(typescript@5.2.2)(vue@3.3.8)(webpack@5.89.0)
@@ -978,8 +978,8 @@ importers:
   docs/copyright2:
     dependencies:
       '@vuepress/client':
-        specifier: 2.0.0-beta.68
-        version: 2.0.0-beta.68(typescript@5.2.2)
+        specifier: 2.0.0-rc.0
+        version: 2.0.0-rc.0(typescript@5.2.2)
       docs-shared:
         specifier: workspace:*
         version: link:../../docs-shared
@@ -991,7 +991,7 @@ importers:
         version: 3.3.8(typescript@5.2.2)
       vuepress-vite:
         specifier: 2.0.0-beta.68
-        version: 2.0.0-beta.68(@types/node@20.9.0)(@vuepress/client@2.0.0-beta.68)(sass-loader@13.3.2)(typescript@5.2.2)(vue@3.3.8)
+        version: 2.0.0-beta.68(@types/node@20.9.0)(@vuepress/client@2.0.0-rc.0)(sass-loader@13.3.2)(typescript@5.2.2)(vue@3.3.8)
       vuepress-webpack:
         specifier: 2.0.0-beta.68
         version: 2.0.0-beta.68(esbuild@0.19.5)(sass@1.69.5)(typescript@5.2.2)(vue@3.3.8)(webpack@5.89.0)
@@ -999,8 +999,8 @@ importers:
   docs/feed2:
     dependencies:
       '@vuepress/client':
-        specifier: 2.0.0-beta.68
-        version: 2.0.0-beta.68(typescript@5.2.2)
+        specifier: 2.0.0-rc.0
+        version: 2.0.0-rc.0(typescript@5.2.2)
       docs-shared:
         specifier: workspace:*
         version: link:../../docs-shared
@@ -1015,7 +1015,7 @@ importers:
         version: link:../../packages/feed2
       vuepress-vite:
         specifier: 2.0.0-beta.68
-        version: 2.0.0-beta.68(@types/node@20.9.0)(@vuepress/client@2.0.0-beta.68)(sass-loader@13.3.2)(typescript@5.2.2)(vue@3.3.8)
+        version: 2.0.0-beta.68(@types/node@20.9.0)(@vuepress/client@2.0.0-rc.0)(sass-loader@13.3.2)(typescript@5.2.2)(vue@3.3.8)
       vuepress-webpack:
         specifier: 2.0.0-beta.68
         version: 2.0.0-beta.68(esbuild@0.19.5)(sass@1.69.5)(typescript@5.2.2)(vue@3.3.8)(webpack@5.89.0)
@@ -1023,8 +1023,8 @@ importers:
   docs/lightgallery:
     dependencies:
       '@vuepress/client':
-        specifier: 2.0.0-beta.68
-        version: 2.0.0-beta.68(typescript@5.2.2)
+        specifier: 2.0.0-rc.0
+        version: 2.0.0-rc.0(typescript@5.2.2)
       docs-shared:
         specifier: workspace:*
         version: link:../../docs-shared
@@ -1039,7 +1039,7 @@ importers:
         version: link:../../packages/lightgallery
       vuepress-vite:
         specifier: 2.0.0-beta.68
-        version: 2.0.0-beta.68(@types/node@20.9.0)(@vuepress/client@2.0.0-beta.68)(sass-loader@13.3.2)(typescript@5.2.2)(vue@3.3.8)
+        version: 2.0.0-beta.68(@types/node@20.9.0)(@vuepress/client@2.0.0-rc.0)(sass-loader@13.3.2)(typescript@5.2.2)(vue@3.3.8)
       vuepress-webpack:
         specifier: 2.0.0-beta.68
         version: 2.0.0-beta.68(esbuild@0.19.5)(sass@1.69.5)(typescript@5.2.2)(vue@3.3.8)(webpack@5.89.0)
@@ -1050,8 +1050,8 @@ importers:
         specifier: 0.16.6
         version: 0.16.6
       '@vuepress/client':
-        specifier: 2.0.0-beta.68
-        version: 2.0.0-beta.68(typescript@5.2.2)
+        specifier: 2.0.0-rc.0
+        version: 2.0.0-rc.0(typescript@5.2.2)
       '@vueuse/core':
         specifier: 10.6.1
         version: 10.6.1(vue@3.3.8)
@@ -1084,7 +1084,7 @@ importers:
         version: link:../../packages/shared
       vuepress-vite:
         specifier: 2.0.0-beta.68
-        version: 2.0.0-beta.68(@types/node@20.9.0)(@vuepress/client@2.0.0-beta.68)(sass-loader@13.3.2)(typescript@5.2.2)(vue@3.3.8)
+        version: 2.0.0-beta.68(@types/node@20.9.0)(@vuepress/client@2.0.0-rc.0)(sass-loader@13.3.2)(typescript@5.2.2)(vue@3.3.8)
       vuepress-webpack:
         specifier: 2.0.0-beta.68
         version: 2.0.0-beta.68(esbuild@0.19.5)(sass@1.69.5)(typescript@5.2.2)(vue@3.3.8)(webpack@5.89.0)
@@ -1092,8 +1092,8 @@ importers:
   docs/photo-swipe:
     dependencies:
       '@vuepress/client':
-        specifier: 2.0.0-beta.68
-        version: 2.0.0-beta.68(typescript@5.2.2)
+        specifier: 2.0.0-rc.0
+        version: 2.0.0-rc.0(typescript@5.2.2)
       docs-shared:
         specifier: workspace:*
         version: link:../../docs-shared
@@ -1108,7 +1108,7 @@ importers:
         version: link:../../packages/photo-swipe
       vuepress-vite:
         specifier: 2.0.0-beta.68
-        version: 2.0.0-beta.68(@types/node@20.9.0)(@vuepress/client@2.0.0-beta.68)(sass-loader@13.3.2)(typescript@5.2.2)(vue@3.3.8)
+        version: 2.0.0-beta.68(@types/node@20.9.0)(@vuepress/client@2.0.0-rc.0)(sass-loader@13.3.2)(typescript@5.2.2)(vue@3.3.8)
       vuepress-webpack:
         specifier: 2.0.0-beta.68
         version: 2.0.0-beta.68(esbuild@0.19.5)(sass@1.69.5)(typescript@5.2.2)(vue@3.3.8)(webpack@5.89.0)
@@ -1116,8 +1116,8 @@ importers:
   docs/pwa2:
     dependencies:
       '@vuepress/client':
-        specifier: 2.0.0-beta.68
-        version: 2.0.0-beta.68(typescript@5.2.2)
+        specifier: 2.0.0-rc.0
+        version: 2.0.0-rc.0(typescript@5.2.2)
       docs-shared:
         specifier: workspace:*
         version: link:../../docs-shared
@@ -1132,7 +1132,7 @@ importers:
         version: link:../../packages/pwa2
       vuepress-vite:
         specifier: 2.0.0-beta.68
-        version: 2.0.0-beta.68(@types/node@20.9.0)(@vuepress/client@2.0.0-beta.68)(sass-loader@13.3.2)(typescript@5.2.2)(vue@3.3.8)
+        version: 2.0.0-beta.68(@types/node@20.9.0)(@vuepress/client@2.0.0-rc.0)(sass-loader@13.3.2)(typescript@5.2.2)(vue@3.3.8)
       vuepress-webpack:
         specifier: 2.0.0-beta.68
         version: 2.0.0-beta.68(esbuild@0.19.5)(sass@1.69.5)(typescript@5.2.2)(vue@3.3.8)(webpack@5.89.0)
@@ -1140,8 +1140,8 @@ importers:
   docs/reading-time2:
     dependencies:
       '@vuepress/client':
-        specifier: 2.0.0-beta.68
-        version: 2.0.0-beta.68(typescript@5.2.2)
+        specifier: 2.0.0-rc.0
+        version: 2.0.0-rc.0(typescript@5.2.2)
       docs-shared:
         specifier: workspace:*
         version: link:../../docs-shared
@@ -1156,7 +1156,7 @@ importers:
         version: link:../../packages/reading-time2
       vuepress-vite:
         specifier: 2.0.0-beta.68
-        version: 2.0.0-beta.68(@types/node@20.9.0)(@vuepress/client@2.0.0-beta.68)(sass-loader@13.3.2)(typescript@5.2.2)(vue@3.3.8)
+        version: 2.0.0-beta.68(@types/node@20.9.0)(@vuepress/client@2.0.0-rc.0)(sass-loader@13.3.2)(typescript@5.2.2)(vue@3.3.8)
       vuepress-webpack:
         specifier: 2.0.0-beta.68
         version: 2.0.0-beta.68(esbuild@0.19.5)(sass@1.69.5)(typescript@5.2.2)(vue@3.3.8)(webpack@5.89.0)
@@ -1164,8 +1164,8 @@ importers:
   docs/redirect:
     dependencies:
       '@vuepress/client':
-        specifier: 2.0.0-beta.68
-        version: 2.0.0-beta.68(typescript@5.2.2)
+        specifier: 2.0.0-rc.0
+        version: 2.0.0-rc.0(typescript@5.2.2)
       docs-shared:
         specifier: workspace:*
         version: link:../../docs-shared
@@ -1177,7 +1177,7 @@ importers:
         version: 3.3.8(typescript@5.2.2)
       vuepress-vite:
         specifier: 2.0.0-beta.68
-        version: 2.0.0-beta.68(@types/node@20.9.0)(@vuepress/client@2.0.0-beta.68)(sass-loader@13.3.2)(typescript@5.2.2)(vue@3.3.8)
+        version: 2.0.0-beta.68(@types/node@20.9.0)(@vuepress/client@2.0.0-rc.0)(sass-loader@13.3.2)(typescript@5.2.2)(vue@3.3.8)
       vuepress-webpack:
         specifier: 2.0.0-beta.68
         version: 2.0.0-beta.68(esbuild@0.19.5)(sass@1.69.5)(typescript@5.2.2)(vue@3.3.8)(webpack@5.89.0)
@@ -1185,8 +1185,8 @@ importers:
   docs/remove-pwa:
     dependencies:
       '@vuepress/client':
-        specifier: 2.0.0-beta.68
-        version: 2.0.0-beta.68(typescript@5.2.2)
+        specifier: 2.0.0-rc.0
+        version: 2.0.0-rc.0(typescript@5.2.2)
       docs-shared:
         specifier: workspace:*
         version: link:../../docs-shared
@@ -1198,7 +1198,7 @@ importers:
         version: 3.3.8(typescript@5.2.2)
       vuepress-vite:
         specifier: 2.0.0-beta.68
-        version: 2.0.0-beta.68(@types/node@20.9.0)(@vuepress/client@2.0.0-beta.68)(sass-loader@13.3.2)(typescript@5.2.2)(vue@3.3.8)
+        version: 2.0.0-beta.68(@types/node@20.9.0)(@vuepress/client@2.0.0-rc.0)(sass-loader@13.3.2)(typescript@5.2.2)(vue@3.3.8)
       vuepress-webpack:
         specifier: 2.0.0-beta.68
         version: 2.0.0-beta.68(esbuild@0.19.5)(sass@1.69.5)(typescript@5.2.2)(vue@3.3.8)(webpack@5.89.0)
@@ -1206,8 +1206,8 @@ importers:
   docs/rtl:
     dependencies:
       '@vuepress/client':
-        specifier: 2.0.0-beta.68
-        version: 2.0.0-beta.68(typescript@5.2.2)
+        specifier: 2.0.0-rc.0
+        version: 2.0.0-rc.0(typescript@5.2.2)
       docs-shared:
         specifier: workspace:*
         version: link:../../docs-shared
@@ -1219,7 +1219,7 @@ importers:
         version: 3.3.8(typescript@5.2.2)
       vuepress-vite:
         specifier: 2.0.0-beta.68
-        version: 2.0.0-beta.68(@types/node@20.9.0)(@vuepress/client@2.0.0-beta.68)(sass-loader@13.3.2)(typescript@5.2.2)(vue@3.3.8)
+        version: 2.0.0-beta.68(@types/node@20.9.0)(@vuepress/client@2.0.0-rc.0)(sass-loader@13.3.2)(typescript@5.2.2)(vue@3.3.8)
       vuepress-webpack:
         specifier: 2.0.0-beta.68
         version: 2.0.0-beta.68(esbuild@0.19.5)(sass@1.69.5)(typescript@5.2.2)(vue@3.3.8)(webpack@5.89.0)
@@ -1227,8 +1227,8 @@ importers:
   docs/sass-palette:
     dependencies:
       '@vuepress/client':
-        specifier: 2.0.0-beta.68
-        version: 2.0.0-beta.68(typescript@5.2.2)
+        specifier: 2.0.0-rc.0
+        version: 2.0.0-rc.0(typescript@5.2.2)
       docs-shared:
         specifier: workspace:*
         version: link:../../docs-shared
@@ -1240,7 +1240,7 @@ importers:
         version: 3.3.8(typescript@5.2.2)
       vuepress-vite:
         specifier: 2.0.0-beta.68
-        version: 2.0.0-beta.68(@types/node@20.9.0)(@vuepress/client@2.0.0-beta.68)(sass-loader@13.3.2)(typescript@5.2.2)(vue@3.3.8)
+        version: 2.0.0-beta.68(@types/node@20.9.0)(@vuepress/client@2.0.0-rc.0)(sass-loader@13.3.2)(typescript@5.2.2)(vue@3.3.8)
       vuepress-webpack:
         specifier: 2.0.0-beta.68
         version: 2.0.0-beta.68(esbuild@0.19.5)(sass@1.69.5)(typescript@5.2.2)(vue@3.3.8)(webpack@5.89.0)
@@ -1248,8 +1248,8 @@ importers:
   docs/search-pro:
     dependencies:
       '@vuepress/client':
-        specifier: 2.0.0-beta.68
-        version: 2.0.0-beta.68(typescript@5.2.2)
+        specifier: 2.0.0-rc.0
+        version: 2.0.0-rc.0(typescript@5.2.2)
       docs-shared:
         specifier: workspace:*
         version: link:../../docs-shared
@@ -1267,7 +1267,7 @@ importers:
         version: link:../../packages/search-pro
       vuepress-vite:
         specifier: 2.0.0-beta.68
-        version: 2.0.0-beta.68(@types/node@20.9.0)(@vuepress/client@2.0.0-beta.68)(sass-loader@13.3.2)(typescript@5.2.2)(vue@3.3.8)
+        version: 2.0.0-beta.68(@types/node@20.9.0)(@vuepress/client@2.0.0-rc.0)(sass-loader@13.3.2)(typescript@5.2.2)(vue@3.3.8)
       vuepress-webpack:
         specifier: 2.0.0-beta.68
         version: 2.0.0-beta.68(esbuild@0.19.5)(sass@1.69.5)(typescript@5.2.2)(vue@3.3.8)(webpack@5.89.0)
@@ -1275,8 +1275,8 @@ importers:
   docs/seo2:
     dependencies:
       '@vuepress/client':
-        specifier: 2.0.0-beta.68
-        version: 2.0.0-beta.68(typescript@5.2.2)
+        specifier: 2.0.0-rc.0
+        version: 2.0.0-rc.0(typescript@5.2.2)
       docs-shared:
         specifier: workspace:*
         version: link:../../docs-shared
@@ -1291,7 +1291,7 @@ importers:
         version: link:../../packages/seo2
       vuepress-vite:
         specifier: 2.0.0-beta.68
-        version: 2.0.0-beta.68(@types/node@20.9.0)(@vuepress/client@2.0.0-beta.68)(sass-loader@13.3.2)(typescript@5.2.2)(vue@3.3.8)
+        version: 2.0.0-beta.68(@types/node@20.9.0)(@vuepress/client@2.0.0-rc.0)(sass-loader@13.3.2)(typescript@5.2.2)(vue@3.3.8)
       vuepress-webpack:
         specifier: 2.0.0-beta.68
         version: 2.0.0-beta.68(esbuild@0.19.5)(sass@1.69.5)(typescript@5.2.2)(vue@3.3.8)(webpack@5.89.0)
@@ -1299,8 +1299,8 @@ importers:
   docs/shared:
     dependencies:
       '@vuepress/client':
-        specifier: 2.0.0-beta.68
-        version: 2.0.0-beta.68(typescript@5.2.2)
+        specifier: 2.0.0-rc.0
+        version: 2.0.0-rc.0(typescript@5.2.2)
       docs-shared:
         specifier: workspace:*
         version: link:../../docs-shared
@@ -1312,7 +1312,7 @@ importers:
         version: 3.3.8(typescript@5.2.2)
       vuepress-vite:
         specifier: 2.0.0-beta.68
-        version: 2.0.0-beta.68(@types/node@20.9.0)(@vuepress/client@2.0.0-beta.68)(sass-loader@13.3.2)(typescript@5.2.2)(vue@3.3.8)
+        version: 2.0.0-beta.68(@types/node@20.9.0)(@vuepress/client@2.0.0-rc.0)(sass-loader@13.3.2)(typescript@5.2.2)(vue@3.3.8)
       vuepress-webpack:
         specifier: 2.0.0-beta.68
         version: 2.0.0-beta.68(esbuild@0.19.5)(sass@1.69.5)(typescript@5.2.2)(vue@3.3.8)(webpack@5.89.0)
@@ -1320,8 +1320,8 @@ importers:
   docs/sitemap2:
     dependencies:
       '@vuepress/client':
-        specifier: 2.0.0-beta.68
-        version: 2.0.0-beta.68(typescript@5.2.2)
+        specifier: 2.0.0-rc.0
+        version: 2.0.0-rc.0(typescript@5.2.2)
       docs-shared:
         specifier: workspace:*
         version: link:../../docs-shared
@@ -1336,7 +1336,7 @@ importers:
         version: link:../../packages/sitemap2
       vuepress-vite:
         specifier: 2.0.0-beta.68
-        version: 2.0.0-beta.68(@types/node@20.9.0)(@vuepress/client@2.0.0-beta.68)(sass-loader@13.3.2)(typescript@5.2.2)(vue@3.3.8)
+        version: 2.0.0-beta.68(@types/node@20.9.0)(@vuepress/client@2.0.0-rc.0)(sass-loader@13.3.2)(typescript@5.2.2)(vue@3.3.8)
       vuepress-webpack:
         specifier: 2.0.0-beta.68
         version: 2.0.0-beta.68(esbuild@0.19.5)(sass@1.69.5)(typescript@5.2.2)(vue@3.3.8)(webpack@5.89.0)
@@ -1347,8 +1347,8 @@ importers:
         specifier: 0.16.6
         version: 0.16.6
       '@vuepress/client':
-        specifier: 2.0.0-beta.68
-        version: 2.0.0-beta.68(typescript@5.2.2)
+        specifier: 2.0.0-rc.0
+        version: 2.0.0-rc.0(typescript@5.2.2)
       '@vuepress/shared':
         specifier: 2.0.0-beta.68
         version: 2.0.0-beta.68
@@ -1384,7 +1384,7 @@ importers:
         version: link:../../packages/theme
       vuepress-vite:
         specifier: 2.0.0-beta.68
-        version: 2.0.0-beta.68(@types/node@20.9.0)(@vuepress/client@2.0.0-beta.68)(sass-loader@13.3.2)(typescript@5.2.2)(vue@3.3.8)
+        version: 2.0.0-beta.68(@types/node@20.9.0)(@vuepress/client@2.0.0-rc.0)(sass-loader@13.3.2)(typescript@5.2.2)(vue@3.3.8)
       vuepress-webpack:
         specifier: 2.0.0-beta.68
         version: 2.0.0-beta.68(esbuild@0.19.5)(sass@1.69.5)(typescript@5.2.2)(vue@3.3.8)(webpack@5.89.0)
@@ -1402,13 +1402,13 @@ importers:
         version: 2.0.0-beta.68
       vuepress:
         specifier: 2.0.0-beta.68
-        version: 2.0.0-beta.68(@types/node@20.9.0)(@vuepress/client@2.0.0-beta.68)(sass-loader@13.3.2)(typescript@5.2.2)(vue@3.3.8)
+        version: 2.0.0-beta.68(@types/node@20.9.0)(@vuepress/client@2.0.0-beta.68)(sass-loader@13.3.2)(sass@1.69.5)(typescript@5.2.2)(vue@3.3.8)
       vuepress-shared:
         specifier: workspace:*
         version: link:../shared
       vuepress-vite:
         specifier: 2.0.0-beta.68
-        version: 2.0.0-beta.68(@types/node@20.9.0)(@vuepress/client@2.0.0-beta.68)(sass-loader@13.3.2)(typescript@5.2.2)(vue@3.3.8)
+        version: 2.0.0-beta.68(@types/node@20.9.0)(@vuepress/client@2.0.0-beta.68)(sass-loader@13.3.2)(sass@1.69.5)(typescript@5.2.2)(vue@3.3.8)
       vuepress-webpack:
         specifier: 2.0.0-beta.68
         version: 2.0.0-beta.68(esbuild@0.19.5)(sass@1.69.5)(typescript@5.2.2)(vue@3.3.8)(webpack@5.89.0)
@@ -1416,8 +1416,8 @@ importers:
   packages/auto-catalog:
     dependencies:
       '@vuepress/client':
-        specifier: 2.0.0-beta.68
-        version: 2.0.0-beta.68(typescript@5.2.2)
+        specifier: 2.0.0-rc.0
+        version: 2.0.0-rc.0(typescript@5.2.2)
       '@vuepress/core':
         specifier: 2.0.0-beta.68
         version: 2.0.0-beta.68(typescript@5.2.2)
@@ -1438,7 +1438,7 @@ importers:
         version: 4.2.5(vue@3.3.8)
       vuepress:
         specifier: 2.0.0-beta.68
-        version: 2.0.0-beta.68(@types/node@20.9.0)(@vuepress/client@2.0.0-beta.68)(sass-loader@13.3.2)(typescript@5.2.2)(vue@3.3.8)
+        version: 2.0.0-beta.68(@types/node@20.9.0)(@vuepress/client@2.0.0-rc.0)(sass-loader@13.3.2)(typescript@5.2.2)(vue@3.3.8)
       vuepress-plugin-components:
         specifier: workspace:*
         version: link:../components
@@ -1450,7 +1450,7 @@ importers:
         version: link:../shared
       vuepress-vite:
         specifier: 2.0.0-beta.68
-        version: 2.0.0-beta.68(@types/node@20.9.0)(@vuepress/client@2.0.0-beta.68)(sass-loader@13.3.2)(typescript@5.2.2)(vue@3.3.8)
+        version: 2.0.0-beta.68(@types/node@20.9.0)(@vuepress/client@2.0.0-rc.0)(sass-loader@13.3.2)(typescript@5.2.2)(vue@3.3.8)
       vuepress-webpack:
         specifier: 2.0.0-beta.68
         version: 2.0.0-beta.68(esbuild@0.19.5)(sass@1.69.5)(typescript@5.2.2)(vue@3.3.8)(webpack@5.89.0)
@@ -1458,8 +1458,8 @@ importers:
   packages/blog2:
     dependencies:
       '@vuepress/client':
-        specifier: 2.0.0-beta.68
-        version: 2.0.0-beta.68(typescript@5.2.2)
+        specifier: 2.0.0-rc.0
+        version: 2.0.0-rc.0(typescript@5.2.2)
       '@vuepress/core':
         specifier: 2.0.0-beta.68
         version: 2.0.0-beta.68(typescript@5.2.2)
@@ -1480,13 +1480,13 @@ importers:
         version: 4.2.5(vue@3.3.8)
       vuepress:
         specifier: 2.0.0-beta.68
-        version: 2.0.0-beta.68(@types/node@20.9.0)(@vuepress/client@2.0.0-beta.68)(sass-loader@13.3.2)(typescript@5.2.2)(vue@3.3.8)
+        version: 2.0.0-beta.68(@types/node@20.9.0)(@vuepress/client@2.0.0-rc.0)(sass-loader@13.3.2)(typescript@5.2.2)(vue@3.3.8)
       vuepress-shared:
         specifier: workspace:*
         version: link:../shared
       vuepress-vite:
         specifier: 2.0.0-beta.68
-        version: 2.0.0-beta.68(@types/node@20.9.0)(@vuepress/client@2.0.0-beta.68)(sass-loader@13.3.2)(typescript@5.2.2)(vue@3.3.8)
+        version: 2.0.0-beta.68(@types/node@20.9.0)(@vuepress/client@2.0.0-rc.0)(sass-loader@13.3.2)(typescript@5.2.2)(vue@3.3.8)
       vuepress-webpack:
         specifier: 2.0.0-beta.68
         version: 2.0.0-beta.68(esbuild@0.19.5)(sass@1.69.5)(typescript@5.2.2)(vue@3.3.8)(webpack@5.89.0)
@@ -1494,8 +1494,8 @@ importers:
   packages/comment2:
     dependencies:
       '@vuepress/client':
-        specifier: 2.0.0-beta.68
-        version: 2.0.0-beta.68(typescript@5.2.2)
+        specifier: 2.0.0-rc.0
+        version: 2.0.0-rc.0(typescript@5.2.2)
       '@vuepress/shared':
         specifier: 2.0.0-beta.68
         version: 2.0.0-beta.68
@@ -1525,7 +1525,7 @@ importers:
         version: 4.2.5(vue@3.3.8)
       vuepress:
         specifier: 2.0.0-beta.68
-        version: 2.0.0-beta.68(@types/node@20.9.0)(@vuepress/client@2.0.0-beta.68)(sass-loader@13.3.2)(typescript@5.2.2)(vue@3.3.8)
+        version: 2.0.0-beta.68(@types/node@20.9.0)(@vuepress/client@2.0.0-rc.0)(sass-loader@13.3.2)(typescript@5.2.2)(vue@3.3.8)
       vuepress-plugin-sass-palette:
         specifier: workspace:*
         version: link:../sass-palette
@@ -1534,7 +1534,7 @@ importers:
         version: link:../shared
       vuepress-vite:
         specifier: 2.0.0-beta.68
-        version: 2.0.0-beta.68(@types/node@20.9.0)(@vuepress/client@2.0.0-beta.68)(sass-loader@13.3.2)(typescript@5.2.2)(vue@3.3.8)
+        version: 2.0.0-beta.68(@types/node@20.9.0)(@vuepress/client@2.0.0-rc.0)(sass-loader@13.3.2)(typescript@5.2.2)(vue@3.3.8)
       vuepress-webpack:
         specifier: 2.0.0-beta.68
         version: 2.0.0-beta.68(esbuild@0.19.5)(sass@1.69.5)(typescript@5.2.2)(vue@3.3.8)(webpack@5.89.0)
@@ -1549,8 +1549,8 @@ importers:
         specifier: ^1.9.0
         version: 1.9.0
       '@vuepress/client':
-        specifier: 2.0.0-beta.68
-        version: 2.0.0-beta.68(typescript@5.2.2)
+        specifier: 2.0.0-rc.0
+        version: 2.0.0-rc.0(typescript@5.2.2)
       '@vuepress/shared':
         specifier: 2.0.0-beta.68
         version: 2.0.0-beta.68
@@ -1598,7 +1598,7 @@ importers:
         version: 4.2.5(vue@3.3.8)
       vuepress:
         specifier: 2.0.0-beta.68
-        version: 2.0.0-beta.68(@types/node@20.9.0)(@vuepress/client@2.0.0-beta.68)(sass-loader@13.3.2)(typescript@5.2.2)(vue@3.3.8)
+        version: 2.0.0-beta.68(@types/node@20.9.0)(@vuepress/client@2.0.0-rc.0)(sass-loader@13.3.2)(typescript@5.2.2)(vue@3.3.8)
       vuepress-plugin-reading-time2:
         specifier: workspace:*
         version: link:../reading-time2
@@ -1610,7 +1610,7 @@ importers:
         version: link:../shared
       vuepress-vite:
         specifier: 2.0.0-beta.68
-        version: 2.0.0-beta.68(@types/node@20.9.0)(@vuepress/client@2.0.0-beta.68)(sass-loader@13.3.2)(typescript@5.2.2)(vue@3.3.8)
+        version: 2.0.0-beta.68(@types/node@20.9.0)(@vuepress/client@2.0.0-rc.0)(sass-loader@13.3.2)(typescript@5.2.2)(vue@3.3.8)
       vuepress-webpack:
         specifier: 2.0.0-beta.68
         version: 2.0.0-beta.68(esbuild@0.19.5)(sass@1.69.5)(typescript@5.2.2)(vue@3.3.8)(webpack@5.89.0)
@@ -1628,8 +1628,8 @@ importers:
   packages/copy-code2:
     dependencies:
       '@vuepress/client':
-        specifier: 2.0.0-beta.68
-        version: 2.0.0-beta.68(typescript@5.2.2)
+        specifier: 2.0.0-rc.0
+        version: 2.0.0-rc.0(typescript@5.2.2)
       '@vuepress/shared':
         specifier: 2.0.0-beta.68
         version: 2.0.0-beta.68
@@ -1653,7 +1653,7 @@ importers:
         version: 4.2.5(vue@3.3.8)
       vuepress:
         specifier: 2.0.0-beta.68
-        version: 2.0.0-beta.68(@types/node@20.9.0)(@vuepress/client@2.0.0-beta.68)(sass-loader@13.3.2)(typescript@5.2.2)(vue@3.3.8)
+        version: 2.0.0-beta.68(@types/node@20.9.0)(@vuepress/client@2.0.0-rc.0)(sass-loader@13.3.2)(typescript@5.2.2)(vue@3.3.8)
       vuepress-plugin-sass-palette:
         specifier: workspace:*
         version: link:../sass-palette
@@ -1662,7 +1662,7 @@ importers:
         version: link:../shared
       vuepress-vite:
         specifier: 2.0.0-beta.68
-        version: 2.0.0-beta.68(@types/node@20.9.0)(@vuepress/client@2.0.0-beta.68)(sass-loader@13.3.2)(typescript@5.2.2)(vue@3.3.8)
+        version: 2.0.0-beta.68(@types/node@20.9.0)(@vuepress/client@2.0.0-rc.0)(sass-loader@13.3.2)(typescript@5.2.2)(vue@3.3.8)
       vuepress-webpack:
         specifier: 2.0.0-beta.68
         version: 2.0.0-beta.68(esbuild@0.19.5)(sass@1.69.5)(typescript@5.2.2)(vue@3.3.8)(webpack@5.89.0)
@@ -1674,8 +1674,8 @@ importers:
   packages/copyright2:
     dependencies:
       '@vuepress/client':
-        specifier: 2.0.0-beta.68
-        version: 2.0.0-beta.68(typescript@5.2.2)
+        specifier: 2.0.0-rc.0
+        version: 2.0.0-rc.0(typescript@5.2.2)
       '@vuepress/shared':
         specifier: 2.0.0-beta.68
         version: 2.0.0-beta.68
@@ -1693,13 +1693,13 @@ importers:
         version: 4.2.5(vue@3.3.8)
       vuepress:
         specifier: 2.0.0-beta.68
-        version: 2.0.0-beta.68(@types/node@20.9.0)(@vuepress/client@2.0.0-beta.68)(sass-loader@13.3.2)(typescript@5.2.2)(vue@3.3.8)
+        version: 2.0.0-beta.68(@types/node@20.9.0)(@vuepress/client@2.0.0-rc.0)(sass-loader@13.3.2)(typescript@5.2.2)(vue@3.3.8)
       vuepress-shared:
         specifier: workspace:*
         version: link:../shared
       vuepress-vite:
         specifier: 2.0.0-beta.68
-        version: 2.0.0-beta.68(@types/node@20.9.0)(@vuepress/client@2.0.0-beta.68)(sass-loader@13.3.2)(typescript@5.2.2)(vue@3.3.8)
+        version: 2.0.0-beta.68(@types/node@20.9.0)(@vuepress/client@2.0.0-rc.0)(sass-loader@13.3.2)(typescript@5.2.2)(vue@3.3.8)
       vuepress-webpack:
         specifier: 2.0.0-beta.68
         version: 2.0.0-beta.68(esbuild@0.19.5)(sass@1.69.5)(typescript@5.2.2)(vue@3.3.8)(webpack@5.89.0)
@@ -1737,13 +1737,13 @@ importers:
         version: 1.0.0-rc.12
       vuepress:
         specifier: 2.0.0-beta.68
-        version: 2.0.0-beta.68(@types/node@20.9.0)(@vuepress/client@2.0.0-beta.68)(sass-loader@13.3.2)(typescript@5.2.2)(vue@3.3.8)
+        version: 2.0.0-beta.68(@types/node@20.9.0)(@vuepress/client@2.0.0-beta.68)(sass-loader@13.3.2)(sass@1.69.5)(typescript@5.2.2)(vue@3.3.8)
       vuepress-shared:
         specifier: workspace:*
         version: link:../shared
       vuepress-vite:
         specifier: 2.0.0-beta.68
-        version: 2.0.0-beta.68(@types/node@20.9.0)(@vuepress/client@2.0.0-beta.68)(sass-loader@13.3.2)(typescript@5.2.2)(vue@3.3.8)
+        version: 2.0.0-beta.68(@types/node@20.9.0)(@vuepress/client@2.0.0-beta.68)(sass-loader@13.3.2)(sass@1.69.5)(typescript@5.2.2)(vue@3.3.8)
       vuepress-webpack:
         specifier: 2.0.0-beta.68
         version: 2.0.0-beta.68(esbuild@0.19.5)(sass@1.69.5)(typescript@5.2.2)(vue@3.3.8)(webpack@5.89.0)
@@ -1761,8 +1761,8 @@ importers:
   packages/lightgallery:
     dependencies:
       '@vuepress/client':
-        specifier: 2.0.0-beta.68
-        version: 2.0.0-beta.68(typescript@5.2.2)
+        specifier: 2.0.0-rc.0
+        version: 2.0.0-rc.0(typescript@5.2.2)
       '@vuepress/utils':
         specifier: 2.0.0-beta.68
         version: 2.0.0-beta.68
@@ -1780,7 +1780,7 @@ importers:
         version: 4.2.5(vue@3.3.8)
       vuepress:
         specifier: 2.0.0-beta.68
-        version: 2.0.0-beta.68(@types/node@20.9.0)(@vuepress/client@2.0.0-beta.68)(sass-loader@13.3.2)(typescript@5.2.2)(vue@3.3.8)
+        version: 2.0.0-beta.68(@types/node@20.9.0)(@vuepress/client@2.0.0-rc.0)(sass-loader@13.3.2)(typescript@5.2.2)(vue@3.3.8)
       vuepress-plugin-sass-palette:
         specifier: workspace:*
         version: link:../sass-palette
@@ -1789,7 +1789,7 @@ importers:
         version: link:../shared
       vuepress-vite:
         specifier: 2.0.0-beta.68
-        version: 2.0.0-beta.68(@types/node@20.9.0)(@vuepress/client@2.0.0-beta.68)(sass-loader@13.3.2)(typescript@5.2.2)(vue@3.3.8)
+        version: 2.0.0-beta.68(@types/node@20.9.0)(@vuepress/client@2.0.0-rc.0)(sass-loader@13.3.2)(typescript@5.2.2)(vue@3.3.8)
       vuepress-webpack:
         specifier: 2.0.0-beta.68
         version: 2.0.0-beta.68(esbuild@0.19.5)(sass@1.69.5)(typescript@5.2.2)(vue@3.3.8)(webpack@5.89.0)
@@ -1876,8 +1876,8 @@ importers:
         specifier: ^2.7.0
         version: 2.7.0
       '@vuepress/client':
-        specifier: 2.0.0-beta.68
-        version: 2.0.0-beta.68(typescript@5.2.2)
+        specifier: 2.0.0-rc.0
+        version: 2.0.0-rc.0(typescript@5.2.2)
       '@vuepress/shared':
         specifier: 2.0.0-beta.68
         version: 2.0.0-beta.68
@@ -1928,7 +1928,7 @@ importers:
         version: 4.2.5(vue@3.3.8)
       vuepress:
         specifier: 2.0.0-beta.68
-        version: 2.0.0-beta.68(@types/node@20.9.0)(@vuepress/client@2.0.0-beta.68)(sass-loader@13.3.2)(typescript@5.2.2)(vue@3.3.8)
+        version: 2.0.0-beta.68(@types/node@20.9.0)(@vuepress/client@2.0.0-rc.0)(sass-loader@13.3.2)(typescript@5.2.2)(vue@3.3.8)
       vuepress-plugin-sass-palette:
         specifier: workspace:*
         version: link:../sass-palette
@@ -1937,7 +1937,7 @@ importers:
         version: link:../shared
       vuepress-vite:
         specifier: 2.0.0-beta.68
-        version: 2.0.0-beta.68(@types/node@20.9.0)(@vuepress/client@2.0.0-beta.68)(sass-loader@13.3.2)(typescript@5.2.2)(vue@3.3.8)
+        version: 2.0.0-beta.68(@types/node@20.9.0)(@vuepress/client@2.0.0-rc.0)(sass-loader@13.3.2)(typescript@5.2.2)(vue@3.3.8)
       vuepress-webpack:
         specifier: 2.0.0-beta.68
         version: 2.0.0-beta.68(esbuild@0.19.5)(sass@1.69.5)(typescript@5.2.2)(vue@3.3.8)(webpack@5.89.0)
@@ -1961,8 +1961,8 @@ importers:
   packages/photo-swipe:
     dependencies:
       '@vuepress/client':
-        specifier: 2.0.0-beta.68
-        version: 2.0.0-beta.68(typescript@5.2.2)
+        specifier: 2.0.0-rc.0
+        version: 2.0.0-rc.0(typescript@5.2.2)
       '@vuepress/shared':
         specifier: 2.0.0-beta.68
         version: 2.0.0-beta.68
@@ -1986,7 +1986,7 @@ importers:
         version: 4.2.5(vue@3.3.8)
       vuepress:
         specifier: 2.0.0-beta.68
-        version: 2.0.0-beta.68(@types/node@20.9.0)(@vuepress/client@2.0.0-beta.68)(sass-loader@13.3.2)(typescript@5.2.2)(vue@3.3.8)
+        version: 2.0.0-beta.68(@types/node@20.9.0)(@vuepress/client@2.0.0-rc.0)(sass-loader@13.3.2)(typescript@5.2.2)(vue@3.3.8)
       vuepress-plugin-sass-palette:
         specifier: workspace:*
         version: link:../sass-palette
@@ -1995,7 +1995,7 @@ importers:
         version: link:../shared
       vuepress-vite:
         specifier: 2.0.0-beta.68
-        version: 2.0.0-beta.68(@types/node@20.9.0)(@vuepress/client@2.0.0-beta.68)(sass-loader@13.3.2)(typescript@5.2.2)(vue@3.3.8)
+        version: 2.0.0-beta.68(@types/node@20.9.0)(@vuepress/client@2.0.0-rc.0)(sass-loader@13.3.2)(typescript@5.2.2)(vue@3.3.8)
       vuepress-webpack:
         specifier: 2.0.0-beta.68
         version: 2.0.0-beta.68(esbuild@0.19.5)(sass@1.69.5)(typescript@5.2.2)(vue@3.3.8)(webpack@5.89.0)
@@ -2007,8 +2007,8 @@ importers:
   packages/pwa2:
     dependencies:
       '@vuepress/client':
-        specifier: 2.0.0-beta.68
-        version: 2.0.0-beta.68(typescript@5.2.2)
+        specifier: 2.0.0-rc.0
+        version: 2.0.0-rc.0(typescript@5.2.2)
       '@vuepress/shared':
         specifier: 2.0.0-beta.68
         version: 2.0.0-beta.68
@@ -2035,7 +2035,7 @@ importers:
         version: 4.2.5(vue@3.3.8)
       vuepress:
         specifier: 2.0.0-beta.68
-        version: 2.0.0-beta.68(@types/node@20.9.0)(@vuepress/client@2.0.0-beta.68)(sass-loader@13.3.2)(typescript@5.2.2)(vue@3.3.8)
+        version: 2.0.0-beta.68(@types/node@20.9.0)(@vuepress/client@2.0.0-rc.0)(sass-loader@13.3.2)(typescript@5.2.2)(vue@3.3.8)
       vuepress-plugin-sass-palette:
         specifier: workspace:*
         version: link:../sass-palette
@@ -2044,7 +2044,7 @@ importers:
         version: link:../shared
       vuepress-vite:
         specifier: 2.0.0-beta.68
-        version: 2.0.0-beta.68(@types/node@20.9.0)(@vuepress/client@2.0.0-beta.68)(sass-loader@13.3.2)(typescript@5.2.2)(vue@3.3.8)
+        version: 2.0.0-beta.68(@types/node@20.9.0)(@vuepress/client@2.0.0-rc.0)(sass-loader@13.3.2)(typescript@5.2.2)(vue@3.3.8)
       vuepress-webpack:
         specifier: 2.0.0-beta.68
         version: 2.0.0-beta.68(esbuild@0.19.5)(sass@1.69.5)(typescript@5.2.2)(vue@3.3.8)(webpack@5.89.0)
@@ -2059,20 +2059,20 @@ importers:
   packages/reading-time2:
     dependencies:
       '@vuepress/client':
-        specifier: 2.0.0-beta.68
-        version: 2.0.0-beta.68(typescript@5.2.2)
+        specifier: 2.0.0-rc.0
+        version: 2.0.0-rc.0(typescript@5.2.2)
       vue:
         specifier: 3.3.8
         version: 3.3.8(typescript@5.2.2)
       vuepress:
         specifier: 2.0.0-beta.68
-        version: 2.0.0-beta.68(@types/node@20.9.0)(@vuepress/client@2.0.0-beta.68)(sass-loader@13.3.2)(typescript@5.2.2)(vue@3.3.8)
+        version: 2.0.0-beta.68(@types/node@20.9.0)(@vuepress/client@2.0.0-rc.0)(sass-loader@13.3.2)(typescript@5.2.2)(vue@3.3.8)
       vuepress-shared:
         specifier: workspace:*
         version: link:../shared
       vuepress-vite:
         specifier: 2.0.0-beta.68
-        version: 2.0.0-beta.68(@types/node@20.9.0)(@vuepress/client@2.0.0-beta.68)(sass-loader@13.3.2)(typescript@5.2.2)(vue@3.3.8)
+        version: 2.0.0-beta.68(@types/node@20.9.0)(@vuepress/client@2.0.0-rc.0)(sass-loader@13.3.2)(typescript@5.2.2)(vue@3.3.8)
       vuepress-webpack:
         specifier: 2.0.0-beta.68
         version: 2.0.0-beta.68(esbuild@0.19.5)(sass@1.69.5)(typescript@5.2.2)(vue@3.3.8)(webpack@5.89.0)
@@ -2087,8 +2087,8 @@ importers:
         specifier: 2.0.0-beta.68
         version: 2.0.0-beta.68(typescript@5.2.2)
       '@vuepress/client':
-        specifier: 2.0.0-beta.68
-        version: 2.0.0-beta.68(typescript@5.2.2)
+        specifier: 2.0.0-rc.0
+        version: 2.0.0-rc.0(typescript@5.2.2)
       '@vuepress/core':
         specifier: 2.0.0-beta.68
         version: 2.0.0-beta.68(typescript@5.2.2)
@@ -2115,7 +2115,7 @@ importers:
         version: 4.2.5(vue@3.3.8)
       vuepress:
         specifier: 2.0.0-beta.68
-        version: 2.0.0-beta.68(@types/node@20.9.0)(@vuepress/client@2.0.0-beta.68)(sass-loader@13.3.2)(typescript@5.2.2)(vue@3.3.8)
+        version: 2.0.0-beta.68(@types/node@20.9.0)(@vuepress/client@2.0.0-rc.0)(sass-loader@13.3.2)(typescript@5.2.2)(vue@3.3.8)
       vuepress-plugin-sass-palette:
         specifier: workspace:*
         version: link:../sass-palette
@@ -2124,7 +2124,7 @@ importers:
         version: link:../shared
       vuepress-vite:
         specifier: 2.0.0-beta.68
-        version: 2.0.0-beta.68(@types/node@20.9.0)(@vuepress/client@2.0.0-beta.68)(sass-loader@13.3.2)(typescript@5.2.2)(vue@3.3.8)
+        version: 2.0.0-beta.68(@types/node@20.9.0)(@vuepress/client@2.0.0-rc.0)(sass-loader@13.3.2)(typescript@5.2.2)(vue@3.3.8)
       vuepress-webpack:
         specifier: 2.0.0-beta.68
         version: 2.0.0-beta.68(esbuild@0.19.5)(sass@1.69.5)(typescript@5.2.2)(vue@3.3.8)(webpack@5.89.0)
@@ -2132,8 +2132,8 @@ importers:
   packages/remove-pwa:
     dependencies:
       '@vuepress/client':
-        specifier: 2.0.0-beta.68
-        version: 2.0.0-beta.68(typescript@5.2.2)
+        specifier: 2.0.0-rc.0
+        version: 2.0.0-rc.0(typescript@5.2.2)
       '@vuepress/shared':
         specifier: 2.0.0-beta.68
         version: 2.0.0-beta.68
@@ -2145,10 +2145,10 @@ importers:
         version: 3.3.8(typescript@5.2.2)
       vuepress:
         specifier: 2.0.0-beta.68
-        version: 2.0.0-beta.68(@types/node@20.9.0)(@vuepress/client@2.0.0-beta.68)(sass-loader@13.3.2)(typescript@5.2.2)(vue@3.3.8)
+        version: 2.0.0-beta.68(@types/node@20.9.0)(@vuepress/client@2.0.0-rc.0)(sass-loader@13.3.2)(typescript@5.2.2)(vue@3.3.8)
       vuepress-vite:
         specifier: 2.0.0-beta.68
-        version: 2.0.0-beta.68(@types/node@20.9.0)(@vuepress/client@2.0.0-beta.68)(sass-loader@13.3.2)(typescript@5.2.2)(vue@3.3.8)
+        version: 2.0.0-beta.68(@types/node@20.9.0)(@vuepress/client@2.0.0-rc.0)(sass-loader@13.3.2)(typescript@5.2.2)(vue@3.3.8)
       vuepress-webpack:
         specifier: 2.0.0-beta.68
         version: 2.0.0-beta.68(esbuild@0.19.5)(sass@1.69.5)(typescript@5.2.2)(vue@3.3.8)(webpack@5.89.0)
@@ -2160,8 +2160,8 @@ importers:
   packages/rtl:
     dependencies:
       '@vuepress/client':
-        specifier: 2.0.0-beta.68
-        version: 2.0.0-beta.68(typescript@5.2.2)
+        specifier: 2.0.0-rc.0
+        version: 2.0.0-rc.0(typescript@5.2.2)
       '@vuepress/shared':
         specifier: 2.0.0-beta.68
         version: 2.0.0-beta.68
@@ -2173,13 +2173,13 @@ importers:
         version: 3.3.8(typescript@5.2.2)
       vuepress:
         specifier: 2.0.0-beta.68
-        version: 2.0.0-beta.68(@types/node@20.9.0)(@vuepress/client@2.0.0-beta.68)(sass-loader@13.3.2)(typescript@5.2.2)(vue@3.3.8)
+        version: 2.0.0-beta.68(@types/node@20.9.0)(@vuepress/client@2.0.0-rc.0)(sass-loader@13.3.2)(typescript@5.2.2)(vue@3.3.8)
       vuepress-shared:
         specifier: workspace:*
         version: link:../shared
       vuepress-vite:
         specifier: 2.0.0-beta.68
-        version: 2.0.0-beta.68(@types/node@20.9.0)(@vuepress/client@2.0.0-beta.68)(sass-loader@13.3.2)(typescript@5.2.2)(vue@3.3.8)
+        version: 2.0.0-beta.68(@types/node@20.9.0)(@vuepress/client@2.0.0-rc.0)(sass-loader@13.3.2)(typescript@5.2.2)(vue@3.3.8)
       vuepress-webpack:
         specifier: 2.0.0-beta.68
         version: 2.0.0-beta.68(esbuild@0.19.5)(sass@1.69.5)(typescript@5.2.2)(vue@3.3.8)(webpack@5.89.0)
@@ -2231,8 +2231,8 @@ importers:
   packages/search-pro:
     dependencies:
       '@vuepress/client':
-        specifier: 2.0.0-beta.68
-        version: 2.0.0-beta.68(typescript@5.2.2)
+        specifier: 2.0.0-rc.0
+        version: 2.0.0-rc.0(typescript@5.2.2)
       '@vuepress/shared':
         specifier: 2.0.0-beta.68
         version: 2.0.0-beta.68
@@ -2262,7 +2262,7 @@ importers:
         version: 4.2.5(vue@3.3.8)
       vuepress:
         specifier: 2.0.0-beta.68
-        version: 2.0.0-beta.68(@types/node@20.9.0)(@vuepress/client@2.0.0-beta.68)(sass-loader@13.3.2)(typescript@5.2.2)(vue@3.3.8)
+        version: 2.0.0-beta.68(@types/node@20.9.0)(@vuepress/client@2.0.0-rc.0)(sass-loader@13.3.2)(typescript@5.2.2)(vue@3.3.8)
       vuepress-plugin-sass-palette:
         specifier: workspace:*
         version: link:../sass-palette
@@ -2271,7 +2271,7 @@ importers:
         version: link:../shared
       vuepress-vite:
         specifier: 2.0.0-beta.68
-        version: 2.0.0-beta.68(@types/node@20.9.0)(@vuepress/client@2.0.0-beta.68)(sass-loader@13.3.2)(typescript@5.2.2)(vue@3.3.8)
+        version: 2.0.0-beta.68(@types/node@20.9.0)(@vuepress/client@2.0.0-rc.0)(sass-loader@13.3.2)(typescript@5.2.2)(vue@3.3.8)
       vuepress-webpack:
         specifier: 2.0.0-beta.68
         version: 2.0.0-beta.68(esbuild@0.19.5)(sass@1.69.5)(typescript@5.2.2)(vue@3.3.8)(webpack@5.89.0)
@@ -2290,13 +2290,13 @@ importers:
         version: 2.0.0-beta.68
       vuepress:
         specifier: 2.0.0-beta.68
-        version: 2.0.0-beta.68(@types/node@20.9.0)(@vuepress/client@2.0.0-beta.68)(sass-loader@13.3.2)(typescript@5.2.2)(vue@3.3.8)
+        version: 2.0.0-beta.68(@types/node@20.9.0)(@vuepress/client@2.0.0-beta.68)(sass-loader@13.3.2)(sass@1.69.5)(typescript@5.2.2)(vue@3.3.8)
       vuepress-shared:
         specifier: workspace:*
         version: link:../shared
       vuepress-vite:
         specifier: 2.0.0-beta.68
-        version: 2.0.0-beta.68(@types/node@20.9.0)(@vuepress/client@2.0.0-beta.68)(sass-loader@13.3.2)(typescript@5.2.2)(vue@3.3.8)
+        version: 2.0.0-beta.68(@types/node@20.9.0)(@vuepress/client@2.0.0-beta.68)(sass-loader@13.3.2)(sass@1.69.5)(typescript@5.2.2)(vue@3.3.8)
       vuepress-webpack:
         specifier: 2.0.0-beta.68
         version: 2.0.0-beta.68(esbuild@0.19.5)(sass@1.69.5)(typescript@5.2.2)(vue@3.3.8)(webpack@5.89.0)
@@ -2311,8 +2311,8 @@ importers:
   packages/shared:
     dependencies:
       '@vuepress/client':
-        specifier: 2.0.0-beta.68
-        version: 2.0.0-beta.68(typescript@5.2.2)
+        specifier: 2.0.0-rc.0
+        version: 2.0.0-rc.0(typescript@5.2.2)
       '@vuepress/shared':
         specifier: 2.0.0-beta.68
         version: 2.0.0-beta.68
@@ -2351,10 +2351,10 @@ importers:
         version: 4.2.5(vue@3.3.8)
       vuepress:
         specifier: 2.0.0-beta.68
-        version: 2.0.0-beta.68(@types/node@20.9.0)(@vuepress/client@2.0.0-beta.68)(sass-loader@13.3.2)(typescript@5.2.2)(vue@3.3.8)
+        version: 2.0.0-beta.68(@types/node@20.9.0)(@vuepress/client@2.0.0-rc.0)(sass-loader@13.3.2)(typescript@5.2.2)(vue@3.3.8)
       vuepress-vite:
         specifier: 2.0.0-beta.68
-        version: 2.0.0-beta.68(@types/node@20.9.0)(@vuepress/client@2.0.0-beta.68)(sass-loader@13.3.2)(typescript@5.2.2)(vue@3.3.8)
+        version: 2.0.0-beta.68(@types/node@20.9.0)(@vuepress/client@2.0.0-rc.0)(sass-loader@13.3.2)(typescript@5.2.2)(vue@3.3.8)
       vuepress-webpack:
         specifier: 2.0.0-beta.68
         version: 2.0.0-beta.68(esbuild@0.19.5)(sass@1.69.5)(typescript@5.2.2)(vue@3.3.8)(webpack@5.89.0)
@@ -2397,13 +2397,13 @@ importers:
         version: 7.1.1
       vuepress:
         specifier: 2.0.0-beta.68
-        version: 2.0.0-beta.68(@types/node@20.9.0)(@vuepress/client@2.0.0-beta.68)(sass-loader@13.3.2)(typescript@5.2.2)(vue@3.3.8)
+        version: 2.0.0-beta.68(@types/node@20.9.0)(@vuepress/client@2.0.0-beta.68)(sass-loader@13.3.2)(sass@1.69.5)(typescript@5.2.2)(vue@3.3.8)
       vuepress-shared:
         specifier: workspace:*
         version: link:../shared
       vuepress-vite:
         specifier: 2.0.0-beta.68
-        version: 2.0.0-beta.68(@types/node@20.9.0)(@vuepress/client@2.0.0-beta.68)(sass-loader@13.3.2)(typescript@5.2.2)(vue@3.3.8)
+        version: 2.0.0-beta.68(@types/node@20.9.0)(@vuepress/client@2.0.0-beta.68)(sass-loader@13.3.2)(sass@1.69.5)(typescript@5.2.2)(vue@3.3.8)
       vuepress-webpack:
         specifier: 2.0.0-beta.68
         version: 2.0.0-beta.68(esbuild@0.19.5)(sass@1.69.5)(typescript@5.2.2)(vue@3.3.8)(webpack@5.89.0)
@@ -2421,8 +2421,8 @@ importers:
         specifier: 2.0.0-beta.68
         version: 2.0.0-beta.68(typescript@5.2.2)
       '@vuepress/client':
-        specifier: 2.0.0-beta.68
-        version: 2.0.0-beta.68(typescript@5.2.2)
+        specifier: 2.0.0-rc.0
+        version: 2.0.0-rc.0(typescript@5.2.2)
       '@vuepress/core':
         specifier: 2.0.0-beta.68
         version: 2.0.0-beta.68(typescript@5.2.2)
@@ -2482,7 +2482,7 @@ importers:
         version: 4.2.5(vue@3.3.8)
       vuepress:
         specifier: 2.0.0-beta.68
-        version: 2.0.0-beta.68(@types/node@20.9.0)(@vuepress/client@2.0.0-beta.68)(sass-loader@13.3.2)(typescript@5.2.2)(vue@3.3.8)
+        version: 2.0.0-beta.68(@types/node@20.9.0)(@vuepress/client@2.0.0-rc.0)(sass-loader@13.3.2)(typescript@5.2.2)(vue@3.3.8)
       vuepress-plugin-auto-catalog:
         specifier: workspace:*
         version: link:../auto-catalog
@@ -2533,7 +2533,7 @@ importers:
         version: link:../shared
       vuepress-vite:
         specifier: 2.0.0-beta.68
-        version: 2.0.0-beta.68(@types/node@20.9.0)(@vuepress/client@2.0.0-beta.68)(sass-loader@13.3.2)(typescript@5.2.2)(vue@3.3.8)
+        version: 2.0.0-beta.68(@types/node@20.9.0)(@vuepress/client@2.0.0-rc.0)(sass-loader@13.3.2)(typescript@5.2.2)(vue@3.3.8)
       vuepress-webpack:
         specifier: 2.0.0-beta.68
         version: 2.0.0-beta.68(esbuild@0.19.5)(sass@1.69.5)(typescript@5.2.2)(vue@3.3.8)(webpack@5.89.0)
@@ -5892,9 +5892,6 @@ packages:
   /@vue/shared@3.3.8:
     resolution: {integrity: sha512-8PGwybFwM4x8pcfgqEQFy70NaQxASvOC5DJwLQfpArw1UDfUXrJkdxD3BhVTMS+0Lef/TU7YO0Jvr0jJY8T+mw==}
 
-  /@vue/shared@3.4.0-alpha.1:
-    resolution: {integrity: sha512-0GMCNskHdNKCnvsQLP7pdwA4OsnFfQkSplbqFu1SiZC7HfCJystK27yUx59wxcSqho40bYRS+17S0UFVb1B48g==}
-
   /@vuepress/bundler-vite@2.0.0-beta.68(@types/node@20.9.0)(sass@1.69.5)(typescript@5.2.2):
     resolution: {integrity: sha512-N2grrjKIQEZJcb+JaG7ZimCoUH3bRK4zwHjPOLpBpplTQ/V5l99I90FMswpaCs7bKBiXTO0fiEUYn4Nw8V/qkQ==}
     dependencies:
@@ -5986,6 +5983,18 @@ packages:
     dependencies:
       '@vue/devtools-api': 6.5.1
       '@vuepress/shared': 2.0.0-beta.68
+      '@vueuse/core': 10.6.1(vue@3.3.8)
+      vue: 3.3.8(typescript@5.2.2)
+      vue-router: 4.2.5(vue@3.3.8)
+    transitivePeerDependencies:
+      - '@vue/composition-api'
+      - typescript
+
+  /@vuepress/client@2.0.0-rc.0(typescript@5.2.2):
+    resolution: {integrity: sha512-TwQx8hJgYONYxX+QltZ2aw9O5Ym6SKelfiUduuIRb555B1gece/jSVap3H/ZwyBhpgJMtG4+/Mrmf8nlDSHjvw==}
+    dependencies:
+      '@vue/devtools-api': 6.5.1
+      '@vuepress/shared': 2.0.0-rc.0
       '@vueuse/core': 10.6.1(vue@3.3.8)
       vue: 3.3.8(typescript@5.2.2)
       vue-router: 4.2.5(vue@3.3.8)
@@ -6184,7 +6193,13 @@ packages:
     resolution: {integrity: sha512-vnlOOchZ7ZHeTQuFDKcTC1AKF5zl4+XKwZZdpX9cUkIl3rYbM4y80yoWvfG5SQnPjjoYG57g4Qz21Fa8u/CnCQ==}
     dependencies:
       '@mdit-vue/types': 1.0.0
-      '@vue/shared': 3.4.0-alpha.1
+      '@vue/shared': 3.3.8
+
+  /@vuepress/shared@2.0.0-rc.0:
+    resolution: {integrity: sha512-ikdSfjRv5LGM1iv4HHwF9P6gqTjaFCXKPK+hzlkHFHNZO1GLqk7/BPc4F51tAG1s8TcLhUZc+54LrfgS7PkXXA==}
+    dependencies:
+      '@mdit-vue/types': 1.0.0
+      '@vue/shared': 3.3.8
 
   /@vuepress/theme-default@2.0.0-beta.68(sass-loader@13.3.2)(typescript@5.2.2):
     resolution: {integrity: sha512-qsIaM3ZVjJb6KeuScxVRLfLylBa3kK7IriZ9YlmkHl2NwzspsqVMTh4Ozd2MlkhzMH4TnB1XLybTQKGCZnQBVw==}
@@ -15431,7 +15446,7 @@ packages:
       - typescript
     dev: false
 
-  /vuepress-vite@2.0.0-beta.68(@types/node@20.9.0)(@vuepress/client@2.0.0-beta.68)(sass-loader@13.3.2)(typescript@5.2.2)(vue@3.3.8):
+  /vuepress-vite@2.0.0-beta.68(@types/node@20.9.0)(@vuepress/client@2.0.0-rc.0)(sass-loader@13.3.2)(typescript@5.2.2)(vue@3.3.8):
     resolution: {integrity: sha512-/+qO1uO8EX6ERFFgaWqKNW/nD89JrmS9sgMYxREPM0lsWj1E+bgkvc8KJ6DIgWRc1lRs0kMrEhK3UHC0md8ESQ==}
     engines: {node: '>=18.16.0'}
     hasBin: true
@@ -15441,7 +15456,7 @@ packages:
     dependencies:
       '@vuepress/bundler-vite': 2.0.0-beta.68(@types/node@20.9.0)(sass@1.69.5)(typescript@5.2.2)
       '@vuepress/cli': 2.0.0-beta.68(typescript@5.2.2)
-      '@vuepress/client': 2.0.0-beta.68(typescript@5.2.2)
+      '@vuepress/client': 2.0.0-rc.0(typescript@5.2.2)
       '@vuepress/core': 2.0.0-beta.68(typescript@5.2.2)
       '@vuepress/theme-default': 2.0.0-beta.68(sass-loader@13.3.2)(typescript@5.2.2)
       vue: 3.3.8(typescript@5.2.2)
@@ -15513,12 +15528,12 @@ packages:
       - vue
     dev: false
 
-  /vuepress@2.0.0-beta.68(@types/node@20.9.0)(@vuepress/client@2.0.0-beta.68)(sass-loader@13.3.2)(typescript@5.2.2)(vue@3.3.8):
+  /vuepress@2.0.0-beta.68(@types/node@20.9.0)(@vuepress/client@2.0.0-rc.0)(sass-loader@13.3.2)(typescript@5.2.2)(vue@3.3.8):
     resolution: {integrity: sha512-75naWJMIwyD1WiVswN01Am4JwcRxlUPLTkxN/345dVaVAgKyzIDKKJDgmUN6MKZkDN2z2dDKLMcquI6VUrlCRg==}
     engines: {node: '>=18.16.0'}
     hasBin: true
     dependencies:
-      vuepress-vite: 2.0.0-beta.68(@types/node@20.9.0)(@vuepress/client@2.0.0-beta.68)(sass-loader@13.3.2)(typescript@5.2.2)(vue@3.3.8)
+      vuepress-vite: 2.0.0-beta.68(@types/node@20.9.0)(@vuepress/client@2.0.0-rc.0)(sass-loader@13.3.2)(typescript@5.2.2)(vue@3.3.8)
     transitivePeerDependencies:
       - '@types/node'
       - '@vue/composition-api'
