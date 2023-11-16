@@ -16,7 +16,7 @@
   },
   "devDependencies": {
     "@vue/repl": "2.7.0",
-    "@vuepress/cli": "2.0.0-beta.68",
+    "@vuepress/cli": "2.0.0-rc.0",
     "@vuepress/client": "2.0.0-beta.68",
     "@vuepress/theme-default": "2.0.0-beta.68",
     "chart.js": "4.4.0",

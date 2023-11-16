@@ -75,7 +75,7 @@
     "yarn": ">=2"
   },
   "dependencies": {
-    "@vuepress/cli": "2.0.0-beta.68",
+    "@vuepress/cli": "2.0.0-rc.0",
     "@vuepress/client": "2.0.0-beta.68",
     "@vuepress/core": "2.0.0-beta.68",
     "@vuepress/plugin-active-header-links": "2.0.0-beta.68",
