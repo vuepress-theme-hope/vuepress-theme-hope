@@ -2,7 +2,6 @@
 home: true
 title: 主页
 icon: home
-heroImage: /logo.svg
 heroText: vuepress-plugin-feed2
 tagline: 为 VuePress2 提供 Feed 生成
 actions:

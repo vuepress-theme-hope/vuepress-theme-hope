@@ -2,7 +2,6 @@
 home: true
 title: Home
 icon: home
-heroImage: /logo.svg
 heroText: vuepress-plugin-remove-pwa
 tagline: Remove existing service worker from your VuePress site
 actions:

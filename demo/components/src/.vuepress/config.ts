@@ -12,7 +12,7 @@ export default defineUserConfig({
   description: "Components library for VuePress2",
 
   theme: defaultTheme({
-    logo: "/logo.svg",
+    logo: "//theme-hope-assets.vuejs.press/logo.svg",
 
     repo: "vuepress-theme-hope/vuepress-theme-hope/tree/main/demo/components/",
 

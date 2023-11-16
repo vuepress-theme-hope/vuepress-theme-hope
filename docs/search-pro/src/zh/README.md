@@ -2,7 +2,6 @@
 home: true
 title: 主页
 icon: home
-heroImage: /logo.svg
 heroText: vuepress-plugin-search-pro
 tagline: VuePress2 的客户端搜索插件
 actions:

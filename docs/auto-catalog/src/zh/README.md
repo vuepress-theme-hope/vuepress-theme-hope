@@ -2,7 +2,6 @@
 home: true
 title: 主页
 icon: home
-heroImage: /logo.svg
 heroText: vuepress-plugin-auto-catalog
 tagline: 为 VuePress2 提供目录页生成与目录组件
 actions:

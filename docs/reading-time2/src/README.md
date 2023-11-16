@@ -2,7 +2,6 @@
 home: true
 title: Home
 icon: home
-heroImage: /logo.svg
 heroText: vuepress-plugin-reading-time2
 tagline: Expect reading time and word count statistics
 actions:

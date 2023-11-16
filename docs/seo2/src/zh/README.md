@@ -2,7 +2,6 @@
 home: true
 title: 主页
 icon: home
-heroImage: /logo.svg
 heroText: vuepress-plugin-seo2
 tagline: 站点的全面 SEO 增强
 actions:

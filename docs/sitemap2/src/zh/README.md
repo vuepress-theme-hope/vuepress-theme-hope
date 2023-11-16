@@ -2,7 +2,6 @@
 home: true
 title: 主页
 icon: home
-heroImage: /logo.svg
 heroText: vuepress-plugin-sitemap2
 tagline: VuePress2 的 Sitemap 生成
 actions:

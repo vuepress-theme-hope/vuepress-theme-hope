@@ -2,7 +2,6 @@
 home: true
 title: 主页
 icon: home
-heroImage: /logo.svg
 heroText: vuepress-plugin-components
 tagline: 面向 VuePress2 的常用组件
 actions:

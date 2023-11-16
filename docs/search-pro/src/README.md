@@ -2,7 +2,6 @@
 home: true
 title: Home
 icon: home
-heroImage: /logo.svg
 heroText: vuepress-plugin-search-pro
 tagline: Powerful client search plugin for VuePress2
 actions:

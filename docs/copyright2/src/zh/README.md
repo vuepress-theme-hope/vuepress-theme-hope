@@ -2,7 +2,6 @@
 home: true
 title: 主页
 icon: home
-heroImage: /logo.svg
 heroText: vuepress-plugin-copyright2
 tagline: 在复制时添加版权信息
 actions:

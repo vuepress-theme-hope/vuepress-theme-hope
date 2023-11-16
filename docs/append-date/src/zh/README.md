@@ -2,7 +2,6 @@
 home: true
 title: 主页
 icon: home
-heroImage: /logo.svg
 heroText: vuepress-plugin-append-date
 tagline: 从 git 中获取日期信息并添加到 Frontmatter 中
 

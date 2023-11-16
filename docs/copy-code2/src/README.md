@@ -2,7 +2,6 @@
 home: true
 title: Home
 icon: home
-heroImage: /logo.svg
 heroText: vuepress-plugin-copy-code2
 tagline: Quick Code Copy Plugin for vuepress
 actions:

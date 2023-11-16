@@ -12,7 +12,7 @@ export default defineUserConfig({
   description: "Markdown Enhancement for VuePress",
 
   theme: defaultTheme({
-    logo: "/logo.svg",
+    logo: "//theme-hope-assets.vuejs.press/logo.svg",
 
     repo: "vuepress-theme-hope/vuepress-theme-hope/tree/main/demo/md-enhance/",
 

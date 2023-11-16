@@ -2,7 +2,6 @@
 home: true
 title: Home
 icon: home
-heroImage: /logo.svg
 heroText: vuepress-plugin-pwa2
 tagline: Turning on Progressive Web App Support
 actions:

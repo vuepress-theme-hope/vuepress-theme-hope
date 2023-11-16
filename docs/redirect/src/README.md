@@ -2,7 +2,6 @@
 home: true
 title: Home
 icon: home
-heroImage: /logo.svg
 heroText: vuepress-plugin-redirect
 tagline: Redirect Plugin for VuePress2
 actions:

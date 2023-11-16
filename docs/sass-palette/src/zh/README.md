@@ -2,7 +2,6 @@
 home: true
 title: 主页
 icon: home
-heroImage: /logo.svg
 heroText: vuepress-plugin-sass-palette
 tagline: VuePress2 的 Sass 调色板插件
 actions:

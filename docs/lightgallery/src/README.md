@@ -2,7 +2,6 @@
 home: true
 title: Home
 icon: home
-heroImage: /logo.svg
 heroText: vuepress-plugin-lightgallery
 tagline: Light gallery plugin for VuePress2
 actions:

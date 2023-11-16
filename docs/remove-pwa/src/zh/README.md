@@ -2,7 +2,6 @@
 home: true
 title: 主页
 icon: home
-heroImage: /logo.svg
 heroText: vuepress-plugin-remove-pwa
 tagline: 从你的 VuePress 站点中移除 Service Worker
 actions:

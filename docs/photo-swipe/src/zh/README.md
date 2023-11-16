@@ -2,7 +2,6 @@
 home: true
 title: 主页
 icon: home
-heroImage: /logo.svg
 heroText: vuepress-plugin-photo-swipe
 tagline: 为 VuePress2 提供图片预览支持
 actions:

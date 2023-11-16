@@ -2,7 +2,6 @@
 home: true
 title: 主页
 icon: home
-heroImage: /logo.svg
 heroText: vuepress-plugin-lightgallery
 tagline: VuePress2 的 gallery 插件
 actions:

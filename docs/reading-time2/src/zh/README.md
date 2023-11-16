@@ -2,7 +2,6 @@
 home: true
 title: 主页
 icon: home
-heroImage: /logo.svg
 heroText: vuepress-plugin-reading-time2
 tagline: 预计阅读时间与字数统计生成
 actions:

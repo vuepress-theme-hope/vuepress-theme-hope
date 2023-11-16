@@ -11,7 +11,6 @@ import DropTransition from "@theme-hope/components/transitions/DropTransition";
 
 import { SlideDownIcon } from "./icons/icons.js";
 import type { ThemeBlogHomePageFrontmatter } from "../../../../shared/index.js";
-import defaultHeroBgImagePath from "../assets/hero.jpg";
 
 import "../styles/blog-hero.scss";
 
@@ -30,6 +29,8 @@ export interface BackgroundInfo {
   bgStyle: string | Record<string, string> | undefined;
   isFullScreen: boolean;
 }
+
+const DEFAULT_HERO = "//theme-hope-assets.vuejs.press/hero/default.jpg";
 
 export default defineComponent({
   name: "BlogHero",
@@ -78,7 +79,7 @@ export default defineComponent({
           ? withBase(bgImage)
           : bgImage === false
             ? null
-            : defaultHeroBgImagePath,
+            : DEFAULT_HERO,
         imageDark: isString(bgImageDark) ? withBase(bgImageDark) : null,
         bgStyle: bgImageStyle,
         isFullScreen: isFullScreen.value,

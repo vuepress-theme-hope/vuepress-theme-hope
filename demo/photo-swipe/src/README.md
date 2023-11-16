@@ -1,7 +1,7 @@
 ---
 home: true
 title: Home
-heroImage: /logo.svg
+heroImage: //theme-hope-assets.vuejs.press/logo.svg
 heroText: vuepress-plugin-photo-swipe
 tagline: Image Preview Plugin for VuePress2
 actions:

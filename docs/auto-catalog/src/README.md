@@ -2,7 +2,6 @@
 home: true
 title: Home
 icon: home
-heroImage: /logo.svg
 heroText: vuepress-plugin-auto-catalog
 tagline: Catalog generation and component for VuePress2
 actions:

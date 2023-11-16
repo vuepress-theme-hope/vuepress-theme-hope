@@ -2,7 +2,6 @@
 home: true
 title: 主页
 icon: home
-heroImage: /logo.svg
 heroText: vuepress-plugin-pwa2
 tagline: 渐进式网页应用 (Progressive Web App) 支持
 actions:

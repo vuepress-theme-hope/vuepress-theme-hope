@@ -2,7 +2,6 @@
 home: true
 title: 主页
 icon: home
-heroImage: /logo.svg
 heroText: vuepress-plugin-blog2
 tagline: 为 VuePress2 提供博客功能
 actions:
