@@ -149,6 +149,10 @@ export const hopeTheme =
           .replace(TEMPLATE_RENDERER_OUTLETS.CONTENT, () => content)
           .replace(TEMPLATE_RENDERER_OUTLETS.HEAD, head)
           .replace("{{ themeVersion }}", VERSION)
+          .replace(
+            "{{ themeMode }}",
+            themeOptions.darkmode === "enable" ? "dark" : "light",
+          )
           .replace(TEMPLATE_RENDERER_OUTLETS.LANG, lang)
           .replace(TEMPLATE_RENDERER_OUTLETS.PREFETCH, prefetch)
           .replace(TEMPLATE_RENDERER_OUTLETS.PRELOAD, preload)

@@ -1,5 +1,5 @@
 <!doctype html>
-<html lang="{{ lang }}" data-theme="light">
+<html lang="{{ lang }}" data-theme="{{ themeMode }}">
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width,initial-scale=1" />
@@ -7,11 +7,11 @@
     <meta name="theme" content="VuePress Theme Hope {{ themeVersion }}" />
     <style>
       html {
-        background: #fff;
+        background: var(--bg-color, #fff);
       }
 
       html[data-theme="dark"] {
-        background: #1d1e1f;
+        background: var(--bg-color, #1d1e1f);
       }
 
       body {
