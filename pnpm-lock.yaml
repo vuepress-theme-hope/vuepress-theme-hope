@@ -260,8 +260,8 @@ importers:
         specifier: 13.3.2
         version: 13.3.2(sass@1.69.5)(webpack@5.89.0)
       twikoo:
-        specifier: 1.6.22
-        version: 1.6.22
+        specifier: 1.6.25
+        version: 1.6.25
       vue:
         specifier: 3.3.8
         version: 3.3.8(typescript@5.2.2)
@@ -5892,9 +5892,6 @@ packages:
   /@vue/shared@3.3.8:
     resolution: {integrity: sha512-8PGwybFwM4x8pcfgqEQFy70NaQxASvOC5DJwLQfpArw1UDfUXrJkdxD3BhVTMS+0Lef/TU7YO0Jvr0jJY8T+mw==}
 
-  /@vue/shared@3.4.0-alpha.1:
-    resolution: {integrity: sha512-0GMCNskHdNKCnvsQLP7pdwA4OsnFfQkSplbqFu1SiZC7HfCJystK27yUx59wxcSqho40bYRS+17S0UFVb1B48g==}
-
   /@vuepress/bundler-vite@2.0.0-beta.68(@types/node@20.9.0)(sass@1.69.5)(typescript@5.2.2):
     resolution: {integrity: sha512-N2grrjKIQEZJcb+JaG7ZimCoUH3bRK4zwHjPOLpBpplTQ/V5l99I90FMswpaCs7bKBiXTO0fiEUYn4Nw8V/qkQ==}
     dependencies:
@@ -6184,7 +6181,7 @@ packages:
     resolution: {integrity: sha512-vnlOOchZ7ZHeTQuFDKcTC1AKF5zl4+XKwZZdpX9cUkIl3rYbM4y80yoWvfG5SQnPjjoYG57g4Qz21Fa8u/CnCQ==}
     dependencies:
       '@mdit-vue/types': 1.0.0
-      '@vue/shared': 3.4.0-alpha.1
+      '@vue/shared': 3.3.8
 
   /@vuepress/theme-default@2.0.0-beta.68(sass-loader@13.3.2)(typescript@5.2.2):
     resolution: {integrity: sha512-qsIaM3ZVjJb6KeuScxVRLfLylBa3kK7IriZ9YlmkHl2NwzspsqVMTh4Ozd2MlkhzMH4TnB1XLybTQKGCZnQBVw==}
@@ -14811,13 +14808,13 @@ packages:
       fsevents: 2.3.3
     dev: true
 
-  /twikoo@1.6.22:
-    resolution: {integrity: sha512-FtOCFRLs4AO6c/Leoqd3kn/2bDXWN4CsvAw3cD6oMwqFvDdWyI01EpZfkkkfp2gGp8Bt4IIxuhxrZNuzMAHIbg==}
-    dev: true
-
   /twikoo@1.6.24:
     resolution: {integrity: sha512-VT1wgXlkL2dyqK5lHavS4YCsWsvE3EI+1PAi0/KpyYX3K9CIFXxUK01qWT6+26mh+vmhQ2ZCTS1nbb7+rQbtCA==}
     dev: false
+
+  /twikoo@1.6.25:
+    resolution: {integrity: sha512-FFlWo2Y0GgQ/QlHNknmX3PE/2Q0ysov8VfSB5cfGFqD7nFxg51G8irIE9CIKNrzmnICAb3DDt6SsTg4bDogBQA==}
+    dev: true
 
   /type-check@0.4.0:
     resolution: {integrity: sha512-XleUoc9uwGXqjWwXaUTZAmzMcFZ5858QA2vvx1Ur5xIcixXIP+8LnFDgRplU30us6teqdlskFfu+ae4K79Ooew==}

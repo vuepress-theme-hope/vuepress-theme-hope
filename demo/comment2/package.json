@@ -23,7 +23,7 @@
     "@waline/client": "2.15.8",
     "artalk": "2.6.4",
     "sass-loader": "13.3.2",
-    "twikoo": "1.6.22",
+    "twikoo": "1.6.25",
     "vue": "3.3.8",
     "vuepress-plugin-comment2": "workspace:*",
     "vuepress-vite": "2.0.0-beta.68",
