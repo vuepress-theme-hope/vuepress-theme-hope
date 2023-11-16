@@ -4,6 +4,19 @@ All notable changes to this project will be documented in this file. See [Conven
 
 <!-- #region recent-beta -->
 
+## [2.0.0-beta.252](https://github.com/vuepress-theme-hope/vuepress-theme-hope/compare/v2.0.0-beta.251...v2.0.0-beta.252) (2023-11-16)
+
+### Features
+
+- **theme:** improve template style ([f02b0fe](https://github.com/vuepress-theme-hope/vuepress-theme-hope/commit/f02b0fe7f91678ae536ea639468675e38216231f))
+
+### Bug Fixes
+
+- **append-date:** fix git detect and time output ([44f40e8](https://github.com/vuepress-theme-hope/vuepress-theme-hope/commit/44f40e8dd6b98edca7abbf93bc660d3ff61c9ceb))
+- **md-enhance:** broken outlook in safari ([e1b3642](https://github.com/vuepress-theme-hope/vuepress-theme-hope/commit/e1b3642a4e465c26739013e944a148084d248278))
+- **md-enhance:** fix md-demo with include feature ([a5ef4d3](https://github.com/vuepress-theme-hope/vuepress-theme-hope/commit/a5ef4d3c55b243a12632e939c3edd2b7552f200b))
+- **theme:** fix article list pageview, close [#3637](https://github.com/vuepress-theme-hope/vuepress-theme-hope/issues/3637) ([a1f59e2](https://github.com/vuepress-theme-hope/vuepress-theme-hope/commit/a1f59e2b07c3d7ecfe5b79cad1153a14f42e349a))
+
 ## [2.0.0-beta.251](https://github.com/vuepress-theme-hope/vuepress-theme-hope/compare/v2.0.0-beta.250...v2.0.0-beta.251) (2023-11-15)
 
 ### Features
