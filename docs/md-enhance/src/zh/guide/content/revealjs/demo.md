@@ -156,7 +156,7 @@ $$
 
 ## 布局
 
-![Logo](/logo.svg)
+![Logo](//theme-hope-assets.vuejs.press/logo.svg)
 
 <!-- .element: class="r-stretch" -->
 

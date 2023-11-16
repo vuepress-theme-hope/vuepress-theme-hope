@@ -135,7 +135,7 @@ interface ImageMarkOptions {
 
 [![VuePress Hope 图标](/favicon.ico "VuePress Hope 图标")](https://theme-hope.vuejs.press/)
 
-![VuePress Hope 图标](/logo.svg "VuePress Hope 图标" =300x300)
+![VuePress Hope 图标](//theme-hope-assets.vuejs.press/logo.svg "VuePress Hope 图标" =300x300)
 
 :::
 

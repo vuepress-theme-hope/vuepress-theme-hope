@@ -129,7 +129,7 @@ If the image is standalone in a line, wrapped or not wrapped by link, it will be
 
 [![VuePress Hope Logo](/favicon.ico "VuePress Hope Logo")](https://theme-hope.vuejs.press/)
 
-![VuePress Hope Logo](/logo.svg "VuePress Hope Logo" =300x300)
+![VuePress Hope Logo](//theme-hope-assets.vuejs.press/logo.svg "VuePress Hope Logo" =300x300)
 
 :::
 

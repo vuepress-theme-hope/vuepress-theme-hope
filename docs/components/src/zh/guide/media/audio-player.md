@@ -12,16 +12,16 @@ title: AudioPlayer
 
 ::: md-demo 一个音频播放器
 
-<AudioPlayer src="/assets/sample.mp3" />
+<AudioPlayer src="//theme-hope-assets.vuejs.press/files/sample.mp3" />
 
 :::
 
 ::: md-demo 一个拥有标题和封面的音频播放器
 
 <AudioPlayer
-  src="/assets/sample.mp3"
+  src="//theme-hope-assets.vuejs.press/files/sample.mp3"
   title="A Sample Audio"
-  poster="/logo.svg"
+  poster="//theme-hope-assets.vuejs.press/logo.svg"
 />
 
 :::

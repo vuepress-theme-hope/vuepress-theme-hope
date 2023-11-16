@@ -90,7 +90,7 @@ npm i -D vidstack@1
 
 ::: md-demo 一个音频播放器
 
-<VidStack src="/assets/sample.mp3" title="VidStack 示例音频" />
+<VidStack src="//theme-hope-assets.vuejs.press/files/sample.mp3" title="VidStack 示例音频" />
 
 :::
 

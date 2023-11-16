@@ -36,16 +36,16 @@ npm i -D plyr
 
 ::: md-demo An audio player
 
-<AudioPlayer src="/assets/sample.mp3" />
+<AudioPlayer src="//theme-hope-assets.vuejs.press/files/sample.mp3" />
 
 :::
 
 ::: md-demo An audio player with poster and title
 
 <AudioPlayer
-  src="/assets/sample.mp3"
+  src="//theme-hope-assets.vuejs.press/files/sample.mp3"
   title="A Sample Audio"
-  poster="/logo.svg"
+  poster="//theme-hope-assets.vuejs.press/logo.svg"
 />
 
 :::

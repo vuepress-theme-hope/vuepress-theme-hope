@@ -60,11 +60,11 @@ You can use `<HopeIcon />` component to add icon in markdown.
 ::: details Demo
 
 - <HopeIcon icon="home" color="red" />
-- <HopeIcon icon="/logo.svg" size="4rem" />
+- <HopeIcon icon="//theme-hope-assets.vuejs.press/logo.svg" size="4rem" />
 
 ```md
 - <HopeIcon icon="home" color="red" />
-- <HopeIcon icon="/logo.svg" size="4rem" />
+- <HopeIcon icon="//theme-hope-assets.vuejs.press/logo.svg" size="4rem" />
 ```
 
 :::

@@ -14,13 +14,13 @@ You can use this component to embed a PDF viewer.
 
 ::: md-demo Default PDF viewer
 
-<PDF url="/assets/sample.pdf" />
+<PDF url="//theme-hope-assets.vuejs.press/files/sample.pdf" />
 
 :::
 
 ::: md-demo PDF viewer starting with page 2 and without toolbar
 
-<PDF url="/assets/sample.pdf" page="2" no-toolbar />
+<PDF url="//theme-hope-assets.vuejs.press/files/sample.pdf" page="2" no-toolbar />
 
 :::
 

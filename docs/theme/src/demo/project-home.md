@@ -2,7 +2,7 @@
 home: true
 icon: home
 title: Project Home with features
-heroImage: /logo.svg
+heroImage: //theme-hope-assets.vuejs.press/logo.svg
 heroText: VuePress Theme Hope
 tagline: A VuePress theme with tons of features✨
 actions:

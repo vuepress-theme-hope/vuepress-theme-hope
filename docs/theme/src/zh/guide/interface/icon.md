@@ -60,11 +60,11 @@ head:
 ::: details 案例
 
 - <HopeIcon icon="home" color="red" />
-- <HopeIcon icon="/logo.svg" size="4rem" />
+- <HopeIcon icon="//theme-hope-assets.vuejs.press/logo.svg" size="4rem" />
 
 ```MD
 - <HopeIcon icon="home" color="red" />
-- <HopeIcon icon="/logo.svg" size="4rem" />
+- <HopeIcon icon="//theme-hope-assets.vuejs.press/logo.svg" size="4rem" />
 ```
 
 :::

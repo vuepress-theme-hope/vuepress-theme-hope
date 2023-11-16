@@ -3,7 +3,7 @@
 ## Demo
 
 <AudioPlayer
-  src="/sample.mp3"
+  src="//theme-hope-assets.vuejs.press/files/sample.mp3"
   title="A Sample Audio"
-  poster="/logo.svg"
+  poster="//theme-hope-assets.vuejs.press/logo.svg"
 />

@@ -12,7 +12,7 @@ title: Figure
 
 [![VuePress Hope Logo](/favicon.ico "VuePress Hope Logo")](https://theme-hope.vuejs.press/)
 
-![VuePress Hope Logo](/logo.svg "VuePress Hope Logo" =300x300)
+![VuePress Hope Logo](//theme-hope-assets.vuejs.press/logo.svg "VuePress Hope Logo" =300x300)
 
 ```md
 ![VuePress Hope Logo](/favicon.ico)
