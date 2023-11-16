@@ -113,7 +113,7 @@
     "vuepress-shared": "workspace:*"
   },
   "devDependencies": {
-    "@vuepress/bundler-vite": "2.0.0-beta.68",
+    "@vuepress/bundler-vite": "2.0.0-rc.0",
     "@vuepress/bundler-webpack": "2.0.0-beta.68",
     "@vuepress/markdown": "2.0.0-beta.68"
   },
