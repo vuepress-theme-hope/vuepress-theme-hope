@@ -179,8 +179,8 @@ importers:
         specifier: 2.0.0-beta.68
         version: 2.0.0-beta.68(sass-loader@13.3.2)(typescript@5.2.2)
       '@vuepress/utils':
-        specifier: 2.0.0-beta.68
-        version: 2.0.0-beta.68
+        specifier: 2.0.0-rc.0
+        version: 2.0.0-rc.0
       sass-loader:
         specifier: 13.3.2
         version: 13.3.2(sass@1.69.5)(webpack@5.89.0)
@@ -212,8 +212,8 @@ importers:
         specifier: 2.0.0-beta.68
         version: 2.0.0-beta.68(sass-loader@13.3.2)(typescript@5.2.2)
       '@vuepress/utils':
-        specifier: 2.0.0-beta.68
-        version: 2.0.0-beta.68
+        specifier: 2.0.0-rc.0
+        version: 2.0.0-rc.0
       sass-loader:
         specifier: 13.3.2
         version: 13.3.2(sass@1.69.5)(webpack@5.89.0)
@@ -248,8 +248,8 @@ importers:
         specifier: 2.0.0-beta.68
         version: 2.0.0-beta.68(sass-loader@13.3.2)(typescript@5.2.2)
       '@vuepress/utils':
-        specifier: 2.0.0-beta.68
-        version: 2.0.0-beta.68
+        specifier: 2.0.0-rc.0
+        version: 2.0.0-rc.0
       '@waline/client':
         specifier: 2.15.8
         version: 2.15.8(typescript@5.2.2)
@@ -365,8 +365,8 @@ importers:
         specifier: 2.0.0-beta.68
         version: 2.0.0-beta.68(sass-loader@13.3.2)(typescript@5.2.2)
       '@vuepress/utils':
-        specifier: 2.0.0-beta.68
-        version: 2.0.0-beta.68
+        specifier: 2.0.0-rc.0
+        version: 2.0.0-rc.0
       sass-loader:
         specifier: 13.3.2
         version: 13.3.2(sass@1.69.5)(webpack@5.89.0)
@@ -695,8 +695,8 @@ importers:
         specifier: 2.0.0-beta.68
         version: 2.0.0-beta.68(@algolia/client-search@4.20.0)(search-insights@2.10.0)(typescript@5.2.2)
       '@vuepress/utils':
-        specifier: 2.0.0-beta.68
-        version: 2.0.0-beta.68
+        specifier: 2.0.0-rc.0
+        version: 2.0.0-rc.0
       '@waline/client':
         specifier: 2.15.8
         version: 2.15.8(typescript@5.2.2)
@@ -752,8 +752,8 @@ importers:
         specifier: 2.0.0-beta.68
         version: 2.0.0-beta.68(@algolia/client-search@4.20.0)(search-insights@2.10.0)(typescript@5.2.2)
       '@vuepress/utils':
-        specifier: 2.0.0-beta.68
-        version: 2.0.0-beta.68
+        specifier: 2.0.0-rc.0
+        version: 2.0.0-rc.0
       chart.js:
         specifier: 4.4.0
         version: 4.4.0
@@ -809,8 +809,8 @@ importers:
         specifier: 2.0.0-beta.68
         version: 2.0.0-beta.68
       '@vuepress/utils':
-        specifier: 2.0.0-beta.68
-        version: 2.0.0-beta.68
+        specifier: 2.0.0-rc.0
+        version: 2.0.0-rc.0
       three:
         specifier: 0.158.0
         version: 0.158.0
@@ -1398,8 +1398,8 @@ importers:
         specifier: 2.0.0-beta.68
         version: 2.0.0-beta.68(typescript@5.2.2)
       '@vuepress/utils':
-        specifier: 2.0.0-beta.68
-        version: 2.0.0-beta.68
+        specifier: 2.0.0-rc.0
+        version: 2.0.0-rc.0
       vuepress:
         specifier: 2.0.0-beta.68
         version: 2.0.0-beta.68(@types/node@20.9.0)(@vuepress/client@2.0.0-beta.68)(sass-loader@13.3.2)(typescript@5.2.2)(vue@3.3.8)
@@ -1425,8 +1425,8 @@ importers:
         specifier: 2.0.0-beta.68
         version: 2.0.0-beta.68
       '@vuepress/utils':
-        specifier: 2.0.0-beta.68
-        version: 2.0.0-beta.68
+        specifier: 2.0.0-rc.0
+        version: 2.0.0-rc.0
       sass-loader:
         specifier: ^13.3.2
         version: 13.3.2(sass@1.69.5)(webpack@5.89.0)
@@ -1467,8 +1467,8 @@ importers:
         specifier: 2.0.0-beta.68
         version: 2.0.0-beta.68
       '@vuepress/utils':
-        specifier: 2.0.0-beta.68
-        version: 2.0.0-beta.68
+        specifier: 2.0.0-rc.0
+        version: 2.0.0-rc.0
       chokidar:
         specifier: ^3.5.3
         version: 3.5.3
@@ -1500,8 +1500,8 @@ importers:
         specifier: 2.0.0-beta.68
         version: 2.0.0-beta.68
       '@vuepress/utils':
-        specifier: 2.0.0-beta.68
-        version: 2.0.0-beta.68
+        specifier: 2.0.0-rc.0
+        version: 2.0.0-rc.0
       '@waline/client':
         specifier: ^2.15.8
         version: 2.15.8(typescript@5.2.2)
@@ -1555,8 +1555,8 @@ importers:
         specifier: 2.0.0-beta.68
         version: 2.0.0-beta.68
       '@vuepress/utils':
-        specifier: 2.0.0-beta.68
-        version: 2.0.0-beta.68
+        specifier: 2.0.0-rc.0
+        version: 2.0.0-rc.0
       '@vueuse/core':
         specifier: ^10.6.1
         version: 10.6.1(vue@3.3.8)
@@ -1634,8 +1634,8 @@ importers:
         specifier: 2.0.0-beta.68
         version: 2.0.0-beta.68
       '@vuepress/utils':
-        specifier: 2.0.0-beta.68
-        version: 2.0.0-beta.68
+        specifier: 2.0.0-rc.0
+        version: 2.0.0-rc.0
       '@vueuse/core':
         specifier: ^10.6.1
         version: 10.6.1(vue@3.3.8)
@@ -1680,8 +1680,8 @@ importers:
         specifier: 2.0.0-beta.68
         version: 2.0.0-beta.68
       '@vuepress/utils':
-        specifier: 2.0.0-beta.68
-        version: 2.0.0-beta.68
+        specifier: 2.0.0-rc.0
+        version: 2.0.0-rc.0
       '@vueuse/core':
         specifier: ^10.6.1
         version: 10.6.1(vue@3.3.8)
@@ -1730,8 +1730,8 @@ importers:
         specifier: 2.0.0-beta.68
         version: 2.0.0-beta.68
       '@vuepress/utils':
-        specifier: 2.0.0-beta.68
-        version: 2.0.0-beta.68
+        specifier: 2.0.0-rc.0
+        version: 2.0.0-rc.0
       cheerio:
         specifier: 1.0.0-rc.12
         version: 1.0.0-rc.12
@@ -1764,8 +1764,8 @@ importers:
         specifier: 2.0.0-beta.68
         version: 2.0.0-beta.68(typescript@5.2.2)
       '@vuepress/utils':
-        specifier: 2.0.0-beta.68
-        version: 2.0.0-beta.68
+        specifier: 2.0.0-rc.0
+        version: 2.0.0-rc.0
       lightgallery:
         specifier: ^2.7.2
         version: 2.7.2
@@ -1882,8 +1882,8 @@ importers:
         specifier: 2.0.0-beta.68
         version: 2.0.0-beta.68
       '@vuepress/utils':
-        specifier: 2.0.0-beta.68
-        version: 2.0.0-beta.68
+        specifier: 2.0.0-rc.0
+        version: 2.0.0-rc.0
       '@vueuse/core':
         specifier: ^10.6.1
         version: 10.6.1(vue@3.3.8)
@@ -1967,8 +1967,8 @@ importers:
         specifier: 2.0.0-beta.68
         version: 2.0.0-beta.68
       '@vuepress/utils':
-        specifier: 2.0.0-beta.68
-        version: 2.0.0-beta.68
+        specifier: 2.0.0-rc.0
+        version: 2.0.0-rc.0
       '@vueuse/core':
         specifier: ^10.6.1
         version: 10.6.1(vue@3.3.8)
@@ -2013,8 +2013,8 @@ importers:
         specifier: 2.0.0-beta.68
         version: 2.0.0-beta.68
       '@vuepress/utils':
-        specifier: 2.0.0-beta.68
-        version: 2.0.0-beta.68
+        specifier: 2.0.0-rc.0
+        version: 2.0.0-rc.0
       '@vueuse/core':
         specifier: ^10.6.1
         version: 10.6.1(vue@3.3.8)
@@ -2096,8 +2096,8 @@ importers:
         specifier: 2.0.0-beta.68
         version: 2.0.0-beta.68
       '@vuepress/utils':
-        specifier: 2.0.0-beta.68
-        version: 2.0.0-beta.68
+        specifier: 2.0.0-rc.0
+        version: 2.0.0-rc.0
       '@vueuse/core':
         specifier: ^10.6.1
         version: 10.6.1(vue@3.3.8)
@@ -2138,8 +2138,8 @@ importers:
         specifier: 2.0.0-beta.68
         version: 2.0.0-beta.68
       '@vuepress/utils':
-        specifier: 2.0.0-beta.68
-        version: 2.0.0-beta.68
+        specifier: 2.0.0-rc.0
+        version: 2.0.0-rc.0
       vue:
         specifier: 3.3.8
         version: 3.3.8(typescript@5.2.2)
@@ -2166,8 +2166,8 @@ importers:
         specifier: 2.0.0-beta.68
         version: 2.0.0-beta.68
       '@vuepress/utils':
-        specifier: 2.0.0-beta.68
-        version: 2.0.0-beta.68
+        specifier: 2.0.0-rc.0
+        version: 2.0.0-rc.0
       vue:
         specifier: 3.3.8
         version: 3.3.8(typescript@5.2.2)
@@ -2194,8 +2194,8 @@ importers:
         specifier: 2.0.0-beta.68
         version: 2.0.0-beta.68
       '@vuepress/utils':
-        specifier: 2.0.0-beta.68
-        version: 2.0.0-beta.68
+        specifier: 2.0.0-rc.0
+        version: 2.0.0-rc.0
       chokidar:
         specifier: ^3.5.3
         version: 3.5.3
@@ -2237,8 +2237,8 @@ importers:
         specifier: 2.0.0-beta.68
         version: 2.0.0-beta.68
       '@vuepress/utils':
-        specifier: 2.0.0-beta.68
-        version: 2.0.0-beta.68
+        specifier: 2.0.0-rc.0
+        version: 2.0.0-rc.0
       '@vueuse/core':
         specifier: ^10.6.1
         version: 10.6.1(vue@3.3.8)
@@ -2286,8 +2286,8 @@ importers:
         specifier: 2.0.0-beta.68
         version: 2.0.0-beta.68
       '@vuepress/utils':
-        specifier: 2.0.0-beta.68
-        version: 2.0.0-beta.68
+        specifier: 2.0.0-rc.0
+        version: 2.0.0-rc.0
       vuepress:
         specifier: 2.0.0-beta.68
         version: 2.0.0-beta.68(@types/node@20.9.0)(@vuepress/client@2.0.0-beta.68)(sass-loader@13.3.2)(typescript@5.2.2)(vue@3.3.8)
@@ -2317,8 +2317,8 @@ importers:
         specifier: 2.0.0-beta.68
         version: 2.0.0-beta.68
       '@vuepress/utils':
-        specifier: 2.0.0-beta.68
-        version: 2.0.0-beta.68
+        specifier: 2.0.0-rc.0
+        version: 2.0.0-rc.0
       '@vueuse/core':
         specifier: ^10.6.1
         version: 10.6.1(vue@3.3.8)
@@ -2390,8 +2390,8 @@ importers:
         specifier: 2.0.0-beta.68
         version: 2.0.0-beta.68
       '@vuepress/utils':
-        specifier: 2.0.0-beta.68
-        version: 2.0.0-beta.68
+        specifier: 2.0.0-rc.0
+        version: 2.0.0-rc.0
       sitemap:
         specifier: ^7.1.1
         version: 7.1.1
@@ -2451,8 +2451,8 @@ importers:
         specifier: 2.0.0-beta.68
         version: 2.0.0-beta.68
       '@vuepress/utils':
-        specifier: 2.0.0-beta.68
-        version: 2.0.0-beta.68
+        specifier: 2.0.0-rc.0
+        version: 2.0.0-rc.0
       '@vueuse/core':
         specifier: ^10.6.1
         version: 10.6.1(vue@3.3.8)
@@ -5892,9 +5892,6 @@ packages:
   /@vue/shared@3.3.8:
     resolution: {integrity: sha512-8PGwybFwM4x8pcfgqEQFy70NaQxASvOC5DJwLQfpArw1UDfUXrJkdxD3BhVTMS+0Lef/TU7YO0Jvr0jJY8T+mw==}
 
-  /@vue/shared@3.4.0-alpha.1:
-    resolution: {integrity: sha512-0GMCNskHdNKCnvsQLP7pdwA4OsnFfQkSplbqFu1SiZC7HfCJystK27yUx59wxcSqho40bYRS+17S0UFVb1B48g==}
-
   /@vuepress/bundler-vite@2.0.0-beta.68(@types/node@20.9.0)(sass@1.69.5)(typescript@5.2.2):
     resolution: {integrity: sha512-N2grrjKIQEZJcb+JaG7ZimCoUH3bRK4zwHjPOLpBpplTQ/V5l99I90FMswpaCs7bKBiXTO0fiEUYn4Nw8V/qkQ==}
     dependencies:
@@ -6184,7 +6181,13 @@ packages:
     resolution: {integrity: sha512-vnlOOchZ7ZHeTQuFDKcTC1AKF5zl4+XKwZZdpX9cUkIl3rYbM4y80yoWvfG5SQnPjjoYG57g4Qz21Fa8u/CnCQ==}
     dependencies:
       '@mdit-vue/types': 1.0.0
-      '@vue/shared': 3.4.0-alpha.1
+      '@vue/shared': 3.3.8
+
+  /@vuepress/shared@2.0.0-rc.0:
+    resolution: {integrity: sha512-ikdSfjRv5LGM1iv4HHwF9P6gqTjaFCXKPK+hzlkHFHNZO1GLqk7/BPc4F51tAG1s8TcLhUZc+54LrfgS7PkXXA==}
+    dependencies:
+      '@mdit-vue/types': 1.0.0
+      '@vue/shared': 3.3.8
 
   /@vuepress/theme-default@2.0.0-beta.68(sass-loader@13.3.2)(typescript@5.2.2):
     resolution: {integrity: sha512-qsIaM3ZVjJb6KeuScxVRLfLylBa3kK7IriZ9YlmkHl2NwzspsqVMTh4Ozd2MlkhzMH4TnB1XLybTQKGCZnQBVw==}
@@ -6225,6 +6228,23 @@ packages:
       '@types/fs-extra': 11.0.4
       '@types/hash-sum': 1.0.2
       '@vuepress/shared': 2.0.0-beta.68
+      debug: 4.3.4
+      fs-extra: 11.1.1
+      globby: 14.0.0
+      hash-sum: 2.0.0
+      ora: 7.0.1
+      picocolors: 1.0.0
+      upath: 2.0.1
+    transitivePeerDependencies:
+      - supports-color
+
+  /@vuepress/utils@2.0.0-rc.0:
+    resolution: {integrity: sha512-Q1ay/woClDHcW0Qe91KsnHoupdNN0tp/vhjvVLuAYxlv/1Obii7hz9WFcajyyGEhmsYxdvG2sGmcxFA02tuKkw==}
+    dependencies:
+      '@types/debug': 4.1.12
+      '@types/fs-extra': 11.0.4
+      '@types/hash-sum': 1.0.2
+      '@vuepress/shared': 2.0.0-rc.0
       debug: 4.3.4
       fs-extra: 11.1.1
       globby: 14.0.0
