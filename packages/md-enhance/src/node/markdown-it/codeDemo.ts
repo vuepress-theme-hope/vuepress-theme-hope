@@ -71,9 +71,19 @@ export const mdDemo: PluginSimple = (md) => {
         tokens[index].info,
       )}" id="md-demo-${index}"><template #default>\n`,
     codeRender: (tokens, index, options, _env, self) => {
-      tokens[index].type = "fence";
-      tokens[index].info = "md";
-      tokens[index].markup = "```";
+      const token = tokens[index];
+
+      token.type = "fence";
+      token.info = "md";
+      token.markup = "```";
+      // handle include rule
+      token.content = token.content
+        .split("\n")
+        .filter(
+          (item) =>
+            item[0] !== "@" || !item.match(/^@include-p(?:ush\(.*\)|op)$/),
+        )
+        .join("\n");
 
       return `</template><template #code>\n${self.rules.fence!(
         tokens,
