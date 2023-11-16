@@ -271,6 +271,11 @@
 
     cursor: pointer;
 
+    // compatible with safari
+    &::-webkit-details-marker {
+      display: none;
+    }
+
     &::marker {
       color: transparent;
       font-size: 0;
