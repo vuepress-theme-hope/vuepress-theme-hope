@@ -17,8 +17,8 @@
   "devDependencies": {
     "@vuepress/cli": "2.0.0-beta.68",
     "@vuepress/client": "2.0.0-beta.68",
-    "@vuepress/core": "2.0.0-beta.68",
-    "@vuepress/theme-default": "2.0.0-beta.68",
+    "@vuepress/core": "2.0.0-rc.0",
+    "@vuepress/theme-default": "2.0.0-rc.0",
     "@vuepress/utils": "2.0.0-beta.68",
     "@waline/client": "2.15.8",
     "artalk": "2.6.4",

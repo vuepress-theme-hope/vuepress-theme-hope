@@ -58,10 +58,10 @@
     "vuepress-shared": "workspace:*"
   },
   "devDependencies": {
-    "@vuepress/core": "2.0.0-beta.68"
+    "@vuepress/core": "2.0.0-rc.0"
   },
   "peerDependencies": {
-    "vuepress": "2.0.0-beta.68",
+    "vuepress": "2.0.0-rc.0",
     "vuepress-vite": "2.0.0-beta.68",
     "vuepress-webpack": "2.0.0-beta.68"
   },

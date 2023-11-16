@@ -46,13 +46,13 @@
     "yarn": ">=2"
   },
   "dependencies": {
-    "@vuepress/core": "2.0.0-beta.68",
+    "@vuepress/core": "2.0.0-rc.0",
     "@vuepress/utils": "2.0.0-beta.68",
     "vuepress-shared": "workspace:*"
   },
   "peerDependencies": {
     "@vuepress/plugin-git": "2.0.0-beta.68",
-    "vuepress": "2.0.0-beta.68",
+    "vuepress": "2.0.0-rc.0",
     "vuepress-vite": "2.0.0-beta.68",
     "vuepress-webpack": "2.0.0-beta.68"
   },
