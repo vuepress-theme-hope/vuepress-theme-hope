@@ -72,3 +72,40 @@ Card font color
 To make background and font color adapt to dark mode automatically, you can pass css variable, such as: `var(--my-bg)`.
 
 :::
+
+## Container
+
+If you want multiple cards in a responsive container, you can wrap them in a `div` with class `vp-card-container`:
+
+<!-- markdownlint-disable MD033 -->
+
+::: md-demo Responsive Card Container
+
+<div class="vp-card-container">
+  <VPCard
+    v-for="i in 12"
+    title="Mr.Hope"
+    desc="Where there is light, there is hope"
+    logo="https://mister-hope.com/logo.svg"
+    link="https://mister-hope.com"
+    background="rgba(253, 230, 138, 0.15)"
+  />
+  <VPCard
+    title="Mr.Hope"
+    desc="Where there is light, there is hope"
+    logo="https://mister-hope.com/logo.svg"
+    link="https://mister-hope.com"
+    background="rgba(253, 230, 138, 0.15)"
+  />
+  <VPCard
+    title="Mr.Hope"
+    desc="Where there is light, there is hope"
+    logo="https://mister-hope.com/logo.svg"
+    link="https://mister-hope.com"
+    background="rgba(253, 230, 138, 0.15)"
+  />
+</div>
+
+:::
+
+<!-- markdownlint-enable MD033 -->

@@ -73,3 +73,40 @@ title: VPCard
 为了让背景和字体颜色能自动适配夜间模式，你可以传入 css variable，如: `var(--my-bg)`。
 
 :::
+
+## 容器
+
+如果你想要在一个响应式容器中放置多个卡片，你可以将它们包裹在一个 `div` 中，并添加 `vp-card-container` 类:
+
+<!-- markdownlint-disable MD033 -->
+
+::: md-demo 响应式卡片容器
+
+<div class="vp-card-container">
+  <VPCard
+    v-for="i in 12"
+    title="Mr.Hope"
+    desc="Where there is light, there is hope"
+    logo="https://mister-hope.com/logo.svg"
+    link="https://mister-hope.com"
+    background="rgba(253, 230, 138, 0.15)"
+  />
+  <VPCard
+    title="Mr.Hope"
+    desc="Where there is light, there is hope"
+    logo="https://mister-hope.com/logo.svg"
+    link="https://mister-hope.com"
+    background="rgba(253, 230, 138, 0.15)"
+  />
+  <VPCard
+    title="Mr.Hope"
+    desc="Where there is light, there is hope"
+    logo="https://mister-hope.com/logo.svg"
+    link="https://mister-hope.com"
+    background="rgba(253, 230, 138, 0.15)"
+  />
+</div>
+
+:::
+
+<!-- markdownlint-enable MD033 -->
