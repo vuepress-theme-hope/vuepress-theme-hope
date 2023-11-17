@@ -14,7 +14,7 @@ Let the Markdown file support playground in your VuePress site.
 
 ## Settings
 
-::: code-tabs#config
+::: code-tabs#language
 
 @tab TS
 

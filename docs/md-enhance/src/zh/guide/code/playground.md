@@ -9,7 +9,7 @@ icon: code
 
 ## 配置
 
-::: code-tabs#config
+::: code-tabs#language
 
 @tab TS
 

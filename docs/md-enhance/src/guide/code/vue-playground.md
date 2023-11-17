@@ -47,7 +47,7 @@ Then enabling via:
 
 <!-- #endregion settings -->
 
-::: code-tabs#config
+::: code-tabs#language
 
 @tab TS
 

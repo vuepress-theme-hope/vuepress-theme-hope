@@ -134,7 +134,9 @@ const option = {
     },
   ],
 };
-setInterval(() => {
+const timeId = setInterval(() => {
+  if (myChart._disposed) return clearInterval(timeId);
+
   for (let i = 0; i < 5; i++) {
     data.shift();
     data.push(randomData());
@@ -219,10 +221,9 @@ const run = () => {
     series: [{ type: "bar", data }],
   });
 };
-setTimeout(() => {
-  run();
-}, 0);
-setInterval(() => {
+const timeId = setInterval(() => {
+  if (myChart._disposed) return clearInterval(timeId);
+
   run();
 }, 3000);
 ```

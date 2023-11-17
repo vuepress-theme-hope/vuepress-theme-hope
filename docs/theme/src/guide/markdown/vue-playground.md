@@ -22,7 +22,7 @@ You can use [Vue Demo](./demo.md#vue) and [Playground Vue Preset](./playground.m
 
 <!-- @include: @md-enhance/guide/code/vue-playground.md#settings -->
 
-::: code-tabs#config
+::: code-tabs#language
 
 @tab TS
 

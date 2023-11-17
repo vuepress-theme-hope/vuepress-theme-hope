@@ -47,7 +47,7 @@ npm i -D @vue/repl
 
 <!-- #endregion before -->
 
-::: code-tabs#config
+::: code-tabs#language
 
 @tab TS
 

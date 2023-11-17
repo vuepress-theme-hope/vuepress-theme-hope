@@ -77,7 +77,7 @@ export default hopeTheme(
       },
 
       components: {
-        components: ["VPCard"],
+        components: ["Badge", "VPCard"],
       },
 
       // All features are enabled for demo, only preserve features you need here

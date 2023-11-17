@@ -20,7 +20,7 @@ export default theme("md-enhance", {
 
   plugins: {
     components: {
-      components: ["VPCard"],
+      components: ["Badge", "VPCard"],
     },
 
     mdEnhance: {

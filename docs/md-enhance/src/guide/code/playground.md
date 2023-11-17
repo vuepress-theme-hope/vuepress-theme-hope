@@ -9,7 +9,7 @@ The plugin provides you playground support.
 
 ## Settings
 
-::: code-tabs#config
+::: code-tabs#language
 
 @tab TS
 

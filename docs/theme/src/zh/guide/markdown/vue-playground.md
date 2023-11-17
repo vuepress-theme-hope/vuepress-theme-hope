@@ -5,7 +5,7 @@ icon: fab fa-vuejs
 
 <!-- @include: @md-enhance/zh/guide/code/vue-playground.md#before -->
 
-::: code-tabs#config
+::: code-tabs#language
 
 @tab TS
 
