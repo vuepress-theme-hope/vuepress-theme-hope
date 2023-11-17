@@ -40,7 +40,7 @@ export const theme = (
     docsRepo: "vuepress-theme-hope/vuepress-theme-hope",
     docsDir: `docs/${name}/src`,
 
-    logo: "//theme-hope-assets.vuejs.press/logo.svg",
+    logo: "https://theme-hope-assets.vuejs.press/logo.svg",
 
     navbarLayout: {
       start: ["Brand"],

@@ -77,8 +77,6 @@ To make background and font color adapt to dark mode automatically, you can pass
 
 If you want multiple cards in a responsive container, you can wrap them in a `div` with class `vp-card-container`:
 
-<!-- markdownlint-disable MD033 -->
-
 ::: md-demo Responsive Card Container
 
 <div class="vp-card-container">
@@ -107,5 +105,3 @@ If you want multiple cards in a responsive container, you can wrap them in a `di
 </div>
 
 :::
-
-<!-- markdownlint-enable MD033 -->

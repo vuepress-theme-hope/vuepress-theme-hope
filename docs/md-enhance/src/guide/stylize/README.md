@@ -65,12 +65,8 @@ You can mark ==important words==.
 
 ### Stylize
 
-<!-- markdownlint-disable MD033 -->
-
 Donate Mr.Hope a cup of coffee. _Recommended_
 
 - [View Detail](./stylize.md)
-
-<!-- markdownlint-enable MD033 -->
 
 <!-- #endregion demo -->

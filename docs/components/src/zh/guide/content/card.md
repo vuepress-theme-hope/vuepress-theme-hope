@@ -78,8 +78,6 @@ title: VPCard
 
 如果你想要在一个响应式容器中放置多个卡片，你可以将它们包裹在一个 `div` 中，并添加 `vp-card-container` 类:
 
-<!-- markdownlint-disable MD033 -->
-
 ::: md-demo 响应式卡片容器
 
 <div class="vp-card-container">
@@ -108,5 +106,3 @@ title: VPCard
 </div>
 
 :::
-
-<!-- markdownlint-enable MD033 -->

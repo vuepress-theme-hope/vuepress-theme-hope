@@ -28,8 +28,6 @@ VuePress Theme Hope 通过 <ProjectLink name="auto-catalog" path="/zh/">`vuepres
 
 你可以直接在 Markdown 中使用 `<AutoCatalog>` 组件来显示目录。
 
-<!-- markdownlint-disable MD033 -->
-
 ::: md-demo 主页目录案例
 
 <!-- 用于限制高度 -->
@@ -38,5 +36,3 @@ VuePress Theme Hope 通过 <ProjectLink name="auto-catalog" path="/zh/">`vuepres
 </div>
 
 :::
-
-<!-- markdownlint-enable MD033 -->

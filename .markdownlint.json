@@ -12,6 +12,8 @@
   },
   "MD033": {
     "allowed_elements": [
+      "div",
+      "span",
       "br",
       "template",
       "script",

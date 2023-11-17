@@ -28,8 +28,6 @@ For detailed configuration, see <ProjectLink name="auto-catalog" path="/config.h
 
 You can use the `<AutoCatalog>` component directly in Markdown to display the catalog.
 
-<!-- markdownlint-disable MD033 -->
-
 ::: md-demo Homepage Catalog Demo
 
 <!-- Used to limit height -->
@@ -38,5 +36,3 @@ You can use the `<AutoCatalog>` component directly in Markdown to display the ca
 </div>
 
 :::
-
-<!-- markdownlint-enable MD033 -->

@@ -2,7 +2,7 @@
 home: true
 title: 功能项目主页
 icon: home
-heroImage: //theme-hope-assets.vuejs.press/logo.svg
+heroImage: https://theme-hope-assets.vuejs.press/logo.svg
 heroText: VuePress Theme Hope
 tagline: 一个具有强大功能的 vuepress 主题✨
 actions:

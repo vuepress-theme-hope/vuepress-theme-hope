@@ -125,6 +125,8 @@ interface ImageMarkOptions {
 
 这样当你单独将图片至于一行 (也可同时嵌套链接)，图像将显示为 `<figure>` ，标题或图片替代文字将显示为 `<figcaption>`。
 
+<!-- markdownlint-disable MD034 -->
+
 ::: md-demo Figure 案例
 
 ![VuePress Hope 图标](/favicon.ico)
@@ -135,9 +137,11 @@ interface ImageMarkOptions {
 
 [![VuePress Hope 图标](/favicon.ico "VuePress Hope 图标")](https://theme-hope.vuejs.press/)
 
-![VuePress Hope 图标](//theme-hope-assets.vuejs.press/logo.svg "VuePress Hope 图标" =300x300)
+![VuePress Hope 图标](https://theme-hope-assets.vuejs.press/logo.svg "VuePress Hope 图标" =300x300)
 
 :::
+
+<!-- markdownlint-enable MD034 -->
 
 <script setup lang="ts">
 import AppearanceSwitch from "@theme-hope/modules/outlook/components/AppearanceSwitch";

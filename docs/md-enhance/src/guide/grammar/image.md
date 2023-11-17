@@ -119,6 +119,8 @@ Sometimes, you may want to add a description with image and place it between con
 
 If the image is standalone in a line, wrapped or not wrapped by link, it will be displayed as `<figure>` and title (or alt) will be displayed as `<figcaption>`.
 
+<!-- markdownlint-disable MD034 -->
+
 ::: md-demo Figure demo
 
 ![VuePress Hope Logo](/favicon.ico)
@@ -129,9 +131,11 @@ If the image is standalone in a line, wrapped or not wrapped by link, it will be
 
 [![VuePress Hope Logo](/favicon.ico "VuePress Hope Logo")](https://theme-hope.vuejs.press/)
 
-![VuePress Hope Logo](//theme-hope-assets.vuejs.press/logo.svg "VuePress Hope Logo" =300x300)
+![VuePress Hope Logo](https://theme-hope-assets.vuejs.press/logo.svg "VuePress Hope Logo" =300x300)
 
 :::
+
+<!-- markdownlint-enable MD034 -->
 
 <script setup lang="ts">
 import AppearanceSwitch from "@theme-hope/modules/outlook/components/AppearanceSwitch";

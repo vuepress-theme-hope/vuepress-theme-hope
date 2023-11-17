@@ -4,7 +4,7 @@ icon: person-chalkboard
 layout: Slide
 ---
 
-<!-- markdownlint-disable MD024 MD033 MD051 -->
+<!-- markdownlint-disable MD024 MD051 -->
 
 @slidestart
 

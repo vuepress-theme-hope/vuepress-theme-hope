@@ -93,7 +93,7 @@ In codes above, two spaces are behind `at`.
 
 ## Image
 
-![Logo](//theme-hope-assets.vuejs.press/logo.svg)
+![Logo](https://theme-hope-assets.vuejs.press/logo.svg)
 
 ## Emoji
 

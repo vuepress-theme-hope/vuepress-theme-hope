@@ -114,8 +114,6 @@ In this way, you can use lora font in your website.
 
 ::: details lora Demo
 
-<!-- markdownlint-disable MD033 -->
-
 <div class="lora">
 
 ## Whereas recognition of the inherent dignity
@@ -125,8 +123,6 @@ Everyone is entitled in full equality to a fair and public hearing by an indepen
 No one shall be subjected to arbitrary interference with his privacy, family, home or correspondence, nor to attacks upon his honour and reputation. Everyone has the right to the protection of the law against such interference or attacks.
 
 </div>
-
-<!-- markdownlint-enable MD033 -->
 
 :::
 

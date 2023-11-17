@@ -130,11 +130,7 @@ export default {
 
 :::
 
-<!-- markdownlint-disable MD033 -->
-
 Another example is you want to set all the emphasis `n't` words to red color, so that `Setting this to a invalid syntax *doesn't* have any effect.` becomes: "Setting this to an invalid syntax <span style="color:red">doesn't</span> have any effect."
-
-<!-- markdownlint-enable MD033 -->
 
 ::: code-tabs#language
 

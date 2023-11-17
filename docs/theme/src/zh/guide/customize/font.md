@@ -122,8 +122,6 @@ $font-family: '"Noto Serif SC", serif';
 
 ::: details 思源宋体 Demo
 
-<!-- markdownlint-disable MD033 -->
-
 <div class="noto-serif">
 
 ## 人人生而自由
@@ -131,8 +129,6 @@ $font-family: '"Noto Serif SC", serif';
 人人生而自由，在尊严和权利上一律平等。他们赋有理性和良心，并应以弟兄关系的精神相对待。
 
 </div>
-
-<!-- markdownlint-enable MD033 -->
 
 :::
 

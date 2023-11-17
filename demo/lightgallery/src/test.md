@@ -2,7 +2,7 @@
 
 This is a paragraph.
 
-![logo](//theme-hope-assets.vuejs.press/logo.svg)
+![logo](https://theme-hope-assets.vuejs.press/logo.svg)
 
 This is a paragraph.
 
