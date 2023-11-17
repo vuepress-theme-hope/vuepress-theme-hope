@@ -36,6 +36,7 @@ export const huLocale: ThemeLocaleData = {
     all: "Összes",
     intro: "Személyes bemutatkozás",
     star: "Csillag",
+    empty: "Nincs $text",
   },
 
   paginationLocales: {

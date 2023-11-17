@@ -36,6 +36,7 @@ export const brLocale: ThemeLocaleData = {
     all: "Todos",
     intro: "Intro Pessoal",
     star: "Estrela",
+    empty: "Nenhum $text",
   },
 
   paginationLocales: {

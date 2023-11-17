@@ -36,6 +36,7 @@ export const fiLocale: ThemeLocaleData = {
     all: "Kaikki",
     intro: "Intro",
     star: "Tähti",
+    empty: "$text on tyhjä",
   },
 
   paginationLocales: {

@@ -36,6 +36,7 @@ export const zhTWLocale: ThemeLocaleData = {
     all: "全部",
     intro: "個人介紹",
     star: "收藏",
+    empty: "$text 為空",
   },
 
   paginationLocales: {

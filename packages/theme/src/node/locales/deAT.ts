@@ -36,6 +36,7 @@ export const deATLocale: ThemeLocaleData = {
     all: "Alle",
     intro: "Persönliche Einleitung",
     star: "Star",
+    empty: "$text ist leer",
   },
 
   paginationLocales: {

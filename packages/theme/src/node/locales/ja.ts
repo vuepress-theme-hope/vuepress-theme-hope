@@ -36,6 +36,7 @@ export const jaLocale: ThemeLocaleData = {
     all: "すべて",
     intro: "自己紹介",
     star: "コレクション",
+    empty: "$text は空です",
   },
 
   paginationLocales: {
