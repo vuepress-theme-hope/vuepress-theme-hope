@@ -41,14 +41,14 @@
     }
   },
   "devDependencies": {
-    "@commitlint/cli": "18.4.1",
-    "@commitlint/config-conventional": "18.4.0",
+    "@commitlint/cli": "18.4.2",
+    "@commitlint/config-conventional": "18.4.2",
     "@rollup/plugin-alias": "5.0.1",
     "@rollup/plugin-commonjs": "25.0.7",
     "@rollup/plugin-node-resolve": "15.2.3",
     "@rollup/plugin-replace": "5.0.5",
     "@types/inquirer": "9.0.7",
-    "@types/node": "20.9.0",
+    "@types/node": "20.9.1",
     "@typescript-eslint/eslint-plugin": "6.11.0",
     "@typescript-eslint/parser": "6.11.0",
     "@vitest/coverage-v8": "0.34.6",
@@ -101,7 +101,6 @@
       "glob-stream": "^7.0.0",
       "glob-parent": "^6.0.2",
       "micromatch": "^4.0.5",
-      "vue": "3.3.8",
       "yargs-parser": "^21.1.1"
     }
   }

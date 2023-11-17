@@ -59,9 +59,9 @@ files.forEach((pkgName) => {
         yarn: ">=2",
       },
       peerDependencies: {
-        vuepress: "2.0.0-beta.68",
-        "vuepress-vite": "2.0.0-beta.68",
-        "vuepress-webpack": "2.0.0-beta.68",
+        vuepress: "2.0.0-rc.0",
+        "vuepress-vite": "2.0.0-rc.0",
+        "vuepress-webpack": "2.0.0-rc.0",
       },
       peerDependenciesMeta: {
         vuepress: {

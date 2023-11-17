@@ -16,10 +16,10 @@
   },
   "devDependencies": {
     "@vue/repl": "2.7.0",
-    "@vuepress/cli": "2.0.0-beta.68",
-    "@vuepress/client": "2.0.0-beta.68",
-    "@vuepress/plugin-docsearch": "2.0.0-beta.68",
-    "@vuepress/utils": "2.0.0-beta.68",
+    "@vuepress/cli": "2.0.0-rc.0",
+    "@vuepress/client": "2.0.0-rc.0",
+    "@vuepress/plugin-docsearch": "2.0.0-rc.0",
+    "@vuepress/utils": "2.0.0-rc.0",
     "chart.js": "4.4.0",
     "echarts": "5.4.3",
     "katex": "0.16.9",
@@ -29,7 +29,7 @@
     "sass-loader": "13.3.2",
     "vue": "3.3.8",
     "vuepress-theme-hope": "workspace:*",
-    "vuepress-vite": "2.0.0-beta.68",
-    "vuepress-webpack": "2.0.0-beta.68"
+    "vuepress-vite": "2.0.0-rc.0",
+    "vuepress-webpack": "2.0.0-rc.0"
   }
 }

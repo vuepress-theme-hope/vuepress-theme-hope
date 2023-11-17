@@ -23,7 +23,7 @@ export const pwaPlugin =
   (app) => {
     // TODO: Remove this in v2 stable
     if (legacy) convertOptions(options as PWAOptions & Record<string, unknown>);
-    checkVersion(app, PLUGIN_NAME, "2.0.0-beta.68");
+    checkVersion(app, PLUGIN_NAME, "2.0.0-rc.0");
 
     if (app.env.isDebug) logger.info("Options:", options);
 

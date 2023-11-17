@@ -86,7 +86,7 @@ export const mdEnhancePlugin =
         options as MarkdownEnhanceOptions & Record<string, unknown>,
       );
 
-    checkVersion(app, PLUGIN_NAME, "2.0.0-beta.68");
+    checkVersion(app, PLUGIN_NAME, "2.0.0-rc.0");
 
     if (app.env.isDebug) logger.info("Options:", options);
 

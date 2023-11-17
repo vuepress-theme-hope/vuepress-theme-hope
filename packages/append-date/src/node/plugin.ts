@@ -19,7 +19,7 @@ const require = createRequire(import.meta.url);
 export const appendDatePlugin =
   ({ key = "date", format = "date" }: AppendDateOptions = {}): PluginFunction =>
   (app) => {
-    checkVersion(app, PLUGIN_NAME, "2.0.0-beta.68");
+    checkVersion(app, PLUGIN_NAME, "2.0.0-rc.0");
 
     return {
       name: PLUGIN_NAME,

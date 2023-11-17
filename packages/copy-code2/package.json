@@ -50,9 +50,9 @@
     "yarn": ">=2"
   },
   "dependencies": {
-    "@vuepress/client": "2.0.0-beta.68",
-    "@vuepress/shared": "2.0.0-beta.68",
-    "@vuepress/utils": "2.0.0-beta.68",
+    "@vuepress/client": "2.0.0-rc.0",
+    "@vuepress/shared": "2.0.0-rc.0",
+    "@vuepress/utils": "2.0.0-rc.0",
     "@vueuse/core": "^10.6.1",
     "balloon-css": "^1.2.0",
     "vue": "^3.3.8",
@@ -61,13 +61,13 @@
     "vuepress-shared": "workspace:*"
   },
   "devDependencies": {
-    "@vuepress/core": "2.0.0-beta.68"
+    "@vuepress/core": "2.0.0-rc.0"
   },
   "peerDependencies": {
     "sass-loader": "^13.3.2",
-    "vuepress": "2.0.0-beta.68",
-    "vuepress-vite": "2.0.0-beta.68",
-    "vuepress-webpack": "2.0.0-beta.68"
+    "vuepress": "2.0.0-rc.0",
+    "vuepress-vite": "2.0.0-rc.0",
+    "vuepress-webpack": "2.0.0-rc.0"
   },
   "peerDependenciesMeta": {
     "sass-loader": {

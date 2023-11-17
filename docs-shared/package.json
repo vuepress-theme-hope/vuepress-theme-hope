@@ -1,6 +1,5 @@
 {
   "name": "docs-shared",
-  "version": "2.0.0-beta.138",
   "private": true,
   "description": "Shared files for docs",
   "license": "MIT",
@@ -33,12 +32,12 @@
   },
   "dependencies": {
     "@types/three": "0.158.2",
-    "@vuepress/cli": "2.0.0-beta.68",
-    "@vuepress/client": "2.0.0-beta.68",
-    "@vuepress/core": "2.0.0-beta.68",
-    "@vuepress/plugin-docsearch": "2.0.0-beta.68",
-    "@vuepress/shared": "2.0.0-beta.68",
-    "@vuepress/utils": "2.0.0-beta.68",
+    "@vuepress/cli": "2.0.0-rc.0",
+    "@vuepress/client": "2.0.0-rc.0",
+    "@vuepress/core": "2.0.0-rc.0",
+    "@vuepress/plugin-docsearch": "2.0.0-rc.0",
+    "@vuepress/shared": "2.0.0-rc.0",
+    "@vuepress/utils": "2.0.0-rc.0",
     "three": "0.158.0",
     "vue": "3.3.8",
     "vuepress-plugin-redirect": "workspace:*",
@@ -46,6 +45,6 @@
     "vuepress-theme-hope": "workspace:*"
   },
   "devDependencies": {
-    "@vuepress/bundler-vite": "2.0.0-beta.68"
+    "@vuepress/bundler-vite": "2.0.0-rc.0"
   }
 }

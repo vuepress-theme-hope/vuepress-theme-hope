@@ -15,7 +15,7 @@ import { CLIENT_FOLDER, PLUGIN_NAME, logger } from "./utils.js";
 export const copyCodePlugin =
   (options: CopyCodeOptions = {}): PluginFunction =>
   (app) => {
-    checkVersion(app, PLUGIN_NAME, "2.0.0-beta.68");
+    checkVersion(app, PLUGIN_NAME, "2.0.0-rc.0");
 
     if (app.env.isDebug) logger.info("Options:", options);
 

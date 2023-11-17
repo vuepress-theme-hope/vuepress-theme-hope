@@ -2,10 +2,8 @@ export {
   ensureEndingSlash,
   ensureLeadingSlash,
   isLinkExternal,
-  isLinkFtp,
   isLinkHttp,
-  isLinkMailto,
-  isLinkTel,
+  isLinkWithProtocol,
   removeEndingSlash,
   removeLeadingSlash,
 } from "@vuepress/shared";
