@@ -56,7 +56,7 @@ export default defineComponent({
         h(
           "div",
           { class: "vp-blog-type-switcher" },
-          buttons.map(([key, icon]) =>
+          buttons.map(([key, Icon]) =>
             h(
               "button",
               {
@@ -73,7 +73,7 @@ export default defineComponent({
                   "aria-label": locale.value[key],
                   "data-balloon-pos": "up",
                 },
-                h(icon),
+                h(Icon),
               ),
             ),
           ),
@@ -82,7 +82,7 @@ export default defineComponent({
         h(DropTransition, () =>
           // article
           active.value === "article"
-            ? h("div", { class: "vp-sticky-article-wrapper" }, [
+            ? h("div", { class: "vp-star-article-wrapper" }, [
                 h(
                   "div",
                   {
@@ -98,7 +98,7 @@ export default defineComponent({
                 h("hr"),
                 h(
                   "ul",
-                  { class: "vp-sticky-articles" },
+                  { class: "vp-star-articles" },
                   stars.value.items.map(({ info, path }, index) =>
                     h(
                       DropTransition,
@@ -106,7 +106,7 @@ export default defineComponent({
                       () =>
                         h(
                           "li",
-                          { class: "vp-sticky-article" },
+                          { class: "vp-star-article" },
                           h(
                             VPLink,
                             { to: path },
