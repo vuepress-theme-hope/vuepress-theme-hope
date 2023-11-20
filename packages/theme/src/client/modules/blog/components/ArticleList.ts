@@ -106,7 +106,7 @@ export default defineComponent({
     return (): VNode =>
       h(
         "div",
-        { id: "article-list", class: "vp-article-list" },
+        { id: "article-list", class: "vp-article-list", role: "feed" },
         currentArticles.value.length
           ? [
               ...currentArticles.value.map(({ info, path }, index) =>
