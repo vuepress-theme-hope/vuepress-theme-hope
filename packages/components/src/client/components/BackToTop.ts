@@ -56,7 +56,7 @@ export default defineComponent({
     );
 
     const progress = computed(
-      () => y.value / (bodyHeight.value - windowHeight.value),
+      () => (y.value / (bodyHeight.value - windowHeight.value)) * 100,
     );
 
     onMounted(() => {
@@ -83,19 +83,27 @@ export default defineComponent({
                 props.noProgress
                   ? null
                   : h(
-                      "svg",
-                      { class: "vp-scroll-progress" },
-                      h("circle", {
-                        cx: "50%",
-                        cy: "50%",
-                        style: {
-                          "stroke-dasharray": `calc(${
-                            Math.PI * progress.value * 100
-                          }% - ${4 * Math.PI}px) calc(${Math.PI * 100}% - ${
-                            4 * Math.PI
-                          }px)`,
-                        },
-                      }),
+                      "span",
+                      {
+                        class: "vp-scroll-progress",
+                        role: "progressbar",
+                        "aria-labelledby": "loadinglabel",
+                        "aria-valuenow": progress.value,
+                      },
+                      h(
+                        "svg",
+                        h("circle", {
+                          cx: "50%",
+                          cy: "50%",
+                          style: {
+                            "stroke-dasharray": `calc(${
+                              Math.PI * progress.value
+                            }% - ${4 * Math.PI}px) calc(${Math.PI * 100}% - ${
+                              4 * Math.PI
+                            }px)`,
+                          },
+                        }),
+                      ),
                     ),
                 h(BackToTopIcon),
               ],
