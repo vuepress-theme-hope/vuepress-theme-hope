@@ -1,12 +1,12 @@
 import type { App } from "@vuepress/core";
-import { createPage } from "@vuepress/core";
 import { colors } from "@vuepress/utils";
 import { isString, removeLeadingSlash } from "vuepress-shared/node";
 
-import type { BlogOptions } from "./options.js";
-import type { PageMap } from "./typings/index.js";
-import { logger } from "./utils.js";
-import type { TypeMap } from "../shared/index.js";
+import { addPage } from "./addPage.js";
+import type { TypeMap } from "../../shared/index.js";
+import type { BlogOptions } from "../options.js";
+import type { PageMap } from "../typings/index.js";
+import { logger } from "../utils.js";
 
 const HMR_CODE = `
 if (import.meta.webpackHot) {
@@ -25,7 +25,7 @@ export const prepareType = (
   app: App,
   { type, slugify }: Required<Pick<BlogOptions, "type" | "slugify">>,
   pageMap: PageMap,
-  init = false,
+  allowOverride = false,
 ): Promise<string[]> =>
   Promise.all(
     type.map(
@@ -40,7 +40,7 @@ export const prepareType = (
         },
         index,
       ) => {
-        if (!isString(key) || !key.length) {
+        if (!isString(key) || !key) {
           logger.error(
             `Invalid ${colors.magenta("key")} option ${colors.cyan(
               key,
@@ -63,32 +63,25 @@ export const prepareType = (
             .map(({ key }) => key);
 
           if (path) {
-            const pagePath = `${localePath}${removeLeadingSlash(
-              slugify(path.replace(/:key/g, key)),
-            )}`;
-
-            const page = await createPage(app, {
-              path: encodeURI(pagePath),
-              frontmatter: {
-                ...frontmatter(localePath),
-                blog: {
-                  type: "type",
-                  key,
+            const page = await addPage(
+              app,
+              {
+                path: encodeURI(
+                  `${localePath}${removeLeadingSlash(
+                    slugify(path.replace(/:key/g, key)),
+                  )}`,
+                ),
+                frontmatter: {
+                  ...frontmatter(localePath),
+                  blog: {
+                    type: "type",
+                    key,
+                  },
+                  layout,
                 },
-                layout,
               },
-            });
-
-            const index = app.pages.findIndex(({ path }) => path === pagePath);
-
-            if (index === -1) {
-              app.pages.push(page);
-            } else if (app.pages[index].key !== page.key) {
-              app.pages.splice(index, 1, page);
-
-              if (init)
-                logger.warn(`Overriding existed path ${colors.cyan(pagePath)}`);
-            }
+              allowOverride,
+            );
 
             pageKeys.push(page.key);
 

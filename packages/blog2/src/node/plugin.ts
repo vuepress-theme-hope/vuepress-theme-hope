@@ -13,10 +13,9 @@ import {
   getPageExcerpt,
 } from "vuepress-shared/node";
 
-import { prepareCategory } from "./category.js";
 import { convertOptions } from "./compact.js";
+import { prepareCategory, prepareType } from "./generator/index.js";
 import type { BlogOptions, PageWithExcerpt } from "./options.js";
-import { prepareType } from "./type.js";
 import { PLUGIN_NAME, getPageMap, logger } from "./utils.js";
 
 export const blogPlugin =
@@ -86,16 +85,14 @@ export const blogPlugin =
         });
 
         return Promise.all([
-          prepareCategory(app, { category, slugify }, pageMap, true).then(
+          prepareCategory(app, { category, slugify }, pageMap).then(
             (pageKeys) => {
               generatePageKeys.push(...pageKeys);
             },
           ),
-          prepareType(app, { type, slugify }, pageMap, true).then(
-            (pageKeys) => {
-              generatePageKeys.push(...pageKeys);
-            },
-          ),
+          prepareType(app, { type, slugify }, pageMap).then((pageKeys) => {
+            generatePageKeys.push(...pageKeys);
+          }),
         ]).then(() => {
           if (app.env.isDebug) logger.info("temp file generated");
         });
@@ -117,14 +114,16 @@ export const blogPlugin =
             const pageMap = getPageMap(app, filter);
 
             return Promise.all([
-              prepareCategory(app, { category, slugify }, pageMap).then(
+              prepareCategory(app, { category, slugify }, pageMap, true).then(
                 (pageKeys) => {
                   newGeneratedPageKeys.push(...pageKeys);
                 },
               ),
-              prepareType(app, { type, slugify }, pageMap).then((pageKeys) => {
-                newGeneratedPageKeys.push(...pageKeys);
-              }),
+              prepareType(app, { type, slugify }, pageMap, true).then(
+                (pageKeys) => {
+                  newGeneratedPageKeys.push(...pageKeys);
+                },
+              ),
             ]).then(async () => {
               const pagesToBeRemoved = generatePageKeys.filter(
                 (key) => !newGeneratedPageKeys.includes(key),
