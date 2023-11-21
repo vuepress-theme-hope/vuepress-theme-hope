@@ -43,7 +43,7 @@ tag:
 
 - `docsRepo`: 文档仓库地址，默认同主题选项中的 `repo`
 - `docsDir`: 文档在仓库中的目录，默认为根目录
-- `docsBranch`: 文档存放的分值，默认为 `"main"`
+- `docsBranch`: 文档存放的分支，默认为 `"main"`
 
 ## 显示控制
 
