@@ -1,9 +1,8 @@
-import { usePageFrontmatter, useRouteLocale } from "@vuepress/client";
+import { resolve, usePageFrontmatter, useRouteLocale } from "@vuepress/client";
 import type { ComputedRef } from "vue";
 import { computed, ref } from "vue";
-import { useRouter } from "vue-router";
-import { resolveRouteWithRedirect } from "vuepress-shared/client";
 
+import { store } from "@temp/blog/store";
 import { typeMap } from "@temp/blog/type";
 
 import type {
@@ -21,9 +20,8 @@ export const blogTypeMap = ref(typeMap);
 export const useBlogType = <
   T extends Record<string, unknown> = Record<string, unknown>,
 >(
-  key = "",
+  key = ""
 ): ComputedRef<BlogTypeData<T>> => {
-  const router = useRouter();
   const routeLocale = useRouteLocale();
 
   return computed(() => {
@@ -43,27 +41,19 @@ export const useBlogType = <
     if (!blogTypeMap.value[mapKey])
       throw new Error(`useBlogType: key ${key} is invalid`);
 
-    const routes = router.getRoutes();
     const configMap = blogTypeMap.value[mapKey][routeLocale.value];
     const result: BlogTypeData<T> = {
       path: configMap.path,
       items: [],
     };
 
-    for (const pageKey of configMap.keys) {
-      const route = routes.find(({ name }) => name === pageKey);
+    for (const index of configMap.items) {
+      const { path, meta } = resolve(store[index]);
 
-      if (route) {
-        const finalRoute = resolveRouteWithRedirect(router, route.path);
-
-        result.items.push({
-          path: finalRoute.path,
-          info:
-            BLOG_META_SCOPE === ""
-              ? <T>finalRoute.meta
-              : <T>finalRoute.meta[BLOG_META_SCOPE],
-        });
-      }
+      result.items.push({
+        path,
+        info: BLOG_META_SCOPE === "" ? <T>meta : <T>meta[BLOG_META_SCOPE],
+      });
     }
 
     return result;
@@ -73,7 +63,7 @@ export const useBlogType = <
 // @ts-ignore
 if (__VUEPRESS_DEV__ && (import.meta.webpackHot || import.meta.hot))
   __VUE_HMR_RUNTIME__["updateBlogType"] = (
-    map: Record<string, TypeMap>,
+    map: Record<string, TypeMap>
   ): void => {
     blogTypeMap.value = map;
   };

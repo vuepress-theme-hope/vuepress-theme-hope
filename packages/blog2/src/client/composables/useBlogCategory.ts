@@ -1,14 +1,14 @@
 import {
+  resolve,
   usePageData,
   usePageFrontmatter,
   useRouteLocale,
 } from "@vuepress/client";
 import type { ComputedRef } from "vue";
 import { computed, ref } from "vue";
-import { useRouter } from "vue-router";
-import { resolveRouteWithRedirect } from "vuepress-shared/client";
 
 import { categoryMap } from "@temp/blog/category";
+import { store } from "@temp/blog/store";
 
 import type {
   BlogCategoryFrontmatterOptions,
@@ -26,10 +26,9 @@ export const blogCategoryMap = ref(categoryMap);
 export const useBlogCategory = <
   T extends Record<string, unknown> = Record<string, unknown>,
 >(
-  key = "",
+  key = ""
 ): ComputedRef<BlogCategoryData<T>> => {
   const page = usePageData();
-  const router = useRouter();
   const routeLocale = useRouteLocale();
 
   return computed(() => {
@@ -46,8 +45,6 @@ export const useBlogCategory = <
       return { path: "/", map: {} };
     }
 
-    const routes = router.getRoutes();
-
     if (!blogCategoryMap.value[mapKey])
       throw new Error(`useBlogCategory: key ${mapKey} is invalid`);
 
@@ -62,20 +59,13 @@ export const useBlogCategory = <
 
       result.map[category] = { path: categoryMap.path, items: [] };
 
-      for (const pageKey of categoryMap.keys) {
-        const route = routes.find(({ name }) => name === pageKey);
+      for (const index of categoryMap.items) {
+        const { path, meta } = resolve(store[index]);
 
-        if (route) {
-          const finalRoute = resolveRouteWithRedirect(router, route.path);
-
-          result.map[category].items.push({
-            path: finalRoute.path,
-            info:
-              BLOG_META_SCOPE === ""
-                ? <T>finalRoute.meta
-                : <T>finalRoute.meta[BLOG_META_SCOPE],
-          });
-        }
+        result.map[category].items.push({
+          path,
+          info: BLOG_META_SCOPE === "" ? <T>meta : <T>meta[BLOG_META_SCOPE],
+        });
       }
 
       if (page.value.path === categoryMap.path)
@@ -89,7 +79,7 @@ export const useBlogCategory = <
 // @ts-ignore
 if (__VUEPRESS_DEV__ && (import.meta.webpackHot || import.meta.hot))
   __VUE_HMR_RUNTIME__["updateBlogCategory"] = (
-    map: Record<string, CategoryMap>,
+    map: Record<string, CategoryMap>
   ): void => {
     blogCategoryMap.value = map;
   };

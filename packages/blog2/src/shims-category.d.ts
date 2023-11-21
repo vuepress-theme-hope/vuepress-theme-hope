@@ -1,7 +1,7 @@
 declare module "@temp/blog/category" {
   interface CategoryConfig {
     path: string;
-    keys: string[];
+    items: number[];
   }
 
   type CategoryLocaleMap = Record<

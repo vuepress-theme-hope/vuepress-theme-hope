@@ -1,7 +1,7 @@
 declare module "@temp/blog/type" {
   interface TypeConfig {
     path: string;
-    keys: string[];
+    items: number[];
   }
 
   type TypeMap = Record<

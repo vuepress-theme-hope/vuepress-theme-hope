@@ -3,6 +3,7 @@ import { colors } from "@vuepress/utils";
 import { isFunction, isString, removeLeadingSlash } from "vuepress-shared/node";
 
 import { addPage } from "./addPage.js";
+import type { Store } from "./store.js";
 import type { CategoryMap } from "../../shared/index.js";
 import type { BlogOptions } from "../options.js";
 import type { PageMap } from "../typings/index.js";
@@ -26,7 +27,8 @@ export const prepareCategory = (
   app: App,
   { category, slugify }: Required<Pick<BlogOptions, "category" | "slugify">>,
   pageMap: PageMap,
-  allowOverride = false,
+  store: Store,
+  allowOverride = false
 ): Promise<string[]> =>
   Promise.all(
     category.map(
@@ -42,14 +44,14 @@ export const prepareCategory = (
           itemLayout = "Layout",
           itemFrontmatter = (): Record<string, string> => ({}),
         },
-        index,
+        index
       ) => {
         // check key option
         if (!isString(key) || !key) {
           logger.error(
             `Invalid ${colors.magenta("key")} option ${colors.cyan(
-              key,
-            )} in ${colors.cyan(`category[${index}]`)}`,
+              key
+            )} in ${colors.cyan(`category[${index}]`)}`
           );
 
           return null;
@@ -59,8 +61,8 @@ export const prepareCategory = (
         if (!isFunction(getter)) {
           logger.error(
             `Invalid ${colors.magenta("getter")} option in "${colors.cyan(
-              `category[${index}]`,
-            )}", it should be a function!`,
+              `category[${index}]`
+            )}", it should be a function!`
           );
 
           return null;
@@ -84,7 +86,7 @@ export const prepareCategory = (
         for (const localePath in pageMap) {
           if (path) {
             const pagePath = `${localePath}${removeLeadingSlash(
-              path.replace(/:key/g, slugify(key)),
+              path.replace(/:key/g, slugify(key))
             )}`;
 
             const page = await addPage(
@@ -100,7 +102,7 @@ export const prepareCategory = (
                   layout,
                 },
               },
-              allowOverride,
+              allowOverride
             );
 
             pageKeys.push(page.key);
@@ -141,19 +143,19 @@ export const prepareCategory = (
                         layout: itemLayout,
                       },
                     },
-                    allowOverride,
+                    allowOverride
                   );
 
                   pageKeys.push(page.key);
 
                   map[category] = {
                     path: page.path,
-                    keys: [],
+                    items: [],
                   };
                 } else {
                   map[category] = {
                     path: "",
-                    keys: [],
+                    items: [],
                   };
                 }
 
@@ -165,19 +167,19 @@ export const prepareCategory = (
           }
 
           for (const category in pageMapStore)
-            map[category].keys = pageMapStore[category]
-              .sort(sorter)
-              .map(({ key }) => key);
+            map[category].items = store.addItems(
+              pageMapStore[category].sort(sorter).map(({ path }) => path)
+            );
 
           if (app.env.isDebug) {
             let infoMessage = `Route ${localePath} in ${key} category:\n`;
 
             for (const category in map) {
-              const { path, keys } = map[category];
+              const { path, items } = map[category];
 
               infoMessage += `name: ${category}; ${
                 path ? `path: ${path}; ` : ""
-              }items: ${keys.length}\n`;
+              }items: ${items.length}\n`;
             }
 
             logger.info(infoMessage);
@@ -189,8 +191,8 @@ export const prepareCategory = (
           map: categoryMap,
           pageKeys,
         };
-      },
-    ),
+      }
+    )
   ).then(async (result) => {
     const finalMap: Record<string, CategoryMap> = {};
     const keys: string[] = [];
@@ -198,12 +200,12 @@ export const prepareCategory = (
     result
       .filter(
         (
-          item,
+          item
         ): item is {
           key: string;
           map: CategoryMap;
           pageKeys: string[];
-        } => item !== null,
+        } => item !== null
       )
       .forEach(({ key, map, pageKeys }) => {
         finalMap[key] = map;
@@ -215,7 +217,7 @@ export const prepareCategory = (
       `\
 export const categoryMap = ${JSON.stringify(finalMap)};
 ${app.env.isDev ? HMR_CODE : ""}
-`,
+`
     );
 
     if (app.env.isDebug) logger.info("All categories generated.");
