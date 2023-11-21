@@ -2,12 +2,14 @@ import type { BasePageFrontMatter } from "vuepress-shared";
 
 export interface BlogCategoryFrontmatterOptions {
   type: "category";
+
   /**
    * Unique key under current category
    *
    * 在当前分类下全局唯一的 key
    */
   key: string;
+
   /**
    * Current category name
    *
@@ -22,6 +24,7 @@ export interface BlogCategoryFrontmatterOptions {
 
 export interface BlogTypeFrontmatterOptions {
   type: "type";
+
   /**
    * Unique key under current category
    *

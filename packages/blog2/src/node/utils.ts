@@ -7,6 +7,23 @@ export const PLUGIN_NAME = "vuepress-plugin-blog2";
 
 export const logger = new Logger(PLUGIN_NAME);
 
+const CHARS = "9abcdefghigklmnopqrstuvwxyzABCDEFGHIGKLMNOPQRSTUVWXYZ".split("");
+const radix = CHARS.length;
+
+export const codeDecimal = (index: number): string => {
+  let qutient = index;
+  let result = "";
+
+  do {
+    const mod = qutient % radix;
+
+    qutient = (qutient - mod) / radix;
+    result = CHARS[mod] + result;
+  } while (qutient);
+
+  return result;
+};
+
 export const getPageMap = (
   { options, pages }: App,
   filter: (page: Page) => boolean,
