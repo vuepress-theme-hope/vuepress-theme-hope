@@ -15,7 +15,7 @@
     "demo:webpack-dev": "vuepress-webpack dev src"
   },
   "devDependencies": {
-    "@vue/repl": "2.7.0",
+    "@vue/repl": "2.8.0",
     "@vuepress/cli": "2.0.0-rc.0",
     "@vuepress/client": "2.0.0-rc.0",
     "@vuepress/plugin-docsearch": "2.0.0-rc.0",

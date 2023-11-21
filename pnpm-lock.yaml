@@ -439,8 +439,8 @@ importers:
   demo/md-enhance:
     devDependencies:
       '@vue/repl':
-        specifier: 2.7.0
-        version: 2.7.0
+        specifier: 2.8.0
+        version: 2.8.0
       '@vuepress/cli':
         specifier: 2.0.0-rc.0
         version: 2.0.0-rc.0(typescript@5.2.2)
@@ -682,8 +682,8 @@ importers:
   demo/theme-blog:
     devDependencies:
       '@vue/repl':
-        specifier: 2.7.0
-        version: 2.7.0
+        specifier: 2.8.0
+        version: 2.8.0
       '@vuepress/cli':
         specifier: 2.0.0-rc.0
         version: 2.0.0-rc.0(typescript@5.2.2)
@@ -739,8 +739,8 @@ importers:
   demo/theme-docs:
     devDependencies:
       '@vue/repl':
-        specifier: 2.7.0
-        version: 2.7.0
+        specifier: 2.8.0
+        version: 2.8.0
       '@vuepress/cli':
         specifier: 2.0.0-rc.0
         version: 2.0.0-rc.0(typescript@5.2.2)
@@ -5875,6 +5875,11 @@ packages:
 
   /@vue/repl@2.7.0:
     resolution: {integrity: sha512-zzyb+tVvzmOePv8Gp4sefP/7CKidx4WiJDfKPP698b9bN5jSFtmSOg4nvPoJEE1ICKeAEgdRKVneYJ8Mp7C/WA==}
+    dev: false
+
+  /@vue/repl@2.8.0:
+    resolution: {integrity: sha512-coXgyoga7+G7BO2ENlfe/0b0vqrT8FasFguaksjrQzpEVC28r6S7+YDhhS6GZnuNhnS8gDqZx7yrXsTOqXsDFg==}
+    dev: true
 
   /@vue/runtime-core@3.3.8:
     resolution: {integrity: sha512-qurzOlb6q26KWQ/8IShHkMDOuJkQnQcTIp1sdP4I9MbCf9FJeGVRXJFr2mF+6bXh/3Zjr9TDgURXrsCr9bfjUw==}
