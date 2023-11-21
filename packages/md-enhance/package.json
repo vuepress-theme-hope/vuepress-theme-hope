@@ -98,7 +98,7 @@
     "@mdit/plugin-tasklist": "^0.6.5",
     "@mdit/plugin-tex": "^0.6.5",
     "@mdit/plugin-uml": "^0.6.5",
-    "@types/markdown-it": "^13.0.6",
+    "@types/markdown-it": "^13.0.7",
     "@vuepress/client": "2.0.0-rc.0",
     "@vuepress/shared": "2.0.0-rc.0",
     "@vuepress/utils": "2.0.0-rc.0",
@@ -112,16 +112,16 @@
     "vuepress-shared": "workspace:*"
   },
   "devDependencies": {
-    "@types/babel__core": "7.20.4",
+    "@types/babel__core": "7.20.5",
     "@vuepress/bundler-vite": "2.0.0-rc.0",
     "@vuepress/core": "2.0.0-rc.0",
     "@vuepress/markdown": "2.0.0-rc.0",
-    "typescript": "5.2.2"
+    "typescript": "5.3.2"
   },
   "peerDependencies": {
     "@types/js-yaml": "^4.0.9",
     "@types/reveal.js": "^4.4.5",
-    "@vue/repl": "^2.7.0",
+    "@vue/repl": "^2.8.0",
     "chart.js": "^4.4.0",
     "echarts": "^5.4.3",
     "flowchart.ts": "^1.0.1",
