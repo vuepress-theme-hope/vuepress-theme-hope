@@ -2,7 +2,7 @@
 
 All notable changes to this project will be documented in this file. See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
-<!-- #region recent-beta -->
+<!-- #region recent-change -->
 
 ## [2.0.0-rc.0](https://github.com/vuepress-theme-hope/vuepress-theme-hope/compare/v2.0.0-beta.252...v2.0.0-rc.0) (2023-11-17)
 
@@ -230,6 +230,8 @@ All notable changes to this project will be documented in this file. See [Conven
 - **shared:** improve compareDate ([fd9494b](https://github.com/vuepress-theme-hope/vuepress-theme-hope/commit/fd9494b47836bf9dfa7cacfcea585617625e2cb2))
 - **theme:** remove workaround ([eba8720](https://github.com/vuepress-theme-hope/vuepress-theme-hope/commit/eba872022688890656264fab720de14a0108fe51))
 - **theme:** split pageview chunk ([a9bc830](https://github.com/vuepress-theme-hope/vuepress-theme-hope/commit/a9bc830c327c1e02a4659edb08e0a7f87c989928))
+
+<!-- #endregion recent-change -->
 
 ## [2.0.0-beta.237](https://github.com/vuepress-theme-hope/vuepress-theme-hope/compare/v2.0.0-beta.236...v2.0.0-beta.237) (2023-09-05)
 
@@ -471,8 +473,6 @@ All notable changes to this project will be documented in this file. See [Conven
 ### Performance Improvements
 
 - **theme:** use functional component and small tweaks ([42e92e8](https://github.com/vuepress-theme-hope/vuepress-theme-hope/commit/42e92e8de34cab9fe877fc0b34ea9d8274c8c705))
-
-<!-- #endregion recent-beta -->
 
 ## [2.0.0-beta.218](https://github.com/vuepress-theme-hope/vuepress-theme-hope/compare/v2.0.0-beta.217...v2.0.0-beta.218) (2023-05-31)
 
