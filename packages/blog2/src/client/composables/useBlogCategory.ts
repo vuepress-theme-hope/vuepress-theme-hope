@@ -26,7 +26,7 @@ export const blogCategoryMap = ref(categoryMap);
 export const useBlogCategory = <
   T extends Record<string, unknown> = Record<string, unknown>,
 >(
-  key = ""
+  key = "",
 ): ComputedRef<BlogCategoryData<T>> => {
   const page = usePageData();
   const routeLocale = useRouteLocale();
@@ -79,7 +79,7 @@ export const useBlogCategory = <
 // @ts-ignore
 if (__VUEPRESS_DEV__ && (import.meta.webpackHot || import.meta.hot))
   __VUE_HMR_RUNTIME__["updateBlogCategory"] = (
-    map: Record<string, CategoryMap>
+    map: Record<string, CategoryMap>,
   ): void => {
     blogCategoryMap.value = map;
   };

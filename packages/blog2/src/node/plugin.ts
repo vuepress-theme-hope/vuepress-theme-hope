@@ -94,12 +94,12 @@ export const blogPlugin =
           prepareCategory(app, { category, slugify }, pageMap, store).then(
             (pageKeys) => {
               generatePageKeys.push(...pageKeys);
-            }
+            },
           ),
           prepareType(app, { type, slugify }, pageMap, store).then(
             (pageKeys) => {
               generatePageKeys.push(...pageKeys);
-            }
+            },
           ),
         ])
           .then(() => prepareStore(app, store))
@@ -129,29 +129,29 @@ export const blogPlugin =
                 { category, slugify },
                 pageMap,
                 store,
-                true
+                true,
               ).then((pageKeys) => {
                 newGeneratedPageKeys.push(...pageKeys);
               }),
               prepareType(app, { type, slugify }, pageMap, store, true).then(
                 (pageKeys) => {
                   newGeneratedPageKeys.push(...pageKeys);
-                }
+                },
               ),
             ]).then(async () => {
               await prepareStore(app, store);
 
               const pagesToBeRemoved = generatePageKeys.filter(
-                (key) => !newGeneratedPageKeys.includes(key)
+                (key) => !newGeneratedPageKeys.includes(key),
               );
               const pagesToBeAdded = newGeneratedPageKeys.filter(
-                (key) => !generatePageKeys.includes(key)
+                (key) => !generatePageKeys.includes(key),
               );
 
               if (pagesToBeAdded.length) {
                 if (app.env.isDebug)
                   logger.info(
-                    `New pages detected: ${pagesToBeAdded.toString()}`
+                    `New pages detected: ${pagesToBeAdded.toString()}`,
                   );
 
                 // prepare page files
@@ -159,13 +159,13 @@ export const blogPlugin =
                   pagesToBeAdded.map(async (pageKey) => {
                     await preparePageComponent(
                       app,
-                      app.pages.find(({ key }) => key === pageKey)!
+                      app.pages.find(({ key }) => key === pageKey)!,
                     );
                     await preparePageData(
                       app,
-                      app.pages.find(({ key }) => key === pageKey)!
+                      app.pages.find(({ key }) => key === pageKey)!,
                     );
-                  })
+                  }),
                 );
               }
 
@@ -173,13 +173,13 @@ export const blogPlugin =
               if (pagesToBeRemoved.length) {
                 if (app.env.isDebug)
                   logger.info(
-                    `Removing following pages: ${pagesToBeRemoved.toString()}`
+                    `Removing following pages: ${pagesToBeRemoved.toString()}`,
                   );
 
                 pagesToBeRemoved.forEach((pageKey) => {
                   app.pages.splice(
                     app.pages.findIndex(({ key }) => key === pageKey),
-                    1
+                    1,
                   );
                 });
               }

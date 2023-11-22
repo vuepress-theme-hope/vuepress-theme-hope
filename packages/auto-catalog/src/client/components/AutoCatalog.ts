@@ -133,7 +133,7 @@ export default defineComponent({
 
           if (base === "/") {
             const otherLocales = keys(siteData.value.locales).filter(
-              (item) => item !== "/"
+              (item) => item !== "/",
             );
 
             // exclude 404 page and other locales
@@ -172,7 +172,7 @@ export default defineComponent({
         .sort(
           (
             { title: titleA, level: levelA, path: pathA, order: orderA },
-            { title: titleB, level: levelB, path: pathB, order: orderB }
+            { title: titleB, level: levelB, path: pathB, order: orderB },
           ) => {
             const level = levelA - levelB;
 
@@ -209,7 +209,7 @@ export default defineComponent({
             if (orderB < 0) return orderA - orderB;
 
             return 1;
-          }
+          },
         )
         .forEach((info) => {
           const { base, level } = info;
@@ -228,12 +228,12 @@ export default defineComponent({
 
             default: {
               const grandParent = result.find(
-                (item) => item.path === base.replace(/\/[^/]+\/$/, "/")
+                (item) => item.path === base.replace(/\/[^/]+\/$/, "/"),
               );
 
               if (grandParent) {
                 const parent = grandParent.children?.find(
-                  (item) => item.path === base
+                  (item) => item.path === base,
                 );
 
                 if (parent) (parent.children ??= []).push(info);
@@ -291,10 +291,10 @@ export default defineComponent({
                                   class: "header-anchor",
                                   "aria-hidden": true,
                                 },
-                                "#"
+                                "#",
                               ),
                               childLink,
-                            ]
+                            ],
                           ),
                           children.length
                             ? h(
@@ -318,7 +318,7 @@ export default defineComponent({
                                               href: `#${title}`,
                                               class: "header-anchor",
                                             },
-                                            "#"
+                                            "#",
                                           ),
                                           h(CatalogLink, {
                                             title,
@@ -326,7 +326,7 @@ export default defineComponent({
                                             icon,
                                             class: "vp-catalog-title",
                                           }),
-                                        ]
+                                        ],
                                       ),
                                       children.length
                                         ? h(
@@ -351,7 +351,7 @@ export default defineComponent({
                                                       {
                                                         class: "vp-sub-catalog",
                                                       },
-                                                      subLink
+                                                      subLink,
                                                     )
                                                   : h(CatalogLink, {
                                                       title,
@@ -360,21 +360,25 @@ export default defineComponent({
                                                       class:
                                                         "vp-sub-catalog-link",
                                                     });
-                                              }
-                                            )
+                                              },
+                                            ),
                                           )
                                         : null,
-                                    ])
-                                )
+                                    ]),
+                                ),
                               )
                             : null,
                         ]
-                      : h("div", { class: "vp-catalog-child-title" }, childLink)
+                      : h(
+                          "div",
+                          { class: "vp-catalog-child-title" },
+                          childLink,
+                        ),
                   );
-                })
+                }),
               )
             : h("p", { class: "vp-empty-catalog" }, locale.value.empty),
-        ]
+        ],
       );
     };
   },

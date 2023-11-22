@@ -39,6 +39,6 @@ export const prepareStore = async (app: App, store: Store): Promise<void> => {
     `blog/store.js`,
     `\
 export const store = ${store.toJSON()};
-`
+`,
   );
 };

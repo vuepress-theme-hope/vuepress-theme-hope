@@ -17,7 +17,7 @@ import type { ResolvedThemeNavbarItem } from "../utils/index.js";
 
 export const resolveNavbarItem = (
   item: NavbarItem | NavbarGroup | string,
-  prefix = ""
+  prefix = "",
 ): ResolvedThemeNavbarItem => {
   if (isString(item)) return resolveLinkInfo(`${prefix}${item}`);
 
@@ -31,7 +31,7 @@ export const resolveNavbarItem = (
         (child) =>
           resolveNavbarItem(child, `${prefix}${item.prefix || ""}`) as
             | NavGroup<AutoLinkOptions>
-            | AutoLinkOptions
+            | AutoLinkOptions,
       ),
     };
 
@@ -53,7 +53,7 @@ export const useNavbarItems = (): ComputedRefWithControl<
 
   const navbarItems = computedWithControl(
     () => themeLocaleData.value.navbar,
-    () => getNavbarItems()
+    () => getNavbarItems(),
   );
 
   return navbarItems;

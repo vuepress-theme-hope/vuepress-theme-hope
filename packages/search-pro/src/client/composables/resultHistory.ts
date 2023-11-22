@@ -24,7 +24,7 @@ const { resultHistoryCount } = searchProOptions;
 
 const searchProResultStorage = useLocalStorage<SearchResult[]>(
   SEARCH_PRO_HISTORY_RESULT_STORAGE,
-  []
+  [],
 );
 
 export const useSearchResultHistory = (): SearchResultHistory => {

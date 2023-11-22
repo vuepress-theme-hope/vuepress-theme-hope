@@ -6,8 +6,8 @@ export const prepareIdMap = async (app: App) => {
     "search-pro/idMap.js",
     `\
 export const idMap = ${JSON.stringify(
-      fromEntries(app.pages.map(({ key, path }) => [key, path]))
+      fromEntries(app.pages.map(({ key, path }) => [key, path])),
     )}
-`
+`,
   );
 };

@@ -20,7 +20,7 @@ export const blogTypeMap = ref(typeMap);
 export const useBlogType = <
   T extends Record<string, unknown> = Record<string, unknown>,
 >(
-  key = ""
+  key = "",
 ): ComputedRef<BlogTypeData<T>> => {
   const routeLocale = useRouteLocale();
 
@@ -63,7 +63,7 @@ export const useBlogType = <
 // @ts-ignore
 if (__VUEPRESS_DEV__ && (import.meta.webpackHot || import.meta.hot))
   __VUE_HMR_RUNTIME__["updateBlogType"] = (
-    map: Record<string, TypeMap>
+    map: Record<string, TypeMap>,
   ): void => {
     blogTypeMap.value = map;
   };

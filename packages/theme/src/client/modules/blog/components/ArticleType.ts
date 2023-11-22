@@ -51,9 +51,9 @@ export default defineComponent({
                 { active: type.path === page.value.path },
               ],
             },
-            h(VPLink, { to: type.path }, () => type.text)
-          )
-        )
+            h(VPLink, { to: type.path }, () => type.text),
+          ),
+        ),
       );
   },
 });

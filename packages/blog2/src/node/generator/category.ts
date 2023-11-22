@@ -28,7 +28,7 @@ export const prepareCategory = (
   { category, slugify }: Required<Pick<BlogOptions, "category" | "slugify">>,
   pageMap: PageMap,
   store: Store,
-  allowOverride = false
+  allowOverride = false,
 ): Promise<string[]> =>
   Promise.all(
     category.map(
@@ -44,14 +44,14 @@ export const prepareCategory = (
           itemLayout = "Layout",
           itemFrontmatter = (): Record<string, string> => ({}),
         },
-        index
+        index,
       ) => {
         // check key option
         if (!isString(key) || !key) {
           logger.error(
             `Invalid ${colors.magenta("key")} option ${colors.cyan(
-              key
-            )} in ${colors.cyan(`category[${index}]`)}`
+              key,
+            )} in ${colors.cyan(`category[${index}]`)}`,
           );
 
           return null;
@@ -61,8 +61,8 @@ export const prepareCategory = (
         if (!isFunction(getter)) {
           logger.error(
             `Invalid ${colors.magenta("getter")} option in "${colors.cyan(
-              `category[${index}]`
-            )}", it should be a function!`
+              `category[${index}]`,
+            )}", it should be a function!`,
           );
 
           return null;
@@ -86,7 +86,7 @@ export const prepareCategory = (
         for (const localePath in pageMap) {
           if (path) {
             const pagePath = `${localePath}${removeLeadingSlash(
-              path.replace(/:key/g, slugify(key))
+              path.replace(/:key/g, slugify(key)),
             )}`;
 
             const page = await addPage(
@@ -102,7 +102,7 @@ export const prepareCategory = (
                   layout,
                 },
               },
-              allowOverride
+              allowOverride,
             );
 
             pageKeys.push(page.key);
@@ -143,7 +143,7 @@ export const prepareCategory = (
                         layout: itemLayout,
                       },
                     },
-                    allowOverride
+                    allowOverride,
                   );
 
                   pageKeys.push(page.key);
@@ -168,7 +168,7 @@ export const prepareCategory = (
 
           for (const category in pageMapStore)
             map[category].items = store.addItems(
-              pageMapStore[category].sort(sorter).map(({ path }) => path)
+              pageMapStore[category].sort(sorter).map(({ path }) => path),
             );
 
           if (app.env.isDebug) {
@@ -191,8 +191,8 @@ export const prepareCategory = (
           map: categoryMap,
           pageKeys,
         };
-      }
-    )
+      },
+    ),
   ).then(async (result) => {
     const finalMap: Record<string, CategoryMap> = {};
     const keys: string[] = [];
@@ -200,12 +200,12 @@ export const prepareCategory = (
     result
       .filter(
         (
-          item
+          item,
         ): item is {
           key: string;
           map: CategoryMap;
           pageKeys: string[];
-        } => item !== null
+        } => item !== null,
       )
       .forEach(({ key, map, pageKeys }) => {
         finalMap[key] = map;
@@ -217,7 +217,7 @@ export const prepareCategory = (
       `\
 export const categoryMap = ${JSON.stringify(finalMap)};
 ${app.env.isDev ? HMR_CODE : ""}
-`
+`,
     );
 
     if (app.env.isDebug) logger.info("All categories generated.");

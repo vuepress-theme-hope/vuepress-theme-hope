@@ -9,7 +9,7 @@ import { ArticleInfoType } from "../../shared/index.js";
  */
 export const resolveLinkInfo = (
   item: string,
-  preferFull = false
+  preferFull = false,
 ): AutoLinkOptions => {
   const { path, meta } = resolve(item);
 

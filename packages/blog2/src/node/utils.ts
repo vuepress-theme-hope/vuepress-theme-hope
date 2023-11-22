@@ -9,7 +9,7 @@ export const logger = new Logger(PLUGIN_NAME);
 
 export const getPageMap = (
   { options, pages }: App,
-  filter: (page: Page) => boolean
+  filter: (page: Page) => boolean,
 ): PageMap => {
   const localePaths = keys(options.locales);
   const pageMap: PageMap = {};

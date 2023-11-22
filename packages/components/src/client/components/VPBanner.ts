@@ -93,7 +93,7 @@ const VPBanner: FunctionalComponent<BannerProps> = ({
                   href: link,
                   target: "_blank",
                 },
-                text
+                text,
               )
             : h(
                 VPLink,
@@ -101,8 +101,8 @@ const VPBanner: FunctionalComponent<BannerProps> = ({
                   class: ["vp-banner-action", type],
                   to: link,
                 },
-                () => text
-              )
+                () => text,
+              ),
         ),
       ]),
     ]),

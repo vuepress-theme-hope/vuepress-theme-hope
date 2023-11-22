@@ -11,7 +11,7 @@ let previousSearchIndexStore: SearchIndexStore | null = null;
 
 export const prepareSearchIndex = async (
   app: App,
-  options: SearchProOptions
+  options: SearchProOptions,
 ): Promise<void> => {
   if (app.env.isDev) {
     const searchIndexStore = await getSearchIndexStore(app, options);
@@ -22,9 +22,9 @@ export const prepareSearchIndex = async (
       entries(searchIndexStore).map(([locale, documents]) =>
         app.writeTemp(
           `search-pro/${getLocaleChunkName(locale)}.js`,
-          `export default ${JSON.stringify(JSON.stringify(documents))};`
-        )
-      )
+          `export default ${JSON.stringify(JSON.stringify(documents))};`,
+        ),
+      ),
     );
 
     await app.writeTemp(
@@ -33,10 +33,10 @@ export const prepareSearchIndex = async (
         .map(
           (locale) =>
             `${JSON.stringify(locale)}: () => import('./${getLocaleChunkName(
-              locale
-            )}.js')`
+              locale,
+            )}.js')`,
         )
-        .join(",")}}`
+        .join(",")}}`,
     );
   }
 };
@@ -44,7 +44,7 @@ export const prepareSearchIndex = async (
 export const updateSearchIndex = async (
   app: App,
   options: SearchProOptions,
-  path: string
+  path: string,
 ): Promise<void> => {
   if (previousSearchIndexStore) {
     const actualPath = path
@@ -56,14 +56,14 @@ export const updateSearchIndex = async (
 
     const page = pages.find(
       ({ filePathRelative }) =>
-        filePathRelative?.toLowerCase() === actualPath.toLowerCase()
+        filePathRelative?.toLowerCase() === actualPath.toLowerCase(),
     )!;
 
     if (page) {
       const pageIndexes = generatePageIndex(
         page,
         options.customFields,
-        options.indexContent
+        options.indexContent,
       );
       const { pathLocale, key } = page;
       const localeSearchIndex = previousSearchIndexStore[pathLocale];
@@ -86,7 +86,7 @@ export default ${JSON.stringify(JSON.stringify(localeSearchIndex))}
 
         await writeTemp(
           `search-pro/${getLocaleChunkName(pathLocale)}.js`,
-          content
+          content,
         );
 
         return;
@@ -100,7 +100,7 @@ export default ${JSON.stringify(JSON.stringify(localeSearchIndex))}
 export const removeSearchIndex = async (
   app: App,
   options: SearchProOptions,
-  path: string
+  path: string,
 ): Promise<void> => {
   if (previousSearchIndexStore) {
     const actualPath = path
@@ -112,7 +112,7 @@ export const removeSearchIndex = async (
 
     const page = pages.find(
       ({ filePathRelative }) =>
-        filePathRelative?.toLowerCase() === actualPath.toLowerCase()
+        filePathRelative?.toLowerCase() === actualPath.toLowerCase(),
     )!;
 
     if (page) {
@@ -133,7 +133,7 @@ export default ${JSON.stringify(JSON.stringify(localeSearchIndex))}
 
       await writeTemp(
         `search-pro/${getLocaleChunkName(pathLocale)}.js`,
-        content
+        content,
       );
 
       return;

@@ -84,7 +84,7 @@ const VPCard: FunctionalComponent<CardProps> = ({
       ? h(
           "a",
           { class: "vp-card", href: link, target: "_blank", style },
-          children
+          children,
         )
       : h(VPLink, { to: link, class: "vp-card", style }, () => children)
     : h("div", { class: "vp-card", style }, children);
