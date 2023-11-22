@@ -117,7 +117,7 @@ export default defineComponent({
       const base = props.base || page.value.path.replace(/\/[^/]+$/, "/");
       const result: CatalogInfo[] = [];
 
-      entries(pagesMap)
+      entries(pagesMap.value)
         .filter(([path, { meta }]) => {
           // filter those under current base
           if (!startsWith(path, base) || path === base) return false;

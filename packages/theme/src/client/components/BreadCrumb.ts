@@ -59,23 +59,21 @@ export default defineComponent({
     );
 
     const getBreadCrumbConfig = (): void => {
-      const pagesEntries = entries(pagesMap.value);
-
       const breadcrumbConfig = getAncestorLinks(
         page.value.path,
         routeLocale.value
       )
         .map<BreadCrumbConfig | null>(({ link, name }) => {
-          const [path, meta] = pagesEntries.find(([path]) => path === link);
+          const info = pagesMap.value.get(link);
 
-          if (meta)
+          if (info)
             return {
               title:
-                meta[ArticleInfoType.shortTitle] ||
-                meta[ArticleInfoType.title] ||
+                info.meta[ArticleInfoType.shortTitle] ||
+                info.meta[ArticleInfoType.title] ||
                 name,
-              icon: meta[ArticleInfoType.icon],
-              path,
+              icon: info.meta[ArticleInfoType.icon],
+              path: link,
             };
 
           return null;
