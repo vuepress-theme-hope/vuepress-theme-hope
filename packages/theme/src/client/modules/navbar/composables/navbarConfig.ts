@@ -16,23 +16,22 @@ import type {
 import type { ResolvedThemeNavbarItem } from "../utils/index.js";
 
 export const resolveNavbarItem = (
-  router: Router,
   item: NavbarItem | NavbarGroup | string,
-  prefix = "",
+  prefix = ""
 ): ResolvedThemeNavbarItem => {
-  if (isString(item)) return resolveLinkInfo(router, `${prefix}${item}`);
+  if (isString(item)) return resolveLinkInfo(`${prefix}${item}`);
 
   if ("children" in item)
     return {
       ...item,
       ...(item.link && !isLinkExternal(item.link)
-        ? resolveLinkInfo(router, `${prefix}${item.link}`)
+        ? resolveLinkInfo(`${prefix}${item.link}`)
         : {}),
       children: item.children.map(
         (child) =>
-          resolveNavbarItem(router, child, `${prefix}${item.prefix || ""}`) as
+          resolveNavbarItem(child, `${prefix}${item.prefix || ""}`) as
             | NavGroup<AutoLinkOptions>
-            | AutoLinkOptions,
+            | AutoLinkOptions
       ),
     };
 
@@ -40,7 +39,7 @@ export const resolveNavbarItem = (
     ...item,
     link: isLinkExternal(item.link)
       ? item.link
-      : resolveLinkInfo(router, `${prefix}${item.link}`).link,
+      : resolveLinkInfo(`${prefix}${item.link}`).link,
   };
 };
 
@@ -48,16 +47,13 @@ export const useNavbarItems = (): ComputedRefWithControl<
   ResolvedThemeNavbarItem[]
 > => {
   const themeLocaleData = useThemeLocaleData();
-  const router = useRouter();
 
   const getNavbarItems = (): ResolvedThemeNavbarItem[] =>
-    (themeLocaleData.value.navbar || []).map((item) =>
-      resolveNavbarItem(router, item),
-    );
+    (themeLocaleData.value.navbar || []).map((item) => resolveNavbarItem(item));
 
   const navbarItems = computedWithControl(
     () => themeLocaleData.value.navbar,
-    () => getNavbarItems(),
+    () => getNavbarItems()
   );
 
   return navbarItems;

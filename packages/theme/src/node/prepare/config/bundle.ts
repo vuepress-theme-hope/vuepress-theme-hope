@@ -11,7 +11,7 @@ const { url } = import.meta;
  */
 export const prepareBundleConfigFile = (
   app: App,
-  { enableAutoCatalog, enableBlog, enableEncrypt, enableSlide }: ThemeStatus,
+  { enableAutoCatalog, enableBlog, enableEncrypt, enableSlide }: ThemeStatus
 ): Promise<string> => {
   const imports: string[] = [];
   const enhances: string[] = [];
@@ -23,8 +23,8 @@ export const prepareBundleConfigFile = (
     imports.push(
       `import { defineAutoCatalogIconComponent } from "${getRealPath(
         "vuepress-plugin-auto-catalog/client",
-        url,
-      )}"`,
+        url
+      )}"`
     );
     actions.push(`defineAutoCatalogIconComponent(HopeIcon);`);
   }
@@ -32,7 +32,7 @@ export const prepareBundleConfigFile = (
   if (enableBlog) {
     imports.push(
       `import { BlogCategory, BlogHome, BlogType, BloggerInfo, Timeline, setupBlog } from "${BUNDLE_FOLDER}modules/blog/export.js";`,
-      `import "${BUNDLE_FOLDER}modules/blog/styles/all.scss";`,
+      `import "${BUNDLE_FOLDER}modules/blog/styles/all.scss";`
     );
 
     enhances.push(`app.component("BloggerInfo", BloggerInfo);`);
@@ -45,12 +45,12 @@ export const prepareBundleConfigFile = (
   if (enableEncrypt) {
     imports.push(
       `import { GlobalEncrypt, LocalEncrypt } from "${BUNDLE_FOLDER}modules/encrypt/export.js";`,
-      `import "${BUNDLE_FOLDER}modules/encrypt/styles/all.scss"`,
+      `import "${BUNDLE_FOLDER}modules/encrypt/styles/all.scss"`
     );
 
     enhances.push(
       `app.component("GlobalEncrypt", GlobalEncrypt);`,
-      `app.component("LocalEncrypt", LocalEncrypt);`,
+      `app.component("LocalEncrypt", LocalEncrypt);`
     );
   }
 
@@ -58,8 +58,8 @@ export const prepareBundleConfigFile = (
     imports.push(
       `import Slide from "${getRealPath(
         "vuepress-plugin-md-enhance/SlidePage",
-        url,
-      )}";`,
+        url
+      )}";`
     );
     layouts.push("Slide,");
   }
@@ -68,7 +68,6 @@ export const prepareBundleConfigFile = (
     `theme-hope/config.js`,
     `\
 import { defineClientConfig } from "@vuepress/client";
-import { VPLink } from "${getRealPath("vuepress-shared/client", url)}";
 
 import { HopeIcon, Layout, NotFound, useScrollPromise, injectDarkmode, setupDarkmode, setupSidebarItems } from "${BUNDLE_FOLDER}export.js";
 
@@ -93,8 +92,6 @@ export default defineClientConfig({
 
     // provide HopeIcon as global component
     app.component("HopeIcon", HopeIcon);
-    // provide VPLink as global component
-    app.component("VPLink", VPLink);
 
 ${enhances.map((item) => `    ${item}`).join("\n")}
   },
@@ -108,6 +105,6 @@ ${setups.map((item) => `    ${item}`).join("\n")}
     NotFound,
 ${layouts.map((item) => `    ${item}`).join("\n")}
   }
-});`,
+});`
   );
 };

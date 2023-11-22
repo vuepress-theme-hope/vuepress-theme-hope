@@ -1,5 +1,7 @@
 import {
+  VPLink,
   usePageData,
+  usePagesMap,
   usePageFrontmatter,
   useRouteLocale,
 } from "@vuepress/client";
@@ -12,8 +14,7 @@ import {
   shallowRef,
   watch,
 } from "vue";
-import { useRouter } from "vue-router";
-import { VPLink, resolveRouteWithRedirect } from "vuepress-shared/client";
+import { entries, resolveRouteWithRedirect } from "vuepress-shared/client";
 
 import HopeIcon from "@theme-hope/components/HopeIcon";
 import { useThemeLocaleData } from "@theme-hope/composables/index";
@@ -34,8 +35,8 @@ export default defineComponent({
   name: "BreadCrumb",
 
   setup() {
-    const router = useRouter();
     const page = usePageData();
+    const pagesMap = usePagesMap();
     const routeLocale = useRouteLocale();
     const frontmatter = usePageFrontmatter<ThemeNormalPageFrontmatter>();
     const themeLocale = useThemeLocaleData();
@@ -47,29 +48,27 @@ export default defineComponent({
         (frontmatter.value.breadcrumb ||
           (frontmatter.value.breadcrumb !== false &&
             themeLocale.value.breadcrumb !== false)) &&
-        config.value.length > 1,
+        config.value.length > 1
     );
 
     const iconEnable = computed(
       () =>
         frontmatter.value.breadcrumbIcon ||
         (frontmatter.value.breadcrumbIcon !== false &&
-          themeLocale.value.breadcrumbIcon !== false),
+          themeLocale.value.breadcrumbIcon !== false)
     );
 
     const getBreadCrumbConfig = (): void => {
-      const routes = router.getRoutes();
+      const pagesEntries = entries(pagesMap.value);
 
       const breadcrumbConfig = getAncestorLinks(
         page.value.path,
-        routeLocale.value,
+        routeLocale.value
       )
         .map<BreadCrumbConfig | null>(({ link, name }) => {
-          const route = routes.find((route) => route.path === link);
+          const [path, meta] = pagesEntries.find(([path]) => path === link);
 
-          if (route) {
-            const { meta, path } = resolveRouteWithRedirect(router, route.path);
-
+          if (meta)
             return {
               title:
                 meta[ArticleInfoType.shortTitle] ||
@@ -78,7 +77,6 @@ export default defineComponent({
               icon: meta[ArticleInfoType.icon],
               path,
             };
-          }
 
           return null;
         })
@@ -127,17 +125,17 @@ export default defineComponent({
                         h(
                           "span",
                           { property: "name" },
-                          item.title || "Unknown",
+                          item.title || "Unknown"
                         ),
-                      ],
+                      ]
                     ),
                     // meta
                     h("meta", { property: "position", content: index + 1 }),
-                  ],
-                ),
-              ),
+                  ]
+                )
+              )
             )
-          : [],
+          : []
       );
   },
 });

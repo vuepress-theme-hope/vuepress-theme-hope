@@ -1,11 +1,15 @@
-import { usePageData, useSiteData } from "@vuepress/client";
+import {
+  VPLink,
+  usePageData,
+  usePagesMap,
+  useSiteData,
+} from "@vuepress/client";
 import type { VNode } from "vue";
 import { computed, defineComponent, h } from "vue";
 import type { RouteMeta } from "vue-router";
-import { useRouter } from "vue-router";
 import {
-  VPLink,
   endsWith,
+  entries,
   keys,
   startsWith,
   useLocaleConfig,
@@ -90,7 +94,7 @@ export default defineComponent({
     const iconComponent = useAutoCatalogIconComponent();
     const locale = useLocaleConfig(AUTO_CATALOG_LOCALES);
     const page = usePageData();
-    const router = useRouter();
+    const pagesMap = usePagesMap();
     const siteData = useSiteData();
 
     const CatalogIcon = (icon?: string | null): VNode | null =>
@@ -120,17 +124,16 @@ export default defineComponent({
 
     const getCatalogInfo = (): CatalogInfo[] => {
       const base = props.base || page.value.path.replace(/\/[^/]+$/, "/");
-      const routes = router.getRoutes();
       const result: CatalogInfo[] = [];
 
-      routes
-        .filter(({ meta, path }) => {
+      entries(pagesMap)
+        .filter(([path, { meta }]) => {
           // filter those under current base
           if (!startsWith(path, base) || path === base) return false;
 
           if (base === "/") {
             const otherLocales = keys(siteData.value.locales).filter(
-              (item) => item !== "/",
+              (item) => item !== "/"
             );
 
             // exclude 404 page and other locales
@@ -149,7 +152,7 @@ export default defineComponent({
             shouldIndex(meta)
           );
         })
-        .map(({ path, meta }) => {
+        .map(([path, { meta }]) => {
           const level = path.substring(base.length).split("/").length;
 
           return {
@@ -169,7 +172,7 @@ export default defineComponent({
         .sort(
           (
             { title: titleA, level: levelA, path: pathA, order: orderA },
-            { title: titleB, level: levelB, path: pathB, order: orderB },
+            { title: titleB, level: levelB, path: pathB, order: orderB }
           ) => {
             const level = levelA - levelB;
 
@@ -206,7 +209,7 @@ export default defineComponent({
             if (orderB < 0) return orderA - orderB;
 
             return 1;
-          },
+          }
         )
         .forEach((info) => {
           const { base, level } = info;
@@ -225,12 +228,12 @@ export default defineComponent({
 
             default: {
               const grandParent = result.find(
-                (item) => item.path === base.replace(/\/[^/]+\/$/, "/"),
+                (item) => item.path === base.replace(/\/[^/]+\/$/, "/")
               );
 
               if (grandParent) {
                 const parent = grandParent.children?.find(
-                  (item) => item.path === base,
+                  (item) => item.path === base
                 );
 
                 if (parent) (parent.children ??= []).push(info);
@@ -288,10 +291,10 @@ export default defineComponent({
                                   class: "header-anchor",
                                   "aria-hidden": true,
                                 },
-                                "#",
+                                "#"
                               ),
                               childLink,
-                            ],
+                            ]
                           ),
                           children.length
                             ? h(
@@ -315,7 +318,7 @@ export default defineComponent({
                                               href: `#${title}`,
                                               class: "header-anchor",
                                             },
-                                            "#",
+                                            "#"
                                           ),
                                           h(CatalogLink, {
                                             title,
@@ -323,7 +326,7 @@ export default defineComponent({
                                             icon,
                                             class: "vp-catalog-title",
                                           }),
-                                        ],
+                                        ]
                                       ),
                                       children.length
                                         ? h(
@@ -348,7 +351,7 @@ export default defineComponent({
                                                       {
                                                         class: "vp-sub-catalog",
                                                       },
-                                                      subLink,
+                                                      subLink
                                                     )
                                                   : h(CatalogLink, {
                                                       title,
@@ -357,25 +360,21 @@ export default defineComponent({
                                                       class:
                                                         "vp-sub-catalog-link",
                                                     });
-                                              },
-                                            ),
+                                              }
+                                            )
                                           )
                                         : null,
-                                    ]),
-                                ),
+                                    ])
+                                )
                               )
                             : null,
                         ]
-                      : h(
-                          "div",
-                          { class: "vp-catalog-child-title" },
-                          childLink,
-                        ),
+                      : h("div", { class: "vp-catalog-child-title" }, childLink)
                   );
-                }),
+                })
               )
             : h("p", { class: "vp-empty-catalog" }, locale.value.empty),
-        ],
+        ]
       );
     };
   },

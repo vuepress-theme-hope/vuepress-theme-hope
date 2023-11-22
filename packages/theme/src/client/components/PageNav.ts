@@ -3,7 +3,6 @@ import { isPlainObject, isString } from "@vuepress/shared";
 import { useEventListener } from "@vueuse/core";
 import type { VNode } from "vue";
 import { computed, defineComponent, h } from "vue";
-import { useRouter } from "vue-router";
 
 import AutoLink from "@theme-hope/components/AutoLink";
 import HopeIcon from "@theme-hope/components/HopeIcon";
@@ -23,18 +22,13 @@ import "../styles/page-nav.scss";
  * Resolve `prev` or `next` config from frontmatter
  */
 const resolveFromFrontmatterConfig = (
-  conf: unknown,
-): AutoLinkOptions | null | false => {
-  const router = useRouter();
-
-  if (conf === false) return false;
-
-  if (isString(conf)) return resolveLinkInfo(router, conf, true);
-
-  if (isPlainObject<AutoLinkOptions>(conf)) return conf;
-
-  return null;
-};
+  config: unknown
+): AutoLinkOptions | null | false =>
+  config === false || isPlainObject<AutoLinkOptions>(config)
+    ? config
+    : isString(config)
+      ? resolveLinkInfo(config, true)
+      : null;
 
 /**
  * Resolve `prev` or `next` config from sidebar items
@@ -42,7 +36,7 @@ const resolveFromFrontmatterConfig = (
 const resolveFromSidebarItems = (
   sidebarItems: ResolvedSidebarItem[],
   currentPath: string,
-  offset: number,
+  offset: number
 ): AutoLinkOptions | null => {
   const index = sidebarItems.findIndex((item) => item.link === currentPath);
 
@@ -59,7 +53,7 @@ const resolveFromSidebarItems = (
       const childResult = resolveFromSidebarItems(
         item.children,
         currentPath,
-        offset,
+        offset
       );
 
       if (childResult) return childResult;
@@ -89,7 +83,7 @@ export default defineComponent({
               : resolveFromSidebarItems(
                   sidebarItems.value,
                   page.value.path,
-                  -1,
+                  -1
                 ));
     });
 
@@ -104,7 +98,7 @@ export default defineComponent({
               : resolveFromSidebarItems(
                   sidebarItems.value,
                   page.value.path,
-                  1,
+                  1
                 ));
     });
 
@@ -141,7 +135,7 @@ export default defineComponent({
                       }),
                       prevNavLink.value?.text,
                     ]),
-                  ],
+                  ]
                 )
               : null,
             nextNavLink.value
@@ -159,7 +153,7 @@ export default defineComponent({
                         icon: nextNavLink.value?.icon,
                       }),
                     ]),
-                  ],
+                  ]
                 )
               : null,
           ])
