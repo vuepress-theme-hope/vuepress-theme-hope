@@ -14,7 +14,7 @@ import {
   shallowRef,
   watch,
 } from "vue";
-import { entries, resolveRouteWithRedirect } from "vuepress-shared/client";
+import { entries } from "vuepress-shared/client";
 
 import HopeIcon from "@theme-hope/components/HopeIcon";
 import { useThemeLocaleData } from "@theme-hope/composables/index";
