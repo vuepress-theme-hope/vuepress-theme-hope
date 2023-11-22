@@ -1,5 +1,6 @@
 {
   "name": "md-enhance-docs",
+  "type": "module",
   "private": true,
   "type": "module",
   "description": "Docs for vuepress-plugin-md-enhance",

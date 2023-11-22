@@ -1,5 +1,6 @@
 {
   "name": "copy-code-docs",
+  "type": "module",
   "private": true,
   "description": "Docs for vuepress-plugin-copy-code2",
   "license": "MIT",

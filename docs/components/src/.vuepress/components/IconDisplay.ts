@@ -86,7 +86,7 @@ export default defineComponent({
         { class: "icon-display-wrapper" },
         icons.value.map((icon) =>
           h("div", { class: "icon", onClick: () => copyToClipboard(icon) }, [
-            h("div", { class: ["iconfont", `${props.iconPrefix}${icon}`] }),
+            h("div", { class: ["iconfont", props.iconPrefix + icon] }),
             h("div", { class: "text" }, icon),
           ]),
         ),

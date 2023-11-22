@@ -1,5 +1,6 @@
 {
   "name": "comment-docs",
+  "type": "module",
   "private": true,
   "description": "Docs for vuepress-plugin-comment2",
   "license": "MIT",

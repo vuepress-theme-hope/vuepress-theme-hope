@@ -1,5 +1,6 @@
 {
   "name": "copyright-docs",
+  "type": "module",
   "private": true,
   "description": "Docs for vuepress-plugin-copyright2",
   "license": "MIT",

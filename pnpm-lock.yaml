@@ -940,6 +940,9 @@ importers:
       vuepress-plugin-components:
         specifier: workspace:*
         version: link:../../packages/components
+      vuepress-plugin-copy-code2:
+        specifier: workspace:*
+        version: link:../../packages/copy-code2
       vuepress-shared:
         specifier: workspace:*
         version: link:../../packages/shared

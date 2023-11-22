@@ -1,5 +1,6 @@
 {
   "name": "shared-docs",
+  "type": "module",
   "private": true,
   "description": "Docs for vuepress-shared",
   "license": "MIT",

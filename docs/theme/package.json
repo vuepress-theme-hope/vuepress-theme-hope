@@ -1,7 +1,7 @@
 {
   "name": "theme-docs",
-  "private": true,
   "type": "module",
+  "private": true,
   "description": "Docs for vuepress-theme-hope",
   "license": "MIT",
   "author": {

@@ -46,16 +46,19 @@ export default config(
     alias: {
       "@FlowChartPlayground": path.resolve(
         __dirname,
-        "./components/FlowChartPlayground",
+        "../../../md-enhance/src/.vuepress/components/FlowChartPlayground.js",
       ),
-      "@IconDisplay": path.resolve(__dirname, "./components/IconDisplay"),
+      "@IconDisplay": path.resolve(
+        __dirname,
+        "../../../components/src/.vuepress/components/IconDisplay.js",
+      ),
       "@KatexPlayground": path.resolve(
         __dirname,
-        "./components/KatexPlayground",
+        "../../../md-enhance/src/.vuepress/components/KatexPlayground.js",
       ),
       "@ToggleRTLButton": path.resolve(
         __dirname,
-        "./components/ToggleRTLButton",
+        "./components/ToggleRTLButton.js",
       ),
     },
 

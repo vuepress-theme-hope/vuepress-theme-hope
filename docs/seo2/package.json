@@ -1,5 +1,6 @@
 {
   "name": "seo-docs",
+  "type": "module",
   "private": true,
   "description": "Docs for vuepress-plugin-seo2",
   "license": "MIT",

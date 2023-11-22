@@ -25,7 +25,7 @@ export default config(
     },
 
     alias: {
-      "@IconDisplay": path.resolve(__dirname, "./components/IconDisplay"),
+      "@IconDisplay": path.resolve(__dirname, "./components/IconDisplay.js"),
     },
 
     theme,

@@ -1,5 +1,6 @@
 {
   "name": "blog2-docs",
+  "type": "module",
   "private": true,
   "description": "Docs for vuepress-plugin-blog2",
   "license": "MIT",

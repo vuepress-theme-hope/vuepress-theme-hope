@@ -1,5 +1,6 @@
 {
   "name": "remove-pwa-docs",
+  "type": "module",
   "private": true,
   "description": "Docs for vuepress-plugin-remove-pwa2",
   "license": "MIT",
