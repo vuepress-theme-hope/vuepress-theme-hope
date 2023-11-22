@@ -124,51 +124,56 @@ export default defineComponent({
 
     const getCatalogInfo = (): CatalogInfo[] => {
       const base = props.base || page.value.path.replace(/\/[^/]+$/, "/");
+      const extractedPages = [];
       const result: CatalogInfo[] = [];
 
-      entries(pagesMap.value)
-        .filter(([path, { meta }]) => {
-          // filter those under current base
-          if (!startsWith(path, base) || path === base) return false;
+      for (const path in pagesMap.value) {
+        const { meta } = pagesMap.value[path];
 
-          if (base === "/") {
-            const otherLocales = keys(siteData.value.locales).filter(
-              (item) => item !== "/",
-            );
+        // filter those under current base
+        if (!startsWith(path, base) || path === base) break;
 
-            // exclude 404 page and other locales
-            if (
-              path === "/404.html" ||
-              otherLocales.some((localePath) => startsWith(path, localePath))
-            )
-              return false;
-          }
-
-          return (
-            // filter real page
-            ((endsWith(path, ".html") && !endsWith(path, "/index.html")) ||
-              endsWith(path, "/")) &&
-            // page should be indexed
-            shouldIndex(meta)
+        if (base === "/") {
+          const otherLocales = keys(siteData.value.locales).filter(
+            (item) => item !== "/",
           );
-        })
-        .map(([path, { meta }]) => {
-          const level = path.substring(base.length).split("/").length;
 
-          return {
-            title: <string>meta[AUTO_CATALOG_TITLE_META_KEY] || "",
-            icon:
-              <string | null | undefined>meta[AUTO_CATALOG_ICON_META_KEY] ||
-              null,
-            base: path.replace(/\/[^/]+\/?$/, "/"),
-            order:
-              <number | null | undefined>meta[AUTO_CATALOG_ORDER_META_KEY] ||
-              null,
-            level: endsWith(path, "/") ? level - 1 : level,
-            path,
-          };
-        })
-        .filter(({ title, level }) => title && level <= props.level)
+          // exclude 404 page and other locales
+          if (
+            path === "/404.html" ||
+            otherLocales.some((localePath) => startsWith(path, localePath))
+          )
+            break;
+        }
+
+        // page should be indexed
+        if (!shouldIndex(meta)) break;
+
+        const level = path.substring(base.length).split("/").length;
+
+        // level should be less than or equal to props.level
+        if (level > props.level) break;
+
+        const title = <string>meta[AUTO_CATALOG_TITLE_META_KEY];
+
+        // title should be present
+
+        if (!title) break;
+
+        extractedPages.push({
+          title,
+          icon:
+            <string | null | undefined>meta[AUTO_CATALOG_ICON_META_KEY] || null,
+          base: path.replace(/\/[^/]+\/?$/, "/"),
+          order:
+            <number | null | undefined>meta[AUTO_CATALOG_ORDER_META_KEY] ||
+            null,
+          level: endsWith(path, "/") ? level - 1 : level,
+          path,
+        });
+      }
+
+      extractedPages
         .sort(
           (
             { title: titleA, level: levelA, path: pathA, order: orderA },
