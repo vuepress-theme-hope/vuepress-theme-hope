@@ -1,8 +1,7 @@
-import { useRouteLocale } from "@vuepress/client";
+import { getPagesPath, useRouteLocale } from "@vuepress/client";
 import { isLinkHttp } from "@vuepress/shared";
 import { usePreferredLanguages } from "@vueuse/core";
 import { computed, watch } from "vue";
-import type { RouteRecordNormalized } from "vue-router";
 import { useRoute, useRouter } from "vue-router";
 import { entries } from "vuepress-shared/client";
 
@@ -29,18 +28,18 @@ export const setupRedirect = (): void => {
 
   const isRootLocale = computed(() => routeLocale.value === "/");
 
-  const handleLocaleRedirect = (routes: RouteRecordNormalized[]): void => {
+  const handleLocaleRedirect = (pagePaths: string[]): void => {
     const defaultLocale =
       defaultLocalePath &&
-      routes.some(
-        ({ path }) => path === route.path.replace("/", defaultLocalePath),
+      pagePaths.some(
+        (path) => path === route.path.replace("/", defaultLocalePath)
       )
         ? defaultLocalePath
-        : routes.find(
-            ({ path }) =>
+        : pagePaths.find(
+            (path) =>
               route.path.split("/").length >= 3 &&
-              path === route.path.replace(/^\/[^/]+\//, "/"),
-          )?.path;
+              path === route.path.replace(/^\/[^/]+\//, "/")
+          );
 
     let matchedLocalePath: string | null = null;
 
@@ -50,7 +49,7 @@ export const setupRedirect = (): void => {
         if (langs.includes(lang)) {
           if (
             localeFallback &&
-            routes.every(({ path }) => path !== route.path.replace("/", path))
+            pagePaths.every((path) => path !== route.path.replace("/", path))
           )
             continue;
 
@@ -65,8 +64,8 @@ export const setupRedirect = (): void => {
 
     // a locale matches
     if (matchedLocalePath) {
-      const hasLocalePage = routes.some(
-        ({ path }) => route.path.replace("/", matchedLocalePath!) == path,
+      const hasLocalePage = pagePaths.some(
+        (path) => route.path.replace("/", matchedLocalePath!) == path
       );
       const localeRoute = route.fullPath.replace("/", matchedLocalePath);
 
@@ -104,8 +103,8 @@ export const setupRedirect = (): void => {
           else void router.replace(to);
 
       if (autoLocale && isRootLocale.value)
-        handleLocaleRedirect(router.getRoutes());
+        handleLocaleRedirect(getPagesPath());
     },
-    { immediate: true },
+    { immediate: true }
   );
 };
