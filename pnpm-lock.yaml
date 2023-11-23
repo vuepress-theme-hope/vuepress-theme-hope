@@ -5532,7 +5532,7 @@ packages:
   /@types/sax@1.2.7:
     resolution: {integrity: sha512-rO73L89PJxeYM3s3pPPjiPgVVcymqU490g0YO5n5By0k2Erzj6tay/4lr1CHAAU4JyOWd1rpQ8bCf6cZfHU96A==}
     dependencies:
-      '@types/node': 17.0.45
+      '@types/node': 20.9.4
     dev: false
 
   /@types/semver@7.5.6:
@@ -15420,7 +15420,7 @@ packages:
     hasBin: true
     peerDependencies:
       '@vuepress/client': 2.0.0-rc.0
-      vue: 3.3.8
+      vue: ^3.3.4
     dependencies:
       '@vuepress/bundler-vite': 2.0.0-rc.0(@types/node@20.9.4)(sass@1.69.5)(typescript@5.3.2)
       '@vuepress/cli': 2.0.0-rc.0(typescript@5.3.2)
@@ -15449,7 +15449,7 @@ packages:
     hasBin: true
     peerDependencies:
       '@vuepress/client': 2.0.0-rc.0
-      vue: 3.3.8
+      vue: ^3.3.4
     dependencies:
       '@vuepress/bundler-vite': 2.0.0-rc.0(@types/node@20.9.4)(sass@1.69.5)(typescript@5.3.2)
       '@vuepress/cli': 2.0.0-rc.0(typescript@5.3.2)
@@ -15476,7 +15476,7 @@ packages:
     engines: {node: '>=18.16.0'}
     hasBin: true
     peerDependencies:
-      vue: 3.3.8
+      vue: ^3.3.4
     dependencies:
       '@vuepress/bundler-webpack': 2.0.0-rc.0(esbuild@0.19.7)(typescript@5.3.2)
       '@vuepress/cli': 2.0.0-rc.0(typescript@5.3.2)
