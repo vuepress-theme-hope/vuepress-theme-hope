@@ -11,9 +11,8 @@ import { useRouter } from "vue-router";
 import { keys, startsWith } from "vuepress-shared/client";
 
 import { sidebarData } from "@temp/theme-hope/sidebar";
-import { resolveLinkInfo } from "@theme-hope/utils/index";
+import { resolveLinkInfo, resolvePrefix } from "@theme-hope/utils/index";
 
-import { resolvePrefix } from "./utils.js";
 import type {
   SidebarArrayOptions,
   SidebarItem,

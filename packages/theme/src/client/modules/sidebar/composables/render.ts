@@ -13,7 +13,7 @@ import type {
   ResolvedSidebarItem,
 } from "../utils/index.js";
 
-export const renderItem = (
+export const renderSidebarItem = (
   config: ResolvedSidebarItem,
   props: VNode["props"],
 ): VNode =>
@@ -26,25 +26,27 @@ export const renderItem = (
     : // if the item only has text, render it as `<p>`
       h("p", props, [h(HopeIcon, { icon: config.icon }), config.text]);
 
-export const renderChildren = (
+export const renderSidebarChildren = (
   children: ResolvedSidebarHeaderItem[],
 ): VNode | null => {
   const route = useRoute();
 
-  if (!children) return null;
-
-  return h(
-    "ul",
-    { class: "vp-sidebar-sub-headers" },
-    children.map((child) => {
-      const active = isActiveSidebarItem(route, child, true);
-
-      return h("li", { class: "vp-sidebar-sub-header" }, [
-        renderItem(child, {
-          class: ["vp-sidebar-link", "vp-heading", { active }],
-        }),
-        renderChildren(child.children),
-      ]);
-    }),
-  );
+  return children
+    ? h(
+        "ul",
+        { class: "vp-sidebar-sub-headers" },
+        children.map((child) =>
+          h("li", { class: "vp-sidebar-sub-header" }, [
+            renderSidebarItem(child, {
+              class: [
+                "vp-sidebar-link",
+                "vp-heading",
+                { active: isActiveSidebarItem(route, child, true) },
+              ],
+            }),
+            renderSidebarChildren(child.children),
+          ]),
+        ),
+      )
+    : null;
 };

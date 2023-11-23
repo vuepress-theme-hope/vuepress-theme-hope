@@ -1,11 +1,16 @@
+import { ensureEndingSlash } from "@vuepress/shared";
 import type { Router } from "vue-router";
 import {
   inferRouteLink,
+  isAbsoluteUrl,
   resolveRouteWithRedirect,
 } from "vuepress-shared/client";
 
 import type { AutoLinkOptions } from "../../shared/index.js";
 import { ArticleInfoType } from "../../shared/index.js";
+
+export const resolvePrefix = (prefix = "", path = ""): string =>
+  isAbsoluteUrl(path) ? path : `${ensureEndingSlash(prefix)}${path}`;
 
 /**
  * Resolve AutoLink props from string

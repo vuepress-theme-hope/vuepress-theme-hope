@@ -3,8 +3,8 @@ import { defineComponent } from "vue";
 import { useRoute } from "vue-router";
 
 import {
-  renderChildren,
-  renderItem,
+  renderSidebarChildren,
+  renderSidebarItem,
 } from "@theme-hope/modules/sidebar/composables/index";
 import { isActiveSidebarItem } from "@theme-hope/modules/sidebar/utils/index";
 
@@ -37,7 +37,7 @@ export default defineComponent({
     const route = useRoute();
 
     return (): (VNode | null)[] => [
-      renderItem(props.config, {
+      renderSidebarItem(props.config, {
         class: [
           "vp-sidebar-link",
           `vp-sidebar-${props.config.type}`,
@@ -45,7 +45,7 @@ export default defineComponent({
         ],
         exact: true,
       }),
-      renderChildren(props.config.children),
+      renderSidebarChildren(props.config.children),
     ];
   },
 });
