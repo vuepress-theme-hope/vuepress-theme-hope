@@ -220,7 +220,7 @@ highlights:
 
       - title: 博客主页
         icon: home
-        details: 全新播客主页
+        details: 全新博客主页
         link: https://theme-hope.vuejs.press/zh/guide/blog/home.html
 
       - title: 博主信息
