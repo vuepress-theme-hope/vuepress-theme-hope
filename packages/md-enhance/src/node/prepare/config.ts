@@ -28,6 +28,21 @@ export const prepareConfigFile = async (
     enhances.add(`app.component("ChartJS", ChartJS)`);
   }
 
+  // TODO: Remove this in v2 stable
+  // @ts-expect-error
+  if (getStatus("card" && legacy)) {
+    imports.add(
+      `import { hasGlobalComponent } from "${getRealPath(
+        "vuepress-shared/client",
+        url,
+      )}";`,
+    );
+    imports.add(`import { VPCard } from "${CLIENT_FOLDER}compact/index.js";`);
+    enhances.add(
+      `if(!hasGlobalComponent("VPCard", app)) app.component("VPCard", VPCard);`,
+    );
+  }
+
   if (getStatus("codetabs")) {
     imports.add(
       `import CodeTabs from "${CLIENT_FOLDER}components/CodeTabs.js";`,

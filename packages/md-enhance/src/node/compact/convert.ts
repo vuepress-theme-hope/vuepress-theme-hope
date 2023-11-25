@@ -81,11 +81,9 @@ export const convertOptions = (
 
   if (options["card"])
     logger.error(
-      `${colors.magenta(
-        "card",
-      )} is no longer supported, please use ${colors.magenta(
-        "components",
-      )} instead.`,
+      `${colors.magenta("card")} is deprecated, please import  ${colors.magenta(
+        "VPCard",
+      )} from "vuepress-plugin-components" and use it instead.`,
     );
 
   if (options["presentation"])

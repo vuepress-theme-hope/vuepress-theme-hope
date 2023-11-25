@@ -35,6 +35,7 @@ import {
 
 import {
   convertOptions,
+  legacyCard,
   legacyCodeDemo,
   legacyCodeGroup,
   legacyFlowchart,
@@ -272,6 +273,9 @@ export const mdEnhancePlugin =
           md.use(attrs, isPlainObject(options.attrs) ? options.attrs : {});
         if (getStatus("align")) md.use(align);
         if (getStatus("breaks", true)) md.options.breaks = true;
+        // TODO: Remove this in v2 stable
+        // @ts-expect-error
+        if (getStatus("card") && legacy) md.use(legacyCard);
         if (getStatus("imgLazyload")) md.use(imgLazyload);
         if (getStatus("figure")) md.use(figure);
         if (enableImgMark)
