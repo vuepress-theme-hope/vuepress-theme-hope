@@ -30,6 +30,12 @@ npm i -D plyr
 
 <!-- more -->
 
+::: tip
+
+We recommend you to use [VidStack](./vid-stack.md) for better experience.
+
+:::
+
 ## Demo
 
 <!-- #region demo -->

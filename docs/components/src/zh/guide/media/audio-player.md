@@ -6,6 +6,12 @@ title: AudioPlayer
 
 <!-- more -->
 
+::: tip
+
+为了更好的体验，我们建议你使用 [VidStack](./vid-stack.md)。
+
+:::
+
 ## 示例
 
 <!-- #region demo -->
