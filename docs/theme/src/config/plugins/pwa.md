@@ -30,13 +30,6 @@ See the <ProjectLink name="pwa2" path="/config.html">pwa2 plugin documentation</
 
 ## Plugin Options
 
-### showInstall
-
-- Type: `boolean`
-- Default: `true`
-
-Whether display install button when Service Worker is first registered successfully.
-
 ### manifest
 
 - Type: `ManifestOption`
