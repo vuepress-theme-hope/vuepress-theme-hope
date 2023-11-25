@@ -1839,8 +1839,8 @@ importers:
         specifier: ^0.6.5
         version: 0.6.5(markdown-it@13.0.2)
       '@mdit/plugin-katex':
-        specifier: ^0.6.5
-        version: 0.6.5(katex@0.16.9)(markdown-it@13.0.2)
+        specifier: ^0.7.0
+        version: 0.7.0(katex@0.16.9)(markdown-it@13.0.2)
       '@mdit/plugin-mark':
         specifier: ^0.6.5
         version: 0.6.5(markdown-it@13.0.2)
@@ -4823,8 +4823,8 @@ packages:
       upath: 2.0.1
     dev: false
 
-  /@mdit/plugin-katex@0.6.5(katex@0.16.9)(markdown-it@13.0.2):
-    resolution: {integrity: sha512-viAovlZhZTske9GqDEyMbibCebdykASJt0Yx182w6GjM4XNuuvsfDqWFe3yANQN7CMTNfYxfaJ/ZSO2UnEc5Lg==}
+  /@mdit/plugin-katex@0.7.0(katex@0.16.9)(markdown-it@13.0.2):
+    resolution: {integrity: sha512-KcusJQb8seW6UE035jwNpWDBqb+ShS5F/Caq5vA7PuOHXdTS28w/+CfDJ7llrK6Lm8trD7bDUYgoVaMVgv34bw==}
     engines: {node: '>= 18'}
     peerDependencies:
       katex: ^0.16.9
@@ -4835,7 +4835,7 @@ packages:
       markdown-it:
         optional: true
     dependencies:
-      '@mdit/plugin-tex': 0.6.5(markdown-it@13.0.2)
+      '@mdit/plugin-tex': 0.7.0(markdown-it@13.0.2)
       '@types/katex': 0.16.7
       '@types/markdown-it': 13.0.7
       katex: 0.16.9
@@ -4940,6 +4940,19 @@ packages:
 
   /@mdit/plugin-tex@0.6.5(markdown-it@13.0.2):
     resolution: {integrity: sha512-Le8XCodPiN9+gH2dtWH1CKrH7/dMQuz0M8hAZk/2j2w7TTaMb0x622ELCvIgSlnq8xk0mdBphVa3iZ2AyS9evg==}
+    engines: {node: '>= 18'}
+    peerDependencies:
+      markdown-it: ^13.0.2
+    peerDependenciesMeta:
+      markdown-it:
+        optional: true
+    dependencies:
+      '@types/markdown-it': 13.0.7
+      markdown-it: 13.0.2
+    dev: false
+
+  /@mdit/plugin-tex@0.7.0(markdown-it@13.0.2):
+    resolution: {integrity: sha512-wFv6j2Hk8w7p9evAQpuorNdCsvappmHGsSJ3sAYBQO6JTVWwdlmdrpyE94wkhn4t8+1eFcEcR1QibEj2xSE5vg==}
     engines: {node: '>= 18'}
     peerDependencies:
       markdown-it: ^13.0.2
