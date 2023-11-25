@@ -1833,8 +1833,8 @@ importers:
         specifier: ^0.6.5
         version: 0.6.5(markdown-it@13.0.2)
       '@mdit/plugin-img-size':
-        specifier: ^0.6.5
-        version: 0.6.5(markdown-it@13.0.2)
+        specifier: ^0.7.0
+        version: 0.7.0(markdown-it@13.0.2)
       '@mdit/plugin-include':
         specifier: ^0.6.5
         version: 0.6.5(markdown-it@13.0.2)
@@ -4797,8 +4797,8 @@ packages:
       markdown-it: 13.0.2
     dev: false
 
-  /@mdit/plugin-img-size@0.6.5(markdown-it@13.0.2):
-    resolution: {integrity: sha512-rPHt7dr/rlCxzGbBlL2hf8OtCT1F8nZw4MRXB971EX8gAjw1svrZKQBSwSppZt7MHzwPYRH1wRbO8kjhUh+7JQ==}
+  /@mdit/plugin-img-size@0.7.0(markdown-it@13.0.2):
+    resolution: {integrity: sha512-we2Vr15+JTJSoP5h2K5SOJr5oJr6Laj9odnKITbPVC8IWd951x+ih8sVA09hNLBCljYRas5g/dGtAKNX5tphlQ==}
     engines: {node: '>= 18'}
     peerDependencies:
       markdown-it: ^13.0.2
