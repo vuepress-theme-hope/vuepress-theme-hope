@@ -1,7 +1,9 @@
+import { isArray, isPlainObject } from "@vuepress/shared";
 import { colors } from "@vuepress/utils";
 
 import { deprecatedLogger, droppedLogger } from "./utils.js";
 import type { LinksCheckStatus, MarkdownEnhanceOptions } from "../options.js";
+import type { RevealJsPlugin } from "../typings/index.js";
 import { logger } from "../utils.js";
 
 /** @deprecated */
@@ -58,6 +60,11 @@ export const convertOptions = (
     deprecatedOption: "imageTitle",
     newOption: "figure",
   });
+  deprecatedLogger({
+    options,
+    deprecatedOption: "revealjs",
+    newOption: "revealJs",
+  });
   droppedLogger(options, "enableAll");
   droppedLogger(options, "lineNumbers");
   droppedLogger(options, "imageFix");
@@ -86,7 +93,7 @@ export const convertOptions = (
       )} from "vuepress-plugin-components" and use it instead.`,
     );
 
-  if (options["presentation"])
+  if (options["presentation"]) {
     logger.error(
       `${colors.magenta(
         "presentation",
@@ -94,4 +101,16 @@ export const convertOptions = (
         "revealJs",
       )} instead.`,
     );
+
+    if (isPlainObject(options["presentation"])) {
+      if ("plugins" in options["presentation"])
+        options.revealJs = {
+          plugins: <RevealJsPlugin[]>options["presentation"]["plugins"],
+        };
+    } else if (isArray(options["presentation"])) {
+      options.revealJs = {
+        plugins: <RevealJsPlugin[]>options["presentation"],
+      };
+    }
+  }
 };
