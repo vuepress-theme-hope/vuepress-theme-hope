@@ -6,7 +6,7 @@ import {
   getLocales,
 } from "vuepress-shared/node";
 
-import { convertOptions } from "./compact/index.js";
+import { convertOptions } from "./compact.js";
 import { CLIENT_FOLDER, PLUGIN_NAME } from "./constant.js";
 import { generateAutoLocaleRedirects, generateRedirects } from "./generate.js";
 import { ensureRootHomePage } from "./homepage.js";

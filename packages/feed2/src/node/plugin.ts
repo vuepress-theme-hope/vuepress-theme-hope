@@ -2,7 +2,7 @@ import type { PluginFunction, PluginObject } from "@vuepress/core";
 import { colors } from "@vuepress/utils";
 import { checkVersion } from "vuepress-shared/node";
 
-import { convertOptions } from "./compact/index.js";
+import { convertOptions } from "./compact.js";
 import { FeedGenerator } from "./generator/index.js";
 import { injectLinksToHead } from "./injectHead.js";
 import { checkOutput, ensureHostName, getFeedOptions } from "./options.js";

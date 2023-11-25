@@ -17,15 +17,19 @@ export const getCopyrightPlugin = (
   themeData: ThemeData,
   options?: Partial<CopyrightOptions> | boolean,
   hostname?: string,
+  legacy = false,
 ): Plugin | null => {
   if (!options) return null;
 
-  return copyrightPlugin(<CopyrightOptions>{
-    hostname,
-    author: (page: Page<Record<string, never>, ThemeNormalPageFrontmatter>) =>
-      getAuthor(page.frontmatter.author)?.[0]?.name ||
-      getAuthor(themeData.author)?.[0]?.name ||
-      "",
-    ...(isPlainObject(options) ? options : { global: true }),
-  });
+  return copyrightPlugin(
+    <CopyrightOptions>{
+      canonical: hostname,
+      author: (page: Page<Record<string, never>, ThemeNormalPageFrontmatter>) =>
+        getAuthor(page.frontmatter.author)?.[0]?.name ||
+        getAuthor(themeData.author)?.[0]?.name ||
+        "",
+      ...(isPlainObject(options) ? options : { global: true }),
+    },
+    legacy,
+  );
 };

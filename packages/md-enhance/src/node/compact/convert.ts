@@ -1,7 +1,7 @@
 import { isArray, isPlainObject } from "@vuepress/shared";
 import { colors } from "@vuepress/utils";
+import { createConverter } from "vuepress-shared/node";
 
-import { deprecatedLogger, droppedLogger } from "./utils.js";
 import type { LinksCheckStatus, MarkdownEnhanceOptions } from "../options.js";
 import type { RevealJsPlugin } from "../typings/index.js";
 import { logger } from "../utils.js";
@@ -10,64 +10,78 @@ import { logger } from "../utils.js";
 export const convertOptions = (
   options: MarkdownEnhanceOptions & Record<string, unknown>,
 ): void => {
+  const { deprecatedLogger, droppedLogger } = createConverter("md-enhance");
+
   deprecatedLogger({
     options,
-    deprecatedOption: "container",
-    newOption: "hint",
+    old: "container",
+    new: "hint",
   });
   deprecatedLogger({
     options,
-    deprecatedOption: "codegroup",
-    newOption: "codetabs",
+    old: "codegroup",
+    new: "codetabs",
   });
   deprecatedLogger({
     options,
-    deprecatedOption: "lazyload",
-    newOption: "imgLazyload",
+    old: "lazyload",
+    new: "imgLazyload",
   });
   deprecatedLogger({
     options,
-    deprecatedOption: "imageLazyload",
-    newOption: "imgLazyload",
+    old: "imageLazyload",
+    new: "imgLazyload",
   });
   deprecatedLogger({
     options,
-    deprecatedOption: "imageMark",
-    newOption: "imgMark",
+    old: "imageMark",
+    new: "imgMark",
   });
   deprecatedLogger({
     options,
-    deprecatedOption: "imageSize",
-    newOption: "imgSize",
+    old: "imageSize",
+    new: "imgSize",
   });
   deprecatedLogger({
     options,
-    deprecatedOption: "mdImport",
-    newOption: "include",
+    old: "mdImport",
+    new: "include",
   });
   deprecatedLogger({
     options,
-    deprecatedOption: "tex",
-    newOption: "katex",
+    old: "tex",
+    new: "katex",
   });
   deprecatedLogger({
     options,
-    deprecatedOption: "vpre",
-    newOption: "vPre",
+    old: "vpre",
+    new: "vPre",
   });
   deprecatedLogger({
     options,
-    deprecatedOption: "imageTitle",
-    newOption: "figure",
+    old: "imageTitle",
+    new: "figure",
   });
   deprecatedLogger({
     options,
-    deprecatedOption: "revealjs",
-    newOption: "revealJs",
+    old: "revealjs",
+    new: "revealJs",
   });
-  droppedLogger(options, "enableAll");
-  droppedLogger(options, "lineNumbers");
-  droppedLogger(options, "imageFix");
+  droppedLogger({
+    options,
+    old: "enableAll",
+    msg: "Please manually enable the features you need.",
+  });
+  droppedLogger({
+    options,
+    old: "lineNumbers",
+    msg: "Please use the built-in lineNumbers option of vuepress instead!",
+  });
+  droppedLogger({
+    options,
+    old: "imageFix",
+    msg: "This option is no longer needed.",
+  });
 
   if ("linkCheck" in options) {
     logger.warn(
@@ -93,6 +107,17 @@ export const convertOptions = (
       )} from "vuepress-plugin-components" and use it instead.`,
     );
 
+  if (isPlainObject(options["mermaid"])) {
+    logger.error(
+      `Customizing mermaid with option ${colors.magenta(
+        "mermaid",
+      )} is no longer supported, please import and use ${colors.magenta(
+        "defineMermaidConfig",
+      )} from ${colors.magenta("vuepress-plugin-md-enhance/client")} instead.`,
+    );
+    options["mermaid"] = true;
+  }
+
   if (options["presentation"]) {
     logger.error(
       `${colors.magenta(
@@ -107,10 +132,35 @@ export const convertOptions = (
         options.revealJs = {
           plugins: <RevealJsPlugin[]>options["presentation"]["plugins"],
         };
+      else options.revealJs = true;
+
+      if ("revealConfig" in options["presentation"])
+        logger.error(
+          `Customizing revealJs with option ${colors.magenta(
+            "presentation.revealConfig",
+          )} is no longer supported, please import and use ${colors.magenta(
+            "defineRevealJsConfig",
+          )} from ${colors.magenta(
+            "vuepress-plugin-md-enhance/client",
+          )} instead.`,
+        );
     } else if (isArray(options["presentation"])) {
       options.revealJs = {
         plugins: <RevealJsPlugin[]>options["presentation"],
       };
     }
+
+    delete options["presentation"];
+  }
+
+  if (isPlainObject(options["vuePlayground"])) {
+    logger.error(
+      `Customizing @vue/repl with option ${colors.magenta(
+        "vuePlayground",
+      )} is no longer supported, please import and use ${colors.magenta(
+        "defineVuePlaygroundConfig",
+      )} from ${colors.magenta("vuepress-plugin-md-enhance/client")} instead.`,
+    );
+    options["vuePlayground"] = true;
   }
 };

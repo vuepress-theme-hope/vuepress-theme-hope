@@ -38,14 +38,14 @@ icon: lightbulb
 
 ## 自定义 PhotoSwipe 选项
 
-你可以通过在客户端配置文件中导入和调用 `definePhotoSwipeOptions` 来将选项传递给 [`photo-swipe`](http://photoswipe.com/)：
+你可以通过在客户端配置文件中导入和调用 `definePhotoSwipeConfig` 来将选项传递给 [`photo-swipe`](http://photoswipe.com/)：
 
 ```ts
 // .vuepress/client.ts
 import { defineClientConfig } from "@vuepress/client";
-import { definePhotoSwipeOptions } from "vuepress-plugin-photo-swipe/client";
+import { definePhotoSwipeConfig } from "vuepress-plugin-photo-swipe/client";
 
-definePhotoSwipeOptions({
+definePhotoSwipeConfig({
   // 在此设置 photoswipe 选项
 });
 

@@ -109,15 +109,15 @@ Photo Swipe 插件的国际化配置。
 
 ## 客户端配置
 
-### definePhotoSwipeOptions
+### definePhotoSwipeConfig
 
 传递给 [`photo-swipe`](http://photoswipe.com/) 的额外选项。
 
 ```ts
 // .vuepress/client.ts
-import { definePhotoSwipeOptions } from "vuepress-plugin-photo-swipe/client";
+import { definePhotoSwipeConfig } from "vuepress-plugin-photo-swipe/client";
 
-definePhotoSwipeOptions({
+definePhotoSwipeConfig({
   // 在此设置 photoswipe 选项
 });
 
