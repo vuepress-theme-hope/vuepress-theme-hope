@@ -82,7 +82,7 @@
     "@mdit/plugin-attrs": "^0.6.5",
     "@mdit/plugin-container": "^0.6.5",
     "@mdit/plugin-demo": "^0.6.5",
-    "@mdit/plugin-figure": "^0.6.5",
+    "@mdit/plugin-figure": "^0.7.0",
     "@mdit/plugin-footnote": "^0.6.5",
     "@mdit/plugin-img-lazyload": "^0.6.5",
     "@mdit/plugin-img-mark": "^0.6.5",
