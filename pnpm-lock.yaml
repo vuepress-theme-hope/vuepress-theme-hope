@@ -1818,8 +1818,8 @@ importers:
         specifier: ^0.6.5
         version: 0.6.5(markdown-it@13.0.2)
       '@mdit/plugin-demo':
-        specifier: ^0.6.5
-        version: 0.6.5(markdown-it@13.0.2)
+        specifier: ^0.7.0
+        version: 0.7.0(markdown-it@13.0.2)
       '@mdit/plugin-figure':
         specifier: ^0.6.5
         version: 0.6.5(markdown-it@13.0.2)
@@ -4736,8 +4736,8 @@ packages:
       markdown-it: 13.0.2
     dev: false
 
-  /@mdit/plugin-demo@0.6.5(markdown-it@13.0.2):
-    resolution: {integrity: sha512-lUx8fONmZYPg56UnEZjznPHaK/sTL5haY9uOjWCM+42WTKCVQrnsJcCMnJIKd88BROBSP+BdyHzrUxWR9ZSS2g==}
+  /@mdit/plugin-demo@0.7.0(markdown-it@13.0.2):
+    resolution: {integrity: sha512-YMsymoQMMygTzQY+GSy/bu8Vp9jqB+Z0JGhErNFSafav7d/He31IFb44QLViM10Z+t7XB3K/s7R/hl+5hW8cow==}
     peerDependencies:
       markdown-it: ^13.0.2
     peerDependenciesMeta:
