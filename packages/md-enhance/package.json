@@ -94,7 +94,7 @@
     "@mdit/plugin-stylize": "^0.6.5",
     "@mdit/plugin-sub": "^0.6.5",
     "@mdit/plugin-sup": "^0.6.5",
-    "@mdit/plugin-tab": "^0.6.5",
+    "@mdit/plugin-tab": "^0.7.0",
     "@mdit/plugin-tasklist": "^0.6.5",
     "@mdit/plugin-tex": "^0.6.5",
     "@mdit/plugin-uml": "^0.6.5",
