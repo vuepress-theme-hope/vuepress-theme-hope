@@ -38,12 +38,14 @@ import {
   legacyCodeDemo,
   legacyCodeGroup,
   legacyFlowchart,
+  legacyHint,
   legacyInclude,
 } from "./compact/index.js";
 import { getLinksCheckStatus, linksCheck } from "./linksCheck.js";
 import { markdownEnhanceLocales } from "./locales.js";
 import {
   CODE_DEMO_DEFAULT_SETTING,
+  alert,
   chart,
   codeTabs,
   component,
@@ -265,11 +267,11 @@ export const mdEnhancePlugin =
 
       extendsMarkdown: (md): void => {
         // syntax
+        if (getStatus("alert", true)) md.use(alert, locales);
         if (getStatus("attrs"))
           md.use(attrs, isPlainObject(options.attrs) ? options.attrs : {});
         if (getStatus("align")) md.use(align);
         if (getStatus("breaks", true)) md.options.breaks = true;
-        if (getStatus("container")) md.use(hint, locales);
         if (getStatus("imgLazyload")) md.use(imgLazyload);
         if (getStatus("figure")) md.use(figure);
         if (enableImgMark)
@@ -277,7 +279,10 @@ export const mdEnhancePlugin =
             imgMark,
             isPlainObject(options.imgMark) ? options.imgMark : {},
           );
-
+        if (getStatus("hint")) {
+          md.use(hint, locales);
+          if (legacy) md.use(legacyHint, locales);
+        }
         if (getStatus("imgSize")) md.use(imgSize);
         if (getStatus("linkify", true)) md.options.linkify = true;
         if (getStatus("obsidianImgSize")) md.use(obsidianImageSize);

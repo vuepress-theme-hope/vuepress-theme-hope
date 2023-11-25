@@ -97,10 +97,15 @@ highlights:
       background-repeat: repeat
       background-size: initial
     highlights:
-      - title: 自定义容器支持
+      - title: 提示容器支持
         icon: box-archive
         details: 用样式装饰 Markdown 内容
-        link: ./guide/stylize/container.html
+        link: ./guide/stylize/hint.html
+
+      - title: GFM 警告
+        icon: bell
+        details: GFM 风格的警告容器
+        link: ./guide/stylize/alert.html
 
       - title: 自定义对齐支持
         icon: align-center

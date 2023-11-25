@@ -148,7 +148,7 @@ Control logic when new content is found.
 
 - `"force"`: unregister current service worker immediately then refresh to get new content
 
-  ::: danger
+  ::: caution
 
   Though this ensures users are visiting the newest content, but this may affect visiting experiences.
 

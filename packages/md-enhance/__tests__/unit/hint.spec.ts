@@ -11,8 +11,8 @@ describe("hint", () => {
         info: "Info",
         note: "Note",
         tip: "Tips",
-        warning: "Note",
-        danger: "Warning",
+        warning: "Warning",
+        caution: "Caution",
         details: "Details",
       },
     });
@@ -29,7 +29,7 @@ describe("hint", () => {
 
     it("should generate warning block", () => {
       expect(markdownIt.render("::: warning\n*content*\n:::\n")).toBe(
-        '<div class="hint-container warning">\n<p class="hint-container-title">Note</p>\n<p><em>content</em></p>\n</div>\n',
+        '<div class="hint-container warning">\n<p class="hint-container-title">Warning</p>\n<p><em>content</em></p>\n</div>\n',
       );
 
       expect(markdownIt.render("::: warning Title\n*content*\n:::\n")).toBe(
@@ -38,12 +38,12 @@ describe("hint", () => {
     });
 
     it("should generate danger block", () => {
-      expect(markdownIt.render("::: danger\n*content*\n:::\n")).toBe(
-        '<div class="hint-container danger">\n<p class="hint-container-title">Warning</p>\n<p><em>content</em></p>\n</div>\n',
+      expect(markdownIt.render("::: caution\n*content*\n:::\n")).toBe(
+        '<div class="hint-container caution">\n<p class="hint-container-title">Caution</p>\n<p><em>content</em></p>\n</div>\n',
       );
 
-      expect(markdownIt.render("::: danger Title\n*content*\n:::\n")).toBe(
-        '<div class="hint-container danger">\n<p class="hint-container-title">Title</p>\n<p><em>content</em></p>\n</div>\n',
+      expect(markdownIt.render("::: caution Title\n*content*\n:::\n")).toBe(
+        '<div class="hint-container caution">\n<p class="hint-container-title">Title</p>\n<p><em>content</em></p>\n</div>\n',
       );
     });
 
@@ -97,13 +97,13 @@ describe("hint", () => {
       );
     });
 
-    it("should generate danger block", () => {
-      expect(markdownIt.render("::: danger\n*content*\n:::\n")).toBe(
-        '<div class="hint-container danger">\n<p class="hint-container-title">danger</p>\n<p><em>content</em></p>\n</div>\n',
+    it("should generate caution block", () => {
+      expect(markdownIt.render("::: caution\n*content*\n:::\n")).toBe(
+        '<div class="hint-container caution">\n<p class="hint-container-title">caution</p>\n<p><em>content</em></p>\n</div>\n',
       );
 
-      expect(markdownIt.render("::: danger Title\n*content*\n:::\n")).toBe(
-        '<div class="hint-container danger">\n<p class="hint-container-title">Title</p>\n<p><em>content</em></p>\n</div>\n',
+      expect(markdownIt.render("::: caution Title\n*content*\n:::\n")).toBe(
+        '<div class="hint-container caution">\n<p class="hint-container-title">Title</p>\n<p><em>content</em></p>\n</div>\n',
       );
     });
 

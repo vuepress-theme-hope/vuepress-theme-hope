@@ -5,7 +5,7 @@ icon: lightbulb
 
 此插件会使用 Lightgallery 让正文内的图片在点击时进入浏览模式浏览。
 
-::: danger 许可证限制
+::: caution 许可证限制
 
 请注意，虽然这个插件是在 MIT 协议下发布的，但我们目前正在通过 VuePress Theme Hope 的内置 [lightgallery 组织许可](https://www.lightgalleryjs.com/license/) 来实现这一点，并且 如果你将其用于非商业用途，我们愿意承认你是我们组织的成员。
 

@@ -21,26 +21,27 @@ Whether to support full GFM syntax.
 
 For full GFM syntax, see [GFM](https://github.github.com/gfm/).
 
-We are not 100% supporting it to be honestly, we only supply its syntax including linkify, breaks, footnote, task list, code highlight, image mark, mermaid, mathjax and so on.
+Honestly, we do not 100% implement GFM, we only supply its common syntax.
 
 Some of the behavior might be different, for example to support Vue syntax, we are not disallowing `<script>` tags. But in most situation, the behavior should be same.
 
 :::
 
-### container
+### hint
 
 - Type: `boolean`
 - Default: `false`
 - Details:
-  - [Custom Container](./guide/stylize/container.md)
+  - [Hint box](./guide/stylize/hint.md)
 
-Whether to enable custom container including
+Whether to enable hint box including
 
+- important
 - info
 - note
 - tip
 - warning
-- danger
+- caution
 - details
 
 ::: warning
@@ -101,6 +102,15 @@ Whether convert `\n` in paragraphs into `<br>`s
 - Enabled in GFM: Yes
 
 Whether convert URL-like text into links
+
+### alert
+
+- Type: `boolean`
+- Default: `false`
+- Details:
+  - [GFM Alerts](./guide/stylize/alert.md)
+
+Whether to enable gfm alerts.
 
 ### tabs
 

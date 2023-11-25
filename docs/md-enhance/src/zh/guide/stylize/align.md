@@ -95,7 +95,7 @@ export default {
 
 ::::: md-demo
 
-:::: danger W.I.P
+:::: caution W.I.P
 VuePress Theme Hope V2 版本仍在制作中，API 可能会有
 
 ::: center

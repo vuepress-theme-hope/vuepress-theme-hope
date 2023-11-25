@@ -1808,6 +1808,9 @@ importers:
       '@babel/core':
         specifier: ^7.23.3
         version: 7.23.3
+      '@mdit/plugin-alert':
+        specifier: ^0.7.0
+        version: 0.7.0(markdown-it@13.0.2)
       '@mdit/plugin-align':
         specifier: ^0.7.0
         version: 0.7.0(markdown-it@13.0.2)
@@ -4695,6 +4698,18 @@ packages:
 
   /@mdit-vue/types@1.0.0:
     resolution: {integrity: sha512-xeF5+sHLzRNF7plbksywKCph4qli20l72of2fMlZQQ7RECvXYrRkE9+bjRFQCyULC7B8ydUYbpbkux5xJlVWyw==}
+
+  /@mdit/plugin-alert@0.7.0(markdown-it@13.0.2):
+    resolution: {integrity: sha512-QyTylF1aeM0pzyjXNTpctOhLPE0TouKsJR6T7HapP+9HOvTWwd5FrWFT+bvWkhYExqnDVPVEEP5ym0hqV5Fo4Q==}
+    peerDependencies:
+      markdown-it: ^13.0.2
+    peerDependenciesMeta:
+      markdown-it:
+        optional: true
+    dependencies:
+      '@types/markdown-it': 13.0.7
+      markdown-it: 13.0.2
+    dev: false
 
   /@mdit/plugin-align@0.7.0(markdown-it@13.0.2):
     resolution: {integrity: sha512-FQ5rqumPZuMb3CY9FR0E75O1dFqOZ151MquTfV9IpIa2bb9MOhWab6eGLDxfh4gYi9GP9Y/mmXlxbuR3Zd+Mdw==}

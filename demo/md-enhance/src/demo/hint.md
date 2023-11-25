@@ -1,9 +1,13 @@
 ---
-title: Custom container
+title: Hint
 ---
 
 ## Demo
 
+::: important
+Important container
+:::
+
 ::: info
 Information container
 :::
@@ -20,12 +24,22 @@ Tip container
 Warning container
 :::
 
-::: danger
-Dangerous container
+::: caution
+Caution container
 :::
 
 ::: details
 Details container
+:::
+
+::: important Custom Title
+
+A custom important container with `code`, [link](#demo).
+
+```js
+const a = 1;
+```
+
 :::
 
 ::: info Custom Title
@@ -68,9 +82,9 @@ const a = 1;
 
 :::
 
-::: danger Custom Title
+::: caution Custom Title
 
-A custom danger container with `code`, [link](#demo).
+A custom caution container with `code`, [link](#demo).
 
 ```js
 const a = 1;
@@ -88,6 +102,9 @@ const a = 1;
 
 :::
 
+::: important Custom important
+:::
+
 ::: info Custom info
 :::
 
@@ -100,10 +117,14 @@ const a = 1;
 ::: warning Custom warning
 :::
 
-::: danger Custom danger
+::: caution Custom caution
 :::
 
 ````md
+::: important
+Important container
+:::
+
 ::: info
 Information container
 :::
@@ -120,12 +141,22 @@ Tip container
 Warning container
 :::
 
-::: danger
-Dangerous container
+::: caution
+Caution container
 :::
 
 ::: details
 Details container
+:::
+
+::: important Custom Title
+
+A custom important container with `code`, [link](#demo).
+
+```js
+const a = 1;
+```
+
 :::
 
 ::: info Custom Title
@@ -139,6 +170,7 @@ const a = 1;
 :::
 
 ::: note Custom Title
+
 A custom note container with `code`, [link](#demo).
 
 ```js
@@ -167,9 +199,9 @@ const a = 1;
 
 :::
 
-::: danger Custom Title
+::: caution Custom Title
 
-A custom danger container with `code`, [link](#demo).
+A custom caution container with `code`, [link](#demo).
 
 ```js
 const a = 1;
@@ -187,6 +219,9 @@ const a = 1;
 
 :::
 
+::: important Custom important
+:::
+
 ::: info Custom info
 :::
 
@@ -199,6 +234,6 @@ const a = 1;
 ::: warning Custom warning
 :::
 
-::: danger Custom danger
+::: caution Custom caution
 :::
 ````

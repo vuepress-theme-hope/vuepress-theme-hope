@@ -10,6 +10,11 @@ export const convertOptions = (
 ): void => {
   deprecatedLogger({
     options,
+    deprecatedOption: "container",
+    newOption: "hint",
+  });
+  deprecatedLogger({
+    options,
     deprecatedOption: "codegroup",
     newOption: "codetabs",
   });

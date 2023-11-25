@@ -41,10 +41,15 @@ highlights:
         details: 检查 Markdown 链接
         link: https://theme-hope.vuejs.press/zh/guide/markdown/others.html#link-check
 
-      - title: 自定义容器支持
+      - title: 提示容器支持
         icon: box-archive
         details: 用样式装饰 Markdown 内容
-        link: https://theme-hope.vuejs.press/zh/guide/markdown/container.html
+        link: https://theme-hope.vuejs.press/zh/guide/markdown/hint.html
+
+      - title: GFM 警告
+        icon: bell
+        details: GFM 风格的警告容器
+        link: https://theme-hope.vuejs.press/zh/guide/markdown/alert.html
 
       - title: 选项卡
         icon: table-columns

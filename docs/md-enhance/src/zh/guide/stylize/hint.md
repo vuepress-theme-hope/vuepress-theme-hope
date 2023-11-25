@@ -1,9 +1,9 @@
 ---
-title: 自定义容器
+title: 提示容器
 icon: box-archive
 ---
 
-插件可以为你添加提示、注释、信息、注意、警告和详情自定义容器的支持。
+插件可以为你添加提示、注意、警告、重要、注释、信息和详情提示容器的支持。
 
 <!-- more -->
 
@@ -20,8 +20,8 @@ import { mdEnhancePlugin } from "vuepress-plugin-md-enhance";
 export default {
   plugins: [
     mdEnhancePlugin({
-      // 启用自定义容器
-      container: true,
+      // 启用提示容器
+      hint: true,
     }),
   ],
 };
@@ -36,8 +36,8 @@ import { mdEnhancePlugin } from "vuepress-plugin-md-enhance";
 export default {
   plugins: [
     mdEnhancePlugin({
-      // 启用自定义容器
-      container: true,
+      // 启用提示容器
+      hint: true,
     }),
   ],
 };
@@ -50,6 +50,10 @@ export default {
 ## 演示
 
 :::: md-demo 默认标题的容器
+
+::: important
+重要容器。
+:::
 
 ::: info
 信息容器。
@@ -67,7 +71,7 @@ export default {
 警告容器
 :::
 
-::: danger
+::: caution
 危险容器
 :::
 
@@ -78,6 +82,16 @@ export default {
 ::::
 
 :::: md-demo 自定义标题的容器
+
+::: important 自定义标题
+
+一个有 `代码` 和 [链接](#演示) 的重要容器。
+
+```js
+const a = 1;
+```
+
+:::
 
 ::: info 自定义标题
 
@@ -119,7 +133,7 @@ const a = 1;
 
 :::
 
-::: danger 自定义标题
+::: caution 自定义标题
 
 一个有 `代码` 和 [链接](#演示) 的危险容器。
 
@@ -143,6 +157,9 @@ const a = 1;
 
 :::: md-demo 不含内容的容器
 
+::: info 自定义重要
+:::
+
 ::: info 自定义信息
 :::
 
@@ -155,7 +172,7 @@ const a = 1;
 ::: warning 自定义警告
 :::
 
-::: danger 自定义危险
+::: caution 自定义危险
 :::
 
 ::::

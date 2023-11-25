@@ -4,6 +4,7 @@ title: Get Started
 
 ## Catalog
 
+- [GFM alert](alert.md)
 - [Custom Align](align.md)
 - [Attrs](attrs.md)
 - [Chart](chart.md)
@@ -11,10 +12,10 @@ title: Get Started
 - [Code Demo](code-demo.md)
 - [Code Tabs](code-tabs.md)
 - [Component](component.md)
-- [Container](container.md)
 - [Figure](figure.md)
 - [Flowchart](flowchart.md)
 - [Footnote](footnote.md)
+- [Hint](hint.md)
 - [Image Mark](image-mark.md)
 - [Image Size](image-size.md)
 - [Include files](include.md)

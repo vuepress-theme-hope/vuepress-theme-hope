@@ -50,7 +50,7 @@ For these extended syntax, please see [Built-in Markdown Features](../../cookboo
 
 By using <ProjectLink name="md-enhance">`vuepress-plugin-md-enhance`</ProjectLink>, the theme extends more Markdown syntax and provides richer writing functions.
 
-#### Custom Container
+#### Hint box
 
 ::: v-pre
 
@@ -60,7 +60,7 @@ Safely use {{ variable }} in Markdown.
 
 ::: info Custom Title
 
-A custom information container with `code`, [link](#custom-container).
+A custom information container with `code`, [link](#hint-box).
 
 ```js
 const a = 1;
@@ -80,9 +80,9 @@ A custom warning container
 
 :::
 
-::: danger Custom Title
+::: caution Custom Title
 
-A custom danger container
+A custom caution container
 
 :::
 
@@ -119,9 +119,9 @@ A custom warning container
 
 :::
 
-::: danger Custom Title
+::: caution Custom Title
 
-A custom danger container
+A custom caution container
 
 :::
 
@@ -134,7 +134,7 @@ A custom details container
 
 ::::
 
-- [View Detail](../markdown/container.md)
+- [View Detail](../markdown/hint.md)
 
 #### Tabs
 

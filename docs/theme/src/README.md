@@ -46,10 +46,15 @@ highlights:
         details: Check markdown links
         link: ./guide/markdown/others.html#link-check
 
-      - title: Custom Container
+      - title: Hint box
         icon: box-archive
         details: Decorate Markdown content with styles
-        link: ./guide/markdown/container.html
+        link: ./guide/markdown/hint.html
+
+      - title: GFM alerts
+        icon: bell
+        details: GFM alert box
+        link: ./guide/markdown/alert.html
 
       - title: Tabs
         icon: table-columns

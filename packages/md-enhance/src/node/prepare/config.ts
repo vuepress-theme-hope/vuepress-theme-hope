@@ -54,12 +54,12 @@ export const prepareConfigFile = async (
     }
   }
 
-  if (getStatus("container")) {
+  if (getStatus("hint")) {
     imports.add(
-      `import { useContainer } from "${CLIENT_FOLDER}composables/container.js";`,
+      `import { useHint } from "${CLIENT_FOLDER}composables/hint.js";`,
     );
-    imports.add(`import "${CLIENT_FOLDER}styles/container/index.scss";`);
-    setups.add("useContainer();");
+    imports.add(`import "${CLIENT_FOLDER}styles/hint/index.scss";`);
+    setups.add("useHint();");
   }
 
   if (getStatus("demo")) {

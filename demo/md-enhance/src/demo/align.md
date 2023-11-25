@@ -4,7 +4,7 @@ title: Custom alignment
 
 ## Demo
 
-:::: danger
+:::: caution
 VuePress Theme Hope V2 version is still in W.I.P, the API may have
 
 ::: center
@@ -19,7 +19,7 @@ If you meet a bug during usage, you can
 ::::
 
 ```md
-:::: danger
+:::: caution
 VuePress Theme Hope V2 version is still in W.I.P, the API may have
 
 ::: center

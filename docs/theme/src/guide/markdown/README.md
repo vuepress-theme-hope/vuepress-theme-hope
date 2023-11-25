@@ -16,7 +16,7 @@ Besides Markdown syntaxes VuePress itself adds, `vuepress-theme-hope` enables mo
 
 ## New Syntax
 
-- [Custom Container](container.md)
+- [Hint box](hint.md)
 
 - [Tabs](tabs.md)
 
@@ -27,6 +27,8 @@ Besides Markdown syntaxes VuePress itself adds, `vuepress-theme-hope` enables mo
 - [Task list](tasklist.md)
 
 - [Image Enhancement](image.md)
+
+- [GFM Alert](alert.md)
 
 - [Custom Alignment](align.md)
 

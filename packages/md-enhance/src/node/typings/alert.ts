@@ -1,4 +1,4 @@
-export interface MarkdownHintLocaleData {
+export interface MarkdownAlertLocaleData {
   /**
    * Default Title text for important block
    *
@@ -28,23 +28,9 @@ export interface MarkdownHintLocaleData {
   warning: string;
 
   /**
-   * Default Title text for danger block
+   * Default Title text for caution block
    *
    * 警告块的默认标题
    */
   caution: string;
-
-  /**
-   * Default Title text for info block
-   *
-   * 信息块的默认标题
-   */
-  info: string;
-
-  /**
-   * Default Title text for details block
-   *
-   * 详情块的默认标题
-   */
-  details: string;
 }
