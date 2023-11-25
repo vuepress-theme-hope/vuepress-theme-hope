@@ -91,7 +91,7 @@
     "@mdit/plugin-katex": "^0.6.5",
     "@mdit/plugin-mark": "^0.6.5",
     "@mdit/plugin-mathjax": "^0.6.5",
-    "@mdit/plugin-stylize": "^0.6.5",
+    "@mdit/plugin-stylize": "^0.7.0",
     "@mdit/plugin-sub": "^0.6.5",
     "@mdit/plugin-sup": "^0.6.5",
     "@mdit/plugin-tab": "^0.6.5",
