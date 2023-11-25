@@ -27,7 +27,7 @@ export default [
         "components/RevealJs",
         "components/Tabs",
         "components/VuePlayground",
-        "composables/container",
+        "composables/hint",
         "composables/katex",
         "SlidePage",
       ],
