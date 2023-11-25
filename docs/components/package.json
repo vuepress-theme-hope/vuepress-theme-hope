@@ -24,7 +24,7 @@
     "docs-shared": "workspace:*",
     "hls.js": "1.4.12",
     "sass-loader": "13.3.2",
-    "vue": "3.3.8",
+    "vue": "3.3.9",
     "vuepress-plugin-components": "workspace:*",
     "vuepress-plugin-copy-code2": "workspace:*",
     "vuepress-shared": "workspace:*",
