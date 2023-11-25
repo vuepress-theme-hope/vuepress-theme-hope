@@ -80,7 +80,7 @@
     "@babel/core": "^7.23.3",
     "@mdit/plugin-align": "^0.6.5",
     "@mdit/plugin-attrs": "^0.6.5",
-    "@mdit/plugin-container": "^0.6.5",
+    "@mdit/plugin-container": "^0.7.0",
     "@mdit/plugin-demo": "^0.6.5",
     "@mdit/plugin-figure": "^0.6.5",
     "@mdit/plugin-footnote": "^0.6.5",
