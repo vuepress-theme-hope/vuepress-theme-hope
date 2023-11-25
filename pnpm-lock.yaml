@@ -1866,8 +1866,8 @@ importers:
         specifier: ^0.6.5
         version: 0.6.5(markdown-it@13.0.2)
       '@mdit/plugin-uml':
-        specifier: ^0.6.5
-        version: 0.6.5(markdown-it@13.0.2)
+        specifier: ^0.7.0
+        version: 0.7.0(markdown-it@13.0.2)
       '@types/js-yaml':
         specifier: ^4.0.9
         version: 4.0.9
@@ -4951,8 +4951,8 @@ packages:
       markdown-it: 13.0.2
     dev: false
 
-  /@mdit/plugin-uml@0.6.5(markdown-it@13.0.2):
-    resolution: {integrity: sha512-xWB03mUnzrHE13Rv7ke6Mlw6b33hTB/GNqb+Z5L6vYFHSM3tAbxhZQIlxJ69hQuAh/mJkrY59JYKSxIbk2u6XA==}
+  /@mdit/plugin-uml@0.7.0(markdown-it@13.0.2):
+    resolution: {integrity: sha512-OVvIC1tY5DZywfvzi64tkbUhTcc+0F0TNz3iwEjV917+xnTwMVLPQ2sJsjNQ4AKI4yNa1kLX8lWEvxDGsnY0MA==}
     engines: {node: '>= 18'}
     peerDependencies:
       markdown-it: ^13.0.2
