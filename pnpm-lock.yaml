@@ -1809,8 +1809,8 @@ importers:
         specifier: ^7.23.3
         version: 7.23.3
       '@mdit/plugin-align':
-        specifier: ^0.6.5
-        version: 0.6.5(markdown-it@13.0.2)
+        specifier: ^0.7.0
+        version: 0.7.0(markdown-it@13.0.2)
       '@mdit/plugin-attrs':
         specifier: ^0.6.5
         version: 0.6.5(markdown-it@13.0.2)
@@ -4696,8 +4696,8 @@ packages:
   /@mdit-vue/types@1.0.0:
     resolution: {integrity: sha512-xeF5+sHLzRNF7plbksywKCph4qli20l72of2fMlZQQ7RECvXYrRkE9+bjRFQCyULC7B8ydUYbpbkux5xJlVWyw==}
 
-  /@mdit/plugin-align@0.6.5(markdown-it@13.0.2):
-    resolution: {integrity: sha512-Grg8LuEaJpY74Imd7HEVUTQc8qaq9FM9ntuNILkikguyodBoz1UYEYH6iULaoKbp8N5HphoQh74jq9rTbPjdYQ==}
+  /@mdit/plugin-align@0.7.0(markdown-it@13.0.2):
+    resolution: {integrity: sha512-FQ5rqumPZuMb3CY9FR0E75O1dFqOZ151MquTfV9IpIa2bb9MOhWab6eGLDxfh4gYi9GP9Y/mmXlxbuR3Zd+Mdw==}
     engines: {node: '>= 18'}
     peerDependencies:
       markdown-it: ^13.0.2
@@ -4705,7 +4705,7 @@ packages:
       markdown-it:
         optional: true
     dependencies:
-      '@mdit/plugin-container': 0.6.5(markdown-it@13.0.2)
+      '@mdit/plugin-container': 0.7.0(markdown-it@13.0.2)
       '@types/markdown-it': 13.0.7
       markdown-it: 13.0.2
     dev: false
@@ -4725,6 +4725,19 @@ packages:
 
   /@mdit/plugin-container@0.6.5(markdown-it@13.0.2):
     resolution: {integrity: sha512-OEZv3vPzAGxH6OYHI1QVbn+yHdYap3T0ryG1Lzvd498Y4JHUGmHj69LWsKfSDmqKtVq/k4o/XbFwafxwQ/OFxQ==}
+    engines: {node: '>= 18'}
+    peerDependencies:
+      markdown-it: ^13.0.2
+    peerDependenciesMeta:
+      markdown-it:
+        optional: true
+    dependencies:
+      '@types/markdown-it': 13.0.7
+      markdown-it: 13.0.2
+    dev: false
+
+  /@mdit/plugin-container@0.7.0(markdown-it@13.0.2):
+    resolution: {integrity: sha512-FMCsC4FFuN9j1V8Xo6WmoYBMo/wwCKD9fN7/Zfwkp4rGqT9qM1WUmleACRP400us98/jQ2f/jMY66kbJCz6FAA==}
     engines: {node: '>= 18'}
     peerDependencies:
       markdown-it: ^13.0.2

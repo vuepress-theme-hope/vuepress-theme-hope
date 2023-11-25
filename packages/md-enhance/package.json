@@ -78,7 +78,7 @@
   },
   "dependencies": {
     "@babel/core": "^7.23.3",
-    "@mdit/plugin-align": "^0.6.5",
+    "@mdit/plugin-align": "^0.7.0",
     "@mdit/plugin-attrs": "^0.6.5",
     "@mdit/plugin-container": "^0.6.5",
     "@mdit/plugin-demo": "^0.6.5",
