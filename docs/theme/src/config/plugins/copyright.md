@@ -41,7 +41,7 @@ Author Information
 
 License Information
 
-### triggerWords
+### triggerLength
 
 - Type: `number`
 - Default: `100`

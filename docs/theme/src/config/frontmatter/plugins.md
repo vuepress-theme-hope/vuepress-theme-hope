@@ -13,7 +13,7 @@ You can configure the following options in the frontmatter of the page to contro
 
 ## `copyright2` Plugin
 
-### copy.triggerWords
+### copy.triggerLength
 
 - Type: `number`
 - Default: `100`
