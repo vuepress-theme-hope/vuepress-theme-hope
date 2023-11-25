@@ -1845,8 +1845,8 @@ importers:
         specifier: ^0.6.5
         version: 0.6.5(markdown-it@13.0.2)
       '@mdit/plugin-mathjax':
-        specifier: ^0.6.5
-        version: 0.6.5(markdown-it@13.0.2)(mathjax-full@3.2.2)
+        specifier: ^0.7.0
+        version: 0.7.0(markdown-it@13.0.2)(mathjax-full@3.2.2)
       '@mdit/plugin-stylize':
         specifier: ^0.6.5
         version: 0.6.5(markdown-it@13.0.2)
@@ -4855,8 +4855,8 @@ packages:
       markdown-it: 13.0.2
     dev: false
 
-  /@mdit/plugin-mathjax@0.6.5(markdown-it@13.0.2)(mathjax-full@3.2.2):
-    resolution: {integrity: sha512-c2bslbe+z/cRd46aRzD/EumCdUejP49sCwwTAxB7JWjwiDCWO882q/OICrrqjWk+j7qxBFe0lFQwRXWHthCPGg==}
+  /@mdit/plugin-mathjax@0.7.0(markdown-it@13.0.2)(mathjax-full@3.2.2):
+    resolution: {integrity: sha512-SLGIQ0LuWypNSWzKb1MP9krUpLkrW4ek1lLAyx0hOtfYru427CkT39XqaxRRACd58etVlL+hsvyqImNSohjqcg==}
     engines: {node: '>= 18'}
     peerDependencies:
       markdown-it: ^13.0.2
@@ -4867,7 +4867,7 @@ packages:
       mathjax-full:
         optional: true
     dependencies:
-      '@mdit/plugin-tex': 0.6.5(markdown-it@13.0.2)
+      '@mdit/plugin-tex': 0.7.0(markdown-it@13.0.2)
       '@types/markdown-it': 13.0.7
       markdown-it: 13.0.2
       mathjax-full: 3.2.2
@@ -4940,6 +4940,19 @@ packages:
 
   /@mdit/plugin-tex@0.6.5(markdown-it@13.0.2):
     resolution: {integrity: sha512-Le8XCodPiN9+gH2dtWH1CKrH7/dMQuz0M8hAZk/2j2w7TTaMb0x622ELCvIgSlnq8xk0mdBphVa3iZ2AyS9evg==}
+    engines: {node: '>= 18'}
+    peerDependencies:
+      markdown-it: ^13.0.2
+    peerDependenciesMeta:
+      markdown-it:
+        optional: true
+    dependencies:
+      '@types/markdown-it': 13.0.7
+      markdown-it: 13.0.2
+    dev: false
+
+  /@mdit/plugin-tex@0.7.0(markdown-it@13.0.2):
+    resolution: {integrity: sha512-wFv6j2Hk8w7p9evAQpuorNdCsvappmHGsSJ3sAYBQO6JTVWwdlmdrpyE94wkhn4t8+1eFcEcR1QibEj2xSE5vg==}
     engines: {node: '>= 18'}
     peerDependencies:
       markdown-it: ^13.0.2
