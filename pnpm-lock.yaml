@@ -1836,8 +1836,8 @@ importers:
         specifier: ^0.6.5
         version: 0.6.5(markdown-it@13.0.2)
       '@mdit/plugin-include':
-        specifier: ^0.6.5
-        version: 0.6.5(markdown-it@13.0.2)
+        specifier: ^0.7.0
+        version: 0.7.0(markdown-it@13.0.2)
       '@mdit/plugin-katex':
         specifier: ^0.6.5
         version: 0.6.5(katex@0.16.9)(markdown-it@13.0.2)
@@ -4810,8 +4810,8 @@ packages:
       markdown-it: 13.0.2
     dev: false
 
-  /@mdit/plugin-include@0.6.5(markdown-it@13.0.2):
-    resolution: {integrity: sha512-2IJV+nhrLxMRKl4QcbyMrK1i8Yp4KfDXiadMJrxSSyZwHu9PP49a4DAbzaE2J2aVI0AvTkg/LLQRZqQkWKtCCA==}
+  /@mdit/plugin-include@0.7.0(markdown-it@13.0.2):
+    resolution: {integrity: sha512-xfWcw2qtxwzOh4YGFj81r9kpjUq4JcsfBcsjXgOW7SDmOit9fzlhNrKNEQCYpFXCrHxc/II2G997fDzk+dAj6A==}
     peerDependencies:
       markdown-it: ^13.0.2
     peerDependenciesMeta:
