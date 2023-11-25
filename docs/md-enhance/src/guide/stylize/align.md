@@ -95,7 +95,7 @@ Escaping can be done by adding `\` to escape the marker
 
 ::::: md-demo Real life example
 
-:::: danger
+:::: caution
 VuePress Theme Hope V2 version is still in W.I.P, the API may have
 
 ::: center

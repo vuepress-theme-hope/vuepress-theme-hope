@@ -114,7 +114,7 @@ Control logic when new content is found.
 
 - `"force"`: unregister current service worker immediately then refresh to get new content
 
-  ::: danger
+  ::: caution
 
   Although this ensures users are viewing the latest content, it may affect viewing experiences.
 

@@ -1,9 +1,9 @@
 ---
-title: Custom container
+title: Hint box
 icon: box-archive
 ---
 
-The plugin adds tip, note, info, warning, danger and detail container.
+The plugin adds tip, warning, danger, important, note, info and detail hint box.
 
 <!-- more -->
 
@@ -20,8 +20,8 @@ import { mdEnhancePlugin } from "vuepress-plugin-md-enhance";
 export default {
   plugins: [
     mdEnhancePlugin({
-      // Enable container
-      container: true,
+      // Enable hint box
+      hint: true,
     }),
   ],
 };
@@ -36,8 +36,8 @@ import { mdEnhancePlugin } from "vuepress-plugin-md-enhance";
 export default {
   plugins: [
     mdEnhancePlugin({
-      // Enable container
-      container: true,
+      // Enable hint box
+      hint: true,
     }),
   ],
 };
@@ -50,6 +50,10 @@ export default {
 ## Demo
 
 :::: md-demo Container with default title
+
+::: important
+Important container
+:::
 
 ::: info
 Information container
@@ -67,8 +71,8 @@ Tip container
 Warning container
 :::
 
-::: danger
-Dangerous container
+::: caution
+Caution container
 :::
 
 ::: details
@@ -78,6 +82,16 @@ Details container
 ::::
 
 :::: md-demo Customize container title
+
+::: important Custom Title
+
+A custom important container with `code`, [link](#demo).
+
+```js
+const a = 1;
+```
+
+:::
 
 ::: info Custom Title
 
@@ -119,9 +133,9 @@ const a = 1;
 
 :::
 
-::: danger Custom Title
+::: caution Custom Title
 
-A custom danger container with `code`, [link](#demo).
+A custom caution container with `code`, [link](#demo).
 
 ```js
 const a = 1;
@@ -143,6 +157,9 @@ const a = 1;
 
 :::: md-demo Container without body
 
+::: important Custom important
+:::
+
 ::: info Custom info
 :::
 
@@ -155,7 +172,7 @@ const a = 1;
 ::: warning Custom warning
 :::
 
-::: danger Custom danger
+::: caution Custom caution
 :::
 
 ::::

@@ -1,18 +1,18 @@
 ---
-title: Custom container
+title: 提示容器
 icon: box-open
 category:
   - Markdown
 tag:
-  - Container
   - Markdown
+  - 提示容器
 ---
 
-The theme adds tip, note, info, warning, danger and detail container.
+主题可以为你添加提示、注释、信息、注意、警告和详情提示容器的支持。
 
 <!-- more -->
 
-## Settings
+## 配置
 
 ::: code-tabs#language
 
@@ -27,8 +27,8 @@ export default defineUserConfig({
   theme: hopeTheme({
     plugins: {
       mdEnhance: {
-        // this is the default option, so you can use it directly
-        container: true,
+        // 这就是默认选项，所以你可以直接使用它
+        hint: true,
       },
     },
   }),
@@ -45,8 +45,8 @@ export default {
   theme: hopeTheme({
     plugins: {
       mdEnhance: {
-        // this is the default option, so you can use it directly
-        container: true,
+        // 这就是默认选项，所以你可以直接使用它
+        hint: true,
       },
     },
   }),
@@ -55,4 +55,4 @@ export default {
 
 :::
 
-<!-- @include: @md-enhance/guide/stylize/container.md#after -->
+<!-- @include: @md-enhance/zh/guide/stylize/hint.md#after -->

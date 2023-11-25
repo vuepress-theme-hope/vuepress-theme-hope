@@ -1,4 +1,4 @@
-import { deprecatedLogger } from "./utils.js";
+import { deprecatedLogger, droppedLogger } from "./utils.js";
 import type { PWAOptions } from "../options.js";
 
 /** @deprecated */
@@ -15,4 +15,5 @@ export const convertOptions = (
     deprecatedOption: "popupComponent",
     newOption: "updateComponent",
   });
+  droppedLogger(options, "showInstall");
 };

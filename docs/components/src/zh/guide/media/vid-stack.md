@@ -94,6 +94,15 @@ npm i -D vidstack@1
 
 :::
 
+::: md-demo YouTube 播放器
+
+<VidStack
+  src="youtube/_cMxraX_5RE"
+  title="VidStack YouTube Demo"
+/>
+
+:::
+
 <!-- #endregion demo -->
 
 ## 属性

@@ -120,7 +120,7 @@ icon: gears
 
 - `"force"`: 立即注销当前 Service Worker 然后刷新以获取新内容
 
-  ::: danger
+  ::: caution
 
   虽然这可以确保用户访问的是最新内容，但这可能会影响访问体验。
 

@@ -28,6 +28,21 @@ export const prepareConfigFile = async (
     enhances.add(`app.component("ChartJS", ChartJS)`);
   }
 
+  // TODO: Remove this in v2 stable
+  // @ts-expect-error
+  if (getStatus("card" && legacy)) {
+    imports.add(
+      `import { hasGlobalComponent } from "${getRealPath(
+        "vuepress-shared/client",
+        url,
+      )}";`,
+    );
+    imports.add(`import { VPCard } from "${CLIENT_FOLDER}compact/index.js";`);
+    enhances.add(
+      `if(!hasGlobalComponent("VPCard", app)) app.component("VPCard", VPCard);`,
+    );
+  }
+
   if (getStatus("codetabs")) {
     imports.add(
       `import CodeTabs from "${CLIENT_FOLDER}components/CodeTabs.js";`,
@@ -54,12 +69,12 @@ export const prepareConfigFile = async (
     }
   }
 
-  if (getStatus("container")) {
+  if (getStatus("hint")) {
     imports.add(
-      `import { useContainer } from "${CLIENT_FOLDER}composables/container.js";`,
+      `import { useHint } from "${CLIENT_FOLDER}composables/hint.js";`,
     );
-    imports.add(`import "${CLIENT_FOLDER}styles/container/index.scss";`);
-    setups.add("useContainer();");
+    imports.add(`import "${CLIENT_FOLDER}styles/hint/index.scss";`);
+    setups.add("useHint();");
   }
 
   if (getStatus("demo")) {

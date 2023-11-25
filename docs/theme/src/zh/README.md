@@ -46,10 +46,15 @@ highlights:
         details: 检查 Markdown 链接
         link: ./guide/markdown/others.html#link-check
 
-      - title: 自定义容器支持
+      - title: 提示容器支持
         icon: box-archive
         details: 用样式装饰 Markdown 内容
-        link: ./guide/markdown/container.html
+        link: ./guide/markdown/hint.html
+
+      - title: GFM 警告
+        icon: bell
+        details: GFM 风格的警告容器
+        link: ./guide/markdown/alert.html
 
       - title: 选项卡
         icon: table-columns

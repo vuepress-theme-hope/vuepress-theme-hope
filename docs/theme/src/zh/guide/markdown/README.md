@@ -18,7 +18,7 @@ dir:
 
 ## 新语法
 
-- [自定义容器](container.md)
+- [提示容器](hint.md)
 
 - [选项卡](tabs.md)
 
@@ -29,6 +29,8 @@ dir:
 - [任务列表](tasklist.md)
 
 - [图片增强](image.md)
+
+- [GFM 警告](alert.md)
 
 - [自定义对齐](align.md)
 

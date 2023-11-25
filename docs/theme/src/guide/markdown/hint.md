@@ -1,18 +1,18 @@
 ---
-title: 自定义容器
+title: Hint box
 icon: box-open
 category:
   - Markdown
 tag:
+  - hintbox
   - Markdown
-  - 容器
 ---
 
-主题可以为你添加提示、注释、信息、注意、警告和详情自定义容器的支持。
+The theme adds tip, note, info, warning, danger and detail hint box.
 
 <!-- more -->
 
-## 配置
+## Settings
 
 ::: code-tabs#language
 
@@ -27,8 +27,8 @@ export default defineUserConfig({
   theme: hopeTheme({
     plugins: {
       mdEnhance: {
-        // 这就是默认选项，所以你可以直接使用它
-        container: true,
+        // this is the default option, so you can use it directly
+        hint: true,
       },
     },
   }),
@@ -45,8 +45,8 @@ export default {
   theme: hopeTheme({
     plugins: {
       mdEnhance: {
-        // 这就是默认选项，所以你可以直接使用它
-        container: true,
+        // this is the default option, so you can use it directly
+        hint: true,
       },
     },
   }),
@@ -55,4 +55,4 @@ export default {
 
 :::
 
-<!-- @include: @md-enhance/zh/guide/stylize/container.md#after -->
+<!-- @include: @md-enhance/guide/stylize/hint.md#after -->

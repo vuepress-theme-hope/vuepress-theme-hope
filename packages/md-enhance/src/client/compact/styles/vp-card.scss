@@ -1,0 +1,74 @@
+.vp-card {
+  display: inline-flex;
+  align-items: center;
+
+  max-width: 400px;
+  margin: 1rem 0.5rem;
+  padding: 1rem;
+  border-radius: 0.5rem;
+
+  background: var(--vp-bg);
+  color: inherit;
+  box-shadow: 2px 2px 10px 0 var(--card-shadow);
+
+  transition:
+    background var(--vp-ct),
+    box-shadow var(--vp-ct);
+
+  &:hover {
+    background: var(--vp-bgl);
+    text-decoration: none !important;
+  }
+
+  hr {
+    margin: 0.25em 0;
+  }
+
+  &-logo {
+    width: 3em;
+    height: 3em;
+    margin-inline-end: 1em;
+    border-radius: 50%;
+  }
+
+  &-content {
+    flex: 1;
+  }
+
+  &-title {
+    font-weight: 500;
+    font-size: 1.1em;
+  }
+
+  &-desc {
+    color: #888;
+    font-size: 0.9em;
+    line-height: 1.5;
+    transition: color var(--vp-ct);
+  }
+
+  &-container {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: stretch;
+    place-content: stretch center;
+
+    .vp-card {
+      flex-basis: calc(50% - 3rem);
+      max-width: unset;
+      margin: 0.5rem;
+
+      @media (max-width: hope-config.$pad) {
+        flex-basis: 100%;
+      }
+
+      @media (max-width: hope-config.$tablet) {
+        font-size: 0.95rem;
+      }
+
+      @media (max-width: hope-config.$mobile) {
+        font-size: 0.9rem;
+      }
+    }
+  }
+}

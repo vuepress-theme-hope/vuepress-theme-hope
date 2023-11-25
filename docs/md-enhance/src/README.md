@@ -100,10 +100,15 @@ highlights:
       background-repeat: repeat
       background-size: initial
     highlights:
-      - title: Custom Container
+      - title: Hint box
         icon: box-archive
         details: Decorate Markdown content with styles
-        link: ./guide/stylize/container.html
+        link: ./guide/stylize/hint.html
+
+      - title: GFM alerts
+        icon: bell
+        details: GFM alert box
+        link: ./guide/stylize/alert.html
 
       - title: Custom Align
         icon: align-center

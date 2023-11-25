@@ -39,7 +39,7 @@ tag:
 
 协议信息
 
-### triggerWords
+### triggerLength
 
 - 类型: `number`
 - 默认值: `100`

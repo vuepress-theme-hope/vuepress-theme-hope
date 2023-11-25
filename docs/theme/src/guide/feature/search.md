@@ -18,7 +18,7 @@ The theme is just adding support for the above plugins, it does not bundle them.
 
 :::
 
-::: danger
+::: caution
 
 **DO NOT** use `plugins.search` in theme options.
 

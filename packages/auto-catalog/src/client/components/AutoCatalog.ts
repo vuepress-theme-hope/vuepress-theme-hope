@@ -21,6 +21,7 @@ declare const AUTO_CATALOG_TITLE_META_KEY: string;
 declare const AUTO_CATALOG_ICON_META_KEY: string;
 declare const AUTO_CATALOG_ORDER_META_KEY: string;
 declare const AUTO_CATALOG_INDEX_META_KEY: string;
+declare const __VUEPRESS_DEV__: boolean;
 
 export interface AutoCatalogProps {
   base?: string;
@@ -87,6 +88,14 @@ export default defineComponent({
   },
 
   setup(props) {
+    // TODO: Remove this in v2 stable
+    // @ts-expect-error
+    // eslint-disable-next-line vue/no-undef-properties
+    if (__VUEPRESS_DEV__ && props.indexType)
+      console.warn(
+        "[AutoCatalog]: `indexType` is deprecated, please use `index` instead",
+      );
+
     const iconComponent = useAutoCatalogIconComponent();
     const locale = useLocaleConfig(AUTO_CATALOG_LOCALES);
     const page = usePageData();

@@ -94,6 +94,15 @@ npm i -D vidstack@1
 
 :::
 
+::: md-demo YouTube player
+
+<VidStack
+  src="youtube/_cMxraX_5RE"
+  title="VidStack YouTube Demo"
+/>
+
+:::
+
 <!-- #endregion demo -->
 
 ## Props

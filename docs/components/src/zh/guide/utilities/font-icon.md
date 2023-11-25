@@ -61,7 +61,7 @@ Icon name
 
 为了便于上手，我们添加了内置关键字 `"iconfont"`、`"iconify"`、`"fontawesome"` 和 `"fontawesome-with-brand` 支持。
 
-::: danger
+::: caution
 
 如果你将此插件用于商业项目文档，则**不推荐**使用 `iconfont`，因为 iconfont 本身是设计人员和开发人员的学习/共享平台。
 

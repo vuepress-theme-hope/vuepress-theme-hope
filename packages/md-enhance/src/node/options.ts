@@ -59,31 +59,33 @@ export interface MarkdownEnhanceOptions {
   gfm?: boolean;
 
   /**
-   * Whether to enable custom container including
+   * Whether to enable hint container including
    *
+   * - important
    * - info
    * - note
    * - tip
    * - warning
-   * - danger
+   * - caution
    * - details
    *
    * ⚠ The last 4 items conflict with default theme and will override it’s style.
    *
-   * 是否启用自定义容器
+   * 是否启用提示容器
    *
+   * - important
    * - info
    * - note
    * - tip
    * - warning
-   * - danger
+   * - caution
    * - details
    *
    * ⚠ 最后四个会和默认主题冲突，且会覆盖默认主题的样式与行为。
    *
    * @default false
    */
-  container?: boolean;
+  hint?: boolean;
 
   /**
    * Whether to enable v-pre wrapper.
@@ -115,6 +117,15 @@ export interface MarkdownEnhanceOptions {
    * @default false
    */
   linkify?: boolean;
+
+  /**
+   * Wether enable gfm alerts
+   *
+   * 是否启用 gfm 警告
+   *
+   * @default false
+   */
+  alert?: boolean;
 
   /**
    * Whether to enable tabs.

@@ -61,7 +61,7 @@ For example, you may use [iconfont.cn](https://www.iconfont.cn/?lang=en-us) and 
 
 To keep it simple, we add built-in keywords `"iconfont"`, `"iconify"`, `"fontawesome"` and `"fontawesome-with-brand` support for you to get started easily.
 
-::: danger
+::: caution
 
 If you use this plugin for commercial project documentation, `iconfont` is **not recommended** as iconfont itself is a study/share platform for designers and developers.
 

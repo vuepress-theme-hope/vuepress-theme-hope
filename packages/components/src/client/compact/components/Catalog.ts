@@ -17,6 +17,7 @@ import FontIcon from "../../components/FontIcon.js";
 import "../styles/catalog.scss";
 
 declare const CATALOG_LOCALES: CatalogLocaleConfig;
+declare const __VUEPRESS_DEV__: boolean;
 
 interface CatalogInfo {
   title: string;
@@ -103,6 +104,14 @@ export default defineComponent({
   },
 
   setup(props) {
+    // TODO: Remove this in v2 stable
+    // @ts-expect-error
+    // eslint-disable-next-line vue/no-undef-properties
+    if (__VUEPRESS_DEV__ && props.indexType)
+      console.warn(
+        "[AutoCatalog]: `indexType` is deprecated, please use `index` instead",
+      );
+
     const locale = useLocaleConfig(CATALOG_LOCALES);
     const page = usePageData();
     const router = useRouter();

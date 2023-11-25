@@ -41,10 +41,15 @@ highlights:
         details: Check markdown links
         link: https://theme-hope.vuejs.press/guide/markdown/others.html#link-check
 
-      - title: Custom Container
+      - title: Hint box
         icon: box-archive
         details: Decorate Markdown content with styles
-        link: https://theme-hope.vuejs.press/guide/markdown/container.html
+        link: https://theme-hope.vuejs.press/guide/markdown/hint.html
+
+      - title: GFM alerts
+        icon: bell
+        details: GFM alert box
+        link: https://theme-hope.vuejs.press/guide/markdown/alert.html
 
       - title: Tabs
         icon: table-columns
