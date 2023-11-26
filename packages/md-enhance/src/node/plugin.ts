@@ -175,12 +175,14 @@ export const mdEnhancePlugin =
           );
       },
       ...(isPlainObject(options.katex) ? options.katex : {}),
+      vPre: true,
     };
 
     const mathjaxInstance = enableMathjax
       ? createMathjaxInstance({
           mathFence: options.gfm ?? false,
           ...(isPlainObject(options.mathjax) ? options.mathjax : {}),
+          vPre: true,
         })
       : null;
 

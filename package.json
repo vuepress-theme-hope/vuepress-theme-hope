@@ -78,7 +78,7 @@
     "picocolors": "1.0.0",
     "prettier": "3.1.0",
     "rimraf": "5.0.5",
-    "rollup": "4.5.2",
+    "rollup": "4.6.0",
     "rollup-plugin-copy": "3.5.0",
     "rollup-plugin-dts": "6.1.0",
     "rollup-plugin-esbuild": "6.1.0",
@@ -103,9 +103,6 @@
       "glob-parent": "^6.0.2",
       "micromatch": "^4.0.5",
       "yargs-parser": "^21.1.1"
-    },
-    "patchedDependencies": {
-      "markmap-toolbar@0.15.4": "patches/markmap-toolbar@0.15.4.patch"
     }
   }
 }

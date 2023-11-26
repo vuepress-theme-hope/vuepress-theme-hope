@@ -11,11 +11,6 @@ overrides:
   micromatch: ^4.0.5
   yargs-parser: ^21.1.1
 
-patchedDependencies:
-  markmap-toolbar@0.15.4:
-    hash: srf55pvyvq2irykaz6jjluaxly
-    path: patches/markmap-toolbar@0.15.4.patch
-
 importers:
 
   .:
@@ -28,16 +23,16 @@ importers:
         version: 18.4.3
       '@rollup/plugin-alias':
         specifier: 5.1.0
-        version: 5.1.0(rollup@4.5.2)
+        version: 5.1.0(rollup@4.6.0)
       '@rollup/plugin-commonjs':
         specifier: 25.0.7
-        version: 25.0.7(rollup@4.5.2)
+        version: 25.0.7(rollup@4.6.0)
       '@rollup/plugin-node-resolve':
         specifier: 15.2.3
-        version: 15.2.3(rollup@4.5.2)
+        version: 15.2.3(rollup@4.6.0)
       '@rollup/plugin-replace':
         specifier: 5.0.5
-        version: 5.0.5(rollup@4.5.2)
+        version: 5.0.5(rollup@4.6.0)
       '@types/inquirer':
         specifier: 9.0.7
         version: 9.0.7
@@ -132,20 +127,20 @@ importers:
         specifier: 5.0.5
         version: 5.0.5
       rollup:
-        specifier: 4.5.2
-        version: 4.5.2
+        specifier: 4.6.0
+        version: 4.6.0
       rollup-plugin-copy:
         specifier: 3.5.0
         version: 3.5.0
       rollup-plugin-dts:
         specifier: 6.1.0
-        version: 6.1.0(rollup@4.5.2)(typescript@5.3.2)
+        version: 6.1.0(rollup@4.6.0)(typescript@5.3.2)
       rollup-plugin-esbuild:
         specifier: 6.1.0
-        version: 6.1.0(esbuild@0.19.7)(rollup@4.5.2)
+        version: 6.1.0(esbuild@0.19.7)(rollup@4.6.0)
       rollup-plugin-resolve-shebang:
         specifier: 1.0.1
-        version: 1.0.1(rollup@4.5.2)
+        version: 1.0.1(rollup@4.6.0)
       sort-package-json:
         specifier: 2.6.0
         version: 2.6.0
@@ -474,14 +469,14 @@ importers:
         specifier: 1.29.0
         version: 1.29.0
       markmap-lib:
-        specifier: 0.15.4
-        version: 0.15.4(markmap-common@0.15.3)
+        specifier: 0.15.5-alpha.1
+        version: 0.15.5-alpha.1(markmap-common@0.15.3)
       markmap-toolbar:
-        specifier: 0.15.4
-        version: 0.15.4(patch_hash=srf55pvyvq2irykaz6jjluaxly)(markmap-common@0.15.3)
+        specifier: 0.15.5-alpha.1
+        version: 0.15.5-alpha.1(markmap-common@0.15.3)
       markmap-view:
-        specifier: 0.15.4
-        version: 0.15.4(markmap-common@0.15.3)
+        specifier: 0.15.5-alpha.1
+        version: 0.15.5-alpha.1(markmap-common@0.15.3)
       mathjax-full:
         specifier: 3.2.2
         version: 3.2.2
@@ -1822,75 +1817,69 @@ importers:
 
   packages/md-enhance:
     dependencies:
-      '@babel/core':
-        specifier: ^7.23.3
-        version: 7.23.3
       '@mdit/plugin-alert':
-        specifier: ^0.7.2
-        version: 0.7.2(markdown-it@13.0.2)
+        specifier: ^0.7.3
+        version: 0.7.3(markdown-it@13.0.2)
       '@mdit/plugin-align':
-        specifier: ^0.7.2
-        version: 0.7.2(markdown-it@13.0.2)
+        specifier: ^0.7.3
+        version: 0.7.3(markdown-it@13.0.2)
       '@mdit/plugin-attrs':
-        specifier: ^0.7.2
-        version: 0.7.2(markdown-it@13.0.2)
+        specifier: ^0.7.3
+        version: 0.7.3(markdown-it@13.0.2)
       '@mdit/plugin-container':
-        specifier: ^0.7.2
-        version: 0.7.2(markdown-it@13.0.2)
+        specifier: ^0.7.3
+        version: 0.7.3(markdown-it@13.0.2)
       '@mdit/plugin-demo':
-        specifier: ^0.7.2
-        version: 0.7.2(markdown-it@13.0.2)
+        specifier: ^0.7.3
+        version: 0.7.3(markdown-it@13.0.2)
       '@mdit/plugin-figure':
-        specifier: ^0.7.2
-        version: 0.7.2(markdown-it@13.0.2)
+        specifier: ^0.7.3
+        version: 0.7.3(markdown-it@13.0.2)
       '@mdit/plugin-footnote':
-        specifier: ^0.7.2
-        version: 0.7.2(markdown-it@13.0.2)
+        specifier: ^0.7.3
+        version: 0.7.3(markdown-it@13.0.2)
       '@mdit/plugin-img-lazyload':
-        specifier: ^0.7.2
-        version: 0.7.2(markdown-it@13.0.2)
+        specifier: ^0.7.3
+        version: 0.7.3(markdown-it@13.0.2)
       '@mdit/plugin-img-mark':
-        specifier: ^0.7.2
-        version: 0.7.2(markdown-it@13.0.2)
+        specifier: ^0.7.3
+        version: 0.7.3(markdown-it@13.0.2)
       '@mdit/plugin-img-size':
-        specifier: ^0.7.2
-        version: 0.7.2(markdown-it@13.0.2)
+        specifier: ^0.7.3
+        version: 0.7.3(markdown-it@13.0.2)
       '@mdit/plugin-include':
-        specifier: ^0.7.2
-        version: 0.7.2(markdown-it@13.0.2)
+        specifier: ^0.7.3
+        version: 0.7.3(markdown-it@13.0.2)
       '@mdit/plugin-katex':
-        specifier: ^0.7.2
-        version: 0.7.2(katex@0.16.9)(markdown-it@13.0.2)
+        specifier: ^0.7.3
+        version: 0.7.3(katex@0.16.9)(markdown-it@13.0.2)
       '@mdit/plugin-mark':
-        specifier: ^0.7.2
-        version: 0.7.2(markdown-it@13.0.2)
+        specifier: ^0.7.3
+        version: 0.7.3(markdown-it@13.0.2)
       '@mdit/plugin-mathjax':
-        specifier: ^0.7.2
-        version: 0.7.2(markdown-it@13.0.2)(mathjax-full@3.2.2)
+        specifier: ^0.7.3
+        version: 0.7.3(markdown-it@13.0.2)(mathjax-full@3.2.2)
       '@mdit/plugin-stylize':
-        specifier: ^0.7.2
-        version: 0.7.2(markdown-it@13.0.2)
+        specifier: ^0.7.3
+        version: 0.7.3(markdown-it@13.0.2)
       '@mdit/plugin-sub':
-        specifier: ^0.7.2
-        version: 0.7.2(markdown-it@13.0.2)
+        specifier: ^0.7.3
+        version: 0.7.3(markdown-it@13.0.2)
       '@mdit/plugin-sup':
-        specifier: ^0.7.2
-        version: 0.7.2(markdown-it@13.0.2)
+        specifier: ^0.7.3
+        version: 0.7.3(markdown-it@13.0.2)
       '@mdit/plugin-tab':
-        specifier: ^0.7.2
-        version: 0.7.2(markdown-it@13.0.2)
+        specifier: ^0.7.3
+        version: 0.7.3(markdown-it@13.0.2)
       '@mdit/plugin-tasklist':
-        specifier: ^0.7.2
-        version: 0.7.2(markdown-it@13.0.2)
+        specifier: ^0.7.3
+        version: 0.7.3(markdown-it@13.0.2)
       '@mdit/plugin-tex':
-        specifier: ^0.7.2
-        version: 0.7.2(markdown-it@13.0.2)
+        specifier: ^0.7.3
+        version: 0.7.3(markdown-it@13.0.2)
       '@mdit/plugin-uml':
-        specifier: ^0.7.2
-        version: 0.7.2(markdown-it@13.0.2)
-      '@types/js-yaml':
-        specifier: ^4.0.9
-        version: 4.0.9
+        specifier: ^0.7.3
+        version: 0.7.3(markdown-it@13.0.2)
       '@types/markdown-it':
         specifier: ^13.0.7
         version: 13.0.7
@@ -1937,14 +1926,14 @@ importers:
         specifier: ^13.0.2
         version: 13.0.2
       markmap-lib:
-        specifier: ^0.15.4
-        version: 0.15.4(markmap-common@0.15.3)
+        specifier: ^0.15.5-alpha.1
+        version: 0.15.5-alpha.1(markmap-common@0.15.3)
       markmap-toolbar:
-        specifier: ^0.15.4
-        version: 0.15.4(patch_hash=srf55pvyvq2irykaz6jjluaxly)(markmap-common@0.15.3)
+        specifier: ^0.15.5-alpha.1
+        version: 0.15.5-alpha.1(markmap-common@0.15.3)
       markmap-view:
-        specifier: ^0.15.4
-        version: 0.15.4(markmap-common@0.15.3)
+        specifier: ^0.15.5-alpha.1
+        version: 0.15.5-alpha.1(markmap-common@0.15.3)
       mathjax-full:
         specifier: ^3.2.2
         version: 3.2.2
@@ -1982,6 +1971,9 @@ importers:
       '@types/babel__core':
         specifier: 7.20.5
         version: 7.20.5
+      '@types/js-yaml':
+        specifier: ^4.0.9
+        version: 4.0.9
       '@vuepress/bundler-vite':
         specifier: 2.0.0-rc.0
         version: 2.0.0-rc.0(@types/node@20.10.0)(sass@1.69.5)(typescript@5.3.2)
@@ -4733,8 +4725,8 @@ packages:
   /@mdit-vue/types@1.0.0:
     resolution: {integrity: sha512-xeF5+sHLzRNF7plbksywKCph4qli20l72of2fMlZQQ7RECvXYrRkE9+bjRFQCyULC7B8ydUYbpbkux5xJlVWyw==}
 
-  /@mdit/plugin-alert@0.7.2(markdown-it@13.0.2):
-    resolution: {integrity: sha512-cTSZUaNz7zaNDbWwFybEJmP63T/n1bvQUtH3Op4cTztE28bkQU4/k5PipCQPpob1JEUFIS08jZMSedirlilfJQ==}
+  /@mdit/plugin-alert@0.7.3(markdown-it@13.0.2):
+    resolution: {integrity: sha512-nLL+Mp07NqnSJd/eyi57AXGaLsdlm+/aaSyOFZl7fJS5APctlgUU4Bgw7D1A+9jYI6KK6NzUIaxn+stHuqLZJg==}
     peerDependencies:
       markdown-it: ^13.0.2
     peerDependenciesMeta:
@@ -4745,8 +4737,8 @@ packages:
       markdown-it: 13.0.2
     dev: false
 
-  /@mdit/plugin-align@0.7.2(markdown-it@13.0.2):
-    resolution: {integrity: sha512-NcRWaYrlrleh79/kc4/NU0biBuyjTdgU9bQwcIAXGrVVAfu8X+0HPhXWMXzmhg4QFMzKmvsl9ZGiZYmIllLpDw==}
+  /@mdit/plugin-align@0.7.3(markdown-it@13.0.2):
+    resolution: {integrity: sha512-MF96eC5KggMO/GwVlqhiDdrhpe7oxq9oRvTWBVB8bfcZXp0pFpvTyPO/pU84ha1GWoOeBUm1CPXk466XP7aZag==}
     engines: {node: '>= 18'}
     peerDependencies:
       markdown-it: ^13.0.2
@@ -4754,26 +4746,13 @@ packages:
       markdown-it:
         optional: true
     dependencies:
-      '@mdit/plugin-container': 0.7.2(markdown-it@13.0.2)
+      '@mdit/plugin-container': 0.7.3(markdown-it@13.0.2)
       '@types/markdown-it': 13.0.7
       markdown-it: 13.0.2
     dev: false
 
-  /@mdit/plugin-attrs@0.7.2(markdown-it@13.0.2):
-    resolution: {integrity: sha512-xKkYMk6WmG/32+4REKzwdl+y+CXhbculHplvveCUxTVKygOXDuA5zBdNOMNWoa4JHf3SPAB6o4rCbpB1x4j9bw==}
-    engines: {node: '>= 18'}
-    peerDependencies:
-      markdown-it: ^13.0.2
-    peerDependenciesMeta:
-      markdown-it:
-        optional: true
-    dependencies:
-      '@types/markdown-it': 13.0.7
-      markdown-it: 13.0.2
-    dev: false
-
-  /@mdit/plugin-container@0.7.2(markdown-it@13.0.2):
-    resolution: {integrity: sha512-BuAsCTPo8k8XuwYndhZP6UYxfcbZICt+OV9ML0BF6cGMvxSUFmIuvcArd784S2FCc9ANxvEYzPL7RL+sZsuSGQ==}
+  /@mdit/plugin-attrs@0.7.3(markdown-it@13.0.2):
+    resolution: {integrity: sha512-0prIdIpWfVIYaSM1fJy1e6WyhA55ykMFOY2BiZRN8a/OMEIQHMyTlAtbGFP7xiATOGC5o8CFjWnfWCOO6N1G+g==}
     engines: {node: '>= 18'}
     peerDependencies:
       markdown-it: ^13.0.2
@@ -4785,20 +4764,8 @@ packages:
       markdown-it: 13.0.2
     dev: false
 
-  /@mdit/plugin-demo@0.7.2(markdown-it@13.0.2):
-    resolution: {integrity: sha512-6re2xYtTOXFTYewLH+udo5PMMfg6Qqhgkd6xNVQcgasBm/xtSZYR9AeDM2/Q3eT5GhP6emhApnzKxCY6Sbu59w==}
-    peerDependencies:
-      markdown-it: ^13.0.2
-    peerDependenciesMeta:
-      markdown-it:
-        optional: true
-    dependencies:
-      '@types/markdown-it': 13.0.7
-      markdown-it: 13.0.2
-    dev: false
-
-  /@mdit/plugin-figure@0.7.2(markdown-it@13.0.2):
-    resolution: {integrity: sha512-A2m44RxkvZ2WxpVGisY/L5s+cwy7lCYYSSqpvUdeGCsvI9ym2sRy+wHd8Mh1G3MtYP5BKSc7dWl8J0KeqwcjhQ==}
+  /@mdit/plugin-container@0.7.3(markdown-it@13.0.2):
+    resolution: {integrity: sha512-cQbhLVdCs+xc6KPxh7apcCml59hXhddhSTMpD2IvUTO94CMhD5doW3TYv9XsZqP2R9KWkxHF4/BcPG1rOpBUVw==}
     engines: {node: '>= 18'}
     peerDependencies:
       markdown-it: ^13.0.2
@@ -4810,18 +4777,20 @@ packages:
       markdown-it: 13.0.2
     dev: false
 
-  /@mdit/plugin-footnote@0.7.2(markdown-it@13.0.2):
-    resolution: {integrity: sha512-8EjaDa9n/hyY5jiFycA+z+Z0dxyqDzuI/ZmsTHUS0umnbGYQhQiSCQmpVn3DqLYmxbyUFlHwGn2JaDOZ03g4Yw==}
-    engines: {node: '>= 18'}
+  /@mdit/plugin-demo@0.7.3(markdown-it@13.0.2):
+    resolution: {integrity: sha512-GAcPmgAbl1LQ+GvMOOYXDezlURSQxH6YoEaQo1+0xrjn8bma+86576WlVWLtmEt18OxcgbBO5JIoxDXngx2xtw==}
     peerDependencies:
       markdown-it: ^13.0.2
+    peerDependenciesMeta:
+      markdown-it:
+        optional: true
     dependencies:
       '@types/markdown-it': 13.0.7
       markdown-it: 13.0.2
     dev: false
 
-  /@mdit/plugin-img-lazyload@0.7.2(markdown-it@13.0.2):
-    resolution: {integrity: sha512-r4uIBcUaMp4wRjXjdk3/rvb1BVtrNY5PxN2TGCXYVaWEEq2Cyjo1NgiH2J+VD03jMwPJDvTDccCxNpDHyMQtRA==}
+  /@mdit/plugin-figure@0.7.3(markdown-it@13.0.2):
+    resolution: {integrity: sha512-Q6zNguDuwJTpvy7jx7DrpkL96wK9/ZOmVsOumNuAcfBQ+MTr/ryK2yfEQYT6P7cw6mV1KuXBMZ/Xu/llbIaq6w==}
     engines: {node: '>= 18'}
     peerDependencies:
       markdown-it: ^13.0.2
@@ -4833,8 +4802,18 @@ packages:
       markdown-it: 13.0.2
     dev: false
 
-  /@mdit/plugin-img-mark@0.7.2(markdown-it@13.0.2):
-    resolution: {integrity: sha512-1mM1k1mE8KW/IZ02tJKLLycjwxRv3SWlKfnySOdvoCgxiGk6MfONeq4KmXO19dj8Wn1BR/S3BI8p/w1YLVYr/Q==}
+  /@mdit/plugin-footnote@0.7.3(markdown-it@13.0.2):
+    resolution: {integrity: sha512-da0sfcBgYDa85sez00oRZ+tfGpyYzVYc1qsxFBWA5ToO92QG1FgEGBfvn6AWfsv9TM2mbZ019+wUdiFudbLUGg==}
+    engines: {node: '>= 18'}
+    peerDependencies:
+      markdown-it: ^13.0.2
+    dependencies:
+      '@types/markdown-it': 13.0.7
+      markdown-it: 13.0.2
+    dev: false
+
+  /@mdit/plugin-img-lazyload@0.7.3(markdown-it@13.0.2):
+    resolution: {integrity: sha512-fv4/srJ3V5N7ZCoS/Ao1h50nXFPK3ACzO/7G1U0X0/810vB9YpEV2SFbqh8rjk9EeZ72KYnep99Fkye55XPgcw==}
     engines: {node: '>= 18'}
     peerDependencies:
       markdown-it: ^13.0.2
@@ -4846,8 +4825,8 @@ packages:
       markdown-it: 13.0.2
     dev: false
 
-  /@mdit/plugin-img-size@0.7.2(markdown-it@13.0.2):
-    resolution: {integrity: sha512-rjUTtUOQvmv66LJMzW5aA1xwBqOhY6iBIdP4ygHt+8XykbGOrzs6brEMLFnki7RB9529H+WYswhd0jtKs1MEYw==}
+  /@mdit/plugin-img-mark@0.7.3(markdown-it@13.0.2):
+    resolution: {integrity: sha512-GzXIrDSJKeaopdY1FHA3IdWrJyf+UFVU3e5vIcxdt+zng5SMzqfEzUCe0I723dXDEcovFSI/LU7IMabh8T2Fbg==}
     engines: {node: '>= 18'}
     peerDependencies:
       markdown-it: ^13.0.2
@@ -4859,8 +4838,21 @@ packages:
       markdown-it: 13.0.2
     dev: false
 
-  /@mdit/plugin-include@0.7.2(markdown-it@13.0.2):
-    resolution: {integrity: sha512-I/zTvQ3V2e+tJdo8dTr1bHUJKk6KHr9YrwsE2aWbQSBk4qc5qfFPoQHMEKhEILyXLpVXA1rCVqcFwcQi2q8nTQ==}
+  /@mdit/plugin-img-size@0.7.3(markdown-it@13.0.2):
+    resolution: {integrity: sha512-/0pgq9/wy2vXpR4L0ri6V/NSDuma06uDhFtxJ9KN7xyqYDy472bnlvyg3pNZyeOlnW6vIKtKsVYDgaJ5XaB53A==}
+    engines: {node: '>= 18'}
+    peerDependencies:
+      markdown-it: ^13.0.2
+    peerDependenciesMeta:
+      markdown-it:
+        optional: true
+    dependencies:
+      '@types/markdown-it': 13.0.7
+      markdown-it: 13.0.2
+    dev: false
+
+  /@mdit/plugin-include@0.7.3(markdown-it@13.0.2):
+    resolution: {integrity: sha512-44u5hIf6ELxm/igR5SFr0XLEtFaf9zdiQo9Cvw8JsVPfSylq6sRrGlkGruiAQSnLt6yVmqjbrx7NvOHzRCtPFA==}
     peerDependencies:
       markdown-it: ^13.0.2
     peerDependenciesMeta:
@@ -4872,8 +4864,8 @@ packages:
       upath: 2.0.1
     dev: false
 
-  /@mdit/plugin-katex@0.7.2(katex@0.16.9)(markdown-it@13.0.2):
-    resolution: {integrity: sha512-wE8psM+EXzxwJ4DzvSfjJL8e+YjijSm7P2sUMJQkzw/rd4c+GvsRKd1PReO2Mik7t0/mI6LhlFl4ctuJdCwrcQ==}
+  /@mdit/plugin-katex@0.7.3(katex@0.16.9)(markdown-it@13.0.2):
+    resolution: {integrity: sha512-w+XxBxLGOi/RfOxuaPlrmF0fZUFJz8cn+YM4me1qUlEB4We2OvnKXP+gEcnVgt0ZPXxLhszZSUQWJAQuyAJgGg==}
     engines: {node: '>= 18'}
     peerDependencies:
       katex: ^0.16.9
@@ -4884,15 +4876,15 @@ packages:
       markdown-it:
         optional: true
     dependencies:
-      '@mdit/plugin-tex': 0.7.2(markdown-it@13.0.2)
+      '@mdit/plugin-tex': 0.7.3(markdown-it@13.0.2)
       '@types/katex': 0.16.7
       '@types/markdown-it': 13.0.7
       katex: 0.16.9
       markdown-it: 13.0.2
     dev: false
 
-  /@mdit/plugin-mark@0.7.2(markdown-it@13.0.2):
-    resolution: {integrity: sha512-LwIg3vKYVSFgmiNLxX72edwouKOGGAedoeT5IeWIzy6eDOZrLQLV82k7rEod3OuE7X8N06B4CtITrTfTpv28HA==}
+  /@mdit/plugin-mark@0.7.3(markdown-it@13.0.2):
+    resolution: {integrity: sha512-5hWUGq2OiGVoWxueFrL1qLgVYhA1c6U2cb6IRhw+Gr3lAQqVBSm/s4ziemHyMUIY5qwzjtCW2ZOHRPD4LgPPZA==}
     engines: {node: '>= 18'}
     peerDependencies:
       markdown-it: ^13.0.2
@@ -4904,8 +4896,8 @@ packages:
       markdown-it: 13.0.2
     dev: false
 
-  /@mdit/plugin-mathjax@0.7.2(markdown-it@13.0.2)(mathjax-full@3.2.2):
-    resolution: {integrity: sha512-1BA3cRPGPaFjZ0kMNo+Z7mq/H4dREYpSla4dtVz4WCO65x/zUM3TZCN139Hdl6YcCH8kbuz+oJwvx7WEdXEFiA==}
+  /@mdit/plugin-mathjax@0.7.3(markdown-it@13.0.2)(mathjax-full@3.2.2):
+    resolution: {integrity: sha512-SMtD06Rqgc/YI5zGK5OjkpW8hUef7Z8J9ckk/eeWrkj488oVNN6+93wlO33HiK/4jvyjLFSlMPCYjuWtt65sUg==}
     engines: {node: '>= 18'}
     peerDependencies:
       markdown-it: ^13.0.2
@@ -4916,15 +4908,15 @@ packages:
       mathjax-full:
         optional: true
     dependencies:
-      '@mdit/plugin-tex': 0.7.2(markdown-it@13.0.2)
+      '@mdit/plugin-tex': 0.7.3(markdown-it@13.0.2)
       '@types/markdown-it': 13.0.7
       markdown-it: 13.0.2
       mathjax-full: 3.2.2
       upath: 2.0.1
     dev: false
 
-  /@mdit/plugin-stylize@0.7.2(markdown-it@13.0.2):
-    resolution: {integrity: sha512-qm8UecbAZWudEl5PmK3cmFUS/3pNcNLZmlR/lEHaUR0z0qeioX1g6gUvzPLIGGFO27YfuJlo3QJr6g1kqfhS7Q==}
+  /@mdit/plugin-stylize@0.7.3(markdown-it@13.0.2):
+    resolution: {integrity: sha512-0G2KiwZiPCxuzyfQt4EfFNw2/IrWqjoO3ozID0PZhjCOZLnEH6bCrEJWXcW7B3Og9EfoSEj4NDImsVuPGtzjFg==}
     engines: {node: '>= 18'}
     peerDependencies:
       markdown-it: ^13.0.2
@@ -4936,8 +4928,8 @@ packages:
       markdown-it: 13.0.2
     dev: false
 
-  /@mdit/plugin-sub@0.7.2(markdown-it@13.0.2):
-    resolution: {integrity: sha512-gp/PbvJ2Eq7RGWjDeTOc6T/ItowYOMvon3CRBHmPZ2foVnPHpKEJ+FYKr04a0G4lsZ75M9gnqeVLAekdwKYqQQ==}
+  /@mdit/plugin-sub@0.7.3(markdown-it@13.0.2):
+    resolution: {integrity: sha512-DuLaWXEpan3kUDUMAzzlcXNf5kLsTk7ua0/fyOEkS1lD6nn8ZpGaBO+dF9m6Q3pG4u1JZib9ENOALOVNWF58qQ==}
     engines: {node: '>= 18'}
     peerDependencies:
       markdown-it: ^13.0.2
@@ -4949,8 +4941,8 @@ packages:
       markdown-it: 13.0.2
     dev: false
 
-  /@mdit/plugin-sup@0.7.2(markdown-it@13.0.2):
-    resolution: {integrity: sha512-vzl+aC3WB+67MpTvHDILaO/1uI+DSG65XOfXdvYR9nKSNpJXzVZ09eaRP0AN86l8DIOMtf2CO30FgRFHJdyJDA==}
+  /@mdit/plugin-sup@0.7.3(markdown-it@13.0.2):
+    resolution: {integrity: sha512-ZzhGhAIfRNFrJ0XBqQVICefatodQ6ae5UMebeTc+vLQsTqMcIvDd0glCei9CF7MO2Hi0sLIgR2fQlfhWzlx6Iw==}
     engines: {node: '>= 18'}
     peerDependencies:
       markdown-it: ^13.0.2
@@ -4962,8 +4954,8 @@ packages:
       markdown-it: 13.0.2
     dev: false
 
-  /@mdit/plugin-tab@0.7.2(markdown-it@13.0.2):
-    resolution: {integrity: sha512-OCqvufIiXvPXALqMjnlFfQHI859LrkYSWl3umGEf88AT3JVGoWsTa4J29X+0OBiD5qBtuViFLpaY28jNe5rc+A==}
+  /@mdit/plugin-tab@0.7.3(markdown-it@13.0.2):
+    resolution: {integrity: sha512-UVXSIj9SFNNctIEpbbwSindexSyTQ2c4UIomYHyf1EFHTjD5SBbqGOqqkL9QiShGpWHZTn2Buu/NOFdeYngZhQ==}
     peerDependencies:
       markdown-it: ^13.0.2
     peerDependenciesMeta:
@@ -4974,8 +4966,8 @@ packages:
       markdown-it: 13.0.2
     dev: false
 
-  /@mdit/plugin-tasklist@0.7.2(markdown-it@13.0.2):
-    resolution: {integrity: sha512-sXbsvFMUnYKD81ddnGdCkekPIe3rBLoQSMrOMiTO6QDtkSY36vNDNBkqfMoHzcDLVbrbiScJd4CmdiXFmlU56w==}
+  /@mdit/plugin-tasklist@0.7.3(markdown-it@13.0.2):
+    resolution: {integrity: sha512-jajl5bFAZMbNcrnQaVd0pTbtiL84jjKbvynwMrloqj0vKZQkmlPY8FRSCe7zJVEZ2zzqXpDPKgC9a1LK8fzRdQ==}
     engines: {node: '>= 18'}
     peerDependencies:
       markdown-it: ^13.0.2
@@ -4987,8 +4979,8 @@ packages:
       markdown-it: 13.0.2
     dev: false
 
-  /@mdit/plugin-tex@0.7.2(markdown-it@13.0.2):
-    resolution: {integrity: sha512-K7mPG6PWa1S55UwwXc1vUFaiCdMA+Xu8ZJpaNoxH2adirMTGcySMjaVz9Lim5R1nrPYoHN63iJCXcLlI0B1NDA==}
+  /@mdit/plugin-tex@0.7.3(markdown-it@13.0.2):
+    resolution: {integrity: sha512-EhomSFynJHiGeNWIyJpidFYVMxiAlp307Z0ANuoBn8sKSJyzdw3pQ9r+XNpRjIGPeyjJxSsQ5YnJ3Vw6HA+XCg==}
     engines: {node: '>= 18'}
     peerDependencies:
       markdown-it: ^13.0.2
@@ -5000,8 +4992,8 @@ packages:
       markdown-it: 13.0.2
     dev: false
 
-  /@mdit/plugin-uml@0.7.2(markdown-it@13.0.2):
-    resolution: {integrity: sha512-m8xajk8aZ9oFbvI23njzBY+DCquEoghyV/mpFKEibXQzLkhjwC1/97v/HuWoz7ByiBkvxFtN0CX40c22YXBgEw==}
+  /@mdit/plugin-uml@0.7.3(markdown-it@13.0.2):
+    resolution: {integrity: sha512-8MfGNoxHPAi6YlqvYdqp6nc/dDq9+V1qyImT/mv03aZYUP73VusucfzjhWEAFFA4SOKYMBz6gtFq8WN6Gznl/Q==}
     engines: {node: '>= 18'}
     peerDependencies:
       markdown-it: ^13.0.2
@@ -5065,7 +5057,7 @@ packages:
       tslib: 2.6.2
     dev: true
 
-  /@rollup/plugin-alias@5.1.0(rollup@4.5.2):
+  /@rollup/plugin-alias@5.1.0(rollup@4.6.0):
     resolution: {integrity: sha512-lpA3RZ9PdIG7qqhEfv79tBffNaoDuukFDrmhLqg9ifv99u/ehn+lOg30x2zmhf8AQqQUZaMk/B9fZraQ6/acDQ==}
     engines: {node: '>=14.0.0'}
     peerDependencies:
@@ -5074,7 +5066,7 @@ packages:
       rollup:
         optional: true
     dependencies:
-      rollup: 4.5.2
+      rollup: 4.6.0
       slash: 4.0.0
     dev: true
 
@@ -5095,7 +5087,7 @@ packages:
       rollup: 2.79.1
     dev: false
 
-  /@rollup/plugin-commonjs@25.0.7(rollup@4.5.2):
+  /@rollup/plugin-commonjs@25.0.7(rollup@4.6.0):
     resolution: {integrity: sha512-nEvcR+LRjEjsaSsc4x3XZfCCvZIaSMenZu/OiwOKGN2UhQpAYI7ru7czFvyWbErlpoGjnSX3D5Ch5FcMA3kRWQ==}
     engines: {node: '>=14.0.0'}
     peerDependencies:
@@ -5104,13 +5096,13 @@ packages:
       rollup:
         optional: true
     dependencies:
-      '@rollup/pluginutils': 5.0.5(rollup@4.5.2)
+      '@rollup/pluginutils': 5.0.5(rollup@4.6.0)
       commondir: 1.0.1
       estree-walker: 2.0.2
       glob: 8.1.0
       is-reference: 1.2.1
       magic-string: 0.30.5
-      rollup: 4.5.2
+      rollup: 4.6.0
     dev: true
 
   /@rollup/plugin-node-resolve@11.2.1(rollup@2.79.1):
@@ -5128,7 +5120,7 @@ packages:
       rollup: 2.79.1
     dev: false
 
-  /@rollup/plugin-node-resolve@15.2.3(rollup@4.5.2):
+  /@rollup/plugin-node-resolve@15.2.3(rollup@4.6.0):
     resolution: {integrity: sha512-j/lym8nf5E21LwBT4Df1VD6hRO2L2iwUeUmP7litikRsVp1H6NWx20NEp0Y7su+7XGc476GnXXc4kFeZNGmaSQ==}
     engines: {node: '>=14.0.0'}
     peerDependencies:
@@ -5137,13 +5129,13 @@ packages:
       rollup:
         optional: true
     dependencies:
-      '@rollup/pluginutils': 5.0.5(rollup@4.5.2)
+      '@rollup/pluginutils': 5.0.5(rollup@4.6.0)
       '@types/resolve': 1.20.2
       deepmerge: 4.3.1
       is-builtin-module: 3.2.1
       is-module: 1.0.0
       resolve: 1.22.8
-      rollup: 4.5.2
+      rollup: 4.6.0
     dev: true
 
   /@rollup/plugin-replace@2.4.2(rollup@2.79.1):
@@ -5156,7 +5148,7 @@ packages:
       rollup: 2.79.1
     dev: false
 
-  /@rollup/plugin-replace@5.0.5(rollup@4.5.2):
+  /@rollup/plugin-replace@5.0.5(rollup@4.6.0):
     resolution: {integrity: sha512-rYO4fOi8lMaTg/z5Jb+hKnrHHVn8j2lwkqwyS4kTRhKyWOLf2wST2sWXr4WzWiTcoHTp2sTjqUbqIj2E39slKQ==}
     engines: {node: '>=14.0.0'}
     peerDependencies:
@@ -5165,9 +5157,9 @@ packages:
       rollup:
         optional: true
     dependencies:
-      '@rollup/pluginutils': 5.0.5(rollup@4.5.2)
+      '@rollup/pluginutils': 5.0.5(rollup@4.6.0)
       magic-string: 0.30.5
-      rollup: 4.5.2
+      rollup: 4.6.0
     dev: true
 
   /@rollup/pluginutils@3.1.0(rollup@2.79.1):
@@ -5182,7 +5174,7 @@ packages:
       rollup: 2.79.1
     dev: false
 
-  /@rollup/pluginutils@5.0.5(rollup@4.5.2):
+  /@rollup/pluginutils@5.0.5(rollup@4.6.0):
     resolution: {integrity: sha512-6aEYR910NyP73oHiJglti74iRyOwgFU4x3meH/H8OJx6Ry0j6cOVZ5X/wTvub7G7Ao6qaHBEaNsV3GLJkSsF+Q==}
     engines: {node: '>=14.0.0'}
     peerDependencies:
@@ -5194,88 +5186,88 @@ packages:
       '@types/estree': 1.0.5
       estree-walker: 2.0.2
       picomatch: 2.3.1
-      rollup: 4.5.2
+      rollup: 4.6.0
     dev: true
 
-  /@rollup/rollup-android-arm-eabi@4.5.2:
-    resolution: {integrity: sha512-ee7BudTwwrglFYSc3UnqInDDjCLWHKrFmGNi4aK7jlEyg4CyPa1DCMrZfsN1O13YT76UFEqXz2CoN7BCGpUlJw==}
+  /@rollup/rollup-android-arm-eabi@4.6.0:
+    resolution: {integrity: sha512-keHkkWAe7OtdALGoutLY3utvthkGF+Y17ws9LYT8pxMBYXaCoH/8dXS2uzo6e8+sEhY7y/zi5RFo22Dy2lFpDw==}
     cpu: [arm]
     os: [android]
     requiresBuild: true
     optional: true
 
-  /@rollup/rollup-android-arm64@4.5.2:
-    resolution: {integrity: sha512-xOuhj9HHtn8128ir8veoQsBbAUBasDbHIBniYTEx02pAmu9EXL+ZjJqngnNEy6ZgZ4h1JwL33GMNu3yJL5Mzow==}
+  /@rollup/rollup-android-arm64@4.6.0:
+    resolution: {integrity: sha512-y3Kt+34smKQNWilicPbBz/MXEY7QwDzMFNgwEWeYiOhUt9MTWKjHqe3EVkXwT2fR7izOvHpDWZ0o2IyD9SWX7A==}
     cpu: [arm64]
     os: [android]
     requiresBuild: true
     optional: true
 
-  /@rollup/rollup-darwin-arm64@4.5.2:
-    resolution: {integrity: sha512-NTGJWoL8bKyqyWFn9/RzSv4hQ4wTbaAv0lHHRwf4OnpiiP4P8W0jiXbm8Nc5BCXKmWAwuvJY82mcIU2TayC20g==}
+  /@rollup/rollup-darwin-arm64@4.6.0:
+    resolution: {integrity: sha512-oLzzxcUIHltHxOCmaXl+pkIlU+uhSxef5HfntW7RsLh1eHm+vJzjD9Oo4oUKso4YuP4PpbFJNlZjJuOrxo8dPg==}
     cpu: [arm64]
     os: [darwin]
     requiresBuild: true
     optional: true
 
-  /@rollup/rollup-darwin-x64@4.5.2:
-    resolution: {integrity: sha512-hlKqj7bpPvU15sZo4za14u185lpMzdwWLMc9raMqPK4wywt0wR23y1CaVQ4oAFXat3b5/gmRntyfpwWTKl+vvA==}
+  /@rollup/rollup-darwin-x64@4.6.0:
+    resolution: {integrity: sha512-+ANnmjkcOBaV25n0+M0Bere3roeVAnwlKW65qagtuAfIxXF9YxUneRyAn/RDcIdRa7QrjRNJL3jR7T43ObGe8Q==}
     cpu: [x64]
     os: [darwin]
     requiresBuild: true
     optional: true
 
-  /@rollup/rollup-linux-arm-gnueabihf@4.5.2:
-    resolution: {integrity: sha512-7ZIZx8c3u+pfI0ohQsft/GywrXez0uR6dUP0JhBuCK3sFO5TfdLn/YApnVkvPxuTv3+YKPIZend9Mt7Cz6sS3Q==}
+  /@rollup/rollup-linux-arm-gnueabihf@4.6.0:
+    resolution: {integrity: sha512-tBTSIkjSVUyrekddpkAqKOosnj1Fc0ZY0rJL2bIEWPKqlEQk0paORL9pUIlt7lcGJi3LzMIlUGXvtNi1Z6MOCQ==}
     cpu: [arm]
     os: [linux]
     requiresBuild: true
     optional: true
 
-  /@rollup/rollup-linux-arm64-gnu@4.5.2:
-    resolution: {integrity: sha512-7Pk/5mO11JW/cH+a8lL/i0ZxmRGrbpYqN0VwO2DHhU+SJWWOH2zE1RAcPaj8KqiwC8DCDIJOSxjV9+9lLb6aeA==}
+  /@rollup/rollup-linux-arm64-gnu@4.6.0:
+    resolution: {integrity: sha512-Ed8uJI3kM11de9S0j67wAV07JUNhbAqIrDYhQBrQW42jGopgheyk/cdcshgGO4fW5Wjq97COCY/BHogdGvKVNQ==}
     cpu: [arm64]
     os: [linux]
     requiresBuild: true
     optional: true
 
-  /@rollup/rollup-linux-arm64-musl@4.5.2:
-    resolution: {integrity: sha512-KrRnuG5phJx756e62wxvWH2e+TK84MP2IVuPwfge+GBvWqIUfVzFRn09TKruuQBXzZp52Vyma7FjMDkwlA9xpg==}
+  /@rollup/rollup-linux-arm64-musl@4.6.0:
+    resolution: {integrity: sha512-mZoNQ/qK4D7SSY8v6kEsAAyDgznzLLuSFCA3aBHZTmf3HP/dW4tNLTtWh9+LfyO0Z1aUn+ecpT7IQ3WtIg3ViQ==}
     cpu: [arm64]
     os: [linux]
     requiresBuild: true
     optional: true
 
-  /@rollup/rollup-linux-x64-gnu@4.5.2:
-    resolution: {integrity: sha512-My+53GasPa2D2tU5dXiyHYwrELAUouSfkNlZ3bUKpI7btaztO5vpALEs3mvFjM7aKTvEbc7GQckuXeXIDKQ0fg==}
+  /@rollup/rollup-linux-x64-gnu@4.6.0:
+    resolution: {integrity: sha512-rouezFHpwCqdEXsqAfNsTgSWO0FoZ5hKv5p+TGO5KFhyN/dvYXNMqMolOb8BkyKcPqjYRBeT+Z6V3aM26rPaYg==}
     cpu: [x64]
     os: [linux]
     requiresBuild: true
     optional: true
 
-  /@rollup/rollup-linux-x64-musl@4.5.2:
-    resolution: {integrity: sha512-/f0Q6Sc+Vw54Ws6N8fxaEe4R7at3b8pFyv+O/F2VaQ4hODUJcRUcCBJh6zuqtgQQt7w845VTkGLFgWZkP3tUoQ==}
+  /@rollup/rollup-linux-x64-musl@4.6.0:
+    resolution: {integrity: sha512-Bbm+fyn3S6u51urfj3YnqBXg5vI2jQPncRRELaucmhBVyZkbWClQ1fEsRmdnCPpQOQfkpg9gZArvtMVkOMsh1w==}
     cpu: [x64]
     os: [linux]
     requiresBuild: true
     optional: true
 
-  /@rollup/rollup-win32-arm64-msvc@4.5.2:
-    resolution: {integrity: sha512-NCKuuZWLht6zj7s6EIFef4BxCRX1GMr83S2W4HPCA0RnJ4iHE4FS1695q6Ewoa6A9nFjJe1//yUu0kgBU07Edw==}
+  /@rollup/rollup-win32-arm64-msvc@4.6.0:
+    resolution: {integrity: sha512-+MRMcyx9L2kTrTUzYmR61+XVsliMG4odFb5UmqtiT8xOfEicfYAGEuF/D1Pww1+uZkYhBqAHpvju7VN+GnC3ng==}
     cpu: [arm64]
     os: [win32]
     requiresBuild: true
     optional: true
 
-  /@rollup/rollup-win32-ia32-msvc@4.5.2:
-    resolution: {integrity: sha512-J5zL3riR4AOyU/J3M/i4k/zZ8eP1yT+nTmAKztCXJtnI36jYH0eepvob22mAQ/kLwfsK2TB6dbyVY1F8c/0H5A==}
+  /@rollup/rollup-win32-ia32-msvc@4.6.0:
+    resolution: {integrity: sha512-rxfeE6K6s/Xl2HGeK6cO8SiQq3k/3BYpw7cfhW5Bk2euXNEpuzi2cc7llxx1si1QgwfjNtdRNTGqdBzGlFZGFw==}
     cpu: [ia32]
     os: [win32]
     requiresBuild: true
     optional: true
 
-  /@rollup/rollup-win32-x64-msvc@4.5.2:
-    resolution: {integrity: sha512-pL0RXRHuuGLhvs7ayX/SAHph1hrDPXOM5anyYUQXWJEENxw3nfHkzv8FfVlEVcLyKPAEgDRkd6RKZq2SMqS/yg==}
+  /@rollup/rollup-win32-x64-msvc@4.6.0:
+    resolution: {integrity: sha512-QqmCsydHS172Y0Kc13bkMXvipbJSvzeglBncJG3LsYJSiPlxYACz7MmJBs4A8l1oU+jfhYEIC/+AUSlvjmiX/g==}
     cpu: [x64]
     os: [win32]
     requiresBuild: true
@@ -5604,7 +5596,7 @@ packages:
 
   /@types/js-yaml@4.0.9:
     resolution: {integrity: sha512-k4MGaQl5TGo/iipqb2UDG2UwjXziSWkh0uysQelTlJpX1qGlpUZYm8PnO4DxG1qBomtJUdYJ6qR6xdIah10JLg==}
-    dev: false
+    dev: true
 
   /@types/json-schema@7.0.15:
     resolution: {integrity: sha512-5+fP8P8MFNC+AyZCDxrB2pkZFPGzqQWUzpSeuuVLvm8VMcorNYavBqoFcxK8bQz4Qsbn4oUEEem4wDLfcysGHA==}
@@ -6108,7 +6100,7 @@ packages:
       connect-history-api-fallback: 2.0.0
       postcss: 8.4.31
       postcss-load-config: 4.0.2(postcss@8.4.31)
-      rollup: 4.5.2
+      rollup: 4.6.0
       vite: 5.0.2(@types/node@20.10.0)(sass@1.69.5)
       vue: 3.3.9(typescript@5.3.2)
       vue-router: 4.2.5(vue@3.3.9)
@@ -11899,8 +11891,8 @@ packages:
       '@gera2ld/jsx-dom': 2.2.2
       npm2url: 0.2.1
 
-  /markmap-lib@0.15.4(markmap-common@0.15.3):
-    resolution: {integrity: sha512-uz/IedoGXoDD6eXpmyD+1vx+g3rEzomX1uwnXOxnigXC9ApXG67lUhA4ffNlucgoV4/BLA2m6KyVvswECjljVQ==}
+  /markmap-lib@0.15.5-alpha.1(markmap-common@0.15.3):
+    resolution: {integrity: sha512-K6Lek0PILVutaRFXkFXhsEI99reWnMfPClpn+a7ZJSr5Ovbf9ODFVdGHGaIO/ctEQ6A3UVaTwBtz5efxw+dxWg==}
     peerDependencies:
       markmap-common: '*'
     dependencies:
@@ -11913,18 +11905,17 @@ packages:
       remarkable: 2.0.1
       remarkable-katex: 1.2.1
 
-  /markmap-toolbar@0.15.4(patch_hash=srf55pvyvq2irykaz6jjluaxly)(markmap-common@0.15.3):
-    resolution: {integrity: sha512-g95ne4YXJ9qptQAzoTyL0a1Pj/1ZNWzGWkbV/9w537LRTKJndQQ2FN71tCZQjAK95zri3cM0bJDv8krK7w4Q5w==}
+  /markmap-toolbar@0.15.5-alpha.1(markmap-common@0.15.3):
+    resolution: {integrity: sha512-sG6IncOEDU4xSC2E4mRUBkDzxkfmsNAw2NfHn3VHnFNZ7Ar4q8gEiojgoO2BJtqtckub7h+yv3HorkPRFlCY8g==}
     peerDependencies:
       markmap-common: '*'
     dependencies:
       '@babel/runtime': 7.23.4
       '@gera2ld/jsx-dom': 2.2.2
       markmap-common: 0.15.3
-    patched: true
 
-  /markmap-view@0.15.4(markmap-common@0.15.3):
-    resolution: {integrity: sha512-6PJnoPZHiQIb0YE+fg0Ht1ptEXgf9QOOTBEiC2DrzjAbZ3rrRa2g+0VhpZ+9vSzDsUa+m/IGz4xkiNepuPfs5w==}
+  /markmap-view@0.15.5-alpha.1(markmap-common@0.15.3):
+    resolution: {integrity: sha512-6mTNgoFMzYpRV9Yb8xDkNUoAu8VbsrXnNdpjYajGwIZIJGLvS90ekusxGAt+pYsW95/9MYWtOvwVDNOBtY2Dbg==}
     peerDependencies:
       markmap-common: '*'
     dependencies:
@@ -13848,7 +13839,7 @@ packages:
       is-plain-object: 3.0.1
     dev: true
 
-  /rollup-plugin-dts@6.1.0(rollup@4.5.2)(typescript@5.3.2):
+  /rollup-plugin-dts@6.1.0(rollup@4.6.0)(typescript@5.3.2):
     resolution: {integrity: sha512-ijSCPICkRMDKDLBK9torss07+8dl9UpY9z1N/zTeA1cIqdzMlpkV3MOOC7zukyvQfDyxa1s3Dl2+DeiP/G6DOw==}
     engines: {node: '>=16'}
     peerDependencies:
@@ -13856,37 +13847,37 @@ packages:
       typescript: ^4.5 || ^5.0
     dependencies:
       magic-string: 0.30.5
-      rollup: 4.5.2
+      rollup: 4.6.0
       typescript: 5.3.2
     optionalDependencies:
       '@babel/code-frame': 7.23.4
     dev: true
 
-  /rollup-plugin-esbuild@6.1.0(esbuild@0.19.7)(rollup@4.5.2):
+  /rollup-plugin-esbuild@6.1.0(esbuild@0.19.7)(rollup@4.6.0):
     resolution: {integrity: sha512-HPpXU65V8bSpW8eSYPahtUJaJHmbxJGybuf/M8B3bz/6i11YaYHlNNJIQ38gSEV0FyohQOgVxJ2YMEEZtEmwvA==}
     engines: {node: '>=14.18.0'}
     peerDependencies:
       esbuild: '>=0.18.0'
       rollup: ^1.20.0 || ^2.0.0 || ^3.0.0 || ^4.0.0
     dependencies:
-      '@rollup/pluginutils': 5.0.5(rollup@4.5.2)
+      '@rollup/pluginutils': 5.0.5(rollup@4.6.0)
       debug: 4.3.4
       es-module-lexer: 1.4.1
       esbuild: 0.19.7
       get-tsconfig: 4.7.2
-      rollup: 4.5.2
+      rollup: 4.6.0
     transitivePeerDependencies:
       - supports-color
     dev: true
 
-  /rollup-plugin-resolve-shebang@1.0.1(rollup@4.5.2):
+  /rollup-plugin-resolve-shebang@1.0.1(rollup@4.6.0):
     resolution: {integrity: sha512-TtLEBTMDs3Qmaae+0pbyN0og0RMYjL4j+/SFQp7BnnpHKLuakJyS8klnSzjAGTynm9vtUPCrb2ixXsOyOdy4kQ==}
     engines: {node: ^18.0.0 || >=20}
     peerDependencies:
       rollup: '>= 4'
     dependencies:
       magic-string: 0.30.5
-      rollup: 4.5.2
+      rollup: 4.6.0
     dev: true
 
   /rollup-plugin-terser@7.0.2(rollup@2.79.1):
@@ -13910,23 +13901,23 @@ packages:
       fsevents: 2.3.3
     dev: false
 
-  /rollup@4.5.2:
-    resolution: {integrity: sha512-CRK1uoROBfkcqrZKyaFcqCcZWNsvJ6yVYZkqTlRocZhO2s5yER6Z3f/QaYtO8RGyloPnmhwgzuPQpNGeK210xQ==}
+  /rollup@4.6.0:
+    resolution: {integrity: sha512-R8i5Her4oO1LiMQ3jKf7MUglYV/mhQ5g5OKeld5CnkmPdIGo79FDDQYqPhq/PCVuTQVuxsWgIbDy9F+zdHn80w==}
     engines: {node: '>=18.0.0', npm: '>=8.0.0'}
     hasBin: true
     optionalDependencies:
-      '@rollup/rollup-android-arm-eabi': 4.5.2
-      '@rollup/rollup-android-arm64': 4.5.2
-      '@rollup/rollup-darwin-arm64': 4.5.2
-      '@rollup/rollup-darwin-x64': 4.5.2
-      '@rollup/rollup-linux-arm-gnueabihf': 4.5.2
-      '@rollup/rollup-linux-arm64-gnu': 4.5.2
-      '@rollup/rollup-linux-arm64-musl': 4.5.2
-      '@rollup/rollup-linux-x64-gnu': 4.5.2
-      '@rollup/rollup-linux-x64-musl': 4.5.2
-      '@rollup/rollup-win32-arm64-msvc': 4.5.2
-      '@rollup/rollup-win32-ia32-msvc': 4.5.2
-      '@rollup/rollup-win32-x64-msvc': 4.5.2
+      '@rollup/rollup-android-arm-eabi': 4.6.0
+      '@rollup/rollup-android-arm64': 4.6.0
+      '@rollup/rollup-darwin-arm64': 4.6.0
+      '@rollup/rollup-darwin-x64': 4.6.0
+      '@rollup/rollup-linux-arm-gnueabihf': 4.6.0
+      '@rollup/rollup-linux-arm64-gnu': 4.6.0
+      '@rollup/rollup-linux-arm64-musl': 4.6.0
+      '@rollup/rollup-linux-x64-gnu': 4.6.0
+      '@rollup/rollup-linux-x64-musl': 4.6.0
+      '@rollup/rollup-win32-arm64-msvc': 4.6.0
+      '@rollup/rollup-win32-ia32-msvc': 4.6.0
+      '@rollup/rollup-win32-x64-msvc': 4.6.0
       fsevents: 2.3.3
 
   /run-applescript@5.0.0:
@@ -15537,7 +15528,7 @@ packages:
       '@types/node': 20.10.0
       esbuild: 0.19.7
       postcss: 8.4.31
-      rollup: 4.5.2
+      rollup: 4.6.0
       sass: 1.69.5
     optionalDependencies:
       fsevents: 2.3.3
