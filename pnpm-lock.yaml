@@ -11,6 +11,11 @@ overrides:
   micromatch: ^4.0.5
   yargs-parser: ^21.1.1
 
+patchedDependencies:
+  markmap-toolbar@0.15.4:
+    hash: srf55pvyvq2irykaz6jjluaxly
+    path: patches/markmap-toolbar@0.15.4.patch
+
 importers:
 
   .:
@@ -470,7 +475,7 @@ importers:
         version: 0.15.4(markmap-common@0.15.3)
       markmap-toolbar:
         specifier: 0.15.4
-        version: 0.15.4(markmap-common@0.15.3)
+        version: 0.15.4(patch_hash=srf55pvyvq2irykaz6jjluaxly)(markmap-common@0.15.3)
       markmap-view:
         specifier: 0.15.4
         version: 0.15.4(markmap-common@0.15.3)
@@ -1930,7 +1935,7 @@ importers:
         version: 0.15.4(markmap-common@0.15.3)
       markmap-toolbar:
         specifier: ^0.15.4
-        version: 0.15.4(markmap-common@0.15.3)
+        version: 0.15.4(patch_hash=srf55pvyvq2irykaz6jjluaxly)(markmap-common@0.15.3)
       markmap-view:
         specifier: ^0.15.4
         version: 0.15.4(markmap-common@0.15.3)
@@ -11899,7 +11904,7 @@ packages:
       remarkable: 2.0.1
       remarkable-katex: 1.2.1
 
-  /markmap-toolbar@0.15.4(markmap-common@0.15.3):
+  /markmap-toolbar@0.15.4(patch_hash=srf55pvyvq2irykaz6jjluaxly)(markmap-common@0.15.3):
     resolution: {integrity: sha512-g95ne4YXJ9qptQAzoTyL0a1Pj/1ZNWzGWkbV/9w537LRTKJndQQ2FN71tCZQjAK95zri3cM0bJDv8krK7w4Q5w==}
     peerDependencies:
       markmap-common: '*'
@@ -11907,6 +11912,7 @@ packages:
       '@babel/runtime': 7.23.4
       '@gera2ld/jsx-dom': 2.2.2
       markmap-common: 0.15.3
+    patched: true
 
   /markmap-view@0.15.4(markmap-common@0.15.3):
     resolution: {integrity: sha512-6PJnoPZHiQIb0YE+fg0Ht1ptEXgf9QOOTBEiC2DrzjAbZ3rrRa2g+0VhpZ+9vSzDsUa+m/IGz4xkiNepuPfs5w==}

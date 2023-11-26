@@ -103,6 +103,9 @@
       "glob-parent": "^6.0.2",
       "micromatch": "^4.0.5",
       "yargs-parser": "^21.1.1"
+    },
+    "patchedDependencies": {
+      "markmap-toolbar@0.15.4": "patches/markmap-toolbar@0.15.4.patch"
     }
   }
 }

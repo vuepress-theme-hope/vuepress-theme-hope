@@ -1,0 +1,12 @@
+diff --git a/dist/index.mjs b/dist/index.mjs
+index 12099efab5f215d4b5a4766ca3d44fb405678fa5..de00daa8c9f3e44c31c9783c2bc6c0634a243a5c 100644
+--- a/dist/index.mjs
++++ b/dist/index.mjs
+@@ -1,6 +1,6 @@
+ /*! markmap-toolbar v0.15.4 | MIT License */
+ import { mountDom } from '@gera2ld/jsx-dom';
+-import { jsx, jsxs, Fragment } from '@gera2ld/jsx-dom/jsx-runtime';
++import { jsx, jsxs, Fragment } from '@gera2ld/jsx-dom/jsx-runtime.js';
+ 
+ function _extends() {
+   _extends = Object.assign ? Object.assign.bind() : function (target) {
