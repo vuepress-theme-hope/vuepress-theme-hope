@@ -86,7 +86,7 @@ date: 2020-01-01
 
 ::: note
 
-When running in a Git-based project, the writing date will fall back to first commit date of current file.
+When running in a Git-based project, the writing date will be the first commit date of current file by default.
 
 :::
 
