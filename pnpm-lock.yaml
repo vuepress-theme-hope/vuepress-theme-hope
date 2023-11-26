@@ -1972,7 +1972,7 @@ importers:
         specifier: 7.20.5
         version: 7.20.5
       '@types/js-yaml':
-        specifier: ^4.0.9
+        specifier: 4.0.9
         version: 4.0.9
       '@vuepress/bundler-vite':
         specifier: 2.0.0-rc.0

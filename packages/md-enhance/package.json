@@ -114,7 +114,7 @@
   },
   "devDependencies": {
     "@types/babel__core": "7.20.5",
-    "@types/js-yaml": "^4.0.9",
+    "@types/js-yaml": "4.0.9",
     "@vuepress/bundler-vite": "2.0.0-rc.0",
     "@vuepress/core": "2.0.0-rc.0",
     "@vuepress/markdown": "2.0.0-rc.0",
