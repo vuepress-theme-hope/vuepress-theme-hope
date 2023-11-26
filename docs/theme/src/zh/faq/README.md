@@ -10,6 +10,8 @@ category:
 
 ## 目录
 
+- [小白常问](beginner.md)
+
 - [故障排查](troubleshooting.md)
 
 - [常见错误](common-error.md)
