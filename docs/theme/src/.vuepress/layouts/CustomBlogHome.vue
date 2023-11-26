@@ -1,4 +1,6 @@
 <script setup lang="ts">
+import { usePageFrontmatter } from "@vuepress/client";
+import { computed } from "vue";
 import BingHeroBackground from "vuepress-theme-hope/presets/BingHeroBackground.js";
 import HitokotoBlogHero from "vuepress-theme-hope/presets/HitokotoBlogHero.js";
 
@@ -11,9 +13,13 @@ import ProjectPanel from "@theme-hope/modules/blog/components/ProjectPanel";
 import { useArticles } from "@theme-hope/modules/blog/composables/index";
 import BlogWrapper from "@theme-hope/modules/blog/components/BlogWrapper";
 
+import type { ThemeBlogHomePageFrontmatter } from "vuepress-theme-hope/client";
+
 import "vuepress-theme-hope/modules/blog/styles/home.scss";
 
 const articles = useArticles();
+const frontmatter = usePageFrontmatter<ThemeBlogHomePageFrontmatter>();
+const projects = computed(() => frontmatter.value.projects ?? []);
 </script>
 
 <template>
@@ -30,7 +36,7 @@ const articles = useArticles();
       <div class="blog-page-wrapper custom">
         <main class="vp-blog-home" id="main-content">
           <DropTransition appear :delay="0.16">
-            <ProjectPanel />
+            <ProjectPanel :items="projects" />
           </DropTransition>
           <DropTransition appear :delay="0.24">
             <ArticleList :items="articles.items" />
