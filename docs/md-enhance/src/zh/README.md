@@ -147,6 +147,11 @@ highlights:
         details: 可以在 Markdown 中直接写出流程图
         link: ./guide/chart/flowchart.html
 
+      - title: Markmap 支持
+        icon: fab fa-markdown
+        details: 从 Markdown 生成思维导图
+        link: ./guide/chart/markmap.html
+
       - title: Mermaid 支持
         icon: chart-pie
         details: 可以在 Markdown 中添加 Mermaid 图例
@@ -171,6 +176,11 @@ highlights:
         icon: code
         details: 你可以在 Markdown 中添加交互演示
         link: ./guide/code/playground.html
+
+      - title: Kotlin 交互演示支持
+        icon: fab fa-kickstarter
+        details: 响应式的 Kotlin Playground
+        link: ./guide/code/kotlin-playground.html
 
       - title: Vue 交互演示支持
         icon: fab fa-vuejs

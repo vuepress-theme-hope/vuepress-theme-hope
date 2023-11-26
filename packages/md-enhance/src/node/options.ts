@@ -329,11 +329,18 @@ export interface MarkdownEnhanceOptions {
    *
    * 是否启用 flowchart 流程图支持
    *
-   * @deprecated The lib is lack of maintenance, use mermaid instead.
-   *
    * @default false
    */
   flowchart?: boolean;
+
+  /**
+   * Whether to enable markmap support
+   *
+   * 是否启用 markmap 流程图支持
+   *
+   * @default false
+   */
+  markmap?: boolean;
 
   /**
    * Whether to enable mermaid support
@@ -384,6 +391,15 @@ export interface MarkdownEnhanceOptions {
       unocss?: UnoPresetPlaygroundOptions;
     };
   };
+
+  /**
+   * Whether to enable kotlin playground support
+   *
+   * 是否启用 kotlin Playground 支持
+   *
+   * @default false
+   */
+  kotlinPlayground?: boolean;
 
   /**
    * Whether to enable vue playground support

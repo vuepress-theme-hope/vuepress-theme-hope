@@ -14,6 +14,7 @@ This plugin provides the following features to enhance coding:
 - Code Tabs: Add tabs to your code block.
 - Code Demo: Display and run code snippets in browser.
 - Playground: Embed external playground site.
+- Kotlin Playground: Reactive kotlin playground.
 - Vue Playground: Reactive vue playground.
 
 <!-- #endregion intro -->
@@ -92,6 +93,25 @@ speak(msg);
 :::
 
 - [View Detail](./playground.md)
+
+### Kotlin Playground
+
+::: kotlin-playground Kotlin Playground
+
+@file main.kt
+
+```kotlin
+class Contact(val id: Int, var email: String)
+
+fun main(args: Array<String>) {
+    val contact = Contact(1, "mary@gmail.com")
+    println(contact.id)
+}
+```
+
+:::
+
+- [View Detail](./kotlin-playground.md)
 
 ### Vue Playground
 

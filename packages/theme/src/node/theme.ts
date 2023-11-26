@@ -65,7 +65,14 @@ export const hopeTheme =
     const themeData = getThemeData(app, themeOptions, status);
     const icons = status.enableBlog ? checkSocialMediaIcons(themeData) : {};
 
-    usePlugin(app, themeData, plugins, hotReload, behaviorOptions);
+    usePlugin(
+      app,
+      themeData,
+      plugins,
+      hotReload,
+      behaviorOptions,
+      behaviorOptions.compact,
+    );
 
     if (isDebug) console.log("Theme plugin options:", plugins);
 

@@ -9,11 +9,15 @@ import { copyCodePlugin } from "vuepress-plugin-copy-code2";
  */
 export const getCopyCodePlugin = (
   options?: CopyCodeOptions | false,
+  legacy = false,
 ): Plugin | null => {
   if (options === false) return null;
 
-  return copyCodePlugin({
-    selector: '.theme-hope-content div[class*="language-"] pre',
-    ...options,
-  });
+  return copyCodePlugin(
+    {
+      selector: '.theme-hope-content div[class*="language-"] pre',
+      ...options,
+    },
+    legacy,
+  );
 };

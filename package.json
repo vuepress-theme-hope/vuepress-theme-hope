@@ -1,6 +1,6 @@
 {
   "name": "vuepress-theme-hope-root",
-  "version": "2.0.0-rc.0",
+  "version": "2.0.0-rc.1",
   "private": true,
   "description": "A VuePress theme with tons of features",
   "type": "module",
@@ -43,7 +43,7 @@
   "devDependencies": {
     "@commitlint/cli": "18.4.3",
     "@commitlint/config-conventional": "18.4.3",
-    "@rollup/plugin-alias": "5.0.1",
+    "@rollup/plugin-alias": "5.1.0",
     "@rollup/plugin-commonjs": "25.0.7",
     "@rollup/plugin-node-resolve": "15.2.3",
     "@rollup/plugin-replace": "5.0.5",
@@ -78,7 +78,7 @@
     "picocolors": "1.0.0",
     "prettier": "3.1.0",
     "rimraf": "5.0.5",
-    "rollup": "4.5.2",
+    "rollup": "4.6.0",
     "rollup-plugin-copy": "3.5.0",
     "rollup-plugin-dts": "6.1.0",
     "rollup-plugin-esbuild": "6.1.0",

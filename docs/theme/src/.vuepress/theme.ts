@@ -48,7 +48,6 @@ export default theme("theme", {
     components: {
       components: [
         "ArtPlayer",
-        "AudioPlayer",
         "Badge",
         "BiliBili",
         "CodePen",
@@ -60,8 +59,6 @@ export default theme("theme", {
         "VPBanner",
         "VPCard",
         "VidStack",
-        "VideoPlayer",
-        "YouTube",
       ],
 
       componentOptions: {

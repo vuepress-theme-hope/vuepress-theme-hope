@@ -8,7 +8,7 @@ import {
   useCustomDevServer,
 } from "vuepress-shared/node";
 
-import { convertOptions } from "./compact/index.js";
+import { convertOptions } from "./compact.js";
 import { generateManifest, getManifest } from "./generateManifest.js";
 import { generateServiceWorker } from "./generateServiceWorker.js";
 import { appendBase } from "./helper.js";

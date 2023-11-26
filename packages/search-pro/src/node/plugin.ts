@@ -9,7 +9,7 @@ import {
   getLocales,
 } from "vuepress-shared/node";
 
-import { convertOptions } from "./compact/index.js";
+import { convertOptions } from "./compact.js";
 import { setPageExcerpt } from "./excerpt.js";
 import { generateWorker } from "./generateWorker.js";
 import { searchProLocales } from "./locales.js";

@@ -20,7 +20,7 @@ const encodeFiles = (files: PlaygroundData["files"]): string =>
       fromEntries(
         entries(files)
           .filter(([, { ext }]) => VUE_SUPPORTED_EXTENSIONS.includes(ext))
-          .map(([key, config]) => [key, config.content]),
+          .map(([key, { content }]) => [key, content]),
       ),
     ),
   ).toString("base64");

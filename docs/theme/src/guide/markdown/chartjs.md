@@ -1,5 +1,5 @@
 ---
-title: Chart
+title: Chart.js
 icon: chart-simple
 category:
   - Markdown

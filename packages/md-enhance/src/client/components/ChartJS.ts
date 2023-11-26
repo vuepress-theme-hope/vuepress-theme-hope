@@ -1,7 +1,15 @@
 import { useMutationObserver } from "@vueuse/core";
 import type { Chart, ChartConfiguration } from "chart.js";
 import type { PropType, VNode } from "vue";
-import { defineComponent, h, onMounted, ref, shallowRef, watch } from "vue";
+import {
+  computed,
+  defineComponent,
+  h,
+  onMounted,
+  ref,
+  shallowRef,
+  watch,
+} from "vue";
 import { LoadingIcon, atou } from "vuepress-shared/client";
 
 import { getDarkmodeStatus } from "../utils/index.js";
@@ -82,6 +90,9 @@ export default defineComponent({
 
     const isDarkmode = ref(false);
     const loading = ref(true);
+
+    const config = computed(() => atou(props.config));
+
     let loaded = false;
 
     let chart: Chart | null;
@@ -101,7 +112,7 @@ export default defineComponent({
       Chart.defaults.color = isDarkmode ? "#fff" : "#000";
       Chart.defaults.maintainAspectRatio = false;
 
-      const data = parseChartConfig(atou(props.config), props.type);
+      const data = parseChartConfig(config.value, props.type);
       const ctx = chartCanvasElement.value!.getContext("2d")!;
 
       chart?.destroy();

@@ -56,6 +56,8 @@ import {
   getUnoPlaygroundPreset,
   getVuePlaygroundPreset,
   hint,
+  kotlinPlayground,
+  markmap,
   mdDemo,
   mermaid,
   normalDemo,
@@ -96,17 +98,15 @@ export const mdEnhancePlugin =
     const getStatus = (
       key: keyof MarkdownEnhanceOptions,
       gfm = false,
-      pkg = "",
+      pkgs: string[] = [],
     ): boolean => {
       const enabled =
         key in options ? Boolean(options[key]) : (gfm && options.gfm) || false;
-
-      return (
-        enabled &&
-        (pkg
-          ? isInstalled(pkg, Boolean(options[key]) || (gfm && options.gfm))
-          : true)
+      const pkgInstalled = pkgs.every((pkg) =>
+        isInstalled(pkg, Boolean(options[key])),
       );
+
+      return enabled && pkgInstalled;
     };
 
     const locales = getLocales({
@@ -116,19 +116,28 @@ export const mdEnhancePlugin =
       config: options.locales,
     });
 
-    const enableChart = getStatus("chart", false, "chart.js");
-    const enableEcharts = getStatus("echarts", false, "echarts");
-    const enableFlowchart = getStatus("flowchart", false, "flowchart.ts");
+    const enableChart = getStatus("chart", false, ["chart.js"]);
+    const enableEcharts = getStatus("echarts", false, ["echarts"]);
+    const enableFlowchart = getStatus("flowchart", false, ["flowchart.ts"]);
     const enableFootnote = getStatus("footnote", true);
     const enableImgMark = getStatus("imgMark", true);
     const enableInclude = getStatus("include");
     const enableTasklist = getStatus("tasklist", true);
-    const enableMermaid = getStatus("mermaid", false, "mermaid");
-    const enableRevealJs = getStatus("revealJs", false, "reveal.js");
-    const enableKatex = getStatus("katex", false, "katex");
+    const enableMarkmap = getStatus("markmap", false, [
+      "markmap-lib",
+      "markmap-view",
+    ]);
+    const enableMermaid = getStatus("mermaid", false, ["mermaid"]);
+    const enableRevealJs = getStatus("revealJs", false, ["reveal.js"]);
+    const enableKatex = getStatus("katex", false, ["katex"]);
     const enableMathjax =
-      !options.katex && getStatus("mathjax", true, "mathjax-full");
-    const enableVuePlayground = getStatus("vuePlayground", false, "@vue/repl");
+      !options.katex && getStatus("mathjax", true, ["mathjax-full"]);
+    const enableKotlinPlayground = getStatus("kotlinPlayground", false, [
+      "kotlin-playground",
+    ]);
+    const enableVuePlayground = getStatus("vuePlayground", false, [
+      "@vue/repl",
+    ]);
 
     const { enabled: enableLinksCheck, isIgnoreLink } = getLinksCheckStatus(
       app,
@@ -166,12 +175,14 @@ export const mdEnhancePlugin =
           );
       },
       ...(isPlainObject(options.katex) ? options.katex : {}),
+      vPre: true,
     };
 
     const mathjaxInstance = enableMathjax
       ? createMathjaxInstance({
           mathFence: options.gfm ?? false,
           ...(isPlainObject(options.mathjax) ? options.mathjax : {}),
+          vPre: true,
         })
       : null;
 
@@ -237,6 +248,17 @@ export const mdEnhancePlugin =
           addViteSsrExternal(bundlerOptions, app, "flowchart.ts");
         }
 
+        if (enableMarkmap) {
+          addViteOptimizeDepsInclude(bundlerOptions, app, [
+            "markmap-lib",
+            "markmap-view",
+          ]);
+          addViteSsrExternal(bundlerOptions, app, [
+            "markmap-lib",
+            "markmap-view",
+          ]);
+        }
+
         if (enableMermaid) {
           addViteOptimizeDepsInclude(bundlerOptions, app, "mermaid");
           addViteSsrExternal(bundlerOptions, app, "mermaid");
@@ -252,6 +274,11 @@ export const mdEnhancePlugin =
           ]);
 
           addViteSsrExternal(bundlerOptions, app, "reveal.js");
+        }
+
+        if (enableKotlinPlayground) {
+          addViteOptimizeDepsInclude(bundlerOptions, app, "kotlin-playground");
+          addViteSsrExternal(bundlerOptions, app, "kotlin-playground");
         }
 
         if (enableVuePlayground) {
@@ -365,6 +392,7 @@ export const mdEnhancePlugin =
           // TODO: Remove this in v2 stable
           if (legacy) md.use(legacyCodeDemo);
         }
+        if (enableMarkmap) md.use(markmap);
         if (enableMermaid) md.use(mermaid);
         if (enableRevealJs) md.use(revealJs);
         if (isPlainObject(options.playground)) {
@@ -380,6 +408,7 @@ export const mdEnhancePlugin =
             else if (isPlainObject(preset)) md.use(playground, preset);
           });
         }
+        if (enableKotlinPlayground) md.use(kotlinPlayground);
         if (enableVuePlayground) md.use(vuePlayground);
       },
 
