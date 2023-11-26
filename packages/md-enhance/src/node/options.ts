@@ -334,6 +334,15 @@ export interface MarkdownEnhanceOptions {
   flowchart?: boolean;
 
   /**
+   * Whether to enable markmap support
+   *
+   * 是否启用 markmap 流程图支持
+   *
+   * @default false
+   */
+  markmap?: boolean;
+
+  /**
    * Whether to enable mermaid support
    *
    * 是否启用 Mermaid 流程图支持

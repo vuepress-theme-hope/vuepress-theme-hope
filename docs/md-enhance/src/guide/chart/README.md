@@ -23,6 +23,10 @@ This plugin provides 4 ways to let you insert charts into your markdown file.
 
   Lightweight, only focusing on flowcharts.
 
+- Markmap: Create mindmap with markdown
+
+  The runtime is very heavy, not recommended.
+
 - Mermaid: Generation of diagram and flowchart from text in a similar manner as markdown.
 
   Powerful collection of common charts.
@@ -109,6 +113,44 @@ cond(no)->e
 ```
 
 - [View Detail](./flowchart.md)
+
+### Markmap
+
+````markmap
+---
+markmap:
+  colorFreezeLevel: 2
+---
+
+# markmap
+
+## Links
+
+- <https://markmap.js.org/>
+- [GitHub](https://github.com/gera2ld/markmap)
+
+## Related Projects
+
+- [coc-markmap](https://github.com/gera2ld/coc-markmap)
+- [gatsby-remark-markmap](https://github.com/gera2ld/gatsby-remark-markmap)
+
+## Features
+
+- links
+- **strong** ~~del~~ *italic* ==highlight==
+- multiline
+  text
+- `inline code`
+-
+    ```js
+    console.log('code block');
+    ```
+- Katex
+  - $x = {-b \pm \sqrt{b^2-4ac} \over 2a}$
+- Now we can wrap very very very very long text based on `maxWidth` option
+````
+
+- [View Detail](./markmap.md)
 
 ### Mermaid
 

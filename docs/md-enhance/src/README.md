@@ -150,6 +150,11 @@ highlights:
         details: Create your flowchart in Markdown
         link: ./guide/chart/flowchart.html
 
+      - title: Markmap Support
+        icon: fab fa-markdown
+        details: Generate mindmap with Markdown
+        link: ./guide/chart/markmap.html
+
       - title: Mermaid Support
         icon: chart-pie
         details: Add mermaid diagram in Markdown

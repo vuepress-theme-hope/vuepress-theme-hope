@@ -112,6 +112,11 @@ export const prepareConfigFile = async (
   if (getStatus("imgMark", true))
     imports.add(`import "${CLIENT_FOLDER}styles/image-mark.scss"`);
 
+  if (getStatus("markmap")) {
+    imports.add(`import MarkMap from "${CLIENT_FOLDER}components/MarkMap.js";`);
+    enhances.add(`app.component("MarkMap", MarkMap);`);
+  }
+
   if (getStatus("mermaid")) {
     imports.add(`import Mermaid from "${CLIENT_FOLDER}components/Mermaid.js";`);
     imports.add(

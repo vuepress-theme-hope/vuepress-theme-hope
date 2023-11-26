@@ -6,6 +6,7 @@ export * from "./component.js";
 export * from "./echarts.js";
 export * from "./flowchart.js";
 export * from "./hint.js";
+export * from "./markmap.js";
 export * from "./mermaid.js";
 export * from "./playground/index.js";
 export * from "./revealjs.js";

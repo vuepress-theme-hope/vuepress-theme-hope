@@ -20,6 +20,7 @@
     "include",
     "mark",
     "markdown",
+    "markmap",
     "mermaid",
     "playground",
     "stylize",
@@ -127,6 +128,9 @@
     "echarts": "^5.4.3",
     "flowchart.ts": "^1.0.1",
     "katex": "^0.16.9",
+    "markmap-lib": "^0.15.4",
+    "markmap-toolbar": "^0.15.4",
+    "markmap-view": "^0.15.4",
     "mathjax-full": "^3.2.2",
     "mermaid": "^10.6.1",
     "reveal.js": "^5.0.2",
@@ -152,6 +156,15 @@
       "optional": true
     },
     "katex": {
+      "optional": true
+    },
+    "markmap-lib": {
+      "optional": true
+    },
+    "markmap-toolbar": {
+      "optional": true
+    },
+    "markmap-view": {
       "optional": true
     },
     "mathjax-full": {

@@ -107,6 +107,7 @@ Whether convert URL-like text into links
 
 - Type: `boolean`
 - Default: `false`
+- Enabled in GFM: Yes
 - Details:
   - [GFM Alerts](./guide/stylize/alert.md)
 
@@ -387,15 +388,24 @@ Whether to enable ECharts support
 
 Whether to enable flowchart support
 
+### markmap
+
+- Type: `boolean`
+- Default: `false`
+- Details:
+  - [Markmap](./guide/chart/markmap.md)
+
+Whether to enable [Markmap](https://markmap.js.org/) support.
+
 ### mermaid
 
-- Type: `MermaidConfig | boolean`
+- Type: `boolean`
 - Default: `false`
 - Enabled in GFM: Yes
 - Details:
   - [Mermaid](./guide/chart/mermaid.md)
 
-Whether to enable [Mermaid](https://mermaid.js.org/) support, you can pass in a config object to customize the behavior of Mermaid.
+Whether to enable [Mermaid](https://mermaid.js.org/) support.
 
 ### stylize
 
@@ -583,78 +593,7 @@ Playground options.
 
 ### vuePlayground
 
-- Type: `VuePlaygroundOptions | boolean`
-
-  ```ts
-  interface VuePlaygroundOptions {
-    /**
-     * specify the version of vue
-     */
-    vueVersion?: string;
-
-    /**
-     * specify default URL to import Vue runtime from in the sandbox
-     *
-     * @default "https://unpkg.com/@vue/runtime-dom@${version}/dist/runtime-dom.esm-browser.js"
-     */
-    defaultVueRuntimeURL?: string;
-
-    /**
-     * Specify default URL to import Vue Server Renderer from in the sandbox
-     *
-     * @default "https://unpkg.com/@vue/server-renderer@${version}/dist/server-renderer.esm-browser.js"
-     */
-    defaultVueServerRendererURL?: string;
-
-    /**
-     * Whether to enable repl's editor resizable
-     *
-     * @default true
-     */
-    autoResize?: boolean;
-
-    /**
-     * Whether to show JS, CSS, SSR panel
-     *
-     * @default false
-     */
-    showCompileOutput?: boolean;
-
-    /**
-     * Whether to show import map
-     *
-     * @default true
-     */
-    showImportMap?: boolean;
-
-    /**
-     * Whether to clear console
-     *
-     * @default false
-     */
-    clearConsole?: boolean;
-
-    /**
-     * Layout
-     *
-     * @default 'horizontal'
-     */
-    layout?: "horizontal" | "vertical";
-
-    /**
-     * Options to configure the `vue/compiler-sfc`
-     */
-    sfcOptions?: SFCOptions;
-
-    /**
-     * Whether to enable SSR
-     *
-     * @default true
-     */
-    ssr?: boolean;
-  }
-  ```
-
+- Type: `boolean`
 - Default: `false`
 - Details:
   - [Vue Playground](./guide/code/vue-playground.md)

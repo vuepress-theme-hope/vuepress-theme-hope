@@ -39,6 +39,7 @@ export default defineUserConfig({
         "/demo/image-size",
         "/demo/include",
         "/demo/mark",
+        "/demo/markmap",
         "/demo/mermaid",
         "/demo/playground",
         "/demo/revealjs",
@@ -81,6 +82,7 @@ export default defineUserConfig({
       imgSize: true,
       include: true,
       mark: true,
+      markmap: true,
       mermaid: true,
       playground: {
         presets: ["ts", "vue"],
