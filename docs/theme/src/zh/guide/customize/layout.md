@@ -111,31 +111,31 @@ export default defineClientConfig({
 
 <!-- #endregion layout -->
 
-The theme provides the following layouts:
+主题提供了如下布局:
 
 - Layout
 
-  Basic layout, having the following slots:
+  基础布局，具有以下插槽：
 
-  - `default`: Page content slot
-  - `top`: Page top slot
-  - `bottom`: Page bottom slot
-  - `contentBefore`: Slot before page content
-  - `contentAfter`: Slot after page content
-  - `tocBefore`: Slot before page TOC
-  - `tocAfter`: Slot after page TOC
+  - `default`: 页面内容插槽
+  - `top`: 页面顶部插槽
+  - `bottom`: 页面底部插槽
+  - `contentBefore`: 页面内容前插槽
+  - `contentAfter`: 页面内容后插槽
+  - `tocBefore`: 页面 TOC 前插槽
+  - `tocAfter`: 页面 TOC 后插槽
 
 - NotFound
 
-  404 page layout, having the following slots:
+  404 页面布局，具有以下插槽：
 
-  - `default`: 404 content slot
+  - `default`: 404 内容插槽
 
-- Slide (Only available when presentation is enabled)
-- BlogCategory (Only available when blog is enabled)
-- BlogHome (Only available when blog is enabled)
-- BlogType (Only available when blog is enabled)
-- Timeline (Only available when blog is enabled)
+- Slide: 仅当幻灯片启用时有效
+- BlogCategory: 仅当博客启用时有效
+- BlogHome: 仅当博客启用时有效
+- BlogTyp: 仅当博客启用时有效
+- Timeline: 仅当博客启用时有效
 
 ### 通过覆盖组件
 

@@ -13,7 +13,6 @@ By using `vuepress-plugin-components`, you can import and use some components in
 Available components:
 
 - ArtPlayer
-- AudioPlayer
 - Badge
 - BiliBili
 - CodePen
@@ -23,10 +22,10 @@ Available components:
 - Share
 - StackBlitz
 - SiteInfo
+- VPBanner
+- VPCard
 - VidStack
-- VideoPlayer
 - XiGua
-- YouTube
 
 By default, `<Badge />` and `<FontIcon />` is enabled.
 
@@ -50,7 +49,6 @@ export default defineUserConfig({
         // components you want
         components: [
           "ArtPlayer",
-          "AudioPlayer",
           "Badge",
           "BiliBili",
           "CodePen",
@@ -59,10 +57,10 @@ export default defineUserConfig({
           "Share",
           "SiteInfo",
           "StackBlitz",
+          "VPBanner",
+          "VPCard",
           "VidStack",
-          "VideoPlayer",
           "XiGua",
-          "YouTube",
         ],
       },
     },
@@ -83,7 +81,6 @@ export default {
         // components you want
         components: [
           "ArtPlayer",
-          "AudioPlayer",
           "Badge",
           "BiliBili",
           "CodePen",
@@ -92,10 +89,10 @@ export default {
           "Share",
           "SiteInfo",
           "StackBlitz",
+          "VPBanner",
+          "VPCard",
           "VidStack",
-          "VideoPlayer",
           "XiGua",
-          "YouTube",
         ],
       },
     },
@@ -185,24 +182,6 @@ See <ProjectLink name="components" path="/guide/code/stack-blitz.html">StackBlit
 
 See <ProjectLink name="components" path="/guide/media/vid-stack.html">VidStack</ProjectLink> page for available props.
 
-## VideoPlayer
-
-> Install `plyr` first.
-
-Embed videos in Markdown files.
-
-<!-- @include: @components/guide/media/video-player.md#demo -->
-
-See <ProjectLink name="components" path="/guide/media/video-player.html">VideoPlayer</ProjectLink> page for available props.
-
-## YouTube
-
-Embed YouTube video in Markdown files.
-
-<!-- @include: @components/guide/media/you-tube.md#demo -->
-
-See <ProjectLink name="components" path="/guide/media/you-tube.html">YouTube</ProjectLink> page for available props.
-
 ## ArtPlayer
 
 > Install `artplayer` first.
@@ -210,11 +189,3 @@ See <ProjectLink name="components" path="/guide/media/you-tube.html">YouTube</Pr
 <!-- @include: @components/guide/media/art-player.md#demo -->
 
 See <ProjectLink name="components" path="/guide/media/art-player.html">ArtPlayer</ProjectLink> page for available props.
-
-## AudioPlayer
-
-> Install `plyr` first.
-
-<!-- @include: @components/guide/media/audio-player.md#demo -->
-
-See <ProjectLink name="components" path="/guide/media/audio-player.html">AudioPlayer</ProjectLink> page for available props.

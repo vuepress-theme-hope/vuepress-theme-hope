@@ -13,7 +13,7 @@ tag:
 The behavior option can also accept a boolean value:
 
 - `false`: options set to`false` with `false` value
-- `true`: `{ check: true, compact:true, custom :false, debug: false }`
+- `true`: `{ check: true, compact:true, custom: false, debug: false }`
 
 <!-- more -->
 

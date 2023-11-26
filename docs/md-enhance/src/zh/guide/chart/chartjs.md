@@ -1,5 +1,5 @@
 ---
-title: Chart.js
+title: Chart.js.js
 icon: chart-simple
 ---
 
