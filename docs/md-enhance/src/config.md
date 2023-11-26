@@ -591,6 +591,15 @@ Stylize inline tokens to create snippet you want.
 
 Playground options.
 
+### kotlinPlayground
+
+- Type: `boolean`
+- Default: `false`
+- Details:
+  - [Kotlin Playground](./guide/code/kotlin-playground.md)
+
+Whether to enable kotlin playground support.
+
 ### vuePlayground
 
 - Type: `boolean`
@@ -844,6 +853,32 @@ export const defineRevealJsConfig: (options: RevealOptions) => void;
 ```
 
 Define config which you want to pass to reveal.js.
+
+### defineKotlinPlaygroundConfig
+
+```ts
+interface KotlinPlaygroundOptions {
+  server?: string;
+  version?: string;
+
+  onChange?: (code: string) => void;
+  onRun?: () => void;
+  onError?: () => void;
+  getJsCode?: (code: string) => void;
+  onTestPassed?: () => void;
+  onTestFailed?: () => void;
+  onOpenConsole?: () => void;
+  onCloseConsole?: () => void;
+  callback?: (targetNode: HTMLElement, mountNode: HTMLElement) => void;
+  getInstance?: (instance: KotlinPlaygroundInstance) => void;
+}
+
+export const defineKotlinPlaygroundConfig: (
+  options: KotlinPlaygroundOptions,
+) => void;
+```
+
+Define config which you want to pass to `kotlin-playground`.
 
 ### defineVuePlaygroundConfig
 

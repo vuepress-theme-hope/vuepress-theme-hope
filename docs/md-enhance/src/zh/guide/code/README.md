@@ -14,6 +14,7 @@ index: false
 - 代码选项卡：为代码块添加选项卡。
 - 代码演示：在浏览器中显示和运行代码片段。
 - 交互演示：嵌入外部演示站点。
+- Kotlin 交互演示：响应式 Kotlin 演示。
 - Vue 交互演示：响应式 Vue 演示。
 
 <!-- #endregion intro -->
@@ -92,6 +93,25 @@ speak(msg);
 :::
 
 - [查看详情](./playground.md)
+
+### Kotlin 交互演示
+
+::: kotlin-playground Kotlin 交互演示
+
+@file main.kt
+
+```kotlin
+class Contact(val id: Int, var email: String)
+
+fun main(args: Array<String>) {
+    val contact = Contact(1, "mary@gmail.com")
+    println(contact.id)
+}
+```
+
+:::
+
+- [查看详情](./kotlin-playground.md)
 
 ### Vue 交互演示
 

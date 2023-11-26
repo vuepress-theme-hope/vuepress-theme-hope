@@ -38,6 +38,7 @@ export default defineUserConfig({
         "/demo/image-mark",
         "/demo/image-size",
         "/demo/include",
+        "/demo/kotlin-playground",
         "/demo/mark",
         "/demo/markmap",
         "/demo/mermaid",
@@ -84,6 +85,7 @@ export default defineUserConfig({
       mark: true,
       markmap: true,
       mermaid: true,
+      kotlinPlayground: true,
       playground: {
         presets: ["ts", "vue"],
       },

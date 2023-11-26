@@ -470,6 +470,9 @@ importers:
       katex:
         specifier: 0.16.9
         version: 0.16.9
+      kotlin-playground:
+        specifier: 1.29.0
+        version: 1.29.0
       markmap-lib:
         specifier: 0.15.4
         version: 0.15.4(markmap-common@0.15.3)
@@ -1927,6 +1930,9 @@ importers:
       katex:
         specifier: ^0.16.9
         version: 0.16.9
+      kotlin-playground:
+        specifier: ^1.29.0
+        version: 1.29.0
       markdown-it:
         specifier: ^13.0.2
         version: 13.0.2
@@ -11432,6 +11438,9 @@ packages:
   /known-css-properties@0.29.0:
     resolution: {integrity: sha512-Ne7wqW7/9Cz54PDt4I3tcV+hAyat8ypyOGzYRJQfdxnnjeWsTxt1cy8pjvvKeI5kfXuyvULyeeAvwvvtAX3ayQ==}
     dev: true
+
+  /kotlin-playground@1.29.0:
+    resolution: {integrity: sha512-9Q2FbbZUAUYgB0Bszwd7GC4bwMgB554xu/eQn8LV6zCNm3N1ZMa9Md4jvzYkEyflb0492PTHhQ3TpC8xa12ltg==}
 
   /last-run@1.1.1:
     resolution: {integrity: sha512-U/VxvpX4N/rFvPzr3qG5EtLKEnNI0emvIQB3/ecEwv+8GHaUKbIB8vxv1Oai5FAF0d0r7LXHhLLe5K/yChm5GQ==}

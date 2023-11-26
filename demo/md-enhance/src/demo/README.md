@@ -19,6 +19,7 @@ title: Get Started
 - [Image Mark](image-mark.md)
 - [Image Size](image-size.md)
 - [Include files](include.md)
+- [Kotlin Playground](kotlin-playground.md)
 - [Mark](mark.md)
 - [Markmap](markmap.md)
 - [Mermaid](mermaid.md)

@@ -23,6 +23,7 @@
     "echarts": "5.4.3",
     "echarts-wordcloud": "2.1.0",
     "katex": "0.16.9",
+    "kotlin-playground": "1.29.0",
     "markmap-lib": "0.15.4",
     "markmap-toolbar": "0.15.4",
     "markmap-view": "0.15.4",

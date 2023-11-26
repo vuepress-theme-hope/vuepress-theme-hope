@@ -165,15 +165,25 @@ export const prepareConfigFile = async (
     }
   }
 
+  if (getStatus("kotlinPlayground")) {
+    imports.add(
+      `import KotlinPlayground from "${CLIENT_FOLDER}components/KotlinPlayground.js";`,
+    );
+    imports.add(
+      `import { injectKotlinPlaygroundConfig } from "${CLIENT_FOLDER}index.js";`,
+    );
+    enhances.add(`injectKotlinPlaygroundConfig(app);`);
+    enhances.add(`app.component("KotlinPlayground", KotlinPlayground);`);
+  }
   if (getStatus("vuePlayground")) {
-    imports.add(`import { defineAsyncComponent } from "vue";`);
+    imports.add(
+      `import VuePlayground from "${CLIENT_FOLDER}components/VuePlayground.js";`,
+    );
     imports.add(
       `import { injectVuePlaygroundConfig } from "${CLIENT_FOLDER}index.js";`,
     );
     enhances.add(`injectVuePlaygroundConfig(app);`);
-    enhances.add(
-      `app.component("VuePlayground", defineAsyncComponent(() => import("${CLIENT_FOLDER}components/VuePlayground.js")));`,
-    );
+    enhances.add(`app.component("VuePlayground", VuePlayground);`);
   }
 
   if (getStatus("mathjax")) imports.add(`import "./mathjax.css";`);

@@ -393,6 +393,15 @@ export interface MarkdownEnhanceOptions {
   };
 
   /**
+   * Whether to enable kotlin playground support
+   *
+   * 是否启用 kotlin Playground 支持
+   *
+   * @default false
+   */
+  kotlinPlayground?: boolean;
+
+  /**
    * Whether to enable vue playground support
    *
    * 是否启用 Vue Playground 支持

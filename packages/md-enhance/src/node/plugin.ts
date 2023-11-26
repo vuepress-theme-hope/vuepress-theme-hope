@@ -56,6 +56,7 @@ import {
   getUnoPlaygroundPreset,
   getVuePlaygroundPreset,
   hint,
+  kotlinPlayground,
   markmap,
   mdDemo,
   mermaid,
@@ -131,6 +132,9 @@ export const mdEnhancePlugin =
     const enableKatex = getStatus("katex", false, ["katex"]);
     const enableMathjax =
       !options.katex && getStatus("mathjax", true, ["mathjax-full"]);
+    const enableKotlinPlayground = getStatus("kotlinPlayground", false, [
+      "kotlin-playground",
+    ]);
     const enableVuePlayground = getStatus("vuePlayground", false, [
       "@vue/repl",
     ]);
@@ -270,6 +274,11 @@ export const mdEnhancePlugin =
           addViteSsrExternal(bundlerOptions, app, "reveal.js");
         }
 
+        if (enableKotlinPlayground) {
+          addViteOptimizeDepsInclude(bundlerOptions, app, "kotlin-playground");
+          addViteSsrExternal(bundlerOptions, app, "kotlin-playground");
+        }
+
         if (enableVuePlayground) {
           addViteOptimizeDepsInclude(bundlerOptions, app, "@vue/repl");
           addViteSsrExternal(bundlerOptions, app, "@vue/repl");
@@ -397,6 +406,7 @@ export const mdEnhancePlugin =
             else if (isPlainObject(preset)) md.use(playground, preset);
           });
         }
+        if (enableKotlinPlayground) md.use(kotlinPlayground);
         if (enableVuePlayground) md.use(vuePlayground);
       },
 

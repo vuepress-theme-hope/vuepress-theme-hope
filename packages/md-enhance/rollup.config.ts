@@ -21,6 +21,7 @@ export default [
         "components/CodeTabs",
         "components/ECharts",
         "components/FlowChart",
+        "components/KotlinPlayground",
         "components/MarkMap",
         "components/MdDemo",
         "components/Mermaid",

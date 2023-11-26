@@ -128,6 +128,7 @@
     "echarts": "^5.4.3",
     "flowchart.ts": "^1.0.1",
     "katex": "^0.16.9",
+    "kotlin-playground": "^1.29.0",
     "markmap-lib": "^0.15.4",
     "markmap-toolbar": "^0.15.4",
     "markmap-view": "^0.15.4",
@@ -156,6 +157,9 @@
       "optional": true
     },
     "katex": {
+      "optional": true
+    },
+    "kotlin-playground": {
       "optional": true
     },
     "markmap-lib": {

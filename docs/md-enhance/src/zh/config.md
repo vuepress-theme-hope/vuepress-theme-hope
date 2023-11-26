@@ -594,6 +594,15 @@ order: 2
 
 交互演示选项。
 
+### kotlinPlayground
+
+- 类型: `boolean`
+- 默认值: `false`
+- 详情:
+  - [Kotlin 交互演示](./guide/code/kotlin-playground.md)
+
+是否启用 Kotlin 交互演示支持。
+
 ### vuePlayground
 
 - 类型: `boolean`
@@ -854,6 +863,32 @@ export const defineRevealJsConfig: (options: RevealOptions) => void;
 ```
 
 定义需要传递给 Reveal.js 的配置选项。
+
+### defineKotlinPlaygroundConfig
+
+```ts
+interface KotlinPlaygroundOptions {
+  server?: string;
+  version?: string;
+
+  onChange?: (code: string) => void;
+  onRun?: () => void;
+  onError?: () => void;
+  getJsCode?: (code: string) => void;
+  onTestPassed?: () => void;
+  onTestFailed?: () => void;
+  onOpenConsole?: () => void;
+  onCloseConsole?: () => void;
+  callback?: (targetNode: HTMLElement, mountNode: HTMLElement) => void;
+  getInstance?: (instance: KotlinPlaygroundInstance) => void;
+}
+
+export const defineKotlinPlaygroundConfig: (
+  options: KotlinPlaygroundOptions,
+) => void;
+```
+
+定义需要传递给 `kotlin-playground` 的配置选项。
 
 ### defineVuePlaygroundConfig
 
