@@ -73,46 +73,115 @@ Set social links.
 
   The second element in the tuple must be a valid SVG string or a full path of an existing SVG file.
 
-::: info Available Social Media
+:::: info Available Social Media
 
 The following social medias has built-in icons:
 
-- `"Baidu"`
-- `"BiliBili"`
-- `"Bitbucket"`
-- `"Dingding"`
+::: tabs
+
+@tab Social
+
+- `"CoolApk"`
 - `"Discord"`
 - `"Douban"`
+- `"Facebook"`
+- `"Instagram"`
+- `"Kook"`
+- `"Line"`
+- `"Messenger"`
+- `"QQ"`
+- `"Qzone"`
+- `"Reddit"`
+- `"Skype"`
+- `"SnapChat"`
+- `"Soul"`
+- `"Telegram"`
+- `"Tieba"`
+- `"Tumblr"`
+- `"Twitter"`
+- `"VK"`
+- `"Wechat"`
+- `"Weibo"`
+- `"Whatsapp"`
+- `"YY"`
+
+@tab Work
+
+- `"Bitbucket"`
+- `"Dingding"`
 - `"Dribbble"`
 - `"Email"`
 - `"Evernote"`
-- `"Facebook"`
-- `"Flipboard"`
 - `"Gitee"`
 - `"GitHub"`
 - `"Gitlab"`
 - `"Gmail"`
-- `"Instagram"`
+- `"KDocs"`
 - `"Lark"`
-- `"Line"`
 - `"Linkedin"`
-- `"Pinterest"`
 - `"Pocket"`
-- `"QQ"`
-- `"Qzone"`
-- `"Reddit"`
+- `"QQDocs"`
+- `"WechatWork"`
+
+@tab Integrate
+
+- `"AFDian"`
+- `"Baidu"`
+- `"Bangumi"`
+- `"DuiTang"`
+- `"Flipboard"`
+- `"HuaBan"`
+- `"Pinterest"`
+- `"Pixiv"`
 - `"Rss"`
-- `"Steam"`
-- `"Skype"`
-- `"Telegram"`
-- `"Twitter"`
-- `"Wechat"`
-- `"Weibo"`
-- `"Whatsapp"`
-- `"Youtube"`
+- `"WechatMP"`
+- `"XiaoHongShu"`
 - `"Zhihu"`
 
+@tab Music
+
+- `"163Music"`
+- `"5Sing"`
+- `"Kugou"`
+- `"Kuwo"`
+- `"QQMusic"`
+- `"SoundCloud"`
+- `"XiMaLaYa"`
+
+@tab Video
+
+- `"AcFun"`
+- `"BiliBili"`
+- `"Douyin"`
+- `"Douyu"`
+- `"HuoShan"`
+- `"HuYa"`
+- `"iQiYi"`
+- `"KuaiShou"`
+- `"Nico"`
+- `"QQVideo"`
+- `"Twitch"`
+- `"WechatCh"`
+- `"Weishi"`
+- `"Youku"`
+- `"Youtube"`
+
+@tab Other
+
+- `"115"`
+- `"360Yun"`
+- `"AliDrive"`
+- `"AliPay"`
+- `"BaiduDisk"`
+- `"BattleNET"`
+- `"IdleFish"`
+- `"Paypal"`
+- `"Steam"`
+- `"WechatPay"`
+
 :::
+
+::::
 
 ### blog.roundAvatar
 
