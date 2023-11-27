@@ -157,7 +157,7 @@ const a = 1;
 
 :::: md-demo 不含内容的容器
 
-::: info 自定义重要
+::: important 自定义重要
 :::
 
 ::: info 自定义信息
