@@ -81,7 +81,7 @@ export default {
 
 To use kotlin playground, you should use a container named `kotlin-playground`.
 
-In it, you can use 3 directives:
+In it, you can use 2 directives:
 
 - `@file Filename` then a code block to add files
 

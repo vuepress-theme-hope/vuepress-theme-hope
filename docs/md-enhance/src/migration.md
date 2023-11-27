@@ -1,5 +1,5 @@
 ---
-title: V2 Migration
+title: Migration to Latest
 icon: code-compare
 ---
 
@@ -30,6 +30,8 @@ You can pass the second argument `true` to enable legacy mode when calling `mdEn
 
   :::
   ```
+
+- Use `component` code block to add components easily
 
 - Chart.js support
 
@@ -103,11 +105,39 @@ You can pass the second argument `true` to enable legacy mode when calling `mdEn
 
   Use `tabs` container to create tabs via `tabs` option.
 
+- markmap support
+
+  Add `markmap` container to create [Markmap](https://markmap.js.org/) via `markmap` option.
+
+- Playground
+
+  Embed interactive demo with official presets and custom options
+
+- Kotlin Playground
+
+  Provide Kotlin playground via `kotlin-playground`
+
+- Vue Playground
+
+  Provide Vue playground via `@vue/repl`
+
+- Mathjax Support
+
+  Add `mathjax` option to enable Mathjax support
+
+- GFM Alerts
+
+  Support GFM alerts via `alert` option
+
 ## Changed
 
-- renamed `codegroup` to `codetabs`
-
 - Now all options are disabled by default
+
+- renamed `container` to `hint`
+
+  To align with GFM, `danger` container is renamed to `caution`, also important and note containers are added
+
+- renamed `codegroup` to `codetabs`
 
 - Code demo syntax changed
 
@@ -201,6 +231,10 @@ You can pass the second argument `true` to enable legacy mode when calling `mdEn
   :::
   ````
 
+- `presentation` is rebuilt to `reveal.js`
+
+  Support theme tree-shaking, and you can customize Reveal.js via client config file
+
 ## Removed Options
 
 - `enableAll` removed
@@ -214,3 +248,28 @@ You can pass the second argument `true` to enable legacy mode when calling `mdEn
 - `imageFix` removed
 
   Mr.Hope already made a PR to fix broken image links in Markdown, so it's no longer needed
+
+## Options Adjustments in Pre-release Version
+
+- `container` is renamed to `hint`
+
+- `lazyload` and `imageLazyload` are renamed to `imgLazyload`
+
+- `imageMark` is renamed to `imgMark`
+
+- `mdImport` is renamed to `include`
+
+- `tex` (Using katex) is renamed to `katex`
+
+- `vpre` is renamed to `vPre`
+
+- `imageTitle` is renamed to `figure`
+
+- `revealjs` is renamed to `revealJS`
+
+- `linkCheck` is replaced by `checkLinks`
+
+- `card` is replaced by `components`
+
+- `mermaid` `revealJs` `vuePlayground` no longer accept lib options
+-

@@ -3,7 +3,9 @@ title: 迁移
 icon: code-compare
 ---
 
-## Changes in Pre-released Versions
+## 传统模式
+
+你可以在调用 `autoCatalogPlugin` 时传递第二个参数 `true` 以启用传统模式，插件将尝试提供旧选项兼容。
 
 ## 预发布版本中的变更
 

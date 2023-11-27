@@ -3,6 +3,10 @@ title: Migration
 icon: code-compare
 ---
 
+## Legacy Mode
+
+You can pass the second argument `true` to enable legacy mode when calling `autoCatalogPlugin`, and the plugin will try to run with backward compatibility.
+
 ## Changes in Pre-released Versions
 
 - `getTitle` is renamed to `titleGetter`

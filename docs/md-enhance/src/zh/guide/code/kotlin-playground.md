@@ -79,9 +79,9 @@ export default {
 
 ## 使用
 
-为了使用 kotlin playground，你应该使用一个名为 `kotlin-playground` 的容器。
+为了使用 kotlin 交互演示，你应该使用一个名为 `kotlin-playground` 的容器。
 
-在其中，你可以使用 3 个指令:
+在其中，你可以使用 2 个指令:
 
 - `@file 文件名` 紧跟文件的代码块
 
