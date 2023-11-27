@@ -45,6 +45,8 @@ export default {
 
 :::
 
+<!-- #region after -->
+
 ## Demo
 
 <!-- markdownlint-disable MD028 -->
@@ -83,4 +85,4 @@ export default {
 
 <!-- markdownlint-enable MD028 -->
 
-<!-- #region after -->
+<!-- #endregion after -->

@@ -1,24 +1,20 @@
 ---
-title: GFM 警告
-icon: bell
+title: Kotlin 交互演示
+icon: fab fa-kickstarter
 category:
   - Markdown
 tag:
   - Markdown
-  - 警告
+  - 交互演示
 ---
 
-主题可以提供 GFM 警告支持。
-
-<!-- more -->
-
-## 配置
+<!-- @include: @md-enhance/zh/guide/code/kotlin-playground.md#before -->
 
 ::: code-tabs#language
 
 @tab TS
 
-```ts {8-11}
+```ts {10}
 // .vuepress/config.ts
 import { defineUserConfig } from "vuepress";
 import { hopeTheme } from "vuepress-theme-hope";
@@ -27,8 +23,8 @@ export default defineUserConfig({
   theme: hopeTheme({
     plugins: {
       mdEnhance: {
-        // 启用 GFM 警告
-        alert: true,
+        // 启用 kotlin 交互演示
+        kotlinPlayground: true,
       },
     },
   }),
@@ -37,16 +33,16 @@ export default defineUserConfig({
 
 @tab JS
 
-```js {7-10}
+```js {9}
 // .vuepress/config.js
-import { hopeTheme } from "vuepress-theme-hope";
+import { mdEnhance } from "vuepress-plugin-md-enhance";
 
 export default {
   theme: hopeTheme({
     plugins: {
       mdEnhance: {
-        // 启用 GFM 警告
-        alert: true,
+        // 启用 kotlin 交互演示
+        kotlinPlayground: true,
       },
     },
   }),
@@ -55,4 +51,4 @@ export default {
 
 :::
 
-<!-- @include: @md-enhance/zh/guide/stylize/alert.md#after -->
+<!-- @include: @md-enhance/zh/guide/code/kotlin-playground.md#after -->

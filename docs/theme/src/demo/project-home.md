@@ -7,17 +7,17 @@ heroText: VuePress Theme Hope
 tagline: A VuePress theme with tons of features✨
 actions:
   - text: Get Started
-    link: ./get-started/
+    link: /get-started/
     icon: signs-post
     type: primary
 
   - text: Guide
     icon: lightbulb
-    link: ./guide/
+    link: /guide/
 
   - text: Demos
     icon: star
-    link: ./demo/
+    link: /demo/
 
 features:
   - title: Markdown Enhance

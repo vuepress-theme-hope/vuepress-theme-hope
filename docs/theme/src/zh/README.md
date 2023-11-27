@@ -141,6 +141,11 @@ highlights:
         details: 你可以在 Markdown 中添加交互演示
         link: ./guide/markdown/playground.html
 
+      - title: Kotlin 交互演示支持
+        icon: fab fa-kickstarter
+        details: 响应式的 Kotlin 演示
+        link: ./guide/markdown/kotlin-playground.html
+
       - title: Vue 交互演示支持
         icon: fab fa-vuejs
         details: 在交互演示中展示 Vue 组件

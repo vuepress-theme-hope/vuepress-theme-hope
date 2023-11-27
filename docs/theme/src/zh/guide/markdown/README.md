@@ -60,6 +60,8 @@ dir:
 
 - [交互演示](playground.md)
 
+- [Kotlin 交互演示](kotlin-playground.md)
+
 - [Vue 交互演示](vue-playground.md)
 
 - [组件语法](component.md)

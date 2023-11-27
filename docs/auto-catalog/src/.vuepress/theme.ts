@@ -4,11 +4,11 @@ import { theme } from "docs-shared";
 export default theme("auto-catalog", {
   locales: {
     "/": {
-      navbar: ["/", "/guide", "/config", "/demo"],
+      navbar: ["/", "/guide", "/config", "/migration", "/demo"],
       sidebar: false,
     },
     "/zh/": {
-      navbar: ["/zh/", "/zh/guide", "/zh/config", "/zh/demo"],
+      navbar: ["/zh/", "/zh/guide", "/zh/config", "/zh/migration", "/zh/demo"],
       sidebar: false,
     },
   },

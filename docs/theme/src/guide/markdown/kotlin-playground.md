@@ -1,14 +1,18 @@
 ---
-title: Vue 交互演示
-icon: fab fa-vuejs
+title: Kotlin Playground
+icon: fab fa-kickstarter
 category:
   - Markdown
 tag:
   - Markdown
-  - 交互演示
+  - Playground
 ---
 
-<!-- @include: @md-enhance/zh/guide/code/vue-playground.md#before -->
+Let the Markdown file support kotlin playground in your VuePress site.
+
+<!-- more -->
+
+<!-- @include: @md-enhance/guide/code/vue-playground.md#settings -->
 
 ::: code-tabs#language
 
@@ -23,8 +27,8 @@ export default defineUserConfig({
   theme: hopeTheme({
     plugins: {
       mdEnhance: {
-        // 启用 vue 交互演示
-        vuePlayground: true,
+        // enable kotlin playground
+        kotlinPlayground: true,
       },
     },
   }),
@@ -33,7 +37,7 @@ export default defineUserConfig({
 
 @tab JS
 
-```js {9}
+```js {10}
 // .vuepress/config.js
 import { mdEnhance } from "vuepress-plugin-md-enhance";
 
@@ -41,8 +45,8 @@ export default {
   theme: hopeTheme({
     plugins: {
       mdEnhance: {
-        // 启用 vue 交互演示
-        vuePlayground: true,
+        // enable kotlin playground
+        kotlinPlayground: true,
       },
     },
   }),
@@ -51,4 +55,4 @@ export default {
 
 :::
 
-<!-- @include: @md-enhance/zh/guide/code/vue-playground.md#after -->
+<!-- @include: @md-enhance/guide/code/kotlin-playground.md#after -->

@@ -141,6 +141,11 @@ highlights:
         details: You can add playground in Markdown files
         link: ./guide/markdown/playground.html
 
+      - title: Kotlin playground Support
+        icon: fab fa-kickstarter
+        details: Reactive kotlin playground
+        link: ./guide/markdown/koelin-playground.html
+
       - title: Vue playground Support
         icon: fab fa-vuejs
         details: Show living vue component in playground

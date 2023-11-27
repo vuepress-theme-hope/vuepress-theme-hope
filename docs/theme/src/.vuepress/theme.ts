@@ -111,6 +111,7 @@ export default theme("theme", {
     },
 
     mdEnhance: {
+      alert: true,
       align: true,
       attrs: true,
       chart: true,
@@ -154,8 +155,10 @@ export default theme("theme", {
           return file;
         },
       },
+      kotlinPlayground: true,
       mathjax: true,
       mark: true,
+      markmap: true,
       mermaid: true,
       playground: {
         presets: ["ts", "vue", "unocss"],

@@ -1,9 +1,9 @@
 ---
-title: Kotlin Playground
+title: Kotlin 交互演示
 icon: fab fa-kickstarter
 ---
 
-此插件提供了 Kotlin Playground 支持。
+此插件提供了 Kotlin 交互演示支持。
 
 <!-- more -->
 
@@ -34,8 +34,6 @@ npm i -D kotlin-playground
 ```
 
 :::
-
-Then enabling via:
 
 之后启用它:
 

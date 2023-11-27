@@ -7,17 +7,17 @@ heroText: VuePress Theme Hope
 tagline: 一个具有强大功能的 vuepress 主题✨
 actions:
   - text: 快速上手
-    link: ./get-started/
+    link: /zh/get-started/
     icon: signs-post
     type: primary
 
   - text: 指南
     icon: lightbulb
-    link: ./guide/
+    link: /zh/guide/
 
   - text: 案例
     icon: star
-    link: ./demo/
+    link: /zh/demo/
 
 features:
   - title: Markdown 增强
