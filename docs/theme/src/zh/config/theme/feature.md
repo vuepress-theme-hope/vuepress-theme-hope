@@ -73,48 +73,117 @@ tag:
 
   元组的第二个元素应该是一个合法的 SVG 字符串或是一个完整的 SVG 文件路径。
 
-::: info 可用的社交媒体
+:::: info 可用的社交媒体
 
 以下社交媒体具有内置图标:
 
-- `"Baidu"`: 百度
-- `"BiliBili"`: 哔哩哔哩
-- `"Bitbucket"`: Bitbucket
-- `"Dingding"`: 钉钉
+::: tabs
+
+@tab 社交
+
+- `"CoolApk"`: 酷安
 - `"Discord"`: Discord
 - `"Douban"`: 豆瓣
+- `"Facebook"`: 脸书
+- `"Instagram"`: Instagram
+- `"Kook"`: KOOK 语音
+- `"Line"`: Line
+- `"Messenger"`: Facebook Messenger
+- `"QQ"`: QQ
+- `"Qzone"`: QQ 空间
+- `"Reddit"`: 红迪
+- `"Skype"`: Skype
+- `"SnapChat"`: 色拉布
+- `"Soul"`: Soul
+- `"Telegram"`: 电报
+- `"Tieba"`: 百度贴吧
+- `"Tumblr"`: 汤不热
+- `"Twitter"`: 推特
+- `"VK"`: VKontakte
+- `"Wechat"`: 微信
+- `"Weibo"`: 微博
+- `"Whatsapp"`:瓦次艾普
+- `"YY"`: 歪歪
+
+@tab 办公
+
+- `"Bitbucket"`: Bitbucket
+- `"Dingding"`: 钉钉
 - `"Dribbble"`: Dribbble
 - `"Email"`: 邮件
 - `"Evernote"`: 印象笔记
-- `"Facebook"`: 脸书
-- `"Flipboard"`: 红板报
 - `"Gitee"`: 码云
 - `"GitHub"`: GitHub
 - `"Gitlab"`: Gitlab
 - `"Gmail"`: 谷歌邮箱
-- `"Instagram"`: Instagram
+- `"KDocs"`: 金山文档
 - `"Lark"`: 飞书
-- `"Line"`: Line
 - `"Linkedin"`: 领英
-- `"Pinterest"`: 拼趣
 - `"Pocket"`: Pocket
-- `"QQ"`: QQ
-- `"Qzone"`: QQ 空间
-- `"Reddit"`: 红迪
+- `"QQDocs"`: 腾讯文档
+- `"WechatWork"`: 微信企业版
+
+@tab 聚合
+
+- `"AFDian"`: 爱发电
+- `"Baidu"`: 百度
+- `"Bangumi"`: 番组计划
+- `"DuiTang"`: 堆糖
+- `"Flipboard"`: 红板报
+- `"HuaBan"`: 花瓣
+- `"Pinterest"`: 拼趣
+- `"Pixiv"`: Pixiv
 - `"Rss"`: RSS 地址
-- `"Steam"`: 蒸汽
-- `"Skype"`: Skype
-- `"Telegram"`: 电报
-- `"Twitter"`: 推特
-- `"Wechat"`: 微信
-- `"Weibo"`: 微博
-- `"Whatsapp"`:瓦次艾普
-- `"Youtube"`: 油管
+- `"WechatMP"`: 微信公众号
+- `"XiaoHongShu"`: 小红书
 - `"Zhihu"`: 知乎
+
+@tab 音频
+
+- `"163Music"`: 网易云音乐
+- `"5Sing"`: 5sing
+- `"Kugou"`: 酷狗音乐
+- `"Kuwo"`: 酷我音乐
+- `"QQMusic"`: QQ 音乐
+- `"SoundCloud"`: 声云
+- `"XiMaLaYa"`: 喜马拉雅
+
+@tab 视频
+
+- `"AcFun"`: ACFun
+- `"BiliBili"`: 哔哩哔哩
+- `"Douyin"`: 抖音
+- `"Douyu"`: 斗鱼
+- `"HuoShan"`: 抖音火山版
+- `"HuYa"`: 虎牙
+- `"iQiYi"`: 爱奇艺
+- `"KuaiShou"`: 快手
+- `"Nico"`: NicoNico动画
+- `"QQVideo"`: 腾讯视频
+- `"Twitch"`: Twitch
+- `"WechatCh"`: 微信视频号
+- `"Weishi"`: 微视
+- `"Youku"`: 优酷
+- `"Youtube"`: 油管
+
+@tab 其他
+
+- `"115"`: 115 网盘
+- `"360Yun"`: 360云盘
+- `"AliDrive"`: 阿里云盘
+- `"AliPay"`: 支付宝
+- `"BaiduDisk"`: 百度网盘
+- `"BattleNET"`: 战网
+- `"IdleFish"`: 闲鱼
+- `"Paypal"`: 贝宝
+- `"Steam"`: 蒸汽
+- `"WechatPay"`: 微信支付
+
+:::
 
 (请不要好奇为什么这里一定要加上特别奇怪的中文翻译)
 
-:::
+::::
 
 ### blog.roundAvatar
 
