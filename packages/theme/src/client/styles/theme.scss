@@ -1,6 +1,22 @@
 @use "vuepress-shared/styles/wrapper";
 @use "@sass-palette/hope-config";
 
+::view-transition-old(root),
+::view-transition-new(root) {
+  animation: none;
+  mix-blend-mode: normal;
+}
+
+#{hope-config.$light-selector}::view-transition-old(root),
+#{hope-config.$dark-selector}::view-transition-new(root) {
+  z-index: 1;
+}
+
+#{hope-config.$light-selector}::view-transition-new(root),
+#{hope-config.$dark-selector}::view-transition-old(root) {
+  z-index: 99999;
+}
+
 @media (min-width: hope-config.$laptop) {
   .chart-wrapper,
   .flowchart-wrapper,
