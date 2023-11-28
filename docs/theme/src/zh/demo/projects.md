@@ -436,6 +436,13 @@ blog:
     url: https://mydocs.guoyaxue.top
     repo: https://github.com/xiaou61/mydocs
     preview: https://xiaou-1305448902.cos.ap-nanjing.myqcloud.com/img/202308291337109.png
+
+  - name: Simeis 147' Blog
+    desc: In Time
+    logo: https://simeis147.github.io/logo.svg
+    url: https://simeis147.github.io/
+    repo: https://github.com/simeis147/simeis147.github.io
+    preview: https://simeis147.github.io/assets/bgImage/iTab-1k6ljv.webp
 ---
 
 ## 使用 VuePress Theme Hope 的文档
