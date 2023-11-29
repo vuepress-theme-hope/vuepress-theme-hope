@@ -49,7 +49,7 @@ export default {
 
 ## 使用
 
-你可以使用 component 代码块来在 Markdown 中添加组件。YAML 和 JSON 的卡片数据格式均受支持:
+你可以使用 component 代码块来在 Markdown 中添加组件。YAML 和 JSON 的数据格式均受支持:
 
 ````md
 ```component 组件名称
@@ -65,7 +65,9 @@ export default {
 
 ## 案例
 
-::: md-demo
+::: md-demo 快速使用 VPCard 组件
+
+这里的 `<VPCard>` 是已经全局注册的卡片组件。
 
 ```component VPCard
 title: Mr.Hope

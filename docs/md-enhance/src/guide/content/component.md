@@ -65,7 +65,9 @@ You can use component fence block to add a component into your markdown content.
 
 ## Demo
 
-::: md-demo
+::: md-demo VPCard
+
+`<VPCard>` here is a global component.
 
 ```component VPCard
 title: Mr.Hope
