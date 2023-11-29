@@ -74,7 +74,10 @@ export default {
 
 :::
 
-`exclude` 选项接受字符串数组或 RegExp。
+`exclude` 选项是一个数组，接受字符串或正则表达式:
+
+- `"/foo/"` 意味着仅排除 `/foo/` 文件夹的目录页生成。
+- `/^\/foo\//` 意味着排除 `/foo/` 文件夹及其子文件夹的目录页生成。
 
 ## 控制页面 Frontmatter
 

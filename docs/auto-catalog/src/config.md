@@ -12,9 +12,7 @@ icon: gears
 
 Max depth of Catalog items level.
 
-::: note
-
-Only available when you use the built-in catalog component.
+::: note Only available with built-in component.
 
 :::
 
@@ -24,6 +22,10 @@ Only available when you use the built-in catalog component.
 - Default: `false`
 
 Whether show index for catalog
+
+::: note Only available with built-in component.
+
+:::
 
 ### exclude
 

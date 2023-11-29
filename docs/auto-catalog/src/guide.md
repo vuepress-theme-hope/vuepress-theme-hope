@@ -74,7 +74,10 @@ export default {
 
 :::
 
-The `exclude` option accepts an array of string or RegExp.
+The `exclude` option accepts an array of string or RegExp:
+
+- `"/foo/"` means only exclude catalog page generation at `/foo/` folder.
+- `/^\/foo\//` means exclude catalog page generation at `/foo/` folder and its subfolders.
 
 ## Controlling Page Frontmatter
 
