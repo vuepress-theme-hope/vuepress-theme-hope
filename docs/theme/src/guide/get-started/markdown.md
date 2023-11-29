@@ -423,7 +423,7 @@ fun main(args: Array<String>) {
 
 :::
 
-- [View Detail](./kotlin-playground.md)
+- [View Detail](../markdown/kotlin-playground.md)
 
 ### Vue Playground
 

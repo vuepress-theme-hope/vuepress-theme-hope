@@ -7,31 +7,116 @@ icon: lightbulb
 
 <!-- more -->
 
-## 控制目录
+## 提取信息
 
-你可以在插件选项中设置 `shouldIndex`、`titleGetter` 和 `orderGetter` 来控制目录生成。 它们都接受一个函数，该函数接收 `Page` 对象作为第一个参数。
+首先，你应该在路由元信息中设置目录信息:
 
-- `shouldIndex` 返回一个布尔值，如果该函数返回 `false`，该页面将被忽略，否则，该页面将被索引。
-- `titleGetter` 返回一个字符串值，该字符串值将用作页面标题，默认情况下插件将使用 `page.title`。
-- `orderGetter` 在可能的情况下返回一个数字值，的排列顺序如下:
+::: code-tabs#language
 
-  ```:no-line-numbers
-  // 从小到大依次排列正数
-  order 1 的项目
-  order 2 的项目
-  ...
-  order 10 的项目
-  ...
-  // 无 order 的项目
-  无 order 的项目
-  无 order 的项目
-  ...
-  // 从小到大依次排列负数
-  order -10 的项目
-  // ...
-  order -2 的项目
-  order -1 的项目
-  ```
+@tab TS
+
+```ts
+// .vuepress/config.ts
+import { defineUserConfig } from "vuepress";
+
+export default defineUserConfig({
+  extendsPage: (page) => {
+    // 在 routeMeta 中设置目录信息
+    page.routeMeta = {
+      // 目录标题
+      title: page.title,
+      // ... 其他信息
+    };
+  },
+});
+```
+
+@tab JS
+
+```js
+// .vuepress/config.js
+import { autoCatalogPlugin } from "vuepress-plugin-auto-catalog";
+
+export default {
+  extendsPage: (page) => {
+    // 在 routeMeta 中设置目录信息
+    page.routeMeta = {
+      // 目录标题
+      title: page.title,
+      // ... 其他信息
+    };
+  },
+};
+```
+
+:::
+
+你可以之后导入 `defineAutoCatalogGetter` 并在客户端配置文件中使用它来从元信息中提取目录信息。
+
+::: code-tabs#language
+
+@tab TS
+
+```ts
+// .vuepress/client.ts
+import { defineClientConfig } from "@vuepress/client";
+import { defineAutoCatalogGetter } from "vuepress-plugin-auto-catalog/client";
+
+export default defineClientConfig({
+  setup: () => {
+    defineAutoCatalogGetter((meta) =>
+      meta.title ? { title: meta.title } : null,
+    );
+  },
+});
+```
+
+@tab JS
+
+```js
+// .vuepress/client.js
+import { defineAutoCatalogGetter } from "vuepress-plugin-auto-catalog/client";
+
+export default {
+  setup: () => {
+    defineAutoCatalogGetter((meta) =>
+      meta.title ? { title: meta.title } : null,
+    );
+  },
+};
+```
+
+:::
+
+目录信息应包含:
+
+- `title`: 目录标题
+- `order`: 目录顺序 (可选)
+- `content`: 目录内容组件 (可选)
+
+::: info 通过 order 排序
+
+插件将按以下方式通过 `order` 对页面进行排序:
+
+```:no-line-numbers
+// 从小到大依次排列正数
+order 1 的项目
+order 2 的项目
+...
+order 10 的项目
+...
+// 无 order 的项目
+无 order 的项目
+无 order 的项目
+...
+// 从小到大依次排列负数
+order -10 的项目
+// ...
+order -2 的项目
+order -1 的项目
+```
+
+:::
 
 ## 排除页面
 
@@ -137,42 +222,3 @@ export default {
 你可以在主题布局中或直接在 Markdown 文件中使用 `<AutoCatalog />`。
 
 如果你不喜欢内置组件并想使用自己的组件，你可以全局注册你的组件并使用你的组件名称设置 `component` 选项。自动目录页会使用你设置的组件。
-
-## 为目录显示图标
-
-你可以从 `vuepress-plugin-auto-catalog/client` 导入 `defineAutoCatalogIconComponent` 并在客户端配置文件中使用它来为目录图标定义一个组件。
-
-组件应该接受一个 `icon` 属性，该属性是图标值。
-
-::: code-tabs#language
-
-@tab TS
-
-```ts
-// .vuepress/client.ts
-import { defineClientConfig } from "@vuepress/client";
-import { defineAutoCatalogIconComponent } from "vuepress-plugin-auto-catalog/client";
-import MyIconComponent from "./components/MyIconComponent.vue";
-
-export default defineClientConfig({
-  setup: () => {
-    defineAutoCatalogIconComponent(MyIconComponent);
-  },
-});
-```
-
-@tab JS
-
-```js
-// .vuepress/client.js
-import { defineAutoCatalogIconComponent } from "vuepress-plugin-auto-catalog/client";
-import MyIconComponent from "./components/MyIconComponent.vue";
-
-export default {
-  setup: () => {
-    defineAutoCatalogIconComponent(MyIconComponent);
-  },
-};
-```
-
-:::
