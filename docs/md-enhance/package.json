@@ -24,7 +24,7 @@
     "@vueuse/core": "10.6.1",
     "docs-shared": "workspace:*",
     "echarts-wordcloud": "2.1.0",
-    "flowchart.ts": "1.0.1",
+    "flowchart.ts": "2.0.0",
     "katex": "0.16.9",
     "mermaid": "10.6.1",
     "sass-loader": "13.3.2",
