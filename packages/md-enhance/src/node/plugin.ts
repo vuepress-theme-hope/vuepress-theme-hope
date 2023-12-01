@@ -116,28 +116,33 @@ export const mdEnhancePlugin =
       config: options.locales,
     });
 
-    const enableChart = getStatus("chart", false, ["chart.js"]);
-    const enableEcharts = getStatus("echarts", false, ["echarts"]);
-    const enableFlowchart = getStatus("flowchart", false, ["flowchart.ts"]);
-    const enableFootnote = getStatus("footnote", true);
-    const enableImgMark = getStatus("imgMark", true);
-    const enableInclude = getStatus("include");
-    const enableTasklist = getStatus("tasklist", true);
-    const enableMarkmap = getStatus("markmap", false, [
-      "markmap-lib",
-      "markmap-view",
-    ]);
-    const enableMermaid = getStatus("mermaid", false, ["mermaid"]);
-    const enableRevealJs = getStatus("revealJs", false, ["reveal.js"]);
-    const enableKatex = getStatus("katex", false, ["katex"]);
-    const enableMathjax =
-      !options.katex && getStatus("mathjax", true, ["mathjax-full"]);
-    const enableKotlinPlayground = getStatus("kotlinPlayground", false, [
-      "kotlin-playground",
-    ]);
-    const enableVuePlayground = getStatus("vuePlayground", false, [
-      "@vue/repl",
-    ]);
+    const status = {
+      alert: getStatus("alert", true),
+      breaks: getStatus("breaks", true),
+      chart: getStatus("chart", false, ["chart.js"]),
+      echarts: getStatus("echarts", false, ["echarts"]),
+      flowchart: getStatus("flowchart", false, ["flowchart.ts"]),
+      footnote: getStatus("footnote", true),
+      imgLazyload: getStatus("imgLazyload"),
+      imgMark: getStatus("imgMark", true),
+      linkify: getStatus("linkify", true),
+      katex: getStatus("katex", false, ["katex"]),
+      mathjax: !options.katex && getStatus("mathjax", true, ["mathjax-full"]),
+      mark: getStatus("mark"),
+      markmap: getStatus("markmap", false, [
+        "markmap-lib",
+        "markmap-toolbar",
+        "markmap-view",
+      ]),
+      mermaid: getStatus("mermaid", false, ["mermaid"]),
+      obsidianImgSize: getStatus("obsidianImgSize"),
+      revealJs: getStatus("revealJs", false, ["reveal.js"]),
+      tasklist: getStatus("tasklist", true),
+      kotlinPlayground: getStatus("kotlinPlayground", false, [
+        "kotlin-playground",
+      ]),
+      vuePlayground: getStatus("vuePlayground", false, ["@vue/repl"]),
+    };
 
     const { enabled: enableLinksCheck, isIgnoreLink } = getLinksCheckStatus(
       app,
@@ -178,7 +183,7 @@ export const mdEnhancePlugin =
       vPre: true,
     };
 
-    const mathjaxInstance = enableMathjax
+    const mathjaxInstance = status.mathjax
       ? createMathjaxInstance({
           mathFence: options.gfm ?? false,
           ...(isPlainObject(options.mathjax) ? options.mathjax : {}),
@@ -207,7 +212,7 @@ export const mdEnhancePlugin =
 
       alias: (app): Record<string, string> => ({
         // we can not let vite force optimize deps with pnpm, so we use a full bundle in devServer here
-        "@mermaid": enableMermaid
+        "@mermaid": status.mermaid
           ? app.env.isDev &&
             detectPackageManager() === "pnpm" &&
             getBundlerName(app) === "vite"
@@ -222,14 +227,14 @@ export const mdEnhancePlugin =
           "vuepress-shared",
         ]);
 
-        if (enableKatex && katexOptions.output !== "html") {
+        if (status.katex && katexOptions.output !== "html") {
           addCustomElement(bundlerOptions, app, MATHML_TAGS);
-        } else if (enableMathjax) {
+        } else if (status.mathjax) {
           addCustomElement(bundlerOptions, app, /^mjx-/);
           if (mathjaxInstance?.documentOptions.enableAssistiveMml)
             addCustomElement(bundlerOptions, app, MATHML_TAGS);
         }
-        if (enableChart) {
+        if (status.chart) {
           addViteOptimizeDepsExclude(
             bundlerOptions,
             app,
@@ -238,33 +243,35 @@ export const mdEnhancePlugin =
           addViteSsrExternal(bundlerOptions, app, "chart.js");
         }
 
-        if (enableEcharts) {
+        if (status.echarts) {
           addViteOptimizeDepsExclude(bundlerOptions, app, "echarts");
           addViteSsrExternal(bundlerOptions, app, "echarts");
         }
 
-        if (enableFlowchart) {
+        if (status.flowchart) {
           addViteOptimizeDepsExclude(bundlerOptions, app, "flowchart.ts");
           addViteSsrExternal(bundlerOptions, app, "flowchart.ts");
         }
 
-        if (enableMarkmap) {
+        if (status.markmap) {
           addViteOptimizeDepsInclude(bundlerOptions, app, [
             "markmap-lib",
+            "markmap-toolbar",
             "markmap-view",
           ]);
           addViteSsrExternal(bundlerOptions, app, [
             "markmap-lib",
+            "markmap-toolbar",
             "markmap-view",
           ]);
         }
 
-        if (enableMermaid) {
+        if (status.mermaid) {
           addViteOptimizeDepsInclude(bundlerOptions, app, "mermaid");
           addViteSsrExternal(bundlerOptions, app, "mermaid");
         }
 
-        if (enableRevealJs) {
+        if (status.revealJs) {
           addViteOptimizeDepsExclude(bundlerOptions, app, [
             "reveal.js/dist/reveal.esm.js",
             "reveal.js/plugin/markdown/markdown.esm.js",
@@ -276,12 +283,12 @@ export const mdEnhancePlugin =
           addViteSsrExternal(bundlerOptions, app, "reveal.js");
         }
 
-        if (enableKotlinPlayground) {
+        if (status.kotlinPlayground) {
           addViteOptimizeDepsInclude(bundlerOptions, app, "kotlin-playground");
           addViteSsrExternal(bundlerOptions, app, "kotlin-playground");
         }
 
-        if (enableVuePlayground) {
+        if (status.vuePlayground) {
           addViteOptimizeDepsInclude(bundlerOptions, app, "@vue/repl");
           addViteSsrExternal(bundlerOptions, app, "@vue/repl");
 
@@ -294,48 +301,54 @@ export const mdEnhancePlugin =
       },
 
       extendsMarkdown: (md): void => {
-        // syntax
-        if (getStatus("alert", true)) md.use(alert, locales);
-        if (getStatus("attrs"))
-          md.use(attrs, isPlainObject(options.attrs) ? options.attrs : {});
-        if (getStatus("align")) md.use(align);
-        if (getStatus("breaks", true)) md.options.breaks = true;
-        // TODO: Remove this in v2 stable
-        // @ts-expect-error
-        if (getStatus("card") && legacy) md.use(legacyCard);
-        if (getStatus("imgLazyload")) md.use(imgLazyload);
-        if (getStatus("figure")) md.use(figure);
-        if (enableImgMark)
+        // behavior
+        if (status.breaks) md.options.breaks = true;
+        if (status.linkify) md.options.linkify = true;
+
+        // GFM syntax
+        if (status.alert) md.use(alert, locales);
+        if (status.footnote) md.use(footnote);
+        if (status.tasklist)
+          md.use(tasklist, [
+            isPlainObject(options.tasklist) ? options.tasklist : {},
+          ]);
+        if (status.imgMark)
           md.use(
             imgMark,
             isPlainObject(options.imgMark) ? options.imgMark : {},
           );
-        if (getStatus("hint")) {
+
+        if (options.attrs)
+          md.use(attrs, isPlainObject(options.attrs) ? options.attrs : {});
+        if (options.align) md.use(align);
+        if (options.component) md.use(component);
+        if (options.figure) md.use(figure);
+        if (options.hint) {
           md.use(hint, locales);
           if (legacy) md.use(legacyHint, locales);
         }
-        if (getStatus("imgSize")) md.use(imgSize);
-        if (getStatus("linkify", true)) md.options.linkify = true;
-        if (getStatus("obsidianImgSize")) md.use(obsidianImageSize);
-        if (getStatus("sup")) md.use(sup);
-        if (getStatus("sub")) md.use(sub);
-        if (enableFootnote) md.use(footnote);
-        if (getStatus("mark")) md.use(mark);
-        if (enableTasklist)
-          md.use(tasklist, [
-            isPlainObject(options.tasklist) ? options.tasklist : {},
-          ]);
+        if (options.imgLazyload) md.use(imgLazyload);
+        if (options.imgSize) md.use(imgSize);
+        if (options.mark) md.use(mark);
+        if (options.obsidianImgSize) md.use(obsidianImageSize);
+        if (options.sup) md.use(sup);
+        if (options.sub) md.use(sub);
+
+        // TODO: Remove this in v2 stable
+        // @ts-expect-error
+        if (options.card && legacy) md.use(legacyCard);
 
         // additional functions
         if (
-          getStatus("vPre") ||
+          options.vPre ||
           // TODO: Remove this in v2 stable
           legacy
         )
           md.use(vPre);
-        if (enableKatex) {
+
+        if (status.katex) {
           md.use(katex, katexOptions);
-        } else if (enableMathjax) {
+        } else if (status.mathjax) {
           md.use(mathjax, mathjaxInstance!);
           // reset after each render
           md.use((md) => {
@@ -351,7 +364,7 @@ export const mdEnhancePlugin =
           });
         }
 
-        if (enableInclude) {
+        if (options.include) {
           md.use(include, {
             currentPath: (env: MarkdownEnv) => env.filePath,
             ...(isPlainObject(options.include) ? options.include : {}),
@@ -362,7 +375,7 @@ export const mdEnhancePlugin =
             });
         }
 
-        if (getStatus("stylize"))
+        if (options.stylize)
           md.use(stylize, {
             config: options.stylize,
             localConfigGetter: (env: MarkdownEnv) =>
@@ -370,21 +383,20 @@ export const mdEnhancePlugin =
           });
 
         // features
-        if (getStatus("component")) md.use(component);
-        if (getStatus("codetabs")) {
+        if (options.codetabs) {
           md.use(codeTabs);
           // TODO: Remove this in v2 stable
           if (legacy) md.use(legacyCodeGroup);
         }
-        if (getStatus("tabs")) md.use(tabs);
-        if (enableFlowchart) {
+        if (options.tabs) md.use(tabs);
+        if (status.flowchart) {
           md.use(flowchart);
           // TODO: Remove this in v2 stable
           if (legacy) md.use(legacyFlowchart);
         }
-        if (enableChart) md.use(chart);
-        if (enableEcharts) md.use(echarts);
-        if (getStatus("demo")) {
+        if (status.chart) md.use(chart);
+        if (status.echarts) md.use(echarts);
+        if (options.demo) {
           md.use(mdDemo);
           md.use(normalDemo);
           md.use(vueDemo);
@@ -392,9 +404,9 @@ export const mdEnhancePlugin =
           // TODO: Remove this in v2 stable
           if (legacy) md.use(legacyCodeDemo);
         }
-        if (enableMarkmap) md.use(markmap);
-        if (enableMermaid) md.use(mermaid);
-        if (enableRevealJs) md.use(revealJs);
+        if (status.markmap) md.use(markmap);
+        if (status.mermaid) md.use(mermaid);
+        if (status.revealJs) md.use(revealJs);
         if (isPlainObject(options.playground)) {
           const { presets = [], config = {} } = options.playground;
 
@@ -408,15 +420,15 @@ export const mdEnhancePlugin =
             else if (isPlainObject(preset)) md.use(playground, preset);
           });
         }
-        if (enableKotlinPlayground) md.use(kotlinPlayground);
-        if (enableVuePlayground) md.use(vuePlayground);
+        if (status.kotlinPlayground) md.use(kotlinPlayground);
+        if (status.vuePlayground) md.use(vuePlayground);
       },
 
       extendsPage: (page, app): void => {
         if (enableLinksCheck && isAppInitialized)
           linksCheck(page, app, isIgnoreLink);
 
-        if (enableInclude)
+        if (options.include)
           page.deps.push(...(<string[]>page.markdownEnv["includedFiles"]));
       },
 
@@ -429,10 +441,10 @@ export const mdEnhancePlugin =
       onPrepared: async (app): Promise<void> => {
         const promises = [];
 
-        if (enableMathjax)
+        if (status.mathjax)
           promises.push(prepareMathjaxStyleFile(app, mathjaxInstance!));
 
-        if (enableRevealJs)
+        if (status.revealJs)
           promises.push(
             prepareRevealJsPluginFile(app, revealJsOptions.plugins ?? []),
             prepareRevealJsStyleFile(app, revealJsOptions?.themes),
@@ -441,6 +453,7 @@ export const mdEnhancePlugin =
         await Promise.all(promises);
       },
 
-      clientConfigFile: (app) => prepareConfigFile(app, options, legacy),
+      clientConfigFile: (app) =>
+        prepareConfigFile(app, options, status, legacy),
     };
   };
