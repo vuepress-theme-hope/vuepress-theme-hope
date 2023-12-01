@@ -20,5 +20,8 @@ export const extendsBundlerOptions = (
   });
   addViteOptimizeDepsInclude(bundlerOptions, app, "@vueuse/core");
   addViteOptimizeDepsExclude(bundlerOptions, app, "@theme-hope");
-  addViteSsrNoExternal(bundlerOptions, app, "vuepress-shared");
+  addViteSsrNoExternal(bundlerOptions, app, [
+    "vuepress-shared",
+    "vuepress-plugin-reading-time2",
+  ]);
 };
