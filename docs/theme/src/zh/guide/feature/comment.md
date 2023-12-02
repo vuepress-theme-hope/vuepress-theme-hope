@@ -266,7 +266,7 @@ export default {
     plugins: {
       comment: {
         provider: "Twikoo",
-        envIdURL: "YOUR_SERVER_URL", // your server url
+        envId: "YOUR_SERVER_URL", // your server url
       },
     },
   }),
