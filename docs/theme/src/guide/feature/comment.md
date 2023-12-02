@@ -224,6 +224,52 @@ npm i -D twikoo
 1. Go to Overview, click the link under Domains, if the environment configuration is correct, you can see the prompt "Twikoo cloud function is running normally"
 1. Vercel Domains (with `https://` prefix, for example `https://xxx.vercel.app`) is your environment ID
 
+::: code-tabs#language
+
+@tab TS
+
+```ts
+// .vuepress/config.ts
+import { defineUserConfig } from "vuepress";
+import { hopeTheme } from "vuepress-theme-hope";
+
+export default defineUserConfig({
+  theme: hopeTheme({
+    plugins: {
+      comment: {
+        provider: "Twikoo",
+        envId: "YOUR_SERVER_URL", // your server url
+      },
+    },
+  }),
+});
+```
+
+@tab JS
+
+```js
+// .vuepress/config.js
+import { hopeTheme } from "vuepress-theme-hope";
+
+export default {
+  theme: hopeTheme({
+    plugins: {
+      comment: {
+        provider: "Twikoo",
+        envId: "YOUR_SERVER_URL", // your server url
+      },
+    },
+  }),
+};
+```
+:::
+
+::: note
+
+Click the "little gear" icon in the comment window to set the administrator password
+
+:::
+
 ## Artalk
 
 ::: code-tabs#shell
