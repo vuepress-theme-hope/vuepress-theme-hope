@@ -805,8 +805,8 @@ importers:
   docs-shared:
     dependencies:
       '@types/three':
-        specifier: 0.158.3
-        version: 0.158.3
+        specifier: 0.159.0
+        version: 0.159.0
       '@vuepress/cli':
         specifier: 2.0.0-rc.0
         version: 2.0.0-rc.0(typescript@5.3.2)
@@ -5741,8 +5741,8 @@ packages:
     resolution: {integrity: sha512-pXNfAD3KHOdif9EQXZ9deK82HVNaXP5ZIF5RP2QG6OQFNTaY2YIetfrE9t528vEreGQvEPRDDc8muaoYeK0SxQ==}
     dev: false
 
-  /@types/three@0.158.3:
-    resolution: {integrity: sha512-6Qs1rUvLSbkJ4hlIe6/rdwIf61j1x2UKvGJg7s8KjswYsz1C1qDTs6voVXXB8kYaI0hgklgZgbZUupfL1l9xdA==}
+  /@types/three@0.159.0:
+    resolution: {integrity: sha512-2gybdh7HtX+rGUgslzK7QEJfzD2I0qrbUGzKk+dK0FDx49UHkNX0rqZVRzIgeFjBd1HzzhNNgwNoMacm3Wyc7w==}
     dependencies:
       '@types/stats.js': 0.17.3
       '@types/webxr': 0.5.10
