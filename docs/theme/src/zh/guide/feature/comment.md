@@ -190,6 +190,8 @@ Waline 评论的其他配置将在 <ProjectLink name="comment2" path="/zh/config
 
 ## Twikoo
 
+[Twikoo 官方文档](https://twikoo.js.org) 
+
 ::: code-tabs#shell
 
 @tab pnpm
@@ -214,7 +216,11 @@ npm i -D twikoo
 
 ### Vercel 部署
 
-[查看视频教程](https://www.bilibili.com/video/BV1Fh411e7ZH)
+::: note
+
+Vercel 默认域名 `*.vercel.app` 在中国大陆访问速度较慢甚至无法访问，绑定自己的域名可以提高访问速度，其他部署方式请查阅官方文档。
+
+::: 
 
 1. 申请 [MongoDB](https://www.mongodb.com/cloud/atlas/register) 账号
 1. 创建免费 MongoDB 数据库，区域推荐选择 `AWS / N. Virginia (us-east-1)`
@@ -227,6 +233,53 @@ npm i -D twikoo
 1. 进入 Settings - Environment Variables，添加环境变量 `MONGODB_URI`，值为第 3 步的数据库连接字符串
 1. 进入 Overview，点击 Domains 下方的链接，如果环境配置正确，可以看到 “Twikoo 云函数运行正常” 的提示
 1. Vercel Domains (包含 `https://` 前缀，例如 `https://xxx.vercel.app`) 即为你的环境 ID
+
+::: code-tabs#language
+
+@tab TS
+
+```ts
+// .vuepress/config.ts
+import { defineUserConfig } from "vuepress";
+import { hopeTheme } from "vuepress-theme-hope";
+
+export default defineUserConfig({
+  theme: hopeTheme({
+    plugins: {
+      comment: {
+        provider: "Twikoo",
+        envId: "YOUR_SERVER_URL", // your server url
+      },
+    },
+  }),
+});
+```
+
+@tab JS
+
+```js
+// .vuepress/config.js
+import { hopeTheme } from "vuepress-theme-hope";
+
+export default {
+  theme: hopeTheme({
+    plugins: {
+      comment: {
+        provider: "Twikoo",
+        envIdURL: "YOUR_SERVER_URL", // your server url
+      },
+    },
+  }),
+};
+```
+
+:::
+
+::: tip
+
+点击评论窗口的“小齿轮”图标，开启 Twikoo 管理面板并设置管理员密码。
+
+:::
 
 ## Artalk
 
