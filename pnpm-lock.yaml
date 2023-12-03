@@ -310,8 +310,8 @@ importers:
         specifier: 13.3.2
         version: 13.3.2(sass@1.69.5)(webpack@5.89.0)
       vidstack:
-        specifier: 1.7.0
-        version: 1.7.0
+        specifier: 1.8.1
+        version: 1.8.1
       vue:
         specifier: 3.3.9
         version: 3.3.9(typescript@5.3.2)
@@ -469,14 +469,14 @@ importers:
         specifier: 1.29.0
         version: 1.29.0
       markmap-lib:
-        specifier: 0.15.5
-        version: 0.15.5(markmap-common@0.15.5)
+        specifier: 0.15.7
+        version: 0.15.7(markmap-common@0.15.5)
       markmap-toolbar:
-        specifier: 0.15.5
-        version: 0.15.5(markmap-common@0.15.5)
+        specifier: 0.15.6
+        version: 0.15.6(markmap-common@0.15.5)
       markmap-view:
-        specifier: 0.15.5
-        version: 0.15.5(markmap-common@0.15.5)
+        specifier: 0.15.6
+        version: 0.15.6(markmap-common@0.15.5)
       mathjax-full:
         specifier: 3.2.2
         version: 3.2.2
@@ -1605,8 +1605,8 @@ importers:
         specifier: ^13.3.2
         version: 13.3.2(sass@1.69.5)(webpack@5.89.0)
       vidstack:
-        specifier: ^1.7.0
-        version: 1.7.0
+        specifier: ^1.8.1
+        version: 1.8.1
       vue:
         specifier: ^3.3.9
         version: 3.3.9(typescript@5.3.2)
@@ -1926,14 +1926,14 @@ importers:
         specifier: ^13.0.2
         version: 13.0.2
       markmap-lib:
-        specifier: ^0.15.5
-        version: 0.15.5(markmap-common@0.15.5)
+        specifier: ^0.15.7
+        version: 0.15.7(markmap-common@0.15.5)
       markmap-toolbar:
-        specifier: ^0.15.5
-        version: 0.15.5(markmap-common@0.15.5)
+        specifier: ^0.15.6
+        version: 0.15.6(markmap-common@0.15.5)
       markmap-view:
-        specifier: ^0.15.5
-        version: 0.15.5(markmap-common@0.15.5)
+        specifier: ^0.15.6
+        version: 0.15.6(markmap-common@0.15.5)
       mathjax-full:
         specifier: ^3.2.2
         version: 3.2.2
@@ -11847,8 +11847,8 @@ packages:
       '@gera2ld/jsx-dom': 2.2.2
       npm2url: 0.2.1
 
-  /markmap-lib@0.15.5(markmap-common@0.15.5):
-    resolution: {integrity: sha512-YXL199WUceWtErQdBUNaoV2wXe6gf0ZTVZCH3LnoQ986baVWdcUq4slCClnZCGqBdCnknJ2POZnxXeWFS/zdkA==}
+  /markmap-lib@0.15.7(markmap-common@0.15.5):
+    resolution: {integrity: sha512-DDLni5K3nge2Xz9P8ZwWPkOp+nawAzyO42x3TbZFfbmuKsFMU9IjbRdpAUxE2546vY1ufJkn4dv/I95PgI1kMQ==}
     peerDependencies:
       markmap-common: '*'
     dependencies:
@@ -11861,8 +11861,8 @@ packages:
       remarkable: 2.0.1
       remarkable-katex: 1.2.1
 
-  /markmap-toolbar@0.15.5(markmap-common@0.15.5):
-    resolution: {integrity: sha512-/JZX0RDEoSPfHsIvnAUFOiyzjWm50gp8MqVBcSk4A/zwe1dieq4iON//J0JpKoxY2pDoAKVBtFHs1fquCKntWw==}
+  /markmap-toolbar@0.15.6(markmap-common@0.15.5):
+    resolution: {integrity: sha512-x4h2PV79f7WYQSOXAXQZgLf56tw/JP8V4dQnjipXi2I4RiYkNodwP1lLO0cTogrv9yLMwzSo3gsA/RIlQN/Ckw==}
     peerDependencies:
       markmap-common: '*'
     dependencies:
@@ -11870,8 +11870,8 @@ packages:
       '@gera2ld/jsx-dom': 2.2.2
       markmap-common: 0.15.5
 
-  /markmap-view@0.15.5(markmap-common@0.15.5):
-    resolution: {integrity: sha512-l2IJklidDrp1o+OYnzTX4onJF+BIIHHLJZQCGuzZk5JS4uokFT0ZPDDd5GosTmItsFqjuc4G6AiWUSnEfYvAAQ==}
+  /markmap-view@0.15.6(markmap-common@0.15.5):
+    resolution: {integrity: sha512-aW6UpwhmJYxlZYCW+hqprAxu5I6r/q0qgbJdEEMzuqWcuUQzgw+jdGLcUXhYJk76RIqHedHg3P8nGJgNEpDyKA==}
     peerDependencies:
       markmap-common: '*'
     dependencies:
@@ -15357,8 +15357,8 @@ packages:
     resolution: {integrity: sha512-BNGbWLfd0eUPabhkXUVm0j8uuvREyTh5ovRa/dyow/BqAbZJyC+5fU+IzQOzmAKzYqYRAISoRhdQr3eIZ/PXqg==}
     engines: {node: '>= 0.8'}
 
-  /vidstack@1.7.0:
-    resolution: {integrity: sha512-+GQhOdeVY2mUbzBSlD/b1UiSJh/+3PwIdAAaqLUXDr7AAjiNTfJ+t3Lj91CHGFiPWuwSGNwkcy/foQG+ApOBpA==}
+  /vidstack@1.8.1:
+    resolution: {integrity: sha512-aTWoiwd06Z7vyP0ABMd6L0EvhujUPFOt3k5YTmJWeUPIQXET77exuqXeddELLwlMlQriAZd8tKmgblVDMF2YpQ==}
     engines: {node: '>=18'}
     dependencies:
       media-captions: 1.0.2
