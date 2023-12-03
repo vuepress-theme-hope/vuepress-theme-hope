@@ -123,9 +123,9 @@ export default defineComponent({
     const catalogInfo = ref(getCatalogInfo());
 
     const getCatalogData = (): CatalogInfo[] => {
-      const base =
-        ensureLeadingSlash(ensureEndingSlash(props.base)) ||
-        page.value.path.replace(/\/[^/]+$/, "/");
+      const base = props.base
+        ? ensureLeadingSlash(ensureEndingSlash(props.base))
+        : page.value.path.replace(/\/[^/]+$/, "/");
       const baseDepth = base.split("/").length - 2;
       const result: CatalogInfo[] = [];
 
