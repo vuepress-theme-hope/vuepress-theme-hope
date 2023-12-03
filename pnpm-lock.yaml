@@ -472,8 +472,8 @@ importers:
         specifier: 0.15.5
         version: 0.15.5(markmap-common@0.15.5)
       markmap-toolbar:
-        specifier: 0.15.5
-        version: 0.15.5(markmap-common@0.15.5)
+        specifier: 0.15.6
+        version: 0.15.6(markmap-common@0.15.5)
       markmap-view:
         specifier: 0.15.5
         version: 0.15.5(markmap-common@0.15.5)
@@ -11869,6 +11869,17 @@ packages:
       '@babel/runtime': 7.23.5
       '@gera2ld/jsx-dom': 2.2.2
       markmap-common: 0.15.5
+    dev: false
+
+  /markmap-toolbar@0.15.6(markmap-common@0.15.5):
+    resolution: {integrity: sha512-x4h2PV79f7WYQSOXAXQZgLf56tw/JP8V4dQnjipXi2I4RiYkNodwP1lLO0cTogrv9yLMwzSo3gsA/RIlQN/Ckw==}
+    peerDependencies:
+      markmap-common: '*'
+    dependencies:
+      '@babel/runtime': 7.23.5
+      '@gera2ld/jsx-dom': 2.2.2
+      markmap-common: 0.15.5
+    dev: true
 
   /markmap-view@0.15.5(markmap-common@0.15.5):
     resolution: {integrity: sha512-l2IJklidDrp1o+OYnzTX4onJF+BIIHHLJZQCGuzZk5JS4uokFT0ZPDDd5GosTmItsFqjuc4G6AiWUSnEfYvAAQ==}
