@@ -4,6 +4,22 @@ All notable changes to this project will be documented in this file. See [Conven
 
 <!-- #region recent-change -->
 
+## [2.0.0-rc.2](https://github.com/vuepress-theme-hope/vuepress-theme-hope/compare/v2.0.0-rc.1...v2.0.0-rc.2) (2023-12-04)
+
+### Features
+
+- **auto-catalog:** rebuild ([e0911ea](https://github.com/vuepress-theme-hope/vuepress-theme-hope/commit/e0911ea03f8970aa8e8f79e82746007ec60de191))
+- **theme:** add more social media icon & fix ([#3654](https://github.com/vuepress-theme-hope/vuepress-theme-hope/issues/3654)) ([a2d03ad](https://github.com/vuepress-theme-hope/vuepress-theme-hope/commit/a2d03ad209633925f440a8e7a81caf24bf00586e))
+- **theme:** apply transition to darkmode toggle ([002896f](https://github.com/vuepress-theme-hope/vuepress-theme-hope/commit/002896f7410143bc4f43ee142e64348efbdd38c5))
+
+### Bug Fixes
+
+- **auto-catalog:** fix base ([89f1239](https://github.com/vuepress-theme-hope/vuepress-theme-hope/commit/89f12393ada28c13dd1231f36c6a6ee287a5a689))
+- **deps:** update dependency @types/three to v0.159.0 ([#3697](https://github.com/vuepress-theme-hope/vuepress-theme-hope/issues/3697)) ([87f58f3](https://github.com/vuepress-theme-hope/vuepress-theme-hope/commit/87f58f31ac9fceef46769db2ad738fa638ce9d85))
+- **md-enhance:** fix legacy compact ([fca9d1d](https://github.com/vuepress-theme-hope/vuepress-theme-hope/commit/fca9d1d13020ea17c1710675407c90e674e6fc46))
+- **theme:** fix readingTime issue, close [#3651](https://github.com/vuepress-theme-hope/vuepress-theme-hope/issues/3651) ([2029e37](https://github.com/vuepress-theme-hope/vuepress-theme-hope/commit/2029e376e312817aefe1aa6873d4e053a23a7647))
+- **theme:** social media icon svg code error ([#3690](https://github.com/vuepress-theme-hope/vuepress-theme-hope/issues/3690)) ([5858b2d](https://github.com/vuepress-theme-hope/vuepress-theme-hope/commit/5858b2ddc3fcecca6b0183a5d72f454dfac5aa24))
+
 ## [2.0.0-rc.1](https://github.com/vuepress-theme-hope/vuepress-theme-hope/compare/v2.0.0-rc.0...v2.0.0-rc.1) (2023-11-26)
 
 ### ⚠ BREAKING CHANGES
