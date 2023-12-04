@@ -129,3 +129,7 @@ export default {
 Webpack 没有这个问题。
 
 :::
+
+## 运行错误
+
+Vite 默认情况下仅支持“现代浏览器”，详见 [Vite 支持](https://vitejs.dev/guide/build.html#browser-compatibility)。

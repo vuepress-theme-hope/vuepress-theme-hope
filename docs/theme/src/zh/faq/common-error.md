@@ -198,3 +198,60 @@ CloudFlare 的 Auto Minify 会错误的对 HTML 的空格和换行进行处理�
 你应该了解，当某些功能的全局设置被禁用时，在准备阶段它们压根就不会加载，因此无法局部启用它们。
 
 :::
+
+## 样式出现问题
+
+为了支持 RTL 布局以及减少样式体积，主题使用较新的 CSS，比如 `padding-inline` `margin-block` `inset-inline-start` 等。
+
+最低支持它们的版本是:
+
+- Chrome >= 87
+- Edge >= 87
+- Firefox >= 66
+- Safari >= 14.1
+
+如果你需要对更低版本的浏览器提供支持，你可以使用 `postcss-preset-env` 兼容到你设置的环境:
+
+::: code-tabs#bundler
+
+@tab Vite
+
+```ts
+// .vuepress/config.ts
+import { defineUserConfig } from "vuepress";
+import { addViteConfig } from "vuepress-shared/node";
+import postcssPresetEnv from "postcss-preset-env";
+
+export default defineUserConfig({
+  extendsBundlerOptions: (config, app) => {
+    addViteConfig(bundlerOptions, app, {
+      css: {
+        postcss: {
+          plugins: [postcssPresetEnv()],
+        },
+      },
+    });
+  },
+});
+```
+
+@tab Webpack
+
+```ts
+// .vuepress/config.ts
+import { defineUserConfig } from "vuepress";
+import { configWebpack } from "vuepress-shared/node";
+import postcssPresetEnv from "postcss-preset-env";
+
+export default defineUserConfig({
+  extendsBundlerOptions: (config, app) => {
+    configWebpack(bundlerOptions, app, (config) => {
+      (((config.postcss ??= {}).postcssOptions ??= {}).plugins ??= []).push(
+        postcssPresetEnv(),
+      );
+    });
+  },
+});
+```
+
+:::

@@ -176,3 +176,60 @@ You can first review the documentation to see if the setting **does not support 
 You should be aware that some features will not be loaded during the prepare stage when the global setting is disabled, so they cannot be enabled locally.
 
 :::
+
+## Issues with styles
+
+To support RTL layout and reduce style size, the theme uses newer CSS, such as `padding-inline` `margin-block` `inset-inline-start` and so on.
+
+The lowest version that supports them is:
+
+- Chrome >= 87
+- Edge >= 87
+- Firefox >= 66
+- Safari >= 14.1
+
+If you need to support older browsers, you can use `postcss-preset-env` to be compatible with the environment you set:
+
+::: code-tabs#bundler
+
+@tab Vite
+
+```ts
+// .vuepress/config.ts
+import { defineUserConfig } from "vuepress";
+import { addViteConfig } from "vuepress-shared/node";
+import postcssPresetEnv from "postcss-preset-env";
+
+export default defineUserConfig({
+  extendsBundlerOptions: (config, app) => {
+    addViteConfig(bundlerOptions, app, {
+      css: {
+        postcss: {
+          plugins: [postcssPresetEnv()],
+        },
+      },
+    });
+  },
+});
+```
+
+@tab Webpack
+
+```ts
+// .vuepress/config.ts
+import { defineUserConfig } from "vuepress";
+import { configWebpack } from "vuepress-shared/node";
+import postcssPresetEnv from "postcss-preset-env";
+
+export default defineUserConfig({
+  extendsBundlerOptions: (config, app) => {
+    configWebpack(bundlerOptions, app, (config) => {
+      (((config.postcss ??= {}).postcssOptions ??= {}).plugins ??= []).push(
+        postcssPresetEnv(),
+      );
+    });
+  },
+});
+```
+
+:::

@@ -121,3 +121,7 @@ The above results in the user's CSS `@import` imports in Sass appearing in the m
 The default theme also has the same problem, and this cannot be fixed on the theme side.
 
 :::
+
+## Running error
+
+Vite only supports "modern browsers" by default, see [Vite support](https://vitejs.dev/guide/build.html#browser-compatibility) for details.
