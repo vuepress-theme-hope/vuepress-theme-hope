@@ -100,10 +100,15 @@ highlights:
       background-repeat: repeat
       background-size: initial
     highlights:
-      - title: Custom Container
+      - title: Hint box
         icon: box-archive
         details: Decorate Markdown content with styles
-        link: ./guide/stylize/container.html
+        link: ./guide/stylize/hint.html
+
+      - title: GFM alerts
+        icon: bell
+        details: GFM alert box
+        link: ./guide/stylize/alert.html
 
       - title: Custom Align
         icon: align-center
@@ -145,6 +150,11 @@ highlights:
         details: Create your flowchart in Markdown
         link: ./guide/chart/flowchart.html
 
+      - title: Markmap Support
+        icon: fab fa-markdown
+        details: Generate mindmap with Markdown
+        link: ./guide/chart/markmap.html
+
       - title: Mermaid Support
         icon: chart-pie
         details: Add mermaid diagram in Markdown
@@ -169,6 +179,11 @@ highlights:
         icon: code
         details: You can add playground in Markdown files
         link: ./guide/code/playground.html
+
+      - title: Kotlin playground Support
+        icon: fab fa-kickstarter
+        details: Reactive kotlin playground
+        link: ./guide/code/kotlin-playground.html
 
       - title: Vue playground Support
         icon: fab fa-vuejs

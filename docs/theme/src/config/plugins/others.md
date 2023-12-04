@@ -28,7 +28,6 @@ Controls `vuepress-plugin-components`, providing a set of components for Markdow
 Available component which can be used in markdown files are:
 
 - `"ArtPlayer"`
-- `"AudioPlayer"`
 - `"Badge"`
 - `"BiliBili"`
 - `"CodePen"`
@@ -37,11 +36,11 @@ Available component which can be used in markdown files are:
 - `"Replit"`
 - `"Share"`
 - `"StackBlitz"`
-- `"SiteInfo"`
+- `"VPBanner"`
+- `"VPCard"`
 - `"VidStack"`
-- `"VideoPlayer"`
+- `"SiteInfo"`
 - `"XiGua"`
-- `"YouTube"`
 
 You can set `plugin.components.components` with an array of components you want, by default it will be `["Badge"]`.
 

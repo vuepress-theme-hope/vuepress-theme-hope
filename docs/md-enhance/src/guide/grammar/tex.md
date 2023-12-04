@@ -138,6 +138,8 @@ $$
 
 ## Support List
 
+Plugin tutorial and FAQs: [Tex](https://mdit-plugins.github.io/tex.html#tex-tutorial)
+
 Katex:
 
 - [KaTeX Support Features](https://katex.org/docs/supported.html)

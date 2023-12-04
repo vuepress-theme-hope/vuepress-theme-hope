@@ -3,70 +3,72 @@ title: Giscus Options
 icon: fab fa-fw fa-github
 ---
 
-## repo
+## Config
+
+### repo
 
 - Type: `string`
 - Required: No
 
 The name of repository to store discussions.
 
-## repoId
+### repoId
 
 - Type: `string`
 - Required: No
 
 The ID of repository to store discussions. Generate through [Giscus Page](https://giscus.app/)
 
-## category
+### category
 
 - Type: `string`
 - Required: No
 
 The name of the discussion category.
 
-## categoryId
+### categoryId
 
 - Type: `string`
 - Required: No
 
 The ID of the discussion category. Generate through [Giscus Page](https://giscus.app/)
 
-## mapping
+### mapping
 
 - Type: `string`
 - Default: `"pathname"`
 
 Page - Discussion mapping. For details see [Giscus Page](https://giscus.app/)
 
-## strict
+### strict
 
 - Type: `boolean`
 - Default: `true`
 
 Whether enable strict mapping or not
 
-## lazyLoading
+### lazyLoading
 
 - Type: `boolean`
 - Default: `true`
 
 Whether enable lazy loading or not
 
-## reactionsEnabled
+### reactionsEnabled
 
 - Type: `boolean`
 - Default: `true`
 
 Whether enable reactions or not
 
-## inputPosition
+### inputPosition
 
 - Type: `"top" | "bottom"`
 - Default: `"top"`
 
 Input position
 
-## lightTheme
+### lightTheme
 
 - Type: `GiscusTheme`
 
@@ -90,7 +92,7 @@ Giscus theme used in lightmode
 
 Should be a built-in theme keyword or a css link starting with `https://`.
 
-## darkTheme
+### darkTheme
 
 - Type: `GiscusTheme`
 
@@ -113,3 +115,41 @@ Should be a built-in theme keyword or a css link starting with `https://`.
 Giscus theme used in darkmode
 
 Should be a built-in theme keyword or a css link starting with `https://`.
+
+## Plugin Config
+
+You can directly configure serializable options in the plugin options:
+
+```ts
+// .vuepress/config.ts
+import { defineUserConfig } from "vuepress";
+import { commentPlugin } from "vuepress-plugin-comment2";
+
+export default defineUserConfig({
+  plugins: [
+    commentPlugin({
+      provider: "GIscus",
+      // other options
+      // ...
+    }),
+  ],
+});
+```
+
+## Client Config
+
+You can use the `defineGIscusConfig` function to customize GIscus:
+
+```ts
+// .vuepress/client.ts
+import { defineClientConfig } from "@vuepress/client";
+import { defineGIscusConfig } from "vuepress-plugin-comment2/client";
+
+defineGIscusConfig({
+  // GIscus config
+});
+
+export default defineClientConfig({
+  // ...
+});
+```

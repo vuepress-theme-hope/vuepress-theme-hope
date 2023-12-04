@@ -65,9 +65,16 @@ HLS:
 
 <VidStack src="https://mse-demo.u2sb.com/dash/master.m3u8" />
 
-## An audio player
+An audio player:
 
 <VidStack
   src="//theme-hope-assets.vuejs.press/files/sample.mp3"
   title="VidStack Audio Demo"
+/>
+
+A YouTube player
+
+<VidStack
+  src="youtube/_cMxraX_5RE"
+  title="VidStack YouTube Demo"
 />

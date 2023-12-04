@@ -1,7 +1,7 @@
 {
   "name": "md-enhance-docs",
-  "private": true,
   "type": "module",
+  "private": true,
   "description": "Docs for vuepress-plugin-md-enhance",
   "license": "MIT",
   "author": {
@@ -19,16 +19,16 @@
     "docs:webpack-dev": "vuepress-webpack dev src"
   },
   "dependencies": {
-    "@types/katex": "0.16.6",
+    "@types/katex": "0.16.7",
     "@vuepress/client": "2.0.0-rc.0",
     "@vueuse/core": "10.6.1",
     "docs-shared": "workspace:*",
     "echarts-wordcloud": "2.1.0",
-    "flowchart.ts": "1.0.1",
+    "flowchart.ts": "2.0.0",
     "katex": "0.16.9",
     "mermaid": "10.6.1",
     "sass-loader": "13.3.2",
-    "vue": "3.3.8",
+    "vue": "3.3.9",
     "vuepress-plugin-md-enhance": "workspace:*",
     "vuepress-shared": "workspace:*",
     "vuepress-vite": "2.0.0-rc.0",

@@ -11,6 +11,7 @@ export { type MarkdownItTaskListOptions as TasklistOptions } from "@mdit/plugin-
 export type IncludeOptions = Omit<MarkdownItIncludeOptions, "currentPath">;
 export type StylizeOptions = MarkdownItStylizeConfig[];
 
+export * from "./alert.js";
 export * from "./hint.js";
 export * from "./locales.js";
 export * from "./playground.js";

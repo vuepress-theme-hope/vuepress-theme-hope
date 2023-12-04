@@ -67,13 +67,13 @@ export const injectPageInfo = (page: Page<ThemePageData>): void => {
         "index" in frontmatter.dir &&
         (frontmatter as ThemeNormalPageFrontmatter).dir!.index === false
       )
-        page.routeMeta[ArticleInfoType.index] = 0;
+        page.routeMeta[ArticleInfoType.index] = false;
     }
   } else {
     if ("order" in frontmatter)
       page.routeMeta[ArticleInfoType.order] = frontmatter.order;
     if ("index" in frontmatter && frontmatter.index === false)
-      page.routeMeta[ArticleInfoType.index] = 0;
+      page.routeMeta[ArticleInfoType.index] = false;
   }
 
   // resolve shortTitle

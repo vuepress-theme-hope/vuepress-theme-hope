@@ -50,7 +50,7 @@ VuePress 会使用 [markdown-it](https://github.com/markdown-it/markdown-it) 来
 
 通过 <ProjectLink name="md-enhance" path="/zh/">`vuepress-plugin-md-enhance`</ProjectLink>，主题扩展了更多 Markdown 语法，提供更加丰富的写作功能。
 
-#### 自定义容器
+#### 提示容器
 
 ::: v-pre
 
@@ -60,7 +60,7 @@ VuePress 会使用 [markdown-it](https://github.com/markdown-it/markdown-it) 来
 
 ::: info 自定义标题
 
-信息容器，包含 `代码` 与 [链接](#自定义容器)。
+信息容器，包含 `代码` 与 [链接](#提示容器)。
 
 ```js
 const a = 1;
@@ -80,7 +80,7 @@ const a = 1;
 
 :::
 
-::: danger 自定义标题
+::: caution 自定义标题
 
 危险容器
 
@@ -119,7 +119,7 @@ const a = 1;
 
 :::
 
-::: danger 自定义标题
+::: caution 自定义标题
 
 危险容器
 
@@ -134,7 +134,7 @@ const a = 1;
 
 ::::
 
-- [查看详情](../markdown/container.md)
+- [查看详情](../markdown/hint.md)
 
 #### 选项卡
 
@@ -405,6 +405,25 @@ speak(msg);
 :::
 
 - [查看详情](../markdown/playground.md)
+
+### Kotlin 交互演示
+
+::: kotlin-playground Kotlin 交互演示
+
+@file main.kt
+
+```kotlin
+class Contact(val id: Int, var email: String)
+
+fun main(args: Array<String>) {
+    val contact = Contact(1, "mary@gmail.com")
+    println(contact.id)
+}
+```
+
+:::
+
+- [查看详情](../markdown//kotlin-playground.md)
 
 ### Vue 交互演示
 

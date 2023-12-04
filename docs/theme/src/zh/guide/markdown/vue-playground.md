@@ -1,6 +1,11 @@
 ---
 title: Vue 交互演示
 icon: fab fa-vuejs
+category:
+  - Markdown
+tag:
+  - Markdown
+  - 交互演示
 ---
 
 <!-- @include: @md-enhance/zh/guide/code/vue-playground.md#before -->

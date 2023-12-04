@@ -53,7 +53,7 @@ export default defineComponent({
       // Lights
       const ambientLight = new three.AmbientLight(
         0xffffff,
-        isDarkmode.value ? 3 : 4,
+        isDarkmode.value ? 5 : 15,
       );
       const directionalLight = new three.DirectionalLight(0xffffff, 3);
       const directionalLight2 = new three.DirectionalLight(0xffffff, 3);

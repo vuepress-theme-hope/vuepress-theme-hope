@@ -40,17 +40,17 @@ Frontmatter is an important concept in VuePress. If you don't know it, you need 
 
 The Markdown content in VuePress will be parsed by [markdown-it](https://github.com/markdown-it/markdown-it), which supports [syntax extensions](https://github.com/markdown-it/markdown-it#syntax-extensions) via markdown-it plugins.
 
-### VuePress Enhancement
+## VuePress Enhancement
 
 To enrich document content, VuePress extends standard Markdown syntax.
 
 For these extended syntax, please see [Built-in Markdown Features](../../cookbook/vuepress/markdown.md).
 
-### Theme Enhancement
+## Theme Enhancement
 
 By using <ProjectLink name="md-enhance">`vuepress-plugin-md-enhance`</ProjectLink>, the theme extends more Markdown syntax and provides richer writing functions.
 
-#### Custom Container
+### Hint box
 
 ::: v-pre
 
@@ -60,7 +60,7 @@ Safely use {{ variable }} in Markdown.
 
 ::: info Custom Title
 
-A custom information container with `code`, [link](#custom-container).
+A custom information container with `code`, [link](#hint-box).
 
 ```js
 const a = 1;
@@ -80,9 +80,9 @@ A custom warning container
 
 :::
 
-::: danger Custom Title
+::: caution Custom Title
 
-A custom danger container
+A custom caution container
 
 :::
 
@@ -119,9 +119,9 @@ A custom warning container
 
 :::
 
-::: danger Custom Title
+::: caution Custom Title
 
-A custom danger container
+A custom caution container
 
 :::
 
@@ -134,9 +134,9 @@ A custom details container
 
 ::::
 
-- [View Detail](../markdown/container.md)
+- [View Detail](../markdown/hint.md)
 
-#### Tabs
+### Tabs
 
 ::: tabs#fruit
 
@@ -156,7 +156,7 @@ Orange
 
 - [View Detail](../markdown/tabs.md)
 
-#### Code Tabs
+### Code Tabs
 
 ::: code-tabs
 
@@ -176,13 +176,13 @@ npm i -D vuepress-theme-hope
 
 - [View Detail](../markdown/code-tabs.md)
 
-#### Superscript and Subscript
+### Superscript and Subscript
 
 19^th^ H~2~O
 
 - [View Detail](../markdown/sup-sub.md)
 
-#### Align
+### Align
 
 ::: center
 
@@ -198,13 +198,13 @@ I am right align
 
 - [View Detail](../markdown/align.md)
 
-#### Attrs
+### Attrs
 
 A **word**{#word} having id.
 
 - [View Detail](../markdown/attrs.md)
 
-#### Footnote
+### Footnote
 
 This text has footnote[^first].
 
@@ -212,26 +212,26 @@ This text has footnote[^first].
 
 - [View Detail](../markdown/footnote.md)
 
-#### Mark
+### Mark
 
 You can mark ==important words== .
 
 - [View Detail](../markdown/mark.md)
 
-#### Tasklist
+### Tasklist
 
 - [x] Plan A
 - [ ] Plan B
 
 - [View Detail](../markdown/tasklist.md)
 
-#### Image Enhancement
+### Image Enhancement
 
 Support setting color scheme and size
 
 - [View Detail](../markdown/image.md)
 
-#### Component
+### Component
 
 ```component VPCard
 title: Mr.Hope
@@ -243,7 +243,7 @@ color: rgba(253, 230, 138, 0.15)
 
 - [View Detail](../markdown/component.md)
 
-#### Chart
+### Chart
 
 ::: chart A Scatter Chart
 
@@ -279,7 +279,7 @@ color: rgba(253, 230, 138, 0.15)
 
 - [View Detail](../markdown/chartjs.md)
 
-#### Echarts
+### Echarts
 
 ::: echarts A line chart
 
@@ -305,7 +305,7 @@ color: rgba(253, 230, 138, 0.15)
 
 - [View Detail](../markdown/echarts.md)
 
-#### Flowchart
+### Flowchart
 
 ```flow
 cond=>condition: Process?
@@ -318,7 +318,7 @@ cond(no)->e
 
 - [View Detail](../markdown/flowchart.md)
 
-#### Mermaid
+### Mermaid
 
 ```mermaid
 ---
@@ -342,7 +342,7 @@ flowchart TB
 
 - [View Detail](../markdown/mermaid.md)
 
-#### Tex
+### Tex
 
 $$
 \frac {\partial^r} {\partial \omega^r} \left(\frac {y^{\omega}} {\omega}\right)
@@ -351,13 +351,13 @@ $$
 
 - [View Detail](../markdown/tex.md)
 
-#### Include files
+### Include files
 
 <!-- @include: ../markdown/demo.snippet.md{9-13} -->
 
 - [View Detail](../markdown/include.md)
 
-#### Code Demo
+### Code Demo
 
 ::: normal-demo A normal demo
 
@@ -382,13 +382,13 @@ span {
 
 - [View Detail](../markdown/demo.md)
 
-#### Stylize
+### Stylize
 
 Donate Mr.Hope a cup of coffee. _Recommended_
 
 - [View Detail](../markdown/stylize.md)
 
-#### Playground
+### Playground
 
 ::: playground#ts TS demo
 
@@ -406,7 +406,26 @@ speak(msg);
 
 - [View Detail](../markdown/playground.md)
 
-#### Vue Playground
+### Kotlin Playground
+
+::: kotlin-playground Kotlin Playground
+
+@file main.kt
+
+```kotlin
+class Contact(val id: Int, var email: String)
+
+fun main(args: Array<String>) {
+    val contact = Contact(1, "mary@gmail.com")
+    println(contact.id)
+}
+```
+
+:::
+
+- [View Detail](../markdown/kotlin-playground.md)
+
+### Vue Playground
 
 ::: vue-playground Vue Playground
 
@@ -429,7 +448,7 @@ const msg = ref("Hello World!");
 
 - [View Detail](../markdown/vue-playground.md)
 
-#### Presentation
+### Presentation
 
 @slidestart
 

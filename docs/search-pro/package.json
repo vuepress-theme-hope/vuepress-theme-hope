@@ -1,5 +1,6 @@
 {
   "name": "search-pro-docs",
+  "type": "module",
   "private": true,
   "description": "Docs for vuepress-plugin-search-pro",
   "license": "MIT",
@@ -20,9 +21,9 @@
   "dependencies": {
     "@vuepress/client": "2.0.0-rc.0",
     "docs-shared": "workspace:*",
-    "nodejs-jieba": "0.0.2",
+    "nodejs-jieba": "0.1.2",
     "sass-loader": "13.3.2",
-    "vue": "3.3.8",
+    "vue": "3.3.9",
     "vuepress-plugin-search-pro": "workspace:*",
     "vuepress-vite": "2.0.0-rc.0",
     "vuepress-webpack": "2.0.0-rc.0"

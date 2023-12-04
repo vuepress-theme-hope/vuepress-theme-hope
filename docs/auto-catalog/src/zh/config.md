@@ -12,9 +12,7 @@ icon: gears
 
 目录项级别的最大深度。
 
-::: note
-
-仅在你使用内置目录组件时可用。
+::: note 仅限内置目录组件
 
 :::
 
@@ -24,6 +22,10 @@ icon: gears
 - 默认值: `false`
 
 目录是否显示索引
+
+::: note 仅限内置目录组件
+
+:::
 
 ### exclude
 
@@ -38,34 +40,6 @@ icon: gears
 - 必填: 否
 
 控制页面 Frontmatter。
-
-### titleGetter
-
-- 类型: `(page: Page) => string`
-- 默认值: `(page: Page) => page.title`
-
-页面标题获取器
-
-### iconGetter
-
-- 类型: `(page: Page) => string`
-- 必填: 否
-
-页面图标获取器
-
-### orderGetter
-
-- 类型: `(page: Page) => string`
-- 必填: 否
-
-页面顺序获取器
-
-### shouldIndex
-
-- 类型: `(page: Page) => boolean`
-- 默认值: `() => true`
-
-页面是否应该被索引
 
 ### component
 
@@ -128,18 +102,28 @@ icon: gears
 
 ## 客户端选项
 
-### defineAutoCatalogIconComponent
+### defineAutoCatalogGetter
 
 ```ts
-export type AutoCatalogIconComponent = Component<{
-  icon: string;
-}>;
-export declare const defineAutoCatalogIconComponent: (
-  options: AutoCatalogIconComponent,
+export interface AutoCatalogInfo {
+  /** 目录标题 */
+  title: string;
+  /** 目录顺序 */
+  order?: number;
+  /** 目录内容 */
+  content?: Component;
+}
+
+export type AutoCatalogInfoGetter = (
+  meta: Record<string, unknown>,
+) => AutoCatalogInfo | null;
+
+export declare const defineAutoCatalogGetter: (
+  options: AutoCatalogInfoGetter,
 ) => void;
 ```
 
-自定义目录图标组件。
+自定义如何从 meta 中提取目录信息。
 
 ## AutoCatalog 组件属性
 

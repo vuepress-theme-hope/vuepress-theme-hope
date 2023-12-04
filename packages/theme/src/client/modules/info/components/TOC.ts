@@ -3,7 +3,7 @@ import { usePageData } from "@vuepress/client";
 import type { PropType, SlotsType, VNode } from "vue";
 import { defineComponent, h, onMounted, ref, shallowRef, watch } from "vue";
 import { useRoute } from "vue-router";
-import { VPLink, isActiveLink } from "vuepress-shared/client";
+import { VPLink } from "vuepress-shared/client";
 
 import PrintButton from "@theme-hope/modules/info/components/PrintButton";
 import { useMetaLocale } from "@theme-hope/modules/info/composables/index";
@@ -39,7 +39,7 @@ const renderChildren = (
               {
                 class: [
                   "toc-item",
-                  { active: isActiveLink(route, `#${header.slug}`) },
+                  { active: route.hash === `#${header.slug}` },
                 ],
               },
               renderHeader(header),

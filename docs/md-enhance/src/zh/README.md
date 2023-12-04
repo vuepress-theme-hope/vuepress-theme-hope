@@ -97,10 +97,15 @@ highlights:
       background-repeat: repeat
       background-size: initial
     highlights:
-      - title: 自定义容器支持
+      - title: 提示容器支持
         icon: box-archive
         details: 用样式装饰 Markdown 内容
-        link: ./guide/stylize/container.html
+        link: ./guide/stylize/hint.html
+
+      - title: GFM 警告
+        icon: bell
+        details: GFM 风格的警告容器
+        link: ./guide/stylize/alert.html
 
       - title: 自定义对齐支持
         icon: align-center
@@ -142,6 +147,11 @@ highlights:
         details: 可以在 Markdown 中直接写出流程图
         link: ./guide/chart/flowchart.html
 
+      - title: Markmap 支持
+        icon: fab fa-markdown
+        details: 从 Markdown 生成思维导图
+        link: ./guide/chart/markmap.html
+
       - title: Mermaid 支持
         icon: chart-pie
         details: 可以在 Markdown 中添加 Mermaid 图例
@@ -166,6 +176,11 @@ highlights:
         icon: code
         details: 你可以在 Markdown 中添加交互演示
         link: ./guide/code/playground.html
+
+      - title: Kotlin 交互演示支持
+        icon: fab fa-kickstarter
+        details: 响应式的 Kotlin Playground
+        link: ./guide/code/kotlin-playground.html
 
       - title: Vue 交互演示支持
         icon: fab fa-vuejs

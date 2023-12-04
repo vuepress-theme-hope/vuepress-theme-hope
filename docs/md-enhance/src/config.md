@@ -21,26 +21,27 @@ Whether to support full GFM syntax.
 
 For full GFM syntax, see [GFM](https://github.github.com/gfm/).
 
-We are not 100% supporting it to be honestly, we only supply its syntax including linkify, breaks, footnote, task list, code highlight, image mark, mermaid, mathjax and so on.
+Honestly, we do not 100% implement GFM, we only supply its common syntax.
 
 Some of the behavior might be different, for example to support Vue syntax, we are not disallowing `<script>` tags. But in most situation, the behavior should be same.
 
 :::
 
-### container
+### hint
 
 - Type: `boolean`
 - Default: `false`
 - Details:
-  - [Custom Container](./guide/stylize/container.md)
+  - [Hint box](./guide/stylize/hint.md)
 
-Whether to enable custom container including
+Whether to enable hint box including
 
+- important
 - info
 - note
 - tip
 - warning
-- danger
+- caution
 - details
 
 ::: warning
@@ -101,6 +102,16 @@ Whether convert `\n` in paragraphs into `<br>`s
 - Enabled in GFM: Yes
 
 Whether convert URL-like text into links
+
+### alert
+
+- Type: `boolean`
+- Default: `false`
+- Enabled in GFM: Yes
+- Details:
+  - [GFM Alerts](./guide/stylize/alert.md)
+
+Whether to enable gfm alerts.
 
 ### tabs
 
@@ -377,15 +388,24 @@ Whether to enable ECharts support
 
 Whether to enable flowchart support
 
+### markmap
+
+- Type: `boolean`
+- Default: `false`
+- Details:
+  - [Markmap](./guide/chart/markmap.md)
+
+Whether to enable [Markmap](https://markmap.js.org/) support.
+
 ### mermaid
 
-- Type: `MermaidConfig | boolean`
+- Type: `boolean`
 - Default: `false`
 - Enabled in GFM: Yes
 - Details:
   - [Mermaid](./guide/chart/mermaid.md)
 
-Whether to enable [Mermaid](https://mermaid.js.org/) support, you can pass in a config object to customize the behavior of Mermaid.
+Whether to enable [Mermaid](https://mermaid.js.org/) support.
 
 ### stylize
 
@@ -571,80 +591,18 @@ Stylize inline tokens to create snippet you want.
 
 Playground options.
 
+### kotlinPlayground
+
+- Type: `boolean`
+- Default: `false`
+- Details:
+  - [Kotlin Playground](./guide/code/kotlin-playground.md)
+
+Whether to enable kotlin playground support.
+
 ### vuePlayground
 
-- Type: `VuePlaygroundOptions | boolean`
-
-  ```ts
-  interface VuePlaygroundOptions {
-    /**
-     * specify the version of vue
-     */
-    vueVersion?: string;
-
-    /**
-     * specify default URL to import Vue runtime from in the sandbox
-     *
-     * @default "https://unpkg.com/@vue/runtime-dom@${version}/dist/runtime-dom.esm-browser.js"
-     */
-    defaultVueRuntimeURL?: string;
-
-    /**
-     * Specify default URL to import Vue Server Renderer from in the sandbox
-     *
-     * @default "https://unpkg.com/@vue/server-renderer@${version}/dist/server-renderer.esm-browser.js"
-     */
-    defaultVueServerRendererURL?: string;
-
-    /**
-     * Whether to enable repl's editor resizable
-     *
-     * @default true
-     */
-    autoResize?: boolean;
-
-    /**
-     * Whether to show JS, CSS, SSR panel
-     *
-     * @default false
-     */
-    showCompileOutput?: boolean;
-
-    /**
-     * Whether to show import map
-     *
-     * @default true
-     */
-    showImportMap?: boolean;
-
-    /**
-     * Whether to clear console
-     *
-     * @default false
-     */
-    clearConsole?: boolean;
-
-    /**
-     * Layout
-     *
-     * @default 'horizontal'
-     */
-    layout?: "horizontal" | "vertical";
-
-    /**
-     * Options to configure the `vue/compiler-sfc`
-     */
-    sfcOptions?: SFCOptions;
-
-    /**
-     * Whether to enable SSR
-     *
-     * @default true
-     */
-    ssr?: boolean;
-  }
-  ```
-
+- Type: `boolean`
 - Default: `false`
 - Details:
   - [Vue Playground](./guide/code/vue-playground.md)
@@ -895,6 +853,32 @@ export const defineRevealJsConfig: (options: RevealOptions) => void;
 ```
 
 Define config which you want to pass to reveal.js.
+
+### defineKotlinPlaygroundConfig
+
+```ts
+interface KotlinPlaygroundOptions {
+  server?: string;
+  version?: string;
+
+  onChange?: (code: string) => void;
+  onRun?: () => void;
+  onError?: () => void;
+  getJsCode?: (code: string) => void;
+  onTestPassed?: () => void;
+  onTestFailed?: () => void;
+  onOpenConsole?: () => void;
+  onCloseConsole?: () => void;
+  callback?: (targetNode: HTMLElement, mountNode: HTMLElement) => void;
+  getInstance?: (instance: KotlinPlaygroundInstance) => void;
+}
+
+export const defineKotlinPlaygroundConfig: (
+  options: KotlinPlaygroundOptions,
+) => void;
+```
+
+Define config which you want to pass to `kotlin-playground`.
 
 ### defineVuePlaygroundConfig
 

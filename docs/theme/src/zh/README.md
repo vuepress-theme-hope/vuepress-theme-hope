@@ -46,10 +46,15 @@ highlights:
         details: 检查 Markdown 链接
         link: ./guide/markdown/others.html#link-check
 
-      - title: 自定义容器支持
+      - title: 提示容器支持
         icon: box-archive
         details: 用样式装饰 Markdown 内容
-        link: ./guide/markdown/container.html
+        link: ./guide/markdown/hint.html
+
+      - title: GFM 警告
+        icon: bell
+        details: GFM 风格的警告容器
+        link: ./guide/markdown/alert.html
 
       - title: 选项卡
         icon: table-columns
@@ -135,6 +140,11 @@ highlights:
         icon: code
         details: 你可以在 Markdown 中添加交互演示
         link: ./guide/markdown/playground.html
+
+      - title: Kotlin 交互演示支持
+        icon: fab fa-kickstarter
+        details: 响应式的 Kotlin 演示
+        link: ./guide/markdown/kotlin-playground.html
 
       - title: Vue 交互演示支持
         icon: fab fa-vuejs
@@ -261,7 +271,7 @@ highlights:
 
       - title: 博客主页
         icon: home
-        details: 全新播客主页
+        details: 全新博客主页
         link: ./guide/blog/home.html
 
       - title: 博主信息

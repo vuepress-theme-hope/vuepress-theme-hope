@@ -8,8 +8,7 @@ import type { ModuleSideEffectsOption, RollupOptions } from "rollup";
 import copy from "rollup-plugin-copy";
 import dts from "rollup-plugin-dts";
 import esbuild from "rollup-plugin-esbuild";
-
-import { shebangPlugin } from "./shebang.js";
+import { shebang } from "rollup-plugin-resolve-shebang";
 
 const isProduction = process.env["NODE_ENV"] === "production";
 
@@ -93,7 +92,7 @@ export const rollupBundle = (
             entries,
           })
         : null,
-      preserveShebang ? shebangPlugin() : null,
+      preserveShebang ? shebang() : null,
       ...(resolve ? [nodeResolve({ preferBuiltins: true }), commonjs()] : []),
       esbuild({
         charset: "utf8",

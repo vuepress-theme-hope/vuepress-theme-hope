@@ -5,7 +5,7 @@ import type { Router } from "vue-router";
 import { useRouter } from "vue-router";
 
 import { useThemeLocaleData } from "@theme-hope/composables/index";
-import { resolveLinkInfo } from "@theme-hope/utils/index";
+import { resolveLinkInfo, resolvePrefix } from "@theme-hope/utils/index";
 
 import type {
   AutoLinkOptions,
@@ -20,19 +20,22 @@ export const resolveNavbarItem = (
   item: NavbarItem | NavbarGroup | string,
   prefix = "",
 ): ResolvedThemeNavbarItem => {
-  if (isString(item)) return resolveLinkInfo(router, `${prefix}${item}`);
+  if (isString(item))
+    return resolveLinkInfo(router, resolvePrefix(prefix, item));
 
   if ("children" in item)
     return {
       ...item,
       ...(item.link && !isLinkExternal(item.link)
-        ? resolveLinkInfo(router, `${prefix}${item.link}`)
+        ? resolveLinkInfo(router, resolvePrefix(prefix, item.link))
         : {}),
       children: item.children.map(
         (child) =>
-          resolveNavbarItem(router, child, `${prefix}${item.prefix || ""}`) as
-            | NavGroup<AutoLinkOptions>
-            | AutoLinkOptions,
+          resolveNavbarItem(
+            router,
+            child,
+            resolvePrefix(prefix, item.prefix),
+          ) as NavGroup<AutoLinkOptions> | AutoLinkOptions,
       ),
     };
 
@@ -40,7 +43,7 @@ export const resolveNavbarItem = (
     ...item,
     link: isLinkExternal(item.link)
       ? item.link
-      : resolveLinkInfo(router, `${prefix}${item.link}`).link,
+      : resolveLinkInfo(router, resolvePrefix(prefix, item.link)).link,
   };
 };
 

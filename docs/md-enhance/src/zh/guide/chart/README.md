@@ -23,6 +23,10 @@ index: false
 
   轻量级，只关注流程图。
 
+- Markmap: 从 Markdown 生成思维导图
+
+  运行环境非常重，不推荐使用。
+
 - Mermaid：以与 Markdown 类似的方式从文本生成图表和流程图。
 
   常用图表的强大集合。
@@ -109,6 +113,39 @@ cond(no)->e
 ```
 
 - [查看详情](./flowchart.md)
+
+### Markmap
+
+````markmap
+---
+markmap:
+  colorFreezeLevel: 2
+---
+
+# markmap
+
+## 链接
+
+- <https://markmap.js.org/>
+- [GitHub](https://github.com/markmap/markmap)
+
+## 功能
+
+- 链接
+- **强调** ~~删除线~~ *斜体* ==高亮==
+- 多行
+  文字
+- `行内代码`
+-
+    ```js
+    console.log('code block');
+    ```
+- Katex
+  - $x = {-b \pm \sqrt{b^2-4ac} \over 2a}$
+- 现在我们可以通过 `maxWidth` 选项自动换行非常非常非常非常非常非常非常非常非常非常长的内容
+````
+
+- [查看详情](./markmap.md)
 
 ### Mermaid 图表
 

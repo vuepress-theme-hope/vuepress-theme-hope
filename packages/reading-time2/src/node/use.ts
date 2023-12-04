@@ -9,13 +9,14 @@ import { readingTimePlugin } from "./plugin.js";
 export const useReadingTimePlugin = (
   app: App,
   options: ReadingTimeOptions,
+  legacy = true,
 ): void => {
   const { plugins } = app.pluginApi;
 
   if (
     plugins.every((plugin) => plugin.name !== "vuepress-plugin-reading-time2")
   )
-    app.use(readingTimePlugin(options));
+    app.use(readingTimePlugin(options, legacy));
 };
 
 /**

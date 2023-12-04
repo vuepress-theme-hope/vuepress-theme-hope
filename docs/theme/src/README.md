@@ -46,10 +46,15 @@ highlights:
         details: Check markdown links
         link: ./guide/markdown/others.html#link-check
 
-      - title: Custom Container
+      - title: Hint box
         icon: box-archive
         details: Decorate Markdown content with styles
-        link: ./guide/markdown/container.html
+        link: ./guide/markdown/hint.html
+
+      - title: GFM alerts
+        icon: bell
+        details: GFM alert box
+        link: ./guide/markdown/alert.html
 
       - title: Tabs
         icon: table-columns
@@ -135,6 +140,11 @@ highlights:
         icon: code
         details: You can add playground in Markdown files
         link: ./guide/markdown/playground.html
+
+      - title: Kotlin playground Support
+        icon: fab fa-kickstarter
+        details: Reactive kotlin playground
+        link: ./guide/markdown/koelin-playground.html
 
       - title: Vue playground Support
         icon: fab fa-vuejs

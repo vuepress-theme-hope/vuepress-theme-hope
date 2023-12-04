@@ -1,5 +1,6 @@
 {
   "name": "sitemap-docs",
+  "type": "module",
   "private": true,
   "description": "Docs for vuepress-plugin-sitemap2",
   "license": "MIT",
@@ -21,7 +22,7 @@
     "@vuepress/client": "2.0.0-rc.0",
     "docs-shared": "workspace:*",
     "sass-loader": "13.3.2",
-    "vue": "3.3.8",
+    "vue": "3.3.9",
     "vuepress-plugin-sitemap2": "workspace:*",
     "vuepress-vite": "2.0.0-rc.0",
     "vuepress-webpack": "2.0.0-rc.0"

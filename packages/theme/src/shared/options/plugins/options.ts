@@ -146,7 +146,7 @@ export interface PluginsOptions {
          * - note
          * - tip
          * - warning
-         * - danger
+         * - caution
          * - details
          *
          * ⚠ The last 4 items conflict with default theme and will override it’s style.
@@ -157,7 +157,7 @@ export interface PluginsOptions {
          * - note
          * - tip
          * - warning
-         * - danger
+         * - caution
          * - details
          *
          * ⚠ 最后四个会和默认主题冲突，且会覆盖默认主题的样式与行为。

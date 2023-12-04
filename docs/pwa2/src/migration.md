@@ -1,5 +1,5 @@
 ---
-title: V2 Migration
+title: Migrating to Latest
 icon: code-compare
 ---
 
@@ -27,6 +27,12 @@ icon: code-compare
 
   This can effectively reduce the SW update time
 
+- `cacheMaxSize` is renamed to `maxSize`
+
 - `popupComponent` renamed to `updateComponent`
 
   This is because we added a new prompt popup window, so we need to avoid name confusion
+
+## Breaking Changes
+
+- `showInstall` is removed

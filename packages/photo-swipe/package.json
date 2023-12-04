@@ -1,6 +1,6 @@
 {
   "name": "vuepress-plugin-photo-swipe",
-  "version": "2.0.0-rc.0",
+  "version": "2.0.0-rc.1",
   "description": "Photo Swipe plugin for vuepress",
   "keywords": [
     "vuepress",
@@ -57,8 +57,8 @@
     "@vuepress/shared": "2.0.0-rc.0",
     "@vuepress/utils": "2.0.0-rc.0",
     "@vueuse/core": "^10.6.1",
-    "photoswipe": "^5.4.2",
-    "vue": "^3.3.8",
+    "photoswipe": "^5.4.3",
+    "vue": "^3.3.9",
     "vue-router": "^4.2.5",
     "vuepress-plugin-sass-palette": "workspace:*",
     "vuepress-shared": "workspace:*"

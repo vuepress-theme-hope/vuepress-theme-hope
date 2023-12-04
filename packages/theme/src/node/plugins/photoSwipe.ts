@@ -9,11 +9,15 @@ import { photoSwipePlugin } from "vuepress-plugin-photo-swipe";
  */
 export const getPhotoSwipePlugin = (
   options?: PhotoSwipeOptions | boolean,
+  legacy = false,
 ): Plugin | null => {
   if (options === false) return null;
 
-  return photoSwipePlugin({
-    selector: ".theme-hope-content :not(a) > img:not([no-view])",
-    ...(options === true ? {} : options),
-  });
+  return photoSwipePlugin(
+    {
+      selector: ".theme-hope-content :not(a) > img:not([no-view])",
+      ...(options === true ? {} : options),
+    },
+    legacy,
+  );
 };

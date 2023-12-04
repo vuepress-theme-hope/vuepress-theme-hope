@@ -13,7 +13,7 @@ tag:
 
 ## copyright2 插件
 
-### copy.triggerWords
+### copy.triggerLength
 
 - 类型: `number`
 - 默认值: `100`

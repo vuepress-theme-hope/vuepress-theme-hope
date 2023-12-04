@@ -134,6 +134,8 @@ $$
 
 ## 支持列表
 
+插件教程和常见问题: [Tex](https://mdit-plugins.github.io/zh/tex.html#tex-%E6%95%99%E7%A8%8B)
+
 Katex:
 
 - [KaTeX 支持功能](https://katex.org/docs/supported.html)

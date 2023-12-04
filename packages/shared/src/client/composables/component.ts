@@ -1,14 +1,15 @@
-import { isPlainObject } from "@vuepress/shared";
 import type { App } from "vue";
 import { camelize, capitalize, getCurrentInstance } from "vue";
 
 export const hasGlobalComponent = (name: string, app?: App): boolean => {
-  const instance = app ? app._instance : getCurrentInstance();
+  const globalComponents = (app?._instance || getCurrentInstance())?.appContext
+    .components;
+
+  if (!globalComponents) return false;
 
   return (
-    isPlainObject(instance?.appContext.components) &&
-    (name in instance!.appContext.components ||
-      camelize(name) in instance!.appContext.components ||
-      capitalize(camelize(name)) in instance!.appContext.components)
+    name in globalComponents ||
+    camelize(name) in globalComponents ||
+    capitalize(camelize(name)) in globalComponents
   );
 };

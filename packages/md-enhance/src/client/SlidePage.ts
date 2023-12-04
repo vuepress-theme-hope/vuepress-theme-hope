@@ -1,4 +1,4 @@
-import { Content } from "@vuepress/client";
+import { Content, useRouteLocale } from "@vuepress/client";
 import { onClickOutside } from "@vueuse/core";
 import type { VNode } from "vue";
 import { defineComponent, h, ref, shallowRef } from "vue";
@@ -13,6 +13,7 @@ export default defineComponent({
 
   setup() {
     const router = useRouter();
+    const routeLocale = useRouteLocale();
     const showMenu = ref(false);
 
     const menu = shallowRef<HTMLElement>();
@@ -32,7 +33,7 @@ export default defineComponent({
 
     const home = (): void => {
       closeMenu();
-      void router.push("/");
+      void router.push(routeLocale.value);
     };
 
     onClickOutside(menu, closeMenu);

@@ -23,6 +23,7 @@ export default defineUserConfig({
 
     sidebar: {
       "/demo/": [
+        "/demo/alert",
         "/demo/align",
         "/demo/attrs",
         "/demo/chart",
@@ -30,14 +31,16 @@ export default defineUserConfig({
         "/demo/code-demo",
         "/demo/code-tabs",
         "/demo/component",
-        "/demo/container",
         "/demo/figure",
         "/demo/flowchart",
         "/demo/footnote",
+        "/demo/hint",
         "/demo/image-mark",
         "/demo/image-size",
         "/demo/include",
+        "/demo/kotlin-playground",
         "/demo/mark",
+        "/demo/markmap",
         "/demo/mermaid",
         "/demo/playground",
         "/demo/revealjs",
@@ -63,23 +66,26 @@ export default defineUserConfig({
 
   plugins: [
     mdEnhancePlugin({
+      alert: true,
       align: true,
       attrs: true,
       chart: true,
       codetabs: true,
       component: true,
-      container: true,
       demo: true,
       echarts: true,
       figure: true,
       flowchart: true,
       gfm: true,
+      hint: true,
       imgLazyload: true,
       imgMark: true,
       imgSize: true,
       include: true,
       mark: true,
+      markmap: true,
       mermaid: true,
+      kotlinPlayground: true,
       playground: {
         presets: ["ts", "vue"],
       },

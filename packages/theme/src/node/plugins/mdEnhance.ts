@@ -15,7 +15,7 @@ export const getMdEnhancePlugin = (
 
   return mdEnhancePlugin(
     {
-      container: true,
+      hint: true,
       ...(options || {}),
     },
     legacy,

@@ -21,26 +21,26 @@ order: 2
 
 有关完整的 GFM 语法，请参阅 [GFM](https://github.github.com/gfm/)。
 
-老实说，我们并不是 100% 支持它，我们只补全了它的语法，包括链接转换、换行、任务列表、脚注、代码高亮、图片标记、Mermaid、Mathjax 等。
+老实说，我们没有 100% 实现 GFM，我们只是补全了它的常见语法。
 
 某些行为可能会有所不同，例如，为了允许 Vue 语法，我们并没有禁止 `<script>` 标签。 但在大多数情况下，行为应该是相同的。
 
 :::
 
-### container
+### hint
 
 - 类型: `boolean`
 - 默认值: `false`
 - 详情:
-  - [自定义容器](./guide/stylize/container.md)
+  - [提示容器](./guide/stylize/hint.md)
 
-是否启用自定义容器支持:
+是否启用提示容器支持:
 
 - info
 - note
 - tip
 - warning
-- danger
+- caution
 - details
 
 ::: warning
@@ -101,6 +101,16 @@ order: 2
 - 在 GFM 中启用: 是
 
 是否将文字中的链接格式文字转换为链接
+
+### alert
+
+- 类型: `boolean`
+- 默认值: `false`
+- 在 GFM 中启用: 是
+- 详情:
+  - [GFM 警告](./guide/stylize/alert.md)
+
+是否启用 GFM 警告。
 
 ### tabs
 
@@ -377,15 +387,24 @@ order: 2
 
 是否启用流程图支持。
 
+### markmap
+
+- 类型: `boolean`
+- 默认值: `false`
+- 详情:
+  - [Markmap](./guide/chart/markmap.md)
+
+是否启用 [Markmap](https://markmap.js.org/) 支持。
+
 ### mermaid
 
-- 类型: `MermaidConfig | boolean`
+- 类型: `boolean`
 - 默认值: `false`
 - 在 GFM 中启用: 是
 - 详情:
   - [Mermaid](./guide/chart/mermaid.md)
 
-是否启用 [Mermaid](https://mermaid.js.org/) 支持，你可以传入一个对象作为 Mermaid 的配置选项。
+是否启用 [Mermaid](https://mermaid.js.org/) 支持。
 
 ### stylize
 
@@ -575,80 +594,18 @@ order: 2
 
 交互演示选项。
 
+### kotlinPlayground
+
+- 类型: `boolean`
+- 默认值: `false`
+- 详情:
+  - [Kotlin 交互演示](./guide/code/kotlin-playground.md)
+
+是否启用 Kotlin 交互演示支持。
+
 ### vuePlayground
 
-- 类型: `VuePlaygroundOptions | boolean`
-
-  ```ts
-  interface VuePlaygroundOptions {
-    /**
-     * 指定 vue 版本
-     */
-    vueVersion?: string;
-
-    /**
-     * 指定默认的 Vue 运行时
-     *
-     * @default "https://unpkg.com/@vue/runtime-dom@${version}/dist/runtime-dom.esm-browser.js"
-     */
-    defaultVueRuntimeURL?: string;
-
-    /**
-     * 指定默认的 Vue 服务端渲染器
-     *
-     * @default "https://unpkg.com/@vue/server-renderer@${version}/dist/server-renderer.esm-browser.js"
-     */
-    defaultVueServerRendererURL?: string;
-
-    /**
-     * 是否启用自动调整大小
-     *
-     * @default true
-     */
-    autoResize?: boolean;
-
-    /**
-     * 是否显示 JS, CSS, SSR 面板
-     *
-     * @default false
-     */
-    showCompileOutput?: boolean;
-
-    /**
-     * 是否显示 import map
-     *
-     * @default true
-     */
-    showImportMap?: boolean;
-
-    /**
-     * 是否清空控制台
-     *
-     * @default false
-     */
-    clearConsole?: boolean;
-
-    /**
-     * 布局
-     *
-     * @default 'horizontal'
-     */
-    layout?: "horizontal" | "vertical";
-
-    /**
-     * `vue/compiler-sfc` 配置项
-     */
-    sfcOptions?: SFCOptions;
-
-    /**
-     * 是否启用 SSR
-     *
-     * @default true
-     */
-    ssr?: boolean;
-  }
-  ```
-
+- 类型: `boolean`
 - 默认值: `false`
 - 详情:
   - [Vue 交互演示](./guide/code/vue-playground.md)
@@ -906,6 +863,32 @@ export const defineRevealJsConfig: (options: RevealOptions) => void;
 ```
 
 定义需要传递给 Reveal.js 的配置选项。
+
+### defineKotlinPlaygroundConfig
+
+```ts
+interface KotlinPlaygroundOptions {
+  server?: string;
+  version?: string;
+
+  onChange?: (code: string) => void;
+  onRun?: () => void;
+  onError?: () => void;
+  getJsCode?: (code: string) => void;
+  onTestPassed?: () => void;
+  onTestFailed?: () => void;
+  onOpenConsole?: () => void;
+  onCloseConsole?: () => void;
+  callback?: (targetNode: HTMLElement, mountNode: HTMLElement) => void;
+  getInstance?: (instance: KotlinPlaygroundInstance) => void;
+}
+
+export const defineKotlinPlaygroundConfig: (
+  options: KotlinPlaygroundOptions,
+) => void;
+```
+
+定义需要传递给 `kotlin-playground` 的配置选项。
 
 ### defineVuePlaygroundConfig
 

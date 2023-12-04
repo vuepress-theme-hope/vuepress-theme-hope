@@ -7,31 +7,116 @@ With `vuepress-plugin-auto-catalog`, you can easily get automatically generated 
 
 <!-- more -->
 
-## Controlling Catalog
+## Extracting Info
 
-You can set `shouldIndex`, `titleGetter` and `orderGetter` in plugin options to control catalog generation. They all accept functions which receives `Page` object as first argument.
+First, you should set catalog info in routeMeta:
 
-- `shouldIndex` returns a boolean value, if the function returns `false`, the page will be ignored, otherwise, the page will be indexed.
-- `titleGetter` returns a string value, the string value will be used as the page title, by default the plugin will use `page.title`.
-- `orderGetter` returns a number value if possible, order sequence is as follows:
+::: code-tabs#language
 
-  ```:no-line-numbers
-  // order positive numbers from small to large
-  Project with order 1
-  Project with order 2
-  ...
-  Project with order 10
-  ...
-  // Project without order
-  Project without order
-  Project without order
-  ...
-  // order negative numbers from small to large
-  Project with order -10
-  // ...
-  Project with order -2
-  Project with order -1
-  ```
+@tab TS
+
+```ts
+// .vuepress/config.ts
+import { defineUserConfig } from "vuepress";
+
+export default defineUserConfig({
+  extendsPage: (page) => {
+    // set catalog info in routeMeta
+    page.routeMeta = {
+      // catalog title
+      title: page.title,
+      // ... other information
+    };
+  },
+});
+```
+
+@tab JS
+
+```js
+// .vuepress/config.js
+import { autoCatalogPlugin } from "vuepress-plugin-auto-catalog";
+
+export default {
+  extendsPage: (page) => {
+    // set catalog info in routeMeta
+    page.routeMeta = {
+      // catalog title
+      title: page.title,
+      // ... other information
+    };
+  },
+};
+```
+
+:::
+
+You can then import `defineAutoCatalogGetter` from `vuepress-plugin-auto-catalog/client` and use it in client config file to extract catalog info from meta.
+
+::: code-tabs#language
+
+@tab TS
+
+```ts
+// .vuepress/client.ts
+import { defineClientConfig } from "@vuepress/client";
+import { defineAutoCatalogGetter } from "vuepress-plugin-auto-catalog/client";
+
+export default defineClientConfig({
+  setup: () => {
+    defineAutoCatalogGetter((meta) =>
+      meta.title ? { title: meta.title } : null,
+    );
+  },
+});
+```
+
+@tab JS
+
+```js
+// .vuepress/client.js
+import { defineAutoCatalogGetter } from "vuepress-plugin-auto-catalog/client";
+
+export default {
+  setup: () => {
+    defineAutoCatalogGetter((meta) =>
+      meta.title ? { title: meta.title } : null,
+    );
+  },
+};
+```
+
+:::
+
+Catalog info should contains:
+
+- `title`: catalog title
+- `order`: catalog order (optional)
+- `content`: catalog content component (optional)
+
+::: info Sorting with order
+
+The plugin will sort pages by `order` in the following way:
+
+```:no-line-numbers
+// order positive numbers from small to large
+Project with order 1
+Project with order 2
+...
+Project with order 10
+...
+// Project without order
+Project without order
+Project without order
+...
+// order negative numbers from small to large
+Project with order -10
+// ...
+Project with order -2
+Project with order -1
+```
+
+:::
 
 ## Excluding pages
 
@@ -74,7 +159,10 @@ export default {
 
 :::
 
-The `exclude` option accepts an array of string or RegExp.
+The `exclude` option accepts an array of string or RegExp:
+
+- `"/foo/"` means only exclude catalog page generation at `/foo/` folder.
+- `/^\/foo\//` means exclude catalog page generation at `/foo/` folder and its subfolders.
 
 ## Controlling Page Frontmatter
 
@@ -134,42 +222,3 @@ By default, `<AutoCatalog />` generates catalog for current folder. If you want 
 You can use `<AutoCatalog />` in your theme layout, or in your markdown files directly.
 
 If you do not like the built-in component and want to use your own, you can register your component globally and set `component` option with your component name. Auto catalog page will use your component.
-
-## Displaying Icons for Catalog
-
-You can import `defineAutoCatalogIconComponent` from `vuepress-plugin-auto-catalog/client` and use it in client config file to define a component for catalog icon.
-
-The component should accept a `icon` prop which is the icon value.
-
-::: code-tabs#language
-
-@tab TS
-
-```ts
-// .vuepress/client.ts
-import { defineClientConfig } from "@vuepress/client";
-import { defineAutoCatalogIconComponent } from "vuepress-plugin-auto-catalog/client";
-import MyIconComponent from "./components/MyIconComponent.vue";
-
-export default defineClientConfig({
-  setup: () => {
-    defineAutoCatalogIconComponent(MyIconComponent);
-  },
-});
-```
-
-@tab JS
-
-```js
-// .vuepress/client.js
-import { defineAutoCatalogIconComponent } from "vuepress-plugin-auto-catalog/client";
-import MyIconComponent from "./components/MyIconComponent.vue";
-
-export default {
-  setup: () => {
-    defineAutoCatalogIconComponent(MyIconComponent);
-  },
-};
-```
-
-:::

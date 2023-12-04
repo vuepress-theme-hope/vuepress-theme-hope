@@ -42,7 +42,7 @@ VuePress 会使用 [markdown-it](https://github.com/markdown-it/markdown-it) 来
 
 通过 [`vuepress-plugin-md-enhance`][md-enhance]，主题扩展了更多 Markdown 语法，提供更加丰富的写作功能。
 
-#### 自定义容器
+#### 提示容器
 
 ::: v-pre
 
@@ -52,7 +52,7 @@ VuePress 会使用 [markdown-it](https://github.com/markdown-it/markdown-it) 来
 
 ::: info 自定义标题
 
-信息容器，包含 `代码` 与 [链接](#自定义容器)。
+信息容器，包含 `代码` 与 [链接](#提示容器)。
 
 ```js
 const a = 1;
@@ -72,7 +72,7 @@ const a = 1;
 
 :::
 
-::: danger 自定义标题
+::: caution 自定义标题
 
 危险容器
 
@@ -84,7 +84,7 @@ const a = 1;
 
 :::
 
-- [查看详情](https://theme-hope.vuejs.press/zh/guide/markdown/container.html)
+- [查看详情](https://theme-hope.vuejs.press/zh/guide/markdown/hint.html)
 
 #### 代码块
 

@@ -2,7 +2,44 @@
 
 All notable changes to this project will be documented in this file. See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
-<!-- #region recent-beta -->
+<!-- #region recent-change -->
+
+## [2.0.0-rc.1](https://github.com/vuepress-theme-hope/vuepress-theme-hope/compare/v2.0.0-rc.0...v2.0.0-rc.1) (2023-11-26)
+
+### ⚠ BREAKING CHANGES
+
+- **md-enhance:** `container` option is deprecated, use `hint` instead
+  `danger` is renamed to `caution` to align GFM
+
+### Features
+
+- **auto-catalog:** add compact for indexType ([1e6b2b3](https://github.com/vuepress-theme-hope/vuepress-theme-hope/commit/1e6b2b31ed28b250d4fbd942835f21502612bebf))
+- **comment2:** improve artalk update ([cd9abf7](https://github.com/vuepress-theme-hope/vuepress-theme-hope/commit/cd9abf70ef00030e60de7f1d0d7907f0755165fe))
+- **components:** improve a11y on backToTop button ([dcfbe3f](https://github.com/vuepress-theme-hope/vuepress-theme-hope/commit/dcfbe3f6cb43d8322ffc776010ec1c2693e1a8ec))
+- improve compact code ([13a1479](https://github.com/vuepress-theme-hope/vuepress-theme-hope/commit/13a147936344926ab6845b0bb58e7781be9b8d45))
+- **md-enhance:** add kotlinPlayground option, close [#3544](https://github.com/vuepress-theme-hope/vuepress-theme-hope/issues/3544) ([1669d19](https://github.com/vuepress-theme-hope/vuepress-theme-hope/commit/1669d196cac6a41edb0a7f93d1ecd517e80df0db))
+- **md-enhance:** add legacy support for card ([195720d](https://github.com/vuepress-theme-hope/vuepress-theme-hope/commit/195720d11d270f392abc943f2b6850fecd3bcce2))
+- **md-enhance:** add markmap, close [#3004](https://github.com/vuepress-theme-hope/vuepress-theme-hope/issues/3004) ([7bc156f](https://github.com/vuepress-theme-hope/vuepress-theme-hope/commit/7bc156f189b426914eede85f7e7c73beb3d6b2da))
+- **md-enhance:** improve presentation compact ([2cfeb64](https://github.com/vuepress-theme-hope/vuepress-theme-hope/commit/2cfeb64ab7055459d56018f8a8c48662599621a9))
+- **md-enhance:** support alert ([bac947b](https://github.com/vuepress-theme-hope/vuepress-theme-hope/commit/bac947bd41d020caaaf97eb238928fb5a97b8550))
+- **md-enhance:** support imgMark with figure ([f7540cd](https://github.com/vuepress-theme-hope/vuepress-theme-hope/commit/f7540cd9d1efca6a16a929c6d2722fca7cc534bd))
+- **pwa2:** add hint for showInstall ([54b2cc3](https://github.com/vuepress-theme-hope/vuepress-theme-hope/commit/54b2cc387071e2eebd0feaf3a7ee343059374800))
+- **shared:** improve normalize path ([56e1797](https://github.com/vuepress-theme-hope/vuepress-theme-hope/commit/56e17973a977ca4e02c58984e42f632999e276b1))
+- **theme:** improve bundler options handling, close [#3651](https://github.com/vuepress-theme-hope/vuepress-theme-hope/issues/3651) ([2e79d76](https://github.com/vuepress-theme-hope/vuepress-theme-hope/commit/2e79d767cad7551c525e9530c9da8e3e97c3b49e))
+- **theme:** improve empty hint ([5f46837](https://github.com/vuepress-theme-hope/vuepress-theme-hope/commit/5f46837f9a3d61f59287c1cf6dc2cd3a1894e9af))
+- **theme:** improve sidebar prefix ([8b8438c](https://github.com/vuepress-theme-hope/vuepress-theme-hope/commit/8b8438cbbb7864b03e1f59f2f395d9a6a5b1ad72))
+- **theme:** support item prop in project-panel, close [#2562](https://github.com/vuepress-theme-hope/vuepress-theme-hope/issues/2562) ([ec1feea](https://github.com/vuepress-theme-hope/vuepress-theme-hope/commit/ec1feea0b747a3211214a9b89ea31b6ed48d17bd))
+
+### Bug Fixes
+
+- **md-enhance:** fix mustache issue with tex, close [#3679](https://github.com/vuepress-theme-hope/vuepress-theme-hope/issues/3679) ([69ee328](https://github.com/vuepress-theme-hope/vuepress-theme-hope/commit/69ee328465291ec1983497c0979a28a3ac6118ce))
+- **md-enhance:** fix SlidePage home button ([a0b0372](https://github.com/vuepress-theme-hope/vuepress-theme-hope/commit/a0b03724223162a2345b073366a9cdf94cbb5c4e))
+- **theme:** fix aria-role ([31fb90c](https://github.com/vuepress-theme-hope/vuepress-theme-hope/commit/31fb90c98a13576d7a5610e793a9c10079e3171a))
+- **theme:** fix language dropdown update ([ab2c38b](https://github.com/vuepress-theme-hope/vuepress-theme-hope/commit/ab2c38bc0ba73d672ddc632fa2d3309543b9da95))
+
+### Performance Improvements
+
+- **md-enhance:** avoid parsing multiple times ([6b3959f](https://github.com/vuepress-theme-hope/vuepress-theme-hope/commit/6b3959fe915e023231f76f291fe5a3beae023f15))
 
 ## [2.0.0-rc.0](https://github.com/vuepress-theme-hope/vuepress-theme-hope/compare/v2.0.0-beta.252...v2.0.0-rc.0) (2023-11-17)
 
@@ -230,6 +267,8 @@ All notable changes to this project will be documented in this file. See [Conven
 - **shared:** improve compareDate ([fd9494b](https://github.com/vuepress-theme-hope/vuepress-theme-hope/commit/fd9494b47836bf9dfa7cacfcea585617625e2cb2))
 - **theme:** remove workaround ([eba8720](https://github.com/vuepress-theme-hope/vuepress-theme-hope/commit/eba872022688890656264fab720de14a0108fe51))
 - **theme:** split pageview chunk ([a9bc830](https://github.com/vuepress-theme-hope/vuepress-theme-hope/commit/a9bc830c327c1e02a4659edb08e0a7f87c989928))
+
+<!-- #endregion recent-change -->
 
 ## [2.0.0-beta.237](https://github.com/vuepress-theme-hope/vuepress-theme-hope/compare/v2.0.0-beta.236...v2.0.0-beta.237) (2023-09-05)
 
@@ -471,8 +510,6 @@ All notable changes to this project will be documented in this file. See [Conven
 ### Performance Improvements
 
 - **theme:** use functional component and small tweaks ([42e92e8](https://github.com/vuepress-theme-hope/vuepress-theme-hope/commit/42e92e8de34cab9fe877fc0b34ea9d8274c8c705))
-
-<!-- #endregion recent-beta -->
 
 ## [2.0.0-beta.218](https://github.com/vuepress-theme-hope/vuepress-theme-hope/compare/v2.0.0-beta.217...v2.0.0-beta.218) (2023-05-31)
 

@@ -1,6 +1,6 @@
 {
   "name": "vuepress-plugin-md-enhance",
-  "version": "2.0.0-rc.0",
+  "version": "2.0.0-rc.1",
   "description": "Markdown enhancement plugin for vuepress",
   "keywords": [
     "vuepress",
@@ -20,6 +20,7 @@
     "include",
     "mark",
     "markdown",
+    "markmap",
     "mermaid",
     "playground",
     "stylize",
@@ -77,28 +78,28 @@
     "yarn": ">=2"
   },
   "dependencies": {
-    "@babel/core": "^7.23.3",
-    "@mdit/plugin-align": "^0.6.5",
-    "@mdit/plugin-attrs": "^0.6.5",
-    "@mdit/plugin-container": "^0.6.5",
-    "@mdit/plugin-demo": "^0.6.5",
-    "@mdit/plugin-figure": "^0.6.5",
-    "@mdit/plugin-footnote": "^0.6.5",
-    "@mdit/plugin-img-lazyload": "^0.6.5",
-    "@mdit/plugin-img-mark": "^0.6.5",
-    "@mdit/plugin-img-size": "^0.6.5",
-    "@mdit/plugin-include": "^0.6.5",
-    "@mdit/plugin-katex": "^0.6.5",
-    "@mdit/plugin-mark": "^0.6.5",
-    "@mdit/plugin-mathjax": "^0.6.5",
-    "@mdit/plugin-stylize": "^0.6.5",
-    "@mdit/plugin-sub": "^0.6.5",
-    "@mdit/plugin-sup": "^0.6.5",
-    "@mdit/plugin-tab": "^0.6.5",
-    "@mdit/plugin-tasklist": "^0.6.5",
-    "@mdit/plugin-tex": "^0.6.5",
-    "@mdit/plugin-uml": "^0.6.5",
-    "@types/markdown-it": "^13.0.6",
+    "@mdit/plugin-alert": "^0.7.4",
+    "@mdit/plugin-align": "^0.7.4",
+    "@mdit/plugin-attrs": "^0.7.4",
+    "@mdit/plugin-container": "^0.7.4",
+    "@mdit/plugin-demo": "^0.7.4",
+    "@mdit/plugin-figure": "^0.7.4",
+    "@mdit/plugin-footnote": "^0.7.4",
+    "@mdit/plugin-img-lazyload": "^0.7.4",
+    "@mdit/plugin-img-mark": "^0.7.4",
+    "@mdit/plugin-img-size": "^0.7.4",
+    "@mdit/plugin-include": "^0.7.4",
+    "@mdit/plugin-katex": "^0.7.4",
+    "@mdit/plugin-mark": "^0.7.4",
+    "@mdit/plugin-mathjax": "^0.7.4",
+    "@mdit/plugin-stylize": "^0.7.4",
+    "@mdit/plugin-sub": "^0.7.4",
+    "@mdit/plugin-sup": "^0.7.4",
+    "@mdit/plugin-tab": "^0.7.4",
+    "@mdit/plugin-tasklist": "^0.7.4",
+    "@mdit/plugin-tex": "^0.7.4",
+    "@mdit/plugin-uml": "^0.7.4",
+    "@types/markdown-it": "^13.0.7",
     "@vuepress/client": "2.0.0-rc.0",
     "@vuepress/shared": "2.0.0-rc.0",
     "@vuepress/utils": "2.0.0-rc.0",
@@ -106,26 +107,30 @@
     "balloon-css": "^1.2.0",
     "js-yaml": "^4.1.0",
     "markdown-it": "^13.0.2",
-    "vue": "^3.3.8",
+    "vue": "^3.3.9",
     "vue-router": "^4.2.5",
     "vuepress-plugin-sass-palette": "workspace:*",
     "vuepress-shared": "workspace:*"
   },
   "devDependencies": {
-    "@types/babel__core": "7.20.4",
+    "@types/babel__core": "7.20.5",
+    "@types/js-yaml": "4.0.9",
     "@vuepress/bundler-vite": "2.0.0-rc.0",
     "@vuepress/core": "2.0.0-rc.0",
     "@vuepress/markdown": "2.0.0-rc.0",
-    "typescript": "5.2.2"
+    "typescript": "5.3.2"
   },
   "peerDependencies": {
-    "@types/js-yaml": "^4.0.9",
     "@types/reveal.js": "^4.4.5",
-    "@vue/repl": "^2.7.0",
+    "@vue/repl": "^3.0.0",
     "chart.js": "^4.4.0",
     "echarts": "^5.4.3",
-    "flowchart.ts": "^1.0.1",
+    "flowchart.ts": "^2.0.0",
     "katex": "^0.16.9",
+    "kotlin-playground": "^1.29.0",
+    "markmap-lib": "^0.15.7",
+    "markmap-toolbar": "^0.15.6",
+    "markmap-view": "^0.15.6",
     "mathjax-full": "^3.2.2",
     "mermaid": "^10.6.1",
     "reveal.js": "^5.0.2",
@@ -151,6 +156,18 @@
       "optional": true
     },
     "katex": {
+      "optional": true
+    },
+    "kotlin-playground": {
+      "optional": true
+    },
+    "markmap-lib": {
+      "optional": true
+    },
+    "markmap-toolbar": {
+      "optional": true
+    },
+    "markmap-view": {
       "optional": true
     },
     "mathjax-full": {

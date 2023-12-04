@@ -111,7 +111,7 @@ export default defineComponent({
         "div",
         { class: "vp-pagination" },
         enable.value
-          ? h("div", { class: "vp-pagination-list" }, [
+          ? h("nav", { class: "vp-pagination-list" }, [
               h("div", { class: "vp-pagination-number " }, [
                 // prev button
                 props.current > 1

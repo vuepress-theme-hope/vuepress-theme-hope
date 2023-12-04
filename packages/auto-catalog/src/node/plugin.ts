@@ -6,8 +6,8 @@ import {
   getLocales,
 } from "vuepress-shared/node";
 
-import { generateCatalog, injectCatalogInformation } from "./autoCatalog.js";
-import { convertOptions } from "./compact/index.js";
+import { generateCatalog } from "./autoCatalog.js";
+import { convertOptions } from "./compact.js";
 import { locales as defaultLocales } from "./locales.js";
 import type { AutoCatalogOptions } from "./options.js";
 import { CLIENT_FOLDER, PLUGIN_NAME, logger } from "./utils.js";
@@ -24,14 +24,7 @@ export const autoCatalogPlugin =
 
     useSassPalettePlugin(app, { id: "hope" });
 
-    const {
-      component,
-      iconRouteMetaKey = "icon",
-      indexRouteMetaKey = "index",
-      locales,
-      orderRouteMetaKey = "order",
-      titleRouteMetaKey = "title",
-    } = options;
+    const { component, locales } = options;
 
     return {
       name: PLUGIN_NAME,
@@ -43,16 +36,9 @@ export const autoCatalogPlugin =
           default: defaultLocales,
           config: locales,
         }),
-        AUTO_CATALOG_TITLE_META_KEY: titleRouteMetaKey,
-        AUTO_CATALOG_ICON_META_KEY: iconRouteMetaKey,
-        AUTO_CATALOG_ORDER_META_KEY: orderRouteMetaKey,
-        AUTO_CATALOG_INDEX_META_KEY: indexRouteMetaKey,
       }),
 
-      onInitialized: async (app): Promise<void> => {
-        injectCatalogInformation(app, options);
-        await generateCatalog(app, options);
-      },
+      onInitialized: (app): Promise<void> => generateCatalog(app, options),
 
       extendsBundlerOptions: (bundlerOptions: unknown, app): void => {
         addViteSsrNoExternal(bundlerOptions, app, "vuepress-shared");

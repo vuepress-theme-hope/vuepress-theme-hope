@@ -13,7 +13,6 @@ tag:
 可用组件:
 
 - ArtPlayer
-- AudioPlayer
 - Badge
 - BiliBili
 - CodePen
@@ -23,10 +22,10 @@ tag:
 - Share
 - StackBlitz
 - SiteInfo
+- VPBanner
+- VPCard
 - VidStack
-- VideoPlayer
 - XiGua
-- YouTube
 
 默认情况下，`<Badge />` 和 `<FontIcon />` 是启用的。
 
@@ -50,7 +49,6 @@ export default defineUserConfig({
         // 你想使用的组件
         components: [
           "ArtPlayer",
-          "AudioPlayer",
           "Badge",
           "BiliBili",
           "CodePen",
@@ -59,10 +57,10 @@ export default defineUserConfig({
           "Share",
           "SiteInfo",
           "StackBlitz",
+          "VPBanner",
+          "VPCard",
           "VidStack",
-          "VideoPlayer",
           "XiGua",
-          "YouTube",
         ],
       },
     },
@@ -83,7 +81,6 @@ export default {
         // 你想使用的组件
         components: [
           "ArtPlayer",
-          "AudioPlayer",
           "Badge",
           "BiliBili",
           "CodePen",
@@ -92,10 +89,10 @@ export default {
           "Share",
           "SiteInfo",
           "StackBlitz",
+          "VPBanner",
+          "VPCard",
           "VidStack",
-          "VideoPlayer",
           "XiGua",
-          "YouTube",
         ],
       },
     },
@@ -187,22 +184,6 @@ PDF 浏览器组件。
 
 有关可用属性，请参阅 <ProjectLink name="components" path="/zh/guide/media/vid-stack.html">VidStack</ProjectLink> 页面。
 
-## VideoPlayer
-
-> 先安装 `plyr` 。
-
-<!-- @include: @components/zh/guide/media/video-player.md#demo -->
-
-有关可用属性，请参阅 <ProjectLink name="components" path="/zh/guide/media/video-player.html">VideoPlayer</ProjectLink> 页面。
-
-## YouTube
-
-在 Markdown 文件中嵌入 YouTube 视频。
-
-<!-- @include: @components/zh/guide/media/you-tube.md#demo -->
-
-有关可用属性，请参阅 <ProjectLink name="components" path="/zh/guide/media/you-tube.html">YouTube</ProjectLink> 页面。
-
 ## ArtPlayer
 
 > 先安装 `artplayer` 。
@@ -210,11 +191,3 @@ PDF 浏览器组件。
 <!-- @include: @components/zh/guide/media/art-player.md#demo -->
 
 有关可用属性，请参阅 <ProjectLink name="components" path="/zh/guide/media/art-player.html">ArtPlayer</ProjectLink> 页面。
-
-## AudioPlayer
-
-> 先安装 `plyr` 。
-
-<!-- @include: @components/zh/guide/media/audio-player.md#demo -->
-
-有关可用属性，请参阅 <ProjectLink name="components" path="/zh/guide/media/audio-player.html">AudioPlayer</ProjectLink> 页面。

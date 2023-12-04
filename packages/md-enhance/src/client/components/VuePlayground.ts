@@ -1,5 +1,4 @@
 import type { Repl, ReplProps, ReplStore } from "@vue/repl";
-import type { EditorComponentType } from "@vue/repl/codemirror-editor";
 import type { VNode } from "vue";
 import { computed, defineComponent, h, onMounted, ref, shallowRef } from "vue";
 import { LoadingIcon, deepAssign } from "vuepress-shared/client";
@@ -44,7 +43,7 @@ export default defineComponent({
     const loading = ref(true);
     const component = shallowRef<typeof Repl>();
     const store = shallowRef<ReplStore>();
-    const editor = shallowRef<EditorComponentType>();
+    const editor = shallowRef();
 
     const playgroundOptions = computed(() =>
       deepAssign(
@@ -93,6 +92,7 @@ export default defineComponent({
               : null,
             component.value
               ? h(component.value, <ReplProps>{
+                  // eslint-disable-next-line @typescript-eslint/no-unsafe-assignment
                   editor: editor.value,
                   store: store.value,
                   autoResize: true,

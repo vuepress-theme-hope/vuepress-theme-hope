@@ -15,7 +15,7 @@
     "demo:webpack-dev": "vuepress-webpack dev src"
   },
   "devDependencies": {
-    "@vue/repl": "2.7.0",
+    "@vue/repl": "3.0.0",
     "@vuepress/cli": "2.0.0-rc.0",
     "@vuepress/client": "2.0.0-rc.0",
     "@vuepress/theme-default": "2.0.0-rc.0",
@@ -23,11 +23,15 @@
     "echarts": "5.4.3",
     "echarts-wordcloud": "2.1.0",
     "katex": "0.16.9",
+    "kotlin-playground": "1.29.0",
+    "markmap-lib": "0.15.7",
+    "markmap-toolbar": "0.15.6",
+    "markmap-view": "0.15.6",
     "mathjax-full": "3.2.2",
     "mermaid": "10.6.1",
     "reveal.js": "5.0.2",
     "sass-loader": "13.3.2",
-    "vue": "3.3.8",
+    "vue": "3.3.9",
     "vuepress-plugin-md-enhance": "workspace:*",
     "vuepress-vite": "2.0.0-rc.0",
     "vuepress-webpack": "2.0.0-rc.0"

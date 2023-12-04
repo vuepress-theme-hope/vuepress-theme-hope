@@ -1,0 +1,355 @@
+@use "sass:color";
+@use "vuepress-shared/styles/svg";
+@use "icons";
+
+:root {
+  // important
+  --important-title-color: #230555;
+  --important-bg-color: #f4eefe;
+  --important-border-color: #a371f7;
+  --important-code-bg-color: rgb(163 113 247 / 10%);
+
+  // info
+  --info-title-color: #193c47;
+  --info-bg-color: #eef9fd;
+  --info-border-color: #4cb3d4;
+  --info-code-bg-color: rgb(76 179 212 / 10%);
+
+  // note
+  --note-title-color: #474748;
+  --note-bg-color: #fdfdfe;
+  --note-border-color: #ccc;
+  --note-code-bg-color: rgb(212 213 216 / 20%);
+
+  // tip
+  --tip-title-color: #003100;
+  --tip-bg-color: #e6f6e6;
+  --tip-border-color: #009400;
+  --tip-code-bg-color: rgb(0 148 0 / 15%);
+
+  // warning
+  --warning-title-color: #4d3800;
+  --warning-bg-color: #fff8e6;
+  --warning-border-color: #e6a700;
+  --warning-code-bg-color: rgb(230 167 0 / 15%);
+
+  // caution
+  --caution-title-color: #4b1113;
+  --caution-bg-color: #ffebec;
+  --caution-border-color: #e13238;
+  --caution-code-bg-color: rgb(225 50 56 / 15%);
+
+  // detail
+  --detail-bg-color: #eee;
+  --detail-text-color: inherit;
+  --detail-code-bg-color: rgb(127 127 127 / 15%);
+}
+
+#{hope-config.$dark-selector} {
+  // important
+  --important-title-color: #f4eefe;
+  --important-bg-color: #230555;
+
+  // info
+  --info-title-color: #eef9fd;
+  --info-bg-color: #193c47;
+
+  // note
+  --note-title-color: #fdfdfe;
+  --note-bg-color: #474748;
+
+  // tip
+  --tip-title-color: #e6f6e6;
+  --tip-bg-color: #003100;
+
+  // warning
+  --warning-title-color: #fff8e6;
+  --warning-bg-color: #4d3800;
+
+  // caution
+  --caution-title-color: #ffebec;
+  --caution-bg-color: #4b1113;
+
+  // detail
+  --detail-bg-color: #333;
+  --detail-text-color: #a8a8a8;
+}
+
+.hint-container {
+  position: relative;
+  transition:
+    background var(--vp-ct),
+    border-color var(--vp-ct),
+    color var(--vp-ct);
+
+  @media print {
+    page-break-inside: avoid;
+  }
+
+  .hint-container-title {
+    position: relative;
+    font-weight: 600;
+    line-height: 1.25;
+  }
+
+  &.important,
+  &.info,
+  &.note,
+  &.tip,
+  &.warning,
+  &.caution {
+    margin: 1rem 0;
+    padding: 0.25rem 1rem;
+    border-inline-start-width: 0.3rem;
+    border-inline-start-style: solid;
+    border-radius: 0.5rem;
+
+    color: inherit;
+
+    @media (max-width: hope-config.$mobile) {
+      margin-inline: -0.75rem;
+    }
+
+    .hint-container-title {
+      padding-inline-start: 1.75rem;
+
+      @media print {
+        padding-inline-start: 0;
+      }
+
+      &::before {
+        content: " ";
+
+        position: absolute;
+        top: calc(50% - 0.6125em);
+        inset-inline-start: 0;
+
+        width: 1.25em;
+        height: 1.25em;
+
+        background-position: left;
+        background-repeat: no-repeat;
+
+        @media print {
+          display: none;
+        }
+      }
+    }
+
+    p {
+      line-height: 1.5;
+    }
+
+    a {
+      color: var(--vp-tc);
+    }
+  }
+
+  &.important {
+    border-color: var(--important-border-color);
+    background: var(--important-bg-color);
+
+    > .hint-container-title {
+      color: var(--important-title-color);
+
+      &::before {
+        @include svg.background-svg(icons.$important-icon);
+      }
+    }
+
+    code {
+      background: var(--important-code-bg-color);
+    }
+  }
+
+  &.info {
+    border-color: var(--info-border-color);
+    background: var(--info-bg-color);
+
+    > .hint-container-title {
+      color: var(--info-title-color);
+
+      &::before {
+        @include svg.background-svg(icons.$info-icon);
+      }
+    }
+
+    code {
+      background: var(--info-code-bg-color);
+    }
+  }
+
+  &.note {
+    border-color: var(--note-border-color);
+    background: var(--note-bg-color);
+
+    > .hint-container-title {
+      color: var(--note-title-color);
+
+      &::before {
+        @include svg.background-svg(icons.$note-icon);
+      }
+    }
+
+    code {
+      background: var(--note-code-bg-color);
+    }
+  }
+
+  &.tip {
+    border-color: var(--tip-border-color);
+    background: var(--tip-bg-color);
+
+    > .hint-container-title {
+      color: var(--tip-title-color);
+
+      &::before {
+        @include svg.background-svg(icons.$tip-icon);
+      }
+    }
+
+    code {
+      background: var(--tip-code-bg-color);
+    }
+  }
+
+  &.warning {
+    border-color: var(--warning-border-color);
+    background: var(--warning-bg-color);
+
+    > .hint-container-title {
+      color: var(--warning-title-color);
+
+      &::before {
+        @include svg.background-svg(icons.$warning-icon);
+      }
+    }
+
+    code {
+      background: var(--warning-code-bg-color);
+    }
+  }
+
+  &.caution {
+    border-color: var(--caution-border-color);
+    background: var(--caution-bg-color);
+
+    > .hint-container-title {
+      color: var(--caution-title-color);
+
+      &::before {
+        @include svg.background-svg(icons.$caution-icon);
+      }
+    }
+
+    code {
+      background: var(--caution-code-bg-color);
+    }
+  }
+
+  &.details {
+    position: relative;
+
+    display: block;
+
+    margin: 1rem 0;
+    padding: 1.5rem;
+    border-radius: 0.5rem;
+
+    background: var(--detail-bg-color);
+    color: var(--detail-text-color);
+
+    transition:
+      background var(--vp-tt),
+      color var(--vp-tt);
+
+    @media (max-width: hope-config.$mobile) {
+      margin-inline: -0.75rem;
+    }
+
+    h4 {
+      margin-top: 0;
+    }
+
+    figure,
+    p {
+      &:last-child {
+        margin-bottom: 0;
+        padding-bottom: 0;
+      }
+    }
+
+    a {
+      color: var(--vp-tc);
+    }
+
+    code {
+      background: var(--detail-code-bg-color);
+    }
+
+    summary {
+      position: relative;
+
+      margin: -1.5rem;
+      padding-block: 1.5rem;
+      padding-inline: 4rem 1.5rem;
+
+      list-style: none;
+
+      cursor: pointer;
+
+      // compatible with safari
+      &::-webkit-details-marker {
+        display: none;
+      }
+
+      &::marker {
+        color: transparent;
+        font-size: 0;
+      }
+
+      &::before,
+      &::after {
+        content: " ";
+
+        position: absolute;
+        top: calc(50% - 0.75rem);
+        inset-inline-start: 1.5rem;
+
+        width: 1.5rem;
+        height: 1.5rem;
+      }
+
+      &::before {
+        border-radius: 50%;
+        background: #ccc;
+        transition:
+          background var(--vp-ct),
+          transform var(--vp-tt);
+
+        #{hope-config.$dark-selector} & {
+          background: #555;
+        }
+      }
+
+      &::after {
+        background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24'%3E%3Cpath fill='rgba(0,0,0,0.5)' d='M7.41 15.41L12 10.83l4.59 4.58L18 14l-6-6-6 6z'/%3E%3C/svg%3E");
+        line-height: normal;
+        transition: transform var(--vp-tt);
+        transform: rotate(90deg);
+
+        #{hope-config.$dark-selector} & {
+          background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24'%3E%3Cpath fill='rgba(255,255,255,0.5)' d='M7.41 15.41L12 10.83l4.59 4.58L18 14l-6-6-6 6z'/%3E%3C/svg%3E");
+        }
+      }
+    }
+
+    &[open] > summary {
+      margin-bottom: 0.5em;
+
+      &::after {
+        transform: rotate(180deg);
+      }
+    }
+  }
+}

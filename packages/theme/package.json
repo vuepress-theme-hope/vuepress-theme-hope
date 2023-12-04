@@ -1,6 +1,6 @@
 {
   "name": "vuepress-theme-hope",
-  "version": "2.0.0-rc.0",
+  "version": "2.0.0-rc.1",
   "description": "A light vuepress theme with tons of features",
   "keywords": [
     "vuepress",
@@ -93,7 +93,7 @@
     "cheerio": "1.0.0-rc.12",
     "chokidar": "^3.5.3",
     "gray-matter": "^4.0.3",
-    "vue": "^3.3.8",
+    "vue": "^3.3.9",
     "vue-router": "^4.2.5",
     "vuepress-plugin-auto-catalog": "workspace:*",
     "vuepress-plugin-blog2": "workspace:*",

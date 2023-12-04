@@ -18,7 +18,7 @@ tag:
 
 :::
 
-::: danger
+::: caution
 
 **请勿**在主题选项中使用 `plugins.search`。
 

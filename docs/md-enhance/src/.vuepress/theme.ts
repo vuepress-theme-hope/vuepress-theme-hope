@@ -49,8 +49,10 @@ export default theme("md-enhance", {
           return file;
         },
       },
+      kotlinPlayground: true,
       mathjax: true,
       mark: true,
+      markmap: true,
       mermaid: true,
       playground: {
         presets: ["ts", "vue", "unocss"],
