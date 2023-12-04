@@ -190,7 +190,7 @@ Waline 评论的其他配置将在 <ProjectLink name="comment2" path="/zh/config
 
 ## Twikoo
 
-[Twikoo 官方文档](https://twikoo.js.org) 
+[Twikoo 官方文档](https://twikoo.js.org)
 
 ::: code-tabs#shell
 
@@ -220,7 +220,7 @@ npm i -D twikoo
 
 Vercel 默认域名 `*.vercel.app` 在中国大陆访问速度较慢甚至无法访问，绑定自己的域名可以提高访问速度，其他部署方式请查阅官方文档。
 
-::: 
+:::
 
 1. 申请 [MongoDB](https://www.mongodb.com/cloud/atlas/register) 账号
 1. 创建免费 MongoDB 数据库，区域推荐选择 `AWS / N. Virginia (us-east-1)`
