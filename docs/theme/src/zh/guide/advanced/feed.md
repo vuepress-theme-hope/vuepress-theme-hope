@@ -27,11 +27,7 @@ tag:
 - JSON 1.1
 - RSS 2.0
 
-::: tip
-
-Atom 和 JSON 是为了提供更多 Feed 软件的适配而提供的。
-
-如果可以，请尽可能使用 RSS。
+::: tip 如果可以，请尽可能使用 RSS。Atom 和 JSON 是为了最好的兼容性而提供的。
 
 :::
 

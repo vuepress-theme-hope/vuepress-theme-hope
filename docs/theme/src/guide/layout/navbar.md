@@ -694,7 +694,7 @@ export default navbar([
 ```ts
 import { navbar } from "vuepress-theme-hope";
 
-<!-- @include: ../../.vuepress/navbar/en.ts{3-} -->
+<!-- @include: ../../.vuepress/navbar/en.ts#config -->
 ```
 
 @tab JS
@@ -702,7 +702,7 @@ import { navbar } from "vuepress-theme-hope";
 ```js
 import { navbar } from "vuepress-theme-hope";
 
-<!-- @include: ../../.vuepress/navbar/en.ts{3-} -->
+<!-- @include: ../../.vuepress/navbar/en.ts#config -->
 ```
 
 :::

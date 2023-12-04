@@ -5,9 +5,7 @@ icon: fab fa-chrome
 
 ## Composables
 
-::: note
-
-这些函数只能在 setup 中调用
+::: note 这些函数只能在 setup 中调用。
 
 :::
 
@@ -15,9 +13,7 @@ icon: fab fa-chrome
 
 检查组件是否已全局注册。
 
-::: note
-
-该组件的本地导入不影响结果。
+::: note 组件的本地导入不影响结果。
 
 :::
 

@@ -7,15 +7,15 @@ dir:
 
 By installing and enabling this plugin, you can use more syntax in your Markdown files.
 
-::: note
+::: note Built-in enhancements by VuePress
 
-VuePress itself also adds some Markdown syntaxes. You can [view the official documentation](https://vuejs.press/guide/markdown.html).
+VuePress itself adds additional markdown features. See [official docs](https://vuejs.press/guide/markdown.html) for more information.
 
 :::
 
-::: tip
+::: tip Tree shaking
 
-Don't worry about the size of your site. The final output will only include codes of features you enabled.
+Output will only include codes of features you enabled, so no need to worry about the size.
 
 :::
 

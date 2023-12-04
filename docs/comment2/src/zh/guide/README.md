@@ -89,12 +89,10 @@ export default defineClientConfig({
 
 目前你可以选择 Giscus、Waline、 Twikoo 和 Artalk。
 
-::: tip 选择评论服务
+::: tip 推荐的评论服务
 
-你的博客或文档的目标人群:
-
-- 程序员和开发人员: Giscus
-- 公众: Waline
+- 面向程序员和开发人员: Giscus
+- 面向公众: Waline
 
 :::
 

@@ -89,12 +89,10 @@ By default it will be the `path` of the page, which means if you are deploying t
 
 Currently, you can choose from Giscus, Waline, Twikoo and Artalk.
 
-::: tip Choosing from comment services
+::: tip Recommended comment services
 
-People who your blog or documentation are targeting:
-
-- Programmers and developers: Giscus
-- General public: Waline
+- Facing programmers and developers: Giscus
+- Facing general public: Waline
 
 :::
 

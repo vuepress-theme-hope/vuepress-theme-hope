@@ -67,6 +67,7 @@ Card background
 - Required: No
 
 Card font color
+
 ::: tip
 
 To make background and font color adapt to dark mode automatically, you can pass css variable, such as: `var(--my-bg)`.

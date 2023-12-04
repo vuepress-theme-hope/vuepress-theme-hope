@@ -59,9 +59,7 @@ If your site has a lot of articles, you may consider this option to reduce feed 
 
 Custom element or component which should be preserved in feed.
 
-::: note
-
-By default, all unknown tags will be removed.
+::: note By default, all unknown tags will be removed.
 
 :::
 
@@ -171,15 +169,11 @@ RSS syntax xsl filename, relative to dest folder.
 
 ## getter
 
-Feed generation controller.
+Feed generation controller, see [Feed Getter](./getter.md).
 
-::: tip
-
-The plugin is providing a reasonable getter by default, if you want full control of feed generating, you can set this field.
+::: note The plugin has a built-in getter, only set this if you want full control of feed generation.
 
 :::
-
-For details, see [Feed Getter](./getter.md).
 
 ## locales
 

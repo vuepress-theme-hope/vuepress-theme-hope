@@ -5,9 +5,7 @@ icon: fab fa-chrome
 
 ## Composables
 
-::: note
-
-These function can only be called inside setup.
+::: note These function can only be called inside setup.
 
 :::
 
@@ -15,9 +13,7 @@ These function can only be called inside setup.
 
 Check whether a component is registered globally.
 
-::: note
-
-Local import of this component does not affect the result.
+::: note Local import of component does not affect the result.
 
 :::
 

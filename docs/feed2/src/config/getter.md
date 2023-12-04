@@ -41,9 +41,7 @@ Item content getter
 
 Item author getter.
 
-::: note
-
-The getter should return an empty array when author information is missing.
+::: note The getter should return an empty array when author information is missing.
 
 :::
 
@@ -163,9 +161,7 @@ Item last update date getter
 
 Item Image Getter
 
-::: note
-
-Make sure you are returning a full URL.
+::: note Ensure it's returning a full URL
 
 :::
 
@@ -175,9 +171,7 @@ Make sure you are returning a full URL.
 
 Item Contributor Getter
 
-::: note
-
-The getter should return an empty array when contributor information is missing.
+::: note The getter should return an empty array when contributor information is missing.
 
 :::
 

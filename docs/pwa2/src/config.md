@@ -20,7 +20,6 @@ Some options have their fallback if you don't set them.
 - lang: `siteConfig.locales['/'].lang` || `"en-US"`
 - start_url: `context.base`
 - scope: `context.base`
-
 - display: `"standalone"`
 - theme_color: `"#46bd87"`
 - background_color: `"#ffffff"`
@@ -90,6 +89,10 @@ Whether cache pictures
 - Default: `1024`
 
 Max picture size allowed to be cached, with KB unit
+
+::: note The value must not be greater than maxSize option
+
+:::
 
 ## update
 

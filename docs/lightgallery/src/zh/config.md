@@ -19,9 +19,7 @@ icon: gears
 
 想要启用的 Light Gallery 插件。
 
-::: note
-
-可选值:
+::: info 可用插件
 
 - `"autoplay"`: 自动播放
 - `"fullscreen"`: 全屏

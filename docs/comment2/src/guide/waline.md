@@ -110,9 +110,7 @@ Then, place the `<CommentService>` component at a suitable location in your site
 
 ::: tip
 
-You can also pass in other options supported by Waline (except `el`).
-
-For details, see [Waline Config](../config/waline.md)
+You can also pass in other options supported by Waline (except `el`). For details, see [Waline Config](../config/waline.md)
 
 :::
 

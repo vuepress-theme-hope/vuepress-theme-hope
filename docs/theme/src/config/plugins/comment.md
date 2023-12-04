@@ -21,9 +21,7 @@ The theme provide comment support using `vuepress-plugin-comment2`, and it passe
 - Twikoo
 - Waline
 
-::: note
-
-If you don't need the comment feature, ignore this option.
+::: note Ignore this option if you don't need comment feature.
 
 :::
 

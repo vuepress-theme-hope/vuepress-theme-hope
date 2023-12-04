@@ -20,15 +20,11 @@ The `vuepress-plugin-feed2` plugin can generate feed files in the following thre
 - JSON 1.1
 - RSS 2.0
 
-Please enable the plugin by setting `atom`, `json` or `rss` to `true` in `plugins.feed` according to the format you want to generate.
-
-::: tip
-
-Atom and JSON are provided to provide more adaptations for Feed software.
-
-If possible, use RSS as first choice.
+::: tip Please use RSS if possible. Atom and JSON are only provided for best compatibility.
 
 :::
+
+Please enable the plugin by setting `atom`, `json` or `rss` to `true` in `plugins.feed` according to the format you want to generate.
 
 ::: info
 
