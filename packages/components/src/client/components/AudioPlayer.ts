@@ -1,13 +1,6 @@
 import type { Options as PlyrOptions } from "plyr";
 import type { PropType, VNode } from "vue";
-import {
-  computed,
-  defineComponent,
-  h,
-  onBeforeMount,
-  onMounted,
-  shallowRef,
-} from "vue";
+import { defineComponent, h, onBeforeMount, onMounted, shallowRef } from "vue";
 
 import { getLink } from "../utils/index.js";
 
@@ -86,17 +79,16 @@ export default defineComponent({
     let player: Plyr | null = null;
     const audio = shallowRef<HTMLAudioElement>();
 
-    const plyrOptions = computed(() => ({
-      hideYouTubeDOMError: true,
-      ...props.options,
-    }));
-
     onMounted(async () => {
       const { default: Plyr } = await import(
         /* webpackChunkName: "plyr" */ "plyr"
       );
 
-      player = new Plyr(audio.value!, plyrOptions.value);
+      player = new Plyr(audio.value!, {
+        // @ts-ignore
+        hideYouTubeDOMError: true,
+        ...props.options,
+      });
     });
 
     onBeforeMount(() => {
