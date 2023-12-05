@@ -27,12 +27,6 @@ docs:
     repo: https://github.com/apache/iotdb
     preview: /assets/image/iotdb.jpg
 
-  - name: listr2
-    desc: Create beautiful CLI interfaces via easy and logical-to-implement task lists that feel alive and interactive.
-    url: https://listr2.kilic.dev/
-    repo: https://github.com/listr2/listr2
-    preview: /assets/image/listr2.jpg
-
   - name: ZLMediaKit
     desc: An high-performance, enterprise-level streaming media service framework based on C++11.
     url: https://docs.zlmediakit.com/
