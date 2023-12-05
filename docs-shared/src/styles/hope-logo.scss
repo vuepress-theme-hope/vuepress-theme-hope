@@ -1,6 +1,12 @@
 #hero-logo {
+  position: relative;
+  z-index: 1;
+
   margin: 0 auto;
+
   outline: none;
+
   opacity: 0;
+
   transition: opacity 1s ease;
 }

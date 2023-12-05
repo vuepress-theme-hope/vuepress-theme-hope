@@ -1,7 +1,7 @@
 import { useSiteLocaleData, withBase } from "@vuepress/client";
-import { type VNode, computed, defineComponent, h } from "vue";
-import { RouterLink } from "vue-router";
-import { getAuthor, keys } from "vuepress-shared/client";
+import type { VNode } from "vue";
+import { computed, defineComponent, h } from "vue";
+import { VPLink, getAuthor, keys } from "vuepress-shared/client";
 
 import { useNavigate, useThemeLocaleData } from "@theme-hope/composables/index";
 import SocialMedia from "@theme-hope/modules/blog/components/SocialMedia";
@@ -32,22 +32,30 @@ export default defineComponent({
       () =>
         blogOptions.value.name ||
         getAuthor(themeLocale.value.author)[0]?.name ||
-        siteLocale.value.title
+        siteLocale.value.title,
     );
 
     const bloggerAvatar = computed(
-      () => blogOptions.value.avatar || themeLocale.value.logo
+      () => blogOptions.value.avatar || themeLocale.value.logo,
     );
 
     const locale = computed(() => themeLocale.value.blogLocales);
 
     const intro = computed(() => blogOptions.value.intro);
 
-    return (): VNode =>
-      h(
+    return (): VNode => {
+      const { article, category, tag, timeline } = locale.value;
+      const countItems: [string, number, string][] = [
+        [articles.value.path, articles.value.items.length, article],
+        [categoryMap.value.path, keys(categoryMap.value.map).length, category],
+        [tagMap.value.path, keys(tagMap.value.map).length, tag],
+        [timelines.value.path, timelines.value.items.length, timeline],
+      ];
+
+      return h(
         "div",
         {
-          class: "blogger-info",
+          class: "vp-blogger-info",
           vocab: "https://schema.org/",
           typeof: "Person",
         },
@@ -55,13 +63,13 @@ export default defineComponent({
           h(
             "div",
             {
-              class: "blogger",
+              class: "vp-blogger",
               ...(intro.value
                 ? {
                     style: { cursor: "pointer" },
                     "aria-label": locale.value.intro,
                     "data-balloon-pos": "down",
-                    role: "navigation",
+                    role: "link",
                     onClick: () => navigate(intro.value!),
                   }
                 : {}),
@@ -70,52 +78,46 @@ export default defineComponent({
               bloggerAvatar.value
                 ? h("img", {
                     class: [
-                      "blogger-avatar",
+                      "vp-blogger-avatar",
                       { round: blogOptions.value.roundAvatar },
                     ],
                     src: withBase(bloggerAvatar.value),
                     property: "image",
                     alt: "Blogger Avatar",
+                    loading: "lazy",
                   })
                 : null,
               bloggerName.value
                 ? h(
                     "div",
-                    { class: "blogger-name", property: "name" },
-                    bloggerName.value
+                    { class: "vp-blogger-name", property: "name" },
+                    bloggerName.value,
                   )
                 : null,
               blogOptions.value.description
                 ? h("div", {
-                    class: "blogger-description",
+                    class: "vp-blogger-description",
                     innerHTML: blogOptions.value.description,
                   })
                 : null,
               intro.value
                 ? h("meta", { property: "url", content: withBase(intro.value) })
                 : null,
-            ]
+            ],
           ),
-          h("div", { class: "num-wrapper" }, [
-            h(RouterLink, { to: articles.value.path }, () => [
-              h("div", { class: "num" }, articles.value.items.length),
-              h("div", locale.value.article),
-            ]),
-            h(RouterLink, { to: categoryMap.value.path }, () => [
-              h("div", { class: "num" }, keys(categoryMap.value.map).length),
-              h("div", locale.value.category),
-            ]),
-            h(RouterLink, { to: tagMap.value.path }, () => [
-              h("div", { class: "num" }, keys(tagMap.value.map).length),
-              h("div", locale.value.tag),
-            ]),
-            h(RouterLink, { to: timelines.value.path }, () => [
-              h("div", { class: "num" }, timelines.value.items.length),
-              h("div", locale.value.timeline),
-            ]),
-          ]),
+          h(
+            "div",
+            { class: "vp-blog-counts" },
+            countItems.map(([path, count, locale]) =>
+              h(VPLink, { class: "vp-blog-count", to: path }, () => [
+                h("div", { class: "count" }, count),
+                h("div", locale),
+              ]),
+            ),
+          ),
           h(SocialMedia),
-        ]
+        ],
       );
+    };
   },
 });

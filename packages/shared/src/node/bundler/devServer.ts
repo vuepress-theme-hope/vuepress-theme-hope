@@ -1,13 +1,13 @@
-import { type IncomingMessage, type ServerResponse } from "node:http";
+import type { IncomingMessage, ServerResponse } from "node:http";
 
-import { type ViteBundlerOptions } from "@vuepress/bundler-vite";
-import {
-  type WebpackBundlerOptions,
-  type WebpackDevServer,
+import type { ViteBundlerOptions } from "@vuepress/bundler-vite";
+import type {
+  WebpackBundlerOptions,
+  WebpackDevServer,
 } from "@vuepress/bundler-webpack";
-import { type App } from "@vuepress/core";
-import { type HandleFunction } from "connect";
-import { type Plugin } from "vite";
+import type { App } from "@vuepress/core";
+import type { HandleFunction } from "connect";
+import type { Plugin } from "vite";
 
 import { getBundlerName } from "./getBundler.js";
 import { mergeViteConfig } from "./vite/index.js";
@@ -23,7 +23,7 @@ export interface CustomServerOptions {
    */
   response: (
     request: IncomingMessage,
-    response: ServerResponse
+    response: ServerResponse,
   ) => Promise<string | Buffer>;
 
   /**
@@ -48,7 +48,7 @@ export const useCustomDevServer = (
     errMsg = "The server encountered an error",
     response: responseHandler,
     path,
-  }: CustomServerOptions
+  }: CustomServerOptions,
 ): void => {
   const { base } = app.options;
   const bundlerName = getBundlerName(app);
@@ -60,7 +60,7 @@ export const useCustomDevServer = (
       const viteBundlerOptions = <ViteBundlerOptions>bundlerOptions;
       const handler: HandleFunction = (
         request: IncomingMessage,
-        response: ServerResponse
+        response: ServerResponse,
       ) => {
         responseHandler(request, response)
           .then((data) => {
@@ -82,7 +82,7 @@ export const useCustomDevServer = (
 
       viteBundlerOptions.viteOptions = mergeViteConfig(
         viteBundlerOptions.viteOptions || {},
-        { plugins: [viteMockRequestPlugin] }
+        { plugins: [viteMockRequestPlugin] },
       );
     }
 
@@ -94,7 +94,7 @@ export const useCustomDevServer = (
 
       webpackBundlerOptions.devServerSetupMiddlewares = (
         middlewares: WebpackDevServer.Middleware[],
-        server: WebpackDevServer
+        server: WebpackDevServer,
       ): WebpackDevServer.Middleware[] => {
         server.app?.get(
           `${base}${removeLeadingSlash(path)}`,
@@ -102,7 +102,7 @@ export const useCustomDevServer = (
             responseHandler(request, response)
               .then((data) => response.status(200).send(data))
               .catch(() => response.status(500).send(errMsg));
-          }
+          },
         );
 
         return devServerSetupMiddlewares

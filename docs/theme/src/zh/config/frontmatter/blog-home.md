@@ -49,14 +49,21 @@ tag:
 - 类型: `string`
 - 必填: 否
 
-主页图标 (logo) 地址，需要填入绝对路径 (图片需要放入 `.vuepress/public` 文件夹)
+主页图标 (logo) 地址，不支持相对路径。
 
 ## heroImageDark
 
 - 类型: `string`
+- 默认值: `heroImage`
+
+深色模式下主页图标 (logo) 地址，不支持相对路径。
+
+## heroImageStyle
+
+- 类型: `Record<string, string> | string`
 - 必填: 否
 
-深色模式下主页图标 (logo) 地址，需要填入绝对路径 (图片需要放入 `.vuepress/public` 文件夹)，默认同 `heroImage`。
+首页图标的 CSS 样式
 
 ## heroAlt
 
@@ -70,7 +77,14 @@ tag:
 - 类型: `string | false`
 - 默认值: 一张内置风景图片
 
-背景图片的地址，需填写绝对路径或完整路径。如果不填写，会自动应用一张默认的风景图片。
+背景图片的地址，不支持相对路径。如果不填写，会自动应用一张默认的风景图片。
+
+## bgImageDark
+
+- 类型: `string`
+- 默认值: `bgImage`
+
+深色模式下背景图片的地址，不支持相对路径。
 
 ## bgImageStyle
 
@@ -78,13 +92,6 @@ tag:
 - 必填: 否
 
 背景图片的 CSS 样式。
-
-## heroImageStyle
-
-- 类型: `Record<string, string> | string`
-- 必填: 否
-
-首页图标的 CSS 样式
 
 ## heroFullScreen
 

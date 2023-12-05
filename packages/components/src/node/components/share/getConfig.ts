@@ -1,14 +1,14 @@
 import { isPlainObject, isString } from "vuepress-shared/node";
 
 import { AVAILABLE_SERVICES, SHARE_CONFIG } from "./config.js";
-import {
-  type ShareService,
-  type ShareServiceOptions,
+import type {
+  ShareService,
+  ShareServiceOptions,
 } from "../../../shared/index.js";
-import { type ComponentOptions } from "../../options/index.js";
+import type { ComponentOptions } from "../../options/index.js";
 
 export const getShareServiceConfig = (
-  options: ComponentOptions
+  options: ComponentOptions,
 ): ShareServiceOptions[] => {
   const services: ShareService[] =
     options.componentOptions?.share?.services ?? AVAILABLE_SERVICES;
@@ -23,7 +23,7 @@ export const getShareServiceConfig = (
           // handle twitter user name
           link: SHARE_CONFIG[service].link.replace(
             "[twitter-user]",
-            options.componentOptions?.share?.twitterUserName ?? ""
+            options.componentOptions?.share?.twitterUserName ?? "",
           ),
         });
       // a built-in service

@@ -1,5 +1,6 @@
 import { ClientOnly, usePageLang } from "@vuepress/client";
-import { type PropType, type VNode, defineComponent, h } from "vue";
+import type { PropType, VNode } from "vue";
+import { defineComponent, h } from "vue";
 
 import { CalendarIcon } from "@theme-hope/modules/info/components/icons";
 import { useMetaLocale } from "@theme-hope/modules/info/composables/index";
@@ -59,15 +60,15 @@ export default defineComponent({
                   ClientOnly,
                   () =>
                     props.localizedDate ||
-                    props.date!.toLocaleDateString(lang.value)
-                )
+                    props.date!.toLocaleDateString(lang.value),
+                ),
               ),
               h("meta", {
                 property: "datePublished",
                 // ISO Format Date string
                 content: props.date.toISOString() || "",
               }),
-            ]
+            ],
           )
         : null;
   },

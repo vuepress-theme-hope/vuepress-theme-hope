@@ -1,6 +1,6 @@
 @use "vuepress-shared/styles/reset";
 
-.code-tabs-nav {
+.vp-code-tabs-nav {
   overflow-x: auto;
 
   margin: 0.85rem 0 -0.85rem;
@@ -19,13 +19,12 @@
   }
 
   @media (max-width: hope-config.$mobile) {
-    margin-right: -1.5rem;
-    margin-left: -1.5rem;
+    margin-inline: -1.5rem;
     border-radius: 0;
   }
 }
 
-.code-tabs-nav-tab {
+.vp-code-tab-nav {
   @include reset.button;
 
   position: relative;
@@ -44,7 +43,9 @@
 
   cursor: pointer;
 
-  transition: background var(--vp-ct), color var(--vp-ct);
+  transition:
+    background var(--vp-ct),
+    color var(--vp-ct);
 
   &:hover {
     background: var(--code-tabs-nav-hover-color, #434a57);
@@ -71,7 +72,6 @@
   }
 
   &.active {
-    padding: 6px 16px;
     background: var(--code-bg-color, #282c34);
 
     &::before {
@@ -95,11 +95,25 @@
     &::before {
       display: none;
     }
+
+    #{hope-config.$rtl-selector} & {
+      &::before {
+        display: block;
+      }
+
+      &::after {
+        display: none;
+      }
+    }
   }
 }
 
-.code-tab {
+.vp-code-tab {
   display: none;
+
+  @media print {
+    display: block;
+  }
 
   &.active {
     display: block;
@@ -111,6 +125,7 @@
 
     @media (max-width: hope-config.$mobile) {
       margin: 0.85rem -1.5rem;
+      border-radius: 0;
     }
 
     code {
@@ -118,5 +133,14 @@
         white-space: pre-wrap;
       }
     }
+  }
+}
+
+.vp-code-tab-title {
+  display: none;
+  font-weight: 500;
+
+  @media print {
+    display: block;
   }
 }

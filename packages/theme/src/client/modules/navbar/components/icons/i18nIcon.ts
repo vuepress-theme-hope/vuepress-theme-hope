@@ -1,4 +1,5 @@
-import { type FunctionalComponent, h } from "vue";
+import type { FunctionalComponent } from "vue";
+import { h } from "vue";
 import { IconBase } from "vuepress-shared/client";
 
 export const I18nIcon: FunctionalComponent = () =>

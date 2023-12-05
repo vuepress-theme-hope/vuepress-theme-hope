@@ -139,27 +139,55 @@ useCustomDevServer(bundlerOptions, app, {
 
 ## Webpack 相关
 
-- addChainWebpack
+- chainWebpack
 
   链式修改 webpack 配置.
 
   ```ts
-  export const addChainWebpack: (
+  export const chainWebpack: (
     { app, config }: WebpackCommonOptions,
     chainWebpack: (
       config: WebpackChainConfig,
       isServer: boolean,
-      isBuild: boolean
-    ) => void
+      isBuild: boolean,
+    ) => void,
   ) => void;
   ```
 
   ::: details 示例
 
   ```ts
-  import { addChainWebpack } from "vuepress-shared/node";
+  import { chainWebpack } from "vuepress-shared/node";
 
-  addChainWebpack(bundlerOptions, app, (config, isServer, isBuild) => {
+  chainWebpack(bundlerOptions, app, (config, isServer, isBuild) => {
+    // do some customize here
+  });
+  ```
+
+  :::
+
+- configWebpack
+
+  配置 Webpack
+
+  ```ts
+  export const configWebpack: (
+    bundlerOptions: unknown,
+    app: App,
+    configureWebpack: (
+      config: WebpackConfiguration,
+      isServer: boolean,
+      isBuild: boolean,
+    ) => void,
+  ) => void;
+  ```
+
+  ::: details 实例
+
+  ```ts
+  import { configWebpack } from "vuepress-shared/node";
+
+  configWebpack(bundlerOptions, app, (config, isServer, isBuild) => {
     // do some customize here
   });
   ```
@@ -191,7 +219,7 @@ useCustomDevServer(bundlerOptions, app, {
 export const addViteOptimizeDepsInclude: (
   bundlerOptions: unknown,
   app: App,
-  module: string | string[]
+  module: string | string[],
 ) => void;
 
 /**
@@ -200,7 +228,7 @@ export const addViteOptimizeDepsInclude: (
 export const addViteOptimizeDepsExclude: (
   bundlerOptions: unknown,
   app: App,
-  module: string | string[]
+  module: string | string[],
 ) => void;
 
 /**
@@ -209,7 +237,7 @@ export const addViteOptimizeDepsExclude: (
 export const addViteSsrExternal: (
   bundlerOptions: unknown,
   app: App,
-  module: string | string[]
+  module: string | string[],
 ) => void;
 
 /**
@@ -218,7 +246,7 @@ export const addViteSsrExternal: (
 export const addViteSsrNoExternal: (
   bundlerOptions: unknown,
   app: App,
-  module: string | string[]
+  module: string | string[],
 ) => void;
 ```
 
@@ -248,7 +276,7 @@ addViteSsrExternal(bundlerOptions, app, "packageA");
   export const addViteConfig: (
     bundlerOptions: unknown,
     app: App,
-    config: Record<string, unknown>
+    config: Record<string, unknown>,
   ) => void;
   ```
 
@@ -273,7 +301,7 @@ addViteSsrExternal(bundlerOptions, app, "packageA");
   ```ts
   export const mergeViteConfig: (
     defaults: Record<string, any>,
-    overrides: Record<string, any>
+    overrides: Record<string, any>,
   ) => Record<string, any>;
   ```
 

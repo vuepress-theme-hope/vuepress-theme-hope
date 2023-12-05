@@ -1,4 +1,5 @@
-import { type PropType, type VNode, defineComponent, h, onMounted } from "vue";
+import type { PropType, VNode } from "vue";
+import { defineComponent, h, onMounted } from "vue";
 import { entries, keys } from "vuepress-shared/client";
 
 import "../styles/theme-color-picker.scss";
@@ -33,7 +34,7 @@ export default defineComponent({
       }
 
       classes.remove(
-        ...themes.filter((themeColorClass) => themeColorClass !== theme)
+        ...themes.filter((themeColorClass) => themeColorClass !== theme),
       );
 
       classes.add(theme);
@@ -53,7 +54,7 @@ export default defineComponent({
           h("span", {
             class: "theme-color",
             onClick: () => setThemeColor(),
-          })
+          }),
         ),
         entries(props.themeColor).map(([color, value]) =>
           h(
@@ -61,8 +62,8 @@ export default defineComponent({
             h("span", {
               style: { background: value },
               onClick: () => setThemeColor(color),
-            })
-          )
+            }),
+          ),
         ),
       ]);
   },

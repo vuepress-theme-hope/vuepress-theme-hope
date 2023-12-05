@@ -1,19 +1,20 @@
 @use "vuepress-shared/styles/arrow";
-@use "vuepress-shared/styles/wrapper";
 
-.page-nav {
-  @include wrapper.horizontal-wrapper;
-
+.vp-page-nav {
   display: flex;
   flex-wrap: wrap;
 
   min-height: 2rem;
   margin-top: 0;
-  padding-top: 0.5rem;
-  padding-bottom: 0.5rem;
+  padding-block: 0.5rem;
+  padding-inline: 2rem;
   border-top: 1px solid var(--border-color);
 
   transition: border-top var(--color-transition);
+
+  @media (max-width: hope-config.$pad) {
+    padding-inline: 1rem;
+  }
 
   @media print {
     display: none;
@@ -50,6 +51,12 @@
 
     .icon {
       margin-inline-end: 0.25em;
+      font-size: 1em;
+    }
+
+    img.icon {
+      vertical-align: -0.125em;
+      height: 1em;
     }
   }
 
@@ -58,6 +65,12 @@
 
     .icon {
       margin-inline-start: 0.25em;
+      font-size: 1em;
+    }
+
+    img.icon {
+      vertical-align: -0.125em;
+      height: 1em;
     }
   }
 }

@@ -1,18 +1,19 @@
-import { type PluginFunction } from "@vuepress/core";
+import type { PluginFunction } from "@vuepress/core";
 import { watch } from "chokidar";
 import { useSassPalettePlugin } from "vuepress-plugin-sass-palette";
 import {
+  addViteOptimizeDepsInclude,
   addViteSsrNoExternal,
   checkVersion,
   fromEntries,
   getLocales,
 } from "vuepress-shared/node";
 
-import { convertOptions } from "./compact/index.js";
+import { convertOptions } from "./compact.js";
 import { setPageExcerpt } from "./excerpt.js";
 import { generateWorker } from "./generateWorker.js";
 import { searchProLocales } from "./locales.js";
-import { type SearchProOptions } from "./options.js";
+import type { SearchProOptions } from "./options.js";
 import {
   prepareSearchIndex,
   removeSearchIndex,
@@ -29,7 +30,7 @@ export const searchProPlugin =
 
     useSassPalettePlugin(app, { id: "hope" });
 
-    checkVersion(app, PLUGIN_NAME, "2.0.0-beta.62");
+    checkVersion(app, PLUGIN_NAME, "2.0.0-rc.0");
 
     if (app.env.isDebug) logger.info("Options:", options);
 
@@ -41,12 +42,13 @@ export const searchProPlugin =
       },
 
       define: {
+        SEARCH_PRO_ENABLE_AUTO_SUGGESTIONS: options.autoSuggestions !== false,
         SEARCH_PRO_CUSTOM_FIELDS: fromEntries(
           (options.customFields || [])
             .map(({ formatter }, index) =>
-              formatter ? [index.toString(), formatter] : null
+              formatter ? [index.toString(), formatter] : null,
             )
-            .filter((item): item is [string, string] => item !== null)
+            .filter((item): item is [string, string] => item !== null),
         ),
         SEARCH_PRO_LOCALES: getLocales({
           app,
@@ -55,7 +57,8 @@ export const searchProPlugin =
           default: searchProLocales,
         }),
         SEARCH_PRO_OPTIONS: {
-          delay: options.delay || 300,
+          searchDelay: options.searchDelay || 150,
+          suggestDelay: options.suggestDelay || 0,
           queryHistoryCount: options.queryHistoryCount || 5,
           resultHistoryCount: options.resultHistoryCount || 5,
           hotKeys: options.hotKeys || [
@@ -64,11 +67,13 @@ export const searchProPlugin =
           ],
           worker: options.worker || "search-pro.worker.js",
         },
+        SEARCH_PRO_SORT_STRATEGY: JSON.stringify(options.sortStrategy || "max"),
       },
 
       clientConfigFile: `${CLIENT_FOLDER}config.js`,
 
       extendsBundlerOptions: (bundlerOptions: unknown, app): void => {
+        addViteOptimizeDepsInclude(bundlerOptions, app, "slimsearch");
         addViteSsrNoExternal(bundlerOptions, app, [
           "fflate",
           "vuepress-shared",

@@ -6,9 +6,7 @@ title: Date Related
 
 Get date info from a string or Date object.
 
-::: note
-
-The function returns null instead of throw error when the date is invalid.
+::: note The function returns null instead of throw error when the date is invalid.
 
 :::
 
@@ -36,7 +34,7 @@ export interface DateInfo {
  */
 export const getDateInfo: (
   date: string | Date | undefined,
-  timezone?: string
+  timezone?: string,
 ) => DateInfo | null;
 ```
 
@@ -112,7 +110,7 @@ Invalid date will appear at last.
  */
 export const compareDate: (
   dateA: Date | number | string | undefined,
-  dateB: Date | number | string | undefined
+  dateB: Date | number | string | undefined,
 ) => number;
 ```
 
@@ -125,6 +123,7 @@ import { compareDate } from "vuepress-shared/node";
 const dates = [
   "2021-01-01",
   "2022-04-05 08:00:00",
+  undefined,
   "04:38:45",
   "19999",
   "2022-03-08",
@@ -135,8 +134,9 @@ dates.sort(compareDate);
 //   "2022-04-05 08:00:00",
 //   "2022-03-08",
 //   "2021-01-01",
-//   "04:38:45",
 //   "19999",
+//   "04:38:45",
+//   undefined,
 // ];
 ```
 

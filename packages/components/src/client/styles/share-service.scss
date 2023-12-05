@@ -1,13 +1,13 @@
 @use "vuepress-shared/styles/reset";
 
-.share-button {
+.vp-share-button {
   @include reset.button;
 
   display: inline-block;
   padding: 0.25em;
 }
 
-.share-icon {
+.vp-share-icon {
   width: 2em;
   height: 2em;
   color: #fff;
@@ -27,7 +27,7 @@
     transform: scale(1.1);
   }
 
-  &.color-wrapper {
+  &.colorful {
     width: 1.5em;
     height: 1.5em;
     padding: 0.25em;

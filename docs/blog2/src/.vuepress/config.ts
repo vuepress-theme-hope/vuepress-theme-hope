@@ -2,9 +2,7 @@ import { config } from "docs-shared";
 import theme from "./theme.js";
 
 export default config(
-  {
-    name: "blog2",
-  },
+  { name: "blog2" },
   {
     locales: {
       "/": {
@@ -21,5 +19,5 @@ export default config(
     },
 
     theme,
-  }
+  },
 );

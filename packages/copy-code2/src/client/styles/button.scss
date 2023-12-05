@@ -36,8 +36,8 @@ div[class*="language-"] {
     &:not(.fancy) {
       @include reset.button;
       position: absolute;
-      top: 0;
-      right: 3em;
+      top: 0.5em;
+      right: 0.5em;
       z-index: 5;
 
       width: 2.5rem;
@@ -49,8 +49,14 @@ div[class*="language-"] {
 
       transition: opacity 0.4s;
 
-      &:hover {
+      &:hover,
+      &.copied {
         background: var(--code-hl-bg-color, rgb(0 0 0 / 66%));
+      }
+
+      &:focus,
+      &.copied {
+        opacity: 1;
       }
 
       &.copied::after {
@@ -58,7 +64,7 @@ div[class*="language-"] {
 
         position: absolute;
         top: 0;
-        right: 100%;
+        right: calc(100% + 0.25rem);
 
         display: block;
 
@@ -133,8 +139,13 @@ div[class*="language-"] {
     }
   }
 
-  &:hover > button.copy-code-button:not(.fancy),
-  > button.copy-code-button:not(.fancy):focus {
-    opacity: 1;
+  &:hover {
+    &::before {
+      display: none;
+    }
+
+    > button.copy-code-button:not(.fancy) {
+      opacity: 1;
+    }
   }
 }

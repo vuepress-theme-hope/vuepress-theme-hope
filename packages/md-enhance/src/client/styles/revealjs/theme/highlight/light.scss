@@ -1,0 +1,70 @@
+@mixin highlight() {
+  .hljs-comment,
+  .hljs-quote {
+    color: #8e908c;
+  }
+
+  .hljs-deletion,
+  .hljs-name,
+  .hljs-regexp,
+  .hljs-selector-class,
+  .hljs-selector-id,
+  .hljs-tag,
+  .hljs-template-variable,
+  .hljs-variable {
+    color: #c82829;
+  }
+
+  // stylelint-disable selector-class-pattern
+  .hljs-built_in,
+  .hljs-builtin-name,
+  .hljs-link,
+  .hljs-literal,
+  .hljs-meta,
+  .hljs-number,
+  .hljs-params,
+  .hljs-type {
+    color: #f5871f;
+  }
+  // stylelint-enable selector-class-pattern
+
+  .hljs-attribute {
+    color: #eab700;
+  }
+
+  .hljs-addition,
+  .hljs-bullet,
+  .hljs-string,
+  .hljs-symbol {
+    color: #718c00;
+  }
+
+  .hljs-section,
+  .hljs-title {
+    color: #4271ae;
+  }
+
+  .hljs-keyword,
+  .hljs-selector-tag {
+    color: #8959a8;
+  }
+
+  .hljs {
+    display: block;
+
+    overflow-x: auto;
+
+    padding: 0.5em;
+
+    background: #fff;
+    color: #4d4d4c;
+  }
+
+  .hljs-emphasis {
+    font-style: italic;
+  }
+
+  .hljs-strong {
+    font-weight: 700;
+  }
+}

@@ -1,3 +1,13 @@
+<script setup lang="ts">
+import { RouterLink } from "vue-router";
+import { useBlogCategory } from "vuepress-plugin-blog2/client";
+
+import ArticleList from "../components/ArticleList.vue";
+import ParentLayout from "@vuepress/theme-default/layouts/Layout.vue";
+
+const categoryMap = useBlogCategory("category");
+</script>
+
 <template>
   <ParentLayout>
     <template #page>
@@ -20,15 +30,7 @@
     </template>
   </ParentLayout>
 </template>
-<script setup lang="ts">
-import { RouterLink } from "vue-router";
-import { useBlogCategory } from "vuepress-plugin-blog2/client";
 
-import ArticleList from "../components/ArticleList.vue";
-import ParentLayout from "@vuepress/theme-default/layouts/Layout.vue";
-
-const categoryMap = useBlogCategory("category");
-</script>
 <style lang="scss">
 @use "@vuepress/theme-default/styles/mixins";
 
@@ -56,7 +58,9 @@ const categoryMap = useBlogCategory("category");
 
     cursor: pointer;
 
-    transition: background 0.3s, color 0.3s;
+    transition:
+      background 0.3s,
+      color 0.3s;
 
     @media (max-width: 419px) {
       font-size: 0.9rem;
@@ -67,7 +71,7 @@ const categoryMap = useBlogCategory("category");
 
       min-width: 1rem;
       height: 1.2rem;
-      margin-left: 0.2em;
+      margin-inline-start: 0.2em;
       padding: 0 0.1rem;
       border-radius: 0.6rem;
 

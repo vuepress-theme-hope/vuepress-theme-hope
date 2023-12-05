@@ -1,4 +1,4 @@
-import { type App, type PluginConfig } from "@vuepress/core";
+import type { App, PluginConfig } from "@vuepress/core";
 import { externalLinkIconPlugin } from "@vuepress/plugin-external-link-icon";
 import { nprogressPlugin } from "@vuepress/plugin-nprogress";
 import { themeDataPlugin } from "@vuepress/plugin-theme-data";
@@ -17,10 +17,10 @@ import { getPWAPlugin } from "./pwa.js";
 import { getRtlPlugin } from "./rtl.js";
 import { getSEOPlugin } from "./seo.js";
 import { getSitemapPlugin } from "./sitemap.js";
-import {
-  type PluginsOptions,
-  type ThemeData,
-  type ThemeOptions,
+import type {
+  PluginsOptions,
+  ThemeData,
+  ThemeOptions,
 } from "../../shared/index.js";
 import { checkPluginOptions } from "../check/index.js";
 
@@ -42,21 +42,21 @@ export const getPluginConfig = (
     | "iconPrefix"
     | "favicon"
   >,
-  legacy = false
+  legacy = false,
 ): PluginConfig => {
   checkPluginOptions(plugins);
 
   const pluginConfig = [
     getComponentsPlugin(options, plugins.components, legacy),
     getActiveHeaderLinksPlugin(plugins.activeHeaderLinks),
-    getAutoCatalogPlugin(plugins.autoCatalog),
+    getAutoCatalogPlugin(plugins.autoCatalog, legacy),
     plugins.externalLinkIcon === false ? null : externalLinkIconPlugin(),
     plugins.nprogress === false ? null : nprogressPlugin(),
     themeDataPlugin({ themeData }),
     getBlogPlugin(app, themeData, plugins.blog, options.hotReload),
     getCommentPlugin(plugins.comment, legacy),
-    getCopyCodePlugin(plugins.copyCode),
-    getCopyrightPlugin(themeData, plugins.copyright, options.hostname),
+    getCopyCodePlugin(plugins.copyCode, legacy),
+    getCopyrightPlugin(themeData, plugins.copyright, options.hostname, legacy),
     // seo should work before feed
     getSEOPlugin(themeData, plugins, options.hostname, legacy),
     getFeedPlugin(
@@ -64,10 +64,10 @@ export const getPluginConfig = (
       plugins.feed,
       options.hostname,
       options.favicon,
-      legacy
+      legacy,
     ),
     getMdEnhancePlugin(plugins.mdEnhance, legacy),
-    getPhotoSwipePlugin(plugins.photoSwipe),
+    getPhotoSwipePlugin(plugins.photoSwipe, legacy),
     getPWAPlugin(plugins.pwa, options.favicon, legacy),
     getSitemapPlugin(plugins.sitemap, options.hostname, legacy),
     getRtlPlugin(themeData),

@@ -7,18 +7,18 @@ import {
   values,
 } from "vuepress-shared/node";
 
-import { type ThemeData } from "../../shared/index.js";
+import type { ThemeData } from "../../shared/index.js";
 import { TEMPLATE_FOLDER, logger } from "../utils.js";
 
 /** @private */
 export const checkSocialMediaIcons = (
-  themeData: ThemeData
+  themeData: ThemeData,
 ): Record<string, string> => {
   const icons: Record<string, string> = {};
 
   const checkIcon = (
     key: string,
-    value: string | [string, string]
+    value: string | [string, string],
   ): string | false => {
     if (isString(value)) {
       const templatePath = `${TEMPLATE_FOLDER}socialMediaIcons/${key.toLocaleLowerCase()}.svg`;

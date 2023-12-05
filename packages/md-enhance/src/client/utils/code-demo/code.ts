@@ -1,9 +1,9 @@
 import type Babel from "@babel/core";
 import { keys } from "vuepress-shared/client";
 
-import { type Code, type CodeType } from "./typings.js";
+import type { Code, CodeType } from "./typings.js";
 import { getConfig, preProcessorConfig } from "./utils.js";
-import { type CodeDemoOptions } from "../../../shared/index.js";
+import type { CodeDemoOptions } from "../../../shared/index.js";
 
 declare global {
   interface Window {
@@ -22,7 +22,7 @@ export const getCode = (code: Record<string, string>): CodeType => {
 
   (["html", "js", "css"] as const).forEach((type) => {
     const match = languages.filter((language) =>
-      preProcessorConfig[type].types.includes(language)
+      preProcessorConfig[type].types.includes(language),
     );
 
     if (match.length) {
@@ -56,18 +56,18 @@ const getReactTemplate = (code: string): string =>
     .replace("export default ", "const $reactApp = ")
     .replace(
       /App\.__style__(\s*)=(\s*)`([\s\S]*)?`/,
-      ""
+      "",
     )};\nReactDOM.createRoot(document.getElementById("app")).render(React.createElement($reactApp))`;
 
 const getVueJsTemplate = (js: string): string =>
   js
     .replace(
       /export\s+default\s*\{(\n*[\s\S]*)\n*\}\s*;?$/u,
-      "Vue.createApp({$1}).mount('#app')"
+      "Vue.createApp({$1}).mount('#app')",
     )
     .replace(
       /export\s+default\s*define(Async)?Component\s*\(\s*\{(\n*[\s\S]*)\n*\}\s*\)\s*;?$/u,
-      "Vue.createApp({$1}).mount('#app')"
+      "Vue.createApp({$1}).mount('#app')",
     )
     .trim();
 
@@ -76,7 +76,7 @@ export const wrapper = (scriptStr: string): string =>
 
 export const getNormalCode = (
   code: CodeType,
-  config: Partial<CodeDemoOptions>
+  config: Partial<CodeDemoOptions>,
 ): Code => {
   const codeConfig = getConfig(config);
   const js = code.js[0] || "";
@@ -101,7 +101,7 @@ const VUE_STYLE_REG =
 
 export const getVueCode = (
   code: CodeType,
-  config: Partial<CodeDemoOptions>
+  config: Partial<CodeDemoOptions>,
 ): Code => {
   const codeConfig = getConfig(config);
 
@@ -132,10 +132,10 @@ export const getVueCode = (
         : js.replace(/export\s+default/u, "return");
 
       return `const app=window.document.createElement('div');document.firstElementChild.appendChild(app);const appOptions=${wrapper(
-        scriptStr
+        scriptStr,
       )};appOptions.template=\`${html.replace(
         "`",
-        '\\`"'
+        '\\`"',
       )}\`;window.Vue.createApp(appOptions).mount(app);`;
     },
   };
@@ -143,7 +143,7 @@ export const getVueCode = (
 
 export const getReactCode = (
   code: CodeType,
-  config: Partial<CodeDemoOptions>
+  config: Partial<CodeDemoOptions>,
 ): Code => {
   const codeConfig = getConfig(config);
 
@@ -168,7 +168,7 @@ export const getReactCode = (
         })?.code || "";
 
       return `window.ReactDOM.createRoot(document.firstElementChild).render(window.React.createElement(${wrapper(
-        scriptStr
+        scriptStr,
       )}))`;
     },
   };

@@ -57,6 +57,13 @@ By default, all the pages generated from Markdown files but not homepage will be
 
 Page filter, determine whether the plugin should generate excerpt for it.
 
+### slugify
+
+- Type: `(name: string) => string`
+- Default: `(name) => name.replace(/ _/g, '-').replace(/[:?*|\\/<>]/g, "").toLowerCase()`
+
+Slugify function, used to convert key name which they are register in routes.
+
 ### type
 
 - Type: `BlogTypeOptions[]`

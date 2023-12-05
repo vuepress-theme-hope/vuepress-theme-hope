@@ -25,6 +25,8 @@ corepack enable
 corepack prepare pnpm@latest --activate
 ```
 
+Note: Development requires latest LTS version of Node.js.
+
 ## Project File Structure
 
 The project is a monorepo, managed by pnpm.

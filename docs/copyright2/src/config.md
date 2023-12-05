@@ -19,12 +19,21 @@ Author Information
 
 License Information
 
-### triggerWords
+### triggerLength
 
 - Type: `number`
 - Default: `100`
 
-Min words triggering copyright append
+Min content length triggering copyright append
+
+### maxLength
+
+- Type: `number`
+- Default: `0`
+
+Max content length which allows to copy.
+
+`0` means no limit.
 
 ### global
 
@@ -130,12 +139,21 @@ Locale config for copyright plugin.
 
 ## Frontmatter Options
 
-### copy.triggerWords
+### copy.triggerLength
 
 - Type: `number`
 - Default: `100`
 
-Min words triggering copyright append
+Min content length triggering copyright append
+
+### copy.maxLength
+
+- Type: `number`
+- Default: `0`
+
+Max content length which allows to copy.
+
+`0` means no limit.
 
 ### copy.disableCopy
 

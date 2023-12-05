@@ -1,21 +1,13 @@
 import { usePageData } from "@vuepress/client";
-import {
-  type PropType,
-  type VNode,
-  computed,
-  defineComponent,
-  h,
-  ref,
-  toRef,
-  watch,
-} from "vue";
+import type { PropType, VNode } from "vue";
+import { computed, defineComponent, h, ref, toRef, watch } from "vue";
 
 import AutoLink from "@theme-hope/components/AutoLink";
 import HopeIcon from "@theme-hope/components/HopeIcon";
 
-import {
-  type AutoLinkOptions as AutoLinkType,
-  type NavGroup,
+import type {
+  AutoLinkOptions as AutoLinkType,
+  NavGroup,
 } from "../../../../shared/index.js";
 
 import "../styles/nav-screen-dropdown.scss";
@@ -40,7 +32,7 @@ export default defineComponent({
     const config = toRef(props, "config");
 
     const dropdownAriaLabel = computed(
-      () => config.value.ariaLabel || config.value.text
+      () => config.value.ariaLabel || config.value.text,
     );
 
     const open = ref(false);
@@ -49,7 +41,7 @@ export default defineComponent({
       () => page.value.path,
       () => {
         open.value = false;
-      }
+      },
     );
 
     const isLastItemOfArray = <T>(item: T, arr: T[]): boolean =>
@@ -72,7 +64,7 @@ export default defineComponent({
             props.config.text,
           ]),
           h("span", { class: ["arrow", open.value ? "down" : "end"] }),
-        ]
+        ],
       ),
       h(
         "ul",
@@ -99,7 +91,7 @@ export default defineComponent({
                               open.value = false;
                           },
                         })
-                      : h("span", child.text)
+                      : h("span", child.text),
                   ),
                   h(
                     "ul",
@@ -117,9 +109,9 @@ export default defineComponent({
                             )
                               open.value = false;
                           },
-                        })
-                      )
-                    )
+                        }),
+                      ),
+                    ),
                   ),
                 ]
               : h(AutoLink, {
@@ -128,9 +120,9 @@ export default defineComponent({
                     if (isLastItemOfArray(child, config.value.children))
                       open.value = false;
                   },
-                })
-          )
-        )
+                }),
+          ),
+        ),
       ),
     ];
   },

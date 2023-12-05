@@ -1,4 +1,4 @@
-import { type BlogOptions, type BlogTypeOptions } from "vuepress-plugin-blog2";
+import type { BlogOptions, BlogTypeOptions } from "vuepress-plugin-blog2";
 
 export interface BlogPluginOptions
   extends Partial<
@@ -8,6 +8,7 @@ export interface BlogPluginOptions
       | "excerptLength"
       | "excerptSeparator"
       | "filter"
+      | "slugify"
       | "hotReload"
     >
   > {

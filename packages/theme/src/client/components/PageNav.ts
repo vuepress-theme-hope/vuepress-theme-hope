@@ -1,21 +1,20 @@
 import { usePageData, usePageFrontmatter } from "@vuepress/client";
 import { isPlainObject, isString } from "@vuepress/shared";
 import { useEventListener } from "@vueuse/core";
-import { type VNode, computed, defineComponent, h } from "vue";
+import type { VNode } from "vue";
+import { computed, defineComponent, h } from "vue";
+import { useRouter } from "vue-router";
 
 import AutoLink from "@theme-hope/components/AutoLink";
 import HopeIcon from "@theme-hope/components/HopeIcon";
-import {
-  useAutoLink,
-  useNavigate,
-  useThemeLocaleData,
-} from "@theme-hope/composables/index";
+import { useNavigate, useThemeLocaleData } from "@theme-hope/composables/index";
 import { useSidebarItems } from "@theme-hope/modules/sidebar/composables/index";
-import { type ResolvedSidebarItem } from "@theme-hope/modules/sidebar/utils/index";
+import type { ResolvedSidebarItem } from "@theme-hope/modules/sidebar/utils/index";
+import { resolveLinkInfo } from "@theme-hope/utils/index";
 
-import {
-  type AutoLinkOptions,
-  type ThemeNormalPageFrontmatter,
+import type {
+  AutoLinkOptions,
+  ThemeNormalPageFrontmatter,
 } from "../../shared/index.js";
 
 import "../styles/page-nav.scss";
@@ -24,11 +23,13 @@ import "../styles/page-nav.scss";
  * Resolve `prev` or `next` config from frontmatter
  */
 const resolveFromFrontmatterConfig = (
-  conf: unknown
+  conf: unknown,
 ): AutoLinkOptions | null | false => {
+  const router = useRouter();
+
   if (conf === false) return false;
 
-  if (isString(conf)) return useAutoLink(conf, true);
+  if (isString(conf)) return resolveLinkInfo(router, conf, true);
 
   if (isPlainObject<AutoLinkOptions>(conf)) return conf;
 
@@ -41,7 +42,7 @@ const resolveFromFrontmatterConfig = (
 const resolveFromSidebarItems = (
   sidebarItems: ResolvedSidebarItem[],
   currentPath: string,
-  offset: number
+  offset: number,
 ): AutoLinkOptions | null => {
   const index = sidebarItems.findIndex((item) => item.link === currentPath);
 
@@ -58,7 +59,7 @@ const resolveFromSidebarItems = (
       const childResult = resolveFromSidebarItems(
         item.children,
         currentPath,
-        offset
+        offset,
       );
 
       if (childResult) return childResult;
@@ -88,7 +89,7 @@ export default defineComponent({
               : resolveFromSidebarItems(
                   sidebarItems.value,
                   page.value.path,
-                  -1
+                  -1,
                 ));
     });
 
@@ -103,7 +104,7 @@ export default defineComponent({
               : resolveFromSidebarItems(
                   sidebarItems.value,
                   page.value.path,
-                  1
+                  1,
                 ));
     });
 
@@ -124,7 +125,7 @@ export default defineComponent({
 
     return (): VNode | null =>
       prevNavLink.value || nextNavLink.value
-        ? h("nav", { class: "page-nav" }, [
+        ? h("nav", { class: "vp-page-nav" }, [
             prevNavLink.value
               ? h(
                   AutoLink,
@@ -140,7 +141,7 @@ export default defineComponent({
                       }),
                       prevNavLink.value?.text,
                     ]),
-                  ]
+                  ],
                 )
               : null,
             nextNavLink.value
@@ -158,7 +159,7 @@ export default defineComponent({
                         icon: nextNavLink.value?.icon,
                       }),
                     ]),
-                  ]
+                  ],
                 )
               : null,
           ])

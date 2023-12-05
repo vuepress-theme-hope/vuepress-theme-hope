@@ -1,9 +1,7 @@
-import { type ComputedRef, computed } from "vue";
-import {
-  type RepoType,
-  resolveRepoLink,
-  resolveRepoType,
-} from "vuepress-shared/client";
+import type { ComputedRef } from "vue";
+import { computed } from "vue";
+import type { RepoType } from "vuepress-shared/client";
+import { resolveRepoLink, resolveRepoType } from "vuepress-shared/client";
 
 import { useThemeLocaleData } from "@theme-hope/composables/index";
 
@@ -22,18 +20,18 @@ export const useNavbarRepo = (): ComputedRef<RepoConfig | null> => {
   const repo = computed(() => themeLocale.value.repo || null);
 
   const repoLink = computed(() =>
-    repo.value ? resolveRepoLink(repo.value) : null
+    repo.value ? resolveRepoLink(repo.value) : null,
   );
 
   const repoType = computed(() =>
-    repo.value ? resolveRepoType(repo.value) : null
+    repo.value ? resolveRepoType(repo.value) : null,
   );
 
   const repoLabel = computed(() =>
     repoLink.value
       ? themeLocale.value.repoLabel ??
         (repoType.value === null ? "Source" : repoType.value)
-      : null
+      : null,
   );
 
   return computed(() => {

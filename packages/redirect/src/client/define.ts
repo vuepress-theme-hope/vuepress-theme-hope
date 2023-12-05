@@ -1,8 +1,8 @@
 import { entries } from "vuepress-shared/client";
 
-import {
-  type LocaleRedirectConfig,
-  type RedirectLocaleConfig,
+import type {
+  LocaleRedirectConfig,
+  RedirectLocaleConfig,
 } from "../shared/index.js";
 
 declare const REDIRECT_LOCALE_CONFIG: LocaleRedirectConfig;

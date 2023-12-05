@@ -7,12 +7,12 @@ icon: clock
 
 <!-- more -->
 
-<!-- @include: ../../../../CHANGELOG.md#recent-beta -->
+<!-- @include: ../../../../CHANGELOG.md#recent-change -->
 
 ## 更多
 
 ::: info
 
-对于发布早于 `2.0.0-beta.142` 的历史版本，详见 [Github 仓库](https://github.com/vuepress-theme-hope/vuepress-theme-hope/blob/main/CHANGELOG.md)。
+对于发布早于 `2.0.0-beta.238` 的历史版本，详见 [Github 仓库变更日志](https://github.com/vuepress-theme-hope/vuepress-theme-hope/blob/main/CHANGELOG.md)。
 
 :::

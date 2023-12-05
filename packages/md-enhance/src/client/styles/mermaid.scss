@@ -41,14 +41,15 @@
 
 .mermaid-actions {
   text-align: end;
+
+  @media print {
+    display: none;
+  }
 }
 
 .mermaid-preview {
   position: fixed;
-  top: 0;
-  right: 0;
-  bottom: 0;
-  left: 0;
+  inset: 0;
   z-index: 800;
 
   display: flex;

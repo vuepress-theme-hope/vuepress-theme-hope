@@ -1,10 +1,10 @@
 /* eslint-disable @typescript-eslint/no-explicit-any */
-import { type Page } from "@vuepress/core";
+import type { Page } from "@vuepress/core";
 
 export interface BlogCategoryOptions<
   ExtraPageData extends Record<any, any> = Record<never, never>,
   ExtraPageFrontmatter extends Record<any, any> = Record<string, unknown>,
-  ExtraPageFields extends Record<any, any> = Record<never, never>
+  ExtraPageFields extends Record<any, any> = Record<never, never>,
 > {
   /**
    * Unique category name
@@ -19,7 +19,7 @@ export interface BlogCategoryOptions<
    * 从页面中获取分类的函数
    */
   getter: (
-    page: Page<ExtraPageData, ExtraPageFrontmatter, ExtraPageFields>
+    page: Page<ExtraPageData, ExtraPageFrontmatter, ExtraPageFields>,
   ) => string[];
 
   /**
@@ -29,7 +29,7 @@ export interface BlogCategoryOptions<
    */
   sorter?: (
     pageA: Page<ExtraPageData, ExtraPageFrontmatter, ExtraPageFields>,
-    pageB: Page<ExtraPageData, ExtraPageFrontmatter, ExtraPageFields>
+    pageB: Page<ExtraPageData, ExtraPageFrontmatter, ExtraPageFields>,
   ) => number;
 
   /**
@@ -90,6 +90,6 @@ export interface BlogCategoryOptions<
    */
   itemFrontmatter?: (
     name: string,
-    localePath: string
+    localePath: string,
   ) => Record<string, unknown>;
 }

@@ -1,6 +1,6 @@
 ---
 title: Foo 功能
-icon: config
+icon: lightbulb
 ---
 
 ## 介绍

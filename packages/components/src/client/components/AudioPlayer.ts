@@ -1,14 +1,6 @@
-import { type Options as PlyrOptions } from "plyr";
-import {
-  type PropType,
-  type VNode,
-  computed,
-  defineComponent,
-  h,
-  onBeforeMount,
-  onMounted,
-  shallowRef,
-} from "vue";
+import type { Options as PlyrOptions } from "plyr";
+import type { PropType, VNode } from "vue";
+import { defineComponent, h, onBeforeMount, onMounted, shallowRef } from "vue";
 
 import { getLink } from "../utils/index.js";
 
@@ -87,17 +79,16 @@ export default defineComponent({
     let player: Plyr | null = null;
     const audio = shallowRef<HTMLAudioElement>();
 
-    const plyrOptions = computed(() => ({
-      hideYouTubeDOMError: true,
-      ...props.options,
-    }));
-
     onMounted(async () => {
       const { default: Plyr } = await import(
         /* webpackChunkName: "plyr" */ "plyr"
       );
 
-      player = new Plyr(audio.value!, plyrOptions.value);
+      player = new Plyr(audio.value!, {
+        // @ts-ignore
+        hideYouTubeDOMError: true,
+        ...props.options,
+      });
     });
 
     onBeforeMount(() => {
@@ -112,27 +103,31 @@ export default defineComponent({
       h(
         "div",
         {
-          class: "audio-player-wrapper",
+          class: "vp-audio-player",
           style: {
             width: props.width,
           },
         },
         [
           h("a", {
-            class: "audio-print",
+            class: "sr-only",
             href: getLink(props.src),
             innerHTML: props.title || "An audio",
           }),
           props.poster
             ? h("img", {
-                class: "audio-poster",
+                class: "vp-audio-player-poster",
                 src: getLink(props.poster),
+                loading: "lazy",
                 "no-view": "",
               })
             : null,
-          h("div", { class: "audio-info" }, [
+          h("div", { class: "vp-audio-player-info" }, [
             props.title
-              ? h("div", { class: "audio-title", innerHTML: props.title })
+              ? h("div", {
+                  class: "vp-audio-player-title",
+                  innerHTML: props.title,
+                })
               : null,
             h(
               "audio",
@@ -143,10 +138,10 @@ export default defineComponent({
                 controls: "",
                 ...(props.loop ? { loop: "" } : {}),
               },
-              h("source", { src: getLink(props.src), type: props.type })
+              h("source", { src: getLink(props.src), type: props.type }),
             ),
           ]),
-        ]
+        ],
       );
   },
 });

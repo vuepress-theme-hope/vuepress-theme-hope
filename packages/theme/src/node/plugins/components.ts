@@ -1,11 +1,9 @@
-import { type Plugin } from "@vuepress/core";
-import {
-  type ComponentOptions,
-  componentsPlugin,
-} from "vuepress-plugin-components";
+import type { Plugin } from "@vuepress/core";
+import type { ComponentOptions } from "vuepress-plugin-components";
+import { componentsPlugin } from "vuepress-plugin-components";
 import { isString } from "vuepress-shared/node";
 
-import { type ThemeOptions } from "../../shared/index.js";
+import type { ThemeOptions } from "../../shared/index.js";
 
 /**
  * @private
@@ -22,7 +20,7 @@ export const getComponentsPlugin = (
     componentOptions = {},
     rootComponents = {},
   }: ComponentOptions = {},
-  legacy = false
+  legacy = false,
 ): Plugin =>
   componentsPlugin(
     {
@@ -44,5 +42,5 @@ export const getComponentsPlugin = (
         ...rootComponents,
       },
     },
-    legacy
+    legacy,
   );

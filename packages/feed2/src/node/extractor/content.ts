@@ -1,6 +1,7 @@
-import { type App, type Page } from "@vuepress/core";
+import type { App, Page } from "@vuepress/core";
 import { fs } from "@vuepress/utils";
-import { type AnyNode, load } from "cheerio";
+import type { AnyNode } from "cheerio";
+import { load } from "cheerio";
 import {
   HTML_TAGS,
   MATHML_TAGS,
@@ -16,7 +17,7 @@ const HEADING_TAGS = ["h1", "h2", "h3", "h4", "h5", "h6"];
 const handleNode = (
   node: AnyNode,
   base: string,
-  isPreservedElement: (tagName: string) => boolean
+  isPreservedElement: (tagName: string) => boolean,
 ): AnyNode | null => {
   if (node.type === "tag") {
     // image using relative urls shall be dropped
@@ -30,7 +31,7 @@ const handleNode = (
     // toc should be dropped
     if (
       [node.attribs["class"], node.attribs["id"]].some((item) =>
-        ["table-of-contents", "toc"].includes(item)
+        ["table-of-contents", "toc"].includes(item),
       )
     )
       return null;
@@ -52,7 +53,7 @@ const handleNode = (
           (child) =>
             child.type !== "tag" ||
             child.tagName !== "a" ||
-            child.attribs["class"] !== "header-anchor"
+            child.attribs["class"] !== "header-anchor",
         );
       }
 
@@ -64,8 +65,8 @@ const handleNode = (
       return node;
     }
 
-    // we shall convert `<RouterLink>` to `<a>` tag
-    if (node.tagName === "routerlink") {
+    // we shall convert `<RouterLink>` and `<VPLink>` to `<a>` tag
+    if (node.tagName === "routerlink" || node.tagName === "vplink") {
       node.tagName = "a";
       node.attribs["href"] = `${removeEndingSlash(base)}${node.attribs["to"]}`;
       node.attribs["target"] = "blank";
@@ -87,7 +88,7 @@ const handleNode = (
 const handleNodes = (
   nodes: AnyNode[] | null,
   base: string,
-  isPreservedElement: (tagName: string) => boolean
+  isPreservedElement: (tagName: string) => boolean,
 ): AnyNode[] =>
   isArray(nodes)
     ? nodes
@@ -100,7 +101,7 @@ const $ = load("");
 export const getPageRenderContent = (
   app: App,
   page: Page,
-  isPreservedElement: (tagName: string) => boolean
+  isPreservedElement: (tagName: string) => boolean,
 ): string => {
   const pagePath = app.dir.dest(page.path);
   const pageContent = fs.existsSync(pagePath)

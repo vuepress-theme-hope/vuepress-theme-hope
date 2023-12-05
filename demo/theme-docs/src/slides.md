@@ -1,10 +1,10 @@
 ---
 title: Slide page
-icon: slides
+icon: person-chalkboard
 layout: Slide
 ---
 
-<!-- markdownlint-disable MD024 MD033 MD051 -->
+<!-- markdownlint-disable MD024 MD051 -->
 
 @slidestart
 
@@ -78,7 +78,7 @@ You can use all kinds of markup in slides.
 
 Headings will transform to UPPERCASE by default.
 
-Here is paragraph with some **bold**, _italic_, ~~strike-through~~ text and a [link](https://mrhope.site), and it can auto break itself so you don't need to worry the length.
+Here is paragraph with some **bold**, _italic_, ~~strike-through~~ text and a [link](https://mister-hope.com), and it can auto break itself so you don't need to worry the length.
 
 --
 
@@ -160,7 +160,7 @@ You can use all kinds of markup in slides.
 
 ## Layout
 
-![Logo](/logo.svg)
+![Logo](https://theme-hope-assets.vuejs.press/logo.svg)
 
 <!-- .element: class="r-stretch" -->
 

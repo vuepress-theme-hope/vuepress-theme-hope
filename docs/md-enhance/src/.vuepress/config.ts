@@ -3,10 +3,9 @@ import theme from "./theme.js";
 
 const __dirname = getDirname(import.meta.url);
 
+// the config wrapper is located in <root>/docs-shared/src/config-wrapper.ts
 export default config(
-  {
-    name: "md-enhance",
-  },
+  { name: "md-enhance" },
   {
     locales: {
       "/": {
@@ -34,12 +33,14 @@ export default config(
     alias: {
       "@FlowChartPlayground": path.resolve(
         __dirname,
-        "./components/FlowChartPlayground"
+        "./components/FlowChartPlayground.js",
       ),
       "@KatexPlayground": path.resolve(
         __dirname,
-        "./components/KatexPlayground"
+        "./components/KatexPlayground.js",
       ),
     },
-  }
+
+    clientConfigFile: path.resolve(__dirname, "./client.ts"),
+  },
 );

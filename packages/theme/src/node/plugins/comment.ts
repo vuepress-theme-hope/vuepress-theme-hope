@@ -1,8 +1,6 @@
-import { type PluginObject } from "@vuepress/core";
-import {
-  type CommentPluginOptions,
-  commentPlugin,
-} from "vuepress-plugin-comment2";
+import type { PluginObject } from "@vuepress/core";
+import type { CommentPluginOptions } from "vuepress-plugin-comment2";
+import { commentPlugin } from "vuepress-plugin-comment2";
 
 import { VERSION } from "../utils.js";
 
@@ -13,7 +11,7 @@ import { VERSION } from "../utils.js";
  */
 export const getCommentPlugin = (
   options?: Partial<CommentPluginOptions> | false,
-  legacy = false
+  legacy = false,
 ): PluginObject | null => {
   if (options === false || !options?.provider) return null;
 
@@ -31,6 +29,6 @@ export const getCommentPlugin = (
         : {}),
       ...(options || {}),
     },
-    legacy
+    legacy,
   );
 };

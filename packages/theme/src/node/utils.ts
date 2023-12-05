@@ -8,15 +8,15 @@ const __dirname = getDirname(import.meta.url);
 export const logger = new Logger("vuepress-theme-hope");
 
 export const BUNDLE_FOLDER = ensureEndingSlash(
-  path.resolve(__dirname, "../bundle")
+  path.resolve(__dirname, "../bundle"),
 );
 
 export const CLIENT_FOLDER = ensureEndingSlash(
-  path.resolve(__dirname, "../client")
+  path.resolve(__dirname, "../client"),
 );
 
 export const TEMPLATE_FOLDER = ensureEndingSlash(
-  path.resolve(__dirname, "../../templates")
+  path.resolve(__dirname, "../../templates"),
 );
 
 export const VERSION = (<Record<string, unknown> & { version: string }>(

@@ -1,10 +1,7 @@
-import { type Page } from "@vuepress/core";
-import { type PageExcerptOptions } from "vuepress-shared/node";
+import type { Page } from "@vuepress/core";
+import type { PageExcerptOptions } from "vuepress-shared/node";
 
-import {
-  type BlogCategoryOptions,
-  type BlogTypeOptions,
-} from "./typings/index.js";
+import type { BlogCategoryOptions, BlogTypeOptions } from "./typings/index.js";
 
 export interface BlogPluginPageData {
   /**
@@ -22,7 +19,7 @@ export type PageWithExcerpt<
   // eslint-disable-next-line @typescript-eslint/no-explicit-any
   ExtraPageFrontmatter extends Record<any, any> = Record<string, unknown>,
   // eslint-disable-next-line @typescript-eslint/no-explicit-any
-  ExtraPageFields extends Record<any, any> = Record<string, unknown>
+  ExtraPageFields extends Record<any, any> = Record<string, unknown>,
 > = Page<ExtraPageData, ExtraPageFrontmatter, ExtraPageFields>;
 
 export interface BlogOptions extends PageExcerptOptions {
@@ -32,20 +29,14 @@ export interface BlogOptions extends PageExcerptOptions {
    * 获取文章信息的函数。
    */
   getInfo?: <
-    ExtraPageData extends Record<string | number | symbol, unknown> = Record<
-      never,
-      never
-    >,
-    ExtraPageFrontmatter extends Record<
-      string | number | symbol,
+    ExtraPageData extends Record<string, unknown> = Record<never, never>,
+    ExtraPageFrontmatter extends Record<string, unknown> = Record<
+      string,
       unknown
-    > = Record<string, unknown>,
-    ExtraPageFields extends Record<string | number | symbol, unknown> = Record<
-      never,
-      never
-    >
+    >,
+    ExtraPageFields extends Record<string, unknown> = Record<never, never>,
   >(
-    page: Page<ExtraPageData, ExtraPageFrontmatter, ExtraPageFields>
+    page: Page<ExtraPageData, ExtraPageFrontmatter, ExtraPageFields>,
   ) => Record<string, unknown>;
 
   /**
@@ -56,20 +47,14 @@ export interface BlogOptions extends PageExcerptOptions {
    * @default (page) => Boolean(page.filePathRelative) && !page.frontmatter.home
    */
   filter?: <
-    ExtraPageData extends Record<string | number | symbol, unknown> = Record<
-      never,
-      never
-    >,
-    ExtraPageFrontmatter extends Record<
-      string | number | symbol,
+    ExtraPageData extends Record<string, unknown> = Record<never, never>,
+    ExtraPageFrontmatter extends Record<string, unknown> = Record<
+      string,
       unknown
-    > = Record<string, unknown>,
-    ExtraPageFields extends Record<string | number | symbol, unknown> = Record<
-      never,
-      never
-    >
+    >,
+    ExtraPageFields extends Record<string, unknown> = Record<never, never>,
   >(
-    page: Page<ExtraPageData, ExtraPageFrontmatter, ExtraPageFields>
+    page: Page<ExtraPageData, ExtraPageFrontmatter, ExtraPageFields>,
   ) => boolean;
 
   /**
@@ -121,20 +106,14 @@ export interface BlogOptions extends PageExcerptOptions {
    * @default options.filter
    */
   excerptFilter?: <
-    ExtraPageData extends Record<string | number | symbol, unknown> = Record<
-      never,
-      never
-    >,
-    ExtraPageFrontmatter extends Record<
-      string | number | symbol,
+    ExtraPageData extends Record<string, unknown> = Record<never, never>,
+    ExtraPageFrontmatter extends Record<string, unknown> = Record<
+      string,
       unknown
-    > = Record<string, unknown>,
-    ExtraPageFields extends Record<string | number | symbol, unknown> = Record<
-      never,
-      never
-    >
+    >,
+    ExtraPageFields extends Record<string, unknown> = Record<never, never>,
   >(
-    page: Page<ExtraPageData, ExtraPageFrontmatter, ExtraPageFields>
+    page: Page<ExtraPageData, ExtraPageFrontmatter, ExtraPageFields>,
   ) => boolean;
 
   /**

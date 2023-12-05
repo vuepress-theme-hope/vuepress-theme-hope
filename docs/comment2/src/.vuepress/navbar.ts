@@ -3,11 +3,11 @@ import { fs, navbar } from "docs-shared";
 
 const { version } = fs.readJsonSync(
   createRequire(import.meta.url).resolve(
-    "vuepress-plugin-comment2/package.json"
-  )
+    "vuepress-plugin-comment2/package.json",
+  ),
 );
 
-export const enNavbarConfig = navbar([
+export const enNavbar = navbar([
   "/",
   {
     text: "Guide",
@@ -45,7 +45,7 @@ export const enNavbarConfig = navbar([
     ],
   },
 ]);
-export const zhNavbarConfig = navbar([
+export const zhNavbar = navbar([
   "/zh/",
   {
     text: "指南",

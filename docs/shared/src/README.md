@@ -2,7 +2,6 @@
 home: true
 title: Home
 icon: home
-heroImage: /logo.svg
 heroText: vuepress-shared
 tagline: Some powerful utils for VuePress2
 
@@ -47,9 +46,3 @@ So you should be aware to import the correct file, as Node.js has built-in modul
 
 - At Node Side, you should import functions from `vuepress-shared/node`.
 - At Client Side, you should import functions from `vuepress-shared/client`.
-
-<NetlifyBadge />
-
-<script setup lang="ts">
-import NetlifyBadge from "@NetlifyBadge";
-</script>

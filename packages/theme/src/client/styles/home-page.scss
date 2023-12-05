@@ -1,53 +1,30 @@
 @use "vuepress-shared/styles/wrapper";
 
-.home.project {
+.vp-project-home {
   --content-width: var(--home-page-width);
   display: block;
   flex: 1;
   padding-top: var(--navbar-height);
 
-  .hero-info-wrapper {
-    max-width: var(--home-page-width);
-
-    // margin-inline: auto;
-    margin-inline-start: auto;
-    margin-inline-end: auto;
-
-    // NOTE: Compatible with Android Wechat
-    // padding-inline: 2.5rem;
-    padding-inline-start: 2.5rem;
-    padding-inline-end: 2.5rem;
-
-    @media (max-width: hope-config.$pad) {
-      // NOTE: Compatible with Android Wechat
-      // padding-inline: 1.5rem;
-      padding-inline-start: 1.5em;
-      padding-inline-end: 1.5rem;
-    }
-
-    @media print {
-      max-width: unset;
+  .vp-hero-info-wrapper:not(.fullscreen) {
+    .vp-hero-info {
+      @media screen {
+        max-width: var(--home-page-width);
+      }
     }
   }
 
-  .feature-panel {
-    max-width: var(--home-page-width);
-
-    // margin-inline: auto;
-    margin-inline-start: auto;
-    margin-inline-end: auto;
-
-    // NOTE: Compatible with Android Wechat
-    // padding-inline: 1.5rem;
-    padding-inline-start: 1rem;
-    padding-inline-end: 1rem;
-
-    @media print {
-      max-width: unset;
+  .vp-feature {
+    @media screen {
+      max-width: var(--home-page-width);
     }
   }
 
   .theme-hope-content {
-    padding-bottom: 1.5rem;
+    padding-bottom: 1.5rem !important;
+
+    &:empty {
+      padding: 0 !important;
+    }
   }
 }

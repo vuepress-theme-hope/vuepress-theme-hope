@@ -1,0 +1,17 @@
+media-community-skin[data-audio] {
+  --audio-brand: var(--vp-tc);
+  --audio-bg: var(--vp-bg);
+  --audio-controls-color: var(--dark-grey);
+  --audio-title-color: var(--vp-c);
+  --audio-time-muted-color: var(--light-grey);
+  --audio-play-button-bg: var(--vp-bglt);
+  --audio-play-button-color: var(--black);
+}
+
+:where(media-community-skin[data-audio] [part~="media-ui"]) {
+  box-shadow: 2px 2px 10px 0 var(--card-shadow);
+}
+
+media-community-skin[data-video] {
+  --video-brand: var(--vp-tc);
+}

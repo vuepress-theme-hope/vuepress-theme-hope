@@ -1,6 +1,7 @@
 import { useSessionStorage, useStorage } from "@vueuse/core";
 import { compareSync } from "bcrypt-ts/browser";
-import { type ComputedRef, computed } from "vue";
+import type { ComputedRef } from "vue";
+import { computed } from "vue";
 
 import { useEncryptData } from "./utils.js";
 
@@ -31,13 +32,13 @@ export const useGlobalEncrypt = (): GlobalEncrypt => {
       if (localToken.value)
         // none of the token matches
         return encryptData.value.admin!.some((hash) =>
-          compareSync(localToken.value, hash)
+          compareSync(localToken.value, hash),
         );
 
       if (sessionToken.value)
         // none of the token matches
         return encryptData.value.admin!.some((hash) =>
-          compareSync(sessionToken.value, hash)
+          compareSync(sessionToken.value, hash),
         );
     }
 

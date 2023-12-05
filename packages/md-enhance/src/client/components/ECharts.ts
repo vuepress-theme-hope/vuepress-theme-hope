@@ -1,8 +1,7 @@
 import { useDebounceFn, useEventListener } from "@vueuse/core";
-import { type EChartsOption, type EChartsType } from "echarts";
+import type { EChartsOption, EChartsType } from "echarts";
+import type { PropType, VNode } from "vue";
 import {
-  type PropType,
-  type VNode,
   defineComponent,
   h,
   onMounted,
@@ -12,6 +11,7 @@ import {
 } from "vue";
 import { LoadingIcon, atou } from "vuepress-shared/client";
 
+import { useEchartsConfig } from "../helpers/index.js";
 import "../styles/echarts.scss";
 
 declare const MARKDOWN_ENHANCE_DELAY: number;
@@ -28,7 +28,7 @@ const AsyncFunction = (async (): Promise<void> => {}).constructor;
 const parseEChartsConfig = (
   config: string,
   type: "js" | "json",
-  myChart: EChartsType
+  myChart: EChartsType,
 ): Promise<EchartsConfig> => {
   if (type === "js") {
     // eslint-disable-next-line
@@ -41,7 +41,7 @@ ${config}
 __echarts_config__={width,height,option};
 }
 return __echarts_config__;
-`
+`,
     );
 
     // eslint-disable-next-line @typescript-eslint/no-unsafe-call
@@ -85,6 +85,8 @@ export default defineComponent({
   },
 
   setup(props) {
+    const echartsConfig = useEchartsConfig();
+
     const loading = ref(true);
     const echartsContainer = shallowRef<HTMLElement>();
 
@@ -92,7 +94,7 @@ export default defineComponent({
 
     useEventListener(
       "resize",
-      useDebounceFn(() => chart?.resize(), 100)
+      useDebounceFn(() => chart?.resize(), 100),
     );
 
     onMounted(() => {
@@ -101,16 +103,18 @@ export default defineComponent({
         // delay
         new Promise((resolve) => setTimeout(resolve, MARKDOWN_ENHANCE_DELAY)),
       ]).then(async ([echarts]) => {
-        chart = echarts.init(echartsContainer.value!);
+        await echartsConfig.setup?.();
+
+        chart = echarts.init(echartsContainer.value);
 
         const { option, ...size } = await parseEChartsConfig(
           atou(props.config),
           props.type,
-          chart
+          chart,
         );
 
         chart.resize(size);
-        chart.setOption(option);
+        chart.setOption({ ...echartsConfig.option, ...option });
 
         loading.value = false;
       });

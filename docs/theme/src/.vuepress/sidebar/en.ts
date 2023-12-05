@@ -1,8 +1,10 @@
 import { sidebar } from "docs-shared";
 
+// region config
 export const enSidebarConfig = sidebar({
   "/": [
     "",
+    "get-started/",
     {
       text: "Guide",
       icon: "lightbulb",
@@ -14,6 +16,7 @@ export const enSidebarConfig = sidebar({
         "markdown/",
         "feature/",
         "blog/",
+        "customize/",
         "advanced/",
       ],
     },
@@ -34,7 +37,15 @@ export const enSidebarConfig = sidebar({
       text: "Cookbook",
       icon: "signs-post",
       prefix: "cookbook/",
-      children: ["tutorial/", "markdown/", "vuepress/", "customize/"],
+      children: ["markdown/", "vuepress/"],
+    },
+
+    "demo/",
+    {
+      text: "FAQ",
+      icon: "circle-question",
+      prefix: "faq/",
+      children: ["", "troubleshooting", "common-error", "vite", "safari"],
     },
     {
       text: "Migration",
@@ -42,16 +53,11 @@ export const enSidebarConfig = sidebar({
       prefix: "migration/",
       children: ["highlight", "config", "page", "style"],
     },
-    {
-      text: "FAQ",
-      icon: "circle-question",
-      prefix: "faq/",
-      children: ["", "troubleshooting", "common-error", "vite", "safari"],
-    },
-    "demo/",
     "changelog",
     "contribution",
   ],
+
+  "/get-started/": "structure",
 
   "/guide/": "structure",
 
@@ -61,3 +67,4 @@ export const enSidebarConfig = sidebar({
 
   "/demo/": "structure",
 });
+// #endregion config

@@ -1,12 +1,10 @@
-.navbar {
+.vp-navbar {
   --navbar-line-height: calc(
     var(--navbar-height) - var(--navbar-vertical-padding) * 2
   );
 
   position: fixed;
-  top: 0;
-  right: 0;
-  left: 0;
+  inset: 0 0 auto;
   z-index: 175;
 
   display: flex;
@@ -24,7 +22,9 @@
   line-height: var(--navbar-line-height);
   white-space: nowrap;
 
-  transition: transform ease-in-out 0.3s, background var(--color-transition),
+  transition:
+    transform ease-in-out 0.3s,
+    background var(--color-transition),
     box-shadow var(--color-transition);
 
   backdrop-filter: saturate(150%) blur(12px);
@@ -49,16 +49,21 @@
       margin-inline-end: 0.25em;
       font-size: 1em;
     }
+
+    img.icon {
+      vertical-align: -0.125em;
+      height: 1em;
+    }
   }
 
-  &.hide-icon .nav-links .icon {
+  &.hide-icon .vp-nav-links .icon {
     display: none !important;
   }
 }
 
-.navbar-start,
-.navbar-end,
-.navbar-center {
+.vp-navbar-start,
+.vp-navbar-end,
+.vp-navbar-center {
   display: flex;
   flex: 1;
   align-items: center;
@@ -77,14 +82,14 @@
   }
 }
 
-.navbar-start {
+.vp-navbar-start {
   justify-content: start;
 }
 
-.navbar-center {
+.vp-navbar-center {
   justify-content: center;
 }
 
-.navbar-end {
+.vp-navbar-end {
   justify-content: end;
 }

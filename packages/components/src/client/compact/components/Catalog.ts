@@ -1,19 +1,23 @@
 import { usePageData, useSiteData } from "@vuepress/client";
-import { type PropType, type VNode, computed, defineComponent, h } from "vue";
-import { type RouteMeta, RouterLink, useRouter } from "vue-router";
+import type { PropType, VNode } from "vue";
+import { computed, defineComponent, h } from "vue";
+import type { RouteMeta } from "vue-router";
+import { useRouter } from "vue-router";
 import {
+  VPLink,
   endsWith,
   keys,
   startsWith,
   useLocaleConfig,
 } from "vuepress-shared/client";
 
-import { type CatalogLocaleConfig } from "../../../shared/index.js";
+import type { CatalogLocaleConfig } from "../../../shared/index.js";
 import FontIcon from "../../components/FontIcon.js";
 
 import "../styles/catalog.scss";
 
 declare const CATALOG_LOCALES: CatalogLocaleConfig;
+declare const __VUEPRESS_DEV__: boolean;
 
 interface CatalogInfo {
   title: string;
@@ -100,6 +104,14 @@ export default defineComponent({
   },
 
   setup(props) {
+    // TODO: Remove this in v2 stable
+    // @ts-expect-error
+    // eslint-disable-next-line vue/no-undef-properties
+    if (__VUEPRESS_DEV__ && props.indexType)
+      console.warn(
+        "[AutoCatalog]: `indexType` is deprecated, please use `index` instead",
+      );
+
     const locale = useLocaleConfig(CATALOG_LOCALES);
     const page = usePageData();
     const router = useRouter();
@@ -117,7 +129,7 @@ export default defineComponent({
 
           if (base === "/") {
             const otherLocales = keys(siteData.value.locales).filter(
-              (item) => item !== "/"
+              (item) => item !== "/",
             );
 
             // exclude 404 page and other locales
@@ -152,7 +164,7 @@ export default defineComponent({
         .sort(
           (
             { title: titleA, level: levelA, path: pathA, order: orderA },
-            { title: titleB, level: levelB, path: pathB, order: orderB }
+            { title: titleB, level: levelB, path: pathB, order: orderB },
           ) => {
             const level = levelA - levelB;
 
@@ -189,7 +201,7 @@ export default defineComponent({
             if (orderB < 0) return orderA - orderB;
 
             return 1;
-          }
+          },
         )
         .forEach((info) => {
           const { base, level } = info;
@@ -208,12 +220,12 @@ export default defineComponent({
 
             default: {
               const grandParent = result.find(
-                (item) => item.path === base.replace(/\/[^/]+\/$/, "/")
+                (item) => item.path === base.replace(/\/[^/]+\/$/, "/"),
               );
 
               if (grandParent) {
                 const parent = grandParent.children?.find(
-                  (item) => item.path === base
+                  (item) => item.path === base,
                 );
 
                 if (parent) (parent.children ??= []).push(info);
@@ -240,11 +252,11 @@ export default defineComponent({
             },
             [
               h("a", { href: `#${title}`, class: "header-anchor" }, "#"),
-              h(RouterLink, { class: "catalog-title", to: path }, () => [
+              h(VPLink, { class: "catalog-title", to: path }, () => [
                 icon ? h(FontIcon, { icon }) : null,
                 `${mainIndex + 1}. ${title || "Unknown"}`,
               ]),
-            ]
+            ],
           ),
           children.length
             ? h(
@@ -264,19 +276,13 @@ export default defineComponent({
                         h(
                           "a",
                           { href: `#${title}`, class: "header-anchor" },
-                          "#"
+                          "#",
                         ),
-                        h(
-                          RouterLink,
-                          { class: "catalog-title", to: path },
-                          () => [
-                            icon ? h(FontIcon, { icon }) : null,
-                            `${mainIndex + 1}.${index + 1} ${
-                              title || "Unknown"
-                            }`,
-                          ]
-                        ),
-                      ]
+                        h(VPLink, { class: "catalog-title", to: path }, () => [
+                          icon ? h(FontIcon, { icon }) : null,
+                          `${mainIndex + 1}.${index + 1} ${title || "Unknown"}`,
+                        ]),
+                      ],
                     ),
                     children.length
                       ? h(
@@ -284,7 +290,7 @@ export default defineComponent({
                           { class: "sub-catalog-wrapper" },
                           children.map(({ icon, path, title }, subIndex) =>
                             h(
-                              RouterLink,
+                              VPLink,
                               {
                                 class: "sub-catalog-item",
                                 to: path,
@@ -294,13 +300,13 @@ export default defineComponent({
                                 `${mainIndex + 1}.${index + 1}.${
                                   subIndex + 1
                                 } ${title || "Unknown"}`,
-                              ]
-                            )
-                          )
+                              ],
+                            ),
+                          ),
                         )
                       : null,
-                  ])
-                )
+                  ]),
+                ),
               )
             : null,
         ]),

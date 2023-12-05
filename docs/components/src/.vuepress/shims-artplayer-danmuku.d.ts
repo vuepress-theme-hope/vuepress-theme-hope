@@ -164,7 +164,7 @@ declare module "artplayer-plugin-danmuku" {
   };
 
   declare const artplayerPluginDanmuku: (
-    option: ArtPlayerDanmukuOptions
+    option: ArtPlayerDanmukuOptions,
   ) => (art: Artplayer) => ArtPlayerDanmukuPlugin;
 
   export = artplayerPluginDanmuku;

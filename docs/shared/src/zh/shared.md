@@ -139,7 +139,7 @@ export const isObject: (val: unknown) => val is object;
  * Check if a value is a plain object
  */
 export const isPlainObject: <T extends Record<any, any> = Record<any, any>>(
-  val: unknown
+  val: unknown,
 ) => val is T;
 ```
 
@@ -190,7 +190,7 @@ export const entries: {
       | {
           [s: string]: T;
         }
-      | ArrayLike<T>
+      | ArrayLike<T>,
   ): [string, T][];
   (o: {}): [string, any][];
 };
@@ -205,7 +205,9 @@ export const entries: {
  * Create an object from an iterable of key-value pairs
  */
 export const fromEntries: {
-  <T = any>(entries: Iterable<readonly [PropertyKey, T]>): {
+  <T = any>(
+    entries: Iterable<readonly [PropertyKey, T]>,
+  ): {
     [k: string]: T;
   };
   (entries: Iterable<readonly any[]>): any;
@@ -240,7 +242,7 @@ export const values: {
       | {
           [s: string]: T;
         }
-      | ArrayLike<T>
+      | ArrayLike<T>,
   ): T[];
   (o: {}): any[];
 };
@@ -257,7 +259,7 @@ export const values: {
 export const deepAssign: <
   T extends IAnyObject,
   U extends IAnyObject = T,
-  V extends Partial<T> & Partial<U> = T & U
+  V extends Partial<T> & Partial<U> = T & U,
 >(
   originObject: T,
   ...overrideObjects: U[]

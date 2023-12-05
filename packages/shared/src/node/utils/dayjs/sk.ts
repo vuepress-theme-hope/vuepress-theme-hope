@@ -1,7 +1,7 @@
 // Slovak [sk]
 import type dayjs from "dayjs";
 
-import { type Locale } from "./locale.js";
+import type { Locale } from "./locale.js";
 
 const plural = (n: number): boolean => n > 1 && n < 5 && ~~(n / 10) !== 1;
 
@@ -9,7 +9,7 @@ const translate = (
   number: number,
   withoutSuffix: boolean,
   key: string,
-  isFuture: boolean
+  isFuture: boolean,
 ): string | void => {
   const result = `${number} `;
 
@@ -71,7 +71,7 @@ const locale: Partial<Locale> = {
   weekdaysMin: "ne_po_ut_st_št_pi_so".split("_"),
   months:
     "január_február_marec_apríl_máj_jún_júl_august_september_október_november_december".split(
-      "_"
+      "_",
     ),
   monthsShort: "jan_feb_mar_apr_máj_jún_júl_aug_sep_okt_nov_dec".split("_"),
   weekStart: 1,

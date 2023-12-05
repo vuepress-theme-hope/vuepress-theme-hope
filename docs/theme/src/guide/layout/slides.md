@@ -17,7 +17,7 @@ You need to set `layout: Slide` in the frontmatter of the corresponding page to 
 
 ## Demo
 
-<ProjectLink name="md-enhance" path="/guide/presentation/demo.html">Here is a demo containing all the slide features</ProjectLink>.
+<ProjectLink name="md-enhance" path="/guide/content/revealjs/demo.html">Here is a demo containing all the slide features</ProjectLink>.
 
 ![Slide page screenshot](./assets/slides-light.png#light)
 ![Slide page screenshot](./assets/slides-dark.png#dark)
@@ -26,7 +26,7 @@ You need to set `layout: Slide` in the frontmatter of the corresponding page to 
 
 ::: warning Enable presentation
 
-You should enable presentation feature in `vuepress-plugin-md-enhance` by setting `plugins.mdEnhance.presentation` in theme options, otherwise the layout won't be rendered correctly.
+You should enable presentation feature in `vuepress-plugin-md-enhance` by setting `plugins.mdEnhance.revealjs` in theme options, otherwise the layout won't be rendered correctly.
 
 :::
 

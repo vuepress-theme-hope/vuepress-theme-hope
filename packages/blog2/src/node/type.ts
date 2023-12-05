@@ -1,11 +1,12 @@
-import { type App, createPage } from "@vuepress/core";
+import type { App } from "@vuepress/core";
+import { createPage } from "@vuepress/core";
 import { colors } from "@vuepress/utils";
 import { isString, removeLeadingSlash } from "vuepress-shared/node";
 
-import { type BlogOptions } from "./options.js";
-import { type PageMap } from "./typings/index.js";
+import type { BlogOptions } from "./options.js";
+import type { PageMap } from "./typings/index.js";
 import { logger } from "./utils.js";
-import { type TypeMap } from "../shared/index.js";
+import type { TypeMap } from "../shared/index.js";
 
 const HMR_CODE = `
 if (import.meta.webpackHot) {
@@ -24,7 +25,7 @@ export const prepareType = (
   app: App,
   { type, slugify }: Required<Pick<BlogOptions, "type" | "slugify">>,
   pageMap: PageMap,
-  init = false
+  init = false,
 ): Promise<string[]> =>
   Promise.all(
     type.map(
@@ -37,13 +38,13 @@ export const prepareType = (
           layout = "Layout",
           frontmatter = (): Record<string, string> => ({}),
         },
-        index
+        index,
       ) => {
         if (!isString(key) || !key.length) {
           logger.error(
             `Invalid ${colors.magenta("key")} option ${colors.cyan(
-              key
-            )} in ${colors.cyan(`type[${index}]`)}`
+              key,
+            )} in ${colors.cyan(`type[${index}]`)}`,
           );
 
           return null;
@@ -63,11 +64,11 @@ export const prepareType = (
 
           if (path) {
             const pagePath = `${localePath}${removeLeadingSlash(
-              slugify(path.replace(/:key/g, key))
+              slugify(path.replace(/:key/g, key)),
             )}`;
 
             const page = await createPage(app, {
-              path: pagePath,
+              path: encodeURI(pagePath),
               frontmatter: {
                 ...frontmatter(localePath),
                 blog: {
@@ -95,14 +96,14 @@ export const prepareType = (
 
             if (app.env.isDebug)
               logger.info(
-                `Route ${localePath} in ${key} type: path: ${page.path}; items: ${keys.length}\n`
+                `Route ${localePath} in ${key} type: path: ${page.path}; items: ${keys.length}\n`,
               );
           } else {
             typeMap[localePath] = { path: "", keys };
 
             if (app.env.isDebug)
               logger.info(
-                `Route ${localePath} in ${key} type: items: ${keys.length}\n`
+                `Route ${localePath} in ${key} type: items: ${keys.length}\n`,
               );
           }
         }
@@ -112,8 +113,8 @@ export const prepareType = (
           map: typeMap,
           pageKeys,
         };
-      }
-    )
+      },
+    ),
   ).then(async (result) => {
     const finalMap: Record<string, TypeMap> = {};
     const keys: string[] = [];
@@ -121,12 +122,12 @@ export const prepareType = (
     result
       .filter(
         (
-          item
+          item,
         ): item is {
           key: string;
           map: TypeMap;
           pageKeys: string[];
-        } => item !== null
+        } => item !== null,
       )
       .forEach(({ key, map, pageKeys }) => {
         finalMap[key] = map;
@@ -138,7 +139,7 @@ export const prepareType = (
       `\
 export const typeMap = ${JSON.stringify(finalMap)};
 ${app.env.isDev ? HMR_CODE : ""}
-`
+`,
     );
 
     if (app.env.isDebug) logger.info("All types generated.");

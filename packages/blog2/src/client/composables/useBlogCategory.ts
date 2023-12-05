@@ -3,17 +3,18 @@ import {
   usePageFrontmatter,
   useRouteLocale,
 } from "@vuepress/client";
-import { type ComputedRef, computed, ref } from "vue";
+import type { ComputedRef } from "vue";
+import { computed, ref } from "vue";
 import { useRouter } from "vue-router";
 import { resolveRouteWithRedirect } from "vuepress-shared/client";
 
 import { categoryMap } from "@temp/blog/category";
 
-import {
-  type BlogCategoryFrontmatterOptions,
-  type CategoryMap,
+import type {
+  BlogCategoryFrontmatterOptions,
+  CategoryMap,
 } from "../../shared/index.js";
-import { type BlogCategoryData } from "../typings.js";
+import type { BlogCategoryData } from "../typings.js";
 
 // eslint-disable-next-line
 declare const __VUE_HMR_RUNTIME__: Record<string, any>;
@@ -23,9 +24,9 @@ declare const BLOG_META_SCOPE: string;
 export const blogCategoryMap = ref(categoryMap);
 
 export const useBlogCategory = <
-  T extends Record<string, unknown> = Record<string, unknown>
+  T extends Record<string, unknown> = Record<string, unknown>,
 >(
-  key = ""
+  key = "",
 ): ComputedRef<BlogCategoryData<T>> => {
   const page = usePageData();
   const router = useRouter();
@@ -88,7 +89,7 @@ export const useBlogCategory = <
 // @ts-ignore
 if (__VUEPRESS_DEV__ && (import.meta.webpackHot || import.meta.hot))
   __VUE_HMR_RUNTIME__["updateBlogCategory"] = (
-    map: Record<string, CategoryMap>
+    map: Record<string, CategoryMap>,
   ): void => {
     blogCategoryMap.value = map;
   };

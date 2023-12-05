@@ -1,14 +1,10 @@
-import { type App, type LocaleConfig } from "@vuepress/core";
-import { type LocaleData } from "@vuepress/shared";
+import type { App, LocaleConfig } from "@vuepress/core";
+import type { LocaleData } from "@vuepress/shared";
 
 import { lang2PathConfig, path2langConfig } from "./config.js";
-import { type HopeLang } from "./types.js";
-import {
-  type RequiredLocaleConfig,
-  deepAssign,
-  fromEntries,
-  keys,
-} from "../../shared/index.js";
+import type { HopeLang } from "./types.js";
+import type { RequiredLocaleConfig } from "../../shared/index.js";
+import { deepAssign, fromEntries, keys } from "../../shared/index.js";
 import { Logger } from "../utils/index.js";
 
 /** Get language from path */
@@ -17,7 +13,7 @@ export const path2Lang = (path = "", debug = false): HopeLang => {
 
   if (debug)
     console.warn(
-      `${path} isn’t assign with a lang, and will return "en-US" instead.`
+      `${path} isn’t assign with a lang, and will return "en-US" instead.`,
     );
 
   return "en-US";
@@ -112,7 +108,7 @@ export const getLocales = <T extends LocaleData>({
           deepAssign(
             {},
             defaultLocaleData || defaultLocalesConfig[rootPath] || {},
-            userLocalesConfig[localePath] || {}
+            userLocalesConfig[localePath] || {},
           ),
         ];
       }),
@@ -121,7 +117,7 @@ export const getLocales = <T extends LocaleData>({
       deepAssign(
         {},
         defaultLocalesConfig[rootPath],
-        userLocalesConfig["/"] || userLocalesConfig[rootPath] || {}
+        userLocalesConfig["/"] || userLocalesConfig[rootPath] || {},
       ),
     ],
   ]);

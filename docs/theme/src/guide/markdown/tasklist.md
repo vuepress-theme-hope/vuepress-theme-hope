@@ -12,7 +12,7 @@ Let the Markdown file in your VuePress site support task list.
 
 <!-- more -->
 
-## Config
+## Settings
 
 ::: code-tabs#language
 
@@ -53,17 +53,4 @@ export default {
 
 :::
 
-## Syntax
-
-- Use `- [ ] some text` to render an unchecked task item.
-- Use `- [x] some text` to render a checked task item. (Capital `X` is also supported)
-
-## Demo
-
-- [ ] Plan A
-- [x] Plan B
-
-```md
-- [ ] Plan A
-- [x] Plan B
-```
+<!-- @include: @md-enhance/guide/grammar/tasklist.md#after -->

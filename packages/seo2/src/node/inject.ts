@@ -1,12 +1,12 @@
-import { type HeadConfig } from "@vuepress/core";
+import type { HeadConfig } from "@vuepress/core";
 import { startsWith } from "vuepress-shared/node";
 
-import {
-  type ArticleSchema,
-  type ArticleSeoContent,
-  type BlogPostingSchema,
-  type SeoContent,
-  type WebPageSchema,
+import type {
+  ArticleSchema,
+  ArticleSeoContent,
+  BlogPostingSchema,
+  SeoContent,
+  WebPageSchema,
 } from "./typings/index.js";
 
 interface MetaOptions {
@@ -23,7 +23,7 @@ const appendMetaToHead = (
     attribute = ["article:", "og:"].some((type) => startsWith(name, type))
       ? "property"
       : "name",
-  }: MetaOptions
+  }: MetaOptions,
 ): void => {
   if (content) head.push(["meta", { [attribute]: name, content }]);
 };
@@ -33,7 +33,7 @@ export const addOGP = (head: HeadConfig[], content: SeoContent): void => {
     switch (property) {
       case "article:tag":
         (<ArticleSeoContent>content)["article:tag"]!.forEach((tag: string) =>
-          appendMetaToHead(head, { name: "article:tag", content: tag })
+          appendMetaToHead(head, { name: "article:tag", content: tag }),
         );
         break;
       case "og:locale:alternate":
@@ -56,7 +56,7 @@ export const addOGP = (head: HeadConfig[], content: SeoContent): void => {
 
 export const appendJSONLD = (
   head: HeadConfig[],
-  content: ArticleSchema | BlogPostingSchema | WebPageSchema
+  content: ArticleSchema | BlogPostingSchema | WebPageSchema,
 ): void => {
   head.push([
     "script",
@@ -67,14 +67,14 @@ export const appendJSONLD = (
 
 export const appendCanonical = (
   head: HeadConfig[],
-  url?: string | null
+  url?: string | null,
 ): void => {
   if (url) head.push(["link", { rel: "canonical", href: url }]);
 };
 
 export const appendAlternate = (
   head: HeadConfig[],
-  urls: { lang: string; path: string }[]
+  urls: { lang: string; path: string }[],
 ): void => {
   urls.forEach(({ lang, path }) => {
     head.push([

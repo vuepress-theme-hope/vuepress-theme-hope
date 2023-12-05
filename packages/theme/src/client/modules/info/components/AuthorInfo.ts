@@ -1,5 +1,6 @@
-import { type PropType, type VNode, defineComponent, h } from "vue";
-import { type AuthorInfo } from "vuepress-shared/client";
+import type { PropType, VNode } from "vue";
+import { defineComponent, h } from "vue";
+import type { AuthorInfo } from "vuepress-shared/client";
 
 import { AuthorIcon } from "@theme-hope/modules/info/components/icons";
 import { useMetaLocale } from "@theme-hope/modules/info/composables/index";
@@ -58,16 +59,16 @@ export default defineComponent({
                           target: "_blank",
                           rel: "noopener noreferrer",
                         },
-                        item.name
+                        item.name,
                       )
-                    : h("span", { class: "page-author-item" }, item.name)
-                )
+                    : h("span", { class: "page-author-item" }, item.name),
+                ),
               ),
               h("span", {
                 property: "author",
                 content: props.author.map((item) => item.name).join(", "),
               }),
-            ]
+            ],
           )
         : null;
   },

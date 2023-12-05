@@ -1,12 +1,6 @@
-import {
-  type VNode,
-  defineComponent,
-  h,
-  onMounted,
-  ref,
-  shallowRef,
-} from "vue";
-import { type CopyCodeLocaleConfig } from "vuepress-plugin-copy-code2";
+import type { VNode } from "vue";
+import { defineComponent, h, onMounted, shallowRef } from "vue";
+import type { CopyCodeLocaleConfig } from "vuepress-plugin-copy-code2";
 import { Message, useLocaleConfig } from "vuepress-shared/client";
 
 import "./icon-display.scss";
@@ -92,10 +86,10 @@ export default defineComponent({
         { class: "icon-display-wrapper" },
         icons.value.map((icon) =>
           h("div", { class: "icon", onClick: () => copyToClipboard(icon) }, [
-            h("div", { class: ["iconfont", `${props.iconPrefix}${icon}`] }),
+            h("div", { class: ["iconfont", props.iconPrefix + icon] }),
             h("div", { class: "text" }, icon),
-          ])
-        )
+          ]),
+        ),
       );
   },
 });

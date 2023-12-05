@@ -1,5 +1,5 @@
 declare module "*.scss" {
-  const content: undefined;
+  const content: string;
 
   export default content;
 }

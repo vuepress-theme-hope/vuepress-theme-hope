@@ -1,20 +1,20 @@
-import { type GitData } from "@vuepress/plugin-git";
-import { type BlogTypeOptions } from "vuepress-plugin-blog2";
+import type { GitData } from "@vuepress/plugin-git";
+import type { BlogTypeOptions } from "vuepress-plugin-blog2";
 import { compareDate } from "vuepress-shared/node";
 
 import { defaultPageSorter } from "./utils.js";
-import {
-  type ArticleInfo,
-  ArticleInfoType,
-  type BlogPluginOptions,
-  type ThemeData,
-  type ThemeNormalPageFrontmatter,
+import type {
+  ArticleInfo,
+  BlogPluginOptions,
+  ThemeData,
+  ThemeNormalPageFrontmatter,
 } from "../../../shared/index.js";
+import { ArticleInfoType } from "../../../shared/index.js";
 
 /** @private */
 export const getBlogArticleType = (
   options: BlogPluginOptions,
-  themeData: ThemeData
+  themeData: ThemeData,
 ): BlogTypeOptions<
   { git: GitData },
   ThemeNormalPageFrontmatter,
@@ -40,6 +40,7 @@ export const getBlogArticleType = (
     layout: "BlogType",
     frontmatter: (localePath) => ({
       title: themeData.locales[localePath].blogLocales.article,
+      dir: { index: false },
       index: false,
       feed: false,
       sitemap: false,
@@ -49,7 +50,7 @@ export const getBlogArticleType = (
 /** @private */
 export const getBlogStarType = (
   options: BlogPluginOptions,
-  themeData: ThemeData
+  themeData: ThemeData,
 ): BlogTypeOptions<
   { git: GitData },
   ThemeNormalPageFrontmatter,
@@ -75,7 +76,7 @@ export const getBlogStarType = (
 
       return compareDate(
         pageA.routeMeta[ArticleInfoType.date],
-        pageB.routeMeta[ArticleInfoType.date]
+        pageB.routeMeta[ArticleInfoType.date],
       );
     },
 
@@ -83,6 +84,7 @@ export const getBlogStarType = (
     layout: "BlogType",
     frontmatter: (localePath) => ({
       title: themeData.locales[localePath].blogLocales.star,
+      dir: { index: false },
       index: false,
       feed: false,
       sitemap: false,
@@ -92,7 +94,7 @@ export const getBlogStarType = (
 /** @private */
 export const getBlogTimelineType = (
   options: BlogPluginOptions,
-  themeData: ThemeData
+  themeData: ThemeData,
 ): BlogTypeOptions<
   { git: GitData },
   ThemeNormalPageFrontmatter,
@@ -111,12 +113,13 @@ export const getBlogTimelineType = (
     sorter: (pageA, pageB) =>
       compareDate(
         pageA.routeMeta[ArticleInfoType.date],
-        pageB.routeMeta[ArticleInfoType.date]
+        pageB.routeMeta[ArticleInfoType.date],
       ),
     path: options.timeline,
     layout: "Timeline",
     frontmatter: (localePath) => ({
       title: themeData.locales[localePath].blogLocales.timeline,
+      dir: { index: false },
       index: false,
       feed: false,
       sitemap: false,

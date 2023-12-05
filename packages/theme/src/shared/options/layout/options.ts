@@ -1,12 +1,12 @@
-import { type BackToTopOptions } from "vuepress-plugin-components";
+import type { BackToTopOptions } from "vuepress-plugin-components";
 
-import { type FooterLocaleOptions } from "./footer.js";
-import { type DocsRepoLocaleOptions } from "./info.js";
-import { type MetaLocaleOptions, type MetaLocateData } from "./meta.js";
-import { type NavbarLocaleData, type NavbarLocaleOptions } from "./navbar.js";
-import { type RouteLocaleData } from "./route.js";
-import { type SidebarLocaleOptions, type SidebarSorter } from "./sidebar.js";
-import { type PageInfo } from "../../info.js";
+import type { FooterLocaleOptions } from "./footer.js";
+import type { DocsRepoLocaleOptions } from "./info.js";
+import type { MetaLocaleOptions, MetaLocateData } from "./meta.js";
+import type { NavbarLocaleData, NavbarLocaleOptions } from "./navbar.js";
+import type { RouteLocaleData } from "./route.js";
+import type { SidebarLocaleOptions, SidebarSorter } from "./sidebar.js";
+import type { PageInfo } from "../../info.js";
 
 export interface LayoutLocaleData {
   /**

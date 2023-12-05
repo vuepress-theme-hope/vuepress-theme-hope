@@ -1,11 +1,12 @@
-import { type PluginFunction } from "@vuepress/core";
-import { getDirname, path } from "@vuepress/utils";
+import type { PluginFunction } from "@vuepress/core";
 import { useSassPalettePlugin } from "vuepress-plugin-sass-palette";
 import {
   addCustomElement,
   addViteOptimizeDepsExclude,
   addViteOptimizeDepsInclude,
   addViteSsrExternal,
+  addViteSsrNoExternal,
+  checkInstalled,
   checkVersion,
   getLocales,
 } from "vuepress-shared/node";
@@ -13,10 +14,8 @@ import {
 import { getProvider } from "./alias.js";
 import { convertOptions } from "./compact.js";
 import { walineLocales } from "./locales.js";
-import { type CommentPluginOptions } from "./options.js";
-import { PLUGIN_NAME, logger } from "./utils.js";
-
-const __dirname = getDirname(import.meta.url);
+import type { CommentPluginOptions } from "./options.js";
+import { CLIENT_FOLDER, PLUGIN_NAME, getPackage, logger } from "./utils.js";
 
 /** Comment Plugin */
 export const commentPlugin =
@@ -25,9 +24,19 @@ export const commentPlugin =
     // TODO: Remove this in v2 stable
     if (legacy)
       convertOptions(options as CommentPluginOptions & Record<string, unknown>);
-    checkVersion(app, PLUGIN_NAME, "2.0.0-beta.62");
+    checkVersion(app, PLUGIN_NAME, "2.0.0-rc.0");
 
     if (app.env.isDebug) logger.info("Options:", options);
+
+    const pkg = getPackage(options.provider);
+
+    if (pkg && !checkInstalled(pkg, import.meta.url)) {
+      logger.error(
+        `Package ${pkg} is not installed, please install it manually!`,
+      );
+
+      return { name: PLUGIN_NAME };
+    }
 
     const userWalineLocales =
       options.provider === "Waline"
@@ -65,7 +74,11 @@ export const commentPlugin =
       extendsBundlerOptions: (bundlerOptions: unknown, app): void => {
         switch (options.provider) {
           case "Artalk": {
-            addViteOptimizeDepsInclude(bundlerOptions, app, "artalk");
+            addViteOptimizeDepsExclude(
+              bundlerOptions,
+              app,
+              "artalk/dist/Artalk.es.js",
+            );
             addViteSsrExternal(bundlerOptions, app, "artalk");
             break;
           }
@@ -89,8 +102,10 @@ export const commentPlugin =
             break;
           }
         }
+
+        addViteSsrNoExternal(bundlerOptions, app, "vuepress-shared");
       },
 
-      clientConfigFile: path.resolve(__dirname, "../client/config.js"),
+      clientConfigFile: `${CLIENT_FOLDER}config.js`,
     };
   };

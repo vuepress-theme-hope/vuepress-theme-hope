@@ -15,9 +15,16 @@ VuePress 主要从 Markdown 文件生成页面。因此，你可以使用它轻�
 
 <!-- more -->
 
-## Markdown 介绍
-
-如果你是一个新手，还不会编写 Markdown，请先阅读 [Markdown 介绍](../../cookbook/markdown/README.md) 和 [Markdown 演示](../../cookbook/markdown/demo.md)。
+```component VPBanner
+title: Markdown 介绍
+content: 如果你是一个新手，还不会编写 Markdown，请先阅读下方板块。
+logo: /assets/image/markdown.svg
+background: var(--bg-2)
+color: var(--banner-text)
+actions:
+  - text: Markdown 教程
+    link: ../../cookbook/markdown/
+```
 
 ## Markdown 配置
 
@@ -43,7 +50,7 @@ VuePress 会使用 [markdown-it](https://github.com/markdown-it/markdown-it) 来
 
 通过 <ProjectLink name="md-enhance" path="/zh/">`vuepress-plugin-md-enhance`</ProjectLink>，主题扩展了更多 Markdown 语法，提供更加丰富的写作功能。
 
-#### 自定义容器
+#### 提示容器
 
 ::: v-pre
 
@@ -53,7 +60,7 @@ VuePress 会使用 [markdown-it](https://github.com/markdown-it/markdown-it) 来
 
 ::: info 自定义标题
 
-信息容器，包含 `代码` 与 [链接](#自定义容器)。
+信息容器，包含 `代码` 与 [链接](#提示容器)。
 
 ```js
 const a = 1;
@@ -73,7 +80,7 @@ const a = 1;
 
 :::
 
-::: danger 自定义标题
+::: caution 自定义标题
 
 危险容器
 
@@ -112,7 +119,7 @@ const a = 1;
 
 :::
 
-::: danger 自定义标题
+::: caution 自定义标题
 
 危险容器
 
@@ -127,7 +134,7 @@ const a = 1;
 
 ::::
 
-- [查看详情](../markdown/container.md)
+- [查看详情](../markdown/hint.md)
 
 #### 选项卡
 
@@ -224,17 +231,17 @@ npm i -D vuepress-theme-hope
 
 - [查看详情](../markdown/image.md)
 
-#### 卡片
+#### 组件
 
-```card
+```component VPCard
 title: Mr.Hope
 desc: Where there is light, there is hope
-logo: https://mrhope.site/logo.svg
-link: https://mrhope.site
+logo: https://mister-hope.com/logo.svg
+link: https://mister-hope.com
 color: rgba(253, 230, 138, 0.15)
 ```
 
-- [查看详情](../markdown/card.md)
+- [查看详情](../markdown/component.md)
 
 #### 图表
 
@@ -270,7 +277,7 @@ color: rgba(253, 230, 138, 0.15)
 
 :::
 
-- [查看详情](../markdown/chart.md)
+- [查看详情](../markdown/chartjs.md)
 
 #### Echarts
 
@@ -377,13 +384,9 @@ span {
 
 #### 样式化
 
-<!-- markdownlint-disable MD033 -->
-
 设置它<span style="color:red">没有</span>任何效果，请<span style="color:red">不要</span>这样使用
 
 - [查看详情](../markdown/stylize.md)
-
-<!-- markdownlint-enable MD033 -->
 
 ### 交互演示
 
@@ -402,6 +405,25 @@ speak(msg);
 :::
 
 - [查看详情](../markdown/playground.md)
+
+### Kotlin 交互演示
+
+::: kotlin-playground Kotlin 交互演示
+
+@file main.kt
+
+```kotlin
+class Contact(val id: Int, var email: String)
+
+fun main(args: Array<String>) {
+    val contact = Contact(1, "mary@gmail.com")
+    println(contact.id)
+}
+```
+
+:::
+
+- [查看详情](../markdown//kotlin-playground.md)
 
 ### Vue 交互演示
 
@@ -432,7 +454,7 @@ const msg = ref("Hello World!");
 
 ## 幻灯片 1
 
-一个有文字和 [链接](https://mrhope.site) 的段落
+一个有文字和 [链接](https://mister-hope.com) 的段落
 
 ---
 
@@ -459,6 +481,6 @@ $$
 
 @slideend
 
-- [查看详情](../markdown/presentation.md)
+- [查看详情](../markdown/revealjs.md)
 
 - [查看详情](../markdown/stylize.md)

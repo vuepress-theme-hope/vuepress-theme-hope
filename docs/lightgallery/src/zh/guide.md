@@ -5,7 +5,7 @@ icon: lightbulb
 
 此插件会使用 Lightgallery 让正文内的图片在点击时进入浏览模式浏览。
 
-::: danger 许可证限制
+::: caution 许可证限制
 
 请注意，虽然这个插件是在 MIT 协议下发布的，但我们目前正在通过 VuePress Theme Hope 的内置 [lightgallery 组织许可](https://www.lightgalleryjs.com/license/) 来实现这一点，并且 如果你将其用于非商业用途，我们愿意承认你是我们组织的成员。
 
@@ -21,7 +21,7 @@ icon: lightbulb
 
 ## 自定义 LightGallery 选项
 
-您可以通过在客户端配置文件中导入和调用 `defineLightGalleryConfig` 来将选项传递给 [`lightgallery`](https://www.lightgalleryjs.com/)：
+你可以通过在客户端配置文件中导入和调用 `defineLightGalleryConfig` 来将选项传递给 [`lightgallery`](https://www.lightgalleryjs.com/)：
 
 ```ts
 // .vuepress/client.ts
@@ -46,9 +46,9 @@ export default defineClientConfig({
 <!-- markdownlint-disable -->
 
 <div class="image-preview">
-  <img src="/assets/image/1.jpg" />
-  <img src="/assets/image/2.jpg" />
-  <img src="/assets/image/3.jpg" />
+  <img src="//theme-hope-assets.vuejs.press/files/img/1.jpg" />
+  <img src="//theme-hope-assets.vuejs.press/files/img/2.jpg" />
+  <img src="//theme-hope-assets.vuejs.press/files/img/3.jpg" />
 </div>
 
 <style>

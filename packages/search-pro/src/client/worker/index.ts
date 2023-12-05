@@ -1,24 +1,29 @@
-import { database } from "@temp/search-pro/database";
+import { loadJSONIndex } from "slimsearch";
 
-import { type SearchIndex } from "../../shared/index.js";
-import { getResults } from "../utils/index.js";
+import database from "@temp/search-pro/index";
 
-// eslint-disable-next-line @typescript-eslint/naming-convention
-declare const __VUEPRESS_DEV__: boolean;
-declare const __VUE_HMR_RUNTIME__: Record<string, unknown>;
+import { getResults } from "./result.js";
+import { getSuggestions } from "./suggestion.js";
+import type { IndexItem } from "../../shared/index.js";
+import type { MessageData } from "../typings/index.js";
 
-let searchIndex = database;
+self.onmessage = async ({
+  data: { type = "all", query, locale, options },
+}: MessageEvent<MessageData>): Promise<void> => {
+  const { default: localeIndex } = await database[locale]();
 
-// @ts-ignore
-if (__VUEPRESS_DEV__ && (import.meta.webpackHot || import.meta.hot))
-  __VUE_HMR_RUNTIME__["updateSearchProDatabase"] = (
-    database: SearchIndex
-  ): void => {
-    searchIndex = database;
-  };
+  const searchLocaleIndex = loadJSONIndex<IndexItem, string>(localeIndex, {
+    fields: [/** heading */ "h", /** text */ "t", /** customFields */ "c"],
+    storeFields: [/** heading */ "h", /** text */ "t", /** customFields */ "c"],
+  });
 
-self.onmessage = ({
-  data,
-}: MessageEvent<{ query: string; routeLocale: string }>): void => {
-  self.postMessage(getResults(data.query, searchIndex[data.routeLocale]));
+  if (type === "suggest")
+    self.postMessage(getSuggestions(query, searchLocaleIndex, options));
+  else if (type === "search")
+    self.postMessage(getResults(query, searchLocaleIndex, options));
+  else
+    self.postMessage({
+      suggestions: getSuggestions(query, searchLocaleIndex, options),
+      results: getResults(query, searchLocaleIndex, options),
+    });
 };

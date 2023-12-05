@@ -13,7 +13,7 @@ tag:
 The behavior option can also accept a boolean value:
 
 - `false`: options set to`false` with `false` value
-- `true`: `{ check: true, compact:true, custom :false, debug: false }`
+- `true`: `{ check: true, compact:true, custom: false, debug: false }`
 
 <!-- more -->
 
@@ -37,7 +37,7 @@ export default defineUserConfig({
     },
     {
       // theme behavior options here (optional)
-    }
+    },
   ),
 });
 ```
@@ -60,7 +60,7 @@ export default defineUserConfig({
     },
     {
       // theme behavior options here (optional)
-    }
+    },
   ),
 });
 ```

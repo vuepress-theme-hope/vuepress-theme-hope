@@ -1,10 +1,11 @@
-import { type ComputedRef, type Ref, computed, toRef } from "vue";
+import type { ComputedRef, Ref } from "vue";
+import { computed, toRef } from "vue";
 import {
   getReadingTimeLocale,
   useReadingTimeLocaleConfig,
 } from "vuepress-plugin-reading-time2/client";
+import type { AuthorInfo } from "vuepress-shared/client";
 import {
-  type AuthorInfo,
   getAuthor,
   getCategory,
   getDate,
@@ -12,20 +13,17 @@ import {
 } from "vuepress-shared/client";
 
 import { useThemeLocaleData } from "@theme-hope/composables/index";
-import { type PageInfoProps } from "@theme-hope/modules/info/components/PageInfo";
-import {
-  type PageCategory,
-  type PageTag,
+import type { PageInfoProps } from "@theme-hope/modules/info/components/PageInfo";
+import type {
+  PageCategory,
+  PageTag,
 } from "@theme-hope/modules/info/utils/index";
 
 import { useCategoryMap } from "./categoryMap.js";
 import { useBlogOptions } from "./options.js";
 import { useTagMap } from "./tagMap.js";
-import {
-  type ArticleInfo,
-  ArticleInfoType,
-  type PageInfo,
-} from "../../../../shared/index.js";
+import type { ArticleInfo, PageInfo } from "../../../../shared/index.js";
+import { ArticleInfoType } from "../../../../shared/index.js";
 
 export type AuthorRef = ComputedRef<AuthorInfo[]>;
 
@@ -51,7 +49,7 @@ export const useArticleCategory = (info: Ref<ArticleInfo>): CategoryRef => {
     getCategory(info.value[ArticleInfoType.category]).map((name) => ({
       name,
       path: categoryMap.value.map[name].path,
-    }))
+    })),
   );
 };
 
@@ -64,7 +62,7 @@ export const useArticleTag = (info: Ref<ArticleInfo>): TagRef => {
     getTag(info.value[ArticleInfoType.tag]).map((name) => ({
       name,
       path: tagMap.value.map[name].path,
-    }))
+    })),
   );
 };
 
@@ -105,7 +103,7 @@ export const useArticleInfo = (props: {
       readingTimeLocaleConfig.value
         ? getReadingTimeLocale(
             articleInfo.value[ArticleInfoType.readingTime],
-            readingTimeLocaleConfig.value
+            readingTimeLocaleConfig.value,
           )
         : null,
     pageview: props.path,

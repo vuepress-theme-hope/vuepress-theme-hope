@@ -1,10 +1,9 @@
 import { config } from "docs-shared";
 import theme from "./theme.js";
 
+// the config wrapper is located in <root>/docs-shared/src/config-wrapper.ts
 export default config(
-  {
-    name: "redirect",
-  },
+  { name: "redirect" },
   {
     locales: {
       "/": {
@@ -20,5 +19,5 @@ export default config(
     },
 
     theme,
-  }
+  },
 );

@@ -78,9 +78,7 @@ The flowchart above may help you understand its design goal and how the plugin w
 
 The plugin filters all pages using `filter` option to drop pages you don't want.
 
-::: note
-
-By default, all the pages generated from Markdown files but not homepage are included as articles.
+::: note By default, all pages generating from Markdown files but not homepage are considered as articles.
 
 :::
 

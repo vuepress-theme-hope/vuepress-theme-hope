@@ -19,9 +19,7 @@ Image selector
 
 Light Gallery Plugins to enable
 
-::: note
-
-Optional values:
+::: info Available plugins
 
 - `"autoplay"`
 - `"fullscreen"`

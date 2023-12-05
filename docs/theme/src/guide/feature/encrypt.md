@@ -10,7 +10,7 @@ tag:
 
 The theme supports encryption of specific folders or specific paths, as well as global scope encryption.
 
-::: danger
+::: caution
 
 Note that because of the limitation of vuepress, the content of the article is only hidden before being decrypted, and visitors can still get the content of the article from the source code (from js).
 

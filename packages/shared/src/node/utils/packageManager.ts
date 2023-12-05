@@ -10,7 +10,7 @@ const NPM_LOCK = "package-lock.json";
 const YARN_LOCK = "yarn.lock";
 const PNPM_LOCK = "pnpm-lock.yaml";
 
-const isInstalled = (packageManager: PackageManager): boolean => {
+const isPackageManagerInstalled = (packageManager: PackageManager): boolean => {
   try {
     return (
       execaCommandSync(`${packageManager} --version`, { stdio: "ignore" })
@@ -27,7 +27,7 @@ const isInstalled = (packageManager: PackageManager): boolean => {
  * @param packageManager package manager
  */
 export const hasGlobalInstallation = (
-  packageManager: PackageManager
+  packageManager: PackageManager,
 ): boolean => {
   const key = `global:${packageManager}`;
 
@@ -35,7 +35,7 @@ export const hasGlobalInstallation = (
 
   if (status !== undefined) return status;
 
-  if (isInstalled(packageManager)) {
+  if (isPackageManagerInstalled(packageManager)) {
     globalCache.set(key, true);
 
     return true;
@@ -53,7 +53,7 @@ export const hasGlobalInstallation = (
  */
 export const getTypeofLockFile = (
   cwd = process.cwd(),
-  deep = true
+  deep = true,
 ): PackageManager | null => {
   const key = `local:${cwd}`;
 
@@ -117,7 +117,7 @@ export const getTypeofLockFile = (
  */
 export const detectPackageManager = (
   cwd = process.cwd(),
-  deep = true
+  deep = true,
 ): PackageManager => {
   const type = getTypeofLockFile(cwd, deep);
 
@@ -126,7 +126,7 @@ export const detectPackageManager = (
     (hasGlobalInstallation("pnpm")
       ? "pnpm"
       : hasGlobalInstallation("yarn")
-      ? "yarn"
-      : "npm")
+        ? "yarn"
+        : "npm")
   );
 };

@@ -1,4 +1,5 @@
-import { type VNode, computed, defineComponent, h } from "vue";
+import type { VNode } from "vue";
+import { computed, defineComponent, h } from "vue";
 import { entries } from "vuepress-shared/client";
 
 import { icons } from "@temp/theme-hope/socialMedia";
@@ -30,18 +31,18 @@ export default defineComponent({
       mediaLinks.value.length
         ? h(
             "div",
-            { class: "social-media-wrapper" },
+            { class: "vp-social-medias" },
             mediaLinks.value.map(({ name, icon, url }) =>
               h("a", {
-                class: "social-media",
+                class: "vp-social-media",
                 href: url,
                 rel: "noopener noreferrer",
                 target: "_blank",
                 "aria-label": name,
                 ...(isPure.value ? {} : { "data-balloon-pos": "up" }),
                 innerHTML: icon,
-              })
-            )
+              }),
+            ),
           )
         : null;
   },

@@ -72,7 +72,9 @@
     line-height: 1.5;
     overflow-wrap: break-word;
 
-    transition: background-color var(--vp-ct), color var(--vp-ct);
+    transition:
+      background-color var(--vp-ct),
+      color var(--vp-ct);
 
     &:hover {
       background-color: var(--vp-tcl);

@@ -11,7 +11,9 @@ icon: lightbulb
 
 此插件，默认全局禁用，你需要在需要的页面的 frontmatter 中设置 `copy: true` 手动开启。当然，你可以在插件选项中设置 `global: true` 让其全局生效，并在个别页面的 frontmatter 中设置 `copy: false` 禁用它。
 
-处于不打扰用户的考虑，默认配置下，仅当用户复制字符长度不小于 `100` 时，才会触发追加版权信息，如果你希望改变这个触发值，请设置 `triggerWords`，同时该选项支持在 frontmatter 中通过 `copy.triggerWord` 单独设置。
+处于不打扰用户的考虑，默认配置下，仅当用户复制字符长度不小于 `100` 时，才会触发追加版权信息，如果你希望改变这个触发值，请设置 `triggerLength`，同时该选项支持在 frontmatter 中通过 `copy.triggerLength` 单独设置。
+
+如果你希望禁止用户复制较长内容，你可以设置 `maxLength`，同时该选项支持在 frontmatter 中通过 `copy.maxLength` 单独设置。
 
 ## 禁用复制和选择
 

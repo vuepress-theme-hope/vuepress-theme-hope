@@ -7,4 +7,5 @@ export * from "./popup.js";
 export * from "./props.js";
 export * from "./resolveRepo.js";
 export * from "./resolveRouteWithRedirect.js";
+export * from "./routeGuardEvent.js";
 export * from "./window.js";

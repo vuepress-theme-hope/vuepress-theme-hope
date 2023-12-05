@@ -1,10 +1,10 @@
 /* eslint-disable @typescript-eslint/no-explicit-any */
-import { type Page } from "@vuepress/core";
+import type { Page } from "@vuepress/core";
 
 export interface BlogTypeOptions<
   ExtraPageData extends Record<any, any> = Record<never, never>,
   ExtraPageFrontmatter extends Record<any, any> = Record<string, unknown>,
-  ExtraPageFields extends Record<any, any> = Record<never, never>
+  ExtraPageFields extends Record<any, any> = Record<never, never>,
 > {
   /**
    * Unique type name
@@ -19,7 +19,7 @@ export interface BlogTypeOptions<
    * 一个过滤函数来决定页面是否满足此类型
    */
   filter: (
-    page: Page<ExtraPageData, ExtraPageFrontmatter, ExtraPageFields>
+    page: Page<ExtraPageData, ExtraPageFrontmatter, ExtraPageFields>,
   ) => boolean;
 
   /**
@@ -29,7 +29,7 @@ export interface BlogTypeOptions<
    */
   sorter?: (
     pageA: Page<ExtraPageData, ExtraPageFrontmatter, ExtraPageFields>,
-    pageB: Page<ExtraPageData, ExtraPageFrontmatter, ExtraPageFields>
+    pageB: Page<ExtraPageData, ExtraPageFrontmatter, ExtraPageFields>,
   ) => number;
 
   /**

@@ -1,7 +1,6 @@
+import type { PropType, VNode } from "vue";
 import {
-  type PropType,
   TransitionGroup,
-  type VNode,
   computed,
   defineComponent,
   h,
@@ -12,7 +11,7 @@ import { useRoute, useRouter } from "vue-router";
 import { isAbsoluteUrl, isLinkHttp, startsWith } from "vuepress-shared/client";
 
 import { CloseIcon } from "./icons.js";
-import { type NoticeActionOption } from "../../shared/index.js";
+import type { NoticeActionOption } from "../../shared/index.js";
 
 import "../styles/notice.scss";
 
@@ -111,13 +110,13 @@ export default defineComponent({
     const key = computed(() =>
       props.noticeKey
         ? `notice-${props.noticeKey}`
-        : `${props.title}${props.content}`
+        : `${props.title}${props.content}`,
     );
 
     const isMatched = computed(() =>
       props.match
         ? new RegExp(props.match).test(route.path)
-        : startsWith(route.path, props.path)
+        : startsWith(route.path, props.path),
     );
 
     onMounted(() => {
@@ -132,7 +131,7 @@ export default defineComponent({
       isVisible.value = false;
       (props.showOnce ? localStorage : sessionStorage).setItem(
         key.value,
-        "true"
+        "true",
       );
     };
 
@@ -151,7 +150,7 @@ export default defineComponent({
               props.fullscreen
                 ? h("div", {
                     key: "mask",
-                    class: "notice-mask",
+                    class: "vp-notice-mask",
                     onClick: () => {
                       if (!props.confirm) close();
                     },
@@ -161,35 +160,38 @@ export default defineComponent({
                 "div",
                 {
                   key: "popup",
-                  class: ["notice-wrapper", { fullscreen: props.fullscreen }],
+                  class: [
+                    "vp-notice-wrapper",
+                    { fullscreen: props.fullscreen },
+                  ],
                 },
                 [
-                  h("header", { class: "notice-title" }, [
+                  h("header", { class: "vp-notice-title" }, [
                     props.confirm
                       ? null
                       : h(CloseIcon, { onClick: (): void => close() }),
                     h("span", { innerHTML: props.title }),
                   ]),
                   h("div", {
-                    class: "notice-content",
+                    class: "vp-notice-content",
                     innerHTML: props.content,
                   }),
                   h(
                     "div",
-                    { class: "notice-footer" },
+                    { class: "vp-notice-footer" },
                     props.actions.map(({ text, link, type = "" }) =>
                       h("button", {
                         type: "button",
-                        class: ["notice-footer-action", type],
+                        class: ["vp-notice-footer-action", type],
                         onClick: () => openLink(link),
                         innerHTML: text,
-                      })
-                    )
+                      }),
+                    ),
                   ),
-                ]
+                ],
               ),
             ]
-          : []
+          : [],
       );
   },
 });

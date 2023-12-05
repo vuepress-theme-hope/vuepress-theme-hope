@@ -15,12 +15,12 @@ export default hopeTheme(
 
     author: {
       name: "Mr.Hope",
-      url: "https://mrhope.site",
+      url: "https://mister-hope.com",
     },
 
-    iconAssets: "iconfont",
+    iconAssets: "fontawesome-with-brands",
 
-    logo: "/logo.svg",
+    logo: "https://theme-hope-assets.vuejs.press/logo.svg",
 
     repo: "vuepress-theme-hope/vuepress-theme-hope",
 
@@ -61,7 +61,7 @@ export default hopeTheme(
         Whatsapp: "https://example.com",
         Youtube: "https://example.com",
         Zhihu: "https://example.com",
-        MrHope: ["https://mrhope.site", MR_HOPE_AVATAR],
+        MrHope: ["https://mister-hope.com", MR_HOPE_AVATAR],
       },
     },
 
@@ -146,12 +146,17 @@ export default hopeTheme(
         serverURL: "https://waline-comment.vuejs.press",
       },
 
+      components: {
+        components: ["Badge", "VPCard"],
+      },
+
       // all features are enabled for demo, only preserve features you need here
       mdEnhance: {
         align: true,
         attrs: true,
         chart: true,
         codetabs: true,
+        component: true,
         demo: true,
         echarts: true,
         figure: true,
@@ -166,7 +171,7 @@ export default hopeTheme(
         playground: {
           presets: ["ts", "vue"],
         },
-        presentation: {
+        revealJs: {
           plugins: ["highlight", "math", "search", "notes", "zoom"],
         },
         stylize: [
@@ -251,5 +256,5 @@ export default hopeTheme(
           : { canonical: "https://theme-hope-blog-demo.vuejs.press" },
     },
   },
-  { custom: true }
+  { custom: true },
 );

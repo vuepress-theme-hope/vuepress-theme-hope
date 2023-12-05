@@ -155,8 +155,6 @@ interface FeedContributor {
 
 The identifier of feed item, used to identify the feed item.
 
-::: note
-
-You should make sure this is globally unique.
+::: note You should ensure every feed has a unique guid.
 
 :::

@@ -1,7 +1,7 @@
 ---
 title: 替换主题组件
 icon: boxes-packing
-order: -1
+order: -2
 category:
   - 高级
 tag:
@@ -13,7 +13,7 @@ tag:
 
 <!-- more -->
 
-## 替换组件的方式
+## 如何通过别名替换组件
 
 你需要在自己的 VuePress 配置文件通过 `alias` 替换主题中使用的组件别名。
 
@@ -30,17 +30,20 @@ import { hopeTheme } from "vuepress-theme-hope";
 const __dirname = getDirname(import.meta.url);
 
 export default defineUserConfig({
-  theme: hopeTheme({
-    // 主题选项
-    // ...
-  }),
+  theme: hopeTheme(
+    {
+      // 主题选项
+      // ...
+    },
+    { custom: true },
+  ),
 
   alias: {
     // 你可以在这里将别名定向到自己的组件
     // 比如这里我们将主题的主页组件改为用户 .vuepress/components 下的 HomePage.vue
     "@theme-hope/components/HomePage": path.resolve(
       __dirname,
-      "./components/HomePage.vue"
+      "./components/HomePage.vue",
     ),
   },
 });
@@ -56,17 +59,20 @@ import { hopeTheme } from "vuepress-theme-hope";
 const __dirname = getDirname(import.meta.url);
 
 export default {
-  theme: hopeTheme({
-    // 主题选项
-    // ...
-  }),
+  theme: hopeTheme(
+    {
+      // 主题选项
+      // ...
+    },
+    { custom: true },
+  ),
 
   alias: {
     // 你可以在这里将别名定向到自己的组件
     // 比如这里我们将主题的主页组件改为用户 .vuepress/components 下的 HomePage.vue
     "@theme-hope/components/HomePage": path.resolve(
       __dirname,
-      "./components/HomePage.vue"
+      "./components/HomePage.vue",
     ),
   },
 };
@@ -85,6 +91,7 @@ export default {
 - `@theme-hope/components/CommonWrapper` 基本布局整合
 - `@theme-hope/components/FeaturePanel` 主页特性
 - `@theme-hope/components/HeroInfo` 主页 Logo 及介绍
+- `@theme-hope/components/HighlightPanel`: 主页亮点
 - `@theme-hope/components/HomePage` 主页
 - `@theme-hope/components/HopeIcon` 图标
 - `@theme-hope/components/MarkdownContent` Markdown 内容
@@ -234,6 +241,12 @@ export default {
 
 有些组件提供了插槽，在这种情况下，你可以在覆盖组件时直接引入原组件，并通过插槽传入你需要的内容。
 
+::: tip
+
+常用插槽位置示例，详见 [主布局插槽演示](../../demo/slot.md)。
+
+:::
+
 比如你的网站社交属性很强，你希望在主页也显示评论框的话，你可以这样引入:
 
 ::: code-tabs
@@ -249,17 +262,20 @@ import { hopeTheme } from "vuepress-theme-hope";
 const __dirname = getDirname(import.meta.url);
 
 export default defineUserConfig({
-  theme: hopeTheme({
-    // 主题选项
-    // ...
-  }),
+  theme: hopeTheme(
+    {
+      // 主题选项
+      // ...
+    },
+    { custom: true },
+  ),
 
   alias: {
     // 你可以在这里将别名定向到自己的组件
     // 比如这里我们将主题的主页组件改为用户 .vuepress/components 下的 HomePage.vue
     "@theme-hope/components/HomePage": path.resolve(
       __dirname,
-      "./components/HomePage.vue"
+      "./components/HomePage.vue",
     ),
   },
 });
@@ -289,7 +305,12 @@ import HopeHomePage from "vuepress-theme-hope/components/HomePage.js";
 
 - `AutoLink`: `default`, `before`, `after`
 - `CommonWrapper`: `default`, `navbarStartBefore`, `navbarStartAfter`, `navbarCenterBefore`, `navbarCenterAfter`, `navbarEndBefore`, `navbarEndAfter`, `navScreenTop`, `navScreenBottom`, `sidebar`, `sidebarTop`, `sidebarBottom`
-- `HeroInfo`: `heroImage`, `heroInfo`
+- `HeroInfo`: `heroImage`, `heroInfo`, `heroBg`
+
+  - `heroInfo` 插槽将接收 `text` `tagline` 和 `isFullScreen` 属性。
+  - `heroImage` 插槽将接收 `image` `imageDark` `heroStyle` `alt` 和 `isFullScreen` 属性。
+  - `heroBg` 插槽将接收 `image` `bgStyle` 和 `isFullScreen` 属性。
+
 - `HomePage`: `top`, `center`, `bottom`
 - `NormalPage`: `top`, `contentBefore`, `contentAfter`, `bottom`, `tocBefore`, `tocAfter`
 

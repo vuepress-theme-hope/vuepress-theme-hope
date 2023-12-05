@@ -9,7 +9,7 @@ tag:
   - ThemeConfig
 ---
 
-::: danger
+::: caution
 
 These options are important and require you to configure them correctly.
 

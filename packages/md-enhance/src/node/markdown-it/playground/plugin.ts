@@ -1,12 +1,9 @@
 import { hash } from "@vuepress/utils";
-import { type PluginWithOptions } from "markdown-it";
-import { type RuleBlock } from "markdown-it/lib/parser_block.js";
+import type { PluginWithOptions } from "markdown-it";
+import type { RuleBlock } from "markdown-it/lib/parser_block.js";
 import { entries } from "vuepress-shared/node";
 
-import {
-  type PlaygroundData,
-  type PlaygroundOptions,
-} from "../../typings/index.js";
+import type { PlaygroundData, PlaygroundOptions } from "../../typings/index.js";
 import { escapeHtml } from "../utils.js";
 
 const AT_MARKER = `@`;
@@ -110,7 +107,7 @@ const getPlaygroundRule =
     state.md.block.tokenize(
       state,
       startLine + 1,
-      nextLine - (autoClosed ? 1 : 0)
+      nextLine - (autoClosed ? 1 : 0),
     );
 
     const closeToken = state.push(`${name}_close`, "template", -1);
@@ -224,20 +221,26 @@ const atMarkerRule =
     return true;
   };
 
+const defaultPropsGetter = (
+  playgroundData: PlaygroundData,
+): Record<string, string> => ({
+  key: playgroundData.key,
+  title: playgroundData.title || "",
+  files: encodeURIComponent(JSON.stringify(playgroundData.files)),
+  settings: encodeURIComponent(JSON.stringify(playgroundData.settings || {})),
+});
+
 export const playground: PluginWithOptions<PlaygroundOptions> = (
   md,
-  { name = "playground", component = "Playground", propsGetter } = {
+  {
+    name = "playground",
+    component = "Playground",
+    propsGetter = defaultPropsGetter,
+  } = {
     name: "playground",
     component: "Playground",
-    propsGetter: (playgroundData: PlaygroundData): Record<string, string> => ({
-      key: playgroundData.key,
-      title: playgroundData.title || "",
-      files: encodeURIComponent(JSON.stringify(playgroundData.files)),
-      settings: encodeURIComponent(
-        JSON.stringify(playgroundData.settings || {})
-      ),
-    }),
-  }
+    propsGetter: defaultPropsGetter,
+  },
 ) => {
   md.block.ruler.before("fence", `${name}`, getPlaygroundRule(name), {
     alt: ["paragraph", "reference", "blockquote", "list"],
@@ -248,8 +251,8 @@ export const playground: PluginWithOptions<PlaygroundOptions> = (
 
     // @ts-ignore
     // eslint-disable-next-line
-    if (!md.block.ruler.__rules__.find(({ name }) => name === "marker"))
-      md.block.ruler.before("fence", "tab", atMarkerRule(marker), {
+    if (!md.block.ruler.__rules__.find(({ name }) => name === `at-${marker}`))
+      md.block.ruler.before("fence", `at-${marker}`, atMarkerRule(marker), {
         alt: ["paragraph", "reference", "blockquote", "list"],
       });
   });

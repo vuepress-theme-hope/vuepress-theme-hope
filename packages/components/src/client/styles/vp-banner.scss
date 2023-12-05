@@ -1,0 +1,84 @@
+.vp-banner {
+  max-width: 880px;
+  margin: 1rem 0.5rem;
+  padding: 2.5rem;
+  border-radius: 1.5rem;
+
+  background: var(--vp-bg);
+  color: inherit;
+  box-shadow: 2px 2px 10px 2px var(--card-shadow);
+
+  transition:
+    background var(--vp-ct),
+    box-shadow var(--vp-ct);
+
+  @media (max-width: hope-config.$tablet) {
+    margin: 0.75rem 0;
+    padding: 1rem 1.5rem;
+  }
+
+  &-logo {
+    float: right;
+
+    width: 6rem;
+    height: 6rem;
+    margin-bottom: 12px;
+    margin-inline-start: 12px;
+  }
+
+  &-title {
+    font-weight: 500;
+    font-size: 2rem;
+    line-height: 1.5;
+
+    @media (max-width: hope-config.$tablet) {
+      font-size: 1.75rem;
+    }
+  }
+
+  &-content {
+    max-width: 80%;
+    font-size: 1.125rem;
+
+    @media (max-width: hope-config.$tablet) {
+      font-size: 1rem;
+    }
+  }
+
+  &-actions {
+    display: flex;
+    flex-wrap: wrap;
+  }
+
+  &-action {
+    height: 3rem;
+    margin: 0.25rem 0.5rem;
+    padding: 0 1.75rem;
+    border-radius: 1.5rem;
+
+    background-color: rgb(127 127 127 / 10%);
+    color: inherit;
+
+    font-size: 1rem;
+    line-height: 3;
+    text-decoration: none !important;
+
+    @media (max-width: hope-config.$tablet) {
+      height: 2.5rem;
+      line-height: 2.5;
+    }
+
+    &:hover {
+      background-color: var(--c-border);
+    }
+
+    &.primary {
+      background: var(--vp-tc);
+      color: var(--white);
+
+      &:hover {
+        background: var(--vp-tcl);
+      }
+    }
+  }
+}

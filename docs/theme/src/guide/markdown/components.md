@@ -13,17 +13,19 @@ By using `vuepress-plugin-components`, you can import and use some components in
 Available components:
 
 - ArtPlayer
-- AudioPlayer
 - Badge
 - BiliBili
 - CodePen
 - FontIcon
 - PDF
 - Replit
-- SiteInfo
+- Share
 - StackBlitz
-- VideoPlayer
-- YouTube
+- SiteInfo
+- VPBanner
+- VPCard
+- VidStack
+- XiGua
 
 By default, `<Badge />` and `<FontIcon />` is enabled.
 
@@ -46,15 +48,19 @@ export default defineUserConfig({
       components: {
         // components you want
         components: [
-          "AudioPlayer",
+          "ArtPlayer",
           "Badge",
           "BiliBili",
           "CodePen",
           "PDF",
           "Replit",
+          "Share",
+          "SiteInfo",
           "StackBlitz",
-          "VideoPlayer",
-          "YouTube",
+          "VPBanner",
+          "VPCard",
+          "VidStack",
+          "XiGua",
         ],
       },
     },
@@ -74,15 +80,19 @@ export default {
       components: {
         // components you want
         components: [
-          "AudioPlayer",
+          "ArtPlayer",
           "Badge",
           "BiliBili",
           "CodePen",
           "PDF",
           "Replit",
+          "Share",
+          "SiteInfo",
           "StackBlitz",
-          "VideoPlayer",
-          "YouTube",
+          "VPBanner",
+          "VPCard",
+          "VidStack",
+          "XiGua",
         ],
       },
     },
@@ -92,107 +102,9 @@ export default {
 
 :::
 
-## ArtPlayer
-
-A video player:
-
-<ArtPlayer src="https://mse-demo.u2sb.com/caminandes_03_llamigos_720p.mp4" />
-
-```md
-<ArtPlayer src="https://mse-demo.u2sb.com/caminandes_03_llamigos_720p.mp4" />
-```
-
-A video player with poster:
-
-<ArtPlayer
-  src="https://mse-demo.u2sb.com/caminandes_03_llamigos_720p.mp4"
-  poster="/poster.svg"
-/>
-
-```md
-<ArtPlayer
-  src="https://mse-demo.u2sb.com/caminandes_03_llamigos_720p.mp4"
-  poster="/poster.svg"
-/>
-```
-
-A video player with custom settings:
-
-<ArtPlayer
-  src="https://mse-demo.u2sb.com/caminandes_03_llamigos_720p.mp4"
-  airplay
-  aspect-ratio
-  auto-size
-  auto-orientation
-  auto-playback
-  fast-forward
-  flip
-  fullscreen-web
-  lock
-  loop
-  is-live
-  muted
-  mini-progress-bar
-  pip
-  screenshot
-  subtitle-offset
-/>
-
-```md
-<ArtPlayer
-  src="https://mse-demo.u2sb.com/caminandes_03_llamigos_720p.mp4"
-  airplay
-  aspect-ratio
-  auto-size
-  auto-orientation
-  auto-playback
-  fast-forward
-  flip
-  fullscreen-web
-  lock
-  loop
-  is-live
-  muted
-  mini-progress-bar
-  pip
-  screenshot
-  subtitle-offset
-/>
-```
-
-See <ProjectLink name="components" path="/guide/artplayer.html">ArtPlayer</ProjectLink> page for available props.
-
-## AudioPlayer
-
-An audio player:
-
-<AudioPlayer src="/assets/sample.mp3" />
-
-```md
-<AudioPlayer src="/assets/sample.mp3" />
-```
-
-An audio player with poster and title:
-
-<AudioPlayer
-  src="/assets/sample.mp3"
-  title="A Sample Audio"
-  poster="/logo.svg"
-/>
-
-```md
-<AudioPlayer
-  src="/assets/sample.mp3"
-  title="A Sample Audio"
-  poster="/logo.svg"
-/>
-```
-
-See <ProjectLink name="components" path="/guide/audioplayer.html">AudioPlayer</ProjectLink> page for available props.
-
 ## Badge
 
-A badge component.
+::: md-demo Badge types
 
 - <Badge text="tip" type="tip" vertical="middle" />
 - <Badge text="warning" type="warning" vertical="middle" />
@@ -200,279 +112,80 @@ A badge component.
 - <Badge text="info" type="info" vertical="middle" />
 - <Badge text="note" type="note" vertical="middle" />
 
-See <ProjectLink name="components" path="/guide/badge.html">Badge</ProjectLink> page for available props.
+:::
+
+See <ProjectLink name="components" path="/guide/utilities/badge.html">Badge</ProjectLink> page for available props.
 
 ## BiliBili
 
 Embed BiliBili videos in Markdown files.
 
-A bilibili video:
+<!-- @include: @components/guide/media/bili-bili.md#demo -->
 
-<BiliBili bvid="BV1kt411o7C3" />
-
-```md
-<BiliBili bvid="BV1kt411o7C3" />
-```
-
-A bilibili video with custom settings:
-
-<BiliBili aid="34304064" cid="109293122" ratio="9:16" time="60" autoplay page="2" />
-
-```md
-<BiliBili aid="34304064" cid="109293122" ratio="9:16" time="60" autoplay page="2" />
-```
-
-See <ProjectLink name="components" path="/guide/bilibili.html">BiliBili</ProjectLink> page for available props.
+See <ProjectLink name="components" path="/guide/media/bili-bili.html">BiliBili</ProjectLink> page for available props.
 
 ## CodePen
 
 A component which allows you to embed CodePen demo.
 
-A demo with user and slug hash:
+<!-- @include: @components/guide/code/code-pen.md#demo -->
 
-<CodePen user="kowlor" slug-hash="ZYYQoy" title="Solar System animation - Pure CSS" :default-tab="['css','result']" :theme="$isDarkmode? 'dark': 'light'" />
-
-```md
-<CodePen
-  user="kowlor"
-  slug-hash="ZYYQoy"
-  title="Solar System animation - Pure CSS"
-  :default-tab="['css','result']"
-  :theme="$isDarkmode? 'dark': 'light'"
-/>
-```
-
-A demo with link:
-
-<CodePen link="https://codepen.io/kowlor/pen/ZYYQoy" title="Solar System animation - Pure CSS" :default-tab="['css','result']" :theme="$isDarkmode? 'dark': 'light'" />
-
-```md
-<CodePen
-  link="https://codepen.io/kowlor/pen/ZYYQoy"
-  title="Solar System animation - Pure CSS"
-  :default-tab="['css','result']"
-  :theme="$isDarkmode? 'dark': 'light'"
-/>
-```
-
-A click to run demo:
-
-<CodePen link="https://codepen.io/keginaring/pen/XWZazwW" title="Solar System animation - Pure CSS" status="clicktorun" :theme="$isDarkmode? 'dark': 'light'" />
-
-```md
-<CodePen
-  link="https://codepen.io/kowlor/pen/ZYYQoy"
-  title="Envelope w/ Hearts"
-  status="clicktorun"
-  :default-tab="['css','result']"
-  :theme="$isDarkmode? 'dark': 'light'"
-/>
-```
-
-See <ProjectLink name="components" path="/guide/codepen.html">CodePen</ProjectLink> page for available props.
+See <ProjectLink name="components" path="/guide/code/code-pen.html">CodePen</ProjectLink> page for available props.
 
 ## FontIcon
 
 Component which allows you to display font icons.
 
-- Home icon: <FontIcon icon="home" />
-- A big and green share icon: <FontIcon icon="share" color="#3eaf7c" size="32" />
+<!-- @include: @components/guide/utilities/font-icon.md#demo -->
 
-```md
-- Home icon: <FontIcon icon="home" />
-- A big and green share icon: <FontIcon icon="share" color="#3eaf7c" size="32" />
-```
-
-See <ProjectLink name="components" path="/guide/fonticon.html">FontIcon</ProjectLink> page for available props.
+See <ProjectLink name="components" path="/guide/utilities/font-icon.html">FontIcon</ProjectLink> page for available props.
 
 ## PDF
 
 PDF viewer component.
 
-Default PDF viewer:
+<!-- @include: @components/guide/media/p-d-f.md#demo -->
 
-<PDF url="/assets/sample.pdf" />
-
-```md
-<PDF url="/assets/sample.pdf" />
-```
-
-PDF viewer starting with page 2 and without toolbar:
-
-<PDF url="/assets/sample.pdf" page="2" no-toolbar />
-
-```md
-<PDF url="/assets/sample.pdf" page="2" no-toolbar />
-```
-
-See <ProjectLink name="components" path="/guide/pdf.html">PDF</ProjectLink> page for available props.
+See <ProjectLink name="components" path="/guide/media/p-d-f.html">PDF</ProjectLink> page for available props.
 
 ## Replit
 
-An embedded repl:
+<!-- @include: @components/guide/code/repl-it.md#demo -->
 
-<Replit user="FuckDoctors" repl="Java-Test" />
+See <ProjectLink name="components" path="/guide/code/repl-it.html">Replit</ProjectLink> page for available props.
 
-```md
-<Replit user="FuckDoctors" repl="Java-Test" />
-```
+## Share
 
-An embedded repl with opening file:
+<!-- @include: @components/guide/utilities/share.md#demo -->
 
-<Replit user="FuckDoctors" repl="Java-Test" file="Main.java" />
-
-```md
-<Replit user="FuckDoctors" repl="Java-Test" file="Main.java" />
-```
-
-A repl link:
-
-<Replit user="FuckDoctors" repl="Java-Test" plain />
-
-```md
-<Replit user="FuckDoctors" repl="Java-Test" plain />
-```
+See <ProjectLink name="components" path="/guide/utilities/share.html">Share</ProjectLink> page for available props.
 
 ## SiteInfo
 
-Basic site info:
+<!-- @include: @components/guide/content/site-info.md#demo -->
 
-<SiteInfo name="Mr.Hope's Blog" url="https://mrhope.site" preview="https://theme-hope.vuejs.press/assets/image/mrhope.jpg" />
-
-```md
-<SiteInfo name="Mr.Hope's Blog" url="https://mrhope.site" preview="https://theme-hope.vuejs.press/assets/image/mrhope.jpg" />
-```
-
-Site info with more properties:
-
-<SiteInfo
-  name="Mr.Hope's Blog"
-  desc="Where there is light, there is hope"
-  url="https://mrhope.site"
-  logo="https://mrhope.site/logo.svg"
-  repo="https://github.com/Mister-Hope/Mister-Hope.github.io"
-  preview="https://theme-hope.vuejs.press/assets/image/mrhope.jpg"
-/>
-
-```md
-<SiteInfo
-  name="Mr.Hope's Blog"
-  desc="Where there is light, there is hope"
-  url="https://mrhope.site"
-  logo="https://mrhope.site/logo.svg"
-  repo="https://github.com/Mister-Hope/Mister-Hope.github.io"
-  preview="https://theme-hope.vuejs.press/assets/image/mrhope.jpg"
-/>
-```
-
-See <ProjectLink name="components" path="/guide/siteinfo.html">SiteInfo</ProjectLink> page for available props.
+See <ProjectLink name="components" path="/guide/content/site-info.html">SiteInfo</ProjectLink> page for available props.
 
 ## StackBlitz
 
 Embed StackBlitz demo in Markdown files.
 
-A StackBlitz project:
+<!-- @include: @components/guide/code/stack-blitz.md#demo -->
 
-<StackBlitz id="vuepress-theme-hope" />
+See <ProjectLink name="components" path="/guide/code/stack-blitz.html">StackBlitz</ProjectLink> page for available props.
 
-```md
-<StackBlitz id="vuepress-theme-hope" />
-```
+## VidStack
 
-A StackBlitz project with custom settings:
+> Install `vidstack@1` first.
 
-<StackBlitz id="vuepress-theme-hope" hideExplorer hideNavigation hideDevtools />
+<!-- @include: @components/guide/media/vid-stack.md#demo -->
 
-```md
-<StackBlitz id="vuepress-theme-hope" hideExplorer hideNavigation hideDevtools />
-```
+See <ProjectLink name="components" path="/guide/media/vid-stack.html">VidStack</ProjectLink> page for available props.
 
-See <ProjectLink name="components" path="/guide/stackblitz.html">StackBlitz</ProjectLink> page for available props.
+## ArtPlayer
 
-## VideoPlayer
+> Install `artplayer` first.
 
-Embed videos in Markdown files.
+<!-- @include: @components/guide/media/art-player.md#demo -->
 
-A video player:
-
-<VideoPlayer src="https://upload.wikimedia.org/wikipedia/commons/transcoded/f/f1/Sintel_movie_4K.webm/Sintel_movie_4K.webm.1080p.vp9.webm" />
-
-```md
-<VideoPlayer src="https://upload.wikimedia.org/wikipedia/commons/transcoded/f/f1/Sintel_movie_4K.webm/Sintel_movie_4K.webm.1080p.vp9.webm" />
-```
-
-A video player with tracks and poster:
-
-<VideoPlayer
-  src="https://upload.wikimedia.org/wikipedia/commons/transcoded/f/f1/Sintel_movie_4K.webm/Sintel_movie_4K.webm.1080p.vp9.webm"
-  poster="/assets/poster.svg"
-  :tracks="[
-    {
-      default: true,
-      src: '/assets/subtitles/en.vtt',
-      kind: 'subtitles',
-      label: 'English',
-      srcLang: 'en',
-    },
-    {
-      src: '/assets/subtitles/fr.vtt',
-      kind: 'subtitles',
-      label: 'French',
-      srcLang: 'fr',
-    },
-  ]"
-/>
-
-```md
-<VideoPlayer
-  src="https://upload.wikimedia.org/wikipedia/commons/transcoded/f/f1/Sintel_movie_4K.webm/Sintel_movie_4K.webm.1080p.vp9.webm"
-  poster="/assets/poster.svg"
-  :tracks="[
-    {
-      default: true,
-      src: '/assets/subtitles/en.vtt',
-      kind: 'subtitles',
-      label: 'English',
-      srcLang: 'en',
-    },
-    {
-      src: '/assets/subtitles/fr.vtt',
-      kind: 'subtitles',
-      label: 'French',
-      srcLang: 'fr',
-    },
-  ]"
-/>
-```
-
-See <ProjectLink name="components" path="/guide/videoplayer.html">VideoPlayer</ProjectLink> page for available props.
-
-## YouTube
-
-Embed YouTube video in Markdown files.
-
-A YouTube video:
-
-<YouTube id="0JJPfz5dg20" />
-
-```md
-<YouTube id="0JJPfz5dg20" />
-```
-
-A YouTube video with custom settings:
-
-<YouTube id="0JJPfz5dg20" disable-fullscreen />
-
-```md
-<YouTube id="0JJPfz5dg20" disable-fullscreen />
-```
-
-A YouTube play list:
-
-<YouTube list-type="playlist" list="PLJNLwTPak6dhCRzVelZIs2-DfBp01NX_1" />
-
-```md
-<YouTube list-type="playlist" list="PLJNLwTPak6dhCRzVelZIs2-DfBp01NX_1" />
-```
-
-See <ProjectLink name="components" path="/guide/youtube.html">YouTube</ProjectLink> page for available props.
+See <ProjectLink name="components" path="/guide/media/art-player.html">ArtPlayer</ProjectLink> page for available props.

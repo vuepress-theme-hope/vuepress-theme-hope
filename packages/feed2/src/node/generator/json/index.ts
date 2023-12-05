@@ -1,9 +1,9 @@
 /* eslint-disable @typescript-eslint/naming-convention */
 import { isArray } from "vuepress-shared/node";
 
-import { type JSONAuthor, type JSONContent, type JSONItem } from "./typings.js";
-import { type FeedAuthor } from "../../typings/index.js";
-import { type Feed } from "../feed.js";
+import type { JSONAuthor, JSONContent, JSONItem } from "./typings.js";
+import type { FeedAuthor } from "../../typings/index.js";
+import type { Feed } from "../feed.js";
 
 const formatAuthor = (author: FeedAuthor): JSONAuthor => ({
   name: author.name!,
@@ -35,8 +35,8 @@ export const renderJSON = (feed: Feed): string => {
     isArray(channel.author)
       ? channel.author
       : channel.author
-      ? [channel.author]
-      : []
+        ? [channel.author]
+        : []
   ).filter((author) => Boolean(author?.name));
 
   if (channelAuthors.length)

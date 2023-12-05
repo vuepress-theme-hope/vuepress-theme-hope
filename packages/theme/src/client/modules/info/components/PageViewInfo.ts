@@ -1,7 +1,7 @@
-import { withBase } from "@vuepress/client";
 import { isString } from "@vuepress/shared";
 import { useMutationObserver } from "@vueuse/core";
-import { type VNode, defineComponent, h, ref, shallowRef } from "vue";
+import type { VNode } from "vue";
+import { defineComponent, h, ref, shallowRef } from "vue";
 import { useRoute } from "vue-router";
 
 import { EyeIcon, FireIcon } from "@theme-hope/modules/info/components/icons";
@@ -45,7 +45,7 @@ export default defineComponent({
 
         if (count && !isNaN(Number(count))) pageViews.value = Number(count);
       },
-      { childList: true }
+      { childList: true },
     );
 
     return (): VNode | null =>
@@ -65,16 +65,16 @@ export default defineComponent({
                 "span",
                 {
                   ref: pageviewElement,
-                  class: "waline-pageview-count",
                   id: "ArtalkPV",
+                  class: "waline-pageview-count",
                   /** visitorID */
                   "data-path": isString(props.pageview)
                     ? props.pageview
-                    : withBase(route.path),
+                    : route.path,
                 },
-                "..."
+                "...",
               ),
-            ]
+            ],
           )
         : null;
   },

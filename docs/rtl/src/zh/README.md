@@ -2,7 +2,6 @@
 home: true
 title: 主页
 icon: home
-heroImage: /logo.svg
 heroText: vuepress-plugin-rtl
 tagline: RTL 布局插件
 
@@ -98,9 +97,3 @@ export default {
 开启 RTL 的选择器。
 
 默认设置意味着在 RTL 多语言中，`html` 元素的 `dir` 属性将被设置为 `rtl`。
-
-<NetlifyBadge alt="通过 Netlify 部署" />
-
-<script setup lang="ts">
-import NetlifyBadge from "@NetlifyBadge";
-</script>

@@ -19,7 +19,7 @@ jobs:
     if: inputs.strict-checking == false
     steps:
       - name: Checkout
-        uses: actions/checkout@v3
+        uses: actions/checkout@v4
         with:
           submodules: true
 
@@ -34,14 +34,14 @@ jobs:
           run_install: true
 
       - name: Setup Node.js
-        uses: actions/setup-node@v3
+        uses: actions/setup-node@v4
         with:
-          node-version: 18
+          node-version: 20
           cache: pnpm
 
       - name: ${{ matrix.bundler }} build test
         env:
-          NODE_OPTIONS: --max_old_space_size=4096
+          NODE_OPTIONS: --max_old_space_size=8192
         run: |
           pnpm run -r demo:${{ matrix.bundler }}-build
 
@@ -50,9 +50,8 @@ jobs:
       fail-fast: false
       matrix:
         node:
-          - "16"
-          - "18"
-          - "20"
+          - 18
+          - 20
         bundler:
           - vite
           - webpack
@@ -65,7 +64,7 @@ jobs:
     if: inputs.strict-checking == true
     steps:
       - name: Checkout
-        uses: actions/checkout@v3
+        uses: actions/checkout@v4
         with:
           submodules: true
 
@@ -79,13 +78,13 @@ jobs:
         with:
           run_install: true
 
-      - uses: actions/setup-node@v3
+      - uses: actions/setup-node@v4
         with:
           node-version: ${{ matrix.node }}
           cache: pnpm
 
       - name: ${{ matrix.bundler }} build test
         env:
-          NODE_OPTIONS: --max_old_space_size=4096
+          NODE_OPTIONS: --max_old_space_size=8192
         run: |
           pnpm run -r demo:${{ matrix.bundler }}-build

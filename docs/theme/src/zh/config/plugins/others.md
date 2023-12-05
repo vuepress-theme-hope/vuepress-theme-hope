@@ -9,25 +9,42 @@ tag:
   - 主题配置
 ---
 
+## autoCatalog
+
+控制 `vuepress-plugin-auto-catalog`，提供目录的自动生成。
+
+该插件默认启用。
+
+::: info
+
+有关插件选项，请参阅 <ProjectLink name="auto-catalog" path="/zh/config.html">auto-catalog 插件选项</ProjectLink>。
+
+:::
+
 ## components
 
 控制 `vuepress-plugin-components`，为 Markdown 提供一组组件。
 
 可以在 Markdown 中使用的可用组件为:
 
-- `"AudioPlayer"`
+- `"ArtPlayer"`
 - `"Badge"`
 - `"BiliBili"`
 - `"CodePen"`
+- `"FontIcon"`
 - `"PDF"`
 - `"Replit"`
+- `"Share"`
 - `"StackBlitz"`
-- `"VideoPlayer"`
-- `"YouTube"`
+- `"VPBanner"`
+- `"VPCard"`
+- `"VidStack"`
+- `"SiteInfo"`
+- `"XiGua"`
 
 你可以将 `plugin.components.components` 设置为需要的组件数组，默认情况下为 `["Badge"]`。
 
-同时，你可以设置 `plugin.components.rootComponents` 来启用一些根组件，例如 addThis 和 notice。
+同时，你可以设置 `plugin.components.rootComponents` 来启用一些根组件，例如 Notice。
 
 ::: info
 

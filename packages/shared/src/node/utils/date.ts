@@ -1,5 +1,5 @@
-import { type Page } from "@vuepress/core";
-import { type GitPluginPageData } from "@vuepress/plugin-git";
+import type { Page } from "@vuepress/core";
+import type { GitPluginPageData } from "@vuepress/plugin-git";
 
 import { dayjs, getLocale } from "./dayjs/index.js";
 import { isString } from "../../shared/index.js";
@@ -36,11 +36,11 @@ const TIME_REG =
  */
 export const getDateInfo = (
   date: string | Date | undefined,
-  timezone?: string
+  timezone?: string,
 ): DateInfo | null => {
   if (date) {
     const time = dayjs(
-      date instanceof Date ? date : isString(date) ? date.trim() : date
+      date instanceof Date ? date : isString(date) ? date.trim() : date,
     );
 
     if (time.isValid()) {
@@ -80,7 +80,7 @@ export const getDateInfo = (
         yearNumber && yearNumber < 100 ? yearNumber + 2000 : yearNumber;
 
       const getSecond = (
-        secondNumber: number | undefined
+        secondNumber: number | undefined,
       ): number | undefined => (hour && minute && !second ? 0 : secondNumber);
 
       const detail = {
@@ -105,8 +105,12 @@ export const getDateInfo = (
         info: isDate
           ? { year: detail.year, month: detail.month, day: detail.day }
           : isTime
-          ? { hour: detail.hour, minute: detail.minute, second: detail.second }
-          : detail,
+            ? {
+                hour: detail.hour,
+                minute: detail.minute,
+                second: detail.second,
+              }
+            : detail,
         type: isTime ? "time" : isDate ? "date" : "full",
       };
     }
@@ -126,17 +130,17 @@ export const getDateInfo = (
  */
 export const compareDate = (
   dateA: Date | number | string | undefined,
-  dateB: Date | number | string | undefined
+  dateB: Date | number | string | undefined,
 ): number => {
   const parsedDateA = getDateInfo(
-    typeof dateA === "number" ? new Date(dateA) : dateA
+    typeof dateA === "number" ? new Date(dateA) : dateA,
   );
   const parsedDateB = getDateInfo(
-    typeof dateB === "number" ? new Date(dateB) : dateB
+    typeof dateB === "number" ? new Date(dateB) : dateB,
   );
 
-  if (!parsedDateA || !parsedDateA.value) return 1;
-  if (!parsedDateB || !parsedDateB.value) return -1;
+  if (!parsedDateA?.value) return parsedDateB?.value ? 1 : 0;
+  if (!parsedDateB?.value) return -1;
 
   return parsedDateB.value.getTime() - parsedDateA.value.getTime();
 };
@@ -155,7 +159,7 @@ export interface DateOptions {
 
 export const timeTransformer = (
   date: string | Date | undefined,
-  options: DateOptions = {}
+  options: DateOptions = {},
 ): string | null => {
   const result = getDateInfo(date, options.timezone);
 
@@ -169,7 +173,7 @@ export const timeTransformer = (
       : dayjs(result.value);
 
     return parsed.format(
-      type === "date" ? "LL" : type === "time" ? "HH:mm" : "LLL"
+      type === "date" ? "LL" : type === "time" ? "HH:mm" : "LLL",
     );
   }
 
@@ -178,7 +182,7 @@ export const timeTransformer = (
 
 export const injectLocalizedDate = (
   page: Page<{ localizedDate?: string | null } & Partial<GitPluginPageData>>,
-  timezone?: string
+  timezone?: string,
 ): void => {
   if (!page.data.localizedDate)
     if (page.frontmatter.date) {
@@ -195,7 +199,16 @@ export const injectLocalizedDate = (
         {
           lang: page.lang,
           type: "date",
-        }
+        },
       );
     }
 };
+
+export const getDateString = (date: Date): string =>
+  dayjs(date).format("YYYY-MM-DD");
+
+export const getTimeString = (date: Date): string =>
+  dayjs(date).format("HH:mm:ss");
+
+export const getFullDateString = (date: Date): string =>
+  dayjs(date).format("YYYY-MM-DD HH:mm:ss");

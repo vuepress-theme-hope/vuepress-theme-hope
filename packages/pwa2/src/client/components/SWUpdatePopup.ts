@@ -1,7 +1,6 @@
+import type { SlotsType, VNode } from "vue";
 import {
-  type SlotsType,
   Transition,
-  type VNode,
   computed,
   defineComponent,
   h,
@@ -11,8 +10,9 @@ import {
 import { useLocaleConfig } from "vuepress-shared/client";
 
 import { UpdateIcon } from "../components/icons.js";
-import { usePWAEvent, useSkipWaiting } from "../composables/index.js";
+import { usePWAEvent } from "../composables/index.js";
 import { locales } from "../define.js";
+import { skipWaiting } from "../utils/index.js";
 
 import "../styles/popup.scss";
 
@@ -23,7 +23,7 @@ export default defineComponent({
     default?: (props: {
       enabled: boolean;
       reload: () => void;
-    }) => VNode[] | VNode;
+    }) => VNode[] | VNode | null;
   }>,
 
   setup(_props, { slots }) {
@@ -34,7 +34,7 @@ export default defineComponent({
 
     const reload = (): void => {
       if (registration.value) {
-        useSkipWaiting(registration.value);
+        skipWaiting(registration.value);
         registration.value = undefined;
       }
     };
@@ -68,9 +68,9 @@ export default defineComponent({
                 [
                   locale.value.update,
                   h("span", { class: "icon-wrapper" }, h(UpdateIcon)),
-                ]
+                ],
               )
-            : null)
+            : null),
       );
   },
 });

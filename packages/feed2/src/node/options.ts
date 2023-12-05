@@ -1,7 +1,8 @@
-import { type App, type Page } from "@vuepress/core";
-import { type GitData } from "@vuepress/plugin-git";
+import type { App, Page } from "@vuepress/core";
+import type { GitData } from "@vuepress/plugin-git";
 import { getDirname, path } from "@vuepress/utils";
 import {
+  compareDate,
   deepAssign,
   ensureEndingSlash,
   fromEntries,
@@ -13,21 +14,25 @@ import {
   values,
 } from "vuepress-shared/node";
 
-import {
-  type BaseFeedOptions,
-  type FeedChannelOption,
-  type FeedLinks,
-  type FeedOptions,
+import type {
+  BaseFeedOptions,
+  FeedChannelOption,
+  FeedLinks,
+  FeedOptions,
 } from "./typings/index.js";
-import { compareDate, resolveUrl } from "./utils/index.js";
+import { resolveUrl } from "./utils/index.js";
 
 const __dirname = getDirname(import.meta.url);
 
 const TEMPLATE_FOLDER = ensureEndingSlash(
-  path.resolve(__dirname, "../../templates")
+  path.resolve(__dirname, "../../templates"),
 );
 
-export type ResolvedFeedOptions = BaseFeedOptions & { hostname: string };
+export interface ResolvedFeedOptions
+  extends Omit<BaseFeedOptions, "sorter" | "filter">,
+    Required<Pick<BaseFeedOptions, "sorter" | "filter">> {
+  hostname: string;
+}
 
 export type ResolvedFeedOptionsMap = Record<string, ResolvedFeedOptions>;
 
@@ -48,14 +53,14 @@ export const checkOutput = (options: Partial<FeedOptions>): boolean =>
   // some locales request output
   (options.locales &&
     values(options.locales).some(
-      ({ atom, json, rss }) => atom || json || rss
+      ({ atom, json, rss }) => atom || json || rss,
     )) ||
   // root option requests output
   Boolean(options.atom || options.json || options.rss);
 
 export const getFeedOptions = (
   { siteData }: App,
-  options: FeedOptions
+  options: FeedOptions,
 ): ResolvedFeedOptionsMap =>
   fromEntries(
     keys({
@@ -76,7 +81,7 @@ export const getFeedOptions = (
           ),
         sorter: (
           pageA: Page<{ git?: GitData }, Record<string, never>>,
-          pageB: Page<{ git?: GitData }, Record<string, never>>
+          pageB: Page<{ git?: GitData }, Record<string, never>>,
         ): number =>
           compareDate(
             pageA.data.git?.createdTime
@@ -84,7 +89,7 @@ export const getFeedOptions = (
               : pageA.frontmatter.date,
             pageB.data.git?.createdTime
               ? new Date(pageB.data.git?.createdTime)
-              : pageB.frontmatter.date
+              : pageB.frontmatter.date,
           ),
         ...options,
         ...options.locales?.[localePath],
@@ -92,13 +97,13 @@ export const getFeedOptions = (
         // make sure hostname is not been override
         hostname: options.hostname,
       },
-    ])
+    ]),
   );
 
 export const getFeedChannelOption = (
   app: App,
   options: FeedOptions,
-  localePath = ""
+  localePath = "",
 ): FeedChannelOption => {
   const { base } = app.options;
   const { title, description, lang, locales } = app.siteData;
@@ -147,7 +152,7 @@ export const getFeedChannelOption = (
 
 export const getFilename = (
   options: ResolvedFeedOptions,
-  prefix = "/"
+  prefix = "/",
 ): Required<
   Pick<
     FeedOptions,
@@ -181,8 +186,8 @@ export const getFilename = (
 
 export const getFeedLinks = (
   { options: { base } }: App,
-  options: FeedOptions,
-  localePath: string
+  options: ResolvedFeedOptions,
+  localePath: string,
 ): FeedLinks => {
   const { hostname } = options;
   const {

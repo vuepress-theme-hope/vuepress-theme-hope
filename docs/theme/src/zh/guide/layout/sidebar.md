@@ -9,7 +9,13 @@ tag:
   - 侧边栏
 ---
 
-侧边栏可能会包含相关的文档列表，文档标题以及博客模式下的博主信息。
+侧边栏包含相关的文档列表，文档标题以及博客模式下的博主信息。
+
+<!-- markdownlint-disable MD051 -->
+
+主题允许你通过 [文件结构](#通过文件结构自动生成) 和 [文档标题](#通过标题自动生成) 自动生成侧边栏，也可以手动配置。
+
+<!-- markdownlint-enable MD051 -->
 
 <!-- more -->
 
@@ -931,7 +937,7 @@ export default sidebar(/* 你的侧边栏配置 */);
 ```ts
 import { sidebar } from "vuepress-theme-hope";
 
-<!-- @include: ../../../.vuepress/sidebar/zh.ts{3-} -->
+<!-- @include: ../../../.vuepress/sidebar/zh.ts#config -->
 ```
 
 @tab JS
@@ -939,7 +945,7 @@ import { sidebar } from "vuepress-theme-hope";
 ```js
 import { sidebar } from "vuepress-theme-hope";
 
-<!-- @include: ../../../.vuepress/sidebar/zh.ts{3-} -->
+<!-- @include: ../../../.vuepress/sidebar/zh.ts#config -->
 ```
 
 :::

@@ -14,7 +14,7 @@ const getDirAlias = (dir: string): [string, string][] => {
             // js files
             endsWith(file, ".js") ||
             // folder
-            !file.includes(".")
+            !file.includes("."),
         )
         .map<[string, string]>((file) => [
           `@theme-hope/${dir}/${file.replace(/\.js$/, "")}`,
@@ -43,7 +43,7 @@ export const getAlias = (isDebug: boolean): Record<string, string> => {
     ...["composables", "utils"]
       .map(getEntryAlias)
       .filter<[string, string]>(
-        (item): item is [string, string] => item !== null
+        (item): item is [string, string] => item !== null,
       ),
     // define layouts
     ...getDirAlias("layouts"),
@@ -59,7 +59,7 @@ export const getAlias = (isDebug: boolean): Record<string, string> => {
           .map((folder) => `${file}/${folder}`)
           .map(getEntryAlias)
           .filter<[string, string]>(
-            (item): item is [string, string] => item !== null
+            (item): item is [string, string] => item !== null,
           ),
         // define layouts
         ...getDirAlias(`${file}/layouts`),

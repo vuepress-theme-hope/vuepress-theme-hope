@@ -60,11 +60,11 @@ You can use `<HopeIcon />` component to add icon in markdown.
 ::: details Demo
 
 - <HopeIcon icon="home" color="red" />
-- <HopeIcon icon="/logo.svg" size="4rem" />
+- <HopeIcon icon="//theme-hope-assets.vuejs.press/logo.svg" size="4rem" />
 
 ```md
 - <HopeIcon icon="home" color="red" />
-- <HopeIcon icon="/logo.svg" size="4rem" />
+- <HopeIcon icon="//theme-hope-assets.vuejs.press/logo.svg" size="4rem" />
 ```
 
 :::
@@ -139,7 +139,7 @@ For example, you may use [iconfont.cn](https://www.iconfont.cn/?lang=en-us) and 
 
 To keep it simple, we add built-in keywords `"iconfont"`, `"iconify"`, `"fontawesome"` and `"fontawesome-with-brand` support for you to get started easily.
 
-::: danger
+::: caution
 
 If you use this plugin for commercial project documentation, `iconfont` is **not recommended** as iconfont itself is a study/share platform for designers and developers.
 

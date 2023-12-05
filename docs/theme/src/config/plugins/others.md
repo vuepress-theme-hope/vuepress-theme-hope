@@ -9,24 +9,42 @@ tag:
   - Theme Config
 ---
 
+## autoCatalog
+
+Controls `vuepress-plugin-auto-catalog`, providing automatic generation of catalog.
+
+This plugin is enabled by default.
+
+::: info
+
+For plugin options, please refer to <ProjectLink name="auto-catalog" path="/config.html">auto catalog plugin options</ProjectLink>.
+
+:::
+
 ## components
 
 Controls `vuepress-plugin-components`, providing a set of components for Markdown.
 
 Available component which can be used in markdown files are:
 
-- `"AudioPlayer"`
+- `"ArtPlayer"`
 - `"Badge"`
 - `"BiliBili"`
 - `"CodePen"`
+- `"FontIcon"`
 - `"PDF"`
+- `"Replit"`
+- `"Share"`
 - `"StackBlitz"`
-- `"VideoPlayer"`
-- `"YouTube"`
+- `"VPBanner"`
+- `"VPCard"`
+- `"VidStack"`
+- `"SiteInfo"`
+- `"XiGua"`
 
 You can set `plugin.components.components` with an array of components you want, by default it will be `["Badge"]`.
 
-Also, you can set `plugin.components.rootComponents` to enable some root components, such as addThis and notice.
+Also, you can set `plugin.components.rootComponents` to enable some root components, such as Notice.
 
 ::: info
 

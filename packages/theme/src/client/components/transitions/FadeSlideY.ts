@@ -1,10 +1,5 @@
-import {
-  type SlotsType,
-  Transition,
-  type VNode,
-  defineComponent,
-  h,
-} from "vue";
+import type { SlotsType, VNode } from "vue";
+import { Transition, defineComponent, h } from "vue";
 
 import { useScrollPromise } from "@theme-hope/composables/index";
 
@@ -31,7 +26,7 @@ export default defineComponent({
           onBeforeEnter,
           onBeforeLeave,
         },
-        () => slots.default?.()
+        () => slots.default?.(),
       );
   },
 });

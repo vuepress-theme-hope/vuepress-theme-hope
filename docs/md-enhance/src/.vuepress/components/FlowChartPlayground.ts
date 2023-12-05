@@ -1,15 +1,8 @@
 import { useDebounceFn, useEventListener } from "@vueuse/core";
-import { type Chart } from "flowchart.ts";
+import type { Chart } from "flowchart.ts";
 import { flowchartPresets } from "vuepress-plugin-md-enhance/client";
-import {
-  type VNode,
-  defineComponent,
-  h,
-  onMounted,
-  ref,
-  shallowRef,
-  watch,
-} from "vue";
+import type { VNode } from "vue";
+import { defineComponent, h, onMounted, ref, shallowRef, watch } from "vue";
 import { useLocaleConfig } from "vuepress-shared/client";
 
 declare const MARKDOWN_ENHANCE_DELAY: number;
@@ -77,6 +70,7 @@ export default defineComponent({
           scale.value = getScale(window.innerWidth);
 
           // draw svg to #id
+          // @ts-ignore
           flowchart.draw(id, {
             ...flowchartPresets[preset.value],
             scale: scale.value,
@@ -97,6 +91,7 @@ export default defineComponent({
             element.value!.innerHTML = "";
 
             // draw svg to #id
+            // @ts-ignore
             flowchart.draw(id, {
               ...flowchartPresets[preset.value],
               scale: scale.value,
@@ -115,13 +110,14 @@ export default defineComponent({
             if (scale.value !== newScale) {
               scale.value = newScale;
 
+              // @ts-ignore
               flowchart.draw(id, {
                 ...flowchartPresets[preset.value],
                 scale: newScale,
               });
             }
           }
-        }, 100)
+        }, 100),
       );
     });
 
@@ -130,20 +126,20 @@ export default defineComponent({
         h(
           "label",
           { for: "flowchart-playground-config" },
-          `${locale.value.config}:`
+          `${locale.value.config}:`,
         ),
         h("textarea", {
           id: "flowchart-playground-config",
           value: config.value,
           onInput: ({ target }: InputEvent) => {
-            config.value = (<HTMLInputElement>target).value;
+            config.value = (target as HTMLInputElement).value;
           },
         }),
         h("div", [
           h(
             "label",
             { for: "flowchart-playground-preset" },
-            `${locale.value.preset}:`
+            `${locale.value.preset}:`,
           ),
           h(
             "select",
@@ -151,14 +147,15 @@ export default defineComponent({
               id: "flowchart-playground-preset",
               value: preset.value,
               onChange: ({ target }: Event) => {
-                preset.value = <"ant" | "pie" | "vue">(
-                  (<HTMLSelectElement>target).value
-                );
+                preset.value = (target as HTMLSelectElement).value as
+                  | "ant"
+                  | "pie"
+                  | "vue";
               },
             },
             ["ant", "pie", "vue"].map((preset) =>
-              h("option", { value: preset }, preset)
-            )
+              h("option", { value: preset }, preset),
+            ),
           ),
         ]),
         h("label", { for: id }, `${locale.value.result}:`),

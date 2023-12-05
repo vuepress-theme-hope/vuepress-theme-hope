@@ -1,12 +1,12 @@
-import { type LocaleConfig } from "@vuepress/core";
+import type { LocaleConfig } from "@vuepress/core";
 
-import {
-  type ArtalkOptions,
-  type DisableCommentOptions,
-  type GiscusOptions,
-  type TwikooOptions,
-  type WalineLocaleData,
-  type WalineOptions,
+import type {
+  ArtalkOptions,
+  DisableCommentOptions,
+  GiscusOptions,
+  TwikooOptions,
+  WalineLocaleData,
+  WalineOptions,
 } from "..//shared/index.js";
 
 export interface ArtalkPluginOptions

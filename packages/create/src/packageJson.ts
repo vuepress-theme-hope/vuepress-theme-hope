@@ -3,17 +3,14 @@ import { resolve } from "node:path";
 
 import inquirer from "inquirer";
 
-import { type CreateI18n, version } from "./config/index.js";
-import {
-  PACKAGE_NAME_REG,
-  type PackageManager,
-  VERSION_REG,
-  deepAssign,
-} from "./utils/index.js";
+import type { CreateI18n } from "./config/index.js";
+import { version } from "./config/index.js";
+import type { PackageManager } from "./utils/index.js";
+import { PACKAGE_NAME_REG, VERSION_REG, deepAssign } from "./utils/index.js";
 
 const getScript = (
   packageManager: PackageManager,
-  dir: string
+  dir: string,
 ): Record<string, string> => ({
   // eslint-disable-next-line @typescript-eslint/naming-convention
   "docs:build": `vuepress build ${dir}`,
@@ -31,7 +28,7 @@ export const createPackageJson = async (
   packageManager: PackageManager,
   message: CreateI18n,
   source: string,
-  cwd = process.cwd()
+  cwd = process.cwd(),
 ): Promise<void> => {
   /**
    * generate package.json
@@ -40,9 +37,9 @@ export const createPackageJson = async (
   const packageJsonPath = resolve(cwd, "package.json");
   const scripts = getScript(packageManager, source);
   const devDependencies = {
-    "@vuepress/client": "2.0.0-beta.62",
-    vue: "^3.2.47",
-    vuepress: "2.0.0-beta.62",
+    "@vuepress/client": "2.0.0-rc.0",
+    vue: "^3.3.9",
+    vuepress: "2.0.0-rc.0",
     "vuepress-theme-hope": version,
   };
 
@@ -51,7 +48,7 @@ export const createPackageJson = async (
 
     // eslint-disable-next-line
     const packageContent: any = JSON.parse(
-      readFileSync(packageJsonPath, { encoding: "utf-8" })
+      readFileSync(packageJsonPath, { encoding: "utf-8" }),
     );
 
     deepAssign(packageContent, { scripts, devDependencies });
@@ -59,7 +56,7 @@ export const createPackageJson = async (
     writeFileSync(
       packageJsonPath,
       `${JSON.stringify(packageContent, null, 2)}\n`,
-      { encoding: "utf-8" }
+      { encoding: "utf-8" },
     );
   } else {
     console.log(message.flow.createPackage);
@@ -112,7 +109,7 @@ export const createPackageJson = async (
     writeFileSync(
       packageJsonPath,
       `${JSON.stringify(packageContent, null, 2)}\n`,
-      { encoding: "utf-8" }
+      { encoding: "utf-8" },
     );
   }
 };

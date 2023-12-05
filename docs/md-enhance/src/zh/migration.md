@@ -1,9 +1,9 @@
 ---
-title: 迁移至 V2
+title: 最新版本迁移
 icon: code-compare
 ---
 
-## 传统模式
+## 传统模式 <Badge text="当前默认" />
 
 你可以在调用 `mdEnhancePlugin` 时传递第二个参数 `true` 以启用传统模式，插件将尝试以 V1 行为运行。
 
@@ -30,6 +30,8 @@ icon: code-compare
 
   :::
   ```
+
+- 新增 component 代码块以快速添加组件
 
 - Chart.js 支持
 
@@ -103,11 +105,39 @@ icon: code-compare
 
   新增 `tabs` 选项通过 `tabs` 容器创建选项卡。
 
+- MarkMap 支持
+
+  新增 `markmap` 选项通过 `markmap` 容器创建 [Markmap](https://markmap.js.org/)。
+
+- Playground
+
+  通过官方预设和自定义选项嵌入交互演示
+
+- Kotlin Playground
+
+  通过 `kotlin-playground` 提供 Kotlin 交互演示
+
+- Vue Playground
+
+  通过 `@vue/repl` 提供 Vue 交互演示
+
+- Mathjax 支持
+
+  通过 `mathjax` 选项提供 [Mathjax](https://www.mathjax.org/) 支持
+
+- GFM 警告
+
+  通过 `alert` 选项新增 GFM 警告支持
+
 ## 变更
 
-- 重命名 `codegroup` 为 `codetabs`
-
 - 现在所有选项均默认不开启
+
+- 重命名 `container` 为 `hint`
+
+  为了对齐 GFM， danger 容器重命名为 caution， 同时新增 important 和 note 容器
+
+- 重命名 `codegroup` 为 `codetabs`
 
 - 代码演示语法变更
 
@@ -201,6 +231,10 @@ icon: code-compare
   :::
   ````
 
+- `presentation` 被重构为 `reveal.js`
+
+  支持主题的 Tree-shaking，并通过客户端配置文件自定义 Reveal.js
+
 ## 移除的选项
 
 - `enableAll` 被移除
@@ -214,3 +248,28 @@ icon: code-compare
 - `imageFix` 被移除
 
   Mr.Hope 已经做了一个 PR 来修复 Markdown 中损坏的图片链接
+
+## 预发布版本中的选项调整
+
+- `container` 被重命名为 `hint`
+
+- `lazyload` 和 `imageLazyload` 被重命名为 `imgLazyload`
+
+- `imageMark` 被重命名为 `imgMark`
+
+- `mdImport` 被重命名为 `include`
+
+- `tex` (使用 katex) 被重命名为 `katex`
+
+- `vpre` 选项被重命名为 `vPre`
+
+- `imageTitle` 被重命名为 `figure`
+
+- `revealjs` 被重命名为 `revealJS`
+
+- `linkCheck` 由 `checkLinks` 替代
+
+- `card` 由 `components` 替代
+
+- `mermaid` `revealJs` `vuePlayground` 等选项不再接受相关库的配置
+-

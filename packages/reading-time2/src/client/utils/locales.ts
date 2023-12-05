@@ -1,11 +1,8 @@
-import {
-  type ReadingTime,
-  type ReadingTimeLocaleData,
-} from "../../shared/index.js";
+import type { ReadingTime, ReadingTimeLocaleData } from "../../shared/index.js";
 
 export const getReadingTimeLocale = (
   readingTime: ReadingTime,
-  locale: ReadingTimeLocaleData
+  locale: ReadingTimeLocaleData,
 ): { time: string; words: string } => {
   const { minutes, words } = readingTime;
   const { less1Minute, word, time } = locale;

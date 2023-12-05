@@ -1,4 +1,4 @@
-import { type CompilerOptions } from "typescript";
+import type { CompilerOptions } from "typescript";
 
 export interface PlaygroundCodeConfig {
   /**
@@ -139,4 +139,15 @@ export interface VuePresetPlaygroundOptions {
    * @default false
    */
   ssr?: boolean;
+}
+
+export interface UnoPresetPlaygroundOptions {
+  /**
+   * external playground service url
+   *
+   * 交互演示外部地址
+   *
+   * @default "https://unocss.dev/play"
+   */
+  service?: string;
 }

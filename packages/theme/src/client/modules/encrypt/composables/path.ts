@@ -1,7 +1,8 @@
 import { usePageData } from "@vuepress/client";
 import { isPlainObject } from "@vuepress/shared";
 import { useSessionStorage, useStorage } from "@vueuse/core";
-import { type ComputedRef, computed } from "vue";
+import type { ComputedRef } from "vue";
+import { computed } from "vue";
 import { keys, startsWith } from "vuepress-shared/client";
 
 import { checkToken } from "@theme-hope/modules/encrypt/utils/index";
@@ -28,7 +29,7 @@ export const usePathEncrypt = (): PathEncrypt => {
   const localToken = useStorage<Record<string, string>>(STORAGE_KEY, {});
   const sessionToken = useSessionStorage<Record<string, string>>(
     STORAGE_KEY,
-    {}
+    {},
   );
 
   const getPathMatchedKeys = (path: string): string[] =>
@@ -50,12 +51,12 @@ export const usePathEncrypt = (): PathEncrypt => {
           (key) =>
             (localToken.value[key] &&
               config[key].some((token) =>
-                checkToken(localToken.value[key], token)
+                checkToken(localToken.value[key], token),
               )) ||
             (sessionToken.value[key] &&
               config[key].some((token) =>
-                checkToken(sessionToken.value[key], token)
-              ))
+                checkToken(sessionToken.value[key], token),
+              )),
         ),
       };
     }

@@ -5,7 +5,7 @@ icon: lightbulb
 
 ## 设置选项
 
-您既可以在 Node.js 一侧使用插件选项设置选项，也可以通过客户端配置文件在浏览器一侧设置选项。
+你既可以在 Node.js 一侧使用插件选项设置选项，也可以通过客户端配置文件在浏览器一侧设置选项。
 
 ::: tabs
 
@@ -33,13 +33,13 @@ export default {
 // .vuepress/client.ts
 import { defineClientConfig } from "@vuepress/client";
 import {
-  defineArtalkOptions,
-  // defineGiscusOptions,
-  // defineTwikooOptions,
-  // defineWalineOptions,
-} from "@vuepress/plugin-comment2";
+  defineArtalkConfig,
+  // defineGiscusConfig,
+  // defineTwikooConfig,
+  // defineWalineConfig,
+} from "vuepress-plugin-comment2/client";
 
-defineArtalkOptions({
+defineArtalkConfig({
   // 选项
 });
 
@@ -81,20 +81,18 @@ export default defineClientConfig({
 
 ## 评论标识
 
-您可以在页面 frontmatter 中设置 commentID 选项来自定义评论 ID，该 ID 用于标识要用于页面的评论存储项。
+你可以在页面 frontmatter 中设置 commentID 选项来自定义评论 ID，该 ID 用于标识要用于页面的评论存储项。
 
-默认情况下，它将是页面的 `path` ，这意味着如果您将站点部署到多个位置，站点间具有相同内容的页面将共享相同的评论数据。
+默认情况下，它将是页面的 `path` ，这意味着如果你将站点部署到多个位置，站点间具有相同内容的页面将共享相同的评论数据。
 
 ## 评论服务
 
 目前你可以选择 Giscus、Waline、 Twikoo 和 Artalk。
 
-::: tip 选择评论服务
+::: tip 推荐的评论服务
 
-你的博客或文档的目标人群:
-
-- 程序员和开发人员: Giscus
-- 公众: Waline
+- 面向程序员和开发人员: Giscus
+- 面向公众: Waline
 
 :::
 

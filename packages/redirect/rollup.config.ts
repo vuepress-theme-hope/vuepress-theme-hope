@@ -1,17 +1,17 @@
-import { bundle } from "../../scripts/rollup.js";
+import { rollupBundle } from "../../scripts/rollup.js";
 
 export default [
-  ...bundle("cli/index", {
+  ...rollupBundle("cli/index", {
     external: ["@vuepress/cli", "cac"],
   }),
-  ...bundle(
+  ...rollupBundle(
     {
       base: "client",
       files: ["config"],
     },
     {
       copy: [["client/styles", "client"]],
-    }
+    },
   ),
-  ...bundle("node/index"),
+  ...rollupBundle("node/index"),
 ];

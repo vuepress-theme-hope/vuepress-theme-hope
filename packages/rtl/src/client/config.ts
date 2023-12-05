@@ -13,8 +13,8 @@ const getElement = (selector: string): HTMLElement | null =>
   selector === "html"
     ? document.documentElement
     : selector === "body"
-    ? document.body
-    : document.querySelector(selector);
+      ? document.body
+      : document.querySelector(selector);
 
 export default defineClientConfig({
   setup() {
@@ -48,10 +48,7 @@ export default defineClientConfig({
     };
 
     onMounted(() => {
-      toggleRTL(routeLocale.value);
-      watch(routeLocale, (value) => {
-        toggleRTL(value);
-      });
+      watch(routeLocale, toggleRTL, { immediate: true });
     });
   },
 });

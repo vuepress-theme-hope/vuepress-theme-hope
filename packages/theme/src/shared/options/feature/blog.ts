@@ -1,4 +1,4 @@
-import { type PageInfo } from "../../info.js";
+import type { PageInfo } from "../../info.js";
 
 export interface BlogLocaleData extends Record<string, string> {
   /** 文章文字 */
@@ -19,6 +19,8 @@ export interface BlogLocaleData extends Record<string, string> {
   intro: string;
   /** 收藏文字 */
   star: string;
+  /** 空文字 */
+  empty: string;
 }
 
 export interface PaginationLocaleData {

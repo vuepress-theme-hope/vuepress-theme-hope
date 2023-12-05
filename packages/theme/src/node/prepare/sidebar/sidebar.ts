@@ -1,4 +1,4 @@
-import { type App } from "@vuepress/core";
+import type { App } from "@vuepress/core";
 import { sanitizeFileName } from "@vuepress/utils";
 import {
   ensureEndingSlash,
@@ -11,13 +11,13 @@ import {
 
 import { getSidebarInfo } from "./info.js";
 import { getSidebarSorter } from "./sorter.js";
-import {
-  type SidebarArrayOptions,
-  type SidebarGroupItem,
-  type SidebarInfo,
-  type SidebarOptions,
-  type SidebarSorter,
-  type ThemeData,
+import type {
+  SidebarArrayOptions,
+  SidebarGroupItem,
+  SidebarInfo,
+  SidebarOptions,
+  SidebarSorter,
+  ThemeData,
 } from "../../../shared/index.js";
 import { logger } from "../../utils.js";
 
@@ -26,7 +26,7 @@ const removeExtension = (path: string): string =>
 
 const getGeneratePaths = (
   sidebarConfig: SidebarArrayOptions,
-  prefix = ""
+  prefix = "",
 ): string[] => {
   const result: string[] = [];
 
@@ -34,7 +34,7 @@ const getGeneratePaths = (
     logger.error(
       `Expecting array, but getting invalid sidebar config${
         prefix ? ` under ${prefix}` : ""
-      } with: ${JSON.stringify(sidebarConfig)}`
+      } with: ${JSON.stringify(sidebarConfig)}`,
     );
 
     return result;
@@ -73,7 +73,7 @@ const getSidebarItems = (infos: SidebarInfo[]): (SidebarGroupItem | string)[] =>
 export const getSidebarData = (
   app: App,
   themeData: ThemeData,
-  sorter?: SidebarSorter
+  sorter?: SidebarSorter,
 ): SidebarOptions => {
   const generatePaths: string[] = [];
   const sorters = getSidebarSorter(sorter);
@@ -86,7 +86,7 @@ export const getSidebarData = (
         if (config === "structure") generatePaths.push(prefix);
         else if (isArray(config))
           generatePaths.push(
-            ...getGeneratePaths(config).map((item) => `${prefix}${item}`)
+            ...getGeneratePaths(config).map((item) => `${prefix}${item}`),
           );
       });
     // sidebar is default "structure"
@@ -101,14 +101,14 @@ export const getSidebarData = (
           pages: app.pages,
           sorters,
           scope: removeLeadingSlash(ensureEndingSlash(path)),
-        })
+        }),
       ),
-    ])
+    ]),
   );
 
   if (app.env.isDebug)
     logger.info(
-      `Sidebar structure data: ${JSON.stringify(sidebarData, null, 2)}`
+      `Sidebar structure data: ${JSON.stringify(sidebarData, null, 2)}`,
     );
 
   return sidebarData;
@@ -120,7 +120,7 @@ export const getSidebarData = (
 export const prepareSidebarData = async (
   app: App,
   themeData: ThemeData,
-  sorter?: SidebarSorter
+  sorter?: SidebarSorter,
 ): Promise<void> => {
   const sidebarData = getSidebarData(app, themeData, sorter);
 
@@ -128,6 +128,6 @@ export const prepareSidebarData = async (
     "theme-hope/sidebar.js",
     `\
 export const sidebarData = ${JSON.stringify(sidebarData)};
-`
+`,
   );
 };

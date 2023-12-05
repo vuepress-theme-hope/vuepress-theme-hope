@@ -1,14 +1,5 @@
-import {
-  type Component,
-  type FunctionalComponent,
-  type SlotsType,
-  type VNode,
-  defineComponent,
-  h,
-  onBeforeUpdate,
-  ref,
-  shallowRef,
-} from "vue";
+import type { Component, FunctionalComponent, SlotsType, VNode } from "vue";
+import { defineComponent, h, onBeforeUpdate, ref, shallowRef } from "vue";
 
 import "../styles/code-group.scss";
 
@@ -31,7 +22,7 @@ export const CodeGroupItem: FunctionalComponent<
       class: ["code-group-item", { active }],
       "aria-selected": active,
     },
-    slots.default?.()
+    slots.default?.(),
   );
 
 CodeGroupItem.displayName = "CodeGroupItem";
@@ -138,9 +129,9 @@ export const CodeGroup = defineComponent({
                 onKeydown: (event: KeyboardEvent) =>
                   keyboardHandler(event, index),
               },
-              <string[]>vNode.props["title"]
+              <string[]>vNode.props["title"],
             );
-          })
+          }),
         ),
         items,
       ]);

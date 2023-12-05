@@ -1,4 +1,4 @@
-import { type NavbarOptions } from "../../navbar.js";
+import type { NavbarOptions } from "../../navbar.js";
 
 export interface NavbarLocaleData {
   /**
@@ -35,9 +35,9 @@ export type NavbarComponent =
  * 导航栏布局选项
  */
 export interface NavbarLayoutOptions {
-  start?: (NavbarComponent | string)[];
-  center?: (NavbarComponent | string)[];
-  end?: (NavbarComponent | string)[];
+  start?: string[];
+  center?: string[];
+  end?: string[];
 }
 
 export interface NavbarLocaleOptions {
@@ -77,6 +77,15 @@ export interface NavbarLocaleOptions {
    * @description 应为基于 `.vuepress/public` 文件夹的绝对路径
    */
   logoDark?: string;
+
+  /**
+   * Navbar title
+   *
+   * 导航栏标题
+   *
+   * @default $siteLocale.title
+   */
+  navTitle?: string | false;
 
   /**
    * Repository link

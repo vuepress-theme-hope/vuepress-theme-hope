@@ -15,6 +15,47 @@ tag:
 
 默认情况下，我们分别为在日间模式和夜间模式使用 `one-light` 和 `one-dark` 主题，你可以通过在 `plugin.prismjs` 中设置 `light` 和 `dark` 来更改它们。
 
+::: code-tabs#language
+
+@tab TS
+
+```ts {7-12}
+// .vuepress/config.ts
+import { defineUserConfig } from "vuepress";
+import { hopeTheme } from "vuepress-theme-hope";
+
+export default defineUserConfig({
+  theme: hopeTheme({
+    plugins: {
+      prismjs: {
+        light: "日间主题关键词",
+        dark: "夜间主题关键词",
+      },
+    },
+  }),
+});
+```
+
+@tab JS
+
+```js {7-12}
+// .vuepress/config.js
+import { hopeTheme } from "vuepress-theme-hope";
+
+export default {
+  theme: hopeTheme({
+    plugins: {
+      prismjs: {
+        light: "日间主题关键词",
+        dark: "夜间主题关键词",
+      },
+    },
+  }),
+};
+```
+
+:::
+
 ::: tip
 
 处于对输出样式大小的考量，我们不会全局引入所有样式。所以我们不支持在代码块单独配置主题。

@@ -5,9 +5,7 @@ icon: fab fa-chrome
 
 ## Composables
 
-::: note
-
-这些函数只能在 setup 中调用
+::: note 这些函数只能在 setup 中调用。
 
 :::
 
@@ -15,9 +13,7 @@ icon: fab fa-chrome
 
 检查组件是否已全局注册。
 
-::: note
-
-该组件的本地导入不影响结果。
+::: note 组件的本地导入不影响结果。
 
 :::
 
@@ -43,7 +39,7 @@ hasGlobalComponent("MyComponent2"); // false
 
 ```ts
 export const useLocaleConfig: <T extends LocaleData>(
-  localesConfig: RequiredLocaleConfig<T>
+  localesConfig: RequiredLocaleConfig<T>,
 ) => ComputedRef<T>;
 ```
 
@@ -108,6 +104,6 @@ export const checkIsMacOS: (ua: string) => boolean;
  */
 export const isActiveLink: (
   route: RouteLocationNormalizedLoaded,
-  link?: string
+  link?: string,
 ) => boolean;
 ```

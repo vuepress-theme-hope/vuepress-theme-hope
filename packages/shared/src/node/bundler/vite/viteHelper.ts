@@ -1,5 +1,5 @@
-import { type ViteBundlerOptions } from "@vuepress/bundler-vite";
-import { type App } from "@vuepress/core";
+import type { ViteBundlerOptions } from "@vuepress/bundler-vite";
+import type { App } from "@vuepress/core";
 
 import { mergeViteConfig } from "./mergeViteConfig.js";
 import { isString } from "../../../shared/index.js";
@@ -15,7 +15,7 @@ import { getBundlerName } from "../getBundler.js";
 export const addViteOptimizeDepsInclude = (
   bundlerOptions: unknown,
   app: App,
-  module: string | string[]
+  module: string | string[],
 ): void => {
   if (
     getBundlerName(app) === "vite" &&
@@ -31,11 +31,11 @@ export const addViteOptimizeDepsInclude = (
         optimizeDeps: {
           include: isString(module) ? [module] : module,
         },
-      }
+      },
     );
 
     viteBundlerOptions.viteOptions.optimizeDeps!.include = Array.from(
-      new Set(viteBundlerOptions.viteOptions.optimizeDeps!.include)
+      new Set(viteBundlerOptions.viteOptions.optimizeDeps!.include),
     );
   }
 };
@@ -49,7 +49,7 @@ export const addViteOptimizeDepsInclude = (
 export const addViteOptimizeDepsExclude = (
   bundlerOptions: unknown,
   app: App,
-  module: string | string[]
+  module: string | string[],
 ): void => {
   if (getBundlerName(app) === "vite") {
     const viteBundlerOptions = <ViteBundlerOptions>bundlerOptions;
@@ -60,11 +60,11 @@ export const addViteOptimizeDepsExclude = (
         optimizeDeps: {
           exclude: isString(module) ? [module] : module,
         },
-      }
+      },
     );
 
     viteBundlerOptions.viteOptions.optimizeDeps!.exclude = Array.from(
-      new Set(viteBundlerOptions.viteOptions.optimizeDeps!.exclude)
+      new Set(viteBundlerOptions.viteOptions.optimizeDeps!.exclude),
     );
   }
 };
@@ -78,7 +78,7 @@ export const addViteOptimizeDepsExclude = (
 export const addViteSsrExternal = (
   bundlerOptions: unknown,
   app: App,
-  module: string | string[]
+  module: string | string[],
 ): void => {
   if (getBundlerName(app) === "vite") {
     const viteBundlerOptions = <ViteBundlerOptions>bundlerOptions;
@@ -89,7 +89,7 @@ export const addViteSsrExternal = (
         ssr: {
           external: isString(module) ? [module] : module,
         },
-      }
+      },
     );
   }
 };
@@ -100,7 +100,7 @@ export const addViteSsrExternal = (
 export const addViteSsrNoExternal = (
   bundlerOptions: unknown,
   app: App,
-  module: string | string[]
+  module: string | string[],
 ): void => {
   if (getBundlerName(app) === "vite") {
     const viteBundlerOptions = <ViteBundlerOptions>bundlerOptions;
@@ -111,7 +111,7 @@ export const addViteSsrNoExternal = (
         ssr: {
           noExternal: isString(module) ? [module] : module,
         },
-      }
+      },
     );
   }
 };
@@ -119,14 +119,14 @@ export const addViteSsrNoExternal = (
 export const addViteConfig = (
   bundlerOptions: unknown,
   app: App,
-  config: Record<string, unknown>
+  config: Record<string, unknown>,
 ): void => {
   if (getBundlerName(app) === "vite") {
     const viteBundlerOptions = <ViteBundlerOptions>bundlerOptions;
 
     viteBundlerOptions.viteOptions = mergeViteConfig(
       viteBundlerOptions.viteOptions || {},
-      config
+      config,
     );
   }
 };

@@ -3,7 +3,7 @@ title: 高级
 icon: gem
 index: false
 dir:
-  order: 7
+  order: 8
 category:
   - 高级
 tag:
@@ -35,18 +35,4 @@ tag:
 
 :::
 
-## 目录
-
-- [PWA 支持](pwa.md)
-
-- [Feed 支持](feed.md)
-
-- [SEO 增强](seo.md)
-
-- [Sitemap 生成](sitemap.md)
-
-- [替换主题组件](replace.md)
-
-- [主题继承](extend.md)
-
-- [预设](presets.md)
+<AutoCatalog />

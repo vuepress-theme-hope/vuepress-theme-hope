@@ -1,15 +1,16 @@
 import { usePageFrontmatter, useRouteLocale } from "@vuepress/client";
-import { type ComputedRef, computed, ref } from "vue";
+import type { ComputedRef } from "vue";
+import { computed, ref } from "vue";
 import { useRouter } from "vue-router";
 import { resolveRouteWithRedirect } from "vuepress-shared/client";
 
 import { typeMap } from "@temp/blog/type";
 
-import {
-  type BlogTypeFrontmatterOptions,
-  type TypeMap,
+import type {
+  BlogTypeFrontmatterOptions,
+  TypeMap,
 } from "../../shared/index.js";
-import { type BlogTypeData } from "../typings.js";
+import type { BlogTypeData } from "../typings.js";
 
 declare const __VUE_HMR_RUNTIME__: Record<string, unknown>;
 declare const __VUEPRESS_DEV__: boolean;
@@ -18,9 +19,9 @@ declare const BLOG_META_SCOPE: string;
 export const blogTypeMap = ref(typeMap);
 
 export const useBlogType = <
-  T extends Record<string, unknown> = Record<string, unknown>
+  T extends Record<string, unknown> = Record<string, unknown>,
 >(
-  key = ""
+  key = "",
 ): ComputedRef<BlogTypeData<T>> => {
   const router = useRouter();
   const routeLocale = useRouteLocale();
@@ -72,7 +73,7 @@ export const useBlogType = <
 // @ts-ignore
 if (__VUEPRESS_DEV__ && (import.meta.webpackHot || import.meta.hot))
   __VUE_HMR_RUNTIME__["updateBlogType"] = (
-    map: Record<string, TypeMap>
+    map: Record<string, TypeMap>,
   ): void => {
     blogTypeMap.value = map;
   };

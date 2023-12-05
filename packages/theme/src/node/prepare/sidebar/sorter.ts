@@ -1,14 +1,14 @@
 import { isArray, isFunction, isString, keys } from "vuepress-shared/node";
 
-import {
-  type SidebarInfo,
-  type SidebarSorter,
-  type SidebarSorterFunction,
+import type {
+  SidebarInfo,
+  SidebarSorter,
+  SidebarSorterFunction,
 } from "../../../shared/index.js";
 
 export const sidebarReadmeSorter = (
   infoA: SidebarInfo,
-  infoB: SidebarInfo
+  infoB: SidebarInfo,
 ): number => {
   if (infoA.type === "file" && infoA.filename.toLowerCase() === "readme.md")
     return -1;
@@ -21,7 +21,7 @@ export const sidebarReadmeSorter = (
 
 export const sidebarOrderSorter = (
   infoA: SidebarInfo,
-  infoB: SidebarInfo
+  infoB: SidebarInfo,
 ): number => {
   // itemA order is absent
   if (infoA.order === null) {
@@ -55,7 +55,7 @@ export const sidebarOrderSorter = (
 
 export const sidebarDateSorter = (
   infoA: SidebarInfo,
-  infoB: SidebarInfo
+  infoB: SidebarInfo,
 ): number => {
   if (infoA.frontmatter?.date instanceof Date) {
     if (infoB.frontmatter?.date instanceof Date)
@@ -73,7 +73,7 @@ export const sidebarDateSorter = (
 
 export const sidebarDateDescSorter = (
   infoA: SidebarInfo,
-  infoB: SidebarInfo
+  infoB: SidebarInfo,
 ): number => {
   if (infoA.frontmatter?.date instanceof Date) {
     if (infoB.frontmatter?.date instanceof Date)
@@ -94,7 +94,7 @@ const getFilename = (info: SidebarInfo): string =>
 
 export const sidebarFilenameSorter = (
   infoA: SidebarInfo,
-  infoB: SidebarInfo
+  infoB: SidebarInfo,
 ): number => {
   const result = getFilename(infoA).localeCompare(
     getFilename(infoB),
@@ -102,7 +102,7 @@ export const sidebarFilenameSorter = (
     {
       numeric: true,
       sensitivity: "accent",
-    }
+    },
   );
 
   if (result !== 0) return result;
@@ -115,7 +115,7 @@ export const sidebarFilenameSorter = (
 
 export const sidebarTitleSorter = (
   infoA: SidebarInfo,
-  infoB: SidebarInfo
+  infoB: SidebarInfo,
 ): number =>
   infoA.title.localeCompare(infoB.title, undefined, {
     numeric: true,
@@ -134,7 +134,7 @@ const availableKeywords = keys(sortKeyMap);
 
 /** @private */
 export const getSidebarSorter = (
-  sorter?: SidebarSorter
+  sorter?: SidebarSorter,
 ): SidebarSorterFunction[] => {
   if (isString(sorter) && availableKeywords.includes(sorter))
     return [sortKeyMap[sorter]];

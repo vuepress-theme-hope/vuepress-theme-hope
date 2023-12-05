@@ -12,7 +12,7 @@ Make Markdown files in your VuePress site support markup.
 
 <!-- more -->
 
-## Config
+## Settings
 
 ::: code-tabs#language
 
@@ -57,10 +57,8 @@ export default {
 
 Use `== ==` to mark.
 
-## Demo
+::: md-demo Demo
 
 VuePress Theme Hope is ==powerful==.
 
-```md
-VuePress Theme Hope is ==powerful==.
-```
+:::

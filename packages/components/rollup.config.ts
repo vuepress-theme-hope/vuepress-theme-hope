@@ -1,8 +1,8 @@
-import { bundle } from "../../scripts/rollup.js";
+import { rollupBundle } from "../../scripts/rollup.js";
 
 export default [
-  ...bundle("node/index"),
-  ...bundle(
+  ...rollupBundle("node/index"),
+  ...rollupBundle(
     {
       base: "client",
       files: [
@@ -20,26 +20,30 @@ export default [
         "components/Share",
         "components/SiteInfo",
         "components/StackBlitz",
+        "components/VPBanner",
+        "components/VPCard",
+        "components/VidStack",
         "components/VideoPlayer",
         "components/XiGua",
         "components/YouTube",
       ],
     },
-
     {
       external: [
         "@stackblitz/sdk",
         "artplayer",
+        "create-codepen",
         "dashjs/dist/dash.all.min.js",
         "hls.js/dist/hls.min.js",
         "mpegts.js/dist/mpegts.js",
         "plyr",
         "qrcode",
+        "vidstack/elements",
       ],
       copy: [
         ["client/styles", "client"],
         ["client/compact/styles", "client/compact"],
       ],
-    }
+    },
   ),
 ];

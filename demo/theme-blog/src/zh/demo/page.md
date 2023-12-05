@@ -1,10 +1,8 @@
 ---
 # 这是文章的标题
 title: 页面配置
-# You can customize cover image
-cover: /assets/images/cover1.jpg
 # 这是页面的图标
-icon: page
+icon: file
 # 这是侧边栏的顺序
 order: 1
 # 设置作者
@@ -45,10 +43,9 @@ copyright: 无版权
 
 你可以自由在这里书写你的 Markdown。
 
-::: tip
+::: tip 图片引入
 
-- 你可以将图片和 Markdown 文件放置在一起，但是你需要使用**相对链接**`./` 进行引用。
-
+- 你可以将图片和 Markdown 文件放置在一起使用相对路径进行引用。
 - 对于 `.vuepress/public` 文件夹的图片，请使用绝对链接 `/` 进行引用。
 
 :::

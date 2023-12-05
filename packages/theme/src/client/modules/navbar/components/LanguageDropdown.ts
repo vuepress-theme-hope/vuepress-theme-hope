@@ -1,4 +1,5 @@
-import { type VNode, defineComponent, h } from "vue";
+import type { VNode } from "vue";
+import { defineComponent, h } from "vue";
 
 import DropdownLink from "@theme-hope/modules/navbar/components/DropdownLink";
 import { I18nIcon } from "@theme-hope/modules/navbar/components/icons/index";
@@ -28,8 +29,8 @@ export default defineComponent({
                       verticalAlign: "middle",
                     },
                   }),
-              }
-            )
+              },
+            ),
           )
         : null;
   },

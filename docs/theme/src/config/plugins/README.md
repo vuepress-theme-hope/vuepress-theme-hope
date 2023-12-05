@@ -1,23 +1,16 @@
 ---
 title: Plugin Config
 icon: puzzle-piece
-index: false
 dir:
   order: 4
 ---
 
-## Catalog
+::: warning Use theme plugins through theme
 
-- [Theme plugins Intro](intro.md)
+The theme has some plugins built-in and enables them for you to enhance your experience, you should customize these plugins through theme options.
 
-- [Blog plugin config](blog.md)
+Some plugins are required for the theme to work properly, which means you are not allowed to call them with options yourself.
 
-- [Copyright plugin config](copyright.md)
+:::
 
-- [Feed plugin config](feed.md)
-
-- [MdEnhance plugin config](md-enhance.md)
-
-- [PWA plugin config](pwa.md)
-
-- [Other plugins](others.md)
+<AutoCatalog />

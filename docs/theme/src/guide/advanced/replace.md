@@ -1,5 +1,5 @@
 ---
-title: Replacing Theme Components
+title: Replace Components
 icon: boxes-packing
 order: -2
 category:
@@ -13,7 +13,7 @@ When setting `{ custom: true }` in [Behavior options](../../config/theme/behavio
 
 <!-- more -->
 
-## Replace Components
+## How to Replace via Alias
 
 You need to replace the component alias used in the theme with `alias` option in your own VuePress config file.
 
@@ -30,16 +30,19 @@ import { hopeTheme } from "vuepress-theme-hope";
 const __dirname = getDirname(import.meta.url);
 
 export default defineUserConfig({
-  theme: hopeTheme({
-    // your theme config here
-  }),
+  theme: hopeTheme(
+    {
+      // your theme config here
+    },
+    { custom: true },
+  ),
 
   alias: {
     // Here you can redirect aliases to your own components
     // For example, here we change the theme's home page component to HomePage.vue under user .vuepress/components
     "@theme-hope/components/HomePage": path.resolve(
       __dirname,
-      "./components/HomePage.vue"
+      "./components/HomePage.vue",
     ),
   },
 });
@@ -55,16 +58,19 @@ import { hopeTheme } from "vuepress-theme-hope";
 const __dirname = getDirname(import.meta.url);
 
 export default {
-  theme: hopeTheme({
-    // your theme config here
-  }),
+  theme: hopeTheme(
+    {
+      // your theme config here
+    },
+    { custom: true },
+  ),
 
   alias: {
     // Here you can redirect aliases to your own components
     // For example, here we change the theme's home page component to HomePage.vue under user .vuepress/components
     "@theme-hope/components/HomePage": path.resolve(
       __dirname,
-      "./components/HomePage.vue"
+      "./components/HomePage.vue",
     ),
   },
 };
@@ -83,6 +89,7 @@ Components:
 - `@theme-hope/components/CommonWrapper`: basic layout integration
 - `@theme-hope/components/FeaturePanel`: homepage features
 - `@theme-hope/components/HeroInfo`: homepage logo and introduction
+- `@theme-hope/components/HighlightPanel`: homepage highlights
 - `@theme-hope/components/HomePage`: home page
 - `@theme-hope/components/HopeIcon`: icon
 - `@theme-hope/components/MarkdownContent`: Markdown content
@@ -230,6 +237,12 @@ Miscellaneous:
 
 Some components provide slots, in this case, you can directly import the original component when overriding the component, and pass in the content you need through the slot.
 
+::: tip
+
+For demo of common slots, please refer [Main Layout Slot demo](../../demo/slot.md)。
+
+:::
+
 For example, if your site has strong social attributes, and you want to display a comment box on the homepage, you can display it like this:
 
 ::: code-tabs
@@ -245,16 +258,19 @@ import { hopeTheme } from "vuepress-theme-hope";
 const __dirname = getDirname(import.meta.url);
 
 export default defineUserConfig({
-  theme: hopeTheme({
-    // your theme config here
-  }),
+  theme: hopeTheme(
+    {
+      // your theme config here
+    },
+    { custom: true },
+  ),
 
   alias: {
     // Here you can direct aliases to your own components
     // For example, here we change the theme's home page component to HomePage.vue under user .vuepress/components
     "@theme-hope/components/HomePage": path.resolve(
       __dirname,
-      "./components/HomePage.vue"
+      "./components/HomePage.vue",
     ),
   },
 });
@@ -284,7 +300,12 @@ Components that provide slots are as follows:
 
 - `AutoLink`: `default`, `before`, `after`
 - `CommonWrapper`: `default`, `navbarStartBefore`, `navbarStartAfter`, `navbarCenterBefore`, `navbarCenterAfter`, `navbarEndBefore`, `navbarEndAfter`, `navScreenTop`, `navScreenBottom`, `sidebar`, `sidebarTop`, `sidebarBottom`
-- `HeroInfo`: `heroImage`, `heroInfo`
+- `HeroInfo`: `heroImage`, `heroInfo`, `heroBg`
+
+  - `heroInfo` slot will receive `text` `tagline` and `isFullScreen` props.
+  - `heroImage` slot will receive `image` `imageDark` `heroStyle` `alt` and `isFullScreen` props.
+  - `heroBg` slot will receive `image` `bgStyle` and `isFullScreen` props.
+
 - `HomePage`: `top`, `center`, `bottom`
 - `NormalPage`: `top`, `contentBefore`, `contentAfter`, `bottom`, `tocBefore`, `tocAfter`
 

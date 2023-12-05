@@ -1,4 +1,4 @@
-import { type App, type Page } from "@vuepress/core";
+import type { App, Page } from "@vuepress/core";
 import {
   Logger,
   entries,
@@ -10,8 +10,8 @@ import {
   removeLeadingSlash,
 } from "vuepress-shared/node";
 
-import { type SeoOptions } from "./options.js";
-import { type ExtendPage } from "./typings/index.js";
+import type { SeoOptions } from "./options.js";
+import type { ExtendPage } from "./typings/index.js";
 
 export const PLUGIN_NAME = "vuepress-plugin-seo2";
 
@@ -24,7 +24,7 @@ export interface AlternateInfo {
 
 export const getAlternateInfo = (
   { lang, path, pathLocale }: Page,
-  { pages, siteData }: App
+  { pages, siteData }: App,
 ): AlternateInfo[] =>
   entries(siteData.locales)
     .map(([localePath, { lang }]) => ({
@@ -35,13 +35,13 @@ export const getAlternateInfo = (
       (item): item is AlternateInfo =>
         isString(item.lang) &&
         item.lang !== lang &&
-        pages.some(({ path }) => path === item.path)
+        pages.some(({ path }) => path === item.path),
     );
 
 export const getCover = (
   { frontmatter }: ExtendPage,
   { options: { base } }: App,
-  { hostname }: SeoOptions
+  { hostname }: SeoOptions,
 ): string | null => {
   const { banner, cover } = frontmatter;
 
@@ -63,7 +63,7 @@ export const getCover = (
 export const getImages = (
   { content }: ExtendPage,
   { options: { base } }: App,
-  { hostname }: SeoOptions
+  { hostname }: SeoOptions,
 ): string[] => {
   const result = /!\[.*?\]\((.*?)\)/giu.exec(content);
 
@@ -84,7 +84,7 @@ export const getImages = (
 export const resolveUrl = (
   hostname: string,
   base: string,
-  url: string
+  url: string,
 ): string =>
   `${
     isLinkHttp(hostname)

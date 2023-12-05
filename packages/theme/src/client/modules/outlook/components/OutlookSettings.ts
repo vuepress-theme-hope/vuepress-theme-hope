@@ -1,5 +1,6 @@
 import { ClientOnly } from "@vuepress/client";
-import { type VNode, computed, defineComponent, h } from "vue";
+import type { VNode } from "vue";
+import { computed, defineComponent, h } from "vue";
 
 import { usePure, useThemeData } from "@theme-hope/composables/index";
 import AppearanceMode from "@theme-hope/modules/outlook/components/AppearanceMode";
@@ -16,7 +17,7 @@ export default defineComponent({
     const pure = usePure();
 
     const enableFullScreen = computed(
-      () => !pure.value && themeData.value.fullscreen
+      () => !pure.value && themeData.value.fullscreen,
     );
 
     return (): VNode =>

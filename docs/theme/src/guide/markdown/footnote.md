@@ -12,7 +12,7 @@ Let the Markdown file in your VuePress site support footnotes.
 
 <!-- more -->
 
-## Config
+## Settings
 
 ::: code-tabs#language
 
@@ -53,42 +53,4 @@ export default {
 
 :::
 
-## Syntax
-
-- Use `[^Anchor text]` in Markdown to define a footnote
-
-- Use `[^Anchor text]: ...` to describe footnote content
-
-- If there are multiple paragraphs in footnote, the paragraph show be double indented
-
-## Demo
-
-Footnote 1 link[^first].
-
-Footnote 2 link[^second].
-
-Inline footnote^[Text of inline footnote] definition.
-
-Duplicated footnote reference[^second].
-
-[^first]: Footnote **can have markup**
-
-    and multiple paragraphs.
-
-[^second]: Footnote text.
-
-```md
-Footnote 1 link[^first].
-
-Footnote 2 link[^second].
-
-Inline footnote^[Text of inline footnote] definition.
-
-Duplicated footnote reference[^second].
-
-[^first]: Footnote **can have markup**
-
-    and multiple paragraphs.
-
-[^second]: Footnote text.
-```
+<!-- @include: @md-enhance/guide/content/footnote.md#after -->

@@ -3,13 +3,6 @@ title: 配置
 icon: gears
 ---
 
-## showInstall
-
-- 类型: `boolean`
-- 默认值: `true`
-
-是否在 Service Worker 首次成功注册时显示 PWA 安装按钮
-
 ## manifest
 
 - 类型: `ManifestOption`
@@ -27,7 +20,6 @@ icon: gears
 - lang: `siteConfig.locales['/'].lang` || `"en-US"`
 - start_url: `context.base`
 - scope: `context.base`
-
 - display: `"standalone"`
 - theme_color: `"#46bd87"`
 - background_color: `"#ffffff"`
@@ -98,9 +90,7 @@ icon: gears
 
 图片允许缓存的最大大小 (以 KB 为单位)
 
-::: tip
-
-该选项不能大于 `maxSize`。
+::: note 该选项不能大于 maxSize 选项
 
 :::
 
@@ -127,7 +117,7 @@ icon: gears
 
 - `"force"`: 立即注销当前 Service Worker 然后刷新以获取新内容
 
-  ::: danger
+  ::: caution
 
   虽然这可以确保用户访问的是最新内容，但这可能会影响访问体验。
 

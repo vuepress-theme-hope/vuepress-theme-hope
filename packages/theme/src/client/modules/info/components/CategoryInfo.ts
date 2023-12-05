@@ -1,11 +1,12 @@
 import { usePageData } from "@vuepress/client";
-import { type PropType, type VNode, defineComponent, h } from "vue";
+import type { PropType, VNode } from "vue";
+import { defineComponent, h } from "vue";
 import { useRouter } from "vue-router";
 import { generateIndexFromHash } from "vuepress-shared/client";
 
 import { CategoryIcon } from "@theme-hope/modules/info/components/icons";
 import { useMetaLocale } from "@theme-hope/modules/info/composables/index";
-import { type PageCategory } from "@theme-hope/modules/info/utils/index";
+import type { PageCategory } from "@theme-hope/modules/info/utils/index";
 
 import "../styles/category-info.scss";
 
@@ -75,14 +76,14 @@ export default defineComponent({
                     role: path ? "navigation" : "",
                     onClick: (event: Event) => navigate(event, path),
                   },
-                  name
-                )
+                  name,
+                ),
               ),
               h("meta", {
                 property: "articleSection",
                 content: props.category.map(({ name }) => name).join(","),
               }),
-            ]
+            ],
           )
         : null;
   },

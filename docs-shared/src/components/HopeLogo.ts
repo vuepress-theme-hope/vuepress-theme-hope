@@ -1,42 +1,38 @@
-import { usePageFrontmatter, withBase } from "@vuepress/client";
-import { type Mesh, type default as Three } from "three";
-import { type OrbitControls } from "three/examples/jsm/controls/OrbitControls.js";
-import { type STLLoader } from "three/examples/jsm/loaders/STLLoader.js";
-import {
-  type VNode,
-  computed,
-  defineComponent,
-  h,
-  onMounted,
-  ref,
-  watch,
-} from "vue";
-import { type ThemeProjectHomePageFrontmatter } from "vuepress-theme-hope";
+import type Three from "three";
+import type { Mesh } from "three";
+import type { OrbitControls } from "three/examples/jsm/controls/OrbitControls.js";
+import type { STLLoader } from "three/examples/jsm/loaders/STLLoader.js";
+import type { VNode } from "vue";
+import { computed, defineComponent, h, onMounted, ref, watch } from "vue";
 
 // @ts-ignore
 import { useWindowSize } from "@theme-hope/composables/index";
+// @ts-ignore
+import { useDarkmode } from "@theme-hope/modules/outlook/composables/index";
 
 import "../styles/hope-logo.scss";
 
-const BASE = "https://theme-hope-assets.vuejs.press/model/";
+const ASSETS_SERVER = "https://theme-hope-assets.vuejs.press";
 
 export default defineComponent({
   name: "HopeLogo",
 
   setup() {
-    const frontmatter = usePageFrontmatter<ThemeProjectHomePageFrontmatter>();
+    const { isDarkmode } = useDarkmode();
     const { isMobile } = useWindowSize();
 
     const ready = ref(false);
 
     const sizes = computed(() =>
-      isMobile.value ? { width: 220, height: 220 } : { width: 300, height: 300 }
+      isMobile.value
+        ? { width: 220, height: 220 }
+        : { width: 300, height: 300 },
     );
 
     const renderLogo = async (
       three: typeof Three,
       STLLoaderConstructor: typeof STLLoader,
-      OrbitControlsConstructor: typeof OrbitControls
+      OrbitControlsConstructor: typeof OrbitControls,
     ): Promise<void> => {
       const { width, height } = sizes.value;
 
@@ -47,13 +43,18 @@ export default defineComponent({
       const scene = new three.Scene();
       const stlLoader = new STLLoaderConstructor();
       const textureLoader = new three.TextureLoader();
-      const roughnessTexture = textureLoader.load(BASE + "roughness.jpeg");
+      const roughnessTexture = textureLoader.load(
+        ASSETS_SERVER + "/model/roughness.jpeg",
+      );
       // Models
       let logo1: Mesh;
       let logo2: Mesh;
 
       // Lights
-      const ambientLight = new three.AmbientLight(0xffffff, 2);
+      const ambientLight = new three.AmbientLight(
+        0xffffff,
+        isDarkmode.value ? 5 : 15,
+      );
       const directionalLight = new three.DirectionalLight(0xffffff, 3);
       const directionalLight2 = new three.DirectionalLight(0xffffff, 3);
 
@@ -117,10 +118,10 @@ export default defineComponent({
 
       await Promise.all([
         new Promise<void>((resolve) =>
-          stlLoader.load(BASE + "logo1.stl", (geometry) => {
+          stlLoader.load(ASSETS_SERVER + "/model/logo1.stl", (geometry) => {
             const material = new three.MeshPhysicalMaterial({
               color: 0x284c39,
-              metalness: 0.45,
+              metalness: 0.3,
               roughness: 0.5,
               roughnessMap: roughnessTexture,
               displacementScale: 0.15,
@@ -137,10 +138,10 @@ export default defineComponent({
             scene.add(logo1);
 
             resolve();
-          })
+          }),
         ),
         new Promise<void>((resolve) =>
-          stlLoader.load(BASE + "logo2.stl", (geometry) => {
+          stlLoader.load(ASSETS_SERVER + "/model/logo2.stl", (geometry) => {
             const material = new three.MeshPhysicalMaterial({
               color: 0x35495e,
               metalness: 0.7,
@@ -160,35 +161,37 @@ export default defineComponent({
             scene.add(logo2);
 
             resolve();
-          })
+          }),
         ),
       ]);
 
       ready.value = true;
     };
 
-    onMounted(() =>
-      Promise.all([
-        import(/* webpackChunkName: "hope-logo" */ "three").then(
-          (m) => m.default || m
-        ),
-        import(
-          /* webpackChunkName: "hope-logo" */ "three/examples/jsm/controls/OrbitControls.js"
-        ).then((m) => m.default || m),
-        import(
-          /* webpackChunkName: "hope-logo" */ "three/examples/jsm/loaders/STLLoader.js"
-        ).then((m) => m.default || m),
-      ]).then(([THREE, { OrbitControls }, { STLLoader }]) => {
-        void renderLogo(THREE, STLLoader, OrbitControls);
-
-        watch(isMobile, () => renderLogo(THREE, STLLoader, OrbitControls));
-      })
-    );
+    onMounted(() => {
+      watch(
+        [isDarkmode, isMobile],
+        () =>
+          Promise.all([
+            import(/* webpackChunkName: "hope-logo" */ "three").then((m) => m),
+            import(
+              /* webpackChunkName: "hope-logo" */ "three/examples/jsm/controls/OrbitControls.js"
+            ).then((m) => m),
+            import(
+              /* webpackChunkName: "hope-logo" */ "three/examples/jsm/loaders/STLLoader.js"
+            ).then((m) => m),
+          ]).then(([THREE, { OrbitControls }, { STLLoader }]) =>
+            renderLogo(THREE, STLLoader, OrbitControls),
+          ),
+        { immediate: true },
+      );
+    });
 
     return (): (VNode | null)[] => [
       !ready.value
         ? h("img", {
-            src: withBase(frontmatter.value.heroImage!),
+            class: "vp-hero-image",
+            src: ASSETS_SERVER + "/logo.svg",
             alt: "vuepress-theme-hope",
           })
         : null,

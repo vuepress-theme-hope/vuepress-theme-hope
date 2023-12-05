@@ -1,11 +1,12 @@
-import { type App, createPage } from "@vuepress/core";
+import type { App } from "@vuepress/core";
+import { createPage } from "@vuepress/core";
 import { removeEndingSlash } from "vuepress-shared/node";
 
-import { type LocaleRedirectConfig } from "../shared/index.js";
+import type { LocaleRedirectConfig } from "../shared/index.js";
 
 export const ensureRootHomePage = async (
   app: App,
-  localeOptions: LocaleRedirectConfig
+  localeOptions: LocaleRedirectConfig,
 ): Promise<void> => {
   const {
     options: { base },
@@ -62,13 +63,13 @@ if(!__VUEPRESS_DEV__)
     
     // default link
     const defaultLink = defaultLocale? \`\${origin}${removeEndingSlash(
-      base
+      base,
     )}\${defaultLocale}\${anchor? \`#\${anchor}\`: ""}\`: null;
 
     // a locale homepage exists
     if (matchedLocalePath && availableLocales.includes(matchedLocalePath)) {
       location.href = \`\${origin}${removeEndingSlash(
-        base
+        base,
       )}\${matchedLocalePath}\${anchor? \`#\${anchor}\`: ""}\`;
     }
     // we have a default page
@@ -82,7 +83,7 @@ if(!__VUEPRESS_DEV__)
   })
 </script>
 `,
-      })
+      }),
     );
   }
 };

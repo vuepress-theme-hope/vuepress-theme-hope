@@ -6,7 +6,7 @@ import {
   isString,
 } from "vuepress-shared/node";
 
-import { type FontIconAssets } from "../options/index.js";
+import type { FontIconAssets } from "../options/index.js";
 import { logger } from "../utils.js";
 
 export const FONT_AWESOME_PREFIX = "fas fa-";
@@ -41,7 +41,7 @@ export const isIconifyAssets = (assets: FontIconAssets): boolean =>
 
 export const getIconInfo = (
   assets?: FontIconAssets,
-  prefix?: string
+  prefix?: string,
 ): {
   type: "iconfont" | "iconify" | "fontawesome" | "custom";
   prefix: string;
@@ -110,8 +110,8 @@ useScriptTag(
     const actualLink = isLinkHttp(asset)
       ? asset
       : isAbsoluteUrl(asset)
-      ? asset
-      : `//${asset}`;
+        ? asset
+        : `//${asset}`;
 
     if (endsWith(actualLink, ".css"))
       return [

@@ -1,12 +1,12 @@
-import { type HeadConfig } from "@vuepress/core";
+import type { HeadConfig } from "@vuepress/core";
 import { isPlainObject } from "vuepress-shared/node";
 
-import { type PWAOptions } from "./options.js";
+import type { PWAOptions } from "./options.js";
 
 export const injectLinksToHead = (
   options: PWAOptions,
   base = "/",
-  head: HeadConfig[] = []
+  head: HeadConfig[] = [],
 ): HeadConfig[] => {
   const metaKeys: string[] = [];
   const linkKeys: string[] = [];
@@ -21,7 +21,7 @@ export const injectLinksToHead = (
   const setLink = (
     rel: string,
     href: string,
-    more: Record<string, string> = {}
+    more: Record<string, string> = {},
   ): void => {
     if (!linkKeys.includes(rel)) head.push(["link", { rel, href, ...more }]);
   };
@@ -29,7 +29,7 @@ export const injectLinksToHead = (
   const setMeta = (
     name: string,
     content: string,
-    more: Record<string, string> = {}
+    more: Record<string, string> = {},
   ): void => {
     if (!metaKeys.includes(name))
       head.push(["meta", { name, content, ...more }]);
@@ -61,7 +61,7 @@ export const injectLinksToHead = (
     setMeta("apple-mobile-web-app-capable", "yes");
     setMeta(
       "apple-mobile-web-app-status-bar-style",
-      options.apple.statusBarColor || "black"
+      options.apple.statusBarColor || "black",
     );
     if (options.apple.maskIcon)
       setLink("mask-icon", options.apple.maskIcon, {
@@ -77,7 +77,7 @@ export const injectLinksToHead = (
     setMeta("msapplication-TileImage", options.msTile.image || fallBackIcon);
     setMeta(
       "msapplication-TileColor",
-      options.msTile.color || options.themeColor || "#46bd87"
+      options.msTile.color || options.themeColor || "#46bd87",
     );
   } else if (options.msTile !== false && fallBackIcon) {
     setMeta("msapplication-TileImage", fallBackIcon);
@@ -87,7 +87,7 @@ export const injectLinksToHead = (
   // enhance pwa experience
   setMeta(
     "viewport",
-    "width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, viewport-fit=cover"
+    "width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, viewport-fit=cover",
   );
 
   return head;

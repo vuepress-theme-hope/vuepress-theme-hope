@@ -1,6 +1,6 @@
-import { type LocaleConfig, type Page } from "@vuepress/core";
+import type { LocaleConfig, Page } from "@vuepress/core";
 
-import { type CopyrightLocaleData } from "../shared/locales.js";
+import type { CopyrightLocaleData } from "../shared/locales.js";
 
 export interface CopyrightOptions {
   /**
@@ -11,20 +11,14 @@ export interface CopyrightOptions {
   author?:
     | string
     | (<
-        ExtraPageData extends Record<
-          string | number | symbol,
+        ExtraPageData extends Record<string, unknown> = Record<never, never>,
+        ExtraPageFrontmatter extends Record<string, unknown> = Record<
+          string,
           unknown
-        > = Record<never, never>,
-        ExtraPageFrontmatter extends Record<
-          string | number | symbol,
-          unknown
-        > = Record<string, unknown>,
-        ExtraPageFields extends Record<
-          string | number | symbol,
-          unknown
-        > = Record<never, never>
+        >,
+        ExtraPageFields extends Record<string, unknown> = Record<never, never>,
       >(
-        page: Page<ExtraPageData, ExtraPageFrontmatter, ExtraPageFields>
+        page: Page<ExtraPageData, ExtraPageFrontmatter, ExtraPageFields>,
       ) => string);
 
   /**
@@ -35,30 +29,42 @@ export interface CopyrightOptions {
   license?:
     | string
     | (<
-        ExtraPageData extends Record<
-          string | number | symbol,
+        ExtraPageData extends Record<string, unknown> = Record<never, never>,
+        ExtraPageFrontmatter extends Record<string, unknown> = Record<
+          string,
           unknown
-        > = Record<never, never>,
-        ExtraPageFrontmatter extends Record<
-          string | number | symbol,
-          unknown
-        > = Record<string, unknown>,
-        ExtraPageFields extends Record<
-          string | number | symbol,
-          unknown
-        > = Record<never, never>
+        >,
+        ExtraPageFields extends Record<string, unknown> = Record<never, never>,
       >(
-        page: Page<ExtraPageData, ExtraPageFrontmatter, ExtraPageFields>
+        page: Page<ExtraPageData, ExtraPageFrontmatter, ExtraPageFields>,
       ) => string);
 
   /**
-   * Min words triggering copyright append
+   * @deprecated Use `triggerLength` instead
+   */
+  triggerWords?: number;
+
+  /**
+   * Min length triggering copyright append
    *
-   * 触发附加版权的最小字数
+   * 触发附加版权的最小长度
    *
    * @default 100
    */
-  triggerWords?: number;
+  triggerLength?: number;
+
+  /**
+   * Max length that allows to copy
+   *
+   * @description 0 means unlimited
+   *
+   * 允许复制的最大字数
+   *
+   * @description 0 表示无限制
+   *
+   * @default 0
+   */
+  maxLength?: number;
 
   /**
    * Whether enabled globally

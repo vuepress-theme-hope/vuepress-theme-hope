@@ -1,6 +1,5 @@
 {
   "name": "theme-docs-demo",
-  "version": "2.0.0-beta.181",
   "type": "module",
   "private": true,
   "description": "Theme demo for vuepress-theme-hope",
@@ -16,16 +15,21 @@
     "demo:webpack-dev": "vuepress-webpack dev src"
   },
   "devDependencies": {
-    "@vuepress/cli": "2.0.0-beta.62",
-    "@vuepress/client": "2.0.0-beta.62",
-    "@vuepress/plugin-docsearch": "2.0.0-beta.62",
-    "@vuepress/plugin-pwa": "2.0.0-beta.62",
-    "@vuepress/plugin-pwa-popup": "2.0.0-beta.62",
-    "@vuepress/utils": "2.0.0-beta.62",
-    "sass-loader": "13.2.2",
-    "vue": "3.3.4",
+    "@vue/repl": "3.0.0",
+    "@vuepress/cli": "2.0.0-rc.0",
+    "@vuepress/client": "2.0.0-rc.0",
+    "@vuepress/plugin-docsearch": "2.0.0-rc.0",
+    "@vuepress/utils": "2.0.0-rc.0",
+    "chart.js": "4.4.1",
+    "echarts": "5.4.3",
+    "katex": "0.16.9",
+    "mathjax-full": "3.2.2",
+    "mermaid": "10.6.1",
+    "reveal.js": "5.0.2",
+    "sass-loader": "13.3.2",
+    "vue": "3.3.10",
     "vuepress-theme-hope": "workspace:*",
-    "vuepress-vite": "2.0.0-beta.62",
-    "vuepress-webpack": "2.0.0-beta.62"
+    "vuepress-vite": "2.0.0-rc.0",
+    "vuepress-webpack": "2.0.0-rc.0"
   }
 }

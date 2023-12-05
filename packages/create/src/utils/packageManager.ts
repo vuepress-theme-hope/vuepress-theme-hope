@@ -33,7 +33,7 @@ export interface PackageManagerAnswer {
 }
 
 export const getPackageManager = async (
-  message: string
+  message: string,
 ): Promise<PackageManager> =>
   (
     await inquirer.prompt<PackageManagerAnswer>([

@@ -1,11 +1,11 @@
-import { type Page } from "@vuepress/core";
+import type { Page } from "@vuepress/core";
 import { colors } from "@vuepress/utils";
 import { isArray, isString } from "vuepress-shared/node";
 
-import {
-  type ThemeBlogHomePageFrontmatter,
-  type ThemeNormalPageFrontmatter,
-  type ThemeProjectHomePageFrontmatter,
+import type {
+  ThemeBlogHomePageFrontmatter,
+  ThemeNormalPageFrontmatter,
+  ThemeProjectHomePageFrontmatter,
 } from "../../shared/index.js";
 import { logger } from "../utils.js";
 
@@ -29,12 +29,12 @@ export const checkFrontmatter = (page: Page): void => {
     ) {
       logger.warn(
         `${colors.magenta(
-          key
+          key,
         )} property in Page FrontMatter should be ${colors.cyan(
-          "string"
+          "string",
         )} or ${colors.cyan(" string[]")}${
           filePathRelative ? `, found in ${filePathRelative}` : ""
-        }.`
+        }.`,
       );
 
       delete frontmatter[key];
@@ -45,8 +45,8 @@ export const checkFrontmatter = (page: Page): void => {
   if ("date" in frontmatter && !(frontmatter.date instanceof Date)) {
     logger.warn(
       `${colors.magenta("date")} in frontMatter should be ${colors.cyan(
-        "a valid Date"
-      )}${filePathRelative ? `, found in ${filePathRelative}` : ""}.`
+        "a valid Date",
+      )}${filePathRelative ? `, found in ${filePathRelative}` : ""}.`,
     );
 
     delete frontmatter.date;
@@ -60,10 +60,10 @@ export const checkFrontmatter = (page: Page): void => {
   ) {
     logger.warn(
       `${colors.magenta("sidebar")} in frontMatter should be ${colors.cyan(
-        "heading"
+        "heading",
       )} or ${colors.cyan("boolean")}${
         filePathRelative ? `, found in ${filePathRelative}` : ""
-      }.`
+      }.`,
     );
 
     delete frontmatter.sidebar;
@@ -74,8 +74,8 @@ export const checkFrontmatter = (page: Page): void => {
     if (key in frontmatter && !isString(frontmatter[key])) {
       logger.warn(
         `${colors.magenta(key)} in frontMatter should be ${colors.cyan(
-          "string"
-        )}${filePathRelative ? `, found in ${filePathRelative}` : ""}.`
+          "string",
+        )}${filePathRelative ? `, found in ${filePathRelative}` : ""}.`,
       );
 
       delete frontmatter[key];
@@ -99,8 +99,8 @@ export const checkFrontmatter = (page: Page): void => {
     if (key in frontmatter && typeof frontmatter[key] !== "boolean") {
       logger.warn(
         `${colors.magenta(key)} in frontMatter should be ${colors.cyan(
-          "boolean"
-        )}${filePathRelative ? `, found in ${filePathRelative}` : ""}.`
+          "boolean",
+        )}${filePathRelative ? `, found in ${filePathRelative}` : ""}.`,
       );
 
       delete frontmatter[key];

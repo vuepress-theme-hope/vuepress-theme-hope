@@ -1,4 +1,4 @@
-import { type SFCOptions } from "@vue/repl";
+import type { SFCOptions } from "@vue/repl";
 
 /**
  * Vue Playground options

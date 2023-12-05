@@ -1,13 +1,13 @@
 {
   "name": "theme-docs",
-  "version": "2.0.0-beta.181",
+  "type": "module",
   "private": true,
   "description": "Docs for vuepress-theme-hope",
   "license": "MIT",
   "author": {
     "name": "Mr.Hope",
     "email": "mister-hope@outlook.com",
-    "url": "https://mrhope.site"
+    "url": "https://mister-hope.com"
   },
   "scripts": {
     "docs:serve": "http-server -a localhost dist -o",
@@ -19,20 +19,20 @@
     "docs:webpack-dev": "vuepress-webpack dev src"
   },
   "dependencies": {
-    "@types/katex": "0.16.0",
-    "@vuepress/client": "2.0.0-beta.62",
-    "@vuepress/shared": "2.0.0-beta.62",
-    "@vueuse/core": "10.1.2",
+    "@types/katex": "0.16.7",
+    "@vuepress/client": "2.0.0-rc.0",
+    "@vuepress/shared": "2.0.0-rc.0",
+    "@vueuse/core": "10.7.0",
     "docs-shared": "workspace:*",
-    "flowchart.ts": "0.1.6",
-    "katex": "0.16.7",
-    "sass-loader": "13.2.2",
-    "vue": "3.3.4",
+    "flowchart.ts": "2.0.0",
+    "katex": "0.16.9",
+    "sass-loader": "13.3.2",
+    "vue": "3.3.10",
     "vuepress-plugin-copy-code2": "workspace:*",
     "vuepress-plugin-md-enhance": "workspace:*",
     "vuepress-shared": "workspace:*",
     "vuepress-theme-hope": "workspace:*",
-    "vuepress-vite": "2.0.0-beta.62",
-    "vuepress-webpack": "2.0.0-beta.62"
+    "vuepress-vite": "2.0.0-rc.0",
+    "vuepress-webpack": "2.0.0-rc.0"
   }
 }

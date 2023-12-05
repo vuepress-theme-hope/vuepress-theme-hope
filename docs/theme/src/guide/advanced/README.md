@@ -3,7 +3,7 @@ title: Advanced
 icon: gem
 index: false
 dir:
-  order: 7
+  order: 8
 category:
   - Advanced
 tag:
@@ -35,18 +35,4 @@ We do not want to "describe all the concepts involved and their usage to you" an
 
 :::
 
-## Catalog
-
-- [PWA Support](pwa.md)
-
-- [Feed Support](feed.md)
-
-- [SEO Enhance](seo.md)
-
-- [Sitemap Generation](sitemap.md)
-
-- [Replacing Component](replace.md)
-
-- [Theme Extending](extend.md)
-
-- [Presets](presets.md)
+<AutoCatalog />

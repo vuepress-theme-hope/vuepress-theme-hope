@@ -1,5 +1,6 @@
 import { ClientOnly } from "@vuepress/client";
-import { type VNode, defineComponent, h } from "vue";
+import type { VNode } from "vue";
+import { defineComponent, h } from "vue";
 
 import AutoLink from "@theme-hope/components/AutoLink";
 import { EditIcon } from "@theme-hope/components/icons/index";
@@ -32,8 +33,8 @@ export default defineComponent({
               h(
                 AutoLink,
                 { class: "label", config: editLink.value },
-                { before: () => h(EditIcon) }
-              )
+                { before: () => h(EditIcon) },
+              ),
             )
           : null,
         h("div", { class: "meta-item git-info" }, [
@@ -41,7 +42,7 @@ export default defineComponent({
             ? h("div", { class: "update-time" }, [
                 h("span", { class: "label" }, `${metaLocales.lastUpdated}: `),
                 h(ClientOnly, () =>
-                  h("span", { class: "info" }, <string>updateTime.value)
+                  h("span", { class: "info" }, <string>updateTime.value),
                 ),
               ])
             : null,
@@ -52,7 +53,7 @@ export default defineComponent({
                   h(
                     "span",
                     { class: "contributor", title: `email: ${email}` },
-                    name
+                    name,
                   ),
                   index !== contributors.value!.length - 1 ? "," : "",
                 ]),

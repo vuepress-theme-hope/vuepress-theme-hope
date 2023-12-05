@@ -20,6 +20,9 @@ icon: gears
     | "Share"
     | "StackBlitz"
     | "SiteInfo"
+    | "VPBanner"
+    | "VPCard"
+    | "VidStack"
     | "VideoPlayer"
     | "XiGua"
     | "YouTube";
@@ -42,6 +45,9 @@ icon: gears
 - `"Share"`
 - `"StackBlitz"`
 - `"SiteInfo"`
+- `"VPBanner"`
+- `"VPCard"`
+- `"VidStack"`
 - `"VideoPlayer"`
 - `"XiGua"`
 - `"YouTube"`
@@ -55,7 +61,7 @@ icon: gears
 - 类型: `ComponentsArtPlayerOptions`
 - 默认值: `{}`
 - 详情:
-  - [指南 → ArtPlayer](./guide/artplayer.md#全局配置)
+  - [指南 → ArtPlayer](./guide/media/art-player.md#全局配置)
 
 ### componentsOptions.fontIcon.assets
 
@@ -79,7 +85,7 @@ icon: gears
 
 - 必填: 否
 - 详情:
-  - [指南 → FontIcon](./guide/fonticon.md)
+  - [指南 → FontIcon](./guide/utilities/font-icon.md)
 
 字体图标资源链接，支持 `'iconfont'` 和 `'fontawesome'` 关键字。
 
@@ -88,7 +94,7 @@ icon: gears
 - 类型: `string`
 - 默认值: 尝试从 iconAssets 推断
 - 详情:
-  - [指南 → FontIcon](./guide/fonticon.md)
+  - [指南 → FontIcon](./guide/utilities/font-icon.md)
 
 字体图标的 Class 前缀
 
@@ -97,7 +103,7 @@ icon: gears
 - 类型: `string`
 - 必填: 否
 - 详情:
-  - [指南 → PDF → PDFJS](./guide/pdf.md#pdfjs-查看器)
+  - [指南 → PDF → PDFJS](./guide/media/p-d-f.md#pdfjs-查看器)
 
 PDFJS 查看器的路径
 
@@ -105,9 +111,16 @@ PDFJS 查看器的路径
 
 - 类型: `(string | ShareService)[]`
 - 详情:
-  - [指南 → Share → 设置组件](./guide/share.md#设置组件)
+  - [指南 → Share → 设置组件](./guide/utilities/share.md#设置组件)
 
 分享服务
+
+### componentsOptions.share.contentSelector
+
+- 类型: `string`
+- 默认值: `.theme-default-content`
+
+页面内容选择器
 
 ### componentsOptions.share.twitterUserName
 
@@ -119,15 +132,6 @@ Twitter 用户名。
 ## rootComponents
 
 会被挂载到根节点的组件。
-
-### rootComponents.addThis
-
-- 类型: `string | false`
-- 默认值: `false`
-- 详情:
-  - [指南 → AddThis](./guide/addthis.md#使用)
-
-AddThis 的公开 ID。
 
 ### rootComponents.backToTop
 
@@ -153,7 +157,7 @@ AddThis 的公开 ID。
 
 - 默认值: `false`
 - 详情:
-  - [指南 → BackToTop](./guide/backtotop.md)
+  - [指南 → BackToTop](./guide/utilities/back-to-top.md)
 
 是否启用返回顶部按钮，当设置为数字时，会被作为返回顶部按钮触发距离 (单位: 像素)，默认为 300。
 
@@ -230,7 +234,7 @@ AddThis 的公开 ID。
 
 - 必填: 否
 - 详情:
-  - [指南 → Notice](./guide/notice.md)
+  - [指南 → Notice](./guide/utilities/notice.md)
 
 全局通知的配置
 

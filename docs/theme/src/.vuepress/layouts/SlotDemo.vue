@@ -35,7 +35,7 @@ import FadeSlideY from "@theme-hope/components/transitions/FadeSlideY";
       <div
         class="slot-demo-inline"
         aria-label="navbarStartBefore Slot"
-        data-balloon-pos="down"
+        data-balloon-pos="down-left"
       >
         ...
       </div>
@@ -80,7 +80,7 @@ import FadeSlideY from "@theme-hope/components/transitions/FadeSlideY";
       <div
         class="slot-demo-inline"
         aria-label="navbarEndAfter Slot"
-        data-balloon-pos="down"
+        data-balloon-pos="down-right"
       >
         ...
       </div>

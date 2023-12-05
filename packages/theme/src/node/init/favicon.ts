@@ -1,4 +1,4 @@
-import { type App } from "@vuepress/core";
+import type { App } from "@vuepress/core";
 import { isLinkHttp } from "vuepress-shared/node";
 
 export const addFavicon = (app: App, favicon: string): void => {
@@ -15,7 +15,7 @@ export const addFavicon = (app: App, favicon: string): void => {
           tag === "link" &&
           attrs["rel"] === "icon" &&
           attrs["href"] === faviconLink
-        )
+        ),
     )
   )
     head.push(["link", { rel: "icon", href: faviconLink }]);

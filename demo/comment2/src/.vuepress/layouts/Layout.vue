@@ -1,10 +1,3 @@
-<template>
-  <ParentLayout>
-    <template #page-bottom>
-      <CommentService :darkmode="isDarkMode" />
-    </template>
-  </ParentLayout>
-</template>
 <script setup lang="ts">
 import { onUnmounted, onMounted, ref } from "vue";
 import ParentLayout from "@vuepress/theme-default/layouts/Layout.vue";
@@ -31,3 +24,11 @@ onMounted(() => {
   });
 });
 </script>
+
+<template>
+  <ParentLayout>
+    <template #page-bottom>
+      <CommentService :darkmode="isDarkMode" />
+    </template>
+  </ParentLayout>
+</template>

@@ -1,19 +1,18 @@
-import { createRequire } from "node:module";
+import type { App } from "@vuepress/core";
+import { getRealPath } from "vuepress-shared/node";
 
-import { type App } from "@vuepress/core";
-import { path } from "@vuepress/utils";
-
-import { type ThemeStatus } from "../../config/index.js";
+import { ArticleInfoType } from "../../../shared/index.js";
+import type { ThemeStatus } from "../../config/index.js";
 import { CLIENT_FOLDER } from "../../utils.js";
 
-const require = createRequire(import.meta.url);
+const { url } = import.meta;
 
 /**
  * @private
  */
 export const prepareSeparatedConfigFile = (
   app: App,
-  { enableAutoCatalog, enableBlog, enableEncrypt, enableSlide }: ThemeStatus
+  { enableAutoCatalog, enableBlog, enableEncrypt, enableSlide }: ThemeStatus,
 ): Promise<string> => {
   const imports: string[] = [];
   const enhances: string[] = [];
@@ -23,18 +22,31 @@ export const prepareSeparatedConfigFile = (
 
   if (enableAutoCatalog) {
     imports.push(
-      `import { HopeIcon } from "${CLIENT_FOLDER}export.js";`,
-      `import { defineAutoCatalogIconComponent } from "${path.resolve(
-        require.resolve("vuepress-plugin-auto-catalog/client")
-      )}"`
+      `import { defineAutoCatalogGetter } from "${getRealPath(
+        "vuepress-plugin-auto-catalog/client",
+        url,
+      )}"`,
+      `import { h } from "vue"`,
     );
-    actions.push(`defineAutoCatalogIconComponent(HopeIcon);`);
+    actions.push(`\
+defineAutoCatalogGetter((meta) => {
+  const title = meta.${ArticleInfoType.title};
+  const shouldIndex = meta.${ArticleInfoType.index} !== false;
+  const icon = meta.${ArticleInfoType.icon};
+
+  return shouldIndex ? {
+    title,
+    content: icon ? () =>[h(HopeIcon, { icon }), title] : null,
+    order: meta.${ArticleInfoType.order},
+    index: meta.${ArticleInfoType.index},
+  } : null;
+});`);
   }
 
   if (enableBlog) {
     imports.push(
       `import { BlogCategory, BlogHome, BlogType, BloggerInfo, Timeline, setupBlog } from "${CLIENT_FOLDER}modules/blog/export.js";`,
-      `import "${CLIENT_FOLDER}modules/blog/styles/layout.scss";`
+      `import "${CLIENT_FOLDER}modules/blog/styles/layout.scss";`,
     );
 
     enhances.push(`app.component("BloggerInfo", BloggerInfo);`);
@@ -46,19 +58,20 @@ export const prepareSeparatedConfigFile = (
 
   if (enableEncrypt) {
     imports.push(
-      `import { GlobalEncrypt, LocalEncrypt } from "${CLIENT_FOLDER}modules/encrypt/export.js";`
+      `import { GlobalEncrypt, LocalEncrypt } from "${CLIENT_FOLDER}modules/encrypt/export.js";`,
     );
     enhances.push(
       `app.component("GlobalEncrypt", GlobalEncrypt);`,
-      `app.component("LocalEncrypt", LocalEncrypt);`
+      `app.component("LocalEncrypt", LocalEncrypt);`,
     );
   }
 
   if (enableSlide) {
     imports.push(
-      `import Slide from "${path.resolve(
-        require.resolve("vuepress-plugin-md-enhance/SlidePage")
-      )}";`
+      `import Slide from "${getRealPath(
+        "vuepress-plugin-md-enhance/SlidePage",
+        url,
+      )}";`,
     );
     layouts.push("Slide,");
   }
@@ -67,12 +80,15 @@ export const prepareSeparatedConfigFile = (
     `theme-hope/config.js`,
     `\
 import { defineClientConfig } from "@vuepress/client";
+import { VPLink } from "${getRealPath("vuepress-shared/client", url)}";
 
-import { Layout, NotFound, useScrollPromise, injectDarkmode, setupDarkmode, setupSidebarItems } from "${CLIENT_FOLDER}export.js";
+import { HopeIcon, Layout, NotFound, useScrollPromise, injectDarkmode, setupDarkmode, setupSidebarItems } from "${CLIENT_FOLDER}export.js";
 
 ${imports.join("\n")}
 
 import "${CLIENT_FOLDER}styles/index.scss";
+
+${actions.join("\n")}
 
 export default defineClientConfig({
   enhance: ({ app, router }) => {
@@ -87,6 +103,11 @@ export default defineClientConfig({
     // inject global properties
     injectDarkmode(app);
 
+    // provide HopeIcon as global component
+    app.component("HopeIcon", HopeIcon);
+    // provide VPLink as global component
+    app.component("VPLink", VPLink);
+
 ${enhances.map((item) => `    ${item}`).join("\n")}
   },
   setup: () => {
@@ -99,6 +120,6 @@ ${setups.map((item) => `    ${item}`).join("\n")}
     NotFound,
 ${layouts.map((item) => `    ${item}`).join("\n")}
   }
-});`
+});`,
   );
 };

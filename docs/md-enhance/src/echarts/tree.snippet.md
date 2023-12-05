@@ -1,11 +1,8 @@
-````md
-<!-- #region demo -->
-
 ::: echarts Tree
 
 ```js
 const data = await fetch(
-  "https://theme-hope-assets.vuejs.press/data/flare.json"
+  "https://theme-hope-assets.vuejs.press/data/flare.json",
 ).then((res) => res.json());
 
 const option = {
@@ -35,6 +32,3 @@ const height = 600;
 ```
 
 :::
-
-<!-- #endregion demo -->
-````

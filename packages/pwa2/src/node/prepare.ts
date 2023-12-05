@@ -1,24 +1,14 @@
-import { type App } from "@vuepress/core";
+import type { App } from "@vuepress/core";
 
-import { type PWAOptions } from "./options.js";
+import type { PWAOptions } from "./options.js";
 import { CLIENT_FOLDER } from "./utils.js";
 
 export const prepareConfigFile = (
   app: App,
-  options: PWAOptions
+  options: PWAOptions,
 ): Promise<string> => {
   let configImport = "";
   let rootComponents = "";
-
-  if (options.showInstall) {
-    configImport += `\
-import PWAInstall from "${CLIENT_FOLDER}components/PWAInstall.js";
-`;
-
-    rootComponents += `\
-PWAInstall,
-`;
-  }
 
   if (options.update === "hint") {
     configImport += `\
@@ -60,6 +50,6 @@ ${rootComponents
   .join("\n")}
   ],
 });
-`
+`,
   );
 };

@@ -5,28 +5,3 @@
 
   color: var(--text-color);
 }
-
-// katex fix
-.katex {
-  font-size: 1.05em;
-  direction: ltr;
-}
-
-.katex-display {
-  overflow: auto hidden;
-  -webkit-overflow-scrolling: touch;
-  padding-top: 0.2em;
-  padding-bottom: 0.2em;
-
-  &::-webkit-scrollbar {
-    height: 3px;
-  }
-
-  .katex {
-    font-size: 1.21em;
-  }
-}
-
-.katex-error {
-  color: #f00;
-}

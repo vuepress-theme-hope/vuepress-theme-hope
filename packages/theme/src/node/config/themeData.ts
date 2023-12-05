@@ -1,13 +1,13 @@
-import { type App } from "@vuepress/core";
+import type { App } from "@vuepress/core";
 import { entries, fromEntries, getLocales } from "vuepress-shared/node";
 
 import { getEncryptConfig } from "./encrypt.js";
-import { type ThemeStatus } from "./status.js";
-import {
-  type ThemeData,
-  type ThemeLocaleConfig,
-  type ThemeLocaleOptions,
-  type ThemeOptions,
+import type { ThemeStatus } from "./status.js";
+import type {
+  ThemeData,
+  ThemeLocaleConfig,
+  ThemeLocaleOptions,
+  ThemeOptions,
 } from "../../shared/index.js";
 import { themeLocalesData } from "../locales/index.js";
 
@@ -36,15 +36,15 @@ const ROOT_DISALLOW_CONFIG = [
 export const getThemeData = (
   app: App,
   themeOptions: ThemeOptions,
-  { enableBlog, enableEncrypt }: ThemeStatus
+  { enableBlog, enableEncrypt }: ThemeStatus,
 ): ThemeData => {
   const themeData: ThemeData = {
     encrypt: {},
     ...fromEntries(
       // only remain root allowed config
       entries(themeOptions).filter(
-        ([key]) => !ROOT_DISALLOW_CONFIG.includes(key)
-      )
+        ([key]) => !ROOT_DISALLOW_CONFIG.includes(key),
+      ),
     ),
     locales:
       // assign locale data to `themeConfig`
@@ -67,7 +67,7 @@ export const getThemeData = (
               delete config.encryptLocales;
 
             return [locale, <ThemeLocaleConfig>config];
-          })
+          }),
         ),
         // extract localeConfig
         config: fromEntries(
@@ -82,13 +82,13 @@ export const getThemeData = (
               // root config
               ...fromEntries(
                 entries(themeOptions).filter(([key]) =>
-                  ROOT_DISALLOW_CONFIG.includes(key)
-                )
+                  ROOT_DISALLOW_CONFIG.includes(key),
+                ),
               ),
               // locale options
               ...localeConfig,
             },
-          ])
+          ]),
         ),
       }),
   };

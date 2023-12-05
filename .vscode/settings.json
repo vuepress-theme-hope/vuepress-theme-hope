@@ -1,5 +1,4 @@
 {
-  "cSpell.language": "en,ru",
   "cSpell.words": [
     // words
     "atou",
@@ -35,7 +34,6 @@
     "webp",
 
     // name
-    "addthis",
     "artalk",
     "artplayer",
     "avid",
@@ -78,6 +76,7 @@
     "livescript",
     "mathml",
     "mailchimp",
+    "markmap",
     "mathjax",
     "mdit",
     "mpegts",
@@ -95,8 +94,10 @@
     "prismjs",
     "qzone",
     "recaptcha",
+    "revealjs",
     "replit",
     "shiki",
+    "slimsearch",
     "stackblitz",
     "striptags",
     "styl",
@@ -105,6 +106,8 @@
     "tencloud",
     "twikoo",
     "typecho",
+    "unocss",
+    "vidstack",
     "vite",
     "vssue",
     "vuejs",
@@ -175,5 +178,7 @@
     "**/dist/**": true,
     "packages/*/lib/**": true
   },
+  "vitest.commandLine": "pnpm vitest",
+  "prettier.prettierPath": "./node_modules/prettier",
   "typescript.tsdk": "node_modules/typescript/lib"
 }

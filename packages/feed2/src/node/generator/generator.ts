@@ -1,24 +1,23 @@
-import { type App, type Page } from "@vuepress/core";
-import { type GitData } from "@vuepress/plugin-git";
+import type { App, Page } from "@vuepress/core";
+import type { GitData } from "@vuepress/plugin-git";
 import { colors, fs, path } from "@vuepress/utils";
 import { entries, fromEntries } from "vuepress-shared/node";
 
 import { Feed } from "./feed.js";
 import { FeedInfo } from "../extractor/index.js";
-import {
-  type ResolvedFeedOptionsMap,
-  getFeedChannelOption,
-  getFeedLinks,
-  getFilename,
-} from "../options.js";
-import { type FeedPluginFrontmatter } from "../typings/index.js";
-import { compareDate, logger } from "../utils/index.js";
+import type { ResolvedFeedOptionsMap } from "../options.js";
+import { getFeedChannelOption, getFeedLinks, getFilename } from "../options.js";
+import type { FeedPluginFrontmatter } from "../typings/index.js";
+import { logger } from "../utils/index.js";
 
 export class FeedGenerator {
   /** feed 生成器 */
   feedMap: Record<string, Feed>;
 
-  constructor(private app: App, private options: ResolvedFeedOptionsMap) {
+  constructor(
+    private app: App,
+    private options: ResolvedFeedOptionsMap,
+  ) {
     this.feedMap = fromEntries(
       entries(options).map(([localePath, localeOptions]) => [
         localePath,
@@ -26,39 +25,17 @@ export class FeedGenerator {
           channel: getFeedChannelOption(app, localeOptions, localePath),
           links: getFeedLinks(app, localeOptions, localePath),
         }),
-      ])
+      ]),
     );
   }
 
   addPages(localePath: string): void {
     const feed = this.feedMap[localePath];
     const localeOption = this.options[localePath];
-    const {
-      count: feedCount = 100,
-      filter = ({ frontmatter, filePathRelative }: Page): boolean =>
-        !(
-          frontmatter["home"] ||
-          !filePathRelative ||
-          frontmatter["article"] === false ||
-          frontmatter["feed"] === false
-        ),
-      sorter = (
-        pageA: Page<{ git?: GitData }, Record<string, never>>,
-        pageB: Page<{ git?: GitData }, Record<string, never>>
-      ): number =>
-        compareDate(
-          pageA.data.git?.createdTime
-            ? new Date(pageA.data.git?.createdTime)
-            : pageA.frontmatter.date,
-          pageB.data.git?.createdTime
-            ? new Date(pageB.data.git?.createdTime)
-            : pageB.frontmatter.date
-        ),
-    } = localeOption;
+    const { count: feedCount = 100, filter, sorter } = localeOption;
     const pages = this.app.pages
       .filter((page) => page.pathLocale === localePath)
       .filter(filter)
-      // @ts-ignore
       .sort(sorter)
       .slice(0, feedCount);
 
@@ -69,7 +46,7 @@ export class FeedGenerator {
         this.app,
         localeOption,
         <Page<{ git?: GitData }, FeedPluginFrontmatter>>page,
-        feed
+        feed,
       ).getFeedItem();
 
       if (item) {
@@ -80,10 +57,10 @@ export class FeedGenerator {
 
     logger.succeed(
       `added ${colors.cyan(
-        `${count} page${count > 1 ? "s" : ""}`
+        `${count} page${count > 1 ? "s" : ""}`,
       )} as feed item${count > 1 ? "s" : ""} in route ${colors.cyan(
-        localePath
-      )}`
+        localePath,
+      )}`,
     );
   }
 
@@ -107,8 +84,8 @@ export class FeedGenerator {
 
             logger.succeed(
               `Atom feed file generated and saved to ${colors.cyan(
-                `/${atomOutputFilename}`
-              )}`
+                `/${atomOutputFilename}`,
+              )}`,
             );
           }
 
@@ -119,8 +96,8 @@ export class FeedGenerator {
 
             logger.succeed(
               `JSON feed file generated and saved to ${colors.cyan(
-                `/${jsonOutputFilename}`
-              )}`
+                `/${jsonOutputFilename}`,
+              )}`,
             );
           }
 
@@ -131,8 +108,8 @@ export class FeedGenerator {
 
             logger.succeed(
               `RSS feed file generated and saved to ${colors.cyan(
-                `/${rssOutputFilename}`
-              )}`
+                `/${rssOutputFilename}`,
+              )}`,
             );
           }
         }
@@ -142,7 +119,7 @@ export class FeedGenerator {
         .map(([localePath, localeOptions]) => {
           const { atomXslTemplate, atomXslFilename } = getFilename(
             localeOptions,
-            localePath
+            localePath,
           );
 
           return fs.copyFile(atomXslTemplate, dest(atomXslFilename));
@@ -152,7 +129,7 @@ export class FeedGenerator {
         .map(([localePath, localeOptions]) => {
           const { rssXslFilename, rssXslTemplate } = getFilename(
             localeOptions,
-            localePath
+            localePath,
           );
 
           return fs.copyFile(rssXslTemplate, dest(rssXslFilename));

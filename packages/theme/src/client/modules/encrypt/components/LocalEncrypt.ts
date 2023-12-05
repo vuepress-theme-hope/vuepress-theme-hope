@@ -1,11 +1,5 @@
-import {
-  type SlotsType,
-  type VNode,
-  defineComponent,
-  h,
-  onMounted,
-  ref,
-} from "vue";
+import type { SlotsType, VNode } from "vue";
+import { defineComponent, h, onMounted, ref } from "vue";
 
 import PasswordModal from "@theme-hope/modules/encrypt/components/PasswordModal";
 import { usePathEncrypt } from "@theme-hope/modules/encrypt/composables/index";
@@ -14,7 +8,7 @@ export default defineComponent({
   name: "LocalEncrypt",
 
   slots: Object as SlotsType<{
-    default: () => VNode | VNode[];
+    default: () => VNode[] | VNode | null;
   }>,
 
   setup(_props, { slots }) {
@@ -32,10 +26,10 @@ export default defineComponent({
       return isEncrypted
         ? isMounted.value
           ? isDecrypted
-            ? slots.default() || null
+            ? slots.default()
             : h(PasswordModal, { full: true, onVerify: validate })
           : null
-        : slots.default() || null;
+        : slots.default();
     };
   },
 });

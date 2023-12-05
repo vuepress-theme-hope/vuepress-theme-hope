@@ -1,4 +1,4 @@
-import { type ShareServiceConfig } from "../../../shared/index.js";
+import type { ShareServiceConfig } from "../../../shared/index.js";
 
 export const evernote: ShareServiceConfig = {
   link: "https://www.evernote.com/clip.action?url=[url]&title=[title]",

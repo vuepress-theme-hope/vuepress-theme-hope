@@ -12,15 +12,10 @@
   opacity: 0;
 }
 
-.notice-mask {
+.vp-notice-mask {
   position: fixed;
-  top: 0;
-  left: 0;
+  inset: 0;
   z-index: 1499;
-
-  width: 100vw;
-  height: 100vh;
-
   backdrop-filter: blur(10px);
 
   @media print {
@@ -28,13 +23,10 @@
   }
 }
 
-.notice-wrapper {
+.vp-notice-wrapper {
   position: fixed;
   top: 80px;
-
-  // NOTE: Compatible with Android Wechat
-  // inset-inline-end: 20px;
-  right: 20px;
+  inset-inline-end: 20px;
   z-index: 1500;
 
   overflow: hidden;
@@ -49,11 +41,6 @@
     display: none;
   }
 
-  #{hope-config.$rtl-selector} &:not(.fullscreen) {
-    right: unset;
-    left: 20px;
-  }
-
   &.fullscreen {
     top: 50vh;
     right: 50vw;
@@ -62,7 +49,7 @@
   }
 }
 
-.notice-title {
+.vp-notice-title {
   position: relative;
 
   margin: 0;
@@ -99,18 +86,18 @@
   }
 }
 
-.notice-content {
+.vp-notice-content {
   margin: 1rem 0.75rem;
   font-size: 14px;
   line-height: 1.5;
 }
 
-.notice-footer {
+.vp-notice-footer {
   padding-bottom: 8px;
   text-align: center;
 }
 
-.notice-footer-action {
+.vp-notice-footer-action {
   display: inline-block;
 
   margin: 4px;

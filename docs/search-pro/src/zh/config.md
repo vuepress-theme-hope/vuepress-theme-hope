@@ -1,9 +1,11 @@
 ---
-title: 插件选项
+title: 配置
 icon: gears
 ---
 
-## indexContent
+## 插件选项
+
+### indexContent
 
 - 类型: `boolean`
 - 默认值: `false`
@@ -16,7 +18,14 @@ icon: gears
 
 :::
 
-## customFields
+### autoSuggestions
+
+- 类型: `boolean`
+- 默认值: `false`
+
+是否自动提示搜索建议。
+
+### customFields
 
 - 类型: `SearchProCustomFieldOptions[]`
 
@@ -86,7 +95,7 @@ export default defineUserConfig({
 
 :::
 
-## hotKeys
+### hotKeys
 
 - 类型: `SearchProHotKeyOptions[]`
 
@@ -133,24 +142,24 @@ export default defineUserConfig({
 
 当热键被按下时，搜索框的输入框会被聚焦，设置为空数组以禁用热键。
 
-## queryHistoryCount
+### queryHistoryCount
 
 - 类型: `number`
 - 默认值: `5`
 
 存储搜索查询词历史的最大数量，可以设置为 `0` 以禁用。
 
-## resultHistoryCount
+### resultHistoryCount
 
 - 类型: `number`
 - 默认值: `5`
 
 存储搜索结果历史的最大数量，可以设置为 `0` 以禁用。
 
-## delay
+### searchDelay
 
 - 类型: `number`
-- 默认值: `300`
+- 默认值: `150`
 
 结束输入到开始搜索的延时
 
@@ -160,14 +169,23 @@ export default defineUserConfig({
 
 :::
 
-## worker
+### sortStrategy
+
+- 类型: `"max" | "total"`
+- 默认值: `"max"`
+
+结果排序策略
+
+当有多个匹配的结果时，会按照策略对结果进行排序。`max` 表示最高分更高的页面会排在前面。`total` 表示总分更高的页面会排在前面。
+
+### worker
 
 - 类型: `string`
 - 默认值: `search-pro.worker.js`
 
 输出的 Worker 文件名称
 
-## hotReload
+### hotReload
 
 - 类型: `boolean`
 - 默认值: 是否使用 `--debug` 标记
@@ -182,7 +200,53 @@ export default defineUserConfig({
 
 :::
 
-## locales
+### indexOptions
+
+- 类型: `SearchProIndexOptions`
+
+  ```ts
+  export interface SearchProIndexOptions {
+    /**
+     * 用于对索引字段项进行分词的函数。
+     */
+    tokenize?: (text: string, fieldName?: string) => string[];
+    /**
+     * 用于处理或规范索引字段中的术语的函数。
+     */
+    processTerm?: (
+      term: string,
+    ) => string | string[] | null | undefined | false;
+  }
+  ```
+
+- 必填: 否
+
+创建索引选项。
+
+### indexLocaleOptions
+
+- 类型: `Record<string, SearchProIndexOptions>`
+
+  ```ts
+  export interface SearchProIndexOptions {
+    /**
+     * 用于对索引字段项进行分词的函数。
+     */
+    tokenize?: (text: string, fieldName?: string) => string[];
+    /**
+     * 用于处理或规范索引字段中的术语的函数。
+     */
+    processTerm?: (
+      term: string,
+    ) => string | string[] | null | undefined | false;
+  }
+  ```
+
+- 必填: 否
+
+分语言的创建索引选项。
+
+### locales
 
 - 类型: `SearchProLocaleConfig`
 
@@ -202,9 +266,19 @@ export default defineUserConfig({
     search: string;
 
     /**
-     * 关闭文字
+     * 搜素中文字
      */
-    close: string;
+    searching: string;
+
+    /**
+     * 取消文字
+     */
+    cancel: string;
+
+    /**
+     * 默认标题
+     */
+    defaultTitle: string;
 
     /**
      * 选择提示
@@ -217,6 +291,11 @@ export default defineUserConfig({
     navigate: string;
 
     /**
+     * 自动补全提示
+     */
+    autocomplete: string;
+
+    /**
      * 关闭提示
      */
     exit: string;
@@ -227,9 +306,19 @@ export default defineUserConfig({
     loading: string;
 
     /**
+     * 搜索历史文字
+     */
+    history: string;
+
+    /**
+     * 无搜索历史提示
+     */
+    emptyHistory: string;
+
+    /**
      * 无结果提示
      */
-    empty: string;
+    emptyResult: string;
   }
 
   interface SearchProLocaleConfig {
@@ -240,3 +329,76 @@ export default defineUserConfig({
 - 必填: 否
 
 搜索插件的多语言配置。
+
+## 客户端配置
+
+### defineSearchConfig
+
+自定义 [搜索选项](https://mister-hope.github.io/slimsearch/interfaces/SearchOptions.html)。
+
+```ts
+// .vuepress/client.ts
+import { defineSearchConfig } from "vuepress-plugin-search-pro/client";
+
+defineSearchConfig({
+  // 此处放置搜索选项
+});
+
+export default {};
+```
+
+### createSearchWorker
+
+创建一个搜索 Worker 以便你可以通过 API 搜索。
+
+```ts
+export type Word = [tag: string, content: string] | string;
+
+export interface TitleMatchedItem {
+  type: "title";
+  id: string;
+  display: Word[];
+}
+
+export interface HeadingMatchedItem {
+  type: "heading";
+  id: string;
+  display: Word[];
+}
+
+export interface CustomMatchedItem {
+  type: "custom";
+  id: string;
+  index: string;
+  display: Word[];
+}
+
+export interface ContentMatchedItem {
+  type: "content";
+  id: string;
+  header: string;
+  display: Word[];
+}
+
+export type MatchedItem =
+  | TitleMatchedItem
+  | HeadingMatchedItem
+  | ContentMatchedItem
+  | CustomMatchedItem;
+
+export interface SearchResult {
+  title: string;
+  contents: MatchedItem[];
+}
+
+export interface SearchWorker {
+  search: (
+    query: string,
+    locale: string,
+    searchOptions?: SearchOptions,
+  ) => Promise<SearchResult[]>;
+  terminate: () => void;
+}
+
+declare const createSearchWorker: () => SearchWorker;
+```

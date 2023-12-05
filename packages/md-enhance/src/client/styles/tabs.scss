@@ -12,21 +12,20 @@
   --tab-nav-hover-color: #2d2d38;
 }
 
-.tab-list {
+.vp-tabs {
   margin: 1.5rem 0;
   border: 2px solid var(--vp-brc);
   border-radius: 8px;
 
   @media (max-width: hope-config.$mobile) {
     #{hope-config.$content-class} > & {
-      margin-right: -1.5rem;
-      margin-left: -1.5rem;
+      margin-inline: -1.5rem;
       border-radius: 0;
     }
   }
 }
 
-.tab-list-nav {
+.vp-tabs-nav {
   overflow-x: auto;
 
   margin: 0;
@@ -49,7 +48,7 @@
   }
 }
 
-.tab-list-nav-item {
+.vp-tab-nav {
   @include reset.button;
 
   position: relative;
@@ -68,7 +67,9 @@
 
   cursor: pointer;
 
-  transition: background var(--vp-ct), color var(--vp-ct);
+  transition:
+    background var(--vp-ct),
+    color var(--vp-ct);
 
   &:hover {
     background: var(--tab-nav-hover-color);
@@ -121,13 +122,33 @@
   }
 }
 
-.tab-item {
+.vp-tab {
   display: none;
   padding: 1rem 0.75rem;
   background: var(--tab-bg-color);
   transition: background var(--vp-ct);
 
+  @media print {
+    display: block;
+    padding: 0.5rem;
+  }
+
   &.active {
+    display: block;
+  }
+
+  &:nth-child(2) .vp-tab-title {
+    border-top: none;
+  }
+}
+
+.vp-tab-title {
+  display: none;
+  padding: 0.25rem 0;
+  border-top: 1px solid var(--vp-brc);
+  font-weight: 500;
+
+  @media print {
     display: block;
   }
 }

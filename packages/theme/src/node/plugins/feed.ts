@@ -1,5 +1,6 @@
-import { type Plugin } from "@vuepress/core";
-import { type FeedOptions, feedPlugin } from "vuepress-plugin-feed2";
+import type { Plugin } from "@vuepress/core";
+import type { FeedOptions } from "vuepress-plugin-feed2";
+import { feedPlugin } from "vuepress-plugin-feed2";
 import {
   deepAssign,
   entries,
@@ -8,7 +9,7 @@ import {
   keys,
 } from "vuepress-shared/node";
 
-import { type ThemeData } from "../../shared/index.js";
+import type { ThemeData } from "../../shared/index.js";
 
 /**
  * @private
@@ -20,7 +21,7 @@ export const getFeedPlugin = (
   options: Omit<FeedOptions, "hostname"> = {},
   hostname?: string,
   favicon?: string,
-  legacy = false
+  legacy = false,
 ): Plugin | null => {
   // disable feed if no options for feed plugin
   if (!keys(options).length) return null;
@@ -53,8 +54,8 @@ export const getFeedPlugin = (
               },
             },
           ];
-        }
-      )
+        },
+      ),
     ),
   };
 

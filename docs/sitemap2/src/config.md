@@ -74,7 +74,7 @@ Page priority, from `0` to `1`.
 
 ### modifyTimeGetter
 
-- Type: `(page: Page) => string`
+- Type: `(page: Page, app: App) => string`
 
 - Required: `false`
 

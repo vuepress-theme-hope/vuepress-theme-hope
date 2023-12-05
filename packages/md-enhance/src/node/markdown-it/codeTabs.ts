@@ -1,5 +1,5 @@
 import { tab } from "@mdit/plugin-tab";
-import { type PluginSimple } from "markdown-it";
+import type { PluginSimple } from "markdown-it";
 
 import { stringifyProp } from "./utils.js";
 
@@ -26,8 +26,8 @@ export const codeTabs: PluginSimple = (md) => {
 ${titles
   .map(
     (title, index) => `\
-<template #title${index}>${title}</template>
-`
+<template #title${index}="{ value, isActive }">${title}</template>
+`,
   )
   .join("")}\
 `;
@@ -47,7 +47,7 @@ ${titles
         if (block) {
           if (type === "code-tabs_tab_close") break;
 
-          if (type === "fence" && !foundFence) {
+          if ((type === "fence" || type === "import_code") && !foundFence) {
             foundFence = true;
             continue;
           }
@@ -58,7 +58,7 @@ ${titles
       }
 
       return `\
-<template #tab${index}="{ isActive }">
+<template #tab${index}="{ value, isActive }">
 `;
     },
 

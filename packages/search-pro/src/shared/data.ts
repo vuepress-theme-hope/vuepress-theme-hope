@@ -1,15 +1,37 @@
-export interface PageHeaderContent {
-  header: string;
-  slug: string;
-  contents: string[];
+import type { SearchIndex } from "slimsearch";
+
+export const enum IndexField {
+  heading = "h",
+  anchor = "a",
+  text = "t",
+  customFields = "c",
 }
 
-export interface PageIndex {
-  title: string;
-  contents: PageHeaderContent[];
-  customFields?: Record<string, string[]>;
+export type PageIndexId = `v-${string}`;
+
+export interface PageIndexItem {
+  id: PageIndexId;
+  /** heading */ h: string;
+  /** text */ t?: string[];
 }
 
-export type LocaleIndex = Record<string, PageIndex>;
+export type SectionIndexId = `${PageIndexId}#${string}`;
 
-export type SearchIndex = Record<string, LocaleIndex>;
+export interface SectionIndexItem {
+  id: SectionIndexId;
+  /** heading */ h: string;
+  /** text */ t?: string[];
+}
+
+export type CustomFieldIndexID = `${PageIndexId}@${number}`;
+
+export interface CustomFieldIndexItem {
+  id: string;
+  /** customFields */ c: string[];
+}
+
+export type IndexItem = PageIndexItem | SectionIndexItem | CustomFieldIndexItem;
+
+export type LocaleIndex = Record<string, IndexItem[]>;
+
+export type SearchIndexStore = Record<string, SearchIndex<IndexItem, string>>;

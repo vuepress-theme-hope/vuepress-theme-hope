@@ -1,14 +1,18 @@
-import { type ChartConfiguration } from "chart.js";
+import { useMutationObserver } from "@vueuse/core";
+import type { Chart, ChartConfiguration } from "chart.js";
+import type { PropType, VNode } from "vue";
 import {
-  type PropType,
-  type VNode,
+  computed,
   defineComponent,
   h,
   onMounted,
   ref,
   shallowRef,
+  watch,
 } from "vue";
 import { LoadingIcon, atou } from "vuepress-shared/client";
+
+import { getDarkmodeStatus } from "../utils/index.js";
 
 import "../styles/chart.scss";
 
@@ -16,7 +20,7 @@ declare const MARKDOWN_ENHANCE_DELAY: number;
 
 const parseChartConfig = (
   config: string,
-  type: "js" | "json"
+  type: "js" | "json",
 ): ChartConfiguration => {
   if (type === "json") return <ChartConfiguration>JSON.parse(config);
 
@@ -29,7 +33,7 @@ ${config}
 __chart_js_config__=config;
 }
 return __chart_js_config__;\
-`
+`,
   );
 
   return <ChartConfiguration>runner();
@@ -84,37 +88,69 @@ export default defineComponent({
     const chartElement = shallowRef<HTMLElement>();
     const chartCanvasElement = shallowRef<HTMLCanvasElement>();
 
+    const isDarkmode = ref(false);
     const loading = ref(true);
 
-    onMounted(async () => {
+    const config = computed(() => atou(props.config));
+
+    let loaded = false;
+
+    let chart: Chart | null;
+
+    const renderChart = async (isDarkmode: boolean): Promise<void> => {
       const [{ default: Chart }] = await Promise.all([
         import(/* webpackChunkName: "chart" */ "chart.js/auto"),
-        // delay
-        new Promise((resolve) => setTimeout(resolve, MARKDOWN_ENHANCE_DELAY)),
+        loaded
+          ? Promise.resolve()
+          : ((loaded = true),
+            new Promise((resolve) =>
+              setTimeout(resolve, MARKDOWN_ENHANCE_DELAY),
+            )),
       ]);
 
+      Chart.defaults.borderColor = isDarkmode ? "#ccc" : "#36A2EB";
+      Chart.defaults.color = isDarkmode ? "#fff" : "#000";
       Chart.defaults.maintainAspectRatio = false;
 
-      const data = parseChartConfig(atou(props.config), props.type);
+      const data = parseChartConfig(config.value, props.type);
       const ctx = chartCanvasElement.value!.getContext("2d")!;
 
-      new Chart(ctx, data);
+      chart?.destroy();
+      chart = new Chart(ctx, data);
 
       loading.value = false;
+    };
+
+    onMounted(() => {
+      isDarkmode.value = getDarkmodeStatus();
+
+      // watch darkmode change
+      useMutationObserver(
+        document.documentElement,
+        () => {
+          isDarkmode.value = getDarkmodeStatus();
+        },
+        {
+          attributeFilter: ["class", "data-theme"],
+          attributes: true,
+        },
+      );
+
+      watch(isDarkmode, (value) => renderChart(value), { immediate: true });
     });
 
     return (): (VNode | null)[] => [
       props.title
-        ? h("div", { class: "chart-title" }, decodeURIComponent(props.title))
+        ? h("div", { class: "chartjs-title" }, decodeURIComponent(props.title))
         : null,
       loading.value
-        ? h(LoadingIcon, { class: "chart-loading", height: 192 })
+        ? h(LoadingIcon, { class: "chartjs-loading", height: 192 })
         : null,
       h(
         "div",
         {
           ref: chartElement,
-          class: "chart-wrapper",
+          class: "chartjs-wrapper",
           id: props.id,
           style: {
             display: loading.value ? "none" : "block",
@@ -123,7 +159,7 @@ export default defineComponent({
         h("canvas", {
           ref: chartCanvasElement,
           height: 400,
-        })
+        }),
       ),
     ];
   },

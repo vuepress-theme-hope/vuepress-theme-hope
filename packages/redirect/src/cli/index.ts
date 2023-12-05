@@ -13,7 +13,7 @@ import { fs, logger, path } from "@vuepress/utils";
 import { cac } from "cac";
 import { removeEndingSlash, removeLeadingSlash } from "vuepress-shared/node";
 
-import { getRedirectHTML } from "../node/utils.js";
+import { getRedirectHTML } from "../node/utils/index.js";
 
 const require = createRequire(import.meta.url);
 
@@ -25,19 +25,19 @@ const version = <
 cli
   .command(
     "generate [source-dir]",
-    "Generate redirect site using VuePress project under source folder"
+    "Generate redirect site using VuePress project under source folder",
   )
   .option(
     "--hostname <hostname>",
     "Hostname to redirect to (E.g.: https://new.example.com/)",
     {
       default: "/",
-    }
+    },
   )
   .option("-c, --config <config>", "Set path to config file")
   .option(
     "-o, --output <output>",
-    "Set the output directory (default: .vuepress/redirect)"
+    "Set the output directory (default: .vuepress/redirect)",
   )
   .option("--cache <cache>", "Set the directory of the cache files")
   .option("-t, --temp <temp>", "Set the directory of the temporary files")
@@ -54,7 +54,7 @@ cli
         temp?: string;
         cleanCache?: boolean;
         cleanTemp?: boolean;
-      }
+      },
     ) => {
       if (!sourceDir) return cli.outputHelp();
 
@@ -66,7 +66,7 @@ cli
 
       // resolve user config file
       const userConfigPath = resolveUserConfigConventionalPath(
-        cliAppConfig.source
+        cliAppConfig.source,
       );
 
       const { userConfig } = await loadUserConfig(userConfigPath);
@@ -120,17 +120,17 @@ cli
           }${removeLeadingSlash(page.path)}`;
           const destLocation = path.join(
             outputFolder,
-            removeLeadingSlash(page.path.replace(/\/$/, "/index.html"))
+            removeLeadingSlash(page.path.replace(/\/$/, "/index.html")),
           );
 
           return fs
             .ensureDir(path.dirname(destLocation))
             .then(() =>
-              fs.writeFile(destLocation, getRedirectHTML(redirectUrl))
+              fs.writeFile(destLocation, getRedirectHTML(redirectUrl)),
             );
-        })
+        }),
       );
-    }
+    },
   );
 
 cli.command("").action(() => cli.outputHelp());

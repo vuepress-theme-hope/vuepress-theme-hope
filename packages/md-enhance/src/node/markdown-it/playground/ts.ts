@@ -1,4 +1,4 @@
-import { type CompilerOptions } from "typescript";
+import type { CompilerOptions } from "typescript";
 import {
   deepAssign,
   endsWith,
@@ -9,17 +9,17 @@ import {
 
 import { compressToEncodedURIComponent } from "./ventors/lzstring.js";
 import { optionDeclarations } from "./ventors/optionDeclarations.js";
-import {
-  type PlaygroundData,
-  type PlaygroundOptions,
-  type TSPresetPlaygroundOptions,
+import type {
+  PlaygroundData,
+  PlaygroundOptions,
+  TSPresetPlaygroundOptions,
 } from "../../typings/index.js";
 import { logger } from "../../utils.js";
 
 /** Gets a query string representation (hash + queries) */
 export const getURL = (
   code: string,
-  compilerOptions: CompilerOptions = {}
+  compilerOptions: CompilerOptions = {},
 ): string => {
   const hash = `#code/${compressToEncodedURIComponent(code)}`;
 
@@ -66,8 +66,8 @@ export const getTSPlaygroundPreset = ({
       deepAssign(
         {},
         <CompilerOptions>settings || {},
-        <CompilerOptions>compilerOptions
-      )
+        <CompilerOptions>compilerOptions,
+      ),
     )}`;
 
     return {

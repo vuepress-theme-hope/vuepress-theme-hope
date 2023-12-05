@@ -1,14 +1,11 @@
-import {
-  type ComputedRef,
-  type InjectionKey,
-  computed,
-  inject,
-  provide,
-} from "vue";
-import { type Article, useBlogType } from "vuepress-plugin-blog2/client";
+import type { ComputedRef, InjectionKey } from "vue";
+import { computed, inject, provide } from "vue";
+import type { Article } from "vuepress-plugin-blog2/client";
+import { useBlogType } from "vuepress-plugin-blog2/client";
 import { getDate } from "vuepress-shared/client";
 
-import { type ArticleInfo, ArticleInfoType } from "../../../../shared/index.js";
+import type { ArticleInfo } from "../../../../shared/index.js";
+import { ArticleInfoType } from "../../../../shared/index.js";
 
 declare const __VUEPRESS_DEV__: boolean;
 
@@ -24,7 +21,7 @@ export type TimelinesRef = ComputedRef<{
 }>;
 
 export const timelinesSymbol: InjectionKey<TimelinesRef> = Symbol(
-  __VUEPRESS_DEV__ ? "timelines" : ""
+  __VUEPRESS_DEV__ ? "timelines" : "",
 );
 
 /**

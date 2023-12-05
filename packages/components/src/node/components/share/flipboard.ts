@@ -1,4 +1,4 @@
-import { type ShareServiceConfig } from "../../../shared/index.js";
+import type { ShareServiceConfig } from "../../../shared/index.js";
 
 export const flipboard: ShareServiceConfig = {
   link: "https://share.flipboard.com/bookmarklet/popout?v=2&url=[url]&title=[title]",

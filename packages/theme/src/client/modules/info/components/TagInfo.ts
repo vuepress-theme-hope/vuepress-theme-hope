@@ -1,11 +1,12 @@
 import { usePageData } from "@vuepress/client";
-import { type PropType, type VNode, defineComponent, h } from "vue";
+import type { PropType, VNode } from "vue";
+import { defineComponent, h } from "vue";
 import { useRouter } from "vue-router";
 import { generateIndexFromHash } from "vuepress-shared/client";
 
 import { TagIcon } from "@theme-hope/modules/info/components/icons";
 import { useMetaLocale } from "@theme-hope/modules/info/composables/index";
-import { type PageTag } from "@theme-hope/modules/info/utils/index";
+import type { PageTag } from "@theme-hope/modules/info/utils/index";
 
 import "../styles/tag-info.scss";
 
@@ -72,14 +73,14 @@ export default defineComponent({
                     role: path ? "navigation" : "",
                     onClick: (event: Event) => navigate(event, path),
                   },
-                  name
-                )
+                  name,
+                ),
               ),
               h("meta", {
                 property: "keywords",
                 content: props.tag.map(({ name }) => name).join(","),
               }),
-            ]
+            ],
           )
         : null;
   },

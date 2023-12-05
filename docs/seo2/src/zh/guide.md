@@ -84,25 +84,19 @@ head:
 
 ```ts
 function ogp<
-  ExtraPageData extends Record<string | number | symbol, unknown> = Record<
-    never,
-    never
-  >,
-  ExtraPageFrontmatter extends Record<
-    string | number | symbol,
+  ExtraPageData extends Record<string, unknown> = Record<never, never>,
+  ExtraPageFrontmatter extends Record<string, unknown> = Record<
+    string,
     unknown
-  > = Record<string, unknown>,
-  ExtraPageFields extends Record<string | number | symbol, unknown> = Record<
-    never,
-    never
-  >
+  >,
+  ExtraPageFields extends Record<string, unknown> = Record<never, never>,
 >(
   /** 插件自动推断的 OGP 对象 */
   ogp: SeoContent,
   /** 页面对象 */
   page: ExtendPage<ExtraPageData, ExtraPageFrontmatter, ExtraPageFields>,
   /** VuePress App */
-  app: App
+  app: App,
 ): SeoContent;
 ```
 
@@ -125,25 +119,19 @@ function ogp<
 
 ```ts
 function jsonLd<
-  ExtraPageData extends Record<string | number | symbol, unknown> = Record<
-    never,
-    never
-  >,
-  ExtraPageFrontmatter extends Record<
-    string | number | symbol,
+  ExtraPageData extends Record<string, unknown> = Record<never, never>,
+  ExtraPageFrontmatter extends Record<string, unknown> = Record<
+    string,
     unknown
-  > = Record<string, unknown>,
-  ExtraPageFields extends Record<string | number | symbol, unknown> = Record<
-    never,
-    never
-  >
+  >,
+  ExtraPageFields extends Record<string, unknown> = Record<never, never>,
 >(
   /** 插件自动推断的 JSON-LD 对象 */
   jsonLD: ArticleJSONLD | null,
   /** 页面对象 */
   page: ExtendPage<ExtraPageData, ExtraPageFrontmatter, ExtraPageFields>,
   /** VuePress App */
-  app: App
+  app: App,
 ): ArticleJSONLD | null;
 ```
 
@@ -176,24 +164,18 @@ function jsonLd<
 
 ```ts
 function customHead<
-  ExtraPageData extends Record<string | number | symbol, unknown> = Record<
-    never,
-    never
-  >,
-  ExtraPageFrontmatter extends Record<
-    string | number | symbol,
+  ExtraPageData extends Record<string, unknown> = Record<never, never>,
+  ExtraPageFrontmatter extends Record<string, unknown> = Record<
+    string,
     unknown
-  > = Record<string, unknown>,
-  ExtraPageFields extends Record<string | number | symbol, unknown> = Record<
-    never,
-    never
-  >
+  >,
+  ExtraPageFields extends Record<string, unknown> = Record<never, never>,
 >(
   head: HeadConfig[],
   /** 页面对象 */
-  page: Page<ExtraPageData, ExtraPageFrontmatter, ExtraPageFields>,
+  page: ExtendPage<ExtraPageData, ExtraPageFrontmatter, ExtraPageFields>,
   /** VuePress App */
-  app: App
+  app: App,
 ): void;
 ```
 

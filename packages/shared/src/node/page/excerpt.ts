@@ -1,5 +1,6 @@
-import { type App, type Page } from "@vuepress/core";
-import { type AnyNode, load } from "cheerio";
+import type { App, Page } from "@vuepress/core";
+import type { AnyNode } from "cheerio";
+import { load } from "cheerio";
 import matter from "gray-matter";
 
 import {
@@ -50,7 +51,7 @@ export interface PageExcerptOptions {
 const handleNode = (
   node: AnyNode,
   base: string,
-  isCustomElement: (tagName: string) => boolean
+  isCustomElement: (tagName: string) => boolean,
 ): AnyNode | null => {
   if (node.type === "tag") {
     // image using relative urls shall be dropped
@@ -64,7 +65,7 @@ const handleNode = (
     // toc should be dropped
     if (
       [node.attribs["class"], node.attribs["id"]].some((item) =>
-        ["table-of-contents", "toc"].includes(item)
+        ["table-of-contents", "toc"].includes(item),
       )
     )
       return null;
@@ -83,7 +84,7 @@ const handleNode = (
           (child) =>
             child.type !== "tag" ||
             child.tagName !== "a" ||
-            child.attribs["class"] !== "header-anchor"
+            child.attribs["class"] !== "header-anchor",
         );
       }
 
@@ -96,8 +97,8 @@ const handleNode = (
       return node;
     }
 
-    // we shall convert `<RouterLink>` to `<a>` tag
-    if (node.tagName === "routerlink") {
+    // we shall convert `<RouterLink>` and `<VPLink>` to `<a>` tag
+    if (node.tagName === "routerlink" || node.tagName === "vplink") {
       node.tagName = "a";
       node.attribs["href"] = `${removeEndingSlash(base)}${node.attribs["to"]}`;
       node.attribs["target"] = "blank";
@@ -119,7 +120,7 @@ const handleNode = (
 const handleNodes = (
   nodes: AnyNode[] | null,
   base: string,
-  isCustomElement: (tagName: string) => boolean
+  isCustomElement: (tagName: string) => boolean,
 ): AnyNode[] =>
   isArray(nodes)
     ? nodes
@@ -136,7 +137,7 @@ export const getPageExcerpt = (
     isCustomElement = (): boolean => false,
     excerptSeparator = "<!-- more -->",
     excerptLength = 300,
-  }: PageExcerptOptions = {}
+  }: PageExcerptOptions = {},
 ): string => {
   // get page content
   const { excerpt } = matter(content, {
@@ -154,11 +155,11 @@ export const getPageExcerpt = (
         filePath,
         filePathRelative,
         frontmatter: { ...frontmatter },
-      }
+      },
     );
 
     return $.html(
-      handleNodes($.parseHTML(renderedContent), base, isCustomElement)
+      handleNodes($.parseHTML(renderedContent), base, isCustomElement),
     );
   } else if (excerptLength > 0) {
     let excerpt = "";

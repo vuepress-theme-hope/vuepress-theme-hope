@@ -1,10 +1,10 @@
 import { getPageText, stripTags } from "vuepress-shared/node";
 
-import { type ExtendPage } from "./typings/index.js";
+import type { ExtendPage } from "./typings/index.js";
 
 export const generateDescription = (
   page: ExtendPage,
-  autoDescription = true
+  autoDescription = true,
 ): void => {
   // generate description
   if (!page.frontmatter.description && autoDescription) {

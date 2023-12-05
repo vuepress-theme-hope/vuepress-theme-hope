@@ -13,6 +13,8 @@ The plugin brings enhanced PWA support to VuePress [^pwa-intro].
 
     It allows sites to install the site as an App on supported platform through a browser that supports this feature.
 
+<!-- #region intro -->
+
 ## Intro
 
 Service Worker [^service-worker] (SW for short) is mainly used to cache and proxy site content.
@@ -195,11 +197,49 @@ If everything you need is all under `base` directory, you can set `appendBase: t
 
 :::
 
+<!-- #endregion intro -->
+
 ## Other Options
 
 The plugin also provides other PWA-related options, such as Microsoft tile icon and color settings, Apple icon and so on.
 
 You can set them as needed. For detailed options, please see [Configuration Page](config.md).
+
+## Helper Functions
+
+The plugin also provides some helper functions to help you operate Service Worker, you can import them via `vuepress-plugin-pwa2/client`.
+
+```ts
+/**
+ * Force update page content
+ */
+export const forceUpdate: () => void;
+
+/**
+ * Register serviceWorker under `serviceWorkerPath`
+ *
+ * @param serviceWorkerPath Service Worker path
+ * @param hooks Service worker hooks
+ * @param showStatus Whether to show status in console
+ */
+export const registerSW: (
+  serviceWorkerPath: string,
+  hooks?: Hooks,
+  showStatus?: boolean,
+) => Promise<void>;
+
+/**
+ * Call `skipWaiting()` inside current waiting worker
+ */
+export const skipWaiting: (registration: ServiceWorkerRegistration) => void;
+
+/**
+ * Call `unregister()` inside current active worker
+ *
+ * @returns `true` if unregister success, `false` if unregister failed
+ */
+export const unregisterSW: () => Promise<boolean>;
+```
 
 ## Further Reading
 

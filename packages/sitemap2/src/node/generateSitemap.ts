@@ -1,5 +1,5 @@
-import { type App, type Page } from "@vuepress/core";
-import { type GitData } from "@vuepress/plugin-git";
+import type { App, Page } from "@vuepress/core";
+import type { GitData } from "@vuepress/plugin-git";
 import { colors, fs } from "@vuepress/utils";
 import { SitemapStream } from "sitemap";
 import {
@@ -8,13 +8,13 @@ import {
   removeLeadingSlash,
 } from "vuepress-shared/node";
 
-import { type ModifyTimeGetter, type SitemapOptions } from "./options.js";
-import {
-  type SitemapImageOption,
-  type SitemapLinkOption,
-  type SitemapNewsOption,
-  type SitemapPluginFrontmatter,
-  type SitemapVideoOption,
+import type { ModifyTimeGetter, SitemapOptions } from "./options.js";
+import type {
+  SitemapImageOption,
+  SitemapLinkOption,
+  SitemapNewsOption,
+  SitemapPluginFrontmatter,
+  SitemapVideoOption,
 } from "./typings/index.js";
 import { TEMPLATE_FOLDER, logger } from "./utils.js";
 
@@ -45,7 +45,7 @@ const stripLocalePrefix = ({
 
 const generatePageMap = (
   app: App,
-  options: SitemapOptions
+  options: SitemapOptions,
 ): Map<string, SitemapPageInfo> => {
   const {
     changefreq = "daily",
@@ -73,7 +73,7 @@ const generatePageMap = (
       return map.set(defaultPath, pathLocales);
     },
     // a map with keys of defaultPath and string[] value with pathLocales
-    new Map<string, string[]>()
+    new Map<string, string[]>(),
   );
 
   const pagesMap = new Map<string, SitemapPageInfo>();
@@ -85,7 +85,7 @@ const generatePageMap = (
       if (frontmatterOptions === false) return;
 
       const metaRobotTags = (page.frontmatter.head || []).find(
-        (head) => head[1]["name"] === "robots"
+        (head) => head[1]["name"] === "robots",
       );
 
       if (
@@ -99,7 +99,7 @@ const generatePageMap = (
       )
         return;
 
-      const lastModifyTime = modifyTimeGetter(page);
+      const lastModifyTime = modifyTimeGetter(page, app);
       const { defaultPath } = stripLocalePrefix(page);
       const relatedLocales = pageLocalesMap.get(defaultPath) || [];
 
@@ -121,7 +121,7 @@ const generatePageMap = (
         links = relatedLocales.map((localePrefix) => ({
           lang: locales[localePrefix]?.lang || "en",
           url: `${base}${removeLeadingSlash(
-            defaultPath.replace(/^\//u, localePrefix)
+            defaultPath.replace(/^\//u, localePrefix),
           )}`,
         }));
       }
@@ -139,12 +139,12 @@ const generatePageMap = (
           `sitemap option for ${page.path}: ${JSON.stringify(
             sitemapInfo,
             null,
-            2
-          )}`
+            2,
+          )}`,
         );
 
       pagesMap.set(page.path, sitemapInfo);
-    }
+    },
   );
 
   return pagesMap;
@@ -152,7 +152,7 @@ const generatePageMap = (
 
 export const generateSiteMap = async (
   app: App,
-  options: SitemapOptions
+  options: SitemapOptions,
 ): Promise<void> => {
   const { extraUrls = [], xmlNameSpace: xmlns } = options;
   const hostname = isLinkHttp(options.hostname)
@@ -190,7 +190,7 @@ export const generateSiteMap = async (
       sitemap.write({
         url: `${base}${removeLeadingSlash(path)}`,
         ...page,
-      })
+      }),
     );
 
     writeStream.on("finish", () => {
@@ -205,8 +205,8 @@ export const generateSiteMap = async (
           `\
 <?xml version="1.0" encoding="UTF-8"?>
 <?xml-stylesheet type="text/xsl" href="${base}${sitemapXSLFilename}"?>
-`
-        )
+`,
+        ),
       );
 
       fs.copySync(sitemapXSLTemplate, sitemapXSLPath);
@@ -215,7 +215,7 @@ export const generateSiteMap = async (
     });
 
     extraUrls.forEach((item) =>
-      sitemap.write({ url: `${base}${removeLeadingSlash(item)}` })
+      sitemap.write({ url: `${base}${removeLeadingSlash(item)}` }),
     );
     sitemap.end();
   });
@@ -231,7 +231,7 @@ export const generateSiteMap = async (
 
     const newRobotsTxtContent = `${robotsTxt.replace(
       /^Sitemap: .*$/u,
-      ""
+      "",
     )}\nSitemap: ${hostname}${base}${sitemapFilename}\n`;
 
     await fs.writeFile(robotTxtPath, newRobotsTxtContent, { flag: "w" });

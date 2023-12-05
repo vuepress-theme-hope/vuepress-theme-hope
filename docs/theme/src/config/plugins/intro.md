@@ -1,5 +1,5 @@
 ---
-title: Plugin Intro
+title: Theme Plugins
 icon: circle-info
 order: 1
 category:

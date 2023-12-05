@@ -1,8 +1,9 @@
-import { type ComputedRef, computed } from "vue";
+import type { ComputedRef } from "vue";
+import { computed } from "vue";
 import { useLocaleConfig } from "vuepress-shared/client";
 
 import { useReadingTimeData } from "./data.js";
-import { type ReadingTimeLocaleData } from "../../shared/index.js";
+import type { ReadingTimeLocaleData } from "../../shared/index.js";
 import { readingTimeLocales } from "../define.js";
 import { getReadingTimeLocale } from "../utils/index.js";
 
@@ -25,11 +26,10 @@ export interface ReadingTimeLocale {
 const DEFAULT_LOCALE = { words: "", time: "" };
 
 export const useReadingTimeLocaleConfig =
-  (): ComputedRef<ReadingTimeLocaleData | null> => {
-    return readingTimeLocales
+  (): ComputedRef<ReadingTimeLocaleData | null> =>
+    readingTimeLocales
       ? useLocaleConfig(readingTimeLocales)
       : computed(() => null);
-  };
 
 export const useReadingTimeLocale = (): ComputedRef<ReadingTimeLocale> => {
   if (typeof readingTimeLocales === "undefined")
@@ -41,6 +41,6 @@ export const useReadingTimeLocale = (): ComputedRef<ReadingTimeLocale> => {
   return computed(() =>
     readingTime.value && readingTimeLocale.value
       ? getReadingTimeLocale(readingTime.value, readingTimeLocale.value)
-      : DEFAULT_LOCALE
+      : DEFAULT_LOCALE,
   );
 };

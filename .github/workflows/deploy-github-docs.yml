@@ -13,7 +13,7 @@ jobs:
     if: github.repository == 'vuepress-theme-hope/vuepress-theme-hope'
     steps:
       - name: Checkout
-        uses: actions/checkout@v3
+        uses: actions/checkout@v4
         with:
           fetch-depth: 0
           submodules: true
@@ -29,9 +29,9 @@ jobs:
           run_install: true
 
       - name: Setup Node.js
-        uses: actions/setup-node@v3
+        uses: actions/setup-node@v4
         with:
-          node-version: 18
+          node-version: 20
           cache: pnpm
 
       - name: Docs build
@@ -41,6 +41,7 @@ jobs:
 
       - name: Combine output
         run: |
+          pnpm cpx "docs/append-date/dist/**" dist/append-date
           pnpm cpx "docs/auto-catalog/dist/**" dist/auto-catalog
           pnpm cpx "docs/blog2/dist/**" dist/blog
           pnpm cpx "docs/comment2/dist/**" dist/comment

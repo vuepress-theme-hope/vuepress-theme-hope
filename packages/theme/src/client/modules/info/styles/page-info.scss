@@ -3,9 +3,8 @@
 .page-info {
   display: flex;
   flex-wrap: wrap;
-  align-content: stretch;
   align-items: center;
-  justify-content: flex-start;
+  place-content: stretch flex-start;
 
   color: var(--dark-grey);
 

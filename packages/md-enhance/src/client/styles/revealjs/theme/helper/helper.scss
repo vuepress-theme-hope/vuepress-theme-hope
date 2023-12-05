@@ -1,0 +1,111 @@
+@use "sass:map";
+@use "sass:meta";
+@use "vars";
+
+$default-variables: meta.module-variables("vars");
+
+@function circle-gradient($outer, $inner, $type: circle) {
+  @return radial-gradient(
+    center,
+    $type farthest-corner,
+    $inner 0%,
+    $outer 100%
+  );
+}
+
+@mixin lightmode-text-color($color) {
+  section.has-light-background {
+    &,
+    h1,
+    h2,
+    h3,
+    h4,
+    h5,
+    h6 {
+      color: $color;
+    }
+  }
+}
+
+@mixin darkmode-text-color($color) {
+  section.has-dark-background {
+    &,
+    h1,
+    h2,
+    h3,
+    h4,
+    h5,
+    h6 {
+      color: $color;
+    }
+  }
+}
+
+@mixin theme($theme, $theme-variables) {
+  $variables: map.deep-merge($default-variables, $theme-variables);
+  $viewport-color: map.get($variables, "viewport-color");
+  $background-color: map.get($variables, "background-color");
+  $main-font: map.get($variables, "main-font");
+  $main-font-size: map.get($variables, "main-font-size");
+  $main-color: map.get($variables, "main-color");
+  $block-margin: map.get($variables, "block-margin");
+  $heading-margin: map.get($variables, "heading-margin");
+  $heading-font: map.get($variables, "heading-font");
+  $heading-color: map.get($variables, "heading-color");
+  $heading-line-height: map.get($variables, "heading-line-height");
+  $heading-letter-spacing: map.get($variables, "heading-letter-spacing");
+  $heading-text-transform: map.get($variables, "heading-text-transform");
+  $heading-text-shadow: map.get($variables, "heading-text-shadow");
+  $heading-font-weight: map.get($variables, "heading-font-weight");
+  $heading1-text-shadow: map.get($variables, "heading1-text-shadow");
+  $heading1-size: map.get($variables, "heading1-size");
+  $heading2-size: map.get($variables, "heading2-size");
+  $heading3-size: map.get($variables, "heading3-size");
+  $heading4-size: map.get($variables, "heading4-size");
+  $code-font: map.get($variables, "code-font");
+  $link-color: map.get($variables, "link-color");
+  $link-color-hover: map.get($variables, "link-color-hover");
+  $selection-background-color: map.get(
+    $variables,
+    "selection-background-color"
+  );
+  $selection-color: map.get($variables, "selection-color");
+  $overlay-element-bg-color: map.get($variables, "overlay-element-bg-color");
+  $overlay-element-fg-color: map.get($variables, "overlay-element-fg-color");
+
+  .reveal[data-theme="#{$theme}"] {
+    --r-background-color: #{$background-color};
+    --r-main-font: #{$main-font};
+    --r-main-font-size: #{$main-font-size};
+    --r-main-color: #{$main-color};
+    --r-block-margin: #{$block-margin};
+    --r-heading-margin: #{$heading-margin};
+    --r-heading-font: #{$heading-font};
+    --r-heading-color: #{$heading-color};
+    --r-heading-line-height: #{$heading-line-height};
+    --r-heading-letter-spacing: #{$heading-letter-spacing};
+    --r-heading-text-transform: #{$heading-text-transform};
+    --r-heading-text-shadow: #{$heading-text-shadow};
+    --r-heading-font-weight: #{$heading-font-weight};
+    --r-heading1-text-shadow: #{$heading1-text-shadow};
+    --r-heading1-size: #{$heading1-size};
+    --r-heading2-size: #{$heading2-size};
+    --r-heading3-size: #{$heading3-size};
+    --r-heading4-size: #{$heading4-size};
+    --r-code-font: #{$code-font};
+    --r-link-color: #{$link-color};
+    --r-link-color-hover: #{$link-color-hover};
+    --r-selection-background-color: #{$selection-background-color};
+    --r-selection-color: #{$selection-color};
+    --r-overlay-element-bg-color: #{$overlay-element-bg-color};
+    --r-overlay-element-fg-color: #{$overlay-element-fg-color};
+
+    @content;
+
+    @if $viewport-color {
+      --r-viewport-color: #{$viewport-color};
+    } @else {
+      --r-viewport-color: #{$background-color};
+    }
+  }
+}

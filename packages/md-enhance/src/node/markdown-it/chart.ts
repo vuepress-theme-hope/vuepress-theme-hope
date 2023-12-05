@@ -1,5 +1,5 @@
 import { container } from "@mdit/plugin-container";
-import { type PluginSimple } from "markdown-it";
+import type { PluginSimple } from "markdown-it";
 import { utoa } from "vuepress-shared/node";
 
 export const chart: PluginSimple = (md) => {

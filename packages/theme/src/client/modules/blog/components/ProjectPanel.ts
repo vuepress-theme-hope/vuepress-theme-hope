@@ -1,6 +1,7 @@
-import { usePageFrontmatter, withBase } from "@vuepress/client";
+import { withBase } from "@vuepress/client";
 import { isLinkHttp } from "@vuepress/shared";
-import { type VNode, defineComponent, h, resolveComponent } from "vue";
+import type { PropType, VNode } from "vue";
+import { defineComponent, h, resolveComponent } from "vue";
 import { isAbsoluteUrl } from "vuepress-shared/client";
 
 import HopeIcon from "@theme-hope/components/HopeIcon";
@@ -13,7 +14,7 @@ import {
   ProjectIcon,
 } from "@theme-hope/modules/blog/components/icons/index";
 
-import { type ThemeBlogHomePageFrontmatter } from "../../../../shared/index.js";
+import type { ThemeBlogHomeProjectOptions } from "../../../../shared/index.js";
 
 import "../styles/project-panel.scss";
 
@@ -30,8 +31,15 @@ export default defineComponent({
 
   components: { ArticleIcon, BookIcon, FriendIcon, LinkIcon, ProjectIcon },
 
-  setup() {
-    const frontmatter = usePageFrontmatter<ThemeBlogHomePageFrontmatter>();
+  props: {
+    /** 项目列表 */
+    items: {
+      type: Array as PropType<ThemeBlogHomeProjectOptions[]>,
+      required: true,
+    },
+  },
+
+  setup(props) {
     const pure = usePure();
     const navigate = useNavigate();
 
@@ -41,41 +49,43 @@ export default defineComponent({
         return h(resolveComponent(`${icon}-icon`));
 
       // it’s a full image link
-      if (isLinkHttp(icon)) return h("img", { src: icon, alt, class: "image" });
+      if (isLinkHttp(icon))
+        return h("img", { class: "vp-project-image", src: icon, alt });
 
       // it’s an absolute image link
       if (isAbsoluteUrl(icon))
-        return h("img", { src: withBase(icon), alt, class: "image" });
+        return h("img", {
+          class: "vp-project-image",
+          src: withBase(icon),
+          alt,
+        });
 
       // render as icon font
       return h(HopeIcon, { icon });
     };
 
     return (): VNode | null =>
-      frontmatter.value.projects?.length
-        ? h(
+      h(
+        "div",
+        { class: "vp-project-panel" },
+        props.items.map(({ icon, link, name, desc }, index) =>
+          h(
             "div",
-            { class: "project-panel" },
-            frontmatter.value.projects.map(
-              ({ icon, link, name, desc }, index) =>
-                h(
-                  "div",
-                  {
-                    class: [
-                      "project-card",
-                      // TODO: magic number 9 is tricky here
-                      { [`project${index % 9}`]: !pure.value },
-                    ],
-                    onClick: () => navigate(link),
-                  },
-                  [
-                    renderIcon(icon, name),
-                    h("div", { class: "name" }, name),
-                    h("div", { class: "desc" }, desc),
-                  ]
-                )
-            )
-          )
-        : null;
+            {
+              class: [
+                "vp-project-card",
+                // TODO: magic number 9 is tricky here
+                { [`project${index % 9}`]: !pure.value },
+              ],
+              onClick: () => navigate(link),
+            },
+            [
+              renderIcon(icon, name),
+              h("div", { class: "vp-project-name" }, name),
+              h("div", { class: "vp-project-desc" }, desc),
+            ],
+          ),
+        ),
+      );
   },
 });

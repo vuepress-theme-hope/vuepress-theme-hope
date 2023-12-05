@@ -1,10 +1,10 @@
 ---
 title: 幻灯片页
-icon: slides
+icon: person-chalkboard
 layout: Slide
 ---
 
-<!-- markdownlint-disable MD024 MD033 MD051 -->
+<!-- markdownlint-disable MD024 MD051 -->
 
 @slidestart
 
@@ -74,7 +74,7 @@ layout: Slide
 
 标题默认会自动转换为大写。
 
-这是一个有着 **粗体**, _斜体_, ~~删除线~~ 文字并包含 [一个链接](https://mrhope.site) 的段落，并且它会自动换行。所以你无需担心它的长度。
+这是一个有着 **粗体**, _斜体_, ~~删除线~~ 文字并包含 [一个链接](https://mister-hope.com) 的段落，并且它会自动换行。所以你无需担心它的长度。
 
 --
 

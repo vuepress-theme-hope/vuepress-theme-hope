@@ -30,13 +30,6 @@ tag:
 
 ## 插件选项
 
-### showInstall
-
-- 类型: `boolean`
-- 默认值: `true`
-
-是否在 Service Worker 首次成功注册时显示 PWA 安装按钮
-
 ### manifest
 
 - 类型: `ManifestOption`
@@ -154,7 +147,7 @@ tag:
 
 - `"force"`: 立即注销当前 Service Worker 然后刷新以获取新内容
 
-  ::: danger
+  ::: caution
 
   虽然这可以确保用户访问的是最新内容，但这可能会影响访问体验。
 

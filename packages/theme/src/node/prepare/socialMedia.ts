@@ -1,16 +1,16 @@
-import { type App } from "@vuepress/core";
+import type { App } from "@vuepress/core";
 
 /**
  * @private
  */
 export const prepareSocialMediaIcons = async (
   app: App,
-  icons: Record<string, string>
+  icons: Record<string, string>,
 ): Promise<void> => {
   await app.writeTemp(
     `theme-hope/socialMedia.js`,
     `\
 export const icons = ${JSON.stringify(icons)};
-`
+`,
   );
 };

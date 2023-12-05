@@ -1,6 +1,16 @@
-import { describe, expect, it } from "vitest";
+import { describe, expect, it, vi } from "vitest";
 
-import { atou, utoa } from "../../src/client/utils/props.js";
+import {
+  atou as clientAtou,
+  utoa as clientUtoa,
+} from "../../src/client/utils/props.js";
+import {
+  atou as nodeAtou,
+  utoa as nodeUtoa,
+} from "../../src/node/utils/props.js";
+
+// mock define value
+vi.stubGlobal("__VUEPRESS_SSR__", false);
 
 const words = [
   "Hello world.",
@@ -16,17 +26,11 @@ const compressed = [
   "eNolj9sKgkAURX+9iwVWRgNFGoUVFvTQVUtndPBfpnOOM0/+QieE9bBh7/WwKVyCUpi/QIau9JxMcF4a8W6rGV0T3D6aiwIddRWdqm9v0GUoeryEIsAksPWS902kQQkMhlZrtmiwZ4z4sEJRhvkO52OGnr4LU9oLI3K27CS1gW8XU8bJs5M+ZS8jir+1PtHmBvKAoxT0ChOPwrsRsq3iZhhTeqRnDMUEdM0XyOsboX7tYJUm",
 ];
 
-// mock define value
-global.__VUEPRESS_SSR__ = false;
+const browserUtoaResults = words.map((word) => clientUtoa(word));
+const browserAtouResults = compressed.map((word) => clientAtou(word));
 
-const browserUtoaResults = words.map((word) => utoa(word));
-const browserAtouResults = compressed.map((word) => atou(word));
-
-// mock define value
-global.__VUEPRESS_SSR__ = true;
-
-const nodeUtoaResults = words.map((word) => utoa(word));
-const nodeAutoResults = compressed.map((word) => atou(word));
+const nodeUtoaResults = words.map((word) => nodeUtoa(word));
+const nodeAutoResults = compressed.map((word) => nodeAtou(word));
 
 describe("props", () => {
   it("utoa should return same result", () => {
@@ -38,7 +42,7 @@ describe("props", () => {
   });
 
   it("transform should return itself", () => {
-    expect(browserUtoaResults.map((word) => atou(word))).toEqual(words);
-    expect(nodeUtoaResults.map((word) => atou(word))).toEqual(words);
+    expect(browserUtoaResults.map((word) => nodeAtou(word))).toEqual(words);
+    expect(nodeUtoaResults.map((word) => nodeAtou(word))).toEqual(words);
   });
 });

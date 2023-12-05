@@ -1,9 +1,9 @@
 import { usePageData } from "@vuepress/client";
-import { type GalleryItem } from "lightgallery/lg-utils.js";
+import type { GalleryItem } from "lightgallery/lg-utils.js";
 import lightGallery from "lightgallery/lightgallery.es5.js";
-import { type LightGallery } from "lightgallery/lightgallery.js";
+import type { LightGallery } from "lightgallery/lightgallery.js";
+import type { VNode } from "vue";
 import {
-  type VNode,
   defineComponent,
   h,
   nextTick,
@@ -31,7 +31,7 @@ const getImages = (images: HTMLImageElement[]): GalleryItem[] =>
         thumb: src || srcset,
         srcset: srcset,
         subHtml: alt,
-      }
+      },
   );
 
 export default defineComponent({
@@ -54,8 +54,8 @@ export default defineComponent({
         nextTick().then(
           () =>
             new Promise<void>((resolve) =>
-              setTimeout(resolve, LIGHT_GALLERY_DELAY)
-            )
+              setTimeout(resolve, LIGHT_GALLERY_DELAY),
+            ),
         ),
       ]);
 
@@ -63,7 +63,7 @@ export default defineComponent({
         instance?.destroy();
 
         const images = Array.from(
-          document.querySelectorAll<HTMLImageElement>(IMAGE_SELECTOR)
+          document.querySelectorAll<HTMLImageElement>(IMAGE_SELECTOR),
         );
 
         instance = new lightGallery(container.value!, {
@@ -84,12 +84,7 @@ export default defineComponent({
     };
 
     onMounted(() => {
-      void initLightGallery();
-
-      watch(
-        () => page.value.path,
-        () => initLightGallery()
-      );
+      watch(() => page.value.path, initLightGallery, { immediate: true });
     });
 
     onUnmounted(() => instance?.destroy());

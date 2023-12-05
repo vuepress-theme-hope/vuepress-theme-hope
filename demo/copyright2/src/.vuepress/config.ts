@@ -11,7 +11,7 @@ export default defineUserConfig({
   description: "Append copyright information when copying",
 
   theme: defaultTheme({
-    logo: "/logo.svg",
+    logo: "https://theme-hope-assets.vuejs.press/logo.svg",
 
     repo: "vuepress-theme-hope/vuepress-theme-hope/tree/main/demo/copyright2/",
 

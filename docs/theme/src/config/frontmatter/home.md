@@ -42,14 +42,14 @@ Short description in hero
 - Type: `string`
 - Required: No
 
-Home hero (logo) image address, need to fill in the absolute path (pictures need to be placed in the `.vuepress/public` folder)
+Home hero (logo) image link, relative path is not supported.
 
 ## heroImageDark
 
 - Type: `string`
-- Required: No
+- Default: `heroImage`
 
-Darkmode Home hero (logo) image address, need to fill in the absolute path (pictures need to be placed in the `.vuepress/public` folder), will be the same as `heroImage` by default.
+Darkmode Home hero (logo) image link, relative path is not supported.
 
 ## heroAlt
 
@@ -57,6 +57,41 @@ Darkmode Home hero (logo) image address, need to fill in the absolute path (pict
 - Required: No
 
 Home icon alt text
+
+## heroImageStyle
+
+- Type: `Record<string, string> | string`
+- Required: No
+
+CSS style for home icon
+
+## bgImage
+
+- Type: `string`
+- Required: No
+
+Link of background image, relative path is not supported.
+
+## bgImageDark
+
+- Type: `string`
+- Default: `bgImage`
+
+Link of darkmode background image, relative path is not supported.
+
+## bgImageStyle
+
+- Type: `Record<string, string> | string`
+- Required: No
+
+The CSS style of the background image.
+
+## heroFullScreen
+
+- Type: `boolean`
+- Default: `false`
+
+Whether Hero is full screen displayed
 
 ## actions
 
@@ -86,31 +121,176 @@ Home icon alt text
 
 Home actions
 
-## features
+## highlights
 
-- Type: `ThemeHomeFeatureOptions[]`
+- Type: `(ThemeProjectHomeFeatureOptions |ThemeProjectHomeHighlightOptions)[]`
 
   ```ts
-  interface ThemeHomeFeatureOptions {
+  interface ThemeProjectHomeHighlightItem {
     /**
-     * Feature name
+     * Item name, supports HTML string
      */
     title: string;
 
     /**
-     * Feature description
+     * Item description, supports HTML string
      */
-    details: string;
+    details?: string;
 
     /**
-     * Feature icon
+     * Item icon
      *
      * @description image link or icon fontClass are supported
      */
     icon?: string;
 
     /**
-     * Feature link
+     * Item link
+     */
+    link?: string;
+  }
+
+  type ThemeProjectHomeFeatureItem = ThemeProjectHomeHighlightItem;
+
+  interface ThemeProjectHomeFeatureOptions {
+    /**
+     * Feature header
+     */
+    header?: string;
+
+    /**
+     * Feature section description, supports HTML string
+     */
+    description?: string;
+
+    /**
+     * Text color
+     */
+    color?: string;
+
+    /**
+     * Feature section image
+     */
+    image?: string;
+
+    /**
+     * Feature section image used in darkmode
+     *
+     * @default image
+     */
+    imageDark?: string;
+
+    /**
+     * Feature Background image
+     */
+    bgImage?: string;
+
+    /**
+     * Feature Background image used in darkmode
+     *
+     * @default bgImage
+     */
+    bgImageDark?: string;
+
+    /**
+     * Features Background image style
+     */
+    bgImageStyle?: Record<string, string> | string;
+
+    /**
+     * Features
+     */
+    features: ThemeProjectHomeFeatureItem[];
+  }
+
+  interface ThemeProjectHomeHighlightSection {
+    /**
+     * Highlight section header, supports HTML string
+     */
+    header: string;
+
+    /**
+     * Highlight section description, supports HTML string
+     */
+    description?: string;
+
+    /**
+     * Text color
+     */
+    color?: string;
+
+    /**
+     * Highlight section image
+     */
+    image?: string;
+
+    /**
+     * Highlight section image used in darkmode
+     *
+     * @default image
+     */
+    imageDark?: string;
+
+    /**
+     * Highlight Background image
+     */
+    bgImage?: string;
+
+    /**
+     * Highlight Background image used in darkmode
+     *
+     * @default bgImage
+     */
+    bgImageDark?: string;
+
+    /**
+     * Highlight Background image style
+     */
+    bgImageStyle?: Record<string, string> | string;
+
+    /**
+     * Highlight section list type
+     *
+     * @default un-order
+     */
+    type?: "order" | "un-order" | "no-order";
+
+    /**
+     * Highlights
+     */
+    highlights?: ThemeProjectHomeHighlightItem[];
+  }
+  ```
+
+- Required: No
+
+Highlights description.
+
+## features
+
+- Type: `ThemeProjectHomeFeatureItem[]`
+
+  ```ts
+  interface ThemeProjectHomeFeatureItem {
+    /**
+     * Item name, supports HTML string
+     */
+    title: string;
+
+    /**
+     * Item description, supports HTML string
+     */
+    details?: string;
+
+    /**
+     * Item icon
+     *
+     * @description image link or icon fontClass are supported
+     */
+    icon?: string;
+
+    /**
+     * Item link
      */
     link?: string;
   }

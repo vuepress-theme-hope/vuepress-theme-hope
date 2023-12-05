@@ -1,7 +1,7 @@
 @use "vuepress-shared/styles/reset";
 
-.presentation {
-  .presentation-wrapper {
+.vp-reveal-page {
+  .vp-reveal {
     min-width: 100vw;
     min-height: 100vh;
   }
@@ -48,7 +48,9 @@
     opacity: 0;
     fill: var(--white);
 
-    transition: left 0.2s ease-out, opacity 0.2s ease-out;
+    transition:
+      left 0.2s ease-out,
+      opacity 0.2s ease-out;
   }
 
   .home-button {
@@ -58,7 +60,9 @@
     opacity: 0;
     fill: var(--white);
 
-    transition: left 0.2s ease-out, opacity 0.2s ease-out;
+    transition:
+      left 0.2s ease-out,
+      opacity 0.2s ease-out;
   }
 
   .menu-button,

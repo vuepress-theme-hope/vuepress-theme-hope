@@ -29,16 +29,23 @@ icon: lightbulb
 
 插件默认会按照默认主题的选择器选中图片，如果你在使用第三方主题，你可以将一个或多个 CSS 选择器设置给 `selector` 选项。
 
+## 页面级别设置
+
+您可以在 frontmatter 中设置 `photoSwipe` 来定制当前页面的行为:
+
+- 字符串: 当前页面的图片选择器
+- `false`: 在当前页面中禁用 photo-swipe。
+
 ## 自定义 PhotoSwipe 选项
 
-您可以通过在客户端配置文件中导入和调用 `definePhotoSwipeOptions` 来将选项传递给 [`photo-swipe`](http://photoswipe.com/)：
+你可以通过在客户端配置文件中导入和调用 `definePhotoSwipeConfig` 来将选项传递给 [`photo-swipe`](http://photoswipe.com/)：
 
 ```ts
 // .vuepress/client.ts
 import { defineClientConfig } from "@vuepress/client";
-import { definePhotoSwipeOptions } from "vuepress-plugin-photo-swipe/client";
+import { definePhotoSwipeConfig } from "vuepress-plugin-photo-swipe/client";
 
-definePhotoSwipeOptions({
+definePhotoSwipeConfig({
   // 在此设置 photoswipe 选项
 });
 
@@ -88,4 +95,4 @@ export default defineUserConfig({
 });
 ```
 
-For specific options, see [Config → Locale Settings](./config.md#locales).
+对于具体的选项，详见 [配置 → 多语言设置](./config.md#locales).

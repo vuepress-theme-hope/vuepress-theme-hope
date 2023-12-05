@@ -1,7 +1,7 @@
 import { usePageFrontmatter, usePageLang } from "@vuepress/client";
-import { pageviewCount } from "@waline/client/dist/pageview.mjs";
+import { pageviewCount } from "@waline/client/pageview";
+import type { VNode } from "vue";
 import {
-  type VNode,
   computed,
   defineAsyncComponent,
   defineComponent,
@@ -12,9 +12,9 @@ import {
 } from "vue";
 import { LoadingIcon, useLocaleConfig } from "vuepress-shared/client";
 
-import {
-  type CommentPluginFrontmatter,
-  type WalineLocaleConfig,
+import type {
+  CommentPluginFrontmatter,
+  WalineLocaleConfig,
 } from "../../shared/index.js";
 import { useWalineOptions } from "../helpers/index.js";
 
@@ -30,8 +30,6 @@ if (WALINE_META)
   import(
     /* webpackChunkName: "waline" */ "@waline/client/dist/waline-meta.css"
   );
-
-export { pageviewCount };
 
 export default defineComponent({
   name: "WalineComment",
@@ -92,7 +90,7 @@ export default defineComponent({
               }, walineOptions.delay || 800);
             });
         },
-        { immediate: true }
+        { immediate: true },
       );
     });
 
@@ -100,21 +98,19 @@ export default defineComponent({
       enableWaline
         ? h(
             "div",
-            { class: "waline-wrapper", id: "comment" },
-            enableWaline
-              ? h(
-                  defineAsyncComponent({
-                    loader: async () =>
-                      (
-                        await import(
-                          /* webpackChunkName: "waline" */ "@waline/client/dist/component.mjs"
-                        )
-                      ).Waline,
-                    loadingComponent: LoadingIcon,
-                  }),
-                  walineProps.value
-                )
-              : []
+            { id: "comment", class: "waline-wrapper" },
+            h(
+              defineAsyncComponent({
+                loader: async () =>
+                  (
+                    await import(
+                      /* webpackChunkName: "waline" */ "@waline/client/dist/component.mjs"
+                    )
+                  ).Waline,
+                loadingComponent: LoadingIcon,
+              }),
+              walineProps.value,
+            ),
           )
         : null;
   },

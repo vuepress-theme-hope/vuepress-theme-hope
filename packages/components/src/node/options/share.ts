@@ -1,4 +1,4 @@
-import { type ShareService } from "../../shared/index.js";
+import type { ShareService } from "../../shared/index.js";
 
 export interface ShareOptions {
   /**

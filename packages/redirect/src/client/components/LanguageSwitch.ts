@@ -4,9 +4,9 @@ import {
   useScrollLock,
   useSessionStorage,
 } from "@vueuse/core";
+import type { VNode } from "vue";
 import {
   TransitionGroup,
-  type VNode,
   computed,
   defineComponent,
   h,
@@ -34,7 +34,7 @@ interface LocaleInfo {
 
 const REDIRECT_LOCALE_STORAGE = useSessionStorage<Record<string, boolean>>(
   "VUEPRESS_REDIRECT_LOCALES",
-  {}
+  {},
 );
 
 export default defineComponent({
@@ -87,7 +87,7 @@ export default defineComponent({
     const targetRoute = computed(() =>
       info.value
         ? route.path.replace(routeLocale.value, info.value.localePath)
-        : null
+        : null,
     );
 
     const updateStatus = (): void => {
@@ -111,7 +111,7 @@ export default defineComponent({
         (value) => {
           isLocked.value = value;
         },
-        { immediate: true }
+        { immediate: true },
       );
 
       onUnmounted(() => {
@@ -135,7 +135,7 @@ export default defineComponent({
                       h(
                         "div",
                         { class: "lang-modal-content" },
-                        locale.value?.hint.map((text) => h("p", text))
+                        locale.value?.hint.map((text) => h("p", text)),
                       ),
                       h(
                         "button",
@@ -147,7 +147,7 @@ export default defineComponent({
                             void router.replace(targetRoute.value!);
                           },
                         },
-                        locale.value?.switch
+                        locale.value?.switch,
                       ),
                       h(
                         "button",
@@ -156,12 +156,12 @@ export default defineComponent({
                           class: "lang-modal-action",
                           onClick: () => updateStatus(),
                         },
-                        locale.value?.cancel
+                        locale.value?.cancel,
                       ),
-                    ]
+                    ],
                   ),
                 ]
-              : []
+              : [],
           )
         : null;
   },

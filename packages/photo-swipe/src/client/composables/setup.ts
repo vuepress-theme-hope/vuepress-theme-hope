@@ -1,7 +1,8 @@
-import { usePageData } from "@vuepress/client";
+import { usePageData, usePageFrontmatter } from "@vuepress/client";
 import { useEventListener, useFullscreen } from "@vueuse/core";
-import PhotoSwipe, { type SlideData } from "photoswipe";
-import { nextTick, onMounted, watch } from "vue";
+import type { SlideData } from "photoswipe";
+import type PhotoSwipe from "photoswipe";
+import { computed, nextTick, onMounted, watch } from "vue";
 import { useLocaleConfig } from "vuepress-shared/client";
 
 import { delay, imageSelector, locales, scrollToClose } from "../define.js";
@@ -12,12 +13,21 @@ import "photoswipe/dist/photoswipe.css";
 import "../styles/photo-swipe.scss";
 
 export const setupPhotoSwipe = (): void => {
+  const locale = useLocaleConfig(locales);
+  const frontmatter = usePageFrontmatter<{
+    photoSwipe?: string[] | string | false;
+  }>();
+  const page = usePageData();
   const { isSupported, toggle } = useFullscreen();
   const photoSwipeOptions = usePhotoSwipeOptions();
-  const locale = useLocaleConfig(locales);
-  const page = usePageData();
 
   let instance: PhotoSwipe;
+
+  const selector = computed(() =>
+    frontmatter.value.photoSwipe === false
+      ? false
+      : frontmatter.value.photoSwipe || imageSelector,
+  );
 
   const registerPhotoswipeUI = (photoSwipe: PhotoSwipe): void => {
     photoSwipe.on("uiRegister", () => {
@@ -92,58 +102,60 @@ export const setupPhotoSwipe = (): void => {
     });
   };
 
-  const initPhotoSwipe = (): Promise<void> =>
-    Promise.all([
-      import(/* webpackChunkName: "photo-swipe" */ "photoswipe"),
-      nextTick().then(() =>
-        new Promise<void>((resolve) => setTimeout(resolve, delay)).then(() =>
-          getImages(imageSelector)
-        )
-      ),
-    ]).then(([{ default: PhotoSwipe }, images]) => {
-      const dataSource = images.map<SlideData>((image) => ({
-        html: LOADING_ICON,
-        element: image,
-        msrc: image.src,
-      }));
+  const initPhotoSwipe = async (): Promise<void> => {
+    if (selector.value)
+      return Promise.all([
+        import(/* webpackChunkName: "photo-swipe" */ "photoswipe"),
+        nextTick().then(() =>
+          new Promise<void>((resolve) => setTimeout(resolve, delay)).then(() =>
+            getImages(selector.value as string[] | string),
+          ),
+        ),
+      ]).then(([{ default: PhotoSwipe }, images]) => {
+        const dataSource = images.map<SlideData>((image) => ({
+          html: LOADING_ICON,
+          element: image,
+          msrc: image.src,
+        }));
 
-      images.forEach((image, index) => {
-        const handler = (): void => {
-          instance = new PhotoSwipe({
-            preloaderDelay: 0,
-            showHideAnimationType: "zoom",
-            ...locale.value,
-            ...photoSwipeOptions,
-            dataSource,
-            index,
-            ...(scrollToClose
-              ? { closeOnVerticalDrag: true, wheelToZoom: false }
-              : {}),
+        images.forEach((image, index) => {
+          const handler = (): void => {
+            instance = new PhotoSwipe({
+              preloaderDelay: 0,
+              showHideAnimationType: "zoom",
+              ...locale.value,
+              ...photoSwipeOptions,
+              dataSource,
+              index,
+              ...(scrollToClose
+                ? { closeOnVerticalDrag: true, wheelToZoom: false }
+                : {}),
+            });
+
+            registerPhotoswipeUI(instance);
+
+            instance.addFilter("thumbEl", () => image);
+            instance.addFilter("placeholderSrc", () => image.src);
+            instance.init();
+          };
+
+          image.style.cursor = "zoom-in";
+          image.addEventListener("click", () => {
+            void handler();
           });
-
-          registerPhotoswipeUI(instance);
-
-          instance.addFilter("thumbEl", () => image);
-          instance.addFilter("placeholderSrc", () => image.src);
-          instance.init();
-        };
-
-        image.style.cursor = "zoom-in";
-        image.addEventListener("click", () => {
-          void handler();
+          image.addEventListener("keypress", ({ key }) => {
+            if (key === "Enter") void handler();
+          });
         });
-        image.addEventListener("keypress", ({ key }) => {
-          if (key === "Enter") void handler();
+
+        images.forEach((image, index) => {
+          void getImageInfo(image).then((data) => {
+            dataSource.splice(index, 1, data);
+            instance?.refreshSlideContent(index);
+          });
         });
       });
-
-      images.forEach((image, index) => {
-        void getImageInfo(image).then((data) => {
-          dataSource.splice(index, 1, data);
-          instance?.refreshSlideContent(index);
-        });
-      });
-    });
+  };
 
   onMounted(() => {
     if (scrollToClose)
@@ -151,11 +163,6 @@ export const setupPhotoSwipe = (): void => {
         instance?.close();
       });
 
-    void initPhotoSwipe();
-
-    watch(
-      () => page.value.path,
-      () => initPhotoSwipe()
-    );
+    watch(() => page.value.path, initPhotoSwipe, { immediate: true });
   });
 };

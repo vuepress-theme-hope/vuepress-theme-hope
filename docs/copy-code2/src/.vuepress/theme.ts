@@ -3,10 +3,11 @@ import { fs, theme } from "docs-shared";
 
 const { version } = fs.readJsonSync(
   createRequire(import.meta.url).resolve(
-    "vuepress-plugin-copy-code2/package.json"
-  )
+    "vuepress-plugin-copy-code2/package.json",
+  ),
 );
 
+// the theme wrapper is located in <root>/docs-shared/src/theme-wrapper.ts
 export default theme("copy-code2", {
   locales: {
     "/": {
@@ -57,6 +58,7 @@ export default theme("copy-code2", {
   plugins: {
     mdEnhance: {
       codetabs: true,
+      imgMark: true,
     },
   },
 });

@@ -1,22 +1,13 @@
 import { usePageData } from "@vuepress/client";
-import {
-  type PropType,
-  type SlotsType,
-  type VNode,
-  computed,
-  defineComponent,
-  h,
-  ref,
-  toRef,
-  watch,
-} from "vue";
+import type { PropType, SlotsType, VNode } from "vue";
+import { computed, defineComponent, h, ref, toRef, watch } from "vue";
 
 import AutoLink from "@theme-hope/components/AutoLink";
 import HopeIcon from "@theme-hope/components/HopeIcon";
 
-import {
-  type AutoLinkOptions as AutoLinkType,
-  type NavGroup,
+import type {
+  AutoLinkOptions as AutoLinkType,
+  NavGroup,
 } from "../../../../shared/index.js";
 
 import "../styles/dropdown-link.scss";
@@ -45,7 +36,7 @@ export default defineComponent({
     const config = toRef(props, "config");
 
     const dropdownAriaLabel = computed(
-      () => config.value.ariaLabel || config.value.text
+      () => config.value.ariaLabel || config.value.text,
     );
 
     const open = ref(false);
@@ -54,7 +45,7 @@ export default defineComponent({
       () => page.value.path,
       () => {
         open.value = false;
-      }
+      },
     );
 
     /**
@@ -114,7 +105,7 @@ export default defineComponent({
                                     open.value = false;
                                 },
                               })
-                            : h("span", child.text)
+                            : h("span", child.text),
                         ),
                         h(
                           "ul",
@@ -133,9 +124,9 @@ export default defineComponent({
                                   )
                                     open.value = false;
                                 },
-                              })
-                            )
-                          )
+                              }),
+                            ),
+                          ),
                         ),
                       ]
                     : h(AutoLink, {
@@ -143,11 +134,11 @@ export default defineComponent({
                         onFocusout: () => {
                           if (isLastChild) open.value = false;
                         },
-                      })
+                      }),
                 );
-              })
+              }),
             ),
-          ]
+          ],
         ),
       ]);
   },

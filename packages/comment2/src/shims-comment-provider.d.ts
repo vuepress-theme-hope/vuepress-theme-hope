@@ -1,5 +1,5 @@
 declare module "vuepress-plugin-comment2/provider" {
-  import { type DefineComponent } from "vue";
+  import type { DefineComponent } from "vue";
 
   const component: DefineComponent;
 

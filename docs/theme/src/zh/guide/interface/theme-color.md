@@ -23,11 +23,17 @@ $theme-color: #f00;
 
 ## 主题色选择器
 
-你需要在 `.vuepress/styles/config.scss` 中通过 `$theme-colors` 设置一系列你想要启用的其他主题色：
+想要使用它，在 `.vuepress/styles/config.scss` 中通过 `$theme-colors` 设置一系列你想要启用的其他主题色：
 
 ```scss
 $theme-colors: #2196f3, #f26d6d, #3eaf7c, #fb9b5f;
 ```
+
+::: tip
+
+上方的默认主题色会成为选择器的第一个颜色。
+
+:::
 
 ### 尝试
 

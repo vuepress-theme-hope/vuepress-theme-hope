@@ -1,15 +1,7 @@
 import { useDebounceFn, useEventListener } from "@vueuse/core";
-import { type Chart } from "flowchart.ts";
-import {
-  type PropType,
-  type VNode,
-  computed,
-  defineComponent,
-  h,
-  onMounted,
-  ref,
-  shallowRef,
-} from "vue";
+import type { Chart } from "flowchart.ts";
+import type { PropType, VNode } from "vue";
+import { computed, defineComponent, h, onMounted, ref, shallowRef } from "vue";
 import { LoadingIcon, atou } from "vuepress-shared/client";
 
 import { flowchartPresets } from "../utils/index.js";
@@ -98,7 +90,7 @@ export default defineComponent({
               flowchart.draw(props.id, { ...preset.value, scale: newScale });
             }
           }
-        }, 100)
+        }, 100),
       );
     });
 

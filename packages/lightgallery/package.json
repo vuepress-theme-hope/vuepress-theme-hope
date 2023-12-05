@@ -1,6 +1,6 @@
 {
   "name": "vuepress-plugin-lightgallery",
-  "version": "2.0.0-beta.211",
+  "version": "2.0.0-rc.2",
   "description": "Light Gallery plugin for VuePress",
   "keywords": [
     "vuepress",
@@ -24,7 +24,7 @@
   "author": {
     "name": "Mr.Hope",
     "email": "mister-hope@outlook.com",
-    "url": "https://mrhope.site"
+    "url": "https://mister-hope.com"
   },
   "type": "module",
   "exports": {
@@ -32,8 +32,8 @@
     "./client": "./lib/client/index.js",
     "./package.json": "./package.json"
   },
-  "main": "lib/node/index.js",
-  "types": "lib/node/index.d.ts",
+  "main": "./lib/node/index.js",
+  "types": "./lib/node/index.d.ts",
   "files": [
     "lib"
   ],
@@ -46,27 +46,28 @@
     "dev:ts": "tsc -b tsconfig.build.json --watch"
   },
   "engines": {
-    "node": ">=16.0.0",
+    "node": ">=18.16.0",
     "npm": ">=8",
-    "pnpm": ">=7"
+    "pnpm": ">=7",
+    "yarn": ">=2"
   },
   "dependencies": {
-    "@vuepress/client": "2.0.0-beta.62",
-    "@vuepress/utils": "2.0.0-beta.62",
-    "lightgallery": "^2.7.1",
-    "vue": "^3.3.4",
-    "vue-router": "^4.2.1",
+    "@vuepress/client": "2.0.0-rc.0",
+    "@vuepress/utils": "2.0.0-rc.0",
+    "lightgallery": "^2.7.2",
+    "vue": "^3.3.10",
+    "vue-router": "^4.2.5",
     "vuepress-plugin-sass-palette": "workspace:*",
     "vuepress-shared": "workspace:*"
   },
   "devDependencies": {
-    "@vuepress/core": "2.0.0-beta.62"
+    "@vuepress/core": "2.0.0-rc.0"
   },
   "peerDependencies": {
-    "sass-loader": "^13.2.2",
-    "vuepress": "2.0.0-beta.62",
-    "vuepress-vite": "2.0.0-beta.62",
-    "vuepress-webpack": "2.0.0-beta.62"
+    "sass-loader": "^13.3.2",
+    "vuepress": "2.0.0-rc.0",
+    "vuepress-vite": "2.0.0-rc.0",
+    "vuepress-webpack": "2.0.0-rc.0"
   },
   "peerDependenciesMeta": {
     "sass-loader": {

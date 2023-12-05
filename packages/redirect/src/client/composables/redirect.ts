@@ -2,7 +2,8 @@ import { useRouteLocale } from "@vuepress/client";
 import { isLinkHttp } from "@vuepress/shared";
 import { usePreferredLanguages } from "@vueuse/core";
 import { computed, watch } from "vue";
-import { type RouteRecordNormalized, useRoute, useRouter } from "vue-router";
+import type { RouteRecordNormalized } from "vue-router";
+import { useRoute, useRouter } from "vue-router";
 import { entries } from "vuepress-shared/client";
 
 import { redirectConfig } from "@temp/redirect/config.js";
@@ -32,13 +33,13 @@ export const setupRedirect = (): void => {
     const defaultLocale =
       defaultLocalePath &&
       routes.some(
-        ({ path }) => path === route.path.replace("/", defaultLocalePath)
+        ({ path }) => path === route.path.replace("/", defaultLocalePath),
       )
         ? defaultLocalePath
         : routes.find(
             ({ path }) =>
               route.path.split("/").length >= 3 &&
-              path === route.path.replace(/^\/[^/]+\//, "/")
+              path === route.path.replace(/^\/[^/]+\//, "/"),
           )?.path;
 
     let matchedLocalePath: string | null = null;
@@ -65,7 +66,7 @@ export const setupRedirect = (): void => {
     // a locale matches
     if (matchedLocalePath) {
       const hasLocalePage = routes.some(
-        ({ path }) => route.path.replace("/", matchedLocalePath!) == path
+        ({ path }) => route.path.replace("/", matchedLocalePath!) == path,
       );
       const localeRoute = route.fullPath.replace("/", matchedLocalePath);
 
@@ -74,14 +75,14 @@ export const setupRedirect = (): void => {
         hasLocalePage
           ? localeRoute
           : // the page does not exist
-          defaultBehavior === "homepage"
-          ? // locale homepage
-            matchedLocalePath
-          : defaultBehavior === "defaultLocale" && defaultRoute
-          ? // default locale page
-            defaultRoute
-          : // as is to get a 404 page of that locale
-            localeRoute;
+            defaultBehavior === "homepage"
+            ? // locale homepage
+              matchedLocalePath
+            : defaultBehavior === "defaultLocale" && defaultRoute
+              ? // default locale page
+                defaultRoute
+              : // as is to get a 404 page of that locale
+                localeRoute;
 
       void router.replace(routePath);
     }
@@ -105,6 +106,6 @@ export const setupRedirect = (): void => {
       if (autoLocale && isRootLocale.value)
         handleLocaleRedirect(router.getRoutes());
     },
-    { immediate: true }
+    { immediate: true },
   );
 };

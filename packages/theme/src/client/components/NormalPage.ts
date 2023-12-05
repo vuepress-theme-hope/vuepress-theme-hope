@@ -1,13 +1,6 @@
 import { usePageData, usePageFrontmatter, withBase } from "@vuepress/client";
-import {
-  type ComponentOptions,
-  type SlotsType,
-  type VNode,
-  computed,
-  defineComponent,
-  h,
-  resolveComponent,
-} from "vue";
+import type { ComponentOptions, SlotsType, VNode } from "vue";
+import { computed, defineComponent, h, resolveComponent } from "vue";
 import { RenderDefault, hasGlobalComponent } from "vuepress-shared/client";
 
 import BreadCrumb from "@theme-hope/components/BreadCrumb";
@@ -19,7 +12,7 @@ import PageMeta from "@theme-hope/modules/info/components/PageMeta";
 import TOC from "@theme-hope/modules/info/components/TOC";
 import { useDarkmode } from "@theme-hope/modules/outlook/composables/index";
 
-import { type ThemeNormalPageFrontmatter } from "../../shared/index.js";
+import type { ThemeNormalPageFrontmatter } from "../../shared/index.js";
 
 import "../styles/page.scss";
 
@@ -27,14 +20,14 @@ export default defineComponent({
   name: "NormalPage",
 
   slots: Object as SlotsType<{
-    top?: () => VNode | VNode[];
-    bottom?: () => VNode | VNode[];
+    top?: () => VNode[] | VNode | null;
+    bottom?: () => VNode[] | VNode | null;
 
-    contentBefore?: () => VNode | VNode[];
-    contentAfter?: () => VNode | VNode[];
+    contentBefore?: () => VNode[] | VNode | null;
+    contentAfter?: () => VNode[] | VNode | null;
 
-    tocBefore?: () => VNode | VNode[];
-    tocAfter?: () => VNode | VNode[];
+    tocBefore?: () => VNode[] | VNode | null;
+    tocAfter?: () => VNode[] | VNode | null;
   }>,
 
   setup(_props, { slots }) {
@@ -46,13 +39,13 @@ export default defineComponent({
     const tocEnable = computed(
       () =>
         frontmatter.value.toc ||
-        (frontmatter.value.toc !== false && themeLocale.value.toc !== false)
+        (frontmatter.value.toc !== false && themeLocale.value.toc !== false),
     );
 
     return (): VNode =>
       h(
         "main",
-        { class: "page", id: "main-content" },
+        { id: "main-content", class: "vp-page" },
         h(
           hasGlobalComponent("LocalEncrypt")
             ? <ComponentOptions>resolveComponent("LocalEncrypt")
@@ -81,7 +74,7 @@ export default defineComponent({
                   {
                     before: () => slots.tocBefore?.(),
                     after: () => slots.tocAfter?.(),
-                  }
+                  },
                 )
               : null,
             slots.contentBefore?.(),
@@ -95,8 +88,8 @@ export default defineComponent({
                 })
               : null,
             slots.bottom?.(),
-          ]
-        )
+          ],
+        ),
       );
   },
 });

@@ -1,13 +1,13 @@
-import { HeadersPluginOptions, type MarkdownOptions } from "@vuepress/markdown";
+import type { HeadersPluginOptions, MarkdownOptions } from "@vuepress/markdown";
 import { colors } from "@vuepress/utils";
 import { isArray, values } from "vuepress-shared/node";
 
-import { type ThemeData } from "../../shared/index.js";
+import type { ThemeData } from "../../shared/index.js";
 import { logger } from "../utils.js";
 
 export const checkHeader = (
   markdownOptions: MarkdownOptions,
-  themeData: ThemeData
+  themeData: ThemeData,
 ): void => {
   const headerDepth =
     values(themeData.locales)
@@ -23,27 +23,27 @@ export const checkHeader = (
       typeof level === "number" ||
       (isArray(level) &&
         Array.from({ length: headerDepth + 1 }, (_, index) => index + 1).some(
-          (_, index) => !level.includes(index + 1)
+          (_, index) => !level.includes(index + 1),
         ))
     ) {
       logger.warn(
         `Max ${colors.magenta(
-          "headerDepth"
+          "headerDepth",
         )} is ${headerDepth}, but ${colors.magenta(
-          "markdown.anchor.level"
+          "markdown.anchor.level",
         )} is ${JSON.stringify(
-          level
-        )}, which does not extract header level ${headerDepth}.`
+          level,
+        )}, which does not extract header level ${headerDepth}.`,
       );
 
       markdownOptions.anchor.level = Array.from(
         { length: headerDepth + 1 },
-        (_, index) => index + 1
+        (_, index) => index + 1,
       );
     }
   } else if (markdownOptions.anchor === false && headerDepth !== 0) {
     logger.error(
-      `MarkdownIt anchor plugin is disabled, which will not extract any header. You should enable it.`
+      `MarkdownIt anchor plugin is disabled, which will not extract any header. You should enable it.`,
     );
 
     delete markdownOptions.anchor;
@@ -53,7 +53,7 @@ export const checkHeader = (
   if (markdownOptions.headers === false) {
     if (headerDepth !== 0) {
       logger.error(
-        `MarkdownIt header plugin is disabled, which will not extract any header. You should enable it.`
+        `MarkdownIt header plugin is disabled, which will not extract any header. You should enable it.`,
       );
 
       markdownOptions.headers = {
@@ -67,22 +67,22 @@ export const checkHeader = (
 
     if (
       Array.from({ length: headerDepth }, (_, index) => index + 2).some(
-        (item) => !level.includes(item)
+        (item) => !level.includes(item),
       )
     ) {
       logger.warn(
         `Max ${colors.magenta(
-          "headerDepth"
+          "headerDepth",
         )} is ${headerDepth}, but ${colors.magenta(
-          "markdown.headers.level"
+          "markdown.headers.level",
         )} is ${JSON.stringify(
-          level
-        )}, which does not extract header level ${headerDepth}.`
+          level,
+        )}, which does not extract header level ${headerDepth}.`,
       );
 
       markdownOptions.headers.level = Array.from(
         { length: headerDepth },
-        (_, index) => index + 2
+        (_, index) => index + 2,
       );
     }
   }

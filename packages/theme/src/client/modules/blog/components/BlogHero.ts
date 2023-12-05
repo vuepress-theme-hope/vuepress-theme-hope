@@ -1,23 +1,16 @@
 import {
   usePageFrontmatter,
-  usePageHeadTitle,
+  useSiteLocaleData,
   withBase,
 } from "@vuepress/client";
 import { isString } from "@vuepress/shared";
-import {
-  type SlotsType,
-  type VNode,
-  computed,
-  defineComponent,
-  h,
-  shallowRef,
-} from "vue";
+import type { SlotsType, VNode } from "vue";
+import { computed, defineComponent, h, shallowRef } from "vue";
 
 import DropTransition from "@theme-hope/components/transitions/DropTransition";
 
 import { SlideDownIcon } from "./icons/icons.js";
-import { type ThemeBlogHomePageFrontmatter } from "../../../../shared/index.js";
-import defaultHeroBgImagePath from "../assets/hero.jpg";
+import type { ThemeBlogHomePageFrontmatter } from "../../../../shared/index.js";
 
 import "../styles/blog-hero.scss";
 
@@ -37,22 +30,24 @@ export interface BackgroundInfo {
   isFullScreen: boolean;
 }
 
+const DEFAULT_HERO = "//theme-hope-assets.vuejs.press/hero/default.jpg";
+
 export default defineComponent({
   name: "BlogHero",
 
   slots: Object as SlotsType<{
-    heroBg?: (props: BackgroundInfo) => VNode | VNode[];
-    heroInfo?: (props: HeroInfo) => VNode | VNode[];
+    heroBg?: (props: BackgroundInfo) => VNode[] | VNode | null;
+    heroInfo?: (props: HeroInfo) => VNode[] | VNode | null;
   }>,
 
   setup(_props, { slots }) {
-    const title = usePageHeadTitle();
     const frontmatter = usePageFrontmatter<ThemeBlogHomePageFrontmatter>();
+    const siteLocale = useSiteLocaleData();
 
     const hero = shallowRef<HTMLElement>();
 
     const isFullScreen = computed(
-      () => frontmatter.value.heroFullScreen ?? false
+      () => frontmatter.value.heroFullScreen ?? false,
     );
 
     const heroInfo = computed(() => {
@@ -62,29 +57,30 @@ export default defineComponent({
         heroImageDark,
         heroAlt,
         heroImageStyle,
-        tagline = null,
+        tagline,
       } = frontmatter.value;
 
       return {
-        text: heroText === false ? null : heroText || title.value,
+        text: heroText ?? siteLocale.value.title ?? "Hello",
         image: heroImage ? withBase(heroImage) : null,
         imageDark: heroImageDark ? withBase(heroImageDark) : null,
         heroStyle: heroImageStyle,
-        alt: heroAlt || "hero image",
-        tagline,
+        alt: heroAlt || heroText || "hero image",
+        tagline: tagline ?? "",
         isFullScreen: isFullScreen.value,
       };
     });
 
     const bgInfo = computed(() => {
-      const { bgImage, bgImageStyle } = frontmatter.value;
+      const { bgImage, bgImageDark, bgImageStyle } = frontmatter.value;
 
       return {
         image: isString(bgImage)
           ? withBase(bgImage)
           : bgImage === false
-          ? null
-          : defaultHeroBgImagePath,
+            ? null
+            : DEFAULT_HERO,
+        imageDark: isString(bgImageDark) ? withBase(bgImageDark) : null,
         bgStyle: bgImageStyle,
         isFullScreen: isFullScreen.value,
       };
@@ -98,7 +94,7 @@ export default defineComponent({
             {
               ref: hero,
               class: [
-                "blog-hero",
+                "vp-blog-hero",
                 {
                   fullscreen: isFullScreen.value,
                   "no-bg": !bgInfo.value.image,
@@ -106,10 +102,13 @@ export default defineComponent({
               ],
             },
             [
-              slots.heroBg?.(bgInfo.value) ||
-                (bgInfo.value.image
+              slots.heroBg?.(bgInfo.value) || [
+                bgInfo.value.image
                   ? h("div", {
-                      class: "mask",
+                      class: [
+                        "vp-blog-mask",
+                        { light: bgInfo.value.imageDark },
+                      ],
                       style: [
                         {
                           background: `url(${bgInfo.value.image}) center/cover no-repeat`,
@@ -117,7 +116,19 @@ export default defineComponent({
                         bgInfo.value.bgStyle,
                       ],
                     })
-                  : null),
+                  : null,
+                bgInfo.value.imageDark
+                  ? h("div", {
+                      class: "vp-blog-mask dark",
+                      style: [
+                        {
+                          background: `url(${bgInfo.value.imageDark}) center/cover no-repeat`,
+                        },
+                        bgInfo.value.bgStyle,
+                      ],
+                    })
+                  : null,
+              ],
               slots.heroInfo?.(heroInfo.value) || [
                 h(
                   DropTransition,
@@ -127,7 +138,7 @@ export default defineComponent({
                       ? h("img", {
                           key: "light",
                           class: [
-                            "hero-image",
+                            "vp-blog-hero-image",
                             { light: heroInfo.value.imageDark },
                           ],
                           style: heroInfo.value.heroStyle,
@@ -138,24 +149,30 @@ export default defineComponent({
                     heroInfo.value.imageDark
                       ? h("img", {
                           key: "dark",
-                          class: "hero-image dark",
+                          class: "vp-blog-hero-image dark",
                           style: heroInfo.value.heroStyle,
                           src: heroInfo.value.imageDark,
                           alt: heroInfo.value.alt,
                         })
                       : null,
-                  ]
+                  ],
                 ),
                 h(DropTransition, { appear: true, delay: 0.08 }, () =>
-                  heroInfo.value.text ? h("h1", heroInfo.value.text) : null
+                  heroInfo.value.text
+                    ? h(
+                        "h1",
+                        { class: "vp-blog-hero-title" },
+                        heroInfo.value.text,
+                      )
+                    : null,
                 ),
                 h(DropTransition, { appear: true, delay: 0.12 }, () =>
                   heroInfo.value.tagline
                     ? h("p", {
-                        class: "description",
+                        class: "vp-blog-hero-description",
                         innerHTML: heroInfo.value.tagline,
                       })
-                    : null
+                    : null,
                 ),
               ],
               heroInfo.value.isFullScreen
@@ -171,10 +188,10 @@ export default defineComponent({
                         });
                       },
                     },
-                    [h(SlideDownIcon), h(SlideDownIcon)]
+                    [h(SlideDownIcon), h(SlideDownIcon)],
                   )
                 : null,
-            ]
+            ],
           );
   },
 });

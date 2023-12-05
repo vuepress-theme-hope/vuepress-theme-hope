@@ -1,13 +1,14 @@
 import { theme } from "docs-shared";
 
+// the theme wrapper is located in <root>/docs-shared/src/theme-wrapper.ts
 export default theme("auto-catalog", {
   locales: {
     "/": {
-      navbar: ["/", "/guide", "/config", "/demo"],
+      navbar: ["/", "/guide", "/config", "/migration", "/demo"],
       sidebar: false,
     },
     "/zh/": {
-      navbar: ["/zh/", "/zh/guide", "/zh/config", "/zh/demo"],
+      navbar: ["/zh/", "/zh/guide", "/zh/config", "/zh/migration", "/zh/demo"],
       sidebar: false,
     },
   },
@@ -15,6 +16,7 @@ export default theme("auto-catalog", {
   plugins: {
     mdEnhance: {
       codetabs: true,
+      imgMark: true,
     },
   },
 });

@@ -1,10 +1,8 @@
 ---
 # This is the title of the article
 title: Page Config
-# You can customize cover image
-cover: /assets/images/cover1.jpg
 # This is the icon of the page
-icon: page
+icon: file
 # This control sidebar order
 order: 1
 # Set author
@@ -47,9 +45,8 @@ You are free to write your Markdown here.
 
 ::: tip Assets
 
-- You can place images besides your Markdown files, but you should use **relative links** (i.e.: starting with `./`) for them.
-
-- For images in `.vuepress/public` directory, please use absolute links (i.e.: starting with `/`) for them.
+- You can place images besides your Markdown files nd use **relative links**.
+- For images in `.vuepress/public` directory, please use absolute links (i.e.: starting with `/`).
 
 :::
 

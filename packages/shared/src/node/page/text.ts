@@ -1,4 +1,4 @@
-import { type Page } from "@vuepress/core";
+import type { Page } from "@vuepress/core";
 import matter from "gray-matter";
 
 import { md2text } from "../markdown/index.js";
@@ -8,7 +8,7 @@ export const getPageText = ({ content }: Page): string =>
     matter(content)
       .content.trim()
       // remove first heading1 as title
-      .replace(/^# (.*)$/gm, "")
+      .replace(/^# (.*)$/gm, ""),
   )
     // convert link breaks into spaces
     .replace(/(?:\r?\n)+/g, " ")

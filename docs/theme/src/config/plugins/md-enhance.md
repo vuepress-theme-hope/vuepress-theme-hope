@@ -18,7 +18,7 @@ The `vuepress-plugin-md-enhance` plugin is enabled by default and provides Markd
 
 ::: info
 
-`vuepress-theme-hope` will set the `container` option to `true` by default.
+`vuepress-theme-hope` will set the `hint` option to `true` by default.
 
 See <ProjectLink name="md-enhance" path="/config.html">Plugin documentation</ProjectLink> for more details.
 
@@ -37,26 +37,26 @@ Whether to support full GFM syntax.
 
 For full GFM syntax, see [GFM](https://github.github.com/gfm/).
 
-We are not 100% supporting it to be honestly, we only supply its syntax including footnote, task list, code highlight, image mark and so on.
+Honestly, we do not 100% implement GFM, we only supply its common syntax.
 
 Some of the behavior might be different, for example to support Vue syntax, we are not disallowing `<script>` tags. But in most situation, the behavior should be same.
 
 :::
 
-### container
+### hint
 
 - Type: `boolean`
 - Default: `false`
 - Details:
-  - [Custom Container](../../guide/markdown/container.md)
+  - [Hint box](../../guide/markdown/hint.md)
 
-Whether to enable custom container including
+Whether to enable hint box including
 
 - info
 - note
 - tip
 - warning
-- danger
+- caution
 - details
 
 ### checkLinks
@@ -93,6 +93,31 @@ Whether to enable links check.
   - [v-pre wrapper](../../guide/markdown/others.md#v-pre)
 
 Whether to enable v-pre wrapper.
+
+### breaks
+
+- Type: `boolean`
+- Default: `false`
+- Enabled in GFM: Yes
+
+Whether convert `\n` in paragraphs into `<br>`s
+
+### linkify
+
+- Type: `boolean`
+- Default: `false`
+- Enabled in GFM: Yes
+
+Whether convert URL-like text into links
+
+### alert
+
+- Type: `boolean`
+- Default: `false`
+- Details:
+  - [GFM Alerts](../../guide/markdown/alert.md)
+
+Whether to enable gfm alerts.
 
 ### tabs
 
@@ -257,12 +282,12 @@ interface TaskListOptions {
 
 ### katex
 
-- Type: `KatexOptions & { mhchem?: boolean } | boolean`
+- Type: `KatexOptions & { copy?: boolean; mhchem?: boolean } | boolean`
 - Default: `false`
 
 Whether to enable $\TeX$ syntax support through KaTeX. You can pass an object to config KaTeX.
 
-In particular, you can enable the mhchem extension with `katex.mhchem: true`.
+In particular, you can enable the copy and mhchem extensions with `katex.copy: true` and `katex.mhchem: true`.
 
 Please see [Katex Docs](https://katex.org/docs/options.html) for available options.
 
@@ -301,12 +326,12 @@ Please see [source code](https://github.com/vuepress-theme-hope/vuepress-theme-h
 
 Whether to enable Markdown import support. You can pass in a function for path resolution.
 
-### card
+### component
 
 - Type: `boolean`
 - Default: `false`
 
-Whether to enable card support
+Whether to enable component support
 
 ### chart
 
@@ -463,6 +488,17 @@ Stylize inline tokens to create snippet you want.
      * external playground service url
      *
      * @default "https://www.typescriptlang.org/play"
+     */
+    service?: string;
+  }
+
+  interface UnoPresetPlaygroundOptions {
+    /**
+     * external playground service url
+     *
+     * 交互演示外部地址
+     *
+     * @default "https://unocss.dev/play"
      */
     service?: string;
   }
@@ -658,45 +694,50 @@ Default value: `"https://unpkg.com/react/umd/react.production.min.js"`
 
 Default value: `"https://unpkg.com/react-dom/umd/react-dom.production.min.js"`
 
-### presentation
+### revealJs
 
-- Type: `PresentationOptions | boolean`
-- Default: `false`
-
-Whether to enable presentation syntax support.
-
-You can set it with an object, the object will be used to config reveal.js.
-
-#### presentation.plugins
-
-- Type: `RevealPlugin[]`
+- Type: `RevealJsOptions | boolean`
 
   ```ts
-  type RevealPlugin = "highlight" | "math" | "search" | "notes" | "zoom";
+  type RevealJsPlugin = "highlight" | "math" | "search" | "notes" | "zoom";
+
+  type RevealJsTheme =
+    | "auto"
+    | "beige"
+    | "black"
+    | "blood"
+    | "league"
+    | "moon"
+    | "night"
+    | "serif"
+    | "simple"
+    | "sky"
+    | "solarized"
+    | "white";
+
+  /**
+   * reveal.js options
+   */
+  export interface RevealJsOptions {
+    /**
+     * reveal.js plugins
+     *
+     * @default []
+     */
+    plugins?: RevealJsPlugin[];
+
+    /**
+     * reveal.js themes
+     *
+     * @default ["auto"]
+     */
+    themes?: RevealJsTheme[];
+  }
   ```
 
-- Required: No
+- Default: `false`
 
-Plugins you want to use on reveal.js.
-
-Acceptable values are:
-
-- `"highlight"`
-- `"math"`
-- `"search"`
-- `"notes"`
-- `"zoom"`
-
-<!-- - `"anything"`
-- `"audio"`
-- `"chalkboard"` -->
-
-#### presentation.revealConfig
-
-- Type: `Partial<RevealOptions>`
-- Required: No
-
-Config which you want to pass to reveal.js.
+Whether to enable slides support. You can pass an option to control plugins and themes to import.
 
 ### delay
 

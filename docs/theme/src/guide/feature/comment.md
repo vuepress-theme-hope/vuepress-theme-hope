@@ -103,6 +103,28 @@ For other options, see <ProjectLink name="comment2" path="/config/giscus.html">G
 
 ## Waline
 
+::: code-tabs#shell
+
+@tab pnpm
+
+```bash
+pnpm add -D @waline/client
+```
+
+@tab yarn
+
+```bash
+yarn add -D @waline/client
+```
+
+@tab npm
+
+```bash
+npm i -D @waline/client
+```
+
+:::
+
 ### Get APP_ID and APP_Key
 
 [Sign in](https://console.leancloud.app/login) or [sign up](https://console.leancloud.app/register) leancloud. Then create new application in Leancloud, and you will get APP ID / APP Key / APP Master Key.
@@ -166,6 +188,28 @@ For more details, please see [Waline Docs](https://waline.js.org/en/)。
 
 ## Twikoo
 
+::: code-tabs#shell
+
+@tab pnpm
+
+```bash
+pnpm add -D twikoo
+```
+
+@tab yarn
+
+```bash
+yarn add -D twikoo
+```
+
+@tab npm
+
+```bash
+npm i -D twikoo
+```
+
+:::
+
 ### Vercel Deployment
 
 1. Apply for [MongoDB](https://www.mongodb.com/cloud/atlas/register) account
@@ -180,7 +224,76 @@ For more details, please see [Waline Docs](https://waline.js.org/en/)。
 1. Go to Overview, click the link under Domains, if the environment configuration is correct, you can see the prompt "Twikoo cloud function is running normally"
 1. Vercel Domains (with `https://` prefix, for example `https://xxx.vercel.app`) is your environment ID
 
+::: code-tabs#language
+
+@tab TS
+
+```ts
+// .vuepress/config.ts
+import { defineUserConfig } from "vuepress";
+import { hopeTheme } from "vuepress-theme-hope";
+
+export default defineUserConfig({
+  theme: hopeTheme({
+    plugins: {
+      comment: {
+        provider: "Twikoo",
+        envId: "YOUR_SERVER_URL", // your server url
+      },
+    },
+  }),
+});
+```
+
+@tab JS
+
+```js
+// .vuepress/config.js
+import { hopeTheme } from "vuepress-theme-hope";
+
+export default {
+  theme: hopeTheme({
+    plugins: {
+      comment: {
+        provider: "Twikoo",
+        envId: "YOUR_SERVER_URL", // your server url
+      },
+    },
+  }),
+};
+```
+
+:::
+
+::: note
+
+Click the "little gear" icon in the comment window to set the administrator password
+
+:::
+
 ## Artalk
+
+::: code-tabs#shell
+
+@tab pnpm
+
+```bash
+pnpm add -D artalk
+```
+
+@tab yarn
+
+```bash
+yarn add -D artalk
+```
+
+@tab npm
+
+```bash
+npm i -D artalk
+```
+
+:::
 
 ### Deploy Artalk Server
 

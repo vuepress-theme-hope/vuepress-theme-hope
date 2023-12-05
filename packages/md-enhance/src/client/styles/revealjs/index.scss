@@ -1,0 +1,26 @@
+@use "@temp/md-enhance/revealjs-theme.scss";
+@use "helper/template";
+@include template.template;
+
+.vp-reveal {
+  position: relative;
+  width: 100%;
+  height: 400px;
+  min-height: 400px;
+
+  @media print {
+    page-break-inside: avoid;
+  }
+
+  @media (max-width: hope-config.$mobile) {
+    width: calc(100% + 3rem);
+    min-height: 300px;
+    margin: 0 -1.5rem;
+  }
+}
+
+.reveal-loading {
+  position: absolute;
+  inset: 0 0 auto;
+  color: var(--vp-tc);
+}

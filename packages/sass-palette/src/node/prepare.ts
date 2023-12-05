@@ -1,4 +1,4 @@
-import { type App } from "@vuepress/core";
+import type { App } from "@vuepress/core";
 
 import { getPath } from "./utils.js";
 
@@ -8,7 +8,7 @@ export const prepareConfigFile = (app: App, id: string): Promise<string> =>
     `\
 import "@sass-palette/${id}-inject";
 export default {};
-`
+`,
   );
 
 export const prepareInjectSass = (app: App, id: string): Promise<string> =>
@@ -35,7 +35,7 @@ ${
 } @else {
   @include helper.inject($palette-variables);
 }
-`
+`,
   );
 
 export interface PrepareConfigOptions {
@@ -56,7 +56,7 @@ export const prepareConfigSass = (
     generator,
     userConfig,
     userPalette,
-  }: PrepareConfigOptions
+  }: PrepareConfigOptions,
 ): Promise<string> =>
   app.writeTemp(
     `sass-palette/${id}-config.scss`,
@@ -66,7 +66,7 @@ export const prepareConfigSass = (
 @import "file:///${getPath(userPalette)}";
 @import "file:///${getPath(userConfig)}";
 @import "file:///${getPath(generator)}";
-`
+`,
   );
 
 export interface PreparePaletteOptions {
@@ -78,7 +78,7 @@ export interface PreparePaletteOptions {
 
 export const preparePaletteSass = (
   app: App,
-  { id, defaultPalette, generator, userPalette }: PreparePaletteOptions
+  { id, defaultPalette, generator, userPalette }: PreparePaletteOptions,
 ): Promise<string> =>
   app.writeTemp(
     `sass-palette/${id}-palette.scss`,
@@ -86,7 +86,7 @@ export const preparePaletteSass = (
 @import "file:///${getPath(defaultPalette)}";
 @import "file:///${getPath(userPalette)}";
 @import "file:///${getPath(generator)}";
-`
+`,
   );
 
 export interface PrepareStyleOptions {
@@ -96,13 +96,13 @@ export interface PrepareStyleOptions {
 
 export const prepareStyleSass = (
   app: App,
-  { id, userStyle }: PrepareStyleOptions
+  { id, userStyle }: PrepareStyleOptions,
 ): Promise<string | null> =>
   userStyle
     ? app.writeTemp(
         `sass-palette/${id}-style.scss`,
         `\
 @forward "file:///${getPath(userStyle)}";
-`
+`,
       )
     : Promise.resolve(null);

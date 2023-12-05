@@ -1,4 +1,4 @@
-import { type RequiredLocaleConfig } from "vuepress-shared";
+import type { RequiredLocaleConfig } from "vuepress-shared";
 
 export interface AutoCatalogLocaleData {
   /**
@@ -7,6 +7,13 @@ export interface AutoCatalogLocaleData {
    * 目录标题文字
    */
   title: string;
+
+  /**
+   * Empty hint
+   *
+   * 空目录提示
+   */
+  empty: string;
 }
 
 export type AutoCatalogLocaleConfig =

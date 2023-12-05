@@ -1,20 +1,11 @@
-import { useToggle } from "@vueuse/core";
-import {
-  type PropType,
-  type SlotsType,
-  type VNode,
-  computed,
-  defineComponent,
-  h,
-  onMounted,
-  ref,
-  shallowRef,
-} from "vue";
+import { useEventListener, useToggle } from "@vueuse/core";
+import type { PropType, SlotsType, VNode } from "vue";
+import { computed, defineComponent, h, onMounted, ref, shallowRef } from "vue";
 import { LoadingIcon, atou } from "vuepress-shared/client";
 
 import { CODEPEN_SVG, JSFIDDLE_SVG } from "./icons.js";
-import { type CodeDemoOptions } from "../../shared/index.js";
-import { loadNormal, loadReact, loadVue } from "../composables/index.js";
+import type { CodeDemoOptions } from "../../shared/index.js";
+import { loadNormal, loadReact, loadVue } from "../composables/loadScript.js";
 import {
   getCode,
   getNormalCode,
@@ -99,7 +90,7 @@ export default defineComponent({
       () =>
         <Partial<CodeDemoOptions>>(
           JSON.parse(props.config ? atou(props.config) : "{}")
-        )
+        ),
     );
 
     const codeType = computed(() => {
@@ -112,8 +103,8 @@ export default defineComponent({
       props.type === "react"
         ? getReactCode(codeType.value, config.value)
         : props.type === "vue"
-        ? getVueCode(codeType.value, config.value)
-        : getNormalCode(codeType.value, config.value)
+          ? getVueCode(codeType.value, config.value)
+          : getNormalCode(codeType.value, config.value),
     );
 
     const isLegal = computed(() => code.value.isLegal);
@@ -155,6 +146,10 @@ export default defineComponent({
       }
     };
 
+    useEventListener("beforeprint", () => {
+      toggleIsExpand(true);
+    });
+
     onMounted(() => {
       setTimeout(() => {
         void loadDemo();
@@ -162,14 +157,17 @@ export default defineComponent({
     });
 
     return (): VNode =>
-      h("div", { class: "code-demo-wrapper", id: props.id }, [
-        h("div", { class: "code-demo-header" }, [
+      h("div", { class: "vp-code-demo", id: props.id }, [
+        h("div", { class: "vp-code-demo-header" }, [
           code.value.isLegal
             ? h("button", {
                 type: "button",
                 title: "toggle",
                 "aria-hidden": true,
-                class: ["toggle-button", isExpanded.value ? "down" : "end"],
+                class: [
+                  "vp-code-demo-toggle-button",
+                  isExpanded.value ? "down" : "end",
+                ],
                 onClick: () => {
                   height.value = isExpanded.value
                     ? "0"
@@ -179,7 +177,11 @@ export default defineComponent({
               })
             : null,
           props.title
-            ? h("span", { class: "title" }, decodeURIComponent(props.title))
+            ? h(
+                "span",
+                { class: "vp-code-demo-title" },
+                decodeURIComponent(props.title),
+              )
             : null,
 
           code.value.isLegal && code.value.jsfiddle !== false
@@ -213,7 +215,7 @@ export default defineComponent({
                     type: "hidden",
                     name: "resources",
                     value: [...code.value.cssLib, ...code.value.jsLib].join(
-                      ","
+                      ",",
                     ),
                   }),
                   h("button", {
@@ -223,7 +225,7 @@ export default defineComponent({
                     "aria-label": "JSFiddle",
                     "data-balloon-pos": "up",
                   }),
-                ]
+                ],
               )
             : null,
 
@@ -257,8 +259,8 @@ export default defineComponent({
                       js_pre_processor: codeType.value
                         ? codeType.value.js[1]
                         : code.value.jsx
-                        ? "babel"
-                        : "none",
+                          ? "babel"
+                          : "none",
                       // eslint-disable-next-line @typescript-eslint/naming-convention
                       css_pre_processor: codeType.value
                         ? codeType.value.css[1]
@@ -273,14 +275,14 @@ export default defineComponent({
                     "aria-label": "Codepen",
                     "data-balloon-pos": "up",
                   }),
-                ]
+                ],
               )
             : null,
         ]),
-        loaded.value ? null : h(LoadingIcon, { class: "code-demo-loading" }),
+        loaded.value ? null : h(LoadingIcon, { class: "vp-code-demo-loading" }),
         h("div", {
           ref: demoWrapper,
-          class: "code-demo-container",
+          class: "vp-code-demo-display",
           style: {
             display: isLegal.value && loaded.value ? "block" : "none",
           },
@@ -288,15 +290,18 @@ export default defineComponent({
 
         h(
           "div",
-          { class: "code-demo-code-wrapper", style: { height: height.value } },
+          {
+            class: "vp-code-demo-code-wrapper",
+            style: { height: height.value },
+          },
           h(
             "div",
             {
               ref: codeContainer,
-              class: "code-demo-codes",
+              class: "vp-code-demo-codes",
             },
-            slots.default?.()
-          )
+            slots.default?.(),
+          ),
         ),
       ]);
   },

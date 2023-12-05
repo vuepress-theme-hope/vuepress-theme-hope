@@ -1,5 +1,6 @@
-import { type App, type Page, type Plugin } from "@vuepress/core";
-import { type BlogOptions, blogPlugin } from "vuepress-plugin-blog2";
+import type { App, Page, Plugin } from "@vuepress/core";
+import type { BlogOptions } from "vuepress-plugin-blog2";
+import { blogPlugin } from "vuepress-plugin-blog2";
 import { keys, startsWith } from "vuepress-shared/node";
 
 import { getBlogCategoryCategory, getBlogTagCategory } from "./category.js";
@@ -10,19 +11,19 @@ import {
   getBlogStarType,
   getBlogTimelineType,
 } from "./type.js";
-import {
-  ArticleInfoType,
-  type BlogPluginOptions,
-  type ThemeData,
-  type ThemePageData,
+import type {
+  BlogPluginOptions,
+  ThemeData,
+  ThemePageData,
 } from "../../../shared/index.js";
+import { ArticleInfoType } from "../../../shared/index.js";
 
 /** @private */
 export const getBlogPlugin = (
   app: App,
   themeData: ThemeData,
   options?: BlogPluginOptions | boolean,
-  hotReload = false
+  hotReload = false,
 ): Plugin | null => {
   if (!options) return null;
 
@@ -90,5 +91,6 @@ export const getBlogPlugin = (
 
     hotReload,
     ...("hotReload" in blogOptions ? { hotReload: blogOptions.hotReload } : {}),
+    ...("slugify" in blogOptions ? { slugify: blogOptions.slugify } : {}),
   });
 };

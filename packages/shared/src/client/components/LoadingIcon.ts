@@ -1,4 +1,5 @@
-import { type FunctionalComponent, type VNode, h } from "vue";
+import type { FunctionalComponent, VNode } from "vue";
+import { h } from "vue";
 
 export const LoadingIcon: FunctionalComponent<{
   size?: number;
@@ -50,9 +51,9 @@ export const LoadingIcon: FunctionalComponent<{
             repeatCount: "indefinite",
             values: "0;-35px;-125px",
           }),
-        ]
+        ],
       ),
-    ]
+    ],
   );
 
   return wrapper
@@ -62,7 +63,7 @@ export const LoadingIcon: FunctionalComponent<{
           class: "loading-icon-wrapper",
           style: `display:flex;align-items:center;justify-content:center;height:${height}px`,
         },
-        icon
+        icon,
       )
     : icon;
 };

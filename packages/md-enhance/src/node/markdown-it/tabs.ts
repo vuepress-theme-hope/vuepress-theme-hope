@@ -1,5 +1,5 @@
 import { tab } from "@mdit/plugin-tab";
-import { type PluginSimple } from "markdown-it";
+import type { PluginSimple } from "markdown-it";
 
 import { stringifyProp } from "./utils.js";
 
@@ -27,8 +27,8 @@ export const tabs: PluginSimple = (md) => {
 ${titles
   .map(
     (title, index) => `\
-<template #title${index}>${title}</template>
-`
+<template #title${index}="{ value, isActive }">${title}</template>
+`,
   )
   .join("")}\
 `;
@@ -40,7 +40,7 @@ ${titles
 
     tabOpenRenderer: ({ index }) =>
       `\
-<template #tab${index}="{ isActive }">
+<template #tab${index}="{ value, isActive }">
 `,
 
     tabCloseRenderer: () => `\

@@ -1,18 +1,10 @@
 import { usePreferredDark, useStorage } from "@vueuse/core";
-import {
-  type App,
-  type ComputedRef,
-  type InjectionKey,
-  type Ref,
-  computed,
-  inject,
-  onMounted,
-  watch,
-} from "vue";
+import type { App, ComputedRef, InjectionKey, Ref } from "vue";
+import { computed, inject, onMounted, watch } from "vue";
 
 import { useThemeData } from "@theme-hope/composables/index";
 
-import { type DarkmodeOptions } from "../../../../shared/index.js";
+import type { DarkmodeOptions } from "../../../../shared/index.js";
 
 declare const __VUEPRESS_DEV__: boolean;
 
@@ -30,7 +22,7 @@ export interface DarkMode {
 }
 
 export const darkModeSymbol: InjectionKey<DarkMode> = Symbol(
-  __VUEPRESS_DEV__ ? "darkMode" : ""
+  __VUEPRESS_DEV__ ? "darkMode" : "",
 );
 
 /**
@@ -49,7 +41,7 @@ export const injectDarkmode = (app: App): void => {
   const isDarkPreferred = usePreferredDark();
   const status = useStorage<DarkmodeStatus>(
     "vuepress-theme-hope-scheme",
-    "auto"
+    "auto",
   );
 
   const config = computed(() => themeData.value.darkmode || "switch");
@@ -61,17 +53,17 @@ export const injectDarkmode = (app: App): void => {
     return darkmode === "disable"
       ? false
       : // force darkmode
-      darkmode === "enable"
-      ? true
-      : // auto
-      darkmode === "auto"
-      ? isDarkPreferred.value
-      : // toggle
-      darkmode === "toggle"
-      ? status.value === "dark"
-      : // switch
-        status.value === "dark" ||
-        (status.value === "auto" && isDarkPreferred.value);
+        darkmode === "enable"
+        ? true
+        : // auto
+          darkmode === "auto"
+          ? isDarkPreferred.value
+          : // toggle
+            darkmode === "toggle"
+            ? status.value === "dark"
+            : // switch
+              status.value === "dark" ||
+              (status.value === "auto" && isDarkPreferred.value);
   });
 
   const canToggle = computed(() => {
@@ -99,7 +91,7 @@ export const setupDarkmode = (): void => {
   const updateDOM = (isDark = isDarkmode.value): void =>
     document.documentElement.setAttribute(
       "data-theme",
-      isDark ? "dark" : "light"
+      isDark ? "dark" : "light",
     );
 
   onMounted(() => {

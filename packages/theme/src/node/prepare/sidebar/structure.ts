@@ -1,8 +1,8 @@
-import { type App, type Page } from "@vuepress/core";
+import type { App, Page } from "@vuepress/core";
 import { path } from "@vuepress/utils";
 import { startsWith } from "vuepress-shared/node";
 
-import { type SidebarSorterFunction } from "../../../shared/index.js";
+import type { SidebarSorterFunction } from "../../../shared/index.js";
 
 export interface FileInfo {
   type: "file";
@@ -30,14 +30,14 @@ export interface ThemeSidebarInfoOptions {
  */
 export const getStructureInfo = (
   pages: Page[],
-  scope: string
+  scope: string,
 ): StructureInfo[] => {
   const relatedPages = pages.filter(
     ({ filePathRelative, pathLocale }) =>
       // generated from file and inside current scope
       startsWith(filePathRelative, scope) &&
       // root dir should filter other locales
-      (scope !== "" || pathLocale === "/")
+      (scope !== "" || pathLocale === "/"),
   );
 
   const sortedPages = relatedPages
@@ -45,8 +45,8 @@ export const getStructureInfo = (
     .sort(
       (
         { filePathRelative: filePathRelative1 },
-        { filePathRelative: filePathRelative2 }
-      ) => filePathRelative1!.localeCompare(filePathRelative2!)
+        { filePathRelative: filePathRelative2 },
+      ) => filePathRelative1!.localeCompare(filePathRelative2!),
     );
 
   const structure: StructureInfo[] = [];
@@ -67,7 +67,7 @@ export const getStructureInfo = (
       else {
         const result = currentDir.find<DirInfo>(
           (item): item is DirInfo =>
-            item.type === "dir" && item.dirname === level
+            item.type === "dir" && item.dirname === level,
         );
 
         if (result) {

@@ -2,11 +2,11 @@ import { colors } from "@vuepress/utils";
 import { isArray, isPlainObject, isString } from "vuepress-shared/node";
 
 import { deprecatedLogger } from "./utils.js";
-import {
-  type AutoLinkOptions,
-  type NavbarGroup,
-  type NavbarItem,
-  type NavbarOptions,
+import type {
+  AutoLinkOptions,
+  NavbarGroup,
+  NavbarItem,
+  NavbarOptions,
 } from "../../shared/index.js";
 import { logger } from "../utils.js";
 
@@ -44,7 +44,7 @@ const handleNavbarOptions = (config: LegacyNavbarOptions): NavbarOptions =>
  * @deprecated You should use V2 standard navbar config and avoid using it
  */
 export const convertNavbarOptions = (
-  config: NavbarOptions | unknown
+  config: unknown,
 ): NavbarOptions | false => {
   if (config === false) return false;
   if (isArray(config)) return handleNavbarOptions(config as NavbarOptions);

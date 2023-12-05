@@ -3,6 +3,7 @@ import theme from "./theme.js";
 
 const __dirname = getDirname(import.meta.url);
 
+// the config wrapper is located in <root>/docs-shared/src/config-wrapper.ts
 export default config(
   {
     name: "hope",
@@ -45,19 +46,22 @@ export default config(
     alias: {
       "@FlowChartPlayground": path.resolve(
         __dirname,
-        "./components/FlowChartPlayground"
+        "../../../md-enhance/src/.vuepress/components/FlowChartPlayground.js",
       ),
-      "@IconDisplay": path.resolve(__dirname, "./components/IconDisplay"),
+      "@IconDisplay": path.resolve(
+        __dirname,
+        "../../../components/src/.vuepress/components/IconDisplay.js",
+      ),
       "@KatexPlayground": path.resolve(
         __dirname,
-        "./components/KatexPlayground"
+        "../../../md-enhance/src/.vuepress/components/KatexPlayground.js",
       ),
       "@ToggleRTLButton": path.resolve(
         __dirname,
-        "./components/ToggleRTLButton"
+        "./components/ToggleRTLButton.js",
       ),
     },
 
     clientConfigFile: path.resolve(__dirname, "./client.ts"),
-  }
+  },
 );

@@ -41,17 +41,17 @@ const emptyNodeContents = (node: HTMLElement): void => {
 };
 
 const getTargetElement = (
-  targetSelector: string | HTMLElement | null
+  targetSelector: string | HTMLElement | null,
 ): HTMLElement | null =>
   targetSelector === "string"
     ? document.querySelector(targetSelector)
     : targetSelector instanceof HTMLElement
-    ? targetSelector
-    : document.body;
+      ? targetSelector
+      : document.body;
 
 // Create a fragment identifier for using PDF Open parameters when embedding PDF
 const buildURLFragmentString = (
-  options: Record<string, string | number | boolean>
+  options: Record<string, string | number | boolean>,
 ): string => {
   let url = "";
 
@@ -60,7 +60,7 @@ const buildURLFragmentString = (
       .map(([key, value]) =>
         key === "noToolbar"
           ? `toolbar=${value ? 0 : 1}`
-          : `${encodeURIComponent(key)}=${encodeURIComponent(value)}`
+          : `${encodeURIComponent(key)}=${encodeURIComponent(value)}`,
       )
       .join("&");
 
@@ -77,22 +77,18 @@ const addPDFViewer = (
   targetNode: HTMLElement,
   url: string,
   options: Record<string, string | number | boolean>,
-  title: string
+  title: string,
 ): HTMLElement => {
   // Ensure target element is empty first
   emptyNodeContents(targetNode);
 
-  let source = url;
-
-  if (embedType === "pdfjs") {
-    const pdfjsURL = `${ensureEndingSlash(
-      withBase(PDFJS_URL!)
-    )}web/viewer.html`;
-
-    source = `${pdfjsURL}?file=${encodeURIComponent(
-      url
-    )}${buildURLFragmentString(options)}`;
-  }
+  const source = `${
+    embedType === "pdfjs"
+      ? `${ensureEndingSlash(
+          withBase(PDFJS_URL!),
+        )}web/viewer.html?file=${encodeURIComponent(url)}`
+      : url
+  }${buildURLFragmentString(options)}`;
 
   const elementType =
     embedType === "pdfjs" || embedType === "iframe" ? "iframe" : "embed";
@@ -115,7 +111,7 @@ const addPDFViewer = (
 export const viewPDF = (
   url: string,
   targetSelector: string | HTMLElement | null = null,
-  { title, hint, options = {} }: ViewPDFOptions
+  { title, hint, options = {} }: ViewPDFOptions,
 ): HTMLElement | null => {
   if (typeof window === "undefined" || !window?.navigator?.userAgent)
     return null;

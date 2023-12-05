@@ -1,12 +1,12 @@
 import { hashSync } from "bcrypt-ts/node";
 import { entries, fromEntries, isArray, isString } from "vuepress-shared/node";
 
-import { type EncryptConfig, type EncryptOptions } from "../../shared/index.js";
+import type { EncryptConfig, EncryptOptions } from "../../shared/index.js";
 import { logger } from "../utils.js";
 
 /** @private */
 export const getEncryptConfig = (
-  encrypt: EncryptOptions = {}
+  encrypt: EncryptOptions = {},
 ): EncryptConfig => {
   const result: EncryptConfig = {};
 
@@ -31,7 +31,7 @@ export const getEncryptConfig = (
       logger.error(
         `You are asking for global encryption but you provide invalid "admin" config. 
         
-        Please check "admin" in your "themeConfig.encrypt" config. It can be string or string[], but you are providing ${typeof encrypt.admin}. Please fix it!`
+        Please check "admin" in your "themeConfig.encrypt" config. It can be string or string[], but you are providing ${typeof encrypt.admin}. Please fix it!`,
       );
   }
 
@@ -62,12 +62,12 @@ Key ${key}’s value MUST be string or string[]. But it’s type is ${typeof tok
           logger.error(
             `You config "themeConfig.encrypt.config", but your config is invalid. 
         
-        The value of key ${key} MUST be string or string[]. But not it’s ${typeof tokens}. Please fix it!`
+        The value of key ${key} MUST be string or string[]. But not it’s ${typeof tokens}. Please fix it!`,
           );
 
           return null;
         })
-        .filter((item): item is [string, string[]] => item !== null)
+        .filter((item): item is [string, string[]] => item !== null),
     );
 
   return result;

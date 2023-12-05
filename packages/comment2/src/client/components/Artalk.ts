@@ -1,15 +1,16 @@
 import { usePageData, useSiteData } from "@vuepress/client";
 import type Artalk from "artalk";
+import type { VNode } from "vue";
 import {
-  type VNode,
   defineComponent,
   h,
   nextTick,
   onMounted,
+  ref,
   shallowRef,
   watch,
 } from "vue";
-import { isString } from "vuepress-shared/client";
+import { LoadingIcon, isString } from "vuepress-shared/client";
 
 import { useArtalkOptions } from "../helpers/index.js";
 
@@ -37,81 +38,89 @@ export default defineComponent({
     darkmode: Boolean,
   },
 
-  setup: (props) => {
+  setup(props) {
     const artalkOptions = useArtalkOptions();
     const page = usePageData();
     const site = useSiteData();
 
+    const loaded = ref(false);
     const artalkContainer = shallowRef<HTMLDivElement>();
 
-    let artalk: Artalk.default | null = null;
+    let artalk: Artalk | null = null;
 
     const enableArtalk = isString(artalkOptions.server);
 
     const initArtalk = async (): Promise<void> => {
-      await Promise.all([
-        import(/* webpackChunkName: "artalk" */ "artalk"),
+      const [{ default: Artalk }] = await Promise.all([
+        import(/* webpackChunkName: "artalk" */ "artalk/dist/Artalk.es.js"),
         new Promise<void>((resolve) => {
           setTimeout(() => {
-            void nextTick().then(resolve);
+            resolve();
           }, artalkOptions.delay || 800);
         }),
-      ]).then(([{ default: _Artalk }]) => {
-        // FIXME: Typescript type issues
-        const Artalk = _Artalk as unknown as typeof _Artalk.default;
+      ]);
 
-        try {
-          artalk = new Artalk({
-            useBackendConf: false,
-            site: site.value.title,
-            pageTitle: page.value.title,
-            ...artalkOptions,
-            el: artalkContainer.value!,
-            pageKey: props.identifier,
-            darkMode: props.darkmode,
+      loaded.value = true;
+      await nextTick();
+
+      try {
+        artalk = new Artalk({
+          useBackendConf: false,
+          site: site.value.title,
+          pageTitle: page.value.title,
+          ...artalkOptions,
+          el: artalkContainer.value!,
+          pageKey: props.identifier,
+          darkMode: props.darkmode,
+        });
+
+        if (artalkOptions.useBackendConf)
+          artalk.on("conf-loaded", () => {
+            artalk!.setDarkMode(props.darkmode);
           });
-
-          if (artalkOptions.useBackendConf)
-            artalk.on("conf-loaded", () => {
-              artalk!.setDarkMode(props.darkmode);
-            });
-        } catch (err) {
-          // FIXME: Not sure what the issue is, relevant issue:
-          // https://github.com/vuepress/vuepress-next/issues/1249
-          // https://github.com/ArtalkJS/Artalk/discussions/367
-        }
-      });
+      } catch (err) {
+        // FIXME: Not sure what the issue is, relevant issue:
+        // https://github.com/vuepress/vuepress-next/issues/1249
+        // https://github.com/ArtalkJS/Artalk/discussions/367
+      }
     };
 
     onMounted(() => {
       watch(
-        () => page.value.path,
-        async () => {
+        () => props.identifier,
+        () => {
           try {
             artalk?.destroy();
           } catch (err) {
             // do nothing
           }
+        },
+        { flush: "pre" },
+      );
+
+      watch(
+        () => props.identifier,
+        async () => {
+          await nextTick();
           await initArtalk();
         },
-        { immediate: true }
+        { flush: "post", immediate: true },
       );
 
       watch(
         () => props.darkmode,
         (value) => {
           artalk?.setDarkMode(value);
-        }
+        },
       );
     });
 
     return (): VNode | null =>
       enableArtalk
-        ? h(
-            "div",
-            { class: "artalk-wrapper" },
-            h("div", { ref: artalkContainer })
-          )
+        ? h("div", { class: "artalk-wrapper" }, [
+            loaded.value ? null : h(LoadingIcon),
+            h("div", { ref: artalkContainer }),
+          ])
         : null;
   },
 });

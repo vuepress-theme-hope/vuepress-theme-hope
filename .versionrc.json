@@ -1,5 +1,5 @@
 {
-  "header": "# Change Log\n\nAll notable changes to this project will be documented in this file. See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.\n\n<!-- #region recent-beta -->\n",
+  "header": "# Change Log\n\nAll notable changes to this project will be documented in this file. See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.\n\n<!-- #region recent-change -->\n",
 
   "releaseCommitMessageFormat": "chore(release): publish v{{currentTag}}",
 

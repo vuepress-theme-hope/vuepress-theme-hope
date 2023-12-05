@@ -1,4 +1,4 @@
-import { type BasePageFrontMatter } from "vuepress-shared";
+import type { BasePageFrontMatter } from "vuepress-shared";
 
 export interface CommentPluginFrontmatter extends BasePageFrontMatter {
   /**

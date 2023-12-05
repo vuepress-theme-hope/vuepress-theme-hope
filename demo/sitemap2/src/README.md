@@ -2,7 +2,7 @@
 home: true
 title: Home
 icon: home
-heroImage: /logo.svg
+heroImage: https://theme-hope-assets.vuejs.press/logo.svg
 heroText: vuepress-plugin-sitemap2
 tagline: Sitemap generation for VuePress2
 actions:
@@ -14,7 +14,7 @@ footer: MIT Licensed, Copyright © 2019-present Mr.Hope
 
 <template v-if="!isDev">
 
-[Sitemap](/sitemap.xml)
+## [View Sitemap](/sitemap.xml)
 
 </template>
 

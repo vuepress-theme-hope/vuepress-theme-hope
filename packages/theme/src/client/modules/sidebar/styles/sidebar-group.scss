@@ -1,20 +1,20 @@
-.sidebar-group {
-  .sidebar-group {
-    padding-inline-start: 0.75rem;
-
-    .sidebar-heading {
-      font-size: 1em;
-    }
-  }
-
+.vp-sidebar-group {
   &:not(.collapsible) {
-    .sidebar-heading:not(.clickable) {
+    .vp-sidebar-heading:not(.clickable) {
       color: inherit;
       cursor: auto;
     }
   }
 
-  .sidebar-link {
+  .vp-sidebar-group {
+    padding-inline-start: 0.75rem;
+
+    .vp-sidebar-heading {
+      font-size: 1em;
+    }
+  }
+
+  .vp-sidebar-link {
     padding-inline-start: 1.25rem;
   }
 }

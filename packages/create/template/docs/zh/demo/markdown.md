@@ -1,6 +1,6 @@
 ---
 title: Markdown 展示
-icon: markdown
+icon: fab fa-markdown
 order: 2
 category:
   - 使用指南
@@ -42,7 +42,7 @@ VuePress 会使用 [markdown-it](https://github.com/markdown-it/markdown-it) 来
 
 通过 [`vuepress-plugin-md-enhance`][md-enhance]，主题扩展了更多 Markdown 语法，提供更加丰富的写作功能。
 
-#### 自定义容器
+#### 提示容器
 
 ::: v-pre
 
@@ -52,7 +52,7 @@ VuePress 会使用 [markdown-it](https://github.com/markdown-it/markdown-it) 来
 
 ::: info 自定义标题
 
-信息容器，包含 `代码` 与 [链接](#自定义容器)。
+信息容器，包含 `代码` 与 [链接](#提示容器)。
 
 ```js
 const a = 1;
@@ -72,7 +72,7 @@ const a = 1;
 
 :::
 
-::: danger 自定义标题
+::: caution 自定义标题
 
 危险容器
 
@@ -84,7 +84,7 @@ const a = 1;
 
 :::
 
-- [查看详情](https://theme-hope.vuejs.press/zh/guide/markdown/container.html)
+- [查看详情](https://theme-hope.vuejs.press/zh/guide/markdown/hint.html)
 
 #### 代码块
 
@@ -167,17 +167,72 @@ npm i -D vuepress-theme-hope
 
 - [查看详情](https://theme-hope.vuejs.press/zh/guide/markdown/image.html)
 
-#### 卡片
+#### 组件
 
-```card
+```component VPCard
 title: Mr.Hope
 desc: Where there is light, there is hope
-logo: https://mrhope.site/logo.svg
-link: https://mrhope.site
+logo: https://mister-hope.com/logo.svg
+link: https://mister-hope.com
 color: rgba(253, 230, 138, 0.15)
 ```
 
-- [查看详情](https://theme-hope.vuejs.press/zh/guide/markdown/card.html)
+- [查看详情](https://theme-hope.vuejs.press/zh/guide/markdown/component.html)
+
+#### 导入文件
+
+<!-- @include: ./README.md{11-17} -->
+
+- [查看详情](https://theme-hope.vuejs.press/zh/guide/markdown/include.html)
+
+#### 代码演示
+
+::: normal-demo 一个普通 Demo
+
+```html
+<h1>VuePress Theme Hope</h1>
+<p><span id="very">非常</span>强大!</p>
+```
+
+```js
+document.querySelector("#very").addEventListener("click", () => {
+  alert("非常强大");
+});
+```
+
+```css
+span {
+  color: red;
+}
+```
+
+:::
+
+- [查看详情](https://theme-hope.vuejs.press/zh/guide/markdown/demo.html)
+
+#### 样式化
+
+向 Mr.Hope 捐赠一杯咖啡。 _Recommended_
+
+- [查看详情](https://theme-hope.vuejs.press/zh/guide/markdown/stylize.html)
+
+#### 交互演示
+
+::: playground#ts TS 案例
+
+@file index.ts
+
+```ts
+const msg = "hello world";
+
+const speak = (msg: string) => console.log(msg);
+
+speak(msg);
+```
+
+:::
+
+- [查看详情](https://theme-hope.vuejs.press/zh/guide/markdown/playground.html)
 
 #### 图表
 
@@ -213,7 +268,7 @@ color: rgba(253, 230, 138, 0.15)
 
 :::
 
-- [查看详情](https://theme-hope.vuejs.press/zh/guide/markdown/chart.html)
+- [查看详情](https://theme-hope.vuejs.press/zh/guide/markdown/chartjs.html)
 
 #### Echarts
 
@@ -287,61 +342,6 @@ $$
 
 - [查看详情](https://theme-hope.vuejs.press/zh/guide/markdown/tex.html)
 
-#### 导入文件
-
-<!-- @include: ./README.md{11-17} -->
-
-- [查看详情](https://theme-hope.vuejs.press/zh/guide/markdown/include.html)
-
-#### 代码演示
-
-::: normal-demo 一个普通 Demo
-
-```html
-<h1>VuePress Theme Hope</h1>
-<p><span id="very">非常</span>强大!</p>
-```
-
-```js
-document.querySelector("#very").addEventListener("click", () => {
-  alert("非常强大");
-});
-```
-
-```css
-span {
-  color: red;
-}
-```
-
-:::
-
-- [查看详情](https://theme-hope.vuejs.press/zh/guide/markdown/demo.html)
-
-#### 样式化
-
-向 Mr.Hope 捐赠一杯咖啡。 _Recommended_
-
-- [查看详情](https://theme-hope.vuejs.press/zh/guide/markdown/stylize.html)
-
-#### 交互演示
-
-::: playground#ts TS 案例
-
-@file index.ts
-
-```ts
-const msg = "hello world";
-
-const speak = (msg: string) => console.log(msg);
-
-speak(msg);
-```
-
-:::
-
-- [查看详情](https://theme-hope.vuejs.press/zh/guide/markdown/playground.html)
-
 #### Vue 交互演示
 
 ::: vue-playground Vue 交互演示
@@ -371,7 +371,7 @@ const msg = ref("Hello World!");
 
 ## 幻灯片 1
 
-一个有文字和 [链接](https://mrhope.site) 的段落
+一个有文字和 [链接](https://mister-hope.com) 的段落
 
 ---
 
@@ -398,6 +398,6 @@ $$
 
 @slideend
 
-- [查看详情](https://theme-hope.vuejs.press/zh/guide/markdown/presentation.html)
+- [查看详情](https://theme-hope.vuejs.press/zh/guide/markdown/revealjs.html)
 
-[md-enhance]: https://theme-hope.vuejs.press/md-enhance/zh/
+[md-enhance]: https://plugin-md-enhance.vuejs.press/zh/

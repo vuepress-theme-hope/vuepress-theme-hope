@@ -14,16 +14,14 @@ tag:
 
 The theme provide comment support using `vuepress-plugin-comment2`, and it passes `plugin.comment` in theme options to the plugin.
 
-`vuepress-plugin-comment2` currently supports 3 comment services:
+`vuepress-plugin-comment2` currently supports 4 comment services:
 
 - Artalk
 - Giscus
 - Twikoo
 - Waline
 
-::: note
-
-If you don't need the comment feature, ignore this option.
+::: note Ignore this option if you don't need comment feature.
 
 :::
 

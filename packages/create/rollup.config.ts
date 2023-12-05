@@ -1,6 +1,6 @@
-import { bundle } from "../../scripts/rollup.js";
+import { rollupBundle } from "../../scripts/rollup.js";
 
-export default bundle("index", {
+export default rollupBundle("index", {
   dts: false,
   resolve: true,
   external: ["cac", "execa", "inquirer"],

@@ -63,6 +63,13 @@ tag:
 
 页面过滤器，此函数用于鉴别插件是否需要生成摘要。
 
+### slugify
+
+- 类型: `(name: string) => string`
+- 默认值: `(name) => name.replace(/ _/g, '-').replace(/[:?*|\\/<>]/g, "").toLowerCase()`
+
+Slugify 函数，用于转换 key 在路由中注册的形式。
+
 ### type
 
 - 类型: `BlogTypeOptions[]`

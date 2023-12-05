@@ -1,17 +1,9 @@
-import { type PageHeader, usePageData } from "@vuepress/client";
-import {
-  type PropType,
-  type SlotsType,
-  type VNode,
-  defineComponent,
-  h,
-  onMounted,
-  ref,
-  shallowRef,
-  watch,
-} from "vue";
-import { RouterLink, useRoute } from "vue-router";
-import { isActiveLink } from "vuepress-shared/client";
+import type { PageHeader } from "@vuepress/client";
+import { usePageData } from "@vuepress/client";
+import type { PropType, SlotsType, VNode } from "vue";
+import { defineComponent, h, onMounted, ref, shallowRef, watch } from "vue";
+import { useRoute } from "vue-router";
+import { VPLink } from "vuepress-shared/client";
 
 import PrintButton from "@theme-hope/modules/info/components/PrintButton";
 import { useMetaLocale } from "@theme-hope/modules/info/composables/index";
@@ -20,17 +12,17 @@ import "../styles/toc.scss";
 
 const renderHeader = ({ title, level, slug }: PageHeader): VNode =>
   h(
-    RouterLink,
+    VPLink,
     {
       to: `#${slug}`,
       class: ["toc-link", `level${level}`],
     },
-    () => title
+    () => title,
   );
 
 const renderChildren = (
   headers: PageHeader[],
-  headerDepth: number
+  headerDepth: number,
 ): VNode | null => {
   const route = useRoute();
 
@@ -47,14 +39,14 @@ const renderChildren = (
               {
                 class: [
                   "toc-item",
-                  { active: isActiveLink(route, `#${header.slug}`) },
+                  { active: route.hash === `#${header.slug}` },
                 ],
               },
-              renderHeader(header)
+              renderHeader(header),
             ),
             children ? h("li", children) : null,
           ];
-        })
+        }),
       )
     : null;
 };
@@ -85,8 +77,8 @@ export default defineComponent({
   },
 
   slots: Object as SlotsType<{
-    before?: () => VNode | VNode[];
-    after?: () => VNode | VNode[];
+    before?: () => VNode[] | VNode | null;
+    after?: () => VNode[] | VNode | null;
   }>,
 
   setup(props, { slots }) {
@@ -128,7 +120,7 @@ export default defineComponent({
           if (toc.value) {
             // get the active toc item DOM, whose href equals to the current route
             const activeTocItem = document.querySelector(
-              `#toc a.toc-link[href$="${hash}"]`
+              `#toc a.toc-link[href$="${hash}"]`,
             );
 
             if (!activeTocItem) return;
@@ -155,25 +147,24 @@ export default defineComponent({
                   activeTocItemTop +
                   activeTocItemHeight -
                   tocTop -
-                  tocHeight
+                  tocHeight,
               );
           }
-        }
+        },
       );
 
-      watch(
-        () => route.fullPath,
-        () => updateTocMarker(),
-        { flush: "post", immediate: true }
-      );
+      watch(() => route.fullPath, updateTocMarker, {
+        flush: "post",
+        immediate: true,
+      });
     });
 
     return (): VNode | null => {
       const tocHeaders = props.items.length
         ? renderChildren(props.items, props.headerDepth)
         : page.value.headers
-        ? renderChildren(page.value.headers, props.headerDepth)
-        : null;
+          ? renderChildren(page.value.headers, props.headerDepth)
+          : null;
 
       return tocHeaders
         ? h("div", { class: "toc-place-holder" }, [

@@ -1,4 +1,4 @@
-import { type ShareServiceConfig } from "../../../shared/index.js";
+import type { ShareServiceConfig } from "../../../shared/index.js";
 
 export const telegram: ShareServiceConfig = {
   link: "https://t.me/share/url?url=[url]&text=[title]%0D%0A[description|summary]",

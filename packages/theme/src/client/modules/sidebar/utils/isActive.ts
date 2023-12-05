@@ -1,12 +1,12 @@
-import { type RouteLocationNormalizedLoaded } from "vue-router";
+import type { RouteLocationNormalizedLoaded } from "vue-router";
 import { isActiveLink } from "vuepress-shared/client";
 
-import { type ResolvedSidebarItem } from "../utils/index.js";
+import type { ResolvedSidebarItem } from "../utils/index.js";
 
 export const isActiveSidebarItem = (
   route: RouteLocationNormalizedLoaded,
   item: ResolvedSidebarItem,
-  exact = false
+  exact = false,
 ): boolean => {
   if ("activeMatch" in item)
     return new RegExp(item.activeMatch).test(route.path);
@@ -21,7 +21,7 @@ export const isActiveSidebarItem = (
 
 export const isMatchedSidebarItem = (
   route: RouteLocationNormalizedLoaded,
-  item: ResolvedSidebarItem
+  item: ResolvedSidebarItem,
 ): boolean => {
   if (item.type === "group")
     return (

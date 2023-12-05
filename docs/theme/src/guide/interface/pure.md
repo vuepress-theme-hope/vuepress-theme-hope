@@ -10,4 +10,36 @@ tag:
 
 If your site is a documentation-only site, and you prefer a clean style, you can enable pure mode by setting `pure: true` in theme options.
 
+::: code-tabs#language
+
+@tab TS
+
+```ts {7}
+// .vuepress/config.ts
+import { defineUserConfig } from "vuepress";
+import { hopeTheme } from "vuepress-theme-hope";
+
+export default defineUserConfig({
+  theme: hopeTheme({
+    pure: true,
+  }),
+});
+```
+
+@tab JS
+
+```js {7}
+// .vuepress/config.js
+import { defineUserConfig } from "vuepress";
+import { hopeTheme } from "vuepress-theme-hope";
+
+export default defineUserConfig({
+  theme: hopeTheme({
+    pure: true,
+  }),
+});
+```
+
+:::
+
 In this mode, we disable some fancy animations and some colors and just provide functionality.

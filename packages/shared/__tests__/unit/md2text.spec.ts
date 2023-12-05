@@ -9,7 +9,7 @@ describe("md2text", () => {
 \`\`\`js
 const a = 1;
 \`\`\`
-`)
+`),
     ).toEqual("");
 
     expect(
@@ -19,7 +19,7 @@ const a = 1;
 
 console.log(a)
 \`\`\`
-`)
+`),
     ).toEqual("");
 
     expect(
@@ -27,7 +27,7 @@ console.log(a)
 \`\`\`
 Plain text.
 \`\`\`
-`)
+`),
     ).toEqual("");
 
     expect(
@@ -43,7 +43,7 @@ console.log(a)
 Plain text.
 \`\`\`
 \`\`\`\`
-`)
+`),
     ).toEqual("");
   });
 
@@ -53,7 +53,7 @@ Plain text.
 ::: tip
 This is a tip.
 :::
-`)
+`),
     ).toEqual("This is a tip.");
 
     expect(
@@ -61,7 +61,7 @@ This is a tip.
 ::: tip A tip
 This is a tip.
 :::
-`)
+`),
     ).toEqual(`\
 A tip
 This is a tip.\
@@ -76,7 +76,7 @@ This is a tip.
 Some information.
 :::
 ::::
-`)
+`),
     ).toEqual(`\
 A tip
 This is a tip.
@@ -88,7 +88,7 @@ Some information.\
     expect(
       md2text(`\
 This is a footnote reference,[^1] and another.[^long-note]
-`)
+`),
     ).toEqual(`\
 This is a footnote reference, and another.\
 `);
@@ -96,7 +96,7 @@ This is a footnote reference, and another.\
     expect(
       md2text(`\
 [^1]: Some footnote.
-`)
+`),
     ).toEqual("");
   });
 
@@ -104,7 +104,7 @@ This is a footnote reference, and another.\
     expect(
       md2text(`\
 This is a paragraph with ~ markers with ~~d~~ and ~~some words~~ deleted.
-`)
+`),
     ).toEqual(`\
 This is a paragraph with ~ markers with  and  deleted.\
 `);
@@ -112,7 +112,7 @@ This is a paragraph with ~ markers with  and  deleted.\
     expect(
       md2text(`\
 [^1]: Some footnote.
-`)
+`),
     ).toEqual("");
   });
 
@@ -132,7 +132,7 @@ This is a paragraph with ~ markers with  and  deleted.\
 Hello World!
 
 Greetings with everyone.\
-`)
+`),
     ).toEqual(`\
 Hello World!
 Greetings with everyone.\
@@ -144,7 +144,7 @@ Greetings with everyone.\
       md2text(`
 - Item 1
 - Item 2\
-`)
+`),
     ).toEqual(`\
 Item 1;
 Item 2;\
@@ -155,7 +155,7 @@ Item 2;\
 - Item 1
 
 - Item 2\
-`)
+`),
     ).toEqual(`\
 Item 1;
 Item 2;\
@@ -169,7 +169,7 @@ Item 2;\
   - subitem a
   - subitem b
 \
-`)
+`),
     ).toEqual(`\
 Item 1;
 Item 2;
@@ -183,7 +183,7 @@ subitem b;\
       md2text(`
 1. Item 1
 2. Item 2
-`)
+`),
     ).toEqual(`\
 1. Item 1
 2. Item 2\
@@ -194,7 +194,7 @@ subitem b;\
 1. Item 1
 
 2. Item 2
-`)
+`),
     ).toEqual(`\
 1. Item 1
 2. Item 2\
@@ -208,7 +208,7 @@ subitem b;\
 > Hello World!
 >
 > > Greetings with everyone.\
-`)
+`),
     ).toEqual(`\
 Hello World!
 Greetings with everyone.\
@@ -219,13 +219,13 @@ Greetings with everyone.\
     expect(
       md2text(`\
 ![alt text](https://example.com/image.png)\
-`)
+`),
     ).toEqual("alt text");
 
     expect(
       md2text(`\
 ![](https://example.com/image.png)\
-`)
+`),
     ).toEqual("");
   });
 
@@ -236,7 +236,7 @@ Greetings with everyone.\
 __Bold text__
 *Italic text*
 _Italic text_
-`)
+`),
     ).toEqual(`\
 Bold text
 Bold text
@@ -251,7 +251,7 @@ Italic text\
 \`Inline code\`
 Text with \`inline code\` in it.
 Text with advanced \`\` inline code marker \` \`\` in it.
-`)
+`),
     ).toEqual(`\
 Inline code
 Text with inline code in it.
@@ -264,7 +264,7 @@ Text with advanced  inline code marker \`  in it.\
       md2text(`\
 [Link text](https://example.com)
 Some text with [link text](https://example.com) in it.
-`)
+`),
     ).toEqual(`\
 Link text (https://example.com)
 Some text with link text (https://example.com) in it.\

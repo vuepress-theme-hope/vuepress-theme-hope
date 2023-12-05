@@ -1,4 +1,4 @@
-import { type ThemeLocaleData } from "../../shared/index.js";
+import type { ThemeLocaleData } from "../../shared/index.js";
 
 export const huLocale: ThemeLocaleData = {
   lang: "hu-HU",
@@ -36,6 +36,7 @@ export const huLocale: ThemeLocaleData = {
     all: "Összes",
     intro: "Személyes bemutatkozás",
     star: "Csillag",
+    empty: "Nincs $text",
   },
 
   paginationLocales: {

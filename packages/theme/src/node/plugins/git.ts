@@ -1,5 +1,6 @@
-import { type App } from "@vuepress/core";
-import { type GitPluginOptions, gitPlugin } from "@vuepress/plugin-git";
+import type { App } from "@vuepress/core";
+import type { GitPluginOptions } from "@vuepress/plugin-git";
+import { gitPlugin } from "@vuepress/plugin-git";
 
 /**
  * @private
@@ -8,7 +9,7 @@ import { type GitPluginOptions, gitPlugin } from "@vuepress/plugin-git";
  */
 export const useGitPlugin = (
   app: App,
-  options: GitPluginOptions | false
+  options: GitPluginOptions | false,
 ): void => {
   const { plugins } = app.pluginApi;
 
@@ -28,7 +29,7 @@ export const removeGitPlugin = (app: App): void => {
   const { plugins } = app.pluginApi;
 
   const index = plugins.findIndex(
-    (plugin) => plugin.name === "@vuepress/plugin-git"
+    (plugin) => plugin.name === "@vuepress/plugin-git",
   );
 
   if (index !== -1) app.pluginApi.plugins.splice(index, 1);

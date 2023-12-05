@@ -1,21 +1,25 @@
-import { bundle } from "../../scripts/rollup.js";
+import { rollupBundle } from "../../scripts/rollup.js";
 
 export default [
-  ...bundle("node/index", {
-    external: ["cheerio", "chokidar"],
+  ...rollupBundle("node/index", {
+    external: ["cheerio", "chokidar", "slimsearch"],
     dtsExternal: ["vuepress-shared"],
   }),
-  ...bundle(
+  ...rollupBundle(
     {
       base: "client",
-      files: ["components/SearchResult", "config", "worker/index"],
+      files: ["components/SearchResult", "config", "index", "worker/index"],
     },
     {
-      external: ["vuepress-plugin-search-pro/result"],
+      external: [
+        "@internal/pagesComponents",
+        "slimsearch",
+        "vuepress-plugin-search-pro/result",
+      ],
       copy: [["client/styles", "client"]],
-    }
+    },
   ),
-  ...bundle("worker/original", {
+  ...rollupBundle("worker/index", {
     resolve: true,
     dts: false,
     external: [/^@internal\//],

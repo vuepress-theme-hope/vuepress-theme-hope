@@ -1,5 +1,5 @@
 /* eslint-disable @typescript-eslint/naming-convention */
-import { type HopeLang } from "./types.js";
+import type { HopeLang } from "./types.js";
 import { fromEntries, keys } from "../../shared/index.js";
 
 export const lang2PathConfig = {
@@ -28,5 +28,5 @@ export const lang2PathConfig = {
 export const supportedLangs = keys(lang2PathConfig);
 
 export const path2langConfig = fromEntries(
-  (supportedLangs as HopeLang[]).map((lang) => [lang2PathConfig[lang], lang])
+  (supportedLangs as HopeLang[]).map((lang) => [lang2PathConfig[lang], lang]),
 );

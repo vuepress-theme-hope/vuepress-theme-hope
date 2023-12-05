@@ -14,16 +14,14 @@ tag:
 
 主题使用 `vuepress-plugin-comment2` 提供评论支持，并将主题选项中的 `plugin.comment` 作为插件选项传递。
 
-`vuepress-plugin-comment2` 目前支持 3 种评论服务:
+`vuepress-plugin-comment2` 目前支持 4 种评论服务:
 
 - Artalk
 - Giscus
 - Twikoo
 - Waline
 
-::: note
-
-如果你不需要评论功能，请忽略此选项。
+::: note 如果你不需要评论功能，请忽略此选项。
 
 :::
 

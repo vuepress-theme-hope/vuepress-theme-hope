@@ -1,4 +1,4 @@
-import { type BasePageFrontMatter } from "vuepress-shared";
+import type { BasePageFrontMatter } from "vuepress-shared";
 
 export interface CopyrightPluginFrontmatter extends BasePageFrontMatter {
   copy?:
@@ -10,7 +10,20 @@ export interface CopyrightPluginFrontmatter extends BasePageFrontMatter {
          *
          * @default 100
          */
-        triggerWords?: number;
+        triggerLength?: number;
+
+        /**
+         * Max length that allows to copy
+         *
+         * @description 0 means unlimited
+         *
+         * 允许复制的最大字数
+         *
+         * @description 0 表示无限制
+         *
+         * @default 0
+         */
+        maxLength?: number;
 
         /**
          * Disable copy

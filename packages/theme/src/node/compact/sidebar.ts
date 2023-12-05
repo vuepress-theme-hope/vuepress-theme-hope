@@ -8,15 +8,15 @@ import {
 } from "vuepress-shared/node";
 
 import { deprecatedLogger, droppedLogger } from "./utils.js";
-import {
-  type SidebarArrayOptions,
-  type SidebarItem,
-  type SidebarOptions,
+import type {
+  SidebarArrayOptions,
+  SidebarItem,
+  SidebarOptions,
 } from "../../shared/index.js";
 import { logger } from "../utils.js";
 
 const handleArraySidebarOptions = (
-  config: SidebarArrayOptions
+  config: SidebarArrayOptions,
 ): SidebarArrayOptions =>
   config
     .map((item) => {
@@ -36,7 +36,7 @@ const handleArraySidebarOptions = (
             deprecatedOption,
             newOption,
             scope: "sidebar",
-          })
+          }),
         );
 
         // @ts-ignore
@@ -56,7 +56,7 @@ const handleArraySidebarOptions = (
  * @deprecated You should use V2 standard sidebar config and avoid using it
  */
 export const convertSidebarOptions = (
-  config: SidebarOptions | unknown
+  config: unknown,
 ): SidebarOptions | false => {
   if (config === false || config === "structure" || config === "heading")
     return config;
@@ -76,17 +76,17 @@ export const convertSidebarOptions = (
           return [key, <"structure" | "heading" | false>value];
 
         logger.error(
-          '"sidebar" value should be an array, "structure", "heading" or false when setting as an object'
+          '"sidebar" value should be an array, "structure", "heading" or false when setting as an object',
         );
 
         return [key, false];
-      })
+      }),
     );
 
   logger.error(
     `${colors.magenta(
-      "sidebar"
-    )} config should be: an array, an object, "structure", "heading" or false`
+      "sidebar",
+    )} config should be: an array, an object, "structure", "heading" or false`,
   );
 
   return false;

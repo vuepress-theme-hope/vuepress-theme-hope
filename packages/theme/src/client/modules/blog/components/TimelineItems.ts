@@ -1,6 +1,7 @@
-import { type PageHeader } from "@vuepress/client";
-import { type VNode, computed, defineComponent, h } from "vue";
-import { RouterLink } from "vue-router";
+import type { PageHeader } from "@vuepress/client";
+import type { VNode } from "vue";
+import { computed, defineComponent, h } from "vue";
+import { VPLink } from "vuepress-shared/client";
 
 import DropTransition from "@theme-hope/components/transitions/DropTransition";
 import { useThemeLocaleData } from "@theme-hope/composables/index";
@@ -25,7 +26,7 @@ export default defineComponent({
     const hint = computed(
       () =>
         blogOptions.value.timeline ||
-        themeLocale.value.blogLocales.timelineTitle
+        themeLocale.value.blogLocales.timelineTitle,
     );
 
     const items = computed(() =>
@@ -34,7 +35,7 @@ export default defineComponent({
         level: 2,
         slug: year.toString(),
         children: [],
-      }))
+      })),
     );
 
     return (): VNode =>
@@ -52,7 +53,7 @@ export default defineComponent({
                 h(
                   "h3",
                   { key: "title", id: year, class: "timeline-year-title" },
-                  h("span", year)
+                  h("span", year),
                 ),
                 h("li", { key: "content", class: "timeline-year-list" }, [
                   h(
@@ -62,21 +63,21 @@ export default defineComponent({
                       h("li", { class: "timeline-item" }, [
                         h("span", { class: "timeline-date" }, date),
                         h(
-                          RouterLink,
+                          VPLink,
                           {
                             class: "timeline-title",
                             to: path,
                           },
-                          () => info[ArticleInfoType.title]
+                          () => info[ArticleInfoType.title],
                         ),
-                      ])
-                    )
+                      ]),
+                    ),
                   ),
                 ]),
-              ]
-            )
+              ],
+            ),
           ),
-        ])
+        ]),
       );
   },
 });

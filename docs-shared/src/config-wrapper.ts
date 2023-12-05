@@ -1,9 +1,9 @@
-import { type UserConfig, defineUserConfig } from "@vuepress/cli";
-import { type HeadConfig } from "@vuepress/core";
+import type { UserConfig } from "@vuepress/cli";
+import { defineUserConfig } from "@vuepress/cli";
+import type { HeadConfig } from "@vuepress/core";
 import { docsearchPlugin } from "@vuepress/plugin-docsearch";
 import { getDirname, path } from "@vuepress/utils";
 import { redirectPlugin } from "vuepress-plugin-redirect";
-import { removePWAPlugin } from "vuepress-plugin-remove-pwa";
 import { addViteOptimizeDepsInclude } from "vuepress-shared/node";
 
 const __dirname = getDirname(import.meta.url);
@@ -28,13 +28,13 @@ export const config = (
     indexName,
     pwa = false,
   }: ConfigOptions,
-  { alias = {}, head = [], plugins = [], ...config }: UserConfig
+  { alias = {}, head = [], plugins = [], ...config }: UserConfig,
 ): UserConfig => {
   const docsBase = IS_NETLIFY
     ? "/"
     : base
-    ? <`/${string}/`>`/v2/${base}/`
-    : "/v2/";
+      ? <`/${string}/`>`/v2/${base}/`
+      : "/v2/";
   const docsearchIndexName =
     indexName === false ? false : `vuepress-theme-hope-${indexName || name}`;
 
@@ -44,8 +44,9 @@ export const config = (
     dest: "./dist",
 
     head: [
-      ...(pwa === false
-        ? <HeadConfig[]>[
+      ...(pwa
+        ? []
+        : <HeadConfig[]>[
             [
               "link",
               {
@@ -97,8 +98,7 @@ export const config = (
                 content: "black",
               },
             ],
-          ]
-        : []),
+          ]),
       ...head,
     ],
     markdown: {
@@ -114,7 +114,7 @@ export const config = (
               appId: "VXIEHELDL1",
               apiKey: "595796f71b6ba14326719682c3738c0c",
               indexName: docsearchIndexName,
-              indexBase: "/v2/",
+              indexBase: base ? <`/${string}/`>`/v2/${base}/` : "/v2/",
               locales: {
                 "/zh/": {
                   placeholder: "搜索文档",
@@ -161,20 +161,18 @@ export const config = (
             }),
           ]
         : []),
-      ...(pwa === false ? [removePWAPlugin()] : []),
       redirectPlugin({ switchLocale: "modal" }),
       ...plugins,
     ],
 
     alias: {
-      "@NetlifyBadge": path.resolve(__dirname, "./components/NetlifyBadge.js"),
       "@theme-hope/components/HeroInfo": path.resolve(
         __dirname,
-        "./components/HopeHero.js"
+        "./components/HopeHero.js",
       ),
       "@theme-hope/components/NotFoundHint": path.resolve(
         __dirname,
-        "./components/HopeNotFoundHint.js"
+        "./components/HopeNotFoundHint.js",
       ),
       ...alias,
     },
@@ -189,6 +187,29 @@ export const config = (
       ]);
     },
 
+    onInitialized: (app) => {
+      if (IS_NETLIFY) {
+        app.pages.find((page) => page.path === "/")!.frontmatter["footer"] = `\
+<a href="https://www.netlify.com" target="_blank">
+  <img src="https://www.netlify.com/img/global/badges/netlify-light.svg" alt="Deploys by Netlify" data-mode="lightmode-only">
+  <img src="https://www.netlify.com/img/global/badges/netlify-dark.svg" alt="Deploys by Netlify" data-mode="darkmode-only">
+</a>
+<br/>
+Theme by <a href="https://theme-hope.vuejs.press" target="_blank">VuePress Theme Hope</a> | MIT Licensed, Copyright © 2019-present Mr.Hope
+`;
+        app.pages.find((page) => page.path === "/zh/")!.frontmatter["footer"] =
+          `\
+<a href="https://www.netlify.com" target="_blank">
+  <img src="https://www.netlify.com/img/global/badges/netlify-light.svg" alt="由 Netlify 部署" data-mode="lightmode-only">
+  <img src="https://www.netlify.com/img/global/badges/netlify-dark.svg" alt="由 Netlify 部署" data-mode="darkmode-only">
+</a>
+<br/>
+使用 <a href="https://theme-hope.vuejs.press/zh/" target="_blank">VuePress Theme Hope</a> 主题 | MIT 协议, 版权所有 © 2019-present Mr.Hope
+`;
+      }
+    },
+
+    shouldPreload: false,
     ...(pwa ? { shouldPrefetch: false } : {}),
 
     clientConfigFile: path.resolve(__dirname, "./client.js"),

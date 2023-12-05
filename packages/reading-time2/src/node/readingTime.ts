@@ -1,4 +1,4 @@
-import { type ReadingTime } from "../shared/index.js";
+import type { ReadingTime } from "../shared/index.js";
 
 /**
  * Extract Latin words from content
@@ -22,7 +22,7 @@ export const getWordNumber = (content: string): number =>
   (getWords(content)?.reduce<number>(
     (accumulator, word) =>
       accumulator + (word.trim() === "" ? 0 : word.trim().split(/\s+/u).length),
-    0
+    0,
   ) || 0) + (getChinese(content)?.length || 0);
 
 /**
@@ -30,7 +30,7 @@ export const getWordNumber = (content: string): number =>
  */
 export const getReadingTime = (
   content: string,
-  wordsPerMinute = 300
+  wordsPerMinute = 300,
 ): ReadingTime => {
   const words = getWordNumber(content || "");
 

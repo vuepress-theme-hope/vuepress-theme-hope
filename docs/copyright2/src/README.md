@@ -2,16 +2,17 @@
 home: true
 title: Home
 icon: home
-heroImage: /logo.svg
 heroText: vuepress-plugin-copyright2
 tagline: Append copyright info during copy
 actions:
-  - text: Guide 💡
-    link: /guide.html
+  - text: Get Started
+    icon: lightbulb
+    link: ./guide.html
     type: primary
 
-  - text: Config 🛠
-    link: /config.html
+  - text: Config
+    icon: tools
+    link: ./config.html
 
 footer: Theme by <a href="https://theme-hope.vuejs.press" target="_blank">VuePress Theme Hope</a> | MIT Licensed, Copyright © 2019-present Mr.Hope
 
@@ -79,9 +80,3 @@ export default {
 ```
 
 :::
-
-<NetlifyBadge />
-
-<script setup lang="ts">
-import NetlifyBadge from "@NetlifyBadge";
-</script>

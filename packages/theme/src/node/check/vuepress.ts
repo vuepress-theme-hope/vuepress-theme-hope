@@ -1,6 +1,6 @@
 import { createRequire } from "node:module";
 
-import { type App } from "@vuepress/core";
+import type { App } from "@vuepress/core";
 import { colors, fs, path } from "@vuepress/utils";
 import { keys } from "vuepress-shared/node";
 
@@ -58,7 +58,7 @@ export const checkVuePressVersion = (app: App): boolean => {
         ...filteredMainPackagesVersions,
       ]
         .map((version) => colors.yellow(version))
-        .join(", ")}`
+        .join(", ")}`,
     );
 
     return false;
@@ -78,10 +78,10 @@ export const checkVuePressVersion = (app: App): boolean => {
     if (version !== mainVersion) {
       console.error(
         `VuePress version mismatch: ${colors.cyan(
-          pkg
+          pkg,
         )} is using ${colors.magenta(
-          version
-        )} while the main VuePress is using ${colors.magenta(mainVersion)}`
+          version,
+        )} while the main VuePress is using ${colors.magenta(mainVersion)}`,
       );
 
       return false;

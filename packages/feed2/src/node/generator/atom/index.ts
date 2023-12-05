@@ -1,15 +1,15 @@
 import { isArray } from "vuepress-shared/node";
 import { js2xml } from "xml-js";
 
-import {
-  type AtomAuthor,
-  type AtomCategory,
-  type AtomContent,
-  type AtomEntry,
+import type {
+  AtomAuthor,
+  AtomCategory,
+  AtomContent,
+  AtomEntry,
 } from "./typings.js";
-import { type FeedAuthor, type FeedCategory } from "../../typings/index.js";
+import type { FeedAuthor, FeedCategory } from "../../typings/index.js";
 import { FEED_GENERATOR, encodeXML } from "../../utils/index.js";
-import { type Feed } from "../feed.js";
+import type { Feed } from "../feed.js";
 
 const getAuthor = (author: FeedAuthor): AtomAuthor => {
   const { name = "Unknown", email, url } = author;
@@ -146,7 +146,7 @@ export const renderAtom = (feed: Feed): string => {
     // contributor
     if (item.contributor)
       entry.contributor = item.contributor.map((contributor) =>
-        getAuthor(contributor)
+        getAuthor(contributor),
       );
 
     // published

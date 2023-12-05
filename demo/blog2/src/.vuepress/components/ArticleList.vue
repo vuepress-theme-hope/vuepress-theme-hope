@@ -29,13 +29,25 @@
 </template>
 
 <script lang="ts" setup>
-defineProps({
-  items: {
-    type: Array,
-    default: () => [],
-  },
-  isTimeline: Boolean,
-});
+interface Article {
+  path: string;
+  info: {
+    title: string;
+    author?: string;
+    date: string;
+    category?: string[];
+    tag?: string[];
+    excerpt?: string;
+  };
+}
+
+withDefaults(
+  defineProps<{
+    items: Article[];
+    isTimeline: boolean;
+  }>(),
+  { items: () => [] },
+);
 </script>
 <style lang="scss">
 @use "@vuepress/theme-default/styles/mixins";
@@ -57,7 +69,7 @@ defineProps({
   border-radius: 0.4rem;
   color: var(--c-text);
 
-  text-align: left;
+  text-align: start;
 
   @media (max-width: 419px) {
     border-radius: 0;
@@ -80,7 +92,7 @@ defineProps({
 
       position: absolute;
       bottom: 0;
-      left: 0;
+      inset-inline-start: 0;
 
       width: 100%;
       height: 2px;
@@ -110,7 +122,7 @@ defineProps({
     flex-shrink: 0;
 
     > span {
-      margin-right: 0.5em;
+      margin-inline-end: 0.5em;
       line-height: 1.8;
     }
   }

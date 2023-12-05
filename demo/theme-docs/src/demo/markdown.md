@@ -1,6 +1,6 @@
 ---
 title: Markdown Enhance
-icon: markdown
+icon: fab fa-markdown
 order: 2
 category:
   - Guide
@@ -42,7 +42,7 @@ For these extensions, please read [Markdown extensions in VuePress](https://them
 
 By using [`vuepress-plugin-md-enhance`][md-enhance], the theme extends more Markdown syntax and provides richer writing functions.
 
-#### Custom Container
+#### Hint box
 
 ::: v-pre
 
@@ -52,7 +52,7 @@ Safely use {{ variable }} in Markdown.
 
 ::: info Custom Title
 
-A custom information container with `code`, [link](#custom-container).
+A custom information container with `code`, [link](#hint-box).
 
 ```js
 const a = 1;
@@ -72,9 +72,9 @@ A custom warning container
 
 :::
 
-::: danger Custom Title
+::: caution Custom Title
 
-A custom danger container
+A custom caution container
 
 :::
 
@@ -84,7 +84,7 @@ A custom details container
 
 :::
 
-- [View Detail](https://theme-hope.vuejs.press/guide/markdown/container.html)
+- [View Detail](https://theme-hope.vuejs.press/guide/markdown/hint.html)
 
 #### Tabs
 
@@ -187,17 +187,72 @@ Support setting color scheme and size
 
 - [View Detail](https://theme-hope.vuejs.press/guide/markdown/image.html)
 
-#### Card
+#### Component
 
-```card
+```component VPCard
 title: Mr.Hope
 desc: Where there is light, there is hope
-logo: https://mrhope.site/logo.svg
-link: https://mrhope.site
+logo: https://mister-hope.com/logo.svg
+link: https://mister-hope.com
 color: rgba(253, 230, 138, 0.15)
 ```
 
-- [View Detail](https://theme-hope.vuejs.press/guide/markdown/card.html)
+- [View Detail](https://theme-hope.vuejs.press/guide/markdown/component.html)
+
+#### Include files
+
+<!-- @include: ./README.md{11-17} -->
+
+- [View Detail](https://theme-hope.vuejs.press/guide/markdown/include.html)
+
+#### Code Demo
+
+::: normal-demo A normal demo
+
+```html
+<h1>VuePress Theme Hope</h1>
+<p>Is <span id="very">very</span> powerful!</p>
+```
+
+```js
+document.querySelector("#very").addEventListener("click", () => {
+  alert("Very powerful!");
+});
+```
+
+```css
+span {
+  color: red;
+}
+```
+
+:::
+
+- [View Detail](https://theme-hope.vuejs.press/guide/markdown/demo.html)
+
+#### Stylize
+
+Donate Mr.Hope a cup of coffee. _Recommended_
+
+- [View Detail](https://theme-hope.vuejs.press/guide/markdown/stylize.html)
+
+#### Playground
+
+::: playground#ts TS demo
+
+@file index.ts
+
+```ts
+const msg = "hello world";
+
+const speak = (msg: string) => console.log(msg);
+
+speak(msg);
+```
+
+:::
+
+- [View Detail](https://theme-hope.vuejs.press/guide/markdown/playground.html)
 
 #### Chart
 
@@ -233,7 +288,7 @@ color: rgba(253, 230, 138, 0.15)
 
 :::
 
-- [View Detail](https://theme-hope.vuejs.press/guide/markdown/chart.html)
+- [View Detail](https://theme-hope.vuejs.press/guide/markdown/chartjs.html)
 
 #### Echarts
 
@@ -307,61 +362,6 @@ $$
 
 - [View Detail](https://theme-hope.vuejs.press/guide/markdown/tex.html)
 
-#### Include files
-
-<!-- @include: ./README.md{11-17} -->
-
-- [View Detail](https://theme-hope.vuejs.press/guide/markdown/include.html)
-
-#### Code Demo
-
-::: normal-demo A normal demo
-
-```html
-<h1>VuePress Theme Hope</h1>
-<p>Is <span id="very">very</span> powerful!</p>
-```
-
-```js
-document.querySelector("#very").addEventListener("click", () => {
-  alert("Very powerful!");
-});
-```
-
-```css
-span {
-  color: red;
-}
-```
-
-:::
-
-- [View Detail](https://theme-hope.vuejs.press/guide/markdown/demo.html)
-
-#### Stylize
-
-Donate Mr.Hope a cup of coffee. _Recommended_
-
-- [View Detail](https://theme-hope.vuejs.press/guide/markdown/stylize.html)
-
-#### Playground
-
-::: playground#ts TS demo
-
-@file index.ts
-
-```ts
-const msg = "hello world";
-
-const speak = (msg: string) => console.log(msg);
-
-speak(msg);
-```
-
-:::
-
-- [View Detail](https://theme-hope.vuejs.press/guide/markdown/playground.html)
-
 #### Vue Playground
 
 ::: vue-playground Vue Playground
@@ -391,7 +391,7 @@ const msg = ref("Hello World!");
 
 ## Slide 1
 
-A paragraph with some text and a [link](https://mrhope.site)
+A paragraph with some text and a [link](https://mister-hope.com)
 
 ---
 
@@ -418,6 +418,6 @@ $$
 
 @slideend
 
-- [View Detail](https://theme-hope.vuejs.press/guide/markdown/presentation.html)
+- [View Detail](https://theme-hope.vuejs.press/guide/markdown/revealjs.html)
 
 [md-enhance]: https://md-enhance.vuejs.press/

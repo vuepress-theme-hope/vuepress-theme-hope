@@ -1,21 +1,23 @@
-import { type Page, type PageFrontmatter } from "@vuepress/core";
-import { type GitData } from "@vuepress/plugin-git";
+import type { Page } from "@vuepress/core";
+import type { GitData } from "@vuepress/plugin-git";
 
-import { SEOPluginFrontmatter } from "./frontmatter.js";
+import type { SEOPluginFrontmatter } from "./frontmatter.js";
 
-export interface SeoPluginPageData
-  extends Record<string | number | symbol, unknown> {
+export interface SeoPluginPageData {
   autoDesc?: true;
   excerpt?: string;
   git?: GitData;
 }
 
 export type ExtendPage<
-  ExtraPageData extends Record<string | number | symbol, unknown> &
-    Partial<SeoPluginPageData> = SeoPluginPageData,
-  ExtraPageFrontmatter extends PageFrontmatter<SEOPluginFrontmatter> = PageFrontmatter<SEOPluginFrontmatter>,
-  ExtraPageFields extends Record<string | number | symbol, unknown> = Record<
-    never,
-    never
-  >
-> = Page<ExtraPageData, ExtraPageFrontmatter, ExtraPageFields>;
+  ExtraPageData extends Record<string, unknown> = Record<never, never>,
+  ExtraPageFrontmatter extends Record<string, unknown> = Record<
+    string,
+    unknown
+  >,
+  ExtraPageFields extends Record<string, unknown> = Record<never, never>,
+> = Page<
+  ExtraPageData & SeoPluginPageData,
+  ExtraPageFrontmatter & SEOPluginFrontmatter,
+  ExtraPageFields
+>;

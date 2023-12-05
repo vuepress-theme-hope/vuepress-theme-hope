@@ -105,6 +105,28 @@ Giscus 是一个基于 GitHub Discussion 的评论系统，启用简便。
 
 ## Waline
 
+::: code-tabs#shell
+
+@tab pnpm
+
+```bash
+pnpm add -D @waline/client
+```
+
+@tab yarn
+
+```bash
+yarn add -D @waline/client
+```
+
+@tab npm
+
+```bash
+npm i -D @waline/client
+```
+
+:::
+
 ### 获取 APP ID 和 APP Key
 
 请先 [登录](https://console.leancloud.app/login) 或 [注册](https://console.leancloud.app/register) `LeanCloud 国际版`, 进入 [控制台](https://console.leancloud.app/applist.html#/apps) 后点击左下角 [创建应用](https://console.leancloud.app/applist.html#/newapp)。创建应用后进入该应用，选择左下角的 `设置` > `应用Key`，然后记下 `APP ID`,`APP Key` 和 `Master Key`。
@@ -168,9 +190,37 @@ Waline 评论的其他配置将在 <ProjectLink name="comment2" path="/zh/config
 
 ## Twikoo
 
+[Twikoo 官方文档](https://twikoo.js.org)
+
+::: code-tabs#shell
+
+@tab pnpm
+
+```bash
+pnpm add -D twikoo
+```
+
+@tab yarn
+
+```bash
+yarn add -D twikoo
+```
+
+@tab npm
+
+```bash
+npm i -D twikoo
+```
+
+:::
+
 ### Vercel 部署
 
-[查看视频教程](https://www.bilibili.com/video/BV1Fh411e7ZH)
+::: note
+
+Vercel 默认域名 `*.vercel.app` 在中国大陆访问速度较慢甚至无法访问，绑定自己的域名可以提高访问速度，其他部署方式请查阅官方文档。
+
+:::
 
 1. 申请 [MongoDB](https://www.mongodb.com/cloud/atlas/register) 账号
 1. 创建免费 MongoDB 数据库，区域推荐选择 `AWS / N. Virginia (us-east-1)`
@@ -184,7 +234,76 @@ Waline 评论的其他配置将在 <ProjectLink name="comment2" path="/zh/config
 1. 进入 Overview，点击 Domains 下方的链接，如果环境配置正确，可以看到 “Twikoo 云函数运行正常” 的提示
 1. Vercel Domains (包含 `https://` 前缀，例如 `https://xxx.vercel.app`) 即为你的环境 ID
 
+::: code-tabs#language
+
+@tab TS
+
+```ts
+// .vuepress/config.ts
+import { defineUserConfig } from "vuepress";
+import { hopeTheme } from "vuepress-theme-hope";
+
+export default defineUserConfig({
+  theme: hopeTheme({
+    plugins: {
+      comment: {
+        provider: "Twikoo",
+        envId: "YOUR_SERVER_URL", // your server url
+      },
+    },
+  }),
+});
+```
+
+@tab JS
+
+```js
+// .vuepress/config.js
+import { hopeTheme } from "vuepress-theme-hope";
+
+export default {
+  theme: hopeTheme({
+    plugins: {
+      comment: {
+        provider: "Twikoo",
+        envId: "YOUR_SERVER_URL", // your server url
+      },
+    },
+  }),
+};
+```
+
+:::
+
+::: tip
+
+点击评论窗口的“小齿轮”图标，开启 Twikoo 管理面板并设置管理员密码。
+
+:::
+
 ## Artalk
+
+::: code-tabs#shell
+
+@tab pnpm
+
+```bash
+pnpm add -D artalk
+```
+
+@tab yarn
+
+```bash
+yarn add -D artalk
+```
+
+@tab npm
+
+```bash
+npm i -D artalk
+```
+
+:::
 
 ### 部署 Artalk 服务端
 

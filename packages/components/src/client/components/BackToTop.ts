@@ -1,8 +1,8 @@
 import { usePageFrontmatter } from "@vuepress/client";
 import { useElementSize, useWindowScroll, useWindowSize } from "@vueuse/core";
+import type { VNode } from "vue";
 import {
   Transition,
-  type VNode,
   computed,
   defineComponent,
   h,
@@ -12,7 +12,7 @@ import {
 import { useLocaleConfig } from "vuepress-shared/client";
 
 import { BackToTopIcon } from "./icons.js";
-import { type BackToTopLocaleConfig } from "../../shared/index.js";
+import type { BackToTopLocaleConfig } from "../../shared/index.js";
 
 import "balloon-css/balloon.css";
 import "../styles/back-to-top.scss";
@@ -52,11 +52,11 @@ export default defineComponent({
     /** Whether to display button */
     const show = computed(
       () =>
-        pageFrontmatter.value.backToTop !== false && y.value > props.threshold
+        pageFrontmatter.value.backToTop !== false && y.value > props.threshold,
     );
 
     const progress = computed(
-      () => y.value / (bodyHeight.value - windowHeight.value)
+      () => (y.value / (bodyHeight.value - windowHeight.value)) * 100,
     );
 
     onMounted(() => {
@@ -70,7 +70,7 @@ export default defineComponent({
               "button",
               {
                 type: "button",
-                class: "back-to-top",
+                class: "vp-back-to-top-button",
                 // hint text
                 "aria-label": locale.value.backToTop,
                 "data-balloon-pos": "left",
@@ -83,24 +83,32 @@ export default defineComponent({
                 props.noProgress
                   ? null
                   : h(
-                      "svg",
-                      { class: "scroll-progress" },
-                      h("circle", {
-                        cx: "50%",
-                        cy: "50%",
-                        style: {
-                          "stroke-dasharray": `calc(${
-                            Math.PI * progress.value * 100
-                          }% - ${4 * Math.PI}px) calc(${Math.PI * 100}% - ${
-                            4 * Math.PI
-                          }px)`,
-                        },
-                      })
+                      "span",
+                      {
+                        class: "vp-scroll-progress",
+                        role: "progressbar",
+                        "aria-labelledby": "loadinglabel",
+                        "aria-valuenow": progress.value,
+                      },
+                      h(
+                        "svg",
+                        h("circle", {
+                          cx: "50%",
+                          cy: "50%",
+                          style: {
+                            "stroke-dasharray": `calc(${
+                              Math.PI * progress.value
+                            }% - ${4 * Math.PI}px) calc(${Math.PI * 100}% - ${
+                              4 * Math.PI
+                            }px)`,
+                          },
+                        }),
+                      ),
                     ),
                 h(BackToTopIcon),
-              ]
+              ],
             )
-          : null
+          : null,
       );
   },
 });

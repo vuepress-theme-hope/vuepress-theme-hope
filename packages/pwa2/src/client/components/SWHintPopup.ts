@@ -1,12 +1,5 @@
-import {
-  type SlotsType,
-  Transition,
-  type VNode,
-  defineComponent,
-  h,
-  onMounted,
-  ref,
-} from "vue";
+import type { SlotsType, VNode } from "vue";
+import { Transition, defineComponent, h, onMounted, ref } from "vue";
 import { useLocaleConfig } from "vuepress-shared/client";
 
 import { UpdateIcon } from "./icons.js";
@@ -22,7 +15,7 @@ export default defineComponent({
     default?: (props: {
       enabled: boolean;
       uninstall: () => void;
-    }) => VNode[] | VNode;
+    }) => VNode[] | VNode | null;
   }>,
 
   setup(_props, { slots }) {
@@ -74,9 +67,9 @@ export default defineComponent({
                 [
                   locale.value.hint,
                   h("span", { class: "icon-wrapper" }, h(UpdateIcon)),
-                ]
+                ],
               )
-            : null)
+            : null),
       );
   },
 });

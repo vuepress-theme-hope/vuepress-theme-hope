@@ -83,7 +83,7 @@ export interface GetLocalesOptions<T extends LocaleData> {
 }
 
 export const getLocales: <T extends LocaleData>(
-  options: GetLocalesOptions<T>
+  options: GetLocalesOptions<T>,
 ) => RequiredLocaleConfig<T>;
 ```
 

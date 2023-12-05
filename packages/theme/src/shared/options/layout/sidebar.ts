@@ -1,6 +1,6 @@
-import { type ThemeNormalPageFrontmatter } from "../../frontmatter/index.js";
-import { type ThemePageData } from "../../page.js";
-import { type SidebarOptions } from "../../sidebar.js";
+import type { ThemeNormalPageFrontmatter } from "../../frontmatter/index.js";
+import type { ThemePageData } from "../../page.js";
+import type { SidebarOptions } from "../../sidebar.js";
 
 export interface SidebarFileInfo {
   type: "file";
@@ -44,7 +44,7 @@ export type SidebarSorterKeyword =
 
 export type SidebarSorterFunction = (
   infoA: SidebarInfo,
-  infoB: SidebarInfo
+  infoB: SidebarInfo,
 ) => number;
 
 export type SidebarSorter =

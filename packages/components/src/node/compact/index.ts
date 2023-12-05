@@ -1,2 +1,2 @@
-export * from "./locales.js";
 export * from "./convert.js";
+export * from "./locales.js";

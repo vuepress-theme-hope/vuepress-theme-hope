@@ -1,21 +1,21 @@
 import { describe, expect, it } from "vitest";
 
-import { getMatchedContent } from "../src/client/utils/matchContent";
+import { getMatchedContent } from "../src/client/worker/matchContent.js";
 
 describe("matchContent", () => {
   it("Should match content", () => {
     expect(getMatchedContent("a b c d", "a")).toEqual([
-      ["strong", "a"],
+      ["mark", "a"],
       " b c d",
     ]);
     expect(getMatchedContent("a b c d", "b")).toEqual([
       "a ",
-      ["strong", "b"],
+      ["mark", "b"],
       " c d",
     ]);
     expect(getMatchedContent("apple banana cherry", "banana")).toEqual([
       "apple ",
-      ["strong", "banana"],
+      ["mark", "banana"],
       " cherry",
     ]);
   });
@@ -27,9 +27,9 @@ describe("matchContent", () => {
   it("Should match content multiple times", () => {
     expect(getMatchedContent("a b c d c b a", "b")).toEqual([
       "a ",
-      ["strong", "b"],
+      ["mark", "b"],
       " c d c ",
-      ["strong", "b"],
+      ["mark", "b"],
       " a",
     ]);
   });
@@ -38,224 +38,224 @@ describe("matchContent", () => {
     expect(
       getMatchedContent(
         "The apple is red, and it's veeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeery delicious",
-        "apple"
-      )
+        "apple",
+      ),
     ).toEqual([
       "The ",
-      ["strong", "apple"],
+      ["mark", "apple"],
       " is red, and it's veeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeee… ",
     ]);
 
     expect(
       getMatchedContent(
         "The apple is red, and it's veeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeery delicious. The banana is yellow, and it's veeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeery delicious",
-        "is"
-      )
+        "is",
+      ),
     ).toEqual([
       "The apple ",
-      ["strong", "is"],
+      ["mark", "is"],
       " red, and it's veeee … licious. The banana ",
-      ["strong", "is"],
+      ["mark", "is"],
       " yellow, and it's veeeeeeeeeeeeeeeeeeeeeeee… ",
     ]);
 
     expect(
       getMatchedContent(
         "The apple is red, and it's veeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeery delicious. The banana is yellow, and it's veeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeery delicious",
-        "The"
-      )
+        "The",
+      ),
     ).toEqual([
-      ["strong", "The"],
+      ["mark", "The"],
       " apple is red, and i … eeeeeery delicious. ",
-      ["strong", "The"],
+      ["mark", "The"],
       " banana is yellow, and it's veeeeeeeeeeeeeeeeeeeeee… ",
     ]);
 
     expect(
       getMatchedContent(
         "The apple is red, and it's veeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeery delicious. The banana is yellow, and it's veeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeery delicious",
-        "delicious"
-      )
+        "delicious",
+      ),
     ).toEqual([
       "… eeeeeeeeeeeeeeeeery ",
-      ["strong", "delicious"],
+      ["mark", "delicious"],
       ". The banana is yell … eeeeeeeeeeeeeeeeery ",
-      ["strong", "delicious"],
+      ["mark", "delicious"],
     ]);
 
     expect(
       getMatchedContent(
         "The apple is red, and it's veeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeery delicious. The banana is yellow, and it's veeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeery delicious",
-        "T"
-      )
+        "T",
+      ),
     ).toEqual([
-      ["strong", "T"],
+      ["mark", "T"],
       "he apple is red, and …  apple is red, and i",
-      ["strong", "T"],
+      ["mark", "T"],
       "'s veeeeeeeeeeeeeeee … eeeeeery delicious. ",
-      ["strong", "T"],
+      ["mark", "T"],
       "he banana is yellow, … ana is yellow, and i",
-      ["strong", "T"],
+      ["mark", "T"],
       " …",
     ]);
 
     expect(
       getMatchedContent(
         "The apple is red, and it's veeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeery delicious. The banana is yellow, and it's veeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeery delicious",
-        "h"
-      )
+        "h",
+      ),
     ).toEqual([
       "T",
-      ["strong", "h"],
+      ["mark", "h"],
       "e apple is red, and  … eeeeery delicious. T",
-      ["strong", "h"],
+      ["mark", "h"],
       "e banana is yellow, and it's veeeeeeeeeeeeeeeeeeeeeeee… ",
     ]);
 
     expect(
       getMatchedContent(
         "The apple is red, and it's veeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeery delicious. The banana is yellow, and it's veeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeery delicious",
-        "Th"
-      )
+        "Th",
+      ),
     ).toEqual([
-      ["strong", "Th"],
+      ["mark", "Th"],
       "e apple is red, and  … eeeeeery delicious. ",
-      ["strong", "Th"],
+      ["mark", "Th"],
       "e banana is yellow, and it's veeeeeeeeeeeeeeeeeeeeeee… ",
     ]);
 
     expect(
       getMatchedContent(
         "The apple is red, and it's veeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeery delicious. The banana is yellow, and it's veeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeery delicious",
-        "e"
-      )
+        "e",
+      ),
     ).toEqual([
       "Th",
-      ["strong", "e"],
+      ["mark", "e"],
       " appl",
-      ["strong", "e"],
+      ["mark", "e"],
       " is r",
-      ["strong", "e"],
+      ["mark", "e"],
       "d, and it's v",
-      ["strong", "e"],
-      ["strong", "e"],
-      ["strong", "e"],
-      ["strong", "e"],
-      ["strong", "e"],
-      ["strong", "e"],
-      ["strong", "e"],
-      ["strong", "e"],
-      ["strong", "e"],
-      ["strong", "e"],
-      ["strong", "e"],
-      ["strong", "e"],
-      ["strong", "e"],
-      ["strong", "e"],
-      ["strong", "e"],
-      ["strong", "e"],
-      ["strong", "e"],
-      ["strong", "e"],
-      ["strong", "e"],
-      ["strong", "e"],
-      ["strong", "e"],
-      ["strong", "e"],
-      ["strong", "e"],
-      ["strong", "e"],
-      ["strong", "e"],
-      ["strong", "e"],
-      ["strong", "e"],
-      ["strong", "e"],
-      ["strong", "e"],
-      ["strong", "e"],
-      ["strong", "e"],
-      ["strong", "e"],
-      ["strong", "e"],
-      ["strong", "e"],
-      ["strong", "e"],
-      ["strong", "e"],
-      ["strong", "e"],
-      ["strong", "e"],
-      ["strong", "e"],
-      ["strong", "e"],
-      ["strong", "e"],
-      ["strong", "e"],
-      ["strong", "e"],
-      ["strong", "e"],
-      ["strong", "e"],
-      ["strong", "e"],
-      ["strong", "e"],
-      ["strong", "e"],
-      ["strong", "e"],
-      ["strong", "e"],
-      ["strong", "e"],
-      ["strong", "e"],
-      ["strong", "e"],
-      ["strong", "e"],
-      ["strong", "e"],
-      ["strong", "e"],
-      ["strong", "e"],
-      ["strong", "e"],
-      ["strong", "e"],
-      ["strong", "e"],
-      ["strong", "e"],
-      ["strong", "e"],
-      ["strong", "e"],
-      ["strong", "e"],
-      ["strong", "e"],
-      ["strong", "e"],
-      ["strong", "e"],
-      ["strong", "e"],
-      ["strong", "e"],
-      ["strong", "e"],
-      ["strong", "e"],
-      ["strong", "e"],
+      ["mark", "e"],
+      ["mark", "e"],
+      ["mark", "e"],
+      ["mark", "e"],
+      ["mark", "e"],
+      ["mark", "e"],
+      ["mark", "e"],
+      ["mark", "e"],
+      ["mark", "e"],
+      ["mark", "e"],
+      ["mark", "e"],
+      ["mark", "e"],
+      ["mark", "e"],
+      ["mark", "e"],
+      ["mark", "e"],
+      ["mark", "e"],
+      ["mark", "e"],
+      ["mark", "e"],
+      ["mark", "e"],
+      ["mark", "e"],
+      ["mark", "e"],
+      ["mark", "e"],
+      ["mark", "e"],
+      ["mark", "e"],
+      ["mark", "e"],
+      ["mark", "e"],
+      ["mark", "e"],
+      ["mark", "e"],
+      ["mark", "e"],
+      ["mark", "e"],
+      ["mark", "e"],
+      ["mark", "e"],
+      ["mark", "e"],
+      ["mark", "e"],
+      ["mark", "e"],
+      ["mark", "e"],
+      ["mark", "e"],
+      ["mark", "e"],
+      ["mark", "e"],
+      ["mark", "e"],
+      ["mark", "e"],
+      ["mark", "e"],
+      ["mark", "e"],
+      ["mark", "e"],
+      ["mark", "e"],
+      ["mark", "e"],
+      ["mark", "e"],
+      ["mark", "e"],
+      ["mark", "e"],
+      ["mark", "e"],
+      ["mark", "e"],
+      ["mark", "e"],
+      ["mark", "e"],
+      ["mark", "e"],
+      ["mark", "e"],
+      ["mark", "e"],
+      ["mark", "e"],
+      ["mark", "e"],
+      ["mark", "e"],
+      ["mark", "e"],
+      ["mark", "e"],
+      ["mark", "e"],
+      ["mark", "e"],
+      ["mark", "e"],
+      ["mark", "e"],
+      ["mark", "e"],
+      ["mark", "e"],
+      ["mark", "e"],
+      ["mark", "e"],
+      ["mark", "e"],
+      ["mark", "e"],
+      ["mark", "e"],
       " …",
-      ["strong", "e"],
+      ["mark", "e"],
       " …",
     ]);
 
     expect(
       getMatchedContent(
         "The apple is red, and it's veeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeery delicious. The banana is yellow, and it's veeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeery delicious",
-        "s"
-      )
+        "s",
+      ),
     ).toEqual([
       "The apple i",
-      ["strong", "s"],
+      ["mark", "s"],
       " red, and it'",
-      ["strong", "s"],
+      ["mark", "s"],
       " veeeeeeeeeeeeeeeeee … eeeeeeeeery deliciou",
-      ["strong", "s"],
+      ["mark", "s"],
       ". The banana i",
-      ["strong", "s"],
+      ["mark", "s"],
       " yellow, and it'",
-      ["strong", "s"],
+      ["mark", "s"],
       " …",
     ]);
 
     expect(
       getMatchedContent(
         "The apple is red, and it's veeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeery delicious. The banana is yellow, and it's veeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeery delicious",
-        "u"
-      )
+        "u",
+      ),
     ).toEqual([
       "… eeeeeeeeeery delicio",
-      ["strong", "u"],
+      ["mark", "u"],
       "s. The banana is yel … eeeeeeeeeery delicio",
-      ["strong", "u"],
+      ["mark", "u"],
       "s",
     ]);
 
     expect(
       getMatchedContent(
         "The apple is red, and it's veeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeery delicious. The banana is yellow, and it's veeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeery delicious",
-        "us"
-      )
+        "us",
+      ),
     ).toEqual([
       "… eeeeeeeeeery delicio",
-      ["strong", "us"],
+      ["mark", "us"],
       ". The banana is yell … eeeeeeeeeery delicio",
-      ["strong", "us"],
+      ["mark", "us"],
     ]);
   });
 });

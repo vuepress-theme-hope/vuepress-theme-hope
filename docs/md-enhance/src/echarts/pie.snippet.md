@@ -1,6 +1,3 @@
-````md
-<!-- #region demo -->
-
 ::: echarts A nightingale chart
 
 ```json
@@ -76,6 +73,3 @@
 ```
 
 :::
-
-<!-- #endregion demo -->
-````

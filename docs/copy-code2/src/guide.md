@@ -3,7 +3,7 @@ title: Guide
 icon: lightbulb
 ---
 
-This plugin will automatically add a copy button to the bottom right corner of each code block.
+This plugin will automatically add a copy button to the top right corner of each code block.
 
 ## Code Block Selection
 

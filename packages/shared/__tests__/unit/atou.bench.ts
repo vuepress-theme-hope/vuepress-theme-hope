@@ -11,7 +11,7 @@ levels.forEach((level) => {
   const result = utoa(originalContent, level);
 
   console.log(
-    `level ${level}: ${(result.length / originalContent.length) * 100}%`
+    `level ${level}: ${(result.length / originalContent.length) * 100}%`,
   );
 
   bench(`atou level ${level}`, () => {

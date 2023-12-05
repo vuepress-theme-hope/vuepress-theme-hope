@@ -1,10 +1,9 @@
-import { type ComputedRef, type InjectionKey, inject, provide } from "vue";
-import {
-  type BlogCategoryData,
-  useBlogCategory,
-} from "vuepress-plugin-blog2/client";
+import type { ComputedRef, InjectionKey } from "vue";
+import { inject, provide } from "vue";
+import type { BlogCategoryData } from "vuepress-plugin-blog2/client";
+import { useBlogCategory } from "vuepress-plugin-blog2/client";
 
-import { type ArticleInfo } from "../../../../shared/index.js";
+import type { ArticleInfo } from "../../../../shared/index.js";
 
 export type CategoryMapRef = ComputedRef<BlogCategoryData<ArticleInfo>>;
 

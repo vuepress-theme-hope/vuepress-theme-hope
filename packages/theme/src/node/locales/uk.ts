@@ -1,4 +1,4 @@
-import { type ThemeLocaleData } from "../../shared/index.js";
+import type { ThemeLocaleData } from "../../shared/index.js";
 
 export const ukLocale: ThemeLocaleData = {
   lang: "uk-UA",
@@ -36,6 +36,7 @@ export const ukLocale: ThemeLocaleData = {
     all: "Bce",
     intro: "Особистий вступ",
     star: "Зірка",
+    empty: "$text порожній",
   },
 
   paginationLocales: {

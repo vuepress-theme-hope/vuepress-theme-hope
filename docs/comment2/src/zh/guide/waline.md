@@ -3,9 +3,33 @@ title: Waline
 icon: w
 ---
 
-欢迎使用 Waline，只需几个步骤，你就可以在你的网站中启用 Waline 提供评论与浏览量服务。
+一个有后端的安全评论系统。
 
 <!-- more -->
+
+## 安装
+
+::: code-tabs#shell
+
+@tab pnpm
+
+```bash
+pnpm add -D @waline/client
+```
+
+@tab yarn
+
+```bash
+yarn add -D @waline/client
+```
+
+@tab npm
+
+```bash
+npm i -D @waline/client
+```
+
+:::
 
 ## LeanCloud 设置 (数据库)
 
@@ -105,9 +129,7 @@ icon: w
 
 ::: tip
 
-你也可以传入其他 Waline 支持的选项 (除了 `el`)。
-
-详情请见 [Waline 配置](../config/waline.md)
+你也可以传入其他 Waline 支持的选项 (除了 `el`)。详情请见 [Waline 配置](../config/waline.md)
 
 :::
 

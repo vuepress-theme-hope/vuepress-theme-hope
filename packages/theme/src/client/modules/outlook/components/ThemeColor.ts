@@ -1,4 +1,5 @@
-import { type VNode, computed, defineComponent, h } from "vue";
+import type { VNode } from "vue";
+import { computed, defineComponent, h } from "vue";
 import { entries, fromEntries } from "vuepress-shared/client";
 
 import { useThemeLocaleData } from "@theme-hope/composables/index";
@@ -11,7 +12,7 @@ export const enableThemeColor = cssVariables["enableThemeColor"] === "true";
 
 const themeColor = enableThemeColor
   ? fromEntries(
-      entries(cssVariables).filter(([key]) => key.startsWith("theme-"))
+      entries(cssVariables).filter(([key]) => key.startsWith("theme-")),
     )
   : {};
 
@@ -29,7 +30,7 @@ export default defineComponent({
             h(
               "label",
               { class: "theme-color-title", for: "theme-color-picker" },
-              locale.value
+              locale.value,
             ),
             h(ThemeColorPicker, { themeColor }),
           ])

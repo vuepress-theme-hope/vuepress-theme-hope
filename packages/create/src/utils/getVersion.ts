@@ -1,10 +1,11 @@
 import { get } from "node:https";
 
-import { type PackageManager } from "./packageManager.js";
+import type { PackageManager } from "./packageManager.js";
 
-export const getNextVersion = async (
+export const getVersion = async (
   packageManager: PackageManager,
-  packageName: string
+  packageName: string,
+  tag = "latest",
 ): Promise<string> => {
   const getVersionInfo = (): Promise<string> =>
     new Promise((resolve, reject) => {
@@ -20,12 +21,12 @@ export const getNextVersion = async (
 
             res.on("data", (data) => (body += data));
             res.on("end", () => {
-              resolve((<{ next: string }>JSON.parse(body)).next);
+              resolve((<Record<string, string>>JSON.parse(body))[tag]);
             });
           } else {
             reject();
           }
-        }
+        },
       ).on("error", () => {
         reject();
       });

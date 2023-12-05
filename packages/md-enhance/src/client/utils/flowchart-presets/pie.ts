@@ -33,7 +33,6 @@ export default {
     subroutine: {
       class: "subroutine-element",
       fill: "#f1f1f1",
-
       "line-color": "#5c6ac4",
       "font-color": "#000",
     },

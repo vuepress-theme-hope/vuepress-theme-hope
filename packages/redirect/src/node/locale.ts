@@ -1,4 +1,4 @@
-import { type App } from "@vuepress/core";
+import type { App } from "@vuepress/core";
 import { colors } from "@vuepress/utils";
 import {
   deepAssign,
@@ -9,15 +9,15 @@ import {
   keys,
 } from "vuepress-shared/node";
 
-import { type RedirectOptions } from "./options.js";
-import { logger } from "./utils.js";
-import { type LocaleRedirectConfig } from "../shared/index.js";
+import type { RedirectOptions } from "./options.js";
+import { logger } from "./utils/index.js";
+import type { LocaleRedirectConfig } from "../shared/index.js";
 
 const AVAILABLE_FALLBACK = ["defaultLocale", "homepage", "404"] as const;
 
 export const getLocaleConfig = (
   app: App,
-  options: RedirectOptions
+  options: RedirectOptions,
 ): LocaleRedirectConfig => {
   const { locales } = app.options;
 
@@ -30,8 +30,8 @@ export const getLocaleConfig = (
           if (!lang) {
             logger.error(
               `Missing ${colors.magenta(
-                "lang"
-              )} option for locale "${key}", this locale will be ignored!`
+                "lang",
+              )} option for locale "${key}", this locale will be ignored!`,
             );
 
             return false;
@@ -39,14 +39,14 @@ export const getLocaleConfig = (
 
           return true;
         })
-        .map(([key, { lang }]) => [key, [lang!]])
+        .map(([key, { lang }]) => [key, [lang!]]),
     ),
     isPlainObject(options.localeConfig)
       ? entries(options.localeConfig).map(([routePath, lang]) => [
           routePath,
           isArray(lang) ? lang : [lang],
         ])
-      : {}
+      : {},
   );
   const defaultLocale = options.defaultLocale || keys(localeConfig).pop()!;
 

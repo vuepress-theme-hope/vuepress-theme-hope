@@ -1,5 +1,5 @@
 /* eslint-disable @typescript-eslint/naming-convention */
-import { type App } from "@vuepress/core";
+import type { App } from "@vuepress/core";
 import {
   getAuthor,
   getDateInfo,
@@ -9,20 +9,20 @@ import {
   removeEndingSlash,
 } from "vuepress-shared/node";
 
-import { type SeoOptions } from "./options.js";
-import {
-  type ArticleSchema,
-  type BlogPostingSchema,
-  type ExtendPage,
-  type SeoContent,
-  type WebPageSchema,
+import type { SeoOptions } from "./options.js";
+import type {
+  ArticleSchema,
+  BlogPostingSchema,
+  ExtendPage,
+  SeoContent,
+  WebPageSchema,
 } from "./typings/index.js";
 import { getAlternateInfo, getCover, getImages, resolveUrl } from "./utils.js";
 
 export const getOGP = (
   page: ExtendPage,
   options: SeoOptions,
-  app: App
+  app: App,
 ): SeoContent => {
   const {
     isArticle = (page): boolean =>
@@ -97,7 +97,7 @@ export const getOGP = (
 export const getJSONLD = (
   page: ExtendPage,
   options: SeoOptions,
-  app: App
+  app: App,
 ): ArticleSchema | BlogPostingSchema | WebPageSchema => {
   const {
     isArticle = (page): boolean =>
@@ -140,18 +140,18 @@ export const getJSONLD = (
 
 export const getCanonicalLink = (
   page: ExtendPage,
-  options: SeoOptions
+  options: SeoOptions,
 ): string | null =>
   isFunction(options.canonical)
     ? options.canonical(page)
     : isString(options.canonical)
-    ? `${removeEndingSlash(options.canonical)}${page.path}`
-    : null;
+      ? `${removeEndingSlash(options.canonical)}${page.path}`
+      : null;
 
 export const getAlternateLinks = (
   page: ExtendPage,
   { hostname }: SeoOptions,
-  app: App
+  app: App,
 ): { lang: string; path: string }[] =>
   getAlternateInfo(page, app).map(({ lang, path }) => ({
     lang,
