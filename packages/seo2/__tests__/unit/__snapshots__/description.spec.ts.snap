@@ -57,7 +57,7 @@ exports[`Should generate seo information > Should contain basic properties 1`] =
     {
       "type": "application/ld+json",
     },
-    "{\\"@context\\":\\"https://schema.org\\",\\"@type\\":\\"WebPage\\",\\"name\\":\\"\\",\\"description\\":\\"This is a home page.\\"}",
+    "{"@context":"https://schema.org","@type":"WebPage","name":"","description":"This is a home page."}",
   ],
 ]
 `;
@@ -126,7 +126,7 @@ exports[`Should generate seo information > Should contain basic properties 2`] =
     {
       "type": "application/ld+json",
     },
-    "{\\"@context\\":\\"https://schema.org\\",\\"@type\\":\\"Article\\",\\"headline\\":\\"Description Test\\",\\"image\\":[\\"\\"],\\"dateModified\\":null,\\"author\\":[]}",
+    "{"@context":"https://schema.org","@type":"Article","headline":"Description Test","image":[""],"dateModified":null,"author":[]}",
   ],
 ]
 `;
@@ -195,7 +195,7 @@ exports[`Should generate seo information > Should contain basic properties 3`] =
     {
       "type": "application/ld+json",
     },
-    "{\\"@context\\":\\"https://schema.org\\",\\"@type\\":\\"Article\\",\\"headline\\":\\"Heading 1\\",\\"image\\":[\\"\\"],\\"dateModified\\":null,\\"author\\":[]}",
+    "{"@context":"https://schema.org","@type":"Article","headline":"Heading 1","image":[""],"dateModified":null,"author":[]}",
   ],
 ]
 `;
@@ -257,7 +257,7 @@ exports[`Should generate seo information > Should contain basic properties 4`] =
     {
       "type": "application/ld+json",
     },
-    "{\\"@context\\":\\"https://schema.org\\",\\"@type\\":\\"WebPage\\",\\"name\\":\\"\\",\\"description\\":\\"这是一个主页。\\"}",
+    "{"@context":"https://schema.org","@type":"WebPage","name":"","description":"这是一个主页。"}",
   ],
 ]
 `;
@@ -326,7 +326,7 @@ exports[`Should generate seo information > Should contain basic properties 5`] =
     {
       "type": "application/ld+json",
     },
-    "{\\"@context\\":\\"https://schema.org\\",\\"@type\\":\\"Article\\",\\"headline\\":\\"描述测试\\",\\"image\\":[\\"\\"],\\"dateModified\\":null,\\"author\\":[]}",
+    "{"@context":"https://schema.org","@type":"Article","headline":"描述测试","image":[""],"dateModified":null,"author":[]}",
   ],
 ]
 `;
@@ -395,7 +395,7 @@ exports[`Should generate seo information > Should contain basic properties 6`] =
     {
       "type": "application/ld+json",
     },
-    "{\\"@context\\":\\"https://schema.org\\",\\"@type\\":\\"Article\\",\\"headline\\":\\"一级标题\\",\\"image\\":[\\"\\"],\\"dateModified\\":null,\\"author\\":[]}",
+    "{"@context":"https://schema.org","@type":"Article","headline":"一级标题","image":[""],"dateModified":null,"author":[]}",
   ],
 ]
 `;
@@ -435,7 +435,7 @@ exports[`Should generate seo information > Should contain basic properties 7`] =
     {
       "type": "application/ld+json",
     },
-    "{\\"@context\\":\\"https://schema.org\\",\\"@type\\":\\"WebPage\\",\\"name\\":\\"\\"}",
+    "{"@context":"https://schema.org","@type":"WebPage","name":""}",
   ],
 ]
 `;
