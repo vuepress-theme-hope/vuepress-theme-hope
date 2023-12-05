@@ -19,7 +19,7 @@
     "@vuepress/cli": "2.0.0-rc.0",
     "@vuepress/client": "2.0.0-rc.0",
     "@vuepress/theme-default": "2.0.0-rc.0",
-    "chart.js": "4.4.0",
+    "chart.js": "4.4.1",
     "echarts": "5.4.3",
     "echarts-wordcloud": "2.1.0",
     "katex": "0.16.9",
@@ -31,7 +31,7 @@
     "mermaid": "10.6.1",
     "reveal.js": "5.0.2",
     "sass-loader": "13.3.2",
-    "vue": "3.3.9",
+    "vue": "3.3.10",
     "vuepress-plugin-md-enhance": "workspace:*",
     "vuepress-vite": "2.0.0-rc.0",
     "vuepress-webpack": "2.0.0-rc.0"
