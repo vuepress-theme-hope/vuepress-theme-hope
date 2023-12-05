@@ -106,13 +106,17 @@ export default defineComponent({
       router
         .getRoutes()
         .map(({ meta, path }) => {
+          const info = autoCatalogGetter(meta);
+
+          if (!info) return null;
+
           const level = path.split("/").length;
 
           return {
             level: endsWith(path, "/") ? level - 2 : level - 1,
-            ...autoCatalogGetter(meta),
             base: path.replace(/\/[^/]+\/?$/, "/"),
             path,
+            ...info,
           };
         })
         .filter(
