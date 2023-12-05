@@ -123,8 +123,9 @@ export default defineComponent({
       showModal.value
         ? h(TransitionGroup, { name: "lang-modal-fade" }, () =>
             showModal.value
-              ? [
-                  h("div", { key: "mask", class: "lang-modal-mask" }),
+              ? h(
+                  "div",
+                  { key: "mask", class: "lang-modal-mask" },
                   h(
                     "div",
                     {
@@ -160,8 +161,8 @@ export default defineComponent({
                       ),
                     ],
                   ),
-                ]
-              : [],
+                )
+              : null,
           )
         : null;
   },
