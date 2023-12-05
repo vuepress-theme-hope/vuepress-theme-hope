@@ -200,7 +200,7 @@ export default defineComponent({
         .forEach((info) => {
           const { base, level } = info;
 
-          switch (level) {
+          switch (level - baseDepth) {
             case 1:
               result.push(info);
               break;
