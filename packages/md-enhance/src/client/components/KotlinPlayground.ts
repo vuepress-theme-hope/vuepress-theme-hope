@@ -10,7 +10,7 @@ import {
   shallowRef,
   watch,
 } from "vue";
-import { LoadingIcon, atou } from "vuepress-shared/client";
+import { atou } from "vuepress-shared/client";
 
 import { getDarkmodeStatus } from "../utils/index.js";
 
@@ -47,7 +47,6 @@ export default defineComponent({
 
   setup(props) {
     const isDarkmode = ref(false);
-    const loading = ref(true);
 
     const kotlinPlayground = shallowRef<HTMLDivElement>();
 
@@ -66,7 +65,6 @@ export default defineComponent({
       );
 
       playground(kotlinPlayground.value!);
-      loading.value = false;
     };
 
     onMounted(() => {
@@ -100,34 +98,30 @@ export default defineComponent({
             class: "kotlin-playground-container",
             key: isDarkmode.value ? "dark" : "light",
           },
-          [
-            loading.value
-              ? h(LoadingIcon, { class: "preview-loading", height: 192 })
-              : null,
-            h(
-              "div",
-              {
-                class: "kotlin-playground",
-                ref: kotlinPlayground,
-                ...settings.value,
-              },
-              [
-                h("pre", files.value[0]),
-                // hidden dependency
-                files.value.length > 1
-                  ? files.value.map((content, index) =>
-                      index === 0
-                        ? null
-                        : h(
-                            "textarea",
-                            { class: "hidden-dependency", disable: "" },
-                            content,
-                          ),
-                    )
-                  : null,
-              ],
-            ),
-          ],
+
+          h(
+            "div",
+            {
+              class: "kotlin-playground",
+              ref: kotlinPlayground,
+              ...settings.value,
+            },
+            [
+              h("pre", files.value[0]),
+              // hidden dependency
+              files.value.length > 1
+                ? files.value.map((content, index) =>
+                    index === 0
+                      ? null
+                      : h(
+                          "textarea",
+                          { class: "hidden-dependency", readonly: "" },
+                          content,
+                        ),
+                  )
+                : null,
+            ],
+          ),
         ),
       ]);
   },
