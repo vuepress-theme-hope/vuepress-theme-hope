@@ -42,26 +42,22 @@ describe("getLinksCheckStatus", async () => {
   });
 
   it("Should get status correctly", () => {
+    console.log(
+      getLinksCheckStatus(devApp, { checkLinks: { status: "always" } }),
+    );
+
     expect(
       getLinksCheckStatus(devApp, { checkLinks: { status: "always" } }),
-    ).toContain({
-      enabled: true,
-    });
+    ).toHaveProperty("enabled", true);
     expect(
       getLinksCheckStatus(buildApp, { checkLinks: { status: "always" } }),
-    ).toContain({
-      enabled: true,
-    });
+    ).toHaveProperty("enabled", true);
     expect(
       getLinksCheckStatus(devApp, { checkLinks: { status: "dev" } }),
-    ).toContain({
-      enabled: true,
-    });
+    ).toHaveProperty("enabled", true);
     expect(
       getLinksCheckStatus(buildApp, { checkLinks: { status: "dev" } }),
-    ).toContain({
-      enabled: false,
-    });
+    ).toHaveProperty("enabled", false);
   });
 
   it("should ignore links correctly", () => {
