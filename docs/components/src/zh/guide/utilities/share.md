@@ -45,14 +45,23 @@ description: 分享组件，将页面内容分享到社交媒体。
 - facebook
 - flipboard
 - line
+- linkedin
+- messenger
+- pinterest
 - qq
+- qzone
 - qrcode
 - reddit
 - skype
+- sms
+- snapchat
 - telegram
+- tumblr
 - twitter
-- whatsapp
+- vk
 - weibo
+- whatsapp
+- wordpress
 
 除了内置关键字外，你还可以将自己的服务配置添加到 `componentOptions.share.services` 中。 每个配置都应该是一个具有以下属性的对象:
 
@@ -84,14 +93,23 @@ description: 分享组件，将页面内容分享到社交媒体。
     | "facebook"
     | "flipboard"
     | "line"
+    | "linkedin"
+    | "messenger"
+    | "pinterest"
     | "qq"
+    | "qzone"
     | "qrcode"
     | "reddit"
     | "skype"
+    | "sms"
+    | "snapchat"
     | "telegram"
+    | "tumblr"
     | "twitter"
+    | "vk"
+    | "weibo"
     | "whatsapp"
-    | "weibo";
+    | "wordpress;
 
   interface ShareServiceConfig {
     /**

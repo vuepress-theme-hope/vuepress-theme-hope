@@ -45,14 +45,23 @@ The following built-in keywords are supported:
 - facebook
 - flipboard
 - line
+- linkedin
+- messenger
+- pinterest
 - qq
+- qzone
 - qrcode
 - reddit
 - skype
+- sms
+- snapchat
 - telegram
+- tumblr
 - twitter
-- whatsapp
+- vk
 - weibo
+- whatsapp
+- wordpress
 
 Besides the built-in keyword, you can add your own service config to `componentOptions.share.services`. Each of the config should be an object with the following properties:
 
@@ -84,14 +93,23 @@ If you are using twitter, you can set `componentOptions.share.twitterUserName` w
     | "facebook"
     | "flipboard"
     | "line"
+    | "linkedin"
+    | "messenger"
+    | "pinterest"
     | "qq"
+    | "qzone"
     | "qrcode"
     | "reddit"
     | "skype"
+    | "sms"
+    | "snapchat"
     | "telegram"
+    | "tumblr"
     | "twitter"
+    | "vk"
+    | "weibo"
     | "whatsapp"
-    | "weibo";
+    | "wordpress;
 
   interface ShareServiceConfig {
     /**
