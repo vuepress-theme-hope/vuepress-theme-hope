@@ -2,12 +2,7 @@ import { rollupBundle } from "../../scripts/rollup.js";
 
 export default [
   ...rollupBundle("node/index", {
-    external: [
-      /^@mdit\/plugin-/,
-      "js-yaml",
-      "markdown-it/lib/token.js",
-      "markdown-it/lib/helpers/parse_link_label.js",
-    ],
+    external: [/^@mdit\/plugin-/, "js-yaml"],
     dtsExternal: ["vuepress-shared"],
   }),
   ...rollupBundle(
