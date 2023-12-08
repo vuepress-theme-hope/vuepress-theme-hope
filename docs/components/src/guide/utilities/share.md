@@ -109,7 +109,7 @@ If you are using twitter, you can set `componentOptions.share.twitterUserName` w
     | "vk"
     | "weibo"
     | "whatsapp"
-    | "wordpress;
+    | "wordpress";
 
   interface ShareServiceConfig {
     /**

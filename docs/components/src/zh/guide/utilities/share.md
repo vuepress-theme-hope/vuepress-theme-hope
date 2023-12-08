@@ -109,7 +109,7 @@ description: 分享组件，将页面内容分享到社交媒体。
     | "vk"
     | "weibo"
     | "whatsapp"
-    | "wordpress;
+    | "wordpress";
 
   interface ShareServiceConfig {
     /**
