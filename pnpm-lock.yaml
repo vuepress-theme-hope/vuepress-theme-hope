@@ -1836,8 +1836,8 @@ importers:
         specifier: 0.7.6
         version: 0.7.6(markdown-it@13.0.2)
       '@mdit/plugin-figure':
-        specifier: 0.7.6
-        version: 0.7.6(markdown-it@13.0.2)
+        specifier: 0.8.0
+        version: 0.8.0(markdown-it@13.0.2)
       '@mdit/plugin-footnote':
         specifier: 0.7.6
         version: 0.7.6(markdown-it@13.0.2)
@@ -4788,11 +4788,11 @@ packages:
       markdown-it: 13.0.2
     dev: false
 
-  /@mdit/plugin-figure@0.7.6(markdown-it@13.0.2):
-    resolution: {integrity: sha512-ysH5O3WWuDrfxLWQO4wYXYGdo8oi+EbMQFgbaSTxhoPKTFf3HTovCn3RANn7qATBqmGP26zf0hY55mX9BFUu5A==}
+  /@mdit/plugin-figure@0.8.0(markdown-it@13.0.2):
+    resolution: {integrity: sha512-/o4RoKjnkdWc+K7m6mR7BAu2J79yYE38s8HUc8iKk9v+e9j1E+6LeXcpx1LoPnHzUhT4EO2QmUsv+kAaPFfZYw==}
     engines: {node: '>= 18'}
     peerDependencies:
-      markdown-it: ^13.0.2
+      markdown-it: ^14.0.0
     peerDependenciesMeta:
       markdown-it:
         optional: true
