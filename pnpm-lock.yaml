@@ -1821,8 +1821,8 @@ importers:
   packages/md-enhance:
     dependencies:
       '@mdit/plugin-alert':
-        specifier: 0.7.6
-        version: 0.7.6(markdown-it@13.0.2)
+        specifier: 0.8.0
+        version: 0.8.0(markdown-it@13.0.2)
       '@mdit/plugin-align':
         specifier: 0.7.6
         version: 0.7.6(markdown-it@13.0.2)
@@ -4724,10 +4724,10 @@ packages:
   /@mdit-vue/types@1.0.0:
     resolution: {integrity: sha512-xeF5+sHLzRNF7plbksywKCph4qli20l72of2fMlZQQ7RECvXYrRkE9+bjRFQCyULC7B8ydUYbpbkux5xJlVWyw==}
 
-  /@mdit/plugin-alert@0.7.6(markdown-it@13.0.2):
-    resolution: {integrity: sha512-Z+/bHBDniCz/Q+TMa3M6f47KG4tUKvJI8FHXhDwgbKLzDLn045ZBHcOTeqvuWrrjCIKBEo4fVAlYszYcehxmfg==}
+  /@mdit/plugin-alert@0.8.0(markdown-it@13.0.2):
+    resolution: {integrity: sha512-mxA/lhOyDDR6/qSAegGG/XZRjUbr1wjwdULudbpkA/CCQi6piW9D0Z8crDQGYz4KPQM9Bgx4Ac81QFSzHOV66Q==}
     peerDependencies:
-      markdown-it: ^13.0.2
+      markdown-it: ^14.0.0
     peerDependenciesMeta:
       markdown-it:
         optional: true

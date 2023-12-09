@@ -78,7 +78,7 @@
     "yarn": ">=2"
   },
   "dependencies": {
-    "@mdit/plugin-alert": "0.7.6",
+    "@mdit/plugin-alert": "0.8.0",
     "@mdit/plugin-align": "0.7.6",
     "@mdit/plugin-attrs": "0.7.6",
     "@mdit/plugin-container": "0.7.6",
