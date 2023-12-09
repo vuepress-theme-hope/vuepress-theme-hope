@@ -72,7 +72,7 @@
     "husky": "8.0.3",
     "inquirer": "9.2.12",
     "magic-string": "0.30.5",
-    "markdownlint-cli": "0.37.0",
+    "markdownlint-cli": "0.38.0",
     "nano-staged": "0.8.0",
     "ora": "7.0.1",
     "picocolors": "1.0.0",
