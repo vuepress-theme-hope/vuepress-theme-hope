@@ -89,7 +89,7 @@
     "@mdit/plugin-img-mark": "0.7.6",
     "@mdit/plugin-img-size": "0.7.6",
     "@mdit/plugin-include": "0.7.6",
-    "@mdit/plugin-katex": "0.7.6",
+    "@mdit/plugin-katex": "0.8.0",
     "@mdit/plugin-mark": "0.7.6",
     "@mdit/plugin-mathjax": "0.7.6",
     "@mdit/plugin-stylize": "0.7.6",
