@@ -28,6 +28,7 @@
     "katex": "0.16.9",
     "sass-loader": "13.3.2",
     "vue": "3.3.11",
+    "vuepress-plugin-components": "workspace:*",
     "vuepress-plugin-copy-code2": "workspace:*",
     "vuepress-plugin-md-enhance": "workspace:*",
     "vuepress-shared": "workspace:*",

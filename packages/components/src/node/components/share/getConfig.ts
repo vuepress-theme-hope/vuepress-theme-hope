@@ -10,8 +10,15 @@ import type { ComponentOptions } from "../../options/index.js";
 export const getShareServiceConfig = (
   options: ComponentOptions,
 ): ShareServiceOptions[] => {
-  const services: ShareService[] =
-    options.componentOptions?.share?.services ?? AVAILABLE_SERVICES;
+  const services: ShareService[] = options.componentOptions?.share
+    ?.services ?? [
+    "twitter",
+    "facebook",
+    "reddit",
+    "telegram",
+    "whatsapp",
+    "email",
+  ];
   const content: ShareServiceOptions[] = [];
 
   services.forEach((service) => {

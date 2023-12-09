@@ -1387,6 +1387,9 @@ importers:
       vue:
         specifier: 3.3.11
         version: 3.3.11(typescript@5.3.3)
+      vuepress-plugin-components:
+        specifier: workspace:*
+        version: link:../../packages/components
       vuepress-plugin-copy-code2:
         specifier: workspace:*
         version: link:../../packages/copy-code2

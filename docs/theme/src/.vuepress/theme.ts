@@ -1,4 +1,5 @@
 import { getDirname, theme, path } from "docs-shared";
+import { AVAILABLE_SERVICES } from "vuepress-plugin-components";
 import { enNavbarConfig, zhNavbarConfig } from "./navbar/index.js";
 import { enSidebarConfig, zhSidebarConfig } from "./sidebar/index.js";
 
@@ -64,6 +65,9 @@ export default theme("theme", {
       componentOptions: {
         pdf: {
           pdfjs: "/assets/lib/pdfjs/",
+        },
+        share: {
+          services: AVAILABLE_SERVICES,
         },
       },
 

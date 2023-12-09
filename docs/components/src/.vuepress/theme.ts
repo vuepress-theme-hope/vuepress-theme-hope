@@ -1,5 +1,6 @@
 import { createRequire } from "node:module";
 import { fs, theme } from "docs-shared";
+import { AVAILABLE_SERVICES } from "vuepress-plugin-components";
 
 const { version } = fs.readJsonSync(
   createRequire(import.meta.url).resolve(
@@ -97,6 +98,9 @@ export default theme("components", {
       componentOptions: {
         pdf: {
           pdfjs: "/assets/lib/pdfjs/",
+        },
+        share: {
+          services: AVAILABLE_SERVICES,
         },
       },
 
