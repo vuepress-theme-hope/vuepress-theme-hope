@@ -1842,8 +1842,8 @@ importers:
         specifier: 0.7.6
         version: 0.7.6(markdown-it@13.0.2)
       '@mdit/plugin-img-lazyload':
-        specifier: 0.7.6
-        version: 0.7.6(markdown-it@13.0.2)
+        specifier: 0.8.0
+        version: 0.8.0(markdown-it@13.0.2)
       '@mdit/plugin-img-mark':
         specifier: 0.7.6
         version: 0.7.6(markdown-it@13.0.2)
@@ -4811,11 +4811,11 @@ packages:
       markdown-it: 13.0.2
     dev: false
 
-  /@mdit/plugin-img-lazyload@0.7.6(markdown-it@13.0.2):
-    resolution: {integrity: sha512-BBgxlXCOO7+9TMHJXtUyvi48jlH4ZYQtC9lNfgu1rvmq56iblZ7etOzg61/CmXmLgMHNvCbb/Kx7gRLkOBhv6A==}
+  /@mdit/plugin-img-lazyload@0.8.0(markdown-it@13.0.2):
+    resolution: {integrity: sha512-Rrlf2FzOxxyszbv3DpkIwEgmYKmtwHdxIO+Whkn0a9QckxnEKkaGl5KARCnM7LqX2fhEyFLgnfkr3onVOJG54g==}
     engines: {node: '>= 18'}
     peerDependencies:
-      markdown-it: ^13.0.2
+      markdown-it: ^14.0.0
     peerDependenciesMeta:
       markdown-it:
         optional: true
