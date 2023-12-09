@@ -3,7 +3,7 @@ title: 幻灯片主题
 icon: palette
 ---
 
-<!--markdownlint-disable no-duplicate-header -->
+<!--markdownlint-disable MD024 -->
 
 ## `auto`
 

@@ -3,7 +3,7 @@ title: Reveal.js Themes
 icon: palette
 ---
 
-<!--markdownlint-disable no-duplicate-header -->
+<!--markdownlint-disable MD024 -->
 
 ## `auto`
 

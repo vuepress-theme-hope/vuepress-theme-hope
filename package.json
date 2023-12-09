@@ -22,7 +22,7 @@
     "lint": "pnpm lint:prettier --write && pnpm lint:eslint --fix && pnpm lint:stylelint --fix",
     "lint:check": "pnpm lint:prettier && pnpm lint:eslint && pnpm lint:stylelint",
     "lint:eslint": "eslint . --ext .js,.ts,.vue",
-    "lint:md": "markdownlint **/*.md",
+    "lint:md": "markdownlint-cli2 '**/*.md' '#**/node_modules/**' '#**/__tests__/**' '#**/*.snippet.md'",
     "lint:prettier": "prettier --check .",
     "lint:stylelint": "stylelint packages/*/src/**/*.{css,scss}",
     "packages:bootstrap": "tsx scripts/bootstrap.ts",
@@ -51,7 +51,7 @@
     "@types/node": "20.10.4",
     "@typescript-eslint/eslint-plugin": "6.13.2",
     "@typescript-eslint/parser": "6.13.2",
-    "@vitest/coverage-v8": "1.0.2",
+    "@vitest/coverage-v8": "1.0.3",
     "@vue/eslint-config-typescript": "12.0.0",
     "bumpp": "9.2.0",
     "commit-and-tag-version": "12.0.0",
@@ -72,7 +72,7 @@
     "husky": "8.0.3",
     "inquirer": "9.2.12",
     "magic-string": "0.30.5",
-    "markdownlint-cli": "0.38.0",
+    "markdownlint-cli2": "0.11.0",
     "nano-staged": "0.8.0",
     "ora": "7.0.1",
     "picocolors": "1.0.0",
@@ -90,7 +90,7 @@
     "tslib": "2.6.2",
     "tsx": "4.6.2",
     "typescript": "5.3.3",
-    "vitest": "1.0.2"
+    "vitest": "1.0.3"
   },
   "packageManager": "pnpm@8.12.0",
   "engines": {

@@ -5,7 +5,7 @@
     "prettier --write",
     "cross-env TZ=Etc/UTC vitest related --run"
   ],
-  "*.md": ["markdownlint", "prettier --write"],
+  "*.md": ["markdownlint-cli2 --fix", "prettier --write"],
   "*.{json,yml}": ["prettier --write"],
   "*.scss": ["stylelint --fix", "prettier --write"],
   "package.json": ["sort-package-json"]
