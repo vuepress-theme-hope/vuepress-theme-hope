@@ -1839,8 +1839,8 @@ importers:
         specifier: 0.7.6
         version: 0.7.6(markdown-it@13.0.2)
       '@mdit/plugin-footnote':
-        specifier: 0.7.6
-        version: 0.7.6(markdown-it@13.0.2)
+        specifier: 0.8.0
+        version: 0.8.0(markdown-it@13.0.2)
       '@mdit/plugin-img-lazyload':
         specifier: 0.7.6
         version: 0.7.6(markdown-it@13.0.2)
@@ -4801,11 +4801,11 @@ packages:
       markdown-it: 13.0.2
     dev: false
 
-  /@mdit/plugin-footnote@0.7.6(markdown-it@13.0.2):
-    resolution: {integrity: sha512-fQvbi3+/Hm+k4GJptXCc5i0n9/+ZpQx4yqpjOTGGSUz1k22XU07YaK3wpL9w+nPAfcBfzD06D72Y+eDIG5wi8w==}
+  /@mdit/plugin-footnote@0.8.0(markdown-it@13.0.2):
+    resolution: {integrity: sha512-AaX1rfkJwq9vLX+H/a+XQ3ZxahOXrnMLr5dVZfNdazjqdDEJ7Cc/A7UFtLfOM19F2w3EgvcHR1gbINxIVDn/eg==}
     engines: {node: '>= 18'}
     peerDependencies:
-      markdown-it: ^13.0.2
+      markdown-it: ^14.0.0
     dependencies:
       '@types/markdown-it': 13.0.7
       markdown-it: 13.0.2
