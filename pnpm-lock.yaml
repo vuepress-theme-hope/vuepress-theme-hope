@@ -1863,8 +1863,8 @@ importers:
         specifier: 0.7.6
         version: 0.7.6(markdown-it@13.0.2)(mathjax-full@3.2.2)
       '@mdit/plugin-stylize':
-        specifier: 0.7.6
-        version: 0.7.6(markdown-it@13.0.2)
+        specifier: 0.8.0
+        version: 0.8.0(markdown-it@13.0.2)
       '@mdit/plugin-sub':
         specifier: 0.7.6
         version: 0.7.6(markdown-it@13.0.2)
@@ -4914,11 +4914,11 @@ packages:
       upath: 2.0.1
     dev: false
 
-  /@mdit/plugin-stylize@0.7.6(markdown-it@13.0.2):
-    resolution: {integrity: sha512-dhhYxo4KdnB66g1080qeuz8X/80q3h4Cpmwnwi2rCbQfl29Nv26H5tz5pp15NKQfdfVgrZnXXLsDskJeg5IcaQ==}
+  /@mdit/plugin-stylize@0.8.0(markdown-it@13.0.2):
+    resolution: {integrity: sha512-oNFI3Z7UTxP8CKxS3CIuawLmsyrc0n9jIw9mPzUcPNp+LtYmLktfZc3FIRlqpUUq34YwHTH3yihayBRdSkVV6A==}
     engines: {node: '>= 18'}
     peerDependencies:
-      markdown-it: ^13.0.2
+      markdown-it: ^14.0.0
     peerDependenciesMeta:
       markdown-it:
         optional: true
