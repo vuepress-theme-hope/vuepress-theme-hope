@@ -306,9 +306,14 @@ Options used to create index per locale.
     loading: string;
 
     /**
-     * Search history text
+     * Search query history title
      */
-    history: string;
+    queryHistory: string;
+
+    /**
+     * Search result history title
+     */
+    resultHistory: string;
 
     /**
      * Search history empty hint

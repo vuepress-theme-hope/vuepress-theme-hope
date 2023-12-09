@@ -306,9 +306,14 @@ export default defineUserConfig({
     loading: string;
 
     /**
-     * 搜索历史文字
+     * 搜索文字历史 标题
      */
-    history: string;
+    queryHistory: string;
+
+    /**
+     * 搜索结果历史 标题
+     */
+    resultHistory: string;
 
     /**
      * 无搜索历史提示
