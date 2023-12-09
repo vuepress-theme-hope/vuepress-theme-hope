@@ -70,7 +70,7 @@
     "@vuepress/core": "2.0.0-rc.0"
   },
   "peerDependencies": {
-    "dashjs": "4.7.2",
+    "dashjs": "4.7.3",
     "hls.js": "^1.4.12",
     "mpegts.js": "^1.7.3",
     "plyr": "^3.7.8",

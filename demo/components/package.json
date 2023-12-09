@@ -19,7 +19,7 @@
     "@vuepress/theme-default": "2.0.0-rc.0",
     "artplayer": "5.0.9",
     "artplayer-plugin-danmuku": "5.0.1",
-    "dashjs": "4.7.2",
+    "dashjs": "4.7.3",
     "hls.js": "1.4.13",
     "mpegts.js": "1.7.3",
     "plyr": "3.7.8",
