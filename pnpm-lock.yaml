@@ -1875,8 +1875,8 @@ importers:
         specifier: 0.7.6
         version: 0.7.6(markdown-it@13.0.2)
       '@mdit/plugin-tasklist':
-        specifier: 0.7.6
-        version: 0.7.6(markdown-it@13.0.2)
+        specifier: 0.8.0
+        version: 0.8.0(markdown-it@13.0.2)
       '@mdit/plugin-tex':
         specifier: 0.7.6
         version: 0.7.6(markdown-it@13.0.2)
@@ -4965,11 +4965,11 @@ packages:
       markdown-it: 13.0.2
     dev: false
 
-  /@mdit/plugin-tasklist@0.7.6(markdown-it@13.0.2):
-    resolution: {integrity: sha512-ZsPHqQv/Cd9TUG3JfmrPOMRFR/SOG3/menWTz2kwE1HtJ1CUfBmoCRtfq2Sm7Rlqg/P6ZfWAd1t9bOwGkxD/5w==}
+  /@mdit/plugin-tasklist@0.8.0(markdown-it@13.0.2):
+    resolution: {integrity: sha512-vfOTZdXIL/jk/ConUqCODI5WuqgB9qiBGc+wIa7UMhe73KcpwFeGFJVQZm9AvjhXDDYqznJxSMVRP/TN7TxVVw==}
     engines: {node: '>= 18'}
     peerDependencies:
-      markdown-it: ^13.0.2
+      markdown-it: ^14.0.0
     peerDependenciesMeta:
       markdown-it:
         optional: true
