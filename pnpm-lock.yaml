@@ -1857,8 +1857,8 @@ importers:
         specifier: 0.7.6
         version: 0.7.6(katex@0.16.9)(markdown-it@13.0.2)
       '@mdit/plugin-mark':
-        specifier: 0.7.6
-        version: 0.7.6(markdown-it@13.0.2)
+        specifier: 0.8.0
+        version: 0.8.0(markdown-it@13.0.2)
       '@mdit/plugin-mathjax':
         specifier: 0.7.6
         version: 0.7.6(markdown-it@13.0.2)(mathjax-full@3.2.2)
@@ -4882,11 +4882,11 @@ packages:
       markdown-it: 13.0.2
     dev: false
 
-  /@mdit/plugin-mark@0.7.6(markdown-it@13.0.2):
-    resolution: {integrity: sha512-D9gv+ebVORa4r69t0JeJg3NW9gCR/NOGYa1DKYDEQOJoZ1WwjZVuhdxd3wCpLKtqDLnyHTFWd3cnV/HHrmca3w==}
+  /@mdit/plugin-mark@0.8.0(markdown-it@13.0.2):
+    resolution: {integrity: sha512-1hImu8FskIZ9dumWD2VIyB5USyVGwGY2IuaPxYO25tFvMZkhu4rYBjkSK8x+vXExwp94OLzFUlGgVl94S+nw9w==}
     engines: {node: '>= 18'}
     peerDependencies:
-      markdown-it: ^13.0.2
+      markdown-it: ^14.0.0
     peerDependenciesMeta:
       markdown-it:
         optional: true
