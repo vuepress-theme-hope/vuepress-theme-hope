@@ -1878,8 +1878,8 @@ importers:
         specifier: 0.7.6
         version: 0.7.6(markdown-it@13.0.2)
       '@mdit/plugin-tex':
-        specifier: 0.7.6
-        version: 0.7.6(markdown-it@13.0.2)
+        specifier: 0.8.0
+        version: 0.8.0(markdown-it@13.0.2)
       '@mdit/plugin-uml':
         specifier: 0.7.6
         version: 0.7.6(markdown-it@13.0.2)
@@ -4983,6 +4983,19 @@ packages:
     engines: {node: '>= 18'}
     peerDependencies:
       markdown-it: ^13.0.2
+    peerDependenciesMeta:
+      markdown-it:
+        optional: true
+    dependencies:
+      '@types/markdown-it': 13.0.7
+      markdown-it: 13.0.2
+    dev: false
+
+  /@mdit/plugin-tex@0.8.0(markdown-it@13.0.2):
+    resolution: {integrity: sha512-uh4kOhwBVEESz6dMmHk4Hn/AVfVtUhMA1UKpwMc1EL9qelodJ0YzSYfNXp6d/PS+E1l53yp8nMZK90DUO+3vpA==}
+    engines: {node: '>= 18'}
+    peerDependencies:
+      markdown-it: ^14.0.0
     peerDependenciesMeta:
       markdown-it:
         optional: true

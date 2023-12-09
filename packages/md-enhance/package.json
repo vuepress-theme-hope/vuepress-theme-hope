@@ -97,7 +97,7 @@
     "@mdit/plugin-sup": "0.7.6",
     "@mdit/plugin-tab": "0.7.6",
     "@mdit/plugin-tasklist": "0.7.6",
-    "@mdit/plugin-tex": "0.7.6",
+    "@mdit/plugin-tex": "0.8.0",
     "@mdit/plugin-uml": "0.7.6",
     "@types/markdown-it": "^13.0.7",
     "@vuepress/client": "2.0.0-rc.0",
