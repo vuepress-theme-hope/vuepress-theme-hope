@@ -80,7 +80,7 @@
   "dependencies": {
     "@mdit/plugin-alert": "0.7.6",
     "@mdit/plugin-align": "0.7.6",
-    "@mdit/plugin-attrs": "0.7.6",
+    "@mdit/plugin-attrs": "0.8.0",
     "@mdit/plugin-container": "0.7.6",
     "@mdit/plugin-demo": "0.7.6",
     "@mdit/plugin-figure": "0.7.6",
