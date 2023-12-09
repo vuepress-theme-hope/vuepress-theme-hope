@@ -94,7 +94,7 @@
     "@mdit/plugin-mathjax": "0.7.6",
     "@mdit/plugin-stylize": "0.7.6",
     "@mdit/plugin-sub": "0.7.6",
-    "@mdit/plugin-sup": "0.7.6",
+    "@mdit/plugin-sup": "0.8.0",
     "@mdit/plugin-tab": "0.7.6",
     "@mdit/plugin-tasklist": "0.7.6",
     "@mdit/plugin-tex": "0.7.6",
