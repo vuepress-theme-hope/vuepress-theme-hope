@@ -57,10 +57,10 @@ export const searchProPlugin =
           default: searchProLocales,
         }),
         SEARCH_PRO_OPTIONS: {
-          searchDelay: options.searchDelay || 150,
-          suggestDelay: options.suggestDelay || 0,
-          queryHistoryCount: options.queryHistoryCount || 5,
-          resultHistoryCount: options.resultHistoryCount || 5,
+          searchDelay: options.searchDelay ?? 150,
+          suggestDelay: options.suggestDelay ?? 0,
+          queryHistoryCount: options.queryHistoryCount ?? 5,
+          resultHistoryCount: options.resultHistoryCount ?? 5,
           hotKeys: options.hotKeys || [
             { key: "k", ctrl: true },
             { key: "/", ctrl: true },
