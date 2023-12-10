@@ -60,7 +60,7 @@
     "cpx2": "6.0.1",
     "cross-env": "7.0.3",
     "cz-git": "1.8.0",
-    "esbuild": "0.19.8",
+    "esbuild": "0.19.9",
     "eslint": "8.55.0",
     "eslint-config-prettier": "9.1.0",
     "eslint-plugin-import": "2.29.0",
