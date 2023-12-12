@@ -1,7 +1,7 @@
 ---
 title: Markdown Enhance
 icon: fab fa-markdown
-order: 2
+order: 1
 category:
   - Guide
 tag:
@@ -194,7 +194,7 @@ title: Mr.Hope
 desc: Where there is light, there is hope
 logo: https://mister-hope.com/logo.svg
 link: https://mister-hope.com
-color: rgba(253, 230, 138, 0.15)
+background: rgba(253, 230, 138, 0.15)
 ```
 
 - [View Detail](https://theme-hope.vuejs.press/guide/markdown/component.html)
