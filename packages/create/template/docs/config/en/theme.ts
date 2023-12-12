@@ -52,52 +52,14 @@ export default hopeTheme({
     mdEnhance: {
       align: true,
       attrs: true,
-
-      // install chart.js before enabling it
-      // chart: true,
-
       codetabs: true,
-
-      // insert component easily
-      // component: true,
-
+      component: true,
       demo: true,
-
-      // install echarts before enabling it
-      // echarts: true,
-
       figure: true,
-
-      // install flowchart.ts before enabling it
-      // flowchart: true,
-
-      // gfm requires mathjax-full to provide tex support
-      // gfm: true,
-
       imgLazyload: true,
       imgSize: true,
       include: true,
-
-      // install katex before enabling it
-      // katex: true,
-
-      // install mathjax-full before enabling it
-      // mathjax: true,
-
       mark: true,
-
-      // install mermaid before enabling it
-      // mermaid: true,
-
-      playground: {
-        presets: ["ts", "vue"],
-      },
-
-      // install reveal.js before enabling it
-      // revealJs: {
-      //   plugins: ["highlight", "math", "search", "notes", "zoom"],
-      // },
-
       stylize: [
         {
           matcher: "Recommended",
@@ -115,6 +77,38 @@ export default hopeTheme({
       sup: true,
       tabs: true,
       vPre: true,
+
+      // install chart.js before enabling it
+      // chart: true,
+
+      // insert component easily
+
+      // install echarts before enabling it
+      // echarts: true,
+
+      // install flowchart.ts before enabling it
+      // flowchart: true,
+
+      // gfm requires mathjax-full to provide tex support
+      // gfm: true,
+
+      // install katex before enabling it
+      // katex: true,
+
+      // install mathjax-full before enabling it
+      // mathjax: true,
+
+      // install mermaid before enabling it
+      // mermaid: true,
+
+      // playground: {
+      //   presets: ["ts", "vue"],
+      // },
+
+      // install reveal.js before enabling it
+      // revealJs: {
+      //   plugins: ["highlight", "math", "search", "notes", "zoom"],
+      // },
 
       // install @vue/repl before enabling it
       // vuePlayground: true,

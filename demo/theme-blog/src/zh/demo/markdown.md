@@ -185,54 +185,20 @@ color: rgba(253, 230, 138, 0.15)
 
 - [查看详情](https://theme-hope.vuejs.press/zh/guide/markdown/include.html)
 
-#### 代码演示
-
-::: normal-demo 一个普通 Demo
-
-```html
-<h1>VuePress Theme Hope</h1>
-<p><span id="very">非常</span>强大!</p>
-```
-
-```js
-document.querySelector("#very").addEventListener("click", () => {
-  alert("非常强大");
-});
-```
-
-```css
-span {
-  color: red;
-}
-```
-
-:::
-
-- [查看详情](https://theme-hope.vuejs.press/zh/guide/markdown/demo.html)
-
 #### 样式化
 
 向 Mr.Hope 捐赠一杯咖啡。 _Recommended_
 
 - [查看详情](https://theme-hope.vuejs.press/zh/guide/markdown/stylize.html)
 
-#### 交互演示
+#### Tex 语法
 
-::: playground#ts TS 案例
+$$
+\frac {\partial^r} {\partial \omega^r} \left(\frac {y^{\omega}} {\omega}\right)
+= \left(\frac {y^{\omega}} {\omega}\right) \left\{(\log y)^r + \sum_{i=1}^r \frac {(-1)^i r \cdots (r-i+1) (\log y)^{r-i}} {\omega^i} \right\}
+$$
 
-@file index.ts
-
-```ts
-const msg = "hello world";
-
-const speak = (msg: string) => console.log(msg);
-
-speak(msg);
-```
-
-:::
-
-- [查看详情](https://theme-hope.vuejs.press/zh/guide/markdown/playground.html)
+- [查看详情](https://theme-hope.vuejs.press/zh/guide/markdown/tex.html)
 
 #### 图表
 
@@ -309,6 +275,39 @@ cond(no)->e
 
 - [查看详情](https://theme-hope.vuejs.press/zh/guide/markdown/flowchart.html)
 
+#### MarkMap
+
+````markmap
+---
+markmap:
+  colorFreezeLevel: 2
+---
+
+# markmap
+
+## 链接
+
+- <https://markmap.js.org/>
+- [GitHub](https://github.com/markmap/markmap)
+
+## 功能
+
+- 链接
+- **强调** ~~删除线~~ *斜体* ==高亮==
+- 多行
+  文字
+- `行内代码`
+-
+    ```js
+    console.log('code block');
+    ```
+- Katex
+  - $x = {-b \pm \sqrt{b^2-4ac} \over 2a}$
+- 现在我们可以通过 `maxWidth` 选项自动换行非常非常非常非常非常非常非常非常非常非常长的内容
+````
+
+- [查看详情](https://theme-hope.vuejs.press/zh/guide/markdown/markmap.html)
+
 #### Mermaid
 
 ```mermaid
@@ -333,14 +332,84 @@ flowchart TB
 
 - [查看详情](https://theme-hope.vuejs.press/zh/guide/markdown/mermaid.html)
 
-#### Tex 语法
+#### 代码演示
 
-$$
-\frac {\partial^r} {\partial \omega^r} \left(\frac {y^{\omega}} {\omega}\right)
-= \left(\frac {y^{\omega}} {\omega}\right) \left\{(\log y)^r + \sum_{i=1}^r \frac {(-1)^i r \cdots (r-i+1) (\log y)^{r-i}} {\omega^i} \right\}
-$$
+::: normal-demo 一个普通 Demo
 
-- [查看详情](https://theme-hope.vuejs.press/zh/guide/markdown/tex.html)
+```html
+<h1>VuePress Theme Hope</h1>
+<p><span id="very">非常</span>强大!</p>
+```
+
+```js
+document.querySelector("#very").addEventListener("click", () => {
+  alert("非常强大");
+});
+```
+
+```css
+span {
+  color: red;
+}
+```
+
+:::
+
+- [查看详情](https://theme-hope.vuejs.press/zh/guide/markdown/demo.html)
+
+#### 交互演示
+
+::: playground#unocss UnoCSS 示例
+
+@file index.html
+
+```html
+<div class="flex flex-col text-center h-full justify-center">
+  <div class="text-red">TEST for default preset</div>
+  <div class="text-$fd-color">TEST for custom css</div>
+</div>
+```
+
+@file config.js
+
+```js
+import { defineConfig, presetUno } from "unocss";
+
+export default defineConfig({
+  presets: [presetUno()],
+});
+```
+
+@file custom.css
+
+```css
+:root {
+  --fd-color: green;
+}
+```
+
+:::
+
+- [查看详情](https://theme-hope.vuejs.press/zh/guide/markdown/playground.html)
+
+#### Kotlin 交互演示
+
+::: kotlin-playground Simple Playground
+
+@file main.kt
+
+```kotlin
+class Contact(val id: Int, var email: String)
+
+fun main(args: Array<String>) {
+    val contact = Contact(1, "mary@gmail.com")
+    println(contact.id)
+}
+```
+
+:::
+
+- [View Detail](https://theme-hope.vuejs.press/zh/guide/markdown/kotlin-playground.html)
 
 #### Vue 交互演示
 

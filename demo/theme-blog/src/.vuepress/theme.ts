@@ -166,10 +166,12 @@ export default hopeTheme(
         imgSize: true,
         include: true,
         katex: true,
+        kotlinPlayground: true,
         mark: true,
+        markmap: true,
         mermaid: true,
         playground: {
-          presets: ["ts", "vue"],
+          presets: ["ts", "vue", "unocss"],
         },
         revealJs: {
           plugins: ["highlight", "math", "search", "notes", "zoom"],

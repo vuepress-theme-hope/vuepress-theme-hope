@@ -18,6 +18,7 @@
       "template",
       "script",
       "style",
+      "iframe",
       "ArtPlayer",
       "AudioPlayer",
       "AutoCatalog",

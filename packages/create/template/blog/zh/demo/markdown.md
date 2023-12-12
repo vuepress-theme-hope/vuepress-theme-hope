@@ -161,7 +161,7 @@ npm i -D vuepress-theme-hope
 
 - [查看详情](https://theme-hope.vuejs.press/zh/guide/markdown/tasklist.html)
 
-#### 图片增强
+### 图片增强
 
 支持为图片设置颜色模式和大小
 
@@ -185,153 +185,11 @@ color: rgba(253, 230, 138, 0.15)
 
 - [查看详情](https://theme-hope.vuejs.press/zh/guide/markdown/include.html)
 
-#### 代码演示
-
-::: normal-demo 一个普通 Demo
-
-```html
-<h1>VuePress Theme Hope</h1>
-<p><span id="very">非常</span>强大!</p>
-```
-
-```js
-document.querySelector("#very").addEventListener("click", () => {
-  alert("非常强大");
-});
-```
-
-```css
-span {
-  color: red;
-}
-```
-
-:::
-
-- [查看详情](https://theme-hope.vuejs.press/zh/guide/markdown/demo.html)
-
 #### 样式化
 
 向 Mr.Hope 捐赠一杯咖啡。 _Recommended_
 
 - [查看详情](https://theme-hope.vuejs.press/zh/guide/markdown/stylize.html)
-
-#### 交互演示
-
-::: playground#ts TS 案例
-
-@file index.ts
-
-```ts
-const msg = "hello world";
-
-const speak = (msg: string) => console.log(msg);
-
-speak(msg);
-```
-
-:::
-
-- [查看详情](https://theme-hope.vuejs.press/zh/guide/markdown/playground.html)
-
-#### 图表
-
-::: chart 一个散点图案例
-
-```json
-{
-  "type": "scatter",
-  "data": {
-    "datasets": [
-      {
-        "label": "散点数据集",
-        "data": [
-          { "x": -10, "y": 0 },
-          { "x": 0, "y": 10 },
-          { "x": 10, "y": 5 },
-          { "x": 0.5, "y": 5.5 }
-        ],
-        "backgroundColor": "rgb(255, 99, 132)"
-      }
-    ]
-  },
-  "options": {
-    "scales": {
-      "x": {
-        "type": "linear",
-        "position": "bottom"
-      }
-    }
-  }
-}
-```
-
-:::
-
-- [查看详情](https://theme-hope.vuejs.press/zh/guide/markdown/chartjs.html)
-
-#### Echarts
-
-::: echarts 一个折线图案例
-
-```json
-{
-  "xAxis": {
-    "type": "category",
-    "data": ["Mon", "Tue", "Wed", "Thu", "Fri", "Sat", "Sun"]
-  },
-  "yAxis": {
-    "type": "value"
-  },
-  "series": [
-    {
-      "data": [150, 230, 224, 218, 135, 147, 260],
-      "type": "line"
-    }
-  ]
-}
-```
-
-:::
-
-- [查看详情](https://theme-hope.vuejs.press/zh/guide/markdown/echarts.html)
-
-#### 流程图
-
-```flow
-cond=>condition: 是否执行操作?
-process=>operation: 操作
-e=>end: 结束
-
-cond(yes)->process->e
-cond(no)->e
-```
-
-- [查看详情](https://theme-hope.vuejs.press/zh/guide/markdown/flowchart.html)
-
-#### Mermaid
-
-```mermaid
----
-title: Flowchart
----
-flowchart TB
-    c1-->a2
-    subgraph one
-    a1-->a2
-    end
-    subgraph two
-    b1-->b2
-    end
-    subgraph three
-    c1-->c2
-    end
-    one --> two
-    three --> two
-    two --> c2
-```
-
-- [查看详情](https://theme-hope.vuejs.press/zh/guide/markdown/mermaid.html)
 
 #### Tex 语法
 
@@ -342,61 +200,63 @@ $$
 
 - [查看详情](https://theme-hope.vuejs.press/zh/guide/markdown/tex.html)
 
+#### 图表
+
+<iframe src="https://plugin-md-enhance-demo.vuejs.press/snippet/chartjs.html" width="100%" height="450"/>
+
+- [查看详情](https://theme-hope.vuejs.press/zh/guide/markdown/chartjs.html)
+
+#### Echarts
+
+<iframe src="https://plugin-md-enhance-demo.vuejs.press/snippet/echarts.html" width="100%" height="800"/>
+
+- [查看详情](https://theme-hope.vuejs.press/zh/guide/markdown/echarts.html)
+
+#### 流程图
+
+<iframe src="https://plugin-md-enhance-demo.vuejs.press/snippet/flowchart.html" width="100%" height="450"/>
+
+- [查看详情](https://theme-hope.vuejs.press/zh/guide/markdown/flowchart.html)
+
+#### MarkMap
+
+<iframe src="https://plugin-md-enhance-demo.vuejs.press/snippet/markmap.html" width="100%" height="380"/>
+
+- [查看详情](https://theme-hope.vuejs.press/zh/guide/markdown/markmap.html)
+
+#### Mermaid
+
+<iframe src="https://plugin-md-enhance-demo.vuejs.press/snippet/mermaid.html" width="100%" height="620"/>
+
+- [查看详情](https://theme-hope.vuejs.press/zh/guide/markdown/mermaid.html)
+
+#### 代码演示
+
+<iframe src="https://plugin-md-enhance-demo.vuejs.press/snippet/code-demo.html" width="100%" height="450"/>
+
+- [查看详情](https://theme-hope.vuejs.press/zh/guide/markdown/demo.html)
+
+#### 交互演示
+
+<iframe src="https://plugin-md-enhance-demo.vuejs.press/snippet/playground.html" width="100%" height="480"/>
+
+- [查看详情](https://theme-hope.vuejs.press/zh/guide/markdown/playground.html)
+
+#### Kotlin 交互演示
+
+<iframe src="https://plugin-md-enhance-demo.vuejs.press/snippet/kotlin-playground.html" width="100%" height="220"/>
+
+- [View Detail](https://theme-hope.vuejs.press/zh/guide/markdown/kotlin-playground.html)
+
 #### Vue 交互演示
 
-::: vue-playground Vue 交互演示
-
-@file App.vue
-
-```vue
-<script setup>
-import { ref } from "vue";
-
-const msg = ref("Hello World!");
-</script>
-
-<template>
-  <h1>{{ msg }}</h1>
-  <input v-model="msg" />
-</template>
-```
-
-:::
+<iframe src="https://plugin-md-enhance-demo.vuejs.press/snippet/vue-playground.html" width="100%" height="380"/>
 
 - [查看详情](https://theme-hope.vuejs.press/zh/guide/markdown/vue-playground.html)
 
 #### 幻灯片
 
-@slidestart
-
-## 幻灯片 1
-
-一个有文字和 [链接](https://mister-hope.com) 的段落
-
----
-
-## 幻灯片 2
-
-- 项目 1
-- 项目 2
-
----
-
-## 幻灯片 3.1
-
-```js
-const a = 1;
-```
-
---
-
-## 幻灯片 3.2
-
-$$
-J(\theta_0,\theta_1) = \sum_{i=0}
-$$
-
-@slideend
+<iframe src="https://plugin-md-enhance-demo.vuejs.press/snippet/revealjs.html" width="100%" height="400"/>
 
 - [查看详情](https://theme-hope.vuejs.press/zh/guide/markdown/revealjs.html)
 

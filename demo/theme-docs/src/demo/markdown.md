@@ -205,56 +205,22 @@ color: rgba(253, 230, 138, 0.15)
 
 - [View Detail](https://theme-hope.vuejs.press/guide/markdown/include.html)
 
-#### Code Demo
-
-::: normal-demo A normal demo
-
-```html
-<h1>VuePress Theme Hope</h1>
-<p>Is <span id="very">very</span> powerful!</p>
-```
-
-```js
-document.querySelector("#very").addEventListener("click", () => {
-  alert("Very powerful!");
-});
-```
-
-```css
-span {
-  color: red;
-}
-```
-
-:::
-
-- [View Detail](https://theme-hope.vuejs.press/guide/markdown/demo.html)
-
 #### Stylize
 
 Donate Mr.Hope a cup of coffee. _Recommended_
 
 - [View Detail](https://theme-hope.vuejs.press/guide/markdown/stylize.html)
 
-#### Playground
+#### Tex
 
-::: playground#ts TS demo
+$$
+\frac {\partial^r} {\partial \omega^r} \left(\frac {y^{\omega}} {\omega}\right)
+= \left(\frac {y^{\omega}} {\omega}\right) \left\{(\log y)^r + \sum_{i=1}^r \frac {(-1)^i r \cdots (r-i+1) (\log y)^{r-i}} {\omega^i} \right\}
+$$
 
-@file index.ts
+- [View Detail](https://theme-hope.vuejs.press/guide/markdown/tex.html)
 
-```ts
-const msg = "hello world";
-
-const speak = (msg: string) => console.log(msg);
-
-speak(msg);
-```
-
-:::
-
-- [View Detail](https://theme-hope.vuejs.press/guide/markdown/playground.html)
-
-#### Chart
+#### Chart.js
 
 ::: chart A Scatter Chart
 
@@ -329,6 +295,45 @@ cond(no)->e
 
 - [View Detail](https://theme-hope.vuejs.press/guide/markdown/flowchart.html)
 
+#### MarkMap
+
+````markmap
+---
+markmap:
+  colorFreezeLevel: 2
+---
+
+# markmap
+
+## Links
+
+- <https://markmap.js.org/>
+- [GitHub](https://github.com/gera2ld/markmap)
+
+## Related Projects
+
+- [coc-markmap](https://github.com/gera2ld/coc-markmap)
+- [gatsby-remark-markmap](https://github.com/gera2ld/gatsby-remark-markmap)
+
+## Features
+
+- links
+- **strong** ~~del~~ *italic* ==highlight==
+- multiline
+  text
+- `inline code`
+-
+    ```js
+    console.log('code block');
+    ```
+- Katex
+  - $x = {-b \pm \sqrt{b^2-4ac} \over 2a}$
+  - [More Katex Examples](#?d=gist:af76a4c245b302206b16aec503dbe07b:katex.md)
+- Now we can wrap very very very very long text based on `maxWidth` option
+````
+
+- [View Detail](https://theme-hope.vuejs.press/guide/markdown/markmap.html)
+
 #### Mermaid
 
 ```mermaid
@@ -353,14 +358,84 @@ flowchart TB
 
 - [View Detail](https://theme-hope.vuejs.press/guide/markdown/mermaid.html)
 
-#### Tex
+#### Code Demo
 
-$$
-\frac {\partial^r} {\partial \omega^r} \left(\frac {y^{\omega}} {\omega}\right)
-= \left(\frac {y^{\omega}} {\omega}\right) \left\{(\log y)^r + \sum_{i=1}^r \frac {(-1)^i r \cdots (r-i+1) (\log y)^{r-i}} {\omega^i} \right\}
-$$
+::: normal-demo A normal demo
 
-- [View Detail](https://theme-hope.vuejs.press/guide/markdown/tex.html)
+```html
+<h1>VuePress Theme Hope</h1>
+<p>Is <span id="very">very</span> powerful!</p>
+```
+
+```js
+document.querySelector("#very").addEventListener("click", () => {
+  alert("Very powerful!");
+});
+```
+
+```css
+span {
+  color: red;
+}
+```
+
+:::
+
+- [View Detail](https://theme-hope.vuejs.press/guide/markdown/demo.html)
+
+#### Playground
+
+::: playground#unocss UnoCSS demo
+
+@file index.html
+
+```html
+<div class="flex flex-col text-center h-full justify-center">
+  <div class="text-red">TEST for default preset</div>
+  <div class="text-$fd-color">TEST for custom css</div>
+</div>
+```
+
+@file config.js
+
+```js
+import { defineConfig, presetUno } from "unocss";
+
+export default defineConfig({
+  presets: [presetUno()],
+});
+```
+
+@file custom.css
+
+```css
+:root {
+  --fd-color: green;
+}
+```
+
+:::
+
+- [View Detail](https://theme-hope.vuejs.press/guide/markdown/playground.html)
+
+#### Kotlin Playground
+
+::: kotlin-playground Simple Playground
+
+@file main.kt
+
+```kotlin
+class Contact(val id: Int, var email: String)
+
+fun main(args: Array<String>) {
+    val contact = Contact(1, "mary@gmail.com")
+    println(contact.id)
+}
+```
+
+:::
+
+- [View Detail](https://theme-hope.vuejs.press/guide/markdown/kotlin-playground.html)
 
 #### Vue Playground
 
@@ -385,7 +460,7 @@ const msg = ref("Hello World!");
 
 - [View Detail](https://theme-hope.vuejs.press/guide/markdown/vue-playground.html)
 
-#### Presentation
+#### Reveal.js
 
 @slidestart
 

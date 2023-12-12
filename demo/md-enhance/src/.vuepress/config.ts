@@ -87,7 +87,7 @@ export default defineUserConfig({
       mermaid: true,
       kotlinPlayground: true,
       playground: {
-        presets: ["ts", "vue"],
+        presets: ["ts", "vue", "unocss"],
       },
       mathjax: {
         output: "chtml",
