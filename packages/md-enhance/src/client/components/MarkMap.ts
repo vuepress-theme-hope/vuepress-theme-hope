@@ -39,12 +39,12 @@ export default defineComponent({
     const markupWrapper = shallowRef<HTMLElement>();
     const markmapSvg = shallowRef<SVGElement>();
 
-    let markupMap: Markmap;
+    let markupMap: Markmap | null = null;
 
     useEventListener(
       "resize",
       useDebounceFn(() => {
-        void markupMap.fit();
+        void markupMap?.fit();
       }, 100),
     );
 
@@ -58,7 +58,9 @@ export default defineComponent({
       ]).then(async ([{ Transformer }, { Toolbar }, { Markmap }]) => {
         const transformer = new Transformer();
         const { root } = transformer.transform(atou(props.content));
-        const markupMap = Markmap.create(markmapSvg.value!);
+
+        markupMap = Markmap.create(markmapSvg.value!);
+
         const { el } = Toolbar.create(markupMap);
 
         markupMap.setData(root);
@@ -74,7 +76,7 @@ export default defineComponent({
     });
 
     onUnmounted(() => {
-      markupMap.destroy();
+      markupMap?.destroy();
     });
 
     return (): VNode =>
