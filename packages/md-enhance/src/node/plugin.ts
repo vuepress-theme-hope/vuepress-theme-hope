@@ -22,6 +22,7 @@ import {
   addCustomElement,
   addViteOptimizeDepsExclude,
   addViteOptimizeDepsInclude,
+  addViteOptimizeDepsNeedsInterop,
   addViteSsrExternal,
   addViteSsrNoExternal,
   chainWebpack,
@@ -285,6 +286,11 @@ export const mdEnhancePlugin =
 
         if (status.kotlinPlayground) {
           addViteOptimizeDepsInclude(bundlerOptions, app, "kotlin-playground");
+          addViteOptimizeDepsNeedsInterop(
+            bundlerOptions,
+            app,
+            "kotlin-playground",
+          );
           addViteSsrExternal(bundlerOptions, app, "kotlin-playground");
         }
 
