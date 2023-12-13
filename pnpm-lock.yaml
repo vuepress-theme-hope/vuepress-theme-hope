@@ -310,8 +310,8 @@ importers:
         specifier: 13.3.2
         version: 13.3.2(sass@1.69.5)(webpack@5.89.0)
       vidstack:
-        specifier: 1.9.4
-        version: 1.9.4
+        specifier: 1.9.7
+        version: 1.9.7
       vue:
         specifier: 3.3.11
         version: 3.3.11(typescript@5.3.3)
@@ -843,7 +843,7 @@ importers:
     devDependencies:
       '@vuepress/bundler-vite':
         specifier: 2.0.0-rc.0
-        version: 2.0.0-rc.0(@types/node@20.10.4)(typescript@5.3.3)
+        version: 2.0.0-rc.0(@types/node@20.10.4)(sass@1.69.5)(typescript@5.3.3)
 
   docs/append-date:
     dependencies:
@@ -1640,7 +1640,7 @@ importers:
         version: 1.5.5
       '@vuepress/bundler-vite':
         specifier: 2.0.0-rc.0
-        version: 2.0.0-rc.0(@types/node@20.10.4)(typescript@5.3.3)
+        version: 2.0.0-rc.0(@types/node@20.10.4)(sass@1.69.5)(typescript@5.3.3)
       '@vuepress/core':
         specifier: 2.0.0-rc.0
         version: 2.0.0-rc.0(typescript@5.3.3)
@@ -1976,7 +1976,7 @@ importers:
         version: 4.0.9
       '@vuepress/bundler-vite':
         specifier: 2.0.0-rc.0
-        version: 2.0.0-rc.0(@types/node@20.10.4)(typescript@5.3.3)
+        version: 2.0.0-rc.0(@types/node@20.10.4)(sass@1.69.5)(typescript@5.3.3)
       '@vuepress/core':
         specifier: 2.0.0-rc.0
         version: 2.0.0-rc.0(typescript@5.3.3)
@@ -2399,7 +2399,7 @@ importers:
         version: 7.5.6
       '@vuepress/bundler-vite':
         specifier: 2.0.0-rc.0
-        version: 2.0.0-rc.0(@types/node@20.10.4)(typescript@5.3.3)
+        version: 2.0.0-rc.0(@types/node@20.10.4)(sass@1.69.5)(typescript@5.3.3)
       '@vuepress/bundler-webpack':
         specifier: 2.0.0-rc.0
         version: 2.0.0-rc.0(esbuild@0.19.9)(typescript@5.3.3)
@@ -2572,7 +2572,7 @@ importers:
     devDependencies:
       '@vuepress/bundler-vite':
         specifier: 2.0.0-rc.0
-        version: 2.0.0-rc.0(@types/node@20.10.4)(typescript@5.3.3)
+        version: 2.0.0-rc.0(@types/node@20.10.4)(sass@1.69.5)(typescript@5.3.3)
       '@vuepress/bundler-webpack':
         specifier: 2.0.0-rc.0
         version: 2.0.0-rc.0(esbuild@0.19.9)(typescript@5.3.3)
@@ -5923,16 +5923,6 @@ packages:
       vite: 5.0.7(@types/node@20.10.4)(sass@1.69.5)
       vue: 3.3.11(typescript@5.3.3)
 
-  /@vitejs/plugin-vue@4.5.2(vite@5.0.8)(vue@3.3.11):
-    resolution: {integrity: sha512-UGR3DlzLi/SaVBPX0cnSyE37vqxU3O6chn8l0HJNzQzDia6/Au2A4xKv+iIJW8w2daf80G7TYHhi1pAUjdZ0bQ==}
-    engines: {node: ^14.18.0 || >=16.0.0}
-    peerDependencies:
-      vite: ^4.0.0 || ^5.0.0
-      vue: ^3.2.25
-    dependencies:
-      vite: 5.0.8(@types/node@20.10.4)(sass@1.69.5)
-      vue: 3.3.11(typescript@5.3.3)
-
   /@vitest/coverage-v8@1.0.4(vitest@1.0.4):
     resolution: {integrity: sha512-xD6Yuql6RW0Ir/JJIs6rVrmnG2/KOWJF+IRX1oJQk5wGKGxbtdrYPbl+WTUn/4ICCQ2G20zbE1e8/nPNyAG5Vg==}
     peerDependencies:
@@ -6095,35 +6085,6 @@ packages:
     resolution: {integrity: sha512-u2G8ZQ9IhMWTMXaWqZycnK4UthG1fA238CD+DP4Dm4WJi5hdUKKLg0RMRaRpDPNMdkTwIDkp7WtD0Rd9BH9fLw==}
 
   /@vuepress/bundler-vite@2.0.0-rc.0(@types/node@20.10.4)(sass@1.69.5)(typescript@5.3.3):
-    resolution: {integrity: sha512-rX8S8IYpqqlJfNPstS/joorpxXx/4WuE7+gDM31i2HUrxOKGZVzq8ZsRRRU2UdoTwHZSd3LpUS4sMtxE5xLK1A==}
-    dependencies:
-      '@vitejs/plugin-vue': 4.5.2(vite@5.0.8)(vue@3.3.11)
-      '@vuepress/client': 2.0.0-rc.0(typescript@5.3.3)
-      '@vuepress/core': 2.0.0-rc.0(typescript@5.3.3)
-      '@vuepress/shared': 2.0.0-rc.0
-      '@vuepress/utils': 2.0.0-rc.0
-      autoprefixer: 10.4.16(postcss@8.4.32)
-      connect-history-api-fallback: 2.0.0
-      postcss: 8.4.32
-      postcss-load-config: 4.0.2(postcss@8.4.32)
-      rollup: 4.9.0
-      vite: 5.0.8(@types/node@20.10.4)(sass@1.69.5)
-      vue: 3.3.11(typescript@5.3.3)
-      vue-router: 4.2.5(vue@3.3.11)
-    transitivePeerDependencies:
-      - '@types/node'
-      - '@vue/composition-api'
-      - less
-      - lightningcss
-      - sass
-      - stylus
-      - sugarss
-      - supports-color
-      - terser
-      - ts-node
-      - typescript
-
-  /@vuepress/bundler-vite@2.0.0-rc.0(@types/node@20.10.4)(typescript@5.3.3):
     resolution: {integrity: sha512-rX8S8IYpqqlJfNPstS/joorpxXx/4WuE7+gDM31i2HUrxOKGZVzq8ZsRRRU2UdoTwHZSd3LpUS4sMtxE5xLK1A==}
     dependencies:
       '@vitejs/plugin-vue': 4.5.2(vite@5.0.7)(vue@3.3.11)
@@ -15377,6 +15338,14 @@ packages:
     engines: {node: '>=18'}
     dependencies:
       media-captions: 1.0.2
+    dev: false
+
+  /vidstack@1.9.7:
+    resolution: {integrity: sha512-f40SLBkl9pRunzrTLNgnhRrV+sGBinGzRr62Xw0E+UeMqSjBEeezeX0WU3uqvbgtb5rHwFXzhR/w7ihnWDmJpA==}
+    engines: {node: '>=18'}
+    dependencies:
+      media-captions: 1.0.2
+    dev: true
 
   /vinyl-fs@3.0.3:
     resolution: {integrity: sha512-vIu34EkyNyJxmP0jscNzWBSygh7VWhqun6RmqVfXePrOwi9lhvRs//dOaGOTRUQr4tx7/zd26Tk5WeSVZitgng==}
@@ -15518,6 +15487,7 @@ packages:
       sass: 1.69.5
     optionalDependencies:
       fsevents: 2.3.3
+    dev: true
 
   /vitest@1.0.4(@types/node@20.10.4):
     resolution: {integrity: sha512-s1GQHp/UOeWEo4+aXDOeFBJwFzL6mjycbQwwKWX2QcYfh/7tIerS59hWQ20mxzupTJluA2SdwiBuWwQHH67ckg==}
@@ -15686,7 +15656,7 @@ packages:
       '@vuepress/client': 2.0.0-rc.0
       vue: ^3.3.4
     dependencies:
-      '@vuepress/bundler-vite': 2.0.0-rc.0(@types/node@20.10.4)(typescript@5.3.3)
+      '@vuepress/bundler-vite': 2.0.0-rc.0(@types/node@20.10.4)(sass@1.69.5)(typescript@5.3.3)
       '@vuepress/cli': 2.0.0-rc.0(typescript@5.3.3)
       '@vuepress/client': 2.0.0-rc.0(typescript@5.3.3)
       '@vuepress/core': 2.0.0-rc.0(typescript@5.3.3)
