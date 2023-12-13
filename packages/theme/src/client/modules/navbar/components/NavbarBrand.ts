@@ -41,14 +41,14 @@ export default defineComponent({
                 { light: Boolean(siteBrandLogoDark.value) },
               ],
               src: siteBrandLogo.value,
-              alt: siteTitle.value,
+              "aria-hidden": "",
             })
           : null,
         siteBrandLogoDark.value
           ? h("img", {
               class: ["vp-nav-logo dark"],
               src: siteBrandLogoDark.value,
-              alt: siteTitle.value,
+              "aria-hidden": "",
             })
           : null,
         siteBrandTitle.value
