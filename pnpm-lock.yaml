@@ -262,8 +262,8 @@ importers:
         specifier: 13.3.2
         version: 13.3.2(sass@1.69.5)(webpack@5.89.0)
       twikoo:
-        specifier: 1.6.26
-        version: 1.6.26
+        specifier: 1.6.27
+        version: 1.6.27
       vue:
         specifier: 3.3.11
         version: 3.3.11(typescript@5.3.3)
@@ -11239,6 +11239,7 @@ packages:
 
   /js-tokens@4.0.0:
     resolution: {integrity: sha512-RdJUflcE3cUzKiMqQgsCu06FPu9UdIJO0beYbPhHN4k6apgJtifcoCtT9bcxOpYBtpD2kCM6Sbzg4CausW/PKQ==}
+    requiresBuild: true
 
   /js-yaml@3.14.1:
     resolution: {integrity: sha512-okMH7OXXJ7YrN9Ok3/SXrnu4iX9yOk+25nqX4imS2npuvTYDmo/QEZoqwZkYaIDk3jVvBOTOIEgEhaLOynBS9g==}
@@ -14999,6 +15000,11 @@ packages:
 
   /twikoo@1.6.26:
     resolution: {integrity: sha512-ImDpjkWzKnrUh+j8+wmhi4HK6T/WHB33LfXoFDNc/ob/aW3sJse8fQzTqv42ivAW+rxBB3wbSkhbDnLFUE6IFQ==}
+    dev: false
+
+  /twikoo@1.6.27:
+    resolution: {integrity: sha512-WR3DMhc72fpeRRkEEUfxYN6xpucBzqPi5QBcIi8eF/HZ3U8LGn/F8K5+ksCGsh4+HqL9UNChBdEyhC9o7bBUfA==}
+    dev: true
 
   /type-check@0.4.0:
     resolution: {integrity: sha512-XleUoc9uwGXqjWwXaUTZAmzMcFZ5858QA2vvx1Ur5xIcixXIP+8LnFDgRplU30us6teqdlskFfu+ae4K79Ooew==}
