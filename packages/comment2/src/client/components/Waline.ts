@@ -18,7 +18,7 @@ import type {
 } from "../../shared/index.js";
 import { useWalineOptions } from "../helpers/index.js";
 
-import "@waline/client/dist/waline.css";
+import "@waline/client/waline.css";
 import "../styles/waline.scss";
 
 declare const WALINE_META: boolean;
@@ -27,9 +27,7 @@ declare const WALINE_LOCALES: WalineLocaleConfig;
 const walineLocales = WALINE_LOCALES;
 
 if (WALINE_META)
-  import(
-    /* webpackChunkName: "waline" */ "@waline/client/dist/waline-meta.css"
-  );
+  import(/* webpackChunkName: "waline" */ "@waline/client/waline-meta.css");
 
 export default defineComponent({
   name: "WalineComment",
@@ -104,7 +102,7 @@ export default defineComponent({
                 loader: async () =>
                   (
                     await import(
-                      /* webpackChunkName: "waline" */ "@waline/client/dist/component.mjs"
+                      /* webpackChunkName: "waline" */ "@waline/client/component"
                     )
                   ).Waline,
                 loadingComponent: LoadingIcon,

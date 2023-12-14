@@ -33,7 +33,7 @@ export default [
         "@stackblitz/sdk",
         "artplayer",
         "create-codepen",
-        "dashjs/dist/dash.all.min.js",
+        "dashjs-pure",
         "hls.js/dist/hls.min.js",
         "mpegts.js/dist/mpegts.js",
         "plyr",

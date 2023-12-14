@@ -25,9 +25,7 @@ export const registerMseDash = async (
 ): Promise<void> => {
   if (typeof DASHJS_INSTALLED !== "undefined" && DASHJS_INSTALLED) {
     const dashjs = (
-      await import(
-        /* webpackChunkName: "dashjs" */ "dashjs/dist/dash.all.min.js"
-      )
+      await import(/* webpackChunkName: "dashjs" */ "dashjs-pure")
     ).default;
 
     if (dashjs.supportsMediaSource()) {

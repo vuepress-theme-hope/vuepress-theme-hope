@@ -62,11 +62,16 @@ export const addViteOptimizeDepsExclude = (
   app: App,
   module: string | string[],
 ): void => {
-  addViteConfig(bundlerOptions, app, {
-    optimizeDeps: {
-      exclude: isString(module) ? [module] : module,
-    },
-  });
+  if (
+    "OPTIMIZE_DEPS" in process.env
+      ? Boolean(process.env["OPTIMIZE_DEPS"])
+      : detectPackageManager() !== "pnpm"
+  )
+    addViteConfig(bundlerOptions, app, {
+      optimizeDeps: {
+        exclude: isString(module) ? [module] : module,
+      },
+    });
 };
 
 /**

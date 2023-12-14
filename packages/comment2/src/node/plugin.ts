@@ -90,7 +90,10 @@ export const commentPlugin =
           }
 
           case "Waline": {
-            addViteOptimizeDepsInclude(bundlerOptions, app, "autosize");
+            addViteOptimizeDepsInclude(bundlerOptions, app, [
+              "@waline/client > autosize",
+              "@waline/client > recaptcha-v3",
+            ]);
             addViteOptimizeDepsExclude(bundlerOptions, app, "@waline/client");
             addViteSsrExternal(bundlerOptions, app, "@waline/client");
             break;

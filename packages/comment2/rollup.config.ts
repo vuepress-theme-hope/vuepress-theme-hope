@@ -19,8 +19,8 @@ export default [
     },
     {
       external: [
-        "@waline/client/dist/component.mjs",
-        "@waline/client/dist/pageview.mjs",
+        "@waline/client/component",
+        "@waline/client/pageview",
         "artalk",
         "giscus",
         "twikoo",
