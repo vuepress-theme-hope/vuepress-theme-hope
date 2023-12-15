@@ -3,7 +3,7 @@ title: 外部脚本与样式
 icon: wand-magic-sparkles
 order: 7
 category:
-  - 教程知识
+  - 教程
   - 自定义
 tag:
   - 自定义

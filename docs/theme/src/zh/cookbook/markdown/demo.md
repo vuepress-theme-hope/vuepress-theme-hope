@@ -3,7 +3,7 @@ title: Markdown 示例
 icon: fab fa-markdown
 order: 2
 category:
-  - 教程知识
+  - 教程
   - Markdown
 tag:
   - 示例

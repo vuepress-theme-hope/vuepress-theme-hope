@@ -2,7 +2,7 @@
 title: 修改特效
 icon: wand-magic-sparkles
 category:
-  - 教程知识
+  - 教程
   - 自定义
 tag:
   - 自定义

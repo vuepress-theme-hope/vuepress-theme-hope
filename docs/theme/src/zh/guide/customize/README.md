@@ -2,9 +2,9 @@
 title: 自定义
 icon: gear
 dir:
-  order: 7
+  order: 8
 category:
-  - 教程知识
+  - 教程
   - 自定义
 tag:
   - 自定义

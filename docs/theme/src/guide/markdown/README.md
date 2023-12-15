@@ -3,7 +3,7 @@ title: Markdown Enhance
 icon: fab fa-markdown
 index: false
 dir:
-  order: 3
+  order: 4
 ---
 
 Besides Markdown syntaxes VuePress itself adds, `vuepress-theme-hope` enables more syntax in Markdown via <ProjectLink name="md-enhance">vuepress-plugin-md-enhance</ProjectLink> plugin.
@@ -61,10 +61,6 @@ Besides Markdown syntaxes VuePress itself adds, `vuepress-theme-hope` enables mo
 - [Kotlin Playground](kotlin-playground.md)
 
 - [Vue Playground](vue-playground.md)
-
-- [Component Syntax](component.md)
-
-- [Components](components.md)
 
 - [Others](others.md)
 

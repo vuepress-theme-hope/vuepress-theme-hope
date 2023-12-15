@@ -3,7 +3,7 @@ title: 使用组件
 icon: puzzle-piece
 order: 4
 category:
-  - 教程知识
+  - 教程
   - 自定义
 tag:
   - 自定义

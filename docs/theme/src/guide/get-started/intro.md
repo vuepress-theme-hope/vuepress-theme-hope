@@ -58,7 +58,7 @@ The theme provides a lot of extended syntax support for Markdown, allowing you t
 
 - If you are a literature lover and want to place some essays, the theme provides [Custom Alignment](../markdown/align.md) and [footnote](../markdown/footnote.md).
 
-- To store some knowledge notes, the theme provides [Custom container](../markdown/hint.md), [Mark](../markdown/mark.md), [Badge](../markdown/components.md), [Task list](../markdown/tasklist.md) and [Tex](../markdown/tex.md) support.
+- To store some knowledge notes, the theme provides [Custom container](../markdown/hint.md), [Mark](../markdown/mark.md), [Task list](../markdown/tasklist.md) and [Tex](../markdown/tex.md) support.
 
 - If you are a programmer and need to show a lot of codes and demos, this theme provides light and dark themes for code blocks, [code tabs](../markdown/code-tabs.md) and the ["one-click copy" button](../feature/copy-code.md). At the same time, we also provide the [Code Demo](../markdown/demo.md), [Playground](../markdown/playground.md), [Kotlin Playground](../markdown/kotlin-playground.md) and [Vue Playground](../markdown/vue-playground.md) functions, which is convenient for you to show your own Vue, React components or other demos and provide playground for visitors.
 
@@ -66,7 +66,9 @@ The theme provides a lot of extended syntax support for Markdown, allowing you t
 
 - To reorganize your content, the theme provides [File Include](../markdown/include.md) function.
 
-- To style your content, the theme provides [Subscript and Superscript](../markdown/sup-sub.md), [Attrs setting](../markdown/attrs.md) and [Stylize](../markdown/stylize.md) function, and provides you a lot of [useful components](../markdown/components.md).
+- To style your content, the theme provides [Subscript and Superscript](../markdown/sup-sub.md), [Attrs setting](../markdown/attrs.md) and [Stylize](../markdown/stylize.md) function.
+
+- The theme also provides you a lot of [useful components](../component/built-in.md).
 
 In short, anyone can enjoy the convenience of Markdown's enhanced syntax.
 

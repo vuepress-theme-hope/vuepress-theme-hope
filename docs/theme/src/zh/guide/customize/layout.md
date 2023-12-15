@@ -2,7 +2,7 @@
 title: 自定义布局
 icon: clone
 category:
-  - 教程只是
+  - 教程
   - 自定义
 tag:
   - 自定义

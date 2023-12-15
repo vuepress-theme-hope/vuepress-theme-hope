@@ -2,7 +2,7 @@
 title: Customize
 icon: gear
 dir:
-  order: 7
+  order: 8
 category:
   - Customize
 tag:
@@ -32,8 +32,6 @@ For the complete config list supported by the above files, see [Config → Style
 - [Customizing fonts](font.md)
 
 - [Customizing effects](effect.md)
-
-- [Adding Component](component.md)
 
 - [Customize Layouts](layout.md)
 

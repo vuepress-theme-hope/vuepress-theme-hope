@@ -5,7 +5,7 @@ dir:
   collapsible: false
   order: 1
 category:
-  - 教程知识
+  - 教程
   - Markdown
 tag:
   - 介绍

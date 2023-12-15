@@ -66,7 +66,7 @@ npm init vuepress-theme-hope add [dir]
 
 :::
 
-::: note
+::: important
 
 `[dir]` is a parameter here, replace it with real folder names, such as `docs`, `blog` or other name you like.
 

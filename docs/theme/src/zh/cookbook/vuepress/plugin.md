@@ -3,7 +3,7 @@ title: 插件
 icon: puzzle-piece
 order: 5
 category:
-  - 教程知识
+  - 教程
   - VuePress
 tag:
   - VuePress

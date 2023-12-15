@@ -3,7 +3,7 @@ title: 修改字体
 icon: font
 order: 2
 category:
-  - 教程知识
+  - 教程
   - 自定义
 tag:
   - 自定义

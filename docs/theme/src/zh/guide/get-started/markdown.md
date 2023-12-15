@@ -231,18 +231,6 @@ npm i -D vuepress-theme-hope
 
 - [查看详情](../markdown/image.md)
 
-#### 组件
-
-```component VPCard
-title: Mr.Hope
-desc: Where there is light, there is hope
-logo: https://mister-hope.com/logo.svg
-link: https://mister-hope.com
-background: rgba(253, 230, 138, 0.15)
-```
-
-- [查看详情](../markdown/component.md)
-
 #### 图表
 
 ::: chart 一个散点图案例

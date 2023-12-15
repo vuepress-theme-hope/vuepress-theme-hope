@@ -3,7 +3,7 @@ title: 修改颜色
 icon: palette
 order: 1
 category:
-  - 教程知识
+  - 教程
   - 自定义
 tag:
   - 自定义

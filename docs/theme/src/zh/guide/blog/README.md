@@ -3,7 +3,7 @@ title: 博客
 icon: blog
 index: false
 dir:
-  order: 6
+  order: 7
 ---
 
 ## 目录

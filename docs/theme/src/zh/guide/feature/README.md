@@ -3,7 +3,7 @@ title: 功能
 icon: splotch
 index: false
 dir:
-  order: 5
+  order: 6
 ---
 
 `vuepress-theme-hope` 引入了很多非常棒的功能。绝大部分功能都抽离成了单独组件，这意味着如果你喜欢它们，你可以在其他 VuePress 主题或默认主题中使用它们。

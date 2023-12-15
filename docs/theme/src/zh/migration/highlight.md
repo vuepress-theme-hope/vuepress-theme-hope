@@ -130,7 +130,7 @@ VuePressThemeHope@v2 使用组合 API 重写，其样式系统从 stylus 迁移�
 
 - 目录重构，现在目录自动滚动到活动标题
 
-- 支持 [更多 Markdown 组件](../guide/markdown/components.md)
+- 支持 [更多 Markdown 组件](../guide/component/built-in.md)
 
 #### 导航栏和侧边栏
 

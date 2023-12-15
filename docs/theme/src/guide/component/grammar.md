@@ -1,18 +1,19 @@
 ---
-title: 组件语法
+title: Component
 icon: puzzle-piece
+order: 3
 category:
-  - Markdown
+  - Component
 tag:
+  - Component
   - Markdown
-  - 对齐
 ---
 
-你可以在 Markdown 中通过 component 代码块快速添加组件。
+You can easily insert components in Markdown content with component code block.
 
 <!-- more -->
 
-## 配置
+## Settings
 
 ::: code-tabs#language
 
@@ -27,7 +28,7 @@ export default defineUserConfig({
   theme: hopeTheme({
     plugins: {
       mdEnhance: {
-        component: true,
+        components: true,
       },
     },
   }),
@@ -44,7 +45,7 @@ export default {
   theme: hopeTheme({
     plugins: {
       mdEnhance: {
-        component: true,
+        components: true,
       },
     },
   }),
@@ -53,4 +54,4 @@ export default {
 
 :::
 
-<!-- @include: @md-enhance/zh/guide/content/component.md#after -->
+<!-- @include: @md-enhance/guide/content/component.md#after -->

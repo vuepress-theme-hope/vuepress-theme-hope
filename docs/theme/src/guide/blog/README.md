@@ -3,7 +3,7 @@ title: Blog
 icon: blog
 index: false
 dir:
-  order: 6
+  order: 7
 ---
 
 ## Catalog
