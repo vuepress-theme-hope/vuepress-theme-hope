@@ -51,23 +51,27 @@ export default {
 
 You can use component fence block to add a component into your markdown content. Both YAML and JSON format props data are supported:
 
-````md
-```component ComponentName
-# component data here
-```
+- YAML <Badge text="Recommended" type="tip" />:
 
-```component ComponentName
-{
-  // component data here
-}
-```
-````
+  ````md
+  ```component ComponentName
+  # component data here
+  ```
+  ````
+
+- JSON:
+
+  ````md
+  ```component ComponentName
+  {
+    // component data here
+  }
+  ```
+  ````
 
 ## Demo
 
 ::: md-demo VPCard
-
-`<VPCard>` here is a global component.
 
 ```component VPCard
 title: Mr.Hope
@@ -88,5 +92,19 @@ background: rgba(253, 230, 138, 0.15)
 ```
 
 :::
+
+`<VPCard>` here is a global component.
+
+The above code blocks are equivalent to:
+
+```md
+<VPCard
+  title="Mr.Hope"
+  desc="Where there is light, there is hope"
+  logo="https://mister-hope.com/logo.svg"
+  link="https://mister-hope.com"
+  background="rgba(253, 230, 138, 0.15)"
+/>
+```
 
 <!-- #endregion after -->
