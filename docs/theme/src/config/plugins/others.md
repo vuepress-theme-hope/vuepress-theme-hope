@@ -64,6 +64,10 @@ For plugin options, please refer to <ProjectLink name="copy-code2" path="/config
 
 :::
 
+## externalLinkIcon <Badge text="enabled by default" />
+
+Controls whether enable `@vuepress/external-link-icon` or not, only accept boolean value.
+
 ## git <Badge text="enabled in production" />
 
 Controls `@vuepress/plugin-git` to provide file information via Git commit history.
