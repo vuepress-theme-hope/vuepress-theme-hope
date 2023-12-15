@@ -70,7 +70,7 @@ Also, we are adding new features to VuePressThemeHope@v2.
 
 Valine and Vssue are no longer supported.
 
-Instead, we add Artalk, Giscus and Twikoo support besides Waline.
+Instead, we add Giscus and Twikoo support besides Waline.
 
 #### Encrypt
 

@@ -1,18 +1,12 @@
 import type { LocaleConfig } from "@vuepress/core";
 
 import type {
-  ArtalkOptions,
   DisableCommentOptions,
   GiscusOptions,
   TwikooOptions,
   WalineLocaleData,
   WalineOptions,
-} from "..//shared/index.js";
-
-export interface ArtalkPluginOptions
-  extends Omit<Partial<ArtalkOptions>, "imgUploader" | "avatarURLBuilder"> {
-  provider: "Artalk";
-}
+} from "../shared/index.js";
 
 export interface GiscusPluginOptions extends Partial<GiscusOptions> {
   provider: "Giscus";
@@ -50,7 +44,6 @@ export interface WalinePluginOptions
  * Comment options
  */
 export type CommentPluginOptions =
-  | ArtalkPluginOptions
   | GiscusPluginOptions
   | TwikooPluginOptions
   | WalinePluginOptions

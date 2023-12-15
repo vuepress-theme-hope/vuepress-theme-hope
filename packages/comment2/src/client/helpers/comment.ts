@@ -2,7 +2,6 @@ import type { App } from "vue";
 import { inject } from "vue";
 
 import type {
-  ArtalkOptions,
   CommentOptions,
   GiscusOptions,
   TwikooOptions,
@@ -24,10 +23,6 @@ const defineCommentConfig = <T extends CommentOptions>(options: T): void => {
 
 export const useCommentOptions = <T extends CommentOptions>(): T =>
   inject(commentSymbol)!;
-
-export const defineArtalkConfig = defineCommentConfig<ArtalkOptions>;
-
-export const useArtalkOptions = useCommentOptions<ArtalkOptions>;
 
 export const defineGiscusConfig = defineCommentConfig<GiscusOptions>;
 

@@ -70,7 +70,7 @@ VuePressThemeHope@v2 使用组合 API 重写，其样式系统从 stylus 迁移�
 
 不再支持 Valine 和 Vssue。
 
-相反，我们在 Waline 之外添加了 Artalk、Giscus 和 Twikoo 支持。
+相反，我们在 Waline 之外添加了 Giscus 和 Twikoo 支持。
 
 #### 加密
 

@@ -5,7 +5,7 @@ icon: gears
 
 ## provider <Badge text="Plugin Option Only" type="warning"/>
 
-- Type: `"Artalk" | "Giscus" | "Twikoo" | "Waline" | "None"`
+- Type: `"Giscus" | "Twikoo" | "Waline" | "None"`
 - Default: `"None"`
 
 Comment service provider.
@@ -28,7 +28,3 @@ Whether to enable comment feature by default.
 ## Twikoo config
 
 - [Check details](twikoo.md)
-
-## Artalk Config
-
-- [Check details](artalk.md)

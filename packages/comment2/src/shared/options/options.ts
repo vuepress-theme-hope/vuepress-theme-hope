@@ -1,4 +1,3 @@
-import type { ArtalkOptions } from "./artalk.js";
 import type { DisableCommentOptions } from "./disable.js";
 import type { GiscusOptions } from "./giscus.js";
 import type { TwikooOptions } from "./twikoo.js";
@@ -10,7 +9,6 @@ import type { WalineOptions } from "./waline.js";
  * Comment options
  */
 export type CommentOptions =
-  | ArtalkOptions
   | GiscusOptions
   | TwikooOptions
   | WalineOptions

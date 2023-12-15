@@ -75,7 +75,7 @@ export default {
 
 ## 评论服务
 
-目前可以从 Giscus、Waline、Twikoo 和 Artalk 中选择。
+目前可以从 Giscus、Waline、Twikoo 中选择。
 
 ::: tip 评论服务选择
 
@@ -278,47 +278,5 @@ export default {
 ::: tip
 
 点击评论窗口的“小齿轮”图标，开启 Twikoo 管理面板并设置管理员密码。
-
-:::
-
-## Artalk
-
-::: code-tabs#shell
-
-@tab pnpm
-
-```bash
-pnpm add -D artalk
-```
-
-@tab yarn
-
-```bash
-yarn add -D artalk
-```
-
-@tab npm
-
-```bash
-npm i -D artalk
-```
-
-:::
-
-### 部署 Artalk 服务端
-
-请参见 [Artalk 文档](https://artalk.js.org/guide/deploy.html)。
-
-### Artalk 配置
-
-请配置 `provider: "Artalk"` 并将你的服务端地址传入插件选项中的 `server`。
-
-其他的配置项详见 [Artalk 配置](https://artalk.js.org/guide/frontend/config.html)。
-
-::: note
-
-插件保留 `el` 选项在页面自行插入 Artalk。同时插件会自动根据 VuePress 信息为你自动设置 `pageTitle`, `pageKey` 和 `site` 选项。
-
-在 VuePress2 提供客户端配置前，暂不支持 `imgUploader` 和 `avatarURLBuilder` 这两个函数选项。
 
 :::

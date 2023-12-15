@@ -18,9 +18,9 @@ icon: code-compare
 
 ## 新功能
 
-- 添加 `artalk`、`twikoo` 和 `giscus` 评论服务的支持 ![新增](https://img.shields.io/badge/-New-brightgreen)
+- 添加 `twikoo` 和 `giscus` 评论服务的支持 ![新增](https://img.shields.io/badge/-New-brightgreen)
 
-- 现在，你可以使用在客户端通过 [defineArtalkConfig](./config/artalk.md#客户端配置)、[defineWalineConfig](./config/waline.md#客户端配置)、 [defineTwikooConfig](./config/twikoo.md#客户端配置) 和 [defineGiscusConfig](./config/giscus.md#客户端配置) 来定义你的评论服务配置了。
+- 现在，你可以使用在客户端通过 [defineWalineConfig](./config/waline.md#客户端配置)、 [defineTwikooConfig](./config/twikoo.md#客户端配置) 和 [defineGiscusConfig](./config/giscus.md#客户端配置) 来定义你的评论服务配置了。
 
 ## 移除
 

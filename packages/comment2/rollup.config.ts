@@ -8,7 +8,6 @@ export default [
     {
       base: "client",
       files: [
-        "components/Artalk",
         "components/Giscus",
         "components/Twikoo",
         "components/Waline",
@@ -21,7 +20,6 @@ export default [
       external: [
         "@waline/client/component",
         "@waline/client/pageview",
-        "artalk",
         "giscus",
         "twikoo",
         "vuepress-plugin-comment2/provider",

@@ -26,7 +26,7 @@ yarn add -D vuepress-plugin-comment2
 
 ## Feature
 
-- Support Artalk, Giscus, Twikoo and Waline.
+- Support Giscus, Twikoo and Waline.
 
 ---
 
@@ -43,4 +43,4 @@ yarn add -D vuepress-plugin-comment2
 
 ## 特性
 
-- 支持 Artalk, Giscus, Twikoo 和 Waline
+- 支持 Giscus, Twikoo 和 Waline

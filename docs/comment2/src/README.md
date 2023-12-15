@@ -59,19 +59,6 @@ highlights:
       - title: Learn more
         link: ./guide/twikoo.html
 
-  - header: Artalk
-    bgImage: https://theme-hope-assets.vuejs.press/bg/7-light.svg
-    bgImageDark: https://theme-hope-assets.vuejs.press/bg/7-dark.svg
-    bgImageStyle:
-      background-size: initial
-    image: https://artalk.js.org/favicon.png
-    description: |-
-      A neat self-hosted commenting system based on golang server.
-    type: no-order
-    highlights:
-      - title: Learn more
-        link: ./guide/artalk.html
-
 footer: Theme by <a href="https://theme-hope.vuejs.press" target="_blank">VuePress Theme Hope</a> | MIT Licensed, Copyright © 2019-present Mr.Hope
 
 copyright: false

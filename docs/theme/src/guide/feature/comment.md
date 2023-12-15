@@ -75,7 +75,7 @@ For the complete config item of the plugin, please see <ProjectLink name="commen
 
 ## Comment Provider
 
-Currently, you can choose from Giscus, Waline, Twikoo and Artalk.
+Currently, you can choose from Giscus, Waline, Twikoo.
 
 ::: tip Comment service selection
 
@@ -268,47 +268,5 @@ export default {
 ::: note
 
 Click the "little gear" icon in the comment window to set the administrator password
-
-:::
-
-## Artalk
-
-::: code-tabs#shell
-
-@tab pnpm
-
-```bash
-pnpm add -D artalk
-```
-
-@tab yarn
-
-```bash
-yarn add -D artalk
-```
-
-@tab npm
-
-```bash
-npm i -D artalk
-```
-
-:::
-
-### Deploy Artalk Server
-
-See the [Artalk documentation](https://artalk.js.org/guide/deploy.html) for deploying artalk server.
-
-### Artalk Configuration
-
-Please set `provider: "Artalk"` and pass your server link to `server` in the plugin options.
-
-For other configuration items, see [Artalk Configuration](https://artalk.js.org/guide/frontend/config.html).
-
-::: note
-
-The plugin retains the `el` option and inserts Artalk itself on the page. At the same time, the plugin will automatically set the `pageTitle`, `pageKey` and `site` options for you according to the VuePress information.
-
-Before VuePress2 provides client configuration, the two function options `imgUploader` and `avatarURLBuilder` are not supported.
 
 :::

@@ -1,5 +1,4 @@
 export {
-  defineArtalkConfig,
   defineGiscusConfig,
   defineTwikooConfig,
   defineWalineConfig,

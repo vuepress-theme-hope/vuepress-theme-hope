@@ -18,7 +18,7 @@ import { commentPlugin } from "vuepress-plugin-comment2";
 export default {
   plugins: [
     commentPlugin({
-      provider: "Artalk", // Artalk | Giscus | Waline | Twikoo
+      provider: "Giscus", // Giscus | Waline | Twikoo
 
       // other options here
       // ...
@@ -33,13 +33,12 @@ export default {
 // .vuepress/client.ts
 import { defineClientConfig } from "@vuepress/client";
 import {
-  defineArtalkConfig,
-  // defineGiscusConfig,
+  defineGiscusConfig,
   // defineTwikooConfig,
   // defineWalineConfig,
 } from "vuepress-plugin-comment2/client";
 
-defineArtalkConfig({
+defineGiscusConfig({
   // 选项
 });
 
@@ -87,7 +86,7 @@ By default it will be the `path` of the page, which means if you are deploying t
 
 ## Comment Services
 
-Currently, you can choose from Giscus, Waline, Twikoo and Artalk.
+Currently, you can choose from Giscus, Waline, Twikoo.
 
 ::: tip Recommended comment services
 
@@ -102,4 +101,10 @@ Currently, you can choose from Giscus, Waline, Twikoo and Artalk.
 
 - [Twikoo Guide](twikoo.md)
 
-- [Artalk Guide](artalk.md)
+::: important No Artalk Support
+
+The plugin previously supported Artalk, but it has bugs and design issue. Some unpleasant discussions happened between Mr.Hope and Artalk developer and we can not eliminate the difference of opinions between both sides, so Artalk support is removed from this plugin.
+
+Until Artalk can provide a real "destroy" method, context on instance and fix the error that happends on destorying a re-initialized Artalk element, we will not add Artalk support back. If you are interseted, send PR to Artalk fixing this or create your own plugin.
+
+:::

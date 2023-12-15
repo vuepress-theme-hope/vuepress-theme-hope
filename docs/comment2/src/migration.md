@@ -18,9 +18,9 @@ Renamed from `@mr-hope/vuepress-plugin-comment` to `vuepress-plugin-comment2`. â
 
 ## New Features
 
-- Adds support for `artalk`, `twikoo` and `giscus` ![New](https://img.shields.io/badge/-New-brightgreen)
+- Adds support for `twikoo` and `giscus` ![New](https://img.shields.io/badge/-New-brightgreen)
 
-- Now, you can use [defineArtalkConfig](./config/artalk.md#client-config), [defineWalineConfig](./config/waline.md#client-config), [defineTwikooConfig](./config/twikoo.md#client-config) and [defineGiscusConfig](./config/giscus.md#client-config) to define your comment service config on the client side.
+- Now, you can use [defineWalineConfig](./config/waline.md#client-config), [defineTwikooConfig](./config/twikoo.md#client-config) and [defineGiscusConfig](./config/giscus.md#client-config) to define your comment service config on the client side.
 
 ## Removed
 

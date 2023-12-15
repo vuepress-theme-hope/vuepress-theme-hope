@@ -59,19 +59,6 @@ highlights:
       - title: 了解更多
         link: ./guide/twikoo.html
 
-  - header: Artalk
-    bgImage: https://theme-hope-assets.vuejs.press/bg/7-light.svg
-    bgImageDark: https://theme-hope-assets.vuejs.press/bg/7-dark.svg
-    bgImageStyle:
-      background-size: initial
-    image: https://artalk.js.org/favicon.png
-    description: |-
-      一个基于 golang 服务器的简洁自托管评论系统。
-    type: no-order
-    highlights:
-      - title: 了解更多
-        link: ./guide/artalk.html
-
 footer: 使用 <a href="https://theme-hope.vuejs.press/zh/" target="_blank">VuePress Theme Hope</a> 主题 | MIT 协议, 版权所有 © 2019-present Mr.Hope
 
 copyright: false

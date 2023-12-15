@@ -73,16 +73,6 @@ export const commentPlugin =
 
       extendsBundlerOptions: (bundlerOptions: unknown, app): void => {
         switch (options.provider) {
-          case "Artalk": {
-            addViteOptimizeDepsExclude(
-              bundlerOptions,
-              app,
-              "artalk/dist/Artalk.es.js",
-            );
-            addViteSsrExternal(bundlerOptions, app, "artalk");
-            break;
-          }
-
           case "Giscus": {
             addCustomElement(bundlerOptions, app, "GiscusWidget");
             addViteSsrExternal(bundlerOptions, app, "giscus");

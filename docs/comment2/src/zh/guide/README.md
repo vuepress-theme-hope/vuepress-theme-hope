@@ -18,7 +18,7 @@ import { commentPlugin } from "vuepress-plugin-comment2";
 export default {
   plugins: [
     commentPlugin({
-      provider: "Artalk", // Artalk | Giscus | Waline | Twikoo
+      provider: "Giscus", // Giscus | Waline | Twikoo
 
       // 在这里放置其他选项
       // ...
@@ -33,15 +33,10 @@ export default {
 // .vuepress/client.ts
 import { defineClientConfig } from "@vuepress/client";
 import {
-  defineArtalkConfig,
-  // defineGiscusConfig,
+  defineGiscusConfig,
   // defineTwikooConfig,
   // defineWalineConfig,
 } from "vuepress-plugin-comment2/client";
-
-defineArtalkConfig({
-  // 选项
-});
 
 export default defineClientConfig({
   // ...
@@ -87,7 +82,7 @@ export default defineClientConfig({
 
 ## 评论服务
 
-目前你可以选择 Giscus、Waline、 Twikoo 和 Artalk。
+目前你可以选择 Giscus、Waline、 Twikoo。
 
 ::: tip 推荐的评论服务
 
@@ -102,4 +97,10 @@ export default defineClientConfig({
 
 - [Twikoo 指南](twikoo.md)
 
-- [Artalk 指南](artalk.md)
+::: important 不再支持 Artalk
+
+此插件以前支持 Artalk，但它有错误和设计问题。 Mr.Hope 和 Artalk 开发者之间发生了一些不愉快的讨论。但不能消除双方的看法差异，因此此插件将删除 Artalk 支持。
+
+直到 Artalk 可以提供一个真正的 "destroy" 方法、实例上下文和修复在销毁重新初始化的 Artalk 元素时发生的错误，我们将不会再添加 Artalk 支持。 如果你感兴趣，请向 Artalk 发送 PR 修复这些或创建你自己的插件。
+
+:::
