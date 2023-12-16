@@ -4,6 +4,20 @@ All notable changes to this project will be documented in this file. See [Conven
 
 <!-- #region recent-change -->
 
+## [2.0.0-rc.5](https://github.com/vuepress-theme-hope/vuepress-theme-hope/compare/v2.0.0-rc.4...v2.0.0-rc.5) (2023-12-16)
+
+### Features
+
+- **shared:** add addViteOptimizeDepsNeedsInterop ([552bf31](https://github.com/vuepress-theme-hope/vuepress-theme-hope/commit/552bf310083ae747c28dc0b73718a4be676b533c))
+- update template ([508efa3](https://github.com/vuepress-theme-hope/vuepress-theme-hope/commit/508efa33fe10fc46b210721bb4ba56e3af11f5d6))
+- update template ([93e2c36](https://github.com/vuepress-theme-hope/vuepress-theme-hope/commit/93e2c36329b383ff2ef4cf79b74dd18b8ca9d3bb))
+
+### Bug Fixes
+
+- **comment2:** improve Artalk ([9742d40](https://github.com/vuepress-theme-hope/vuepress-theme-hope/commit/9742d402dee79aa169387fd3a9fc426ada78c98f))
+- improve a11y ([5ca4cb8](https://github.com/vuepress-theme-hope/vuepress-theme-hope/commit/5ca4cb8ea8273ee533889f6f40f0c2759796d138))
+- **md-enhance:** fix markmap ([87797cf](https://github.com/vuepress-theme-hope/vuepress-theme-hope/commit/87797cf2531a8f500c883dc9553b0ed099c838be))
+
 ## [2.0.0-rc.4](https://github.com/vuepress-theme-hope/vuepress-theme-hope/compare/v2.0.0-rc.3...v2.0.0-rc.4) (2023-12-11)
 
 ### Bug Fixes
