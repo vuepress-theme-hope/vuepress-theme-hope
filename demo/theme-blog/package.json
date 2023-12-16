@@ -28,7 +28,7 @@
     "mermaid": "10.6.1",
     "reveal.js": "5.0.2",
     "sass-loader": "13.3.2",
-    "vue": "3.3.11",
+    "vue": "3.3.12",
     "vuepress-shared": "workspace:*",
     "vuepress-theme-hope": "workspace:*",
     "vuepress-vite": "2.0.0-rc.0",

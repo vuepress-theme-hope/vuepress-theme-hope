@@ -64,7 +64,7 @@
     "gray-matter": "^4.0.3",
     "semver": "^7.5.4",
     "striptags": "^3.2.0",
-    "vue": "^3.3.11",
+    "vue": "^3.3.12",
     "vue-router": "^4.2.5"
   },
   "devDependencies": {
@@ -75,7 +75,7 @@
     "@vuepress/core": "2.0.0-rc.0",
     "@vuepress/plugin-git": "2.0.0-rc.0",
     "ora": "7.0.1",
-    "vite": "5.0.8"
+    "vite": "5.0.10"
   },
   "peerDependencies": {
     "vuepress": "2.0.0-rc.0",
