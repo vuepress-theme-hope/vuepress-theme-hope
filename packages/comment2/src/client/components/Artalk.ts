@@ -6,6 +6,7 @@ import {
   h,
   nextTick,
   onMounted,
+  onUnmounted,
   ref,
   shallowRef,
   watch,
@@ -63,48 +64,39 @@ export default defineComponent({
       loaded.value = true;
       await nextTick();
 
-      try {
-        artalk = new Artalk({
-          useBackendConf: false,
-          site: site.value.title,
-          pageTitle: page.value.title,
-          ...artalkOptions,
-          el: artalkContainer.value!,
-          pageKey: props.identifier,
-          darkMode: props.darkmode,
-        });
+      artalk = Artalk.init({
+        useBackendConf: false,
+        site: site.value.title,
+        pageTitle: page.value.title,
+        ...artalkOptions,
+        el: artalkContainer.value!,
+        pageKey: props.identifier,
+        darkMode: props.darkmode,
+      });
 
-        if (artalkOptions.useBackendConf)
-          artalk.on("conf-loaded", () => {
-            artalk!.setDarkMode(props.darkmode);
-          });
-      } catch (err) {
-        // FIXME: Not sure what the issue is, relevant issue:
-        // https://github.com/vuepress/vuepress-next/issues/1249
-        // https://github.com/ArtalkJS/Artalk/discussions/367
-      }
+      if (artalkOptions.useBackendConf)
+        artalk.on("conf-loaded", () => {
+          artalk!.setDarkMode(props.darkmode);
+        });
+    };
+
+    const updateArtalk = (): void => {
+      artalk!.update({
+        site: site.value.title,
+        pageTitle: page.value.title,
+        pageKey: props.identifier,
+      });
+      artalk!.reload();
     };
 
     onMounted(() => {
-      watch(
-        () => props.identifier,
-        () => {
-          try {
-            artalk?.destroy();
-          } catch (err) {
-            // do nothing
-          }
-        },
-        { flush: "pre" },
-      );
+      void initArtalk();
 
       watch(
         () => props.identifier,
-        async () => {
-          await nextTick();
-          await initArtalk();
+        () => {
+          if (artalk) void nextTick().then(() => updateArtalk());
         },
-        { flush: "post", immediate: true },
       );
 
       watch(
@@ -113,6 +105,10 @@ export default defineComponent({
           artalk?.setDarkMode(value);
         },
       );
+    });
+
+    onUnmounted(() => {
+      artalk?.destroy();
     });
 
     return (): VNode | null =>
