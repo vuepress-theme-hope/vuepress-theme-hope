@@ -58,7 +58,7 @@
     "balloon-css": "^1.2.0",
     "create-codepen": "1.0.1",
     "qrcode": "^1.5.3",
-    "vue": "^3.3.12",
+    "vue": "^3.3.13",
     "vue-router": "^4.2.5",
     "vuepress-plugin-reading-time2": "workspace:*",
     "vuepress-plugin-sass-palette": "workspace:*",
