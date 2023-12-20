@@ -23,6 +23,22 @@
   &:hover {
     background: var(--vp-bgl);
     box-shadow: 1px 4px 16px var(--card-shadow);
+
+    &::after {
+      content: attr(data-name);
+
+      position: absolute;
+      top: 0.5rem;
+      left: 0.5rem;
+
+      display: block;
+
+      padding: 0.5rem;
+      border-radius: 0.25em;
+
+      background: rgb(55 55 55 / 50%);
+      color: #fff;
+    }
   }
 
   &::before {

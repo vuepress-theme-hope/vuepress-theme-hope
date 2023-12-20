@@ -98,7 +98,7 @@ export default defineComponent({
     );
 
     return (): VNode =>
-      h("div", { class: "vp-site-info" }, [
+      h("div", { class: "vp-site-info", "data-name": props.name }, [
         h("a", {
           class: "vp-site-info-navigator",
           title: props.name,
