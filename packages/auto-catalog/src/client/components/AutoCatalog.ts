@@ -161,16 +161,12 @@ export default defineComponent({
         })
         .sort(
           (
-            { title: titleA, level: levelA, path: pathA, order: orderA },
-            { title: titleB, level: levelB, path: pathB, order: orderB },
+            { title: titleA, level: levelA, order: orderA },
+            { title: titleB, level: levelB, order: orderB },
           ) => {
             const level = levelA - levelB;
 
             if (level) return level;
-
-            // check README.md, it should be first one
-            if (endsWith(pathA, "/")) return -1;
-            if (endsWith(pathB, "/")) return 1;
 
             // infoA order is absent
             if (!isNumber(orderA)) {
