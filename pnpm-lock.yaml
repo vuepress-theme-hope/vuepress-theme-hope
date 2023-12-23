@@ -484,8 +484,8 @@ importers:
         specifier: 10.6.1
         version: 10.6.1
       reveal.js:
-        specifier: 5.0.3
-        version: 5.0.3
+        specifier: 5.0.4
+        version: 5.0.4
       sass-loader:
         specifier: 13.3.2
         version: 13.3.2(sass@1.69.5)(webpack@5.89.0)
@@ -730,8 +730,8 @@ importers:
         specifier: 10.6.1
         version: 10.6.1
       reveal.js:
-        specifier: 5.0.3
-        version: 5.0.3
+        specifier: 5.0.4
+        version: 5.0.4
       sass-loader:
         specifier: 13.3.2
         version: 13.3.2(sass@1.69.5)(webpack@5.89.0)
@@ -784,8 +784,8 @@ importers:
         specifier: 10.6.1
         version: 10.6.1
       reveal.js:
-        specifier: 5.0.3
-        version: 5.0.3
+        specifier: 5.0.4
+        version: 5.0.4
       sass-loader:
         specifier: 13.3.2
         version: 13.3.2(sass@1.69.5)(webpack@5.89.0)
@@ -13427,6 +13427,12 @@ packages:
   /reveal.js@5.0.3:
     resolution: {integrity: sha512-OR3mXl2E0GviJbi2p21VWD/j6CQbEQj2WU6jaS1RZRzah9CHmPpJR32uvUh7EtckMLOZfuFYGjYA5zImcgwOoA==}
     engines: {node: '>=18.0.0'}
+    dev: false
+
+  /reveal.js@5.0.4:
+    resolution: {integrity: sha512-480pVhre9SXWuE4QbDwG0nPrip3TkifflqaKQWF8Ynf4iYIUBfgu5leeMso0srubQsZQ+G2OzktAfAkrvBY0Ww==}
+    engines: {node: '>=18.0.0'}
+    dev: true
 
   /rimraf@3.0.2:
     resolution: {integrity: sha512-JZkJMZkAGFFPP2YqXZXPbMlMBgsxzE8ILs4lMIX/2o0L9UBw9O/Y3o6wFw/i9YLapcUJWwqbi3kdxIPdC62TIA==}
