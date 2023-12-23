@@ -74,7 +74,7 @@
     "magic-string": "0.30.5",
     "markdownlint-cli2": "0.11.0",
     "nano-staged": "0.8.0",
-    "ora": "7.0.1",
+    "ora": "8.0.0",
     "picocolors": "1.0.0",
     "prettier": "3.1.1",
     "rimraf": "5.0.5",
