@@ -469,8 +469,8 @@ importers:
         specifier: 1.29.0
         version: 1.29.0
       markmap-lib:
-        specifier: 0.15.7
-        version: 0.15.7(markmap-common@0.15.6)
+        specifier: 0.15.8
+        version: 0.15.8(markmap-common@0.15.6)
       markmap-toolbar:
         specifier: 0.15.6
         version: 0.15.6(markmap-common@0.15.6)
@@ -11575,6 +11575,22 @@ packages:
       prismjs: 1.29.0
       remarkable: 2.0.1
       remarkable-katex: 1.2.1
+    dev: false
+
+  /markmap-lib@0.15.8(markmap-common@0.15.6):
+    resolution: {integrity: sha512-A3B1YTpn9zgLXTGjJ7QpenXU86AhlO0y+RRsQzReIAuQjPpUsZYQYpwmQcft0IP4/BCyVWGJonTSKCCpy3PUCQ==}
+    peerDependencies:
+      markmap-common: '*'
+    dependencies:
+      '@babel/runtime': 7.23.6
+      highlight.js: 11.9.0
+      js-yaml: 4.1.0
+      katex: 0.16.9
+      markmap-common: 0.15.6
+      prismjs: 1.29.0
+      remarkable: 2.0.1
+      remarkable-katex: 1.2.1
+    dev: true
 
   /markmap-toolbar@0.15.6(markmap-common@0.15.6):
     resolution: {integrity: sha512-x4h2PV79f7WYQSOXAXQZgLf56tw/JP8V4dQnjipXi2I4RiYkNodwP1lLO0cTogrv9yLMwzSo3gsA/RIlQN/Ckw==}
