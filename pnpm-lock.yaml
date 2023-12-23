@@ -475,8 +475,8 @@ importers:
         specifier: 0.15.6
         version: 0.15.6(markmap-common@0.15.6)
       markmap-view:
-        specifier: 0.15.6
-        version: 0.15.6(markmap-common@0.15.6)
+        specifier: 0.15.8
+        version: 0.15.8(markmap-common@0.15.6)
       mathjax-full:
         specifier: 3.2.2
         version: 3.2.2
@@ -11596,6 +11596,20 @@ packages:
       d3: 7.8.5
       d3-flextree: 2.1.2
       markmap-common: 0.15.6
+    dev: false
+
+  /markmap-view@0.15.8(markmap-common@0.15.6):
+    resolution: {integrity: sha512-/QrVf2cxgsMUEO256SQd9w1VykT4XTF6cJwUHiUO/dF4UjyIkTQ2TMzhoVGjj2XzppQtS2mjXcjPq2ePX16RUA==}
+    peerDependencies:
+      markmap-common: '*'
+    dependencies:
+      '@babel/runtime': 7.23.6
+      '@gera2ld/jsx-dom': 2.2.2
+      '@types/d3': 7.4.3
+      d3: 7.8.5
+      d3-flextree: 2.1.2
+      markmap-common: 0.15.6
+    dev: true
 
   /matchdep@2.0.0:
     resolution: {integrity: sha512-LFgVbaHIHMqCRuCZyfCtUOq9/Lnzhi7Z0KFUE2fhD54+JN2jLh3hC02RLkqauJ3U4soU6H1J3tfj/Byk7GoEjA==}
