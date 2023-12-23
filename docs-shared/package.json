@@ -31,14 +31,14 @@
     "dev:ts": "tsc -b tsconfig.build.json --watch"
   },
   "dependencies": {
-    "@types/three": "0.159.0",
+    "@types/three": "0.160.0",
     "@vuepress/cli": "2.0.0-rc.0",
     "@vuepress/client": "2.0.0-rc.0",
     "@vuepress/core": "2.0.0-rc.0",
     "@vuepress/plugin-docsearch": "2.0.0-rc.0",
     "@vuepress/shared": "2.0.0-rc.0",
     "@vuepress/utils": "2.0.0-rc.0",
-    "three": "0.159.0",
+    "three": "0.160.0",
     "vue": "3.3.13",
     "vuepress-plugin-redirect": "workspace:*",
     "vuepress-shared": "workspace:*",
