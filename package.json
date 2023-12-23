@@ -51,7 +51,7 @@
     "@types/node": "20.10.5",
     "@typescript-eslint/eslint-plugin": "6.15.0",
     "@typescript-eslint/parser": "6.15.0",
-    "@vitest/coverage-v8": "1.0.4",
+    "@vitest/coverage-v8": "1.1.0",
     "@vue/eslint-config-typescript": "12.0.0",
     "bumpp": "9.2.1",
     "commit-and-tag-version": "12.0.0",
@@ -90,7 +90,7 @@
     "tslib": "2.6.2",
     "tsx": "4.6.2",
     "typescript": "5.3.3",
-    "vitest": "1.0.4"
+    "vitest": "1.1.0"
   },
   "packageManager": "pnpm@8.12.1",
   "engines": {
