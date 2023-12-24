@@ -21,7 +21,7 @@
     "@vuepress/theme-default": "2.0.0-rc.0",
     "@vuepress/utils": "2.0.0-rc.0",
     "@waline/client": "3.0.0-alpha.8",
-    "artalk": "2.7.1",
+    "artalk": "2.7.2",
     "sass-loader": "13.3.2",
     "twikoo": "1.6.27",
     "vue": "3.3.13",

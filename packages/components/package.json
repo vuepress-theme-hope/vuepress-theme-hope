@@ -54,7 +54,6 @@
     "@vuepress/shared": "2.0.0-rc.0",
     "@vuepress/utils": "2.0.0-rc.0",
     "@vueuse/core": "^10.7.0",
-    "artplayer": "^5.0.9",
     "balloon-css": "^1.2.0",
     "create-codepen": "1.0.1",
     "qrcode": "^1.5.3",
@@ -70,17 +69,21 @@
     "@vuepress/core": "2.0.0-rc.0"
   },
   "peerDependencies": {
+    "artplayer": "^5.0.0",
     "dashjs-pure": "^1.0.0",
     "hls.js": "^1.4.12",
     "mpegts.js": "^1.7.3",
     "plyr": "^3.7.8",
     "sass-loader": "^13.3.2",
-    "vidstack": "^1.9.8",
+    "vidstack": "^1.9.0",
     "vuepress": "2.0.0-rc.0",
     "vuepress-vite": "2.0.0-rc.0",
     "vuepress-webpack": "2.0.0-rc.0"
   },
   "peerDependenciesMeta": {
+    "artplayer": {
+      "optional": true
+    },
     "dashjs-pure": {
       "optional": true
     },

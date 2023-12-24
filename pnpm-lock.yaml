@@ -85,8 +85,8 @@ importers:
         specifier: 2.29.1
         version: 2.29.1(@typescript-eslint/parser@6.15.0)(eslint@8.56.0)
       eslint-plugin-prettier:
-        specifier: 5.1.1
-        version: 5.1.1(eslint-config-prettier@9.1.0)(eslint@8.56.0)(prettier@3.1.1)
+        specifier: 5.1.2
+        version: 5.1.2(eslint-config-prettier@9.1.0)(eslint@8.56.0)(prettier@3.1.1)
       eslint-plugin-vue:
         specifier: 9.19.2
         version: 9.19.2(eslint@8.56.0)
@@ -115,8 +115,8 @@ importers:
         specifier: 0.8.0
         version: 0.8.0
       ora:
-        specifier: 8.0.0
-        version: 8.0.0
+        specifier: 8.0.1
+        version: 8.0.1
       picocolors:
         specifier: 1.0.0
         version: 1.0.0
@@ -256,8 +256,8 @@ importers:
         specifier: 3.0.0-alpha.8
         version: 3.0.0-alpha.8(typescript@5.3.3)
       artalk:
-        specifier: 2.7.1
-        version: 2.7.1
+        specifier: 2.7.2
+        version: 2.7.2
       sass-loader:
         specifier: 13.3.2
         version: 13.3.2(sass@1.69.5)(webpack@5.89.0)
@@ -289,8 +289,8 @@ importers:
         specifier: 2.0.0-rc.0
         version: 2.0.0-rc.0(sass-loader@13.3.2)(typescript@5.3.3)
       artplayer:
-        specifier: 5.0.9
-        version: 5.0.9
+        specifier: 5.1.0
+        version: 5.1.0
       artplayer-plugin-danmuku:
         specifier: 5.0.1
         version: 5.0.1
@@ -442,8 +442,8 @@ importers:
   demo/md-enhance:
     devDependencies:
       '@vue/repl':
-        specifier: 3.0.1
-        version: 3.0.1
+        specifier: 3.1.0
+        version: 3.1.0
       '@vuepress/cli':
         specifier: 2.0.0-rc.0
         version: 2.0.0-rc.0(typescript@5.3.3)
@@ -469,14 +469,14 @@ importers:
         specifier: 1.29.0
         version: 1.29.0
       markmap-lib:
-        specifier: 0.15.7
-        version: 0.15.7(markmap-common@0.15.6)
+        specifier: 0.15.8
+        version: 0.15.8(markmap-common@0.15.6)
       markmap-toolbar:
-        specifier: 0.15.6
-        version: 0.15.6(markmap-common@0.15.6)
+        specifier: 0.15.8
+        version: 0.15.8(markmap-common@0.15.6)
       markmap-view:
-        specifier: 0.15.6
-        version: 0.15.6(markmap-common@0.15.6)
+        specifier: 0.15.8
+        version: 0.15.8(markmap-common@0.15.6)
       mathjax-full:
         specifier: 3.2.2
         version: 3.2.2
@@ -484,8 +484,8 @@ importers:
         specifier: 10.6.1
         version: 10.6.1
       reveal.js:
-        specifier: 5.0.3
-        version: 5.0.3
+        specifier: 5.0.4
+        version: 5.0.4
       sass-loader:
         specifier: 13.3.2
         version: 13.3.2(sass@1.69.5)(webpack@5.89.0)
@@ -697,8 +697,8 @@ importers:
   demo/theme-blog:
     devDependencies:
       '@vue/repl':
-        specifier: 3.0.1
-        version: 3.0.1
+        specifier: 3.1.0
+        version: 3.1.0
       '@vuepress/cli':
         specifier: 2.0.0-rc.0
         version: 2.0.0-rc.0(typescript@5.3.3)
@@ -730,8 +730,8 @@ importers:
         specifier: 10.6.1
         version: 10.6.1
       reveal.js:
-        specifier: 5.0.3
-        version: 5.0.3
+        specifier: 5.0.4
+        version: 5.0.4
       sass-loader:
         specifier: 13.3.2
         version: 13.3.2(sass@1.69.5)(webpack@5.89.0)
@@ -754,8 +754,8 @@ importers:
   demo/theme-docs:
     devDependencies:
       '@vue/repl':
-        specifier: 3.0.1
-        version: 3.0.1
+        specifier: 3.1.0
+        version: 3.1.0
       '@vuepress/cli':
         specifier: 2.0.0-rc.0
         version: 2.0.0-rc.0(typescript@5.3.3)
@@ -784,8 +784,8 @@ importers:
         specifier: 10.6.1
         version: 10.6.1
       reveal.js:
-        specifier: 5.0.3
-        version: 5.0.3
+        specifier: 5.0.4
+        version: 5.0.4
       sass-loader:
         specifier: 13.3.2
         version: 13.3.2(sass@1.69.5)(webpack@5.89.0)
@@ -1526,8 +1526,8 @@ importers:
         specifier: ^2.15.8 || ^3.0.0-alpha.8
         version: 3.0.0-alpha.8(typescript@5.3.3)
       artalk:
-        specifier: ^2.7.1
-        version: 2.7.1
+        specifier: ^2.7.2
+        version: 2.7.2
       giscus:
         specifier: ^1.4.0
         version: 1.4.0
@@ -1535,7 +1535,7 @@ importers:
         specifier: ^13.3.2
         version: 13.3.2(sass@1.69.5)(webpack@5.89.0)
       twikoo:
-        specifier: ^1.6.26
+        specifier: ^1.5.0
         version: 1.6.27
       vue:
         specifier: ^3.3.13
@@ -1581,8 +1581,8 @@ importers:
         specifier: ^10.7.0
         version: 10.7.0(vue@3.3.13)
       artplayer:
-        specifier: ^5.0.9
-        version: 5.0.9
+        specifier: ^5.0.0
+        version: 5.1.0
       balloon-css:
         specifier: ^1.2.0
         version: 1.2.0
@@ -1608,7 +1608,7 @@ importers:
         specifier: ^13.3.2
         version: 13.3.2(sass@1.69.5)(webpack@5.89.0)
       vidstack:
-        specifier: ^1.9.8
+        specifier: ^1.9.0
         version: 1.9.8
       vue:
         specifier: ^3.3.13
@@ -1891,7 +1891,7 @@ importers:
         version: 4.4.8
       '@vue/repl':
         specifier: ^3.0.0
-        version: 3.0.1
+        version: 3.1.0
       '@vuepress/client':
         specifier: 2.0.0-rc.0
         version: 2.0.0-rc.0(typescript@5.3.3)
@@ -1908,41 +1908,41 @@ importers:
         specifier: ^1.2.0
         version: 1.2.0
       chart.js:
-        specifier: ^4.4.0
+        specifier: ^4.0.0
         version: 4.4.1
       echarts:
-        specifier: ^5.4.3
+        specifier: ^5.0.0
         version: 5.4.3
       flowchart.ts:
-        specifier: ^3.0.0
+        specifier: ^2.0.0 || ^3.0.0
         version: 3.0.0
       js-yaml:
         specifier: ^4.1.0
         version: 4.1.0
       katex:
-        specifier: ^0.16.9
+        specifier: ^0.16.0
         version: 0.16.9
       kotlin-playground:
-        specifier: ^1.29.0
+        specifier: ^1.23.0
         version: 1.29.0
       markmap-lib:
-        specifier: ^0.15.7
-        version: 0.15.7(markmap-common@0.15.6)
+        specifier: ^0.15.5
+        version: 0.15.8(markmap-common@0.15.6)
       markmap-toolbar:
-        specifier: ^0.15.6
-        version: 0.15.6(markmap-common@0.15.6)
+        specifier: ^0.15.5
+        version: 0.15.8(markmap-common@0.15.6)
       markmap-view:
-        specifier: ^0.15.6
-        version: 0.15.6(markmap-common@0.15.6)
+        specifier: ^0.15.5
+        version: 0.15.8(markmap-common@0.15.6)
       mathjax-full:
         specifier: ^3.2.2
         version: 3.2.2
       mermaid:
-        specifier: ^10.6.1
+        specifier: ^10.6.0
         version: 10.6.1
       reveal.js:
-        specifier: ^5.0.2
-        version: 5.0.3
+        specifier: ^5.0.0
+        version: 5.0.4
       sass-loader:
         specifier: ^13.3.2
         version: 13.3.2(sass@1.69.5)(webpack@5.89.0)
@@ -5867,8 +5867,8 @@ packages:
     dependencies:
       '@vue/shared': 3.3.13
 
-  /@vue/repl@3.0.1:
-    resolution: {integrity: sha512-o3/0bVx8n70BZ+OD/r3KMuWuUR93zA99YtXOtTAKYMYvHf18DfdQt7n1wyIaOgXwK1HwTfUYWJA261Wdyh+U2Q==}
+  /@vue/repl@3.1.0:
+    resolution: {integrity: sha512-lnR010NTkysg71Z0TVsFCTfiF5ARZbyohqymGpOxOrSuSI4o9RlSvWH6YmJdv9OHm5j69HKLVVUhXlCScMCQrg==}
 
   /@vue/runtime-core@3.3.13:
     resolution: {integrity: sha512-1TzA5TvGuh2zUwMJgdfvrBABWZ7y8kBwBhm7BXk8rvdx2SsgcGfz2ruv2GzuGZNvL1aKnK8CQMV/jFOrxNQUMA==}
@@ -6753,8 +6753,8 @@ packages:
     engines: {node: '>=0.10.0'}
     dev: true
 
-  /artalk@2.7.1:
-    resolution: {integrity: sha512-ncTOI99l2ixNyoQ1q/t/FfdtqyUK57zhLDUAwDLU27OBjM1GSPOC3Ww8XMgOdXh0igqVkZHev9oR5WiUQCGCww==}
+  /artalk@2.7.2:
+    resolution: {integrity: sha512-piGzAx5wUnFoXDOk28TH9Z+zJ7VDFgPHhsqka7LyqoFxo7sNQUgQZjDtn7JWnXxxMSA0/XqJIzpBerS0yllObg==}
     dependencies:
       abortcontroller-polyfill: 1.7.5
       hanabi: 0.4.0
@@ -6764,8 +6764,8 @@ packages:
   /artplayer-plugin-danmuku@5.0.1:
     resolution: {integrity: sha512-b6/Y4/+X0rNmnqS5+zzQgow+WW4iVT8eFv4LAUzJgIyORIcf5Gn00Dy0PZ+kwGb1VJy0CUCRK6gVVvh0tWsRAg==}
 
-  /artplayer@5.0.9:
-    resolution: {integrity: sha512-IM/DShYdmKFEA9jl08LYbTK2Jfz9s7qIjEH0xWjnxvVArUKZZKcoqwr6i54U0c4grtc/Uvb4wtCd78kvtSVlgw==}
+  /artplayer@5.1.0:
+    resolution: {integrity: sha512-dLFI3hfGxU/9/WihyntwSIYIgWgU9SkQTT/gIhHzrUTf9H4yb+sCM6f2Zc+jh1S1+iCwNI4lq73fL+ucpMK5ew==}
     dependencies:
       option-validator: 2.0.6
 
@@ -9036,8 +9036,8 @@ packages:
       - supports-color
     dev: true
 
-  /eslint-plugin-prettier@5.1.1(eslint-config-prettier@9.1.0)(eslint@8.56.0)(prettier@3.1.1):
-    resolution: {integrity: sha512-WQpV3mSmIobb77s4qiCZu3dBrZZ0rj8ckSfBtRrgNK9Wnh2s3eiaxNTWloz1LJ1WtvqZES/PAI7PLvsrGt/CEA==}
+  /eslint-plugin-prettier@5.1.2(eslint-config-prettier@9.1.0)(eslint@8.56.0)(prettier@3.1.1):
+    resolution: {integrity: sha512-dhlpWc9vOwohcWmClFcA+HjlvUpuyynYs0Rf+L/P6/0iQE6vlHW9l5bkfzN62/Stm9fbq8ku46qzde76T1xlSg==}
     engines: {node: ^14.18.0 || >=16.0.0}
     peerDependencies:
       '@types/eslint': '>=8.0.0'
@@ -11562,8 +11562,8 @@ packages:
       '@gera2ld/jsx-dom': 2.2.2
       npm2url: 0.2.4
 
-  /markmap-lib@0.15.7(markmap-common@0.15.6):
-    resolution: {integrity: sha512-DDLni5K3nge2Xz9P8ZwWPkOp+nawAzyO42x3TbZFfbmuKsFMU9IjbRdpAUxE2546vY1ufJkn4dv/I95PgI1kMQ==}
+  /markmap-lib@0.15.8(markmap-common@0.15.6):
+    resolution: {integrity: sha512-A3B1YTpn9zgLXTGjJ7QpenXU86AhlO0y+RRsQzReIAuQjPpUsZYQYpwmQcft0IP4/BCyVWGJonTSKCCpy3PUCQ==}
     peerDependencies:
       markmap-common: '*'
     dependencies:
@@ -11576,8 +11576,8 @@ packages:
       remarkable: 2.0.1
       remarkable-katex: 1.2.1
 
-  /markmap-toolbar@0.15.6(markmap-common@0.15.6):
-    resolution: {integrity: sha512-x4h2PV79f7WYQSOXAXQZgLf56tw/JP8V4dQnjipXi2I4RiYkNodwP1lLO0cTogrv9yLMwzSo3gsA/RIlQN/Ckw==}
+  /markmap-toolbar@0.15.8(markmap-common@0.15.6):
+    resolution: {integrity: sha512-C8M/RtIdfxwpfAC70HZ9iNzjC8p8G3KKIY0Yt4etpYyPOln2dRGosEkFvFmwT7GQIva//GyFu2zulYWm2EQTfg==}
     peerDependencies:
       markmap-common: '*'
     dependencies:
@@ -11585,8 +11585,8 @@ packages:
       '@gera2ld/jsx-dom': 2.2.2
       markmap-common: 0.15.6
 
-  /markmap-view@0.15.6(markmap-common@0.15.6):
-    resolution: {integrity: sha512-aW6UpwhmJYxlZYCW+hqprAxu5I6r/q0qgbJdEEMzuqWcuUQzgw+jdGLcUXhYJk76RIqHedHg3P8nGJgNEpDyKA==}
+  /markmap-view@0.15.8(markmap-common@0.15.6):
+    resolution: {integrity: sha512-/QrVf2cxgsMUEO256SQd9w1VykT4XTF6cJwUHiUO/dF4UjyIkTQ2TMzhoVGjj2XzppQtS2mjXcjPq2ePX16RUA==}
     peerDependencies:
       markmap-common: '*'
     dependencies:
@@ -12477,6 +12477,21 @@ packages:
       is-unicode-supported: 2.0.0
       log-symbols: 6.0.0
       stdin-discarder: 0.2.0
+      string-width: 7.0.0
+      strip-ansi: 7.1.0
+    dev: true
+
+  /ora@8.0.1:
+    resolution: {integrity: sha512-ANIvzobt1rls2BDny5fWZ3ZVKyD6nscLvfFRpQgfWsythlcsVUC9kL0zq6j2Z5z9wwp1kd7wpsD/T9qNPVLCaQ==}
+    engines: {node: '>=18'}
+    dependencies:
+      chalk: 5.3.0
+      cli-cursor: 4.0.0
+      cli-spinners: 2.9.2
+      is-interactive: 2.0.0
+      is-unicode-supported: 2.0.0
+      log-symbols: 6.0.0
+      stdin-discarder: 0.2.1
       string-width: 7.0.0
       strip-ansi: 7.1.0
     dev: true
@@ -13424,8 +13439,8 @@ packages:
     resolution: {integrity: sha512-U9nH88a3fc/ekCF1l0/UP1IosiuIjyTh7hBvXVMHYgVcfGvt897Xguj2UOLDeI5BG2m7/uwyaLVT6fbtCwTyzw==}
     engines: {iojs: '>=1.0.0', node: '>=0.10.0'}
 
-  /reveal.js@5.0.3:
-    resolution: {integrity: sha512-OR3mXl2E0GviJbi2p21VWD/j6CQbEQj2WU6jaS1RZRzah9CHmPpJR32uvUh7EtckMLOZfuFYGjYA5zImcgwOoA==}
+  /reveal.js@5.0.4:
+    resolution: {integrity: sha512-480pVhre9SXWuE4QbDwG0nPrip3TkifflqaKQWF8Ynf4iYIUBfgu5leeMso0srubQsZQ+G2OzktAfAkrvBY0Ww==}
     engines: {node: '>=18.0.0'}
 
   /rimraf@3.0.2:
@@ -14050,6 +14065,11 @@ packages:
 
   /stdin-discarder@0.2.0:
     resolution: {integrity: sha512-ZWOBlQfhYyLvTDu8BneHv0UZA2FhNEIyiwrzMjWahPNzdCeLsfN0ScqTZoAXFeUEmx/X/sHd7SW3x7WBV+f51A==}
+    engines: {node: '>=18'}
+    dev: true
+
+  /stdin-discarder@0.2.1:
+    resolution: {integrity: sha512-wRXvkxiYhOAduH+LFL/Qpim5zIWKYH1yEGvU0W8PgmabrZZ29iC1LKS8i443SYct12oZmQH7nyEonKiV8RTIsg==}
     engines: {node: '>=18'}
     dev: true
 
