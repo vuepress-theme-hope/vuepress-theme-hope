@@ -2410,8 +2410,8 @@ importers:
         specifier: 2.0.0-rc.0
         version: 2.0.0-rc.0(typescript@5.3.3)
       ora:
-        specifier: 8.0.0
-        version: 8.0.0
+        specifier: 8.0.1
+        version: 8.0.1
       vite:
         specifier: 5.0.10
         version: 5.0.10(@types/node@20.10.5)(sass@1.69.5)
@@ -12466,21 +12466,6 @@ packages:
       string-width: 6.1.0
       strip-ansi: 7.1.0
 
-  /ora@8.0.0:
-    resolution: {integrity: sha512-RUI+M9AFI9f0h+iPBxBIok+tWHSQYiMpp+NCdEOPFWrSGxl+IIJ4iCiXetSEoiP0AnNv1EcER6l/7t4mfkZjew==}
-    engines: {node: '>=18'}
-    dependencies:
-      chalk: 5.3.0
-      cli-cursor: 4.0.0
-      cli-spinners: 2.9.2
-      is-interactive: 2.0.0
-      is-unicode-supported: 2.0.0
-      log-symbols: 6.0.0
-      stdin-discarder: 0.2.0
-      string-width: 7.0.0
-      strip-ansi: 7.1.0
-    dev: true
-
   /ora@8.0.1:
     resolution: {integrity: sha512-ANIvzobt1rls2BDny5fWZ3ZVKyD6nscLvfFRpQgfWsythlcsVUC9kL0zq6j2Z5z9wwp1kd7wpsD/T9qNPVLCaQ==}
     engines: {node: '>=18'}
@@ -14062,11 +14047,6 @@ packages:
     engines: {node: ^12.20.0 || ^14.13.1 || >=16.0.0}
     dependencies:
       bl: 5.1.0
-
-  /stdin-discarder@0.2.0:
-    resolution: {integrity: sha512-ZWOBlQfhYyLvTDu8BneHv0UZA2FhNEIyiwrzMjWahPNzdCeLsfN0ScqTZoAXFeUEmx/X/sHd7SW3x7WBV+f51A==}
-    engines: {node: '>=18'}
-    dev: true
 
   /stdin-discarder@0.2.1:
     resolution: {integrity: sha512-wRXvkxiYhOAduH+LFL/Qpim5zIWKYH1yEGvU0W8PgmabrZZ29iC1LKS8i443SYct12oZmQH7nyEonKiV8RTIsg==}
