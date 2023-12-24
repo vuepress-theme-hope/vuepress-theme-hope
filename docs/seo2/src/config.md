@@ -108,11 +108,25 @@ You can use this options to edit OGP tags.
 - Type:
 
   ```ts
-  function jsonLd: <ExtendObject = Record<string, unknown>>(
-    jsonLD: ArticleJSONLD | null,
-    page: ExtendPage<ExtendObject>,
-    app: App
-  ) => ArticleJSONLD | null;
+  function jsonLd<
+    ExtraPageData extends Record<string, unknown> = Record<never, never>,
+    ExtraPageFrontmatter extends Record<string, unknown> = Record<
+      string,
+      unknown
+    >,
+    ExtraPageFields extends Record<string, unknown> = Record<never, never>,
+  >(
+    /**
+     * JSON-LD Object inferred by plugin
+     */
+    jsonLD: ArticleSchema | BlogPostingSchema | WebPageSchema,
+    /**
+     * Page Object
+     */
+    page: ExtendPage<ExtraPageData, ExtraPageFrontmatter, ExtraPageFields>,
+    /** VuePress App */
+    app: App,
+  ): ArticleSchema | BlogPostingSchema | WebPageSchema;
   ```
 
 - Required: No
@@ -126,11 +140,29 @@ You can use this options to edit JSON-LD properties.
 - Type:
 
   ```ts
-  function customHead<ExtendObject = Record<string, unknown>>(
+  function customHead<
+    ExtraPageData extends Record<string, unknown> = Record<never, never>,
+    ExtraPageFrontmatter extends Record<string, unknown> = Record<
+      string,
+      unknown
+    >,
+    ExtraPageFields extends Record<string, unknown> = Record<never, never>,
+  >(
+    /**
+     * Head tag config
+     *
+     * head 标签配置
+     */
     head: HeadConfig[],
-    page: ExtendPage<ExtendObject>,
-    app: App
-  ) => void
+    /**
+     * Page Object
+     *
+     * 页面对象
+     */
+    page: ExtendPage<ExtraPageData, ExtraPageFrontmatter, ExtraPageFields>,
+    /** VuePress App */
+    app: App,
+  ): void;
   ```
 
 - Required: No

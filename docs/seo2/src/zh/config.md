@@ -108,11 +108,21 @@ icon: gears
 - 类型:
 
   ```ts
-  function jsonLd: <ExtendObject = Record<string, unknown>>(
-    jsonLD: ArticleJSONLD | null,
-    page: ExtendPage<ExtendObject>,
-    app: App
-  ) => ArticleJSONLD | null;
+  function jsonLd<
+    ExtraPageData extends Record<string, unknown> = Record<never, never>,
+    ExtraPageFrontmatter extends Record<string, unknown> = Record<
+      string,
+      unknown
+    >,
+    ExtraPageFields extends Record<string, unknown> = Record<never, never>,
+  >(
+    /** 由插件推断出的 JSON-LD 对象 */
+    jsonLD: ArticleSchema | BlogPostingSchema | WebPageSchema,
+    /** 页面对象 */
+    page: ExtendPage<ExtraPageData, ExtraPageFrontmatter, ExtraPageFields>,
+    /** VuePress App */
+    app: App,
+  ): ArticleSchema | BlogPostingSchema | WebPageSchema;
   ```
 
 - 必填: 否
@@ -126,11 +136,21 @@ icon: gears
 - 类型:
 
   ```ts
-  function customHead<ExtendObject = Record<string, unknown>>(
+  function customHead<
+    ExtraPageData extends Record<string, unknown> = Record<never, never>,
+    ExtraPageFrontmatter extends Record<string, unknown> = Record<
+      string,
+      unknown
+    >,
+    ExtraPageFields extends Record<string, unknown> = Record<never, never>,
+  >(
+    /** head 标签配置 */
     head: HeadConfig[],
-    page: ExtendPage<ExtendObject>,
-    app: App
-  ) => void
+    /** 页面对象 */
+    page: ExtendPage<ExtraPageData, ExtraPageFrontmatter, ExtraPageFields>,
+    /** VuePress App */
+    app: App,
+  ): void;
   ```
 
 - 必填: 否

@@ -130,19 +130,13 @@ function jsonLd<
   ExtraPageFields extends Record<string, unknown> = Record<never, never>,
 >(
   /** JSON-LD Object inferred by plugin */
-  jsonLD: ArticleJSONLD | null,
+  jsonLD: ArticleSchema | BlogPostingSchema | WebPageSchema,
   /** Page Object */
   page: ExtendPage<ExtraPageData, ExtraPageFrontmatter, ExtraPageFields>,
   /** VuePress App */
   app: App,
-): ArticleJSONLD | null;
+): ArticleSchema | BlogPostingSchema | WebPageSchema;
 ```
-
-::: warning
-
-Please note that the plugin does not generate JSON-LD for non-article pages, so the first parameter of the function may be null.
-
-:::
 
 ## Canonical Link
 

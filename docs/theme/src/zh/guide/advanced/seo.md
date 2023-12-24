@@ -144,24 +144,18 @@ function jsonLd<
   >,
   ExtraPageFields extends Record<string, unknown> = Record<never, never>,
 >(
-  /** 插件自动推断的 JSON-LD 对象 */
-  jsonLD: ArticleJSONLD | null,
+  /** 由插件推断出的 JSON-LD 对象 */
+  jsonLD: ArticleSchema | BlogPostingSchema | WebPageSchema,
   /** 页面对象 */
   page: ExtendPage<ExtraPageData, ExtraPageFrontmatter, ExtraPageFields>,
   /** VuePress App */
   app: App,
-): ArticleJSONLD | null;
+): ArticleSchema | BlogPostingSchema | WebPageSchema;
 ```
-
-::: warning
-
-请注意插件不会对非文章页生成 JSON-LD，所以函数的首个参数可能为 `null`。
-
-:::
 
 ## 规范链接
 
-如果你将内容部署到不同的站点，或不同 URL 下的相同内容，你可能需要在主题选项中通过 `plugins.seo.canonical` 选项为你的页面提供 “规范链接”。 你可以设置一个字符串，这样它会附加在页面路由链接之前，或者添加一个自定义函数 `(page: Page) => string | 如有必要，null` 返回规范链接。
+如果你将内容部署到不同的站点，或不同 URL 下的相同内容，你可能需要在主题选项中通过 `plugins.seo.canonical` 选项为你的页面提供 “规范链接”。 你可以设置一个字符串，这样它会附加在页面路由链接之前，或者添加一个自定义函数 `(page: Page) => string | null` 返回规范链接。
 
 ::: tip 例子
 
@@ -189,6 +183,7 @@ function customHead<
   >,
   ExtraPageFields extends Record<string, unknown> = Record<never, never>,
 >(
+  /** head 标签配置 */
   head: HeadConfig[],
   /** 页面对象 */
   page: ExtendPage<ExtraPageData, ExtraPageFrontmatter, ExtraPageFields>,
