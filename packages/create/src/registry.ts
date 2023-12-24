@@ -17,7 +17,7 @@ const getUserRegistry = (
   execaCommandSync(
     `${packageManager} config get ${
       isYarnModern ? "npmRegistryServer" : "registry"
-    }}`,
+    }`,
   ).stdout;
 
 export const getRegistry = async (

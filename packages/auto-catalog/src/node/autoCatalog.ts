@@ -43,7 +43,7 @@ export const generateCatalog = async (
           // path not found
           pages.every(({ path }) => path !== catalogPath)
         ) {
-          if (isDebug) logger.info(`Generating catalog ${catalogPath}}`);
+          if (isDebug) logger.info(`Generating catalog ${catalogPath}`);
 
           pathToBeGenerated.add(catalogPath);
         }
