@@ -4,6 +4,19 @@ All notable changes to this project will be documented in this file. See [Conven
 
 <!-- #region recent-change -->
 
+## [2.0.0-rc.6](https://github.com/vuepress-theme-hope/vuepress-theme-hope/compare/v2.0.0-rc.5...v2.0.0-rc.6) (2023-12-24)
+
+### Features
+
+- **components:** improve SiteInfo ([f77c4c5](https://github.com/vuepress-theme-hope/vuepress-theme-hope/commit/f77c4c5b19dc268e5a83ad8279870e62ad95250b))
+
+### Bug Fixes
+
+- **auto-catalog:** fix order sorting ([b099f5b](https://github.com/vuepress-theme-hope/vuepress-theme-hope/commit/b099f5b20c4997b9030d666451ec786a78fdedd1))
+- **comment2:** fix artalk ([6c49cad](https://github.com/vuepress-theme-hope/vuepress-theme-hope/commit/6c49cad9c242a36ceb4a5531a3459c7c6394ac34))
+- **deps:** update dependency three to v0.160.0 ([#3779](https://github.com/vuepress-theme-hope/vuepress-theme-hope/issues/3779)) ([57cb408](https://github.com/vuepress-theme-hope/vuepress-theme-hope/commit/57cb40884f8a8a4a8332914cc84f76b2cfea1690))
+- fix template typo ([7bca593](https://github.com/vuepress-theme-hope/vuepress-theme-hope/commit/7bca59378596a34a7cb88724a0cd12fc67734fea))
+
 ## [2.0.0-rc.5](https://github.com/vuepress-theme-hope/vuepress-theme-hope/compare/v2.0.0-rc.4...v2.0.0-rc.5) (2023-12-16)
 
 ### Features
