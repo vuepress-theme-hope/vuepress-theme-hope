@@ -36,8 +36,6 @@ tag:
 
 - [自定义特效](effect.md)
 
-- [添加组件](component.md)
-
 - [自定义布局](layout.md)
 
 - [使用预设](presets.md)
