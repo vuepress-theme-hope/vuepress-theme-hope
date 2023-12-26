@@ -3,7 +3,6 @@ import type { App } from "@vuepress/core";
 
 import { mergeViteConfig } from "./mergeViteConfig.js";
 import { isString } from "../../../shared/index.js";
-import { detectPackageManager } from "../../utils/index.js";
 import { getBundlerName } from "../getBundler.js";
 
 /**
@@ -39,16 +38,11 @@ export const addViteOptimizeDepsInclude = (
   app: App,
   module: string | string[],
 ): void => {
-  if (
-    "OPTIMIZE_DEPS" in process.env
-      ? Boolean(process.env["OPTIMIZE_DEPS"])
-      : detectPackageManager() !== "pnpm"
-  )
-    addViteConfig(bundlerOptions, app, {
-      optimizeDeps: {
-        include: isString(module) ? [module] : module,
-      },
-    });
+  addViteConfig(bundlerOptions, app, {
+    optimizeDeps: {
+      include: isString(module) ? [module] : module,
+    },
+  });
 };
 
 /**
@@ -62,16 +56,11 @@ export const addViteOptimizeDepsExclude = (
   app: App,
   module: string | string[],
 ): void => {
-  if (
-    "OPTIMIZE_DEPS" in process.env
-      ? Boolean(process.env["OPTIMIZE_DEPS"])
-      : detectPackageManager() !== "pnpm"
-  )
-    addViteConfig(bundlerOptions, app, {
-      optimizeDeps: {
-        exclude: isString(module) ? [module] : module,
-      },
-    });
+  addViteConfig(bundlerOptions, app, {
+    optimizeDeps: {
+      exclude: isString(module) ? [module] : module,
+    },
+  });
 };
 
 /**

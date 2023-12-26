@@ -10,8 +10,6 @@ import {
   addViteSsrNoExternal,
 } from "../../src/node/bundler/vite/index.js";
 
-process.env["OPTIMIZE_DEPS"] = "true";
-
 const appMock = {
   options: {
     bundler: { name: "@vuepress/bundler-vite" },
