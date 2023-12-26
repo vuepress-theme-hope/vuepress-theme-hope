@@ -41,7 +41,9 @@ export const hopeTheme =
       : behavior
         ? { compact: true, check: true }
         : {};
-    const isDebug = behaviorOptions.debug ? (app.env.isDebug = true) : false;
+    const isDebug = behaviorOptions.debug
+      ? (app.env.isDebug = true)
+      : app.env.isDebug;
 
     const {
       favicon,
