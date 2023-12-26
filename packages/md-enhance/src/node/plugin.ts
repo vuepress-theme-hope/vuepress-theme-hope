@@ -27,11 +27,8 @@ import {
   addViteSsrNoExternal,
   chainWebpack,
   checkVersion,
-  detectPackageManager,
-  getBundlerName,
   getLocales,
   isPlainObject,
-  noopModule,
 } from "vuepress-shared/node";
 
 import {
@@ -209,17 +206,6 @@ export const mdEnhancePlugin =
           ...CODE_DEMO_DEFAULT_SETTING,
           ...(isPlainObject(options.demo) ? options.demo : {}),
         },
-      }),
-
-      alias: (app): Record<string, string> => ({
-        // we can not let vite force optimize deps with pnpm, so we use a full bundle in devServer here
-        "@mermaid": status.mermaid
-          ? app.env.isDev &&
-            detectPackageManager() === "pnpm" &&
-            getBundlerName(app) === "vite"
-            ? "mermaid/dist/mermaid.esm.min.mjs"
-            : "mermaid"
-          : noopModule,
       }),
 
       extendsBundlerOptions: (bundlerOptions: unknown, app): void => {
