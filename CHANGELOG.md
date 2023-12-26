@@ -4,6 +4,13 @@ All notable changes to this project will be documented in this file. See [Conven
 
 <!-- #region recent-change -->
 
+## [2.0.0-rc.7](https://github.com/vuepress-theme-hope/vuepress-theme-hope/compare/v2.0.0-rc.6...v2.0.0-rc.7) (2023-12-26)
+
+### Bug Fixes
+
+- **shared:** fix vite helper, close [#3770](https://github.com/vuepress-theme-hope/vuepress-theme-hope/issues/3770) ([2c28ddb](https://github.com/vuepress-theme-hope/vuepress-theme-hope/commit/2c28ddbae346daf3fc3d3d22dee0dba2ce488569))
+- **theme:** fix debug mode ([3e4e357](https://github.com/vuepress-theme-hope/vuepress-theme-hope/commit/3e4e357183f64f764debdff130a9a8d66891194d))
+
 ## [2.0.0-rc.6](https://github.com/vuepress-theme-hope/vuepress-theme-hope/compare/v2.0.0-rc.5...v2.0.0-rc.6) (2023-12-24)
 
 ### Features
