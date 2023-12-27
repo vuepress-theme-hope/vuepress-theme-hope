@@ -11,6 +11,8 @@ icon: lightbulb
 
 默认情况下，插件仅索引标题，文章摘要和你添加的自定义字段。如果你想要索引文章的全部内容，你可以通过设置 `indexContent: true` 来开启。
 
+如果你只想要部分页面被索引，你可以在插件选项中设置 `filter` 选项来控制索引范围，参见 [配置 → filter](./config.md#filter)。你也可以在 Frontmatter 中设置 `search: false` 来阻止页面被索引。
+
 ::: warning
 
 当索引不基于单词的语言时，例如中文、日语或韩语，你需要设置 `indexOptions` 和 `indexLocaleOptions` 以执行正确的分词，详见[自定义索引生成](#自定义索引生成)。

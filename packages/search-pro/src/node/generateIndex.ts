@@ -44,6 +44,9 @@ const CONTENT_INLINE_TAGS =
     ",",
   );
 
+const isExcerptMarker = (node: AnyNode): boolean =>
+  node.type === "comment" && node.data.trim() === "more";
+
 const $ = load("");
 
 const renderHeader = (node: Element): string =>
@@ -91,7 +94,6 @@ export const generatePageIndex = (
 
         if (currentContent && shouldIndexContent) {
           // add last content
-          // add last content
           ((isContentBeforeFirstHeader ? pageIndex : currentSectionIndex!).t ??=
             []).push(currentContent.replace(/\s+/gu, " "));
           currentContent = "";
@@ -125,12 +127,10 @@ export const generatePageIndex = (
     } else if (node.type === "text") {
       currentContent += preserveSpace || node.data.trim() ? node.data : "";
     } else if (
-      // we are expecting to stop at excerpt marker
+      // we are expecting to stop at excerpt marker if content is not indexed
       hasExcerpt &&
       !indexContent &&
-      // we got excerpt marker
-      node.type === "comment" &&
-      node.data.trim() === "more"
+      isExcerptMarker(node)
     ) {
       shouldIndexContent = false;
     }
@@ -185,6 +185,7 @@ export const getSearchIndexStore = async (
   {
     customFields,
     indexContent,
+    filter = (): boolean => true,
     indexOptions,
     indexLocaleOptions,
   }: SearchProOptions,
@@ -192,9 +193,10 @@ export const getSearchIndexStore = async (
   const indexesByLocale: LocaleIndex = {};
 
   app.pages.forEach((page) => {
-    const indexes = generatePageIndex(page, customFields, indexContent);
-
-    (indexesByLocale[page.pathLocale] ??= []).push(...indexes);
+    if (filter(page) && page.frontmatter["search"] !== false)
+      (indexesByLocale[page.pathLocale] ??= []).push(
+        ...generatePageIndex(page, customFields, indexContent),
+      );
   });
 
   const searchIndex: SearchIndexStore = {};

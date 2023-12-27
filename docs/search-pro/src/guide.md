@@ -11,6 +11,8 @@ icon: lightbulb
 
 By default, the plugin will only index headings, article excerpt and custom fields you add. If you want to index all content, you should set `indexContent: true` in the plugin options.
 
+If you want only some of the pages to be indexed, set `filter` options in plugin options to control which pages are indexed, see [Config → Filter](./config.md#filter). You can also set `search: false` in frontmatter to prevent a page from being indexed.
+
 ::: warning
 
 When indexing languages that is not word based, like Chinese, Japanese or Korean, you should set `indexOptions` and `indexLocaleOptions` to perform correct word-splitting, see [Customize Index Generation](#customize-index-generation).

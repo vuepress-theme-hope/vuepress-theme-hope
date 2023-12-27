@@ -203,4 +203,14 @@ export interface SearchProOptions extends DeprecatedSearchProOptions {
    * 按语言的创建索引选项
    */
   indexLocaleOptions?: Record<string, SearchProIndexOptions>;
+
+  /**
+   * Filter pages to be indexed
+   *
+   * 过滤需要索引的页面
+   *
+   * @param page Page
+   * @returns whether the page should be indexed
+   */
+  filter?: (page: Page) => boolean;
 }

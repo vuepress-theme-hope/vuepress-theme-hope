@@ -169,6 +169,13 @@ Performing client search with huge contents could be slow, so under this case yo
 
 :::
 
+### filter
+
+- Type: `(page: Page) => boolean`
+- Default: `() => true`
+
+Function used to filter pages.
+
 ### sortStrategy
 
 - Type: `"max" | "total"`

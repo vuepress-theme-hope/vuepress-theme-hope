@@ -169,6 +169,13 @@ export default defineUserConfig({
 
 :::
 
+### filter
+
+- 类型: `(page: Page) => boolean`
+- 默认值: `() => true`
+
+用于过滤页面的函数。
+
 ### sortStrategy
 
 - 类型: `"max" | "total"`
