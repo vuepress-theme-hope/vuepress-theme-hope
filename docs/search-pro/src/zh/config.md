@@ -34,7 +34,16 @@ icon: gears
     /**
      * 自定义项目的获取器
      */
-    getter: (page: Page) => string | string[] | null;
+    getter: <
+      ExtraPageData extends Record<string, unknown> = Record<never, never>,
+      ExtraPageFrontmatter extends Record<string, unknown> = Record<
+        string,
+        unknown
+      >,
+      ExtraPageFields extends Record<string, unknown> = Record<never, never>,
+    >(
+      page: Page<ExtraPageData, ExtraPageFrontmatter, ExtraPageFields>,
+    ) => string[] | string | null | undefined;
 
     /**
      * 展示的内容
