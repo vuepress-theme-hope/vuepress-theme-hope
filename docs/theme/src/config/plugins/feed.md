@@ -1,7 +1,7 @@
 ---
 title: Feed Plugin Config
 icon: rss
-order: 5
+order: 8
 category:
   - Config
 tag:

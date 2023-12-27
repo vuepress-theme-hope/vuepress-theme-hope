@@ -15,6 +15,7 @@ import { getMdEnhancePlugin } from "./mdEnhance.js";
 import { getPhotoSwipePlugin } from "./photoSwipe.js";
 import { getPWAPlugin } from "./pwa.js";
 import { getRtlPlugin } from "./rtl.js";
+import { getSearchPlugin } from "./search.js";
 import { getSEOPlugin } from "./seo.js";
 import { getSitemapPlugin } from "./sitemap.js";
 import type {
@@ -69,6 +70,7 @@ export const getPluginConfig = (
     getMdEnhancePlugin(plugins.mdEnhance, legacy),
     getPhotoSwipePlugin(plugins.photoSwipe, legacy),
     getPWAPlugin(plugins.pwa, options.favicon, legacy),
+    getSearchPlugin(app, themeData, plugins),
     getSitemapPlugin(plugins.sitemap, options.hostname, legacy),
     getRtlPlugin(themeData),
   ].filter((item) => item !== null) as PluginConfig;

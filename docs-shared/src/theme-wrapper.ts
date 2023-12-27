@@ -9,6 +9,8 @@ const IS_GITHUB = !IS_GITEE && !IS_NETLIFY;
 export const theme = (
   name: string,
   { plugins = {}, ...options }: ThemeOptions,
+  base = name.replace(/\d+$/, ""),
+  indexName?: string,
 ): ThemeFunction => {
   const subdomain =
     name === "theme"
@@ -95,6 +97,13 @@ export const theme = (
               ],
             },
           },
+
+      docsearch: {
+        appId: "VXIEHELDL1",
+        apiKey: "595796f71b6ba14326719682c3738c0c",
+        indexName: `vuepress-theme-hope-${indexName || name}`,
+        indexBase: base ? `/v2/${base}/` : "/v2/",
+      },
 
       seo: hostname === canonical ? {} : { canonical },
 

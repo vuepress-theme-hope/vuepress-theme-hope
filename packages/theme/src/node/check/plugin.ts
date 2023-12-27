@@ -7,6 +7,8 @@ import { logger } from "../utils.js";
 
 const PLUGIN_CHECKLIST = [
   ["@vuepress/plugin-active-header-links", "activeHeaderLinks"],
+  ["@vuepress/plugin-docsearch", "docsearch"],
+  ["@vuepress/plugin-search", "search"],
   "@vuepress/plugin-theme-data",
   ["vuepress-plugin-auto-catalog", "autoCatalog"],
   ["vuepress-plugin-blog2", "blog"],
@@ -21,6 +23,7 @@ const PLUGIN_CHECKLIST = [
   ["vuepress-plugin-reading-time2", "readingTime"],
   ["vuepress-plugin-rtl", "", 'Set "rtl: true" in the needed theme locales.'],
   ["vuepress-plugin-pwa2", "pwa"],
+  ["vuepress-plugin-search-pro", "searchPro"],
   ["vuepress-plugin-seo2", "seo"],
   ["vuepress-plugin-sitemap2", "sitemap"],
 ];
@@ -33,6 +36,7 @@ const KNOWN_THEME_PLUGINS = [
   "comment",
   "copyCode",
   "copyright",
+  "docsearch",
   "externalLinkIcon",
   "feed",
   "git",
@@ -42,6 +46,8 @@ const KNOWN_THEME_PLUGINS = [
   "prismjs",
   "pwa",
   "readingTime",
+  "search",
+  "searchPro",
   "seo",
   "sitemap",
 ];

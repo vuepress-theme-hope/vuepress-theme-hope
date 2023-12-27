@@ -1,7 +1,7 @@
 ---
 title: MdEnhance Plugin Config
 icon: fab fa-markdown
-order: 6
+order: 2
 category:
   - Config
 tag:

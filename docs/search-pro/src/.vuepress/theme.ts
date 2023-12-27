@@ -16,9 +16,11 @@ export default theme("search-pro", {
   },
 
   plugins: {
+    docsearch: false,
     mdEnhance: {
       codetabs: true,
       imgMark: true,
     },
+    searchPro: true,
   },
 });

@@ -1,7 +1,7 @@
 ---
 title: MdEnhance 插件配置
 icon: fab fa-markdown
-order: 6
+order: 2
 category:
   - 配置
 tag:

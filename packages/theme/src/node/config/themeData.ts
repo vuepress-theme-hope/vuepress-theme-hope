@@ -52,22 +52,28 @@ export const getThemeData = (
         app,
         name: "vuepress-theme-hope",
         default: fromEntries(
-          entries(themeLocalesData).map(([locale, config]) => {
-            // remove locales if their features are not enabled
-            if (!enableBlog) {
-              // @ts-expect-error
-              delete config.blogLocales;
+          entries(themeLocalesData).map(
+            ([
+              locale,
+              // make a copy here to avoid modifying the original data
+              { ...config },
+            ]) => {
+              // remove locales if their features are not enabled
+              if (!enableBlog) {
+                // @ts-expect-error
+                delete config.blogLocales;
 
-              // @ts-expect-error
-              delete config.paginationLocales;
-            }
+                // @ts-expect-error
+                delete config.paginationLocales;
+              }
 
-            if (!enableEncrypt)
-              // @ts-expect-error
-              delete config.encryptLocales;
+              if (!enableEncrypt)
+                // @ts-expect-error
+                delete config.encryptLocales;
 
-            return [locale, <ThemeLocaleConfig>config];
-          }),
+              return [locale, <ThemeLocaleConfig>config];
+            },
+          ),
         ),
         // extract localeConfig
         config: fromEntries(

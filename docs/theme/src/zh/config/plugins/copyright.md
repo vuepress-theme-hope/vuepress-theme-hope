@@ -1,7 +1,7 @@
 ---
 title: 版权信息插件配置
 icon: copyright
-order: 4
+order: 6
 category:
   - 配置
 tag:

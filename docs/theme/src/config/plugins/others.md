@@ -1,7 +1,7 @@
 ---
 title: Other Plugin Config
 icon: ellipsis
-order: 8
+order: -1
 category:
   - Config
 tag:
@@ -9,17 +9,13 @@ tag:
   - Theme Config
 ---
 
-## autoCatalog
+## autoCatalog <Badge text="enabled by default" />
 
-Controls `vuepress-plugin-auto-catalog`, providing automatic generation of catalog.
+Controls `vuepress-plugin-auto-catalog` which provides catalog pages generation.
 
-This plugin is enabled by default.
+No extra config is required by default. Se it to `false` if you don't need it.
 
-::: info
-
-For plugin options, please refer to <ProjectLink name="auto-catalog" path="/config.html">auto catalog plugin options</ProjectLink>.
-
-:::
+Check <ProjectLink name="auto-catalog" path="/config.html">auto catalog plugin docs</ProjectLink> for available plugin options.
 
 ## components
 
@@ -46,23 +42,15 @@ You can set `plugin.components.components` with an array of components you want,
 
 Also, you can set `plugin.components.rootComponents` to enable some root components, such as Notice.
 
-::: info
-
-For plugin options, please refer to <ProjectLink name="components" path="/config.html">components plugin options</ProjectLink>.
-
-:::
+Check <ProjectLink name="components" path="/config.html">components plugin docs</ProjectLink> for available plugin options.
 
 ## copyCode <Badge text="enabled by default" />
 
-Controls `vuepress-plugin-copy-code2`, providing a code copy button.
+Controls `vuepress-plugin-copy-code2` which provides a code copy button on desktop.
 
-By default, no config is required. If you don't need this feature, please set to `false`.
+No extra config is required by default. Se it to `false` if you don't need it.
 
-::: info
-
-For plugin options, please refer to <ProjectLink name="copy-code2" path="/config.html">copy-code2 plugin options</ProjectLink>.
-
-:::
+Check <ProjectLink name="copy-code2" path="/config.html">copy-code2 plugin docs</ProjectLink> for available plugin options.
 
 ## externalLinkIcon <Badge text="enabled by default" />
 
@@ -70,27 +58,23 @@ Controls whether enable `@vuepress/external-link-icon` or not, only accept boole
 
 ## git <Badge text="enabled in production" />
 
-Controls `@vuepress/plugin-git` to provide file information via Git commit history.
+Controls `@vuepress/plugin-git` which provides page meta via Git.
 
-By default, it is only enabled in build mode to improve development server performance. You can manually set a boolean to control the plugin state, or provide plugin options.
+The plugin is only enabled in build mode by default to improve devServer performance. You can manually set a boolean to control the plugin state, or provide plugin options.
 
-::: info
-
-See [git plugin options][git-config] for plugin options.
-
-:::
+Check [git plugin docs][git-config] for available plugin options.
 
 ## nprogress <Badge text="enabled by default" />
 
-Controls `@vuepress/plugin-nprogress` and provides a progress bar when switching pages through nprogress.
+Controls `@vuepress/plugin-nprogress` which provides a progress bar through `nprogress` when switching pages .
 
-By default, the theme will enable this plugin, you can set `false` to disable it.
+You can set `false` to disable it.
 
 ## prismjs <Badge text="enabled by default" />
 
-Controls `@vuepress/plugin-prismjs` to provide code block highlighting via PrismJS.
+Controls `@vuepress/plugin-prismjs` which provides code block highlighting via `prismjs`.
 
-By default, the theme will enable this plugin, you can set `false` to disable it and highlight code blocks yourself.
+You can set `false` to disable it and highlight code blocks yourself or with other plugins.
 
 ### prismjs.light
 
@@ -110,55 +94,39 @@ Prism.js theme used in darkmode.
 
 ## photoSwipe <Badge text="enabled by default" />
 
-Controls `vuepress-plugin-photo-swipe`, providing picture browsing function.
+Controls `vuepress-plugin-photo-swipe` which provides picture browsing feature.
 
-By default, no config is required. If you don't need this feature, please set to `false`.
+No extra config is required by default. Se it to `false` if you don't need it.
 
-::: info
-
-For plugin options, please refer to <ProjectLink name="photo-swipe" path="/config.html">photo-swipe plugin options</ProjectLink>.
-
-:::
+Check <ProjectLink name="photo-swipe" path="/config.html">photo-swipe plugin docs</ProjectLink> for available plugin options.
 
 ## readingTime <Badge text="enabled by default" />
 
-Controls `vuepress-plugin-reading-time2`, providing word count for a page and generate an estimated reading time.
+Controls `vuepress-plugin-reading-time2` which generates words count and estimated reading time for pages.
 
 ### readingTime.wordPerMinute
 
 - Type: `number`
 - Default: `300`
 
-Words read per minute.
+Reading speed (words per minute)
 
-::: info
-
-For more plugin options, see <ProjectLink name="reading-time2" path="/config.html">reading-time2 plugin options</ProjectLink>.
-
-:::
+Check <ProjectLink name="reading-time2" path="/config.html">reading-time2 plugin docs</ProjectLink> for available plugin options.
 
 ## seo <Badge text="enabled by default" />
 
-Controls `vuepress-plugin-seo2`, providing search engine enhancements.
+Controls `vuepress-plugin-seo2` which provides search engine enhancements.
 
-By default, no config is required. If you don't need this feature, please set to `false`.
+No extra config is required by default. Se it to `false` if you don't need it.
 
-::: info
-
-For plugin config, see <ProjectLink name="seo2" path="/config.html">seo2 plugin options</ProjectLink>.
-
-:::
+Check <ProjectLink name="seo2" path="/config.html">seo2 plugin docs</ProjectLink> for available plugin options.
 
 ## sitemap <Badge text="enabled by default" />
 
-Controls `vuepress-plugin-seo2`, providing automatically Sitemap generation.
+Controls `vuepress-plugin-seo2` which provides sitemap.
 
-By default, no config is required. If you don't need this feature, please set to `false`.
+No extra config is required by default. Se it to `false` if you don't need it.
 
-::: info
-
-For plugin config, please refer to <ProjectLink name="sitemap2" path="/config.html">sitemap2 plugin options</ProjectLink>.
-
-:::
+Check <ProjectLink name="sitemap2" path="/config.html">sitemap2 plugin docs</ProjectLink> for available plugin options.
 
 [git-config]: https://vuejs.press/reference/plugin/git.html

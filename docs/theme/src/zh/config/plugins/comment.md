@@ -1,7 +1,7 @@
 ---
 title: 评论插件配置
 icon: comment-dots
-order: 3
+order: 5
 category:
   - 配置
 tag:

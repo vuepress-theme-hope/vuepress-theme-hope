@@ -2503,6 +2503,9 @@ importers:
       gray-matter:
         specifier: ^4.0.3
         version: 4.0.3
+      nodejs-jieba:
+        specifier: ^0.1.2
+        version: 0.1.2
       sass-loader:
         specifier: ^13.3.2
         version: 13.3.2(sass@1.69.5)(webpack@5.89.0)
@@ -2579,6 +2582,15 @@ importers:
       '@vuepress/markdown':
         specifier: 2.0.0-rc.0
         version: 2.0.0-rc.0
+      '@vuepress/plugin-docsearch':
+        specifier: 2.0.0-rc.0
+        version: 2.0.0-rc.0(@algolia/client-search@4.22.0)(search-insights@2.13.0)(typescript@5.3.3)
+      '@vuepress/plugin-search':
+        specifier: 2.0.0-rc.0
+        version: 2.0.0-rc.0(typescript@5.3.3)
+      vuepress-plugin-search-pro:
+        specifier: workspace:*
+        version: link:../search-pro
 
 packages:
 
@@ -6166,6 +6178,22 @@ packages:
       - '@vue/composition-api'
       - supports-color
       - typescript
+
+  /@vuepress/plugin-search@2.0.0-rc.0(typescript@5.3.3):
+    resolution: {integrity: sha512-1ikJUgIN+7QrcAftxpWUKTrNVHEN2+k/az0Sjz7Ok7EthMHcG6qQsIb+AoK4WIQMsJkwVPLxwym/M1FbBTZDWQ==}
+    dependencies:
+      '@vuepress/client': 2.0.0-rc.0(typescript@5.3.3)
+      '@vuepress/core': 2.0.0-rc.0(typescript@5.3.3)
+      '@vuepress/shared': 2.0.0-rc.0
+      '@vuepress/utils': 2.0.0-rc.0
+      chokidar: 3.5.3
+      vue: 3.3.13(typescript@5.3.3)
+      vue-router: 4.2.5(vue@3.3.13)
+    transitivePeerDependencies:
+      - '@vue/composition-api'
+      - supports-color
+      - typescript
+    dev: true
 
   /@vuepress/plugin-theme-data@2.0.0-rc.0(typescript@5.3.3):
     resolution: {integrity: sha512-FXY3/Ml+rM6gNKvwdBF6vKAcwnSvtXCzKgQwJAw3ppQTKUkLcbOxqM+h4d8bzHWAAvdnEvQFug5uEZgWllBQbA==}
@@ -10981,6 +11009,7 @@ packages:
 
   /js-tokens@4.0.0:
     resolution: {integrity: sha512-RdJUflcE3cUzKiMqQgsCu06FPu9UdIJO0beYbPhHN4k6apgJtifcoCtT9bcxOpYBtpD2kCM6Sbzg4CausW/PKQ==}
+    requiresBuild: true
 
   /js-yaml@3.14.1:
     resolution: {integrity: sha512-okMH7OXXJ7YrN9Ok3/SXrnu4iX9yOk+25nqX4imS2npuvTYDmo/QEZoqwZkYaIDk3jVvBOTOIEgEhaLOynBS9g==}

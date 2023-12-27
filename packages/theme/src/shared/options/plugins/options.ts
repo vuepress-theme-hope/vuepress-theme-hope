@@ -1,4 +1,6 @@
+import type { DocsearchPluginOptions } from "@vuepress/plugin-docsearch";
 import type { GitPluginOptions } from "@vuepress/plugin-git";
+import type { SearchPluginOptions } from "@vuepress/plugin-search";
 import type { AutoCatalogOptions } from "vuepress-plugin-auto-catalog";
 import type { CommentPluginOptions } from "vuepress-plugin-comment2";
 import type { ComponentOptions } from "vuepress-plugin-components";
@@ -9,6 +11,7 @@ import type { MarkdownEnhanceOptions } from "vuepress-plugin-md-enhance";
 import type { PhotoSwipeOptions } from "vuepress-plugin-photo-swipe";
 import type { PWAOptions } from "vuepress-plugin-pwa2";
 import type { ReadingTimeOptions } from "vuepress-plugin-reading-time2";
+import type { SearchProOptions } from "vuepress-plugin-search-pro";
 import type { SeoOptions } from "vuepress-plugin-seo2";
 import type { SitemapOptions } from "vuepress-plugin-sitemap2";
 
@@ -92,6 +95,17 @@ export interface PluginsOptions {
    * @default false
    */
   copyright?: CopyrightOptions | boolean;
+
+  /**
+   * Options for  @vuepress/docsearch
+   *
+   * @see https://vuejs.press/reference/plugin/docsearch.html
+   *
+   * @vuepress/docsearch 选项
+   *
+   * @see https://vuejs.press/zh/reference/plugin/docsearch.html
+   */
+  docsearch?: DocsearchPluginOptions;
 
   /**
    * Enable @vuepress/external-link-icon or not
@@ -226,6 +240,28 @@ export interface PluginsOptions {
    * @default true
    */
   readingTime?: ReadingTimeOptions | boolean;
+
+  /**
+   * @vuepress/search plugin options
+   *
+   * @see https://vuejs.press/reference/plugin/search.html
+   *
+   * @vuepress/search 插件配置
+   *
+   * @see https://vuejs.press/zh/reference/plugin/search.html
+   */
+  search?: SearchPluginOptions | boolean;
+
+  /**
+   * search-pro plugin options
+   *
+   * @see https://plugin-search-pro.vuejs.press/config/
+   *
+   * search-pro 插件配置
+   *
+   * @see https://plugin-search-pro.vuejs.press/zh/config/
+   */
+  searchPro?: SearchProOptions | boolean;
 
   /**
    * SEO plugin options
