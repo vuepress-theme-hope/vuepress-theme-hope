@@ -9,7 +9,7 @@ tag:
   - Feed
 ---
 
-`vuepress-theme-hope` 通过内置 <ProjectLink name="feed2" path="/zh/">`vuepress-plugin-feed2`</ProjectLink> 插件来为你提供 feed 支持。
+`vuepress-theme-hope` 通过内置 <ProjectLink name="feed2" path="/zh/">`vuepress-plugin-feed2`</ProjectLink> 插件来为你提供 feed 支持。想使用它，你应该手动在你的项目中安装 `vuepress-plugin-feed2`。
 
 ::: info
 

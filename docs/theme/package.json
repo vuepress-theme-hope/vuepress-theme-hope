@@ -30,6 +30,8 @@
     "vue": "3.3.13",
     "vuepress-plugin-components": "workspace:*",
     "vuepress-plugin-copy-code2": "workspace:*",
+    "vuepress-plugin-copyright2": "workspace:*",
+    "vuepress-plugin-feed2": "workspace:*",
     "vuepress-plugin-md-enhance": "workspace:*",
     "vuepress-shared": "workspace:*",
     "vuepress-theme-hope": "workspace:*",

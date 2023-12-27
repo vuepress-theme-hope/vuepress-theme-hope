@@ -10,13 +10,12 @@ copy:
   triggerLength: 40
 ---
 
-有些时候，你可能不想让你的某些文章被他人复制，或者你想让他人在复制时，自动生成一段版权信息到剪切板中。
-
-`vuepress-theme-hope` 为应对此场景引入了 <ProjectLink name="copyright2" path="/zh/">vuepress-plugin-copyright2</ProjectLink>。
+你可能不想让你的某些文章被他人复制，或者你想版权信息在复制时自动附加。
+`vuepress-theme-hope` 通过 <ProjectLink name="copyright2" path="/zh/">vuepress-plugin-copyright2</ProjectLink> 提供此功能。想要使用它，你需要在你的项目中手动安装 `vuepress-plugin-copyright2`。
 
 ::: info
 
-`vuepress-theme-hope` 将主题选项中的 `plugins.copyright` 作为插件选项提供给 `vuepress-plugin-copyright2`。
+`vuepress-theme-hope` 将主题选项中的 `plugins.copyright` 提供给 `vuepress-plugin-copyright2`。
 
 :::
 

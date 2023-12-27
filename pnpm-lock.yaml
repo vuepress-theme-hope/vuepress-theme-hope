@@ -1006,6 +1006,9 @@ importers:
       vue:
         specifier: 3.3.13
         version: 3.3.13(typescript@5.3.3)
+      vuepress-plugin-copyright2:
+        specifier: workspace:*
+        version: link:../../packages/copyright2
       vuepress-vite:
         specifier: 2.0.0-rc.0
         version: 2.0.0-rc.0(@types/node@20.10.5)(@vuepress/client@2.0.0-rc.0)(sass-loader@13.3.2)(typescript@5.3.3)(vue@3.3.13)
@@ -1393,6 +1396,12 @@ importers:
       vuepress-plugin-copy-code2:
         specifier: workspace:*
         version: link:../../packages/copy-code2
+      vuepress-plugin-copyright2:
+        specifier: workspace:*
+        version: link:../../packages/copyright2
+      vuepress-plugin-feed2:
+        specifier: workspace:*
+        version: link:../../packages/feed2
       vuepress-plugin-md-enhance:
         specifier: workspace:*
         version: link:../../packages/md-enhance
@@ -2533,21 +2542,12 @@ importers:
       vuepress-plugin-copy-code2:
         specifier: workspace:*
         version: link:../copy-code2
-      vuepress-plugin-copyright2:
-        specifier: workspace:*
-        version: link:../copyright2
-      vuepress-plugin-feed2:
-        specifier: workspace:*
-        version: link:../feed2
       vuepress-plugin-md-enhance:
         specifier: workspace:*
         version: link:../md-enhance
       vuepress-plugin-photo-swipe:
         specifier: workspace:*
         version: link:../photo-swipe
-      vuepress-plugin-pwa2:
-        specifier: workspace:*
-        version: link:../pwa2
       vuepress-plugin-reading-time2:
         specifier: workspace:*
         version: link:../reading-time2
@@ -2588,6 +2588,15 @@ importers:
       '@vuepress/plugin-search':
         specifier: 2.0.0-rc.0
         version: 2.0.0-rc.0(typescript@5.3.3)
+      vuepress-plugin-copyright2:
+        specifier: workspace:*
+        version: link:../copyright2
+      vuepress-plugin-feed2:
+        specifier: workspace:*
+        version: link:../feed2
+      vuepress-plugin-pwa2:
+        specifier: workspace:*
+        version: link:../pwa2
       vuepress-plugin-search-pro:
         specifier: workspace:*
         version: link:../search-pro

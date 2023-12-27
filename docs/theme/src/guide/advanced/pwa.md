@@ -9,13 +9,14 @@ tag:
   - PWA
 ---
 
-The theme provides progressive web app support [^pwa-intro] via built-in <ProjectLink name="pwa2">`vuepress-plugin-pwa2`</ProjectLink>, and it's disabled by default.
+The theme provides progressive web app support [^pwa-intro] via <ProjectLink name="pwa2">`vuepress-plugin-pwa2`</ProjectLink>. To use it, install `vuepress-plugin-pwa2` manually in your project.
 
 ::: info
 
 If you are using this plugin, we recommend you to set `shouldPrefetch: false` in your VuePress config file.
 
-`vuepress-theme-hope` passes `plugins.pwa` in theme options as plugin options to `vuepress-plugin-pwa2`, so every options mentioned below is under it.
+`vuepress-theme-hope` provides `plugins.pwa` in theme options to `vuepress-plugin-pwa2`.
+Every options mentioned below is under `plugin.pwa`.
 
 :::
 

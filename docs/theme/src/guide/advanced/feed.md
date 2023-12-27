@@ -9,7 +9,7 @@ tag:
   - Feed
 ---
 
-The theme adds feed support using <ProjectLink name="feed2">`vuepress-plugin-feed2`</ProjectLink>.
+The theme adds feed support with <ProjectLink name="feed2">`vuepress-plugin-feed2`</ProjectLink>. To use it, install `vuepress-plugin-feed2` manually in your project.
 
 ::: info
 

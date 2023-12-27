@@ -9,13 +9,14 @@ tag:
   - PWA
 ---
 
-该主题将通过内置 <ProjectLink name="pwa2" path="/zh/">`vuepress-plugin-pwa2`</ProjectLink> 提供渐进式 Web 应用程序支持[^pwa-intro]，该功能默认禁用。
+该主题将通过 <ProjectLink name="pwa2" path="/zh/">`vuepress-plugin-pwa2`</ProjectLink> 提供渐进式 Web 应用程序支持[^pwa-intro]。想使用它，你应该手动在你的项目中安装 `vuepress-plugin-pwa2`。
 
 ::: info
 
 如果你正在使用此插件，我们推荐在你的 VuePress 配置文件中设置 `shouldPrefetch: false`。
 
-`vuepress-theme-hope` 将主题选项中的 `plugins.pwa` 作为插件选项提供给 `vuepress-plugin-pwa2`，后文指出的选项都位于此选项下。
+`vuepress-theme-hope` 将主题选项中的 `plugins.pwa` 提供给 `vuepress-plugin-pwa2`。
+后文提及的选项都位于 `plugin.pwa` 下。
 
 :::
 
