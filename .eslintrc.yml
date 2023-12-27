@@ -129,9 +129,6 @@ rules:
     - error
     - prefer-top-level
 
-  import/dynamic-import-chunkname:
-    - error
-
   import/first:
     - error
 
@@ -361,6 +358,13 @@ overrides:
     rules:
       no-underscore-dangle:
         - off
+
+  - files:
+      - "packages/*/src/client/**/*.ts"
+
+    rules:
+      import/dynamic-import-chunkname:
+        - error
 
   - files:
       - "**/__tests__/**/*.spec.{j,t}s?(x)"
