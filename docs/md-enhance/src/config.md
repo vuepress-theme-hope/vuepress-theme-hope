@@ -710,7 +710,7 @@ Default value: `"https://unpkg.com/react-dom/umd/react-dom.production.min.js"`
   /**
    * reveal.js options
    */
-  export interface RevealJsOptions {
+  interface RevealJsOptions {
     /**
      * reveal.js plugins
      *
@@ -821,7 +821,7 @@ Locales config for Markdown Enhance Plugin.
 ### defineEchartsConfig
 
 ```ts
-export interface EchartsConfig {
+interface EchartsConfig {
   /**
    * Echarts global options
    */
@@ -833,7 +833,7 @@ export interface EchartsConfig {
   setup?: () => Promise<void>;
 }
 
-export const defineEchartsConfig: (config: EchartsConfig) => void;
+const defineEchartsConfig: (config: EchartsConfig) => void;
 ```
 
 Define global options and setup for Echarts.
@@ -841,7 +841,7 @@ Define global options and setup for Echarts.
 ### defineMermaidConfig
 
 ```ts
-export const defineMermaidConfig: (options: MermaidConfig) => void;
+const defineMermaidConfig: (options: MermaidConfig) => void;
 ```
 
 Define config which you want to pass to mermaid.
@@ -849,7 +849,7 @@ Define config which you want to pass to mermaid.
 ### defineRevealJsConfig
 
 ```ts
-export const defineRevealJsConfig: (options: RevealOptions) => void;
+const defineRevealJsConfig: (options: RevealOptions) => void;
 ```
 
 Define config which you want to pass to reveal.js.
@@ -873,9 +873,7 @@ interface KotlinPlaygroundOptions {
   getInstance?: (instance: KotlinPlaygroundInstance) => void;
 }
 
-export const defineKotlinPlaygroundConfig: (
-  options: KotlinPlaygroundOptions,
-) => void;
+const defineKotlinPlaygroundConfig: (options: KotlinPlaygroundOptions) => void;
 ```
 
 Define config which you want to pass to `kotlin-playground`.
@@ -951,7 +949,7 @@ interface VuePlaygroundOptions {
   ssr?: boolean;
 }
 
-export const defineVuePlaygroundConfig: (options: VuePlaygroundOptions) => void;
+const defineVuePlaygroundConfig: (options: VuePlaygroundOptions) => void;
 ```
 
 Define config which you want to pass to `@vue/repl`.

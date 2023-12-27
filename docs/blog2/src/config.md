@@ -260,7 +260,7 @@ You can import the following API from `vuepress-plugin-blog2/client`.
 - Blog category
 
   ```ts
-  declare const useBlogCategory: <
+  const useBlogCategory: <
     T extends Record<string, unknown> = Record<string, unknown>,
   >(
     key?: string,
@@ -274,7 +274,7 @@ You can import the following API from `vuepress-plugin-blog2/client`.
 - Blog category
 
   ```ts
-  declare const useBlogType: <
+  const useBlogType: <
     T extends Record<string, unknown> = Record<string, unknown>,
   >(
     key?: string,

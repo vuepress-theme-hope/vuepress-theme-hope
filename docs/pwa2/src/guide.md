@@ -213,7 +213,7 @@ The plugin also provides some helper functions to help you operate Service Worke
 /**
  * Force update page content
  */
-export const forceUpdate: () => void;
+const forceUpdate: () => void;
 
 /**
  * Register serviceWorker under `serviceWorkerPath`
@@ -222,7 +222,7 @@ export const forceUpdate: () => void;
  * @param hooks Service worker hooks
  * @param showStatus Whether to show status in console
  */
-export const registerSW: (
+const registerSW: (
   serviceWorkerPath: string,
   hooks?: Hooks,
   showStatus?: boolean,
@@ -231,14 +231,14 @@ export const registerSW: (
 /**
  * Call `skipWaiting()` inside current waiting worker
  */
-export const skipWaiting: (registration: ServiceWorkerRegistration) => void;
+const skipWaiting: (registration: ServiceWorkerRegistration) => void;
 
 /**
  * Call `unregister()` inside current active worker
  *
  * @returns `true` if unregister success, `false` if unregister failed
  */
-export const unregisterSW: () => Promise<boolean>;
+const unregisterSW: () => Promise<boolean>;
 ```
 
 ## Further Reading

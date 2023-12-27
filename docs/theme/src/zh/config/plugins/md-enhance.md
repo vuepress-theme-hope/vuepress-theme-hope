@@ -729,7 +729,7 @@ CodePen 编辑器显示情况，第一位代表 HTML ，第二位代表 JS，第
   /**
    * reveal.js 选项
    */
-  export interface RevealJsOptions {
+  interface RevealJsOptions {
     /**
      * reveal.js 插件
      *

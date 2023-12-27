@@ -66,7 +66,7 @@ const readingTimeLocale = useReadingTimeLocale();
 </script>
 ```
 
-相关类型:
+### useReadingTimeData
 
 ```ts
 interface ReadingTime {
@@ -74,12 +74,16 @@ interface ReadingTime {
   words: number;
 }
 
-export const useReadingTimeData: () => ComputedRef<ReadingTime | null>;
+const useReadingTimeData: () => ComputedRef<ReadingTime | null>;
+```
 
+### useReadingTimeLocale
+
+```ts
 interface ReadingTimeLocale {
   time: string;
   words: string;
 }
 
-export const useReadingTimeLocale: () => ComputedRef<ReadingTimeLocale>;
+const useReadingTimeLocale: () => ComputedRef<ReadingTimeLocale>;
 ```

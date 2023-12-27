@@ -128,7 +128,7 @@ import HitokotoBlogHero from "vuepress-theme-hope/presets/HitokotoBlogHero.js";
 Get the running time of the site in footer.
 
 ```ts
-export const setupRunningTimeFooter: (
+const setupRunningTimeFooter: (
   /**
    * The date to calculate the running time
    */

@@ -90,11 +90,14 @@ Use this option to judge whether the page is an article.
 - Type:
 
   ```ts
-  function ogp<ExtendObject = Record<string, unknown>>(
+  function ogp(
+    /** OGP info inferred by plugin */
     ogp: SeoContent,
-    page: ExtendPage<ExtendObject>,
-    app: App
-  ) => SeoContent;
+    /** Page Object */
+    page: Page,
+    /** VuePress App */
+    app: App,
+  ): SeoContent;
   ```
 
 - Required: No
@@ -108,22 +111,11 @@ You can use this options to edit OGP tags.
 - Type:
 
   ```ts
-  function jsonLd<
-    ExtraPageData extends Record<string, unknown> = Record<never, never>,
-    ExtraPageFrontmatter extends Record<string, unknown> = Record<
-      string,
-      unknown
-    >,
-    ExtraPageFields extends Record<string, unknown> = Record<never, never>,
-  >(
-    /**
-     * JSON-LD Object inferred by plugin
-     */
+  function jsonLd(
+    /** JSON-LD Object inferred by plugin */
     jsonLD: ArticleSchema | BlogPostingSchema | WebPageSchema,
-    /**
-     * Page Object
-     */
-    page: ExtendPage<ExtraPageData, ExtraPageFrontmatter, ExtraPageFields>,
+    /** Page Object */
+    page: Page,
     /** VuePress App */
     app: App,
   ): ArticleSchema | BlogPostingSchema | WebPageSchema;
@@ -140,26 +132,11 @@ You can use this options to edit JSON-LD properties.
 - Type:
 
   ```ts
-  function customHead<
-    ExtraPageData extends Record<string, unknown> = Record<never, never>,
-    ExtraPageFrontmatter extends Record<string, unknown> = Record<
-      string,
-      unknown
-    >,
-    ExtraPageFields extends Record<string, unknown> = Record<never, never>,
-  >(
-    /**
-     * Head tag config
-     *
-     * head 标签配置
-     */
+  function customHead(
+    /** Head tag config */
     head: HeadConfig[],
-    /**
-     * Page Object
-     *
-     * 页面对象
-     */
-    page: ExtendPage<ExtraPageData, ExtraPageFrontmatter, ExtraPageFields>,
+    /** Page Object */
+    page: Page,
     /** VuePress App */
     app: App,
   ): void;

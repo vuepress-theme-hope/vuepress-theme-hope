@@ -720,7 +720,7 @@ CodePen 编辑器显示情况，第一位代表 HTML ，第二位代表 JS，第
   /**
    * reveal.js 选项
    */
-  export interface RevealJsOptions {
+  interface RevealJsOptions {
     /**
      * reveal.js 插件
      *
@@ -831,7 +831,7 @@ Markdown 增强插件的国际化配置。
 ### defineEchartsConfig
 
 ```ts
-export interface EchartsConfig {
+interface EchartsConfig {
   /**
    * Echarts 全局选项
    */
@@ -843,7 +843,7 @@ export interface EchartsConfig {
   setup?: () => Promise<void>;
 }
 
-export const defineEchartsConfig: (config: EchartsConfig) => void;
+const defineEchartsConfig: (config: EchartsConfig) => void;
 ```
 
 定义需要传递给 Echarts 的全局配置选项和设置函数。
@@ -851,7 +851,7 @@ export const defineEchartsConfig: (config: EchartsConfig) => void;
 ### defineMermaidConfig
 
 ```ts
-export const defineMermaidConfig: (options: MermaidConfig) => void;
+const defineMermaidConfig: (options: MermaidConfig) => void;
 ```
 
 定义需要传递给 Mermaid 的配置选项。
@@ -859,7 +859,7 @@ export const defineMermaidConfig: (options: MermaidConfig) => void;
 ### defineRevealJsConfig
 
 ```ts
-export const defineRevealJsConfig: (options: RevealOptions) => void;
+const defineRevealJsConfig: (options: RevealOptions) => void;
 ```
 
 定义需要传递给 Reveal.js 的配置选项。
@@ -883,9 +883,7 @@ interface KotlinPlaygroundOptions {
   getInstance?: (instance: KotlinPlaygroundInstance) => void;
 }
 
-export const defineKotlinPlaygroundConfig: (
-  options: KotlinPlaygroundOptions,
-) => void;
+const defineKotlinPlaygroundConfig: (options: KotlinPlaygroundOptions) => void;
 ```
 
 定义需要传递给 `kotlin-playground` 的配置选项。
@@ -961,7 +959,7 @@ interface VuePlaygroundOptions {
   ssr?: boolean;
 }
 
-export const defineVuePlaygroundConfig: (options: VuePlaygroundOptions) => void;
+const defineVuePlaygroundConfig: (options: VuePlaygroundOptions) => void;
 ```
 
 定义需要传递给 `@vue/repl` 的选项。

@@ -34,16 +34,7 @@ Whether to show suggestions while searching.
     /**
      * Custom field getter
      */
-    getter: <
-      ExtraPageData extends Record<string, unknown> = Record<never, never>,
-      ExtraPageFrontmatter extends Record<string, unknown> = Record<
-        string,
-        unknown
-      >,
-      ExtraPageFields extends Record<string, unknown> = Record<never, never>,
-    >(
-      page: Page<ExtraPageData, ExtraPageFrontmatter, ExtraPageFields>,
-    ) => string[] | string | null | undefined;
+    getter: (page: Page) => string[] | string | null | undefined;
 
     /**
      * Display content
@@ -221,7 +212,7 @@ Usually in development, users do not need to update the index database in real t
 - Type: `SearchProIndexOptions`
 
   ```ts
-  export interface SearchProIndexOptions {
+  interface SearchProIndexOptions {
     /**
      * Function to tokenize the index field item.
      */
@@ -244,7 +235,7 @@ Options used to create index.
 - Type: `Record<string, SearchProIndexOptions>`
 
   ```ts
-  export interface SearchProIndexOptions {
+  interface SearchProIndexOptions {
     /**
      * Function to tokenize the index field item.
      */
@@ -397,46 +388,46 @@ export default {};
 Create a search worker so that you can search through API.
 
 ```ts
-export type Word = [tag: string, content: string] | string;
+type Word = [tag: string, content: string] | string;
 
-export interface TitleMatchedItem {
+interface TitleMatchedItem {
   type: "title";
   id: string;
   display: Word[];
 }
 
-export interface HeadingMatchedItem {
+interface HeadingMatchedItem {
   type: "heading";
   id: string;
   display: Word[];
 }
 
-export interface CustomMatchedItem {
+interface CustomMatchedItem {
   type: "custom";
   id: string;
   index: string;
   display: Word[];
 }
 
-export interface ContentMatchedItem {
+interface ContentMatchedItem {
   type: "content";
   id: string;
   header: string;
   display: Word[];
 }
 
-export type MatchedItem =
+type MatchedItem =
   | TitleMatchedItem
   | HeadingMatchedItem
   | ContentMatchedItem
   | CustomMatchedItem;
 
-export interface SearchResult {
+interface SearchResult {
   title: string;
   contents: MatchedItem[];
 }
 
-export interface SearchWorker {
+interface SearchWorker {
   search: (
     query: string,
     locale: string,
@@ -445,5 +436,5 @@ export interface SearchWorker {
   terminate: () => void;
 }
 
-declare const createSearchWorker: () => SearchWorker;
+const createSearchWorker: () => SearchWorker;
 ```

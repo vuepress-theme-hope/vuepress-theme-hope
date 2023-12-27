@@ -90,11 +90,14 @@ icon: gears
 - 类型:
 
   ```ts
-  function ogp<ExtendObject = Record<string, unknown>>(
+  function ogp(
+    /** 插件推断的 OGP 信息 */
     ogp: SeoContent,
-    page: ExtendPage<ExtendObject>,
-    app: App
-  ) => SeoContent;
+    /** 页面对象 */
+    page: Page,
+    /** VuePress App */
+    app: App,
+  ): SeoContent;
   ```
 
 - 必填: 否
@@ -108,18 +111,11 @@ icon: gears
 - 类型:
 
   ```ts
-  function jsonLd<
-    ExtraPageData extends Record<string, unknown> = Record<never, never>,
-    ExtraPageFrontmatter extends Record<string, unknown> = Record<
-      string,
-      unknown
-    >,
-    ExtraPageFields extends Record<string, unknown> = Record<never, never>,
-  >(
+  function jsonLd(
     /** 由插件推断出的 JSON-LD 对象 */
     jsonLD: ArticleSchema | BlogPostingSchema | WebPageSchema,
     /** 页面对象 */
-    page: ExtendPage<ExtraPageData, ExtraPageFrontmatter, ExtraPageFields>,
+    page: Page,
     /** VuePress App */
     app: App,
   ): ArticleSchema | BlogPostingSchema | WebPageSchema;
@@ -136,18 +132,11 @@ icon: gears
 - 类型:
 
   ```ts
-  function customHead<
-    ExtraPageData extends Record<string, unknown> = Record<never, never>,
-    ExtraPageFrontmatter extends Record<string, unknown> = Record<
-      string,
-      unknown
-    >,
-    ExtraPageFields extends Record<string, unknown> = Record<never, never>,
-  >(
+  function customHead(
     /** head 标签配置 */
     head: HeadConfig[],
     /** 页面对象 */
-    page: ExtendPage<ExtraPageData, ExtraPageFrontmatter, ExtraPageFields>,
+    page: Page,
     /** VuePress App */
     app: App,
   ): void;

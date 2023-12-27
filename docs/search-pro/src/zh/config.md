@@ -34,16 +34,7 @@ icon: gears
     /**
      * 自定义项目的获取器
      */
-    getter: <
-      ExtraPageData extends Record<string, unknown> = Record<never, never>,
-      ExtraPageFrontmatter extends Record<string, unknown> = Record<
-        string,
-        unknown
-      >,
-      ExtraPageFields extends Record<string, unknown> = Record<never, never>,
-    >(
-      page: Page<ExtraPageData, ExtraPageFrontmatter, ExtraPageFields>,
-    ) => string[] | string | null | undefined;
+    getter: (page: Page) => string[] | string | null | undefined;
 
     /**
      * 展示的内容
@@ -221,7 +212,7 @@ export default defineUserConfig({
 - 类型: `SearchProIndexOptions`
 
   ```ts
-  export interface SearchProIndexOptions {
+  interface SearchProIndexOptions {
     /**
      * 用于对索引字段项进行分词的函数。
      */
@@ -244,7 +235,7 @@ export default defineUserConfig({
 - 类型: `Record<string, SearchProIndexOptions>`
 
   ```ts
-  export interface SearchProIndexOptions {
+  interface SearchProIndexOptions {
     /**
      * 用于对索引字段项进行分词的函数。
      */
@@ -373,46 +364,46 @@ export default {};
 创建一个搜索 Worker 以便你可以通过 API 搜索。
 
 ```ts
-export type Word = [tag: string, content: string] | string;
+type Word = [tag: string, content: string] | string;
 
-export interface TitleMatchedItem {
+interface TitleMatchedItem {
   type: "title";
   id: string;
   display: Word[];
 }
 
-export interface HeadingMatchedItem {
+interface HeadingMatchedItem {
   type: "heading";
   id: string;
   display: Word[];
 }
 
-export interface CustomMatchedItem {
+interface CustomMatchedItem {
   type: "custom";
   id: string;
   index: string;
   display: Word[];
 }
 
-export interface ContentMatchedItem {
+interface ContentMatchedItem {
   type: "content";
   id: string;
   header: string;
   display: Word[];
 }
 
-export type MatchedItem =
+type MatchedItem =
   | TitleMatchedItem
   | HeadingMatchedItem
   | ContentMatchedItem
   | CustomMatchedItem;
 
-export interface SearchResult {
+interface SearchResult {
   title: string;
   contents: MatchedItem[];
 }
 
-export interface SearchWorker {
+interface SearchWorker {
   search: (
     query: string,
     locale: string,
@@ -421,5 +412,5 @@ export interface SearchWorker {
   terminate: () => void;
 }
 
-declare const createSearchWorker: () => SearchWorker;
+const createSearchWorker: () => SearchWorker;
 ```

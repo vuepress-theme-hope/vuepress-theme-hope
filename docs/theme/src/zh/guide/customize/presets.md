@@ -127,7 +127,7 @@ import HitokotoBlogHero from "vuepress-theme-hope/presets/HitokotoBlogHero.js";
 获取站点的运行时间。
 
 ```ts
-export const setupRunningTimeFooter: (
+const setupRunningTimeFooter: (
   /**
    * 计算运行时间的日期
    */

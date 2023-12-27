@@ -103,7 +103,7 @@ Locales config for catalog component.
 ### defineAutoCatalogGetter
 
 ```ts
-export interface AutoCatalogInfo {
+interface AutoCatalogInfo {
   /** Catalog title */
   title: string;
   /** Catalog order */
@@ -112,13 +112,11 @@ export interface AutoCatalogInfo {
   content?: Component;
 }
 
-export type AutoCatalogInfoGetter = (
+type AutoCatalogInfoGetter = (
   meta: Record<string, unknown>,
 ) => AutoCatalogInfo | null;
 
-export declare const defineAutoCatalogGetter: (
-  options: AutoCatalogInfoGetter,
-) => void;
+const defineAutoCatalogGetter: (options: AutoCatalogInfoGetter) => void;
 ```
 
 Customize how to extract catalog info from meta.

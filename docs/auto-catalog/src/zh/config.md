@@ -105,7 +105,7 @@ icon: gears
 ### defineAutoCatalogGetter
 
 ```ts
-export interface AutoCatalogInfo {
+interface AutoCatalogInfo {
   /** 目录标题 */
   title: string;
   /** 目录顺序 */
@@ -114,13 +114,11 @@ export interface AutoCatalogInfo {
   content?: Component;
 }
 
-export type AutoCatalogInfoGetter = (
+type AutoCatalogInfoGetter = (
   meta: Record<string, unknown>,
 ) => AutoCatalogInfo | null;
 
-export declare const defineAutoCatalogGetter: (
-  options: AutoCatalogInfoGetter,
-) => void;
+const defineAutoCatalogGetter: (options: AutoCatalogInfoGetter) => void;
 ```
 
 自定义如何从 meta 中提取目录信息。

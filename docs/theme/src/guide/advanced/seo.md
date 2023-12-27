@@ -104,18 +104,11 @@ If a page does fit into the "unpopular" genre like books, music, etc., you can h
 You can use options `plugins.seo.ogp` in theme options. To pass in a function to modify the default OGP object to your needs and return it.
 
 ```ts
-function ogp<
-  ExtraPageData extends Record<string, unknown> = Record<never, never>,
-  ExtraPageFrontmatter extends Record<string, unknown> = Record<
-    string,
-    unknown
-  >,
-  ExtraPageFields extends Record<string, unknown> = Record<never, never>,
->(
+function ogp(
   /** OGP Object inferred by plugin */
   ogp: SeoContent,
   /** Page Object */
-  page: ExtendPage<ExtraPageData, ExtraPageFrontmatter, ExtraPageFields>,
+  page: Page,
   /** VuePress App */
   app: App,
 ): SeoContent;
@@ -126,7 +119,7 @@ For detailed parameter structure, see <ProjectLink name="seo2" path="/config.htm
 For example, if you are using a third-party theme and set a `banner` in frontmatter for each article according to the theme requirements, then you can pass in the following `ogp`:
 
 ```ts
-({
+seoPlugin({
   ogp: (ogp, page) => ({
     ...ogp,
     "og:image": page.frontmatter.banner || ogp["og:image"],
@@ -139,18 +132,11 @@ For example, if you are using a third-party theme and set a `banner` in frontmat
 Like OGP, you can use `plugins.seo.jsonLd` options in theme options to pass in a function to modify the default JSON-LD object to your needs and return it.
 
 ```ts
-function jsonLd<
-  ExtraPageData extends Record<string, unknown> = Record<never, never>,
-  ExtraPageFrontmatter extends Record<string, unknown> = Record<
-    string,
-    unknown
-  >,
-  ExtraPageFields extends Record<string, unknown> = Record<never, never>,
->(
+function jsonLd(
   /** JSON-LD Object inferred by plugin */
   jsonLD: ArticleSchema | BlogPostingSchema | WebPageSchema,
   /** Page Object */
-  page: ExtendPage<ExtraPageData, ExtraPageFrontmatter, ExtraPageFields>,
+  page: Page,
   /** VuePress App */
   app: App,
 ): ArticleSchema | BlogPostingSchema | WebPageSchema;
@@ -178,18 +164,11 @@ To let search engine results always be the primary choice, you may need to set `
 Sometimes you may need to fit other protocols or provide the corresponding SEO tags in the format provided by other search engines. In this case, you can use the `plugins.seo.customHead` in theme options, whose type is:
 
 ```ts
-function customHead<
-  ExtraPageData extends Record<string, unknown> = Record<never, never>,
-  ExtraPageFrontmatter extends Record<string, unknown> = Record<
-    string,
-    unknown
-  >,
-  ExtraPageFields extends Record<string, unknown> = Record<never, never>,
->(
+function customHead(
   /** Head tag config */
   head: HeadConfig[],
   /** Page Object */
-  page: ExtendPage<ExtraPageData, ExtraPageFrontmatter, ExtraPageFields>,
+  page: Page,
   /** VuePress App */
   app: App,
 ): void;

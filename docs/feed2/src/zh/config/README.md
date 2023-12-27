@@ -88,10 +88,7 @@ icon: gears
 
   ```ts
   // compareDate 来源于 "vuepress-shared" 包
-  (
-    pageA: Page<{ git?: GitData }, Record<string, never>>,
-    pageB: Page<{ git?: GitData }, Record<string, never>>,
-  ): number =>
+  (pageA, pageB): number =>
     compareDate(
       pageA.data.git?.createdTime
         ? new Date(pageA.data.git?.createdTime)

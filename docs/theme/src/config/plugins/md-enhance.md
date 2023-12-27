@@ -718,7 +718,7 @@ Default value: `"https://unpkg.com/react-dom/umd/react-dom.production.min.js"`
   /**
    * reveal.js options
    */
-  export interface RevealJsOptions {
+  interface RevealJsOptions {
     /**
      * reveal.js plugins
      *

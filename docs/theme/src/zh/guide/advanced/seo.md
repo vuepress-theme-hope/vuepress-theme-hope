@@ -101,18 +101,11 @@ head:
 你可以在主题选项中通过 `plugins.seo.ogp` 传入一个函数来按照你的需要修改默认 OGP 对象并返回。
 
 ```ts
-function ogp<
-  ExtraPageData extends Record<string, unknown> = Record<never, never>,
-  ExtraPageFrontmatter extends Record<string, unknown> = Record<
-    string,
-    unknown
-  >,
-  ExtraPageFields extends Record<string, unknown> = Record<never, never>,
->(
-  /** 插件自动推断的 OGP 对象 */
+function ogp(
+  /** 插件推断的 OGP 信息 */
   ogp: SeoContent,
   /** 页面对象 */
-  page: ExtendPage<ExtraPageData, ExtraPageFrontmatter, ExtraPageFields>,
+  page: Page,
   /** VuePress App */
   app: App,
 ): SeoContent;
@@ -136,18 +129,11 @@ function ogp<
 同 OGP，你可以在主题选项中通过 `plugins.seo.jsonLd` 传入一个函数来按照你的需要修改默认 JSON-LD 对象并返回。
 
 ```ts
-function jsonLd<
-  ExtraPageData extends Record<string, unknown> = Record<never, never>,
-  ExtraPageFrontmatter extends Record<string, unknown> = Record<
-    string,
-    unknown
-  >,
-  ExtraPageFields extends Record<string, unknown> = Record<never, never>,
->(
+function jsonLd(
   /** 由插件推断出的 JSON-LD 对象 */
   jsonLD: ArticleSchema | BlogPostingSchema | WebPageSchema,
   /** 页面对象 */
-  page: ExtendPage<ExtraPageData, ExtraPageFrontmatter, ExtraPageFields>,
+  page: Page,
   /** VuePress App */
   app: App,
 ): ArticleSchema | BlogPostingSchema | WebPageSchema;
@@ -175,18 +161,11 @@ function jsonLd<
 有些时候你可能需要符合其他协议或按照其他搜索引擎提供的格式提供对应的 SEO 标签，此时你可以在主题选项中通过 `plugins.seo.customHead` 选项自定义 head 标签，其类型为:
 
 ```ts
-function customHead<
-  ExtraPageData extends Record<string, unknown> = Record<never, never>,
-  ExtraPageFrontmatter extends Record<string, unknown> = Record<
-    string,
-    unknown
-  >,
-  ExtraPageFields extends Record<string, unknown> = Record<never, never>,
->(
+function customHead(
   /** head 标签配置 */
   head: HeadConfig[],
   /** 页面对象 */
-  page: ExtendPage<ExtraPageData, ExtraPageFrontmatter, ExtraPageFields>,
+  page: Page,
   /** VuePress App */
   app: App,
 ): void;
