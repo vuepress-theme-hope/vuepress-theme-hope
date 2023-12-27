@@ -52,7 +52,7 @@ icon: gears
 - 类型: `string`
 - 默认值: `"#46bd87"`
 
-主题色，默认为主题绿
+PWA 的主题色。
 
 ## maxSize
 
@@ -195,7 +195,7 @@ Safari 图标
 - 类型: `boolean`
 - 默认值: `false`
 
-是否为所有绝对链接添加 base。
+是否为选项中所有绝对链接添加 base。
 
 ## generateSwConfig
 

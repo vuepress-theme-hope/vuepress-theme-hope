@@ -62,25 +62,12 @@ For docs of Manifest, please see [W3C Manifest](https://w3c.github.io/manifest/)
 
 :::
 
-### favicon
-
-- Type: `string`
-- Required: No
-
-Path of favicon.ico with absolute path.
-
-::: warning
-
-We recommend you to set favicon for your site
-
-:::
-
 ### themeColor
 
-- 类型: `string`
-- 默认值: `"#46bd87"`
+- Type: `string`
+- Default: `"#46bd87"`
 
-Theme Color, default is theme green
+Theme Color of the pwa.
 
 ### maxSize
 
@@ -219,7 +206,7 @@ You can fill in the custom update popup component path.
 - Type: `boolean`
 - Default: `false`
 
-Whether append base to all absolute links.
+Whether append base to all absolute links in options.
 
 ### generateSwConfig
 

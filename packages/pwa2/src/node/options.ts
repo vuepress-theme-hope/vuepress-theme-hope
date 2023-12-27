@@ -188,9 +188,9 @@ export interface PWAOptions {
   locales?: LocaleConfig<PWALocaleData>;
 
   /**
-   * Whether append base to all absolute links
+   * Whether append base to all absolute links in options
    *
-   * 是否为所有绝对链接添加 base
+   * 是否为选项中所有绝对链接添加 base
    *
    * @default false
    */
