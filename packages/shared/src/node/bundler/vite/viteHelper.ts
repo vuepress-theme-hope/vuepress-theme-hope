@@ -3,6 +3,7 @@ import type { App } from "@vuepress/core";
 
 import { mergeViteConfig } from "./mergeViteConfig.js";
 import { isString } from "../../../shared/index.js";
+import { detectPackageManager } from "../../utils/index.js";
 import { getBundlerName } from "../getBundler.js";
 
 /**
@@ -38,11 +39,16 @@ export const addViteOptimizeDepsInclude = (
   app: App,
   module: string | string[],
 ): void => {
-  addViteConfig(bundlerOptions, app, {
-    optimizeDeps: {
-      include: isString(module) ? [module] : module,
-    },
-  });
+  if (
+    "OPTIMIZE_DEPS" in process.env
+      ? Boolean(process.env["OPTIMIZE_DEPS"])
+      : detectPackageManager() !== "pnpm"
+  )
+    addViteConfig(bundlerOptions, app, {
+      optimizeDeps: {
+        include: isString(module) ? [module] : module,
+      },
+    });
 };
 
 /**

@@ -16,6 +16,8 @@ const appMock = {
   },
 } as unknown as App;
 
+process.env["OPTIMIZE_DEPS"] = "true";
+
 it("addViteConfig()", () => {
   const config = {};
 
