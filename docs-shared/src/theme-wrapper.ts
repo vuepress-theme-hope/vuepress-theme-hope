@@ -47,7 +47,7 @@ export const theme = (
     navbarLayout: {
       start: ["Brand"],
       center: ["Links"],
-      end: ["Language", "Repo", "TelegramLink", "Outlook", "Search"],
+      end: ["Language", "SocialLink", "Repo", "Outlook", "Search"],
     },
 
     copyright: "MIT Licensed | Copyright © 2019-present Mr.Hope",
