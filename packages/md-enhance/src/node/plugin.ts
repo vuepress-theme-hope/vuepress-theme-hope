@@ -37,7 +37,6 @@ import {
   legacyCodeDemo,
   legacyCodeGroup,
   legacyFlowchart,
-  legacyHint,
   legacyInclude,
 } from "./compact/index.js";
 import { getLinksCheckStatus, linksCheck } from "./linksCheck.js";
@@ -315,10 +314,7 @@ export const mdEnhancePlugin =
         if (options.align) md.use(align);
         if (options.component) md.use(component);
         if (options.figure) md.use(figure);
-        if (options.hint) {
-          md.use(hint, locales);
-          if (legacy) md.use(legacyHint, locales);
-        }
+        if (options.hint) md.use(hint, locales);
         if (options.imgLazyload) md.use(imgLazyload);
         if (options.imgSize) md.use(imgSize);
         if (options.mark) md.use(mark);

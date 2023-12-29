@@ -51,6 +51,31 @@ export const hint: PluginWithOptions<MarkdownItHintOptions> = (
     });
   });
 
+  // compact with @vuepress/theme-default
+  md.use(container, {
+    name: "danger",
+    openRender: (tokens, index, _options, env: MarkdownEnv): string => {
+      const token = tokens[index];
+
+      // resolve info (title)
+      let info = token.info.trim().slice(6).trim();
+
+      // get locale
+      if (!info) {
+        const { filePathRelative } = env;
+        const relativePath = ensureLeadingSlash(filePathRelative ?? "");
+        const localePath = resolveLocalePath(options, relativePath);
+
+        info = options[localePath]?.caution;
+      }
+
+      return `<div class="hint-container caution">\n<p class="hint-container-title">${
+        info || "caution"
+      }</p>\n`;
+    },
+    closeRender: () => "</div>\n",
+  });
+
   md.use((md) =>
     container(md, {
       name: "details",
