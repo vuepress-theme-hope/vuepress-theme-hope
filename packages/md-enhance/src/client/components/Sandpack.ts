@@ -91,7 +91,7 @@ export default defineComponent({
       deepAssign({}, sandpackConfig.options, getSandpackOptions(props.options)),
     );
 
-    const sandpacCustomSetup = computed(() =>
+    const sandpackCustomSetup = computed(() =>
       deepAssign(
         {},
         sandpackConfig.customSetup,
@@ -100,9 +100,9 @@ export default defineComponent({
     );
 
     const setupSandpack = async (): Promise<void> => {
-      const [{ Sandpack }] = await Promise.all([
-        import(/* webpackChunkName: "sandpack-vue3" */ "sandpack-vue3"),
-      ]);
+      const { Sandpack } = await import(
+        /* webpackChunkName: "sandpack-vue3" */ "sandpack-vue3"
+      );
 
       component.value = Sandpack;
     };
@@ -158,14 +158,14 @@ export default defineComponent({
                     ...sandpackOptions.value,
                   },
                   customSetup: {
-                    ...sandpacCustomSetup.value,
+                    ...sandpackCustomSetup.value,
                   },
                   rtl: props.rtl,
                   theme: theme.value
                     ? theme.value
                     : isDarkmode.value
-                    ? "dark"
-                    : "light",
+                      ? "dark"
+                      : "light",
                   // eslint-disable-next-line @typescript-eslint/no-explicit-any
                 } as any)
               : null,
