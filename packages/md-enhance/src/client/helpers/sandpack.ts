@@ -11,14 +11,14 @@ declare const __VUEPRESS_DEV__: boolean;
 
 let sandpackConfig: SandpackConfig = DEFAULT_SANDPACK_CONFIG;
 
-const SandpackSymbol = Symbol(__VUEPRESS_DEV__ ? "Sandpack" : "");
+const sandpackSymbol = Symbol(__VUEPRESS_DEV__ ? "sandpack" : "");
 
 export const defineSandpackConfig = (config: SandpackConfig): void => {
   sandpackConfig = config;
 };
 
-export const useSandpackConfig = (): SandpackConfig => inject(SandpackSymbol)!;
+export const useSandpackConfig = (): SandpackConfig => inject(sandpackSymbol)!;
 
 export const injectSandpackConfig = (app: App): void => {
-  app.provide(SandpackSymbol, sandpackConfig);
+  app.provide(sandpackSymbol, sandpackConfig);
 };
