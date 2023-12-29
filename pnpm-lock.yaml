@@ -1959,7 +1959,7 @@ importers:
         specifier: ^3.0.0
         version: 3.1.9(@lezer/common@1.2.0)(vue@3.4.0)
       sass-loader:
-        specifier: ^13.3.2
+        specifier: ^13.3.0
         version: 13.3.3(sass@1.69.5)(webpack@5.89.0)
       vue:
         specifier: ^3.4.0
