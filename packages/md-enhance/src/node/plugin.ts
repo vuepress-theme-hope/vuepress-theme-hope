@@ -263,7 +263,7 @@ export const mdEnhancePlugin =
           addViteOptimizeDepsExclude(bundlerOptions, app, [
             "reveal.js/dist/reveal.esm.js",
             "reveal.js/plugin/markdown/markdown.esm.js",
-            ...(revealJsOptions?.plugins || []).map(
+            ...(revealJsOptions.plugins ?? []).map(
               (plugin) => `reveal.js/plugin/${plugin}/${plugin}.esm.js`,
             ),
           ]);
@@ -448,8 +448,8 @@ export const mdEnhancePlugin =
 
         if (status.revealJs)
           promises.push(
-            prepareRevealJsPluginFile(app, revealJsOptions.plugins ?? []),
-            prepareRevealJsStyleFile(app, revealJsOptions?.themes),
+            prepareRevealJsPluginFile(app, revealJsOptions.plugins),
+            prepareRevealJsStyleFile(app, revealJsOptions.themes),
           );
 
         await Promise.all(promises);
