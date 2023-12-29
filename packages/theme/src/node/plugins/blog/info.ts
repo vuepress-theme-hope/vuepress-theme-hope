@@ -43,9 +43,12 @@ export const injectBlogBasicInfo = (
   // resolve category
   if ("category" in frontmatter)
     info[ArticleInfoType.category] = frontmatter.category;
+  else if ("categories" in frontmatter)
+    info[ArticleInfoType.category] = frontmatter.categories;
 
   // resolve tag
   if ("tag" in frontmatter) info[ArticleInfoType.tag] = frontmatter.tag;
+  else if ("tags" in frontmatter) info[ArticleInfoType.tag] = frontmatter.tags;
 
   // resolve sticky
   if ("sticky" in frontmatter)
