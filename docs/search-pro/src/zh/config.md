@@ -34,7 +34,7 @@ icon: gears
     /**
      * 自定义项目的获取器
      */
-    getter: (page: Page) => string | string[] | null;
+    getter: (page: Page) => string[] | string | null | undefined;
 
     /**
      * 展示的内容
@@ -169,6 +169,13 @@ export default defineUserConfig({
 
 :::
 
+### filter
+
+- 类型: `(page: Page) => boolean`
+- 默认值: `() => true`
+
+用于过滤页面的函数。
+
 ### sortStrategy
 
 - 类型: `"max" | "total"`
@@ -176,7 +183,7 @@ export default defineUserConfig({
 
 结果排序策略
 
-当有多个匹配的结果时，会按照策略对结果进行排序。`max` 表示总分更高的页面会排在前面。`total` 表示最高分更高的页面会排在前面。
+当有多个匹配的结果时，会按照策略对结果进行排序。`max` 表示最高分更高的页面会排在前面。`total` 表示总分更高的页面会排在前面。
 
 ### worker
 
@@ -205,7 +212,7 @@ export default defineUserConfig({
 - 类型: `SearchProIndexOptions`
 
   ```ts
-  export interface SearchProIndexOptions {
+  interface SearchProIndexOptions {
     /**
      * 用于对索引字段项进行分词的函数。
      */
@@ -228,7 +235,7 @@ export default defineUserConfig({
 - 类型: `Record<string, SearchProIndexOptions>`
 
   ```ts
-  export interface SearchProIndexOptions {
+  interface SearchProIndexOptions {
     /**
      * 用于对索引字段项进行分词的函数。
      */
@@ -306,9 +313,14 @@ export default defineUserConfig({
     loading: string;
 
     /**
-     * 搜索历史文字
+     * 搜索文字历史 标题
      */
-    history: string;
+    queryHistory: string;
+
+    /**
+     * 搜索结果历史 标题
+     */
+    resultHistory: string;
 
     /**
      * 无搜索历史提示
@@ -352,46 +364,46 @@ export default {};
 创建一个搜索 Worker 以便你可以通过 API 搜索。
 
 ```ts
-export type Word = [tag: string, content: string] | string;
+type Word = [tag: string, content: string] | string;
 
-export interface TitleMatchedItem {
+interface TitleMatchedItem {
   type: "title";
   id: string;
   display: Word[];
 }
 
-export interface HeadingMatchedItem {
+interface HeadingMatchedItem {
   type: "heading";
   id: string;
   display: Word[];
 }
 
-export interface CustomMatchedItem {
+interface CustomMatchedItem {
   type: "custom";
   id: string;
   index: string;
   display: Word[];
 }
 
-export interface ContentMatchedItem {
+interface ContentMatchedItem {
   type: "content";
   id: string;
   header: string;
   display: Word[];
 }
 
-export type MatchedItem =
+type MatchedItem =
   | TitleMatchedItem
   | HeadingMatchedItem
   | ContentMatchedItem
   | CustomMatchedItem;
 
-export interface SearchResult {
+interface SearchResult {
   title: string;
   contents: MatchedItem[];
 }
 
-export interface SearchWorker {
+interface SearchWorker {
   search: (
     query: string,
     locale: string,
@@ -400,5 +412,5 @@ export interface SearchWorker {
   terminate: () => void;
 }
 
-declare const createSearchWorker: () => SearchWorker;
+const createSearchWorker: () => SearchWorker;
 ```

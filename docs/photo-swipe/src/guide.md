@@ -31,14 +31,14 @@ By default, the plugin will select images according to the default theme's selec
 
 ## Customize PhotoSwipe Options
 
-You can pass options to [`photo-swipe`](http://photoswipe.com/) by importing and calling `definePhotoSwipeOptions` in client config file:
+You can pass options to [`photo-swipe`](http://photoswipe.com/) by importing and calling `definePhotoSwipeConfig` in client config file:
 
 ```ts
 // .vuepress/client.ts
 import { defineClientConfig } from "@vuepress/client";
-import { definePhotoSwipeOptions } from "vuepress-plugin-photo-swipe/client";
+import { definePhotoSwipeConfig } from "vuepress-plugin-photo-swipe/client";
 
-definePhotoSwipeOptions({
+definePhotoSwipeConfig({
   // photoswipe options here
 });
 
@@ -46,6 +46,13 @@ export default defineClientConfig({
   // ...
 });
 ```
+
+## Page level settings
+
+You can set `photoSwipe` in frontmatter to customize the behavior of the current page:
+
+- String: Image selector for the current page
+- `false`: disable photo-swipe in the current page.
 
 ## Operation Delay
 

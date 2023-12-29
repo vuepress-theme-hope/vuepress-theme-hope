@@ -1,5 +1,6 @@
 export type AvailableComponent =
   | "ArtPlayer"
+  /** @deprecated */
   | "AudioPlayer"
   | "Badge"
   | "BiliBili"
@@ -10,7 +11,11 @@ export type AvailableComponent =
   | "Share"
   | "StackBlitz"
   | "SiteInfo"
+  | "VPBanner"
+  | "VPCard"
   | "VidStack"
+  /** @deprecated */
   | "VideoPlayer"
   | "XiGua"
+  /** @deprecated */
   | "YouTube";

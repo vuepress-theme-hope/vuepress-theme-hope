@@ -1,6 +1,7 @@
 ---
 title: Feed 支持
 icon: rss
+order: 4
 category:
   - 高级
 tag:
@@ -8,7 +9,7 @@ tag:
   - Feed
 ---
 
-`vuepress-theme-hope` 通过内置 <ProjectLink name="feed2" path="/zh/">`vuepress-plugin-feed2`</ProjectLink> 插件来为你提供 feed 支持。
+`vuepress-theme-hope` 通过内置 <ProjectLink name="feed2" path="/zh/">`vuepress-plugin-feed2`</ProjectLink> 插件来为你提供 feed 支持。想使用它，你应该手动在你的项目中安装 `vuepress-plugin-feed2`。
 
 ::: info
 
@@ -26,11 +27,7 @@ tag:
 - JSON 1.1
 - RSS 2.0
 
-::: tip
-
-Atom 和 JSON 是为了提供更多 Feed 软件的适配而提供的。
-
-如果可以，请尽可能使用 RSS。
+::: tip 如果可以，请尽可能使用 RSS。Atom 和 JSON 是为了最好的兼容性而提供的。
 
 :::
 

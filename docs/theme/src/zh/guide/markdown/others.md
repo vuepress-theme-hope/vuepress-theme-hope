@@ -60,10 +60,12 @@ export default {
 
 换言之当设置 `plugins.mdEnhance.vPre: true` 时，你可以在下面的容器中使用任何 Mustache 语法。
 
-```md
+:::: md-demo
+
 ::: v-pre
 
 {{ abc }}
 
 :::
-```
+
+::::

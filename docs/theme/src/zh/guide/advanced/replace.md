@@ -1,7 +1,7 @@
 ---
 title: 替换主题组件
 icon: boxes-packing
-order: -1
+order: -2
 category:
   - 高级
 tag:
@@ -13,7 +13,7 @@ tag:
 
 <!-- more -->
 
-## 替换组件的方式
+## 如何通过别名替换组件
 
 你需要在自己的 VuePress 配置文件通过 `alias` 替换主题中使用的组件别名。
 

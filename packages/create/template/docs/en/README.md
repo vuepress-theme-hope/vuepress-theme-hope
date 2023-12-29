@@ -10,7 +10,8 @@ bgImageStyle:
 heroText: Project name
 tagline: You can place the description of the project here.
 actions:
-  - text: How to Use 💡
+  - text: How to Use
+    icon: lightbulb
     link: ./demo/
     type: primary
 
@@ -40,10 +41,15 @@ highlights:
         details: Check markdown links
         link: https://theme-hope.vuejs.press/guide/markdown/others.html#link-check
 
-      - title: Custom Container
+      - title: Hint box
         icon: box-archive
         details: Decorate Markdown content with styles
-        link: https://theme-hope.vuejs.press/guide/markdown/container.html
+        link: https://theme-hope.vuejs.press/guide/markdown/hint.html
+
+      - title: GFM alerts
+        icon: bell
+        details: GFM alert box
+        link: https://theme-hope.vuejs.press/guide/markdown/alert.html
 
       - title: Tabs
         icon: table-columns
@@ -90,15 +96,15 @@ highlights:
         details: improve syntax to specify size and color scheme
         link: https://theme-hope.vuejs.press/guide/markdown/image.html
 
-      - title: Card Support
-        icon: square
-        details: Add cards in Markdown
-        link: https://theme-hope.vuejs.press/guide/markdown/card.html
+      - title: Component Support
+        icon: puzzle-piece
+        details: Easily insert components in Markdown
+        link: https://theme-hope.vuejs.press/guide/markdown/component.html
 
       - title: Chart Support
         icon: chart-simple
         details: Display charts in Markdown
-        link: https://theme-hope.vuejs.press/guide/markdown/chart.html
+        link: https://theme-hope.vuejs.press/guide/markdown/chartjs.html
 
       - title: Flowchart Support
         icon: route
@@ -138,7 +144,7 @@ highlights:
       - title: Code Demo Support
         icon: laptop-code
         details: You can insert code demo easily
-        link: https://theme-hope.vuejs.press/guide/markdown/demo/
+        link: https://theme-hope.vuejs.press/guide/markdown/demo.html
 
       - title: Presentation Support
         icon: person-chalkboard

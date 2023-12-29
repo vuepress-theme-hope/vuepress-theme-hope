@@ -36,6 +36,7 @@ export const esLocale: ThemeLocaleData = {
     all: "Todos",
     intro: "Introducción personal",
     star: "Estrella",
+    empty: "$text está vacío",
   },
 
   paginationLocales: {

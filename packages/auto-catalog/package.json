@@ -1,6 +1,6 @@
 {
   "name": "vuepress-plugin-auto-catalog",
-  "version": "2.0.0-beta.244",
+  "version": "2.0.0-rc.7",
   "description": "Generate catalog for VuePress2",
   "keywords": [
     "vuepress",
@@ -48,14 +48,15 @@
   "engines": {
     "node": ">=18.16.0",
     "npm": ">=8",
-    "pnpm": ">=7"
+    "pnpm": ">=7",
+    "yarn": ">=2"
   },
   "dependencies": {
-    "@vuepress/client": "2.0.0-beta.67",
-    "@vuepress/core": "2.0.0-beta.67",
-    "@vuepress/shared": "2.0.0-beta.67",
-    "@vuepress/utils": "2.0.0-beta.67",
-    "vue": "^3.3.7",
+    "@vuepress/client": "2.0.0-rc.0",
+    "@vuepress/core": "2.0.0-rc.0",
+    "@vuepress/shared": "2.0.0-rc.0",
+    "@vuepress/utils": "2.0.0-rc.0",
+    "vue": "^3.3.13",
     "vue-router": "^4.2.5",
     "vuepress-plugin-components": "workspace:*",
     "vuepress-plugin-sass-palette": "workspace:*",
@@ -63,9 +64,9 @@
   },
   "peerDependencies": {
     "sass-loader": "^13.3.2",
-    "vuepress": "2.0.0-beta.67",
-    "vuepress-vite": "2.0.0-beta.67",
-    "vuepress-webpack": "2.0.0-beta.67"
+    "vuepress": "2.0.0-rc.0",
+    "vuepress-vite": "2.0.0-rc.0",
+    "vuepress-webpack": "2.0.0-rc.0"
   },
   "peerDependenciesMeta": {
     "sass-loader": {

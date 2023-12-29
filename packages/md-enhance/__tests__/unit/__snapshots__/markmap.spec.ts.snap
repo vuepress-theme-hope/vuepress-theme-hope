@@ -1,0 +1,66 @@
+// Vitest Snapshot v1, https://vitest.dev/guide/snapshot.html
+
+exports[`markmap plugin > Should not render 1`] = `
+"<hr>
+<h2>markmap:
+colorFreezeLevel: 2</h2>
+<h1>markmap</h1>
+<h2>Links</h2>
+<ul>
+<li><a href="https://markmap.js.org/">https://markmap.js.org/</a></li>
+<li><a href="https://github.com/markmap/markmap">GitHub</a></li>
+</ul>
+<h2>Features</h2>
+<ul>
+<li>links</li>
+<li><strong>strong</strong> <s>del</s> <em>italic</em> ==highlight==</li>
+<li>multiline
+text</li>
+<li><code>inline code</code></li>
+<li>
+<pre><code class="language-js">console.log('code block');
+</code></pre>
+</li>
+<li>Katex
+<ul>
+<li>$x = {-b \\pm \\sqrt{b^2-4ac} \\over 2a}$</li>
+</ul>
+</li>
+<li>Now we can wrap very very very very long text based on <code>maxWidth</code> option</li>
+</ul>
+"
+`;
+
+exports[`markmap plugin > Should not render 2`] = `
+"<pre><code class="language-md">---
+markmap:
+  colorFreezeLevel: 2
+---
+
+# markmap
+
+## Links
+
+- &lt;https://markmap.js.org/&gt;
+- [GitHub](https://github.com/markmap/markmap)
+
+## Features
+
+- links
+- **strong** ~~del~~ *italic* ==highlight==
+- multiline
+  text
+- \`inline code\`
+-
+    \`\`\`js
+    console.log('code block');
+    \`\`\`
+- Katex
+  - $x = {-b \\pm \\sqrt{b^2-4ac} \\over 2a}$
+- Now we can wrap very very very very long text based on \`maxWidth\` option
+
+</code></pre>
+"
+`;
+
+exports[`markmap plugin > Should render \`\`\`markmap 1`] = `"<MarkMap id="markmap-0" content="eJxdj8FuwjAMhu95CktDAiqlSGgntu7IJg3tusPYlLSN2kAad4kLbIg++0xFLzskcfx//m1LKUWjw77R7UoAFOgwrIMxv2ZjDsatYCmuiLiDG8XhHWys30chJDzWRG1cLRY3Nd3FFEO1eGLt49nSS5d/zkamslR3eVpgM+LjOx9c10ZTF8xg7IYOEpIkUkBfJQn0fWlc30NiSTtbJJBlta1qx4eyjNmmc2S50PAiZE7EKWX9NcF7lUYJyQKAUmoXh6hAH9GZ1GE1m14RyB0W++n8YQTZ4lWzF/8lTE6QwVnmsG0b2MbvQOf8aynvdXGBLR5MgKW+TLjkDY9w5KbawzHoFlj6+X85XmqYEnIdTQnoQTX69G5LqhVgSxa9EH9DMIPM"></MarkMap>"`;

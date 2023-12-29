@@ -1,5 +1,5 @@
 /* eslint-disable @typescript-eslint/naming-convention */
-import type { App, AppDir, Page, PageFrontmatter } from "@vuepress/core";
+import type { App, AppDir } from "@vuepress/core";
 import { fs } from "@vuepress/utils";
 
 import {
@@ -15,44 +15,39 @@ import {
   appendJSONLD,
 } from "./inject.js";
 import type { SeoOptions } from "./options.js";
-import type {
-  SEOPluginFrontmatter,
-  SeoPluginPageData,
-} from "./typings/index.js";
+import type { ExtendPage } from "./typings/index.js";
 import { logger } from "./utils.js";
 
 export const appendSEO = (app: App, options: SeoOptions): void => {
-  app.pages.forEach(
-    (page: Page<SeoPluginPageData, PageFrontmatter<SEOPluginFrontmatter>>) => {
-      const head = page.frontmatter.head || [];
+  app.pages.forEach((page: ExtendPage) => {
+    const head = page.frontmatter.head || [];
 
-      const canonicalLink = getCanonicalLink(page, options);
-      const alternateLinks = getAlternateLinks(page, options, app);
+    const canonicalLink = getCanonicalLink(page, options);
+    const alternateLinks = getAlternateLinks(page, options, app);
 
-      appendCanonical(head, canonicalLink);
-      appendAlternate(head, alternateLinks);
+    appendCanonical(head, canonicalLink);
+    appendAlternate(head, alternateLinks);
 
-      if (page.frontmatter["seo"] !== false) {
-        const defaultOGP = getOGP(page, options, app);
-        const defaultJSONLD = getJSONLD(page, options, app);
+    if (page.frontmatter["seo"] !== false) {
+      const defaultOGP = getOGP(page, options, app);
+      const defaultJSONLD = getJSONLD(page, options, app);
 
-        const ogpContent = options.ogp
-          ? options.ogp(defaultOGP, page, app)
-          : defaultOGP;
+      const ogpContent = options.ogp
+        ? options.ogp(defaultOGP, page, app)
+        : defaultOGP;
 
-        const jsonLDContent = options.jsonLd
-          ? options.jsonLd(defaultJSONLD, page, app)
-          : defaultJSONLD;
+      const jsonLDContent = options.jsonLd
+        ? options.jsonLd(defaultJSONLD, page, app)
+        : defaultJSONLD;
 
-        addOGP(head, ogpContent);
-        appendJSONLD(head, jsonLDContent);
+      addOGP(head, ogpContent);
+      appendJSONLD(head, jsonLDContent);
 
-        if (options.customHead) options.customHead(head, page, app);
-      }
+      if (options.customHead) options.customHead(head, page, app);
+    }
 
-      page.frontmatter.head = head;
-    },
-  );
+    page.frontmatter.head = head;
+  });
 };
 
 export const generateRobotsTxt = async (dir: AppDir): Promise<void> => {

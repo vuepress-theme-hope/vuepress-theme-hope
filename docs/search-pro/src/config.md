@@ -34,7 +34,7 @@ Whether to show suggestions while searching.
     /**
      * Custom field getter
      */
-    getter: (page: Page) => string | string[] | null;
+    getter: (page: Page) => string[] | string | null | undefined;
 
     /**
      * Display content
@@ -169,6 +169,13 @@ Performing client search with huge contents could be slow, so under this case yo
 
 :::
 
+### filter
+
+- Type: `(page: Page) => boolean`
+- Default: `() => true`
+
+Function used to filter pages.
+
 ### sortStrategy
 
 - Type: `"max" | "total"`
@@ -205,7 +212,7 @@ Usually in development, users do not need to update the index database in real t
 - Type: `SearchProIndexOptions`
 
   ```ts
-  export interface SearchProIndexOptions {
+  interface SearchProIndexOptions {
     /**
      * Function to tokenize the index field item.
      */
@@ -228,7 +235,7 @@ Options used to create index.
 - Type: `Record<string, SearchProIndexOptions>`
 
   ```ts
-  export interface SearchProIndexOptions {
+  interface SearchProIndexOptions {
     /**
      * Function to tokenize the index field item.
      */
@@ -306,9 +313,14 @@ Options used to create index per locale.
     loading: string;
 
     /**
-     * Search history text
+     * Search query history title
      */
-    history: string;
+    queryHistory: string;
+
+    /**
+     * Search result history title
+     */
+    resultHistory: string;
 
     /**
      * Search history empty hint
@@ -376,46 +388,46 @@ export default {};
 Create a search worker so that you can search through API.
 
 ```ts
-export type Word = [tag: string, content: string] | string;
+type Word = [tag: string, content: string] | string;
 
-export interface TitleMatchedItem {
+interface TitleMatchedItem {
   type: "title";
   id: string;
   display: Word[];
 }
 
-export interface HeadingMatchedItem {
+interface HeadingMatchedItem {
   type: "heading";
   id: string;
   display: Word[];
 }
 
-export interface CustomMatchedItem {
+interface CustomMatchedItem {
   type: "custom";
   id: string;
   index: string;
   display: Word[];
 }
 
-export interface ContentMatchedItem {
+interface ContentMatchedItem {
   type: "content";
   id: string;
   header: string;
   display: Word[];
 }
 
-export type MatchedItem =
+type MatchedItem =
   | TitleMatchedItem
   | HeadingMatchedItem
   | ContentMatchedItem
   | CustomMatchedItem;
 
-export interface SearchResult {
+interface SearchResult {
   title: string;
   contents: MatchedItem[];
 }
 
-export interface SearchWorker {
+interface SearchWorker {
   search: (
     query: string,
     locale: string,
@@ -424,5 +436,5 @@ export interface SearchWorker {
   terminate: () => void;
 }
 
-declare const createSearchWorker: () => SearchWorker;
+const createSearchWorker: () => SearchWorker;
 ```

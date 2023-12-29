@@ -1,5 +1,7 @@
 import type { Page } from "@vuepress/core";
 
+import type { FeedPluginFrontmatter } from ".";
+
 export interface FeedAuthor {
   /**
    * Author name
@@ -179,20 +181,18 @@ export interface FeedGetter {
    * 项目标题获取器
    */
   title?: <
-    ExtraPageData extends Record<string | number | symbol, unknown> = Record<
-      never,
-      never
-    >,
-    ExtraPageFrontmatter extends Record<
-      string | number | symbol,
+    ExtraPageData extends Record<string, unknown> = Record<never, never>,
+    ExtraPageFrontmatter extends Record<string, unknown> = Record<
+      string,
       unknown
-    > = Record<string, unknown>,
-    ExtraPageFields extends Record<string | number | symbol, unknown> = Record<
-      never,
-      never
     >,
+    ExtraPageFields extends Record<string, unknown> = Record<never, never>,
   >(
-    page: Page<ExtraPageData, ExtraPageFrontmatter, ExtraPageFields>,
+    page: Page<
+      ExtraPageData,
+      ExtraPageFrontmatter & FeedPluginFrontmatter,
+      ExtraPageFields
+    >,
   ) => string;
 
   /**
@@ -201,20 +201,18 @@ export interface FeedGetter {
    * 项目链接获取器
    */
   link?: <
-    ExtraPageData extends Record<string | number | symbol, unknown> = Record<
-      never,
-      never
-    >,
-    ExtraPageFrontmatter extends Record<
-      string | number | symbol,
+    ExtraPageData extends Record<string, unknown> = Record<never, never>,
+    ExtraPageFrontmatter extends Record<string, unknown> = Record<
+      string,
       unknown
-    > = Record<string, unknown>,
-    ExtraPageFields extends Record<string | number | symbol, unknown> = Record<
-      never,
-      never
     >,
+    ExtraPageFields extends Record<string, unknown> = Record<never, never>,
   >(
-    page: Page<ExtraPageData, ExtraPageFrontmatter, ExtraPageFields>,
+    page: Page<
+      ExtraPageData,
+      ExtraPageFrontmatter & FeedPluginFrontmatter,
+      ExtraPageFields
+    >,
   ) => string;
 
   /**
@@ -223,20 +221,18 @@ export interface FeedGetter {
    * 项目描述获取器
    */
   description?: <
-    ExtraPageData extends Record<string | number | symbol, unknown> = Record<
-      never,
-      never
-    >,
-    ExtraPageFrontmatter extends Record<
-      string | number | symbol,
+    ExtraPageData extends Record<string, unknown> = Record<never, never>,
+    ExtraPageFrontmatter extends Record<string, unknown> = Record<
+      string,
       unknown
-    > = Record<string, unknown>,
-    ExtraPageFields extends Record<string | number | symbol, unknown> = Record<
-      never,
-      never
     >,
+    ExtraPageFields extends Record<string, unknown> = Record<never, never>,
   >(
-    page: Page<ExtraPageData, ExtraPageFrontmatter, ExtraPageFields>,
+    page: Page<
+      ExtraPageData,
+      ExtraPageFrontmatter & FeedPluginFrontmatter,
+      ExtraPageFields
+    >,
   ) => string | null;
 
   /**
@@ -245,20 +241,18 @@ export interface FeedGetter {
    * 项目摘要获取器
    */
   excerpt?: <
-    ExtraPageData extends Record<string | number | symbol, unknown> = Record<
-      never,
-      never
-    >,
-    ExtraPageFrontmatter extends Record<
-      string | number | symbol,
+    ExtraPageData extends Record<string, unknown> = Record<never, never>,
+    ExtraPageFrontmatter extends Record<string, unknown> = Record<
+      string,
       unknown
-    > = Record<string, unknown>,
-    ExtraPageFields extends Record<string | number | symbol, unknown> = Record<
-      never,
-      never
     >,
+    ExtraPageFields extends Record<string, unknown> = Record<never, never>,
   >(
-    page: Page<ExtraPageData, ExtraPageFrontmatter, ExtraPageFields>,
+    page: Page<
+      ExtraPageData,
+      ExtraPageFrontmatter & FeedPluginFrontmatter,
+      ExtraPageFields
+    >,
   ) => string | null;
 
   /**
@@ -267,20 +261,18 @@ export interface FeedGetter {
    * 项目内容获取器
    */
   content?: <
-    ExtraPageData extends Record<string | number | symbol, unknown> = Record<
-      never,
-      never
-    >,
-    ExtraPageFrontmatter extends Record<
-      string | number | symbol,
+    ExtraPageData extends Record<string, unknown> = Record<never, never>,
+    ExtraPageFrontmatter extends Record<string, unknown> = Record<
+      string,
       unknown
-    > = Record<string, unknown>,
-    ExtraPageFields extends Record<string | number | symbol, unknown> = Record<
-      never,
-      never
     >,
+    ExtraPageFields extends Record<string, unknown> = Record<never, never>,
   >(
-    page: Page<ExtraPageData, ExtraPageFrontmatter, ExtraPageFields>,
+    page: Page<
+      ExtraPageData,
+      ExtraPageFrontmatter & FeedPluginFrontmatter,
+      ExtraPageFields
+    >,
   ) => string;
 
   /**
@@ -293,20 +285,18 @@ export interface FeedGetter {
    * @description 获取器应在作者信息缺失时返回空数组
    */
   author?: <
-    ExtraPageData extends Record<string | number | symbol, unknown> = Record<
-      never,
-      never
-    >,
-    ExtraPageFrontmatter extends Record<
-      string | number | symbol,
+    ExtraPageData extends Record<string, unknown> = Record<never, never>,
+    ExtraPageFrontmatter extends Record<string, unknown> = Record<
+      string,
       unknown
-    > = Record<string, unknown>,
-    ExtraPageFields extends Record<string | number | symbol, unknown> = Record<
-      never,
-      never
     >,
+    ExtraPageFields extends Record<string, unknown> = Record<never, never>,
   >(
-    page: Page<ExtraPageData, ExtraPageFrontmatter, ExtraPageFields>,
+    page: Page<
+      ExtraPageData,
+      ExtraPageFrontmatter & FeedPluginFrontmatter,
+      ExtraPageFields
+    >,
   ) => FeedAuthor[];
 
   /**
@@ -315,20 +305,18 @@ export interface FeedGetter {
    * 项目分类获取器
    */
   category?: <
-    ExtraPageData extends Record<string | number | symbol, unknown> = Record<
-      never,
-      never
-    >,
-    ExtraPageFrontmatter extends Record<
-      string | number | symbol,
+    ExtraPageData extends Record<string, unknown> = Record<never, never>,
+    ExtraPageFrontmatter extends Record<string, unknown> = Record<
+      string,
       unknown
-    > = Record<string, unknown>,
-    ExtraPageFields extends Record<string | number | symbol, unknown> = Record<
-      never,
-      never
     >,
+    ExtraPageFields extends Record<string, unknown> = Record<never, never>,
   >(
-    page: Page<ExtraPageData, ExtraPageFrontmatter, ExtraPageFields>,
+    page: Page<
+      ExtraPageData,
+      ExtraPageFrontmatter & FeedPluginFrontmatter,
+      ExtraPageFields
+    >,
   ) => FeedCategory[] | null;
 
   /**
@@ -337,20 +325,18 @@ export interface FeedGetter {
    * 项目附件获取器
    */
   enclosure?: <
-    ExtraPageData extends Record<string | number | symbol, unknown> = Record<
-      never,
-      never
-    >,
-    ExtraPageFrontmatter extends Record<
-      string | number | symbol,
+    ExtraPageData extends Record<string, unknown> = Record<never, never>,
+    ExtraPageFrontmatter extends Record<string, unknown> = Record<
+      string,
       unknown
-    > = Record<string, unknown>,
-    ExtraPageFields extends Record<string | number | symbol, unknown> = Record<
-      never,
-      never
     >,
+    ExtraPageFields extends Record<string, unknown> = Record<never, never>,
   >(
-    page: Page<ExtraPageData, ExtraPageFrontmatter, ExtraPageFields>,
+    page: Page<
+      ExtraPageData,
+      ExtraPageFrontmatter & FeedPluginFrontmatter,
+      ExtraPageFields
+    >,
   ) => FeedEnclosure | null;
 
   /**
@@ -359,20 +345,18 @@ export interface FeedGetter {
    * 项目发布日期获取器
    */
   publishDate?: <
-    ExtraPageData extends Record<string | number | symbol, unknown> = Record<
-      never,
-      never
-    >,
-    ExtraPageFrontmatter extends Record<
-      string | number | symbol,
+    ExtraPageData extends Record<string, unknown> = Record<never, never>,
+    ExtraPageFrontmatter extends Record<string, unknown> = Record<
+      string,
       unknown
-    > = Record<string, unknown>,
-    ExtraPageFields extends Record<string | number | symbol, unknown> = Record<
-      never,
-      never
     >,
+    ExtraPageFields extends Record<string, unknown> = Record<never, never>,
   >(
-    page: Page<ExtraPageData, ExtraPageFrontmatter, ExtraPageFields>,
+    page: Page<
+      ExtraPageData,
+      ExtraPageFrontmatter & FeedPluginFrontmatter,
+      ExtraPageFields
+    >,
   ) => Date | null;
 
   /**
@@ -381,20 +365,18 @@ export interface FeedGetter {
    * 项目最后更新日期获取器
    */
   lastUpdateDate?: <
-    ExtraPageData extends Record<string | number | symbol, unknown> = Record<
-      never,
-      never
-    >,
-    ExtraPageFrontmatter extends Record<
-      string | number | symbol,
+    ExtraPageData extends Record<string, unknown> = Record<never, never>,
+    ExtraPageFrontmatter extends Record<string, unknown> = Record<
+      string,
       unknown
-    > = Record<string, unknown>,
-    ExtraPageFields extends Record<string | number | symbol, unknown> = Record<
-      never,
-      never
     >,
+    ExtraPageFields extends Record<string, unknown> = Record<never, never>,
   >(
-    page: Page<ExtraPageData, ExtraPageFrontmatter, ExtraPageFields>,
+    page: Page<
+      ExtraPageData,
+      ExtraPageFrontmatter & FeedPluginFrontmatter,
+      ExtraPageFields
+    >,
   ) => Date;
 
   /**
@@ -403,20 +385,18 @@ export interface FeedGetter {
    * 项目图片获取器
    */
   image?: <
-    ExtraPageData extends Record<string | number | symbol, unknown> = Record<
-      never,
-      never
-    >,
-    ExtraPageFrontmatter extends Record<
-      string | number | symbol,
+    ExtraPageData extends Record<string, unknown> = Record<never, never>,
+    ExtraPageFrontmatter extends Record<string, unknown> = Record<
+      string,
       unknown
-    > = Record<string, unknown>,
-    ExtraPageFields extends Record<string | number | symbol, unknown> = Record<
-      never,
-      never
     >,
+    ExtraPageFields extends Record<string, unknown> = Record<never, never>,
   >(
-    page: Page<ExtraPageData, ExtraPageFrontmatter, ExtraPageFields>,
+    page: Page<
+      ExtraPageData,
+      ExtraPageFrontmatter & FeedPluginFrontmatter,
+      ExtraPageFields
+    >,
   ) => string;
 
   /**
@@ -425,20 +405,18 @@ export interface FeedGetter {
    * 项目贡献者获取器
    */
   contributor?: <
-    ExtraPageData extends Record<string | number | symbol, unknown> = Record<
-      never,
-      never
-    >,
-    ExtraPageFrontmatter extends Record<
-      string | number | symbol,
+    ExtraPageData extends Record<string, unknown> = Record<never, never>,
+    ExtraPageFrontmatter extends Record<string, unknown> = Record<
+      string,
       unknown
-    > = Record<string, unknown>,
-    ExtraPageFields extends Record<string | number | symbol, unknown> = Record<
-      never,
-      never
     >,
+    ExtraPageFields extends Record<string, unknown> = Record<never, never>,
   >(
-    page: Page<ExtraPageData, ExtraPageFrontmatter, ExtraPageFields>,
+    page: Page<
+      ExtraPageData,
+      ExtraPageFrontmatter & FeedPluginFrontmatter,
+      ExtraPageFields
+    >,
   ) => FeedContributor[];
 
   /**
@@ -447,19 +425,17 @@ export interface FeedGetter {
    * 项目版权获取器
    */
   copyright?: <
-    ExtraPageData extends Record<string | number | symbol, unknown> = Record<
-      never,
-      never
-    >,
-    ExtraPageFrontmatter extends Record<
-      string | number | symbol,
+    ExtraPageData extends Record<string, unknown> = Record<never, never>,
+    ExtraPageFrontmatter extends Record<string, unknown> = Record<
+      string,
       unknown
-    > = Record<string, unknown>,
-    ExtraPageFields extends Record<string | number | symbol, unknown> = Record<
-      never,
-      never
     >,
+    ExtraPageFields extends Record<string, unknown> = Record<never, never>,
   >(
-    page: Page<ExtraPageData, ExtraPageFrontmatter, ExtraPageFields>,
+    page: Page<
+      ExtraPageData,
+      ExtraPageFrontmatter & FeedPluginFrontmatter,
+      ExtraPageFields
+    >,
   ) => string | null;
 }

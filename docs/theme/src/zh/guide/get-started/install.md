@@ -12,8 +12,8 @@ tag:
 
 ## 要求
 
-- LTS 版本 的 Node.js（18、20）
-- 支持的包管理器: npm >= 8、yarn >= 2 或 pnpm >= 7
+- 环境: LTS 版本 的 Node.js（18、20）
+- 包管理器: npm >= 8、yarn >= 2 或 pnpm >= 7
 - 使用 Vue3 的 VuePress2 项目
 
 ## 安装
@@ -66,21 +66,21 @@ npm init vuepress-theme-hope add [dir]
 
 :::
 
-::: note
+::: important
 
 这里的 `[dir]` 是一个参数，你需要使用真实的文件夹名称替换它，例如 `docs`、`blog` 或其他你喜欢的名称。
 
 :::
 
-## 使用
+## 使用与配置
 
-请在配置文件中导入并使用 `hopeTheme` 以使用 `vuepress-theme-hope`。
+请在配置文件中导入并使用 `hopeTheme` 以使用 `vuepress-theme-hope`，`hopeTheme` 接受的第一个参数会作为主题配置：
 
 ::: code-tabs#language
 
 @tab TS
 
-```ts
+```ts {7}
 // .vuepress/config.ts
 import { defineUserConfig } from "vuepress";
 import { hopeTheme } from "vuepress-theme-hope";
@@ -94,7 +94,7 @@ export default defineUserConfig({
 
 @tab JS
 
-```js
+```js {7}
 // .vuepress/config.js
 import { hopeTheme } from "vuepress-theme-hope";
 

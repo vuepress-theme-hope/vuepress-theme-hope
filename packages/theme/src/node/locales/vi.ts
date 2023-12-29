@@ -36,6 +36,7 @@ export const viLocale: ThemeLocaleData = {
     all: "Tất cả",
     intro: "Giới thiệu cá nhân",
     star: "Ngôi sao",
+    empty: "$text trống",
   },
 
   paginationLocales: {

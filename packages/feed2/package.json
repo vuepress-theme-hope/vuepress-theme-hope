@@ -1,6 +1,6 @@
 {
   "name": "vuepress-plugin-feed2",
-  "version": "2.0.0-beta.244",
+  "version": "2.0.0-rc.7",
   "description": "Feed plugin for vuepress-theme-hope",
   "keywords": [
     "vuepress",
@@ -44,23 +44,24 @@
   "engines": {
     "node": ">=18.16.0",
     "npm": ">=8",
-    "pnpm": ">=7"
+    "pnpm": ">=7",
+    "yarn": ">=2"
   },
   "dependencies": {
-    "@vuepress/shared": "2.0.0-beta.67",
-    "@vuepress/utils": "2.0.0-beta.67",
+    "@vuepress/shared": "2.0.0-rc.0",
+    "@vuepress/utils": "2.0.0-rc.0",
     "cheerio": "1.0.0-rc.12",
     "vuepress-shared": "workspace:*",
     "xml-js": "^1.6.11"
   },
   "devDependencies": {
-    "@vuepress/core": "2.0.0-beta.67",
-    "@vuepress/plugin-git": "2.0.0-beta.67"
+    "@vuepress/core": "2.0.0-rc.0",
+    "@vuepress/plugin-git": "2.0.0-rc.0"
   },
   "peerDependencies": {
-    "vuepress": "2.0.0-beta.67",
-    "vuepress-vite": "2.0.0-beta.67",
-    "vuepress-webpack": "2.0.0-beta.67"
+    "vuepress": "2.0.0-rc.0",
+    "vuepress-vite": "2.0.0-rc.0",
+    "vuepress-webpack": "2.0.0-rc.0"
   },
   "peerDependenciesMeta": {
     "vuepress": {

@@ -9,7 +9,7 @@ import {
   getLocales,
 } from "vuepress-shared/node";
 
-import { convertOptions } from "./compact/index.js";
+import { convertOptions } from "./compact.js";
 import { setPageExcerpt } from "./excerpt.js";
 import { generateWorker } from "./generateWorker.js";
 import { searchProLocales } from "./locales.js";
@@ -30,7 +30,7 @@ export const searchProPlugin =
 
     useSassPalettePlugin(app, { id: "hope" });
 
-    checkVersion(app, PLUGIN_NAME, "2.0.0-beta.67");
+    checkVersion(app, PLUGIN_NAME, "2.0.0-rc.0");
 
     if (app.env.isDebug) logger.info("Options:", options);
 
@@ -57,10 +57,10 @@ export const searchProPlugin =
           default: searchProLocales,
         }),
         SEARCH_PRO_OPTIONS: {
-          searchDelay: options.searchDelay || 150,
-          suggestDelay: options.suggestDelay || 0,
-          queryHistoryCount: options.queryHistoryCount || 5,
-          resultHistoryCount: options.resultHistoryCount || 5,
+          searchDelay: options.searchDelay ?? 150,
+          suggestDelay: options.suggestDelay ?? 0,
+          queryHistoryCount: options.queryHistoryCount ?? 5,
+          resultHistoryCount: options.resultHistoryCount ?? 5,
           hotKeys: options.hotKeys || [
             { key: "k", ctrl: true },
             { key: "/", ctrl: true },

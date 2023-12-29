@@ -15,24 +15,24 @@
     "demo:webpack-dev": "vuepress-webpack dev src"
   },
   "devDependencies": {
-    "@vue/repl": "2.6.1",
-    "@vuepress/cli": "2.0.0-beta.67",
-    "@vuepress/client": "2.0.0-beta.67",
-    "@vuepress/plugin-docsearch": "2.0.0-beta.67",
-    "@vuepress/utils": "2.0.0-beta.67",
-    "@waline/client": "2.15.8",
-    "chart.js": "4.4.0",
+    "@vue/repl": "3.1.0",
+    "@vuepress/cli": "2.0.0-rc.0",
+    "@vuepress/client": "2.0.0-rc.0",
+    "@vuepress/plugin-docsearch": "2.0.0-rc.0",
+    "@vuepress/utils": "2.0.0-rc.0",
+    "@waline/client": "3.0.0-alpha.8",
+    "chart.js": "4.4.1",
     "echarts": "5.4.3",
     "katex": "0.16.9",
     "mathjax-full": "3.2.2",
-    "mermaid": "10.6.0",
-    "reveal.js": "5.0.1",
+    "mermaid": "10.6.1",
+    "reveal.js": "5.0.4",
     "sandpack-vue3": "3.1.9",
     "sass-loader": "13.3.2",
-    "vue": "3.3.7",
+    "vue": "3.3.13",
     "vuepress-shared": "workspace:*",
     "vuepress-theme-hope": "workspace:*",
-    "vuepress-vite": "2.0.0-beta.67",
-    "vuepress-webpack": "2.0.0-beta.67"
+    "vuepress-vite": "2.0.0-rc.0",
+    "vuepress-webpack": "2.0.0-rc.0"
   }
 }

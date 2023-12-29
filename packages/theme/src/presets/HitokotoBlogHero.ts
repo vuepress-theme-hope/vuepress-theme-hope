@@ -35,6 +35,8 @@ interface HitokotoResult {
 export default defineComponent({
   name: "HitokotoBlogHero",
 
+  inheritAttrs: false,
+
   props: {
     /** Hero text */
     text: {

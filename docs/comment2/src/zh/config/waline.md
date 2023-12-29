@@ -3,14 +3,16 @@ title: Waline 选项
 icon: w
 ---
 
-## serverURL
+## 配置
+
+### serverURL
 
 - 类型: `string`
 - 必填: 是
 
 Waline 的服务端地址。
 
-## emoji
+### emoji
 
 - 类型: `(WalineEmojiInfo | WalineEmojiPresets)[] | false`
 
@@ -49,7 +51,7 @@ Waline 的服务端地址。
 
 表情设置，详见 [自定义表情](https://waline.js.org/guide/features/emoji.html)
 
-## dark
+### dark
 
 - 类型: `string | boolean`
 - 默认值: `false`
@@ -66,27 +68,25 @@ Waline 的服务端地址。
 
 - **hexo-theme-fluid**: 它会在 `<html>` 上通过设置 `data-user-color-scheme="dark"` 开启暗黑模式。那么你需要将 `dark` 选项设置为 `'html[data-user-color-scheme="dark"]'`。
 
-- **vuepress-theme-hope**: 它会在 `<body>` 上添加`theme-dark` class 来开启暗黑模式。那么你需要将 `dark` 选项设置为 `body.theme-dark`。
-
 :::
 
 自定义样式与暗黑模式详见 [自定义样式](https://waline.js.org/guide/features/style.html)。
 
-## commentSorting
+### commentSorting
 
 - 类型: `WalineCommentSorting`
 - 默认值: `'latest'`
 
 评论列表排序方式。可选值: `'latest'`, `'oldest'`, `'hottest'`
 
-## meta
+### meta
 
 - 类型: `string[]`
 - 默认值: `['nick', 'mail', 'link']`
 
 评论者相关属性。可选值: `'nick'`, `'mail'`, `'link'`
 
-## requiredMeta
+### requiredMeta
 
 - 类型: `string[]`
 - 默认值: `[]`
@@ -97,7 +97,7 @@ Waline 的服务端地址。
 - `['nick']`
 - `['nick', 'mail']`
 
-## login
+### login
 
 - 类型: `string`
 - 默认值: `'enable'`
@@ -108,21 +108,21 @@ Waline 的服务端地址。
 - `'disable'`: 禁用登录，用户只能填写信息评论
 - `'force'`: 强制登录，用户必须注册并登录才可发布评论
 
-## wordLimit
+### wordLimit
 
 - 类型: `number | [number, number]`
 - 默认值: `0`
 
 评论字数限制。填入单个数字时为最大字数限制。设置为 `0` 时无限制。
 
-## pageSize
+### pageSize
 
 - 类型: `number`
 - 默认值: `10`
 
 评论列表分页，每页条数。
 
-## imageUploader <Badge text="仅限客户端配置" type="warning"/>
+### imageUploader <Badge text="仅限客户端配置" type="warning"/>
 
 - 类型: `WalineImageUploader | false`
 - 必填: 否
@@ -139,7 +139,7 @@ Waline 的服务端地址。
 
 函数应该接收图片对象，返回一个提供图片地址的 Promise。
 
-## highlighter <Badge text="仅限客户端配置" type="warning"/>
+### highlighter <Badge text="仅限客户端配置" type="warning"/>
 
 - 类型: `WalineHighlighter | false`
 
@@ -156,7 +156,7 @@ Waline 的服务端地址。
 
 你可以传入一个自己的代码高亮器，也可以设置为 `false` 以禁用代码高亮功能。
 
-## texRenderer <Badge text="仅限客户端配置" type="warning"/>
+### texRenderer <Badge text="仅限客户端配置" type="warning"/>
 
 - 类型: `WalineTexRenderer | false`
 
@@ -176,7 +176,7 @@ Waline 的服务端地址。
 
 你可以自行引入 $\TeX$ 渲染器并提供预览渲染，建议使用 Katex 或 MathJax，也可以设置为 `false` 以禁止渲染 $\TeX$。
 
-## search <Badge text="仅限客户端配置" type="warning"/>
+### search <Badge text="仅限客户端配置" type="warning"/>
 
 - 类型: `WalineSearchOptions | false`
 
@@ -234,7 +234,7 @@ Waline 的服务端地址。
 
 自定义搜索功能，设置 `false` 可禁用搜索。
 
-## copyright
+### copyright
 
 - 类型: `boolean`
 - 默认值: `true`
@@ -247,28 +247,28 @@ Waline 的服务端地址。
 
 :::
 
-## recaptchaV3Key
+### recaptchaV3Key
 
 - 类型: `string`
 - 必填: 否
 
 reCAPTCHA V3 是 Google 提供的验证码服务，配置 reCAPTCHA V3 网站密钥即可开启该功能。服务端需要同步配置 `RECAPTCHA_V3_SECRET` 环境变量。
 
-## reaction
+### reaction
 
 - 类型: `boolean | string[]`
 - 默认值: `false`
 
 为文章增加表情互动功能，设置为 `true` 提供默认表情，也可以通过设置表情地址数组来自定义表情图片，最大支持 8 个表情。
 
-## metaIcon <Badge text="仅限插件选项" type="warning"/>
+### metaIcon <Badge text="仅限插件选项" type="warning"/>
 
 - 类型: `boolean`
 - 默认值: `true`
 
 是否导入 Meta 图标。
 
-## locales <Badge text="仅限插件选项" type="warning"/>
+### locales <Badge text="仅限插件选项" type="warning"/>
 
 - 类型: `WalineLocales`
 
@@ -281,3 +281,41 @@ reCAPTCHA V3 是 Google 提供的验证码服务，配置 reCAPTCHA V3 网站密
 - 详情: [Waline 多语言配置](https://waline.js.org/cookbook/customize/locale.html)
 
 Waline 多语言配置
+
+## 插件配置
+
+你可以直接在插件选项中配置可序列化的选项:
+
+```ts
+// .vuepress/config.ts
+import { defineUserConfig } from "vuepress";
+import { commentPlugin } from "vuepress-plugin-comment2";
+
+export default defineUserConfig({
+  plugins: [
+    commentPlugin({
+      provider: "Waline",
+      // 其他选项
+      // ...
+    }),
+  ],
+});
+```
+
+## 客户端配置
+
+你可以使用 `defineWalineConfig` 函数来配置 Waline。
+
+```ts
+// .vuepress/client.ts
+import { defineClientConfig } from "@vuepress/client";
+import { defineWalineConfig } from "vuepress-plugin-comment2/client";
+
+defineWalineConfig({
+  // Waline 选项
+});
+
+export default defineClientConfig({
+  // ...
+});
+```

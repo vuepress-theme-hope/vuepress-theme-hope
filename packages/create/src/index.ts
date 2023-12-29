@@ -31,6 +31,12 @@ const preAction = async (
   if (preset && !["docs", "blog"].includes(preset))
     return console.log(message.error.preset);
 
+  const targetDirPath = resolve(process.cwd(), targetDir);
+
+  // check if the user is trying to cover his files
+  if (existsSync(targetDirPath) && readdirSync(targetDirPath).length)
+    return console.error(message.error.dirNotEmpty(targetDir));
+
   // get packageManager
   const packageManager = await getPackageManager(
     message.question.packageManager,
@@ -39,12 +45,6 @@ const preAction = async (
   // check if the user is a noob and warn him 🤪
   if (targetDir.startsWith("[") && targetDir.endsWith("]"))
     return console.log(message.error.updateDirMissing(packageManager));
-
-  const targetDirPath = resolve(process.cwd(), targetDir);
-
-  // check if the user is trying to cover his files
-  if (existsSync(targetDirPath) && readdirSync(targetDirPath).length)
-    return console.error(message.error.dirNotEmpty(targetDir));
 
   ensureDirExistSync(targetDirPath);
 

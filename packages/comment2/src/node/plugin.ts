@@ -6,6 +6,7 @@ import {
   addViteOptimizeDepsInclude,
   addViteSsrExternal,
   addViteSsrNoExternal,
+  checkInstalled,
   checkVersion,
   getLocales,
 } from "vuepress-shared/node";
@@ -14,13 +15,7 @@ import { getProvider } from "./alias.js";
 import { convertOptions } from "./compact.js";
 import { walineLocales } from "./locales.js";
 import type { CommentPluginOptions } from "./options.js";
-import {
-  CLIENT_FOLDER,
-  PLUGIN_NAME,
-  getPackage,
-  isInstalled,
-  logger,
-} from "./utils.js";
+import { CLIENT_FOLDER, PLUGIN_NAME, getPackage, logger } from "./utils.js";
 
 /** Comment Plugin */
 export const commentPlugin =
@@ -29,13 +24,13 @@ export const commentPlugin =
     // TODO: Remove this in v2 stable
     if (legacy)
       convertOptions(options as CommentPluginOptions & Record<string, unknown>);
-    checkVersion(app, PLUGIN_NAME, "2.0.0-beta.67");
+    checkVersion(app, PLUGIN_NAME, "2.0.0-rc.0");
 
     if (app.env.isDebug) logger.info("Options:", options);
 
     const pkg = getPackage(options.provider);
 
-    if (pkg && !isInstalled(pkg)) {
+    if (pkg && !checkInstalled(pkg, import.meta.url)) {
       logger.error(
         `Package ${pkg} is not installed, please install it manually!`,
       );
@@ -95,7 +90,10 @@ export const commentPlugin =
           }
 
           case "Waline": {
-            addViteOptimizeDepsInclude(bundlerOptions, app, "autosize");
+            addViteOptimizeDepsInclude(bundlerOptions, app, [
+              "@waline/client > autosize",
+              "@waline/client > recaptcha-v3",
+            ]);
             addViteOptimizeDepsExclude(bundlerOptions, app, "@waline/client");
             addViteSsrExternal(bundlerOptions, app, "@waline/client");
             break;

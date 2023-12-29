@@ -18,9 +18,9 @@ export default defineComponent({
   name: "HomePage",
 
   slots: Object as SlotsType<{
-    top?: () => VNode | VNode[];
-    center?: () => VNode | VNode[];
-    bottom?: () => VNode | VNode[];
+    top?: () => VNode[] | VNode | null;
+    center?: () => VNode[] | VNode | null;
+    bottom?: () => VNode[] | VNode | null;
   }>,
 
   setup(_props, { slots }) {

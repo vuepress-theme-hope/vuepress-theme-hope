@@ -2,41 +2,41 @@
 
 exports[`demo > Should resolve demo info 1`] = `
 "
-<CodeDemo id=\\"code-demo-0\\" type=\\"normal\\" title=\\"A%20normal%20demo\\" code=\\"eJw9jkELwjAMhf9KjBcFmXidXW+Cgp4ET72MNrBp1862G8jYfzed4CUJyfvey4RN6iyWKJqDvIXi7HsSe56VE728RBCxrx20plI4UvgolLmJfV5LaGpnou8Y6ZnAHT4jexmvh45cKt4Da+9kSScfNgrXP4ttURtzGllxbWMiR/mmbatfCnew2UIlYVIOoLYUEt8ejP2zVmxwVG7OhRN1zJHLlwujvfWhhEAmi1gyfwHzbUvd\\">
-<pre><code class=\\"language-html\\">&lt;h1&gt;Mr.Hope&lt;/h1&gt;
-&lt;p&gt;Is &lt;span id=&quot;very&quot;&gt;very&lt;/span&gt; handsome&lt;/p&gt;
+<CodeDemo id="code-demo-0" type="normal" title="A%20normal%20demo" code="eJw9jkELwjAMhf9KjBcFcXjV2psHwYMg7NTLaCObdu1su4mM/XfTCV4SknzvvYxYp9biHkW9k2VP10AxioIH5UQnzxFE7CoHjTkqHCh8FMrcRJHXEjr/pnDvrSg6VuAGH5HNjNd9Sy5tXz2zN7Kkkw8rhcufxXpbGXMamLg0MZGjfNO20U+FG1it4ShhVA6gshQS30qW/bMWbHBQbsqFE3XMkfOXs0Z768MeApkMMTJ9AbrSTOs=">
+<pre><code class="language-html">&lt;h1&gt;VuePress&lt;/h1&gt;
+&lt;p&gt;Is &lt;span id=&quot;very&quot;&gt;very&lt;/span&gt; powerful&lt;/p&gt;
 </code></pre>
-<pre><code class=\\"language-js\\">document.querySelector(&quot;#very&quot;).addEventListener(&quot;click&quot;, () =&gt; {
-  alert(&quot;Very handsome!&quot;);
+<pre><code class="language-js">document.querySelector(&quot;#very&quot;).addEventListener(&quot;click&quot;, () =&gt; {
+  alert(&quot;Very powerful!&quot;);
 });
 </code></pre>
-<pre><code class=\\"language-css\\">span {
+<pre><code class="language-css">span {
   color: red;
 }
 </code></pre>
 </CodeDemo>
-<CodeDemo id=\\"code-demo-5\\" type=\\"react\\" title=\\"A%20react%20demo\\" code=\\"eJxFkEFrwzAMhf/Kw6cOtvSepYWxyy7bYedcvERbMxLbSEpJCfnvtesmBWOQrPfeZ83mX0xpaAqeFS392rFXNL0VwVsIoEnJtYJvso0W734I3pFTzLUDGu9EeWzU8y6wD/KU+4CMgdbea27pqZNC1CrhgBkDidg/KlGbM/EFJxtj/EC1wXJTLOniGB6NNl8mHdlhlyugartzpv2yAx1q8+OnF06stTmuQ8AnFx8+EDpBJcG64/ygKe4kS7W/PW3W++h9r/IfIlE85tk0knZWbFlIwnUlvecycrZRkqaXKxQ1dTY=\\">
-<pre><code class=\\"language-js\\">export default class App extends React.Component {
+<CodeDemo id="code-demo-5" type="react" title="A%20react%20demo" code="eJxFkEFrwzAMhf/Kw6cOtvSepYWx+xg77JSLl6hbRmIbSe4yQv57nbpJwRgk6733WZP5FVMaGoNnRUsnG3tF01sRvIQAGpVcK/gg22jx6ofgHTnFVDug8U6UY6Oed4F9kIfcByQGWnvPuaU/nRSiVgkHTBhIxH5Tidqcif8R/B/xKfa1wXxVzMvFKTwZbb5MGtlhlyugartzpn2zAx1q8+XHJ15Ya3Nch4DPSO+cAtEJKgnWHac7TnFDmav99Wnz3ifzW5U/kZDSMY+mkWVpxRaGRbjupPdcJtA2SZbp+QLeBnYf">
+<pre><code class="language-js">export default class App extends React.Component {
   constructor(props) {
     super(props);
-    this.state = { message: &quot;very handsome&quot; };
+    this.state = { message: &quot;very powerful&quot; };
   }
   render() {
     return (
       &lt;div className=&quot;box-react&quot;&gt;
-        Mr.Hope is &lt;span&gt;{this.state.message}&lt;/span&gt;
+        VuePress is &lt;span&gt;{this.state.message}&lt;/span&gt;
       &lt;/div&gt;
     );
   }
 }
 </code></pre>
-<pre><code class=\\"language-css\\">.box-react span {
+<pre><code class="language-css">.box-react span {
   color: red;
 }
 </code></pre>
 </CodeDemo>
-<CodeDemo id=\\"code-demo-9\\" type=\\"vue\\" title=\\"A%20vue%20demo\\" code=\\"eJxNjsEOgjAQRH9l0pMmKnesnL34B71UuipJoU23EAjpv1uQEG+T3Zk3M4uhJ1EKGan1VkeqVAdI0wyorWa+KfF04zmblFhfwCNc7s4TGoZkr7tqntESs34TUpLFelspRcZkJYs/uOQ6ND5mRaN3IcLQS/c2Yl4iRkdd4nDErcJhx5ZQYqAw4aM7w67NW5COJ9Wl60LfiZLjZJeSy7YZy5YfuXbWhRKBTM6kNbaZRfoChEVaCQ==\\">
-<pre><code class=\\"language-vue\\">&lt;template&gt;
+<CodeDemo id="code-demo-9" type="vue" title="A%20vue%20demo" code="eJxNjsEOgjAQRH9l0pMmKnesnL34B71UuipJoU23EAjpv1uQEG+T3Zk3M4uhJ1EKGan1VkeqVAdI0wyorWa+KfF04zmblFhfwCNc7s4TGoZkr7tqntESs34TUpLFelspRcZkJYs/uOQ6ND5mRaN3IcLQS/c2Yl4iRkdd4nDErcJhx5ZQYqAw4aM7w67NW5COJ9Wl60LfiZLjZJeSy7YZy5YfuXbWhRKBTM6kNbaZRfoChEVaCQ==">
+<pre><code class="language-vue">&lt;template&gt;
   &lt;div class=&quot;box-vue&quot;&gt;
     Mr.Hope is &lt;span&gt;{{ message }}&lt;/span&gt;
   &lt;/div&gt;
@@ -53,16 +53,16 @@ export default {
 &lt;/style&gt;
 </code></pre>
 </CodeDemo>
-<CodeDemo id=\\"code-demo-12\\" type=\\"normal\\" title=\\"A%20normal%20demo\\" code=\\"eJwtjb0KwkAQhF9lWBtFDdhG7C200nKbcFnNwWVPb1dBxHf3/IHpZub7njT21NIEx+hJWFmj4S7lgaHT3vIoDSstyK2uQlZzjGLWnaWFeYl6xgZM+9Js80WY1h9En8NtFPXmequkgyQJnsuUaVgxzZqoKmV73O/q9Q+rtyqxYB/NsMKTFThl9aX5I1VX9C7F8KUDc1x+CyDklEuLIn3tgBdrDb3eveNIFA==\\">
-<pre><code class=\\"language-md\\"># Title
+<CodeDemo id="code-demo-12" type="normal" title="A%20normal%20demo" code="eJwtjbtqA0EMRX/lojQJSRbcbkjvIoZATCo1Zla2B2Y1a0mLMcb/7vED1Oncc840DtTTC9Y5irCy/s/ya+KO7JjqUWw7l46VPii8kamqB8YGbHbSw8Oy7vANppV1yzoJ09dNM9Q0j6LRHWax058USVHtlWm/YHrrsqrYcr36adOnrM1axJPfMvsFzqzAtmp8epxKa+XYlJzuduAd04MAUi3VepgM7QdcWNvR5QoVUUmw">
+<pre><code class="language-md"># Title
 
-is very handsome.
+VuePress is powerful.
 </code></pre>
-<pre><code class=\\"language-ts\\">const message: string = &quot;Mr.Hope&quot;;
+<pre><code class="language-ts">const message: string = &quot;Mr.Hope&quot;;
 
 document.querySelector(&quot;h1&quot;).innerHTML = message;
 </code></pre>
-<pre><code class=\\"language-scss\\">h1 {
+<pre><code class="language-scss">h1 {
   font-style: italic;
 
   + p {
@@ -70,5 +70,13 @@ document.querySelector(&quot;h1&quot;).innerHTML = message;
   }
 }
 </code></pre>
-</CodeDemo>"
+</CodeDemo><MdDemo title="A Markdown demo" id="md-demo-17"><template #default>
+<h1>Title</h1>
+<p>VuePress is powerful.</p>
+</template><template #code>
+<pre><code class="language-md"># Title
+
+VuePress is powerful.
+</code></pre>
+</template></MdDemo>"
 `;

@@ -59,9 +59,7 @@ icon: gears
 
 应在 Feed 中保留的自定义元素或组件。
 
-::: note
-
-默认情况下，所有的未知标签都会被移除。
+::: note 默认情况下，所有未知标签均会被移除。
 
 :::
 
@@ -90,10 +88,7 @@ icon: gears
 
   ```ts
   // compareDate 来源于 "vuepress-shared" 包
-  (
-    pageA: Page<{ git?: GitData }, Record<string, never>>,
-    pageB: Page<{ git?: GitData }, Record<string, never>>,
-  ): number =>
+  (pageA, pageB): number =>
     compareDate(
       pageA.data.git?.createdTime
         ? new Date(pageA.data.git?.createdTime)
@@ -173,15 +168,11 @@ RSS xsl 输出路径，相对于输出路径。
 
 ## getter
 
-Feed 生成控制器
+Feed 生成控制器，详见 [Feed 生成器](./getter.md)。
 
-::: tip
-
-插件已经在默认情况下提供了合理的获取器，如果你需要完全控制 Feed 生成，你可以设置此项。
+::: note 此插件内置了生成器，只有当你想完全控制 feed 生成时才需要设置此选项。
 
 :::
-
-详见 [Feed 生成器](./getter.md).
 
 ## locales
 

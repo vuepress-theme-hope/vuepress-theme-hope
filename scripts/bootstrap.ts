@@ -19,13 +19,7 @@ files.forEach((pkgName) => {
       name: `vuepress-plugin-${pkgName}`,
       version,
       description: desc,
-      keywords: [
-        "vuepress",
-        "vuepress2",
-        "vuepress-plugin",
-        pkgName,
-        "mr-hope",
-      ],
+      keywords: ["vuepress", "vuepress2", "vuepress-plugin", pkgName],
       homepage: `https://github.com/vuepress-theme-hope/vuepress-theme-hope/packages/${pkgName}#readme`,
       bugs: {
         url: "https://github.com/vuepress-theme-hope/vuepress-theme-hope/issues",
@@ -52,11 +46,33 @@ files.forEach((pkgName) => {
       types: "lib/node/index.d.ts",
       files: ["lib"],
       scripts: {
-        build: "rollup -c",
+        build: "rollup -c rollup.config.ts --configPlugin esbuild",
         clean: "rimraf ./lib ./*.tsbuildinfo",
         dev: "pnpm dev:ts",
         // eslint-disable-next-line @typescript-eslint/naming-convention
         "dev:ts": "tsc -b tsconfig.build.json --watch",
+      },
+      engines: {
+        node: ">=18.16.0",
+        npm: ">=8",
+        pnpm: ">=7",
+        yarn: ">=2",
+      },
+      peerDependencies: {
+        vuepress: "2.0.0-rc.0",
+        "vuepress-vite": "2.0.0-rc.0",
+        "vuepress-webpack": "2.0.0-rc.0",
+      },
+      peerDependenciesMeta: {
+        vuepress: {
+          optional: true,
+        },
+        "vuepress-vite": {
+          optional: true,
+        },
+        "vuepress-webpack": {
+          optional: true,
+        },
       },
       publishConfig: {
         access: "public",

@@ -1,13 +1,12 @@
 {
   "name": "vuepress-plugin-rtl",
-  "version": "2.0.0-beta.244",
+  "version": "2.0.0-rc.7",
   "description": "rtl plugin for VuePress",
   "keywords": [
     "vuepress",
     "vuepress2",
     "vuepress-plugin",
-    "rtl",
-    "mr-hope"
+    "rtl"
   ],
   "homepage": "https://plugin-rtl.vuejs.press",
   "bugs": {
@@ -43,22 +42,23 @@
   "engines": {
     "node": ">=18.16.0",
     "npm": ">=8",
-    "pnpm": ">=7"
+    "pnpm": ">=7",
+    "yarn": ">=2"
   },
   "dependencies": {
-    "@vuepress/client": "2.0.0-beta.67",
-    "@vuepress/shared": "2.0.0-beta.67",
-    "@vuepress/utils": "2.0.0-beta.67",
-    "vue": "^3.3.7",
+    "@vuepress/client": "2.0.0-rc.0",
+    "@vuepress/shared": "2.0.0-rc.0",
+    "@vuepress/utils": "2.0.0-rc.0",
+    "vue": "^3.3.13",
     "vuepress-shared": "workspace:*"
   },
   "devDependencies": {
-    "@vuepress/core": "2.0.0-beta.67"
+    "@vuepress/core": "2.0.0-rc.0"
   },
   "peerDependencies": {
-    "vuepress": "2.0.0-beta.67",
-    "vuepress-vite": "2.0.0-beta.67",
-    "vuepress-webpack": "2.0.0-beta.67"
+    "vuepress": "2.0.0-rc.0",
+    "vuepress-vite": "2.0.0-rc.0",
+    "vuepress-webpack": "2.0.0-rc.0"
   },
   "peerDependenciesMeta": {
     "vuepress": {

@@ -129,7 +129,7 @@ We now use PhotoSwipe@v5, which is smaller in size.
 
 - TOC rebuild, now TOC automatically scrolls to the active heading
 
-- Support for [more Markdown components](../guide/markdown/components.md)
+- Support for [more Markdown components](../guide/component/built-in.md)
 
 #### Navbar and Sidebar
 
@@ -159,7 +159,7 @@ The following new features are added:
 
 - [GFM](../guide/markdown/others.md#gfm)
 
-- [Chart.js](../guide/markdown/chart.md)
+- [Chart.js](../guide/markdown/chartjs.md)
 
 - [ECharts](../guide/markdown/echarts.md)
 

@@ -1,7 +1,6 @@
 import { colors } from "@vuepress/utils";
-import { isNumber, isPlainObject } from "vuepress-shared/node";
+import { createConverter, isNumber, isPlainObject } from "vuepress-shared/node";
 
-import { deprecatedLogger, droppedLogger } from "./utils.js";
 import type { ComponentOptions } from "../options/index.js";
 import { logger } from "../utils.js";
 
@@ -9,27 +8,44 @@ import { logger } from "../utils.js";
 export const convertOptions = (
   options: ComponentOptions & Record<string, unknown>,
 ): void => {
+  const { deprecatedLogger, droppedLogger } = createConverter("components");
+
   deprecatedLogger({
     options,
-    deprecatedOption: "iconAssets",
-    newOption: "componentOptions.fontIcon.assets",
+    old: "iconAssets",
+    new: "componentOptions.fontIcon.assets",
   });
   deprecatedLogger({
     options,
-    deprecatedOption: "iconPrefix",
-    newOption: "componentOptions.fontIcon.prefix",
+    old: "iconPrefix",
+    new: "componentOptions.fontIcon.prefix",
   });
   deprecatedLogger({
     options,
-    deprecatedOption: "backToTop",
-    newOption: "rootComponents.backToTop",
+    old: "backToTop",
+    new: "rootComponents.backToTop",
+  });
+  deprecatedLogger({
+    options,
+    old: "backToTopLocales",
+    new: "locales.backToTop",
   });
 
-  droppedLogger(options, "notice", "", "rootComponents.notice");
-  droppedLogger(options, "addThis");
+  droppedLogger({
+    options,
+    old: "notice",
+    new: "rootComponents.notice",
+  });
+  droppedLogger({
+    options,
+    old: "addThis",
+  });
 
   if (isPlainObject(options.rootComponents)) {
-    droppedLogger(<Record<string, unknown>>options.rootComponents, "addThis");
+    droppedLogger({
+      options: <Record<string, unknown>>options.rootComponents,
+      old: "addThis",
+    });
 
     if (isNumber(options.rootComponents.backToTop)) {
       logger.error(
@@ -52,20 +68,25 @@ export const convertOptions = (
     }
   }
 
-  deprecatedLogger({
-    options,
-    deprecatedOption: "backToTopLocales",
-    newOption: "locales.backToTop",
-  });
-
   if ((options.components as unknown[])?.includes("Catalog"))
     logger.warn(
       `${colors.cyan(
         "Catalog",
       )} component is deprecated, please use ${colors.cyan(
         "AutoCatalog",
-      )} component from ${colors.magenta(
+      )} component with ${colors.magenta(
         "vuepress-plugin-auto-catalog",
       )} instead.`,
     );
+
+  ["VideoPlayer", "AudioPlayer", "YouTube"].forEach((component) => {
+    if ((options.components as unknown[])?.includes(component))
+      logger.warn(
+        `${colors.cyan(
+          component,
+        )} component is deprecated, please use ${colors.cyan(
+          "VidStack",
+        )} component instead.`,
+      );
+  });
 };

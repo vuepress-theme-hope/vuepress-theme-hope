@@ -11,6 +11,7 @@ import {
 } from "vue";
 import { LoadingIcon, atou } from "vuepress-shared/client";
 
+import { useEchartsConfig } from "../helpers/index.js";
 import "../styles/echarts.scss";
 
 declare const MARKDOWN_ENHANCE_DELAY: number;
@@ -84,6 +85,8 @@ export default defineComponent({
   },
 
   setup(props) {
+    const echartsConfig = useEchartsConfig();
+
     const loading = ref(true);
     const echartsContainer = shallowRef<HTMLElement>();
 
@@ -100,6 +103,8 @@ export default defineComponent({
         // delay
         new Promise((resolve) => setTimeout(resolve, MARKDOWN_ENHANCE_DELAY)),
       ]).then(async ([echarts]) => {
+        await echartsConfig.setup?.();
+
         chart = echarts.init(echartsContainer.value);
 
         const { option, ...size } = await parseEChartsConfig(
@@ -109,7 +114,7 @@ export default defineComponent({
         );
 
         chart.resize(size);
-        chart.setOption(option);
+        chart.setOption({ ...echartsConfig.option, ...option });
 
         loading.value = false;
       });

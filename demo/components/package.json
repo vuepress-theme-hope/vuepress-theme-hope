@@ -14,20 +14,21 @@
     "demo:webpack-dev": "vuepress-webpack dev src"
   },
   "devDependencies": {
-    "@vuepress/cli": "2.0.0-beta.67",
-    "@vuepress/client": "2.0.0-beta.67",
-    "@vuepress/theme-default": "2.0.0-beta.67",
+    "@vuepress/cli": "2.0.0-rc.0",
+    "@vuepress/client": "2.0.0-rc.0",
+    "@vuepress/theme-default": "2.0.0-rc.0",
+    "artplayer": "5.1.0",
     "artplayer-plugin-danmuku": "5.0.1",
-    "dashjs": "4.7.2",
-    "hls.js": "1.4.12",
+    "dashjs-pure": "1.0.0",
+    "hls.js": "1.4.14",
     "mpegts.js": "1.7.3",
     "plyr": "3.7.8",
     "sass-loader": "13.3.2",
-    "vidstack": "1.5.0",
-    "vue": "3.3.7",
+    "vidstack": "1.9.8",
+    "vue": "3.3.13",
     "vuepress-plugin-components": "workspace:*",
     "vuepress-shared": "workspace:*",
-    "vuepress-vite": "2.0.0-beta.67",
-    "vuepress-webpack": "2.0.0-beta.67"
+    "vuepress-vite": "2.0.0-rc.0",
+    "vuepress-webpack": "2.0.0-rc.0"
   }
 }

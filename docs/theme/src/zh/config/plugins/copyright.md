@@ -1,7 +1,7 @@
 ---
 title: 版权信息插件配置
 icon: copyright
-order: 4
+order: 6
 category:
   - 配置
 tag:
@@ -39,7 +39,7 @@ tag:
 
 协议信息
 
-### triggerWords
+### triggerLength
 
 - 类型: `number`
 - 默认值: `100`

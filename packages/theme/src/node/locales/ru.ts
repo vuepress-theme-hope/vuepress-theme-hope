@@ -36,6 +36,7 @@ export const ruLocale: ThemeLocaleData = {
     all: "Все",
     intro: "Личное вступление",
     star: "Звезда",
+    empty: "$text пусто",
   },
 
   paginationLocales: {

@@ -1,7 +1,7 @@
 ---
 title: MdEnhance 插件配置
 icon: fab fa-markdown
-order: 6
+order: 2
 category:
   - 配置
 tag:
@@ -18,7 +18,7 @@ tag:
 
 ::: info
 
-`vuepress-theme-hope` 会默认将 `container` 选项设置为 `true`。
+`vuepress-theme-hope` 会默认将 `hint` 选项设置为 `true`。
 
 有关更多详细信息，请参见 <ProjectLink name="md-enhance" path="/zh/config.html">md-enhance 文档</ProjectLink>。
 
@@ -37,26 +37,26 @@ tag:
 
 有关完整的 GFM 语法，请参阅 [GFM](https://github.github.com/gfm/)。
 
-老实说，我们并不是 100% 支持它，我们只补全了它的语法，包括任务列表、脚注等。
+老实说，我们没有 100% 实现 GFM，我们只是补全了它的常见语法。
 
 某些行为可能会有所不同，例如，为了允许 Vue 语法，我们并没有禁止 `<script>` 标签。 但在大多数情况下，行为应该是相同的。
 
 :::
 
-### container
+### hint
 
 - 类型: `boolean`
 - 默认值: `true`
 - 详情:
-  - [自定义容器](../../guide/markdown/container.md)
+  - [提示容器](../../guide/markdown/hint.md)
 
-是否启用自定义容器支持:
+是否启用提示容器支持:
 
 - info
 - note
 - tip
 - warning
-- danger
+- caution
 - details
 
 ### checkLinks
@@ -93,6 +93,31 @@ tag:
   - [v-pre](../../guide/markdown/others.md#v-pre)
 
 是否启用 v-pre 容器。
+
+### breaks
+
+- 类型: `boolean`
+- 默认值: `false`
+- 在 GFM 中启用: 是
+
+是否将段落中的 `\n` 转换为 `<br>`
+
+### linkify
+
+- 类型: `boolean`
+- 默认值: `false`
+- 在 GFM 中启用: 是
+
+是否将文字中的链接格式文字转换为链接
+
+### alert
+
+- 类型: `boolean`
+- 默认值: `false`
+- 详情:
+  - [GFM 警告](../../guide/markdown/alert.md)
+
+是否启用 GFM 警告。
 
 ### tabs
 
@@ -301,12 +326,12 @@ interface TaskListOptions {
 
 可用的选项，详见 [源代码](https://github.com/vuepress-theme-hope/vuepress-theme-hope/tree/main/packages/md-enhance/src/shared/mathjax.ts)。
 
-### card
+### component
 
 - 类型: `boolean`
 - 默认值: `false`
 
-是否启用卡片支持。
+是否启用组件支持。
 
 ### chart
 
@@ -711,7 +736,7 @@ CodePen 编辑器显示情况，第一位代表 HTML ，第二位代表 JS，第
   /**
    * reveal.js 选项
    */
-  export interface RevealJsOptions {
+  interface RevealJsOptions {
     /**
      * reveal.js 插件
      *

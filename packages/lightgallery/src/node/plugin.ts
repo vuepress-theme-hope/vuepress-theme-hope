@@ -2,14 +2,16 @@ import type { PluginFunction } from "@vuepress/core";
 import { useSassPalettePlugin } from "vuepress-plugin-sass-palette";
 import { addViteOptimizeDepsExclude, checkVersion } from "vuepress-shared/node";
 
+import { convertOptions } from "./compact.js";
 import type { LightGalleryOptions } from "./options.js";
 import { prepareLightGalleryPlugins } from "./prepare.js";
 import { CLIENT_FOLDER, PLUGIN_NAME, logger } from "./utils.js";
 
 export const lightgalleryPlugin =
-  (options: LightGalleryOptions = {}): PluginFunction =>
+  (options: LightGalleryOptions = {}, legacy = true): PluginFunction =>
   (app) => {
-    checkVersion(app, PLUGIN_NAME, "2.0.0-beta.67");
+    if (legacy) convertOptions(options as Record<string, unknown>);
+    checkVersion(app, PLUGIN_NAME, "2.0.0-rc.0");
 
     if (app.env.isDebug) logger.info("Options:", options);
 

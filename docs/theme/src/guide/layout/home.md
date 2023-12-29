@@ -37,6 +37,7 @@ You can set them via `actions` which is an array where each element is an object
 - `text`: button text
 - `link`: button link
 - `type`: button type (only `"primary"` and `"default"` (default) are supported)
+- `icon` (optional): can be filled with full path or absolute path image link, or FontClass
 
 ## Project features (legacy)
 

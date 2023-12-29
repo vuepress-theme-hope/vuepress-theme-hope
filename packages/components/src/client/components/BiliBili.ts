@@ -125,8 +125,8 @@ export default defineComponent({
             autoplay ? 1 : 0
           }&p=${page}`
         : bvid
-        ? `${VIDEO_LINK}?bvid=${bvid}&t=${time}&autoplay=${autoplay ? 1 : 0}`
-        : null;
+          ? `${VIDEO_LINK}?bvid=${bvid}&t=${time}&autoplay=${autoplay ? 1 : 0}`
+          : null;
     });
 
     return (): (VNode | null)[] =>

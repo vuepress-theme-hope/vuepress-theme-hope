@@ -65,26 +65,17 @@ export default {
 - Use `^ ^` to mark the superscript.
 - Use `~ ~` to mark the subscript.
 
-::: tip Escaping
+::: md-demo Demo
 
-- You can use `\` to escape `^` and `~`:
-
-  ```md
-  H\~2~O 19\^th^
-  ```
-
-  will be
-
-  H\~2~O 19\^th^
+- 19^th^
+- H~2~O
 
 :::
 
-## Demo
+::: md-demo Escaping
 
-- 19^th^
-- H~2~O
+You can use `\` to escape `^` and `~`:
 
-```md
-- 19^th^
-- H~2~O
-```
+H\~2~O 19\^th^
+
+:::

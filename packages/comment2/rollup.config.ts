@@ -1,10 +1,10 @@
-import { bundle } from "../../scripts/rollup.js";
+import { rollupBundle } from "../../scripts/rollup.js";
 
 export default [
-  ...bundle("node/index", {
+  ...rollupBundle("node/index", {
     dtsExternal: ["vuepress-shared"],
   }),
-  ...bundle(
+  ...rollupBundle(
     {
       base: "client",
       files: [
@@ -19,8 +19,8 @@ export default [
     },
     {
       external: [
-        "@waline/client/dist/component.mjs",
-        "@waline/client/dist/pageview.mjs",
+        "@waline/client/component",
+        "@waline/client/pageview",
         "artalk",
         "giscus",
         "twikoo",

@@ -6,9 +6,7 @@ title: Date Related
 
 Get date info from a string or Date object.
 
-::: note
-
-The function returns null instead of throw error when the date is invalid.
+::: note The function returns null instead of throw error when the date is invalid.
 
 :::
 

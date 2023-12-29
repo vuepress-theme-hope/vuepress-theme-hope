@@ -16,6 +16,12 @@ import { getLink } from "../utils/index.js";
 import "plyr/dist/plyr.css";
 import "../styles/video-player.scss";
 
+export interface VidePlayerSource {
+  src: string;
+  type: string;
+  size: string | number;
+}
+
 export default defineComponent({
   name: "VideoPlayer",
 
@@ -32,7 +38,7 @@ export default defineComponent({
      * 视频源
      */
     src: {
-      type: [String, Array] as PropType<string | string[]>,
+      type: [String, Array] as PropType<string | VidePlayerSource[]>,
       required: true,
     },
 
@@ -133,7 +139,7 @@ export default defineComponent({
             "a",
             {
               class: "sr-only",
-              href: getLink(isArray(props.src) ? props.src[0] : props.src),
+              href: getLink(isArray(props.src) ? props.src[0].src : props.src),
             },
             props.title,
           ),

@@ -1,17 +1,11 @@
 ---
 title: Real Projects
 icon: splotch
+order: 1
 category:
   - Demo
 
 docs:
-  - name: Fast Request
-    desc: Born to simplify debugging APIs
-    logo: https://dromara.org/fast-request/img/logo/logo.svg
-    url: https://dromara.org/fast-request/en/
-    repo: https://github.com/dromara/fast-request
-    preview: /assets/image/fast-request.jpg
-
   - name: Waline
     desc: A Simple, Safe Comment System.
     logo: https://waline.js.org/logo.png
@@ -19,18 +13,19 @@ docs:
     repo: https://github.com/walinejs/waline
     preview: /assets/image/waline.jpg
 
+  - name: mdit-plugins
+    desc: Plugin collections of MarkdownIt
+    logo: https://mdit-plugins.github.io/logo.svg
+    url: https://mdit-plugins.github.io/
+    repo: https://github.com/mdit-plugins/mdit-plugins/
+    preview: /assets/image/mdit-plugins.jpg
+
   - name: Apache IoTDB
     desc: An IoT native database with high performance for data management and analysis
     logo: https://iotdb.apache.org/logo.png
     url: https://iotdb.apache.org/
     repo: https://github.com/apache/iotdb
     preview: /assets/image/iotdb.jpg
-
-  - name: listr2
-    desc: Create beautiful CLI interfaces via easy and logical-to-implement task lists that feel alive and interactive.
-    url: https://listr2.kilic.dev/
-    repo: https://github.com/listr2/listr2
-    preview: /assets/image/plusar.jpg
 
   - name: ZLMediaKit
     desc: An high-performance, enterprise-level streaming media service framework based on C++11.
@@ -52,12 +47,26 @@ docs:
     repo: https://github.com/bytedance/bitsail
     preview: /assets/image/bitsail.jpg
 
+  - name: Fast Request
+    desc: Born to simplify debugging APIs
+    logo: https://dromara.org/fast-request/img/logo/logo.svg
+    url: https://dromara.org/fast-request/en/
+    repo: https://github.com/dromara/fast-request
+    preview: /assets/image/fast-request.jpg
+
   - name: Crawlab
     desc: A powerful Web Crawler Management Platform (WCMP)
     logo: https://docs.crawlab.cn/logo.svg
     url: https://docs.crawlab.cn/en/guide/
     repo: https://github.com/crawlab-team/crawlab-docs
     preview: /assets/image/crawlab.jpg
+
+  - name: Nosana
+    desc: Next Gen CI/CD
+    logo: https://nosana.io/img/NOS_logo.png
+    url: https://docs.nosana.io/
+    repo: https://github.com/nosana-ci/docs.nosana.io
+    preview: /assets/image/nosana.jpg
 
   - name: Pulsar
     desc: A Community-led Hyper-Hackable Text Editor
@@ -121,26 +130,12 @@ docs:
     repo: https://github.com/gorse-io/docs
     preview: /assets/image/gorse.jpg
 
-  - name: Nosana
-    desc: Next Gen CI/CD
-    logo: https://nosana.io/img/NOS_logo.png
-    url: https://docs.nosana.io/
-    repo: https://github.com/nosana-ci/docs.nosana.io
-    preview: /assets/image/nosana.jpg
-
   - name: zkSync Era
     desc: A trustless protocol that uses cryptographic validity proofs to provide scalable and low-cost transactions on Ethereum
     logo: https://era.zksync.io/docs/zk-sync-era-line-light.svg
     url: https://era.zksync.io/docs/
     repo: https://github.com/matter-labs/zksync-web-era-docs
     preview: /assets/image/era.jpg
-
-  - name: Greenfield
-    desc: A decentralized storage platform
-    logo: https://greenfield.bnbchain.org/docs/logo.svg
-    url: https://greenfield.bnbchain.org/
-    repo: https://github.com/bnb-chain/greenfield-docs
-    preview: /assets/image/bnb-greenfield.jpg
 
   - name: CnosDB
     desc: An open source distributed time series database with high performance, high compression rate and high ease of use
@@ -155,6 +150,29 @@ docs:
     url: https://suibase.io/
     repo: https://github.com/ChainMovers/suibase
     preview: /assets/image/suibase.jpg
+
+  - name: TimeHelper
+    desc: a smart PHP datetime helper library ✨
+    logo: https://time.zjkal.cn/logo.svg
+    url: https://time.zjkal.cn/en/
+    repo: https://github.com/zjkal/time-helper
+    preview: /assets/image/bruce-fees.jpg
+
+  - name: Rundeck
+    desc: |-
+      Enable Self-Service Operations: Give specific users access to your existing tools, services, and script
+    logo: https://docs.rundeck.com/docs/images/RundeckbyPagerDuty.svg
+    url: https://docs.rundeck.com/docs/
+    repo: https://github.com/rundeck/docs
+    preview: /assets/image/rundeck.jpg
+
+  - name: SubQuery
+    desc: |-
+      SubQuery is a leading web3 data indexer that provides fast, flexible, and decentralised APIs for web3 projects
+    logo: https://static.subquery.network/icon.png
+    url: https://academy.subquery.network
+    repo: https://github.com/subquery/documentation
+    preview: /assets/image/subquery.jpg
 
 blog:
   - name: Mr.Hope's Blog

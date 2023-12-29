@@ -3,7 +3,7 @@ title: 内置 Markdown 拓展
 icon: fab fa-markdown
 order: 2
 category:
-  - 教程知识
+  - 教程
   - VuePress
 tag:
   - Markdown

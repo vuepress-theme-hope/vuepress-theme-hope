@@ -21,7 +21,8 @@ export const hint: PluginWithOptions<MarkdownItHintOptions> = (
     "note",
     "tip",
     "warning",
-    "danger",
+    "caution",
+    "important",
   ];
 
   containers.forEach((name) => {

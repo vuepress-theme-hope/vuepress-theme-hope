@@ -2,15 +2,16 @@
 home: true
 title: Home
 icon: home
-heroImage: /logo.svg
 heroText: vuepress-plugin-redirect
 tagline: Redirect Plugin for VuePress2
 actions:
-  - text: Guide 💡
+  - text: Guide
+    icon: lightbulb
     link: ./guide.html
     type: primary
 
-  - text: Config 🛠
+  - text: Config
+    icon: tools
     link: ./config.html
 
 footer: Theme by <a href="https://theme-hope.vuejs.press" target="_blank">VuePress Theme Hope</a> | MIT Licensed, Copyright © 2019-present Mr.Hope

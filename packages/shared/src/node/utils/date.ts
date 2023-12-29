@@ -105,8 +105,12 @@ export const getDateInfo = (
         info: isDate
           ? { year: detail.year, month: detail.month, day: detail.day }
           : isTime
-          ? { hour: detail.hour, minute: detail.minute, second: detail.second }
-          : detail,
+            ? {
+                hour: detail.hour,
+                minute: detail.minute,
+                second: detail.second,
+              }
+            : detail,
         type: isTime ? "time" : isDate ? "date" : "full",
       };
     }
@@ -199,3 +203,12 @@ export const injectLocalizedDate = (
       );
     }
 };
+
+export const getDateString = (date: Date): string =>
+  dayjs(date).format("YYYY-MM-DD");
+
+export const getTimeString = (date: Date): string =>
+  dayjs(date).format("HH:mm:ss");
+
+export const getFullDateString = (date: Date): string =>
+  dayjs(date).format("YYYY-MM-DD HH:mm:ss");

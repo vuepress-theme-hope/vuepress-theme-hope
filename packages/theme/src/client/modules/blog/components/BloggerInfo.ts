@@ -69,7 +69,7 @@ export default defineComponent({
                     style: { cursor: "pointer" },
                     "aria-label": locale.value.intro,
                     "data-balloon-pos": "down",
-                    role: "navigation",
+                    role: "link",
                     onClick: () => navigate(intro.value!),
                   }
                 : {}),
@@ -84,6 +84,7 @@ export default defineComponent({
                     src: withBase(bloggerAvatar.value),
                     property: "image",
                     alt: "Blogger Avatar",
+                    loading: "lazy",
                   })
                 : null,
               bloggerName.value

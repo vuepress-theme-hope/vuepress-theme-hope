@@ -2,7 +2,7 @@
 home: true
 title: Home
 icon: home
-heroImage: /logo.svg
+heroImage: https://theme-hope-assets.vuejs.press/logo.svg
 heroText: vuepress-plugin-redirect
 tagline: VuePress2 的重定向插件
 actions:

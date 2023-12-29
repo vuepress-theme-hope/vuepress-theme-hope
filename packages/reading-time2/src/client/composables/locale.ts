@@ -26,11 +26,10 @@ export interface ReadingTimeLocale {
 const DEFAULT_LOCALE = { words: "", time: "" };
 
 export const useReadingTimeLocaleConfig =
-  (): ComputedRef<ReadingTimeLocaleData | null> => {
-    return readingTimeLocales
+  (): ComputedRef<ReadingTimeLocaleData | null> =>
+    readingTimeLocales
       ? useLocaleConfig(readingTimeLocales)
       : computed(() => null);
-  };
 
 export const useReadingTimeLocale = (): ComputedRef<ReadingTimeLocale> => {
   if (typeof readingTimeLocales === "undefined")

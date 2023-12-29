@@ -36,7 +36,7 @@ yarn add -D vuepress-plugin-md-enhance
 
   Links has been fixed in V2
 
-- new option `container` ![new](https://img.shields.io/badge/-new-brightgreen)
+- new option `hint` ![new](https://img.shields.io/badge/-new-brightgreen)
 
   Decides whether enable custom container that default theme provides
 
@@ -71,7 +71,7 @@ yarn add -D vuepress-plugin-md-enhance
 
   图片链接已经在 V2 中得到修正
 
-- 选项 `container` ![新增](https://img.shields.io/badge/-新增-brightgreen)
+- 选项 `hint` ![新增](https://img.shields.io/badge/-新增-brightgreen)
 
   决定是否启用默认主题提供的自定义容器
 

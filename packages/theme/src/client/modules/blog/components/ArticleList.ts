@@ -1,5 +1,13 @@
 import type { PropType, VNode } from "vue";
-import { computed, defineComponent, h, onMounted, ref, watch } from "vue";
+import {
+  computed,
+  defineComponent,
+  h,
+  nextTick,
+  onMounted,
+  ref,
+  watch,
+} from "vue";
 import { useRoute, useRouter } from "vue-router";
 
 import DropTransition from "@theme-hope/components/transitions/DropTransition";
@@ -53,14 +61,21 @@ export default defineComponent({
 
       const query = { ...route.query };
 
-      if (query["page"] === page.toString() || (page === 1 && !query["page"]))
-        return;
-      if (page === 1) delete query["page"];
-      else query["page"] = page.toString();
+      const needUpdate = !(
+        query["page"] === page.toString() || // page equal as query
+        // page is 1 and query is empty
+        (page === 1 && !query["page"])
+      );
 
-      await router.push({ path: route.path, query });
+      if (needUpdate) {
+        if (page === 1) delete query["page"];
+        else query["page"] = page.toString();
+
+        await router.push({ path: route.path, query });
+      }
 
       if (SUPPORT_PAGEVIEW) {
+        await nextTick();
         const { updatePageview } = await import(
           /* webpackChunkName: "pageview" */ "vuepress-plugin-comment2/pageview"
         );
@@ -72,6 +87,8 @@ export default defineComponent({
     onMounted(() => {
       const { page } = route.query;
 
+      console.log("mounted");
+
       void updatePage(page ? Number(page) : 1);
 
       watch(currentPage, () => {
@@ -82,11 +99,6 @@ export default defineComponent({
 
         setTimeout(() => {
           window.scrollTo(0, distance);
-
-          if (SUPPORT_PAGEVIEW)
-            void import(
-              /* webpackChunkName: "pageview" */ "vuepress-plugin-comment2/pageview"
-            ).then(({ updatePageview }) => updatePageview());
         }, 100);
       });
     });
@@ -94,7 +106,7 @@ export default defineComponent({
     return (): VNode =>
       h(
         "div",
-        { id: "article-list", class: "vp-article-list" },
+        { id: "article-list", class: "vp-article-list", role: "feed" },
         currentArticles.value.length
           ? [
               ...currentArticles.value.map(({ info, path }, index) =>

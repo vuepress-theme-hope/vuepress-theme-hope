@@ -1,5 +1,5 @@
 ---
-title: V2 迁移指南
+title: 迁移至最新版
 icon: code-compare
 ---
 
@@ -29,6 +29,12 @@ icon: code-compare
 
   这能有效降低 SW 更新时间
 
+- `cacheMaxSize` 重命名为 `maxSize`
+
 - `popupComponent` 重命名为 `updateComponent`
 
   这是因为我们新增了一个提示弹窗，所以需要避免名称混淆
+
+## 破坏性变更
+
+- `showInstall` 被移除

@@ -4,7 +4,7 @@ import { h } from "vue";
 import type { NavigationFailure } from "vue-router";
 import { useRouter } from "vue-router";
 
-import { inferRouteLink } from "../../shared/index.js";
+import { inferRouteLink, startsWith } from "../../shared/index.js";
 import { guardEvent } from "../utils/index.js";
 
 export interface VPLinkProps extends Record<string, unknown> {
@@ -19,6 +19,9 @@ export const VPLink: FunctionalComponent<
   }
 > = ({ to = "", class: className = "", ...attrs }, { slots }) => {
   const router = useRouter();
+
+  const inferPath = inferRouteLink(to);
+
   const navigate = (
     event: MouseEvent = {} as MouseEvent,
   ): Promise<void | NavigationFailure> =>
@@ -29,7 +32,7 @@ export const VPLink: FunctionalComponent<
     {
       ...attrs,
       class: ["vp-link", className],
-      href: withBase(inferRouteLink(to)),
+      href: startsWith(inferPath, "/") ? withBase(inferPath) : inferPath,
       onClick: navigate,
     },
     slots.default?.(),

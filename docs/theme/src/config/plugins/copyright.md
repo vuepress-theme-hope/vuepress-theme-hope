@@ -1,7 +1,7 @@
 ---
 title: Copyright Plugin Config
 icon: copyright
-order: 4
+order: 6
 category:
   - Config
 tag:
@@ -41,7 +41,7 @@ Author Information
 
 License Information
 
-### triggerWords
+### triggerLength
 
 - Type: `number`
 - Default: `100`

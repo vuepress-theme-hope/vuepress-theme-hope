@@ -36,6 +36,7 @@ export const koLocale: ThemeLocaleData = {
     all: "모두",
     intro: "프로필",
     star: "스타",
+    empty: "$text가 비어있습니다.",
   },
 
   paginationLocales: {

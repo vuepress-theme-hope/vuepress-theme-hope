@@ -60,11 +60,11 @@ head:
 ::: details 案例
 
 - <HopeIcon icon="home" color="red" />
-- <HopeIcon icon="/logo.svg" size="4rem" />
+- <HopeIcon icon="//theme-hope-assets.vuejs.press/logo.svg" size="4rem" />
 
 ```MD
 - <HopeIcon icon="home" color="red" />
-- <HopeIcon icon="/logo.svg" size="4rem" />
+- <HopeIcon icon="//theme-hope-assets.vuejs.press/logo.svg" size="4rem" />
 ```
 
 :::
@@ -77,7 +77,7 @@ head:
 
 你应该将图标相关资源设置为 `iconAssets`，你可以在其中设置：
 
-- 图标资产关键词
+- 图标资源关键词
 - css 和 js 格式的图标资源
 - 以上项目的数组
 
@@ -139,7 +139,7 @@ export default defineUserConfig({
 
 为了便于上手，我们添加了内置关键字 `"iconfont"`、`"iconify"`、`"fontawesome"` 和 `"fontawesome-with-brand` 支持。
 
-::: danger
+::: caution
 
 如果你将此插件用于商业项目文档，则**不推荐**使用 iconfont，因为 iconfont 本身是设计人员和开发人员的学习/共享平台。
 

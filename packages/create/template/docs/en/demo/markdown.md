@@ -42,7 +42,7 @@ For these extensions, please read [Markdown extensions in VuePress](https://them
 
 By using [`vuepress-plugin-md-enhance`][md-enhance], the theme extends more Markdown syntax and provides richer writing functions.
 
-#### Custom Container
+#### Hint box
 
 ::: v-pre
 
@@ -52,7 +52,7 @@ Safely use {{ variable }} in Markdown.
 
 ::: info Custom Title
 
-A custom information container with `code`, [link](#custom-container).
+A custom information container with `code`, [link](#hint-box).
 
 ```js
 const a = 1;
@@ -72,9 +72,9 @@ A custom warning container
 
 :::
 
-::: danger Custom Title
+::: caution Custom Title
 
-A custom danger container
+A custom caution container
 
 :::
 
@@ -84,7 +84,7 @@ A custom details container
 
 :::
 
-- [View Detail](https://theme-hope.vuejs.press/guide/markdown/container.html)
+- [View Detail](https://theme-hope.vuejs.press/guide/markdown/hint.html)
 
 #### Tabs
 
@@ -187,17 +187,17 @@ Support setting color scheme and size
 
 - [View Detail](https://theme-hope.vuejs.press/guide/markdown/image.html)
 
-#### Card
+#### Component
 
-```card
+```component VPCard
 title: Mr.Hope
 desc: Where there is light, there is hope
 logo: https://mister-hope.com/logo.svg
 link: https://mister-hope.com
-color: rgba(253, 230, 138, 0.15)
+background: rgba(253, 230, 138, 0.15)
 ```
 
-- [View Detail](https://theme-hope.vuejs.press/guide/markdown/card.html)
+- [View Detail](https://theme-hope.vuejs.press/guide/markdown/component.html)
 
 #### Include files
 
@@ -205,153 +205,11 @@ color: rgba(253, 230, 138, 0.15)
 
 - [View Detail](https://theme-hope.vuejs.press/guide/markdown/include.html)
 
-#### Code Demo
-
-::: normal-demo A normal demo
-
-```html
-<h1>VuePress Theme Hope</h1>
-<p>Is <span id="very">very</span> powerful!</p>
-```
-
-```js
-document.querySelector("#very").addEventListener("click", () => {
-  alert("Very powerful!");
-});
-```
-
-```css
-span {
-  color: red;
-}
-```
-
-:::
-
-- [View Detail](https://theme-hope.vuejs.press/guide/markdown/demo.html)
-
 #### Stylize
 
 Donate Mr.Hope a cup of coffee. _Recommended_
 
 - [View Detail](https://theme-hope.vuejs.press/guide/markdown/stylize.html)
-
-#### Playground
-
-::: playground#ts TS demo
-
-@file index.ts
-
-```ts
-const msg = "hello world";
-
-const speak = (msg: string) => console.log(msg);
-
-speak(msg);
-```
-
-:::
-
-- [View Detail](https://theme-hope.vuejs.press/guide/markdown/playground.html)
-
-#### Chart
-
-::: chart A Scatter Chart
-
-```json
-{
-  "type": "scatter",
-  "data": {
-    "datasets": [
-      {
-        "label": "Scatter Dataset",
-        "data": [
-          { "x": -10, "y": 0 },
-          { "x": 0, "y": 10 },
-          { "x": 10, "y": 5 },
-          { "x": 0.5, "y": 5.5 }
-        ],
-        "backgroundColor": "rgb(255, 99, 132)"
-      }
-    ]
-  },
-  "options": {
-    "scales": {
-      "x": {
-        "type": "linear",
-        "position": "bottom"
-      }
-    }
-  }
-}
-```
-
-:::
-
-- [View Detail](https://theme-hope.vuejs.press/guide/markdown/chart.html)
-
-#### Echarts
-
-::: echarts A line chart
-
-```json
-{
-  "xAxis": {
-    "type": "category",
-    "data": ["Mon", "Tue", "Wed", "Thu", "Fri", "Sat", "Sun"]
-  },
-  "yAxis": {
-    "type": "value"
-  },
-  "series": [
-    {
-      "data": [150, 230, 224, 218, 135, 147, 260],
-      "type": "line"
-    }
-  ]
-}
-```
-
-:::
-
-- [View Detail](https://theme-hope.vuejs.press/guide/markdown/echarts.html)
-
-#### Flowchart
-
-```flow
-cond=>condition: Process?
-process=>operation: Process
-e=>end: End
-
-cond(yes)->process->e
-cond(no)->e
-```
-
-- [View Detail](https://theme-hope.vuejs.press/guide/markdown/flowchart.html)
-
-#### Mermaid
-
-```mermaid
----
-title: Flowchart
----
-flowchart TB
-    c1-->a2
-    subgraph one
-    a1-->a2
-    end
-    subgraph two
-    b1-->b2
-    end
-    subgraph three
-    c1-->c2
-    end
-    one --> two
-    three --> two
-    two --> c2
-```
-
-- [View Detail](https://theme-hope.vuejs.press/guide/markdown/mermaid.html)
 
 #### Tex
 
@@ -362,26 +220,57 @@ $$
 
 - [View Detail](https://theme-hope.vuejs.press/guide/markdown/tex.html)
 
+#### Chart.js
+
+<iframe src="https://plugin-md-enhance-demo.vuejs.press/snippet/chartjs.html" width="100%" height="450"/>
+
+- [View Detail](https://theme-hope.vuejs.press/guide/markdown/chartjs.html)
+
+#### Echarts
+
+<iframe src="https://plugin-md-enhance-demo.vuejs.press/snippet/echarts.html" width="100%" height="800"/>
+
+- [View Detail](https://theme-hope.vuejs.press/guide/markdown/echarts.html)
+
+#### Flowchart
+
+<iframe src="https://plugin-md-enhance-demo.vuejs.press/snippet/flowchart.html" width="100%" height="450"/>
+
+- [View Detail](https://theme-hope.vuejs.press/guide/markdown/flowchart.html)
+
+#### MarkMap
+
+<iframe src="https://plugin-md-enhance-demo.vuejs.press/snippet/markmap.html" width="100%" height="380"/>
+
+- [View Detail](https://theme-hope.vuejs.press/guide/markdown/markmap.html)
+
+#### Mermaid
+
+<iframe src="https://plugin-md-enhance-demo.vuejs.press/snippet/mermaid.html" width="100%" height="620"/>
+
+- [View Detail](https://theme-hope.vuejs.press/guide/markdown/mermaid.html)
+
+#### Code Demo
+
+<iframe src="https://plugin-md-enhance-demo.vuejs.press/snippet/code-demo.html" width="100%" height="450"/>
+
+- [View Detail](https://theme-hope.vuejs.press/guide/markdown/demo.html)
+
+#### Playground
+
+<iframe src="https://plugin-md-enhance-demo.vuejs.press/snippet/playground.html" width="100%" height="480"/>
+
+- [View Detail](https://theme-hope.vuejs.press/guide/markdown/playground.html)
+
+#### Kotlin Playground
+
+<iframe src="https://plugin-md-enhance-demo.vuejs.press/snippet/kotlin-playground.html" width="100%" height="220"/>
+
+- [View Detail](https://theme-hope.vuejs.press/guide/markdown/kotlin-playground.html)
+
 #### Vue Playground
 
-::: vue-playground Vue Playground
-
-@file App.vue
-
-```vue
-<script setup>
-import { ref } from "vue";
-
-const msg = ref("Hello World!");
-</script>
-
-<template>
-  <h1>{{ msg }}</h1>
-  <input v-model="msg" />
-</template>
-```
-
-:::
+<iframe src="https://plugin-md-enhance-demo.vuejs.press/snippet/vue-playground.html" width="100%" height="380"/>
 
 - [View Detail](https://theme-hope.vuejs.press/guide/markdown/vue-playground.html)
 
@@ -408,38 +297,9 @@ const msg = ref("Hello Playground!");
 
 - [View Detail](https://theme-hope.vuejs.press/guide/markdown/sandpack.html)
 
-#### Presentation
+#### Reveal.js
 
-@slidestart
-
-## Slide 1
-
-A paragraph with some text and a [link](https://mister-hope.com)
-
----
-
-## Slide 2
-
-- Item 1
-- Item 2
-
----
-
-## Slide 3.1
-
-```js
-const a = 1;
-```
-
---
-
-## Slide 3.2
-
-$$
-J(\theta_0,\theta_1) = \sum_{i=0}
-$$
-
-@slideend
+<iframe src="https://plugin-md-enhance-demo.vuejs.press/snippet/revealjs.html" width="100%" height="400"/>
 
 - [View Detail](https://theme-hope.vuejs.press/guide/markdown/revealjs.html)
 

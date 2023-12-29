@@ -20,14 +20,14 @@ export default defineComponent({
   name: "NormalPage",
 
   slots: Object as SlotsType<{
-    top?: () => VNode | VNode[];
-    bottom?: () => VNode | VNode[];
+    top?: () => VNode[] | VNode | null;
+    bottom?: () => VNode[] | VNode | null;
 
-    contentBefore?: () => VNode | VNode[];
-    contentAfter?: () => VNode | VNode[];
+    contentBefore?: () => VNode[] | VNode | null;
+    contentAfter?: () => VNode[] | VNode | null;
 
-    tocBefore?: () => VNode | VNode[];
-    tocAfter?: () => VNode | VNode[];
+    tocBefore?: () => VNode[] | VNode | null;
+    tocAfter?: () => VNode[] | VNode | null;
   }>,
 
   setup(_props, { slots }) {

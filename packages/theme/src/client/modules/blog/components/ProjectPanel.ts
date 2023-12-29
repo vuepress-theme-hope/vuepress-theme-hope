@@ -1,6 +1,6 @@
-import { usePageFrontmatter, withBase } from "@vuepress/client";
+import { withBase } from "@vuepress/client";
 import { isLinkHttp } from "@vuepress/shared";
-import type { VNode } from "vue";
+import type { PropType, VNode } from "vue";
 import { defineComponent, h, resolveComponent } from "vue";
 import { isAbsoluteUrl } from "vuepress-shared/client";
 
@@ -14,7 +14,7 @@ import {
   ProjectIcon,
 } from "@theme-hope/modules/blog/components/icons/index";
 
-import type { ThemeBlogHomePageFrontmatter } from "../../../../shared/index.js";
+import type { ThemeBlogHomeProjectOptions } from "../../../../shared/index.js";
 
 import "../styles/project-panel.scss";
 
@@ -31,8 +31,15 @@ export default defineComponent({
 
   components: { ArticleIcon, BookIcon, FriendIcon, LinkIcon, ProjectIcon },
 
-  setup() {
-    const frontmatter = usePageFrontmatter<ThemeBlogHomePageFrontmatter>();
+  props: {
+    /** 项目列表 */
+    items: {
+      type: Array as PropType<ThemeBlogHomeProjectOptions[]>,
+      required: true,
+    },
+  },
+
+  setup(props) {
     const pure = usePure();
     const navigate = useNavigate();
 
@@ -58,30 +65,27 @@ export default defineComponent({
     };
 
     return (): VNode | null =>
-      frontmatter.value.projects?.length
-        ? h(
+      h(
+        "div",
+        { class: "vp-project-panel" },
+        props.items.map(({ icon, link, name, desc }, index) =>
+          h(
             "div",
-            { class: "vp-project-panel" },
-            frontmatter.value.projects.map(
-              ({ icon, link, name, desc }, index) =>
-                h(
-                  "div",
-                  {
-                    class: [
-                      "vp-project-card",
-                      // TODO: magic number 9 is tricky here
-                      { [`project${index % 9}`]: !pure.value },
-                    ],
-                    onClick: () => navigate(link),
-                  },
-                  [
-                    renderIcon(icon, name),
-                    h("div", { class: "vp-project-name" }, name),
-                    h("div", { class: "vp-project-desc" }, desc),
-                  ],
-                ),
-            ),
-          )
-        : null;
+            {
+              class: [
+                "vp-project-card",
+                // TODO: magic number 9 is tricky here
+                { [`project${index % 9}`]: !pure.value },
+              ],
+              onClick: () => navigate(link),
+            },
+            [
+              renderIcon(icon, name),
+              h("div", { class: "vp-project-name" }, name),
+              h("div", { class: "vp-project-desc" }, desc),
+            ],
+          ),
+        ),
+      );
   },
 });

@@ -36,6 +36,7 @@ export const nlLocale: ThemeLocaleData = {
     all: "Alle",
     intro: "Persoonlijke Intro",
     star: "Star",
+    empty: "$text is leeg",
   },
 
   paginationLocales: {

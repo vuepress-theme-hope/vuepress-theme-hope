@@ -1,4 +1,4 @@
-import { isLinkHttp, isLinkMailto } from "@vuepress/shared";
+import { isLinkWithProtocol } from "@vuepress/shared";
 import { useRoute, useRouter } from "vue-router";
 import { isAbsoluteUrl } from "vuepress-shared/client";
 
@@ -11,7 +11,7 @@ export const useNavigate = (): ((url: string) => void) => {
       if (isAbsoluteUrl(url)) {
         // Inner absolute path
         if (route.path !== url) void router.push(url);
-      } else if (isLinkHttp(url) || isLinkMailto(url)) {
+      } else if (isLinkWithProtocol(url)) {
         // Outer url
         if (window) window.open(url);
       } else {

@@ -12,7 +12,7 @@ export default defineUserConfig({
   description: "Markdown Enhancement for VuePress",
 
   theme: defaultTheme({
-    logo: "/logo.svg",
+    logo: "https://theme-hope-assets.vuejs.press/logo.svg",
 
     repo: "vuepress-theme-hope/vuepress-theme-hope/tree/main/demo/md-enhance/",
 
@@ -23,21 +23,24 @@ export default defineUserConfig({
 
     sidebar: {
       "/demo/": [
+        "/demo/alert",
         "/demo/align",
         "/demo/attrs",
-        "/demo/card",
         "/demo/chart",
         "/demo/echarts",
         "/demo/code-demo",
         "/demo/code-tabs",
-        "/demo/container",
+        "/demo/component",
         "/demo/figure",
         "/demo/flowchart",
         "/demo/footnote",
+        "/demo/hint",
         "/demo/image-mark",
         "/demo/image-size",
         "/demo/include",
+        "/demo/kotlin-playground",
         "/demo/mark",
+        "/demo/markmap",
         "/demo/mermaid",
         "/demo/playground",
         "/demo/revealjs",
@@ -64,25 +67,28 @@ export default defineUserConfig({
 
   plugins: [
     mdEnhancePlugin({
+      alert: true,
       align: true,
       attrs: true,
-      card: true,
       chart: true,
       codetabs: true,
-      container: true,
+      component: true,
       demo: true,
       echarts: true,
       figure: true,
       flowchart: true,
       gfm: true,
+      hint: true,
       imgLazyload: true,
       imgMark: true,
       imgSize: true,
       include: true,
       mark: true,
+      markmap: true,
       mermaid: true,
+      kotlinPlayground: true,
       playground: {
-        presets: ["ts", "vue"],
+        presets: ["ts", "vue", "unocss"],
       },
       mathjax: {
         output: "chtml",

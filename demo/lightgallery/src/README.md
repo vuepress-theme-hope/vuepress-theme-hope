@@ -1,7 +1,7 @@
 ---
 home: true
 title: Home
-heroImage: /logo.svg
+heroImage: https://theme-hope-assets.vuejs.press/logo.svg
 heroText: vuepress-plugin-lightgallery
 tagline: Image Preview Plugin for VuePress2
 actions:
@@ -13,16 +13,16 @@ footer: MIT Licensed, Copyright © 2019-present Mr.Hope
 
 This is a paragraph.
 
-![logo](/logo.svg)
+![logo](https://theme-hope-assets.vuejs.press/logo.svg)
 
 This is a paragraph.
 
 <!-- markdownlint-disable -->
 
 <div class="image-preview">
-  <img src="/assets/image/1.jpg" />
-  <img src="/assets/image/2.jpg" />
-  <img src="/assets/image/3.jpg" />
+  <img src="//theme-hope-assets.vuejs.press/files/img/1.jpg" />
+  <img src="//theme-hope-assets.vuejs.press/files/img/2.jpg" />
+  <img src="//theme-hope-assets.vuejs.press/files/img/3.jpg" />
 </div>
 
 <style>

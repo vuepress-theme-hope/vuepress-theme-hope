@@ -1,7 +1,7 @@
 ---
 home: true
 title: Home
-heroImage: /logo.svg
+heroImage: https://theme-hope-assets.vuejs.press/logo.svg
 heroText: vuepress-plugin-blog2
 tagline: Add blog support for VuePress2
 actions:

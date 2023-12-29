@@ -25,7 +25,12 @@ const renderIcon = (content: string, contentClass = ""): VNode => {
 
   // is a link
   if (isLinkHttp(content) || isAbsoluteUrl(content))
-    return h("img", { class: className, src: content, "no-view": "" });
+    return h("img", {
+      class: className,
+      src: content,
+      loading: "lazy",
+      "no-view": "",
+    });
 
   // is html content
   if (startsWith(content, "<") && endsWith(content, ">"))
@@ -133,8 +138,8 @@ export default defineComponent({
       const tag = isArray(tags)
         ? tags.filter(isString).join(",")
         : isString(tags)
-        ? tags
-        : null;
+          ? tags
+          : null;
 
       return props.config.link.replace(
         /\[([^\]]+)\]/g,
@@ -214,14 +219,14 @@ export default defineComponent({
           plain
             ? renderIcon(shape, "plain")
             : icon
-            ? renderIcon(icon)
-            : h("div", {
-                class: "vp-share-icon colorful",
-                style: {
-                  background: color,
-                },
-                innerHTML: shape,
-              }),
+              ? renderIcon(icon)
+              : h("div", {
+                  class: "vp-share-icon colorful",
+                  style: {
+                    background: color,
+                  },
+                  innerHTML: shape,
+                }),
         ),
         showPopup.value ? h("div", { class: "share-popup" }) : null,
       ];

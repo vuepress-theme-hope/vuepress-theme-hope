@@ -2,7 +2,7 @@
 home: true
 title: Home
 icon: home
-heroImage: /logo.svg
+heroImage: https://theme-hope-assets.vuejs.press/logo.svg
 heroText: vuepress-plugin-md-enhance
 tagline: Enhancement for Markdown in VuePress
 actions:

@@ -1,6 +1,6 @@
 import type { Plugin } from "@vuepress/core";
+import { colors } from "@vuepress/utils";
 import type { FeedOptions } from "vuepress-plugin-feed2";
-import { feedPlugin } from "vuepress-plugin-feed2";
 import {
   deepAssign,
   entries,
@@ -10,6 +10,15 @@ import {
 } from "vuepress-shared/node";
 
 import type { ThemeData } from "../../shared/index.js";
+import { logger } from "../utils.js";
+
+let feedPlugin: (options: FeedOptions, legacy?: boolean) => Plugin;
+
+try {
+  ({ feedPlugin } = await import("vuepress-plugin-feed2"));
+} catch (e) {
+  // do nothing
+}
 
 /**
  * @private
@@ -25,6 +34,12 @@ export const getFeedPlugin = (
 ): Plugin | null => {
   // disable feed if no options for feed plugin
   if (!keys(options).length) return null;
+
+  if (!feedPlugin) {
+    logger.error(`${colors.cyan("vuepress-plugin-feed2")} is not installed!`);
+
+    return null;
+  }
 
   const globalAuthor = getAuthor(themeData.author);
 

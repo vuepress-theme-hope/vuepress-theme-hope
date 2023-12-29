@@ -35,18 +35,18 @@ export default defineComponent({
       return footer === false
         ? false
         : isString(footer)
-        ? footer
-        : themeLocale.value.footer || "";
+          ? footer
+          : themeLocale.value.footer || "";
     });
 
     const copyright = computed(() =>
       "copyright" in frontmatter.value
         ? frontmatter.value.copyright
         : "copyright" in themeLocale.value
-        ? themeLocale.value.copyright
-        : author.value.length
-        ? `Copyright © ${new Date().getFullYear()} ${author.value[0].name}`
-        : false,
+          ? themeLocale.value.copyright
+          : author.value.length
+            ? `Copyright © ${new Date().getFullYear()} ${author.value[0].name}`
+            : false,
     );
 
     return (): VNode | null =>

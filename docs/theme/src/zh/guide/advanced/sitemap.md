@@ -1,6 +1,7 @@
 ---
 title: Sitemap
 icon: sitemap
+order: 2
 category:
   - 高级
 tag:

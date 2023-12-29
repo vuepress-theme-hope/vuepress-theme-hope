@@ -1,7 +1,7 @@
 ---
 title: 评论插件配置
 icon: comment-dots
-order: 3
+order: 5
 category:
   - 配置
 tag:
@@ -21,9 +21,7 @@ tag:
 - Twikoo
 - Waline
 
-::: note
-
-如果你不需要评论功能，请忽略此选项。
+::: note 如果你不需要评论功能，请忽略此选项。
 
 :::
 

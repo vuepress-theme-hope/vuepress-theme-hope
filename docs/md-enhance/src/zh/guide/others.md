@@ -33,6 +33,8 @@ export default {
 };
 ```
 
+<!-- #region after -->
+
 ## GFM
 
 如果你的文档既在文档站点上提供又直接在 GitHub 上提供，我们提供了一个 `gfm` 选项来使你的 Markdown 行为与 GitHub 保持一致。
@@ -53,10 +55,14 @@ export default {
 
 由于 VuePress2 已经在 `@vuepress/core` 中移除了 V1 的 v-pre 容器，插件提供了一个选项支持它。也就是你可以在下面的容器中使用任何 Mustache 语法。
 
-```md
+:::: md-demo
+
 ::: v-pre
 
 {{ abc }}
 
 :::
-```
+
+::::
+
+<!-- #endregion after -->

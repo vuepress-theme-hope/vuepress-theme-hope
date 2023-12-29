@@ -12,9 +12,9 @@ tag:
 
 ## Requirement
 
-- LTS Versions of Node.js (18, 20)
-- A supported package manager: npm >= 8, yarn >= 2, pnpm >= 7
-- A VuePress2 project using Vue3
+- Env: LTS Versions of Node.js (18, 20)
+- Package Manager: npm >= 8, yarn >= 2, pnpm >= 7
+- A VuePress2 project with Vue3
 
 ## Install
 
@@ -66,21 +66,21 @@ npm init vuepress-theme-hope add [dir]
 
 :::
 
-::: note
+::: important
 
 `[dir]` is a parameter here, replace it with real folder names, such as `docs`, `blog` or other name you like.
 
 :::
 
-## Usage
+## Usage and Configuration
 
-Please import and use `hopeTheme` to use `vuepress-theme-hope`.
+Please import and use `hopeTheme` to use `vuepress-theme-hope`, the first argument accepted by `hopeTheme` will be used as the theme config:
 
 ::: code-tabs#language
 
 @tab TS
 
-```ts
+```ts {7}
 // .vuepress/config.ts
 import { defineUserConfig } from "vuepress";
 import { hopeTheme } from "vuepress-theme-hope";
@@ -94,7 +94,7 @@ export default defineUserConfig({
 
 @tab JS
 
-```js
+```js {7}
 // .vuepress/config.js
 import { hopeTheme } from "vuepress-theme-hope";
 

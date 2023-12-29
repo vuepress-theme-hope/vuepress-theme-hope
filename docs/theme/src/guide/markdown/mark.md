@@ -57,10 +57,8 @@ export default {
 
 Use `== ==` to mark.
 
-## Demo
+::: md-demo Demo
 
 VuePress Theme Hope is ==powerful==.
 
-```md
-VuePress Theme Hope is ==powerful==.
-```
+:::

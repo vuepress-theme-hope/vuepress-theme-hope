@@ -18,7 +18,7 @@ jobs:
           submodules: true
 
       - name: Restore Build Result
-        uses: actions/download-artifact@v3
+        uses: actions/download-artifact@v4
         with:
           name: build-result
 
@@ -30,7 +30,7 @@ jobs:
       - name: Setup Node.js
         uses: actions/setup-node@v4
         with:
-          node-version: 18
+          node-version: 20
           cache: pnpm
 
       - name: Docs build
@@ -38,6 +38,15 @@ jobs:
           NETLIFY: true
           NODE_OPTIONS: --max_old_space_size=8192
         run: pnpm run docs:vite-build
+
+      - name: Deploy append-date docs
+        uses: JamesIves/github-pages-deploy-action@v4
+        with:
+          repository-name: vuepress-theme-hope/append-date-docs
+          branch: netlify
+          folder: docs/append-date/dist
+          token: ${{ secrets.ACCESS_TOKEN }}
+          single-commit: true
 
       - name: Deploy auto-catalog docs
         uses: JamesIves/github-pages-deploy-action@v4
@@ -239,7 +248,7 @@ jobs:
           submodules: true
 
       - name: Restore Build Result
-        uses: actions/download-artifact@v3
+        uses: actions/download-artifact@v4
         with:
           name: build-result
 
@@ -251,7 +260,7 @@ jobs:
       - name: Setup Node.js
         uses: actions/setup-node@v4
         with:
-          node-version: 18
+          node-version: 20
           cache: pnpm
 
       - name: Docs build
@@ -262,6 +271,7 @@ jobs:
 
       - name: Combine output
         run: |
+          pnpm cpx "docs/append-date/dist/**" dist/auto-catalog
           pnpm cpx "docs/auto-catalog/dist/**" dist/auto-catalog
           pnpm cpx "docs/blog2/dist/**" dist/blog
           pnpm cpx "docs/comment2/dist/**" dist/comment
@@ -306,7 +316,7 @@ jobs:
         uses: actions/checkout@v4
 
       - name: Restore Build Result
-        uses: actions/download-artifact@v3
+        uses: actions/download-artifact@v4
         with:
           name: build-result
 
@@ -318,7 +328,7 @@ jobs:
       - name: Setup Node.js
         uses: actions/setup-node@v4
         with:
-          node-version: 18
+          node-version: 20
           cache: pnpm
 
       - name: Build Netlify Demo
@@ -386,7 +396,7 @@ jobs:
           submodules: true
 
       - name: Restore Build Result
-        uses: actions/download-artifact@v3
+        uses: actions/download-artifact@v4
         with:
           name: build-result
 
@@ -398,7 +408,7 @@ jobs:
       - name: Setup Node.js
         uses: actions/setup-node@v4
         with:
-          node-version: 18
+          node-version: 20
           cache: pnpm
 
       - name: Build ${{ matrix.plugin-name }} demo

@@ -61,6 +61,7 @@ export const injectBlogBasicInfo = (
   // save page excerpt to routeMeta
   if (frontmatter.excerpt) info[ArticleInfoType.excerpt] = frontmatter.excerpt;
   else if (page.data.excerpt) info[ArticleInfoType.excerpt] = page.data.excerpt;
-  else if (frontmatter.description)
+  // fallback to user-defined description
+  else if (frontmatter.description && !page.data.autoDesc)
     info[ArticleInfoType.excerpt] = frontmatter.description;
 };

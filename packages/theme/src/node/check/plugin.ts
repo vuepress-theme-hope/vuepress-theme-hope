@@ -7,7 +7,11 @@ import { logger } from "../utils.js";
 
 const PLUGIN_CHECKLIST = [
   ["@vuepress/plugin-active-header-links", "activeHeaderLinks"],
+  ["@vuepress/plugin-docsearch", "docsearch"],
+  ["@vuepress/plugin-search", "search"],
   "@vuepress/plugin-theme-data",
+  ["vuepress-plugin-auto-catalog", "autoCatalog"],
+  ["vuepress-plugin-blog2", "blog"],
   ["vuepress-plugin-comment2", "comment"],
   ["vuepress-plugin-components", "components"],
   ["vuepress-plugin-copy-code2", "copyCode"],
@@ -16,8 +20,12 @@ const PLUGIN_CHECKLIST = [
   ["vuepress-plugin-md-enhance", "mdEnhance"],
   ["vuepress-plugin-photo-swipe", "photoSwipe"],
   ["vuepress-plugin-pwa2", "pwa"],
+  ["vuepress-plugin-reading-time2", "readingTime"],
+  ["vuepress-plugin-rtl", "", 'Set "rtl: true" in the needed theme locales.'],
+  ["vuepress-plugin-pwa2", "pwa"],
+  ["vuepress-plugin-search-pro", "searchPro"],
   ["vuepress-plugin-seo2", "seo"],
-  ["vuepress-plugin-sitemap", "sitemap"],
+  ["vuepress-plugin-sitemap2", "sitemap"],
 ];
 
 const KNOWN_THEME_PLUGINS = [
@@ -28,6 +36,7 @@ const KNOWN_THEME_PLUGINS = [
   "comment",
   "copyCode",
   "copyright",
+  "docsearch",
   "externalLinkIcon",
   "feed",
   "git",
@@ -37,6 +46,8 @@ const KNOWN_THEME_PLUGINS = [
   "prismjs",
   "pwa",
   "readingTime",
+  "search",
+  "searchPro",
   "seo",
   "sitemap",
 ];
@@ -67,7 +78,7 @@ export const checkPluginOptions = (plugins: PluginsOptions): void => {
  * Check user plugin options for noob users
  */
 export const checkUserPlugin = (app: App): void => {
-  PLUGIN_CHECKLIST.forEach(([pluginName, optionName = ""]) => {
+  PLUGIN_CHECKLIST.forEach(([pluginName, optionName = "", hint = ""]) => {
     const themeIndex = app.pluginApi.plugins.findIndex(
       (item) => item.name === "vuepress-theme-hope",
     );
@@ -78,11 +89,12 @@ export const checkUserPlugin = (app: App): void => {
         `You are not allowed to use plugin "${colors.magenta(
           pluginName,
         )}" yourself in ${colors.cyan("vuepress config file")}. ${
-          optionName
+          hint ||
+          (optionName
             ? `Set "${colors.magenta(`plugin.${optionName}`)}" in ${colors.cyan(
                 "theme options",
               )} to customize it.`
-            : ""
+            : "")
         }`,
       );
   });

@@ -1,6 +1,7 @@
 ---
 title: SEO
 icon: dumbbell
+order: 1
 category:
   - 高级
 tag:
@@ -100,24 +101,11 @@ head:
 你可以在主题选项中通过 `plugins.seo.ogp` 传入一个函数来按照你的需要修改默认 OGP 对象并返回。
 
 ```ts
-function ogp<
-  ExtraPageData extends Record<string | number | symbol, unknown> = Record<
-    never,
-    never
-  >,
-  ExtraPageFrontmatter extends Record<
-    string | number | symbol,
-    unknown
-  > = Record<string, unknown>,
-  ExtraPageFields extends Record<string | number | symbol, unknown> = Record<
-    never,
-    never
-  >,
->(
-  /** 插件自动推断的 OGP 对象 */
+function ogp(
+  /** 插件推断的 OGP 信息 */
   ogp: SeoContent,
   /** 页面对象 */
-  page: ExtendPage<ExtraPageData, ExtraPageFrontmatter, ExtraPageFields>,
+  page: Page,
   /** VuePress App */
   app: App,
 ): SeoContent;
@@ -141,38 +129,19 @@ function ogp<
 同 OGP，你可以在主题选项中通过 `plugins.seo.jsonLd` 传入一个函数来按照你的需要修改默认 JSON-LD 对象并返回。
 
 ```ts
-function jsonLd<
-  ExtraPageData extends Record<string | number | symbol, unknown> = Record<
-    never,
-    never
-  >,
-  ExtraPageFrontmatter extends Record<
-    string | number | symbol,
-    unknown
-  > = Record<string, unknown>,
-  ExtraPageFields extends Record<string | number | symbol, unknown> = Record<
-    never,
-    never
-  >,
->(
-  /** 插件自动推断的 JSON-LD 对象 */
-  jsonLD: ArticleJSONLD | null,
+function jsonLd(
+  /** 由插件推断出的 JSON-LD 对象 */
+  jsonLD: ArticleSchema | BlogPostingSchema | WebPageSchema,
   /** 页面对象 */
-  page: ExtendPage<ExtraPageData, ExtraPageFrontmatter, ExtraPageFields>,
+  page: Page,
   /** VuePress App */
   app: App,
-): ArticleJSONLD | null;
+): ArticleSchema | BlogPostingSchema | WebPageSchema;
 ```
-
-::: warning
-
-请注意插件不会对非文章页生成 JSON-LD，所以函数的首个参数可能为 `null`。
-
-:::
 
 ## 规范链接
 
-如果你将内容部署到不同的站点，或不同 URL 下的相同内容，你可能需要在主题选项中通过 `plugins.seo.canonical` 选项为你的页面提供 “规范链接”。 你可以设置一个字符串，这样它会附加在页面路由链接之前，或者添加一个自定义函数 `(page: Page) => string | 如有必要，null` 返回规范链接。
+如果你将内容部署到不同的站点，或不同 URL 下的相同内容，你可能需要在主题选项中通过 `plugins.seo.canonical` 选项为你的页面提供 “规范链接”。 你可以设置一个字符串，这样它会附加在页面路由链接之前，或者添加一个自定义函数 `(page: Page) => string | null` 返回规范链接。
 
 ::: tip 例子
 
@@ -192,23 +161,11 @@ function jsonLd<
 有些时候你可能需要符合其他协议或按照其他搜索引擎提供的格式提供对应的 SEO 标签，此时你可以在主题选项中通过 `plugins.seo.customHead` 选项自定义 head 标签，其类型为:
 
 ```ts
-function customHead<
-  ExtraPageData extends Record<string | number | symbol, unknown> = Record<
-    never,
-    never
-  >,
-  ExtraPageFrontmatter extends Record<
-    string | number | symbol,
-    unknown
-  > = Record<string, unknown>,
-  ExtraPageFields extends Record<string | number | symbol, unknown> = Record<
-    never,
-    never
-  >,
->(
+function customHead(
+  /** head 标签配置 */
   head: HeadConfig[],
   /** 页面对象 */
-  page: Page<ExtraPageData, ExtraPageFrontmatter, ExtraPageFields>,
+  page: Page,
   /** VuePress App */
   app: App,
 ): void;

@@ -5,13 +5,13 @@ import pc from "picocolors";
 
 import pkg from "../package.json" assert { type: "json" };
 
-const { version: currentVersion } = pkg;
+const { version } = pkg;
 const { prompt } = inquirer;
 
 const tags = ["latest", "alpha", "beta", "next", "test"];
 
 const release = async (): Promise<void> => {
-  ora(`Current version: ${pc.green(currentVersion)}`).info();
+  ora(`Current version: ${pc.green(version)}`).info();
 
   const { npmTag } = await prompt<{ npmTag: string }>([
     {
@@ -27,4 +27,4 @@ const release = async (): Promise<void> => {
   await execaCommand(`pnpm -r publish --tag ${npmTag}`, { stdio: "inherit" });
 };
 
-void release();
+await release();

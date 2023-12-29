@@ -9,7 +9,16 @@ tag:
   - Navbar
 ---
 
-The Navbar may contain your site title, [Search Box](#search-box), [Navbar Links](#navbar-links), [I18n](https://vuejs.press/guide/i18n.html), [Repository Link](#git-repository-and-edit-links) and [Outlook Popup](#outlook-popup). They all depend on your configuration.
+The Navbar contains:
+
+- Site title
+- [Search Box](#search-box)
+- [Navbar Links](#navbar-links)
+- [Language dropdown](https://vuejs.press/guide/i18n.html)
+- [Repository Link](#git-repository-and-edit-links)
+- [Outlook Popup](#outlook-popup)
+
+All of them are customizable, and you can also [fully customize Navbar layout](#layout-config).
 
 <!-- more -->
 
@@ -25,7 +34,7 @@ The easiest way to configure the navbar is to fill in the paths of the page file
 
 @tab TS
 
-```ts
+```ts {7}
 // .vuepress/config.ts
 import { defineUserConfig } from "vuepress";
 import { hopeTheme } from "vuepress-theme-hope";
@@ -39,22 +48,23 @@ export default defineUserConfig({
 
 @tab JS
 
-```js
+```js {7}
 // .vuepress/config.js
+import { defineUserConfig } from "vuepress";
 import { hopeTheme } from "vuepress-theme-hope";
 
-export default {
+export default defineUserConfig({
   theme: hopeTheme({
     navbar: ["/guide/README.md", "/config/README.md", "/faq.md"],
   }),
-};
+});
 ```
 
 :::
 
 ::: tip
 
-You can omit the `.md` extension, and paths ending with `/` are inferred as `/README.md`.
+We recommend you to omit the `.md` extension, and paths ending with `/` are inferred as `/README.md`.
 
 :::
 
@@ -572,7 +582,7 @@ The following three functions are provided:
 
 `vuepress-theme-hope` allows you to customize navbar layout. You can add components in `start`, `center` and `end` keys under `navbarLayout` options.
 
-Besides global components, the following built-in components are supported:
+Navbar has the following built-in components that can be used:
 
 - Brand: Site Brand
 - Links: Navbar links
@@ -581,7 +591,9 @@ Besides global components, the following built-in components are supported:
 - Outlook: Outlook Popup
 - Repo: Project Repo
 
-By default, we are using the following options:
+And you can also use your own component names after you register them globally.
+
+We use the following options by default:
 
 ::: code-tabs#language
 
@@ -682,7 +694,7 @@ export default navbar([
 ```ts
 import { navbar } from "vuepress-theme-hope";
 
-<!-- @include: ../../.vuepress/navbar/en.ts{3-} -->
+<!-- @include: ../../.vuepress/navbar/en.ts#config -->
 ```
 
 @tab JS
@@ -690,7 +702,7 @@ import { navbar } from "vuepress-theme-hope";
 ```js
 import { navbar } from "vuepress-theme-hope";
 
-<!-- @include: ../../.vuepress/navbar/en.ts{3-} -->
+<!-- @include: ../../.vuepress/navbar/en.ts#config -->
 ```
 
 :::

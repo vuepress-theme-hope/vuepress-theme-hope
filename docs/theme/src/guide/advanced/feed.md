@@ -1,6 +1,7 @@
 ---
 title: Feed Support
 icon: rss
+order: 4
 category:
   - Advanced
 tag:
@@ -8,7 +9,7 @@ tag:
   - Feed
 ---
 
-The theme adds feed support using <ProjectLink name="feed2">`vuepress-plugin-feed2`</ProjectLink>.
+The theme adds feed support with <ProjectLink name="feed2">`vuepress-plugin-feed2`</ProjectLink>. To use it, install `vuepress-plugin-feed2` manually in your project.
 
 ::: info
 
@@ -26,11 +27,7 @@ The `vuepress-plugin-feed2` plugin can generate feed files in the following thre
 - JSON 1.1
 - RSS 2.0
 
-::: tip
-
-Atom and JSON are provided to improve more feed software adaptation.
-
-Please use RSS if possible.
+::: tip Please use RSS if possible. Atom and JSON are only provided for best compatibility.
 
 :::
 

@@ -9,14 +9,16 @@ import {
   getLocales,
 } from "vuepress-shared/node";
 
+import { convertOptions } from "./compact.js";
 import { photoSwipeLocales } from "./locales.js";
 import type { PhotoSwipeOptions } from "./options.js";
 import { CLIENT_FOLDER, PLUGIN_NAME, logger } from "./utils.js";
 
 export const photoSwipePlugin =
-  (options: PhotoSwipeOptions = {}): PluginFunction =>
+  (options: PhotoSwipeOptions = {}, legacy = true): PluginFunction =>
   (app) => {
-    checkVersion(app, PLUGIN_NAME, "2.0.0-beta.67");
+    if (legacy) convertOptions(options as Record<string, unknown>);
+    checkVersion(app, PLUGIN_NAME, "2.0.0-rc.0");
 
     if (app.env.isDebug) logger.info("Options:", options);
 

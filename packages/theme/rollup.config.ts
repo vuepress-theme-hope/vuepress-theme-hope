@@ -1,11 +1,11 @@
-import { bundle } from "../../scripts/rollup.js";
+import { rollupBundle } from "../../scripts/rollup.js";
 
 export default [
-  ...bundle("node/index", {
+  ...rollupBundle("node/index", {
     external: ["bcrypt-ts/node", "chokidar"],
     moduleSideEffects: () => false,
   }),
-  ...bundle(
+  ...rollupBundle(
     {
       base: "client",
       target: "bundle",

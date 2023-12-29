@@ -254,7 +254,7 @@ interface BlogTypeOptions {
 - 博客分类
 
   ```ts
-  declare const useBlogCategory: <
+  const useBlogCategory: <
     T extends Record<string, unknown> = Record<string, unknown>,
   >(
     key?: string,
@@ -266,7 +266,7 @@ interface BlogTypeOptions {
 - 博客类型
 
   ```ts
-  declare const useBlogType: <
+  const useBlogType: <
     T extends Record<string, unknown> = Record<string, unknown>,
   >(
     key?: string,

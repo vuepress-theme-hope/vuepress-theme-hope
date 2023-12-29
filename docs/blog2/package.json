@@ -1,5 +1,6 @@
 {
   "name": "blog2-docs",
+  "type": "module",
   "private": true,
   "description": "Docs for vuepress-plugin-blog2",
   "license": "MIT",
@@ -18,11 +19,11 @@
     "docs:webpack-dev": "vuepress-webpack dev src"
   },
   "dependencies": {
-    "@vuepress/client": "2.0.0-beta.67",
+    "@vuepress/client": "2.0.0-rc.0",
     "docs-shared": "workspace:*",
     "sass-loader": "13.3.2",
-    "vue": "3.3.7",
-    "vuepress-vite": "2.0.0-beta.67",
-    "vuepress-webpack": "2.0.0-beta.67"
+    "vue": "3.3.13",
+    "vuepress-vite": "2.0.0-rc.0",
+    "vuepress-webpack": "2.0.0-rc.0"
   }
 }

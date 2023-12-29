@@ -2,15 +2,16 @@
 home: true
 title: 主页
 icon: home
-heroImage: /logo.svg
 heroText: vuepress-plugin-photo-swipe
 tagline: 为 VuePress2 提供图片预览支持
 actions:
-  - text: 快速上手 💡
+  - text: 快速上手
+    icon: lightbulb
     link: ./guide.html
     type: primary
 
-  - text: 配置 🛠
+  - text: 配置
+    icon: tools
     link: ./config.html
 
 footer: 使用 <a href="https://theme-hope.vuejs.press/zh/" target="_blank">VuePress Theme Hope</a> 主题 | MIT 协议, 版权所有 © 2019-present Mr.Hope

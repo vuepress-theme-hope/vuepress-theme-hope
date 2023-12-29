@@ -1,7 +1,7 @@
 ---
 title: 博客配置
 icon: blog
-order: 2
+order: 3
 category:
   - 配置
 tag:

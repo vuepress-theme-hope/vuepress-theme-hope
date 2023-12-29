@@ -1,8 +1,3 @@
-declare module "dashjs/dist/dash.all.min.js" {
-  import dashjs from "dashjs";
-
-  export = dashjs;
-}
 declare module "hls.js/dist/hls.min.js" {
   import HLS from "hls.js";
 

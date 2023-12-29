@@ -13,7 +13,7 @@ export const defaultLinkCheck = (): boolean => false;
 
 export const getLinksCheckStatus = (
   app: App,
-  options: Partial<MarkdownEnhanceOptions>,
+  options: Partial<MarkdownEnhanceOptions> = {},
 ): {
   enabled: boolean;
   isIgnoreLink: (link: string) => boolean;
@@ -32,11 +32,11 @@ export const getLinksCheckStatus = (
     isIgnoreLink: isFunction(ignore)
       ? (link: string): boolean => ignore(link, app.env.isDev)
       : isArray(ignore)
-      ? (link: string): boolean =>
-          ignore.some((item) =>
-            isRegExp(item) ? item.test(link) : item === link,
-          )
-      : defaultLinkCheck,
+        ? (link: string): boolean =>
+            ignore.some((item) =>
+              isRegExp(item) ? item.test(link) : item === link,
+            )
+        : defaultLinkCheck,
   };
 };
 

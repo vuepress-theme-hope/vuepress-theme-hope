@@ -2,7 +2,7 @@
 home: true
 title: Home
 icon: home
-heroImage: /logo.svg
+heroImage: https://theme-hope-assets.vuejs.press/logo.svg
 heroText: vuepress-plugin-sitemap2
 tagline: Sitemap generation for VuePress2
 actions:

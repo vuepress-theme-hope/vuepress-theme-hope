@@ -5,6 +5,7 @@ import {
   getLocales,
 } from "vuepress-shared/node";
 
+import { convertOptions } from "./compact.js";
 import { readingTimeLocales } from "./locales.js";
 import type { ReadingTimeOptions } from "./options.js";
 import { getReadingTime } from "./readingTime.js";
@@ -13,9 +14,10 @@ import type { ReadingTime } from "../shared/index.js";
 
 /** Reading time plugin */
 export const readingTimePlugin =
-  (options: ReadingTimeOptions): PluginFunction =>
+  (options: ReadingTimeOptions, legacy = true): PluginFunction =>
   (app) => {
-    checkVersion(app, PLUGIN_NAME, "2.0.0-beta.67");
+    if (legacy) convertOptions(options as Record<string, unknown>);
+    checkVersion(app, PLUGIN_NAME, "2.0.0-rc.0");
 
     if (app.env.isDebug) logger.info("Options:", options);
 

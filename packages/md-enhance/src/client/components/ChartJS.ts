@@ -1,7 +1,18 @@
-import type { ChartConfiguration } from "chart.js";
+import { useMutationObserver } from "@vueuse/core";
+import type { Chart, ChartConfiguration } from "chart.js";
 import type { PropType, VNode } from "vue";
-import { defineComponent, h, onMounted, ref, shallowRef } from "vue";
+import {
+  computed,
+  defineComponent,
+  h,
+  onMounted,
+  ref,
+  shallowRef,
+  watch,
+} from "vue";
 import { LoadingIcon, atou } from "vuepress-shared/client";
+
+import { getDarkmodeStatus } from "../utils/index.js";
 
 import "../styles/chart.scss";
 
@@ -77,23 +88,55 @@ export default defineComponent({
     const chartElement = shallowRef<HTMLElement>();
     const chartCanvasElement = shallowRef<HTMLCanvasElement>();
 
+    const isDarkmode = ref(false);
     const loading = ref(true);
 
-    onMounted(async () => {
+    const config = computed(() => atou(props.config));
+
+    let loaded = false;
+
+    let chart: Chart | null;
+
+    const renderChart = async (isDarkmode: boolean): Promise<void> => {
       const [{ default: Chart }] = await Promise.all([
         import(/* webpackChunkName: "chart" */ "chart.js/auto"),
-        // delay
-        new Promise((resolve) => setTimeout(resolve, MARKDOWN_ENHANCE_DELAY)),
+        loaded
+          ? Promise.resolve()
+          : ((loaded = true),
+            new Promise((resolve) =>
+              setTimeout(resolve, MARKDOWN_ENHANCE_DELAY),
+            )),
       ]);
 
+      Chart.defaults.borderColor = isDarkmode ? "#ccc" : "#36A2EB";
+      Chart.defaults.color = isDarkmode ? "#fff" : "#000";
       Chart.defaults.maintainAspectRatio = false;
 
-      const data = parseChartConfig(atou(props.config), props.type);
+      const data = parseChartConfig(config.value, props.type);
       const ctx = chartCanvasElement.value!.getContext("2d")!;
 
-      new Chart(ctx, data);
+      chart?.destroy();
+      chart = new Chart(ctx, data);
 
       loading.value = false;
+    };
+
+    onMounted(() => {
+      isDarkmode.value = getDarkmodeStatus();
+
+      // watch darkmode change
+      useMutationObserver(
+        document.documentElement,
+        () => {
+          isDarkmode.value = getDarkmodeStatus();
+        },
+        {
+          attributeFilter: ["class", "data-theme"],
+          attributes: true,
+        },
+      );
+
+      watch(isDarkmode, (value) => renderChart(value), { immediate: true });
     });
 
     return (): (VNode | null)[] => [

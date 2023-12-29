@@ -1,6 +1,3 @@
-````md
-<!-- #region demo -->
-
 ::: echarts A scatter chart
 
 ```json
@@ -41,6 +38,3 @@
 ```
 
 :::
-
-<!-- #endregion demo -->
-````

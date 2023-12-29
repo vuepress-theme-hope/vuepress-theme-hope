@@ -2,22 +2,22 @@
 home: true
 title: 功能项目主页
 icon: home
-heroImage: /logo.svg
+heroImage: https://theme-hope-assets.vuejs.press/logo.svg
 heroText: VuePress Theme Hope
 tagline: 一个具有强大功能的 vuepress 主题✨
 actions:
-  - text: 使用教程 🧭
-    link: /zh/cookbook/tutorial/
+  - text: 快速上手
+    link: /zh/get-started/
+    icon: signs-post
     type: primary
 
-  - text: 介绍 💡
-    link: /zh/guide/get-started/intro.html
+  - text: 指南
+    icon: lightbulb
+    link: /zh/guide/
 
-  - text: 配置 🛠
-    link: /zh/config/
-
-  - text: 在线案例 🪀
-    link: https://stackblitz.com/fork/vuepress-theme-hope
+  - text: 案例
+    icon: star
+    link: /zh/demo/
 
 features:
   - title: Markdown 增强
@@ -192,10 +192,6 @@ export default {
 ```
 
 :::
-
-## 使用教程
-
-- [详细小白教程](../cookbook/tutorial/README.md)
 
 ## 官方 QQ 群
 

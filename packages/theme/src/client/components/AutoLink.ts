@@ -1,6 +1,6 @@
 import { useSiteData } from "@vuepress/client";
 import { ExternalLinkIcon } from "@vuepress/plugin-external-link-icon/client";
-import { isLinkHttp, isLinkMailto, isLinkTel } from "@vuepress/shared";
+import { isLinkHttp, isLinkWithProtocol } from "@vuepress/shared";
 import type { PropType, SlotsType, VNode } from "vue";
 import { computed, defineComponent, h, toRef } from "vue";
 import { useRoute } from "vue-router";
@@ -38,8 +38,8 @@ export default defineComponent({
   emits: ["focusout"],
 
   slots: Object as SlotsType<{
-    before?: () => VNode[] | VNode;
-    after?: () => VNode[] | VNode;
+    before?: () => VNode[] | VNode | null;
+    after?: () => VNode[] | VNode | null;
     default?: () => VNode[] | VNode;
   }>,
 
@@ -50,18 +50,16 @@ export default defineComponent({
     const config = toRef(props, "config");
 
     // if the link has http protocol
-    const hasHttpProtocol = computed(() => isLinkHttp(config.value.link));
+    const isHttp = computed(() => isLinkHttp(config.value.link));
 
     // if the link has non-http protocol
-    const hasNonHttpProtocol = computed(
-      () => isLinkMailto(config.value.link) || isLinkTel(config.value.link),
+    const withProtocol = computed(
+      () => !isHttp.value && isLinkWithProtocol(config.value.link),
     );
 
     // resolve the `target` attr
-    const linkTarget = computed(() =>
-      hasNonHttpProtocol.value
-        ? undefined
-        : config.value.target || (hasHttpProtocol.value ? "_blank" : undefined),
+    const linkTarget = computed(
+      () => config.value.target || (isHttp.value ? "_blank" : undefined),
     );
 
     // if the `target` attr is "_blank"
@@ -69,18 +67,14 @@ export default defineComponent({
 
     // render `<VPLink>` or not
     const renderVPLink = computed(
-      () =>
-        !hasHttpProtocol.value &&
-        !hasNonHttpProtocol.value &&
-        !isBlankTarget.value,
+      () => !isHttp.value && !withProtocol.value && !isBlankTarget.value,
     );
 
     // resolve the `rel` attr
-    const anchorRel = computed(() =>
-      hasNonHttpProtocol.value
-        ? undefined
-        : config.value.rel ||
-          (isBlankTarget.value ? "noopener noreferrer" : undefined),
+    const anchorRel = computed(
+      () =>
+        config.value.rel ||
+        (isBlankTarget.value ? "noopener noreferrer" : undefined),
     );
 
     // resolve the `aria-label` attr
@@ -108,9 +102,9 @@ export default defineComponent({
         ? config.value.activeMatch
           ? new RegExp(config.value.activeMatch).test(route.path)
           : // if this link is active in subpath
-          !shouldBeActiveInSubpath.value
-          ? route.path === config.value.link
-          : startsWith(route.path, config.value.link)
+            !shouldBeActiveInSubpath.value
+            ? route.path === config.value.link
+            : startsWith(route.path, config.value.link)
         : false,
     );
 

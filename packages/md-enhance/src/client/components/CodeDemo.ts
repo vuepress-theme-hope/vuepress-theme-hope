@@ -1,11 +1,11 @@
-import { useToggle } from "@vueuse/core";
+import { useEventListener, useToggle } from "@vueuse/core";
 import type { PropType, SlotsType, VNode } from "vue";
 import { computed, defineComponent, h, onMounted, ref, shallowRef } from "vue";
 import { LoadingIcon, atou } from "vuepress-shared/client";
 
 import { CODEPEN_SVG, JSFIDDLE_SVG } from "./icons.js";
 import type { CodeDemoOptions } from "../../shared/index.js";
-import { loadNormal, loadReact, loadVue } from "../composables/index.js";
+import { loadNormal, loadReact, loadVue } from "../composables/loadScript.js";
 import {
   getCode,
   getNormalCode,
@@ -103,8 +103,8 @@ export default defineComponent({
       props.type === "react"
         ? getReactCode(codeType.value, config.value)
         : props.type === "vue"
-        ? getVueCode(codeType.value, config.value)
-        : getNormalCode(codeType.value, config.value),
+          ? getVueCode(codeType.value, config.value)
+          : getNormalCode(codeType.value, config.value),
     );
 
     const isLegal = computed(() => code.value.isLegal);
@@ -145,6 +145,10 @@ export default defineComponent({
         }
       }
     };
+
+    useEventListener("beforeprint", () => {
+      toggleIsExpand(true);
+    });
 
     onMounted(() => {
       setTimeout(() => {
@@ -255,8 +259,8 @@ export default defineComponent({
                       js_pre_processor: codeType.value
                         ? codeType.value.js[1]
                         : code.value.jsx
-                        ? "babel"
-                        : "none",
+                          ? "babel"
+                          : "none",
                       // eslint-disable-next-line @typescript-eslint/naming-convention
                       css_pre_processor: codeType.value
                         ? codeType.value.css[1]

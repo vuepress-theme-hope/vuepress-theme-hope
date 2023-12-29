@@ -25,12 +25,11 @@ export default defineComponent({
 
     const enableComment = commentOptions.comment !== false;
 
-    const enabled = computed(() => {
-      return (
+    const enabled = computed(
+      () =>
         frontmatter.value.comment ||
-        (enableComment && frontmatter.value.comment !== false)
-      );
-    });
+        (enableComment && frontmatter.value.comment !== false),
+    );
 
     return (): VNode | null =>
       h(CommentProvider, {

@@ -13,6 +13,7 @@ import { LoadingIcon, atou, isFunction } from "vuepress-shared/client";
 
 import { useMermaidOptions } from "../helpers/index.js";
 import type { MermaidThemeVariables } from "../typings/index.js";
+import { getDarkmodeStatus } from "../utils/index.js";
 
 import "../styles/mermaid.scss";
 
@@ -91,6 +92,13 @@ export default defineComponent({
      * Mermaid 配置
      */
     code: { type: String, required: true },
+
+    /**
+     * Mermaid title
+     *
+     * Mermaid 标题
+     */
+    title: { type: String, default: "" },
   },
 
   setup(props) {
@@ -101,11 +109,17 @@ export default defineComponent({
 
     const svgCode = ref("");
     const isDarkmode = ref(false);
+    let loaded = false;
 
     const renderMermaid = async (): Promise<void> => {
       const [{ default: mermaid }] = await Promise.all([
-        import(/* webpackChunkName: "mermaid" */ "@mermaid"),
-        new Promise((resolve) => setTimeout(resolve, MARKDOWN_ENHANCE_DELAY)),
+        import(/* webpackChunkName: "mermaid" */ "mermaid"),
+        loaded
+          ? Promise.resolve()
+          : ((loaded = true),
+            new Promise((resolve) =>
+              setTimeout(resolve, MARKDOWN_ENHANCE_DELAY),
+            )),
       ]);
 
       mermaid.initialize({
@@ -161,25 +175,21 @@ export default defineComponent({
       const a = document.createElement("a");
 
       a.setAttribute("href", dataURI);
-      a.setAttribute("download", `${props.id}.svg`);
+      a.setAttribute(
+        "download",
+        `${props.title ? atou(props.title) : props.id}.svg`,
+      );
       a.click();
     };
 
     onMounted(() => {
-      const html = document.documentElement;
-
-      const getDarkmodeStatus = (): boolean =>
-        html.classList.contains("dark") ||
-        html.getAttribute("data-theme") === "dark";
-
-      // FIXME: Should correct handle dark selector
       isDarkmode.value = getDarkmodeStatus();
 
       void renderMermaid();
 
       // watch darkmode change
       useMutationObserver(
-        html,
+        document.documentElement,
         () => {
           isDarkmode.value = getDarkmodeStatus();
         },

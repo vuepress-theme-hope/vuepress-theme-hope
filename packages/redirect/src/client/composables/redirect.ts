@@ -75,14 +75,14 @@ export const setupRedirect = (): void => {
         hasLocalePage
           ? localeRoute
           : // the page does not exist
-          defaultBehavior === "homepage"
-          ? // locale homepage
-            matchedLocalePath
-          : defaultBehavior === "defaultLocale" && defaultRoute
-          ? // default locale page
-            defaultRoute
-          : // as is to get a 404 page of that locale
-            localeRoute;
+            defaultBehavior === "homepage"
+            ? // locale homepage
+              matchedLocalePath
+            : defaultBehavior === "defaultLocale" && defaultRoute
+              ? // default locale page
+                defaultRoute
+              : // as is to get a 404 page of that locale
+                localeRoute;
 
       void router.replace(routePath);
     }

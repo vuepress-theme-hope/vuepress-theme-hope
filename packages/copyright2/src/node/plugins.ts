@@ -7,7 +7,7 @@ import {
   isFunction,
 } from "vuepress-shared/node";
 
-import { convertOptions } from "./compact/index.js";
+import { convertOptions } from "./compact.js";
 import { copyrightLocales } from "./locales.js";
 import type { CopyrightOptions } from "./options.js";
 import { CLIENT_FOLDER, PLUGIN_NAME, logger } from "./utils.js";
@@ -20,7 +20,7 @@ export const copyrightPlugin =
     if (legacy)
       convertOptions(options as CopyrightOptions & Record<string, unknown>);
 
-    checkVersion(app, PLUGIN_NAME, "2.0.0-beta.67");
+    checkVersion(app, PLUGIN_NAME, "2.0.0-rc.0");
 
     if (app.env.isDebug) logger.info("Options:", options);
 

@@ -4,7 +4,7 @@ icon: lightbulb
 index: false
 ---
 
-::: info Tree Shakable
+## 大小优化
 
 这个插件完全支持 tree-shaking。
 
@@ -12,42 +12,6 @@ index: false
 
 例如，如果你使用 `{ rootComponents: { backToTop: true } }` 调用此插件，则仅注入 `<BackToTop />` 组件。
 
-:::
+## 搭配增强语法
 
-此插件支持 14 个组件:
-
-- [ArtPlayer](artplayer.md)
-
-- [AudioPlayer](audioplayer.md)
-
-- [BiliBili](bilibili.md)
-
-- [Badge](badge.md)
-
-- [CodePen](codepen.md)
-
-- [FontIcon](fonticon.md)
-
-- [PDF](pdf.md)
-
-- [Replit](replit.md)
-
-- [Share](share.md)
-
-- [SiteInfo](siteinfo.md)
-
-- [StackBlitz](stackblitz.md)
-
-- [XiGua](xigua.md)
-
-- [VidStack](vidstack.md)
-
-- [VideoPlayer](videoplayer.md)
-
-- [YouTube](youtube.md)
-
-和两个根组件:
-
-- [BackToTop](backtotop.md)
-
-- [Notice](notice.md)
+我们推荐你搭配 [md-enhance component 语法](https://plugin-md-enhance.vuejs.press/zh/guide/content/component.html) 使用插件。

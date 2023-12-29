@@ -3,7 +3,7 @@ title: VuePress 配置
 icon: gears
 order: 4
 category:
-  - 教程知识
+  - 教程
   - VuePress
 tag:
   - 配置

@@ -71,8 +71,8 @@ type KebabCaseToCamelCase<
       true
     >}`
   : Cap extends true
-  ? Capitalize<S>
-  : S;
+    ? Capitalize<S>
+    : S;
 
 type ArtPlayerBooleanOptionKey =
   | (typeof BOOLEAN_TRUE_ATTRS extends readonly (infer T extends string)[]
@@ -93,10 +93,10 @@ const getLang = (lang: string): string => {
   return SUPPORTED_LANG_CODE.includes(langCode)
     ? langCode
     : SUPPORTED_LANG_NAME.includes(langName)
-    ? langName
-    : langName === "zh"
-    ? "zh-cn"
-    : "en";
+      ? langName
+      : langName === "zh"
+        ? "zh-cn"
+        : "en";
 };
 
 export default defineComponent({

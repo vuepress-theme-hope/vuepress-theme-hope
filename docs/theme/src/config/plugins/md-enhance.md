@@ -1,7 +1,7 @@
 ---
 title: MdEnhance Plugin Config
 icon: fab fa-markdown
-order: 6
+order: 2
 category:
   - Config
 tag:
@@ -18,7 +18,7 @@ The `vuepress-plugin-md-enhance` plugin is enabled by default and provides Markd
 
 ::: info
 
-`vuepress-theme-hope` will set the `container` option to `true` by default.
+`vuepress-theme-hope` will set the `hint` option to `true` by default.
 
 See <ProjectLink name="md-enhance" path="/config.html">Plugin documentation</ProjectLink> for more details.
 
@@ -37,26 +37,26 @@ Whether to support full GFM syntax.
 
 For full GFM syntax, see [GFM](https://github.github.com/gfm/).
 
-We are not 100% supporting it to be honestly, we only supply its syntax including footnote, task list, code highlight, image mark and so on.
+Honestly, we do not 100% implement GFM, we only supply its common syntax.
 
 Some of the behavior might be different, for example to support Vue syntax, we are not disallowing `<script>` tags. But in most situation, the behavior should be same.
 
 :::
 
-### container
+### hint
 
 - Type: `boolean`
 - Default: `false`
 - Details:
-  - [Custom Container](../../guide/markdown/container.md)
+  - [Hint box](../../guide/markdown/hint.md)
 
-Whether to enable custom container including
+Whether to enable hint box including
 
 - info
 - note
 - tip
 - warning
-- danger
+- caution
 - details
 
 ### checkLinks
@@ -93,6 +93,31 @@ Whether to enable links check.
   - [v-pre wrapper](../../guide/markdown/others.md#v-pre)
 
 Whether to enable v-pre wrapper.
+
+### breaks
+
+- Type: `boolean`
+- Default: `false`
+- Enabled in GFM: Yes
+
+Whether convert `\n` in paragraphs into `<br>`s
+
+### linkify
+
+- Type: `boolean`
+- Default: `false`
+- Enabled in GFM: Yes
+
+Whether convert URL-like text into links
+
+### alert
+
+- Type: `boolean`
+- Default: `false`
+- Details:
+  - [GFM Alerts](../../guide/markdown/alert.md)
+
+Whether to enable gfm alerts.
 
 ### tabs
 
@@ -301,12 +326,12 @@ Please see [source code](https://github.com/vuepress-theme-hope/vuepress-theme-h
 
 Whether to enable Markdown import support. You can pass in a function for path resolution.
 
-### card
+### component
 
 - Type: `boolean`
 - Default: `false`
 
-Whether to enable card support
+Whether to enable component support
 
 ### chart
 
@@ -700,7 +725,7 @@ Default value: `"https://unpkg.com/react-dom/umd/react-dom.production.min.js"`
   /**
    * reveal.js options
    */
-  export interface RevealJsOptions {
+  interface RevealJsOptions {
     /**
      * reveal.js plugins
      *

@@ -68,11 +68,10 @@ export default defineComponent({
       return null;
     });
 
-    const getImage = (): Promise<BingWallpaperInfo[]> => {
-      return fetch("https://bing-wallpaper.vuejs.press/api/wallpaper").then(
+    const getImage = (): Promise<BingWallpaperInfo[]> =>
+      fetch("https://bing-wallpaper.vuejs.press/api/wallpaper").then(
         (response) => <Promise<BingWallpaperInfo[]>>response.json(),
       );
-    };
 
     const prev = (): void => {
       bingStorage.value.index--;

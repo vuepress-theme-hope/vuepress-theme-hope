@@ -9,7 +9,13 @@ tag:
   - Sidebar
 ---
 
-The sidebar may contain a list of related documents, document titles, and blogger information in blog mode.
+The sidebar contains list of related documents, document titles, and blogger information in blog mode.
+
+<!-- markdownlint-disable MD051 -->
+
+The theme allows you to generate side bar from [file structure](#generate-from-file-structure) or [headers](#generate-from-headers) automatically, or you can [customize](#sidebar-links) it manually.
+
+<!-- markdownlint-enable MD051 -->
 
 <!-- more -->
 
@@ -935,7 +941,7 @@ export default sidebar(/* Your sidebar configuration */);
 ```ts
 import { sidebar } from "vuepress-theme-hope";
 
-<!-- @include: ../../.vuepress/sidebar/en.ts{3-} -->
+<!-- @include: ../../.vuepress/sidebar/en.ts#config -->
 ```
 
 @tab JS
@@ -943,7 +949,7 @@ import { sidebar } from "vuepress-theme-hope";
 ```js
 import { sidebar } from "vuepress-theme-hope";
 
-<!-- @include: ../../.vuepress/sidebar/en.ts{3-} -->
+<!-- @include: ../../.vuepress/sidebar/en.ts#config -->
 ```
 
 :::

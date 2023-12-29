@@ -32,8 +32,8 @@ export default defineComponent({
   emits: ["close"],
 
   slots: Object as SlotsType<{
-    before?: () => VNode | VNode[];
-    after?: () => VNode | VNode[];
+    before?: () => VNode[] | VNode | null;
+    after?: () => VNode[] | VNode | null;
   }>,
 
   setup(props, { emit, slots }) {

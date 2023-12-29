@@ -8,14 +8,18 @@ import {
   isString,
 } from "vuepress-shared/node";
 
+import { convertOptions } from "./compact.js";
 import { copyCodeLocales } from "./locales.js";
 import type { CopyCodeOptions } from "./options.js";
 import { CLIENT_FOLDER, PLUGIN_NAME, logger } from "./utils.js";
 
 export const copyCodePlugin =
-  (options: CopyCodeOptions = {}): PluginFunction =>
+  (options: CopyCodeOptions = {}, legacy = true): PluginFunction =>
   (app) => {
-    checkVersion(app, PLUGIN_NAME, "2.0.0-beta.67");
+    if (legacy)
+      convertOptions(options as CopyCodeOptions & Record<string, unknown>);
+
+    checkVersion(app, PLUGIN_NAME, "2.0.0-rc.0");
 
     if (app.env.isDebug) logger.info("Options:", options);
 
@@ -40,8 +44,8 @@ export const copyCodePlugin =
         COPY_CODE_SELECTOR: isArray(options.selector)
           ? options.selector
           : isString(options.selector)
-          ? [options.selector]
-          : ['.theme-default-content div[class*="language-"] pre'],
+            ? [options.selector]
+            : ['.theme-default-content div[class*="language-"] pre'],
       }),
 
       extendsBundlerOptions: (bundlerOptions: unknown, app): void => {

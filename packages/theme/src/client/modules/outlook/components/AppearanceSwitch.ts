@@ -1,6 +1,7 @@
 import type { VNode } from "vue";
-import { defineComponent, h } from "vue";
+import { defineComponent, h, nextTick } from "vue";
 
+import { usePure } from "@theme-hope/composables/index";
 import {
   AutoIcon,
   DarkIcon,
@@ -11,13 +12,24 @@ import { useDarkmode } from "@theme-hope/modules/outlook/composables/index";
 
 import "../styles/appearance-switch.scss";
 
+declare global {
+  interface ViewTransition {
+    ready: Promise<void>;
+  }
+
+  interface Document {
+    startViewTransition: (callback: () => Promise<void>) => ViewTransition;
+  }
+}
+
 export default defineComponent({
   name: "AppearanceSwitch",
 
   setup() {
-    const { config, status } = useDarkmode();
+    const { config, isDarkmode, status } = useDarkmode();
+    const pure = usePure();
 
-    const toggleDarkMode = (): void => {
+    const updateDarkmodeStatus = (): void => {
       if (config.value === "switch")
         status.value = (<Record<DarkmodeStatus, DarkmodeStatus>>{
           light: "dark",
@@ -27,13 +39,65 @@ export default defineComponent({
       else status.value = status.value === "light" ? "dark" : "light";
     };
 
+    const toggleDarkmode = async (event: MouseEvent): Promise<void> => {
+      const useViewTransition =
+        // @ts-expect-error
+        document.startViewTransition &&
+        !window.matchMedia("(prefers-reduced-motion: reduce)").matches &&
+        !pure.value;
+
+      if (!useViewTransition || !event) {
+        updateDarkmodeStatus();
+
+        return;
+      }
+
+      const x = event.clientX;
+      const y = event.clientY;
+
+      const endRadius = Math.hypot(
+        Math.max(x, innerWidth - x),
+        Math.max(y, innerHeight - y),
+      );
+
+      const oldStatus = isDarkmode.value;
+
+      const transition = document.startViewTransition(async () => {
+        updateDarkmodeStatus();
+        await nextTick();
+      });
+
+      await transition.ready;
+
+      if (isDarkmode.value !== oldStatus)
+        document.documentElement.animate(
+          {
+            clipPath: isDarkmode.value
+              ? [
+                  `circle(${endRadius}px at ${x}px ${y}px)`,
+                  `circle(0px at ${x}px ${y}px)`,
+                ]
+              : [
+                  `circle(0px at ${x}px ${y}px)`,
+                  `circle(${endRadius}px at ${x}px ${y}px)`,
+                ],
+          },
+          {
+            duration: 400,
+            pseudoElement: isDarkmode.value
+              ? "::view-transition-old(root)"
+              : "::view-transition-new(root)",
+          },
+        );
+    };
+
     return (): VNode =>
       h(
         "button",
         {
           type: "button",
           id: "appearance-switch",
-          onClick: () => toggleDarkMode(),
+          onClick: toggleDarkmode,
         },
         [
           h(AutoIcon, {

@@ -1,4 +1,4 @@
-import type { LocaleConfig, Page, PageFrontmatter } from "@vuepress/core";
+import type { LocaleConfig, PageFrontmatter } from "@vuepress/core";
 
 import type { AutoCatalogLocaleData } from "../shared/index.js";
 
@@ -10,24 +10,64 @@ export interface DeprecatedAutoCatalogOptions {
   iconComponent?: never;
 
   /**
-   * @deprecated use `titleGetter` instead
+   * @deprecated use `defineAutoCatalogGetter` instead
    */
   getTitle?: never;
 
   /**
-   * @deprecated use `iconGetter` instead
+   * @deprecated use `defineAutoCatalogGetter` instead
    */
   getIcon?: never;
 
   /**
-   * @deprecated use `orderGetter` instead
+   * @deprecated use `defineAutoCatalogGetter` instead
    */
   getOrder?: never;
 
   /**
-   * @deprecated use `shouldIndex` instead
+   * @deprecated use `defineAutoCatalogGetter` instead
    */
   getIndex?: never;
+
+  /**
+   * @deprecated use `defineAutoCatalogGetter` instead
+   */
+  titleGetter?: never;
+
+  /**
+   * @deprecated use `defineAutoCatalogGetter` instead
+   */
+  titleRouteMetaKey?: never;
+
+  /**
+   * @deprecated use `defineAutoCatalogGetter` instead
+   */
+  iconGetter?: never;
+
+  /**
+   * @deprecated use `defineAutoCatalogGetter` instead
+   */
+  iconRouteMetaKey?: never;
+
+  /**
+   * @deprecated use `defineAutoCatalogGetter` instead
+   */
+  orderGetter?: never;
+
+  /**
+   * @deprecated use `defineAutoCatalogGetter` instead
+   */
+  orderRouteMetaKey?: never;
+
+  /**
+   * @deprecated use `defineAutoCatalogGetter` instead
+   */
+  shouldIndex?: never;
+
+  /**
+   * @deprecated use `defineAutoCatalogGetter` instead
+   */
+  indexRouteMetaKey?: never;
 }
 
 export interface AutoCatalogOptions extends DeprecatedAutoCatalogOptions {
@@ -74,118 +114,6 @@ export interface AutoCatalogOptions extends DeprecatedAutoCatalogOptions {
    * @default []
    */
   exclude?: (RegExp | string)[];
-
-  /**
-   * Page title getter
-   *
-   * 页面标题获取器
-   */
-  titleGetter?: <
-    ExtraPageData extends Record<string | number | symbol, unknown> = Record<
-      never,
-      never
-    >,
-    ExtraPageFrontmatter extends Record<
-      string | number | symbol,
-      unknown
-    > = Record<string, unknown>,
-    ExtraPageFields extends Record<string | number | symbol, unknown> = Record<
-      never,
-      never
-    >,
-  >(
-    page: Page<ExtraPageData, ExtraPageFrontmatter, ExtraPageFields>,
-  ) => string;
-
-  /**
-   * @default 'title'
-   */
-  titleRouteMetaKey?: string;
-
-  /**
-   * Page icon getter
-   *
-   * 页面图标获取器
-   */
-  iconGetter?: <
-    ExtraPageData extends Record<string | number | symbol, unknown> = Record<
-      never,
-      never
-    >,
-    ExtraPageFrontmatter extends Record<
-      string | number | symbol,
-      unknown
-    > = Record<string, unknown>,
-    ExtraPageFields extends Record<string | number | symbol, unknown> = Record<
-      never,
-      never
-    >,
-  >(
-    page: Page<ExtraPageData, ExtraPageFrontmatter, ExtraPageFields>,
-  ) => string | null | undefined;
-
-  /**
-   * @default 'icon'
-   */
-  iconRouteMetaKey?: string;
-
-  /**
-   * Page order getter
-   *
-   * 页面顺序获取器
-   */
-  orderGetter?: <
-    ExtraPageData extends Record<string | number | symbol, unknown> = Record<
-      never,
-      never
-    >,
-    ExtraPageFrontmatter extends Record<
-      string | number | symbol,
-      unknown
-    > = Record<string, unknown>,
-    ExtraPageFields extends Record<string | number | symbol, unknown> = Record<
-      never,
-      never
-    >,
-  >(
-    page: Page<ExtraPageData, ExtraPageFrontmatter, ExtraPageFields>,
-  ) => number | null | undefined;
-
-  /**
-   * @default 'order'
-   */
-  orderRouteMetaKey?: string;
-
-  /**
-   * Page index getter
-   *
-   * @description Returning a boolean value to indicate whether the page should be included in the catalog
-   *
-   * 页面索引获取器
-   *
-   * @description 返回一个布尔值，用于指示页面是否应该包含在目录中
-   */
-  shouldIndex?: <
-    ExtraPageData extends Record<string | number | symbol, unknown> = Record<
-      never,
-      never
-    >,
-    ExtraPageFrontmatter extends Record<
-      string | number | symbol,
-      unknown
-    > = Record<string, unknown>,
-    ExtraPageFields extends Record<string | number | symbol, unknown> = Record<
-      never,
-      never
-    >,
-  >(
-    page: Page<ExtraPageData, ExtraPageFrontmatter, ExtraPageFields>,
-  ) => boolean;
-
-  /**
-   * @default 'index'
-   */
-  indexRouteMetaKey?: string;
 
   /**
    * Component name to use as catalog

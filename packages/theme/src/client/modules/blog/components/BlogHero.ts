@@ -11,7 +11,6 @@ import DropTransition from "@theme-hope/components/transitions/DropTransition";
 
 import { SlideDownIcon } from "./icons/icons.js";
 import type { ThemeBlogHomePageFrontmatter } from "../../../../shared/index.js";
-import defaultHeroBgImagePath from "../assets/hero.jpg";
 
 import "../styles/blog-hero.scss";
 
@@ -31,12 +30,14 @@ export interface BackgroundInfo {
   isFullScreen: boolean;
 }
 
+const DEFAULT_HERO = "//theme-hope-assets.vuejs.press/hero/default.jpg";
+
 export default defineComponent({
   name: "BlogHero",
 
   slots: Object as SlotsType<{
-    heroBg?: (props: BackgroundInfo) => VNode | VNode[];
-    heroInfo?: (props: HeroInfo) => VNode | VNode[];
+    heroBg?: (props: BackgroundInfo) => VNode[] | VNode | null;
+    heroInfo?: (props: HeroInfo) => VNode[] | VNode | null;
   }>,
 
   setup(_props, { slots }) {
@@ -77,8 +78,8 @@ export default defineComponent({
         image: isString(bgImage)
           ? withBase(bgImage)
           : bgImage === false
-          ? null
-          : defaultHeroBgImagePath,
+            ? null
+            : DEFAULT_HERO,
         imageDark: isString(bgImageDark) ? withBase(bgImageDark) : null,
         bgStyle: bgImageStyle,
         isFullScreen: isFullScreen.value,

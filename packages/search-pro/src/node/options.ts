@@ -27,7 +27,16 @@ export interface SearchProCustomFieldOptions {
    *
    * 自定义项目的获取器
    */
-  getter: (page: Page) => string | string[] | null;
+  getter: <
+    ExtraPageData extends Record<string, unknown> = Record<never, never>,
+    ExtraPageFrontmatter extends Record<string, unknown> = Record<
+      string,
+      unknown
+    >,
+    ExtraPageFields extends Record<string, unknown> = Record<never, never>,
+  >(
+    page: Page<ExtraPageData, ExtraPageFrontmatter, ExtraPageFields>,
+  ) => string[] | string | null | undefined;
 
   /**
    * Display content
@@ -184,7 +193,7 @@ export interface SearchProOptions extends DeprecatedSearchProOptions {
    *
    * 结果排序策略
    *
-   * @description 当有多个匹配的结果时，会按照策略对结果进行排序。`max` 表示总分更高的页面会排在前面。`total` 表示最高分更高的页面会排在前面。
+   * @description 当有多个匹配的结果时，会按照策略对结果进行排序。`max` 表示最高分更高的页面会排在前面。`total` 表示总分更高的页面会排在前面
    *
    * @default "max"
    */
@@ -203,4 +212,14 @@ export interface SearchProOptions extends DeprecatedSearchProOptions {
    * 按语言的创建索引选项
    */
   indexLocaleOptions?: Record<string, SearchProIndexOptions>;
+
+  /**
+   * Filter pages to be indexed
+   *
+   * 过滤需要索引的页面
+   *
+   * @param page Page
+   * @returns whether the page should be indexed
+   */
+  filter?: (page: Page) => boolean;
 }

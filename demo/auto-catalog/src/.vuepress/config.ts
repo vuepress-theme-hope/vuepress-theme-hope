@@ -12,11 +12,11 @@ export default defineUserConfig({
 
   // we are using a custom theme adding this plugin
   theme: defaultTheme({
-    logo: "/logo.svg",
+    logo: "https://theme-hope-assets.vuejs.press/logo.svg",
 
     repo: "vuepress-theme-hope/vuepress-theme-hope/tree/main/demo/auto-catalog/",
 
-    navbar: ["/", "/feature/", "/post/"],
+    navbar: ["/", "/demo", "/feature/", "/post/"],
   }),
 
   plugins: [autoCatalogPlugin()],

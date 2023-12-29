@@ -79,13 +79,13 @@ The page's sidebar heading rendering depth.
 - Type: `boolean`
 - Default: `true`
 
-Whether index current page in sidebar.
+Whether index current page in sidebar and catalog.
 
 ## order
 
 - Type: `number`
 
-Page order in sidebar.
+Page order in sidebar and catalog.
 
 - By filling in a positive number, the page will appear in the front, while the smaller number comes to the front.
 - By filling in a negative number, the page will appear in the end, while the greater number comes to the front. (e.g. -1 is after -2)

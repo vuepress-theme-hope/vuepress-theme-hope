@@ -10,13 +10,12 @@ copy:
   minLength: 40
 ---
 
-Sometimes, you may not want some of your articles to be copied by others, or you want others to automatically generate a piece of copyright information to the clipboard when copying.
-
-`vuepress-theme-hope` use <ProjectLink name="copyright2">vuepress-plugin-copyright2</ProjectLink> to provide related features.
+You may not want some of your articles to be copied by others, or you want copyright information appended to the clipboard when copying.
+`vuepress-theme-hope` use <ProjectLink name="copyright2">vuepress-plugin-copyright2</ProjectLink> to provide this feature. To use it, install `vuepress-plugin-copyright2` manually in your project.
 
 ::: info
 
-`vuepress-theme-hope` passes `plugins.copyright` in theme options as plugin options to `vuepress-plugin-copyright2`.
+`vuepress-theme-hope` passes `plugins.copyright` in theme options to `vuepress-plugin-copyright2`.
 
 :::
 
@@ -37,7 +36,7 @@ Setting to `true` is equivalent to setting `{ global: true }`.
 - When the `global` option of the plugin is not `true`, the plugin is disabled globally, and you need to manually enable it by setting `copy: true` in page frontmatter.
 - Setting `global: true` makes it enabled globally, and allows setting `copy: false` in page frontmatter to disable it.
 
-To avoid disturbing visitors, copyright information will be appended only when the length of content copied by the user is not less than `100`. If you want to change this trigger value, please set `triggerWords`, and this option supports being overridden via `copy.triggerWord` in page frontmatter.
+To avoid disturbing visitors, copyright information will be appended only when the length of content copied by the user is not less than `100`. If you want to change this trigger value, please set `triggerLength`, and this option supports being overridden via `copy.triggerLength` in page frontmatter.
 
 ## Disable Copy and Selection
 

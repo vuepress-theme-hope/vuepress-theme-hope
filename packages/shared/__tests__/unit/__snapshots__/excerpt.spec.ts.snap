@@ -9,7 +9,7 @@ exports[`Should generate page excerpt correctly > Should generate excerpt for al
 
 exports[`Should generate page excerpt correctly > Should generate excerpt for all pages 3`] = `
 "<p>A long code block which is expected to be cut of</p>
-<div class=\\"language-javascript line-numbers-mode\\" data-ext=\\"js\\"><pre class=\\"language-javascript\\"><code>const a = 1;
+<div class="language-javascript line-numbers-mode" data-ext="js"><pre class="language-javascript"><code>const a = 1;
 const a = 1;
 const a = 1;
 const a = 1;
@@ -97,13 +97,13 @@ const a = 1;
 const a = 1;
 const a = 1;
 const a = 1;
-</code></pre><div class=\\"line-numbers\\" aria-hidden=\\"true\\"><div class=\\"line-number\\"></div><div class=\\"line-number\\"></div><div class=\\"line-number\\"></div><div class=\\"line-number\\"></div><div class=\\"line-number\\"></div><div class=\\"line-number\\"></div><div class=\\"line-number\\"></div><div class=\\"line-number\\"></div><div class=\\"line-number\\"></div><div class=\\"line-number\\"></div><div class=\\"line-number\\"></div><div class=\\"line-number\\"></div><div class=\\"line-number\\"></div><div class=\\"line-number\\"></div><div class=\\"line-number\\"></div><div class=\\"line-number\\"></div><div class=\\"line-number\\"></div><div class=\\"line-number\\"></div><div class=\\"line-number\\"></div><div class=\\"line-number\\"></div><div class=\\"line-number\\"></div><div class=\\"line-number\\"></div><div class=\\"line-number\\"></div><div class=\\"line-number\\"></div><div class=\\"line-number\\"></div><div class=\\"line-number\\"></div><div class=\\"line-number\\"></div><div class=\\"line-number\\"></div><div class=\\"line-number\\"></div><div class=\\"line-number\\"></div><div class=\\"line-number\\"></div><div class=\\"line-number\\"></div><div class=\\"line-number\\"></div><div class=\\"line-number\\"></div><div class=\\"line-number\\"></div><div class=\\"line-number\\"></div><div class=\\"line-number\\"></div><div class=\\"line-number\\"></div><div class=\\"line-number\\"></div><div class=\\"line-number\\"></div><div class=\\"line-number\\"></div><div class=\\"line-number\\"></div><div class=\\"line-number\\"></div><div class=\\"line-number\\"></div><div class=\\"line-number\\"></div><div class=\\"line-number\\"></div><div class=\\"line-number\\"></div><div class=\\"line-number\\"></div><div class=\\"line-number\\"></div><div class=\\"line-number\\"></div><div class=\\"line-number\\"></div><div class=\\"line-number\\"></div><div class=\\"line-number\\"></div><div class=\\"line-number\\"></div><div class=\\"line-number\\"></div><div class=\\"line-number\\"></div><div class=\\"line-number\\"></div><div class=\\"line-number\\"></div><div class=\\"line-number\\"></div><div class=\\"line-number\\"></div><div class=\\"line-number\\"></div><div class=\\"line-number\\"></div><div class=\\"line-number\\"></div><div class=\\"line-number\\"></div><div class=\\"line-number\\"></div><div class=\\"line-number\\"></div><div class=\\"line-number\\"></div><div class=\\"line-number\\"></div><div class=\\"line-number\\"></div><div class=\\"line-number\\"></div><div class=\\"line-number\\"></div><div class=\\"line-number\\"></div><div class=\\"line-number\\"></div><div class=\\"line-number\\"></div><div class=\\"line-number\\"></div><div class=\\"line-number\\"></div><div class=\\"line-number\\"></div><div class=\\"line-number\\"></div><div class=\\"line-number\\"></div><div class=\\"line-number\\"></div><div class=\\"line-number\\"></div><div class=\\"line-number\\"></div><div class=\\"line-number\\"></div><div class=\\"line-number\\"></div><div class=\\"line-number\\"></div><div class=\\"line-number\\"></div><div class=\\"line-number\\"></div><div class=\\"line-number\\"></div></div></div>"
+</code></pre><div class="line-numbers" aria-hidden="true"><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div></div></div>"
 `;
 
 exports[`Should generate page excerpt correctly > Should generate excerpt for all pages 4`] = `
 "<p>Here is <strong>article excerpt</strong>.</p>
-<div class=\\"language-javascript line-numbers-mode\\" data-ext=\\"js\\"><pre class=\\"language-javascript\\"><code>const a = 1;
-</code></pre><div class=\\"line-numbers\\" aria-hidden=\\"true\\"><div class=\\"line-number\\"></div></div></div>"
+<div class="language-javascript line-numbers-mode" data-ext="js"><pre class="language-javascript"><code>const a = 1;
+</code></pre><div class="line-numbers" aria-hidden="true"><div class="line-number"></div></div></div>"
 `;
 
 exports[`Should generate page excerpt correctly > Should generate excerpt for all pages 5`] = `
@@ -121,11 +121,11 @@ exports[`Should generate page excerpt correctly > Should generate excerpt for al
 `;
 
 exports[`Should generate page excerpt correctly > Should generate excerpt for all pages 6`] = `
-"<p>This is a <a href=\\"/demo.html\\" target=\\"blank\\">link</a> referencing other markdown.</p>
-<p><img src=\\"/logo.svg\\" alt=\\"logo\\"></p>
-<p><img src=\\"/logo.svg\\" alt=\\"logo\\"></p>
-<p><img src=\\"https://exmaple.com/logo.svg\\" alt=\\"logo\\"></p>
-<p>A inline image , <img src=\\"/logo.svg\\" alt=\\"logo\\"> and a <img src=\\"https://exmaple.com/logo.svg\\" alt=\\"logo\\">.</p>"
+"<p>This is a <a href="/demo.html" target="blank">link</a> referencing other markdown.</p>
+<p><img src="/logo.svg" alt="logo"></p>
+<p><img src="/logo.svg" alt="logo"></p>
+<p><img src="https://exmaple.com/logo.svg" alt="logo"></p>
+<p>A inline image , <img src="/logo.svg" alt="logo"> and a <img src="https://exmaple.com/logo.svg" alt="logo">.</p>"
 `;
 
 exports[`Should generate page excerpt correctly > Should generate excerpt for all pages 7`] = `""`;
@@ -138,8 +138,8 @@ exports[`Should generate page excerpt correctly > Should only generate excerpt f
 
 exports[`Should generate page excerpt correctly > Should only generate excerpt for marker 4`] = `
 "<p>Here is <strong>article excerpt</strong>.</p>
-<div class=\\"language-javascript line-numbers-mode\\" data-ext=\\"js\\"><pre class=\\"language-javascript\\"><code>const a = 1;
-</code></pre><div class=\\"line-numbers\\" aria-hidden=\\"true\\"><div class=\\"line-number\\"></div></div></div>"
+<div class="language-javascript line-numbers-mode" data-ext="js"><pre class="language-javascript"><code>const a = 1;
+</code></pre><div class="line-numbers" aria-hidden="true"><div class="line-number"></div></div></div>"
 `;
 
 exports[`Should generate page excerpt correctly > Should only generate excerpt for marker 5`] = `""`;

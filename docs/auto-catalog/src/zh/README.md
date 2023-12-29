@@ -2,15 +2,16 @@
 home: true
 title: 主页
 icon: home
-heroImage: /logo.svg
 heroText: vuepress-plugin-auto-catalog
-tagline: 为 VuePress2 提供自动目录页生成
+tagline: 为 VuePress2 提供目录页生成与目录组件
 actions:
-  - text: 快速上手 💡
+  - text: 快速上手
+    icon: lightbulb
     link: ./guide.html
     type: primary
 
-  - text: 配置 🛠
+  - text: 配置
+    icon: tools
     link: ./config.html
 
 features:
@@ -61,15 +62,16 @@ npm i -D vuepress-plugin-auto-catalog
 
 ```ts
 // .vuepress/config.ts
+import { defineUserConfig } from "vuepress";
 import { autoCatalogPlugin } from "vuepress-plugin-auto-catalog";
 
-export default {
+export default defineUserConfig({
   plugins: [
     autoCatalogPlugin({
       //插件选项
     }),
   ],
-};
+});
 ```
 
 @tab JS

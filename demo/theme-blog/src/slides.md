@@ -4,7 +4,7 @@ icon: person-chalkboard
 layout: Slide
 ---
 
-<!-- markdownlint-disable MD024 MD033 MD051 -->
+<!-- markdownlint-disable MD024 MD051 -->
 
 @slidestart
 
@@ -160,7 +160,7 @@ You can use all kinds of markup in slides.
 
 ## Layout
 
-![Logo](/logo.svg)
+![Logo](https://theme-hope-assets.vuejs.press/logo.svg)
 
 <!-- .element: class="r-stretch" -->
 

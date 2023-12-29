@@ -9,7 +9,7 @@ export default defineComponent({
   name: "GlobalEncrypt",
 
   slots: Object as SlotsType<{
-    default: () => VNode | VNode[];
+    default: () => VNode[] | VNode | null;
   }>,
 
   setup(_props, { slots }) {

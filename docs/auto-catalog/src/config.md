@@ -12,9 +12,7 @@ icon: gears
 
 Max depth of Catalog items level.
 
-::: note
-
-Only available when you use the built-in catalog component.
+::: note Only available with built-in component.
 
 :::
 
@@ -24,6 +22,10 @@ Only available when you use the built-in catalog component.
 - Default: `false`
 
 Whether show index for catalog
+
+::: note Only available with built-in component.
+
+:::
 
 ### exclude
 
@@ -39,47 +41,12 @@ Page paths excluding from auto generation.
 
 Page Frontmatter generator.
 
-### titleGetter
-
-- Type: `(page: Page) => string`
-- Default: `(page: Page) => page.title`
-
-Page title getter
-
-### iconGetter
-
-- Type: `(page: Page) => string`
-- Required: No
-
-Page icon getter
-
-### orderGetter
-
-- Type: `(page: Page) => string`
-- Required: No
-
-Page order getter
-
-### shouldIndex
-
-- Type: `(page: Page) => boolean`
-- Default: `() => true`
-
-Whether page should be indexed getter
-
 ### component
 
 - Type: `string`
 - Required: No
 
 Catalog component name.
-
-### iconComponent
-
-- Type: `string`
-- Required: No
-
-Icon component name, icon info will be passed to icon props.
 
 ### locales
 
@@ -133,18 +100,26 @@ Locales config for catalog component.
 
 ## Client options
 
-### defineAutoCatalogIconComponent
+### defineAutoCatalogGetter
 
 ```ts
-export type AutoCatalogIconComponent = Component<{
-  icon: string;
-}>;
-export declare const defineAutoCatalogIconComponent: (
-  options: AutoCatalogIconComponent,
-) => void;
+interface AutoCatalogInfo {
+  /** Catalog title */
+  title: string;
+  /** Catalog order */
+  order?: number;
+  /** Catalog content */
+  content?: Component;
+}
+
+type AutoCatalogInfoGetter = (
+  meta: Record<string, unknown>,
+) => AutoCatalogInfo | null;
+
+const defineAutoCatalogGetter: (options: AutoCatalogInfoGetter) => void;
 ```
 
-Customize icon component for auto catalog.
+Customize how to extract catalog info from meta.
 
 ## AutoCatalog Component Props
 

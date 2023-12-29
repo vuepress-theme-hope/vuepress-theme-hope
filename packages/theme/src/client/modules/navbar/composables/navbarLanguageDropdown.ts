@@ -1,6 +1,6 @@
 import { useRouteLocale, useSiteLocaleData } from "@vuepress/client";
 import { computedWithControl } from "@vueuse/core";
-import type { ComputedRef } from "vue";
+import type { ComputedRef, WatchSource } from "vue";
 import { useRoute, useRouter } from "vue-router";
 import { entries, keys } from "vuepress-shared/client";
 
@@ -26,15 +26,16 @@ export const useNavbarLanguageDropdown =
     const themeLocale = useThemeLocaleData();
 
     return computedWithControl(
-      () =>
-        __VUEPRESS_DEV__
-          ? route.path
-          : [
+      __VUEPRESS_DEV__
+        ? <WatchSource>(
+            (() => [
               route.path,
               siteLocale.value.locales,
               themeData.value.extraLocales,
               themeLocale.value.navbarLocales,
-            ],
+            ])
+          )
+        : <WatchSource>(() => route.path),
       () => {
         const localePaths = keys(siteLocale.value.locales);
         const extraLocales = entries(themeData.value.extraLocales ?? {});

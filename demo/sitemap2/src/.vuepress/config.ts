@@ -12,7 +12,7 @@ export default defineUserConfig({
   description: "VuePress2 Sitemap Plugin",
 
   theme: defaultTheme({
-    logo: "/logo.svg",
+    logo: "https://theme-hope-assets.vuejs.press/logo.svg",
 
     repo: "vuepress-theme-hope/vuepress-theme-hope/tree/main/demo/sitemap2/",
   }),

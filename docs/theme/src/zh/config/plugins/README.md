@@ -1,23 +1,16 @@
 ---
 title: 插件配置
 icon: puzzle-piece
-index: false
 dir:
   order: 4
 ---
 
-## 目录
+::: warning 通过主题使用主题插件
 
-- [主题插件介绍](intro.md)
+主题内置了一些插件以增强您的使用体验，您应该通过主题选项自定义这些插件。
 
-- [博客插件配置](blog.md)
+主题需要一些插件才能正常工作，这意味着您不能自己使用选项来调用它们。
 
-- [版权信息插件配置](copyright.md)
+:::
 
-- [Feed 插件配置](feed.md)
-
-- [Markdown 增强插件配置](md-enhance.md)
-
-- [PWA 插件配置](pwa.md)
-
-- [其他插件](others.md)
+<AutoCatalog />

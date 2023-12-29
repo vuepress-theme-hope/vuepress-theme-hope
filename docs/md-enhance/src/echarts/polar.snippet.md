@@ -1,6 +1,3 @@
-````md
-<!-- #region demo -->
-
 ::: echarts Two Value-Axes in Polar
 
 ```js
@@ -42,6 +39,3 @@ const option = {
 ```
 
 :::
-
-<!-- #endregion demo -->
-````

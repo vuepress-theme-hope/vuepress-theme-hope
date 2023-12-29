@@ -1,5 +1,5 @@
 ---
-title: 插件说明
+title: 主题插件
 icon: circle-info
 order: 1
 category:

@@ -1,7 +1,7 @@
 ---
 home: true
 title: Home
-heroImage: /logo.svg
+heroImage: https://theme-hope-assets.vuejs.press/logo.svg
 heroText: vuepress-plugin-comment2
 tagline: Comment and pageview plugin for VuePress2
 actions:

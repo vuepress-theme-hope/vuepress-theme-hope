@@ -1,4 +1,4 @@
-import type { App, HeadConfig, Page } from "@vuepress/core";
+import type { App, HeadConfig } from "@vuepress/core";
 import type { Author } from "vuepress-shared/node";
 
 import type {
@@ -68,18 +68,12 @@ export interface SeoOptions {
    * 页面是否是文章
    */
   isArticle?: <
-    ExtraPageData extends Record<string | number | symbol, unknown> = Record<
-      never,
-      never
-    >,
-    ExtraPageFrontmatter extends Record<
-      string | number | symbol,
+    ExtraPageData extends Record<string, unknown> = Record<never, never>,
+    ExtraPageFrontmatter extends Record<string, unknown> = Record<
+      string,
       unknown
-    > = Record<string, unknown>,
-    ExtraPageFields extends Record<string | number | symbol, unknown> = Record<
-      never,
-      never
     >,
+    ExtraPageFields extends Record<string, unknown> = Record<never, never>,
   >(
     page: ExtendPage<ExtraPageData, ExtraPageFrontmatter, ExtraPageFields>,
   ) => boolean;
@@ -90,18 +84,12 @@ export interface SeoOptions {
    * 自定义 OGP 生成器
    */
   ogp?: <
-    ExtraPageData extends Record<string | number | symbol, unknown> = Record<
-      never,
-      never
-    >,
-    ExtraPageFrontmatter extends Record<
-      string | number | symbol,
+    ExtraPageData extends Record<string, unknown> = Record<never, never>,
+    ExtraPageFrontmatter extends Record<string, unknown> = Record<
+      string,
       unknown
-    > = Record<string, unknown>,
-    ExtraPageFields extends Record<string | number | symbol, unknown> = Record<
-      never,
-      never
     >,
+    ExtraPageFields extends Record<string, unknown> = Record<never, never>,
   >(
     /**
      * OGP Object inferred by plugin
@@ -125,18 +113,12 @@ export interface SeoOptions {
    * 自定义 JSON-LD 生成器
    */
   jsonLd?: <
-    ExtraPageData extends Record<string | number | symbol, unknown> = Record<
-      never,
-      never
-    >,
-    ExtraPageFrontmatter extends Record<
-      string | number | symbol,
+    ExtraPageData extends Record<string, unknown> = Record<never, never>,
+    ExtraPageFrontmatter extends Record<string, unknown> = Record<
+      string,
       unknown
-    > = Record<string, unknown>,
-    ExtraPageFields extends Record<string | number | symbol, unknown> = Record<
-      never,
-      never
     >,
+    ExtraPageFields extends Record<string, unknown> = Record<never, never>,
   >(
     /**
      * JSON-LD Object inferred by plugin
@@ -160,18 +142,12 @@ export interface SeoOptions {
    * 自定义 Head 标签
    */
   customHead?: <
-    ExtraPageData extends Record<string | number | symbol, unknown> = Record<
-      never,
-      never
-    >,
-    ExtraPageFrontmatter extends Record<
-      string | number | symbol,
+    ExtraPageData extends Record<string, unknown> = Record<never, never>,
+    ExtraPageFrontmatter extends Record<string, unknown> = Record<
+      string,
       unknown
-    > = Record<string, unknown>,
-    ExtraPageFields extends Record<string | number | symbol, unknown> = Record<
-      never,
-      never
     >,
+    ExtraPageFields extends Record<string, unknown> = Record<never, never>,
   >(
     /**
      * Head tag config
@@ -184,7 +160,7 @@ export interface SeoOptions {
      *
      * 页面对象
      */
-    page: Page<ExtraPageData, ExtraPageFrontmatter, ExtraPageFields>,
+    page: ExtendPage<ExtraPageData, ExtraPageFrontmatter, ExtraPageFields>,
     /** VuePress App */
     app: App,
   ) => void;
@@ -197,18 +173,12 @@ export interface SeoOptions {
   canonical?:
     | string
     | (<
-        ExtraPageData extends Record<
-          string | number | symbol,
+        ExtraPageData extends Record<string, unknown> = Record<never, never>,
+        ExtraPageFrontmatter extends Record<string, unknown> = Record<
+          string,
           unknown
-        > = Record<never, never>,
-        ExtraPageFrontmatter extends Record<
-          string | number | symbol,
-          unknown
-        > = Record<string, unknown>,
-        ExtraPageFields extends Record<
-          string | number | symbol,
-          unknown
-        > = Record<never, never>,
+        >,
+        ExtraPageFields extends Record<string, unknown> = Record<never, never>,
       >(
         page: ExtendPage<ExtraPageData, ExtraPageFrontmatter, ExtraPageFields>,
       ) => string | null);

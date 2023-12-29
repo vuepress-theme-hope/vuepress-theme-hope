@@ -193,10 +193,10 @@ export default defineComponent({
       props.id
         ? `${props.id}?`
         : props.listType === "playlist" && props.list
-        ? `?listType=playlist&list=${
-            startsWith(props.list, "PL") ? props.list : `PL${props.list}`
-          }&`
-        : null,
+          ? `?listType=playlist&list=${
+              startsWith(props.list, "PL") ? props.list : `PL${props.list}`
+            }&`
+          : null,
     );
 
     const params = computed(() => {

@@ -30,13 +30,6 @@ tag:
 
 ## 插件选项
 
-### showInstall
-
-- 类型: `boolean`
-- 默认值: `true`
-
-是否在 Service Worker 首次成功注册时显示 PWA 安装按钮
-
 ### manifest
 
 - 类型: `ManifestOption`
@@ -69,25 +62,12 @@ tag:
 
 :::
 
-### favicon
-
-- 类型: `string`
-- 必填: 否
-
-`favicon.ico` 地址，填入绝对路径。
-
-::: warning
-
-我们建议你为你的站点生成 favicon
-
-:::
-
 ### themeColor
 
 - 类型: `string`
 - 默认值: `"#46bd87"`
 
-主题色，默认为主题绿
+PWA 的主题色。
 
 ### maxSize
 
@@ -154,7 +134,7 @@ tag:
 
 - `"force"`: 立即注销当前 Service Worker 然后刷新以获取新内容
 
-  ::: danger
+  ::: caution
 
   虽然这可以确保用户访问的是最新内容，但这可能会影响访问体验。
 
@@ -232,7 +212,7 @@ Safari 图标
 - 类型: `boolean`
 - 默认值: `false`
 
-是否为所有绝对链接添加 base。
+是否为选项中所有绝对链接添加 base。
 
 ### generateSwConfig
 

@@ -51,9 +51,8 @@ export const getUnoPlaygroundPreset = ({
     if (htmlFiles.length > 1 || cssFiles.length > 1 || configFiles.length > 1)
       logger.error("UnoCSS playground only support 1 html/css/config file");
 
-    const simplifyParam = (inputFiles: string[]): string => {
-      return inputFiles.length === 1 ? files[inputFiles[0]].content : "";
-    };
+    const simplifyParam = (inputFiles: string[]): string =>
+      inputFiles.length === 1 ? files[inputFiles[0]].content : "";
 
     const link = generateUnoURL(
       service,

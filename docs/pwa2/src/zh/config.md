@@ -20,7 +20,6 @@ icon: gears
 - lang: `siteConfig.locales['/'].lang` || `"en-US"`
 - start_url: `context.base`
 - scope: `context.base`
-
 - display: `"standalone"`
 - theme_color: `"#46bd87"`
 - background_color: `"#ffffff"`
@@ -53,7 +52,7 @@ icon: gears
 - 类型: `string`
 - 默认值: `"#46bd87"`
 
-主题色，默认为主题绿
+PWA 的主题色。
 
 ## maxSize
 
@@ -91,9 +90,7 @@ icon: gears
 
 图片允许缓存的最大大小 (以 KB 为单位)
 
-::: tip
-
-该选项不能大于 `maxSize`。
+::: note 该选项不能大于 maxSize 选项
 
 :::
 
@@ -120,7 +117,7 @@ icon: gears
 
 - `"force"`: 立即注销当前 Service Worker 然后刷新以获取新内容
 
-  ::: danger
+  ::: caution
 
   虽然这可以确保用户访问的是最新内容，但这可能会影响访问体验。
 
@@ -198,7 +195,7 @@ Safari 图标
 - 类型: `boolean`
 - 默认值: `false`
 
-是否为所有绝对链接添加 base。
+是否为选项中所有绝对链接添加 base。
 
 ## generateSwConfig
 

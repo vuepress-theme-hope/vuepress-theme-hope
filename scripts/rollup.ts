@@ -8,8 +8,7 @@ import type { ModuleSideEffectsOption, RollupOptions } from "rollup";
 import copy from "rollup-plugin-copy";
 import dts from "rollup-plugin-dts";
 import esbuild from "rollup-plugin-esbuild";
-
-import { shebangPlugin } from "./shebang.js";
+import { shebang } from "rollup-plugin-resolve-shebang";
 
 const isProduction = process.env["NODE_ENV"] === "production";
 
@@ -33,7 +32,7 @@ export interface BundleOptions {
   moduleSideEffects?: ModuleSideEffectsOption;
 }
 
-export const bundle = (
+export const rollupBundle = (
   filePath: string | FileInfo,
   {
     dts: enableDts = typeof filePath === "object"
@@ -93,7 +92,7 @@ export const bundle = (
             entries,
           })
         : null,
-      preserveShebang ? shebangPlugin() : null,
+      preserveShebang ? shebang() : null,
       ...(resolve ? [nodeResolve({ preferBuiltins: true }), commonjs()] : []),
       esbuild({
         charset: "utf8",
@@ -115,36 +114,36 @@ export const bundle = (
       ...(resolve
         ? []
         : (
-            typeof filePath === "object"
-              ? filePath.base.startsWith("client")
-              : filePath.startsWith("client/")
-          )
-        ? [
-            /^@temp/,
-            "@vueuse/core",
-            "@vuepress/client",
-            "@vuepress/shared",
-            "vue",
-            "vue-router",
-            "vuepress-shared/client",
-            /\.s?css(?:\?module)?$/,
-          ]
-        : (
-            typeof filePath === "object"
-              ? filePath.base.startsWith("node") ||
-                filePath.base.startsWith("cli")
-              : filePath.startsWith("node/") || filePath.startsWith("cli/")
-          )
-        ? [
-            /^node:/,
-            "@vuepress/core",
-            "@vuepress/shared",
-            /^@vuepress\/plugin-/,
-            "@vuepress/utils",
-            /^vuepress-plugin-/,
-            "vuepress-shared/node",
-          ]
-        : []),
+              typeof filePath === "object"
+                ? filePath.base.startsWith("client")
+                : filePath.startsWith("client/")
+            )
+          ? [
+              /^@temp/,
+              "@vueuse/core",
+              "@vuepress/client",
+              "@vuepress/shared",
+              "vue",
+              "vue-router",
+              "vuepress-shared/client",
+              /\.s?css(?:\?module)?$/,
+            ]
+          : (
+                typeof filePath === "object"
+                  ? filePath.base.startsWith("node") ||
+                    filePath.base.startsWith("cli")
+                  : filePath.startsWith("node/") || filePath.startsWith("cli/")
+              )
+            ? [
+                /^node:/,
+                "@vuepress/core",
+                "@vuepress/shared",
+                /^@vuepress\/plugin-/,
+                "@vuepress/utils",
+                /^vuepress-plugin-/,
+                "vuepress-shared/node",
+              ]
+            : []),
       ...external,
     ],
 
@@ -193,18 +192,18 @@ export const bundle = (
             ...(resolve
               ? []
               : (
-                  typeof filePath === "object"
-                    ? filePath.base.startsWith("client")
-                    : filePath.startsWith("client/")
-                )
-              ? [/^@temp/, "vuepress-shared/client", /\.s?css$/]
-              : (
-                  typeof filePath === "object"
-                    ? filePath.base.startsWith("node")
-                    : filePath.startsWith("node/")
-                )
-              ? [/^node:/, "vuepress-shared/node"]
-              : []),
+                    typeof filePath === "object"
+                      ? filePath.base.startsWith("client")
+                      : filePath.startsWith("client/")
+                  )
+                ? [/^@temp/, "vuepress-shared/client", /\.s?css$/]
+                : (
+                      typeof filePath === "object"
+                        ? filePath.base.startsWith("node")
+                        : filePath.startsWith("node/")
+                    )
+                  ? [/^node:/, "vuepress-shared/node"]
+                  : []),
             ...dtsExternal,
           ],
         } as RollupOptions,

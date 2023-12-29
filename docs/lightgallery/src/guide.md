@@ -7,7 +7,7 @@ This plugin will use lightgallery make the pictures in the body of the page ente
 
 <!-- more -->
 
-::: danger LICENSE RESTRICTIONS
+::: caution LICENSE RESTRICTIONS
 
 Please note that although this plugin release under MIT license, we are currently making this possible with a built-in [organization license of lightgallery](https://www.lightgalleryjs.com/license/) of VuePress Theme Hope, and we would like to admit you are a member of our organization if you are using it for non-commercial usage.
 
@@ -48,9 +48,9 @@ If your theme adds animations when switching pages, you may need to delay when l
 <!-- markdownlint-disable -->
 
 <div class="image-preview">
-  <img src="/assets/image/1.jpg" />
-  <img src="/assets/image/2.jpg" />
-  <img src="/assets/image/3.jpg" />
+  <img src="//theme-hope-assets.vuejs.press/files/img/1.jpg" />
+  <img src="//theme-hope-assets.vuejs.press/files/img/2.jpg" />
+  <img src="//theme-hope-assets.vuejs.press/files/img/3.jpg" />
 </div>
 
 <style>

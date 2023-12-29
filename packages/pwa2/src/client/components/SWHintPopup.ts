@@ -15,7 +15,7 @@ export default defineComponent({
     default?: (props: {
       enabled: boolean;
       uninstall: () => void;
-    }) => VNode[] | VNode;
+    }) => VNode[] | VNode | null;
   }>,
 
   setup(_props, { slots }) {

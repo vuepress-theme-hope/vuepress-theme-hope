@@ -2,15 +2,16 @@
 home: true
 title: Home
 icon: home
-heroImage: /logo.svg
 heroText: vuepress-plugin-lightgallery
 tagline: Light gallery plugin for VuePress2
 actions:
-  - text: Guide 💡
+  - text: Guide
+    icon: lightbulb
     link: ./guide.html
     type: primary
 
-  - text: Config 🛠
+  - text: Config
+    icon: tools
     link: ./config.html
 
 footer: Theme by <a href="https://theme-hope.vuejs.press" target="_blank">VuePress Theme Hope</a> | MIT Licensed, Copyright © 2019-present Mr.Hope
@@ -80,7 +81,7 @@ export default {
 
 :::
 
-::: danger LICENSE RESTRICTIONS
+::: caution LICENSE RESTRICTIONS
 
 Please note that although this plugin release under MIT license, we are currently making this possible with a built-in [organization license of lightgallery](https://www.lightgalleryjs.com/license/) of VuePress Theme Hope, and we would like to admit you are a member of our organization if you are using it for non-commercial usage.
 

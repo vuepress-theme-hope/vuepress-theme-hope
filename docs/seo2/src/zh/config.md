@@ -90,11 +90,14 @@ icon: gears
 - 类型:
 
   ```ts
-  function ogp<ExtendObject = Record<string, unknown>>(
+  function ogp(
+    /** 插件推断的 OGP 信息 */
     ogp: SeoContent,
-    page: ExtendPage<ExtendObject>,
-    app: App
-  ) => SeoContent;
+    /** 页面对象 */
+    page: Page,
+    /** VuePress App */
+    app: App,
+  ): SeoContent;
   ```
 
 - 必填: 否
@@ -108,11 +111,14 @@ icon: gears
 - 类型:
 
   ```ts
-  function jsonLd: <ExtendObject = Record<string, unknown>>(
-    jsonLD: ArticleJSONLD | null,
-    page: ExtendPage<ExtendObject>,
-    app: App
-  ) => ArticleJSONLD | null;
+  function jsonLd(
+    /** 由插件推断出的 JSON-LD 对象 */
+    jsonLD: ArticleSchema | BlogPostingSchema | WebPageSchema,
+    /** 页面对象 */
+    page: Page,
+    /** VuePress App */
+    app: App,
+  ): ArticleSchema | BlogPostingSchema | WebPageSchema;
   ```
 
 - 必填: 否
@@ -126,11 +132,14 @@ icon: gears
 - 类型:
 
   ```ts
-  function customHead<ExtendObject = Record<string, unknown>>(
+  function customHead(
+    /** head 标签配置 */
     head: HeadConfig[],
-    page: ExtendPage<ExtendObject>,
-    app: App
-  ) => void
+    /** 页面对象 */
+    page: Page,
+    /** VuePress App */
+    app: App,
+  ): void;
   ```
 
 - 必填: 否

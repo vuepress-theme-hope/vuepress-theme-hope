@@ -90,11 +90,14 @@ Use this option to judge whether the page is an article.
 - Type:
 
   ```ts
-  function ogp<ExtendObject = Record<string, unknown>>(
+  function ogp(
+    /** OGP info inferred by plugin */
     ogp: SeoContent,
-    page: ExtendPage<ExtendObject>,
-    app: App
-  ) => SeoContent;
+    /** Page Object */
+    page: Page,
+    /** VuePress App */
+    app: App,
+  ): SeoContent;
   ```
 
 - Required: No
@@ -108,11 +111,14 @@ You can use this options to edit OGP tags.
 - Type:
 
   ```ts
-  function jsonLd: <ExtendObject = Record<string, unknown>>(
-    jsonLD: ArticleJSONLD | null,
-    page: ExtendPage<ExtendObject>,
-    app: App
-  ) => ArticleJSONLD | null;
+  function jsonLd(
+    /** JSON-LD Object inferred by plugin */
+    jsonLD: ArticleSchema | BlogPostingSchema | WebPageSchema,
+    /** Page Object */
+    page: Page,
+    /** VuePress App */
+    app: App,
+  ): ArticleSchema | BlogPostingSchema | WebPageSchema;
   ```
 
 - Required: No
@@ -126,11 +132,14 @@ You can use this options to edit JSON-LD properties.
 - Type:
 
   ```ts
-  function customHead<ExtendObject = Record<string, unknown>>(
+  function customHead(
+    /** Head tag config */
     head: HeadConfig[],
-    page: ExtendPage<ExtendObject>,
-    app: App
-  ) => void
+    /** Page Object */
+    page: Page,
+    /** VuePress App */
+    app: App,
+  ): void;
   ```
 
 - Required: No

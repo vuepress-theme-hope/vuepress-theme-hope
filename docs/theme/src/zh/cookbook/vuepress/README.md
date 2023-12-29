@@ -2,9 +2,10 @@
 title: VuePress
 icon: fab fa-vuejs
 dir:
-  order: 3
+  collapsible: false
+  order: 2
 category:
-  - 教程知识
+  - 教程
   - VuePress
 tag:
   - 介绍

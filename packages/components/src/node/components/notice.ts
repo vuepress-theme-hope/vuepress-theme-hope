@@ -26,6 +26,6 @@ export const getNoticeOptions = (
           ? b.match.localeCompare(a.match)
           : -1
         : "match" in b
-        ? 1
-        : (b.path || "").localeCompare(a.path || ""),
+          ? 1
+          : (b.path || "").localeCompare(a.path || ""),
     );

@@ -46,8 +46,8 @@ const getTargetElement = (
   targetSelector === "string"
     ? document.querySelector(targetSelector)
     : targetSelector instanceof HTMLElement
-    ? targetSelector
-    : document.body;
+      ? targetSelector
+      : document.body;
 
 // Create a fragment identifier for using PDF Open parameters when embedding PDF
 const buildURLFragmentString = (

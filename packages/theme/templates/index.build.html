@@ -1,21 +1,19 @@
 <!doctype html>
-<html lang="{{ lang }}" data-theme="light">
+<html lang="{{ lang }}" data-theme="{{ themeMode }}">
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width,initial-scale=1" />
     <meta name="generator" content="VuePress {{ version }}" />
-    <meta name="theme" content="VuePress Theme Hope" />
-    <!--vuepress-ssr-head-->
+    <meta name="theme" content="VuePress Theme Hope {{ themeVersion }}" />
     <style>
-      :root {
-        --bg-color: #fff;
+      html {
+        background: var(--bg-color, #fff);
       }
 
       html[data-theme="dark"] {
-        --bg-color: #1d1e1f;
+        background: var(--bg-color, #1d1e1f);
       }
 
-      html,
       body {
         background: var(--bg-color);
       }
@@ -30,11 +28,13 @@
         document.documentElement.setAttribute("data-theme", "dark");
       }
     </script>
+    <!--vuepress-ssr-head-->
     <!--vuepress-ssr-styles-->
-    <!--vuepress-ssr-resources-->
+    <!--vuepress-ssr-preload-->
+    <!--vuepress-ssr-prefetch-->
   </head>
   <body>
-    <div id="app"><!--vuepress-ssr-app--></div>
+    <div id="app"><!--vuepress-ssr-content--></div>
     <!--vuepress-ssr-scripts-->
   </body>
 </html>

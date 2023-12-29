@@ -19,7 +19,7 @@ const __dirname = getDirname(import.meta.url);
 export const sassPalettePlugin =
   (options: SassPaletteOptions): PluginFunction =>
   (app) => {
-    checkVersion(app, PLUGIN_NAME, "2.0.0-beta.67");
+    checkVersion(app, PLUGIN_NAME, "2.0.0-rc.0");
 
     if (app.env.isDebug) logger.info("Options:", options);
 
@@ -77,8 +77,8 @@ export const sassPalettePlugin =
         injectConfigModule(config, app, id);
       },
 
-      onInitialized: (): Promise<void> => {
-        return Promise.all([
+      onInitialized: (): Promise<void> =>
+        Promise.all([
           prepareInjectSass(app, id),
 
           prepareConfigSass(app, {
@@ -100,8 +100,7 @@ export const sassPalettePlugin =
           prepareStyleSass(app, { id, userStyle }),
         ]).then(() => {
           if (app.env.isDebug) logger.info(`Style file for ${id} generated`);
-        });
-      },
+        }),
 
       onWatched: (app, watchers): void => {
         const configWatcher = watch(userConfig, {

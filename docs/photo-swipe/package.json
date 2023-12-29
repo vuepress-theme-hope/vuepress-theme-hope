@@ -1,5 +1,6 @@
 {
   "name": "photo-swipe-docs",
+  "type": "module",
   "private": true,
   "description": "Docs for vuepress-plugin-photo-swipe",
   "license": "MIT",
@@ -18,12 +19,12 @@
     "docs:webpack-dev": "vuepress-webpack dev src"
   },
   "dependencies": {
-    "@vuepress/client": "2.0.0-beta.67",
+    "@vuepress/client": "2.0.0-rc.0",
     "docs-shared": "workspace:*",
     "sass-loader": "13.3.2",
-    "vue": "3.3.7",
+    "vue": "3.3.13",
     "vuepress-plugin-photo-swipe": "workspace:*",
-    "vuepress-vite": "2.0.0-beta.67",
-    "vuepress-webpack": "2.0.0-beta.67"
+    "vuepress-vite": "2.0.0-rc.0",
+    "vuepress-webpack": "2.0.0-rc.0"
   }
 }

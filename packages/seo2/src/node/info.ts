@@ -145,8 +145,8 @@ export const getCanonicalLink = (
   isFunction(options.canonical)
     ? options.canonical(page)
     : isString(options.canonical)
-    ? `${removeEndingSlash(options.canonical)}${page.path}`
-    : null;
+      ? `${removeEndingSlash(options.canonical)}${page.path}`
+      : null;
 
 export const getAlternateLinks = (
   page: ExtendPage,

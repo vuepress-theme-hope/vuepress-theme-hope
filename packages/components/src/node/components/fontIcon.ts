@@ -110,8 +110,8 @@ useScriptTag(
     const actualLink = isLinkHttp(asset)
       ? asset
       : isAbsoluteUrl(asset)
-      ? asset
-      : `//${asset}`;
+        ? asset
+        : `//${asset}`;
 
     if (endsWith(actualLink, ".css"))
       return [

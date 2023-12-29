@@ -1,7 +1,7 @@
 ---
 title: Blog Plugin Config
 icon: blog
-order: 2
+order: 3
 category:
   - Config
 tag:

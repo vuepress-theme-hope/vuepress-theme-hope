@@ -40,14 +40,16 @@ export default defineComponent({
   },
 
   slots: Object as SlotsType<{
-    cover?: (props: { cover: string | undefined }) => VNode | VNode[];
+    cover?: (props: { cover: string | undefined }) => VNode[] | VNode | null;
     title?: (props: {
       title: string;
       isEncrypted?: boolean;
       type: string;
-    }) => VNode | VNode[];
-    excerpt?: (props: { excerpt: string | undefined }) => VNode | VNode[];
-    info?: (props: { info: PageInfoProps }) => VNode | VNode[];
+    }) => VNode[] | VNode | null;
+    excerpt?: (props: {
+      excerpt: string | undefined;
+    }) => VNode[] | VNode | null;
+    info?: (props: { info: PageInfoProps }) => VNode[] | VNode | null;
   }>,
 
   setup(props, { slots }) {
@@ -82,6 +84,7 @@ export default defineComponent({
                     h("img", {
                       class: "vp-article-cover",
                       src: withBase(cover),
+                      loading: "lazy",
                     }),
                     h("meta", {
                       property: "image",

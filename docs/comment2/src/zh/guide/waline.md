@@ -129,9 +129,7 @@ npm i -D @waline/client
 
 ::: tip
 
-你也可以传入其他 Waline 支持的选项 (除了 `el`)。
-
-详情请见 [Waline 配置](../config/waline.md)
+你也可以传入其他 Waline 支持的选项 (除了 `el`)。详情请见 [Waline 配置](../config/waline.md)
 
 :::
 

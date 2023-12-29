@@ -1,6 +1,8 @@
 @use "@sass-palette/hope-config";
 
 :root {
+  scrollbar-width: thin;
+
   @media (prefers-reduced-motion: no-preference) {
     scroll-behavior: smooth;
   }

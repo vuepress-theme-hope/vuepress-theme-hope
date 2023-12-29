@@ -36,6 +36,7 @@ export const idLocale: ThemeLocaleData = {
     all: "Semua",
     intro: "Perkenalan",
     star: "Berbintang",
+    empty: "$text kosong",
   },
 
   paginationLocales: {

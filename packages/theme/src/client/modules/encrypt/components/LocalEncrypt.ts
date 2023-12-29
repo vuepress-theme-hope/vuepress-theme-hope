@@ -8,7 +8,7 @@ export default defineComponent({
   name: "LocalEncrypt",
 
   slots: Object as SlotsType<{
-    default: () => VNode | VNode[];
+    default: () => VNode[] | VNode | null;
   }>,
 
   setup(_props, { slots }) {
@@ -26,10 +26,10 @@ export default defineComponent({
       return isEncrypted
         ? isMounted.value
           ? isDecrypted
-            ? slots.default() || null
+            ? slots.default()
             : h(PasswordModal, { full: true, onVerify: validate })
           : null
-        : slots.default() || null;
+        : slots.default();
     };
   },
 });

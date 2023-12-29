@@ -43,7 +43,7 @@ export const injectConfigModule = (
       | undefined =
       // eslint-disable-next-line @typescript-eslint/no-unsafe-member-access
       viteBundlerConfig.viteOptions?.css?.preprocessorOptions?.["scss"]
-        .additionalData;
+        .additionalData; // eslint-disable-line @typescript-eslint/no-unsafe-member-access
 
     // eslint-disable-next-line
     viteBundlerConfig.viteOptions = mergeViteConfig(
@@ -60,8 +60,8 @@ export const injectConfigModule = (
                 const originalContent = isString(originalAdditionalData)
                   ? `${originalAdditionalData}${source}`
                   : isFunction(originalAdditionalData)
-                  ? await originalAdditionalData(source, file)
-                  : source;
+                    ? await originalAdditionalData(source, file)
+                    : source;
 
                 return originalContent.match(
                   new RegExp(`@use\\s+["']@sass-palette\\/${id}-config["'];`),
@@ -91,8 +91,8 @@ export const injectConfigModule = (
       const originalContent = isString(additionalData)
         ? `${additionalData}${content}`
         : isFunction(additionalData)
-        ? additionalData(content, loaderContext)
-        : content;
+          ? additionalData(content, loaderContext)
+          : content;
 
       return originalContent.match(
         new RegExp(`@use\\s+(["'])@sass-palette\\/${id}-config\\1;`),
