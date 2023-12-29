@@ -170,16 +170,14 @@ CloudFlare 的 Auto Minify 会错误的对 HTML 的空格和换行进行处理�
 
 :::
 
+为了调试这个问题，设置 `__VUE_PROD_HYDRATION_MISMATCH_DETAILS__` 为 `true`，这样你就可以在浏览器控制台中看到错误的详细信息。
+
 另外你还可以检查:
 
-- 如果你只是在个别页面遇到了这个问题，请检查该界面是否有你额外添加的组件。
-
-  如果有，那这些组件大概率在 SSR[^ssr] 和 CSR[^csr] 拥有不同的渲染结果，你可以尝试让其行为一致，或用 `@vuepress/client` 提供的 `<ClientOnly />` 组件包裹你的组件。
+如果一个组件件大概率在 SSR[^ssr] 和 CSR[^csr] 拥有不同的渲染结果，你可以用 `@vuepress/client` 提供的 `<ClientOnly />` 组件包裹你的组件。
 
 [^ssr]: **SSR**: **S**erver **S**ide **R**endering，服务端渲染
 [^csr]: **CSR**: **C**lient **S**ide **R**endering，客户端渲染
-
-- 如果你在所有页面都遇到了这个问题，请同样按照上一步检查你在布局或全局组件中添加的组件。
 
 ## 热更新在开发服务器中不工作
 
