@@ -77,7 +77,7 @@ export const commentPlugin =
             addViteOptimizeDepsExclude(
               bundlerOptions,
               app,
-              "artalk/dist/Artalk.es.js",
+              "artalk/dist/Artalk.mjs",
             );
             addViteSsrExternal(bundlerOptions, app, "artalk");
             break;

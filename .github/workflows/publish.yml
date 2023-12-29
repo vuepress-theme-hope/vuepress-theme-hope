@@ -20,9 +20,7 @@ jobs:
           name: build-result
 
       - name: Install deps
-        run: |
-          corepack enable
-          pnpm install --frozen-lockfile
+        run: pnpm install --frozen-lockfile
 
       - name: Update npmrc
         run: |

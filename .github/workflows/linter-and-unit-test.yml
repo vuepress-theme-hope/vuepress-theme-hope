@@ -16,6 +16,9 @@ jobs:
         with:
           name: build-result
 
+      - name: Install pnpm
+        uses: pnpm/action-setup@v2
+
       - name: Setup Node.js
         uses: actions/setup-node@v4
         with:
@@ -23,9 +26,7 @@ jobs:
           cache: pnpm
 
       - name: Install deps
-        run: |
-          corepack enable
-          pnpm install --frozen-lockfile
+        run: pnpm install --frozen-lockfile
 
       - name: Linter test
         run: |

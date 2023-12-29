@@ -22,7 +22,7 @@
     "lint": "pnpm lint:prettier --write && pnpm lint:eslint --fix && pnpm lint:stylelint --fix",
     "lint:check": "pnpm lint:prettier && pnpm lint:eslint && pnpm lint:stylelint",
     "lint:eslint": "eslint . --ext .js,.ts,.vue",
-    "lint:md": "markdownlint-cli2 '**/*.md' '#**/node_modules/**' '#**/__tests__/**' '#**/*.snippet.md'",
+    "lint:md": "markdownlint-cli2 '**/*.md'",
     "lint:prettier": "prettier --check .",
     "lint:stylelint": "stylelint packages/*/src/**/*.{css,scss}",
     "packages:bootstrap": "tsx scripts/bootstrap.ts",
@@ -34,6 +34,25 @@
     "release:publish": "cross-env NODE_OPTIONS=\"--experimental-json-modules\" tsx scripts/release.ts",
     "release:sync": "cross-env NODE_OPTIONS=\"--experimental-json-modules\" tsx scripts/sync.ts",
     "test": "cross-env TZ=Etc/UTC vitest --coverage"
+  },
+  "nano-staged": {
+    "**/*": "prettier --write --ignore-unknown",
+    "*.vue": [
+      "eslint --fix"
+    ],
+    "*.{js,ts}": [
+      "eslint --fix",
+      "cross-env TZ=Etc/UTC vitest related --run"
+    ],
+    "*.md": [
+      "markdownlint-cli2 --fix"
+    ],
+    "*.scss": [
+      "stylelint --fix"
+    ],
+    "package.json": [
+      "sort-package-json"
+    ]
   },
   "config": {
     "commitizen": {
@@ -94,7 +113,7 @@
   },
   "packageManager": "pnpm@8.13.1",
   "engines": {
-    "node": ">=20"
+    "node": ">=18.16.0"
   },
   "pnpm": {
     "overrides": {
