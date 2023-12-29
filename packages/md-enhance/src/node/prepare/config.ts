@@ -192,7 +192,9 @@ export const prepareConfigFile = async (
       `import { injectSandpackConfig } from "${CLIENT_FOLDER}index.js";`,
     );
     enhances.add(`injectSandpackConfig(app);`);
-    enhances.add(`app.component("SandPack", defineAsyncComponent(() => import("${CLIENT_FOLDER}components/Sandpack.js")));`);
+    enhances.add(
+      `app.component("SandPack", defineAsyncComponent(() => import("${CLIENT_FOLDER}components/SandPack.js")));`,
+    );
   }
 
   return app.writeTemp(

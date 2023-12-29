@@ -22,7 +22,7 @@ export default [
         "components/Mermaid",
         "components/Playground",
         "components/RevealJs",
-        "components/Sandpack",
+        "components/SandPack",
         "components/Tabs",
         "components/VuePlayground",
         "composables/hint",
