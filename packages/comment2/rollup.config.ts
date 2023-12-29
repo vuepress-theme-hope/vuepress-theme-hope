@@ -21,7 +21,7 @@ export default [
       external: [
         "@waline/client/component",
         "@waline/client/pageview",
-        "artalk",
+        "artalk/dist/Artalk.mjs",
         "giscus",
         "twikoo",
         "vuepress-plugin-comment2/provider",

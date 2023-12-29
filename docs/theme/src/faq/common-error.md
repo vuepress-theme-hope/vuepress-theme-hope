@@ -148,16 +148,12 @@ Auto Minify in CloudFlare incorrectly handle HTML spaces and line breaks, which 
 
 :::
 
-Also, you can check these:
+To debug this, set `__VUE_PROD_HYDRATION_MISMATCH_DETAILS__` to `true` so that you can see the details of the mismatch in browser console.
 
-- If you only encounter this problem on certain pages, please check whether the page has additional components you added.
-
-  If so, these components are likely to have different rendering results between SSR[^ssr] and CSR[^csr]. You can try to make their behavior consistent, or wrap your components with the `<ClientOnly />` component provided by `@vuepress/client`.
+If a component is likely to have different render results between SSR[^ssr] and CSR[^csr]. You can wrap your components with the `<ClientOnly />` component provided by `@vuepress/client`.
 
 [^ssr]: **SSR**: **S**erver **S**ide **R**endering
 [^csr]: **CSR**: **C**lient **S**ide **R**endering
-
-- If you have this problem in all pages, please also follow the previous step to check the components you added in the layout or global components.
 
 ## HotReload not working in DevServer
 
