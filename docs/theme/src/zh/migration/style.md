@@ -1,6 +1,7 @@
 ---
 title: 样式迁移指南
 icon: wand-magic-sparkles
+order: 4
 category:
   - 迁移
 tag:

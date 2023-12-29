@@ -6,9 +6,13 @@ category:
   - FAQ
 ---
 
-此处包含了主题使用过程中的常见问题与相应的解决办法。
+此章节包含了主题使用过程中的常见问题与相应的解决办法。
+
+<!-- more -->
 
 ## 目录
+
+- [普遍问题](common-question.md)
 
 - [故障排查](troubleshooting.md)
 

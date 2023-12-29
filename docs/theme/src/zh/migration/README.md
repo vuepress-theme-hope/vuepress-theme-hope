@@ -1,6 +1,10 @@
 ---
 title: V2 迁移指南
 icon: code-compare
+category:
+  - 迁移
+tag:
+  - 迁移
 ---
 
 本指南帮助你从 V1 迁移至 V2。

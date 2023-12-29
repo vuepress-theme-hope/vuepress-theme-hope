@@ -1,6 +1,7 @@
 ---
 title: Page Migration Guide
 icon: file
+order: 3
 category:
   - Migration
 tag:

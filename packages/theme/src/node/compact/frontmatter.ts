@@ -6,8 +6,6 @@ import { logger } from "../utils.js";
 
 const DEPRECATED_FRONTMATTER_OPTIONS: [string, string][] = [
   ["authors", "author"],
-  ["categories", "category"],
-  ["tags", "tag"],
   ["time", "date"],
   ["visitor", "pageview"],
   ["sidebarDepth", "headerDepth"],

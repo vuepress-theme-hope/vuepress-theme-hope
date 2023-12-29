@@ -1,5 +1,6 @@
 ---
 title: Troubleshooting
+order: 2
 icon: square-check
 category:
   - FAQ

@@ -1,6 +1,7 @@
 ---
 title: Safari FAQ
 icon: fab fa-safari
+order: -1
 category:
   - FAQ
 ---

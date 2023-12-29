@@ -1,6 +1,7 @@
 ---
 title: 配置迁移指南
 icon: gears
+order: 2
 category:
   - 迁移
 tag:

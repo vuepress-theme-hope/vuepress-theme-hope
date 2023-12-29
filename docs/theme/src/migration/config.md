@@ -1,6 +1,7 @@
 ---
 title: Config Migration Guide
 icon: gears
+order: 2
 category:
   - Migration
 tag:

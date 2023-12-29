@@ -40,18 +40,8 @@ export const zhSidebarConfig = sidebar({
       children: ["markdown/", "vuepress/"],
     },
     "demo/",
-    {
-      text: "常见问题",
-      icon: "circle-question",
-      prefix: "faq/",
-      children: ["", "troubleshooting", "common-error", "vite", "safari"],
-    },
-    {
-      text: "迁移",
-      icon: "code-compare",
-      prefix: "migration/",
-      children: ["highlight", "config", "page", "style"],
-    },
+    "faq/",
+    "migration/",
     "changelog",
     "contribution",
   ],
@@ -65,5 +55,9 @@ export const zhSidebarConfig = sidebar({
   "/zh/cookbook/": "structure",
 
   "/zh/demo/": "structure",
+
+  "/zh/faq/": "structure",
+
+  "/zh/migration/": "structure",
 });
 // #endregion config
