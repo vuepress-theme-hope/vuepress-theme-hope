@@ -76,8 +76,6 @@ jobs:
 
       - name: Install pnpm
         uses: pnpm/action-setup@v2
-        with:
-          run_install: true
 
       - uses: actions/setup-node@v4
         with:
