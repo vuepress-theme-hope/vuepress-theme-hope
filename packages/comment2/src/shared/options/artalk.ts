@@ -1,4 +1,4 @@
-import type { ArtalkConfig } from "artalk/dist/types/config.js";
+import type { ArtalkConfig } from "artalk";
 
 import type { BaseCommentOptions } from "./base.js";
 

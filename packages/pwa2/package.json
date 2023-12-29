@@ -56,10 +56,10 @@
     "@vuepress/client": "2.0.0-rc.0",
     "@vuepress/shared": "2.0.0-rc.0",
     "@vuepress/utils": "2.0.0-rc.0",
-    "@vueuse/core": "^10.7.0",
+    "@vueuse/core": "^10.7.1",
     "mitt": "^3.0.1",
     "register-service-worker": "^1.7.2",
-    "vue": "^3.3.13",
+    "vue": "^3.4.0",
     "vue-router": "^4.2.5",
     "vuepress-plugin-sass-palette": "workspace:*",
     "vuepress-shared": "workspace:*",
@@ -69,7 +69,7 @@
     "@vuepress/core": "2.0.0-rc.0"
   },
   "peerDependencies": {
-    "sass-loader": "^13.3.2",
+    "sass-loader": "^13.3.0",
     "vuepress": "2.0.0-rc.0",
     "vuepress-vite": "2.0.0-rc.0",
     "vuepress-webpack": "2.0.0-rc.0"
