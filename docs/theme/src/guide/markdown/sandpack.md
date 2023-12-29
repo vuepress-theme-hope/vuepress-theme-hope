@@ -117,6 +117,8 @@ export default defineClientConfig({
 
 ## Demo
 
+:::: md-demo Vue Demo
+
 ::: sandpack#vue Vue Demo
 
 @file /src/App.vue
@@ -135,31 +137,10 @@ const msg = ref("Hello Playground!");
 ```
 
 :::
-
-:::: details Code
-
-````md
-::: sandpack#vue Vue Demo
-
-@file /src/App.vue
-
-```vue
-<script setup>
-import { ref } from "vue";
-
-const msg = ref("Hello Playground!");
-</script>
-
-<template>
-  <h1>{{ msg }}</h1>
-  <input v-model="msg" />
-</template>
-```
-
-:::
-````
 
 ::::
+
+:::: md-demo Vue Demo with customized settings
 
 ::: sandpack#vue Vue Demo with customized settings
 
@@ -219,69 +200,9 @@ const { charging, level } = useBattery();
 
 :::
 
-:::: details Code
-
-````md
-::: sandpack#vue Vue Demo with customized settings
-
-@file /src/App.vue
-
-```vue
-<script setup>
-import { ref } from "vue";
-import Comp from "./Comp.vue";
-
-const msg = ref("Hello Playground!");
-</script>
-
-<template>
-  <h1>{{ msg }}</h1>
-  <input v-model="msg" />
-  <Comp />
-</template>
-```
-
-@file /src/Comp.vue
-
-```vue
-<script setup>
-import { useBattery } from "@vueuse/core";
-import { ref } from "vue";
-
-const { charging, level } = useBattery();
-</script>
-
-<template>
-  <h1>Battery status</h1>
-  <p>Charging: {{ charging }}</p>
-  <p>Level: {{ level * 100 }}%</p>
-</template>
-```
-
-@options
-
-```js
-{
-  activeFile: "/src/Comp.vue",
-}
-```
-
-@setup
-
-```js
-{
-  dependencies: {
-    "@vueuse/core": "latest",
-    "@vueuse/shared": "latest",
-    "vue-demi": "latest",
-  }
-}
-```
-
-:::
-````
-
 ::::
+
+:::: md-demo Vue Demo with file options
 
 ::: sandpack#vue Vue Demo with file options
 
@@ -333,61 +254,9 @@ const { charging, level } = useBattery();
 
 :::
 
-:::: details Code
-
-````md
-::: sandpack#vue Vue Demo with file options
-
-@file /src/App.vue {readOnly}
-
-```vue
-<script setup>
-import { ref } from "vue";
-import Comp from "./Comp.vue";
-
-const msg = ref("Hello Playground!");
-</script>
-
-<template>
-  <h1>{{ msg }}</h1>
-  <input v-model="msg" />
-  <Comp />
-</template>
-```
-
-@file /src/Comp.vue {active}
-
-```vue
-<script setup>
-import { useBattery } from "@vueuse/core";
-import { ref } from "vue";
-
-const { charging, level } = useBattery();
-</script>
-
-<template>
-  <h1>Battery status</h1>
-  <p>Charging: {{ charging }}</p>
-  <p>Level: {{ level * 100 }}%</p>
-</template>
-```
-
-@setup
-
-```js
-{
-  dependencies: {
-    "@vueuse/core": "latest",
-    "@vueuse/shared": "latest",
-    "vue-demi": "latest",
-  }
-}
-```
-
-:::
-````
-
 ::::
+
+:::: md-demo React demo
 
 ::: sandpack#react React demo {rtl theme=dark}
 
@@ -400,21 +269,5 @@ export default function App() {
 ```
 
 :::
-
-:::: details Code
-
-````md
-::: sandpack#react React demo {rtl theme="dark"}
-
-@file /App.js
-
-```js
-export default function App() {
-  return <h1>Hello world</h1>;
-}
-```
-
-:::
-````
 
 ::::
