@@ -53,7 +53,7 @@ export default defineComponent({
 
     const initArtalk = async (): Promise<void> => {
       const [{ default: Artalk }] = await Promise.all([
-        import(/* webpackChunkName: "artalk" */ "artalk/dist/Artalk.es.js"),
+        import(/* webpackChunkName: "artalk" */ "artalk/dist/Artalk.mjs"),
         new Promise<void>((resolve) => {
           setTimeout(() => {
             resolve();

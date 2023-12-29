@@ -1,4 +1,4 @@
-declare module "artalk/dist/Artalk.es.js" {
+declare module "artalk/dist/Artalk.mjs" {
   import Artalk from "artalk";
 
   export * from "artalk";
