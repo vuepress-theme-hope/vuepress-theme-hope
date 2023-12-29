@@ -1,6 +1,12 @@
 ---
 title: V2 亮点
 icon: fire
+order: 1
+category:
+  - 迁移
+tag:
+  - 迁移
+  - 亮点
 ---
 
 我们强烈建议你切换到 V2 版本，因为 V2 版本提供了以下改进。

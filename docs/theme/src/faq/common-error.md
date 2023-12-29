@@ -1,6 +1,7 @@
 ---
 title: Common Errors
 icon: triangle-exclamation
+order: 3
 category:
   - FAQ
 ---

@@ -1,6 +1,12 @@
 ---
 title: V2 Highlights
 icon: fire
+order: 1
+category:
+  - Migration
+tag:
+  - Migration
+  - Highlight
 ---
 
 We strongly recommend you to switch to V2 version, as V2 version provides the following improvements.

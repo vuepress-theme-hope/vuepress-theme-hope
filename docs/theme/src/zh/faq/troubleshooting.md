@@ -1,6 +1,7 @@
 ---
 title: 故障排查
 icon: square-check
+order: 2
 category:
   - FAQ
 ---

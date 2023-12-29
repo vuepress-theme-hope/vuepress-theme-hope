@@ -41,18 +41,8 @@ export const enSidebarConfig = sidebar({
     },
 
     "demo/",
-    {
-      text: "FAQ",
-      icon: "circle-question",
-      prefix: "faq/",
-      children: ["", "troubleshooting", "common-error", "vite", "safari"],
-    },
-    {
-      text: "Migration",
-      icon: "code-compare",
-      prefix: "migration/",
-      children: ["highlight", "config", "page", "style"],
-    },
+    "faq/",
+    "migration/",
     "changelog",
     "contribution",
   ],
@@ -66,5 +56,9 @@ export const enSidebarConfig = sidebar({
   "/cookbook/": "structure",
 
   "/demo/": "structure",
+
+  "/faq/": "structure",
+
+  "/migration/": "structure",
 });
 // #endregion config

@@ -1,6 +1,7 @@
 ---
 title: Style Migration Guide
 icon: wand-magic-sparkles
+order: 4
 category:
   - Migration
 tag:

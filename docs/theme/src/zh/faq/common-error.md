@@ -1,6 +1,7 @@
 ---
 title: 常见错误
 icon: triangle-exclamation
+order: 3
 category:
   - FAQ
 ---
