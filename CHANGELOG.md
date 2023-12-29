@@ -4,6 +4,21 @@ All notable changes to this project will be documented in this file. See [Conven
 
 <!-- #region recent-change -->
 
+## [2.0.0-rc.8](https://github.com/vuepress-theme-hope/vuepress-theme-hope/compare/v2.0.0-rc.7...v2.0.0-rc.8) (2023-12-29)
+
+### Features
+
+- **md-enhance:** add danger container to compact default theme ([ea2729c](https://github.com/vuepress-theme-hope/vuepress-theme-hope/commit/ea2729c1f4020b4fc3b51d0456fdff480215c031))
+- **search-pro:** add filter option, close [#3790](https://github.com/vuepress-theme-hope/vuepress-theme-hope/issues/3790) ([be6b4e4](https://github.com/vuepress-theme-hope/vuepress-theme-hope/commit/be6b4e420310227b7623527689c7eba4fd129660))
+- **theme:** make copyright2 feed2 and pwa2 optional ([70aae43](https://github.com/vuepress-theme-hope/vuepress-theme-hope/commit/70aae4385d3e3ddd5020c9b9dbd9aefc60c5406e))
+- **theme:** support built-in search ([25d4445](https://github.com/vuepress-theme-hope/vuepress-theme-hope/commit/25d4445d426017080022afb715caa6614c71b837))
+- **theme:** support categories and tags ([ad8aba2](https://github.com/vuepress-theme-hope/vuepress-theme-hope/commit/ad8aba230d8cb70f3967d7dc9349a9b3651b9847))
+
+### Bug Fixes
+
+- **create:** fix version test ([798c4e7](https://github.com/vuepress-theme-hope/vuepress-theme-hope/commit/798c4e7477474c697de4b446d3c79fa263186fb2))
+- **shared:** fix error with pnpm ([4283b7d](https://github.com/vuepress-theme-hope/vuepress-theme-hope/commit/4283b7dcdb95f9e41ce4bb0c588885e714235950))
+
 ## [2.0.0-rc.7](https://github.com/vuepress-theme-hope/vuepress-theme-hope/compare/v2.0.0-rc.6...v2.0.0-rc.7) (2023-12-26)
 
 ### Bug Fixes
