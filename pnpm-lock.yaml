@@ -256,8 +256,8 @@ importers:
         specifier: 3.0.0-alpha.8
         version: 3.0.0-alpha.8(typescript@5.3.3)
       artalk:
-        specifier: 2.7.2
-        version: 2.7.2
+        specifier: 2.7.3
+        version: 2.7.3
       sass-loader:
         specifier: 13.3.2
         version: 13.3.2(sass@1.69.5)(webpack@5.89.0)
@@ -6798,6 +6798,16 @@ packages:
       hanabi: 0.4.0
       insane: 2.6.2
       marked: 7.0.5
+    dev: false
+
+  /artalk@2.7.3:
+    resolution: {integrity: sha512-9SdnI4OuMhQERYE9DI6wx5PzbFG8Eb+e9TTZewVIPbMIdESCO3BkR999skyD1EU69AAosM08Yof3zXdkZbJSQw==}
+    dependencies:
+      abortcontroller-polyfill: 1.7.5
+      hanabi: 0.4.0
+      insane: 2.6.2
+      marked: 7.0.5
+    dev: true
 
   /artplayer-plugin-danmuku@5.0.1:
     resolution: {integrity: sha512-b6/Y4/+X0rNmnqS5+zzQgow+WW4iVT8eFv4LAUzJgIyORIcf5Gn00Dy0PZ+kwGb1VJy0CUCRK6gVVvh0tWsRAg==}
