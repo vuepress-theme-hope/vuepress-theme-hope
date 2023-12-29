@@ -11,8 +11,8 @@ export const encodeFiles = (files: SandpackData["files"]): string =>
           typeof file === "string"
             ? file
             : file.active || file.hidden || file.readOnly
-            ? file
-            : file.code,
+              ? file
+              : file.code,
         ]),
       ),
     ),
