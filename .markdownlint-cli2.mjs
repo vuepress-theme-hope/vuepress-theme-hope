@@ -61,4 +61,12 @@ export default {
     MD046: false,
     MD049: false,
   },
+  ignores: [
+    "**/node_modules/**",
+    "**/__tests__/**",
+    "CHANGELOG.md",
+    "LICENSE",
+    // markdown import demo
+    "**/*.snippet.md",
+  ],
 };
