@@ -38,7 +38,9 @@ export default [
         "mpegts.js/dist/mpegts.js",
         "plyr",
         "qrcode",
-        "vidstack/elements",
+        "vidstack/player",
+        "vidstack/player/layouts",
+        "vidstack/player/ui",
       ],
       copy: [
         ["client/styles", "client"],
