@@ -19,10 +19,8 @@ jobs:
         with:
           name: build-result
 
-      - name: Install pnpm
-        uses: pnpm/action-setup@v2
-        with:
-          run_install: true
+      - name: Install deps
+        run: pnpm install --frozen-lockfile
 
       - name: Update npmrc
         run: |

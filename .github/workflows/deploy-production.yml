@@ -24,14 +24,15 @@ jobs:
 
       - name: Install pnpm
         uses: pnpm/action-setup@v2
-        with:
-          run_install: true
 
       - name: Setup Node.js
         uses: actions/setup-node@v4
         with:
           node-version: 20
           cache: pnpm
+
+      - name: Install deps
+        run: pnpm install --frozen-lockfile
 
       - name: Docs build
         env:
@@ -254,14 +255,15 @@ jobs:
 
       - name: Install pnpm
         uses: pnpm/action-setup@v2
-        with:
-          run_install: true
 
       - name: Setup Node.js
         uses: actions/setup-node@v4
         with:
           node-version: 20
           cache: pnpm
+
+      - name: Install deps
+        run: pnpm install --frozen-lockfile
 
       - name: Docs build
         env:
@@ -320,16 +322,14 @@ jobs:
         with:
           name: build-result
 
-      - name: Install pnpm
-        uses: pnpm/action-setup@v2
-        with:
-          run_install: true
-
       - name: Setup Node.js
         uses: actions/setup-node@v4
         with:
           node-version: 20
           cache: pnpm
+
+      - name: Install deps
+        run: pnpm install --frozen-lockfile
 
       - name: Build Netlify Demo
         env:
@@ -400,16 +400,14 @@ jobs:
         with:
           name: build-result
 
-      - name: Install pnpm
-        uses: pnpm/action-setup@v2
-        with:
-          run_install: true
-
       - name: Setup Node.js
         uses: actions/setup-node@v4
         with:
           node-version: 20
           cache: pnpm
+
+      - name: Install deps
+        run: pnpm install --frozen-lockfile
 
       - name: Build ${{ matrix.plugin-name }} demo
         env:
