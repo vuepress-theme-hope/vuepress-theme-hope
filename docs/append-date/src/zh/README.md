@@ -3,7 +3,6 @@ home: true
 title: 主页
 icon: home
 heroText: vuepress-plugin-append-date
-tagline: 从 git 中获取日期信息并添加到 Frontmatter 中
 
 footer: 使用 <a href="https://theme-hope.vuejs.press/zh/" target="_blank">VuePress Theme Hope</a> 主题 | MIT 协议, 版权所有 © 2019-present Mr.Hope
 

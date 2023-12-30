@@ -3,7 +3,6 @@ home: true
 title: Home
 icon: home
 heroText: vuepress-plugin-append-date
-tagline: Append date info from git to frontmatter
 
 footer: Theme by <a href="https://theme-hope.vuejs.press" target="_blank">VuePress Theme Hope</a> | MIT Licensed, Copyright © 2019-present Mr.Hope
 
