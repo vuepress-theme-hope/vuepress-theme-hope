@@ -30,14 +30,14 @@ icon: gears
 
 提示消息显示时间，设置为 `0` 会禁用提示。
 
-## pure
+## fancy
 
-- 类型: `false`
+- 类型: `boolean`
 - 默认值: `false`
 - 详情:
-  - [指南 → 纯净模式](./guide.md#纯净模式)
+  - [指南 → Fancy 模式](./guide.md#fancy-模式)
 
-是否生成样式纯净的小而简单的复制按钮。
+是否生成醒目的复制按钮。
 
 ## delay
 

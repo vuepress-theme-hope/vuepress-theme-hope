@@ -15,11 +15,15 @@ By default, the button is only displayed in desktop mode, if you need to display
 
 ## Copy Hint
 
-After the user clicks the copy button, a copy success message will be displayed on the screen. The default prompt duration is 2000ms, if you need to change this duration, please set `duration` (unit ms), if you don't need this prompt, please set `duration` to `0`.
+After the user clicks the copy button, a success hint will be displayed.
 
-## Pure Mode
+The default duration is 2000ms, set `duration` (in unit ms) if you need to change it. To disable the hint, set `duration` to `0`.
 
-By default, the plugin will show a big blue button, if you want to make the button and tooltip less "obvious" you can add the `pure: true` option.
+## Fancy Mode
+
+By default, the copy button is only displayed when the mouse hovers over its code fence.
+
+If you just want to display some code for others to copy, you can add the `fancy: true` option. This will render a prominent copy button in the bottom right corner of each code fence.
 
 ## Locale Customization
 

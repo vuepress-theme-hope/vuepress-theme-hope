@@ -6,14 +6,14 @@ export default config("copy-code2", {
   locales: {
     "/": {
       lang: "en-US",
-      title: "Copy Code Block",
-      description: "Quick Code Copy Plugin for vuepress",
+      title: "Code Copy button",
+      description: "VuePress2 Plugin providing copy button for code fences",
     },
 
     "/zh/": {
       lang: "zh-CN",
-      title: "复制代码块",
-      description: "VuePress 的代码一键复制插件",
+      title: "代码块复制按钮",
+      description: "为代码块提供复制按钮的 VuePress2 插件",
     },
   },
 

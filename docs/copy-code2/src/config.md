@@ -30,14 +30,14 @@ Whether to display copy button on the mobile device
 
 Hint display time, setting it to `0` will disable the hint.
 
-## pure
+## fancy
 
-- Type: `false`
+- Type: `boolean`
 - Default: `false`
 - Details:
-  - [Guide → Pure Mode](./guide.md#pure-mode)
+  - [Guide → Fancy Mode](./guide.md#fancy-mode)
 
-Whether generate a small simple button with pure style.
+Whether generate a prominent copy button.
 
 ## delay
 
