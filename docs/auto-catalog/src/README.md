@@ -3,7 +3,7 @@ home: true
 title: Home
 icon: home
 heroText: vuepress-plugin-auto-catalog
-tagline: Generation and displaying component
+tagline: Generation and displaying catalog
 actions:
   - text: Guide
     icon: lightbulb
