@@ -1,4 +1,8 @@
-import type { SandpackOptions, SandpackSetup } from "sandpack-vue3";
+import type {
+  SandpackOptions,
+  SandpackPredefinedTemplate,
+  SandpackSetup,
+} from "sandpack-vue3";
 
 /**
  * Sandpack config
@@ -15,7 +19,7 @@ export interface SandpackConfig {
    *
    * 指定模板
    */
-  template?: string;
+  template?: SandpackPredefinedTemplate;
 
   /**
    * Options to configure the sandpack

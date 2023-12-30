@@ -139,8 +139,8 @@ export const mdEnhancePlugin =
       kotlinPlayground: getStatus("kotlinPlayground", false, [
         "kotlin-playground",
       ]),
-      vuePlayground: getStatus("vuePlayground", false, ["@vue/repl"]),
       sandpack: getStatus("sandpack", false, ["sandpack-vue3"]),
+      vuePlayground: getStatus("vuePlayground", false, ["@vue/repl"]),
     };
 
     const { enabled: enableLinksCheck, isIgnoreLink } = getLinksCheckStatus(

@@ -1,11 +1,16 @@
 import { useMutationObserver } from "@vueuse/core";
-import type { Sandpack, SandpackPredefinedTemplate } from "sandpack-vue3";
-import type { VNode } from "vue";
+import type {
+  Sandpack,
+  SandpackPredefinedTemplate,
+  SandpackThemeProp,
+} from "sandpack-vue3";
+import type { PropType, VNode } from "vue";
 import { computed, defineComponent, h, onMounted, ref, shallowRef } from "vue";
 import { LoadingIcon, deepAssign } from "vuepress-shared/client";
 
 import { useSandpackConfig } from "../helpers/index.js";
 import {
+  getDarkmodeStatus,
   getSandpackCustomSetup,
   getSandpackFiles,
   getSandpackOptions,
@@ -33,8 +38,8 @@ export default defineComponent({
      * 演示工程模板
      */
     template: {
-      type: String,
-      default: null,
+      type: String as PropType<SandpackPredefinedTemplate>,
+      default: "",
     },
 
     /**
@@ -59,39 +64,37 @@ export default defineComponent({
     customSetup: { type: String, default: "{}" },
 
     /**
-     * RTL layout
-     *
-     * RTL 布局
-     */
-    rtl: { type: Boolean },
-
-    /**
      * Theme
      *
      * 主题
      */
     theme: {
-      type: String,
-      default: null,
+      type: String as PropType<SandpackThemeProp>,
+      default: "",
     },
+
+    /**
+     * RTL layout
+     *
+     * RTL 布局
+     */
+    rtl: Boolean,
   },
 
   setup(props) {
     const sandpackConfig = useSandpackConfig();
-    const loading = ref(true);
+
+    const isDarkmode = ref(false);
     const component = shallowRef<typeof Sandpack>();
 
-    const template = computed(() =>
-      <SandpackPredefinedTemplate>props.template
-        ? props.template
-        : sandpackConfig.template,
-    );
-
-    const sandpackOptions = computed(() =>
+    const options = computed(() =>
       deepAssign({}, sandpackConfig.options, getSandpackOptions(props.options)),
     );
-
-    const sandpackCustomSetup = computed(() =>
+    const template = computed(() => props.template || sandpackConfig.template);
+    const theme = computed(() =>
+      props.theme || isDarkmode.value ? "dark" : "light",
+    );
+    const customSetup = computed(() =>
       deepAssign(
         {},
         sandpackConfig.customSetup,
@@ -99,32 +102,21 @@ export default defineComponent({
       ),
     );
 
-    const setupSandpack = async (): Promise<void> => {
-      const { Sandpack } = await import(
-        /* webpackChunkName: "sandpack-vue3" */ "sandpack-vue3"
+    const setupSandpack = (): Promise<void> =>
+      import(/* webpackChunkName: "sandpack-vue3" */ "sandpack-vue3").then(
+        ({ Sandpack }) => {
+          component.value = Sandpack;
+        },
       );
 
-      component.value = Sandpack;
-    };
-
-    const theme = ref(props.theme);
-    const isDarkmode = ref(false);
-
-    onMounted(async () => {
-      await setupSandpack();
-      loading.value = false;
-
-      const html = document.documentElement;
-
-      const getDarkmodeStatus = (): boolean =>
-        html.classList.contains("dark") ||
-        html.getAttribute("data-theme") === "dark";
+    onMounted(() => {
+      void setupSandpack();
 
       isDarkmode.value = getDarkmodeStatus();
 
       // watch darkmode change
       useMutationObserver(
-        html,
+        document.documentElement,
         () => {
           isDarkmode.value = getDarkmodeStatus();
         },
@@ -142,34 +134,17 @@ export default defineComponent({
           : null,
         h(
           "div",
-          {
-            class: "sandpack-container",
-          },
-          [
-            loading.value
-              ? h(LoadingIcon, { class: "preview-loading", height: 192 })
-              : null,
-            component.value
-              ? // eslint-disable-next-line @typescript-eslint/no-unsafe-argument
-                h(component.value, {
-                  template: template.value,
-                  files: getSandpackFiles(props.files),
-                  options: {
-                    ...sandpackOptions.value,
-                  },
-                  customSetup: {
-                    ...sandpackCustomSetup.value,
-                  },
-                  rtl: props.rtl,
-                  theme: theme.value
-                    ? theme.value
-                    : isDarkmode.value
-                      ? "dark"
-                      : "light",
-                  // eslint-disable-next-line @typescript-eslint/no-explicit-any
-                } as any)
-              : null,
-          ],
+          { class: "sandpack-container" },
+          component.value
+            ? h(component.value, {
+                template: template.value,
+                theme: theme.value,
+                files: getSandpackFiles(props.files),
+                options: options.value,
+                customSetup: customSetup.value,
+                rtl: props.rtl,
+              })
+            : h(LoadingIcon, { class: "preview-loading", height: 192 }),
         ),
       ]),
     ];
