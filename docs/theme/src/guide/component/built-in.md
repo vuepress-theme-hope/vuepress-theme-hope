@@ -28,7 +28,7 @@ Available components:
 - VidStack
 - XiGua
 
-To enable components, you should set `plugin.components.components` with an array of components names.
+To enable components, you should set `plugins.components.components` with an array of components names.
 
 <!-- more -->
 

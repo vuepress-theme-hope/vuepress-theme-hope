@@ -6,6 +6,7 @@ import {
   entries,
   fromEntries,
   getAuthor,
+  isPlainObject,
   keys,
 } from "vuepress-shared/node";
 
@@ -27,13 +28,14 @@ try {
  */
 export const getFeedPlugin = (
   themeData: ThemeData,
-  options: Omit<FeedOptions, "hostname"> = {},
+  options: Omit<FeedOptions, "hostname"> | boolean = false,
   hostname?: string,
   favicon?: string,
   legacy = false,
 ): Plugin | null => {
-  // disable feed if no options for feed plugin
-  if (!keys(options).length) return null;
+  // disable feed if feed is disabled or no options for feed plugin
+  if (options === false || (isPlainObject(options) && keys(options).length))
+    return null;
 
   if (!feedPlugin) {
     logger.error(`${colors.cyan("vuepress-plugin-feed2")} is not installed!`);
@@ -74,5 +76,11 @@ export const getFeedPlugin = (
     ),
   };
 
-  return feedPlugin(deepAssign(defaultOptions, options), legacy);
+  return feedPlugin(
+    deepAssign(
+      defaultOptions,
+      isPlainObject(options) ? options : { rss: true },
+    ),
+    legacy,
+  );
 };

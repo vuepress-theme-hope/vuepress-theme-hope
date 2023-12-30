@@ -843,7 +843,7 @@ importers:
     devDependencies:
       '@vuepress/bundler-vite':
         specifier: 2.0.0-rc.0
-        version: 2.0.0-rc.0(@types/node@20.10.6)(typescript@5.3.3)
+        version: 2.0.0-rc.0(@types/node@20.10.6)(sass@1.69.5)(typescript@5.3.3)
 
   docs/append-date:
     dependencies:
@@ -1649,7 +1649,7 @@ importers:
         version: 1.5.5
       '@vuepress/bundler-vite':
         specifier: 2.0.0-rc.0
-        version: 2.0.0-rc.0(@types/node@20.10.6)(typescript@5.3.3)
+        version: 2.0.0-rc.0(@types/node@20.10.6)(sass@1.69.5)(typescript@5.3.3)
       '@vuepress/core':
         specifier: 2.0.0-rc.0
         version: 2.0.0-rc.0(typescript@5.3.3)
@@ -1985,7 +1985,7 @@ importers:
         version: 4.0.9
       '@vuepress/bundler-vite':
         specifier: 2.0.0-rc.0
-        version: 2.0.0-rc.0(@types/node@20.10.6)(typescript@5.3.3)
+        version: 2.0.0-rc.0(@types/node@20.10.6)(sass@1.69.5)(typescript@5.3.3)
       '@vuepress/core':
         specifier: 2.0.0-rc.0
         version: 2.0.0-rc.0(typescript@5.3.3)
@@ -2408,7 +2408,7 @@ importers:
         version: 7.5.6
       '@vuepress/bundler-vite':
         specifier: 2.0.0-rc.0
-        version: 2.0.0-rc.0(@types/node@20.10.6)(typescript@5.3.3)
+        version: 2.0.0-rc.0(@types/node@20.10.6)(sass@1.69.5)(typescript@5.3.3)
       '@vuepress/bundler-webpack':
         specifier: 2.0.0-rc.0
         version: 2.0.0-rc.0(esbuild@0.19.11)(typescript@5.3.3)
@@ -2473,6 +2473,9 @@ importers:
       '@vuepress/plugin-container':
         specifier: 2.0.0-rc.0
         version: 2.0.0-rc.0(typescript@5.3.3)
+      '@vuepress/plugin-docsearch':
+        specifier: 2.0.0-rc.0
+        version: 2.0.0-rc.0(@algolia/client-search@4.22.0)(search-insights@2.13.0)(typescript@5.3.3)
       '@vuepress/plugin-external-link-icon':
         specifier: 2.0.0-rc.0
         version: 2.0.0-rc.0(typescript@5.3.3)
@@ -2483,6 +2486,9 @@ importers:
         specifier: 2.0.0-rc.0
         version: 2.0.0-rc.0(typescript@5.3.3)
       '@vuepress/plugin-prismjs':
+        specifier: 2.0.0-rc.0
+        version: 2.0.0-rc.0(typescript@5.3.3)
+      '@vuepress/plugin-search':
         specifier: 2.0.0-rc.0
         version: 2.0.0-rc.0(typescript@5.3.3)
       '@vuepress/plugin-theme-data':
@@ -2542,21 +2548,36 @@ importers:
       vuepress-plugin-copy-code2:
         specifier: workspace:*
         version: link:../copy-code2
+      vuepress-plugin-copyright2:
+        specifier: workspace:*
+        version: link:../copyright2
+      vuepress-plugin-feed2:
+        specifier: workspace:*
+        version: link:../feed2
       vuepress-plugin-md-enhance:
         specifier: workspace:*
         version: link:../md-enhance
       vuepress-plugin-photo-swipe:
         specifier: workspace:*
         version: link:../photo-swipe
+      vuepress-plugin-pwa2:
+        specifier: workspace:*
+        version: link:../pwa2
       vuepress-plugin-reading-time2:
         specifier: workspace:*
         version: link:../reading-time2
+      vuepress-plugin-redirect:
+        specifier: workspace:*
+        version: link:../redirect
       vuepress-plugin-rtl:
         specifier: workspace:*
         version: link:../rtl
       vuepress-plugin-sass-palette:
         specifier: workspace:*
         version: link:../sass-palette
+      vuepress-plugin-search-pro:
+        specifier: workspace:*
+        version: link:../search-pro
       vuepress-plugin-seo2:
         specifier: workspace:*
         version: link:../seo2
@@ -2575,31 +2596,13 @@ importers:
     devDependencies:
       '@vuepress/bundler-vite':
         specifier: 2.0.0-rc.0
-        version: 2.0.0-rc.0(@types/node@20.10.6)(typescript@5.3.3)
+        version: 2.0.0-rc.0(@types/node@20.10.6)(sass@1.69.5)(typescript@5.3.3)
       '@vuepress/bundler-webpack':
         specifier: 2.0.0-rc.0
         version: 2.0.0-rc.0(esbuild@0.19.11)(typescript@5.3.3)
       '@vuepress/markdown':
         specifier: 2.0.0-rc.0
         version: 2.0.0-rc.0
-      '@vuepress/plugin-docsearch':
-        specifier: 2.0.0-rc.0
-        version: 2.0.0-rc.0(@algolia/client-search@4.22.0)(search-insights@2.13.0)(typescript@5.3.3)
-      '@vuepress/plugin-search':
-        specifier: 2.0.0-rc.0
-        version: 2.0.0-rc.0(typescript@5.3.3)
-      vuepress-plugin-copyright2:
-        specifier: workspace:*
-        version: link:../copyright2
-      vuepress-plugin-feed2:
-        specifier: workspace:*
-        version: link:../feed2
-      vuepress-plugin-pwa2:
-        specifier: workspace:*
-        version: link:../pwa2
-      vuepress-plugin-search-pro:
-        specifier: workspace:*
-        version: link:../search-pro
 
 packages:
 
@@ -6015,35 +6018,6 @@ packages:
       connect-history-api-fallback: 2.0.0
       postcss: 8.4.32
       postcss-load-config: 4.0.2(postcss@8.4.32)
-      rollup: 4.9.2
-      vite: 5.0.10(@types/node@20.10.6)(sass@1.69.5)
-      vue: 3.4.1(typescript@5.3.3)
-      vue-router: 4.2.5(vue@3.4.1)
-    transitivePeerDependencies:
-      - '@types/node'
-      - '@vue/composition-api'
-      - less
-      - lightningcss
-      - sass
-      - stylus
-      - sugarss
-      - supports-color
-      - terser
-      - ts-node
-      - typescript
-
-  /@vuepress/bundler-vite@2.0.0-rc.0(@types/node@20.10.6)(typescript@5.3.3):
-    resolution: {integrity: sha512-rX8S8IYpqqlJfNPstS/joorpxXx/4WuE7+gDM31i2HUrxOKGZVzq8ZsRRRU2UdoTwHZSd3LpUS4sMtxE5xLK1A==}
-    dependencies:
-      '@vitejs/plugin-vue': 4.6.0(vite@5.0.10)(vue@3.4.1)
-      '@vuepress/client': 2.0.0-rc.0(typescript@5.3.3)
-      '@vuepress/core': 2.0.0-rc.0(typescript@5.3.3)
-      '@vuepress/shared': 2.0.0-rc.0
-      '@vuepress/utils': 2.0.0-rc.0
-      autoprefixer: 10.4.16(postcss@8.4.32)
-      connect-history-api-fallback: 2.0.0
-      postcss: 8.4.32
-      postcss-load-config: 4.0.2(postcss@8.4.32)
       rollup: 4.9.1
       vite: 5.0.10(@types/node@20.10.6)(sass@1.69.5)
       vue: 3.4.1(typescript@5.3.3)
@@ -6318,7 +6292,7 @@ packages:
       - '@vue/composition-api'
       - supports-color
       - typescript
-    dev: true
+    dev: false
 
   /@vuepress/plugin-theme-data@2.0.0-rc.0(typescript@5.3.3):
     resolution: {integrity: sha512-FXY3/Ml+rM6gNKvwdBF6vKAcwnSvtXCzKgQwJAw3ppQTKUkLcbOxqM+h4d8bzHWAAvdnEvQFug5uEZgWllBQbA==}
@@ -15511,7 +15485,7 @@ packages:
       '@vuepress/client': 2.0.0-rc.0
       vue: ^3.3.4
     dependencies:
-      '@vuepress/bundler-vite': 2.0.0-rc.0(@types/node@20.10.6)(typescript@5.3.3)
+      '@vuepress/bundler-vite': 2.0.0-rc.0(@types/node@20.10.6)(sass@1.69.5)(typescript@5.3.3)
       '@vuepress/cli': 2.0.0-rc.0(typescript@5.3.3)
       '@vuepress/client': 2.0.0-rc.0(typescript@5.3.3)
       '@vuepress/core': 2.0.0-rc.0(typescript@5.3.3)

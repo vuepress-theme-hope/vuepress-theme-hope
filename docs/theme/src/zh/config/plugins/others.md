@@ -38,9 +38,9 @@ tag:
 - `"SiteInfo"`
 - `"XiGua"`
 
-你可以将 `plugin.components.components` 设置为需要的组件数组，默认情况下为 `["Badge"]`。
+你可以将 `plugins.components.components` 设置为需要的组件数组，默认情况下为 `["Badge"]`。
 
-同时，你可以设置 `plugin.components.rootComponents` 来启用一些根组件，例如 Notice。
+同时，你可以设置 `plugins.components.rootComponents` 来启用一些根组件，例如 Notice。
 
 插件选项请参阅 <ProjectLink name="components" path="/zh/config.html">components 插件文档</ProjectLink>。
 

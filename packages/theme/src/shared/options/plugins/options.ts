@@ -11,6 +11,7 @@ import type { MarkdownEnhanceOptions } from "vuepress-plugin-md-enhance";
 import type { PhotoSwipeOptions } from "vuepress-plugin-photo-swipe";
 import type { PWAOptions } from "vuepress-plugin-pwa2";
 import type { ReadingTimeOptions } from "vuepress-plugin-reading-time2";
+import type { RedirectOptions } from "vuepress-plugin-redirect";
 import type { SearchProOptions } from "vuepress-plugin-search-pro";
 import type { SeoOptions } from "vuepress-plugin-seo2";
 import type { SitemapOptions } from "vuepress-plugin-sitemap2";
@@ -81,7 +82,7 @@ export interface PluginsOptions {
    *
    * @see https://plugin-copy-code2.vuejs.press/zh/config/
    */
-  copyCode?: CopyCodeOptions | false;
+  copyCode?: CopyCodeOptions | boolean;
 
   /**
    * Copyright Plugin options
@@ -125,7 +126,7 @@ export interface PluginsOptions {
    *
    * @see https://plugin-feed2.vuejs.press/zh/config/
    */
-  feed?: Omit<FeedOptions, "hostname">;
+  feed?: Omit<FeedOptions, "hostname"> | boolean;
 
   /**
    * Git plugin options
@@ -152,10 +153,11 @@ export interface PluginsOptions {
    * @see https://plugin-md-enhance.vuejs.press/zh/config/
    */
   mdEnhance?:
-    | (Omit<MarkdownEnhanceOptions, "container"> & {
+    | (Omit<MarkdownEnhanceOptions, "hint"> & {
         /**
-         * Whether to enable custom container including
+         * Whether to enable hint container including
          *
+         * - important
          * - info
          * - note
          * - tip
@@ -163,22 +165,19 @@ export interface PluginsOptions {
          * - caution
          * - details
          *
-         * ⚠ The last 4 items conflict with default theme and will override it’s style.
+         * 是否启用提示容器
          *
-         * 是否启用自定义容器
-         *
+         * - important
          * - info
          * - note
          * - tip
          * - warning
          * - caution
          * - details
-         *
-         * ⚠ 最后四个会和默认主题冲突，且会覆盖默认主题的样式与行为。
          *
          * @default true
          */
-        container?: boolean;
+        hint?: boolean;
       })
     | false;
 
@@ -240,6 +239,17 @@ export interface PluginsOptions {
    * @default true
    */
   readingTime?: ReadingTimeOptions | boolean;
+
+  /**
+   * Redirect options
+   *
+   * @see https://plugin-redirect.vuejs.press/config/
+   *
+   * 重定向插件配置
+   *
+   * @see https://plugin-redirect.vuejs.press/zh/config/
+   */
+  redirect?: Omit<RedirectOptions, "hostname"> | boolean;
 
   /**
    * @vuepress/search plugin options

@@ -261,9 +261,9 @@ tag:
 
    :::
 
-1. 在主题选项中配置 `plugin.searchPro`。
+1. 在主题选项中配置 `plugins.searchPro`。
 
-   你可以将 `plugin.searchPro` 设置为 `true` 来直接启用它，或者将其设置为一个对象来自定义插件。
+   你可以将 `plugins.searchPro` 设置为 `true` 来直接启用它，或者将其设置为一个对象来自定义插件。
 
    ::: code-tabs#language
 
@@ -339,9 +339,9 @@ tag:
 
    :::
 
-1. Customize `plugin.search` in theme options.
+1. Customize `plugins.search` in theme options.
 
-1. 在主题选项中配置 `plugin.search`。
+1. 在主题选项中配置 `plugins.search`。
 
    ::: code-tabs#language
 

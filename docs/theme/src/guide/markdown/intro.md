@@ -21,7 +21,7 @@ For detailed syntax, please see [Built-in Markdown Enhance](../../cookbook/vuepr
 
 ## Enable Markdown Enhancement
 
-`plugin.mdEnhance` in theme options will be passed to the plugin as a plugin option. Visit <ProjectLink name="md-enhance">plugin documentation</ProjectLink> to see the usage.
+`plugins.mdEnhance` in theme options will be passed to the plugin as a plugin option. Visit <ProjectLink name="md-enhance">plugin documentation</ProjectLink> to see the usage.
 
 ::: tip
 

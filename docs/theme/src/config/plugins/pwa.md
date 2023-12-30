@@ -12,23 +12,15 @@ tag:
 
 ## Intro
 
-The `vuepress-plugin-pwa2` plugin provides progressive web app support.
+The theme can provide progressive web app support via `vuepress-plugin-pwa2`, and you need to **manually install the plugin** before using.
+
+You can enable this feature by setting `plugins.pwa2` to `true` in theme options. This default behavior generate a PWA based on theme options.
+
+## Plugin Options
 
 `vuepress-theme-hope` passes `plugins.pwa` in theme options as plugin options to `vuepress-plugin-pwa2` plugin.
 
-::: tip Quick Enable
-
-To simply enable this feature, you can set `pwa: true`. <Badge text="Quick Enable Not recommended" type="warning" />
-
-:::
-
-::: info
-
-See the <ProjectLink name="pwa2" path="/config.html">pwa2 plugin documentation</ProjectLink> for more details.
-
-:::
-
-## Plugin Options
+You can pass your own options with `plugins.pwa`, here are some common ones:
 
 ### manifest
 
@@ -151,7 +143,7 @@ Special settings for Apple
 - Type: `string`
 - Required: No
 
-Fill in the icon address used by Apple, the recommended size is 152×152
+Icon link used by Apple, the recommended size is 152×152.
 
 #### apple.statusBarColor
 
@@ -187,20 +179,6 @@ Tile icon
 
 The tile color will automatically fall back to themeColor if you don't set it.
 
-### hintComponent
-
-- Type: `string`
-- Default: `"SWHintPopup"`
-
-You can fill in the custom hint popup component path.
-
-### updateComponent
-
-- Type: `string`
-- Default: `"SWUpdatePopup"`
-
-You can fill in the custom update popup component path.
-
 ### appendBase
 
 - Type: `boolean`
@@ -208,77 +186,8 @@ You can fill in the custom update popup component path.
 
 Whether append base to all absolute links in options.
 
-### generateSwConfig
+::: info
 
-Options passed to `workbox-build`, for details, see [Workbox documentation](https://developers.google.com/web/tools/workbox/reference-docs/latest/module-workbox-build#.generateSW)
+Check <ProjectLink name="pwa2" path="/config/">pwa2 plugin documentation</ProjectLink> for all available options.
 
-### locales
-
-- Type: `PWALocaleConfig`
-
-  ```ts
-  interface PWALocaleData {
-    /**
-     * Install button text
-     */
-    install: string;
-
-    /**
-     * iOS install hint text
-     */
-    iOSInstall: string;
-
-    /**
-     * Cancel button text
-     */
-    cancel: string;
-
-    /**
-     * Close button text
-     */
-    close: string;
-
-    /**
-     * Previous image text
-     */
-    prevImage: string;
-
-    /**
-     * Next image text
-     */
-    nextImage: string;
-
-    /**
-     * Install explain text
-     */
-    explain: string;
-
-    /**
-     * Description label text
-     */
-    desc: string;
-
-    /**
-     * Feature label text
-     */
-    feature: string;
-
-    /**
-     * Update hint text
-     */
-    hint: string;
-
-    /**
-     * Update available text
-     */
-    update: string;
-  }
-
-  interface PWALocaleConfig {
-    [localePath: string]: PWALocaleData;
-  }
-  ```
-
-- Required: No
-
-Locales config for pwa plugin.
+:::

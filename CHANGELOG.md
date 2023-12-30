@@ -1942,7 +1942,7 @@ closed 2811
 
 ### ⚠ BREAKING CHANGES
 
-- **theme:** plugin.components no longer accepts an array
+- **theme:** plugins.components no longer accepts an array
 - **components:** rebuild component options
 
 ### Features
@@ -4028,7 +4028,7 @@ Since `vuepress` drop support for the `babel` way, `search` and `docsearch` opti
 ### Features
 
 - **theme:** add dayjs to optimize deps ([f6c87a2](https://github.com/vuepress-theme-hope/vuepress-theme-hope/commit/f6c87a2f735719b3efb1cdd2fdc603054f1df048))
-- **theme:** set `plugin.blog` default value to false ([f23b107](https://github.com/vuepress-theme-hope/vuepress-theme-hope/commit/f23b107468e4293f7afce8d29af2b385e2d6e45a))
+- **theme:** set `plugins.blog` default value to false ([f23b107](https://github.com/vuepress-theme-hope/vuepress-theme-hope/commit/f23b107468e4293f7afce8d29af2b385e2d6e45a))
 
 ## [2.0.0-alpha.20](https://github.com/vuepress-theme-hope/vuepress-theme-hope/compare/v2.0.0-alpha.19...v2.0.0-alpha.20) (2022-02-12)
 

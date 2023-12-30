@@ -8,13 +8,10 @@ import type {
   KatexOptions,
   MarkdownEnhanceLocaleData,
   MathjaxOptions,
-  PlaygroundOptions,
+  PlaygroundGlobalOptions,
   RevealJsOptions,
   StylizeOptions,
-  TSPresetPlaygroundOptions,
   TasklistOptions,
-  UnoPresetPlaygroundOptions,
-  VuePresetPlaygroundOptions,
 } from "./typings/index.js";
 import type { CodeDemoOptions } from "../shared/index.js";
 
@@ -381,16 +378,7 @@ export interface MarkdownEnhanceOptions {
    *
    * 是否启用 playground 支持
    */
-  playground?: {
-    /** Playground presets */
-    presets: ("ts" | "vue" | "unocss" | PlaygroundOptions)[];
-    /** Playground config */
-    config?: {
-      ts?: TSPresetPlaygroundOptions;
-      vue?: VuePresetPlaygroundOptions;
-      unocss?: UnoPresetPlaygroundOptions;
-    };
-  };
+  playground?: PlaygroundGlobalOptions;
 
   /**
    * Whether to enable kotlin playground support

@@ -16,7 +16,7 @@ tag:
 如果你正在使用此插件，我们推荐在你的 VuePress 配置文件中设置 `shouldPrefetch: false`。
 
 `vuepress-theme-hope` 将主题选项中的 `plugins.pwa` 提供给 `vuepress-plugin-pwa2`。
-后文提及的选项都位于 `plugin.pwa` 下。
+后文提及的选项都位于 `plugins.pwa` 下。
 
 :::
 

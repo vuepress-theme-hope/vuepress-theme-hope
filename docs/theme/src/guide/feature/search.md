@@ -186,7 +186,7 @@ The theme adds built-in support for <ProjectLink name="search-pro">`vuepress-plu
 
    :::
 
-1. Customize the plugin with `plugin.docsearch` in theme options.
+1. Customize the plugin with `plugins.docsearch` in theme options.
 
    ::: code-tabs#language
 
@@ -262,9 +262,9 @@ See [Plugin Docs][docsearch] for how to use docsearch plugin and its available o
 
    :::
 
-1. Customize `plugin.searchPro` in theme options.
+1. Customize `plugins.searchPro` in theme options.
 
-   You can set `plugin.searchPro` to `true` to enable it directly, or set it to an object to customize the plugin.
+   You can set `plugins.searchPro` to `true` to enable it directly, or set it to an object to customize the plugin.
 
    ::: code-tabs#language
 
@@ -340,7 +340,7 @@ See <ProjectLink name="search-pro">Plugin Docs</ProjectLink> for available optio
 
    :::
 
-1. Customize `plugin.search` in theme options.
+1. Customize `plugins.search` in theme options.
 
    ::: code-tabs#language
 

@@ -12,27 +12,15 @@ tag:
 
 ## Intro
 
-The `vuepress-plugin-copyright2` plugin can append copyright information when users copy content from your site. Also, you can disable site copy or selection with this plugin.
+The theme can append copyright information while copying via `vuepress-plugin-copyright2`, and it's **not** enabled by default.
 
-This plugin is disabled by default.
-
-`vuepress-theme-hope` passes `plugins.copyright` in theme options as plugin options to `vuepress-plugin-copyright2` plugin.
+You can enabled this feature by setting `plugins.copyright` to `true` in theme options. The default behavior globally enables the plugin and use author name defined in theme options.
 
 ## Plugin Options
 
-### hostname
+The theme passes `plugins.copyright` in theme options as plugin options to `vuepress-plugin-copyright2` plugin.
 
-- Type: `string`
-- Required: No
-
-Deploy hostname
-
-### author
-
-- Type: `string | ((page: Page) => string)`
-- Required: No
-
-Author Information
+You can pass your own options with `plugins.copyright`, here are some common ones:
 
 ### license
 
@@ -69,39 +57,8 @@ Disable copy
 
 Disable selection
 
-### locales
+::: info
 
-- Type: `CopyrightLocaleConfig`
+Check <ProjectLink name="copyright2" path="/config/">copyright2 plugin documentation</ProjectLink> for all available options.
 
-  ```ts
-  interface CopyrightLocaleData {
-    /**
-     * Author text
-     *
-     * @description `:author` will be replaced by author
-     */
-    author: string;
-
-    /**
-     * License text
-     *
-     * @description `:license` will be replaced by current license
-     */
-    license: string;
-
-    /**
-     * Link text
-     *
-     * @description `:url` will be replaced by current page link
-     */
-    link: string;
-  }
-
-  interface CopyrightLocaleConfig {
-    [localePath: string]: CopyrightLocaleData;
-  }
-  ```
-
-- Required: No
-
-Locale config for copyright plugin.
+:::
