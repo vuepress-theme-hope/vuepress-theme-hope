@@ -64,8 +64,8 @@ importers:
         specifier: 8.2.2
         version: 8.2.2
       cpx2:
-        specifier: 7.0.0
-        version: 7.0.0
+        specifier: 7.0.1
+        version: 7.0.1
       cross-env:
         specifier: 7.0.3
         version: 7.0.3
@@ -7920,9 +7920,9 @@ packages:
       typescript: 5.3.3
     dev: true
 
-  /cpx2@7.0.0:
-    resolution: {integrity: sha512-ehw/Dh16sw4JHQIHJg0JHZIGz5hxUORv9mbeYRgCmiEn9mTpWLb4tPxkzKU5Y7jHtk7/qugL6SiHNHnzGU4piQ==}
-    engines: {node: '>=20', npm: '>=10'}
+  /cpx2@7.0.1:
+    resolution: {integrity: sha512-ZgK/DRvPFM5ATZ5DQ5UzY6ajkBrI/p9Uc7VyLHc7b4OSFeBO4yOQz/GEmccc4Om6capGYlY4K1XX+BtYQiPPIA==}
+    engines: {node: '>=18', npm: '>=10'}
     hasBin: true
     dependencies:
       debounce: 2.0.0
