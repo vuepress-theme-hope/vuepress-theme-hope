@@ -74,6 +74,13 @@ export interface BasePageFrontMatter extends PageFrontmatter {
   footer?: string | boolean;
 
   /**
+   * License text
+   *
+   * 协议文字
+   */
+  license?: string;
+
+  /**
    * Copyright text
    *
    * 版权文字

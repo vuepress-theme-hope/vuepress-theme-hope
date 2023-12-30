@@ -26,11 +26,11 @@ export interface CopyrightLocaleData {
   /**
    * Link text
    *
-   * @description `:url` will be replaced by current page link
+   * @description `:link` will be replaced by current page link
    *
    * 链接文字
    *
-   * @description `:url` 会替换为当前页面链接
+   * @description `:link` 会替换为当前页面链接
    */
   link: string;
 }

@@ -7,17 +7,38 @@ icon: gears
 
 ### author
 
-- Type: `string | ((page: Page) => string)`
+- Type: `string`
 - Required: No
 
-Author Information
+Default author Information
 
 ### license
 
-- Type: `string | ((page: Page) => string)`
+- Type: `string`
 - Required: No
 
-License Information
+Default license Information
+
+### authorGetter
+
+- Type: `(page: Page) => string | null`
+- Required: No
+
+Author getter
+
+### licenseGetter
+
+- Type: `(page: Page) => string | null`
+- Required: No
+
+License getter
+
+### copyrightGetter
+
+- Type: `(page: Page) => string | null`
+- Required: No
+
+Copyright getter
 
 ### triggerLength
 
@@ -99,7 +120,7 @@ So copyright message triggered by copying content on another site also points to
     /**
      * Link text
      *
-     * @description `:url` will be replaced by current page link
+     * @description `:link` will be replaced by current page link
      */
     link: string;
   }

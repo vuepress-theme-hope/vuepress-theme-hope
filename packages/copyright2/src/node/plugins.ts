@@ -4,7 +4,6 @@ import {
   addViteSsrNoExternal,
   checkVersion,
   getLocales,
-  isFunction,
 } from "vuepress-shared/node";
 
 import { convertOptions } from "./compact.js";
@@ -27,7 +26,10 @@ export const copyrightPlugin =
     const {
       canonical,
       author = "",
+      authorGetter,
       license = "",
+      licenseGetter,
+      copyrightGetter,
       disableCopy = false,
       disableSelection = false,
       global = false,
@@ -47,6 +49,8 @@ export const copyrightPlugin =
 
       define: (): Record<string, unknown> => ({
         COPYRIGHT_CANONICAL: canonical || "",
+        COPYRIGHT_DEFAULT_AUTHOR: author || "",
+        COPYRIGHT_DEFAULT_LICENSE: license || "",
         COPYRIGHT_GLOBAL: global,
         COPYRIGHT_DISABLE_COPY: disableCopy,
         COPYRIGHT_DISABLE_SELECTION: disableSelection,
@@ -56,10 +60,11 @@ export const copyrightPlugin =
       }),
 
       extendsPage: (page: Page<Partial<CopyrightPluginPageData>>): void => {
-        const authorText = isFunction(author) ? author(page) : author;
+        const authorText = authorGetter?.(page) ?? author;
+        const licenseText = licenseGetter?.(page) ?? license;
+        const copyright = copyrightGetter?.(page);
 
-        const licenseText = isFunction(license) ? license(page) : license;
-
+        // TODO: Remove this in v2 stable
         if (page.frontmatter["triggerWords"]) {
           logger.warn(
             `The ${colors.cyan(
@@ -76,9 +81,13 @@ export const copyrightPlugin =
           page.frontmatter["triggerLength"] = page.frontmatter["triggerWords"];
         }
 
-        page.data.copyright = {
-          ...(authorText ? { author: authorText } : {}),
-          ...(licenseText ? { license: licenseText } : {}),
+        page.data.copyright = copyright ?? {
+          ...(authorText && authorText !== author
+            ? { author: authorText }
+            : {}),
+          ...(licenseText && licenseText !== license
+            ? { license: licenseText }
+            : {}),
         };
       },
 

@@ -11,9 +11,9 @@ This plugin can automatically append copyright information when visitors copy co
 
 This plugin is disabled globally by default, you need to manually enable it by setting `copy: true` in page frontmatter. Of course, you can set `global: true` in the plugin options to make it globally enabled, and set `copy: false` in page frontmatter to disable it.
 
-To avoid disturbing visitors, copyright information will be appended only when the length of content copied by the user is not less than `100`. If you want to change this threshold, please set `triggerLength`, and this option supports being overridden via `copy.triggerLength` in page frontmatter.
+To avoid disturbing visitors, copyright information will be appended only when the length of content copied by the user is greater than 100. If you want to change this threshold, please set `triggerLength`, and this option can be overridden via `copy.triggerLength` in page frontmatter.
 
-If you want to prohibit users from copying long content, you can set `maxLength`, and this option supports being overridden via `copy.maxLength` in page frontmatter.
+If you want to prohibit users from copying long content, you can set `maxLength` to customize this limit, and this option can be overridden via `copy.maxLength` in page frontmatter.
 
 ## Disable Copy and Selection
 
@@ -22,7 +22,9 @@ If you want to prohibit users from copying long content, you can set `maxLength`
 
 ## Copyright Information
 
-You can set author and license information via `author` and `license` in plugin options. If your site have different authors and license in different pages, you can pass in a function `(page: Page) => string` that takes the current page object as parameter and returns the corresponding information.
+You can set default author and license information via `author` and `license` in plugin options.
+
+If your site have different authors and license in different pages, you can set `authorGetter` and `licenseGetter` with function `(page: Page) => string` that takes the current page object as parameter and returns the corresponding information.
 
 ## Customize Copyright Text
 
@@ -62,3 +64,5 @@ export default defineUserConfig({
 ```
 
 For specific options, see [Config → Locale Settings](./config.md#locales).
+
+If you think that appending the copyright information via template is not flexible enough, you can set `copyrightGetter` option to return a completely customized information with Page object or return null to use the default template.

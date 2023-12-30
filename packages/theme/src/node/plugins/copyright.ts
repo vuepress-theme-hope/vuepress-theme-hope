@@ -24,10 +24,14 @@ export const getCopyrightPlugin = (
   return copyrightPlugin(
     <CopyrightOptions>{
       canonical: hostname,
-      author: (page: Page<Record<string, never>, ThemeNormalPageFrontmatter>) =>
-        getAuthor(page.frontmatter.author)?.[0]?.name ||
-        getAuthor(themeData.author)?.[0]?.name ||
-        "",
+      author: getAuthor(themeData.author)?.[0]?.name,
+      license: themeData.license,
+      authorGetter: (
+        page: Page<Record<string, never>, ThemeNormalPageFrontmatter>,
+      ) => getAuthor(page.frontmatter.author)?.[0]?.name,
+      licenseGetter: (
+        page: Page<Record<string, never>, ThemeNormalPageFrontmatter>,
+      ) => page.frontmatter.license,
       ...(isPlainObject(options) ? options : { global: true }),
     },
     legacy,

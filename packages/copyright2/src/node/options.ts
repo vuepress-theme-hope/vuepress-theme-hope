@@ -4,40 +4,66 @@ import type { CopyrightLocaleData } from "../shared/locales.js";
 
 export interface CopyrightOptions {
   /**
-   * Author Information
+   * Default Author Information
    *
-   * 作者信息
+   * 默认作者信息
    */
-  author?:
-    | string
-    | (<
-        ExtraPageData extends Record<string, unknown> = Record<never, never>,
-        ExtraPageFrontmatter extends Record<string, unknown> = Record<
-          string,
-          unknown
-        >,
-        ExtraPageFields extends Record<string, unknown> = Record<never, never>,
-      >(
-        page: Page<ExtraPageData, ExtraPageFrontmatter, ExtraPageFields>,
-      ) => string);
+  author?: string;
 
   /**
-   * License Information
+   * Author Getter
    *
-   * 协议信息
+   * 作者获取器
    */
-  license?:
-    | string
-    | (<
-        ExtraPageData extends Record<string, unknown> = Record<never, never>,
-        ExtraPageFrontmatter extends Record<string, unknown> = Record<
-          string,
-          unknown
-        >,
-        ExtraPageFields extends Record<string, unknown> = Record<never, never>,
-      >(
-        page: Page<ExtraPageData, ExtraPageFrontmatter, ExtraPageFields>,
-      ) => string);
+  authorGetter?: <
+    ExtraPageData extends Record<string, unknown> = Record<never, never>,
+    ExtraPageFrontmatter extends Record<string, unknown> = Record<
+      string,
+      unknown
+    >,
+    ExtraPageFields extends Record<string, unknown> = Record<never, never>,
+  >(
+    page: Page<ExtraPageData, ExtraPageFrontmatter, ExtraPageFields>,
+  ) => string | null;
+
+  /**
+   * Default License Information
+   *
+   * 默认协议信息
+   */
+  license?: string;
+
+  /**
+   * License getter
+   *
+   * 协议信息获取器
+   */
+  licenseGetter?: <
+    ExtraPageData extends Record<string, unknown> = Record<never, never>,
+    ExtraPageFrontmatter extends Record<string, unknown> = Record<
+      string,
+      unknown
+    >,
+    ExtraPageFields extends Record<string, unknown> = Record<never, never>,
+  >(
+    page: Page<ExtraPageData, ExtraPageFrontmatter, ExtraPageFields>,
+  ) => string | null;
+
+  /**
+   * Copyright Getter
+   *
+   * 协议获取器
+   */
+  copyrightGetter?: <
+    ExtraPageData extends Record<string, unknown> = Record<never, never>,
+    ExtraPageFrontmatter extends Record<string, unknown> = Record<
+      string,
+      unknown
+    >,
+    ExtraPageFields extends Record<string, unknown> = Record<never, never>,
+  >(
+    page: Page<ExtraPageData, ExtraPageFrontmatter, ExtraPageFields>,
+  ) => string | null;
 
   /**
    * @deprecated Use `triggerLength` instead
