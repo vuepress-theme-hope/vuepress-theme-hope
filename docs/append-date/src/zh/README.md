@@ -10,9 +10,9 @@ footer: 使用 <a href="https://theme-hope.vuejs.press/zh/" target="_blank">VueP
 copyright: false
 ---
 
-::: warning
+::: important
 
-此插件需要 `@vuepress/plugin-git` 一起使用。
+此插件需要 [`@vuepress/plugin-git`][git] 一起使用。
 
 :::
 
@@ -85,11 +85,13 @@ export default {
 - 类型: `string`
 - 默认值: `"date"`
 
-Frontmatter 键名。
+追加时间时使用的 frontmatter 键名。
 
 ### format
 
 - 类型: `"date" | "time" | "full"`
 - 默认值: `"date"`
 
-日期格式。
+追加时间时使用的日期格式。
+
+[git]: https://vuejs.press/zh/reference/plugin/git.html

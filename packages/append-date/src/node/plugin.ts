@@ -2,7 +2,7 @@ import { createRequire } from "node:module";
 
 import type { Page, PluginFunction } from "@vuepress/core";
 import type { GitPluginPageData } from "@vuepress/plugin-git";
-import { fs } from "@vuepress/utils";
+import { colors, fs } from "@vuepress/utils";
 import {
   checkVersion,
   getDateString,
@@ -12,7 +12,7 @@ import {
 } from "vuepress-shared/node";
 
 import type { AppendDateOptions } from "./options.js";
-import { PLUGIN_NAME, logger } from "./utils.js";
+import { GIT_PLUGIN_NAME, PLUGIN_NAME, logger } from "./utils.js";
 
 const require = createRequire(import.meta.url);
 
@@ -27,16 +27,18 @@ export const appendDatePlugin =
       onInitialized: async (app): Promise<void> => {
         if (
           app.pluginApi.plugins.every(
-            (plugin) => plugin.name !== "@vuepress/plugin-git",
+            (plugin) => plugin.name !== GIT_PLUGIN_NAME,
           )
         ) {
           try {
-            require.resolve("@vuepress/plugin-git");
+            require.resolve(GIT_PLUGIN_NAME);
 
-            logger.info(`@vuepress/plugin-git is not enabled.`);
+            logger.info(`${colors.magenta(GIT_PLUGIN_NAME)} is not enabled.`);
           } catch (err) {
             logger.error(
-              `@vuepress/plugin-git is required for this plugin, please install it.`,
+              `${colors.magenta(
+                GIT_PLUGIN_NAME,
+              )} is required for this plugin, please install it.`,
             );
           }
 
