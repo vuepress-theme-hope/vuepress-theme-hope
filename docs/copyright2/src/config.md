@@ -93,7 +93,7 @@ If you are deploying same content under `https://myblog.com` and `https://blog.c
 - If you prefer the first one, you should set `canonical` to `https://myblog.com`
 - If you prefer the second one, you should set `canonical` to `https://blog.com/username/`
 
-So copyright message triggered by copying content on another site also points to your preferred site.
+So copyright message triggered on another site also points to your preferred site.
 
 :::
 

@@ -93,7 +93,7 @@ icon: gears
 - 如果你倾向于使用第一个，你应该将 `canonical` 设置为 `https://myblog.com`
 - 如果你倾向于使用第二个，你应该将 `canonical` 设置为 `https://blog.com/username/`
 
-这样，在另一个站点复制内容触发的版权信息，也会指向你的首选站点。
+这样，在另一个站点触发的版权信息也会指向你的首选站点。
 
 :::
 

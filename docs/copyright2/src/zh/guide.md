@@ -9,16 +9,21 @@ icon: lightbulb
 
 ## 使用
 
-此插件默认全局禁用，你需要在页面的 frontmatter 中设置 `copy: true` 手动开启。当然，你可以在插件选项中设置 `global: true` 让其全局生效，并在页面的 frontmatter 中设置 `copy: false` 禁用它。
+此插件**默认全局禁用**。你可以:
 
-处于不打扰用户的考虑，默认配置下，仅当用户复制字符长度超过 100 时，才会触发追加版权信息，如果你希望改变这个触发值，请设置 `triggerLength`，同时你可在页面 frontmatter 设置 `copy.triggerLength` 单独设置。
+- 在特定页面的 frontmatter 中设置 `copy: true` 手动开启。
+- 在插件选项中设置 `global: true` 让其全局生效，并在页面的 frontmatter 中设置 `copy: false` 禁用它。
 
-如果你希望禁止用户复制较长内容，你可以设置 `maxLength` 控制这个临界值，同时你可在页面 frontmatter 设置 `copy.maxLength` 单独设置。
+处于不打扰用户的考虑，默认配置下仅当复制长度超过 100 时才会追加版权信息。如果你希望改变这个触发值，你可以插件选项中设置 `triggerLength`，或在页面 frontmatter 单独设置 `copy.triggerLength`。
+
+如果你希望禁止用户复制较长内容，你可以在插件选项中设置 `maxLength` 控制这个临界值，或在页面 frontmatter 单独设置 `copy.maxLength`。
 
 ## 禁用复制和选择
 
 - 如果你不希望用户复制你的整个站点或特定页面文字，你可以在插件选项中设置 `disableCopy` 或在页面 frontmatter 中设置 `copy.disableCopy` 来禁用复制，后者具有更高优先级。
-- 如果你不希望用户选择你的整个站点或特定页面文字，你可以在插件选项中设置 `disableSelection` 或在页面 frontmatter 中设置 `copy.disableSelection` 来禁用选择，后者具有更高优先级。
+- 如果你不希望用户选择你的整个站点或特定页面文字，你可以在插件选项中设置 `disableSelection` 或在页面 frontmatter 中设置 `copy.disableSelection` 来禁用选择。
+
+后者具有更高优先级。
 
 ## 版权信息获取
 
