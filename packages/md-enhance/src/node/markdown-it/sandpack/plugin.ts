@@ -1,21 +1,35 @@
 import { hash } from "@vuepress/utils";
-import type { PluginWithOptions } from "markdown-it";
+import type { PluginSimple } from "markdown-it";
 import type { RuleBlock } from "markdown-it/lib/parser_block.js";
-import { entries } from "vuepress-shared/node";
-
-import { encodeFiles, getAttrs } from "./utils.js";
 import type {
-  SandPackOptions,
-  SandpackData,
   SandpackFile,
   SandpackOptions,
   SandpackPredefinedTemplate,
   SandpackSetup,
-} from "../../typings/index.js";
+} from "sandpack-vue3";
+import { entries } from "vuepress-shared/node";
+
+import { encodeFiles, getAttrs } from "./utils.js";
+import type { SandpackData } from "../../typings/index.js";
 import { escapeHtml } from "../utils.js";
 
 const AT_MARKER = `@`;
 const VALID_MARKERS = ["file", "options", "setup"] as const;
+
+const propsGetter = (sandpackData: SandpackData): Record<string, string> => ({
+  key: sandpackData.key,
+  title: sandpackData.title || "",
+  template: sandpackData.template || "",
+  files: encodeURIComponent(encodeFiles(sandpackData.files || {})),
+  options: encodeURIComponent(JSON.stringify(sandpackData.options || {})),
+  customSetup: encodeURIComponent(
+    JSON.stringify(sandpackData.customSetup || {}),
+  ),
+});
+
+const jsRunner = (jsCode: string): unknown =>
+  // eslint-disable-next-line @typescript-eslint/no-implied-eval
+  new Function(`return ${jsCode};`)();
 
 const getSandpackRule =
   (name: string): RuleBlock =>
@@ -242,32 +256,8 @@ const atMarkerRule =
     return true;
   };
 
-const defaultPropsGetter = (
-  sandpackData: SandpackData,
-): Record<string, string> => ({
-  key: sandpackData.key,
-  title: sandpackData.title || "",
-  template: sandpackData.template || "",
-  files: encodeURIComponent(encodeFiles(sandpackData.files || {})),
-  options: encodeURIComponent(JSON.stringify(sandpackData.options || {})),
-  customSetup: encodeURIComponent(
-    JSON.stringify(sandpackData.customSetup || {}),
-  ),
-});
-
-export const sandpack: PluginWithOptions<SandPackOptions> = (
-  md,
-  {
-    name = "sandpack",
-    component = "SandPack",
-    propsGetter = defaultPropsGetter,
-  } = {
-    name: "sandpack",
-    component: "SandPack",
-    propsGetter: defaultPropsGetter,
-  },
-) => {
-  md.block.ruler.before("fence", `${name}`, getSandpackRule(name), {
+export const sandpack: PluginSimple = (md) => {
+  md.block.ruler.before("fence", "sandpack", getSandpackRule("sandpack"), {
     alt: ["paragraph", "reference", "blockquote", "list"],
   });
 
@@ -282,7 +272,7 @@ export const sandpack: PluginWithOptions<SandPackOptions> = (
       });
   });
 
-  md.renderer.rules[`${name}_open`] = (tokens, index): string => {
+  md.renderer.rules["sandpack_open"] = (tokens, index): string => {
     const { content, info } = tokens[index];
 
     const attrs = getAttrs(content);
@@ -299,27 +289,18 @@ export const sandpack: PluginWithOptions<SandPackOptions> = (
     let foundOptions = false;
     let foundSetup = false;
 
-    // eslint-disable-next-line @typescript-eslint/no-implied-eval
-    const jsRunner = (jsCode: string): any =>
-      // eslint-disable-next-line @typescript-eslint/no-implied-eval
-      new Function(
-        `\
-  return ${jsCode};\
-  `,
-      );
-
     const containerName = content.split(" ", 2)[0].trim();
     const arr = containerName.split("#");
 
     if (arr.length > 1)
-      sandpackData.template = arr[1] as SandpackPredefinedTemplate;
+      sandpackData.template = <SandpackPredefinedTemplate>arr[1];
 
     for (let i = index; i < tokens.length; i++) {
       const { block, type, info, content } = tokens[i];
 
       if (block) {
-        if (type === `${name}_close`) break;
-        if (type === `${name}_open`) continue;
+        if (type === "sandpack_close") break;
+        if (type === "sandpack_open") continue;
 
         if (type === "file_open") {
           // File rule must contain a valid file name
@@ -355,7 +336,7 @@ export const sandpack: PluginWithOptions<SandPackOptions> = (
           type === "options_close" ||
           !content
         ) {
-          tokens[i].type = `${name}_empty`;
+          tokens[i].type = "sandpack_empty";
           tokens[i].hidden = true;
           continue;
         }
@@ -363,8 +344,7 @@ export const sandpack: PluginWithOptions<SandPackOptions> = (
         // parse options
         if (foundOptions) {
           if (type === "fence" && (info === "js" || info === "javascript"))
-            // eslint-disable-next-line @typescript-eslint/no-unsafe-call
-            sandpackData.options = <SandpackOptions>jsRunner(content.trim())();
+            sandpackData.options = <SandpackOptions>jsRunner(content.trim());
 
           foundOptions = false;
         }
@@ -372,22 +352,16 @@ export const sandpack: PluginWithOptions<SandPackOptions> = (
         // parse setup
         if (foundSetup) {
           if (type === "fence" && (info === "js" || info === "javascript"))
-            sandpackData.customSetup = <SandpackSetup>(
-              // eslint-disable-next-line @typescript-eslint/no-unsafe-call
-              jsRunner(content.trim())()
-            );
+            sandpackData.customSetup = <SandpackSetup>jsRunner(content.trim());
 
           foundSetup = false;
         }
 
         // add code block content
         if (type === "fence" && currentKey)
-          // sandpackData.files[currentKey] = {
-          //   code: content,
-          // };
           (sandpackData.files[currentKey] as SandpackFile).code = content;
 
-        tokens[i].type = `${name}_empty`;
+        tokens[i].type = "sandpack_empty";
         tokens[i].hidden = true;
       }
     }
@@ -399,10 +373,10 @@ export const sandpack: PluginWithOptions<SandPackOptions> = (
       if (!props[attr[0]] && attr[1]) props[attr[0]] = attr[1];
     });
 
-    return `<${component} ${entries(props)
+    return `<SandPack ${entries(props)
       .map(([attr, value]) => `${attr}="${escapeHtml(value || "")}"`)
       .join(" ")}>\n`;
   };
 
-  md.renderer.rules[`${name}_close`] = (): string => `</${component}>\n`;
+  md.renderer.rules["sandpack_close"] = (): string => `</SandPack>\n`;
 };
