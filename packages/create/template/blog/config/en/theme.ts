@@ -92,6 +92,10 @@ export default hopeTheme({
     //   serverURL: "https://waline-comment.vuejs.press",
     // },
 
+    components: {
+      components: ["Badge", "VPCard"],
+    },
+
     // all features are enabled for demo, only preserve features you need here
     mdEnhance: {
       align: true,
@@ -158,7 +162,7 @@ export default hopeTheme({
       // vuePlayground: true,
     },
 
-    // uncomment these if you want a PWA
+    // install vuepress-plugin-pwa2 and uncomment these if you want a PWA
     // pwa: {
     //   favicon: "/favicon.ico",
     //   cacheHTML: true,
