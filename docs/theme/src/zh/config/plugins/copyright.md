@@ -14,7 +14,7 @@ tag:
 
 主题可通过 `vuepress-plugin-copyright2` 在复制时追加版权信息，默认情况下此功能**不启用**。
 
-你可以在主题选项中设置 `plugins.copyright: true` 来启用此功能。默认行为是全局启用插件并使用主题选项中的作者名称。
+你可以在主题选项中设置 `plugins.copyright: true` 来启用此功能。默认行为是全局启用插件并使用主题选项中的作者和协议名称。
 
 ## 插件选项
 
@@ -23,13 +23,6 @@ The theme passes `plugins.copyright` in theme options as plugin options to `vuep
 主题将主题选项中的 `plugins.copyright` 作为插件选项传递给 `vuepress-plugin-copyright2`。
 
 你可以通过 `plugins.copyright` 自行设置选项，以下是常见选项:
-
-### license
-
-- 类型: `string | ((page: Page) => string)`
-- 必填: 否
-
-协议信息
 
 ### triggerLength
 
@@ -58,6 +51,15 @@ The theme passes `plugins.copyright` in theme options as plugin options to `vuep
 - 默认值: `false`
 
 禁用选择
+
+### canonical
+
+- 类型: `string`
+- 必填: 否
+
+首选域名与部署目录
+
+当你在多个站点部署内容时很有用。
 
 ::: info
 

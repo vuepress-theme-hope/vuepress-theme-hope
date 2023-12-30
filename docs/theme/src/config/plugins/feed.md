@@ -73,15 +73,9 @@ A custom filter function, used to filter feed items.
 
 - Type: `(pageA: Page, pageB: Page)=> number`
 
-A custom sort function, used to sort feed items.
+Custom sorter function for feed items.
 
-::: warning
-
-We strongly recommend you setting this option, otherwise the order of items in the feed stream is completely determined by the order of pages output by VuePress.
-
-You can sort the pages in the site according to your needs.
-
-:::
+The default sorting behavior is by file adding time coming from git (needs `@vuepress/plugin-git`).
 
 ::: info
 

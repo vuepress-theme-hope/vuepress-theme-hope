@@ -44,15 +44,8 @@ icon: gears
 
 ### defineLightGalleryConfig
 
-传递给 [lightgallery](https://www.lightgalleryjs.com/docs/settings/) 的额外选项
-
 ```ts
-// .vuepress/client.ts
-import { defineLightGalleryConfig } from "vuepress-plugin-lightgallery/client";
-
-defineLightGalleryConfig({
-  // 在此设置 lightgallery 选项
-});
-
-export default {};
+const defineLightGalleryConfig: (options: LightGallerySettings) => void;
 ```
+
+传递给 [lightgallery](https://www.lightgalleryjs.com/docs/settings/) 的额外选项

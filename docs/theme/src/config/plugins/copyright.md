@@ -14,20 +14,13 @@ tag:
 
 The theme can append copyright information while copying via `vuepress-plugin-copyright2`, and it's **not** enabled by default.
 
-You can enabled this feature by setting `plugins.copyright` to `true` in theme options. The default behavior globally enables the plugin and use author name defined in theme options.
+You can enabled this feature by setting `plugins.copyright` to `true` in theme options. The default behavior globally enables the plugin and use author and license defined in theme options.
 
 ## Plugin Options
 
 The theme passes `plugins.copyright` in theme options as plugin options to `vuepress-plugin-copyright2` plugin.
 
 You can pass your own options with `plugins.copyright`, here are some common ones:
-
-### license
-
-- Type: `string | ((page: Page) => string)`
-- Required: No
-
-License Information
 
 ### triggerLength
 
@@ -56,6 +49,15 @@ Disable copy
 - Default: `false`
 
 Disable selection
+
+### canonical
+
+- Type: `string`
+- Required: No
+
+Canonical hostname with base.
+
+This is useful when your content are deploying in multiple places.
 
 ::: info
 

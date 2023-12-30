@@ -41,7 +41,7 @@ icon: shapes
 
 项目作者获取器。
 
-::: note 获取器应在作者信息缺失时返回空数组。
+::: important 获取器应在作者信息缺失时返回空数组。
 
 :::
 
@@ -161,7 +161,7 @@ interface FeedEnclosure {
 
 项目图片获取器
 
-::: note 确保返回一个完整的 URL。
+::: important 确保返回一个完整的 URL。
 
 :::
 
@@ -171,7 +171,7 @@ interface FeedEnclosure {
 
 项目贡献者获取器
 
-::: note 获取器应在贡献者信息缺失时返回空数组。
+::: important 获取器应在贡献者信息缺失时返回空数组。
 
 :::
 
