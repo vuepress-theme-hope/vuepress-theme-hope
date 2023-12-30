@@ -77,7 +77,8 @@ jobs:
       - name: Install pnpm
         uses: pnpm/action-setup@v2
 
-      - uses: actions/setup-node@v4
+      - name: Setup Node.js
+        uses: actions/setup-node@v4
         with:
           node-version: ${{ matrix.node }}
           cache: pnpm

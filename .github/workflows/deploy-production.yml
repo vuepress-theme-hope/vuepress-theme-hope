@@ -322,6 +322,9 @@ jobs:
         with:
           name: build-result
 
+      - name: Install pnpm
+        uses: pnpm/action-setup@v2
+
       - name: Setup Node.js
         uses: actions/setup-node@v4
         with:
@@ -399,6 +402,9 @@ jobs:
         uses: actions/download-artifact@v4
         with:
           name: build-result
+
+      - name: Install pnpm
+        uses: pnpm/action-setup@v2
 
       - name: Setup Node.js
         uses: actions/setup-node@v4

@@ -81,27 +81,21 @@ export default defineComponent({
         props.title
           ? h("div", { class: "header" }, decodeURIComponent(props.title))
           : null,
-        h(
-          "div",
-          {
-            class: "repl-container",
-          },
-          [
-            loading.value
-              ? h(LoadingIcon, { class: "preview-loading", height: 192 })
-              : null,
-            component.value
-              ? h(component.value, <ReplProps>{
-                  // eslint-disable-next-line @typescript-eslint/no-unsafe-assignment
-                  editor: editor.value,
-                  store: store.value,
-                  autoResize: true,
-                  ...playgroundOptions.value,
-                  layout: "horizontal",
-                })
-              : null,
-          ],
-        ),
+        h("div", { class: "repl-container" }, [
+          loading.value
+            ? h(LoadingIcon, { class: "preview-loading", height: 192 })
+            : null,
+          component.value
+            ? h(component.value, <ReplProps>{
+                // eslint-disable-next-line @typescript-eslint/no-unsafe-assignment
+                editor: editor.value,
+                store: store.value,
+                autoResize: true,
+                ...playgroundOptions.value,
+                layout: "horizontal",
+              })
+            : null,
+        ]),
       ]),
     ];
   },

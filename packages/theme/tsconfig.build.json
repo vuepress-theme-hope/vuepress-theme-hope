@@ -23,6 +23,7 @@
     { "path": "../pwa2/tsconfig.build.json" },
     { "path": "../reading-time2/tsconfig.build.json" },
     { "path": "../sass-palette/tsconfig.build.json" },
+    { "path": "../search-pro/tsconfig.build.json" },
     { "path": "../seo2/tsconfig.build.json" },
     { "path": "../sitemap2/tsconfig.build.json" },
     { "path": "../shared/tsconfig.build.json" },
