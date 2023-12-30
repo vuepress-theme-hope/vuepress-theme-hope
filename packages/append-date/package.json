@@ -1,6 +1,6 @@
 {
   "name": "vuepress-plugin-append-date",
-  "version": "2.0.0-rc.9",
+  "version": "2.0.0-rc.10",
   "description": "append-date plugin for VuePress",
   "keywords": [
     "vuepress",
