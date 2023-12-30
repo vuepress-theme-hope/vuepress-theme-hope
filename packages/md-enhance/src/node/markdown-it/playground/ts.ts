@@ -54,7 +54,6 @@ export const getTSPlaygroundPreset = ({
     title = "",
     files,
     settings,
-    key,
   }: PlaygroundData): Record<string, string> => {
     const tsFiles = keys(files).filter((key) => endsWith(key, ".ts"));
 
@@ -71,7 +70,6 @@ export const getTSPlaygroundPreset = ({
     )}`;
 
     return {
-      key,
       title,
       link: encodeURIComponent(link),
     };

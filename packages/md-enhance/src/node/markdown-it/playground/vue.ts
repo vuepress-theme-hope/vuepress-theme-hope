@@ -25,7 +25,7 @@ export const getVuePlaygroundPreset = (
 ): PlaygroundOptions => ({
   name: "playground#vue",
   propsGetter: (playgroundData: PlaygroundData): Record<string, string> => {
-    const { title = "", files, settings: localSettings, key } = playgroundData;
+    const { title = "", files, settings: localSettings } = playgroundData;
     const settings = {
       // defaults
       service: "https://sfc.vuejs.org/",
@@ -91,7 +91,6 @@ export const getVuePlaygroundPreset = (
       );
 
     return {
-      key,
       title,
       link: encodeURIComponent(
         `${settings.service}#${
