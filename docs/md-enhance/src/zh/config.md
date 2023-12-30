@@ -895,6 +895,31 @@ const defineKotlinPlaygroundConfig: (options: KotlinPlaygroundOptions) => void;
 
 定义需要传递给 `kotlin-playground` 的配置选项。
 
+### defineSandpackConfig
+
+```ts
+ interface SandpackConfig {
+  /**
+   * 指定模板
+   */
+  template?: SandpackPredefinedTemplate;
+
+  /**
+   * sandpack 配置项
+   */
+  options?: SandpackOptions;
+
+  /**
+   * sandpack customSetup 配置项
+   */
+  customSetup?: SandpackSetup;
+}
+
+const defineSandpackConfig = (config: SandpackConfig)=> void
+```
+
+定义需要传递给 `sandpack-vue3` 的选项。
+
 ### defineVuePlaygroundConfig
 
 ```ts
@@ -970,30 +995,3 @@ const defineVuePlaygroundConfig: (options: VuePlaygroundOptions) => void;
 ```
 
 定义需要传递给 `@vue/repl` 的选项。
-
-### defineSandpackConfig
-
-```ts
-export interface SandpackConfig {
-  /**
-   * 指定模板
-   */
-  template?: string;
-
-  /**
-   * sandpack 配置项
-   */
-  options?: SandpackOptions;
-
-  /**
-   * sandpack customSetup 配置项
-   */
-  customSetup?: SandpackSetup;
-}
-
-export const defineSandpackConfig = (config: SandpackConfig): void => {
-  sandpackConfig = config;
-};
-```
-
-定义需要传递给 `sandpack-vue3` 的选项。

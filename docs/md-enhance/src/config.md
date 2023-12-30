@@ -885,6 +885,31 @@ const defineKotlinPlaygroundConfig: (options: KotlinPlaygroundOptions) => void;
 
 Define config which you want to pass to `kotlin-playground`.
 
+### defineSandpackConfig
+
+```ts
+ interface SandpackConfig {
+  /**
+   * specify the template
+   */
+  template?: SandpackPredefinedTemplate;
+
+  /**
+   * Options to configure the sandpack
+   */
+  options?: SandpackOptions;
+
+  /**
+   * Options to configure the customSetup
+   */
+  customSetup?: SandpackSetup;
+}
+
+const defineSandpackConfig = (config: SandpackConfig)=> void
+```
+
+Define config which you want to pass to `sandpack-vue3`.
+
 ### defineVuePlaygroundConfig
 
 ```ts
@@ -960,36 +985,3 @@ const defineVuePlaygroundConfig: (options: VuePlaygroundOptions) => void;
 ```
 
 Define config which you want to pass to `@vue/repl`.
-
-### defineSandpackConfig
-
-```ts
-export interface SandpackConfig {
-  /**
-   * specify the template
-   *
-   * 指定模板
-   */
-  template?: string;
-
-  /**
-   * Options to configure the sandpack
-   *
-   * sandpack 配置项
-   */
-  options?: SandpackOptions;
-
-  /**
-   * Options to configure the customSetup
-   *
-   * sandpack customSetup 配置项
-   */
-  customSetup?: SandpackSetup;
-}
-
-export const defineSandpackConfig = (config: SandpackConfig): void => {
-  sandpackConfig = config;
-};
-```
-
-Define config which you want to pass to `sandpack-vue3`.
