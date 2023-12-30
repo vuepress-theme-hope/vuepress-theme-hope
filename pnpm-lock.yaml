@@ -253,8 +253,8 @@ importers:
         specifier: 2.0.0-rc.0
         version: 2.0.0-rc.0
       '@waline/client':
-        specifier: 3.0.0-alpha.8
-        version: 3.0.0-alpha.8(typescript@5.3.3)
+        specifier: 3.0.0-alpha.9
+        version: 3.0.0-alpha.9(typescript@5.3.3)
       artalk:
         specifier: 2.7.3
         version: 2.7.3
@@ -712,8 +712,8 @@ importers:
         specifier: 2.0.0-rc.0
         version: 2.0.0-rc.0
       '@waline/client':
-        specifier: 3.0.0-alpha.8
-        version: 3.0.0-alpha.8(typescript@5.3.3)
+        specifier: 3.0.0-alpha.9
+        version: 3.0.0-alpha.9(typescript@5.3.3)
       chart.js:
         specifier: 4.4.1
         version: 4.4.1
@@ -6314,6 +6314,23 @@ packages:
     transitivePeerDependencies:
       - '@vue/composition-api'
       - typescript
+    dev: false
+
+  /@waline/client@3.0.0-alpha.9(typescript@5.3.3):
+    resolution: {integrity: sha512-dighRxGzFIJUaEs0E1UPRonLXW8AOeqUoeF8yUPPf4h4tYLn1mBmmdJSUp/8erPRfAQR8E2Lye7ywoBFwj+Yjw==}
+    engines: {node: '>=18'}
+    dependencies:
+      '@vueuse/core': 10.7.1(vue@3.4.0)
+      '@waline/api': 1.0.0-alpha.4
+      autosize: 6.0.1
+      marked: 11.1.0
+      marked-highlight: 2.1.0(marked@11.1.0)
+      recaptcha-v3: 1.10.0
+      vue: 3.4.0(typescript@5.3.3)
+    transitivePeerDependencies:
+      - '@vue/composition-api'
+      - typescript
+    dev: true
 
   /@webassemblyjs/ast@1.11.6:
     resolution: {integrity: sha512-IN1xI7PwOvLPgjcf180gC1bqn3q/QaOCwYUahIOhbYUu8KA/3tw2RT/T0Gidi1l7Hhj5D/INhJxiICObqpMu4Q==}
