@@ -153,7 +153,7 @@ highlights:
 
       - title: Sandpack playground Support
         icon: code
-        details: Show living sandpack playground
+        details: A live coding environment driven by Sandpack.
         link: ./guide/markdown/sandpack.html
 
       - title: Code Demo Support

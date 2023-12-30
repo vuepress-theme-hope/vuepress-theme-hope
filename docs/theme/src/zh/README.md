@@ -153,7 +153,7 @@ highlights:
 
       - title: Sandpack 交互演示支持
         icon: code
-        details: 你可以在 Markdown 中添加 Sandpack 交互演示
+        details: Sandpack 驱动的实时的编码环境
         link: ./guide/markdown/sandpack.html
 
       - title: 代码案例支持

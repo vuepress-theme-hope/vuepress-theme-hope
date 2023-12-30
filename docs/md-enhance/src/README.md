@@ -192,8 +192,8 @@ highlights:
 
       - title: Sandpack playground Support
         icon: code
-        details: A live coding environment.
-        link: ./guide/sandpack.html
+        details: A live coding environment driven by Sandpack.
+        link: ./guide/code/sandpack.html
 
 footer: Theme by <a href="https://theme-hope.vuejs.press" target="_blank">VuePress Theme Hope</a> | MIT Licensed, Copyright © 2019-present Mr.Hope
 

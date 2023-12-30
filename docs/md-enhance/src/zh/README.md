@@ -189,8 +189,8 @@ highlights:
 
       - title: Sandpack 交互演示支持
         icon: code
-        details: 一个实时的编码环境
-        link: ./guide/sandpack.html
+        details: Sandpack 驱动的实时的编码环境
+        link: ./guide/code/sandpack.html
 
 footer: 使用 <a href="https://theme-hope.vuejs.press/zh/" target="_blank">VuePress Theme Hope</a> 主题 | MIT 协议, 版权所有 © 2019-present Mr.Hope
 
