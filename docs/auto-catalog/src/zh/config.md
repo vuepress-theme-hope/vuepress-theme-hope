@@ -1,52 +1,44 @@
 ---
-title: 选项
+title: 配置
 icon: gears
 ---
 
 ## 插件选项
 
-### level
+### level <Badge text="仅限内置组件" />
 
 - 类型: `1 | 2 | 3`
 - 默认值: `3`
 
 目录项级别的最大深度。
 
-::: note 仅限内置目录组件
-
-:::
-
-### index
+### index <Badge text="仅限内置组件" />
 
 - 类型: `boolean`
 - 默认值: `false`
 
 目录是否显示索引
 
-::: note 仅限内置目录组件
+### frontmatter
 
-:::
+- 类型: `(path: string) => Record<string, any>`
+- 必填: 否
+
+生成页面的 Frontmatter 获取器。
 
 ### exclude
 
 - 类型: `(RegExp | string)[]`
 - 默认值: `[]`
 
-不会自动生成的页面路径。
-
-### frontmatter
-
-- 类型: `(path: string) => Record<string, any>`
-- 必填: 否
-
-控制页面 Frontmatter。
+生成中需要排除的目录页路径。
 
 ### component
 
 - 类型: `string`
 - 必填: 否
 
-使用的目录组件名称。
+用作目录的组件名称。
 
 ### locales
 
@@ -137,7 +129,7 @@ const defineAutoCatalogGetter: (options: AutoCatalogInfoGetter) => void;
 - 类型: `1 | 2 | 3`
 - 默认值: `3`
 
-Catalog 的最大层级
+目录的最大层级
 
 ### index
 
