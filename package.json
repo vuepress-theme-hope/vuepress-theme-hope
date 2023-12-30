@@ -37,22 +37,14 @@
   },
   "nano-staged": {
     "**/*": "prettier --write --ignore-unknown",
-    "*.vue": [
-      "eslint --fix"
-    ],
+    "*.vue": "eslint --fix",
     "*.{js,ts}": [
       "eslint --fix",
       "cross-env TZ=Etc/UTC vitest related --run"
     ],
-    "*.md": [
-      "markdownlint-cli2 --fix"
-    ],
-    "*.scss": [
-      "stylelint --fix"
-    ],
-    "package.json": [
-      "sort-package-json"
-    ]
+    "*.md": "markdownlint-cli2 --fix",
+    "*.scss": "stylelint --fix",
+    "package.json": "sort-package-json"
   },
   "config": {
     "commitizen": {

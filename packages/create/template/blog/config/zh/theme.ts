@@ -79,6 +79,9 @@ export default hopeTheme({
     editLink: "在 GitHub 上编辑此页",
   },
 
+  // enable it to preview all changes in time
+  // hotReload: true,
+
   plugins: {
     blog: true,
 

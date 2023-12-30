@@ -111,6 +111,9 @@ export default hopeTheme({
     },
   },
 
+  // enable it to preview all changes in time
+  // hotReload: true,
+
   plugins: {
     blog: true,
 

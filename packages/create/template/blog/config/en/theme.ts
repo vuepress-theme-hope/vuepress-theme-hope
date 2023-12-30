@@ -78,6 +78,9 @@ export default hopeTheme({
     editLink: "Edit this page on GitHub",
   },
 
+  // enable it to preview all changes in time
+  // hotReload: true,
+
   plugins: {
     blog: true,
 
