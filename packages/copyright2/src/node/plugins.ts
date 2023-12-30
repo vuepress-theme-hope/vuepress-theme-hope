@@ -10,7 +10,10 @@ import { convertOptions } from "./compact.js";
 import { copyrightLocales } from "./locales.js";
 import type { CopyrightOptions } from "./options.js";
 import { CLIENT_FOLDER, PLUGIN_NAME, logger } from "./utils.js";
-import type { CopyrightPluginPageData } from "../shared/index.js";
+import type {
+  CopyrightInfoData,
+  CopyrightPluginPageData,
+} from "../shared/index.js";
 
 export const copyrightPlugin =
   (options: CopyrightOptions, legacy = true): PluginFunction =>
@@ -81,14 +84,20 @@ export const copyrightPlugin =
           page.frontmatter["triggerLength"] = page.frontmatter["triggerWords"];
         }
 
-        page.data.copyright = copyright ?? {
-          ...(authorText && authorText !== author
-            ? { author: authorText }
-            : {}),
-          ...(licenseText && licenseText !== license
-            ? { license: licenseText }
-            : {}),
-        };
+        if (copyright) {
+          page.data.copyright = copyright;
+        } else {
+          const hasDifferentAuthor = authorText && authorText !== author;
+          const hasDifferentLicense = licenseText && licenseText !== license;
+
+          if (hasDifferentAuthor || hasDifferentLicense) {
+            const copyrightInfo: CopyrightInfoData = {};
+
+            if (hasDifferentAuthor) copyrightInfo.author = authorText;
+            if (hasDifferentLicense) copyrightInfo.license = licenseText;
+            page.data.copyright = copyrightInfo;
+          }
+        }
       },
 
       extendsBundlerOptions: (bundlerOptions: unknown, app): void => {

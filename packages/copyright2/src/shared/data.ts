@@ -4,5 +4,5 @@ export interface CopyrightInfoData {
 }
 
 export interface CopyrightPluginPageData {
-  copyright: CopyrightInfoData | string;
+  copyright?: CopyrightInfoData | string;
 }

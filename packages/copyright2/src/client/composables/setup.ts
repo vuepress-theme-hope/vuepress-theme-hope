@@ -87,7 +87,7 @@ export const setupCopyright = (): void => {
     if (isString(page.value.copyright))
       return page.value.copyright.replace(":link", getLink());
 
-    const { author, license } = page.value.copyright;
+    const { author, license } = page.value.copyright || {};
 
     return getCopyrightContent(
       author ?? COPYRIGHT_DEFAULT_AUTHOR,
