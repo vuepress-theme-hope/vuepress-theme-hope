@@ -100,6 +100,7 @@
     "vuepress-plugin-comment2": "workspace:*",
     "vuepress-plugin-components": "workspace:*",
     "vuepress-plugin-copy-code2": "workspace:*",
+    "vuepress-plugin-copyright2": "workspace:*",
     "vuepress-plugin-md-enhance": "workspace:*",
     "vuepress-plugin-photo-swipe": "workspace:*",
     "vuepress-plugin-reading-time2": "workspace:*",
@@ -115,7 +116,6 @@
     "nodejs-jieba": "^0.1.2",
     "sass-loader": "^13.3.0",
     "vuepress": "2.0.0-rc.0",
-    "vuepress-plugin-copyright2": "workspace:*",
     "vuepress-plugin-feed2": "workspace:*",
     "vuepress-plugin-pwa2": "workspace:*",
     "vuepress-plugin-search-pro": "workspace:*",
@@ -136,9 +136,6 @@
       "optional": true
     },
     "vuepress": {
-      "optional": true
-    },
-    "vuepress-plugin-copyright2": {
       "optional": true
     },
     "vuepress-plugin-feed2": {
