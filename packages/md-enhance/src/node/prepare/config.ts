@@ -168,6 +168,30 @@ export const prepareConfigFile = async (
     enhances.add(`app.component("Tabs", Tabs);`);
   }
 
+  if (status["sandpack"]) {
+    imports.add(`import { defineAsyncComponent } from "vue";`);
+    imports.add(
+      `import { LoadingIcon } from "${getRealPath(
+        "vuepress-shared/client",
+        url,
+      )}";`,
+    );
+    imports.add(
+      `import { injectSandpackConfig } from "${CLIENT_FOLDER}index.js";`,
+    );
+    enhances.add(`injectSandpackConfig(app);`);
+    enhances.add(
+      `\
+app.component(
+  "SandPack",
+  defineAsyncComponent({
+    loader: () => import("${CLIENT_FOLDER}components/SandPack.js"),
+    loadingComponent: LoadingIcon,
+  })
+);`,
+    );
+  }
+
   if (status["tasklist"])
     imports.add(`import "${CLIENT_FOLDER}styles/tasklist.scss";`);
 
@@ -180,21 +204,6 @@ export const prepareConfigFile = async (
     );
     enhances.add(`injectVuePlaygroundConfig(app);`);
     enhances.add(`app.component("VuePlayground", VuePlayground);`);
-  }
-
-  if (status["sandpack"]) {
-    const asyncImports = `import { defineAsyncComponent } from "vue";`;
-
-    if (!imports.has(asyncImports))
-      imports.add(`import { defineAsyncComponent } from "vue";`);
-
-    imports.add(
-      `import { injectSandpackConfig } from "${CLIENT_FOLDER}index.js";`,
-    );
-    enhances.add(`injectSandpackConfig(app);`);
-    enhances.add(
-      `app.component("SandPack", defineAsyncComponent(() => import("${CLIENT_FOLDER}components/SandPack.js")));`,
-    );
   }
 
   return app.writeTemp(

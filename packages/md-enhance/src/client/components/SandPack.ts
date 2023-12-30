@@ -1,12 +1,12 @@
 import { useMutationObserver } from "@vueuse/core";
 import type {
-  Sandpack,
   SandpackPredefinedTemplate,
   SandpackThemeProp,
 } from "sandpack-vue3";
+import { Sandpack } from "sandpack-vue3";
 import type { PropType, VNode } from "vue";
-import { computed, defineComponent, h, onMounted, ref, shallowRef } from "vue";
-import { LoadingIcon, deepAssign } from "vuepress-shared/client";
+import { computed, defineComponent, h, onMounted, ref } from "vue";
+import { deepAssign } from "vuepress-shared/client";
 
 import { useSandpackConfig } from "../helpers/index.js";
 import {
@@ -85,7 +85,6 @@ export default defineComponent({
     const sandpackConfig = useSandpackConfig();
 
     const isDarkmode = ref(false);
-    const component = shallowRef<typeof Sandpack>();
 
     const options = computed(() =>
       deepAssign({}, sandpackConfig.options, getSandpackOptions(props.options)),
@@ -102,16 +101,7 @@ export default defineComponent({
       ),
     );
 
-    const setupSandpack = (): Promise<void> =>
-      import(/* webpackChunkName: "sandpack-vue3" */ "sandpack-vue3").then(
-        ({ Sandpack }) => {
-          component.value = Sandpack;
-        },
-      );
-
     onMounted(() => {
-      void setupSandpack();
-
       isDarkmode.value = getDarkmodeStatus();
 
       // watch darkmode change
@@ -135,16 +125,14 @@ export default defineComponent({
         h(
           "div",
           { class: "sandpack-container" },
-          component.value
-            ? h(component.value, {
-                template: template.value,
-                theme: theme.value,
-                files: getSandpackFiles(props.files),
-                options: options.value,
-                customSetup: customSetup.value,
-                rtl: props.rtl,
-              })
-            : h(LoadingIcon, { class: "preview-loading", height: 192 }),
+          h(Sandpack, {
+            template: template.value,
+            theme: theme.value,
+            files: getSandpackFiles(props.files),
+            options: options.value,
+            customSetup: customSetup.value,
+            rtl: props.rtl,
+          }),
         ),
       ]),
     ];
