@@ -3,20 +3,18 @@ import { entries, fromEntries } from "vuepress-shared/node";
 import type { SandpackData } from "../../typings/index.js";
 
 export const encodeFiles = (files: SandpackData["files"]): string =>
-  Buffer.from(
-    JSON.stringify(
-      fromEntries(
-        entries(files).map(([key, file]) => [
-          key,
-          typeof file === "string"
+  JSON.stringify(
+    fromEntries(
+      entries(files).map(([key, file]) => [
+        key,
+        typeof file === "string"
+          ? file
+          : file.active || file.hidden || file.readOnly
             ? file
-            : file.active || file.hidden || file.readOnly
-              ? file
-              : file.code,
-        ]),
-      ),
+            : file.code,
+      ]),
     ),
-  ).toString("base64");
+  );
 
 export const getAttrs = (str: string): Record<string, string | null> => {
   const attrs: Record<string, string | null> = {};

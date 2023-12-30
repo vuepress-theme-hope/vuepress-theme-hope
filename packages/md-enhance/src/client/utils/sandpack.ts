@@ -3,12 +3,13 @@ import type {
   SandpackOptions,
   SandpackSetup,
 } from "sandpack-vue3";
+import { atou } from "vuepress-shared/client";
 
 export const getSandpackFiles = (files: string): SandpackFiles =>
-  <SandpackFiles>JSON.parse(atob(decodeURIComponent(files)));
+  <SandpackFiles>JSON.parse(atou(files));
 
 export const getSandpackOptions = (options: string): SandpackOptions =>
-  <SandpackOptions>JSON.parse(decodeURIComponent(options));
+  <SandpackOptions>JSON.parse(atou(options));
 
 export const getSandpackCustomSetup = (customSetup: string): SandpackSetup =>
-  <SandpackSetup>JSON.parse(decodeURIComponent(customSetup));
+  <SandpackSetup>JSON.parse(atou(customSetup));

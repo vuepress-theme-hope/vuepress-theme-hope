@@ -7,7 +7,7 @@ import type {
   SandpackPredefinedTemplate,
   SandpackSetup,
 } from "sandpack-vue3";
-import { entries } from "vuepress-shared/node";
+import { entries, utoa } from "vuepress-shared/node";
 
 import { encodeFiles, getAttrs } from "./utils.js";
 import type { SandpackData } from "../../typings/index.js";
@@ -20,11 +20,9 @@ const propsGetter = (sandpackData: SandpackData): Record<string, string> => ({
   key: sandpackData.key,
   title: sandpackData.title || "",
   template: sandpackData.template || "",
-  files: encodeURIComponent(encodeFiles(sandpackData.files || {})),
-  options: encodeURIComponent(JSON.stringify(sandpackData.options || {})),
-  customSetup: encodeURIComponent(
-    JSON.stringify(sandpackData.customSetup || {}),
-  ),
+  files: utoa(encodeFiles(sandpackData.files || {})),
+  options: utoa(JSON.stringify(sandpackData.options || {})),
+  customSetup: utoa(JSON.stringify(sandpackData.customSetup || {})),
 });
 
 const jsRunner = (jsCode: string): unknown =>
@@ -278,16 +276,12 @@ export const sandpack: PluginSimple = (md) => {
     const attrs = getAttrs(content);
 
     const sandpackData: SandpackData = {
-      key: hash(`sandpack${index}-${info}`),
+      key: hash(`sandpack${index}`),
       title: encodeURIComponent(info),
       files: {},
       options: {},
       customSetup: {},
     };
-
-    let currentKey: string | null = null;
-    let foundOptions = false;
-    let foundSetup = false;
 
     const containerName = content.split(" ", 2)[0].trim();
     const arr = containerName.split("#");
@@ -295,17 +289,19 @@ export const sandpack: PluginSimple = (md) => {
     if (arr.length > 1)
       sandpackData.template = <SandpackPredefinedTemplate>arr[1];
 
+    let currentKey: string | null = null;
+    let foundOptions = false;
+    let foundSetup = false;
+
     for (let i = index; i < tokens.length; i++) {
       const { block, type, info, content } = tokens[i];
 
       if (block) {
         if (type === "sandpack_close") break;
         if (type === "sandpack_open") continue;
-
         if (type === "file_open") {
           // File rule must contain a valid file name
           if (!info) continue;
-          // currentKey = info;
           currentKey = info.trim().split(" ")[0];
 
           const fileAttrs = getAttrs(info);
@@ -316,19 +312,18 @@ export const sandpack: PluginSimple = (md) => {
             hidden: !!fileAttrs["hidden"],
             readOnly: !!fileAttrs["readOnly"],
           };
-        }
-        if (
+        } else if (
           type === "file_close" ||
           type === "setup_open" ||
           type === "options_open"
-        )
+        ) {
           currentKey = null;
+        }
 
         if (type === "setup_open") foundSetup = true;
-        if (type === "setup_close") foundSetup = false;
-
-        if (type === "options_open") foundOptions = true;
-        if (type === "options_close") foundOptions = false;
+        else if (type === "setup_close") foundSetup = false;
+        else if (type === "options_open") foundOptions = true;
+        else if (type === "options_close") foundOptions = false;
 
         if (
           type === "file_close" ||
