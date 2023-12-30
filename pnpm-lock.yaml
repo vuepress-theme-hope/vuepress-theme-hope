@@ -2470,9 +2470,6 @@ importers:
       '@vuepress/plugin-active-header-links':
         specifier: 2.0.0-rc.0
         version: 2.0.0-rc.0(typescript@5.3.3)
-      '@vuepress/plugin-container':
-        specifier: 2.0.0-rc.0
-        version: 2.0.0-rc.0(typescript@5.3.3)
       '@vuepress/plugin-docsearch':
         specifier: 2.0.0-rc.0
         version: 2.0.0-rc.0(@algolia/client-search@4.22.0)(search-insights@2.13.0)(typescript@5.3.3)
