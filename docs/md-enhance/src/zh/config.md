@@ -459,8 +459,6 @@ order: 2
 - 类型: `PlaygroundGlobalOptions`
 
   ```ts
-  import type { CompilerOptions } from "typescript";
-
   interface PlaygroundCodeConfig {
     /**
      * 代码块扩展名
@@ -469,36 +467,26 @@ order: 2
      */
     ext: string;
 
-    /**
-     * 代码块内容
-     */
+    /** 代码块内容 */
     content: string;
   }
 
   interface PlaygroundData {
-    /**
-     * 交互演示标题
-     */
+    /** 交互演示标题 */
     title?: string;
 
     /**
      * Import map 文件名
      *
-     * @default 'import-map.json'
+     * @default "import-map.json"
      */
     importMap?: string;
 
-    /**
-     * 交互演示文件信息
-     */
+    /** 交互演示文件信息 */
     files: Record<
-      /**
-       * 文件名
-       */
+      /** 文件名 */
       string,
-      /**
-       * 文件详情
-       */
+      /** 文件详情 */
       PlaygroundCodeConfig
     >;
 
@@ -510,27 +498,25 @@ order: 2
     settings: Record<string, unknown>;
 
     /**
+     * hash key based on playground content
+     *
      * 根据交互演示内容生成的 hash key
      */
     key: string;
   }
 
   interface PlaygroundOptions {
-    /**
-     * 交互演示容器名
-     */
+    /** 交互演示容器名 */
     name: string;
 
     /**
      * 交互演示组件名称
      *
-     * @default 'Playground'
+     * @default "Playground"
      */
     component?: string;
 
-    /**
-     * 属性获取器
-     */
+    /** 属性获取器 */
     propsGetter: (data: PlaygroundData) => Record<string, string>;
   }
 
@@ -539,17 +525,6 @@ order: 2
      * 交互演示外部地址
      *
      * @default "https://www.typescriptlang.org/play"
-     */
-    service?: string;
-  }
-
-  interface UnoPresetPlaygroundOptions {
-    /**
-     * external playground service url
-     *
-     * 交互演示外部地址
-     *
-     * @default "https://unocss.dev/play"
      */
     service?: string;
   }
@@ -577,13 +552,25 @@ order: 2
     ssr?: boolean;
   }
 
+  interface UnoPresetPlaygroundOptions {
+    /**
+     * 交互演示外部地址
+     *
+     * @default "https://unocss.dev/play"
+     */
+    service?: string;
+  }
+
+  type BuiltInPlaygroundPreset = "ts" | "vue" | "unocss";
+
   interface PlaygroundGlobalOptions {
     /** 交互演示预设 */
-    presets: ("ts" | "vue" | PlaygroundOptions)[];
+    presets: (BuiltInPlaygroundPreset | PlaygroundOptions)[];
     /** 交互演示配置 */
     config?: {
       ts?: TSPresetPlaygroundOptions;
       vue?: VuePresetPlaygroundOptions;
+      unocss?: UnoPresetPlaygroundOptions;
     };
   }
   ```

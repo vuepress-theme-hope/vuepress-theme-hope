@@ -120,7 +120,7 @@ Project with order -1
 
 ## Excluding pages
 
-There may be some cases you have a `/foo/bar.md`, but do not want to generate a catalog page at `/foo/`, in this case, you can use `exclude` option to exclude the page.
+There may be some cases that you have a `/foo/bar.md`, but don't want a catalog page at `/foo/`, in this case, you can use `exclude` option to exclude the page.
 
 ::: code-tabs#language
 
@@ -163,6 +163,10 @@ The `exclude` option accepts an array of string or RegExp:
 
 - `"/foo/"` means only exclude catalog page generation at `/foo/` folder.
 - `/^\/foo\//` means exclude catalog page generation at `/foo/` folder and its subfolders.
+
+::: tip 404 pages will be automatically excluded.
+
+:::
 
 ## Controlling Page Frontmatter
 

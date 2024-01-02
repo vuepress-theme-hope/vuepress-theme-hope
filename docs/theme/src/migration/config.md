@@ -400,17 +400,17 @@ Move all plugin related options under `plugins`.
 
   - JSON-LD support ![New](https://img.shields.io/badge/-New-brightgreen)
 
-    The plugin now can generate JSON-LD script tags for you, and is providing an option `plugin.seo.jsonLd` to let you customize the JSON-LD properties.
+    The plugin now can generate JSON-LD script tags for you, and is providing an option `plugins.seo.jsonLd` to let you customize the JSON-LD properties.
 
   - Description generation ![New](https://img.shields.io/badge/-New-brightgreen)
 
-    The plugin can generate a description for you automatically via `plugin.seo.autoDescription` options
+    The plugin can generate a description for you automatically via `plugins.seo.autoDescription` options
 
   - Canonical link ![New](https://img.shields.io/badge/-New-brightgreen)
 
-    You can set canonical link via `plugin.seo.canonicalLink` option. It's useful when your docs are deployed in several places.
+    You can set canonical link via `plugins.seo.canonicalLink` option. It's useful when your docs are deployed in several places.
 
-  - `seo.customMeta` renamed to `plugin.seo.customHead` ![changed](https://img.shields.io/badge/-changed-yellow)
+  - `seo.customMeta` renamed to `plugins.seo.customHead` ![changed](https://img.shields.io/badge/-changed-yellow)
 
     Now you can edit all head tags instead of only meta in V1.
 
@@ -418,15 +418,15 @@ Move all plugin related options under `plugins`.
 
   - Visualized sitemap, configurable with `plugins.sitemap.sitemapXSLFilename` and `plugins.sitemap.sitemapXSLTemplate` ![New](https://img.shields.io/badge/-New-brightgreen)
 
-  - `plugin.sitemap.priority` ![New](https://img.shields.io/badge/-New-brightgreen): setting default value for priority
+  - `plugins.sitemap.priority` ![New](https://img.shields.io/badge/-New-brightgreen): setting default value for priority
 
-  - `sitemap.urls` renamed to `plugin.sitemap.extraUrls` ![changed](https://img.shields.io/badge/-changed-yellow)
+  - `sitemap.urls` renamed to `plugins.sitemap.extraUrls` ![changed](https://img.shields.io/badge/-changed-yellow)
 
-  - `sitemap.exclude` renamed to `plugin.sitemap.excludeUrls` ![changed](https://img.shields.io/badge/-changed-yellow)
+  - `sitemap.exclude` renamed to `plugins.sitemap.excludeUrls` ![changed](https://img.shields.io/badge/-changed-yellow)
 
-  - `sitemap.outFile` renamed to `plugin.sitemap.sitemapFilename` ![changed](https://img.shields.io/badge/-changed-yellow)
+  - `sitemap.outFile` renamed to `plugins.sitemap.sitemapFilename` ![changed](https://img.shields.io/badge/-changed-yellow)
 
-  - `sitemap.modifyTimeGetter` renamed to `plugin.sitemap.modifyTimeGetter` ![changed](https://img.shields.io/badge/-changed-yellow)
+  - `sitemap.modifyTimeGetter` renamed to `plugins.sitemap.modifyTimeGetter` ![changed](https://img.shields.io/badge/-changed-yellow)
 
 ### Deletion
 

@@ -4,9 +4,15 @@ All notable changes to this project will be documented in this file. See [Conven
 
 <!-- #region recent-change -->
 
-## [2.0.0-rc.9](https://github.com/vuepress-theme-hope/vuepress-theme-hope/compare/v2.0.0-rc.8...v2.0.0-rc.9) (2023-12-29)
+## [2.0.0-rc.10](https://github.com/vuepress-theme-hope/vuepress-theme-hope/compare/v2.0.0-rc.9...v2.0.0-rc.10) (2023-12-30)
 
-## [2.0.0-rc.8](https://github.com/vuepress-theme-hope/vuepress-theme-hope/compare/v2.0.0-rc.7...v2.0.0-rc.8) (2023-12-29)
+### Highlights
+
+- This version requires Vue3.4, with Vue performance improvements.
+- Uncommon plugins like copyright2, feed2, pwa2 plugins are optional in theme, so you need to install them manually to use them.
+- The theme adds built-in search config support for `@vuepress/docsearch` `@vuepress/search` and `search-pro`. After installing them, you only need to provide necessary options, and the theme will do the rest job for you.
+- The theme now thinks that `categories` and `tags` in frontmatter are standard, which will improve experience with tools like Obsidian.
+- `md-enhance` now undeprecate danger container support back to align vuepress default theme.
 
 ### Features
 
@@ -20,6 +26,14 @@ All notable changes to this project will be documented in this file. See [Conven
 
 - **create:** fix version test ([798c4e7](https://github.com/vuepress-theme-hope/vuepress-theme-hope/commit/798c4e7477474c697de4b446d3c79fa263186fb2))
 - **shared:** fix error with pnpm ([4283b7d](https://github.com/vuepress-theme-hope/vuepress-theme-hope/commit/4283b7dcdb95f9e41ce4bb0c588885e714235950))
+
+## [2.0.0-rc.9](https://github.com/vuepress-theme-hope/vuepress-theme-hope/compare/v2.0.0-rc.8...v2.0.0-rc.9) (2023-12-29)
+
+This version is not actually released.
+
+## [2.0.0-rc.8](https://github.com/vuepress-theme-hope/vuepress-theme-hope/compare/v2.0.0-rc.7...v2.0.0-rc.8) (2023-12-29)
+
+This version is not actually released.
 
 ## [2.0.0-rc.7](https://github.com/vuepress-theme-hope/vuepress-theme-hope/compare/v2.0.0-rc.6...v2.0.0-rc.7) (2023-12-26)
 
@@ -63,6 +77,10 @@ All notable changes to this project will be documented in this file. See [Conven
 
 ## [2.0.0-rc.3](https://github.com/vuepress-theme-hope/vuepress-theme-hope/compare/v2.0.0-rc.2...v2.0.0-rc.3) (2023-12-09)
 
+### Highlights
+
+- The `<Share>` component in `component` plugin is rebuild, new services are added and icons are redrawn.
+
 ### Features
 
 - **components:** add more share services & redraw icons ([#3709](https://github.com/vuepress-theme-hope/vuepress-theme-hope/issues/3709)) ([1da2887](https://github.com/vuepress-theme-hope/vuepress-theme-hope/commit/1da2887a2aeba1dc6098929de64a291e295824f3))
@@ -78,6 +96,12 @@ All notable changes to this project will be documented in this file. See [Conven
 - **search-pro:** fix options not working as expected, close [#3712](https://github.com/vuepress-theme-hope/vuepress-theme-hope/issues/3712) ([a9e97f4](https://github.com/vuepress-theme-hope/vuepress-theme-hope/commit/a9e97f42c6ff5d5592802fd5b1f3ded6336d2f9d))
 
 ## [2.0.0-rc.2](https://github.com/vuepress-theme-hope/vuepress-theme-hope/compare/v2.0.0-rc.1...v2.0.0-rc.2) (2023-12-04)
+
+### Highlights
+
+- `auto-catalog` plugin has been rebuilt, and provides a client api to customize catalog info extracting.
+- The theme is now using a new animation when toggling darkmode.
+- More icons are added to theme built-in social icons.
 
 ### Features
 
@@ -95,10 +119,18 @@ All notable changes to this project will be documented in this file. See [Conven
 
 ## [2.0.0-rc.1](https://github.com/vuepress-theme-hope/vuepress-theme-hope/compare/v2.0.0-rc.0...v2.0.0-rc.1) (2023-11-26)
 
+### Highlights
+
+- new Kotlin Playground feature in `md-enhance`
+- new MarkMap in `md-enhance`
+- new `alert` feature in `md-enhance` to support GFM alerts
+- new `caution` and `important` container in hint feature (previously named `container`)
+
 ### ⚠ BREAKING CHANGES
 
-- **md-enhance:** `container` option is deprecated, use `hint` instead
-  `danger` is renamed to `caution` to align GFM
+- **md-enhance:**
+  - `container` option is deprecated, use `hint` instead
+  - `caution` and `important` container is added to align GFM
 
 ### Features
 
@@ -151,6 +183,11 @@ All notable changes to this project will be documented in this file. See [Conven
 
 ## [2.0.0-beta.251](https://github.com/vuepress-theme-hope/vuepress-theme-hope/compare/v2.0.0-beta.250...v2.0.0-beta.251) (2023-11-15)
 
+### Highlights
+
+- now homepage actions support `icon` field
+- all images are now lazyloaded by default
+
 ### Features
 
 - **components:** improve VPBanner style on mobile ([ff6222c](https://github.com/vuepress-theme-hope/vuepress-theme-hope/commit/ff6222c001c3195817ac123ca24cee15878ce3f3))
@@ -183,6 +220,14 @@ All notable changes to this project will be documented in this file. See [Conven
 
 ## [2.0.0-beta.248](https://github.com/vuepress-theme-hope/vuepress-theme-hope/compare/v2.0.0-beta.247...v2.0.0-beta.248) (2023-11-10)
 
+### Highlights
+
+- `component` option is added in `md-enhance` plugin to deprecate `card` option
+
+  Now you can use component fence block to quickly write any components you want
+
+- `<VPBanner>` and `<VPCard>` component is added to `components` plugin
+
 ### ⚠ BREAKING CHANGES
 
 - **md-enhance:** card option is no longer supported
@@ -202,6 +247,12 @@ All notable changes to this project will be documented in this file. See [Conven
 - **auto-catalog:** fix style ([d02d423](https://github.com/vuepress-theme-hope/vuepress-theme-hope/commit/d02d423faa232037a7be1f302b258481ba44e95a))
 
 ## [2.0.0-beta.247](https://github.com/vuepress-theme-hope/vuepress-theme-hope/compare/v2.0.0-beta.246...v2.0.0-beta.247) (2023-11-08)
+
+### Highlights
+
+- Darkmode support for Chart.js in `md-enhance` plugin
+- Now you can use `defineEchartsConfig` to use 3rd party plugins and add default option in echarts.
+- You can customize PhotoSwipe pre page with frontmatter.
 
 ### Features
 
@@ -228,6 +279,10 @@ All notable changes to this project will be documented in this file. See [Conven
 
 ## [2.0.0-beta.245](https://github.com/vuepress-theme-hope/vuepress-theme-hope/compare/v2.0.0-beta.244...v2.0.0-beta.245) (2023-11-03)
 
+### Highlights
+
+- New md-demo container for displaying demo and its code in markdown.
+
 ### Features
 
 - **md-enhance:** add md-demo ([df9a9a6](https://github.com/vuepress-theme-hope/vuepress-theme-hope/commit/df9a9a6949cb8ece68965771f8b177298ee2cfaa))
@@ -252,6 +307,11 @@ All notable changes to this project will be documented in this file. See [Conven
 
 ## [2.0.0-beta.243](https://github.com/vuepress-theme-hope/vuepress-theme-hope/compare/v2.0.0-beta.242...v2.0.0-beta.243) (2023-10-31)
 
+### Highlights
+
+- `indexType` prop is no longer needed in `<AutoCatalog>` component
+- `revealJs` now running on Reveal.js v5
+
 ### Features
 
 - **auto-catalog:** remove `indexType` prop, close [#3537](https://github.com/vuepress-theme-hope/vuepress-theme-hope/issues/3537) ([add17d9](https://github.com/vuepress-theme-hope/vuepress-theme-hope/commit/add17d92a713cbc0917153ff8b7ce9997fe72583))
@@ -274,6 +334,11 @@ All notable changes to this project will be documented in this file. See [Conven
 - fix broken main and type field ([a890e64](https://github.com/vuepress-theme-hope/vuepress-theme-hope/commit/a890e64912adbd4b91995a1d70a542e31f16775f))
 
 ## [2.0.0-beta.241](https://github.com/vuepress-theme-hope/vuepress-theme-hope/compare/v2.0.0-beta.240...v2.0.0-beta.241) (2023-10-26)
+
+### Highlights
+
+- XY Chart support in mermaid
+- Marking more packages optional
 
 ### Features
 
@@ -308,9 +373,17 @@ All notable changes to this project will be documented in this file. See [Conven
 
 ## [2.0.0-beta.239](https://github.com/vuepress-theme-hope/vuepress-theme-hope/compare/v2.0.0-beta.238...v2.0.0-beta.239) (2023-10-24)
 
+### Highlights
+
+- We use modern css to support RTL, so more old browsers appearance may be broken.
+
+  You can check FAQ part in theme docs to add backward compatibility.
+
+- Heavy deps in `md-enhance` plugin are now optional
+
 ### ⚠ BREAKING CHANGES
 
-- drop Node 16, minimal requirement is 18.16.0
+- Drop Node 16, minimal requirement is 18.16.0
 - **components:** addThis is removed
 
 ### Features
@@ -332,6 +405,12 @@ All notable changes to this project will be documented in this file. See [Conven
 - **deps:** update dependency flowchart.ts to v1.0.1 ([#3541](https://github.com/vuepress-theme-hope/vuepress-theme-hope/issues/3541)) ([0430752](https://github.com/vuepress-theme-hope/vuepress-theme-hope/commit/0430752bf154ebf54b343a0c164d5a9227eca76a))
 
 ## [2.0.0-beta.238](https://github.com/vuepress-theme-hope/vuepress-theme-hope/compare/v2.0.0-beta.237...v2.0.0-beta.238) (2023-10-10)
+
+### Highlights
+
+- We rewrite presentation feature and rename it to `revealJS` in `md-enhance` plugin
+- `<VidStack>` component in `components` plugin now requires vidstack@v1.
+- SanKey, Requirement and Quadrant Chart supports are added in Mermaid.
 
 ### ⚠ BREAKING CHANGES
 
@@ -372,6 +451,10 @@ All notable changes to this project will be documented in this file. See [Conven
 
 ## [2.0.0-beta.236](https://github.com/vuepress-theme-hope/vuepress-theme-hope/compare/v2.0.0-beta.235...v2.0.0-beta.236) (2023-08-29)
 
+### Highlights
+
+- Now you can set a threshold to disable copy.
+
 ### ⚠ BREAKING CHANGES
 
 - **copyright2:** rename `triggerWords` to `triggerLength`
@@ -387,6 +470,10 @@ All notable changes to this project will be documented in this file. See [Conven
 - **theme:** fix excerpt code block, close [#3405](https://github.com/vuepress-theme-hope/vuepress-theme-hope/issues/3405) ([d66eead](https://github.com/vuepress-theme-hope/vuepress-theme-hope/commit/d66eead23045bdb972a2c77fcbe56690560b47c1))
 
 ## [2.0.0-beta.235](https://github.com/vuepress-theme-hope/vuepress-theme-hope/compare/v2.0.0-beta.234...v2.0.0-beta.235) (2023-08-11)
+
+### Highlights
+
+- New unocss preset in playground.
 
 ### Features
 
@@ -444,6 +531,10 @@ All notable changes to this project will be documented in this file. See [Conven
 - **md-enhance:** convert br tag to xml format ([cd89997](https://github.com/vuepress-theme-hope/vuepress-theme-hope/commit/cd89997d9c67f646cc66df0a1285a94d9c664ad0))
 
 ## [2.0.0-beta.229](https://github.com/vuepress-theme-hope/vuepress-theme-hope/compare/v2.0.0-beta.228...v2.0.0-beta.229) (2023-07-03)
+
+### Highlights
+
+- Now Vue Playground is running on `@vue/repl` v2.
 
 ### Features
 
@@ -1851,7 +1942,7 @@ closed 2811
 
 ### ⚠ BREAKING CHANGES
 
-- **theme:** plugin.components no longer accepts an array
+- **theme:** plugins.components no longer accepts an array
 - **components:** rebuild component options
 
 ### Features
@@ -3937,7 +4028,7 @@ Since `vuepress` drop support for the `babel` way, `search` and `docsearch` opti
 ### Features
 
 - **theme:** add dayjs to optimize deps ([f6c87a2](https://github.com/vuepress-theme-hope/vuepress-theme-hope/commit/f6c87a2f735719b3efb1cdd2fdc603054f1df048))
-- **theme:** set `plugin.blog` default value to false ([f23b107](https://github.com/vuepress-theme-hope/vuepress-theme-hope/commit/f23b107468e4293f7afce8d29af2b385e2d6e45a))
+- **theme:** set `plugins.blog` default value to false ([f23b107](https://github.com/vuepress-theme-hope/vuepress-theme-hope/commit/f23b107468e4293f7afce8d29af2b385e2d6e45a))
 
 ## [2.0.0-alpha.20](https://github.com/vuepress-theme-hope/vuepress-theme-hope/compare/v2.0.0-alpha.19...v2.0.0-alpha.20) (2022-02-12)
 

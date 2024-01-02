@@ -3,16 +3,15 @@ home: true
 title: Home
 icon: home
 heroText: vuepress-plugin-append-date
-tagline: Append date info from git to frontmatter
 
 footer: Theme by <a href="https://theme-hope.vuejs.press" target="_blank">VuePress Theme Hope</a> | MIT Licensed, Copyright © 2019-present Mr.Hope
 
 copyright: false
 ---
 
-::: warning
+::: important
 
-This plugin requires `@vuepress/plugin-git` to work.
+This plugin requires [`@vuepress/plugin-git`][git] to work with.
 
 :::
 
@@ -85,11 +84,13 @@ export default {
 - Type: `string`
 - Default: `"date"`
 
-Frontmatter key.
+Frontmatter key to use when appending date.
 
 ### format
 
 - Type: `"date" | "time" | "full"`
 - Default: `"date"`
 
-Format of the date.
+Format of the date value when appending date.
+
+[git]: https://vuejs.press/reference/plugin/git.html

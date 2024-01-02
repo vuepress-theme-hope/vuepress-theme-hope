@@ -99,13 +99,13 @@ A custom filter function, used to filter feed items.
     );
   ```
 
-A custom sort function, used to sort feed items.
+Custom sorter function for feed items.
 
-::: warning
+The default sorting behavior is by file adding time coming from git (needs `@vuepress/plugin-git`).
 
-We strongly recommend you setting this option, otherwise the order of items in the feed stream is completely determined by the order of pages output by VuePress.
+::: important
 
-You can sort the pages in the site according to your needs.
+You should enable `@vuepress/plugin-git` to get the newest created pages as feed items. Otherwise, the feed items will be sorted by the default order of pages in VuePress.
 
 :::
 

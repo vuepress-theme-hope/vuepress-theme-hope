@@ -11,7 +11,8 @@ copy:
 ---
 
 你可能不想让你的某些文章被他人复制，或者你想版权信息在复制时自动附加。
-`vuepress-theme-hope` 通过 <ProjectLink name="copyright2" path="/zh/">vuepress-plugin-copyright2</ProjectLink> 提供此功能。想要使用它，你需要在你的项目中手动安装 `vuepress-plugin-copyright2`。
+
+`vuepress-theme-hope` 通过 <ProjectLink name="copyright2" path="/zh/">vuepress-plugin-copyright2</ProjectLink> 提供此功能。
 
 ::: info
 

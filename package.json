@@ -1,6 +1,6 @@
 {
   "name": "vuepress-theme-hope-root",
-  "version": "2.0.0-rc.9",
+  "version": "2.0.0-rc.10",
   "private": true,
   "description": "A VuePress theme with tons of features",
   "type": "module",
@@ -37,22 +37,14 @@
   },
   "nano-staged": {
     "**/*": "prettier --write --ignore-unknown",
-    "*.vue": [
-      "eslint --fix"
-    ],
+    "*.vue": "eslint --fix",
     "*.{js,ts}": [
       "eslint --fix",
       "cross-env TZ=Etc/UTC vitest related --run"
     ],
-    "*.md": [
-      "markdownlint-cli2 --fix"
-    ],
-    "*.scss": [
-      "stylelint --fix"
-    ],
-    "package.json": [
-      "sort-package-json"
-    ]
+    "*.md": "markdownlint-cli2 --fix",
+    "*.scss": "stylelint --fix",
+    "package.json": "sort-package-json"
   },
   "config": {
     "commitizen": {
@@ -70,7 +62,7 @@
     "@types/node": "20.10.6",
     "@typescript-eslint/eslint-plugin": "6.16.0",
     "@typescript-eslint/parser": "6.16.0",
-    "@vitest/coverage-v8": "1.1.0",
+    "@vitest/coverage-v8": "1.1.1",
     "@vue/eslint-config-typescript": "12.0.0",
     "bumpp": "9.2.1",
     "commit-and-tag-version": "12.0.0",
@@ -97,7 +89,7 @@
     "picocolors": "1.0.0",
     "prettier": "3.1.1",
     "rimraf": "5.0.5",
-    "rollup": "4.9.1",
+    "rollup": "4.9.2",
     "rollup-plugin-copy": "3.5.0",
     "rollup-plugin-dts": "6.1.0",
     "rollup-plugin-esbuild": "6.1.0",
@@ -109,7 +101,7 @@
     "tslib": "2.6.2",
     "tsx": "4.7.0",
     "typescript": "5.3.3",
-    "vitest": "1.1.0"
+    "vitest": "1.1.1"
   },
   "packageManager": "pnpm@8.13.1",
   "engines": {

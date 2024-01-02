@@ -38,9 +38,9 @@ Available component which can be used in markdown files are:
 - `"SiteInfo"`
 - `"XiGua"`
 
-You can set `plugin.components.components` with an array of components you want, by default it will be `["Badge"]`.
+You can set `plugins.components.components` with an array of components you want, by default it will be `["Badge"]`.
 
-Also, you can set `plugin.components.rootComponents` to enable some root components, such as Notice.
+Also, you can set `plugins.components.rootComponents` to enable some root components, such as Notice.
 
 Check <ProjectLink name="components" path="/config.html">components plugin docs</ProjectLink> for available plugin options.
 

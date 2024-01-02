@@ -35,6 +35,19 @@ export interface CopyCodeOptions {
   showInMobile?: boolean;
 
   /**
+   * Whether generate a prominent copy button.
+   *
+   * @description If users are expected to copy snippets from your site, you can set this option to `true`
+   *
+   * 是否生成醒目的复制按钮。
+   *
+   * @description 如果你用户被期望从你的站点复制代码片段，你可以将此选项设置为 `true`
+   *
+   * @default false
+   */
+  fancy?: boolean;
+
+  /**
    * The delay of registering copy code buttons, in ms.
    *
    * If the theme you are using has a switching animation, it is recommended to configure this option to `Switch animation duration + 200`.
@@ -46,19 +59,6 @@ export interface CopyCodeOptions {
    * @default 800
    */
   delay?: number;
-
-  /**
-   * Whether use fancy styles
-   *
-   * @description If users are expected to copy snippets from your site, you can set this option to `true`
-   *
-   * 是否启用华丽样式
-   *
-   * @description 如果你用户被期望从你的站点复制代码片段，你可以将此选项设置为 `true`
-   *
-   * @default false
-   */
-  fancy?: boolean;
 
   /**
    * Locale config

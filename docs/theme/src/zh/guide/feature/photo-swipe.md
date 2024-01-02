@@ -40,7 +40,7 @@ tag:
 
 ## 自定义配置
 
-`plugin.photoSwipe` 会作为插件选项传入 <ProjectLink name="photo-swipe" path="/zh/">`vuepress-plugin-photo-swipe`</ProjectLink>。 你可以查看 <ProjectLink name="photo-swipe" path="/zh/">插件文档</ProjectLink> 来来进行高级配置。
+`plugins.photoSwipe` 会作为插件选项传入 <ProjectLink name="photo-swipe" path="/zh/">`vuepress-plugin-photo-swipe`</ProjectLink>。 你可以查看 <ProjectLink name="photo-swipe" path="/zh/">插件文档</ProjectLink> 来来进行高级配置。
 
 ## 演示
 

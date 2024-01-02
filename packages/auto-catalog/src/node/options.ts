@@ -72,34 +72,34 @@ export interface DeprecatedAutoCatalogOptions {
 
 export interface AutoCatalogOptions extends DeprecatedAutoCatalogOptions {
   /**
-   * The max level of the generated catalog
+   * Max depth of Catalog items.
    *
-   * @description Available with built-in component, only support 1,2,3
+   * @description Built-in component only
    *
-   * 生成的目录最大层级
+   * 目录项级别的最大深度。
    *
-   * @description 仅支持内置组件，仅支持 1,2,3
+   * @description 仅限内置组件
    *
    * @default 3
    */
-  level?: number;
+  level?: 1 | 2 | 3;
 
   /**
-   * Whether show index for catalog
+   * Whether show index for catalog.
    *
-   * 目录是否显示索引
+   * 目录是否显示索引。
    *
    * @default false
    */
   index?: boolean;
 
   /**
-   * Frontmatter of the generated page
+   * Frontmatter getter for the generated page.
    *
    * @param path path to be generated
-   * @returns title of the generated page
+   * @returns page frontmatter
    *
-   * 页面 Frontmatter 获取器
+   * 生成页面的 Frontmatter 获取器。
    *
    * @param path 当前生成的路径名称
    * @returns 页面 Frontmatter
@@ -107,20 +107,20 @@ export interface AutoCatalogOptions extends DeprecatedAutoCatalogOptions {
   frontmatter?: (path: string) => PageFrontmatter;
 
   /**
-   * Exclude paths from being generated
+   * Catalog page path to be excluded during generation.
    *
-   * 排除需要生成的路径
+   * 生成中需要排除的目录页路径。
    *
    * @default []
    */
   exclude?: (RegExp | string)[];
 
   /**
-   * Component name to use as catalog
+   * Component name to use as catalog.
    *
    * @description By default the plugin will register an `<AutoCatalog />` component and use interface. If you want to use your own component, you can set this option to the name of your component.
    *
-   * 用作目录的组件名称
+   * 用作目录的组件名称。
    *
    * @description 默认情况下，插件将注册一个 `<AutoCatalog />` 组件并使用该组件。如果你想使用自己的组件，可以将此选项设置为你的组件的名称。
    */

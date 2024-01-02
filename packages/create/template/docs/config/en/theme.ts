@@ -48,6 +48,10 @@ export default hopeTheme({
       categoryId: "DIC_kwDOG_Pt2M4COD69",
     },
 
+    components: {
+      components: ["Badge", "VPCard"],
+    },
+
     // All features are enabled for demo, only preserve features you need here
     mdEnhance: {
       align: true,
@@ -117,7 +121,7 @@ export default hopeTheme({
       // sandpack: true,
     },
 
-    // uncomment these if you want a pwa
+    // install vuepress-plugin-pwa2 and uncomment these if you want a PWA
     // pwa: {
     //   favicon: "/favicon.ico",
     //   cacheHTML: true,

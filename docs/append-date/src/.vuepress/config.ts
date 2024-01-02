@@ -6,14 +6,14 @@ export default config("append-date", {
   locales: {
     "/": {
       lang: "en-US",
-      title: "Append date plugin",
-      description: "Plugins for automatically appending date from git commit.",
+      title: "Append date",
+      description: "VuePress2 plugin which appends date from git commit.",
     },
 
     "/zh/": {
       lang: "zh-CN",
-      title: "自动追加日期插件",
-      description: "自动从 git commit 追加日期的插件。",
+      title: "自动追加日期",
+      description: "自动从 git commit 追加日期的 VuePress2 插件",
     },
   },
 

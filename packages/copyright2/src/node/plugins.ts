@@ -4,14 +4,16 @@ import {
   addViteSsrNoExternal,
   checkVersion,
   getLocales,
-  isFunction,
 } from "vuepress-shared/node";
 
 import { convertOptions } from "./compact.js";
 import { copyrightLocales } from "./locales.js";
 import type { CopyrightOptions } from "./options.js";
 import { CLIENT_FOLDER, PLUGIN_NAME, logger } from "./utils.js";
-import type { CopyrightPluginPageData } from "../shared/index.js";
+import type {
+  CopyrightInfoData,
+  CopyrightPluginPageData,
+} from "../shared/index.js";
 
 export const copyrightPlugin =
   (options: CopyrightOptions, legacy = true): PluginFunction =>
@@ -27,7 +29,10 @@ export const copyrightPlugin =
     const {
       canonical,
       author = "",
+      authorGetter,
       license = "",
+      licenseGetter,
+      copyrightGetter,
       disableCopy = false,
       disableSelection = false,
       global = false,
@@ -47,6 +52,8 @@ export const copyrightPlugin =
 
       define: (): Record<string, unknown> => ({
         COPYRIGHT_CANONICAL: canonical || "",
+        COPYRIGHT_DEFAULT_AUTHOR: author || "",
+        COPYRIGHT_DEFAULT_LICENSE: license || "",
         COPYRIGHT_GLOBAL: global,
         COPYRIGHT_DISABLE_COPY: disableCopy,
         COPYRIGHT_DISABLE_SELECTION: disableSelection,
@@ -56,10 +63,11 @@ export const copyrightPlugin =
       }),
 
       extendsPage: (page: Page<Partial<CopyrightPluginPageData>>): void => {
-        const authorText = isFunction(author) ? author(page) : author;
+        const authorText = authorGetter?.(page) ?? author;
+        const licenseText = licenseGetter?.(page) ?? license;
+        const copyright = copyrightGetter?.(page);
 
-        const licenseText = isFunction(license) ? license(page) : license;
-
+        // TODO: Remove this in v2 stable
         if (page.frontmatter["triggerWords"]) {
           logger.warn(
             `The ${colors.cyan(
@@ -76,10 +84,20 @@ export const copyrightPlugin =
           page.frontmatter["triggerLength"] = page.frontmatter["triggerWords"];
         }
 
-        page.data.copyright = {
-          ...(authorText ? { author: authorText } : {}),
-          ...(licenseText ? { license: licenseText } : {}),
-        };
+        if (copyright) {
+          page.data.copyright = copyright;
+        } else {
+          const hasDifferentAuthor = authorText && authorText !== author;
+          const hasDifferentLicense = licenseText && licenseText !== license;
+
+          if (hasDifferentAuthor || hasDifferentLicense) {
+            const copyrightInfo: CopyrightInfoData = {};
+
+            if (hasDifferentAuthor) copyrightInfo.author = authorText;
+            if (hasDifferentLicense) copyrightInfo.license = licenseText;
+            page.data.copyright = copyrightInfo;
+          }
+        }
       },
 
       extendsBundlerOptions: (bundlerOptions: unknown, app): void => {

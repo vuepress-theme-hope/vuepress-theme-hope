@@ -1,52 +1,44 @@
 ---
-title: Options
+title: Config
 icon: gears
 ---
 
 ## Plugin Options
 
-### level
+### level <Badge text="Built-in component only" />
 
 - Type: `1 | 2 | 3`
 - Default: `3`
 
-Max depth of Catalog items level.
+Max depth of catalog items.
 
-::: note Only available with built-in component.
-
-:::
-
-### index
+### index <Badge text="Built-in component only" />
 
 - Type: `boolean`
 - Default: `false`
 
 Whether show index for catalog
 
-::: note Only available with built-in component.
+### frontmatter
 
-:::
+- Type: `(path: string) => Record<string, any>`
+- Required: No
+
+Frontmatter getter for the generated page.
 
 ### exclude
 
 - Type: `(RegExp | string)[]`
 - Default: `[]`
 
-Page paths excluding from auto generation.
-
-### frontmatter
-
-- Type: `(path: string) => Record<string, any>`
-- Required: No
-
-Page Frontmatter generator.
+Catalog page path to be excluded during generation.
 
 ### component
 
 - Type: `string`
 - Required: No
 
-Catalog component name.
+Component name to use as catalog.
 
 ### locales
 

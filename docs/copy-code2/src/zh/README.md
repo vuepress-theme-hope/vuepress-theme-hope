@@ -3,7 +3,7 @@ home: true
 title: 主页
 icon: home
 heroText: vuepress-plugin-copy-code2
-tagline: 为 VuePress2 提供代码块一键复制
+tagline: 为代码块提供复制按钮
 actions:
   - text: 快速上手
     icon: lightbulb

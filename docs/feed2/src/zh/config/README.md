@@ -99,15 +99,13 @@ icon: gears
     );
   ```
 
-自定义排序函数，用于对站点中的页面进行排序。
+Feed 项目的排序器。
 
-最终生成的 feed 文件将会按照这个顺序对项目进行显示。
+默认的排序行为是通过 Git 的文件添加日期 (需要 `@vuepress/plugin-git`)。
 
-::: warning
+::: important
 
-强烈建议设置这个选项，否则 feed 流中，项目的顺序完全由 VuePress 默认输出的 pages 顺序决定。
-
-你可以按照自己的需求对站点内的页面进行排序。
+你应该启用 `@vuepress/plugin-git` 来获取最新创建的页面作为 feed 项目。否则，feed 项目将按照 VuePress 中页面的默认顺序排序。
 
 :::
 

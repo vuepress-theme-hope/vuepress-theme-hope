@@ -1,16 +1,18 @@
 ---
-title: Plugin Options
+title: Config
 icon: gears
 ---
 
-## wordPerMinute
+## Plugin Options
+
+### wordPerMinute
 
 - Type: `number`
 - Default: `300`
 
 Reading speed (words per minute)
 
-## locales
+### locales
 
 - Type: `ReadingTimeLocaleConfig`
 
@@ -64,3 +66,39 @@ Locales config for reading-time plugin.
 - **Dutch** (nl-NL)
 
 :::
+
+## Client API
+
+You can import and use these apis from `vuepress-plugin-reading-time2/client`:
+
+::: note These api won't throw even you disable the plugin.
+
+:::
+
+### useReadingTimeData
+
+```ts
+interface ReadingTime {
+  /** Expect reading time in minute unit */
+  minutes: number;
+  /** Words count of content */
+  words: number;
+}
+
+const useReadingTimeData: () => ComputedRef<ReadingTime | null>;
+```
+
+`null` is returned when the plugin is disabled.
+
+### useReadingTimeLocale
+
+```ts
+interface ReadingTimeLocale {
+  /** Expect reading time text in locale */
+  time: string;
+  /** Word count text in locale */
+  words: string;
+}
+
+const useReadingTimeLocale: () => ComputedRef<ReadingTimeLocale>;
+```

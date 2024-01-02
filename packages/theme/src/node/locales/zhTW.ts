@@ -35,7 +35,7 @@ export const zhTWLocale: ThemeLocaleData = {
     timelineTitle: "昨日不在",
     all: "全部",
     intro: "個人介紹",
-    star: "收藏",
+    star: "星標",
     empty: "$text 為空",
   },
 

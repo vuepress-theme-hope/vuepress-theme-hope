@@ -78,6 +78,9 @@ export default hopeTheme({
     editLink: "Edit this page on GitHub",
   },
 
+  // enable it to preview all changes in time
+  // hotReload: true,
+
   plugins: {
     blog: true,
 
@@ -88,6 +91,10 @@ export default hopeTheme({
     //   provider: "Waline",
     //   serverURL: "https://waline-comment.vuejs.press",
     // },
+
+    components: {
+      components: ["Badge", "VPCard"],
+    },
 
     // all features are enabled for demo, only preserve features you need here
     mdEnhance: {
@@ -158,7 +165,7 @@ export default hopeTheme({
       // sandpack: true,
     },
 
-    // uncomment these if you want a PWA
+    // install vuepress-plugin-pwa2 and uncomment these if you want a PWA
     // pwa: {
     //   favicon: "/favicon.ico",
     //   cacheHTML: true,

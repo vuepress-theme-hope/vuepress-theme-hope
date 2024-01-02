@@ -39,15 +39,31 @@ export default defineComponent({
           : themeLocale.value.footer || "";
     });
 
-    const copyright = computed(() =>
-      "copyright" in frontmatter.value
-        ? frontmatter.value.copyright
-        : "copyright" in themeLocale.value
-          ? themeLocale.value.copyright
-          : author.value.length
-            ? `Copyright © ${new Date().getFullYear()} ${author.value[0].name}`
-            : false,
+    const authorText = computed(() =>
+      author.value.map(({ name }) => name).join(", "),
     );
+
+    const getCopyrightText = (license?: string): string =>
+      `Copyright © ${new Date().getFullYear()} ${authorText.value} ${
+        license ? `${license} Licensed` : ""
+      }`;
+
+    const copyright = computed(() => {
+      const { copyright, license = "" } = frontmatter.value;
+      const { copyright: globalCopyright, license: globalLicense } =
+        themeLocale.value;
+
+      return (
+        copyright ??
+        (license
+          ? getCopyrightText(license)
+          : isString(globalCopyright)
+            ? globalCopyright
+            : authorText.value || globalLicense
+              ? getCopyrightText(globalLicense)
+              : false)
+      );
+    });
 
     return (): VNode | null =>
       enable.value

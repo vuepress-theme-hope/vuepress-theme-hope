@@ -3,7 +3,7 @@ home: true
 title: Home
 icon: home
 heroText: vuepress-plugin-copy-code2
-tagline: Quick Code Copy Plugin for vuepress
+tagline: Providing copy button for code fences
 actions:
   - text: Guide
     icon: lightbulb

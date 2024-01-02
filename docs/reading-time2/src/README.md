@@ -47,6 +47,8 @@ npm i -D vuepress-plugin-reading-time2
 
 ### Usage
 
+In config file:
+
 ::: code-tabs#language
 
 @tab TS
@@ -80,3 +82,17 @@ export default {
 ```
 
 :::
+
+In any components:
+
+```vue
+<script setup lang="ts">
+import {
+  useReadingTimeData,
+  useReadingTimeLocale,
+} from "vuepress-plugin-reading-time2/client";
+
+const readingTimeData = useReadingTimeData(); // { minutes: 1.1, words: 100 }
+const readingTimeLocale = useReadingTimeLocale(); // { time: "1 minute", words: "100 words" }
+</script>
+```

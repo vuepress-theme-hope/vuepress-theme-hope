@@ -1,5 +1,5 @@
 ---
-title: 媒体组件
+title: Media
 icon: video
 dir:
   collapsible: false

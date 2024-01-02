@@ -24,7 +24,7 @@
     "artalk": "2.7.3",
     "sass-loader": "13.3.3",
     "twikoo": "1.6.29",
-    "vue": "3.4.0",
+    "vue": "3.4.3",
     "vuepress-plugin-comment2": "workspace:*",
     "vuepress-vite": "2.0.0-rc.0",
     "vuepress-webpack": "2.0.0-rc.0"

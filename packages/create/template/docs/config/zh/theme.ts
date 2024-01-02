@@ -18,29 +18,34 @@ export default hopeTheme({
 
   docsDir: "src",
 
-  // navbar
+  // 导航栏
   navbar,
 
-  // sidebar
+  // 侧边栏
   sidebar,
 
+  // 页脚
   footer: "默认页脚",
-
   displayFooter: true,
 
+  // 加密配置
   encrypt: {
     config: {
       "/demo/encrypt.html": ["1234"],
     },
   },
 
-  // page meta
+  // 多语言配置
   metaLocales: {
     editLink: "在 GitHub 上编辑此页",
   },
 
+  // 如果想要实时查看任何改变，启用它。注: 这对更新性能有很大负面影响
+  // hotReload: true,
+
+  // 在这里配置主题提供的插件
   plugins: {
-    // You should generate and use your own comment service
+    // 你应该自行生成自己的评论服务
     comment: {
       provider: "Giscus",
       repo: "vuepress-theme-hope/giscus-discussions",
@@ -49,7 +54,11 @@ export default hopeTheme({
       categoryId: "DIC_kwDOG_Pt2M4COD69",
     },
 
-    // All features are enabled for demo, only preserve features you need here
+    components: {
+      components: ["Badge", "VPCard"],
+    },
+
+    // 此处开启了很多功能用于演示，你应仅保留用到的功能。
     mdEnhance: {
       align: true,
       attrs: true,
@@ -79,46 +88,46 @@ export default hopeTheme({
       tabs: true,
       vPre: true,
 
-      // install chart.js before enabling it
+      // 在启用之前安装 chart.js
       // chart: true,
 
       // insert component easily
 
-      // install echarts before enabling it
+      // 在启用之前安装 echarts
       // echarts: true,
 
-      // install flowchart.ts before enabling it
+      // 在启用之前安装 flowchart.ts
       // flowchart: true,
 
       // gfm requires mathjax-full to provide tex support
       // gfm: true,
 
-      // install katex before enabling it
+      // 在启用之前安装 katex
       // katex: true,
 
-      // install mathjax-full before enabling it
+      // 在启用之前安装 mathjax-full
       // mathjax: true,
 
-      // install mermaid before enabling it
+      // 在启用之前安装 mermaid
       // mermaid: true,
 
       // playground: {
       //   presets: ["ts", "vue"],
       // },
 
-      // install reveal.js before enabling it
+      // 在启用之前安装 reveal.js
       // revealJs: {
       //   plugins: ["highlight", "math", "search", "notes", "zoom"],
       // },
 
-      // install @vue/repl before enabling it
+      // 在启用之前安装 @vue/repl
       // vuePlayground: true,
 
       // install sandpack-vue3 before enabling it
       // sandpack: true,
     },
 
-    // uncomment these if you want a pwa
+    // 如果你需要 PWA。安装 vuepress-plugin-pwa2 并取消下方注释
     // pwa: {
     //   favicon: "/favicon.ico",
     //   cacheHTML: true,

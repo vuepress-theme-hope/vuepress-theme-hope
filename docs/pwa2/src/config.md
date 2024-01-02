@@ -140,7 +140,7 @@ Special settings for Apple
 - Type: `string`
 - Required: No
 
-Fill in the icon address used by Apple, the recommended size is 152×152
+Icon link used by Apple, the recommended size is 152×152.
 
 ### apple.statusBarColor
 

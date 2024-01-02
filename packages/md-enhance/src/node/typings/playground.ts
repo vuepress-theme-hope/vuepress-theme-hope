@@ -151,3 +151,24 @@ export interface UnoPresetPlaygroundOptions {
    */
   service?: string;
 }
+
+export type BuiltInPlaygroundPreset = "ts" | "vue" | "unocss";
+
+export interface PlaygroundGlobalOptions {
+  /**
+   * Playground presets
+   *
+   * 交互演示预设
+   */
+  presets: (BuiltInPlaygroundPreset | PlaygroundOptions)[];
+  /**
+   * Playground config
+   *
+   * 交互演示配置
+   */
+  config?: {
+    ts?: TSPresetPlaygroundOptions;
+    vue?: VuePresetPlaygroundOptions;
+    unocss?: UnoPresetPlaygroundOptions;
+  };
+}

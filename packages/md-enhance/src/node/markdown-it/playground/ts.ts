@@ -54,15 +54,14 @@ export const getTSPlaygroundPreset = ({
     title = "",
     files,
     settings,
-    key,
   }: PlaygroundData): Record<string, string> => {
-    const tsfiles = keys(files).filter((key) => endsWith(key, ".ts"));
+    const tsFiles = keys(files).filter((key) => endsWith(key, ".ts"));
 
-    if (tsfiles.length !== 1)
+    if (tsFiles.length !== 1)
       logger.error("TS playground only support 1 ts file");
 
     const link = `${service}${getURL(
-      files[tsfiles[0]].content,
+      files[tsFiles[0]].content,
       deepAssign(
         {},
         <CompilerOptions>settings || {},
@@ -71,7 +70,6 @@ export const getTSPlaygroundPreset = ({
     )}`;
 
     return {
-      key,
       title,
       link: encodeURIComponent(link),
     };

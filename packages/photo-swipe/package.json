@@ -1,6 +1,6 @@
 {
   "name": "vuepress-plugin-photo-swipe",
-  "version": "2.0.0-rc.9",
+  "version": "2.0.0-rc.10",
   "description": "Photo Swipe plugin for vuepress",
   "keywords": [
     "vuepress",
@@ -41,7 +41,7 @@
   "scripts": {
     "build": "rollup -c rollup.config.ts --configPlugin esbuild",
     "clean": "rimraf ./lib ./*.tsbuildinfo",
-    "copy": "cpx \"src/client/**/*.{vue,scss}\" lib/client",
+    "copy": "cpx \"src/client/**/*.scss\" lib/client",
     "dev": "concurrently \"pnpm dev:copy\" \"pnpm dev:ts\"",
     "dev:copy": "pnpm copy -w",
     "dev:ts": "tsc -b tsconfig.build.json --watch"
@@ -58,7 +58,7 @@
     "@vuepress/utils": "2.0.0-rc.0",
     "@vueuse/core": "^10.7.1",
     "photoswipe": "^5.4.3",
-    "vue": "^3.4.0",
+    "vue": "^3.4.3",
     "vue-router": "^4.2.5",
     "vuepress-plugin-sass-palette": "workspace:*",
     "vuepress-shared": "workspace:*"

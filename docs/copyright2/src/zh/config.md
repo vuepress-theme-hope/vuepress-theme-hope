@@ -7,17 +7,38 @@ icon: gears
 
 ### author
 
-- 类型: `string | ((page: Page) => string)`
+- 类型: `string`
 - 必填: 否
 
-作者信息
+默认作者信息
 
 ### license
 
-- 类型: `string | ((page: Page) => string)`
+- 类型: `string`
 - 必填: 否
 
-协议信息
+默认协议信息
+
+### authorGetter
+
+- 类型: `(page: Page) => string | null`
+- 必填: 否
+
+作者信息获取器
+
+### licenseGetter
+
+- 类型: `(page: Page) => string | null`
+- 必填: 否
+
+协议信息获取器
+
+### copyrightGetter
+
+- 类型: `(page: Page) => string | null`
+- 必填: 否
+
+协议信息获取器
 
 ### triggerLength
 
@@ -72,7 +93,7 @@ icon: gears
 - 如果你倾向于使用第一个，你应该将 `canonical` 设置为 `https://myblog.com`
 - 如果你倾向于使用第二个，你应该将 `canonical` 设置为 `https://blog.com/username/`
 
-这样，在另一个站点复制内容触发的版权信息，也会指向你的首选站点。
+这样，在另一个站点触发的版权信息也会指向你的首选站点。
 
 :::
 
@@ -99,7 +120,7 @@ icon: gears
     /**
      * 链接文字
      *
-     * @description `:url` 会替换为当前页面链接
+     * @description `:link` 会替换为当前页面链接
      */
     link: string;
   }

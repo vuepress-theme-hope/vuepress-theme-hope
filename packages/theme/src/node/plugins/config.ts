@@ -14,6 +14,7 @@ import { getFeedPlugin } from "./feed.js";
 import { getMdEnhancePlugin } from "./mdEnhance.js";
 import { getPhotoSwipePlugin } from "./photoSwipe.js";
 import { getPWAPlugin } from "./pwa.js";
+import { getRedirectPlugin } from "./redirect.js";
 import { getRtlPlugin } from "./rtl.js";
 import { getSearchPlugin } from "./search.js";
 import { getSEOPlugin } from "./seo.js";
@@ -73,6 +74,7 @@ export const getPluginConfig = (
     getSearchPlugin(app, themeData, plugins),
     getSitemapPlugin(plugins.sitemap, options.hostname, legacy),
     getRtlPlugin(themeData),
+    getRedirectPlugin(plugins.redirect, options.hostname, legacy),
   ].filter((item) => item !== null) as PluginConfig;
 
   return pluginConfig;

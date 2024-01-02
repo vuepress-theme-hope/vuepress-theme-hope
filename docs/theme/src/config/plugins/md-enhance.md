@@ -10,21 +10,15 @@ tag:
   - Theme Config
 ---
 
-## Introduction
+## Intro
 
-The `vuepress-plugin-md-enhance` plugin is enabled by default and provides Markdown enhancements.
+The theme can enhance Markdown syntax via `vuepress-plugin-md-enhance`, and by default, the theme will enable linkCheck and hint feature.
 
-`vuepress-theme-hope` passes `plugins.mdEnhance` in theme options as plugin options to `vuepress-plugin-md-enhance` plugin.
-
-::: info
-
-`vuepress-theme-hope` will set the `hint` option to `true` by default.
-
-See <ProjectLink name="md-enhance" path="/config.html">Plugin documentation</ProjectLink> for more details.
-
-:::
+You can set the following options with `plugins.mdEnhance` in theme options.
 
 ## Plugin Options
+
+The theme passes `plugins.mdEnhance` in theme options as plugin options to `vuepress-plugin-md-enhance` plugin.
 
 ### gfm
 
@@ -412,8 +406,6 @@ Stylize inline tokens to create snippet you want.
 - Type: `PlaygroundGlobalOptions`
 
   ```ts
-  import type { CompilerOptions } from "typescript";
-
   interface PlaygroundCodeConfig {
     /**
      * Code block extension
@@ -422,28 +414,22 @@ Stylize inline tokens to create snippet you want.
      */
     ext: string;
 
-    /**
-     * Code block content
-     */
+    /** Code block content */
     content: string;
   }
 
   interface PlaygroundData {
-    /**
-     * Title of Playground
-     */
+    /** Title of Playground */
     title?: string;
 
     /**
      * Import map file name
      *
-     * @default 'import-map.json'
+     * @default "import-map.json"
      */
     importMap?: string;
 
-    /**
-     * Playground files info
-     */
+    /** Playground files info */
     files: Record<
       /** File name */
       string,
@@ -458,22 +444,18 @@ Stylize inline tokens to create snippet you want.
      */
     settings: Record<string, unknown>;
 
-    /**
-     * hash key based on playground content
-     */
+    /** hash key based on playground content */
     key: string;
   }
 
   interface PlaygroundOptions {
-    /**
-     * Playground container name
-     */
+    /** Playground container name */
     name: string;
 
     /**
      * Playground component name
      *
-     * @default 'Playground'
+     * @default "Playground"
      */
     component?: string;
 
@@ -488,17 +470,6 @@ Stylize inline tokens to create snippet you want.
      * external playground service url
      *
      * @default "https://www.typescriptlang.org/play"
-     */
-    service?: string;
-  }
-
-  interface UnoPresetPlaygroundOptions {
-    /**
-     * external playground service url
-     *
-     * 交互演示外部地址
-     *
-     * @default "https://unocss.dev/play"
      */
     service?: string;
   }
@@ -526,13 +497,25 @@ Stylize inline tokens to create snippet you want.
     ssr?: boolean;
   }
 
+  interface UnoPresetPlaygroundOptions {
+    /**
+     * external playground service url
+     *
+     * @default "https://unocss.dev/play"
+     */
+    service?: string;
+  }
+
+  type BuiltInPlaygroundPreset = "ts" | "vue" | "unocss";
+
   interface PlaygroundGlobalOptions {
     /** Playground presets */
-    presets: ("ts" | "vue" | PlaygroundOptions)[];
+    presets: (BuiltInPlaygroundPreset | PlaygroundOptions)[];
     /** Playground config */
     config?: {
       ts?: TSPresetPlaygroundOptions;
       vue?: VuePresetPlaygroundOptions;
+      unocss?: UnoPresetPlaygroundOptions;
     };
   }
   ```
@@ -653,54 +636,6 @@ The above two options are only used by third-party code demo service, you need t
 
 :::
 
-#### demo.jsfiddle
-
-- Type: `boolean`
-- Default value: `true`
-
-Whether to display the JSFiddle button
-
-#### demo.codepen
-
-- Type: `boolean`
-- Default value: `true`
-
-Whether to display the CodePen button
-
-#### demo.codepenLayout
-
-- Type: `"top" | "left" | "correct"`
-- Default value: `"left"`
-
-CodePen editor layout
-
-#### demo.codepenEditors
-
-- Type: `string`
-- Default value: `"101"`
-
-CodePen editor status
-
-#### others
-
-The following are the library links used by the third-party code demo service. Unless your environment cannot visit unpkg or the speed is slow, you probably don't need to override the default values.
-
-##### demo.babel
-
-Default value: `"https://unpkg.com/@babel/standalone/babel.min.js"`
-
-##### demo.vue
-
-Default value: `"https://unpkg.com/vue/dist/vue.global.prod.js"`
-
-##### demo.react
-
-Default value: `"https://unpkg.com/react/umd/react.production.min.js"`
-
-##### demo.reactDOM
-
-Default value: `"https://unpkg.com/react-dom/umd/react-dom.production.min.js"`
-
 ### revealJs
 
 - Type: `RevealJsOptions | boolean`
@@ -746,61 +681,8 @@ Default value: `"https://unpkg.com/react-dom/umd/react-dom.production.min.js"`
 
 Whether to enable slides support. You can pass an option to control plugins and themes to import.
 
-### delay
+::: info
 
-- Type: `number`
-- Default: `800`
-
-The delay of operating dom, in ms.
-
-::: tip
-
-If the theme you are using has a switching animation, it is recommended to configure this option to `Switch animation duration + 200`.
+Check <ProjectLink name="md-enhance" path="/config/">md-enhance plugin documentation</ProjectLink> for all available options.
 
 :::
-
-### locales
-
-- Type: `MarkdownEnhanceLocaleConfig`
-
-  ```ts
-  interface MarkdownEnhanceLocaleData {
-    /**
-     * Default Title text for info block
-     */
-    info: string;
-
-    /**
-     * Default Title text for note block
-     */
-    note: string;
-
-    /**
-     * Default Title text for tip block
-     */
-    tip: string;
-
-    /**
-     * Default Title text for warning block
-     */
-    warning: string;
-
-    /**
-     * Default Title text for danger block
-     */
-    danger: string;
-
-    /**
-     * Default Title text for details block
-     */
-    details: string;
-  }
-
-  interface MarkdownEnhanceLocaleConfig {
-    [localePath: string]: MarkdownEnhanceLocaleData;
-  }
-  ```
-
-- Required: No
-
-Locales config for Markdown Enhance Plugin.

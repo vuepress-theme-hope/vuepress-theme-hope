@@ -1,17 +1,17 @@
 export interface AppendDateOptions {
   /**
-   * Frontmatter key
+   * Frontmatter key to use when appending date.
    *
-   * Frontmatter 键值
+   * 追加时间时使用的 frontmatter 键名。
    *
    * @default 'date'
    */
   key?: string;
 
   /**
-   * Date format
+   * Format of the date value when appending date.
    *
-   * 日期格式
+   * 追加时间时使用的日期格式。
    *
    * @default 'date'
    */

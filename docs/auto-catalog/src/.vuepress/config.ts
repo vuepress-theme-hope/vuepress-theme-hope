@@ -7,13 +7,13 @@ export default config("auto-catalog", {
     "/": {
       lang: "en-US",
       title: "Auto catalog plugin",
-      description: "Plugins for automatically catalog generation",
+      description: "Plugins generating and displaying catalog for VuePress2",
     },
 
     "/zh/": {
       lang: "zh-CN",
       title: "自动目录插件",
-      description: "VuePress2 的自动生成目录插件",
+      description: "生成和展示目录的 VuePress2 插件",
     },
   },
 

@@ -3,7 +3,7 @@ home: true
 title: 主页
 icon: home
 heroText: vuepress-plugin-auto-catalog
-tagline: 为 VuePress2 提供目录页生成与目录组件
+tagline: 生成和展示目录
 actions:
   - text: 快速上手
     icon: lightbulb

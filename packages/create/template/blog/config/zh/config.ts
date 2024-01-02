@@ -10,6 +10,6 @@ export default defineUserConfig({
 
   theme,
 
-  // Enable it with pwa
+  // 和 PWA 一起启用
   // shouldPrefetch: false,
 });

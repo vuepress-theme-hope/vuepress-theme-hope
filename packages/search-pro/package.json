@@ -1,6 +1,6 @@
 {
   "name": "vuepress-plugin-search-pro",
-  "version": "2.0.0-rc.9",
+  "version": "2.0.0-rc.10",
   "description": "A advanced search plugin in client",
   "keywords": [
     "vuepress",
@@ -38,7 +38,7 @@
   "scripts": {
     "build": "rollup -c rollup.config.ts --configPlugin esbuild",
     "clean": "rimraf ./lib ./*.tsbuildinfo",
-    "copy": "cpx \"src/client/**/*.{vue,scss}\" lib/client",
+    "copy": "cpx \"src/client/**/*.scss\" lib/client",
     "dev": "concurrently \"pnpm dev:copy\" \"pnpm dev:ts\"",
     "dev:copy": "pnpm copy -w",
     "dev:ts": "tsc -b tsconfig.build.json --watch"
@@ -57,7 +57,7 @@
     "cheerio": "1.0.0-rc.12",
     "chokidar": "^3.5.3",
     "slimsearch": "^2.0.0",
-    "vue": "^3.4.0",
+    "vue": "^3.4.3",
     "vue-router": "^4.2.5",
     "vuepress-plugin-sass-palette": "workspace:*",
     "vuepress-shared": "workspace:*"

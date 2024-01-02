@@ -28,7 +28,7 @@ tag:
 - VidStack
 - XiGua
 
-为了启用组件，你需要将 `plugin.components.components` 设置为一个组件名的数组。
+为了启用组件，你需要将 `plugins.components.components` 设置为一个组件名的数组。
 
 <!-- more -->
 

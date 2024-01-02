@@ -460,8 +460,6 @@ Stylize inline tokens to create snippet you want.
 - Type: `PlaygroundGlobalOptions`
 
   ```ts
-  import type { CompilerOptions } from "typescript";
-
   interface PlaygroundCodeConfig {
     /**
      * Code block extension
@@ -470,28 +468,22 @@ Stylize inline tokens to create snippet you want.
      */
     ext: string;
 
-    /**
-     * Code block content
-     */
+    /** Code block content */
     content: string;
   }
 
   interface PlaygroundData {
-    /**
-     * Title of Playground
-     */
+    /** Title of Playground */
     title?: string;
 
     /**
      * Import map file name
      *
-     * @default 'import-map.json'
+     * @default "import-map.json"
      */
     importMap?: string;
 
-    /**
-     * Playground files info
-     */
+    /** Playground files info */
     files: Record<
       /** File name */
       string,
@@ -506,22 +498,18 @@ Stylize inline tokens to create snippet you want.
      */
     settings: Record<string, unknown>;
 
-    /**
-     * hash key based on playground content
-     */
+    /** hash key based on playground content */
     key: string;
   }
 
   interface PlaygroundOptions {
-    /**
-     * Playground container name
-     */
+    /** Playground container name */
     name: string;
 
     /**
      * Playground component name
      *
-     * @default 'Playground'
+     * @default "Playground"
      */
     component?: string;
 
@@ -536,17 +524,6 @@ Stylize inline tokens to create snippet you want.
      * external playground service url
      *
      * @default "https://www.typescriptlang.org/play"
-     */
-    service?: string;
-  }
-
-  interface UnoPresetPlaygroundOptions {
-    /**
-     * external playground service url
-     *
-     * 交互演示外部地址
-     *
-     * @default "https://unocss.dev/play"
      */
     service?: string;
   }
@@ -574,13 +551,25 @@ Stylize inline tokens to create snippet you want.
     ssr?: boolean;
   }
 
+  interface UnoPresetPlaygroundOptions {
+    /**
+     * external playground service url
+     *
+     * @default "https://unocss.dev/play"
+     */
+    service?: string;
+  }
+
+  type BuiltInPlaygroundPreset = "ts" | "vue" | "unocss";
+
   interface PlaygroundGlobalOptions {
     /** Playground presets */
-    presets: ("ts" | "vue" | PlaygroundOptions)[];
+    presets: (BuiltInPlaygroundPreset | PlaygroundOptions)[];
     /** Playground config */
     config?: {
       ts?: TSPresetPlaygroundOptions;
       vue?: VuePresetPlaygroundOptions;
+      unocss?: UnoPresetPlaygroundOptions;
     };
   }
   ```

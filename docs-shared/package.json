@@ -25,7 +25,7 @@
     "build": "pnpm build:ts && pnpm copy",
     "build:ts": "tsc --build tsconfig.release.json",
     "clean": "rimraf ./lib ./*.tsbuildinfo",
-    "copy": "cpx \"src/**/*.{vue,scss}\" lib",
+    "copy": "cpx \"src/**/*.scss\" lib",
     "dev": "concurrently \"pnpm dev:copy\" \"pnpm dev:ts\"",
     "dev:copy": "pnpm copy -w",
     "dev:ts": "tsc -b tsconfig.build.json --watch"
@@ -39,7 +39,7 @@
     "@vuepress/shared": "2.0.0-rc.0",
     "@vuepress/utils": "2.0.0-rc.0",
     "three": "0.160.0",
-    "vue": "3.4.0",
+    "vue": "3.4.3",
     "vuepress-plugin-redirect": "workspace:*",
     "vuepress-shared": "workspace:*",
     "vuepress-theme-hope": "workspace:*"

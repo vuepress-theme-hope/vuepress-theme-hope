@@ -1,8 +1,8 @@
-export interface CopyrightDta {
+export interface CopyrightInfoData {
   author?: string;
   license?: string;
 }
 
 export interface CopyrightPluginPageData {
-  copyright: CopyrightDta;
+  copyright?: CopyrightInfoData | string;
 }

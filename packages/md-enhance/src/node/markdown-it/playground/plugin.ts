@@ -283,12 +283,9 @@ export const playground: PluginWithOptions<PlaygroundOptions> = (
           currentKey = info;
         } else if (type === "import_open") {
           playgroundData.importMap = currentKey = info || "import-map.json";
-        }
-
-        if (type === "setting_open") foundSettings = true;
-        if (type === "setting_close") foundSettings = false;
-
-        if (
+        } else if (type === "setting_open") {
+          foundSettings = true;
+        } else if (
           type === "file_close" ||
           type === "import_close" ||
           type === "setting_close" ||
@@ -296,11 +293,13 @@ export const playground: PluginWithOptions<PlaygroundOptions> = (
         ) {
           tokens[i].type = `${name}_empty`;
           tokens[i].hidden = true;
+          if (type === "setting_close") foundSettings = false;
           continue;
         }
 
         // parse settings
         if (foundSettings) {
+          // handle json blocks
           if (type === "fence" && info === "json")
             playgroundData.settings = <Record<string, unknown>>(
               JSON.parse(content.trim())

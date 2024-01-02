@@ -38,7 +38,7 @@ export const getRegistry = async (
     execaCommandSync(
       `${packageManager} config set ${
         isYarnModern ? "npmRegistryServer" : "registry"
-      }} ${NPM_MIRROR_REGISTRY}`,
+      } ${NPM_MIRROR_REGISTRY}`,
     );
   }
 
