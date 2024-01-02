@@ -281,20 +281,14 @@ export const mdEnhancePlugin =
           addViteSsrExternal(bundlerOptions, app, "kotlin-playground");
         }
 
-        if (status.vuePlayground) {
-          addViteOptimizeDepsInclude(bundlerOptions, app, "@vue/repl");
-          addViteSsrExternal(bundlerOptions, app, "@vue/repl");
-
-          // hide webpack warnings
-          chainWebpack(bundlerOptions, app, (config) => {
-            config.module.set("exprContextCritical", false);
-            config.module.set("unknownContextCritical", false);
-          });
-        }
-
         if (status.sandpack) {
           addViteOptimizeDepsInclude(bundlerOptions, app, "sandpack-vue3");
           addViteSsrExternal(bundlerOptions, app, "sandpack-vue3");
+        }
+
+        if (status.vuePlayground) {
+          addViteOptimizeDepsInclude(bundlerOptions, app, "@vue/repl");
+          addViteSsrExternal(bundlerOptions, app, "@vue/repl");
 
           // hide webpack warnings
           chainWebpack(bundlerOptions, app, (config) => {
