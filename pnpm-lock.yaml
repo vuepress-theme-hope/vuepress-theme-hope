@@ -762,6 +762,9 @@ importers:
       reveal.js:
         specifier: 5.0.4
         version: 5.0.4
+      sandpack-vue3:
+        specifier: 3.1.9
+        version: 3.1.9(@lezer/common@1.2.0)(vue@3.4.3)
       sass-loader:
         specifier: 13.3.3
         version: 13.3.3(sass@1.69.6)(webpack@5.89.0)
@@ -816,6 +819,9 @@ importers:
       reveal.js:
         specifier: 5.0.4
         version: 5.0.4
+      sandpack-vue3:
+        specifier: 3.1.9
+        version: 3.1.9(@lezer/common@1.2.0)(vue@3.4.3)
       sass-loader:
         specifier: 13.3.3
         version: 13.3.3(sass@1.69.6)(webpack@5.89.0)
@@ -11130,6 +11136,7 @@ packages:
 
   /js-tokens@4.0.0:
     resolution: {integrity: sha512-RdJUflcE3cUzKiMqQgsCu06FPu9UdIJO0beYbPhHN4k6apgJtifcoCtT9bcxOpYBtpD2kCM6Sbzg4CausW/PKQ==}
+    requiresBuild: true
 
   /js-yaml@3.14.1:
     resolution: {integrity: sha512-okMH7OXXJ7YrN9Ok3/SXrnu4iX9yOk+25nqX4imS2npuvTYDmo/QEZoqwZkYaIDk3jVvBOTOIEgEhaLOynBS9g==}
