@@ -5,6 +5,7 @@ import { computed, defineComponent, h } from "vue";
 
 import {
   usePageAuthor,
+  useThemeData,
   useThemeLocaleData,
 } from "@theme-hope/composables/index";
 
@@ -16,8 +17,9 @@ export default defineComponent({
   name: "PageFooter",
 
   setup() {
-    const frontmatter = usePageFrontmatter<ThemeNormalPageFrontmatter>();
+    const themeData = useThemeData();
     const themeLocale = useThemeLocaleData();
+    const frontmatter = usePageFrontmatter<ThemeNormalPageFrontmatter>();
     const author = usePageAuthor();
 
     const enable = computed(() => {
@@ -50,8 +52,8 @@ export default defineComponent({
 
     const copyright = computed(() => {
       const { copyright, license = "" } = frontmatter.value;
-      const { copyright: globalCopyright, license: globalLicense } =
-        themeLocale.value;
+      const { license: globalLicense } = themeData.value;
+      const { copyright: globalCopyright } = themeLocale.value;
 
       return (
         copyright ??

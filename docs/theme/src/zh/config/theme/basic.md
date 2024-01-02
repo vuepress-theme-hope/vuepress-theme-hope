@@ -59,6 +59,13 @@ tag:
 
 文章显示的默认作者
 
+## license
+
+- 类型: `string`
+- 必填: 否
+
+站点的默认协议
+
 ## favicon
 
 - 类型: `string`

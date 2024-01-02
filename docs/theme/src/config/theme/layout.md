@@ -342,7 +342,7 @@ Docs dir location in repo
 ### footer
 
 - Type: `string`
-- Required: false
+- Required: No
 
 The default content for the footer, can accept HTMLString.
 

@@ -107,6 +107,15 @@ tag:
 
 标签。
 
+## license
+
+- 类型: `string`
+- 默认值: 主题选项中的值
+
+页面的协议信息。设置后协议文字将会展现在页脚。
+
+更多详情请看 [页面 → 页脚支持](../../guide/layout/footer.md)
+
 ## sticky
 
 - 类型: `boolean | number`

@@ -39,7 +39,9 @@ You can configure `footer` and `copyright` options in the frontmatter of the pag
 
 ### copyright
 
-The `copyright` field is used as copyright information of a specific page. It also supports HTMLString (useful when you cite an article and the article uses a specific license).
+The `copyright` field is used as copyright information of a specific page (useful when you cite an article and the article uses a specific license). It also supports HTMLString.
+
+The default copyright text will be generated from author and license in theme options.
 
 When setting `displayFooter: true` in theme options, you can also set `copyright: false` to hide the copyright information in a specific page.
 
@@ -67,7 +69,7 @@ When setting `displayFooter: true` in theme options, you can also set `copyright
   ```md
   ---
   footer: <a href="https://github.com/Mister-Hope"> Mr.Hope </a>
-  copyright: MIT LICENSE
+  copyright: License under CC4.0, author Mr.Hope
   ---
   ```
 
