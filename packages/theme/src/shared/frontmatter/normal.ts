@@ -216,7 +216,7 @@ export interface ThemeNormalPageFrontmatter extends ThemePageFrontmatter {
    *
    * If a number fill in, greater number will appear in front
    *
-   * 是否收藏，如果填入数字，更大值会出现在前面
+   * 是否标为星标，如果填入数字，更大值会出现在前面
    */
   star?: boolean | number;
 
