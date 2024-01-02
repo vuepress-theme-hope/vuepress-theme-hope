@@ -434,7 +434,7 @@ const msg = ref("Hello World!");
 
 - [查看详情](https://theme-hope.vuejs.press/zh/guide/markdown/vue-playground.html)
 
-#### Sandpack 交换演示
+#### Sandpack 交互演示
 
 ::: sandpack#vue Vue 示例
 

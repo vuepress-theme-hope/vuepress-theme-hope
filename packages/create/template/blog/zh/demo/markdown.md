@@ -254,26 +254,9 @@ $$
 
 - [查看详情](https://theme-hope.vuejs.press/zh/guide/markdown/vue-playground.html)
 
-#### Sandpack 交换演示
+#### Sandpack 交互演示
 
-::: sandpack#vue Vue 示例
-
-@file /src/App.vue
-
-```vue
-<script setup>
-import { ref } from "vue";
-
-const msg = ref("Hello Playground!");
-</script>
-
-<template>
-  <h1>{{ msg }}</h1>
-  <input v-model="msg" />
-</template>
-```
-
-:::
+<iframe src="https://plugin-md-enhance-demo.vuejs.press/snippet/sandpack.html" width="100%" height="380"/>
 
 - [查看详情](https://theme-hope.vuejs.press/zh/guide/markdown/sandpack.html)
 
