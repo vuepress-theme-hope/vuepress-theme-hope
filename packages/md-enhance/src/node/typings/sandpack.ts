@@ -9,11 +9,4 @@ export interface SandpackData
    * 交互演示标题
    */
   title?: string;
-
-  /**
-   * hash key based on sandpack content
-   *
-   * 根据交互演示内容生成的 hash key
-   */
-  key: string;
 }

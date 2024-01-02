@@ -1,4 +1,3 @@
-import { hash } from "@vuepress/utils";
 import type { PluginSimple } from "markdown-it";
 import type { RuleBlock } from "markdown-it/lib/parser_block.js";
 import type {
@@ -17,7 +16,6 @@ const AT_MARKER = `@`;
 const VALID_MARKERS = ["file", "options", "setup"] as const;
 
 const propsGetter = (sandpackData: SandpackData): Record<string, string> => ({
-  key: sandpackData.key,
   title: sandpackData.title || "",
   template: sandpackData.template || "",
   files: utoa(encodeFiles(sandpackData.files || {})),
@@ -276,7 +274,6 @@ export const sandpack: PluginSimple = (md) => {
     const attrs = getAttrs(content);
 
     const sandpackData: SandpackData = {
-      key: hash(`sandpack${index}`),
       title: encodeURIComponent(info),
       files: {},
       options: {},
