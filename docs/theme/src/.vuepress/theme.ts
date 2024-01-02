@@ -186,6 +186,7 @@ export default theme(
             "white",
           ],
         },
+        sandpack: true,
         stylize: [
           {
             matcher: "Recommended",

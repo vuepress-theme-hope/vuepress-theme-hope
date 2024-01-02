@@ -3,7 +3,9 @@ title: Sandpack 交互演示
 icon: code
 ---
 
-插件为你带来了 Sandpack 交互演示支持。
+<!-- #region before -->
+
+基于 `sandpack-vue3` 的 Sandpack 交互演示支持。
 
 <!-- more -->
 
@@ -41,6 +43,8 @@ npm i -D sandpack-vue3
 
 之后启用它:
 
+<!-- #endregion before -->
+
 ::: code-tabs#config
 
 @tab TS
@@ -76,6 +80,8 @@ export default {
 ```
 
 :::
+
+<!-- #region after -->
 
 ## 使用
 
@@ -261,3 +267,5 @@ export default function App() {
 :::
 
 ::::
+
+<!-- #endregion after -->

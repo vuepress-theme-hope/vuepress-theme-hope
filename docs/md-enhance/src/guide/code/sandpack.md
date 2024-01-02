@@ -3,7 +3,9 @@ title: Sandpack Playground
 icon: code
 ---
 
-The plugin provides you sandpack playground support with `sandpack-vue3` package.
+<!-- #region before -->
+
+Interactive sandpack playground support with `sandpack-vue3` package.
 
 <!-- more -->
 
@@ -41,6 +43,8 @@ npm i -D sandpack-vue3
 
 Then enabling via:
 
+<!-- #endregion before -->
+
 ::: code-tabs#config
 
 @tab TS
@@ -76,6 +80,8 @@ export default {
 ```
 
 :::
+
+<!-- #region after -->
 
 ## Usage
 
@@ -261,3 +267,5 @@ export default function App() {
 :::
 
 ::::
+
+<!-- #endregion after -->
