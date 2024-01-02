@@ -122,7 +122,7 @@ export default {
 
 ## 高级
 
-你可以在客户端配置文件中导入并使用 `defineMermaidConfig` 来自定义 Mermaid 配置:
+你可以在[客户端配置文件][client-config]中导入并使用 `defineMermaidConfig` 来自定义 Mermaid 配置:
 
 ```ts
 // .vuepress/client.ts
@@ -584,5 +584,7 @@ graph TB
 ```
 
 :::
+
+[client-config]: https://vuejs.press/zh/guide/configuration.html#%E5%AE%A2%E6%88%B7%E7%AB%AF%E9%85%8D%E7%BD%AE%E6%96%87%E4%BB%B6
 
 <!-- #endregion after -->

@@ -83,6 +83,8 @@ export default {
 
 ::: tip
 
-If you are using this plugin, we recommend you to set `shouldPrefetch: false` in your VuePress config file.
+If you are using this plugin, we recommend you to set `shouldPrefetch: false` in your [VuePress config file][config].
 
 :::
+
+[config]: https://vuejs.press/guide/configuration.html#config-file

@@ -128,7 +128,7 @@ In it, you can use 2 directives:
 
   You can see the below demos to see more details.
 
-You can import and call `defineKotlinPlaygroundConfig` in client config file to customize `kotlin-playground`:
+You can import and call `defineKotlinPlaygroundConfig` in [client config file][client-config] to customize `kotlin-playground`:
 
 ```ts
 // .vuepress/client.ts
@@ -304,5 +304,7 @@ class Cat(val name: String)
 :::
 
 ::::
+
+[client-config]: https://vuejs.press/guide/configuration.html#client-config-file
 
 <!-- #endregion after -->

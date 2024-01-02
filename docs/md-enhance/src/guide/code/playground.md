@@ -155,8 +155,9 @@ UnoCSS preset is using [official playground](https://unocss.dev/play) by default
 - `@file config.js` match `Config` content. If no config file, The official default value will be used.
 - `@file style.css` match `Custom CSS` content.
 
-❗Every file type (html/js/css) only support one file.  
-If you need, you can set your own service url through `playground.config.unocss.service` in config file.
+❗Every file type (html/js/css) only support one file.
+
+You can set your own service url through `playground.config.unocss.service` in plugin options.
 
 :::
 

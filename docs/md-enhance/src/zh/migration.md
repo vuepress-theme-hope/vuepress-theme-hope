@@ -233,7 +233,7 @@ icon: code-compare
 
 - `presentation` 被重构为 `reveal.js`
 
-  支持主题的 Tree-shaking，并通过客户端配置文件自定义 Reveal.js
+  支持主题的 Tree-shaking，并通过[客户端配置文件][client-config]自定义 Reveal.js
 
 ## 移除的选项
 
@@ -272,4 +272,5 @@ icon: code-compare
 - `card` 由 `components` 替代
 
 - `mermaid` `revealJs` `vuePlayground` 等选项不再接受相关库的配置
--
+
+[client-config]: https://vuejs.press/zh/guide/configuration.html#%E5%AE%A2%E6%88%B7%E7%AB%AF%E9%85%8D%E7%BD%AE%E6%96%87%E4%BB%B6

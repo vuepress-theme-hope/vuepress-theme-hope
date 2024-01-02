@@ -233,7 +233,7 @@ You can pass the second argument `true` to enable legacy mode when calling `mdEn
 
 - `presentation` is rebuilt to `reveal.js`
 
-  Support theme tree-shaking, and you can customize Reveal.js via client config file
+  Support theme tree-shaking, and you can customize Reveal.js via [client config file][client-config].
 
 ## Removed Options
 
@@ -272,4 +272,5 @@ You can pass the second argument `true` to enable legacy mode when calling `mdEn
 - `card` is replaced by `components`
 
 - `mermaid` `revealJs` `vuePlayground` no longer accept lib options
--
+
+[client-config]: https://vuejs.press/guide/configuration.html#client-config-file

@@ -21,7 +21,7 @@ icon: lightbulb
 
 ## 自定义 LightGallery 选项
 
-你可以通过在客户端配置文件中导入和调用 `defineLightGalleryConfig` 来将选项传递给 [`lightgallery`](https://www.lightgalleryjs.com/)：
+你可以通过在[客户端配置文件][client-config]中导入和调用 `defineLightGalleryConfig` 来将选项传递给 [`lightgallery`](https://www.lightgalleryjs.com/)：
 
 ```ts
 // .vuepress/client.ts
@@ -80,3 +80,5 @@ export default defineClientConfig({
 </style>
 
 <!-- markdownlint-restore -->
+
+[client-config]: https://vuejs.press/zh/guide/configuration.html#%E5%AE%A2%E6%88%B7%E7%AB%AF%E9%85%8D%E7%BD%AE%E6%96%87%E4%BB%B6

@@ -92,4 +92,4 @@ description: the description of the page
 ...
 ```
 
-You may noticed that fields in demo Frontmatter are very similar to VuePress config files. You can override the `lang`, `title`, `description` and other properties of the current page through Frontmatter. Therefore, you can think of Frontmatter as a page-level scope config, which usually has the highest priority, and the config only takes effect on the current page.
+You may noticed that fields in demo Frontmatter are very similar to [VuePress config file](../cookbook/vuepress/config.md#config-file). You can override the `lang`, `title`, `description` and other properties of the current page through Frontmatter. Therefore, you can think of Frontmatter as a page-level scope config, which usually has the highest priority, and the config only takes effect on the current page.

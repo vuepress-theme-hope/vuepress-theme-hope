@@ -16,8 +16,6 @@ This tutorial guides you on how to configure a VuePress project.
 
 ## Configure VuePress
 
-Without config files, a VuePress project can only achieve limited functionality by default, so to better customize your website, VuePress provides config files.
-
 VuePress uses `.vuepress` folder inside the docs folder to store configuration, and all VuePress related files will be placed here.
 
 For a VuePress site, `.vuepress/config.ts` (or `.vuepress/config.js`) is the necessary config file.

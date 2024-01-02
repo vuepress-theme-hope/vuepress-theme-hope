@@ -122,7 +122,7 @@ Please see [mermaid](https://mermaid.js.org/).
 
 ## Advanced
 
-You can import and call `defineMermaidConfig` in client config file to customize mermaid:
+You can import and call `defineMermaidConfig` in [client config file][client-config] to customize mermaid:
 
 ```ts
 // .vuepress/client.ts
@@ -584,5 +584,7 @@ graph TB
 ```
 
 :::
+
+[client-config]: https://vuejs.press/guide/configuration.html#client-config-file
 
 <!-- #endregion after -->

@@ -6,6 +6,48 @@ category:
   - FAQ
 ---
 
+## Adding Markdown Extensions
+
+## 添加 Markdown 扩展
+
+你可以在 [配置文件](../cookbook/vuepress/config.md#config-file) 中使用 `extendsMarkdown` 钩子来添加 Markdown 扩展:
+
+::: code-tabs#language
+
+@tab TS
+
+```ts
+// .vuepress/config.ts
+import { defineUserConfig } from "vuepress";
+
+export default defineUserConfig({
+  // 站点配置
+  // ...
+
+  extendsMarkdown: (md) => {
+    md.use(yourExtension, options);
+  },
+});
+```
+
+@tab JS
+
+```js
+// .vuepress/config.js
+import { defineUserConfig } from "vuepress";
+
+export default defineUserConfig({
+  // 站点配置
+  // ...
+
+  extendsMarkdown: (md) => {
+    md.use(yourExtension, options);
+  },
+});
+```
+
+:::
+
 ## 如何让侧边栏可折叠 / 如何在移动端显示 TOC / 如何在 PC 上将侧边栏置于左侧
 
 为了更好的适应不同尺寸的设备，主题使用 [响应式布局](../guide/interface/responsive.md) 通过屏幕宽度来调整布局。

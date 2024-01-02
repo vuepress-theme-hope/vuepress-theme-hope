@@ -121,7 +121,7 @@ You can use top-level await and `fetch` to get data from network requests.
 
 ## Advanced
 
-You can import and call `defineEchartsConfig` in client config file to customize echarts.
+You can import and call `defineEchartsConfig` in [client config file][client-config] to customize echarts.
 
 ```ts
 // .vuepress/client.ts
@@ -214,5 +214,7 @@ For details, please see [ECharts Docs](https://echarts.apache.org/handbook/en/ge
 <!-- @include: @echarts/wordcloud.snippet.md -->
 
 ::::
+
+[client-config]: https://vuejs.press/guide/configuration.html#client-config-file
 
 <!-- #endregion after -->

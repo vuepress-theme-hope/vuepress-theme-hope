@@ -174,7 +174,7 @@ export default defineClientConfig({
 
 ## 样式相关
 
-你可以创建客户端配置文件 `.vuepress/client.{ts,js}`，并通过 `import` 语句导入下方文件。
+你可以创建 [客户端配置文件](../../cookbook/vuepress/config.md#客户端配置文件) `.vuepress/client.{ts,js}`，并通过 `import` 语句导入下方文件。
 
 ### 文档
 

@@ -19,7 +19,7 @@ tag:
 
 ## 响应式断点
 
-主题在不同屏幕宽度下会自动响应式应用不同布局，如果你需要修改这些断点，可以在 配置文件中修改，
+主题在不同屏幕宽度下会自动响应式应用不同布局，如果你需要修改这些断点，可以在 [样式配置文件](../../config/style.md#configscss)中修改，
 
 ```scss
 // .vuepress/styles/config.scss
@@ -28,11 +28,11 @@ tag:
 $pc = 1280px;
 ```
 
-配置文件 `.vuepress/styles/config.scss` 以及断点变量 `$pc`、`$laptop`、`$pad`、`$tablet`、`$mobile` 的具体介绍详见 [主题配置 → 样式](../../config/style.md#configscss)。
+断点变量 `$pc`、`$laptop`、`$pad`、`$tablet`、`$mobile` 的具体介绍详见 [主题配置 → 样式](../../config/style.md#configscss)。
 
 ## 布局尺寸
 
-主题在调色板文件中提供了常见尺寸的变量，你可以在调色版文件中修改这些变量，以达到修改布局尺寸的目的。
+主题在调色板文件中提供了常见尺寸的变量，你可以在 [调色版文件](../../config/style.md#palettescss) 中修改这些变量，以达到修改布局尺寸的目的。
 
 ```scss
 // .vuepress/styles/palette.scss
@@ -41,9 +41,11 @@ $pc = 1280px;
 $navbar-height = 80px;
 ```
 
-调色板文件 `.vuepress/styles/palette.scss` 以及布局变量的介绍详见 [主题配置 → 样式](../../config/style.md#palettescss)。
+布局变量的介绍详见 [主题配置 → 样式](../../config/style.md#palettescss)。
 
 ## 通过样式文件
+
+[样式文件](../../config/style.md#indexscss) 为项目目录下的 `.vuepress/styles/index.scss`，你可以通过它自行添加样式。
 
 - 如果你对主题的样式不满意，你可以通过样式文件对主题组件的样式进行调节。
 
@@ -55,15 +57,9 @@ $navbar-height = 80px;
 
 - 如果你希望去掉一些功能，你可以在样式文件中通过 `display: none` 隐藏相关元素。
 
-::: note
-
-样式文件为项目目录下的 `.vuepress/styles/index.scss`，详见 [主题配置 → 样式](../../config/style.md#indexscss)
-
-:::
-
 ### 通过添加/覆盖布局
 
-您可以通过客户端配置文件中的“layouts”选项添加新布局或覆盖现有布局。
+您可以通过 [客户端配置文件](../../cookbook/vuepress/config.md#客户端配置文件) 中的“layouts”选项添加新布局或覆盖现有布局。
 
 <!-- #region layout -->
 

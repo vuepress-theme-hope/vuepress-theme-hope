@@ -21,7 +21,7 @@ icon: code-compare
 
 - `hintComponent`: 检测到新内容的提示组件
 
-- shouldPrefetch 提示: 现在插件将检查配置文件中的 `shouldPrefetch` 选项并警告你禁用它。
+- shouldPrefetch 提示: 现在插件将检查[配置文件][config]中的 `shouldPrefetch` 选项并警告你禁用它。
 
 ## 选项变更
 
@@ -38,3 +38,5 @@ icon: code-compare
 ## 破坏性变更
 
 - `showInstall` 被移除
+
+[config]: https://vuejs.press/zh/guide/configuration.html#%E9%85%8D%E7%BD%AE%E6%96%87%E4%BB%B6

@@ -47,8 +47,6 @@ For other configuration items, see [Artalk Configuration](https://artalk.js.org/
 
 The plugin retains the `el` option and inserts Artalk itself on the page. At the same time, the plugin will automatically set the `pageTitle`, `pageKey` and `site` options for you according to the VuePress information.
 
-Before VuePress2 provides client configuration, the two function options `imgUploader` and `avatarURLBuilder` are not supported.
-
 :::
 
 ## Darkmode

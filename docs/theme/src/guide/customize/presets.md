@@ -175,7 +175,7 @@ export default defineClientConfig({
 
 ## Style Related
 
-You can create a client config file `.vuepress/client.{ts,js}` and import the following files through the `import` statement.
+You can create a [client config file](../../cookbook/vuepress/config.md#client-config-file) and import the following files through the `import` statement.
 
 ### Docs
 

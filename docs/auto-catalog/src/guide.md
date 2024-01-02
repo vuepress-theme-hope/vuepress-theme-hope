@@ -51,7 +51,7 @@ export default {
 
 :::
 
-You can then import `defineAutoCatalogGetter` from `vuepress-plugin-auto-catalog/client` and use it in client config file to extract catalog info from meta.
+You can then import `defineAutoCatalogGetter` from `vuepress-plugin-auto-catalog/client` and use it in [client config file][client-config] to extract catalog info from meta.
 
 ::: code-tabs#language
 
@@ -226,3 +226,5 @@ By default, `<AutoCatalog />` generates catalog for current folder. If you want 
 You can use `<AutoCatalog />` in your theme layout, or in your markdown files directly.
 
 If you do not like the built-in component and want to use your own, you can register your component globally and set `component` option with your component name. Auto catalog page will use your component.
+
+[client-config]: https://vuejs.press/guide/configuration.html#client-config-file
