@@ -107,6 +107,15 @@ Set the category of the current page.
 
 Set the label of the current page.
 
+## license
+
+- Type: `string`
+- Default value: value in theme options
+
+The license information. A license text will be displayed on footer with the license when it's set.
+
+For more details, please see [Page → Footer Support](../../guide/layout/footer.md).
+
 ## sticky
 
 - Type: `boolean | number`

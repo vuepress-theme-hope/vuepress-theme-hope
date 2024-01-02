@@ -61,6 +61,13 @@ It should contain full protocol (e.g. `https://example.com`).
 
 Global default author.
 
+## license
+
+- Type: `string`
+- Required: No
+
+The default license of site.
+
 ## favicon
 
 - Type: `string`

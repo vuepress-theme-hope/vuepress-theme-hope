@@ -207,7 +207,7 @@ tag:
 
 - 类型: `boolean | string | HTMLString`
 
-设置页脚内容。
+页脚内容。
 
 - 设置为 `false` 以禁用页脚
 - 设置为 `""` 以移除默认的页脚内容，
@@ -220,21 +220,23 @@ tag:
 - 类型: `string | false`
 - 默认值: 主题选项中的值
 
-设置版权信息，更多详情请看 [页面 → 页脚支持](../../guide/layout/footer.md)
+版权信息。
+
+更多详情请看 [页面 → 页脚支持](../../guide/layout/footer.md)
 
 ## backToTop
 
 - 类型: `boolean`
 - 默认值: `true`
 
-设置是否显示返回顶部按钮
+是否显示返回顶部按钮
 
 ## toc {#toc-heading}
 
 - 类型: `boolean`
 - 默认值: 主题选项中的值
 
-设置在桌面模式下是否在右侧显示标题列表。
+在桌面模式下是否在右侧显示标题列表。
 
 ## containerClass
 

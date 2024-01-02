@@ -18,7 +18,7 @@ background: var(--bg-10)
 color: var(--banner-text)
 actions:
   - text: Guide
-    link: ../guide/get-started/intro.html
+    link: ../guide/intro/intro.html
 ```
 
 ## Tutorial Chapters

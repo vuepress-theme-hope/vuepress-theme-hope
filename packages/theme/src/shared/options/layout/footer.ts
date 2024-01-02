@@ -12,13 +12,6 @@ export interface FooterLocaleOptions {
   footer?: string;
 
   /**
-   * License text
-   *
-   * 协议文字
-   */
-  license?: string;
-
-  /**
    * The default copyright info, set it to `false` to disable it by default.
    *
    * 默认的版权信息，设置为 `false` 来默认禁用它

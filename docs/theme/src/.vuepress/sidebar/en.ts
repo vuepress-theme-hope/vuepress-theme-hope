@@ -10,7 +10,7 @@ export const enSidebarConfig = sidebar({
       icon: "lightbulb",
       prefix: "guide/",
       children: [
-        "get-started/",
+        "intro/",
         "interface/",
         "layout/",
         "markdown/",

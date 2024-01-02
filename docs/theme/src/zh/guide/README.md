@@ -23,7 +23,7 @@ VuePress Theme Hope 是一个包含大量功能的 VuePress 主题。
 
 - 如果您对 VuePress、Markdown 或其他东西完全陌生，请从我们的 [快速上手](../get-started/README.md) 开始。
 
-- 如果您熟悉上述内容，请[从这里开始](./get-started/intro.md)。
+- 如果您熟悉上述内容，请[从这里开始](./intro/intro.md)。
 
 :::
 

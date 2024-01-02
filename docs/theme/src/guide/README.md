@@ -23,7 +23,7 @@ To begin with, you should already have a basic understanding of:
 
 - If you are completely new to VuePress, Markdown and other things, please get started with our [Step by Step Tutorial for newcomers](../get-started/README.md).
 
-- If you are familiar with things above, [get Started here](./get-started/intro.md).
+- If you are familiar with things above, [get Started here](./intro/intro.md).
 
 :::
 
