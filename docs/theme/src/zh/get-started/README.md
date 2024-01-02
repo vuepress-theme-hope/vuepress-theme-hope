@@ -13,12 +13,12 @@ category:
 
 ```component VPBanner
 title: 逐步教程
-content: 本教程针对那些不熟悉前端、Vue 或 VuePress 的小白，如果你已经有相关的经验，请从指南开始。
+content: 本教程针对那些不熟悉前端、Vue 或 VuePress 的小白，如果你已经有相关的经验，请从介绍开始。
 background: var(--bg-10)
 color: var(--banner-text)
 actions:
   - text: 指南
-    link: ../guide/get-started/intro.html
+    link: ../guide/intro/intro.html
 ```
 
 ## 教程章节
