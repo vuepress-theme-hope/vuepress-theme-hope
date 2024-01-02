@@ -14,7 +14,7 @@ import type { ReadingTime } from "../shared/index.js";
 
 /** Reading time plugin */
 export const readingTimePlugin =
-  (options: ReadingTimeOptions, legacy = true): PluginFunction =>
+  (options: ReadingTimeOptions = {}, legacy = true): PluginFunction =>
   (app) => {
     if (legacy) convertOptions(options as Record<string, unknown>);
     checkVersion(app, PLUGIN_NAME, "2.0.0-rc.0");

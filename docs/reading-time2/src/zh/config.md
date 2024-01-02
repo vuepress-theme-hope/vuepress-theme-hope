@@ -1,16 +1,18 @@
 ---
-title: 插件选项
+title: 配置
 icon: gears
 ---
 
-## wordPerMinute
+## 插件选项
+
+### wordPerMinute
 
 - 类型: `number`
 - 默认值: `300`
 
 每分钟阅读字数
 
-## locales
+### locales
 
 - 类型: `ReadingTimeLocaleConfig`
 
@@ -64,3 +66,39 @@ icon: gears
 - **荷兰语** (nl-NL)
 
 :::
+
+## 客户端 API
+
+你可以从 `vuepress-plugin-reading-time2/client` 导入并使用这些 api :
+
+::: note 即使插件被禁用，这些 api 也不会抛出错误。
+
+:::
+
+### useReadingTimeData
+
+```ts
+interface ReadingTime {
+  /** 分钟为单位的预计阅读时长 */
+  minutes: number;
+  /** 内容的字数 */
+  words: number;
+}
+
+const useReadingTimeData: () => ComputedRef<ReadingTime | null>;
+```
+
+当插件被禁用时会返回 `null`。
+
+### useReadingTimeLocale
+
+```ts
+interface ReadingTimeLocale {
+  /** 当前语言的预计阅读时间 */
+  time: string;
+  /** 当前语言的字数文字 */
+  words: string;
+}
+
+const useReadingTimeLocale: () => ComputedRef<ReadingTimeLocale>;
+```
