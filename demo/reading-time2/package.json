@@ -1,0 +1,26 @@
+{
+  "name": "reading-time2-demo",
+  "private": true,
+  "description": "Demo for vuepress-plugin-reading-time2",
+  "license": "MIT",
+  "author": "Mr.Hope",
+  "scripts": {
+    "demo:serve": "http-server -a localhost src/.vuepress/dist -o",
+    "demo:vite-build": "vuepress-vite build src",
+    "demo:vite-clean-dev": "vuepress-vite dev src --clean-cache",
+    "demo:vite-dev": "vuepress-vite dev src",
+    "demo:webpack-build": "vuepress-webpack build src",
+    "demo:webpack-clean-dev": "vuepress-webpack dev src --clean-cache",
+    "demo:webpack-dev": "vuepress-webpack dev src"
+  },
+  "devDependencies": {
+    "@vuepress/cli": "2.0.0-rc.0",
+    "@vuepress/client": "2.0.0-rc.0",
+    "@vuepress/theme-default": "2.0.0-rc.0",
+    "sass-loader": "13.3.3",
+    "vue": "3.4.3",
+    "vuepress-plugin-reading-time2": "workspace:*",
+    "vuepress-vite": "2.0.0-rc.0",
+    "vuepress-webpack": "2.0.0-rc.0"
+  }
+}

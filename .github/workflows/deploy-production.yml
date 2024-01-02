@@ -386,6 +386,7 @@ jobs:
           - md-enhance
           - photo-swipe
           - pwa2
+          - reading-time2
           - redirect
           - sass-palette
           - search-pro

@@ -15,6 +15,7 @@ export default theme("reading-time2", {
         "/",
         "/guide",
         "/config",
+        "/demo",
         {
           text: version,
           icon: "bookmark",
@@ -34,6 +35,7 @@ export default theme("reading-time2", {
         "/zh/",
         "/zh/guide",
         "/zh/config",
+        "/zh/demo",
         {
           text: version,
           icon: "bookmark",

@@ -8,7 +8,7 @@ import { readingTimePlugin } from "./plugin.js";
  */
 export const useReadingTimePlugin = (
   app: App,
-  options: ReadingTimeOptions,
+  options: ReadingTimeOptions = {},
   legacy = true,
 ): void => {
   const { plugins } = app.pluginApi;

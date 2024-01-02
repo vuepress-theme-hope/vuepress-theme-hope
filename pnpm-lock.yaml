@@ -556,6 +556,33 @@ importers:
         specifier: 2.0.0-rc.0
         version: 2.0.0-rc.0(esbuild@0.19.11)(sass@1.69.6)(typescript@5.3.3)(vue@3.4.3)(webpack@5.89.0)
 
+  demo/reading-time2:
+    devDependencies:
+      '@vuepress/cli':
+        specifier: 2.0.0-rc.0
+        version: 2.0.0-rc.0(typescript@5.3.3)
+      '@vuepress/client':
+        specifier: 2.0.0-rc.0
+        version: 2.0.0-rc.0(typescript@5.3.3)
+      '@vuepress/theme-default':
+        specifier: 2.0.0-rc.0
+        version: 2.0.0-rc.0(sass-loader@13.3.3)(typescript@5.3.3)
+      sass-loader:
+        specifier: 13.3.3
+        version: 13.3.3(sass@1.69.6)(webpack@5.89.0)
+      vue:
+        specifier: 3.4.3
+        version: 3.4.3(typescript@5.3.3)
+      vuepress-plugin-reading-time2:
+        specifier: workspace:*
+        version: link:../../packages/reading-time2
+      vuepress-vite:
+        specifier: 2.0.0-rc.0
+        version: 2.0.0-rc.0(@types/node@20.10.6)(@vuepress/client@2.0.0-rc.0)(sass-loader@13.3.3)(typescript@5.3.3)(vue@3.4.3)
+      vuepress-webpack:
+        specifier: 2.0.0-rc.0
+        version: 2.0.0-rc.0(esbuild@0.19.11)(sass@1.69.6)(typescript@5.3.3)(vue@3.4.3)(webpack@5.89.0)
+
   demo/redirect:
     devDependencies:
       '@vuepress/cli':
