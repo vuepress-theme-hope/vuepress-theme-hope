@@ -130,7 +130,7 @@ export default {
 
 ## 自定义类别和类型
 
-基本上，你的博客中需要两种类型的收藏:
+基本上，你的博客中需要两种“类型”:
 
 - 类别:
 
@@ -194,7 +194,7 @@ export default {
           filter: ({ frontmatter }) => frontmatter.star,
           path: "/star/",
           layout: "StarList",
-          frontmatter: () => ({ title: "收藏页" }),
+          frontmatter: () => ({ title: "星标文章" }),
         },
       ],
     }),
