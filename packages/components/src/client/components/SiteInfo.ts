@@ -118,7 +118,7 @@ export default defineComponent({
             ? h("img", {
                 class: "vp-site-info-logo",
                 src: props.logo,
-                alt: props.name,
+                alt: "",
                 loading: "lazy",
                 "no-view": "",
               })
