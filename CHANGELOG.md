@@ -4,6 +4,29 @@ All notable changes to this project will be documented in this file. See [Conven
 
 <!-- #region recent-change -->
 
+## [2.0.0-rc.11](https://github.com/vuepress-theme-hope/vuepress-theme-hope/compare/v2.0.0-rc.10...v2.0.0-rc.11) (2024-01-06)
+
+### Features
+
+- **copyright2:** improve options ([fe5c4de](https://github.com/vuepress-theme-hope/vuepress-theme-hope/commit/fe5c4dedaa61e9e0dbdfa0c31c36bb1fc3dcf283))
+- **create:** update comment in zh ([ca96d04](https://github.com/vuepress-theme-hope/vuepress-theme-hope/commit/ca96d04b864eb1aaa5acd2f847ab462d7019ecc3))
+- **md-enhance:** add sandpack ([#3587](https://github.com/vuepress-theme-hope/vuepress-theme-hope/issues/3587)) ([95198e1](https://github.com/vuepress-theme-hope/vuepress-theme-hope/commit/95198e1a20d76a4560a2aaebb5567c311c1890ab))
+- **theme:** bundle copyright2 as it as 0 deps comparing with theme ([71c4e9e](https://github.com/vuepress-theme-hope/vuepress-theme-hope/commit/71c4e9e0d6d2d6b1a47c91d33928e5261606f23a))
+- **theme:** support redirect plugin ([497db41](https://github.com/vuepress-theme-hope/vuepress-theme-hope/commit/497db4146c51de6895be79f68113bd2bf38eb6eb))
+- **theme:** update locale, close [#3804](https://github.com/vuepress-theme-hope/vuepress-theme-hope/issues/3804) ([abe1e16](https://github.com/vuepress-theme-hope/vuepress-theme-hope/commit/abe1e165f58266c4b62db1830901a602492d4133))
+
+### Bug Fixes
+
+- **create:** fix logo ([715afff](https://github.com/vuepress-theme-hope/vuepress-theme-hope/commit/715afffd227ba0e4c669a6c7560dc57d4f6fcb91))
+- **create:** fix registry command ([9dd6ff1](https://github.com/vuepress-theme-hope/vuepress-theme-hope/commit/9dd6ff168d3cce6b722f47c3305368cf00987de3))
+- **create:** fix template ([894f73a](https://github.com/vuepress-theme-hope/vuepress-theme-hope/commit/894f73a037709f339440f67eff68b84301d18ff0))
+- **theme:** fix brand logo seo ([4800091](https://github.com/vuepress-theme-hope/vuepress-theme-hope/commit/480009179da201fca7c6d0b27b5e76d817f6f85a))
+- **theme:** fix page cover ([47dcc5c](https://github.com/vuepress-theme-hope/vuepress-theme-hope/commit/47dcc5c58fdae62999d84161ea4eebec426f3912))
+
+### Performance Improvements
+
+- **copyright2:** improve client data size ([84b4cc5](https://github.com/vuepress-theme-hope/vuepress-theme-hope/commit/84b4cc51d55cfc0fab7be7e30afc042287a876ba))
+
 ## [2.0.0-rc.10](https://github.com/vuepress-theme-hope/vuepress-theme-hope/compare/v2.0.0-rc.9...v2.0.0-rc.10) (2023-12-30)
 
 ### Highlights
