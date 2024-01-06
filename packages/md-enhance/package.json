@@ -106,7 +106,7 @@
     "@vueuse/core": "^10.7.1",
     "balloon-css": "^1.2.0",
     "js-yaml": "^4.1.0",
-    "vue": "^3.4.3",
+    "vue": "^3.4.5",
     "vue-router": "^4.2.5",
     "vuepress-plugin-sass-palette": "workspace:*",
     "vuepress-shared": "workspace:*"

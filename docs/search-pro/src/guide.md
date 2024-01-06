@@ -258,7 +258,7 @@ export default defineUserConfig({
 
 ### Customize Search Options
 
-You can customize search options by importing and calling `defineSearchConfig` in client config file:
+You can customize search options by importing and calling `defineSearchConfig` in [client config file][client-config]:
 
 ```ts
 // .vuepress/client.ts
@@ -323,3 +323,5 @@ Client-side search has advantages, like no backend services and easy to add, but
 In most cases, if you are building a large site, you should choose a service provider to provide search services for your site if possible, such as [Algolia](https://www.algolia.com/), or choose an open source search crawler tool and host it on your own server to provide a search service and regularly craw your site. This is necessary for large sites because users send search terms to the search API via network requests and get search results directly.
 
 In particular, [DocSearch](https://docsearch.algolia.com/) is a free search service provided by Algolia for open source projects. If you are creating open source project documentation or an open source technical blog, you can [apply for it](https://docsearch.algolia.com/apply/), and use [`@vuepress/plugin-docsearch`](https://vuejs.press/reference/plugin/docsearch.html) plugin to provide search features.
+
+[client-config]: https://vuejs.press/guide/configuration.html#client-config-file

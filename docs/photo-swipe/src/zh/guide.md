@@ -38,7 +38,7 @@ icon: lightbulb
 
 ## 自定义 PhotoSwipe 选项
 
-你可以通过在客户端配置文件中导入和调用 `definePhotoSwipeConfig` 来将选项传递给 [`photo-swipe`](http://photoswipe.com/)：
+你可以通过在[客户端配置文件][client-config]中导入和调用 `definePhotoSwipeConfig` 来将选项传递给 [`photo-swipe`](http://photoswipe.com/)：
 
 ```ts
 // .vuepress/client.ts
@@ -96,3 +96,5 @@ export default defineUserConfig({
 ```
 
 对于具体的选项，详见 [配置 → 多语言设置](./config.md#locales).
+
+[client-config]: https://vuejs.press/zh/guide/configuration.html#%E5%AE%A2%E6%88%B7%E7%AB%AF%E9%85%8D%E7%BD%AE%E6%96%87%E4%BB%B6

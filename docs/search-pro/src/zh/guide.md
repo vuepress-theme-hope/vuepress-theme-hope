@@ -268,7 +268,7 @@ export default defineUserConfig({
 
 ### 自定义搜索选项
 
-你可以通过在客户端配置文件中导入和调用 `defineSearchConfig` 来自定义搜索选项：
+你可以在[客户端配置文件][client-config] 中导入和调用 `defineSearchConfig` 来自定义搜索选项：
 
 ```ts
 // .vuepress/client.ts
@@ -332,3 +332,5 @@ terminate();
 在大多数情况，如果你在构建一个大型站点，你应该选择服务提供商为你的站点提供搜索服务，例如 [Algolia](https://www.algolia.com/)，或者选择开源工具在自己的服务器上加载搜索服务并定期为自己的网站生成索引。对于大型站点这很必要因为用户通过网络请求向搜索 API 发送搜索字词，并直接得到搜索结果。
 
 特别提示，[DocSearch](https://docsearch.algolia.com/) 是 Algolia 为开源项目提供的免费搜索服务。如果你在创建开源项目文档或开源技术博客，你可 [申请它](https://docsearch.algolia.com/apply/)，并使用 [`@vuepress/plugin-docsearch`](https://vuejs.press/zh/reference/plugin/docsearch.html) 插件提供搜索。
+
+[client-config]: https://vuejs.press/zh/guide/configuration.html#%E5%AE%A2%E6%88%B7%E7%AB%AF%E9%85%8D%E7%BD%AE%E6%96%87%E4%BB%B6

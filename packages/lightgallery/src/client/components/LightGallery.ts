@@ -26,10 +26,10 @@ const getImages = (images: HTMLImageElement[]): GalleryItem[] =>
   images.map(
     ({ alt, srcset, src }) =>
       <GalleryItem>{
-        alt: alt,
-        src: src,
-        thumb: src || srcset,
+        src,
         srcset: srcset,
+        thumb: src || srcset,
+        alt,
         subHtml: alt,
       },
   );

@@ -13,25 +13,21 @@
 }
 
 .page-cover {
-  object-fit: cover;
-  width: calc(100% + 2rem);
-  max-height: 25vh;
-  margin-inline-start: -2rem;
+  width: var(--content-width);
+  margin-inline: auto;
 
   @media (max-width: hope-config.$tablet) {
     width: 100%;
-    margin: 0;
-    border-radius: 0;
   }
 
-  @media (min-width: hope-config.$pc) {
-    width: calc(100% - 2rem);
-    margin: 0 1rem;
-    border-radius: 0.5rem;
-  }
-
-  .sidebar-collapsed {
+  img {
+    object-fit: cover;
     width: 100%;
-    margin-inline-start: 0;
+    max-height: 25vh;
+    border-radius: 0.5rem;
+
+    @media (max-width: hope-config.$tablet) {
+      border-radius: 0;
+    }
   }
 }

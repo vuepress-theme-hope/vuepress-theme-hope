@@ -13,7 +13,7 @@ The theme provides progressive web app support [^pwa-intro] via <ProjectLink nam
 
 ::: info
 
-If you are using this plugin, we recommend you to set `shouldPrefetch: false` in your VuePress config file.
+If you are using this plugin, we recommend you to set `shouldPrefetch: false` in your [VuePress config file](../../cookbook/vuepress/config.md#config-file).
 
 `vuepress-theme-hope` provides `plugins.pwa` in theme options to `vuepress-plugin-pwa2`.
 Every options mentioned below is under `plugins.pwa`.

@@ -6,6 +6,46 @@ category:
   - FAQ
 ---
 
+## Adding Markdown Extensions
+
+You can use `extendsMarkdown` hook in [config file](../cookbook/vuepress/config.md#config-file) to add Markdown extensions:
+
+::: code-tabs#language
+
+@tab TS
+
+```ts
+// .vuepress/config.ts
+import { defineUserConfig } from "vuepress";
+
+export default defineUserConfig({
+  // site config
+  // ...
+
+  extendsMarkdown: (md) => {
+    md.use(yourExtension, options);
+  },
+});
+```
+
+@tab JS
+
+```js
+// .vuepress/config.js
+import { defineUserConfig } from "vuepress";
+
+export default defineUserConfig({
+  // site config
+  // ...
+
+  extendsMarkdown: (md) => {
+    md.use(yourExtension, options);
+  },
+});
+```
+
+:::
+
 ## Foldable Sidebar / TOC on Mobile / Left Sidebar on PC
 
 To better adapt to different sizes of devices, the theme uses [responsive layout](../guide/interface/responsive.md) to adjust the layout according to the screen width.

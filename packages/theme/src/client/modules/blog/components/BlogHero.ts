@@ -65,7 +65,7 @@ export default defineComponent({
         image: heroImage ? withBase(heroImage) : null,
         imageDark: heroImageDark ? withBase(heroImageDark) : null,
         heroStyle: heroImageStyle,
-        alt: heroAlt || heroText || "hero image",
+        alt: heroAlt || heroText || "",
         tagline: tagline ?? "",
         isFullScreen: isFullScreen.value,
       };

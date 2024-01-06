@@ -19,7 +19,7 @@ icon: code-compare
 
 - `hintComponent`: Hint component for detecting new content
 
-- shouldPrefetch hint: Now the plugin will check `shouldPrefetch` option in config file and warn you to disable it.
+- shouldPrefetch hint: Now the plugin will check `shouldPrefetch` option in [config file][config] and warn you to disable it.
 
 ## Changed Options
 
@@ -36,3 +36,5 @@ icon: code-compare
 ## Breaking Changes
 
 - `showInstall` is removed
+
+[config]: https://vuejs.press/guide/configuration.html#config-file

@@ -22,7 +22,7 @@
     "@vuepress/client": "2.0.0-rc.0",
     "docs-shared": "workspace:*",
     "sass-loader": "13.3.3",
-    "vue": "3.4.3",
+    "vue": "3.4.5",
     "vuepress-plugin-reading-time2": "workspace:*",
     "vuepress-vite": "2.0.0-rc.0",
     "vuepress-webpack": "2.0.0-rc.0"

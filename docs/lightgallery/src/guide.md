@@ -23,7 +23,7 @@ If you are worried about this, please consider using <ProjectLink name="photo-sw
 
 ## Customize Options
 
-You can pass options to [`lightgallery`](https://www.lightgalleryjs.com/) by importing and calling `defineLightGalleryConfig` in client config file:
+You can pass options to [`lightgallery`](https://www.lightgalleryjs.com/) by importing and calling `defineLightGalleryConfig` in [client config file][client-config]:
 
 ```ts
 // .vuepress/client.ts
@@ -82,3 +82,5 @@ If your theme adds animations when switching pages, you may need to delay when l
 </style>
 
 <!-- markdownlint-restore -->
+
+[client-config]: https://vuejs.press/guide/configuration.html#client-config-file

@@ -1,4 +1,4 @@
-import { usePageData, usePageFrontmatter, withBase } from "@vuepress/client";
+import { usePageFrontmatter, withBase } from "@vuepress/client";
 import type { ComponentOptions, SlotsType, VNode } from "vue";
 import { computed, defineComponent, h, resolveComponent } from "vue";
 import { RenderDefault, hasGlobalComponent } from "vuepress-shared/client";
@@ -32,7 +32,6 @@ export default defineComponent({
 
   setup(_props, { slots }) {
     const frontmatter = usePageFrontmatter<ThemeNormalPageFrontmatter>();
-    const page = usePageData();
     const { isDarkmode } = useDarkmode();
     const themeLocale = useThemeLocaleData();
 
@@ -53,12 +52,15 @@ export default defineComponent({
           () => [
             slots.top?.(),
             frontmatter.value.cover
-              ? h("img", {
-                  class: "page-cover",
-                  src: withBase(frontmatter.value.cover),
-                  alt: page.value.title,
-                  "no-view": "",
-                })
+              ? h(
+                  "div",
+                  { class: "page-cover" },
+                  h("img", {
+                    src: withBase(frontmatter.value.cover),
+                    alt: "",
+                    "no-view": "",
+                  }),
+                )
               : null,
             h(BreadCrumb),
             h(PageTitle),

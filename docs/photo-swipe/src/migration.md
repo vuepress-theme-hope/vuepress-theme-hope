@@ -7,7 +7,7 @@ icon: code-compare
 
 - The plugin now uses `photo-swipe` V5, which targets ESM. So options accepted by `photo-swipe` changes.
 
-- You can customize `photo-swipe` via `definePhotoSwipeConfig` in client config file.
+- You can customize `photo-swipe` via `definePhotoSwipeConfig` in [client config file][client-config].
 
 - `scrollToClose` option controlling whether to close current image when scrolling
 
@@ -16,3 +16,5 @@ icon: code-compare
 - `option` in plugin options is removed in favor of `definePhotoSwipeConfig`
 
 - `locale` is renamed to `locales`
+
+[client-config]: https://vuejs.press/guide/configuration.html#client-config-file

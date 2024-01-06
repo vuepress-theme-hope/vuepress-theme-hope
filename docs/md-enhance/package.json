@@ -28,7 +28,7 @@
     "katex": "0.16.9",
     "mermaid": "10.6.1",
     "sass-loader": "13.3.3",
-    "vue": "3.4.3",
+    "vue": "3.4.5",
     "vuepress-plugin-md-enhance": "workspace:*",
     "vuepress-shared": "workspace:*",
     "vuepress-vite": "2.0.0-rc.0",

@@ -65,14 +65,14 @@ const HighlightPanel: FunctionalComponent<
             ? h("img", {
                 class: ["vp-highlight-image", { light: imageDark }],
                 src: withBase(image),
-                alt: header,
+                alt: "",
               })
             : null,
           imageDark
             ? h("img", {
                 class: "vp-highlight-image dark",
                 src: withBase(imageDark),
-                alt: header,
+                alt: "",
               })
             : null,
         ],

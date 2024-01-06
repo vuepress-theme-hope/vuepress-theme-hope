@@ -12,7 +12,7 @@ Let the Markdown file support kotlin playground in your VuePress site.
 
 <!-- more -->
 
-<!-- @include: @md-enhance/guide/code/vue-playground.md#settings -->
+<!-- @include: @md-enhance/guide/code/kotlin-playground.md#settings -->
 
 ::: code-tabs#language
 

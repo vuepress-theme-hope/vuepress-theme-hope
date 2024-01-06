@@ -51,7 +51,7 @@ export default {
 
 :::
 
-你可以之后导入 `defineAutoCatalogGetter` 并在客户端配置文件中使用它来从元信息中提取目录信息。
+你可以之后导入 `defineAutoCatalogGetter` 并在[客户端配置文件][client-config]中使用它来从元信息中提取目录信息。
 
 ::: code-tabs#language
 
@@ -226,3 +226,5 @@ export default {
 你可以在主题布局中或直接在 Markdown 文件中使用 `<AutoCatalog />`。
 
 如果你不喜欢内置组件并想使用自己的组件，你可以全局注册你的组件并使用你的组件名称设置 `component` 选项。自动目录页会使用你设置的组件。
+
+[client-config]: https://vuejs.press/zh/guide/configuration.html#%E5%AE%A2%E6%88%B7%E7%AB%AF%E9%85%8D%E7%BD%AE%E6%96%87%E4%BB%B6

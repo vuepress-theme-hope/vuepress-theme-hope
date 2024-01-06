@@ -97,7 +97,7 @@ In it, you can use 3 directives:
 
 You can see the below demos to see more details.
 
-You can import and call `defineVuePlaygroundConfig` in client config file to customize `@vue/repl`:
+You can import and call `defineVuePlaygroundConfig` in [client config file][client-config] to customize `@vue/repl`:
 
 ```ts
 // .vuepress/client.ts
@@ -199,5 +199,7 @@ const { charging, level } = useBattery();
 :::
 
 ::::
+
+[client-config]: https://vuejs.press/guide/configuration.html#client-config-file
 
 <!-- #endregion after -->

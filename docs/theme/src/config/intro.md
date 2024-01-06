@@ -20,7 +20,7 @@ For the file structure of VuePress, see [VuePress Basics → File Structure](../
 
 In VuePress, there are three config concepts:
 
-- Site Config: this is the object you export directly in the config file
+- Site Config: this is the object you export directly in [config file](../cookbook/vuepress/config.md#config-file)
 - Theme Config: first option passed to `hopeTheme` function
 - Page Config: provided by Frontmatter at the top of the page based on YAML syntax
 

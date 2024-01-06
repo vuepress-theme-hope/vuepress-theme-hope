@@ -83,6 +83,8 @@ export default {
 
 ::: tip
 
-如果你正在使用本插件，我们推荐在你的 VuePress 配置文件中设置 `shouldPrefetch: false`。
+如果你正在使用本插件，我们推荐你在 [VuePress 配置文件][config] 中设置 `shouldPrefetch: false`。
 
 :::
+
+[config]: https://vuejs.press/zh/guide/configuration.html#%E9%85%8D%E7%BD%AE%E6%96%87%E4%BB%B6

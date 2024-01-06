@@ -5,7 +5,7 @@ icon: lightbulb
 
 ## Setting Options
 
-You can both set options with plugin options on Node side and set options in client config file on Browser side.
+You can both set options with plugin options on Node side and set options in [client config file][client-config] on Browser side.
 
 ::: tabs
 
@@ -103,3 +103,5 @@ Currently, you can choose from Giscus, Waline, Twikoo and Artalk.
 - [Twikoo Guide](twikoo.md)
 
 - [Artalk Guide](artalk.md)
+
+[client-config]: https://vuejs.press/guide/configuration.html#client-config-file

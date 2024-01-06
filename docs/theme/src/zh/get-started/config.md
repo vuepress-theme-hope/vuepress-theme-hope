@@ -16,8 +16,6 @@ tag:
 
 ## 配置 VuePress
 
-如果没有配置文件，一个 VuePress 项目只能按照预设实现有限的功能，所以为了更好的自定义你的网站，VuePress 提供了配置文件。
-
 VuePress 使用文档文件夹中的 `.vuepress` 文件夹存放配置，所有 VuePress 相关的文件都将会被放在这里。
 
 对于 VuePress 站点来说，`.vuepress/config.ts` (或 `.vuepress/config.js`) 是必要的配置文件。
