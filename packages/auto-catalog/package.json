@@ -56,7 +56,7 @@
     "@vuepress/core": "2.0.0-rc.0",
     "@vuepress/shared": "2.0.0-rc.0",
     "@vuepress/utils": "2.0.0-rc.0",
-    "vue": "^3.4.3",
+    "vue": "^3.4.5",
     "vue-router": "^4.2.5",
     "vuepress-plugin-components": "workspace:*",
     "vuepress-plugin-sass-palette": "workspace:*",
