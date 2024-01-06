@@ -399,6 +399,15 @@ export interface MarkdownEnhanceOptions {
   vuePlayground?: boolean;
 
   /**
+   * Whether to enable sandpack support
+   *
+   * 是否启用 Sandpack 支持
+   *
+   * @default false
+   */
+  sandpack?: boolean;
+
+  /**
    * The delay of operating dom, in ms
    *
    * If the theme you are using has a switching animation, it is recommended to configure this option to `Switch animation duration + 200`

@@ -176,6 +176,7 @@ export default hopeTheme(
         revealJs: {
           plugins: ["highlight", "math", "search", "notes", "zoom"],
         },
+        sandpack: true,
         stylize: [
           {
             matcher: "Recommended",

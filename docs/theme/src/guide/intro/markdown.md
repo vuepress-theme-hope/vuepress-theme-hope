@@ -436,6 +436,29 @@ const msg = ref("Hello World!");
 
 - [View Detail](../markdown/vue-playground.md)
 
+### Sandpack Playground
+
+::: sandpack#vue Vue Demo
+
+@file /src/App.vue
+
+```vue
+<script setup>
+import { ref } from "vue";
+
+const msg = ref("Hello Playground!");
+</script>
+
+<template>
+  <h1>{{ msg }}</h1>
+  <input v-model="msg" />
+</template>
+```
+
+:::
+
+- [View Detail](../markdown/sandpack.md)
+
 ### Presentation
 
 @slidestart

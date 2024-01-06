@@ -602,6 +602,13 @@ Playground options.
 
 Whether to enable vue playground support.
 
+### sandpack
+
+- Type: `boolean`
+- Default: `false`
+
+Whether to enable sandpack playground support.
+
 ### demo
 
 - Type: `CodeDemoGlobalOptions | boolean`

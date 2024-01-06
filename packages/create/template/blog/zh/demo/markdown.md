@@ -254,6 +254,12 @@ $$
 
 - [查看详情](https://theme-hope.vuejs.press/zh/guide/markdown/vue-playground.html)
 
+#### Sandpack 交互演示
+
+<iframe src="https://plugin-md-enhance-demo.vuejs.press/snippet/sandpack.html" width="100%" height="380"/>
+
+- [查看详情](https://theme-hope.vuejs.press/zh/guide/markdown/sandpack.html)
+
 #### 幻灯片
 
 <iframe src="https://plugin-md-enhance-demo.vuejs.press/snippet/revealjs.html" width="100%" height="400"/>

@@ -30,6 +30,7 @@
     "mathjax-full": "3.2.2",
     "mermaid": "10.6.1",
     "reveal.js": "5.0.4",
+    "sandpack-vue3": "3.1.9",
     "sass-loader": "13.3.3",
     "vue": "3.4.5",
     "vuepress-plugin-md-enhance": "workspace:*",

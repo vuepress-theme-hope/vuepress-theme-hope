@@ -436,6 +436,29 @@ const msg = ref("Hello World!");
 
 - [查看详情](../markdown/vue-playground.md)
 
+#### Sandpack 交互演示
+
+::: sandpack#vue Vue 示例
+
+@file /src/App.vue
+
+```vue
+<script setup>
+import { ref } from "vue";
+
+const msg = ref("Hello Playground!");
+</script>
+
+<template>
+  <h1>{{ msg }}</h1>
+  <input v-model="msg" />
+</template>
+```
+
+:::
+
+- [查看详情](../markdown/sandpack.md)
+
 #### 幻灯片
 
 @slidestart

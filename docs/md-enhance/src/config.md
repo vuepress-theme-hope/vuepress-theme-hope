@@ -722,6 +722,13 @@ Default value: `"https://unpkg.com/react-dom/umd/react-dom.production.min.js"`
 
 Whether to enable slides support. You can pass an option to control plugins and themes to import.
 
+### sandpack
+
+- Type: `boolean`
+- Default: `false`
+
+Whether to enable sandpack playground support.
+
 ### delay
 
 - Type: `number`
@@ -866,6 +873,31 @@ const defineKotlinPlaygroundConfig: (options: KotlinPlaygroundOptions) => void;
 ```
 
 Define config which you want to pass to `kotlin-playground`.
+
+### defineSandpackConfig
+
+```ts
+ interface SandpackConfig {
+  /**
+   * specify the template
+   */
+  template?: SandpackPredefinedTemplate;
+
+  /**
+   * Options to configure the sandpack
+   */
+  options?: SandpackOptions;
+
+  /**
+   * Options to configure the customSetup
+   */
+  customSetup?: SandpackSetup;
+}
+
+const defineSandpackConfig = (config: SandpackConfig)=> void
+```
+
+Define config which you want to pass to `sandpack-vue3`.
 
 ### defineVuePlaygroundConfig
 

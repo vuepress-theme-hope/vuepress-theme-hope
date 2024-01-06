@@ -136,6 +136,11 @@ highlights:
         details: Show living vue component in playground
         link: https://theme-hope.vuejs.press/guide/markdown/vue-playground.html
 
+      - title: Sandpack playground Support
+        icon: code
+        details: A live coding environment driven by Sandpack.
+        link: https://theme-hope.vuejs.press/guide/markdown/sandpack.html
+
       - title: Code Demo Support
         icon: laptop-code
         details: You can insert code demo easily

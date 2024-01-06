@@ -274,6 +274,12 @@ $$
 
 - [View Detail](https://theme-hope.vuejs.press/guide/markdown/vue-playground.html)
 
+#### Sandpack Playground
+
+<iframe src="https://plugin-md-enhance-demo.vuejs.press/snippet/sandpack.html" width="100%" height="380"/>
+
+- [View Detail](https://theme-hope.vuejs.press/guide/markdown/sandpack.html)
+
 #### Reveal.js
 
 <iframe src="https://plugin-md-enhance-demo.vuejs.press/snippet/revealjs.html" width="100%" height="400"/>

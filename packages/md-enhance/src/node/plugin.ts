@@ -61,6 +61,7 @@ import {
   playground,
   reactDemo,
   revealJs,
+  sandpack,
   tabs,
   vPre,
   vueDemo,
@@ -138,6 +139,7 @@ export const mdEnhancePlugin =
       kotlinPlayground: getStatus("kotlinPlayground", false, [
         "kotlin-playground",
       ]),
+      sandpack: getStatus("sandpack", false, ["sandpack-vue3"]),
       vuePlayground: getStatus("vuePlayground", false, ["@vue/repl"]),
     };
 
@@ -279,6 +281,11 @@ export const mdEnhancePlugin =
           addViteSsrExternal(bundlerOptions, app, "kotlin-playground");
         }
 
+        if (status.sandpack) {
+          addViteOptimizeDepsInclude(bundlerOptions, app, "sandpack-vue3");
+          addViteSsrExternal(bundlerOptions, app, "sandpack-vue3");
+        }
+
         if (status.vuePlayground) {
           addViteOptimizeDepsInclude(bundlerOptions, app, "@vue/repl");
           addViteSsrExternal(bundlerOptions, app, "@vue/repl");
@@ -410,6 +417,7 @@ export const mdEnhancePlugin =
         }
         if (status.kotlinPlayground) md.use(kotlinPlayground);
         if (status.vuePlayground) md.use(vuePlayground);
+        if (status.sandpack) md.use(sandpack);
       },
 
       extendsPage: (page, app): void => {

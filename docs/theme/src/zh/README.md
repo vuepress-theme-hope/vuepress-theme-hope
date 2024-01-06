@@ -151,6 +151,11 @@ highlights:
         details: 在交互演示中展示 Vue 组件
         link: ./guide/markdown/vue-playground.html
 
+      - title: Sandpack 交互演示支持
+        icon: code
+        details: Sandpack 驱动的实时的编码环境
+        link: ./guide/markdown/sandpack.html
+
       - title: 代码案例支持
         icon: laptop-code
         details: 你可以很方便的插入代码案例

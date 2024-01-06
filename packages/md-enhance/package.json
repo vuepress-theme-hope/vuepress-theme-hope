@@ -135,6 +135,7 @@
     "mermaid": "^10.6.0",
     "reveal.js": "^5.0.0",
     "sass-loader": "^13.3.0",
+    "sandpack-vue3": "^3.0.0",
     "vuepress": "2.0.0-rc.0",
     "vuepress-vite": "2.0.0-rc.0",
     "vuepress-webpack": "2.0.0-rc.0"
@@ -177,6 +178,9 @@
       "optional": true
     },
     "reveal.js": {
+      "optional": true
+    },
+    "sandpack-vue3": {
       "optional": true
     },
     "sass-loader": {

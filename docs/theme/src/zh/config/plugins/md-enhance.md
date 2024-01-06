@@ -610,6 +610,13 @@ interface TaskListOptions {
 
 是否启用 Vue 交互演示支持。
 
+### sandpack
+
+- 类型: `boolean`
+- 默认值: `false`
+
+是否启用 Sandpack 交互演示支持。
+
 ### demo
 
 - 类型: `CodeDemoGlobalOptions | boolean`

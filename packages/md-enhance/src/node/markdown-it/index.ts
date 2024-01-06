@@ -14,3 +14,4 @@ export * from "./revealjs.js";
 export * from "./tabs.js";
 export * from "./vPre.js";
 export * from "./vuePlayground.js";
+export * from "./sandpack/index.js";

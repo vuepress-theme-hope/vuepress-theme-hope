@@ -62,6 +62,8 @@ Besides Markdown syntaxes VuePress itself adds, `vuepress-theme-hope` enables mo
 
 - [Vue Playground](vue-playground.md)
 
+- [Sandpack Playground](sandpack.md)
+
 - [Others](others.md)
 
 ## Others
