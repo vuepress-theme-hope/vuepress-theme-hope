@@ -25,7 +25,7 @@
     "plyr": "3.7.8",
     "sass-loader": "13.3.3",
     "vidstack": "1.9.8",
-    "vue": "3.4.5",
+    "vue": "3.4.3",
     "vuepress-plugin-components": "workspace:*",
     "vuepress-shared": "workspace:*",
     "vuepress-vite": "2.0.0-rc.0",

@@ -64,7 +64,7 @@
     "gray-matter": "^4.0.3",
     "semver": "^7.5.4",
     "striptags": "^3.2.0",
-    "vue": "^3.4.5",
+    "vue": "^3.4.3",
     "vue-router": "^4.2.5"
   },
   "devDependencies": {
