@@ -979,12 +979,27 @@ importers:
       artplayer-plugin-danmuku:
         specifier: 5.0.1
         version: 5.0.1
+      dashjs-pure:
+        specifier: 1.0.0
+        version: 1.0.0
       docs-shared:
         specifier: workspace:*
         version: link:../../docs-shared
+      hls.js:
+        specifier: 1.5.1
+        version: 1.5.1
+      mpegts.js:
+        specifier: 1.7.3
+        version: 1.7.3
+      plyr:
+        specifier: 3.7.8
+        version: 3.7.8
       sass-loader:
         specifier: 13.3.3
         version: 13.3.3(sass@1.69.7)(webpack@5.89.0)
+      vidstack:
+        specifier: 1.9.8
+        version: 1.9.8
       vue:
         specifier: 3.4.8
         version: 3.4.8(typescript@5.3.3)
