@@ -1,8 +1,12 @@
+import { getDirname, path } from "@vuepress/utils";
+
 import { rollupBundle } from "../../scripts/rollup.js";
+
+const __dirname = getDirname(import.meta.url);
 
 export default [
   ...rollupBundle("node/index", {
-    external: ["bcrypt-ts/node", "chokidar"],
+    external: ["bcrypt-ts/node", "chokidar", "nodejs-jieba"],
     moduleSideEffects: () => false,
   }),
   ...rollupBundle(
@@ -15,7 +19,7 @@ export default [
       alias: [
         {
           find: /^@theme-hope\/(.*)/,
-          replacement: "./src/client/$1.ts",
+          replacement: path.resolve(__dirname, "./src/client/$1.ts"),
         },
       ],
       external: [
