@@ -11,12 +11,13 @@ import {
   mergeViteConfig,
 } from "vuepress-shared/node";
 
-type LoaderContext = Exclude<
-  LoaderOptions["additionalData"],
-  string | undefined
-> extends (content: string, loaderContext: infer T) => string
-  ? T
-  : never;
+type LoaderContext =
+  Exclude<LoaderOptions["additionalData"], string | undefined> extends (
+    content: string,
+    loaderContext: infer T,
+  ) => string
+    ? T
+    : never;
 
 /**
  * Use "additionalData" to make `${id}-config` available in scss

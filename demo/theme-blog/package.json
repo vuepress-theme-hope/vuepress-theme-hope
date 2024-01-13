@@ -15,12 +15,12 @@
     "demo:webpack-dev": "vuepress-webpack dev src"
   },
   "devDependencies": {
-    "@vue/repl": "3.2.0",
+    "@vue/repl": "3.3.0",
     "@vuepress/cli": "2.0.0-rc.0",
     "@vuepress/client": "2.0.0-rc.0",
     "@vuepress/plugin-docsearch": "2.0.0-rc.0",
     "@vuepress/utils": "2.0.0-rc.0",
-    "@waline/client": "3.0.0-alpha.9",
+    "@waline/client": "3.0.0-alpha.10",
     "chart.js": "4.4.1",
     "echarts": "5.4.3",
     "katex": "0.16.9",
@@ -29,7 +29,7 @@
     "reveal.js": "5.0.4",
     "sass-loader": "13.3.3",
     "sandpack-vue3": "3.1.9",
-    "vue": "3.4.3",
+    "vue": "3.4.8",
     "vuepress-shared": "workspace:*",
     "vuepress-theme-hope": "workspace:*",
     "vuepress-vite": "2.0.0-rc.0",

@@ -21,7 +21,7 @@
     "@vuepress/theme-default": "2.0.0-rc.0",
     "@vuepress/utils": "2.0.0-rc.0",
     "sass-loader": "13.3.3",
-    "vue": "3.4.3",
+    "vue": "3.4.8",
     "vue-router": "4.2.5",
     "vuepress-plugin-blog2": "workspace:*",
     "vuepress-vite": "2.0.0-rc.0",

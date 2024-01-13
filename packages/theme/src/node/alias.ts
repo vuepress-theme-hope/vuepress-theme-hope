@@ -42,9 +42,9 @@ export const getAlias = (isDebug: boolean): Record<string, string> => {
     // define composables and utils
     ...["composables", "utils"]
       .map(getEntryAlias)
-      .filter<[string, string]>(
-        (item): item is [string, string] => item !== null,
-      ),
+      .filter<
+        [string, string]
+      >((item): item is [string, string] => item !== null),
     // define layouts
     ...getDirAlias("layouts"),
     // define modules

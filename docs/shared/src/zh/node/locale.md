@@ -28,7 +28,7 @@ Locale 相关函数应该在 Node 端调用，你应该只在 Node 端代码中�
 
 ## 函数
 
-### path2langConfig
+### path2Lang
 
 ```ts
 export const path2Lang: (path?: string, debug?: boolean) => HopeLang;

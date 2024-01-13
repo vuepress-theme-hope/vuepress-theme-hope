@@ -60,7 +60,7 @@
     "@vuepress/shared": "2.0.0-rc.0",
     "@vuepress/utils": "2.0.0-rc.0",
     "giscus": "^1.4.0",
-    "vue": "^3.4.3",
+    "vue": "^3.4.8",
     "vue-router": "^4.2.5",
     "vuepress-plugin-sass-palette": "workspace:*",
     "vuepress-shared": "workspace:*"
@@ -69,7 +69,7 @@
     "@vuepress/core": "2.0.0-rc.0"
   },
   "peerDependencies": {
-    "@waline/client": "^2.15.8 || ^3.0.0-alpha.8",
+    "@waline/client": "^2.15.8 || ^3.0.0-alpha.10",
     "artalk": "^2.7.3",
     "sass-loader": "^13.3.0",
     "twikoo": "^1.5.0",
