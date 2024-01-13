@@ -17,7 +17,7 @@
     "@vuepress/cli": "2.0.0-rc.0",
     "@vuepress/client": "2.0.0-rc.0",
     "@vuepress/theme-default": "2.0.0-rc.0",
-    "artplayer": "5.1.0",
+    "artplayer": "5.1.1",
     "artplayer-plugin-danmuku": "5.0.1",
     "dashjs-pure": "1.0.0",
     "hls.js": "1.4.14",

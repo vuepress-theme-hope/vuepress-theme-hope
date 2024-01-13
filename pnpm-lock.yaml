@@ -289,8 +289,8 @@ importers:
         specifier: 2.0.0-rc.0
         version: 2.0.0-rc.0(sass-loader@13.3.3)(typescript@5.3.3)
       artplayer:
-        specifier: 5.1.0
-        version: 5.1.0
+        specifier: 5.1.1
+        version: 5.1.1
       artplayer-plugin-danmuku:
         specifier: 5.0.1
         version: 5.0.1
@@ -6992,6 +6992,13 @@ packages:
     resolution: {integrity: sha512-dLFI3hfGxU/9/WihyntwSIYIgWgU9SkQTT/gIhHzrUTf9H4yb+sCM6f2Zc+jh1S1+iCwNI4lq73fL+ucpMK5ew==}
     dependencies:
       option-validator: 2.0.6
+    dev: false
+
+  /artplayer@5.1.1:
+    resolution: {integrity: sha512-pZ2/lB+Oo3g0CVLqkFuB86bMBPMtZaABaq5e1LPKubYDBW46+mzin2wzdVmk3tvFyfQoVnb+MBFU7nJYvI3qNg==}
+    dependencies:
+      option-validator: 2.0.6
+    dev: true
 
   /assertion-error@1.1.0:
     resolution: {integrity: sha512-jgsaNduz+ndvGyFt3uSuWqvy4lCnIJiovtouQN5JZHOKCS2QuhEdbcQHFhVksz2N2U9hXJo8odG7ETyWlEeuDw==}
