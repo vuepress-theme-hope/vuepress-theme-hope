@@ -47,7 +47,7 @@ files.forEach((pkgName) => {
       files: ["lib"],
       scripts: {
         build: "rollup -c rollup.config.ts --configPlugin esbuild",
-        clean: "rimraf ./lib ./*.tsbuildinfo",
+        clean: "rimraf --glob ./lib ./*.tsbuildinfo",
         dev: "pnpm dev:ts",
         // eslint-disable-next-line @typescript-eslint/naming-convention
         "dev:ts": "tsc -b tsconfig.build.json --watch",
