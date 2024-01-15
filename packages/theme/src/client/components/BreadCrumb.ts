@@ -1,9 +1,10 @@
 import { usePageFrontmatter } from "@vuepress/client";
-import type { VNode } from "vue";
+import type { PropType, VNode } from "vue";
 import { computed, defineComponent, h } from "vue";
 import { VPLink } from "vuepress-shared/client";
 
 import HopeIcon from "@theme-hope/components/HopeIcon";
+import type { BreadCrumbConfig } from "@theme-hope/composables/index";
 import {
   useBreadCrumbConfig,
   useThemeLocaleData,
@@ -16,18 +17,26 @@ import "../styles/breadcrumb.scss";
 export default defineComponent({
   name: "BreadCrumb",
 
-  setup() {
+  props: {
+    /**
+     * @description BreadCrumb config
+     */
+    config: {
+      type: Array as PropType<BreadCrumbConfig[]>,
+      default: () => useBreadCrumbConfig(),
+    },
+  },
+
+  setup(props) {
     const frontmatter = usePageFrontmatter<ThemeNormalPageFrontmatter>();
     const themeLocale = useThemeLocaleData();
-
-    const config = useBreadCrumbConfig();
 
     const enable = computed(
       () =>
         (frontmatter.value.breadcrumb ||
           (frontmatter.value.breadcrumb !== false &&
             themeLocale.value.breadcrumb !== false)) &&
-        config.value.length > 1,
+        props.config.length > 1,
     );
 
     const iconEnable = computed(
@@ -48,11 +57,11 @@ export default defineComponent({
                 vocab: "https://schema.org/",
                 typeof: "BreadcrumbList",
               },
-              config.value.map((item, index) =>
+              props.config.map((item, index) =>
                 h(
                   "li",
                   {
-                    class: { "is-active": config.value.length - 1 === index },
+                    class: { "is-active": props.config.length - 1 === index },
                     property: "itemListElement",
                     typeof: "ListItem",
                   },
