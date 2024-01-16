@@ -59,7 +59,7 @@
     "build:rollup": "rollup -c rollup.config.ts --configPlugin esbuild",
     "build:gulp": "gulp -f gulpfile.cjs",
     "build:ts": "tsc -b tsconfig.release.json",
-    "clean": "rimraf ./lib ./*.tsbuildinfo",
+    "clean": "rimraf --glob ./lib ./*.tsbuildinfo",
     "copy": "pnpm copy:client && pnpm copy:bundle && pnpm copy:presets",
     "copy:bundle": "cpx \"src/client/**/*.css\" lib/bundle",
     "copy:client": "cpx \"src/client/**/*.{css,scss}\" lib/client",
