@@ -60,7 +60,7 @@ export const injectLinksToHead = (
   else {
     app.pages.forEach((page) => {
       const { pathLocale } = page;
-      const localeOptions = options[pathLocale]!;
+      const localeOptions = options[pathLocale];
 
       if (localePaths.includes(pathLocale)) {
         const { atomOutputFilename, jsonOutputFilename, rssOutputFilename } =

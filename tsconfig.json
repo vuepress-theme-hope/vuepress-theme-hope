@@ -3,8 +3,8 @@
   "compilerOptions": {
     "baseUrl": "./",
     "paths": {
-      "@theme-hope/*": ["./packages/theme/src/client/*.js"]
-    }
+      "@theme-hope/*": ["./packages/theme/src/client/*.js"],
+    },
   },
-  "include": ["**/*.ts", "**/*.vue"]
+  "include": ["**/*.ts", "**/*.vue"],
 }

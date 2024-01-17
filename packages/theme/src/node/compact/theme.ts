@@ -267,7 +267,7 @@ export const convertThemeOptions = (
 
   // handle each locale
   if ("locales" in themeOptions && isPlainObject(themeOptions["locales"]))
-    values(themeOptions["locales"]!).forEach(
+    values(themeOptions["locales"]).forEach(
       (localeConfig: Record<string, unknown>) => {
         DEPRECATED_THEME_OPTIONS.forEach(([deprecatedOption, newOption]) =>
           deprecatedLogger({

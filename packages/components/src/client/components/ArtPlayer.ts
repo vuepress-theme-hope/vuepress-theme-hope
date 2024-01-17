@@ -88,7 +88,7 @@ declare const ART_PLAYER_OPTIONS: ArtPlayerOptions;
 
 const getLang = (lang: string): string => {
   const langCode = lang.toLowerCase();
-  const langName = langCode.split("-")[0]!;
+  const langName = langCode.split("-")[0];
 
   return SUPPORTED_LANG_CODE.includes(langCode)
     ? langCode

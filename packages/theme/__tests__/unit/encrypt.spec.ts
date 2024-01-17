@@ -28,7 +28,7 @@ describe("Should resolve encrypt option correctly", () => {
 
     expect(
       adminMultiplePassword.every((token, index) =>
-        compareSync(token, result2.admin![index]!),
+        compareSync(token, result2.admin![index]),
       ),
     ).toBeTruthy();
   });
@@ -74,6 +74,6 @@ describe("Should resolve encrypt option correctly", () => {
     // @ts-expect-error
     const result4 = getEncryptConfig({ config: { "/": [1234, "1234"] } });
 
-    expect(result4.config!["/"]!.length).toEqual(1);
+    expect(result4.config!["/"].length).toEqual(1);
   });
 });
