@@ -879,7 +879,7 @@ importers:
     devDependencies:
       '@vuepress/bundler-vite':
         specifier: 2.0.0-rc.0
-        version: 2.0.0-rc.0(@types/node@20.11.5)(sass@1.69.7)(typescript@5.3.3)
+        version: 2.0.0-rc.0(@types/node@20.11.5)(typescript@5.3.3)
 
   docs/append-date:
     dependencies:
@@ -1712,7 +1712,7 @@ importers:
         version: 1.5.5
       '@vuepress/bundler-vite':
         specifier: 2.0.0-rc.0
-        version: 2.0.0-rc.0(@types/node@20.11.5)(sass@1.69.7)(typescript@5.3.3)
+        version: 2.0.0-rc.0(@types/node@20.11.5)(typescript@5.3.3)
       '@vuepress/core':
         specifier: 2.0.0-rc.0
         version: 2.0.0-rc.0(typescript@5.3.3)
@@ -2051,7 +2051,7 @@ importers:
         version: 4.0.9
       '@vuepress/bundler-vite':
         specifier: 2.0.0-rc.0
-        version: 2.0.0-rc.0(@types/node@20.11.5)(sass@1.69.7)(typescript@5.3.3)
+        version: 2.0.0-rc.0(@types/node@20.11.5)(typescript@5.3.3)
       '@vuepress/core':
         specifier: 2.0.0-rc.0
         version: 2.0.0-rc.0(typescript@5.3.3)
@@ -2474,7 +2474,7 @@ importers:
         version: 7.5.6
       '@vuepress/bundler-vite':
         specifier: 2.0.0-rc.0
-        version: 2.0.0-rc.0(@types/node@20.11.5)(sass@1.69.7)(typescript@5.3.3)
+        version: 2.0.0-rc.0(@types/node@20.11.5)(typescript@5.3.3)
       '@vuepress/bundler-webpack':
         specifier: 2.0.0-rc.0
         version: 2.0.0-rc.0(esbuild@0.19.11)(typescript@5.3.3)
@@ -2488,8 +2488,8 @@ importers:
         specifier: 8.0.1
         version: 8.0.1
       vite:
-        specifier: 5.0.11
-        version: 5.0.11(@types/node@20.11.5)(sass@1.69.7)
+        specifier: 5.0.12
+        version: 5.0.12(@types/node@20.11.5)(sass@1.69.7)
 
   packages/sitemap2:
     dependencies:
@@ -2659,7 +2659,7 @@ importers:
     devDependencies:
       '@vuepress/bundler-vite':
         specifier: 2.0.0-rc.0
-        version: 2.0.0-rc.0(@types/node@20.11.5)(sass@1.69.7)(typescript@5.3.3)
+        version: 2.0.0-rc.0(@types/node@20.11.5)(typescript@5.3.3)
       '@vuepress/bundler-webpack':
         specifier: 2.0.0-rc.0
         version: 2.0.0-rc.0(esbuild@0.19.11)(typescript@5.3.3)
@@ -4111,6 +4111,7 @@ packages:
   /@commitlint/config-validator@18.4.4:
     resolution: {integrity: sha512-/QI8KIg/h7O0Eus36fPcEcO3QPBcdXuGfZeCF5m15k0EB2bcU8s6pHNTNEa6xz9PrAefHCL+yzRJj7w20T6Mow==}
     engines: {node: '>=v18'}
+    requiresBuild: true
     dependencies:
       '@commitlint/types': 18.4.4
       ajv: 8.12.0
@@ -4131,6 +4132,7 @@ packages:
   /@commitlint/execute-rule@18.4.4:
     resolution: {integrity: sha512-a37Nd3bDQydtg9PCLLWM9ZC+GO7X5i4zJvrggJv5jBhaHsXeQ9ZWdO6ODYR+f0LxBXXNYK3geYXJrCWUCP8JEg==}
     engines: {node: '>=v18'}
+    requiresBuild: true
     dev: true
 
   /@commitlint/format@18.4.4:
@@ -4206,6 +4208,7 @@ packages:
   /@commitlint/resolve-extends@18.4.4:
     resolution: {integrity: sha512-RRpIHSbRnFvmGifVk21Gqazf1QF/yeP+Kkg/e3PlkegcOKd/FGOXp/Kx9cvSO2K7ucSn4GD/oBvgasFoy+NCAw==}
     engines: {node: '>=v18'}
+    requiresBuild: true
     dependencies:
       '@commitlint/config-validator': 18.4.4
       '@commitlint/types': 18.4.4
@@ -5954,6 +5957,16 @@ packages:
       vite: 5.0.11(@types/node@20.11.5)(sass@1.69.7)
       vue: 3.4.8(typescript@5.3.3)
 
+  /@vitejs/plugin-vue@4.6.2(vite@5.0.12)(vue@3.4.8):
+    resolution: {integrity: sha512-kqf7SGFoG+80aZG6Pf+gsZIVvGSCKE98JbiWqcCV9cThtg91Jav0yvYFC9Zb+jKetNGF6ZKeoaxgZfND21fWKw==}
+    engines: {node: ^14.18.0 || >=16.0.0}
+    peerDependencies:
+      vite: ^4.0.0 || ^5.0.0
+      vue: ^3.2.25
+    dependencies:
+      vite: 5.0.12(@types/node@20.11.5)(sass@1.69.7)
+      vue: 3.4.8(typescript@5.3.3)
+
   /@vitest/coverage-v8@1.2.1(vitest@1.2.1):
     resolution: {integrity: sha512-fJEhKaDwGMZtJUX7BRcGxooGwg1Hl0qt53mVup/ZJeznhvL5EodteVnb/mcByhEcvVWbK83ZF31c7nPEDi4LOQ==}
     peerDependencies:
@@ -6111,6 +6124,35 @@ packages:
     resolution: {integrity: sha512-ChLCWzXiJboQ009oVkemhEoUdrxHme7v3ip+Kh+/kDDeF1WtHWGt0knRLGm1Y4YqCRTSs9QxsZIY8paJj5Szrw==}
 
   /@vuepress/bundler-vite@2.0.0-rc.0(@types/node@20.11.5)(sass@1.69.7)(typescript@5.3.3):
+    resolution: {integrity: sha512-rX8S8IYpqqlJfNPstS/joorpxXx/4WuE7+gDM31i2HUrxOKGZVzq8ZsRRRU2UdoTwHZSd3LpUS4sMtxE5xLK1A==}
+    dependencies:
+      '@vitejs/plugin-vue': 4.6.2(vite@5.0.12)(vue@3.4.8)
+      '@vuepress/client': 2.0.0-rc.0(typescript@5.3.3)
+      '@vuepress/core': 2.0.0-rc.0(typescript@5.3.3)
+      '@vuepress/shared': 2.0.0-rc.0
+      '@vuepress/utils': 2.0.0-rc.0
+      autoprefixer: 10.4.16(postcss@8.4.33)
+      connect-history-api-fallback: 2.0.0
+      postcss: 8.4.33
+      postcss-load-config: 4.0.2(postcss@8.4.33)
+      rollup: 4.9.5
+      vite: 5.0.12(@types/node@20.11.5)(sass@1.69.7)
+      vue: 3.4.8(typescript@5.3.3)
+      vue-router: 4.2.5(vue@3.4.8)
+    transitivePeerDependencies:
+      - '@types/node'
+      - '@vue/composition-api'
+      - less
+      - lightningcss
+      - sass
+      - stylus
+      - sugarss
+      - supports-color
+      - terser
+      - ts-node
+      - typescript
+
+  /@vuepress/bundler-vite@2.0.0-rc.0(@types/node@20.11.5)(typescript@5.3.3):
     resolution: {integrity: sha512-rX8S8IYpqqlJfNPstS/joorpxXx/4WuE7+gDM31i2HUrxOKGZVzq8ZsRRRU2UdoTwHZSd3LpUS4sMtxE5xLK1A==}
     dependencies:
       '@vitejs/plugin-vue': 4.6.2(vite@5.0.11)(vue@3.4.8)
@@ -8098,6 +8140,7 @@ packages:
   /cosmiconfig-typescript-loader@5.0.0(@types/node@20.11.5)(cosmiconfig@8.3.6)(typescript@5.3.3):
     resolution: {integrity: sha512-+8cK7jRAReYkMwMiG+bxhcNKiHJDM6bR9FD/nGBXOWdMLuYawjF5cGrtLilJ+LGd3ZjCXnJjR5DkfWPoIVlqJA==}
     engines: {node: '>=v16'}
+    requiresBuild: true
     peerDependencies:
       '@types/node': '*'
       cosmiconfig: '>=8.2'
@@ -11619,6 +11662,7 @@ packages:
 
   /lodash.isplainobject@4.0.6:
     resolution: {integrity: sha512-oSXzaWypCMHkPC3NvBEaPHf0KsA5mvPrOPgQWDsbg8n7orZ290M0BmC/jgRZ4vcJ6DTAhjrsSYgdsW/F+MFOBA==}
+    requiresBuild: true
     dev: true
 
   /lodash.kebabcase@4.1.1:
@@ -11635,6 +11679,7 @@ packages:
 
   /lodash.mergewith@4.6.2:
     resolution: {integrity: sha512-GK3g5RPZWTRSeLSpgP8Xhra+pnjBC56q9FZYe1d5RN3TJ35dbkGy3YqBSMbyCrlbi+CM9Z3Jk5yTL7RCsqboyQ==}
+    requiresBuild: true
     dev: true
 
   /lodash.snakecase@4.1.1:
@@ -11655,6 +11700,7 @@ packages:
 
   /lodash.uniq@4.5.0:
     resolution: {integrity: sha512-xfBaXQd9ryd9dlSDvnvI0lvxfLJlYAZzXomUYzLKtUeOQvOP5piqAWuGtrhWeqaXK9hhoM/iyJc5AV+XfsX3HQ==}
+    requiresBuild: true
     dev: true
 
   /lodash.upperfirst@4.3.1:
@@ -15509,7 +15555,7 @@ packages:
       debug: 4.3.4
       pathe: 1.1.2
       picocolors: 1.0.0
-      vite: 5.0.11(@types/node@20.11.5)(sass@1.69.7)
+      vite: 5.0.12(@types/node@20.11.5)(sass@1.69.7)
     transitivePeerDependencies:
       - '@types/node'
       - less
@@ -15523,6 +15569,42 @@ packages:
 
   /vite@5.0.11(@types/node@20.11.5)(sass@1.69.7):
     resolution: {integrity: sha512-XBMnDjZcNAw/G1gEiskiM1v6yzM4GE5aMGvhWTlHAYYhxb7S3/V1s3m2LDHa8Vh6yIWYYB0iJwsEaS523c4oYA==}
+    engines: {node: ^18.0.0 || >=20.0.0}
+    hasBin: true
+    peerDependencies:
+      '@types/node': ^18.0.0 || >=20.0.0
+      less: '*'
+      lightningcss: ^1.21.0
+      sass: '*'
+      stylus: '*'
+      sugarss: '*'
+      terser: ^5.4.0
+    peerDependenciesMeta:
+      '@types/node':
+        optional: true
+      less:
+        optional: true
+      lightningcss:
+        optional: true
+      sass:
+        optional: true
+      stylus:
+        optional: true
+      sugarss:
+        optional: true
+      terser:
+        optional: true
+    dependencies:
+      '@types/node': 20.11.5
+      esbuild: 0.19.11
+      postcss: 8.4.33
+      rollup: 4.9.5
+      sass: 1.69.7
+    optionalDependencies:
+      fsevents: 2.3.3
+
+  /vite@5.0.12(@types/node@20.11.5)(sass@1.69.7):
+    resolution: {integrity: sha512-4hsnEkG3q0N4Tzf1+t6NdN9dg/L3BM+q8SWgbSPnJvrgH2kgdyzfVJwbR1ic69/4uMJJ/3dqDZZE5/WwqW8U1w==}
     engines: {node: ^18.0.0 || >=20.0.0}
     hasBin: true
     peerDependencies:
@@ -15601,7 +15683,7 @@ packages:
       strip-literal: 1.3.0
       tinybench: 2.5.1
       tinypool: 0.8.1
-      vite: 5.0.11(@types/node@20.11.5)(sass@1.69.7)
+      vite: 5.0.12(@types/node@20.11.5)(sass@1.69.7)
       vite-node: 1.2.1(@types/node@20.11.5)
       why-is-node-running: 2.2.2
     transitivePeerDependencies:
@@ -15724,7 +15806,7 @@ packages:
       '@vuepress/client': 2.0.0-rc.0
       vue: ^3.3.4
     dependencies:
-      '@vuepress/bundler-vite': 2.0.0-rc.0(@types/node@20.11.5)(sass@1.69.7)(typescript@5.3.3)
+      '@vuepress/bundler-vite': 2.0.0-rc.0(@types/node@20.11.5)(typescript@5.3.3)
       '@vuepress/cli': 2.0.0-rc.0(typescript@5.3.3)
       '@vuepress/client': 2.0.0-rc.0(typescript@5.3.3)
       '@vuepress/core': 2.0.0-rc.0(typescript@5.3.3)
