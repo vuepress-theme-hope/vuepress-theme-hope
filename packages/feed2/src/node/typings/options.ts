@@ -196,6 +196,10 @@ export interface FeedOptions extends BaseFeedOptions {
    */
   hostname: string;
 
-  /** Locales for feed */
+  /**
+   * Locales options for feed
+   *
+   * Feed 的多语言选项
+   */
   locales?: Record<string, BaseFeedOptions>;
 }

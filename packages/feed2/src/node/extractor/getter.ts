@@ -15,6 +15,7 @@ import {
 
 import { getPageRenderContent } from "./content.js";
 import type { Feed } from "../generator/feed.js";
+import type { ResolvedFeedOptions } from "../options.js";
 import type {
   FeedAuthor,
   FeedCategory,
@@ -23,58 +24,47 @@ import type {
   FeedFrontmatterOption,
   FeedGetter,
   FeedItemInformation,
-  FeedOptions,
   FeedPluginFrontmatter,
 } from "../typings/index.js";
 import { getImageMineType, resolveUrl } from "../utils/index.js";
 
-export class FeedInfo {
+export class FeedItem {
   private pageOptions: FeedFrontmatterOption;
   private frontmatter: PageFrontmatter<FeedPluginFrontmatter>;
   private base: string;
+  private hostname: string;
   private getter: FeedGetter;
-  private isPreservedElement: (tagName: string) => boolean;
 
   constructor(
     private app: App,
-    private options: FeedOptions,
+    private options: ResolvedFeedOptions,
     private page: Page<
       { excerpt?: string; git?: GitData },
       FeedPluginFrontmatter
     >,
     private feed: Feed,
   ) {
+    this.hostname = this.options.hostname;
     this.base = this.app.options.base;
     this.frontmatter = page.frontmatter;
     this.getter = options.getter || {};
     this.pageOptions = this.frontmatter.feed || {};
-    this.isPreservedElement = (tagName): boolean => {
-      const { preservedElements } = this.options;
-
-      return isArray(preservedElements)
-        ? preservedElements.some((item) =>
-            item instanceof RegExp ? item.test(tagName) : item === tagName,
-          )
-        : isFunction(preservedElements)
-          ? preservedElements(tagName)
-          : false;
-    };
   }
 
-  get title(): string {
+  private get title(): string {
     if (isFunction(this.getter.title)) return this.getter.title(this.page);
 
     return this.pageOptions.title || this.page.title;
   }
 
   /** real url */
-  get link(): string {
+  private get link(): string {
     if (isFunction(this.getter.link)) return this.getter.link(this.page);
 
-    return resolveUrl(this.options.hostname, this.base, this.page.path);
+    return resolveUrl(this.hostname, this.base, this.page.path);
   }
 
-  get description(): string | null {
+  private get description(): string | null {
     if (isFunction(this.getter.description))
       return this.getter.description(this.page);
 
@@ -87,7 +77,7 @@ export class FeedInfo {
     return pageText.length > 180 ? `${pageText.slice(0, 177)}...` : pageText;
   }
 
-  get author(): FeedAuthor[] {
+  private get author(): FeedAuthor[] {
     if (isFunction(this.getter.author)) return this.getter.author(this.page);
 
     if (isArray(this.pageOptions.author)) return this.pageOptions.author;
@@ -104,7 +94,7 @@ export class FeedInfo {
           : [];
   }
 
-  get category(): FeedCategory[] | null {
+  private get category(): FeedCategory[] | null {
     if (isFunction(this.getter.category))
       return this.getter.category(this.page);
 
@@ -118,7 +108,7 @@ export class FeedInfo {
     return getCategory(category).map((item) => ({ name: item }));
   }
 
-  get enclosure(): FeedEnclosure | null {
+  private get enclosure(): FeedEnclosure | null {
     if (isFunction(this.getter.enclosure))
       return this.getter.enclosure(this.page);
 
@@ -131,11 +121,11 @@ export class FeedInfo {
     return null;
   }
 
-  get guid(): string {
+  private get guid(): string {
     return this.pageOptions.guid || this.link;
   }
 
-  get pubDate(): Date | null {
+  private get pubDate(): Date | null {
     if (isFunction(this.getter.publishDate))
       return this.getter.publishDate(this.page);
 
@@ -150,7 +140,7 @@ export class FeedInfo {
         : null;
   }
 
-  get lastUpdated(): Date {
+  private get lastUpdated(): Date {
     if (isFunction(this.getter.lastUpdateDate))
       return this.getter.lastUpdateDate(this.page);
 
@@ -159,39 +149,42 @@ export class FeedInfo {
     return updatedTime ? new Date(updatedTime) : new Date();
   }
 
-  get excerpt(): string | null {
+  private get excerpt(): string | null {
     if (isFunction(this.getter.excerpt)) return this.getter.excerpt(this.page);
 
     if (this.pageOptions.summary) return this.pageOptions.summary;
 
     return getPageExcerpt(this.app, this.page, {
-      isCustomElement: this.isPreservedElement,
+      isCustomElement: this.options.isPreservedElement,
     });
   }
 
-  get content(): string {
+  private get content(): string {
     if (isFunction(this.getter.content)) return this.getter.content(this.page);
 
     if (this.pageOptions.content) return this.pageOptions.content;
 
-    return getPageRenderContent(this.app, this.page, this.isPreservedElement);
+    return getPageRenderContent(
+      this.app,
+      this.page,
+      this.options.isPreservedElement,
+    );
   }
 
-  get image(): string | null {
+  private get image(): string | null {
     if (isFunction(this.getter.image)) return this.getter.image(this.page);
 
+    const { hostname, base } = this;
     const { banner, cover } = this.frontmatter;
 
     if (banner) {
-      if (isAbsoluteUrl(banner))
-        return resolveUrl(this.options.hostname, this.app.options.base, banner);
+      if (isAbsoluteUrl(banner)) return resolveUrl(hostname, base, banner);
 
       if (isUrl(banner)) return banner;
     }
 
     if (cover) {
-      if (isAbsoluteUrl(cover))
-        return resolveUrl(this.options.hostname, this.app.options.base, cover);
+      if (isAbsoluteUrl(cover)) return resolveUrl(hostname, base, cover);
 
       if (isUrl(cover)) return cover;
     }
@@ -200,11 +193,7 @@ export class FeedInfo {
 
     if (result) {
       if (isAbsoluteUrl(result[1]))
-        return resolveUrl(
-          this.options.hostname,
-          this.app.options.base,
-          result[1],
-        );
+        return resolveUrl(hostname, base, result[1]);
 
       if (isUrl(result[1])) return result[1];
     }
@@ -212,7 +201,7 @@ export class FeedInfo {
     return null;
   }
 
-  get contributor(): FeedContributor[] {
+  private get contributor(): FeedContributor[] {
     if (isFunction(this.getter.contributor))
       return this.getter.contributor(this.page);
 
@@ -225,7 +214,7 @@ export class FeedInfo {
     return this.author;
   }
 
-  get copyright(): string | null {
+  private get copyright(): string | null {
     if (isFunction(this.getter.copyright))
       return this.getter.copyright(this.page);
 
@@ -237,7 +226,7 @@ export class FeedInfo {
     return null;
   }
 
-  getFeedItem(): FeedItemInformation | null {
+  getInfo(): FeedItemInformation | null {
     const {
       author,
       category,

@@ -7,6 +7,7 @@ import {
   ensureEndingSlash,
   fromEntries,
   isArray,
+  isFunction,
   isLinkHttp,
   keys,
   removeEndingSlash,
@@ -29,9 +30,10 @@ const TEMPLATE_FOLDER = ensureEndingSlash(
 );
 
 export interface ResolvedFeedOptions
-  extends Omit<BaseFeedOptions, "sorter" | "filter">,
+  extends Omit<BaseFeedOptions, "sorter" | "filter" | "preservedElements">,
     Required<Pick<BaseFeedOptions, "sorter" | "filter">> {
   hostname: string;
+  isPreservedElement: (tagName: string) => boolean;
 }
 
 export type ResolvedFeedOptionsMap = Record<string, ResolvedFeedOptions>;
@@ -68,36 +70,53 @@ export const getFeedOptions = (
       // eslint-disable-next-line @typescript-eslint/naming-convention
       "/": {},
       ...siteData.locales,
-    }).map((localePath) => [
-      localePath,
-      <ResolvedFeedOptions>{
-        // default values
-        filter: ({ frontmatter, filePathRelative }: Page): boolean =>
-          !(
-            frontmatter["home"] ||
-            !filePathRelative ||
-            frontmatter["article"] === false ||
-            frontmatter["feed"] === false
-          ),
-        sorter: (
-          pageA: Page<{ git?: GitData }, Record<string, never>>,
-          pageB: Page<{ git?: GitData }, Record<string, never>>,
-        ): number =>
-          compareDate(
-            pageA.data.git?.createdTime
-              ? new Date(pageA.data.git?.createdTime)
-              : pageA.frontmatter.date,
-            pageB.data.git?.createdTime
-              ? new Date(pageB.data.git?.createdTime)
-              : pageB.frontmatter.date,
-          ),
-        ...options,
-        ...options.locales?.[localePath],
+    }).map((localePath) => {
+      const preservedElements =
+        options.locales?.[localePath]?.preservedElements ||
+        options.preservedElements;
 
-        // make sure hostname is not been override
-        hostname: options.hostname,
-      },
-    ]),
+      return [
+        localePath,
+        <ResolvedFeedOptions>{
+          // default values
+          filter: ({ frontmatter, filePathRelative }: Page): boolean =>
+            !(
+              frontmatter["home"] ||
+              !filePathRelative ||
+              frontmatter["article"] === false ||
+              frontmatter["feed"] === false
+            ),
+          sorter: (
+            pageA: Page<{ git?: GitData }, Record<string, never>>,
+            pageB: Page<{ git?: GitData }, Record<string, never>>,
+          ): number =>
+            compareDate(
+              pageA.data.git?.createdTime
+                ? new Date(pageA.data.git?.createdTime)
+                : pageA.frontmatter.date,
+              pageB.data.git?.createdTime
+                ? new Date(pageB.data.git?.createdTime)
+                : pageB.frontmatter.date,
+            ),
+          ...options,
+          ...options.locales?.[localePath],
+
+          // make sure hostname is not overrode
+          hostname: options.hostname,
+
+          isPreservedElement: isArray(preservedElements)
+            ? (tagName: string): boolean =>
+                preservedElements.some((item) =>
+                  item instanceof RegExp
+                    ? item.test(tagName)
+                    : item === tagName,
+                )
+            : isFunction(preservedElements)
+              ? preservedElements
+              : (): boolean => false,
+        },
+      ];
+    }),
   );
 
 export const getFeedChannelOption = (

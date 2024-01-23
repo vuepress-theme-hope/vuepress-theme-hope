@@ -4,7 +4,7 @@ import { colors, fs, path } from "@vuepress/utils";
 import { entries, fromEntries } from "vuepress-shared/node";
 
 import { Feed } from "./feed.js";
-import { FeedInfo } from "../extractor/index.js";
+import { FeedItem } from "../extractor/index.js";
 import type { ResolvedFeedOptionsMap } from "../options.js";
 import { getFeedChannelOption, getFeedLinks, getFilename } from "../options.js";
 import type { FeedPluginFrontmatter } from "../typings/index.js";
@@ -42,12 +42,12 @@ export class FeedGenerator {
     let count = 0;
 
     for (const page of pages) {
-      const item = new FeedInfo(
+      const item = new FeedItem(
         this.app,
         localeOption,
         <Page<{ git?: GitData }, FeedPluginFrontmatter>>page,
         feed,
-      ).getFeedItem();
+      ).getInfo();
 
       if (item) {
         feed.addItem(item);
