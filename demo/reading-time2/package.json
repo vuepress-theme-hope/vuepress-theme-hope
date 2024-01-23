@@ -18,7 +18,7 @@
     "@vuepress/client": "2.0.0-rc.0",
     "@vuepress/theme-default": "2.0.0-rc.0",
     "sass-loader": "13.3.3",
-    "vue": "3.4.8",
+    "vue": "3.4.15",
     "vuepress-plugin-reading-time2": "workspace:*",
     "vuepress-vite": "2.0.0-rc.0",
     "vuepress-webpack": "2.0.0-rc.0"
