@@ -34,7 +34,7 @@ export const getFeedPlugin = (
   legacy = false,
 ): Plugin | null => {
   // disable feed if feed is disabled or no options for feed plugin
-  if (options === false || (isPlainObject(options) && keys(options).length))
+  if (options === false || (isPlainObject(options) && !keys(options).length))
     return null;
 
   if (!feedPlugin) {
