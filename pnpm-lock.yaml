@@ -262,8 +262,8 @@ importers:
         specifier: 13.3.3
         version: 13.3.3(sass@1.69.7)(webpack@5.89.0)
       twikoo:
-        specifier: 1.6.30
-        version: 1.6.30
+        specifier: 1.6.31
+        version: 1.6.31
       vue:
         specifier: 3.4.8
         version: 3.4.8(typescript@5.3.3)
@@ -15109,6 +15109,11 @@ packages:
 
   /twikoo@1.6.30:
     resolution: {integrity: sha512-PW/RYvm/rGgxVMVisnGNrMci9i/kV/nm9d5ISx+tMK8cQVUvJwBvR/eC4rwkQQPvlEuWTE+Jl534XNKSZ9Yp9g==}
+    dev: false
+
+  /twikoo@1.6.31:
+    resolution: {integrity: sha512-hme7cwPP2y3Dbrwu5nHIEYIpPC7WqkC88+b3McdN7nw7tpSkqhRKMnIc8TZJpNAa2SSBGUprMNemL/4irPqMqA==}
+    dev: true
 
   /type-check@0.4.0:
     resolution: {integrity: sha512-XleUoc9uwGXqjWwXaUTZAmzMcFZ5858QA2vvx1Ur5xIcixXIP+8LnFDgRplU30us6teqdlskFfu+ae4K79Ooew==}
