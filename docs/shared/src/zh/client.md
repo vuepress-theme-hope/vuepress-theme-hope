@@ -62,16 +62,6 @@ locale.value; // '标题'
 
 :::
 
-### usePageTitle
-
-获得当前页面标题。
-
-```ts
-export type PageTitleRef = ComputedRef<string>;
-
-export const usePageTitle: () => PageTitleRef;
-```
-
 ## Utils
 
 ### 设备相关

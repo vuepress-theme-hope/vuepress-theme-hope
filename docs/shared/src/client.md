@@ -62,16 +62,6 @@ locale.value; // '标题'
 
 :::
 
-### usePageTitle
-
-Get title of current page.
-
-```ts
-export type PageTitleRef = ComputedRef<string>;
-
-export const usePageTitle: () => PageTitleRef;
-```
-
 ## Utils
 
 ### Device Related
