@@ -3,6 +3,7 @@ import { isPlainObject, isString } from "@vuepress/shared";
 import { useEventListener } from "@vueuse/core";
 import type { VNode } from "vue";
 import { computed, defineComponent, h } from "vue";
+import type { Router } from "vue-router";
 import { useRouter } from "vue-router";
 
 import AutoLink from "@theme-hope/components/AutoLink";
@@ -23,10 +24,9 @@ import "../styles/page-nav.scss";
  * Resolve `prev` or `next` config from frontmatter
  */
 const resolveFromFrontmatterConfig = (
+  router: Router,
   conf: unknown,
 ): AutoLinkOptions | null | false => {
-  const router = useRouter();
-
   if (conf === false) return false;
 
   if (isString(conf)) return resolveLinkInfo(router, conf, true);
@@ -76,10 +76,14 @@ export default defineComponent({
     const frontmatter = usePageFrontmatter<ThemeNormalPageFrontmatter>();
     const sidebarItems = useSidebarItems();
     const page = usePageData();
+    const router = useRouter();
     const navigate = useNavigate();
 
     const prevNavLink = computed(() => {
-      const prevConfig = resolveFromFrontmatterConfig(frontmatter.value.prev);
+      const prevConfig = resolveFromFrontmatterConfig(
+        router,
+        frontmatter.value.prev,
+      );
 
       return prevConfig === false
         ? null
@@ -94,7 +98,10 @@ export default defineComponent({
     });
 
     const nextNavLink = computed(() => {
-      const nextConfig = resolveFromFrontmatterConfig(frontmatter.value.next);
+      const nextConfig = resolveFromFrontmatterConfig(
+        router,
+        frontmatter.value.next,
+      );
 
       return nextConfig === false
         ? null

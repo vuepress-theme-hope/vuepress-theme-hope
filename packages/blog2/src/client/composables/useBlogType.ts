@@ -23,17 +23,16 @@ export const blogTypeMap = readonly(_blogTypeMap);
 export const useBlogType = <
   T extends Record<string, unknown> = Record<string, unknown>,
 >(
-  key = "",
+  key?: string,
 ): ComputedRef<BlogTypeData<T>> => {
+  const frontmatter = usePageFrontmatter<{
+    blog?: BlogTypeFrontmatterOptions;
+  }>();
   const router = useRouter();
   const routeLocale = useRouteLocale();
 
   return computed(() => {
-    const mapKey =
-      key ||
-      usePageFrontmatter<{ blog?: BlogTypeFrontmatterOptions }>().value.blog
-        ?.key ||
-      "";
+    const mapKey = key ?? frontmatter.value.blog?.key ?? "";
 
     if (!mapKey) {
       console.warn(`useBlogType: key not found`);

@@ -28,18 +28,17 @@ export const blogCategoryMap = readonly(_blogCategoryMap);
 export const useBlogCategory = <
   T extends Record<string, unknown> = Record<string, unknown>,
 >(
-  key = "",
+  key?: string,
 ): ComputedRef<BlogCategoryData<T>> => {
   const page = usePageData();
+  const frontmatter = usePageFrontmatter<{
+    blog?: BlogCategoryFrontmatterOptions;
+  }>();
   const router = useRouter();
   const routeLocale = useRouteLocale();
 
   return computed(() => {
-    const mapKey =
-      key ||
-      usePageFrontmatter<{ blog?: BlogCategoryFrontmatterOptions }>().value.blog
-        ?.key ||
-      "";
+    const mapKey = key ?? frontmatter.value.blog?.key ?? "";
 
     if (!mapKey) {
       console.warn(`useBlogCategory: key not found`);
