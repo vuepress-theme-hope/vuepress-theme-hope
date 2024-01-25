@@ -5,7 +5,7 @@ import {
   isString,
 } from "@vuepress/shared";
 import type { VNode } from "vue";
-import { computed, defineComponent, h, ref } from "vue";
+import { computed, defineComponent, h, shallowRef } from "vue";
 import { useRouter } from "vue-router";
 import {
   VPLink,
@@ -105,6 +105,12 @@ export default defineComponent({
     const getCatalogInfo = (): CatalogInfo[] =>
       router
         .getRoutes()
+        // filter real page
+        .filter(
+          ({ path }) =>
+            (endsWith(path, ".html") && !endsWith(path, "/index.html")) ||
+            endsWith(path, "/"),
+        )
         .map(({ meta, path }) => {
           const info = autoCatalogGetter(meta);
 
@@ -124,9 +130,9 @@ export default defineComponent({
             isPlainObject(item) && isString(item.title),
         );
 
-    const catalogInfo = ref(getCatalogInfo());
+    const catalogInfo = shallowRef(getCatalogInfo());
 
-    const getCatalogData = (): CatalogInfo[] => {
+    const catalogData = computed(() => {
       const base = props.base
         ? ensureLeadingSlash(ensureEndingSlash(props.base))
         : page.value.path.replace(/\/[^/]+$/, "/");
@@ -153,10 +159,7 @@ export default defineComponent({
 
           return (
             // level is less than or equal to max level
-            level - baseDepth <= props.level &&
-            // filter real page
-            ((endsWith(path, ".html") && !endsWith(path, "/index.html")) ||
-              endsWith(path, "/"))
+            level - baseDepth <= props.level
           );
         })
         .sort(
@@ -201,9 +204,10 @@ export default defineComponent({
           const { base, level } = info;
 
           switch (level - baseDepth) {
-            case 1:
+            case 1: {
               result.push(info);
               break;
+            }
 
             case 2: {
               const parent = result.find((item) => item.path === base);
@@ -229,9 +233,7 @@ export default defineComponent({
         });
 
       return result;
-    };
-
-    const catalogData = computed(() => getCatalogData());
+    });
 
     return (): VNode => {
       const isDeep = catalogData.value.some((item) => item.children);
