@@ -60,7 +60,11 @@ jobs:
           - ubuntu-latest
           - windows-latest
           - macos-latest
-    name: Test demos using ${{ matrix.bundler }} with node ${{ matrix.node }} on ${{ matrix.env }}
+        strategy:
+          - isolated
+          - hoisted
+          - pnp
+    name: Test demos using ${{ matrix.bundler }} with node ${{ matrix.node }} on ${{ matrix.env }}} using ${{ matrix.strategy }}
     runs-on: ${{ matrix.env }}
     if: inputs.strict-checking == true
     steps:
@@ -73,6 +77,15 @@ jobs:
         uses: actions/download-artifact@v4
         with:
           name: build-result
+
+      - name: Add pnpm config
+        run: |-
+          cat>.npmrc<<EOF
+          engine-strict=true
+          node-version=14.21.3
+          node-linker=${{ matrix.strategy }}
+          ${{ matrix.strategy == 'pnp' && 'symlink=false' || '' }}
+          EOF
 
       - name: Install pnpm
         uses: pnpm/action-setup@v2
