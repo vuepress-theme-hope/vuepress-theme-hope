@@ -29,20 +29,22 @@ export default defineComponent({
     const result = ref("");
     const inError = ref(false);
 
-    const katexRender = () => {
-      try {
-        result.value = katex.renderToString(input.value, {
-          displayMode: true,
-          throwOnError: true,
-        });
-        inError.value = false;
-      } catch (err) {
-        result.value = (err as Error).toString();
-        inError.value = true;
-      }
-    };
-
-    watch(input, katexRender, { immediate: true });
+    watch(
+      input,
+      () => {
+        try {
+          result.value = katex.renderToString(input.value, {
+            displayMode: true,
+            throwOnError: true,
+          });
+          inError.value = false;
+        } catch (err) {
+          result.value = (err as Error).toString();
+          inError.value = true;
+        }
+      },
+      { immediate: true },
+    );
 
     return (): VNode =>
       h("div", { class: "katex-playground" }, [

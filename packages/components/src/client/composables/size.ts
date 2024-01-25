@@ -54,9 +54,9 @@ export const useSize = <E extends HTMLElement>(
 
   onMounted(() => {
     updateHeight();
-    if (isRef(extraHeight)) watch(extraHeight, () => updateHeight());
-    useEventListener("orientationchange", () => updateHeight());
-    useEventListener("resize", () => updateHeight());
+    if (isRef(extraHeight)) watch(extraHeight, updateHeight);
+    useEventListener("orientationchange", updateHeight);
+    useEventListener("resize", updateHeight);
   });
 
   return {

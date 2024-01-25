@@ -87,8 +87,6 @@ export default defineComponent({
     onMounted(() => {
       const { page } = route.query;
 
-      console.log("mounted");
-
       void updatePage(page ? Number(page) : 1);
 
       watch(currentPage, () => {

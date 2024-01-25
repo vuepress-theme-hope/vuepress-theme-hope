@@ -2,7 +2,6 @@ import { useRouteLocale } from "@vuepress/client";
 import { isLinkHttp } from "@vuepress/shared";
 import { usePreferredLanguages } from "@vueuse/core";
 import { computed, watch } from "vue";
-import type { RouteRecordNormalized } from "vue-router";
 import { useRoute, useRouter } from "vue-router";
 import { entries } from "vuepress-shared/client";
 
@@ -29,7 +28,8 @@ export const setupRedirect = (): void => {
 
   const isRootLocale = computed(() => routeLocale.value === "/");
 
-  const handleLocaleRedirect = (routes: RouteRecordNormalized[]): void => {
+  const handleLocaleRedirect = (): void => {
+    const routes = router.getRoutes();
     const defaultLocale =
       defaultLocalePath &&
       routes.some(
@@ -103,8 +103,7 @@ export const setupRedirect = (): void => {
           if (isLinkHttp(to)) window.open(to);
           else void router.replace(to);
 
-      if (autoLocale && isRootLocale.value)
-        handleLocaleRedirect(router.getRoutes());
+      if (autoLocale && isRootLocale.value) handleLocaleRedirect();
     },
     { immediate: true },
   );

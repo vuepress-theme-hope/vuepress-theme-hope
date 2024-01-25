@@ -79,20 +79,17 @@ export const setupCopyCode = (): void => {
     }
   };
 
-  const generateCopyButton = (): Promise<void> =>
-    nextTick().then(
-      () =>
-        new Promise((resolve) => {
-          setTimeout(() => {
-            copyCodeSelector.forEach((item) => {
-              document
-                .querySelectorAll<HTMLElement>(item)
-                .forEach(insertCopyButton);
-            });
-            resolve();
-          }, copyCodeDelay || 500);
-        }),
+  const generateCopyButton = (): void => {
+    void nextTick().then(() =>
+      setTimeout(() => {
+        copyCodeSelector.forEach((item) => {
+          document
+            .querySelectorAll<HTMLElement>(item)
+            .forEach(insertCopyButton);
+        });
+      }, copyCodeDelay || 500),
     );
+  };
 
   const copyCodeBlockContent = (
     codeContainer: HTMLDivElement,
@@ -136,7 +133,7 @@ export const setupCopyCode = (): void => {
   onMounted(() => {
     if (copyCodeFancy) message = new Message();
 
-    if (!isMobile.value || copyCodeShowInMobile) void generateCopyButton();
+    if (!isMobile.value || copyCodeShowInMobile) generateCopyButton();
 
     useEventListener("click", (event) => {
       const el = event.target as HTMLElement;
@@ -162,7 +159,7 @@ export const setupCopyCode = (): void => {
     watch(
       () => page.value.path,
       () => {
-        if (!isMobile.value || copyCodeShowInMobile) void generateCopyButton();
+        if (!isMobile.value || copyCodeShowInMobile) generateCopyButton();
       },
     );
   });
