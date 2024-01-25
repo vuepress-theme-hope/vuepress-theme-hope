@@ -292,6 +292,12 @@ export const mdEnhancePlugin =
 
           // hide webpack warnings
           chainWebpack(bundlerOptions, app, (config) => {
+            // TODO: Probably need to fix upstream
+            config.resolve.set("conditionNames", [
+              "browser",
+              "import",
+              "module",
+            ]);
             config.module.set("exprContextCritical", false);
             config.module.set("unknownContextCritical", false);
           });
