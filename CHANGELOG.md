@@ -4,6 +4,23 @@ All notable changes to this project will be documented in this file. See [Conven
 
 <!-- #region recent-change -->
 
+## [2.0.0-rc.13](https://github.com/vuepress-theme-hope/vuepress-theme-hope/compare/v2.0.0-rc.12...v2.0.0-rc.13) (2024-01-25)
+
+### Features
+
+- **shared:** remove usePageTitle ([9458a40](https://github.com/vuepress-theme-hope/vuepress-theme-hope/commit/9458a405d0d964b6a92f041d1104dbcfc90c7e1e))
+- **theme:** improve HopeIcon ([c120670](https://github.com/vuepress-theme-hope/vuepress-theme-hope/commit/c120670864123cbd6da959eee3f133bc16d8e4e5))
+
+### Bug Fixes
+
+- **auto-catalog:** fix catalog issue in vue3.4, close [#3854](https://github.com/vuepress-theme-hope/vuepress-theme-hope/issues/3854) ([42898bd](https://github.com/vuepress-theme-hope/vuepress-theme-hope/commit/42898bd2eff8690f8528935bf3687e10f46a54b0))
+- avoid calling composition apis in computed hook ([993e1b9](https://github.com/vuepress-theme-hope/vuepress-theme-hope/commit/993e1b996f799d2c180a9bcd3c8e747580b61e6a))
+- **theme:** fix inject warning ([244f5b1](https://github.com/vuepress-theme-hope/vuepress-theme-hope/commit/244f5b1b8665e34f00e3e03fe63fcb1257d4e5a3))
+
+### Performance Improvements
+
+- use shadowRef if possible ([454eb32](https://github.com/vuepress-theme-hope/vuepress-theme-hope/commit/454eb32d0ac56f55107767a6afb7ec24eb32f35a))
+
 ## [2.0.0-rc.12](https://github.com/vuepress-theme-hope/vuepress-theme-hope/compare/v2.0.0-rc.11...v2.0.0-rc.12) (2024-01-25)
 
 ### Bug Fixes
