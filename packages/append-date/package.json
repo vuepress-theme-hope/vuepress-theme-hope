@@ -39,12 +39,6 @@
     "dev": "pnpm dev:ts",
     "dev:ts": "tsc -b tsconfig.build.json --watch"
   },
-  "engines": {
-    "node": ">=18.16.0",
-    "npm": ">=8",
-    "pnpm": ">=7",
-    "yarn": ">=2"
-  },
   "dependencies": {
     "@vuepress/core": "2.0.0-rc.0",
     "@vuepress/utils": "2.0.0-rc.0",
@@ -66,6 +60,12 @@
     "vuepress-webpack": {
       "optional": true
     }
+  },
+  "engines": {
+    "node": ">=18.16.0",
+    "npm": ">=8",
+    "pnpm": ">=7",
+    "yarn": ">=2"
   },
   "publishConfig": {
     "access": "public"

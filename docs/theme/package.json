@@ -1,6 +1,6 @@
 {
   "name": "theme-docs",
-  "type": "module",
+  "version": "2.0.0-rc.12",
   "private": true,
   "description": "Docs for vuepress-theme-hope",
   "license": "MIT",
@@ -9,6 +9,7 @@
     "email": "mister-hope@outlook.com",
     "url": "https://mister-hope.com"
   },
+  "type": "module",
   "scripts": {
     "docs:serve": "http-server -a localhost dist -o",
     "docs:vite-build": "vuepress-vite build src",
@@ -40,6 +41,5 @@
     "vuepress-theme-hope": "workspace:*",
     "vuepress-vite": "2.0.0-rc.0",
     "vuepress-webpack": "2.0.0-rc.0"
-  },
-  "version": "2.0.0-rc.12"
+  }
 }

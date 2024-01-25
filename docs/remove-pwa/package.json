@@ -1,6 +1,6 @@
 {
   "name": "remove-pwa-docs",
-  "type": "module",
+  "version": "2.0.0-rc.12",
   "private": true,
   "description": "Docs for vuepress-plugin-remove-pwa2",
   "license": "MIT",
@@ -9,6 +9,7 @@
     "email": "mister-hope@outlook.com",
     "url": "https://mister-hope.com"
   },
+  "type": "module",
   "scripts": {
     "docs:serve": "http-server -a localhost dist -o",
     "docs:vite-build": "vuepress-vite build src",
@@ -25,6 +26,5 @@
     "vue": "3.4.15",
     "vuepress-vite": "2.0.0-rc.0",
     "vuepress-webpack": "2.0.0-rc.0"
-  },
-  "version": "2.0.0-rc.12"
+  }
 }

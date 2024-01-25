@@ -1,10 +1,11 @@
 {
   "name": "theme-blog-demo",
-  "type": "module",
+  "version": "2.0.0-rc.12",
   "private": true,
   "description": "Blog demo for vuepress-theme-hope",
   "license": "MIT",
   "author": "Mr.Hope",
+  "type": "module",
   "scripts": {
     "demo:serve": "http-server -a localhost dist -o",
     "demo:vite-build": "vuepress-vite build src",
@@ -27,13 +28,12 @@
     "mathjax-full": "3.2.2",
     "mermaid": "10.7.0",
     "reveal.js": "5.0.4",
-    "sass-loader": "13.3.3",
     "sandpack-vue3": "3.1.11",
+    "sass-loader": "13.3.3",
     "vue": "3.4.15",
     "vuepress-shared": "workspace:*",
     "vuepress-theme-hope": "workspace:*",
     "vuepress-vite": "2.0.0-rc.0",
     "vuepress-webpack": "2.0.0-rc.0"
-  },
-  "version": "2.0.0-rc.12"
+  }
 }

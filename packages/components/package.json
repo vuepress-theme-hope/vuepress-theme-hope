@@ -42,12 +42,6 @@
     "dev:copy": "pnpm copy -w",
     "dev:ts": "tsc -b tsconfig.build.json --watch"
   },
-  "engines": {
-    "node": ">=18.16.0",
-    "npm": ">=8",
-    "pnpm": ">=7",
-    "yarn": ">=2"
-  },
   "dependencies": {
     "@stackblitz/sdk": "^1.9.0",
     "@vuepress/client": "2.0.0-rc.0",
@@ -111,5 +105,11 @@
     "vuepress-webpack": {
       "optional": true
     }
+  },
+  "engines": {
+    "node": ">=18.16.0",
+    "npm": ">=8",
+    "pnpm": ">=7",
+    "yarn": ">=2"
   }
 }

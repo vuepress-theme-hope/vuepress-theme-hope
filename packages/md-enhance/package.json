@@ -71,12 +71,6 @@
     "dev:copy": "pnpm copy -w",
     "dev:ts": "tsc -b tsconfig.build.json --watch"
   },
-  "engines": {
-    "node": ">=18.16.0",
-    "npm": ">=8",
-    "pnpm": ">=7",
-    "yarn": ">=2"
-  },
   "dependencies": {
     "@mdit/plugin-alert": "0.7.6",
     "@mdit/plugin-align": "0.7.6",
@@ -134,8 +128,8 @@
     "mathjax-full": "^3.2.2",
     "mermaid": "^10.6.0",
     "reveal.js": "^5.0.0",
-    "sass-loader": "^13.3.0",
     "sandpack-vue3": "^3.0.0",
+    "sass-loader": "^13.3.0",
     "vuepress": "2.0.0-rc.0",
     "vuepress-vite": "2.0.0-rc.0",
     "vuepress-webpack": "2.0.0-rc.0"
@@ -195,5 +189,11 @@
     "vuepress-webpack": {
       "optional": true
     }
+  },
+  "engines": {
+    "node": ">=18.16.0",
+    "npm": ">=8",
+    "pnpm": ">=7",
+    "yarn": ">=2"
   }
 }

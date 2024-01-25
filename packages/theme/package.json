@@ -56,8 +56,8 @@
   ],
   "scripts": {
     "build": "pnpm build:rollup && pnpm build:gulp && pnpm build:ts && pnpm copy",
-    "build:rollup": "rollup -c rollup.config.ts --configPlugin esbuild",
     "build:gulp": "gulp -f gulpfile.cjs",
+    "build:rollup": "rollup -c rollup.config.ts --configPlugin esbuild",
     "build:ts": "tsc -b tsconfig.release.json",
     "clean": "rimraf --glob ./lib ./*.tsbuildinfo",
     "copy": "pnpm copy:client && pnpm copy:bundle && pnpm copy:presets",
@@ -67,12 +67,6 @@
     "dev": "concurrently \"pnpm dev:copy\" \"pnpm dev:ts\"",
     "dev:copy": "concurrently \"pnpm copy:client -w\" \"pnpm copy:presets -w\"",
     "dev:ts": "tsc -b tsconfig.build.json --watch"
-  },
-  "engines": {
-    "node": ">=18.16.0",
-    "npm": ">=8",
-    "pnpm": ">=7",
-    "yarn": ">=2"
   },
   "dependencies": {
     "@vuepress/cli": "2.0.0-rc.0",
@@ -108,6 +102,11 @@
     "vuepress-plugin-seo2": "workspace:*",
     "vuepress-plugin-sitemap2": "workspace:*",
     "vuepress-shared": "workspace:*"
+  },
+  "devDependencies": {
+    "@vuepress/bundler-vite": "2.0.0-rc.0",
+    "@vuepress/bundler-webpack": "2.0.0-rc.0",
+    "@vuepress/markdown": "2.0.0-rc.0"
   },
   "peerDependencies": {
     "@vuepress/plugin-docsearch": "2.0.0-rc.0",
@@ -157,9 +156,10 @@
       "optional": true
     }
   },
-  "devDependencies": {
-    "@vuepress/bundler-vite": "2.0.0-rc.0",
-    "@vuepress/bundler-webpack": "2.0.0-rc.0",
-    "@vuepress/markdown": "2.0.0-rc.0"
+  "engines": {
+    "node": ">=18.16.0",
+    "npm": ">=8",
+    "pnpm": ">=7",
+    "yarn": ">=2"
   }
 }

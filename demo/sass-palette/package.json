@@ -1,5 +1,6 @@
 {
   "name": "sass-palette-demo",
+  "version": "2.0.0-rc.12",
   "private": true,
   "description": "Demo for vuepress-plugin-sass-palette",
   "license": "MIT",
@@ -22,6 +23,5 @@
     "vuepress-plugin-sass-palette": "workspace:*",
     "vuepress-vite": "2.0.0-rc.0",
     "vuepress-webpack": "2.0.0-rc.0"
-  },
-  "version": "2.0.0-rc.12"
+  }
 }

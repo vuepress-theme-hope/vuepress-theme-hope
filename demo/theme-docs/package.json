@@ -1,10 +1,11 @@
 {
   "name": "theme-docs-demo",
-  "type": "module",
+  "version": "2.0.0-rc.12",
   "private": true,
   "description": "Theme demo for vuepress-theme-hope",
   "license": "MIT",
   "author": "Mr.Hope",
+  "type": "module",
   "scripts": {
     "demo:serve": "http-server -a localhost dist -o",
     "demo:vite-build": "vuepress-vite build src",
@@ -32,6 +33,5 @@
     "vuepress-theme-hope": "workspace:*",
     "vuepress-vite": "2.0.0-rc.0",
     "vuepress-webpack": "2.0.0-rc.0"
-  },
-  "version": "2.0.0-rc.12"
+  }
 }

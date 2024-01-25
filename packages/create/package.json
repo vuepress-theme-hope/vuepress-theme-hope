@@ -43,12 +43,6 @@
     "dev": "pnpm dev:ts",
     "dev:ts": "tsc -b tsconfig.build.json --watch"
   },
-  "engines": {
-    "node": ">=18.16.0",
-    "npm": ">=8",
-    "pnpm": ">=7",
-    "yarn": ">=2"
-  },
   "dependencies": {
     "cac": "6.7.14",
     "execa": "8.0.1",
@@ -56,5 +50,11 @@
   },
   "devDependencies": {
     "@types/inquirer": "9.0.7"
+  },
+  "engines": {
+    "node": ">=18.16.0",
+    "npm": ">=8",
+    "pnpm": ">=7",
+    "yarn": ">=2"
   }
 }
