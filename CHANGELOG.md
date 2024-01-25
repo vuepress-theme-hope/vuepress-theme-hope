@@ -4,6 +4,14 @@ All notable changes to this project will be documented in this file. See [Conven
 
 <!-- #region recent-change -->
 
+## [2.0.0-rc.12](https://github.com/vuepress-theme-hope/vuepress-theme-hope/compare/v2.0.0-rc.11...v2.0.0-rc.12) (2024-01-25)
+
+### Bug Fixes
+
+- **md-enhance:** fix markMap options, close [#3853](https://github.com/vuepress-theme-hope/vuepress-theme-hope/issues/3853) ([df3675c](https://github.com/vuepress-theme-hope/vuepress-theme-hope/commit/df3675c9eb0af236aae17aa8f7265a17bf66e227))
+- **theme:** fix feed options for feed, close [#3847](https://github.com/vuepress-theme-hope/vuepress-theme-hope/issues/3847) ([a6a7948](https://github.com/vuepress-theme-hope/vuepress-theme-hope/commit/a6a79484ce9bd974ff0c7da65e120810718b6e05))
+- **theme:** fix render issue with darkmode ([07f32ed](https://github.com/vuepress-theme-hope/vuepress-theme-hope/commit/07f32edac9a7ee079ea3f02a075d6d2b3245a8bc))
+
 ## [2.0.0-rc.11](https://github.com/vuepress-theme-hope/vuepress-theme-hope/compare/v2.0.0-rc.10...v2.0.0-rc.11) (2024-01-06)
 
 ### Features

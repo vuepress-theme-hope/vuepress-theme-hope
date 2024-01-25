@@ -25,5 +25,6 @@
     "vue": "3.4.15",
     "vuepress-vite": "2.0.0-rc.0",
     "vuepress-webpack": "2.0.0-rc.0"
-  }
+  },
+  "version": "2.0.0-rc.12"
 }
