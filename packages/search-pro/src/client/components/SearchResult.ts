@@ -2,7 +2,7 @@ import { useRouteLocale } from "@vuepress/client";
 import { isPlainObject, isString } from "@vuepress/shared";
 import { useEventListener } from "@vueuse/core";
 import type { VNode } from "vue";
-import { computed, defineComponent, h, ref, toRef, watch } from "vue";
+import { computed, defineComponent, h, reactive, ref, toRef, watch } from "vue";
 import { useRouter } from "vue-router";
 import { VPLink, useLocaleConfig } from "vuepress-shared/client";
 
@@ -67,7 +67,7 @@ export default defineComponent({
     const query = toRef(props, "query");
     const { results, searching } = useSearchResult(query);
 
-    const activatedHistoryStatus = ref({ isQuery: true, index: 0 });
+    const activatedHistoryStatus = reactive({ isQuery: true, index: 0 });
     const activatedResultIndex = ref(0);
     const activatedResultContentIndex = ref(0);
 
@@ -88,40 +88,32 @@ export default defineComponent({
       }).fullPath;
 
     const activePreviousHistory = (): void => {
-      const { isQuery, index } = activatedHistoryStatus.value;
+      const { isQuery, index } = activatedHistoryStatus;
 
-      if (index === 0)
-        activatedHistoryStatus.value = {
-          isQuery: !isQuery,
-          index: isQuery
-            ? resultHistory.value.length - 1
-            : queryHistory.value.length - 1,
-        };
-      else
-        activatedHistoryStatus.value = {
-          isQuery,
-          index: index - 1,
-        };
+      if (index === 0) {
+        activatedHistoryStatus.isQuery = !isQuery;
+        activatedHistoryStatus.index = isQuery
+          ? resultHistory.value.length - 1
+          : queryHistory.value.length - 1;
+      } else {
+        activatedHistoryStatus.index = index - 1;
+      }
     };
 
     const activeNextHistory = (): void => {
-      const { isQuery, index } = activatedHistoryStatus.value;
+      const { isQuery, index } = activatedHistoryStatus;
 
       if (
         index ===
         (isQuery
           ? queryHistory.value.length - 1
           : resultHistory.value.length - 1)
-      )
-        activatedHistoryStatus.value = {
-          isQuery: !isQuery,
-          index: 0,
-        };
-      else
-        activatedHistoryStatus.value = {
-          isQuery,
-          index: index + 1,
-        };
+      ) {
+        activatedHistoryStatus.isQuery = !isQuery;
+        activatedHistoryStatus.index = 0;
+      } else {
+        activatedHistoryStatus.index = index + 1;
+      }
     };
 
     const activePreviousResult = (): void => {
@@ -210,9 +202,9 @@ export default defineComponent({
         } else if (event.key === "ArrowDown") {
           activeNextHistory();
         } else if (event.key === "Enter") {
-          const { index } = activatedHistoryStatus.value;
+          const { index } = activatedHistoryStatus;
 
-          if (activatedHistoryStatus.value.isQuery) {
+          if (activatedHistoryStatus.isQuery) {
             emit("updateQuery", queryHistory.value[index]);
             event.preventDefault();
           } else {
@@ -267,8 +259,8 @@ export default defineComponent({
                                   "search-pro-result-item",
                                   {
                                     active:
-                                      activatedHistoryStatus.value.isQuery &&
-                                      activatedHistoryStatus.value.index ===
+                                      activatedHistoryStatus.isQuery &&
+                                      activatedHistoryStatus.index ===
                                         historyIndex,
                                   },
                                 ],
@@ -320,8 +312,8 @@ export default defineComponent({
                                   "search-pro-result-item",
                                   {
                                     active:
-                                      !activatedHistoryStatus.value.isQuery &&
-                                      activatedHistoryStatus.value.index ===
+                                      !activatedHistoryStatus.isQuery &&
+                                      activatedHistoryStatus.index ===
                                         historyIndex,
                                   },
                                 ],

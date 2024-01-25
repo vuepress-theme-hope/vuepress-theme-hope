@@ -4,7 +4,7 @@ import {
   useRouteLocale,
 } from "@vuepress/client";
 import type { ComputedRef } from "vue";
-import { computed, ref } from "vue";
+import { computed, readonly, shallowRef } from "vue";
 import { useRouter } from "vue-router";
 import { resolveRouteWithRedirect } from "vuepress-shared/client";
 
@@ -21,7 +21,9 @@ declare const __VUE_HMR_RUNTIME__: Record<string, any>;
 declare const __VUEPRESS_DEV__: boolean;
 declare const BLOG_META_SCOPE: string;
 
-export const blogCategoryMap = ref(categoryMap);
+const _blogCategoryMap = shallowRef(categoryMap);
+
+export const blogCategoryMap = readonly(_blogCategoryMap);
 
 export const useBlogCategory = <
   T extends Record<string, unknown> = Record<string, unknown>,
@@ -91,5 +93,5 @@ if (__VUEPRESS_DEV__ && (import.meta.webpackHot || import.meta.hot))
   __VUE_HMR_RUNTIME__["updateBlogCategory"] = (
     map: Record<string, CategoryMap>,
   ): void => {
-    blogCategoryMap.value = map;
+    _blogCategoryMap.value = map;
   };

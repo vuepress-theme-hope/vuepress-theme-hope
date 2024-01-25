@@ -1,6 +1,6 @@
 import { usePageFrontmatter, useRouteLocale } from "@vuepress/client";
 import type { ComputedRef } from "vue";
-import { computed, ref } from "vue";
+import { computed, readonly, shallowRef } from "vue";
 import { useRouter } from "vue-router";
 import { resolveRouteWithRedirect } from "vuepress-shared/client";
 
@@ -16,7 +16,9 @@ declare const __VUE_HMR_RUNTIME__: Record<string, unknown>;
 declare const __VUEPRESS_DEV__: boolean;
 declare const BLOG_META_SCOPE: string;
 
-export const blogTypeMap = ref(typeMap);
+const _blogTypeMap = shallowRef(typeMap);
+
+export const blogTypeMap = readonly(_blogTypeMap);
 
 export const useBlogType = <
   T extends Record<string, unknown> = Record<string, unknown>,
@@ -75,5 +77,5 @@ if (__VUEPRESS_DEV__ && (import.meta.webpackHot || import.meta.hot))
   __VUE_HMR_RUNTIME__["updateBlogType"] = (
     map: Record<string, TypeMap>,
   ): void => {
-    blogTypeMap.value = map;
+    _blogTypeMap.value = map;
   };
