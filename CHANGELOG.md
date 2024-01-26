@@ -4,6 +4,17 @@ All notable changes to this project will be documented in this file. See [Conven
 
 <!-- #region recent-change -->
 
+## [2.0.0-rc.14](https://github.com/vuepress-theme-hope/vuepress-theme-hope/compare/v2.0.0-rc.13...v2.0.0-rc.14) (2024-01-26)
+
+### Features
+
+- bump to vp2rc2 ([05f917d](https://github.com/vuepress-theme-hope/vuepress-theme-hope/commit/05f917d5d74059ee55457334d568f07b5af76074))
+- **md-enhance:** improve sandpack attr handle ([be94b6d](https://github.com/vuepress-theme-hope/vuepress-theme-hope/commit/be94b6db84454fb5db858c3e1ec0161625944a91))
+
+### Bug Fixes
+
+- **append-date:** avoid covering the file content ([e97cb05](https://github.com/vuepress-theme-hope/vuepress-theme-hope/commit/e97cb05a88056df5b8aa1d0ef1d4d3e71c2fa621))
+
 ## [2.0.0-rc.13](https://github.com/vuepress-theme-hope/vuepress-theme-hope/compare/v2.0.0-rc.12...v2.0.0-rc.13) (2024-01-25)
 
 ### Features
