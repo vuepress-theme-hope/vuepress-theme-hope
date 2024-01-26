@@ -14,7 +14,7 @@ import type {
   FeedItemInformation,
 } from "../../typings/index.js";
 import { FEED_GENERATOR, encodeXML } from "../../utils/index.js";
-import type { Feed } from "../feed.js";
+import type { FeedStore } from "../feedStore.js";
 
 const genCategory = (category: FeedCategory): RSSCategory => {
   const { name, domain } = category;
@@ -53,8 +53,8 @@ const genEnclosure = (enclosure: FeedEnclosure): RSSEnclosure => ({
  *
  * @see https://validator.w3.org/feed/docs/rss2.html
  */
-export const renderRSS = (feed: Feed): string => {
-  const { links, channel } = feed.options;
+export const generateRssFeed = (feedStore: FeedStore): string => {
+  const { links, channel } = feedStore.options;
   let hasContent = false;
 
   const content: RSSContent = {
@@ -119,7 +119,7 @@ export const renderRSS = (feed: Feed): string => {
    *
    * @see https://validator.w3.org/feed/docs/rss2.html#comments
    */
-  content.rss.channel.category = Array.from(feed.categories).map(
+  content.rss.channel.category = Array.from(feedStore.categories).map(
     (category) => ({ _text: category }),
   );
 
@@ -128,7 +128,7 @@ export const renderRSS = (feed: Feed): string => {
    *
    * @see https://validator.w3.org/feed/docs/rss2.html#hrelementsOfLtitemgt
    */
-  content.rss.channel.item = feed.items.map((entry) => {
+  content.rss.channel.item = feedStore.items.map((entry) => {
     const item: RSSItem = {
       title: { _text: entry.title },
       link: { _text: entry.link },

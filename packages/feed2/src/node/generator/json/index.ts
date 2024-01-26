@@ -3,7 +3,7 @@ import { isArray } from "vuepress-shared/node";
 
 import type { JSONAuthor, JSONContent, JSONItem } from "./typings.js";
 import type { FeedAuthor } from "../../typings/index.js";
-import type { Feed } from "../feed.js";
+import type { FeedStore } from "../feedStore.js";
 
 const formatAuthor = (author: FeedAuthor): JSONAuthor => ({
   name: author.name!,
@@ -16,8 +16,8 @@ const formatAuthor = (author: FeedAuthor): JSONAuthor => ({
  *
  * @see https://jsonfeed.org/version/1.1
  */
-export const renderJSON = (feed: Feed): string => {
-  const { channel, links } = feed.options;
+export const generateJSONFeed = (feedStore: FeedStore): string => {
+  const { channel, links } = feedStore.options;
 
   const content: JSONContent = {
     version: "https://jsonfeed.org/version/1.1",
@@ -42,7 +42,7 @@ export const renderJSON = (feed: Feed): string => {
   if (channelAuthors.length)
     content.authors = channelAuthors.map((author) => formatAuthor(author));
 
-  content.items = feed.items.map((item) => {
+  content.items = feedStore.items.map((item) => {
     const feedItem: JSONItem = {
       title: item.title,
       url: item.link,

@@ -9,7 +9,7 @@ import type {
 } from "./typings.js";
 import type { FeedAuthor, FeedCategory } from "../../typings/index.js";
 import { FEED_GENERATOR, encodeXML } from "../../utils/index.js";
-import type { Feed } from "../feed.js";
+import type { FeedStore } from "../feedStore.js";
 
 const getAuthor = (author: FeedAuthor): AtomAuthor => {
   const { name = "Unknown", email, url } = author;
@@ -37,8 +37,8 @@ const genCategory = (category: FeedCategory): AtomCategory => {
  *
  * @see http://www.atomenabled.org/developers/syndication/
  */
-export const renderAtom = (feed: Feed): string => {
-  const { channel, links } = feed.options;
+export const generateAtomFeed = (feedStore: FeedStore): string => {
+  const { channel, links } = feedStore.options;
 
   const content: AtomContent = {
     _declaration: {
@@ -95,18 +95,18 @@ export const renderAtom = (feed: Feed): string => {
 
   if (channel.copyright) content.feed.rights = channel.copyright;
 
-  content.feed.category = Array.from(feed.categories).map((category) => ({
+  content.feed.category = Array.from(feedStore.categories).map((category) => ({
     _attributes: { term: category },
   }));
 
-  content.feed.contributor = Array.from(feed.contributors)
+  content.feed.contributor = Array.from(feedStore.contributors)
     .filter((contributor) => contributor.name)
     .map((contributor) => getAuthor(contributor));
 
   /**
    * "entry" nodes
    */
-  content.feed.entry = feed.items.map((item) => {
+  content.feed.entry = feedStore.items.map((item) => {
     // entry: required elements
     const entry: AtomEntry = {
       title: { _attributes: { type: "text" }, _text: item.title },

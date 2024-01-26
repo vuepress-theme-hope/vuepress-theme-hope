@@ -14,9 +14,7 @@ import {
   isUrl,
 } from "vuepress-shared/node";
 
-import { getPageRenderContent } from "./content.js";
-import type { Feed } from "../generator/feed.js";
-import type { ResolvedFeedOptions } from "../options.js";
+import type { ResolvedFeedOptions } from "./options.js";
 import type {
   FeedAuthor,
   FeedCategory,
@@ -26,8 +24,12 @@ import type {
   FeedGetter,
   FeedItemInformation,
   FeedPluginFrontmatter,
-} from "../typings/index.js";
-import { getImageMineType, resolveUrl } from "../utils/index.js";
+} from "./typings/index.js";
+import {
+  getImageMineType,
+  getPageRenderContent,
+  getUrl,
+} from "./utils/index.js";
 
 export class FeedItem {
   private pageOptions: FeedFrontmatterOption;
@@ -43,7 +45,6 @@ export class FeedItem {
       { excerpt?: string; git?: GitData },
       FeedPluginFrontmatter
     >,
-    private feed: Feed,
   ) {
     this.hostname = this.options.hostname;
     this.base = this.app.options.base;
@@ -62,7 +63,7 @@ export class FeedItem {
   private get link(): string {
     if (isFunction(this.getter.link)) return this.getter.link(this.page);
 
-    return resolveUrl(this.hostname, this.base, this.page.path);
+    return getUrl(this.hostname, this.base, this.page.path);
   }
 
   private get description(): string | null {
@@ -179,13 +180,13 @@ export class FeedItem {
     const { banner, cover } = this.frontmatter;
 
     if (banner) {
-      if (isAbsoluteUrl(banner)) return resolveUrl(hostname, base, banner);
+      if (isAbsoluteUrl(banner)) return getUrl(hostname, base, banner);
 
       if (isUrl(banner)) return banner;
     }
 
     if (cover) {
-      if (isAbsoluteUrl(cover)) return resolveUrl(hostname, base, cover);
+      if (isAbsoluteUrl(cover)) return getUrl(hostname, base, cover);
 
       if (isUrl(cover)) return cover;
     }
@@ -193,8 +194,7 @@ export class FeedItem {
     const result = /!\[.*?\]\((.*?)\)/iu.exec(this.page.content);
 
     if (result) {
-      if (isAbsoluteUrl(result[1]))
-        return resolveUrl(hostname, base, result[1]);
+      if (isAbsoluteUrl(result[1])) return getUrl(hostname, base, result[1]);
 
       if (isUrl(result[1])) return result[1];
     }
@@ -247,13 +247,6 @@ export class FeedItem {
 
     // we need at least title or description
     if (!title && !description) return null;
-
-    // add category to feed
-    if (category) category.forEach((item) => this.feed.addCategory(item.name));
-
-    // add contributor to feed
-    if (contributor)
-      contributor.forEach((item) => this.feed.addContributor(item));
 
     return {
       title,

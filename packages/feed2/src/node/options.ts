@@ -21,7 +21,7 @@ import type {
   FeedLinks,
   FeedOptions,
 } from "./typings/index.js";
-import { resolveUrl } from "./utils/index.js";
+import { getUrl } from "./utils/index.js";
 
 const __dirname = getDirname(import.meta.url);
 
@@ -133,7 +133,7 @@ export const getFeedChannelOption = (
 
   const defaultChannelOption: FeedChannelOption = {
     title: locales[localePath]?.title || title || locales["/"]?.title || "",
-    link: resolveUrl(hostname, base, localePath),
+    link: getUrl(hostname, base, localePath),
     description:
       locales[localePath]?.description ||
       description ||
@@ -144,10 +144,10 @@ export const getFeedChannelOption = (
     pubDate: new Date(),
     lastUpdated: new Date(),
     ...(icon
-      ? { icon: isLinkHttp(icon) ? icon : resolveUrl(hostname, base, icon) }
+      ? { icon: isLinkHttp(icon) ? icon : getUrl(hostname, base, icon) }
       : {}),
     ...(image
-      ? { image: isLinkHttp(image) ? image : resolveUrl(hostname, base, image) }
+      ? { image: isLinkHttp(image) ? image : getUrl(hostname, base, image) }
       : {}),
   };
 
@@ -156,14 +156,14 @@ export const getFeedChannelOption = (
       ? {
           icon: isLinkHttp(channel.icon)
             ? channel.icon
-            : resolveUrl(hostname, base, channel.icon),
+            : getUrl(hostname, base, channel.icon),
         }
       : {}),
     ...(channel.image
       ? {
           image: isLinkHttp(channel.image)
             ? channel.image
-            : resolveUrl(hostname, base, channel.image),
+            : getUrl(hostname, base, channel.image),
         }
       : {}),
   });
@@ -219,10 +219,10 @@ export const getFeedLinks = (
 
   return {
     localePath,
-    atom: resolveUrl(hostname, base, atomOutputFilename),
-    atomXsl: resolveUrl(hostname, base, atomXslFilename),
-    json: resolveUrl(hostname, base, jsonOutputFilename),
-    rss: resolveUrl(hostname, base, rssOutputFilename),
-    rssXsl: resolveUrl(hostname, base, rssXslFilename),
+    atom: getUrl(hostname, base, atomOutputFilename),
+    atomXsl: getUrl(hostname, base, atomXslFilename),
+    json: getUrl(hostname, base, jsonOutputFilename),
+    rss: getUrl(hostname, base, rssOutputFilename),
+    rssXsl: getUrl(hostname, base, rssXslFilename),
   };
 };

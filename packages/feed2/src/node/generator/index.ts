@@ -1,2 +1,2 @@
-export * from "./feed.js";
+export * from "./feedStore.js";
 export * from "./generator.js";

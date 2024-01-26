@@ -3,8 +3,8 @@ import type { App, Page } from "vuepress/core";
 import { colors, fs, path } from "vuepress/utils";
 import { entries, fromEntries } from "vuepress-shared/node";
 
-import { Feed } from "./feed.js";
-import { FeedItem } from "../extractor/index.js";
+import { FeedStore } from "./feedStore.js";
+import { FeedItem } from "../feedItem.js";
 import type { ResolvedFeedOptionsMap } from "../options.js";
 import { getFeedChannelOption, getFeedLinks, getFilename } from "../options.js";
 import type { FeedPluginFrontmatter } from "../typings/index.js";
@@ -12,16 +12,16 @@ import { logger } from "../utils/index.js";
 
 export class FeedGenerator {
   /** feed 生成器 */
-  feedMap: Record<string, Feed>;
+  private map: Record<string, FeedStore>;
 
   constructor(
     private app: App,
     private options: ResolvedFeedOptionsMap,
   ) {
-    this.feedMap = fromEntries(
+    this.map = fromEntries(
       entries(options).map(([localePath, localeOptions]) => [
         localePath,
-        new Feed({
+        new FeedStore({
           channel: getFeedChannelOption(app, localeOptions, localePath),
           links: getFeedLinks(app, localeOptions, localePath),
         }),
@@ -30,30 +30,26 @@ export class FeedGenerator {
   }
 
   addPages(localePath: string): void {
-    const feed = this.feedMap[localePath];
+    const feedStore = this.map[localePath];
     const localeOption = this.options[localePath];
     const { count: feedCount = 100, filter, sorter } = localeOption;
     const pages = this.app.pages
       .filter((page) => page.pathLocale === localePath)
       .filter(filter)
-      .sort(sorter)
-      .slice(0, feedCount);
-
-    let count = 0;
+      .sort(sorter);
 
     for (const page of pages) {
-      const item = new FeedItem(
+      const feedItem = new FeedItem(
         this.app,
         localeOption,
         <Page<{ git?: GitData }, FeedPluginFrontmatter>>page,
-        feed,
-      ).getInfo();
+      );
 
-      if (item) {
-        feed.addItem(item);
-        count += 1;
-      }
+      feedStore.add(feedItem);
+      if (feedStore.items.length === feedCount) break;
     }
+
+    const count = feedStore.items.length;
 
     logger.succeed(
       `added ${colors.cyan(
@@ -71,7 +67,7 @@ export class FeedGenerator {
       ...entries(this.options).map(async ([localePath, localeOptions]) => {
         // current locale has valid output
         if (localeOptions.atom || localeOptions.json || localeOptions.rss) {
-          const feed = this.feedMap[localePath];
+          const feed = this.map[localePath];
           const { atomOutputFilename, jsonOutputFilename, rssOutputFilename } =
             getFilename(localeOptions, localePath);
 

@@ -4,7 +4,7 @@ import { keys } from "vuepress-shared/node";
 
 import type { ResolvedFeedOptionsMap } from "./options.js";
 import { getFilename } from "./options.js";
-import { resolveUrl } from "./utils/index.js";
+import { getUrl } from "./utils/index.js";
 
 export const injectLinksToHead = (
   app: App,
@@ -29,7 +29,7 @@ export const injectLinksToHead = (
       {
         rel: "alternate",
         type,
-        href: resolveUrl(hostname, base, fileName),
+        href: getUrl(hostname, base, fileName),
         title: `${
           siteData.title || siteData.locales["/"]?.title || ""
         } ${name} Feed`,
@@ -76,7 +76,7 @@ export const injectLinksToHead = (
           {
             rel: "alternate",
             type,
-            href: resolveUrl(localeOptions.hostname, base, fileName),
+            href: getUrl(localeOptions.hostname, base, fileName),
             title: `${
               siteData.locales[pathLocale]?.title ||
               siteData.title ||
