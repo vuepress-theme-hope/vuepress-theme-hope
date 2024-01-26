@@ -4,6 +4,13 @@ All notable changes to this project will be documented in this file. See [Conven
 
 <!-- #region recent-change -->
 
+## [2.0.0-rc.15](https://github.com/vuepress-theme-hope/vuepress-theme-hope/compare/v2.0.0-rc.14...v2.0.0-rc.15) (2024-01-26)
+
+### Bug Fixes
+
+- **create:** fix create flow ([2cb4b30](https://github.com/vuepress-theme-hope/vuepress-theme-hope/commit/2cb4b30cfda84dbaf22f38d455e83df556743a75))
+- **theme:** fix VuePress detect ([fd2fae0](https://github.com/vuepress-theme-hope/vuepress-theme-hope/commit/fd2fae026ee058850e2ec5e5f125fbd4493caf02))
+
 ## [2.0.0-rc.14](https://github.com/vuepress-theme-hope/vuepress-theme-hope/compare/v2.0.0-rc.13...v2.0.0-rc.14) (2024-01-26)
 
 ### Features

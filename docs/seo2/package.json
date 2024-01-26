@@ -1,6 +1,6 @@
 {
   "name": "seo-docs",
-  "version": "2.0.0-rc.14",
+  "version": "2.0.0-rc.15",
   "private": true,
   "description": "Docs for vuepress-plugin-seo2",
   "license": "MIT",
