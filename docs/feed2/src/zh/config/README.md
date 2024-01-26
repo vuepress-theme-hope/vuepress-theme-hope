@@ -115,6 +115,26 @@ Feed 项目的排序器。
 
 可用选项详见 [配置 → 频道设置](channel.md)
 
+## devServer
+
+- 类型: `boolean`
+- 默认值: `false`
+
+是否在开发服务器中启用
+
+::: note
+
+由于性能原因，我们不提供热更新。重启开发服务器以同步你的变更。
+
+::
+
+## devHostname
+
+- 类型: `string`
+- 默认值: `"http://localhost:${port}"`
+
+开发服务器使用的主机名
+
 ## atomOutputFilename
 
 - 类型: `string`
@@ -125,9 +145,9 @@ Atom 格式输出路径，相对于输出路径。
 ## atomXslTemplate
 
 - 类型: `string`
-- 默认值: `"vuepress-plugin-feed2/templates/atom.xsl"`
+- 默认值: `vuepress-plugin-feed2/templates/atom.xsl` 的内容
 
-Atom xsl 模板文件路径
+Atom xsl 模板文件没人陪美国
 
 ## atomXslFilename
 
@@ -153,9 +173,9 @@ RSS 格式输出路径，相对于输出路径。
 ## rssXslTemplate
 
 - 类型: `string`
-- 默认值: `"vuepress-plugin-feed2/templates/rss.xsl"`
+- 默认值: `vuepress-plugin-feed2/templates/rss.xsl` 的内容
 
-RSS xsl 模板文件路径。
+RSS xsl 模板文件内容。
 
 ## rssXslFilename
 

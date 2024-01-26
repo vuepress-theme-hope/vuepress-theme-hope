@@ -23,7 +23,13 @@ icon: lightbulb
 
 考虑到现在 Feed 已经很小众，本插件旨在提供最小配置来尽可能自动生成详细的 Feed 文件。当然本插件也预留了充足的设置项，以让你自由定义 Feed 的输出内容。
 
+## 预览
+
+当你在浏览器中打开 feed 文件时，我们会通过 xsl 模板将 atom 和 rss feed xml 魔法般地转换为可读的 html。你可以查看本站的 [atom](/zh/atom.xml) 和 [rss](/zh/rss.xml) feed 作为案例！
+
 为了正确生成链接地址，你需要在插件选项中设置 `hostname` (部署域名)，
+
+如果你想在开发服务器中预览 Feed，你需要在插件选项中设置 `devServer: true`。如果你没有使用默认的 `http://localhost:{port}`，你可能还需要设置 `devHostname`。
 
 ## 频道设置
 

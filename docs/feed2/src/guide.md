@@ -25,6 +25,12 @@ Considering that rare people stick to feed now, this plugin provides a minimal c
 
 To correctly generate the link address, you need to set `hostname` (deployment domain name) in the plugin options,
 
+## Preview
+
+When you open the feed file in browser, we magically convert atom and rss feed xml to human readable html via xsl template. Check [atom](/atom.xml) and [rss](/rss.xml) feed of this site as an example!
+
+If you want to preview your feed in devServer, set `devServer: true` in plugin options. You may also need to set `devHostname` if you are not using the default `http://localhost:{port}`.
+
 ## Channel settings
 
 You can customize the feed channel information by setting the `channel` option.

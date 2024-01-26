@@ -1,10 +1,8 @@
 import type { GitData } from "@vuepress/plugin-git";
 import type { App, Page } from "vuepress/core";
-import { getDirname, path } from "vuepress/utils";
 import {
   compareDate,
   deepAssign,
-  ensureEndingSlash,
   fromEntries,
   isArray,
   isFunction,
@@ -22,12 +20,6 @@ import type {
 } from "./typings/index.js";
 import { getUrl } from "./utils/index.js";
 
-const __dirname = getDirname(import.meta.url);
-
-const TEMPLATE_FOLDER = ensureEndingSlash(
-  path.resolve(__dirname, "../../templates"),
-);
-
 export interface ResolvedFeedOptions
   extends Omit<BaseFeedOptions, "sorter" | "filter" | "preservedElements">,
     Required<Pick<BaseFeedOptions, "sorter" | "filter">> {
@@ -37,12 +29,19 @@ export interface ResolvedFeedOptions
 
 export type ResolvedFeedOptionsMap = Record<string, ResolvedFeedOptions>;
 
-export const ensureHostName = (options: Partial<FeedOptions>): boolean => {
-  // make sure hostname do not end with `/`
-  if (options.hostname) {
-    options.hostname = isLinkHttp(options.hostname)
-      ? removeEndingSlash(options.hostname)
-      : `https://${removeEndingSlash(options.hostname)}`;
+export const ensureHostName = (
+  app: App,
+  options: Partial<FeedOptions>,
+): boolean => {
+  const hostname = app.env.isDev
+    ? options.devHostname || `http://localhost:${app.options.port}`
+    : options.hostname;
+
+  if (hostname) {
+    // make sure hostname do not end with `/`
+    options.hostname = isLinkHttp(hostname)
+      ? removeEndingSlash(hostname)
+      : `https://${removeEndingSlash(hostname)}`;
 
     return true;
   }
@@ -73,6 +72,8 @@ export const getFeedOptions = (
       const preservedElements =
         options.locales?.[localePath]?.preservedElements ||
         options.preservedElements;
+      // eslint-disable-next-line @typescript-eslint/no-unused-vars
+      const { hostname, devServer, locales, ...rest } = options;
 
       return [
         localePath,
@@ -97,12 +98,12 @@ export const getFeedOptions = (
                 ? new Date(pageB.data.git?.createdTime)
                 : pageB.frontmatter.date,
             ),
-          ...options,
+
+          ...rest,
           ...options.locales?.[localePath],
 
-          // make sure hostname is not overrode
-          hostname: options.hostname,
-
+          // make sure these are not overrode
+          hostname,
           isPreservedElement: isArray(preservedElements)
             ? (tagName: string): boolean =>
                 preservedElements.some((item) =>
@@ -176,11 +177,9 @@ export const getFilename = (
     FeedOptions,
     | "atomOutputFilename"
     | "atomXslFilename"
-    | "atomXslTemplate"
     | "jsonOutputFilename"
     | "rssOutputFilename"
     | "rssXslFilename"
-    | "rssXslTemplate"
   >
 > => ({
   atomOutputFilename: `${removeLeadingSlash(prefix)}${
@@ -189,7 +188,7 @@ export const getFilename = (
   atomXslFilename: `${removeLeadingSlash(prefix)}${
     options.atomXslFilename || "atom.xsl"
   }`,
-  atomXslTemplate: options.atomXslTemplate || `${TEMPLATE_FOLDER}atom.xsl`,
+
   jsonOutputFilename: `${removeLeadingSlash(prefix)}${
     options.jsonOutputFilename || "feed.json"
   }`,
@@ -199,7 +198,6 @@ export const getFilename = (
   rssXslFilename: `${removeLeadingSlash(prefix)}${
     options.rssXslFilename || "rss.xsl"
   }`,
-  rssXslTemplate: options.rssXslTemplate || `${TEMPLATE_FOLDER}rss.xsl`,
 });
 
 export interface FeedLinks {

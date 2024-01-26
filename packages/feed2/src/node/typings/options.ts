@@ -123,11 +123,9 @@ export interface BaseFeedOptions {
   atomOutputFilename?: string;
 
   /**
-   * Atom xsl template file path
+   * Atom xsl template file content
    *
-   * Atom xsl 模板文件路径
-   *
-   * @default "vuepress-plugin-feed2/templates/atom.xsl"
+   * Atom xsl 模板文件内容
    */
   atomXslTemplate?: string;
 
@@ -159,11 +157,9 @@ export interface BaseFeedOptions {
   rssOutputFilename?: string;
 
   /**
-   * RSS xsl template file path
+   * RSS xsl template file content
    *
-   * RSS xsl 模板文件路径
-   *
-   * @default "vuepress-plugin-feed2/templates/rss.xsl"
+   * RSS xsl 模板文件内容
    */
   rssXslTemplate?: string;
 
@@ -195,6 +191,28 @@ export interface FeedOptions extends BaseFeedOptions {
    * 部署的域名
    */
   hostname: string;
+
+  /**
+   * Whether enabled in devServer
+   *
+   * @description For performance reasons, we do not provide hot reload. Reboot your devServer to sync your changes.
+   *
+   * 是否在开发服务器中启用
+   *
+   * @description 由于性能原因，我们不提供热更新。重启开发服务器以同步你的变更。
+   *
+   * @default false
+   */
+  devServer?: boolean;
+
+  /**
+   * Hostname to use in devServer
+   *
+   * 开发服务器使用的主机名
+   *
+   * @default 'http://localhost:${port}'
+   */
+  devHostname?: string;
 
   /**
    * Locales options for feed

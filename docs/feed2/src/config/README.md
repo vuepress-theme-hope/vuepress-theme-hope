@@ -115,6 +115,26 @@ You should enable `@vuepress/plugin-git` to get the newest created pages as feed
 
 For available options, please see [Config → Channel](channel.md)
 
+## devServer
+
+- Type: `boolean`
+- Default: `false`
+
+Whether enabled in devServer.
+
+::: note
+
+For performance reasons, we do not provide hot reload. Reboot your devServer to sync your changes.
+
+::
+
+## devHostname
+
+- Type: `string`
+- Default: `"http://localhost:${port}"`
+
+Hostname to use in devServer
+
 ## atomOutputFilename
 
 - Type: `string`
@@ -125,9 +145,9 @@ Atom syntax output filename, relative to dest folder.
 ## atomXslTemplate
 
 - Type: `string`
-- Default: `"vuepress-plugin-feed2/templates/atom.xsl"`
+- Default: Content of `vuepress-plugin-feed2/templates/atom.xsl`
 
-Atom xsl template file path
+Atom xsl template file content.
 
 ## atomXslFilename
 
@@ -153,9 +173,9 @@ RSS syntax output filename, relative to dest folder.
 ## rssXslTemplate
 
 - Type: `string`
-- Default: `'vuepress-plugin-feed2/templates/rss.xsl'`
+- Default: Content of `vuepress-plugin-feed2/templates/rss.xsl`
 
-RSS xsl template file path
+RSS xsl template file content.
 
 ## rssXslFilename
 
