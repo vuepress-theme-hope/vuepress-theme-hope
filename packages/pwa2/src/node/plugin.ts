@@ -68,7 +68,7 @@ export const pwaPlugin =
 
             return JSON.stringify(await manifest);
           },
-          errMsg: "Unexpected manifest generate error",
+          errMsg: "Unexpected manifest generation error",
         });
       },
 
