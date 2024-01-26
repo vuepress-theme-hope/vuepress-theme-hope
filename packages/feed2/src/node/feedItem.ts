@@ -22,7 +22,6 @@ import type {
   FeedEnclosure,
   FeedFrontmatterOption,
   FeedGetter,
-  FeedItemInformation,
   FeedPluginFrontmatter,
 } from "./typings/index.js";
 import {
@@ -36,7 +35,7 @@ export class FeedItem {
   private frontmatter: PageFrontmatter<FeedPluginFrontmatter>;
   private base: string;
   private hostname: string;
-  private getter: FeedGetter;
+  getter: FeedGetter;
 
   constructor(
     private app: App,
@@ -53,20 +52,28 @@ export class FeedItem {
     this.pageOptions = this.frontmatter.feed || {};
   }
 
-  private get title(): string {
+  /**
+   * Feed item title
+   */
+  get title(): string {
     if (isFunction(this.getter.title)) return this.getter.title(this.page);
 
     return this.pageOptions.title || this.page.title;
   }
 
-  /** real url */
-  private get link(): string {
+  /**
+   * The URL of the item.
+   */
+  get link(): string {
     if (isFunction(this.getter.link)) return this.getter.link(this.page);
 
     return getUrl(this.hostname, this.base, this.page.path);
   }
 
-  private get description(): string | null {
+  /**
+   * Feed item description.
+   */
+  get description(): string | null {
     if (isFunction(this.getter.description))
       return this.getter.description(this.page);
 
@@ -79,7 +86,17 @@ export class FeedItem {
     return pageText.length > 180 ? `${pageText.slice(0, 177)}...` : pageText;
   }
 
-  private get author(): FeedAuthor[] {
+  /**
+   * A string that uniquely identifies feed item.
+   */
+  get guid(): string {
+    return this.pageOptions.guid || this.link;
+  }
+
+  /**
+   * Authors of feed item.
+   */
+  get author(): FeedAuthor[] {
     if (isFunction(this.getter.author)) return this.getter.author(this.page);
 
     if (isArray(this.pageOptions.author)) return this.pageOptions.author;
@@ -96,7 +113,10 @@ export class FeedItem {
           : [];
   }
 
-  private get category(): FeedCategory[] | null {
+  /**
+   * Categories of feed item.
+   */
+  get category(): FeedCategory[] | null {
     if (isFunction(this.getter.category))
       return this.getter.category(this.page);
 
@@ -110,7 +130,12 @@ export class FeedItem {
     return getCategory(category).map((item) => ({ name: item }));
   }
 
-  private get enclosure(): FeedEnclosure | null {
+  /**
+   * Describes a media object that is attached to feed item.
+   *
+   * @description rss format only
+   */
+  get enclosure(): FeedEnclosure | null {
     if (isFunction(this.getter.enclosure))
       return this.getter.enclosure(this.page);
 
@@ -123,11 +148,10 @@ export class FeedItem {
     return null;
   }
 
-  private get guid(): string {
-    return this.pageOptions.guid || this.link;
-  }
-
-  private get pubDate(): Date | null {
+  /**
+   * Indicates when feed item was published.
+   */
+  get pubDate(): Date | null {
     if (isFunction(this.getter.publishDate))
       return this.getter.publishDate(this.page);
 
@@ -142,7 +166,10 @@ export class FeedItem {
         : null;
   }
 
-  private get lastUpdated(): Date {
+  /**
+   * Indicates when feed item was updated.
+   */
+  get lastUpdated(): Date {
     if (isFunction(this.getter.lastUpdateDate))
       return this.getter.lastUpdateDate(this.page);
 
@@ -151,7 +178,10 @@ export class FeedItem {
     return updatedTime ? new Date(updatedTime) : new Date();
   }
 
-  private get excerpt(): string | null {
+  /**
+   * Feed item summary
+   */
+  get summary(): string | null {
     if (isFunction(this.getter.excerpt)) return this.getter.excerpt(this.page);
 
     if (this.pageOptions.summary) return this.pageOptions.summary;
@@ -161,7 +191,11 @@ export class FeedItem {
     });
   }
 
-  private get content(): string {
+  /**
+   * Feed Item content
+   */
+
+  get content(): string {
     if (isFunction(this.getter.content)) return this.getter.content(this.page);
 
     if (this.pageOptions.content) return this.pageOptions.content;
@@ -173,7 +207,12 @@ export class FeedItem {
     );
   }
 
-  private get image(): string | null {
+  /**
+   * Image of feed item
+   *
+   * @description json format only
+   */
+  get image(): string | null {
     if (isFunction(this.getter.image)) return this.getter.image(this.page);
 
     const { hostname, base } = this;
@@ -202,7 +241,12 @@ export class FeedItem {
     return null;
   }
 
-  private get contributor(): FeedContributor[] {
+  /**
+   * Contributors of feed item.
+   *
+   * @description atom format only
+   */
+  get contributor(): FeedContributor[] {
     if (isFunction(this.getter.contributor))
       return this.getter.contributor(this.page);
 
@@ -215,7 +259,12 @@ export class FeedItem {
     return this.author;
   }
 
-  private get copyright(): string | null {
+  /**
+   * Copyright text of feed item.
+   *
+   * @description atom format only
+   */
+  get copyright(): string | null {
     if (isFunction(this.getter.copyright))
       return this.getter.copyright(this.page);
 
@@ -227,42 +276,7 @@ export class FeedItem {
     return null;
   }
 
-  getInfo(): FeedItemInformation | null {
-    const {
-      author,
-      category,
-      content,
-      contributor,
-      copyright,
-      description,
-      enclosure,
-      excerpt,
-      guid,
-      image,
-      lastUpdated,
-      link,
-      pubDate,
-      title,
-    } = this;
-
-    // we need at least title or description
-    if (!title && !description) return null;
-
-    return {
-      title,
-      link,
-      guid,
-      lastUpdated,
-      content,
-      author,
-      contributor,
-      ...(description ? { description } : {}),
-      ...(excerpt ? { summary: excerpt } : {}),
-      ...(category ? { category } : {}),
-      ...(enclosure ? { enclosure } : {}),
-      ...(pubDate ? { pubDate } : {}),
-      ...(image ? { image } : {}),
-      ...(copyright ? { copyright } : {}),
-    };
+  get isValid(): boolean {
+    return Boolean(this.title || this.description);
   }
 }

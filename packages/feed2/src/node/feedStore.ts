@@ -1,22 +1,30 @@
-import { generateAtomFeed } from "./atom/index.js";
-import { generateJSONFeed } from "./json/index.js";
-import { generateRssFeed } from "./rss/index.js";
-import type { FeedItem } from "../feedItem.js";
+import type { App } from "vuepress/core";
+
+import type { FeedItem } from "./feedItem.js";
+import type { FeedLinks, ResolvedFeedOptions } from "./options.js";
+import { getFeedChannelOption, getFeedLinks } from "./options.js";
 import type {
   FeedCategory,
+  FeedChannelOption,
   FeedContributor,
-  FeedInitOptions,
-  FeedItemInformation,
-} from "../typings/index.js";
+} from "./typings/index.js";
 
 export class FeedStore {
   public categories = new Set<string>();
   public contributors: FeedContributor[] = [];
-  public items: FeedItemInformation[] = [];
+  public items: FeedItem[] = [];
 
   private _contributorKeys = new Set<string>();
-
-  constructor(public options: FeedInitOptions) {}
+  public channel: FeedChannelOption;
+  public links: FeedLinks;
+  constructor(
+    app: App,
+    localeOptions: ResolvedFeedOptions,
+    localePath: string,
+  ) {
+    this.channel = getFeedChannelOption(app, localeOptions, localePath);
+    this.links = getFeedLinks(app, localeOptions, localePath);
+  }
 
   /**
    * Add category to store
@@ -42,29 +50,12 @@ export class FeedStore {
    * Add a feed item
    */
   public add = (item: FeedItem): void => {
-    const info = item.getInfo();
+    if (item.isValid) {
+      const { category, contributor } = item;
 
-    if (info) {
-      const { category, contributor } = info;
-
-      this.items.push(info);
+      this.items.push(item);
       category?.forEach(this.addCategory);
       contributor?.forEach(this.addContributor);
     }
   };
-
-  /**
-   * Returns a Atom 1.0 feed
-   */
-  public atom = (): string => generateAtomFeed(this);
-
-  /**
-   * Returns a RSS 2.0 feed
-   */
-  public rss = (): string => generateRssFeed(this);
-
-  /**
-   * Returns a JSON 1.1 feed
-   */
-  public json = (): string => generateJSONFeed(this);
 }

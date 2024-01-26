@@ -7,11 +7,11 @@ import type {
   AtomContent,
   AtomEntry,
 } from "./typings.js";
+import type { FeedStore } from "../../feedStore.js";
 import type { FeedAuthor, FeedCategory } from "../../typings/index.js";
 import { FEED_GENERATOR, encodeXML } from "../../utils/index.js";
-import type { FeedStore } from "../feedStore.js";
 
-const getAuthor = (author: FeedAuthor): AtomAuthor => {
+const getAtomAuthor = (author: FeedAuthor): AtomAuthor => {
   const { name = "Unknown", email, url } = author;
 
   return {
@@ -21,7 +21,7 @@ const getAuthor = (author: FeedAuthor): AtomAuthor => {
   };
 };
 
-const genCategory = (category: FeedCategory): AtomCategory => {
+const getAtomCategory = (category: FeedCategory): AtomCategory => {
   const { name, scheme = "" } = category;
 
   return {
@@ -37,8 +37,8 @@ const genCategory = (category: FeedCategory): AtomCategory => {
  *
  * @see http://www.atomenabled.org/developers/syndication/
  */
-export const generateAtomFeed = (feedStore: FeedStore): string => {
-  const { channel, links } = feedStore.options;
+export const getAtomFeed = (feedStore: FeedStore): string => {
+  const { channel, links } = feedStore;
 
   const content: AtomContent = {
     _declaration: {
@@ -63,8 +63,8 @@ export const generateAtomFeed = (feedStore: FeedStore): string => {
       ...(channel.author
         ? {
             author: isArray(channel.author)
-              ? channel.author.map((author) => getAuthor(author))
-              : [getAuthor(channel.author)],
+              ? channel.author.map((author) => getAtomAuthor(author))
+              : [getAtomAuthor(channel.author)],
           }
         : {}),
       ...(channel.icon ? { icon: channel.icon } : {}),
@@ -101,7 +101,7 @@ export const generateAtomFeed = (feedStore: FeedStore): string => {
 
   content.feed.contributor = Array.from(feedStore.contributors)
     .filter((contributor) => contributor.name)
-    .map((contributor) => getAuthor(contributor));
+    .map((contributor) => getAtomAuthor(contributor));
 
   /**
    * "entry" nodes
@@ -137,16 +137,18 @@ export const generateAtomFeed = (feedStore: FeedStore): string => {
     if (item.author)
       entry.author = item.author
         .filter((author) => author.name)
-        .map((author) => getAuthor(author));
+        .map((author) => getAtomAuthor(author));
 
     if (item.category)
       // category
-      entry.category = item.category.map((category) => genCategory(category));
+      entry.category = item.category.map((category) =>
+        getAtomCategory(category),
+      );
 
     // contributor
     if (item.contributor)
       entry.contributor = item.contributor.map((contributor) =>
-        getAuthor(contributor),
+        getAtomAuthor(contributor),
       );
 
     // published

@@ -6,7 +6,7 @@ import type { ResolvedFeedOptionsMap } from "./options.js";
 import { getFilename } from "./options.js";
 import { getUrl } from "./utils/index.js";
 
-export const injectLinksToHead = (
+export const addFeedLinks = (
   app: App,
   options: ResolvedFeedOptionsMap,
 ): void => {

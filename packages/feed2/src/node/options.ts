@@ -18,7 +18,6 @@ import {
 import type {
   BaseFeedOptions,
   FeedChannelOption,
-  FeedLinks,
   FeedOptions,
 } from "./typings/index.js";
 import { getUrl } from "./utils/index.js";
@@ -202,6 +201,15 @@ export const getFilename = (
   }`,
   rssXslTemplate: options.rssXslTemplate || `${TEMPLATE_FOLDER}rss.xsl`,
 });
+
+export interface FeedLinks {
+  localePath: string;
+  atom: string;
+  atomXsl: string;
+  json: string;
+  rss: string;
+  rssXsl: string;
+}
 
 export const getFeedLinks = (
   { options: { base } }: App,

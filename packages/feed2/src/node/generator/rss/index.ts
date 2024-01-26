@@ -8,15 +8,12 @@ import type {
   RSSGuid,
   RSSItem,
 } from "./typings.js";
-import type {
-  FeedCategory,
-  FeedEnclosure,
-  FeedItemInformation,
-} from "../../typings/index.js";
+import type { FeedItem } from "../../feedItem.js";
+import type { FeedStore } from "../../feedStore.js";
+import type { FeedCategory, FeedEnclosure } from "../../typings/index.js";
 import { FEED_GENERATOR, encodeXML } from "../../utils/index.js";
-import type { FeedStore } from "../feedStore.js";
 
-const genCategory = (category: FeedCategory): RSSCategory => {
+const getRSSCategory = (category: FeedCategory): RSSCategory => {
   const { name, domain } = category;
 
   return {
@@ -25,7 +22,7 @@ const genCategory = (category: FeedCategory): RSSCategory => {
   };
 };
 
-const genGuid = (item: FeedItemInformation): RSSGuid => {
+const getRSSGuid = (item: FeedItem): RSSGuid => {
   const guid = item.guid || item.link;
 
   return {
@@ -40,7 +37,7 @@ const genGuid = (item: FeedItemInformation): RSSGuid => {
   };
 };
 
-const genEnclosure = (enclosure: FeedEnclosure): RSSEnclosure => ({
+const getRSSEnclosure = (enclosure: FeedEnclosure): RSSEnclosure => ({
   _attributes: {
     url: enclosure.url,
     ...(enclosure.length ? { length: enclosure.length } : {}),
@@ -53,8 +50,8 @@ const genEnclosure = (enclosure: FeedEnclosure): RSSEnclosure => ({
  *
  * @see https://validator.w3.org/feed/docs/rss2.html
  */
-export const generateRssFeed = (feedStore: FeedStore): string => {
-  const { links, channel } = feedStore.options;
+export const getRssFeed = (feedStore: FeedStore): string => {
+  const { channel, links } = feedStore;
   let hasContent = false;
 
   const content: RSSContent = {
@@ -132,7 +129,7 @@ export const generateRssFeed = (feedStore: FeedStore): string => {
     const item: RSSItem = {
       title: { _text: entry.title },
       link: { _text: entry.link },
-      guid: genGuid(entry),
+      guid: getRSSGuid(entry),
       source: {
         _attributes: { url: links.rss },
         _text: entry.title,
@@ -164,9 +161,10 @@ export const generateRssFeed = (feedStore: FeedStore): string => {
     if (entry.category)
       item.category = entry.category
         .filter((category) => category.name)
-        .map((category) => genCategory(category));
+        .map((category) => getRSSCategory(category));
 
-    if (entry.comments) item.comments = { _text: entry.link };
+    // TODO: This is currently not supported
+    // if (entry.comments) item.comments = { _text: entry.link };
 
     if (entry.pubDate) item.pubDate = { _text: entry.pubDate.toUTCString() };
 
@@ -180,7 +178,7 @@ export const generateRssFeed = (feedStore: FeedStore): string => {
      *
      * @see https://validator.w3.org/feed/docs/rss2.html#ltenclosuregtSubelementOfLtitemgt
      */
-    if (entry.enclosure) item.enclosure = genEnclosure(entry.enclosure);
+    if (entry.enclosure) item.enclosure = getRSSEnclosure(entry.enclosure);
 
     return item;
   });

@@ -2,9 +2,9 @@ import type { PluginFunction, PluginObject } from "vuepress/core";
 import { colors } from "vuepress/utils";
 import { checkVersion } from "vuepress-shared/node";
 
+import { addFeedLinks } from "./addFeedLinks.js";
 import { convertOptions } from "./compact.js";
-import { FeedGenerator } from "./generator/index.js";
-import { injectLinksToHead } from "./injectHead.js";
+import { generateFeed } from "./generateFeed.js";
 import { checkOutput, ensureHostName, getFeedOptions } from "./options.js";
 import type { FeedOptions } from "./typings/index.js";
 import { FEED_GENERATOR, logger } from "./utils/index.js";
@@ -40,9 +40,8 @@ export const feedPlugin =
     return {
       ...plugin,
 
-      onInitialized: (app): void => injectLinksToHead(app, feedOptions),
+      onInitialized: (app): void => addFeedLinks(app, feedOptions),
 
-      onGenerated: (app): Promise<void> =>
-        new FeedGenerator(app, feedOptions).generateFeed(),
+      onGenerated: (app): Promise<void> => generateFeed(app, feedOptions),
     };
   };

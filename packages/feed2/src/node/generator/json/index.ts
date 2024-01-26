@@ -2,10 +2,10 @@
 import { isArray } from "vuepress-shared/node";
 
 import type { JSONAuthor, JSONContent, JSONItem } from "./typings.js";
+import type { FeedStore } from "../../feedStore.js";
 import type { FeedAuthor } from "../../typings/index.js";
-import type { FeedStore } from "../feedStore.js";
 
-const formatAuthor = (author: FeedAuthor): JSONAuthor => ({
+const getJSONAuthor = (author: FeedAuthor): JSONAuthor => ({
   name: author.name!,
   ...(author.url ? { url: author.url } : {}),
   ...(author.avatar ? { avatar: author.avatar } : {}),
@@ -16,8 +16,8 @@ const formatAuthor = (author: FeedAuthor): JSONAuthor => ({
  *
  * @see https://jsonfeed.org/version/1.1
  */
-export const generateJSONFeed = (feedStore: FeedStore): string => {
-  const { channel, links } = feedStore.options;
+export const getJSONFeed = (feedStore: FeedStore): string => {
+  const { channel, links } = feedStore;
 
   const content: JSONContent = {
     version: "https://jsonfeed.org/version/1.1",
@@ -40,7 +40,7 @@ export const generateJSONFeed = (feedStore: FeedStore): string => {
   ).filter((author) => Boolean(author?.name));
 
   if (channelAuthors.length)
-    content.authors = channelAuthors.map((author) => formatAuthor(author));
+    content.authors = channelAuthors.map((author) => getJSONAuthor(author));
 
   content.items = feedStore.items.map((item) => {
     const feedItem: JSONItem = {
@@ -65,7 +65,7 @@ export const generateJSONFeed = (feedStore: FeedStore): string => {
     if (isArray(item.author))
       feedItem.authors = item.author
         .filter((author) => author.name)
-        .map((author) => formatAuthor(author));
+        .map((author) => getJSONAuthor(author));
 
     // tags
     if (item.category)
