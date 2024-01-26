@@ -23,6 +23,11 @@ const getLink = (name: string): string =>
   }`;
 
 const features = [
+    {
+    text: "追加时间插件",
+    icon: "clock",
+    link: getLink("append-date"),
+  },
   {
     text: "自动目录插件",
     icon: "network-wired",

@@ -189,6 +189,8 @@ The theme includes the following plugins, you can use them in other themes or di
 
 Here are some other plugins that are not bundled by the theme, you can enable them according to your own needs.
 
+- <ProjectLink name="append-date">vuepress-plugin-append-date</ProjectLink>: Append date to page frontmatter
+
 - <ProjectLink name="lightgallery">vuepress-plugin-lightgallery</ProjectLink>: Image preview plugin based on lightgallery
 
 - <ProjectLink name="redirect">vuepress-plugin-redirect</ProjectLink>: Redirect pages

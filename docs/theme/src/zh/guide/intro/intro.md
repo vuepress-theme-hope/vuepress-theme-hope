@@ -187,6 +187,8 @@ VuePress 默认主题只是一个提供基础文档布局的主题。 例如：�
 
 这里还有一些其他没有被主题捆绑的插件，你可以根据自己的需求自行启用。
 
+- <ProjectLink name="append-date" path="/zh/">vuepress-plugin-append-date</ProjectLink>: 向 Frontmatter 添加时间
+
 - <ProjectLink name="lightgallery" path="/zh/">vuepress-plugin-lightgallery</ProjectLink>: 基于 lightgallery 图片浏览插件
 
 - <ProjectLink name="redirect" path="/zh/">vuepress-plugin-redirect</ProjectLink>: 重定向插件
