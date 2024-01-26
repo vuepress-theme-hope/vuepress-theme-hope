@@ -25,8 +25,7 @@ The aliases of the same name (`alias`) and layouts (`layouts`) of your own newly
 
 @tab TS
 
-```ts
-// .vuepress/theme/index.ts
+```ts title=".vuepress/theme/index.ts"
 import { getDirname, path } from "vuepress/utils";
 import { hopeTheme } from "vuepress-theme-hope";
 import type { ThemeOptions } from "vuepress-theme-hope";
@@ -51,8 +50,7 @@ export default (options: ThemeOptions) => ({
 
 @tab JS
 
-```js
-// .vuepress/theme/index.js
+```js title=".vuepress/theme/index.js"
 import { getDirname, path } from "vuepress/utils";
 import { hopeTheme } from "vuepress-theme-hope";
 

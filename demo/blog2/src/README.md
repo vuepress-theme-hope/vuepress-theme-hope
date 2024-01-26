@@ -21,8 +21,7 @@ pnpm add -D vuepress-plugin-blog2
 
 ### Usage
 
-```ts
-// .vuepress/config.ts
+```ts title=".vuepress/config.ts"
 import { blogPlugin } from "vuepress-plugin-blog2";
 
 export default {

@@ -43,8 +43,7 @@ Then enabling via:
 
 @tab TS
 
-```ts {8}
-// .vuepress/config.ts
+```ts {8} title=".vuepress/config.ts"
 import { mdEnhancePlugin } from "vuepress-plugin-md-enhance";
 
 export default {
@@ -59,8 +58,7 @@ export default {
 
 @tab JS
 
-```js {8}
-// .vuepress/config.js
+```js {8} title=".vuepress/config.js"
 import { mdEnhancePlugin } from "vuepress-plugin-md-enhance";
 
 export default {
@@ -124,8 +122,7 @@ Please see [mermaid](https://mermaid.js.org/).
 
 You can import and call `defineMermaidConfig` in [client config file][client-config] to customize mermaid:
 
-```ts
-// .vuepress/client.ts
+```ts title=".vuepress/client.ts"
 import { defineClientConfig } from "vuepress/client";
 import { defineMermaidConfig } from "vuepress-plugin-md-enhance/client";
 

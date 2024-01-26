@@ -13,8 +13,7 @@ Let the Markdown file in your VuePress site support including other files.
 
 @tab TS
 
-```ts {8}
-// .vuepress/config.ts
+```ts {8} title=".vuepress/config.ts"
 import { mdEnhancePlugin } from "vuepress-plugin-md-enhance";
 
 export default {
@@ -29,8 +28,7 @@ export default {
 
 @tab JS
 
-```js {8}
-// .vuepress/config.js
+```js {8} title=".vuepress/config.js"
 import { mdEnhancePlugin } from "vuepress-plugin-md-enhance";
 
 export default {
@@ -397,8 +395,7 @@ E.g.: you can use `@src` as an alias for your source directory.
 
 @tab TS
 
-```ts {10}
-// .vuepress/config.ts
+```ts {10} title=".vuepress/config.ts"
 import { getDirname, path } from "vuepress/utils";
 import { mdEnhancePlugin } from "vuepress-plugin-md-enhance";
 
@@ -423,8 +420,7 @@ export default {
 
 @tab JS
 
-```js {10}
-// .vuepress/config.js
+```js {10} title=".vuepress/config.js"
 import { getDirname, path } from "vuepress/utils";
 import { mdEnhancePlugin } from "vuepress-plugin-md-enhance";
 
@@ -455,8 +451,7 @@ Also, to place your Markdown files directly besides your actual files, but don't
 
 @tab TS
 
-```ts {6-7}
-// .vuepress/config.ts
+```ts {6-7} title=".vuepress/config.ts"
 import { defineUserConfig } from "vuepress";
 import { mdEnhancePlugin } from "vuepress-plugin-md-enhance";
 
@@ -474,8 +469,7 @@ export default defineUserConfig({
 
 @tab JS
 
-```js {5-6}
-// .vuepress/config.js
+```js {5-6} title=".vuepress/config.js"
 import { mdEnhancePlugin } from "vuepress-plugin-md-enhance";
 
 export default {

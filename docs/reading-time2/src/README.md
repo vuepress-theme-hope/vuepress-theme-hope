@@ -53,8 +53,7 @@ In config file:
 
 @tab TS
 
-```ts
-// .vuepress/config.ts
+```ts title=".vuepress/config.ts"
 import { readingTimePlugin } from "vuepress-plugin-reading-time2";
 
 export default {
@@ -68,8 +67,7 @@ export default {
 
 @tab JS
 
-```js
-// .vuepress/config.js
+```js title=".vuepress/config.js"
 import { readingTimePlugin } from "vuepress-plugin-reading-time2";
 
 export default {

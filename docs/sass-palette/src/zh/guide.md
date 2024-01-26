@@ -56,15 +56,13 @@ useSassPalette(app, {
 
 如果用户设置了:
 
-```scss
-// .vuepress/styles/abc-palette.scss
+```scss title=".vuepress/styles/abc-palette.scss"
 $colorA: red;
 ```
 
 同时你正在提供如下默认配置文件:
 
-```scss
-// vuepress-plugin-abc/styles/palette.scss
+```scss title="vuepress-plugin-abc/styles/palette.scss"
 $colorA: blue !default;
 $colorB: green !default;
 ```
@@ -123,15 +121,13 @@ useSassPalette(app, {
 
 如果用户设置:
 
-```scss
-// .vuepress/styles/abc-palette.scss
+```scss title=".vuepress/styles/abc-palette.scss"
 $colorA: red;
 ```
 
 同时你正在提供如下默认调色板文件:
 
-```scss
-// vuepress-plugin-abc/styles/palette.scss
+```scss title="vuepress-plugin-abc/styles/palette.scss"
 $colorA: blue !default;
 $colorB: green !default;
 ```

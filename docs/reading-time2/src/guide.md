@@ -22,8 +22,7 @@ interface ReadingTime {
 
 This plugin is targeting plugin and theme developers mostly, so we strongly recommend you to use this plugin with it's use api:
 
-```ts
-// your plugin or theme entry
+```ts title="your plugin or theme entry"
 import { useReadingTimePlugin } from "vuepress-plugin-reading-time2";
 
 export default (options) => (app) => {
@@ -46,8 +45,7 @@ export default (options) => (app) => {
 
 We also provides a `removeReadingTimePlugin` api to remove the plugin.You can use this to ensure your call take effect or clear the plugin:
 
-```ts
-// your plugin or theme entry
+```ts title="your plugin or theme entry"
 import { useReadingTimePlugin } from "vuepress-plugin-reading-time2";
 
 export default (options) => (app) => {

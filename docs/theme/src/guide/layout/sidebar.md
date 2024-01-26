@@ -31,8 +31,7 @@ Just like navbar, you can fill in an array of multiple file links as the basic c
 
 @tab TS
 
-```ts
-// .vuepress/config.ts
+```ts title=".vuepress/config.ts"
 import { defineUserConfig } from "vuepress";
 import { hopeTheme } from "vuepress-theme-hope";
 
@@ -45,8 +44,7 @@ export default defineUserConfig({
 
 @tab JS
 
-```js
-// .vuepress/config.js
+```js title=".vuepress/config.js"
 import { hopeTheme } from "vuepress-theme-hope";
 
 export default {
@@ -79,8 +77,7 @@ Just like navbar, if you are not satisfied with the page's icon or feel that the
 
 @tab TS
 
-```ts
-// .vuepress/config.ts
+```ts title=".vuepress/config.ts"
 import { defineUserConfig } from "vuepress";
 import { hopeTheme } from "vuepress-theme-hope";
 
@@ -110,8 +107,7 @@ export default defineUserConfig({
 
 @tab JS
 
-```js
-// .vuepress/config.js
+```js title=".vuepress/config.js"
 import { hopeTheme } from "vuepress-theme-hope";
 
 export default {
@@ -162,8 +158,7 @@ You should use [object format](#object-format) and provide an additional `childr
 
 @tab TS
 
-```ts
-// .vuepress/config.ts
+```ts title=".vuepress/config.ts"
 import { defineUserConfig } from "vuepress";
 import { hopeTheme } from "vuepress-theme-hope";
 
@@ -203,8 +198,7 @@ export default defineUserConfig({
 
 @tab JS
 
-```js
-// .vuepress/config.js
+```js title=".vuepress/config.js"
 import { hopeTheme } from "vuepress-theme-hope";
 
 export default {
@@ -249,8 +243,7 @@ You can also nest Sidebar grouping:
 
 @tab TS
 
-```ts
-// .vuepress/config.ts
+```ts title=".vuepress/config.ts"
 import { defineUserConfig } from "vuepress";
 import { hopeTheme } from "vuepress-theme-hope";
 
@@ -284,8 +277,7 @@ export default defineUserConfig({
 
 @tab JS
 
-```js
-// .vuepress/config.js
+```js title=".vuepress/config.js"
 import { hopeTheme } from "vuepress-theme-hope";
 
 export default {
@@ -343,8 +335,7 @@ Then you can use the following config:
 
 @tab TS
 
-```ts
-// .vuepress/config.ts
+```ts title=".vuepress/config.ts"
 import { defineUserConfig } from "vuepress";
 import { hopeTheme } from "vuepress-theme-hope";
 
@@ -379,8 +370,7 @@ export default defineUserConfig({
 
 @tab JS
 
-```js
-// .vuepress/config.js
+```js title=".vuepress/config.js"
 import { hopeTheme } from "vuepress-theme-hope";
 
 export default {
@@ -441,8 +431,7 @@ You can define your sidebar for each section using below configuration:
 
 @tab TS
 
-```ts
-// .vuepress/config.ts
+```ts title=".vuepress/config.ts"
 import { defineUserConfig } from "vuepress";
 import { hopeTheme } from "vuepress-theme-hope";
 
@@ -474,8 +463,7 @@ export default defineUserConfig({
 
 @tab JS
 
-```js
-// .vuepress/config.js
+```js title=".vuepress/config.js"
 import { hopeTheme } from "vuepress-theme-hope";
 
 export default {
@@ -532,8 +520,7 @@ You can also enable it in all pages by using config:
 
 @tab TS
 
-```ts {7}
-// .vuepress/config.ts
+```ts {7} title=".vuepress/config.ts"
 import { defineUserConfig } from "vuepress";
 import { hopeTheme } from "vuepress-theme-hope";
 
@@ -546,8 +533,7 @@ export default defineUserConfig({
 
 @tab JS
 
-```js {6}
-// .vuepress/config.js
+```js {6} title=".vuepress/config.js"
 import { hopeTheme } from "vuepress-theme-hope";
 
 export default {
@@ -586,8 +572,7 @@ You can change the original config to:
 
 @tab TS
 
-```ts {8,10}
-// .vuepress/config.ts
+```ts {8,10} title=".vuepress/config.ts"
 import { defineUserConfig } from "vuepress";
 import { hopeTheme } from "vuepress-theme-hope";
 
@@ -611,8 +596,7 @@ export default defineUserConfig({
 
 @tab JS
 
-```js {7,9}
-// .vuepress/config.js
+```js {7,9} title=".vuepress/config.js"
 import { hopeTheme } from "vuepress-theme-hope";
 
 export default {
@@ -791,8 +775,7 @@ By default, the nested header links and the hash in the URL are updated as the u
 
 @tab TS
 
-```ts {8}
-// .vuepress/config.ts
+```ts {8} title=".vuepress/config.ts"
 import { defineUserConfig } from "vuepress";
 import { hopeTheme } from "vuepress-theme-hope";
 
@@ -808,8 +791,7 @@ export default defineUserConfig({
 
 @tab JS
 
-```js {8}
-// .vuepress/config.js
+```js {8} title=".vuepress/config.js"
 import { hopeTheme } from "vuepress-theme-hope";
 
 export default {
@@ -836,8 +818,7 @@ The theme's navbar supports [I18n](https://vuejs.press/guide/i18n.html), so you 
 
 @tab TS
 
-```ts
-// .vuepress/config.ts
+```ts title=".vuepress/config.ts"
 import { defineUserConfig } from "vuepress";
 import { hopeTheme } from "vuepress-theme-hope";
 
@@ -861,8 +842,7 @@ export default defineUserConfig({
 
 @tab JS
 
-```js
-// .vuepress/config.js
+```js title=".vuepress/config.js"
 import { hopeTheme } from "vuepress-theme-hope";
 
 export default {
@@ -899,8 +879,7 @@ To deal with the situation when you split [multi-sidebar configuration](#multipl
 
 @tab TS Helper
 
-```ts {6}
-// .vuepress/sidebar.ts
+```ts {6} title=".vuepress/sidebar.ts"
 import { sidebar } from "vuepress-theme-hope";
 
 export default sidebar(/* Your sidebar configuration */);
@@ -908,8 +887,7 @@ export default sidebar(/* Your sidebar configuration */);
 
 @tab TS Types
 
-```ts {4}
-// .vuepress/navbar.ts
+```ts {4} title=".vuepress/navbar.ts"
 import type { SidebarConfig } from "vuepress-theme-hope";
 
 const sidebarConfig: SidebarConfig = [
@@ -921,8 +899,7 @@ export default sidebarConfig;
 
 @tab JS
 
-```js
-// .vuepress/sidebar.js
+```js title=".vuepress/sidebar.js"
 import { sidebar } from "vuepress-theme-hope";
 
 export default sidebar(/* Your sidebar configuration */);

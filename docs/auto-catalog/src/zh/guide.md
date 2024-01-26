@@ -15,8 +15,7 @@ icon: lightbulb
 
 @tab TS
 
-```ts
-// .vuepress/config.ts
+```ts title=".vuepress/config.ts"
 import { defineUserConfig } from "vuepress";
 
 export default defineUserConfig({
@@ -33,8 +32,7 @@ export default defineUserConfig({
 
 @tab JS
 
-```js
-// .vuepress/config.js
+```js title=".vuepress/config.js"
 import { autoCatalogPlugin } from "vuepress-plugin-auto-catalog";
 
 export default {
@@ -57,8 +55,7 @@ export default {
 
 @tab TS
 
-```ts
-// .vuepress/client.ts
+```ts title=".vuepress/client.ts"
 import { defineClientConfig } from "vuepress/client";
 import { defineAutoCatalogGetter } from "vuepress-plugin-auto-catalog/client";
 
@@ -73,8 +70,7 @@ export default defineClientConfig({
 
 @tab JS
 
-```js
-// .vuepress/client.js
+```js title=".vuepress/client.js"
 import { defineAutoCatalogGetter } from "vuepress-plugin-auto-catalog/client";
 
 export default {
@@ -126,8 +122,7 @@ order -1 的项目
 
 @tab TS
 
-```ts
-// .vuepress/config.ts
+```ts title=".vuepress/config.ts"
 import { defineUserConfig } from "vuepress";
 import { autoCatalogPlugin } from "vuepress-plugin-auto-catalog";
 
@@ -143,8 +138,7 @@ export default defineUserConfig({
 
 @tab JS
 
-```js
-// .vuepress/config.js
+```js title=".vuepress/config.js"
 import { autoCatalogPlugin } from "vuepress-plugin-auto-catalog";
 
 export default {
@@ -176,8 +170,7 @@ export default {
 
 @tab TS
 
-```ts
-// .vuepress/config.ts
+```ts title=".vuepress/config.ts"
 import { defineUserConfig } from "vuepress";
 import { autoCatalogPlugin } from "vuepress-plugin-auto-catalog";
 
@@ -195,8 +188,7 @@ export default defineUserConfig({
 
 @tab JS
 
-```ts
-// .vuepress/config.ts
+```ts title=".vuepress/config.ts"
 import { autoCatalogPlugin } from "vuepress-plugin-auto-catalog";
 
 export default {

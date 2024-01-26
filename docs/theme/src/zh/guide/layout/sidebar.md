@@ -31,8 +31,7 @@ tag:
 
 @tab TS
 
-```ts
-// .vuepress/config.ts
+```ts title=".vuepress/config.ts"
 import { defineUserConfig } from "vuepress";
 import { hopeTheme } from "vuepress-theme-hope";
 
@@ -45,8 +44,7 @@ export default defineUserConfig({
 
 @tab JS
 
-```js
-// .vuepress/config.js
+```js title=".vuepress/config.js"
 import { hopeTheme } from "vuepress-theme-hope";
 
 export default {
@@ -79,8 +77,7 @@ export default {
 
 @tab TS
 
-```ts
-// .vuepress/config.ts
+```ts title=".vuepress/config.ts"
 import { defineUserConfig } from "vuepress";
 import { hopeTheme } from "vuepress-theme-hope";
 
@@ -110,8 +107,7 @@ export default defineUserConfig({
 
 @tab JS
 
-```js
-// .vuepress/config.js
+```js title=".vuepress/config.js"
 import { hopeTheme } from "vuepress-theme-hope";
 
 export default {
@@ -162,8 +158,7 @@ export default {
 
 @tab TS
 
-```ts
-// .vuepress/config.ts
+```ts title=".vuepress/config.ts"
 import { defineUserConfig } from "vuepress";
 import { hopeTheme } from "vuepress-theme-hope";
 
@@ -250,8 +245,7 @@ export default {
 
 @tab TS
 
-```ts
-// .vuepress/config.ts
+```ts title=".vuepress/config.ts"
 import { defineUserConfig } from "vuepress";
 import { hopeTheme } from "vuepress-theme-hope";
 
@@ -285,8 +279,7 @@ export default defineUserConfig({
 
 @tab JS
 
-```js
-// .vuepress/config.js
+```js title=".vuepress/config.js"
 import { hopeTheme } from "vuepress-theme-hope";
 
 export default {
@@ -344,8 +337,7 @@ export default {
 
 @tab TS
 
-```ts
-// .vuepress/config.ts
+```ts title=".vuepress/config.ts"
 import { defineUserConfig } from "vuepress";
 import { hopeTheme } from "vuepress-theme-hope";
 
@@ -380,8 +372,7 @@ export default defineUserConfig({
 
 @tab JS
 
-```js
-// .vuepress/config.js
+```js title=".vuepress/config.js"
 import { hopeTheme } from "vuepress-theme-hope";
 
 export default {
@@ -442,8 +433,7 @@ export default {
 
 @tab TS
 
-```ts
-// .vuepress/config.ts
+```ts title=".vuepress/config.ts"
 import { defineUserConfig } from "vuepress";
 import { hopeTheme } from "vuepress-theme-hope";
 
@@ -475,8 +465,7 @@ export default defineUserConfig({
 
 @tab JS
 
-```js
-// .vuepress/config.js
+```js title=".vuepress/config.js"
 import { hopeTheme } from "vuepress-theme-hope";
 
 export default {
@@ -525,8 +514,7 @@ sidebar: heading
 
 @tab TS
 
-```ts {67
-// .vuepress/config.ts
+```ts {67 title=".vuepress/config.ts"
 import { defineUserConfig } from "vuepress";
 import { hopeTheme } from "vuepress-theme-hope";
 
@@ -539,8 +527,7 @@ export default defineUserConfig({
 
 @tab JS
 
-```js {6}
-// .vuepress/config.js
+```js {6} title=".vuepress/config.js"
 import { hopeTheme } from "vuepress-theme-hope";
 
 export default {
@@ -579,8 +566,7 @@ export default {
 
 @tab TS
 
-```ts {8,10}
-// .vuepress/config.ts
+```ts {8,10} title=".vuepress/config.ts"
 import { defineUserConfig } from "vuepress";
 import { hopeTheme } from "vuepress-theme-hope";
 
@@ -604,8 +590,7 @@ export default defineUserConfig({
 
 @tab JS
 
-```js {7,9}
-// .vuepress/config.js
+```js {7,9} title=".vuepress/config.js"
 import { hopeTheme } from "vuepress-theme-hope";
 
 export default {
@@ -787,8 +772,7 @@ headerDepth: 2
 
 @tab TS
 
-```ts {9}
-// .vuepress/config.ts
+```ts {9} title=".vuepress/config.ts"
 import { defineUserConfig } from "vuepress";
 import { hopeTheme } from "vuepress-theme-hope";
 
@@ -804,8 +788,7 @@ export default defineUserConfig({
 
 @tab JS
 
-```js {8}
-// .vuepress/config.js
+```js {8} title=".vuepress/config.js"
 import { hopeTheme } from "vuepress-theme-hope";
 
 export default {
@@ -832,8 +815,7 @@ export default {
 
 @tab TS
 
-```ts
-// .vuepress/config.ts
+```ts title=".vuepress/config.ts"
 import { defineUserConfig } from "vuepress";
 import { hopeTheme } from "vuepress-theme-hope";
 
@@ -857,8 +839,7 @@ export default defineUserConfig({
 
 @tab JS
 
-```js
-// .vuepress/config.js
+```js title=".vuepress/config.js"
 import { hopeTheme } from "vuepress-theme-hope";
 
 export default {
@@ -895,8 +876,7 @@ export default {
 
 @tab TS Helper
 
-```ts {4}
-// .vuepress/sidebar.ts
+```ts {4} title=".vuepress/sidebar.ts"
 import { sidebar } from "vuepress-theme-hope";
 
 export default sidebar(/* 你的侧边栏配置 */);
@@ -904,8 +884,7 @@ export default sidebar(/* 你的侧边栏配置 */);
 
 @tab TS 类型
 
-```ts {4}
-// .vuepress/navbar.ts
+```ts {4} title=".vuepress/navbar.ts"
 import type { SidebarConfig } from "vuepress-theme-hope";
 
 const sidebarConfig: SidebarConfig = [
@@ -917,8 +896,7 @@ export default sidebarConfig;
 
 @tab JS
 
-```js
-// .vuepress/sidebar.js
+```js title=".vuepress/sidebar.js"
 import { sidebar } from "vuepress-theme-hope";
 
 export default sidebar(/* 你的侧边栏配置 */);

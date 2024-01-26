@@ -24,8 +24,7 @@ pnpm add -D vuepress-plugin-md-enhance
 
 ### Usage
 
-```ts
-// .vuepress/config.ts
+```ts title=".vuepress/config.ts"
 import { mdEnhancePlugin } from "vuepress-plugin-md-enhance";
 
 export default {

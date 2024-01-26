@@ -47,8 +47,7 @@ npm i -D vuepress-plugin-append-date
 
 @tab TS
 
-```ts
-// .vuepress/config.ts
+```ts title=".vuepress/config.ts"
 import { appendDatePlugin } from "vuepress-plugin-append-date";
 
 export default {
@@ -62,8 +61,7 @@ export default {
 
 @tab JS
 
-```js
-// .vuepress/config.js
+```js title=".vuepress/config.js"
 import { appendDatePlugin } from "vuepress-plugin-append-date";
 
 export default {

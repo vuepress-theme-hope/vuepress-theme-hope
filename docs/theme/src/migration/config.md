@@ -13,8 +13,7 @@ tag:
 
 @tab TS
 
-```diff
-  // .vuepress/config.ts
+```diff title=".vuepress/config.ts"
 - import theme from "vuepress-theme-hope";
 + import { defineUserConfig } from "vuepress";
 + import { hopeTheme } from "vuepress-theme-hope";
@@ -35,8 +34,7 @@ tag:
 
 @tab JS
 
-```diff
-// .vuepress/config.js
+```diff title=".vuepress/config.js"
 - const { config } = require("vuepress-theme-hope");
 + import { hopeTheme } from "vuepress-theme-hope";
 

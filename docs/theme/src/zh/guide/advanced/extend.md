@@ -27,8 +27,7 @@ tag:
 
 @tab TS
 
-```ts
-// .vuepress/theme/index.ts
+```ts title=".vuepress/theme/index.ts"
 import { getDirname, path } from "vuepress/utils";
 import { hopeTheme } from "vuepress-theme-hope";
 import type { ThemeOptions } from "vuepress-theme-hope";
@@ -53,8 +52,7 @@ export default (options) => ({
 
 @tab JS
 
-```js
-// .vuepress/theme/index.js
+```js title=".vuepress/theme/index.js"
 import { getDirname, path } from "vuepress/utils";
 import { hopeTheme } from "vuepress-theme-hope";
 

@@ -22,8 +22,7 @@ pnpm add -D vuepress-plugin-reading-time2
 
 ### Usage
 
-```ts
-// .vuepress/config.ts
+```ts title=".vuepress/config.ts"
 import { readingTimePlugin } from "vuepress-plugin-reading-time2";
 
 export default {

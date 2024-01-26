@@ -51,8 +51,7 @@ npm i -D vuepress-plugin-redirect
 
 @tab TS
 
-```ts
-// .vuepress/config.ts
+```ts title=".vuepress/config.ts"
 import { redirectPlugin } from "vuepress-plugin-redirect";
 
 export default {
@@ -66,8 +65,7 @@ export default {
 
 @tab JS
 
-```js
-// .vuepress/config.js
+```js title=".vuepress/config.js"
 import { redirectPlugin } from "vuepress-plugin-redirect";
 
 export default {

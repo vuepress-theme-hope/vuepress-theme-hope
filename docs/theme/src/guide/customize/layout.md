@@ -21,9 +21,7 @@ The theme provides many layout-related options for you to customize the layout o
 
 The theme will automatically apply responsive layouts under different screen widths. If you need to modify these breakpoints, you can modify them in [style config file](../../config/style.md#configscss).
 
-```scss
-// .vuepress/styles/config.scss
-
+```scss title=".vuepress/styles/config.scss"
 // Modify the breakpoint of the desktop layout
 $pc = 1280px;
 ```
@@ -34,9 +32,7 @@ For details about breakpoint variables `$pc`, `$laptop`, `$pad`, `$tablet`, `$mo
 
 The theme provides common size variables in the [style palette file](../../config/style.md#palettescss), and you can modify these variables in the palette file to achieve the purpose of modifying the layout size.
 
-```scss
-// .vuepress/styles/palette.scss
-
+```scss title=".vuepress/styles/palette.scss"
 // Modify the height of the navigation bar
 $navbar-height = 80px;
 ```
@@ -67,8 +63,7 @@ You can add new layouts or override existing layouts via `layouts` option in [cl
 
 @tab TS
 
-```ts
-// .vuepress/client.ts
+```ts title=".vuepress/client.ts"
 import { defineClientConfig } from "vuepress/client";
 import Changelog from "./layouts/Changelog.vue";
 import Layout from "./layouts/Layout.vue";
@@ -86,8 +81,7 @@ export default defineClientConfig({
 
 @tab JS
 
-```js
-// .vuepress/client.js
+```js title=".vuepress/client.js"
 import { defineClientConfig } from "vuepress/client";
 import Changelog from "./layouts/Changelog.vue";
 import Layout from "./layouts/Layout.vue";

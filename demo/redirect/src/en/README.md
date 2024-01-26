@@ -24,8 +24,7 @@ pnpm add -D vuepress-plugin-redirect
 
 ### Usage
 
-```ts
-// .vuepress/config.ts
+```ts title=".vuepress/config.ts"
 import { redirectPlugin } from "vuepress-plugin-redirect";
 
 export default {

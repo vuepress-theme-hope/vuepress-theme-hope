@@ -18,8 +18,7 @@ Let the Markdown file support playground in your VuePress site.
 
 @tab TS
 
-```ts {8-36}
-// .vuepress/config.ts
+```ts {8-36} title=".vuepress/config.ts"
 import { defineUserConfig } from "vuepress";
 import { hopeTheme } from "vuepress-theme-hope";
 
@@ -65,8 +64,7 @@ export default defineUserConfig({
 
 @tab JS
 
-```js {8-36}
-// .vuepress/config.js
+```js {8-36} title=".vuepress/config.js"
 import { hopeTheme } from "vuepress-theme-hope";
 
 export default {

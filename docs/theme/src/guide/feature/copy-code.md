@@ -30,8 +30,7 @@ After user press the copy button, a success hint will display on the screen. The
 
 ## Effect
 
-```js
-// .vuepress/config.js
+```js title=".vuepress/config.js"
 import { hopeTheme } from "vuepress-theme-hope";
 
 export default {

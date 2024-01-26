@@ -13,8 +13,7 @@ footer: MIT Licensed, Copyright © 2019-present Mr.Hope
 
 ## Demo
 
-```ts
-// .vuepress/config.ts
+```ts title=".vuepress/config.ts"
 import { copyrightPlugin } from "vuepress-plugin-copyright2";
 
 export default {

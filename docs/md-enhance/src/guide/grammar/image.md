@@ -13,8 +13,7 @@ Improve image syntax in Markdown to support color scheme and size.
 
 @tab TS
 
-```ts {7-14}
-// .vuepress/config.ts
+```ts {7-14} title=".vuepress/config.ts"
 import { mdEnhancePlugin } from "vuepress-plugin-md-enhance";
 
 export default {
@@ -35,8 +34,7 @@ export default {
 
 @tab JS
 
-```js {7-14}
-// .vuepress/config.js
+```js {7-14} title=".vuepress/config.js"
 import { mdEnhancePlugin } from "vuepress-plugin-md-enhance";
 
 export default {

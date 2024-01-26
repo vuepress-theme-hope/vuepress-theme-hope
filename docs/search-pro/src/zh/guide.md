@@ -270,8 +270,7 @@ export default defineUserConfig({
 
 你可以在[客户端配置文件][client-config] 中导入和调用 `defineSearchConfig` 来自定义搜索选项：
 
-```ts
-// .vuepress/client.ts
+```ts title=".vuepress/client.ts"
 import { defineClientConfig } from "vuepress/client";
 import { defineSearchConfig } from "vuepress-plugin-search-pro/client";
 

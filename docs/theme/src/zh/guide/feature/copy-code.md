@@ -30,8 +30,7 @@ tag:
 
 ## 效果
 
-```js
-// .vuepress/config.js
+```js title=".vuepress/config.js"
 import { hopeTheme } from "vuepress-theme-hope";
 
 export default {

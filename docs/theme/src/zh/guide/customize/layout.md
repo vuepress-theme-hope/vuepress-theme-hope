@@ -21,9 +21,7 @@ tag:
 
 主题在不同屏幕宽度下会自动响应式应用不同布局，如果你需要修改这些断点，可以在 [样式配置文件](../../config/style.md#configscss)中修改，
 
-```scss
-// .vuepress/styles/config.scss
-
+```scss title=".vuepress/styles/config.scss"
 // 修改桌面布局的断点
 $pc = 1280px;
 ```
@@ -34,9 +32,7 @@ $pc = 1280px;
 
 主题在调色板文件中提供了常见尺寸的变量，你可以在 [调色版文件](../../config/style.md#palettescss) 中修改这些变量，以达到修改布局尺寸的目的。
 
-```scss
-// .vuepress/styles/palette.scss
-
+```scss title=".vuepress/styles/palette.scss"
 // 修改导航栏高度
 $navbar-height = 80px;
 ```
@@ -67,8 +63,7 @@ $navbar-height = 80px;
 
 @tab TS
 
-```ts
-// .vuepress/client.ts
+```ts title=".vuepress/client.ts"
 import { defineClientConfig } from "vuepress/client";
 import Changelog from "./layouts/Changelog.vue";
 import Layout from "./layouts/Layout.vue";
@@ -86,8 +81,7 @@ export default defineClientConfig({
 
 @tab JS
 
-```js
-// .vuepress/client.js
+```js title=".vuepress/client.js"
 import { defineClientConfig } from "vuepress/client";
 import Changelog from "./layouts/Changelog.vue";
 import Layout from "./layouts/Layout.vue";

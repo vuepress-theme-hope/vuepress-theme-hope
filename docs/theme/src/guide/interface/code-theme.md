@@ -19,8 +19,7 @@ By default, we use `one-light` and `one-dark` for lightmode and darkmode respect
 
 @tab TS
 
-```ts {7-12}
-// .vuepress/config.ts
+```ts {7-12} title=".vuepress/config.ts"
 import { defineUserConfig } from "vuepress";
 import { hopeTheme } from "vuepress-theme-hope";
 
@@ -38,8 +37,7 @@ export default defineUserConfig({
 
 @tab JS
 
-```js {7-12}
-// .vuepress/config.js
+```js {7-12} title=".vuepress/config.js"
 import { hopeTheme } from "vuepress-theme-hope";
 
 export default {
@@ -145,8 +143,7 @@ Prism.js is fast and lightweight, but it can not highlight all syntax correctly.
 
    @tab TS
 
-   ```ts
-   // .vuepress/config.ts
+   ```ts title=".vuepress/config.ts"
    import { shikiPlugin } from "@vuepress/plugin-shiki";
    import { defineUserConfig } from "vuepress";
 
@@ -162,8 +159,7 @@ Prism.js is fast and lightweight, but it can not highlight all syntax correctly.
 
    @tab JS
 
-   ```js
-   // .vuepress/config.js
+   ```js title=".vuepress/config.js"
    import { shikiPlugin } from "@vuepress/plugin-shiki";
 
    export default {

@@ -19,8 +19,7 @@ tag:
 
 @tab TS
 
-```ts {8-11}
-// .vuepress/config.ts
+```ts {8-11} title=".vuepress/config.ts"
 import { defineUserConfig } from "vuepress";
 import { hopeTheme } from "vuepress-theme-hope";
 
@@ -38,8 +37,7 @@ export default defineUserConfig({
 
 @tab JS
 
-```js {7-10}
-// .vuepress/config.js
+```js {7-10} title=".vuepress/config.js"
 import { hopeTheme } from "vuepress-theme-hope";
 
 export default {

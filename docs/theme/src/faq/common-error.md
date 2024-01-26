@@ -191,8 +191,7 @@ If you need to support older browsers, you can use `postcss-preset-env` to be co
 
 @tab Vite
 
-```ts
-// .vuepress/config.ts
+```ts title=".vuepress/config.ts"
 import { defineUserConfig } from "vuepress";
 import { addViteConfig } from "vuepress-shared/node";
 import postcssPresetEnv from "postcss-preset-env";
@@ -212,8 +211,7 @@ export default defineUserConfig({
 
 @tab Webpack
 
-```ts
-// .vuepress/config.ts
+```ts title=".vuepress/config.ts"
 import { defineUserConfig } from "vuepress";
 import { configWebpack } from "vuepress-shared/node";
 import postcssPresetEnv from "postcss-preset-env";

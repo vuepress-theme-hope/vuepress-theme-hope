@@ -80,8 +80,7 @@ font-family: "Noto Serif SC", serif;
 
 那么你需要做的就是在 VuePress 配置文件中添加如下代码导入并使用它们:
 
-```ts
-// .vuepress/config.ts
+```ts title=".vuepress/config.ts"
 import { defineUserConfig } from "vuepress";
 
 export default defineUserConfig({
@@ -111,9 +110,7 @@ export default defineUserConfig({
 
 同时在调色板文件中修改 `$font-family` 变量:
 
-```scss
-// .vuepress/styles/palette.scss
-
+```scss title=".vuepress/styles/palette.scss"
 // 应用字体
 $font-family: '"Noto Serif SC", serif';
 ```

@@ -16,8 +16,7 @@ category:
 
 @tab TS
 
-```ts
-// .vuepress/config.ts
+```ts title=".vuepress/config.ts"
 import { defineUserConfig } from "vuepress";
 
 export default defineUserConfig({
@@ -32,8 +31,7 @@ export default defineUserConfig({
 
 @tab JS
 
-```js
-// .vuepress/config.js
+```js title=".vuepress/config.js"
 import { defineUserConfig } from "vuepress";
 
 export default defineUserConfig({
@@ -81,15 +79,13 @@ flowchart LR
 
 - 如果你不喜欢宽屏布局，你可以将 `$pc` 断点设置一个非常大的值:
 
-  ```scss
-  // .vuepress/config.scss
+  ```scss title=".vuepress/config.scss"
   $pc: 9999px;
   ```
 
 - 如果你不想要 Pad 布局，你可以将 `$tablet` 断点和 `$pad` 断点重合:
 
-  ```scss
-  // .vuepress/config.scss
+  ```scss title=".vuepress/config.scss"
   $tablet: 959px;
   ```
 
@@ -101,8 +97,7 @@ flowchart LR
 
 你需要在 VuePress 配置文件中配置 [markdown.header.levels](https://vuejs.press/zh/reference/config.html#markdown-headers):
 
-```ts
-// .vuepress/config.ts
+```ts title=".vuepress/config.ts"
 export default {
   markdown: {
     header: {

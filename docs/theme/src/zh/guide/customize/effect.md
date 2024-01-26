@@ -27,9 +27,7 @@ tag:
 
 同时，你可以通过控制调色板文件中的 `$color-transition` 和 `transform-transition` 来控制动画的时长:
 
-```scss
-// .vuepress/styles/palette.scss
-
+```scss title=".vuepress/styles/palette.scss"
 $color-transition: 0s;
 $transform-transition: 0s;
 ```

@@ -24,15 +24,13 @@ The palette file is the `.vuepress/styles/palette.scss` file under the VuePress 
 
 For the former, you need to write variable values in `palette.scss`, e.g.:
 
-```scss
-// .vuepress/styles/palette.scss
+```scss title=".vuepress/styles/palette.scss"
 $theme-color: #3eaf7c;
 ```
 
 For the latter, you need to set up a Map with key names `light` and `dark`, and values as color values, e.g.:
 
-```scss
-// .vuepress/styles/palette.scss
+```scss title=".vuepress/styles/palette.scss"
 $bg-color: (
   light: #fff,
   dark: #000,
@@ -45,9 +43,7 @@ See [Theme Configuration → Color Settings](../../config/style.md#color-config)
 
 Sometimes, you may want to modify some colors that are not in `palette.scss`, such as the background color of the code block. At this time, you can check whether the corresponding color attribute value is a CSS variable through the devTools. If so, you can go to `index.scss` to manually override this variable value:
 
-```scss
-// .vuepress/styles/index.scss
-
+```scss title=".vuepress/styles/index.scss"
 // override code block background color
 #app {
   --code-bg-color: #000;
@@ -60,9 +56,7 @@ Sometimes, you may want to modify some colors that are not in `palette.scss`, su
 
 If not, write your own selectors to override them:
 
-```scss
-// .vuepress/styles/index.scss
-
+```scss title=".vuepress/styles/index.scss"
 // override code block language font color
 pre[class*="language-"]::before {
   color: #fff !important;

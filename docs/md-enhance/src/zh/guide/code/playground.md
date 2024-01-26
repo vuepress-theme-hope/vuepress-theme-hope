@@ -13,8 +13,7 @@ icon: code
 
 @tab TS
 
-```ts {8-36}
-// .vuepress/config.ts
+```ts {8-36} title=".vuepress/config.ts"
 import { mdEnhance } from "vuepress-plugin-md-enhance";
 
 export default {
@@ -57,8 +56,7 @@ export default {
 
 @tab JS
 
-```js {8-36}
-// .vuepress/config.js
+```js {8-36} title=".vuepress/config.js"
 import { mdEnhance } from "vuepress-plugin-md-enhance";
 
 export default {

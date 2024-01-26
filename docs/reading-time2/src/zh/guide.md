@@ -22,8 +22,7 @@ interface ReadingTime {
 
 此插件主要面向插件和主题开发者，所以我们强烈建议你使用它的 use api:
 
-```ts
-// 你插件或主题的入口
+```ts title="你插件或主题的入口"
 import { useReadingTimePlugin } from "vuepress-plugin-reading-time2";
 
 export default (options) => (app) => {
@@ -47,8 +46,7 @@ export default (options) => (app) => {
 
 我们也提供了一个 `removeReadingTimePlugin` api 来移除插件。你可以使用它来确保你的调用生效或清除插件:
 
-```ts
-// 你插件或主题的入口
+```ts title="你插件或主题的入口"
 import { useReadingTimePlugin } from "vuepress-plugin-reading-time2";
 
 export default (options) => (app) => {

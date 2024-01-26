@@ -80,8 +80,7 @@ npm init vuepress-theme-hope add [dir]
 
 @tab TS
 
-```ts {7}
-// .vuepress/config.ts
+```ts {7} title=".vuepress/config.ts"
 import { defineUserConfig } from "vuepress";
 import { hopeTheme } from "vuepress-theme-hope";
 
@@ -94,8 +93,7 @@ export default defineUserConfig({
 
 @tab JS
 
-```js {7}
-// .vuepress/config.js
+```js {7} title=".vuepress/config.js"
 import { hopeTheme } from "vuepress-theme-hope";
 
 export default {

@@ -113,8 +113,7 @@ Locales config for photo-swipe plugin.
 
 Options passed to [`photo-swipe`](http://photoswipe.com/)
 
-```ts
-// .vuepress/client.ts
+```ts title=".vuepress/client.ts"
 import { definePhotoSwipeConfig } from "vuepress-plugin-photo-swipe/client";
 
 definePhotoSwipeConfig({

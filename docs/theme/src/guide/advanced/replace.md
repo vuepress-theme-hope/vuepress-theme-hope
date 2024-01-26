@@ -21,8 +21,7 @@ You need to replace the component alias used in the theme with `alias` option in
 
 @tab TS
 
-```ts
-// .vuepress/config.ts
+```ts title=".vuepress/config.ts"
 import { getDirname, path } from "vuepress/utils";
 import { defineUserConfig } from "vuepress";
 import { hopeTheme } from "vuepress-theme-hope";
@@ -50,8 +49,7 @@ export default defineUserConfig({
 
 @tab JS
 
-```js
-// .vuepress/config.js
+```js title=".vuepress/config.js"
 import { getDirname, path } from "vuepress/utils";
 import { hopeTheme } from "vuepress-theme-hope";
 
@@ -249,8 +247,7 @@ For example, if your site has strong social attributes, and you want to display 
 
 @tab config.ts
 
-```ts
-// .vuepress/config.ts
+```ts title=".vuepress/config.ts"
 import { getDirname, path } from "vuepress/utils";
 import { defineUserConfig } from "vuepress";
 import { hopeTheme } from "vuepress-theme-hope";

@@ -33,8 +33,7 @@ Override `@theme-hope/modules/blog/components/BlogHero` and import the above com
 
 ::: details Code Example
 
-```ts
-// .vuepress/config.ts
+```ts title=".vuepress/config.ts"
 import { getDirname, path } from "vuepress/utils";
 import { defineUserConfig } from "vuepress";
 
@@ -84,8 +83,7 @@ Override `@theme-hope/modules/blog/components/BlogHero`, import the above compon
 
 ::: details Code Example
 
-```ts
-// .vuepress/config.ts
+```ts title=".vuepress/config.ts"
 import { getDirname, path } from "vuepress/utils";
 import { defineUserConfig } from "vuepress";
 
@@ -152,8 +150,7 @@ const setupRunningTimeFooter: (
 
 ::: details Code Example
 
-```ts
-// .vuepress/client.ts
+```ts title=".vuepress/client.ts"
 import { defineClientConfig } from "vuepress/client";
 import { setupRunningTimeFooter } from "vuepress-theme-hope/presets/footerRunningTime.js";
 

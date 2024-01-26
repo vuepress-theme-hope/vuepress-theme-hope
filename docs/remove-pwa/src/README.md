@@ -51,8 +51,7 @@ npm i -D vuepress-plugin-remove-pwa
 
 @tab TS
 
-```ts
-// .vuepress/config.ts
+```ts title=".vuepress/config.ts"
 import { removePWAPlugin } from "vuepress-plugin-remove-pwa";
 
 export default {
@@ -66,8 +65,7 @@ export default {
 
 @tab JS
 
-```js
-// .vuepress/config.js
+```js title=".vuepress/config.js"
 import { removePWAPlugin } from "vuepress-plugin-remove-pwa";
 
 export default {

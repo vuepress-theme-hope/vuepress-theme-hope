@@ -51,8 +51,7 @@ npm i -D vuepress-plugin-copyright2
 
 @tab TS
 
-```ts
-// .vuepress/config.ts
+```ts title=".vuepress/config.ts"
 import { copyrightPlugin } from "vuepress-plugin-copyright2";
 
 export default {
@@ -66,8 +65,7 @@ export default {
 
 @tab JS
 
-```js
-// .vuepress/config.js
+```js title=".vuepress/config.js"
 import { copyrightPlugin } from "vuepress-plugin-copyright2";
 
 export default {

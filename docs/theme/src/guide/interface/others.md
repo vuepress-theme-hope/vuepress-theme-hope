@@ -20,8 +20,7 @@ To hide print button, you should set `print: false` in theme options.
 
 @tab TS
 
-```ts {7}
-// .vuepress/config.ts
+```ts {7} title=".vuepress/config.ts"
 import { defineUserConfig } from "vuepress";
 import { hopeTheme } from "vuepress-theme-hope";
 
@@ -34,8 +33,7 @@ export default defineUserConfig({
 
 @tab JS
 
-```js {7}
-// .vuepress/config.js
+```js {7} title=".vuepress/config.js"
 import { defineUserConfig } from "vuepress";
 import { hopeTheme } from "vuepress-theme-hope";
 
@@ -58,8 +56,7 @@ If you need it, you can enable it by setting `fullscreen: true` in theme options
 
 @tab TS
 
-```ts {7}
-// .vuepress/config.ts
+```ts {7} title=".vuepress/config.ts"
 import { defineUserConfig } from "vuepress";
 import { hopeTheme } from "vuepress-theme-hope";
 
@@ -72,8 +69,7 @@ export default defineUserConfig({
 
 @tab JS
 
-```js {7}
-// .vuepress/config.js
+```js {7} title=".vuepress/config.js"
 import { defineUserConfig } from "vuepress";
 import { hopeTheme } from "vuepress-theme-hope";
 
@@ -102,8 +98,7 @@ You can set `backToTop: false` in theme options to disable it, or set it with an
 
 @tab TS
 
-```ts {7-8,12-26}
-// .vuepress/config.ts
+```ts {7-8,12-26} title=".vuepress/config.ts"
 import { defineUserConfig } from "vuepress";
 import { hopeTheme } from "vuepress-theme-hope";
 
@@ -135,8 +130,7 @@ export default defineUserConfig({
 
 @tab JS
 
-```js {7-8,12-26}
-// .vuepress/config.js
+```js {7-8,12-26} title=".vuepress/config.js"
 import { defineUserConfig } from "vuepress";
 import { hopeTheme } from "vuepress-theme-hope";
 
@@ -178,8 +172,7 @@ Try it: <ToggleRTLButton />
 
 @tab TS
 
-```ts {10,11}
-// .vuepress/config.ts
+```ts {10,11} title=".vuepress/config.ts"
 import { defineUserConfig } from "vuepress";
 import { hopeTheme } from "vuepress-theme-hope";
 
@@ -198,8 +191,7 @@ export default defineUserConfig({
 
 @tab JS
 
-```js {10,11}
-// .vuepress/config.js
+```js {10,11} title=".vuepress/config.js"
 import { defineUserConfig } from "vuepress";
 import { hopeTheme } from "vuepress-theme-hope";
 

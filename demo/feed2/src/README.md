@@ -30,8 +30,7 @@ pnpm add -D vuepress-plugin-feed2
 
 ### Usage
 
-```ts
-// .vuepress/config.ts
+```ts title=".vuepress/config.ts"
 import { feedPlugin } from "vuepress-plugin-feed2";
 
 export default {

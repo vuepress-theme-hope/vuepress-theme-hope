@@ -38,8 +38,7 @@ PDF 预览组件。
 
 如果你将 PDFJS 解压到 `.vuepress/public/assets/lib/pdfjs` ，你应该设置：
 
-```ts
-// .vuepress/config.ts
+```ts title=".vuepress/config.ts"
 import { componentsPlugin } from "vuepress-plugin-components";
 
 export default {

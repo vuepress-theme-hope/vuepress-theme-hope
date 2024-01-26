@@ -15,8 +15,7 @@ It's useful for you to create inline snippet with it.
 
 @tab TS
 
-```ts {7-9}
-// .vuepress/config.ts
+```ts {7-9} title=".vuepress/config.ts"
 import { mdEnhancePlugin } from "vuepress-plugin-md-enhance";
 
 export default {
@@ -32,8 +31,7 @@ export default {
 
 @tab JS
 
-```js {7-9}
-// .vuepress/config.js
+```js {7-9} title=".vuepress/config.js"
 import { mdEnhancePlugin } from "vuepress-plugin-md-enhance";
 
 export default {
@@ -63,8 +61,7 @@ For example, you can use the following config to transform `*Recommended*` into 
 
 @tab TS
 
-```ts {7-19}
-// .vuepress/config.ts
+```ts {7-19} title=".vuepress/config.ts"
 import { mdEnhancePlugin } from "vuepress-plugin-md-enhance";
 
 export default {
@@ -90,8 +87,7 @@ export default {
 
 @tab JS
 
-```js {7-19}
-// .vuepress/config.js
+```js {7-19} title=".vuepress/config.js"
 import { mdEnhancePlugin } from "vuepress-plugin-md-enhance";
 
 export default {
@@ -123,8 +119,7 @@ Another example is you want to set all the emphasis `n't` words to red color, so
 
 @tab TS
 
-```ts {7-19}
-// .vuepress/config.ts
+```ts {7-19} title=".vuepress/config.ts"
 import { mdEnhancePlugin } from "vuepress-plugin-md-enhance";
 
 export default {
@@ -150,8 +145,7 @@ export default {
 
 @tab JS
 
-```js {7-19}
-// .vuepress/config.js
+```js {7-19} title=".vuepress/config.js"
 import { mdEnhancePlugin } from "vuepress-plugin-md-enhance";
 
 export default {

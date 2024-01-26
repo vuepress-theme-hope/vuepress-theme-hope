@@ -24,15 +24,13 @@ tag:
 
 对于前者，你需要在 `palette.scss` 中写入变量值，如：
 
-```scss
-// .vuepress/styles/palette.scss
+```scss title=".vuepress/styles/palette.scss"
 $theme-color: #3eaf7c;
 ```
 
 对于后者，你需要设置一个 Map，键名为 `light` 和 `dark`，值为颜色值，如：
 
-```scss
-// .vuepress/styles/palette.scss
+```scss title=".vuepress/styles/palette.scss"
 $bg-color: (
   light: #fff,
   dark: #000,
@@ -45,9 +43,7 @@ $bg-color: (
 
 有些时候，你可能希望修改一些不在 `palette.scss` 中的颜色，比如代码块的背景色，此时你可以通过开发者工具查看对应的颜色属性值是否是 CSS 变量，如果是你可以在 `index.scss` 中手动覆盖这一变量值:
 
-```scss
-// .vuepress/styles/index.scss
-
+```scss title=".vuepress/styles/index.scss"
 // 覆盖代码块背景色
 #app {
   --code-bg-color: #000;
@@ -60,9 +56,7 @@ $bg-color: (
 
 如果不是，请你自己编写选择器覆盖它们:
 
-```scss
-// .vuepress/styles/index.scss
-
+```scss title=".vuepress/styles/index.scss"
 // 覆盖代码块语言字体颜色
 pre[class*="language-"]::before {
   color: #fff !important;

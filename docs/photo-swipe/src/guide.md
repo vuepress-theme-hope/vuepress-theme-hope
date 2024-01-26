@@ -33,8 +33,7 @@ By default, the plugin will select images according to the default theme's selec
 
 You can pass options to [`photo-swipe`](http://photoswipe.com/) by importing and calling `definePhotoSwipeConfig` in [client config file][client-config]:
 
-```ts
-// .vuepress/client.ts
+```ts title=".vuepress/client.ts"
 import { defineClientConfig } from "vuepress/client";
 import { definePhotoSwipeConfig } from "vuepress-plugin-photo-swipe/client";
 

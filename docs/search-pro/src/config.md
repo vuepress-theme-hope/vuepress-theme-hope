@@ -372,8 +372,7 @@ Multilingual configuration of the search plugin.
 
 Customize [search options](https://mister-hope.github.io/slimsearch/interfaces/SearchOptions.html).
 
-```ts
-// .vuepress/client.ts
+```ts title=".vuepress/client.ts"
 import { defineSearchConfig } from "vuepress-plugin-search-pro/client";
 
 defineSearchConfig({

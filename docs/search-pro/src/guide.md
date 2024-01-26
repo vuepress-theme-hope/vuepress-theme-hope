@@ -260,8 +260,7 @@ export default defineUserConfig({
 
 You can customize search options by importing and calling `defineSearchConfig` in [client config file][client-config]:
 
-```ts
-// .vuepress/client.ts
+```ts title=".vuepress/client.ts"
 import { defineClientConfig } from "vuepress/client";
 import { defineSearchConfig } from "vuepress-plugin-search-pro/client";
 

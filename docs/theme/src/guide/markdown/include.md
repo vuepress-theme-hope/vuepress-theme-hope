@@ -18,8 +18,7 @@ Let the Markdown file in your VuePress site support including other files.
 
 @tab TS
 
-```ts {8-10}
-// .vuepress/config.ts
+```ts {8-10} title=".vuepress/config.ts"
 import { defineUserConfig } from "vuepress";
 import { hopeTheme } from "vuepress-theme-hope";
 
@@ -36,8 +35,7 @@ export default defineUserConfig({
 
 @tab JS
 
-```js {7-9}
-// .vuepress/config.js
+```js {7-9} title=".vuepress/config.js"
 import { hopeTheme } from "vuepress-theme-hope";
 
 export default {
@@ -59,8 +57,7 @@ export default {
 
 @tab TS
 
-```ts {13-20}
-// .vuepress/config.ts
+```ts {13-20} title=".vuepress/config.ts"
 import { getDirname, path } from "vuepress/utils";
 import { defineUserConfig } from "vuepress";
 import { hopeTheme } from "vuepress-theme-hope";
@@ -88,8 +85,7 @@ export default defineUserConfig({
 
 @tab JS
 
-```js {12-19}
-// .vuepress/config.js
+```js {12-19} title=".vuepress/config.js"
 import { getDirname, path } from "vuepress/utils";
 import { hopeTheme } from "vuepress-theme-hope";
 
@@ -122,8 +118,7 @@ Also, to place your Markdown files directly besides your actual files, but don't
 
 @tab TS
 
-```ts {6-7}
-// .vuepress/config.ts
+```ts {6-7} title=".vuepress/config.ts"
 import { defineUserConfig } from "vuepress";
 import { hopeTheme } from "vuepress-theme-hope";
 
@@ -143,8 +138,7 @@ export default defineUserConfig({
 
 @tab JS
 
-```js {5-6}
-// .vuepress/config.js
+```js {5-6} title=".vuepress/config.js"
 import { hopeTheme } from "vuepress-theme-hope";
 
 export default {

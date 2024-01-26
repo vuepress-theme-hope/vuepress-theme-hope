@@ -28,9 +28,7 @@ If you need to remove these fancy styles, please set `pure: true` in the theme o
 
 Meanwhile, you can control the duration of the animation by controlling `$color-transition` and `transform-transition` in the palette file:
 
-```scss
-// .vuepress/styles/palette.scss
-
+```scss title=".vuepress/styles/palette.scss"
 $color-transition: 0s;
 $transform-transition: 0s;
 ```

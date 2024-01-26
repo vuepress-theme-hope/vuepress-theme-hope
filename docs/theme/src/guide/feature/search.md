@@ -192,8 +192,7 @@ The theme adds built-in support for <ProjectLink name="search-pro">`vuepress-plu
 
    @tab TS
 
-   ```ts {8-11}
-   // .vuepress/config.ts
+   ```ts {8-11} title=".vuepress/config.ts"
    import { defineUserConfig } from "vuepress";
    import { hopeTheme } from "vuepress-theme-hope";
 
@@ -211,8 +210,7 @@ The theme adds built-in support for <ProjectLink name="search-pro">`vuepress-plu
 
    @tab JS
 
-   ```js {8-11}
-   // .vuepress/config.js
+   ```js {8-11} title=".vuepress/config.js"
    import { defineUserConfig } from "vuepress";
    import { hopeTheme } from "vuepress-theme-hope";
 
@@ -270,8 +268,7 @@ See [Plugin Docs][docsearch] for how to use docsearch plugin and its available o
 
    @tab TS
 
-   ```ts
-   // .vuepress/config.ts
+   ```ts title=".vuepress/config.ts"
    import { defineUserConfig } from "vuepress";
    import { hopeTheme } from "vuepress-theme-hope";
 
@@ -289,8 +286,7 @@ See [Plugin Docs][docsearch] for how to use docsearch plugin and its available o
 
    @tab JS
 
-   ```js
-   // .vuepress/config.js
+   ```js title=".vuepress/config.js"
    import { defineUserConfig } from "vuepress";
    import { hopeTheme } from "vuepress-theme-hope";
 
@@ -346,8 +342,7 @@ See <ProjectLink name="search-pro">Plugin Docs</ProjectLink> for available optio
 
    @tab TS
 
-   ```ts
-   // .vuepress/config.ts
+   ```ts title=".vuepress/config.ts"
    import { defineUserConfig } from "vuepress";
    import { hopeTheme } from "vuepress-theme-hope";
 
@@ -365,8 +360,7 @@ See <ProjectLink name="search-pro">Plugin Docs</ProjectLink> for available optio
 
    @tab JS
 
-   ```js
-   // .vuepress/config.js
+   ```js title=".vuepress/config.js"
    import { defineUserConfig } from "vuepress";
    import { hopeTheme } from "vuepress-theme-hope";
 

@@ -22,8 +22,7 @@ pnpm add -D vuepress-plugin-seo2
 
 ### Usage
 
-```ts
-// .vuepress/config.ts
+```ts title=".vuepress/config.ts"
 import { seoPlugin } from "vuepress-plugin-seo2";
 
 export default {

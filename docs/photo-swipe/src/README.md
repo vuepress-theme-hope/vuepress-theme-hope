@@ -53,8 +53,7 @@ npm i -D vuepress-plugin-photo-swipe
 
 @tab TS
 
-```ts
-// .vuepress/config.ts
+```ts title=".vuepress/config.ts"
 import { photoSwipePlugin } from "vuepress-plugin-photo-swipe";
 
 export default {
@@ -68,8 +67,7 @@ export default {
 
 @tab JS
 
-```js
-// .vuepress/config.js
+```js title=".vuepress/config.js"
 import { photoSwipePlugin } from "vuepress-plugin-photo-swipe";
 
 export default {

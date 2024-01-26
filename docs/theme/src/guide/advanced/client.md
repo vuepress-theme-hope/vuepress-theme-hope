@@ -21,8 +21,7 @@ To learn more about client config file, see [Advanced > Cookbook > Usage of Clie
 
 ## Example
 
-```ts
-// .vuepress/client.ts
+```ts title=".vuepress/client.ts"
 import { defineClientConfig } from "vuepress/client";
 import ExampleGlobalComponent from "./components/ExampleGlobalComponent.vue";
 import ExampleRootComponent from "./components/ExampleRootComponent.vue";

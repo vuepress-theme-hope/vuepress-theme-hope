@@ -51,8 +51,7 @@ npm i -D vuepress-plugin-lightgallery
 
 @tab TS
 
-```ts
-// .vuepress/config.ts
+```ts title=".vuepress/config.ts"
 import { lightgalleryPlugin } from "vuepress-plugin-lightgallery";
 
 export default {
@@ -66,8 +65,7 @@ export default {
 
 @tab JS
 
-```js
-// .vuepress/config.js
+```js title=".vuepress/config.js"
 import { lightgalleryPlugin } from "vuepress-plugin-lightgallery";
 
 export default {

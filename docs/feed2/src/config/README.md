@@ -87,7 +87,7 @@ A custom filter function, used to filter feed items.
 - Default:
 
   ```ts
-  // compareDate is from "vuepress-shared" package
+  // compareDate is from vuepress-shared
   (pageA: Page, pageB: Page): number =>
     compareDate(
       pageA.data.git?.createdTime

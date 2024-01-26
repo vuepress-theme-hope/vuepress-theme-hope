@@ -29,8 +29,7 @@ export default {
 
 @tab 通过客户端配置文件
 
-```ts
-// .vuepress/client.ts
+```ts title=".vuepress/client.ts"
 import { defineClientConfig } from "vuepress/client";
 import {
   defineArtalkConfig,

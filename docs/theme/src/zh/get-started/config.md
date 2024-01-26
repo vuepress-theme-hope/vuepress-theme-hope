@@ -38,8 +38,7 @@ VuePress 使用文档文件夹中的 `.vuepress` 文件夹存放配置，所有 
 
 @tab TS
 
-```ts
-// .vuepress/config.ts
+```ts title=".vuepress/config.ts"
 import { defineUserConfig } from "vuepress";
 
 export default defineUserConfig({
@@ -49,8 +48,7 @@ export default defineUserConfig({
 
 @tab JS
 
-```js
-// .vuepress/config.js
+```js title=".vuepress/config.js"
 import { defineUserConfig } from "vuepress";
 
 export default defineUserConfig({

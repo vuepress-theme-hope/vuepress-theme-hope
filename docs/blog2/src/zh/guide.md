@@ -87,8 +87,7 @@ flowchart TB
 
 ::: details 案例
 
-```ts
-// 主题入口
+```ts title="主题入口"
 import { blogPlugin } from "vuepress-plugin-blog2";
 
 export default {
@@ -150,8 +149,7 @@ export default {
 
 假设你想为每篇文章设置标签，并且你正在通过 `frontmatter.tag` 设置它们。同时，你想要在 `/tag/` 中使用 `TagMap` 布局的标签页面，并在`/tag/标签名称` 中使用 `TagList` 布局对标签按名称进行分组，你可能需要这样的配置:
 
-```ts
-// 主题入口
+```ts title="主题入口"
 import { blogPlugin } from "vuepress-plugin-blog2";
 
 export default {
@@ -179,8 +177,7 @@ export default {
 
 此外，你可能希望为你的一些文章加注星标，并将其展示给访问者。当你在 frontmatter 中设置 `star: true` 来标记它们时，你可能需要这样的配置来在 `/star/` 路径中以 `StarList` 布局显示它们:
 
-```ts
-// 主题入口
+```ts title="主题入口"
 import { blogPlugin } from "vuepress-plugin-blog2";
 
 export default {
@@ -365,8 +362,7 @@ const stars = useBlogType("star");
 
 例如，如果用户进行了以下 locales 配置，并且你正在设置上面的“star”示例:
 
-```ts
-// .vuepress/config.ts
+```ts title=".vuepress/config.ts"
 export default {
   locales: {
     "/": {

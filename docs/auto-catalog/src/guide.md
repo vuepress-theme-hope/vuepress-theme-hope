@@ -15,8 +15,7 @@ First, you should set catalog info in routeMeta:
 
 @tab TS
 
-```ts
-// .vuepress/config.ts
+```ts title=".vuepress/config.ts"
 import { defineUserConfig } from "vuepress";
 
 export default defineUserConfig({
@@ -33,8 +32,7 @@ export default defineUserConfig({
 
 @tab JS
 
-```js
-// .vuepress/config.js
+```js title=".vuepress/config.js"
 import { autoCatalogPlugin } from "vuepress-plugin-auto-catalog";
 
 export default {
@@ -57,8 +55,7 @@ You can then import `defineAutoCatalogGetter` from `vuepress-plugin-auto-catalog
 
 @tab TS
 
-```ts
-// .vuepress/client.ts
+```ts title=".vuepress/client.ts"
 import { defineClientConfig } from "vuepress/client";
 import { defineAutoCatalogGetter } from "vuepress-plugin-auto-catalog/client";
 
@@ -73,8 +70,7 @@ export default defineClientConfig({
 
 @tab JS
 
-```js
-// .vuepress/client.js
+```js title=".vuepress/client.js"
 import { defineAutoCatalogGetter } from "vuepress-plugin-auto-catalog/client";
 
 export default {
@@ -126,8 +122,7 @@ There may be some cases that you have a `/foo/bar.md`, but don't want a catalog 
 
 @tab TS
 
-```ts
-// .vuepress/config.ts
+```ts title=".vuepress/config.ts"
 import { defineUserConfig } from "vuepress";
 import { autoCatalogPlugin } from "vuepress-plugin-auto-catalog";
 
@@ -143,8 +138,7 @@ export default defineUserConfig({
 
 @tab JS
 
-```js
-// .vuepress/config.js
+```js title=".vuepress/config.js"
 import { autoCatalogPlugin } from "vuepress-plugin-auto-catalog";
 
 export default {
@@ -176,8 +170,7 @@ By default, the plugin will generate catalog page title from folder name. Howeve
 
 @tab TS
 
-```ts
-// .vuepress/config.ts
+```ts title=".vuepress/config.ts"
 import { defineUserConfig } from "vuepress";
 import { autoCatalogPlugin } from "vuepress-plugin-auto-catalog";
 
@@ -195,8 +188,7 @@ export default defineUserConfig({
 
 @tab JS
 
-```ts
-// .vuepress/config.ts
+```ts title=".vuepress/config.ts"
 import { autoCatalogPlugin } from "vuepress-plugin-auto-catalog";
 
 export default {

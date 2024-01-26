@@ -21,8 +21,7 @@ pnpm add -D vuepress-plugin-pwa2
 
 ### Usage
 
-```ts
-// .vuepress/config.ts
+```ts title=".vuepress/config.ts"
 import { pwaPlugin } from "vuepress-plugin-pwa2";
 
 export default {

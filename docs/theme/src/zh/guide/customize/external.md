@@ -19,8 +19,7 @@ tag:
 
 ::: tip 例子
 
-```ts
-// .vuepress/config.ts
+```ts title=".vuepress/config.ts"
 import { defineUserConfig } from "vuepress";
 
 export default defineUserConfig({

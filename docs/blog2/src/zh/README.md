@@ -51,8 +51,7 @@ npm i -D vuepress-plugin-blog2
 
 @tab TS
 
-```ts
-// .vuepress/config.ts
+```ts title=".vuepress/config.ts"
 import { blogPlugin } from "vuepress-plugin-blog2";
 
 export default {
@@ -66,8 +65,7 @@ export default {
 
 @tab JS
 
-```js
-// .vuepress/config.js
+```js title=".vuepress/config.js"
 import { blogPlugin } from "vuepress-plugin-blog2";
 
 export default {

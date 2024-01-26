@@ -14,8 +14,7 @@ You can use `extendsMarkdown` hook in [config file](../cookbook/vuepress/config.
 
 @tab TS
 
-```ts
-// .vuepress/config.ts
+```ts title=".vuepress/config.ts"
 import { defineUserConfig } from "vuepress";
 
 export default defineUserConfig({
@@ -30,8 +29,7 @@ export default defineUserConfig({
 
 @tab JS
 
-```js
-// .vuepress/config.js
+```js title=".vuepress/config.js"
 import { defineUserConfig } from "vuepress";
 
 export default defineUserConfig({
@@ -79,15 +77,13 @@ For example:
 
 - If you don't like the wide layout, you can set the `$pc` breakpoint to a very large value:
 
-  ```scss
-  // .vuepress/config.scss
+  ```scss title=".vuepress/config.scss"
   $pc: 9999px;
   ```
 
 - If you don't want the Pad layout, you can overlap the `$tablet` breakpoint and the `$pad` breakpoint:
 
-  ```scss
-  // .vuepress/config.scss
+  ```scss title=".vuepress/config.scss"
   $tablet: 959px;
   ```
 
@@ -99,8 +95,7 @@ By default, VuePress only extracts h2 and h3 titles from Markdown, so you will n
 
 You need to configure [markdown.header.levels](https://vuepress.vuejs.org/config/#markdown-headers) in the VuePress configuration file:
 
-```ts
-// .vuepress/config.ts
+```ts title=".vuepress/config.ts"
 export default {
   markdown: {
     header: {

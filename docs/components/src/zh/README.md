@@ -49,8 +49,7 @@ npm i -D vuepress-plugin-components
 
 @tab TS
 
-```ts
-// .vuepress/config.ts
+```ts title=".vuepress/config.ts"
 import { componentsPlugin } from "vuepress-plugin-components";
 
 export default {
@@ -64,8 +63,7 @@ export default {
 
 @tab JS
 
-```js
-// .vuepress/config.js
+```js title=".vuepress/config.js"
 import { componentsPlugin } from "vuepress-plugin-components";
 
 export default {

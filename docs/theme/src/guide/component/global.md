@@ -34,8 +34,7 @@ For details about how to use the plugin, see [Official Documentation](https://vu
 
 You can create `.vuepress/client.ts` and register components manually.
 
-```ts
-// .vuepress/client.ts
+```ts title=".vuepress/client.ts"
 import { defineClientConfig } from "vuepress/client";
 import MyComponent from "./MyComponent.vue";
 

@@ -85,8 +85,7 @@ You should set icon related assets to `iconAssets`, where you can set:
 
 @tab TS
 
-```ts {8}
-// .vuepress/config.ts
+```ts {8} title=".vuepress/config.ts"
 import { defineUserConfig } from "vuepress";
 import { hopeTheme } from "vuepress-theme-hope";
 
@@ -110,8 +109,7 @@ export default defineUserConfig({
 
 @tab JS
 
-```js {8}
-// .vuepress/config.ts
+```js {8} title=".vuepress/config.ts"
 import { defineUserConfig } from "vuepress";
 import { hopeTheme } from "vuepress-theme-hope";
 

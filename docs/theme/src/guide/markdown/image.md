@@ -18,8 +18,7 @@ Improve image syntax in Markdown to support color scheme and size.
 
 @tab TS
 
-```ts {9-16}
-// .vuepress/config.ts
+```ts {9-16} title=".vuepress/config.ts"
 import { defineUserConfig } from "vuepress";
 import { hopeTheme } from "vuepress-theme-hope";
 
@@ -43,8 +42,7 @@ export default defineUserConfig({
 
 @tab JS
 
-```js {9-16}
-// .vuepress/config.js
+```js {9-16} title=".vuepress/config.js"
 import { hopeTheme } from "vuepress-theme-hope";
 
 export default {

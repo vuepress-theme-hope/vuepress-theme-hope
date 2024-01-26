@@ -15,8 +15,7 @@ See [Artalk Configuration](https://artalk.js.org/guide/frontend/config.html) for
 
 You can directly configure serializable options in the plugin options:
 
-```ts
-// .vuepress/config.ts
+```ts title=".vuepress/config.ts"
 import { defineUserConfig } from "vuepress";
 import { commentPlugin } from "vuepress-plugin-comment2";
 
@@ -35,8 +34,7 @@ export default defineUserConfig({
 
 You can use the `defineArtalkConfig` function to customize Artalk:
 
-```ts
-// .vuepress/client.ts
+```ts title=".vuepress/client.ts"
 import { defineClientConfig } from "vuepress/client";
 import { defineArtalkConfig } from "vuepress-plugin-comment2/client";
 

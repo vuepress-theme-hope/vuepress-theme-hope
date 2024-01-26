@@ -72,8 +72,7 @@ font-family: "Lora", serif;
 
 Then all you need to do is import and use them by adding the following code in the VuePress configuration file:
 
-```ts
-// .vuepress/config.ts
+```ts title=".vuepress/config.ts"
 import { defineUserConfig } from "vuepress";
 
 export default defineUserConfig({
@@ -103,9 +102,7 @@ export default defineUserConfig({
 
 Also modify the `$font-family` variable in the palette file:
 
-```scss
-// .vuepress/styles/palette.scss
-
+```scss title=".vuepress/styles/palette.scss"
 // apply font
 $font-family: "Lora, serif";
 ```

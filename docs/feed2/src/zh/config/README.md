@@ -87,7 +87,7 @@ icon: gears
 - 默认值:
 
   ```ts
-  // compareDate 来源于 "vuepress-shared" 包
+  // compareDate 来源于 vuepress-shared
   (pageA, pageB): number =>
     compareDate(
       pageA.data.git?.createdTime

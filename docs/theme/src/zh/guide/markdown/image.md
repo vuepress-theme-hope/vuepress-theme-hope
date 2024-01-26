@@ -18,8 +18,7 @@ tag:
 
 @tab TS
 
-```ts {9-16}
-// .vuepress/config.ts
+```ts {9-16} title=".vuepress/config.ts"
 import { defineUserConfig } from "vuepress";
 import { hopeTheme } from "vuepress-theme-hope";
 

@@ -15,8 +15,7 @@ icon: a
 
 你可以直接在插件选项中配置可序列化的选项:
 
-```ts
-// .vuepress/config.ts
+```ts title=".vuepress/config.ts"
 import { defineUserConfig } from "vuepress";
 import { commentPlugin } from "vuepress-plugin-comment2";
 
@@ -35,8 +34,7 @@ export default defineUserConfig({
 
 你可以使用 `defineArtalkConfig` 函数来配置 Artalk。
 
-```ts
-// .vuepress/client.ts
+```ts title=".vuepress/client.ts"
 import { defineClientConfig } from "vuepress/client";
 import { defineArtalkConfig } from "vuepress-plugin-comment2/client";
 

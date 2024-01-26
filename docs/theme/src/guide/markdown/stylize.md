@@ -18,8 +18,7 @@ Stylize inline tokens including changing tags, adding attributes and modifying c
 
 @tab TS
 
-```ts {9-11}
-// .vuepress/config.ts
+```ts {9-11} title=".vuepress/config.ts"
 import { defineUserConfig } from "vuepress";
 import { hopeTheme } from "vuepress-theme-hope";
 
@@ -38,8 +37,7 @@ export default defineUserConfig({
 
 @tab JS
 
-```js {9-11}
-// .vuepress/config.js
+```js {9-11} title=".vuepress/config.js"
 import { hopeTheme } from "vuepress-theme-hope";
 
 export default {
@@ -71,8 +69,7 @@ For example, you can use the following config to transform `*Recommended*` into 
 
 @tab TS
 
-```ts {9-21}
-// .vuepress/config.ts
+```ts {9-21} title=".vuepress/config.ts"
 import { defineUserConfig } from "vuepress";
 import { hopeTheme } from "vuepress-theme-hope";
 
@@ -101,8 +98,7 @@ export default defineUserConfig({
 
 @tab JS
 
-```js {9-21}
-// .vuepress/config.js
+```js {9-21} title=".vuepress/config.js"
 import { hopeTheme } from "vuepress-theme-hope";
 
 export default {
@@ -136,8 +132,7 @@ Another example is you want to set all the emphasis `n't` words to red color, so
 
 @tab TS
 
-```ts {9-21}
-// .vuepress/config.ts
+```ts {9-21} title=".vuepress/config.ts"
 import { defineUserConfig } from "vuepress";
 import { hopeTheme } from "vuepress-theme-hope";
 
@@ -166,8 +161,7 @@ export default defineUserConfig({
 
 @tab JS
 
-```js {9-21}
-// .vuepress/config.js
+```js {9-21} title=".vuepress/config.js"
 import { mdEnhancePlugin } from "vuepress-plugin-md-enhance";
 
 export default {

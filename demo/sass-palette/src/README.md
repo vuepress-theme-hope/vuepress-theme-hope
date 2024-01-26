@@ -21,8 +21,7 @@ pnpm add -D vuepress-plugin-sass-palette
 
 ### Usage
 
-```ts
-// Your plugin or theme entry
+```ts title="Your plugin or theme entry"
 import { useSassPalettePlugin } from "vuepress-plugin-sass-palette";
 import type { PluginFunction } from "vuepress/core";
 

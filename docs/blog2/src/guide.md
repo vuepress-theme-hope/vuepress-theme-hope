@@ -92,8 +92,7 @@ The plugin will collect all the info you want and write them to `routeMeta` fiel
 
 ::: details Demo
 
-```ts
-// theme entrance
+```ts title="theme entrance"
 import { blogPlugin } from "vuepress-plugin-blog2";
 
 export default {
@@ -155,8 +154,7 @@ Let's start with 2 examples here.
 
 Imagine you are setting tags for each articles with `tag` field in page frontmatter. You want a tag mapping page in `/tag/` with `TagMap` layout, and group each tag list with tagName in `/tag/tagName` with `TagList` layout, you probably need a configuration like this:
 
-```ts
-// theme entrance
+```ts title="theme entrance"
 import { blogPlugin } from "vuepress-plugin-blog2";
 
 export default {
@@ -184,8 +182,7 @@ export default {
 
 Also, you may want to star some of your articles, and display them to visitors. When you are setting `star: true` in frontmatter to mark them, you probably need a configuration like this to display them in `/star/` path with `StarList` layout:
 
-```ts
-// theme entrance
+```ts title="theme entrance"
 import { blogPlugin } from "vuepress-plugin-blog2";
 
 export default {
@@ -370,8 +367,7 @@ This plugin adds native i18n support, so your settings will be automatically app
 
 For example, if user has the following locales' config, and you are setting the "star" example above:
 
-```ts
-// .vuepress/config.ts
+```ts title=".vuepress/config.ts"
 export default {
   locales: {
     "/": {
