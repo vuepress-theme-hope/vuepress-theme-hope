@@ -5,8 +5,10 @@ import { fileURLToPath } from "node:url";
 import { execaCommandSync } from "execa";
 import inquirer from "inquirer";
 
+import type { Preset } from "./config.js";
+import { presets } from "./config.js";
 import { updateGitIgnore } from "./gitignore.js";
-import type { CreateI18n, Lang } from "./i18n.js";
+import type { CreateLocale, Lang } from "./i18n.js";
 import { getWorkflowContent } from "./workflow.js";
 import type { PackageManager } from "../utils/index.js";
 import {
@@ -21,22 +23,23 @@ const __filename = fileURLToPath(import.meta.url);
 // eslint-disable-next-line @typescript-eslint/naming-convention
 const __dirname = dirname(__filename);
 
-export const generateTemplate = async (
-  targetDir: string,
-  {
-    cwd = process.cwd(),
-    packageManager,
-    lang,
-    message,
-    preset,
-  }: {
-    cwd?: string;
-    packageManager: PackageManager;
-    lang: Lang;
-    message: CreateI18n;
-    preset?: "blog" | "docs" | null;
-  },
-): Promise<void> => {
+interface TemplateOptions {
+  packageManager: PackageManager;
+  lang: Lang;
+  locale: CreateLocale;
+  cwd?: string;
+  targetDir: string;
+  preset?: Preset | null;
+}
+
+export const generateTemplate = async ({
+  cwd = process.cwd(),
+  targetDir,
+  lang,
+  locale,
+  preset,
+  packageManager,
+}: TemplateOptions): Promise<void> => {
   const { i18n, workflow } = await inquirer.prompt<{
     i18n: boolean;
     workflow: boolean;
@@ -45,30 +48,30 @@ export const generateTemplate = async (
     {
       name: "i18n",
       type: "confirm",
-      message: message.question.i18n,
+      message: locale.question.i18n,
       default: false,
     },
     {
       name: "workflow",
       type: "confirm",
-      message: message.question.workflow,
+      message: locale.question.workflow,
       default: true,
     },
   ]);
 
   if (!preset)
     preset = (
-      await inquirer.prompt<{ preset: "blog" | "docs" }>([
+      await inquirer.prompt<{ preset: Preset }>([
         {
           name: "preset",
           type: "list",
-          message: message.question.preset,
-          choices: ["blog", "docs"],
+          message: locale.question.preset,
+          choices: presets,
         },
       ])
     ).preset;
 
-  console.log(message.flow.generateTemplate);
+  console.log(locale.flow.generateTemplate);
 
   const templateFolder = preset;
 
@@ -139,7 +142,7 @@ export const generateTemplate = async (
       {
         name: "git",
         type: "confirm",
-        message: message.question.git,
+        message: locale.question.git,
         default: true,
       },
     ]);

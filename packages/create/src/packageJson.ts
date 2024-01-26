@@ -3,48 +3,69 @@ import { resolve } from "node:path";
 
 import inquirer from "inquirer";
 
-import type { CreateI18n } from "./config/index.js";
-import { version } from "./config/index.js";
+import type { Bundler, CreateLocale } from "./config/index.js";
+import { bundlers, version } from "./config/index.js";
 import type { PackageManager } from "./utils/index.js";
 import { PACKAGE_NAME_REG, VERSION_REG, deepAssign } from "./utils/index.js";
 
 const getScript = (
   packageManager: PackageManager,
+  bundler: "webpack" | "vite",
   dir: string,
 ): Record<string, string> => ({
   // eslint-disable-next-line @typescript-eslint/naming-convention
-  "docs:build": `vuepress build ${dir}`,
+  "docs:build": `vuepress-${bundler} build ${dir}`,
   // eslint-disable-next-line @typescript-eslint/naming-convention
-  "docs:clean-dev": `vuepress dev ${dir} --clean-cache`,
+  "docs:clean-dev": `vuepress-${bundler} dev ${dir} --clean-cache`,
   // eslint-disable-next-line @typescript-eslint/naming-convention
-  "docs:dev": `vuepress dev ${dir}`,
+  "docs:dev": `vuepress-${bundler} dev ${dir}`,
   // eslint-disable-next-line @typescript-eslint/naming-convention
   "docs:update-package": `${
     packageManager === "npm" ? "npx" : `${packageManager} dlx`
   } vp-update`,
 });
 
-export const createPackageJson = async (
-  packageManager: PackageManager,
-  message: CreateI18n,
-  source: string,
+interface CreatePackageJsonOptions {
+  source: string;
+  cwd?: string;
+  packageManager: PackageManager;
+  locale: CreateLocale;
+  bundler: Bundler | null;
+}
+
+export const createPackageJson = async ({
+  packageManager,
+  locale,
+  source,
+  bundler,
   cwd = process.cwd(),
-): Promise<void> => {
+}: CreatePackageJsonOptions): Promise<void> => {
+  if (!bundler)
+    bundler = (
+      await inquirer.prompt<{ bundler: Bundler }>([
+        {
+          name: "bundler",
+          type: "list",
+          message: locale.question.bundler,
+          choices: bundlers,
+        },
+      ])
+    ).bundler;
+
   /**
    * generate package.json
    */
-
   const packageJsonPath = resolve(cwd, "package.json");
-  const scripts = getScript(packageManager, source);
+  const scripts = getScript(packageManager, bundler, source);
   const devDependencies = {
-    "@vuepress/bundler-vite": "2.0.0-rc.2",
+    [`@vuepress/bundler-${bundler}`]: "^2.0.0-rc.2",
     vue: "^3.4.15",
     vuepress: "2.0.0-rc.2",
     "vuepress-theme-hope": version,
   };
 
   if (existsSync(packageJsonPath)) {
-    console.log(message.flow.updatePackage);
+    console.log(locale.flow.updatePackage);
 
     // eslint-disable-next-line
     const packageContent: any = JSON.parse(
@@ -59,7 +80,7 @@ export const createPackageJson = async (
       { encoding: "utf-8" },
     );
   } else {
-    console.log(message.flow.createPackage);
+    console.log(locale.flow.createPackage);
 
     interface PackageJsonAnswer {
       name: string;
@@ -72,29 +93,29 @@ export const createPackageJson = async (
       {
         name: "name",
         type: "input",
-        message: message.question.name,
+        message: locale.question.name,
         default: "vuepress-theme-hope-template",
         validate: (input: string): true | string =>
-          PACKAGE_NAME_REG.exec(input) ? true : message.error.name,
+          PACKAGE_NAME_REG.exec(input) ? true : locale.error.name,
       },
       {
         name: "version",
         type: "input",
-        message: message.question.version,
+        message: locale.question.version,
         default: "2.0.0",
         validate: (input: string): true | string =>
-          VERSION_REG.exec(input) ? true : message.error.version,
+          VERSION_REG.exec(input) ? true : locale.error.version,
       },
       {
         name: "description",
         type: "input",
-        message: message.question.description,
+        message: locale.question.description,
         default: "A project of vuepress-theme-hope",
       },
       {
         name: "license",
         type: "input",
-        message: message.question.license,
+        message: locale.question.license,
         default: "MIT",
       },
     ]);
