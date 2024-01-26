@@ -47,31 +47,11 @@ export const outputRSSTemplates = (
       return fs.copyFile(rssXslTemplate, app.dir.dest(rssXslFilename));
     });
 
-interface OutputOptions {
-  app: App;
-  name: string;
-  filename: string;
-  content: string;
-}
-
-const outputFeed = async ({
-  app,
-  content,
-  filename,
-  name,
-}: OutputOptions): Promise<void> => {
-  const { dest } = app.dir;
-
-  await fs.ensureDir(path.dirname(dest(filename)));
-  await fs.outputFile(dest(filename), content);
-
-  logger.succeed(`Generated ${name} feed file to ${colors.cyan(filename)}`);
-};
-
 export const outputFeedFiles = (
   app: App,
   options: ResolvedFeedOptionsMap,
 ): Promise<void>[] => {
+  const { dest } = app.dir;
   const localMap: Record<string, FeedStore> = fromEntries(
     entries(options).map(([localePath, localeOptions]) => [
       localePath,
@@ -92,8 +72,6 @@ export const outputFeedFiles = (
           filter,
           sorter,
         } = localeOptions;
-        const { atomOutputFilename, jsonOutputFilename, rssOutputFilename } =
-          getFilename(localeOptions, localePath);
 
         const feedStore = localMap[localePath];
         const pages = app.pages
@@ -123,32 +101,27 @@ export const outputFeedFiles = (
           )}`,
         );
 
+        const { atomOutputFilename, jsonOutputFilename, rssOutputFilename } =
+          getFilename(localeOptions, localePath);
+
+        const outputFeed = async (
+          name: string,
+          filename: string,
+          generator: (feedStore: FeedStore) => string,
+        ): Promise<void> => {
+          await fs.ensureDir(path.dirname(dest(filename)));
+          await fs.outputFile(dest(filename), generator(feedStore));
+
+          logger.succeed(
+            `Generated ${name} feed file to ${colors.cyan(filename)}`,
+          );
+        };
+
         // generate feed
         await Promise.all([
-          atom
-            ? outputFeed({
-                app,
-                content: getAtomFeed(feedStore),
-                filename: atomOutputFilename,
-                name: "Atom",
-              })
-            : null,
-          json
-            ? outputFeed({
-                app,
-                content: getJSONFeed(feedStore),
-                filename: jsonOutputFilename,
-                name: "JSON",
-              })
-            : null,
-          rss
-            ? outputFeed({
-                app,
-                content: getRssFeed(feedStore),
-                filename: rssOutputFilename,
-                name: "RSS",
-              })
-            : null,
+          atom ? outputFeed(atomOutputFilename, "Atom", getAtomFeed) : null,
+          json ? outputFeed(jsonOutputFilename, "JSON", getJSONFeed) : null,
+          rss ? outputFeed(rssOutputFilename, "RSS", getRssFeed) : null,
         ]);
       })
   );
