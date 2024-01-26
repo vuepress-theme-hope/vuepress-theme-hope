@@ -100,7 +100,8 @@ export default defineComponent({
     const loaded = ref(false);
 
     const giscusLang = computed(() => {
-      if (SUPPORTED_LANGUAGES.includes(<GiscusLang>lang.value)) return lang.value;
+      if (SUPPORTED_LANGUAGES.includes(<GiscusLang>lang.value))
+        return lang.value;
 
       const shortCode = lang.value.split("-")[0] as GiscusLang;
 
