@@ -1,76 +1,19 @@
-import { createRequire } from "node:module";
+import type { PluginObject } from "vuepress/core";
 
-import type { GitPluginPageData } from "@vuepress/plugin-git";
-import type { Page, PluginObject } from "vuepress/core";
-import { colors, fs } from "vuepress/utils";
-import {
-  getDateString,
-  getFullDateString,
-  getTimeString,
-  startsWith,
-} from "vuepress-shared/node";
-
+import { appendDateToPage } from "./appendDate.js";
+import { isGitPluginEnabled } from "./checkGitPlugin.js";
 import type { AppendDateOptions } from "./options.js";
-import { GIT_PLUGIN_NAME, PLUGIN_NAME, logger } from "./utils.js";
+import { PLUGIN_NAME } from "./utils.js";
 
-const require = createRequire(import.meta.url);
-
-export const appendDatePlugin = ({
-  key = "date",
-  format = "date",
-}: AppendDateOptions = {}): PluginObject => ({
+export const appendDatePlugin = (
+  options: AppendDateOptions = {},
+): PluginObject => ({
   name: PLUGIN_NAME,
 
   onInitialized: async (app): Promise<void> => {
-    if (
-      app.pluginApi.plugins.every((plugin) => plugin.name !== GIT_PLUGIN_NAME)
-    ) {
-      try {
-        require.resolve(GIT_PLUGIN_NAME);
-
-        logger.info(`${colors.magenta(GIT_PLUGIN_NAME)} is not enabled.`);
-      } catch (err) {
-        logger.error(
-          `${colors.magenta(
-            GIT_PLUGIN_NAME,
-          )} is required for this plugin, please install it.`,
-        );
-      }
-
-      return;
-    }
-
-    await Promise.all(
-      (<Page<GitPluginPageData>[]>app.pages).map(
-        async ({ data, filePath, frontmatter }) => {
-          if (frontmatter[key] || !filePath) return;
-
-          const { createdTime } = data.git;
-
-          if (!createdTime) return;
-
-          const date = new Date(createdTime);
-
-          const text =
-            format === "time"
-              ? getTimeString(date)
-              : format === "full"
-                ? getFullDateString(date)
-                : getDateString(date);
-
-          frontmatter[key] = new Date(createdTime);
-
-          const markdownContent = await fs.readFile(filePath, "utf-8");
-
-          await fs.writeFile(
-            filePath,
-            startsWith(markdownContent, "---\n")
-              ? `---\n${key}: ${text}\n${markdownContent.substring(4)}`
-              : `---\n${key}: ${text}\n---\n\n${markdownContent}`,
-            "utf-8",
-          );
-        },
-      ),
-    );
+    if (isGitPluginEnabled(app))
+      await Promise.all(
+        (<[]>app.pages).map((page) => appendDateToPage(options, page)),
+      );
   },
 });
