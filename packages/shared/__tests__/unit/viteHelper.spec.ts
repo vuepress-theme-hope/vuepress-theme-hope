@@ -1,5 +1,5 @@
-import type { App } from "@vuepress/core";
 import { expect, it } from "vitest";
+import type { App } from "vuepress/core";
 
 import {
   addViteConfig,

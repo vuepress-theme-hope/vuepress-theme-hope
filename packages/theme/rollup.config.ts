@@ -1,4 +1,4 @@
-import { getDirname, path } from "@vuepress/utils";
+import { getDirname, path } from "vuepress/utils";
 
 import { rollupBundle } from "../../scripts/rollup.js";
 

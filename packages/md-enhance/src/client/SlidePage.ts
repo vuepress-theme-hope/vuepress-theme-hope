@@ -1,8 +1,8 @@
-import { Content, useRouteLocale } from "@vuepress/client";
 import { onClickOutside } from "@vueuse/core";
 import type { VNode } from "vue";
 import { defineComponent, h, ref, shallowRef } from "vue";
 import { useRouter } from "vue-router";
+import { Content, useRouteLocale } from "vuepress/client";
 
 import { BackIcon, HomeIcon } from "./components/icons.js";
 

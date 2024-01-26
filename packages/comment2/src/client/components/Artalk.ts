@@ -1,4 +1,3 @@
-import { usePageData, useSiteData } from "@vuepress/client";
 import type Artalk from "artalk";
 import type { VNode } from "vue";
 import {
@@ -11,6 +10,7 @@ import {
   shallowRef,
   watch,
 } from "vue";
+import { usePageData, useSiteData } from "vuepress/client";
 import { LoadingIcon, isString } from "vuepress-shared/client";
 
 import { useArtalkOptions } from "../helpers/index.js";

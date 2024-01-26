@@ -1,6 +1,6 @@
-import type { App } from "@vuepress/core";
-import { removeLeadingSlash } from "@vuepress/shared";
-import { fs } from "@vuepress/utils";
+import type { App } from "vuepress/core";
+import { removeLeadingSlash } from "vuepress/shared";
+import { fs } from "vuepress/utils";
 
 import type { RemovePWAOptions } from "./options.js";
 

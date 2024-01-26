@@ -190,7 +190,7 @@ const msg = ref('Hello World!')
 \`\`\`ts
 const msg = "hello world";
 
-const speak = (msg: string) => console.log(msg);
+const speak = (msg: string) => console.info(msg);
 
 speak(msg);
 \`\`\`
@@ -206,7 +206,7 @@ speak(msg);
 \`\`\`ts
 const msg = "hello world";
 
-const speak = (msg: string) => console.log(msg);
+const speak = (msg: string) => console.info(msg);
 
 speak(msg);
 \`\`\`

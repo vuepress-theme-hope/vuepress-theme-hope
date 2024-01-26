@@ -1,4 +1,4 @@
-import type { PageFrontmatter } from "@vuepress/core";
+import type { PageFrontmatter } from "vuepress/shared";
 
 import type { Author } from "./author.js";
 

@@ -1,5 +1,5 @@
-import type { App } from "@vuepress/core";
-import { fs, logger } from "@vuepress/utils";
+import type { App } from "vuepress/core";
+import { fs, logger } from "vuepress/utils";
 
 /**
  * @deprecated You should use scss style files in v2 and avoid using it

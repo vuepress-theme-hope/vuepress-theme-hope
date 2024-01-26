@@ -1,6 +1,6 @@
-import { usePageLang } from "@vuepress/client";
 import type { VNode } from "vue";
 import { defineComponent, h, nextTick, onMounted, ref, watch } from "vue";
+import { usePageLang } from "vuepress/client";
 import { LoadingIcon } from "vuepress-shared/client";
 
 import { useTwikooOptions } from "../helpers/index.js";

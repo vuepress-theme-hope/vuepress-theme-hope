@@ -1,7 +1,7 @@
-import { usePageFrontmatter } from "@vuepress/client";
-import { isString } from "@vuepress/shared";
 import type { VNode } from "vue";
 import { computed, defineComponent, h } from "vue";
+import { usePageFrontmatter } from "vuepress/client";
+import { isString } from "vuepress-shared/client";
 
 import {
   usePageAuthor,

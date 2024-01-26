@@ -34,7 +34,7 @@ tag:
 
 ```ts
 // .vuepress/config.ts
-import { getDirname, path } from "@vuepress/utils";
+import { getDirname, path } from "vuepress/utils";
 import { defineUserConfig } from "vuepress";
 
 const __dirname = getDirname(import.meta.url);
@@ -85,7 +85,7 @@ import BingHeroBackground from "vuepress-theme-hope/presets/BingHeroBackground.j
 
 ```ts
 // .vuepress/config.ts
-import { getDirname, path } from "@vuepress/utils";
+import { getDirname, path } from "vuepress/utils";
 import { defineUserConfig } from "vuepress";
 
 const __dirname = getDirname(import.meta.url);
@@ -153,7 +153,7 @@ const setupRunningTimeFooter: (
 
 ```ts
 // .vuepress/client.ts
-import { defineClientConfig } from "@vuepress/client";
+import { defineClientConfig } from "vuepress/client";
 import { setupRunningTimeFooter } from "vuepress-theme-hope/presets/footerRunningTime.js";
 
 export default defineClientConfig({

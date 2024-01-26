@@ -1,4 +1,4 @@
-import type { App } from "@vuepress/core";
+import type { App } from "vuepress/core";
 import { useReadingTimePlugin } from "vuepress-plugin-reading-time2";
 import { useSassPalettePlugin } from "vuepress-plugin-sass-palette";
 import { isPlainObject } from "vuepress-shared/node";

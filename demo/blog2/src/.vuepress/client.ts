@@ -1,4 +1,4 @@
-import { defineClientConfig } from "@vuepress/client";
+import { defineClientConfig } from "vuepress/client";
 import Article from "./layouts/Article.vue";
 import Category from "./layouts/Category.vue";
 import Tag from "./layouts/Tag.vue";

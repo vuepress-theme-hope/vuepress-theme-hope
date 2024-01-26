@@ -25,7 +25,7 @@ icon: lightbulb
 
 ```ts
 // .vuepress/client.ts
-import { defineClientConfig } from "@vuepress/client";
+import { defineClientConfig } from "vuepress/client";
 import { defineLightGalleryConfig } from "vuepress-plugin-lightgallery/client";
 
 defineLightGalleryConfig({

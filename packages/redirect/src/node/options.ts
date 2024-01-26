@@ -1,4 +1,4 @@
-import type { App, LocaleConfig } from "@vuepress/core";
+import type { App, LocaleConfig } from "vuepress/core";
 
 import type {
   LocaleRedirectConfig,

@@ -1,4 +1,4 @@
-import type { Page } from "@vuepress/core";
+import type { Page } from "vuepress/core";
 import { getDateInfo, timeTransformer } from "vuepress-shared/node";
 
 import type {

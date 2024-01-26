@@ -211,10 +211,10 @@ exports[`code tabs > Should work with code import 1`] = `
 <template #title0="{ value, isActive }">js</template>
 <template #title1="{ value, isActive }">ts</template>
 <template #tab0="{ value, isActive }">
-<div class="language-javascript line-numbers-mode" data-ext="js"><pre v-pre class="language-javascript"><code>const a = 1;
+<div class="language-javascript line-numbers-mode" data-ext="js" data-title="js"><pre v-pre class="language-javascript"><code>const a = 1;
 </code></pre><div class="line-numbers" aria-hidden="true"><div class="line-number"></div></div></div></template>
 <template #tab1="{ value, isActive }">
-<div class="language-typescript line-numbers-mode" data-ext="ts"><pre v-pre class="language-typescript"><code>Error when resolving path</code></pre><div class="line-numbers" aria-hidden="true"></div></div></template>
+<div class="language-typescript line-numbers-mode" data-ext="ts" data-title="ts"><pre v-pre class="language-typescript"><code>Error when resolving path</code></pre><div class="line-numbers" aria-hidden="true"></div></div></template>
 </CodeTabs>
 "
 `;

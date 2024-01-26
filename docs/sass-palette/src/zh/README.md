@@ -56,7 +56,7 @@ npm i -D vuepress-plugin-sass-palette
 ```ts
 // 你的插件或主题入口
 import { useSassPalettePlugin } from "vuepress-plugin-sass-palette";
-import type { PluginFunction } from "@vuepress/core";
+import type { PluginFunction } from "vuepress/core";
 
 export const yourPlugin =
   (options): PluginFunction =>

@@ -1,4 +1,4 @@
-import { defineClientConfig } from "@vuepress/client";
+import { defineClientConfig } from "vuepress/client";
 import { defineGiscusConfig } from "vuepress-plugin-comment2/client";
 
 import Layout from "./layouts/Layout.vue";

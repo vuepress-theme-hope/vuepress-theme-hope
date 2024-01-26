@@ -142,7 +142,7 @@ You can use the `defineGIscusConfig` function to customize GIscus:
 
 ```ts
 // .vuepress/client.ts
-import { defineClientConfig } from "@vuepress/client";
+import { defineClientConfig } from "vuepress/client";
 import { defineGIscusConfig } from "vuepress-plugin-comment2/client";
 
 defineGIscusConfig({

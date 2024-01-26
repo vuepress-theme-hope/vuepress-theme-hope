@@ -1,5 +1,5 @@
-import type { Plugin, PluginFunction } from "@vuepress/core";
-import { colors } from "@vuepress/utils";
+import type { Plugin, PluginFunction } from "vuepress/core";
+import { colors } from "vuepress/utils";
 import { checkVersion } from "vuepress-shared/node";
 
 import { convertOptions } from "./compact.js";
@@ -14,7 +14,7 @@ export const seoPlugin =
   (app) => {
     // TODO: Remove this in v2 stable
     if (legacy) convertOptions(options as SeoOptions & Record<string, unknown>);
-    checkVersion(app, PLUGIN_NAME, "2.0.0-rc.0");
+    checkVersion(app, PLUGIN_NAME, "2.0.0-rc.2");
 
     if (app.env.isDebug) logger.info("Options:", options);
 

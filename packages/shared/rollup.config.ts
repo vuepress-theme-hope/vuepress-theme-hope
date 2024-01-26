@@ -5,7 +5,7 @@ export default [
     resolve: true,
     external: [
       "node:http",
-      "@vuepress/utils",
+      "vuepress/utils",
       "cheerio",
       "execa",
       "fflate/node",
@@ -13,14 +13,15 @@ export default [
       "semver",
       "striptags",
     ],
-    dtsExternal: ["node:http"],
+    dtsExternal: ["node:http", "vuepress/core", "vuepress/shared"],
   }),
   ...rollupBundle(
     { base: "client", files: ["index", "noopModule"] },
     {
       resolve: true,
-      external: ["@vuepress/client", "fflate/browser", "vue", "vue-router"],
+      external: ["vuepress/client", "fflate/browser", "vue", "vue-router"],
       copy: [["client/styles", "client"]],
+      dtsExternal: ["vuepress/shared"],
     },
   ),
 ];

@@ -1,6 +1,6 @@
-import { ensureEndingSlash } from "@vuepress/shared";
 import type { Router } from "vue-router";
 import {
+  ensureEndingSlash,
   inferRouteLink,
   isAbsoluteUrl,
   resolveRouteWithRedirect,

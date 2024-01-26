@@ -1,4 +1,4 @@
-import type { Plugin } from "@vuepress/core";
+import type { Plugin } from "vuepress/core";
 import type { SitemapOptions } from "vuepress-plugin-sitemap2";
 import { sitemapPlugin } from "vuepress-plugin-sitemap2";
 import { isPlainObject, keys } from "vuepress-shared/node";

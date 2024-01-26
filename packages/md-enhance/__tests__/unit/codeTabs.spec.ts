@@ -1,6 +1,6 @@
-import { createMarkdown } from "@vuepress/markdown";
 import MarkdownIt from "markdown-it";
 import { describe, expect, it } from "vitest";
+import { createMarkdown } from "vuepress/markdown";
 
 import { codeTabs } from "../../src/node/markdown-it/codeTabs.js";
 

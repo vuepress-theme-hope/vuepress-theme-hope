@@ -1,5 +1,6 @@
-import { defineClientConfig, useRouteLocale } from "@vuepress/client";
 import { onMounted, watch } from "vue";
+import type { ClientConfig } from "vuepress/client";
+import { defineClientConfig, useRouteLocale } from "vuepress/client";
 import { entries } from "vuepress-shared/client";
 
 declare const _RTL_LOCALES_: string[];
@@ -16,7 +17,8 @@ const getElement = (selector: string): HTMLElement | null =>
       ? document.body
       : document.querySelector(selector);
 
-export default defineClientConfig({
+// eslint-disable-next-line @typescript-eslint/no-unnecessary-type-assertion
+export default <ClientConfig>defineClientConfig({
   setup() {
     const routeLocale = useRouteLocale();
 

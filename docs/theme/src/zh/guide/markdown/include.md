@@ -60,7 +60,7 @@ export default {
 
 ```ts {13-20}
 // .vuepress/config.ts
-import { getDirname, path } from "@vuepress/utils";
+import { getDirname, path } from "vuepress/utils";
 import { defineUserConfig } from "vuepress";
 import { hopeTheme } from "vuepress-theme-hope";
 
@@ -89,7 +89,7 @@ export default defineUserConfig({
 
 ```js {12-19}
 // .vuepress/config.js
-import { getDirname, path } from "@vuepress/utils";
+import { getDirname, path } from "vuepress/utils";
 import { hopeTheme } from "vuepress-theme-hope";
 
 const __dirname = getDirname(import.meta.url);

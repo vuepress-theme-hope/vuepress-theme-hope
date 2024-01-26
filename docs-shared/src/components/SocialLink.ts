@@ -1,6 +1,6 @@
-import { useRouteLocale } from "@vuepress/client";
 import type { VNode } from "vue";
 import { computed, defineComponent, h } from "vue";
+import { useRouteLocale } from "vuepress/client";
 
 export default defineComponent({
   name: "SocialLink",

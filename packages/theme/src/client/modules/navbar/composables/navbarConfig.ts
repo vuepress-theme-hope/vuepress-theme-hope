@@ -1,8 +1,8 @@
-import { isLinkExternal, isString } from "@vuepress/shared";
 import type { ComputedRefWithControl } from "@vueuse/core";
 import { computedWithControl } from "@vueuse/core";
 import type { Router } from "vue-router";
 import { useRouter } from "vue-router";
+import { isLinkExternal, isString } from "vuepress-shared/client";
 
 import { useThemeLocaleData } from "@theme-hope/composables/index";
 import { resolveLinkInfo, resolvePrefix } from "@theme-hope/utils/index";

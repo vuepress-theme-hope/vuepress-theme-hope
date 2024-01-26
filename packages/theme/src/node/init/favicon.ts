@@ -1,4 +1,4 @@
-import type { App } from "@vuepress/core";
+import type { App } from "vuepress/core";
 import { isLinkHttp } from "vuepress-shared/node";
 
 export const addFavicon = (app: App, favicon: string): void => {

@@ -1,4 +1,3 @@
-import { useRouteLocale } from "@vuepress/client";
 import {
   usePreferredLanguages,
   useScrollLock,
@@ -16,6 +15,7 @@ import {
   watch,
 } from "vue";
 import { useRoute, useRouter } from "vue-router";
+import { useRouteLocale } from "vuepress/client";
 
 import {
   redirectLocaleConfig,

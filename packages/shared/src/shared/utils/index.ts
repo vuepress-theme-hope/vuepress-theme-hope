@@ -6,7 +6,7 @@ export {
   isLinkWithProtocol,
   removeEndingSlash,
   removeLeadingSlash,
-} from "@vuepress/shared";
+} from "vuepress/shared";
 
 export * from "./deepAssign.js";
 export * from "./helper.js";

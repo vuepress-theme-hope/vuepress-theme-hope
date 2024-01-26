@@ -59,7 +59,7 @@ You can then import `defineAutoCatalogGetter` from `vuepress-plugin-auto-catalog
 
 ```ts
 // .vuepress/client.ts
-import { defineClientConfig } from "@vuepress/client";
+import { defineClientConfig } from "vuepress/client";
 import { defineAutoCatalogGetter } from "vuepress-plugin-auto-catalog/client";
 
 export default defineClientConfig({

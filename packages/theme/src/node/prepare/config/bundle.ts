@@ -1,4 +1,4 @@
-import type { App } from "@vuepress/core";
+import type { App } from "vuepress/core";
 import { getRealPath } from "vuepress-shared/node";
 
 import { ArticleInfoType } from "../../../shared/index.js";
@@ -81,7 +81,7 @@ defineAutoCatalogGetter((meta) => {
   return app.writeTemp(
     `theme-hope/config.js`,
     `\
-import { defineClientConfig } from "@vuepress/client";
+import { defineClientConfig } from "vuepress/client";
 import { VPLink } from "${getRealPath("vuepress-shared/client", url)}";
 
 import { HopeIcon, Layout, NotFound, useScrollPromise, injectDarkmode, setupDarkmode, setupSidebarItems } from "${BUNDLE_FOLDER}export.js";

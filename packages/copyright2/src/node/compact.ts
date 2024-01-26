@@ -1,4 +1,4 @@
-import { colors } from "@vuepress/utils";
+import { colors } from "vuepress/utils";
 import { createConverter, isFunction } from "vuepress-shared/node";
 
 import type { CopyrightOptions } from "./options.js";
@@ -36,9 +36,7 @@ export const convertOptions = (
     logger.warn(
       `${colors.cyan(
         "license",
-      )} no longer support function, please use ${colors.cyan(
-        "licenseGetter",
-      )}`,
+      )} no longer support function, please use ${colors.cyan("licenseGetter")}`,
     );
 
     // @ts-expect-error

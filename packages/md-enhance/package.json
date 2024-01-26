@@ -72,31 +72,28 @@
     "dev:ts": "tsc -b tsconfig.build.json --watch"
   },
   "dependencies": {
-    "@mdit/plugin-alert": "0.7.6",
-    "@mdit/plugin-align": "0.7.6",
-    "@mdit/plugin-attrs": "0.7.6",
-    "@mdit/plugin-container": "0.7.6",
-    "@mdit/plugin-demo": "0.7.6",
-    "@mdit/plugin-figure": "0.7.6",
-    "@mdit/plugin-footnote": "0.7.6",
-    "@mdit/plugin-img-lazyload": "0.7.6",
-    "@mdit/plugin-img-mark": "0.7.6",
-    "@mdit/plugin-img-size": "0.7.6",
-    "@mdit/plugin-include": "0.7.6",
-    "@mdit/plugin-katex": "0.7.6",
-    "@mdit/plugin-mark": "0.7.6",
-    "@mdit/plugin-mathjax": "0.7.6",
-    "@mdit/plugin-stylize": "0.7.6",
-    "@mdit/plugin-sub": "0.7.6",
-    "@mdit/plugin-sup": "0.7.6",
-    "@mdit/plugin-tab": "0.7.6",
-    "@mdit/plugin-tasklist": "0.7.6",
-    "@mdit/plugin-tex": "0.7.6",
-    "@mdit/plugin-uml": "0.7.6",
+    "@mdit/plugin-alert": "^0.8.0",
+    "@mdit/plugin-align": "^0.8.0",
+    "@mdit/plugin-attrs": "^0.8.0",
+    "@mdit/plugin-container": "^0.8.0",
+    "@mdit/plugin-demo": "^0.8.0",
+    "@mdit/plugin-figure": "^0.8.0",
+    "@mdit/plugin-footnote": "^0.8.0",
+    "@mdit/plugin-img-lazyload": "^0.8.0",
+    "@mdit/plugin-img-mark": "^0.8.0",
+    "@mdit/plugin-img-size": "^0.8.0",
+    "@mdit/plugin-include": "^0.8.0",
+    "@mdit/plugin-katex": "^0.8.0",
+    "@mdit/plugin-mark": "^0.8.0",
+    "@mdit/plugin-mathjax": "^0.8.0",
+    "@mdit/plugin-stylize": "^0.8.0",
+    "@mdit/plugin-sub": "^0.8.0",
+    "@mdit/plugin-sup": "^0.8.0",
+    "@mdit/plugin-tab": "^0.8.0",
+    "@mdit/plugin-tasklist": "^0.8.0",
+    "@mdit/plugin-tex": "^0.8.0",
+    "@mdit/plugin-uml": "^0.8.0",
     "@types/markdown-it": "^13.0.7",
-    "@vuepress/client": "2.0.0-rc.0",
-    "@vuepress/shared": "2.0.0-rc.0",
-    "@vuepress/utils": "2.0.0-rc.0",
     "@vueuse/core": "^10.7.2",
     "balloon-css": "^1.2.0",
     "js-yaml": "^4.1.0",
@@ -108,10 +105,8 @@
   "devDependencies": {
     "@types/babel__core": "7.20.5",
     "@types/js-yaml": "4.0.9",
-    "@vuepress/bundler-vite": "2.0.0-rc.0",
-    "@vuepress/core": "2.0.0-rc.0",
-    "@vuepress/markdown": "2.0.0-rc.0",
-    "markdown-it": "13.0.2",
+    "@vuepress/bundler-vite": "2.0.0-rc.2",
+    "markdown-it": "14.0.0",
     "typescript": "5.3.3"
   },
   "peerDependencies": {
@@ -129,10 +124,8 @@
     "mermaid": "^10.6.0",
     "reveal.js": "^5.0.0",
     "sandpack-vue3": "^3.0.0",
-    "sass-loader": "^13.3.0",
-    "vuepress": "2.0.0-rc.0",
-    "vuepress-vite": "2.0.0-rc.0",
-    "vuepress-webpack": "2.0.0-rc.0"
+    "sass-loader": "^14.0.0",
+    "vuepress": "2.0.0-rc.2"
   },
   "peerDependenciesMeta": {
     "@types/reveal.js": {
@@ -178,15 +171,6 @@
       "optional": true
     },
     "sass-loader": {
-      "optional": true
-    },
-    "vuepress": {
-      "optional": true
-    },
-    "vuepress-vite": {
-      "optional": true
-    },
-    "vuepress-webpack": {
       "optional": true
     }
   },

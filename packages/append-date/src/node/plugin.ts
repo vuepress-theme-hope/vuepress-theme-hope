@@ -1,8 +1,8 @@
 import { createRequire } from "node:module";
 
-import type { Page, PluginFunction } from "@vuepress/core";
 import type { GitPluginPageData } from "@vuepress/plugin-git";
-import { colors, fs } from "@vuepress/utils";
+import type { Page, PluginFunction } from "vuepress/core";
+import { colors, fs } from "vuepress/utils";
 import {
   checkVersion,
   getDateString,
@@ -19,7 +19,7 @@ const require = createRequire(import.meta.url);
 export const appendDatePlugin =
   ({ key = "date", format = "date" }: AppendDateOptions = {}): PluginFunction =>
   (app) => {
-    checkVersion(app, PLUGIN_NAME, "2.0.0-rc.0");
+    checkVersion(app, PLUGIN_NAME, "2.0.0-rc.2");
 
     return {
       name: PLUGIN_NAME,

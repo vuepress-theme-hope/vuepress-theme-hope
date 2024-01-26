@@ -2,7 +2,7 @@ import { rollupBundle } from "../../scripts/rollup.js";
 
 export default [
   ...rollupBundle("cli/index", {
-    external: ["@vuepress/cli", "cac"],
+    external: ["cac", "vuepress/cli"],
   }),
   ...rollupBundle(
     {

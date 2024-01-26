@@ -1,4 +1,4 @@
-import { colors } from "@vuepress/utils";
+import { colors } from "vuepress/utils";
 
 import type { CommentPluginOptions } from "./options.js";
 import { logger } from "./utils.js";

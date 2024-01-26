@@ -36,7 +36,7 @@ tag:
 
 ```ts
 // .vuepress/client.ts
-import { defineClientConfig } from "@vuepress/client";
+import { defineClientConfig } from "vuepress/client";
 import MyComponent from "./MyComponent.vue";
 
 export default defineClientConfig({

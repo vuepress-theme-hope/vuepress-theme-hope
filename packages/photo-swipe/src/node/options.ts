@@ -1,4 +1,4 @@
-import type { LocaleConfig } from "@vuepress/core";
+import type { LocaleConfig } from "vuepress/shared";
 
 import type { PhotoSwipeLocaleData } from "../shared/index.js";
 

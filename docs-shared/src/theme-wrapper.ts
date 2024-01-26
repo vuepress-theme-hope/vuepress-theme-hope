@@ -1,4 +1,4 @@
-import type { ThemeFunction } from "@vuepress/core";
+import type { ThemeFunction } from "vuepress/core";
 import type { ThemeOptions } from "vuepress-theme-hope";
 import { hopeTheme } from "vuepress-theme-hope";
 

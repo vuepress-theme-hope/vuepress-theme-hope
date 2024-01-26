@@ -26,7 +26,7 @@ markmap:
 - \`inline code\`
 -
     \`\`\`js
-    console.log('code block');
+    const a = 1;
     \`\`\`
 - Katex
   - $x = {-b \\pm \\sqrt{b^2-4ac} \\over 2a}$

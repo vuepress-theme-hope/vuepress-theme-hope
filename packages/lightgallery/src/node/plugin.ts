@@ -1,4 +1,4 @@
-import type { PluginFunction } from "@vuepress/core";
+import type { PluginFunction } from "vuepress/core";
 import { useSassPalettePlugin } from "vuepress-plugin-sass-palette";
 import { addViteOptimizeDepsExclude, checkVersion } from "vuepress-shared/node";
 
@@ -11,7 +11,7 @@ export const lightgalleryPlugin =
   (options: LightGalleryOptions = {}, legacy = true): PluginFunction =>
   (app) => {
     if (legacy) convertOptions(options as Record<string, unknown>);
-    checkVersion(app, PLUGIN_NAME, "2.0.0-rc.0");
+    checkVersion(app, PLUGIN_NAME, "2.0.0-rc.2");
 
     if (app.env.isDebug) logger.info("Options:", options);
 

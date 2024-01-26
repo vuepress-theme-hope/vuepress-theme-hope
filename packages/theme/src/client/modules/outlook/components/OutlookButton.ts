@@ -1,7 +1,7 @@
-import { usePageData } from "@vuepress/client";
 import { useFullscreen } from "@vueuse/core";
 import type { VNode } from "vue";
 import { computed, defineComponent, h, ref, watch } from "vue";
+import { usePageData } from "vuepress/client";
 
 import { usePure, useThemeData } from "@theme-hope/composables/index";
 import AppearanceSwitch from "@theme-hope/modules/outlook/components/AppearanceSwitch";

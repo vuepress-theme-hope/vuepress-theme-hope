@@ -1,5 +1,6 @@
-import type { App, PageFrontmatter } from "@vuepress/core";
-import { createPage } from "@vuepress/core";
+import type { App } from "vuepress/core";
+import { createPage } from "vuepress/core";
+import type { PageFrontmatter } from "vuepress/shared";
 import { getTitleFromFilename } from "vuepress-shared/node";
 
 import type { AutoCatalogOptions } from "./options.js";

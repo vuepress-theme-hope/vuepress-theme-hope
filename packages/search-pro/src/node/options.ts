@@ -1,4 +1,4 @@
-import type { LocaleConfig, Page } from "@vuepress/core";
+import type { LocaleConfig, Page } from "vuepress/core";
 
 import type {
   SearchProCustomFieldFormatter,

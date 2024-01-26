@@ -1,5 +1,5 @@
-import type { App } from "@vuepress/core";
 import { prismjsPlugin } from "@vuepress/plugin-prismjs";
+import type { App } from "vuepress/core";
 
 /**
  * @private

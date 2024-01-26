@@ -310,7 +310,7 @@ You can use the `defineWalineConfig` function to customize Waline:
 
 ```ts
 // .vuepress/client.ts
-import { defineClientConfig } from "@vuepress/client";
+import { defineClientConfig } from "vuepress/client";
 import { defineWalineConfig } from "vuepress-plugin-comment2/client";
 
 defineWalineConfig({

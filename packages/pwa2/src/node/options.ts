@@ -1,4 +1,4 @@
-import type { LocaleConfig } from "@vuepress/core";
+import type { LocaleConfig } from "vuepress/shared";
 import type { GenerateSWOptions } from "workbox-build";
 
 import type { ManifestOption, PWALocaleData } from "../shared/index.js";

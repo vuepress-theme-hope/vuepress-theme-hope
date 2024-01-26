@@ -1,5 +1,6 @@
-import type { App, Page, PageFrontmatter } from "@vuepress/core";
 import type { GitData } from "@vuepress/plugin-git";
+import type { App, Page } from "vuepress/core";
+import type { PageFrontmatter } from "vuepress/shared";
 import type { AuthorInfo } from "vuepress-shared/node";
 import {
   getAuthor,

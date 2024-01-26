@@ -1,4 +1,4 @@
-import { colors } from "@vuepress/utils";
+import { colors } from "vuepress/utils";
 import { createConverter, isNumber, isPlainObject } from "vuepress-shared/node";
 
 import type { ComponentOptions } from "../options/index.js";

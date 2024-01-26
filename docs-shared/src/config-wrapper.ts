@@ -1,6 +1,6 @@
-import type { UserConfig } from "@vuepress/cli";
-import { defineUserConfig } from "@vuepress/cli";
-import { getDirname, path } from "@vuepress/utils";
+import type { UserConfig } from "vuepress/cli";
+import { defineUserConfig } from "vuepress/cli";
+import { getDirname, path } from "vuepress/utils";
 import { redirectPlugin } from "vuepress-plugin-redirect";
 import { addViteOptimizeDepsInclude } from "vuepress-shared/node";
 

@@ -1,4 +1,3 @@
-import { ClientOnly, usePageLang } from "@vuepress/client";
 import { onClickOutside, useStorage } from "@vueuse/core";
 import type { VNode } from "vue";
 import {
@@ -10,6 +9,7 @@ import {
   ref,
   shallowRef,
 } from "vue";
+import { ClientOnly, usePageLang } from "vuepress/client";
 
 import "./bing-hero-background.scss";
 

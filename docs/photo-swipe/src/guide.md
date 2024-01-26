@@ -35,7 +35,7 @@ You can pass options to [`photo-swipe`](http://photoswipe.com/) by importing and
 
 ```ts
 // .vuepress/client.ts
-import { defineClientConfig } from "@vuepress/client";
+import { defineClientConfig } from "vuepress/client";
 import { definePhotoSwipeConfig } from "vuepress-plugin-photo-swipe/client";
 
 definePhotoSwipeConfig({

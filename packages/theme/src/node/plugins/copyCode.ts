@@ -1,4 +1,4 @@
-import type { Plugin } from "@vuepress/core";
+import type { Plugin } from "vuepress/core";
 import type { CopyCodeOptions } from "vuepress-plugin-copy-code2";
 import { copyCodePlugin } from "vuepress-plugin-copy-code2";
 import { isPlainObject } from "vuepress-shared/node";

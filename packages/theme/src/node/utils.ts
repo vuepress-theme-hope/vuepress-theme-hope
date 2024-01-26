@@ -1,6 +1,6 @@
 import { createRequire } from "node:module";
 
-import { getDirname, path } from "@vuepress/utils";
+import { getDirname, path } from "vuepress/utils";
 import { Logger, ensureEndingSlash } from "vuepress-shared/node";
 
 const __dirname = getDirname(import.meta.url);

@@ -1,6 +1,6 @@
-import { usePageData, usePageFrontmatter } from "@vuepress/client";
 import type { VNode } from "vue";
 import { defineComponent, h } from "vue";
+import { usePageData, usePageFrontmatter } from "vuepress/client";
 
 import HopeIcon from "@theme-hope/components/HopeIcon";
 import { usePageInfo, useThemeLocaleData } from "@theme-hope/composables/index";

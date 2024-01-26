@@ -1,8 +1,3 @@
-import {
-  usePageData,
-  usePageFrontmatter,
-  useRouteLocale,
-} from "@vuepress/client";
 import type { VNode } from "vue";
 import {
   computed,
@@ -13,6 +8,11 @@ import {
   watch,
 } from "vue";
 import { useRouter } from "vue-router";
+import {
+  usePageData,
+  usePageFrontmatter,
+  useRouteLocale,
+} from "vuepress/client";
 import { VPLink, resolveRouteWithRedirect } from "vuepress-shared/client";
 
 import HopeIcon from "@theme-hope/components/HopeIcon";

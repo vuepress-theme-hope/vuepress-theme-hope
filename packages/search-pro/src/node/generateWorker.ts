@@ -1,5 +1,5 @@
-import type { App } from "@vuepress/core";
-import { fs, path } from "@vuepress/utils";
+import type { App } from "vuepress/core";
+import { fs, path } from "vuepress/utils";
 
 import { getSearchIndexStore } from "./generateIndex.js";
 import type { SearchProOptions } from "./options.js";

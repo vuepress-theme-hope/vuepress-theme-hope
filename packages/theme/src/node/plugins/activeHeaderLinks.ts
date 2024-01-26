@@ -1,5 +1,5 @@
-import type { Plugin } from "@vuepress/core";
 import { activeHeaderLinksPlugin } from "@vuepress/plugin-active-header-links";
+import type { Plugin } from "vuepress/core";
 
 /**
  * @private

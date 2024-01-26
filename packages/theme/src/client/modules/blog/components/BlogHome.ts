@@ -1,6 +1,6 @@
-import { usePageFrontmatter } from "@vuepress/client";
 import type { VNode } from "vue";
 import { computed, defineComponent, h } from "vue";
+import { usePageFrontmatter } from "vuepress/client";
 
 import MarkdownContent from "@theme-hope/components/MarkdownContent";
 import DropTransition from "@theme-hope/components/transitions/DropTransition";

@@ -3,7 +3,7 @@ import type {
   LoaderOptions,
   WebpackBundlerOptions,
 } from "@vuepress/bundler-webpack";
-import type { App } from "@vuepress/core";
+import type { App } from "vuepress/core";
 import {
   getBundlerName,
   isFunction,

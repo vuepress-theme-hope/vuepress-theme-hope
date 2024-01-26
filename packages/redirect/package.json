@@ -45,11 +45,6 @@
     "dev:ts": "tsc -b tsconfig.build.json --watch"
   },
   "dependencies": {
-    "@vuepress/cli": "2.0.0-rc.0",
-    "@vuepress/client": "2.0.0-rc.0",
-    "@vuepress/core": "2.0.0-rc.0",
-    "@vuepress/shared": "2.0.0-rc.0",
-    "@vuepress/utils": "2.0.0-rc.0",
     "@vueuse/core": "^10.7.2",
     "cac": "^6.7.14",
     "vue": "^3.4.15",
@@ -58,22 +53,11 @@
     "vuepress-shared": "workspace:*"
   },
   "peerDependencies": {
-    "sass-loader": "^13.3.0",
-    "vuepress": "2.0.0-rc.0",
-    "vuepress-vite": "2.0.0-rc.0",
-    "vuepress-webpack": "2.0.0-rc.0"
+    "sass-loader": "^14.0.0",
+    "vuepress": "2.0.0-rc.2"
   },
   "peerDependenciesMeta": {
     "sass-loader": {
-      "optional": true
-    },
-    "vuepress": {
-      "optional": true
-    },
-    "vuepress-vite": {
-      "optional": true
-    },
-    "vuepress-webpack": {
       "optional": true
     }
   },

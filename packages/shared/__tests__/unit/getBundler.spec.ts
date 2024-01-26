@@ -1,5 +1,5 @@
-import type { App } from "@vuepress/core";
 import { describe, expect, it } from "vitest";
+import type { App } from "vuepress/core";
 
 import { getBundlerName } from "../../src/node/bundler/getBundler.js";
 

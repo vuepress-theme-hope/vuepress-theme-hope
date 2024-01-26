@@ -1,4 +1,5 @@
-import type { App, HeadConfig } from "@vuepress/core";
+import type { App } from "vuepress/core";
+import type { HeadConfig } from "vuepress/shared";
 import { keys } from "vuepress-shared/node";
 
 import type { ResolvedFeedOptionsMap } from "./options.js";

@@ -27,7 +27,7 @@ You can pass options to [`lightgallery`](https://www.lightgalleryjs.com/) by imp
 
 ```ts
 // .vuepress/client.ts
-import { defineClientConfig } from "@vuepress/client";
+import { defineClientConfig } from "vuepress/client";
 import { defineLightGalleryConfig } from "vuepress-plugin-lightgallery/client";
 
 defineLightGalleryConfig({

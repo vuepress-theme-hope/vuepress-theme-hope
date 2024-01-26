@@ -1,4 +1,4 @@
-import type { HeadConfig } from "@vuepress/core";
+import type { HeadConfig } from "vuepress/shared";
 
 const assetsBase = "https://theme-hope-assets.vuejs.press/";
 

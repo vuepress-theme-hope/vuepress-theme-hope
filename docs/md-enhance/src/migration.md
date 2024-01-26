@@ -21,7 +21,7 @@ You can pass the second argument `true` to enable legacy mode when calling `mdEn
 
 - `v-pre` support
 
-  The following container support is removed from `@vuepress/core`, so `vPre` option is added
+  The following container support is removed, so `vPre` option is added
 
   ```md
   ::: v-pre

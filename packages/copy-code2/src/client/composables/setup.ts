@@ -25,9 +25,9 @@
  * © 2019 GitHub, Inc.
  */
 
-import { usePageData } from "@vuepress/client";
 import { useClipboard, useEventListener } from "@vueuse/core";
 import { nextTick, onMounted, watch } from "vue";
+import { usePageData } from "vuepress/client";
 import { Message, useIsMobile, useLocaleConfig } from "vuepress-shared/client";
 
 import {

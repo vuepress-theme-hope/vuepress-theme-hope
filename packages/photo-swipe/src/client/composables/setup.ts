@@ -1,8 +1,8 @@
-import { usePageData, usePageFrontmatter } from "@vuepress/client";
 import { useEventListener, useFullscreen } from "@vueuse/core";
 import type { SlideData } from "photoswipe";
 import type PhotoSwipe from "photoswipe";
 import { computed, nextTick, onMounted, watch } from "vue";
+import { usePageData, usePageFrontmatter } from "vuepress/client";
 import { useLocaleConfig } from "vuepress-shared/client";
 
 import { delay, imageSelector, locales, scrollToClose } from "../define.js";

@@ -1,7 +1,7 @@
-import { usePageFrontmatter, useRouteLocale } from "@vuepress/client";
 import type { ComputedRef } from "vue";
 import { computed, readonly, shallowRef } from "vue";
 import { useRouter } from "vue-router";
+import { usePageFrontmatter, useRouteLocale } from "vuepress/client";
 import { resolveRouteWithRedirect } from "vuepress-shared/client";
 
 import { typeMap } from "@temp/blog/type";

@@ -1,7 +1,7 @@
-import type { Page } from "@vuepress/core";
-import { createBaseApp } from "@vuepress/core";
-import { path } from "@vuepress/utils";
 import { describe, expect, it } from "vitest";
+import type { Page } from "vuepress/core";
+import { createBaseApp } from "vuepress/core";
+import { path } from "vuepress/utils";
 import { getPageExcerpt } from "vuepress-shared/node";
 
 import { emptyTheme } from "./__fixtures__/theme/empty.js";

@@ -57,7 +57,7 @@
     }
   }
 
-  a:hover {
+  a:not(.header-anchor):hover {
     text-decoration: underline;
   }
 

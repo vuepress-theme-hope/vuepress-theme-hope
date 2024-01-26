@@ -1,7 +1,7 @@
-import { useRouteLocale } from "@vuepress/client";
 import type { SlotsType, VNode } from "vue";
 import { defineComponent, h } from "vue";
 import { useLink } from "vue-router";
+import { useRouteLocale } from "vuepress/client";
 
 import CommonWrapper from "@theme-hope/components/CommonWrapper";
 import NotFoundHint from "@theme-hope/components/NotFoundHint";

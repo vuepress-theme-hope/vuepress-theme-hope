@@ -1,4 +1,4 @@
-import type { App } from "@vuepress/core";
+import type { App } from "vuepress/core";
 
 import type { PWAOptions } from "./options.js";
 import { CLIENT_FOLDER } from "./utils.js";
@@ -35,7 +35,7 @@ SWUpdatePopup,
   return app.writeTemp(
     `pwa2/config.js`,
     `\
-import { defineClientConfig } from "@vuepress/client";
+import { defineClientConfig } from "vuepress/client";
 import { setupPWA } from "${CLIENT_FOLDER}composables/setup.js";
 ${configImport}
 

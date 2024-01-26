@@ -1,4 +1,4 @@
-import { fs, path } from "@vuepress/utils";
+import { fs, path } from "vuepress/utils";
 
 export const getDirContents = (dir: string, base = ""): string[] =>
   fs

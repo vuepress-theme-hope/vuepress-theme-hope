@@ -1,5 +1,5 @@
-import type { App } from "@vuepress/core";
-import { colors, fs, path } from "@vuepress/utils";
+import type { App } from "vuepress/core";
+import { colors, fs, path } from "vuepress/utils";
 import { endsWith } from "vuepress-shared/node";
 import type {
   ManifestEntry,

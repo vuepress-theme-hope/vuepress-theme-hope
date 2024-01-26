@@ -1,8 +1,8 @@
 import { container } from "@mdit/plugin-container";
-import type { MarkdownEnv } from "@vuepress/markdown";
 import { load } from "js-yaml";
 import type { Options, PluginSimple } from "markdown-it";
 import type Token from "markdown-it/lib/token.js";
+import type { MarkdownEnv } from "vuepress/markdown";
 import {
   entries,
   fromEntries,

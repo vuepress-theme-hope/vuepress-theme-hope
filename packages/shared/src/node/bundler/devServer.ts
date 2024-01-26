@@ -5,9 +5,9 @@ import type {
   WebpackBundlerOptions,
   WebpackDevServer,
 } from "@vuepress/bundler-webpack";
-import type { App } from "@vuepress/core";
 import type { HandleFunction } from "connect";
 import type { Plugin } from "vite";
+import type { App } from "vuepress/core";
 
 import { getBundlerName } from "./getBundler.js";
 import { mergeViteConfig } from "./vite/index.js";

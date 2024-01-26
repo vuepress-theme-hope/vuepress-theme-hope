@@ -1,4 +1,3 @@
-import { isArray } from "@vuepress/shared";
 import type { UseMediaTextTrackSource } from "@vueuse/core";
 import type { Options as PlyrOptions } from "plyr";
 import type { PropType, VNode } from "vue";
@@ -10,6 +9,7 @@ import {
   onMounted,
   shallowRef,
 } from "vue";
+import { isArray } from "vuepress-shared/client";
 
 import { getLink } from "../utils/index.js";
 

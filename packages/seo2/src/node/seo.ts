@@ -1,6 +1,6 @@
 /* eslint-disable @typescript-eslint/naming-convention */
-import type { App, AppDir } from "@vuepress/core";
-import { fs } from "@vuepress/utils";
+import type { App, AppDir } from "vuepress/core";
+import { fs } from "vuepress/utils";
 
 import {
   getAlternateLinks,

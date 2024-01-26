@@ -1,6 +1,6 @@
-import { usePageData } from "@vuepress/client";
 import type { VNode } from "vue";
 import { defineComponent, h, onMounted, shallowRef, watch } from "vue";
+import { usePageData } from "vuepress/client";
 
 import { useThemeLocaleData } from "@theme-hope/composables/index";
 

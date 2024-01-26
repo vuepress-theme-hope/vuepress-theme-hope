@@ -1,4 +1,4 @@
-import type { App, HeadConfig } from "@vuepress/core";
+import type { App, HeadConfig } from "vuepress/core";
 import type { Author } from "vuepress-shared/node";
 
 import type {

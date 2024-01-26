@@ -1,4 +1,4 @@
-import { withBase } from "@vuepress/client";
+import { withBase } from "vuepress/client";
 
 import type { PWAEvent } from "./usePWAEvent.js";
 import { registerSW } from "../utils/index.js";

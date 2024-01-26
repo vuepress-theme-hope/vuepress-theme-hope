@@ -1,4 +1,4 @@
-import type { LocaleData } from "@vuepress/shared";
+import type { LocaleData } from "vuepress/shared";
 import type { Author } from "vuepress-shared";
 
 import type { AppearanceLocaleData } from "./appearance.js";

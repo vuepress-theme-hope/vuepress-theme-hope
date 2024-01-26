@@ -1,5 +1,5 @@
 /* eslint-disable @typescript-eslint/naming-convention */
-import type { App } from "@vuepress/core";
+import type { App } from "vuepress/core";
 import {
   getAuthor,
   getDateInfo,

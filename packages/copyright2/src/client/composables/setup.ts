@@ -1,6 +1,6 @@
-import { usePageData, usePageFrontmatter } from "@vuepress/client";
 import { useEventListener } from "@vueuse/core";
 import { computed, onMounted, watchEffect } from "vue";
+import { usePageData, usePageFrontmatter } from "vuepress/client";
 import type { RequiredLocaleConfig } from "vuepress-shared/client";
 import {
   isLinkHttp,

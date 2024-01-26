@@ -1,11 +1,11 @@
+import type { ComputedRef } from "vue";
+import { computed, readonly, shallowRef } from "vue";
+import { useRouter } from "vue-router";
 import {
   usePageData,
   usePageFrontmatter,
   useRouteLocale,
-} from "@vuepress/client";
-import type { ComputedRef } from "vue";
-import { computed, readonly, shallowRef } from "vue";
-import { useRouter } from "vue-router";
+} from "vuepress/client";
 import { resolveRouteWithRedirect } from "vuepress-shared/client";
 
 import { categoryMap } from "@temp/blog/category";

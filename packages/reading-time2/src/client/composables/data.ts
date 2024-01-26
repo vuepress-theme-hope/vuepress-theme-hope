@@ -1,6 +1,6 @@
-import { usePageData } from "@vuepress/client";
 import type { ComputedRef } from "vue";
 import { computed } from "vue";
+import { usePageData } from "vuepress/client";
 
 import type {
   ReadingTime,

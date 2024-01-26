@@ -1,6 +1,6 @@
 /* eslint-disable @typescript-eslint/no-unsafe-argument */
-import { colors, ora } from "@vuepress/utils";
 import type { Ora } from "ora";
+import { colors, ora } from "vuepress/utils";
 
 /**
  * Shell Logger

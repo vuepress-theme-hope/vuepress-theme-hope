@@ -1,8 +1,7 @@
-import { withBase } from "@vuepress/client";
-import { isLinkExternal } from "@vuepress/shared";
 import type { FunctionalComponent, VNode } from "vue";
 import { h } from "vue";
-import { VPLink } from "vuepress-shared/client";
+import { withBase } from "vuepress/client";
+import { VPLink, isLinkExternal } from "vuepress-shared/client";
 
 import HopeIcon from "@theme-hope/components/HopeIcon";
 

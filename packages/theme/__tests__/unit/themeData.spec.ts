@@ -1,7 +1,7 @@
 /* eslint-disable @typescript-eslint/naming-convention */
-import { createBaseApp } from "@vuepress/core";
-import { path } from "@vuepress/utils";
 import { describe, expect, it } from "vitest";
+import { createBaseApp } from "vuepress/core";
+import { path } from "vuepress/utils";
 
 import { emptyTheme } from "./__fixtures__/theme/empty.js";
 import { getStatus } from "../../src/node/config/status.js";

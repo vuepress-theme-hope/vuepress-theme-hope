@@ -132,7 +132,7 @@ You can import and call `defineKotlinPlaygroundConfig` in [client config file][c
 
 ```ts
 // .vuepress/client.ts
-import { defineClientConfig } from "@vuepress/client";
+import { defineClientConfig } from "vuepress/client";
 import { defineKotlinPlaygroundConfig } from "vuepress-plugin-md-enhance/client";
 
 defineKotlinPlaygroundConfig({

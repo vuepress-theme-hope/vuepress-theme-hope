@@ -1,4 +1,5 @@
-import type { LocaleConfig, Page } from "@vuepress/core";
+import type { Page } from "vuepress/core";
+import type { LocaleConfig } from "vuepress/shared";
 
 import type { CopyrightLocaleData } from "../shared/locales.js";
 

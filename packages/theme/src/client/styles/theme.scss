@@ -35,8 +35,8 @@
 }
 
 // rtl
-#{hope-config.$rtl-selector} a.header-anchor {
-  float: right;
+#{hope-config.$rtl-selector} a.header-anchor::before {
+  right: -0.75em;
 }
 
 // docsearch fix

@@ -1,6 +1,6 @@
-import type { App, Page } from "@vuepress/core";
 import type { GitData } from "@vuepress/plugin-git";
-import { getDirname, path } from "@vuepress/utils";
+import type { App, Page } from "vuepress/core";
+import { getDirname, path } from "vuepress/utils";
 import {
   compareDate,
   deepAssign,

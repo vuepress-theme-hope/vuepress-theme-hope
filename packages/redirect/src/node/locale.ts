@@ -1,5 +1,5 @@
-import type { App } from "@vuepress/core";
-import { colors } from "@vuepress/utils";
+import type { App } from "vuepress/core";
+import { colors } from "vuepress/utils";
 import {
   deepAssign,
   entries,

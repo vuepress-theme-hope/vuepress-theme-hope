@@ -1,6 +1,6 @@
 /* eslint-disable @typescript-eslint/naming-convention */
-import type { App } from "@vuepress/core";
-import { colors, fs, path } from "@vuepress/utils";
+import type { App } from "vuepress/core";
+import { colors, fs, path } from "vuepress/utils";
 import { getRootLang } from "vuepress-shared/node";
 
 import type { PWAOptions } from "./options.js";

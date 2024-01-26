@@ -1,6 +1,6 @@
-import type { App, Page } from "@vuepress/core";
 import type { GitData } from "@vuepress/plugin-git";
-import { colors, fs, path } from "@vuepress/utils";
+import type { App, Page } from "vuepress/core";
+import { colors, fs, path } from "vuepress/utils";
 import { entries, fromEntries } from "vuepress-shared/node";
 
 import { Feed } from "./feed.js";

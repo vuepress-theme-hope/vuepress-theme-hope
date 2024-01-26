@@ -1,8 +1,7 @@
-import { withBase } from "@vuepress/client";
-import { isLinkHttp } from "@vuepress/shared";
 import type { PropType, VNode } from "vue";
 import { defineComponent, h, resolveComponent } from "vue";
-import { isAbsoluteUrl } from "vuepress-shared/client";
+import { withBase } from "vuepress/client";
+import { isAbsoluteUrl, isLinkHttp } from "vuepress-shared/client";
 
 import HopeIcon from "@theme-hope/components/HopeIcon";
 import { useNavigate, usePure } from "@theme-hope/composables/index";

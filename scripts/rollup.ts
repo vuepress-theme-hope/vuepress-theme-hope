@@ -121,10 +121,10 @@ export const rollupBundle = (
           ? [
               /^@temp/,
               "@vueuse/core",
-              "@vuepress/client",
-              "@vuepress/shared",
               "vue",
               "vue-router",
+              "vuepress/client",
+              "vuepress/shared",
               "vuepress-shared/client",
               /\.s?css(?:\?module)?$/,
             ]
@@ -136,10 +136,11 @@ export const rollupBundle = (
               )
             ? [
                 /^node:/,
-                "@vuepress/core",
-                "@vuepress/shared",
                 /^@vuepress\/plugin-/,
-                "@vuepress/utils",
+                "vuepress/cli",
+                "vuepress/core",
+                "vuepress/shared",
+                "vuepress/utils",
                 /^vuepress-plugin-/,
                 "vuepress-shared/node",
               ]
@@ -196,13 +197,26 @@ export const rollupBundle = (
                       ? filePath.base.startsWith("client")
                       : filePath.startsWith("client/")
                   )
-                ? [/^@temp/, "vuepress-shared/client", /\.s?css$/]
+                ? [
+                    /^@temp/,
+                    "vuepress/client",
+                    "vuepress/shared",
+                    "vuepress-shared/client",
+                    /\.s?css$/,
+                  ]
                 : (
                       typeof filePath === "object"
                         ? filePath.base.startsWith("node")
                         : filePath.startsWith("node/")
                     )
-                  ? [/^node:/, "vuepress-shared/node"]
+                  ? [
+                      /^node:/,
+                      "vuepress/cli",
+                      "vuepress/core",
+                      "vuepress/shared",
+                      "vuepress/utils",
+                      "vuepress-shared/node",
+                    ]
                   : []),
             ...dtsExternal,
           ],

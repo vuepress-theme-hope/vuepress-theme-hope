@@ -1,10 +1,15 @@
-import { useSiteData } from "@vuepress/client";
 import { ExternalLinkIcon } from "@vuepress/plugin-external-link-icon/client";
-import { isLinkHttp, isLinkWithProtocol } from "@vuepress/shared";
 import type { PropType, SlotsType, VNode } from "vue";
 import { computed, defineComponent, h, toRef } from "vue";
 import { useRoute } from "vue-router";
-import { VPLink, keys, startsWith } from "vuepress-shared/client";
+import { useSiteData } from "vuepress/client";
+import {
+  VPLink,
+  isLinkHttp,
+  isLinkWithProtocol,
+  keys,
+  startsWith,
+} from "vuepress-shared/client";
 
 import HopeIcon from "@theme-hope/components/HopeIcon";
 

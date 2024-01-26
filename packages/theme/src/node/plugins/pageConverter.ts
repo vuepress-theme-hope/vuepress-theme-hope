@@ -1,4 +1,4 @@
-import type { App, Page, PluginObject } from "@vuepress/core";
+import type { App, Page, PluginObject } from "vuepress/core";
 import {
   endsWith,
   injectLocalizedDate,

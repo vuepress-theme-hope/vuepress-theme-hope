@@ -399,7 +399,7 @@ E.g.: you can use `@src` as an alias for your source directory.
 
 ```ts {10}
 // .vuepress/config.ts
-import { getDirname, path } from "@vuepress/utils";
+import { getDirname, path } from "vuepress/utils";
 import { mdEnhancePlugin } from "vuepress-plugin-md-enhance";
 
 const __dirname = getDirname(import.meta.url);
@@ -425,7 +425,7 @@ export default {
 
 ```js {10}
 // .vuepress/config.js
-import { getDirname, path } from "@vuepress/utils";
+import { getDirname, path } from "vuepress/utils";
 import { mdEnhancePlugin } from "vuepress-plugin-md-enhance";
 
 const __dirname = getDirname(import.meta.url);

@@ -1,4 +1,4 @@
-import type { Page, Plugin } from "@vuepress/core";
+import type { Page, Plugin } from "vuepress/core";
 import { seoPlugin } from "vuepress-plugin-seo2";
 import { isPlainObject, keys } from "vuepress-shared/node";
 

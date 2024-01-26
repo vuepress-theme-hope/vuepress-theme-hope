@@ -1,4 +1,4 @@
-import { colors } from "@vuepress/utils";
+import { colors } from "vuepress/utils";
 import { createConverter } from "vuepress-shared/node";
 
 import type { AutoCatalogOptions } from "./options.js";

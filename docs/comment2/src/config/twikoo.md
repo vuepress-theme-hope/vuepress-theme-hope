@@ -38,7 +38,7 @@ You can use the `defineTwikooConfig` function to customize Twikoo:
 
 ```ts
 // .vuepress/client.ts
-import { defineClientConfig } from "@vuepress/client";
+import { defineClientConfig } from "vuepress/client";
 import { defineTwikooConfig } from "vuepress-plugin-comment2/client";
 
 defineTwikooConfig({

@@ -1,7 +1,7 @@
-import type { App, Page } from "@vuepress/core";
 import type { GitData } from "@vuepress/plugin-git";
-import { colors, fs } from "@vuepress/utils";
 import { SitemapStream } from "sitemap";
+import type { App, Page } from "vuepress/core";
+import { colors, fs } from "vuepress/utils";
 import {
   isLinkHttp,
   removeEndingSlash,

@@ -151,7 +151,7 @@ export default {
 
 ```ts
 // .vuepress/client.ts
-import { defineClientConfig } from "@vuepress/client";
+import { defineClientConfig } from "vuepress/client";
 import { defineRevealJsConfig } from "vuepress-plugin-md-enhance/client";
 
 defineRevealJsConfig({

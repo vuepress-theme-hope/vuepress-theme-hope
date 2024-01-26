@@ -1,6 +1,6 @@
-import { createBaseApp } from "@vuepress/core";
-import { path } from "@vuepress/utils";
 import { describe, expect, it } from "vitest";
+import { createBaseApp } from "vuepress/core";
+import { path } from "vuepress/utils";
 
 import { emptyTheme } from "./__fixtures__/theme/empty.js";
 import { getLinksCheckStatus, linksCheck } from "../../src/node/linksCheck.js";
@@ -42,10 +42,6 @@ describe("getLinksCheckStatus", async () => {
   });
 
   it("Should get status correctly", () => {
-    console.log(
-      getLinksCheckStatus(devApp, { checkLinks: { status: "always" } }),
-    );
-
     expect(
       getLinksCheckStatus(devApp, { checkLinks: { status: "always" } }),
     ).toHaveProperty("enabled", true);

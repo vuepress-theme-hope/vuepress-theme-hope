@@ -1,4 +1,4 @@
-import type { Page } from "@vuepress/core";
+import type { Page } from "vuepress/core";
 
 import type { FeedPluginFrontmatter } from ".";
 

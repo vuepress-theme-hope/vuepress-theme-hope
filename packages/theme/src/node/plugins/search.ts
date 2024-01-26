@@ -1,7 +1,7 @@
-import type { App, Page, Plugin } from "@vuepress/core";
 import type { DocsearchPluginOptions } from "@vuepress/plugin-docsearch";
 import type { SearchPluginOptions } from "@vuepress/plugin-search";
-import { colors } from "@vuepress/utils";
+import type { App, Page, Plugin } from "vuepress/core";
+import { colors } from "vuepress/utils";
 import type { SearchProOptions } from "vuepress-plugin-search-pro";
 import {
   entries,

@@ -1,7 +1,7 @@
-import type { MarkdownEnv } from "@vuepress/markdown";
 import { load } from "js-yaml";
 import type { Options, PluginSimple, Token } from "markdown-it";
 import type { RenderRule } from "markdown-it/lib/renderer.js";
+import type { MarkdownEnv } from "vuepress/markdown";
 
 import { stringifyProp } from "./utils.js";
 import { logger } from "../utils.js";

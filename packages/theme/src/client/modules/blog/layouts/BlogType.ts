@@ -1,6 +1,6 @@
-import { usePageData, usePageFrontmatter } from "@vuepress/client";
 import type { VNode } from "vue";
 import { computed, defineComponent, h } from "vue";
+import { usePageData, usePageFrontmatter } from "vuepress/client";
 import type {
   BlogPluginFrontmatter,
   BlogTypeFrontmatterOptions,

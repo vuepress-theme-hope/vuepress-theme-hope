@@ -1,12 +1,12 @@
-import {
-  usePageData,
-  usePageFrontmatter,
-  useRouteLocale,
-} from "@vuepress/client";
 import { computedWithControl } from "@vueuse/core";
 import type { ComputedRef, InjectionKey } from "vue";
 import { computed, inject, provide } from "vue";
 import { useRouter } from "vue-router";
+import {
+  usePageData,
+  usePageFrontmatter,
+  useRouteLocale,
+} from "vuepress/client";
 
 import { useThemeLocaleData } from "@theme-hope/composables/index";
 

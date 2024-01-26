@@ -56,7 +56,7 @@ You must invoke `useSassPalettePlugin` function during plugin initialization to 
 ```ts
 // Your plugin or theme entry
 import { useSassPalettePlugin } from "vuepress-plugin-sass-palette";
-import type { PluginFunction } from "@vuepress/core";
+import type { PluginFunction } from "vuepress/core";
 
 export const yourPlugin =
   (options): PluginFunction =>

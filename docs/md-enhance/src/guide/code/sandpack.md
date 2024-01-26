@@ -99,7 +99,7 @@ You can import and call `defineSandpackConfig` in client config file to customiz
 
 ```ts
 // .vuepress/client.ts
-import { defineClientConfig } from "@vuepress/client";
+import { defineClientConfig } from "vuepress/client";
 import { defineSandpackConfig } from "vuepress-plugin-md-enhance/client";
 
 defineSandpackConfig({

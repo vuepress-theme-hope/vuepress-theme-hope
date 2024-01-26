@@ -1,5 +1,5 @@
-import { fs, path } from "@vuepress/utils";
 import { execaCommandSync } from "execa";
+import { fs, path } from "vuepress/utils";
 
 export type PackageManager = "npm" | "yarn" | "pnpm";
 

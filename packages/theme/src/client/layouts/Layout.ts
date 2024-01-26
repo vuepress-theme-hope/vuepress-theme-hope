@@ -1,6 +1,6 @@
-import { usePageData, usePageFrontmatter } from "@vuepress/client";
 import type { SlotsType, VNode } from "vue";
 import { computed, defineComponent, h, resolveComponent } from "vue";
+import { usePageData, usePageFrontmatter } from "vuepress/client";
 
 import CommonWrapper from "@theme-hope/components/CommonWrapper";
 import HomePage from "@theme-hope/components/HomePage";

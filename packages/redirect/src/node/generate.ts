@@ -1,5 +1,5 @@
-import type { App } from "@vuepress/core";
-import { fs, path, withSpinner } from "@vuepress/utils";
+import type { App } from "vuepress/core";
+import { fs, path, withSpinner } from "vuepress/utils";
 import {
   entries,
   isAbsoluteUrl,

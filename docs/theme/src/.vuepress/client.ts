@@ -1,4 +1,4 @@
-import { defineClientConfig } from "@vuepress/client";
+import { defineClientConfig } from "vuepress/client";
 import ProjectLink from "docs-shared/components/ProjectLink.js";
 import SocialLink from "docs-shared/components/SocialLink.js";
 

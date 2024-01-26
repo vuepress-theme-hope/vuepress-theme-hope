@@ -1,4 +1,3 @@
-import { usePageFrontmatter } from "@vuepress/client";
 import { useElementSize, useWindowScroll, useWindowSize } from "@vueuse/core";
 import type { VNode } from "vue";
 import {
@@ -9,6 +8,7 @@ import {
   onMounted,
   shallowRef,
 } from "vue";
+import { usePageFrontmatter } from "vuepress/client";
 import { useLocaleConfig } from "vuepress-shared/client";
 
 import { BackToTopIcon } from "./icons.js";

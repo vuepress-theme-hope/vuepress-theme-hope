@@ -1,18 +1,20 @@
-export { isArray, isPlainObject } from "@vuepress/shared";
+export { isPlainObject } from "vuepress/shared";
 export { isDef, isObject } from "@vueuse/core";
 
+/* Type helper */
 // eslint-disable-next-line @typescript-eslint/no-explicit-any
 export const isBoolean = (val: any): val is boolean => typeof val === "boolean";
-// eslint-disable-next-line
-export const isFunction = <T extends Function>(val: any): val is T =>
-  typeof val === "function";
 // eslint-disable-next-line @typescript-eslint/no-explicit-any
 export const isNumber = (val: any): val is number => typeof val === "number";
 export const isString = (val: unknown): val is string =>
   typeof val === "string";
+export const isArray = Array.isArray;
+// eslint-disable-next-line
+export const isFunction = <T extends Function>(val: any): val is T =>
+  typeof val === "function";
 export const isRegExp = (val: unknown): val is RegExp => val instanceof RegExp;
-/* String helper */
 
+/* String helper */
 export const startsWith = (str: unknown, prefix: string): boolean =>
   isString(str) && str.startsWith(prefix);
 

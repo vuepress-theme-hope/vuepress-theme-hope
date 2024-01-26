@@ -1,7 +1,7 @@
 import { createRequire } from "node:module";
 
-import type { App } from "@vuepress/core";
-import { colors, fs, path } from "@vuepress/utils";
+import type { App } from "vuepress/core";
+import { colors, fs, path } from "vuepress/utils";
 import { keys } from "vuepress-shared/node";
 
 interface PackageJSON extends Record<string, unknown> {

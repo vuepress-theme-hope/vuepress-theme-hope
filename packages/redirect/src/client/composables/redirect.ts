@@ -1,9 +1,8 @@
-import { useRouteLocale } from "@vuepress/client";
-import { isLinkHttp } from "@vuepress/shared";
 import { usePreferredLanguages } from "@vueuse/core";
 import { computed, watch } from "vue";
 import { useRoute, useRouter } from "vue-router";
-import { entries } from "vuepress-shared/client";
+import { useRouteLocale } from "vuepress/client";
+import { entries, isLinkHttp } from "vuepress-shared/client";
 
 import { redirectConfig } from "@temp/redirect/config.js";
 

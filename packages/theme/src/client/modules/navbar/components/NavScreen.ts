@@ -1,4 +1,3 @@
-import { usePageData } from "@vuepress/client";
 import { useScrollLock } from "@vueuse/core";
 import type { SlotsType, VNode } from "vue";
 import {
@@ -10,6 +9,7 @@ import {
   shallowRef,
   watch,
 } from "vue";
+import { usePageData } from "vuepress/client";
 
 import { useWindowSize } from "@theme-hope/composables/index";
 import NavScreenLinks from "@theme-hope/modules/navbar/components/NavScreenLinks";

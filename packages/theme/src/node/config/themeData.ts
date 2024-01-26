@@ -1,4 +1,4 @@
-import type { App } from "@vuepress/core";
+import type { App } from "vuepress/core";
 import { entries, fromEntries, getLocales } from "vuepress-shared/node";
 
 import { getEncryptConfig } from "./encrypt.js";

@@ -1,6 +1,6 @@
-import { createBaseApp } from "@vuepress/core";
-import { getDirname, path } from "@vuepress/utils";
 import { describe, expect, it } from "vitest";
+import { createBaseApp } from "vuepress/core";
+import { getDirname, path } from "vuepress/utils";
 
 import { emptyTheme } from "./__fixtures__/theme/empty.js";
 import { checkVersion } from "../../src/node/utils/checkVersion.js";
@@ -23,8 +23,8 @@ it("Should return true", () => {
     theme: emptyTheme,
   });
 
-  expect(checkVersion(app1, "test", "2.0.0-rc.0")).toEqual(true);
-  expect(checkVersion(app2, "test", "2.0.0-rc.0")).toEqual(true);
+  expect(checkVersion(app1, "test", "2.0.0-rc.2")).toEqual(true);
+  expect(checkVersion(app2, "test", "2.0.0-rc.2")).toEqual(true);
 });
 
 it("Should return false", () => {
@@ -39,8 +39,8 @@ it("Should return false", () => {
     theme: emptyTheme,
   });
 
-  expect(checkVersion(app1, "wrong1", "2.0.0-beta.61")).toEqual(false);
-  expect(checkVersion(app2, "wrong2", "2.0.0-beta.61")).toEqual(false);
+  expect(checkVersion(app1, "wrong1", "3.0.0")).toEqual(false);
+  expect(checkVersion(app2, "wrong2", "3.0.0")).toEqual(false);
 });
 
 describe("Should support nesting", () => {
@@ -52,6 +52,6 @@ describe("Should support nesting", () => {
       theme: emptyTheme,
     });
 
-    expect(checkVersion(app1, "nesting", "2.0.0-rc.0")).toEqual(true);
+    expect(checkVersion(app1, "nesting", "2.0.0-rc.2")).toEqual(true);
   });
 });

@@ -1,4 +1,4 @@
-import { defineUserConfig } from "@vuepress/cli";
+import { defineUserConfig } from "vuepress/cli";
 import { defaultTheme } from "@vuepress/theme-default";
 import { sitemapPlugin } from "vuepress-plugin-sitemap2";
 

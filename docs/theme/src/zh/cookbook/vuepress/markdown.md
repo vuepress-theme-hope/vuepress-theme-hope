@@ -177,7 +177,7 @@ Emoji 扩展由 [markdown-it-emoji](https://github.com/markdown-it/markdown-it-e
 
 ````md
 ```ts {1,6-8}
-import type { UserConfig } from "@vuepress/cli";
+import type { UserConfig } from "vuepress/cli";
 import { defaultTheme } from "@vuepress/theme-default";
 
 export const config: UserConfig = {
@@ -193,7 +193,7 @@ export const config: UserConfig = {
 输出:
 
 ```ts {1,6-8}
-import type { UserConfig } from "@vuepress/cli";
+import type { UserConfig } from "vuepress/cli";
 import { defaultTheme } from "@vuepress/theme-default";
 
 export const config: UserConfig = {
@@ -370,7 +370,7 @@ v-pre 扩展是由我们的内置插件支持的。
 需要注意的是，路径别名在导入代码语法中不会生效。你可以通过下面的配置来自行处理路径别名:
 
 ```js
-import { getDirname, path } from "@vuepress/utils";
+import { getDirname, path } from "vuepress/utils";
 
 const __dirname = getDirname(import.meta.url);
 

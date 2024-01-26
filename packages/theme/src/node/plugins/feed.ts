@@ -1,5 +1,5 @@
-import type { Plugin } from "@vuepress/core";
-import { colors } from "@vuepress/utils";
+import type { Plugin } from "vuepress/core";
+import { colors } from "vuepress/utils";
 import type { FeedOptions } from "vuepress-plugin-feed2";
 import {
   deepAssign,

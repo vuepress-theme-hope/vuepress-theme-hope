@@ -1,4 +1,4 @@
-import type { App } from "@vuepress/core";
+import type { App } from "vuepress/core";
 import {
   getRealPath,
   isArray,
@@ -103,7 +103,7 @@ if(!hasGlobalComponent("Catalog")) app.component("Catalog", Catalog);
   return app.writeTemp(
     `components/config.js`,
     `\
-import { defineClientConfig } from "@vuepress/client";
+import { defineClientConfig } from "vuepress/client";
 import { hasGlobalComponent } from "${getRealPath(
       "vuepress-shared/client",
       url,

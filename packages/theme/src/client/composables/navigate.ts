@@ -1,6 +1,5 @@
-import { isLinkWithProtocol } from "@vuepress/shared";
 import { useRoute, useRouter } from "vue-router";
-import { isAbsoluteUrl } from "vuepress-shared/client";
+import { isAbsoluteUrl, isLinkWithProtocol } from "vuepress-shared/client";
 
 export const useNavigate = (): ((url: string) => void) => {
   const router = useRouter();

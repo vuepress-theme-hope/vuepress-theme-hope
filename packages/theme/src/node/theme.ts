@@ -1,6 +1,6 @@
-import type { ThemeFunction } from "@vuepress/core";
-import { TEMPLATE_RENDERER_OUTLETS } from "@vuepress/utils";
 import { watch } from "chokidar";
+import type { ThemeFunction } from "vuepress/core";
+import { TEMPLATE_RENDERER_OUTLETS } from "vuepress/utils";
 import { isPlainObject } from "vuepress-shared/node";
 
 import { getAlias } from "./alias.js";

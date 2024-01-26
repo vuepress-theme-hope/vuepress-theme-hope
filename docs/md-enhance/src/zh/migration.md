@@ -21,7 +21,7 @@ icon: code-compare
 
 - `v-pre` 支持
 
-  VuePress 2 从 `@vuepress/core` 中删除了以下容器支持，因此添加了 `vPre` 选项
+  VuePress 2 删除了以下容器支持，因此添加了 `vPre` 选项
 
   ```md
   ::: v-pre

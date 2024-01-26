@@ -1,12 +1,12 @@
-import type { PluginFunction } from "@vuepress/core";
+import { watch } from "chokidar";
+import type { PluginFunction } from "vuepress/core";
 import {
   preparePageComponent,
   preparePageData,
   preparePagesComponents,
   preparePagesData,
   preparePagesRoutes,
-} from "@vuepress/core";
-import { watch } from "chokidar";
+} from "vuepress/core";
 import {
   addViteSsrNoExternal,
   checkVersion,
@@ -26,7 +26,7 @@ export const blogPlugin =
     if (legacy)
       convertOptions(options as BlogOptions & Record<string, unknown>);
 
-    checkVersion(app, PLUGIN_NAME, "2.0.0-rc.0");
+    checkVersion(app, PLUGIN_NAME, "2.0.0-rc.2");
 
     const {
       getInfo = (): Record<string, never> => ({}),
@@ -142,14 +142,10 @@ export const blogPlugin =
                 // prepare page files
                 await Promise.all(
                   pagesToBeAdded.map(async (pageKey) => {
-                    await preparePageComponent(
-                      app,
-                      app.pages.find(({ key }) => key === pageKey)!,
-                    );
-                    await preparePageData(
-                      app,
-                      app.pages.find(({ key }) => key === pageKey)!,
-                    );
+                    const page = app.pages.find(({ key }) => key === pageKey)!;
+
+                    await preparePageComponent(app, page);
+                    await preparePageData(app, page);
                   }),
                 );
               }

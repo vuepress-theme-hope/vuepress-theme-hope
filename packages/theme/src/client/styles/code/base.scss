@@ -67,7 +67,7 @@ div[class*="language-"] {
   }
 
   &::before {
-    content: attr(data-ext);
+    content: attr(data-title);
 
     position: absolute;
     top: 0;

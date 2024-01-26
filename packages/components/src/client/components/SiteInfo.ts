@@ -1,6 +1,6 @@
-import { withBase } from "@vuepress/client";
 import type { VNode } from "vue";
 import { computed, defineComponent, h, resolveComponent } from "vue";
+import { withBase } from "vuepress/client";
 import {
   BitbucketIcon,
   GitHubIcon,

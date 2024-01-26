@@ -1,4 +1,4 @@
-import type { PluginObject } from "@vuepress/core";
+import type { PluginObject } from "vuepress/core";
 import type { CommentPluginOptions } from "vuepress-plugin-comment2";
 import { commentPlugin } from "vuepress-plugin-comment2";
 

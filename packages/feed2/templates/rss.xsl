@@ -188,7 +188,7 @@
             border-radius: 6px;
             background: #ecf4fa; 
           } div[class*="language-"]::before {
-            content: attr(data-ext);
+            content: attr(data-title);
 
             position: absolute;
             top: 0.8em;

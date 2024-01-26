@@ -1,7 +1,7 @@
-import type { App, Page } from "@vuepress/core";
-import type { AnyNode } from "cheerio";
+import type { AnyNode, Element } from "cheerio";
 import { load } from "cheerio";
 import matter from "gray-matter";
+import type { App, Page } from "vuepress/core";
 
 import {
   isAbsoluteUrl,
@@ -76,16 +76,17 @@ const handleNode = (
       SVG_TAGS.includes(node.tagName) ||
       MATHML_TAGS.includes(node.tagName)
     ) {
-      // remove heading id tabindex and anchor inside
+      // remove heading id tabindex
       if (HEADING_TAGS.includes(node.tagName)) {
         delete node.attribs["id"];
         delete node.attribs["tabindex"];
-        node.children = node.children.filter(
-          (child) =>
-            child.type !== "tag" ||
-            child.tagName !== "a" ||
-            child.attribs["class"] !== "header-anchor",
-        );
+        if (
+          node.children.length === 1 &&
+          node.children[0].type === "tag" &&
+          node.children[0].tagName === "a" &&
+          node.children[0].attribs["class"] === "header-anchor"
+        )
+          node.children = (<Element>node.children[0].children[0]).children;
       }
 
       // remove `v-pre` attribute

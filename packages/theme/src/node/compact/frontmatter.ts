@@ -1,4 +1,4 @@
-import { colors } from "@vuepress/utils";
+import { colors } from "vuepress/utils";
 
 import { deprecatedLogger, droppedLogger } from "./utils.js";
 import type { ThemePageFrontmatter } from "../../shared/index.js";

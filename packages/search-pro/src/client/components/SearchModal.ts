@@ -1,4 +1,3 @@
-import { useSiteLocaleData } from "@vuepress/client";
 import { onClickOutside, useEventListener, useScrollLock } from "@vueuse/core";
 import type { VNode } from "vue";
 import {
@@ -13,6 +12,7 @@ import {
   shallowRef,
   watch,
 } from "vue";
+import { useSiteLocaleData } from "vuepress/client";
 import { useIsMobile, useLocaleConfig } from "vuepress-shared/client";
 
 import { SearchLoading } from "./SearchLoading.js";

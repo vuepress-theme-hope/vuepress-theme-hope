@@ -69,7 +69,7 @@ You can add new layouts or override existing layouts via `layouts` option in [cl
 
 ```ts
 // .vuepress/client.ts
-import { defineClientConfig } from "@vuepress/client";
+import { defineClientConfig } from "vuepress/client";
 import Changelog from "./layouts/Changelog.vue";
 import Layout from "./layouts/Layout.vue";
 
@@ -88,7 +88,7 @@ export default defineClientConfig({
 
 ```js
 // .vuepress/client.js
-import { defineClientConfig } from "@vuepress/client";
+import { defineClientConfig } from "vuepress/client";
 import Changelog from "./layouts/Changelog.vue";
 import Layout from "./layouts/Layout.vue";
 

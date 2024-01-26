@@ -1,5 +1,5 @@
-import { isString } from "@vuepress/shared";
 import type { SlideData } from "photoswipe";
+import { isString } from "vuepress-shared/client";
 
 export const getImages = (selector: string | string[]): HTMLImageElement[] =>
   isString(selector)

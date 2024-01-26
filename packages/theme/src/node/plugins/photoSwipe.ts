@@ -1,4 +1,4 @@
-import type { Plugin } from "@vuepress/core";
+import type { Plugin } from "vuepress/core";
 import type { PhotoSwipeOptions } from "vuepress-plugin-photo-swipe";
 import { photoSwipePlugin } from "vuepress-plugin-photo-swipe";
 

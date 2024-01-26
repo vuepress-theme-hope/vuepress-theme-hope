@@ -1,6 +1,6 @@
 import { container } from "@mdit/plugin-container";
-import type { MarkdownEnv } from "@vuepress/markdown";
 import type { PluginSimple } from "markdown-it";
+import type { MarkdownEnv } from "vuepress/markdown";
 
 import { logger } from "../utils.js";
 

@@ -1,5 +1,5 @@
-import type { App, LocaleConfig } from "@vuepress/core";
-import type { LocaleData } from "@vuepress/shared";
+import type { App } from "vuepress/core";
+import type { LocaleConfig, LocaleData } from "vuepress/shared";
 
 import { lang2PathConfig, path2langConfig } from "./config.js";
 import type { HopeLang } from "./types.js";

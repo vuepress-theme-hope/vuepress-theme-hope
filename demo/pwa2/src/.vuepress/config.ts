@@ -1,4 +1,4 @@
-import { defineUserConfig } from "@vuepress/cli";
+import { defineUserConfig } from "vuepress/cli";
 import { defaultTheme } from "@vuepress/theme-default";
 import { pwaPlugin } from "vuepress-plugin-pwa2";
 

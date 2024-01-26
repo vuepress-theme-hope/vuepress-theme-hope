@@ -1,4 +1,4 @@
-import type { PluginObject } from "@vuepress/core";
+import type { PluginObject } from "vuepress/core";
 import { addViteSsrNoExternal, isArray } from "vuepress-shared/node";
 
 import type { RTLOptions } from "./options.js";

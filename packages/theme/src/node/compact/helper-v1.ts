@@ -1,7 +1,7 @@
-import type { UserConfig } from "@vuepress/cli";
-import type { Plugin, PluginConfig } from "@vuepress/core";
-import type { MarkdownOptions } from "@vuepress/markdown";
-import { colors } from "@vuepress/utils";
+import type { UserConfig } from "vuepress/cli";
+import type { Plugin, PluginConfig } from "vuepress/core";
+import type { MarkdownOptions } from "vuepress/markdown";
+import { colors } from "vuepress/utils";
 import {
   isArray,
   isFunction,
@@ -178,9 +178,7 @@ const checkPluginOptions = (plugins: unknown): PluginConfig => {
                 deprecatedOption,
               )} options in plugin options is ${colors.yellow(
                 "deprecated",
-              )} in VuePress2, please use ${colors.magenta(
-                newOption,
-              )} instead.`,
+              )} in VuePress2, please use ${colors.magenta(newOption)} instead.`,
             );
 
           // eslint-disable-next-line

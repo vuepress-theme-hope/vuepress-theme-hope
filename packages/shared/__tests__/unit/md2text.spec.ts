@@ -17,7 +17,7 @@ const a = 1;
 \`\`\`js {1-3}
 const a = 1;
 
-console.log(a)
+console.info(a)
 \`\`\`
 `),
     ).toEqual("");
@@ -36,7 +36,7 @@ Plain text.
 \`\`\`js {1-3}
 const a = 1;
 
-console.log(a)
+console.info(a)
 \`\`\`
 
 \`\`\`

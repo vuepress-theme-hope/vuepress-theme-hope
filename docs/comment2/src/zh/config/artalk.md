@@ -37,7 +37,7 @@ export default defineUserConfig({
 
 ```ts
 // .vuepress/client.ts
-import { defineClientConfig } from "@vuepress/client";
+import { defineClientConfig } from "vuepress/client";
 import { defineArtalkConfig } from "vuepress-plugin-comment2/client";
 
 defineArtalkConfig({

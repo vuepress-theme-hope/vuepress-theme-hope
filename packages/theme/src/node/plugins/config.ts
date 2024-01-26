@@ -1,7 +1,7 @@
-import type { App, PluginConfig } from "@vuepress/core";
 import { externalLinkIconPlugin } from "@vuepress/plugin-external-link-icon";
 import { nprogressPlugin } from "@vuepress/plugin-nprogress";
 import { themeDataPlugin } from "@vuepress/plugin-theme-data";
+import type { App, PluginConfig } from "vuepress/core";
 
 import { getActiveHeaderLinksPlugin } from "./activeHeaderLinks.js";
 import { getAutoCatalogPlugin } from "./autoCatalog.js";

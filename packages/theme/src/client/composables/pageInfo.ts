@@ -1,7 +1,7 @@
-import { usePageData, usePageFrontmatter } from "@vuepress/client";
 import type { GitData } from "@vuepress/plugin-git";
 import type { ComputedRef } from "vue";
 import { computed, inject } from "vue";
+import { usePageData, usePageFrontmatter } from "vuepress/client";
 import type { ReadingTime } from "vuepress-plugin-reading-time2/client";
 import {
   useReadingTimeData,

@@ -1,6 +1,6 @@
-import type { App } from "@vuepress/core";
-import { createPage } from "@vuepress/core";
-import { colors } from "@vuepress/utils";
+import type { App } from "vuepress/core";
+import { createPage } from "vuepress/core";
+import { colors } from "vuepress/utils";
 import { isString, removeLeadingSlash } from "vuepress-shared/node";
 
 import type { BlogOptions } from "./options.js";

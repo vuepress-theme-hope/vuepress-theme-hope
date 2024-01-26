@@ -1,4 +1,4 @@
-import { fs } from "@vuepress/utils";
+import { fs } from "vuepress/utils";
 import {
   entries,
   isArray,

@@ -1,4 +1,3 @@
-import { usePageFrontmatter, usePageLang } from "@vuepress/client";
 import { pageviewCount } from "@waline/client/pageview";
 import type { VNode } from "vue";
 import {
@@ -10,6 +9,7 @@ import {
   onMounted,
   watch,
 } from "vue";
+import { usePageFrontmatter, usePageLang } from "vuepress/client";
 import { LoadingIcon, useLocaleConfig } from "vuepress-shared/client";
 
 import type {

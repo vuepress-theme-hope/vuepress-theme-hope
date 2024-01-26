@@ -1,5 +1,5 @@
 <script setup lang="ts">
-import { usePageFrontmatter } from "@vuepress/client";
+import { usePageFrontmatter } from "vuepress/client";
 import { computed } from "vue";
 import BingHeroBackground from "vuepress-theme-hope/presets/BingHeroBackground.js";
 import HitokotoBlogHero from "vuepress-theme-hope/presets/HitokotoBlogHero.js";

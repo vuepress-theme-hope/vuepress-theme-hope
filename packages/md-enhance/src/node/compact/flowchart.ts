@@ -1,6 +1,6 @@
 import { uml } from "@mdit/plugin-uml";
-import { logger } from "@vuepress/utils";
 import type { PluginSimple } from "markdown-it";
+import { logger } from "vuepress/utils";
 import { utoa } from "vuepress-shared/node";
 
 /** @deprecated */

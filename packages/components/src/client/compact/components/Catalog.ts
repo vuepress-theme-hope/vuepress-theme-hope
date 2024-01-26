@@ -1,8 +1,8 @@
-import { usePageData, useSiteData } from "@vuepress/client";
 import type { PropType, VNode } from "vue";
 import { computed, defineComponent, h } from "vue";
 import type { RouteMeta } from "vue-router";
 import { useRouter } from "vue-router";
+import { usePageData, useSiteData } from "vuepress/client";
 import {
   VPLink,
   endsWith,

@@ -126,7 +126,7 @@ You can import and call `defineMermaidConfig` in [client config file][client-con
 
 ```ts
 // .vuepress/client.ts
-import { defineClientConfig } from "@vuepress/client";
+import { defineClientConfig } from "vuepress/client";
 import { defineMermaidConfig } from "vuepress-plugin-md-enhance/client";
 
 defineMermaidConfig({

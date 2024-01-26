@@ -1,4 +1,4 @@
-import type { HeadConfig } from "@vuepress/core";
+import type { HeadConfig } from "vuepress/core";
 import { startsWith } from "vuepress-shared/node";
 
 import type {

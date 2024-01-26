@@ -1,5 +1,5 @@
-import type { App } from "@vuepress/core";
 import { addAll, discard, vacuum } from "slimsearch";
+import type { App } from "vuepress/core";
 import { entries, keys } from "vuepress-shared/node";
 
 import { generatePageIndex, getSearchIndexStore } from "./generateIndex.js";

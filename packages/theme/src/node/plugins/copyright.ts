@@ -1,4 +1,4 @@
-import type { Page, Plugin } from "@vuepress/core";
+import type { Page, Plugin } from "vuepress/core";
 import type { CopyrightOptions } from "vuepress-plugin-copyright2";
 import { copyrightPlugin } from "vuepress-plugin-copyright2";
 import { getAuthor, isPlainObject } from "vuepress-shared/node";

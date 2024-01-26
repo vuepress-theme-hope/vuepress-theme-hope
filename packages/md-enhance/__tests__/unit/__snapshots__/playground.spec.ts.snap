@@ -111,13 +111,13 @@ const msg = ref('Hello World!')
 `;
 
 exports[`playground > ts preset > Should work 1`] = `
-"<Playground title="TS%20demo%201" link="https%3A%2F%2Fwww.typescriptlang.org%2Fplay%23code%2FMYewdgzgLgBAthA5jAvDARACwKYBtcgwDuIATrgCboDcAULaJLBAA7YCGA1qjABQKIAXDGikAlmEQBKVAD4YjCCFzYAdAUT8kUurVYdOW6XSA">
+"<Playground title="TS%20demo%201" link="https%3A%2F%2Fwww.typescriptlang.org%2Fplay%23code%2FMYewdgzgLgBAthA5jAvDARACwKYBtcgwDuIATrgCboDcAULaJLBAA7YCGA1qjABQKIAXDGikAlmEQBKVAD4YjCCFzYAdBIBmIfkil1arDpx3S6QA">
 </Playground>
 "
 `;
 
 exports[`playground > ts preset > Should work 2`] = `
-"<Playground title="TS%20demo%202" link="https%3A%2F%2Fwww.typescriptlang.org%2Fplay%3F1%26declaration%3Dtrue%23code%2FMYewdgzgLgBAthA5jAvDARACwKYBtcgwDuIATrgCboDcAULaJLBAA7YCGA1qjABQKIAXDGikAlmEQBKVAD4YjCCFzYAdAUT8kUurVYdOW6XSA">
+"<Playground title="TS%20demo%202" link="https%3A%2F%2Fwww.typescriptlang.org%2Fplay%3F1%26declaration%3Dtrue%23code%2FMYewdgzgLgBAthA5jAvDARACwKYBtcgwDuIATrgCboDcAULaJLBAA7YCGA1qjABQKIAXDGikAlmEQBKVAD4YjCCFzYAdBIBmIfkil1arDpx3S6QA">
 </Playground>
 "
 `;

@@ -1,6 +1,6 @@
-import { usePageLang } from "@vuepress/client";
 import type { VNode } from "vue";
 import { computed, defineComponent, h, onMounted, ref } from "vue";
+import { usePageLang } from "vuepress/client";
 import { LoadingIcon } from "vuepress-shared/client";
 
 import type {

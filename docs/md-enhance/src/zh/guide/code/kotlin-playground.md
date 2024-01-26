@@ -121,7 +121,7 @@ export default {
 
 ```ts
 // .vuepress/client.ts
-import { defineClientConfig } from "@vuepress/client";
+import { defineClientConfig } from "vuepress/client";
 import { defineKotlinPlaygroundConfig } from "vuepress-plugin-md-enhance/client";
 
 defineKotlinPlaygroundConfig({

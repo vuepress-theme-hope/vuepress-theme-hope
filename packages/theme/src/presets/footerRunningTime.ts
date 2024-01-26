@@ -1,6 +1,6 @@
-import { usePageData, useRouteLocale } from "@vuepress/client";
 import { useNow } from "@vueuse/core";
 import { computed, onMounted, watch } from "vue";
+import { usePageData, useRouteLocale } from "vuepress/client";
 
 const millisecondPerDay = 1000 * 60 * 60 * 24;
 

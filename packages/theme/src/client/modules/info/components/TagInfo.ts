@@ -1,7 +1,7 @@
-import { usePageData } from "@vuepress/client";
 import type { PropType, VNode } from "vue";
 import { defineComponent, h } from "vue";
 import { useRouter } from "vue-router";
+import { usePageData } from "vuepress/client";
 import { generateIndexFromHash } from "vuepress-shared/client";
 
 import { TagIcon } from "@theme-hope/modules/info/components/icons";

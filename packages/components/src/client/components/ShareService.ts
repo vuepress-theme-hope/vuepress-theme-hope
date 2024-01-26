@@ -1,12 +1,14 @@
 /* eslint-disable vue/require-default-prop */
-import { usePageData, usePageFrontmatter } from "@vuepress/client";
-import { isArray, isLinkHttp, isString } from "@vuepress/shared";
 import type { PropType, VNode } from "vue";
 import { defineComponent, h, onMounted, ref } from "vue";
+import { usePageData, usePageFrontmatter } from "vuepress/client";
 import {
   Popup,
   endsWith,
   isAbsoluteUrl,
+  isArray,
+  isLinkHttp,
+  isString,
   openPopupWindow,
   startsWith,
 } from "vuepress-shared/client";

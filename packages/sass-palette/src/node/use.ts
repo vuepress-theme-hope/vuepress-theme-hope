@@ -1,4 +1,4 @@
-import type { App, PluginObject } from "@vuepress/core";
+import type { App, PluginObject } from "vuepress/core";
 
 import type { SassPaletteOptions } from "./options.js";
 import { sassPalettePlugin } from "./plugin.js";

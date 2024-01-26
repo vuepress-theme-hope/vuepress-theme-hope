@@ -13,9 +13,9 @@ import { stylize } from "@mdit/plugin-stylize";
 import { sub } from "@mdit/plugin-sub";
 import { sup } from "@mdit/plugin-sup";
 import { tasklist } from "@mdit/plugin-tasklist";
-import type { PluginFunction } from "@vuepress/core";
-import type { MarkdownEnv } from "@vuepress/markdown";
-import { colors } from "@vuepress/utils";
+import type { PluginFunction } from "vuepress/core";
+import type { MarkdownEnv } from "vuepress/markdown";
+import { colors } from "vuepress/utils";
 import { useSassPalettePlugin } from "vuepress-plugin-sass-palette";
 import {
   MATHML_TAGS,
@@ -89,7 +89,7 @@ export const mdEnhancePlugin =
         options as MarkdownEnhanceOptions & Record<string, unknown>,
       );
 
-    checkVersion(app, PLUGIN_NAME, "2.0.0-rc.0");
+    checkVersion(app, PLUGIN_NAME, "2.0.0-rc.2");
 
     if (app.env.isDebug) logger.info("Options:", options);
 

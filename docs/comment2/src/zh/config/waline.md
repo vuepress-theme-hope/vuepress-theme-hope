@@ -308,7 +308,7 @@ export default defineUserConfig({
 
 ```ts
 // .vuepress/client.ts
-import { defineClientConfig } from "@vuepress/client";
+import { defineClientConfig } from "vuepress/client";
 import { defineWalineConfig } from "vuepress-plugin-comment2/client";
 
 defineWalineConfig({

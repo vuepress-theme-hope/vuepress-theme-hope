@@ -1,6 +1,6 @@
-import { usePageData, useRouteLocale } from "@vuepress/client";
 import type { VNode } from "vue";
 import { computed, defineComponent, h } from "vue";
+import { usePageData, useRouteLocale } from "vuepress/client";
 import { VPLink } from "vuepress-shared/client";
 
 import { useThemeLocaleData } from "@theme-hope/composables/index";

@@ -1,4 +1,4 @@
-import type { Plugin } from "@vuepress/core";
+import type { Plugin } from "vuepress/core";
 import type { MarkdownEnhanceOptions } from "vuepress-plugin-md-enhance";
 import { mdEnhancePlugin } from "vuepress-plugin-md-enhance";
 

@@ -262,7 +262,7 @@ You can customize search options by importing and calling `defineSearchConfig` i
 
 ```ts
 // .vuepress/client.ts
-import { defineClientConfig } from "@vuepress/client";
+import { defineClientConfig } from "vuepress/client";
 import { defineSearchConfig } from "vuepress-plugin-search-pro/client";
 
 defineSearchConfig({
@@ -285,7 +285,7 @@ Since searching is done in a Web Worker, setting options to function-typed value
 If you want to use the search API, you need to import the `createSearchWorker` function from `vuepress-plugin-search-pro/client`:
 
 ```ts
-import { defineClientConfig } from "@vuepress/client";
+import { defineClientConfig } from "vuepress/client";
 import { createSearchWorker } from "vuepress-plugin-search-pro/client";
 
 const { search, terminate } = createSearchWorker();

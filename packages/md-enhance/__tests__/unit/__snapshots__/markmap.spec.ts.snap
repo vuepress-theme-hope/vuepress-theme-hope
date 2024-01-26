@@ -18,7 +18,7 @@ colorFreezeLevel: 2</h2>
 text</li>
 <li><code>inline code</code></li>
 <li>
-<pre><code class="language-js">console.log('code block');
+<pre><code class="language-js">const a = 1;
 </code></pre>
 </li>
 <li>Katex
@@ -53,7 +53,7 @@ markmap:
 - \`inline code\`
 -
     \`\`\`js
-    console.log('code block');
+    const a = 1;
     \`\`\`
 - Katex
   - $x = {-b \\pm \\sqrt{b^2-4ac} \\over 2a}$
@@ -63,4 +63,4 @@ markmap:
 "
 `;
 
-exports[`markmap plugin > Should render \`\`\`markmap 1`] = `"<MarkMap id="markmap-0" content="eJxdj8FuwjAMhu95CktDAiqlSGgntu7IJg3tusPYlLSN2kAad4kLbIg++0xFLzskcfx//m1LKUWjw77R7UoAFOgwrIMxv2ZjDsatYCmuiLiDG8XhHWys30chJDzWRG1cLRY3Nd3FFEO1eGLt49nSS5d/zkamslR3eVpgM+LjOx9c10ZTF8xg7IYOEpIkUkBfJQn0fWlc30NiSTtbJJBlta1qx4eyjNmmc2S50PAiZE7EKWX9NcF7lUYJyQKAUmoXh6hAH9GZ1GE1m14RyB0W++n8YQTZ4lWzF/8lTE6QwVnmsG0b2MbvQOf8aynvdXGBLR5MgKW+TLjkDY9w5KbawzHoFlj6+X85XmqYEnIdTQnoQTX69G5LqhVgSxa9EH9DMIPM"></MarkMap>"`;
+exports[`markmap plugin > Should render \`\`\`markmap 1`] = `"<MarkMap id="markmap-0" content="eJxdjz9PwzAQxXd/iie1A0RyKyqmQhgLEhUrAwXFSazErWMH+9IWquazc42ahcH2+X7v3R8ppWhU2DWqXQqg8NaHVdD6V6/1XtslFuIiERNcVRxOsDZuF4WQeKyJ2ricz690to0zH6r5E7OPZ0MvXf55M2oqQ3WXzwrfjPLxvR2qrrSiLuihsB06SCRJpOBdlSTo+1LbvkdiSFlTJEjT2lS15UNpytqms2TYqHkR0kfiVGbcJcF7lToTkgGQZdk2DlHhXSQopLh7GBGbXhW7+S8xPTI7yRybtsEmfgc65V8Lea+KMzZ+rwMW6jxly5s/4MBtlMMhqBaMfv5fltcY5kKuoi7hHbJGHd9NSXUG35LxTog/qFx+Wg=="></MarkMap>"`;

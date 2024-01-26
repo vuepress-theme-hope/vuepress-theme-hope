@@ -1,10 +1,10 @@
+import type { SlotsType, VNode } from "vue";
+import { computed, defineComponent, h } from "vue";
 import {
   usePageFrontmatter,
   useSiteLocaleData,
   withBase,
-} from "@vuepress/client";
-import type { SlotsType, VNode } from "vue";
-import { computed, defineComponent, h } from "vue";
+} from "vuepress/client";
 import { isString } from "vuepress-shared/client";
 
 import AutoLink from "@theme-hope/components/AutoLink";

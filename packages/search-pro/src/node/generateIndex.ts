@@ -1,7 +1,7 @@
-import type { App, Page } from "@vuepress/core";
 import type { AnyNode, Element } from "cheerio";
 import { load } from "cheerio";
 import { addAllAsync, createIndex } from "slimsearch";
+import type { App, Page } from "vuepress/core";
 import { entries, fromEntries, isArray, keys } from "vuepress-shared/node";
 
 import type {
@@ -49,24 +49,22 @@ const isExcerptMarker = (node: AnyNode): boolean =>
 
 const $ = load("");
 
-const renderHeader = (node: Element): string =>
-  node.children
-    .map((node) => {
-      if (node.type === "tag") {
-        // drop anchor
-        if (node.name === "a" && node.attribs["class"] === "header-anchor")
-          return "";
+const renderHeader = (node: Element): string => {
+  if (
+    node.children.length === 1 &&
+    node.children[0].type === "tag" &&
+    node.children[0].tagName === "a" &&
+    node.children[0].attribs["class"] === "header-anchor"
+  )
+    node.children = (<Element>node.children[0].children[0]).children;
 
-        return renderHeader(node);
-      }
-
-      if (node.type === "text") return node.data;
-
-      return "";
-    })
+  return node.children
+    .map((node) => (node.type === "text" ? node.data : null))
+    .filter(Boolean)
     .join(" ")
     .replace(/\s+/gu, " ")
     .trim();
+};
 
 export const generatePageIndex = (
   page: Page<{ excerpt?: string }>,

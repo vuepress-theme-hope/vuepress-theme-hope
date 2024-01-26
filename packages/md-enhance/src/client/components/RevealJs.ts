@@ -1,4 +1,3 @@
-import { usePageFrontmatter } from "@vuepress/client";
 import type Reveal from "reveal.js/dist/reveal.esm.js";
 import type { PropType, VNode } from "vue";
 import {
@@ -9,6 +8,7 @@ import {
   ref,
   shallowRef,
 } from "vue";
+import { usePageFrontmatter } from "vuepress/client";
 import { LoadingIcon, atou } from "vuepress-shared/client";
 
 import { useRevealJs } from "@temp/md-enhance/revealjs-plugins.js";

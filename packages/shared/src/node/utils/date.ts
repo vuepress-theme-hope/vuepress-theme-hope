@@ -1,5 +1,5 @@
-import type { Page } from "@vuepress/core";
 import type { GitPluginPageData } from "@vuepress/plugin-git";
+import type { Page } from "vuepress/core";
 
 import { dayjs, getLocale } from "./dayjs/index.js";
 import { isString } from "../../shared/index.js";

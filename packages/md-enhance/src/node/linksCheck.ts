@@ -1,5 +1,5 @@
-import type { App, Page } from "@vuepress/core";
-import { logger } from "@vuepress/utils";
+import type { App, Page } from "vuepress/core";
+import { logger } from "vuepress/utils";
 import {
   isAbsoluteUrl,
   isArray,

@@ -1,17 +1,15 @@
-import { usePageData, useSiteData } from "@vuepress/client";
-import {
-  ensureEndingSlash,
-  ensureLeadingSlash,
-  isString,
-} from "@vuepress/shared";
 import type { VNode } from "vue";
 import { computed, defineComponent, h, shallowRef } from "vue";
 import { useRouter } from "vue-router";
+import { usePageData, useSiteData } from "vuepress/client";
 import {
   VPLink,
   endsWith,
+  ensureEndingSlash,
+  ensureLeadingSlash,
   isNumber,
   isPlainObject,
+  isString,
   keys,
   startsWith,
   useLocaleConfig,

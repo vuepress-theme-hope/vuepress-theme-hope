@@ -1,5 +1,5 @@
-import { getDirname, path } from "@vuepress/utils";
 import { describe, expect, it } from "vitest";
+import { getDirname, path } from "vuepress/utils";
 
 import {
   detectPackageManager,

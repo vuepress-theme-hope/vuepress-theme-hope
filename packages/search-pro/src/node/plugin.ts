@@ -1,5 +1,5 @@
-import type { PluginFunction } from "@vuepress/core";
 import { watch } from "chokidar";
+import type { PluginFunction } from "vuepress/core";
 import { useSassPalettePlugin } from "vuepress-plugin-sass-palette";
 import {
   addViteOptimizeDepsInclude,
@@ -30,7 +30,7 @@ export const searchProPlugin =
 
     useSassPalettePlugin(app, { id: "hope" });
 
-    checkVersion(app, PLUGIN_NAME, "2.0.0-rc.0");
+    checkVersion(app, PLUGIN_NAME, "2.0.0-rc.2");
 
     if (app.env.isDebug) logger.info("Options:", options);
 

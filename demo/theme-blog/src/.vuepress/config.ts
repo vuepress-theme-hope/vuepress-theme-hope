@@ -1,5 +1,5 @@
-import { defineUserConfig } from "@vuepress/cli";
-import { getDirname, path } from "@vuepress/utils";
+import { defineUserConfig } from "vuepress/cli";
+import { getDirname, path } from "vuepress/utils";
 
 import theme from "./theme.js";
 

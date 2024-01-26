@@ -1,4 +1,4 @@
-import { defineClientConfig } from "@vuepress/client";
+import { defineClientConfig } from "vuepress/client";
 import { defineEchartsConfig } from "vuepress-plugin-md-enhance/client";
 
 import ProjectLink from "docs-shared/components/ProjectLink.js";
