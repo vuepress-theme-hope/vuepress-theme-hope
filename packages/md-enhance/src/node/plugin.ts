@@ -26,7 +26,6 @@ import {
   addViteSsrExternal,
   addViteSsrNoExternal,
   chainWebpack,
-  checkVersion,
   getLocales,
   isPlainObject,
 } from "vuepress-shared/node";
@@ -88,8 +87,6 @@ export const mdEnhancePlugin =
       convertOptions(
         options as MarkdownEnhanceOptions & Record<string, unknown>,
       );
-
-    checkVersion(app, PLUGIN_NAME, "2.0.0-rc.2");
 
     if (app.env.isDebug) logger.info("Options:", options);
 

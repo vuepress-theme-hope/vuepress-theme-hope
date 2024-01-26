@@ -4,7 +4,6 @@ import { useSassPalettePlugin } from "vuepress-plugin-sass-palette";
 import {
   addViteOptimizeDepsInclude,
   addViteSsrNoExternal,
-  checkVersion,
   fromEntries,
   getLocales,
 } from "vuepress-shared/node";
@@ -29,8 +28,6 @@ export const searchProPlugin =
       convertOptions(options as SearchProOptions & Record<string, unknown>);
 
     useSassPalettePlugin(app, { id: "hope" });
-
-    checkVersion(app, PLUGIN_NAME, "2.0.0-rc.2");
 
     if (app.env.isDebug) logger.info("Options:", options);
 

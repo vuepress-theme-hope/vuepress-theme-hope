@@ -1,10 +1,6 @@
 import type { PluginFunction } from "vuepress/core";
 import { useSassPalettePlugin } from "vuepress-plugin-sass-palette";
-import {
-  addViteSsrNoExternal,
-  checkVersion,
-  getLocales,
-} from "vuepress-shared/node";
+import { addViteSsrNoExternal, getLocales } from "vuepress-shared/node";
 
 import { generateCatalog } from "./autoCatalog.js";
 import { convertOptions } from "./compact.js";
@@ -17,8 +13,6 @@ export const autoCatalogPlugin =
   (app) => {
     if (legacy)
       convertOptions(options as AutoCatalogOptions & Record<string, unknown>);
-
-    checkVersion(app, PLUGIN_NAME, "2.0.0-rc.2");
 
     if (app.env.isDebug) logger.info("Options:", options);
 

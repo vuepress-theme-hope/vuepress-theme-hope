@@ -3,7 +3,6 @@ import { useSassPalettePlugin } from "vuepress-plugin-sass-palette";
 import {
   addViteOptimizeDepsExclude,
   addViteSsrNoExternal,
-  checkVersion,
   entries,
   fromEntries,
   getLocales,
@@ -18,7 +17,6 @@ export const photoSwipePlugin =
   (options: PhotoSwipeOptions = {}, legacy = true): PluginFunction =>
   (app) => {
     if (legacy) convertOptions(options as Record<string, unknown>);
-    checkVersion(app, PLUGIN_NAME, "2.0.0-rc.2");
 
     if (app.env.isDebug) logger.info("Options:", options);
 

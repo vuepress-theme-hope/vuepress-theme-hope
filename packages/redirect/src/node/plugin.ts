@@ -1,10 +1,6 @@
 import type { PluginFunction } from "vuepress/core";
 import { useSassPalettePlugin } from "vuepress-plugin-sass-palette";
-import {
-  addViteSsrNoExternal,
-  checkVersion,
-  getLocales,
-} from "vuepress-shared/node";
+import { addViteSsrNoExternal, getLocales } from "vuepress-shared/node";
 
 import { convertOptions } from "./compact.js";
 import { CLIENT_FOLDER, PLUGIN_NAME } from "./constant.js";
@@ -22,7 +18,6 @@ export const redirectPlugin =
     // TODO: Remove this in v2 stable
     if (legacy)
       convertOptions(options as RedirectOptions & Record<string, unknown>);
-    checkVersion(app, PLUGIN_NAME, "2.0.0-rc.2");
 
     if (app.env.isDebug) logger.info("Options:", options);
 

@@ -2,7 +2,6 @@ import type { PluginFunction } from "vuepress/core";
 import { useSassPalettePlugin } from "vuepress-plugin-sass-palette";
 import {
   addViteSsrNoExternal,
-  checkVersion,
   getLocales,
   isArray,
   isString,
@@ -18,8 +17,6 @@ export const copyCodePlugin =
   (app) => {
     if (legacy)
       convertOptions(options as CopyCodeOptions & Record<string, unknown>);
-
-    checkVersion(app, PLUGIN_NAME, "2.0.0-rc.2");
 
     if (app.env.isDebug) logger.info("Options:", options);
 

@@ -1,10 +1,6 @@
 import type { Page, PluginFunction } from "vuepress/core";
 import { colors } from "vuepress/utils";
-import {
-  addViteSsrNoExternal,
-  checkVersion,
-  getLocales,
-} from "vuepress-shared/node";
+import { addViteSsrNoExternal, getLocales } from "vuepress-shared/node";
 
 import { convertOptions } from "./compact.js";
 import { copyrightLocales } from "./locales.js";
@@ -21,8 +17,6 @@ export const copyrightPlugin =
     // TODO: Remove this in v2 stable
     if (legacy)
       convertOptions(options as CopyrightOptions & Record<string, unknown>);
-
-    checkVersion(app, PLUGIN_NAME, "2.0.0-rc.2");
 
     if (app.env.isDebug) logger.info("Options:", options);
 

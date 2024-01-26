@@ -7,11 +7,7 @@ import {
   preparePagesData,
   preparePagesRoutes,
 } from "vuepress/core";
-import {
-  addViteSsrNoExternal,
-  checkVersion,
-  getPageExcerpt,
-} from "vuepress-shared/node";
+import { addViteSsrNoExternal, getPageExcerpt } from "vuepress-shared/node";
 
 import { prepareCategory } from "./category.js";
 import { convertOptions } from "./compact.js";
@@ -25,8 +21,6 @@ export const blogPlugin =
     // TODO: Remove this in v2 stable
     if (legacy)
       convertOptions(options as BlogOptions & Record<string, unknown>);
-
-    checkVersion(app, PLUGIN_NAME, "2.0.0-rc.2");
 
     const {
       getInfo = (): Record<string, never> => ({}),
