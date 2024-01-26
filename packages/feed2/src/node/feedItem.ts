@@ -24,11 +24,7 @@ import type {
   FeedGetter,
   FeedPluginFrontmatter,
 } from "./typings/index.js";
-import {
-  getImageMineType,
-  getPageRenderContent,
-  getUrl,
-} from "./utils/index.js";
+import { getImageMineType, getUrl } from "./utils/index.js";
 
 export class FeedItem {
   private pageOptions: FeedFrontmatterOption;
@@ -200,11 +196,11 @@ export class FeedItem {
 
     if (this.pageOptions.content) return this.pageOptions.content;
 
-    return getPageRenderContent(
-      this.app,
-      this.page,
-      this.options.isPreservedElement,
-    );
+    return getPageExcerpt(this.app, this.page, {
+      isCustomElement: this.options.isPreservedElement,
+      excerptSeparator: "",
+      excerptLength: Infinity,
+    });
   }
 
   /**

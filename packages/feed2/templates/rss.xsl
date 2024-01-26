@@ -9,65 +9,106 @@
       <head>
         <title>RSS Feed</title>
         <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-        <style type="text/css">
+        <style>
+          :root {
+            --bg-color-back: #f8f8f8;
+            --bg-color-float: #fff;
+            --text-color: #2c3e50;
+            --border-color: #eaecef;
+            --border-color-dark: #cfd4db;
+            --code-bg-color: #ecf4fa;
+            --code-color: #383a42;
+            --brand-color: #3eaf7c;
+            --font-family-mono: consolas, monaco, "Andale Mono", "Ubuntu Mono", monospace;
+
+            color-scheme: light dark;
+          }
+
+          @media (prefers-color-scheme: dark) {
+            :root {
+              --bg-color-back: #0d1117;
+              --bg-color-float: #161b22;
+              --text-color: #ccc;
+              --border-color: #30363d;
+              --border-color-dark: #394048;
+              --code-bg-color: #282c34;
+              --code-color: #abb2bf;
+            }
+          }
+
           html,
           body {
             margin: 0;
             padding: 0;
-            background: #f8f8f8;
-            font-size: 14px;
+            background: var(--bg-color-back);
+          }
+
+          html {
+            font-size: 16px;
           }
 
           body {
             min-height: 100vh;
-
-            color: #2c3e50;
-
-            font-size: 16px;
-
-            font-display: optional;
-
-            -webkit-font-smoothing: antialiased;
-            -moz-osx-font-smoothing: grayscale;
-            -webkit-tap-highlight-color: transparent;
+            color: var(--text-color);
           }
 
           a {
-            color: #339af0;
+            color: var(--brand-color);
             font-weight: 500;
             text-decoration: none;
             overflow-wrap: break-word;
           }
 
           kbd {
-            padding: 0 0.15em;
-            border: solid 0.15rem #ddd;
-            border-bottom: solid 0.25rem #ddd;
-            border-radius: 0.15rem;
+            display: inline-block;
 
-            background: #eee;
+            min-width: 1em;
+            margin-inline: 0.125rem;
+            padding: 0.25em;
+            border: 1px solid var(--border-color-dark);
+            border-radius: 0.25em;
+
+            background: var(--bg-color-back);
+            box-shadow: 1px 1px 4px 0 rgb(0 0 0 / 15%);
+
+            font-family: var(--font-family-mono);
+            line-height: 1;
+            letter-spacing: -0.1em;
+            text-align: center;
           }
 
           pre {
             overflow: auto;
+
             padding: 1rem;
             border-radius: 6px;
-            background: #ecf4fa;
+
+            background: var(--code-bg-color);
+            color: var(--code-color);
+
+            direction: ltr;
           }
 
           code {
             margin: 0;
-            padding: 0.25rem 0.5rem;
-            border-radius: 3px;
+            padding: 0.2rem 0.4rem;
+            border-radius: 5px;
 
             background: rgba(127 127 127 / 12%);
 
             font-size: 0.85em;
+            font-family: var(--font-family-mono);
             overflow-wrap: break-word;
           }
 
+          @media (prefers-color-scheme: dark) {
+            code {
+              background: #333;
+            }
+          }
+
           pre code {
-            background: transparent !important;
+            background: transparent;
           }
 
           table code {
@@ -75,7 +116,7 @@
           }
 
           p a code {
-            color: #3eaf7c;
+            color: var(--brand-color);
             font-weight: 400;
           }
 
@@ -96,11 +137,15 @@
 
           h1 {
             font-size: 2rem;
+
+            @media (max-width: 419px) {
+              font-size: 1.9rem;
+            }
           }
 
           h2 {
             padding-bottom: 0.3rem;
-            border-bottom: 1px solid #eaecef;
+            border-bottom: 1px solid var(--border-color);
             font-size: 1.65rem;
           }
 
@@ -123,16 +168,8 @@
           p,
           ul,
           ol {
-            line-height: 1.7;
+            line-height: 1.5;
             overflow-wrap: break-word;
-          }
-
-          @media print {
-            p,
-            ul,
-            ol {
-              line-height: 1.5;
-            }
           }
 
           ul,
@@ -161,7 +198,7 @@
 
           hr {
             border: 0;
-            border-top: 1px solid #eaecef;
+            border-top: 1px solid var(--border-color);
           }
 
           table {
@@ -171,10 +208,6 @@
             border-collapse: collapse;
           }
 
-          tr {
-            border-top: 1px solid #dfe2e5;
-          }
-
           tr:nth-child(2n) {
             background: #f6f8fa;
           }
@@ -182,12 +215,12 @@
           th,
           td {
             padding: 0.6em 1em;
-            border: 1px solid #dfe2e5;
+            border: 1px solid var(--border-color-dark);
+            border: 1px solid var(--border-color-dark);
           } div[class*="language-"] {
             position: relative;
             border-radius: 6px;
-            background: #ecf4fa; 
-          } div[class*="language-"]::before {
+          } div[class*='language-'']::before {
             content: attr(data-title);
 
             position: absolute;
@@ -195,49 +228,51 @@
             right: 1em;
             z-index: 3;
 
-            color: rgba(56 58 66 / 67%);
-
             font-size: 0.75rem;
           }
-
-          .rss-info {
+        </style>
+        <style type="text/css">
+          .feed-info {
             margin-top: 1rem;
             padding: 0 2rem;
             text-align: center;
           }
 
-          .rss-info > h1 {
+          .feed-title {
             font-weight: bold;
           }
 
-          .rss-info > h2 {
+          .feed-subtitle {
             border: none;
             font-size: 1.5rem;
           }
 
-          .rss-info table {
+          .feed-detail {
             display: inline-block;
 
             max-width: 960px;
             margin: 0.5rem auto;
+            border: 1px solid #fff;
             border-collapse: collapse;
+            border-radius: 8px;
 
             text-align: start;
           }
 
-          .rss-info tr {
+          .feed-detail tr {
+            border: none;
             background: transparent;
+          }
+
+          .feed-detail th,
+          .feed-detail td {
+            padding: 0.25rem 0.5rem;
             border: none;
           }
 
-          .rss-info th,
-          .rss-info td {
-            padding: 0.5rem 0.25rem;
-            border: none;
-          }
-
-          .rss-info td:first-child {
+          .feed-detail td:first-child {
             font-weight: bold;
+            text-align: right;
           }
 
           .rss-logo {
@@ -249,14 +284,20 @@
             padding: 0.5rem 1rem;
             border-radius: 0.5rem;
 
-            background: #339af0;
-            color: #fff;
+            background: var(--brand-color);
+            color: var(--bg-color-float);
             font-weight: bold;
           }
 
           .rss-item-wrapper {
-            padding: 16px;
+            margin: 0 1rem;
             text-align: center;
+          }
+
+          @media (max-width: 419px) {
+            .rss-item-wrapper {
+              margin: 0;
+            }
           }
 
           .rss-item {
@@ -266,32 +307,54 @@
             margin: 16px auto;
             border-radius: 8px;
 
-            background: #fff;
+            background: var(--bg-color-float);
             box-shadow: 2px 4px 8px rgba(0 0 0 / 15%);
 
             text-align: start;
           }
 
-          .rss-header {
-            padding: 8px 12px;
-            background-color: #339af0;
-            color: #fff;
+          @media (max-width: 419px) {
+            .rss-item {
+              border-radius: 0;
+            }
           }
 
-          .rss-item-title {
-            border-bottom: 1px solid #fff;
-            font-weight: bold;
+          @media (prefers-color-scheme: dark) {
+            .rss-item {
+              box-shadow: 2px 4px 8px rgba(0 0 0 / 30%);
+            }
+          }
+
+          .rss-header {
+            padding: 8px 16px;
+            background-color: var(--brand-color);
+            color: var(--bg-color-float);
+          }
+
+          .rss-title {
+            border-bottom: 1px solid var(--bg-color-float);
+            font-weight: 600;
             font-size: 1.5rem;
             line-height: 1.75;
           }
 
-          .rss-item-info > span {
-            display: inline-block;
-            margin: 4px 0;
+          .rss-info {
+            margin-top: 4px;
+            font-size: 14px;
           }
 
-          .rss-item-info > span + span {
-            margin-inline-start: 8px;
+          .rss-info > span {
+            display: inline-block;
+            margin: 4px 8px 4px 0;
+          }
+
+          .rss-info > span:last-child {
+            margin-inline-end: 0;
+          }
+
+          .rss-info label {
+            display: inline-block;
+            margin-inline-end: 0.5em;
           }
 
           .rss-body {
@@ -299,7 +362,18 @@
           }
 
           .rss-footer {
-            padding: 12px 16px;
+            padding: 8px 16px;
+            font-size: 14px;
+          }
+
+          .rss-link {
+            display: inline-block;
+
+            padding: 6px 12px;
+            border-radius: 8px;
+
+            background: var(--brand-color);
+            color: var(--bg-color-float);
           }
 
           footer {
@@ -314,14 +388,14 @@
         </style>
       </head>
       <body>
-        <div class="rss-info">
+        <div class="feed-info">
           <xsl:if test="/rss/channel/image/url">
-            <img class="rss-logo" src="{/rss/channel/image/url}" alt="rss logo" />
+            <img class="feed-logo" src="{/rss/channel/image/url}" alt="rss logo" />
           </xsl:if>
-          <h1>
+          <h1 class="feed-title">
             <xsl:value-of select="/rss/channel/title"></xsl:value-of>
           </h1>
-          <h2>
+          <h2 class="feed-subtitle">
             <xsl:value-of select="/rss/channel/description" />
           </h2>
           <div>
@@ -329,7 +403,7 @@
               Visit Website
             </a>
           </div>
-          <table>
+          <table class="feed-detail">
             <tbody>
               <tr>
                 <td>Language:</td>
@@ -378,30 +452,37 @@
 
         <div class="rss-item-wrapper">
           <xsl:for-each select="/rss/channel/item">
+            <xsl:variable name="feed-index" select="position()" />
             <div class="rss-item">
               <div class="rss-header">
-                <div class="rss-item-title">
+                <div class="rss-title">
                   <xsl:value-of select="title" />
                 </div>
-                <div class="rss-item-info">
+                <div class="rss-info">
                   <xsl:if test="author">
                     <span>
-                      <b>Author: </b>
-                      <xsl:value-of select="author" />
+                      <label for="author-{$feed-index}">Author:</label>
+                      <span id="author-{$feed-index}">
+                        <xsl:value-of select="author" />
+                      </span>
                     </span>
                   </xsl:if>
                   <xsl:if test="category">
                     <span>
-                      <b>Catetory: </b>
-                      <xsl:for-each select="category">
-                        <xsl:if test="position() != 1">, </xsl:if>
-                        <xsl:value-of select="current()" />
-                      </xsl:for-each>
+                      <label for="category-{$feed-index}">Catetory:</label>
+                      <span id="category-{$feed-index}">
+                        <xsl:for-each select="category">
+                          <xsl:if test="position() != 1">, </xsl:if>
+                          <xsl:value-of select="current()" />
+                        </xsl:for-each>
+                      </span>
                     </span>
                   </xsl:if>
                   <span>
-                    <b>Date: </b>
-                    <xsl:value-of select="substring-before(pubDate,' GMT')" />
+                    <label for="date-{$feed-index}">Date:</label>
+                    <span id="date-{$feed-index}">
+                      <xsl:value-of select="substring-before(pubDate,' GMT')" />
+                    </span>
                   </span>
                 </div>
               </div>
@@ -409,7 +490,9 @@
                 <xsl:value-of select="*[name()='content:encoded']" disable-output-escaping="yes" />
               </div>
               <div class="rss-footer">
-                <a href="{link}" target="_blank">See Details</a>
+                <a class="rss-link" href="{link}" target="_blank">
+                  Visit
+                </a>
               </div>
             </div>
           </xsl:for-each>
