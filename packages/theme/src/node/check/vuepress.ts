@@ -10,14 +10,30 @@ interface PackageJSON extends Record<string, unknown> {
   devDependencies?: Record<string, string>;
 }
 
+const VUEPRESS_BUNDLER = ["vite", "webpack"].map(
+  (item) => `@vuepress/bundler-${item}`,
+);
+const VUEPRESS_CORE_PACKAGES = [
+  "core",
+  "client",
+  "cli",
+  "markdown",
+  "shared",
+  "utils",
+].map((item) => `@vuepress/${item}`);
+const DEPRECATED_PACKAGES = ["vite", "-webpack"].map(
+  (item) => `vuepress-${item}`,
+);
+
 export const checkVuePressVersion = (app: App): boolean => {
   const sourceFolderPath = app.dir.source();
-  const mainPackages: string[] = [];
-  const subPackages: string[] = [];
+  const bundlerNames: string[] = [];
+  const corePackageNames: string[] = [];
 
   const require = createRequire(`${sourceFolderPath}/`);
 
   let dir = sourceFolderPath;
+  let foundVuePress = false;
 
   do {
     if (fs.existsSync(path.resolve(dir, "package.json"))) {
@@ -25,68 +41,80 @@ export const checkVuePressVersion = (app: App): boolean => {
         JSON.parse(fs.readFileSync(path.resolve(dir, "package.json"), "utf-8"))
       );
 
-      const collectName = (name: string): void => {
-        if (
-          name === "vuepress" ||
-          name === "vuepress-vite" ||
-          name === "vuepress-webpack"
-        )
-          mainPackages.push(name);
-        else if (name.startsWith("@vuepress/")) subPackages.push(name);
+      const checkPackage = (pkgName: string): void => {
+        if (pkgName === "vuepress") foundVuePress = true;
+        else if (DEPRECATED_PACKAGES.includes(pkgName))
+          console.error(
+            `${pkgName} is deprecated and you should remove it from deps.`,
+          );
+        else if (VUEPRESS_CORE_PACKAGES.includes(pkgName))
+          corePackageNames.push(pkgName);
+        else if (VUEPRESS_BUNDLER.includes(pkgName)) bundlerNames.push(pkgName);
       };
 
-      keys(content.dependencies || {}).forEach((name) => collectName(name));
-      keys(content.devDependencies || {}).forEach((name) => collectName(name));
+      keys({ ...content.dependencies, ...content.devDependencies }).forEach(
+        (name) => checkPackage(name),
+      );
     }
 
-    if (mainPackages.length || dir === path.dirname(dir)) break;
+    if (foundVuePress || dir === path.dirname(dir)) break;
   } while ((dir = path.dirname(dir)));
 
-  const mainPackagesVersions: string[] = [];
-
-  mainPackages.forEach((pkg) => {
-    const { version } = <PackageJSON>require(`${pkg}/package.json`);
-
-    mainPackagesVersions.push(version);
-  });
-
-  const filteredMainPackagesVersions = new Set(mainPackagesVersions);
-
-  if (filteredMainPackagesVersions.size > 1) {
-    console.error(
-      `Multiple versions of VuePress are detected in the current project: ${[
-        ...filteredMainPackagesVersions,
-      ]
-        .map((version) => colors.yellow(version))
-        .join(", ")}`,
-    );
-
-    return false;
-  }
-
-  if (filteredMainPackagesVersions.size === 0) {
+  if (!foundVuePress) {
     console.error("No VuePress version is detected in the current project");
 
     return false;
   }
 
-  const mainVersion = mainPackagesVersions[0];
+  if (!bundlerNames.length) {
+    console.error(
+      `No VuePress bundler is detected in the current project, you should install one of ${VUEPRESS_BUNDLER.map(
+        colors.cyan,
+      ).join(", ")}`,
+    );
 
-  return subPackages.every((pkg) => {
-    const { version } = <PackageJSON>require(`${pkg}/package.json`);
+    return false;
+  }
 
-    if (version !== mainVersion) {
+  let isVersionMatch = true;
+
+  const { version: vuePressVersion } = <PackageJSON>(
+    require("vuepress/package.json")
+  );
+
+  bundlerNames.forEach((pkgName) => {
+    const { version } = <PackageJSON>require(`${pkgName}/package.json`);
+
+    if (version !== vuePressVersion) {
       console.error(
-        `VuePress version mismatch: ${colors.cyan(
-          pkg,
+        `Package version mismatch: ${colors.cyan(
+          pkgName,
         )} is using ${colors.magenta(
           version,
-        )} while the main VuePress is using ${colors.magenta(mainVersion)}`,
+        )} while ${colors.cyan("vuepress")} is using ${colors.magenta(vuePressVersion)}`,
       );
 
-      return false;
+      isVersionMatch = false;
     }
-
-    return true;
   });
+
+  corePackageNames.forEach((pkgName) => {
+    const { version } = <PackageJSON>require(`${pkgName}/package.json`);
+
+    if (version !== vuePressVersion) {
+      console.error(
+        `Package version mismatch: ${colors.cyan(pkgName)} is using ${colors.magenta(
+          version,
+        )} while ${colors.cyan("vuepress")} is using ${colors.magenta(vuePressVersion)}`,
+      );
+
+      isVersionMatch = false;
+    } else {
+      console.warn(
+        `${colors.cyan(pkgName)} is no longer needed, you should remove it from deps and change all ${colors.cyan(pkgName)} imports to ${colors.cyan(pkgName.substring(1))}`,
+      );
+    }
+  });
+
+  return isVersionMatch;
 };
