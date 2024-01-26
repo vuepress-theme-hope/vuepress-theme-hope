@@ -153,7 +153,7 @@ const msg = ref('Hello World!')
     const options = getOptions(result);
     const customSetup = getCustomSetup(result);
 
-    expect(template).toEqual("");
+    expect(template).toEqual(null);
 
     expect(file).toEqual({
       "App.vue": `\
@@ -298,7 +298,7 @@ const msg = ref('Hello World!')
     const options = getOptions(result);
     const customSetup = getCustomSetup(result);
 
-    expect(template).toEqual("");
+    expect(template).toEqual(null);
 
     expect(file).toEqual({
       "/src/App.vue": {
@@ -394,7 +394,7 @@ const { charging, level } = useBattery();
     );
 
     expect(result).toMatchSnapshot();
-    expect(result).includes('rtl="true"');
+    expect(result).includes("rtl");
     expect(result).includes('theme="dark"');
 
     const template = getTemplate(result);
@@ -402,7 +402,7 @@ const { charging, level } = useBattery();
     const options = getOptions(result);
     const customSetup = getCustomSetup(result);
 
-    expect(template).toEqual("");
+    expect(template).toEqual(null);
 
     expect(file).toEqual({
       "/src/App.vue": {

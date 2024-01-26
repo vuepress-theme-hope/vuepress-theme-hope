@@ -6,7 +6,7 @@ import type {
   SandpackPredefinedTemplate,
   SandpackSetup,
 } from "sandpack-vue3";
-import { entries, utoa } from "vuepress-shared/node";
+import { entries, keys, utoa } from "vuepress-shared/node";
 
 import { encodeFiles, getAttrs } from "./utils.js";
 import type { SandpackData } from "../../typings/index.js";
@@ -305,9 +305,9 @@ export const sandpack: PluginSimple = (md) => {
 
           sandpackData.files[currentKey] = {
             code: "",
-            active: !!fileAttrs["active"],
-            hidden: !!fileAttrs["hidden"],
-            readOnly: !!fileAttrs["readOnly"],
+            active: "active" in fileAttrs,
+            hidden: "hidden" in fileAttrs,
+            readOnly: "readOnly" in fileAttrs,
           };
         } else if (
           type === "file_close" ||
@@ -360,13 +360,17 @@ export const sandpack: PluginSimple = (md) => {
 
     const props = propsGetter(sandpackData);
 
-    // merge
-    entries(attrs)?.forEach((attr) => {
-      if (!props[attr[0]] && attr[1]) props[attr[0]] = attr[1];
-    });
-
-    return `<SandPack ${entries(props)
-      .map(([attr, value]) => `${attr}="${escapeHtml(value || "")}"`)
+    return `<SandPack ${
+      keys(attrs).length
+        ? `${entries(attrs)
+            .map(([attr, value]) =>
+              value ? `${attr}="${escapeHtml(value)}"` : attr,
+            )
+            .join(" ")} `
+        : ""
+    }${entries(props)
+      .map(([attr, value]) => (value ? `${attr}="${escapeHtml(value)}"` : null))
+      .filter(Boolean)
       .join(" ")}>\n`;
   };
 
