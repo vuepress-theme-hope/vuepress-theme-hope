@@ -4,8 +4,12 @@ import { checkVersion } from "vuepress-shared/node";
 
 import { addFeedLinks } from "./addFeedLinks.js";
 import { convertOptions } from "./compact.js";
-import { generateFeed } from "./generateFeed.js";
 import { checkOutput, ensureHostName, getFeedOptions } from "./options.js";
+import {
+  outputAtomTemplates,
+  outputFeedFiles,
+  outputRSSTemplates,
+} from "./output.js";
 import type { FeedOptions } from "./typings/index.js";
 import { FEED_GENERATOR, logger } from "./utils/index.js";
 
@@ -30,7 +34,7 @@ export const feedPlugin =
     }
 
     if (!checkOutput(options)) {
-      logger.info("No requested output, the plugin won’t start!");
+      logger.info("No feed output requested, the plugin won’t start!");
 
       return plugin;
     }
@@ -42,6 +46,12 @@ export const feedPlugin =
 
       onInitialized: (app): void => addFeedLinks(app, feedOptions),
 
-      onGenerated: (app): Promise<void> => generateFeed(app, feedOptions),
+      onGenerated: async (app): Promise<void> => {
+        await Promise.all([
+          ...outputFeedFiles(app, feedOptions),
+          ...outputAtomTemplates(app, feedOptions),
+          ...outputRSSTemplates(app, feedOptions),
+        ]);
+      },
     };
   };
