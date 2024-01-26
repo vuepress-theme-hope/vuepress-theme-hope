@@ -17,7 +17,7 @@ export default defineUserConfig({
   plugins: [
     pwaPlugin({
       manifest: {
-        name: "vuepress-plugin-pwa2 ",
+        name: "vuepress-plugin-pwa2",
         short_name: "pwa2 demo",
         description: "PWA plugin demo for VuePress",
         orientation: "portrait-primary",
