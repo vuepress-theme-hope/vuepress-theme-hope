@@ -12,7 +12,7 @@ const { url } = import.meta;
  */
 export const prepareSeparatedConfigFile = (
   app: App,
-  { enableAutoCatalog, enableBlog, enableEncrypt, enableSlide }: ThemeStatus,
+  { enableAutoCatalog, enableBlog, enableEncrypt, enableSlide }: ThemeStatus
 ): Promise<string> => {
   const imports: string[] = [];
   const enhances: string[] = [];
@@ -24,9 +24,9 @@ export const prepareSeparatedConfigFile = (
     imports.push(
       `import { defineAutoCatalogGetter } from "${getRealPath(
         "vuepress-plugin-auto-catalog/client",
-        url,
+        url
       )}"`,
-      `import { h } from "vue"`,
+      `import { h } from "vue"`
     );
     actions.push(`\
 defineAutoCatalogGetter((meta) => {
@@ -46,7 +46,7 @@ defineAutoCatalogGetter((meta) => {
   if (enableBlog) {
     imports.push(
       `import { BlogCategory, BlogHome, BlogType, BloggerInfo, Timeline, setupBlog } from "${CLIENT_FOLDER}modules/blog/export.js";`,
-      `import "${CLIENT_FOLDER}modules/blog/styles/layout.scss";`,
+      `import "${CLIENT_FOLDER}modules/blog/styles/layout.scss";`
     );
 
     enhances.push(`app.component("BloggerInfo", BloggerInfo);`);
@@ -58,11 +58,11 @@ defineAutoCatalogGetter((meta) => {
 
   if (enableEncrypt) {
     imports.push(
-      `import { GlobalEncrypt, LocalEncrypt } from "${CLIENT_FOLDER}modules/encrypt/export.js";`,
+      `import { GlobalEncrypt, LocalEncrypt } from "${CLIENT_FOLDER}modules/encrypt/export.js";`
     );
     enhances.push(
       `app.component("GlobalEncrypt", GlobalEncrypt);`,
-      `app.component("LocalEncrypt", LocalEncrypt);`,
+      `app.component("LocalEncrypt", LocalEncrypt);`
     );
   }
 
@@ -70,8 +70,8 @@ defineAutoCatalogGetter((meta) => {
     imports.push(
       `import Slide from "${getRealPath(
         "vuepress-plugin-md-enhance/SlidePage",
-        url,
-      )}";`,
+        url
+      )}";`
     );
     layouts.push("Slide,");
   }
@@ -80,7 +80,7 @@ defineAutoCatalogGetter((meta) => {
     `theme-hope/config.js`,
     `\
 import { defineClientConfig } from "vuepress/client";
-import { VPLink } from "${getRealPath("vuepress-shared/client", url)}";
+
 
 import { HopeIcon, Layout, NotFound, useScrollPromise, injectDarkmode, setupDarkmode, setupSidebarItems } from "${CLIENT_FOLDER}export.js";
 
@@ -105,8 +105,6 @@ export default defineClientConfig({
 
     // provide HopeIcon as global component
     app.component("HopeIcon", HopeIcon);
-    // provide VPLink as global component
-    app.component("VPLink", VPLink);
 
 ${enhances.map((item) => `    ${item}`).join("\n")}
   },
@@ -120,6 +118,6 @@ ${setups.map((item) => `    ${item}`).join("\n")}
     NotFound,
 ${layouts.map((item) => `    ${item}`).join("\n")}
   }
-});`,
+});`
   );
 };

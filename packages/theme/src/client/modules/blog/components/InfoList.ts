@@ -1,6 +1,7 @@
 import type { FunctionalComponent, VNode } from "vue";
 import { computed, defineComponent, h, ref } from "vue";
-import { VPLink, entries, keys } from "vuepress-shared/client";
+import { VPLink } from "vuepress/client";
+import { entries, keys } from "vuepress-shared/client";
 
 import DropTransition from "@theme-hope/components/transitions/DropTransition";
 import { useNavigate, useThemeLocaleData } from "@theme-hope/composables/index";
@@ -76,10 +77,10 @@ export default defineComponent({
                     "aria-label": locale.value[key],
                     "data-balloon-pos": "up",
                   },
-                  h(Icon),
-                ),
-              ),
-          ),
+                  h(Icon)
+                )
+              )
+          )
         ),
 
         h(DropTransition, () =>
@@ -96,7 +97,7 @@ export default defineComponent({
                     h(ArticleIcon),
                     h("span", { class: "num" }, articles.value.items.length),
                     locale.value.article,
-                  ],
+                  ]
                 ),
                 h("hr"),
                 stars.value.items.length
@@ -114,16 +115,16 @@ export default defineComponent({
                               h(
                                 VPLink,
                                 { to: path },
-                                () => info[ArticleInfoType.title],
-                              ),
-                            ),
-                        ),
-                      ),
+                                () => info[ArticleInfoType.title]
+                              )
+                            )
+                        )
+                      )
                     )
                   : h(
                       "div",
                       { class: "vp-star-article-empty" },
-                      locale.value.empty.replace("$text", locale.value.star),
+                      locale.value.empty.replace("$text", locale.value.star)
                     ),
               ])
             : activeType.value === "category"
@@ -140,11 +141,11 @@ export default defineComponent({
                             h(CategoryIcon),
                             h("span", { class: "num" }, categoryNumber.value),
                             locale.value.category,
-                          ],
+                          ]
                         ),
                         h("hr"),
                         h(DropTransition, { delay: 0.04 }, () =>
-                          h(CategoryList),
+                          h(CategoryList)
                         ),
                       ]
                     : h(
@@ -152,8 +153,8 @@ export default defineComponent({
                         { class: "vp-category-empty" },
                         locale.value.empty.replace(
                           "$text",
-                          locale.value.category,
-                        ),
+                          locale.value.category
+                        )
                       ),
                 ])
               : activeType.value === "tag"
@@ -170,7 +171,7 @@ export default defineComponent({
                               h(TagIcon),
                               h("span", { class: "num" }, tagNumber.value),
                               locale.value.tag,
-                            ],
+                            ]
                           ),
                           h("hr"),
                           h(DropTransition, { delay: 0.04 }, () => h(TagList)),
@@ -178,10 +179,10 @@ export default defineComponent({
                       : h(
                           "div",
                           { class: "vp-tag-empty" },
-                          locale.value.empty.replace("$text", locale.value.tag),
+                          locale.value.empty.replace("$text", locale.value.tag)
                         ),
                   ])
-                : h(DropTransition, () => h(TimelineList)),
+                : h(DropTransition, () => h(TimelineList))
         ),
       ]);
   },

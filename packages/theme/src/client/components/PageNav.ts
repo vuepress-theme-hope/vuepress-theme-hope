@@ -1,8 +1,6 @@
 import { useEventListener } from "@vueuse/core";
 import type { VNode } from "vue";
 import { computed, defineComponent, h } from "vue";
-import type { Router } from "vue-router";
-import { useRouter } from "vue-router";
 import { usePageData, usePageFrontmatter } from "vuepress/client";
 import { isPlainObject, isString } from "vuepress-shared/client";
 
@@ -24,17 +22,13 @@ import "../styles/page-nav.scss";
  * Resolve `prev` or `next` config from frontmatter
  */
 const resolveFromFrontmatterConfig = (
-  router: Router,
-  conf: unknown,
-): AutoLinkOptions | null | false => {
-  if (conf === false) return false;
-
-  if (isString(conf)) return resolveLinkInfo(router, conf, true);
-
-  if (isPlainObject<AutoLinkOptions>(conf)) return conf;
-
-  return null;
-};
+  config: unknown
+): AutoLinkOptions | null | false =>
+  config === false || isPlainObject<AutoLinkOptions>(config)
+    ? config
+    : isString(config)
+      ? resolveLinkInfo(config, true)
+      : null;
 
 /**
  * Resolve `prev` or `next` config from sidebar items
@@ -42,7 +36,7 @@ const resolveFromFrontmatterConfig = (
 const resolveFromSidebarItems = (
   sidebarItems: ResolvedSidebarItem[],
   currentPath: string,
-  offset: number,
+  offset: number
 ): AutoLinkOptions | null => {
   const index = sidebarItems.findIndex((item) => item.link === currentPath);
 
@@ -59,7 +53,7 @@ const resolveFromSidebarItems = (
       const childResult = resolveFromSidebarItems(
         item.children,
         currentPath,
-        offset,
+        offset
       );
 
       if (childResult) return childResult;
@@ -76,14 +70,10 @@ export default defineComponent({
     const frontmatter = usePageFrontmatter<ThemeNormalPageFrontmatter>();
     const sidebarItems = useSidebarItems();
     const page = usePageData();
-    const router = useRouter();
     const navigate = useNavigate();
 
     const prevNavLink = computed(() => {
-      const prevConfig = resolveFromFrontmatterConfig(
-        router,
-        frontmatter.value.prev,
-      );
+      const prevConfig = resolveFromFrontmatterConfig(frontmatter.value.prev);
 
       return prevConfig === false
         ? null
@@ -93,15 +83,12 @@ export default defineComponent({
               : resolveFromSidebarItems(
                   sidebarItems.value,
                   page.value.path,
-                  -1,
+                  -1
                 ));
     });
 
     const nextNavLink = computed(() => {
-      const nextConfig = resolveFromFrontmatterConfig(
-        router,
-        frontmatter.value.next,
-      );
+      const nextConfig = resolveFromFrontmatterConfig(frontmatter.value.next);
 
       return nextConfig === false
         ? null
@@ -111,7 +98,7 @@ export default defineComponent({
               : resolveFromSidebarItems(
                   sidebarItems.value,
                   page.value.path,
-                  1,
+                  1
                 ));
     });
 
@@ -148,7 +135,7 @@ export default defineComponent({
                       }),
                       prevNavLink.value?.text,
                     ]),
-                  ],
+                  ]
                 )
               : null,
             nextNavLink.value
@@ -166,7 +153,7 @@ export default defineComponent({
                         icon: nextNavLink.value?.icon,
                       }),
                     ]),
-                  ],
+                  ]
                 )
               : null,
           ])

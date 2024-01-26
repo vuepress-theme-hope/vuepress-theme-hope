@@ -1,7 +1,7 @@
 import type { FunctionalComponent } from "vue";
 import { h } from "vue";
-import { withBase } from "vuepress/client";
-import { VPLink, isLinkExternal } from "vuepress-shared/client";
+import { VPLink, withBase } from "vuepress/client";
+import { isLinkExternal } from "vuepress-shared/client";
 
 import "../styles/vp-banner.scss";
 
@@ -93,7 +93,7 @@ const VPBanner: FunctionalComponent<BannerProps> = ({
                   href: link,
                   target: "_blank",
                 },
-                text,
+                text
               )
             : h(
                 VPLink,
@@ -101,8 +101,8 @@ const VPBanner: FunctionalComponent<BannerProps> = ({
                   class: ["vp-banner-action", type],
                   to: link,
                 },
-                () => text,
-              ),
+                () => text
+              )
         ),
       ]),
     ]),

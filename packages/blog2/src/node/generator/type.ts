@@ -1,12 +1,13 @@
 import type { App } from "vuepress/core";
-import { createPage } from "vuepress/core";
 import { colors } from "vuepress/utils";
 import { isString, removeLeadingSlash } from "vuepress-shared/node";
 
-import type { BlogOptions } from "./options.js";
-import type { PageMap } from "./typings/index.js";
-import { logger } from "./utils.js";
-import type { TypeMap } from "../shared/index.js";
+import { addPage } from "./addPage.js";
+import type { Store } from "./store.js";
+import type { TypeMap } from "../../shared/index.js";
+import type { BlogOptions } from "../options.js";
+import type { PageMap } from "../typings/index.js";
+import { logger } from "../utils.js";
 
 const HMR_CODE = `
 if (import.meta.webpackHot) {
@@ -25,7 +26,8 @@ export const prepareType = (
   app: App,
   { type, slugify }: Required<Pick<BlogOptions, "type" | "slugify">>,
   pageMap: PageMap,
-  init = false,
+  store: Store,
+  allowOverride = false
 ): Promise<string[]> =>
   Promise.all(
     type.map(
@@ -38,13 +40,13 @@ export const prepareType = (
           layout = "Layout",
           frontmatter = (): Record<string, string> => ({}),
         },
-        index,
+        index
       ) => {
-        if (!isString(key) || !key.length) {
+        if (!isString(key) || !key) {
           logger.error(
             `Invalid ${colors.magenta("key")} option ${colors.cyan(
-              key,
-            )} in ${colors.cyan(`type[${index}]`)}`,
+              key
+            )} in ${colors.cyan(`type[${index}]`)}`
           );
 
           return null;
@@ -57,53 +59,50 @@ export const prepareType = (
           logger.info(`Generating ${colors.cyan(key)} type.\n`);
 
         for (const localePath in pageMap) {
-          const keys = pageMap[localePath]
+          const paths = pageMap[localePath]
             .filter(filter)
             .sort(sorter)
-            .map(({ key }) => key);
+            .map(({ path }) => path);
+          const items = store.addItems(paths);
 
           if (path) {
-            const pagePath = `${localePath}${removeLeadingSlash(
-              slugify(path.replace(/:key/g, key)),
-            )}`;
-
-            const page = await createPage(app, {
-              path: encodeURI(pagePath),
-              frontmatter: {
-                ...frontmatter(localePath),
-                blog: {
-                  type: "type",
-                  key,
+            const page = await addPage(
+              app,
+              {
+                path: encodeURI(
+                  `${localePath}${removeLeadingSlash(
+                    slugify(path.replace(/:key/g, key))
+                  )}`
+                ),
+                frontmatter: {
+                  ...frontmatter(localePath),
+                  blog: {
+                    type: "type",
+                    key,
+                  },
+                  layout,
                 },
-                layout,
               },
-            });
-
-            const index = app.pages.findIndex(({ path }) => path === pagePath);
-
-            if (index === -1) {
-              app.pages.push(page);
-            } else if (app.pages[index].key !== page.key) {
-              app.pages.splice(index, 1, page);
-
-              if (init)
-                logger.warn(`Overriding existed path ${colors.cyan(pagePath)}`);
-            }
+              allowOverride
+            );
 
             pageKeys.push(page.key);
 
-            typeMap[localePath] = { path: page.path, keys };
+            typeMap[localePath] = {
+              path: page.path,
+              items,
+            };
 
             if (app.env.isDebug)
               logger.info(
-                `Route ${localePath} in ${key} type: path: ${page.path}; items: ${keys.length}\n`,
+                `Route ${localePath} in ${key} type: path: ${page.path}; items: ${paths.length}\n`
               );
           } else {
-            typeMap[localePath] = { path: "", keys };
+            typeMap[localePath] = { path: "", items };
 
             if (app.env.isDebug)
               logger.info(
-                `Route ${localePath} in ${key} type: items: ${keys.length}\n`,
+                `Route ${localePath} in ${key} type: items: ${paths.length}\n`
               );
           }
         }
@@ -113,8 +112,8 @@ export const prepareType = (
           map: typeMap,
           pageKeys,
         };
-      },
-    ),
+      }
+    )
   ).then(async (result) => {
     const finalMap: Record<string, TypeMap> = {};
     const keys: string[] = [];
@@ -122,12 +121,12 @@ export const prepareType = (
     result
       .filter(
         (
-          item,
+          item
         ): item is {
           key: string;
           map: TypeMap;
           pageKeys: string[];
-        } => item !== null,
+        } => item !== null
       )
       .forEach(({ key, map, pageKeys }) => {
         finalMap[key] = map;
@@ -139,7 +138,7 @@ export const prepareType = (
       `\
 export const typeMap = ${JSON.stringify(finalMap)};
 ${app.env.isDev ? HMR_CODE : ""}
-`,
+`
     );
 
     if (app.env.isDebug) logger.info("All types generated.");

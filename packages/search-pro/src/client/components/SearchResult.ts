@@ -2,9 +2,8 @@ import { useEventListener } from "@vueuse/core";
 import type { VNode } from "vue";
 import { computed, defineComponent, h, reactive, ref, toRef, watch } from "vue";
 import { useRouter } from "vue-router";
-import { useRouteLocale } from "vuepress/client";
+import { VPLink, useRouteLocale } from "vuepress/client";
 import {
-  VPLink,
   isPlainObject,
   isString,
   useLocaleConfig,
@@ -22,7 +21,7 @@ import {
   searchProLocales,
 } from "../define.js";
 import type { MatchedItem, Word } from "../typings/index.js";
-import { CLOSE_ICON } from "../utils/index.js";
+import { CLOSE_ICON, getPath } from "../utils/index.js";
 
 import "../styles/search-result.scss";
 
@@ -78,18 +77,12 @@ export default defineComponent({
     const hasHistory = computed(
       () =>
         enableHistory &&
-        (queryHistory.value.length > 0 || resultHistory.value.length > 0),
+        (queryHistory.value.length > 0 || resultHistory.value.length > 0)
     );
     const hasResults = computed(() => results.value.length > 0);
     const activatedResult = computed(
-      () => results.value[activatedResultIndex.value] || null,
+      () => results.value[activatedResultIndex.value] || null
     );
-
-    const getRealPath = (item: MatchedItem): string =>
-      router.resolve({
-        name: item.key,
-        ...("anchor" in item ? { hash: `#${item.anchor}` } : {}),
-      }).fullPath;
 
     const activePreviousHistory = (): void => {
       const { isQuery, index } = activatedHistoryStatus;
@@ -167,7 +160,7 @@ export default defineComponent({
           : formatterConfig.split("$content");
 
         return matchedItem.display.map((display) =>
-          h("div", getVNodes([prefix, ...display, suffix])),
+          h("div", getVNodes([prefix, ...display, suffix]))
         );
       }
 
@@ -193,11 +186,9 @@ export default defineComponent({
           const item =
             activatedResult.value.contents[activatedResultContentIndex.value];
 
-          const path = getRealPath(item);
-
           addQueryHistory(props.query);
           addResultHistory(item);
-          void router.push(path);
+          void router.push(getPath(item));
           resetSearchResult();
         }
       } else if (enableResultHistory) {
@@ -224,11 +215,11 @@ export default defineComponent({
       () => {
         document
           .querySelector(
-            ".search-pro-result-list-item.active .search-pro-result-item.active",
+            ".search-pro-result-list-item.active .search-pro-result-item.active"
           )
           ?.scrollIntoView(false);
       },
-      { flush: "post" },
+      { flush: "post" }
     );
 
     return (): VNode =>
@@ -253,7 +244,7 @@ export default defineComponent({
                           h(
                             "div",
                             { class: "search-pro-result-title" },
-                            locale.value.queryHistory,
+                            locale.value.queryHistory
                           ),
                           queryHistory.value.map((item, historyIndex) =>
                             h(
@@ -279,7 +270,7 @@ export default defineComponent({
                                 h(
                                   "div",
                                   { class: "search-pro-result-content" },
-                                  item,
+                                  item
                                 ),
                                 h("button", {
                                   class: "search-pro-remove-icon",
@@ -290,10 +281,10 @@ export default defineComponent({
                                     removeQueryHistory(historyIndex);
                                   },
                                 }),
-                              ],
-                            ),
+                              ]
+                            )
                           ),
-                        ]),
+                        ])
                       )
                     : null,
                   enableResultHistory
@@ -304,7 +295,7 @@ export default defineComponent({
                           h(
                             "div",
                             { class: "search-pro-result-title" },
-                            locale.value.resultHistory,
+                            locale.value.resultHistory
                           ),
 
                           resultHistory.value.map((item, historyIndex) =>
@@ -337,16 +328,16 @@ export default defineComponent({
                                       ? h(
                                           "div",
                                           { class: "content-header" },
-                                          item.header,
+                                          item.header
                                         )
                                       : null,
                                     h(
                                       "div",
                                       item.display
                                         .map((display) => getVNodes(display))
-                                        .flat(),
+                                        .flat()
                                     ),
-                                  ],
+                                  ]
                                 ),
                                 h("button", {
                                   class: "search-pro-remove-icon",
@@ -357,10 +348,10 @@ export default defineComponent({
                                     removeResultHistory(historyIndex);
                                   },
                                 }),
-                              ],
-                            ),
+                              ]
+                            )
                           ),
-                        ]),
+                        ])
                       )
                     : null,
                 ]
@@ -388,7 +379,7 @@ export default defineComponent({
                         h(
                           "div",
                           { class: "search-pro-result-title" },
-                          title || locale.value.defaultTitle,
+                          title || locale.value.defaultTitle
                         ),
                         contents.map((item, contentIndex) => {
                           const isCurrentContentActive =
@@ -421,26 +412,26 @@ export default defineComponent({
                                       : item.type === "heading"
                                         ? HeadingIcon
                                         : HeartIcon,
-                                    { class: "search-pro-result-type" },
+                                    { class: "search-pro-result-type" }
                                   ),
                               h("div", { class: "search-pro-result-content" }, [
                                 item.type === "text" && item.header
                                   ? h(
                                       "div",
                                       { class: "content-header" },
-                                      item.header,
+                                      item.header
                                     )
                                   : null,
                                 h("div", getDisplay(item)),
                               ]),
-                            ],
+                            ]
                           );
                         }),
-                      ],
+                      ]
                     );
-                  }),
+                  })
                 )
-              : locale.value.emptyResult,
+              : locale.value.emptyResult
       );
   },
 });

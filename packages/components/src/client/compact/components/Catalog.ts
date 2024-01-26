@@ -1,10 +1,8 @@
 import type { PropType, VNode } from "vue";
 import { computed, defineComponent, h } from "vue";
 import type { RouteMeta } from "vue-router";
-import { useRouter } from "vue-router";
-import { usePageData, useSiteData } from "vuepress/client";
+import { VPLink, usePageData, usePagesMap, useSiteData } from "vuepress/client";
 import {
-  VPLink,
   endsWith,
   keys,
   startsWith,
@@ -109,62 +107,67 @@ export default defineComponent({
     // eslint-disable-next-line vue/no-undef-properties
     if (__VUEPRESS_DEV__ && props.indexType)
       console.warn(
-        "[AutoCatalog]: `indexType` is deprecated, please use `index` instead",
+        "[AutoCatalog]: `indexType` is deprecated, please use `index` instead"
       );
 
     const locale = useLocaleConfig(CATALOG_LOCALES);
     const page = usePageData();
-    const router = useRouter();
+    const pagesMap = usePagesMap();
     const siteData = useSiteData();
 
     const getCatalogInfo = (): CatalogInfo[] => {
       const base = props.base || page.value.path.replace(/\/[^/]+$/, "/");
-      const routes = router.getRoutes();
+      const extractedPages = [];
       const result: CatalogInfo[] = [];
 
-      routes
-        .filter(({ meta, path }) => {
-          // filter those under current base
-          if (!startsWith(path, base) || path === base) return false;
+      for (const path in pagesMap.value) {
+        const { meta } = pagesMap.value[path];
 
-          if (base === "/") {
-            const otherLocales = keys(siteData.value.locales).filter(
-              (item) => item !== "/",
-            );
+        // filter those under current base
+        if (!startsWith(path, base) || path === base) break;
 
-            // exclude 404 page and other locales
-            if (
-              path === "/404.html" ||
-              otherLocales.some((localePath) => startsWith(path, localePath))
-            )
-              return false;
-          }
-
-          return (
-            // filter real page
-            ((endsWith(path, ".html") && !endsWith(path, "/index.html")) ||
-              endsWith(path, "/")) &&
-            // page should be indexed
-            props.shouldIndex(meta)
+        if (base === "/") {
+          const otherLocales = keys(siteData.value.locales).filter(
+            (item) => item !== "/"
           );
-        })
-        .map(({ path, meta }) => {
-          const level = path.substring(base.length).split("/").length;
 
-          return {
-            title: props.titleGetter(meta),
-            icon: props.iconGetter(meta),
-            base: path.replace(/\/[^/]+\/?$/, "/"),
-            order: props.orderGetter(meta),
-            level: endsWith(path, "/") ? level - 1 : level,
-            path,
-          };
-        })
+          // exclude 404 page and other locales
+          if (
+            path === "/404.html" ||
+            otherLocales.some((localePath) => startsWith(path, localePath))
+          )
+            break;
+        }
+
+        // page should be indexed
+        if (!shouldIndex(meta)) break;
+
+        const level = path.substring(base.length).split("/").length;
+
+        // level should be less than or equal to props.level
+        if (level > props.level) break;
+
+        const title = props.titleGetter(meta);
+
+        // title should be present
+        if (!title) break;
+
+        extractedPages.push({
+          title,
+          icon: props.iconGetter(meta),
+          base: path.replace(/\/[^/]+\/?$/, "/"),
+          order: props.orderGetter(meta),
+          level: endsWith(path, "/") ? level - 1 : level,
+          path,
+        });
+      }
+
+      extractedPages
         .filter(({ title, level }) => level <= props.level || !title)
         .sort(
           (
             { title: titleA, level: levelA, path: pathA, order: orderA },
-            { title: titleB, level: levelB, path: pathB, order: orderB },
+            { title: titleB, level: levelB, path: pathB, order: orderB }
           ) => {
             const level = levelA - levelB;
 
@@ -201,7 +204,7 @@ export default defineComponent({
             if (orderB < 0) return orderA - orderB;
 
             return 1;
-          },
+          }
         )
         .forEach((info) => {
           const { base, level } = info;
@@ -220,12 +223,12 @@ export default defineComponent({
 
             default: {
               const grandParent = result.find(
-                (item) => item.path === base.replace(/\/[^/]+\/$/, "/"),
+                (item) => item.path === base.replace(/\/[^/]+\/$/, "/")
               );
 
               if (grandParent) {
                 const parent = grandParent.children?.find(
-                  (item) => item.path === base,
+                  (item) => item.path === base
                 );
 
                 if (parent) (parent.children ??= []).push(info);
@@ -256,7 +259,7 @@ export default defineComponent({
                 icon ? h(FontIcon, { icon }) : null,
                 `${mainIndex + 1}. ${title || "Unknown"}`,
               ]),
-            ],
+            ]
           ),
           children.length
             ? h(
@@ -276,13 +279,13 @@ export default defineComponent({
                         h(
                           "a",
                           { href: `#${title}`, class: "header-anchor" },
-                          "#",
+                          "#"
                         ),
                         h(VPLink, { class: "catalog-title", to: path }, () => [
                           icon ? h(FontIcon, { icon }) : null,
                           `${mainIndex + 1}.${index + 1} ${title || "Unknown"}`,
                         ]),
-                      ],
+                      ]
                     ),
                     children.length
                       ? h(
@@ -300,13 +303,13 @@ export default defineComponent({
                                 `${mainIndex + 1}.${index + 1}.${
                                   subIndex + 1
                                 } ${title || "Unknown"}`,
-                              ],
-                            ),
-                          ),
+                              ]
+                            )
+                          )
                         )
                       : null,
-                  ]),
-                ),
+                  ])
+                )
               )
             : null,
         ]),

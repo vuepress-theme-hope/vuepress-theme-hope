@@ -1,7 +1,6 @@
 import { computedWithControl } from "@vueuse/core";
 import type { ComputedRef, InjectionKey } from "vue";
 import { computed, inject, provide } from "vue";
-import { useRouter } from "vue-router";
 import {
   usePageData,
   usePageFrontmatter,
@@ -19,7 +18,7 @@ declare const __VUEPRESS_DEV__: boolean;
 export type SidebarItemsRef = ComputedRef<ResolvedSidebarItem[]>;
 
 export const sidebarItemsSymbol: InjectionKey<SidebarItemsRef> = Symbol(
-  __VUEPRESS_DEV__ ? "sidebarItems" : "",
+  __VUEPRESS_DEV__ ? "sidebarItems" : ""
 );
 
 /**
@@ -30,16 +29,15 @@ export const setupSidebarItems = (): void => {
   const themeLocale = useThemeLocaleData();
   const page = usePageData();
   const routeLocale = useRouteLocale();
-  const router = useRouter();
 
   // get sidebar config from frontmatter > themeConfig
   const sidebarConfig = computed(() =>
     frontmatter.value.home
       ? false
-      : frontmatter.value.sidebar ?? themeLocale.value.sidebar ?? "structure",
+      : frontmatter.value.sidebar ?? themeLocale.value.sidebar ?? "structure"
   );
   const headerDepth = computed(
-    () => frontmatter.value.headerDepth ?? themeLocale.value.headerDepth ?? 2,
+    () => frontmatter.value.headerDepth ?? themeLocale.value.headerDepth ?? 2
   );
 
   const sidebarItems = computedWithControl(
@@ -52,11 +50,10 @@ export const setupSidebarItems = (): void => {
     () =>
       resolveSidebarItems({
         config: sidebarConfig.value,
-        router,
         routeLocale: routeLocale.value,
         page: page.value,
         headerDepth: headerDepth.value,
-      }),
+      })
   );
 
   provide(sidebarItemsSymbol, sidebarItems);

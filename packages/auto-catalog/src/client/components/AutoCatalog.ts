@@ -1,9 +1,13 @@
 import type { VNode } from "vue";
 import { computed, defineComponent, h, shallowRef } from "vue";
-import { useRouter } from "vue-router";
-import { usePageData, useSiteData } from "vuepress/client";
 import {
+  getPagesPath,
+  resolve,
   VPLink,
+  usePageData,
+  useSiteData,
+} from "vuepress/client";
+import {
   endsWith,
   ensureEndingSlash,
   ensureLeadingSlash,
@@ -91,25 +95,18 @@ export default defineComponent({
     // eslint-disable-next-line vue/no-undef-properties
     if (__VUEPRESS_DEV__ && props.indexType)
       console.warn(
-        "[AutoCatalog]: `indexType` is deprecated, please use `index` instead",
+        "[AutoCatalog]: `indexType` is deprecated, please use `index` instead"
       );
 
     const autoCatalogGetter = useAutoCatalogGetter();
     const locale = useLocaleConfig(AUTO_CATALOG_LOCALES);
     const page = usePageData();
-    const router = useRouter();
     const siteData = useSiteData();
 
     const getCatalogInfo = (): CatalogInfo[] =>
-      router
-        .getRoutes()
-        // filter real page
-        .filter(
-          ({ path }) =>
-            (endsWith(path, ".html") && !endsWith(path, "/index.html")) ||
-            endsWith(path, "/"),
-        )
-        .map(({ meta, path }) => {
+      getPagesPath()
+        .map((path) => {
+          const { meta } = resolve(path);
           const info = autoCatalogGetter(meta);
 
           if (!info) return null;
@@ -125,7 +122,7 @@ export default defineComponent({
         })
         .filter(
           (item): item is CatalogInfo =>
-            isPlainObject(item) && isString(item.title),
+            isPlainObject(item) && isString(item.title)
         );
 
     const catalogInfo = shallowRef(getCatalogInfo());
@@ -144,7 +141,7 @@ export default defineComponent({
 
           if (base === "/") {
             const otherLocales = keys(siteData.value.locales).filter(
-              (item) => item !== "/",
+              (item) => item !== "/"
             );
 
             // exclude 404 page and other locales
@@ -163,7 +160,7 @@ export default defineComponent({
         .sort(
           (
             { title: titleA, level: levelA, order: orderA },
-            { title: titleB, level: levelB, order: orderB },
+            { title: titleB, level: levelB, order: orderB }
           ) => {
             const level = levelA - levelB;
 
@@ -196,7 +193,7 @@ export default defineComponent({
             if (orderB < 0) return orderA - orderB;
 
             return 1;
-          },
+          }
         )
         .forEach((info) => {
           const { base, level } = info;
@@ -216,12 +213,12 @@ export default defineComponent({
 
             default: {
               const grandParent = result.find(
-                (item) => item.path === base.replace(/\/[^/]+\/$/, "/"),
+                (item) => item.path === base.replace(/\/[^/]+\/$/, "/")
               );
 
               if (grandParent) {
                 const parent = grandParent.children?.find(
-                  (item) => item.path === base,
+                  (item) => item.path === base
                 );
 
                 if (parent) (parent.children ??= []).push(info);
@@ -252,7 +249,7 @@ export default defineComponent({
                     const childLink = h(
                       VPLink,
                       { class: "vp-catalog-title", to: path },
-                      () => (content ? h(content) : title),
+                      () => (content ? h(content) : title)
                     );
 
                     return h(
@@ -277,10 +274,10 @@ export default defineComponent({
                                     class: "header-anchor",
                                     "aria-hidden": true,
                                   },
-                                  "#",
+                                  "#"
                                 ),
                                 childLink,
-                              ],
+                              ]
                             ),
                             children.length
                               ? h(
@@ -306,7 +303,7 @@ export default defineComponent({
                                                 href: `#${title}`,
                                                 class: "header-anchor",
                                               },
-                                              "#",
+                                              "#"
                                             ),
                                             h(
                                               VPLink,
@@ -315,9 +312,9 @@ export default defineComponent({
                                                 to: path,
                                               },
                                               () =>
-                                                content ? h(content) : title,
+                                                content ? h(content) : title
                                             ),
-                                          ],
+                                          ]
                                         ),
                                         children.length
                                           ? h(
@@ -342,8 +339,8 @@ export default defineComponent({
                                                           () =>
                                                             content
                                                               ? h(content)
-                                                              : title,
-                                                        ),
+                                                              : title
+                                                        )
                                                       )
                                                     : h(
                                                         VPLink,
@@ -355,27 +352,27 @@ export default defineComponent({
                                                         () =>
                                                           content
                                                             ? h(content)
-                                                            : title,
-                                                      ),
-                                              ),
+                                                            : title
+                                                      )
+                                              )
                                             )
                                           : null,
-                                      ]),
-                                  ),
+                                      ])
+                                  )
                                 )
                               : null,
                           ]
                         : h(
                             "div",
                             { class: "vp-catalog-child-title" },
-                            childLink,
-                          ),
+                            childLink
+                          )
                     );
-                  },
-                ),
+                  }
+                )
               )
             : h("p", { class: "vp-empty-catalog" }, locale.value.empty),
-        ],
+        ]
       );
     };
   },

@@ -1,7 +1,7 @@
 import type { FunctionalComponent, VNode } from "vue";
 import { h } from "vue";
-import { withBase } from "vuepress/client";
-import { VPLink, isLinkExternal } from "vuepress-shared/client";
+import { VPLink, withBase } from "vuepress/client";
+import { isLinkExternal } from "vuepress-shared/client";
 
 import HopeIcon from "@theme-hope/components/HopeIcon";
 
@@ -19,7 +19,7 @@ const FeaturePanel: FunctionalComponent<
     image?: (props: ThemeProjectHomeFeatureOptions) => VNode[] | VNode | null;
     info?: (props: ThemeProjectHomeFeatureOptions) => VNode[] | VNode | null;
     highlights?: (
-      props: ThemeProjectHomeHighlightItem[],
+      props: ThemeProjectHomeHighlightItem[]
     ) => VNode[] | VNode | null;
   }
 > = (props, { slots }) => {
@@ -115,7 +115,7 @@ const FeaturePanel: FunctionalComponent<
                             "aria-label": title,
                             target: "_blank",
                           },
-                          children,
+                          children
                         )
                       : h(
                           VPLink,
@@ -124,15 +124,15 @@ const FeaturePanel: FunctionalComponent<
                             to: link,
                             "aria-label": title,
                           },
-                          () => children,
+                          () => children
                         )
                     : h("div", { class: "vp-feature-item" }, children);
-                }),
+                })
               )
             : null,
-        ],
+        ]
       ),
-    ],
+    ]
   );
 };
 

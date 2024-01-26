@@ -1,7 +1,6 @@
 import type { PropType, SlotsType, VNode } from "vue";
 import { defineComponent, h, toRef } from "vue";
-import { withBase } from "vuepress/client";
-import { VPLink } from "vuepress-shared/client";
+import { VPLink, withBase } from "vuepress/client";
 
 import {
   SlideIcon,
@@ -102,7 +101,7 @@ export default defineComponent({
                   isEncrypted ? h(LockIcon) : null,
                   type === PageType.slide ? h(SlideIcon) : null,
                   h("span", { property: "headline" }, title),
-                ]),
+                ])
             ),
             slots.excerpt?.({ excerpt }) ||
               (excerpt
@@ -117,8 +116,8 @@ export default defineComponent({
                 info,
                 ...(items.value ? { items: items.value } : {}),
               }),
-          ],
-        ),
+          ]
+        )
       );
     };
   },

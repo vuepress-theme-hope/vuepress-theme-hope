@@ -1,9 +1,9 @@
 import { useLocalStorage } from "@vueuse/core";
 import type { Ref } from "vue";
-import { useRouter } from "vue-router";
 
 import { searchProOptions } from "../define.js";
 import type { MatchedItem, Word } from "../typings/index.js";
+import { getPath } from "../utils/index.js";
 
 const SEARCH_PRO_HISTORY_RESULT_STORAGE = "SEARCH_PRO_RESULT_HISTORY";
 
@@ -28,20 +28,12 @@ const searchProResultStorage = useLocalStorage<SearchResult[]>(
 );
 
 export const useSearchResultHistory = (): SearchResultHistory => {
-  const router = useRouter();
-
   const enabled = resultHistoryCount > 0;
-
-  const getRealPath = (item: MatchedItem): string =>
-    router.resolve({
-      name: item.key,
-      ...("anchor" in item ? { hash: `#${item.anchor}` } : {}),
-    }).fullPath;
 
   const addResultHistory = (item: MatchedItem): void => {
     if (enabled) {
       const result: SearchResult = {
-        link: getRealPath(item),
+        link: getPath(item),
         display: item.display,
       };
 

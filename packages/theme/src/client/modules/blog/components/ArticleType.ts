@@ -1,7 +1,8 @@
+<<<<<<< HEAD
 import type { VNode } from "vue";
 import { computed, defineComponent, h } from "vue";
-import { usePageData, useRouteLocale } from "vuepress/client";
-import { VPLink } from "vuepress-shared/client";
+import { VPLink,usePageData, useRouteLocale } from "vuepress/client";
+
 
 import { useThemeLocaleData } from "@theme-hope/composables/index";
 import {

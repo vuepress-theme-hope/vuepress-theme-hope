@@ -1,6 +1,6 @@
 export interface CategoryConfig {
   path: string;
-  keys: string[];
+  items: number[];
 }
 
 export interface CategoryLocaleMap {
@@ -20,7 +20,7 @@ export interface CategoryMap {
 
 export interface TypeLocaleConfig {
   path: string;
-  keys: string[];
+  items: number[];
 }
 
 export interface TypeMap {

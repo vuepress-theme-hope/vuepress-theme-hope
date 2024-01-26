@@ -1,7 +1,5 @@
 import type { ComputedRefWithControl } from "@vueuse/core";
 import { computedWithControl } from "@vueuse/core";
-import type { Router } from "vue-router";
-import { useRouter } from "vue-router";
 import { isLinkExternal, isString } from "vuepress-shared/client";
 
 import { useThemeLocaleData } from "@theme-hope/composables/index";
@@ -16,26 +14,22 @@ import type {
 import type { ResolvedThemeNavbarItem } from "../utils/index.js";
 
 export const resolveNavbarItem = (
-  router: Router,
   item: NavbarItem | NavbarGroup | string,
-  prefix = "",
+  prefix = ""
 ): ResolvedThemeNavbarItem => {
-  if (isString(item))
-    return resolveLinkInfo(router, resolvePrefix(prefix, item));
+  if (isString(item)) return resolveLinkInfo(resolvePrefix(prefix, item));
 
   if ("children" in item)
     return {
       ...item,
       ...(item.link && !isLinkExternal(item.link)
-        ? resolveLinkInfo(router, resolvePrefix(prefix, item.link))
+        ? resolveLinkInfo(resolvePrefix(prefix, item.link))
         : {}),
       children: item.children.map(
         (child) =>
-          resolveNavbarItem(
-            router,
-            child,
-            resolvePrefix(prefix, item.prefix),
-          ) as NavGroup<AutoLinkOptions> | AutoLinkOptions,
+          resolveNavbarItem(child, resolvePrefix(prefix, item.link)) as
+            | NavGroup<AutoLinkOptions>
+            | AutoLinkOptions
       ),
     };
 
@@ -43,7 +37,7 @@ export const resolveNavbarItem = (
     ...item,
     link: isLinkExternal(item.link)
       ? item.link
-      : resolveLinkInfo(router, resolvePrefix(prefix, item.link)).link,
+      : resolveLinkInfo(resolvePrefix(prefix, item.link)).link,
   };
 };
 
@@ -51,16 +45,13 @@ export const useNavbarItems = (): ComputedRefWithControl<
   ResolvedThemeNavbarItem[]
 > => {
   const themeLocaleData = useThemeLocaleData();
-  const router = useRouter();
 
   const getNavbarItems = (): ResolvedThemeNavbarItem[] =>
-    (themeLocaleData.value.navbar || []).map((item) =>
-      resolveNavbarItem(router, item),
-    );
+    (themeLocaleData.value.navbar || []).map((item) => resolveNavbarItem(item));
 
   const navbarItems = computedWithControl(
     () => themeLocaleData.value.navbar,
-    () => getNavbarItems(),
+    () => getNavbarItems()
   );
 
   return navbarItems;
