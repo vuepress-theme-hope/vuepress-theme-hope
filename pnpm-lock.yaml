@@ -229,8 +229,8 @@ importers:
         specifier: 2.0.0-rc.2
         version: 2.0.0-rc.2(sass-loader@14.0.0)(typescript@5.3.3)(vuepress@2.0.0-rc.2)
       '@waline/client':
-        specifier: 3.0.0-alpha.10
-        version: 3.0.0-alpha.10(typescript@5.3.3)
+        specifier: 3.0.0-alpha.11
+        version: 3.0.0-alpha.11(typescript@5.3.3)
       artalk:
         specifier: 2.7.3
         version: 2.7.3
@@ -661,8 +661,8 @@ importers:
         specifier: 2.0.0-rc.1
         version: 2.0.0-rc.1(@algolia/client-search@4.22.1)(search-insights@2.13.0)(typescript@5.3.3)(vuepress@2.0.0-rc.2)
       '@waline/client':
-        specifier: 3.0.0-alpha.10
-        version: 3.0.0-alpha.10(typescript@5.3.3)
+        specifier: 3.0.0-alpha.11
+        version: 3.0.0-alpha.11(typescript@5.3.3)
       chart.js:
         specifier: 4.4.1
         version: 4.4.1
@@ -6010,6 +6010,12 @@ packages:
   /@waline/api@1.0.0-alpha.4:
     resolution: {integrity: sha512-XtqzubDO1i1jj/GsHNsFyDc6Vmta872vrTroWUvi7lmbJWTSQwDe3rQiUIAziI8LaYKbicMWI7Rpcx6pkxJKog==}
     engines: {node: '>=18'}
+    dev: false
+
+  /@waline/api@1.0.0-alpha.5:
+    resolution: {integrity: sha512-jGBvBF4YjVRJExpkf4XaPDh3ES0mgXZxuDmMCuerqB0H6t77HuIEA+YE80UwJ/GSQpvA9ELQlNyoXHANsUmqFQ==}
+    engines: {node: '>=18'}
+    dev: true
 
   /@waline/client@3.0.0-alpha.10(typescript@5.3.3):
     resolution: {integrity: sha512-uGmeE/OIT6vHQV78bS7T0hkP1g6wsVTC1fFnAD3atLocVQJl3Fu0V9W8AuSUdDTytI24Y1pRNZCzK06+LCuzOA==}
@@ -6025,6 +6031,23 @@ packages:
     transitivePeerDependencies:
       - '@vue/composition-api'
       - typescript
+    dev: false
+
+  /@waline/client@3.0.0-alpha.11(typescript@5.3.3):
+    resolution: {integrity: sha512-HXv+PGcaojFEX5n3UChituGT9xmVUZLzvs94r7YOpuB2pFJyNXF/UnqD3UqocU46Kxpy/H1TKhd3W6MiJU90wQ==}
+    engines: {node: '>=18'}
+    dependencies:
+      '@vueuse/core': 10.7.2(vue@3.4.15)
+      '@waline/api': 1.0.0-alpha.5
+      autosize: 6.0.1
+      marked: 11.1.1
+      marked-highlight: 2.1.0(marked@11.1.1)
+      recaptcha-v3: 1.10.0
+      vue: 3.4.15(typescript@5.3.3)
+    transitivePeerDependencies:
+      - '@vue/composition-api'
+      - typescript
+    dev: true
 
   /@webassemblyjs/ast@1.11.6:
     resolution: {integrity: sha512-IN1xI7PwOvLPgjcf180gC1bqn3q/QaOCwYUahIOhbYUu8KA/3tw2RT/T0Gidi1l7Hhj5D/INhJxiICObqpMu4Q==}
