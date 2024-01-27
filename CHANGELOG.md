@@ -4,6 +4,18 @@ All notable changes to this project will be documented in this file. See [Conven
 
 <!-- #region recent-change -->
 
+## [2.0.0-rc.16](https://github.com/vuepress-theme-hope/vuepress-theme-hope/compare/v2.0.0-rc.15...v2.0.0-rc.16) (2024-01-27)
+
+### Features
+
+- **feed2:** improve xslt ([2cc5f6d](https://github.com/vuepress-theme-hope/vuepress-theme-hope/commit/2cc5f6dcb48ab59e0bf483fd39826e56e19a10ab))
+- **feed2:** support devServer ([4f6f2c3](https://github.com/vuepress-theme-hope/vuepress-theme-hope/commit/4f6f2c368857462cc86087c1fcf6b1802f53e92d))
+
+### Bug Fixes
+
+- **comment2:** fix `giscusLang` value, fix [#3862](https://github.com/vuepress-theme-hope/vuepress-theme-hope/issues/3862) ([#3863](https://github.com/vuepress-theme-hope/vuepress-theme-hope/issues/3863)) ([d82bf6d](https://github.com/vuepress-theme-hope/vuepress-theme-hope/commit/d82bf6da8728eb140df4b657723d5efc082df9d3))
+- **feed2:** fix output count might be less ([4da42b1](https://github.com/vuepress-theme-hope/vuepress-theme-hope/commit/4da42b1614241bf79fcca85c0ed70f68406f5ae6))
+
 ## [2.0.0-rc.15](https://github.com/vuepress-theme-hope/vuepress-theme-hope/compare/v2.0.0-rc.14...v2.0.0-rc.15) (2024-01-26)
 
 ### Bug Fixes

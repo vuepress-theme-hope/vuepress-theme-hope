@@ -1,6 +1,6 @@
 {
   "name": "vuepress-plugin-remove-pwa",
-  "version": "2.0.0-rc.15",
+  "version": "2.0.0-rc.16",
   "description": "Plugin to remove PWA for VuePress",
   "keywords": [
     "vuepress",
