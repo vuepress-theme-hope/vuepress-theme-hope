@@ -45,7 +45,9 @@ export const checkVuePressVersion = (app: App): boolean => {
         if (pkgName === "vuepress") foundVuePress = true;
         else if (DEPRECATED_PACKAGES.includes(pkgName))
           console.error(
-            `${pkgName} is deprecated and you should remove it from deps.`,
+            colors.red(
+              `❌ ${pkgName} is deprecated and you must remove it from deps!`,
+            ),
           );
         else if (VUEPRESS_CORE_PACKAGES.includes(pkgName))
           corePackageNames.push(pkgName);
@@ -61,14 +63,16 @@ export const checkVuePressVersion = (app: App): boolean => {
   } while ((dir = path.dirname(dir)));
 
   if (!foundVuePress) {
-    console.error("No VuePress version is detected in the current project");
+    console.error(
+      `❌ ${colors.cyan("VuePress")} ${colors.red("package is not found in current project!")} You must manually install it!`,
+    );
 
     return false;
   }
 
   if (!bundlerNames.length) {
     console.error(
-      `No VuePress bundler is detected in the current project, you should install one of ${VUEPRESS_BUNDLER.map(
+      `${colors.red("❌ No VuePress bundler is detected in the current project!")} You should install one of ${VUEPRESS_BUNDLER.map(
         colors.cyan,
       ).join(", ")}`,
     );
@@ -87,7 +91,7 @@ export const checkVuePressVersion = (app: App): boolean => {
 
     if (version !== vuePressVersion) {
       console.error(
-        `Package version mismatch: ${colors.cyan(
+        `❌ Package version mismatch: ${colors.cyan(
           pkgName,
         )} is using ${colors.magenta(
           version,
