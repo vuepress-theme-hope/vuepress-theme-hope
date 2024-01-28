@@ -3,6 +3,7 @@ import { ensureEndingSlash, entries } from "vuepress-shared/node";
 
 import type { ResolvedFeedOptionsMap } from "./options.js";
 import { getFilename } from "./options.js";
+import type { FeedConfig } from "./typings/index.js";
 
 const __dirname = getDirname(import.meta.url);
 
@@ -22,7 +23,7 @@ export const DEFAULT_RSS_XML_TEMPLATE = fs.readFileSync(
 
 export const getAtomTemplates = (
   options: ResolvedFeedOptionsMap,
-): [path: string, content: string][] =>
+): FeedConfig[] =>
   entries(options)
     // filter enabled locales
     .filter(([, { atom }]) => atom)
@@ -36,7 +37,7 @@ export const getAtomTemplates = (
 
 export const getRSSTemplates = (
   options: ResolvedFeedOptionsMap,
-): [path: string, content: string][] =>
+): FeedConfig[] =>
   entries(options)
     // filter enabled locales
     .filter(([, { rss }]) => rss)

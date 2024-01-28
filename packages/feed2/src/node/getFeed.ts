@@ -10,13 +10,13 @@ import { getJSONFeed } from "./generator/json/index.js";
 import { getRssFeed } from "./generator/rss/index.js";
 import type { ResolvedFeedOptionsMap } from "./options.js";
 import { getFilename } from "./options.js";
-import type { FeedPluginFrontmatter } from "./typings/index.js";
+import type { FeedConfig, FeedPluginFrontmatter } from "./typings/index.js";
 import { logger } from "./utils/index.js";
 
 export const getFeedFiles = (
   app: App,
   options: ResolvedFeedOptionsMap,
-): [path: string, content: string][] => {
+): FeedConfig[] => {
   const localMap: Record<string, FeedStore> = fromEntries(
     entries(options).map(([localePath, localeOptions]) => [
       localePath,
@@ -68,7 +68,7 @@ export const getFeedFiles = (
 
         const { atomOutputFilename, jsonOutputFilename, rssOutputFilename } =
           getFilename(localeOptions, localePath);
-        const results: [path: string, content: string][] = [];
+        const results: FeedConfig[] = [];
 
         // generate feed
         if (atom) results.push([atomOutputFilename, getAtomFeed(feedStore)]);
