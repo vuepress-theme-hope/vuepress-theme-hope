@@ -20,6 +20,7 @@ export default defineUserConfig({
   plugins: [
     sitemapPlugin({
       hostname: "https://plugin-sitemap2-demo.vuejs.press",
+      devServer: true,
     }),
   ],
 });

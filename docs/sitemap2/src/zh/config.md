@@ -32,6 +32,26 @@ icon: gears
 
 默认情况下 VuePress 自动生成的所有路径 (除 404 页) 都会被添加进 Sitemap。
 
+### devServer
+
+- 类型: `boolean`
+- 默认值: `false`
+
+是否在开发服务器中启用
+
+::: note
+
+由于性能原因，我们不提供热更新。重启开发服务器以同步你的变更。
+
+::
+
+### devHostname
+
+- 类型: `string`
+- 默认值: `"http://localhost:${port}"`
+
+开发服务器使用的主机名
+
 ### sitemapFilename
 
 - 类型: `string`
@@ -51,7 +71,7 @@ icon: gears
 - 类型: `string`
 - 默认值: `"vuepress-plugin-sitemap2/templates/sitemap.xsl"`
 
-用作模板的 XSL 文件路径
+用作模板的 XSL 文件内容
 
 ### changefreq
 

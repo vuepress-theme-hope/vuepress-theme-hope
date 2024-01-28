@@ -3,7 +3,7 @@ title: Guide
 icon: lightbulb
 ---
 
-This plugin will automatically generate a Sitemap for your site. To let this plugin work, you need to pass the deployed domain name to the `hostname` option of the plugin.
+This plugin will automatically generate a Sitemap for your site. To let this plugin work, you need to pass the deployed domain name to the `hostname` option of the plugin. If you want to preview in devServer, set `devServer` options.
 
 The plugin will automatically generate the last update time of the page based on the Git timestamp of the page, and will also declare the alternative links of the page in other languages according to the locales' config.
 

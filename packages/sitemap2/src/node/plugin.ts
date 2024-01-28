@@ -1,10 +1,13 @@
 import type { PluginFunction, PluginObject } from "vuepress/core";
 import { colors } from "vuepress/utils";
+import { useCustomDevServer } from "vuepress-shared/node";
 
 import { convertOptions } from "./compact.js";
-import { generateSiteMap } from "./generateSitemap.js";
+import { getSiteMap } from "./getSitemap.js";
+import { getSiteMapTemplate } from "./getSitemapTemplate.js";
 import type { SitemapOptions } from "./options.js";
-import { PLUGIN_NAME, logger } from "./utils.js";
+import { outputSitemap } from "./outputSitemap.js";
+import { PLUGIN_NAME, ensureHostName, logger } from "./utils.js";
 
 export const sitemapPlugin =
   (options: SitemapOptions, legacy = true): PluginFunction =>
@@ -19,7 +22,7 @@ export const sitemapPlugin =
       name: PLUGIN_NAME,
     };
 
-    if (!options.hostname) {
+    if (!ensureHostName(app, options)) {
       logger.error(`Option ${colors.magenta("hostname")} is required!`);
 
       return plugin;
@@ -28,6 +31,19 @@ export const sitemapPlugin =
     return {
       ...plugin,
 
-      onGenerated: (app): Promise<void> => generateSiteMap(app, options),
+      extendsBundlerOptions: async (config, app): Promise<void> => {
+        if (options.devServer)
+          [await getSiteMap(app, options), getSiteMapTemplate(options)].forEach(
+            ([path, content]) => {
+              useCustomDevServer(config, app, {
+                path,
+                response: async () => Promise.resolve(content),
+                errMsg: "Unexpected sitemap generation error",
+              });
+            },
+          );
+      },
+
+      onGenerated: (app): Promise<void> => outputSitemap(app, options),
     };
   };

@@ -1,7 +1,7 @@
 import type { GitData } from "@vuepress/plugin-git";
 import type { App, Page } from "vuepress/core";
 
-export type ModifyTimeGetter = <
+export type PageModifyTimeGetter = <
   ExtraPageData extends Record<string, unknown> & {
     git?: GitData;
   } = { git?: GitData },
@@ -53,9 +53,9 @@ export interface SitemapOptions {
   sitemapXSLFilename?: string;
 
   /**
-   * XSL file path used as template
+   * XSL file content used as template
    *
-   * 用作模板的 XSL 文件路径
+   * 用作模板的 XSL 文件内容
    *
    * @default "vuepress-plugin-sitemap2/templates/sitemap.xsl"
    */
@@ -82,7 +82,29 @@ export interface SitemapOptions {
    *
    * 时间格式化器
    */
-  modifyTimeGetter?: ModifyTimeGetter;
+  modifyTimeGetter?: PageModifyTimeGetter;
+
+  /**
+   * Whether enabled in devServer
+   *
+   * @description For performance reasons, we do not provide hot reload. Reboot your devServer to sync your changes.
+   *
+   * 是否在开发服务器中启用
+   *
+   * @description 由于性能原因，我们不提供热更新。重启开发服务器以同步你的变更。
+   *
+   * @default false
+   */
+  devServer?: boolean;
+
+  /**
+   * Hostname to use in devServer
+   *
+   * 开发服务器使用的主机名
+   *
+   * @default 'http://localhost:${port}'
+   */
+  devHostname?: string;
 
   /**
    * XML namespaces to turn on - all by default
