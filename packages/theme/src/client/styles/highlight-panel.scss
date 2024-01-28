@@ -4,7 +4,7 @@
   align-items: center;
   justify-content: center;
 
-  &:nth-child(2n) {
+  &:nth-child(odd) {
     .vp-highlight {
       flex-direction: row-reverse;
     }

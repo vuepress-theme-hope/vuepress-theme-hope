@@ -88,10 +88,8 @@ hr {
   transition: border-top-color var(--color-transition);
 }
 
-tr {
-  &:nth-child(2n) {
-    background: var(--bg-color-secondary);
-  }
+tr:nth-child(odd) {
+  background: var(--bg-color-secondary);
 }
 
 th,

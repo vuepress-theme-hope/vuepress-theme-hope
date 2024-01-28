@@ -188,7 +188,7 @@ table {
   border-collapse: collapse;
 }
 
-tr:nth-child(2n) {
+tr:nth-child(odd) {
   background: #f6f8fa;
 }
 

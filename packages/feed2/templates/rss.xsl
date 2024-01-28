@@ -209,14 +209,13 @@
             border-collapse: collapse;
           }
 
-          tr:nth-child(2n) {
-            background: #f6f8fa;
+          tr:nth-child(odd) {
+            background: var(--bg-color-back);
           }
 
           th,
           td {
             padding: 0.6em 1em;
-            border: 1px solid var(--border-color-dark);
             border: 1px solid var(--border-color-dark);
           } div[class*="language-"] {
             position: relative;

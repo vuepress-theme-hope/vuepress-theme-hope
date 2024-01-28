@@ -137,7 +137,7 @@
     display: block;
   }
 
-  &:nth-child(2) .vp-tab-title {
+  &:nth-child(n + 2) .vp-tab-title {
     border-top: none;
   }
 }

@@ -324,7 +324,7 @@
       tr {
         border: none;
 
-        &:nth-child(2n) {
+        &:nth-child(odd) {
           background: inherit !important;
         }
       }
