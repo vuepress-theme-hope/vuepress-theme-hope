@@ -39,9 +39,9 @@ export const ensureHostName = (
 
   if (hostname) {
     // make sure hostname do not end with `/`
-    options.hostname = isLinkHttp(hostname)
-      ? removeEndingSlash(hostname)
-      : `https://${removeEndingSlash(hostname)}`;
+    options.hostname = removeEndingSlash(
+      isLinkHttp(hostname) ? hostname : `https://${hostname}`,
+    );
 
     return true;
   }
