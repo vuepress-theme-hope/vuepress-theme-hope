@@ -121,7 +121,7 @@ exports[`Should generate page excerpt correctly > Should generate excerpt for al
 `;
 
 exports[`Should generate page excerpt correctly > Should generate excerpt for all pages 6`] = `
-"<p>This is a <a href="/demo.html" target="blank">link</a> referencing other markdown.</p>
+"<p>This is a <a href="/demo.html" target="_blank">link</a> referencing other markdown.</p>
 <p><img src="/logo.svg" alt="logo"></p>
 <p><img src="/logo.svg" alt="logo"></p>
 <p><img src="https://exmaple.com/logo.svg" alt="logo"></p>

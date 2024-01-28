@@ -102,7 +102,7 @@ const handleNode = (
     if (node.tagName === "routerlink" || node.tagName === "vplink") {
       node.tagName = "a";
       node.attribs["href"] = `${removeEndingSlash(base)}${node.attribs["to"]}`;
-      node.attribs["target"] = "blank";
+      node.attribs["target"] = "_blank";
       delete node.attribs["to"];
       node.children = handleNodes(node.children, base, isCustomElement);
 
