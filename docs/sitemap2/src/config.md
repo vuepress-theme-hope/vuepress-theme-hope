@@ -43,7 +43,7 @@ Whether enabled in devServer.
 
 For performance reasons, we do not provide hot reload. Reboot your devServer to sync your changes.
 
-::
+:::
 
 ### devHostname
 
