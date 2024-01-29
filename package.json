@@ -81,7 +81,7 @@
     "gulp": "4.0.2",
     "http-server": "14.1.1",
     "husky": "9.0.6",
-    "inquirer": "9.2.12",
+    "inquirer": "9.2.13",
     "magic-string": "0.30.5",
     "markdownlint-cli2": "0.12.1",
     "nano-staged": "0.8.0",
