@@ -17,7 +17,7 @@ E.g.:
 ```js
 export default {
   plugins: [
-    mdEnhancePlugins({
+    mdEnhancePlugin({
       checkLinks: {
         // only check links in dev mode
         status: "dev",

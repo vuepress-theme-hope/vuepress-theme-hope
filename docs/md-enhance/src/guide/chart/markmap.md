@@ -11,26 +11,26 @@ Let the Markdown file support markmap in your VuePress site.
 
 ## Settings
 
-Install `markmap-lib`, `markup-toolbar` and `markmap-view` in your project:
+Install `markmap-lib`, `markmap-toolbar` and `markmap-view` in your project:
 
 ::: code-tabs#shell
 
 @tab pnpm
 
 ```bash
-pnpm add -D markmap-lib markup-toolbar markmap-view
+pnpm add -D markmap-lib markmap-toolbar markmap-view
 ```
 
 @tab yarn
 
 ```bash
-yarn add -D markmap-lib markup-toolbar markmap-view
+yarn add -D markmap-lib markmap-toolbar markmap-view
 ```
 
 @tab npm
 
 ```bash
-npm i -D markmap-lib markup-toolbar markmap-view
+npm i -D markmap-lib markmap-toolbar markmap-view
 ```
 
 :::

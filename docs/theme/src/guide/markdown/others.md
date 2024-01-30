@@ -19,22 +19,26 @@ You can customize this feature through `plugins.mdEnhance.checkLinks` in theme o
 
 E.g.:
 
-```js
+```ts title=".vuepress/config.ts"
+import { hopeTheme } from "vuepress-theme-hope";
+
 export default {
-  plugins: [
-    mdEnhancePlugins({
-      checkLinks: {
-        // only check links in dev mode
-        status: "dev",
-        ignore: [
-          // ignore links starting with `/api/`
-          /^\/api\//,
-          // ignore `/playground.html`
-          "/playground.html",
-        ],
+  theme: hopeTheme({
+    plugins: {
+      mdEnhance: {
+        checkLinks: {
+          // only check links in dev mode
+          status: "dev",
+          ignore: [
+            // ignore links starting with `/api/`
+            /^\/api\//,
+            // ignore `/playground.html`
+            "/playground.html",
+          ],
+        },
       },
-    }),
-  ],
+    },
+  }),
 };
 ```
 

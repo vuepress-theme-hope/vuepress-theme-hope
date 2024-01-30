@@ -19,22 +19,26 @@ tag:
 
 例如:
 
-```js
+```ts title=".vuepress/config.ts"
+import { hopeTheme } from "vuepress-theme-hope";
+
 export default {
-  plugins: [
-    mdEnhancePlugins({
-      checkLinks: {
-        // 仅在开发模式下检查链接
-        status: "dev",
-        ignore: [
-          // 忽略以 `/api/` 开头的链接
-          /^\/api\//,
-          // 忽略 `/playground.html`
-          "/playground.html",
-        ],
+  theme: hopeTheme({
+    plugins: {
+      mdEnhance: {
+        checkLinks: {
+          // 仅在开发模式下检查链接
+          status: "dev",
+          ignore: [
+            // 忽略以 `/api/` 开头的链接
+            /^\/api\//,
+            // 忽略 `/playground.html`
+            "/playground.html",
+          ],
+        },
       },
-    }),
-  ],
+    },
+  }),
 };
 ```
 

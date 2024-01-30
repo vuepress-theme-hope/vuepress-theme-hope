@@ -17,7 +17,7 @@ icon: ellipsis
 ```js
 export default {
   plugins: [
-    mdEnhancePlugins({
+    mdEnhancePlugin({
       checkLinks: {
         // 仅在开发模式下检查链接
         status: "dev",
