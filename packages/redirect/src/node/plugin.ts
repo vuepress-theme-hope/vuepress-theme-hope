@@ -50,6 +50,8 @@ export const redirectPlugin =
       onInitialized: async (app): Promise<void> => {
         redirectMap = getRedirectMap(app, options);
 
+        if (app.env.isDebug) logger.info("Redirect Map:", redirectMap);
+
         handleRedirectTo(app, options);
 
         if (localeConfig.autoLocale)

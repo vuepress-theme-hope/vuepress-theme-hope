@@ -61,9 +61,7 @@ export const generateRedirects = async (
   hostname = "",
 ): Promise<void> => {
   const resolvedHostname = hostname
-    ? isLinkHttp(hostname)
-      ? removeEndingSlash(hostname)
-      : `https://${removeEndingSlash(hostname)}`
+    ? removeEndingSlash(isLinkHttp(hostname) ? hostname : `https://${hostname}`)
     : "";
 
   await withSpinner("Generating redirect files")(() =>
