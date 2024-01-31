@@ -1,11 +1,11 @@
+import { Logger, fromEntries, keys } from "@vuepress/helper/node";
 import type { App } from "vuepress/core";
 import type { LocaleConfig, LocaleData } from "vuepress/shared";
 
 import { lang2PathConfig, path2langConfig } from "./config.js";
 import type { HopeLang } from "./types.js";
 import type { RequiredLocaleConfig } from "../../shared/index.js";
-import { deepAssign, fromEntries, keys } from "../../shared/index.js";
-import { Logger } from "../utils/index.js";
+import { deepAssign } from "../../shared/index.js";
 
 /** Get language from path */
 export const path2Lang = (path = "", debug = false): HopeLang => {

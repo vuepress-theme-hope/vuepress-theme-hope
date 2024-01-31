@@ -54,5 +54,5 @@ tag:
 
 :::
 
-[docsearch]: https://vuejs.press/zh/reference/plugin/docsearch.html
-[search]: https://vuejs.press/zh/reference/plugin/search.html
+[docsearch]: https://ecosystem.vuejs.press/zh/plugins/docsearch.html
+[search]: https://ecosystem.vuejs.press/zh/plugins/search.html

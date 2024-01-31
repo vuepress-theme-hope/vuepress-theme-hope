@@ -59,11 +59,6 @@ const features = [
     link: getLink("copyright2"),
   },
   {
-    text: "Feed 插件",
-    icon: "rss",
-    link: getLink("feed2"),
-  },
-  {
     text: "LightGallery 插件",
     icon: "image",
     link: getLink("lightgallery"),
@@ -109,19 +104,9 @@ const features = [
     link: getLink("search-pro"),
   },
   {
-    text: "Seo 插件",
-    icon: "wrench",
-    link: getLink("seo2"),
-  },
-  {
     text: "VuePress 工具函数",
     icon: "toolbox",
     link: getLink("shared"),
-  },
-  {
-    text: "Sitemap 插件",
-    icon: "sitemap",
-    link: getLink("sitemap2"),
   },
 ];
 </script>

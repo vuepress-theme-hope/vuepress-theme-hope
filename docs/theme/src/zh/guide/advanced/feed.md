@@ -9,11 +9,11 @@ tag:
   - Feed
 ---
 
-`vuepress-theme-hope` 通过内置 <ProjectLink name="feed2" path="/zh/">`vuepress-plugin-feed2`</ProjectLink> 插件来为你提供 feed 支持。想使用它，你应该手动在你的项目中安装 `vuepress-plugin-feed2`。
+`vuepress-theme-hope` 通过内置 [`@vuepress/plugin-feed`][feed] 插件来为你提供 feed 支持。想使用它，你应该手动在你的项目中安装 `@vuepress/plugin-feed`。
 
 ::: info
 
-`vuepress-theme-hope` 将主题选项中的 `plugins.feed` 选项作为插件选项提供给 `vuepress-plugin-feed2`。
+`vuepress-theme-hope` 将主题选项中的 `plugins.feed` 选项作为插件选项提供给 `@vuepress/plugin-feed`。
 
 :::
 
@@ -21,7 +21,7 @@ tag:
 
 ## 使用
 
-`vuepress-plugin-feed2` 插件可为你生成以下三种格式的 feed 文件:
+`@vuepress/plugin-feed` 插件可为你生成以下三种格式的 feed 文件:
 
 - Atom 1.0
 - JSON 1.1
@@ -62,7 +62,7 @@ tag:
 
 :::
 
-详细的选项及其默认值详见 <ProjectLink name="feed2" path="/zh/config/channel.html">配置 → 频道设置</ProjectLink>。
+详细的选项及其默认值详见 [Feed 频道文档][feed-channel]。
 
 ## 生成控制
 
@@ -70,22 +70,17 @@ tag:
 
 默认情况下，所有文章均会被添加至 feed 流。
 
-关于默认情况下读取的内容，详见 <ProjectLink name="feed2" path="/zh/config/item.html">配置 → 项目控制</ProjectLink>。
+你可以通过配置 frontmatter 中的 `feed` 选项，对特定文章的 feed 项目生成的内容进行控制，详见 [Feed frontmatter 文档][feed-frontmatter]。
 
-### 自定义页面
-
-你可以通过配置 frontmatter 中的 `feed` 选项，对特定文章的 feed 项目生成的内容进行控制。
-
-详细的选项及其默认值详见 <ProjectLink name="feed2" path="/zh/config/item.html">配置 → 项目设置</ProjectLink>。
-
-### 自定义 Feed 生成
-
-你可以通过配置插件选项中的 `getter`，完全控制 Feed 项目的生成逻辑。
-
-详细的选项及其默认值详见 <ProjectLink name="feed2" path="/zh/config/getter.html">配置 → Feed 获取器</ProjectLink>。
+你可以通过配置插件选项中的 `getter`，完全控制 Feed 项目的生成逻辑，详见 [Feed 获取器文档][feed-getter]。
 
 ### 多语言配置
 
 插件会针对每个语言生成单独的 Feed。
 
 你可以通过插件选项中的 `locales` 分别对不同语言提供不同的默认设置。
+
+[feed]: https://ecosystem.vuejs.press/zh/plugins/feed/
+[feed-channel]: https://ecosystem.vuejs.press/zh/plugins/feed/channel.html
+[feed-frontmatter]: https://ecosystem.vuejs.press/zh/plugins/feed/frontmatter.html
+[feed-getter]: https://ecosystem.vuejs.press/zh/plugins/feed/getter.html

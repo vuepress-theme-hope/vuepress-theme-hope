@@ -9,13 +9,13 @@ tag:
   - SEO
 ---
 
-`vuepress-theme-hope` provides SEO enhancements via built-in <ProjectLink name="seo2">`vuepress-plugin-seo2`</ProjectLink>.
+`vuepress-theme-hope` provides SEO enhancements via built-in [`@vuepress/plugin-seo`][seo].
 
 To make the plugin work better, you may need to check the [page config](../../config/frontmatter/info.md) and configure them properly.
 
 ::: info
 
-`vuepress-theme-hope` passes `plugins.seo` in theme options as plugin options to `vuepress-plugin-seo2`.
+`vuepress-theme-hope` passes `plugins.seo` in theme options as plugin options to `@vuepress/plugin-seo`.
 
 :::
 
@@ -114,7 +114,7 @@ function ogp(
 ): SeoContent;
 ```
 
-For detailed parameter structure, see <ProjectLink name="seo2" path="/config.html">config</ProjectLink>.
+For detailed parameter structure, see [seo plugin config][seo-config].
 
 For example, if you are using a third-party theme and set a `banner` in frontmatter for each article according to the theme requirements, then you can pass in the following `ogp`:
 
@@ -213,3 +213,6 @@ As an internet marketing strategy, SEO considers how search engines work, the co
 ## Related Tools
 
 - [Google Rich Media Structure Test Tool](https://search.google.com/test/rich-results)
+
+[seo]: https://ecosystem.vuejs.press/plugins/seo/
+[seo-config]: https://ecosystem.vuejs.press/plugins/seo/config.html

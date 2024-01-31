@@ -16,7 +16,7 @@ try {
 /**
  * @private
  *
- * Resolve options for vuepress-plugin-feed2
+ * Resolve options for vuepress-plugin-redirect
  */
 export const getRedirectPlugin = (
   options: Omit<RedirectOptions, "hostname"> | boolean = false,

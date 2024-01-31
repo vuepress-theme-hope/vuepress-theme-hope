@@ -1,5 +1,5 @@
 import type { Page } from "vuepress/core";
-import { getDateInfo, timeTransformer } from "vuepress-shared/node";
+import { parseDate, timeTransformer } from "vuepress-shared/node";
 
 import type {
   ThemeBlogHomePageFrontmatter,
@@ -26,7 +26,7 @@ export const injectBlogBasicInfo = (
 
   // resolve date
   if ("date" in frontmatter) {
-    const date = getDateInfo(page.frontmatter.date)?.value;
+    const date = parseDate(page.frontmatter.date)?.value;
 
     if (date) {
       info[ArticleInfoType.date] = date.getTime();

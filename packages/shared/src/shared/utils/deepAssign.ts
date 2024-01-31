@@ -1,4 +1,4 @@
-import { entries, isArray, isPlainObject } from "./helper.js";
+import { entries, isArray, isPlainObject } from "@vuepress/helper/shared";
 
 // eslint-disable-next-line @typescript-eslint/no-explicit-any
 type IAnyObject = Record<string, any>;

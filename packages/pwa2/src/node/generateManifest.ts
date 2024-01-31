@@ -57,7 +57,7 @@ export const generateManifest = async (
   app: App,
   manifest: Promise<ManifestOption>,
 ): Promise<void> => {
-  logger.load("Generating manifest.webmanifest");
+  const { succeed } = logger.load("Generating manifest.webmanifest");
 
   const { dir } = app;
   const manifestPath = dir.dest("manifest.webmanifest");
@@ -66,8 +66,7 @@ export const generateManifest = async (
     flag: "w",
   });
 
-  logger.succeed();
-  logger.update(
+  succeed(
     `Manifest generated and saved to ${colors.cyan(
       path.relative(process.cwd(), manifestPath),
     )}!`,

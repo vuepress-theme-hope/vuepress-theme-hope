@@ -29,21 +29,6 @@ export const examplePlugin = (options) => (app) => {
 };
 ```
 
-## checkVersion
-
-Check if the version of VuePress is satisfied with the given range.
-
-```ts
-/**
- * Check if the version of VuePress is satisfied with the given range
- *
- * @param app VuePress app
- * @param name current package name
- * @param range version range
- */
-export const checkVersion = (app: App, name: string, range = "v2") => boolean;
-```
-
 ## hasGlobalInstallation
 
 Check if a package manager is installed globally.

@@ -1,4 +1,4 @@
-import { keys } from "../../shared/index.js";
+import { keys } from "@vuepress/helper/client";
 
 export class Popup {
   private containerElement: HTMLElement;

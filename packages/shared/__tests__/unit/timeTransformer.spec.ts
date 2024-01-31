@@ -6,10 +6,10 @@ describe("timeTransformer", () => {
   describe("Should parse day", () => {
     it("date string", () => {
       expect(
-        timeTransformer("2020-04-04T00:00:00.000Z", {
+        timeTransformer("2020-04-04T02:00:00.000Z", {
           timezone: "Asia/Shanghai",
         }),
-      ).toEqual("April 4, 2020 8:00 AM");
+      ).toEqual("April 4, 2020 10:00 AM");
 
       expect(
         timeTransformer("2020-04-04T00:00:00.000Z", {
@@ -85,10 +85,10 @@ describe("timeTransformer", () => {
 
   it("Should handle language", () => {
     expect(
-      timeTransformer("2020-04-04T00:00:00.000Z", {
+      timeTransformer("2020-04-04T02:00:00.000Z", {
         timezone: "Asia/Shanghai",
         lang: "zh-CN",
       }),
-    ).toEqual("2020年4月4日早上8点00分");
+    ).toEqual("2020年4月4日上午10点00分");
   });
 });

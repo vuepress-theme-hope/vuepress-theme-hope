@@ -17,7 +17,7 @@
   },
   "devDependencies": {
     "@vue/repl": "3.4.0",
-    "@vuepress/plugin-docsearch": "2.0.0-rc.1",
+    "@vuepress/plugin-docsearch": "2.0.0-rc.3",
     "@waline/client": "3.0.0-alpha.11",
     "chart.js": "4.4.1",
     "echarts": "5.4.3",

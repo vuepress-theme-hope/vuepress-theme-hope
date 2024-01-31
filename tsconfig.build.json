@@ -10,7 +10,6 @@
     { "path": "./packages/copy-code2/tsconfig.build.json" },
     { "path": "./packages/copyright2/tsconfig.build.json" },
     { "path": "./packages/create/tsconfig.build.json" },
-    { "path": "./packages/feed2/tsconfig.build.json" },
     { "path": "./packages/lightgallery/tsconfig.build.json" },
     { "path": "./packages/md-enhance/tsconfig.build.json" },
     { "path": "./packages/photo-swipe/tsconfig.build.json" },
@@ -20,9 +19,7 @@
     { "path": "./packages/redirect/tsconfig.build.json" },
     { "path": "./packages/sass-palette/tsconfig.build.json" },
     { "path": "./packages/search-pro/tsconfig.build.json" },
-    { "path": "./packages/seo2/tsconfig.build.json" },
     { "path": "./packages/shared/tsconfig.build.json" },
-    { "path": "./packages/sitemap2/tsconfig.build.json" },
     { "path": "./packages/theme/tsconfig.build.json" }
   ],
   "files": []

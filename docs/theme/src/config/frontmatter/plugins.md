@@ -11,7 +11,7 @@ tag:
 
 You can configure the following options in the frontmatter of the page to control plugin behavior.
 
-## `copyright2` Plugin
+## Options for `vuepress-plugin-copyright2`
 
 ### copy.triggerLength
 
@@ -34,7 +34,7 @@ Disable copy
 
 Disable selection
 
-## `feed2` Plugin
+## Options for `@vuepress/plugin-feed`
 
 ### feed.title
 
@@ -142,7 +142,7 @@ You should make sure this is globally unique.
 
 :::
 
-## `sitemap2` Plugin
+## Options for `@vuepress/sitemap`
 
 ### sitemap.changefreq
 

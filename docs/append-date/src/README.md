@@ -91,4 +91,4 @@ Frontmatter key to use when appending date.
 
 Format of the date value when appending date.
 
-[git]: https://vuejs.press/reference/plugin/git.html
+[git]: https://ecosystem.vuejs.press/plugins/git.html

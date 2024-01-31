@@ -9,11 +9,11 @@ tag:
   - Feed
 ---
 
-The theme adds feed support with <ProjectLink name="feed2">`vuepress-plugin-feed2`</ProjectLink>. To use it, install `vuepress-plugin-feed2` manually in your project.
+The theme adds feed support with [`@vuepress/plugin-feed`][feed]. To use it, install `@vuepress/plugin-feed` manually in your project.
 
 ::: info
 
-`vuepress-theme-hope` provides `plugins.feed` in theme options to `vuepress-plugin-feed2`.
+`vuepress-theme-hope` provides `plugins.feed` in theme options to `@vuepress/plugin-feed`.
 
 :::
 
@@ -21,7 +21,7 @@ The theme adds feed support with <ProjectLink name="feed2">`vuepress-plugin-feed
 
 ## Enable Feed Output
 
-The `vuepress-plugin-feed2` plugin can generate feed files in the following three formats for you:
+The `@vuepress/plugin-feed` plugin can generate feed files in the following three formats for you:
 
 - Atom 1.0
 - JSON 1.1
@@ -60,30 +60,23 @@ We recommend the following settings:
 
 :::
 
-For detailed options and their default values, see <ProjectLink name="feed2" path="/config/channel.html">Feed Channel Config</ProjectLink>.
+For detailed options and their default values, see [Feed Channel Docs][feed-channel].
 
 ## Generation Control
 
-### Default Generation
-
 By default, all articles are added to the feed stream.
 
-For the content read by default, see <ProjectLink name="feed2" path="/config/item.html">Configuration → Item Control</ProjectLink>.
+You can control how feed item is generated in specific article by configuring the `feed` option in frontmatter, check [Feed frontmatter Docs][feed-frontmatter] for details.
 
-### Customize Feed item
-
-You can control how feed item is generated in specific article by configuring the `feed` option in frontmatter.
-
-For detailed options and their default values, see <ProjectLink name="feed2" path="/config/item.html">Configuration → Project Settings</ProjectLink>.
-
-### Customize Feed Generation
-
-You can take full control of feed items generation by configuring the `plugins.feed.getter`.
-
-For detailed options and their default values, see <ProjectLink name="feed2" path="/config/getter.html">Configuration → Feed Getter</ProjectLink>.
+You can take full control of feed items generation by configuring the `plugins.feed.getter`, check [Feed Getter Docs][feed-getter] for details.
 
 ### I18n Config
 
 The plugin generates separate feeds for each language.
 
 You can provide different settings for different languages via `plugins.feed.locales`.
+
+[feed]: https://ecosystem.vuejs.press/plugins/feed/
+[feed-channel]: https://ecosystem.vuejs.press/plugins/feed/channel.html
+[feed-frontmatter]: https://ecosystem.vuejs.press/plugins/feed/frontmatter.html
+[feed-getter]: https://ecosystem.vuejs.press/plugins/feed/getter.html

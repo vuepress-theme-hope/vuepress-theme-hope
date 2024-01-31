@@ -19,7 +19,7 @@ describe("generateIndex", () => {
   it("Should generate index", () => {
     app.pages.forEach((page) => {
       page.data["excerpt"] = getPageExcerpt(app, page, {
-        excerptLength: 0,
+        length: 0,
       });
 
       expect(generatePageIndex(page)).toMatchSnapshot();
@@ -29,7 +29,7 @@ describe("generateIndex", () => {
   it("Should generate full index", () => {
     app.pages.forEach((page) => {
       page.data["excerpt"] = getPageExcerpt(app, page, {
-        excerptLength: 0,
+        length: 0,
       });
 
       expect(generatePageIndex(page, [], true)).toMatchSnapshot();
@@ -39,7 +39,7 @@ describe("generateIndex", () => {
   it("Should support customFields", () => {
     app.pages.forEach((page) => {
       page.data["excerpt"] = getPageExcerpt(app, page, {
-        excerptLength: 0,
+        length: 0,
       });
 
       expect(

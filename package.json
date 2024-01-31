@@ -180,6 +180,9 @@
       "glob-parent": "^6.0.2",
       "micromatch": "^4.0.5",
       "yargs-parser": "^21.1.1"
+    },
+    "patchedDependencies": {
+      "@vuepress/helper@2.0.0-rc.4": "patches/@vuepress__helper@2.0.0-rc.4.patch"
     }
   }
 }

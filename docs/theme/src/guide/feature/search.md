@@ -38,7 +38,7 @@ The theme adds built-in support for <ProjectLink name="search-pro">`vuepress-plu
        "https://YOUR_WEBSITE_URL/",
      ],
      sitemaps: [
-       // if you are using sitemap plugins (e.g.: vuepress-plugin-sitemap2), you may provide one
+       // if you are using sitemap plugins (e.g.: @vuepress/plugin-sitemap), you may provide one
        "https://YOUR_WEBSITE_URL/sitemap.xml",
      ],
      ignoreCanonicalTo: false,
@@ -384,5 +384,5 @@ See [Plugin Docs][search] for available options.
 
 :::
 
-[docsearch]: https://vuejs.press/reference/plugin/docsearch.html
-[search]: https://vuejs.press/reference/plugin/search.html
+[docsearch]: https://ecosystem.vuejs.press/plugins/docsearch.html
+[search]: https://ecosystem.vuejs.press/plugins/search.html

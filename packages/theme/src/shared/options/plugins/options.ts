@@ -1,20 +1,20 @@
 import type { DocsearchPluginOptions } from "@vuepress/plugin-docsearch";
+import type { FeedPluginOptions } from "@vuepress/plugin-feed";
 import type { GitPluginOptions } from "@vuepress/plugin-git";
 import type { SearchPluginOptions } from "@vuepress/plugin-search";
+import type { SeoPluginOptions } from "@vuepress/plugin-seo";
+import type { SitemapPluginOptions } from "@vuepress/plugin-sitemap";
 import type { AutoCatalogOptions } from "vuepress-plugin-auto-catalog";
 import type { CommentPluginOptions } from "vuepress-plugin-comment2";
 import type { ComponentOptions } from "vuepress-plugin-components";
 import type { CopyCodeOptions } from "vuepress-plugin-copy-code2";
 import type { CopyrightOptions } from "vuepress-plugin-copyright2";
-import type { FeedOptions } from "vuepress-plugin-feed2";
 import type { MarkdownEnhanceOptions } from "vuepress-plugin-md-enhance";
 import type { PhotoSwipeOptions } from "vuepress-plugin-photo-swipe";
 import type { PWAOptions } from "vuepress-plugin-pwa2";
 import type { ReadingTimeOptions } from "vuepress-plugin-reading-time2";
 import type { RedirectOptions } from "vuepress-plugin-redirect";
 import type { SearchProOptions } from "vuepress-plugin-search-pro";
-import type { SeoOptions } from "vuepress-plugin-seo2";
-import type { SitemapOptions } from "vuepress-plugin-sitemap2";
 
 import type { BlogPluginOptions } from "./blog.js";
 import type { PrismjsOptions } from "./prism.js";
@@ -120,13 +120,13 @@ export interface PluginsOptions {
   /**
    * Feed plugin options
    *
-   * @see https://plugin-feed2.vuejs.press/config/
+   * @see https://ecosystem.vuejs.press/plugins/feed/config.html
    *
    * Feed 插件配置
    *
-   * @see https://plugin-feed2.vuejs.press/zh/config/
+   * @see https://ecosystem.vuejs.press/zh/plugins/feed/config.html
    */
-  feed?: Omit<FeedOptions, "hostname"> | boolean;
+  feed?: Omit<FeedPluginOptions, "hostname"> | boolean;
 
   /**
    * Git plugin options
@@ -276,26 +276,26 @@ export interface PluginsOptions {
   /**
    * SEO plugin options
    *
-   * @see https://plugin-seo2.vuejs.press/config/
+   * @see https://ecosystem.vuejs.press/plugins/seo/config.html
    *
    * SEO 插件配置
    *
-   * @see https://plugin-seo2.vuejs.press/zh/config/
+   * @see https://ecosystem.vuejs.press/zh/plugins/seo/config.html
    *
    * @default true
    */
-  seo?: Omit<SeoOptions, "hostname" | "author"> | boolean;
+  seo?: Omit<SeoPluginOptions, "hostname" | "author"> | boolean;
 
   /**
    * Sitemap plugin options
    *
-   * @see https://plugin-sitemap2.vuejs.press/config/
+   * @see https://ecosystem.vuejs.press/plugins/sitemap/config.html
    *
    * Sitemap 插件配置
    *
-   * @see https://plugin-sitemap2.vuejs.press/zh/config/
+   * @see https://ecosystem.vuejs.press/zh/plugins/sitemap/config.html
    *
    * @default true
    */
-  sitemap?: Omit<SitemapOptions, "hostname"> | boolean;
+  sitemap?: Omit<SitemapPluginOptions, "hostname"> | boolean;
 }

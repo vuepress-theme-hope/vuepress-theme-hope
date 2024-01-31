@@ -1,0 +1,22 @@
+diff --git a/lib/client/composables/useLocaleConfig.d.ts b/lib/client/composables/useLocaleConfig.d.ts
+index 4cfeb0c828ba5dfae773fba0b460d413e58e2df6..422f763d1cee8f07baffd90bf13cbc7170616f78 100644
+--- a/lib/client/composables/useLocaleConfig.d.ts
++++ b/lib/client/composables/useLocaleConfig.d.ts
+@@ -1,9 +1,14 @@
+-import type { ComputedRef } from 'vue';
+-import type { LocaleConfig, LocaleData } from 'vuepress/shared';
++import type { ComputedRef } from "vue";
++import type { LocaleData } from "vuepress/shared";
++
++export type ExactLocaleConfig<T extends LocaleData> = Record<string, T>;
++
+ /**
+  * Get current locale config
+  *
+  * @param localesConfig client locale Config
+  * @returns current locale config
+  */
+-export declare const useLocaleConfig: <T extends LocaleData>(localesConfig: LocaleConfig<T>) => ComputedRef<Partial<T>>;
++export declare const useLocaleConfig: <T extends LocaleData>(
++  localesConfig: ExactLocaleConfig<T>
++) => ComputedRef<T>;

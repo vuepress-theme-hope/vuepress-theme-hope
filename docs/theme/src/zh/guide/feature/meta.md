@@ -53,4 +53,4 @@ tag:
 - `contributors`: 是否显示页面贡献者
 - `editLink`: 是否展示编辑此页链接
 
-[git]: https://vuejs.press/zh/reference/plugin/git.html
+[git]: https://ecosystem.vuejs.press/zh/plugins/git.html

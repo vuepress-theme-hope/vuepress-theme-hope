@@ -12,13 +12,13 @@ tag:
 
 ## Intro
 
-The theme can generate feeds via `vuepress-plugin-feed2`, and you need to **manually install the plugin** before using.
+The theme can generate feeds via `@vuepress/plugin-feed`, and you need to **manually install the plugin** before using.
 
 You can enable this feature by setting `plugins.feed` to `true` in theme options. This default behavior generates RSS format feeds for you.
 
 ## Plugin Options
 
-The theme passes `plugins.feed` in theme options as plugin options to `vuepress-plugin-feed2` plugin.
+The theme passes `plugins.feed` in theme options as plugin options to `@vuepress/plugin-feed` plugin.
 
 You can pass your own options with `plugins.feed`, here are some common ones:
 
@@ -79,6 +79,8 @@ The default sorting behavior is by file adding time coming from git (needs `@vue
 
 ::: info
 
-Check <ProjectLink name="feed2" path="/config/">feed2 plugin documentation</ProjectLink> for all available options.
+Check [feed plugin documentation][feed-config] for all available options.
 
 :::
+
+[feed-config]: https://ecosystem.vuejs.press/plugins/feed/

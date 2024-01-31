@@ -57,8 +57,8 @@ export const blogPlugin =
         if (excerpt && excerptFilter(page))
           (<PageWithExcerpt>page).data["excerpt"] = getPageExcerpt(app, page, {
             isCustomElement,
-            excerptSeparator,
-            excerptLength,
+            separator: excerptSeparator,
+            length: excerptLength,
           });
       },
 

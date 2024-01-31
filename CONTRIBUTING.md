@@ -48,7 +48,6 @@ The project is a monorepo, managed by pnpm.
 │ ├── comment → comment2 plugin document
 │ ├── components → components plugin document
 │ ├── copy-code → copy-code2 plugin document
-│ ├── feed → feed2 plugin document
 │ ├── lightgallery → lightgallery plugin document
 │ ├── md-enhance → md-enhance plugin document
 │ ├── photo-swipe → photo-swipe document
@@ -59,7 +58,6 @@ The project is a monorepo, managed by pnpm.
 │ ├── sass-palette → sass-palette plugin document
 │ ├── shared → vuepress-shared document
 │ ├── search-pro → search-pro plugin document
-│ ├── seo → seo2 plugin document
 │ └── theme → theme document
 │
 ├── docs-shared → common files for docs
@@ -71,7 +69,6 @@ The project is a monorepo, managed by pnpm.
 │ ├── components → components plugin
 │ ├── copy-code2 → copy-code2 plugin
 │ ├── create → create-vuepress-theme-hope helper
-│ ├── feed2 → feed2 plugin
 │ ├── lightgallery → lightgallery plugin
 │ ├── md-enhance → md-enhance plugin
 │ ├── photo-swipe → photo-swipe plugin
@@ -81,9 +78,7 @@ The project is a monorepo, managed by pnpm.
 │ ├── rtl → rtl plugin
 │ ├── sass-palette → sass-palette plugin
 │ ├── search-pro → search-pro plugin
-│ ├── seo2 → seo2 plugin
 │ ├── shared → shared file
-│ ├── sitemap2 → sitemap2 plugin
 │ └── theme → vuepress-theme-hope theme
 │
 ├── scripts → command scripts

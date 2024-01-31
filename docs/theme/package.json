@@ -21,6 +21,7 @@
   },
   "dependencies": {
     "@types/katex": "0.16.7",
+    "@vuepress/plugin-feed": "2.0.0-rc.4",
     "@vueuse/core": "10.7.2",
     "artplayer": "5.1.1",
     "docs-shared": "workspace:*",
@@ -34,7 +35,6 @@
     "vuepress-plugin-components": "workspace:*",
     "vuepress-plugin-copy-code2": "workspace:*",
     "vuepress-plugin-copyright2": "workspace:*",
-    "vuepress-plugin-feed2": "workspace:*",
     "vuepress-plugin-md-enhance": "workspace:*",
     "vuepress-shared": "workspace:*",
     "vuepress-theme-hope": "workspace:*"

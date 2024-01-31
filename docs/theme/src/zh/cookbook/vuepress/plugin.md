@@ -18,7 +18,7 @@ tag:
 
 社区用户创建了很多插件，并将它们发布到了 [NPM](https://www.npmjs.com/search?q=keywords:vuepress-plugin) 上。 VuePress 团队也在 [@vuepress](https://www.npmjs.com/search?q=%40vuepress%20keywords%3Aplugin) Scope 下维护了一些官方插件。查看插件本身的文档可以获取更详细的指引。
 
-一般而言，你需要将插件放入到 [plugins](https://vuejs.press/zh/reference/config.html#plugins) 配置项中来使用它。举例来说，你可以使用 [@vuepress/plugin-google-analytics](https://vuejs.press/zh/reference/plugin/google-analytics.html) 来使用 Google Analytics :
+一般而言，你需要将插件放入到 [plugins](https://vuejs.press/zh/reference/config.html#plugins) 配置项中来使用它。举例来说，你可以使用 [@vuepress/plugin-google-analytics](https://ecosystem.vuejs.press/zh/plugins/google-analytics.html) 来使用 Google Analytics :
 
 ```js
 import { googleAnalyticsPlugin } from "@vuepress/plugin-google-analytics";
@@ -36,7 +36,7 @@ export default {
 
 大部分插件只能使用一次，如果同一个插件被多次使用，那么只有最后一次会生效。
 
-然而，部分插件是可以被多次使用的 (例如 [@vuepress/plugin-container](https://vuejs.press/zh/reference/plugin/container.html))，你应该查看插件本身的文档来获取详细指引。
+然而，部分插件是可以被多次使用的 (例如 [@vuepress/plugin-container](https://ecosystem.vuejs.press/zh/plugins/container.html))，你应该查看插件本身的文档来获取详细指引。
 
 :::
 

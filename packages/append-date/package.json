@@ -43,7 +43,7 @@
     "vuepress-shared": "workspace:*"
   },
   "peerDependencies": {
-    "@vuepress/plugin-git": "2.0.0-rc.1",
+    "@vuepress/plugin-git": "2.0.0-rc.3",
     "vuepress": "2.0.0-rc.2"
   },
   "engines": {

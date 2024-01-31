@@ -22,7 +22,11 @@ export type PageWithExcerpt<
   ExtraPageFields extends Record<any, any> = Record<string, unknown>,
 > = Page<ExtraPageData, ExtraPageFrontmatter, ExtraPageFields>;
 
-export interface BlogOptions extends PageExcerptOptions {
+export interface BlogOptions
+  extends Pick<
+    PageExcerptOptions,
+    "isCustomElement" | "keepPageTitle" | "keepFenceDom"
+  > {
   /**
    * Function getting article info.
    *
@@ -93,6 +97,27 @@ export interface BlogOptions extends PageExcerptOptions {
    * @default false
    */
   excerpt?: boolean;
+
+  /**
+   * Excerpt separator
+   *
+   * 摘要分隔符
+   *
+   * @default "<!-- more -->"
+   */
+  excerptSeparator?: string;
+  /**
+   * Length of excerpt
+   *
+   * @description Excerpt length will be the minimal possible length reaching this value
+   *
+   * 摘要的长度
+   *
+   * @description 摘要的长度会尽可能的接近这个值
+   *
+   * @default 300
+   */
+  excerptLength?: number;
 
   /**
    * Page filter, determine whether the plugin should generate excerpt for it.

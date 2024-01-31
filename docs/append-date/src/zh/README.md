@@ -91,4 +91,4 @@ export default {
 
 追加时间时使用的日期格式。
 
-[git]: https://vuejs.press/zh/reference/plugin/git.html
+[git]: https://ecosystem.vuejs.press/zh/plugins/git.html

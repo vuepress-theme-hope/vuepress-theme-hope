@@ -1,6 +1,7 @@
 /* eslint-disable @typescript-eslint/naming-convention */
+import { fromEntries, keys } from "@vuepress/helper/node";
+
 import type { HopeLang } from "./types.js";
-import { fromEntries, keys } from "../../shared/index.js";
 
 export const lang2PathConfig = {
   "de-AT": "/de-at/",

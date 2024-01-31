@@ -207,9 +207,6 @@ root((VuePress))
       (photo-swipe)
       (copy-code2)
       (copyright2)
-      (feed2)
-      (sitemap2)
-      (seo2)
 ```
 
 ### Timeline

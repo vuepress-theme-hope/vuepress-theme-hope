@@ -60,7 +60,7 @@ export const getPluginConfig = (
     getCopyCodePlugin(plugins.copyCode, legacy),
     getCopyrightPlugin(themeData, plugins.copyright, options.hostname, legacy),
     // seo should work before feed
-    getSEOPlugin(themeData, plugins, options.hostname, legacy),
+    getSEOPlugin(themeData, plugins, options.hostname),
     getFeedPlugin(
       themeData,
       plugins.feed,
@@ -72,7 +72,7 @@ export const getPluginConfig = (
     getPhotoSwipePlugin(plugins.photoSwipe, legacy),
     getPWAPlugin(plugins.pwa, options.favicon, legacy),
     getSearchPlugin(app, themeData, plugins),
-    getSitemapPlugin(plugins.sitemap, options.hostname, legacy),
+    getSitemapPlugin(plugins.sitemap, options.hostname),
     getRtlPlugin(themeData),
     getRedirectPlugin(plugins.redirect, options.hostname, legacy),
   ].filter((item) => item !== null) as PluginConfig;

@@ -115,18 +115,20 @@ Check <ProjectLink name="reading-time2" path="/config.html">reading-time2 plugin
 
 ## seo <Badge text="enabled by default" />
 
-Controls `vuepress-plugin-seo2` which provides search engine enhancements.
+Controls `@vuepress/plugin-seo` which provides search engine enhancements.
 
 No extra config is required by default. Se it to `false` if you don't need it.
 
-Check <ProjectLink name="seo2" path="/config.html">seo2 plugin docs</ProjectLink> for available plugin options.
+Check [seo plugin docs][seo-config] for available plugin options.
 
 ## sitemap <Badge text="enabled by default" />
 
-Controls `vuepress-plugin-seo2` which provides sitemap.
+Controls `@vuepress/plugin-sitemap` which provides sitemap.
 
 No extra config is required by default. Se it to `false` if you don't need it.
 
-Check <ProjectLink name="sitemap2" path="/config.html">sitemap2 plugin docs</ProjectLink> for available plugin options.
+Check [sitemap plugin docs][sitemap-config] for available plugin options.
 
-[git-config]: https://vuejs.press/reference/plugin/git.html
+[git-config]: https://ecosystem.vuejs.press/plugins/git.html
+[seo-config]: https://ecosystem.vuejs.press/plugins/sitemap/
+[sitemap-config]: https://ecosystem.vuejs.press/plugins/seo/

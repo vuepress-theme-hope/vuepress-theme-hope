@@ -103,15 +103,6 @@ jobs:
           token: ${{ secrets.ACCESS_TOKEN }}
           single-commit: true
 
-      - name: Deploy feed2 docs
-        uses: JamesIves/github-pages-deploy-action@v4
-        with:
-          repository-name: vuepress-theme-hope/feed2-docs
-          branch: netlify
-          folder: docs/feed2/dist
-          token: ${{ secrets.ACCESS_TOKEN }}
-          single-commit: true
-
       - name: Deploy lightgallery docs
         uses: JamesIves/github-pages-deploy-action@v4
         with:
@@ -202,30 +193,12 @@ jobs:
           token: ${{ secrets.ACCESS_TOKEN }}
           single-commit: true
 
-      - name: Deploy seo2 docs
-        uses: JamesIves/github-pages-deploy-action@v4
-        with:
-          repository-name: vuepress-theme-hope/seo2-docs
-          branch: netlify
-          folder: docs/seo2/dist
-          token: ${{ secrets.ACCESS_TOKEN }}
-          single-commit: true
-
       - name: Deploy shared docs
         uses: JamesIves/github-pages-deploy-action@v4
         with:
           repository-name: vuepress-theme-hope/shared-docs
           branch: netlify
           folder: docs/shared/dist
-          token: ${{ secrets.ACCESS_TOKEN }}
-          single-commit: true
-
-      - name: Deploy sitemap2 docs
-        uses: JamesIves/github-pages-deploy-action@v4
-        with:
-          repository-name: vuepress-theme-hope/sitemap2-docs
-          branch: netlify
-          folder: docs/sitemap2/dist
           token: ${{ secrets.ACCESS_TOKEN }}
           single-commit: true
 
@@ -280,7 +253,6 @@ jobs:
           pnpm cpx "docs/components/dist/**" dist/components
           pnpm cpx "docs/copy-code2/dist/**" dist/copy-code
           pnpm cpx "docs/copyright2/dist/**" dist/copyright
-          pnpm cpx "docs/feed2/dist/**" dist/feed
           pnpm cpx "docs/lightgallery/dist/**" dist/lightgallery
           pnpm cpx "docs/md-enhance/dist/**" dist/md-enhance
           pnpm cpx "docs/photo-swipe/dist/**" dist/photo-swipe
@@ -291,9 +263,7 @@ jobs:
           pnpm cpx "docs/rtl/dist/**" dist/rtl
           pnpm cpx "docs/sass-palette/dist/**" dist/sass-palette
           pnpm cpx "docs/search-pro/dist/**" dist/search-pro
-          pnpm cpx "docs/seo2/dist/**" dist/seo
           pnpm cpx "docs/shared/dist/**" dist/shared
-          pnpm cpx "docs/sitemap2/dist/**" dist/sitemap
           pnpm cpx "docs/theme/dist/**" dist
 
       - name: Deploy
@@ -381,7 +351,6 @@ jobs:
           - components
           - copy-code2
           - copyright2
-          - feed2
           - lightgallery
           - md-enhance
           - photo-swipe
@@ -390,8 +359,6 @@ jobs:
           - redirect
           - sass-palette
           - search-pro
-          - seo2
-          - sitemap2
 
     steps:
       - name: Checkout

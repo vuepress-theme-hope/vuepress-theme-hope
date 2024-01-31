@@ -3,8 +3,8 @@ import { useSassPalettePlugin } from "vuepress-plugin-sass-palette";
 import {
   addViteOptimizeDepsExclude,
   addViteSsrNoExternal,
+  customizeDevServer,
   getLocales,
-  useCustomDevServer,
 } from "vuepress-shared/node";
 
 import { convertOptions } from "./compact.js";
@@ -61,7 +61,7 @@ export const pwaPlugin =
         ]);
         addViteSsrNoExternal(bundlerOptions, app, "vuepress-shared");
 
-        useCustomDevServer(bundlerOptions, app, {
+        customizeDevServer(bundlerOptions, app, {
           path: "/manifest.webmanifest",
           response: async (_, response) => {
             response.setHeader("Content-Type", "application/manifest+json");

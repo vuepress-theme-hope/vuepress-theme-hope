@@ -28,7 +28,7 @@ But if a component is large and only used in certain pages or layouts, it is rec
 
 You can automatically register components via the `@vuepress/plugin-register-components` plugin.
 
-For details about how to use the plugin, see [Official Documentation](https://vuejs.press/reference/plugin/register-components.html).
+For details about how to use the plugin, see [Official Documentation](https://ecosystem.vuejs.press/plugins/register-components.html).
 
 ## Register via ClientConfigFile
 
