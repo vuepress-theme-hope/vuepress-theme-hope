@@ -1,4 +1,4 @@
-import { parseDate } from "@vuepress/helper/client";
+import { getDate } from "@vuepress/helper/client";
 import type { ComputedRef, Ref } from "vue";
 import { computed, toRef } from "vue";
 import {
@@ -45,7 +45,7 @@ export const useArticleCategory = (info: Ref<ArticleInfo>): CategoryRef => {
     getCategory(info.value[ArticleInfoType.category]).map((name) => ({
       name,
       path: categoryMap.value.map[name].path,
-    })),
+    }))
   );
 };
 
@@ -58,7 +58,7 @@ export const useArticleTag = (info: Ref<ArticleInfo>): TagRef => {
     getTag(info.value[ArticleInfoType.tag]).map((name) => ({
       name,
       path: tagMap.value.map[name].path,
-    })),
+    }))
   );
 };
 
@@ -68,7 +68,7 @@ export const useArticleDate = (info: Ref<ArticleInfo>): DateRef =>
   computed(() => {
     const { [ArticleInfoType.date]: timestamp } = info.value;
 
-    return parseDate(timestamp)?.value || null;
+    return getDate(timestamp);
   });
 
 export const useArticleInfo = (props: {
@@ -99,7 +99,7 @@ export const useArticleInfo = (props: {
       readingTimeLocaleConfig.value
         ? getReadingTimeLocale(
             articleInfo.value[ArticleInfoType.readingTime],
-            readingTimeLocaleConfig.value,
+            readingTimeLocaleConfig.value
           )
         : null,
     pageview: props.path,

@@ -1,4 +1,4 @@
-import { parseDate } from "@vuepress/helper/node";
+import { getDate } from "@vuepress/helper/node";
 import type { GitPluginPageData } from "@vuepress/plugin-git";
 import type { Page } from "vuepress/core";
 
@@ -30,33 +30,36 @@ export interface DateOptions {
 
 export const timeTransformer = (
   date: string | Date | undefined,
-  options: DateOptions = {},
+  options: DateOptions = {}
 ): string | null => {
-  const result = parseDate(date);
+  const result = getDate(date);
 
-  if (result?.value) {
-    const { lang, timezone, type = result.type } = options;
+  if (result) {
+    const { lang, timezone } = options;
 
     dayjs.locale(getLocale(lang));
 
     const parsed = timezone
-      ? dayjs(result.value.toISOString()).tz(timezone)
-      : dayjs(result.value);
+      ? dayjs(result.toISOString()).tz(timezone)
+      : dayjs(result);
+    const isDate =
+      parsed.hour() === 0 &&
+      parsed.minute() === 0 &&
+      parsed.second() === 0 &&
+      parsed.millisecond() === 0;
 
-    return parsed.format(
-      type === "date" ? "LL" : type === "time" ? "HH:mm" : "LLL",
-    );
+    return parsed.format(isDate ? "LL" : "LLL");
   }
 
   return null;
 };
 
 export const injectLocalizedDate = (
-  page: Page<{ localizedDate?: string | null } & Partial<GitPluginPageData>>,
+  page: Page<{ localizedDate?: string | null } & Partial<GitPluginPageData>>
 ): void => {
   if (!page.data.localizedDate)
     if (page.frontmatter.date) {
-      const date = parseDate(page.frontmatter.date)?.value;
+      const date = getDate(page.frontmatter.date);
 
       if (date)
         page.data.localizedDate = timeTransformer(date, {
@@ -69,7 +72,7 @@ export const injectLocalizedDate = (
         {
           lang: page.lang,
           type: "date",
-        },
+        }
       );
     }
 };

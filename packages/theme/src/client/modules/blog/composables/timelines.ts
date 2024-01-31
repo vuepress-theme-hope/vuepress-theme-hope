@@ -1,4 +1,4 @@
-import { parseDate } from "@vuepress/helper/client";
+import { getDate } from "@vuepress/helper/client";
 import type { ComputedRef, InjectionKey } from "vue";
 import { computed, inject, provide } from "vue";
 import type { Article } from "vuepress-plugin-blog2/client";
@@ -21,7 +21,7 @@ export type TimelinesRef = ComputedRef<{
 }>;
 
 export const timelinesSymbol: InjectionKey<TimelinesRef> = Symbol(
-  __VUEPRESS_DEV__ ? "timelines" : "",
+  __VUEPRESS_DEV__ ? "timelines" : ""
 );
 
 /**
@@ -46,23 +46,23 @@ export const setupTimelines = (): void => {
 
     // filter before sort
     timelines.value.items.forEach(({ info, path }) => {
-      const { type, value } = parseDate(info[ArticleInfoType.date]) || {};
+      const result = getDate(info[ArticleInfoType.date]);
 
-      if (type === "date" || type === "full") {
-        const year = value!.getFullYear();
-        const month = value!.getMonth() + 1;
-        const day = value!.getDate();
+      if(result){
 
+        const year = result!.getFullYear();
+        const month = result!.getMonth() + 1;
+        const day = result!.getDate();
+        
         if (!timelineItems[0] || timelineItems[0].year !== year)
-          timelineItems.unshift({ year, items: [] });
-
-        timelineItems[0].items.push({
-          date: `${month}/${day}`,
-          info,
-          path,
-        });
-      }
-    });
+        timelineItems.unshift({ year, items: [] });
+      
+      timelineItems[0].items.push({
+        date: `${month}/${day}`,
+        info,
+        path,
+      });
+    }
 
     return {
       ...timelines.value,

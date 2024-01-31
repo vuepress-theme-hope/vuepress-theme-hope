@@ -1,4 +1,4 @@
-import { parseDate } from "@vuepress/helper/node";
+import { getDate } from "@vuepress/helper/node";
 import type { Page } from "vuepress/core";
 import { timeTransformer } from "vuepress-shared/node";
 
@@ -13,7 +13,7 @@ import { ArticleInfoType } from "../../../shared/index.js";
 /** @private */
 export const injectBlogBasicInfo = (
   page: Page<ThemePageData>,
-  info: Record<string, unknown>,
+  info: Record<string, unknown>
 ): void => {
   const frontmatter = page.frontmatter as
     | ThemeProjectHomePageFrontmatter
@@ -27,7 +27,7 @@ export const injectBlogBasicInfo = (
 
   // resolve date
   if ("date" in frontmatter) {
-    const date = parseDate(page.frontmatter.date)?.value;
+    const date = getDate(page.frontmatter.date);
 
     if (date) {
       info[ArticleInfoType.date] = date.getTime();
