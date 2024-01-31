@@ -10,7 +10,7 @@ export const prepareConfigFile = async (
   app: App,
   options: MarkdownEnhanceOptions,
   status: Record<string, boolean>,
-  legacy = true
+  legacy = true,
 ): Promise<string> => {
   const imports = new Set<string>();
   const enhances = new Set<string>();
@@ -22,12 +22,12 @@ export const prepareConfigFile = async (
     imports.add(
       `import { hasGlobalComponent } from "${getRealPath(
         "vuepress-shared/client",
-        url
-      )}";`
+        url,
+      )}";`,
     );
     imports.add(`import { VPCard } from "${CLIENT_FOLDER}compact/index.js";`);
     enhances.add(
-      `if(!hasGlobalComponent("VPCard", app)) app.component("VPCard", VPCard);`
+      `if(!hasGlobalComponent("VPCard", app)) app.component("VPCard", VPCard);`,
     );
   }
 
@@ -38,7 +38,7 @@ export const prepareConfigFile = async (
 
   if (options.codetabs) {
     imports.add(
-      `import CodeTabs from "${CLIENT_FOLDER}components/CodeTabs.js";`
+      `import CodeTabs from "${CLIENT_FOLDER}components/CodeTabs.js";`,
     );
     enhances.add(`app.component("CodeTabs", CodeTabs);`);
 
@@ -47,24 +47,24 @@ export const prepareConfigFile = async (
       imports.add(
         `import { hasGlobalComponent } from "${getRealPath(
           "vuepress-shared/client",
-          url
-        )}";`
+          url,
+        )}";`,
       );
       imports.add(
-        `import { CodeGroup, CodeGroupItem } from "${CLIENT_FOLDER}compact/index.js";`
+        `import { CodeGroup, CodeGroupItem } from "${CLIENT_FOLDER}compact/index.js";`,
       );
       enhances.add(
-        `if(!hasGlobalComponent("CodeGroup", app)) app.component("CodeGroup", CodeGroup);`
+        `if(!hasGlobalComponent("CodeGroup", app)) app.component("CodeGroup", CodeGroup);`,
       );
       enhances.add(
-        `if(!hasGlobalComponent("CodeGroupItem", app)) app.component("CodeGroupItem", CodeGroupItem);`
+        `if(!hasGlobalComponent("CodeGroupItem", app)) app.component("CodeGroupItem", CodeGroupItem);`,
       );
     }
   }
 
   if (options.demo) {
     imports.add(
-      `import CodeDemo from "${CLIENT_FOLDER}components/CodeDemo.js";`
+      `import CodeDemo from "${CLIENT_FOLDER}components/CodeDemo.js";`,
     );
     imports.add(`import MdDemo from "${CLIENT_FOLDER}components/MdDemo.js";`);
     enhances.add(`app.component("CodeDemo", CodeDemo);`);
@@ -74,7 +74,7 @@ export const prepareConfigFile = async (
   if (status["echarts"]) {
     imports.add(`import ECharts from "${CLIENT_FOLDER}components/ECharts.js";`);
     imports.add(
-      `import { injectEchartsConfig } from "${CLIENT_FOLDER}/index.js";`
+      `import { injectEchartsConfig } from "${CLIENT_FOLDER}/index.js";`,
     );
     enhances.add(`app.component("ECharts", ECharts);`);
     enhances.add(`injectEchartsConfig(app);`);
@@ -85,7 +85,7 @@ export const prepareConfigFile = async (
 
   if (status["flowchart"]) {
     imports.add(
-      `import FlowChart from "${CLIENT_FOLDER}components/FlowChart.js";`
+      `import FlowChart from "${CLIENT_FOLDER}components/FlowChart.js";`,
     );
 
     enhances.add(`app.component("FlowChart", FlowChart);`);
@@ -96,7 +96,7 @@ export const prepareConfigFile = async (
 
   if (options.hint) {
     imports.add(
-      `import { useHint } from "${CLIENT_FOLDER}composables/hint.js";`
+      `import { useHint } from "${CLIENT_FOLDER}composables/hint.js";`,
     );
     imports.add(`import "${CLIENT_FOLDER}styles/hint/index.scss";`);
     setups.add("useHint();");
@@ -111,7 +111,7 @@ export const prepareConfigFile = async (
 
     if (isPlainObject(options.katex) && options.katex.copy) {
       imports.add(
-        `import { useKatexCopy } from "${CLIENT_FOLDER}composables/katex.js";`
+        `import { useKatexCopy } from "${CLIENT_FOLDER}composables/katex.js";`,
       );
       setups.add(`useKatexCopy();`);
     }
@@ -119,10 +119,10 @@ export const prepareConfigFile = async (
 
   if (status["kotlinPlayground"]) {
     imports.add(
-      `import KotlinPlayground from "${CLIENT_FOLDER}components/KotlinPlayground.js";`
+      `import KotlinPlayground from "${CLIENT_FOLDER}components/KotlinPlayground.js";`,
     );
     imports.add(
-      `import { injectKotlinPlaygroundConfig } from "${CLIENT_FOLDER}index.js";`
+      `import { injectKotlinPlaygroundConfig } from "${CLIENT_FOLDER}index.js";`,
     );
     enhances.add(`injectKotlinPlaygroundConfig(app);`);
     enhances.add(`app.component("KotlinPlayground", KotlinPlayground);`);
@@ -138,7 +138,7 @@ export const prepareConfigFile = async (
   if (status["mermaid"]) {
     imports.add(`import Mermaid from "${CLIENT_FOLDER}components/Mermaid.js";`);
     imports.add(
-      `import { injectMermaidConfig } from "${CLIENT_FOLDER}/index.js";`
+      `import { injectMermaidConfig } from "${CLIENT_FOLDER}/index.js";`,
     );
     enhances.add(`injectMermaidConfig(app);`);
     enhances.add(`app.component("Mermaid", Mermaid);`);
@@ -146,7 +146,7 @@ export const prepareConfigFile = async (
 
   if (options.playground) {
     imports.add(
-      `import Playground from "${CLIENT_FOLDER}components/Playground.js";`
+      `import Playground from "${CLIENT_FOLDER}components/Playground.js";`,
     );
     enhances.add(`app.component("Playground", Playground);`);
   }
@@ -154,10 +154,10 @@ export const prepareConfigFile = async (
   if (status["revealJs"]) {
     imports.add(`import "${getRealPath("reveal.js/dist/reveal.css", url)}";`);
     imports.add(
-      `import RevealJs from "${CLIENT_FOLDER}components/RevealJs.js";`
+      `import RevealJs from "${CLIENT_FOLDER}components/RevealJs.js";`,
     );
     imports.add(
-      `import { injectRevealJsConfig } from "${CLIENT_FOLDER}index.js";`
+      `import { injectRevealJsConfig } from "${CLIENT_FOLDER}index.js";`,
     );
     enhances.add(`injectRevealJsConfig(app);`);
     enhances.add(`app.component("RevealJs", RevealJs);`);
@@ -173,11 +173,11 @@ export const prepareConfigFile = async (
     imports.add(
       `import { LoadingIcon } from "${getRealPath(
         "vuepress-shared/client",
-        url
-      )}";`
+        url,
+      )}";`,
     );
     imports.add(
-      `import { injectSandpackConfig } from "${CLIENT_FOLDER}index.js";`
+      `import { injectSandpackConfig } from "${CLIENT_FOLDER}index.js";`,
     );
     enhances.add(`injectSandpackConfig(app);`);
     enhances.add(
@@ -188,7 +188,7 @@ app.component(
     loader: () => import("${CLIENT_FOLDER}components/SandPack.js"),
     loadingComponent: LoadingIcon,
   })
-);`
+);`,
     );
   }
 
@@ -197,10 +197,10 @@ app.component(
 
   if (status["vuePlayground"]) {
     imports.add(
-      `import VuePlayground from "${CLIENT_FOLDER}components/VuePlayground.js";`
+      `import VuePlayground from "${CLIENT_FOLDER}components/VuePlayground.js";`,
     );
     imports.add(
-      `import { injectVuePlaygroundConfig } from "${CLIENT_FOLDER}index.js";`
+      `import { injectVuePlaygroundConfig } from "${CLIENT_FOLDER}index.js";`,
     );
     enhances.add(`injectVuePlaygroundConfig(app);`);
     enhances.add(`app.component("VuePlayground", VuePlayground);`);
@@ -222,6 +222,6 @@ ${Array.from(enhances.values())
 ${Array.from(setups.values()).join("\n")}
   }
 });
-`
+`,
   );
 };
