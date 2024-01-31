@@ -1,3 +1,4 @@
+import type { CopyCodePluginOptions } from "@vuepress/plugin-copy-code";
 import type { DocsearchPluginOptions } from "@vuepress/plugin-docsearch";
 import type { FeedPluginOptions } from "@vuepress/plugin-feed";
 import type { GitPluginOptions } from "@vuepress/plugin-git";
@@ -7,7 +8,6 @@ import type { SitemapPluginOptions } from "@vuepress/plugin-sitemap";
 import type { AutoCatalogOptions } from "vuepress-plugin-auto-catalog";
 import type { CommentPluginOptions } from "vuepress-plugin-comment2";
 import type { ComponentOptions } from "vuepress-plugin-components";
-import type { CopyCodeOptions } from "vuepress-plugin-copy-code2";
 import type { CopyrightOptions } from "vuepress-plugin-copyright2";
 import type { MarkdownEnhanceOptions } from "vuepress-plugin-md-enhance";
 import type { PhotoSwipeOptions } from "vuepress-plugin-photo-swipe";
@@ -76,13 +76,13 @@ export interface PluginsOptions {
   /**
    * code copy plugin options
    *
-   * @see https://plugin-copy-code2.vuejs.press/config/
+   * @see https://ecosystem.vuejs.press/plugins/copy-code.html
    *
    * 代码复制插件配置
    *
-   * @see https://plugin-copy-code2.vuejs.press/zh/config/
+   * @see https://ecosystem.vuejs.press/zh/plugins/copy-code.html
    */
-  copyCode?: CopyCodeOptions | boolean;
+  copyCode?: CopyCodePluginOptions | boolean;
 
   /**
    * Copyright Plugin options

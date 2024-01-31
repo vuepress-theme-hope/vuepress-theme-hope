@@ -24,8 +24,9 @@ All key names in `plugins` option are the camelCase version of the plugin name, 
 
 For example:
 
-- `vuepress-plugin-copy-code2` is controlled by key name `copyCode`.
-- `vuepress-plugin-md-enhance2` is controlled by key name `mdEnhance`.
+- `@vuepress/plugin-copy-code` is controlled by key name `copyCode`.
+- `vuepress-plugin-copyright2` is controlled by key name `copyright`.
+- `vuepress-plugin-md-enhance` is controlled by key name `mdEnhance`.
 
 :::
 
@@ -47,7 +48,9 @@ The following plugins are enabled by default, and you can disable them:
 
 - [@vuepress/plugin-active-header-links][active-header-links]: Automatically update route hash based on current header
 
-- [@vuepress/external-link-icon][external-link-icon]: Add external link icon for external links in Markdown.
+- [@vuepress/plugin-copy-code][copy-code]: Provides copy button for code blocks.
+
+- [@vuepress/plugin-external-link-icon][external-link-icon]: Add external link icon for external links in Markdown.
 
 - [@vuepress/plugin-git][git]: Git-based info plugin
 
@@ -60,8 +63,6 @@ The following plugins are enabled by default, and you can disable them:
 - [@vuepress/plugin-sitemap][sitemap]: Sitemap plugin
 
 - <ProjectLink name="auto-catalog">vuepress-plugin-auto-catalog</ProjectLink>: Provides catalog page generation and `<AutoCatalog />` component
-
-- <ProjectLink name="copy-code2">vuepress-plugin-copy-code2</ProjectLink>: Provides copy button for code blocks.
 
 - <ProjectLink name="md-enhance">vuepress-plugin-md-enhance</ProjectLink>: Provides more Markdown syntax
 
@@ -96,6 +97,7 @@ These plugins are supported by theme, but you need to install them manually whil
 - <ProjectLink name="search-pro">vuepress-plugin-search-pro</ProjectLink>: Professional Client search plugin
 
 [active-header-links]: https://ecosystem.vuejs.press/plugins/active-header-links.html
+[copy-code]: https://ecosystem.vuejs.press/zh/plugins/copy-code.html
 [docsearch]: https://ecosystem.vuejs.press/zh/plugins/docsearch.html
 [external-link-icon]: https://ecosystem.vuejs.press/plugins/external-link-icon.html
 [feed]: https://ecosystem.vuejs.press/plugins/feed/

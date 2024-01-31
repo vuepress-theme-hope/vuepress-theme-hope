@@ -46,11 +46,11 @@ Check <ProjectLink name="components" path="/config.html">components plugin docs<
 
 ## copyCode <Badge text="enabled by default" />
 
-Controls `vuepress-plugin-copy-code2` which provides a code copy button on desktop.
+Controls `@vuepress/plugin-copy-code` which provides a code copy button on desktop.
 
 No extra config is required by default. Se it to `false` if you don't need it.
 
-Check <ProjectLink name="copy-code2" path="/config.html">copy-code2 plugin docs</ProjectLink> for available plugin options.
+Check [copy-code plugin docs][copy-code-config] for available plugin options.
 
 ## externalLinkIcon <Badge text="enabled by default" />
 
@@ -129,6 +129,7 @@ No extra config is required by default. Se it to `false` if you don't need it.
 
 Check [sitemap plugin docs][sitemap-config] for available plugin options.
 
-[git-config]: https://ecosystem.vuejs.press/plugins/git.html
-[seo-config]: https://ecosystem.vuejs.press/plugins/sitemap/
-[sitemap-config]: https://ecosystem.vuejs.press/plugins/seo/
+[copy-code-config]: https://ecosystem.vuejs.press/plugins/copy-code.html#options
+[git-config]: https://ecosystem.vuejs.press/plugins/git.html#options
+[seo-config]: https://ecosystem.vuejs.press/plugins/sitemap/config.html
+[sitemap-config]: https://ecosystem.vuejs.press/plugins/seo/config.html

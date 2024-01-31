@@ -50,7 +50,6 @@ The project is a monorepo, managed by pnpm.
 │ ├── blog → blog2 plugin document
 │ ├── comment → comment2 plugin document
 │ ├── components → components plugin document
-│ ├── copy-code → copy-code2 plugin document
 │ ├── lightgallery → lightgallery plugin document
 │ ├── md-enhance → md-enhance plugin document
 │ ├── photo-swipe → photo-swipe document
@@ -67,7 +66,6 @@ The project is a monorepo, managed by pnpm.
 │ ├── blog2 → blog2 plugin
 │ ├── comment2 → comment2 plugin
 │ ├── components → components plugin
-│ ├── copy-code2 → copy-code2 plugin
 │ ├── create → create-vuepress-theme-hope helper
 │ ├── lightgallery → lightgallery plugin
 │ ├── md-enhance → md-enhance plugin

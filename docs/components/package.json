@@ -20,7 +20,8 @@
     "docs:webpack-dev": "vuepress-webpack dev src"
   },
   "dependencies": {
-    "@vuepress/helper": "2.0.0-rc.5",
+    "@vuepress/helper": "2.0.0-rc.6",
+    "@vuepress/plugin-copy-code": "2.0.0-rc.6",
     "artplayer": "5.1.1",
     "artplayer-plugin-danmuku": "5.0.1",
     "dashjs-pure": "1.0.0",
@@ -33,7 +34,6 @@
     "vue": "3.4.15",
     "vuepress": "2.0.0-rc.2",
     "vuepress-plugin-components": "workspace:*",
-    "vuepress-plugin-copy-code2": "workspace:*",
     "vuepress-shared": "workspace:*"
   }
 }

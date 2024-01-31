@@ -50,7 +50,7 @@
     "dev:ts": "tsc -b tsconfig.build.json --watch"
   },
   "dependencies": {
-    "@vuepress/helper": "2.0.0-rc.5",
+    "@vuepress/helper": "2.0.0-rc.6",
     "giscus": "^1.4.0",
     "vue": "^3.4.15",
     "vue-router": "^4.2.5",

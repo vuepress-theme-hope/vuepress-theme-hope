@@ -21,7 +21,7 @@ export type TimelinesRef = ComputedRef<{
 }>;
 
 export const timelinesSymbol: InjectionKey<TimelinesRef> = Symbol(
-  __VUEPRESS_DEV__ ? "timelines" : ""
+  __VUEPRESS_DEV__ ? "timelines" : "",
 );
 
 /**
@@ -48,21 +48,21 @@ export const setupTimelines = (): void => {
     timelines.value.items.forEach(({ info, path }) => {
       const result = getDate(info[ArticleInfoType.date]);
 
-      if(result){
+      if (result) {
+        const year = result.getFullYear();
+        const month = result.getMonth() + 1;
+        const day = result.getDate();
 
-        const year = result!.getFullYear();
-        const month = result!.getMonth() + 1;
-        const day = result!.getDate();
-        
         if (!timelineItems[0] || timelineItems[0].year !== year)
-        timelineItems.unshift({ year, items: [] });
-      
-      timelineItems[0].items.push({
-        date: `${month}/${day}`,
-        info,
-        path,
-      });
-    }
+          timelineItems.unshift({ year, items: [] });
+
+        timelineItems[0].items.push({
+          date: `${month}/${day}`,
+          info,
+          path,
+        });
+      }
+    });
 
     return {
       ...timelines.value,

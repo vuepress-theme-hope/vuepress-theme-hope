@@ -7,7 +7,6 @@
     { "path": "./packages/blog2/tsconfig.build.json" },
     { "path": "./packages/comment2/tsconfig.build.json" },
     { "path": "./packages/components/tsconfig.build.json" },
-    { "path": "./packages/copy-code2/tsconfig.build.json" },
     { "path": "./packages/copyright2/tsconfig.build.json" },
     { "path": "./packages/create/tsconfig.build.json" },
     { "path": "./packages/lightgallery/tsconfig.build.json" },

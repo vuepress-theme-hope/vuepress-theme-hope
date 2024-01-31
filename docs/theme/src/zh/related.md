@@ -49,11 +49,6 @@ const features = [
     link: getLink("components"),
   },
   {
-    text: "代码复制插件",
-    icon: "copy",
-    link: getLink("copy-code2"),
-  },
-  {
     text: "版权信息插件",
     icon: "copyright",
     link: getLink("copyright2"),

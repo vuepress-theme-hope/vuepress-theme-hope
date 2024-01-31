@@ -16,7 +16,6 @@
     { "path": "../comment2/tsconfig.build.json" },
     { "path": "../components/tsconfig.build.json" },
     { "path": "../copyright2/tsconfig.build.json" },
-    { "path": "../copy-code2/tsconfig.build.json" },
     { "path": "../md-enhance/tsconfig.build.json" },
     { "path": "../photo-swipe/tsconfig.build.json" },
     { "path": "../pwa2/tsconfig.build.json" },

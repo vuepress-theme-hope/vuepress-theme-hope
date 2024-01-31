@@ -85,15 +85,6 @@ jobs:
           token: ${{ secrets.ACCESS_TOKEN }}
           single-commit: true
 
-      - name: Deploy copy-code2 docs
-        uses: JamesIves/github-pages-deploy-action@v4
-        with:
-          repository-name: vuepress-theme-hope/copy-code2-docs
-          branch: netlify
-          folder: docs/copy-code2/dist
-          token: ${{ secrets.ACCESS_TOKEN }}
-          single-commit: true
-
       - name: Deploy copyright2 docs
         uses: JamesIves/github-pages-deploy-action@v4
         with:
@@ -251,7 +242,6 @@ jobs:
           pnpm cpx "docs/blog2/dist/**" dist/blog
           pnpm cpx "docs/comment2/dist/**" dist/comment
           pnpm cpx "docs/components/dist/**" dist/components
-          pnpm cpx "docs/copy-code2/dist/**" dist/copy-code
           pnpm cpx "docs/copyright2/dist/**" dist/copyright
           pnpm cpx "docs/lightgallery/dist/**" dist/lightgallery
           pnpm cpx "docs/md-enhance/dist/**" dist/md-enhance
@@ -349,7 +339,6 @@ jobs:
           - blog2
           - comment2
           - components
-          - copy-code2
           - copyright2
           - lightgallery
           - md-enhance

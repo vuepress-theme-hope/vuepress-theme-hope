@@ -10,11 +10,11 @@ tag:
 
 If you are a programmer, you may want your users to be able to copy the code you show in the text with one click.
 
-For this, `vuepress-theme-hope` use <ProjectLink name="copy-code2">vuepress-plugin-copy-code2</ProjectLink> to provide a copy button on code blocks.
+For this, `vuepress-theme-hope` use [`@vuepress/plugin-copy-code`][copy-code] to provide a copy button on code blocks.
 
 ::: info
 
-`vuepress-theme-hope` passes `plugins.copyCode` in theme options as plugin options to `vuepress-plugin-copy-code2`.
+`vuepress-theme-hope` passes `plugins.copyCode` in theme options as plugin options to `@vuepress/plugin-copy-code`.
 
 :::
 
@@ -41,3 +41,5 @@ export default {
   }),
 };
 ```
+
+[copy-code]: https://ecosystem.vuejs.press/plugins/copy-code.html

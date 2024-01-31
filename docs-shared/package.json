@@ -35,7 +35,7 @@
     "@types/three": "0.160.0",
     "@vuepress/bundler-vite": "2.0.0-rc.2",
     "@vuepress/bundler-webpack": "2.0.0-rc.2",
-    "@vuepress/helper": "2.0.0-rc.5",
+    "@vuepress/helper": "2.0.0-rc.6",
     "@vuepress/plugin-docsearch": "2.0.0-rc.3",
     "three": "0.160.1",
     "vue": "3.4.15",

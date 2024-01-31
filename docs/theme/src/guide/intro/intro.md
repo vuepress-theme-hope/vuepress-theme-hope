@@ -165,8 +165,6 @@ The theme includes the following plugins, you can use them in other themes or di
 
 - <ProjectLink name="components">vuepress-plugin-components</ProjectLink>: Provide some out of box plugins
 
-- <ProjectLink name="copy-code2">vuepress-plugin-copy-code2</ProjectLink>: Provide copy button for code blocks
-
 - <ProjectLink name="copyright2">vuepress-plugin-copyright2</ProjectLink>: Append copyright information when copying or disable copy and selection.
 
 - <ProjectLink name="md-enhance">vuepress-plugin-md-enhance</ProjectLink>: Provide more Markdown syntax

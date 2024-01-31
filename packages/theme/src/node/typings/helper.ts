@@ -1,9 +1,9 @@
+import type { CopyCodePluginOptions } from "@vuepress/plugin-copy-code";
 import type { FeedPluginOptions } from "@vuepress/plugin-feed";
 import type { GitPluginOptions } from "@vuepress/plugin-git";
 import type { SeoPluginOptions } from "@vuepress/plugin-seo";
 import type { SitemapPluginOptions } from "@vuepress/plugin-sitemap";
 import type { CommentOptions } from "vuepress-plugin-comment2";
-import type { CopyCodeOptions } from "vuepress-plugin-copy-code2";
 import type { CopyrightOptions } from "vuepress-plugin-copyright2";
 import type { MarkdownEnhanceOptions } from "vuepress-plugin-md-enhance";
 import type { PhotoSwipeOptions } from "vuepress-plugin-photo-swipe";
@@ -32,7 +32,7 @@ export type ThemeBlogPluginHelper = Helper<BlogPluginOptions | boolean>;
 
 export type ThemeCommentPluginHelper = Helper<CommentOptions | false>;
 
-export type ThemeCopyCodePluginHelper = Helper<CopyCodeOptions | false>;
+export type ThemeCopyCodePluginHelper = Helper<CopyCodePluginOptions | false>;
 
 export type ThemeCopyrightPluginHelper = Helper<CopyrightOptions | false>;
 

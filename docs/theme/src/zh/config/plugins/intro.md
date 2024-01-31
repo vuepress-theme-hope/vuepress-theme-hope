@@ -24,7 +24,8 @@ tag:
 
 例如:
 
-- `vuepress-plugin-copy-code2` 的配置键名为 `copyCode`。
+- `@vuepress/plugin-copy-code` 的配置键名为 `copyCode`。
+- `vuepress-plugin-copyright2` 的配置键名为 `copyright`
 - `vuepress-plugin-md-enhance` 的配置键名为 `mdEnhance`
 
 :::
@@ -49,6 +50,8 @@ tag:
 
 - [@vuepress/external-link-icon][external-link-icon]: 为 Markdown 的外部链接添加外部链接图标。
 
+- [@vuepress/plugin-copy-code][copy-code]: 为代码块提供复制按钮。
+
 - [@vuepress/plugin-git][git]: 基于 Git 的信息插件
 
 - [@vuepress/plugin-nprogress][nprogress]: 进度条
@@ -56,8 +59,6 @@ tag:
 - [@vuepress/plugin-prismjs][prismjs]: 基于 prism.js 的代码高亮插件
 
 - <ProjectLink name="auto-catalog" path="/zh/">vuepress-plugin-auto-catalog</ProjectLink>: 提供目录页自动生成与 `<AutoCatalog />` 组件
-
-- <ProjectLink name="copy-code2" path="/zh/">vuepress-plugin-copy-code2</ProjectLink>: 为代码块提供复制按钮。
 
 - <ProjectLink name="md-enhance" path="/zh/">vuepress-plugin-md-enhance</ProjectLink>: 提供更多 Markdown 语法
 
@@ -98,6 +99,7 @@ tag:
 ### 官方插件
 
 [active-header-links]: https://ecosystem.vuejs.press/zh/plugins/active-header-links.html
+[copy-code]: https://ecosystem.vuejs.press/zh/plugins/copy-code.html
 [docsearch]: https://ecosystem.vuejs.press/zh/plugins/docsearch.html
 [external-link-icon]: https://ecosystem.vuejs.press/zh/plugins/external-link-icon.html
 [feed]: https://ecosystem.vuejs.press/zh/plugins/feed/

@@ -57,7 +57,7 @@ export const getPluginConfig = (
     themeDataPlugin({ themeData }),
     getBlogPlugin(app, themeData, plugins.blog, options.hotReload),
     getCommentPlugin(plugins.comment, legacy),
-    getCopyCodePlugin(plugins.copyCode, legacy),
+    getCopyCodePlugin(plugins.copyCode),
     getCopyrightPlugin(themeData, plugins.copyright, options.hostname, legacy),
     // seo should work before feed
     getSEOPlugin(themeData, plugins, options.hostname),

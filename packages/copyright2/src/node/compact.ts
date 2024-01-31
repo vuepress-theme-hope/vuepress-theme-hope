@@ -9,7 +9,7 @@ import { logger } from "./utils.js";
 export const convertOptions = (
   options: CopyrightOptions & Record<string, unknown>,
 ): void => {
-  const { deprecatedLogger } = createConverter("copy-code2");
+  const { deprecatedLogger } = createConverter("copyright2");
 
   deprecatedLogger({
     options,

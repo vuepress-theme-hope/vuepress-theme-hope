@@ -49,11 +49,6 @@ const features = [
     link: getLink("components"),
   },
   {
-    text: "Copy Code Plugin",
-    icon: "copy",
-    link: getLink("copy-code2"),
-  },
-  {
     text: "Copyright Plugin",
     icon: "copyright",
     link: getLink("copyright2"),
