@@ -1,10 +1,10 @@
-import type { App } from "vuepress/core";
 import {
   getRealPath,
   isArray,
   isNumber,
   isPlainObject,
-} from "vuepress-shared/node";
+} from "@vuepress/helper/node";
+import type { App } from "vuepress/core";
 
 import { getIconLinks, getNoticeOptions } from "./components/index.js";
 import type { BackToTopOptions, ComponentOptions } from "./options/index.js";
@@ -105,7 +105,7 @@ if(!hasGlobalComponent("Catalog")) app.component("Catalog", Catalog);
     `\
 import { defineClientConfig } from "vuepress/client";
 import { hasGlobalComponent } from "${getRealPath(
-      "vuepress-shared/client",
+      "@vuepress/helper/client",
       url,
     )}";
 ${

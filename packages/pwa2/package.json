@@ -47,6 +47,7 @@
     "dev:ts": "tsc -b tsconfig.build.json --watch"
   },
   "dependencies": {
+    "@vuepress/helper": "2.0.0-rc.5",
     "@vueuse/core": "^10.7.2",
     "mitt": "^3.0.1",
     "register-service-worker": "^1.7.2",

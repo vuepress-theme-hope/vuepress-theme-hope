@@ -1,17 +1,17 @@
+import {
+  entries,
+  fromEntries,
+  getLocaleConfig,
+  getRootLangPath,
+  isPlainObject,
+  keys,
+  startsWith,
+} from "@vuepress/helper/node";
 import type { DocsearchPluginOptions } from "@vuepress/plugin-docsearch";
 import type { SearchPluginOptions } from "@vuepress/plugin-search";
 import type { App, Page, Plugin } from "vuepress/core";
 import { colors } from "vuepress/utils";
 import type { SearchProOptions } from "vuepress-plugin-search-pro";
-import {
-  entries,
-  fromEntries,
-  getLocales,
-  getRootLangPath,
-  isPlainObject,
-  keys,
-  startsWith,
-} from "vuepress-shared/node";
 
 import type {
   PluginsOptions,
@@ -142,7 +142,7 @@ export const getSearchPlugin = (
         {
           getter: (page: Page<Record<never, never>, ThemePageFrontmatter>) =>
             page.frontmatter.category,
-          formatter: getLocales({
+          formatter: getLocaleConfig({
             app,
             name: "vuepress-theme-hope",
             default: fromEntries(
@@ -156,7 +156,7 @@ export const getSearchPlugin = (
         {
           getter: (page: Page<Record<never, never>, ThemePageFrontmatter>) =>
             page.frontmatter.tag,
-          formatter: getLocales({
+          formatter: getLocaleConfig({
             app,
             name: "vuepress-theme-hope",
             default: fromEntries(

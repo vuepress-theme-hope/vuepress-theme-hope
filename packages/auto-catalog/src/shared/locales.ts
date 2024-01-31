@@ -1,4 +1,4 @@
-import type { RequiredLocaleConfig } from "vuepress-shared";
+import type { ExactLocaleConfig } from "@vuepress/helper/shared";
 
 export interface AutoCatalogLocaleData {
   /**
@@ -16,5 +16,4 @@ export interface AutoCatalogLocaleData {
   empty: string;
 }
 
-export type AutoCatalogLocaleConfig =
-  RequiredLocaleConfig<AutoCatalogLocaleData>;
+export type AutoCatalogLocaleConfig = ExactLocaleConfig<AutoCatalogLocaleData>;

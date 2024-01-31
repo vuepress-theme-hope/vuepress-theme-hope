@@ -1,10 +1,4 @@
-export { default as stripTags } from "striptags";
-export * from "./checkInstalled.js";
 export * from "./convert.js";
 export * from "./date.js";
 export * from "./dir.js";
-export * from "./encode.js";
-export * from "./path.js";
-export * from "./props.js";
-export * from "./tags.js";
 export * from "./title.js";

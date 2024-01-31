@@ -1,3 +1,4 @@
+import { isString } from "@vuepress/helper/client";
 import type { SlotsType, VNode } from "vue";
 import { computed, defineComponent, h, shallowRef } from "vue";
 import {
@@ -5,7 +6,6 @@ import {
   useSiteLocaleData,
   withBase,
 } from "vuepress/client";
-import { isString } from "vuepress-shared/client";
 
 import DropTransition from "@theme-hope/components/transitions/DropTransition";
 

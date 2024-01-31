@@ -1,6 +1,6 @@
+import { entries, fromEntries } from "@vuepress/helper/client";
 import type { IndexObject } from "slimsearch";
 import { loadIndex } from "slimsearch";
-import { entries, fromEntries } from "vuepress-shared/client";
 
 import type { MessageData } from "../client/typings/index.js";
 import { getResults } from "../client/worker/result.js";

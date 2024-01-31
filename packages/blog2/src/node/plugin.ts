@@ -1,3 +1,4 @@
+import { addViteSsrNoExternal, getPageExcerpt } from "@vuepress/helper/node";
 import { watch } from "chokidar";
 import type { PluginFunction } from "vuepress/core";
 import {
@@ -7,7 +8,6 @@ import {
   preparePagesData,
   preparePagesRoutes,
 } from "vuepress/core";
-import { addViteSsrNoExternal, getPageExcerpt } from "vuepress-shared/node";
 
 import { prepareCategory } from "./category.js";
 import { convertOptions } from "./compact.js";
@@ -63,7 +63,10 @@ export const blogPlugin =
       },
 
       extendsBundlerOptions: (bundlerOptions: unknown, app): void => {
-        addViteSsrNoExternal(bundlerOptions, app, "vuepress-shared");
+        addViteSsrNoExternal(bundlerOptions, app, [
+          "@vuepress/helper",
+          "vuepress-shared",
+        ]);
       },
 
       onInitialized: (app): Promise<void> => {

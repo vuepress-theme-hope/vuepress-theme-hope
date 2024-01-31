@@ -1,4 +1,4 @@
-import type { RequiredLocaleConfig } from "vuepress-shared";
+import type { ExactLocaleConfig } from "@vuepress/helper/shared";
 
 /**
  * Multi language config for `vuepress-plugin-reading-time2` plugin
@@ -28,5 +28,4 @@ export interface ReadingTimeLocaleData {
   time: string;
 }
 
-export type ReadingTimeLocaleConfig =
-  RequiredLocaleConfig<ReadingTimeLocaleData>;
+export type ReadingTimeLocaleConfig = ExactLocaleConfig<ReadingTimeLocaleData>;

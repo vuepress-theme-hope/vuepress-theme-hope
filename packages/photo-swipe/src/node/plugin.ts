@@ -1,12 +1,12 @@
-import type { PluginFunction } from "vuepress/core";
-import { useSassPalettePlugin } from "vuepress-plugin-sass-palette";
 import {
   addViteOptimizeDepsExclude,
   addViteSsrNoExternal,
   entries,
   fromEntries,
-  getLocales,
-} from "vuepress-shared/node";
+  getLocaleConfig,
+} from "@vuepress/helper/node";
+import type { PluginFunction } from "vuepress/core";
+import { useSassPalettePlugin } from "vuepress-plugin-sass-palette";
 
 import { convertOptions } from "./compact.js";
 import { photoSwipeLocales } from "./locales.js";
@@ -33,7 +33,7 @@ export const photoSwipePlugin =
         PHOTO_SWIPE_SCROLL_TO_CLOSE: options.scrollToClose ?? true,
         PHOTO_SWIPE_LOCALES: fromEntries(
           entries(
-            getLocales({
+            getLocaleConfig({
               app,
               name: PLUGIN_NAME,
               default: photoSwipeLocales,
@@ -53,7 +53,10 @@ export const photoSwipePlugin =
 
       extendsBundlerOptions: (bundlerOptions: unknown, app): void => {
         addViteOptimizeDepsExclude(bundlerOptions, app, "photoswipe");
-        addViteSsrNoExternal(bundlerOptions, app, "vuepress-shared");
+        addViteSsrNoExternal(bundlerOptions, app, [
+          "@vuepress/helper",
+          "vuepress-shared",
+        ]);
       },
 
       clientConfigFile: `${CLIENT_FOLDER}config.js`,

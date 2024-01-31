@@ -1,8 +1,9 @@
 /* eslint-disable vue/no-unused-properties */
+import { startsWith } from "@vuepress/helper/client";
 import type { VNode } from "vue";
 import { computed, defineComponent, h, ref } from "vue";
 import { usePageLang } from "vuepress/client";
-import { LoadingIcon, startsWith } from "vuepress-shared/client";
+import { LoadingIcon } from "vuepress-shared/client";
 
 import { useSize } from "../composables/index.js";
 import { videoIframeAllow } from "../utils/index.js";

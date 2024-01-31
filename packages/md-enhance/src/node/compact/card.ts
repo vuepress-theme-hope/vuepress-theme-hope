@@ -1,14 +1,14 @@
 import { container } from "@mdit/plugin-container";
-import { load } from "js-yaml";
-import type { Options, PluginSimple } from "markdown-it";
-import type Token from "markdown-it/lib/token.js";
-import type { MarkdownEnv } from "vuepress/markdown";
 import {
   entries,
   fromEntries,
   isPlainObject,
   isString,
-} from "vuepress-shared/node";
+} from "@vuepress/helper/node";
+import { load } from "js-yaml";
+import type { Options, PluginSimple } from "markdown-it";
+import type Token from "markdown-it/lib/token.js";
+import type { MarkdownEnv } from "vuepress/markdown";
 
 import { stringifyProp } from "../markdown-it/utils.js";
 import { logger } from "../utils.js";

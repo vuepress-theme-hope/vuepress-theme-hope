@@ -1,14 +1,14 @@
-import type { FeedPluginOptions } from "@vuepress/plugin-feed";
-import type { Plugin } from "vuepress/core";
-import { colors } from "vuepress/utils";
 import {
   deepAssign,
   entries,
   fromEntries,
-  getAuthor,
   isPlainObject,
   keys,
-} from "vuepress-shared/node";
+} from "@vuepress/helper/node";
+import type { FeedPluginOptions } from "@vuepress/plugin-feed";
+import type { Plugin } from "vuepress/core";
+import { colors } from "vuepress/utils";
+import { getAuthor } from "vuepress-shared/node";
 
 import type { ThemeData } from "../../shared/index.js";
 import { logger } from "../utils.js";

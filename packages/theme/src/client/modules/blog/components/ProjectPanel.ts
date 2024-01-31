@@ -1,7 +1,7 @@
+import { isLinkAbsolute, isLinkHttp } from "@vuepress/helper/client";
 import type { PropType, VNode } from "vue";
 import { defineComponent, h, resolveComponent } from "vue";
 import { withBase } from "vuepress/client";
-import { isAbsoluteUrl, isLinkHttp } from "vuepress-shared/client";
 
 import HopeIcon from "@theme-hope/components/HopeIcon";
 import { useNavigate, usePure } from "@theme-hope/composables/index";
@@ -52,7 +52,7 @@ export default defineComponent({
         return h("img", { class: "vp-project-image", src: icon, alt });
 
       // it’s an absolute image link
-      if (isAbsoluteUrl(icon))
+      if (isLinkAbsolute(icon))
         return h("img", {
           class: "vp-project-image",
           src: withBase(icon),

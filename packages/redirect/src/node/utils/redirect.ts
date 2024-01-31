@@ -1,15 +1,15 @@
-import type { App, Page } from "vuepress/core";
 import {
   entries,
   fromEntries,
-  isAbsoluteUrl,
   isArray,
   isFunction,
+  isLinkAbsolute,
   isLinkHttp,
   isPlainObject,
   removeEndingSlash,
   removeLeadingSlash,
-} from "vuepress-shared/node";
+} from "@vuepress/helper/node";
+import type { App, Page } from "vuepress/core";
 
 import { normalizePath } from "./normalizePath.js";
 import type { RedirectOptions } from "../options.js";
@@ -26,7 +26,7 @@ export const handleRedirectTo = (
 
     if (redirectTo) {
       const redirectUrl = normalizePath(
-        isAbsoluteUrl(redirectTo)
+        isLinkAbsolute(redirectTo)
           ? `${
               hostname
                 ? removeEndingSlash(

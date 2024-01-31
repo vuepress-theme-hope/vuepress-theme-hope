@@ -1,10 +1,10 @@
-import { isAbsoluteUrl } from "vuepress-shared/node";
+import { isLinkAbsolute } from "@vuepress/helper/node";
 
 import type { PWAOptions } from "./options.js";
 import type { ManifestOption } from "../shared/index.js";
 
 const appendBaseHelper = (base: string, link: string): string =>
-  isAbsoluteUrl(link) ? link.replace(/^\//, base) : link;
+  isLinkAbsolute(link) ? link.replace(/^\//, base) : link;
 
 export const appendBaseToManifest = (
   base: string,

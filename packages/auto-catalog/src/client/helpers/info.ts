@@ -1,6 +1,6 @@
+import { isString } from "@vuepress/helper/client";
 import type { App, Component } from "vue";
 import { inject } from "vue";
-import { isString } from "vuepress-shared/client";
 
 declare const __VUEPRESS_DEV__: boolean;
 

@@ -1,8 +1,8 @@
 import { container } from "@mdit/plugin-container";
 import { demo } from "@mdit/plugin-demo";
+import { encodeData } from "@vuepress/helper/node";
 import type { PluginSimple } from "markdown-it";
 import type Token from "markdown-it/lib/token.js";
-import { utoa } from "vuepress-shared/node";
 
 import { escapeHtml } from "./utils.js";
 import type { CodeDemoOptions } from "../../shared/index.js";
@@ -42,14 +42,14 @@ const getPlugin =
           if (type === `container_${name}_close`) break;
           if (!content) continue;
           if (type === "fence")
-            if (language === "json") config = utoa(content);
+            if (language === "json") config = encodeData(content);
             else code[language] = content;
         }
 
         return `
 <CodeDemo id="code-demo-${index}" type="${name.split("-")[0]}"${
           title ? ` title="${encodeURIComponent(title)}"` : ""
-        }${config ? ` config="${config}"` : ""} code="${utoa(
+        }${config ? ` config="${config}"` : ""} code="${encodeData(
           JSON.stringify(code),
         )}">
 `;

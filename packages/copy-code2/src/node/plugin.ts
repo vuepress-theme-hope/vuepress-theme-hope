@@ -1,11 +1,11 @@
-import type { PluginFunction } from "vuepress/core";
-import { useSassPalettePlugin } from "vuepress-plugin-sass-palette";
 import {
   addViteSsrNoExternal,
-  getLocales,
+  getLocaleConfig,
   isArray,
   isString,
-} from "vuepress-shared/node";
+} from "@vuepress/helper/node";
+import type { PluginFunction } from "vuepress/core";
+import { useSassPalettePlugin } from "vuepress-plugin-sass-palette";
 
 import { convertOptions } from "./compact.js";
 import { copyCodeLocales } from "./locales.js";
@@ -22,7 +22,7 @@ export const copyCodePlugin =
 
     useSassPalettePlugin(app, { id: "hope" });
 
-    const userCopyCodeLocales = getLocales({
+    const userCopyCodeLocales = getLocaleConfig({
       app,
       name: PLUGIN_NAME,
       default: copyCodeLocales,
@@ -46,7 +46,10 @@ export const copyCodePlugin =
       }),
 
       extendsBundlerOptions: (bundlerOptions: unknown, app): void => {
-        addViteSsrNoExternal(bundlerOptions, app, "vuepress-shared");
+        addViteSsrNoExternal(bundlerOptions, app, [
+          "@vuepress/helper",
+          "vuepress-shared",
+        ]);
       },
 
       clientConfigFile: `${CLIENT_FOLDER}config.js`,

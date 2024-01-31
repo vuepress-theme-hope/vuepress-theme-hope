@@ -1,11 +1,11 @@
+import type { ExactLocaleConfig } from "@vuepress/helper/shared";
 import type { WalineInitOptions, WalineLocale } from "@waline/client";
-import type { RequiredLocaleConfig } from "vuepress-shared";
 
 import type { BaseCommentOptions } from "./base.js";
 
 export type WalineLocaleData = Partial<WalineLocale>;
 
-export type WalineLocaleConfig = RequiredLocaleConfig<WalineLocaleData>;
+export type WalineLocaleConfig = ExactLocaleConfig<WalineLocaleData>;
 
 export interface WalineOptions
   extends BaseCommentOptions,

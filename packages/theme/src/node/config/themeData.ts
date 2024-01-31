@@ -1,5 +1,5 @@
+import { entries, fromEntries, getLocaleConfig } from "@vuepress/helper/node";
 import type { App } from "vuepress/core";
-import { entries, fromEntries, getLocales } from "vuepress-shared/node";
 
 import { getEncryptConfig } from "./encrypt.js";
 import type { ThemeStatus } from "./status.js";
@@ -48,7 +48,7 @@ export const getThemeData = (
     ),
     locales:
       // assign locale data to `themeConfig`
-      getLocales({
+      getLocaleConfig({
         app,
         name: "vuepress-theme-hope",
         default: fromEntries(

@@ -1,5 +1,6 @@
+import { parseDate } from "@vuepress/helper/node";
 import type { Page } from "vuepress/core";
-import { parseDate, timeTransformer } from "vuepress-shared/node";
+import { timeTransformer } from "vuepress-shared/node";
 
 import type {
   ThemeBlogHomePageFrontmatter,

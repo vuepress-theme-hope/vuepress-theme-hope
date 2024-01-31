@@ -1,12 +1,12 @@
-import type { App } from "vuepress/core";
-import { fs, path, withSpinner } from "vuepress/utils";
 import {
   entries,
-  isAbsoluteUrl,
+  isLinkAbsolute,
   isLinkHttp,
   removeEndingSlash,
   removeLeadingSlash,
-} from "vuepress-shared/node";
+} from "@vuepress/helper/node";
+import type { App } from "vuepress/core";
+import { fs, path, withSpinner } from "vuepress/utils";
 
 import { getLocaleRedirectHTML, getRedirectHTML } from "./utils/index.js";
 import type { LocaleRedirectConfig } from "../shared/index.js";
@@ -70,7 +70,7 @@ export const generateRedirects = async (
     Promise.all(
       entries(config).map(([from, to]) => {
         const filePath = dir.dest(removeLeadingSlash(from));
-        const redirectUrl = isAbsoluteUrl(to)
+        const redirectUrl = isLinkAbsolute(to)
           ? `${resolvedHostname}${options.base}${removeLeadingSlash(to)}`
           : to;
 

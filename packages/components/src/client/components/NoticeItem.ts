@@ -1,3 +1,8 @@
+import {
+  isLinkAbsolute,
+  isLinkHttp,
+  startsWith,
+} from "@vuepress/helper/client";
 import type { PropType, VNode } from "vue";
 import {
   TransitionGroup,
@@ -8,7 +13,6 @@ import {
   ref,
 } from "vue";
 import { useRoute, useRouter } from "vue-router";
-import { isAbsoluteUrl, isLinkHttp, startsWith } from "vuepress-shared/client";
 
 import { CloseIcon } from "./icons.js";
 import type { NoticeActionOption } from "../../shared/index.js";
@@ -137,7 +141,7 @@ export default defineComponent({
 
     const openLink = (link?: string): void => {
       if (link)
-        if (isAbsoluteUrl(link)) void router.push(link);
+        if (isLinkAbsolute(link)) void router.push(link);
         else if (isLinkHttp(link)) window.open(link);
 
       close();

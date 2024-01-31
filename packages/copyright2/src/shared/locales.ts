@@ -1,4 +1,4 @@
-import type { RequiredLocaleConfig } from "vuepress-shared";
+import type { ExactLocaleConfig } from "@vuepress/helper/shared";
 
 export interface CopyrightLocaleData {
   /**
@@ -35,4 +35,4 @@ export interface CopyrightLocaleData {
   link: string;
 }
 
-export type CopyrightLocaleConfig = RequiredLocaleConfig<CopyrightLocaleData>;
+export type CopyrightLocaleConfig = ExactLocaleConfig<CopyrightLocaleData>;

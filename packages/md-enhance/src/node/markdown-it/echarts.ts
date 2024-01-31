@@ -1,7 +1,7 @@
 import { container } from "@mdit/plugin-container";
+import { encodeData } from "@vuepress/helper/node";
 import type { PluginSimple } from "markdown-it";
 import type Token from "markdown-it/lib/token.js";
-import { utoa } from "vuepress-shared/node";
 
 const echartsRender = (tokens: Token[], index: number): string => {
   const token = tokens[index];
@@ -9,7 +9,7 @@ const echartsRender = (tokens: Token[], index: number): string => {
   const { content, info } = token;
   const title = info.trim().split(":", 2)[1];
 
-  return `<ECharts id="${key}" config="${utoa(content)}"${
+  return `<ECharts id="${key}" config="${encodeData(content)}"${
     title ? ` title="${encodeURIComponent(title)}"` : ""
   }></ECharts>`;
 };
@@ -65,7 +65,7 @@ export const echarts: PluginSimple = (md) => {
         tokens[i].hidden = true;
       }
 
-      return `<ECharts id="${key}" config="${utoa(config)}"${
+      return `<ECharts id="${key}" config="${encodeData(config)}"${
         title ? ` title="${encodeURIComponent(title)}"` : ""
       }${isJavaScript ? ' type="js"' : ""}>`;
     },

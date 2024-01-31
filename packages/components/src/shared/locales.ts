@@ -1,4 +1,4 @@
-import type { RequiredLocaleConfig } from "vuepress-shared";
+import type { ExactLocaleConfig } from "@vuepress/helper/shared";
 
 export interface BackToTopLocaleData {
   /**
@@ -9,7 +9,7 @@ export interface BackToTopLocaleData {
   backToTop: string;
 }
 
-export type BackToTopLocaleConfig = RequiredLocaleConfig<BackToTopLocaleData>;
+export type BackToTopLocaleConfig = ExactLocaleConfig<BackToTopLocaleData>;
 
 export interface PDFLocaleData {
   /**
@@ -26,7 +26,7 @@ export interface PDFLocaleData {
   hint: string;
 }
 
-export type PDFLocaleConfig = RequiredLocaleConfig<PDFLocaleData>;
+export type PDFLocaleConfig = ExactLocaleConfig<PDFLocaleData>;
 
 export interface SiteInfoLocaleData {
   /**
@@ -37,4 +37,4 @@ export interface SiteInfoLocaleData {
   source: string;
 }
 
-export type SiteInfoLocaleConfig = RequiredLocaleConfig<SiteInfoLocaleData>;
+export type SiteInfoLocaleConfig = ExactLocaleConfig<SiteInfoLocaleData>;

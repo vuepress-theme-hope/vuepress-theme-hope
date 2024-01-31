@@ -1,5 +1,6 @@
+import { isFunction } from "@vuepress/helper/node";
 import { colors } from "vuepress/utils";
-import { createConverter, isFunction } from "vuepress-shared/node";
+import { createConverter } from "vuepress-shared/node";
 
 import type { CopyrightOptions } from "./options.js";
 import { logger } from "./utils.js";

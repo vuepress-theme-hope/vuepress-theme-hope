@@ -1,5 +1,5 @@
 import type Babel from "@babel/core";
-import { keys } from "vuepress-shared/client";
+import { keys } from "@vuepress/helper/client";
 
 import type { Code, CodeType } from "./typings.js";
 import { getConfig, preProcessorConfig } from "./utils.js";

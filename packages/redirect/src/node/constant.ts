@@ -1,5 +1,5 @@
+import { ensureEndingSlash } from "@vuepress/helper/node";
 import { getDirname, path } from "vuepress/utils";
-import { ensureEndingSlash } from "vuepress-shared/node";
 
 const __dirname = getDirname(import.meta.url);
 

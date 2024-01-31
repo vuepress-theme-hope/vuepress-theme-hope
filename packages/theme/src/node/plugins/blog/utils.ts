@@ -1,6 +1,6 @@
+import { dateSorter } from "@vuepress/helper/node";
 import type { GitData } from "@vuepress/plugin-git";
 import type { Page } from "vuepress/core";
-import { dateSorter } from "vuepress-shared/node";
 
 import type {
   ArticleInfo,

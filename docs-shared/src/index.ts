@@ -6,7 +6,7 @@ export {
   addViteOptimizeDepsInclude,
   addViteSsrExternal,
   addViteSsrNoExternal,
-} from "vuepress-shared/node";
+} from "@vuepress/helper/node";
 export { navbar, sidebar } from "vuepress-theme-hope";
 export * from "./config-wrapper.js";
 export * from "./head.js";

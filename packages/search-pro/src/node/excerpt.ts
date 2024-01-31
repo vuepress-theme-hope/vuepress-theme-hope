@@ -1,5 +1,5 @@
+import { getPageExcerpt } from "@vuepress/helper/node";
 import type { App, Page } from "vuepress/core";
-import { getPageExcerpt } from "vuepress-shared/node";
 
 export const setPageExcerpt = (app: App): void => {
   const { pages, pluginApi } = app;

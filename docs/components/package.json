@@ -20,6 +20,7 @@
     "docs:webpack-dev": "vuepress-webpack dev src"
   },
   "dependencies": {
+    "@vuepress/helper": "2.0.0-rc.5",
     "artplayer": "5.1.1",
     "artplayer-plugin-danmuku": "5.0.1",
     "dashjs-pure": "1.0.0",

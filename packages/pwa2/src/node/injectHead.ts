@@ -1,5 +1,5 @@
+import { isPlainObject } from "@vuepress/helper/node";
 import type { HeadConfig } from "vuepress/core";
-import { isPlainObject } from "vuepress-shared/node";
 
 import type { PWAOptions } from "./options.js";
 

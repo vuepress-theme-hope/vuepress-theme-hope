@@ -1,10 +1,10 @@
 import {
   endsWith,
-  isAbsoluteUrl,
   isArray,
+  isLinkAbsolute,
   isLinkHttp,
   isString,
-} from "vuepress-shared/node";
+} from "@vuepress/helper/node";
 
 import type { FontIconAssets } from "../options/index.js";
 import { logger } from "../utils.js";
@@ -109,7 +109,7 @@ useScriptTag(
 
     const actualLink = isLinkHttp(asset)
       ? asset
-      : isAbsoluteUrl(asset)
+      : isLinkAbsolute(asset)
         ? asset
         : `//${asset}`;
 

@@ -1,5 +1,5 @@
+import { getRealPath } from "@vuepress/helper/node";
 import type { App } from "vuepress/core";
-import { getRealPath } from "vuepress-shared/node";
 
 import type { RevealJsPlugin, RevealJsTheme } from "../typings/index.js";
 import { CLIENT_FOLDER } from "../utils.js";

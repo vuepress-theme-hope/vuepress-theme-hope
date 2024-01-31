@@ -1,4 +1,4 @@
-import { removeEndingSlash } from "vuepress-shared/client";
+import { removeEndingSlash } from "@vuepress/helper/client";
 
 export const getAncestorLinks = (
   path: string,

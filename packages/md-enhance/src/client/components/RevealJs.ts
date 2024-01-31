@@ -1,3 +1,4 @@
+import { decodeData } from "@vuepress/helper/client";
 import type Reveal from "reveal.js/dist/reveal.esm.js";
 import type { PropType, VNode } from "vue";
 import {
@@ -9,7 +10,7 @@ import {
   shallowRef,
 } from "vue";
 import { usePageFrontmatter } from "vuepress/client";
-import { LoadingIcon, atou } from "vuepress-shared/client";
+import { LoadingIcon } from "vuepress-shared/client";
 
 import { useRevealJs } from "@temp/md-enhance/revealjs-plugins.js";
 
@@ -114,7 +115,7 @@ export default defineComponent({
       const container = presentationContainer.value;
 
       if (container) {
-        code.value = atou(props.code);
+        code.value = decodeData(props.code);
 
         container.setAttribute("id", props.id);
         container.setAttribute("data-theme", props.theme);

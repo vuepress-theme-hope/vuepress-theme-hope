@@ -1,11 +1,11 @@
-import type { PluginFunction } from "vuepress/core";
-import { useSassPalettePlugin } from "vuepress-plugin-sass-palette";
 import {
   addViteOptimizeDepsExclude,
   addViteSsrNoExternal,
   customizeDevServer,
-  getLocales,
-} from "vuepress-shared/node";
+  getLocaleConfig,
+} from "@vuepress/helper/node";
+import type { PluginFunction } from "vuepress/core";
+import { useSassPalettePlugin } from "vuepress-plugin-sass-palette";
 
 import { convertOptions } from "./compact.js";
 import { generateManifest, getManifest } from "./generateManifest.js";
@@ -44,7 +44,7 @@ export const pwaPlugin =
       name: PLUGIN_NAME,
 
       define: () => ({
-        PWA_LOCALES: getLocales({
+        PWA_LOCALES: getLocaleConfig({
           app,
           name: PLUGIN_NAME,
           default: pwaLocales,
@@ -59,7 +59,10 @@ export const pwaPlugin =
           "mitt",
           "register-service-worker",
         ]);
-        addViteSsrNoExternal(bundlerOptions, app, "vuepress-shared");
+        addViteSsrNoExternal(bundlerOptions, app, [
+          "@vuepress/helper",
+          "vuepress-shared",
+        ]);
 
         customizeDevServer(bundlerOptions, app, {
           path: "/manifest.webmanifest",

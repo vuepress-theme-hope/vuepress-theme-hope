@@ -13,13 +13,7 @@ import { stylize } from "@mdit/plugin-stylize";
 import { sub } from "@mdit/plugin-sub";
 import { sup } from "@mdit/plugin-sup";
 import { tasklist } from "@mdit/plugin-tasklist";
-import { noopModule } from "@vuepress/helper/node";
-import type { PluginFunction } from "vuepress/core";
-import type { MarkdownEnv } from "vuepress/markdown";
-import { colors } from "vuepress/utils";
-import { useSassPalettePlugin } from "vuepress-plugin-sass-palette";
 import {
-  MATHML_TAGS,
   addCustomElement,
   addViteOptimizeDepsExclude,
   addViteOptimizeDepsInclude,
@@ -28,10 +22,15 @@ import {
   addViteSsrNoExternal,
   chainWebpack,
   getBundlerName,
-  getLocales,
+  getLocaleConfig,
   getPackageManager,
   isPlainObject,
-} from "vuepress-shared/node";
+  noopModule,
+} from "@vuepress/helper/node";
+import type { PluginFunction } from "vuepress/core";
+import type { MarkdownEnv } from "vuepress/markdown";
+import { colors } from "vuepress/utils";
+import { useSassPalettePlugin } from "vuepress-plugin-sass-palette";
 
 import {
   convertOptions,
@@ -107,7 +106,7 @@ export const mdEnhancePlugin =
       return enabled && pkgInstalled;
     };
 
-    const locales = getLocales({
+    const locales = getLocaleConfig({
       app,
       name: PLUGIN_NAME,
       default: markdownEnhanceLocales,
@@ -222,17 +221,13 @@ export const mdEnhancePlugin =
 
       extendsBundlerOptions: (bundlerOptions: unknown, app): void => {
         addViteSsrNoExternal(bundlerOptions, app, [
+          "@vuepress/helper",
           "fflate",
           "vuepress-shared",
         ]);
 
-        if (status.katex && katexOptions.output !== "html") {
-          addCustomElement(bundlerOptions, app, MATHML_TAGS);
-        } else if (status.mathjax) {
-          addCustomElement(bundlerOptions, app, /^mjx-/);
-          if (mathjaxInstance?.documentOptions.enableAssistiveMml)
-            addCustomElement(bundlerOptions, app, MATHML_TAGS);
-        }
+        if (status.mathjax) addCustomElement(bundlerOptions, app, /^mjx-/);
+
         if (status.chart) {
           addViteOptimizeDepsExclude(
             bundlerOptions,

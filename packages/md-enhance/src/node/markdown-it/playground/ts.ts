@@ -1,11 +1,11 @@
-import type { CompilerOptions } from "typescript";
 import {
   deepAssign,
   endsWith,
   entries,
   isPlainObject,
   keys,
-} from "vuepress-shared/node";
+} from "@vuepress/helper/node";
+import type { CompilerOptions } from "typescript";
 
 import { compressToEncodedURIComponent } from "./ventors/lzstring.js";
 import { optionDeclarations } from "./ventors/optionDeclarations.js";

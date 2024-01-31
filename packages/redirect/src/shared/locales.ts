@@ -1,4 +1,4 @@
-import type { RequiredLocaleConfig } from "vuepress-shared";
+import type { ExactLocaleConfig } from "@vuepress/helper/shared";
 
 export interface RedirectLocaleData {
   /**
@@ -26,4 +26,4 @@ export interface RedirectLocaleData {
   cancel: string;
 }
 
-export type RedirectLocaleConfig = RequiredLocaleConfig<RedirectLocaleData>;
+export type RedirectLocaleConfig = ExactLocaleConfig<RedirectLocaleData>;

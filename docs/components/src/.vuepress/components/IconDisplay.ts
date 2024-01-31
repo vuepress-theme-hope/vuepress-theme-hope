@@ -1,7 +1,8 @@
 import type { VNode } from "vue";
 import { defineComponent, h, onMounted, shallowRef } from "vue";
 import type { CopyCodeLocaleConfig } from "vuepress-plugin-copy-code2";
-import { Message, useLocaleConfig } from "vuepress-shared/client";
+import { useLocaleConfig } from "@vuepress/helper/client";
+import { Message } from "vuepress-shared/client";
 
 import "./icon-display.scss";
 

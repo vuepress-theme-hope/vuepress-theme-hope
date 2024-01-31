@@ -1,15 +1,15 @@
+import {
+  endsWith,
+  keys,
+  startsWith,
+  useLocaleConfig,
+} from "@vuepress/helper/client";
 import type { PropType, VNode } from "vue";
 import { computed, defineComponent, h } from "vue";
 import type { RouteMeta } from "vue-router";
 import { useRouter } from "vue-router";
 import { usePageData, useSiteData } from "vuepress/client";
-import {
-  VPLink,
-  endsWith,
-  keys,
-  startsWith,
-  useLocaleConfig,
-} from "vuepress-shared/client";
+import { VPLink } from "vuepress-shared/client";
 
 import type { CatalogLocaleConfig } from "../../../shared/index.js";
 import FontIcon from "../../components/FontIcon.js";

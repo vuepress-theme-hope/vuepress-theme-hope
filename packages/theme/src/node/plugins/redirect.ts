@@ -1,7 +1,7 @@
+import { isPlainObject, keys } from "@vuepress/helper/node";
 import type { Plugin } from "vuepress/core";
 import { colors } from "vuepress/utils";
 import type { RedirectOptions } from "vuepress-plugin-redirect";
-import { isPlainObject, keys } from "vuepress-shared/node";
 
 import { logger } from "../utils.js";
 

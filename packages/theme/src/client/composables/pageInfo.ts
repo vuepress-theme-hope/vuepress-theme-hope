@@ -1,3 +1,4 @@
+import { parseDate } from "@vuepress/helper/client";
 import type { GitData } from "@vuepress/plugin-git";
 import type { ComputedRef } from "vue";
 import { computed, inject } from "vue";
@@ -8,12 +9,7 @@ import {
   useReadingTimeLocale,
 } from "vuepress-plugin-reading-time2/client";
 import type { AuthorInfo, BasePageFrontMatter } from "vuepress-shared/client";
-import {
-  getAuthor,
-  getCategory,
-  getDate,
-  getTag,
-} from "vuepress-shared/client";
+import { getAuthor, getCategory, getTag } from "vuepress-shared/client";
 
 import type {
   CategoryMapRef,
@@ -80,7 +76,7 @@ export const usePageDate = (): ComputedRef<Date | null> => {
   const page = usePageData<{ git?: GitData }>();
 
   return computed(() => {
-    const date = getDate(frontmatter.value.date);
+    const date = parseDate(frontmatter.value.date)?.value;
 
     if (date) return date;
 

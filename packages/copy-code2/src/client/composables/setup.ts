@@ -25,10 +25,11 @@
  * © 2019 GitHub, Inc.
  */
 
+import { useLocaleConfig } from "@vuepress/helper/client";
 import { useClipboard, useEventListener } from "@vueuse/core";
 import { nextTick, onMounted, watch } from "vue";
 import { usePageData } from "vuepress/client";
-import { Message, useIsMobile, useLocaleConfig } from "vuepress-shared/client";
+import { Message, useIsMobile } from "vuepress-shared/client";
 
 import {
   copyCodeDelay,

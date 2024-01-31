@@ -94,7 +94,7 @@
     "@mdit/plugin-tex": "^0.8.0",
     "@mdit/plugin-uml": "^0.8.0",
     "@types/markdown-it": "^13.0.7",
-    "@vuepress/helper": "2.0.0-rc.4",
+    "@vuepress/helper": "2.0.0-rc.5",
     "@vueuse/core": "^10.7.2",
     "balloon-css": "^1.2.0",
     "js-yaml": "^4.1.0",

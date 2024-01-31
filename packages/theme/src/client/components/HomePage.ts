@@ -1,7 +1,7 @@
+import { isArray } from "@vuepress/helper/client";
 import type { SlotsType, VNode } from "vue";
 import { computed, defineComponent, h } from "vue";
 import { usePageFrontmatter } from "vuepress/client";
-import { isArray } from "vuepress-shared/client";
 
 import FeaturePanel from "@theme-hope/components/FeaturePanel";
 import HeroInfo from "@theme-hope/components/HeroInfo";

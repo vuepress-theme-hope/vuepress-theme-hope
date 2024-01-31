@@ -1,5 +1,5 @@
+import { addViteSsrNoExternal, isArray } from "@vuepress/helper/node";
 import type { PluginObject } from "vuepress/core";
-import { addViteSsrNoExternal, isArray } from "vuepress-shared/node";
 
 import type { RTLOptions } from "./options.js";
 import { CLIENT_FOLDER } from "./utils.js";
@@ -13,7 +13,10 @@ export const rltPlugin = (options: RTLOptions = {}): PluginObject => ({
   },
 
   extendsBundlerOptions: (bundlerOptions: unknown, app): void => {
-    addViteSsrNoExternal(bundlerOptions, app, "vuepress-shared");
+    addViteSsrNoExternal(bundlerOptions, app, [
+      "@vuepress/helper",
+      "vuepress-shared",
+    ]);
   },
 
   clientConfigFile: `${CLIENT_FOLDER}config.js`,

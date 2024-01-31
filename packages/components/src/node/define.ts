@@ -1,5 +1,5 @@
+import { getLocaleConfig } from "@vuepress/helper/node";
 import type { App } from "vuepress/core";
-import { getLocales } from "vuepress-shared/node";
 
 import { catalogLocales } from "./compact/index.js";
 import { getIconInfo, getShareServiceConfig } from "./components/index.js";
@@ -21,7 +21,7 @@ export const getDefine =
     const result: Record<string, unknown> = {};
 
     if (legacy && (options.components as unknown[])?.includes("Catalog"))
-      result["CATALOG_LOCALES"] = getLocales({
+      result["CATALOG_LOCALES"] = getLocaleConfig({
         app,
         name: "catalog",
         default: catalogLocales,
@@ -48,7 +48,7 @@ export const getDefine =
     }
 
     if (options.components?.includes("PDF")) {
-      result["PDF_LOCALES"] = getLocales({
+      result["PDF_LOCALES"] = getLocaleConfig({
         app,
         name: "pdf",
         default: pdfLocaleConfig,
@@ -65,7 +65,7 @@ export const getDefine =
     }
 
     if (options.components?.includes("SiteInfo"))
-      result["SITE_INFO_LOCALES"] = getLocales({
+      result["SITE_INFO_LOCALES"] = getLocaleConfig({
         app,
         name: "siteInfo",
         default: siteInfoLocaleConfig,
@@ -73,7 +73,7 @@ export const getDefine =
       });
 
     if (options.rootComponents?.backToTop)
-      result["BACK_TO_TOP_LOCALES"] = getLocales({
+      result["BACK_TO_TOP_LOCALES"] = getLocaleConfig({
         app,
         name: "backToTop",
         default: backToTopLocales,

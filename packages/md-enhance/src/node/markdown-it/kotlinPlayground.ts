@@ -1,5 +1,5 @@
+import { encodeData, entries } from "@vuepress/helper/node";
 import type { PluginSimple } from "markdown-it";
-import { entries, utoa } from "vuepress-shared/node";
 
 import { playground } from "./playground/index.js";
 import type { PlaygroundData } from "../typings/index.js";
@@ -12,7 +12,7 @@ export const kotlinPlayground: PluginSimple = (md) => {
       title,
       key,
       settings: encodeURIComponent(JSON.stringify(settings || {})),
-      files: utoa(
+      files: encodeData(
         JSON.stringify(entries(files).map(([, { content }]) => content)),
       ),
     }),

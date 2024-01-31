@@ -1,12 +1,12 @@
+import { addViteSsrNoExternal, getLocaleConfig } from "@vuepress/helper/node";
 import type { PluginFunction } from "vuepress/core";
 import { useSassPalettePlugin } from "vuepress-plugin-sass-palette";
-import { addViteSsrNoExternal, getLocales } from "vuepress-shared/node";
 
 import { convertOptions } from "./compact.js";
 import { CLIENT_FOLDER, PLUGIN_NAME } from "./constant.js";
 import { generateAutoLocaleRedirects, generateRedirects } from "./generate.js";
 import { ensureRootHomePage } from "./homepage.js";
-import { getLocaleConfig } from "./locale.js";
+import { getLocaleSettings } from "./locale.js";
 import { redirectLocales } from "./locales.js";
 import type { RedirectOptions } from "./options.js";
 import { prepareRedirects } from "./prepare.js";
@@ -21,7 +21,7 @@ export const redirectPlugin =
 
     if (app.env.isDebug) logger.info("Options:", options);
 
-    const localeConfig = getLocaleConfig(app, options);
+    const localeConfig = getLocaleSettings(app, options);
     let redirectMap: Record<string, string>;
 
     useSassPalettePlugin(app, { id: "hope" });
@@ -32,7 +32,7 @@ export const redirectPlugin =
       define: {
         REDIRECT_LOCALE_CONFIG: localeConfig,
         REDIRECT_LOCALE_SWITCH: Boolean(localeConfig.switchLocale),
-        REDIRECT_LOCALES: getLocales({
+        REDIRECT_LOCALES: getLocaleConfig({
           app,
           name: "redirect",
           config: options.locales,
@@ -41,7 +41,10 @@ export const redirectPlugin =
       },
 
       extendsBundlerOptions: (bundlerOptions: unknown, app): void => {
-        addViteSsrNoExternal(bundlerOptions, app, "vuepress-shared");
+        addViteSsrNoExternal(bundlerOptions, app, [
+          "@vuepress/helper",
+          "vuepress-shared",
+        ]);
       },
 
       onInitialized: async (app): Promise<void> => {

@@ -1,6 +1,6 @@
+import { isPlainObject } from "@vuepress/helper/client";
 import type { PropType, VNode } from "vue";
 import { defineComponent, h, onMounted } from "vue";
-import { isPlainObject } from "vuepress-shared/client";
 
 import "vidstack/player/styles/default/theme.css";
 import "vidstack/player/styles/default/layouts/audio.css";

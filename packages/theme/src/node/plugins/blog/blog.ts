@@ -1,7 +1,7 @@
+import { keys, startsWith } from "@vuepress/helper/node";
 import type { App, Page, Plugin } from "vuepress/core";
 import type { BlogOptions } from "vuepress-plugin-blog2";
 import { blogPlugin } from "vuepress-plugin-blog2";
-import { keys, startsWith } from "vuepress-shared/node";
 
 import { getBlogCategoryCategory, getBlogTagCategory } from "./category.js";
 import { blogFilter } from "./filter.js";

@@ -1,6 +1,6 @@
+import { decodeData } from "@vuepress/helper";
 import MarkdownIt from "markdown-it";
 import { describe, expect, it } from "vitest";
-import { atou } from "vuepress-shared";
 
 import { markmap } from "../../src/node/markdown-it/markmap.js";
 
@@ -47,7 +47,7 @@ ${content}
       /<MarkMap id="markmap-\d+" content=".*?"><\/MarkMap>/,
     );
     expect(
-      atou(
+      decodeData(
         /<MarkMap id="markmap-\d+" content="(.*?)"><\/MarkMap>/.exec(
           renderResult,
         )?.[1] || "",

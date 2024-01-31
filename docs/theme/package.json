@@ -21,7 +21,7 @@
   },
   "dependencies": {
     "@types/katex": "0.16.7",
-    "@vuepress/plugin-feed": "2.0.0-rc.4",
+    "@vuepress/plugin-feed": "2.0.0-rc.5",
     "@vueuse/core": "10.7.2",
     "artplayer": "5.1.1",
     "docs-shared": "workspace:*",

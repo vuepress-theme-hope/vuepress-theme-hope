@@ -19,7 +19,8 @@ export const getHash = (path: string): string => {
 export const normalizePath = (path: string): string =>
   decodeURI(path)
     .replace(HASH_REGEXP, "")
-    .replace(/(index)?\.html$/i, "")
+    .replace(/\/index\.html$/i, "/")
+    .replace(/\.html$/i, "")
     .replace(/(README|index)?\.md$/i, "");
 
 /**

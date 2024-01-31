@@ -1,7 +1,7 @@
+import { entries } from "@vuepress/helper/node";
 import type { PluginWithOptions } from "markdown-it";
 import type { RuleBlock } from "markdown-it/lib/parser_block.js";
 import { hash } from "vuepress/utils";
-import { entries } from "vuepress-shared/node";
 
 import type { PlaygroundData, PlaygroundOptions } from "../../typings/index.js";
 import { escapeHtml } from "../utils.js";

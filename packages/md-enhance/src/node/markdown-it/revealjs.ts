@@ -1,6 +1,6 @@
 import { uml } from "@mdit/plugin-uml";
+import { encodeData } from "@vuepress/helper/node";
 import type { PluginSimple } from "markdown-it";
-import { utoa } from "vuepress-shared/node";
 
 export const revealJs: PluginSimple = (md) => {
   md.use(uml, {
@@ -12,7 +12,7 @@ export const revealJs: PluginSimple = (md) => {
       const key = `revealjs-${index}`;
       const { content, info } = token;
 
-      return `<RevealJs id="${key}" code="${utoa(content)}" theme="${
+      return `<RevealJs id="${key}" code="${encodeData(content)}" theme="${
         info.trim() || "auto"
       }"></RevealJs>`;
     },

@@ -1,11 +1,11 @@
-import type { App, Page } from "vuepress/core";
-import { logger } from "vuepress/utils";
 import {
-  isAbsoluteUrl,
   isArray,
   isFunction,
+  isLinkAbsolute,
   isRegExp,
-} from "vuepress-shared/node";
+} from "@vuepress/helper/node";
+import type { App, Page } from "vuepress/core";
+import { logger } from "vuepress/utils";
 
 import type { MarkdownEnhanceOptions } from "./options.js";
 
@@ -55,7 +55,7 @@ export const linksCheck = (
   const brokenLinks = [
     ...markdownLinks
       // relative markdown links
-      .filter(({ raw }) => !isAbsoluteUrl(raw))
+      .filter(({ raw }) => !isLinkAbsolute(raw))
       .filter(
         ({ relative }) =>
           // check whether the page exists
@@ -65,7 +65,7 @@ export const linksCheck = (
       ),
     ...markdownLinks
       // absolute markdown links
-      .filter(({ raw }) => isAbsoluteUrl(raw))
+      .filter(({ raw }) => isLinkAbsolute(raw))
       .filter(({ absolute }) =>
         // check whether the page exists
         pages.every(

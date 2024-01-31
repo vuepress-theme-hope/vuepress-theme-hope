@@ -1,3 +1,4 @@
+import { useLocaleConfig } from "@vuepress/helper/client";
 import type { VNode } from "vue";
 import { computed, defineComponent, h, resolveComponent } from "vue";
 import { withBase } from "vuepress/client";
@@ -8,7 +9,6 @@ import {
   GiteeIcon,
   SourceIcon,
   resolveRepoType,
-  useLocaleConfig,
 } from "vuepress-shared/client";
 
 import type { SiteInfoLocaleConfig } from "../../shared/index.js";

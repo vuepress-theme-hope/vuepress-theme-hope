@@ -46,7 +46,7 @@
     "dev:ts": "tsc -b tsconfig.build.json --watch"
   },
   "dependencies": {
-    "@vuepress/helper": "2.0.0-rc.4",
+    "@vuepress/helper": "2.0.0-rc.5",
     "@vueuse/core": "^10.7.2",
     "cheerio": "1.0.0-rc.12",
     "dayjs": "^1.11.10",
@@ -54,7 +54,6 @@
     "fflate": "^0.8.1",
     "gray-matter": "^4.0.3",
     "semver": "^7.5.4",
-    "striptags": "^3.2.0",
     "vue": "^3.4.15",
     "vue-router": "^4.2.5"
   },

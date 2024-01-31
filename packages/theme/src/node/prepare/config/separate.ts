@@ -1,5 +1,5 @@
+import { getRealPath } from "@vuepress/helper/node";
 import type { App } from "vuepress/core";
-import { getRealPath } from "vuepress-shared/node";
 
 import { ArticleInfoType } from "../../../shared/index.js";
 import type { ThemeStatus } from "../../config/index.js";

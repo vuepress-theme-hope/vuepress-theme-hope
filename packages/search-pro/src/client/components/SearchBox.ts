@@ -1,12 +1,8 @@
+import { useLocaleConfig } from "@vuepress/helper/client";
 import { useEventListener } from "@vueuse/core";
 import type { VNode } from "vue";
 import { computed, defineComponent, h, inject, onMounted, ref } from "vue";
-import {
-  checkIsIOS,
-  checkIsMacOS,
-  checkIsiPad,
-  useLocaleConfig,
-} from "vuepress-shared/client";
+import { checkIsIOS, checkIsMacOS, checkIsiPad } from "vuepress-shared/client";
 
 import { SearchIcon } from "./icons.js";
 import { searchModalSymbol } from "../composables/index.js";

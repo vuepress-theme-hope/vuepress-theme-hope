@@ -1,6 +1,6 @@
+import { dateSorter } from "@vuepress/helper/node";
 import type { GitData } from "@vuepress/plugin-git";
 import type { BlogTypeOptions } from "vuepress-plugin-blog2";
-import { dateSorter } from "vuepress-shared/node";
 
 import { defaultPageSorter } from "./utils.js";
 import type {

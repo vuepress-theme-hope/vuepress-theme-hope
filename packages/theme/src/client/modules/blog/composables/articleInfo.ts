@@ -1,3 +1,4 @@
+import { parseDate } from "@vuepress/helper/client";
 import type { ComputedRef, Ref } from "vue";
 import { computed, toRef } from "vue";
 import {
@@ -5,12 +6,7 @@ import {
   useReadingTimeLocaleConfig,
 } from "vuepress-plugin-reading-time2/client";
 import type { AuthorInfo } from "vuepress-shared/client";
-import {
-  getAuthor,
-  getCategory,
-  getDate,
-  getTag,
-} from "vuepress-shared/client";
+import { getAuthor, getCategory, getTag } from "vuepress-shared/client";
 
 import { useThemeLocaleData } from "@theme-hope/composables/index";
 import type { PageInfoProps } from "@theme-hope/modules/info/components/PageInfo";
@@ -72,7 +68,7 @@ export const useArticleDate = (info: Ref<ArticleInfo>): DateRef =>
   computed(() => {
     const { [ArticleInfoType.date]: timestamp } = info.value;
 
-    return getDate(timestamp);
+    return parseDate(timestamp)?.value || null;
   });
 
 export const useArticleInfo = (props: {

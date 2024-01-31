@@ -1,7 +1,7 @@
+import { isPlainObject } from "@vuepress/helper/node";
 import type { Plugin } from "vuepress/core";
 import { colors } from "vuepress/utils";
 import type { PWAOptions } from "vuepress-plugin-pwa2";
-import { isPlainObject } from "vuepress-shared/node";
 
 import { logger } from "../utils.js";
 

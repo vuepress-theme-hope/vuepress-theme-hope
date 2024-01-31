@@ -1,4 +1,4 @@
-import { entries } from "vuepress-shared/client";
+import { entries } from "@vuepress/helper/client";
 
 import type {
   LocaleRedirectConfig,

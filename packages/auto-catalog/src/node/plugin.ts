@@ -1,6 +1,6 @@
+import { addViteSsrNoExternal, getLocaleConfig } from "@vuepress/helper/node";
 import type { PluginFunction } from "vuepress/core";
 import { useSassPalettePlugin } from "vuepress-plugin-sass-palette";
-import { addViteSsrNoExternal, getLocales } from "vuepress-shared/node";
 
 import { generateCatalog } from "./autoCatalog.js";
 import { convertOptions } from "./compact.js";
@@ -24,7 +24,7 @@ export const autoCatalogPlugin =
       name: PLUGIN_NAME,
 
       define: (): Record<string, unknown> => ({
-        AUTO_CATALOG_LOCALES: getLocales({
+        AUTO_CATALOG_LOCALES: getLocaleConfig({
           app,
           name: PLUGIN_NAME,
           default: defaultLocales,
@@ -35,7 +35,10 @@ export const autoCatalogPlugin =
       onInitialized: (app): Promise<void> => generateCatalog(app, options),
 
       extendsBundlerOptions: (bundlerOptions: unknown, app): void => {
-        addViteSsrNoExternal(bundlerOptions, app, "vuepress-shared");
+        addViteSsrNoExternal(bundlerOptions, app, [
+          "@vuepress/helper",
+          "vuepress-shared",
+        ]);
       },
 
       ...(component ? {} : { clientConfigFile: `${CLIENT_FOLDER}config.js` }),

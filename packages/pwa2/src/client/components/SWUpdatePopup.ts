@@ -1,3 +1,4 @@
+import { useLocaleConfig } from "@vuepress/helper/client";
 import type { SlotsType, VNode } from "vue";
 import {
   Transition,
@@ -7,7 +8,6 @@ import {
   onMounted,
   shallowRef,
 } from "vue";
-import { useLocaleConfig } from "vuepress-shared/client";
 
 import { UpdateIcon } from "../components/icons.js";
 import { usePWAEvent } from "../composables/index.js";

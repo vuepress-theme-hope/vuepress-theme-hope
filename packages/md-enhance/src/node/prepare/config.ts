@@ -1,5 +1,5 @@
+import { getRealPath, isPlainObject } from "@vuepress/helper/node";
 import type { App } from "vuepress/core";
-import { getRealPath, isPlainObject } from "vuepress-shared/node";
 
 import type { MarkdownEnhanceOptions } from "../options.js";
 import { CLIENT_FOLDER } from "../utils.js";
@@ -21,7 +21,7 @@ export const prepareConfigFile = async (
   if (options.card && legacy) {
     imports.add(
       `import { hasGlobalComponent } from "${getRealPath(
-        "vuepress-shared/client",
+        "@vuepress/helper/client",
         url,
       )}";`,
     );
@@ -46,7 +46,7 @@ export const prepareConfigFile = async (
     if (legacy) {
       imports.add(
         `import { hasGlobalComponent } from "${getRealPath(
-          "vuepress-shared/client",
+          "@vuepress/helper/client",
           url,
         )}";`,
       );
