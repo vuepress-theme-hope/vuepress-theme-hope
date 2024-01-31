@@ -1175,6 +1175,9 @@ importers:
 
   packages/comment2:
     dependencies:
+      '@vuepress/helper':
+        specifier: 2.0.0-rc.4
+        version: 2.0.0-rc.4(patch_hash=ul5k36ai23pisurvsqykieszyy)(typescript@5.3.3)(vuepress@2.0.0-rc.2)
       '@waline/client':
         specifier: ^2.15.8 || ^3.0.0-alpha.11
         version: 3.0.0-alpha.11(typescript@5.3.3)
@@ -1429,6 +1432,9 @@ importers:
       '@vue/repl':
         specifier: ^3.0.0
         version: 3.4.0
+      '@vuepress/helper':
+        specifier: 2.0.0-rc.4
+        version: 2.0.0-rc.4(patch_hash=ul5k36ai23pisurvsqykieszyy)(typescript@5.3.3)(vuepress@2.0.0-rc.2)
       '@vueuse/core':
         specifier: ^10.7.2
         version: 10.7.2(vue@3.4.15)
@@ -1750,6 +1756,9 @@ importers:
 
   packages/theme:
     dependencies:
+      '@vuepress/helper':
+        specifier: 2.0.0-rc.4
+        version: 2.0.0-rc.4(patch_hash=ul5k36ai23pisurvsqykieszyy)(typescript@5.3.3)(vuepress@2.0.0-rc.2)
       '@vuepress/plugin-active-header-links':
         specifier: 2.0.0-rc.3
         version: 2.0.0-rc.3(typescript@5.3.3)(vuepress@2.0.0-rc.2)

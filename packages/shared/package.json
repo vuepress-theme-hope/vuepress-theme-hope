@@ -28,7 +28,6 @@
     "./client": "./lib/client/index.js",
     "./client/*": "./lib/client/*",
     "./node": "./lib/node/index.js",
-    "./noopModule": "./lib/client/noopModule.js",
     "./styles/*": "./styles/*",
     "./package.json": "./package.json"
   },

@@ -13,6 +13,7 @@ import { stylize } from "@mdit/plugin-stylize";
 import { sub } from "@mdit/plugin-sub";
 import { sup } from "@mdit/plugin-sup";
 import { tasklist } from "@mdit/plugin-tasklist";
+import { noopModule } from "@vuepress/helper/node";
 import type { PluginFunction } from "vuepress/core";
 import type { MarkdownEnv } from "vuepress/markdown";
 import { colors } from "vuepress/utils";
@@ -30,7 +31,6 @@ import {
   getLocales,
   getPackageManager,
   isPlainObject,
-  noopModule,
 } from "vuepress-shared/node";
 
 import {

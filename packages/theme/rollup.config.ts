@@ -23,6 +23,7 @@ export default [
         },
       ],
       external: [
+        "@vuepress/helper/noopComponent",
         "@vuepress/plugin-external-link-icon/client",
         "@vuepress/plugin-theme-data/client",
         "bcrypt-ts/browser",
@@ -31,7 +32,6 @@ export default [
         "vuepress-plugin-comment2/pageview",
         "vuepress-plugin-md-enhance/SlidePage",
         "vuepress-plugin-reading-time2/client",
-        "vuepress-shared/noopModule",
         /\.jpg$/,
       ],
       dts: false,
