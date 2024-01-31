@@ -21,7 +21,7 @@
   },
   "dependencies": {
     "docs-shared": "workspace:*",
-    "sass-loader": "14.0.0",
+    "sass-loader": "14.1.0",
     "vue": "3.4.15",
     "vuepress": "2.0.0-rc.2",
     "vuepress-plugin-lightgallery": "workspace:*"
