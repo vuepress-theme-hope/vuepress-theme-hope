@@ -1,4 +1,6 @@
 const EN_PREPOSITION = [
+  "and",
+  "or",
   "in",
   "on",
   "with",
@@ -15,11 +17,14 @@ const EN_PREPOSITION = [
 
 export const getTitleFromFilename = (filename: string): string => {
   const words = filename
-    .replace(/([A-Z])/g, "-$1")
     .replace(/[-_]/g, " ")
+    .replace(
+      /(^|[^A-Z])([A-Z])/g,
+      (_all, match1: string, match2: string) =>
+        `${match1} ${match2.toLowerCase()}`,
+    )
     .replace(/ +/g, " ")
     .trim()
-    .toLowerCase()
     .split(" ");
 
   return words

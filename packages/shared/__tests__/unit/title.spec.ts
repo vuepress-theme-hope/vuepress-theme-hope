@@ -12,4 +12,8 @@ describe("should get correct title from filename", () => {
     expect(getTitleFromFilename("aNiceTool")).toEqual("A Nice Tool");
     expect(getTitleFromFilename("aPieceOfLove")).toEqual("A Piece of Love");
   });
+
+  it("Should omit abbr", () => {
+    expect(getTitleFromFilename("HTML and CSS")).toEqual("HTML and CSS");
+  });
 });
