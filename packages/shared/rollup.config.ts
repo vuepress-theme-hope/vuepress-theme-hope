@@ -15,7 +15,12 @@ export default [
       "semver",
       "striptags",
     ],
-    dtsExternal: ["node:http", "vuepress/core", "vuepress/shared"],
+    dtsExternal: [
+      "node:http",
+      "@vuepress/helper/node",
+      "vuepress/core",
+      "vuepress/shared",
+    ],
   }),
   ...rollupBundle("client/index", {
     resolve: true,
@@ -28,6 +33,6 @@ export default [
       "vue-router",
     ],
     copy: [["client/styles", "client"]],
-    dtsExternal: ["vuepress/shared"],
+    dtsExternal: ["@vuepress/helper/client", "vuepress/shared"],
   }),
 ];
