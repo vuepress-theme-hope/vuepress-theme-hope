@@ -33,6 +33,7 @@ export default [
 
     {
       external: [
+        "@mermaid",
         "@vue/repl",
         "@vue/repl/codemirror-editor",
         "balloon-css/balloon.css",
