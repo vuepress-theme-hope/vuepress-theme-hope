@@ -24,7 +24,7 @@ export const prepareConfigFile = (
     componentOptions = {},
     rootComponents = {},
   }: ComponentOptions,
-  legacy: boolean,
+  legacy: boolean
 ): Promise<string> => {
   const imports: string[] = [];
   let enhance = "";
@@ -41,7 +41,7 @@ export const prepareConfigFile = (
         COMPONENT_PKG[item].every((pkg) => isInstalled(pkg, true)))
     ) {
       imports.push(
-        `import ${item} from "${CLIENT_FOLDER}components/${item}.js";`,
+        `import ${item} from "${CLIENT_FOLDER}components/${item}.js";`
       );
 
       enhance += `\
@@ -61,7 +61,7 @@ if(!hasGlobalComponent("${item}")) app.component("${item}", ${item});
 
     if (legacy && (item as unknown) === "Catalog") {
       imports.push(
-        `import Catalog from "${CLIENT_FOLDER}compact/components/Catalog.js";`,
+        `import Catalog from "${CLIENT_FOLDER}compact/components/Catalog.js";`
       );
       enhance += `\
 if(!hasGlobalComponent("Catalog")) app.component("Catalog", Catalog);
@@ -76,7 +76,7 @@ if(!hasGlobalComponent("Catalog")) app.component("Catalog", Catalog);
 
     shouldImportH = true;
     imports.push(
-      `import BackToTop from "${CLIENT_FOLDER}components/BackToTop.js";`,
+      `import BackToTop from "${CLIENT_FOLDER}components/BackToTop.js";`
     );
 
     const config = isPlainObject(rootComponents.backToTop)
@@ -95,8 +95,8 @@ if(!hasGlobalComponent("Catalog")) app.component("Catalog", Catalog);
 
     configRootComponents.push(
       `() => h(Notice, { config: ${JSON.stringify(
-        getNoticeOptions(rootComponents.notice),
-      )} }),`,
+        getNoticeOptions(rootComponents.notice)
+      )} }),`
     );
   }
 
@@ -105,8 +105,8 @@ if(!hasGlobalComponent("Catalog")) app.component("Catalog", Catalog);
     `\
 import { defineClientConfig } from "vuepress/client";
 import { hasGlobalComponent } from "${getRealPath(
-      "@vuepress/helper/client",
-      url,
+      "vuepress-shared/client",
+      url
     )}";
 ${
   shouldImportH
@@ -147,6 +147,6 @@ ${setups.map((item) => `    ${item}`).join("\n")}
 ${configRootComponents.map((item) => `    ${item}`).join("\n")}
   ],
 });
-`,
+`
   );
 };
