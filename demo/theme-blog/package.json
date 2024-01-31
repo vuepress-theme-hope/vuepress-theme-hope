@@ -17,6 +17,7 @@
   },
   "devDependencies": {
     "@vue/repl": "3.4.0",
+    "@vuepress/helper": "2.0.0-rc.4",
     "@vuepress/plugin-docsearch": "2.0.0-rc.3",
     "@waline/client": "3.0.0-alpha.11",
     "chart.js": "4.4.1",
@@ -29,7 +30,6 @@
     "sass-loader": "14.1.0",
     "vue": "3.4.15",
     "vuepress": "2.0.0-rc.2",
-    "vuepress-shared": "workspace:*",
     "vuepress-theme-hope": "workspace:*"
   }
 }

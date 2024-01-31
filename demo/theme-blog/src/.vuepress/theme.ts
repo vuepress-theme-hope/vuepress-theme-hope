@@ -1,4 +1,4 @@
-import { compareDate } from "vuepress-shared";
+import { dateSorter } from "@vuepress/helper/node";
 import { hopeTheme } from "vuepress-theme-hope";
 import { enNavbar, zhNavbar } from "./navbar/index.js";
 import { enSidebar, zhSidebar } from "./sidebar/index.js";
@@ -135,7 +135,7 @@ export default hopeTheme(
             key: "tutorial",
             filter: (page) => page.filePathRelative?.includes("demo/") || false,
             sorter: (pageA, pageB) =>
-              compareDate(pageA.frontmatter.date, pageB.frontmatter.date),
+              dateSorter(pageA.frontmatter.date, pageB.frontmatter.date),
             layout: "BlogType",
           },
         ],
