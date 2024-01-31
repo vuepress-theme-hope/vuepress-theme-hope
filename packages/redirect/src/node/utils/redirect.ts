@@ -8,6 +8,7 @@ import {
   isLinkHttp,
   isPlainObject,
   removeEndingSlash,
+  removeLeadingSlash,
 } from "vuepress-shared/node";
 
 import { normalizePath } from "./normalizePath.js";
@@ -28,15 +29,13 @@ export const handleRedirectTo = (
         isAbsoluteUrl(redirectTo)
           ? `${
               hostname
-                ? isLinkHttp(hostname)
-                  ? removeEndingSlash(hostname)
-                  : `https://${removeEndingSlash(hostname)}`
+                ? removeEndingSlash(
+                    isLinkHttp(hostname) ? hostname : `https://${hostname}`,
+                  )
                 : ""
-            }${base}${redirectTo}`
+            }${base}${removeLeadingSlash(redirectTo)}`
           : redirectTo,
-      )
-        .replace(/\.md$/, ".html")
-        .replace(/\/(README|index)\.html/, "/");
+      );
 
       (frontmatter.head ??= []).unshift([
         "script",
