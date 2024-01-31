@@ -39,11 +39,6 @@ export const timeTransformer = (
 
     dayjs.locale(getLocale(lang));
 
-    console.log(
-      result.value.toISOString(),
-      timezone ? dayjs(result.value.toISOString()).tz(timezone) : "",
-    );
-
     const parsed = timezone
       ? dayjs(result.value.toISOString()).tz(timezone)
       : dayjs(result.value);
