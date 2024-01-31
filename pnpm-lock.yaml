@@ -716,9 +716,6 @@ importers:
       vuepress-plugin-redirect:
         specifier: workspace:*
         version: link:../packages/redirect
-      vuepress-shared:
-        specifier: workspace:*
-        version: link:../packages/shared
       vuepress-theme-hope:
         specifier: workspace:*
         version: link:../packages/theme
@@ -788,6 +785,9 @@ importers:
 
   docs/components:
     dependencies:
+      '@vuepress/helper':
+        specifier: 2.0.0-rc.5
+        version: 2.0.0-rc.5(patch_hash=gagnisshml66an67fuvuoeo3iu)(typescript@5.3.3)(vuepress@2.0.0-rc.2)
       artplayer:
         specifier: 5.1.1
         version: 5.1.1
