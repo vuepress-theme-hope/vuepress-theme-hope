@@ -176,10 +176,10 @@ importers:
         version: 2.0.0-rc.2(esbuild@0.20.0)(typescript@5.3.3)
       '@vuepress/theme-default':
         specifier: 2.0.0-rc.2
-        version: 2.0.0-rc.2(sass-loader@14.0.0)(typescript@5.3.3)(vuepress@2.0.0-rc.2)
+        version: 2.0.0-rc.2(sass-loader@14.1.0)(typescript@5.3.3)(vuepress@2.0.0-rc.2)
       sass-loader:
-        specifier: 14.0.0
-        version: 14.0.0(sass@1.70.0)(webpack@5.90.0)
+        specifier: 14.1.0
+        version: 14.1.0(webpack@5.90.0)
       vue:
         specifier: 3.4.15
         version: 3.4.15(typescript@5.3.3)
@@ -200,10 +200,10 @@ importers:
         version: 2.0.0-rc.2(esbuild@0.20.0)(typescript@5.3.3)
       '@vuepress/theme-default':
         specifier: 2.0.0-rc.2
-        version: 2.0.0-rc.2(sass-loader@14.0.0)(typescript@5.3.3)(vuepress@2.0.0-rc.2)
+        version: 2.0.0-rc.2(sass-loader@14.1.0)(typescript@5.3.3)(vuepress@2.0.0-rc.2)
       sass-loader:
-        specifier: 14.0.0
-        version: 14.0.0(sass@1.70.0)(webpack@5.90.0)
+        specifier: 14.1.0
+        version: 14.1.0(webpack@5.90.0)
       vue:
         specifier: 3.4.15
         version: 3.4.15(typescript@5.3.3)
@@ -227,7 +227,7 @@ importers:
         version: 2.0.0-rc.2(esbuild@0.20.0)(typescript@5.3.3)
       '@vuepress/theme-default':
         specifier: 2.0.0-rc.2
-        version: 2.0.0-rc.2(sass-loader@14.0.0)(typescript@5.3.3)(vuepress@2.0.0-rc.2)
+        version: 2.0.0-rc.2(sass-loader@14.1.0)(typescript@5.3.3)(vuepress@2.0.0-rc.2)
       '@waline/client':
         specifier: 3.0.0-alpha.11
         version: 3.0.0-alpha.11(typescript@5.3.3)
@@ -235,8 +235,8 @@ importers:
         specifier: 2.7.3
         version: 2.7.3
       sass-loader:
-        specifier: 14.0.0
-        version: 14.0.0(sass@1.70.0)(webpack@5.90.0)
+        specifier: 14.1.0
+        version: 14.1.0(webpack@5.90.0)
       twikoo:
         specifier: 1.6.31
         version: 1.6.31
@@ -260,7 +260,7 @@ importers:
         version: 2.0.0-rc.2(esbuild@0.20.0)(typescript@5.3.3)
       '@vuepress/theme-default':
         specifier: 2.0.0-rc.2
-        version: 2.0.0-rc.2(sass-loader@14.0.0)(typescript@5.3.3)(vuepress@2.0.0-rc.2)
+        version: 2.0.0-rc.2(sass-loader@14.1.0)(typescript@5.3.3)(vuepress@2.0.0-rc.2)
       artplayer:
         specifier: 5.1.1
         version: 5.1.1
@@ -280,8 +280,8 @@ importers:
         specifier: 3.7.8
         version: 3.7.8
       sass-loader:
-        specifier: 14.0.0
-        version: 14.0.0(sass@1.70.0)(webpack@5.90.0)
+        specifier: 14.1.0
+        version: 14.1.0(webpack@5.90.0)
       vidstack:
         specifier: 1.9.8
         version: 1.9.8
@@ -308,10 +308,10 @@ importers:
         version: 2.0.0-rc.2(esbuild@0.20.0)(typescript@5.3.3)
       '@vuepress/theme-default':
         specifier: 2.0.0-rc.2
-        version: 2.0.0-rc.2(sass-loader@14.0.0)(typescript@5.3.3)(vuepress@2.0.0-rc.2)
+        version: 2.0.0-rc.2(sass-loader@14.1.0)(typescript@5.3.3)(vuepress@2.0.0-rc.2)
       sass-loader:
-        specifier: 14.0.0
-        version: 14.0.0(sass@1.70.0)(webpack@5.90.0)
+        specifier: 14.1.0
+        version: 14.1.0(webpack@5.90.0)
       vue:
         specifier: 3.4.15
         version: 3.4.15(typescript@5.3.3)
@@ -332,10 +332,10 @@ importers:
         version: 2.0.0-rc.2(esbuild@0.20.0)(typescript@5.3.3)
       '@vuepress/theme-default':
         specifier: 2.0.0-rc.2
-        version: 2.0.0-rc.2(sass-loader@14.0.0)(typescript@5.3.3)(vuepress@2.0.0-rc.2)
+        version: 2.0.0-rc.2(sass-loader@14.1.0)(typescript@5.3.3)(vuepress@2.0.0-rc.2)
       sass-loader:
-        specifier: 14.0.0
-        version: 14.0.0(sass@1.70.0)(webpack@5.90.0)
+        specifier: 14.1.0
+        version: 14.1.0(webpack@5.90.0)
       vue:
         specifier: 3.4.15
         version: 3.4.15(typescript@5.3.3)
@@ -356,10 +356,10 @@ importers:
         version: 2.0.0-rc.2(esbuild@0.20.0)(typescript@5.3.3)
       '@vuepress/theme-default':
         specifier: 2.0.0-rc.2
-        version: 2.0.0-rc.2(sass-loader@14.0.0)(typescript@5.3.3)(vuepress@2.0.0-rc.2)
+        version: 2.0.0-rc.2(sass-loader@14.1.0)(typescript@5.3.3)(vuepress@2.0.0-rc.2)
       sass-loader:
-        specifier: 14.0.0
-        version: 14.0.0(sass@1.70.0)(webpack@5.90.0)
+        specifier: 14.1.0
+        version: 14.1.0(webpack@5.90.0)
       vue:
         specifier: 3.4.15
         version: 3.4.15(typescript@5.3.3)
@@ -380,10 +380,10 @@ importers:
         version: 2.0.0-rc.2(esbuild@0.20.0)(typescript@5.3.3)
       '@vuepress/theme-default':
         specifier: 2.0.0-rc.2
-        version: 2.0.0-rc.2(sass-loader@14.0.0)(typescript@5.3.3)(vuepress@2.0.0-rc.2)
+        version: 2.0.0-rc.2(sass-loader@14.1.0)(typescript@5.3.3)(vuepress@2.0.0-rc.2)
       sass-loader:
-        specifier: 14.0.0
-        version: 14.0.0(sass@1.70.0)(webpack@5.90.0)
+        specifier: 14.1.0
+        version: 14.1.0(webpack@5.90.0)
       vue:
         specifier: 3.4.15
         version: 3.4.15(typescript@5.3.3)
@@ -407,7 +407,7 @@ importers:
         version: 2.0.0-rc.2(esbuild@0.20.0)(typescript@5.3.3)
       '@vuepress/theme-default':
         specifier: 2.0.0-rc.2
-        version: 2.0.0-rc.2(sass-loader@14.0.0)(typescript@5.3.3)(vuepress@2.0.0-rc.2)
+        version: 2.0.0-rc.2(sass-loader@14.1.0)(typescript@5.3.3)(vuepress@2.0.0-rc.2)
       chart.js:
         specifier: 4.4.1
         version: 4.4.1
@@ -445,8 +445,8 @@ importers:
         specifier: 3.1.11
         version: 3.1.11(@lezer/common@1.2.1)(vue@3.4.15)
       sass-loader:
-        specifier: 14.0.0
-        version: 14.0.0(sass@1.70.0)(webpack@5.90.0)
+        specifier: 14.1.0
+        version: 14.1.0(webpack@5.90.0)
       vue:
         specifier: 3.4.15
         version: 3.4.15(typescript@5.3.3)
@@ -467,10 +467,10 @@ importers:
         version: 2.0.0-rc.2(esbuild@0.20.0)(typescript@5.3.3)
       '@vuepress/theme-default':
         specifier: 2.0.0-rc.2
-        version: 2.0.0-rc.2(sass-loader@14.0.0)(typescript@5.3.3)(vuepress@2.0.0-rc.2)
+        version: 2.0.0-rc.2(sass-loader@14.1.0)(typescript@5.3.3)(vuepress@2.0.0-rc.2)
       sass-loader:
-        specifier: 14.0.0
-        version: 14.0.0(sass@1.70.0)(webpack@5.90.0)
+        specifier: 14.1.0
+        version: 14.1.0(webpack@5.90.0)
       vue:
         specifier: 3.4.15
         version: 3.4.15(typescript@5.3.3)
@@ -491,10 +491,10 @@ importers:
         version: 2.0.0-rc.2(esbuild@0.20.0)(typescript@5.3.3)
       '@vuepress/theme-default':
         specifier: 2.0.0-rc.2
-        version: 2.0.0-rc.2(sass-loader@14.0.0)(typescript@5.3.3)(vuepress@2.0.0-rc.2)
+        version: 2.0.0-rc.2(sass-loader@14.1.0)(typescript@5.3.3)(vuepress@2.0.0-rc.2)
       sass-loader:
-        specifier: 14.0.0
-        version: 14.0.0(sass@1.70.0)(webpack@5.90.0)
+        specifier: 14.1.0
+        version: 14.1.0(webpack@5.90.0)
       vue:
         specifier: 3.4.15
         version: 3.4.15(typescript@5.3.3)
@@ -515,10 +515,10 @@ importers:
         version: 2.0.0-rc.2(esbuild@0.20.0)(typescript@5.3.3)
       '@vuepress/theme-default':
         specifier: 2.0.0-rc.2
-        version: 2.0.0-rc.2(sass-loader@14.0.0)(typescript@5.3.3)(vuepress@2.0.0-rc.2)
+        version: 2.0.0-rc.2(sass-loader@14.1.0)(typescript@5.3.3)(vuepress@2.0.0-rc.2)
       sass-loader:
-        specifier: 14.0.0
-        version: 14.0.0(sass@1.70.0)(webpack@5.90.0)
+        specifier: 14.1.0
+        version: 14.1.0(webpack@5.90.0)
       vue:
         specifier: 3.4.15
         version: 3.4.15(typescript@5.3.3)
@@ -539,10 +539,10 @@ importers:
         version: 2.0.0-rc.2(esbuild@0.20.0)(typescript@5.3.3)
       '@vuepress/theme-default':
         specifier: 2.0.0-rc.2
-        version: 2.0.0-rc.2(sass-loader@14.0.0)(typescript@5.3.3)(vuepress@2.0.0-rc.2)
+        version: 2.0.0-rc.2(sass-loader@14.1.0)(typescript@5.3.3)(vuepress@2.0.0-rc.2)
       sass-loader:
-        specifier: 14.0.0
-        version: 14.0.0(sass@1.70.0)(webpack@5.90.0)
+        specifier: 14.1.0
+        version: 14.1.0(webpack@5.90.0)
       vue:
         specifier: 3.4.15
         version: 3.4.15(typescript@5.3.3)
@@ -563,10 +563,10 @@ importers:
         version: 2.0.0-rc.2(esbuild@0.20.0)(typescript@5.3.3)
       '@vuepress/theme-default':
         specifier: 2.0.0-rc.2
-        version: 2.0.0-rc.2(sass-loader@14.0.0)(typescript@5.3.3)(vuepress@2.0.0-rc.2)
+        version: 2.0.0-rc.2(sass-loader@14.1.0)(typescript@5.3.3)(vuepress@2.0.0-rc.2)
       sass-loader:
-        specifier: 14.0.0
-        version: 14.0.0(sass@1.70.0)(webpack@5.90.0)
+        specifier: 14.1.0
+        version: 14.1.0(webpack@5.90.0)
       vue:
         specifier: 3.4.15
         version: 3.4.15(typescript@5.3.3)
@@ -587,13 +587,13 @@ importers:
         version: 2.0.0-rc.2(esbuild@0.20.0)(typescript@5.3.3)
       '@vuepress/theme-default':
         specifier: 2.0.0-rc.2
-        version: 2.0.0-rc.2(sass-loader@14.0.0)(typescript@5.3.3)(vuepress@2.0.0-rc.2)
+        version: 2.0.0-rc.2(sass-loader@14.1.0)(typescript@5.3.3)(vuepress@2.0.0-rc.2)
       nodejs-jieba:
         specifier: 0.1.2
         version: 0.1.2
       sass-loader:
-        specifier: 14.0.0
-        version: 14.0.0(sass@1.70.0)(webpack@5.90.0)
+        specifier: 14.1.0
+        version: 14.1.0(webpack@5.90.0)
       vue:
         specifier: 3.4.15
         version: 3.4.15(typescript@5.3.3)
@@ -614,10 +614,10 @@ importers:
         version: 2.0.0-rc.2(esbuild@0.20.0)(typescript@5.3.3)
       '@vuepress/theme-default':
         specifier: 2.0.0-rc.2
-        version: 2.0.0-rc.2(sass-loader@14.0.0)(typescript@5.3.3)(vuepress@2.0.0-rc.2)
+        version: 2.0.0-rc.2(sass-loader@14.1.0)(typescript@5.3.3)(vuepress@2.0.0-rc.2)
       sass-loader:
-        specifier: 14.0.0
-        version: 14.0.0(sass@1.70.0)(webpack@5.90.0)
+        specifier: 14.1.0
+        version: 14.1.0(webpack@5.90.0)
       vue:
         specifier: 3.4.15
         version: 3.4.15(typescript@5.3.3)
@@ -638,10 +638,10 @@ importers:
         version: 2.0.0-rc.2(esbuild@0.20.0)(typescript@5.3.3)
       '@vuepress/theme-default':
         specifier: 2.0.0-rc.2
-        version: 2.0.0-rc.2(sass-loader@14.0.0)(typescript@5.3.3)(vuepress@2.0.0-rc.2)
+        version: 2.0.0-rc.2(sass-loader@14.1.0)(typescript@5.3.3)(vuepress@2.0.0-rc.2)
       sass-loader:
-        specifier: 14.0.0
-        version: 14.0.0(sass@1.70.0)(webpack@5.90.0)
+        specifier: 14.1.0
+        version: 14.1.0(webpack@5.90.0)
       vue:
         specifier: 3.4.15
         version: 3.4.15(typescript@5.3.3)
@@ -685,8 +685,8 @@ importers:
         specifier: 3.1.11
         version: 3.1.11(@lezer/common@1.2.1)(vue@3.4.15)
       sass-loader:
-        specifier: 14.0.0
-        version: 14.0.0(sass@1.70.0)(webpack@5.90.0)
+        specifier: 14.1.0
+        version: 14.1.0(webpack@5.90.0)
       vue:
         specifier: 3.4.15
         version: 3.4.15(typescript@5.3.3)
@@ -730,8 +730,8 @@ importers:
         specifier: 3.1.11
         version: 3.1.11(@lezer/common@1.2.1)(vue@3.4.15)
       sass-loader:
-        specifier: 14.0.0
-        version: 14.0.0(sass@1.70.0)(webpack@5.90.0)
+        specifier: 14.1.0
+        version: 14.1.0(webpack@5.90.0)
       vue:
         specifier: 3.4.15
         version: 3.4.15(typescript@5.3.3)
@@ -781,8 +781,8 @@ importers:
         specifier: workspace:*
         version: link:../../docs-shared
       sass-loader:
-        specifier: 14.0.0
-        version: 14.0.0(sass@1.70.0)(webpack@5.90.0)
+        specifier: 14.1.0
+        version: 14.1.0(webpack@5.90.0)
       vue:
         specifier: 3.4.15
         version: 3.4.15(typescript@5.3.3)
@@ -796,8 +796,8 @@ importers:
         specifier: workspace:*
         version: link:../../docs-shared
       sass-loader:
-        specifier: 14.0.0
-        version: 14.0.0(sass@1.70.0)(webpack@5.90.0)
+        specifier: 14.1.0
+        version: 14.1.0(webpack@5.90.0)
       vue:
         specifier: 3.4.15
         version: 3.4.15(typescript@5.3.3)
@@ -811,8 +811,8 @@ importers:
         specifier: workspace:*
         version: link:../../docs-shared
       sass-loader:
-        specifier: 14.0.0
-        version: 14.0.0(sass@1.70.0)(webpack@5.90.0)
+        specifier: 14.1.0
+        version: 14.1.0(webpack@5.90.0)
       vue:
         specifier: 3.4.15
         version: 3.4.15(typescript@5.3.3)
@@ -826,8 +826,8 @@ importers:
         specifier: workspace:*
         version: link:../../docs-shared
       sass-loader:
-        specifier: 14.0.0
-        version: 14.0.0(sass@1.70.0)(webpack@5.90.0)
+        specifier: 14.1.0
+        version: 14.1.0(webpack@5.90.0)
       vue:
         specifier: 3.4.15
         version: 3.4.15(typescript@5.3.3)
@@ -862,8 +862,8 @@ importers:
         specifier: 3.7.8
         version: 3.7.8
       sass-loader:
-        specifier: 14.0.0
-        version: 14.0.0(sass@1.70.0)(webpack@5.90.0)
+        specifier: 14.1.0
+        version: 14.1.0(webpack@5.90.0)
       vidstack:
         specifier: 1.9.8
         version: 1.9.8
@@ -889,8 +889,8 @@ importers:
         specifier: workspace:*
         version: link:../../docs-shared
       sass-loader:
-        specifier: 14.0.0
-        version: 14.0.0(sass@1.70.0)(webpack@5.90.0)
+        specifier: 14.1.0
+        version: 14.1.0(webpack@5.90.0)
       vue:
         specifier: 3.4.15
         version: 3.4.15(typescript@5.3.3)
@@ -907,8 +907,8 @@ importers:
         specifier: workspace:*
         version: link:../../docs-shared
       sass-loader:
-        specifier: 14.0.0
-        version: 14.0.0(sass@1.70.0)(webpack@5.90.0)
+        specifier: 14.1.0
+        version: 14.1.0(webpack@5.90.0)
       vue:
         specifier: 3.4.15
         version: 3.4.15(typescript@5.3.3)
@@ -925,8 +925,8 @@ importers:
         specifier: workspace:*
         version: link:../../docs-shared
       sass-loader:
-        specifier: 14.0.0
-        version: 14.0.0(sass@1.70.0)(webpack@5.90.0)
+        specifier: 14.1.0
+        version: 14.1.0(webpack@5.90.0)
       vue:
         specifier: 3.4.15
         version: 3.4.15(typescript@5.3.3)
@@ -943,8 +943,8 @@ importers:
         specifier: workspace:*
         version: link:../../docs-shared
       sass-loader:
-        specifier: 14.0.0
-        version: 14.0.0(sass@1.70.0)(webpack@5.90.0)
+        specifier: 14.1.0
+        version: 14.1.0(webpack@5.90.0)
       vue:
         specifier: 3.4.15
         version: 3.4.15(typescript@5.3.3)
@@ -982,8 +982,8 @@ importers:
         specifier: 3.1.11
         version: 3.1.11(@lezer/common@1.2.1)(vue@3.4.15)
       sass-loader:
-        specifier: 14.0.0
-        version: 14.0.0(sass@1.70.0)(webpack@5.90.0)
+        specifier: 14.1.0
+        version: 14.1.0(webpack@5.90.0)
       vue:
         specifier: 3.4.15
         version: 3.4.15(typescript@5.3.3)
@@ -1003,8 +1003,8 @@ importers:
         specifier: workspace:*
         version: link:../../docs-shared
       sass-loader:
-        specifier: 14.0.0
-        version: 14.0.0(sass@1.70.0)(webpack@5.90.0)
+        specifier: 14.1.0
+        version: 14.1.0(webpack@5.90.0)
       vue:
         specifier: 3.4.15
         version: 3.4.15(typescript@5.3.3)
@@ -1021,8 +1021,8 @@ importers:
         specifier: workspace:*
         version: link:../../docs-shared
       sass-loader:
-        specifier: 14.0.0
-        version: 14.0.0(sass@1.70.0)(webpack@5.90.0)
+        specifier: 14.1.0
+        version: 14.1.0(webpack@5.90.0)
       vue:
         specifier: 3.4.15
         version: 3.4.15(typescript@5.3.3)
@@ -1039,8 +1039,8 @@ importers:
         specifier: workspace:*
         version: link:../../docs-shared
       sass-loader:
-        specifier: 14.0.0
-        version: 14.0.0(sass@1.70.0)(webpack@5.90.0)
+        specifier: 14.1.0
+        version: 14.1.0(webpack@5.90.0)
       vue:
         specifier: 3.4.15
         version: 3.4.15(typescript@5.3.3)
@@ -1057,8 +1057,8 @@ importers:
         specifier: workspace:*
         version: link:../../docs-shared
       sass-loader:
-        specifier: 14.0.0
-        version: 14.0.0(sass@1.70.0)(webpack@5.90.0)
+        specifier: 14.1.0
+        version: 14.1.0(webpack@5.90.0)
       vue:
         specifier: 3.4.15
         version: 3.4.15(typescript@5.3.3)
@@ -1072,8 +1072,8 @@ importers:
         specifier: workspace:*
         version: link:../../docs-shared
       sass-loader:
-        specifier: 14.0.0
-        version: 14.0.0(sass@1.70.0)(webpack@5.90.0)
+        specifier: 14.1.0
+        version: 14.1.0(webpack@5.90.0)
       vue:
         specifier: 3.4.15
         version: 3.4.15(typescript@5.3.3)
@@ -1087,8 +1087,8 @@ importers:
         specifier: workspace:*
         version: link:../../docs-shared
       sass-loader:
-        specifier: 14.0.0
-        version: 14.0.0(sass@1.70.0)(webpack@5.90.0)
+        specifier: 14.1.0
+        version: 14.1.0(webpack@5.90.0)
       vue:
         specifier: 3.4.15
         version: 3.4.15(typescript@5.3.3)
@@ -1102,8 +1102,8 @@ importers:
         specifier: workspace:*
         version: link:../../docs-shared
       sass-loader:
-        specifier: 14.0.0
-        version: 14.0.0(sass@1.70.0)(webpack@5.90.0)
+        specifier: 14.1.0
+        version: 14.1.0(webpack@5.90.0)
       vue:
         specifier: 3.4.15
         version: 3.4.15(typescript@5.3.3)
@@ -1120,8 +1120,8 @@ importers:
         specifier: 0.1.2
         version: 0.1.2
       sass-loader:
-        specifier: 14.0.0
-        version: 14.0.0(sass@1.70.0)(webpack@5.90.0)
+        specifier: 14.1.0
+        version: 14.1.0(webpack@5.90.0)
       vue:
         specifier: 3.4.15
         version: 3.4.15(typescript@5.3.3)
@@ -1138,8 +1138,8 @@ importers:
         specifier: workspace:*
         version: link:../../docs-shared
       sass-loader:
-        specifier: 14.0.0
-        version: 14.0.0(sass@1.70.0)(webpack@5.90.0)
+        specifier: 14.1.0
+        version: 14.1.0(webpack@5.90.0)
       vue:
         specifier: 3.4.15
         version: 3.4.15(typescript@5.3.3)
@@ -1156,8 +1156,8 @@ importers:
         specifier: workspace:*
         version: link:../../docs-shared
       sass-loader:
-        specifier: 14.0.0
-        version: 14.0.0(sass@1.70.0)(webpack@5.90.0)
+        specifier: 14.1.0
+        version: 14.1.0(webpack@5.90.0)
       vue:
         specifier: 3.4.15
         version: 3.4.15(typescript@5.3.3)
@@ -1171,8 +1171,8 @@ importers:
         specifier: workspace:*
         version: link:../../docs-shared
       sass-loader:
-        specifier: 14.0.0
-        version: 14.0.0(sass@1.70.0)(webpack@5.90.0)
+        specifier: 14.1.0
+        version: 14.1.0(webpack@5.90.0)
       vue:
         specifier: 3.4.15
         version: 3.4.15(typescript@5.3.3)
@@ -1210,8 +1210,8 @@ importers:
         specifier: 3.1.11
         version: 3.1.11(@lezer/common@1.2.1)(vue@3.4.15)
       sass-loader:
-        specifier: 14.0.0
-        version: 14.0.0(sass@1.70.0)(webpack@5.90.0)
+        specifier: 14.1.0
+        version: 14.1.0(webpack@5.90.0)
       vue:
         specifier: 3.4.15
         version: 3.4.15(typescript@5.3.3)
@@ -5942,7 +5942,7 @@ packages:
     dependencies:
       '@mdit-vue/types': 2.0.0
 
-  /@vuepress/theme-default@2.0.0-rc.2(sass-loader@14.0.0)(typescript@5.3.3)(vuepress@2.0.0-rc.2):
+  /@vuepress/theme-default@2.0.0-rc.2(sass-loader@14.1.0)(typescript@5.3.3)(vuepress@2.0.0-rc.2):
     resolution: {integrity: sha512-v8uqcC7M2Z6tImXYQakT8+4Fg6ea2Q5KucXylVKKBE8eP7a6L+3DkD+c4kUpFvKUhZCHoPR1d84mK3NQhSMg2Q==}
     peerDependencies:
       sass-loader: ^14.0.0
@@ -5963,7 +5963,7 @@ packages:
       '@vuepress/plugin-theme-data': 2.0.0-rc.1(typescript@5.3.3)(vuepress@2.0.0-rc.2)
       '@vueuse/core': 10.7.2(vue@3.4.15)
       sass: 1.70.0
-      sass-loader: 14.0.0(sass@1.70.0)(webpack@5.90.0)
+      sass-loader: 14.1.0(webpack@5.90.0)
       vue: 3.4.15(typescript@5.3.3)
       vue-router: 4.2.5(vue@3.4.15)
       vuepress: 2.0.0-rc.2(@vuepress/bundler-vite@2.0.0-rc.2)(@vuepress/bundler-webpack@2.0.0-rc.2)(typescript@5.3.3)(vue@3.4.15)
@@ -13488,6 +13488,31 @@ packages:
     dependencies:
       neo-async: 2.6.2
       sass: 1.70.0
+      webpack: 5.90.0(esbuild@0.20.0)
+    dev: false
+
+  /sass-loader@14.1.0(webpack@5.90.0):
+    resolution: {integrity: sha512-LS2mLeFWA+orYxHNu+O18Xe4jR0kyamNOOUsE3NyBP4DvIL+8stHpNX0arYTItdPe80kluIiJ7Wfe/9iHSRO0Q==}
+    engines: {node: '>= 18.12.0'}
+    peerDependencies:
+      '@rspack/core': 0.x || 1.x
+      node-sass: ^4.0.0 || ^5.0.0 || ^6.0.0 || ^7.0.0 || ^8.0.0 || ^9.0.0
+      sass: ^1.3.0
+      sass-embedded: '*'
+      webpack: ^5.0.0
+    peerDependenciesMeta:
+      '@rspack/core':
+        optional: true
+      node-sass:
+        optional: true
+      sass:
+        optional: true
+      sass-embedded:
+        optional: true
+      webpack:
+        optional: true
+    dependencies:
+      neo-async: 2.6.2
       webpack: 5.90.0(esbuild@0.20.0)
 
   /sass@1.70.0:
