@@ -1,7 +1,7 @@
+import { useLocaleConfig } from "@vuepress/helper/client";
+import type { CopyCodeLocaleConfig } from "@vuepress/plugin-copy-code";
 import type { VNode } from "vue";
 import { defineComponent, h, onMounted, shallowRef } from "vue";
-import type { CopyCodeLocaleConfig } from "@vuepress/plugin-copy-code";
-import { useLocaleConfig } from "@vuepress/helper/client";
 import { Message } from "vuepress-shared/client";
 
 import "./icon-display.scss";
@@ -17,11 +17,13 @@ export default defineComponent({
   name: "IconDisplay",
 
   props: {
+    /** icon assets link */
     link: {
       type: String,
       required: true,
     },
 
+    /** icon font class prefix */
     iconPrefix: {
       type: String,
       default: "icon-",
@@ -32,7 +34,7 @@ export default defineComponent({
     const locale = useLocaleConfig(__COPY_CODE_LOCALES__);
     const icons = shallowRef<string[]>([]);
 
-    const copyToClipboard = (content: string) => {
+    const copyToClipboard = (content: string): void => {
       const selection = document.getSelection();
 
       /** current selection */
@@ -50,7 +52,7 @@ export default defineComponent({
       textAreaElement.select();
       document.execCommand("copy");
 
-      message.pop(`${CHECK_ICON}<span>${locale.value.hint} 🎉</span>`);
+      message.pop(`${CHECK_ICON}<span>${locale.value.copied} 🎉</span>`);
 
       document.body.removeChild(textAreaElement);
 
@@ -63,6 +65,7 @@ export default defineComponent({
 
     onMounted(() => {
       const regExp = new RegExp(`\\n\\.(${props.iconPrefix}.*?):before`, "g");
+
       message = new Message();
 
       void fetch(props.link)

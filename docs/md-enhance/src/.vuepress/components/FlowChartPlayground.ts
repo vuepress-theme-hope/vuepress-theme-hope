@@ -1,13 +1,13 @@
+import { useLocaleConfig } from "@vuepress/helper/client";
 import { useDebounceFn, useEventListener } from "@vueuse/core";
 import type { Chart } from "flowchart.ts";
-import { flowchartPresets } from "vuepress-plugin-md-enhance/client";
 import type { VNode } from "vue";
 import { defineComponent, h, onMounted, ref, shallowRef, watch } from "vue";
-import { useLocaleConfig } from "@vuepress/helper/client";
-
-declare const MARKDOWN_ENHANCE_DELAY: number;
+import { flowchartPresets } from "vuepress-plugin-md-enhance/client";
 
 import "./flowchart-playground.scss";
+
+declare const MARKDOWN_ENHANCE_DELAY: number;
 
 const id = "flowchart-playground";
 const DEFAULT_FLOWCHART = `\
@@ -58,7 +58,7 @@ export default defineComponent({
     onMounted(() => {
       let parseAction: ((input?: string | undefined) => Chart) | null = null;
 
-      Promise.all([
+      void Promise.all([
         import("flowchart.ts"),
         new Promise((resolve) => setTimeout(resolve, MARKDOWN_ENHANCE_DELAY)),
       ]).then(([{ parse }]) => {

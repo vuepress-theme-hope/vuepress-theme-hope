@@ -1,4 +1,3 @@
-export { fs, getDirname, path } from "vuepress/utils";
 export {
   addCustomElement,
   addViteConfig,

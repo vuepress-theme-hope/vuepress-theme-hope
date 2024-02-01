@@ -1,5 +1,5 @@
-import { defineUserConfig } from "vuepress/cli";
 import { defaultTheme } from "@vuepress/theme-default";
+import { defineUserConfig } from "vuepress/cli";
 import { redirectPlugin } from "vuepress-plugin-redirect";
 
 const base = <"/" | `/${string}/`>process.env["BASE"] || "/";
@@ -31,6 +31,7 @@ export default defineUserConfig({
       autoLocale: true,
       switchLocale: "modal",
       config: {
+        // eslint-disable-next-line @typescript-eslint/naming-convention
         "/homepage.html": "/",
       },
     }),

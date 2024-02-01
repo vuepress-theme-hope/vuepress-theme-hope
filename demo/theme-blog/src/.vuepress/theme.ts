@@ -1,5 +1,6 @@
 import { dateSorter } from "@vuepress/helper/node";
 import { hopeTheme } from "vuepress-theme-hope";
+
 import { enNavbar, zhNavbar } from "./navbar/index.js";
 import { enSidebar, zhSidebar } from "./sidebar/index.js";
 
@@ -123,7 +124,9 @@ export default hopeTheme(
 
     encrypt: {
       config: {
+        // eslint-disable-next-line @typescript-eslint/naming-convention
         "/demo/encrypt.html": ["1234"],
+        // eslint-disable-next-line @typescript-eslint/naming-convention
         "/zh/demo/encrypt.html": ["1234"],
       },
     },
@@ -133,8 +136,9 @@ export default hopeTheme(
         type: [
           {
             key: "tutorial",
-            filter: (page) => page.filePathRelative?.includes("demo/") || false,
-            sorter: (pageA, pageB) =>
+            filter: (page): boolean =>
+              page.filePathRelative?.includes("demo/") || false,
+            sorter: (pageA, pageB): number =>
               dateSorter(pageA.frontmatter.date, pageB.frontmatter.date),
             layout: "BlogType",
           },
@@ -180,7 +184,13 @@ export default hopeTheme(
         stylize: [
           {
             matcher: "Recommended",
-            replacer: ({ tag }) => {
+            replacer: ({
+              tag,
+            }): {
+              tag: string;
+              attrs: Record<string, string>;
+              content: string;
+            } | void => {
               if (tag === "em")
                 return {
                   tag: "Badge",
@@ -238,6 +248,7 @@ export default hopeTheme(
           shortcuts: [
             {
               name: "Demo",
+              // eslint-disable-next-line @typescript-eslint/naming-convention
               short_name: "Demo",
               url: "/demo/",
               icons: [

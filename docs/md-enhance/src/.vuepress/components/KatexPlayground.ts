@@ -1,7 +1,7 @@
+import { useLocaleConfig } from "@vuepress/helper/client";
 import katex from "katex";
 import type { VNode } from "vue";
 import { defineComponent, h, ref, watch } from "vue";
-import { useLocaleConfig } from "@vuepress/helper/client";
 
 import "katex/dist/katex.css";
 import "./katex-playground.scss";

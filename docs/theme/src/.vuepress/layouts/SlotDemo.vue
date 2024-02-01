@@ -7,24 +7,30 @@ import FadeSlideY from "@theme-hope/components/transitions/FadeSlideY";
 
 <template>
   <SkipLink />
+
   <CommonWrapper>
     <FadeSlideY>
       <NormalPage>
         <template #contentBefore>
           <div class="slot-demo-block">contentBefore Slot</div>
         </template>
+
         <template #contentAfter>
           <div class="slot-demo-block">contentAfter Slot</div>
         </template>
+
         <template #top>
           <div class="slot-demo-block">page top Slot</div>
         </template>
+
         <template #bottom>
           <div class="slot-demo-block">page bottom Slot</div>
         </template>
+
         <template #tocBefore>
           <div class="slot-demo-block">tocBefore Slot</div>
         </template>
+
         <template #tocAfter>
           <div class="slot-demo-block">tocAfter Slot</div>
         </template>
@@ -40,6 +46,7 @@ import FadeSlideY from "@theme-hope/components/transitions/FadeSlideY";
         ...
       </div>
     </template>
+
     <template #navbarStartAfter>
       <div
         class="slot-demo-inline"
@@ -49,6 +56,7 @@ import FadeSlideY from "@theme-hope/components/transitions/FadeSlideY";
         ...
       </div>
     </template>
+
     <template #navbarCenterBefore>
       <div
         class="slot-demo-inline"
@@ -58,6 +66,7 @@ import FadeSlideY from "@theme-hope/components/transitions/FadeSlideY";
         ...
       </div>
     </template>
+
     <template #navbarCenterAfter>
       <div
         class="slot-demo-inline"
@@ -67,6 +76,7 @@ import FadeSlideY from "@theme-hope/components/transitions/FadeSlideY";
         ...
       </div>
     </template>
+
     <template #navbarEndBefore>
       <div
         class="slot-demo-inline"
@@ -76,6 +86,7 @@ import FadeSlideY from "@theme-hope/components/transitions/FadeSlideY";
         ...
       </div>
     </template>
+
     <template #navbarEndAfter>
       <div
         class="slot-demo-inline"
@@ -85,15 +96,19 @@ import FadeSlideY from "@theme-hope/components/transitions/FadeSlideY";
         ...
       </div>
     </template>
+
     <template #sidebarTop>
       <div class="slot-demo-block">sidebarTop Slot</div>
     </template>
+
     <template #sidebarBottom>
       <div class="slot-demo-block">sidebarBottom Slot</div>
     </template>
+
     <template #navScreenTop>
       <div class="slot-demo-block">navScreenTop Slot</div>
     </template>
+
     <template #navScreenBottom>
       <div class="slot-demo-block">navScreenBottom Slot</div>
     </template>

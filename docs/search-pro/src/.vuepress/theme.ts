@@ -16,6 +16,7 @@ export default theme("search-pro", {
   },
 
   plugins: {
+    // @ts-ignore
     docsearch: false,
     mdEnhance: {
       codetabs: true,

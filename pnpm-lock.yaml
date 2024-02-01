@@ -792,6 +792,12 @@ importers:
 
   docs/components:
     dependencies:
+      '@vuepress/bundler-vite':
+        specifier: 2.0.0-rc.2
+        version: 2.0.0-rc.2(@types/node@20.11.13)(sass@1.70.0)(typescript@5.3.3)
+      '@vuepress/bundler-webpack':
+        specifier: 2.0.0-rc.2
+        version: 2.0.0-rc.2(esbuild@0.20.0)(typescript@5.3.3)
       '@vuepress/helper':
         specifier: 2.0.0-rc.6
         version: 2.0.0-rc.6(typescript@5.3.3)(vuepress@2.0.0-rc.2)
@@ -1146,6 +1152,12 @@ importers:
       '@types/katex':
         specifier: 0.16.7
         version: 0.16.7
+      '@vuepress/bundler-vite':
+        specifier: 2.0.0-rc.2
+        version: 2.0.0-rc.2(@types/node@20.11.13)(sass@1.70.0)(typescript@5.3.3)
+      '@vuepress/bundler-webpack':
+        specifier: 2.0.0-rc.2
+        version: 2.0.0-rc.2(esbuild@0.20.0)(typescript@5.3.3)
       '@vuepress/helper':
         specifier: 2.0.0-rc.5
         version: 2.0.0-rc.5(typescript@5.3.3)(vuepress@2.0.0-rc.2)

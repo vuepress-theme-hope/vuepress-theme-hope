@@ -92,8 +92,6 @@ export default defineComponent({
         ...(frontmatter.value.revealJs || {}),
         embedded: frontmatter.value.layout !== "Slide",
         markdown: {
-          // FIXME: https://github.com/DefinitelyTyped/DefinitelyTyped/pull/67226
-          // @ts-ignore
           separator: "^\r?\\n---\r?\n$",
           // @ts-ignore
           verticalSeparator: "^\r?\n--\r?\n$",

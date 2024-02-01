@@ -1,8 +1,12 @@
 import { createRequire } from "node:module";
-import { fs, theme } from "docs-shared";
 
-const { version } = fs.readJsonSync(
-  createRequire(import.meta.url).resolve("vuepress-plugin-pwa2/package.json"),
+import { theme } from "docs-shared";
+import { fs } from "vuepress/utils";
+
+const { version } = <{ version: string }>(
+  fs.readJsonSync(
+    createRequire(import.meta.url).resolve("vuepress-plugin-pwa2/package.json"),
+  )
 );
 
 const assetsBase = "https://theme-hope-assets.vuejs.press/";
@@ -76,6 +80,7 @@ export default theme("pwa2", {
       },
       manifest: {
         name: "vuepress-plugin-pwa",
+        // eslint-disable-next-line @typescript-eslint/naming-convention
         short_name: "VuePress2 PWA plugin",
         icons: [
           {
@@ -104,6 +109,7 @@ export default theme("pwa2", {
         shortcuts: [
           {
             name: "Guide",
+            // eslint-disable-next-line @typescript-eslint/naming-convention
             short_name: "Guide",
             url: "/guide.html",
             icons: [
@@ -117,6 +123,7 @@ export default theme("pwa2", {
           },
           {
             name: "Config",
+            // eslint-disable-next-line @typescript-eslint/naming-convention
             short_name: "Config",
             url: "/config.html",
             icons: [

@@ -1,8 +1,10 @@
+<!-- eslint-disable vue/multi-word-component-names -->
 <script setup lang="ts">
+import ParentLayout from "@vuepress/theme-default/layouts/Layout.vue";
+import { RouterLink } from "vue-router";
 import { useBlogCategory } from "vuepress-plugin-blog2/client";
 
 import ArticleList from "../components/ArticleList.vue";
-import ParentLayout from "@vuepress/theme-default/layouts/Layout.vue";
 
 const tagMap = useBlogCategory("tag");
 </script>
@@ -24,7 +26,8 @@ const tagMap = useBlogCategory("tag");
             </span>
           </RouterLink>
         </div>
-        <ArticleList :items="tagMap.currentItems" />
+
+        <ArticleList :items="tagMap.currentItems ?? []" />
       </main>
     </template>
   </ParentLayout>

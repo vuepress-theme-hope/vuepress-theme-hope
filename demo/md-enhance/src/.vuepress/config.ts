@@ -1,5 +1,5 @@
-import { defineUserConfig } from "vuepress/cli";
 import { defaultTheme } from "@vuepress/theme-default";
+import { defineUserConfig } from "vuepress/cli";
 import { mdEnhancePlugin } from "vuepress-plugin-md-enhance";
 
 const base = <"/" | `/${string}/`>process.env["BASE"] || "/";
@@ -114,7 +114,13 @@ export default defineUserConfig({
       stylize: [
         {
           matcher: "Recommended",
-          replacer: ({ tag }) => {
+          replacer: ({
+            tag,
+          }): {
+            tag: string;
+            attrs: Record<string, string>;
+            content: string;
+          } | void => {
             if (tag === "em")
               return {
                 tag: "Badge",

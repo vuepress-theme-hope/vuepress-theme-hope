@@ -1,5 +1,5 @@
-import { defineUserConfig } from "vuepress/cli";
 import defaultTheme from "@vuepress/theme-default";
+import { defineUserConfig } from "vuepress/cli";
 import { blogPlugin } from "vuepress-plugin-blog2";
 
 const base = <"/" | `/${string}/`>process.env["BASE"] || "/";
@@ -65,22 +65,29 @@ export default defineUserConfig({
       category: [
         {
           key: "category",
-          getter: (page) => <string[]>page.frontmatter["category"] || [],
+          getter: (page): string[] =>
+            <string[]>page.frontmatter["category"] || [],
           layout: "Category",
           itemLayout: "Category",
-          frontmatter: () => ({ title: "Categories", sidebar: false }),
-          itemFrontmatter: (name) => ({
+          frontmatter: (): Record<string, unknown> => ({
+            title: "Categories",
+            sidebar: false,
+          }),
+          itemFrontmatter: (name): Record<string, unknown> => ({
             title: `Category ${name}`,
             sidebar: false,
           }),
         },
         {
           key: "tag",
-          getter: (page) => <string[]>page.frontmatter["tag"] || [],
+          getter: (page): string[] => <string[]>page.frontmatter["tag"] || [],
           layout: "Tag",
           itemLayout: "Tag",
-          frontmatter: () => ({ title: "Tags", sidebar: false }),
-          itemFrontmatter: (name) => ({
+          frontmatter: (): Record<string, unknown> => ({
+            title: "Tags",
+            sidebar: false,
+          }),
+          itemFrontmatter: (name): Record<string, unknown> => ({
             title: `Tag ${name}`,
             sidebar: false,
           }),
@@ -91,12 +98,15 @@ export default defineUserConfig({
         {
           key: "article",
           // remove archive articles
-          filter: (page) => !page.frontmatter["archive"],
+          filter: (page): boolean => !page.frontmatter["archive"],
           path: "/article/",
           layout: "Article",
-          frontmatter: () => ({ title: "Articles", sidebar: false }),
+          frontmatter: (): Record<string, unknown> => ({
+            title: "Articles",
+            sidebar: false,
+          }),
           // sort pages with time and sticky
-          sorter: (pageA, pageB) => {
+          sorter: (pageA, pageB): number => {
             if (pageA.frontmatter["sticky"] && pageB.frontmatter["sticky"])
               return (
                 (pageB.frontmatter["sticky"] as number) -
@@ -121,14 +131,17 @@ export default defineUserConfig({
         {
           key: "timeline",
           // only article with date should be added to timeline
-          filter: (page) => page.frontmatter.date instanceof Date,
+          filter: (page): boolean => page.frontmatter.date instanceof Date,
           // sort pages with time
-          sorter: (pageA, pageB) =>
+          sorter: (pageA, pageB): number =>
             new Date(pageB.frontmatter.date as Date).getTime() -
             new Date(pageA.frontmatter.date as Date).getTime(),
           path: "/timeline/",
           layout: "Timeline",
-          frontmatter: () => ({ title: "Timeline", sidebar: false }),
+          frontmatter: (): Record<string, unknown> => ({
+            title: "Timeline",
+            sidebar: false,
+          }),
         },
       ],
       hotReload: true,

@@ -1,5 +1,5 @@
-import { defineUserConfig } from "vuepress/cli";
 import { defaultTheme } from "@vuepress/theme-default";
+import { defineUserConfig } from "vuepress/cli";
 import { photoSwipePlugin } from "vuepress-plugin-photo-swipe";
 
 const base = <"/" | `/${string}/`>process.env["BASE"] || "/";

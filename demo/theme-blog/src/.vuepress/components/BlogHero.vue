@@ -9,6 +9,7 @@ import HitokotoBlogHero from "vuepress-theme-hope/presets/HitokotoBlogHero.js";
     <template #heroInfo="heroInfo">
       <HitokotoBlogHero v-bind="heroInfo" />
     </template>
+
     <template #heroBg>
       <BingHeroBackground />
     </template>

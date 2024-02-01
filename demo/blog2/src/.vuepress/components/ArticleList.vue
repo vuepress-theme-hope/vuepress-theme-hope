@@ -1,33 +1,3 @@
-<template>
-  <div class="article-wrapper">
-    <div v-if="!items.length">Nothing in here.</div>
-    <article
-      v-for="{ info, path } in items"
-      class="article"
-      @click="$router.push(path)"
-    >
-      <header class="title">
-        {{
-          (isTimeline ? `${new Date(info.date).toLocaleDateString()}: ` : "") +
-          info.title
-        }}
-      </header>
-      <hr />
-      <div class="article-info">
-        <span v-if="info.author" class="author">Author: {{ info.author }}</span>
-        <span v-if="info.date && !isTimeline" class="date"
-          >Date: {{ new Date(info.date).toLocaleDateString() }}</span
-        >
-        <span v-if="info.category" class="category"
-          >Category: {{ info.category.join(", ") }}</span
-        >
-        <span v-if="info.tag" class="tag">Tag: {{ info.tag.join(", ") }}</span>
-      </div>
-      <div v-if="info.excerpt" class="excerpt" v-html="info.excerpt" />
-    </article>
-  </div>
-</template>
-
 <script lang="ts" setup>
 interface Article {
   path: string;
@@ -41,14 +11,53 @@ interface Article {
   };
 }
 
-withDefaults(
-  defineProps<{
-    items: Article[];
-    isTimeline: boolean;
-  }>(),
-  { items: () => [] },
-);
+defineProps<{
+  /** article items */
+  items: Article[];
+  /** whether is timeline or not */
+  isTimeline: boolean;
+}>();
 </script>
+
+<template>
+  <div class="article-wrapper">
+    <div v-if="!items.length">Nothing in here.</div>
+
+    <article
+      v-for="{ info, path } in items"
+      :key="path"
+      class="article"
+      @click="$router.push(path)"
+    >
+      <header class="title">
+        {{
+          (isTimeline ? `${new Date(info.date).toLocaleDateString()}: ` : "") +
+          info.title
+        }}
+      </header>
+
+      <hr />
+
+      <div class="article-info">
+        <span v-if="info.author" class="author">Author: {{ info.author }}</span>
+
+        <span v-if="info.date && !isTimeline" class="date"
+          >Date: {{ new Date(info.date).toLocaleDateString() }}</span
+        >
+
+        <span v-if="info.category" class="category"
+          >Category: {{ info.category.join(", ") }}</span
+        >
+
+        <span v-if="info.tag" class="tag">Tag: {{ info.tag.join(", ") }}</span>
+      </div>
+
+      <!-- eslint-disable-next-line vue/no-v-html -->
+      <div v-if="info.excerpt" class="excerpt" v-html="info.excerpt" />
+    </article>
+  </div>
+</template>
+
 <style lang="scss">
 @use "@vuepress/theme-default/styles/mixins";
 

@@ -6,5 +6,10 @@
       "@theme-hope/*": ["./packages/theme/src/client/*.js"],
     },
   },
-  "include": ["**/*.ts", "**/*.vue"],
+  "include": [
+    "**/*.ts",
+    "**/*.vue",
+    "**/.vuepress/**/*.ts",
+    "**/.vuepress/**/*.vue",
+  ],
 }

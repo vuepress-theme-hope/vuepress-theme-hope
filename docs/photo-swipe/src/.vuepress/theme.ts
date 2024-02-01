@@ -1,10 +1,14 @@
 import { createRequire } from "node:module";
-import { fs, theme } from "docs-shared";
 
-const { version } = fs.readJsonSync(
-  createRequire(import.meta.url).resolve(
-    "vuepress-plugin-photo-swipe/package.json",
-  ),
+import { theme } from "docs-shared";
+import { fs } from "vuepress/utils";
+
+const { version } = <{ version: string }>(
+  fs.readJsonSync(
+    createRequire(import.meta.url).resolve(
+      "vuepress-plugin-photo-swipe/package.json",
+    ),
+  )
 );
 
 // the theme wrapper is located in <root>/docs-shared/src/theme-wrapper.ts

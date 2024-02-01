@@ -1,6 +1,6 @@
 import { defineClientConfig } from "vuepress/client";
-import { defineEchartsConfig } from "vuepress-plugin-md-enhance/client";
 import SlidePage from "vuepress-plugin-md-enhance/SlidePage";
+import { defineEchartsConfig } from "vuepress-plugin-md-enhance/client";
 
 import Snippet from "./layouts/Snippet.js";
 

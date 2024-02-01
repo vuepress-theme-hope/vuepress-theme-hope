@@ -1,4 +1,6 @@
-import { config, getDirname, path, pwaHead } from "docs-shared";
+import { config, pwaHead } from "docs-shared";
+import { getDirname, path } from "vuepress/utils";
+
 import theme from "./theme.js";
 
 const __dirname = getDirname(import.meta.url);

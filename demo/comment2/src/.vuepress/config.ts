@@ -1,5 +1,5 @@
-import { defineUserConfig } from "vuepress/cli";
 import { defaultTheme } from "@vuepress/theme-default";
+import { defineUserConfig } from "vuepress/cli";
 import { commentPlugin } from "vuepress-plugin-comment2";
 
 const base = <"/" | `/${string}/`>process.env["BASE"] || "/";

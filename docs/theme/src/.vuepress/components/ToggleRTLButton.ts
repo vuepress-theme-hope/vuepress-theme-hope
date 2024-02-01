@@ -9,7 +9,7 @@ export default defineComponent({
   setup() {
     const isRTL = ref(false);
 
-    const toggleRTL = () => {
+    const toggleRTL = (): void => {
       const { documentElement } = document;
 
       if (isRTL.value) {

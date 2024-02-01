@@ -1,5 +1,5 @@
-import { defineUserConfig } from "vuepress/cli";
 import { defaultTheme } from "@vuepress/theme-default";
+import { defineUserConfig } from "vuepress/cli";
 import { autoCatalogPlugin } from "vuepress-plugin-auto-catalog";
 
 const base = <"/" | `/${string}/`>process.env["BASE"] || "/";
