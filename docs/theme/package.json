@@ -21,6 +21,7 @@
   },
   "dependencies": {
     "@types/katex": "0.16.7",
+    "@vuepress/helper": "2.0.0-rc.5",
     "@vuepress/plugin-copy-code": "2.0.0-rc.6",
     "@vuepress/plugin-feed": "2.0.0-rc.6",
     "@vueuse/core": "10.7.2",

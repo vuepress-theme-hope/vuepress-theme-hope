@@ -585,6 +585,18 @@ importers:
       katex:
         specifier: 0.16.9
         version: 0.16.9
+      kotlin-playground:
+        specifier: 1.30.0
+        version: 1.30.0
+      markmap-lib:
+        specifier: 0.15.8
+        version: 0.15.8(markmap-common@0.15.6)
+      markmap-toolbar:
+        specifier: 0.15.8
+        version: 0.15.8(markmap-common@0.15.6)
+      markmap-view:
+        specifier: 0.15.8
+        version: 0.15.8(markmap-common@0.15.6)
       mathjax-full:
         specifier: 3.2.2
         version: 3.2.2
@@ -693,6 +705,12 @@ importers:
 
   docs/append-date:
     dependencies:
+      '@vuepress/bundler-vite':
+        specifier: 2.0.0-rc.2
+        version: 2.0.0-rc.2(@types/node@20.11.13)(sass@1.70.0)(typescript@5.3.3)
+      '@vuepress/bundler-webpack':
+        specifier: 2.0.0-rc.2
+        version: 2.0.0-rc.2(esbuild@0.20.0)(typescript@5.3.3)
       docs-shared:
         specifier: workspace:*
         version: link:../../docs-shared
@@ -708,6 +726,12 @@ importers:
 
   docs/auto-catalog:
     dependencies:
+      '@vuepress/bundler-vite':
+        specifier: 2.0.0-rc.2
+        version: 2.0.0-rc.2(@types/node@20.11.13)(sass@1.70.0)(typescript@5.3.3)
+      '@vuepress/bundler-webpack':
+        specifier: 2.0.0-rc.2
+        version: 2.0.0-rc.2(esbuild@0.20.0)(typescript@5.3.3)
       docs-shared:
         specifier: workspace:*
         version: link:../../docs-shared
@@ -723,6 +747,12 @@ importers:
 
   docs/blog2:
     dependencies:
+      '@vuepress/bundler-vite':
+        specifier: 2.0.0-rc.2
+        version: 2.0.0-rc.2(@types/node@20.11.13)(sass@1.70.0)(typescript@5.3.3)
+      '@vuepress/bundler-webpack':
+        specifier: 2.0.0-rc.2
+        version: 2.0.0-rc.2(esbuild@0.20.0)(typescript@5.3.3)
       docs-shared:
         specifier: workspace:*
         version: link:../../docs-shared
@@ -738,6 +768,12 @@ importers:
 
   docs/comment2:
     dependencies:
+      '@vuepress/bundler-vite':
+        specifier: 2.0.0-rc.2
+        version: 2.0.0-rc.2(@types/node@20.11.13)(sass@1.70.0)(typescript@5.3.3)
+      '@vuepress/bundler-webpack':
+        specifier: 2.0.0-rc.2
+        version: 2.0.0-rc.2(esbuild@0.20.0)(typescript@5.3.3)
       docs-shared:
         specifier: workspace:*
         version: link:../../docs-shared
@@ -804,6 +840,12 @@ importers:
 
   docs/copyright2:
     dependencies:
+      '@vuepress/bundler-vite':
+        specifier: 2.0.0-rc.2
+        version: 2.0.0-rc.2(@types/node@20.11.13)(sass@1.70.0)(typescript@5.3.3)
+      '@vuepress/bundler-webpack':
+        specifier: 2.0.0-rc.2
+        version: 2.0.0-rc.2(esbuild@0.20.0)(typescript@5.3.3)
       docs-shared:
         specifier: workspace:*
         version: link:../../docs-shared
@@ -822,6 +864,12 @@ importers:
 
   docs/lightgallery:
     dependencies:
+      '@vuepress/bundler-vite':
+        specifier: 2.0.0-rc.2
+        version: 2.0.0-rc.2(@types/node@20.11.13)(sass@1.70.0)(typescript@5.3.3)
+      '@vuepress/bundler-webpack':
+        specifier: 2.0.0-rc.2
+        version: 2.0.0-rc.2(esbuild@0.20.0)(typescript@5.3.3)
       docs-shared:
         specifier: workspace:*
         version: link:../../docs-shared
@@ -843,6 +891,15 @@ importers:
       '@types/katex':
         specifier: 0.16.7
         version: 0.16.7
+      '@vuepress/bundler-vite':
+        specifier: 2.0.0-rc.2
+        version: 2.0.0-rc.2(@types/node@20.11.13)(sass@1.70.0)(typescript@5.3.3)
+      '@vuepress/bundler-webpack':
+        specifier: 2.0.0-rc.2
+        version: 2.0.0-rc.2(esbuild@0.20.0)(typescript@5.3.3)
+      '@vuepress/helper':
+        specifier: 2.0.0-rc.5
+        version: 2.0.0-rc.5(typescript@5.3.3)(vuepress@2.0.0-rc.2)
       '@vueuse/core':
         specifier: 10.7.2
         version: 10.7.2(vue@3.4.15)
@@ -882,6 +939,12 @@ importers:
 
   docs/photo-swipe:
     dependencies:
+      '@vuepress/bundler-vite':
+        specifier: 2.0.0-rc.2
+        version: 2.0.0-rc.2(@types/node@20.11.13)(sass@1.70.0)(typescript@5.3.3)
+      '@vuepress/bundler-webpack':
+        specifier: 2.0.0-rc.2
+        version: 2.0.0-rc.2(esbuild@0.20.0)(typescript@5.3.3)
       docs-shared:
         specifier: workspace:*
         version: link:../../docs-shared
@@ -900,6 +963,12 @@ importers:
 
   docs/pwa2:
     dependencies:
+      '@vuepress/bundler-vite':
+        specifier: 2.0.0-rc.2
+        version: 2.0.0-rc.2(@types/node@20.11.13)(sass@1.70.0)(typescript@5.3.3)
+      '@vuepress/bundler-webpack':
+        specifier: 2.0.0-rc.2
+        version: 2.0.0-rc.2(esbuild@0.20.0)(typescript@5.3.3)
       docs-shared:
         specifier: workspace:*
         version: link:../../docs-shared
@@ -918,6 +987,12 @@ importers:
 
   docs/reading-time2:
     dependencies:
+      '@vuepress/bundler-vite':
+        specifier: 2.0.0-rc.2
+        version: 2.0.0-rc.2(@types/node@20.11.13)(sass@1.70.0)(typescript@5.3.3)
+      '@vuepress/bundler-webpack':
+        specifier: 2.0.0-rc.2
+        version: 2.0.0-rc.2(esbuild@0.20.0)(typescript@5.3.3)
       docs-shared:
         specifier: workspace:*
         version: link:../../docs-shared
@@ -936,6 +1011,12 @@ importers:
 
   docs/redirect:
     dependencies:
+      '@vuepress/bundler-vite':
+        specifier: 2.0.0-rc.2
+        version: 2.0.0-rc.2(@types/node@20.11.13)(sass@1.70.0)(typescript@5.3.3)
+      '@vuepress/bundler-webpack':
+        specifier: 2.0.0-rc.2
+        version: 2.0.0-rc.2(esbuild@0.20.0)(typescript@5.3.3)
       docs-shared:
         specifier: workspace:*
         version: link:../../docs-shared
@@ -951,6 +1032,12 @@ importers:
 
   docs/remove-pwa:
     dependencies:
+      '@vuepress/bundler-vite':
+        specifier: 2.0.0-rc.2
+        version: 2.0.0-rc.2(@types/node@20.11.13)(sass@1.70.0)(typescript@5.3.3)
+      '@vuepress/bundler-webpack':
+        specifier: 2.0.0-rc.2
+        version: 2.0.0-rc.2(esbuild@0.20.0)(typescript@5.3.3)
       docs-shared:
         specifier: workspace:*
         version: link:../../docs-shared
@@ -966,6 +1053,12 @@ importers:
 
   docs/rtl:
     dependencies:
+      '@vuepress/bundler-vite':
+        specifier: 2.0.0-rc.2
+        version: 2.0.0-rc.2(@types/node@20.11.13)(sass@1.70.0)(typescript@5.3.3)
+      '@vuepress/bundler-webpack':
+        specifier: 2.0.0-rc.2
+        version: 2.0.0-rc.2(esbuild@0.20.0)(typescript@5.3.3)
       docs-shared:
         specifier: workspace:*
         version: link:../../docs-shared
@@ -981,6 +1074,12 @@ importers:
 
   docs/sass-palette:
     dependencies:
+      '@vuepress/bundler-vite':
+        specifier: 2.0.0-rc.2
+        version: 2.0.0-rc.2(@types/node@20.11.13)(sass@1.70.0)(typescript@5.3.3)
+      '@vuepress/bundler-webpack':
+        specifier: 2.0.0-rc.2
+        version: 2.0.0-rc.2(esbuild@0.20.0)(typescript@5.3.3)
       docs-shared:
         specifier: workspace:*
         version: link:../../docs-shared
@@ -996,6 +1095,12 @@ importers:
 
   docs/search-pro:
     dependencies:
+      '@vuepress/bundler-vite':
+        specifier: 2.0.0-rc.2
+        version: 2.0.0-rc.2(@types/node@20.11.13)(sass@1.70.0)(typescript@5.3.3)
+      '@vuepress/bundler-webpack':
+        specifier: 2.0.0-rc.2
+        version: 2.0.0-rc.2(esbuild@0.20.0)(typescript@5.3.3)
       docs-shared:
         specifier: workspace:*
         version: link:../../docs-shared
@@ -1017,6 +1122,12 @@ importers:
 
   docs/shared:
     dependencies:
+      '@vuepress/bundler-vite':
+        specifier: 2.0.0-rc.2
+        version: 2.0.0-rc.2(@types/node@20.11.13)(sass@1.70.0)(typescript@5.3.3)
+      '@vuepress/bundler-webpack':
+        specifier: 2.0.0-rc.2
+        version: 2.0.0-rc.2(esbuild@0.20.0)(typescript@5.3.3)
       docs-shared:
         specifier: workspace:*
         version: link:../../docs-shared
@@ -1035,6 +1146,9 @@ importers:
       '@types/katex':
         specifier: 0.16.7
         version: 0.16.7
+      '@vuepress/helper':
+        specifier: 2.0.0-rc.5
+        version: 2.0.0-rc.5(typescript@5.3.3)(vuepress@2.0.0-rc.2)
       '@vuepress/plugin-copy-code':
         specifier: 2.0.0-rc.6
         version: 2.0.0-rc.6(typescript@5.3.3)(vuepress@2.0.0-rc.2)
@@ -5588,6 +5702,22 @@ packages:
       - '@vue/composition-api'
       - supports-color
       - typescript
+
+  /@vuepress/helper@2.0.0-rc.5(typescript@5.3.3)(vuepress@2.0.0-rc.2):
+    resolution: {integrity: sha512-xNBw8qZMQal50BRqU076BLm5tJxSXXackPoHSUx60ky2Mkt+Zg6dpqwZ8U+22EhymlUdWLzAdRTIWif7nieOkw==}
+    engines: {node: '>=18.16.0', npm: '>=8', pnpm: '>=7', yarn: '>=2'}
+    peerDependencies:
+      vuepress: 2.0.0-rc.2
+    dependencies:
+      '@vue/shared': 3.4.15
+      cheerio: 1.0.0-rc.12
+      fflate: 0.8.1
+      gray-matter: 4.0.3
+      vue: 3.4.15(typescript@5.3.3)
+      vuepress: 2.0.0-rc.2(@vuepress/bundler-vite@2.0.0-rc.2)(@vuepress/bundler-webpack@2.0.0-rc.2)(typescript@5.3.3)(vue@3.4.15)
+    transitivePeerDependencies:
+      - typescript
+    dev: false
 
   /@vuepress/helper@2.0.0-rc.6(typescript@5.3.3)(vuepress@2.0.0-rc.2):
     resolution: {integrity: sha512-Q4NzyrlZ0ZgEboo7HtrQiXBBLf3EEsqqQLeMFzTcTlDujxkh0Erxp+o1LCWr4wFno3sO6W7OCjM2HeUTiZ5NGQ==}

@@ -1,7 +1,6 @@
 import { createRequire } from "node:module";
 
 import { keys } from "@vuepress/helper/node";
-import type { App } from "vuepress/core";
 import { colors, fs, path } from "vuepress/utils";
 
 interface PackageJSON extends Record<string, unknown> {
@@ -25,8 +24,8 @@ const DEPRECATED_PACKAGES = ["vite", "-webpack"].map(
   (item) => `vuepress-${item}`,
 );
 
-export const checkVuePressVersion = (app: App): boolean => {
-  const sourceFolderPath = app.dir.source();
+export const checkVuePressVersion = (): boolean => {
+  const sourceFolderPath = path.join(process.cwd(), process.argv[3]);
   const bundlerNames: string[] = [];
   const corePackageNames: string[] = [];
 

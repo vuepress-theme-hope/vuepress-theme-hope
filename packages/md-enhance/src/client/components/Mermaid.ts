@@ -114,7 +114,7 @@ export default defineComponent({
 
     const renderMermaid = async (): Promise<void> => {
       const [{ default: mermaid }] = await Promise.all([
-        import(/* webpackChunkName: "mermaid" */ "@mermaid"),
+        import(/* webpackChunkName: "mermaid" */ "mermaid"),
         loaded
           ? Promise.resolve()
           : ((loaded = true),

@@ -21,11 +21,8 @@ import {
   addViteSsrExternal,
   addViteSsrNoExternal,
   chainWebpack,
-  getBundlerName,
   getLocaleConfig,
-  getPackageManager,
   isPlainObject,
-  noopModule,
 } from "@vuepress/helper/node";
 import type { PluginFunction } from "vuepress/core";
 import type { MarkdownEnv } from "vuepress/markdown";
@@ -206,17 +203,6 @@ export const mdEnhancePlugin =
           ...CODE_DEMO_DEFAULT_SETTING,
           ...(isPlainObject(options.demo) ? options.demo : {}),
         },
-      }),
-
-      alias: (app): Record<string, string> => ({
-        // we can not let vite force optimize deps with pnpm, so we use a full bundle in devServer here
-        "@mermaid": status.mermaid
-          ? app.env.isDev &&
-            getPackageManager() === "pnpm" &&
-            getBundlerName(app) === "vite"
-            ? "mermaid/dist/mermaid.esm.min.mjs"
-            : "mermaid"
-          : noopModule,
       }),
 
       extendsBundlerOptions: (bundlerOptions: unknown, app): void => {

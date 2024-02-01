@@ -18,7 +18,7 @@ export const extendsBundlerOptions = (
       chunkSizeWarningLimit: 1024,
     },
   });
-  addViteOptimizeDepsInclude(bundlerOptions, app, "@vueuse/core");
+  addViteOptimizeDepsInclude(bundlerOptions, app, "@vueuse/core", true);
   addViteOptimizeDepsExclude(bundlerOptions, app, "@theme-hope");
   addViteSsrNoExternal(bundlerOptions, app, [
     "@vuepress/helper",

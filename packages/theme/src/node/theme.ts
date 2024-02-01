@@ -29,13 +29,14 @@ import type { HopeThemeBehaviorOptions } from "./typings/index.js";
 import { TEMPLATE_FOLDER, VERSION } from "./utils.js";
 import type { ThemeOptions } from "../shared/index.js";
 
-export const hopeTheme =
-  (
-    options: ThemeOptions,
-    // TODO: Change default value in v2 stable
-    behavior: HopeThemeBehaviorOptions | boolean = true,
-  ): ThemeFunction =>
-  (app) => {
+export const hopeTheme = (
+  options: ThemeOptions,
+  // TODO: Change default value in v2 stable
+  behavior: HopeThemeBehaviorOptions | boolean = true,
+): ThemeFunction => {
+  checkVuePressVersion();
+
+  return (app) => {
     const behaviorOptions = isPlainObject(behavior)
       ? behavior
       : behavior
@@ -60,8 +61,6 @@ export const hopeTheme =
       : options;
 
     if (behaviorOptions.compact) checkLegacyStyle(app);
-
-    checkVuePressVersion(app);
 
     const status = getStatus(app, options);
     const themeData = getThemeData(app, themeOptions, status);
@@ -175,3 +174,4 @@ export const hopeTheme =
           : prepareBundleConfigFile(app, status),
     };
   };
+};
