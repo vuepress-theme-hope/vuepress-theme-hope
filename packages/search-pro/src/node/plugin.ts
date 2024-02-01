@@ -70,7 +70,7 @@ export const searchProPlugin =
       clientConfigFile: `${CLIENT_FOLDER}config.js`,
 
       extendsBundlerOptions: (bundlerOptions: unknown, app): void => {
-        addViteOptimizeDepsInclude(bundlerOptions, app, "slimsearch");
+        addViteOptimizeDepsInclude(bundlerOptions, app, "slimsearch", true);
         addViteSsrNoExternal(bundlerOptions, app, [
           "@vuepress/helper",
           "fflate",
