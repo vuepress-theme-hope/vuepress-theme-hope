@@ -53,7 +53,7 @@ export const usePageCategory = (): ComputedRef<PageCategory[]> => {
     getCategory(frontmatter.value.category).map((name) => ({
       name,
       path: categoryMap?.value.map[name]?.path || "",
-    }))
+    })),
   );
 };
 
@@ -67,7 +67,7 @@ export const usePageTag = (): ComputedRef<PageTag[]> => {
     getTag(frontmatter.value.tag).map((name) => ({
       name,
       path: tagMap?.value.map[name]?.path || "",
-    }))
+    })),
   );
 };
 
@@ -119,7 +119,7 @@ export const usePageInfo = (): {
         readingTimeLocale: readingTimeLocale.value,
         pageview:
           "pageview" in frontmatter.value ? frontmatter.value.pageview : true,
-      }
+      },
   );
 
   const items = computed(() =>
@@ -127,7 +127,7 @@ export const usePageInfo = (): {
       ? frontmatter.value.pageInfo
       : "pageInfo" in themeLocale.value
         ? themeLocale.value.pageInfo
-        : null
+        : null,
   );
 
   return { info, items };

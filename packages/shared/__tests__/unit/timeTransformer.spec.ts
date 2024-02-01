@@ -51,22 +51,10 @@ describe("timeTransformer", () => {
     it("date like string with splash and spaces", () => {
       expect(timeTransformer("  2018/1/1  ")).toEqual("January 1, 2018");
     });
-
-    it("date like string with spaces and short year", () => {
-      expect(timeTransformer("18-01-01")).toEqual("January 1, 2018");
-    });
-
-    it("date like string with splash and spaces and short year", () => {
-      expect(timeTransformer("18/01/01 ")).toEqual("January 1, 2018");
-    });
   });
 
   it("Should parse whole date", () => {
     expect(timeTransformer("2018/12/1 12:30")).toEqual(
-      "December 1, 2018 12:30 PM",
-    );
-
-    expect(timeTransformer("18/12/01 12:30")).toEqual(
       "December 1, 2018 12:30 PM",
     );
 

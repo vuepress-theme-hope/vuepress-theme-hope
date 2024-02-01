@@ -30,12 +30,12 @@ export interface DateOptions {
 
 export const timeTransformer = (
   date: string | Date | undefined,
-  options: DateOptions = {}
+  options: DateOptions = {},
 ): string | null => {
   const result = getDate(date);
 
   if (result) {
-    const { lang, timezone } = options;
+    const { lang, timezone, type } = options;
 
     dayjs.locale(getLocale(lang));
 
@@ -48,14 +48,22 @@ export const timeTransformer = (
       parsed.second() === 0 &&
       parsed.millisecond() === 0;
 
-    return parsed.format(isDate ? "LL" : "LLL");
+    return parsed.format(
+      type === "date"
+        ? "LL"
+        : type === "time"
+          ? "HH:ss"
+          : isDate
+            ? "LL"
+            : "LLL",
+    );
   }
 
   return null;
 };
 
 export const injectLocalizedDate = (
-  page: Page<{ localizedDate?: string | null } & Partial<GitPluginPageData>>
+  page: Page<{ localizedDate?: string | null } & Partial<GitPluginPageData>>,
 ): void => {
   if (!page.data.localizedDate)
     if (page.frontmatter.date) {
@@ -72,7 +80,7 @@ export const injectLocalizedDate = (
         {
           lang: page.lang,
           type: "date",
-        }
+        },
       );
     }
 };
