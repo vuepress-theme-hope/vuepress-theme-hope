@@ -1,12 +1,12 @@
 /* eslint-disable @typescript-eslint/naming-convention */
+import { decodeData } from "@vuepress/helper";
 import MarkdownIt from "markdown-it";
 import { describe, expect, it } from "vitest";
-import { atou } from "vuepress-shared";
 
 import { sandpack } from "../../src/node/markdown-it/sandpack/index.js";
 
 const decodeFiles = (content: string): Record<string, string> =>
-  JSON.parse(atou(content)) as Record<string, string>;
+  JSON.parse(decodeData(content)) as Record<string, string>;
 
 const getTemplate = (renderResult: string): string | null => {
   const result = renderResult.match(/template="(.*?)"/s);
@@ -29,7 +29,7 @@ const getOptions = (renderResult: string): Record<string, unknown> | null => {
 
   if (!result) return null;
 
-  return JSON.parse(atou(result[1])) as Record<string, unknown>;
+  return JSON.parse(decodeData(result[1])) as Record<string, unknown>;
 };
 
 const getCustomSetup = (
@@ -39,7 +39,7 @@ const getCustomSetup = (
 
   if (!result) return null;
 
-  return JSON.parse(atou(result[1])) as Record<string, unknown>;
+  return JSON.parse(decodeData(result[1])) as Record<string, unknown>;
 };
 
 describe("Sandpack", () => {

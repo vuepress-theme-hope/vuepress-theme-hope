@@ -1,4 +1,4 @@
-import { entries, fromEntries } from "vuepress-shared/node";
+import { entries, fromEntries } from "@vuepress/helper/node";
 
 import type { SandpackData } from "../../typings/index.js";
 

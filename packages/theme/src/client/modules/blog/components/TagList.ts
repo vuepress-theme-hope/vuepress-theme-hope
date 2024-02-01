@@ -1,8 +1,9 @@
+import { entries } from "@vuepress/helper/client";
 import type { VNode } from "vue";
 import { defineComponent, h } from "vue";
 import { usePageFrontmatter } from "vuepress/client";
 import type { BlogPluginCategoryFrontmatter } from "vuepress-plugin-blog2";
-import { VPLink, entries, generateIndexFromHash } from "vuepress-shared/client";
+import { VPLink, generateIndexFromHash } from "vuepress-shared/client";
 
 import { useTagMap } from "@theme-hope/modules/blog/composables/index";
 

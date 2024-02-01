@@ -1,3 +1,4 @@
+import noopComponent from "@vuepress/helper/noopComponent";
 import type {
   Component,
   ComponentOptions,
@@ -7,7 +8,6 @@ import type {
 } from "vue";
 import { computed, defineComponent, h, ref, resolveComponent } from "vue";
 import { hasGlobalComponent } from "vuepress-shared/client";
-import noopModule from "vuepress-shared/noopModule";
 
 import {
   useThemeLocaleData,
@@ -74,7 +74,7 @@ export default defineComponent({
 
     const navbarComponentMap: Record<string, Component | string> = {
       Brand: NavbarBrand,
-      Language: HAS_MULTIPLE_LANGUAGES ? LanguageDropdown : noopModule,
+      Language: HAS_MULTIPLE_LANGUAGES ? LanguageDropdown : noopComponent,
       Links: NavbarLinks,
       Repo: RepoLink,
       Outlook: OutlookButton,
@@ -82,14 +82,14 @@ export default defineComponent({
         ? resolveComponent("Docsearch")
         : hasGlobalComponent("SearchBox")
           ? resolveComponent("SearchBox")
-          : noopModule,
+          : noopComponent,
     };
 
     const getNavbarComponent = (component: string): Component | string =>
       navbarComponentMap[component] ??
       (hasGlobalComponent(component)
         ? resolveComponent(component)
-        : noopModule);
+        : noopComponent);
 
     return (): VNode[] => [
       h(

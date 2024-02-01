@@ -1,12 +1,12 @@
-import { watch } from "chokidar";
-import type { PluginFunction } from "vuepress/core";
-import { useSassPalettePlugin } from "vuepress-plugin-sass-palette";
 import {
   addViteOptimizeDepsInclude,
   addViteSsrNoExternal,
   fromEntries,
-  getLocales,
-} from "vuepress-shared/node";
+  getLocaleConfig,
+} from "@vuepress/helper/node";
+import { watch } from "chokidar";
+import type { PluginFunction } from "vuepress/core";
+import { useSassPalettePlugin } from "vuepress-plugin-sass-palette";
 
 import { convertOptions } from "./compact.js";
 import { setPageExcerpt } from "./excerpt.js";
@@ -47,7 +47,7 @@ export const searchProPlugin =
             )
             .filter((item): item is [string, string] => item !== null),
         ),
-        SEARCH_PRO_LOCALES: getLocales({
+        SEARCH_PRO_LOCALES: getLocaleConfig({
           app,
           name: PLUGIN_NAME,
           config: options.locales,
@@ -70,8 +70,9 @@ export const searchProPlugin =
       clientConfigFile: `${CLIENT_FOLDER}config.js`,
 
       extendsBundlerOptions: (bundlerOptions: unknown, app): void => {
-        addViteOptimizeDepsInclude(bundlerOptions, app, "slimsearch");
+        addViteOptimizeDepsInclude(bundlerOptions, app, "slimsearch", true);
         addViteSsrNoExternal(bundlerOptions, app, [
+          "@vuepress/helper",
           "fflate",
           "vuepress-shared",
         ]);

@@ -1,3 +1,4 @@
+import { useLocaleConfig } from "@vuepress/helper/client";
 import { onClickOutside, useEventListener, useScrollLock } from "@vueuse/core";
 import type { VNode } from "vue";
 import {
@@ -13,7 +14,7 @@ import {
   watch,
 } from "vue";
 import { useSiteLocaleData } from "vuepress/client";
-import { useIsMobile, useLocaleConfig } from "vuepress-shared/client";
+import { useIsMobile } from "vuepress-shared/client";
 
 import { SearchLoading } from "./SearchLoading.js";
 import { SearchIcon } from "./icons.js";

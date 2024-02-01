@@ -1,5 +1,6 @@
+import { isArray, isPlainObject } from "@vuepress/helper/node";
 import { colors } from "vuepress/utils";
-import { createConverter, isArray, isPlainObject } from "vuepress-shared/node";
+import { createConverter } from "vuepress-shared/node";
 
 import type { LinksCheckStatus, MarkdownEnhanceOptions } from "../options.js";
 import type { RevealJsPlugin } from "../typings/index.js";

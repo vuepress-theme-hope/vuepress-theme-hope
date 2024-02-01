@@ -1,4 +1,4 @@
-import { removeEndingSlash } from "vuepress-shared/node";
+import { removeEndingSlash } from "@vuepress/helper/node";
 
 import type { LocaleRedirectConfig } from "../../shared/index.js";
 

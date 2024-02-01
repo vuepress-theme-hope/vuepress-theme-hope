@@ -45,12 +45,6 @@ export const getPageExcerpt: (
 
 Get page plain text.
 
-::: note
-
-This function is based on a simple md2text, which has many limitations and does not guarantee the accuracy of the conversion results.
-
-:::
-
 ```ts
 export const getPageText: (page: Page) => string;
 ```

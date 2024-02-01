@@ -1,4 +1,4 @@
-import { Logger } from "vuepress-shared/node";
+import { Logger } from "@vuepress/helper/node";
 
 import { PLUGIN_NAME } from "../constant.js";
 

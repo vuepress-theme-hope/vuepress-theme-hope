@@ -1,14 +1,14 @@
+import {
+  isPlainObject,
+  isString,
+  useLocaleConfig,
+} from "@vuepress/helper/client";
 import { useEventListener } from "@vueuse/core";
 import type { VNode } from "vue";
 import { computed, defineComponent, h, reactive, ref, toRef, watch } from "vue";
 import { useRouter } from "vue-router";
 import { useRouteLocale } from "vuepress/client";
-import {
-  VPLink,
-  isPlainObject,
-  isString,
-  useLocaleConfig,
-} from "vuepress-shared/client";
+import { VPLink } from "vuepress-shared/client";
 
 import { SearchLoading } from "./SearchLoading.js";
 import { HeadingIcon, HeartIcon, HistoryIcon, TitleIcon } from "./icons.js";

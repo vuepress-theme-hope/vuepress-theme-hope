@@ -1,9 +1,9 @@
-import { getDirname, path } from "vuepress/utils";
 import {
   Logger,
-  checkInstalled,
   ensureEndingSlash,
-} from "vuepress-shared/node";
+  getInstalledStatus,
+} from "@vuepress/helper/node";
+import { getDirname, path } from "vuepress/utils";
 
 const __dirname = getDirname(import.meta.url);
 
@@ -16,7 +16,7 @@ export const CLIENT_FOLDER = ensureEndingSlash(
 );
 
 export const isInstalled = (pkg: string, hint = true): boolean => {
-  const isInstalled = checkInstalled(pkg, import.meta.url);
+  const isInstalled = getInstalledStatus(pkg, import.meta.url);
 
   if (hint && !isInstalled)
     logger.error(

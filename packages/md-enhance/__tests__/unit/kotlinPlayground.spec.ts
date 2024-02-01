@@ -1,12 +1,12 @@
 /* eslint-disable @typescript-eslint/naming-convention */
+import { decodeData } from "@vuepress/helper";
 import MarkdownIt from "markdown-it";
 import { describe, expect, it } from "vitest";
-import { atou } from "vuepress-shared";
 
 import { kotlinPlayground } from "../../src/node/markdown-it/kotlinPlayground.js";
 
 const decodeFiles = (content: string): string[] =>
-  JSON.parse(atou(content)) as string[];
+  JSON.parse(decodeData(content)) as string[];
 
 const getFiles = (renderResult: string): string[] | null => {
   const result = renderResult.match(/files="(.*?)"/s);

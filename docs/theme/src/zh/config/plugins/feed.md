@@ -12,13 +12,13 @@ tag:
 
 ## 介绍
 
-主题可通过 `vuepress-plugin-feed2` 生成 Feed，你需要**手动安装插件**。
+主题可通过 `@vuepress/plugin-feed` 生成 Feed，你需要**手动安装插件**。
 
 你可以在主题选项中设置 `plugins.feed: true` 来启用此功能。默认行为是生成 RSS 格式的 Feed。
 
 ## 插件选项
 
-主题将主题选项中的 `plugins.feed` 作为插件选项传递给 `vuepress-plugin-feed2`。
+主题将主题选项中的 `plugins.feed` 作为插件选项传递给 `@vuepress/plugin-feed`。
 
 你可以通过 `plugins.feed` 自行设置选项，以下是常见选项:
 
@@ -91,6 +91,8 @@ Feed 项目的排序器。
 
 ::: info
 
-通过 <ProjectLink name="feed2" path="/zh/config/">feed2 插件文档</ProjectLink> 以获取全部可用选项。
+查看 [feed 插件文档][feed-config] 以获取全部可用选项。
 
 :::
+
+[feed-config]: https://ecosystem.vuejs.press/zh/plugins/feed/

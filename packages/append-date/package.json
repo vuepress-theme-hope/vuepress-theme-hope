@@ -40,10 +40,11 @@
     "dev:ts": "tsc -b tsconfig.build.json --watch"
   },
   "dependencies": {
+    "@vuepress/helper": "2.0.0-rc.6",
     "vuepress-shared": "workspace:*"
   },
   "peerDependencies": {
-    "@vuepress/plugin-git": "2.0.0-rc.1",
+    "@vuepress/plugin-git": "2.0.0-rc.3",
     "vuepress": "2.0.0-rc.2"
   },
   "engines": {

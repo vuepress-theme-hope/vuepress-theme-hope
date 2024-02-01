@@ -1,6 +1,6 @@
+import { useLocaleConfig } from "@vuepress/helper/client";
 import type { ComputedRef } from "vue";
 import { computed } from "vue";
-import { useLocaleConfig } from "vuepress-shared/client";
 
 import { useReadingTimeData } from "./data.js";
 import type { ReadingTimeLocaleData } from "../../shared/index.js";

@@ -1,14 +1,14 @@
-import { useEventListener } from "@vueuse/core";
-import { computed, onMounted, watchEffect } from "vue";
-import { usePageData, usePageFrontmatter } from "vuepress/client";
-import type { RequiredLocaleConfig } from "vuepress-shared/client";
+import type { ExactLocaleConfig } from "@vuepress/helper/client";
 import {
   isLinkHttp,
   isPlainObject,
   isString,
   removeEndingSlash,
   useLocaleConfig,
-} from "vuepress-shared/client";
+} from "@vuepress/helper/client";
+import { useEventListener } from "@vueuse/core";
+import { computed, onMounted, watchEffect } from "vue";
+import { usePageData, usePageFrontmatter } from "vuepress/client";
 
 import type {
   CopyrightLocaleData,
@@ -22,7 +22,7 @@ declare const COPYRIGHT_DISABLE_SELECTION: boolean;
 declare const COPYRIGHT_GLOBAL: boolean;
 declare const COPYRIGHT_DEFAULT_AUTHOR: string;
 declare const COPYRIGHT_DEFAULT_LICENSE: string;
-declare const COPYRIGHT_LOCALES: RequiredLocaleConfig<CopyrightLocaleData>;
+declare const COPYRIGHT_LOCALES: ExactLocaleConfig<CopyrightLocaleData>;
 declare const COPYRIGHT_MAX_LENGTH: number;
 declare const COPYRIGHT_TRIGGER_LENGTH: number;
 

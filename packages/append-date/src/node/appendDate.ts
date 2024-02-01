@@ -1,3 +1,4 @@
+import { startsWith } from "@vuepress/helper/node";
 import type { GitPluginPageData } from "@vuepress/plugin-git";
 import type { Page } from "vuepress/core";
 import { fs } from "vuepress/utils";
@@ -5,7 +6,6 @@ import {
   getDateString,
   getFullDateString,
   getTimeString,
-  startsWith,
 } from "vuepress-shared/node";
 
 import type { AppendDateOptions } from "./options.js";

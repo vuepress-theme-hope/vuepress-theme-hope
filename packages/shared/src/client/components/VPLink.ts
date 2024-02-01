@@ -1,10 +1,11 @@
+import { startsWith } from "@vuepress/helper/client";
 import type { FunctionalComponent, VNode } from "vue";
 import { h } from "vue";
 import type { NavigationFailure } from "vue-router";
 import { useRouter } from "vue-router";
 import { withBase } from "vuepress/client";
 
-import { inferRouteLink, startsWith } from "../../shared/index.js";
+import { inferRouteLink } from "../../shared/index.js";
 import { guardEvent } from "../utils/index.js";
 
 export interface VPLinkProps extends Record<string, unknown> {

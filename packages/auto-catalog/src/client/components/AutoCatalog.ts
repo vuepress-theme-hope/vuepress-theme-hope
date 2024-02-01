@@ -1,9 +1,4 @@
-import type { VNode } from "vue";
-import { computed, defineComponent, h, shallowRef } from "vue";
-import { useRouter } from "vue-router";
-import { usePageData, useSiteData } from "vuepress/client";
 import {
-  VPLink,
   endsWith,
   ensureEndingSlash,
   ensureLeadingSlash,
@@ -13,7 +8,12 @@ import {
   keys,
   startsWith,
   useLocaleConfig,
-} from "vuepress-shared/client";
+} from "@vuepress/helper/client";
+import type { VNode } from "vue";
+import { computed, defineComponent, h, shallowRef } from "vue";
+import { useRouter } from "vue-router";
+import { usePageData, useSiteData } from "vuepress/client";
+import { VPLink } from "vuepress-shared/client";
 
 import type { AutoCatalogLocaleConfig } from "../../shared/index.js";
 import type { AutoCatalogInfo } from "../helpers/index.js";

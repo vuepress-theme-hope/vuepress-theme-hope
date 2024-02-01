@@ -1,6 +1,6 @@
+import { entries } from "@vuepress/helper/client";
 import type { MatchInfo, SearchIndex } from "slimsearch";
 import { getStoredFields, search } from "slimsearch";
-import { entries } from "vuepress-shared/client";
 
 import { getMatchedContent } from "./matchContent.js";
 import { getSearchOptions } from "./utils.js";

@@ -46,11 +46,11 @@ tag:
 
 ## copyCode <Badge text="默认启用" />
 
-控制 `vuepress-plugin-copy-code2`，提供代码复制按钮。
+控制 `@vuepress/plugin-copy-code`，提供代码复制按钮。
 
 默认不需要任何额外配置。如果你不需要此功能可设置为 `false`。
 
-插件选项请参阅 <ProjectLink name="copy-code2" path="/zh/config.html">copy-code2 插件文档</ProjectLink>。
+插件选项请参阅 [copy-code 插件文档][copy-code-config]。
 
 ## externalLinkIcon <Badge text="enabled by default" />
 
@@ -115,18 +115,21 @@ tag:
 
 ## seo <Badge text="默认启用" />
 
-控制 `vuepress-plugin-seo2`，提供搜索引擎增强。
+控制 `@vuepress/plugin-seo`，提供搜索引擎增强。
 
 默认不需要任何额外配置。如果你不需要此功能可设置为 `false`。
 
-插件选项请参阅 <ProjectLink name="seo2" path="/zh/config.html">seo2 插件文档</ProjectLink>。
+插件选项请参阅 [seo 插件文档][seo-config]。
 
 ## sitemap <Badge text="默认启用" />
 
-控制 `vuepress-plugin-sitemap2`，为网站自动生成 Sitemap。
+控制 `@vuepress/plugin-sitemap`，为网站自动生成 Sitemap。
 
 默认不需要任何额外配置。如果你不需要此功能可设置为 `false`。
 
-插件选项请参阅 <ProjectLink name="sitemap2" path="/zh/config.html">sitemap2 插件文档</ProjectLink>。
+插件选项请参阅 [sitemap 插件文档][sitemap-config]。
 
-[git-config]: https://vuejs.press/zh/reference/plugin/git.html
+[copy-code-config]: https://ecosystem.vuejs.press/zh/plugins/copy-code.html#options
+[git-config]: https://ecosystem.vuejs.press/zh/plugins/git.html#options
+[seo-config]: https://ecosystem.vuejs.press/zh/plugins/seo/config.html
+[sitemap-config]: https://ecosystem.vuejs.press/zh/plugins/sitemap/config.html

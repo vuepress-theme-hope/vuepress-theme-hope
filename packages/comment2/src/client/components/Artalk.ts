@@ -1,3 +1,4 @@
+import { isString } from "@vuepress/helper/client";
 import type Artalk from "artalk";
 import type { VNode } from "vue";
 import {
@@ -11,7 +12,7 @@ import {
   watch,
 } from "vue";
 import { usePageData, useSiteData } from "vuepress/client";
-import { LoadingIcon, isString } from "vuepress-shared/client";
+import { LoadingIcon } from "vuepress-shared/client";
 
 import { useArtalkOptions } from "../helpers/index.js";
 

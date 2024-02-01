@@ -1,4 +1,4 @@
-import { isPlainObject, keys } from "vuepress-shared/client";
+import { isPlainObject, keys } from "@vuepress/helper/client";
 
 import type { Code } from "./typings.js";
 import type { CodeDemoOptions } from "../../../shared/index.js";

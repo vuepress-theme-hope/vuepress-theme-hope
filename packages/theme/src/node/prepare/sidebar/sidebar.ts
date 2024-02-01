@@ -1,5 +1,3 @@
-import type { App } from "vuepress/core";
-import { sanitizeFileName } from "vuepress/utils";
 import {
   ensureEndingSlash,
   entries,
@@ -7,7 +5,9 @@ import {
   isArray,
   isPlainObject,
   removeLeadingSlash,
-} from "vuepress-shared/node";
+} from "@vuepress/helper/node";
+import type { App } from "vuepress/core";
+import { sanitizeFileName } from "vuepress/utils";
 
 import { getSidebarInfo } from "./info.js";
 import { getSidebarSorter } from "./sorter.js";

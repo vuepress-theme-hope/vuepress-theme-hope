@@ -1,4 +1,4 @@
-import { keys } from "vuepress-shared/node";
+import { keys } from "@vuepress/helper/node";
 
 import { buffer } from "./buffer.js";
 import { douban } from "./douban.js";

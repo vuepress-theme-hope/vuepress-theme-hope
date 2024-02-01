@@ -25,7 +25,7 @@
  * © 2019 GitHub, Inc.
  */
 
-import { keys } from "../../shared/index.js";
+import { keys } from "@vuepress/helper/client";
 
 export class Message {
   private containerElement: HTMLElement;

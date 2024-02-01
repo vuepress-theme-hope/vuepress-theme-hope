@@ -1,8 +1,8 @@
+import { startsWith } from "@vuepress/helper/client";
 import { useDebounceFn } from "@vueuse/core";
 import type { Ref } from "vue";
 import { onMounted, onUnmounted, ref, watch } from "vue";
 import { useRouteLocale } from "vuepress/client";
-import { startsWith } from "vuepress-shared/client";
 
 import { enableAutoSuggestions, searchProOptions } from "../define.js";
 import { useSearchOptions } from "../helpers/index.js";

@@ -3,13 +3,13 @@ import type {
   LoaderOptions,
   WebpackBundlerOptions,
 } from "@vuepress/bundler-webpack";
-import type { App } from "vuepress/core";
 import {
   getBundlerName,
   isFunction,
   isString,
   mergeViteConfig,
-} from "vuepress-shared/node";
+} from "@vuepress/helper/node";
+import type { App } from "vuepress/core";
 
 type LoaderContext =
   Exclude<LoaderOptions["additionalData"], string | undefined> extends (

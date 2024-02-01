@@ -1,5 +1,6 @@
+import { isFunction } from "@vuepress/helper/node";
 import { colors } from "vuepress/utils";
-import { createConverter, isFunction } from "vuepress-shared/node";
+import { createConverter } from "vuepress-shared/node";
 
 import type { CopyrightOptions } from "./options.js";
 import { logger } from "./utils.js";
@@ -8,7 +9,7 @@ import { logger } from "./utils.js";
 export const convertOptions = (
   options: CopyrightOptions & Record<string, unknown>,
 ): void => {
-  const { deprecatedLogger } = createConverter("copy-code2");
+  const { deprecatedLogger } = createConverter("copyright2");
 
   deprecatedLogger({
     options,

@@ -1,22 +1,22 @@
-import type { Plugin } from "vuepress/core";
-import { colors } from "vuepress/utils";
-import type { FeedOptions } from "vuepress-plugin-feed2";
 import {
   deepAssign,
   entries,
   fromEntries,
-  getAuthor,
   isPlainObject,
   keys,
-} from "vuepress-shared/node";
+} from "@vuepress/helper/node";
+import type { FeedPluginOptions } from "@vuepress/plugin-feed";
+import type { Plugin } from "vuepress/core";
+import { colors } from "vuepress/utils";
+import { getAuthor } from "vuepress-shared/node";
 
 import type { ThemeData } from "../../shared/index.js";
 import { logger } from "../utils.js";
 
-let feedPlugin: (options: FeedOptions, legacy?: boolean) => Plugin;
+let feedPlugin: (options: FeedPluginOptions, legacy?: boolean) => Plugin;
 
 try {
-  ({ feedPlugin } = await import("vuepress-plugin-feed2"));
+  ({ feedPlugin } = await import("@vuepress/plugin-feed"));
 } catch (e) {
   // do nothing
 }
@@ -24,11 +24,11 @@ try {
 /**
  * @private
  *
- * Resolve options for vuepress-plugin-feed2
+ * Resolve options for @vuepress/plugin-feed
  */
 export const getFeedPlugin = (
   themeData: ThemeData,
-  options: Omit<FeedOptions, "hostname"> | boolean = false,
+  options: Omit<FeedPluginOptions, "hostname"> | boolean = false,
   hostname?: string,
   favicon?: string,
   legacy = false,
@@ -38,14 +38,14 @@ export const getFeedPlugin = (
     return null;
 
   if (!feedPlugin) {
-    logger.error(`${colors.cyan("vuepress-plugin-feed2")} is not installed!`);
+    logger.error(`${colors.cyan("@vuepress/plugin-feed")} is not installed!`);
 
     return null;
   }
 
   const globalAuthor = getAuthor(themeData.author);
 
-  const defaultOptions: FeedOptions = {
+  const defaultOptions: FeedPluginOptions = {
     // @ts-expect-error
     hostname,
     channel: {

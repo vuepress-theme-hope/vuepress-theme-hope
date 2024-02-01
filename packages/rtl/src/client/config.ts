@@ -1,7 +1,7 @@
+import { entries } from "@vuepress/helper/client";
 import { onMounted, watch } from "vue";
 import type { ClientConfig } from "vuepress/client";
 import { defineClientConfig, useRouteLocale } from "vuepress/client";
-import { entries } from "vuepress-shared/client";
 
 declare const _RTL_LOCALES_: string[];
 declare const _RTL_SELECTOR_: {

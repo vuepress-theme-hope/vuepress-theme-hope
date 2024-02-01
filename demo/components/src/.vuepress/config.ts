@@ -1,7 +1,7 @@
 import { defineUserConfig } from "vuepress/cli";
+import { addViteSsrNoExternal } from "@vuepress/helper/node";
 import { defaultTheme } from "@vuepress/theme-default";
 import { componentsPlugin } from "vuepress-plugin-components";
-import { addViteSsrNoExternal } from "vuepress-shared";
 
 const base = <"/" | `/${string}/`>process.env["BASE"] || "/";
 

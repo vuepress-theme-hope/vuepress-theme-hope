@@ -1,4 +1,5 @@
-import { isArray, isPlainObject, isString } from "./helper.js";
+import { isArray, isPlainObject, isString } from "@vuepress/helper/shared";
+
 import type { Author, AuthorInfo } from "../types/index.js";
 
 const isAuthorInfo = (author: unknown): author is AuthorInfo =>

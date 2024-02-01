@@ -1,6 +1,0 @@
-{
-  "name": "version-test",
-  "devDependencies": {
-    "vuepress": "2.0.0-rc.2"
-  }
-}

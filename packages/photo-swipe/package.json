@@ -47,6 +47,7 @@
     "dev:ts": "tsc -b tsconfig.build.json --watch"
   },
   "dependencies": {
+    "@vuepress/helper": "2.0.0-rc.6",
     "@vueuse/core": "^10.7.2",
     "photoswipe": "^5.4.3",
     "vue": "^3.4.15",

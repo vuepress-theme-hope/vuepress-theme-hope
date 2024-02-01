@@ -1,13 +1,13 @@
+import { encodeData } from "@vuepress/helper/node";
 import type { PluginSimple } from "markdown-it";
 import type Token from "markdown-it/lib/token.js";
-import { utoa } from "vuepress-shared/node";
 
 const markmapRender = (tokens: Token[], index: number): string => {
   const token = tokens[index];
   const key = `markmap-${index}`;
   const { content } = token;
 
-  return `<MarkMap id="${key}" content="${utoa(content)}"></MarkMap>`;
+  return `<MarkMap id="${key}" content="${encodeData(content)}"></MarkMap>`;
 };
 
 export const markmap: PluginSimple = (md) => {

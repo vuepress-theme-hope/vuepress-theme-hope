@@ -1,6 +1,7 @@
 #!/usr/bin/env node
 import { createRequire } from "node:module";
 
+import { removeEndingSlash, removeLeadingSlash } from "@vuepress/helper/node";
 import { cac } from "cac";
 import {
   loadUserConfig,
@@ -11,7 +12,6 @@ import {
 } from "vuepress/cli";
 import { createBuildApp } from "vuepress/core";
 import { fs, logger, path } from "vuepress/utils";
-import { removeEndingSlash, removeLeadingSlash } from "vuepress-shared/node";
 
 import { getRedirectHTML } from "../node/utils/index.js";
 

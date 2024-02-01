@@ -1,6 +1,4 @@
 /* eslint-disable @typescript-eslint/no-unsafe-argument */
-import type { Router } from "vue-router";
-import type { PageData, PageHeader } from "vuepress/client";
 import {
   isArray,
   isLinkExternal,
@@ -8,7 +6,9 @@ import {
   isString,
   keys,
   startsWith,
-} from "vuepress-shared/client";
+} from "@vuepress/helper/client";
+import type { Router } from "vue-router";
+import type { PageData, PageHeader } from "vuepress/client";
 
 import { sidebarData } from "@temp/theme-hope/sidebar";
 import { resolveLinkInfo, resolvePrefix } from "@theme-hope/utils/index";

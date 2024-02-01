@@ -1,3 +1,4 @@
+import { encodeData, entries, keys } from "@vuepress/helper/node";
 import type { PluginSimple } from "markdown-it";
 import type { RuleBlock } from "markdown-it/lib/parser_block.js";
 import type {
@@ -6,7 +7,6 @@ import type {
   SandpackPredefinedTemplate,
   SandpackSetup,
 } from "sandpack-vue3";
-import { entries, keys, utoa } from "vuepress-shared/node";
 
 import { encodeFiles, getAttrs } from "./utils.js";
 import type { SandpackData } from "../../typings/index.js";
@@ -18,9 +18,9 @@ const VALID_MARKERS = ["file", "options", "setup"] as const;
 const propsGetter = (sandpackData: SandpackData): Record<string, string> => ({
   title: sandpackData.title || "",
   template: sandpackData.template || "",
-  files: utoa(encodeFiles(sandpackData.files || {})),
-  options: utoa(JSON.stringify(sandpackData.options || {})),
-  customSetup: utoa(JSON.stringify(sandpackData.customSetup || {})),
+  files: encodeData(encodeFiles(sandpackData.files || {})),
+  options: encodeData(JSON.stringify(sandpackData.options || {})),
+  customSetup: encodeData(JSON.stringify(sandpackData.customSetup || {})),
 });
 
 const jsRunner = (jsCode: string): unknown =>

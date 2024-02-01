@@ -120,6 +120,7 @@ export const rollupBundle = (
             )
           ? [
               /^@temp/,
+              "@vuepress/helper",
               "@vueuse/core",
               "vue",
               "vue-router",
@@ -136,6 +137,7 @@ export const rollupBundle = (
               )
             ? [
                 /^node:/,
+                "@vuepress/helper",
                 /^@vuepress\/plugin-/,
                 "vuepress/cli",
                 "vuepress/core",

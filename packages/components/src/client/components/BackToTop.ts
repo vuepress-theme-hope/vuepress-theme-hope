@@ -1,3 +1,4 @@
+import { useLocaleConfig } from "@vuepress/helper/client";
 import { useElementSize, useWindowScroll, useWindowSize } from "@vueuse/core";
 import type { VNode } from "vue";
 import {
@@ -9,7 +10,6 @@ import {
   shallowRef,
 } from "vue";
 import { usePageFrontmatter } from "vuepress/client";
-import { useLocaleConfig } from "vuepress-shared/client";
 
 import { BackToTopIcon } from "./icons.js";
 import type { BackToTopLocaleConfig } from "../../shared/index.js";

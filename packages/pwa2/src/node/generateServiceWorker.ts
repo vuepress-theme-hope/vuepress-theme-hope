@@ -1,6 +1,6 @@
+import { endsWith } from "@vuepress/helper/node";
 import type { App } from "vuepress/core";
 import { colors, fs, path } from "vuepress/utils";
-import { endsWith } from "vuepress-shared/node";
 import type {
   ManifestEntry,
   ManifestTransform,
@@ -40,7 +40,7 @@ export const generateServiceWorker = async (
   app: App,
   options: PWAOptions,
 ): Promise<void> => {
-  logger.load("Generating service worker");
+  const { succeed } = logger.load("Generating service worker");
 
   const { dest } = app.dir;
   const swDest = dest("service-worker.js");
@@ -63,7 +63,7 @@ export const generateServiceWorker = async (
     manifestTransforms: [imageFilter(destDir, options.maxPicSize)],
     ...(options.generateSWConfig || {}),
   }).then(({ count, size, warnings }) => {
-    logger.succeed();
+    succeed();
 
     logger.info(
       `Precache ${colors.cyan(`${count} files`)}, totaling ${colors.cyan(

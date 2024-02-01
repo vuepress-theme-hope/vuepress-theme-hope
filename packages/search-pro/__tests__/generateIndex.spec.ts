@@ -1,8 +1,8 @@
+import { getPageExcerpt } from "@vuepress/helper/node";
 import { describe, expect, it } from "vitest";
 import type { Page } from "vuepress/core";
 import { createBaseApp } from "vuepress/core";
 import { path } from "vuepress/utils";
-import { getPageExcerpt } from "vuepress-shared/node";
 
 import { emptyTheme } from "./__fixtures__/theme/empty.js";
 import { generatePageIndex } from "../src/node/generateIndex.js";
@@ -19,7 +19,7 @@ describe("generateIndex", () => {
   it("Should generate index", () => {
     app.pages.forEach((page) => {
       page.data["excerpt"] = getPageExcerpt(app, page, {
-        excerptLength: 0,
+        length: 0,
       });
 
       expect(generatePageIndex(page)).toMatchSnapshot();
@@ -29,7 +29,7 @@ describe("generateIndex", () => {
   it("Should generate full index", () => {
     app.pages.forEach((page) => {
       page.data["excerpt"] = getPageExcerpt(app, page, {
-        excerptLength: 0,
+        length: 0,
       });
 
       expect(generatePageIndex(page, [], true)).toMatchSnapshot();
@@ -39,7 +39,7 @@ describe("generateIndex", () => {
   it("Should support customFields", () => {
     app.pages.forEach((page) => {
       page.data["excerpt"] = getPageExcerpt(app, page, {
-        excerptLength: 0,
+        length: 0,
       });
 
       expect(

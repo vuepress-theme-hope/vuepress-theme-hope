@@ -1,5 +1,5 @@
+import { getRealPath, isPlainObject } from "@vuepress/helper/node";
 import type { App } from "vuepress/core";
-import { getRealPath, isPlainObject } from "vuepress-shared/node";
 
 import type { MarkdownEnhanceOptions } from "../options.js";
 import { CLIENT_FOLDER } from "../utils.js";

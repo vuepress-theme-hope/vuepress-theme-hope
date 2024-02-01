@@ -1,6 +1,7 @@
+import { startsWith } from "@vuepress/helper/node";
 import type { Page } from "vuepress/core";
 import { sanitizeFileName } from "vuepress/utils";
-import { getTitleFromFilename, startsWith } from "vuepress-shared/node";
+import { getTitleFromFilename } from "vuepress-shared/node";
 
 import type { StructureInfo } from "./structure.js";
 import { getStructureInfo } from "./structure.js";

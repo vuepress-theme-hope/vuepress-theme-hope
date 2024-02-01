@@ -1,7 +1,8 @@
+import { decodeData } from "@vuepress/helper/client";
 import { useEventListener, useToggle } from "@vueuse/core";
 import type { PropType, SlotsType, VNode } from "vue";
 import { computed, defineComponent, h, onMounted, ref, shallowRef } from "vue";
-import { LoadingIcon, atou } from "vuepress-shared/client";
+import { LoadingIcon } from "vuepress-shared/client";
 
 import { CODEPEN_SVG, JSFIDDLE_SVG } from "./icons.js";
 import type { CodeDemoOptions } from "../../shared/index.js";
@@ -89,12 +90,14 @@ export default defineComponent({
     const config = computed(
       () =>
         <Partial<CodeDemoOptions>>(
-          JSON.parse(props.config ? atou(props.config) : "{}")
+          JSON.parse(props.config ? decodeData(props.config) : "{}")
         ),
     );
 
     const codeType = computed(() => {
-      const codeConfig = <Record<string, string>>JSON.parse(atou(props.code));
+      const codeConfig = <Record<string, string>>(
+        JSON.parse(decodeData(props.code))
+      );
 
       return getCode(codeConfig);
     });

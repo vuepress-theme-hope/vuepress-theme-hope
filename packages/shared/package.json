@@ -28,7 +28,6 @@
     "./client": "./lib/client/index.js",
     "./client/*": "./lib/client/*",
     "./node": "./lib/node/index.js",
-    "./noopModule": "./lib/client/noopModule.js",
     "./styles/*": "./styles/*",
     "./package.json": "./package.json"
   },
@@ -47,6 +46,7 @@
     "dev:ts": "tsc -b tsconfig.build.json --watch"
   },
   "dependencies": {
+    "@vuepress/helper": "2.0.0-rc.6",
     "@vueuse/core": "^10.7.2",
     "cheerio": "1.0.0-rc.12",
     "dayjs": "^1.11.10",
@@ -54,7 +54,6 @@
     "fflate": "^0.8.1",
     "gray-matter": "^4.0.3",
     "semver": "^7.5.4",
-    "striptags": "^3.2.0",
     "vue": "^3.4.15",
     "vue-router": "^4.2.5"
   },
@@ -63,7 +62,7 @@
     "@types/semver": "7.5.6",
     "@vuepress/bundler-vite": "2.0.0-rc.2",
     "@vuepress/bundler-webpack": "2.0.0-rc.2",
-    "@vuepress/plugin-git": "2.0.0-rc.1",
+    "@vuepress/plugin-git": "2.0.0-rc.3",
     "ora": "8.0.1",
     "vite": "5.0.12"
   },

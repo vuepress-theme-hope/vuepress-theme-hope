@@ -1,7 +1,7 @@
 /* eslint-disable vue/no-unused-properties */
+import { useLocaleConfig } from "@vuepress/helper/client";
 import type { VNode } from "vue";
 import { defineComponent, h, onMounted } from "vue";
-import { useLocaleConfig } from "vuepress-shared/client";
 
 import type { PDFLocaleConfig } from "../../shared/locales.js";
 import { useSize } from "../composables/index.js";

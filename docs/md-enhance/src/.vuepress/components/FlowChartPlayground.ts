@@ -3,7 +3,7 @@ import type { Chart } from "flowchart.ts";
 import { flowchartPresets } from "vuepress-plugin-md-enhance/client";
 import type { VNode } from "vue";
 import { defineComponent, h, onMounted, ref, shallowRef, watch } from "vue";
-import { useLocaleConfig } from "vuepress-shared/client";
+import { useLocaleConfig } from "@vuepress/helper/client";
 
 declare const MARKDOWN_ENHANCE_DELAY: number;
 

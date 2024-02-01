@@ -197,22 +197,5 @@
     &.line-numbers-mode::after {
       border-radius: 0;
     }
-
-    button.copy-code-button.fancy {
-      right: 0;
-      bottom: 0;
-
-      width: 28px;
-      height: 28px;
-      border-radius: 50% 10% 0;
-
-      // stylelint-disable selector-max-compound-selectors
-      svg {
-        position: relative;
-        top: 1px;
-        left: 1px;
-      }
-      // stylelint-enable selector-max-compound-selectors
-    }
   }
 }

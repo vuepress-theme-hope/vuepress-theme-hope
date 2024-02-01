@@ -24,8 +24,9 @@ All key names in `plugins` option are the camelCase version of the plugin name, 
 
 For example:
 
-- `vuepress-plugin-copy-code2` is controlled by key name `copyCode`.
-- `vuepress-plugin-md-enhance2` is controlled by key name `mdEnhance`.
+- `@vuepress/plugin-copy-code` is controlled by key name `copyCode`.
+- `vuepress-plugin-copyright2` is controlled by key name `copyright`.
+- `vuepress-plugin-md-enhance` is controlled by key name `mdEnhance`.
 
 :::
 
@@ -47,7 +48,9 @@ The following plugins are enabled by default, and you can disable them:
 
 - [@vuepress/plugin-active-header-links][active-header-links]: Automatically update route hash based on current header
 
-- [@vuepress/external-link-icon][external-link-icon]: Add external link icon for external links in Markdown.
+- [@vuepress/plugin-copy-code][copy-code]: Provides copy button for code blocks.
+
+- [@vuepress/plugin-external-link-icon][external-link-icon]: Add external link icon for external links in Markdown.
 
 - [@vuepress/plugin-git][git]: Git-based info plugin
 
@@ -55,19 +58,17 @@ The following plugins are enabled by default, and you can disable them:
 
 - [@vuepress/plugin-prismjs][prismjs]: Code highlighting plugin using Prism.js
 
-- <ProjectLink name="auto-catalog">vuepress-plugin-auto-catalog</ProjectLink>: Provides catalog page generation and `<AutoCatalog />` component
+- [@vuepress/plugin-seo][seo]: SEO enhancement plugin
 
-- <ProjectLink name="copy-code2">vuepress-plugin-copy-code2</ProjectLink>: Provides copy button for code blocks.
+- [@vuepress/plugin-sitemap][sitemap]: Sitemap plugin
+
+- <ProjectLink name="auto-catalog">vuepress-plugin-auto-catalog</ProjectLink>: Provides catalog page generation and `<AutoCatalog />` component
 
 - <ProjectLink name="md-enhance">vuepress-plugin-md-enhance</ProjectLink>: Provides more Markdown syntax
 
 - <ProjectLink name="photo-swipe">vuepress-plugin-photo-swipe</ProjectLink>: Image preview plugin based on photo-swipe
 
 - <ProjectLink name="reading-time2">vuepress-plugin-reading-time2</ProjectLink>: Reading time and word count
-
-- <ProjectLink name="seo2">vuepress-plugin-seo2</ProjectLink>: SEO enhancement plugin
-
-- <ProjectLink name="sitemap2">vuepress-plugin-sitemap2</ProjectLink>: Sitemap plugin
 
 ### Plugins that need to be enabled manually
 
@@ -87,7 +88,7 @@ These plugins are supported by theme, but you need to install them manually whil
 
 - [@vuepress/plugin-search][search]: Simple client search plugin
 
-- <ProjectLink name="feed2">vuepress-plugin-feed2</ProjectLink>: Feed support
+- [@vuepress/plugin-feed][feed]: Feed support
 
 - <ProjectLink name="pwa2">vuepress-plugin-pwa2</ProjectLink>: Enhanced PWA support
 
@@ -95,11 +96,15 @@ These plugins are supported by theme, but you need to install them manually whil
 
 - <ProjectLink name="search-pro">vuepress-plugin-search-pro</ProjectLink>: Professional Client search plugin
 
-[active-header-links]: https://vuejs.press/reference/plugin/active-header-links.html
-[docsearch]: https://vuejs.press/zh/reference/plugin/docsearch.html
-[external-link-icon]: https://vuejs.press/reference/plugin/external-link-icon.html
-[git]: https://vuejs.press/reference/plugin/git.html
-[nprogress]: https://vuejs.press/reference/plugin/nprogress.html
-[prismjs]: https://vuejs.press/reference/plugin/prismjs.html
-[search]: https://vuejs.press/reference/plugin/search.html
-[theme-data]: https://vuejs.press/reference/plugin/theme-data.html
+[active-header-links]: https://ecosystem.vuejs.press/plugins/active-header-links.html
+[copy-code]: https://ecosystem.vuejs.press/zh/plugins/copy-code.html
+[docsearch]: https://ecosystem.vuejs.press/zh/plugins/docsearch.html
+[external-link-icon]: https://ecosystem.vuejs.press/plugins/external-link-icon.html
+[feed]: https://ecosystem.vuejs.press/plugins/feed/
+[git]: https://ecosystem.vuejs.press/plugins/git.html
+[nprogress]: https://ecosystem.vuejs.press/plugins/nprogress.html
+[prismjs]: https://ecosystem.vuejs.press/plugins/prismjs.html
+[search]: https://ecosystem.vuejs.press/plugins/search.html
+[seo]: https://ecosystem.vuejs.press/plugins/seo/
+[sitemap]: https://ecosystem.vuejs.press/plugins/sitemap/
+[theme-data]: https://ecosystem.vuejs.press/plugins/theme-data.html

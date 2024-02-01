@@ -1,15 +1,15 @@
+import {
+  isLinkHttp,
+  isLinkWithProtocol,
+  keys,
+  startsWith,
+} from "@vuepress/helper/client";
 import { ExternalLinkIcon } from "@vuepress/plugin-external-link-icon/client";
 import type { PropType, SlotsType, VNode } from "vue";
 import { computed, defineComponent, h, toRef } from "vue";
 import { useRoute } from "vue-router";
 import { useSiteData } from "vuepress/client";
-import {
-  VPLink,
-  isLinkHttp,
-  isLinkWithProtocol,
-  keys,
-  startsWith,
-} from "vuepress-shared/client";
+import { VPLink } from "vuepress-shared/client";
 
 import HopeIcon from "@theme-hope/components/HopeIcon";
 

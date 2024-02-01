@@ -1,11 +1,11 @@
-import { fs } from "vuepress/utils";
 import {
   entries,
   isArray,
   isString,
   startsWith,
   values,
-} from "vuepress-shared/node";
+} from "@vuepress/helper/node";
+import { fs } from "vuepress/utils";
 
 import type { ThemeData } from "../../shared/index.js";
 import { TEMPLATE_FOLDER, logger } from "../utils.js";

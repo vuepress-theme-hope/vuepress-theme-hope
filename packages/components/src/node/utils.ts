@@ -1,9 +1,9 @@
-import { getDirname, path } from "vuepress/utils";
 import {
   Logger,
-  checkInstalled,
   ensureEndingSlash,
-} from "vuepress-shared/node";
+  getInstalledStatus,
+} from "@vuepress/helper/node";
+import { getDirname, path } from "vuepress/utils";
 
 import type { AvailableComponent } from "./options/index.js";
 
@@ -45,7 +45,7 @@ export const PLUGIN_NAME = "vuepress-plugin-components";
 export const logger = new Logger(PLUGIN_NAME);
 
 export const isInstalled = (pkg: string, hint = true): boolean => {
-  const isInstalled = checkInstalled(pkg, import.meta.url);
+  const isInstalled = getInstalledStatus(pkg, import.meta.url);
 
   if (hint && !isInstalled)
     logger.error(

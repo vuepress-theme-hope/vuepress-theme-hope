@@ -1,3 +1,4 @@
+import { decodeData, isFunction } from "@vuepress/helper/client";
 import { useMutationObserver } from "@vueuse/core";
 import type { VNode } from "vue";
 import {
@@ -9,7 +10,7 @@ import {
   shallowRef,
   watch,
 } from "vue";
-import { LoadingIcon, atou, isFunction } from "vuepress-shared/client";
+import { LoadingIcon } from "vuepress-shared/client";
 
 import { useMermaidOptions } from "../helpers/index.js";
 import type { MermaidThemeVariables } from "../typings/index.js";
@@ -105,7 +106,7 @@ export default defineComponent({
     const { themeVariables, ...mermaidOptions } = useMermaidOptions();
     const mermaidElement = shallowRef<HTMLElement>();
 
-    const code = computed(() => atou(props.code));
+    const code = computed(() => decodeData(props.code));
 
     const svgCode = ref("");
     const isDarkmode = ref(false);
@@ -177,7 +178,7 @@ export default defineComponent({
       a.setAttribute("href", dataURI);
       a.setAttribute(
         "download",
-        `${props.title ? atou(props.title) : props.id}.svg`,
+        `${props.title ? decodeData(props.title) : props.id}.svg`,
       );
       a.click();
     };

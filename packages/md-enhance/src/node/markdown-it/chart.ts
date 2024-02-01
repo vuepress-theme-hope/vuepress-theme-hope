@@ -1,6 +1,6 @@
 import { container } from "@mdit/plugin-container";
+import { encodeData } from "@vuepress/helper/node";
 import type { PluginSimple } from "markdown-it";
-import { utoa } from "vuepress-shared/node";
 
 export const chart: PluginSimple = (md) => {
   container(md, {
@@ -25,10 +25,10 @@ export const chart: PluginSimple = (md) => {
         if (!content) continue;
         if (type === "fence")
           if (info === "json") {
-            config = utoa(content);
+            config = encodeData(content);
             configType = "json";
           } else if (info === "js" || info === "javascript") {
-            config = utoa(content);
+            config = encodeData(content);
             configType = "js";
           }
 

@@ -1,3 +1,4 @@
+import { getDate } from "@vuepress/helper/client";
 import type { GitData } from "@vuepress/plugin-git";
 import type { ComputedRef } from "vue";
 import { computed, inject } from "vue";
@@ -8,12 +9,7 @@ import {
   useReadingTimeLocale,
 } from "vuepress-plugin-reading-time2/client";
 import type { AuthorInfo, BasePageFrontMatter } from "vuepress-shared/client";
-import {
-  getAuthor,
-  getCategory,
-  getDate,
-  getTag,
-} from "vuepress-shared/client";
+import { getAuthor, getCategory, getTag } from "vuepress-shared/client";
 
 import type {
   CategoryMapRef,

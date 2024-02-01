@@ -1,11 +1,11 @@
-import { colors } from "vuepress/utils";
 import {
   entries,
   fromEntries,
   isArray,
   isPlainObject,
   isString,
-} from "vuepress-shared/node";
+} from "@vuepress/helper/node";
+import { colors } from "vuepress/utils";
 
 import { deprecatedLogger, droppedLogger } from "./utils.js";
 import type {

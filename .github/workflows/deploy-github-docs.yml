@@ -47,9 +47,7 @@ jobs:
           pnpm cpx "docs/blog2/dist/**" dist/blog
           pnpm cpx "docs/comment2/dist/**" dist/comment
           pnpm cpx "docs/components/dist/**" dist/components
-          pnpm cpx "docs/copy-code2/dist/**" dist/copy-code
           pnpm cpx "docs/copyright2/dist/**" dist/copyright
-          pnpm cpx "docs/feed2/dist/**" dist/feed
           pnpm cpx "docs/lightgallery/dist/**" dist/lightgallery
           pnpm cpx "docs/md-enhance/dist/**" dist/md-enhance
           pnpm cpx "docs/photo-swipe/dist/**" dist/photo-swipe
@@ -60,9 +58,7 @@ jobs:
           pnpm cpx "docs/rtl/dist/**" dist/rtl
           pnpm cpx "docs/sass-palette/dist/**" dist/sass-palette
           pnpm cpx "docs/search-pro/dist/**" dist/search-pro
-          pnpm cpx "docs/seo2/dist/**" dist/seo
           pnpm cpx "docs/shared/dist/**" dist/shared
-          pnpm cpx "docs/sitemap2/dist/**" dist/sitemap
           pnpm cpx "docs/theme/dist/**" dist
 
       - name: Deploy

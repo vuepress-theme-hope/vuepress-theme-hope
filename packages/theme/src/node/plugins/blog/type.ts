@@ -1,6 +1,6 @@
+import { dateSorter } from "@vuepress/helper/node";
 import type { GitData } from "@vuepress/plugin-git";
 import type { BlogTypeOptions } from "vuepress-plugin-blog2";
-import { compareDate } from "vuepress-shared/node";
 
 import { defaultPageSorter } from "./utils.js";
 import type {
@@ -74,7 +74,7 @@ export const getBlogStarType = (
       if (prevKey && !nextKey) return -1;
       if (!prevKey && nextKey) return 1;
 
-      return compareDate(
+      return dateSorter(
         pageA.routeMeta[ArticleInfoType.date],
         pageB.routeMeta[ArticleInfoType.date],
       );
@@ -111,7 +111,7 @@ export const getBlogTimelineType = (
     filter: ({ frontmatter, routeMeta }) =>
       ArticleInfoType.date in routeMeta && frontmatter["timeline"] !== false,
     sorter: (pageA, pageB) =>
-      compareDate(
+      dateSorter(
         pageA.routeMeta[ArticleInfoType.date],
         pageB.routeMeta[ArticleInfoType.date],
       ),

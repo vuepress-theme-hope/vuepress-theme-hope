@@ -1,3 +1,4 @@
+import { deepAssign } from "@vuepress/helper/client";
 import { useMutationObserver } from "@vueuse/core";
 import type {
   SandpackPredefinedTemplate,
@@ -6,7 +7,6 @@ import type {
 import { Sandpack } from "sandpack-vue3";
 import type { PropType, VNode } from "vue";
 import { computed, defineComponent, h, onMounted, ref } from "vue";
-import { deepAssign } from "vuepress-shared/client";
 
 import { useSandpackConfig } from "../helpers/index.js";
 import {

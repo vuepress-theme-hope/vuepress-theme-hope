@@ -1,4 +1,4 @@
-import { ensureEndingSlash, isAbsoluteUrl } from "vuepress-shared/client";
+import { ensureEndingSlash, isLinkAbsolute } from "@vuepress/helper/client";
 
 export const resolvePrefix = (prefix = "", path = ""): string =>
-  isAbsoluteUrl(path) ? path : `${ensureEndingSlash(prefix)}${path}`;
+  isLinkAbsolute(path) ? path : `${ensureEndingSlash(prefix)}${path}`;

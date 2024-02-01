@@ -1,5 +1,6 @@
+import { isNumber, isPlainObject } from "@vuepress/helper/node";
 import { colors } from "vuepress/utils";
-import { createConverter, isNumber, isPlainObject } from "vuepress-shared/node";
+import { createConverter } from "vuepress-shared/node";
 
 import type { ComponentOptions } from "../options/index.js";
 import { logger } from "../utils.js";

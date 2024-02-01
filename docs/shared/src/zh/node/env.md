@@ -29,21 +29,6 @@ export const examplePlugin = (options) => (app) => {
 };
 ```
 
-## checkVersion
-
-检查 VuePress 的版本是否满足给定的范围。
-
-```ts
-/**
- * Check if the version of VuePress is satisfied with the given range
- *
- * @param app VuePress app
- * @param name current package name
- * @param range version range
- */
-export const checkVersion = (app: App, name: string, range = "v2") => boolean;
-```
-
 ## hasGlobalInstallation
 
 检查包管理器是否在全局范围内安装。

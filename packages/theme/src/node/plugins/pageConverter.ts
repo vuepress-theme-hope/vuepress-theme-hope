@@ -1,11 +1,11 @@
-import type { App, Page, PluginObject } from "vuepress/core";
 import {
   endsWith,
-  injectLocalizedDate,
   isPlainObject,
   keys,
   startsWith,
-} from "vuepress-shared/node";
+} from "@vuepress/helper/node";
+import type { App, Page, PluginObject } from "vuepress/core";
+import { injectLocalizedDate } from "vuepress-shared/node";
 
 import type {
   ThemeBlogHomePageFrontmatter,

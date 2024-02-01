@@ -24,7 +24,8 @@ tag:
 
 例如:
 
-- `vuepress-plugin-copy-code2` 的配置键名为 `copyCode`。
+- `@vuepress/plugin-copy-code` 的配置键名为 `copyCode`。
+- `vuepress-plugin-copyright2` 的配置键名为 `copyright`
 - `vuepress-plugin-md-enhance` 的配置键名为 `mdEnhance`
 
 :::
@@ -49,6 +50,8 @@ tag:
 
 - [@vuepress/external-link-icon][external-link-icon]: 为 Markdown 的外部链接添加外部链接图标。
 
+- [@vuepress/plugin-copy-code][copy-code]: 为代码块提供复制按钮。
+
 - [@vuepress/plugin-git][git]: 基于 Git 的信息插件
 
 - [@vuepress/plugin-nprogress][nprogress]: 进度条
@@ -57,17 +60,15 @@ tag:
 
 - <ProjectLink name="auto-catalog" path="/zh/">vuepress-plugin-auto-catalog</ProjectLink>: 提供目录页自动生成与 `<AutoCatalog />` 组件
 
-- <ProjectLink name="copy-code2" path="/zh/">vuepress-plugin-copy-code2</ProjectLink>: 为代码块提供复制按钮。
-
 - <ProjectLink name="md-enhance" path="/zh/">vuepress-plugin-md-enhance</ProjectLink>: 提供更多 Markdown 语法
 
 - <ProjectLink name="photo-swipe" path="/zh/">vuepress-plugin-photo-swipe</ProjectLink>: 基于 Photo Swipe 的图片浏览插件
 
 - <ProjectLink name="reading-time2" path="/zh/">vuepress-plugin-reading-time2</ProjectLink>: 阅读时间与字数统计
 
-- <ProjectLink name="seo2" path="/zh/">vuepress-plugin-seo2</ProjectLink>: SEO 增强插件
+- [@vuepress/plugin-seo][seo]: SEO 增强插件
 
-- <ProjectLink name="sitemap2" path="/zh/">vuepress-plugin-sitemap2</ProjectLink>: Sitemap 插件
+- [@vuepress/plugin-sitemap][sitemap]: Sitemap 插件
 
 ### 需要手动启用的插件
 
@@ -87,7 +88,7 @@ tag:
 
 - [@vuepress/plugin-search][search]: 简单的客户端搜索插件
 
-- <ProjectLink name="feed2" path="/zh/">vuepress-plugin-feed2</ProjectLink>: Feed 支持
+- [@vuepress/plugin-feed][feed]: Feed 支持
 
 - <ProjectLink name="pwa2" path="/zh/">vuepress-plugin-pwa2</ProjectLink>: 增强的 PWA 支持
 
@@ -97,11 +98,15 @@ tag:
 
 ### 官方插件
 
-[active-header-links]: https://vuejs.press/zh/reference/plugin/active-header-links.html
-[docsearch]: https://vuejs.press/zh/reference/plugin/docsearch.html
-[external-link-icon]: https://vuejs.press/zh/reference/plugin/external-link-icon.html
-[git]: https://vuejs.press/zh/reference/plugin/git.html
-[nprogress]: https://vuejs.press/zh/reference/plugin/nprogress.html
-[prismjs]: https://vuejs.press/zh/reference/plugin/prismjs.html
-[search]: https://vuejs.press/zh/reference/plugin/search.html
-[theme-data]: https://vuejs.press/zh/reference/plugin/theme-data.html
+[active-header-links]: https://ecosystem.vuejs.press/zh/plugins/active-header-links.html
+[copy-code]: https://ecosystem.vuejs.press/zh/plugins/copy-code.html
+[docsearch]: https://ecosystem.vuejs.press/zh/plugins/docsearch.html
+[external-link-icon]: https://ecosystem.vuejs.press/zh/plugins/external-link-icon.html
+[feed]: https://ecosystem.vuejs.press/zh/plugins/feed/
+[git]: https://ecosystem.vuejs.press/zh/plugins/git.html
+[nprogress]: https://ecosystem.vuejs.press/zh/plugins/nprogress.html
+[prismjs]: https://ecosystem.vuejs.press/zh/plugins/prismjs.html
+[search]: https://ecosystem.vuejs.press/zh/plugins/search.html
+[seo]: https://ecosystem.vuejs.press/zh/plugins/seo/
+[sitemap]: https://ecosystem.vuejs.press/zh/plugins/sitemap/
+[theme-data]: https://ecosystem.vuejs.press/zh/plugins/theme-data.html

@@ -1,5 +1,5 @@
+import { addViteSsrNoExternal, getLocaleConfig } from "@vuepress/helper/node";
 import type { Page, PluginFunction } from "vuepress/core";
-import { addViteSsrNoExternal, getLocales } from "vuepress-shared/node";
 
 import { convertOptions } from "./compact.js";
 import { readingTimeLocales } from "./locales.js";
@@ -20,7 +20,7 @@ export const readingTimePlugin =
       name: PLUGIN_NAME,
 
       define: (app): Record<string, unknown> => ({
-        READING_TIME_LOCALES: getLocales({
+        READING_TIME_LOCALES: getLocaleConfig({
           app,
           name: PLUGIN_NAME,
           default: readingTimeLocales,
@@ -36,7 +36,10 @@ export const readingTimePlugin =
       },
 
       extendsBundlerOptions: (bundlerOptions: unknown, app): void => {
-        addViteSsrNoExternal(bundlerOptions, app, "vuepress-shared");
+        addViteSsrNoExternal(bundlerOptions, app, [
+          "@vuepress/helper",
+          "vuepress-shared",
+        ]);
       },
     };
   };

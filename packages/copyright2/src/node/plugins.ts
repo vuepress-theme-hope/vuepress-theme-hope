@@ -1,6 +1,6 @@
+import { addViteSsrNoExternal, getLocaleConfig } from "@vuepress/helper/node";
 import type { Page, PluginFunction } from "vuepress/core";
 import { colors } from "vuepress/utils";
-import { addViteSsrNoExternal, getLocales } from "vuepress-shared/node";
 
 import { convertOptions } from "./compact.js";
 import { copyrightLocales } from "./locales.js";
@@ -34,7 +34,7 @@ export const copyrightPlugin =
       maxLength = 0,
     } = options;
 
-    const locales = getLocales({
+    const locales = getLocaleConfig({
       app,
       name: PLUGIN_NAME,
       default: copyrightLocales,
@@ -95,7 +95,10 @@ export const copyrightPlugin =
       },
 
       extendsBundlerOptions: (bundlerOptions: unknown, app): void => {
-        addViteSsrNoExternal(bundlerOptions, app, "vuepress-shared");
+        addViteSsrNoExternal(bundlerOptions, app, [
+          "@vuepress/helper",
+          "vuepress-shared",
+        ]);
       },
 
       clientConfigFile: `${CLIENT_FOLDER}config.js`,

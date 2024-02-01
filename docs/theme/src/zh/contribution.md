@@ -50,8 +50,6 @@ corepack prepare pnpm@latest --activate
 │ ├── blog → blog2 插件文档
 │ ├── comment → comment2 插件文档
 │ ├── components → components 插件文档
-│ ├── copy-code → copy-code2 插件文档
-│ ├── feed → feed2 插件文档
 │ ├── lightgallery → lightgallery 插件文档
 │ ├── md-enhance → md-enhance 插件文档
 │ ├── photo-swipe → photo-swipe 文档
@@ -62,7 +60,6 @@ corepack prepare pnpm@latest --activate
 │ ├── sass-palette → sass-palette 插件文档
 │ ├── shared → vuepress-shared 文档
 │ ├── search-pro → search-pro 插件文档
-│ ├── seo → seo2 插件文档
 │ └── theme → 主题文档
 │
 ├── docs-shared → 文档的通用文件
@@ -72,9 +69,7 @@ corepack prepare pnpm@latest --activate
 │ ├── blog2 → blog2 插件
 │ ├── comment2 → comment2 插件
 │ ├── components → components 插件
-│ ├── copy-code2 → copy-code2 插件
 │ ├── create → create-vuepress-theme-hope 助手
-│ ├── feed2 → feed2 插件
 │ ├── lightgallery → lightgallery 插件
 │ ├── md-enhance → md-enhance 插件
 │ ├── photo-swipe → photo-swipe 插件
@@ -84,9 +79,7 @@ corepack prepare pnpm@latest --activate
 │ ├── rtl → rtl 插件
 │ ├── sass-palette → sass-palette 插件
 │ ├── search-pro → search-pro 插件
-│ ├── seo2 → seo2 插件
 │ ├── shared → 共享文件
-│ ├── sitemap2 → sitemap2 插件
 │ └── theme → vuepress-theme-hope 主题
 │
 ├── scripts → 命令脚本

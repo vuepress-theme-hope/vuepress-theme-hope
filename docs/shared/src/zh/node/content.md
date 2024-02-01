@@ -45,12 +45,6 @@ export const getPageExcerpt: (
 
 获取页面纯文本。
 
-::: note
-
-此函数基于简易的 md2text，有诸多限制，不保证转换结果的准确性。
-
-:::
-
 ```ts
 export const getPageText: (page: Page) => string;
 ```

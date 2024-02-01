@@ -1,8 +1,8 @@
+import { isFunction, isPlainObject, isString } from "@vuepress/helper/client";
 import type { PropType, VNode } from "vue";
 import { computed, defineComponent, h } from "vue";
 import type { PageData } from "vuepress/client";
 import { usePageData } from "vuepress/client";
-import { isFunction, isPlainObject, isString } from "vuepress-shared/client";
 
 import ShareService from "./ShareService.js";
 import type { ShareServiceOptions } from "../../shared/share.js";

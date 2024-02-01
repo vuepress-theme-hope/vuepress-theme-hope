@@ -1,7 +1,7 @@
+import { isLinkAbsolute, isLinkHttp } from "@vuepress/helper/client";
 import type { FunctionalComponent } from "vue";
 import { h, resolveComponent } from "vue";
 import { withBase } from "vuepress/client";
-import { isAbsoluteUrl, isLinkHttp } from "vuepress-shared/client";
 
 export interface IconProps {
   icon?: string | undefined;
@@ -25,7 +25,7 @@ const HopeIcon: FunctionalComponent<IconProps> = (props) => {
         "no-view": "",
         style,
       })
-    : isAbsoluteUrl(icon)
+    : isLinkAbsolute(icon)
       ? h("img", {
           class: "icon",
           src: withBase(icon),

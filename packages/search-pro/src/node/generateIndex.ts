@@ -1,8 +1,8 @@
+import { entries, fromEntries, isArray, keys } from "@vuepress/helper/node";
 import type { AnyNode, Element } from "cheerio";
 import { load } from "cheerio";
 import { addAllAsync, createIndex } from "slimsearch";
 import type { App, Page } from "vuepress/core";
-import { entries, fromEntries, isArray, keys } from "vuepress-shared/node";
 
 import type {
   SearchProCustomFieldOptions,

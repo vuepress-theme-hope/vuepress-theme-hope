@@ -49,19 +49,9 @@ const features = [
     link: getLink("components"),
   },
   {
-    text: "Copy Code Plugin",
-    icon: "copy",
-    link: getLink("copy-code2"),
-  },
-  {
     text: "Copyright Plugin",
     icon: "copyright",
     link: getLink("copyright2"),
-  },
-  {
-    text: "Feed Plugin",
-    icon: "rss",
-    link: getLink("feed2"),
   },
   {
     text: "LightGallery Plugin",
@@ -109,19 +99,9 @@ const features = [
     link: getLink("search-pro"),
   },
   {
-    text: "Seo Plugin",
-    icon: "wrench",
-    link: getLink("seo2"),
-  },
-  {
     text: "VuePress shared",
     icon: "toolbox",
     link: getLink("shared"),
-  },
-  {
-    text: "Sitemap Plugin",
-    icon: "sitemap",
-    link: getLink("sitemap2"),
   },
 ];
 </script>

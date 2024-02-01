@@ -1,8 +1,8 @@
+import { entries, keys } from "@vuepress/helper/client";
 import { computedWithControl } from "@vueuse/core";
 import type { ComputedRef, WatchSource } from "vue";
 import { useRoute, useRouter } from "vue-router";
 import { useRouteLocale, useSiteLocaleData } from "vuepress/client";
-import { entries, keys } from "vuepress-shared/client";
 
 import {
   useThemeData,

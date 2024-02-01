@@ -38,7 +38,7 @@ tag:
        "https://YOUR_WEBSITE_URL/",
      ],
      sitemaps: [
-       // 如果你在使用 Sitemap 插件 (如: vuepress-plugin-sitemap2)，你可以提供 Sitemap 链接
+       // 如果你在使用 Sitemap 插件 (如: @vuepress/plugin-sitemap)，你可以提供 Sitemap 链接
        "https://YOUR_WEBSITE_URL/sitemap.xml",
      ],
      ignoreCanonicalTo: false,
@@ -385,5 +385,5 @@ tag:
 
 :::
 
-[docsearch]: https://vuejs.press/zh/reference/plugin/docsearch.html
-[search]: https://vuejs.press/zh/reference/plugin/search.html
+[docsearch]: https://ecosystem.vuejs.press/zh/plugins/docsearch.html
+[search]: https://ecosystem.vuejs.press/zh/plugins/search.html

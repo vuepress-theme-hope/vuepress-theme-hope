@@ -1,6 +1,6 @@
+import { addViteOptimizeDepsExclude } from "@vuepress/helper/node";
 import type { PluginFunction } from "vuepress/core";
 import { useSassPalettePlugin } from "vuepress-plugin-sass-palette";
-import { addViteOptimizeDepsExclude } from "vuepress-shared/node";
 
 import { convertOptions } from "./compact.js";
 import type { LightGalleryOptions } from "./options.js";

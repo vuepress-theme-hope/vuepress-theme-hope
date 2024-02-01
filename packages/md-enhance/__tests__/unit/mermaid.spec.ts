@@ -1,6 +1,6 @@
+import { decodeData } from "@vuepress/helper";
 import MarkdownIt from "markdown-it";
 import { describe, expect, it } from "vitest";
-import { atou } from "vuepress-shared";
 
 import {
   getMermaidContent,
@@ -73,7 +73,7 @@ ${flowchartDemo}
       /<Mermaid id="mermaid.*?" code=".*?"><\/Mermaid>/,
     );
     expect(
-      atou(
+      decodeData(
         /<Mermaid id="mermaid.*?" code="(.*?)"><\/Mermaid>/.exec(
           renderResult,
         )?.[1] || "",

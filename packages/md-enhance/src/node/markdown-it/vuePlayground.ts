@@ -1,5 +1,5 @@
+import { entries, fromEntries } from "@vuepress/helper/node";
 import type { PluginSimple } from "markdown-it";
-import { entries, fromEntries } from "vuepress-shared/node";
 
 import { playground } from "./playground/index.js";
 import type { PlaygroundData } from "../typings/index.js";

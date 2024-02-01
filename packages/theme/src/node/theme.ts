@@ -1,7 +1,7 @@
+import { isPlainObject } from "@vuepress/helper/node";
 import { watch } from "chokidar";
 import type { ThemeFunction } from "vuepress/core";
 import { TEMPLATE_RENDERER_OUTLETS } from "vuepress/utils";
-import { isPlainObject } from "vuepress-shared/node";
 
 import { getAlias } from "./alias.js";
 import { extendsBundlerOptions } from "./bundler.js";

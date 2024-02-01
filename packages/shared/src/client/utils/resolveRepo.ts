@@ -1,4 +1,4 @@
-import { isLinkHttp } from "vuepress/shared";
+import { isLinkHttp } from "@vuepress/helper/client";
 
 export type RepoType = "GitHub" | "GitLab" | "Gitee" | "Bitbucket" | null;
 
