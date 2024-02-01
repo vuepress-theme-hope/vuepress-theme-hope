@@ -1,6 +1,6 @@
 {
   "name": "theme-blog-demo",
-  "version": "2.0.0-rc.16",
+  "version": "2.0.0-rc.17",
   "private": true,
   "description": "Blog demo for vuepress-theme-hope",
   "license": "MIT",

@@ -4,6 +4,29 @@ All notable changes to this project will be documented in this file. See [Conven
 
 <!-- #region recent-change -->
 
+## [2.0.0-rc.17](https://github.com/vuepress-theme-hope/vuepress-theme-hope/compare/v2.0.0-rc.16...v2.0.0-rc.17) (2024-02-01)
+
+### ⚠ BREAKING CHANGES
+
+- remove copy-code2, feed2, seo2 and sitemap2 plugin
+
+### Features
+
+- **feed2:** improve xml font-size ([20d93b1](https://github.com/vuepress-theme-hope/vuepress-theme-hope/commit/20d93b1ab28d6706e4e6c4b2fdf7ce343ffd4533))
+- **sitemap2:** support devServer ([852a8f1](https://github.com/vuepress-theme-hope/vuepress-theme-hope/commit/852a8f1d54d95d542a3eda95e00477b74b1df167))
+- use official copy-code, feed, seo and sitemap plugin ([#3879](https://github.com/vuepress-theme-hope/vuepress-theme-hope/issues/3879)) ([0fe9435](https://github.com/vuepress-theme-hope/vuepress-theme-hope/commit/0fe94356f339c68b928b471661fc31d8f797d17f))
+
+### Bug Fixes
+
+- **deps:** update dependency inquirer to v9.2.13 ([#3869](https://github.com/vuepress-theme-hope/vuepress-theme-hope/issues/3869)) ([f75c937](https://github.com/vuepress-theme-hope/vuepress-theme-hope/commit/f75c937d9ecc1dff4d700c25a3e2393b1bc72baf))
+- **redirect:** fix redirectTo, close [#3877](https://github.com/vuepress-theme-hope/vuepress-theme-hope/issues/3877) ([43ac200](https://github.com/vuepress-theme-hope/vuepress-theme-hope/commit/43ac200ffeef00b17787f23d36343c47bc3bb292))
+- **shared:** fix excerpt link ([034a3f1](https://github.com/vuepress-theme-hope/vuepress-theme-hope/commit/034a3f1cfb5d5bf2258af3639cd8c93eaa1879e0))
+- **shared:** fix getTitleFromFilename ([1cf5152](https://github.com/vuepress-theme-hope/vuepress-theme-hope/commit/1cf51521c29861fef8d1a7c512131262b92c1ec8))
+
+### Reverts
+
+- "chore(md-enhance): remove compact with Mermaid", close [#3874](https://github.com/vuepress-theme-hope/vuepress-theme-hope/issues/3874) ([2f51907](https://github.com/vuepress-theme-hope/vuepress-theme-hope/commit/2f51907c717c01cf3fd6b1ce9a1bc9daec2fe335))
+
 ## [2.0.0-rc.16](https://github.com/vuepress-theme-hope/vuepress-theme-hope/compare/v2.0.0-rc.15...v2.0.0-rc.16) (2024-01-27)
 
 ### Features

@@ -1,6 +1,6 @@
 {
   "name": "pwa-docs",
-  "version": "2.0.0-rc.16",
+  "version": "2.0.0-rc.17",
   "private": true,
   "description": "Docs for vuepress-plugin-pwa2",
   "license": "MIT",
