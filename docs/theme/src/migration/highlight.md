@@ -15,20 +15,20 @@ We strongly recommend you to switch to V2 version, as V2 version provides the fo
 
 ## Overview
 
-V2 is coming together with [_VuePress2_](https://vuejs.press), with the power of [_Vite4_](https://vitejs.dev) / [_Webpack5_](https://webpack.js.org) and [_Vue3_](https://vuejs.org).
+V2 is based on [_VuePress2_](https://vuejs.press), with the power of [_Vite5_](https://vitejs.dev) / [_Webpack5_](https://webpack.js.org) using [_Vue3_](https://vuejs.org) to provide powerful features.
 
 V2 is a full rewrite including:
 
 - All the components are rewritten with _Composition API in Vue3_
 - All the styles are migrated to _Sass_
 
-Also, V2 has a better performance:🚀
+Also V2 has a better performance:🚀
 
-- DevServer cold start time reduced by **50%**
+- DevServer cold start time reduced by **70%**
 - Build memory usage reduced by **65%**
-- Build time reduced by **30%**
-- Output Size reduced by **35%**
-- Webpage performance up to **70%**
+- Build time reduced by **75%**
+- Output Size reduced by **45%**
+- Webpage performance up to **60%**
 
 ## Vue3 Changes
 
