@@ -122,7 +122,7 @@
     "markmap-toolbar": "^0.15.5",
     "markmap-view": "^0.15.5",
     "mathjax-full": "^3.2.2",
-    "mermaid": "^10.6.0",
+    "mermaid": "^10.8.0",
     "reveal.js": "^5.0.0",
     "sandpack-vue3": "^3.0.0",
     "sass-loader": "^14.0.0",
