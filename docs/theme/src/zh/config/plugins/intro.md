@@ -25,7 +25,7 @@ tag:
 例如:
 
 - `@vuepress/plugin-copy-code` 的配置键名为 `copyCode`。
-- `vuepress-plugin-copyright2` 的配置键名为 `copyright`
+- `@vuepress/plugin-copyright` 的配置键名为 `copyright`
 - `vuepress-plugin-md-enhance` 的配置键名为 `mdEnhance`
 
 :::
@@ -58,27 +58,27 @@ tag:
 
 - [@vuepress/plugin-prismjs][prismjs]: 基于 prism.js 的代码高亮插件
 
+- [@vuepress/plugin-reading-time][reading-time]: 阅读时间与字数统计
+
+- [@vuepress/plugin-seo][seo]: SEO 增强插件
+
+- [@vuepress/plugin-sitemap][sitemap]: Sitemap 插件
+
 - <ProjectLink name="auto-catalog" path="/zh/">vuepress-plugin-auto-catalog</ProjectLink>: 提供目录页自动生成与 `<AutoCatalog />` 组件
 
 - <ProjectLink name="md-enhance" path="/zh/">vuepress-plugin-md-enhance</ProjectLink>: 提供更多 Markdown 语法
 
 - <ProjectLink name="photo-swipe" path="/zh/">vuepress-plugin-photo-swipe</ProjectLink>: 基于 Photo Swipe 的图片浏览插件
 
-- <ProjectLink name="reading-time2" path="/zh/">vuepress-plugin-reading-time2</ProjectLink>: 阅读时间与字数统计
-
-- [@vuepress/plugin-seo][seo]: SEO 增强插件
-
-- [@vuepress/plugin-sitemap][sitemap]: Sitemap 插件
-
 ### 需要手动启用的插件
 
 主题捆绑以下插件，你可以通过配置启用它们
 
+- [@vuepress/plugin-copyright][copyright]: 在用户复制时追加版权信息，或禁用站点的复制与选择。
+
 - <ProjectLink name="blog2" path="/zh/">vuepress-plugin-blog2</ProjectLink>: VuePress2 的博客插件
 
 - <ProjectLink name="comment2" path="/zh/">vuepress-plugin-comment2</ProjectLink>: 提供评论与浏览量功能
-
-- <ProjectLink name="copyright2" path="/zh/">vuepress-plugin-copyright2</ProjectLink>: 在用户复制时追加版权信息，或禁用站点的复制与选择。
 
 ### 内置支持的插件
 
@@ -100,12 +100,14 @@ tag:
 
 [active-header-links]: https://ecosystem.vuejs.press/zh/plugins/active-header-links.html
 [copy-code]: https://ecosystem.vuejs.press/zh/plugins/copy-code.html
+[copyright]: https://ecosystem.vuejs.press/zh/plugins/copyright.html
 [docsearch]: https://ecosystem.vuejs.press/zh/plugins/docsearch.html
 [external-link-icon]: https://ecosystem.vuejs.press/zh/plugins/external-link-icon.html
 [feed]: https://ecosystem.vuejs.press/zh/plugins/feed/
 [git]: https://ecosystem.vuejs.press/zh/plugins/git.html
 [nprogress]: https://ecosystem.vuejs.press/zh/plugins/nprogress.html
 [prismjs]: https://ecosystem.vuejs.press/zh/plugins/prismjs.html
+[reading-time]: https://ecosystem.vuejs.press/zh/plugins/reading-time.html
 [search]: https://ecosystem.vuejs.press/zh/plugins/search.html
 [seo]: https://ecosystem.vuejs.press/zh/plugins/seo/
 [sitemap]: https://ecosystem.vuejs.press/zh/plugins/sitemap/

@@ -49,11 +49,6 @@ const features = [
     link: getLink("components"),
   },
   {
-    text: "Copyright Plugin",
-    icon: "copyright",
-    link: getLink("copyright2"),
-  },
-  {
     text: "LightGallery Plugin",
     icon: "image",
     link: getLink("lightgallery"),
@@ -72,11 +67,6 @@ const features = [
     text: "PWA Plugin",
     icon: "mobile",
     link: getLink("pwa2"),
-  },
-  {
-    text: "Reading Time Plugin",
-    icon: "book-open",
-    link: getLink("reading-time2"),
   },
   {
     text: "Remove PWA Plugin",

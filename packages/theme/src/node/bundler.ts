@@ -11,7 +11,7 @@ import type { App } from "vuepress/core";
  */
 export const extendsBundlerOptions = (
   bundlerOptions: unknown,
-  app: App,
+  app: App
 ): void => {
   addViteConfig(bundlerOptions, app, {
     build: {
@@ -22,7 +22,7 @@ export const extendsBundlerOptions = (
   addViteOptimizeDepsExclude(bundlerOptions, app, "@theme-hope");
   addViteSsrNoExternal(bundlerOptions, app, [
     "@vuepress/helper",
+    "@vuepress/plugin-reading-time",
     "vuepress-shared",
-    "vuepress-plugin-reading-time2",
   ]);
 };

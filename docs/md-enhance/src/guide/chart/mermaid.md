@@ -404,7 +404,6 @@ root((VuePress))
       (components)
       (md-enhance)
       (photo-swipe)
-      (copyright2)
 ```
 
 :::

@@ -3,7 +3,7 @@ import { defineComponent, h, resolveComponent } from "vue";
 import type {
   ReadingTime,
   ReadingTimeLocale,
-} from "vuepress-plugin-reading-time2/client";
+} from "@vuepress/plugin-reading-time/client";
 import type { AuthorInfo as AuthorInfoType } from "vuepress-shared/client";
 
 import { usePure } from "@theme-hope/composables/index";
@@ -153,8 +153,8 @@ export default defineComponent({
               h(resolveComponent(`${item}Info`), {
                 ...props.info,
                 pure: pure.value,
-              }),
-            ),
+              })
+            )
           )
         : null;
   },

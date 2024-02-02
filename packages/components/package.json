@@ -51,7 +51,6 @@
     "qrcode": "^1.5.3",
     "vue": "^3.4.15",
     "vue-router": "^4.2.5",
-    "vuepress-plugin-reading-time2": "workspace:*",
     "vuepress-plugin-sass-palette": "workspace:*",
     "vuepress-shared": "workspace:*"
   },

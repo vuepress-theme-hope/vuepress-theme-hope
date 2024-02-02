@@ -37,7 +37,6 @@
     "vue": "3.4.15",
     "vuepress": "2.0.0-rc.2",
     "vuepress-plugin-components": "workspace:*",
-    "vuepress-plugin-copyright2": "workspace:*",
     "vuepress-plugin-md-enhance": "workspace:*",
     "vuepress-shared": "workspace:*",
     "vuepress-theme-hope": "workspace:*"

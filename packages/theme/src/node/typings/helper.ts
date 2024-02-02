@@ -4,11 +4,11 @@ import type { GitPluginOptions } from "@vuepress/plugin-git";
 import type { SeoPluginOptions } from "@vuepress/plugin-seo";
 import type { SitemapPluginOptions } from "@vuepress/plugin-sitemap";
 import type { CommentOptions } from "vuepress-plugin-comment2";
-import type { CopyrightOptions } from "vuepress-plugin-copyright2";
+import type { CopyrightOptions } from "@vuepress/plugin-copyright";
 import type { MarkdownEnhanceOptions } from "vuepress-plugin-md-enhance";
 import type { PhotoSwipeOptions } from "vuepress-plugin-photo-swipe";
 import type { PWAOptions } from "vuepress-plugin-pwa2";
-import type { ReadingTimeOptions } from "vuepress-plugin-reading-time2";
+import type { ReadingTimeOptions } from "@vuepress/plugin-reading-time";
 
 import type {
   BlogPluginOptions,

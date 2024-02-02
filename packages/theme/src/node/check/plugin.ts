@@ -8,9 +8,12 @@ import { logger } from "../utils.js";
 const PLUGIN_CHECKLIST = [
   ["@vuepress/plugin-active-header-links", "activeHeaderLinks"],
   ["@vuepress/plugin-copy-code", "copyCode"],
+  ["@vuepress/plugin-copyright", "copyright"],
   ["@vuepress/plugin-docsearch", "docsearch"],
   ["@vuepress/plugin-search", "search"],
   ["@vuepress/plugin-feed", "feed"],
+  ["@vuepress/plugin-reading-time", "readingTime"],
+  ["@vuepress/plugin-rtl", "", 'Set "rtl: true" in the needed theme locales.'],
   ["@vuepress/plugin-seo", "seo"],
   ["@vuepress/plugin-sitemap", "sitemap"],
   "@vuepress/plugin-theme-data",
@@ -18,12 +21,9 @@ const PLUGIN_CHECKLIST = [
   ["vuepress-plugin-blog2", "blog"],
   ["vuepress-plugin-comment2", "comment"],
   ["vuepress-plugin-components", "components"],
-  ["vuepress-plugin-copyright2", "copyright"],
   ["vuepress-plugin-md-enhance", "mdEnhance"],
   ["vuepress-plugin-photo-swipe", "photoSwipe"],
   ["vuepress-plugin-pwa2", "pwa"],
-  ["vuepress-plugin-reading-time2", "readingTime"],
-  ["vuepress-plugin-rtl", "", 'Set "rtl: true" in the needed theme locales.'],
   ["vuepress-plugin-pwa2", "pwa"],
   ["vuepress-plugin-search-pro", "searchPro"],
 ];
@@ -62,12 +62,12 @@ export const checkPluginOptions = (plugins: PluginsOptions): void => {
     if (!KNOWN_THEME_PLUGINS.includes(key))
       logger.warn(
         `You are setting "${colors.magenta(
-          `plugins.${key}`,
+          `plugins.${key}`
         )}" option in ${colors.cyan(
-          "theme options",
+          "theme options"
         )}, but it's not supported by theme. You need to install the plugin yourself and import then call it manually in "${colors.magenta(
-          "plugins",
-        )}" options in ${colors.cyan("vuepress config file")} directly.`,
+          "plugins"
+        )}" options in ${colors.cyan("vuepress config file")} directly.`
       );
   });
 };
@@ -80,22 +80,22 @@ export const checkPluginOptions = (plugins: PluginsOptions): void => {
 export const checkUserPlugin = (app: App): void => {
   PLUGIN_CHECKLIST.forEach(([pluginName, optionName = "", hint = ""]) => {
     const themeIndex = app.pluginApi.plugins.findIndex(
-      (item) => item.name === "vuepress-theme-hope",
+      (item) => item.name === "vuepress-theme-hope"
     );
     const pluginsAfterTheme = app.pluginApi.plugins.slice(themeIndex + 1);
 
     if (pluginsAfterTheme.some(({ name }) => name === pluginName))
       logger.error(
         `You are not allowed to use plugin "${colors.magenta(
-          pluginName,
+          pluginName
         )}" yourself in ${colors.cyan("vuepress config file")}. ${
           hint ||
           (optionName
             ? `Set "${colors.magenta(`plugin.${optionName}`)}" in ${colors.cyan(
-                "theme options",
+                "theme options"
               )} to customize it.`
             : "")
-        }`,
+        }`
       );
   });
 };

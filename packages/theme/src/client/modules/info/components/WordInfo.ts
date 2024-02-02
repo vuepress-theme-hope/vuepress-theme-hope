@@ -3,7 +3,7 @@ import { defineComponent, h } from "vue";
 import type {
   ReadingTime,
   ReadingTimeLocale,
-} from "vuepress-plugin-reading-time2/client";
+} from "@vuepress/plugin-reading-time/client";
 
 import { WordIcon } from "@theme-hope/modules/info/components/icons";
 import { useMetaLocale } from "@theme-hope/modules/info/composables/index";
@@ -63,7 +63,7 @@ export default defineComponent({
                 property: "wordCount",
                 content: props.readingTime?.words,
               }),
-            ],
+            ]
           )
         : null;
   },

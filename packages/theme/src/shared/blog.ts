@@ -1,4 +1,4 @@
-import type { ReadingTime } from "vuepress-plugin-reading-time2";
+import type { ReadingTime } from "@vuepress/plugin-reading-time";
 import type { Author } from "vuepress-shared";
 
 export const enum ArticleInfoType {

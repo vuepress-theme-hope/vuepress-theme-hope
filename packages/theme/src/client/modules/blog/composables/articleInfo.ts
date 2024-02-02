@@ -4,7 +4,7 @@ import { computed, toRef } from "vue";
 import {
   getReadingTimeLocale,
   useReadingTimeLocaleConfig,
-} from "vuepress-plugin-reading-time2/client";
+} from "@vuepress/plugin-reading-time/client";
 import type { AuthorInfo } from "vuepress-shared/client";
 import { getAuthor, getCategory, getTag } from "vuepress-shared/client";
 
@@ -45,7 +45,7 @@ export const useArticleCategory = (info: Ref<ArticleInfo>): CategoryRef => {
     getCategory(info.value[ArticleInfoType.category]).map((name) => ({
       name,
       path: categoryMap.value.map[name].path,
-    })),
+    }))
   );
 };
 
@@ -58,7 +58,7 @@ export const useArticleTag = (info: Ref<ArticleInfo>): TagRef => {
     getTag(info.value[ArticleInfoType.tag]).map((name) => ({
       name,
       path: tagMap.value.map[name].path,
-    })),
+    }))
   );
 };
 
@@ -99,7 +99,7 @@ export const useArticleInfo = (props: {
       readingTimeLocaleConfig.value
         ? getReadingTimeLocale(
             articleInfo.value[ArticleInfoType.readingTime],
-            readingTimeLocaleConfig.value,
+            readingTimeLocaleConfig.value
           )
         : null,
     pageview: props.path,

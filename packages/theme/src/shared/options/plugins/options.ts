@@ -8,11 +8,11 @@ import type { SitemapPluginOptions } from "@vuepress/plugin-sitemap";
 import type { AutoCatalogOptions } from "vuepress-plugin-auto-catalog";
 import type { CommentPluginOptions } from "vuepress-plugin-comment2";
 import type { ComponentOptions } from "vuepress-plugin-components";
-import type { CopyrightOptions } from "vuepress-plugin-copyright2";
+import type { CopyrightPluginOptions } from "@vuepress/plugin-copyright";
 import type { MarkdownEnhanceOptions } from "vuepress-plugin-md-enhance";
 import type { PhotoSwipeOptions } from "vuepress-plugin-photo-swipe";
 import type { PWAOptions } from "vuepress-plugin-pwa2";
-import type { ReadingTimeOptions } from "vuepress-plugin-reading-time2";
+import type { ReadingTimePluginOptions } from "@vuepress/plugin-reading-time";
 import type { RedirectOptions } from "vuepress-plugin-redirect";
 import type { SearchProOptions } from "vuepress-plugin-search-pro";
 
@@ -87,15 +87,15 @@ export interface PluginsOptions {
   /**
    * Copyright Plugin options
    *
-   * @see https://plugin-copyright2.vuejs.press/config.html
+   * @see https://ecosystem.vuejs.press/plugins/copyright.html
    *
    * 版权信息插件配置
    *
-   * @see https://plugin-copyright2.vuejs.press/zh/config.html
+   * @see https://ecosystem.vuejs.press/zh/plugins/copyright.html
    *
    * @default false
    */
-  copyright?: CopyrightOptions | boolean;
+  copyright?: CopyrightPluginOptions | boolean;
 
   /**
    * Options for  @vuepress/docsearch
@@ -230,15 +230,15 @@ export interface PluginsOptions {
   /**
    * ReadingTime options
    *
-   * @see https://plugin-reading-time2.vuejs.press/
+   * @see https://ecosystem.vuejs.press/plugins/reading-time.html
    *
    * 阅读时间插件配置
    *
-   * @see https://plugin-reading-time2.vuejs.press/zh/
+   * @see https://ecosystem.vuejs.press/zh/plugins/reading-time.html
    *
    * @default true
    */
-  readingTime?: ReadingTimeOptions | boolean;
+  readingTime?: ReadingTimePluginOptions | boolean;
 
   /**
    * Redirect options

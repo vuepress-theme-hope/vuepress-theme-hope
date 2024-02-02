@@ -11,7 +11,7 @@ tag:
 
 你可以在页面的 frontmatter 配置以下选项控制插件行为。
 
-## `vuepress-plugin-copyright2` 选项
+## `@vuepress/plugin-copyright` 选项
 
 ### copy.triggerLength
 

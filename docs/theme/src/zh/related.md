@@ -49,11 +49,6 @@ const features = [
     link: getLink("components"),
   },
   {
-    text: "版权信息插件",
-    icon: "copyright",
-    link: getLink("copyright2"),
-  },
-  {
     text: "LightGallery 插件",
     icon: "image",
     link: getLink("lightgallery"),
@@ -72,11 +67,6 @@ const features = [
     text: "PWA 插件",
     icon: "mobile",
     link: getLink("pwa2"),
-  },
-  {
-    text: "阅读时间插件",
-    icon: "book-open",
-    link: getLink("reading-time2"),
   },
   {
     text: "移除 PWA 插件",

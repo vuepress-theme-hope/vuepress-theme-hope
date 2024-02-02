@@ -102,7 +102,7 @@ Check <ProjectLink name="photo-swipe" path="/config.html">photo-swipe plugin doc
 
 ## readingTime <Badge text="enabled by default" />
 
-Controls `vuepress-plugin-reading-time2` which generates words count and estimated reading time for pages.
+Controls `@vuepress/plugin-reading-time` which generates words count and estimated reading time for pages.
 
 ### readingTime.wordPerMinute
 
@@ -111,7 +111,7 @@ Controls `vuepress-plugin-reading-time2` which generates words count and estimat
 
 Reading speed (words per minute)
 
-Check <ProjectLink name="reading-time2" path="/config.html">reading-time2 plugin docs</ProjectLink> for available plugin options.
+Check [reading-time plugin docs][reading-time-config] for available plugin options.
 
 ## seo <Badge text="enabled by default" />
 
@@ -131,5 +131,6 @@ Check [sitemap plugin docs][sitemap-config] for available plugin options.
 
 [copy-code-config]: https://ecosystem.vuejs.press/plugins/copy-code.html#options
 [git-config]: https://ecosystem.vuejs.press/plugins/git.html#options
+[reading-time-config]: https://ecosystem.vuejs.press/plugins/reading-time.html#options
 [seo-config]: https://ecosystem.vuejs.press/plugins/sitemap/config.html
 [sitemap-config]: https://ecosystem.vuejs.press/plugins/seo/config.html

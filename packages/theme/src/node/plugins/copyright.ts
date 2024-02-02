@@ -1,7 +1,7 @@
 import { isPlainObject } from "@vuepress/helper/node";
 import type { Page, Plugin } from "vuepress/core";
-import type { CopyrightOptions } from "vuepress-plugin-copyright2";
-import { copyrightPlugin } from "vuepress-plugin-copyright2";
+import type { CopyrightOptions } from "@vuepress/plugin-copyright";
+import { copyrightPlugin } from "@vuepress/plugin-copyright";
 import { getAuthor } from "vuepress-shared/node";
 
 import type {
@@ -18,7 +18,7 @@ export const getCopyrightPlugin = (
   themeData: ThemeData,
   options?: Partial<CopyrightOptions> | boolean,
   hostname?: string,
-  legacy = false,
+  legacy = false
 ): Plugin | null => {
   if (!options) return null;
 
@@ -28,13 +28,13 @@ export const getCopyrightPlugin = (
       author: getAuthor(themeData.author)?.[0]?.name,
       license: themeData.license,
       authorGetter: (
-        page: Page<Record<string, never>, ThemeNormalPageFrontmatter>,
+        page: Page<Record<string, never>, ThemeNormalPageFrontmatter>
       ) => getAuthor(page.frontmatter.author)?.[0]?.name,
       licenseGetter: (
-        page: Page<Record<string, never>, ThemeNormalPageFrontmatter>,
+        page: Page<Record<string, never>, ThemeNormalPageFrontmatter>
       ) => page.frontmatter.license,
       ...(isPlainObject(options) ? options : { global: true }),
     },
-    legacy,
+    legacy
   );
 };
