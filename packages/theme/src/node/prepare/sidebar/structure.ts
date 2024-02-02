@@ -1,4 +1,4 @@
-import { startsWith } from "@vuepress/helper/node";
+import { startsWith } from "@vuepress/helper";
 import type { App, Page } from "vuepress/core";
 import { path } from "vuepress/utils";
 

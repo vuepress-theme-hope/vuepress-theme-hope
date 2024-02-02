@@ -5,7 +5,7 @@ import {
   isArray,
   isPlainObject,
   keys,
-} from "@vuepress/helper/node";
+} from "@vuepress/helper";
 import type { App } from "vuepress/core";
 import { colors } from "vuepress/utils";
 

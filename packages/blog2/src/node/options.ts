@@ -1,4 +1,4 @@
-import type { PageExcerptOptions } from "@vuepress/helper/node";
+import type { PageExcerptOptions } from "@vuepress/helper";
 import type { Page } from "vuepress/core";
 
 import type { BlogCategoryOptions, BlogTypeOptions } from "./typings/index.js";

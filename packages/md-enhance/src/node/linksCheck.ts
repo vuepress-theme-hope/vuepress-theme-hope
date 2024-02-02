@@ -3,7 +3,7 @@ import {
   isFunction,
   isLinkAbsolute,
   isRegExp,
-} from "@vuepress/helper/node";
+} from "@vuepress/helper";
 import type { App, Page } from "vuepress/core";
 import { logger } from "vuepress/utils";
 

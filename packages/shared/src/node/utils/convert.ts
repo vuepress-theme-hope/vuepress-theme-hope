@@ -1,4 +1,4 @@
-import { Logger } from "@vuepress/helper/node";
+import { Logger } from "@vuepress/helper";
 import { colors } from "vuepress/utils";
 
 export interface DeprecatedLoggerOptions {

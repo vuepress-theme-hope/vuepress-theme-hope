@@ -1,4 +1,4 @@
-import { entries, keys } from "@vuepress/helper/node";
+import { entries, keys } from "@vuepress/helper";
 import { addAll, discard, vacuum } from "slimsearch";
 import type { App } from "vuepress/core";
 

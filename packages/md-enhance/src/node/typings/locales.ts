@@ -1,4 +1,4 @@
-import type { ExactLocaleConfig } from "@vuepress/helper/node";
+import type { ExactLocaleConfig } from "@vuepress/helper";
 
 import type { MarkdownHintLocaleData } from "./hint.js";
 

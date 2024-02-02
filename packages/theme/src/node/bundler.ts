@@ -3,7 +3,7 @@ import {
   addViteOptimizeDepsExclude,
   addViteOptimizeDepsInclude,
   addViteSsrNoExternal,
-} from "@vuepress/helper/node";
+} from "@vuepress/helper";
 import type { App } from "vuepress/core";
 
 /**
@@ -11,7 +11,7 @@ import type { App } from "vuepress/core";
  */
 export const extendsBundlerOptions = (
   bundlerOptions: unknown,
-  app: App
+  app: App,
 ): void => {
   addViteConfig(bundlerOptions, app, {
     build: {

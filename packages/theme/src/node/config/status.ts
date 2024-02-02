@@ -1,4 +1,4 @@
-import { isPlainObject, keys } from "@vuepress/helper/node";
+import { isPlainObject, keys } from "@vuepress/helper";
 import type { App } from "vuepress/core";
 
 import type { ThemeOptions } from "../../shared/index.js";

@@ -4,7 +4,7 @@ import {
   fromEntries,
   isPlainObject,
   isString,
-} from "@vuepress/helper/node";
+} from "@vuepress/helper";
 import { load } from "js-yaml";
 import type { Options, PluginSimple } from "markdown-it";
 import type Token from "markdown-it/lib/token.js";

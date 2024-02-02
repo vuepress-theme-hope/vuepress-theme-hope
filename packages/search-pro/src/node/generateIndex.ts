@@ -1,4 +1,4 @@
-import { entries, fromEntries, isArray, keys } from "@vuepress/helper/node";
+import { entries, fromEntries, isArray, keys } from "@vuepress/helper";
 import type { AnyNode, Element } from "cheerio";
 import { load } from "cheerio";
 import { addAllAsync, createIndex } from "slimsearch";

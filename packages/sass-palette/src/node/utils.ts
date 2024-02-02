@@ -1,4 +1,4 @@
-import { Logger } from "@vuepress/helper/node";
+import { Logger } from "@vuepress/helper";
 import { fs, getDirname, path } from "vuepress/utils";
 
 const __dirname = getDirname(import.meta.url);

@@ -1,4 +1,4 @@
-import { dateSorter } from "@vuepress/helper/node";
+import { dateSorter } from "@vuepress/helper";
 import { hopeTheme } from "vuepress-theme-hope";
 
 import { enNavbar, zhNavbar } from "./navbar/index.js";

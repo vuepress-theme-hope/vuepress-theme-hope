@@ -3,7 +3,7 @@ import {
   addViteSsrNoExternal,
   fromEntries,
   getLocaleConfig,
-} from "@vuepress/helper/node";
+} from "@vuepress/helper";
 import { watch } from "chokidar";
 import type { PluginFunction } from "vuepress/core";
 import { useSassPalettePlugin } from "vuepress-plugin-sass-palette";

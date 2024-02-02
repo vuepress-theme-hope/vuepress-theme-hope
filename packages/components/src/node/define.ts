@@ -1,4 +1,4 @@
-import { getLocaleConfig } from "@vuepress/helper/node";
+import { getLocaleConfig } from "@vuepress/helper";
 import type { App } from "vuepress/core";
 
 import { catalogLocales } from "./compact/index.js";

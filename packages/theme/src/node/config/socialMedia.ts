@@ -4,7 +4,7 @@ import {
   isString,
   startsWith,
   values,
-} from "@vuepress/helper/node";
+} from "@vuepress/helper";
 import { fs } from "vuepress/utils";
 
 import type { ThemeData } from "../../shared/index.js";

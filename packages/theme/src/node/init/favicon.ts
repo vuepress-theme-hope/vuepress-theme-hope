@@ -1,4 +1,4 @@
-import { isLinkHttp } from "@vuepress/helper/node";
+import { isLinkHttp } from "@vuepress/helper";
 import type { App } from "vuepress/core";
 
 export const addFavicon = (app: App, favicon: string): void => {

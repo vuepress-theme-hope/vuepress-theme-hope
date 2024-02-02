@@ -1,4 +1,4 @@
-import { isPlainObject } from "@vuepress/helper/node";
+import { isPlainObject } from "@vuepress/helper";
 import { watch } from "chokidar";
 import type { ThemeFunction } from "vuepress/core";
 import { TEMPLATE_RENDERER_OUTLETS } from "vuepress/utils";
@@ -66,14 +66,7 @@ export const hopeTheme = (
     const themeData = getThemeData(app, themeOptions, status);
     const icons = status.enableBlog ? checkSocialMediaIcons(themeData) : {};
 
-    usePlugin(
-      app,
-      themeData,
-      plugins,
-      hotReload,
-      behaviorOptions,
-      behaviorOptions.compact,
-    );
+    usePlugin(app, themeData, plugins, hotReload, behaviorOptions);
 
     if (isDebug) console.log("Theme plugin options:", plugins);
 

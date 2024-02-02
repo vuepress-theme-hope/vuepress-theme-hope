@@ -1,5 +1,5 @@
 import { container } from "@mdit/plugin-container";
-import { encodeData } from "@vuepress/helper/node";
+import { encodeData } from "@vuepress/helper";
 import type { PluginSimple } from "markdown-it";
 
 export const chart: PluginSimple = (md) => {

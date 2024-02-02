@@ -23,7 +23,7 @@ import {
   chainWebpack,
   getLocaleConfig,
   isPlainObject,
-} from "@vuepress/helper/node";
+} from "@vuepress/helper";
 import type { PluginFunction } from "vuepress/core";
 import type { MarkdownEnv } from "vuepress/markdown";
 import { colors } from "vuepress/utils";

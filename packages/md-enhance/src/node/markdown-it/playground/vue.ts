@@ -1,4 +1,4 @@
-import { deepAssign, entries, fromEntries } from "@vuepress/helper/node";
+import { deepAssign, entries, fromEntries } from "@vuepress/helper";
 
 import type {
   PlaygroundData,

@@ -1,4 +1,4 @@
-import { endsWith, fromEntries } from "@vuepress/helper/node";
+import { endsWith, fromEntries } from "@vuepress/helper";
 import { fs, path } from "vuepress/utils";
 
 import { CLIENT_FOLDER } from "./utils.js";

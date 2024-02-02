@@ -6,7 +6,7 @@ import {
   isPlainObject,
   keys,
   startsWith,
-} from "@vuepress/helper/node";
+} from "@vuepress/helper";
 import type { DocsearchPluginOptions } from "@vuepress/plugin-docsearch";
 import type { SearchPluginOptions } from "@vuepress/plugin-search";
 import type { App, Page, Plugin } from "vuepress/core";

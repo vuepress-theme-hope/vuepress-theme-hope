@@ -4,7 +4,7 @@ import {
   isLinkAbsolute,
   isLinkHttp,
   isString,
-} from "@vuepress/helper/node";
+} from "@vuepress/helper";
 
 import type { FontIconAssets } from "../options/index.js";
 import { logger } from "../utils.js";

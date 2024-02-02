@@ -1,4 +1,4 @@
-import { getRealPath } from "@vuepress/helper/node";
+import { getRealPath } from "@vuepress/helper";
 import type { App } from "vuepress/core";
 
 import type { RevealJsPlugin, RevealJsTheme } from "../typings/index.js";

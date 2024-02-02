@@ -1,9 +1,4 @@
-import {
-  isArray,
-  isFunction,
-  isPlainObject,
-  isString,
-} from "@vuepress/helper/node";
+import { isArray, isFunction, isPlainObject, isString } from "@vuepress/helper";
 import type { UserConfig } from "vuepress/cli";
 import type { Plugin, PluginConfig } from "vuepress/core";
 import type { MarkdownOptions } from "vuepress/markdown";

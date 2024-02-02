@@ -1,7 +1,7 @@
 #!/usr/bin/env node
 import { createRequire } from "node:module";
 
-import { removeEndingSlash, removeLeadingSlash } from "@vuepress/helper/node";
+import { removeEndingSlash, removeLeadingSlash } from "@vuepress/helper";
 import { cac } from "cac";
 import {
   loadUserConfig,

@@ -1,4 +1,4 @@
-import { isPlainObject } from "@vuepress/helper/node";
+import { isPlainObject } from "@vuepress/helper";
 import type { HeadConfig } from "vuepress/core";
 
 import type { PWAOptions } from "./options.js";

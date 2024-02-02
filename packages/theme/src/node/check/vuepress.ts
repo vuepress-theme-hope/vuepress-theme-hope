@@ -1,6 +1,6 @@
 import { createRequire } from "node:module";
 
-import { keys } from "@vuepress/helper/node";
+import { keys } from "@vuepress/helper";
 import { colors, fs, path } from "vuepress/utils";
 
 interface PackageJSON extends Record<string, unknown> {

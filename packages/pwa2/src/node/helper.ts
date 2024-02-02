@@ -1,4 +1,4 @@
-import { isLinkAbsolute } from "@vuepress/helper/node";
+import { isLinkAbsolute } from "@vuepress/helper";
 
 import type { PWAOptions } from "./options.js";
 import type { ManifestOption } from "../shared/index.js";

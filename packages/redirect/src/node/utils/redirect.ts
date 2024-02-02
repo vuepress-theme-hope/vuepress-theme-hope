@@ -8,7 +8,7 @@ import {
   isPlainObject,
   removeEndingSlash,
   removeLeadingSlash,
-} from "@vuepress/helper/node";
+} from "@vuepress/helper";
 import type { App, Page } from "vuepress/core";
 
 import { normalizePath } from "./normalizePath.js";

@@ -1,4 +1,4 @@
-import { startsWith } from "@vuepress/helper/node";
+import { startsWith } from "@vuepress/helper";
 import type { Page } from "vuepress/core";
 import { sanitizeFileName } from "vuepress/utils";
 import { getTitleFromFilename } from "vuepress-shared/node";

@@ -1,4 +1,4 @@
-import { getPageExcerpt } from "@vuepress/helper/node";
+import { getPageExcerpt } from "@vuepress/helper";
 import { describe, expect, it } from "vitest";
 import type { Page } from "vuepress/core";
 import { createBaseApp } from "vuepress/core";

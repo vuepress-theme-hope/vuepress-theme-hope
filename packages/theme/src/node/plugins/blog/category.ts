@@ -1,4 +1,4 @@
-import { isArray } from "@vuepress/helper/node";
+import { isArray } from "@vuepress/helper";
 import type { GitData } from "@vuepress/plugin-git";
 import type { BlogCategoryOptions } from "vuepress-plugin-blog2";
 

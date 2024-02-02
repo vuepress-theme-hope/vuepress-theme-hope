@@ -1,4 +1,4 @@
-import { keys } from "@vuepress/helper/node";
+import { keys } from "@vuepress/helper";
 import type { App } from "vuepress/core";
 import { colors } from "vuepress/utils";
 
@@ -62,12 +62,12 @@ export const checkPluginOptions = (plugins: PluginsOptions): void => {
     if (!KNOWN_THEME_PLUGINS.includes(key))
       logger.warn(
         `You are setting "${colors.magenta(
-          `plugins.${key}`
+          `plugins.${key}`,
         )}" option in ${colors.cyan(
-          "theme options"
+          "theme options",
         )}, but it's not supported by theme. You need to install the plugin yourself and import then call it manually in "${colors.magenta(
-          "plugins"
-        )}" options in ${colors.cyan("vuepress config file")} directly.`
+          "plugins",
+        )}" options in ${colors.cyan("vuepress config file")} directly.`,
       );
   });
 };
@@ -80,22 +80,22 @@ export const checkPluginOptions = (plugins: PluginsOptions): void => {
 export const checkUserPlugin = (app: App): void => {
   PLUGIN_CHECKLIST.forEach(([pluginName, optionName = "", hint = ""]) => {
     const themeIndex = app.pluginApi.plugins.findIndex(
-      (item) => item.name === "vuepress-theme-hope"
+      (item) => item.name === "vuepress-theme-hope",
     );
     const pluginsAfterTheme = app.pluginApi.plugins.slice(themeIndex + 1);
 
     if (pluginsAfterTheme.some(({ name }) => name === pluginName))
       logger.error(
         `You are not allowed to use plugin "${colors.magenta(
-          pluginName
+          pluginName,
         )}" yourself in ${colors.cyan("vuepress config file")}. ${
           hint ||
           (optionName
             ? `Set "${colors.magenta(`plugin.${optionName}`)}" in ${colors.cyan(
-                "theme options"
+                "theme options",
               )} to customize it.`
             : "")
-        }`
+        }`,
       );
   });
 };

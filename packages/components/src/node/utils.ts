@@ -2,7 +2,7 @@ import {
   Logger,
   ensureEndingSlash,
   getInstalledStatus,
-} from "@vuepress/helper/node";
+} from "@vuepress/helper";
 import { getDirname, path } from "vuepress/utils";
 
 import type { AvailableComponent } from "./options/index.js";

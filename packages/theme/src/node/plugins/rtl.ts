@@ -1,6 +1,6 @@
-import { entries } from "@vuepress/helper/node";
-import type { Plugin } from "vuepress/core";
+import { entries } from "@vuepress/helper";
 import { rltPlugin } from "@vuepress/plugin-rtl";
+import type { Plugin } from "vuepress/core";
 
 import type { ThemeData } from "../../shared/index.js";
 

@@ -1,4 +1,4 @@
-import { isFunction, isPlainObject } from "@vuepress/helper/node";
+import { isFunction, isPlainObject } from "@vuepress/helper";
 import type { UserConfig } from "vuepress/cli";
 import { colors } from "vuepress/utils";
 

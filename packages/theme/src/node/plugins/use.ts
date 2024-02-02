@@ -1,6 +1,6 @@
-import { isPlainObject } from "@vuepress/helper/node";
-import type { App } from "vuepress/core";
+import { isPlainObject } from "@vuepress/helper";
 import { useReadingTimePlugin } from "@vuepress/plugin-reading-time";
+import type { App } from "vuepress/core";
 import { useSassPalettePlugin } from "vuepress-plugin-sass-palette";
 
 import { useGitPlugin } from "./git.js";
@@ -21,7 +21,6 @@ export const usePlugin = (
   plugins: PluginsOptions,
   hotReload: boolean,
   behavior: HopeThemeBehaviorOptions,
-  legacy = false
 ): void => {
   // respect git options
   if ("git" in plugins)
@@ -35,7 +34,7 @@ export const usePlugin = (
               updatedTime: true,
             }
           : plugins.git
-        : {}
+        : {},
     );
   // only use git plugin in production or debug mode
   else if (hotReload || app.env.isBuild)
@@ -49,7 +48,6 @@ export const usePlugin = (
     useReadingTimePlugin(
       app,
       isPlainObject(plugins.readingTime) ? plugins.readingTime : {},
-      legacy
     );
 
   if (plugins.prismjs !== false) usePrismPlugin(app);

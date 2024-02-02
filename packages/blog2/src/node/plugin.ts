@@ -1,4 +1,4 @@
-import { addViteSsrNoExternal, getPageExcerpt } from "@vuepress/helper/node";
+import { addViteSsrNoExternal, getPageExcerpt } from "@vuepress/helper";
 import { watch } from "chokidar";
 import type { PluginFunction } from "vuepress/core";
 import {

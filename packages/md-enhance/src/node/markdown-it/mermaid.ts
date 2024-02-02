@@ -1,4 +1,4 @@
-import { encodeData } from "@vuepress/helper/node";
+import { encodeData } from "@vuepress/helper";
 import type { PluginSimple } from "markdown-it";
 import type Renderer from "markdown-it/lib/renderer.js";
 
