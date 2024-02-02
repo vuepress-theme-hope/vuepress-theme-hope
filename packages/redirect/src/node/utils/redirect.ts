@@ -20,6 +20,9 @@ export const handleRedirectTo = (
   { hostname }: RedirectOptions,
 ): void => {
   const { base } = app.options;
+  const resolvedHostname = hostname
+    ? removeEndingSlash(isLinkHttp(hostname) ? hostname : `https://${hostname}`)
+    : "";
 
   app.pages.forEach(({ frontmatter }) => {
     const { redirectTo } = <RedirectPluginFrontmatterOption>frontmatter;
@@ -27,13 +30,7 @@ export const handleRedirectTo = (
     if (redirectTo) {
       const redirectUrl = normalizePath(
         isLinkAbsolute(redirectTo)
-          ? `${
-              hostname
-                ? removeEndingSlash(
-                    isLinkHttp(hostname) ? hostname : `https://${hostname}`,
-                  )
-                : ""
-            }${base}${removeLeadingSlash(redirectTo)}`
+          ? `${resolvedHostname}${base}${removeLeadingSlash(redirectTo)}`
           : redirectTo,
       );
 
