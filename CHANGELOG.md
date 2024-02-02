@@ -4,6 +4,12 @@ All notable changes to this project will be documented in this file. See [Conven
 
 <!-- #region recent-change -->
 
+## [2.0.0-rc.19](https://github.com/vuepress-theme-hope/vuepress-theme-hope/compare/v2.0.0-rc.18...v2.0.0-rc.19) (2024-02-02)
+
+### Features
+
+- use official plugin copyright, reading-time and rtl ([#3883](https://github.com/vuepress-theme-hope/vuepress-theme-hope/issues/3883)) ([636cc13](https://github.com/vuepress-theme-hope/vuepress-theme-hope/commit/636cc139a6181c435dd0a080b215df54541f2641))
+
 ## [2.0.0-rc.18](https://github.com/vuepress-theme-hope/vuepress-theme-hope/compare/v2.0.0-rc.17...v2.0.0-rc.18) (2024-02-01)
 
 ### Features

@@ -1,6 +1,6 @@
 {
   "name": "search-pro-demo",
-  "version": "2.0.0-rc.18",
+  "version": "2.0.0-rc.19",
   "private": true,
   "description": "Demo for vuepress-plugin-search-pro",
   "license": "MIT",
