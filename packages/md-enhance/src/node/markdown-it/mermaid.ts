@@ -51,6 +51,7 @@ const getMermaid = (options: MermaidOptions, index: number): string =>
   }></Mermaid>`;
 
 const DIAGRAM_MAP: Record<string, string> = {
+  block: "block-beta",
   class: "classDiagram",
   c4c: "C4Context",
   er: "erDiagram",

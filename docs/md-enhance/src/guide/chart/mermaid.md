@@ -549,6 +549,22 @@ line [5000, 6000, 7500, 8200, 9500, 10500, 11000, 10200, 9200, 8500, 7000, 6000]
 
 :::
 
+::: md-demo Block Chart
+
+```block
+columns 3
+Frontend blockArrowId6<[" "]>(right) Backend
+space:2 down<[" "]>(down)
+Disk left<[" "]>(left) Database[("Database")]
+
+classDef front fill:#696,stroke:#333;
+classDef back fill:#969,stroke:#333;
+class Frontend front
+class Backend,Database back
+```
+
+:::
+
 ::: md-demo A Complex Example
 
 ```mermaid
