@@ -98,9 +98,12 @@ export const setupRedirect = (): void => {
     (path) => {
       // handle redirects
       for (const [from, to] of entries(redirectConfig))
-        if (normalizePath(path.toLowerCase()) === from.toLowerCase())
+        if (normalizePath(path.toLowerCase()) === from.toLowerCase()) {
           if (isLinkHttp(to)) window.open(to);
           else void router.replace(to);
+
+          return;
+        }
 
       if (autoLocale && isRootLocale.value) handleLocaleRedirect();
     },
