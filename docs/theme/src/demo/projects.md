@@ -6,6 +6,13 @@ category:
   - Demo
 
 docs:
+  - name: TgWebValid
+    desc: An easy way to validate Telegram users.
+    logo: https://tgwebvalid.com/logo.svg
+    url: https://tgwebvalid.com/en/
+    repo: https://github.com/CrazyTapok-bit/tgWebValid
+    preview: /assets/image/tgwebvalid.png
+
   - name: Waline
     desc: A Simple, Safe Comment System.
     logo: https://waline.js.org/logo.png
