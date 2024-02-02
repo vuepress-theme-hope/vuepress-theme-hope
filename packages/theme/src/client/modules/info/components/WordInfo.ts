@@ -1,9 +1,9 @@
-import type { PropType, VNode } from "vue";
-import { defineComponent, h } from "vue";
 import type {
   ReadingTime,
   ReadingTimeLocale,
 } from "@vuepress/plugin-reading-time/client";
+import type { PropType, VNode } from "vue";
+import { defineComponent, h } from "vue";
 
 import { WordIcon } from "@theme-hope/modules/info/components/icons";
 import { useMetaLocale } from "@theme-hope/modules/info/composables/index";
@@ -63,7 +63,7 @@ export default defineComponent({
                 property: "wordCount",
                 content: props.readingTime?.words,
               }),
-            ]
+            ],
           )
         : null;
   },

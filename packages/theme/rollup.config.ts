@@ -40,6 +40,6 @@ export default [
           "balloon-css/balloon.css",
           "vuepress-shared/client/styles/message.scss",
         ].includes(id),
-    }
+    },
   ),
 ];

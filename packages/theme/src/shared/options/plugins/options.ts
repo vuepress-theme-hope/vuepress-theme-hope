@@ -1,18 +1,18 @@
 import type { CopyCodePluginOptions } from "@vuepress/plugin-copy-code";
+import type { CopyrightPluginOptions } from "@vuepress/plugin-copyright";
 import type { DocsearchPluginOptions } from "@vuepress/plugin-docsearch";
 import type { FeedPluginOptions } from "@vuepress/plugin-feed";
 import type { GitPluginOptions } from "@vuepress/plugin-git";
+import type { ReadingTimePluginOptions } from "@vuepress/plugin-reading-time";
 import type { SearchPluginOptions } from "@vuepress/plugin-search";
 import type { SeoPluginOptions } from "@vuepress/plugin-seo";
 import type { SitemapPluginOptions } from "@vuepress/plugin-sitemap";
 import type { AutoCatalogOptions } from "vuepress-plugin-auto-catalog";
 import type { CommentPluginOptions } from "vuepress-plugin-comment2";
 import type { ComponentOptions } from "vuepress-plugin-components";
-import type { CopyrightPluginOptions } from "@vuepress/plugin-copyright";
 import type { MarkdownEnhanceOptions } from "vuepress-plugin-md-enhance";
 import type { PhotoSwipeOptions } from "vuepress-plugin-photo-swipe";
 import type { PWAOptions } from "vuepress-plugin-pwa2";
-import type { ReadingTimePluginOptions } from "@vuepress/plugin-reading-time";
 import type { RedirectOptions } from "vuepress-plugin-redirect";
 import type { SearchProOptions } from "vuepress-plugin-search-pro";
 
