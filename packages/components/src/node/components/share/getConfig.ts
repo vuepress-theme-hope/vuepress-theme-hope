@@ -1,4 +1,4 @@
-import { isPlainObject, isString } from "@vuepress/helper/node";
+import { isPlainObject, isString } from "@vuepress/helper";
 
 import { AVAILABLE_SERVICES, SHARE_CONFIG } from "./config.js";
 import type {

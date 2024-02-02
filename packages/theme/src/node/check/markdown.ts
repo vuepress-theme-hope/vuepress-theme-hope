@@ -1,4 +1,4 @@
-import { isArray, values } from "@vuepress/helper/node";
+import { isArray, values } from "@vuepress/helper";
 import type { HeadersPluginOptions, MarkdownOptions } from "vuepress/markdown";
 import { colors } from "vuepress/utils";
 

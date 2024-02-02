@@ -1,4 +1,4 @@
-import { getDate } from "@vuepress/helper/node";
+import { getDate } from "@vuepress/helper";
 import type { Page } from "vuepress/core";
 import { timeTransformer } from "vuepress-shared/node";
 

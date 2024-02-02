@@ -1,4 +1,4 @@
-import { isNumber, isPlainObject } from "@vuepress/helper/node";
+import { isNumber, isPlainObject } from "@vuepress/helper";
 import { colors } from "vuepress/utils";
 import { createConverter } from "vuepress-shared/node";
 

@@ -5,7 +5,7 @@ import {
   isArray,
   isPlainObject,
   removeLeadingSlash,
-} from "@vuepress/helper/node";
+} from "@vuepress/helper";
 import type { App } from "vuepress/core";
 import { sanitizeFileName } from "vuepress/utils";
 

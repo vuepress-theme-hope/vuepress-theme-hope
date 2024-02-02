@@ -1,4 +1,4 @@
-import { addViteSsrNoExternal } from "@vuepress/helper/node";
+import { addViteSsrNoExternal } from "@vuepress/helper";
 import { defaultTheme } from "@vuepress/theme-default";
 import { defineUserConfig } from "vuepress/cli";
 import { componentsPlugin } from "vuepress-plugin-components";

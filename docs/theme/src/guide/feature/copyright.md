@@ -11,11 +11,11 @@ copy:
 ---
 
 You may not want some of your articles to be copied by others, or you want copyright information appended to the clipboard when copying.
-`vuepress-theme-hope` use <ProjectLink name="copyright2">vuepress-plugin-copyright2</ProjectLink> to provide this feature.
+`vuepress-theme-hope` use [`@vuepress/plugin-copyright`][copyright] to provide this feature.
 
 ::: info
 
-`vuepress-theme-hope` passes `plugins.copyright` in theme options to `vuepress-plugin-copyright2`.
+`vuepress-theme-hope` passes `plugins.copyright` in theme options to `@vuepress/plugin-copyright`.
 
 :::
 
@@ -53,4 +53,6 @@ Please copy this text and paste it to any location to see the effect. Please cop
 
 ## More
 
-For plugin documentation, please visit <ProjectLink name="copyright2">vuepress-plugin-copyright2 docs</ProjectLink> .
+For plugin documentation, please visit [@vuepress/plugin-copyright docs][copyright].
+
+[copyright]: https://ecosystem.vuejs.press/plugins/copyright.html

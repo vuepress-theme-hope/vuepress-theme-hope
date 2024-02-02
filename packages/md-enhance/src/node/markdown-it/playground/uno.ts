@@ -1,4 +1,4 @@
-import { endsWith, keys } from "@vuepress/helper/node";
+import { endsWith, keys } from "@vuepress/helper";
 
 import { compressToEncodedURIComponent as encode } from "./ventors/lzstring.js";
 import type {

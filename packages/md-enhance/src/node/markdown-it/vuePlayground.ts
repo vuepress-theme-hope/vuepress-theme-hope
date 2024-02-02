@@ -1,4 +1,4 @@
-import { entries, fromEntries } from "@vuepress/helper/node";
+import { entries, fromEntries } from "@vuepress/helper";
 import type { PluginSimple } from "markdown-it";
 
 import { playground } from "./playground/index.js";

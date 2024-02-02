@@ -4,7 +4,7 @@ import {
   isLinkHttp,
   removeEndingSlash,
   removeLeadingSlash,
-} from "@vuepress/helper/node";
+} from "@vuepress/helper";
 import type { App } from "vuepress/core";
 import { fs, path, withSpinner } from "vuepress/utils";
 

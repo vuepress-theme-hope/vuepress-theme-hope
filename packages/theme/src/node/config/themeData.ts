@@ -1,4 +1,4 @@
-import { entries, fromEntries, getLocaleConfig } from "@vuepress/helper/node";
+import { entries, fromEntries, getLocaleConfig } from "@vuepress/helper";
 import type { App } from "vuepress/core";
 
 import { getEncryptConfig } from "./encrypt.js";

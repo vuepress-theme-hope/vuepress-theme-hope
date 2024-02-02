@@ -3,7 +3,7 @@ import {
   isArray,
   isNumber,
   isPlainObject,
-} from "@vuepress/helper/node";
+} from "@vuepress/helper";
 import type { App } from "vuepress/core";
 
 import { getIconLinks, getNoticeOptions } from "./components/index.js";

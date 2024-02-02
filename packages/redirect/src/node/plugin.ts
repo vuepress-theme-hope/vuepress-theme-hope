@@ -1,4 +1,4 @@
-import { addViteSsrNoExternal, getLocaleConfig } from "@vuepress/helper/node";
+import { addViteSsrNoExternal, getLocaleConfig } from "@vuepress/helper";
 import type { PluginFunction } from "vuepress/core";
 import { useSassPalettePlugin } from "vuepress-plugin-sass-palette";
 

@@ -1,4 +1,4 @@
-import { isArray, isPlainObject, values } from "@vuepress/helper/node";
+import { isArray, isPlainObject, values } from "@vuepress/helper";
 import { colors } from "vuepress/utils";
 
 import { convertNavbarOptions } from "./navbar.js";

@@ -25,7 +25,7 @@ All key names in `plugins` option are the camelCase version of the plugin name, 
 For example:
 
 - `@vuepress/plugin-copy-code` is controlled by key name `copyCode`.
-- `vuepress-plugin-copyright2` is controlled by key name `copyright`.
+- `@vuepress/plugin-copyright` is controlled by key name `copyright`.
 - `vuepress-plugin-md-enhance` is controlled by key name `mdEnhance`.
 
 :::
@@ -58,6 +58,8 @@ The following plugins are enabled by default, and you can disable them:
 
 - [@vuepress/plugin-prismjs][prismjs]: Code highlighting plugin using Prism.js
 
+- [@vuepress/plugin-reading-time][reading-time]: Reading time and word count
+
 - [@vuepress/plugin-seo][seo]: SEO enhancement plugin
 
 - [@vuepress/plugin-sitemap][sitemap]: Sitemap plugin
@@ -68,17 +70,15 @@ The following plugins are enabled by default, and you can disable them:
 
 - <ProjectLink name="photo-swipe">vuepress-plugin-photo-swipe</ProjectLink>: Image preview plugin based on photo-swipe
 
-- <ProjectLink name="reading-time2">vuepress-plugin-reading-time2</ProjectLink>: Reading time and word count
-
 ### Plugins that need to be enabled manually
 
 The following plugins are bundled by theme, you can enable them via configuration:
 
+- [@vuepress/plugin-copyright][copyright]: Append copyright information when copying or disable copy and selection.
+
 - <ProjectLink name="blog2">vuepress-plugin-blog2</ProjectLink>: Blog plugin for VuePress2
 
 - <ProjectLink name="comment2">vuepress-plugin-comment2</ProjectLink>: Provides comment and pageview function
-
-- <ProjectLink name="copyright2">vuepress-plugin-copyright2</ProjectLink>: Append copyright information when copying or disable copy and selection.
 
 ### Plugins with Built-in Support
 
@@ -98,12 +98,14 @@ These plugins are supported by theme, but you need to install them manually whil
 
 [active-header-links]: https://ecosystem.vuejs.press/plugins/active-header-links.html
 [copy-code]: https://ecosystem.vuejs.press/zh/plugins/copy-code.html
-[docsearch]: https://ecosystem.vuejs.press/zh/plugins/docsearch.html
+[copyright]: https://ecosystem.vuejs.press/plugins/copyright.html
+[docsearch]: https://ecosystem.vuejs.press/plugins/docsearch.html
 [external-link-icon]: https://ecosystem.vuejs.press/plugins/external-link-icon.html
 [feed]: https://ecosystem.vuejs.press/plugins/feed/
 [git]: https://ecosystem.vuejs.press/plugins/git.html
 [nprogress]: https://ecosystem.vuejs.press/plugins/nprogress.html
 [prismjs]: https://ecosystem.vuejs.press/plugins/prismjs.html
+[reading-time]: https://ecosystem.vuejs.press/plugins/reading-time.html
 [search]: https://ecosystem.vuejs.press/plugins/search.html
 [seo]: https://ecosystem.vuejs.press/plugins/seo/
 [sitemap]: https://ecosystem.vuejs.press/plugins/sitemap/

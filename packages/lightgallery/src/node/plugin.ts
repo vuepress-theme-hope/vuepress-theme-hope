@@ -1,4 +1,4 @@
-import { addViteOptimizeDepsExclude } from "@vuepress/helper/node";
+import { addViteOptimizeDepsExclude } from "@vuepress/helper";
 import type { PluginFunction } from "vuepress/core";
 import { useSassPalettePlugin } from "vuepress-plugin-sass-palette";
 

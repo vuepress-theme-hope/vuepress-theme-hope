@@ -1,4 +1,4 @@
-import { removeEndingSlash } from "@vuepress/helper/node";
+import { removeEndingSlash } from "@vuepress/helper";
 import type { App } from "vuepress/core";
 import { createPage } from "vuepress/core";
 

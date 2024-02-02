@@ -1,5 +1,5 @@
 /* eslint-disable @typescript-eslint/naming-convention */
-import { getRootLang } from "@vuepress/helper/node";
+import { getRootLang } from "@vuepress/helper";
 import type { App } from "vuepress/core";
 import { colors, fs, path } from "vuepress/utils";
 

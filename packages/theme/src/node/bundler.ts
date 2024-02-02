@@ -3,7 +3,7 @@ import {
   addViteOptimizeDepsExclude,
   addViteOptimizeDepsInclude,
   addViteSsrNoExternal,
-} from "@vuepress/helper/node";
+} from "@vuepress/helper";
 import type { App } from "vuepress/core";
 
 /**
@@ -22,7 +22,7 @@ export const extendsBundlerOptions = (
   addViteOptimizeDepsExclude(bundlerOptions, app, "@theme-hope");
   addViteSsrNoExternal(bundlerOptions, app, [
     "@vuepress/helper",
+    "@vuepress/plugin-reading-time",
     "vuepress-shared",
-    "vuepress-plugin-reading-time2",
   ]);
 };

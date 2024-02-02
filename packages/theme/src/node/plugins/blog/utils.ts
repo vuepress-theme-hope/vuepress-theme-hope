@@ -1,4 +1,4 @@
-import { dateSorter } from "@vuepress/helper/node";
+import { dateSorter } from "@vuepress/helper";
 import type { GitData } from "@vuepress/plugin-git";
 import type { Page } from "vuepress/core";
 

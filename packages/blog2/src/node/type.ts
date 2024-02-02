@@ -1,4 +1,4 @@
-import { isString, removeLeadingSlash } from "@vuepress/helper/node";
+import { isString, removeLeadingSlash } from "@vuepress/helper";
 import type { App } from "vuepress/core";
 import { createPage } from "vuepress/core";
 import { colors } from "vuepress/utils";

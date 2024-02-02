@@ -1,5 +1,5 @@
 import { uml } from "@mdit/plugin-uml";
-import { encodeData } from "@vuepress/helper/node";
+import { encodeData } from "@vuepress/helper";
 import type { PluginSimple } from "markdown-it";
 
 export const revealJs: PluginSimple = (md) => {

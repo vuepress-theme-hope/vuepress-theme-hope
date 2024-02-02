@@ -1,4 +1,4 @@
-import { Logger, keys } from "@vuepress/helper/node";
+import { Logger, keys } from "@vuepress/helper";
 import type { App, Page } from "vuepress/core";
 
 import type { PageMap } from "./typings/index.js";

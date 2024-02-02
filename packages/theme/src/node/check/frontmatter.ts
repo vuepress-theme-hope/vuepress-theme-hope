@@ -1,4 +1,4 @@
-import { isArray, isString } from "@vuepress/helper/node";
+import { isArray, isString } from "@vuepress/helper";
 import type { Page } from "vuepress/core";
 import { colors } from "vuepress/utils";
 

@@ -4,7 +4,7 @@ import {
   entries,
   isPlainObject,
   keys,
-} from "@vuepress/helper/node";
+} from "@vuepress/helper";
 import type { CompilerOptions } from "typescript";
 
 import { compressToEncodedURIComponent } from "./ventors/lzstring.js";

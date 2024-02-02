@@ -4,7 +4,7 @@ import {
   entries,
   fromEntries,
   getLocaleConfig,
-} from "@vuepress/helper/node";
+} from "@vuepress/helper";
 import type { PluginFunction } from "vuepress/core";
 import { useSassPalettePlugin } from "vuepress-plugin-sass-palette";
 

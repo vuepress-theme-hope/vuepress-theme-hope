@@ -1,9 +1,9 @@
-import type { PropType, VNode } from "vue";
-import { defineComponent, h, resolveComponent } from "vue";
 import type {
   ReadingTime,
   ReadingTimeLocale,
-} from "vuepress-plugin-reading-time2/client";
+} from "@vuepress/plugin-reading-time/client";
+import type { PropType, VNode } from "vue";
+import { defineComponent, h, resolveComponent } from "vue";
 import type { AuthorInfo as AuthorInfoType } from "vuepress-shared/client";
 
 import { usePure } from "@theme-hope/composables/index";

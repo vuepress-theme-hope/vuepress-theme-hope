@@ -1,4 +1,4 @@
-import { Logger } from "@vuepress/helper/node";
+import { Logger } from "@vuepress/helper";
 
 export const PLUGIN_NAME = "vuepress-plugin-append-date";
 

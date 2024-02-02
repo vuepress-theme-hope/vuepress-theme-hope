@@ -4,7 +4,7 @@ import {
   fromEntries,
   isPlainObject,
   keys,
-} from "@vuepress/helper/node";
+} from "@vuepress/helper";
 import type { FeedPluginOptions } from "@vuepress/plugin-feed";
 import type { Plugin } from "vuepress/core";
 import { colors } from "vuepress/utils";

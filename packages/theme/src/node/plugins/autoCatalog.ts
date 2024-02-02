@@ -1,4 +1,4 @@
-import { isPlainObject } from "@vuepress/helper/node";
+import { isPlainObject } from "@vuepress/helper";
 import type { Plugin } from "vuepress/core";
 import type { AutoCatalogOptions } from "vuepress-plugin-auto-catalog";
 import { autoCatalogPlugin } from "vuepress-plugin-auto-catalog";

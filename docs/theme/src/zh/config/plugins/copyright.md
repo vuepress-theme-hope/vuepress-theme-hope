@@ -12,15 +12,13 @@ tag:
 
 ## 介绍
 
-主题可通过 `vuepress-plugin-copyright2` 在复制时追加版权信息，默认情况下此功能**不启用**。
+主题可通过 `@vuepress/plugin-copyright` 在复制时追加版权信息，默认情况下此功能**不启用**。
 
 你可以在主题选项中设置 `plugins.copyright: true` 来启用此功能。默认行为是全局启用插件并使用主题选项中的作者和协议名称。
 
 ## 插件选项
 
-The theme passes `plugins.copyright` in theme options as plugin options to `vuepress-plugin-copyright2` plugin.
-
-主题将主题选项中的 `plugins.copyright` 作为插件选项传递给 `vuepress-plugin-copyright2`。
+主题将主题选项中的 `plugins.copyright` 作为插件选项传递给 `@vuepress/plugin-copyright`。
 
 你可以通过 `plugins.copyright` 自行设置选项，以下是常见选项:
 
@@ -63,6 +61,8 @@ The theme passes `plugins.copyright` in theme options as plugin options to `vuep
 
 ::: info
 
-通过 <ProjectLink name="copyright2" path="/zh/config/">copyright2 插件文档</ProjectLink> 以获取全部可用选项。
+通过 [copyright 插件文档][copyright] 以获取全部可用选项。
 
 :::
+
+[copyright]: https://ecosystem.vuejs.press/zh/plugins/copyright.html

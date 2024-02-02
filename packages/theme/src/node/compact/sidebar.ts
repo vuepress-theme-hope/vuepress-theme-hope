@@ -4,7 +4,7 @@ import {
   isArray,
   isPlainObject,
   isString,
-} from "@vuepress/helper/node";
+} from "@vuepress/helper";
 import { colors } from "vuepress/utils";
 
 import { deprecatedLogger, droppedLogger } from "./utils.js";

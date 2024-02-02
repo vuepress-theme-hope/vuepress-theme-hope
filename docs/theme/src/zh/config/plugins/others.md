@@ -102,7 +102,7 @@ tag:
 
 ## readingTime <Badge text="默认启用" />
 
-控制 `vuepress-plugin-reading-time2`，为页面进行字数统计并生成预计的阅读时间。
+控制 `@vuepress/plugin-reading-time`，为页面进行字数统计并生成预计的阅读时间。
 
 ### readingTime.wordPerMinute
 
@@ -111,7 +111,7 @@ tag:
 
 每分钟的阅读字数。
 
-插件选项请参阅 <ProjectLink name="reading-time2" path="/zh/config.html">reading-time2 插件文档</ProjectLink>。
+插件选项请参阅 [reading-time 插件文档][reading-time-config]。
 
 ## seo <Badge text="默认启用" />
 
@@ -131,5 +131,6 @@ tag:
 
 [copy-code-config]: https://ecosystem.vuejs.press/zh/plugins/copy-code.html#options
 [git-config]: https://ecosystem.vuejs.press/zh/plugins/git.html#options
+[reading-time-config]: https://ecosystem.vuejs.press/zh/plugins/reading-time.html#options
 [seo-config]: https://ecosystem.vuejs.press/zh/plugins/seo/config.html
 [sitemap-config]: https://ecosystem.vuejs.press/zh/plugins/sitemap/config.html

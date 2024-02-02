@@ -1,4 +1,4 @@
-import { addCustomElement, addViteSsrNoExternal } from "@vuepress/helper/node";
+import { addCustomElement, addViteSsrNoExternal } from "@vuepress/helper";
 import type { PluginFunction } from "vuepress/core";
 import { useSassPalettePlugin } from "vuepress-plugin-sass-palette";
 

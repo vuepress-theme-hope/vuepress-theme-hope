@@ -1,4 +1,4 @@
-import { addViteOptimizeDepsInclude } from "@vuepress/helper/node";
+import { addViteOptimizeDepsInclude } from "@vuepress/helper";
 import type { UserConfig } from "vuepress/cli";
 import { defineUserConfig } from "vuepress/cli";
 import { getDirname, path } from "vuepress/utils";

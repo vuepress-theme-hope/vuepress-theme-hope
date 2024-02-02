@@ -1,13 +1,13 @@
 import { getDate } from "@vuepress/helper/client";
 import type { GitData } from "@vuepress/plugin-git";
-import type { ComputedRef } from "vue";
-import { computed, inject } from "vue";
-import { usePageData, usePageFrontmatter } from "vuepress/client";
-import type { ReadingTime } from "vuepress-plugin-reading-time2/client";
+import type { ReadingTime } from "@vuepress/plugin-reading-time/client";
 import {
   useReadingTimeData,
   useReadingTimeLocale,
-} from "vuepress-plugin-reading-time2/client";
+} from "@vuepress/plugin-reading-time/client";
+import type { ComputedRef } from "vue";
+import { computed, inject } from "vue";
+import { usePageData, usePageFrontmatter } from "vuepress/client";
 import type { AuthorInfo, BasePageFrontMatter } from "vuepress-shared/client";
 import { getAuthor, getCategory, getTag } from "vuepress-shared/client";
 

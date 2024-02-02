@@ -1,8 +1,4 @@
-import {
-  isFunction,
-  isString,
-  removeLeadingSlash,
-} from "@vuepress/helper/node";
+import { isFunction, isString, removeLeadingSlash } from "@vuepress/helper";
 import type { App, Page } from "vuepress/core";
 import { createPage } from "vuepress/core";
 import { colors } from "vuepress/utils";

@@ -1,4 +1,4 @@
-import { isPlainObject, keys } from "@vuepress/helper/node";
+import { isPlainObject, keys } from "@vuepress/helper";
 import { seoPlugin } from "@vuepress/plugin-seo";
 import type { Page, Plugin } from "vuepress/core";
 

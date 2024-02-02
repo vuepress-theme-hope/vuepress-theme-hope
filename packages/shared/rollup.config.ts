@@ -4,7 +4,7 @@ export default [
   ...rollupBundle("node/index", {
     resolve: true,
     external: [
-      "@vuepress/helper/node",
+      "@vuepress/helper",
       "@vuepress/helper/shared",
       "node:http",
       "vuepress/utils",
@@ -17,7 +17,7 @@ export default [
     ],
     dtsExternal: [
       "node:http",
-      "@vuepress/helper/node",
+      "@vuepress/helper",
       "vuepress/core",
       "vuepress/shared",
     ],

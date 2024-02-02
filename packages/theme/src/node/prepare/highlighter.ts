@@ -1,4 +1,4 @@
-import { isPlainObject } from "@vuepress/helper/node";
+import { isPlainObject } from "@vuepress/helper";
 import type { App } from "vuepress/core";
 import { colors } from "vuepress/utils";
 

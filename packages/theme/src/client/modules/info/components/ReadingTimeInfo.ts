@@ -1,9 +1,9 @@
-import type { PropType, VNode } from "vue";
-import { computed, defineComponent, h } from "vue";
 import type {
   ReadingTime,
   ReadingTimeLocale,
-} from "vuepress-plugin-reading-time2/client";
+} from "@vuepress/plugin-reading-time/client";
+import type { PropType, VNode } from "vue";
+import { computed, defineComponent, h } from "vue";
 
 import { TimerIcon } from "@theme-hope/modules/info/components/icons";
 import { useMetaLocale } from "@theme-hope/modules/info/composables/index";

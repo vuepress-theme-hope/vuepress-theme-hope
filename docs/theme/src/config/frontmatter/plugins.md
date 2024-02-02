@@ -11,7 +11,7 @@ tag:
 
 You can configure the following options in the frontmatter of the page to control plugin behavior.
 
-## Options for `vuepress-plugin-copyright2`
+## Options for `@vuepress/plugin-copyright`
 
 ### copy.triggerLength
 

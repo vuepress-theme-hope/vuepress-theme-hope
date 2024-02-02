@@ -1,4 +1,4 @@
-import { endsWith } from "@vuepress/helper/node";
+import { endsWith } from "@vuepress/helper";
 import type { App } from "vuepress/core";
 import { colors, fs, path } from "vuepress/utils";
 import type {

@@ -1,5 +1,5 @@
 // German [de]
-import { isArray } from "@vuepress/helper/node";
+import { isArray } from "@vuepress/helper";
 import type dayjs from "dayjs";
 
 import type { Locale } from "./locale.js";

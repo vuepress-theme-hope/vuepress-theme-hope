@@ -8,7 +8,7 @@ import {
   isFunction,
   isString,
   mergeViteConfig,
-} from "@vuepress/helper/node";
+} from "@vuepress/helper";
 import type { App } from "vuepress/core";
 
 type LoaderContext =

@@ -8,7 +8,6 @@
   "include": ["./src", "./src/*.d.ts"],
   "references": [
     { "path": "../sass-palette/tsconfig.build.json" },
-    { "path": "../shared/tsconfig.build.json" },
-    { "path": "../reading-time2/tsconfig.build.json" }
+    { "path": "../shared/tsconfig.build.json" }
   ]
 }

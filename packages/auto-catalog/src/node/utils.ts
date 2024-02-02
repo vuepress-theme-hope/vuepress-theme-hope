@@ -1,4 +1,4 @@
-import { Logger, ensureEndingSlash } from "@vuepress/helper/node";
+import { Logger, ensureEndingSlash } from "@vuepress/helper";
 import { getDirname, path } from "vuepress/utils";
 
 const __dirname = getDirname(import.meta.url);

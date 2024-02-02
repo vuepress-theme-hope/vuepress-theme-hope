@@ -1,6 +1,6 @@
 import { alert as _alert } from "@mdit/plugin-alert";
-import type { ExactLocaleConfig } from "@vuepress/helper/node";
-import { ensureLeadingSlash } from "@vuepress/helper/node";
+import type { ExactLocaleConfig } from "@vuepress/helper";
+import { ensureLeadingSlash } from "@vuepress/helper";
 import type { PluginWithOptions } from "markdown-it";
 import type { MarkdownEnv } from "vuepress/markdown";
 import { resolveLocalePath } from "vuepress/shared";

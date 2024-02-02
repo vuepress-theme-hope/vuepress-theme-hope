@@ -12,11 +12,11 @@ copy:
 
 你可能不想让你的某些文章被他人复制，或者你想版权信息在复制时自动附加。
 
-`vuepress-theme-hope` 通过 <ProjectLink name="copyright2" path="/zh/">vuepress-plugin-copyright2</ProjectLink> 提供此功能。
+`vuepress-theme-hope` 通过 [`@vuepress/plugin-copyright`][copyright] 提供此功能。
 
 ::: info
 
-`vuepress-theme-hope` 将主题选项中的 `plugins.copyright` 提供给 `vuepress-plugin-copyright2`。
+`vuepress-theme-hope` 将主题选项中的 `plugins.copyright` 提供给 `@vuepress/plugin-copyright`。
 
 :::
 
@@ -54,4 +54,6 @@ copy:
 
 ## 更多
 
-关于插件文档，请参见 <ProjectLink name="copyright2" path="/zh/">vuepress-plugin-copyright2 文档</ProjectLink>。
+关于插件文档，请参见 [@vuepress/plugin-copyright 文档][copyright]。
+
+[copyright]: https://ecosystem.vuejs.press/zh/plugins/copyright.html

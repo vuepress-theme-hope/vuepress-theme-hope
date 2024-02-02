@@ -1,4 +1,4 @@
-import { encodeData, entries, keys } from "@vuepress/helper/node";
+import { encodeData, entries, keys } from "@vuepress/helper";
 import type { PluginSimple } from "markdown-it";
 import type { RuleBlock } from "markdown-it/lib/parser_block.js";
 import type {

@@ -1,9 +1,4 @@
-import {
-  endsWith,
-  isPlainObject,
-  keys,
-  startsWith,
-} from "@vuepress/helper/node";
+import { endsWith, isPlainObject, keys, startsWith } from "@vuepress/helper";
 import type { App, Page, PluginObject } from "vuepress/core";
 import { injectLocalizedDate } from "vuepress-shared/node";
 

@@ -1,4 +1,4 @@
-import { entries } from "@vuepress/helper/node";
+import { entries } from "@vuepress/helper";
 import type { PluginWithOptions } from "markdown-it";
 import type { RuleBlock } from "markdown-it/lib/parser_block.js";
 import { hash } from "vuepress/utils";

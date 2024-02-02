@@ -12,13 +12,13 @@ tag:
 
 ## Intro
 
-The theme can append copyright information while copying via `vuepress-plugin-copyright2`, and it's **not** enabled by default.
+The theme can append copyright information while copying via `@vuepress/plugin-copyright`, and it's **not** enabled by default.
 
 You can enabled this feature by setting `plugins.copyright` to `true` in theme options. The default behavior globally enables the plugin and use author and license defined in theme options.
 
 ## Plugin Options
 
-The theme passes `plugins.copyright` in theme options as plugin options to `vuepress-plugin-copyright2` plugin.
+The theme passes `plugins.copyright` in theme options as plugin options to `@vuepress/plugin-copyright` plugin.
 
 You can pass your own options with `plugins.copyright`, here are some common ones:
 
@@ -61,6 +61,8 @@ This is useful when your content are deploying in multiple places.
 
 ::: info
 
-Check <ProjectLink name="copyright2" path="/config/">copyright2 plugin documentation</ProjectLink> for all available options.
+Check [copyright plugin documentation][copyright] for all available options.
 
 :::
+
+[copyright]: https://ecosystem.vuejs.press/plugins/copyright.html#options
