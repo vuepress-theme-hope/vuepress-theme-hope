@@ -6,13 +6,6 @@ category:
   - 案例
 
 docs:
-  - name: TgWebValid
-    desc: 验证 Telegram 用户的简单方法。
-    logo: https://tgwebvalid.com/logo.svg
-    url: https://tgwebvalid.com/en/
-    repo: https://github.com/CrazyTapok-bit/tgWebValid
-    preview: /assets/image/tgwebvalid.png
-
   - name: Waline
     desc: 一款简洁、安全的评论系统。
     logo: https://waline.js.org/logo.png
