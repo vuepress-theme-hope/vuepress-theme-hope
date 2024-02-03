@@ -23,7 +23,7 @@ const release = async (): Promise<void> => {
     },
   ]);
 
-  // release
+  // Release
   await execaCommand(`pnpm -r publish --tag ${npmTag}`, { stdio: "inherit" });
 };
 

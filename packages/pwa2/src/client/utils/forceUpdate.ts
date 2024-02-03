@@ -5,7 +5,7 @@
  */
 export const forceUpdate = (): void => {
   void navigator.serviceWorker.getRegistration().then((registration) => {
-    // check whether a valid service worker is active
+    // Check whether a valid service worker is active
     if (registration && registration.active)
       registration?.addEventListener("updatefound", () => {
         // force refresh

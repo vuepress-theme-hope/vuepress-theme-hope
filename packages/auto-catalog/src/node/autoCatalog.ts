@@ -31,17 +31,17 @@ export const generateCatalog = async (
   pages.forEach(({ path: pagePath, pathLocale }) => {
     let catalogPath = pagePath;
 
-    // not 404 page
+    // Not 404 page
     if (pagePath !== "/404.html")
       while (catalogPath !== pathLocale) {
         catalogPath = catalogPath.replace(/\/(?:[^/]+\/?)$/, "/");
 
         if (
-          // not discovered yet
+          // Not discovered yet
           !pathToBeGenerated.has(catalogPath) &&
-          // not being excluded
+          // Not being excluded
           exclude.every((pattern) => !catalogPath.match(pattern)) &&
-          // path not found
+          // Path not found
           pages.every(({ path }) => path !== catalogPath)
         ) {
           if (isDebug) logger.info(`Generating catalog ${catalogPath}`);

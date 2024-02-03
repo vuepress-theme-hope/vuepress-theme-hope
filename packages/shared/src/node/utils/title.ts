@@ -17,13 +17,13 @@ const EN_PREPOSITION = [
 
 export const getTitleFromFilename = (filename: string): string => {
   const words = filename
-    .replace(/[-_]/g, " ")
+    .replace(/[-_]/gu, " ")
     .replace(
-      /(^|[^A-Z])([A-Z])/g,
+      /(^|[^A-Z])([A-Z])/gu,
       (_all, match1: string, match2: string) =>
         `${match1} ${match2.toLowerCase()}`,
     )
-    .replace(/ +/g, " ")
+    .replace(/ +/gu, " ")
     .trim()
     .split(" ");
 

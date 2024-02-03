@@ -58,8 +58,9 @@ ${
           cache: ${packageManager}
 
 ${
-  packageManager !== "pnpm"
-    ? `\
+  packageManager === "pnpm"
+    ? ""
+    : `\
       - name: ${lang === "简体中文" ? "安装依赖" : "Install Deps"}
         run: ${
           packageManager === "npm"
@@ -67,7 +68,6 @@ ${
             : `${packageManager} install --frozen-lockfile`
         }
 `
-    : ""
 }
       - name: ${lang === "简体中文" ? "构建文档" : "Build Docs"}
         env:

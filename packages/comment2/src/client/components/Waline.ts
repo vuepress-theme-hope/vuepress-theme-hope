@@ -60,7 +60,7 @@ export default defineComponent({
       return (
         // Enable in page
         Boolean(pageConfig) ||
-        // not disabled in anywhere
+        // Not disabled in anywhere
         (pluginConfig !== false && pageConfig !== false)
       );
     });

@@ -147,7 +147,7 @@ export const mdEnhancePlugin =
     const katexOptions: KatexOptions<MarkdownEnv> = {
       mathFence: options.gfm ?? false,
       macros: {
-        // support more symbols
+        // Support more symbols
         // eslint-disable-next-line @typescript-eslint/naming-convention
         "\\liiiint": "\\int\\!\\!\\!\\iiint",
         // eslint-disable-next-line @typescript-eslint/naming-convention
@@ -156,7 +156,7 @@ export const mdEnhancePlugin =
         "\\idotsint": "\\int\\!\\cdots\\!\\int",
       },
       logger: (errorCode, errorMsg, token, { filePathRelative }) => {
-        // ignore this error
+        // Ignore this error
         if (errorCode === "newLineInDisplayMode") return;
 
         if (errorCode === "unicodeTextInMathMode")
@@ -282,7 +282,7 @@ export const mdEnhancePlugin =
           addViteOptimizeDepsInclude(bundlerOptions, app, "@vue/repl");
           addViteSsrExternal(bundlerOptions, app, "@vue/repl");
 
-          // hide webpack warnings
+          // Hide webpack warnings
           chainWebpack(bundlerOptions, app, (config) => {
             // TODO: Probably need to fix upstream
             config.resolve.set("conditionNames", [
@@ -297,7 +297,7 @@ export const mdEnhancePlugin =
       },
 
       extendsMarkdown: (md): void => {
-        // behavior
+        // Behavior
         if (status.breaks) md.options.breaks = true;
         if (status.linkify) md.options.linkify = true;
 
@@ -331,7 +331,7 @@ export const mdEnhancePlugin =
         // @ts-expect-error
         if (options.card && legacy) md.use(legacyCard);
 
-        // additional functions
+        // Additional functions
         if (
           options.vPre ||
           // TODO: Remove this in v2 stable
@@ -343,7 +343,7 @@ export const mdEnhancePlugin =
           md.use(katex, katexOptions);
         } else if (status.mathjax) {
           md.use(mathjax, mathjaxInstance!);
-          // reset after each render
+          // Reset after each render
           md.use((md) => {
             const originalRender = md.render.bind(md);
 
@@ -375,7 +375,7 @@ export const mdEnhancePlugin =
               env.frontmatter?.["stylize"] || null,
           });
 
-        // features
+        // Features
         if (options.codetabs) {
           md.use(codeTabs);
           // TODO: Remove this in v2 stable

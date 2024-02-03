@@ -10,7 +10,7 @@ onMounted(() => {
 
   isDarkMode.value = html.classList.contains("dark");
 
-  // watch theme change
+  // Watch theme change
   const observer = new MutationObserver(() => {
     isDarkMode.value = html.classList.contains("dark");
   });

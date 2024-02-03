@@ -38,11 +38,11 @@ export default defineUserConfig({
 
   plugins: [
     blogPlugin({
-      // only files under posts are articles
+      // Only files under posts are articles
       filter: ({ filePathRelative }) =>
         filePathRelative ? filePathRelative.startsWith("posts/") : false,
 
-      // getting article info
+      // Getting article info
       getInfo: ({ frontmatter, title, data }) => ({
         title,
         author: frontmatter["author"] || "",
@@ -50,13 +50,13 @@ export default defineUserConfig({
         category: frontmatter["category"] || [],
         tag: frontmatter["tag"] || [],
         excerpt:
-          // support manually set excerpt through frontmatter
+          // Support manually set excerpt through frontmatter
           typeof frontmatter["excerpt"] === "string"
             ? frontmatter["excerpt"]
             : data?.["excerpt"] || "",
       }),
 
-      // generate excerpt for all pages excerpt those users choose to disable
+      // Generate excerpt for all pages excerpt those users choose to disable
       excerptFilter: ({ frontmatter }) =>
         !frontmatter["home"] &&
         frontmatter["excerpt"] !== false &&
@@ -97,7 +97,7 @@ export default defineUserConfig({
       type: [
         {
           key: "article",
-          // remove archive articles
+          // Remove archive articles
           filter: (page): boolean => !page.frontmatter["archive"],
           path: "/article/",
           layout: "Article",
@@ -105,7 +105,7 @@ export default defineUserConfig({
             title: "Articles",
             sidebar: false,
           }),
-          // sort pages with time and sticky
+          // Sort pages with time and sticky
           sorter: (pageA, pageB): number => {
             if (pageA.frontmatter["sticky"] && pageB.frontmatter["sticky"])
               return (
@@ -130,9 +130,9 @@ export default defineUserConfig({
         },
         {
           key: "timeline",
-          // only article with date should be added to timeline
+          // Only article with date should be added to timeline
           filter: (page): boolean => page.frontmatter.date instanceof Date,
-          // sort pages with time
+          // Sort pages with time
           sorter: (pageA, pageB): number =>
             new Date(pageB.frontmatter.date as Date).getTime() -
             new Date(pageA.frontmatter.date as Date).getTime(),

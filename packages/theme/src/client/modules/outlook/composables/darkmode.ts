@@ -49,19 +49,19 @@ export const injectDarkmode = (app: App): void => {
   const isDarkmode = computed(() => {
     const darkmode = config.value;
 
-    // disable darkmode
+    // Disable darkmode
     return darkmode === "disable"
       ? false
-      : // force darkmode
+      : // Force darkmode
         darkmode === "enable"
         ? true
-        : // auto
+        : // Auto
           darkmode === "auto"
           ? isDarkPreferred.value
-          : // toggle
+          : // Toggle
             darkmode === "toggle"
             ? status.value === "dark"
-            : // switch
+            : // Switch
               status.value === "dark" ||
               (status.value === "auto" && isDarkPreferred.value);
   });
@@ -79,7 +79,7 @@ export const injectDarkmode = (app: App): void => {
     status,
   });
 
-  // provide global helpers
+  // Provide global helpers
   Object.defineProperties(app.config.globalProperties, {
     $isDarkmode: { get: () => isDarkmode.value },
   });

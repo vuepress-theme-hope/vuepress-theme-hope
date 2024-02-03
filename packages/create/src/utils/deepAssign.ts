@@ -1,7 +1,7 @@
 // eslint-disable-next-line @typescript-eslint/no-explicit-any
 type IAnyObject = Record<any, any>;
 
-const isArray = Array.isArray;
+const { isArray } = Array;
 
 const isPlainObject = <T extends IAnyObject = IAnyObject>(
   val: unknown,

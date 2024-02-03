@@ -29,20 +29,20 @@ let cut: (content: string, strict?: boolean | undefined) => string[];
 try {
   ({ docsearchPlugin } = await import("@vuepress/plugin-docsearch"));
 } catch (e) {
-  // do nothing
+  // Do nothing
 }
 
 try {
   ({ searchPlugin } = await import("@vuepress/plugin-search"));
 } catch (e) {
-  // do nothing
+  // Do nothing
 }
 
 try {
   ({ searchProPlugin } = await import("vuepress-plugin-search-pro"));
   ({ cut } = await import("nodejs-jieba"));
 } catch (e) {
-  // do nothing
+  // Do nothing
 }
 
 const DOCSEARCH_ZH_LOCALES = {
@@ -137,7 +137,7 @@ export const getSearchPlugin = (
 
     return searchProPlugin({
       indexContent: true,
-      // add supports for category and tags
+      // Add supports for category and tags
       customFields: [
         {
           getter: (page: Page<Record<never, never>, ThemePageFrontmatter>) =>

@@ -61,7 +61,7 @@ const FeaturePanel: FunctionalComponent<
         "div",
         {
           class: "vp-feature",
-          style: color ? { color: color } : {},
+          style: color ? { color } : {},
         },
         [
           slots.image?.(props) || [

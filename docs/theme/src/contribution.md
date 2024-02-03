@@ -54,7 +54,6 @@ The project is a monorepo, managed by pnpm.
 │ ├── md-enhance → md-enhance plugin document
 │ ├── photo-swipe → photo-swipe document
 │ ├── pwa → pwa2 plugin document
-│ ├── remove-pwa → remove-pwa plugin document
 │ ├── sass-palette → sass-palette plugin document
 │ ├── search-pro → search-pro plugin document
 │ └── theme → theme document
@@ -69,7 +68,6 @@ The project is a monorepo, managed by pnpm.
 │ ├── md-enhance → md-enhance plugin
 │ ├── photo-swipe → photo-swipe plugin
 │ ├── pwa2 → pwa2 plugin
-│ ├── remove-pwa → remove-pwa plugin
 │ ├── sass-palette → sass-palette plugin
 │ ├── search-pro → search-pro plugin
 │ ├── shared → shared file

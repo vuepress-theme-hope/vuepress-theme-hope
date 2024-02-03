@@ -55,7 +55,7 @@ export type SidebarSorter =
 
 export interface SidebarLocaleOptions {
   /**
-   * sidebar config
+   * Sidebar config
    *
    * @description Set to `false` to disable sidebar in current locale
    * @see https://theme-hope.vuejs.press/guide/layout/sidebar.html

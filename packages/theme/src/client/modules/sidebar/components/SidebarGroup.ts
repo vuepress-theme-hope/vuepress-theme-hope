@@ -79,9 +79,9 @@ export default defineComponent({
               : {}),
           },
           [
-            // icon
+            // Icon
             h(HopeIcon, { icon }),
-            // title
+            // Title
             link
               ? h(AutoLink, {
                   class: "vp-sidebar-title",
@@ -89,7 +89,7 @@ export default defineComponent({
                   noExternalLinkIcon: true,
                 })
               : h("span", { class: "vp-sidebar-title" }, text),
-            // arrow
+            // Arrow
             collapsible
               ? h("span", { class: ["vp-arrow", props.open ? "down" : "end"] })
               : null,

@@ -18,7 +18,7 @@ export const codeTabs: PluginSimple = (md) => {
       });
 
       return `<CodeTabs id="${index}" :data='${stringifyProp(tabsData)}'${
-        active !== -1 ? ` :active="${active}"` : ""
+        active === -1 ? "" : ` :active="${active}"`
       }${
         // eslint-disable-next-line @typescript-eslint/no-unsafe-member-access
         meta.id ? ` tab-id="${meta.id as string}"` : ""
@@ -40,7 +40,7 @@ ${titles
     tabOpenRenderer: ({ index }, tokens, tokenIndex) => {
       let foundFence = false;
 
-      // hide all elements excerpt the first fence
+      // Hide all elements excerpt the first fence
       for (let i = tokenIndex; i < tokens.length; i++) {
         const { block, type } = tokens[i];
 

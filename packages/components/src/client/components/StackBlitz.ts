@@ -90,7 +90,7 @@ export default defineComponent({
     },
 
     /**
-     * embed editor
+     * Embed editor
      *
      * 嵌入编辑器
      */

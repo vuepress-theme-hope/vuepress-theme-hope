@@ -87,7 +87,7 @@ export default defineComponent({
     noToolbar: Boolean,
 
     /**
-     * initial zoom level (in percent)
+     * Initial zoom level (in percent)
      *
      * 初始缩放比率 (百分比)
      */
@@ -102,7 +102,7 @@ export default defineComponent({
     const locales = useLocaleConfig(PDF_LOCALES);
 
     onMounted(() => {
-      viewPDF(getLink(props.url), el.value, {
+      viewPDF(getLink(props.url), el.value!, {
         title: props.title,
         hint: locales.value.hint,
         options: {

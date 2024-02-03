@@ -4,6 +4,7 @@ import type { DocsearchPluginOptions } from "@vuepress/plugin-docsearch";
 import type { FeedPluginOptions } from "@vuepress/plugin-feed";
 import type { GitPluginOptions } from "@vuepress/plugin-git";
 import type { ReadingTimePluginOptions } from "@vuepress/plugin-reading-time";
+import type { RedirectOptions } from "@vuepress/plugin-redirect";
 import type { SearchPluginOptions } from "@vuepress/plugin-search";
 import type { SeoPluginOptions } from "@vuepress/plugin-seo";
 import type { SitemapPluginOptions } from "@vuepress/plugin-sitemap";
@@ -13,7 +14,6 @@ import type { ComponentOptions } from "vuepress-plugin-components";
 import type { MarkdownEnhanceOptions } from "vuepress-plugin-md-enhance";
 import type { PhotoSwipeOptions } from "vuepress-plugin-photo-swipe";
 import type { PWAOptions } from "vuepress-plugin-pwa2";
-import type { RedirectOptions } from "vuepress-plugin-redirect";
 import type { SearchProOptions } from "vuepress-plugin-search-pro";
 
 import type { BlogPluginOptions } from "./blog.js";
@@ -74,7 +74,7 @@ export interface PluginsOptions {
   comment?: CommentPluginOptions | false;
 
   /**
-   * code copy plugin options
+   * Options for @vuepress/copy-code
    *
    * @see https://ecosystem.vuejs.press/plugins/copy-code.html
    *
@@ -85,7 +85,7 @@ export interface PluginsOptions {
   copyCode?: CopyCodePluginOptions | boolean;
 
   /**
-   * Copyright Plugin options
+   * Options for @vuepress/copyright
    *
    * @see https://ecosystem.vuejs.press/plugins/copyright.html
    *
@@ -98,7 +98,7 @@ export interface PluginsOptions {
   copyright?: CopyrightPluginOptions | boolean;
 
   /**
-   * Options for  @vuepress/docsearch
+   * Options for @vuepress/docsearch
    *
    * @see https://vuejs.press/reference/plugin/docsearch.html
    *
@@ -129,7 +129,7 @@ export interface PluginsOptions {
   feed?: Omit<FeedPluginOptions, "hostname"> | boolean;
 
   /**
-   * Git plugin options
+   * Options for @vuepress/git
    *
    * @description By default this plugin is only enabled in production mode for performance reasons.
    *
@@ -249,7 +249,7 @@ export interface PluginsOptions {
    *
    * @see https://plugin-redirect.vuejs.press/zh/config/
    */
-  redirect?: Omit<RedirectOptions, "hostname"> | boolean;
+  redirect?: RedirectOptions | boolean;
 
   /**
    * @vuepress/search plugin options
@@ -274,7 +274,7 @@ export interface PluginsOptions {
   searchPro?: SearchProOptions | boolean;
 
   /**
-   * SEO plugin options
+   * Options for @vuepress/seo
    *
    * @see https://ecosystem.vuejs.press/plugins/seo/config.html
    *
@@ -287,7 +287,7 @@ export interface PluginsOptions {
   seo?: Omit<SeoPluginOptions, "hostname" | "author"> | boolean;
 
   /**
-   * Sitemap plugin options
+   * Options for @vuepress/sitemap
    *
    * @see https://ecosystem.vuejs.press/plugins/sitemap/config.html
    *

@@ -27,24 +27,24 @@ export const getShareServiceConfig = (
         content.push({
           name: service,
           ...SHARE_CONFIG[service],
-          // handle twitter user name
+          // Handle twitter user name
           link: SHARE_CONFIG[service].link.replace(
             "[twitter-user]",
             options.componentOptions?.share?.twitterUserName ?? "",
           ),
         });
-      // a built-in service
+      // A built-in service
       else if (AVAILABLE_SERVICES.includes(service))
         content.push({ name: service, ...SHARE_CONFIG[service] });
     }
-    // a custom service
+    // A custom service
     else if (
       isPlainObject(service) &&
       service.name &&
       service.link &&
       service.shape
     ) {
-      // a custom service
+      // A custom service
       content.push(service);
     }
   });

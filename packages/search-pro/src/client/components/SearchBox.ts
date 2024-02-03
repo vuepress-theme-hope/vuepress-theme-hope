@@ -38,12 +38,14 @@ export default defineComponent({
 
     useEventListener("keydown", (event: KeyboardEvent): void => {
       if (
-        // not active
+        // Not active
         !isActive.value &&
-        // key matches
+        // Key matches
         isKeyMatched(event) &&
-        // event does not come from the search box itself or
-        // user isn't focusing (and thus perhaps typing in) a text control
+        /*
+         * Event does not come from the search box itself or
+         * user isn't focusing (and thus perhaps typing in) a text control
+         */
         !isFocusingTextControl(event.target as EventTarget)
       ) {
         event.preventDefault();

@@ -41,7 +41,7 @@ export const checkFrontmatter = (page: Page): void => {
     }
   });
 
-  // check date
+  // Check date
   if ("date" in frontmatter && !(frontmatter.date instanceof Date)) {
     logger.warn(
       `${colors.magenta("date")} in frontMatter should be ${colors.cyan(
@@ -52,7 +52,7 @@ export const checkFrontmatter = (page: Page): void => {
     delete frontmatter.date;
   }
 
-  // check sidebar
+  // Check sidebar
   if (
     "sidebar" in frontmatter &&
     frontmatter.sidebar !== "heading" &&
@@ -69,7 +69,7 @@ export const checkFrontmatter = (page: Page): void => {
     delete frontmatter.sidebar;
   }
 
-  // check string values
+  // Check string values
   ["title", "shortTitle", "containerClass"].forEach((key) => {
     if (key in frontmatter && !isString(frontmatter[key])) {
       logger.warn(
@@ -82,7 +82,7 @@ export const checkFrontmatter = (page: Page): void => {
     }
   });
 
-  // check boolean values
+  // Check boolean values
   [
     "home",
     "navbar",

@@ -44,7 +44,7 @@ export const setupTimelines = (): void => {
   const timelineItems = computed(() => {
     const timelineItems: TimelineItem[] = [];
 
-    // filter before sort
+    // Filter before sort
     timelines.value.items.forEach(({ info, path }) => {
       const result = getDate(info[ArticleInfoType.date]);
 

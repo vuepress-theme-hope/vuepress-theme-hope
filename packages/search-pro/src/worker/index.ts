@@ -14,11 +14,11 @@ const searchIndex: SearchIndexStore = fromEntries(
     ([localePath, index]) => [
       localePath,
       loadIndex<IndexItem, string>(index, {
-        fields: [/** heading */ "h", /** text */ "t", /** customFields */ "c"],
+        fields: [/** Heading */ "h", /** Text */ "t", /** CustomFields */ "c"],
         storeFields: [
-          /** heading */ "h",
-          /** text */ "t",
-          /** customFields */ "c",
+          /** Heading */ "h",
+          /** Text */ "t",
+          /** CustomFields */ "c",
         ],
       }),
     ],

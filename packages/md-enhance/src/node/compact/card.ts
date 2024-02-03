@@ -50,7 +50,7 @@ const cardRender = (
     try {
       config = <unknown>JSON.parse(content);
     } catch (err) {
-      // do nothing
+      // Do nothing
       logger.error(`Parsing card as JSON config failed:`, err);
     }
   else
@@ -77,7 +77,7 @@ ${content}
 
 /** @deprecated */
 export const legacyCard: PluginSimple = (md) => {
-  // add card container
+  // Add card container
   md.use(container, {
     name: "card",
     openRender: () =>
@@ -87,7 +87,7 @@ export const legacyCard: PluginSimple = (md) => {
   });
 
   // Handle ```card  blocks
-  const fence = md.renderer.rules.fence;
+  const { fence } = md.renderer.rules;
 
   md.renderer.rules.fence = (...args): string => {
     // eslint-disable-next-line @typescript-eslint/no-unsafe-assignment
@@ -97,7 +97,7 @@ export const legacyCard: PluginSimple = (md) => {
     if (info === "card")
       return cardRender(tokens, index, options, <MarkdownEnv>env);
 
-    const realInfo = info.split(":", 2)[0];
+    const [realInfo] = info.split(":", 2);
 
     if (realInfo === "card") {
       logger.warn(

@@ -12,12 +12,12 @@ const markmapRender = (tokens: Token[], index: number): string => {
 
 export const markmap: PluginSimple = (md) => {
   // Handle ```markmap blocks
-  const fence = md.renderer.rules.fence;
+  const { fence } = md.renderer.rules;
 
   md.renderer.rules.fence = (...args): string => {
     const [tokens, index] = args;
     const { info } = tokens[index];
-    const realInfo = info.split(":", 2)[0];
+    const [realInfo] = info.split(":", 2);
 
     if (realInfo === "markmap") return markmapRender(tokens, index);
 

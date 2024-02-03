@@ -20,7 +20,7 @@ export default defineComponent({
         "ul",
         { class: "vp-category-list" },
         entries(categoryMap.value.map)
-          // sort from more to less
+          // Sort from more to less
           .sort(([, a], [, b]) => b.items.length - a.items.length)
           .map(([category, { path, items }]) =>
             h(

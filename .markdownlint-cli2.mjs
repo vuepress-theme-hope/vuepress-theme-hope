@@ -9,7 +9,7 @@ export default {
     },
     MD013: false,
     MD024: {
-      allow_different_nesting: true,
+      siblings_only: true,
     },
     MD033: {
       allowed_elements: [
@@ -64,8 +64,6 @@ export default {
   ignores: [
     "**/node_modules/**",
     "**/__tests__/**",
-    "CHANGELOG.md",
-    "LICENSE",
     // markdown import demo
     "**/*.snippet.md",
   ],

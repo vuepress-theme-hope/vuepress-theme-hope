@@ -71,7 +71,7 @@ const DIAGRAM_MAP: Record<string, string> = {
 
 export const mermaid: PluginSimple = (md) => {
   // Handle ```mermaid blocks
-  const fence = md.renderer.rules.fence;
+  const { fence } = md.renderer.rules;
 
   md.renderer.rules.fence = (...args): string => {
     const [tokens, index] = args;

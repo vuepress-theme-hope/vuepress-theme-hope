@@ -103,7 +103,7 @@ export const hopeTheme = (
 
       onWatched: (app, watchers): void => {
         if (hotReload) {
-          // this ensure the page is generated or updated
+          // This ensures the page is generated or updated
           const structureSidebarWatcher = watch("pages/**/*.vue", {
             cwd: app.dir.temp(),
             ignoreInitial: true,

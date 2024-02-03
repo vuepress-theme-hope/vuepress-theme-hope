@@ -55,9 +55,9 @@ export const getResults = (
     query,
     getSearchOptions({
       boost: {
-        [/** heading */ "h"]: 2,
-        [/** text */ "t"]: 1,
-        [/** customFields */ "c"]: 4,
+        [/** Heading */ "h"]: 2,
+        [/** Text */ "t"]: 1,
+        [/** CustomFields */ "c"]: 4,
       },
       ...searchOptions,
     }),
@@ -85,7 +85,7 @@ export const getResults = (
       contents.push([
         {
           type: "customField",
-          key: key,
+          key,
           index: info,
           display: displayTerms
             .map((term) =>
@@ -107,14 +107,14 @@ export const getResults = (
         contents.push([
           <TitleMatchedItem | HeadingMatchedItem>{
             type: isSection ? "heading" : "title",
-            key: key,
+            key,
             ...(isSection && { anchor: info }),
             display: headerContent,
           },
           score,
         ]);
 
-      if (/** text */ "t" in result)
+      if (/** Text */ "t" in result)
         for (const text of result.t) {
           const matchedContent = displayTerms
             .map((term) => getMatchedContent(text, term))
@@ -141,7 +141,7 @@ export const getResults = (
         : sortWithMax(valueA, valueB),
     )
     .map(([id, { title, contents }]) => {
-      // search to get title
+      // Search to get title
       if (!title) {
         const pageIndex = getStoredFields(
           localeIndex,

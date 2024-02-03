@@ -71,7 +71,7 @@ export interface FeatureOptions {
   hotReload?: boolean;
 }
 
-// for config size consideration, blog options can be held in root and merged in client side
+// For config size consideration, blog options can be held in root and merged in client side
 export interface FeatureConfig extends FeatureLocaleConfig {
   /**
    * Encrypt config

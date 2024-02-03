@@ -32,9 +32,9 @@ export const chart: PluginSimple = (md) => {
             configType = "js";
           }
 
-        // set to an unexist token type
+        // Set to an unexist token type
         tokens[i].type = "chart_empty";
-        // hide token
+        // Hide token
         tokens[i].hidden = true;
       }
 

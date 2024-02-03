@@ -1,3 +1,4 @@
+import { isDef } from "@vuepress/helper/client";
 import type { RouteLocationNormalizedLoaded } from "vue-router";
 
 const HASH_REGEXP = /#.*$/u;
@@ -34,7 +35,7 @@ export const isActiveLink = (
   route: RouteLocationNormalizedLoaded,
   link?: string,
 ): boolean => {
-  if (link === undefined) return false;
+  if (!isDef(link)) return false;
 
   const currentPath = normalizePath(route.path);
   const targetPath = normalizePath(link);

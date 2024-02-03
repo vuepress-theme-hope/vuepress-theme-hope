@@ -18,7 +18,7 @@ let feedPlugin: (options: FeedPluginOptions, legacy?: boolean) => Plugin;
 try {
   ({ feedPlugin } = await import("@vuepress/plugin-feed"));
 } catch (e) {
-  // do nothing
+  // Do nothing
 }
 
 /**
@@ -28,12 +28,12 @@ try {
  */
 export const getFeedPlugin = (
   themeData: ThemeData,
-  options: Omit<FeedPluginOptions, "hostname"> | boolean = false,
+  options?: Omit<FeedPluginOptions, "hostname"> | boolean | undefined,
   hostname?: string,
   favicon?: string,
   legacy = false,
 ): Plugin | null => {
-  // disable feed if feed is disabled or no options for feed plugin
+  // Disable feed if feed is disabled or no options for feed plugin
   if (options === false || (isPlainObject(options) && !keys(options).length))
     return null;
 

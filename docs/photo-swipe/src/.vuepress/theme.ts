@@ -11,7 +11,7 @@ const { version } = <{ version: string }>(
   )
 );
 
-// the theme wrapper is located in <root>/docs-shared/src/theme-wrapper.ts
+// The theme wrapper is located in <root>/docs-shared/src/theme-wrapper.ts
 export default theme("photo-swipe", {
   locales: {
     "/": {

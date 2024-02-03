@@ -45,7 +45,7 @@ interface MicrosoftPWAOptions {
   image?: string;
 
   /**
-   * tile color
+   * Tile color
    *
    * 磁贴颜色
    */
@@ -64,7 +64,7 @@ export interface PWAOptions {
   swPath?: string;
 
   /**
-   * manifest file Config
+   * Manifest file Config
    *
    * manifest 文件设置
    */
@@ -123,7 +123,7 @@ export interface PWAOptions {
   maxPicSize?: number;
 
   /**
-   * settings for apple
+   * Settings for apple
    *
    * 苹果设置
    */

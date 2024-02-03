@@ -46,7 +46,7 @@ export const commentPlugin =
           })
         : {};
 
-    // remove locales so that they won’t be injected in client twice
+    // Remove locales so that they won’t be injected in client twice
     if (options.provider === "Waline" && "locales" in options)
       delete options.locales;
 

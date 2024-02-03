@@ -43,15 +43,15 @@ export default defineComponent({
     const navigate = useNavigate();
 
     const renderIcon = (icon = "", alt = "icon"): VNode | null => {
-      // built in icon
+      // Built in icon
       if (AVAILABLE_PROJECT_TYPES.includes(icon))
         return h(resolveComponent(`${icon}-icon`));
 
-      // it’s a full image link
+      // It’s a full image link
       if (isLinkHttp(icon))
         return h("img", { class: "vp-project-image", src: icon, alt });
 
-      // it’s an absolute image link
+      // It’s an absolute image link
       if (isLinkAbsolute(icon))
         return h("img", {
           class: "vp-project-image",
@@ -59,7 +59,7 @@ export default defineComponent({
           alt,
         });
 
-      // render as icon font
+      // Render as icon font
       return h(HopeIcon, { icon });
     };
 

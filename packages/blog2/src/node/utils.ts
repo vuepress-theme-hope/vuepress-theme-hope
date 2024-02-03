@@ -14,8 +14,10 @@ export const getPageMap = (
   const localePaths = keys(options.locales);
   const pageMap: PageMap = {};
 
-  // initialize pageMap
-  // extra check to ensure at least one locale exists
+  /*
+   * Initialize pageMap
+   * extra check to ensure at least one locale exists
+   */
   (localePaths.length ? localePaths : ["/"]).forEach((path) => {
     pageMap[path] = [];
   });

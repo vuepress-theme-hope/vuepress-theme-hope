@@ -22,7 +22,7 @@ export interface SearchWorker {
 }
 
 export const createSearchWorker = (): SearchWorker => {
-  // service worker with module only works on webkit browsers now, so we only used it in dev
+  // Service worker with module only works on webkit browsers now, so we only used it in dev
   const worker = new Worker(
     __VUEPRESS_DEV__
       ? clientWorker

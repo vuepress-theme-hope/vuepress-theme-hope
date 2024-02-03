@@ -70,7 +70,7 @@ export default defineComponent({
     onMounted(() => {
       isDarkmode.value = getDarkmodeStatus();
 
-      // watch darkmode change
+      // Watch darkmode change
       useMutationObserver(
         document.documentElement,
         () => {
@@ -108,7 +108,7 @@ export default defineComponent({
             },
             [
               h("pre", files.value[0]),
-              // hidden dependency
+              // Hidden dependency
               files.value.length > 1
                 ? files.value.map((content, index) =>
                     index === 0

@@ -13,7 +13,5 @@ export const updatePageview = async (): Promise<WalineAbort | void> => {
     return pageviewCount({ serverURL: COMMENT_OPTIONS.serverURL });
   } catch (err) {
     console.error("@waline/client is not installed!");
-
-    return;
   }
 };

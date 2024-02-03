@@ -16,7 +16,7 @@ const echartsRender = (tokens: Token[], index: number): string => {
 
 export const echarts: PluginSimple = (md) => {
   // Handle ```echarts blocks
-  const fence = md.renderer.rules.fence;
+  const { fence } = md.renderer.rules;
 
   md.renderer.rules.fence = (...args): string => {
     const [tokens, index] = args;
@@ -59,9 +59,9 @@ export const echarts: PluginSimple = (md) => {
             isJavaScript = true;
           }
 
-        // set to an unexist token type
+        // Set to an unexist token type
         tokens[i].type = "echarts_empty";
-        // hide token
+        // Hide token
         tokens[i].hidden = true;
       }
 

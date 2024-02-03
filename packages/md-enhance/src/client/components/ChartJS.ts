@@ -125,7 +125,7 @@ export default defineComponent({
     onMounted(() => {
       isDarkmode.value = getDarkmodeStatus();
 
-      // watch darkmode change
+      // Watch darkmode change
       useMutationObserver(
         document.documentElement,
         () => {

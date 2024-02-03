@@ -33,7 +33,7 @@ export const injectConfigModule = (
 ): void => {
   const bundlerName = getBundlerName(app);
 
-  // for vite
+  // For vite
   if (bundlerName === "vite") {
     const viteBundlerConfig = <ViteBundlerOptions>config;
 
@@ -77,7 +77,7 @@ export const injectConfigModule = (
     );
   }
 
-  // for webpack
+  // For webpack
   else if (bundlerName === "webpack") {
     const webpackBundlerConfig = <WebpackBundlerOptions>config;
 

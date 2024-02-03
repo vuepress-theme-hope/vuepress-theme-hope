@@ -73,9 +73,9 @@ export default defineComponent({
                     },
                   ),
                 )),
-          ...(sidebarDisplay.value !== "none"
-            ? { navScreenBottom: () => h(resolveComponent("BloggerInfo")) }
-            : {}),
+          ...(sidebarDisplay.value === "none"
+            ? {}
+            : { navScreenBottom: () => h(resolveComponent("BloggerInfo")) }),
           ...(!isMobile.value && sidebarDisplay.value === "always"
             ? { sidebar: () => h(resolveComponent("BloggerInfo")) }
             : {}),

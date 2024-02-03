@@ -99,11 +99,11 @@ export default defineComponent({
 
         if (activeTocItem)
           tocMarkerTop.value = `${
-            // active toc item top
+            // Active toc item top
             activeTocItem.getBoundingClientRect().top -
-            // toc top
+            // Toc top
             toc.value.getBoundingClientRect().top +
-            // toc scroll top
+            // Toc scroll top
             toc.value.scrollTop
           }px`;
         else tocMarkerTop.value = "-1.7rem";
@@ -113,35 +113,35 @@ export default defineComponent({
     };
 
     onMounted(() => {
-      // scroll to active toc item
+      // Scroll to active toc item
       watch(
         () => route.hash,
         (hash): void => {
           if (toc.value) {
-            // get the active toc item DOM, whose href equals to the current route
+            // Get the active toc item DOM, whose href equals to the current route
             const activeTocItem = document.querySelector(
               `#toc a.toc-link[href$="${hash}"]`,
             );
 
             if (!activeTocItem) return;
 
-            // get the top and height of the toc
+            // Get the top and height of the toc
             const { top: tocTop, height: tocHeight } =
               toc.value.getBoundingClientRect();
-            // get the top and height of the active toc item
+            // Get the top and height of the active toc item
             const { top: activeTocItemTop, height: activeTocItemHeight } =
               activeTocItem.getBoundingClientRect();
 
-            // when the active toc item overflows the top edge of toc
+            // When the active toc item overflows the top edge of toc
             if (activeTocItemTop < tocTop)
-              // scroll to the top edge of toc
+              // Scroll to the top edge of toc
               scrollTo(toc.value.scrollTop + activeTocItemTop - tocTop);
-            // when the active toc item overflows the bottom edge of toc
+            // When the active toc item overflows the bottom edge of toc
             else if (
               activeTocItemTop + activeTocItemHeight >
               tocTop + tocHeight
             )
-              // scroll to the bottom edge of toc
+              // Scroll to the bottom edge of toc
               scrollTo(
                 toc.value.scrollTop +
                   activeTocItemTop +
