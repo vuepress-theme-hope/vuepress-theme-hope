@@ -102,7 +102,7 @@ export default defineComponent({
     const locales = useLocaleConfig(PDF_LOCALES);
 
     onMounted(() => {
-      viewPDF(getLink(props.url), el.value, {
+      viewPDF(getLink(props.url), el.value!, {
         title: props.title,
         hint: locales.value.hint,
         options: {
