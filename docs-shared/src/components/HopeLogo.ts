@@ -44,7 +44,7 @@ export default defineComponent({
       const stlLoader = new STLLoaderConstructor();
       const textureLoader = new three.TextureLoader();
       const roughnessTexture = textureLoader.load(
-        ASSETS_SERVER + "/model/roughness.jpeg",
+        `${ASSETS_SERVER}/model/roughness.jpeg`,
       );
       // Models
       let logo1: Mesh;
@@ -118,7 +118,7 @@ export default defineComponent({
 
       await Promise.all([
         new Promise<void>((resolve) =>
-          stlLoader.load(ASSETS_SERVER + "/model/logo1.stl", (geometry) => {
+          stlLoader.load(`${ASSETS_SERVER}/model/logo1.stl`, (geometry) => {
             const material = new three.MeshPhysicalMaterial({
               color: 0x284c39,
               metalness: 0.3,
@@ -141,7 +141,7 @@ export default defineComponent({
           }),
         ),
         new Promise<void>((resolve) =>
-          stlLoader.load(ASSETS_SERVER + "/model/logo2.stl", (geometry) => {
+          stlLoader.load(`${ASSETS_SERVER}/model/logo2.stl`, (geometry) => {
             const material = new three.MeshPhysicalMaterial({
               color: 0x35495e,
               metalness: 0.7,
@@ -188,13 +188,13 @@ export default defineComponent({
     });
 
     return (): (VNode | null)[] => [
-      !ready.value
-        ? h("img", {
+      ready.value
+        ? null
+        : h("img", {
             class: "vp-hero-image",
-            src: ASSETS_SERVER + "/logo.svg",
+            src: `${ASSETS_SERVER}/logo.svg`,
             alt: "vuepress-theme-hope",
-          })
-        : null,
+          }),
 
       h("canvas", {
         id: "hero-logo",

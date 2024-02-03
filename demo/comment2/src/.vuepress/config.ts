@@ -10,7 +10,7 @@ export default defineUserConfig({
   title: "Comment Plugin",
   description: "Comment Plugin for VuePress2",
 
-  // we are using a custom theme adding this plugin
+  // We are using a custom theme adding this plugin
   theme: defaultTheme({
     logo: "https://theme-hope-assets.vuejs.press/logo.svg",
 

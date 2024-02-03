@@ -12,7 +12,7 @@ defineGiscusConfig({
 
 export default defineClientConfig({
   layouts: {
-    // we override the default layout to provide comment service
+    // We override the default layout to provide comment service
     Layout,
   },
 });

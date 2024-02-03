@@ -11,7 +11,7 @@ const { version } = <{ version: string }>(
 
 const assetsBase = "https://theme-hope-assets.vuejs.press/";
 
-// the theme wrapper is located in <root>/docs-shared/src/theme-wrapper.ts
+// The theme wrapper is located in <root>/docs-shared/src/theme-wrapper.ts
 export default theme("pwa2", {
   locales: {
     "/": {
@@ -140,7 +140,7 @@ export default theme("pwa2", {
 
       generateSWConfig: {
         globIgnores: [
-          // ignore pdfjs
+          // Ignore pdfjs
           "assets/lib/pdfjs/**",
         ],
       },

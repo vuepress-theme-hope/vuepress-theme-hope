@@ -66,7 +66,7 @@ export default defineComponent({
         try {
           flowchart = parse(config.value);
 
-          // update scale
+          // Update scale
           scale.value = getScale(window.innerWidth);
 
           // draw svg to #id
@@ -85,7 +85,7 @@ export default defineComponent({
           try {
             flowchart = parseAction(config.value);
 
-            // update scale
+            // Update scale
             scale.value = getScale(window.innerWidth);
 
             element.value!.innerHTML = "";
