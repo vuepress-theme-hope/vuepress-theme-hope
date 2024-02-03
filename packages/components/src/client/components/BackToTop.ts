@@ -19,6 +19,7 @@ import "../styles/back-to-top.scss";
 
 declare const BACK_TO_TOP_LOCALES: BackToTopLocaleConfig;
 
+/** @deprecated Please use '@vuepress/plugin-back-to-top' */
 export default defineComponent({
   name: "BackToTop",
 

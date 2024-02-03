@@ -1,3 +1,4 @@
+/** @deprecated Please use '@vuepress/plugin-back-to-top' */
 export interface BackToTopOptions {
   /**
    * Scroll threshold distance to display back to top button (in pixels)

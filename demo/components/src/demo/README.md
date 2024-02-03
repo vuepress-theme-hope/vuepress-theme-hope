@@ -1,7 +1,5 @@
 # Demo
 
-- BackToTop (Root Components)
-
 - Notice (Root Components)
 
 - [ArtPlayer](art-player.md)

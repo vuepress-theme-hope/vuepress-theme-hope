@@ -69,6 +69,7 @@ if(!hasGlobalComponent("Catalog")) app.component("Catalog", Catalog);
     }
   });
 
+  // TODO: Remove in v2 stable
   if (rootComponents.backToTop) {
     const { threshold, progress } = isPlainObject(rootComponents.backToTop)
       ? rootComponents.backToTop

@@ -76,7 +76,7 @@ export default defineComponent({
       });
 
       if (artalkOptions.useBackendConf)
-        artalk.on("conf-loaded", () => {
+        artalk.on("mounted", () => {
           artalk!.setDarkMode(props.darkmode);
         });
     };
