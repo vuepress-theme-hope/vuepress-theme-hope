@@ -17,20 +17,20 @@ export const getMatchedContent = (
   const addResult = (content: string, isEnd = false): void => {
     let text = "";
 
-    // a beginning of a long string
+    // A beginning of a long string
     if (contentLength === 0)
       text =
         content.length > SUFFIX_LENGTH
           ? `… ${content.slice(-SUFFIX_LENGTH)}`
           : content;
-    // already the last text
+    // Already the last text
     else if (isEnd)
       text =
-        // if the string will be longer than maxLength
+        // If the string will be longer than maxLength
         content.length + contentLength > MAX_LENGTH
           ? `${content.slice(0, MAX_LENGTH - contentLength)}… `
           : content;
-    // text is at the middle
+    // Text is at the middle
     else
       text =
         content.length > SUFFIX_LENGTH
@@ -57,7 +57,7 @@ export const getMatchedContent = (
   while (matchIndex >= 0) {
     const endIndex = matchIndex + queryStringLowerCase.length;
 
-    // append content before
+    // Append content before
     addResult(content.slice(startIndex, matchIndex));
 
     startIndex = endIndex;

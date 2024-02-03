@@ -10,7 +10,7 @@ export const getEncryptConfig = (
 ): EncryptConfig => {
   const result: EncryptConfig = {};
 
-  // handle global token
+  // Handle global token
   if (encrypt.admin) {
     if (encrypt.global) result.global = true;
 

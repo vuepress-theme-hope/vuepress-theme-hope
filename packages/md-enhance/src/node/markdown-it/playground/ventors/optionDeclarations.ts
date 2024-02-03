@@ -5,7 +5,6 @@
  *
  * Generated from the following code:
  *
-
 JSON.stringify(
   ts.optionDeclarations.map(({ name, type }) => ({
     name,

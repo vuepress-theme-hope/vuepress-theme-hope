@@ -45,7 +45,7 @@ const relativeTimeWithPlural = (
 
   if (key === "m") return withoutSuffix ? "минута" : "минуту";
 
-  return `${number} ${plural(format[key], +number)}`;
+  return `${number} ${plural(format[key], Number(number))}`;
 };
 
 const months = (dayjsInstance: Dayjs, format: string): string => {

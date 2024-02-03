@@ -76,7 +76,7 @@ export const mdDemo: PluginSimple = (md) => {
       token.type = "fence";
       token.info = "md";
       token.markup = "```";
-      // handle include rule
+      // Handle include rule
       token.content = token.content
         .split("\n")
         .filter(

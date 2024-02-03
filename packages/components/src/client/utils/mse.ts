@@ -83,7 +83,7 @@ export const registerMseHls = async (
       const hlsInstance = new hls();
 
       hlsInstance.attachMedia(mediaElement);
-      hlsInstance.on(hls.Events.MEDIA_ATTACHED, function () {
+      hlsInstance.on(hls.Events.MEDIA_ATTACHED, () => {
         hlsInstance.loadSource(src);
       });
 

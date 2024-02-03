@@ -230,7 +230,7 @@ export default defineComponent({
                 },
               }),
 
-              // key hints should only appears in pc
+              // Key hints should only appears in PC
               isMobile.value
                 ? null
                 : h("div", { class: "search-pro-hints" }, [

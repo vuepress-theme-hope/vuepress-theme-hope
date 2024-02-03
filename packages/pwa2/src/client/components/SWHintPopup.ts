@@ -36,7 +36,7 @@ export default defineComponent({
 
       event.on("updatefound", () => {
         void navigator.serviceWorker.getRegistration().then((registration) => {
-          // check whether a valid service worker is active
+          // Check whether a valid service worker is active
           if (registration && registration.active) enabled.value = true;
         });
       });

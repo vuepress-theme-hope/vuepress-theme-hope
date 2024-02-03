@@ -90,7 +90,7 @@ export const sidebarDateDescSorter = (
 };
 
 const getFilename = (info: SidebarInfo): string =>
-  info.type === "file" ? info.filename.replace(/\.md$/, "") : info.dirname;
+  info.type === "file" ? info.filename.replace(/\.md$/u, "") : info.dirname;
 
 export const sidebarFilenameSorter = (
   infoA: SidebarInfo,

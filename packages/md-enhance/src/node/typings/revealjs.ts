@@ -15,11 +15,11 @@ export type RevealJsTheme =
   | "white";
 
 /**
- * reveal.js options
+ * Reveal.js options
  */
 export interface RevealJsOptions {
   /**
-   * reveal.js plugins
+   * Reveal.js plugins
    *
    * 幻灯片插件
    *
@@ -28,7 +28,7 @@ export interface RevealJsOptions {
   plugins?: RevealJsPlugin[];
 
   /**
-   * reveal.js themes
+   * Reveal.js themes
    *
    * 幻灯片主题
    *

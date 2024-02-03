@@ -119,11 +119,11 @@ export default defineComponent({
                         typeof: "WebPage",
                       },
                       () => [
-                        // icon
+                        // Icon
                         iconEnable.value
                           ? h(HopeIcon, { icon: item.icon })
                           : null,
-                        // text
+                        // Text
                         h(
                           "span",
                           { property: "name" },
@@ -131,7 +131,7 @@ export default defineComponent({
                         ),
                       ],
                     ),
-                    // meta
+                    // Meta
                     h("meta", { property: "position", content: index + 1 }),
                   ],
                 ),

@@ -72,7 +72,7 @@ export const usePathEncrypt = (): PathEncrypt => {
     const { config = {} } = encryptData.value;
     const matchedKeys = getPathMatchedKeys(page.value.path);
 
-    // some of the tokens matches
+    // Some of the tokens matches
     for (const hitKey of matchedKeys)
       if (config[hitKey].filter((token) => checkToken(inputToken, token))) {
         (keep ? localToken : sessionToken).value[hitKey] = inputToken;

@@ -95,7 +95,7 @@ export default defineComponent({
       try {
         player?.destroy();
       } catch (err: unknown) {
-        // do nothing
+        // Do nothing
       }
     });
 

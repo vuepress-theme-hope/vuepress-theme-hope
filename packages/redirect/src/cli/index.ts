@@ -55,20 +55,20 @@ cli
   .action(async (sourceDir: string, commandOptions: RedirectCommandOptions) => {
     if (!sourceDir) return cli.outputHelp();
 
-    // ensure NODE_ENV is set
+    // Ensure NODE_ENV is set
     process.env["NODE_ENV"] ??= "production";
 
-    // resolve app config from cli options
+    // Resolve app config from cli options
     const cliAppConfig = resolveCliAppConfig(sourceDir, {});
 
-    // resolve user config file
+    // Resolve user config file
     const userConfigPath = resolveUserConfigConventionalPath(
       cliAppConfig.source,
     );
 
     const { userConfig } = await loadUserConfig(userConfigPath);
 
-    // resolve the final app config to use
+    // Resolve the final app config to use
     const appConfig = resolveAppConfig({
       defaultAppConfig: {},
       cliAppConfig,
@@ -77,13 +77,13 @@ cli
 
     if (appConfig === null) return;
 
-    // create vuepress app
+    // Create vuepress app
     const app = createBuildApp(appConfig);
 
-    // use user-config plugin
+    // Use user-config plugin
     app.use(transformUserConfigToPlugin(userConfig, cliAppConfig.source));
 
-    // clean temp and cache
+    // Clean temp and cache
     if (commandOptions.cleanTemp === true) {
       logger.info("Cleaning temp...");
       await fs.remove(app.dir.temp());
@@ -97,17 +97,17 @@ cli
       ? path.join(process.cwd(), commandOptions.output)
       : path.join(app.dir.source(), ".vuepress", "redirect");
 
-    // empty output directory
+    // Empty output directory
     await fs.emptyDir(outputFolder);
 
-    // initialize vuepress app to get pages
+    // Initialize vuepress app to get pages
     logger.info("Initializing VuePress and preparing data...");
 
     await app.init();
 
-    // redirect all pages
+    // Redirect all pages
 
-    // initialize vuepress app to get pages
+    // Initialize vuepress app to get pages
     logger.info("Generating redirect pages...");
 
     await Promise.all(

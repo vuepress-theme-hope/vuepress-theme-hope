@@ -104,7 +104,7 @@ export default defineComponent({
               : null
             : shareServices.find(({ name }) => name === item),
         )
-        .filter((item): item is ShareServiceOptions => item != null);
+        .filter((item): item is ShareServiceOptions => Boolean(item));
     });
 
     const shareData = computed(() => {

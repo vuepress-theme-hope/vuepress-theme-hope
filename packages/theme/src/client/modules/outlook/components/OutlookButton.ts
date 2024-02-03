@@ -41,10 +41,10 @@ export default defineComponent({
         ? h(
             "div",
             { class: "nav-item hide-in-mobile" },
-            // only AppearanceSwitch is enabled
+            // Only AppearanceSwitch is enabled
             canToggle.value && !enableFullScreen.value && !enableThemeColor
               ? h(AppearanceSwitch)
-              : // only FullScreen is enabled
+              : // Only FullScreen is enabled
                 enableFullScreen.value && !canToggle.value && !enableThemeColor
                 ? h(ToggleFullScreenButton)
                 : h(

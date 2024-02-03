@@ -41,14 +41,14 @@ export type PrismjsTheme = PrismjsDarkTheme | PrismjsLightTheme;
 
 export interface PrismjsOptions {
   /**
-   * light theme
+   * Light theme
    *
    * @default 'one-light'
    */
   light?: PrismjsTheme;
 
   /**
-   * dark theme
+   * Dark theme
    * @default 'one-dark'
    */
   dark?: PrismjsTheme;

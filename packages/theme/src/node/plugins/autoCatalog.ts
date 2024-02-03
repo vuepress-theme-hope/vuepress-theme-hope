@@ -16,7 +16,7 @@ export const getAutoCatalogPlugin = (
 
   return autoCatalogPlugin(
     {
-      // exclude auto generated page from articles, feed and sitemaps
+      // Exclude auto generated page from articles, feed and sitemaps
       frontmatter: () => ({ article: false, feed: false, sitemap: false }),
       ...(isPlainObject(autoCatalog) ? autoCatalog : {}),
     },

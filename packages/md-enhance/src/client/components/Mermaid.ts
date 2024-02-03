@@ -38,7 +38,7 @@ const getThemeVariables = (isDarkmode: boolean): MermaidThemeVariables => ({
   tertiaryBorderColor: isDarkmode ? "#bbb" : "#242424",
   tertiaryTextColor: isDarkmode ? "#ddd" : "#333",
 
-  // note
+  // Note
   noteBkgColor: isDarkmode ? "#f6d365" : "#fff5ad",
   noteTextColor: "#242424",
   noteBorderColor: isDarkmode ? "#f6d365" : "#333",
@@ -50,23 +50,23 @@ const getThemeVariables = (isDarkmode: boolean): MermaidThemeVariables => ({
   errorBkgColor: "#eb4d5d",
   errorTextColor: "#fff",
 
-  // flowchart
+  // Flowchart
   nodeBorder: isDarkmode ? "#389d70" : "#4abf8a",
   nodeTextColor: isDarkmode ? "#fff" : "#242424",
 
-  // sequence
+  // Sequence
   signalTextColor: isDarkmode ? "#9e9e9e" : "#242424",
 
-  // class
+  // Class
   classText: "#fff",
 
-  // state
+  // State
   labelColor: "#fff",
 
   attributeBackgroundColorEven: isDarkmode ? "#0d1117" : "#fff",
   attributeBackgroundColorOdd: isDarkmode ? "#161b22" : "#f8f8f8",
 
-  // colors
+  // Colors
   fillType0: isDarkmode ? "#cf1322" : "#f1636e",
   fillType1: "#f39c12",
   fillType2: "#2ecc71",
@@ -188,7 +188,7 @@ export default defineComponent({
 
       void renderMermaid();
 
-      // watch darkmode change
+      // Watch darkmode change
       useMutationObserver(
         document.documentElement,
         () => {
@@ -227,9 +227,9 @@ export default defineComponent({
           class: "mermaid-wrapper",
         },
         svgCode.value
-          ? // mermaid
+          ? // Mermaid
             h("div", { class: "mermaid-content", innerHTML: svgCode.value })
-          : // loading
+          : // Loading
             h(LoadingIcon, { class: "mermaid-loading", height: 96 }),
       ),
     ];

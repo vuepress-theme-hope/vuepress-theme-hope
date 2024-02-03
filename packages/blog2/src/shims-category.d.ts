@@ -12,7 +12,7 @@ declare module "@temp/blog/category" {
   interface CategoryLocaleConfig {
     /** Main page of category */
     path: string;
-    /** category map for current locale */
+    /** Category map for current locale */
     map: CategoryLocaleMap;
   }
 

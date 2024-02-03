@@ -19,7 +19,7 @@ export interface RedirectOptions
   config?: Record<string, string> | ((app: App) => Record<string, string>);
 
   /**
-   * domain which to be redirected to
+   * Domain which to be redirected to
    *
    * 重定向到的网站域名
    */

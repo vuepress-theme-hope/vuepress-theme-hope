@@ -25,10 +25,10 @@ export default hopeTheme(
 
     locales: {
       "/": {
-        // navbar
+        // Navbar
         navbar: enNavbar,
 
-        // sidebar
+        // Sidebar
         sidebar: enSidebar,
 
         footer: "Default footer",
@@ -44,17 +44,17 @@ export default hopeTheme(
        * Chinese locale config
        */
       "/zh/": {
-        // navbar
+        // Navbar
         navbar: zhNavbar,
 
-        // sidebar
+        // Sidebar
         sidebar: zhSidebar,
 
         footer: "默认页脚",
 
         displayFooter: true,
 
-        // page meta
+        // Page meta
         metaLocales: {
           editLink: "在 GitHub 上编辑此页",
         },

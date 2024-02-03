@@ -13,8 +13,8 @@ self.onmessage = async ({
   const { default: localeIndex } = await database[locale]();
 
   const searchLocaleIndex = loadJSONIndex<IndexItem, string>(localeIndex, {
-    fields: [/** heading */ "h", /** text */ "t", /** customFields */ "c"],
-    storeFields: [/** heading */ "h", /** text */ "t", /** customFields */ "c"],
+    fields: [/** Heading */ "h", /** Text */ "t", /** CustomFields */ "c"],
+    storeFields: [/** Heading */ "h", /** Text */ "t", /** CustomFields */ "c"],
   });
 
   if (type === "suggest")

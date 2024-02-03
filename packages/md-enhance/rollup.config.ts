@@ -2,7 +2,7 @@ import { rollupBundle } from "../../scripts/rollup.js";
 
 export default [
   ...rollupBundle("node/index", {
-    external: [/^@mdit\/plugin-/, "js-yaml"],
+    external: [/^@mdit\/plugin-/u, "js-yaml"],
     dtsExternal: ["vuepress-shared"],
   }),
   ...rollupBundle(
@@ -45,7 +45,7 @@ export default [
         "markmap-toolbar",
         "markmap-view",
         "mermaid",
-        /^reveal\.js/,
+        /^reveal\.js/u,
         "sandpack-vue3",
       ],
       copy: [

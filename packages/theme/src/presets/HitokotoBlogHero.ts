@@ -83,7 +83,7 @@ export default defineComponent({
 
         const renderNextWord = (): Promise<void> => {
           display.value += text.value[index];
-          index++;
+          index += 1;
 
           return nextTick().then(() => {
             if (index < text.value.length)

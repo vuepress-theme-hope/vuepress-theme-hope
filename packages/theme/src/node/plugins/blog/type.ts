@@ -30,11 +30,11 @@ export const getBlogArticleType = (
     key: "article",
     sorter: defaultPageSorter,
     filter: ({ frontmatter, filePathRelative }): boolean =>
-      // not home
+      // Not homepage
       !frontmatter.home &&
-      // declaring this is an article
+      // Declaring this is an article
       (frontmatter.article ||
-        // generated from markdown files
+        // Generated from markdown files
         Boolean(frontmatter.article !== false && filePathRelative)),
     path: options.article,
     layout: "BlogType",

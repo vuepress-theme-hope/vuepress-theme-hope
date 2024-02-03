@@ -13,7 +13,7 @@ files.forEach((pkgName) => {
   const desc = `${pkgName} plugin for VuePress`;
   const pkgPath = join(packagesDir, pkgName, "package.json");
 
-  // generate package.json
+  // Generate package.json
   if (!existsSync(pkgPath)) {
     const pkgJSON = {
       name: `vuepress-plugin-${pkgName}`,
@@ -71,7 +71,7 @@ files.forEach((pkgName) => {
 
   const readmePath = join(packagesDir, pkgName, "README.md");
 
-  // generate README.md
+  // Generate README.md
   if (!existsSync(readmePath))
     writeFileSync(
       readmePath,

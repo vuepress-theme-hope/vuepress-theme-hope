@@ -1,41 +1,41 @@
 export const checkIsMobile = (ua: string): boolean =>
-  /\b(?:Android|iPhone)/i.test(ua);
+  /\b(?:Android|iPhone)/iu.test(ua);
 
 export const checkIsChromeWebView = (ua: string): boolean =>
-  / wv\).+(chrome)\/([\w.]+)/i.test(ua);
+  / wv\).+(chrome)\/([\w.]+)/iu.test(ua);
 
 export const checkIsSafariMobile = (ua: string): boolean =>
-  /version\/([\w.]+) .*mobile\/\w+ (safari)/i.test(ua);
+  /version\/([\w.]+) .*mobile\/\w+ (safari)/iu.test(ua);
 
 export const checkIsSafari = (ua: string): boolean =>
-  /version\/([\w.]+) .*(mobile ?safari|safari)/i.test(ua);
+  /version\/([\w.]+) .*(mobile ?safari|safari)/iu.test(ua);
 
 export const checkIsiPhone = (ua: string): boolean =>
-  /\((ip(?:hone|od)[\w ]*);/i.test(ua);
+  /\((ip(?:hone|od)[\w ]*);/iu.test(ua);
 
 export const checkIsiPad = (ua: string): boolean =>
   [
-    /\((ipad);[-\w),; ]+apple/i,
-    /applecoremedia\/[\w.]+ \((ipad)/i,
-    /\b(ipad)\d\d?,\d\d?[;\]].+ios/i,
+    /\((ipad);[-\w),; ]+apple/iu,
+    /applecoremedia\/[\w.]+ \((ipad)/iu,
+    /\b(ipad)\d\d?,\d\d?[;\]].+ios/iu,
   ].some((item) => item.test(ua));
 
 export const checkIsWindows = (ua: string): boolean =>
   [
-    /microsoft (windows) (vista|xp)/i,
-    /(win(?=3|9|n)|win 9x )([nt\d.]+)/i,
-    /(windows) nt 6\.2; (arm)/i,
-    /(windows (?:phone(?: os)?|mobile))[/ ]?([\d.\w ]*)/i,
-    /(windows)[/ ]?([ntce\d. ]+\w)(?!.+xbox)/i,
+    /microsoft (windows) (vista|xp)/iu,
+    /(win(?=3|9|n)|win 9x )([nt\d.]+)/iu,
+    /(windows) nt 6\.2; (arm)/iu,
+    /(windows (?:phone(?: os)?|mobile))[/ ]?([\d.\w ]*)/iu,
+    /(windows)[/ ]?([ntce\d. ]+\w)(?!.+xbox)/iu,
   ].some((item) => item.test(ua));
 
 export const checkIsIOS = (ua: string): boolean =>
   [
-    /ip[honead]{2,4}\b(?:.*os ([\w]+) like mac|; opera)/i,
-    /cfnetwork\/.+darwin/i,
+    /ip[honead]{2,4}\b(?:.*os ([\w]+) like mac|; opera)/iu,
+    /cfnetwork\/.+darwin/iu,
   ].some((item) => item.test(ua));
 
 export const checkIsMacOS = (ua: string): boolean =>
-  [/(mac os x) ?([\w. ]*)/i, /(macintosh|mac_powerpc\b)(?!.+haiku)/i].some(
+  [/(mac os x) ?([\w. ]*)/iu, /(macintosh|mac_powerpc\b)(?!.+haiku)/iu].some(
     (item) => item.test(ua),
   );

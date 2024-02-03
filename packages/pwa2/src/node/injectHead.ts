@@ -43,7 +43,7 @@ export const injectLinksToHead = (
     if (icons.length > 0) {
       fallBackIcon = icons[0].src;
 
-      options.manifest.icons.map((icon) => {
+      options.manifest.icons.forEach((icon) => {
         if (icon.type)
           setLink("icon", icon.src, { type: icon.type, sizes: icon.sizes });
         else setLink("icon", icon.src, { sizes: icon.sizes });
@@ -84,7 +84,7 @@ export const injectLinksToHead = (
     setMeta("msapplication-TileColor", options.themeColor || "#46bd87");
   }
 
-  // enhance pwa experience
+  // Enhance pwa experience
   setMeta(
     "viewport",
     "width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, viewport-fit=cover",

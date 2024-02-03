@@ -60,22 +60,20 @@ export const generateTemplate = async ({
   ]);
 
   if (!preset)
-    preset = (
-      await inquirer.prompt<{ preset: Preset }>([
-        {
-          name: "preset",
-          type: "list",
-          message: locale.question.preset,
-          choices: presets,
-        },
-      ])
-    ).preset;
+    ({ preset } = await inquirer.prompt<{ preset: Preset }>([
+      {
+        name: "preset",
+        type: "list",
+        message: locale.question.preset,
+        choices: presets,
+      },
+    ]));
 
   console.log(locale.flow.generateTemplate);
 
   const templateFolder = preset;
 
-  // copy public assets
+  // Copy public assets
   copy(
     resolve(__dirname, "../template/public"),
     resolve(cwd, targetDir, "./.vuepress/public"),
@@ -130,7 +128,7 @@ export const generateTemplate = async ({
     );
   }
 
-  // git related
+  // Git related
   const isGitRepo = checkGitRepo(cwd);
 
   if (isGitRepo) {

@@ -54,62 +54,62 @@ export default defineComponent({
 
     const config = toRef(props, "config");
 
-    // if the link has http protocol
+    // If the link has http protocol
     const isHttp = computed(() => isLinkHttp(config.value.link));
 
-    // if the link has non-http protocol
+    // If the link has non-http protocol
     const withProtocol = computed(
       () => !isHttp.value && isLinkWithProtocol(config.value.link),
     );
 
-    // resolve the `target` attr
+    // Resolve the `target` attr
     const linkTarget = computed(
       () => config.value.target || (isHttp.value ? "_blank" : undefined),
     );
 
-    // if the `target` attr is "_blank"
+    // If the `target` attr is "_blank"
     const isBlankTarget = computed(() => linkTarget.value === "_blank");
 
-    // render `<VPLink>` or not
+    // Render `<VPLink>` or not
     const renderVPLink = computed(
       () => !isHttp.value && !withProtocol.value && !isBlankTarget.value,
     );
 
-    // resolve the `rel` attr
+    // Resolve the `rel` attr
     const anchorRel = computed(
       () =>
         config.value.rel ||
-        (isBlankTarget.value ? "noopener noreferrer" : undefined),
+        (isBlankTarget.value ? "noopener noreferrer" : null),
     );
 
-    // resolve the `aria-label` attr
+    // Resolve the `aria-label` attr
     const linkAriaLabel = computed(
       () => config.value.ariaLabel || config.value.text,
     );
 
-    // should be active when current route is a subpath of this link
+    // Should be active when current route is a subpath of this link
     const shouldBeActiveInSubpath = computed(() => {
-      // should not be active in `exact` mode
+      // Should not be active in `exact` mode
       if (props.exact) return false;
 
       const localeKeys = keys(siteData.value.locales);
 
       return localeKeys.length
-        ? // check all the locales
+        ? // Check all the locales
           localeKeys.every((key) => key !== config.value.link)
-        : // check root
+        : // Check root
           config.value.link !== "/";
     });
 
-    // if this link is active
+    // If this link is active
     const isActive = computed(() =>
       renderVPLink.value
         ? config.value.activeMatch
-          ? new RegExp(config.value.activeMatch).test(route.path)
-          : // if this link is active in subpath
-            !shouldBeActiveInSubpath.value
-            ? route.path === config.value.link
-            : startsWith(route.path, config.value.link)
+          ? new RegExp(config.value.activeMatch, "u").test(route.path)
+          : // If this link is active in subpath
+            shouldBeActiveInSubpath.value
+            ? startsWith(route.path, config.value.link)
+            : route.path === config.value.link
         : false,
     );
 
@@ -124,7 +124,7 @@ export default defineComponent({
               to: link,
               "aria-label": linkAriaLabel.value,
               ...attrs,
-              // class needs to be merged manually
+              // Class needs to be merged manually
               class: ["nav-link", { active: isActive.value }, attrs["class"]],
               onFocusout: () => emit("focusout"),
             },
@@ -141,7 +141,7 @@ export default defineComponent({
               target: linkTarget.value,
               "aria-label": linkAriaLabel.value,
               ...attrs,
-              // class needs to be merged manually
+              // Class needs to be merged manually
               class: ["nav-link", attrs["class"]],
               onFocusout: () => emit("focusout"),
             },

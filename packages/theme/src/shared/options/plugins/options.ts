@@ -74,7 +74,7 @@ export interface PluginsOptions {
   comment?: CommentPluginOptions | false;
 
   /**
-   * code copy plugin options
+   * Options for @vuepress/copy-code
    *
    * @see https://ecosystem.vuejs.press/plugins/copy-code.html
    *
@@ -85,7 +85,7 @@ export interface PluginsOptions {
   copyCode?: CopyCodePluginOptions | boolean;
 
   /**
-   * Copyright Plugin options
+   * Options for @vuepress/copyright
    *
    * @see https://ecosystem.vuejs.press/plugins/copyright.html
    *
@@ -98,7 +98,7 @@ export interface PluginsOptions {
   copyright?: CopyrightPluginOptions | boolean;
 
   /**
-   * Options for  @vuepress/docsearch
+   * Options for @vuepress/docsearch
    *
    * @see https://vuejs.press/reference/plugin/docsearch.html
    *
@@ -129,7 +129,7 @@ export interface PluginsOptions {
   feed?: Omit<FeedPluginOptions, "hostname"> | boolean;
 
   /**
-   * Git plugin options
+   * Options for @vuepress/git
    *
    * @description By default this plugin is only enabled in production mode for performance reasons.
    *
@@ -274,7 +274,7 @@ export interface PluginsOptions {
   searchPro?: SearchProOptions | boolean;
 
   /**
-   * SEO plugin options
+   * Options for @vuepress/seo
    *
    * @see https://ecosystem.vuejs.press/plugins/seo/config.html
    *
@@ -287,7 +287,7 @@ export interface PluginsOptions {
   seo?: Omit<SeoPluginOptions, "hostname" | "author"> | boolean;
 
   /**
-   * Sitemap plugin options
+   * Options for @vuepress/sitemap
    *
    * @see https://ecosystem.vuejs.press/plugins/sitemap/config.html
    *

@@ -41,19 +41,17 @@ export const createPackageJson = async ({
   cwd = process.cwd(),
 }: CreatePackageJsonOptions): Promise<void> => {
   if (!bundler)
-    bundler = (
-      await inquirer.prompt<{ bundler: Bundler }>([
-        {
-          name: "bundler",
-          type: "list",
-          message: locale.question.bundler,
-          choices: bundlers,
-        },
-      ])
-    ).bundler;
+    ({ bundler } = await inquirer.prompt<{ bundler: Bundler }>([
+      {
+        name: "bundler",
+        type: "list",
+        message: locale.question.bundler,
+        choices: bundlers,
+      },
+    ]));
 
   /**
-   * generate package.json
+   * Generate package.json
    */
   const packageJsonPath = resolve(cwd, "package.json");
   const scripts = getScript(packageManager, bundler, source);

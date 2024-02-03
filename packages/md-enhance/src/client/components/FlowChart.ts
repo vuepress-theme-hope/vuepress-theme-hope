@@ -65,17 +65,17 @@ export default defineComponent({
     onMounted(() => {
       void Promise.all([
         import(/* webpackChunkName: "flowchart" */ "flowchart.ts"),
-        // delay
+        // Delay
         new Promise((resolve) => setTimeout(resolve, MARKDOWN_ENHANCE_DELAY)),
       ]).then(([{ parse }]) => {
         flowchart = parse(decodeData(props.code));
 
-        // update scale
+        // Update scale
         scale.value = getScale(window.innerWidth);
 
         loading.value = false;
 
-        // draw svg to #id
+        // Draw svg to #id
         flowchart.draw(props.id, { ...preset.value, scale: scale.value });
       });
 

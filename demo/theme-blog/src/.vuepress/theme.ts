@@ -68,10 +68,10 @@ export default hopeTheme(
 
     locales: {
       "/": {
-        // navbar
+        // Navbar
         navbar: enNavbar,
 
-        // sidebar
+        // Sidebar
         sidebar: enSidebar,
 
         footer: "Default footer",
@@ -96,10 +96,10 @@ export default hopeTheme(
        * Chinese locale config
        */
       "/zh/": {
-        // navbar
+        // Navbar
         navbar: zhNavbar,
 
-        // sidebar
+        // Sidebar
         sidebar: zhSidebar,
 
         footer: "默认页脚",
@@ -115,7 +115,7 @@ export default hopeTheme(
           tutorial: "教程",
         },
 
-        // page meta
+        // Page meta
         metaLocales: {
           editLink: "在 GitHub 上编辑此页",
         },
@@ -154,7 +154,7 @@ export default hopeTheme(
         components: ["Badge", "VPCard"],
       },
 
-      // all features are enabled for demo, only preserve features you need here
+      // All features are enabled for demo, only preserve features you need here
       mdEnhance: {
         align: true,
         attrs: true,

@@ -84,7 +84,7 @@ export default defineComponent({
         ),
 
         h(DropTransition, () =>
-          // star articles
+          // Star articles
           activeType.value === "article"
             ? h("div", { class: "vp-star-article-wrapper" }, [
                 h(

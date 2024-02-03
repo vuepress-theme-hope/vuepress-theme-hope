@@ -14,7 +14,7 @@ const { version } = <{ version: string }>(
 
 const IS_NETLIFY = "NETLIFY" in process.env;
 
-// the theme wrapper is located in <root>/docs-shared/src/theme-wrapper.ts
+// The theme wrapper is located in <root>/docs-shared/src/theme-wrapper.ts
 export default theme("components", {
   locales: {
     "/": {

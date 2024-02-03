@@ -68,9 +68,9 @@ export const updateSearchIndex = async (
       const { pathLocale, key } = page;
       const localeSearchIndex = previousSearchIndexStore[pathLocale];
 
-      // update index
+      // Update index
       if (pageIndexes) {
-        // remove previous index
+        // Remove previous index
         Array.from(localeSearchIndex._documentIds.values())
           .filter((id) => id.startsWith(key))
           .forEach((id) => discard(localeSearchIndex, id));
@@ -79,7 +79,7 @@ export const updateSearchIndex = async (
 
         await vacuum(localeSearchIndex);
 
-        // search index file content
+        // Search index file content
         const content = `\
 export default ${JSON.stringify(JSON.stringify(localeSearchIndex))}
 `;
@@ -119,14 +119,14 @@ export const removeSearchIndex = async (
       const { pathLocale, key } = page;
       const localeSearchIndex = previousSearchIndexStore[pathLocale];
 
-      // remove previous index
+      // Remove previous index
       Array.from(localeSearchIndex._documentIds.values())
         .filter((id) => id.startsWith(key))
         .forEach((id) => discard(localeSearchIndex, id));
 
       await vacuum(localeSearchIndex);
 
-      // search index file content
+      // Search index file content
       const content = `\
 export default ${JSON.stringify(JSON.stringify(localeSearchIndex))}
 `;

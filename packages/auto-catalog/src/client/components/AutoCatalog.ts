@@ -103,7 +103,7 @@ export default defineComponent({
     const getCatalogInfo = (): CatalogInfo[] =>
       router
         .getRoutes()
-        // filter real page
+        // Filter real page
         .filter(
           ({ path }) =>
             (endsWith(path, ".html") && !endsWith(path, "/index.html")) ||
@@ -139,7 +139,7 @@ export default defineComponent({
 
       catalogInfo.value
         .filter(({ level, path }) => {
-          // filter those under current base
+          // Filter those under current base
           if (!startsWith(path, base) || path === base) return false;
 
           if (base === "/") {
@@ -147,7 +147,7 @@ export default defineComponent({
               (item) => item !== "/",
             );
 
-            // exclude 404 page and other locales
+            // Exclude 404 page and other locales
             if (
               path === "/404.html" ||
               otherLocales.some((localePath) => startsWith(path, localePath))
@@ -156,7 +156,7 @@ export default defineComponent({
           }
 
           return (
-            // level is less than or equal to max level
+            // Level is less than or equal to max level
             level - baseDepth <= props.level
           );
         })
@@ -173,8 +173,11 @@ export default defineComponent({
             if (!isNumber(orderA)) {
               // infoB order is absent
               if (!isNumber(orderB))
-                // compare title
-                return titleA.localeCompare(titleB);
+                // Compare title
+                return titleA.localeCompare(titleB, undefined, {
+                  numeric: true,
+                  sensitivity: "accent",
+                });
 
               // infoB order is present
               return orderB;
@@ -183,7 +186,7 @@ export default defineComponent({
             // infoB order is absent
             if (!isNumber(orderB)) return orderA;
 
-            // now we are sure both order exist
+            // Now we are sure both order exist
 
             // infoA order is positive
             if (orderA > 0) {
@@ -192,7 +195,7 @@ export default defineComponent({
               return -1;
             }
 
-            // both order are negative
+            // Both order are negative
             if (orderB < 0) return orderA - orderB;
 
             return 1;

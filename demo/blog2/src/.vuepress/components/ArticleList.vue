@@ -12,9 +12,9 @@ interface Article {
 }
 
 defineProps<{
-  /** article items */
+  /** Article items */
   items: Article[];
-  /** whether is timeline or not */
+  /** Whether is timeline or not */
   isTimeline: boolean;
 }>();
 </script>

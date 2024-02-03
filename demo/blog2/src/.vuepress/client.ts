@@ -6,7 +6,7 @@ import Tag from "./layouts/Tag.vue";
 import Timeline from "./layouts/Timeline.vue";
 
 export default defineClientConfig({
-  // we provide some blog layouts
+  // We provide some blog layouts
   layouts: {
     Article,
     Category,

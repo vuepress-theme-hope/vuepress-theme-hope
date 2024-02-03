@@ -5,9 +5,9 @@ export const addFavicon = (app: App, favicon: string): void => {
   const { base, head } = app.options;
   const faviconLink = isLinkHttp(favicon)
     ? favicon
-    : favicon.replace(/^\/?/, base);
+    : favicon.replace(/^\/?/u, base);
 
-  // ensure favicon is not injected
+  // Ensure favicon is not injected
   if (
     head.every(
       ([tag, attrs]) =>

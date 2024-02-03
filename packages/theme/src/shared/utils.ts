@@ -29,7 +29,7 @@ export interface TextItemOptions {
  */
 export interface AutoLinkOptions extends TextItemOptions {
   /**
-   * link of item
+   * Link of item
    *
    * 当前页面链接
    */

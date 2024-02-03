@@ -12,7 +12,12 @@
  * THE SOFTWARE IS PROVIDED “AS IS”, WITHOUT WARRANTY OF ANY KIND, EXPRESS OR IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
  */
 
-import { ensureEndingSlash, entries, isString } from "@vuepress/helper/client";
+import {
+  ensureEndingSlash,
+  entries,
+  isDef,
+  isString,
+} from "@vuepress/helper/client";
 import { withBase } from "vuepress/client";
 import {
   checkIsMobile,
@@ -24,7 +29,7 @@ declare const PDFJS_URL: string | null;
 
 export interface ViewPDFOptions {
   /**
-   * title of pdf
+   * Title of pdf
    */
   title: string;
   hint: string;
@@ -32,7 +37,7 @@ export interface ViewPDFOptions {
 }
 
 const logError = (msg: string): void => {
-  console.error("[PDF]: " + msg);
+  console.error(`[PDF]: ${msg}`);
 };
 
 const emptyNodeContents = (node: HTMLElement): void => {
@@ -63,8 +68,10 @@ const buildURLFragmentString = (
       )
       .join("&");
 
-    // The string will be empty if no PDF Params found
-    // Remove last ampersand
+    /*
+     * The string will be empty if no PDF Params found
+     * Remove last ampersand
+     */
     if (url) url = `#${url.slice(0, url.length - 1)}`;
   }
 
@@ -109,7 +116,7 @@ const addPDFViewer = (
 
 export const viewPDF = (
   url: string,
-  targetSelector: string | HTMLElement | null = null,
+  targetSelector: string | HTMLElement | null,
   { title, hint, options = {} }: ViewPDFOptions,
 ): HTMLElement | null => {
   if (typeof window === "undefined" || !window?.navigator?.userAgent)
@@ -125,7 +132,7 @@ export const viewPDF = (
    * We use this to assume if the browser supports promises it supports embedded PDFs
    * Is this fragile? Sort of. But browser vendors removed mimetype detection, so we're left to improvise
    */
-  const isModernBrowser = window.Promise !== undefined;
+  const isModernBrowser = isDef(window.Promise);
 
   // Quick test for mobile devices.
   const isMobileDevice = checkIsiPad(userAgent) || checkIsMobile(userAgent);
@@ -136,7 +143,7 @@ export const viewPDF = (
   // Firefox started shipping PDF.js in Firefox 19. If this is Firefox 19 or greater, assume PDF.js is available
   const isFirefoxWithPDFJS =
     !isMobileDevice &&
-    /firefox/i.test(userAgent) &&
+    /firefox/iu.test(userAgent) &&
     userAgent.split("rv:").length > 1
       ? parseInt(userAgent.split("rv:")[1].split(".")[0], 10) > 18
       : false;
@@ -167,9 +174,11 @@ export const viewPDF = (
   const pdfTitle = title || /\/([^/]+).pdf/.exec(url)?.[1] || "PDF Viewer";
 
   if (supportsPDFs || !isMobileDevice) {
-    // There is an edge case where Safari does not respect 302 redirect requests for PDF files when using <embed> element.
-    // Redirect appears to work fine when using <iframe> instead of <embed> (Addresses issue #210)
-    // Forcing Safari desktop to use iframe due to freezing bug in macOS 11 (Big Sur)
+    /*
+     * There is an edge case where Safari does not respect 302 redirect requests for PDF files when using <embed> element.
+     * Redirect appears to work fine when using <iframe> instead of <embed> (Addresses issue #210)
+     * Forcing Safari desktop to use iframe due to freezing bug in macOS 11 (Big Sur)
+     */
     const embedType = isSafariDesktop ? "iframe" : "embed";
 
     return addPDFViewer(embedType, targetNode, url, options, pdfTitle);

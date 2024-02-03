@@ -87,7 +87,7 @@ export default defineComponent({
     noToolbar: Boolean,
 
     /**
-     * initial zoom level (in percent)
+     * Initial zoom level (in percent)
      *
      * 初始缩放比率 (百分比)
      */

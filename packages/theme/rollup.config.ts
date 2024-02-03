@@ -18,7 +18,7 @@ export default [
     {
       alias: [
         {
-          find: /^@theme-hope\/(.*)/,
+          find: /^@theme-hope\/(.*)/u,
           replacement: path.resolve(__dirname, "./src/client/$1.ts"),
         },
       ],
@@ -32,7 +32,7 @@ export default [
         "vuepress-plugin-blog2/client",
         "vuepress-plugin-comment2/pageview",
         "vuepress-plugin-md-enhance/SlidePage",
-        /\.jpg$/,
+        /\.jpg$/u,
       ],
       dts: false,
       moduleSideEffects: (id) =>

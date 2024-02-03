@@ -31,13 +31,12 @@ export const deprecatedLogger = ({
       let temp = options;
 
       keys.forEach((key, index) => {
-        if (index !== keys.length - 1) {
-          // ensure level exists
-          temp[key] = temp[key] || {};
-
-          temp = temp[key] as Record<string, unknown>;
-        } else {
+        if (index === keys.length - 1) {
           temp[key] = options[deprecatedOption];
+        } else {
+          // Ensure level exists
+          temp[key] ||= {};
+          temp = temp[key] as Record<string, unknown>;
         }
       });
     } else {

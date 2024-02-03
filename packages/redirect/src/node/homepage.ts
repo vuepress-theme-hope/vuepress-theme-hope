@@ -14,7 +14,7 @@ export const ensureRootHomePage = async (
   } = app;
 
   if (
-    // homepage not exists
+    // Homepage not exists
     pages.every(({ path }) => path !== "/")
   ) {
     const availableLocales = pages
@@ -25,7 +25,7 @@ export const ensureRootHomePage = async (
       await createPage(app, {
         path: "/",
         frontmatter: { title: "Home" },
-        // set markdown content
+        // Set markdown content
         content: `\
 Redirecting to the correct locale...
 

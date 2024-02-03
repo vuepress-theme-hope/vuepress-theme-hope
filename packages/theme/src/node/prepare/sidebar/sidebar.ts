@@ -22,7 +22,7 @@ import type {
 import { logger } from "../../utils.js";
 
 const removeExtension = (path: string): string =>
-  path.replace(/README\.md$/, "").replace(/\.md$/, "");
+  path.replace(/README\.md$/u, "").replace(/\.md$/u, "");
 
 const getGeneratePaths = (
   sidebarConfig: SidebarArrayOptions,
@@ -41,11 +41,11 @@ const getGeneratePaths = (
   }
 
   sidebarConfig.forEach((item) => {
-    // it’s a sidebar group config
+    // It’s a sidebar group config
     if (isPlainObject(item) && "children" in item) {
       const childPrefix = `${prefix}${item.prefix || ""}`;
 
-      // the children needs to be generated
+      // The children needs to be generated
       if (item.children === "structure") result.push(childPrefix);
       else result.push(...getGeneratePaths(item.children, childPrefix));
     }
@@ -78,7 +78,7 @@ export const getSidebarData = (
   const generatePaths: string[] = [];
   const sorters = getSidebarSorter(sorter);
 
-  // exact generate sidebar paths
+  // Exact generate sidebar paths
   entries(themeData.locales).forEach(([localePath, { sidebar }]) => {
     if (isArray(sidebar)) generatePaths.push(...getGeneratePaths(sidebar));
     else if (isPlainObject(sidebar))
@@ -89,7 +89,7 @@ export const getSidebarData = (
             ...getGeneratePaths(config).map((item) => `${prefix}${item}`),
           );
       });
-    // sidebar is default "structure"
+    // Sidebar is default "structure"
     else if (sidebar !== false) generatePaths.push(localePath);
   });
 

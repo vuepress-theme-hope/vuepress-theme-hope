@@ -31,7 +31,7 @@ export interface RouteLocaleData {
   back: string;
 
   /**
-   * screen reader only message in `<ExternalLinkIcon>`
+   * Screen reader only message in `<ExternalLinkIcon>`
    *
    * 在 `<ExternalLinkIcon>` 中的屏幕阅读器消息
    */

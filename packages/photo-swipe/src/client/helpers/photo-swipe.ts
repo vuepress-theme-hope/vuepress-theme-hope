@@ -4,7 +4,7 @@ import { inject } from "vue";
 
 export type PhotoSwipeOptions = Omit<
   OriginalPhotoSwipeOptions,
-  // these are handled internally
+  // These are handled internally
   "dataSource" | "index"
 >;
 

@@ -32,7 +32,7 @@ export const setupPhotoSwipe = (): void => {
   const registerPhotoswipeUI = (photoSwipe: PhotoSwipe): void => {
     photoSwipe.on("uiRegister", () => {
       if (isSupported)
-        // add fullscreen button
+        // Add fullscreen button
         photoSwipe.ui!.registerElement({
           name: "fullscreen",
           order: 7,
@@ -45,7 +45,7 @@ export const setupPhotoSwipe = (): void => {
           },
         });
 
-      // add download button
+      // Add download button
       photoSwipe.ui!.registerElement({
         name: "download",
         order: 8,
@@ -71,7 +71,7 @@ export const setupPhotoSwipe = (): void => {
         },
       });
 
-      // add bullets indicator
+      // Add bullets indicator
       photoSwipe.ui!.registerElement({
         name: "bulletsIndicator",
         className: "photo-swipe-bullets-indicator",

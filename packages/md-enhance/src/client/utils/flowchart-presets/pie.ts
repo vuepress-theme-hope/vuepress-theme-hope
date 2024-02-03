@@ -3,7 +3,7 @@ import base from "./base.js";
 export default {
   ...base,
 
-  // style symbol types
+  // Style symbol types
   "line-width": 1,
   symbols: {
     start: {

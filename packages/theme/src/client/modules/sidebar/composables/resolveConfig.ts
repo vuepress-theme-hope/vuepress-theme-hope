@@ -74,18 +74,18 @@ export const resolveArraySidebarItems = ({
       : item.link
         ? {
             ...item,
-            ...(!isLinkExternal(item.link)
-              ? {
+            ...(isLinkExternal(item.link)
+              ? {}
+              : {
                   link: resolveLinkInfo(
                     router,
                     resolvePrefix(pathPrefix, item.link),
                   ).link,
-                }
-              : {}),
+                }),
           }
         : item;
 
-    // resolved group item
+    // Resolved group item
     if ("children" in childItem) {
       const prefix = resolvePrefix(pathPrefix, childItem.prefix);
 
@@ -106,12 +106,14 @@ export const resolveArraySidebarItems = ({
       type: "page",
       ...childItem,
       children:
-        // if the sidebar item is current page and children is not set
-        // use headers of current page as children
+        /*
+         * If the sidebar item is current page and children is not set
+         * use headers of current page as children
+         */
         childItem.link === page.path
           ? headersToSidebarItemChildren(
               page,
-              // skip h1 header
+              // Skip h1 header
               page.headers[0]?.level === 1
                 ? page.headers[0].children
                 : page.headers,
@@ -142,7 +144,7 @@ export const resolveMultiSidebarItems = ({
 }: ResolveMultiSidebarOptions): ResolvedSidebarItem[] => {
   const sidebarRoutes = keys(config).sort((x, y) => y.length - x.length);
 
-  // find matching config
+  // Find matching config
   for (const base of sidebarRoutes)
     if (startsWith(decodeURI(page.path), base)) {
       const matched = config[base];
@@ -192,7 +194,7 @@ export const resolveSidebarItems = ({
   page,
   headerDepth,
 }: ResolveSidebarOptions): ResolvedSidebarItem[] =>
-  // resolve sidebar items according to the config
+  // Resolve sidebar items according to the config
   config === "heading"
     ? headersToSidebarItemChildren(page, page.headers, headerDepth)
     : config === "structure"

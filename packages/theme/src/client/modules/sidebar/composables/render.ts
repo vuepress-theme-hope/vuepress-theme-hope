@@ -18,12 +18,12 @@ export const renderSidebarItem = (
   props: VNode["props"],
 ): VNode =>
   isString(config.link)
-    ? // if the item has link, render it as `<AutoLink>`
+    ? // If the item has link, render it as `<AutoLink>`
       h(AutoLink, {
         ...props,
         config: config as AutoLinkType,
       })
-    : // if the item only has text, render it as `<p>`
+    : // If the item only has text, render it as `<p>`
       h("p", props, [h(HopeIcon, { icon: config.icon }), config.text]);
 
 export const renderSidebarChildren = (

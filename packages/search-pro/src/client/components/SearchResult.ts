@@ -142,15 +142,13 @@ export default defineComponent({
         activatedResultContentIndex.value <
         activatedResult.value.contents.length - 1
       )
-        activatedResultContentIndex.value =
-          activatedResultContentIndex.value + 1;
+        activatedResultContentIndex.value += 1;
       else activeNextResult();
     };
 
     const activePreviousResultContent = (): void => {
       if (activatedResultContentIndex.value > 0)
-        activatedResultContentIndex.value =
-          activatedResultContentIndex.value - 1;
+        activatedResultContentIndex.value -= 1;
       else activePreviousResult();
     };
 

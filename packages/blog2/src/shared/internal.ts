@@ -10,7 +10,7 @@ export interface CategoryLocaleMap {
 export interface CategoryLocaleConfig {
   /** Main page of category */
   path: string;
-  /** category map for current locale */
+  /** Category map for current locale */
   map: CategoryLocaleMap;
 }
 

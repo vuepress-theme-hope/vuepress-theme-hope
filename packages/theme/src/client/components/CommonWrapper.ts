@@ -70,7 +70,7 @@ export default defineComponent({
   slots: Object as SlotsType<{
     default: () => VNode[] | VNode | null;
 
-    // navbar
+    // Navbar
     navbarStartBefore?: () => VNode[] | VNode | null;
     navbarStartAfter?: () => VNode[] | VNode | null;
     navbarCenterBefore?: () => VNode[] | VNode | null;
@@ -80,7 +80,7 @@ export default defineComponent({
     navScreenTop?: () => VNode[] | VNode | null;
     navScreenBottom?: () => VNode[] | VNode | null;
 
-    // sidebar
+    // Sidebar
     sidebar?: () => VNode[] | VNode;
     sidebarTop?: () => VNode[] | VNode | null;
     sidebarBottom?: () => VNode[] | VNode | null;
@@ -100,7 +100,7 @@ export default defineComponent({
 
     const sidebarItems = useSidebarItems();
 
-    // navbar
+    // Navbar
     const hideNavbar = ref(false);
 
     const enableNavbar = computed(() => {
@@ -147,7 +147,7 @@ export default defineComponent({
       const dy = e.changedTouches[0].clientY - touchStart.y;
 
       if (
-        // horizontal swipe
+        // Horizontal swipe
         Math.abs(dx) > Math.abs(dy) * 1.5 &&
         Math.abs(dx) > 40
       )
@@ -162,7 +162,7 @@ export default defineComponent({
       document.body.scrollTop ||
       0;
 
-    // close sidebar after navigation
+    // Close sidebar after navigation
     let lastDistance = 0;
 
     useEventListener(
@@ -171,10 +171,10 @@ export default defineComponent({
         () => {
           const distance = getScrollTop();
 
-          // at top or scroll up
+          // At top or scroll up
           if (distance <= 58 || distance < lastDistance)
             hideNavbar.value = false;
-          // scroll down > 200px and sidebar is not opened
+          // Scroll down > 200px and sidebar is not opened
           else if (lastDistance + 200 < distance && !isMobileSidebarOpen.value)
             hideNavbar.value = true;
 
@@ -217,7 +217,7 @@ export default defineComponent({
             {
               class: [
                 "theme-container",
-                // classes
+                // Classes
                 {
                   "no-navbar": !enableNavbar.value,
                   "no-sidebar":
@@ -238,7 +238,7 @@ export default defineComponent({
               onTouchEnd,
             },
             [
-              // navbar
+              // Navbar
               enableNavbar.value
                 ? h(
                     Navbar,
@@ -255,7 +255,7 @@ export default defineComponent({
                     },
                   )
                 : null,
-              // sidebar mask
+              // Sidebar mask
               h(Transition, { name: "fade" }, () =>
                 isMobileSidebarOpen.value
                   ? h("div", {
@@ -264,7 +264,7 @@ export default defineComponent({
                     })
                   : null,
               ),
-              // toggle sidebar button
+              // Toggle sidebar button
               h(Transition, { name: "fade" }, () =>
                 isMobile.value
                   ? null
@@ -282,7 +282,7 @@ export default defineComponent({
                       }),
                     ),
               ),
-              // sidebar
+              // Sidebar
               h(
                 Sidebar,
                 {},

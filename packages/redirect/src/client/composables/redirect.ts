@@ -43,7 +43,7 @@ export const setupRedirect = (): void => {
 
     let matchedLocalePath: string | null = null;
 
-    // get matched locale
+    // Get matched locale
     findLanguage: for (const lang of languages.value)
       for (const [localePath, langs] of redirectLocaleEntries)
         if (langs.includes(lang)) {
@@ -57,12 +57,12 @@ export const setupRedirect = (): void => {
           break findLanguage;
         }
 
-    // default link
+    // Default link
     const defaultRoute = defaultLocale
       ? route.fullPath.replace("/", defaultLocale)
       : null;
 
-    // a locale matches
+    // A locale matches
     if (matchedLocalePath) {
       const hasLocalePage = routes.some(
         ({ path }) => route.path.replace("/", matchedLocalePath!) == path,
@@ -70,22 +70,22 @@ export const setupRedirect = (): void => {
       const localeRoute = route.fullPath.replace("/", matchedLocalePath);
 
       const routePath =
-        // the locale page exists
+        // The locale page exists
         hasLocalePage
           ? localeRoute
-          : // the page does not exist
+          : // The page does not exist
             defaultBehavior === "homepage"
-            ? // locale homepage
+            ? // Locale homepage
               matchedLocalePath
             : defaultBehavior === "defaultLocale" && defaultRoute
-              ? // default locale page
+              ? // Default locale page
                 defaultRoute
-              : // as is to get a 404 page of that locale
+              : // As is to get a 404 page of that locale
                 localeRoute;
 
       void router.replace(routePath);
     }
-    // we have a default page
+    // We have a default page
     else if (defaultRoute) {
       void router.replace(defaultRoute);
     } else if (route.path !== "/404.html") {
@@ -96,7 +96,7 @@ export const setupRedirect = (): void => {
   watch(
     () => route.path,
     (path) => {
-      // handle redirects
+      // Handle redirects
       for (const [from, to] of entries(redirectConfig))
         if (normalizePath(path.toLowerCase()) === from.toLowerCase()) {
           if (isLinkHttp(to)) window.open(to);

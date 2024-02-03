@@ -15,7 +15,7 @@ export const checkHeader = (
       .sort((a = 2, b = 2) => b - a)
       .pop() ?? 2;
 
-  // check anchor level
+  // Check anchor level
   if (markdownOptions.anchor) {
     const { level } = markdownOptions.anchor;
 
@@ -49,7 +49,7 @@ export const checkHeader = (
     delete markdownOptions.anchor;
   }
 
-  // check headers level
+  // Check headers level
   if (markdownOptions.headers === false) {
     if (headerDepth !== 0) {
       logger.error(

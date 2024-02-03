@@ -32,7 +32,7 @@ export const setupSidebarItems = (): void => {
   const routeLocale = useRouteLocale();
   const router = useRouter();
 
-  // get sidebar config from frontmatter > themeConfig
+  // Get sidebar config from frontmatter > themeConfig
   const sidebarConfig = computed(() =>
     frontmatter.value.home
       ? false

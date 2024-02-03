@@ -17,13 +17,13 @@ export default defineComponent({
   name: "IconDisplay",
 
   props: {
-    /** icon assets link */
+    /** Icon assets link */
     link: {
       type: String,
       required: true,
     },
 
-    /** icon font class prefix */
+    /** Icon font class prefix */
     iconPrefix: {
       type: String,
       default: "icon-",
@@ -37,7 +37,7 @@ export default defineComponent({
     const copyToClipboard = (content: string): void => {
       const selection = document.getSelection();
 
-      /** current selection */
+      /** Current selection */
       const selectedRange =
         selection && selection.rangeCount > 0 ? selection.getRangeAt(0) : false;
 
@@ -56,7 +56,7 @@ export default defineComponent({
 
       document.body.removeChild(textAreaElement);
 
-      // recover the previous selection
+      // Recover the previous selection
       if (selectedRange && selection) {
         selection.removeAllRanges();
         selection.addRange(selectedRange);

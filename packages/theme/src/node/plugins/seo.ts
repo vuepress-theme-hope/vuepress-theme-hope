@@ -17,7 +17,7 @@ export const getSEOPlugin = (
   if (seo === false) return null;
   const seoOptions = isPlainObject(seo) ? seo : {};
 
-  // disable seo if `hostname` is not set and no options for seo plugin
+  // Disable seo if `hostname` is not set and no options for seo plugin
   if (!keys(seoOptions).length && !hostname) return null;
 
   return seoPlugin({
