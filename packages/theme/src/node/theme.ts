@@ -53,7 +53,6 @@ export const hopeTheme = (
       hostname,
       iconAssets,
       iconPrefix,
-      backToTop,
       sidebarSorter,
       ...themeOptions
     } = behaviorOptions.compact
@@ -130,7 +129,6 @@ export const hopeTheme = (
 
         // @ts-ignore
         {
-          backToTop,
           hostname,
           hotReload,
           iconAssets,

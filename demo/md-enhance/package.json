@@ -19,7 +19,7 @@
     "@vue/repl": "3.4.0",
     "@vuepress/bundler-vite": "2.0.0-rc.2",
     "@vuepress/bundler-webpack": "2.0.0-rc.2",
-    "@vuepress/theme-default": "2.0.0-rc.8",
+    "@vuepress/theme-default": "2.0.0-rc.9",
     "chart.js": "4.4.1",
     "echarts": "5.4.3",
     "echarts-wordcloud": "2.1.0",

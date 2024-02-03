@@ -38,10 +38,6 @@ export default defineUserConfig({
       "/demo/xi-gua",
       "/demo/you-tube",
     ],
-
-    themePlugins: {
-      backToTop: false,
-    },
   }),
 
   extendsBundlerOptions: (bundlerOptions, app) => {
@@ -80,7 +76,6 @@ export default defineUserConfig({
       },
 
       rootComponents: {
-        backToTop: true,
         notice: [
           {
             match: /^\/$/,

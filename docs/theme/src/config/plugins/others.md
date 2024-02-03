@@ -17,6 +17,14 @@ No extra config is required by default. Se it to `false` if you don't need it.
 
 Check <ProjectLink name="auto-catalog" path="/config.html">auto catalog plugin docs</ProjectLink> for available plugin options.
 
+## backToTop <Badge text="enabled by default" />
+
+Controls `@vuepress/plugin-back-to-top` which provides a back to top button.
+
+No extra config is required by default. Se it to `false` if you don't need it.
+
+Check [back-to-top plugin docs][back-to-top-config] for available plugin options.
+
 ## components
 
 Controls `vuepress-plugin-components`, providing a set of components for Markdown.
@@ -129,6 +137,7 @@ No extra config is required by default. Se it to `false` if you don't need it.
 
 Check [sitemap plugin docs][sitemap-config] for available plugin options.
 
+[back-to-top-config]: https://ecosystem.vuejs.press/plugins/back-to-top.html#options
 [copy-code-config]: https://ecosystem.vuejs.press/plugins/copy-code.html#options
 [git-config]: https://ecosystem.vuejs.press/plugins/git.html#options
 [reading-time-config]: https://ecosystem.vuejs.press/plugins/reading-time.html#options

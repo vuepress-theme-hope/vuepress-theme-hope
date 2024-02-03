@@ -72,33 +72,6 @@ If you don't need this feature, set `darkmode: "disable"` to disable it.
 
 Whether show the "full screen" button.
 
-## backToTop <Badge text="Root only" type="warning" />
-
-- Type: `BackToTopOptions | boolean`
-
-  ```ts
-  interface BackToTopOptions {
-    /**
-     * Scroll threshold distance to display back to top button (in pixels)
-     *
-     * @default 100
-     */
-    threshold?: number;
-
-    /**
-     * Whether display scroll progress
-     *
-     * @default true
-     */
-    progress?: boolean;
-  }
-  ```
-
-- Default: `true`
-- Details: [Interface → Back to top button](../../guide/interface/others.md#back-to-top-button)
-
-Back to top button customization, setting it to `false` disables the button.
-
 ## pure <Badge text="Root only" type="warning" />
 
 - Type: `boolean`

@@ -1,11 +1,14 @@
 import { isPlainObject, keys } from "@vuepress/helper";
-import type { RedirectOptions } from "@vuepress/plugin-redirect";
+import type { RedirectPluginOptions } from "@vuepress/plugin-redirect";
 import type { Plugin } from "vuepress/core";
 import { colors } from "vuepress/utils";
 
 import { logger } from "../utils.js";
 
-let redirectPlugin: (options: RedirectOptions, legacy?: boolean) => Plugin;
+let redirectPlugin: (
+  options: RedirectPluginOptions,
+  legacy?: boolean,
+) => Plugin;
 
 try {
   ({ redirectPlugin } = await import("@vuepress/plugin-redirect"));
@@ -19,7 +22,7 @@ try {
  * Resolve options for vuepress-plugin-redirect
  */
 export const getRedirectPlugin = (
-  options?: Omit<RedirectOptions, "hostname"> | boolean | undefined,
+  options?: Omit<RedirectPluginOptions, "hostname"> | boolean | undefined,
   hostname?: string,
   legacy = false,
 ): Plugin | null => {
@@ -36,7 +39,7 @@ export const getRedirectPlugin = (
   }
 
   return redirectPlugin(
-    <RedirectOptions>{
+    <RedirectPluginOptions>{
       hostname,
       ...(isPlainObject(options) ? options : { switchLocale: "modal" }),
     },

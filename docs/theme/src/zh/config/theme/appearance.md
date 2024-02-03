@@ -72,32 +72,6 @@ tag:
 
 是否显示全屏按钮。
 
-## backToTop <Badge text="仅限 Root" type="warning" />
-
-- 类型: `BackToTopOptions | boolean`
-
-  ```ts
-  interface BackToTopOptions {
-    /**
-     * 滚动距离阈值，用于显示返回顶部按钮 (单位: 像素)
-     *
-     * @default 100
-     */
-    threshold?: number;
-
-    /**
-     * 是否显示滚动进度
-     *
-     * @default true
-     */
-    progress?: boolean;
-  }
-  ```
-
-- 默认值: `true`
-
-自定义返回顶部按钮，将其设置为 `false` 会禁用该按钮。
-
 ## pure <Badge text="仅限 Root" type="warning" />
 
 - 类型: `boolean`

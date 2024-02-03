@@ -1,10 +1,11 @@
+import type { BackToTopPluginOptions } from "@vuepress/plugin-back-to-top";
 import type { CopyCodePluginOptions } from "@vuepress/plugin-copy-code";
 import type { CopyrightPluginOptions } from "@vuepress/plugin-copyright";
 import type { DocsearchPluginOptions } from "@vuepress/plugin-docsearch";
 import type { FeedPluginOptions } from "@vuepress/plugin-feed";
 import type { GitPluginOptions } from "@vuepress/plugin-git";
 import type { ReadingTimePluginOptions } from "@vuepress/plugin-reading-time";
-import type { RedirectOptions } from "@vuepress/plugin-redirect";
+import type { RedirectPluginOptions } from "@vuepress/plugin-redirect";
 import type { SearchPluginOptions } from "@vuepress/plugin-search";
 import type { SeoPluginOptions } from "@vuepress/plugin-seo";
 import type { SitemapPluginOptions } from "@vuepress/plugin-sitemap";
@@ -37,6 +38,17 @@ export interface PluginsOptions {
    * @default true
    */
   autoCatalog?: AutoCatalogOptions | boolean;
+
+  /**
+   * Options for @vuepress/back-to-top
+   *
+   * @see https://ecosystem.vuejs.press/plugins/back-to-top.html
+   *
+   * 返回顶部插件配置
+   *
+   * @see https://ecosystem.vuejs.press/zh/plugins/back-to-top.html
+   */
+  backToTop?: BackToTopPluginOptions | boolean;
 
   /**
    * Blog plugin options
@@ -249,7 +261,7 @@ export interface PluginsOptions {
    *
    * @see https://plugin-redirect.vuejs.press/zh/config/
    */
-  redirect?: RedirectOptions | boolean;
+  redirect?: RedirectPluginOptions | boolean;
 
   /**
    * @vuepress/search plugin options
