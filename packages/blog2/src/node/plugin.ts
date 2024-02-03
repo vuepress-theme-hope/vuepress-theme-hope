@@ -9,10 +9,14 @@ import {
   preparePagesRoutes,
 } from "vuepress/core";
 
-import { prepareCategory } from "./category.js";
 import { convertOptions } from "./compact.js";
+import {
+  Store,
+  prepareCategory,
+  prepareStore,
+  prepareType,
+} from "./generator/index.js";
 import type { BlogOptions, PageWithExcerpt } from "./options.js";
-import { prepareType } from "./type.js";
 import { PLUGIN_NAME, getPageMap, logger } from "./utils.js";
 
 export const blogPlugin =
@@ -42,6 +46,7 @@ export const blogPlugin =
     } = options;
 
     let generatePageKeys: string[] = [];
+    const store = new Store();
 
     if (app.env.isDebug) logger.info("Options:", options);
 
@@ -83,19 +88,21 @@ export const blogPlugin =
         });
 
         return Promise.all([
-          prepareCategory(app, { category, slugify }, pageMap, true).then(
+          prepareCategory(app, { category, slugify }, pageMap, store).then(
             (pageKeys) => {
               generatePageKeys.push(...pageKeys);
             },
           ),
-          prepareType(app, { type, slugify }, pageMap, true).then(
+          prepareType(app, { type, slugify }, pageMap, store).then(
             (pageKeys) => {
               generatePageKeys.push(...pageKeys);
             },
           ),
-        ]).then(() => {
-          if (app.env.isDebug) logger.info("temp file generated");
-        });
+        ])
+          .then(() => prepareStore(app, store))
+          .then(() => {
+            if (app.env.isDebug) logger.info("temp file generated");
+          });
       },
 
       onWatched: (app, watchers): void => {
@@ -114,15 +121,23 @@ export const blogPlugin =
             const pageMap = getPageMap(app, filter);
 
             return Promise.all([
-              prepareCategory(app, { category, slugify }, pageMap).then(
+              prepareCategory(
+                app,
+                { category, slugify },
+                pageMap,
+                store,
+                true,
+              ).then((pageKeys) => {
+                newGeneratedPageKeys.push(...pageKeys);
+              }),
+              prepareType(app, { type, slugify }, pageMap, store, true).then(
                 (pageKeys) => {
                   newGeneratedPageKeys.push(...pageKeys);
                 },
               ),
-              prepareType(app, { type, slugify }, pageMap).then((pageKeys) => {
-                newGeneratedPageKeys.push(...pageKeys);
-              }),
             ]).then(async () => {
+              await prepareStore(app, store);
+
               const pagesToBeRemoved = generatePageKeys.filter(
                 (key) => !newGeneratedPageKeys.includes(key),
               );

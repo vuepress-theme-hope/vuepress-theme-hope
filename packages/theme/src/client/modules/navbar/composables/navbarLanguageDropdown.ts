@@ -1,8 +1,8 @@
 import { entries, keys } from "@vuepress/helper/client";
 import { computedWithControl } from "@vueuse/core";
 import type { ComputedRef, WatchSource } from "vue";
-import { useRoute, useRouter } from "vue-router";
-import { useRouteLocale, useSiteLocaleData } from "vuepress/client";
+import { useRoute } from "vue-router";
+import { useRoutes, useRouteLocale, useSiteLocaleData } from "vuepress/client";
 
 import {
   useThemeData,
@@ -18,7 +18,7 @@ declare const __VUEPRESS_DEV__: boolean;
  */
 export const useNavbarLanguageDropdown =
   (): ComputedRef<NavGroup<AutoLinkOptions> | null> => {
-    const router = useRouter();
+    const routes = useRoutes();
     const route = useRoute();
     const routeLocale = useRouteLocale();
     const siteLocale = useSiteLocaleData();
@@ -76,9 +76,7 @@ export const useNavbarLanguageDropdown =
 
                 link =
                   // Try to link to the corresponding page of current page
-                  router
-                    .getRoutes()
-                    .some((item) => item.path === targetLocalePage)
+                  routes.value.some(({ path }) => path === targetLocalePage)
                     ? // Try to keep current hash across languages
                       fullPath.replace(path, targetLocalePage)
                     : // Or fallback to homepage

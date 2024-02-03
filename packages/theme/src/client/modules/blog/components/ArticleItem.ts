@@ -1,7 +1,6 @@
 import type { PropType, SlotsType, VNode } from "vue";
 import { defineComponent, h, toRef } from "vue";
-import { withBase } from "vuepress/client";
-import { VPLink } from "vuepress-shared/client";
+import { VPLink, withBase } from "vuepress/client";
 
 import {
   SlideIcon,

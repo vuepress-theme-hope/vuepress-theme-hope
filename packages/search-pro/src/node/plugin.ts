@@ -17,7 +17,7 @@ import {
   prepareSearchIndex,
   removeSearchIndex,
   updateSearchIndex,
-} from "./prepare.js";
+} from "./prepare/index.js";
 import { CLIENT_FOLDER, PLUGIN_NAME, logger } from "./utils.js";
 
 export const searchProPlugin =

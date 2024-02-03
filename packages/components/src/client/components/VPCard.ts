@@ -1,8 +1,7 @@
-import { isLinkExternal } from "@vuepress/helper/client";
 import type { FunctionalComponent } from "vue";
 import { h } from "vue";
-import { withBase } from "vuepress/client";
-import { VPLink } from "vuepress-shared/client";
+import { VPLink, withBase } from "vuepress/client";
+import { isLinkExternal } from "@vuepress/helper/client";
 
 import "../styles/vp-card.scss";
 

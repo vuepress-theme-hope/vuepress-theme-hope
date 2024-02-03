@@ -1,8 +1,8 @@
 import { entries } from "@vuepress/helper/client";
 import type { VNode } from "vue";
 import { defineComponent, h } from "vue";
-import { usePageData } from "vuepress/client";
-import { VPLink, generateIndexFromHash } from "vuepress-shared/client";
+import { VPLink, usePageData } from "vuepress/client";
+import { generateIndexFromHash } from "vuepress-shared/client";
 
 import { useCategoryMap } from "@theme-hope/modules/blog/composables/index";
 

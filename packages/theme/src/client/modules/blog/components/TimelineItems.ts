@@ -1,7 +1,7 @@
 import type { VNode } from "vue";
 import { computed, defineComponent, h } from "vue";
 import type { PageHeader } from "vuepress/client";
-import { VPLink } from "vuepress-shared/client";
+import { VPLink } from "vuepress/client";
 
 import DropTransition from "@theme-hope/components/transitions/DropTransition";
 import { useThemeLocaleData } from "@theme-hope/composables/index";

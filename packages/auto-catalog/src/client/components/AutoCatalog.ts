@@ -11,9 +11,13 @@ import {
 } from "@vuepress/helper/client";
 import type { VNode } from "vue";
 import { computed, defineComponent, h, shallowRef } from "vue";
-import { useRouter } from "vue-router";
-import { usePageData, useSiteData } from "vuepress/client";
-import { VPLink } from "vuepress-shared/client";
+import {
+  VPLink,
+  resolveRoute,
+  useRoutes,
+  usePageData,
+  useSiteData,
+} from "vuepress/client";
 
 import type { AutoCatalogLocaleConfig } from "../../shared/index.js";
 import type { AutoCatalogInfo } from "../helpers/index.js";
@@ -97,18 +101,11 @@ export default defineComponent({
     const autoCatalogGetter = useAutoCatalogGetter();
     const locale = useLocaleConfig(AUTO_CATALOG_LOCALES);
     const page = usePageData();
-    const router = useRouter();
+    const routes = useRoutes();
     const siteData = useSiteData();
 
     const getCatalogInfo = (): CatalogInfo[] =>
-      router
-        .getRoutes()
-        // Filter real page
-        .filter(
-          ({ path }) =>
-            (endsWith(path, ".html") && !endsWith(path, "/index.html")) ||
-            endsWith(path, "/"),
-        )
+      routes.value
         .map(({ meta, path }) => {
           const info = autoCatalogGetter(meta);
 
