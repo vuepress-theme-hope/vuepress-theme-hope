@@ -1,6 +1,6 @@
 {
   "name": "pwa2-demo",
-  "version": "2.0.0-rc.19",
+  "version": "2.0.0-rc.20",
   "private": true,
   "description": "Demo for vuepress-plugin-pwa2",
   "license": "MIT",

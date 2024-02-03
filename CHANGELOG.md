@@ -4,6 +4,24 @@ All notable changes to this project will be documented in this file. See [Conven
 
 <!-- #region recent-change -->
 
+## [2.0.0-rc.20](https://github.com/vuepress-theme-hope/vuepress-theme-hope/compare/v2.0.0-rc.19...v2.0.0-rc.20) (2024-02-03)
+
+### Features
+
+- **auto-catalog:** improve locale compare ([002664b](https://github.com/vuepress-theme-hope/vuepress-theme-hope/commit/002664bb3479cfddb01c73e108e52c611b668f47))
+- **md-enhance:** support block chart in mermaid ([06043fa](https://github.com/vuepress-theme-hope/vuepress-theme-hope/commit/06043fa79b04b76d8fa5f15ac324e0c0fd39dbaa))
+- remove redirect and remove-pwa plugin ([6449cd2](https://github.com/vuepress-theme-hope/vuepress-theme-hope/commit/6449cd242b15754ebf7cc18c61fbeda5f539a573))
+- use official back-to-top button ([8f5946f](https://github.com/vuepress-theme-hope/vuepress-theme-hope/commit/8f5946f21c399c1a84c9b39f4fb31023e26dcc47))
+
+### Bug Fixes
+
+- **deps:** update dependency @vuepress/helper to v2.0.0-rc.7 ([#3886](https://github.com/vuepress-theme-hope/vuepress-theme-hope/issues/3886)) ([c9300d2](https://github.com/vuepress-theme-hope/vuepress-theme-hope/commit/c9300d201cfa9f48f56cdde646cab9ac2df909be))
+- **redirect:** avoid autoLocale being handled when path inside redirectMap ([c11fe5e](https://github.com/vuepress-theme-hope/vuepress-theme-hope/commit/c11fe5e4ba4e949f6baa7beb23c06c7bc7fc51f8))
+
+### Performance Improvements
+
+- **redirect:** avoid recalculating hostname ([0c1719c](https://github.com/vuepress-theme-hope/vuepress-theme-hope/commit/0c1719c283f63d992bda5f3d385b763617b023b2))
+
 ## [2.0.0-rc.19](https://github.com/vuepress-theme-hope/vuepress-theme-hope/compare/v2.0.0-rc.18...v2.0.0-rc.19) (2024-02-02)
 
 ### Features
