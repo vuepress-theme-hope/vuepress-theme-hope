@@ -1,14 +1,14 @@
 import { isPlainObject, keys } from "@vuepress/helper";
+import type { RedirectOptions } from "@vuepress/plugin-redirect";
 import type { Plugin } from "vuepress/core";
 import { colors } from "vuepress/utils";
-import type { RedirectOptions } from "vuepress-plugin-redirect";
 
 import { logger } from "../utils.js";
 
 let redirectPlugin: (options: RedirectOptions, legacy?: boolean) => Plugin;
 
 try {
-  ({ redirectPlugin } = await import("vuepress-plugin-redirect"));
+  ({ redirectPlugin } = await import("@vuepress/plugin-redirect"));
 } catch (e) {
   // Do nothing
 }

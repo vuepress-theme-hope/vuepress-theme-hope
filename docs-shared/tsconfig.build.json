@@ -11,8 +11,6 @@
   "include": ["./src", "./src/*.d.ts"],
   "references": [
     { "path": "../packages/shared/tsconfig.build.json" },
-    { "path": "../packages/redirect/tsconfig.build.json" },
-    { "path": "../packages/remove-pwa/tsconfig.build.json" },
     { "path": "../packages/theme/tsconfig.build.json" }
   ]
 }

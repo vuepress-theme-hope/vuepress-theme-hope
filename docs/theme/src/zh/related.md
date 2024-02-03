@@ -69,16 +69,6 @@ const features = [
     link: getLink("pwa2"),
   },
   {
-    text: "移除 PWA 插件",
-    icon: "trash-can",
-    link: getLink("remove-pwa"),
-  },
-  {
-    text: "重定向插件",
-    icon: "fas fa-eject fa-rotate-90",
-    link: getLink("redirect"),
-  },
-  {
     text: "Sass 调色板插件",
     icon: "palette",
     link: getLink("sass-palette"),

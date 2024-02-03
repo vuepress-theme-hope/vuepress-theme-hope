@@ -69,16 +69,6 @@ const features = [
     link: getLink("pwa2"),
   },
   {
-    text: "Remove PWA Plugin",
-    icon: "trash-can",
-    link: getLink("remove-pwa"),
-  },
-  {
-    text: "Redirect Plugin",
-    icon: "fas fa-eject fa-rotate-90",
-    link: getLink("redirect"),
-  },
-  {
     text: "Sass Palette Plugin",
     icon: "palette",
     link: getLink("sass-palette"),

@@ -90,9 +90,9 @@ These plugins are supported by theme, but you need to install them manually whil
 
 - [@vuepress/plugin-feed][feed]: Feed support
 
-- <ProjectLink name="pwa2">vuepress-plugin-pwa2</ProjectLink>: Enhanced PWA support
+- [@vuepress/plugin-redirect][redirect]: Redirect pages
 
-- <ProjectLink name="redirect">vuepress-plugin-redirect</ProjectLink>: Redirect pages
+- <ProjectLink name="pwa2">vuepress-plugin-pwa2</ProjectLink>: Enhanced PWA support
 
 - <ProjectLink name="search-pro">vuepress-plugin-search-pro</ProjectLink>: Professional Client search plugin
 
@@ -106,6 +106,7 @@ These plugins are supported by theme, but you need to install them manually whil
 [nprogress]: https://ecosystem.vuejs.press/plugins/nprogress.html
 [prismjs]: https://ecosystem.vuejs.press/plugins/prismjs.html
 [reading-time]: https://ecosystem.vuejs.press/plugins/reading-time.html
+[redirect]: https://ecosystem.vuejs.press/plugins/redirect.html
 [search]: https://ecosystem.vuejs.press/plugins/search.html
 [seo]: https://ecosystem.vuejs.press/plugins/seo/
 [sitemap]: https://ecosystem.vuejs.press/plugins/sitemap/

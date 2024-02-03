@@ -181,10 +181,6 @@ Here are some other plugins that are not bundled by the theme, you can enable th
 
 - <ProjectLink name="lightgallery">vuepress-plugin-lightgallery</ProjectLink>: Image preview plugin based on lightgallery
 
-- <ProjectLink name="redirect">vuepress-plugin-redirect</ProjectLink>: Redirect pages
-
-- <ProjectLink name="remove-pwa">vuepress-plugin-remove-pwa</ProjectLink>: Plugins to remove pwa
-
 - <ProjectLink name="search-pro">vuepress-plugin-search-pro</ProjectLink>: Client search plugin
 
 :::
