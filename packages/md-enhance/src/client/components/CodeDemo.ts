@@ -113,7 +113,7 @@ export default defineComponent({
     const isLegal = computed(() => code.value.isLegal);
 
     const initDom = (innerHTML = false): void => {
-      // attach a shadow root to demo
+      // Attach a shadow root to demo
 
       const shadowRoot = demoWrapper.value!.attachShadow({ mode: "open" });
       const appElement = document.createElement("div");

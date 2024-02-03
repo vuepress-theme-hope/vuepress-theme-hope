@@ -23,7 +23,7 @@ export interface InfoOptions {
   license?: string;
 
   /**
-   * domain which to be deployed to
+   * Domain which to be deployed to
    *
    * 网站部署域名
    */

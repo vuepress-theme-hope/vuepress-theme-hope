@@ -12,7 +12,7 @@ export const usePrismPlugin = (app: App): void => {
   if (
     plugins.every(
       (plugin) =>
-        // ensure highlight plugin is not used
+        // Ensure highlight plugin is not used
         plugin.name !== "@vuepress/plugin-prismjs" &&
         plugin.name !== "@vuepress/plugin-shiki",
     )

@@ -71,7 +71,7 @@ export default defineComponent({
               {
                 type: "button",
                 class: "vp-back-to-top-button",
-                // hint text
+                // Hint text
                 "aria-label": locale.value.backToTop,
                 "data-balloon-pos": "left",
                 // Scroll to top

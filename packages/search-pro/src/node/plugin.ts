@@ -87,7 +87,7 @@ export const searchProPlugin =
           "hotReload" in options ? options.hotReload : app.env.isDebug;
 
         if (hotReload) {
-          // this ensure the page is generated or updated
+          // This ensure the page is generated or updated
           const searchIndexWatcher = watch("pages/**/*.vue", {
             cwd: app.dir.temp(),
             ignoreInitial: true,

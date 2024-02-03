@@ -43,7 +43,7 @@ export const useBlogCategory = <
     if (!mapKey) {
       console.warn(`useBlogCategory: key not found`);
 
-      // fallback data
+      // Fallback data
       return { path: "/", map: {} };
     }
 

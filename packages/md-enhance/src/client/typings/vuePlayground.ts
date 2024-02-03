@@ -11,14 +11,14 @@ import type { SFCOptions } from "@vue/repl";
  */
 export interface VuePlaygroundOptions {
   /**
-   * specify the version of vue
+   * Specify the version of vue
    *
    * 指定 vue 版本
    */
   vueVersion?: string;
 
   /**
-   * specify default URL to import Vue runtime from in the sandbox
+   * Specify default URL to import Vue runtime from in the sandbox
    *
    * 指定默认的 Vue 运行时
    *

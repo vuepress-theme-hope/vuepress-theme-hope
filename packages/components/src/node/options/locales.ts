@@ -9,7 +9,7 @@ import type {
 
 export interface ComponentLocaleOptions {
   /**
-   * backToTop button Locales config
+   * BackToTop button Locales config
    *
    * 返回顶部按钮国际化配置
    */

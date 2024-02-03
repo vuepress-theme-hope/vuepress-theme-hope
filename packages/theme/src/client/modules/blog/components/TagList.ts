@@ -24,7 +24,7 @@ export default defineComponent({
         "ul",
         { class: "tag-list-wrapper" },
         entries(tagMap.value.map)
-          // sort from more to less
+          // Sort from more to less
           .sort(([, a], [, b]) => b.items.length - a.items.length)
           .map(([tag, { path, items }]) =>
             h(

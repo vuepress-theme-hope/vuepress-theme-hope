@@ -67,7 +67,7 @@ export default defineComponent({
                   ref: pageviewElement,
                   id: "ArtalkPV",
                   class: "waline-pageview-count",
-                  /** visitorID */
+                  /** VisitorID */
                   "data-path": isString(props.pageview)
                     ? props.pageview
                     : route.path,

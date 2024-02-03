@@ -22,11 +22,11 @@ export const getLinksCheckStatus = (
 
   return {
     enabled:
-      // always check
+      // Always check
       status === "always" ||
-      // enable in dev
+      // Enable in dev
       (app.env.isDev && status === "dev") ||
-      // enabled in build
+      // Enabled in build
       (app.env.isBuild && status === "build") ||
       false,
     isIgnoreLink: isFunction(ignore)
@@ -54,20 +54,20 @@ export const linksCheck = (
 
   const brokenLinks = [
     ...markdownLinks
-      // relative markdown links
+      // Relative markdown links
       .filter(({ raw }) => !isLinkAbsolute(raw))
       .filter(
         ({ relative }) =>
-          // check whether the page exists
+          // Check whether the page exists
           pages.every(
             ({ filePathRelative }) => filePathRelative !== decodeURI(relative),
           ) && !isIgnoreLink(relative),
       ),
     ...markdownLinks
-      // absolute markdown links
+      // Absolute markdown links
       .filter(({ raw }) => isLinkAbsolute(raw))
       .filter(({ absolute }) =>
-        // check whether the page exists
+        // Check whether the page exists
         pages.every(
           ({ filePathRelative }) =>
             !filePathRelative ||

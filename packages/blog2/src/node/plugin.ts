@@ -53,7 +53,7 @@ export const blogPlugin =
       }),
 
       extendsPage: (page): void => {
-        // generate page excerpt
+        // Generate page excerpt
         if (excerpt && excerptFilter(page))
           (<PageWithExcerpt>page).data["excerpt"] = getPageExcerpt(app, page, {
             isCustomElement,
@@ -72,7 +72,7 @@ export const blogPlugin =
       onInitialized: (app): Promise<void> => {
         const pageMap = getPageMap(app, filter);
 
-        // inject meta information
+        // Inject meta information
         app.pages.filter(filter).forEach((page) => {
           page.routeMeta = {
             ...(metaScope === ""
@@ -136,7 +136,7 @@ export const blogPlugin =
                     `New pages detected: ${pagesToBeAdded.toString()}`,
                   );
 
-                // prepare page files
+                // Prepare page files
                 await Promise.all(
                   pagesToBeAdded.map(async (pageKey) => {
                     const page = app.pages.find(({ key }) => key === pageKey)!;
@@ -147,7 +147,7 @@ export const blogPlugin =
                 );
               }
 
-              // remove pages
+              // Remove pages
               if (pagesToBeRemoved.length) {
                 if (app.env.isDebug)
                   logger.info(
@@ -162,7 +162,7 @@ export const blogPlugin =
                 });
               }
 
-              // prepare pages entry
+              // Prepare pages entry
               if (pagesToBeRemoved.length || pagesToBeAdded.length) {
                 await preparePagesComponents(app);
                 await preparePagesData(app);

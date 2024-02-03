@@ -37,7 +37,7 @@ export const useBlogType = <
     if (!mapKey) {
       console.warn(`useBlogType: key not found`);
 
-      // fallback data
+      // Fallback data
       return { path: "/", items: [] };
     }
 

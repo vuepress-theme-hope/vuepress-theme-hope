@@ -14,7 +14,7 @@ export const ensureDirExistSync = (dirPath: string): void => {
     try {
       mkdirSync(dirPath, { recursive: true });
     } catch (err) {
-      // this is the case where the directory already exists but can not read, e.g.: D:\
+      // This is the case where the directory already exists but can not read, e.g.: D:\
     }
   }
 };
@@ -24,8 +24,8 @@ export const copyFile = (srcFile: string, targetFile: string): void => {
 
   ensureDirExistSync(targetDir);
 
-  const rs = createReadStream(srcFile); // create read stream
-  const ws = createWriteStream(targetFile); // create write stream
+  const rs = createReadStream(srcFile); // Create read stream
+  const ws = createWriteStream(targetFile); // Create write stream
 
   rs.pipe(ws);
 };

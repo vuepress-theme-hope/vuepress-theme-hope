@@ -99,7 +99,7 @@ export const convertFrontmatter = (
       frontmatter["layout"] = "BlogHome";
     }
 
-    // check project homepage
+    // Check project homepage
     if (!("layout" in frontmatter))
       DEPRECATED_HOME_FRONTMATTER_OPTIONS.forEach(
         ([deprecatedOption, newOption]) =>

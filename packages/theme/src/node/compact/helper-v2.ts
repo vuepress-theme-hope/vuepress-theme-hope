@@ -109,11 +109,11 @@ export default {
 `,
   );
 
-  // check themeConfig
+  // Check themeConfig
   if ("themeConfig" in config && isPlainObject(config["themeConfig"]))
     config.theme = hopeTheme(config["themeConfig"] as ThemeOptions);
 
-  // check theme
+  // Check theme
   if (!isFunction(config.theme)) config.theme = hopeTheme({});
 
   return config;

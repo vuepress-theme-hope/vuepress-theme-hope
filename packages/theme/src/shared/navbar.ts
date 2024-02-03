@@ -29,7 +29,6 @@ export interface NavGroup<T> extends TextItemOptions {
 /**
  * Navbar types
  */
-// user config
 export type NavbarItem = AutoLinkOptions;
 export type NavbarGroup = NavGroup<NavbarGroup | NavbarItem | string>;
 export type NavbarOptions = (NavbarItem | NavbarGroup | string)[];

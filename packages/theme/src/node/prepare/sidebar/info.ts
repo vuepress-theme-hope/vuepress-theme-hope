@@ -165,7 +165,6 @@ const getSidebarInfoFromStructure = (
     title: getTitleFromFilename(info.dirname),
     order: null,
 
-    // generate information
     // group information
     groupInfo: {
       collapsible: true,

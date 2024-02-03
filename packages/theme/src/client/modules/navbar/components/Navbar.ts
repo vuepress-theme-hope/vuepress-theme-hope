@@ -36,7 +36,7 @@ export default defineComponent({
   slots: Object as SlotsType<{
     default: () => VNode[] | VNode | null;
 
-    // navbar
+    // Navbar
     startBefore?: () => VNode[] | VNode | null;
     startAfter?: () => VNode[] | VNode | null;
     centerBefore?: () => VNode[] | VNode | null;

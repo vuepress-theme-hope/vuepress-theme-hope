@@ -56,7 +56,7 @@ export default defineComponent({
     },
 
     /**
-     * is plain
+     * Whether use plain icon
      */
     plain: Boolean,
 

@@ -57,15 +57,17 @@ export const getBlogPlugin = (
 
       injectBlogBasicInfo(page, info);
 
-      // resolve encrypted
+      // Resolve encrypted
       if (isEncrypted) info[ArticleInfoType.isEncrypted] = true;
 
-      // resolve reading-time
+      // Resolve reading-time
       if (
-        // reading time data is sensitive with markdown contents
-        // we use this to prevent user triggers a page reload every time
+        /*
+         * Reading time data is sensitive with markdown contents
+         * we use this to prevent user triggers a page reload every time
+         */
         (hotReload || app.env.isBuild) &&
-        // ensure a valid reading time exists
+        // Ensure a valid reading time exists
         page.data.readingTime &&
         page.data.readingTime.words !== 0
       )

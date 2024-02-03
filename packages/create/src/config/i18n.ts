@@ -23,7 +23,7 @@ export interface CreateLocale {
     preset: string;
     devServer: string;
 
-    // package.json
+    // Package.json
     name: string;
     version: string;
     description: string;

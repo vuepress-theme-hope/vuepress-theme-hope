@@ -4,7 +4,7 @@ export class Popup {
   private containerElement: HTMLElement;
   private popupElements: Record<number, HTMLDivElement> = {};
 
-  // generate or make sure popup container element
+  // Generate or make sure popup container element
   constructor() {
     const containerId = "popup-container";
     const containerElement = document.getElementById(containerId);

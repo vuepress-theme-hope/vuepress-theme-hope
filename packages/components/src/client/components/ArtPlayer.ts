@@ -89,7 +89,7 @@ declare const ART_PLAYER_OPTIONS: ArtPlayerOptions;
 
 const getLang = (lang: string): string => {
   const langCode = lang.toLowerCase();
-  const langName = langCode.split("-")[0];
+  const [langName] = langCode.split("-");
 
   return SUPPORTED_LANG_CODE.includes(langCode)
     ? langCode
@@ -219,7 +219,7 @@ export default defineComponent({
         type: props.type || getTypeByUrl(props.src),
         lang: getLang(lang.value),
         ...props.config,
-        // this option must be set false to avoid problems
+        // This option must be set false to avoid problems
         useSSR: false,
       };
 
@@ -236,12 +236,12 @@ export default defineComponent({
           initOptions[<ArtPlayerBooleanOptionKey>camelize(config)] = true;
       });
 
-      // auto config mse
+      // Auto config mse
       if (initOptions.type) {
         const customType = (initOptions.customType ??= {});
 
         if (SUPPORTED_VIDEO_TYPES.includes(initOptions.type.toLowerCase()))
-          switch (initOptions.type) {
+          switch (initOptions.type.toLowerCase()) {
             case "m3u8":
             case "hls":
               customType[initOptions.type] ??= (
@@ -277,6 +277,8 @@ export default defineComponent({
                   player.on("destroy", destroy);
                 });
               break;
+
+            default:
           }
         else
           console.warn(

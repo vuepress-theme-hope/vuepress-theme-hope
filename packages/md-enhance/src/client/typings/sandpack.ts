@@ -15,7 +15,7 @@ import type {
  */
 export interface SandpackConfig {
   /**
-   * specify the template
+   * Specify the template
    *
    * 指定模板
    */

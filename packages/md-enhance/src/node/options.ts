@@ -273,7 +273,7 @@ export interface MarkdownEnhanceOptions {
   katex?:
     | (KatexOptions & {
         /**
-         * whether enable copy plugin
+         * Whether enable copy plugin
          *
          * @default false
          */

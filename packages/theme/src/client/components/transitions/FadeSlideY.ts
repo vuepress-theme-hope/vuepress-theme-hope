@@ -13,7 +13,7 @@ export default defineComponent({
   }>,
 
   setup(_props, { slots }) {
-    // handle scrollBehavior with transition
+    // Handle scrollBehavior with transition
     const { resolve: onBeforeEnter, pending: onBeforeLeave } =
       useScrollPromise();
 

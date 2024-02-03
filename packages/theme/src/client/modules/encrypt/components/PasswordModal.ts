@@ -34,7 +34,7 @@ export default defineComponent({
     let hintHandler: number | null = null;
 
     const verify = (): void => {
-      // clear previous handler
+      // Clear previous handler
       if (hintHandler) clearTimeout(hintHandler);
       hasTried.value = false;
 

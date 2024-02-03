@@ -14,12 +14,12 @@ const flowchartRender = (tokens: Token[], index: number): string => {
 
 export const flowchart: PluginSimple = (md) => {
   // Handle ```flow and ```flowchart blocks
-  const fence = md.renderer.rules.fence;
+  const { fence } = md.renderer.rules;
 
   md.renderer.rules.fence = (...args): string => {
     const [tokens, index] = args;
     const { info } = tokens[index];
-    const realInfo = info.split(":", 2)[0];
+    const [realInfo] = info.split(":", 2);
 
     if (realInfo === "flow" || realInfo === "flowchart")
       return flowchartRender(tokens, index);

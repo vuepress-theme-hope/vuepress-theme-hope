@@ -55,7 +55,7 @@ export const themeConfig = (themeConfig: ThemeOptions): ThemeOptions => {
 const checkMarkdownOptions = (
   options: MarkdownOptions & Record<string, unknown> = {},
 ): void => {
-  // lineNumbers
+  // LineNumbers
   if ("lineNumbers" in options) {
     logger.warn(
       `${colors.magenta("markdown.lineNumbers")} is ${colors.yellow(
@@ -65,7 +65,7 @@ const checkMarkdownOptions = (
       )} instead.`,
     );
 
-    options.code = options.code ?? {};
+    options.code ??= {};
 
     if (isPlainObject(options.code))
       options.code.lineNumbers = options["lineNumbers"] as boolean;
@@ -73,7 +73,7 @@ const checkMarkdownOptions = (
     delete options["lineNumbers"];
   }
 
-  // slugify
+  // Slugify
   if ("slugify" in options) {
     logger.error(
       `\
@@ -90,7 +90,7 @@ If you want to change the slugify function anyway, set the following options sep
     delete options["slugify"];
   }
 
-  // pageSuffix
+  // PageSuffix
   if ("pageSuffix" in options) {
     logger.error(
       `${colors.magenta("markdown.pageSuffix")} is ${colors.red(
@@ -101,7 +101,7 @@ If you want to change the slugify function anyway, set the following options sep
     delete options["pageSuffix"];
   }
 
-  // externalLinks
+  // ExternalLinks
   if ("externalLinks" in options) {
     logger.error(
       `${colors.magenta("markdown.externalLinks")} is ${colors.red(
@@ -114,7 +114,7 @@ If you want to change the slugify function anyway, set the following options sep
     delete options["externalLinks"];
   }
 
-  // plugins
+  // Plugins
   if ("plugins" in options) {
     logger.error(
       `${colors.magenta("markdown.plugins")} is ${colors.red(
@@ -129,7 +129,7 @@ If you want to change the slugify function anyway, set the following options sep
 };
 
 const checkPluginOptions = (plugins: unknown): PluginConfig => {
-  // check plugin array
+  // Check plugin array
   if (isArray(plugins))
     return plugins.flat().filter((item): item is Plugin => {
       if (isFunction(item)) return true;
@@ -137,7 +137,7 @@ const checkPluginOptions = (plugins: unknown): PluginConfig => {
       if (isPlainObject(item)) {
         const { name } = item as Plugin & Record<string, unknown>;
 
-        // check name
+        // Check name
         if (!isString(name)) {
           logger.error(
             'VuePress2 requires "name" option in plugins and it should strict equal it\'s package name.',
@@ -146,7 +146,7 @@ const checkPluginOptions = (plugins: unknown): PluginConfig => {
           return false;
         }
 
-        // check name
+        // Check name
         if (!/^(@.*\/)?vuepress-plugin-/.test(name)) {
           logger.error(
             "VuePress2 requires plugin name to strict equal a package name, you should fix it",
@@ -155,7 +155,7 @@ const checkPluginOptions = (plugins: unknown): PluginConfig => {
           return false;
         }
 
-        // check renamed options
+        // Check renamed options
         [
           // v1
           ["ready", "onPrepared"],
@@ -183,7 +183,7 @@ const checkPluginOptions = (plugins: unknown): PluginConfig => {
           delete item[deprecatedOption];
         });
 
-        // check removed options
+        // Check removed options
         [
           // v1
           "plugins",
@@ -221,7 +221,7 @@ const checkPluginOptions = (plugins: unknown): PluginConfig => {
       return false;
     });
 
-  // check whether plugins is an object
+  // Check whether plugins is an object
   if (isPlainObject(plugins)) {
     logger.error(
       `${colors.magenta('object format "plugins"')} is ${colors.red(
@@ -275,7 +275,7 @@ export const config = (userConfig: Record<string, unknown>): UserConfig => {
 
   userConfig["plugins"] = checkPluginOptions(userConfig["plugins"]);
 
-  // check renamed options
+  // Check renamed options
   [
     ["ready", "onPrepared"],
     ["updated", "onWatched"],
@@ -299,7 +299,7 @@ export const config = (userConfig: Record<string, unknown>): UserConfig => {
     delete userConfig[deprecatedOption];
   });
 
-  // check removed options
+  // Check removed options
   [
     ["chainMarkdown", 'please use "extendsMarkdown" instead'],
     ["extendsCli"],
@@ -328,7 +328,7 @@ export const config = (userConfig: Record<string, unknown>): UserConfig => {
     delete userConfig[removedOption];
   });
 
-  // other options
+  // Other options
   if ("extraWatchFiles" in userConfig) {
     logger.error(
       `${colors.magenta("extraWatchFiles")} options is ${colors.red(

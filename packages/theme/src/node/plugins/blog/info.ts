@@ -21,11 +21,11 @@ export const injectBlogBasicInfo = (
     | ThemeNormalPageFrontmatter;
   const { createdTime } = page.data.git || {};
 
-  // resolve author
+  // Resolve author
   if ("author" in frontmatter)
     info[ArticleInfoType.author] = frontmatter.author;
 
-  // resolve date
+  // Resolve date
   if ("date" in frontmatter) {
     const date = getDate(page.frontmatter.date);
 
@@ -41,31 +41,31 @@ export const injectBlogBasicInfo = (
     info[ArticleInfoType.date] = createdTime;
   }
 
-  // resolve category
+  // Resolve category
   if ("category" in frontmatter)
     info[ArticleInfoType.category] = frontmatter.category;
   else if ("categories" in frontmatter)
     info[ArticleInfoType.category] = frontmatter.categories;
 
-  // resolve tag
+  // Resolve tag
   if ("tag" in frontmatter) info[ArticleInfoType.tag] = frontmatter.tag;
   else if ("tags" in frontmatter) info[ArticleInfoType.tag] = frontmatter.tags;
 
-  // resolve sticky
+  // Resolve sticky
   if ("sticky" in frontmatter)
     info[ArticleInfoType.sticky] = frontmatter.sticky;
 
-  // resolve image
+  // Resolve image
   if ("cover" in frontmatter) info[ArticleInfoType.cover] = frontmatter.cover;
 
-  // resolve isOriginal
+  // Resolve isOriginal
   if ("isOriginal" in frontmatter)
     info[ArticleInfoType.isOriginal] = frontmatter.isOriginal;
 
-  // save page excerpt to routeMeta
+  // Save page excerpt to routeMeta
   if (frontmatter.excerpt) info[ArticleInfoType.excerpt] = frontmatter.excerpt;
   else if (page.data.excerpt) info[ArticleInfoType.excerpt] = page.data.excerpt;
-  // fallback to user-defined description
+  // Fallback to user-defined description
   else if (frontmatter.description && !page.data.autoDesc)
     info[ArticleInfoType.excerpt] = frontmatter.description;
 };

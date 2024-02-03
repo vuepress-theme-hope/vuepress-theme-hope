@@ -10,7 +10,7 @@ let redirectPlugin: (options: RedirectOptions, legacy?: boolean) => Plugin;
 try {
   ({ redirectPlugin } = await import("vuepress-plugin-redirect"));
 } catch (e) {
-  // do nothing
+  // Do nothing
 }
 
 /**
@@ -19,11 +19,11 @@ try {
  * Resolve options for vuepress-plugin-redirect
  */
 export const getRedirectPlugin = (
-  options: Omit<RedirectOptions, "hostname"> | boolean = false,
+  options?: Omit<RedirectOptions, "hostname"> | boolean | undefined,
   hostname?: string,
   legacy = false,
 ): Plugin | null => {
-  // disable redirect if no options for redirect plugin
+  // Disable redirect if no options for redirect plugin
   if (options === false || (isPlainObject(options) && !keys(options).length))
     return null;
 

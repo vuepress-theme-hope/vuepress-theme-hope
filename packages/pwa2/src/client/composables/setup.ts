@@ -16,7 +16,7 @@ declare const SW_FORCE_UPDATE: boolean;
 export const setupPWA = (): void => {
   if (__VUEPRESS_SSR__) return;
 
-  // create event emitter and provide it
+  // Create event emitter and provide it
   const event: PWAEvent = mitt();
 
   provide(pwaEventSymbol, event);
@@ -26,7 +26,7 @@ export const setupPWA = (): void => {
 
     let refreshing = false;
 
-    // only listen controllerchange event when a serviceWorker is active
+    // Only listen controllerchange event when a serviceWorker is active
     if (navigator.serviceWorker?.controller)
       navigator.serviceWorker.addEventListener("controllerchange", () => {
         if (refreshing) return;

@@ -41,7 +41,7 @@ const HighlightPanel: FunctionalComponent<
     "div",
     {
       class: "vp-highlight-wrapper",
-      style: color ? { color: color } : {},
+      style: color ? { color } : {},
     },
     [
       bgImage

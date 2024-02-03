@@ -27,7 +27,7 @@ const getImages = (images: HTMLImageElement[]): GalleryItem[] =>
     ({ alt, srcset, src }) =>
       <GalleryItem>{
         src,
-        srcset: srcset,
+        srcset,
         thumb: src || srcset,
         alt,
         subHtml: alt,
@@ -70,7 +70,7 @@ export default defineComponent({
           ...lightGalleryOptions,
           dynamic: true,
           dynamicEl: getImages(images),
-          // this is a licenseKey to make this project under MIT, special thanks to @Sachin
+          // This is a licenseKey to make this project under MIT, special thanks to @Sachin
           licenseKey: "VSY7R-J@WED-CJY76-UMDXQ",
           plugins: lightGalleryPlugins.map(({ default: plugin }) => plugin),
         });

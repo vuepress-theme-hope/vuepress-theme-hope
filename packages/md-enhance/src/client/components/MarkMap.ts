@@ -54,7 +54,7 @@ export default defineComponent({
         import(/* webpackChunkName: "markmap" */ "markmap-lib"),
         import(/* webpackChunkName: "markmap" */ "markmap-toolbar"),
         import(/* webpackChunkName: "markmap" */ "markmap-view"),
-        // delay
+        // Delay
         new Promise((resolve) => setTimeout(resolve, MARKDOWN_ENHANCE_DELAY)),
       ]).then(
         async ([{ Transformer }, { Toolbar }, { Markmap, deriveOptions }]) => {

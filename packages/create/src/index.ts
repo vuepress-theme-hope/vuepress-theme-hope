@@ -32,38 +32,38 @@ const preAction = async (
   locale: CreateLocale;
   packageManager: PackageManager;
 } | void> => {
-  // ensure targetDir is specified by user
+  // Ensure targetDir is specified by user
   if (!targetDir) return cli.outputHelp();
 
-  // get language
+  // Get language
   const { lang, locale } = await getLanguage();
 
-  // check bundler
+  // Check bundler
   if (bundler && !bundlers.includes(bundler))
     return console.log(locale.error.bundler);
 
-  // check presets
+  // Check presets
   if (preset && !presets.includes(preset))
     return console.log(locale.error.preset);
 
   const targetDirPath = resolve(process.cwd(), targetDir);
 
-  // check if the user is trying to cover his files
+  // Check if the user is trying to cover his files
   if (existsSync(targetDirPath) && readdirSync(targetDirPath).length)
     return console.error(locale.error.dirNotEmpty(targetDir));
 
-  // get packageManager
+  // Get packageManager
   const packageManager = await getPackageManager(
     locale.question.packageManager,
   );
 
-  // check if the user is a noob and warn him 🤪
+  // Check if the user is a noob and warn him 🤪
   if (targetDir.startsWith("[") && targetDir.endsWith("]"))
     return console.log(locale.error.updateDirMissing(packageManager));
 
   ensureDirExistSync(targetDirPath);
 
-  // return choice
+  // Return choice
   return { lang, locale, packageManager };
 };
 

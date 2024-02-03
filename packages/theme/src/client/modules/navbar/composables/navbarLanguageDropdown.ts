@@ -40,7 +40,7 @@ export const useNavbarLanguageDropdown =
         const localePaths = keys(siteLocale.value.locales);
         const extraLocales = entries(themeData.value.extraLocales ?? {});
 
-        // do not display language selection dropdown if there is only one language
+        // Do not display language selection dropdown if there is only one language
         if (localePaths.length < 2 && !extraLocales.length) return null;
 
         const { path, fullPath } = route;
@@ -51,7 +51,7 @@ export const useNavbarLanguageDropdown =
           ariaLabel: navbarLocales?.selectLangAriaLabel,
           children: [
             ...localePaths.map((targetLocalePath) => {
-              // target locale config of this language link
+              // Target locale config of this language link
               const targetSiteLocale =
                 siteLocale.value.locales?.[targetLocalePath] ?? {};
               const targetThemeLocale =
@@ -62,12 +62,12 @@ export const useNavbarLanguageDropdown =
                 targetThemeLocale.navbarLocales?.langName ?? targetLang;
               let link;
 
-              // if the target language is current language
+              // If the target language is current language
               if (targetLang === siteLocale.value.lang) {
-                // stay at current link
+                // Stay at current link
                 link = path;
               }
-              // if the target language is not current language
+              // If the target language is not current language
               else {
                 const targetLocalePage = path.replace(
                   routeLocale.value,
@@ -75,13 +75,13 @@ export const useNavbarLanguageDropdown =
                 );
 
                 link =
-                  // try to link to the corresponding page of current page
+                  // Try to link to the corresponding page of current page
                   router
                     .getRoutes()
                     .some((item) => item.path === targetLocalePage)
-                    ? // try to keep current hash across languages
+                    ? // Try to keep current hash across languages
                       fullPath.replace(path, targetLocalePage)
-                    : // or fallback to homepage
+                    : // Or fallback to homepage
                       targetThemeLocale.home ?? targetLocalePath;
               }
 

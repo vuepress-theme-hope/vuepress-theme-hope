@@ -59,7 +59,7 @@ export const getPluginConfig = (
     getCommentPlugin(plugins.comment, legacy),
     getCopyCodePlugin(plugins.copyCode),
     getCopyrightPlugin(themeData, plugins.copyright, options.hostname),
-    // seo should work before feed
+    // Seo should work before feed
     getSEOPlugin(themeData, plugins, options.hostname),
     getFeedPlugin(
       themeData,

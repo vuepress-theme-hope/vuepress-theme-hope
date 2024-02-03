@@ -4,7 +4,7 @@ export interface MermaidThemeVariables {
   dark?: boolean;
   background?: string;
 
-  // basic
+  // Basic
   textColor?: string;
   lineColor?: string;
   mainBkg?: string;
@@ -15,7 +15,7 @@ export interface MermaidThemeVariables {
   border1?: string;
   border2?: string;
 
-  // nodes
+  // Nodes
   nodeBorder?: string;
   nodeTextColor?: string;
 
@@ -31,24 +31,24 @@ export interface MermaidThemeVariables {
   tertiaryBorderColor?: string;
   tertiaryTextColor?: string;
 
-  // c4
+  // C4
   personBorder?: string;
   personBkg?: string;
 
-  // class
+  // Class
   classText?: string;
 
-  // er
+  // Er
   attributeBackgroundColorOdd?: string;
   attributeBackgroundColorEven?: string;
 
-  // flowchart
+  // Flowchart
   arrowheadColor?: string;
   clusterBkg?: string;
   clusterBorder?: string;
   edgeLabelBackground?: string;
 
-  // gantt
+  // Gantt
   excludeBkgColor?: string;
   sectionBkgColor?: string;
   sectionBkgColor2?: string;
@@ -68,7 +68,7 @@ export interface MermaidThemeVariables {
   critBorderColor?: string;
   critBkgColor?: string;
 
-  // git
+  // Git
   git1?: string;
   git2?: string;
   git3?: string;
@@ -98,7 +98,7 @@ export interface MermaidThemeVariables {
   tagLabelColor?: string;
   tagLabelFontSize?: string;
 
-  // journey
+  // Journey
   fillType0?: string;
   fillType1?: string;
   fillType2?: string;
@@ -108,7 +108,7 @@ export interface MermaidThemeVariables {
   fillType6?: string;
   fillType7?: string;
 
-  // pie
+  // Pie
   pie1?: string;
   pie2?: string;
   pie3?: string;
@@ -128,7 +128,7 @@ export interface MermaidThemeVariables {
   pieTitleTextSize?: string;
   pieTitleTextColor?: string;
 
-  // requirement
+  // Requirement
   requirementBackground?: string;
   requirementBorderColor?: string;
   requirementBorderSize?: string;
@@ -137,10 +137,10 @@ export interface MermaidThemeVariables {
   relationLabelBackground?: string;
   relationLabelColor?: string;
 
-  // state
+  // State
   labelColor?: string;
 
-  // sequence
+  // Sequence
   signalColor?: string;
   signalTextColor?: string;
   labelBoxBorderColor?: string;

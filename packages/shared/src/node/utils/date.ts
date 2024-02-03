@@ -19,7 +19,7 @@ export interface DateOptions {
    */
   lang?: string;
   /**
-   * timezone
+   * Timezone
    */
   timezone?: string;
   /**

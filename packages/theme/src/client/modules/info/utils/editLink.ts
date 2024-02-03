@@ -42,12 +42,12 @@ export const resolveEditLink = ({
 
   return pattern
     .replace(
-      /:repo/,
+      /:repo/u,
       isLinkHttp(docsRepo) ? docsRepo : `https://github.com/${docsRepo}`,
     )
-    .replace(/:branch/, docsBranch)
+    .replace(/:branch/u, docsBranch)
     .replace(
-      /:path/,
+      /:path/u,
       removeLeadingSlash(`${removeEndingSlash(docsDir)}/${filePathRelative}`),
     );
 };

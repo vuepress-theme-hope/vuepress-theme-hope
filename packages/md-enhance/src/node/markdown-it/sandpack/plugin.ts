@@ -33,8 +33,10 @@ const getSandpackRule =
     let start = state.bMarks[startLine] + state.tShift[startLine];
     let max = state.eMarks[startLine];
 
-    // Check out the first character quickly,
-    // this should filter out most of non-containers
+    /*
+     * Check out the first character quickly,
+     * this should filter out most of non-containers
+     */
     if (state.src[start] !== ":") return false;
 
     let pos = start + 1;
@@ -59,7 +61,7 @@ const getSandpackRule =
 
     if (firstSpace > 0) {
       containerName = content.substring(0, firstSpace);
-      // remove attrs
+      // Remove attrs
       title = content
         .substring(firstSpace + 1)
         .replace(/(?<!\\)\[([^}]*)\]/g, "");
@@ -67,7 +69,7 @@ const getSandpackRule =
       containerName = content;
     }
 
-    // if (containerName !== name) return false;
+    // If (containerName !== name) return false;
     if (!containerName.includes(name)) return false;
 
     // Since start is found, we can report success here in validation mode
@@ -79,8 +81,10 @@ const getSandpackRule =
 
     // Search for the end of the block
     while (
-      // unclosed block should be auto closed by end of document.
-      // also block seems to be auto closed by end of parent
+      /*
+       * Unclosed block should be auto closed by end of document.
+       * also block seems to be auto closed by end of parent
+       */
       nextLine < endLine
     ) {
       nextLine += 1;
@@ -88,29 +92,31 @@ const getSandpackRule =
       max = state.eMarks[nextLine];
 
       if (start < max && state.sCount[nextLine] < state.blkIndent)
-        // non-empty line with negative indent should stop the list:
-        // - ```
-        //  test
+        /*
+         * Non-empty line with negative indent should stop the list:
+         * - ```
+         *  test
+         */
         break;
 
       if (
-        // match start
+        // Match start
 
         state.src[start] === ":" &&
-        // closing fence should be indented less than 4 spaces
+        // Closing fence should be indented less than 4 spaces
         state.sCount[nextLine] - state.blkIndent < 4
       ) {
-        // check rest of marker
+        // Check rest of marker
         for (pos = start + 1; pos <= max; pos++)
           if (state.src[pos] !== ":") break;
 
-        // closing code fence must be at least as long as the opening one
+        // Closing code fence must be at least as long as the opening one
         if (pos - start >= markerCount) {
-          // make sure tail has spaces only
+          // Make sure tail has spaces only
           pos = state.skipSpaces(pos);
 
           if (pos >= max) {
-            // found!
+            // Found!
             autoClosed = true;
             break;
           }
@@ -124,7 +130,7 @@ const getSandpackRule =
     // @ts-expect-error
     state.parentType = `${name}`;
 
-    // this will prevent lazy continuations from ever going past our end marker
+    // This will prevent lazy continuations from ever going past our end marker
     state.lineMax = nextLine - (autoClosed ? 1 : 0);
 
     const openToken = state.push(`${name}_open`, "template", 1);
@@ -184,8 +190,10 @@ const atMarkerRule =
 
     // Search for the end of the block
     while (
-      // unclosed block should be auto closed by end of document.
-      // also block seems to be auto closed by end of parent
+      /*
+       * Unclosed block should be auto closed by end of document.
+       * also block seems to be auto closed by end of parent
+       */
       nextLine < endLine
     ) {
       nextLine += 1;
@@ -193,15 +201,17 @@ const atMarkerRule =
       max = state.eMarks[nextLine];
 
       if (start < max && state.sCount[nextLine] < state.blkIndent)
-        // non-empty line with negative indent should stop the list:
-        // - ```
-        //  test
+        /*
+         * Non-empty line with negative indent should stop the list:
+         * - ```
+         *  test
+         */
         break;
 
       if (
-        // match start
+        // Match start
         state.src[start] === AT_MARKER &&
-        // marker should not be indented with respect of opening fence
+        // Marker should not be indented with respect of opening fence
         state.sCount[nextLine] <= state.sCount[startLine]
       ) {
         let openMakerMatched = true;
@@ -213,7 +223,7 @@ const atMarkerRule =
           }
 
         if (openMakerMatched) {
-          // found!
+          // Found!
           autoClosed = true;
           nextLine -= 1;
           break;
@@ -227,7 +237,7 @@ const atMarkerRule =
     // @ts-expect-error
     state.parentType = `${markerName}`;
 
-    // this will prevent lazy continuations from ever going past our end marker
+    // This will prevent lazy continuations from ever going past our end marker
     state.lineMax = nextLine;
 
     const openToken = state.push(`${markerName}_open`, "template", 1);
@@ -333,7 +343,7 @@ export const sandpack: PluginSimple = (md) => {
           continue;
         }
 
-        // parse options
+        // Parse options
         if (foundOptions) {
           if (type === "fence" && (info === "js" || info === "javascript"))
             sandpackData.options = <SandpackOptions>jsRunner(content.trim());
@@ -341,7 +351,7 @@ export const sandpack: PluginSimple = (md) => {
           foundOptions = false;
         }
 
-        // parse setup
+        // Parse setup
         if (foundSetup) {
           if (type === "fence" && (info === "js" || info === "javascript"))
             sandpackData.customSetup = <SandpackSetup>jsRunner(content.trim());
@@ -349,7 +359,7 @@ export const sandpack: PluginSimple = (md) => {
           foundSetup = false;
         }
 
-        // add code block content
+        // Add code block content
         if (type === "fence" && currentKey)
           (sandpackData.files[currentKey] as SandpackFile).code = content;
 

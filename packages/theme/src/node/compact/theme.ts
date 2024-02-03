@@ -104,7 +104,7 @@ const handleBlogOptions = (blogOptions: Record<string, unknown>): void => {
  */
 const handleFooterOptions = (options: Record<string, unknown>): void => {
   if (isPlainObject(options["footer"]) && options["footer"]) {
-    const footer = options["footer"];
+    const { footer } = options;
 
     if ("copyright" in footer) {
       logger.warn(
@@ -140,7 +140,7 @@ const handleFooterOptions = (options: Record<string, unknown>): void => {
 export const convertThemeOptions = (
   themeOptions: Record<string, unknown>,
 ): ThemeOptions => {
-  // ensure plugins
+  // Ensure plugins
   const plugins = (themeOptions["plugins"] ??= {}) as Record<string, unknown>;
 
   DEPRECATED_THEME_OPTIONS.forEach(([deprecatedOption, newOption]) =>
@@ -153,11 +153,11 @@ export const convertThemeOptions = (
   );
   DROPPED_THEME_OPTIONS.forEach((item) => droppedLogger(themeOptions, ...item));
 
-  // handle navbar
+  // Handle navbar
   if ("navbar" in themeOptions)
     themeOptions["navbar"] = convertNavbarOptions(themeOptions["navbar"]);
 
-  // handle navbar layout
+  // Handle navbar layout
   if (isPlainObject(themeOptions["navbarLayout"])) {
     if ("left" in themeOptions["navbarLayout"]) {
       logger.warn(
@@ -186,11 +186,11 @@ export const convertThemeOptions = (
     }
   }
 
-  // handle sidebar
+  // Handle sidebar
   if ("sidebar" in themeOptions)
     themeOptions["sidebar"] = convertSidebarOptions(themeOptions["sidebar"]);
 
-  // handle blog
+  // Handle blog
   if (isPlainObject(themeOptions["blog"]) && themeOptions["blog"]) {
     handleBlogOptions(themeOptions["blog"] as Record<string, unknown>);
 
@@ -202,7 +202,7 @@ export const convertThemeOptions = (
       );
   }
 
-  // handle component
+  // Handle component
   if (isArray(plugins["components"])) {
     logger.warn(
       `${colors.magenta(
@@ -217,7 +217,7 @@ export const convertThemeOptions = (
     };
   }
 
-  // handle copyright plugin
+  // Handle copyright plugin
   if (
     isPlainObject(themeOptions["copyright"]) ||
     themeOptions["copyright"] === true
@@ -232,7 +232,7 @@ export const convertThemeOptions = (
 
   if (themeOptions["addThis"]) droppedLogger(themeOptions, "addThis");
 
-  // handle encrypt
+  // Handle encrypt
   if (isPlainObject(themeOptions["encrypt"]) && themeOptions["encrypt"]) {
     const encrypt = themeOptions["encrypt"] as Record<string, unknown>;
 
@@ -262,10 +262,10 @@ export const convertThemeOptions = (
     }
   }
 
-  // handle footer
+  // Handle footer
   handleFooterOptions(themeOptions);
 
-  // handle each locale
+  // Handle each locale
   if ("locales" in themeOptions && isPlainObject(themeOptions["locales"]))
     values(themeOptions["locales"]).forEach(
       (localeConfig: Record<string, unknown>) => {
@@ -281,11 +281,11 @@ export const convertThemeOptions = (
           droppedLogger(localeConfig, ...item),
         );
 
-        // handle navbar
+        // Handle navbar
         if ("navbar" in localeConfig)
           localeConfig["navbar"] = convertNavbarOptions(localeConfig["navbar"]);
 
-        // handle navbar layout
+        // Handle navbar layout
         if (isPlainObject(localeConfig["navbarLayout"])) {
           if ("left" in localeConfig["navbarLayout"]) {
             logger.warn(
@@ -314,16 +314,16 @@ export const convertThemeOptions = (
           }
         }
 
-        // handle sidebar
+        // Handle sidebar
         if ("sidebar" in localeConfig)
           localeConfig["sidebar"] = convertSidebarOptions(
             localeConfig["sidebar"],
           );
 
-        // handle footer
+        // Handle footer
         handleFooterOptions(localeConfig);
 
-        // handle blog
+        // Handle blog
         if (isPlainObject(localeConfig["blog"]) && localeConfig["blog"]) {
           handleBlogOptions(localeConfig["blog"] as Record<string, unknown>);
 

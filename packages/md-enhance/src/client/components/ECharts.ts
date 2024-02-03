@@ -57,7 +57,7 @@ export default defineComponent({
 
   props: {
     /**
-     * echarts config
+     * Echarts config
      *
      * 图表配置
      */
@@ -101,7 +101,7 @@ export default defineComponent({
     onMounted(() => {
       void Promise.all([
         import(/* webpackChunkName: "echarts" */ "echarts"),
-        // delay
+        // Delay
         new Promise((resolve) => setTimeout(resolve, MARKDOWN_ENHANCE_DELAY)),
       ]).then(async ([echarts]) => {
         await echartsConfig.setup?.();

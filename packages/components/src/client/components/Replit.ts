@@ -93,7 +93,7 @@ export default defineComponent({
     },
 
     /**
-     * loading status
+     * Loading status
      *
      * 加载状态
      */

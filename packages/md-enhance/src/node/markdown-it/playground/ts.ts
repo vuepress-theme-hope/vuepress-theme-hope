@@ -2,6 +2,7 @@ import {
   deepAssign,
   endsWith,
   entries,
+  isDef,
   isPlainObject,
   keys,
 } from "@vuepress/helper";
@@ -27,7 +28,7 @@ export const getURL = (
     .map(([key, value]) => {
       const item = optionDeclarations.find((option) => option.name === key)!;
 
-      if (!item || value === null || value === undefined) return "";
+      if (!item || value === null || !isDef(value)) return "";
 
       const { type } = item;
 

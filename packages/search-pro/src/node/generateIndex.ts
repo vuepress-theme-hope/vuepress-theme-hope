@@ -78,7 +78,7 @@ export const generatePageIndex = (
   const pageIndex: PageIndexItem = { id: key, h: title };
   const results: IndexItem[] = [pageIndex];
 
-  // here are some variables holding the current state of the parser
+  // Here are some variables holding the current state of the parser
   let shouldIndexContent = hasExcerpt || indexContent;
   let currentSectionIndex: PageIndexItem | SectionIndexItem | null = null;
   let currentContent = "";
@@ -87,17 +87,17 @@ export const generatePageIndex = (
   const render = (node: AnyNode, preserveSpace = false): void => {
     if (node.type === "tag") {
       if (HEADING_TAGS.includes(node.name)) {
-        const id = node.attribs["id"];
+        const { id } = node.attribs;
         const header = renderHeader(node);
 
         if (currentContent && shouldIndexContent) {
-          // add last content
+          // Add last content
           ((isContentBeforeFirstHeader ? pageIndex : currentSectionIndex!).t ??=
             []).push(currentContent.replace(/\s+/gu, " "));
           currentContent = "";
         }
 
-        // update current section index only if it has an id
+        // Update current section index only if it has an id
         if (id) {
           if (isContentBeforeFirstHeader) isContentBeforeFirstHeader = false;
           else results.push(currentSectionIndex!);
@@ -111,7 +111,7 @@ export const generatePageIndex = (
         }
       } else if (CONTENT_BLOCK_TAGS.includes(node.name)) {
         if (currentContent && shouldIndexContent) {
-          // add last content
+          // Add last content
           ((isContentBeforeFirstHeader ? pageIndex : currentSectionIndex)!.t ??=
             []).push(currentContent.replace(/\s+/gu, " "));
           currentContent = "";
@@ -125,7 +125,7 @@ export const generatePageIndex = (
     } else if (node.type === "text") {
       currentContent += preserveSpace || node.data.trim() ? node.data : "";
     } else if (
-      // we are expecting to stop at excerpt marker if content is not indexed
+      // We are expecting to stop at excerpt marker if content is not indexed
       hasExcerpt &&
       !indexContent &&
       isExcerptMarker(node)
@@ -136,7 +136,7 @@ export const generatePageIndex = (
 
   const nodes = $.parseHTML(contentRendered);
 
-  // get custom fields
+  // Get custom fields
   const customFields = fromEntries(
     customFieldsGetter
       .map(({ getter }, index) => {
@@ -151,23 +151,23 @@ export const generatePageIndex = (
       .filter((item): item is [string, string[]] => item !== null),
   );
 
-  // no content in page and no customFields
+  // No content in page and no customFields
   if (!nodes?.length && !keys(customFields).length) return [];
 
-  // walk through nodes and extract indexes
+  // Walk through nodes and extract indexes
   nodes?.forEach((node) => {
     render(node);
   });
 
-  // push contents in last block tags
+  // Push contents in last block tags
   if (shouldIndexContent && currentContent)
     ((isContentBeforeFirstHeader ? pageIndex : currentSectionIndex)!.t ??=
       []).push(currentContent);
 
-  // push last section
+  // Push last section
   if (currentSectionIndex) results.push(currentSectionIndex);
 
-  // add custom fields
+  // Add custom fields
   entries(customFields).forEach(([customField, values]) => {
     results.push({
       id: `${key}@${customField}`,
@@ -204,12 +204,12 @@ export const getSearchIndexStore = async (
       const index = createIndex<IndexItem, string>({
         ...indexOptions,
         ...indexLocaleOptions?.[localePath],
-        fields: [/** heading */ "h", /** text */ "t", /** customFields */ "c"],
+        fields: [/** Heading */ "h", /** Text */ "t", /** CustomFields */ "c"],
         storeFields: [
-          /** heading */ "h",
-          /** anchor */ "a",
-          /** text */ "t",
-          /** customFields */ "c",
+          /** Heading */ "h",
+          /** Anchor */ "a",
+          /** Text */ "t",
+          /** CustomFields */ "c",
         ],
       });
 
