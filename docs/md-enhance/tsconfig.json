@@ -1,11 +1,11 @@
 {
   "extends": "../../tsconfig.base.json",
   "compilerOptions": {
-    "rootDir": "./src",
+    "rootDir": "./src"
   },
   "include": [
     "./src/.vuepress/**/*.ts",
     "./src/.vuepress/**/*.d.ts",
-    "./src/.vuepress/**/*.vue",
-  ],
+    "./src/.vuepress/**/*.vue"
+  ]
 }

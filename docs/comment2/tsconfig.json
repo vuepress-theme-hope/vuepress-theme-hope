@@ -3,8 +3,8 @@
   "compilerOptions": {
     "rootDir": "./src",
     "paths": {
-      "@theme-hope/*": ["../../packages/theme/src/client/*.js"],
-    },
+      "@theme-hope/*": ["../../packages/theme/src/client/*.js"]
+    }
   },
-  "include": ["./src/.vuepress/**/*.ts", "./src/.vuepress/**/*.vue"],
+  "include": ["./src/.vuepress/**/*.ts", "./src/.vuepress/**/*.vue"]
 }

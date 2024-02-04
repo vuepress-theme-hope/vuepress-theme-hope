@@ -4,8 +4,8 @@
     "baseUrl": "./",
     "rootDir": "./src",
     "paths": {
-      "@theme-hope/*": ["./src/client/*.js"],
-    },
+      "@theme-hope/*": ["./src/client/*.js"]
+    }
   },
-  "include": ["./src"],
+  "include": ["./src"]
 }
