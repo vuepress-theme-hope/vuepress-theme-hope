@@ -235,6 +235,13 @@ docs:
     repo: https://github.com/aydk-xcc/monaco-editor-docs
     preview: /assets/image/monaco-editor.jpg
 
+  - name: Guo's Page
+    desc: 项目文档和学习笔记
+    logo: https://guoxicheng.top/logo.png
+    url: https://guoxicheng.top
+    repo: https://github.com/GuoXiCheng/guoxicheng.github.io
+    preview: /assets/image/guo-s-page-zh.png
+
 blog:
   - name: Mr.Hope's Blog
     desc: Where there is light, there is hope
