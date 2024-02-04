@@ -71,7 +71,7 @@ export const getPluginConfig = (
     getSearchPlugin(app, themeData, plugins),
     getSitemapPlugin(plugins.sitemap, options.hostname),
     getRtlPlugin(themeData),
-    getRedirectPlugin(plugins.redirect, options.hostname, legacy),
+    getRedirectPlugin(plugins.redirect),
   ].filter((item) => item !== null) as PluginConfig;
 
   return pluginConfig;

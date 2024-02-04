@@ -22,9 +22,7 @@ try {
  * Resolve options for @vuepress/plugin-redirect
  */
 export const getRedirectPlugin = (
-  options?: Omit<RedirectPluginOptions, "hostname"> | boolean | undefined,
-  hostname?: string,
-  legacy = false,
+  options?: RedirectPluginOptions | boolean | undefined,
 ): Plugin | null => {
   // Disable redirect if no options for redirect plugin
   if (options === false || (isPlainObject(options) && !keys(options).length))
@@ -39,10 +37,6 @@ export const getRedirectPlugin = (
   }
 
   return redirectPlugin(
-    <RedirectPluginOptions>{
-      hostname,
-      ...(isPlainObject(options) ? options : { switchLocale: "modal" }),
-    },
-    legacy,
+    isPlainObject(options) ? options : { switchLocale: "modal" },
   );
 };
