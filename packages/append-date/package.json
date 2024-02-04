@@ -45,7 +45,7 @@
   },
   "peerDependencies": {
     "@vuepress/plugin-git": "2.0.0-rc.7",
-    "vuepress": "2.0.0-rc.2"
+    "vuepress": "2.0.0-rc.4"
   },
   "engines": {
     "node": ">=18.16.0",

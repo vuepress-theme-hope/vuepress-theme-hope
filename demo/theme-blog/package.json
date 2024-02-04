@@ -35,7 +35,7 @@
     "sandpack-vue3": "3.1.11",
     "sass-loader": "14.1.0",
     "vue": "3.4.15",
-    "vuepress": "2.0.0-rc.2",
+    "vuepress": "2.0.0-rc.4",
     "vuepress-theme-hope": "workspace:*"
   }
 }
