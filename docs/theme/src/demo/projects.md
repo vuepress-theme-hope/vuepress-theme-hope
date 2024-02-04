@@ -180,6 +180,13 @@ docs:
     url: https://tgwebvalid.com/en/
     repo: https://github.com/CrazyTapok-bit/tgWebValid
     preview: /assets/image/tgwebvalid.png
+  
+  - name: Guo's Page
+    desc: Project documentation and study notes
+    logo: https://guoxicheng.top/logo.png
+    url: https://guoxicheng.top/en
+    repo: https://github.com/GuoXiCheng/guoxicheng.github.io
+    preview: /assets/image/guo-s-page-en.png
 
 blog:
   - name: Mr.Hope's Blog
