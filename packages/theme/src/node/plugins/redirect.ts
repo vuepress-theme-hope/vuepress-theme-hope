@@ -19,7 +19,7 @@ try {
 /**
  * @private
  *
- * Resolve options for vuepress-plugin-redirect
+ * Resolve options for @vuepress-plugin-redirect
  */
 export const getRedirectPlugin = (
   options?: Omit<RedirectPluginOptions, "hostname"> | boolean | undefined,
@@ -32,7 +32,7 @@ export const getRedirectPlugin = (
 
   if (!redirectPlugin) {
     logger.error(
-      `${colors.cyan("vuepress-plugin-redirect")} is not installed!`,
+      `${colors.cyan("@vuepress-plugin-redirect")} is not installed!`,
     );
 
     return null;
