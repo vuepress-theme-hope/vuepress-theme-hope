@@ -11,8 +11,6 @@
   },
   "include": ["./src", "./src/*.d.ts"],
   "references": [
-    { "path": "../auto-catalog/tsconfig.build.json" },
-    { "path": "../blog2/tsconfig.build.json" },
     { "path": "../comment2/tsconfig.build.json" },
     { "path": "../components/tsconfig.build.json" },
     { "path": "../md-enhance/tsconfig.build.json" },

@@ -6,7 +6,6 @@ export default [
     {
       base: "client",
       files: [
-        "compact/components/Catalog",
         "components/ArtPlayer",
         "components/AudioPlayer",
         "components/Badge",
@@ -26,6 +25,7 @@ export default [
         "components/VideoPlayer",
         "components/XiGua",
         "components/YouTube",
+        "index",
       ],
     },
     {
@@ -42,10 +42,7 @@ export default [
         "vidstack/player/layouts",
         "vidstack/player/ui",
       ],
-      copy: [
-        ["client/styles", "client"],
-        ["client/compact/styles", "client/compact"],
-      ],
+      copy: [["client/styles", "client"]],
     },
   ),
 ];

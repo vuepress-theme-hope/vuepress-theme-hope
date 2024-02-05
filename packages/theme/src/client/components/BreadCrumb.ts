@@ -7,19 +7,22 @@ import {
   shallowRef,
   watch,
 } from "vue";
-import { useRouter } from "vue-router";
 import {
+  RouteLink,
+  resolveRoute,
   usePageData,
   usePageFrontmatter,
   useRouteLocale,
 } from "vuepress/client";
-import { VPLink, resolveRouteWithRedirect } from "vuepress-shared/client";
 
 import HopeIcon from "@theme-hope/components/HopeIcon";
 import { useThemeLocaleData } from "@theme-hope/composables/index";
 import { getAncestorLinks } from "@theme-hope/utils/index";
 
-import type { ThemeNormalPageFrontmatter } from "../../shared/index.js";
+import type {
+  ArticleInfo,
+  ThemeNormalPageFrontmatter,
+} from "../../shared/index.js";
 import { ArticleInfoType } from "../../shared/index.js";
 
 import "../styles/breadcrumb.scss";
@@ -34,7 +37,6 @@ export default defineComponent({
   name: "BreadCrumb",
 
   setup() {
-    const router = useRouter();
     const page = usePageData();
     const routeLocale = useRouteLocale();
     const frontmatter = usePageFrontmatter<ThemeNormalPageFrontmatter>();
@@ -58,18 +60,14 @@ export default defineComponent({
     );
 
     const getBreadCrumbConfig = (): void => {
-      const routes = router.getRoutes();
-
       const breadcrumbConfig = getAncestorLinks(
         page.value.path,
         routeLocale.value,
       )
         .map<BreadCrumbConfig | null>(({ link, name }) => {
-          const route = routes.find((route) => route.path === link);
+          const { path, meta } = resolveRoute<ArticleInfo>(link);
 
-          if (route) {
-            const { meta, path } = resolveRouteWithRedirect(router, route.path);
-
+          if (meta)
             return {
               title:
                 meta[ArticleInfoType.shortTitle] ||
@@ -78,7 +76,6 @@ export default defineComponent({
               icon: meta[ArticleInfoType.icon],
               path,
             };
-          }
 
           return null;
         })
@@ -112,7 +109,7 @@ export default defineComponent({
                   },
                   [
                     h(
-                      VPLink,
+                      RouteLink,
                       {
                         to: item.path,
                         property: "item",

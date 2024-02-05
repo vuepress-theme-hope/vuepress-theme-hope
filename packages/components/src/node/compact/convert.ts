@@ -52,7 +52,7 @@ export const convertOptions = (
       logger.error(
         `"${colors.magenta(
           "rootComponents.backToTop",
-        )}" no longer support number, please check the docs at https://plugin-components.vuejs.press/guide/backtotop.html.`,
+        )}" is removed, please use ${colors.cyan("@vuepress/plugin-back-to-top")} instead.`,
       );
       options.rootComponents.backToTop = {
         threshold: options.rootComponents.backToTop,
@@ -73,10 +73,8 @@ export const convertOptions = (
     logger.warn(
       `${colors.cyan(
         "Catalog",
-      )} component is deprecated, please use ${colors.cyan(
-        "AutoCatalog",
-      )} component with ${colors.magenta(
-        "vuepress-plugin-auto-catalog",
+      )} component is no longer supported, please use ${colors.magenta(
+        "@vuepress/plugin-catalog",
       )} instead.`,
     );
 

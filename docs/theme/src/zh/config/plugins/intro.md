@@ -50,6 +50,8 @@ tag:
 
 - [@vuepress/external-link-icon][external-link-icon]: 为 Markdown 的外部链接添加外部链接图标。
 
+- [@vuepress/plugin-catalog][catalog]: 提供目录页自动生成与 `<Catalog />` 组件
+
 - [@vuepress/plugin-copy-code][copy-code]: 为代码块提供复制按钮。
 
 - [@vuepress/plugin-git][git]: 基于 Git 的信息插件
@@ -64,8 +66,6 @@ tag:
 
 - [@vuepress/plugin-sitemap][sitemap]: Sitemap 插件
 
-- <ProjectLink name="auto-catalog" path="/zh/">vuepress-plugin-auto-catalog</ProjectLink>: 提供目录页自动生成与 `<AutoCatalog />` 组件
-
 - <ProjectLink name="md-enhance" path="/zh/">vuepress-plugin-md-enhance</ProjectLink>: 提供更多 Markdown 语法
 
 - <ProjectLink name="photo-swipe" path="/zh/">vuepress-plugin-photo-swipe</ProjectLink>: 基于 Photo Swipe 的图片浏览插件
@@ -74,9 +74,9 @@ tag:
 
 主题捆绑以下插件，你可以通过配置启用它们
 
-- [@vuepress/plugin-copyright][copyright]: 在用户复制时追加版权信息，或禁用站点的复制与选择。
+- [@vuepress/plugin-blog][blog]: VuePress2 的博客插件
 
-- <ProjectLink name="blog2" path="/zh/">vuepress-plugin-blog2</ProjectLink>: VuePress2 的博客插件
+- [@vuepress/plugin-copyright][copyright]: 在用户复制时追加版权信息，或禁用站点的复制与选择。
 
 - <ProjectLink name="comment2" path="/zh/">vuepress-plugin-comment2</ProjectLink>: 提供评论与浏览量功能
 
@@ -99,6 +99,8 @@ tag:
 ### 官方插件
 
 [active-header-links]: https://ecosystem.vuejs.press/zh/plugins/active-header-links.html
+[blog]: https://ecosystem.vuejs.press/zh/plugins/blog.html
+[catalog]: https://ecosystem.vuejs.press/zh/plugins/catalog.html
 [copy-code]: https://ecosystem.vuejs.press/zh/plugins/copy-code.html
 [copyright]: https://ecosystem.vuejs.press/zh/plugins/copyright.html
 [docsearch]: https://ecosystem.vuejs.press/zh/plugins/docsearch.html

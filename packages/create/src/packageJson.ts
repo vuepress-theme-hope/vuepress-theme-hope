@@ -58,7 +58,7 @@ export const createPackageJson = async ({
   const devDependencies = {
     [`@vuepress/bundler-${bundler}`]: "^2.0.0-rc.2",
     vue: "^3.4.15",
-    vuepress: "2.0.0-rc.2",
+    vuepress: "2.0.0-rc.5",
     "vuepress-theme-hope": version,
   };
 

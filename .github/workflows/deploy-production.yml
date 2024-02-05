@@ -49,24 +49,6 @@ jobs:
           token: ${{ secrets.ACCESS_TOKEN }}
           single-commit: true
 
-      - name: Deploy auto-catalog docs
-        uses: JamesIves/github-pages-deploy-action@v4
-        with:
-          repository-name: vuepress-theme-hope/auto-catalog-docs
-          branch: netlify
-          folder: docs/auto-catalog/dist
-          token: ${{ secrets.ACCESS_TOKEN }}
-          single-commit: true
-
-      - name: Deploy blog2 docs
-        uses: JamesIves/github-pages-deploy-action@v4
-        with:
-          repository-name: vuepress-theme-hope/blog2-docs
-          branch: netlify
-          folder: docs/blog2/dist
-          token: ${{ secrets.ACCESS_TOKEN }}
-          single-commit: true
-
       - name: Deploy comment2 docs
         uses: JamesIves/github-pages-deploy-action@v4
         with:
@@ -192,9 +174,7 @@ jobs:
 
       - name: Combine output
         run: |
-          pnpm cpx "docs/append-date/dist/**" dist/auto-catalog
-          pnpm cpx "docs/auto-catalog/dist/**" dist/auto-catalog
-          pnpm cpx "docs/blog2/dist/**" dist/blog
+          pnpm cpx "docs/append-date/dist/**" dist/append-date
           pnpm cpx "docs/comment2/dist/**" dist/comment
           pnpm cpx "docs/components/dist/**" dist/components
           pnpm cpx "docs/lightgallery/dist/**" dist/lightgallery
@@ -285,8 +265,6 @@ jobs:
       fail-fast: false
       matrix:
         plugin-name:
-          - auto-catalog
-          - blog2
           - comment2
           - components
           - lightgallery

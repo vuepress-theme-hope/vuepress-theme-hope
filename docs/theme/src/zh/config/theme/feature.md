@@ -15,7 +15,7 @@ tag:
 
 ## 博客选项
 
-主题通过使用 <ProjectLink name="blog2" path="/zh/">`vuepress-plugin-blog2`</ProjectLink> 提供博客功能，且该功能默认**禁用**。
+主题通过使用 [`@vuepress/plugin-blog`][blog] 提供博客功能，且该功能默认**禁用**。
 
 要启用博客插件并使用默认选项，你可以在主题选项中设置 `plugins.blog: true`。
 
@@ -283,3 +283,5 @@ tag:
 ```
 
 :::
+
+[blog]: https://ecosystem.vuejs.press/zh/plugins/blog/

@@ -14,4 +14,4 @@ All the plugin settings are under `plugins` field in theme options, and the opti
 
 :::
 
-<AutoCatalog />
+<Catalog />

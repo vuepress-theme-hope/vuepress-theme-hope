@@ -1,9 +1,9 @@
-import type { BlogOptions, BlogTypeOptions } from "vuepress-plugin-blog2";
+import type { BlogPluginOptions, BlogTypeOptions } from "@vuepress/plugin-blog";
 
-export interface BlogPluginOptions
+export interface BlogOptions
   extends Partial<
     Pick<
-      BlogOptions,
+      BlogPluginOptions,
       | "excerptFilter"
       | "excerptLength"
       | "excerptSeparator"
@@ -95,11 +95,11 @@ export interface BlogPluginOptions
   /**
    * Additional Article Type
    *
-   * @description This is an advanced option, please refer to the [blog2 plugin documentation](https://plugin-blog.vuejs.press/guide.html#customizing-categories-and-types) for details
+   * @description This is an advanced option, please refer to the [blog plugin documentation](https://ecosystem.vuejs.press/plugins/blog/) for details
    *
    * 额外的文章类型
    *
-   * @description 这是一个高级选项，请参考 [blog2 插件文档](https://plugin-blog.vuejs.press/zh/guide.html#%E8%87%AA%E5%AE%9A%E4%B9%89%E7%B1%BB%E5%88%AB%E5%92%8C%E7%B1%BB%E5%9E%8B) 了解详情
+   * @description 这是一个高级选项，请参考 [blog 插件文档](https://ecosystem.vuejs.press/zh/plugins/blog/) 了解详情
    *
    * @default []
    */

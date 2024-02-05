@@ -43,8 +43,6 @@ The project is a monorepo, managed by pnpm.
 ├── demo → Demo projects
 │
 ├── docs → document directory
-│ ├── auto-catalog → auto-catalog plugin document
-│ ├── blog → blog2 plugin document
 │ ├── comment → comment2 plugin document
 │ ├── components → components plugin document
 │ ├── lightgallery → lightgallery plugin document
@@ -59,8 +57,6 @@ The project is a monorepo, managed by pnpm.
 ├── docs-shared → common files for docs
 |
 ├── packages → project source code
-│ ├── auto-catalog → auto-catalog plugin
-│ ├── blog2 → blog2 plugin
 │ ├── comment2 → comment2 plugin
 │ ├── components → components plugin
 │ ├── create → create-vuepress-theme-hope helper

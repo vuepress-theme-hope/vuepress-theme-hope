@@ -29,16 +29,6 @@ const features = [
     link: getLink("append-date"),
   },
   {
-    text: "自动目录插件",
-    icon: "network-wired",
-    link: getLink("auto-catalog"),
-  },
-  {
-    text: "博客插件",
-    icon: "blog",
-    link: getLink("blog2"),
-  },
-  {
     text: "评论插件",
     icon: "comment",
     link: getLink("comment2"),

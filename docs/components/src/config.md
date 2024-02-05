@@ -232,7 +232,7 @@ Component locales.
   }
 
   interface PDFLocaleConfig {
-    [localePath: string]: CatalogLocaleData;
+    [localePath: string]: PDFLocaleData;
   }
   ```
 

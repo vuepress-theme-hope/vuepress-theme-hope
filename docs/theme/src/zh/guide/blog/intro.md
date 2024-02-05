@@ -9,7 +9,7 @@ tag:
   - 介绍
 ---
 
-主题通过引入 `vuepress-plugin-blog2` 提供了博客支持，该功能是**默认禁用**的。
+主题通过引入 `@vuepress/plugin-blog` 提供了博客支持，该功能是**默认禁用**的。
 
 如果你需要博客功能，你可以在主题选项中设置 `plugins.blog: true` 来启用博客功能。
 

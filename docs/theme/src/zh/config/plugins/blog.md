@@ -12,7 +12,7 @@ tag:
 
 ## 介绍
 
-主题通过 `vuepress-plugin-blog2` 提供博客功能，默认情况下此功能**不启用**。
+主题通过 `@vuepress/plugin-blog` 提供博客功能，默认情况下此功能**不启用**。
 
 你可以在主题选项中设置 `plugins.blog: true` 来启用博客功能。
 

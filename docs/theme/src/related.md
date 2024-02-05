@@ -29,16 +29,6 @@ const features = [
     link: getLink("append-date"),
   },
   {
-    text: "Auto catalog Plugin",
-    icon: "network-wired",
-    link: getLink("auto-catalog"),
-  },
-  {
-    text: "Blog Plugin",
-    icon: "blog",
-    link: getLink("blog2"),
-  },
-  {
     text: "Comment Plugin",
     icon: "comment",
     link: getLink("comment2"),

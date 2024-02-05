@@ -7,7 +7,6 @@ import {
   keys,
   startsWith,
 } from "@vuepress/helper/client";
-import type { Router } from "vue-router";
 import type { PageData, PageHeader } from "vuepress/client";
 
 import { sidebarData } from "@temp/theme-hope/sidebar";
@@ -49,7 +48,6 @@ export const headersToSidebarItemChildren = (
 
 export interface ResolveArraySidebarOptions {
   config: SidebarArrayOptions;
-  router: Router;
   page: PageData;
   headerDepth: number;
   prefix?: string;
@@ -60,7 +58,6 @@ export interface ResolveArraySidebarOptions {
  */
 export const resolveArraySidebarItems = ({
   config,
-  router,
   page,
   headerDepth,
   prefix = "",
@@ -70,17 +67,15 @@ export const resolveArraySidebarItems = ({
     pathPrefix = prefix,
   ): ResolvedSidebarPageItem | ResolvedSidebarGroupItem => {
     const childItem = isString(item)
-      ? resolveLinkInfo(router, resolvePrefix(pathPrefix, item))
+      ? resolveLinkInfo(resolvePrefix(pathPrefix, item))
       : item.link
         ? {
             ...item,
             ...(isLinkExternal(item.link)
               ? {}
               : {
-                  link: resolveLinkInfo(
-                    router,
-                    resolvePrefix(pathPrefix, item.link),
-                  ).link,
+                  link: resolveLinkInfo(resolvePrefix(pathPrefix, item.link))
+                    .link,
                 }),
           }
         : item;
@@ -128,7 +123,6 @@ export const resolveArraySidebarItems = ({
 
 export interface ResolveMultiSidebarOptions {
   config: SidebarObjectOptions;
-  router: Router;
   page: PageData;
   headerDepth: number;
 }
@@ -138,7 +132,6 @@ export interface ResolveMultiSidebarOptions {
  */
 export const resolveMultiSidebarItems = ({
   config,
-  router,
   page,
   headerDepth,
 }: ResolveMultiSidebarOptions): ResolvedSidebarItem[] => {
@@ -161,7 +154,6 @@ export const resolveMultiSidebarItems = ({
                       headerDepth,
                     )
                   : matched,
-            router,
             page,
             headerDepth,
             prefix: base,
@@ -176,7 +168,6 @@ export const resolveMultiSidebarItems = ({
 
 export interface ResolveSidebarOptions {
   config: SidebarOptions;
-  router: Router;
   routeLocale: string;
   page: PageData;
   headerDepth: number;
@@ -189,7 +180,6 @@ export interface ResolveSidebarOptions {
  */
 export const resolveSidebarItems = ({
   config,
-  router,
   routeLocale,
   page,
   headerDepth,
@@ -200,13 +190,12 @@ export const resolveSidebarItems = ({
     : config === "structure"
       ? resolveArraySidebarItems({
           config: <SidebarArrayOptions>sidebarData[routeLocale],
-          router,
           page,
           headerDepth,
           prefix: routeLocale,
         })
       : isArray(config)
-        ? resolveArraySidebarItems({ config, router, page, headerDepth })
+        ? resolveArraySidebarItems({ config, page, headerDepth })
         : isPlainObject(config)
-          ? resolveMultiSidebarItems({ config, router, page, headerDepth })
+          ? resolveMultiSidebarItems({ config, page, headerDepth })
           : [];

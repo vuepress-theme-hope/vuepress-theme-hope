@@ -5,7 +5,6 @@ export default [
     resolve: true,
     external: [
       "@vuepress/helper",
-      "@vuepress/helper/shared",
       "node:http",
       "vuepress/utils",
       "cheerio",
@@ -26,7 +25,6 @@ export default [
     resolve: true,
     external: [
       "@vuepress/helper/client",
-      "@vuepress/helper/shared",
       "vuepress/client",
       "fflate/browser",
       "vue",

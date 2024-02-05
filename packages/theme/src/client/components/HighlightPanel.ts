@@ -1,8 +1,7 @@
 import { isLinkExternal } from "@vuepress/helper/client";
 import type { FunctionalComponent, VNode } from "vue";
 import { h } from "vue";
-import { withBase } from "vuepress/client";
-import { VPLink } from "vuepress-shared/client";
+import { RouteLink, withBase } from "vuepress/client";
 
 import HopeIcon from "@theme-hope/components/HopeIcon";
 
@@ -140,7 +139,7 @@ const HighlightPanel: FunctionalComponent<
                               children,
                             )
                           : h(
-                              VPLink,
+                              RouteLink,
                               {
                                 class: "vp-highlight-item link",
                                 to: link,

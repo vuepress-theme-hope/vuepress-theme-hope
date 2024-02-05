@@ -9,13 +9,13 @@ tag:
   - Theme Config
 ---
 
-## autoCatalog <Badge text="enabled by default" />
+## catalog <Badge text="enabled by default" />
 
-Controls `vuepress-plugin-auto-catalog` which provides catalog pages generation.
+Controls `@vuepress/plugin-catalog` which provides catalog pages generation.
 
 No extra config is required by default. Se it to `false` if you don't need it.
 
-Check <ProjectLink name="auto-catalog" path="/config.html">auto catalog plugin docs</ProjectLink> for available plugin options.
+Check [catalog plugin docs][catalog-config] for available plugin options.
 
 ## backToTop <Badge text="enabled by default" />
 
@@ -138,6 +138,7 @@ No extra config is required by default. Se it to `false` if you don't need it.
 Check [sitemap plugin docs][sitemap-config] for available plugin options.
 
 [back-to-top-config]: https://ecosystem.vuejs.press/plugins/back-to-top.html#options
+[catalog-config]: https://ecosystem.vuejs.press/plugins/catalog.html#options
 [copy-code-config]: https://ecosystem.vuejs.press/plugins/copy-code.html#options
 [git-config]: https://ecosystem.vuejs.press/plugins/git.html#options
 [reading-time-config]: https://ecosystem.vuejs.press/plugins/reading-time.html#options

@@ -24,12 +24,12 @@ export default [
       ],
       external: [
         "@vuepress/helper/noopComponent",
+        "@vuepress/plugin-blog/client",
         "@vuepress/plugin-external-link-icon/client",
         "@vuepress/plugin-reading-time/client",
         "@vuepress/plugin-theme-data/client",
         "bcrypt-ts/browser",
         "body-scroll-lock",
-        "vuepress-plugin-blog2/client",
         "vuepress-plugin-comment2/pageview",
         "vuepress-plugin-md-enhance/SlidePage",
         /\.jpg$/,

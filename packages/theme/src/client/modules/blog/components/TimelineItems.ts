@@ -1,7 +1,7 @@
 import type { VNode } from "vue";
 import { computed, defineComponent, h } from "vue";
 import type { PageHeader } from "vuepress/client";
-import { VPLink } from "vuepress-shared/client";
+import { RouteLink } from "vuepress/client";
 
 import DropTransition from "@theme-hope/components/transitions/DropTransition";
 import { useThemeLocaleData } from "@theme-hope/composables/index";
@@ -63,7 +63,7 @@ export default defineComponent({
                       h("li", { class: "timeline-item" }, [
                         h("span", { class: "timeline-date" }, date),
                         h(
-                          VPLink,
+                          RouteLink,
                           {
                             class: "timeline-title",
                             to: path,

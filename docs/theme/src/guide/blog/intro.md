@@ -9,7 +9,7 @@ tag:
   - Intro
 ---
 
-The theme supports blog feature with`vuepress-plugin-blog2` by default, and it's **disabled by default**.
+The theme supports blog feature with`@vuepress/plugin-blog` by default, and it's **disabled by default**.
 
 If you need blog functionality, you can set `plugins.blog: true` in theme options to enable blog functionality.
 

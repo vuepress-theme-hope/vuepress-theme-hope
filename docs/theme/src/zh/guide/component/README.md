@@ -10,4 +10,4 @@ tag:
   - 组件
 ---
 
-<AutoCatalog />
+<Catalog />
