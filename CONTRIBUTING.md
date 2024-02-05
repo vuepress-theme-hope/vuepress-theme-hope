@@ -10,19 +10,14 @@ We always welcome everyone to contribute! Here is a guide for you.
 
 ## Clone and Install Project
 
+If you have not enabled corepack, run `corepack enable` first.
+
 Use Git to clone the project to the local, and use `pnpm` to install dependencies.
 
 ```sh
 git clone git@github.com:vuepress-theme-hope/vuepress-theme-hope.git
 
 pnpm i
-```
-
-If you have not installed pnpm, please install it using the following command.
-
-```sh
-corepack enable
-corepack prepare pnpm@latest --activate
 ```
 
 Note: Development requires latest LTS version of Node.js.

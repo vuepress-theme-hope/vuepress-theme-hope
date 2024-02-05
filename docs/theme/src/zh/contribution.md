@@ -11,24 +11,14 @@ category:
 
 ## 克隆并安装项目
 
-使用 Git 克隆项目到本地，并使用 `pnpm` 进行依赖的安装。
+你应该预先安装 Node.js 和 Git，并使用 `corepack enable` 启用 corepack。
+
+使用 Git 克隆项目到本地，并安装依赖:
 
 ```sh
 git clone git@github.com:vuepress-theme-hope/vuepress-theme-hope.git
-
 pnpm i
 ```
-
-::: tip
-
-如果你并未安装 pnpm，请使用下列命令安装它:
-
-```sh
-corepack enable
-corepack prepare pnpm@latest --activate
-```
-
-:::
 
 ## 项目文件结构
 
