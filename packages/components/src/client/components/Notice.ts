@@ -1,7 +1,7 @@
 import { startsWith } from "@vuepress/helper/client";
 import type { FunctionalComponent, PropType } from "vue";
 import { h } from "vue";
-import { useRoute } from "vue-router";
+import { usePageData } from "vuepress/client";
 
 import NoticeItem from "./NoticeItem.js";
 import type { NoticeItemOptions } from "../../shared/index.js";
@@ -15,12 +15,12 @@ type NoticeClientOption = Omit<NoticeItemOptions, "key"> & {
 const Notice: FunctionalComponent<{
   config: NoticeClientOption[];
 }> = ({ config }) => {
-  const route = useRoute();
+  const page = usePageData();
 
   const item = config.find((item) =>
     "match" in item
-      ? new RegExp(item.match).test(route.path)
-      : startsWith(route.path, item.path),
+      ? new RegExp(item.match).test(page.value.path)
+      : startsWith(page.value.path, item.path),
   );
 
   return item ? h(NoticeItem, item) : null;
