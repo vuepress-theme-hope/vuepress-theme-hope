@@ -74,9 +74,41 @@
 }
 // stylelint-enable selector-class-pattern
 
+// plugin-back-to-top
+.vp-back-to-top-button {
+  --back-to-top-color: var(--vp-tc);
+  --back-to-top-color-hover: var(--vp-tcl);
+  --back-to-top-bg-color: var(--vp-bg);
+}
+
+// plugin-catalog
+.vp-catalog-wrapper {
+  --catalog-bg-color: var(--vp-bg);
+  --catalog-bg-secondary-color: var(--vp-bgl);
+  --catalog-border-color: var(--vp-brc);
+  --catalog-active-color: var(--vp-tc);
+  --catalog-hover-color: var(--vp-tcl);
+}
+
+// plugin-external-link-icon
+.external-link-icon {
+  --external-link-icon-color: var(--light-grey);
+}
+
 // plugin-nprogress
 #nprogress {
   --nprogress-color: var(--vp-tc);
+}
+
+// plugin-redirect
+.language-modal-mask {
+  --redirect-bg-color: var(--vp-bg);
+  --redirect-bg-color-light: var(--vp-bgl);
+  --redirect-bg-color-lighter: var(--vp-bglt);
+  --redirect-text-color: var(--vp-c);
+  --redirect-primary-bg-color: var(--vp-tc);
+  --redirect-primary-hover-bg-color: var(--vp-tcl);
+  --redirect-primary-text-color: var(--white);
 }
 
 // plugin-search
@@ -87,9 +119,4 @@
   --search-border-color: var(--border-color);
   --search-item-text-color: var(--vp-clt);
   --search-item-focus-bg-color: var(--bg-color-secondary);
-}
-
-// plugin-external-link-icon
-.external-link-icon {
-  --external-link-icon-color: var(--light-grey);
 }
