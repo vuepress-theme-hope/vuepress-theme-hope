@@ -27,9 +27,9 @@ export const resolveNavbarItem = (
         : {}),
       children: item.children.map(
         (child) =>
-          resolveNavbarItem(child, resolvePrefix(prefix, item.link)) as
-            | NavGroup<AutoLinkOptions>
-            | AutoLinkOptions,
+          <NavGroup<AutoLinkOptions> | AutoLinkOptions>(
+            resolveNavbarItem(child, resolvePrefix(prefix, item.prefix))
+          ),
       ),
     };
 
@@ -53,6 +53,8 @@ export const useNavbarItems = (): ComputedRefWithControl<
     () => themeLocaleData.value.navbar,
     () => getNavbarItems(),
   );
+
+  console.log(navbarItems.value);
 
   return navbarItems;
 };
