@@ -46,7 +46,7 @@
     "dev:ts": "tsc -b tsconfig.build.json --watch"
   },
   "dependencies": {
-    "@vuepress/helper": "2.0.0-rc.9",
+    "@vuepress/helper": "2.0.0-rc.10",
     "vue": "^3.4.15",
     "vue-router": "^4.2.5",
     "vuepress-plugin-components": "workspace:*",
