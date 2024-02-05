@@ -6,6 +6,7 @@ import { path } from "vuepress/utils";
 
 import { emptyTheme } from "./__fixtures__/theme/empty.js";
 import { generatePageIndex } from "../src/node/generateIndex.js";
+import { Store } from "../src/node/store.js";
 
 const app = createBaseApp({
   bundler: {} as any,
@@ -17,33 +18,39 @@ await app.init();
 
 describe("generateIndex", () => {
   it("Should generate index", () => {
+    const store = new Store();
+
     app.pages.forEach((page) => {
       page.data["excerpt"] = getPageExcerpt(app, page, {
         length: 0,
       });
 
-      expect(generatePageIndex(page)).toMatchSnapshot();
+      expect(generatePageIndex(page, store)).toMatchSnapshot();
     });
   });
 
   it("Should generate full index", () => {
+    const store = new Store();
+
     app.pages.forEach((page) => {
       page.data["excerpt"] = getPageExcerpt(app, page, {
         length: 0,
       });
 
-      expect(generatePageIndex(page, [], true)).toMatchSnapshot();
+      expect(generatePageIndex(page, store, [], true)).toMatchSnapshot();
     });
   });
 
   it("Should support customFields", () => {
+    const store = new Store();
+
     app.pages.forEach((page) => {
       page.data["excerpt"] = getPageExcerpt(app, page, {
         length: 0,
       });
 
       expect(
-        generatePageIndex(page, [
+        generatePageIndex(page, store, [
           {
             getter: ({ frontmatter }: Page): string[] | string | null =>
               (frontmatter.tag as string[] | string) || null,
@@ -54,10 +61,13 @@ describe("generateIndex", () => {
   });
 
   it("Should support customFields with full index", () => {
+    const store = new Store();
+
     app.pages.forEach((page) => {
       expect(
         generatePageIndex(
           page,
+          store,
           [
             {
               getter: ({ frontmatter }: Page): string[] | string | null =>

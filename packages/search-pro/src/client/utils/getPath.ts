@@ -1,6 +1,6 @@
-import { idMap } from "@temp/search-pro/idMap";
+import { store } from "@temp/search-pro/store";
 
 import type { MatchedItem } from "../typings/index.js";
 
 export const getPath = (item: MatchedItem): string =>
-  idMap[item.key] + ("anchor" in item ? `#${item.anchor}` : "");
+  store[item.id] + ("anchor" in item ? `#${item.anchor}` : "");

@@ -17,7 +17,7 @@ import type { PhotoSwipeOptions } from "vuepress-plugin-photo-swipe";
 import type { PWAOptions } from "vuepress-plugin-pwa2";
 import type { SearchProOptions } from "vuepress-plugin-search-pro";
 
-import type { BlogPluginOptions } from "./blog.js";
+import type { BlogOptions } from "./blog.js";
 import type { PrismjsOptions } from "./prism.js";
 
 export interface PluginsOptions {
@@ -48,7 +48,7 @@ export interface PluginsOptions {
    *
    * @default false
    */
-  blog?: BlogPluginOptions | boolean;
+  blog?: BlogOptions | boolean;
 
   /**
    * Options for @vuepress/catalog

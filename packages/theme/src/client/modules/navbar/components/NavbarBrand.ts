@@ -1,7 +1,11 @@
 import type { VNode } from "vue";
 import { computed, defineComponent, h } from "vue";
-import { useRouteLocale, useSiteLocaleData, withBase } from "vuepress/client";
-import { RouteLink } from "vuepress-shared/client";
+import {
+  RouteLink,
+  useRouteLocale,
+  useSiteLocaleData,
+  withBase,
+} from "vuepress/client";
 
 import { useThemeLocaleData } from "@theme-hope/composables/index";
 

@@ -74,10 +74,8 @@ export const resolveArraySidebarItems = ({
             ...(isLinkExternal(item.link)
               ? {}
               : {
-                  link: resolveLinkInfo(
-                    router,
-                    resolvePrefix(pathPrefix, item.link),
-                  ).link,
+                  link: resolveLinkInfo(resolvePrefix(pathPrefix, item.link))
+                    .link,
                 }),
           }
         : item;

@@ -15,9 +15,11 @@ import { searchProLocales } from "./locales.js";
 import type { SearchProOptions } from "./options.js";
 import {
   prepareSearchIndex,
+  prepareStore,
   removeSearchIndex,
   updateSearchIndex,
 } from "./prepare/index.js";
+import { Store } from "./store.js";
 import { CLIENT_FOLDER, PLUGIN_NAME, logger } from "./utils.js";
 
 export const searchProPlugin =
@@ -27,9 +29,11 @@ export const searchProPlugin =
     if (legacy)
       convertOptions(options as SearchProOptions & Record<string, unknown>);
 
+    if (app.env.isDebug) logger.info("Options:", options);
+
     useSassPalettePlugin(app, { id: "hope" });
 
-    if (app.env.isDebug) logger.info("Options:", options);
+    const store = new Store();
 
     return {
       name: PLUGIN_NAME,
@@ -80,7 +84,10 @@ export const searchProPlugin =
 
       onInitialized: (app): void => setPageExcerpt(app),
 
-      onPrepared: (app): Promise<void> => prepareSearchIndex(app, options),
+      onPrepared: async (app): Promise<void> => {
+        await prepareSearchIndex(app, options, store);
+        await prepareStore(app, store);
+      },
 
       onWatched: (app, watchers): void => {
         const hotReload =
@@ -94,19 +101,19 @@ export const searchProPlugin =
           });
 
           searchIndexWatcher.on("add", (path) => {
-            void updateSearchIndex(app, options, path);
+            void updateSearchIndex(app, options, store, path);
           });
           searchIndexWatcher.on("change", (path) => {
-            void updateSearchIndex(app, options, path);
+            void updateSearchIndex(app, options, store, path);
           });
           searchIndexWatcher.on("unlink", (path) => {
-            void removeSearchIndex(app, options, path);
+            void removeSearchIndex(app, options, store, path);
           });
 
           watchers.push(searchIndexWatcher);
         }
       },
 
-      onGenerated: (app) => generateWorker(app, options),
+      onGenerated: (app) => generateWorker(app, options, store),
     };
   };

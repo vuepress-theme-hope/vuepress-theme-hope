@@ -8,6 +8,7 @@ import type {
   SearchProCustomFieldOptions,
   SearchProOptions,
 } from "./options.js";
+import type { Store } from "./store.js";
 import type {
   IndexItem,
   LocaleIndex,
@@ -68,14 +69,15 @@ const renderHeader = (node: Element): string => {
 
 export const generatePageIndex = (
   page: Page<{ excerpt?: string }>,
+  store: Store,
   customFieldsGetter: SearchProCustomFieldOptions[] = [],
   indexContent = false,
 ): IndexItem[] => {
   const { contentRendered, data, title } = page;
-  const key = <PageIndexId>page.key;
+  const pageId = <PageIndexId>store.addItem(page.path).toString();
   const hasExcerpt = "excerpt" in data && data["excerpt"].length;
 
-  const pageIndex: PageIndexItem = { id: key, h: title };
+  const pageIndex: PageIndexItem = { id: pageId, h: title };
   const results: IndexItem[] = [pageIndex];
 
   // Here are some variables holding the current state of the parser
@@ -103,7 +105,7 @@ export const generatePageIndex = (
           else results.push(currentSectionIndex!);
 
           currentSectionIndex = {
-            id: `${key}#${id}`,
+            id: `${pageId}#${id}`,
             h: header,
           };
         } else if (header) {
@@ -170,7 +172,7 @@ export const generatePageIndex = (
   // Add custom fields
   entries(customFields).forEach(([customField, values]) => {
     results.push({
-      id: `${key}@${customField}`,
+      id: `${pageId}@${customField}`,
       c: values,
     });
   });
@@ -187,13 +189,14 @@ export const getSearchIndexStore = async (
     indexOptions,
     indexLocaleOptions,
   }: SearchProOptions,
+  store: Store,
 ): Promise<SearchIndexStore> => {
   const indexesByLocale: LocaleIndex = {};
 
   app.pages.forEach((page) => {
     if (filter(page) && page.frontmatter["search"] !== false)
       (indexesByLocale[page.pathLocale] ??= []).push(
-        ...generatePageIndex(page, customFields, indexContent),
+        ...generatePageIndex(page, store, customFields, indexContent),
       );
   });
 

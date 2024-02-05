@@ -11,7 +11,7 @@ import type { PhotoSwipeOptions } from "vuepress-plugin-photo-swipe";
 import type { PWAOptions } from "vuepress-plugin-pwa2";
 
 import type {
-  BlogPluginOptions,
+  BlogOptions,
   NavbarOptions,
   SidebarArrayOptions,
   SidebarObjectOptions,
@@ -28,7 +28,7 @@ export type ThemeSidebarArrayHelper = Helper<SidebarArrayOptions>;
 
 export type ThemeSidebarObjectHelper = Helper<SidebarObjectOptions>;
 
-export type ThemeBlogPluginHelper = Helper<BlogPluginOptions | boolean>;
+export type ThemeBlogPluginHelper = Helper<BlogOptions | boolean>;
 
 export type ThemeCommentPluginHelper = Helper<CommentOptions | false>;
 

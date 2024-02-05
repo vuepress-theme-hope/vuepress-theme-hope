@@ -19,7 +19,10 @@ import HopeIcon from "@theme-hope/components/HopeIcon";
 import { useThemeLocaleData } from "@theme-hope/composables/index";
 import { getAncestorLinks } from "@theme-hope/utils/index";
 
-import type { ThemeNormalPageFrontmatter } from "../../shared/index.js";
+import type {
+  ArticleInfo,
+  ThemeNormalPageFrontmatter,
+} from "../../shared/index.js";
 import { ArticleInfoType } from "../../shared/index.js";
 
 import "../styles/breadcrumb.scss";
@@ -46,23 +49,23 @@ export default defineComponent({
         (frontmatter.value.breadcrumb ||
           (frontmatter.value.breadcrumb !== false &&
             themeLocale.value.breadcrumb !== false)) &&
-        config.value.length > 1
+        config.value.length > 1,
     );
 
     const iconEnable = computed(
       () =>
         frontmatter.value.breadcrumbIcon ||
         (frontmatter.value.breadcrumbIcon !== false &&
-          themeLocale.value.breadcrumbIcon !== false)
+          themeLocale.value.breadcrumbIcon !== false),
     );
 
     const getBreadCrumbConfig = (): void => {
       const breadcrumbConfig = getAncestorLinks(
         page.value.path,
-        routeLocale.value
+        routeLocale.value,
       )
         .map<BreadCrumbConfig | null>(({ link, name }) => {
-          const { path, meta } = resolveRoute(link);
+          const { path, meta } = resolveRoute<ArticleInfo>(link);
 
           if (meta)
             return {
@@ -121,17 +124,17 @@ export default defineComponent({
                         h(
                           "span",
                           { property: "name" },
-                          item.title || "Unknown"
+                          item.title || "Unknown",
                         ),
-                      ]
+                      ],
                     ),
                     // Meta
                     h("meta", { property: "position", content: index + 1 }),
-                  ]
-                )
-              )
+                  ],
+                ),
+              ),
             )
-          : []
+          : [],
       );
   },
 });

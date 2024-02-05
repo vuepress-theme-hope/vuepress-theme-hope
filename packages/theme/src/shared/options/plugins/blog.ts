@@ -1,9 +1,9 @@
-import type { BlogOptions, BlogTypeOptions } from "@vuepress/plugin-blog";
+import type { BlogPluginOptions, BlogTypeOptions } from "@vuepress/plugin-blog";
 
-export interface BlogPluginOptions
+export interface BlogOptions
   extends Partial<
     Pick<
-      BlogOptions,
+      BlogPluginOptions,
       | "excerptFilter"
       | "excerptLength"
       | "excerptSeparator"

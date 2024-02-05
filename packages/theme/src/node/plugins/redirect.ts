@@ -5,10 +5,7 @@ import { colors } from "vuepress/utils";
 
 import { logger } from "../utils.js";
 
-let redirectPlugin: (
-  options: RedirectPluginOptions,
-  legacy?: boolean,
-) => Plugin;
+let redirectPlugin: (options: RedirectPluginOptions) => Plugin;
 
 try {
   ({ redirectPlugin } = await import("@vuepress/plugin-redirect"));
@@ -22,9 +19,7 @@ try {
  * Resolve options for @vuepress/plugin-redirect
  */
 export const getRedirectPlugin = (
-  options: Omit<RedirectOptions, "hostname"> | boolean = false,
-  hostname?: string,
-  legacy = false,
+  options: RedirectPluginOptions | boolean = false,
 ): Plugin | null => {
   // Disable redirect if no options for redirect plugin
   if (options === false || (isPlainObject(options) && !keys(options).length))
