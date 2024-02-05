@@ -3,7 +3,6 @@ import {
   entries,
   fromEntries,
   isPlainObject,
-  keys,
 } from "@vuepress/helper";
 import type { FeedPluginOptions } from "@vuepress/plugin-feed";
 import type { Plugin } from "vuepress/core";
@@ -34,8 +33,7 @@ export const getFeedPlugin = (
   legacy = false,
 ): Plugin | null => {
   // Disable feed if feed is disabled or no options for feed plugin
-  if (options === false || (isPlainObject(options) && !keys(options).length))
-    return null;
+  if (!options) return null;
 
   if (!feedPlugin) {
     logger.error(`${colors.cyan("@vuepress/plugin-feed")} is not installed!`);
