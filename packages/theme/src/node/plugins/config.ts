@@ -5,6 +5,7 @@ import type { App, PluginConfig } from "vuepress/core";
 
 import { getActiveHeaderLinksPlugin } from "./activeHeaderLinks.js";
 import { getAutoCatalogPlugin } from "./autoCatalog.js";
+import { getBackToTop } from "./backToTop.js";
 import { getBlogPlugin } from "./blog/index.js";
 import { getCommentPlugin } from "./comment.js";
 import { getComponentsPlugin } from "./components.js";
@@ -37,12 +38,7 @@ export const getPluginConfig = (
   themeData: ThemeData,
   options: Pick<
     ThemeOptions,
-    | "backToTop"
-    | "hostname"
-    | "hotReload"
-    | "iconAssets"
-    | "iconPrefix"
-    | "favicon"
+    "hostname" | "hotReload" | "iconAssets" | "iconPrefix" | "favicon"
   >,
   legacy = false,
 ): PluginConfig => {
@@ -52,6 +48,7 @@ export const getPluginConfig = (
     getComponentsPlugin(options, plugins.components, legacy),
     getActiveHeaderLinksPlugin(plugins.activeHeaderLinks),
     getAutoCatalogPlugin(plugins.autoCatalog, legacy),
+    getBackToTop(plugins.backToTop),
     plugins.externalLinkIcon === false ? null : externalLinkIconPlugin(),
     plugins.nprogress === false ? null : nprogressPlugin(),
     themeDataPlugin({ themeData }),
@@ -74,7 +71,7 @@ export const getPluginConfig = (
     getSearchPlugin(app, themeData, plugins),
     getSitemapPlugin(plugins.sitemap, options.hostname),
     getRtlPlugin(themeData),
-    getRedirectPlugin(plugins.redirect, options.hostname, legacy),
+    getRedirectPlugin(plugins.redirect),
   ].filter((item) => item !== null) as PluginConfig;
 
   return pluginConfig;

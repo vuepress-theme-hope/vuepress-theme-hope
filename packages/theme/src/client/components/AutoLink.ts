@@ -8,7 +8,7 @@ import { ExternalLinkIcon } from "@vuepress/plugin-external-link-icon/client";
 import type { PropType, SlotsType, VNode } from "vue";
 import { computed, defineComponent, h, toRef } from "vue";
 import { useRoute } from "vue-router";
-import { VPLink, useSiteData } from "vuepress/client";
+import { RouteLink, useSiteData } from "vuepress/client";
 
 import HopeIcon from "@theme-hope/components/HopeIcon";
 
@@ -58,32 +58,31 @@ export default defineComponent({
 
     // If the link has non-http protocol
     const withProtocol = computed(
-      () => !isHttp.value && isLinkWithProtocol(config.value.link),
+      () => !isHttp.value && isLinkWithProtocol(config.value.link)
     );
 
     // Resolve the `target` attr
     const linkTarget = computed(
-      () => config.value.target || (isHttp.value ? "_blank" : undefined),
+      () => config.value.target || (isHttp.value ? "_blank" : undefined)
     );
 
     // If the `target` attr is "_blank"
     const isBlankTarget = computed(() => linkTarget.value === "_blank");
 
-    // Render `<VPLink>` or not
-    const renderVPLink = computed(
-      () => !isHttp.value && !withProtocol.value && !isBlankTarget.value,
+    // Render `<RouteLink>` or not
+    const renderRouteLink = computed(
+      () => !isHttp.value && !withProtocol.value && !isBlankTarget.value
     );
 
     // Resolve the `rel` attr
     const anchorRel = computed(
       () =>
-        config.value.rel ||
-        (isBlankTarget.value ? "noopener noreferrer" : null),
+        config.value.rel || (isBlankTarget.value ? "noopener noreferrer" : null)
     );
 
     // Resolve the `aria-label` attr
     const linkAriaLabel = computed(
-      () => config.value.ariaLabel || config.value.text,
+      () => config.value.ariaLabel || config.value.text
     );
 
     // Should be active when current route is a subpath of this link
@@ -102,23 +101,23 @@ export default defineComponent({
 
     // If this link is active
     const isActive = computed(() =>
-      renderVPLink.value
+      renderRouteLink.value
         ? config.value.activeMatch
           ? new RegExp(config.value.activeMatch, "u").test(route.path)
           : // If this link is active in subpath
             shouldBeActiveInSubpath.value
             ? startsWith(route.path, config.value.link)
             : route.path === config.value.link
-        : false,
+        : false
     );
 
     return (): VNode => {
       const { before, after, default: defaultSlot } = slots;
       const { text, icon, link } = config.value;
 
-      return renderVPLink.value
+      return renderRouteLink.value
         ? h(
-            VPLink,
+            RouteLink,
             {
               to: link,
               "aria-label": linkAriaLabel.value,
@@ -130,7 +129,7 @@ export default defineComponent({
             () =>
               defaultSlot
                 ? defaultSlot()
-                : [before ? before() : h(HopeIcon, { icon }), text, after?.()],
+                : [before ? before() : h(HopeIcon, { icon }), text, after?.()]
           )
         : h(
             "a",
@@ -151,7 +150,7 @@ export default defineComponent({
                   text,
                   props.noExternalLinkIcon ? null : h(ExternalLinkIcon),
                   after?.(),
-                ],
+                ]
           );
     };
   },

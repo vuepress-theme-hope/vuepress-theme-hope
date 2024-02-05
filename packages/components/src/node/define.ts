@@ -72,6 +72,7 @@ export const getDefine =
         config: options.locales?.siteInfo,
       });
 
+    // TODO: Remove in v2 stable
     if (options.rootComponents?.backToTop)
       result["BACK_TO_TOP_LOCALES"] = getLocaleConfig({
         app,

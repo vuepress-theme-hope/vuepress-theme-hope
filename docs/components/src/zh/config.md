@@ -133,32 +133,6 @@ Twitter 用户名。
 
 会被挂载到根节点的组件。
 
-### rootComponents.backToTop
-
-- 类型: `BackToTopOptions | boolean`
-
-  ```ts
-  interface BackToTopOptions {
-    /**
-     * 滚动距离阈值，用于显示返回顶部按钮 (单位: 像素)
-     *
-     * @default 100
-     */
-    threshold?: number;
-
-    /**
-     * 是否显示滚动进度
-     *
-     * @default true
-     */
-    progress?: boolean;
-  }
-  ```
-
-- 默认值: `false`
-- 详情:
-  - [指南 → BackToTop](./guide/utilities/back-to-top.md)
-
 是否启用返回顶部按钮，当设置为数字时，会被作为返回顶部按钮触发距离 (单位: 像素)，默认为 300。
 
 ### rootComponents.notice
@@ -241,27 +215,6 @@ Twitter 用户名。
 ## locales
 
 组件多语言配置
-
-### locales.backToTop
-
-- 类型: `BackToTopLocaleConfig`
-
-  ```ts
-  interface BackToTopLocaleData {
-    /**
-     * 返回顶部文字
-     */
-    backToTop: string;
-  }
-
-  interface BackToTopLocaleConfig {
-    [localePath: string]: BackToTopLocaleData;
-  }
-  ```
-
-- 必填: 否
-
-返回顶部按钮国际化配置。
 
 ### locales.pdf
 

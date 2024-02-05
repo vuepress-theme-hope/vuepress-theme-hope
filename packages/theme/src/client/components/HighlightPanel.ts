@@ -1,7 +1,7 @@
 import { isLinkExternal } from "@vuepress/helper/client";
 import type { FunctionalComponent, VNode } from "vue";
 import { h } from "vue";
-import { VPLink, withBase } from "vuepress/client";
+import { RouteLink, withBase } from "vuepress/client";
 
 import HopeIcon from "@theme-hope/components/HopeIcon";
 
@@ -19,7 +19,7 @@ const HighlightPanel: FunctionalComponent<
     image?: (props: ThemeProjectHomeHighlightOptions) => VNode[] | VNode | null;
     info?: (props: ThemeProjectHomeHighlightOptions) => VNode[] | VNode | null;
     highlights?: (
-      props: ThemeProjectHomeHighlightItem[],
+      props: ThemeProjectHomeHighlightItem[]
     ) => VNode[] | VNode | null;
   }
 > = (props, { slots }): VNode => {
@@ -111,7 +111,7 @@ const HighlightPanel: FunctionalComponent<
                               })
                             : null,
                           h("span", { innerHTML: title }),
-                        ],
+                        ]
                       ),
                       details
                         ? h(type === "no-order" ? "dd" : "p", {
@@ -136,26 +136,26 @@ const HighlightPanel: FunctionalComponent<
                                 "aria-label": title,
                                 target: "_blank",
                               },
-                              children,
+                              children
                             )
                           : h(
-                              VPLink,
+                              RouteLink,
                               {
                                 class: "vp-highlight-item link",
                                 to: link,
                                 "aria-label": title,
                               },
-                              () => children,
+                              () => children
                             )
-                        : h("div", { class: "vp-highlight-item" }, children),
+                        : h("div", { class: "vp-highlight-item" }, children)
                     );
-                  }),
+                  })
                 ),
-            ]),
+            ])
           ),
         ],
       ]),
-    ],
+    ]
   );
 };
 

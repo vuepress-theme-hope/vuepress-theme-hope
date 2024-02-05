@@ -1,6 +1,6 @@
 import type { FunctionalComponent } from "vue";
 import { h } from "vue";
-import { VPLink, withBase } from "vuepress/client";
+import { RouteLink, withBase } from "vuepress/client";
 import { isLinkExternal } from "@vuepress/helper/client";
 
 import "../styles/vp-banner.scss";
@@ -96,7 +96,7 @@ const VPBanner: FunctionalComponent<BannerProps> = ({
                 text,
               )
             : h(
-                VPLink,
+                RouteLink,
                 {
                   class: ["vp-banner-action", type],
                   to: link,

@@ -16,6 +16,4 @@ index: false
 
 ## 根组件
 
-- [BackToTop](./back-to-top.md): 返回顶部按钮
-
 - [Notice](./notice.md): 站点公告

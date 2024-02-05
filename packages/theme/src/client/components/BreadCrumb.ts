@@ -8,7 +8,7 @@ import {
   watch,
 } from "vue";
 import {
-  VPLink,
+  RouteLink,
   resolveRoute,
   usePageData,
   usePageFrontmatter,
@@ -46,20 +46,20 @@ export default defineComponent({
         (frontmatter.value.breadcrumb ||
           (frontmatter.value.breadcrumb !== false &&
             themeLocale.value.breadcrumb !== false)) &&
-        config.value.length > 1,
+        config.value.length > 1
     );
 
     const iconEnable = computed(
       () =>
         frontmatter.value.breadcrumbIcon ||
         (frontmatter.value.breadcrumbIcon !== false &&
-          themeLocale.value.breadcrumbIcon !== false),
+          themeLocale.value.breadcrumbIcon !== false)
     );
 
     const getBreadCrumbConfig = (): void => {
       const breadcrumbConfig = getAncestorLinks(
         page.value.path,
-        routeLocale.value,
+        routeLocale.value
       )
         .map<BreadCrumbConfig | null>(({ link, name }) => {
           const { path, meta } = resolveRoute(link);
@@ -106,7 +106,7 @@ export default defineComponent({
                   },
                   [
                     h(
-                      VPLink,
+                      RouteLink,
                       {
                         to: item.path,
                         property: "item",
@@ -121,17 +121,17 @@ export default defineComponent({
                         h(
                           "span",
                           { property: "name" },
-                          item.title || "Unknown",
+                          item.title || "Unknown"
                         ),
-                      ],
+                      ]
                     ),
                     // Meta
                     h("meta", { property: "position", content: index + 1 }),
-                  ],
-                ),
-              ),
+                  ]
+                )
+              )
             )
-          : [],
+          : []
       );
   },
 });

@@ -75,9 +75,11 @@ export const useNavbarLanguageDropdown =
                 );
 
                 link =
-                  // Try to link to the corresponding page of current page
-                  routes.value.some(({ path }) => path === targetLocalePage)
-                    ? // Try to keep current hash across languages
+                  // try to link to the corresponding page of current page
+                  router
+                    .getRoutes()
+                    .some((item) => item.path === targetLocalePage)
+                    ? // try to keep current hash across languages
                       fullPath.replace(path, targetLocalePage)
                     : // Or fallback to homepage
                       targetThemeLocale.home ?? targetLocalePath;

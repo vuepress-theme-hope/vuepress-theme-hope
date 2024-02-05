@@ -1,6 +1,6 @@
 {
   "name": "vuepress-theme-hope-root",
-  "version": "2.0.0-rc.19",
+  "version": "2.0.0-rc.20",
   "private": true,
   "description": "A VuePress theme with tons of features",
   "type": "module",
@@ -81,12 +81,12 @@
     "gulp": "4.0.2",
     "http-server": "14.1.1",
     "husky": "9.0.10",
-    "inquirer": "9.2.13",
+    "inquirer": "9.2.14",
     "markdownlint-cli2": "0.12.1",
     "nano-staged": "0.8.0",
     "ora": "8.0.1",
     "picocolors": "1.0.0",
-    "prettier": "3.2.4",
+    "prettier": "3.2.5",
     "rimraf": "5.0.5",
     "rollup": "4.9.6",
     "rollup-plugin-copy": "3.5.0",
@@ -102,7 +102,7 @@
     "typescript": "5.3.3",
     "vitest": "1.2.2"
   },
-  "packageManager": "pnpm@8.15.0",
+  "packageManager": "pnpm@8.15.1",
   "engines": {
     "node": ">=20"
   },

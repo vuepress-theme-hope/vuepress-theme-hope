@@ -1,7 +1,7 @@
 import { entries } from "@vuepress/helper/client";
 import type { VNode } from "vue";
 import { defineComponent, h } from "vue";
-import { VPLink, usePageFrontmatter } from "vuepress/client";
+import { RouteLink, usePageFrontmatter } from "vuepress/client";
 import type { BlogPluginCategoryFrontmatter } from "vuepress-plugin-blog2";
 import { generateIndexFromHash } from "vuepress-shared/client";
 
@@ -37,12 +37,12 @@ export default defineComponent({
                   { active: isActive(tag) },
                 ],
               },
-              h(VPLink, { to: path }, () => [
+              h(RouteLink, { to: path }, () => [
                 tag,
                 h("span", { class: "tag-num" }, items.length),
-              ]),
-            ),
-          ),
+              ])
+            )
+          )
       );
   },
 });

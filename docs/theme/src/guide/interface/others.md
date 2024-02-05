@@ -90,9 +90,9 @@ If the current browser does not support full screen, the full screen button is a
 
 ## Back to top button
 
-`vuepress-theme-hope` adds a back-to-top button with progress bar which will display after scrolling down 100px by default.
+`vuepress-theme-hope` adds a back-to-top button with progress bar using [`@vuepress/plugin-back-to-top`][back-to-top] which will display after scrolling down 100px by default.
 
-You can set `backToTop: false` in theme options to disable it, or set it with an object to customize its threshold distance and progress bar display:
+You can set `plugins.backToTop: false` in theme options to disable it, or set it with an object to customize its threshold distance and progress bar display:
 
 ::: code-tabs#language
 
@@ -104,25 +104,27 @@ import { hopeTheme } from "vuepress-theme-hope";
 
 export default defineUserConfig({
   theme: hopeTheme({
-    // disable back to top button
-    backToTop: false,
+    plugins: {
+      // disable back to top button
+      backToTop: false,
 
-    // or
+      // or
 
-    // customize back to top button
-    backToTop: {
-      /**
-       * Scroll threshold distance to display back to top button (in pixels)
-       *
-       * @default 100
-       */
-      threshold: 500,
-      /**
-       * Whether display scroll progress
-       *
-       * @default true
-       */
-      progress: false,
+      // customize back to top button
+      backToTop: {
+        /**
+         * Scroll threshold distance to display back to top button (in pixels)
+         *
+         * @default 100
+         */
+        threshold: 500,
+        /**
+         * Whether display scroll progress
+         *
+         * @default true
+         */
+        progress: false,
+      },
     },
   }),
 });
@@ -136,25 +138,27 @@ import { hopeTheme } from "vuepress-theme-hope";
 
 export default defineUserConfig({
   theme: hopeTheme({
-    // disable back to top button
-    backToTop: false,
+    plugins: {
+      // disable back to top button
+      backToTop: false,
 
-    // or
+      // or
 
-    // customize back to top button
-    backToTop: {
-      /**
-       * Scroll threshold distance to display back to top button (in pixels)
-       *
-       * @default 100
-       */
-      threshold: 500,
-      /**
-       * Whether display scroll progress
-       *
-       * @default true
-       */
-      progress: false,
+      // customize back to top button
+      backToTop: {
+        /**
+         * Scroll threshold distance to display back to top button (in pixels)
+         *
+         * @default 100
+         */
+        threshold: 500,
+        /**
+         * Whether display scroll progress
+         *
+         * @default true
+         */
+        progress: false,
+      },
     },
   }),
 });
@@ -215,3 +219,5 @@ import ToggleFullScreenButton from "@theme-hope/modules/outlook/components/Toggl
 import PrintButton from "@theme-hope/modules/info/components/PrintButton";
 import ToggleRTLButton from "@ToggleRTLButton";
 </script>
+
+[back-to-top]: https://ecosystem.vuejs.press/plugins/back-to-top.html

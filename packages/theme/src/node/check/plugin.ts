@@ -31,6 +31,7 @@ const PLUGIN_CHECKLIST = [
 const KNOWN_THEME_PLUGINS = [
   "activeHeaderLinks",
   "autoCatalog",
+  "backToTop",
   "blog",
   "components",
   "comment",
@@ -46,6 +47,7 @@ const KNOWN_THEME_PLUGINS = [
   "prismjs",
   "pwa",
   "readingTime",
+  "redirect",
   "search",
   "searchPro",
   "seo",

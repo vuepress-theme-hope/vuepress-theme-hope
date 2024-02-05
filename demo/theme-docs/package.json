@@ -1,6 +1,6 @@
 {
   "name": "theme-docs-demo",
-  "version": "2.0.0-rc.19",
+  "version": "2.0.0-rc.20",
   "private": true,
   "description": "Theme demo for vuepress-theme-hope",
   "license": "MIT",
@@ -23,6 +23,10 @@
     "chart.js": "4.4.1",
     "echarts": "5.4.3",
     "katex": "0.16.9",
+    "kotlin-playground": "1.30.0",
+    "markmap-lib": "0.15.8",
+    "markmap-toolbar": "0.15.8",
+    "markmap-view": "0.15.8",
     "mathjax-full": "3.2.2",
     "mermaid": "10.8.0",
     "reveal.js": "5.0.4",

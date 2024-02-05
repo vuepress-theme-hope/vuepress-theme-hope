@@ -1,7 +1,7 @@
 import { entries } from "@vuepress/helper/client";
 import type { VNode } from "vue";
 import { defineComponent, h } from "vue";
-import { VPLink, usePageData } from "vuepress/client";
+import { RouteLink, usePageData } from "vuepress/client";
 import { generateIndexFromHash } from "vuepress-shared/client";
 
 import { useCategoryMap } from "@theme-hope/modules/blog/composables/index";
@@ -33,12 +33,12 @@ export default defineComponent({
                   { active: path === page.value.path },
                 ],
               },
-              h(VPLink, { to: path }, () => [
+              h(RouteLink, { to: path }, () => [
                 category,
                 h("span", { class: "count" }, items.length),
-              ]),
-            ),
-          ),
+              ])
+            )
+          )
       );
   },
 });

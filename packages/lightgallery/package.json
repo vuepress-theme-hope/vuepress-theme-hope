@@ -1,6 +1,6 @@
 {
   "name": "vuepress-plugin-lightgallery",
-  "version": "2.0.0-rc.19",
+  "version": "2.0.0-rc.20",
   "description": "Light Gallery plugin for VuePress",
   "keywords": [
     "vuepress",
@@ -46,7 +46,7 @@
     "dev:ts": "tsc -b tsconfig.build.json --watch"
   },
   "dependencies": {
-    "@vuepress/helper": "2.0.0-rc.7",
+    "@vuepress/helper": "2.0.0-rc.9",
     "lightgallery": "^2.7.2",
     "vue": "^3.4.15",
     "vue-router": "^4.2.5",

@@ -121,24 +121,6 @@ jobs:
           token: ${{ secrets.ACCESS_TOKEN }}
           single-commit: true
 
-      - name: Deploy remove-pwa docs
-        uses: JamesIves/github-pages-deploy-action@v4
-        with:
-          repository-name: vuepress-theme-hope/remove-pwa-docs
-          branch: netlify
-          folder: docs/remove-pwa/dist
-          token: ${{ secrets.ACCESS_TOKEN }}
-          single-commit: true
-
-      - name: Deploy redirect docs
-        uses: JamesIves/github-pages-deploy-action@v4
-        with:
-          repository-name: vuepress-theme-hope/redirect-docs
-          branch: netlify
-          folder: docs/redirect/dist
-          token: ${{ secrets.ACCESS_TOKEN }}
-          single-commit: true
-
       - name: Deploy sass-palette docs
         uses: JamesIves/github-pages-deploy-action@v4
         with:
@@ -219,8 +201,6 @@ jobs:
           pnpm cpx "docs/md-enhance/dist/**" dist/md-enhance
           pnpm cpx "docs/photo-swipe/dist/**" dist/photo-swipe
           pnpm cpx "docs/pwa2/dist/**" dist/pwa
-          pnpm cpx "docs/remove-pwa/dist/**" dist/remove-pwa
-          pnpm cpx "docs/redirect/dist/**" dist/redirect
           pnpm cpx "docs/sass-palette/dist/**" dist/sass-palette
           pnpm cpx "docs/search-pro/dist/**" dist/search-pro
           pnpm cpx "docs/shared/dist/**" dist/shared
@@ -313,7 +293,6 @@ jobs:
           - md-enhance
           - photo-swipe
           - pwa2
-          - redirect
           - sass-palette
           - search-pro
 

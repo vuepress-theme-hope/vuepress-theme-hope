@@ -105,6 +105,8 @@ export const theme = (
         indexBase: base ? `/v2/${base}/` : "/v2/",
       },
 
+      redirect: { switchLocale: "modal" },
+
       seo: hostname === canonical ? {} : { canonical },
 
       ...plugins,

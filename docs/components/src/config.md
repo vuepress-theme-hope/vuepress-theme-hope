@@ -133,34 +133,6 @@ Location to pdfjs viewer.
 
 Components to be mounted at root.
 
-### rootComponents.backToTop
-
-- Type: `BackToTopOptions | boolean`
-
-  ```ts
-  interface BackToTopOptions {
-    /**
-     * Scroll threshold distance to display back to top button (in pixels)
-     *
-     * @default 100
-     */
-    threshold?: number;
-
-    /**
-     * Whether display scroll progress
-     *
-     * @default true
-     */
-    progress?: boolean;
-  }
-  ```
-
-- Default: `false`
-- Details:
-  - [Guide → BackToTop](./guide/utilities/back-to-top.md)
-
-Whether enabling backToTop button. When setting a number, it will be used as BackToTop button threshold distance (in pixels), default is 300.
-
 ### rootComponents.notice
 
 - Type: `NoticeOptions`
@@ -243,27 +215,6 @@ Config for global notice.
 ## locales
 
 Component locales.
-
-### locales.backToTop
-
-- Type: `BackToTopLocaleConfig`
-
-  ```ts
-  interface BackToTopLocaleData {
-    /**
-     * Back to top button label text
-     */
-    backToTop: string;
-  }
-
-  interface BackToTopLocaleConfig {
-    [localePath: string]: BackToTopLocaleData;
-  }
-  ```
-
-- Required: No
-
-Locales config for BackToTop button.
 
 ### locales.pdf
 

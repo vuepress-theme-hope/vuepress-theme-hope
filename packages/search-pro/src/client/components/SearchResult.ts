@@ -7,7 +7,7 @@ import { useEventListener } from "@vueuse/core";
 import type { VNode } from "vue";
 import { computed, defineComponent, h, reactive, ref, toRef, watch } from "vue";
 import { useRouter } from "vue-router";
-import { VPLink, useRouteLocale } from "vuepress/client";
+import { RouteLink, useRouteLocale } from "vuepress/client";
 
 import { SearchLoading } from "./SearchLoading.js";
 import { HeadingIcon, HeartIcon, HistoryIcon, TitleIcon } from "./icons.js";
@@ -135,15 +135,13 @@ export default defineComponent({
         activatedResultContentIndex.value <
         activatedResult.value.contents.length - 1
       )
-        activatedResultContentIndex.value =
-          activatedResultContentIndex.value + 1;
+        activatedResultContentIndex.value += 1;
       else activeNextResult();
     };
 
     const activePreviousResultContent = (): void => {
       if (activatedResultContentIndex.value > 0)
-        activatedResultContentIndex.value =
-          activatedResultContentIndex.value - 1;
+        activatedResultContentIndex.value -= 1;
       else activePreviousResult();
     };
 
@@ -300,7 +298,7 @@ export default defineComponent({
 
                           resultHistory.value.map((item, historyIndex) =>
                             h(
-                              VPLink,
+                              RouteLink,
                               {
                                 to: item.link,
                                 class: [
@@ -387,7 +385,7 @@ export default defineComponent({
                             activatedResultContentIndex.value === contentIndex;
 
                           return h(
-                            VPLink,
+                            RouteLink,
                             {
                               to: getRealPath(item),
                               class: [

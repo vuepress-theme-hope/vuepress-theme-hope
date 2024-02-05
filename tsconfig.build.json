@@ -12,7 +12,6 @@
     { "path": "./packages/md-enhance/tsconfig.build.json" },
     { "path": "./packages/photo-swipe/tsconfig.build.json" },
     { "path": "./packages/pwa2/tsconfig.build.json" },
-    { "path": "./packages/redirect/tsconfig.build.json" },
     { "path": "./packages/sass-palette/tsconfig.build.json" },
     { "path": "./packages/search-pro/tsconfig.build.json" },
     { "path": "./packages/shared/tsconfig.build.json" },

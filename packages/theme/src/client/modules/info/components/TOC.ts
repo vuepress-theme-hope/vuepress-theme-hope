@@ -3,7 +3,7 @@ import { defineComponent, h, onMounted, ref, shallowRef, watch } from "vue";
 import { useRoute } from "vue-router";
 import type { PageHeader } from "vuepress/client";
 import { usePageData } from "vuepress/client";
-import { VPLink } from "vuepress-shared/client";
+import { RouteLink } from "vuepress-shared/client";
 
 import PrintButton from "@theme-hope/modules/info/components/PrintButton";
 import { useMetaLocale } from "@theme-hope/modules/info/composables/index";
@@ -12,17 +12,17 @@ import "../styles/toc.scss";
 
 const renderHeader = ({ title, level, slug }: PageHeader): VNode =>
   h(
-    VPLink,
+    RouteLink,
     {
       to: `#${slug}`,
       class: ["toc-link", `level${level}`],
     },
-    () => title,
+    () => title
   );
 
 const renderChildren = (
   headers: PageHeader[],
-  headerDepth: number,
+  headerDepth: number
 ): VNode | null => {
   const route = useRoute();
 
@@ -42,11 +42,11 @@ const renderChildren = (
                   { active: route.hash === `#${header.slug}` },
                 ],
               },
-              renderHeader(header),
+              renderHeader(header)
             ),
             children ? h("li", children) : null,
           ];
-        }),
+        })
       )
     : null;
 };
@@ -120,7 +120,7 @@ export default defineComponent({
           if (toc.value) {
             // Get the active toc item DOM, whose href equals to the current route
             const activeTocItem = document.querySelector(
-              `#toc a.toc-link[href$="${hash}"]`,
+              `#toc a.toc-link[href$="${hash}"]`
             );
 
             if (!activeTocItem) return;
@@ -147,10 +147,10 @@ export default defineComponent({
                   activeTocItemTop +
                   activeTocItemHeight -
                   tocTop -
-                  tocHeight,
+                  tocHeight
               );
           }
-        },
+        }
       );
 
       watch(() => route.fullPath, updateTocMarker, {

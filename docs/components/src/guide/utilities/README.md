@@ -16,6 +16,4 @@ index: false
 
 ## Root Components
 
-- [BackToTop](./back-to-top.md)
-
 - [Notice](./notice.md)

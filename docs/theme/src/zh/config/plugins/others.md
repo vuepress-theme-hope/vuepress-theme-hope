@@ -17,6 +17,14 @@ tag:
 
 插件选项请参阅 <ProjectLink name="auto-catalog" path="/zh/config.html">auto catalog 插件文档</ProjectLink>。
 
+## backToTop <Badge text="默认启用" />
+
+控制 `@vuepress/plugin-back-to-top`，提供返回顶部按钮。
+
+默认不需要任何额外配置。如果你不需要此功能可设置为 `false`。
+
+插件选项请参阅 [back-to-top 插件文档][back-to-top-config]。
+
 ## components
 
 控制 `vuepress-plugin-components`，为 Markdown 提供一组组件。
@@ -129,6 +137,7 @@ tag:
 
 插件选项请参阅 [sitemap 插件文档][sitemap-config]。
 
+[back-to-top-config]: https://ecosystem.vuejs.press/zh/plugins/back-to-top.html#options
 [copy-code-config]: https://ecosystem.vuejs.press/zh/plugins/copy-code.html#options
 [git-config]: https://ecosystem.vuejs.press/zh/plugins/git.html#options
 [reading-time-config]: https://ecosystem.vuejs.press/zh/plugins/reading-time.html#options

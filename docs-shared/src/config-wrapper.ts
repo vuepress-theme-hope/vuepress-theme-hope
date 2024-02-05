@@ -2,7 +2,6 @@ import { addViteOptimizeDepsInclude } from "@vuepress/helper";
 import type { UserConfig } from "vuepress/cli";
 import { defineUserConfig } from "vuepress/cli";
 import { getDirname, path } from "vuepress/utils";
-import { redirectPlugin } from "vuepress-plugin-redirect";
 
 import { pwaHead } from "./head.js";
 
@@ -36,7 +35,7 @@ export const config = (
       },
     },
 
-    plugins: [redirectPlugin({ switchLocale: "modal" }), ...plugins],
+    plugins,
 
     alias: {
       "@theme-hope/components/HeroInfo": path.resolve(

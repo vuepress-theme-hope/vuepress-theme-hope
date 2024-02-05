@@ -13,7 +13,7 @@ import type { ThemeOptions } from "../../shared/index.js";
 export const getComponentsPlugin = (
   options: Pick<
     ThemeOptions,
-    "backToTop" | "hostname" | "hotReload" | "iconAssets" | "iconPrefix"
+    "hostname" | "hotReload" | "iconAssets" | "iconPrefix"
   >,
   {
     components = ["Badge", "FontIcon"],
@@ -37,10 +37,7 @@ export const getComponentsPlugin = (
         },
         ...componentOptions,
       },
-      rootComponents: {
-        backToTop: options.backToTop ?? true,
-        ...rootComponents,
-      },
+      rootComponents,
     },
     legacy,
   );

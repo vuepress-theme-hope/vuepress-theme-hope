@@ -1,5 +1,3 @@
-import type { BackToTopOptions } from "vuepress-plugin-components";
-
 import type { FooterLocaleOptions } from "./footer.js";
 import type { DocsRepoLocaleOptions } from "./info.js";
 import type { MetaLocaleOptions, MetaLocateData } from "./meta.js";
@@ -122,15 +120,6 @@ export type LayoutLocaleConfig = LayoutLocaleOptions;
  * @kind root
  */
 export interface LayoutOptions {
-  /**
-   * Wether display back to top button
-   *
-   * 是否显示返回顶部按钮
-   *
-   * @default true
-   */
-  backToTop?: BackToTopOptions | boolean;
-
   /**
    * Sorter of structure sidebar
    *

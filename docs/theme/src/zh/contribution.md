@@ -54,7 +54,6 @@ corepack prepare pnpm@latest --activate
 │ ├── md-enhance → md-enhance 插件文档
 │ ├── photo-swipe → photo-swipe 文档
 │ ├── pwa → pwa2 插件文档
-│ ├── remove-pwa → remove-pwa 插件文档
 │ ├── sass-palette → sass-palette 插件文档
 │ ├── shared → vuepress-shared 文档
 │ ├── search-pro → search-pro 插件文档
@@ -72,7 +71,6 @@ corepack prepare pnpm@latest --activate
 │ ├── md-enhance → md-enhance 插件
 │ ├── photo-swipe → photo-swipe 插件
 │ ├── pwa2 → pwa2 插件
-│ ├── remove-pwa → remove-pwa 插件
 │ ├── sass-palette → sass-palette 插件
 │ ├── search-pro → search-pro 插件
 │ ├── shared → 共享文件
