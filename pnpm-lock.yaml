@@ -103,8 +103,8 @@ importers:
         specifier: 9.0.10
         version: 9.0.10
       inquirer:
-        specifier: 9.2.13
-        version: 9.2.13
+        specifier: 9.2.14
+        version: 9.2.14
       markdownlint-cli2:
         specifier: 0.12.1
         version: 0.12.1
@@ -1208,8 +1208,8 @@ importers:
         specifier: 8.0.1
         version: 8.0.1
       inquirer:
-        specifier: 9.2.13
-        version: 9.2.13
+        specifier: 9.2.14
+        version: 9.2.14
     devDependencies:
       '@types/inquirer':
         specifier: 9.0.7
@@ -10097,9 +10097,9 @@ packages:
       wrap-ansi: 7.0.0
     dev: true
 
-  /inquirer@9.2.13:
-    resolution: {integrity: sha512-mUlJNemjYioZgaZXqEFlQ0z9GD8/o+pavIF3JyhzWLX4Xa9M1wioGMCxQEFmps70un9lrah2WaBl3kSRVcoV3g==}
-    engines: {node: '>=14.18.0'}
+  /inquirer@9.2.14:
+    resolution: {integrity: sha512-4ByIMt677Iz5AvjyKrDpzaepIyMewNvDcvwpVVRZNmy9dLakVoVgdCHZXbK1SlVJra1db0JZ6XkJyHsanpdrdQ==}
+    engines: {node: '>=18'}
     dependencies:
       '@ljharb/through': 2.3.12
       ansi-escapes: 4.3.2
