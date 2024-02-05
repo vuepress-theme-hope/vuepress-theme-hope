@@ -18,21 +18,21 @@ export default [
     {
       alias: [
         {
-          find: /^@theme-hope\/(.*)/u,
+          find: /^@theme-hope\/(.*)/,
           replacement: path.resolve(__dirname, "./src/client/$1.ts"),
         },
       ],
       external: [
         "@vuepress/helper/noopComponent",
+        "@vuepress/plugin-blog/client",
         "@vuepress/plugin-external-link-icon/client",
         "@vuepress/plugin-reading-time/client",
         "@vuepress/plugin-theme-data/client",
         "bcrypt-ts/browser",
         "body-scroll-lock",
-        "@vuepress/plugin-blog/client",
         "vuepress-plugin-comment2/pageview",
         "vuepress-plugin-md-enhance/SlidePage",
-        /\.jpg$/u,
+        /\.jpg$/,
       ],
       dts: false,
       moduleSideEffects: (id) =>

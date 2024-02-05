@@ -119,7 +119,7 @@ export const rollupBundle = (
                 : filePath.startsWith("client/")
             )
           ? [
-              /^@temp/u,
+              /^@temp/,
               "@vuepress/helper",
               "@vueuse/core",
               "vue",
@@ -127,7 +127,7 @@ export const rollupBundle = (
               "vuepress/client",
               "vuepress/shared",
               "vuepress-shared/client",
-              /\.s?css(?:\?module)?$/u,
+              /\.s?css(?:\?module)?$/,
             ]
           : (
                 typeof filePath === "object"
@@ -138,12 +138,12 @@ export const rollupBundle = (
             ? [
                 /^node:/,
                 "@vuepress/helper",
-                /^@vuepress\/plugin-/u,
+                /^@vuepress\/plugin-/,
                 "vuepress/cli",
                 "vuepress/core",
                 "vuepress/shared",
                 "vuepress/utils",
-                /^vuepress-plugin-/u,
+                /^vuepress-plugin-/,
                 "vuepress-shared/node",
               ]
             : []),
