@@ -4,6 +4,21 @@ All notable changes to this project will be documented in this file. See [Conven
 
 <!-- #region recent-change -->
 
+## [2.0.0-rc.21](https://github.com/vuepress-theme-hope/vuepress-theme-hope/compare/v2.0.0-rc.20...v2.0.0-rc.21) (2024-02-05)
+
+### Features
+
+- compatible with latest vuepress ([#3906](https://github.com/vuepress-theme-hope/vuepress-theme-hope/issues/3906)) ([05c41d8](https://github.com/vuepress-theme-hope/vuepress-theme-hope/commit/05c41d86b6399f1ec2919db43e7f5cc3dfbc0a8c))
+
+### Bug Fixes
+
+- **deps:** update dependency @vuepress/plugin-feed to v2.0.0-rc.9 ([#3894](https://github.com/vuepress-theme-hope/vuepress-theme-hope/issues/3894)) ([be86aff](https://github.com/vuepress-theme-hope/vuepress-theme-hope/commit/be86aff3223ca6d5147ff96d31dea3b9a7b82a34))
+- **deps:** update dependency inquirer to v9.2.14 ([#3901](https://github.com/vuepress-theme-hope/vuepress-theme-hope/issues/3901)) ([72e5441](https://github.com/vuepress-theme-hope/vuepress-theme-hope/commit/72e544113d44dbabe5d4bc4a63fbf53b40197f8e))
+- **theme:** add missing plugin options ([098a93d](https://github.com/vuepress-theme-hope/vuepress-theme-hope/commit/098a93dd9d293ad378db66e59b13d00f113103a3))
+- **theme:** fix darkmode toggle, close [#3904](https://github.com/vuepress-theme-hope/vuepress-theme-hope/issues/3904) ([3df7372](https://github.com/vuepress-theme-hope/vuepress-theme-hope/commit/3df7372e96e4ef9bbfa239cd2b9a7234502acb55))
+- **theme:** improve redirect plugin options ([b140bdf](https://github.com/vuepress-theme-hope/vuepress-theme-hope/commit/b140bdf147873dc5493bc65fbfdac3e4143dc723))
+- **theme:** typos in pkg name ([#3899](https://github.com/vuepress-theme-hope/vuepress-theme-hope/issues/3899)) ([a7c9986](https://github.com/vuepress-theme-hope/vuepress-theme-hope/commit/a7c9986f31e17ae50c5cc93854fa792867268b08))
+
 ## [2.0.0-rc.20](https://github.com/vuepress-theme-hope/vuepress-theme-hope/compare/v2.0.0-rc.19...v2.0.0-rc.20) (2024-02-03)
 
 ### Features
