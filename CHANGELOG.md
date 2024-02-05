@@ -4,6 +4,14 @@ All notable changes to this project will be documented in this file. See [Conven
 
 <!-- #region recent-change -->
 
+## [2.0.0-rc.22](https://github.com/vuepress-theme-hope/vuepress-theme-hope/compare/v2.0.0-rc.21...v2.0.0-rc.22) (2024-02-05)
+
+### Bug Fixes
+
+- **create:** fix template version requirement ([fdfb440](https://github.com/vuepress-theme-hope/vuepress-theme-hope/commit/fdfb44095d382803c3bb36e14c0d7847870662b9))
+- **theme:** fix feed plugin options ([d619de0](https://github.com/vuepress-theme-hope/vuepress-theme-hope/commit/d619de0b5f00f794c1835415afcd027208a4dc4b))
+- **theme:** fix navbar prefix ([6c21dbf](https://github.com/vuepress-theme-hope/vuepress-theme-hope/commit/6c21dbf721f46bf847806d74fc407cd040d3e232))
+
 ## [2.0.0-rc.21](https://github.com/vuepress-theme-hope/vuepress-theme-hope/compare/v2.0.0-rc.20...v2.0.0-rc.21) (2024-02-05)
 
 ### Features
