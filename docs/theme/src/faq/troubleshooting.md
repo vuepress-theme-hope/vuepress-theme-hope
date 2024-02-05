@@ -12,31 +12,31 @@ category:
 
 If the output of `node -v` does not satisfy the requirement, you should [download and install the LTS version of Node.js](../get-started/env.md#nodejs).
 
-Also, you should use a package manager satisfying the following requirements (`pnpm@8` recommended):
+Also, you should use a package manager satisfying the following requirements:
 
-- pnpm: >= 7
+- pnpm: >= 7 (v8 recommended)
 
   Check: `pnpm -v`
-
-  Install: `npm i -g pnpm`
 
 - npm: >= 8
 
   Check: `npm -v`
 
-  Install: `npm i -g npm`
+- yarn: >= 2 (Not recommended)
 
-- yarn: >= 2
+  Check: `yarn -v` (Also requires `nodeLinker: 'node-modules'` in `.yarnrc.yml`)
 
-  Check: `yarn -v`
+To use the correct package manager, run `corepack enable` (might need to run as Administrator on Windows), and run one of the following commend:
 
-  Install: `npm i -g yarn@2`
+- npm: `corepack use npm@10`
+- yarn: `corepack use yarn@4`
+- pnpm: `corepack use pnpm@8`
 
 ## Ensure using the latest version and having correct deps tree
 
 Please make sure you are using the latest `vuepress` and `vuepress-theme-hope` V2 version, because some bugs you encountered may have been fixed in new versions.
 
-Also in some cases, you may generate incorrect dependency tree after upgrading some dependencies, this is because both `vuepress` and `vue` have many packages named `@vuepress/xxx` and `@vue/xxx`.
+Also in some cases, you may generate incorrect dependency tree after upgrading some dependencies, this is because both `vuepress` and `vue` have many packages named `@vue/xxx`.
 
 To let VuePress work correctly, there should only be one version of `@vuepress/xxx` `@vue/xxx` `vue` and `vue-router` in the whole project. Multiple versions of a package can cause different parts of the application to use different instances of Vue and the corresponding package, resulting in errors like `useXXX() is called without provider`.
 

@@ -63,11 +63,10 @@ Node.js 本身只会占据几十 M 的空间!
 
 ## pnpm
 
-在你安装 Node.js 之后，在终端中输入下列命令安装 [pnpm](https://pnpm.io) 包管理器:
+在你安装 Node.js 之后，在终端中输入下列命令启用 corepack:
 
-```sh
+```bash
 corepack enable
-corepack prepare pnpm@latest --activate
 ```
 
 ::: tip

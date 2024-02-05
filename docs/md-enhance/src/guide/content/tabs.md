@@ -126,7 +126,8 @@ npm should be installed with Node.js.
 @tab pnpm
 
 ```bash
-corepack prepare pnpm@latest --activated
+corepack enable
+corepack use pnpm@8
 ```
 
 :::

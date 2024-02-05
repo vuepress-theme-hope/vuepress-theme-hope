@@ -8,7 +8,7 @@ category:
 
 ## `useXXX() is called without provider`
 
-此类错误通常是因为项目中错误的含有多个 `@vue/xxx`, `@vuepress/xxx`, `vue` 或 `vue-router` 版本引起的。
+此类错误通常是因为项目中错误的含有多个 `@vue/xxx`, `vue` 或 `vue-router` 版本引起的。
 
 请确保你正在使用最新的 `vuepress` 和 `vuepress-theme-hope` 版本:
 
@@ -58,17 +58,40 @@ npx vp-update
 
 :::
 
-::: warning
+## `Issues with peer dependencies found`
 
-任何以 `@vuepress/` 开头的官方包应该和 VuePress 保持相同版本。
+这意味着你在项目中安装了错误的依赖。
 
-比如，如果你正在使用 `@vuepress/plugin-search` 和 `@vuepress/utils`，你应该确保他们和 `vuepress` 版本相同。
+这是一个例子:
 
-另外，`vuepress-theme-hope` 仓库的插件应与 `vuepress-theme-hope` 版本相同。
+```
+ WARN  Issues with peer dependencies found
+.
+├─┬ @vuepress/plugin-docsearch 2.0.0-rc.7
+│ └── ✕ unmet peer vuepress@2.0.0-rc.2: found 2.0.0-rc.5
+├─┬ vuepress-plugin-append-date 2.0.0-rc.20
+│ ├── ✕ unmet peer vuepress@2.0.0-rc.2: found 2.0.0-rc.5
+│ ├─┬ @vuepress/helper 2.0.0-rc.9
+│ │ └── ✕ unmet peer vuepress@2.0.0-rc.2: found 2.0.0-rc.5
+│ └─┬ vuepress-shared 2.0.0-rc.20
+│   └── ✕ unmet peer vuepress@2.0.0-rc.2: found 2.0.0-rc.5
+├─┬ @vuepress/plugin-git 2.0.0-rc.7
+│ └── ✕ unmet peer vuepress@2.0.0-rc.2: found 2.0.0-rc.5
+├─┬ vuepress 2.0.0-rc.5
+│ └── ✕ unmet peer @vuepress/bundler-vite@2.0.0-rc.5: found 2.0.0-rc.4
+└─┬ vuepress-theme-hope 2.0.0-rc.21
+  └── ✕ unmet peer @vuepress/plugin-docsearch@2.0.0-rc.10: found 2.0.0-rc.7
+```
 
-此外，如果你使用了其他第三方插件，请确保它兼容你要升级到的 VuePress 版本。
+例子显示:
 
-:::
+- `vuepress` 需要一个与自己相同版本的 `@vuepress/bundler-vite`，但是你拥有 `rc.4` 版本的打包器和 `rc.5` 版本的 vuepress。
+
+- Some of the plugin requires `vuepress@2.0.0-rc.2`.
+
+- 一些插件要求 `vuepress@2.0.0-rc.2`，但你当前是 `2.0.0-rc.5`。
+
+你总可以编辑你的依赖版本以使它们相互匹配。通常你会尝试将 vuepress、vuepress 打包器和插件升级到最新版本，但也有可能插件尚未兼容最新版本的 vuepress。在这种情况下，你应该将 vuepress 降级到与插件兼容的版本，或者暂时删除插件直到它支持最新的 vuepress。
 
 ## `You are not allowed to use plugin XXX yourself in vuepress config file.`
 

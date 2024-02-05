@@ -51,14 +51,7 @@ Node.js itself will only take up a few dozen megabytes of space!
 
 :::
 
-## pnpm
-
-After you install Node.js, please install [pnpm](https://pnpm.io) as package manager by entering the following command in the terminal:
-
-```sh
-corepack enable
-corepack prepare pnpm@latest --activate
-```
+After you install Node.js, enable corepack with `corepack enable`.
 
 ::: tip
 
