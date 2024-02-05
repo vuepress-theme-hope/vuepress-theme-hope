@@ -91,6 +91,8 @@ export const setupDarkmode = (): void => {
   watchEffect(() => {
     if (config.value === "disable") status.value = "light";
     else if (config.value === "enable") status.value = "dark";
+    else if (config.value === "toggle" && status.value === "auto")
+      status.value = "light";
   });
 
   onMounted(() => {
