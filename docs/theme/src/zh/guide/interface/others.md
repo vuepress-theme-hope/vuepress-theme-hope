@@ -105,7 +105,7 @@ import { hopeTheme } from "vuepress-theme-hope";
 export default defineUserConfig({
   theme: hopeTheme({
     plugins: {
-      // 禁用返回顶部安妮
+      // 禁用返回顶部按钮
       backToTop: false,
 
       // 或
@@ -139,7 +139,7 @@ import { hopeTheme } from "vuepress-theme-hope";
 export default defineUserConfig({
   theme: hopeTheme({
     plugins: {
-      // 禁用返回顶部安妮
+      // 禁用返回顶部按钮
       backToTop: false,
 
       // 或
