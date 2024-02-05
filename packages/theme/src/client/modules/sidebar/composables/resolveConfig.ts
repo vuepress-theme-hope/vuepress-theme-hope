@@ -9,7 +9,7 @@ import {
 } from "@vuepress/helper/client";
 import type { PageData, PageHeader } from "vuepress/client";
 
-import { sidebarData } from "@temp/theme-hope/sidebar";
+import { sidebarData } from "@temp/theme-hope/sidebar.js";
 import { resolveLinkInfo, resolvePrefix } from "@theme-hope/utils/index";
 
 import type {

@@ -1,4 +1,4 @@
-import { store } from "@temp/search-pro/store";
+import { store } from "@temp/search-pro/store.js";
 
 import type { MatchedItem } from "../typings/index.js";
 

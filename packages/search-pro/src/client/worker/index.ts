@@ -1,6 +1,6 @@
 import { loadJSONIndex } from "slimsearch";
 
-import database from "@temp/search-pro/index";
+import database from "@temp/search-pro/index.js";
 
 import { getResults } from "./result.js";
 import { getSuggestions } from "./suggestion.js";

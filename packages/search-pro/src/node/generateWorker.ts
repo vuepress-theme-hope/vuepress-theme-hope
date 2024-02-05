@@ -4,7 +4,7 @@ import { fs, path } from "vuepress/utils";
 import { getSearchIndexStore } from "./generateIndex.js";
 import type { SearchProOptions } from "./options.js";
 import type { Store } from "./store.js";
-import { WORKER_FOLDER } from "./utils.js";
+import { WORKER_FILE } from "./utils.js";
 
 export const generateWorker = async (
   app: App,
@@ -15,9 +15,8 @@ export const generateWorker = async (
   const searchIndexContent = JSON.stringify(
     await getSearchIndexStore(app, options, store),
   );
-  const workerPath = `${WORKER_FOLDER}index.js`;
 
-  const workerFileContent = await fs.readFile(workerPath, "utf8");
+  const workerFileContent = await fs.readFile(WORKER_FILE, "utf8");
 
   await fs.ensureDir(path.dirname(workerFilePath));
   await fs.writeFile(

@@ -1,4 +1,4 @@
-declare module "@temp/search-pro/index" {
+declare module "@temp/search-pro/index.js" {
   export type SearchIndexStore = Record<
     string,
     () => Promise<{ default: string }>

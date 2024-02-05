@@ -2,7 +2,7 @@ import { entries } from "@vuepress/helper/client";
 import type { VNode } from "vue";
 import { computed, defineComponent, h } from "vue";
 
-import { icons } from "@temp/theme-hope/socialMedia";
+import { icons } from "@temp/theme-hope/socialMedia.js";
 import { usePure } from "@theme-hope/composables/index";
 import { useBlogOptions } from "@theme-hope/modules/blog/composables/index";
 
