@@ -7,7 +7,7 @@ export const enum IndexField {
   customFields = "c",
 }
 
-export type PageIndexId = `v-${string}`;
+export type PageIndexId = `${number}`;
 
 export interface PageIndexItem {
   id: PageIndexId;

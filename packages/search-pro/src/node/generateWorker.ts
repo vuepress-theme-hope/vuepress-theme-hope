@@ -3,15 +3,17 @@ import { fs, path } from "vuepress/utils";
 
 import { getSearchIndexStore } from "./generateIndex.js";
 import type { SearchProOptions } from "./options.js";
+import type { Store } from "./store.js";
 import { WORKER_FOLDER } from "./utils.js";
 
 export const generateWorker = async (
   app: App,
   options: SearchProOptions,
+  store: Store,
 ): Promise<void> => {
   const workerFilePath = app.dir.dest(options.worker || "search-pro.worker.js");
   const searchIndexContent = JSON.stringify(
-    await getSearchIndexStore(app, options),
+    await getSearchIndexStore(app, options, store),
   );
   const workerPath = `${WORKER_FOLDER}index.js`;
 

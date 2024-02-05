@@ -9,30 +9,33 @@ tag:
   - Feature
 ---
 
-VuePress Theme Hope provides catalog component and auto catalog generation using <ProjectLink name="auto-catalog">`vuepress-plugin-catalog`</ProjectLink>.
+VuePress Theme Hope provides catalog component and auto catalog generation using [`@vuepress/plugin-catalog`][catalog].
 
 <!-- more -->
 
 ## Introduction
 
-This feature is enabled by default. If there is no `README.md` in the folder, the theme will automatically generate a directory page for it. To disable, set `plugins.autoCatalog` to `false`.
+This feature is enabled by default. If there is no `README.md` in the folder, the theme will automatically generate a directory page for it. To disable, set `plugins.catalog` to `false`.
 
-You can control this via `plugins.autoCatalog` in the theme options, for example:
+You can control this via `plugins.catalog` in the theme options, for example:
 
-- Exclude some folders from catalog generation via `plugins.autoCatalog.exclude`
-- Control frontmatter generation through `plugins.autoCatalog.frontmatter`.
+- Exclude some folders from catalog generation via `plugins.catalog.exclude`
+- Control frontmatter generation through `plugins.catalog.frontmatter`.
 
-For detailed configuration, see <ProjectLink name="auto-catalog" path="/config.html">Auto Catalog plugin docs</ProjectLink>.
+For detailed configuration, see [Catalog plugin docs][catalog-config].
 
 ## Catalog Component
 
-You can use the `<AutoCatalog>` component directly in Markdown to display the catalog.
+You can use the `<Catalog>` component directly in Markdown to display the catalog.
 
 ::: md-demo Homepage Catalog Demo
 
 <!-- Used to limit height -->
 <div class="catalog-display-container">
-  <AutoCatalog base='/' />
+  <Catalog base='/' />
 </div>
 
 :::
+
+[catalog]: https://ecosystem.vuejs.press/plugins/catalog.html
+[catalog-config]: https://ecosystem.vuejs.press/plugins/catalog.html#options

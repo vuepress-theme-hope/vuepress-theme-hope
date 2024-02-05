@@ -58,19 +58,10 @@ if(!hasGlobalComponent("${item}")) app.component("${item}", ${item});
 
         setups.push(content);
       });
-
-    if (legacy && (item as unknown) === "Catalog") {
-      imports.push(
-        `import Catalog from "${CLIENT_FOLDER}compact/components/Catalog.js";`,
-      );
-      enhance += `\
-if(!hasGlobalComponent("Catalog")) app.component("Catalog", Catalog);
-`;
-    }
   });
 
   // TODO: Remove in v2 stable
-  if (rootComponents.backToTop) {
+  if (legacy && rootComponents.backToTop) {
     const { threshold, progress } = isPlainObject(rootComponents.backToTop)
       ? rootComponents.backToTop
       : <BackToTopOptions>{};

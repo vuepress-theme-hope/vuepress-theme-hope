@@ -10,4 +10,4 @@ tag:
   - Component
 ---
 
-<AutoCatalog />
+<Catalog />

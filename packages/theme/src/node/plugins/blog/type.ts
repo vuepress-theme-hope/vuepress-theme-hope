@@ -1,11 +1,11 @@
 import { dateSorter } from "@vuepress/helper";
+import type { BlogTypeOptions } from "@vuepress/plugin-blog";
 import type { GitData } from "@vuepress/plugin-git";
-import type { BlogTypeOptions } from "vuepress-plugin-blog2";
 
 import { defaultPageSorter } from "./utils.js";
 import type {
   ArticleInfo,
-  BlogPluginOptions,
+  BlogOptions,
   ThemeData,
   ThemeNormalPageFrontmatter,
 } from "../../../shared/index.js";
@@ -13,7 +13,7 @@ import { ArticleInfoType } from "../../../shared/index.js";
 
 /** @private */
 export const getBlogArticleType = (
-  options: BlogPluginOptions,
+  options: BlogOptions,
   themeData: ThemeData,
 ): BlogTypeOptions<
   { git: GitData },
@@ -49,7 +49,7 @@ export const getBlogArticleType = (
 
 /** @private */
 export const getBlogStarType = (
-  options: BlogPluginOptions,
+  options: BlogOptions,
   themeData: ThemeData,
 ): BlogTypeOptions<
   { git: GitData },
@@ -93,7 +93,7 @@ export const getBlogStarType = (
 
 /** @private */
 export const getBlogTimelineType = (
-  options: BlogPluginOptions,
+  options: BlogOptions,
   themeData: ThemeData,
 ): BlogTypeOptions<
   { git: GitData },

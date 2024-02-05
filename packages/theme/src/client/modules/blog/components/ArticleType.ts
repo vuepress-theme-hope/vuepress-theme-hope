@@ -1,7 +1,6 @@
 import type { VNode } from "vue";
 import { computed, defineComponent, h } from "vue";
-import { usePageData, useRouteLocale } from "vuepress/client";
-import { VPLink } from "vuepress-shared/client";
+import { RouteLink, usePageData, useRouteLocale } from "vuepress/client";
 
 import { useThemeLocaleData } from "@theme-hope/composables/index";
 import {
@@ -52,7 +51,7 @@ export default defineComponent({
                 { active: type.path === page.value.path },
               ],
             },
-            h(VPLink, { to: type.path }, () => type.text),
+            h(RouteLink, { to: type.path }, () => type.text),
           ),
         ),
       );

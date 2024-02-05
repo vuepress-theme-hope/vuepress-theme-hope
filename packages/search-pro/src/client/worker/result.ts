@@ -67,7 +67,8 @@ export const getResults = (
     const { id, terms, score } = result;
     const isCustomField = id.includes("@");
     const isSection = id.includes("#");
-    const [key, info] = id.split(/[#@]/);
+    const [pageIndex, info] = id.split(/[#@]/);
+    const pageId = Number(pageIndex);
 
     const displayTerms = terms
       .sort((a, b) => a.length - b.length)
@@ -75,7 +76,7 @@ export const getResults = (
         terms.slice(index + 1).every((term) => !term.includes(item)),
       );
 
-    const { contents } = (resultMap[key] ??= {
+    const { contents } = (resultMap[pageId] ??= {
       title: "",
       contents: [],
     });
@@ -85,7 +86,7 @@ export const getResults = (
       contents.push([
         {
           type: "customField",
-          key,
+          id: pageId,
           index: info,
           display: displayTerms
             .map((term) =>
@@ -107,7 +108,7 @@ export const getResults = (
         contents.push([
           <TitleMatchedItem | HeadingMatchedItem>{
             type: isSection ? "heading" : "title",
-            key,
+            id: pageId,
             ...(isSection && { anchor: info }),
             display: headerContent,
           },
@@ -124,7 +125,7 @@ export const getResults = (
             contents.push([
               {
                 type: "text",
-                key,
+                id: pageId,
                 ...(isSection && { anchor: info }),
                 display: matchedContent,
               },

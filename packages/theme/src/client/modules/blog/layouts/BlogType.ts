@@ -1,11 +1,11 @@
-import type { VNode } from "vue";
-import { computed, defineComponent, h } from "vue";
-import { usePageData, usePageFrontmatter } from "vuepress/client";
 import type {
   BlogPluginFrontmatter,
   BlogTypeFrontmatterOptions,
-} from "vuepress-plugin-blog2/client";
-import { useBlogType } from "vuepress-plugin-blog2/client";
+} from "@vuepress/plugin-blog/client";
+import { useBlogType } from "@vuepress/plugin-blog/client";
+import type { VNode } from "vue";
+import { computed, defineComponent, h } from "vue";
+import { usePageData, usePageFrontmatter } from "vuepress/client";
 
 import DropTransition from "@theme-hope/components/transitions/DropTransition";
 import ArticleList from "@theme-hope/modules/blog/components/ArticleList";

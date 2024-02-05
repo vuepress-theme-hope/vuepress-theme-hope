@@ -1,5 +1,5 @@
 export * from "./activeHeaderLinks.js";
-export * from "./autoCatalog.js";
+export * from "./catalog.js";
 export * from "./blog/index.js";
 export * from "./comment.js";
 export * from "./components.js";

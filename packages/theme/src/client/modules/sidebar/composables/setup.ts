@@ -1,7 +1,6 @@
 import { computedWithControl } from "@vueuse/core";
 import type { ComputedRef, InjectionKey } from "vue";
 import { computed, inject, provide } from "vue";
-import { useRouter } from "vue-router";
 import {
   usePageData,
   usePageFrontmatter,
@@ -30,7 +29,6 @@ export const setupSidebarItems = (): void => {
   const themeLocale = useThemeLocaleData();
   const page = usePageData();
   const routeLocale = useRouteLocale();
-  const router = useRouter();
 
   // Get sidebar config from frontmatter > themeConfig
   const sidebarConfig = computed(() =>
@@ -52,7 +50,6 @@ export const setupSidebarItems = (): void => {
     () =>
       resolveSidebarItems({
         config: sidebarConfig.value,
-        router,
         routeLocale: routeLocale.value,
         page: page.value,
         headerDepth: headerDepth.value,

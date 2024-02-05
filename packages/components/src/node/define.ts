@@ -1,7 +1,6 @@
 import { getLocaleConfig } from "@vuepress/helper";
 import type { App } from "vuepress/core";
 
-import { catalogLocales } from "./compact/index.js";
 import { getIconInfo, getShareServiceConfig } from "./components/index.js";
 import {
   backToTopLocales,
@@ -19,14 +18,6 @@ export const getDefine =
   (app) => {
     const { assets, prefix } = options.componentOptions?.fontIcon || {};
     const result: Record<string, unknown> = {};
-
-    if (legacy && (options.components as unknown[])?.includes("Catalog"))
-      result["CATALOG_LOCALES"] = getLocaleConfig({
-        app,
-        name: "catalog",
-        default: catalogLocales,
-        config: options.locales?.catalog,
-      });
 
     if (options.components?.includes("FontIcon")) {
       const { type, prefix: iconPrefix } = getIconInfo(assets, prefix);
@@ -73,7 +64,7 @@ export const getDefine =
       });
 
     // TODO: Remove in v2 stable
-    if (options.rootComponents?.backToTop)
+    if (legacy && options.rootComponents?.backToTop)
       result["BACK_TO_TOP_LOCALES"] = getLocaleConfig({
         app,
         name: "backToTop",

@@ -157,10 +157,6 @@ The theme supports [blogging](../blog/intro.md), [with article list with sticky 
 
 The theme includes the following plugins, you can use them in other themes or directly.
 
-- <ProjectLink name="auto-catalog">vuepress-plugin-auto-catalog</ProjectLink>: Catalog automatically generation for VuePress2
-
-- <ProjectLink name="blog2">vuepress-plugin-blog2</ProjectLink>: Blog plugin for VuePress2
-
 - <ProjectLink name="comment2">vuepress-plugin-comment2</ProjectLink>: Comment and pageviews
 
 - <ProjectLink name="components">vuepress-plugin-components</ProjectLink>: Provide some out of box plugins

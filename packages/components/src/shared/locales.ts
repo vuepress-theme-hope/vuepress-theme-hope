@@ -1,4 +1,4 @@
-import type { ExactLocaleConfig } from "@vuepress/helper/shared";
+import type { ExactLocaleConfig } from "@vuepress/helper";
 
 /** @deprecated Please use '@vuepress/plugin-back-to-top' */
 export interface BackToTopLocaleData {

@@ -1,4 +1,4 @@
-import type { ExactLocaleConfig } from "@vuepress/helper/shared";
+import type { ExactLocaleConfig } from "@vuepress/helper";
 
 /**
  * Multi language config for `vuepress-plugin-search-pro` plugin

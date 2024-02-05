@@ -1,7 +1,11 @@
 import type { VNode } from "vue";
 import { computed, defineComponent, h } from "vue";
-import { useRouteLocale, useSiteLocaleData, withBase } from "vuepress/client";
-import { VPLink } from "vuepress-shared/client";
+import {
+  RouteLink,
+  useRouteLocale,
+  useSiteLocaleData,
+  withBase,
+} from "vuepress/client";
 
 import { useThemeLocaleData } from "@theme-hope/composables/index";
 
@@ -33,7 +37,7 @@ export default defineComponent({
     );
 
     return (): VNode =>
-      h(VPLink, { to: siteBrandLink.value, class: "vp-brand" }, () => [
+      h(RouteLink, { to: siteBrandLink.value, class: "vp-brand" }, () => [
         siteBrandLogo.value
           ? h("img", {
               class: [

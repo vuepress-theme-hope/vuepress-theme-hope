@@ -7,6 +7,8 @@ import { logger } from "../utils.js";
 
 const PLUGIN_CHECKLIST = [
   ["@vuepress/plugin-active-header-links", "activeHeaderLinks"],
+  ["@vuepress/plugin-blog", "blog"],
+  ["@vuepress/plugin-catalog", "catalog"],
   ["@vuepress/plugin-copy-code", "copyCode"],
   ["@vuepress/plugin-copyright", "copyright"],
   ["@vuepress/plugin-docsearch", "docsearch"],
@@ -17,8 +19,6 @@ const PLUGIN_CHECKLIST = [
   ["@vuepress/plugin-seo", "seo"],
   ["@vuepress/plugin-sitemap", "sitemap"],
   "@vuepress/plugin-theme-data",
-  ["vuepress-plugin-auto-catalog", "autoCatalog"],
-  ["vuepress-plugin-blog2", "blog"],
   ["vuepress-plugin-comment2", "comment"],
   ["vuepress-plugin-components", "components"],
   ["vuepress-plugin-md-enhance", "mdEnhance"],
@@ -30,9 +30,9 @@ const PLUGIN_CHECKLIST = [
 
 const KNOWN_THEME_PLUGINS = [
   "activeHeaderLinks",
-  "autoCatalog",
   "backToTop",
   "blog",
+  "catalog",
   "components",
   "comment",
   "copyCode",

@@ -1,4 +1,4 @@
-import type { ExactLocaleConfig } from "@vuepress/helper/shared";
+import type { ExactLocaleConfig } from "@vuepress/helper";
 
 export interface PhotoSwipeLocaleData {
   /**

@@ -4,8 +4,8 @@ import type { App } from "vuepress/core";
 import type { ThemeOptions } from "../../shared/index.js";
 
 export interface ThemeStatus {
-  enableAutoCatalog: boolean;
   enableBlog: boolean;
+  enableCatalog: boolean;
   enableEncrypt: boolean;
   enableSlide: boolean;
   enableReadingTime: boolean;
@@ -23,7 +23,7 @@ export const getStatus = (
   const { plugins = {} } = themeOptions;
 
   return {
-    enableAutoCatalog: plugins.autoCatalog !== false,
+    enableCatalog: plugins.catalog !== false,
     enableBlog: Boolean(plugins.blog),
     enableEncrypt: Boolean(
       themeOptions.encrypt &&

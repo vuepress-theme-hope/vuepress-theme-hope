@@ -1,4 +1,4 @@
-import type { ExactLocaleConfig } from "@vuepress/helper/shared";
+import type { ExactLocaleConfig } from "@vuepress/helper";
 import type { WalineInitOptions, WalineLocale } from "@waline/client";
 
 import type { BaseCommentOptions } from "./base.js";

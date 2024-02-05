@@ -1,7 +1,7 @@
 import { entries, keys } from "@vuepress/helper/client";
 import type { FunctionalComponent, VNode } from "vue";
 import { computed, defineComponent, h, ref } from "vue";
-import { VPLink } from "vuepress-shared/client";
+import { RouteLink } from "vuepress/client";
 
 import DropTransition from "@theme-hope/components/transitions/DropTransition";
 import { useNavigate, useThemeLocaleData } from "@theme-hope/composables/index";
@@ -113,7 +113,7 @@ export default defineComponent({
                               "li",
                               { class: "vp-star-article" },
                               h(
-                                VPLink,
+                                RouteLink,
                                 { to: path },
                                 () => info[ArticleInfoType.title],
                               ),

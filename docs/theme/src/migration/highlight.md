@@ -105,7 +105,7 @@ We now use PhotoSwipe@v5, which is smaller in size.
 
 #### Auto-generating Catalog Page
 
-- The new `auto-catalog` plugin can automatically generate catalog pages for you
+- The new `@vuepress/catalog` plugin can automatically generate catalog pages for you
 
 #### Others
 

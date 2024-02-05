@@ -1,4 +1,5 @@
 import type { BackToTopPluginOptions } from "@vuepress/plugin-back-to-top";
+import type { CatalogPluginOptions } from "@vuepress/plugin-catalog";
 import type { CopyCodePluginOptions } from "@vuepress/plugin-copy-code";
 import type { CopyrightPluginOptions } from "@vuepress/plugin-copyright";
 import type { DocsearchPluginOptions } from "@vuepress/plugin-docsearch";
@@ -9,7 +10,6 @@ import type { RedirectPluginOptions } from "@vuepress/plugin-redirect";
 import type { SearchPluginOptions } from "@vuepress/plugin-search";
 import type { SeoPluginOptions } from "@vuepress/plugin-seo";
 import type { SitemapPluginOptions } from "@vuepress/plugin-sitemap";
-import type { AutoCatalogOptions } from "vuepress-plugin-auto-catalog";
 import type { CommentPluginOptions } from "vuepress-plugin-comment2";
 import type { ComponentOptions } from "vuepress-plugin-components";
 import type { MarkdownEnhanceOptions } from "vuepress-plugin-md-enhance";
@@ -17,7 +17,7 @@ import type { PhotoSwipeOptions } from "vuepress-plugin-photo-swipe";
 import type { PWAOptions } from "vuepress-plugin-pwa2";
 import type { SearchProOptions } from "vuepress-plugin-search-pro";
 
-import type { BlogPluginOptions } from "./blog.js";
+import type { BlogOptions } from "./blog.js";
 import type { PrismjsOptions } from "./prism.js";
 
 export interface PluginsOptions {
@@ -29,15 +29,6 @@ export interface PluginsOptions {
    * @default true
    */
   activeHeaderLinks?: boolean;
-
-  /**
-   * Auto catalog plugin Options
-   *
-   * 自动目录插件选项
-   *
-   * @default true
-   */
-  autoCatalog?: AutoCatalogOptions | boolean;
 
   /**
    * Options for @vuepress/back-to-top
@@ -57,7 +48,16 @@ export interface PluginsOptions {
    *
    * @default false
    */
-  blog?: BlogPluginOptions | boolean;
+  blog?: BlogOptions | boolean;
+
+  /**
+   * Options for @vuepress/catalog
+   *
+   * 自动目录插件选项
+   *
+   * @default true
+   */
+  catalog?: CatalogPluginOptions | boolean;
 
   /**
    * Components enabled

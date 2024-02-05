@@ -8,8 +8,7 @@ import { ExternalLinkIcon } from "@vuepress/plugin-external-link-icon/client";
 import type { PropType, SlotsType, VNode } from "vue";
 import { computed, defineComponent, h, toRef } from "vue";
 import { useRoute } from "vue-router";
-import { useSiteData } from "vuepress/client";
-import { VPLink } from "vuepress-shared/client";
+import { RouteLink, useSiteData } from "vuepress/client";
 
 import HopeIcon from "@theme-hope/components/HopeIcon";
 
@@ -70,8 +69,8 @@ export default defineComponent({
     // If the `target` attr is "_blank"
     const isBlankTarget = computed(() => linkTarget.value === "_blank");
 
-    // Render `<VPLink>` or not
-    const renderVPLink = computed(
+    // Render `<RouteLink>` or not
+    const renderRouteLink = computed(
       () => !isHttp.value && !withProtocol.value && !isBlankTarget.value,
     );
 
@@ -103,7 +102,7 @@ export default defineComponent({
 
     // If this link is active
     const isActive = computed(() =>
-      renderVPLink.value
+      renderRouteLink.value
         ? config.value.activeMatch
           ? new RegExp(config.value.activeMatch, "u").test(route.path)
           : // If this link is active in subpath
@@ -117,9 +116,9 @@ export default defineComponent({
       const { before, after, default: defaultSlot } = slots;
       const { text, icon, link } = config.value;
 
-      return renderVPLink.value
+      return renderRouteLink.value
         ? h(
-            VPLink,
+            RouteLink,
             {
               to: link,
               "aria-label": linkAriaLabel.value,

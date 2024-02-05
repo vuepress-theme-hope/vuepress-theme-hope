@@ -4,9 +4,9 @@ import { themeDataPlugin } from "@vuepress/plugin-theme-data";
 import type { App, PluginConfig } from "vuepress/core";
 
 import { getActiveHeaderLinksPlugin } from "./activeHeaderLinks.js";
-import { getAutoCatalogPlugin } from "./autoCatalog.js";
 import { getBackToTop } from "./backToTop.js";
 import { getBlogPlugin } from "./blog/index.js";
+import { getCatalogPlugin } from "./catalog.js";
 import { getCommentPlugin } from "./comment.js";
 import { getComponentsPlugin } from "./components.js";
 import { getCopyCodePlugin } from "./copyCode.js";
@@ -47,7 +47,7 @@ export const getPluginConfig = (
   const pluginConfig = [
     getComponentsPlugin(options, plugins.components, legacy),
     getActiveHeaderLinksPlugin(plugins.activeHeaderLinks),
-    getAutoCatalogPlugin(plugins.autoCatalog, legacy),
+    getCatalogPlugin(plugins.catalog),
     getBackToTop(plugins.backToTop),
     plugins.externalLinkIcon === false ? null : externalLinkIconPlugin(),
     plugins.nprogress === false ? null : nprogressPlugin(),
