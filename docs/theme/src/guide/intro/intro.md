@@ -12,9 +12,7 @@ tag:
 
 ## Original Intention
 
-VuePress default theme is just a theme to provide basic documentation layout. E.g.: it doesn't inject meta tags and generate Sitemap for SEO optimization. Besides, though VuePress has extended Markdown syntax to a certain extent, it still lacks some commonly used functions, such as text alignment, mark, flowchart, formula, presentation, etc. At the same time, some features provided by the default theme are weak or missing, such as picture preview, code block copy, toc, etc.
-
-`vuepress-theme-hope` and related plugins were born under this situation.
+VuePress extends Markdown syntax to a certain extent, but it still lacks some commonly used functions, such as text alignment, mark, flowchart, formula, presentation, etc. At the same time, some features provided by the default theme are weak or missing, such as picture preview, code block copy, toc, etc. Meanwhile, VuePress default theme is too simple and not powerful enough. `vuepress-theme-hope` and related plugins were born under this situation.
 
 We not only **greatly improve outlook** comparing to default theme, but also **provide a full range of enhancements for VuePress** with theme plugins.
 
