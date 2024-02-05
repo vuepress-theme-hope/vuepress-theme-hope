@@ -26,7 +26,7 @@ export default defineComponent({
     const hint = computed(
       () =>
         blogOptions.value.timeline ||
-        themeLocale.value.blogLocales.timelineTitle
+        themeLocale.value.blogLocales.timelineTitle,
     );
 
     const items = computed(() =>
@@ -35,7 +35,7 @@ export default defineComponent({
         level: 2,
         slug: year.toString(),
         children: [],
-      }))
+      })),
     );
 
     return (): VNode =>
@@ -53,7 +53,7 @@ export default defineComponent({
                 h(
                   "h3",
                   { key: "title", id: year, class: "timeline-year-title" },
-                  h("span", year)
+                  h("span", year),
                 ),
                 h("li", { key: "content", class: "timeline-year-list" }, [
                   h(
@@ -68,16 +68,16 @@ export default defineComponent({
                             class: "timeline-title",
                             to: path,
                           },
-                          () => info[ArticleInfoType.title]
+                          () => info[ArticleInfoType.title],
                         ),
-                      ])
-                    )
+                      ]),
+                    ),
                   ),
                 ]),
-              ]
-            )
+              ],
+            ),
           ),
-        ])
+        ]),
       );
   },
 });

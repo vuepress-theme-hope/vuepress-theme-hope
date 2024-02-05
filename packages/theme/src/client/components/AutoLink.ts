@@ -58,12 +58,12 @@ export default defineComponent({
 
     // If the link has non-http protocol
     const withProtocol = computed(
-      () => !isHttp.value && isLinkWithProtocol(config.value.link)
+      () => !isHttp.value && isLinkWithProtocol(config.value.link),
     );
 
     // Resolve the `target` attr
     const linkTarget = computed(
-      () => config.value.target || (isHttp.value ? "_blank" : undefined)
+      () => config.value.target || (isHttp.value ? "_blank" : undefined),
     );
 
     // If the `target` attr is "_blank"
@@ -71,18 +71,19 @@ export default defineComponent({
 
     // Render `<RouteLink>` or not
     const renderRouteLink = computed(
-      () => !isHttp.value && !withProtocol.value && !isBlankTarget.value
+      () => !isHttp.value && !withProtocol.value && !isBlankTarget.value,
     );
 
     // Resolve the `rel` attr
     const anchorRel = computed(
       () =>
-        config.value.rel || (isBlankTarget.value ? "noopener noreferrer" : null)
+        config.value.rel ||
+        (isBlankTarget.value ? "noopener noreferrer" : null),
     );
 
     // Resolve the `aria-label` attr
     const linkAriaLabel = computed(
-      () => config.value.ariaLabel || config.value.text
+      () => config.value.ariaLabel || config.value.text,
     );
 
     // Should be active when current route is a subpath of this link
@@ -108,7 +109,7 @@ export default defineComponent({
             shouldBeActiveInSubpath.value
             ? startsWith(route.path, config.value.link)
             : route.path === config.value.link
-        : false
+        : false,
     );
 
     return (): VNode => {
@@ -129,7 +130,7 @@ export default defineComponent({
             () =>
               defaultSlot
                 ? defaultSlot()
-                : [before ? before() : h(HopeIcon, { icon }), text, after?.()]
+                : [before ? before() : h(HopeIcon, { icon }), text, after?.()],
           )
         : h(
             "a",
@@ -150,7 +151,7 @@ export default defineComponent({
                   text,
                   props.noExternalLinkIcon ? null : h(ExternalLinkIcon),
                   after?.(),
-                ]
+                ],
           );
     };
   },

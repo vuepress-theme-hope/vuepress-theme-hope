@@ -24,7 +24,7 @@ export const prepareConfigFile = (
     componentOptions = {},
     rootComponents = {},
   }: ComponentOptions,
-  legacy: boolean
+  legacy: boolean,
 ): Promise<string> => {
   const imports: string[] = [];
   let enhance = "";
@@ -41,7 +41,7 @@ export const prepareConfigFile = (
         COMPONENT_PKG[item].every((pkg) => isInstalled(pkg, true)))
     ) {
       imports.push(
-        `import ${item} from "${CLIENT_FOLDER}components/${item}.js";`
+        `import ${item} from "${CLIENT_FOLDER}components/${item}.js";`,
       );
 
       enhance += `\
@@ -68,7 +68,7 @@ if(!hasGlobalComponent("${item}")) app.component("${item}", ${item});
 
     shouldImportH = true;
     imports.push(
-      `import BackToTop from "${CLIENT_FOLDER}components/BackToTop.js";`
+      `import BackToTop from "${CLIENT_FOLDER}components/BackToTop.js";`,
     );
 
     const config = isPlainObject(rootComponents.backToTop)
@@ -87,8 +87,8 @@ if(!hasGlobalComponent("${item}")) app.component("${item}", ${item});
 
     configRootComponents.push(
       `() => h(Notice, { config: ${JSON.stringify(
-        getNoticeOptions(rootComponents.notice)
-      )} }),`
+        getNoticeOptions(rootComponents.notice),
+      )} }),`,
     );
   }
 
@@ -98,7 +98,7 @@ if(!hasGlobalComponent("${item}")) app.component("${item}", ${item});
 import { defineClientConfig } from "vuepress/client";
 import { hasGlobalComponent } from "${getRealPath(
       "vuepress-shared/client",
-      url
+      url,
     )}";
 ${
   shouldImportH
@@ -139,6 +139,6 @@ ${setups.map((item) => `    ${item}`).join("\n")}
 ${configRootComponents.map((item) => `    ${item}`).join("\n")}
   ],
 });
-`
+`,
   );
 };

@@ -42,6 +42,6 @@ export default [
         "vidstack/player/ui",
       ],
       copy: [["client/styles", "client"]],
-    }
+    },
   ),
 ];

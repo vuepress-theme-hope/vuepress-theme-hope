@@ -11,7 +11,7 @@ import { PACKAGE_NAME_REG, VERSION_REG, deepAssign } from "./utils/index.js";
 const getScript = (
   packageManager: PackageManager,
   bundler: "webpack" | "vite",
-  dir: string
+  dir: string,
 ): Record<string, string> => ({
   // eslint-disable-next-line @typescript-eslint/naming-convention
   "docs:build": `vuepress-${bundler} build ${dir}`,
@@ -67,7 +67,7 @@ export const createPackageJson = async ({
 
     // eslint-disable-next-line
     const packageContent: any = JSON.parse(
-      readFileSync(packageJsonPath, { encoding: "utf-8" })
+      readFileSync(packageJsonPath, { encoding: "utf-8" }),
     );
 
     deepAssign(packageContent, { scripts, devDependencies });
@@ -75,7 +75,7 @@ export const createPackageJson = async ({
     writeFileSync(
       packageJsonPath,
       `${JSON.stringify(packageContent, null, 2)}\n`,
-      { encoding: "utf-8" }
+      { encoding: "utf-8" },
     );
   } else {
     console.log(locale.flow.createPackage);
@@ -128,7 +128,7 @@ export const createPackageJson = async ({
     writeFileSync(
       packageJsonPath,
       `${JSON.stringify(packageContent, null, 2)}\n`,
-      { encoding: "utf-8" }
+      { encoding: "utf-8" },
     );
   }
 };

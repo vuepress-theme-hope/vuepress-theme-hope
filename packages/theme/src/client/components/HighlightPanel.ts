@@ -19,7 +19,7 @@ const HighlightPanel: FunctionalComponent<
     image?: (props: ThemeProjectHomeHighlightOptions) => VNode[] | VNode | null;
     info?: (props: ThemeProjectHomeHighlightOptions) => VNode[] | VNode | null;
     highlights?: (
-      props: ThemeProjectHomeHighlightItem[]
+      props: ThemeProjectHomeHighlightItem[],
     ) => VNode[] | VNode | null;
   }
 > = (props, { slots }): VNode => {
@@ -111,7 +111,7 @@ const HighlightPanel: FunctionalComponent<
                               })
                             : null,
                           h("span", { innerHTML: title }),
-                        ]
+                        ],
                       ),
                       details
                         ? h(type === "no-order" ? "dd" : "p", {
@@ -136,7 +136,7 @@ const HighlightPanel: FunctionalComponent<
                                 "aria-label": title,
                                 target: "_blank",
                               },
-                              children
+                              children,
                             )
                           : h(
                               RouteLink,
@@ -145,17 +145,17 @@ const HighlightPanel: FunctionalComponent<
                                 to: link,
                                 "aria-label": title,
                               },
-                              () => children
+                              () => children,
                             )
-                        : h("div", { class: "vp-highlight-item" }, children)
+                        : h("div", { class: "vp-highlight-item" }, children),
                     );
-                  })
+                  }),
                 ),
-            ])
+            ]),
           ),
         ],
       ]),
-    ]
+    ],
   );
 };
 

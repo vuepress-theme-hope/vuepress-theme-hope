@@ -1,7 +1,7 @@
+import { isLinkExternal } from "@vuepress/helper/client";
 import type { FunctionalComponent } from "vue";
 import { h } from "vue";
 import { RouteLink, withBase } from "vuepress/client";
-import { isLinkExternal } from "@vuepress/helper/client";
 
 import "../styles/vp-banner.scss";
 

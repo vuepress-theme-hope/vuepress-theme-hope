@@ -105,6 +105,6 @@ npm i -D vuepress-plugin-${pkgName}
 # yarn
 yarn add -D vuepress-plugin-${pkgName}
 \`\`\`
-`
+`,
     );
 });
