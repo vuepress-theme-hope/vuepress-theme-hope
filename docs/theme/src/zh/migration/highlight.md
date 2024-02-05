@@ -106,7 +106,7 @@ VuePressThemeHope@v2 使用组合 API 重写，其样式系统从 stylus 迁移�
 
 #### 自动目录页
 
-- 新增的 `auto-catalog` 插件可以为你自动生成目录页
+- 新增的 `@vuepress/catalog` 插件可以为你自动生成目录页
 
 #### 其他
 

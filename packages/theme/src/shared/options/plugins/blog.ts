@@ -1,4 +1,4 @@
-import type { BlogOptions, BlogTypeOptions } from "vuepress-plugin-blog2";
+import type { BlogOptions, BlogTypeOptions } from "@vuepress/plugin-blog";
 
 export interface BlogPluginOptions
   extends Partial<

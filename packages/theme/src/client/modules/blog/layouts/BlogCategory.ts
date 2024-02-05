@@ -4,7 +4,7 @@ import { usePageData, usePageFrontmatter } from "vuepress/client";
 import type {
   BlogCategoryFrontmatterOptions,
   BlogPluginFrontmatter,
-} from "vuepress-plugin-blog2";
+} from "@vuepress/plugin-blog";
 
 import DropTransition from "@theme-hope/components/transitions/DropTransition";
 import ArticleList from "@theme-hope/modules/blog/components/ArticleList";
@@ -51,22 +51,22 @@ export default defineComponent({
                   ? h(CategoryList)
                   : key === "tag"
                     ? h(TagList)
-                    : null,
+                    : null
               ),
               name
                 ? h(DropTransition, { appear: true, delay: 0.24 }, () =>
                     h(ArticleList, {
                       key: page.value.path,
                       items,
-                    }),
+                    })
                   )
                 : null,
             ]),
             h(DropTransition, { delay: 0.16 }, () =>
-              h(InfoPanel, { key: "blog" }),
+              h(InfoPanel, { key: "blog" })
             ),
-          ]),
-        ),
+          ])
+        )
       );
     };
   },

@@ -1,6 +1,6 @@
 import { dateSorter } from "@vuepress/helper";
 import type { GitData } from "@vuepress/plugin-git";
-import type { BlogTypeOptions } from "vuepress-plugin-blog2";
+import type { BlogTypeOptions } from "@vuepress/plugin-blog";
 
 import { defaultPageSorter } from "./utils.js";
 import type {
@@ -14,7 +14,7 @@ import { ArticleInfoType } from "../../../shared/index.js";
 /** @private */
 export const getBlogArticleType = (
   options: BlogPluginOptions,
-  themeData: ThemeData,
+  themeData: ThemeData
 ): BlogTypeOptions<
   { git: GitData },
   ThemeNormalPageFrontmatter,
@@ -50,7 +50,7 @@ export const getBlogArticleType = (
 /** @private */
 export const getBlogStarType = (
   options: BlogPluginOptions,
-  themeData: ThemeData,
+  themeData: ThemeData
 ): BlogTypeOptions<
   { git: GitData },
   ThemeNormalPageFrontmatter,
@@ -76,7 +76,7 @@ export const getBlogStarType = (
 
       return dateSorter(
         pageA.routeMeta[ArticleInfoType.date],
-        pageB.routeMeta[ArticleInfoType.date],
+        pageB.routeMeta[ArticleInfoType.date]
       );
     },
 
@@ -94,7 +94,7 @@ export const getBlogStarType = (
 /** @private */
 export const getBlogTimelineType = (
   options: BlogPluginOptions,
-  themeData: ThemeData,
+  themeData: ThemeData
 ): BlogTypeOptions<
   { git: GitData },
   ThemeNormalPageFrontmatter,
@@ -113,7 +113,7 @@ export const getBlogTimelineType = (
     sorter: (pageA, pageB) =>
       dateSorter(
         pageA.routeMeta[ArticleInfoType.date],
-        pageB.routeMeta[ArticleInfoType.date],
+        pageB.routeMeta[ArticleInfoType.date]
       ),
     path: options.timeline,
     layout: "Timeline",

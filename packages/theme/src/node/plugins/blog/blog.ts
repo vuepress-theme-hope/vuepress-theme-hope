@@ -1,7 +1,7 @@
 import { keys, startsWith } from "@vuepress/helper";
 import type { App, Page, Plugin } from "vuepress/core";
-import type { BlogOptions } from "vuepress-plugin-blog2";
-import { blogPlugin } from "vuepress-plugin-blog2";
+import type { BlogOptions } from "@vuepress/plugin-blog";
+import { blogPlugin } from "@vuepress/plugin-blog";
 
 import { getBlogCategoryCategory, getBlogTagCategory } from "./category.js";
 import { blogFilter } from "./filter.js";
@@ -23,7 +23,7 @@ export const getBlogPlugin = (
   app: App,
   themeData: ThemeData,
   options?: BlogPluginOptions | boolean,
-  hotReload = false,
+  hotReload = false
 ): Plugin | null => {
   if (!options) return null;
 

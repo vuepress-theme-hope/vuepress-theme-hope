@@ -1,8 +1,8 @@
 import { getDate } from "@vuepress/helper/client";
 import type { ComputedRef, InjectionKey } from "vue";
 import { computed, inject, provide } from "vue";
-import type { Article } from "vuepress-plugin-blog2/client";
-import { useBlogType } from "vuepress-plugin-blog2/client";
+import type { Article } from "@vuepress/plugin-blog/client";
+import { useBlogType } from "@vuepress/plugin-blog/client";
 
 import type { ArticleInfo } from "../../../../shared/index.js";
 import { ArticleInfoType } from "../../../../shared/index.js";
@@ -21,7 +21,7 @@ export type TimelinesRef = ComputedRef<{
 }>;
 
 export const timelinesSymbol: InjectionKey<TimelinesRef> = Symbol(
-  __VUEPRESS_DEV__ ? "timelines" : "",
+  __VUEPRESS_DEV__ ? "timelines" : ""
 );
 
 /**

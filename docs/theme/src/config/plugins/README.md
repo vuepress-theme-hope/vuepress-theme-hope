@@ -13,4 +13,4 @@ Some plugins are required for the theme to work properly, which means you are no
 
 :::
 
-<AutoCatalog />
+<Catalog />

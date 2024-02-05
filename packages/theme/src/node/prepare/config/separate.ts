@@ -12,7 +12,7 @@ const { url } = import.meta;
  */
 export const prepareSeparatedConfigFile = (
   app: App,
-  { enableAutoCatalog, enableBlog, enableEncrypt, enableSlide }: ThemeStatus,
+  { enableCatalog, enableBlog, enableEncrypt, enableSlide }: ThemeStatus
 ): Promise<string> => {
   const imports: string[] = [];
   const enhances: string[] = [];
@@ -20,16 +20,16 @@ export const prepareSeparatedConfigFile = (
   const actions: string[] = [];
   const layouts = [];
 
-  if (enableAutoCatalog) {
+  if (enableCatalog) {
     imports.push(
-      `import { defineAutoCatalogGetter } from "${getRealPath(
-        "vuepress-plugin-auto-catalog/client",
-        url,
+      `import { defineCatalogInfoGetter } from "${getRealPath(
+        "@vuepress/plugin-catalog/client",
+        url
       )}"`,
-      `import { h } from "vue"`,
+      `import { h } from "vue"`
     );
     actions.push(`\
-defineAutoCatalogGetter((meta) => {
+defineCatalogInfoGetter((meta) => {
   const title = meta.${ArticleInfoType.title};
   const shouldIndex = meta.${ArticleInfoType.index} !== false;
   const icon = meta.${ArticleInfoType.icon};
@@ -46,7 +46,7 @@ defineAutoCatalogGetter((meta) => {
   if (enableBlog) {
     imports.push(
       `import { BlogCategory, BlogHome, BlogType, BloggerInfo, Timeline, setupBlog } from "${CLIENT_FOLDER}modules/blog/export.js";`,
-      `import "${CLIENT_FOLDER}modules/blog/styles/layout.scss";`,
+      `import "${CLIENT_FOLDER}modules/blog/styles/layout.scss";`
     );
 
     enhances.push(`app.component("BloggerInfo", BloggerInfo);`);
@@ -58,11 +58,11 @@ defineAutoCatalogGetter((meta) => {
 
   if (enableEncrypt) {
     imports.push(
-      `import { GlobalEncrypt, LocalEncrypt } from "${CLIENT_FOLDER}modules/encrypt/export.js";`,
+      `import { GlobalEncrypt, LocalEncrypt } from "${CLIENT_FOLDER}modules/encrypt/export.js";`
     );
     enhances.push(
       `app.component("GlobalEncrypt", GlobalEncrypt);`,
-      `app.component("LocalEncrypt", LocalEncrypt);`,
+      `app.component("LocalEncrypt", LocalEncrypt);`
     );
   }
 
@@ -70,8 +70,8 @@ defineAutoCatalogGetter((meta) => {
     imports.push(
       `import Slide from "${getRealPath(
         "vuepress-plugin-md-enhance/SlidePage",
-        url,
-      )}";`,
+        url
+      )}";`
     );
     layouts.push("Slide,");
   }
@@ -118,6 +118,6 @@ ${setups.map((item) => `    ${item}`).join("\n")}
     NotFound,
 ${layouts.map((item) => `    ${item}`).join("\n")}
   }
-});`,
+});`
   );
 };

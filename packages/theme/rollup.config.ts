@@ -29,7 +29,7 @@ export default [
         "@vuepress/plugin-theme-data/client",
         "bcrypt-ts/browser",
         "body-scroll-lock",
-        "vuepress-plugin-blog2/client",
+        "@vuepress/plugin-blog/client",
         "vuepress-plugin-comment2/pageview",
         "vuepress-plugin-md-enhance/SlidePage",
         /\.jpg$/u,
@@ -40,6 +40,6 @@ export default [
           "balloon-css/balloon.css",
           "vuepress-shared/client/styles/message.scss",
         ].includes(id),
-    },
+    }
   ),
 ];

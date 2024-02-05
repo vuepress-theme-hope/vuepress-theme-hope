@@ -6,4 +6,4 @@ category:
   - Guide
 ---
 
-<AutoCatalog />
+<Catalog />

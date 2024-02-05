@@ -1,4 +1,5 @@
 import type { BackToTopPluginOptions } from "@vuepress/plugin-back-to-top";
+import type { CatalogPluginOptions } from "@vuepress/plugin-catalog";
 import type { CopyCodePluginOptions } from "@vuepress/plugin-copy-code";
 import type { CopyrightPluginOptions } from "@vuepress/plugin-copyright";
 import type { DocsearchPluginOptions } from "@vuepress/plugin-docsearch";
@@ -9,7 +10,6 @@ import type { RedirectPluginOptions } from "@vuepress/plugin-redirect";
 import type { SearchPluginOptions } from "@vuepress/plugin-search";
 import type { SeoPluginOptions } from "@vuepress/plugin-seo";
 import type { SitemapPluginOptions } from "@vuepress/plugin-sitemap";
-import type { AutoCatalogOptions } from "vuepress-plugin-auto-catalog";
 import type { CommentPluginOptions } from "vuepress-plugin-comment2";
 import type { ComponentOptions } from "vuepress-plugin-components";
 import type { MarkdownEnhanceOptions } from "vuepress-plugin-md-enhance";
@@ -31,15 +31,6 @@ export interface PluginsOptions {
   activeHeaderLinks?: boolean;
 
   /**
-   * Auto catalog plugin Options
-   *
-   * 自动目录插件选项
-   *
-   * @default true
-   */
-  autoCatalog?: AutoCatalogOptions | boolean;
-
-  /**
    * Options for @vuepress/back-to-top
    *
    * @see https://ecosystem.vuejs.press/plugins/back-to-top.html
@@ -58,6 +49,15 @@ export interface PluginsOptions {
    * @default false
    */
   blog?: BlogPluginOptions | boolean;
+
+  /**
+   * Options for @vuepress/catalog
+   *
+   * 自动目录插件选项
+   *
+   * @default true
+   */
+  catalog?: CatalogPluginOptions | boolean;
 
   /**
    * Components enabled

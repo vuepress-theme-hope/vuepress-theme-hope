@@ -1,6 +1,6 @@
 import { isArray } from "@vuepress/helper";
 import type { GitData } from "@vuepress/plugin-git";
-import type { BlogCategoryOptions } from "vuepress-plugin-blog2";
+import type { BlogCategoryOptions } from "@vuepress/plugin-blog";
 
 import { defaultPageSorter } from "./utils.js";
 import type {
@@ -14,7 +14,7 @@ import { ArticleInfoType } from "../../../shared/index.js";
 /** @private */
 export const getBlogCategoryCategory = (
   options: BlogPluginOptions,
-  themeData: ThemeData,
+  themeData: ThemeData
 ): BlogCategoryOptions<
   { git: GitData },
   ThemeNormalPageFrontmatter,
@@ -57,7 +57,7 @@ export const getBlogCategoryCategory = (
 /** @private */
 export const getBlogTagCategory = (
   options: BlogPluginOptions,
-  themeData: ThemeData,
+  themeData: ThemeData
 ): BlogCategoryOptions<
   { git: GitData },
   ThemeNormalPageFrontmatter,

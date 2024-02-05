@@ -22,7 +22,6 @@ export default {
         "iframe",
         "ArtPlayer",
         "AudioPlayer",
-        "AutoCatalog",
         "Badge",
         "BiliBili",
         "Catalog",

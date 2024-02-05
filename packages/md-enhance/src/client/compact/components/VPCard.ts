@@ -1,8 +1,7 @@
 import { isLinkExternal } from "@vuepress/helper/client";
 import type { FunctionalComponent } from "vue";
 import { h } from "vue";
-import { withBase } from "vuepress/client";
-import { RouteLink } from "vuepress-shared/client";
+import { RouteLink, withBase } from "vuepress/client";
 
 import "../styles/vp-card.scss";
 
@@ -85,7 +84,7 @@ export const VPCard: FunctionalComponent<CardProps> = ({
       ? h(
           "a",
           { class: "vp-card", href: link, target: "_blank", style },
-          children,
+          children
         )
       : h(RouteLink, { to: link, class: "vp-card", style }, () => children)
     : h("div", { class: "vp-card", style }, children);

@@ -15,7 +15,7 @@ The following options control features provided by theme.
 
 ## Blog Options
 
-The theme adds blog feature using <ProjectLink name="blog2">`vuepress-plugin-blog2`</ProjectLink>, and the feature is **disabled** by default.
+The theme adds blog feature using <ProjectLink name="blog2">`@vuepress/plugin-blog`</ProjectLink>, and the feature is **disabled** by default.
 
 To enable blog plugin and use default options, you can set `plugins.blog` to `true` in theme options.
 

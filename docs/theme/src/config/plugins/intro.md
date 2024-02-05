@@ -48,6 +48,8 @@ The following plugins are enabled by default, and you can disable them:
 
 - [@vuepress/plugin-active-header-links][active-header-links]: Automatically update route hash based on current header
 
+- [@vuepress/plugin-catalog][catalog]: Provides catalog page generation and `<Catalog />` component
+
 - [@vuepress/plugin-copy-code][copy-code]: Provides copy button for code blocks.
 
 - [@vuepress/plugin-external-link-icon][external-link-icon]: Add external link icon for external links in Markdown.
@@ -64,8 +66,6 @@ The following plugins are enabled by default, and you can disable them:
 
 - [@vuepress/plugin-sitemap][sitemap]: Sitemap plugin
 
-- <ProjectLink name="auto-catalog">vuepress-plugin-auto-catalog</ProjectLink>: Provides catalog page generation and `<AutoCatalog />` component
-
 - <ProjectLink name="md-enhance">vuepress-plugin-md-enhance</ProjectLink>: Provides more Markdown syntax
 
 - <ProjectLink name="photo-swipe">vuepress-plugin-photo-swipe</ProjectLink>: Image preview plugin based on photo-swipe
@@ -76,7 +76,7 @@ The following plugins are bundled by theme, you can enable them via configuratio
 
 - [@vuepress/plugin-copyright][copyright]: Append copyright information when copying or disable copy and selection.
 
-- <ProjectLink name="blog2">vuepress-plugin-blog2</ProjectLink>: Blog plugin for VuePress2
+- <ProjectLink name="blog2">@vuepress/plugin-blog</ProjectLink>: Blog plugin for VuePress2
 
 - <ProjectLink name="comment2">vuepress-plugin-comment2</ProjectLink>: Provides comment and pageview function
 
@@ -97,6 +97,7 @@ These plugins are supported by theme, but you need to install them manually whil
 - <ProjectLink name="search-pro">vuepress-plugin-search-pro</ProjectLink>: Professional Client search plugin
 
 [active-header-links]: https://ecosystem.vuejs.press/plugins/active-header-links.html
+[catalog]: https://ecosystem.vuejs.press/zh/plugins/catalog.html
 [copy-code]: https://ecosystem.vuejs.press/zh/plugins/copy-code.html
 [copyright]: https://ecosystem.vuejs.press/plugins/copyright.html
 [docsearch]: https://ecosystem.vuejs.press/plugins/docsearch.html

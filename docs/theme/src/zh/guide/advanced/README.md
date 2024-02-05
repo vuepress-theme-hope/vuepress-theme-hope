@@ -35,4 +35,4 @@ tag:
 
 :::
 
-<AutoCatalog />
+<Catalog />

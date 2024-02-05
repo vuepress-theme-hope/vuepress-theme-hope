@@ -9,13 +9,13 @@ tag:
   - 主题配置
 ---
 
-## autoCatalog <Badge text="默认启用" />
+## catalog <Badge text="默认启用" />
 
-控制 `vuepress-plugin-auto-catalog`，提供目录的自动生成。
+控制 `@vuepress/plugin-catalog`，提供目录的自动生成。
 
 默认不需要任何额外配置。如果你不需要此功能可设置为 `false`。
 
-插件选项请参阅 <ProjectLink name="auto-catalog" path="/zh/config.html">auto catalog 插件文档</ProjectLink>。
+插件选项请参阅 [catalog 插件文档][catalog-config]。
 
 ## backToTop <Badge text="默认启用" />
 
@@ -138,6 +138,7 @@ tag:
 插件选项请参阅 [sitemap 插件文档][sitemap-config]。
 
 [back-to-top-config]: https://ecosystem.vuejs.press/zh/plugins/back-to-top.html#options
+[catalog-config]: https://ecosystem.vuejs.press/zh/plugins/catalog.html#options
 [copy-code-config]: https://ecosystem.vuejs.press/zh/plugins/copy-code.html#options
 [git-config]: https://ecosystem.vuejs.press/zh/plugins/git.html#options
 [reading-time-config]: https://ecosystem.vuejs.press/zh/plugins/reading-time.html#options

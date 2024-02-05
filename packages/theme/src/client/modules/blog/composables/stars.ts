@@ -1,7 +1,7 @@
 import type { ComputedRef, InjectionKey } from "vue";
 import { inject, provide } from "vue";
-import type { BlogTypeData } from "vuepress-plugin-blog2/client";
-import { useBlogType } from "vuepress-plugin-blog2/client";
+import type { BlogTypeData } from "@vuepress/plugin-blog/client";
+import { useBlogType } from "@vuepress/plugin-blog/client";
 
 import type { ArticleInfo } from "../../../../shared/index.js";
 
@@ -10,7 +10,7 @@ declare const __VUEPRESS_DEV__: boolean;
 export type StarsRef = ComputedRef<BlogTypeData<ArticleInfo>>;
 
 export const starsSymbol: InjectionKey<StarsRef> = Symbol(
-  __VUEPRESS_DEV__ ? "stars" : "",
+  __VUEPRESS_DEV__ ? "stars" : ""
 );
 
 /**

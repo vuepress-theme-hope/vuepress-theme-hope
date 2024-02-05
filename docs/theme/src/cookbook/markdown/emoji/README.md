@@ -6,4 +6,4 @@ dir:
 article: false
 ---
 
-<AutoCatalog />
+<Catalog />

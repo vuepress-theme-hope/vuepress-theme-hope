@@ -14,4 +14,4 @@ dir:
 
 :::
 
-<AutoCatalog />
+<Catalog />
