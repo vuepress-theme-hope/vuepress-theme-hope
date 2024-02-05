@@ -155,8 +155,6 @@ VuePress 默认主题只是一个提供基础文档布局的主题。 例如：�
 
 本主题包含了以下内建插件，如果有需要，你也可以单独进行使用或搭配其他主题。
 
-- <ProjectLink name="blog2" path="/zh/">@vuepress/plugin-blog</ProjectLink>: VuePress2 的博客插件
-
 - <ProjectLink name="comment2" path="/zh/">vuepress-plugin-comment2</ProjectLink>: 评论与浏览量功能
 
 - <ProjectLink name="components" path="/zh/">vuepress-plugin-components</ProjectLink>: 提供一些开箱即用的插件

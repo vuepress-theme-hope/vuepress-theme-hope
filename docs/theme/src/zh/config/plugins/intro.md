@@ -74,9 +74,9 @@ tag:
 
 主题捆绑以下插件，你可以通过配置启用它们
 
-- [@vuepress/plugin-copyright][copyright]: 在用户复制时追加版权信息，或禁用站点的复制与选择。
+- [@vuepress/plugin-blog][blog]: VuePress2 的博客插件
 
-- <ProjectLink name="blog2" path="/zh/">@vuepress/plugin-blog</ProjectLink>: VuePress2 的博客插件
+- [@vuepress/plugin-copyright][copyright]: 在用户复制时追加版权信息，或禁用站点的复制与选择。
 
 - <ProjectLink name="comment2" path="/zh/">vuepress-plugin-comment2</ProjectLink>: 提供评论与浏览量功能
 
@@ -99,6 +99,7 @@ tag:
 ### 官方插件
 
 [active-header-links]: https://ecosystem.vuejs.press/zh/plugins/active-header-links.html
+[blog]: https://ecosystem.vuejs.press/zh/plugins/blog.html
 [catalog]: https://ecosystem.vuejs.press/zh/plugins/catalog.html
 [copy-code]: https://ecosystem.vuejs.press/zh/plugins/copy-code.html
 [copyright]: https://ecosystem.vuejs.press/zh/plugins/copyright.html
