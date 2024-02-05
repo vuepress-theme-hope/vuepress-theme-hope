@@ -18,7 +18,7 @@
   "devDependencies": {
     "@vuepress/bundler-vite": "2.0.0-rc.5",
     "@vuepress/bundler-webpack": "2.0.0-rc.5",
-    "@vuepress/theme-default": "2.0.0-rc.9",
+    "@vuepress/theme-default": "2.0.0-rc.10",
     "@waline/client": "3.0.0-alpha.11",
     "artalk": "2.8.0",
     "sass-loader": "14.1.0",
