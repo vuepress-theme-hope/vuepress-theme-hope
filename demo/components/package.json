@@ -15,8 +15,8 @@
     "demo:webpack-dev": "vuepress-webpack dev src"
   },
   "devDependencies": {
-    "@vuepress/bundler-vite": "2.0.0-rc.2",
-    "@vuepress/bundler-webpack": "2.0.0-rc.2",
+    "@vuepress/bundler-vite": "2.0.0-rc.5",
+    "@vuepress/bundler-webpack": "2.0.0-rc.5",
     "@vuepress/helper": "2.0.0-rc.9",
     "@vuepress/theme-default": "2.0.0-rc.9",
     "artplayer": "5.1.1",
@@ -28,7 +28,7 @@
     "sass-loader": "14.1.0",
     "vidstack": "1.10.4",
     "vue": "3.4.15",
-    "vuepress": "2.0.0-rc.2",
+    "vuepress": "2.0.0-rc.5",
     "vuepress-plugin-components": "workspace:*"
   }
 }

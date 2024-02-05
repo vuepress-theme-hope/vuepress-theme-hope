@@ -59,7 +59,7 @@ files.forEach((pkgName) => {
         yarn: ">=2",
       },
       peerDependencies: {
-        vuepress: "2.0.0-rc.2",
+        vuepress: "2.0.0-rc.5",
       },
       publishConfig: {
         access: "public",
@@ -105,6 +105,6 @@ npm i -D vuepress-plugin-${pkgName}
 # yarn
 yarn add -D vuepress-plugin-${pkgName}
 \`\`\`
-`,
+`
     );
 });

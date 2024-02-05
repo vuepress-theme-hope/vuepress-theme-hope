@@ -7,7 +7,12 @@ import {
 import type { PropType, VNode } from "vue";
 import { computed, defineComponent, h } from "vue";
 import type { RouteMeta } from "vue-router";
-import { VPLink, usePageData, useRoutes, useSiteData } from "vuepress/client";
+import {
+  RouteLink,
+  usePageData,
+  useRoutes,
+  useSiteData,
+} from "vuepress/client";
 
 import type { CatalogLocaleConfig } from "../../../shared/index.js";
 import FontIcon from "../../components/FontIcon.js";
@@ -252,7 +257,7 @@ export default defineComponent({
             },
             [
               h("a", { href: `#${title}`, class: "header-anchor" }, "#"),
-              h(VPLink, { class: "catalog-title", to: path }, () => [
+              h(RouteLink, { class: "catalog-title", to: path }, () => [
                 icon ? h(FontIcon, { icon }) : null,
                 `${mainIndex + 1}. ${title || "Unknown"}`,
               ]),
@@ -278,10 +283,14 @@ export default defineComponent({
                           { href: `#${title}`, class: "header-anchor" },
                           "#"
                         ),
-                        h(VPLink, { class: "catalog-title", to: path }, () => [
-                          icon ? h(FontIcon, { icon }) : null,
-                          `${mainIndex + 1}.${index + 1} ${title || "Unknown"}`,
-                        ]),
+                        h(
+                          RouteLink,
+                          { class: "catalog-title", to: path },
+                          () => [
+                            icon ? h(FontIcon, { icon }) : null,
+                            `${mainIndex + 1}.${index + 1} ${title || "Unknown"}`,
+                          ]
+                        ),
                       ]
                     ),
                     children.length
@@ -290,7 +299,7 @@ export default defineComponent({
                           { class: "sub-catalog-wrapper" },
                           children.map(({ icon, path, title }, subIndex) =>
                             h(
-                              VPLink,
+                              RouteLink,
                               {
                                 class: "sub-catalog-item",
                                 to: path,

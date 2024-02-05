@@ -57,7 +57,7 @@
   },
   "peerDependencies": {
     "sass-loader": "^14.0.0",
-    "vuepress": "2.0.0-rc.2"
+    "vuepress": "2.0.0-rc.5"
   },
   "peerDependenciesMeta": {
     "sass-loader": {
