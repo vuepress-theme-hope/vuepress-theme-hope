@@ -7,7 +7,7 @@ import { logger } from "../utils.js";
 
 /** @deprecated */
 export const convertOptions = (
-  options: ComponentOptions & Record<string, unknown>,
+  options: ComponentOptions & Record<string, unknown>
 ): void => {
   const { deprecatedLogger, droppedLogger } = createConverter("components");
 
@@ -51,8 +51,8 @@ export const convertOptions = (
     if (isNumber(options.rootComponents.backToTop)) {
       logger.error(
         `"${colors.magenta(
-          "rootComponents.backToTop",
-        )}" no longer support number, please check the docs at https://plugin-components.vuejs.press/guide/backtotop.html.`,
+          "rootComponents.backToTop"
+        )}" is removed, please use ${colors.cyan("@vuepress/plugin-back-to-top")} instead.`
       );
       options.rootComponents.backToTop = {
         threshold: options.rootComponents.backToTop,
@@ -62,8 +62,8 @@ export const convertOptions = (
     if (isPlainObject(options.rootComponents.notice)) {
       logger.error(
         `"${colors.magenta(
-          "rootComponents.notice",
-        )}" no longer support object config, please check the docs at https://plugin-components.vuejs.press/guide/notice.html.`,
+          "rootComponents.notice"
+        )}" no longer support object config, please check the docs at https://plugin-components.vuejs.press/guide/notice.html.`
       );
       delete options.rootComponents.notice;
     }
@@ -72,22 +72,20 @@ export const convertOptions = (
   if ((options.components as unknown[])?.includes("Catalog"))
     logger.warn(
       `${colors.cyan(
-        "Catalog",
-      )} component is deprecated, please use ${colors.cyan(
-        "AutoCatalog",
-      )} component with ${colors.magenta(
-        "vuepress-plugin-auto-catalog",
-      )} instead.`,
+        "Catalog"
+      )} component is no longer supported, please use ${colors.magenta(
+        "@vuepress/plugin-catalog"
+      )} instead.`
     );
 
   ["VideoPlayer", "AudioPlayer", "YouTube"].forEach((component) => {
     if ((options.components as unknown[])?.includes(component))
       logger.warn(
         `${colors.cyan(
-          component,
+          component
         )} component is deprecated, please use ${colors.cyan(
-          "VidStack",
-        )} component instead.`,
+          "VidStack"
+        )} component instead.`
       );
   });
 };

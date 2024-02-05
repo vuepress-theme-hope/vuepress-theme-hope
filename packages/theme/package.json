@@ -71,7 +71,9 @@
   "dependencies": {
     "@vuepress/helper": "2.0.0-rc.9",
     "@vuepress/plugin-active-header-links": "2.0.0-rc.7",
+    "@vuepress/plugin-catalog": "2.0.0-rc.9",
     "@vuepress/plugin-back-to-top": "2.0.0-rc.9",
+    "@vuepress/plugin-blog": "2.0.0-rc.9",
     "@vuepress/plugin-external-link-icon": "2.0.0-rc.7",
     "@vuepress/plugin-copy-code": "2.0.0-rc.9",
     "@vuepress/plugin-copyright": "2.0.0-rc.9",
@@ -91,8 +93,6 @@
     "gray-matter": "^4.0.3",
     "vue": "^3.4.15",
     "vue-router": "^4.2.5",
-    "vuepress-plugin-auto-catalog": "workspace:*",
-    "vuepress-plugin-blog2": "workspace:*",
     "vuepress-plugin-comment2": "workspace:*",
     "vuepress-plugin-components": "workspace:*",
     "vuepress-plugin-md-enhance": "workspace:*",
