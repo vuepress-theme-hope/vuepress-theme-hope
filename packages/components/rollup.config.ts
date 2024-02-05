@@ -25,6 +25,7 @@ export default [
         "components/VideoPlayer",
         "components/XiGua",
         "components/YouTube",
+        "index",
       ],
     },
     {
