@@ -73,7 +73,7 @@
     "@vuepress/plugin-active-header-links": "2.0.0-rc.7",
     "@vuepress/plugin-back-to-top": "2.0.0-rc.9",
     "@vuepress/plugin-external-link-icon": "2.0.0-rc.7",
-    "@vuepress/plugin-copy-code": "2.0.0-rc.9",
+    "@vuepress/plugin-copy-code": "2.0.0-rc.10",
     "@vuepress/plugin-copyright": "2.0.0-rc.9",
     "@vuepress/plugin-git": "2.0.0-rc.7",
     "@vuepress/plugin-nprogress": "2.0.0-rc.7",
