@@ -8,7 +8,7 @@ category:
 
 ## `useXXX() is called without provider`
 
-此类错误通常是因为项目中错误的含有多个 `@vue/xxx`, `vue` 或 `vue-router` 版本引起的。
+此类错误通常是因为项目中错误的含有多个 `vue` 或 `vuepress` 版本引起的。
 
 请确保你正在使用最新的 `vuepress` 和 `vuepress-theme-hope` 版本:
 

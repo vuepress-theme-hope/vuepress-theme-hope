@@ -1,5 +1,5 @@
 import { isDef } from "@vuepress/helper/client";
-import type { RouteLocationNormalizedLoaded } from "vue-router";
+import type { RouteLocationNormalizedLoaded } from "vuepress/client";
 
 const HASH_REGEXP = /#.*$/u;
 

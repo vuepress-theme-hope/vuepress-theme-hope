@@ -1,4 +1,4 @@
-import type { RouteLocationNormalizedLoaded } from "vue-router";
+import type { RouteLocationNormalizedLoaded } from "vuepress/client";
 import { isActiveLink } from "vuepress-shared/client";
 
 import type { ResolvedSidebarItem } from "../utils/index.js";

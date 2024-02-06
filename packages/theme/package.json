@@ -93,7 +93,6 @@
     "chokidar": "^3.5.3",
     "gray-matter": "^4.0.3",
     "vue": "^3.4.15",
-    "vue-router": "^4.2.5",
     "vuepress-plugin-comment2": "workspace:*",
     "vuepress-plugin-components": "workspace:*",
     "vuepress-plugin-md-enhance": "workspace:*",

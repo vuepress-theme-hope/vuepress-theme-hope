@@ -123,7 +123,6 @@ export const rollupBundle = (
               "@vuepress/helper",
               "@vueuse/core",
               "vue",
-              "vue-router",
               "vuepress/client",
               "vuepress/shared",
               "vuepress-shared/client",

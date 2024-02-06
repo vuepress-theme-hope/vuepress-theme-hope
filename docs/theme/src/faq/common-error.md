@@ -8,7 +8,7 @@ category:
 
 ## `useXXX() is called without provider`
 
-Such errors are usually caused by incorrectly containing multiple versions of `@vuepress/client`, `vue` or `vue-router` in the project.
+Such errors are usually caused by incorrectly containing multiple versions of `@vuepress/client` and `vue` in project.
 
 Make sure you are using the latest `vuepress` and `vuepress-theme-hope` versions and all related packages. You can use `vp-update` helper for that
 

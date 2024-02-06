@@ -36,7 +36,7 @@ category:
 
 请确保你在使用最新的 `vuepress` ，插件以及 `vuepress-theme-hope` V2 版本，因为一些你遇到的 bug 可能已经在新版本中修复。
 
-另外在一些情况下，你可能会在升级某些依赖后生成错误的依赖树。为了让 VuePress 正确工作，在整个项目中，应该只能存在一个版本的 `vue`， `vue-router` 和 `vuepress`。多个版本的包会导致应用的不同部分在使用不同的包，进而引发如 `useXXX() is called without provider` 之类的错误。
+另外在一些情况下，你可能会在升级某些依赖后生成错误的依赖树。为了让 VuePress 正确工作，在整个项目中，应该只能存在一个版本的 `vue` 和 `vuepress`。多个版本的包会导致应用的不同部分在使用不同的包，进而引发如 `useXXX() is called without provider` 之类的错误。
 
 你可以通过执行下列命令来更新到最新版本。
 

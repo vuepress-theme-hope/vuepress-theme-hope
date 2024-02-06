@@ -28,7 +28,6 @@ export default [
       "vuepress/client",
       "fflate/browser",
       "vue",
-      "vue-router",
     ],
     copy: [["client/styles", "client"]],
     dtsExternal: ["@vuepress/helper/client", "vuepress/shared"],
