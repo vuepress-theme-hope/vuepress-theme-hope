@@ -1,4 +1,5 @@
-import { type Ref, computed, ref, watch } from "vue";
+import type { Ref } from "vue";
+import { computed, ref, watch } from "vue";
 
 export interface ArrayCycle<T> {
   index: Ref<number>;
@@ -9,7 +10,7 @@ export interface ArrayCycle<T> {
 
 export const useArrayCycle = <T>(
   target: Ref<T[]>,
-  preserveIndexWhenChange = false
+  preserveIndexWhenChange = false,
 ): ArrayCycle<T> => {
   const index = ref(0);
   const item = computed(() => target.value[index.value]);

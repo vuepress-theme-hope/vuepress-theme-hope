@@ -1,7 +1,7 @@
 ---
 title: Blog Plugin Config
 icon: blog
-order: 2
+order: 3
 category:
   - Config
 tag:
@@ -12,7 +12,7 @@ tag:
 
 ## Intro
 
-The theme provides blog feature, and it's **not** enabled by default.
+The theme provides blog feature via `@vuepress/plugin-blog`, and it's **not** enabled by default.
 
 You can enable blog feature by setting `plugins.blog` to `true` in theme options.
 
@@ -56,6 +56,13 @@ By default, all the pages generated from Markdown files but not homepage will be
 - Default: `filter` option
 
 Page filter, determine whether the plugin should generate excerpt for it.
+
+### slugify
+
+- Type: `(name: string) => string`
+- Default: `(name) => name.replace(/ _/g, '-').replace(/[:?*|\\/<>]/g, "").toLowerCase()`
+
+Slugify function, used to convert key name which they are register in routes.
 
 ### type
 

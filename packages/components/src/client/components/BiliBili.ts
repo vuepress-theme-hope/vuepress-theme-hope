@@ -1,5 +1,7 @@
 /* eslint-disable vue/no-unused-properties */
-import { type VNode, computed, defineComponent, h } from "vue";
+import type { VNode } from "vue";
+import { computed, defineComponent, h, ref } from "vue";
+import { LoadingIcon } from "vuepress-shared/client";
 
 import { useSize } from "../composables/index.js";
 import { videoIframeAllow } from "../utils/index.js";
@@ -111,7 +113,9 @@ export default defineComponent({
   },
 
   setup(props) {
-    const { el, width, height } = useSize<HTMLIFrameElement>(props);
+    const { el, width, height, resize } = useSize<HTMLIFrameElement>(props);
+
+    const loaded = ref(false);
 
     const videoLink = computed(() => {
       const { aid, bvid, cid, autoplay, time, page } = props;
@@ -119,19 +123,19 @@ export default defineComponent({
       return aid && cid
         ? `${VIDEO_LINK}?aid=${aid}&cid=${cid}&t=${time}&autoplay=${
             autoplay ? 1 : 0
-          }&page=${page}`
+          }&p=${page}`
         : bvid
-        ? `${VIDEO_LINK}?bvid=${bvid}&t=${time}&autoplay=${autoplay ? 1 : 0}`
-        : null;
+          ? `${VIDEO_LINK}?bvid=${bvid}&t=${time}&autoplay=${autoplay ? 1 : 0}`
+          : null;
     });
 
-    return (): VNode[] | null =>
+    return (): (VNode | null)[] =>
       videoLink.value
         ? [
             h(
               "div",
               { class: "bilibili-desc" },
-              h("a", { class: "sr-only", href: videoLink.value }, props.title)
+              h("a", { class: "sr-only", href: videoLink.value }, props.title),
             ),
             h("iframe", {
               ref: el,
@@ -142,10 +146,15 @@ export default defineComponent({
               allow: videoIframeAllow,
               style: {
                 width: width.value,
-                height: height.value,
+                height: loaded.value ? height.value : 0,
+              },
+              onLoad: () => {
+                loaded.value = true;
+                resize();
               },
             }),
+            loaded.value ? null : h(LoadingIcon),
           ]
-        : null;
+        : [];
   },
 });

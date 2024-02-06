@@ -1,4 +1,4 @@
-import { type ShareServiceConfig } from "../../../shared/index.js";
+import type { ShareServiceConfig } from "../../../shared/index.js";
 
 export const qrcode: ShareServiceConfig = {
   action: "qrcode",

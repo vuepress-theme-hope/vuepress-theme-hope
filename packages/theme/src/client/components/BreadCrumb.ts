@@ -1,10 +1,5 @@
+import type { VNode } from "vue";
 import {
-  usePageData,
-  usePageFrontmatter,
-  useRouteLocale,
-} from "@vuepress/client";
-import {
-  type VNode,
   computed,
   defineComponent,
   h,
@@ -12,17 +7,23 @@ import {
   shallowRef,
   watch,
 } from "vue";
-import { RouterLink, useRouter } from "vue-router";
-import { resolveRouteWithRedirect } from "vuepress-shared/client";
+import {
+  RouteLink,
+  resolveRoute,
+  usePageData,
+  usePageFrontmatter,
+  useRouteLocale,
+} from "vuepress/client";
 
 import HopeIcon from "@theme-hope/components/HopeIcon";
 import { useThemeLocaleData } from "@theme-hope/composables/index";
 import { getAncestorLinks } from "@theme-hope/utils/index";
 
-import {
-  ArticleInfoType,
-  type ThemeNormalPageFrontmatter,
+import type {
+  ArticleInfo,
+  ThemeNormalPageFrontmatter,
 } from "../../shared/index.js";
+import { ArticleInfoType } from "../../shared/index.js";
 
 import "../styles/breadcrumb.scss";
 
@@ -36,7 +37,6 @@ export default defineComponent({
   name: "BreadCrumb",
 
   setup() {
-    const router = useRouter();
     const page = usePageData();
     const routeLocale = useRouteLocale();
     const frontmatter = usePageFrontmatter<ThemeNormalPageFrontmatter>();
@@ -49,29 +49,25 @@ export default defineComponent({
         (frontmatter.value.breadcrumb ||
           (frontmatter.value.breadcrumb !== false &&
             themeLocale.value.breadcrumb !== false)) &&
-        config.value.length > 1
+        config.value.length > 1,
     );
 
     const iconEnable = computed(
       () =>
         frontmatter.value.breadcrumbIcon ||
         (frontmatter.value.breadcrumbIcon !== false &&
-          themeLocale.value.breadcrumbIcon !== false)
+          themeLocale.value.breadcrumbIcon !== false),
     );
 
     const getBreadCrumbConfig = (): void => {
-      const routes = router.getRoutes();
-
       const breadcrumbConfig = getAncestorLinks(
         page.value.path,
-        routeLocale.value
+        routeLocale.value,
       )
         .map<BreadCrumbConfig | null>(({ link, name }) => {
-          const route = routes.find((route) => route.path === link);
+          const { path, meta } = resolveRoute<ArticleInfo>(link);
 
-          if (route) {
-            const { meta, path } = resolveRouteWithRedirect(router, route.path);
-
+          if (meta)
             return {
               title:
                 meta[ArticleInfoType.shortTitle] ||
@@ -80,7 +76,6 @@ export default defineComponent({
               icon: meta[ArticleInfoType.icon],
               path,
             };
-          }
 
           return null;
         })
@@ -90,9 +85,7 @@ export default defineComponent({
     };
 
     onMounted(() => {
-      getBreadCrumbConfig();
-
-      watch(() => page.value.path, getBreadCrumbConfig);
+      watch(() => page.value.path, getBreadCrumbConfig, { immediate: true });
     });
 
     return (): VNode =>
@@ -116,32 +109,32 @@ export default defineComponent({
                   },
                   [
                     h(
-                      RouterLink,
+                      RouteLink,
                       {
                         to: item.path,
                         property: "item",
                         typeof: "WebPage",
                       },
                       () => [
-                        // icon
+                        // Icon
                         iconEnable.value
                           ? h(HopeIcon, { icon: item.icon })
                           : null,
-                        // text
+                        // Text
                         h(
                           "span",
                           { property: "name" },
-                          item.title || "Unknown"
+                          item.title || "Unknown",
                         ),
-                      ]
+                      ],
                     ),
-                    // meta
+                    // Meta
                     h("meta", { property: "position", content: index + 1 }),
-                  ]
-                )
-              )
+                  ],
+                ),
+              ),
             )
-          : []
+          : [],
       );
   },
 });

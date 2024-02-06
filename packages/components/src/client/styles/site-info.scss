@@ -3,8 +3,10 @@
 
   display: inline-block;
 
-  width: calc(50% - 24px);
-  margin: 8px 11px;
+  overflow: hidden;
+
+  width: calc(50% - 16px);
+  margin: 4px 8px;
   border-radius: 8px;
 
   color: inherit;
@@ -21,6 +23,22 @@
   &:hover {
     background: var(--vp-bgl);
     box-shadow: 1px 4px 16px var(--card-shadow);
+
+    &::after {
+      content: attr(data-name);
+
+      position: absolute;
+      top: 0.5rem;
+      left: 0.5rem;
+
+      display: block;
+
+      padding: 0.5rem;
+      border-radius: 0.25em;
+
+      background: rgb(55 55 55 / 50%);
+      color: #fff;
+    }
   }
 
   &::before {
@@ -29,136 +47,115 @@
     width: 0;
     padding-top: 55%;
   }
-}
 
-.vp-site-info-navigator {
-  position: absolute;
-  top: 0;
-  right: 0;
-  bottom: 0;
-  left: 0;
-  z-index: 2;
-
-  display: block;
-}
-
-.vp-site-info-preview {
-  position: absolute;
-  top: 0;
-  right: 0;
-  bottom: 0;
-  left: 0;
-}
-
-.vp-site-info-detail {
-  position: absolute;
-  top: 0;
-  right: 0;
-  bottom: 0;
-  left: 0;
-
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-
-  padding: 0.5rem 1rem;
-
-  text-align: center;
-
-  opacity: 1;
-
-  transition: opacity ease 0.6s;
-
-  &::before {
-    content: " ";
-
+  &-navigator {
     position: absolute;
-    top: 0;
-    right: 0;
-    bottom: 0;
-    left: 0;
-
-    background-color: var(--vp-bg);
-
-    opacity: 0.75;
+    inset: 0;
+    z-index: 2;
+    display: block;
   }
 
-  .vp-site-info:hover & {
-    opacity: 0;
-  }
-}
-
-.vp-site-info-logo {
-  z-index: 1;
-  height: 3rem;
-  margin: 0 auto;
-}
-
-.vp-site-info-name {
-  z-index: 1;
-
-  margin-bottom: 8px;
-  border-bottom: 1px solid var(--dark-grey);
-
-  color: var(--black);
-
-  font-weight: bold;
-  font-size: 20px;
-}
-
-.vp-site-info-desc {
-  z-index: 1;
-
-  flex-shrink: 1;
-
-  overflow: hidden;
-
-  color: var(--black);
-
-  font-size: 15px;
-  line-height: 1.3;
-  text-overflow: ellipsis;
-}
-
-.vp-site-info-source-wrapper {
-  position: absolute;
-
-  // NOTE: Compatible with Android Wechat
-  // inset-inline-end: 16px;
-  right: 16px;
-  bottom: 16px;
-  z-index: 3;
-
-  #{hope-config.$rtl-selector} & {
-    right: unset;
-    left: 16px;
-  }
-}
-
-.vp-site-info-source {
-  display: inline-block;
-
-  width: 20px;
-  height: 20px;
-  padding: 4px;
-  border-radius: 50%;
-
-  background: var(--black);
-
-  transition: transform var(--transform-transition);
-
-  &::before {
-    display: none;
+  &-preview {
+    position: absolute;
+    inset: 0;
   }
 
-  &:hover {
-    transform: scale(1.05);
+  &-detail {
+    position: absolute;
+    inset: 0;
+
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+
+    padding: 0.5rem 1rem;
+
+    text-align: center;
+
+    opacity: 1;
+
+    transition: opacity ease 0.6s;
+
+    &::before {
+      content: " ";
+
+      position: absolute;
+      inset: 0;
+
+      background-color: var(--vp-bg);
+
+      opacity: 0.75;
+    }
+
+    .vp-site-info:hover & {
+      opacity: 0;
+    }
   }
 
-  .icon {
-    width: 100%;
-    height: 100%;
-    color: var(--white);
+  &-logo {
+    z-index: 1;
+    height: 3rem;
+    margin: 0 auto;
+  }
+
+  &-name {
+    z-index: 1;
+
+    margin-bottom: 8px;
+    border-bottom: 1px solid var(--dark-grey);
+
+    color: var(--black);
+
+    font-weight: bold;
+    font-size: 20px;
+  }
+
+  &-desc {
+    z-index: 1;
+
+    flex-shrink: 1;
+
+    overflow: hidden;
+
+    color: var(--black);
+
+    font-size: 15px;
+    line-height: 1.3;
+    text-overflow: ellipsis;
+  }
+
+  &-source-wrapper {
+    position: absolute;
+    bottom: 16px;
+    inset-inline-end: 16px;
+    z-index: 3;
+  }
+
+  &-source {
+    display: inline-block;
+
+    width: 20px;
+    height: 20px;
+    padding: 4px;
+    border-radius: 50%;
+
+    background: var(--black);
+
+    transition: transform var(--transform-transition);
+
+    &::before {
+      display: none;
+    }
+
+    &:hover {
+      transform: scale(1.05);
+    }
+
+    .icon {
+      width: 100%;
+      height: 100%;
+      color: var(--white);
+    }
   }
 }

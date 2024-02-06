@@ -1,0 +1,119 @@
+@use "vuepress-shared/styles/arrow";
+@use "vuepress-shared/styles/reset";
+
+:root {
+  --md-demo-header-bg-color: #eee;
+}
+
+#{hope-config.$dark-selector} {
+  --md-demo-header-bg-color: #333;
+}
+
+.vp-md-demo {
+  margin: 8px -8px;
+  border: 1px solid var(--vp-brc);
+  border-radius: 8px;
+  transition: all 0.2s;
+
+  &:hover {
+    box-shadow: 0 2px 12px var(--card-shadow);
+  }
+}
+
+.vp-md-demo-header {
+  position: relative;
+
+  padding: 8px 12px;
+  border-radius: 8px 8px 0 0;
+
+  background: var(--code-demo-header-bg-color);
+
+  font-weight: 500;
+  font-size: 1.25rem;
+  line-height: 2.5rem;
+  text-align: start;
+}
+
+.vp-md-demo-toggle-button {
+  @include reset.button;
+  @include arrow.arrow;
+
+  position: relative;
+
+  margin: 8px 12px 8px 8px;
+  padding: 0;
+  border-color: transparent;
+  border-radius: 50%;
+
+  background-color: #ccc;
+  outline: none;
+
+  font-size: 24px;
+
+  cursor: pointer;
+
+  @media print {
+    display: none;
+  }
+
+  #{hope-config.$dark-selector} & {
+    background-color: #555;
+  }
+
+  &:hover {
+    background-color: #aaa;
+
+    #{hope-config.$dark-selector} & {
+      background-color: #777;
+    }
+  }
+}
+
+.vp-md-demo-display {
+  position: relative;
+  overflow: auto;
+  padding: 8px;
+
+  @media print {
+    page-break-inside: avoid;
+  }
+}
+
+.vp-md-demo-code-wrapper {
+  overflow: hidden;
+  transition: height 0.5s;
+
+  @media print {
+    height: auto !important;
+  }
+}
+
+.vp-md-demo-codes {
+  > div[class*="language-"] {
+    border-radius: 0;
+
+    @media (max-width: hope-config.$mobile) {
+      margin: 0.8rem 0;
+
+      &.line-numbers-mode::after {
+        display: none;
+      }
+
+      .line-numbers-wrapper {
+        display: none;
+      }
+
+      pre[class*="language-"] {
+        padding: 1.25rem 1.25rem 1rem;
+      }
+    }
+
+    pre {
+      margin-block: 0 !important;
+    }
+
+    &.line-numbers-mode::after {
+      border-radius: 0;
+    }
+  }
+}

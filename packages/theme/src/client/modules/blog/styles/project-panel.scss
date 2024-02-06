@@ -7,11 +7,14 @@
 
   display: flex;
   flex-wrap: wrap;
-  align-content: stretch;
   align-items: stretch;
-  justify-content: flex-start;
+  place-content: stretch flex-start;
 
   margin-bottom: 12px;
+
+  &:empty {
+    margin-bottom: 0;
+  }
 }
 
 .vp-project-card {
@@ -24,7 +27,8 @@
 
   background: var(--bg-color-float);
 
-  transition: background var(--color-transition),
+  transition:
+    background var(--color-transition),
     transform var(--transform-transition);
 
   @media (max-width: hope-config.$pad) {

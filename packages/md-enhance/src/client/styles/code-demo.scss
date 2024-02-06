@@ -10,7 +10,7 @@
 }
 
 .vp-code-demo {
-  margin: 10px 0;
+  margin: 8px 0;
   border: 1px solid var(--vp-brc);
   border-radius: 8px;
   transition: all 0.2s;
@@ -93,6 +93,7 @@
   position: relative;
 
   margin: 8px 12px 8px 8px;
+  padding: 0;
   border-color: transparent;
   border-radius: 50%;
 
@@ -130,7 +131,7 @@
   line-height: 2.5rem;
 
   &:first-child {
-    margin-left: 16px;
+    margin-inline-start: 0.5rem;
   }
 }
 
@@ -195,23 +196,6 @@
 
     &.line-numbers-mode::after {
       border-radius: 0;
-    }
-
-    button.copy-code-button.fancy {
-      right: 0;
-      bottom: 0;
-
-      width: 28px;
-      height: 28px;
-      border-radius: 50% 10% 0;
-
-      // stylelint-disable selector-max-compound-selectors
-      svg {
-        position: relative;
-        top: 1px;
-        left: 1px;
-      }
-      // stylelint-enable selector-max-compound-selectors
     }
   }
 }

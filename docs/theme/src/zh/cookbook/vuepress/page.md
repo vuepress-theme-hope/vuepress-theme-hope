@@ -3,7 +3,7 @@ title: VuePress 页面
 icon: file
 order: 1
 category:
-  - 教程知识
+  - 教程
   - VuePress
 tag:
   - 页面

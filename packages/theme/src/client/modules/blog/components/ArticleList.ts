@@ -1,14 +1,14 @@
+import type { PropType, VNode } from "vue";
 import {
-  type PropType,
-  type VNode,
   computed,
   defineComponent,
   h,
+  nextTick,
   onMounted,
   ref,
   watch,
 } from "vue";
-import { useRoute, useRouter } from "vue-router";
+import { useRoute, useRouter } from "vuepress/client";
 
 import DropTransition from "@theme-hope/components/transitions/DropTransition";
 import ArticleItem from "@theme-hope/modules/blog/components/ArticleItem";
@@ -16,7 +16,7 @@ import Pagination from "@theme-hope/modules/blog/components/Pagination";
 import { EmptyIcon } from "@theme-hope/modules/blog/components/icons/index";
 import { useBlogOptions } from "@theme-hope/modules/blog/composables/index";
 
-import { type ArticleInfo } from "../../../../shared/index.js";
+import type { ArticleInfo } from "../../../../shared/index.js";
 
 import "../styles/article-list.scss";
 
@@ -46,43 +46,51 @@ export default defineComponent({
     const currentPage = ref(1);
 
     const articlePerPage = computed(
-      () => blogOptions.value.articlePerPage || 10
+      () => blogOptions.value.articlePerPage || 10,
     );
 
     const currentArticles = computed(() =>
       props.items.slice(
         (currentPage.value - 1) * articlePerPage.value,
-        currentPage.value * articlePerPage.value
-      )
+        currentPage.value * articlePerPage.value,
+      ),
     );
 
-    const updatePage = (page: number): void => {
+    const updatePage = async (page: number): Promise<void> => {
       currentPage.value = page;
 
       const query = { ...route.query };
 
-      if (query["page"] === page.toString() || (page === 1 && !query["page"]))
-        return;
-      if (page === 1) delete query["page"];
-      else query["page"] = page.toString();
+      const needUpdate = !(
+        query["page"] === page.toString() || // Page equal as query
+        // Page is 1 and query is empty
+        (page === 1 && !query["page"])
+      );
 
-      void router.push({ path: route.path, query });
+      if (needUpdate) {
+        if (page === 1) delete query["page"];
+        else query["page"] = page.toString();
+
+        await router.push({ path: route.path, query });
+      }
+
+      if (SUPPORT_PAGEVIEW) {
+        await nextTick();
+        const { updatePageview } = await import(
+          /* webpackChunkName: "pageview" */ "vuepress-plugin-comment2/pageview"
+        );
+
+        await updatePageview();
+      }
     };
 
     onMounted(() => {
       const { page } = route.query;
 
-      updatePage(page ? Number(page) : 1);
-
-      if (SUPPORT_PAGEVIEW)
-        void import(
-          /* webpackChunkName: "pageview" */ "vuepress-plugin-comment2/pageview"
-        ).then(({ updatePageview }) => {
-          updatePageview();
-        });
+      void updatePage(page ? Number(page) : 1);
 
       watch(currentPage, () => {
-        // list top border distance
+        // List top border distance
         const distance =
           document.querySelector("#article-list")!.getBoundingClientRect().top +
           window.scrollY;
@@ -91,26 +99,18 @@ export default defineComponent({
           window.scrollTo(0, distance);
         }, 100);
       });
-
-      // FIXME: Workaround for https://github.com/vuepress/vuepress-next/issues/1249
-      watch(
-        () => route.query,
-        ({ page }) => {
-          updatePage(page ? Number(page) : 1);
-        }
-      );
     });
 
     return (): VNode =>
       h(
         "div",
-        { id: "article-list", class: "vp-article-list" },
+        { id: "article-list", class: "vp-article-list", role: "feed" },
         currentArticles.value.length
           ? [
               ...currentArticles.value.map(({ info, path }, index) =>
                 h(DropTransition, { appear: true, delay: index * 0.04 }, () =>
-                  h(ArticleItem, { key: path, info, path })
-                )
+                  h(ArticleItem, { key: path, info, path }),
+                ),
               ),
               h(Pagination, {
                 current: currentPage.value,
@@ -119,7 +119,7 @@ export default defineComponent({
                 onUpdateCurrentPage: updatePage,
               }),
             ]
-          : h(EmptyIcon)
+          : h(EmptyIcon),
       );
   },
 });

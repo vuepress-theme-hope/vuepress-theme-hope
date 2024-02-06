@@ -1,4 +1,4 @@
-import { type ShareServiceConfig } from "../../../shared/index.js";
+import type { ShareServiceConfig } from "../../../shared/index.js";
 
 export const buffer: ShareServiceConfig = {
   link: "https://bufferapp.com/add?text=[title]&url=[url]",

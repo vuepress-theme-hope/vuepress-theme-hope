@@ -1,7 +1,7 @@
 ---
 title: 博客配置
 icon: blog
-order: 2
+order: 3
 category:
   - 配置
 tag:
@@ -12,7 +12,7 @@ tag:
 
 ## 介绍
 
-主题提供博客功能，默认情况下**不启用**。
+主题通过 `@vuepress/plugin-blog` 提供博客功能，默认情况下此功能**不启用**。
 
 你可以在主题选项中设置 `plugins.blog: true` 来启用博客功能。
 
@@ -62,6 +62,13 @@ tag:
 - 默认值: `filter` 选项
 
 页面过滤器，此函数用于鉴别插件是否需要生成摘要。
+
+### slugify
+
+- 类型: `(name: string) => string`
+- 默认值: `(name) => name.replace(/ _/g, '-').replace(/[:?*|\\/<>]/g, "").toLowerCase()`
+
+Slugify 函数，用于转换 key 在路由中注册的形式。
 
 ### type
 
@@ -151,7 +158,7 @@ tag:
 - 类型: `string`
 - 默认值: `/star/`
 
-收藏文章列表路由路径。
+星标文章列表路由路径。
 
 ### timeline
 

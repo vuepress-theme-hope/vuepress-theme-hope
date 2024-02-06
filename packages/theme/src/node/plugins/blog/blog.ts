@@ -1,6 +1,7 @@
-import { type App, type Page, type Plugin } from "@vuepress/core";
-import { type BlogOptions, blogPlugin } from "vuepress-plugin-blog2";
-import { keys, startsWith } from "vuepress-shared/node";
+import { keys, startsWith } from "@vuepress/helper";
+import type { BlogPluginOptions } from "@vuepress/plugin-blog";
+import { blogPlugin } from "@vuepress/plugin-blog";
+import type { App, Page, Plugin } from "vuepress/core";
 
 import { getBlogCategoryCategory, getBlogTagCategory } from "./category.js";
 import { blogFilter } from "./filter.js";
@@ -10,19 +11,19 @@ import {
   getBlogStarType,
   getBlogTimelineType,
 } from "./type.js";
-import {
-  ArticleInfoType,
-  type BlogPluginOptions,
-  type ThemeData,
-  type ThemePageData,
+import type {
+  BlogOptions,
+  ThemeData,
+  ThemePageData,
 } from "../../../shared/index.js";
+import { ArticleInfoType } from "../../../shared/index.js";
 
 /** @private */
 export const getBlogPlugin = (
   app: App,
   themeData: ThemeData,
-  options?: BlogPluginOptions | boolean,
-  hotReload = false
+  options?: BlogOptions | boolean,
+  hotReload = false,
 ): Plugin | null => {
   if (!options) return null;
 
@@ -31,7 +32,7 @@ export const getBlogPlugin = (
   const isPageEncrypted = ({ path }: Page): boolean =>
     encryptedPaths.some((key) => startsWith(decodeURI(path), key));
 
-  return blogPlugin(<BlogOptions>{
+  return blogPlugin(<BlogPluginOptions>{
     excerpt: blogOptions.excerpt !== false,
 
     ...("excerptLength" in blogOptions
@@ -56,15 +57,17 @@ export const getBlogPlugin = (
 
       injectBlogBasicInfo(page, info);
 
-      // resolve encrypted
+      // Resolve encrypted
       if (isEncrypted) info[ArticleInfoType.isEncrypted] = true;
 
-      // resolve reading-time
+      // Resolve reading-time
       if (
-        // reading time data is sensitive with markdown contents
-        // we use this to prevent user triggers a page reload every time
+        /*
+         * Reading time data is sensitive with markdown contents
+         * we use this to prevent user triggers a page reload every time
+         */
         (hotReload || app.env.isBuild) &&
-        // ensure a valid reading time exists
+        // Ensure a valid reading time exists
         page.data.readingTime &&
         page.data.readingTime.words !== 0
       )
@@ -90,5 +93,6 @@ export const getBlogPlugin = (
 
     hotReload,
     ...("hotReload" in blogOptions ? { hotReload: blogOptions.hotReload } : {}),
+    ...("slugify" in blogOptions ? { slugify: blogOptions.slugify } : {}),
   });
 };

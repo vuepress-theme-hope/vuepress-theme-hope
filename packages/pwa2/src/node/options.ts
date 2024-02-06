@@ -1,7 +1,7 @@
-import { type LocaleConfig } from "@vuepress/core";
-import { type GenerateSWOptions } from "workbox-build";
+import type { LocaleConfig } from "vuepress/shared";
+import type { GenerateSWOptions } from "workbox-build";
 
-import { type ManifestOption, type PWALocaleData } from "../shared/index.js";
+import type { ManifestOption, PWALocaleData } from "../shared/index.js";
 
 interface ApplePWAOptions {
   /**
@@ -45,7 +45,7 @@ interface MicrosoftPWAOptions {
   image?: string;
 
   /**
-   * tile color
+   * Tile color
    *
    * 磁贴颜色
    */
@@ -64,7 +64,7 @@ export interface PWAOptions {
   swPath?: string;
 
   /**
-   * manifest file Config
+   * Manifest file Config
    *
    * manifest 文件设置
    */
@@ -123,7 +123,7 @@ export interface PWAOptions {
   maxPicSize?: number;
 
   /**
-   * settings for apple
+   * Settings for apple
    *
    * 苹果设置
    */
@@ -188,9 +188,9 @@ export interface PWAOptions {
   locales?: LocaleConfig<PWALocaleData>;
 
   /**
-   * Whether append base to all absolute links
+   * Whether append base to all absolute links in options
    *
-   * 是否为所有绝对链接添加 base
+   * 是否为选项中所有绝对链接添加 base
    *
    * @default false
    */

@@ -4,9 +4,7 @@
   );
 
   position: fixed;
-  top: 0;
-  right: 0;
-  left: 0;
+  inset: 0 0 auto;
   z-index: 175;
 
   display: flex;
@@ -24,7 +22,9 @@
   line-height: var(--navbar-line-height);
   white-space: nowrap;
 
-  transition: transform ease-in-out 0.3s, background var(--color-transition),
+  transition:
+    transform ease-in-out 0.3s,
+    background var(--color-transition),
     box-shadow var(--color-transition);
 
   backdrop-filter: saturate(150%) blur(12px);
@@ -48,6 +48,11 @@
     .icon {
       margin-inline-end: 0.25em;
       font-size: 1em;
+    }
+
+    img.icon {
+      vertical-align: -0.125em;
+      height: 1em;
     }
   }
 

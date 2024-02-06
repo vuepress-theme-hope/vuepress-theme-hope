@@ -1,11 +1,12 @@
-import { type App, type PluginConfig } from "@vuepress/core";
 import { externalLinkIconPlugin } from "@vuepress/plugin-external-link-icon";
 import { nprogressPlugin } from "@vuepress/plugin-nprogress";
 import { themeDataPlugin } from "@vuepress/plugin-theme-data";
+import type { App, PluginConfig } from "vuepress/core";
 
 import { getActiveHeaderLinksPlugin } from "./activeHeaderLinks.js";
-import { getAutoCatalogPlugin } from "./autoCatalog.js";
+import { getBackToTop } from "./backToTop.js";
 import { getBlogPlugin } from "./blog/index.js";
+import { getCatalogPlugin } from "./catalog.js";
 import { getCommentPlugin } from "./comment.js";
 import { getComponentsPlugin } from "./components.js";
 import { getCopyCodePlugin } from "./copyCode.js";
@@ -14,13 +15,15 @@ import { getFeedPlugin } from "./feed.js";
 import { getMdEnhancePlugin } from "./mdEnhance.js";
 import { getPhotoSwipePlugin } from "./photoSwipe.js";
 import { getPWAPlugin } from "./pwa.js";
+import { getRedirectPlugin } from "./redirect.js";
 import { getRtlPlugin } from "./rtl.js";
+import { getSearchPlugin } from "./search.js";
 import { getSEOPlugin } from "./seo.js";
 import { getSitemapPlugin } from "./sitemap.js";
-import {
-  type PluginsOptions,
-  type ThemeData,
-  type ThemeOptions,
+import type {
+  PluginsOptions,
+  ThemeData,
+  ThemeOptions,
 } from "../../shared/index.js";
 import { checkPluginOptions } from "../check/index.js";
 
@@ -35,21 +38,17 @@ export const getPluginConfig = (
   themeData: ThemeData,
   options: Pick<
     ThemeOptions,
-    | "backToTop"
-    | "hostname"
-    | "hotReload"
-    | "iconAssets"
-    | "iconPrefix"
-    | "favicon"
+    "hostname" | "hotReload" | "iconAssets" | "iconPrefix" | "favicon"
   >,
-  legacy = false
+  legacy = false,
 ): PluginConfig => {
   checkPluginOptions(plugins);
 
   const pluginConfig = [
     getComponentsPlugin(options, plugins.components, legacy),
     getActiveHeaderLinksPlugin(plugins.activeHeaderLinks),
-    getAutoCatalogPlugin(plugins.autoCatalog),
+    getCatalogPlugin(plugins.catalog),
+    getBackToTop(plugins.backToTop),
     plugins.externalLinkIcon === false ? null : externalLinkIconPlugin(),
     plugins.nprogress === false ? null : nprogressPlugin(),
     themeDataPlugin({ themeData }),
@@ -57,20 +56,22 @@ export const getPluginConfig = (
     getCommentPlugin(plugins.comment, legacy),
     getCopyCodePlugin(plugins.copyCode),
     getCopyrightPlugin(themeData, plugins.copyright, options.hostname),
-    // seo should work before feed
-    getSEOPlugin(themeData, plugins, options.hostname, legacy),
+    // Seo should work before feed
+    getSEOPlugin(themeData, plugins, options.hostname),
     getFeedPlugin(
       themeData,
       plugins.feed,
       options.hostname,
       options.favicon,
-      legacy
+      legacy,
     ),
     getMdEnhancePlugin(plugins.mdEnhance, legacy),
-    getPhotoSwipePlugin(plugins.photoSwipe),
+    getPhotoSwipePlugin(plugins.photoSwipe, legacy),
     getPWAPlugin(plugins.pwa, options.favicon, legacy),
-    getSitemapPlugin(plugins.sitemap, options.hostname, legacy),
+    getSearchPlugin(app, themeData, plugins),
+    getSitemapPlugin(plugins.sitemap, options.hostname),
     getRtlPlugin(themeData),
+    getRedirectPlugin(plugins.redirect),
   ].filter((item) => item !== null) as PluginConfig;
 
   return pluginConfig;

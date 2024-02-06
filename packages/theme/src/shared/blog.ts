@@ -1,5 +1,5 @@
-import { type ReadingTime } from "vuepress-plugin-reading-time2";
-import { type Author } from "vuepress-shared";
+import type { ReadingTime } from "@vuepress/plugin-reading-time";
+import type { Author } from "vuepress-shared";
 
 export const enum ArticleInfoType {
   type = "y",
@@ -67,17 +67,17 @@ export interface ArticleInfo extends Record<string, unknown> {
   [ArticleInfoType.author]?: Author | false;
 
   /**
-   * writing date info
+   * Writing date info
    */
   [ArticleInfoType.date]?: number;
 
   /**
-   * writing date info in current language
+   * Writing date info in current language
    */
   [ArticleInfoType.localizedDate]?: string;
 
   /**
-   * article category
+   * Article category
    */
   [ArticleInfoType.category]?: string[];
 
@@ -92,7 +92,7 @@ export interface ArticleInfo extends Record<string, unknown> {
   [ArticleInfoType.readingTime]?: ReadingTime;
 
   /**
-   * article excerpt
+   * Article excerpt
    */
   [ArticleInfoType.excerpt]: string;
 

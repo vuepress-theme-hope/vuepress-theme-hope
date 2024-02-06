@@ -7,8 +7,10 @@ import ora from "ora";
 const packagesDir = resolve(process.cwd(), "packages");
 const packages = readdirSync(packagesDir);
 
-export const sync = (): Promise<void[]> =>
-  Promise.all(
+const sync = async (): Promise<void> => {
+  const npmmirrorSpinner = ora("Syncing npmmirror.com").start();
+
+  await Promise.all(
     packages.map((packageName) =>
       // eslint-disable-next-line import/dynamic-import-chunkname
       import(`../packages/${packageName}/package.json`, {
@@ -22,7 +24,7 @@ export const sync = (): Promise<void[]> =>
           new Promise<void>((resolve) => {
             const req = request(
               new URL(
-                `https://registry-direct.npmmirror.com/${content["name"]}/sync?sync_upstream=true`
+                `https://registry-direct.npmmirror.com/${content["name"]}/sync?sync_upstream=true`,
               ),
               {
                 method: "PUT",
@@ -30,7 +32,7 @@ export const sync = (): Promise<void[]> =>
                   // eslint-disable-next-line @typescript-eslint/naming-convention
                   "Content-Length": 0,
                 },
-              }
+              },
             );
 
             req.write("");
@@ -40,15 +42,14 @@ export const sync = (): Promise<void[]> =>
             });
 
             req.end();
-          })
-      )
-    )
+          }),
+      ),
+    ),
   );
 
-const npmmirrorSpinner = ora("Syncing npmmirror.com").start();
-
-void sync().then(() => {
   npmmirrorSpinner.succeed();
 
   ora("Release complete").succeed();
-});
+};
+
+await sync();

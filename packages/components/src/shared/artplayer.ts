@@ -1,4 +1,4 @@
-import { type Option as ArtPlayerInitOptions } from "artplayer/types/option.js";
+import type { Option as ArtPlayerInitOptions } from "artplayer/types/option.js";
 
 export type ArtPlayerOptions = Partial<
   Omit<

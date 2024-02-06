@@ -9,23 +9,24 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - name: Checkout
-        uses: actions/checkout@v3
+        uses: actions/checkout@v4
 
       - name: Restore Build Result
-        uses: actions/download-artifact@v3
+        uses: actions/download-artifact@v4
         with:
           name: build-result
 
       - name: Install pnpm
         uses: pnpm/action-setup@v2
-        with:
-          run_install: true
 
       - name: Setup Node.js
-        uses: actions/setup-node@v3
+        uses: actions/setup-node@v4
         with:
-          node-version: 18
+          node-version: 20
           cache: pnpm
+
+      - name: Install deps
+        run: pnpm install --frozen-lockfile
 
       - name: Linter test
         run: |
@@ -34,9 +35,9 @@ jobs:
 
       - name: Unit test
         env:
-          NODE_OPTIONS: --max_old_space_size=4096
+          NODE_OPTIONS: --max_old_space_size=8192
         run: pnpm run test
 
       - name: Upload coverage
         if: github.ref == 'refs/heads/main'
-        uses: codecov/codecov-action@v3
+        uses: codecov/codecov-action@v4

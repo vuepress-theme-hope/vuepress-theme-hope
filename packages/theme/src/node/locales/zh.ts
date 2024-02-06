@@ -1,4 +1,4 @@
-import { type ThemeLocaleData } from "../../shared/index.js";
+import type { ThemeLocaleData } from "../../shared/index.js";
 
 export const zhLocale: ThemeLocaleData = {
   lang: "zh-CN",
@@ -35,7 +35,8 @@ export const zhLocale: ThemeLocaleData = {
     timelineTitle: "昨日不在",
     all: "全部",
     intro: "个人介绍",
-    star: "收藏",
+    star: "星标",
+    empty: "$text 为空",
   },
 
   paginationLocales: {

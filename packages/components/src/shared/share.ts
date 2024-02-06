@@ -8,14 +8,23 @@ export type BuiltInShareService =
   | "facebook"
   | "flipboard"
   | "line"
+  | "linkedin"
+  | "messenger"
+  | "pinterest"
   | "qq"
   | "qrcode"
+  | "qzone"
   | "reddit"
   | "skype"
+  | "sms"
+  | "snapchat"
   | "telegram"
+  | "tumblr"
   | "twitter"
+  | "vk"
+  | "weibo"
   | "whatsapp"
-  | "weibo";
+  | "wordpress";
 
 export type ShareServiceVariableName =
   | "title"

@@ -13,7 +13,7 @@ tag:
 行为选项也可接受一个布尔值:
 
 - `false`: 意味着所有选项都设置为 `false`
-- `true`: 意味着 `{ check: true, compact:true, custom :false, debug: false }`
+- `true`: 意味着 `{ check: true, compact:true, custom: false, debug: false }`
 
 <!-- more -->
 
@@ -21,8 +21,7 @@ tag:
 
 @tab TS
 
-```ts
-// .vuepress/config.ts
+```ts title=".vuepress/config.ts"
 import { defineUserConfig } from "vuepress";
 import { hopeTheme } from "vuepress-theme-hope";
 
@@ -37,15 +36,14 @@ export default defineUserConfig({
     },
     {
       // 主题行为选项 (可选)
-    }
+    },
   ),
 });
 ```
 
 @tab JS
 
-```js
-// .vuepress/config.js
+```js title=".vuepress/config.js"
 import { hopeTheme } from "vuepress-theme-hope";
 
 export default {
@@ -59,7 +57,7 @@ export default {
     },
     {
       // 主题行为选项 (可选)
-    }
+    },
   ),
 };
 ```

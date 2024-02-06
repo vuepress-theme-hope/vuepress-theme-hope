@@ -24,10 +24,7 @@
 
   .echarts-loading {
     position: absolute;
-    top: 0;
-    right: 0;
-    left: 0;
-
+    inset: 0 0 auto;
     color: var(--vp-tc);
   }
 }

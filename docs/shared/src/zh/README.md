@@ -2,7 +2,6 @@
 home: true
 title: 主页
 icon: home
-heroImage: /logo.svg
 heroText: vuepress-shared
 tagline: VuePress2 的强大工具函数
 

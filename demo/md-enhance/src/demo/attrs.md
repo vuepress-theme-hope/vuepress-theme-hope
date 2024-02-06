@@ -10,7 +10,7 @@ Text with `inline code`{.inline-code} and ![favicon](/favicon.ico){.image}, also
 | ------- |
 | content |
 
-{.table}
+{.md-table}
 
 - list item{.list-item}
 
@@ -33,7 +33,7 @@ Text with `inline code`{.inline-code} and ![favicon](/favicon.ico){.image}, also
 | ------- |
 | content |
 
-{.table}
+{.md-table}
 
 - list item{.list-item}
 

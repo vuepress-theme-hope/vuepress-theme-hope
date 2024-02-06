@@ -1,5 +1,5 @@
-import { defineUserConfig } from "@vuepress/cli";
 import { defaultTheme } from "@vuepress/theme-default";
+import { defineUserConfig } from "vuepress/cli";
 import { mdEnhancePlugin } from "vuepress-plugin-md-enhance";
 
 const base = <"/" | `/${string}/`>process.env["BASE"] || "/";
@@ -12,7 +12,7 @@ export default defineUserConfig({
   description: "Markdown Enhancement for VuePress",
 
   theme: defaultTheme({
-    logo: "/logo.svg",
+    logo: "https://theme-hope-assets.vuejs.press/logo.svg",
 
     repo: "vuepress-theme-hope/vuepress-theme-hope/tree/main/demo/md-enhance/",
 
@@ -23,24 +23,28 @@ export default defineUserConfig({
 
     sidebar: {
       "/demo/": [
+        "/demo/alert",
         "/demo/align",
         "/demo/attrs",
-        "/demo/card",
         "/demo/chart",
         "/demo/echarts",
         "/demo/code-demo",
         "/demo/code-tabs",
-        "/demo/container",
+        "/demo/component",
         "/demo/figure",
         "/demo/flowchart",
         "/demo/footnote",
+        "/demo/hint",
         "/demo/image-mark",
         "/demo/image-size",
         "/demo/include",
+        "/demo/kotlin-playground",
         "/demo/mark",
+        "/demo/markmap",
         "/demo/mermaid",
         "/demo/playground",
-        "/demo/presentation",
+        "/demo/revealjs",
+        "/demo/sandpack",
         "/demo/slide-page",
         "/demo/stylized",
         "/demo/sup-sub",
@@ -63,36 +67,60 @@ export default defineUserConfig({
 
   plugins: [
     mdEnhancePlugin({
+      alert: true,
       align: true,
       attrs: true,
-      card: true,
       chart: true,
       codetabs: true,
-      container: true,
+      component: true,
       demo: true,
       echarts: true,
       figure: true,
       flowchart: true,
       gfm: true,
+      hint: true,
       imgLazyload: true,
       imgMark: true,
       imgSize: true,
       include: true,
       mark: true,
+      markmap: true,
       mermaid: true,
+      kotlinPlayground: true,
       playground: {
-        presets: ["ts", "vue"],
+        presets: ["ts", "vue", "unocss"],
       },
       mathjax: {
         output: "chtml",
       },
-      presentation: {
+      revealJs: {
         plugins: ["highlight", "math", "search", "notes", "zoom"],
+        themes: [
+          "auto",
+          "beige",
+          "black",
+          "blood",
+          "league",
+          "moon",
+          "night",
+          "serif",
+          "simple",
+          "sky",
+          "solarized",
+          "white",
+        ],
       },
+      sandpack: true,
       stylize: [
         {
           matcher: "Recommended",
-          replacer: ({ tag }) => {
+          replacer: ({
+            tag,
+          }): {
+            tag: string;
+            attrs: Record<string, string>;
+            content: string;
+          } | void => {
             if (tag === "em")
               return {
                 tag: "Badge",

@@ -1,0 +1,13 @@
+// Vitest Snapshot v1, https://vitest.dev/guide/snapshot.html
+
+exports[`Kotlin Playground > Should resolve playground info 1`] = `
+"<KotlinPlayground title="Playground%20title" key="16b0e07e" settings="%7B%7D" files="eJw9zDELwjAUBOC/cmRKoRRcg4ri5OxoHB6phkDyKi+xUMT/bkLFG++476pcpJxxmriQK3qmiDAanLn0mElwTxSiwaVIYN9Ztvx4MWrJmsRng6MILdt133d4W0ZNc9xqYvfXNz2sSiTLwTd2cFOyqqLt8axAiax/ryGMdfhYVrcvD2o3zg==">
+</KotlinPlayground>
+"
+`;
+
+exports[`Kotlin Playground > Should resolve playground info with settings 1`] = `
+"<KotlinPlayground title="Readonly%20Playground" key="2012bfab" settings="%7B%22data-highlight-only%22%3A%22%22%7D" files="eJw1zrEKAjEMgOFXCZ3uQLz9UEHEyfFG4xBqLcU2ljYKh/juph52bPi/5GxCyo8iYEnWBxJk5NuTIVHgjoqvI+xLoXkzSQnsdz28kYehUsrRTUJFC9D3otgI2IIiHZpTEJnR9Ms0ayuRu7aEKTn9/htHviJ/kM3KZLJ38q45yDZSrT+s0S0aYblBY3P5AgEPP2Y=">
+</KotlinPlayground>
+"
+`;

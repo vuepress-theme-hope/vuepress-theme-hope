@@ -10,7 +10,7 @@ export * from "./theme.js";
 export * from "./typings/index.js";
 export * from "../shared/index.js";
 
-// internal
+// Internal methods
 export * from "./alias.js";
 export * from "./bundler.js";
 export * from "./config/index.js";

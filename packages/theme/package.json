@@ -1,6 +1,6 @@
 {
   "name": "vuepress-theme-hope",
-  "version": "2.0.0-beta.221",
+  "version": "2.0.0-rc.22",
   "description": "A light vuepress theme with tons of features",
   "keywords": [
     "vuepress",
@@ -24,7 +24,7 @@
   "author": {
     "name": "Mr.Hope",
     "email": "mister-hope@outlook.com",
-    "url": "https://mrhope.site"
+    "url": "https://mister-hope.com"
   },
   "type": "module",
   "exports": {
@@ -48,92 +48,103 @@
     "./templates/*": "./templates/*",
     "./package.json": "./package.json"
   },
-  "main": "lib/node/index.js",
-  "types": "lib/node/index.d.ts",
+  "main": "./lib/node/index.js",
+  "types": "./lib/node/index.d.ts",
   "files": [
     "lib",
     "templates"
   ],
   "scripts": {
     "build": "pnpm build:rollup && pnpm build:gulp && pnpm build:ts && pnpm copy",
-    "build:rollup": "rollup -c rollup.config.ts --configPlugin esbuild",
     "build:gulp": "gulp -f gulpfile.cjs",
+    "build:rollup": "rollup -c rollup.config.ts --configPlugin esbuild",
     "build:ts": "tsc -b tsconfig.release.json",
-    "clean": "rimraf ./lib ./*.tsbuildinfo",
+    "clean": "rimraf --glob ./lib ./*.tsbuildinfo",
     "copy": "pnpm copy:client && pnpm copy:bundle && pnpm copy:presets",
-    "copy:bundle": "cpx \"src/client/**/*.{css,jpg}\" lib/bundle",
-    "copy:client": "cpx \"src/client/**/*.{css,scss,jpg}\" lib/client",
+    "copy:bundle": "cpx \"src/client/**/*.css\" lib/bundle",
+    "copy:client": "cpx \"src/client/**/*.{css,scss}\" lib/client",
     "copy:presets": "cpx \"src/presets/**/*.{css,scss}\" lib/presets",
     "dev": "concurrently \"pnpm dev:copy\" \"pnpm dev:ts\"",
     "dev:copy": "concurrently \"pnpm copy:client -w\" \"pnpm copy:presets -w\"",
     "dev:ts": "tsc -b tsconfig.build.json --watch"
   },
-  "engines": {
-    "node": ">=16.0.0",
-    "npm": ">=8",
-    "pnpm": ">=7"
-  },
   "dependencies": {
-    "@vuepress/cli": "2.0.0-beta.62",
-    "@vuepress/client": "2.0.0-beta.62",
-    "@vuepress/core": "2.0.0-beta.62",
-    "@vuepress/plugin-active-header-links": "2.0.0-beta.62",
-    "@vuepress/plugin-container": "2.0.0-beta.62",
-    "@vuepress/plugin-external-link-icon": "2.0.0-beta.62",
-    "@vuepress/plugin-git": "2.0.0-beta.62",
-    "@vuepress/plugin-nprogress": "2.0.0-beta.62",
-    "@vuepress/plugin-prismjs": "2.0.0-beta.62",
-    "@vuepress/plugin-theme-data": "2.0.0-beta.62",
-    "@vuepress/shared": "2.0.0-beta.62",
-    "@vuepress/utils": "2.0.0-beta.62",
-    "@vueuse/core": "^10.1.2",
+    "@vuepress/helper": "2.0.0-rc.11",
+    "@vuepress/plugin-active-header-links": "2.0.0-rc.11",
+    "@vuepress/plugin-catalog": "2.0.0-rc.11",
+    "@vuepress/plugin-back-to-top": "2.0.0-rc.11",
+    "@vuepress/plugin-blog": "2.0.0-rc.11",
+    "@vuepress/plugin-external-link-icon": "2.0.0-rc.11",
+    "@vuepress/plugin-copy-code": "2.0.0-rc.11",
+    "@vuepress/plugin-copyright": "2.0.0-rc.11",
+    "@vuepress/plugin-git": "2.0.0-rc.11",
+    "@vuepress/plugin-nprogress": "2.0.0-rc.11",
+    "@vuepress/plugin-prismjs": "2.0.0-rc.11",
+    "@vuepress/plugin-reading-time": "2.0.0-rc.11",
+    "@vuepress/plugin-rtl": "2.0.0-rc.11",
+    "@vuepress/plugin-seo": "2.0.0-rc.11",
+    "@vuepress/plugin-sitemap": "2.0.0-rc.11",
+    "@vuepress/plugin-theme-data": "2.0.0-rc.11",
+    "@vueuse/core": "^10.7.2",
     "balloon-css": "^1.2.0",
-    "bcrypt-ts": "^3.0.1",
+    "bcrypt-ts": "^5.0.1",
     "cheerio": "1.0.0-rc.12",
     "chokidar": "^3.5.3",
     "gray-matter": "^4.0.3",
-    "vue": "^3.3.4",
-    "vue-router": "^4.2.2",
-    "vuepress-plugin-auto-catalog": "workspace:*",
-    "vuepress-plugin-blog2": "workspace:*",
+    "vue": "^3.4.15",
+    "vue-router": "^4.2.5",
     "vuepress-plugin-comment2": "workspace:*",
     "vuepress-plugin-components": "workspace:*",
-    "vuepress-plugin-copy-code2": "workspace:*",
-    "vuepress-plugin-copyright2": "workspace:*",
-    "vuepress-plugin-feed2": "workspace:*",
     "vuepress-plugin-md-enhance": "workspace:*",
     "vuepress-plugin-photo-swipe": "workspace:*",
-    "vuepress-plugin-pwa2": "workspace:*",
-    "vuepress-plugin-reading-time2": "workspace:*",
-    "vuepress-plugin-rtl": "workspace:*",
     "vuepress-plugin-sass-palette": "workspace:*",
-    "vuepress-plugin-seo2": "workspace:*",
-    "vuepress-plugin-sitemap2": "workspace:*",
     "vuepress-shared": "workspace:*"
   },
   "devDependencies": {
-    "@vuepress/bundler-vite": "2.0.0-beta.62",
-    "@vuepress/bundler-webpack": "2.0.0-beta.62",
-    "@vuepress/markdown": "2.0.0-beta.62"
+    "@vuepress/bundler-vite": "2.0.0-rc.6",
+    "@vuepress/bundler-webpack": "2.0.0-rc.6"
   },
   "peerDependencies": {
-    "sass-loader": "^13.3.1",
-    "vuepress": "2.0.0-beta.62",
-    "vuepress-vite": "2.0.0-beta.62",
-    "vuepress-webpack": "2.0.0-beta.62"
+    "@vuepress/plugin-docsearch": "2.0.0-rc.11",
+    "@vuepress/plugin-feed": "2.0.0-rc.11",
+    "@vuepress/plugin-redirect": "2.0.0-rc.11",
+    "@vuepress/plugin-search": "2.0.0-rc.11",
+    "nodejs-jieba": "^0.1.2",
+    "sass-loader": "^14.0.0",
+    "vuepress": "2.0.0-rc.6",
+    "vuepress-plugin-pwa2": "workspace:*",
+    "vuepress-plugin-search-pro": "workspace:*"
   },
   "peerDependenciesMeta": {
+    "@vuepress/plugin-docsearch": {
+      "optional": true
+    },
+    "@vuepress/plugin-feed": {
+      "optional": true
+    },
+    "@vuepress/plugin-redirect": {
+      "optional": true
+    },
+    "@vuepress/plugin-search": {
+      "optional": true
+    },
+    "nodejs-jieba": {
+      "optional": true
+    },
     "sass-loader": {
       "optional": true
     },
-    "vuepress": {
+    "vuepress-plugin-pwa2": {
       "optional": true
     },
-    "vuepress-vite": {
-      "optional": true
-    },
-    "vuepress-webpack": {
+    "vuepress-plugin-search-pro": {
       "optional": true
     }
+  },
+  "engines": {
+    "node": ">=18.16.0",
+    "npm": ">=8",
+    "pnpm": ">=7",
+    "yarn": ">=2"
   }
 }

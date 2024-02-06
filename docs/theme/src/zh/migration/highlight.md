@@ -1,6 +1,12 @@
 ---
 title: V2 亮点
 icon: fire
+order: 1
+category:
+  - 迁移
+tag:
+  - 迁移
+  - 亮点
 ---
 
 我们强烈建议你切换到 V2 版本，因为 V2 版本提供了以下改进。
@@ -9,7 +15,7 @@ icon: fire
 
 ## 总览
 
-V2 基于 [_VuePress2_](https://vuejs.press/zh/)， 带有 [_Vite4_](https://cn.vitejs.dev/) / [_Webpack5_](https://webpack.docschina.org/) 和 [_Vue3_](https://cn.vuejs.org/) 的强大功能。
+V2 基于 [_VuePress2_](https://vuejs.press/zh/)， 通过 [_Vite5_](https://cn.vitejs.dev/) / [_Webpack5_](https://webpack.docschina.org/) 提供通过 [_Vue3_](https://cn.vuejs.org/) 提供强大功能。
 
 V2 完全重写，包括:
 
@@ -18,11 +24,11 @@ V2 完全重写，包括:
 
 V2 也有更好的表现: 🚀
 
-- DevServer 冷启动时间减少了 **50%**
+- DevServer 冷启动时间减少了 **70%**
 - 构建内存使用量减少了 **65%**
-- 构建时间减少了 **30%**
+- 构建时间减少了 **75%**
 - 输出尺寸减少 **35%**
-- 网页性能高达 **70%**
+- 网页性能提高 **60%**
 
 ## Vue3 变更
 
@@ -100,7 +106,7 @@ VuePressThemeHope@v2 使用组合 API 重写，其样式系统从 stylus 迁移�
 
 #### 自动目录页
 
-- 新增的 `auto-catalog` 插件可以为你自动生成目录页
+- 新增的 `@vuepress/catalog` 插件可以为你自动生成目录页
 
 #### 其他
 
@@ -130,7 +136,7 @@ VuePressThemeHope@v2 使用组合 API 重写，其样式系统从 stylus 迁移�
 
 - 目录重构，现在目录自动滚动到活动标题
 
-- 支持 [更多 Markdown 组件](../guide/markdown/components.md)
+- 支持 [更多 Markdown 组件](../guide/component/built-in.md)
 
 #### 导航栏和侧边栏
 
@@ -160,7 +166,7 @@ VuePressThemeHope@v2 使用组合 API 重写，其样式系统从 stylus 迁移�
 
 - [GFM](../guide/markdown/others.md#gfm)
 
-- [Chart.js](../guide/markdown/chart.md)
+- [Chart.js](../guide/markdown/chartjs.md)
 
 - [ECharts](../guide/markdown/echarts.md)
 

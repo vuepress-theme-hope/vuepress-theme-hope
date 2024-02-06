@@ -2,7 +2,7 @@
 home: true
 title: Home
 icon: home
-heroImage: /logo.svg
+heroImage: https://theme-hope-assets.vuejs.press/logo.svg
 heroText: vuepress-plugin-md-enhance
 tagline: Enhancement for Markdown in VuePress
 actions:
@@ -24,8 +24,7 @@ pnpm add -D vuepress-plugin-md-enhance
 
 ### Usage
 
-```ts
-// .vuepress/config.ts
+```ts title=".vuepress/config.ts"
 import { mdEnhancePlugin } from "vuepress-plugin-md-enhance";
 
 export default {

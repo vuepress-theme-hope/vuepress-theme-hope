@@ -85,7 +85,7 @@ two --&gt; c2</p>
 `;
 
 exports[`mermaid plugin > Should not render 2`] = `
-"<pre><code class=\\"language-md\\">flowchart TB
+"<pre><code class="language-md">flowchart TB
   c1--&gt;a2
   subgraph one
   a1--&gt;a2
@@ -103,22 +103,22 @@ exports[`mermaid plugin > Should not render 2`] = `
 "
 `;
 
-exports[`mermaid plugin > Should render \`\`\`class 1`] = `"<Mermaid id=\\"mermaid-0\\" code=\\"eJxdjTEOwjAMRfecwiMV4gLMjCAh9QQWRMESTUpsJoTPjutGbcUSxf8/+92eyHwiTBWHAOAj9K831qj9A8eoH4sBKAvQ3b9nYlGbFcbCJFSyxxzlWizm3RaYgs77tPTdesKab7BnNsIRDl6xVMpJYYjMmCJvib2JLi2fVf/05Ftx8y54M7eF8APCy1cA\\"></Mermaid>"`;
+exports[`mermaid plugin > Should render \`\`\`class 1`] = `"<Mermaid id="mermaid-0" code="eJxdjTEOwjAMRfecwiMV4gLMjCAh9QQWRMESTUpsJoTPjutGbcUSxf8/+92eyHwiTBWHAOAj9K831qj9A8eoH4sBKAvQ3b9nYlGbFcbCJFSyxxzlWizm3RaYgs77tPTdesKab7BnNsIRDl6xVMpJYYjMmCJvib2JLi2fVf/05Ftx8y54M7eF8APCy1cA"></Mermaid>"`;
 
-exports[`mermaid plugin > Should render \`\`\`er 1`] = `"<Mermaid id=\\"mermaid-0\\" code=\\"eJx1jT0OwjAMhfeewhfIBdgqkoGBgILEboSJLPIjOUEMbe9OKnVoBgbLz89P7yPRjF4wDgDH0cE8K5UnsOPZaKXd6W4cHABDyN+yRaa2AUoVTh6EPDeJlXOyn/gg2X8jvqm785NCM5Y2V+NuF/sHyCtsS3S8F0upFmNXG3DncaqAftXL8ANM5kJr\\"></Mermaid>"`;
+exports[`mermaid plugin > Should render \`\`\`er 1`] = `"<Mermaid id="mermaid-0" code="eJx1jT0OwjAMhfeewhfIBdgqkoGBgILEboSJLPIjOUEMbe9OKnVoBgbLz89P7yPRjF4wDgDH0cE8K5UnsOPZaKXd6W4cHABDyN+yRaa2AUoVTh6EPDeJlXOyn/gg2X8jvqm785NCM5Y2V+NuF/sHyCtsS3S8F0upFmNXG3DncaqAftXL8ANM5kJr"></Mermaid>"`;
 
-exports[`mermaid plugin > Should render \`\`\`gantt 1`] = `"<Mermaid id=\\"mermaid-0\\" code=\\"eJyVU01v2zAMvfdXEAYKtIAzxGk2dLkFCToMWHfqZbeqEp0ItaVAorfm34+UP2A3adHqJJt6j4+P5E45ogsAowjvfKgVAfzhM7u/n223HCBLFUJ71sZYt4Mf698PD2Cs2gVVQ9k4TdY7VVk6AnmokWmsYSy+6KoxGAX7D/EZnYn8+/ISrh772CMorfFAEeIBtS2tTloiWDcSAmXSlnPsGMGXQHtMlHCVxcbx3+wafICsT5Pl8NQQOE/tUx9MGxSC7Mv1BeuImITDur/xv42vDxUSGiAVn7u601kZ7zCXG6sucljMi+VsXszm3/LhessMa6b6iydwYVApxBzMsBgxfM/hRvy6a6gJ56HDjaE3OaiSMHQ0X19BF+9AlyMo0zB05MMmWLJaVYlFGvXKDO6IeKn7Z5V1CCv55L4kc8aeLPfM8FMIanQEBxUi5z1zJgyDOnFYCtsE5HEAnggeEZ6Cc0QdQ2/viZcsfCp6iksGnuQJPEYYJplWSRFvwWjMz1XEL4uJs1uvG3FBdVO2xcipnxDS+kE8cujlrWlRbMXYllSeiGjB/R6yJIO1Z392XYGrFqUKAGmN9ENgipdiL2xvAHnQ9ZCyBS9v9+NyfqnIooed+Vg1bQWJ+uMVfEK1aPwPxhRkQQ==\\"></Mermaid>"`;
+exports[`mermaid plugin > Should render \`\`\`gantt 1`] = `"<Mermaid id="mermaid-0" code="eJyVU01v2zAMvfdXEAYKtIAzxGk2dLkFCToMWHfqZbeqEp0ItaVAorfm34+UP2A3adHqJJt6j4+P5E45ogsAowjvfKgVAfzhM7u/n223HCBLFUJ71sZYt4Mf698PD2Cs2gVVQ9k4TdY7VVk6AnmokWmsYSy+6KoxGAX7D/EZnYn8+/ISrh772CMorfFAEeIBtS2tTloiWDcSAmXSlnPsGMGXQHtMlHCVxcbx3+wafICsT5Pl8NQQOE/tUx9MGxSC7Mv1BeuImITDur/xv42vDxUSGiAVn7u601kZ7zCXG6sucljMi+VsXszm3/LhessMa6b6iydwYVApxBzMsBgxfM/hRvy6a6gJ56HDjaE3OaiSMHQ0X19BF+9AlyMo0zB05MMmWLJaVYlFGvXKDO6IeKn7Z5V1CCv55L4kc8aeLPfM8FMIanQEBxUi5z1zJgyDOnFYCtsE5HEAnggeEZ6Cc0QdQ2/viZcsfCp6iksGnuQJPEYYJplWSRFvwWjMz1XEL4uJs1uvG3FBdVO2xcipnxDS+kE8cujlrWlRbMXYllSeiGjB/R6yJIO1Z392XYGrFqUKAGmN9ENgipdiL2xvAHnQ9ZCyBS9v9+NyfqnIooed+Vg1bQWJ+uMVfEK1aPwPxhRkQQ=="></Mermaid>"`;
 
-exports[`mermaid plugin > Should render \`\`\`git-graph 1`] = `"<Mermaid id=\\"mermaid-0\\" code=\\"eJxLzyxxL0osyOBSUEjOz83NLFHITLFSUPLLL8pNzFGCi6JJB6WWpRYVpyoplFQWpFopBLmGuQYFu+JS7ZGZnpEDxCUw9R6e7h4+QByC0AEAoSMq3Q==\\"></Mermaid>"`;
+exports[`mermaid plugin > Should render \`\`\`git-graph 1`] = `"<Mermaid id="mermaid-0" code="eJxLzyxxL0osyOBSUEjOz83NLFHITLFSUPLLL8pNzFGCi6JJB6WWpRYVpyoplFQWpFopBLmGuQYFu+JS7ZGZnpEDxCUw9R6e7h4+QByC0AEAoSMq3Q=="></Mermaid>"`;
 
-exports[`mermaid plugin > Should render \`\`\`journey 1`] = `"<Mermaid id=\\"mermaid-0\\" code=\\"eJxVzD0OgzAMhuG9p/gO0KWqumRtpU6ZegKrWGB+YpQYIW4PBAFifT77rXWIgacbYGItw08YNTYSShS0cuK/iQZ8FaZ5WxDw1DCMyeHl4DnbcjL0yUhicnge/NneHB4r3fEmu3Yr7Y5AoWPYE2f5J5aX3WYBdjXD\\"></Mermaid>"`;
+exports[`mermaid plugin > Should render \`\`\`journey 1`] = `"<Mermaid id="mermaid-0" code="eJxVzD0OgzAMhuG9p/gO0KWqumRtpU6ZegKrWGB+YpQYIW4PBAFifT77rXWIgacbYGItw08YNTYSShS0cuK/iQZ8FaZ5WxDw1DCMyeHl4DnbcjL0yUhicnge/NneHB4r3fEmu3Yr7Y5AoWPYE2f5J5aX3WYBdjXD"></Mermaid>"`;
 
-exports[`mermaid plugin > Should render \`\`\`mermaid 1`] = `"<Mermaid id=\\"mermaid-0\\" code=\\"eJxLy8kvT85ILCpRCHHiUlBINtTVtUs0ArKKS5PSixILMhTy81KB3ES4RGpeCrJ0SXk+kJsEkk7CJp1RlArSDzY4GaEAaKoCUASqHawKmV+eD+YBNQAAgWYsmw==\\"></Mermaid>"`;
+exports[`mermaid plugin > Should render \`\`\`mermaid 1`] = `"<Mermaid id="mermaid-0" code="eJxLy8kvT85ILCpRCHHiUlBINtTVtUs0ArKKS5PSixILMhTy81KB3ES4RGpeCrJ0SXk+kJsEkk7CJp1RlArSDzY4GaEAaKoCUASqHawKmV+eD+YBNQAAgWYsmw=="></Mermaid>"`;
 
-exports[`mermaid plugin > Should render \`\`\`pie 1`] = `"<Mermaid id=\\"mermaid-0\\" code=\\"eJwryEzlUlAoySzJSVUIz0gsUQjLz0lJzc0vKlFIyU8tznvUMLNEISOxLNUeqExBQcktyNPVzyVYScFKwQgq4ujr6RMJEjCGCPj5B7uCuCamXAB+DBmY\\"></Mermaid>"`;
+exports[`mermaid plugin > Should render \`\`\`pie 1`] = `"<Mermaid id="mermaid-0" code="eJwryEzlUlAoySzJSVUIz0gsUQjLz0lJzc0vKlFIyU8tznvUMLNEISOxLNUeqExBQcktyNPVzyVYScFKwQgq4ujr6RMJEjCGCPj5B7uCuCamXAB+DBmY"></Mermaid>"`;
 
-exports[`mermaid plugin > Should render \`\`\`sequence 1`] = `"<Mermaid id=\\"mermaid-0\\" code=\\"eJxtkL2OwjAQhHueYq4nuR6dcuKnAAp6SicssUXiFfZGCW/POgSQEN1q5tvZn0jXjnxFG2fqYNoZsGxcRciKAisuF9hS03Aq57DcwwTCjbt/BVXLFNuz9Yolr+ROkoukvZDhEbnADqZFzXyCWOMv8WcihpH/7h9YCMHVVsDnidMeJZwSMGjY139l+C1SAXEtzRH5LWuUKE0QGgQnpjjKngVnp6FeMwL3+ex10bTt2lJ1cZrZO7Hj5DzPn//JprOPFFUd3Y//3AGRcm49\\"></Mermaid>"`;
+exports[`mermaid plugin > Should render \`\`\`sequence 1`] = `"<Mermaid id="mermaid-0" code="eJxtkL2OwjAQhHueYq4nuR6dcuKnAAp6SicssUXiFfZGCW/POgSQEN1q5tvZn0jXjnxFG2fqYNoZsGxcRciKAisuF9hS03Aq57DcwwTCjbt/BVXLFNuz9Yolr+ROkoukvZDhEbnADqZFzXyCWOMv8WcihpH/7h9YCMHVVsDnidMeJZwSMGjY139l+C1SAXEtzRH5LWuUKE0QGgQnpjjKngVnp6FeMwL3+ex10bTt2lJ1cZrZO7Hj5DzPn//JprOPFFUd3Y//3AGRcm49"></Mermaid>"`;
 
-exports[`mermaid plugin > Should render \`\`\`sequence 2`] = `"<Mermaid id=\\"mermaid-0\\" code=\\"eJxtkL1OxDAQhPs8xdCfQx+hIH4kfgp6Sie3Z1vneIW9UcLbsw7hkBDdaubzeHeMMY0EidThKRNJSK40VWwKfcyURnoM1mU7NcBdDCPB9D3ueejwTDFyHQ/wvMBmwifPtwqqZhR7ZZ8Uq97As1QXVbsg63dkhxfYCY75CPE2ncvVTqwb/7//xkLIwXkBn3ZO3ygRlIBF5ORuhnzd1wESJjqg8K+sUaI0QWgVHJnKJicWnIKGJs3IvLTN5aJ92wdP41mLwhLEbz+3bfvTj9nPfqei6ub+6ecL4yd1lw==\\"></Mermaid>"`;
+exports[`mermaid plugin > Should render \`\`\`sequence 2`] = `"<Mermaid id="mermaid-0" code="eJxtkL1OxDAQhPs8xdCfQx+hIH4kfgp6Sie3Z1vneIW9UcLbsw7hkBDdaubzeHeMMY0EidThKRNJSK40VWwKfcyURnoM1mU7NcBdDCPB9D3ueejwTDFyHQ/wvMBmwifPtwqqZhR7ZZ8Uq97As1QXVbsg63dkhxfYCY75CPE2ncvVTqwb/7//xkLIwXkBn3ZO3ygRlIBF5ORuhnzd1wESJjqg8K+sUaI0QWgVHJnKJicWnIKGJs3IvLTN5aJ92wdP41mLwhLEbz+3bfvTj9nPfqei6ub+6ecL4yd1lw==" title="eJxzL0pNLcnMSy8GABGsA6k="></Mermaid>"`;
 
-exports[`mermaid plugin > Should render \`\`\`state 1`] = `"<Mermaid id=\\"mermaid-0\\" code=\\"eJwrLkksSXXJTEwvSszVLTPiUlCI1opV0NW1U3BMLsksS+UCioDVQPkK1UABhCK/0lyf/ORs/7Q0sDCCiyKbp2Cl4FoG5QUUpRYXp6agqM9DMwyXel1dFNudEwuKka1H4qPKQxwA4yKbiKQEzUScWtAcEZxclJ+Tg+wMFBF0NRCnIASQTUZRhmE2To21XAApZ4wz\\"></Mermaid>"`;
+exports[`mermaid plugin > Should render \`\`\`state 1`] = `"<Mermaid id="mermaid-0" code="eJwrLkksSXXJTEwvSszVLTPiUlCI1opV0NW1U3BMLsksS+UCioDVQPkK1UABhCK/0lyf/ORs/7Q0sDCCiyKbp2Cl4FoG5QUUpRYXp6agqM9DMwyXel1dFNudEwuKka1H4qPKQxwA4yKbiKQEzUScWtAcEZxclJ+Tg+wMFBF0NRCnIASQTUZRhmE2To21XAApZ4wz"></Mermaid>"`;

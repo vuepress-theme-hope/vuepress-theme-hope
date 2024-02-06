@@ -1,7 +1,7 @@
-import { usePageFrontmatter, usePageLang } from "@vuepress/client";
-import { pageviewCount } from "@waline/client/dist/pageview.mjs";
+import { useLocaleConfig } from "@vuepress/helper/client";
+import { pageviewCount } from "@waline/client/pageview";
+import type { VNode } from "vue";
 import {
-  type VNode,
   computed,
   defineAsyncComponent,
   defineComponent,
@@ -10,15 +10,16 @@ import {
   onMounted,
   watch,
 } from "vue";
-import { LoadingIcon, useLocaleConfig } from "vuepress-shared/client";
+import { usePageFrontmatter, usePageLang } from "vuepress/client";
+import { LoadingIcon } from "vuepress-shared/client";
 
-import {
-  type CommentPluginFrontmatter,
-  type WalineLocaleConfig,
+import type {
+  CommentPluginFrontmatter,
+  WalineLocaleConfig,
 } from "../../shared/index.js";
 import { useWalineOptions } from "../helpers/index.js";
 
-import "@waline/client/dist/waline.css";
+import "@waline/client/waline.css";
 import "../styles/waline.scss";
 
 declare const WALINE_META: boolean;
@@ -27,11 +28,7 @@ declare const WALINE_LOCALES: WalineLocaleConfig;
 const walineLocales = WALINE_LOCALES;
 
 if (WALINE_META)
-  import(
-    /* webpackChunkName: "waline" */ "@waline/client/dist/waline-meta.css"
-  );
-
-export { pageviewCount };
+  import(/* webpackChunkName: "waline" */ "@waline/client/waline-meta.css");
 
 export default defineComponent({
   name: "WalineComment",
@@ -63,7 +60,7 @@ export default defineComponent({
       return (
         // Enable in page
         Boolean(pageConfig) ||
-        // not disabled in anywhere
+        // Not disabled in anywhere
         (pluginConfig !== false && pageConfig !== false)
       );
     });
@@ -92,7 +89,7 @@ export default defineComponent({
               }, walineOptions.delay || 800);
             });
         },
-        { immediate: true }
+        { immediate: true },
       );
     });
 
@@ -106,13 +103,13 @@ export default defineComponent({
                 loader: async () =>
                   (
                     await import(
-                      /* webpackChunkName: "waline" */ "@waline/client/dist/component.mjs"
+                      /* webpackChunkName: "waline" */ "@waline/client/component"
                     )
                   ).Waline,
                 loadingComponent: LoadingIcon,
               }),
-              walineProps.value
-            )
+              walineProps.value,
+            ),
           )
         : null;
   },

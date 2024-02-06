@@ -18,12 +18,8 @@
   padding: 0.125rem 0.25rem 0.125rem 0.625rem;
 
   background: var(--bg-color-secondary);
-  background: linear-gradient(
-        135deg,
-        transparent 0.75em,
-        var(--bg-color-secondary) 0
-      )
-      top,
+  background:
+    linear-gradient(135deg, transparent 0.75em, var(--bg-color-secondary) 0) top,
     linear-gradient(45deg, transparent 0.75em, var(--bg-color-secondary) 0)
       bottom;
   background-size: 100% 52% !important;
@@ -35,7 +31,9 @@
   line-height: 1.5;
   text-align: center;
 
-  transition: background var(--color-transition), color var(--color-transition);
+  transition:
+    background var(--color-transition),
+    color var(--color-transition);
 
   @media print {
     padding: 0;
@@ -59,7 +57,8 @@
 
     &.tag#{$index} {
       background: color.scale($color, $lightness: 90%);
-      background: linear-gradient(
+      background:
+        linear-gradient(
             135deg,
             transparent 0.75em,
             color.scale($color, $lightness: 90%) 0
@@ -75,7 +74,8 @@
 
       #{hope-config.$dark-selector} & {
         background: color.scale($color, $lightness: -75%);
-        background: linear-gradient(
+        background:
+          linear-gradient(
               135deg,
               transparent 0.75em,
               color.scale($color, $lightness: -75%) 0
@@ -92,7 +92,8 @@
 
       &.clickable:hover {
         background: color.scale($color, $lightness: 75%);
-        background: linear-gradient(
+        background:
+          linear-gradient(
               135deg,
               transparent 0.75em,
               color.scale($color, $lightness: 75%) 0
@@ -107,7 +108,8 @@
 
         #{hope-config.$dark-selector} & {
           background: color.scale($color, $lightness: -60%);
-          background: linear-gradient(
+          background:
+            linear-gradient(
                 135deg,
                 transparent 0.75em,
                 color.scale($color, $lightness: -60%) 0

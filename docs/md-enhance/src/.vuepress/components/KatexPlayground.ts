@@ -1,6 +1,7 @@
+import { useLocaleConfig } from "@vuepress/helper/client";
 import katex from "katex";
-import { type VNode, defineComponent, h, ref, watch } from "vue";
-import { useLocaleConfig } from "vuepress-shared/client";
+import type { VNode } from "vue";
+import { defineComponent, h, ref, watch } from "vue";
 
 import "katex/dist/katex.css";
 import "./katex-playground.scss";
@@ -28,33 +29,35 @@ export default defineComponent({
     const result = ref("");
     const inError = ref(false);
 
-    const katexRender = () => {
-      try {
-        result.value = katex.renderToString(input.value, {
-          displayMode: true,
-          throwOnError: true,
-        });
-        inError.value = false;
-      } catch (err) {
-        result.value = (<Error>err).toString();
-        inError.value = true;
-      }
-    };
-
-    watch(input, katexRender, { immediate: true });
+    watch(
+      input,
+      () => {
+        try {
+          result.value = katex.renderToString(input.value, {
+            displayMode: true,
+            throwOnError: true,
+          });
+          inError.value = false;
+        } catch (err) {
+          result.value = (err as Error).toString();
+          inError.value = true;
+        }
+      },
+      { immediate: true },
+    );
 
     return (): VNode =>
       h("div", { class: "katex-playground" }, [
         h("h3", locale.value.input),
         h("textarea", {
-          id: "katex-playground",
           name: "katex-playground",
+          id: "katex-playground",
           cols: "30",
           rows: "10",
           placeholder: "Input your tex here",
           value: input.value,
           onInput: ({ target }: InputEvent) => {
-            input.value = (<HTMLInputElement>target).value;
+            input.value = (target as HTMLInputElement).value;
           },
         }),
         h("h3", locale.value.output),

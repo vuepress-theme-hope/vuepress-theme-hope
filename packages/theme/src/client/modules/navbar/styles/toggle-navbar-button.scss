@@ -32,7 +32,10 @@
 
     background: var(--dark-grey);
 
-    transition: top 0.25s, background 0.5s, transform 0.25s;
+    transition:
+      top 0.25s,
+      background 0.5s,
+      transform 0.25s;
   }
 
   .vp-top {
@@ -94,7 +97,10 @@
       .vp-middle,
       .vp-bottom {
         background: var(--theme-color);
-        transition: top 0.25s, background 0.25s, transform 0.25s;
+        transition:
+          top 0.25s,
+          background 0.25s,
+          transform 0.25s;
       }
     }
   }

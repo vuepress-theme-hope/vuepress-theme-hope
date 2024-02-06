@@ -1,22 +1,21 @@
-import { createRequire } from "node:module";
-
-import { type App } from "@vuepress/core";
-import { path } from "@vuepress/utils";
 import {
+  getRealPath,
   isArray,
   isNumber,
   isPlainObject,
-  isString,
-} from "vuepress-shared/node";
+} from "@vuepress/helper";
+import type { App } from "vuepress/core";
 
 import { getIconLinks, getNoticeOptions } from "./components/index.js";
+import type { BackToTopOptions, ComponentOptions } from "./options/index.js";
 import {
-  type BackToTopOptions,
-  type ComponentOptions,
-} from "./options/index.js";
-import { AVAILABLE_COMPONENTS, CLIENT_FOLDER } from "./utils.js";
+  AVAILABLE_COMPONENTS,
+  CLIENT_FOLDER,
+  COMPONENT_PKG,
+  isInstalled,
+} from "./utils.js";
 
-const require = createRequire(import.meta.url);
+const { url } = import.meta;
 
 export const prepareConfigFile = (
   app: App,
@@ -25,7 +24,7 @@ export const prepareConfigFile = (
     componentOptions = {},
     rootComponents = {},
   }: ComponentOptions,
-  legacy: boolean
+  legacy: boolean,
 ): Promise<string> => {
   const imports: string[] = [];
   let enhance = "";
@@ -36,9 +35,13 @@ export const prepareConfigFile = (
   let shouldImportUseStyleTag = false;
 
   components.forEach((item) => {
-    if (AVAILABLE_COMPONENTS.includes(item)) {
+    if (
+      AVAILABLE_COMPONENTS.includes(item) &&
+      (!COMPONENT_PKG[item] ||
+        COMPONENT_PKG[item].every((pkg) => isInstalled(pkg, true)))
+    ) {
       imports.push(
-        `import ${item} from "${CLIENT_FOLDER}components/${item}.js";`
+        `import ${item} from "${CLIENT_FOLDER}components/${item}.js";`,
       );
 
       enhance += `\
@@ -55,32 +58,17 @@ if(!hasGlobalComponent("${item}")) app.component("${item}", ${item});
 
         setups.push(content);
       });
-
-    if (legacy && (item as unknown) === "Catalog") {
-      imports.push(
-        `import Catalog from "${CLIENT_FOLDER}compact/components/Catalog.js";`
-      );
-      enhance += `\
-if(!hasGlobalComponent("Catalog")) app.component("Catalog", Catalog);
-`;
-    }
   });
 
-  if (isString(rootComponents.addThis)) {
-    shouldImportUseScriptTag = true;
-    setups.push(
-      `useScriptTag(\`https://s7.addthis.com/js/300/addthis_widget.js#pubid=${rootComponents.addThis}\`);`
-    );
-  }
-
-  if (rootComponents.backToTop) {
+  // TODO: Remove in v2 stable
+  if (legacy && rootComponents.backToTop) {
     const { threshold, progress } = isPlainObject(rootComponents.backToTop)
       ? rootComponents.backToTop
       : <BackToTopOptions>{};
 
     shouldImportH = true;
     imports.push(
-      `import BackToTop from "${CLIENT_FOLDER}components/BackToTop.js";`
+      `import BackToTop from "${CLIENT_FOLDER}components/BackToTop.js";`,
     );
 
     const config = isPlainObject(rootComponents.backToTop)
@@ -99,17 +87,18 @@ if(!hasGlobalComponent("Catalog")) app.component("Catalog", Catalog);
 
     configRootComponents.push(
       `() => h(Notice, { config: ${JSON.stringify(
-        getNoticeOptions(rootComponents.notice)
-      )} }),`
+        getNoticeOptions(rootComponents.notice),
+      )} }),`,
     );
   }
 
   return app.writeTemp(
     `components/config.js`,
     `\
-import { defineClientConfig } from "@vuepress/client";
-import { hasGlobalComponent } from "${path.resolve(
-      require.resolve("vuepress-shared/client")
+import { defineClientConfig } from "vuepress/client";
+import { hasGlobalComponent } from "${getRealPath(
+      "vuepress-shared/client",
+      url,
     )}";
 ${
   shouldImportH
@@ -121,18 +110,14 @@ import { h } from "vue";
 ${
   shouldImportUseScriptTag
     ? `\
-import { useScriptTag } from "${path.resolve(
-        require.resolve("@vueuse/core/index.mjs")
-      )}";
+import { useScriptTag } from "${getRealPath("@vueuse/core/index.mjs", url)}";
 `
     : ""
 }\
 ${
   shouldImportUseStyleTag
     ? `\
-import { useStyleTag } from "${path.resolve(
-        require.resolve("@vueuse/core/index.mjs")
-      )}";
+import { useStyleTag } from "${getRealPath("@vueuse/core/index.mjs", url)}";
 `
     : ""
 }\
@@ -154,6 +139,6 @@ ${setups.map((item) => `    ${item}`).join("\n")}
 ${configRootComponents.map((item) => `    ${item}`).join("\n")}
   ],
 });
-`
+`,
   );
 };

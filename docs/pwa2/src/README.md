@@ -2,15 +2,16 @@
 home: true
 title: Home
 icon: home
-heroImage: /logo.svg
 heroText: vuepress-plugin-pwa2
 tagline: Turning on Progressive Web App Support
 actions:
-  - text: Guide 💡
+  - text: Guide
+    icon: lightbulb
     link: ./guide.html
     type: primary
 
-  - text: Config 🛠
+  - text: Config
+    icon: tools
     link: ./config.html
 
 footer: Theme by <a href="https://theme-hope.vuejs.press" target="_blank">VuePress Theme Hope</a> | MIT Licensed, Copyright © 2019-present Mr.Hope
@@ -50,8 +51,7 @@ npm i -D vuepress-plugin-pwa2
 
 @tab TS
 
-```ts
-// .vuepress/config.ts
+```ts title=".vuepress/config.ts"
 import { pwaPlugin } from "vuepress-plugin-pwa2";
 
 export default {
@@ -65,8 +65,7 @@ export default {
 
 @tab JS
 
-```js
-// .vuepress/config.js
+```js title=".vuepress/config.js"
 import { pwaPlugin } from "vuepress-plugin-pwa2";
 
 export default {
@@ -82,6 +81,8 @@ export default {
 
 ::: tip
 
-If you are using this plugin, we recommend you to set `shouldPrefetch: false` in your VuePress config file.
+If you are using this plugin, we recommend you to set `shouldPrefetch: false` in your [VuePress config file][config].
 
 :::
+
+[config]: https://vuejs.press/guide/configuration.html#config-file

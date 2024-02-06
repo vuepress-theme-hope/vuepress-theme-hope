@@ -1,13 +1,13 @@
-import { type Plugin } from "@vuepress/core";
-import { rltPlugin } from "vuepress-plugin-rtl";
-import { entries } from "vuepress-shared/node";
+import { entries } from "@vuepress/helper";
+import { rltPlugin } from "@vuepress/plugin-rtl";
+import type { Plugin } from "vuepress/core";
 
-import { type ThemeData } from "../../shared/index.js";
+import type { ThemeData } from "../../shared/index.js";
 
 /**
  * @private
  *
- * Resolve options for vuepress-plugin-rtl
+ * Resolve options for @vuepress/plugin-rt
  */
 export const getRtlPlugin = (themeData: ThemeData): Plugin | null => {
   const rltLocales = entries(themeData.locales)

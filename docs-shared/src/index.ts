@@ -1,14 +1,12 @@
-export { fs, getDirname, path } from "@vuepress/utils";
 export {
-  addChainWebpack,
   addCustomElement,
   addViteConfig,
   addViteOptimizeDepsExclude,
   addViteOptimizeDepsInclude,
   addViteSsrExternal,
   addViteSsrNoExternal,
-} from "vuepress-shared/node";
+} from "@vuepress/helper";
 export { navbar, sidebar } from "vuepress-theme-hope";
 export * from "./config-wrapper.js";
+export * from "./head.js";
 export * from "./theme-wrapper.js";
-export * from "./pwa-config.js";

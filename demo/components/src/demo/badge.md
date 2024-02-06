@@ -8,6 +8,8 @@ You can use it in Markdown to add some status for titles or links.
 
 ## Demo
 
+### Badge in title <Badge>Text</Badge>
+
 Badge Test <Badge text="Building" type="warning" /> <Badge text="MrHope" color="grey" />
 
 ```md

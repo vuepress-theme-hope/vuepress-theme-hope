@@ -7,40 +7,45 @@ export default hopeTheme({
 
   author: {
     name: "Mr.Hope",
-    url: "https://mrhope.site",
+    url: "https://mister-hope.com",
   },
 
   iconAssets: "fontawesome-with-brands",
 
-  logo: "/logo.svg",
+  logo: "https://theme-hope-assets.vuejs.press/logo.svg",
 
   repo: "vuepress-theme-hope/vuepress-theme-hope",
 
   docsDir: "src",
 
-  // navbar
+  // 导航栏
   navbar,
 
-  // sidebar
+  // 侧边栏
   sidebar,
 
+  // 页脚
   footer: "默认页脚",
-
   displayFooter: true,
 
+  // 加密配置
   encrypt: {
     config: {
       "/demo/encrypt.html": ["1234"],
     },
   },
 
-  // page meta
+  // 多语言配置
   metaLocales: {
     editLink: "在 GitHub 上编辑此页",
   },
 
+  // 如果想要实时查看任何改变，启用它。注: 这对更新性能有很大负面影响
+  // hotReload: true,
+
+  // 在这里配置主题提供的插件
   plugins: {
-    // You should generate and use your own comment service
+    // 你应该自行生成自己的评论服务
     comment: {
       provider: "Giscus",
       repo: "vuepress-theme-hope/giscus-discussions",
@@ -49,29 +54,22 @@ export default hopeTheme({
       categoryId: "DIC_kwDOG_Pt2M4COD69",
     },
 
-    // All features are enabled for demo, only preserve features you need here
+    components: {
+      components: ["Badge", "VPCard"],
+    },
+
+    // 此处开启了很多功能用于演示，你应仅保留用到的功能。
     mdEnhance: {
       align: true,
       attrs: true,
-      chart: true,
       codetabs: true,
+      component: true,
       demo: true,
-      echarts: true,
       figure: true,
-      flowchart: true,
-      gfm: true,
       imgLazyload: true,
       imgSize: true,
       include: true,
-      katex: true,
       mark: true,
-      mermaid: true,
-      playground: {
-        presets: ["ts", "vue"],
-      },
-      presentation: {
-        plugins: ["highlight", "math", "search", "notes", "zoom"],
-      },
       stylize: [
         {
           matcher: "Recommended",
@@ -89,10 +87,47 @@ export default hopeTheme({
       sup: true,
       tabs: true,
       vPre: true,
-      vuePlayground: true,
+
+      // 在启用之前安装 chart.js
+      // chart: true,
+
+      // insert component easily
+
+      // 在启用之前安装 echarts
+      // echarts: true,
+
+      // 在启用之前安装 flowchart.ts
+      // flowchart: true,
+
+      // gfm requires mathjax-full to provide tex support
+      // gfm: true,
+
+      // 在启用之前安装 katex
+      // katex: true,
+
+      // 在启用之前安装 mathjax-full
+      // mathjax: true,
+
+      // 在启用之前安装 mermaid
+      // mermaid: true,
+
+      // playground: {
+      //   presets: ["ts", "vue"],
+      // },
+
+      // 在启用之前安装 reveal.js
+      // revealJs: {
+      //   plugins: ["highlight", "math", "search", "notes", "zoom"],
+      // },
+
+      // 在启用之前安装 @vue/repl
+      // vuePlayground: true,
+
+      // install sandpack-vue3 before enabling it
+      // sandpack: true,
     },
 
-    // uncomment these if you want a pwa
+    // 如果你需要 PWA。安装 vuepress-plugin-pwa2 并取消下方注释
     // pwa: {
     //   favicon: "/favicon.ico",
     //   cacheHTML: true,

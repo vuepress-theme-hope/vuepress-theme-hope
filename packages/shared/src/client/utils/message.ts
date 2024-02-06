@@ -25,13 +25,13 @@
  * © 2019 GitHub, Inc.
  */
 
-import { keys } from "../../shared/index.js";
+import { keys } from "@vuepress/helper/client";
 
 export class Message {
   private containerElement: HTMLElement;
   private messageElements: Record<number, HTMLDivElement> = {};
 
-  // generate or make sure message container element
+  // Generate or make sure message container element
   constructor() {
     const containerId = "message-container";
     const containerElement = document.getElementById(containerId);

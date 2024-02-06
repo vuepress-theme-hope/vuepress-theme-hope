@@ -1,6 +1,6 @@
 import { container } from "@mdit/plugin-container";
-import { type PluginSimple } from "markdown-it";
-import { utoa } from "vuepress-shared/node";
+import { encodeData } from "@vuepress/helper";
+import type { PluginSimple } from "markdown-it";
 
 export const chart: PluginSimple = (md) => {
   container(md, {
@@ -25,16 +25,16 @@ export const chart: PluginSimple = (md) => {
         if (!content) continue;
         if (type === "fence")
           if (info === "json") {
-            config = utoa(content);
+            config = encodeData(content);
             configType = "json";
           } else if (info === "js" || info === "javascript") {
-            config = utoa(content);
+            config = encodeData(content);
             configType = "js";
           }
 
-        // set to an unexist token type
+        // Set to an unexist token type
         tokens[i].type = "chart_empty";
-        // hide token
+        // Hide token
         tokens[i].hidden = true;
       }
 

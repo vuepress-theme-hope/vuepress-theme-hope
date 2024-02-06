@@ -1,4 +1,4 @@
-import { type ThemeLocaleData } from "../../shared/index.js";
+import type { ThemeLocaleData } from "../../shared/index.js";
 
 export const deLocale: ThemeLocaleData = {
   lang: "de-DE",
@@ -36,6 +36,7 @@ export const deLocale: ThemeLocaleData = {
     all: "Alle",
     intro: "Persönliche Einleitung",
     star: "Star",
+    empty: "$text ist leer",
   },
 
   paginationLocales: {

@@ -1,20 +1,12 @@
-import { useToggle } from "@vueuse/core";
-import {
-  type PropType,
-  type SlotsType,
-  type VNode,
-  computed,
-  defineComponent,
-  h,
-  onMounted,
-  ref,
-  shallowRef,
-} from "vue";
-import { LoadingIcon, atou } from "vuepress-shared/client";
+import { decodeData } from "@vuepress/helper/client";
+import { useEventListener, useToggle } from "@vueuse/core";
+import type { PropType, SlotsType, VNode } from "vue";
+import { computed, defineComponent, h, onMounted, ref, shallowRef } from "vue";
+import { LoadingIcon } from "vuepress-shared/client";
 
 import { CODEPEN_SVG, JSFIDDLE_SVG } from "./icons.js";
-import { type CodeDemoOptions } from "../../shared/index.js";
-import { loadNormal, loadReact, loadVue } from "../composables/index.js";
+import type { CodeDemoOptions } from "../../shared/index.js";
+import { loadNormal, loadReact, loadVue } from "../composables/loadScript.js";
 import {
   getCode,
   getNormalCode,
@@ -98,12 +90,14 @@ export default defineComponent({
     const config = computed(
       () =>
         <Partial<CodeDemoOptions>>(
-          JSON.parse(props.config ? atou(props.config) : "{}")
-        )
+          JSON.parse(props.config ? decodeData(props.config) : "{}")
+        ),
     );
 
     const codeType = computed(() => {
-      const codeConfig = <Record<string, string>>JSON.parse(atou(props.code));
+      const codeConfig = <Record<string, string>>(
+        JSON.parse(decodeData(props.code))
+      );
 
       return getCode(codeConfig);
     });
@@ -112,14 +106,14 @@ export default defineComponent({
       props.type === "react"
         ? getReactCode(codeType.value, config.value)
         : props.type === "vue"
-        ? getVueCode(codeType.value, config.value)
-        : getNormalCode(codeType.value, config.value)
+          ? getVueCode(codeType.value, config.value)
+          : getNormalCode(codeType.value, config.value),
     );
 
     const isLegal = computed(() => code.value.isLegal);
 
     const initDom = (innerHTML = false): void => {
-      // attach a shadow root to demo
+      // Attach a shadow root to demo
 
       const shadowRoot = demoWrapper.value!.attachShadow({ mode: "open" });
       const appElement = document.createElement("div");
@@ -155,6 +149,10 @@ export default defineComponent({
       }
     };
 
+    useEventListener("beforeprint", () => {
+      toggleIsExpand(true);
+    });
+
     onMounted(() => {
       setTimeout(() => {
         void loadDemo();
@@ -185,7 +183,7 @@ export default defineComponent({
             ? h(
                 "span",
                 { class: "vp-code-demo-title" },
-                decodeURIComponent(props.title)
+                decodeURIComponent(props.title),
               )
             : null,
 
@@ -220,7 +218,7 @@ export default defineComponent({
                     type: "hidden",
                     name: "resources",
                     value: [...code.value.cssLib, ...code.value.jsLib].join(
-                      ","
+                      ",",
                     ),
                   }),
                   h("button", {
@@ -230,7 +228,7 @@ export default defineComponent({
                     "aria-label": "JSFiddle",
                     "data-balloon-pos": "up",
                   }),
-                ]
+                ],
               )
             : null,
 
@@ -264,8 +262,8 @@ export default defineComponent({
                       js_pre_processor: codeType.value
                         ? codeType.value.js[1]
                         : code.value.jsx
-                        ? "babel"
-                        : "none",
+                          ? "babel"
+                          : "none",
                       // eslint-disable-next-line @typescript-eslint/naming-convention
                       css_pre_processor: codeType.value
                         ? codeType.value.css[1]
@@ -280,7 +278,7 @@ export default defineComponent({
                     "aria-label": "Codepen",
                     "data-balloon-pos": "up",
                   }),
-                ]
+                ],
               )
             : null,
         ]),
@@ -305,8 +303,8 @@ export default defineComponent({
               ref: codeContainer,
               class: "vp-code-demo-codes",
             },
-            slots.default?.()
-          )
+            slots.default?.(),
+          ),
         ),
       ]);
   },

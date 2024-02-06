@@ -1,13 +1,13 @@
-import {
-  type BlogLocaleConfig,
-  type BlogLocaleData,
-  type BlogLocaleOptions,
-  type PaginationLocaleData,
+import type {
+  BlogLocaleConfig,
+  BlogLocaleData,
+  BlogLocaleOptions,
+  PaginationLocaleData,
 } from "./blog.js";
-import {
-  type EncryptConfig,
-  type EncryptLocaleData,
-  type EncryptOptions,
+import type {
+  EncryptConfig,
+  EncryptLocaleData,
+  EncryptOptions,
 } from "./encrypt.js";
 
 export interface FeatureLocaleData {
@@ -71,7 +71,7 @@ export interface FeatureOptions {
   hotReload?: boolean;
 }
 
-// for config size consideration, blog options can be held in root and merged in client side
+// For config size consideration, blog options can be held in root and merged in client side
 export interface FeatureConfig extends FeatureLocaleConfig {
   /**
    * Encrypt config

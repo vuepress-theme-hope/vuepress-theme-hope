@@ -10,7 +10,7 @@ tag:
 
 主题支持对特定文件夹或特定的路径进行加密，也支持进行全局范围的加密。
 
-::: danger
+::: caution
 
 注意，受到 VuePress 的限制，在未解密前，文章内容仅仅被隐藏，访问者仍可以从源码中获取文章的内容。
 
@@ -30,8 +30,7 @@ tag:
 
 @tab TS
 
-```ts
-// .vuepress/config.ts
+```ts title=".vuepress/config.ts"
 import { defineUserConfig } from "vuepress";
 import { hopeTheme } from "vuepress-theme-hope";
 
@@ -51,8 +50,7 @@ export default defineUserConfig({
 
 @tab JS
 
-```js
-// .vuepress/config.js
+```js title=".vuepress/config.js"
 import { hopeTheme } from "vuepress-theme-hope";
 
 export default {

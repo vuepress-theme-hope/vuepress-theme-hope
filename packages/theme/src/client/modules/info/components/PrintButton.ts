@@ -1,4 +1,5 @@
-import { type VNode, defineComponent, h } from "vue";
+import type { VNode } from "vue";
+import { defineComponent, h } from "vue";
 
 import {
   useThemeData,
@@ -28,7 +29,7 @@ export default defineComponent({
                 window.print();
               },
             },
-            h(PrintIcon)
+            h(PrintIcon),
           );
   },
 });

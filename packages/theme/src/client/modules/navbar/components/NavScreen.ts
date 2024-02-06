@@ -1,9 +1,7 @@
-import { usePageData } from "@vuepress/client";
 import { useScrollLock } from "@vueuse/core";
+import type { SlotsType, VNode } from "vue";
 import {
-  type SlotsType,
   Transition,
-  type VNode,
   defineComponent,
   h,
   onMounted,
@@ -11,6 +9,7 @@ import {
   shallowRef,
   watch,
 } from "vue";
+import { usePageData } from "vuepress/client";
 
 import { useWindowSize } from "@theme-hope/composables/index";
 import NavScreenLinks from "@theme-hope/modules/navbar/components/NavScreenLinks";
@@ -33,8 +32,8 @@ export default defineComponent({
   emits: ["close"],
 
   slots: Object as SlotsType<{
-    before?: () => VNode | VNode[];
-    after?: () => VNode | VNode[];
+    before?: () => VNode[] | VNode | null;
+    after?: () => VNode[] | VNode | null;
   }>,
 
   setup(props, { emit, slots }) {
@@ -58,7 +57,7 @@ export default defineComponent({
         () => {
           isLocked.value = false;
           emit("close");
-        }
+        },
       );
     });
 
@@ -88,9 +87,9 @@ export default defineComponent({
                   h(NavScreenLinks),
                   h("div", { class: "vp-outlook-wrapper" }, h(OutlookSettings)),
                   slots.after?.(),
-                ])
+                ]),
               )
-            : null
+            : null,
       );
   },
 });

@@ -1,15 +1,16 @@
-import { type App } from "@vuepress/core";
-import { entries, fromEntries, getLocales } from "vuepress-shared/node";
+import { entries, fromEntries, getLocaleConfig } from "@vuepress/helper";
+import type { App } from "vuepress/core";
 
 import { getEncryptConfig } from "./encrypt.js";
-import { type ThemeStatus } from "./status.js";
-import {
-  type ThemeData,
-  type ThemeLocaleConfig,
-  type ThemeLocaleOptions,
-  type ThemeOptions,
+import type { ThemeStatus } from "./status.js";
+import type {
+  ThemeData,
+  ThemeLocaleConfig,
+  ThemeLocaleOptions,
+  ThemeOptions,
 } from "../../shared/index.js";
 import { themeLocalesData } from "../locales/index.js";
+import { logger } from "../utils.js";
 
 const ROOT_DISALLOW_CONFIG = [
   "navbar",
@@ -18,7 +19,7 @@ const ROOT_DISALLOW_CONFIG = [
   "langName",
   "selectLangAriaLabel",
 
-  // locales
+  // Locales
   "metaLocales",
   "navbarLocales",
   "outlookLocales",
@@ -36,67 +37,72 @@ const ROOT_DISALLOW_CONFIG = [
 export const getThemeData = (
   app: App,
   themeOptions: ThemeOptions,
-  { enableBlog, enableEncrypt }: ThemeStatus
+  { enableBlog, enableEncrypt }: ThemeStatus,
 ): ThemeData => {
   const themeData: ThemeData = {
     encrypt: {},
     ...fromEntries(
-      // only remain root allowed config
+      // Only remain root allowed config
       entries(themeOptions).filter(
-        ([key]) => !ROOT_DISALLOW_CONFIG.includes(key)
-      )
+        ([key]) => !ROOT_DISALLOW_CONFIG.includes(key),
+      ),
     ),
     locales:
-      // assign locale data to `themeConfig`
-      getLocales({
+      // Assign locale data to `themeConfig`
+      getLocaleConfig({
         app,
         name: "vuepress-theme-hope",
         default: fromEntries(
-          entries(themeLocalesData).map(([locale, config]) => {
-            // remove locales if their features are not enabled
-            if (!enableBlog) {
-              // @ts-expect-error
-              delete config.blogLocales;
+          entries(themeLocalesData).map(
+            ([
+              locale,
+              // Make a copy here to avoid modifying the original data
+              { ...config },
+            ]) => {
+              // Remove locales if their features are not enabled
+              if (!enableBlog) {
+                // @ts-expect-error
+                delete config.blogLocales;
 
-              // @ts-expect-error
-              delete config.paginationLocales;
-            }
+                // @ts-expect-error
+                delete config.paginationLocales;
+              }
 
-            if (!enableEncrypt)
-              // @ts-expect-error
-              delete config.encryptLocales;
+              if (!enableEncrypt)
+                // @ts-expect-error
+                delete config.encryptLocales;
 
-            return [locale, <ThemeLocaleConfig>config];
-          })
+              return [locale, <ThemeLocaleConfig>config];
+            },
+          ),
         ),
-        // extract localeConfig
+        // Extract localeConfig
         config: fromEntries(
           entries<ThemeLocaleOptions>({
-            // ensure default locale
-            // eslint-disable-next-line @typescript-eslint/naming-convention
+            // Ensure default locale
             "/": {},
             ...(themeOptions.locales || {}),
           }).map(([localePath, localeConfig]) => [
             localePath,
             <ThemeLocaleConfig>{
-              // root config
+              // Root config
               ...fromEntries(
                 entries(themeOptions).filter(([key]) =>
-                  ROOT_DISALLOW_CONFIG.includes(key)
-                )
+                  ROOT_DISALLOW_CONFIG.includes(key),
+                ),
               ),
-              // locale options
+              // Locale options
               ...localeConfig,
             },
-          ])
+          ]),
         ),
       }),
   };
 
-  // handle encrypt options
+  // Handle encrypt options
   themeData.encrypt = getEncryptConfig(themeData.encrypt);
 
-  if (app.env.isDebug) console.log("Theme config: ", themeData);
+  if (app.env.isDebug) logger.info("Theme config: ", themeData);
 
   return themeData;
 };

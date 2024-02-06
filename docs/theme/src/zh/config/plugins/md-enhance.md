@@ -1,7 +1,7 @@
 ---
 title: MdEnhance 插件配置
 icon: fab fa-markdown
-order: 6
+order: 2
 category:
   - 配置
 tag:
@@ -18,7 +18,7 @@ tag:
 
 ::: info
 
-`vuepress-theme-hope` 会默认将 `container` 选项设置为 `true`。
+`vuepress-theme-hope` 会默认将 `hint` 选项设置为 `true`。
 
 有关更多详细信息，请参见 <ProjectLink name="md-enhance" path="/zh/config.html">md-enhance 文档</ProjectLink>。
 
@@ -37,26 +37,26 @@ tag:
 
 有关完整的 GFM 语法，请参阅 [GFM](https://github.github.com/gfm/)。
 
-老实说，我们并不是 100% 支持它，我们只补全了它的语法，包括任务列表、脚注等。
+老实说，我们没有 100% 实现 GFM，我们只是补全了它的常见语法。
 
 某些行为可能会有所不同，例如，为了允许 Vue 语法，我们并没有禁止 `<script>` 标签。 但在大多数情况下，行为应该是相同的。
 
 :::
 
-### container
+### hint
 
 - 类型: `boolean`
 - 默认值: `true`
 - 详情:
-  - [自定义容器](../../guide/markdown/container.md)
+  - [提示容器](../../guide/markdown/hint.md)
 
-是否启用自定义容器支持:
+是否启用提示容器支持:
 
 - info
 - note
 - tip
 - warning
-- danger
+- caution
 - details
 
 ### checkLinks
@@ -93,6 +93,31 @@ tag:
   - [v-pre](../../guide/markdown/others.md#v-pre)
 
 是否启用 v-pre 容器。
+
+### breaks
+
+- 类型: `boolean`
+- 默认值: `false`
+- 在 GFM 中启用: 是
+
+是否将段落中的 `\n` 转换为 `<br>`
+
+### linkify
+
+- 类型: `boolean`
+- 默认值: `false`
+- 在 GFM 中启用: 是
+
+是否将文字中的链接格式文字转换为链接
+
+### alert
+
+- 类型: `boolean`
+- 默认值: `false`
+- 详情:
+  - [GFM 警告](../../guide/markdown/alert.md)
+
+是否启用 GFM 警告。
 
 ### tabs
 
@@ -158,7 +183,7 @@ tag:
 
 是否启用自定义属性支持。
 
-## sup
+### sup
 
 - 类型: `boolean`
 - 默认值: `false`
@@ -301,12 +326,12 @@ interface TaskListOptions {
 
 可用的选项，详见 [源代码](https://github.com/vuepress-theme-hope/vuepress-theme-hope/tree/main/packages/md-enhance/src/shared/mathjax.ts)。
 
-### card
+### component
 
 - 类型: `boolean`
 - 默认值: `false`
 
-是否启用卡片支持。
+是否启用组件支持。
 
 ### chart
 
@@ -387,8 +412,6 @@ interface TaskListOptions {
 - 类型: `PlaygroundGlobalOptions`
 
   ```ts
-  import type { CompilerOptions } from "typescript";
-
   interface PlaygroundCodeConfig {
     /**
      * 代码块扩展名
@@ -397,36 +420,26 @@ interface TaskListOptions {
      */
     ext: string;
 
-    /**
-     * 代码块内容
-     */
+    /** 代码块内容 */
     content: string;
   }
 
   interface PlaygroundData {
-    /**
-     * 交互演示标题
-     */
+    /** 交互演示标题 */
     title?: string;
 
     /**
      * Import map 文件名
      *
-     * @default 'import-map.json'
+     * @default "import-map.json"
      */
     importMap?: string;
 
-    /**
-     * 交互演示文件信息
-     */
+    /** 交互演示文件信息 */
     files: Record<
-      /**
-       * 文件名
-       */
+      /** 文件名 */
       string,
-      /**
-       * 文件详情
-       */
+      /** 文件详情 */
       PlaygroundCodeConfig
     >;
 
@@ -438,27 +451,25 @@ interface TaskListOptions {
     settings: Record<string, unknown>;
 
     /**
+     * hash key based on playground content
+     *
      * 根据交互演示内容生成的 hash key
      */
     key: string;
   }
 
   interface PlaygroundOptions {
-    /**
-     * 交互演示容器名
-     */
+    /** 交互演示容器名 */
     name: string;
 
     /**
      * 交互演示组件名称
      *
-     * @default 'Playground'
+     * @default "Playground"
      */
     component?: string;
 
-    /**
-     * 属性获取器
-     */
+    /** 属性获取器 */
     propsGetter: (data: PlaygroundData) => Record<string, string>;
   }
 
@@ -494,13 +505,25 @@ interface TaskListOptions {
     ssr?: boolean;
   }
 
+  interface UnoPresetPlaygroundOptions {
+    /**
+     * 交互演示外部地址
+     *
+     * @default "https://unocss.dev/play"
+     */
+    service?: string;
+  }
+
+  type BuiltInPlaygroundPreset = "ts" | "vue" | "unocss";
+
   interface PlaygroundGlobalOptions {
     /** 交互演示预设 */
-    presets: ("ts" | "vue" | PlaygroundOptions)[];
+    presets: (BuiltInPlaygroundPreset | PlaygroundOptions)[];
     /** 交互演示配置 */
     config?: {
       ts?: TSPresetPlaygroundOptions;
       vue?: VuePresetPlaygroundOptions;
+      unocss?: UnoPresetPlaygroundOptions;
     };
   }
   ```
@@ -587,6 +610,13 @@ interface TaskListOptions {
 
 是否启用 Vue 交互演示支持。
 
+### sandpack
+
+- 类型: `boolean`
+- 默认值: `false`
+
+是否启用 Sandpack 交互演示支持。
+
 ### demo
 
 - 类型: `CodeDemoGlobalOptions | boolean`
@@ -669,45 +699,50 @@ CodePen 编辑器显示情况，第一位代表 HTML ，第二位代表 JS，第
 
 默认值: `"https://unpkg.com/react-dom/umd/react-dom.production.min.js"`
 
-### presentation
+### revealJs
 
-- 类型: `PresentationOptions | boolean`
-- 默认值: `false`
-
-是否启用幻灯片支持。
-
-你可以传入一个对象，这个对象将用于 reveal.js 配置。
-
-#### presentation.plugins
-
-- 类型: `RevealPlugin[]`
+- 类型: `RevealJsOptions | boolean`
 
   ```ts
-  type RevealPlugin = "highlight" | "math" | "search" | "notes" | "zoom";
+  type RevealJsPlugin = "highlight" | "math" | "search" | "notes" | "zoom";
+
+  type RevealJsTheme =
+    | "auto"
+    | "beige"
+    | "black"
+    | "blood"
+    | "league"
+    | "moon"
+    | "night"
+    | "serif"
+    | "simple"
+    | "sky"
+    | "solarized"
+    | "white";
+
+  /**
+   * reveal.js 选项
+   */
+  interface RevealJsOptions {
+    /**
+     * reveal.js 插件
+     *
+     * @default []
+     */
+    plugins?: RevealJsPlugin[];
+
+    /**
+     * reveal.js 主题
+     *
+     * @default ["auto"]
+     */
+    themes?: RevealJsTheme[];
+  }
   ```
 
-- 必填: 否
+- 默认值: `false`
 
-你想启用的 Reveal.js 插件
-
-可接受的插件有:
-
-- `"highlight"`
-- `"math"`
-- `"search"`
-- `"notes"`
-- `"zoom"`
-
-<!-- - `"anything"`
-- `"audio"`
-- `"chalkboard"` -->
-
-#### presentation.revealConfig
-
-- 类型: `Partial<RevealOptions>`
-- 必填: 否
-
-你想要传递给 Reveal.js 的配置选项
+是否启用幻灯片支持。你可以传递选项控制导入的插件和主题。
 
 ### delay
 

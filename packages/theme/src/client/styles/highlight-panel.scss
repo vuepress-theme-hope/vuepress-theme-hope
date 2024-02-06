@@ -4,7 +4,7 @@
   align-items: center;
   justify-content: center;
 
-  &:nth-child(2n) {
+  &:nth-child(odd) {
     .vp-highlight {
       flex-direction: row-reverse;
     }
@@ -27,11 +27,7 @@
 
   @media (max-width: hope-config.$tablet) {
     display: block;
-
-    // NOTE: Compatible with Android Wechat
-    // padding-inline: 1.5rem;
-    padding-inline-start: 1.5rem;
-    padding-inline-end: 1.5rem;
+    padding-inline: 1.5rem;
     text-align: center;
   }
 
@@ -42,10 +38,7 @@
 
 .vp-highlight-bg {
   position: absolute;
-  top: 0;
-  right: 0;
-  bottom: 0;
-  left: 0;
+  inset: 0;
   z-index: 0;
 
   background-attachment: fixed;
@@ -194,6 +187,12 @@
 
   .icon {
     margin-inline-end: 0.25em;
+    font-size: 1em;
+  }
+
+  img.icon {
+    vertical-align: -0.125em;
+    height: 1em;
   }
 }
 

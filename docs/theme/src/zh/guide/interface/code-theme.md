@@ -13,7 +13,46 @@ tag:
 
 `vuepress-theme-hope` 捆绑了 `@vuepress/plugin-prismjs` 以默认支持代码高亮，我们允许你全局设置日间模式和夜间模式的代码块主题。
 
-默认情况下，我们分别为在日间模式和夜间模式使用 `one-light` 和 `one-dark` 主题，你可以通过在 `plugin.prismjs` 中设置 `light` 和 `dark` 来更改它们。
+默认情况下，我们分别为在日间模式和夜间模式使用 `one-light` 和 `one-dark` 主题，你可以通过在 `plugins.prismjs` 中设置 `light` 和 `dark` 来更改它们。
+
+::: code-tabs#language
+
+@tab TS
+
+```ts {7-12} title=".vuepress/config.ts"
+import { defineUserConfig } from "vuepress";
+import { hopeTheme } from "vuepress-theme-hope";
+
+export default defineUserConfig({
+  theme: hopeTheme({
+    plugins: {
+      prismjs: {
+        light: "日间主题关键词",
+        dark: "夜间主题关键词",
+      },
+    },
+  }),
+});
+```
+
+@tab JS
+
+```js {7-12} title=".vuepress/config.js"
+import { hopeTheme } from "vuepress-theme-hope";
+
+export default {
+  theme: hopeTheme({
+    plugins: {
+      prismjs: {
+        light: "日间主题关键词",
+        dark: "夜间主题关键词",
+      },
+    },
+  }),
+};
+```
+
+:::
 
 ::: tip
 
@@ -104,8 +143,7 @@ Prism.js 快速且轻量，但它无法正确高亮所有语法。如果你想�
 
    @tab TS
 
-   ```ts
-   // .vuepress/config.ts
+   ```ts title=".vuepress/config.ts"
    import { shikiPlugin } from "@vuepress/plugin-shiki";
    import { defineUserConfig } from "vuepress";
 
@@ -121,8 +159,7 @@ Prism.js 快速且轻量，但它无法正确高亮所有语法。如果你想�
 
    @tab JS
 
-   ```js
-   // .vuepress/config.js
+   ```js title=".vuepress/config.js"
    import { shikiPlugin } from "@vuepress/plugin-shiki";
 
    export default {

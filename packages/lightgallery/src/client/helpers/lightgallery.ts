@@ -1,5 +1,6 @@
-import { type LightGallerySettings } from "lightgallery/lg-settings.js";
-import { type App, inject } from "vue";
+import type { LightGallerySettings } from "lightgallery/lg-settings.js";
+import type { App } from "vue";
+import { inject } from "vue";
 
 export type LightGalleryOptions = LightGallerySettings;
 
@@ -10,7 +11,7 @@ let lightGalleryOptions: LightGalleryOptions = {};
 const lightGallerySymbol = Symbol(__VUEPRESS_DEV__ ? "lightgallery" : "");
 
 export const defineLightGalleryConfig = (
-  options: LightGalleryOptions
+  options: LightGalleryOptions,
 ): void => {
   lightGalleryOptions = options;
 };

@@ -9,6 +9,30 @@ Come to your blog, or anywhere, place the Artalk comment box, so that the page h
 
 <!-- more -->
 
+## Install
+
+::: code-tabs#shell
+
+@tab pnpm
+
+```bash
+pnpm add -D artalk
+```
+
+@tab yarn
+
+```bash
+yarn add -D artalk
+```
+
+@tab npm
+
+```bash
+npm i -D artalk
+```
+
+:::
+
 ## Deploy Artalk Server
 
 See the [Artalk documentation](https://artalk.js.org/guide/deploy.html).
@@ -22,8 +46,6 @@ For other configuration items, see [Artalk Configuration](https://artalk.js.org/
 ::: note
 
 The plugin retains the `el` option and inserts Artalk itself on the page. At the same time, the plugin will automatically set the `pageTitle`, `pageKey` and `site` options for you according to the VuePress information.
-
-Before VuePress2 provides client configuration, the two function options `imgUploader` and `avatarURLBuilder` are not supported.
 
 :::
 

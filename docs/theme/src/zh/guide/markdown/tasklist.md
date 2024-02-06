@@ -18,8 +18,7 @@ tag:
 
 @tab TS
 
-```ts {8-10}
-// .vuepress/config.ts
+```ts {8-10} title=".vuepress/config.ts"
 import { defineUserConfig } from "vuepress";
 import { hopeTheme } from "vuepress-theme-hope";
 
@@ -36,8 +35,7 @@ export default defineUserConfig({
 
 @tab JS
 
-```js {7-9}
-// .vuepress/config.js
+```js {7-9} title=".vuepress/config.js"
 import { hopeTheme } from "vuepress-theme-hope";
 
 export default {
@@ -53,17 +51,4 @@ export default {
 
 :::
 
-## 语法
-
-- 使用 `- [ ] 一些文字` 渲染一个未勾选的任务项
-- 使用 `- [x] 一些文字` 渲染一个勾选了的任务项 (我们也支持大写的 `X`)
-
-## 例子
-
-- [ ] 计划 A
-- [x] 计划 B
-
-```md
-- [ ] 计划 A
-- [x] 计划 B
-```
+<!-- @include: @md-enhance/zh/guide/grammar/tasklist.md#after -->

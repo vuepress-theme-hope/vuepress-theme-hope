@@ -1,4 +1,4 @@
-import { noopModule } from "vuepress-shared/node";
+import { noopModule } from "@vuepress/helper";
 
 import { CLIENT_FOLDER, COMMENT_PROVIDERS, logger } from "./utils.js";
 

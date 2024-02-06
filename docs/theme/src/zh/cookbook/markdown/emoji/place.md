@@ -2,7 +2,7 @@
 title: 地点 Emoji
 icon: city
 category:
-  - 教程知识
+  - 教程
   - Markdown
 tag:
   - Markdown

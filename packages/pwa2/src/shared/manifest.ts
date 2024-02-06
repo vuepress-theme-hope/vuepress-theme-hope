@@ -83,8 +83,7 @@ export interface ManifestExternalApplicationResource {
     | "webapp"
     | "windows"
     | "f-droid"
-    | "amazon"
-    | string;
+    | "amazon";
 
   url: string;
 

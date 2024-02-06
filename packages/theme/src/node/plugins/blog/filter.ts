@@ -1,10 +1,10 @@
-import { type Page } from "@vuepress/core";
+import type { Page } from "vuepress/core";
 
-import {
-  type ThemeBlogHomePageFrontmatter,
-  type ThemeNormalPageFrontmatter,
-  type ThemePageData,
-  type ThemeProjectHomePageFrontmatter,
+import type {
+  ThemeBlogHomePageFrontmatter,
+  ThemeNormalPageFrontmatter,
+  ThemePageData,
+  ThemeProjectHomePageFrontmatter,
 } from "../../../shared/index.js";
 
 /** @private */
@@ -18,11 +18,11 @@ export const blogFilter = ({
     | ThemeNormalPageFrontmatter;
 
   const isArticle =
-    // not home
+    // Not homepage
     !pageFrontmatter.home &&
-    // declaring this is an article
+    // Declaring this is an article
     (pageFrontmatter.article ||
-      // generated from markdown files
+      // Generated from markdown files
       Boolean(pageFrontmatter.article !== false && filePathRelative));
 
   return isArticle;

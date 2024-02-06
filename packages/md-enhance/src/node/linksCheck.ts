@@ -1,19 +1,19 @@
-import { type App, type Page } from "@vuepress/core";
-import { logger } from "@vuepress/utils";
 import {
-  isAbsoluteUrl,
   isArray,
   isFunction,
+  isLinkAbsolute,
   isRegExp,
-} from "vuepress-shared/node";
+} from "@vuepress/helper";
+import type { App, Page } from "vuepress/core";
+import { logger } from "vuepress/utils";
 
-import { type MarkdownEnhanceOptions } from "./options.js";
+import type { MarkdownEnhanceOptions } from "./options.js";
 
 export const defaultLinkCheck = (): boolean => false;
 
 export const getLinksCheckStatus = (
   app: App,
-  options: Partial<MarkdownEnhanceOptions>
+  options: Partial<MarkdownEnhanceOptions> = {},
 ): {
   enabled: boolean;
   isIgnoreLink: (link: string) => boolean;
@@ -22,58 +22,58 @@ export const getLinksCheckStatus = (
 
   return {
     enabled:
-      // always check
+      // Always check
       status === "always" ||
-      // enable in dev
+      // Enable in dev
       (app.env.isDev && status === "dev") ||
-      // enabled in build
+      // Enabled in build
       (app.env.isBuild && status === "build") ||
       false,
     isIgnoreLink: isFunction(ignore)
       ? (link: string): boolean => ignore(link, app.env.isDev)
       : isArray(ignore)
-      ? (link: string): boolean =>
-          ignore.some((item) =>
-            isRegExp(item) ? item.test(link) : item === link
-          )
-      : defaultLinkCheck,
+        ? (link: string): boolean =>
+            ignore.some((item) =>
+              isRegExp(item) ? item.test(link) : item === link,
+            )
+        : defaultLinkCheck,
   };
 };
 
 export const linksCheck = (
   page: Page,
   app: App,
-  isIgnoreLink: (link: string) => boolean
+  isIgnoreLink: (link: string) => boolean,
 ): void => {
   const path = page.filePathRelative || page.path;
   const { pages } = app;
 
   const markdownLinks = page.links.filter(({ raw }) =>
-    raw.match(/.md((?:\?|#).*)?$/)
+    raw.match(/.md((?:\?|#).*)?$/),
   );
 
   const brokenLinks = [
     ...markdownLinks
-      // relative markdown links
-      .filter(({ raw }) => !isAbsoluteUrl(raw))
+      // Relative markdown links
+      .filter(({ raw }) => !isLinkAbsolute(raw))
       .filter(
         ({ relative }) =>
-          // check whether the page exists
+          // Check whether the page exists
           pages.every(
-            ({ filePathRelative }) => filePathRelative !== decodeURI(relative)
-          ) && !isIgnoreLink(relative)
+            ({ filePathRelative }) => filePathRelative !== decodeURI(relative),
+          ) && !isIgnoreLink(relative),
       ),
     ...markdownLinks
-      // absolute markdown links
-      .filter(({ raw }) => isAbsoluteUrl(raw))
+      // Absolute markdown links
+      .filter(({ raw }) => isLinkAbsolute(raw))
       .filter(({ absolute }) =>
-        // check whether the page exists
+        // Check whether the page exists
         pages.every(
           ({ filePathRelative }) =>
             !filePathRelative ||
             (`${app.options.base}${filePathRelative}` !== decodeURI(absolute) &&
-              !isIgnoreLink(absolute))
-        )
+              !isIgnoreLink(absolute)),
+        ),
       ),
   ].map(({ raw }) => raw);
 

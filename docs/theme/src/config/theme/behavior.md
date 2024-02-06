@@ -13,7 +13,7 @@ tag:
 The behavior option can also accept a boolean value:
 
 - `false`: options set to`false` with `false` value
-- `true`: `{ check: true, compact:true, custom :false, debug: false }`
+- `true`: `{ check: true, compact:true, custom: false, debug: false }`
 
 <!-- more -->
 
@@ -21,8 +21,7 @@ The behavior option can also accept a boolean value:
 
 @tab TS
 
-```ts
-// .vuepress/config.ts
+```ts title=".vuepress/config.ts"
 import { defineUserConfig } from "vuepress";
 import { hopeTheme } from "vuepress-theme-hope";
 
@@ -37,15 +36,14 @@ export default defineUserConfig({
     },
     {
       // theme behavior options here (optional)
-    }
+    },
   ),
 });
 ```
 
 @tab JS
 
-```js
-// .vuepress/config.js
+```js title=".vuepress/config.js"
 import { defineUserConfig } from "vuepress";
 import { hopeTheme } from "vuepress-theme-hope";
 
@@ -60,7 +58,7 @@ export default defineUserConfig({
     },
     {
       // theme behavior options here (optional)
-    }
+    },
   ),
 });
 ```

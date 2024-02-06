@@ -1,4 +1,5 @@
 import { hopeTheme } from "vuepress-theme-hope";
+
 import { enNavbar, zhNavbar } from "./navbar/index.js";
 import { enSidebar, zhSidebar } from "./sidebar/index.js";
 
@@ -11,12 +12,12 @@ export default hopeTheme(
 
     author: {
       name: "Mr.Hope",
-      url: "https://mrhope.site",
+      url: "https://mister-hope.com",
     },
 
     iconAssets: "fontawesome-with-brands",
 
-    logo: "/logo.svg",
+    logo: "https://theme-hope-assets.vuejs.press/logo.svg",
 
     repo: "vuepress-theme-hope/vuepress-theme-hope",
 
@@ -24,10 +25,10 @@ export default hopeTheme(
 
     locales: {
       "/": {
-        // navbar
+        // Navbar
         navbar: enNavbar,
 
-        // sidebar
+        // Sidebar
         sidebar: enSidebar,
 
         footer: "Default footer",
@@ -43,17 +44,17 @@ export default hopeTheme(
        * Chinese locale config
        */
       "/zh/": {
-        // navbar
+        // Navbar
         navbar: zhNavbar,
 
-        // sidebar
+        // Sidebar
         sidebar: zhSidebar,
 
         footer: "默认页脚",
 
         displayFooter: true,
 
-        // page meta
+        // Page meta
         metaLocales: {
           editLink: "在 GitHub 上编辑此页",
         },
@@ -62,7 +63,9 @@ export default hopeTheme(
 
     encrypt: {
       config: {
+        // eslint-disable-next-line @typescript-eslint/naming-convention
         "/demo/encrypt.html": ["1234"],
+        // eslint-disable-next-line @typescript-eslint/naming-convention
         "/zh/demo/encrypt.html": ["1234"],
       },
     },
@@ -76,12 +79,17 @@ export default hopeTheme(
         categoryId: "DIC_kwDOG_Pt2M4COD69",
       },
 
+      components: {
+        components: ["Badge", "VPCard"],
+      },
+
       // All features are enabled for demo, only preserve features you need here
       mdEnhance: {
         align: true,
         attrs: true,
         chart: true,
         codetabs: true,
+        component: true,
         demo: true,
         echarts: true,
         figure: true,
@@ -91,18 +99,27 @@ export default hopeTheme(
         imgSize: true,
         include: true,
         katex: true,
+        kotlinPlayground: true,
         mark: true,
+        markmap: true,
         mermaid: true,
         playground: {
-          presets: ["ts", "vue"],
+          presets: ["ts", "vue", "unocss"],
         },
-        presentation: {
+        revealJs: {
           plugins: ["highlight", "math", "search", "notes", "zoom"],
         },
+        sandpack: true,
         stylize: [
           {
             matcher: "Recommended",
-            replacer: ({ tag }) => {
+            replacer: ({
+              tag,
+            }): {
+              tag: string;
+              attrs: Record<string, string>;
+              content: string;
+            } | void => {
               if (tag === "em")
                 return {
                   tag: "Badge",
@@ -160,6 +177,7 @@ export default hopeTheme(
           shortcuts: [
             {
               name: "Demo",
+              // eslint-disable-next-line @typescript-eslint/naming-convention
               short_name: "Demo",
               url: "/demo/",
               icons: [
@@ -181,5 +199,5 @@ export default hopeTheme(
           : { canonical: "https://theme-hope-docs-demo.vuejs.press" },
     },
   },
-  { custom: true }
+  { custom: true },
 );

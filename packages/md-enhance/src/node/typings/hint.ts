@@ -1,10 +1,10 @@
 export interface MarkdownHintLocaleData {
   /**
-   * Default Title text for info block
+   * Default Title text for important block
    *
-   * 信息块的默认标题
+   * 重要块的默认标题
    */
-  info: string;
+  important: string;
 
   /**
    * Default Title text for note block
@@ -32,7 +32,14 @@ export interface MarkdownHintLocaleData {
    *
    * 警告块的默认标题
    */
-  danger: string;
+  caution: string;
+
+  /**
+   * Default Title text for info block
+   *
+   * 信息块的默认标题
+   */
+  info: string;
 
   /**
    * Default Title text for details block

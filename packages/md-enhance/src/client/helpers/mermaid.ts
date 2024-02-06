@@ -1,11 +1,11 @@
-import { type MermaidConfig } from "mermaid";
-import { type App, inject } from "vue";
+import type { App } from "vue";
+import { inject } from "vue";
+
+import type { MermaidOptions } from "../typings/index.js";
 
 declare const __VUEPRESS_DEV__: boolean;
 
-export type MermaidOptions = Omit<MermaidConfig, "startOnLoad">;
-
-let mermaidOptions: MermaidConfig = {};
+let mermaidOptions: MermaidOptions = {};
 
 const mermaidSymbol = Symbol(__VUEPRESS_DEV__ ? "mermaid" : "");
 

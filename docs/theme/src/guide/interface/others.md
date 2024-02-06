@@ -16,24 +16,47 @@ The theme fully optimize style for print, and there will be a print button at to
 
 To hide print button, you should set `print: false` in theme options.
 
+::: code-tabs#language
+
+@tab TS
+
+```ts {7} title=".vuepress/config.ts"
+import { defineUserConfig } from "vuepress";
+import { hopeTheme } from "vuepress-theme-hope";
+
+export default defineUserConfig({
+  theme: hopeTheme({
+    print: false,
+  }),
+});
+```
+
+@tab JS
+
+```js {7} title=".vuepress/config.js"
+import { defineUserConfig } from "vuepress";
+import { hopeTheme } from "vuepress-theme-hope";
+
+export default defineUserConfig({
+  theme: hopeTheme({
+    print: false,
+  }),
+});
+```
+
+:::
+
 ## Fullscreen Button
 
 <ToggleFullScreenButton />
 
 If you need it, you can enable it by setting `fullscreen: true` in theme options.
 
-::: tip
-
-If the current browser does not support full screen, the full screen button is automatically hidden.
-
-:::
-
 ::: code-tabs#language
 
 @tab TS
 
-```ts {7}
-// .vuepress/config.ts
+```ts {7} title=".vuepress/config.ts"
 import { defineUserConfig } from "vuepress";
 import { hopeTheme } from "vuepress-theme-hope";
 
@@ -46,8 +69,7 @@ export default defineUserConfig({
 
 @tab JS
 
-```js {7}
-// .vuepress/config.js
+```js {7} title=".vuepress/config.js"
 import { defineUserConfig } from "vuepress";
 import { hopeTheme } from "vuepress-theme-hope";
 
@@ -60,38 +82,142 @@ export default defineUserConfig({
 
 :::
 
+::: tip
+
+If the current browser does not support full screen, the full screen button is automatically hidden.
+
+:::
+
 ## Back to top button
 
-`vuepress-theme-hope` adds a back-to-top button with progress bar which will display after scrolling down 100px by default.
+`vuepress-theme-hope` adds a back-to-top button with progress bar using [`@vuepress/plugin-back-to-top`][back-to-top] which will display after scrolling down 100px by default.
 
-You can set `backToTop: false` in theme options to disable it, or set it with an object to customize its threshold distance and progress bar display:
+You can set `plugins.backToTop: false` in theme options to disable it, or set it with an object to customize its threshold distance and progress bar display:
 
-```ts
-interface BackToTopOptions {
-  /**
-   * Scroll threshold distance to display back to top button (in pixels)
-   *
-   * @default 100
-   */
-  threshold?: number;
+::: code-tabs#language
 
-  /**
-   * Whether display scroll progress
-   *
-   * @default true
-   */
-  progress?: boolean;
-}
+@tab TS
+
+```ts {7-8,12-26} title=".vuepress/config.ts"
+import { defineUserConfig } from "vuepress";
+import { hopeTheme } from "vuepress-theme-hope";
+
+export default defineUserConfig({
+  theme: hopeTheme({
+    plugins: {
+      // disable back to top button
+      backToTop: false,
+
+      // or
+
+      // customize back to top button
+      backToTop: {
+        /**
+         * Scroll threshold distance to display back to top button (in pixels)
+         *
+         * @default 100
+         */
+        threshold: 500,
+        /**
+         * Whether display scroll progress
+         *
+         * @default true
+         */
+        progress: false,
+      },
+    },
+  }),
+});
 ```
+
+@tab JS
+
+```js {7-8,12-26} title=".vuepress/config.js"
+import { defineUserConfig } from "vuepress";
+import { hopeTheme } from "vuepress-theme-hope";
+
+export default defineUserConfig({
+  theme: hopeTheme({
+    plugins: {
+      // disable back to top button
+      backToTop: false,
+
+      // or
+
+      // customize back to top button
+      backToTop: {
+        /**
+         * Scroll threshold distance to display back to top button (in pixels)
+         *
+         * @default 100
+         */
+        threshold: 500,
+        /**
+         * Whether display scroll progress
+         *
+         * @default true
+         */
+        progress: false,
+      },
+    },
+  }),
+});
+```
+
+:::
 
 ## RTL Layout
 
-`vuepress-theme-hope` fully supports RTL layout. Just set `rtl: true` in rtl locales.
+`vuepress-theme-hope` fully supports RTL layout. Just set `rtl: true` in rtl language of locales.
 
 Try it: <ToggleRTLButton />
+
+::: code-tabs#language
+
+@tab TS
+
+```ts {10,11} title=".vuepress/config.ts"
+import { defineUserConfig } from "vuepress";
+import { hopeTheme } from "vuepress-theme-hope";
+
+export default defineUserConfig({
+  theme: hopeTheme({
+    locales: {
+      // ...
+      "/ar/": {
+        // enable RTL layout
+        rtl: true,
+      },
+    },
+  }),
+});
+```
+
+@tab JS
+
+```js {10,11} title=".vuepress/config.js"
+import { defineUserConfig } from "vuepress";
+import { hopeTheme } from "vuepress-theme-hope";
+
+export default defineUserConfig({
+  theme: hopeTheme({
+    locales: {
+      // ...
+      "/ar/": {
+        // enable RTL layout
+        rtl: true,
+      },
+    },
+  }),
+});
+```
+
+:::
 
 <script setup lang="ts">
 import ToggleFullScreenButton from "@theme-hope/modules/outlook/components/ToggleFullScreenButton";
 import PrintButton from "@theme-hope/modules/info/components/PrintButton";
 import ToggleRTLButton from "@ToggleRTLButton";
 </script>
+
+[back-to-top]: https://ecosystem.vuejs.press/plugins/back-to-top.html

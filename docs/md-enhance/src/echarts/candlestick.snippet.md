@@ -1,6 +1,3 @@
-````md
-<!-- #region demo -->
-
 ::: echarts Stocks
 
 ```js
@@ -310,6 +307,3 @@ const option = {
 ```
 
 :::
-
-<!-- #endregion demo -->
-````

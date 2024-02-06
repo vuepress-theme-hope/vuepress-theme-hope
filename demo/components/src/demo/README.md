@@ -1,35 +1,37 @@
 # Demo
 
-- AddThis (Root Components)
-
-- BackToTop (Root Components)
-
 - Notice (Root Components)
 
-- [ArtPlayer](artplayer.md)
+- [ArtPlayer](art-player.md)
 
-- [AudioPlayer](audioplayer.md)
+- [AudioPlayer](audio-player.md)
 
 - [Badge](badge.md)
 
-- [BiliBili](bilibili.md)
+- [BiliBili](bili-bili.md)
 
-- [CodePen](codepen.md)
+- [CodePen](code-pen.md)
 
-- [FontIcon](fonticon.md)
+- [FontIcon](font-icon.md)
 
 - [PDF](pdf.md)
 
-- [Replit](replit.md)
+- [Replit](repl-it.md)
 
 - [Share](share.md)
 
-- [SiteInfo](siteinfo.md)
+- [SiteInfo](site-info.md)
 
-- [StackBlitz](stackblitz.md)
+- [StackBlitz](stack-blitz.md)
 
-- [VideoPlayer](videoplayer.md)
+- [VPBanner](vp-banner.md)
 
-- [XiGua](xigua.md)
+- [VPCard](vp-card.md)
 
-- [YouTube](youtube.md)
+- [VidStack](vid-stack.md)
+
+- [VideoPlayer](video-player.md)
+
+- [XiGua](xi-gua.md)
+
+- [YouTube](you-tube.md)

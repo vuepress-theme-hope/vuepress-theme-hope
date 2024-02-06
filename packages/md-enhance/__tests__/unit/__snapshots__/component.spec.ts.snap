@@ -1,0 +1,11 @@
+// Vitest Snapshot v1, https://vitest.dev/guide/snapshot.html
+
+exports[`component > Should not break markdown fence 1`] = `
+"<pre><code class="language-js">const a = 1;
+</code></pre>
+"
+`;
+
+exports[`component > Should resolve component fence 1`] = `"<VPCard v-bind='{"title":"A card","desc":"A card desc","logo":"https://example.com/logo.png","link":"https://example.com","color":"#000"}' />"`;
+
+exports[`component > Should resolve component fence 2`] = `"<VPCard v-bind='{"title":"A card","desc":"A card desc","logo":"https://example.com/logo.png","link":"https://example.com","color":"#000"}' />"`;

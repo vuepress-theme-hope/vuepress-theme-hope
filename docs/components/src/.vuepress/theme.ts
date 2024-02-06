@@ -1,15 +1,20 @@
 import { createRequire } from "node:module";
-import { fs, theme } from "docs-shared";
 
-const { version } = fs.readJsonSync(
-  createRequire(import.meta.url).resolve(
-    "vuepress-plugin-components/package.json"
+import { theme } from "docs-shared";
+import { fs } from "vuepress/utils";
+import { AVAILABLE_SERVICES } from "vuepress-plugin-components";
+
+const { version } = <{ version: string }>(
+  fs.readJsonSync(
+    createRequire(import.meta.url).resolve(
+      "vuepress-plugin-components/package.json",
+    ),
   )
 );
 
 const IS_NETLIFY = "NETLIFY" in process.env;
 
-// the theme wrapper is located in <root>/docs-shared/src/theme-wrapper.ts
+// The theme wrapper is located in <root>/docs-shared/src/theme-wrapper.ts
 export default theme("components", {
   locales: {
     "/": {
@@ -86,6 +91,9 @@ export default theme("components", {
         "Share",
         "SiteInfo",
         "StackBlitz",
+        "VPBanner",
+        "VPCard",
+        "VidStack",
         "VideoPlayer",
         "XiGua",
         "YouTube",
@@ -95,10 +103,12 @@ export default theme("components", {
         pdf: {
           pdfjs: "/assets/lib/pdfjs/",
         },
+        share: {
+          services: AVAILABLE_SERVICES,
+        },
       },
 
       rootComponents: {
-        addThis: "ra-5f829c59e6c6bc9a",
         ...(IS_NETLIFY
           ? {}
           : {
@@ -132,6 +142,7 @@ export default theme("components", {
 
     mdEnhance: {
       codetabs: true,
+      demo: true,
       imgMark: true,
       include: true,
     },

@@ -13,6 +13,8 @@ icon: lightbulb
 
     它允许网站通过支持该特性的浏览器将网站作为 App 安装在对应平台上。
 
+<!-- #region intro -->
+
 ## 介绍
 
 Service Worker [^service-worker] (简称 SW) 主要用于获取并托管网站内容。
@@ -84,7 +86,7 @@ Service Worker [^service-worker] (简称 SW) 主要用于获取并托管网站�
 [^ssg]: **SSG**: **S**tatic **S**ite **G**enerating，静态站点生成。
 [^seo]: **SEO**: **S**earch **E**ngine **O**ptimization，搜索引擎增强，
 
-    详见 [SEO 介绍](https://mrhope.site/code/website/html/definition/seo.html)
+    详见 [SEO 介绍](https://mister-hope.com/code/website/html/definition/seo.html)
 
 [^spa]: **SPA**: **S**ingle **P**age **A**pplication, 单页应用
 
@@ -200,6 +202,8 @@ VuePress 本质上是一个 SPA。这意味着你只需要缓存主页并从主�
 
 :::
 
+<!-- #endregion intro -->
+
 ## 其他选项
 
 插件还提供了其他 PWA 相关选项，比如微软磁贴图标与颜色设置，苹果图标等。
@@ -214,7 +218,7 @@ VuePress 本质上是一个 SPA。这意味着你只需要缓存主页并从主�
 /**
  * 强制更新页面内容
  */
-export const forceUpdate: () => void;
+const forceUpdate: () => void;
 
 /**
  * 在 `serviceWorkerPath` 下注册 Service Worker
@@ -223,23 +227,23 @@ export const forceUpdate: () => void;
  * @param hooks Service Worker 钩子
  * @param showStatus 是否在控制台显示状态
  */
-export const registerSW: (
+const registerSW: (
   serviceWorkerPath: string,
   hooks?: Hooks,
-  showStatus?: boolean
+  showStatus?: boolean,
 ) => Promise<void>;
 
 /**
  * 在当前等待中的 Service Worker 中调用 `skipWaiting()`
  */
-export const skipWaiting: (registration: ServiceWorkerRegistration) => void;
+const skipWaiting: (registration: ServiceWorkerRegistration) => void;
 
 /**
  * 在当前激活的 Service Worker 中调用 `unregister()`
  *
  * @returns `true` 表示注销成功，`false` 表示注销失败
  */
-export const unregisterSW: () => Promise<boolean>;
+const unregisterSW: () => Promise<boolean>;
 ```
 
 ## 相关阅读

@@ -1,10 +1,9 @@
-import { type PluginFunction } from "@vuepress/core";
-import { getDirname, path } from "@vuepress/utils";
 import { watch } from "chokidar";
-import { checkVersion } from "vuepress-shared/node";
+import type { PluginFunction } from "vuepress/core";
+import { getDirname, path } from "vuepress/utils";
 
 import { injectConfigModule } from "./inject.js";
-import { type SassPaletteOptions } from "./options.js";
+import type { SassPaletteOptions } from "./options.js";
 import {
   prepareConfigFile,
   prepareConfigSass,
@@ -19,8 +18,6 @@ const __dirname = getDirname(import.meta.url);
 export const sassPalettePlugin =
   (options: SassPaletteOptions): PluginFunction =>
   (app) => {
-    checkVersion(app, PLUGIN_NAME, "2.0.0-beta.62");
-
     if (app.env.isDebug) logger.info("Options:", options);
 
     const {
@@ -28,12 +25,12 @@ export const sassPalettePlugin =
       config = `.vuepress/styles/${id}-config.scss`,
       defaultConfig = path.resolve(
         __dirname,
-        "../../styles/default/config.scss"
+        "../../styles/default/config.scss",
       ),
       palette = `.vuepress/styles/${id}-palette.scss`,
       defaultPalette = path.resolve(
         __dirname,
-        "../../styles/default/palette.scss"
+        "../../styles/default/palette.scss",
       ),
       generator = path.resolve(__dirname, "../../styles/empty.scss"),
       style = "",
@@ -53,21 +50,21 @@ export const sassPalettePlugin =
       alias: {
         [`@sass-palette/helper`]: path.resolve(
           __dirname,
-          "../../styles/helper.scss"
+          "../../styles/helper.scss",
         ),
         [`@sass-palette/${id}-config`]: app.dir.temp(
-          `sass-palette/${id}-config.scss`
+          `sass-palette/${id}-config.scss`,
         ),
         [`@sass-palette/${id}-inject`]: app.dir.temp(
-          `sass-palette/${id}-inject.scss`
+          `sass-palette/${id}-inject.scss`,
         ),
         [`@sass-palette/${id}-palette`]: app.dir.temp(
-          `sass-palette/${id}-palette.scss`
+          `sass-palette/${id}-palette.scss`,
         ),
         ...(style
           ? {
               [`@sass-palette/${id}-style`]: app.dir.temp(
-                `sass-palette/${id}-style.scss`
+                `sass-palette/${id}-style.scss`,
               ),
             }
           : {}),
@@ -77,8 +74,8 @@ export const sassPalettePlugin =
         injectConfigModule(config, app, id);
       },
 
-      onInitialized: (): Promise<void> => {
-        return Promise.all([
+      onInitialized: (): Promise<void> =>
+        Promise.all([
           prepareInjectSass(app, id),
 
           prepareConfigSass(app, {
@@ -100,8 +97,7 @@ export const sassPalettePlugin =
           prepareStyleSass(app, { id, userStyle }),
         ]).then(() => {
           if (app.env.isDebug) logger.info(`Style file for ${id} generated`);
-        });
-      },
+        }),
 
       onWatched: (app, watchers): void => {
         const configWatcher = watch(userConfig, {

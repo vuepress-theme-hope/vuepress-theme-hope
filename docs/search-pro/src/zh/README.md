@@ -2,15 +2,16 @@
 home: true
 title: 主页
 icon: home
-heroImage: /logo.svg
 heroText: vuepress-plugin-search-pro
 tagline: VuePress2 的客户端搜索插件
 actions:
-  - text: 快速上手 💡
+  - text: 快速上手
+    icon: lightbulb
     link: ./guide.html
     type: primary
 
-  - text: 配置 🛠
+  - text: 配置
+    icon: tools
     link: ./config.html
 
 features:
@@ -80,8 +81,7 @@ npm i -D vuepress-plugin-search-pro
 
 @tab TS
 
-```ts
-// .vuepress/config.ts
+```ts title=".vuepress/config.ts"
 import { searchProPlugin } from "vuepress-plugin-search-pro";
 
 export default {
@@ -95,8 +95,7 @@ export default {
 
 @tab JS
 
-```js
-// .vuepress/config.js
+```js title=".vuepress/config.js"
 import { searchProPlugin } from "vuepress-plugin-search-pro";
 
 export default {

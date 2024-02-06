@@ -1,13 +1,6 @@
-import { withBase } from "@vuepress/client";
-import {
-  type PropType,
-  type SlotsType,
-  type VNode,
-  defineComponent,
-  h,
-  toRef,
-} from "vue";
-import { RouterLink } from "vue-router";
+import type { PropType, SlotsType, VNode } from "vue";
+import { defineComponent, h, toRef } from "vue";
+import { RouteLink, withBase } from "vuepress/client";
 
 import {
   SlideIcon,
@@ -15,15 +8,11 @@ import {
 } from "@theme-hope/modules/blog/components/icons/index";
 import { useArticleInfo } from "@theme-hope/modules/blog/composables/index";
 import { LockIcon } from "@theme-hope/modules/encrypt/components/icons";
-import PageInfo, {
-  PageInfoProps,
-} from "@theme-hope/modules/info/components/PageInfo";
+import type { PageInfoProps } from "@theme-hope/modules/info/components/PageInfo";
+import PageInfo from "@theme-hope/modules/info/components/PageInfo";
 
-import {
-  type ArticleInfo,
-  ArticleInfoType,
-  PageType,
-} from "../../../../shared/index.js";
+import type { ArticleInfo } from "../../../../shared/index.js";
+import { ArticleInfoType, PageType } from "../../../../shared/index.js";
 
 import "../styles/article-item.scss";
 
@@ -50,14 +39,16 @@ export default defineComponent({
   },
 
   slots: Object as SlotsType<{
-    cover?: (props: { cover: string | undefined }) => VNode | VNode[];
+    cover?: (props: { cover: string | undefined }) => VNode[] | VNode | null;
     title?: (props: {
       title: string;
       isEncrypted?: boolean;
       type: string;
-    }) => VNode | VNode[];
-    excerpt?: (props: { excerpt: string | undefined }) => VNode | VNode[];
-    info?: (props: { info: PageInfoProps }) => VNode | VNode[];
+    }) => VNode[] | VNode | null;
+    excerpt?: (props: {
+      excerpt: string | undefined;
+    }) => VNode[] | VNode | null;
+    info?: (props: { info: PageInfoProps }) => VNode[] | VNode | null;
   }>,
 
   setup(props, { slots }) {
@@ -92,6 +83,7 @@ export default defineComponent({
                     h("img", {
                       class: "vp-article-cover",
                       src: withBase(cover),
+                      loading: "lazy",
                     }),
                     h("meta", {
                       property: "image",
@@ -101,7 +93,7 @@ export default defineComponent({
                 : []),
             sticky ? h(StickyIcon) : null,
             h(
-              RouterLink,
+              RouteLink,
               { to: props.path },
               () =>
                 slots.title?.({ title, isEncrypted, type }) ||
@@ -109,7 +101,7 @@ export default defineComponent({
                   isEncrypted ? h(LockIcon) : null,
                   type === PageType.slide ? h(SlideIcon) : null,
                   h("span", { property: "headline" }, title),
-                ])
+                ]),
             ),
             slots.excerpt?.({ excerpt }) ||
               (excerpt
@@ -124,8 +116,8 @@ export default defineComponent({
                 info,
                 ...(items.value ? { items: items.value } : {}),
               }),
-          ]
-        )
+          ],
+        ),
       );
     };
   },

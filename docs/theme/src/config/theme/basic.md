@@ -9,7 +9,7 @@ tag:
   - ThemeConfig
 ---
 
-::: danger
+::: caution
 
 These options are important and require you to configure them correctly.
 
@@ -60,6 +60,13 @@ It should contain full protocol (e.g. `https://example.com`).
 - Required: No
 
 Global default author.
+
+## license
+
+- Type: `string`
+- Required: No
+
+The default license of site.
 
 ## favicon
 

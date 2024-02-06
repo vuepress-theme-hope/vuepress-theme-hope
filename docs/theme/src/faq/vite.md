@@ -1,9 +1,14 @@
 ---
 title: Vite FAQ
 icon: circle-question
+order: -2
 category:
   - FAQ
 ---
+
+## Running error
+
+Vite only supports "modern browsers" by default, see [Vite support](https://vitejs.dev/guide/build.html#browser-compatibility) for details.
 
 ## Slow in a cold boot with Vite
 

@@ -1,4 +1,4 @@
-import { type PhotoSwipeLocaleData } from "../shared/index.js";
+import type { PhotoSwipeLocaleData } from "../shared/index.js";
 
 declare const PHOTO_SWIPE_SELECTOR: string | string[];
 declare const PHOTO_SWIPE_DELAY: number;

@@ -1,0 +1,31 @@
+// Vitest Snapshot v1, https://vitest.dev/guide/snapshot.html
+
+exports[`Sandpack > Should resolve sandpack info 1`] = `
+"<SandPack title="Sandpack%20demo" template="vue" files="eJxdjrsKAjEQRX9lTBMFNdhKXBAb/8AmjexmNZDHkMxuE/LvJiuI2t2ZO+cwmZ0R9/Ok2ZHJ1EeDBEnThJ3yxmGIBBmiHqHAGIMDXk+58n3wicClB5xau+ZXbW2AW4h2WPGN8lK8ZVUjSTu0d9I1A8jnoct5QUuRok7L1nicCOadC4O2J8VqrxiIhosvnm3ZJbjPw7/mwcxda6Vo6Z8sLze/UE4=" options="eJyrrgUAAXUA+Q==" customSetup="eJyrrgUAAXUA+Q==">
+</SandPack>
+"
+`;
+
+exports[`Sandpack > Should resolve sandpack info with customSetup 1`] = `
+"<SandPack title="Sandpack%20demo%20with%20customSetup" template="vue" files="eJxNjLsOwiAUhl/lyIIOSlwNbeLmG7iwmPZUSbicwKEL4d2ldXH7b99fxZ3oshYUN6HzlCwxZORCownWU0wMFRIu0GBJ0YPsU2nCFENm8PkNw9Ye5QOdi/CMyc0HeTJBq99Zv9GMntyLsWsA/bmOte5oa1p1t6c2UGFYzz7O6AYjem8EqA1Xf7xoX0y4PKI=" options="eJyrVipKTUzxz8upVLIqKSpN1VEqzsgvD4KLpSXmFKfWAgAN5g4J" customSetup="eJyrVkrNKymqVLJS0s/MS0mt0MsqVqoFAE+4Bz8=">
+</SandPack>
+"
+`;
+
+exports[`Sandpack > Should resolve sandpack info with file attrs 1`] = `
+"<SandPack title="Sandpack%20demo%20with%20options" files="eJx1j71OBCEUhV/lSjOajBK33LCTGBs7SxuaCTAuCX8BZhJDeHcvg0aNuxX3h3O+cwuhKQr6FMLDtipyLER4iS9hSUQdMiSV1zBxp23wMUOBqBaosERvYUDJwJ3wLmWw6R1ObXs7vChjPLz5aOTNcMcdo90MbVhWNpg5K6wB2PlxKmWX1soodvtUu7Bm2O4tRjEnTnDPCdAmp7/0ZCSzyHrDuMtskhrJWUupHDnmuGIX1SxfnfnofR37qc/e/rv1byipt6n9YrRV16Gd8s38ivAD3QdIbVaHTrxGOlxG1U+b7o11" options="eJyrrgUAAXUA+Q==" customSetup="eJyrrgUAAXUA+Q==">
+</SandPack>
+"
+`;
+
+exports[`Sandpack > Should resolve sandpack info with file attrs and customSetup 1`] = `
+"<SandPack rtl theme="dark" title="Sandpack%20demo%20with%20file%20attrs%20and%20customSetup%20" files="eJyNkE1OwzAQha8yWEICFOp2W9IK6IYFEhzAGyuZppEc2/JPpCrK3Rk7pC2Loq6SmXl+b+YbGPeu4m/WLvqIbD2wytT0ZaWvXGsDeAzRboVuO2tcgAEc7mGEvTMdCEZvBHs5TXems/NowVOVXLNC6MpoH6DzDWySyYNgH6iUgW8lj40zUdd3gj2StORTNqVSEbCzSgakCqA8rLbDkE3GseRU5W6rbQzQP3e0u9oIRnPBgE/DvFT6L/mFFyuYrELb0617qTwW7NDWNepT6VDWX1od2Tq4iGMxgZpvuoVU9PguQ0B3PAN7pbfU55Vxf8hd4TpTG6A6SNe0uilAYY+KpJuLgIcbuM27+CBD9Gd4drv79V4DsZ2DMuB0T5Z8ptA8n+KfYLVckuR+0lxDm9D9QzY3xvEH49nd3w==" options="eJyrrgUAAXUA+Q==" customSetup="eJyrVkpJLUjNS0nNS85MLVayqlZyKCtNLS1O1U/OL0pVslLKSSxJLS5R0oGLF2ckFqWmIMsAJXRTUnMzEWK1tQBugx7v">
+</SandPack>
+"
+`;
+
+exports[`Sandpack > Should resolve sandpack info with options 1`] = `
+"<SandPack title="Sandpack%20demo%20with%20options" files="eJxdjrsKAjEQRX9lTBMFNdhKXBAb/8AmjexmNZDHkMxuE/LvJiuI2t2ZO+cwmZ0R9/Ok2ZHJ1EeDBEnThJ3yxmGIBBmiHqHAGIMDXk+58n3wicClB5xau+ZXbW2AW4h2WPGN8lK8ZVUjSTu0d9I1A8jnoct5QUuRok7L1nicCOadC4O2J8VqrxiIhosvnm3ZJbjPw7/mwcxda6Vo6Z8sLze/UE4=" options="eJyrVipKTUzxz8upVLIqKSpN1VEqzsgvD4KLpSXmFKfWAgAN5g4J" customSetup="eJyrrgUAAXUA+Q==">
+</SandPack>
+"
+`;

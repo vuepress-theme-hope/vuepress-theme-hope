@@ -1,21 +1,20 @@
-import { type Plugin } from "@vuepress/core";
-import {
-  type CopyCodeOptions,
-  copyCodePlugin,
-} from "vuepress-plugin-copy-code2";
+import { isPlainObject } from "@vuepress/helper";
+import type { CopyCodePluginOptions } from "@vuepress/plugin-copy-code";
+import { copyCodePlugin } from "@vuepress/plugin-copy-code";
+import type { Plugin } from "vuepress/core";
 
 /**
  * @private
  *
- * Resolve options for vuepress-plugin-copy-code2
+ * Resolve options for @vuepress/plugin-copy-code
  */
 export const getCopyCodePlugin = (
-  options?: CopyCodeOptions | false
+  options?: CopyCodePluginOptions | boolean,
 ): Plugin | null => {
   if (options === false) return null;
 
   return copyCodePlugin({
     selector: '.theme-hope-content div[class*="language-"] pre',
-    ...options,
+    ...(isPlainObject(options) ? options : {}),
   });
 };

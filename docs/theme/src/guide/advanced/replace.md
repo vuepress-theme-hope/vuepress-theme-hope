@@ -1,5 +1,5 @@
 ---
-title: Replacing Theme Components
+title: Replace Components
 icon: boxes-packing
 order: -2
 category:
@@ -13,7 +13,7 @@ When setting `{ custom: true }` in [Behavior options](../../config/theme/behavio
 
 <!-- more -->
 
-## Replace Components
+## How to Replace via Alias
 
 You need to replace the component alias used in the theme with `alias` option in your own VuePress config file.
 
@@ -21,9 +21,8 @@ You need to replace the component alias used in the theme with `alias` option in
 
 @tab TS
 
-```ts
-// .vuepress/config.ts
-import { getDirname, path } from "@vuepress/utils";
+```ts title=".vuepress/config.ts"
+import { getDirname, path } from "vuepress/utils";
 import { defineUserConfig } from "vuepress";
 import { hopeTheme } from "vuepress-theme-hope";
 
@@ -34,7 +33,7 @@ export default defineUserConfig({
     {
       // your theme config here
     },
-    { custom: true }
+    { custom: true },
   ),
 
   alias: {
@@ -42,7 +41,7 @@ export default defineUserConfig({
     // For example, here we change the theme's home page component to HomePage.vue under user .vuepress/components
     "@theme-hope/components/HomePage": path.resolve(
       __dirname,
-      "./components/HomePage.vue"
+      "./components/HomePage.vue",
     ),
   },
 });
@@ -50,9 +49,8 @@ export default defineUserConfig({
 
 @tab JS
 
-```js
-// .vuepress/config.js
-import { getDirname, path } from "@vuepress/utils";
+```js title=".vuepress/config.js"
+import { getDirname, path } from "vuepress/utils";
 import { hopeTheme } from "vuepress-theme-hope";
 
 const __dirname = getDirname(import.meta.url);
@@ -62,7 +60,7 @@ export default {
     {
       // your theme config here
     },
-    { custom: true }
+    { custom: true },
   ),
 
   alias: {
@@ -70,7 +68,7 @@ export default {
     // For example, here we change the theme's home page component to HomePage.vue under user .vuepress/components
     "@theme-hope/components/HomePage": path.resolve(
       __dirname,
-      "./components/HomePage.vue"
+      "./components/HomePage.vue",
     ),
   },
 };
@@ -249,9 +247,8 @@ For example, if your site has strong social attributes, and you want to display 
 
 @tab config.ts
 
-```ts
-// .vuepress/config.ts
-import { getDirname, path } from "@vuepress/utils";
+```ts title=".vuepress/config.ts"
+import { getDirname, path } from "vuepress/utils";
 import { defineUserConfig } from "vuepress";
 import { hopeTheme } from "vuepress-theme-hope";
 
@@ -262,7 +259,7 @@ export default defineUserConfig({
     {
       // your theme config here
     },
-    { custom: true }
+    { custom: true },
   ),
 
   alias: {
@@ -270,7 +267,7 @@ export default defineUserConfig({
     // For example, here we change the theme's home page component to HomePage.vue under user .vuepress/components
     "@theme-hope/components/HomePage": path.resolve(
       __dirname,
-      "./components/HomePage.vue"
+      "./components/HomePage.vue",
     ),
   },
 });

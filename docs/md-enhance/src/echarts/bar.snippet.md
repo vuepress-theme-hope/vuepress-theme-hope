@@ -1,6 +1,3 @@
-````md
-<!-- #region demo -->
-
 ::: echarts A bar chart
 
 ```js
@@ -67,15 +64,12 @@ const run = () => {
     series: [{ type: "bar", data }],
   });
 };
-setTimeout(() => {
-  run();
-}, 0);
-setInterval(() => {
+
+const timeId = setInterval(() => {
+  if (myChart._disposed) return clearInterval(timeId);
+
   run();
 }, 3000);
 ```
 
 :::
-
-<!-- #endregion demo -->
-````

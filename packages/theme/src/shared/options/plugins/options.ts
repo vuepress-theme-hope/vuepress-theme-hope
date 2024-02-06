@@ -1,19 +1,24 @@
-import { type GitPluginOptions } from "@vuepress/plugin-git";
-import { type AutoCatalogOptions } from "vuepress-plugin-auto-catalog";
-import { type CommentPluginOptions } from "vuepress-plugin-comment2";
-import { type ComponentOptions } from "vuepress-plugin-components";
-import { type CopyCodeOptions } from "vuepress-plugin-copy-code2";
-import { type CopyrightOptions } from "vuepress-plugin-copyright2";
-import { type FeedOptions } from "vuepress-plugin-feed2";
-import { type MarkdownEnhanceOptions } from "vuepress-plugin-md-enhance";
-import { type PhotoSwipeOptions } from "vuepress-plugin-photo-swipe";
-import { type PWAOptions } from "vuepress-plugin-pwa2";
-import { type ReadingTimeOptions } from "vuepress-plugin-reading-time2";
-import { type SeoOptions } from "vuepress-plugin-seo2";
-import { type SitemapOptions } from "vuepress-plugin-sitemap2";
+import type { BackToTopPluginOptions } from "@vuepress/plugin-back-to-top";
+import type { CatalogPluginOptions } from "@vuepress/plugin-catalog";
+import type { CopyCodePluginOptions } from "@vuepress/plugin-copy-code";
+import type { CopyrightPluginOptions } from "@vuepress/plugin-copyright";
+import type { DocsearchPluginOptions } from "@vuepress/plugin-docsearch";
+import type { FeedPluginOptions } from "@vuepress/plugin-feed";
+import type { GitPluginOptions } from "@vuepress/plugin-git";
+import type { ReadingTimePluginOptions } from "@vuepress/plugin-reading-time";
+import type { RedirectPluginOptions } from "@vuepress/plugin-redirect";
+import type { SearchPluginOptions } from "@vuepress/plugin-search";
+import type { SeoPluginOptions } from "@vuepress/plugin-seo";
+import type { SitemapPluginOptions } from "@vuepress/plugin-sitemap";
+import type { CommentPluginOptions } from "vuepress-plugin-comment2";
+import type { ComponentOptions } from "vuepress-plugin-components";
+import type { MarkdownEnhanceOptions } from "vuepress-plugin-md-enhance";
+import type { PhotoSwipeOptions } from "vuepress-plugin-photo-swipe";
+import type { PWAOptions } from "vuepress-plugin-pwa2";
+import type { SearchProOptions } from "vuepress-plugin-search-pro";
 
-import { type BlogPluginOptions } from "./blog.js";
-import { type PrismjsOptions } from "./prism.js";
+import type { BlogOptions } from "./blog.js";
+import type { PrismjsOptions } from "./prism.js";
 
 export interface PluginsOptions {
   /**
@@ -26,13 +31,15 @@ export interface PluginsOptions {
   activeHeaderLinks?: boolean;
 
   /**
-   * Auto catalog plugin Options
+   * Options for @vuepress/back-to-top
    *
-   * 自动目录插件选项
+   * @see https://ecosystem.vuejs.press/plugins/back-to-top.html
    *
-   * @default true
+   * 返回顶部插件配置
+   *
+   * @see https://ecosystem.vuejs.press/zh/plugins/back-to-top.html
    */
-  autoCatalog?: AutoCatalogOptions | boolean;
+  backToTop?: BackToTopPluginOptions | boolean;
 
   /**
    * Blog plugin options
@@ -41,7 +48,16 @@ export interface PluginsOptions {
    *
    * @default false
    */
-  blog?: BlogPluginOptions | boolean;
+  blog?: BlogOptions | boolean;
+
+  /**
+   * Options for @vuepress/catalog
+   *
+   * 自动目录插件选项
+   *
+   * @default true
+   */
+  catalog?: CatalogPluginOptions | boolean;
 
   /**
    * Components enabled
@@ -70,28 +86,39 @@ export interface PluginsOptions {
   comment?: CommentPluginOptions | false;
 
   /**
-   * code copy plugin options
+   * Options for @vuepress/copy-code
    *
-   * @see https://plugin-copy-code2.vuejs.press/config/
+   * @see https://ecosystem.vuejs.press/plugins/copy-code.html
    *
    * 代码复制插件配置
    *
-   * @see https://plugin-copy-code2.vuejs.press/zh/config/
+   * @see https://ecosystem.vuejs.press/zh/plugins/copy-code.html
    */
-  copyCode?: CopyCodeOptions | false;
+  copyCode?: CopyCodePluginOptions | boolean;
 
   /**
-   * Copyright Plugin options
+   * Options for @vuepress/copyright
    *
-   * @see https://plugin-copyright2.vuejs.press/config.html
+   * @see https://ecosystem.vuejs.press/plugins/copyright.html
    *
    * 版权信息插件配置
    *
-   * @see https://plugin-copyright2.vuejs.press/zh/config.html
+   * @see https://ecosystem.vuejs.press/zh/plugins/copyright.html
    *
    * @default false
    */
-  copyright?: CopyrightOptions | boolean;
+  copyright?: CopyrightPluginOptions | boolean;
+
+  /**
+   * Options for @vuepress/docsearch
+   *
+   * @see https://vuejs.press/reference/plugin/docsearch.html
+   *
+   * @vuepress/docsearch 选项
+   *
+   * @see https://vuejs.press/zh/reference/plugin/docsearch.html
+   */
+  docsearch?: DocsearchPluginOptions;
 
   /**
    * Enable @vuepress/external-link-icon or not
@@ -105,16 +132,16 @@ export interface PluginsOptions {
   /**
    * Feed plugin options
    *
-   * @see https://plugin-feed2.vuejs.press/config/
+   * @see https://ecosystem.vuejs.press/plugins/feed/config.html
    *
    * Feed 插件配置
    *
-   * @see https://plugin-feed2.vuejs.press/zh/config/
+   * @see https://ecosystem.vuejs.press/zh/plugins/feed/config.html
    */
-  feed?: Omit<FeedOptions, "hostname">;
+  feed?: Omit<FeedPluginOptions, "hostname"> | boolean;
 
   /**
-   * Git plugin options
+   * Options for @vuepress/git
    *
    * @description By default this plugin is only enabled in production mode for performance reasons.
    *
@@ -138,33 +165,31 @@ export interface PluginsOptions {
    * @see https://plugin-md-enhance.vuejs.press/zh/config/
    */
   mdEnhance?:
-    | (Omit<MarkdownEnhanceOptions, "container"> & {
+    | (Omit<MarkdownEnhanceOptions, "hint"> & {
         /**
-         * Whether to enable custom container including
+         * Whether to enable hint container including
          *
+         * - important
          * - info
          * - note
          * - tip
          * - warning
-         * - danger
+         * - caution
          * - details
          *
-         * ⚠ The last 4 items conflict with default theme and will override it’s style.
+         * 是否启用提示容器
          *
-         * 是否启用自定义容器
-         *
+         * - important
          * - info
          * - note
          * - tip
          * - warning
-         * - danger
+         * - caution
          * - details
-         *
-         * ⚠ 最后四个会和默认主题冲突，且会覆盖默认主题的样式与行为。
          *
          * @default true
          */
-        container?: boolean;
+        hint?: boolean;
       })
     | false;
 
@@ -217,39 +242,72 @@ export interface PluginsOptions {
   /**
    * ReadingTime options
    *
-   * @see https://plugin-reading-time2.vuejs.press/
+   * @see https://ecosystem.vuejs.press/plugins/reading-time.html
    *
    * 阅读时间插件配置
    *
-   * @see https://plugin-reading-time2.vuejs.press/zh/
+   * @see https://ecosystem.vuejs.press/zh/plugins/reading-time.html
    *
    * @default true
    */
-  readingTime?: ReadingTimeOptions | boolean;
+  readingTime?: ReadingTimePluginOptions | boolean;
 
   /**
-   * SEO plugin options
+   * Redirect options
    *
-   * @see https://plugin-seo2.vuejs.press/config/
+   * @see https://plugin-redirect.vuejs.press/config/
+   *
+   * 重定向插件配置
+   *
+   * @see https://plugin-redirect.vuejs.press/zh/config/
+   */
+  redirect?: RedirectPluginOptions | boolean;
+
+  /**
+   * @vuepress/search plugin options
+   *
+   * @see https://vuejs.press/reference/plugin/search.html
+   *
+   * @vuepress/search 插件配置
+   *
+   * @see https://vuejs.press/zh/reference/plugin/search.html
+   */
+  search?: SearchPluginOptions | boolean;
+
+  /**
+   * search-pro plugin options
+   *
+   * @see https://plugin-search-pro.vuejs.press/config/
+   *
+   * search-pro 插件配置
+   *
+   * @see https://plugin-search-pro.vuejs.press/zh/config/
+   */
+  searchPro?: SearchProOptions | boolean;
+
+  /**
+   * Options for @vuepress/seo
+   *
+   * @see https://ecosystem.vuejs.press/plugins/seo/config.html
    *
    * SEO 插件配置
    *
-   * @see https://plugin-seo2.vuejs.press/zh/config/
+   * @see https://ecosystem.vuejs.press/zh/plugins/seo/config.html
    *
    * @default true
    */
-  seo?: Omit<SeoOptions, "hostname" | "author"> | boolean;
+  seo?: Omit<SeoPluginOptions, "hostname" | "author"> | boolean;
 
   /**
-   * Sitemap plugin options
+   * Options for @vuepress/sitemap
    *
-   * @see https://plugin-sitemap2.vuejs.press/config/
+   * @see https://ecosystem.vuejs.press/plugins/sitemap/config.html
    *
    * Sitemap 插件配置
    *
-   * @see https://plugin-sitemap2.vuejs.press/zh/config/
+   * @see https://ecosystem.vuejs.press/zh/plugins/sitemap/config.html
    *
    * @default true
    */
-  sitemap?: Omit<SitemapOptions, "hostname"> | boolean;
+  sitemap?: Omit<SitemapPluginOptions, "hostname"> | boolean;
 }

@@ -61,7 +61,7 @@ $pc: 1920px;
 
 All variables here (including your newly added variables) will be converted to kebab-case format and injected as CSS variables.
 
-For example `$theme-color` will be injected as `--theme-color`, and `$backgroundColor` will be injected as `--$background-color`.
+For example `$theme-color` will be injected as `--theme-color`, and `$backgroundColor` will be injected as `--background-color`.
 
 :::
 

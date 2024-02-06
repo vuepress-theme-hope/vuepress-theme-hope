@@ -19,8 +19,7 @@
   }
 
   @media (max-width: hope-config.$mobile) {
-    margin-right: -1.5rem;
-    margin-left: -1.5rem;
+    margin-inline: -1.5rem;
     border-radius: 0;
   }
 }
@@ -44,7 +43,9 @@
 
   cursor: pointer;
 
-  transition: background var(--vp-ct), color var(--vp-ct);
+  transition:
+    background var(--vp-ct),
+    color var(--vp-ct);
 
   &:hover {
     background: var(--code-tabs-nav-hover-color, #434a57);
@@ -94,11 +95,25 @@
     &::before {
       display: none;
     }
+
+    #{hope-config.$rtl-selector} & {
+      &::before {
+        display: block;
+      }
+
+      &::after {
+        display: none;
+      }
+    }
   }
 }
 
 .vp-code-tab {
   display: none;
+
+  @media print {
+    display: block;
+  }
 
   &.active {
     display: block;
@@ -110,6 +125,7 @@
 
     @media (max-width: hope-config.$mobile) {
       margin: 0.85rem -1.5rem;
+      border-radius: 0;
     }
 
     code {
@@ -117,5 +133,14 @@
         white-space: pre-wrap;
       }
     }
+  }
+}
+
+.vp-code-tab-title {
+  display: none;
+  font-weight: 500;
+
+  @media print {
+    display: block;
   }
 }

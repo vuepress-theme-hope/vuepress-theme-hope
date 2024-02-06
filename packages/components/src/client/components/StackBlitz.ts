@@ -2,22 +2,14 @@
 /**
  * @see https://developer.stackblitz.com/platform/api/javascript-sdk
  */
-import sdk, { type UiThemeOption, type UiViewOption } from "@stackblitz/sdk";
-import {
-  type PropType,
-  type VNode,
-  computed,
-  defineComponent,
-  h,
-  onMounted,
-} from "vue";
+import type { UiThemeOption, UiViewOption } from "@stackblitz/sdk";
+import sdk from "@stackblitz/sdk";
+import type { PropType, VNode } from "vue";
+import { computed, defineComponent, h, onMounted } from "vue";
 
 import { useSize } from "../composables/index.js";
 
 import "../styles/stack-blitz.scss";
-
-// FIXME: This is an issue of ts NodeNext
-const stackblitzSDK = sdk as unknown as typeof sdk.default;
 
 export default defineComponent({
   name: "StackBlitz",
@@ -98,7 +90,7 @@ export default defineComponent({
     },
 
     /**
-     * embed editor
+     * Embed editor
      *
      * 嵌入编辑器
      */
@@ -180,7 +172,7 @@ export default defineComponent({
   },
 
   setup(props) {
-    const { el, width, height } = useSize<HTMLIFrameElement>(props);
+    const { el, width, height, resize } = useSize<HTMLIFrameElement>(props);
 
     const options = computed(() => ({
       openFile: props.file,
@@ -193,11 +185,13 @@ export default defineComponent({
       initialPath: props.initialPath,
     }));
 
-    onMounted(() => {
-      if (props.embed)
-        void stackblitzSDK[
+    onMounted(async () => {
+      if (props.embed) {
+        await sdk[
           props.type === "github" ? "embedGithubProject" : "embedProjectId"
         ](el.value!, props.id, options.value);
+        resize();
+      }
     });
 
     return (): VNode =>
@@ -219,15 +213,15 @@ export default defineComponent({
                 type: "button",
                 class: "stackblitz-button",
                 onClick: () => {
-                  stackblitzSDK[
+                  sdk[
                     props.type === "github"
                       ? "openGithubProject"
                       : "openProjectId"
                   ](props.id, options.value);
                 },
               },
-              props.text
-            )
+              props.text,
+            ),
           );
   },
 });

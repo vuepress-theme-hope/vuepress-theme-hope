@@ -1,12 +1,7 @@
-import { type CodePenOptions, renderCodePen } from "create-codepen";
-import {
-  type PropType,
-  type VNode,
-  computed,
-  defineComponent,
-  h,
-  onMounted,
-} from "vue";
+import type { CodePenOptions } from "create-codepen";
+import { renderCodePen } from "create-codepen";
+import type { PropType, VNode } from "vue";
+import { computed, defineComponent, h, onMounted } from "vue";
 
 import "../styles/code-pen.scss";
 
@@ -90,7 +85,7 @@ export default defineComponent({
     } => {
       const result =
         /(?:^(?:https?:)?\/\/codepen.io\/|^\/|^)(.*?)\/(?:pen|embed)\/(.*?)\/?$/.exec(
-          props.link
+          props.link,
         );
 
       return {
@@ -113,7 +108,7 @@ export default defineComponent({
           "pen-title": props.title,
           height: props.height,
           preview: props.status === "preview" ? "true" : "",
-        }
+        },
     );
 
     onMounted(() => {
@@ -138,7 +133,7 @@ export default defineComponent({
                     renderCodePen(options.value, `.codepen-${slugHash.value}`);
                   },
                 },
-                "Run Code"
+                "Run Code",
               )
             : null,
           h("span", [
@@ -150,7 +145,7 @@ export default defineComponent({
             h("a", { href: `https://codepen.io` }, ["CodePen"]),
             ".",
           ]),
-        ]
+        ],
       );
   },
 });

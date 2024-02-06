@@ -3,7 +3,7 @@ title: Markdown 增强
 icon: fab fa-markdown
 index: false
 dir:
-  order: 3
+  order: 4
 ---
 
 除了 VuePress 本身新增了一些 Markdown 语法外，`vuepress-theme-hope` 通过 <ProjectLink name="md-enhance">vuepress-plugin-md-enhance</ProjectLink>，在 Markdown 中启用了更多的语法与新功能。
@@ -18,7 +18,7 @@ dir:
 
 ## 新语法
 
-- [自定义容器](container.md)
+- [提示容器](hint.md)
 
 - [选项卡](tabs.md)
 
@@ -30,6 +30,8 @@ dir:
 
 - [图片增强](image.md)
 
+- [GFM 警告](alert.md)
+
 - [自定义对齐](align.md)
 
 - [自定义属性](attrs.md)
@@ -38,7 +40,7 @@ dir:
 
 - [标记](mark.md)
 
-- [图表](chart.md)
+- [图表](chartjs.md)
 
 - [Echarts](echarts.md)
 
@@ -52,15 +54,17 @@ dir:
 
 - [代码演示](demo.md)
 
-- [幻灯片](presentation.md)
+- [幻灯片](revealjs.md)
 
 - [样式化](stylize.md)
 
 - [交互演示](playground.md)
 
+- [Kotlin 交互演示](kotlin-playground.md)
+
 - [Vue 交互演示](vue-playground.md)
 
-- [组件](components.md)
+- [Sandpack 交互演示](sandpack.md)
 
 - [其他](others.md)
 

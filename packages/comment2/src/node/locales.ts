@@ -1,4 +1,4 @@
-import { type WalineLocaleConfig } from "../shared/index.js";
+import type { WalineLocaleConfig } from "../shared/index.js";
 
 /**
  * Default locale config for Waline

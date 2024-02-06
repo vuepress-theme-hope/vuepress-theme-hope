@@ -1,4 +1,4 @@
-import { type RequiredLocaleConfig } from "vuepress-shared";
+import type { ExactLocaleConfig } from "@vuepress/helper";
 
 /**
  * Multi language config for `vuepress-plugin-search-pro` plugin
@@ -77,11 +77,18 @@ export interface SearchProLocaleData {
   loading: string;
 
   /**
-   * Search history text
+   * Search query history title
    *
-   * 搜索历史文字
+   * 搜索文字历史 标题
    */
-  history: string;
+  queryHistory: string;
+
+  /**
+   * Search result history title
+   *
+   * 搜索结果历史 标题
+   */
+  resultHistory: string;
 
   /**
    * Search history empty hint
@@ -98,4 +105,4 @@ export interface SearchProLocaleData {
   emptyResult: string;
 }
 
-export type SearchProLocaleConfig = RequiredLocaleConfig<SearchProLocaleData>;
+export type SearchProLocaleConfig = ExactLocaleConfig<SearchProLocaleData>;

@@ -17,7 +17,7 @@ E.g.:
 ```js
 export default {
   plugins: [
-    mdEnhancePlugins({
+    mdEnhancePlugin({
       checkLinks: {
         // only check links in dev mode
         status: "dev",
@@ -39,7 +39,13 @@ If your docs both serve on documentation site and directly on GitHub, we provide
 
 ::: note
 
-Custom container is enabled by default in `@vuepress/theme-default` and `vuepress-theme-hope`, but not available in GitHub Markdown preview.
+For full GFM syntax, see [GFM](https://github.github.com/gfm/).
+
+We are not 100% supporting it to be honestly, we only supply its syntax including linkify, breaks, footnote, task list, code highlight, image mark, mermaid, mathjax and so on.
+
+Some of the behavior might be different, for example to support Vue syntax, we are not disallowing `<script>` tags. But in most situation, the behavior should be same.
+
+Besides, custom container is enabled by default in `@vuepress/theme-default` and `vuepress-theme-hope`, but not available in GitHub Markdown preview.
 
 :::
 
@@ -47,10 +53,12 @@ Custom container is enabled by default in `@vuepress/theme-default` and `vuepres
 
 Since VuePress2 has removed V1's v-pre container in core, the plugin provides `vPre` option to support it. That is, you can use any Mustache syntax in the container below.
 
-```md
+:::: md-demo
+
 ::: v-pre
 
 {{ abc }}
 
 :::
-```
+
+::::

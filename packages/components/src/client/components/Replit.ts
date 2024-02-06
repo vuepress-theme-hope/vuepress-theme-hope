@@ -1,5 +1,7 @@
 /* eslint-disable vue/no-unused-properties */
-import { type VNode, computed, defineComponent, h } from "vue";
+import type { VNode } from "vue";
+import { computed, defineComponent, h, ref } from "vue";
+import { LoadingIcon } from "vuepress-shared/client";
 
 import { useSize } from "../composables/index.js";
 
@@ -91,40 +93,42 @@ export default defineComponent({
     },
 
     /**
-     * show repl link
+     * Loading status
      *
-     * 显示 repl 链接
+     * 加载状态
      */
-    plain: Boolean,
+    autoLoad: Boolean,
 
     /**
-     * Button text
+     * Load button text
      *
-     * 按钮文字
+     * 加载按钮文字
      */
     text: {
       type: String,
-      default: "Open on Replit",
+      default: "Load Replit",
     },
   },
 
   setup(props) {
-    const { el, width, height } = useSize<HTMLDivElement>(props);
+    const { el, width, height, resize } = useSize<HTMLDivElement>(props);
+
+    const shouldLoad = ref(false);
+    const loaded = ref(false);
 
     const replLink = computed(() => {
       if (props.link) {
         const url = new URL(props.link);
 
-        if (props.plain) url.searchParams.delete("embed");
-        else url.searchParams.set("embed", "true");
+        url.searchParams.set("embed", "true");
 
         return url.toString();
       }
 
       return props.user && props.repl
         ? `https://replit.com/@${props.user}/${props.repl}${
-            props.plain ? "" : "?embed=true"
-          }${props.file?.length ? `#${props.file}` : ""}`
+            props.file?.length ? `#${props.file}` : ""
+          }`
         : null;
     });
 
@@ -133,27 +137,34 @@ export default defineComponent({
         ? h(
             "div",
             { class: "replit-wrapper" },
-            props.plain
-              ? h(
+            props.autoLoad || shouldLoad.value
+              ? [
+                  h("iframe", {
+                    ref: el,
+                    class: "replit-iframe",
+                    src: replLink.value,
+                    style: {
+                      width: width.value,
+                      height: loaded.value ? height.value : 0,
+                    },
+                    onLoad: () => {
+                      loaded.value = true;
+                      resize();
+                    },
+                  }),
+                  loaded.value ? null : h(LoadingIcon),
+                ]
+              : h(
                   "button",
                   {
                     type: "button",
                     class: "replit-button",
                     onClick: () => {
-                      window.open(replLink.value!, "_blank");
+                      shouldLoad.value = true;
                     },
                   },
-                  props.text
-                )
-              : h("iframe", {
-                  ref: el,
-                  class: "replit-iframe",
-                  src: replLink.value,
-                  style: {
-                    width: width.value,
-                    height: height.value,
-                  },
-                })
+                  props.text,
+                ),
           )
         : null;
   },

@@ -40,16 +40,16 @@ tag:
 
 ## 自定义配置
 
-`plugin.photoSwipe` 会作为插件选项传入 <ProjectLink name="photo-swipe" path="/zh/">`vuepress-plugin-photo-swipe`</ProjectLink>。 你可以查看 <ProjectLink name="photo-swipe" path="/zh/">插件文档</ProjectLink> 来来进行高级配置。
+`plugins.photoSwipe` 会作为插件选项传入 <ProjectLink name="photo-swipe" path="/zh/">`vuepress-plugin-photo-swipe`</ProjectLink>。 你可以查看 <ProjectLink name="photo-swipe" path="/zh/">插件文档</ProjectLink> 来来进行高级配置。
 
 ## 演示
 
 <!-- markdownlint-disable -->
 
 <div class="image-preview">
-  <img src="/assets/image/1.jpg" />
-  <img src="/assets/image/2.jpg" />
-  <img src="/assets/image/3.jpg" />
+  <img src="//theme-hope-assets.vuejs.press/files/img/1.jpg" />
+  <img src="//theme-hope-assets.vuejs.press/files/img/2.jpg" />
+  <img src="//theme-hope-assets.vuejs.press/files/img/3.jpg" />
 </div>
 
 <style>

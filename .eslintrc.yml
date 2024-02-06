@@ -41,17 +41,22 @@ ignorePatterns:
   - "packages/*/assets/**"
   - "packages/*/lib/**"
   - "packages/create/template/**"
-  - "!**/.vuepress/**"
-  - "**/.vuepress/.cache/**"
-  - "**/.vuepress/.temp/**"
+  - "!.vuepress/"
+  - ".vuepress/.cache/"
+  - ".vuepress/.temp/"
 
 rules:
   "@typescript-eslint/ban-ts-comment":
     - off
 
+  "@typescript-eslint/consistent-type-imports":
+    - warn
+
   "@typescript-eslint/explicit-function-return-type":
     - warn
-    - allowTypedFunctionExpressions: true
+    - allowHigherOrderFunctions: true
+      allowDirectConstAssertionInArrowFunctions: true
+      allowTypedFunctionExpressions: true
 
   "@typescript-eslint/naming-convention":
     - warn
@@ -81,11 +86,8 @@ rules:
     - selector:
         - property
       format: null
-      custom:
-        regex: (^/.*/$|^@|^[a-z]+(?:-[a-z]+)*?$)
-        match: true
       # allow locales path like `/zh/`, alias starting with `@` and css property like `line-width`
-      filter: (^/.*/$|^@|^[a-z]+(?:-[a-z]+)*?$)
+      filter: (^/$|^/.*/$|^@|^[a-z]+(?:-[a-z]+)*?$)
       leadingUnderscore: allow
       trailingUnderscore: allow
 
@@ -98,6 +100,11 @@ rules:
       leadingUnderscore: allow
       trailingUnderscore: allow
 
+    - selector: import
+      format:
+        - PascalCase
+        - camelCase
+
     - selector: typeLike
       format:
         - PascalCase
@@ -107,6 +114,9 @@ rules:
     - ignoreRestArgs: true
 
   "@typescript-eslint/no-non-null-assertion":
+    - off
+
+  "@typescript-eslint/no-unsafe-enum-comparison":
     - off
 
   "@typescript-eslint/no-unsafe-member-access":
@@ -119,10 +129,7 @@ rules:
 
   import/consistent-type-specifier-style:
     - error
-    - prefer-inline
-
-  import/dynamic-import-chunkname:
-    - error
+    - prefer-top-level
 
   import/first:
     - error
@@ -139,7 +146,6 @@ rules:
   import/no-duplicates:
     - error
     - considerQueryString: true
-      prefer-inline: true
 
   import/no-named-default:
     - error
@@ -168,7 +174,7 @@ rules:
       newlines-between: always
 
   no-duplicate-imports:
-    - error
+    - off
 
   no-unmodified-loop-condition:
     - error
@@ -212,9 +218,17 @@ rules:
 
   vue/component-name-in-template-casing:
     - error
+    - PascalCase
 
   vue/component-options-name-casing:
     - error
+
+  vue/component-tags-order:
+    - error
+    - order:
+        - script
+        - template
+        - style
 
   vue/custom-event-name-casing:
     - error
@@ -354,6 +368,13 @@ overrides:
     rules:
       no-underscore-dangle:
         - off
+
+  - files:
+      - "packages/*/src/client/**/*.ts"
+
+    rules:
+      import/dynamic-import-chunkname:
+        - error
 
   - files:
       - "**/__tests__/**/*.spec.{j,t}s?(x)"

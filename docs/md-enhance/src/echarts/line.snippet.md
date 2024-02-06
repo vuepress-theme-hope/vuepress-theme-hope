@@ -1,6 +1,3 @@
-````md
-<!-- #region demo -->
-
 ::: echarts Dynamic Data & Time Axis
 
 ```js
@@ -83,7 +80,9 @@ const option = {
     },
   ],
 };
-setInterval(() => {
+const timeId = setInterval(() => {
+  if (myChart._disposed) return clearInterval(timeId);
+
   for (let i = 0; i < 5; i++) {
     data.shift();
     data.push(randomData());
@@ -99,6 +98,3 @@ setInterval(() => {
 ```
 
 :::
-
-<!-- #endregion demo -->
-````

@@ -1,4 +1,4 @@
-import { type PWALocaleConfig } from "../shared/index.js";
+import type { PWALocaleConfig } from "../shared/index.js";
 
 declare const PWA_LOCALES: PWALocaleConfig;
 

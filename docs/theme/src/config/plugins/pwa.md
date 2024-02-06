@@ -12,30 +12,15 @@ tag:
 
 ## Intro
 
-The `vuepress-plugin-pwa2` plugin provides progressive web app support.
+The theme can provide progressive web app support via `vuepress-plugin-pwa2`, and you need to **manually install the plugin** before using.
 
-`vuepress-theme-hope` passes `plugins.pwa` in theme options as plugin options to `vuepress-plugin-pwa2` plugin.
-
-::: tip Quick Enable
-
-To simply enable this feature, you can set `pwa: true`. <Badge text="Quick Enable Not recommended" type="warning" />
-
-:::
-
-::: info
-
-See the <ProjectLink name="pwa2" path="/config.html">pwa2 plugin documentation</ProjectLink> for more details.
-
-:::
+You can enable this feature by setting `plugins.pwa2` to `true` in theme options. This default behavior generate a PWA based on theme options.
 
 ## Plugin Options
 
-### showInstall
+`vuepress-theme-hope` passes `plugins.pwa` in theme options as plugin options to `vuepress-plugin-pwa2` plugin.
 
-- Type: `boolean`
-- Default: `true`
-
-Whether display install button when Service Worker is first registered successfully.
+You can pass your own options with `plugins.pwa`, here are some common ones:
 
 ### manifest
 
@@ -69,25 +54,12 @@ For docs of Manifest, please see [W3C Manifest](https://w3c.github.io/manifest/)
 
 :::
 
-### favicon
-
-- Type: `string`
-- Required: No
-
-Path of favicon.ico with absolute path.
-
-::: warning
-
-We recommend you to set favicon for your site
-
-:::
-
 ### themeColor
 
-- 类型: `string`
-- 默认值: `"#46bd87"`
+- Type: `string`
+- Default: `"#46bd87"`
 
-Theme Color, default is theme green
+Theme Color of the pwa.
 
 ### maxSize
 
@@ -148,7 +120,7 @@ Control logic when new content is found.
 
 - `"force"`: unregister current service worker immediately then refresh to get new content
 
-  ::: danger
+  ::: caution
 
   Though this ensures users are visiting the newest content, but this may affect visiting experiences.
 
@@ -171,7 +143,7 @@ Special settings for Apple
 - Type: `string`
 - Required: No
 
-Fill in the icon address used by Apple, the recommended size is 152×152
+Icon link used by Apple, the recommended size is 152×152.
 
 #### apple.statusBarColor
 
@@ -207,98 +179,15 @@ Tile icon
 
 The tile color will automatically fall back to themeColor if you don't set it.
 
-### hintComponent
-
-- Type: `string`
-- Default: `"SWHintPopup"`
-
-You can fill in the custom hint popup component path.
-
-### updateComponent
-
-- Type: `string`
-- Default: `"SWUpdatePopup"`
-
-You can fill in the custom update popup component path.
-
 ### appendBase
 
 - Type: `boolean`
 - Default: `false`
 
-Whether append base to all absolute links.
+Whether append base to all absolute links in options.
 
-### generateSwConfig
+::: info
 
-Options passed to `workbox-build`, for details, see [Workbox documentation](https://developers.google.com/web/tools/workbox/reference-docs/latest/module-workbox-build#.generateSW)
+Check <ProjectLink name="pwa2" path="/config/">pwa2 plugin documentation</ProjectLink> for all available options.
 
-### locales
-
-- Type: `PWALocaleConfig`
-
-  ```ts
-  interface PWALocaleData {
-    /**
-     * Install button text
-     */
-    install: string;
-
-    /**
-     * iOS install hint text
-     */
-    iOSInstall: string;
-
-    /**
-     * Cancel button text
-     */
-    cancel: string;
-
-    /**
-     * Close button text
-     */
-    close: string;
-
-    /**
-     * Previous image text
-     */
-    prevImage: string;
-
-    /**
-     * Next image text
-     */
-    nextImage: string;
-
-    /**
-     * Install explain text
-     */
-    explain: string;
-
-    /**
-     * Description label text
-     */
-    desc: string;
-
-    /**
-     * Feature label text
-     */
-    feature: string;
-
-    /**
-     * Update hint text
-     */
-    hint: string;
-
-    /**
-     * Update available text
-     */
-    update: string;
-  }
-
-  interface PWALocaleConfig {
-    [localePath: string]: PWALocaleData;
-  }
-  ```
-
-- Required: No
-
-Locales config for pwa plugin.
+:::

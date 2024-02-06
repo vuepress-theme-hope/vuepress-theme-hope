@@ -81,8 +81,8 @@ h6 {
   line-height: 1.25;
   overflow-wrap: break-word;
 
-  &:hover .header-anchor {
-    opacity: 1;
+  &:focus-visible {
+    outline: none;
   }
 }
 
@@ -113,29 +113,35 @@ h6 {
 }
 
 a.header-anchor {
-  float: left;
-
-  margin-top: 0.125em;
-  margin-inline-start: -0.87em;
-  padding-inline-end: 0.23em;
-
-  font-size: 0.85em;
-
-  opacity: 0;
-
-  transition: opacity 0.2s;
-
-  // hide heading anchor
-  @media print {
-    display: none !important;
-  }
+  position: relative;
+  color: inherit;
 
   &:hover {
-    text-decoration: none;
+    &::before {
+      content: "¶";
+
+      position: absolute;
+      bottom: 0;
+      left: -0.75em;
+
+      color: var(--c-brand);
+
+      font-size: 0.75em;
+    }
   }
 
   &:focus-visible {
-    opacity: 1;
+    outline: none;
+
+    &::before {
+      content: "¶";
+
+      position: absolute;
+      left: -0.75em;
+
+      color: var(--c-brand);
+      outline: auto;
+    }
   }
 }
 
@@ -182,7 +188,7 @@ table {
   border-collapse: collapse;
 }
 
-tr:nth-child(2n) {
+tr:nth-child(odd) {
   background: #f6f8fa;
 }
 

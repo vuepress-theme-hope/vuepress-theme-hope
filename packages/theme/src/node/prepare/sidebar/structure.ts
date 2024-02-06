@@ -1,8 +1,8 @@
-import { type App, type Page } from "@vuepress/core";
-import { path } from "@vuepress/utils";
-import { startsWith } from "vuepress-shared/node";
+import { startsWith } from "@vuepress/helper";
+import type { App, Page } from "vuepress/core";
+import { path } from "vuepress/utils";
 
-import { type SidebarSorterFunction } from "../../../shared/index.js";
+import type { SidebarSorterFunction } from "../../../shared/index.js";
 
 export interface FileInfo {
   type: "file";
@@ -30,23 +30,27 @@ export interface ThemeSidebarInfoOptions {
  */
 export const getStructureInfo = (
   pages: Page[],
-  scope: string
+  scope: string,
 ): StructureInfo[] => {
   const relatedPages = pages.filter(
     ({ filePathRelative, pathLocale }) =>
-      // generated from file and inside current scope
+      // Generated from file and inside current scope
       startsWith(filePathRelative, scope) &&
-      // root dir should filter other locales
-      (scope !== "" || pathLocale === "/")
+      // Filter other locales in root dir
+      (scope !== "" || pathLocale === "/"),
   );
 
   const sortedPages = relatedPages
-    // sort pages
+    // Sort pages
     .sort(
       (
         { filePathRelative: filePathRelative1 },
-        { filePathRelative: filePathRelative2 }
-      ) => filePathRelative1!.localeCompare(filePathRelative2!)
+        { filePathRelative: filePathRelative2 },
+      ) =>
+        filePathRelative1!.localeCompare(filePathRelative2!, undefined, {
+          numeric: true,
+          sensitivity: "accent",
+        }),
     );
 
   const structure: StructureInfo[] = [];
@@ -59,21 +63,21 @@ export const getStructureInfo = (
     const levels = relativePath.split("/");
 
     levels.forEach((level, index) => {
-      // already gets filename
+      // Already gets filename
       if (index === levels.length - 1) {
         currentDir.push({ type: "file", filename, path: relativePath });
       }
-      // still generating dir
+      // Still generating dir
       else {
         const result = currentDir.find<DirInfo>(
           (item): item is DirInfo =>
-            item.type === "dir" && item.dirname === level
+            item.type === "dir" && item.dirname === level,
         );
 
         if (result) {
           currentDir = result.children;
         }
-        // we shall create this dir
+        // We shall create this dir
         else {
           const dirInfo: DirInfo = {
             type: "dir",

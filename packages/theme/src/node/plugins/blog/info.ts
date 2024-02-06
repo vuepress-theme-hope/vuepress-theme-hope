@@ -1,18 +1,19 @@
-import { type Page } from "@vuepress/core";
-import { getDateInfo, timeTransformer } from "vuepress-shared/node";
+import { getDate } from "@vuepress/helper";
+import type { Page } from "vuepress/core";
+import { timeTransformer } from "vuepress-shared/node";
 
-import {
-  ArticleInfoType,
-  type ThemeBlogHomePageFrontmatter,
-  type ThemeNormalPageFrontmatter,
-  type ThemePageData,
-  type ThemeProjectHomePageFrontmatter,
+import type {
+  ThemeBlogHomePageFrontmatter,
+  ThemeNormalPageFrontmatter,
+  ThemePageData,
+  ThemeProjectHomePageFrontmatter,
 } from "../../../shared/index.js";
+import { ArticleInfoType } from "../../../shared/index.js";
 
 /** @private */
 export const injectBlogBasicInfo = (
   page: Page<ThemePageData>,
-  info: Record<string, unknown>
+  info: Record<string, unknown>,
 ): void => {
   const frontmatter = page.frontmatter as
     | ThemeProjectHomePageFrontmatter
@@ -20,13 +21,13 @@ export const injectBlogBasicInfo = (
     | ThemeNormalPageFrontmatter;
   const { createdTime } = page.data.git || {};
 
-  // resolve author
+  // Resolve author
   if ("author" in frontmatter)
     info[ArticleInfoType.author] = frontmatter.author;
 
-  // resolve date
+  // Resolve date
   if ("date" in frontmatter) {
-    const date = getDateInfo(page.frontmatter.date)?.value;
+    const date = getDate(page.frontmatter.date);
 
     if (date) {
       info[ArticleInfoType.date] = date.getTime();
@@ -40,27 +41,31 @@ export const injectBlogBasicInfo = (
     info[ArticleInfoType.date] = createdTime;
   }
 
-  // resolve category
+  // Resolve category
   if ("category" in frontmatter)
     info[ArticleInfoType.category] = frontmatter.category;
+  else if ("categories" in frontmatter)
+    info[ArticleInfoType.category] = frontmatter.categories;
 
-  // resolve tag
+  // Resolve tag
   if ("tag" in frontmatter) info[ArticleInfoType.tag] = frontmatter.tag;
+  else if ("tags" in frontmatter) info[ArticleInfoType.tag] = frontmatter.tags;
 
-  // resolve sticky
+  // Resolve sticky
   if ("sticky" in frontmatter)
     info[ArticleInfoType.sticky] = frontmatter.sticky;
 
-  // resolve image
+  // Resolve image
   if ("cover" in frontmatter) info[ArticleInfoType.cover] = frontmatter.cover;
 
-  // resolve isOriginal
+  // Resolve isOriginal
   if ("isOriginal" in frontmatter)
     info[ArticleInfoType.isOriginal] = frontmatter.isOriginal;
 
-  // save page excerpt to routeMeta
+  // Save page excerpt to routeMeta
   if (frontmatter.excerpt) info[ArticleInfoType.excerpt] = frontmatter.excerpt;
   else if (page.data.excerpt) info[ArticleInfoType.excerpt] = page.data.excerpt;
-  else if (frontmatter.description)
+  // Fallback to user-defined description
+  else if (frontmatter.description && !page.data.autoDesc)
     info[ArticleInfoType.excerpt] = frontmatter.description;
 };

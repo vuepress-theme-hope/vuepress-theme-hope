@@ -1,4 +1,4 @@
-import { colors } from "@vuepress/utils";
+import { colors } from "vuepress/utils";
 
 import { logger } from "../utils.js";
 
@@ -23,7 +23,7 @@ export const deprecatedLogger = ({
         scope ? ` in ${scope}` : ""
       }, please use "${colors.magenta(newOption)}" instead.${
         msg ? `\n${msg}` : ""
-      }`
+      }`,
     );
 
     if (newOption.includes(".")) {
@@ -31,13 +31,12 @@ export const deprecatedLogger = ({
       let temp = options;
 
       keys.forEach((key, index) => {
-        if (index !== keys.length - 1) {
-          // ensure level exists
-          temp[key] = temp[key] || {};
-
-          temp = temp[key] as Record<string, unknown>;
-        } else {
+        if (index === keys.length - 1) {
           temp[key] = options[deprecatedOption];
+        } else {
+          // Ensure level exists
+          temp[key] ||= {};
+          temp = temp[key] as Record<string, unknown>;
         }
       });
     } else {
@@ -52,7 +51,7 @@ export const droppedLogger = (
   options: Record<string, unknown>,
   droppedOption: string,
   hint = "",
-  newOption = ""
+  newOption = "",
 ): void => {
   if (droppedOption in options) {
     logger.error(
@@ -60,7 +59,7 @@ export const droppedLogger = (
         newOption
           ? `, please use ${colors.magenta(newOption)} instead.`
           : " and no longer supported"
-      }${hint ? `\n${hint}` : ""}`
+      }${hint ? `\n${hint}` : ""}`,
     );
 
     if (!newOption) delete options[droppedOption];
@@ -69,11 +68,11 @@ export const droppedLogger = (
 
 export const deprecatedMsg = (
   deprecatedOptions: string,
-  hint: string
+  hint: string,
 ): void => {
   logger.warn(
     `"${colors.magenta(deprecatedOptions)}" is ${colors.red(
-      "deprecated"
-    )}, please use "${colors.magenta(hint)}" instead.`
+      "deprecated",
+    )}, please use "${colors.magenta(hint)}" instead.`,
   );
 };

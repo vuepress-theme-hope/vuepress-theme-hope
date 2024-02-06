@@ -1,6 +1,7 @@
 ---
 title: SEO
 icon: dumbbell
+order: 1
 category:
   - Advanced
 tag:
@@ -8,13 +9,13 @@ tag:
   - SEO
 ---
 
-`vuepress-theme-hope` provides SEO enhancements via built-in <ProjectLink name="seo2">`vuepress-plugin-seo2`</ProjectLink>.
+`vuepress-theme-hope` provides SEO enhancements via built-in [`@vuepress/plugin-seo`][seo].
 
 To make the plugin work better, you may need to check the [page config](../../config/frontmatter/info.md) and configure them properly.
 
 ::: info
 
-`vuepress-theme-hope` passes `plugins.seo` in theme options as plugin options to `vuepress-plugin-seo2`.
+`vuepress-theme-hope` passes `plugins.seo` in theme options as plugin options to `@vuepress/plugin-seo`.
 
 :::
 
@@ -103,35 +104,22 @@ If a page does fit into the "unpopular" genre like books, music, etc., you can h
 You can use options `plugins.seo.ogp` in theme options. To pass in a function to modify the default OGP object to your needs and return it.
 
 ```ts
-function ogp<
-  ExtraPageData extends Record<string | number | symbol, unknown> = Record<
-    never,
-    never
-  >,
-  ExtraPageFrontmatter extends Record<
-    string | number | symbol,
-    unknown
-  > = Record<string, unknown>,
-  ExtraPageFields extends Record<string | number | symbol, unknown> = Record<
-    never,
-    never
-  >
->(
+function ogp(
   /** OGP Object inferred by plugin */
   ogp: SeoContent,
   /** Page Object */
-  page: ExtendPage<ExtraPageData, ExtraPageFrontmatter, ExtraPageFields>,
+  page: Page,
   /** VuePress App */
-  app: App
+  app: App,
 ): SeoContent;
 ```
 
-For detailed parameter structure, see <ProjectLink name="seo2" path="/config.html">config</ProjectLink>.
+For detailed parameter structure, see [seo plugin config][seo-config].
 
 For example, if you are using a third-party theme and set a `banner` in frontmatter for each article according to the theme requirements, then you can pass in the following `ogp`:
 
 ```ts
-({
+seoPlugin({
   ogp: (ogp, page) => ({
     ...ogp,
     "og:image": page.frontmatter.banner || ogp["og:image"],
@@ -144,34 +132,15 @@ For example, if you are using a third-party theme and set a `banner` in frontmat
 Like OGP, you can use `plugins.seo.jsonLd` options in theme options to pass in a function to modify the default JSON-LD object to your needs and return it.
 
 ```ts
-function jsonLd<
-  ExtraPageData extends Record<string | number | symbol, unknown> = Record<
-    never,
-    never
-  >,
-  ExtraPageFrontmatter extends Record<
-    string | number | symbol,
-    unknown
-  > = Record<string, unknown>,
-  ExtraPageFields extends Record<string | number | symbol, unknown> = Record<
-    never,
-    never
-  >
->(
+function jsonLd(
   /** JSON-LD Object inferred by plugin */
-  jsonLD: ArticleJSONLD | null,
+  jsonLD: ArticleSchema | BlogPostingSchema | WebPageSchema,
   /** Page Object */
-  page: ExtendPage<ExtraPageData, ExtraPageFrontmatter, ExtraPageFields>,
+  page: Page,
   /** VuePress App */
-  app: App
-): ArticleJSONLD | null;
+  app: App,
+): ArticleSchema | BlogPostingSchema | WebPageSchema;
 ```
-
-::: warning
-
-Please note that the plugin does not generate JSON-LD for non-article pages, so the first parameter of the function may be null.
-
-:::
 
 ## Canonical Link
 
@@ -195,26 +164,13 @@ To let search engine results always be the primary choice, you may need to set `
 Sometimes you may need to fit other protocols or provide the corresponding SEO tags in the format provided by other search engines. In this case, you can use the `plugins.seo.customHead` in theme options, whose type is:
 
 ```ts
-function customHead<
-  ExtraPageData extends Record<string | number | symbol, unknown> = Record<
-    never,
-    never
-  >,
-  ExtraPageFrontmatter extends Record<
-    string | number | symbol,
-    unknown
-  > = Record<string, unknown>,
-  ExtraPageFields extends Record<string | number | symbol, unknown> = Record<
-    never,
-    never
-  >
->(
-  /** Head config */
+function customHead(
+  /** Head tag config */
   head: HeadConfig[],
   /** Page Object */
-  page: Page<ExtraPageData, ExtraPageFrontmatter, ExtraPageFields>,
+  page: Page,
   /** VuePress App */
-  app: App
+  app: App,
 ): void;
 ```
 
@@ -257,3 +213,6 @@ As an internet marketing strategy, SEO considers how search engines work, the co
 ## Related Tools
 
 - [Google Rich Media Structure Test Tool](https://search.google.com/test/rich-results)
+
+[seo]: https://ecosystem.vuejs.press/plugins/seo/
+[seo-config]: https://ecosystem.vuejs.press/plugins/seo/config.html

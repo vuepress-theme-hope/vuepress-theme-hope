@@ -1,0 +1,72 @@
+:root {
+  --playground-header-bg-color: #eee;
+}
+
+#{hope-config.$dark-selector} {
+  --playground-header-bg-color: #333;
+}
+
+.kotlin-playground-wrapper {
+  overflow: hidden;
+
+  margin-top: 1rem;
+  margin-bottom: 1rem;
+  border: 1px solid var(--vp-brc);
+  border-radius: 6px;
+
+  .header {
+    padding: 0.5rem 0.75rem;
+    border-bottom: 1px solid var(--vp-brc);
+
+    background: var(--playground-header-bg-color, #eee);
+
+    font-weight: 500;
+    font-size: 1.1rem;
+    line-height: 1.5;
+    overflow-wrap: break-word;
+
+    transition: background var(--vp-ct) border-color var(--vp-ct);
+  }
+}
+
+.kotlin-playground-container {
+  .executable-fragment-wrapper {
+    margin-bottom: 24px;
+  }
+
+  .executable-fragment,
+  .output-wrapper,
+  .js-code-output-executor {
+    border: none !important;
+  }
+
+  .run-button {
+    top: 8px;
+    right: 8px;
+  }
+
+  .compiler-info {
+    padding: 6px 0;
+  }
+
+  .console-close {
+    top: 4px;
+    right: 4px;
+    border-radius: 4px;
+    cursor: pointer;
+  }
+}
+
+.kotlin-playground {
+  border-radius: 8px;
+  background-color: var(--vp-bgl);
+
+  pre {
+    padding: 0.5rem 1rem;
+  }
+
+  textarea {
+    width: 100%;
+    resize: none;
+  }
+}

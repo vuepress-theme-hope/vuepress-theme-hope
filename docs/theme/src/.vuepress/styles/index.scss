@@ -1,3 +1,25 @@
+:root {
+  --banner-text: #111;
+  --bg-2: url("https://theme-hope-assets.vuejs.press/bg/2-light.svg");
+  --bg-9: url("https://theme-hope-assets.vuejs.press/bg/9-light.svg") no-repeat
+    center/cover;
+  --bg-10: url("https://theme-hope-assets.vuejs.press/bg/10-light.svg")
+    no-repeat center/cover;
+  --bg-10-inverse: url("https://theme-hope-assets.vuejs.press/bg/10-dark.svg")
+    no-repeat center/cover;
+}
+
+html[data-theme="dark"] {
+  --banner-text: #eee;
+  --bg-2: url("https://theme-hope-assets.vuejs.press/bg/2-dark.svg");
+  --bg-9: url("https://theme-hope-assets.vuejs.press/bg/9-dark.svg") no-repeat
+    center/cover;
+  --bg-10: url("https://theme-hope-assets.vuejs.press/bg/10-dark.svg") no-repeat
+    center/cover;
+  --bg-10-inverse: url("https://theme-hope-assets.vuejs.press/bg/10-light.svg")
+    no-repeat center/cover;
+}
+
 .home {
   .vp-hero-info-wrapper {
     min-height: 600px;
@@ -5,12 +27,40 @@
 }
 
 .catalog-display-container {
-  overflow-x: visible;
-  overflow-y: auto;
+  overflow: visible auto;
 
   max-height: 75vh;
   margin: 0.5rem;
   border-radius: 0.5rem;
 
   overflow-wrap: break-word;
+}
+
+.plugins-wrapper {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+}
+
+.plugin-item {
+  margin: 8px 12px;
+  padding: 12px 16px;
+  border-radius: 8px;
+
+  background: var(--bg-color-secondary);
+  color: inherit;
+
+  font-size: 18px;
+  text-align: center;
+  text-decoration: none !important;
+
+  .font-icon {
+    margin-bottom: 4px;
+    color: var(--vp-tc);
+    font-size: 1.5em;
+  }
+
+  &:hover {
+    box-shadow: 0 2px 12px 0 var(--card-shadow);
+  }
 }

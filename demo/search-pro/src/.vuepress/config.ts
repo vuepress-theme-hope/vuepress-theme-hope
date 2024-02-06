@@ -1,6 +1,6 @@
-import { defineUserConfig } from "@vuepress/cli";
 import { defaultTheme } from "@vuepress/theme-default";
 import { cut } from "nodejs-jieba";
+import { defineUserConfig } from "vuepress/cli";
 import { searchProPlugin } from "vuepress-plugin-search-pro";
 
 const base = <"/" | `/${string}/`>process.env["BASE"] || "/";
@@ -13,7 +13,7 @@ export default defineUserConfig({
   description: "VuePress Client Search plugin",
 
   theme: defaultTheme({
-    logo: "/logo.svg",
+    logo: "https://theme-hope-assets.vuejs.press/logo.svg",
 
     repo: "vuepress-theme-hope/vuepress-theme-hope/tree/main/demo/search-pro/",
 
@@ -26,7 +26,7 @@ export default defineUserConfig({
       hotReload: true,
       customFields: [
         {
-          getter: ({ frontmatter }) => frontmatter.tag as string[],
+          getter: ({ frontmatter }): string[] => <string[]>frontmatter["tag"],
           formatter: `Tag: $content`,
         },
       ],

@@ -1,7 +1,9 @@
 /* eslint-disable vue/no-unused-properties */
-import { usePageLang } from "@vuepress/client";
-import { type VNode, computed, defineComponent, h } from "vue";
-import { startsWith } from "vuepress-shared/client";
+import { startsWith } from "@vuepress/helper/client";
+import type { VNode } from "vue";
+import { computed, defineComponent, h, ref } from "vue";
+import { usePageLang } from "vuepress/client";
+import { LoadingIcon } from "vuepress-shared/client";
 
 import { useSize } from "../composables/index.js";
 import { videoIframeAllow } from "../utils/index.js";
@@ -184,16 +186,18 @@ export default defineComponent({
 
   setup(props) {
     const lang = usePageLang();
-    const { el, width, height } = useSize<HTMLIFrameElement>(props);
+    const { el, width, height, resize } = useSize<HTMLIFrameElement>(props);
+
+    const loaded = ref(false);
 
     const coreURL = computed(() =>
       props.id
         ? `${props.id}?`
         : props.listType === "playlist" && props.list
-        ? `?listType=playlist&list=${
-            startsWith(props.list, "PL") ? props.list : `PL${props.list}`
-          }&`
-        : null
+          ? `?listType=playlist&list=${
+              startsWith(props.list, "PL") ? props.list : `PL${props.list}`
+            }&`
+          : null,
     );
 
     const params = computed(() => {
@@ -223,16 +227,16 @@ export default defineComponent({
     const videoLink = computed(() =>
       coreURL.value
         ? `https://www.youtube.com/embed/${coreURL.value}${params.value}`
-        : null
+        : null,
     );
 
-    return (): VNode[] | null =>
+    return (): (VNode | null)[] =>
       videoLink.value
         ? [
             h(
               "div",
               { class: "youtube-desc" },
-              h("a", { class: "sr-only", href: videoLink.value }, props.title)
+              h("a", { class: "sr-only", href: videoLink.value }, props.title),
             ),
             h("iframe", {
               ref: el,
@@ -242,10 +246,15 @@ export default defineComponent({
               allow: videoIframeAllow,
               style: {
                 width: width.value,
-                height: height.value,
+                height: loaded.value ? height.value : 0,
+              },
+              onLoad: () => {
+                loaded.value = true;
+                resize();
               },
             }),
+            loaded.value ? null : h(LoadingIcon),
           ]
-        : null;
+        : [];
   },
 });

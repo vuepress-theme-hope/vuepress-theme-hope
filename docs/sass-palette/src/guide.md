@@ -56,15 +56,13 @@ useSassPalette(app, {
 
 If the user sets:
 
-```scss
-// .vuepress/styles/abc-palette.scss
+```scss title=".vuepress/styles/abc-palette.scss"
 $colorA: red;
 ```
 
 And you are providing a default config file with:
 
-```scss
-// vuepress-plugin-abc/styles/palette.scss
+```scss title="vuepress-plugin-abc/styles/palette.scss"
 $colorA: blue !default;
 $colorB: green !default;
 ```
@@ -123,15 +121,13 @@ useSassPalette(app, {
 
 If users are setting:
 
-```scss
-// .vuepress/styles/abc-palette.scss
+```scss title=".vuepress/styles/abc-palette.scss"
 $colorA: red;
 ```
 
 And you are providing a default palette file with:
 
-```scss
-// vuepress-plugin-abc/styles/palette.scss
+```scss title="vuepress-plugin-abc/styles/palette.scss"
 $colorA: blue !default;
 $colorB: green !default;
 ```

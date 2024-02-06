@@ -1,4 +1,4 @@
-import { type NavbarOptions } from "../../navbar.js";
+import type { NavbarOptions } from "../../navbar.js";
 
 export interface NavbarLocaleData {
   /**
@@ -35,9 +35,9 @@ export type NavbarComponent =
  * 导航栏布局选项
  */
 export interface NavbarLayoutOptions {
-  start?: (NavbarComponent | string)[];
-  center?: (NavbarComponent | string)[];
-  end?: (NavbarComponent | string)[];
+  start?: string[];
+  center?: string[];
+  end?: string[];
 }
 
 export interface NavbarLocaleOptions {

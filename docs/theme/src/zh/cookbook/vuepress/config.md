@@ -3,7 +3,7 @@ title: VuePress 配置
 icon: gears
 order: 4
 category:
-  - 教程知识
+  - 教程
   - VuePress
 tag:
   - 配置
@@ -113,7 +113,7 @@ export default {
 一个基础的客户端配置文件是这样的：
 
 ```ts
-import { defineClientConfig } from "@vuepress/client";
+import { defineClientConfig } from "vuepress/client";
 
 export default defineClientConfig({
   enhance({ app, router, siteData }) {},

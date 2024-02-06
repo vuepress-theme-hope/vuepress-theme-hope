@@ -1,4 +1,5 @@
-import { defineUserConfig } from "@vuepress/cli";
+import { defineUserConfig } from "vuepress/cli";
+
 import theme from "./theme.js";
 
 const base = <"/" | `/${string}/`>process.env["BASE"] || "/";

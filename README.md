@@ -1,6 +1,6 @@
 <!-- markdownlint-disable -->
 <p align="center">
-  <img width="240" src="https://theme-hope.vuejs.press/logo.svg" style="text-align: center;">
+  <img width="240" src="https://theme-hope-assets.vuejs.press/logo.svg" style="text-align: center;">
 </p>
 <h1 align="center">vuepress-theme-hope</h1>
 <h4 align="center">A VuePress theme with tons of features✨</h4>
@@ -11,7 +11,7 @@
 
 </h4>
 
-[![Author: Mr.Hope](https://img.shields.io/badge/Author-Mr.Hope-blue.svg?style=for-the-badge)](https://mrhope.site)
+[![Author: Mr.Hope](https://img.shields.io/badge/Author-Mr.Hope-blue.svg?style=for-the-badge)](https://mister-hope.com)
 [![License](https://img.shields.io/npm/l/vuepress-theme-hope.svg?style=for-the-badge)](https://github.com/vuepress-theme-hope/vuepress-theme-hope/blob/main/LICENSE)
 [![Open in Visual Studio Code](https://img.shields.io/badge/-open%20in%20vscode-blue?style=for-the-badge&logo=visualstudiocode)](https://open.vscode.dev/vuepress-theme-hope/vuepress-theme-hope)
 
@@ -42,7 +42,7 @@ We recommend you to contact using [issues](https://github.com/vuepress-theme-hop
 
 ## Details
 
-V2 is coming come together with [_VuePress2_](https://vuejs.press), with the power of [_Vite4_](https://vitejs.dev) / [_Webpack5_](https://webpack.js.org) and [_Vue3_](https://vuejs.org).
+V2 is based on [_VuePress2_](https://vuejs.press), with the power of [_Vite5_](https://vitejs.dev) / [_Webpack5_](https://webpack.js.org) using [_Vue3_](https://vuejs.org) to provide powerful features.
 
 V2 is a full rewrite including:
 
@@ -51,11 +51,11 @@ V2 is a full rewrite including:
 
 Also V2 has a better performance:🚀
 
-- DevServer cold start time reduced by **50%**
+- DevServer cold start time reduced by **70%**
 - Build memory usage reduced by **65%**
-- Build time reduced by **30%**
-- Output Size reduced by **25%**
-- Webpage performance up to **70%**
+- Build time reduced by **75%**
+- Output Size reduced by **45%**
+- Webpage performance up to **60%**
 
 ## Project Status
 

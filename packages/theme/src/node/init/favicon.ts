@@ -1,13 +1,13 @@
-import { type App } from "@vuepress/core";
-import { isLinkHttp } from "vuepress-shared/node";
+import { isLinkHttp } from "@vuepress/helper";
+import type { App } from "vuepress/core";
 
 export const addFavicon = (app: App, favicon: string): void => {
   const { base, head } = app.options;
   const faviconLink = isLinkHttp(favicon)
     ? favicon
-    : favicon.replace(/^\/?/, base);
+    : favicon.replace(/^\/?/u, base);
 
-  // ensure favicon is not injected
+  // Ensure favicon is not injected
   if (
     head.every(
       ([tag, attrs]) =>
@@ -15,7 +15,7 @@ export const addFavicon = (app: App, favicon: string): void => {
           tag === "link" &&
           attrs["rel"] === "icon" &&
           attrs["href"] === faviconLink
-        )
+        ),
     )
   )
     head.push(["link", { rel: "icon", href: faviconLink }]);

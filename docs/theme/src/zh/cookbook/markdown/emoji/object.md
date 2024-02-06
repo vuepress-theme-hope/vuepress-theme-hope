@@ -2,7 +2,7 @@
 title: 对象 Emoji
 icon: object-group
 category:
-  - 教程知识
+  - 教程
   - Markdown
 tag:
   - Markdown

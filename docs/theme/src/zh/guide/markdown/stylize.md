@@ -18,8 +18,7 @@ tag:
 
 @tab TS
 
-```ts {9-11}
-// .vuepress/config.ts
+```ts {9-11} title=".vuepress/config.ts"
 import { defineUserConfig } from "vuepress";
 import { hopeTheme } from "vuepress-theme-hope";
 
@@ -38,8 +37,7 @@ export default defineUserConfig({
 
 @tab JS
 
-```js {9-11}
-// .vuepress/config.js
+```js {9-11} title=".vuepress/config.js"
 import { hopeTheme } from "vuepress-theme-hope";
 
 export default {
@@ -71,8 +69,7 @@ export default {
 
 @tab TS
 
-```ts {9-21}
-// .vuepress/config.ts
+```ts {9-21} title=".vuepress/config.ts"
 import { defineUserConfig } from "vuepress";
 import { hopeTheme } from "vuepress-theme-hope";
 
@@ -101,8 +98,7 @@ export default defineUserConfig({
 
 @tab JS
 
-```js {9-21}
-// .vuepress/config.js
+```js {9-21} title=".vuepress/config.js"
 import { hopeTheme } from "vuepress-theme-hope";
 
 export default {
@@ -130,18 +126,13 @@ export default {
 
 :::
 
-<!-- markdownlint-disable MD033 -->
-
 另一个例子是你想要将所有的“不或者没”开头的强调词设置为红色，这样 `设置它*没有*任何效果，请*不要*这样使用。`变成：“设置它<span style="color:red">没有</span>任何效果，请<span style="color:red">不要</span>这样使用。"
-
-<!-- markdownlint-enable MD033 -->
 
 ::: code-tabs#language
 
 @tab TS
 
-```ts {9-21}
-// .vuepress/config.ts
+```ts {9-21} title=".vuepress/config.ts"
 import { defineUserConfig } from "vuepress";
 import { hopeTheme } from "vuepress-theme-hope";
 
@@ -170,8 +161,7 @@ export default defineUserConfig({
 
 @tab JS
 
-```js {9-21}
-// .vuepress/config.js
+```js {9-21} title=".vuepress/config.js"
 import { mdEnhancePlugin } from "vuepress-plugin-md-enhance";
 
 export default {

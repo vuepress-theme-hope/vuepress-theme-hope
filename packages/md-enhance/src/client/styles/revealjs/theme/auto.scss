@@ -1,0 +1,83 @@
+/**
+ * auto theme
+ */
+
+@use "sass:color";
+@use "@sass-palette/hope-config";
+@use "helper/helper";
+@use "highlight/dark";
+@use "highlight/light";
+
+#{hope-config.$light-selector} {
+  $link-color: #2a76dd;
+
+  @include helper.theme(
+    "auto",
+    (
+      background-color: #fff,
+      main-color: #222,
+      heading-color: #222,
+      main-font-size: 42px,
+      main-font: (
+        "Source Sans Pro",
+        helvetica,
+        sans-serif,
+      ),
+      heading-font: (
+        "Source Sans Pro",
+        helvetica,
+        sans-serif,
+      ),
+      heading-text-shadow: none,
+      heading-letter-spacing: normal,
+      heading-text-transform: uppercase,
+      heading-font-weight: 600,
+      link-color: $link-color,
+      link-color-hover: color.scale($link-color, $lightness: 15%),
+      selection-background-color: color.scale($link-color, $lightness: 25%),
+      heading1-size: 2.5em,
+      heading2-size: 1.6em,
+      heading3-size: 1.3em,
+      heading4-size: 1em,
+    )
+  ) {
+    @include light.highlight;
+  }
+}
+
+#{hope-config.$dark-selector} {
+  $link-color: #42affa;
+
+  @include helper.theme(
+    "auto",
+    (
+      background-color: #191919,
+      main-color: #fff,
+      heading-color: #fff,
+      main-font-size: 42px,
+      main-font: (
+        "Source Sans Pro",
+        helvetica,
+        sans-serif,
+      ),
+      heading-font: (
+        "Source Sans Pro",
+        helvetica,
+        sans-serif,
+      ),
+      heading-text-shadow: none,
+      heading-letter-spacing: normal,
+      heading-text-transform: uppercase,
+      heading-font-weight: 600,
+      link-color: $link-color,
+      link-color-hover: color.scale($link-color, $lightness: 15%),
+      selection-background-color: color.scale($link-color, $lightness: 25%),
+      heading1-size: 2.5em,
+      heading2-size: 1.6em,
+      heading3-size: 1.3em,
+      heading4-size: 1em,
+    )
+  ) {
+    @include dark.highlight;
+  }
+}

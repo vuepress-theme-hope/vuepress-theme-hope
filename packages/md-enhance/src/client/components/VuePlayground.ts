@@ -1,14 +1,8 @@
-import { type Repl, type ReplProps, type ReplStore } from "@vue/repl";
-import {
-  type VNode,
-  computed,
-  defineComponent,
-  h,
-  onMounted,
-  ref,
-  shallowRef,
-} from "vue";
-import { LoadingIcon, deepAssign } from "vuepress-shared/client";
+import type { Repl, ReplProps, ReplStore } from "@vue/repl";
+import { deepAssign } from "@vuepress/helper/client";
+import type { VNode } from "vue";
+import { computed, defineComponent, h, onMounted, ref, shallowRef } from "vue";
+import { LoadingIcon } from "vuepress-shared/client";
 
 import { useVuePlaygroundConfig } from "../helpers/index.js";
 import { getVuePlaygroundSettings } from "../utils/index.js";
@@ -50,21 +44,26 @@ export default defineComponent({
     const loading = ref(true);
     const component = shallowRef<typeof Repl>();
     const store = shallowRef<ReplStore>();
+    const editor = shallowRef();
 
     const playgroundOptions = computed(() =>
       deepAssign(
         {},
         vuePlaygroundOptions,
-        getVuePlaygroundSettings(props.settings)
-      )
+        getVuePlaygroundSettings(props.settings),
+      ),
     );
 
     const setupRepl = async (): Promise<void> => {
-      const { ReplStore, Repl } = await import(
-        /* webpackChunkName: "vue-repl" */ "@vue/repl"
-      );
+      const [{ ReplStore, Repl }, { default: codeMirror }] = await Promise.all([
+        import(/* webpackChunkName: "vue-repl" */ "@vue/repl"),
+        import(
+          /* webpackChunkName: "vue-repl" */ "@vue/repl/codemirror-editor"
+        ),
+      ]);
 
       component.value = Repl;
+      editor.value = codeMirror;
       store.value = new ReplStore({
         serializedState: decodeURIComponent(props.files),
       });
@@ -83,25 +82,21 @@ export default defineComponent({
         props.title
           ? h("div", { class: "header" }, decodeURIComponent(props.title))
           : null,
-        h(
-          "div",
-          {
-            class: "repl-container",
-          },
-          [
-            loading.value
-              ? h(LoadingIcon, { class: "preview-loading", height: 192 })
-              : null,
-            component.value
-              ? h(component.value, <ReplProps>{
-                  store: store.value,
-                  autoResize: true,
-                  ...playgroundOptions.value,
-                  layout: "horizontal",
-                })
-              : null,
-          ]
-        ),
+        h("div", { class: "repl-container" }, [
+          loading.value
+            ? h(LoadingIcon, { class: "preview-loading", height: 192 })
+            : null,
+          component.value
+            ? h(component.value, <ReplProps>{
+                // eslint-disable-next-line @typescript-eslint/no-unsafe-assignment
+                editor: editor.value,
+                store: store.value,
+                autoResize: true,
+                ...playgroundOptions.value,
+                layout: "horizontal",
+              })
+            : null,
+        ]),
       ]),
     ];
   },

@@ -1,26 +1,24 @@
-import {
-  type MatchInfo,
-  type SearchIndex,
-  getStoredFields,
-  search,
-} from "slimsearch";
-import { entries } from "vuepress-shared/client";
+import { entries } from "@vuepress/helper/client";
+import type { MatchInfo, SearchIndex } from "slimsearch";
+import { getStoredFields, search } from "slimsearch";
 
 import { getMatchedContent } from "./matchContent.js";
 import { getSearchOptions } from "./utils.js";
-import {
-  type CustomFieldIndexItem,
-  type HeadingIndexItem,
-  type IndexItem,
-  type PageIndexItem,
-  type TextIndexItem,
+import type {
+  CustomFieldIndexItem,
+  IndexItem,
+  PageIndexItem,
 } from "../../shared/index.js";
-import {
-  type MatchedItem,
-  type SearchOptions,
-  type SearchResult,
-  type Word,
+import type {
+  HeadingMatchedItem,
+  MatchedItem,
+  SearchOptions,
+  SearchResult,
+  TitleMatchedItem,
+  Word,
 } from "../typings/index.js";
+
+declare const SEARCH_PRO_SORT_STRATEGY: "max" | "total";
 
 export type MiniSearchResult = IndexItem & {
   terms: string[];
@@ -28,17 +26,27 @@ export type MiniSearchResult = IndexItem & {
   match: MatchInfo;
 };
 
-interface ResultMap {
-  [key: string]: {
-    title: string;
-    contents: [result: MatchedItem, score: number][];
-  };
+interface PageResult {
+  title: string;
+  contents: [result: MatchedItem, score: number][];
 }
+
+interface ResultMap {
+  [key: string]: PageResult;
+}
+
+const sortWithTotal = (valueA: PageResult, valueB: PageResult): number =>
+  valueB.contents.reduce((total, [, score]) => total + score, 0) -
+  valueA.contents.reduce((total, [, score]) => total + score, 0);
+
+const sortWithMax = (valueA: PageResult, valueB: PageResult): number =>
+  Math.max(...valueB.contents.map(([, score]) => score)) -
+  Math.max(...valueA.contents.map(([, score]) => score));
 
 export const getResults = (
   query: string,
   localeIndex: SearchIndex<IndexItem, string>,
-  searchOptions: SearchOptions = {}
+  searchOptions: SearchOptions = {},
 ): SearchResult[] => {
   const resultMap: ResultMap = {};
 
@@ -47,107 +55,98 @@ export const getResults = (
     query,
     getSearchOptions({
       boost: {
-        [/** heading */ "h"]: 2,
-        [/** text */ "t"]: 1,
-        [/** customFields */ "c"]: 4,
+        [/** Heading */ "h"]: 2,
+        [/** Text */ "t"]: 1,
+        [/** CustomFields */ "c"]: 4,
       },
       ...searchOptions,
-    })
+    }),
   );
 
   results.forEach((result) => {
     const { id, terms, score } = result;
-    const isText = id.includes("/");
-    const isHeading = !isText && id.includes("#");
     const isCustomField = id.includes("@");
-    const [key, info] = id.split(/[#@]/);
+    const isSection = id.includes("#");
+    const [pageIndex, info] = id.split(/[#@]/);
+    const pageId = Number(pageIndex);
 
-    const { contents } = (resultMap[key] ??= {
+    const displayTerms = terms
+      .sort((a, b) => a.length - b.length)
+      .filter((item, index) =>
+        terms.slice(index + 1).every((term) => !term.includes(item)),
+      );
+
+    const { contents } = (resultMap[pageId] ??= {
       title: "",
       contents: [],
     });
 
-    if (isHeading) {
-      contents.push([
-        {
-          type: "heading",
-          key: key,
-          anchor: (<HeadingIndexItem>result).a,
-          display: terms
-            .map((term) =>
-              getMatchedContent((<HeadingIndexItem>result).h, term)
-            )
-            .filter((item): item is Word[] => item !== null),
-        },
-        score,
-      ]);
-    }
-    // TextIndexItem
-    else if (isText) {
-      const [headingIndex] = info.split("/");
-
-      const { h: heading = "", a: anchor = "" } =
-        (getStoredFields(localeIndex, `${key}#${headingIndex}`) as unknown as
-          | HeadingIndexItem
-          | undefined) || {};
-
-      contents.push([
-        {
-          type: "text",
-          key: key,
-          header: heading,
-          anchor: anchor,
-          display: terms
-            .map((term) => getMatchedContent((<TextIndexItem>result).t, term))
-            .filter((item): item is Word[] => item !== null),
-        },
-        score,
-      ]);
-    } else if (isCustomField) {
+    // CustomFieldIndexItem
+    if (isCustomField) {
       contents.push([
         {
           type: "customField",
-          key: key,
+          id: pageId,
           index: info,
-          display: terms
+          display: displayTerms
             .map((term) =>
               (<CustomFieldIndexItem>result).c.map((field) =>
-                getMatchedContent(field, term)
-              )
+                getMatchedContent(field, term),
+              ),
             )
             .flat()
             .filter((item): item is Word[] => item !== null),
         },
         score,
       ]);
-    }
-    // PageIndexItem
-    else {
-      contents.push([
-        {
-          type: "title",
-          key: key,
-          display: terms
-            .map((term) => getMatchedContent((<PageIndexItem>result).h, term))
-            .filter((item): item is Word[] => item !== null),
-        },
-        score,
-      ]);
+    } else {
+      const headerContent = displayTerms
+        .map((term) => getMatchedContent((<PageIndexItem>result).h, term))
+        .filter((item): item is Word[] => item !== null);
+
+      if (headerContent.length)
+        contents.push([
+          <TitleMatchedItem | HeadingMatchedItem>{
+            type: isSection ? "heading" : "title",
+            id: pageId,
+            ...(isSection && { anchor: info }),
+            display: headerContent,
+          },
+          score,
+        ]);
+
+      if (/** Text */ "t" in result)
+        for (const text of result.t) {
+          const matchedContent = displayTerms
+            .map((term) => getMatchedContent(text, term))
+            .filter((item): item is Word[] => item !== null);
+
+          if (matchedContent.length)
+            contents.push([
+              {
+                type: "text",
+                id: pageId,
+                ...(isSection && { anchor: info }),
+                display: matchedContent,
+              },
+              score,
+            ]);
+        }
     }
   });
 
   return entries(resultMap)
-    .sort(
-      ([, valueA], [, valueB]) =>
-        valueB.contents.reduce((total, [, score]) => total + score, 0) -
-        valueA.contents.reduce((total, [, score]) => total + score, 0)
+    .sort(([, valueA], [, valueB]) =>
+      SEARCH_PRO_SORT_STRATEGY === "total"
+        ? sortWithTotal(valueA, valueB)
+        : sortWithMax(valueA, valueB),
     )
     .map(([id, { title, contents }]) => {
-      // search to get title
+      // Search to get title
       if (!title) {
         const pageIndex = getStoredFields(
           localeIndex,
-          id
+          id,
         ) as unknown as PageIndexItem;
 
         if (pageIndex) title = pageIndex.h;

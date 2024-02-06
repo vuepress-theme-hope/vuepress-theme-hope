@@ -1,15 +1,16 @@
 // Russian [ru]
-import { type Dayjs, type default as dayjs } from "dayjs";
+// eslint-disable-next-line import/no-named-default
+import type { Dayjs, default as dayjs } from "dayjs";
 
-import { type Locale } from "./locale.js";
+import type { Locale } from "./locale.js";
 
 const monthFormat =
   "января_февраля_марта_апреля_мая_июня_июля_августа_сентября_октября_ноября_декабря".split(
-    "_"
+    "_",
   );
 const monthStandalone =
   "январь_февраль_март_апрель_май_июнь_июль_август_сентябрь_октябрь_ноябрь_декабрь".split(
-    "_"
+    "_",
   );
 
 const monthShortFormat =
@@ -25,14 +26,14 @@ const plural = (word: string, num: number): string => {
   return num % 10 === 1 && num % 100 !== 11
     ? forms[0]
     : num % 10 >= 2 && num % 10 <= 4 && (num % 100 < 10 || num % 100 >= 20)
-    ? forms[1]
-    : forms[2]; // eslint-disable-line
+      ? forms[1]
+      : forms[2]; // eslint-disable-line
 };
 
 const relativeTimeWithPlural = (
   number: number,
   withoutSuffix: boolean,
-  key: string
+  key: string,
 ): string => {
   const format: Record<string, string> = {
     mm: withoutSuffix ? "минута_минуты_минут" : "минуту_минуты_минут",
@@ -44,7 +45,7 @@ const relativeTimeWithPlural = (
 
   if (key === "m") return withoutSuffix ? "минута" : "минуту";
 
-  return `${number} ${plural(format[key], +number)}`;
+  return `${number} ${plural(format[key], Number(number))}`;
 };
 
 const months = (dayjsInstance: Dayjs, format: string): string => {

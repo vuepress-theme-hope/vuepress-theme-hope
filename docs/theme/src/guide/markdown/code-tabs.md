@@ -13,14 +13,13 @@ The theme provides you code tabs support.
 
 <!-- more -->
 
-## Config
+## Settings
 
 ::: code-tabs#language
 
 @tab TS
 
-```ts {8-10}
-// .vuepress/config.ts
+```ts {8-10} title=".vuepress/config.ts"
 import { defineUserConfig } from "vuepress";
 import { hopeTheme } from "vuepress-theme-hope";
 
@@ -37,8 +36,7 @@ export default defineUserConfig({
 
 @tab JS
 
-```js {7-9}
-// .vuepress/config.js
+```js {7-9} title=".vuepress/config.js"
 import { hopeTheme } from "vuepress-theme-hope";
 
 export default {
@@ -56,110 +54,6 @@ export default {
 
 ## Usage
 
-This is the same as tabs function, but it's special built for code blocks.
+This is the same as [tabs feature](./tabs.md), but it's special built for code blocks.
 
-Only code fence after `@tab` marker is allowed inside code tabs, other Markdown content will be ignored.
-
-## Demo
-
-Install VuePress Theme Hope:
-
-::: code-tabs#shell
-
-@tab pnpm
-
-```bash
-pnpm add -D vuepress-theme-hope
-```
-
-@tab yarn
-
-```bash
-yarn add -D vuepress-theme-hope
-```
-
-@tab:active npm
-
-```bash
-npm i -D vuepress-theme-hope
-```
-
-:::
-
-Install VuePress Plugin Markdown Enhance:
-
-::: code-tabs#shell
-
-@tab pnpm
-
-```bash
-pnpm add -D vuepress-plugin-md-enhance
-```
-
-@tab yarn
-
-```bash
-yarn add -D vuepress-plugin-md-enhance
-```
-
-@tab:active npm
-
-```bash
-npm i -D vuepress-plugin-md-enhance
-```
-
-:::
-
-:::: details Code
-
-````md
-Install VuePress Theme Hope:
-
-::: code-tabs#shell
-
-@tab pnpm
-
-```bash
-pnpm add -D vuepress-theme-hope
-```
-
-@tab yarn
-
-```bash
-yarn add -D vuepress-theme-hope
-```
-
-@tab:active npm
-
-```bash
-npm i -D vuepress-theme-hope
-```
-
-:::
-
-Install VuePress Plugin Markdown Enhance:
-
-::: code-tabs#shell
-
-@tab pnpm
-
-```bash
-pnpm add -D vuepress-plugin-md-enhance
-```
-
-@tab yarn
-
-```bash
-yarn add -D vuepress-plugin-md-enhance
-```
-
-@tab:active npm
-
-```bash
-npm i -D vuepress-plugin-md-enhance
-```
-
-:::
-````
-
-::::
+<!-- @include: @md-enhance/guide/code/code-tabs.md#after -->

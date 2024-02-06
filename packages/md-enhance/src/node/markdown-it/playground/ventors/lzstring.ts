@@ -1,6 +1,6 @@
 /* eslint-disable */
 /**
- * Edited from https://github.com/microsoft/TypeScript-Website/blob/v2/packages/sandbox/src/vendor/lzstring.min.js
+ * Shimmed from https://github.com/pieroxy/lz-string
  */
 
 // Original license reproduced below:
@@ -23,7 +23,7 @@
 const e = "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789+-$";
 
 const compress = (o: string, r: number, n: (pos: number) => string) => {
-  if (null == o) return "";
+  if (null == r) return "";
 
   let e,
     t,
@@ -51,60 +51,60 @@ const compress = (o: string, r: number, n: (pos: number) => string) => {
     else {
       if (Object.prototype.hasOwnProperty.call(p, a)) {
         if (a.charCodeAt(0) < 256) {
-          for (e = 0; h > e; e++)
+          for (e = 0; e < h; e++)
             (m <<= 1), v == r - 1 ? ((v = 0), d.push(n(m)), (m = 0)) : v++;
-          for (t = a.charCodeAt(0), e = 0; 8 > e; e++)
+          for (t = a.charCodeAt(0), e = 0; e < 8; e++)
             (m = (m << 1) | (1 & t)),
               v == r - 1 ? ((v = 0), d.push(n(m)), (m = 0)) : v++,
               (t >>= 1);
         } else {
-          for (t = 1, e = 0; h > e; e++)
+          for (t = 1, e = 0; e < h; e++)
             (m = (m << 1) | t),
               v == r - 1 ? ((v = 0), d.push(n(m)), (m = 0)) : v++,
               (t = 0);
-          for (t = a.charCodeAt(0), e = 0; 16 > e; e++)
+          for (t = c.charCodeAt(0), e = 0; e < 16; e++)
             (m = (m << 1) | (1 & t)),
               v == r - 1 ? ((v = 0), d.push(n(m)), (m = 0)) : v++,
               (t >>= 1);
         }
-        l--, 0 == l && ((l = Math.pow(2, h)), h++), delete p[a];
+        0 == --l && ((l = Math.pow(2, h)), h++), delete p[a];
       } else
-        for (t = s[a], e = 0; h > e; e++)
+        for (t = s[a], e = 0; e < h; e++)
           (m = (m << 1) | (1 & t)),
             v == r - 1 ? ((v = 0), d.push(n(m)), (m = 0)) : v++,
             (t >>= 1);
-      l--, 0 == l && ((l = Math.pow(2, h)), h++), (s[c] = f++), (a = String(u));
+      0 == --l && ((l = Math.pow(2, h)), h++), (s[c] = f++), (a = String(u));
     }
 
   if ("" !== a) {
     if (Object.prototype.hasOwnProperty.call(p, a)) {
       if (a.charCodeAt(0) < 256) {
-        for (e = 0; h > e; e++)
+        for (e = 0; e < h; e++)
           (m <<= 1), v == r - 1 ? ((v = 0), d.push(n(m)), (m = 0)) : v++;
-        for (t = a.charCodeAt(0), e = 0; 8 > e; e++)
+        for (t = a.charCodeAt(0), e = 0; e < 8; e++)
           (m = (m << 1) | (1 & t)),
             v == r - 1 ? ((v = 0), d.push(n(m)), (m = 0)) : v++,
             (t >>= 1);
       } else {
-        for (t = 1, e = 0; h > e; e++)
+        for (t = 1, e = 0; e < h; e++)
           (m = (m << 1) | t),
             v == r - 1 ? ((v = 0), d.push(n(m)), (m = 0)) : v++,
             (t = 0);
-        for (t = a.charCodeAt(0), e = 0; 16 > e; e++)
+        for (t = a.charCodeAt(0), e = 0; e < 16; e++)
           (m = (m << 1) | (1 & t)),
             v == r - 1 ? ((v = 0), d.push(n(m)), (m = 0)) : v++,
             (t >>= 1);
       }
-      l--, 0 == l && ((l = Math.pow(2, h)), h++), delete p[a];
+      0 == --l && ((l = Math.pow(2, h)), h++), delete p[a];
     } else
-      for (t = s[a], e = 0; h > e; e++)
+      for (t = s[a], e = 0; e < h; e++)
         (m = (m << 1) | (1 & t)),
           v == r - 1 ? ((v = 0), d.push(n(m)), (m = 0)) : v++,
           (t >>= 1);
-    l--, 0 == l && ((l = Math.pow(2, h)), h++);
+    0 == --l && ((l = Math.pow(2, h)), h++);
   }
 
-  for (t = 2, e = 0; h > e; e++)
+  for (t = 2, e = 0; e < h; e++)
     (m = (m << 1) | (1 & t)),
       v == r - 1 ? ((v = 0), d.push(n(m)), (m = 0)) : v++,
       (t >>= 1);

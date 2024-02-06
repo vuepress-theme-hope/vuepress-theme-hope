@@ -1,10 +1,10 @@
 import inquirer from "inquirer";
 
-import { type PackageManager } from "../utils/index.js";
+import type { PackageManager } from "../utils/index.js";
 
 export type Lang = "english (US)" | "简体中文";
 
-export interface CreateI18n {
+export interface CreateLocale {
   flow: {
     getVersion: string;
     createPackage: string;
@@ -19,10 +19,11 @@ export interface CreateI18n {
     git: string;
     workflow: string;
     packageManager: string;
+    bundler: string;
     preset: string;
     devServer: string;
 
-    // package.json
+    // Package.json
     name: string;
     version: string;
     description: string;
@@ -38,6 +39,7 @@ export interface CreateI18n {
   error: {
     name: string;
     version: string;
+    bundler: string;
     preset: string;
     outputDirMissing: (packageManager: PackageManager) => string;
     updateDirMissing: (packageManager: PackageManager) => string;
@@ -45,7 +47,7 @@ export interface CreateI18n {
   };
 }
 
-export const i18n: Record<Lang, CreateI18n> = {
+export const i18n: Record<Lang, CreateLocale> = {
   简体中文: {
     flow: {
       getVersion: "获取依赖的最新版本...",
@@ -62,6 +64,7 @@ export const i18n: Record<Lang, CreateI18n> = {
       i18n: "项目需要用到多语言么?",
       git: "是否初始化 Git 仓库?",
       workflow: "是否需要一个自动部署文档到 GitHub Pages 的工作流？",
+      bundler: "你想要使用哪个打包器？",
       preset: "你想要创建什么类型的项目？",
       devServer: "是否想要现在启动 Demo 查看?",
       name: "设置应用名称",
@@ -81,7 +84,8 @@ export const i18n: Record<Lang, CreateI18n> = {
     error: {
       name: "应用名称应只包含小写字母、数字和连接线 (-)",
       version: "此版本无效，版本号应为 'x.x.x'",
-      preset: "预设 (--preset) 仅支持 doc 或 blog",
+      bundler: "打包器 (--bundler) 仅支持 vite 或 webpack",
+      preset: "预设 (--preset) 仅支持 docs 或 blog",
       outputDirMissing: (packageManager: PackageManager): string =>
         `"[dir]" 的方括号表示此处为一个参数，你应该替换为自己想使用的文件夹名称，如 "my-blog", "project-docs" 等!\n例如: "${packageManager} init vuepress-theme-hope project-docs"`,
       updateDirMissing: (packageManager: PackageManager): string =>
@@ -106,6 +110,7 @@ export const i18n: Record<Lang, CreateI18n> = {
       i18n: "Does the project need multiple languages?",
       git: "Initialize a git repository?",
       workflow: "Do you need a GitHub workflow to deploy docs on GitHub pages?",
+      bundler: "Which bundler do you want to use?",
       preset: "What type of project do you want to create?",
       packageManager: "Choose package manager",
       devServer: "Would you like to preview template now?",
@@ -127,7 +132,8 @@ export const i18n: Record<Lang, CreateI18n> = {
       name: "package name should only contain lowercase characters, numbers and dash",
       version:
         "This version is not a valid one. Version should be like 'x.x.x'",
-      preset: 'preset (--preset) only support "doc" or "blog"',
+      bundler: 'bundler (--bundler) only support "vite" or "webpack"',
+      preset: 'preset (--preset) only support "docs" or "blog"',
       outputDirMissing: (packageManager: PackageManager): string =>
         `The brackets in "[dir]" means it is an argument, you should replace it with folder name you want to use! E.g.: "my-blog", "project-docs"\nFor example: "${packageManager} init vuepress-theme-hope project-docs"`,
       updateDirMissing: (packageManager: PackageManager): string =>
@@ -140,7 +146,7 @@ export const i18n: Record<Lang, CreateI18n> = {
 
 interface LanguageResult {
   lang: Lang;
-  message: CreateI18n;
+  locale: CreateLocale;
 }
 
 export const getLanguage = async (): Promise<LanguageResult> => {
@@ -155,6 +161,6 @@ export const getLanguage = async (): Promise<LanguageResult> => {
 
   return {
     lang: language,
-    message: i18n[language],
+    locale: i18n[language],
   };
 };

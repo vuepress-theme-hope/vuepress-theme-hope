@@ -1,15 +1,15 @@
 // Vitest Snapshot v1, https://vitest.dev/guide/snapshot.html
 
 exports[`tabs > Should render multiple block 1`] = `
-"<Tabs id=\\"0\\" :data='[{\\"id\\":\\"js\\"},{\\"id\\":\\"ts\\"}]'>
-<template #title0=\\"{ value, isActive }\\">js</template>
-<template #title1=\\"{ value, isActive }\\">ts</template>
-<template #tab0=\\"{ value, isActive }\\">
-<pre><code class=\\"language-js\\">const a = 1;
+"<Tabs id="0" :data='[{"id":"js"},{"id":"ts"}]'>
+<template #title0="{ value, isActive }">js</template>
+<template #title1="{ value, isActive }">ts</template>
+<template #tab0="{ value, isActive }">
+<pre><code class="language-js">const a = 1;
 </code></pre>
 </template>
-<template #tab1=\\"{ value, isActive }\\">
-<pre><code class=\\"language-ts\\">const a = 1;
+<template #tab1="{ value, isActive }">
+<pre><code class="language-ts">const a = 1;
 </code></pre>
 </template>
 </Tabs>
@@ -17,15 +17,15 @@ exports[`tabs > Should render multiple block 1`] = `
 `;
 
 exports[`tabs > Should render multiple block 2`] = `
-"<Tabs id=\\"0\\" :data='[{\\"id\\":\\"js\\"},{\\"id\\":\\"ts\\"}]'>
-<template #title0=\\"{ value, isActive }\\">js</template>
-<template #title1=\\"{ value, isActive }\\">ts</template>
-<template #tab0=\\"{ value, isActive }\\">
-<pre><code class=\\"language-js\\">const a = 1;
+"<Tabs id="0" :data='[{"id":"js"},{"id":"ts"}]'>
+<template #title0="{ value, isActive }">js</template>
+<template #title1="{ value, isActive }">ts</template>
+<template #tab0="{ value, isActive }">
+<pre><code class="language-js">const a = 1;
 </code></pre>
 </template>
-<template #tab1=\\"{ value, isActive }\\">
-<pre><code class=\\"language-ts\\">const a = 1;
+<template #tab1="{ value, isActive }">
+<pre><code class="language-ts">const a = 1;
 </code></pre>
 </template>
 </Tabs>
@@ -33,10 +33,10 @@ exports[`tabs > Should render multiple block 2`] = `
 `;
 
 exports[`tabs > Should render single block 1`] = `
-"<Tabs id=\\"0\\" :data='[{\\"id\\":\\"js\\"}]'>
-<template #title0=\\"{ value, isActive }\\">js</template>
-<template #tab0=\\"{ value, isActive }\\">
-<pre><code class=\\"language-js\\">const a = 1;
+"<Tabs id="0" :data='[{"id":"js"}]'>
+<template #title0="{ value, isActive }">js</template>
+<template #tab0="{ value, isActive }">
+<pre><code class="language-js">const a = 1;
 </code></pre>
 </template>
 </Tabs>
@@ -44,10 +44,10 @@ exports[`tabs > Should render single block 1`] = `
 `;
 
 exports[`tabs > Should render single block 2`] = `
-"<Tabs id=\\"0\\" :data='[{\\"id\\":\\"js\\"}]'>
-<template #title0=\\"{ value, isActive }\\">js</template>
-<template #tab0=\\"{ value, isActive }\\">
-<pre><code class=\\"language-js\\">const a = 1;
+"<Tabs id="0" :data='[{"id":"js"}]'>
+<template #title0="{ value, isActive }">js</template>
+<template #tab0="{ value, isActive }">
+<pre><code class="language-js">const a = 1;
 </code></pre>
 </template>
 </Tabs>
@@ -55,10 +55,10 @@ exports[`tabs > Should render single block 2`] = `
 `;
 
 exports[`tabs > Should support active 1`] = `
-"<Tabs id=\\"0\\" :data='[{\\"id\\":\\"js\\"}]' :active=\\"0\\">
-<template #title0=\\"{ value, isActive }\\">js</template>
-<template #tab0=\\"{ value, isActive }\\">
-<pre><code class=\\"language-js\\">const a = 1;
+"<Tabs id="0" :data='[{"id":"js"}]' :active="0">
+<template #title0="{ value, isActive }">js</template>
+<template #tab0="{ value, isActive }">
+<pre><code class="language-js">const a = 1;
 </code></pre>
 </template>
 </Tabs>
@@ -66,10 +66,10 @@ exports[`tabs > Should support active 1`] = `
 `;
 
 exports[`tabs > Should support active 2`] = `
-"<Tabs id=\\"0\\" :data='[{\\"id\\":\\"js\\"}]' :active=\\"0\\">
-<template #title0=\\"{ value, isActive }\\">js</template>
-<template #tab0=\\"{ value, isActive }\\">
-<pre><code class=\\"language-js\\">const a = 1;
+"<Tabs id="0" :data='[{"id":"js"}]' :active="0">
+<template #title0="{ value, isActive }">js</template>
+<template #tab0="{ value, isActive }">
+<pre><code class="language-js">const a = 1;
 </code></pre>
 </template>
 </Tabs>
@@ -77,15 +77,15 @@ exports[`tabs > Should support active 2`] = `
 `;
 
 exports[`tabs > Should support active 3`] = `
-"<Tabs id=\\"0\\" :data='[{\\"id\\":\\"js\\"},{\\"id\\":\\"ts\\"}]' :active=\\"1\\">
-<template #title0=\\"{ value, isActive }\\">js</template>
-<template #title1=\\"{ value, isActive }\\">ts</template>
-<template #tab0=\\"{ value, isActive }\\">
-<pre><code class=\\"language-js\\">const a = 1;
+"<Tabs id="0" :data='[{"id":"js"},{"id":"ts"}]' :active="1">
+<template #title0="{ value, isActive }">js</template>
+<template #title1="{ value, isActive }">ts</template>
+<template #tab0="{ value, isActive }">
+<pre><code class="language-js">const a = 1;
 </code></pre>
 </template>
-<template #tab1=\\"{ value, isActive }\\">
-<pre><code class=\\"language-ts\\">const a = 1;
+<template #tab1="{ value, isActive }">
+<pre><code class="language-ts">const a = 1;
 </code></pre>
 </template>
 </Tabs>
@@ -93,15 +93,15 @@ exports[`tabs > Should support active 3`] = `
 `;
 
 exports[`tabs > Should support active 4`] = `
-"<Tabs id=\\"0\\" :data='[{\\"id\\":\\"js\\"},{\\"id\\":\\"ts\\"}]' :active=\\"1\\">
-<template #title0=\\"{ value, isActive }\\">js</template>
-<template #title1=\\"{ value, isActive }\\">ts</template>
-<template #tab0=\\"{ value, isActive }\\">
-<pre><code class=\\"language-js\\">const a = 1;
+"<Tabs id="0" :data='[{"id":"js"},{"id":"ts"}]' :active="1">
+<template #title0="{ value, isActive }">js</template>
+<template #title1="{ value, isActive }">ts</template>
+<template #tab0="{ value, isActive }">
+<pre><code class="language-js">const a = 1;
 </code></pre>
 </template>
-<template #tab1=\\"{ value, isActive }\\">
-<pre><code class=\\"language-ts\\">const a = 1;
+<template #tab1="{ value, isActive }">
+<pre><code class="language-ts">const a = 1;
 </code></pre>
 </template>
 </Tabs>
@@ -109,10 +109,10 @@ exports[`tabs > Should support active 4`] = `
 `;
 
 exports[`tabs > Should support tabs id 1`] = `
-"<Tabs id=\\"0\\" :data='[{\\"id\\":\\"js\\"}]' tab-id=\\"event\\">
-<template #title0=\\"{ value, isActive }\\">js</template>
-<template #tab0=\\"{ value, isActive }\\">
-<pre><code class=\\"language-js\\">const a = 1;
+"<Tabs id="0" :data='[{"id":"js"}]' tab-id="event">
+<template #title0="{ value, isActive }">js</template>
+<template #tab0="{ value, isActive }">
+<pre><code class="language-js">const a = 1;
 </code></pre>
 </template>
 </Tabs>
@@ -120,10 +120,10 @@ exports[`tabs > Should support tabs id 1`] = `
 `;
 
 exports[`tabs > Should support tabs id 2`] = `
-"<Tabs id=\\"0\\" :data='[{\\"id\\":\\"js\\"}]' tab-id=\\"event-id\\">
-<template #title0=\\"{ value, isActive }\\">js</template>
-<template #tab0=\\"{ value, isActive }\\">
-<pre><code class=\\"language-js\\">const a = 1;
+"<Tabs id="0" :data='[{"id":"js"}]' tab-id="event-id">
+<template #title0="{ value, isActive }">js</template>
+<template #tab0="{ value, isActive }">
+<pre><code class="language-js">const a = 1;
 </code></pre>
 </template>
 </Tabs>
@@ -131,10 +131,10 @@ exports[`tabs > Should support tabs id 2`] = `
 `;
 
 exports[`tabs > Should support tabs id 3`] = `
-"<Tabs id=\\"0\\" :data='[{\\"id\\":\\"js\\"}]' tab-id=\\"id with space\\">
-<template #title0=\\"{ value, isActive }\\">js</template>
-<template #tab0=\\"{ value, isActive }\\">
-<pre><code class=\\"language-js\\">const a = 1;
+"<Tabs id="0" :data='[{"id":"js"}]' tab-id="id with space">
+<template #title0="{ value, isActive }">js</template>
+<template #tab0="{ value, isActive }">
+<pre><code class="language-js">const a = 1;
 </code></pre>
 </template>
 </Tabs>
@@ -142,10 +142,10 @@ exports[`tabs > Should support tabs id 3`] = `
 `;
 
 exports[`tabs > Should support tabs id 4`] = `
-"<Tabs id=\\"0\\" :data='[{\\"id\\":\\"js\\"}]' tab-id=\\"id starts and having space in the end\\">
-<template #title0=\\"{ value, isActive }\\">js</template>
-<template #tab0=\\"{ value, isActive }\\">
-<pre><code class=\\"language-js\\">const a = 1;
+"<Tabs id="0" :data='[{"id":"js"}]' tab-id="id starts and having space in the end">
+<template #title0="{ value, isActive }">js</template>
+<template #tab0="{ value, isActive }">
+<pre><code class="language-js">const a = 1;
 </code></pre>
 </template>
 </Tabs>
@@ -153,12 +153,12 @@ exports[`tabs > Should support tabs id 4`] = `
 `;
 
 exports[`tabs > should ignore other items 1`] = `
-"<Tabs id=\\"0\\" :data='[{\\"id\\":\\"js\\"}]' :active=\\"0\\">
-<template #title0=\\"{ value, isActive }\\">js</template>
-<template #tab0=\\"{ value, isActive }\\">
-<pre><code class=\\"language-js\\">const a = 1;
+"<Tabs id="0" :data='[{"id":"js"}]' :active="0">
+<template #title0="{ value, isActive }">js</template>
+<template #tab0="{ value, isActive }">
+<pre><code class="language-js">const a = 1;
 </code></pre>
-<pre><code class=\\"language-ts\\">const a = 1;
+<pre><code class="language-ts">const a = 1;
 </code></pre>
 </template>
 </Tabs>
@@ -166,12 +166,12 @@ exports[`tabs > should ignore other items 1`] = `
 `;
 
 exports[`tabs > should ignore other items 2`] = `
-"<Tabs id=\\"0\\" :data='[{\\"id\\":\\"js\\"}]' :active=\\"0\\">
-<template #title0=\\"{ value, isActive }\\">js</template>
-<template #tab0=\\"{ value, isActive }\\">
-<pre><code class=\\"language-js\\">const a = 1;
+"<Tabs id="0" :data='[{"id":"js"}]' :active="0">
+<template #title0="{ value, isActive }">js</template>
+<template #tab0="{ value, isActive }">
+<pre><code class="language-js">const a = 1;
 </code></pre>
-<pre><code class=\\"language-ts\\">const a = 1;
+<pre><code class="language-ts">const a = 1;
 </code></pre>
 </template>
 </Tabs>

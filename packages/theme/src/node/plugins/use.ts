@@ -1,13 +1,13 @@
-import { type App } from "@vuepress/core";
-import { useReadingTimePlugin } from "vuepress-plugin-reading-time2";
+import { isPlainObject } from "@vuepress/helper";
+import { useReadingTimePlugin } from "@vuepress/plugin-reading-time";
+import type { App } from "vuepress/core";
 import { useSassPalettePlugin } from "vuepress-plugin-sass-palette";
-import { isPlainObject } from "vuepress-shared/node";
 
 import { useGitPlugin } from "./git.js";
 import { useExtendsPagePlugin } from "./pageConverter.js";
 import { usePrismPlugin } from "./prism.js";
-import { type PluginsOptions, type ThemeData } from "../../shared/index.js";
-import { type HopeThemeBehaviorOptions } from "../typings/index.js";
+import type { PluginsOptions, ThemeData } from "../../shared/index.js";
+import type { HopeThemeBehaviorOptions } from "../typings/index.js";
 import { TEMPLATE_FOLDER } from "../utils.js";
 
 /**
@@ -20,9 +20,9 @@ export const usePlugin = (
   themeData: ThemeData,
   plugins: PluginsOptions,
   hotReload: boolean,
-  behavior: HopeThemeBehaviorOptions
+  behavior: HopeThemeBehaviorOptions,
 ): void => {
-  // respect git options
+  // Respect git options
   if ("git" in plugins)
     useGitPlugin(
       app,
@@ -34,9 +34,9 @@ export const usePlugin = (
               updatedTime: true,
             }
           : plugins.git
-        : {}
+        : {},
     );
-  // only use git plugin in production or debug mode
+  // Only use git plugin in production or debug mode
   else if (hotReload || app.env.isBuild)
     useGitPlugin(app, {
       createdTime: true,
@@ -47,7 +47,7 @@ export const usePlugin = (
   if (plugins.readingTime !== false)
     useReadingTimePlugin(
       app,
-      isPlainObject(plugins.readingTime) ? plugins.readingTime : {}
+      isPlainObject(plugins.readingTime) ? plugins.readingTime : {},
     );
 
   if (plugins.prismjs !== false) usePrismPlugin(app);

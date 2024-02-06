@@ -1,29 +1,24 @@
-import { createRequire } from "node:module";
+import { getRealPath } from "@vuepress/helper";
+import type { App } from "vuepress/core";
 
-import { type App } from "@vuepress/core";
-import { path } from "@vuepress/utils";
+import type { LightGalleryPlugin } from "./options.js";
 
-import { type LightGalleryPlugin } from "./options.js";
-
-const require = createRequire(import.meta.url);
+const { url } = import.meta;
 
 export const prepareLightGalleryPlugins = async (
   app: App,
-  pluginNames: LightGalleryPlugin[] = ["pager", "share", "zoom"]
+  pluginNames: LightGalleryPlugin[] = ["pager", "share", "zoom"],
 ): Promise<void> => {
   const plugins = pluginNames.map(
     (pluginName) =>
-      `import(/* webpackChunkName: "lightgallery" */ "${path.resolve(
-        require.resolve(
-          `lightgallery/plugins/${pluginName}/lg-${pluginName}.es5.js`
-        )
-      )}")`
+      `import(/* webpackChunkName: "lightgallery" */ "${getRealPath(
+        `lightgallery/plugins/${pluginName}/lg-${pluginName}.es5.js`,
+        url,
+      )}")`,
   );
   const pluginsStyles = pluginNames.map(
     (pluginName) =>
-      `import "${path.resolve(
-        require.resolve(`lightgallery/css/lg-${pluginName}.css`)
-      )}";`
+      `import "${getRealPath(`lightgallery/css/lg-${pluginName}.css`, url)}";`,
   );
 
   await app.writeTemp(
@@ -35,6 +30,6 @@ export const useLightGalleryPlugins = () =>
   Promise.all([
 ${plugins.map((item) => `    ${item}`).join(",\n")}
   ]);
-`
+`,
   );
 };

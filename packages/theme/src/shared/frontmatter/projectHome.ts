@@ -1,4 +1,4 @@
-import { type ThemeHopePageFrontmatter } from "./home.js";
+import type { ThemeHopePageFrontmatter } from "./home.js";
 
 export interface ThemeProjectHomeActionOptions {
   /**
@@ -23,6 +23,13 @@ export interface ThemeProjectHomeActionOptions {
    * @default "default"
    */
   type?: "primary" | "default";
+
+  /**
+   * Action icon
+   *
+   * 操作图标
+   */
+  icon?: string;
 }
 
 export interface ThemeProjectHomeHighlightItem {

@@ -37,6 +37,7 @@ tag:
 - `text`: 按钮文字
 - `link`: 按钮链接
 - `type`: 按钮类型 (仅支持 `"primary"` 与 `"default"` (默认))
+- `icon`(可选): 可填入完整路径或绝对路径的图片链接，或 FontClass
 
 ## 项目功能 (旧版)
 

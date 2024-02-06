@@ -1,9 +1,10 @@
-import { type PhotoSwipeOptions as OriginalPhotoSwipeOptions } from "photoswipe";
-import { type App, inject } from "vue";
+import type { PhotoSwipeOptions as OriginalPhotoSwipeOptions } from "photoswipe";
+import type { App } from "vue";
+import { inject } from "vue";
 
 export type PhotoSwipeOptions = Omit<
   OriginalPhotoSwipeOptions,
-  // these are handled internally
+  // These are handled internally
   "dataSource" | "index"
 >;
 

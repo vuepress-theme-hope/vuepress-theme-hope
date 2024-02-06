@@ -1,11 +1,12 @@
-import { type App, inject } from "vue";
+import type { App } from "vue";
+import { inject } from "vue";
 
-import {
-  type ArtalkOptions,
-  type CommentOptions,
-  type GiscusOptions,
-  type TwikooOptions,
-  type WalineOptions,
+import type {
+  ArtalkOptions,
+  CommentOptions,
+  GiscusOptions,
+  TwikooOptions,
+  WalineOptions,
 } from "../../shared/index.js";
 
 declare const __VUEPRESS_DEV__: boolean;

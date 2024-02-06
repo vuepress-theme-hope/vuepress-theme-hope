@@ -1,10 +1,10 @@
-import { type PluginSimple } from "markdown-it";
+import { encodeData } from "@vuepress/helper";
+import type { PluginSimple } from "markdown-it";
 import type Renderer from "markdown-it/lib/renderer.js";
-import { utoa } from "vuepress-shared/node";
 
 const mermaidRenderer: Renderer.RenderRule = (tokens, index) =>
-  `<Mermaid id="mermaid-${index}" code="${utoa(
-    tokens[index].content
+  `<Mermaid id="mermaid-${index}" code="${encodeData(
+    tokens[index].content,
   )}"></Mermaid>`;
 
 interface MermaidOptions {
@@ -36,7 +36,7 @@ ${diagram}
 `
 }\
 ${
-  diagram === "mermaid"
+  diagram === "mermaid" || diagram === "sankey-beta"
     ? content
     : content
         .split("\n")
@@ -46,11 +46,12 @@ ${
 `;
 
 const getMermaid = (options: MermaidOptions, index: number): string =>
-  `<Mermaid id="mermaid-${index}" code="${utoa(
-    getMermaidContent(options)
-  )}"></Mermaid>`;
+  `<Mermaid id="mermaid-${index}" code="${encodeData(getMermaidContent(options))}"${
+    options.title ? ` title="${encodeData(options.title)}"` : ""
+  }></Mermaid>`;
 
 const DIAGRAM_MAP: Record<string, string> = {
+  block: "block-beta",
   class: "classDiagram",
   c4c: "C4Context",
   er: "erDiagram",
@@ -59,14 +60,18 @@ const DIAGRAM_MAP: Record<string, string> = {
   journey: "journey",
   mindmap: "mindmap",
   pie: "pie",
+  quadrant: "quadrantChart",
+  requirement: "requirementDiagram",
+  sankey: "sankey-beta",
   sequence: "sequenceDiagram",
   state: "stateDiagram-v2",
   timeline: "timeline",
+  xy: "xychart-beta",
 };
 
 export const mermaid: PluginSimple = (md) => {
   // Handle ```mermaid blocks
-  const fence = md.renderer.rules.fence;
+  const { fence } = md.renderer.rules;
 
   md.renderer.rules.fence = (...args): string => {
     const [tokens, index] = args;
@@ -81,7 +86,7 @@ export const mermaid: PluginSimple = (md) => {
     if (DIAGRAM_MAP[name])
       return getMermaid(
         { diagram: DIAGRAM_MAP[name], title: rest.join(" "), content },
-        index
+        index,
       );
 
     return fence!(...args);

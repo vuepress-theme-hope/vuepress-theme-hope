@@ -1,11 +1,15 @@
-import { bundle } from "../../scripts/rollup.js";
+import { getDirname, path } from "vuepress/utils";
+
+import { rollupBundle } from "../../scripts/rollup.js";
+
+const __dirname = getDirname(import.meta.url);
 
 export default [
-  ...bundle("node/index", {
-    external: ["bcrypt-ts/node", "chokidar"],
+  ...rollupBundle("node/index", {
+    external: ["bcrypt-ts/node", "chokidar", "nodejs-jieba"],
     moduleSideEffects: () => false,
   }),
-  ...bundle(
+  ...rollupBundle(
     {
       base: "client",
       target: "bundle",
@@ -15,19 +19,19 @@ export default [
       alias: [
         {
           find: /^@theme-hope\/(.*)/,
-          replacement: "./src/client/$1.ts",
+          replacement: path.resolve(__dirname, "./src/client/$1.ts"),
         },
       ],
       external: [
+        "@vuepress/helper/noopComponent",
+        "@vuepress/plugin-blog/client",
         "@vuepress/plugin-external-link-icon/client",
+        "@vuepress/plugin-reading-time/client",
         "@vuepress/plugin-theme-data/client",
         "bcrypt-ts/browser",
         "body-scroll-lock",
-        "vuepress-plugin-blog2/client",
         "vuepress-plugin-comment2/pageview",
         "vuepress-plugin-md-enhance/SlidePage",
-        "vuepress-plugin-reading-time2/client",
-        "vuepress-shared/noopModule",
         /\.jpg$/,
       ],
       dts: false,
@@ -36,6 +40,6 @@ export default [
           "balloon-css/balloon.css",
           "vuepress-shared/client/styles/message.scss",
         ].includes(id),
-    }
+    },
   ),
 ];

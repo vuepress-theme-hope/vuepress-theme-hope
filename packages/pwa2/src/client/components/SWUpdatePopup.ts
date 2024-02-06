@@ -1,14 +1,13 @@
+import { useLocaleConfig } from "@vuepress/helper/client";
+import type { SlotsType, VNode } from "vue";
 import {
-  type SlotsType,
   Transition,
-  type VNode,
   computed,
   defineComponent,
   h,
   onMounted,
   shallowRef,
 } from "vue";
-import { useLocaleConfig } from "vuepress-shared/client";
 
 import { UpdateIcon } from "../components/icons.js";
 import { usePWAEvent } from "../composables/index.js";
@@ -24,7 +23,7 @@ export default defineComponent({
     default?: (props: {
       enabled: boolean;
       reload: () => void;
-    }) => VNode[] | VNode;
+    }) => VNode[] | VNode | null;
   }>,
 
   setup(_props, { slots }) {
@@ -69,9 +68,9 @@ export default defineComponent({
                 [
                   locale.value.update,
                   h("span", { class: "icon-wrapper" }, h(UpdateIcon)),
-                ]
+                ],
               )
-            : null)
+            : null),
       );
   },
 });

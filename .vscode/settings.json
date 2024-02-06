@@ -1,8 +1,6 @@
 {
-  "cSpell.language": "en,ru",
   "cSpell.words": [
     // words
-    "atou",
     "ascendingly",
     "autoplay",
     "blockquotes",
@@ -31,11 +29,9 @@
     "trackpad",
     "unexist",
     "unzip",
-    "utoa",
     "webp",
 
     // name
-    "addthis",
     "artalk",
     "artplayer",
     "avid",
@@ -78,6 +74,7 @@
     "livescript",
     "mathml",
     "mailchimp",
+    "markmap",
     "mathjax",
     "mdit",
     "mpegts",
@@ -95,7 +92,9 @@
     "prismjs",
     "qzone",
     "recaptcha",
+    "revealjs",
     "replit",
+    "sandpack",
     "shiki",
     "slimsearch",
     "stackblitz",
@@ -106,6 +105,8 @@
     "tencloud",
     "twikoo",
     "typecho",
+    "unocss",
+    "vidstack",
     "vite",
     "vssue",
     "vuejs",
@@ -177,5 +178,6 @@
     "packages/*/lib/**": true
   },
   "vitest.commandLine": "pnpm vitest",
+  "prettier.prettierPath": "./node_modules/prettier",
   "typescript.tsdk": "node_modules/typescript/lib"
 }

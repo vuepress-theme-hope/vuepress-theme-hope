@@ -12,14 +12,13 @@ Let the Markdown file in your VuePress site support footnotes.
 
 <!-- more -->
 
-## Config
+## Settings
 
 ::: code-tabs#language
 
 @tab TS
 
-```ts {8-10}
-// .vuepress/config.ts
+```ts {8-10} title=".vuepress/config.ts"
 import { defineUserConfig } from "vuepress";
 import { hopeTheme } from "vuepress-theme-hope";
 
@@ -36,8 +35,7 @@ export default defineUserConfig({
 
 @tab JS
 
-```js {7-9}
-// .vuepress/config.js
+```js {7-9} title=".vuepress/config.js"
 import { hopeTheme } from "vuepress-theme-hope";
 
 export default {
@@ -53,42 +51,4 @@ export default {
 
 :::
 
-## Syntax
-
-- Use `[^Anchor text]` in Markdown to define a footnote
-
-- Use `[^Anchor text]: ...` to describe footnote content
-
-- If there are multiple paragraphs in footnote, the paragraph show be double indented
-
-## Demo
-
-Footnote 1 link[^first].
-
-Footnote 2 link[^second].
-
-Inline footnote^[Text of inline footnote] definition.
-
-Duplicated footnote reference[^second].
-
-[^first]: Footnote **can have markup**
-
-    and multiple paragraphs.
-
-[^second]: Footnote text.
-
-```md
-Footnote 1 link[^first].
-
-Footnote 2 link[^second].
-
-Inline footnote^[Text of inline footnote] definition.
-
-Duplicated footnote reference[^second].
-
-[^first]: Footnote **can have markup**
-
-    and multiple paragraphs.
-
-[^second]: Footnote text.
-```
+<!-- @include: @md-enhance/guide/content/footnote.md#after -->

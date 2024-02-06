@@ -1,24 +1,24 @@
-import { fs } from "@vuepress/utils";
 import {
   entries,
   isArray,
   isString,
   startsWith,
   values,
-} from "vuepress-shared/node";
+} from "@vuepress/helper";
+import { fs } from "vuepress/utils";
 
-import { type ThemeData } from "../../shared/index.js";
+import type { ThemeData } from "../../shared/index.js";
 import { TEMPLATE_FOLDER, logger } from "../utils.js";
 
 /** @private */
 export const checkSocialMediaIcons = (
-  themeData: ThemeData
+  themeData: ThemeData,
 ): Record<string, string> => {
   const icons: Record<string, string> = {};
 
   const checkIcon = (
     key: string,
-    value: string | [string, string]
+    value: string | [string, string],
   ): string | false => {
     if (isString(value)) {
       const templatePath = `${TEMPLATE_FOLDER}socialMediaIcons/${key.toLocaleLowerCase()}.svg`;
@@ -35,14 +35,14 @@ export const checkSocialMediaIcons = (
     }
 
     if (isArray(value)) {
-      // it’s a svg string
+      // It’s a svg string
       if (startsWith(value[1], "<svg")) {
         icons[key] = value[1];
 
         return value[0];
       }
 
-      // it’s probably a path
+      // It’s probably a path
       if (fs.existsSync(value[1])) {
         icons[key] = fs.readFileSync(value[1], { encoding: "utf-8" });
 

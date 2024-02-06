@@ -1,6 +1,7 @@
 ---
 title: Sitemap
 icon: sitemap
+order: 2
 category:
   - Advanced
 tag:
@@ -8,7 +9,7 @@ tag:
   - Sitemap
 ---
 
-`vuepress-theme-hope` provide Sitemap generation by including <ProjectLink name="sitemap2">`vuepress-plugin-sitemap2`</ProjectLink>.
+`vuepress-theme-hope` provide Sitemap generation with [`@vuepress/plugin-sitemap`][sitemap].
 
 The plugin will automatically generate the last update time of the page based on the Git timestamp of the page, and will also declare the alternative version link of the page in other languages according to the locales' config.
 
@@ -16,7 +17,7 @@ If you don't need this plugin, please set `plugins.sitemap` to `false` in theme 
 
 ::: info
 
-`vuepress-theme-hope` passes `plugins.sitemap` in theme options as plugin options to `vuepress-plugin-sitemap2`.
+`vuepress-theme-hope` passes `plugins.sitemap` in theme options as plugin options to `@vuepress/plugin-sitemap`.
 
 :::
 
@@ -53,3 +54,5 @@ For use by search engines and other crawlers, there is a structured format, the 
 Google introduced the Sitemaps protocol, so web developers can publish lists of links from across their sites.
 
 :::
+
+[sitemap]: https://ecosystem.vuejs.press/plugins/sitemap/

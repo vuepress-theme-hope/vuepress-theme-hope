@@ -20,7 +20,6 @@ Some options have their fallback if you don't set them.
 - lang: `siteConfig.locales['/'].lang` || `"en-US"`
 - start_url: `context.base`
 - scope: `context.base`
-
 - display: `"standalone"`
 - theme_color: `"#46bd87"`
 - background_color: `"#ffffff"`
@@ -50,10 +49,10 @@ We recommend you to set favicon for your site
 
 ## themeColor
 
-- 类型: `string`
-- 默认值: `"#46bd87"`
+- Type: `string`
+- Default: `"#46bd87"`
 
-Theme Color, default is theme green
+Theme Color of the pwa.
 
 ## maxSize
 
@@ -91,6 +90,10 @@ Whether cache pictures
 
 Max picture size allowed to be cached, with KB unit
 
+::: note The value must not be greater than maxSize option
+
+:::
+
 ## update
 
 - Type: `"disabled" | "available" | "hint" | "force"`
@@ -114,7 +117,7 @@ Control logic when new content is found.
 
 - `"force"`: unregister current service worker immediately then refresh to get new content
 
-  ::: danger
+  ::: caution
 
   Although this ensures users are viewing the latest content, it may affect viewing experiences.
 
@@ -137,7 +140,7 @@ Special settings for Apple
 - Type: `string`
 - Required: No
 
-Fill in the icon address used by Apple, the recommended size is 152×152
+Icon link used by Apple, the recommended size is 152×152.
 
 ### apple.statusBarColor
 
@@ -192,7 +195,7 @@ You can fill in the custom update popup component path.
 - Type: `boolean`
 - Default: `false`
 
-Whether append base to all absolute links.
+Whether append base to all absolute links in options.
 
 ## generateSwConfig
 

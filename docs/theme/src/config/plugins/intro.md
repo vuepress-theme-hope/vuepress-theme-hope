@@ -1,5 +1,5 @@
 ---
-title: Plugin Intro
+title: Theme Plugins
 icon: circle-info
 order: 1
 category:
@@ -10,21 +10,7 @@ tag:
   - Theme Config
 ---
 
-`vuepress-theme-hope` bundles many VuePress plugins.
-
-- Some plugins are automatically enabled, you can disable them in theme options if you don't need them.
-- Some plugins are only enabled when you provide necessary options.
-
-::: note
-
-As a member of [VuePress Org](https://github.com/orgs/vuepress/people), Mr. Hope has developed many VuePress plugins.
-
-All plugins called by `vuepress-theme-hope` are official plugins or plugins developed by Mr. Hope which hosted under the `vuepress-theme-hope` repository.
-
-- For the documentation of the official plugin, see [VuePress2 official website][vuepress]
-- All plugins developed by Mr.Hope have their own documentation and can be used with other themes.
-
-:::
+`vuepress-theme-hope` bundles many VuePress plugins and adds support for more VuePress plugin.
 
 <!-- more -->
 
@@ -38,64 +24,35 @@ All key names in `plugins` option are the camelCase version of the plugin name, 
 
 For example:
 
-- `vuepress-plugin-copy-code2` is controlled by key name `copyCode`.
-- `vuepress-plugin-md-enhance2` is controlled by key name `mdEnhance`.
+- `@vuepress/plugin-copy-code` is controlled by key name `copyCode`.
+- `@vuepress/plugin-copyright` is controlled by key name `copyright`.
+- `vuepress-plugin-md-enhance` is controlled by key name `mdEnhance`.
 
 :::
 
 ## Plugin List
 
-### Plugins provided by Mr.Hope
+### Internal Plugins
 
-- <ProjectLink name="auto-catalog">vuepress-plugin-auto-catalog</ProjectLink>: Catalog automatically generation for VuePress2
+The following plugins are used internally and can not be disabled:
 
-- <ProjectLink name="blog2">vuepress-plugin-blog2</ProjectLink>: Blog plugin for VuePress2
+- [@vuepress/plugin-theme-data][theme-data]: Composition API plugin for theme data
 
-- <ProjectLink name="comment2">vuepress-plugin-comment2</ProjectLink>: Provides comment and pageview function
-
-- <ProjectLink name="components">vuepress-plugin-components</ProjectLink>: Provides some plugins out of the box
-
-- <ProjectLink name="copy-code2">vuepress-plugin-copy-code2</ProjectLink>: Provides one-click copy code block function.
-
-- <ProjectLink name="copyright2">vuepress-plugin-copyright2</ProjectLink>: Append copyright information when copying or disable copy and selection.
-
-- <ProjectLink name="feed2">vuepress-plugin-feed2</ProjectLink>: Feed support
-
-- <ProjectLink name="md-enhance">vuepress-plugin-md-enhance</ProjectLink>: Provides more Markdown syntax
-
-- <ProjectLink name="photo-swipe">vuepress-plugin-photo-swipe</ProjectLink>: Image preview plugin based on photo-swipe
-
-- <ProjectLink name="pwa2">vuepress-plugin-pwa2</ProjectLink>: Enhanced PWA support
-
-- <ProjectLink name="reading-time2">vuepress-plugin-reading-time2</ProjectLink>: Reading time and word count
+- <ProjectLink name="components">vuepress-plugin-components</ProjectLink>: Provides common components out of the box.
 
 - <ProjectLink name="sass-palette">vuepress-plugin-sass-palette</ProjectLink>: Sass style plugin for all plugins and themes
 
-- <ProjectLink name="seo2">vuepress-plugin-seo2</ProjectLink>: SEO enhancement plugin
+### Automatically Enabled Plugins
 
-- <ProjectLink name="sitemap2">vuepress-plugin-sitemap2</ProjectLink>: Sitemap plugin
+The following plugins are enabled by default, and you can disable them:
 
-::: tip
+- [@vuepress/plugin-active-header-links][active-header-links]: Automatically update route hash based on current header
 
-Here are some other plugins that are not bundled by the theme, you can enable them according to your own needs.
+- [@vuepress/plugin-catalog][catalog]: Provides catalog page generation and `<Catalog />` component
 
-- <ProjectLink name="lightgallery">vuepress-plugin-lightgallery</ProjectLink>: Image preview plugin based on lightgallery
+- [@vuepress/plugin-copy-code][copy-code]: Provides copy button for code blocks.
 
-- <ProjectLink name="redirect">vuepress-plugin-redirect</ProjectLink>: Redirect pages
-
-- <ProjectLink name="remove-pwa">vuepress-plugin-remove-pwa</ProjectLink>: Plugins to remove pwa
-
-- <ProjectLink name="search-pro">vuepress-plugin-search-pro</ProjectLink>: Client search plugin
-
-:::
-
-### Official plugin
-
-- [@vuepress/plugin-active-header-links][active-header-links]: Automatically update route Hash
-
-- [@vuepress/plugin-container][container]: custom container
-
-- [@vuepress/external-link-icon][external-link-icon]: Add external link icon for external links in Markdown.
+- [@vuepress/plugin-external-link-icon][external-link-icon]: Add external link icon for external links in Markdown.
 
 - [@vuepress/plugin-git][git]: Git-based info plugin
 
@@ -103,13 +60,56 @@ Here are some other plugins that are not bundled by the theme, you can enable th
 
 - [@vuepress/plugin-prismjs][prismjs]: Code highlighting plugin using Prism.js
 
-- [@vuepress/plugin-theme-data][theme-data]: Composition API plugin for theme data
+- [@vuepress/plugin-reading-time][reading-time]: Reading time and word count
 
-[active-header-links]: https://vuejs.press/reference/plugin/active-header-links.html
-[container]: https://vuejs.press/reference/plugin/container.html
-[external-link-icon]: https://vuejs.press/reference/plugin/external-link-icon.html
-[git]: https://vuejs.press/reference/plugin/git.html
-[nprogress]: https://vuejs.press/reference/plugin/nprogress.html
-[prismjs]: https://vuejs.press/reference/plugin/prismjs.html
-[theme-data]: https://vuejs.press/reference/plugin/theme-data.html
-[vuepress]: https://vuejs.press/
+- [@vuepress/plugin-seo][seo]: SEO enhancement plugin
+
+- [@vuepress/plugin-sitemap][sitemap]: Sitemap plugin
+
+- <ProjectLink name="md-enhance">vuepress-plugin-md-enhance</ProjectLink>: Provides more Markdown syntax
+
+- <ProjectLink name="photo-swipe">vuepress-plugin-photo-swipe</ProjectLink>: Image preview plugin based on photo-swipe
+
+### Plugins that need to be enabled manually
+
+The following plugins are bundled by theme, you can enable them via configuration:
+
+- [@vuepress/plugin-blog][blog]: Blog plugin for VuePress2
+
+- [@vuepress/plugin-copyright][copyright]: Append copyright information when copying or disable copy and selection.
+
+- <ProjectLink name="comment2">vuepress-plugin-comment2</ProjectLink>: Provides comment and pageview function
+
+### Plugins with Built-in Support
+
+These plugins are supported by theme, but you need to install them manually while using:
+
+- [@vuepress/plugin-docsearch][docsearch]: Crawler based search plugin with DocSearch
+
+- [@vuepress/plugin-search][search]: Simple client search plugin
+
+- [@vuepress/plugin-feed][feed]: Feed support
+
+- [@vuepress/plugin-redirect][redirect]: Redirect pages
+
+- <ProjectLink name="pwa2">vuepress-plugin-pwa2</ProjectLink>: Enhanced PWA support
+
+- <ProjectLink name="search-pro">vuepress-plugin-search-pro</ProjectLink>: Professional Client search plugin
+
+[active-header-links]: https://ecosystem.vuejs.press/plugins/active-header-links.html
+[blog]: https://ecosystem.vuejs.press/plugins/blog/
+[catalog]: https://ecosystem.vuejs.press/plugins/catalog.html
+[copy-code]: https://ecosystem.vuejs.press/plugins/copy-code.html
+[copyright]: https://ecosystem.vuejs.press/plugins/copyright.html
+[docsearch]: https://ecosystem.vuejs.press/plugins/docsearch.html
+[external-link-icon]: https://ecosystem.vuejs.press/plugins/external-link-icon.html
+[feed]: https://ecosystem.vuejs.press/plugins/feed/
+[git]: https://ecosystem.vuejs.press/plugins/git.html
+[nprogress]: https://ecosystem.vuejs.press/plugins/nprogress.html
+[prismjs]: https://ecosystem.vuejs.press/plugins/prismjs.html
+[reading-time]: https://ecosystem.vuejs.press/plugins/reading-time.html
+[redirect]: https://ecosystem.vuejs.press/plugins/redirect.html
+[search]: https://ecosystem.vuejs.press/plugins/search.html
+[seo]: https://ecosystem.vuejs.press/plugins/seo/
+[sitemap]: https://ecosystem.vuejs.press/plugins/sitemap/
+[theme-data]: https://ecosystem.vuejs.press/plugins/theme-data.html

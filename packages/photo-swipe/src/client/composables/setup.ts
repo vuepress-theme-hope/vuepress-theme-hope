@@ -1,6 +1,6 @@
-import { usePageData } from "@vuepress/client";
+import { useLocaleConfig } from "@vuepress/helper/client";
 import { nextTick, onMounted, onUnmounted, watch } from "vue";
-import { useLocaleConfig } from "vuepress-shared/client";
+import { usePageData } from "vuepress/client";
 
 import { delay, imageSelector, locales } from "../define.js";
 import { usePhotoSwipeOptions } from "../helpers/index.js";
@@ -35,7 +35,7 @@ export const setupPhotoSwipe = (): void => {
       () => {
         destroy?.();
         void photoSwipeWrapper();
-      }
+      },
     );
   });
 

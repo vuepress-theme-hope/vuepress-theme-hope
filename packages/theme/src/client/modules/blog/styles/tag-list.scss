@@ -39,8 +39,10 @@
 
     cursor: pointer;
 
-    transition: background var(--color-transition),
-      box-shadow var(--color-transition), transform var(--color-transition);
+    transition:
+      background var(--color-transition),
+      box-shadow var(--color-transition),
+      transform var(--color-transition);
 
     &:hover {
       cursor: pointer;

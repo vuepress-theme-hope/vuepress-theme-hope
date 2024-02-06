@@ -1,5 +1,6 @@
-import { type RequiredLocaleConfig } from "vuepress-shared";
+import type { ExactLocaleConfig } from "@vuepress/helper";
 
+/** @deprecated Please use '@vuepress/plugin-back-to-top' */
 export interface BackToTopLocaleData {
   /**
    * Back to top button label text
@@ -9,7 +10,8 @@ export interface BackToTopLocaleData {
   backToTop: string;
 }
 
-export type BackToTopLocaleConfig = RequiredLocaleConfig<BackToTopLocaleData>;
+/** @deprecated Please use '@vuepress/plugin-back-to-top' */
+export type BackToTopLocaleConfig = ExactLocaleConfig<BackToTopLocaleData>;
 
 export interface PDFLocaleData {
   /**
@@ -26,7 +28,7 @@ export interface PDFLocaleData {
   hint: string;
 }
 
-export type PDFLocaleConfig = RequiredLocaleConfig<PDFLocaleData>;
+export type PDFLocaleConfig = ExactLocaleConfig<PDFLocaleData>;
 
 export interface SiteInfoLocaleData {
   /**
@@ -37,4 +39,4 @@ export interface SiteInfoLocaleData {
   source: string;
 }
 
-export type SiteInfoLocaleConfig = RequiredLocaleConfig<SiteInfoLocaleData>;
+export type SiteInfoLocaleConfig = ExactLocaleConfig<SiteInfoLocaleData>;

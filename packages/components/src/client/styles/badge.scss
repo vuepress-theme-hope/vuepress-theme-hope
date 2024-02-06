@@ -8,7 +8,7 @@
 
 .vp-badge {
   display: inline-block;
-  vertical-align: top;
+  vertical-align: center;
 
   height: 18px;
   padding: 0 6px;
@@ -20,16 +20,21 @@
   font-size: 14px;
   line-height: 18px;
 
-  transition: background var(--vp-ct), color var(--vp-ct);
+  transition:
+    background var(--vp-ct),
+    color var(--vp-ct);
 
   & + & {
     margin-inline-start: 5px;
   }
 
-  // compatible with toc
-  .table-of-contents &,
-  #toc & {
-    vertical-align: middle;
+  h1 &,
+  h2 &,
+  h3 &,
+  h4 &,
+  h5 &,
+  h6 & {
+    vertical-align: top;
   }
 
   &.tip {

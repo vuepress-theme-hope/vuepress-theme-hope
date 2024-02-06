@@ -7,16 +7,16 @@ tag:
   - 功能
   - 版权信息
 copy:
-  triggerWords: 40
+  triggerLength: 40
 ---
 
-有些时候，你可能不想让你的某些文章被他人复制，或者你想让他人在复制时，自动生成一段版权信息到剪切板中。
+你可能不想让你的某些文章被他人复制，或者你想版权信息在复制时自动附加。
 
-`vuepress-theme-hope` 为应对此场景引入了 <ProjectLink name="copyright2" path="/zh/">vuepress-plugin-copyright2</ProjectLink>。
+`vuepress-theme-hope` 通过 [`@vuepress/plugin-copyright`][copyright] 提供此功能。
 
 ::: info
 
-`vuepress-theme-hope` 将主题选项中的 `plugins.copyright` 作为插件选项提供给 `vuepress-plugin-copyright2`。
+`vuepress-theme-hope` 将主题选项中的 `plugins.copyright` 提供给 `@vuepress/plugin-copyright`。
 
 :::
 
@@ -37,7 +37,7 @@ copy:
 - 当插件的 `global` 选项不为 `true` 时，插件全局禁用，你需要在需要的页面的 frontmatter 中设置 `copy: true` 手动开启。
 - 设置 `global: true` 会使其全局生效，并允许在个别页面的 frontmatter 中设置 `copy: false` 禁用它。
 
-处于不打扰用户的考虑，默认配置下，仅当用户复制字符长度不小于 `100` 时，才会触发追加版权信息，如果你希望改变这个触发值，请设置 `triggerWords`，同时该选项支持在 frontmatter 中通过 `copy.triggerWord` 单独设置。
+处于不打扰用户的考虑，默认配置下，仅当用户复制字符长度不小于 `100` 时，才会触发追加版权信息，如果你希望改变这个触发值，请设置 `triggerLength`，同时该选项支持在 frontmatter 中通过 `copy.triggerLength` 单独设置。
 
 ## 禁用复制和选择
 
@@ -54,4 +54,6 @@ copy:
 
 ## 更多
 
-关于插件文档，请参见 <ProjectLink name="copyright2" path="/zh/">vuepress-plugin-copyright2 文档</ProjectLink>。
+关于插件文档，请参见 [@vuepress/plugin-copyright 文档][copyright]。
+
+[copyright]: https://ecosystem.vuejs.press/zh/plugins/copyright.html

@@ -9,7 +9,7 @@ tag:
   - Intro
 ---
 
-The theme supports blog feature with`vuepress-plugin-blog2` by default, and it's **disabled by default**.
+The theme supports blog feature with`@vuepress/plugin-blog` by default, and it's **disabled by default**.
 
 If you need blog functionality, you can set `plugins.blog: true` in theme options to enable blog functionality.
 
@@ -21,7 +21,7 @@ After enabling the blog function, the theme allows you to configure categories, 
 
 ::: tip Demo
 
-[Here is a demo](https://mrhope.site/en/) for you to preview blog sites built with `vuepress-theme-hope`.
+[Here is a demo](https://mister-hope.com/en/) for you to preview blog sites built with `vuepress-theme-hope`.
 
 :::
 

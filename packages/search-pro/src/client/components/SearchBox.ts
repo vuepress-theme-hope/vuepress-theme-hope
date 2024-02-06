@@ -1,19 +1,8 @@
+import { useLocaleConfig } from "@vuepress/helper/client";
 import { useEventListener } from "@vueuse/core";
-import {
-  type VNode,
-  computed,
-  defineComponent,
-  h,
-  inject,
-  onMounted,
-  ref,
-} from "vue";
-import {
-  checkIsIOS,
-  checkIsMacOS,
-  checkIsiPad,
-  useLocaleConfig,
-} from "vuepress-shared/client";
+import type { VNode } from "vue";
+import { computed, defineComponent, h, inject, onMounted, ref } from "vue";
+import { checkIsIOS, checkIsMacOS, checkIsiPad } from "vuepress-shared/client";
 
 import { SearchIcon } from "./icons.js";
 import { searchModalSymbol } from "../composables/index.js";
@@ -40,21 +29,23 @@ export default defineComponent({
               : ["Ctrl", "Shift", "Alt", "Win"]
             ).filter(
               (_, index) =>
-                primaryKey[(["ctrl", "shift", "alt", "meta"] as const)[index]]
+                primaryKey[(["ctrl", "shift", "alt", "meta"] as const)[index]],
             ),
             primaryKey.key.toUpperCase(),
           ]
-        : null
+        : null,
     );
 
     useEventListener("keydown", (event: KeyboardEvent): void => {
       if (
-        // not active
+        // Not active
         !isActive.value &&
-        // key matches
+        // Key matches
         isKeyMatched(event) &&
-        // event does not come from the search box itself or
-        // user isn't focusing (and thus perhaps typing in) a text control
+        /*
+         * Event does not come from the search box itself or
+         * user isn't focusing (and thus perhaps typing in) a text control
+         */
         !isFocusingTextControl(event.target as EventTarget)
       ) {
         event.preventDefault();
@@ -77,7 +68,6 @@ export default defineComponent({
         {
           type: "button",
           class: "search-pro-button",
-          role: "search",
           "aria-label": locale.value.search,
           onClick: () => {
             isActive.value = true;
@@ -91,11 +81,11 @@ export default defineComponent({
                 "div",
                 { class: "search-pro-key-hints" },
                 controlKeys.value.map((key) =>
-                  h("kbd", { class: "search-pro-key" }, key)
-                )
+                  h("kbd", { class: "search-pro-key" }, key),
+                ),
               )
             : null,
-        ]
+        ],
       ),
     ];
   },

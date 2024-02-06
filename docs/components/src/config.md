@@ -20,6 +20,9 @@ icon: gears
     | "Share"
     | "StackBlitz"
     | "SiteInfo"
+    | "VPBanner"
+    | "VPCard"
+    | "VidStack"
     | "VideoPlayer"
     | "XiGua"
     | "YouTube";
@@ -42,6 +45,9 @@ Available component names:
 - `"Share"`
 - `"StackBlitz"`
 - `"SiteInfo"`
+- `"VPBanner"`
+- `"VPCard"`
+- `"VidStack"`
 - `"VideoPlayer"`
 - `"XiGua"`
 - `"YouTube"`
@@ -55,15 +61,22 @@ Global config for components.
 - Type: `ComponentsArtPlayerOptions`
 - Required: No
 - Details:
-  - [Guide → ArtPlayer](./guide/artplayer.md#global-config)
+  - [Guide → ArtPlayer](./guide/media/art-player.md#global-config)
 
 ### componentsOptions.share.services
 
 - Type: `(string | ShareService)[]`
 - Details:
-  - [Guide → Share → Setting component](./guide/share.md#setting-component)
+  - [Guide → Share → Setting component](./guide/utilities/share.md#setting-component)
 
 Share services
+
+### componentsOptions.share.contentSelector
+
+- Type: `string`
+- Default: `.theme-default-content`
+
+Page content selector.
 
 ### componentsOptions.share.twitterUserName
 
@@ -94,7 +107,7 @@ Twitter username.
 
 - Required: No
 - Details:
-  - [Guide → FontIcon](./guide/fonticon.md)
+  - [Guide → FontIcon](./guide/utilities/font-icon.md)
 
 Link of font icon asset, `'iconfont'` and `'fontawesome'` keywords are supported.
 
@@ -103,7 +116,7 @@ Link of font icon asset, `'iconfont'` and `'fontawesome'` keywords are supported
 - Type: `string`
 - Default: Inferred from assets
 - Details:
-  - [Guide → FontIcon](./guide/fonticon.md)
+  - [Guide → FontIcon](./guide/utilities/font-icon.md)
 
 Class prefix of font icon
 
@@ -112,50 +125,13 @@ Class prefix of font icon
 - Type: `string`
 - Required: No
 - Details:
-  - [Guide → PDF → PDFJS](./guide/pdf.md#pdfjs-viewer)
+  - [Guide → PDF → PDFJS](./guide/media/p-d-f.md#pdfjs-viewer)
 
 Location to pdfjs viewer.
 
 ## rootComponents
 
 Components to be mounted at root.
-
-### rootComponents.addThis
-
-- Type: `string | false`
-- Default: `false`
-- Details:
-  - [Guide → AddThis](./guide/addthis.md#usage)
-
-Public ID of addThis.
-
-### rootComponents.backToTop
-
-- Type: `BackToTopOptions | boolean`
-
-  ```ts
-  interface BackToTopOptions {
-    /**
-     * Scroll threshold distance to display back to top button (in pixels)
-     *
-     * @default 100
-     */
-    threshold?: number;
-
-    /**
-     * Whether display scroll progress
-     *
-     * @default true
-     */
-    progress?: boolean;
-  }
-  ```
-
-- Default: `false`
-- Details:
-  - [Guide → BackToTop](./guide/backtotop.md)
-
-Whether enabling backToTop button. When setting a number, it will be used as BackToTop button threshold distance (in pixels), default is 300.
 
 ### rootComponents.notice
 
@@ -232,34 +208,13 @@ Whether enabling backToTop button. When setting a number, it will be used as Bac
 
 - Required: No
 - Details:
-  - [Guide → Notice](./guide/notice.md)
+  - [Guide → Notice](./guide/utilities/notice.md)
 
 Config for global notice.
 
 ## locales
 
 Component locales.
-
-### locales.backToTop
-
-- Type: `BackToTopLocaleConfig`
-
-  ```ts
-  interface BackToTopLocaleData {
-    /**
-     * Back to top button label text
-     */
-    backToTop: string;
-  }
-
-  interface BackToTopLocaleConfig {
-    [localePath: string]: BackToTopLocaleData;
-  }
-  ```
-
-- Required: No
-
-Locales config for BackToTop button.
 
 ### locales.pdf
 
@@ -277,7 +232,7 @@ Locales config for BackToTop button.
   }
 
   interface PDFLocaleConfig {
-    [localePath: string]: CatalogLocaleData;
+    [localePath: string]: PDFLocaleData;
   }
   ```
 

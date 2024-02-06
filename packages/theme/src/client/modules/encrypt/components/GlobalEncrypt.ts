@@ -1,11 +1,5 @@
-import {
-  type SlotsType,
-  type VNode,
-  defineComponent,
-  h,
-  onMounted,
-  ref,
-} from "vue";
+import type { SlotsType, VNode } from "vue";
+import { defineComponent, h, onMounted, ref } from "vue";
 
 import FadeSlideY from "@theme-hope/components/transitions/FadeSlideY";
 import PasswordModal from "@theme-hope/modules/encrypt/components/PasswordModal";
@@ -15,7 +9,7 @@ export default defineComponent({
   name: "GlobalEncrypt",
 
   slots: Object as SlotsType<{
-    default: () => VNode | VNode[];
+    default: () => VNode[] | VNode | null;
   }>,
 
   setup(_props, { slots }) {
@@ -35,7 +29,7 @@ export default defineComponent({
               ? slots.default()
               : h(PasswordModal, { full: true, onVerify: validate })
             : null
-          : slots.default()
+          : slots.default(),
       );
   },
 });

@@ -2,15 +2,16 @@
 home: true
 title: Home
 icon: home
-heroImage: /logo.svg
 heroText: vuepress-plugin-components
 tagline: Useful components for VuePress2
 actions:
-  - text: Get Started 💡
+  - text: Guide
+    icon: lightbulb
     link: ./guide/
     type: primary
 
-  - text: Config 🛠
+  - text: Config
+    icon: tools
     link: ./config.html
 
 footer: Theme by <a href="https://theme-hope.vuejs.press" target="_blank">VuePress Theme Hope</a> | MIT Licensed, Copyright © 2019-present Mr.Hope
@@ -48,8 +49,7 @@ npm i -D vuepress-plugin-components
 
 @tab TS
 
-```ts
-// .vuepress/config.ts
+```ts title=".vuepress/config.ts"
 import { componentsPlugin } from "vuepress-plugin-components";
 
 export default {
@@ -63,8 +63,7 @@ export default {
 
 @tab JS
 
-```js
-// .vuepress/config.js
+```js title=".vuepress/config.js"
 import { componentsPlugin } from "vuepress-plugin-components";
 
 export default {

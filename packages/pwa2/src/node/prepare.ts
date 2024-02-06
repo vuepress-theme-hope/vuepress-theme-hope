@@ -1,11 +1,11 @@
-import { type App } from "@vuepress/core";
+import type { App } from "vuepress/core";
 
-import { type PWAOptions } from "./options.js";
+import type { PWAOptions } from "./options.js";
 import { CLIENT_FOLDER } from "./utils.js";
 
 export const prepareConfigFile = (
   app: App,
-  options: PWAOptions
+  options: PWAOptions,
 ): Promise<string> => {
   let configImport = "";
   let rootComponents = "";
@@ -35,7 +35,7 @@ SWUpdatePopup,
   return app.writeTemp(
     `pwa2/config.js`,
     `\
-import { defineClientConfig } from "@vuepress/client";
+import { defineClientConfig } from "vuepress/client";
 import { setupPWA } from "${CLIENT_FOLDER}composables/setup.js";
 ${configImport}
 
@@ -50,6 +50,6 @@ ${rootComponents
   .join("\n")}
   ],
 });
-`
+`,
   );
 };

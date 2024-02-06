@@ -12,14 +12,13 @@ Let the Markdown file in your VuePress site support task list.
 
 <!-- more -->
 
-## Config
+## Settings
 
 ::: code-tabs#language
 
 @tab TS
 
-```ts {8-10}
-// .vuepress/config.ts
+```ts {8-10} title=".vuepress/config.ts"
 import { defineUserConfig } from "vuepress";
 import { hopeTheme } from "vuepress-theme-hope";
 
@@ -36,8 +35,7 @@ export default defineUserConfig({
 
 @tab JS
 
-```js {7-9}
-// .vuepress/config.js
+```js {7-9} title=".vuepress/config.js"
 import { hopeTheme } from "vuepress-theme-hope";
 
 export default {
@@ -53,17 +51,4 @@ export default {
 
 :::
 
-## Syntax
-
-- Use `- [ ] some text` to render an unchecked task item.
-- Use `- [x] some text` to render a checked task item. (Capital `X` is also supported)
-
-## Demo
-
-- [ ] Plan A
-- [x] Plan B
-
-```md
-- [ ] Plan A
-- [x] Plan B
-```
+<!-- @include: @md-enhance/guide/grammar/tasklist.md#after -->

@@ -1,7 +1,23 @@
-input[type="checkbox"].task-list-item-checkbox {
+.task-list-container {
+  padding-inline-start: 0;
+  list-style-position: inside;
+
+  .task-list-container {
+    padding-inline-start: 1.5em;
+  }
+}
+
+.task-list-item {
+  list-style: none;
+}
+
+// FIXME: Firefox does not support ::before and ::after on input[type=checkbox]
+// this can be a bug
+.task-list-item-checkbox {
   position: relative;
-  width: 0;
-  margin-inline-end: 1.5em;
+
+  // width: 0;
+  // margin-inline-end: 1.5em;
   cursor: pointer;
 
   &::after {
@@ -26,7 +42,9 @@ input[type="checkbox"].task-list-item-checkbox {
 
     visibility: visible;
 
-    transition: background var(--vp-ct), border-color var(--vp-ct);
+    transition:
+      background var(--vp-ct),
+      border-color var(--vp-ct);
 
     @media print {
       border-color: var(--vp-c);
@@ -60,10 +78,7 @@ input[type="checkbox"].task-list-item-checkbox {
 
       position: absolute;
       top: 0.1em;
-
-      // NOTE: Compatible with Android Wechat
-      // inset-inline-start: 0.4em;
-      left: 0.4em;
+      inset-inline-start: 0.4em;
       z-index: 1;
 
       width: 0.2em;
@@ -75,11 +90,6 @@ input[type="checkbox"].task-list-item-checkbox {
 
       @media print {
         border-color: var(--vp-c);
-      }
-
-      #{hope-config.$rtl-selector} & {
-        right: 0.4em;
-        left: unset;
       }
     }
   }

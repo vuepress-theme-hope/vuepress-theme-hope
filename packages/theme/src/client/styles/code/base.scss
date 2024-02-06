@@ -49,8 +49,13 @@
 
 div[class*="language-"] {
   position: relative;
+
   border-radius: 6px;
+
   background: var(--code-bg-color);
+
+  font-size: 16px;
+
   transition: background var(--color-transition);
 
   // narrow mobile
@@ -62,10 +67,10 @@ div[class*="language-"] {
   }
 
   &::before {
-    content: attr(data-ext);
+    content: attr(data-title);
 
     position: absolute;
-    top: 0.8em;
+    top: 0;
     right: 1em;
     z-index: 3;
 
@@ -79,15 +84,17 @@ div[class*="language-"] {
   pre {
     position: relative;
     z-index: 1;
+    scrollbar-gutter: stable;
   }
 
   .highlight-lines {
     position: absolute;
     top: 0;
+    bottom: 0;
     left: 0;
 
     width: 100%;
-    padding-top: 1rem;
+    padding: 1rem 0;
 
     line-height: 1.375;
 
@@ -105,11 +112,11 @@ div[class*="language-"] {
 
       position: absolute;
       top: 0;
+      bottom: 0;
       left: 0;
       z-index: 2;
 
       width: var(--line-numbers-width);
-      height: 100%;
       border-right: 1px solid var(--code-highlight-line-color);
       border-radius: 6px 0 0 6px;
 
@@ -156,23 +163,21 @@ div[class*="language-"] {
     .line-numbers {
       position: absolute;
       top: 0;
+      bottom: 0;
       left: 0;
+
+      display: flex;
+      flex-direction: column;
 
       width: var(--line-numbers-width);
       padding: 1rem 0;
 
       color: var(--code-line-color);
 
-      // WARNING: Safari only support integer pixels for `<pre>` tag line-height
-      // so we override this into a integer
-      line-height: 1.375;
       counter-reset: line-number;
       text-align: center;
 
       transition: color var(--color-transition);
-
-      // This is a hacky fix to align line number with code line
-      transform: translateY(1px);
 
       @media print {
         display: none;
@@ -183,14 +188,20 @@ div[class*="language-"] {
       position: relative;
       z-index: 4;
 
-      // WARNING: Safari only support integer pixels for `<pre>` tag line-height
-      // so we override this into a integer
-      height: 1.375em;
+      display: flex;
+      flex: 1;
+      align-items: center;
+      justify-content: center;
+
       user-select: none;
 
       &::before {
         content: counter(line-number);
-        font-size: 0.85em;
+
+        display: block;
+
+        font-size: 0.8em;
+        line-height: 1;
         counter-increment: line-number;
       }
     }

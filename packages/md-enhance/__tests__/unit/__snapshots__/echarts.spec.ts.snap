@@ -1,19 +1,19 @@
 // Vitest Snapshot v1, https://vitest.dev/guide/snapshot.html
 
 exports[`echarts > Should not break markdown fence 1`] = `
-"<pre><code class=\\"language-js\\">const a = 1;
+"<pre><code class="language-js">const a = 1;
 </code></pre>
 "
 `;
 
-exports[`echarts > Should resolve echarts container with empty title and body 1`] = `"<ECharts id=\\"echarts-0\\" config=\\"eJyrrgUAAXUA+Q==\\"></ECharts>"`;
+exports[`echarts > Should resolve echarts container with empty title and body 1`] = `"<ECharts id="echarts-0" config="eJyrrgUAAXUA+Q=="></ECharts>"`;
 
-exports[`echarts > Should resolve echarts container with javascript block 1`] = `"<ECharts id=\\"echarts-0\\" config=\\"eJxtTbsOwjAM3PsVVuYMfQIKYmBhYwKJoWKI2ggiVUmVB2qE+u/EKSAGljuffb7rtLIO9OikVrCDZwYw7SdpWRoBXBgFA9JxJ27aBELTtueOM2jJUStCgZy9QLqIPqm7RzoYiXTiLpFX5IrPM0L4U/HgA8Z8LFYYKaKnTZ7F+S0umpxCWSGUdYRiQ6Gomgj1OspVnqp+wgeplux3erzP2+wFpbw+4Q==\\" title=\\"A%20line%20chart\\" type=\\"js\\"></ECharts>"`;
+exports[`echarts > Should resolve echarts container with javascript block 1`] = `"<ECharts id="echarts-0" config="eJxtTbsOwjAM3PsVVuYMfQIKYmBhYwKJoWKI2ggiVUmVB2qE+u/EKSAGljuffb7rtLIO9OikVrCDZwYw7SdpWRoBXBgFA9JxJ27aBELTtueOM2jJUStCgZy9QLqIPqm7RzoYiXTiLpFX5IrPM0L4U/HgA8Z8LFYYKaKnTZ7F+S0umpxCWSGUdYRiQ6Gomgj1OspVnqp+wgeplux3erzP2+wFpbw+4Q==" title="A%20line%20chart" type="js"></ECharts>"`;
 
-exports[`echarts > Should resolve echarts container with js block 1`] = `"<ECharts id=\\"echarts-0\\" config=\\"eJxtTbsOwjAM3PsVVuYMfQIKYmBhYwKJoWKI2ggiVUmVB2qE+u/EKSAGljuffb7rtLIO9OikVrCDZwYw7SdpWRoBXBgFA9JxJ27aBELTtueOM2jJUStCgZy9QLqIPqm7RzoYiXTiLpFX5IrPM0L4U/HgA8Z8LFYYKaKnTZ7F+S0umpxCWSGUdYRiQ6Gomgj1OspVnqp+wgeplux3erzP2+wFpbw+4Q==\\" title=\\"A%20line%20chart\\" type=\\"js\\"></ECharts>"`;
+exports[`echarts > Should resolve echarts container with js block 1`] = `"<ECharts id="echarts-0" config="eJxtTbsOwjAM3PsVVuYMfQIKYmBhYwKJoWKI2ggiVUmVB2qE+u/EKSAGljuffb7rtLIO9OikVrCDZwYw7SdpWRoBXBgFA9JxJ27aBELTtueOM2jJUStCgZy9QLqIPqm7RzoYiXTiLpFX5IrPM0L4U/HgA8Z8LFYYKaKnTZ7F+S0umpxCWSGUdYRiQ6Gomgj1OspVnqp+wgeplux3erzP2+wFpbw+4Q==" title="A%20line%20chart" type="js"></ECharts>"`;
 
-exports[`echarts > Should resolve echarts container with json block 1`] = `"<ECharts id=\\"echarts-0\\" config=\\"eJyr5lJQUK9wrMgsVrdSAHGA3JLKglQgTz05sSQ1Pb+oUl0HIp6SWJIIFI9W983PU9dRUA8pTQVR4akpYF5GKYhyK8oEUcGJJWCqNE89Fqi7FmSEeiV2e8oSc4AmwVUVpxZlpoKURYOVQRQjWW9oaqCjYGQMIoxMgIShhY6CobEpkDAxB3LNDGIh7kWyISczD2wB0AogGctVywUAXzg7QQ==\\" title=\\"A%20line%20chart\\"></ECharts>"`;
+exports[`echarts > Should resolve echarts container with json block 1`] = `"<ECharts id="echarts-0" config="eJyr5lJQUK9wrMgsVrdSAHGA3JLKglQgTz05sSQ1Pb+oUl0HIp6SWJIIFI9W983PU9dRUA8pTQVR4akpYF5GKYhyK8oEUcGJJWCqNE89Fqi7FmSEeiV2e8oSc4AmwVUVpxZlpoKURYOVQRQjWW9oaqCjYGQMIoxMgIShhY6CobEpkDAxB3LNDGIh7kWyISczD2wB0AogGctVywUAXzg7QQ==" title="A%20line%20chart"></ECharts>"`;
 
-exports[`echarts > Should resolve echarts fence 1`] = `"<ECharts id=\\"echarts-0\\" config=\\"eJyr5lJQUK9wrMgsVrdSAHGA3JLKglQgTz05sSQ1Pb+oUl0HIp6SWJIIFI9W983PU9dRUA8pTQVR4akpYF5GKYhyK8oEUcGJJWCqNE89Fqi7FmSEeiV2e8oSc4AmwVUVpxZlpoKURYOVQRQjWW9oaqCjYGQMIoxMgIShhY6CobEpkDAxB3LNDGIh7kWyISczD2wB0AogGctVywUAXzg7QQ==\\" title=\\"A%20line%20chart\\"></ECharts>"`;
+exports[`echarts > Should resolve echarts fence 1`] = `"<ECharts id="echarts-0" config="eJyr5lJQUK9wrMgsVrdSAHGA3JLKglQgTz05sSQ1Pb+oUl0HIp6SWJIIFI9W983PU9dRUA8pTQVR4akpYF5GKYhyK8oEUcGJJWCqNE89Fqi7FmSEeiV2e8oSc4AmwVUVpxZlpoKURYOVQRQjWW9oaqCjYGQMIoxMgIShhY6CobEpkDAxB3LNDGIh7kWyISczD2wB0AogGctVywUAXzg7QQ==" title="A%20line%20chart"></ECharts>"`;
 
-exports[`echarts > Should resolve echarts fence with empty title and body 1`] = `"<ECharts id=\\"echarts-0\\" config=\\"eJwDAAAAAAE=\\"></ECharts>"`;
+exports[`echarts > Should resolve echarts fence with empty title and body 1`] = `"<ECharts id="echarts-0" config="eJwDAAAAAAE="></ECharts>"`;

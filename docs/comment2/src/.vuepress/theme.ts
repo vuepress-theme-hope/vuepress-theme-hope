@@ -1,8 +1,9 @@
 import { theme } from "docs-shared";
+
 import { enNavbar, zhNavbar } from "./navbar.js";
 import { enSidebar, zhSidebar } from "./sidebar.js";
 
-// the theme wrapper is located in <root>/docs-shared/src/theme-wrapper.ts
+// The theme wrapper is located in <root>/docs-shared/src/theme-wrapper.ts
 export default theme("comment2", {
   locales: {
     "/": {

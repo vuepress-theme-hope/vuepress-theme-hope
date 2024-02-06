@@ -1,7 +1,7 @@
 ---
 title: MdEnhance Plugin Config
 icon: fab fa-markdown
-order: 6
+order: 2
 category:
   - Config
 tag:
@@ -10,21 +10,15 @@ tag:
   - Theme Config
 ---
 
-## Introduction
+## Intro
 
-The `vuepress-plugin-md-enhance` plugin is enabled by default and provides Markdown enhancements.
+The theme can enhance Markdown syntax via `vuepress-plugin-md-enhance`, and by default, the theme will enable linkCheck and hint feature.
 
-`vuepress-theme-hope` passes `plugins.mdEnhance` in theme options as plugin options to `vuepress-plugin-md-enhance` plugin.
-
-::: info
-
-`vuepress-theme-hope` will set the `container` option to `true` by default.
-
-See <ProjectLink name="md-enhance" path="/config.html">Plugin documentation</ProjectLink> for more details.
-
-:::
+You can set the following options with `plugins.mdEnhance` in theme options.
 
 ## Plugin Options
+
+The theme passes `plugins.mdEnhance` in theme options as plugin options to `vuepress-plugin-md-enhance` plugin.
 
 ### gfm
 
@@ -37,26 +31,26 @@ Whether to support full GFM syntax.
 
 For full GFM syntax, see [GFM](https://github.github.com/gfm/).
 
-We are not 100% supporting it to be honestly, we only supply its syntax including footnote, task list, code highlight, image mark and so on.
+Honestly, we do not 100% implement GFM, we only supply its common syntax.
 
 Some of the behavior might be different, for example to support Vue syntax, we are not disallowing `<script>` tags. But in most situation, the behavior should be same.
 
 :::
 
-### container
+### hint
 
 - Type: `boolean`
 - Default: `false`
 - Details:
-  - [Custom Container](../../guide/markdown/container.md)
+  - [Hint box](../../guide/markdown/hint.md)
 
-Whether to enable custom container including
+Whether to enable hint box including
 
 - info
 - note
 - tip
 - warning
-- danger
+- caution
 - details
 
 ### checkLinks
@@ -93,6 +87,31 @@ Whether to enable links check.
   - [v-pre wrapper](../../guide/markdown/others.md#v-pre)
 
 Whether to enable v-pre wrapper.
+
+### breaks
+
+- Type: `boolean`
+- Default: `false`
+- Enabled in GFM: Yes
+
+Whether convert `\n` in paragraphs into `<br>`s
+
+### linkify
+
+- Type: `boolean`
+- Default: `false`
+- Enabled in GFM: Yes
+
+Whether convert URL-like text into links
+
+### alert
+
+- Type: `boolean`
+- Default: `false`
+- Details:
+  - [GFM Alerts](../../guide/markdown/alert.md)
+
+Whether to enable gfm alerts.
 
 ### tabs
 
@@ -301,12 +320,12 @@ Please see [source code](https://github.com/vuepress-theme-hope/vuepress-theme-h
 
 Whether to enable Markdown import support. You can pass in a function for path resolution.
 
-### card
+### component
 
 - Type: `boolean`
 - Default: `false`
 
-Whether to enable card support
+Whether to enable component support
 
 ### chart
 
@@ -387,8 +406,6 @@ Stylize inline tokens to create snippet you want.
 - Type: `PlaygroundGlobalOptions`
 
   ```ts
-  import type { CompilerOptions } from "typescript";
-
   interface PlaygroundCodeConfig {
     /**
      * Code block extension
@@ -397,28 +414,22 @@ Stylize inline tokens to create snippet you want.
      */
     ext: string;
 
-    /**
-     * Code block content
-     */
+    /** Code block content */
     content: string;
   }
 
   interface PlaygroundData {
-    /**
-     * Title of Playground
-     */
+    /** Title of Playground */
     title?: string;
 
     /**
      * Import map file name
      *
-     * @default 'import-map.json'
+     * @default "import-map.json"
      */
     importMap?: string;
 
-    /**
-     * Playground files info
-     */
+    /** Playground files info */
     files: Record<
       /** File name */
       string,
@@ -433,22 +444,18 @@ Stylize inline tokens to create snippet you want.
      */
     settings: Record<string, unknown>;
 
-    /**
-     * hash key based on playground content
-     */
+    /** hash key based on playground content */
     key: string;
   }
 
   interface PlaygroundOptions {
-    /**
-     * Playground container name
-     */
+    /** Playground container name */
     name: string;
 
     /**
      * Playground component name
      *
-     * @default 'Playground'
+     * @default "Playground"
      */
     component?: string;
 
@@ -490,13 +497,25 @@ Stylize inline tokens to create snippet you want.
     ssr?: boolean;
   }
 
+  interface UnoPresetPlaygroundOptions {
+    /**
+     * external playground service url
+     *
+     * @default "https://unocss.dev/play"
+     */
+    service?: string;
+  }
+
+  type BuiltInPlaygroundPreset = "ts" | "vue" | "unocss";
+
   interface PlaygroundGlobalOptions {
     /** Playground presets */
-    presets: ("ts" | "vue" | PlaygroundOptions)[];
+    presets: (BuiltInPlaygroundPreset | PlaygroundOptions)[];
     /** Playground config */
     config?: {
       ts?: TSPresetPlaygroundOptions;
       vue?: VuePresetPlaygroundOptions;
+      unocss?: UnoPresetPlaygroundOptions;
     };
   }
   ```
@@ -583,6 +602,13 @@ Playground options.
 
 Whether to enable vue playground support.
 
+### sandpack
+
+- Type: `boolean`
+- Default: `false`
+
+Whether to enable sandpack playground support.
+
 ### demo
 
 - Type: `CodeDemoGlobalOptions | boolean`
@@ -610,149 +636,53 @@ The above two options are only used by third-party code demo service, you need t
 
 :::
 
-#### demo.jsfiddle
+### revealJs
 
-- Type: `boolean`
-- Default value: `true`
+- Type: `RevealJsOptions | boolean`
 
-Whether to display the JSFiddle button
+  ```ts
+  type RevealJsPlugin = "highlight" | "math" | "search" | "notes" | "zoom";
 
-#### demo.codepen
+  type RevealJsTheme =
+    | "auto"
+    | "beige"
+    | "black"
+    | "blood"
+    | "league"
+    | "moon"
+    | "night"
+    | "serif"
+    | "simple"
+    | "sky"
+    | "solarized"
+    | "white";
 
-- Type: `boolean`
-- Default value: `true`
+  /**
+   * reveal.js options
+   */
+  interface RevealJsOptions {
+    /**
+     * reveal.js plugins
+     *
+     * @default []
+     */
+    plugins?: RevealJsPlugin[];
 
-Whether to display the CodePen button
+    /**
+     * reveal.js themes
+     *
+     * @default ["auto"]
+     */
+    themes?: RevealJsTheme[];
+  }
+  ```
 
-#### demo.codepenLayout
-
-- Type: `"top" | "left" | "correct"`
-- Default value: `"left"`
-
-CodePen editor layout
-
-#### demo.codepenEditors
-
-- Type: `string`
-- Default value: `"101"`
-
-CodePen editor status
-
-#### others
-
-The following are the library links used by the third-party code demo service. Unless your environment cannot visit unpkg or the speed is slow, you probably don't need to override the default values.
-
-##### demo.babel
-
-Default value: `"https://unpkg.com/@babel/standalone/babel.min.js"`
-
-##### demo.vue
-
-Default value: `"https://unpkg.com/vue/dist/vue.global.prod.js"`
-
-##### demo.react
-
-Default value: `"https://unpkg.com/react/umd/react.production.min.js"`
-
-##### demo.reactDOM
-
-Default value: `"https://unpkg.com/react-dom/umd/react-dom.production.min.js"`
-
-### presentation
-
-- Type: `PresentationOptions | boolean`
 - Default: `false`
 
-Whether to enable presentation syntax support.
+Whether to enable slides support. You can pass an option to control plugins and themes to import.
 
-You can set it with an object, the object will be used to config reveal.js.
+::: info
 
-#### presentation.plugins
-
-- Type: `RevealPlugin[]`
-
-  ```ts
-  type RevealPlugin = "highlight" | "math" | "search" | "notes" | "zoom";
-  ```
-
-- Required: No
-
-Plugins you want to use on reveal.js.
-
-Acceptable values are:
-
-- `"highlight"`
-- `"math"`
-- `"search"`
-- `"notes"`
-- `"zoom"`
-
-<!-- - `"anything"`
-- `"audio"`
-- `"chalkboard"` -->
-
-#### presentation.revealConfig
-
-- Type: `Partial<RevealOptions>`
-- Required: No
-
-Config which you want to pass to reveal.js.
-
-### delay
-
-- Type: `number`
-- Default: `800`
-
-The delay of operating dom, in ms.
-
-::: tip
-
-If the theme you are using has a switching animation, it is recommended to configure this option to `Switch animation duration + 200`.
+Check <ProjectLink name="md-enhance" path="/config/">md-enhance plugin documentation</ProjectLink> for all available options.
 
 :::
-
-### locales
-
-- Type: `MarkdownEnhanceLocaleConfig`
-
-  ```ts
-  interface MarkdownEnhanceLocaleData {
-    /**
-     * Default Title text for info block
-     */
-    info: string;
-
-    /**
-     * Default Title text for note block
-     */
-    note: string;
-
-    /**
-     * Default Title text for tip block
-     */
-    tip: string;
-
-    /**
-     * Default Title text for warning block
-     */
-    warning: string;
-
-    /**
-     * Default Title text for danger block
-     */
-    danger: string;
-
-    /**
-     * Default Title text for details block
-     */
-    details: string;
-  }
-
-  interface MarkdownEnhanceLocaleConfig {
-    [localePath: string]: MarkdownEnhanceLocaleData;
-  }
-  ```
-
-- Required: No
-
-Locales config for Markdown Enhance Plugin.

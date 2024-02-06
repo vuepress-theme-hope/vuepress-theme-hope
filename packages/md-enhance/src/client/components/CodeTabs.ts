@@ -1,23 +1,14 @@
 import { useStorage } from "@vueuse/core";
-import {
-  type PropType,
-  type SlotsType,
-  type VNode,
-  defineComponent,
-  h,
-  onMounted,
-  ref,
-  shallowRef,
-  watch,
-} from "vue";
+import type { PropType, SlotsType, VNode } from "vue";
+import { defineComponent, h, onMounted, ref, shallowRef, watch } from "vue";
 
-import { type TabProps } from "./Tabs.js";
+import type { TabProps } from "./Tabs.js";
 
 import "../styles/code-tabs.scss";
 
 const codeTabStore = useStorage<Record<string, string>>(
   "VUEPRESS_CODE_TAB_STORE",
-  {}
+  {},
 );
 
 export default defineComponent({
@@ -55,7 +46,7 @@ export default defineComponent({
     },
 
     /**
-     * tab id
+     * Tab id
      *
      * 标签页 id
      */
@@ -77,31 +68,32 @@ export default defineComponent({
   }>,
 
   setup(props, { slots }) {
-    // index of current active item
+    // Index of current active item
+    // eslint-disable-next-line vue/no-setup-props-destructure
     const activeIndex = ref(props.active);
 
-    // refs of the tab buttons
+    // Refs of the tab buttons
     const tabRefs = shallowRef<HTMLUListElement[]>([]);
 
-    // update store
+    // Update store
     const updateStore = (): void => {
       if (props.tabId)
         codeTabStore.value[props.tabId] = props.data[activeIndex.value].id;
     };
 
-    // activate next tab
+    // Activate next tab
     const activateNext = (index = activeIndex.value): void => {
       activeIndex.value = index < tabRefs.value.length - 1 ? index + 1 : 0;
       tabRefs.value[activeIndex.value].focus();
     };
 
-    // activate previous tab
+    // Activate previous tab
     const activatePrev = (index = activeIndex.value): void => {
       activeIndex.value = index > 0 ? index - 1 : tabRefs.value.length - 1;
       tabRefs.value[activeIndex.value].focus();
     };
 
-    // handle keyboard event
+    // Handle keyboard event
     const keyboardHandler = (event: KeyboardEvent, index: number): void => {
       if (event.key === " " || event.key === "Enter") {
         event.preventDefault();
@@ -121,7 +113,7 @@ export default defineComponent({
     const getInitialIndex = (): number => {
       if (props.tabId) {
         const valueIndex = props.data.findIndex(
-          ({ id }) => codeTabStore.value[props.tabId] === id
+          ({ id }) => codeTabStore.value[props.tabId] === id,
         );
 
         if (valueIndex !== -1) return valueIndex;
@@ -141,7 +133,7 @@ export default defineComponent({
 
             if (index !== -1) activeIndex.value = index;
           }
-        }
+        },
       );
     });
 
@@ -173,9 +165,9 @@ export default defineComponent({
                     onKeydown: (event: KeyboardEvent) =>
                       keyboardHandler(event, index),
                   },
-                  slots[`title${index}`]({ value: id, isActive })
+                  slots[`title${index}`]({ value: id, isActive }),
                 );
-              })
+              }),
             ),
             props.data.map(({ id }, index) => {
               const isActive = index === activeIndex.value;
@@ -188,7 +180,14 @@ export default defineComponent({
                   role: "tabpanel",
                   "aria-expanded": isActive,
                 },
-                slots[`tab${index}`]({ value: id, isActive })
+                [
+                  h(
+                    "div",
+                    { class: "vp-code-tab-title" },
+                    slots[`title${index}`]({ value: id, isActive }),
+                  ),
+                  slots[`tab${index}`]({ value: id, isActive }),
+                ],
               );
             }),
           ])

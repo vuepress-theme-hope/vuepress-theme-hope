@@ -17,10 +17,7 @@
 .outlook-dropdown {
   position: absolute;
   top: 100%;
-
-  // NOTE: Compatible with Android Wechat
-  // inset-inline-end: 0;
-  right: 0;
+  inset-inline-end: 0;
 
   overflow-y: auto;
   box-sizing: border-box;
@@ -42,11 +39,6 @@
 
   transition: all 0.18s ease-out;
   transform: scale(0.8);
-
-  #{hope-config.$rtl-selector} & {
-    right: unset;
-    left: 0;
-  }
 
   > *:not(:last-child) {
     padding-bottom: 0.5rem;

@@ -1,12 +1,12 @@
 /* eslint-disable @typescript-eslint/naming-convention */
-import { createBaseApp } from "@vuepress/core";
-import { path } from "@vuepress/utils";
 import { describe, expect, it } from "vitest";
+import { createBaseApp } from "vuepress/core";
+import { path } from "vuepress/utils";
 
 import { emptyTheme } from "./__fixtures__/theme/empty.js";
 import { getStatus } from "../../src/node/config/status.js";
 import { getThemeData } from "../../src/node/config/themeData.js";
-import { type ThemeOptions } from "../../src/shared/index.js";
+import type { ThemeOptions } from "../../src/shared/index.js";
 
 describe("should generate themeData correctly", () => {
   it("Should contain basic properties", () => {
@@ -85,7 +85,7 @@ describe("should generate themeData correctly", () => {
 
     expect(result.locales).toBeTypeOf("object");
     expect(new Set(Object.keys(result.locales))).toEqual(
-      new Set(["/", "/zh/"])
+      new Set(["/", "/zh/"]),
     );
     expect(result.locales["/"].navbar).toEqual(["/", "/guide", "/about"]);
     expect(result.locales["/zh/"].navbar).toEqual([

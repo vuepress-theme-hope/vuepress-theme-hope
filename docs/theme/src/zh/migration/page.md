@@ -1,6 +1,7 @@
 ---
 title: 页面迁移指南
 icon: file
+order: 3
 category:
   - 迁移
 tag:

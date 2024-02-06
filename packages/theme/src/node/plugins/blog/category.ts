@@ -1,20 +1,20 @@
-import { type GitData } from "@vuepress/plugin-git";
-import { type BlogCategoryOptions } from "vuepress-plugin-blog2";
-import { isArray } from "vuepress-shared/node";
+import { isArray } from "@vuepress/helper";
+import type { BlogCategoryOptions } from "@vuepress/plugin-blog";
+import type { GitData } from "@vuepress/plugin-git";
 
 import { defaultPageSorter } from "./utils.js";
-import {
-  type ArticleInfo,
-  ArticleInfoType,
-  type BlogPluginOptions,
-  type ThemeData,
-  type ThemeNormalPageFrontmatter,
+import type {
+  ArticleInfo,
+  BlogOptions,
+  ThemeData,
+  ThemeNormalPageFrontmatter,
 } from "../../../shared/index.js";
+import { ArticleInfoType } from "../../../shared/index.js";
 
 /** @private */
 export const getBlogCategoryCategory = (
-  options: BlogPluginOptions,
-  themeData: ThemeData
+  options: BlogOptions,
+  themeData: ThemeData,
 ): BlogCategoryOptions<
   { git: GitData },
   ThemeNormalPageFrontmatter,
@@ -38,6 +38,7 @@ export const getBlogCategoryCategory = (
     layout: "BlogCategory",
     frontmatter: (localePath) => ({
       title: themeData.locales[localePath].blogLocales.category,
+      dir: { index: false },
       index: false,
       feed: false,
       sitemap: false,
@@ -45,6 +46,7 @@ export const getBlogCategoryCategory = (
     itemPath: options.categoryItem,
     itemFrontmatter: (name, localePath) => ({
       title: `${name} ${themeData.locales[localePath].blogLocales.category}`,
+      dir: { index: false },
       index: false,
       feed: false,
       sitemap: false,
@@ -54,8 +56,8 @@ export const getBlogCategoryCategory = (
 
 /** @private */
 export const getBlogTagCategory = (
-  options: BlogPluginOptions,
-  themeData: ThemeData
+  options: BlogOptions,
+  themeData: ThemeData,
 ): BlogCategoryOptions<
   { git: GitData },
   ThemeNormalPageFrontmatter,
@@ -79,6 +81,7 @@ export const getBlogTagCategory = (
     layout: "BlogCategory",
     frontmatter: (localePath) => ({
       title: themeData.locales[localePath].blogLocales.tag,
+      dir: { index: false },
       index: false,
       feed: false,
       sitemap: false,
@@ -86,7 +89,8 @@ export const getBlogTagCategory = (
     itemPath: options.tagItem,
     itemLayout: "BlogCategory",
     itemFrontmatter: (name, localePath) => ({
-      title: `${name} ${themeData.locales[localePath].blogLocales.tag}`,
+      title: `${themeData.locales[localePath].blogLocales.tag}: ${name}`,
+      dir: { index: false },
       index: false,
       feed: false,
       sitemap: false,

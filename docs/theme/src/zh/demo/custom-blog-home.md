@@ -3,7 +3,7 @@ home: true
 layout: CustomBlogHome
 icon: home
 title: 自定义博客主页
-heroImage: /logo.svg
+heroImage: https://theme-hope-assets.vuejs.press/logo.svg
 heroText: 你博客的名称
 heroFullScreen: true
 tagline: 你可以在这里放置你的口号与标语
@@ -33,7 +33,7 @@ projects:
     desc: 伙伴详细介绍
     link: https://你的伙伴链接
 
-  - icon: /logo.svg
+  - icon: https://theme-hope-assets.vuejs.press/logo.svg
     name: 自定义项目
     desc: 自定义详细介绍
     link: https://你的自定义链接

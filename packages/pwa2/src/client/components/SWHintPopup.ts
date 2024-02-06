@@ -1,13 +1,6 @@
-import {
-  type SlotsType,
-  Transition,
-  type VNode,
-  defineComponent,
-  h,
-  onMounted,
-  ref,
-} from "vue";
-import { useLocaleConfig } from "vuepress-shared/client";
+import { useLocaleConfig } from "@vuepress/helper/client";
+import type { SlotsType, VNode } from "vue";
+import { Transition, defineComponent, h, onMounted, ref } from "vue";
 
 import { UpdateIcon } from "./icons.js";
 import { usePWAEvent } from "../composables/index.js";
@@ -22,7 +15,7 @@ export default defineComponent({
     default?: (props: {
       enabled: boolean;
       uninstall: () => void;
-    }) => VNode[] | VNode;
+    }) => VNode[] | VNode | null;
   }>,
 
   setup(_props, { slots }) {
@@ -43,7 +36,7 @@ export default defineComponent({
 
       event.on("updatefound", () => {
         void navigator.serviceWorker.getRegistration().then((registration) => {
-          // check whether a valid service worker is active
+          // Check whether a valid service worker is active
           if (registration && registration.active) enabled.value = true;
         });
       });
@@ -74,9 +67,9 @@ export default defineComponent({
                 [
                   locale.value.hint,
                   h("span", { class: "icon-wrapper" }, h(UpdateIcon)),
-                ]
+                ],
               )
-            : null)
+            : null),
       );
   },
 });

@@ -1,5 +1,5 @@
 ---
-title: V2 迁移指南
+title: 迁移至最新版
 icon: code-compare
 ---
 
@@ -21,7 +21,7 @@ icon: code-compare
 
 - `hintComponent`: 检测到新内容的提示组件
 
-- shouldPrefetch 提示: 现在插件将检查配置文件中的 `shouldPrefetch` 选项并警告你禁用它。
+- shouldPrefetch 提示: 现在插件将检查[配置文件][config]中的 `shouldPrefetch` 选项并警告你禁用它。
 
 ## 选项变更
 
@@ -29,6 +29,14 @@ icon: code-compare
 
   这能有效降低 SW 更新时间
 
+- `cacheMaxSize` 重命名为 `maxSize`
+
 - `popupComponent` 重命名为 `updateComponent`
 
   这是因为我们新增了一个提示弹窗，所以需要避免名称混淆
+
+## 破坏性变更
+
+- `showInstall` 被移除
+
+[config]: https://vuejs.press/zh/guide/configuration.html#%E9%85%8D%E7%BD%AE%E6%96%87%E4%BB%B6

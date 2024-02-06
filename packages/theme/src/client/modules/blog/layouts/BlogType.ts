@@ -1,10 +1,11 @@
-import { usePageData, usePageFrontmatter } from "@vuepress/client";
-import { type VNode, computed, defineComponent, h } from "vue";
-import {
-  type BlogPluginFrontmatter,
-  type BlogTypeFrontmatterOptions,
-  useBlogType,
-} from "vuepress-plugin-blog2/client";
+import type {
+  BlogPluginFrontmatter,
+  BlogTypeFrontmatterOptions,
+} from "@vuepress/plugin-blog/client";
+import { useBlogType } from "@vuepress/plugin-blog/client";
+import type { VNode } from "vue";
+import { computed, defineComponent, h } from "vue";
+import { usePageData, usePageFrontmatter } from "vuepress/client";
 
 import DropTransition from "@theme-hope/components/transitions/DropTransition";
 import ArticleList from "@theme-hope/modules/blog/components/ArticleList";
@@ -16,7 +17,7 @@ import {
   useStars,
 } from "@theme-hope/modules/blog/composables/index";
 
-import { type ArticleInfo } from "../../../../shared/index.js";
+import type { ArticleInfo } from "../../../../shared/index.js";
 
 import "../styles/page.scss";
 
@@ -37,8 +38,8 @@ export default defineComponent({
       return key === "star"
         ? stars.value.items
         : type === "type" && key
-        ? blogType.value.items
-        : articles.value.items;
+          ? blogType.value.items
+          : articles.value.items;
     });
 
     return (): VNode =>
@@ -50,12 +51,14 @@ export default defineComponent({
             h("main", { id: "main-content", class: "vp-blog-main" }, [
               h(DropTransition, () => h(ArticleType)),
               h(DropTransition, { appear: true, delay: 0.24 }, () =>
-                h(ArticleList, { key: page.value.path, items: items.value })
+                h(ArticleList, { key: page.value.path, items: items.value }),
               ),
             ]),
-            h(DropTransition, { delay: 0.16 }, () => h(InfoPanel)),
-          ])
-        )
+            h(DropTransition, { delay: 0.16 }, () =>
+              h(InfoPanel, { key: "blog" }),
+            ),
+          ]),
+        ),
       );
   },
 });

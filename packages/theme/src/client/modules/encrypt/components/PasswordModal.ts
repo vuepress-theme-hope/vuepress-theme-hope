@@ -1,5 +1,6 @@
-import { usePageFrontmatter } from "@vuepress/client";
-import { type VNode, computed, defineComponent, h, nextTick, ref } from "vue";
+import type { VNode } from "vue";
+import { computed, defineComponent, h, nextTick, ref } from "vue";
+import { usePageFrontmatter } from "vuepress/client";
 
 import { useThemeLocaleData } from "@theme-hope/composables/index";
 
@@ -33,7 +34,7 @@ export default defineComponent({
     let hintHandler: number | null = null;
 
     const verify = (): void => {
-      // clear previous handler
+      // Clear previous handler
       if (hintHandler) clearTimeout(hintHandler);
       hasTried.value = false;
 
@@ -63,7 +64,7 @@ export default defineComponent({
             { class: ["vp-decrypt-hint", { tried: hasTried.value }] },
             hasTried.value
               ? locale.value.errorHint
-              : h(LockIcon, { "aria-label": locale.value.iconLabel })
+              : h(LockIcon, { "aria-label": locale.value.iconLabel }),
           ),
           h("div", { class: "vp-decrypt-input" }, [
             h("input", {
@@ -93,9 +94,9 @@ export default defineComponent({
               class: "vp-decrypt-submit",
               onClick: () => verify(),
             },
-            "OK"
+            "OK",
           ),
-        ])
+        ]),
       );
   },
 });

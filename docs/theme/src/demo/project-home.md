@@ -2,22 +2,22 @@
 home: true
 icon: home
 title: Project Home with features
-heroImage: /logo.svg
+heroImage: https://theme-hope-assets.vuejs.press/logo.svg
 heroText: VuePress Theme Hope
 tagline: A VuePress theme with tons of features✨
 actions:
-  - text: Tutorial 🧭
-    link: /cookbook/tutorial/
+  - text: Get Started
+    link: /get-started/
+    icon: signs-post
     type: primary
 
-  - text: Intro 💡
-    link: /guide/get-started/intro.html
+  - text: Guide
+    icon: lightbulb
+    link: /guide/
 
-  - text: Config 🛠
-    link: /config/
-
-  - text: Online Demo 🪀
-    link: https://stackblitz.com/fork/vuepress-theme-hope
+  - text: Demos
+    icon: star
+    link: /demo/
 
 features:
   - title: Markdown Enhance
@@ -170,8 +170,7 @@ npm init vuepress-theme-hope add [dir]
 
 @tab TS
 
-```ts
-// .vuepress/config.ts
+```ts title=".vuepress/config.ts"
 import { defineUserConfig } from "vuepress";
 import { hopeTheme } from "vuepress-theme-hope";
 
@@ -184,8 +183,7 @@ export default defineUserConfig({
 
 @tab JS
 
-```js
-// .vuepress/config.js
+```js title=".vuepress/config.js"
 import { hopeTheme } from "vuepress-theme-hope";
 
 export default {
@@ -196,10 +194,6 @@ export default {
 ```
 
 :::
-
-## Step-by-Step Tutorial
-
-- [Tutorial](../cookbook/tutorial/README.md)
 
 ## Telegram Group
 

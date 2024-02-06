@@ -34,7 +34,7 @@ Whether to show suggestions while searching.
     /**
      * Custom field getter
      */
-    getter: (page: Page) => string | string[] | null;
+    getter: (page: Page) => string[] | string | null | undefined;
 
     /**
      * Display content
@@ -156,7 +156,7 @@ Max stored query history count, set `0` to disable it.
 
 Max stored matched result history count, set `0` to disable it.
 
-### delay
+### searchDelay
 
 - Type: `number`
 - Default: `150`
@@ -168,6 +168,22 @@ Delay to start searching after input.
 Performing client search with huge contents could be slow, so under this case you might need to increase this value to ensure user finish input before searching.
 
 :::
+
+### filter
+
+- Type: `(page: Page) => boolean`
+- Default: `() => true`
+
+Function used to filter pages.
+
+### sortStrategy
+
+- Type: `"max" | "total"`
+- Default: `"max"`
+
+Result Sort strategy.
+
+When there are multiple matched results, the result will be sorted by the strategy. `max` means that page having higher total score will be placed in front. `total` means that page having higher max score will be placed in front.
 
 ### worker
 
@@ -196,7 +212,7 @@ Usually in development, users do not need to update the index database in real t
 - Type: `SearchProIndexOptions`
 
   ```ts
-  export interface SearchProIndexOptions {
+  interface SearchProIndexOptions {
     /**
      * Function to tokenize the index field item.
      */
@@ -205,7 +221,7 @@ Usually in development, users do not need to update the index database in real t
      * Function to process or normalize terms in the index field.
      */
     processTerm?: (
-      term: string
+      term: string,
     ) => string | string[] | null | undefined | false;
   }
   ```
@@ -219,7 +235,7 @@ Options used to create index.
 - Type: `Record<string, SearchProIndexOptions>`
 
   ```ts
-  export interface SearchProIndexOptions {
+  interface SearchProIndexOptions {
     /**
      * Function to tokenize the index field item.
      */
@@ -228,7 +244,7 @@ Options used to create index.
      * Function to process or normalize terms in the index field.
      */
     processTerm?: (
-      term: string
+      term: string,
     ) => string | string[] | null | undefined | false;
   }
   ```
@@ -297,9 +313,14 @@ Options used to create index per locale.
     loading: string;
 
     /**
-     * Search history text
+     * Search query history title
      */
-    history: string;
+    queryHistory: string;
+
+    /**
+     * Search result history title
+     */
+    resultHistory: string;
 
     /**
      * Search history empty hint
@@ -349,10 +370,9 @@ Multilingual configuration of the search plugin.
 
 ### defineSearchConfig
 
-Customize [search options](https://mister-hope.github.io/slimsearch/types/SearchOptions.html).
+Customize [search options](https://mister-hope.github.io/slimsearch/interfaces/SearchOptions.html).
 
-```ts
-// .vuepress/client.ts
+```ts title=".vuepress/client.ts"
 import { defineSearchConfig } from "vuepress-plugin-search-pro/client";
 
 defineSearchConfig({
@@ -367,55 +387,53 @@ export default {};
 Create a search worker so that you can search through API.
 
 ```ts
-export type Word = [tag: string, content: string] | string;
+type Word = [tag: string, content: string] | string;
 
-export interface TitleMatchedItem {
+interface TitleMatchedItem {
   type: "title";
   id: string;
   display: Word[];
 }
 
-export interface HeadingMatchedItem {
+interface HeadingMatchedItem {
   type: "heading";
   id: string;
   display: Word[];
 }
 
-export interface CustomMatchedItem {
+interface CustomMatchedItem {
   type: "custom";
   id: string;
   index: string;
   display: Word[];
 }
 
-export interface ContentMatchedItem {
+interface ContentMatchedItem {
   type: "content";
   id: string;
   header: string;
   display: Word[];
 }
 
-export type MatchedItem =
+type MatchedItem =
   | TitleMatchedItem
   | HeadingMatchedItem
   | ContentMatchedItem
   | CustomMatchedItem;
 
-export interface SearchResult {
+interface SearchResult {
   title: string;
   contents: MatchedItem[];
 }
 
-export interface SearchWorker {
+interface SearchWorker {
   search: (
     query: string,
     locale: string,
-    searchOptions?: SearchOptions
+    searchOptions?: SearchOptions,
   ) => Promise<SearchResult[]>;
   terminate: () => void;
 }
 
-declare const createSearchWorker: (
-  options: SearchWorkerOptions
-) => SearchWorker;
+const createSearchWorker: () => SearchWorker;
 ```

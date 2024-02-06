@@ -1,15 +1,17 @@
+import { isString } from "@vuepress/helper/client";
+import type { SlotsType, VNode } from "vue";
+import { computed, defineComponent, h } from "vue";
 import {
   usePageFrontmatter,
   useSiteLocaleData,
   withBase,
-} from "@vuepress/client";
-import { type SlotsType, type VNode, computed, defineComponent, h } from "vue";
-import { isString } from "vuepress-shared/client";
+} from "vuepress/client";
 
 import AutoLink from "@theme-hope/components/AutoLink";
 import DropTransition from "@theme-hope/components/transitions/DropTransition";
 
-import { type ThemeProjectHomePageFrontmatter } from "../../shared/index.js";
+import HopeIcon from "./HopeIcon.js";
+import type { ThemeProjectHomePageFrontmatter } from "../../shared/index.js";
 
 import "../styles/hero-info.scss";
 
@@ -37,9 +39,9 @@ export default defineComponent({
   name: "HeroInfo",
 
   slots: Object as SlotsType<{
-    heroBg?: (props: BackgroundInfo) => VNode | VNode[];
-    heroImage?: (props: HeroImage) => VNode | VNode[];
-    heroInfo?: (props: HeroInfo) => VNode | VNode[];
+    heroBg?: (props: BackgroundInfo) => VNode[] | VNode | null;
+    heroImage?: (props: HeroImage) => VNode[] | VNode | null;
+    heroInfo?: (props: HeroInfo) => VNode[] | VNode | null;
   }>,
 
   setup(_props, { slots }) {
@@ -47,7 +49,7 @@ export default defineComponent({
     const siteLocale = useSiteLocaleData();
 
     const isFullScreen = computed(
-      () => frontmatter.value.heroFullScreen ?? false
+      () => frontmatter.value.heroFullScreen ?? false,
     );
 
     const heroInfo = computed(() => {
@@ -68,7 +70,7 @@ export default defineComponent({
         image: heroImage ? withBase(heroImage) : null,
         imageDark: heroImageDark ? withBase(heroImageDark) : null,
         heroStyle: heroImageStyle,
-        alt: heroAlt || heroText || "hero image",
+        alt: heroAlt || heroText || "",
         isFullScreen: isFullScreen.value,
       };
     });
@@ -96,9 +98,7 @@ export default defineComponent({
               ? h("div", {
                   class: ["vp-hero-mask", { light: bgInfo.value.imageDark }],
                   style: [
-                    {
-                      "background-image": `url(${bgInfo.value.image})`,
-                    },
+                    { "background-image": `url(${bgInfo.value.image})` },
                     bgInfo.value.bgStyle,
                   ],
                 })
@@ -145,35 +145,47 @@ export default defineComponent({
               h("div", { class: "vp-hero-infos" }, [
                 heroInfo.value.text
                   ? h(DropTransition, { appear: true, delay: 0.04 }, () =>
-                      h("h1", { id: "main-title" }, heroInfo.value.text)
+                      h("h1", { id: "main-title" }, heroInfo.value.text),
                     )
                   : null,
                 heroInfo.value.tagline
                   ? h(DropTransition, { appear: true, delay: 0.08 }, () =>
                       h("p", {
-                        class: "vp-description",
+                        id: "main-description",
                         innerHTML: heroInfo.value.tagline,
-                      })
+                      }),
                     )
                   : null,
                 actions.value.length
                   ? h(DropTransition, { appear: true, delay: 0.12 }, () =>
                       h(
                         "p",
-                        { class: "vp-actions" },
+                        { class: "vp-hero-actions" },
                         actions.value.map((action) =>
-                          h(AutoLink, {
-                            class: ["vp-action", action.type || "default"],
-                            config: action,
-                            noExternalLinkIcon: true,
-                          })
-                        )
-                      )
+                          h(
+                            AutoLink,
+                            {
+                              class: [
+                                "vp-hero-action",
+                                action.type || "default",
+                              ],
+                              config: action,
+                              noExternalLinkIcon: true,
+                            },
+                            action.icon
+                              ? {
+                                  before: () =>
+                                    h(HopeIcon, { icon: action.icon }),
+                                }
+                              : {},
+                          ),
+                        ),
+                      ),
                     )
                   : null,
               ]),
           ]),
-        ]
+        ],
       );
   },
 });

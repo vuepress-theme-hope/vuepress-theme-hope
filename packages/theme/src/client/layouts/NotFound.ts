@@ -1,6 +1,6 @@
-import { useRouteLocale } from "@vuepress/client";
-import { type SlotsType, type VNode, defineComponent, h } from "vue";
-import { useLink } from "vue-router";
+import type { SlotsType, VNode } from "vue";
+import { defineComponent, h } from "vue";
+import { useRouteLocale, useRouter } from "vuepress/client";
 
 import CommonWrapper from "@theme-hope/components/CommonWrapper";
 import NotFoundHint from "@theme-hope/components/NotFoundHint";
@@ -13,16 +13,13 @@ export default defineComponent({
   name: "NotFound",
 
   slots: Object as SlotsType<{
-    default: () => VNode | VNode[];
+    default: () => VNode[] | VNode | null;
   }>,
 
   setup(_props, { slots }) {
+    const router = useRouter();
     const routeLocale = useRouteLocale();
     const themeLocale = useThemeLocaleData();
-
-    const { navigate } = useLink({
-      to: themeLocale.value.home ?? routeLocale.value,
-    });
 
     return (): VNode[] => [
       h(SkipLink),
@@ -42,20 +39,24 @@ export default defineComponent({
                     window.history.go(-1);
                   },
                 },
-                themeLocale.value.routeLocales.back
+                themeLocale.value.routeLocales.back,
               ),
               h(
                 "button",
                 {
                   type: "button",
                   class: "action-button",
-                  onClick: () => navigate(),
+                  onClick: () => {
+                    void router.push(
+                      themeLocale.value.home ?? routeLocale.value,
+                    );
+                  },
                 },
-                themeLocale.value.routeLocales.home
+                themeLocale.value.routeLocales.home,
               ),
             ]),
-          ]
-        )
+          ],
+        ),
       ),
     ];
   },

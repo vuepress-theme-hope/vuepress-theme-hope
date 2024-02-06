@@ -1,7 +1,7 @@
 import { container } from "@mdit/plugin-container";
-import { type PluginSimple } from "markdown-it";
+import { encodeData } from "@vuepress/helper";
+import type { PluginSimple } from "markdown-it";
 import type Token from "markdown-it/lib/token.js";
-import { utoa } from "vuepress-shared/node";
 
 const echartsRender = (tokens: Token[], index: number): string => {
   const token = tokens[index];
@@ -9,14 +9,14 @@ const echartsRender = (tokens: Token[], index: number): string => {
   const { content, info } = token;
   const title = info.trim().split(":", 2)[1];
 
-  return `<ECharts id="${key}" config="${utoa(content)}"${
+  return `<ECharts id="${key}" config="${encodeData(content)}"${
     title ? ` title="${encodeURIComponent(title)}"` : ""
   }></ECharts>`;
 };
 
 export const echarts: PluginSimple = (md) => {
   // Handle ```echarts blocks
-  const fence = md.renderer.rules.fence;
+  const { fence } = md.renderer.rules;
 
   md.renderer.rules.fence = (...args): string => {
     const [tokens, index] = args;
@@ -59,13 +59,13 @@ export const echarts: PluginSimple = (md) => {
             isJavaScript = true;
           }
 
-        // set to an unexist token type
+        // Set to an unexist token type
         tokens[i].type = "echarts_empty";
-        // hide token
+        // Hide token
         tokens[i].hidden = true;
       }
 
-      return `<ECharts id="${key}" config="${utoa(config)}"${
+      return `<ECharts id="${key}" config="${encodeData(config)}"${
         title ? ` title="${encodeURIComponent(title)}"` : ""
       }${isJavaScript ? ' type="js"' : ""}>`;
     },

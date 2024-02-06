@@ -1,7 +1,7 @@
-import { Content } from "@vuepress/client";
 import { onClickOutside } from "@vueuse/core";
-import { type VNode, defineComponent, h, ref, shallowRef } from "vue";
-import { useRouter } from "vue-router";
+import type { VNode } from "vue";
+import { defineComponent, h, ref, shallowRef } from "vue";
+import { Content, useRouteLocale, useRouter } from "vuepress/client";
 
 import { BackIcon, HomeIcon } from "./components/icons.js";
 
@@ -12,6 +12,7 @@ export default defineComponent({
 
   setup() {
     const router = useRouter();
+    const routeLocale = useRouteLocale();
     const showMenu = ref(false);
 
     const menu = shallowRef<HTMLElement>();
@@ -31,7 +32,7 @@ export default defineComponent({
 
     const home = (): void => {
       closeMenu();
-      void router.push("/");
+      void router.push(routeLocale.value);
     };
 
     onClickOutside(menu, closeMenu);
@@ -46,19 +47,19 @@ export default defineComponent({
             h(
               "button",
               { type: "button", class: "menu-button", onClick: () => toggle() },
-              h("span", { class: "icon" })
+              h("span", { class: "icon" }),
             ),
             h(
               "button",
               { type: "button", class: "back-button", onClick: () => back() },
-              h(BackIcon)
+              h(BackIcon),
             ),
             h(
               "button",
               { type: "button", class: "home-button", onClick: () => home() },
-              h(HomeIcon)
+              h(HomeIcon),
             ),
-          ]
+          ],
         ),
       ]);
   },

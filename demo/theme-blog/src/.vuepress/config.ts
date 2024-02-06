@@ -1,5 +1,5 @@
-import { defineUserConfig } from "@vuepress/cli";
-import { getDirname, path } from "@vuepress/utils";
+import { defineUserConfig } from "vuepress/cli";
+import { getDirname, path } from "vuepress/utils";
 
 import theme from "./theme.js";
 
@@ -31,7 +31,7 @@ export default defineUserConfig({
   alias: {
     "@theme-hope/modules/blog/components/BlogHero": path.resolve(
       __dirname,
-      "./components/BlogHero.vue"
+      "./components/BlogHero.vue",
     ),
   },
 });

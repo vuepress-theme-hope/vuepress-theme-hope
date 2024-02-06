@@ -1,4 +1,4 @@
-import { type PDFLocaleConfig } from "../../shared/index.js";
+import type { PDFLocaleConfig } from "../../shared/index.js";
 
 export const pdfLocaleConfig: PDFLocaleConfig = {
   "/en/": {

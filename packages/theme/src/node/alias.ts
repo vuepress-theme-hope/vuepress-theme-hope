@@ -1,5 +1,5 @@
-import { fs, path } from "@vuepress/utils";
-import { endsWith, fromEntries } from "vuepress-shared/node";
+import { endsWith, fromEntries } from "@vuepress/helper";
+import { fs, path } from "vuepress/utils";
 
 import { CLIENT_FOLDER } from "./utils.js";
 
@@ -11,13 +11,13 @@ const getDirAlias = (dir: string): [string, string][] => {
         .readdirSync(dirPath)
         .filter(
           (file) =>
-            // js files
+            // JS files
             endsWith(file, ".js") ||
-            // folder
-            !file.includes(".")
+            // Folder
+            !file.includes("."),
         )
         .map<[string, string]>((file) => [
-          `@theme-hope/${dir}/${file.replace(/\.js$/, "")}`,
+          `@theme-hope/${dir}/${file.replace(/\.js$/u, "")}`,
           path.resolve(CLIENT_FOLDER, dir, file),
         ])
     : [];
@@ -35,33 +35,33 @@ const getEntryAlias = (entry: string): [string, string] | null => {
  * @private
  */
 export const getAlias = (isDebug: boolean): Record<string, string> => {
-  // use alias to make all components replaceable
+  // Use alias to make all components replaceable
   const alias = fromEntries([
-    // define components
+    // Define components
     ...getDirAlias("components"),
-    // define composables and utils
+    // Define composables and utils
     ...["composables", "utils"]
       .map(getEntryAlias)
-      .filter<[string, string]>(
-        (item): item is [string, string] => item !== null
-      ),
-    // define layouts
+      .filter<
+        [string, string]
+      >((item): item is [string, string] => item !== null),
+    // Define layouts
     ...getDirAlias("layouts"),
-    // define modules
+    // Define modules
     ...fs
       .readdirSync(path.resolve(CLIENT_FOLDER, "modules"))
       .map((folder) => `modules/${folder}`)
       .map((file) => [
-        // define module components
+        // Define module components
         ...getDirAlias(`${file}/components`),
-        // define module composables and utils
+        // Define module composables and utils
         ...["composables", "utils"]
           .map((folder) => `${file}/${folder}`)
           .map(getEntryAlias)
           .filter<[string, string]>(
-            (item): item is [string, string] => item !== null
+            (item): item is [string, string] => item !== null,
           ),
-        // define layouts
+        // Define layouts
         ...getDirAlias(`${file}/layouts`),
       ])
       .flat(),

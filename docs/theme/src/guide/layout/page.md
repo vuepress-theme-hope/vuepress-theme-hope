@@ -101,7 +101,7 @@ Also the theme:
 - Provides a `Blog` layout when the blogging feature is enabled
 - Provides a `Slide` layout when the slideshow feature is enabled
 
-If you want to provide your own layout, please see [Theme Extending](../advanced/extend.md).
+If you want to provide your own layout, please [add them in client config files](https://vuejs.press/advanced/cookbook/usage-of-client-config.html#layouts).
 
 :::
 

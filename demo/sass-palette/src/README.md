@@ -1,7 +1,7 @@
 ---
 home: true
 title: Home
-heroImage: /logo.svg
+heroImage: https://theme-hope-assets.vuejs.press/logo.svg
 heroText: vuepress-plugin-sass-palette
 tagline: Sass palette plugin for VuePress2
 actions:
@@ -21,10 +21,9 @@ pnpm add -D vuepress-plugin-sass-palette
 
 ### Usage
 
-```ts
-// Your plugin or theme entry
+```ts title="Your plugin or theme entry"
 import { useSassPalettePlugin } from "vuepress-plugin-sass-palette";
-import type { PluginFunction } from "@vuepress/core";
+import type { PluginFunction } from "vuepress/core";
 
 export const yourPlugin =
   (options): PluginFunction =>

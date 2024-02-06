@@ -1,6 +1,6 @@
 {
   "name": "vuepress-plugin-photo-swipe",
-  "version": "2.0.0-beta.221",
+  "version": "2.0.0-rc.22",
   "description": "Photo Swipe plugin for vuepress",
   "keywords": [
     "vuepress",
@@ -24,7 +24,7 @@
   "author": {
     "name": "Mr.Hope",
     "email": "mister-hope@outlook.com",
-    "url": "https://mrhope.site"
+    "url": "https://mister-hope.com"
   },
   "type": "module",
   "exports": {
@@ -33,56 +33,40 @@
     "./client/*": "./lib/client/*",
     "./package.json": "./package.json"
   },
-  "main": "lib/node/index.js",
-  "types": "lib/node/index.d.ts",
+  "main": "./lib/node/index.js",
+  "types": "./lib/node/index.d.ts",
   "files": [
     "lib"
   ],
   "scripts": {
     "build": "rollup -c rollup.config.ts --configPlugin esbuild",
-    "clean": "rimraf ./lib ./*.tsbuildinfo",
-    "copy": "cpx \"src/client/**/*.{vue,scss}\" lib/client",
+    "clean": "rimraf --glob ./lib ./*.tsbuildinfo",
+    "copy": "cpx \"src/client/**/*.scss\" lib/client",
     "dev": "concurrently \"pnpm dev:copy\" \"pnpm dev:ts\"",
     "dev:copy": "pnpm copy -w",
     "dev:ts": "tsc -b tsconfig.build.json --watch"
   },
-  "engines": {
-    "node": ">=16.0.0",
-    "npm": ">=8",
-    "pnpm": ">=7"
-  },
   "dependencies": {
-    "@vuepress/client": "2.0.0-beta.62",
-    "@vuepress/shared": "2.0.0-beta.62",
-    "@vuepress/utils": "2.0.0-beta.62",
-    "@vueuse/core": "^10.1.2",
-    "photoswipe": "^5.3.7",
-    "vue": "^3.3.4",
-    "vue-router": "^4.2.2",
+    "@vuepress/helper": "2.0.0-rc.11",
+    "@vueuse/core": "^10.7.2",
+    "photoswipe": "^5.4.3",
+    "vue": "^3.4.15",
     "vuepress-plugin-sass-palette": "workspace:*",
     "vuepress-shared": "workspace:*"
   },
-  "devDependencies": {
-    "@vuepress/core": "2.0.0-beta.62"
-  },
   "peerDependencies": {
-    "sass-loader": "^13.3.1",
-    "vuepress": "2.0.0-beta.62",
-    "vuepress-vite": "2.0.0-beta.62",
-    "vuepress-webpack": "2.0.0-beta.62"
+    "sass-loader": "^14.0.0",
+    "vuepress": "2.0.0-rc.6"
   },
   "peerDependenciesMeta": {
     "sass-loader": {
       "optional": true
-    },
-    "vuepress": {
-      "optional": true
-    },
-    "vuepress-vite": {
-      "optional": true
-    },
-    "vuepress-webpack": {
-      "optional": true
     }
+  },
+  "engines": {
+    "node": ">=18.16.0",
+    "npm": ">=8",
+    "pnpm": ">=7",
+    "yarn": ">=2"
   }
 }

@@ -1,11 +1,7 @@
-import { withBase } from "@vuepress/client";
-import {
-  type VNode,
-  computed,
-  defineComponent,
-  h,
-  resolveComponent,
-} from "vue";
+import { useLocaleConfig } from "@vuepress/helper/client";
+import type { VNode } from "vue";
+import { computed, defineComponent, h, resolveComponent } from "vue";
+import { withBase } from "vuepress/client";
 import {
   BitbucketIcon,
   GitHubIcon,
@@ -13,10 +9,9 @@ import {
   GiteeIcon,
   SourceIcon,
   resolveRepoType,
-  useLocaleConfig,
 } from "vuepress-shared/client";
 
-import { type SiteInfoLocaleConfig } from "../../shared/index.js";
+import type { SiteInfoLocaleConfig } from "../../shared/index.js";
 
 import "balloon-css/balloon.css";
 import "../styles/site-info.scss";
@@ -99,11 +94,11 @@ export default defineComponent({
   setup(props) {
     const locale = useLocaleConfig(SITE_INFO_LOCALES);
     const repoType = computed(() =>
-      props.repo ? resolveRepoType(props.repo) : null
+      props.repo ? resolveRepoType(props.repo) : null,
     );
 
     return (): VNode =>
-      h("div", { class: "vp-site-info" }, [
+      h("div", { class: "vp-site-info", "data-name": props.name }, [
         h("a", {
           class: "vp-site-info-navigator",
           title: props.name,
@@ -114,7 +109,7 @@ export default defineComponent({
           class: "vp-site-info-preview",
           style: {
             background: `url(${withBase(
-              props.preview
+              props.preview,
             )}) center/cover no-repeat`,
           },
         }),
@@ -123,7 +118,7 @@ export default defineComponent({
             ? h("img", {
                 class: "vp-site-info-logo",
                 src: props.logo,
-                alt: props.name,
+                alt: "",
                 loading: "lazy",
                 "no-view": "",
               })
@@ -140,14 +135,14 @@ export default defineComponent({
                 {
                   class: "vp-site-info-source",
                   href: props.repo,
-                  // hint text
+                  // Hint text
                   "aria-label": locale.value.source,
                   "data-balloon-pos": "left",
                   title: locale.value.source,
                   target: "_blank",
                 },
-                h(resolveComponent(`${repoType.value!}Icon`))
-              )
+                h(resolveComponent(`${repoType.value!}Icon`)),
+              ),
             )
           : null,
       ]);

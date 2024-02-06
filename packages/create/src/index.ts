@@ -6,86 +6,95 @@ import { cac } from "cac";
 import { execaCommand, execaCommandSync } from "execa";
 import inquirer from "inquirer";
 
+import type { Bundler, CreateLocale, Lang, Preset } from "./config/index.js";
 import {
-  type CreateI18n,
-  type Lang,
+  bundlers,
   generateTemplate,
   getLanguage,
+  presets,
   version,
 } from "./config/index.js";
 import { createPackageJson } from "./packageJson.js";
 import { getRegistry } from "./registry.js";
-import {
-  type PackageManager,
-  ensureDirExistSync,
-  getPackageManager,
-} from "./utils/index.js";
+import type { PackageManager } from "./utils/index.js";
+import { ensureDirExistSync, getPackageManager } from "./utils/index.js";
+
+interface CreateOptions {
+  bundler?: Bundler | null;
+  preset?: Preset | null;
+}
 
 const preAction = async (
   targetDir: string,
-  preset?: "docs" | "blog" | null
+  { bundler, preset }: CreateOptions,
 ): Promise<{
   lang: Lang;
-  message: CreateI18n;
+  locale: CreateLocale;
   packageManager: PackageManager;
 } | void> => {
-  // ensure targetDir is specified by user
+  // Ensure targetDir is specified by user
   if (!targetDir) return cli.outputHelp();
 
-  // get language
-  const { lang, message } = await getLanguage();
+  // Get language
+  const { lang, locale } = await getLanguage();
 
-  // check presets
-  if (preset && !["docs", "blog"].includes(preset))
-    return console.log(message.error.preset);
+  // Check bundler
+  if (bundler && !bundlers.includes(bundler))
+    return console.log(locale.error.bundler);
 
-  // get packageManager
-  const packageManager = await getPackageManager(
-    message.question.packageManager
-  );
-
-  // check if the user is a noob and warn him 🤪
-  if (targetDir.startsWith("[") && targetDir.endsWith("]"))
-    return console.log(message.error.updateDirMissing(packageManager));
+  // Check presets
+  if (preset && !presets.includes(preset))
+    return console.log(locale.error.preset);
 
   const targetDirPath = resolve(process.cwd(), targetDir);
 
-  // check if the user is trying to cover his files
+  // Check if the user is trying to cover his files
   if (existsSync(targetDirPath) && readdirSync(targetDirPath).length)
-    return console.error(message.error.dirNotEmpty(targetDir));
+    return console.error(locale.error.dirNotEmpty(targetDir));
+
+  // Get packageManager
+  const packageManager = await getPackageManager(
+    locale.question.packageManager,
+  );
+
+  // Check if the user is a noob and warn him 🤪
+  if (targetDir.startsWith("[") && targetDir.endsWith("]"))
+    return console.log(locale.error.updateDirMissing(packageManager));
 
   ensureDirExistSync(targetDirPath);
 
-  // return choice
-  return { lang, message, packageManager };
+  // Return choice
+  return { lang, locale, packageManager };
 };
+
+interface PostActionOptions {
+  lang: Lang;
+  cwd?: string;
+  locale: CreateLocale;
+  packageManager: PackageManager;
+}
 
 const postAction = async ({
   cwd = process.cwd(),
   lang,
-  message,
+  locale,
   packageManager,
-}: {
-  lang: Lang;
-  cwd?: string;
-  message: CreateI18n;
-  packageManager: PackageManager;
-}): Promise<void> => {
+}: PostActionOptions): Promise<void> => {
   /*
    * Install deps
    */
   const registry =
     packageManager === "pnpm" ? "" : await getRegistry(packageManager, lang);
 
-  console.log(message.flow.install);
-  console.warn(message.hint.install);
+  console.log(locale.flow.install);
+  console.warn(locale.hint.install);
 
   execaCommandSync(
     `${packageManager} install ${registry ? `--registry ${registry}` : ""}`,
-    { cwd, stdout: "inherit" }
+    { cwd, stdout: "inherit" },
   );
 
-  console.log(message.hint.finish);
+  console.log(locale.hint.finish);
 
   /*
    * Open dev server
@@ -95,20 +104,20 @@ const postAction = async ({
     {
       name: "choice",
       type: "confirm",
-      message: message.question.devServer,
+      message: locale.question.devServer,
       default: true,
     },
   ]);
 
   if (choice) {
-    console.log(message.flow.devServer);
+    console.log(locale.flow.devServer);
 
     await execaCommand(`${packageManager} run docs:dev`, {
       cwd,
       stdout: "inherit",
     });
   } else {
-    console.log(message.hint.devServer(packageManager));
+    console.log(locale.hint.devServer(packageManager));
   }
 };
 
@@ -118,36 +127,43 @@ cli
   .command("[dir]", "Generate a new vuepress-theme-hope project")
   .option("-p, --preset <preset>", "Choose preset to use")
   .usage(
-    "pnpm create vuepress-theme-hope [dir] / yarn create vuepress-theme-hope [dir] / npm init vuepress-theme-hope [dir]"
+    "pnpm create vuepress-theme-hope [dir] / yarn create vuepress-theme-hope [dir] / npm init vuepress-theme-hope [dir]",
   )
   .example("docs")
   .action(
     async (
       targetDir: string,
-      {
-        preset = null,
-      }: {
-        preset?: "docs" | "blog" | null;
-      }
+      { bundler = null, preset = null }: CreateOptions,
     ) => {
       const workingCWD = resolve(process.cwd(), targetDir);
-      const result = await preAction(targetDir, preset);
+      const result = await preAction(targetDir, { bundler, preset });
 
       if (result) {
-        const { lang, message, packageManager } = result;
+        const { lang, locale, packageManager } = result;
 
-        await createPackageJson(packageManager, message, "src", targetDir);
-        await generateTemplate("src", {
-          cwd: workingCWD,
+        await createPackageJson({
+          bundler,
+          locale,
           packageManager,
-          lang,
-          message,
-          preset,
+          cwd: targetDir,
+          source: "src",
         });
-
-        await postAction({ cwd: workingCWD, lang, message, packageManager });
+        await generateTemplate({
+          preset,
+          lang,
+          locale,
+          packageManager,
+          cwd: workingCWD,
+          targetDir: "src",
+        });
+        await postAction({
+          lang,
+          locale,
+          packageManager,
+          cwd: workingCWD,
+        });
       }
-    }
+    },
   );
 
 cli
@@ -155,35 +171,37 @@ cli
   .alias("inject")
   .option("-p, --preset <preset>", "Choose preset to use")
   .usage(
-    "pnpm create vuepress-theme-hope add [dir] / yarn create vuepress-theme-hope add [dir] / npm init vuepress-theme-hope add [dir]"
+    "pnpm create vuepress-theme-hope add [dir] / yarn create vuepress-theme-hope add [dir] / npm init vuepress-theme-hope add [dir]",
   )
   .example("docs")
   .action(
     async (
       targetDir: string,
-      {
-        preset = null,
-      }: {
-        preset?: "docs" | "blog" | null;
-      }
+      { bundler = null, preset = null }: CreateOptions,
     ) => {
-      const result = await preAction(targetDir, preset);
+      const result = await preAction(targetDir, { bundler, preset });
 
       if (result) {
-        const { lang, message, packageManager } = result;
+        const { lang, locale, packageManager } = result;
 
-        await createPackageJson(packageManager, message, targetDir);
-
-        await generateTemplate(targetDir, {
+        await createPackageJson({
+          bundler,
           packageManager,
-          lang,
-          message,
-          preset,
+          locale,
+          source: targetDir,
         });
 
-        await postAction({ message, lang, packageManager });
+        await generateTemplate({
+          packageManager,
+          lang,
+          locale,
+          preset,
+          targetDir,
+        });
+
+        await postAction({ lang, locale, packageManager });
       }
-    }
+    },
   );
 
 cli.help(() => [

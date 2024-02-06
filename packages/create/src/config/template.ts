@@ -5,11 +5,13 @@ import { fileURLToPath } from "node:url";
 import { execaCommandSync } from "execa";
 import inquirer from "inquirer";
 
+import type { Preset } from "./config.js";
+import { presets } from "./config.js";
 import { updateGitIgnore } from "./gitignore.js";
-import { type CreateI18n, type Lang } from "./i18n.js";
+import type { CreateLocale, Lang } from "./i18n.js";
 import { getWorkflowContent } from "./workflow.js";
+import type { PackageManager } from "../utils/index.js";
 import {
-  type PackageManager,
   checkGitInstalled,
   checkGitRepo,
   copy,
@@ -21,22 +23,23 @@ const __filename = fileURLToPath(import.meta.url);
 // eslint-disable-next-line @typescript-eslint/naming-convention
 const __dirname = dirname(__filename);
 
-export const generateTemplate = async (
-  targetDir: string,
-  {
-    cwd = process.cwd(),
-    packageManager,
-    lang,
-    message,
-    preset,
-  }: {
-    cwd?: string;
-    packageManager: PackageManager;
-    lang: Lang;
-    message: CreateI18n;
-    preset?: "blog" | "docs" | null;
-  }
-): Promise<void> => {
+interface TemplateOptions {
+  packageManager: PackageManager;
+  lang: Lang;
+  locale: CreateLocale;
+  cwd?: string;
+  targetDir: string;
+  preset?: Preset | null;
+}
+
+export const generateTemplate = async ({
+  cwd = process.cwd(),
+  targetDir,
+  lang,
+  locale,
+  preset,
+  packageManager,
+}: TemplateOptions): Promise<void> => {
   const { i18n, workflow } = await inquirer.prompt<{
     i18n: boolean;
     workflow: boolean;
@@ -45,73 +48,71 @@ export const generateTemplate = async (
     {
       name: "i18n",
       type: "confirm",
-      message: message.question.i18n,
+      message: locale.question.i18n,
       default: false,
     },
     {
       name: "workflow",
       type: "confirm",
-      message: message.question.workflow,
+      message: locale.question.workflow,
       default: true,
     },
   ]);
 
   if (!preset)
-    preset = (
-      await inquirer.prompt<{ preset: "blog" | "docs" }>([
-        {
-          name: "preset",
-          type: "list",
-          message: message.question.preset,
-          choices: ["blog", "docs"],
-        },
-      ])
-    ).preset;
+    ({ preset } = await inquirer.prompt<{ preset: Preset }>([
+      {
+        name: "preset",
+        type: "list",
+        message: locale.question.preset,
+        choices: presets,
+      },
+    ]));
 
-  console.log(message.flow.generateTemplate);
+  console.log(locale.flow.generateTemplate);
 
   const templateFolder = preset;
 
-  // copy public assets
+  // Copy public assets
   copy(
     resolve(__dirname, "../template/public"),
-    resolve(cwd, targetDir, "./.vuepress/public")
+    resolve(cwd, targetDir, "./.vuepress/public"),
   );
   copy(
     resolve(__dirname, "../template", templateFolder, "config/base"),
-    resolve(cwd, targetDir, ".vuepress")
+    resolve(cwd, targetDir, ".vuepress"),
   );
 
   if (i18n) {
     copy(
       resolve(__dirname, "../template", templateFolder, "en"),
-      resolve(cwd, targetDir)
+      resolve(cwd, targetDir),
     );
     copy(
       resolve(__dirname, "../template", templateFolder, "zh"),
-      resolve(cwd, targetDir, "zh")
+      resolve(cwd, targetDir, "zh"),
     );
     copy(
       resolve(__dirname, "../template", templateFolder, "config/multi"),
-      resolve(cwd, targetDir, ".vuepress")
+      resolve(cwd, targetDir, ".vuepress"),
     );
   } else if (lang === "简体中文") {
     copy(
       resolve(__dirname, "../template", templateFolder, "zh"),
-      resolve(cwd, targetDir)
+      resolve(cwd, targetDir),
     );
     copy(
       resolve(__dirname, "../template", templateFolder, "config/zh"),
-      resolve(cwd, targetDir, ".vuepress")
+      resolve(cwd, targetDir, ".vuepress"),
     );
   } else {
     copy(
       resolve(__dirname, "../template", templateFolder, "en"),
-      resolve(cwd, targetDir)
+      resolve(cwd, targetDir),
     );
     copy(
       resolve(__dirname, "../template", templateFolder, "config/en"),
-      resolve(cwd, targetDir, ".vuepress")
+      resolve(cwd, targetDir, ".vuepress"),
     );
   }
 
@@ -123,11 +124,11 @@ export const generateTemplate = async (
     writeFileSync(
       resolve(workflowDir, "deploy-docs.yml"),
       getWorkflowContent(packageManager, targetDir, lang),
-      { encoding: "utf-8" }
+      { encoding: "utf-8" },
     );
   }
 
-  // git related
+  // Git related
   const isGitRepo = checkGitRepo(cwd);
 
   if (isGitRepo) {
@@ -139,7 +140,7 @@ export const generateTemplate = async (
       {
         name: "git",
         type: "confirm",
-        message: message.question.git,
+        message: locale.question.git,
         default: true,
       },
     ]);

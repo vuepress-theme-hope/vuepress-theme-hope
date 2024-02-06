@@ -2,7 +2,6 @@
 home: true
 title: Home
 icon: home
-heroImage: /logo.svg
 bgImage: https://theme-hope-assets.vuejs.press/bg/6-light.svg
 bgImageDark: https://theme-hope-assets.vuejs.press/bg/6-dark.svg
 bgImageStyle:
@@ -10,11 +9,13 @@ bgImageStyle:
 heroText: vuepress-plugin-comment2
 tagline: Comment and pageview plugin for VuePress2
 actions:
-  - text: Get Started 💡
+  - text: Guide
+    icon: lightbulb
     link: ./guide/
     type: primary
 
-  - text: Config 🛠
+  - text: Config
+    icon: tools
     link: ./config/
 
 highlights:
@@ -109,8 +110,7 @@ npm i -D vuepress-plugin-comment2
 
 @tab TS
 
-```ts
-// .vuepress/config.ts
+```ts title=".vuepress/config.ts"
 import { commentPlugin } from "vuepress-plugin-comment2";
 
 export default {
@@ -124,8 +124,7 @@ export default {
 
 @tab JS
 
-```js
-// .vuepress/config.js
+```js title=".vuepress/config.js"
 import { commentPlugin } from "vuepress-plugin-comment2";
 
 export default {

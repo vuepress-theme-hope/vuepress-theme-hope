@@ -10,6 +10,8 @@ We always welcome everyone to contribute! Here is a guide for you.
 
 ## Clone and Install Project
 
+If you have not enabled corepack, run `corepack enable` first.
+
 Use Git to clone the project to the local, and use `pnpm` to install dependencies.
 
 ```sh
@@ -18,12 +20,7 @@ git clone git@github.com:vuepress-theme-hope/vuepress-theme-hope.git
 pnpm i
 ```
 
-If you have not installed pnpm, please install it using the following command.
-
-```sh
-corepack enable
-corepack prepare pnpm@latest --activate
-```
+Note: Development requires latest LTS version of Node.js.
 
 ## Project File Structure
 
@@ -41,47 +38,30 @@ The project is a monorepo, managed by pnpm.
 ├── demo → Demo projects
 │
 ├── docs → document directory
-│ ├── auto-catalog → auto-catalog plugin document
-│ ├── blog → blog2 plugin document
 │ ├── comment → comment2 plugin document
 │ ├── components → components plugin document
-│ ├── copy-code → copy-code2 plugin document
-│ ├── feed → feed2 plugin document
 │ ├── lightgallery → lightgallery plugin document
 │ ├── md-enhance → md-enhance plugin document
 │ ├── photo-swipe → photo-swipe document
 │ ├── pwa → pwa2 plugin document
-│ ├── reading-time → reading-time2 plugin document
-│ ├── remove-pwa → remove-pwa plugin document
-│ ├── rtl → rtl plugin document
 │ ├── sass-palette → sass-palette plugin document
 │ ├── shared → vuepress-shared document
 │ ├── search-pro → search-pro plugin document
-│ ├── seo → seo2 plugin document
 │ └── theme → theme document
 │
 ├── docs-shared → common files for docs
 |
 ├── packages → project source code
-│ ├── auto-catalog → auto-catalog plugin
-│ ├── blog2 → blog2 plugin
 │ ├── comment2 → comment2 plugin
 │ ├── components → components plugin
-│ ├── copy-code2 → copy-code2 plugin
 │ ├── create → create-vuepress-theme-hope helper
-│ ├── feed2 → feed2 plugin
 │ ├── lightgallery → lightgallery plugin
 │ ├── md-enhance → md-enhance plugin
 │ ├── photo-swipe → photo-swipe plugin
 │ ├── pwa2 → pwa2 plugin
-│ ├── reading-time2 → reading-time2 plugin
-│ ├── remove-pwa → remove-pwa plugin
-│ ├── rtl → rtl plugin
 │ ├── sass-palette → sass-palette plugin
 │ ├── search-pro → search-pro plugin
-│ ├── seo2 → seo2 plugin
 │ ├── shared → shared file
-│ ├── sitemap2 → sitemap2 plugin
 │ └── theme → vuepress-theme-hope theme
 │
 ├── scripts → command scripts

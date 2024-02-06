@@ -1,7 +1,7 @@
 import MarkdownIt from "markdown-it";
 import { describe, expect, it } from "vitest";
 
-import { chart } from "../../src/node/markdown-it/index.js";
+import { chart } from "../../src/node/markdown-it/chart.js";
 
 describe("chart", () => {
   const markdownIt = MarkdownIt({ linkify: true }).use(chart);
@@ -52,7 +52,7 @@ describe("chart", () => {
 
 :::
 `,
-      {}
+      {},
     );
 
     expect(result).toMatch(/<ChartJS.*><\/ChartJS>/);
@@ -107,7 +107,7 @@ const config = {
 
 :::
 `,
-      {}
+      {},
     );
 
     expect(result).toMatch(/<ChartJS.*><\/ChartJS>/);
@@ -162,7 +162,7 @@ const config = {
 
 :::
 `,
-      {}
+      {},
     );
 
     expect(result).toMatch(/<ChartJS.*><\/ChartJS>/);
@@ -178,7 +178,7 @@ const config = {
 
 :::
 `,
-      {}
+      {},
     );
 
     expect(result).toMatch(/<ChartJS.*><\/ChartJS>/);
@@ -194,7 +194,7 @@ const config = {
 const a = 1;
 \`\`\`
 `,
-      {}
+      {},
     );
 
     expect(result).toMatch(/<pre.*>[\s\S]*<\/pre>/);

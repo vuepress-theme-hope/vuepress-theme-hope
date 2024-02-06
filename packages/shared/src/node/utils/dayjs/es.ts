@@ -1,7 +1,7 @@
 // Spanish [es]
 import type dayjs from "dayjs";
 
-import { type Locale } from "./locale.js";
+import type { Locale } from "./locale.js";
 
 const locale: Partial<Locale> = {
   name: "es",
@@ -11,7 +11,7 @@ const locale: Partial<Locale> = {
   weekdaysMin: "do_lu_ma_mi_ju_vi_sá".split("_"),
   months:
     "enero_febrero_marzo_abril_mayo_junio_julio_agosto_septiembre_octubre_noviembre_diciembre".split(
-      "_"
+      "_",
     ),
   weekStart: 1,
   formats: {

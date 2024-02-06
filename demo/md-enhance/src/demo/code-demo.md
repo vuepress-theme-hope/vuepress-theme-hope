@@ -4,6 +4,18 @@ title: Code Demo
 
 ## Demo
 
+::: md-demo Demo
+
+## Heading 2
+
+Text
+
+```js
+const a = 1;
+```
+
+:::
+
 ::: normal-demo Demo
 
 ```html

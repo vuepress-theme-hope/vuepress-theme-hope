@@ -1,3 +1,0 @@
----
-redirectTo: /fr/
----

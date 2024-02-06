@@ -1,17 +1,21 @@
-import { type App, type Page } from "@vuepress/core";
-import { type AnyNode, type Element, load } from "cheerio";
+import { entries, fromEntries, isArray, keys } from "@vuepress/helper";
+import type { AnyNode, Element } from "cheerio";
+import { load } from "cheerio";
 import { addAllAsync, createIndex } from "slimsearch";
-import { entries, fromEntries, isArray, keys } from "vuepress-shared/node";
+import type { App, Page } from "vuepress/core";
 
-import {
-  type SearchProCustomFieldOptions,
-  type SearchProOptions,
+import type {
+  SearchProCustomFieldOptions,
+  SearchProOptions,
 } from "./options.js";
-import {
-  type IndexItem,
-  type LocaleIndex,
-  type PageIndexId,
-  type SearchIndexStore,
+import type { Store } from "./store.js";
+import type {
+  IndexItem,
+  LocaleIndex,
+  PageIndexId,
+  PageIndexItem,
+  SearchIndexStore,
+  SectionIndexItem,
 } from "../shared/index.js";
 
 /**
@@ -28,7 +32,7 @@ const HEADING_TAGS = "h2,h3,h4,h5,h6".split(",");
  */
 const CONTENT_BLOCK_TAGS =
   "header,nav,section,div,dd,dl,dt,figcaption,figure,picture,hr,li,main,ol,p,ul,caption,table,thead,tbody,tfoot,th,tr,td,datalist,fieldset,form,legend,optgroup,option,select,details,dialog,menu,menuitem,summary,blockquote,pre".split(
-    ","
+    ",",
   );
 
 /**
@@ -38,83 +42,84 @@ const CONTENT_BLOCK_TAGS =
  */
 const CONTENT_INLINE_TAGS =
   "routerlink,a,b,abbr,bdi,bdo,cite,code,dfn,em,i,kbd,mark,q,rp,rt,ruby,s,samp,small,span,strong,sub,sup,time,u,var,wbr,del,ins,button,label,legend,meter,optgroup,option,output,progress,select".split(
-    ","
+    ",",
   );
+
+const isExcerptMarker = (node: AnyNode): boolean =>
+  node.type === "comment" && node.data.trim() === "more";
 
 const $ = load("");
 
-const renderHeader = (node: Element): string =>
-  node.children
-    .map((node) => {
-      if (node.type === "tag") {
-        // drop anchor
-        if (node.name === "a" && node.attribs["class"] === "header-anchor")
-          return "";
+const renderHeader = (node: Element): string => {
+  if (
+    node.children.length === 1 &&
+    node.children[0].type === "tag" &&
+    node.children[0].tagName === "a" &&
+    node.children[0].attribs["class"] === "header-anchor"
+  )
+    node.children = (<Element>node.children[0].children[0]).children;
 
-        return renderHeader(node);
-      }
-
-      if (node.type === "text") return node.data;
-
-      return "";
-    })
+  return node.children
+    .map((node) => (node.type === "text" ? node.data : null))
+    .filter(Boolean)
     .join(" ")
     .replace(/\s+/gu, " ")
     .trim();
+};
 
 export const generatePageIndex = (
   page: Page<{ excerpt?: string }>,
+  store: Store,
   customFieldsGetter: SearchProCustomFieldOptions[] = [],
-  indexContent = false
+  indexContent = false,
 ): IndexItem[] => {
   const { contentRendered, data, title } = page;
-  const key = <PageIndexId>page.key;
+  const pageId = <PageIndexId>store.addItem(page.path).toString();
   const hasExcerpt = "excerpt" in data && data["excerpt"].length;
 
-  const pageIndex: IndexItem = { id: key, h: title };
+  const pageIndex: PageIndexItem = { id: pageId, h: title };
   const results: IndexItem[] = [pageIndex];
 
-  // here are some variables holding the current state of the parser
+  // Here are some variables holding the current state of the parser
   let shouldIndexContent = hasExcerpt || indexContent;
-  let currentHeaderIndex = 0;
-  let currentContentIndex = 0;
+  let currentSectionIndex: PageIndexItem | SectionIndexItem | null = null;
   let currentContent = "";
   let isContentBeforeFirstHeader = true;
 
   const render = (node: AnyNode, preserveSpace = false): void => {
     if (node.type === "tag") {
       if (HEADING_TAGS.includes(node.name)) {
+        const { id } = node.attribs;
+        const header = renderHeader(node);
+
         if (currentContent && shouldIndexContent) {
-          // add last content
-          results.push({
-            id: `${key}#${currentHeaderIndex}/${currentContentIndex}`,
-            t: currentContent.replace(/\s+/gu, " "),
-          });
-          currentContentIndex = 0;
+          // Add last content
+          ((isContentBeforeFirstHeader ? pageIndex : currentSectionIndex!).t ??=
+            []).push(currentContent.replace(/\s+/gu, " "));
           currentContent = "";
         }
 
-        if (isContentBeforeFirstHeader) isContentBeforeFirstHeader = false;
+        // Update current section index only if it has an id
+        if (id) {
+          if (isContentBeforeFirstHeader) isContentBeforeFirstHeader = false;
+          else results.push(currentSectionIndex!);
 
-        // update current section index
-        currentHeaderIndex += 1;
-        results.push({
-          id: `${key}#${currentHeaderIndex}`,
-          a: node.attribs["id"],
-          h: renderHeader(node),
-        });
+          currentSectionIndex = {
+            id: `${pageId}#${id}`,
+            h: header,
+          };
+        } else if (header) {
+          ((currentSectionIndex ?? pageIndex).t ??= []).push(header);
+        }
       } else if (CONTENT_BLOCK_TAGS.includes(node.name)) {
         if (currentContent && shouldIndexContent) {
-          // add last content
-          results.push({
-            id: `${key}#${currentHeaderIndex}/${currentContentIndex}`,
-            t: currentContent.replace(/\s+/gu, " "),
-          });
-          currentContentIndex += 1;
+          // Add last content
+          ((isContentBeforeFirstHeader ? pageIndex : currentSectionIndex)!.t ??=
+            []).push(currentContent.replace(/\s+/gu, " "));
           currentContent = "";
         }
         node.childNodes.forEach((item) =>
-          render(item, preserveSpace || node.name === "pre")
+          render(item, preserveSpace || node.name === "pre"),
         );
       } else if (CONTENT_INLINE_TAGS.includes(node.name)) {
         node.childNodes.forEach((item) => render(item, preserveSpace));
@@ -122,12 +127,10 @@ export const generatePageIndex = (
     } else if (node.type === "text") {
       currentContent += preserveSpace || node.data.trim() ? node.data : "";
     } else if (
-      // we are expecting to stop at excerpt marker
+      // We are expecting to stop at excerpt marker if content is not indexed
       hasExcerpt &&
       !indexContent &&
-      // we got excerpt marker
-      node.type === "comment" &&
-      node.data.trim() === "more"
+      isExcerptMarker(node)
     ) {
       shouldIndexContent = false;
     }
@@ -135,7 +138,7 @@ export const generatePageIndex = (
 
   const nodes = $.parseHTML(contentRendered);
 
-  // get custom fields
+  // Get custom fields
   const customFields = fromEntries(
     customFieldsGetter
       .map(({ getter }, index) => {
@@ -144,31 +147,32 @@ export const generatePageIndex = (
         return isArray(result)
           ? [index.toString(), result]
           : result
-          ? [index.toString(), [result]]
-          : null;
+            ? [index.toString(), [result]]
+            : null;
       })
-      .filter((item): item is [string, string[]] => item !== null)
+      .filter((item): item is [string, string[]] => item !== null),
   );
 
-  // no content in page and no customFields
+  // No content in page and no customFields
   if (!nodes?.length && !keys(customFields).length) return [];
 
-  // walk through nodes and extract indexes
+  // Walk through nodes and extract indexes
   nodes?.forEach((node) => {
     render(node);
   });
 
-  // push contents in last block tags
+  // Push contents in last block tags
   if (shouldIndexContent && currentContent)
-    results.push({
-      id: `${key}#${currentHeaderIndex}/${currentContentIndex}`,
-      t: currentContent.replace(/\s+/gu, " "),
-    });
+    ((isContentBeforeFirstHeader ? pageIndex : currentSectionIndex)!.t ??=
+      []).push(currentContent);
 
-  // add custom fields
+  // Push last section
+  if (currentSectionIndex) results.push(currentSectionIndex);
+
+  // Add custom fields
   entries(customFields).forEach(([customField, values]) => {
     results.push({
-      id: `${key}@${customField}`,
+      id: `${pageId}@${customField}`,
       c: values,
     });
   });
@@ -181,16 +185,19 @@ export const getSearchIndexStore = async (
   {
     customFields,
     indexContent,
+    filter = (): boolean => true,
     indexOptions,
     indexLocaleOptions,
-  }: SearchProOptions
+  }: SearchProOptions,
+  store: Store,
 ): Promise<SearchIndexStore> => {
   const indexesByLocale: LocaleIndex = {};
 
   app.pages.forEach((page) => {
-    const indexes = generatePageIndex(page, customFields, indexContent);
-
-    (indexesByLocale[page.pathLocale] ??= []).push(...indexes);
+    if (filter(page) && page.frontmatter["search"] !== false)
+      (indexesByLocale[page.pathLocale] ??= []).push(
+        ...generatePageIndex(page, store, customFields, indexContent),
+      );
   });
 
   const searchIndex: SearchIndexStore = {};
@@ -200,19 +207,19 @@ export const getSearchIndexStore = async (
       const index = createIndex<IndexItem, string>({
         ...indexOptions,
         ...indexLocaleOptions?.[localePath],
-        fields: [/** heading */ "h", /** text */ "t", /** customFields */ "c"],
+        fields: [/** Heading */ "h", /** Text */ "t", /** CustomFields */ "c"],
         storeFields: [
-          /** heading */ "h",
-          /** anchor */ "a",
-          /** text */ "t",
-          /** customFields */ "c",
+          /** Heading */ "h",
+          /** Anchor */ "a",
+          /** Text */ "t",
+          /** CustomFields */ "c",
         ],
       });
 
       await addAllAsync(index, indexes);
 
       searchIndex[localePath] = index;
-    })
+    }),
   );
 
   return searchIndex;

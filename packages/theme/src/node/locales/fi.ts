@@ -1,4 +1,4 @@
-import { type ThemeLocaleData } from "../../shared/index.js";
+import type { ThemeLocaleData } from "../../shared/index.js";
 
 export const fiLocale: ThemeLocaleData = {
   lang: "fi-FI",
@@ -36,6 +36,7 @@ export const fiLocale: ThemeLocaleData = {
     all: "Kaikki",
     intro: "Intro",
     star: "Tähti",
+    empty: "$text on tyhjä",
   },
 
   paginationLocales: {

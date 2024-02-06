@@ -4,10 +4,7 @@
 
 .vp-feature-bg {
   position: absolute;
-  top: 0;
-  right: 0;
-  bottom: 0;
-  left: 0;
+  inset: 0;
   z-index: 0;
 
   background-attachment: fixed;
@@ -114,9 +111,8 @@
 
   display: flex;
   flex-wrap: wrap;
-  align-content: stretch;
   align-items: stretch;
-  justify-content: center;
+  place-content: stretch center;
 
   margin: 1rem 0;
 
@@ -144,8 +140,10 @@
 
   color: inherit;
 
-  transition: background var(--color-transition),
-    box-shadow var(--color-transition), transform var(--transform-transition);
+  transition:
+    background var(--color-transition),
+    box-shadow var(--color-transition),
+    transform var(--transform-transition);
 
   @media (min-width: hope-config.$pc) {
     flex-basis: calc(25% - 3rem);
@@ -176,7 +174,7 @@
   .icon {
     display: inline-block;
 
-    width: 1.1em;
+    height: 1.1em;
     margin-inline-end: 0.5rem;
 
     color: var(--theme-color);

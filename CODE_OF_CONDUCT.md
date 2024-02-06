@@ -6,8 +6,6 @@ We want all visitors of VuePress Theme Hope to have an enjoyable and fulfilling 
 
 To make clear what is expected, all users using VuePress Theme Hope or related plugins are required to conform to the following Code of Conduct.
 
-## Code of Conduct
-
 VuePress Theme Hope is dedicated to providing a positive and harassment-free viewing experience for every visitor, regardless of age, gender, gender identity and expression, sexual orientation, disability, personal appearance, body size, ethnicity, race, religion, nationality, or level of experience. We do not tolerate harassment of visitors in any form, nor do we tolerate any behavior that would reasonably lead to another visitor being made to feel unsafe, insecure, or frightened for their physical or emotional well-being.
 
 Examples of encouraged behavior that contributes to a positive environment include:

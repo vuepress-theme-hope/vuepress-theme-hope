@@ -1,4 +1,4 @@
-import { type ThemeLocaleData } from "../../shared/index.js";
+import type { ThemeLocaleData } from "../../shared/index.js";
 
 export const ruLocale: ThemeLocaleData = {
   lang: "ru-RU",
@@ -36,6 +36,7 @@ export const ruLocale: ThemeLocaleData = {
     all: "Все",
     intro: "Личное вступление",
     star: "Звезда",
+    empty: "$text пусто",
   },
 
   paginationLocales: {

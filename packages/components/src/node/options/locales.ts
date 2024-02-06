@@ -1,28 +1,20 @@
-import { type LocaleConfig } from "@vuepress/core";
+import type { LocaleConfig } from "vuepress/shared";
 
-import {
-  type BackToTopLocaleData,
-  type CatalogLocaleData,
-  type PDFLocaleData,
-  type SiteInfoLocaleData,
+import type {
+  BackToTopLocaleData,
+  PDFLocaleData,
+  SiteInfoLocaleData,
 } from "../../shared/index.js";
 
 export interface ComponentLocaleOptions {
   /**
-   * backToTop button Locales config
+   * @deprecated Please use '@vuepress/plugin-back-to-top'
+   *
+   * BackToTop button Locales config
    *
    * 返回顶部按钮国际化配置
    */
   backToTop?: LocaleConfig<BackToTopLocaleData>;
-
-  /**
-   * @deprecated
-   *
-   * Catalog Locales config
-   *
-   * 目录组件国际化配置
-   */
-  catalog?: LocaleConfig<CatalogLocaleData>;
 
   /**
    * PDF Locales config

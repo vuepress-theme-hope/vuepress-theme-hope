@@ -1,4 +1,4 @@
-import { type RequiredLocaleConfig } from "vuepress-shared";
+import type { ExactLocaleConfig } from "@vuepress/helper";
 
 export interface PhotoSwipeLocaleData {
   /**
@@ -44,4 +44,4 @@ export interface PhotoSwipeLocaleData {
   arrowNext: string;
 }
 
-export type PhotoSwipeLocaleConfig = RequiredLocaleConfig<PhotoSwipeLocaleData>;
+export type PhotoSwipeLocaleConfig = ExactLocaleConfig<PhotoSwipeLocaleData>;

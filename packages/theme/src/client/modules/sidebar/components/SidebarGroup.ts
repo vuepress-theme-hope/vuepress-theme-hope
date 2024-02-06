@@ -1,12 +1,13 @@
-import { type PropType, type VNode, computed, defineComponent, h } from "vue";
-import { useRoute } from "vue-router";
+import type { PropType, VNode } from "vue";
+import { computed, defineComponent, h } from "vue";
+import { useRoute } from "vuepress/client";
 
 import AutoLink from "@theme-hope/components/AutoLink";
 import HopeIcon from "@theme-hope/components/HopeIcon";
 import SidebarLinks from "@theme-hope/modules/sidebar/components/SidebarLinks";
 import { isActiveSidebarItem } from "@theme-hope/modules/sidebar/utils/index";
 
-import { type ResolvedSidebarGroupItem } from "../utils/index.js";
+import type { ResolvedSidebarGroupItem } from "../utils/index.js";
 
 import "../styles/sidebar-group.scss";
 
@@ -42,7 +43,7 @@ export default defineComponent({
     const active = computed(() => isActiveSidebarItem(route, props.config));
 
     const exact = computed(() =>
-      isActiveSidebarItem(route, props.config, true)
+      isActiveSidebarItem(route, props.config, true),
     );
 
     return (): VNode => {
@@ -78,9 +79,9 @@ export default defineComponent({
               : {}),
           },
           [
-            // icon
+            // Icon
             h(HopeIcon, { icon }),
-            // title
+            // Title
             link
               ? h(AutoLink, {
                   class: "vp-sidebar-title",
@@ -88,11 +89,11 @@ export default defineComponent({
                   noExternalLinkIcon: true,
                 })
               : h("span", { class: "vp-sidebar-title" }, text),
-            // arrow
+            // Arrow
             collapsible
               ? h("span", { class: ["vp-arrow", props.open ? "down" : "end"] })
               : null,
-          ]
+          ],
         ),
 
         props.open || !collapsible

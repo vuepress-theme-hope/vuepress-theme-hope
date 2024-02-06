@@ -1,8 +1,9 @@
-import { usePageData, usePageFrontmatter } from "@vuepress/client";
-import { type VNode, computed, defineComponent, h } from "vue";
+import type { VNode } from "vue";
+import { computed, defineComponent, h } from "vue";
+import { usePageData, usePageFrontmatter } from "vuepress/client";
 import CommentProvider from "vuepress-plugin-comment2/provider";
 
-import { type CommentPluginFrontmatter } from "../../shared/index.js";
+import type { CommentPluginFrontmatter } from "../../shared/index.js";
 import { useCommentOptions } from "../helpers/index.js";
 
 export default defineComponent({
@@ -24,12 +25,11 @@ export default defineComponent({
 
     const enableComment = commentOptions.comment !== false;
 
-    const enabled = computed(() => {
-      return (
+    const enabled = computed(
+      () =>
         frontmatter.value.comment ||
-        (enableComment && frontmatter.value.comment !== false)
-      );
-    });
+        (enableComment && frontmatter.value.comment !== false),
+    );
 
     return (): VNode | null =>
       h(CommentProvider, {

@@ -1,4 +1,4 @@
-import { type FontIconAssets } from "vuepress-plugin-components";
+import type { FontIconAssets } from "vuepress-plugin-components";
 
 export type DarkmodeOptions =
   | "switch"

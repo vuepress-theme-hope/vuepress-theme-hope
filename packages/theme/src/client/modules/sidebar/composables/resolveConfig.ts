@@ -1,97 +1,86 @@
 /* eslint-disable @typescript-eslint/no-unsafe-argument */
 import {
-  type PageHeader,
-  usePageData,
-  usePageFrontmatter,
-  useRouteLocale,
-} from "@vuepress/client";
-import {
   isArray,
   isLinkExternal,
   isPlainObject,
   isString,
-} from "@vuepress/shared";
-import { keys, startsWith } from "vuepress-shared/client";
+  keys,
+  startsWith,
+} from "@vuepress/helper/client";
+import type { PageData, PageHeader } from "vuepress/client";
 
-import { sidebarData } from "@temp/theme-hope/sidebar";
-import { useAutoLink, useThemeLocaleData } from "@theme-hope/composables/index";
+import { sidebarData } from "@temp/theme-hope/sidebar.js";
+import { resolveLinkInfo, resolvePrefix } from "@theme-hope/utils/index";
 
-import { resolvePrefix } from "./utils.js";
-import {
-  type SidebarArrayOptions,
-  type SidebarItem,
-  type SidebarObjectOptions,
-  type ThemeNormalPageFrontmatter,
+import type {
+  SidebarArrayOptions,
+  SidebarItem,
+  SidebarObjectOptions,
+  SidebarOptions,
 } from "../../../../shared/index.js";
-import {
-  type ResolvedSidebarGroupItem,
-  type ResolvedSidebarHeaderItem,
-  type ResolvedSidebarItem,
-  type ResolvedSidebarPageItem,
+import type {
+  ResolvedSidebarGroupItem,
+  ResolvedSidebarHeaderItem,
+  ResolvedSidebarItem,
+  ResolvedSidebarPageItem,
 } from "../utils/index.js";
 
 /**
  * Util to transform page header to sidebar item
  */
-export const headerToSidebarItem = (
-  header: PageHeader,
-  headerDepth: number
-): ResolvedSidebarHeaderItem => {
-  const page = usePageData();
-
-  return {
-    type: "heading",
-    text: header.title,
-    link: `${page.value.path}#${header.slug}`,
-    children: headersToSidebarItemChildren(header.children, headerDepth),
-  };
-};
-
 export const headersToSidebarItemChildren = (
+  page: PageData,
   headers: PageHeader[],
-  headerDepth: number
+  headerDepth: number,
 ): ResolvedSidebarHeaderItem[] =>
   headerDepth > 0
-    ? headers.map((header) => headerToSidebarItem(header, headerDepth - 1))
+    ? headers.map((header) => ({
+        type: "heading",
+        text: header.title,
+        link: `${page.path}#${header.slug}`,
+        children: headersToSidebarItemChildren(
+          page,
+          header.children,
+          headerDepth - 1,
+        ),
+      }))
     : [];
 
-/**
- * Resolve sidebar items if the config is `heading`
- */
-export const resolveHeadingSidebarItems = (
-  headerDepth: number
-): ResolvedSidebarHeaderItem[] => {
-  const page = usePageData();
-
-  return headersToSidebarItemChildren(page.value.headers, headerDepth);
-};
+export interface ResolveArraySidebarOptions {
+  config: SidebarArrayOptions;
+  page: PageData;
+  headerDepth: number;
+  prefix?: string;
+}
 
 /**
  * Resolve sidebar items if the config is an array
  */
-export const resolveArraySidebarItems = (
-  sidebarConfig: SidebarArrayOptions,
-  headerDepth: number,
-  prefix = ""
-): ResolvedSidebarItem[] => {
-  const page = usePageData();
-
+export const resolveArraySidebarItems = ({
+  config,
+  page,
+  headerDepth,
+  prefix = "",
+}: ResolveArraySidebarOptions): ResolvedSidebarItem[] => {
   const handleChildItem = (
     item: SidebarItem,
-    pathPrefix = prefix
+    pathPrefix = prefix,
   ): ResolvedSidebarPageItem | ResolvedSidebarGroupItem => {
     const childItem = isString(item)
-      ? useAutoLink(resolvePrefix(pathPrefix, item))
+      ? resolveLinkInfo(resolvePrefix(pathPrefix, item))
       : item.link
-      ? {
-          ...item,
-          ...(!isLinkExternal(item.link)
-            ? { link: useAutoLink(resolvePrefix(pathPrefix, item.link)).link }
-            : {}),
-        }
-      : item;
+        ? {
+            ...item,
+            ...(isLinkExternal(item.link)
+              ? {}
+              : {
+                  link: resolveLinkInfo(resolvePrefix(pathPrefix, item.link))
+                    .link,
+                }),
+          }
+        : item;
 
-    // resolved group item
+    // Resolved group item
     if ("children" in childItem) {
       const prefix = resolvePrefix(pathPrefix, childItem.prefix);
 
@@ -112,87 +101,101 @@ export const resolveArraySidebarItems = (
       type: "page",
       ...childItem,
       children:
-        // if the sidebar item is current page and children is not set
-        // use headers of current page as children
-        childItem.link === page.value.path
+        /*
+         * If the sidebar item is current page and children is not set
+         * use headers of current page as children
+         */
+        childItem.link === page.path
           ? headersToSidebarItemChildren(
-              // skip h1 header
-              page.value.headers[0]?.level === 1
-                ? page.value.headers[0].children
-                : page.value.headers,
-              headerDepth
+              page,
+              // Skip h1 header
+              page.headers[0]?.level === 1
+                ? page.headers[0].children
+                : page.headers,
+              headerDepth,
             )
           : [],
     };
   };
 
-  return sidebarConfig.map((item) => handleChildItem(item));
+  return config.map((item) => handleChildItem(item));
 };
+
+export interface ResolveMultiSidebarOptions {
+  config: SidebarObjectOptions;
+  page: PageData;
+  headerDepth: number;
+}
 
 /**
  * Resolve sidebar items if the config is a key -> value (path-prefix -> array) object
  */
-export const resolveMultiSidebarItems = (
-  sidebarConfig: SidebarObjectOptions,
-  headerDepth: number
-): ResolvedSidebarItem[] => {
-  const page = usePageData();
-  const sidebarRoutes = keys(sidebarConfig).sort((x, y) => y.length - x.length);
+export const resolveMultiSidebarItems = ({
+  config,
+  page,
+  headerDepth,
+}: ResolveMultiSidebarOptions): ResolvedSidebarItem[] => {
+  const sidebarRoutes = keys(config).sort((x, y) => y.length - x.length);
 
-  // find matching config
+  // Find matching config
   for (const base of sidebarRoutes)
-    if (startsWith(decodeURI(page.value.path), base)) {
-      const matchedConfig = sidebarConfig[base];
+    if (startsWith(decodeURI(page.path), base)) {
+      const matched = config[base];
 
-      return matchedConfig
-        ? resolveArraySidebarItems(
-            matchedConfig === "structure"
-              ? sidebarData[base]
-              : matchedConfig === "heading"
-              ? resolveHeadingSidebarItems(headerDepth)
-              : matchedConfig,
+      return matched
+        ? resolveArraySidebarItems({
+            config:
+              matched === "structure"
+                ? <SidebarArrayOptions>sidebarData[base]
+                : matched === "heading"
+                  ? headersToSidebarItemChildren(
+                      page,
+                      page.headers,
+                      headerDepth,
+                    )
+                  : matched,
+            page,
             headerDepth,
-            base
-          )
+            prefix: base,
+          })
         : [];
     }
 
-  console.warn(`${page.value.path} is missing sidebar config.`);
+  console.warn(`${page.path} is missing sidebar config.`);
 
   return [];
 };
+
+export interface ResolveSidebarOptions {
+  config: SidebarOptions;
+  routeLocale: string;
+  page: PageData;
+  headerDepth: number;
+}
 
 /**
  * Resolve sidebar items global computed
  *
  * It should only be resolved and provided once
  */
-export const resolveSidebarItems = (): ResolvedSidebarItem[] => {
-  const routeLocale = useRouteLocale();
-  const frontmatter = usePageFrontmatter<ThemeNormalPageFrontmatter>();
-  const themeLocale = useThemeLocaleData();
-
-  // get sidebar config from frontmatter > themeConfig
-  const sidebarConfig = frontmatter.value.home
-    ? false
-    : frontmatter.value.sidebar ?? themeLocale.value.sidebar ?? "structure";
-  const headerDepth =
-    frontmatter.value.headerDepth ?? themeLocale.value.headerDepth ?? 2;
-
-  // resolve sidebar items according to the config
-  return sidebarConfig === false
-    ? []
-    : sidebarConfig === "heading"
-    ? resolveHeadingSidebarItems(headerDepth)
-    : sidebarConfig === "structure"
-    ? resolveArraySidebarItems(
-        sidebarData[routeLocale.value],
-        headerDepth,
-        routeLocale.value
-      )
-    : isArray(sidebarConfig)
-    ? resolveArraySidebarItems(sidebarConfig, headerDepth)
-    : isPlainObject(sidebarConfig)
-    ? resolveMultiSidebarItems(sidebarConfig, headerDepth)
-    : [];
-};
+export const resolveSidebarItems = ({
+  config,
+  routeLocale,
+  page,
+  headerDepth,
+}: ResolveSidebarOptions): ResolvedSidebarItem[] =>
+  // Resolve sidebar items according to the config
+  config === "heading"
+    ? headersToSidebarItemChildren(page, page.headers, headerDepth)
+    : config === "structure"
+      ? resolveArraySidebarItems({
+          config: <SidebarArrayOptions>sidebarData[routeLocale],
+          page,
+          headerDepth,
+          prefix: routeLocale,
+        })
+      : isArray(config)
+        ? resolveArraySidebarItems({ config, page, headerDepth })
+        : isPlainObject(config)
+          ? resolveMultiSidebarItems({ config, page, headerDepth })
+          : [];

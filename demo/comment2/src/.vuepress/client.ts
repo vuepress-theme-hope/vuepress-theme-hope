@@ -1,4 +1,4 @@
-import { defineClientConfig } from "@vuepress/client";
+import { defineClientConfig } from "vuepress/client";
 import { defineGiscusConfig } from "vuepress-plugin-comment2/client";
 
 import Layout from "./layouts/Layout.vue";
@@ -12,7 +12,7 @@ defineGiscusConfig({
 
 export default defineClientConfig({
   layouts: {
-    // we override the default layout to provide comment service
+    // We override the default layout to provide comment service
     Layout,
   },
 });

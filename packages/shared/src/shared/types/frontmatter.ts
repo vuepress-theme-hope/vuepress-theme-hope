@@ -1,6 +1,6 @@
-import { type PageFrontmatter } from "@vuepress/core";
+import type { PageFrontmatter } from "vuepress/shared";
 
-import { type Author } from "./author.js";
+import type { Author } from "./author.js";
 
 export interface BasePageFrontMatter extends PageFrontmatter {
   /**
@@ -72,6 +72,13 @@ export interface BasePageFrontMatter extends PageFrontmatter {
    * 页脚文字
    */
   footer?: string | boolean;
+
+  /**
+   * License text
+   *
+   * 协议文字
+   */
+  license?: string;
 
   /**
    * Copyright text

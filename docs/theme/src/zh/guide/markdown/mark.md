@@ -18,8 +18,7 @@ tag:
 
 @tab TS
 
-```ts {8-10}
-// .vuepress/config.ts
+```ts {8-10} title=".vuepress/config.ts"
 import { defineUserConfig } from "vuepress";
 import { hopeTheme } from "vuepress-theme-hope";
 
@@ -36,8 +35,7 @@ export default defineUserConfig({
 
 @tab JS
 
-```js {7-9}
-// .vuepress/config.js
+```js {7-9} title=".vuepress/config.js"
 import { hopeTheme } from "vuepress-theme-hope";
 
 export default {
@@ -57,10 +55,8 @@ export default {
 
 使用 `== ==` 进行标记。请注意两边需要有空格。
 
-## 例子
+::: md-demo 案例
 
 VuePress Theme Hope ==非常== 强大!
 
-```md
-VuePress Theme Hope ==非常== 强大!
-```
+:::

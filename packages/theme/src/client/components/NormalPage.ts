@@ -1,13 +1,6 @@
-import { usePageData, usePageFrontmatter, withBase } from "@vuepress/client";
-import {
-  type ComponentOptions,
-  type SlotsType,
-  type VNode,
-  computed,
-  defineComponent,
-  h,
-  resolveComponent,
-} from "vue";
+import type { ComponentOptions, SlotsType, VNode } from "vue";
+import { computed, defineComponent, h, resolveComponent } from "vue";
+import { usePageFrontmatter, withBase } from "vuepress/client";
 import { RenderDefault, hasGlobalComponent } from "vuepress-shared/client";
 
 import BreadCrumb from "@theme-hope/components/BreadCrumb";
@@ -19,7 +12,7 @@ import PageMeta from "@theme-hope/modules/info/components/PageMeta";
 import TOC from "@theme-hope/modules/info/components/TOC";
 import { useDarkmode } from "@theme-hope/modules/outlook/composables/index";
 
-import { type ThemeNormalPageFrontmatter } from "../../shared/index.js";
+import type { ThemeNormalPageFrontmatter } from "../../shared/index.js";
 
 import "../styles/page.scss";
 
@@ -27,26 +20,25 @@ export default defineComponent({
   name: "NormalPage",
 
   slots: Object as SlotsType<{
-    top?: () => VNode | VNode[];
-    bottom?: () => VNode | VNode[];
+    top?: () => VNode[] | VNode | null;
+    bottom?: () => VNode[] | VNode | null;
 
-    contentBefore?: () => VNode | VNode[];
-    contentAfter?: () => VNode | VNode[];
+    contentBefore?: () => VNode[] | VNode | null;
+    contentAfter?: () => VNode[] | VNode | null;
 
-    tocBefore?: () => VNode | VNode[];
-    tocAfter?: () => VNode | VNode[];
+    tocBefore?: () => VNode[] | VNode | null;
+    tocAfter?: () => VNode[] | VNode | null;
   }>,
 
   setup(_props, { slots }) {
     const frontmatter = usePageFrontmatter<ThemeNormalPageFrontmatter>();
-    const page = usePageData();
     const { isDarkmode } = useDarkmode();
     const themeLocale = useThemeLocaleData();
 
     const tocEnable = computed(
       () =>
         frontmatter.value.toc ||
-        (frontmatter.value.toc !== false && themeLocale.value.toc !== false)
+        (frontmatter.value.toc !== false && themeLocale.value.toc !== false),
     );
 
     return (): VNode =>
@@ -60,12 +52,15 @@ export default defineComponent({
           () => [
             slots.top?.(),
             frontmatter.value.cover
-              ? h("img", {
-                  class: "page-cover",
-                  src: withBase(frontmatter.value.cover),
-                  alt: page.value.title,
-                  "no-view": "",
-                })
+              ? h(
+                  "div",
+                  { class: "page-cover" },
+                  h("img", {
+                    src: withBase(frontmatter.value.cover),
+                    alt: "",
+                    "no-view": "",
+                  }),
+                )
               : null,
             h(BreadCrumb),
             h(PageTitle),
@@ -81,7 +76,7 @@ export default defineComponent({
                   {
                     before: () => slots.tocBefore?.(),
                     after: () => slots.tocAfter?.(),
-                  }
+                  },
                 )
               : null,
             slots.contentBefore?.(),
@@ -95,8 +90,8 @@ export default defineComponent({
                 })
               : null,
             slots.bottom?.(),
-          ]
-        )
+          ],
+        ),
       );
   },
 });

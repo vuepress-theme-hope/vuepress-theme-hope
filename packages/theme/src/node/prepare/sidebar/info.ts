@@ -1,15 +1,17 @@
-import { type Page } from "@vuepress/core";
-import { sanitizeFileName } from "@vuepress/utils";
-import { getTitleFromFilename, startsWith } from "vuepress-shared/node";
+import { startsWith } from "@vuepress/helper";
+import type { Page } from "vuepress/core";
+import { sanitizeFileName } from "vuepress/utils";
+import { getTitleFromFilename } from "vuepress-shared/node";
 
-import { type StructureInfo, getStructureInfo } from "./structure.js";
-import {
-  type SidebarDirInfo,
-  type SidebarFileInfo,
-  type SidebarInfo,
-  type SidebarSorterFunction,
-  type ThemeNormalPageFrontmatter,
-  type ThemePageData,
+import type { StructureInfo } from "./structure.js";
+import { getStructureInfo } from "./structure.js";
+import type {
+  SidebarDirInfo,
+  SidebarFileInfo,
+  SidebarInfo,
+  SidebarSorterFunction,
+  ThemeNormalPageFrontmatter,
+  ThemePageData,
 } from "../../../shared/index.js";
 
 export interface FileInfo {
@@ -36,7 +38,7 @@ export interface ThemeSidebarInfoOptions {
  */
 const getSidebarChildrenInfo = (
   { scope, pages, sorters }: ThemeSidebarInfoOptions,
-  children: StructureInfo[]
+  children: StructureInfo[],
 ): SidebarInfo[] =>
   children
     .map((item) => getSidebarInfoFromStructure({ pages, scope, sorters }, item))
@@ -57,13 +59,13 @@ const getSidebarChildrenInfo = (
  */
 const getSidebarInfoFromStructure = (
   { scope, pages, sorters }: ThemeSidebarInfoOptions,
-  info: StructureInfo
+  info: StructureInfo,
 ): SidebarInfo | null => {
   // handle file
   if (info.type === "file") {
     const page = <Page<ThemePageData, ThemeNormalPageFrontmatter>>(
       pages.find(
-        ({ filePathRelative }) => filePathRelative === `${scope}${info.path}`
+        ({ filePathRelative }) => filePathRelative === `${scope}${info.path}`,
       )!
     );
 
@@ -88,18 +90,18 @@ const getSidebarInfoFromStructure = (
 
   // performance improvements
   const relatedPages = pages.filter(({ filePathRelative }) =>
-    startsWith(filePathRelative, `${scope}${info.path}/`)
+    startsWith(filePathRelative, `${scope}${info.path}/`),
   );
   const READMEFile = info.children.find(
     (info) =>
-      info.type === "file" && info.filename.toLowerCase() === "readme.md"
+      info.type === "file" && info.filename.toLowerCase() === "readme.md",
   );
 
   if (READMEFile) {
     const readmePage = <Page<ThemePageData, ThemeNormalPageFrontmatter>>(
       relatedPages.find(
         ({ filePathRelative }) =>
-          filePathRelative === `${scope}${READMEFile.path}`
+          filePathRelative === `${scope}${READMEFile.path}`,
       )!
     );
 
@@ -124,9 +126,9 @@ const getSidebarInfoFromStructure = (
             info.children.filter(
               (item) =>
                 item.type !== "file" ||
-                item.filename.toLowerCase() !== "readme.md"
+                item.filename.toLowerCase() !== "readme.md",
             )
-          : info.children
+          : info.children,
       ),
 
       title,
@@ -157,13 +159,12 @@ const getSidebarInfoFromStructure = (
     dirname: info.dirname,
     children: getSidebarChildrenInfo(
       { pages: relatedPages, scope, sorters },
-      info.children
+      info.children,
     ),
 
     title: getTitleFromFilename(info.dirname),
     order: null,
 
-    // generate information
     // group information
     groupInfo: {
       collapsible: true,

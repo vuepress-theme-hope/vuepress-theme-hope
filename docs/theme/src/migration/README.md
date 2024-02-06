@@ -1,6 +1,10 @@
 ---
 title: V2 Migration
 icon: code-compare
+category:
+  - Migration
+tag:
+  - Migration
 ---
 
 This guide helps you migrate from V1 to V2.

@@ -2,7 +2,6 @@
 home: true
 title: Home
 icon: home
-heroImage: /logo.svg
 heroText: vuepress-shared
 tagline: Some powerful utils for VuePress2
 

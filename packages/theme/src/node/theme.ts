@@ -1,6 +1,7 @@
-import { type ThemeFunction } from "@vuepress/core";
+import { isPlainObject } from "@vuepress/helper";
 import { watch } from "chokidar";
-import { isPlainObject } from "vuepress-shared/node";
+import type { ThemeFunction } from "vuepress/core";
+import { TEMPLATE_RENDERER_OUTLETS } from "vuepress/utils";
 
 import { getAlias } from "./alias.js";
 import { extendsBundlerOptions } from "./bundler.js";
@@ -24,23 +25,26 @@ import {
   prepareSidebarData,
   prepareSocialMediaIcons,
 } from "./prepare/index.js";
-import { type HopeThemeBehaviorOptions } from "./typings/index.js";
-import { TEMPLATE_FOLDER } from "./utils.js";
-import { type ThemeOptions } from "../shared/index.js";
+import type { HopeThemeBehaviorOptions } from "./typings/index.js";
+import { TEMPLATE_FOLDER, VERSION } from "./utils.js";
+import type { ThemeOptions } from "../shared/index.js";
 
-export const hopeTheme =
-  (
-    options: ThemeOptions,
-    // TODO: Change default value in v2 stable
-    behavior: HopeThemeBehaviorOptions | boolean = true
-  ): ThemeFunction =>
-  (app) => {
+export const hopeTheme = (
+  options: ThemeOptions,
+  // TODO: Change default value in v2 stable
+  behavior: HopeThemeBehaviorOptions | boolean = true,
+): ThemeFunction => {
+  checkVuePressVersion();
+
+  return (app) => {
     const behaviorOptions = isPlainObject(behavior)
       ? behavior
       : behavior
-      ? { compact: true, check: true }
-      : {};
-    const isDebug = behaviorOptions.debug ? (app.env.isDebug = true) : false;
+        ? { compact: true, check: true }
+        : {};
+    const isDebug = behaviorOptions.debug
+      ? (app.env.isDebug = true)
+      : app.env.isDebug;
 
     const {
       favicon,
@@ -49,7 +53,6 @@ export const hopeTheme =
       hostname,
       iconAssets,
       iconPrefix,
-      backToTop,
       sidebarSorter,
       ...themeOptions
     } = behaviorOptions.compact
@@ -57,8 +60,6 @@ export const hopeTheme =
       : options;
 
     if (behaviorOptions.compact) checkLegacyStyle(app);
-
-    checkVuePressVersion(app);
 
     const status = getStatus(app, options);
     const themeData = getThemeData(app, themeOptions, status);
@@ -101,7 +102,7 @@ export const hopeTheme =
 
       onWatched: (app, watchers): void => {
         if (hotReload) {
-          // this ensure the page is generated or updated
+          // This ensures the page is generated or updated
           const structureSidebarWatcher = watch("pages/**/*.vue", {
             cwd: app.dir.temp(),
             ignoreInitial: true,
@@ -128,17 +129,35 @@ export const hopeTheme =
 
         // @ts-ignore
         {
-          backToTop,
           hostname,
           hotReload,
           iconAssets,
           iconPrefix,
           favicon,
         },
-        behaviorOptions.compact
+        behaviorOptions.compact,
       ),
 
       templateBuild: `${TEMPLATE_FOLDER}index.build.html`,
+
+      templateBuildRenderer: (
+        template: string,
+        { content, head, lang, prefetch, preload, scripts, styles, version },
+      ): string =>
+        template
+          .replace(TEMPLATE_RENDERER_OUTLETS.CONTENT, () => content)
+          .replace(TEMPLATE_RENDERER_OUTLETS.HEAD, head)
+          .replace("{{ themeVersion }}", VERSION)
+          .replace(
+            "{{ themeMode }}",
+            themeOptions.darkmode === "enable" ? "dark" : "light",
+          )
+          .replace(TEMPLATE_RENDERER_OUTLETS.LANG, lang)
+          .replace(TEMPLATE_RENDERER_OUTLETS.PREFETCH, prefetch)
+          .replace(TEMPLATE_RENDERER_OUTLETS.PRELOAD, preload)
+          .replace(TEMPLATE_RENDERER_OUTLETS.SCRIPTS, scripts)
+          .replace(TEMPLATE_RENDERER_OUTLETS.STYLES, styles)
+          .replace(TEMPLATE_RENDERER_OUTLETS.VERSION, version),
 
       clientConfigFile: (app) =>
         behaviorOptions.custom
@@ -146,3 +165,4 @@ export const hopeTheme =
           : prepareBundleConfigFile(app, status),
     };
   };
+};

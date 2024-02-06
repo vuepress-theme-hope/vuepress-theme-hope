@@ -1,23 +1,16 @@
+import { isString } from "@vuepress/helper/client";
+import type { SlotsType, VNode } from "vue";
+import { computed, defineComponent, h, shallowRef } from "vue";
 import {
   usePageFrontmatter,
   useSiteLocaleData,
   withBase,
-} from "@vuepress/client";
-import { isString } from "@vuepress/shared";
-import {
-  type SlotsType,
-  type VNode,
-  computed,
-  defineComponent,
-  h,
-  shallowRef,
-} from "vue";
+} from "vuepress/client";
 
 import DropTransition from "@theme-hope/components/transitions/DropTransition";
 
 import { SlideDownIcon } from "./icons/icons.js";
-import { type ThemeBlogHomePageFrontmatter } from "../../../../shared/index.js";
-import defaultHeroBgImagePath from "../assets/hero.jpg";
+import type { ThemeBlogHomePageFrontmatter } from "../../../../shared/index.js";
 
 import "../styles/blog-hero.scss";
 
@@ -37,12 +30,14 @@ export interface BackgroundInfo {
   isFullScreen: boolean;
 }
 
+const DEFAULT_HERO = "//theme-hope-assets.vuejs.press/hero/default.jpg";
+
 export default defineComponent({
   name: "BlogHero",
 
   slots: Object as SlotsType<{
-    heroBg?: (props: BackgroundInfo) => VNode | VNode[];
-    heroInfo?: (props: HeroInfo) => VNode | VNode[];
+    heroBg?: (props: BackgroundInfo) => VNode[] | VNode | null;
+    heroInfo?: (props: HeroInfo) => VNode[] | VNode | null;
   }>,
 
   setup(_props, { slots }) {
@@ -52,7 +47,7 @@ export default defineComponent({
     const hero = shallowRef<HTMLElement>();
 
     const isFullScreen = computed(
-      () => frontmatter.value.heroFullScreen ?? false
+      () => frontmatter.value.heroFullScreen ?? false,
     );
 
     const heroInfo = computed(() => {
@@ -70,7 +65,7 @@ export default defineComponent({
         image: heroImage ? withBase(heroImage) : null,
         imageDark: heroImageDark ? withBase(heroImageDark) : null,
         heroStyle: heroImageStyle,
-        alt: heroAlt || heroText || "hero image",
+        alt: heroAlt || heroText || "",
         tagline: tagline ?? "",
         isFullScreen: isFullScreen.value,
       };
@@ -83,8 +78,8 @@ export default defineComponent({
         image: isString(bgImage)
           ? withBase(bgImage)
           : bgImage === false
-          ? null
-          : defaultHeroBgImagePath,
+            ? null
+            : DEFAULT_HERO,
         imageDark: isString(bgImageDark) ? withBase(bgImageDark) : null,
         bgStyle: bgImageStyle,
         isFullScreen: isFullScreen.value,
@@ -160,16 +155,16 @@ export default defineComponent({
                           alt: heroInfo.value.alt,
                         })
                       : null,
-                  ]
+                  ],
                 ),
                 h(DropTransition, { appear: true, delay: 0.08 }, () =>
                   heroInfo.value.text
                     ? h(
                         "h1",
                         { class: "vp-blog-hero-title" },
-                        heroInfo.value.text
+                        heroInfo.value.text,
                       )
-                    : null
+                    : null,
                 ),
                 h(DropTransition, { appear: true, delay: 0.12 }, () =>
                   heroInfo.value.tagline
@@ -177,7 +172,7 @@ export default defineComponent({
                         class: "vp-blog-hero-description",
                         innerHTML: heroInfo.value.tagline,
                       })
-                    : null
+                    : null,
                 ),
               ],
               heroInfo.value.isFullScreen
@@ -193,10 +188,10 @@ export default defineComponent({
                         });
                       },
                     },
-                    [h(SlideDownIcon), h(SlideDownIcon)]
+                    [h(SlideDownIcon), h(SlideDownIcon)],
                   )
                 : null,
-            ]
+            ],
           );
   },
 });

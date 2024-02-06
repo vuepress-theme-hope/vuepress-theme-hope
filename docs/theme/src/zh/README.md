@@ -3,7 +3,6 @@ containerClass: home
 home: true
 title: 主页
 icon: home
-heroImage: /logo.svg
 bgImage: https://theme-hope-assets.vuejs.press/bg/6-light.svg
 bgImageDark: https://theme-hope-assets.vuejs.press/bg/6-dark.svg
 bgImageStyle:
@@ -11,18 +10,18 @@ bgImageStyle:
 heroText: VuePress Theme Hope
 tagline: 一个具有强大功能的 vuepress 主题✨
 actions:
-  - text: 使用教程 🧭
-    link: ./cookbook/tutorial/
+  - text: 快速上手
+    link: ./get-started/
+    icon: signs-post
     type: primary
 
-  - text: 介绍 💡
-    link: ./guide/get-started/intro.html
+  - text: 指南
+    icon: lightbulb
+    link: ./guide/
 
-  - text: 配置 🛠
-    link: ./config/
-
-  - text: 在线案例 🪀
-    link: https://stackblitz.com/fork/vuepress-theme-hope
+  - text: 案例
+    icon: star
+    link: ./demo/
 
 highlights:
   - header: 易于安装
@@ -47,10 +46,15 @@ highlights:
         details: 检查 Markdown 链接
         link: ./guide/markdown/others.html#link-check
 
-      - title: 自定义容器支持
+      - title: 提示容器支持
         icon: box-archive
         details: 用样式装饰 Markdown 内容
-        link: ./guide/markdown/container.html
+        link: ./guide/markdown/hint.html
+
+      - title: GFM 警告
+        icon: bell
+        details: GFM 风格的警告容器
+        link: ./guide/markdown/alert.html
 
       - title: 选项卡
         icon: table-columns
@@ -97,15 +101,20 @@ highlights:
         details: 使用改进的语法指定图片大小与颜色模式
         link: ./guide/markdown/image.html
 
-      - title: 卡片支持
-        icon: square
-        details: 在 Markdown 中展示卡片
-        link: ./guide/markdown/card.html
+      - title: 组件支持
+        icon: puzzle-piece
+        details: 在 Markdown 中轻松插入组件
+        link: ./guide/markdown/component.html
+
+      - title: 组件
+        icon: puzzle-piece
+        details: 开箱即用的常用组件
+        link: ./guide/markdown/components.html
 
       - title: 图表支持
         icon: chart-simple
         details: 在 Markdown 中展示图表
-        link: ./guide/markdown/chart.html
+        link: ./guide/markdown/chartjs.html
 
       - title: 流程图支持
         icon: route
@@ -132,32 +141,37 @@ highlights:
         details: 你可以在 Markdown 中添加交互演示
         link: ./guide/markdown/playground.html
 
+      - title: Kotlin 交互演示支持
+        icon: fab fa-kickstarter
+        details: 响应式的 Kotlin 演示
+        link: ./guide/markdown/kotlin-playground.html
+
       - title: Vue 交互演示支持
         icon: fab fa-vuejs
         details: 在交互演示中展示 Vue 组件
         link: ./guide/markdown/vue-playground.html
 
+      - title: Sandpack 交互演示支持
+        icon: code
+        details: Sandpack 驱动的实时的编码环境
+        link: ./guide/markdown/sandpack.html
+
       - title: 代码案例支持
         icon: laptop-code
         details: 你可以很方便的插入代码案例
-        link: ./guide/markdown/demo/
+        link: ./guide/markdown/demo.html
 
       - title: 幻灯片支持
         icon: person-chalkboard
-        details: 你可以直接在 Markdown 中插入幻灯片
-        link: ./guide/markdown/presentation/
+        details: 通过 Reveal.js 在 Markdown 中插入幻灯片
+        link: ./guide/markdown/revealjs.html
 
-  - header: 布局
-    description: 一个带有完整无障碍支持的响应式布局。
-    image: /assets/image/layout.svg
-    bgImage: https://theme-hope-assets.vuejs.press/bg/5-light.svg
-    bgImageDark: https://theme-hope-assets.vuejs.press/bg/5-dark.svg
+  - header: 可定制的页面
+    description: 完整无障碍支持的可定制外观
+    image: /assets/image/ui.svg
+    bgImage: https://theme-hope-assets.vuejs.press/bg/9-light.svg
+    bgImageDark: https://theme-hope-assets.vuejs.press/bg/9-dark.svg
     highlights:
-      - title: 布局增强
-        icon: object-group
-        details: 添加路径导航、页脚、改进的导航栏、改进的页面导航等。
-        link: ./guide/layout/
-
       - title: 深色模式
         icon: circle-half-stroke
         details: 可以自由切换浅色模式与深色模式
@@ -168,10 +182,41 @@ highlights:
         details: 支持自定义主题色并允许用户在预设的主题颜色之间切换
         link: ./guide/interface/theme-color.html
 
+      - title: 代码块主题
+        icon: wand-magic-sparkles
+        details: 自定义代码块主题
+        link: ./guide/interface/code-theme.html
+
+      - title: 更多
+        icon: ellipsis
+        details: RTL 布局，打印支持，全局按钮等
+        link: ./guide/interface/others.html
+
+  - header: 布局
+    description: 一个完美的响应式布局。
+    image: /assets/image/layout.svg
+    bgImage: https://theme-hope-assets.vuejs.press/bg/5-light.svg
+    bgImageDark: https://theme-hope-assets.vuejs.press/bg/5-dark.svg
+    highlights:
+      - title: 导航栏
+        icon: window-maximize
+        details: 完全可定制的导航栏以及改进的移动端外观
+        link: ./guide/layout/navbar.html
+
+      - title: 侧边栏
+        icon: fas fa-window-maximize fa-rotate-270
+        details: 从文档标题或文件结构中自动生成侧边栏
+        link: ./guide/layout/sidebar.html
+
       - title: 幻灯片页面
         icon: person-chalkboard
         details: 添加幻灯片页面以显示你喜欢的内容
-        link: ./guide/layout/slides
+        link: ./guide/layout/slides.html
+
+      - title: 布局增强
+        icon: object-group
+        details: 添加路径导航、页脚、改进的导航栏、改进的页面导航等。
+        link: ./guide/layout/
 
       - title: 更多
         icon: ellipsis
@@ -183,9 +228,14 @@ highlights:
     bgImage: https://theme-hope-assets.vuejs.press/bg/1-light.svg
     bgImageDark: https://theme-hope-assets.vuejs.press/bg/1-dark.svg
     features:
+      - title: 目录页面
+        icon: network-wired
+        details: 自动生成目录页以及开箱即用的目录组件
+        link: ./guide/feature/catalog.html
+
       - title: 浏览量与评论
         icon: comment-dots
-        details: 配合 Waline 来开启阅读量统计与评论支持
+        details: 配合 4 个评论服务开启阅读量统计与评论支持
         link: ./guide/feature/comment.html
 
       - title: 文章信息
@@ -226,7 +276,7 @@ highlights:
 
       - title: 博客主页
         icon: home
-        details: 全新播客主页
+        details: 全新博客主页
         link: ./guide/blog/home.html
 
       - title: 博主信息

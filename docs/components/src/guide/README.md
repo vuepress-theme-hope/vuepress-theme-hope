@@ -4,50 +4,14 @@ icon: lightbulb
 index: false
 ---
 
-::: info Tree Shakable
+## Optimized Size
 
 This plugin fully supports tree-shaking.
 
 This means you are free to pick any components you like, and remain the rest of the components unbundled.
 
-For example, if you call this plugin with `{ rootComponents: { backToTop: true } }`, then only `<BackToTop />` component is injected.
+For example, if you call this plugin with `{ components: ['VidStack'] }`, then only `<VidStack />` component is injected.
 
-:::
+## With Enhanced Syntax
 
-This plugin support 13 components:
-
-- [ArtPlayer](artplayer.md)
-
-- [AudioPlayer](audioplayer.md)
-
-- [Badge](badge.md)
-
-- [BiliBili](bilibili.md)
-
-- [CodePen](codepen.md)
-
-- [FontIcon](fonticon.md)
-
-- [PDF](pdf.md)
-
-- [Replit](replit.md)
-
-- [Share](share.md)
-
-- [SiteInfo](siteinfo.md)
-
-- [StackBlitz](stackblitz.md)
-
-- [XiGua](xigua.md)
-
-- [VideoPlayer](videoplayer.md)
-
-- [YouTube](youtube.md)
-
-And 3 root components:
-
-- [AddThis](addthis.md)
-
-- [BackToTop](backtotop.md)
-
-- [Notice](notice.md)
+We recommend you to use this plugin with [md-enhance component syntax](https://plugin-md-enhance.vuejs.press/guide/content/component.html).

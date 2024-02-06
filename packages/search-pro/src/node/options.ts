@@ -1,9 +1,9 @@
-import { type LocaleConfig, type Page } from "@vuepress/core";
+import type { LocaleConfig, Page } from "vuepress/core";
 
-import {
-  type SearchProCustomFieldFormatter,
-  type SearchProHotKeyOptions,
-  type SearchProLocaleData,
+import type {
+  SearchProCustomFieldFormatter,
+  SearchProHotKeyOptions,
+  SearchProLocaleData,
 } from "../shared/index.js";
 
 export interface SearchProIndexOptions {
@@ -27,7 +27,16 @@ export interface SearchProCustomFieldOptions {
    *
    * 自定义项目的获取器
    */
-  getter: (page: Page) => string | string[] | null;
+  getter: <
+    ExtraPageData extends Record<string, unknown> = Record<never, never>,
+    ExtraPageFrontmatter extends Record<string, unknown> = Record<
+      string,
+      unknown
+    >,
+    ExtraPageFields extends Record<string, unknown> = Record<never, never>,
+  >(
+    page: Page<ExtraPageData, ExtraPageFrontmatter, ExtraPageFields>,
+  ) => string[] | string | null | undefined;
 
   /**
    * Display content
@@ -178,6 +187,19 @@ export interface SearchProOptions extends DeprecatedSearchProOptions {
   locales?: LocaleConfig<SearchProLocaleData>;
 
   /**
+   * Result Sort strategy
+   *
+   * @description When there are multiple matched results, the result will be sorted by the strategy. `max` means that page having higher total score will be placed in front. `total` means that page having higher max score will be placed in front.
+   *
+   * 结果排序策略
+   *
+   * @description 当有多个匹配的结果时，会按照策略对结果进行排序。`max` 表示最高分更高的页面会排在前面。`total` 表示总分更高的页面会排在前面
+   *
+   * @default "max"
+   */
+  sortStrategy?: "max" | "total";
+
+  /**
    * Create Index option
    *
    * 创建索引选项
@@ -190,4 +212,14 @@ export interface SearchProOptions extends DeprecatedSearchProOptions {
    * 按语言的创建索引选项
    */
   indexLocaleOptions?: Record<string, SearchProIndexOptions>;
+
+  /**
+   * Filter pages to be indexed
+   *
+   * 过滤需要索引的页面
+   *
+   * @param page Page
+   * @returns whether the page should be indexed
+   */
+  filter?: (page: Page) => boolean;
 }

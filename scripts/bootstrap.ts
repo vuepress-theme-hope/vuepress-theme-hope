@@ -13,19 +13,13 @@ files.forEach((pkgName) => {
   const desc = `${pkgName} plugin for VuePress`;
   const pkgPath = join(packagesDir, pkgName, "package.json");
 
-  // generate package.json
+  // Generate package.json
   if (!existsSync(pkgPath)) {
     const pkgJSON = {
       name: `vuepress-plugin-${pkgName}`,
       version,
       description: desc,
-      keywords: [
-        "vuepress",
-        "vuepress2",
-        "vuepress-plugin",
-        pkgName,
-        "mr-hope",
-      ],
+      keywords: ["vuepress", "vuepress2", "vuepress-plugin", pkgName],
       homepage: `https://github.com/vuepress-theme-hope/vuepress-theme-hope/packages/${pkgName}#readme`,
       bugs: {
         url: "https://github.com/vuepress-theme-hope/vuepress-theme-hope/issues",
@@ -39,7 +33,7 @@ files.forEach((pkgName) => {
       author: {
         name: "Mr.Hope",
         email: "mister-hope@outlook.com",
-        url: "https://mrhope.site",
+        url: "https://mister-hope.com",
       },
       type: "module",
       exports: {
@@ -52,11 +46,20 @@ files.forEach((pkgName) => {
       types: "lib/node/index.d.ts",
       files: ["lib"],
       scripts: {
-        build: "rollup -c",
-        clean: "rimraf ./lib ./*.tsbuildinfo",
+        build: "rollup -c rollup.config.ts --configPlugin esbuild",
+        clean: "rimraf --glob ./lib ./*.tsbuildinfo",
         dev: "pnpm dev:ts",
         // eslint-disable-next-line @typescript-eslint/naming-convention
         "dev:ts": "tsc -b tsconfig.build.json --watch",
+      },
+      engines: {
+        node: ">=18.16.0",
+        npm: ">=8",
+        pnpm: ">=7",
+        yarn: ">=2",
+      },
+      peerDependencies: {
+        vuepress: "2.0.0-rc.6",
       },
       publishConfig: {
         access: "public",
@@ -68,7 +71,7 @@ files.forEach((pkgName) => {
 
   const readmePath = join(packagesDir, pkgName, "README.md");
 
-  // generate README.md
+  // Generate README.md
   if (!existsSync(readmePath))
     writeFileSync(
       readmePath,
@@ -102,6 +105,6 @@ npm i -D vuepress-plugin-${pkgName}
 # yarn
 yarn add -D vuepress-plugin-${pkgName}
 \`\`\`
-`
+`,
     );
 });

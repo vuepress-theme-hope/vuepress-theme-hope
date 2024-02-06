@@ -1,9 +1,11 @@
+@use "vuepress-shared/styles/reset";
+
 .search-pro-result-wrapper {
   scrollbar-color: var(--vp-tc) var(--vp-brc);
   scrollbar-width: thin;
 
   @media (max-width: hope-config.$mobile) {
-    font-size: 13px;
+    font-size: 14px;
   }
 
   &::-webkit-scrollbar {
@@ -76,7 +78,8 @@
   color: var(--vp-tc);
 }
 
-.search-pro-close-icon {
+.search-pro-remove-icon {
+  @include reset.button;
   box-sizing: content-box;
 
   height: 1.5rem;
@@ -84,6 +87,8 @@
   border-radius: 50%;
 
   color: var(--vp-tc);
+
+  font-size: 1rem;
 
   svg {
     width: 1.5rem;
@@ -138,7 +143,7 @@
     cursor: pointer;
 
     .search-pro-result-type,
-    .search-pro-close-icon,
+    .search-pro-remove-icon,
     strong {
       color: var(--white);
     }

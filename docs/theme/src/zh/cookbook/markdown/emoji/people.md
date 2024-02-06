@@ -2,7 +2,7 @@
 title: 人物 Emoji
 icon: person
 category:
-  - 教程知识
+  - 教程
   - Markdown
 tag:
   - Markdown

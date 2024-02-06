@@ -2,7 +2,7 @@
 home: true
 icon: home
 title: Project home
-heroImage: /logo.svg
+heroImage: https://theme-hope-assets.vuejs.press/logo.svg
 bgImage: https://theme-hope-assets.vuejs.press/bg/6-light.svg
 bgImageDark: https://theme-hope-assets.vuejs.press/bg/6-dark.svg
 bgImageStyle:
@@ -10,7 +10,8 @@ bgImageStyle:
 heroText: Project name
 tagline: You can place the description of the project here.
 actions:
-  - text: How to Use 💡
+  - text: How to Use
+    icon: lightbulb
     link: ./demo/
     type: primary
 
@@ -40,10 +41,15 @@ highlights:
         details: Check markdown links
         link: https://theme-hope.vuejs.press/guide/markdown/others.html#link-check
 
-      - title: Custom Container
+      - title: Hint box
         icon: box-archive
         details: Decorate Markdown content with styles
-        link: https://theme-hope.vuejs.press/guide/markdown/container.html
+        link: https://theme-hope.vuejs.press/guide/markdown/hint.html
+
+      - title: GFM alerts
+        icon: bell
+        details: GFM alerts
+        link: https://theme-hope.vuejs.press/guide/markdown/alert.html
 
       - title: Tabs
         icon: table-columns
@@ -90,15 +96,15 @@ highlights:
         details: improve syntax to specify size and color scheme
         link: https://theme-hope.vuejs.press/guide/markdown/image.html
 
-      - title: Card Support
+      - title: Component Support
         icon: square
-        details: Add cards in Markdown
-        link: https://theme-hope.vuejs.press/guide/markdown/card.html
+        details: Add component easily in Markdown
+        link: https://theme-hope.vuejs.press/guide/markdown/component.html
 
       - title: Chart Support
         icon: chart-simple
         details: Display charts in Markdown
-        link: https://theme-hope.vuejs.press/guide/markdown/chart.html
+        link: https://theme-hope.vuejs.press/guide/markdown/chartjs.html
 
       - title: Flowchart Support
         icon: route
@@ -130,15 +136,20 @@ highlights:
         details: Show living vue component in playground
         link: https://theme-hope.vuejs.press/guide/markdown/vue-playground.html
 
+      - title: Sandpack playground Support
+        icon: code
+        details: A live coding environment driven by Sandpack.
+        link: https://theme-hope.vuejs.press/guide/markdown/sandpack.html
+
       - title: Code Demo Support
         icon: laptop-code
         details: You can insert code demo easily
-        link: https://theme-hope.vuejs.press/guide/markdown/demo/
+        link: https://theme-hope.vuejs.press/guide/markdown/demo.html
 
       - title: Presentation Support
         icon: person-chalkboard
-        details: You can insert presentation in Markdown files directly
-        link: https://theme-hope.vuejs.press/guide/markdown/presentation/
+        details: Insert presentation in Markdown files via Reveal.js
+        link: https://theme-hope.vuejs.press/guide/markdown/revealjs/
 
   - header: Improved layouts
     description: An awesome responsive layout with full a11y support.

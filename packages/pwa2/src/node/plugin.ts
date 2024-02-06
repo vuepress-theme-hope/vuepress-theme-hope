@@ -1,19 +1,19 @@
-import { type PluginFunction } from "@vuepress/core";
-import { useSassPalettePlugin } from "vuepress-plugin-sass-palette";
 import {
   addViteOptimizeDepsExclude,
-  checkVersion,
-  getLocales,
-  useCustomDevServer,
-} from "vuepress-shared/node";
+  addViteSsrNoExternal,
+  customizeDevServer,
+  getLocaleConfig,
+} from "@vuepress/helper";
+import type { PluginFunction } from "vuepress/core";
+import { useSassPalettePlugin } from "vuepress-plugin-sass-palette";
 
-import { convertOptions } from "./compact/index.js";
+import { convertOptions } from "./compact.js";
 import { generateManifest, getManifest } from "./generateManifest.js";
 import { generateServiceWorker } from "./generateServiceWorker.js";
 import { appendBase } from "./helper.js";
 import { injectLinksToHead } from "./injectHead.js";
 import { pwaLocales } from "./locales.js";
-import { type PWAOptions } from "./options.js";
+import type { PWAOptions } from "./options.js";
 import { prepareConfigFile } from "./prepare.js";
 import { PLUGIN_NAME, logger } from "./utils.js";
 
@@ -22,7 +22,6 @@ export const pwaPlugin =
   (app) => {
     // TODO: Remove this in v2 stable
     if (legacy) convertOptions(options as PWAOptions & Record<string, unknown>);
-    checkVersion(app, PLUGIN_NAME, "2.0.0-beta.62");
 
     if (app.env.isDebug) logger.info("Options:", options);
 
@@ -32,7 +31,7 @@ export const pwaPlugin =
 
     if (shouldPrefetch === true)
       logger.warn(
-        'The plugin will register service worker to handle assets, so we recommend you to set "shouldPrefetch: false" in VuePress config file.'
+        'The plugin will register service worker to handle assets, so we recommend you to set "shouldPrefetch: false" in VuePress config file.',
       );
 
     const manifest = getManifest(app, options);
@@ -45,7 +44,7 @@ export const pwaPlugin =
       name: PLUGIN_NAME,
 
       define: () => ({
-        PWA_LOCALES: getLocales({
+        PWA_LOCALES: getLocaleConfig({
           app,
           name: PLUGIN_NAME,
           default: pwaLocales,
@@ -60,15 +59,19 @@ export const pwaPlugin =
           "mitt",
           "register-service-worker",
         ]);
+        addViteSsrNoExternal(bundlerOptions, app, [
+          "@vuepress/helper",
+          "vuepress-shared",
+        ]);
 
-        useCustomDevServer(bundlerOptions, app, {
+        customizeDevServer(bundlerOptions, app, {
           path: "/manifest.webmanifest",
           response: async (_, response) => {
             response.setHeader("Content-Type", "application/manifest+json");
 
             return JSON.stringify(await manifest);
           },
-          errMsg: "Unexpected manifest generate error",
+          errMsg: "Unexpected manifest generation error",
         });
       },
 

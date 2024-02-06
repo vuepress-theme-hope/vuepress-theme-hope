@@ -1,13 +1,13 @@
-import { withBase } from "@vuepress/client";
-import { isLinkExternal } from "@vuepress/shared";
-import { type FunctionalComponent, type VNode, h } from "vue";
-import { RouterLink } from "vue-router";
+import { isLinkExternal } from "@vuepress/helper/client";
+import type { FunctionalComponent, VNode } from "vue";
+import { h } from "vue";
+import { RouteLink, withBase } from "vuepress/client";
 
 import HopeIcon from "@theme-hope/components/HopeIcon";
 
-import {
-  type ThemeProjectHomeFeatureOptions,
-  type ThemeProjectHomeHighlightItem,
+import type {
+  ThemeProjectHomeFeatureOptions,
+  ThemeProjectHomeHighlightItem,
 } from "../../shared/index.js";
 
 import "../styles/feature-panel.scss";
@@ -19,7 +19,7 @@ const FeaturePanel: FunctionalComponent<
     image?: (props: ThemeProjectHomeFeatureOptions) => VNode[] | VNode | null;
     info?: (props: ThemeProjectHomeFeatureOptions) => VNode[] | VNode | null;
     highlights?: (
-      props: ThemeProjectHomeHighlightItem[]
+      props: ThemeProjectHomeHighlightItem[],
     ) => VNode[] | VNode | null;
   }
 > = (props, { slots }) => {
@@ -60,7 +60,7 @@ const FeaturePanel: FunctionalComponent<
         "div",
         {
           class: "vp-feature",
-          style: color ? { color: color } : {},
+          style: color ? { color } : {},
         },
         [
           slots.image?.(props) || [
@@ -68,14 +68,14 @@ const FeaturePanel: FunctionalComponent<
               ? h("img", {
                   class: ["vp-feature-image", { light: imageDark }],
                   src: withBase(image),
-                  alt: header,
+                  alt: "",
                 })
               : null,
             imageDark
               ? h("img", {
                   class: "vp-feature-image dark",
                   src: withBase(imageDark),
-                  alt: header,
+                  alt: "",
                 })
               : null,
           ],
@@ -112,29 +112,27 @@ const FeaturePanel: FunctionalComponent<
                           {
                             class: "vp-feature-item link",
                             href: link,
-                            role: "navigation",
                             "aria-label": title,
                             target: "_blank",
                           },
-                          children
+                          children,
                         )
                       : h(
-                          RouterLink,
+                          RouteLink,
                           {
                             class: "vp-feature-item link",
                             to: link,
-                            role: "navigation",
                             "aria-label": title,
                           },
-                          () => children
+                          () => children,
                         )
                     : h("div", { class: "vp-feature-item" }, children);
-                })
+                }),
               )
             : null,
-        ]
+        ],
       ),
-    ]
+    ],
   );
 };
 

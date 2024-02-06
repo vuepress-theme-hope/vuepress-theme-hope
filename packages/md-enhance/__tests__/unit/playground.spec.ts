@@ -4,9 +4,10 @@ import { describe, expect, it } from "vitest";
 
 import {
   getTSPlaygroundPreset,
+  getUnoPlaygroundPreset,
   getVuePlaygroundPreset,
   playground,
-} from "../../src/node/markdown-it/index.js";
+} from "../../src/node/markdown-it/playground/index.js";
 
 describe("playground", () => {
   it("Should not throw", () => {
@@ -34,7 +35,7 @@ abc
 \`\`\`
 :::
 `,
-      {}
+      {},
     );
 
     expect(result).toMatchSnapshot();
@@ -87,7 +88,7 @@ const msg = ref('Hello World!')
 \`\`\`
 :::
 `,
-        {}
+        {},
       );
     });
 
@@ -127,7 +128,7 @@ const msg = ref('Hello World!')
 
 :::
 `,
-        {}
+        {},
       );
     });
 
@@ -169,7 +170,7 @@ const msg = ref('Hello World!')
 
 :::
 `,
-        {}
+        {},
       );
     });
   });
@@ -177,7 +178,7 @@ const msg = ref('Hello World!')
   describe("ts preset", () => {
     const markdownItWithTSPreset = MarkdownIt({ linkify: true }).use(
       playground,
-      getTSPlaygroundPreset({})
+      getTSPlaygroundPreset({}),
     );
 
     it("Should work", () => {
@@ -189,7 +190,7 @@ const msg = ref('Hello World!')
 \`\`\`ts
 const msg = "hello world";
 
-const speak = (msg: string) => console.log(msg);
+const speak = (msg: string) => console.info(msg);
 
 speak(msg);
 \`\`\`
@@ -205,7 +206,7 @@ speak(msg);
 \`\`\`ts
 const msg = "hello world";
 
-const speak = (msg: string) => console.log(msg);
+const speak = (msg: string) => console.info(msg);
 
 speak(msg);
 \`\`\`
@@ -230,7 +231,7 @@ speak(msg);
   describe("vue preset", () => {
     const markdownItWithVuePreset = MarkdownIt({ linkify: true }).use(
       playground,
-      getVuePlaygroundPreset({})
+      getVuePlaygroundPreset({}),
     );
 
     const getVueFiles = (content: string): Record<string, string> | null => {
@@ -453,6 +454,67 @@ const msg = ref("Hello Playground!");
 }\
 `,
       });
+    });
+  });
+
+  describe("unocss preset", () => {
+    const markdownItWithUnoPreset = MarkdownIt({ linkify: true }).use(
+      playground,
+      getUnoPlaygroundPreset({}),
+    );
+
+    it("Should work", () => {
+      const result1 = markdownItWithUnoPreset.render(`
+::: playground#unocss UnoCSS demo 1
+
+@file index.html
+
+\`\`\`html
+<div class="text-red">UnoCSS TEST</div>
+\`\`\`
+
+:::
+`);
+
+      const result2 = markdownItWithUnoPreset.render(`
+::: playground#unocss UnoCSS demo 2
+
+@file index.html
+
+\`\`\`html
+<div class="text-$fd-color">UnoCSS TEST 2</div>
+\`\`\`
+
+@file config.js
+
+\`\`\`js
+import {
+  defineConfig,
+  presetUno,
+} from 'unocss'
+
+export default defineConfig({
+  presets: [
+    presetUno(),
+  ]
+})
+
+\`\`\`
+
+@file custom.css
+
+\`\`\`css
+:root {
+  --fd-color: red;
+}
+
+\`\`\`
+
+:::
+`);
+
+      expect(result1).toMatchSnapshot();
+      expect(result2).toMatchSnapshot();
     });
   });
 });

@@ -1,4 +1,4 @@
-import { type ThemeLocaleData } from "../../shared/index.js";
+import type { ThemeLocaleData } from "../../shared/index.js";
 
 export const jaLocale: ThemeLocaleData = {
   lang: "ja-JP",
@@ -36,6 +36,7 @@ export const jaLocale: ThemeLocaleData = {
     all: "すべて",
     intro: "自己紹介",
     star: "コレクション",
+    empty: "$text は空です",
   },
 
   paginationLocales: {

@@ -1,12 +1,12 @@
 import { join } from "node:path";
 
-import { type Lang } from "./i18n.js";
-import { type PackageManager } from "../utils/index.js";
+import type { Lang } from "./i18n.js";
+import type { PackageManager } from "../utils/index.js";
 
 export const getWorkflowContent = (
   packageManager: PackageManager,
   dir: string,
-  lang: Lang
+  lang: Lang,
 ): string =>
   `
 name: ${lang === "简体中文" ? "部署文档" : "Deploy Docs"}
@@ -20,6 +20,9 @@ on:
           : "make sure this is the branch you are using"
       }
       - main
+
+permissions:
+  contents: write
 
 jobs:
   deploy-gh-pages:
@@ -43,6 +46,7 @@ ${
         uses: pnpm/action-setup@v2
         with:
           run_install: true
+          version: 8
 `
     : ""
 }
@@ -50,12 +54,13 @@ ${
       - name: ${lang === "简体中文" ? "设置 Node.js" : "Setup Node.js"}
         uses: actions/setup-node@v3
         with:
-          node-version: 18
+          node-version: 20
           cache: ${packageManager}
 
 ${
-  packageManager !== "pnpm"
-    ? `\
+  packageManager === "pnpm"
+    ? ""
+    : `\
       - name: ${lang === "简体中文" ? "安装依赖" : "Install Deps"}
         run: ${
           packageManager === "npm"
@@ -63,7 +68,6 @@ ${
             : `${packageManager} install --frozen-lockfile`
         }
 `
-    : ""
 }
       - name: ${lang === "简体中文" ? "构建文档" : "Build Docs"}
         env:

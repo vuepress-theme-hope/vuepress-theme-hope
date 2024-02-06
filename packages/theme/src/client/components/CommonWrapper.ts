@@ -1,15 +1,12 @@
-import { usePageData, usePageFrontmatter } from "@vuepress/client";
 import {
   useEventListener,
   useScrollLock,
   useThrottleFn,
   useToggle,
 } from "@vueuse/core";
+import type { ComponentOptions, SlotsType, VNode } from "vue";
 import {
-  type ComponentOptions,
-  type SlotsType,
   Transition,
-  type VNode,
   computed,
   defineComponent,
   h,
@@ -19,7 +16,7 @@ import {
   resolveComponent,
   watch,
 } from "vue";
-import { useRouter } from "vue-router";
+import { usePageData, usePageFrontmatter, useRouter } from "vuepress/client";
 import { RenderDefault, hasGlobalComponent } from "vuepress-shared/client";
 
 import PageFooter from "@theme-hope/components/PageFooter";
@@ -31,9 +28,9 @@ import Navbar from "@theme-hope/modules/navbar/components/Navbar";
 import Sidebar from "@theme-hope/modules/sidebar/components/Sidebar";
 import { useSidebarItems } from "@theme-hope/modules/sidebar/composables/index";
 
-import {
-  type ThemeNormalPageFrontmatter,
-  type ThemeProjectHomePageFrontmatter,
+import type {
+  ThemeNormalPageFrontmatter,
+  ThemeProjectHomePageFrontmatter,
 } from "../../shared/index.js";
 
 import "../styles/common.scss";
@@ -70,22 +67,22 @@ export default defineComponent({
   },
 
   slots: Object as SlotsType<{
-    default: () => VNode | VNode[];
+    default: () => VNode[] | VNode | null;
 
-    // navbar
-    navbarStartBefore?: () => VNode | VNode[];
-    navbarStartAfter?: () => VNode | VNode[];
-    navbarCenterBefore?: () => VNode | VNode[];
-    navbarCenterAfter?: () => VNode | VNode[];
-    navbarEndBefore?: () => VNode | VNode[];
-    navbarEndAfter?: () => VNode | VNode[];
-    navScreenTop?: () => VNode | VNode[];
-    navScreenBottom?: () => VNode | VNode[];
+    // Navbar
+    navbarStartBefore?: () => VNode[] | VNode | null;
+    navbarStartAfter?: () => VNode[] | VNode | null;
+    navbarCenterBefore?: () => VNode[] | VNode | null;
+    navbarCenterAfter?: () => VNode[] | VNode | null;
+    navbarEndBefore?: () => VNode[] | VNode | null;
+    navbarEndAfter?: () => VNode[] | VNode | null;
+    navScreenTop?: () => VNode[] | VNode | null;
+    navScreenBottom?: () => VNode[] | VNode | null;
 
-    // sidebar
-    sidebar?: () => VNode | VNode[];
-    sidebarTop?: () => VNode | VNode[];
-    sidebarBottom?: () => VNode | VNode[];
+    // Sidebar
+    sidebar?: () => VNode[] | VNode;
+    sidebarTop?: () => VNode[] | VNode | null;
+    sidebarBottom?: () => VNode[] | VNode | null;
   }>,
 
   setup(props, { slots }) {
@@ -102,7 +99,7 @@ export default defineComponent({
 
     const sidebarItems = useSidebarItems();
 
-    // navbar
+    // Navbar
     const hideNavbar = ref(false);
 
     const enableNavbar = computed(() => {
@@ -118,7 +115,7 @@ export default defineComponent({
         page.value.title ||
           themeLocale.value.logo ||
           themeLocale.value.repo ||
-          themeLocale.value.navbar
+          themeLocale.value.navbar,
       );
     });
 
@@ -136,7 +133,7 @@ export default defineComponent({
       props.noToc || frontmatter.value.home
         ? false
         : frontmatter.value.toc ||
-          (themeLocale.value.toc !== false && frontmatter.value.toc !== false)
+          (themeLocale.value.toc !== false && frontmatter.value.toc !== false),
     );
 
     const touchStart = { x: 0, y: 0 };
@@ -149,7 +146,7 @@ export default defineComponent({
       const dy = e.changedTouches[0].clientY - touchStart.y;
 
       if (
-        // horizontal swipe
+        // Horizontal swipe
         Math.abs(dx) > Math.abs(dy) * 1.5 &&
         Math.abs(dx) > 40
       )
@@ -164,7 +161,7 @@ export default defineComponent({
       document.body.scrollTop ||
       0;
 
-    // close sidebar after navigation
+    // Close sidebar after navigation
     let lastDistance = 0;
 
     useEventListener(
@@ -173,18 +170,18 @@ export default defineComponent({
         () => {
           const distance = getScrollTop();
 
-          // at top or scroll up
+          // At top or scroll up
           if (distance <= 58 || distance < lastDistance)
             hideNavbar.value = false;
-          // scroll down > 200px and sidebar is not opened
+          // Scroll down > 200px and sidebar is not opened
           else if (lastDistance + 200 < distance && !isMobileSidebarOpen.value)
             hideNavbar.value = true;
 
           lastDistance = distance;
         },
         300,
-        true
-      )
+        true,
+      ),
     );
 
     watch(isMobile, (value) => {
@@ -219,7 +216,7 @@ export default defineComponent({
             {
               class: [
                 "theme-container",
-                // classes
+                // Classes
                 {
                   "no-navbar": !enableNavbar.value,
                   "no-sidebar":
@@ -240,7 +237,7 @@ export default defineComponent({
               onTouchEnd,
             },
             [
-              // navbar
+              // Navbar
               enableNavbar.value
                 ? h(
                     Navbar,
@@ -254,19 +251,19 @@ export default defineComponent({
                       endAfter: () => slots.navbarEndAfter?.(),
                       screenTop: () => slots.navScreenTop?.(),
                       screenBottom: () => slots.navScreenBottom?.(),
-                    }
+                    },
                   )
                 : null,
-              // sidebar mask
+              // Sidebar mask
               h(Transition, { name: "fade" }, () =>
                 isMobileSidebarOpen.value
                   ? h("div", {
                       class: "vp-sidebar-mask",
                       onClick: () => toggleMobileSidebar(false),
                     })
-                  : null
+                  : null,
               ),
-              // toggle sidebar button
+              // Toggle sidebar button
               h(Transition, { name: "fade" }, () =>
                 isMobile.value
                   ? null
@@ -281,27 +278,23 @@ export default defineComponent({
                           "arrow",
                           isDesktopSidebarCollapsed.value ? "end" : "start",
                         ],
-                      })
-                    )
+                      }),
+                    ),
               ),
-              // sidebar
+              // Sidebar
               h(
                 Sidebar,
                 {},
                 {
-                  ...(slots.sidebar
-                    ? {
-                        default: (): VNode | VNode[] => slots.sidebar!(),
-                      }
-                    : {}),
+                  ...(slots.sidebar ? { default: () => slots.sidebar!() } : {}),
                   top: () => slots.sidebarTop?.(),
                   bottom: () => slots.sidebarBottom?.(),
-                }
+                },
               ),
               slots.default(),
               h(PageFooter),
-            ]
-          )
+            ],
+          ),
       );
   },
 });

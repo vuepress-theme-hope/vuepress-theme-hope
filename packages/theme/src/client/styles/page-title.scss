@@ -9,10 +9,7 @@
   padding-bottom: 0;
 
   @media print {
-    // NOTE: Compatible with Android Wechat
-    // padding-inline: 0!important;
-    padding-inline-start: 0 !important;
-    padding-inline-end: 0 !important;
+    padding-inline: 0 !important;
   }
 
   @media (max-width: hope-config.$pad) {
@@ -33,6 +30,11 @@
       margin-inline-end: 0.25em;
       color: var(--theme-color);
       font-size: 0.9em;
+    }
+
+    img.icon {
+      vertical-align: -0.125em;
+      height: 1em;
     }
   }
 }

@@ -23,8 +23,8 @@ const checkYarnInstalled = (): boolean => {
 
 const availablePackageManagers = ["npm"];
 
-if (checkYarnInstalled()) availablePackageManagers.push("yarn");
-if (checkPnpmInstalled()) availablePackageManagers.push("pnpm");
+if (checkYarnInstalled()) availablePackageManagers.unshift("yarn");
+if (checkPnpmInstalled()) availablePackageManagers.unshift("pnpm");
 
 export type PackageManager = "npm" | "yarn" | "pnpm";
 
@@ -33,7 +33,7 @@ export interface PackageManagerAnswer {
 }
 
 export const getPackageManager = async (
-  message: string
+  message: string,
 ): Promise<PackageManager> =>
   (
     await inquirer.prompt<PackageManagerAnswer>([

@@ -1,4 +1,5 @@
-import { type VNode, computed, defineComponent, h } from "vue";
+import type { VNode } from "vue";
+import { computed, defineComponent, h } from "vue";
 
 import { useThemeLocaleData } from "@theme-hope/composables/index";
 import AppearanceSwitch from "@theme-hope/modules/outlook/components/AppearanceSwitch";
@@ -21,7 +22,7 @@ export default defineComponent({
             h(
               "label",
               { class: "appearance-title", for: "appearance-switch" },
-              locale.value
+              locale.value,
             ),
             h(AppearanceSwitch),
           ])

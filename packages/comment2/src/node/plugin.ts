@@ -1,22 +1,20 @@
-import { type PluginFunction } from "@vuepress/core";
-import { getDirname, path } from "@vuepress/utils";
-import { useSassPalettePlugin } from "vuepress-plugin-sass-palette";
 import {
   addCustomElement,
   addViteOptimizeDepsExclude,
   addViteOptimizeDepsInclude,
   addViteSsrExternal,
-  checkVersion,
-  getLocales,
-} from "vuepress-shared/node";
+  addViteSsrNoExternal,
+  getInstalledStatus,
+  getLocaleConfig,
+} from "@vuepress/helper";
+import type { PluginFunction } from "vuepress/core";
+import { useSassPalettePlugin } from "vuepress-plugin-sass-palette";
 
 import { getProvider } from "./alias.js";
 import { convertOptions } from "./compact.js";
 import { walineLocales } from "./locales.js";
-import { type CommentPluginOptions } from "./options.js";
-import { PLUGIN_NAME, logger } from "./utils.js";
-
-const __dirname = getDirname(import.meta.url);
+import type { CommentPluginOptions } from "./options.js";
+import { CLIENT_FOLDER, PLUGIN_NAME, getPackage, logger } from "./utils.js";
 
 /** Comment Plugin */
 export const commentPlugin =
@@ -25,13 +23,22 @@ export const commentPlugin =
     // TODO: Remove this in v2 stable
     if (legacy)
       convertOptions(options as CommentPluginOptions & Record<string, unknown>);
-    checkVersion(app, PLUGIN_NAME, "2.0.0-beta.62");
 
     if (app.env.isDebug) logger.info("Options:", options);
 
+    const pkg = getPackage(options.provider);
+
+    if (pkg && !getInstalledStatus(pkg, import.meta.url)) {
+      logger.error(
+        `Package ${pkg} is not installed, please install it manually!`,
+      );
+
+      return { name: PLUGIN_NAME };
+    }
+
     const userWalineLocales =
       options.provider === "Waline"
-        ? getLocales({
+        ? getLocaleConfig({
             app,
             name: "waline",
             default: walineLocales,
@@ -39,7 +46,7 @@ export const commentPlugin =
           })
         : {};
 
-    // remove locales so that they won’t be injected in client twice
+    // Remove locales so that they won’t be injected in client twice
     if (options.provider === "Waline" && "locales" in options)
       delete options.locales;
 
@@ -65,7 +72,11 @@ export const commentPlugin =
       extendsBundlerOptions: (bundlerOptions: unknown, app): void => {
         switch (options.provider) {
           case "Artalk": {
-            addViteOptimizeDepsInclude(bundlerOptions, app, "artalk");
+            addViteOptimizeDepsExclude(
+              bundlerOptions,
+              app,
+              "artalk/dist/Artalk.mjs",
+            );
             addViteSsrExternal(bundlerOptions, app, "artalk");
             break;
           }
@@ -77,7 +88,10 @@ export const commentPlugin =
           }
 
           case "Waline": {
-            addViteOptimizeDepsInclude(bundlerOptions, app, "autosize");
+            addViteOptimizeDepsInclude(bundlerOptions, app, [
+              "@waline/client > autosize",
+              "@waline/client > recaptcha-v3",
+            ]);
             addViteOptimizeDepsExclude(bundlerOptions, app, "@waline/client");
             addViteSsrExternal(bundlerOptions, app, "@waline/client");
             break;
@@ -89,8 +103,13 @@ export const commentPlugin =
             break;
           }
         }
+
+        addViteSsrNoExternal(bundlerOptions, app, [
+          "@vuepress/helper",
+          "vuepress-shared",
+        ]);
       },
 
-      clientConfigFile: path.resolve(__dirname, "../client/config.js"),
+      clientConfigFile: `${CLIENT_FOLDER}config.js`,
     };
   };

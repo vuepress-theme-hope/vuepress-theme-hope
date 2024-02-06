@@ -1,6 +1,7 @@
 ---
 title: Config
 icon: gears
+order: 2
 ---
 
 ## Plugin Options
@@ -11,6 +12,8 @@ You can pass these options to the plugin:
 
 - Type: `boolean`
 - Default: `false`
+- Details:
+  - [GFM](./guide/others.md#gfm)
 
 Whether to support full GFM syntax.
 
@@ -18,26 +21,27 @@ Whether to support full GFM syntax.
 
 For full GFM syntax, see [GFM](https://github.github.com/gfm/).
 
-We are not 100% supporting it to be honestly, we only supply its syntax including footnote, task list, code highlight, image mark and so on.
+Honestly, we do not 100% implement GFM, we only supply its common syntax.
 
 Some of the behavior might be different, for example to support Vue syntax, we are not disallowing `<script>` tags. But in most situation, the behavior should be same.
 
 :::
 
-### container
+### hint
 
 - Type: `boolean`
 - Default: `false`
 - Details:
-  - [Custom Container](./guide/container.md)
+  - [Hint box](./guide/stylize/hint.md)
 
-Whether to enable custom container including
+Whether to enable hint box including
 
+- important
 - info
 - note
 - tip
 - warning
-- danger
+- caution
 - details
 
 ::: warning
@@ -69,6 +73,8 @@ The last 4 items conflict with default theme and will override its style.
   ```
 
 - Default: `{ status: "dev" }`
+- Details:
+  - [Link Check](./guide/others.md#link-check)
 
 Whether to enable links check.
 
@@ -81,12 +87,38 @@ Whether to enable links check.
 
 Whether to enable v-pre wrapper.
 
+### breaks
+
+- Type: `boolean`
+- Default: `false`
+- Enabled in GFM: Yes
+
+Whether convert `\n` in paragraphs into `<br>`s
+
+### linkify
+
+- Type: `boolean`
+- Default: `false`
+- Enabled in GFM: Yes
+
+Whether convert URL-like text into links
+
+### alert
+
+- Type: `boolean`
+- Default: `false`
+- Enabled in GFM: Yes
+- Details:
+  - [GFM Alerts](./guide/stylize/alert.md)
+
+Whether to enable gfm alerts.
+
 ### tabs
 
 - Type: `boolean`
 - Default: `false`
 - Details:
-  - [Tabs](./guide/tabs.md)
+  - [Tabs](./guide/content/tabs.md)
 
 Whether to enable tabs.
 
@@ -95,7 +127,7 @@ Whether to enable tabs.
 - Type: `boolean`
 - Default: `false`
 - Details:
-  - [Code Tabs](./guide/code-tabs.md)
+  - [Code Tabs](./guide/code/code-tabs.md)
 
 Whether to enable codetabs.
 
@@ -104,7 +136,7 @@ Whether to enable codetabs.
 - Type: `boolean`
 - Default: `false`
 - Details:
-  - [Align](./guide/align.md)
+  - [Align](./guide/stylize/align.md)
 
 Whether to enable custom align.
 
@@ -141,7 +173,7 @@ Whether to enable custom align.
 
 - Default: `false`
 - Details:
-  - [Attrs](./guide/attrs.md)
+  - [Attrs](./guide/stylize/attrs.md)
 
 Whether to enable attribute customize support.
 
@@ -149,6 +181,8 @@ Whether to enable attribute customize support.
 
 - Type: `boolean`
 - Default: `false`
+- Details:
+  - [Superscript](./guide/grammar/sup-sub.md)
 
 Whether to enable the upper format support.
 
@@ -156,6 +190,8 @@ Whether to enable the upper format support.
 
 - Type: `boolean`
 - Default: `false`
+- Details:
+  - [Subscript](./guide/grammar/sup-sub.md)
 
 Whether to enable the lower corner format support.
 
@@ -163,6 +199,9 @@ Whether to enable the lower corner format support.
 
 - Type: `boolean`
 - Default: `false`
+- Enabled in GFM: Yes
+- Details:
+  - [Footnote](./guide/content/footnote.md)
 
 Whether to enable footnote format support.
 
@@ -170,6 +209,8 @@ Whether to enable footnote format support.
 
 - Type: `boolean`
 - Default: `false`
+- Details:
+  - [Mark](./guide/stylize/mark.md)
 
 Whether to enable mark support.
 
@@ -177,6 +218,8 @@ Whether to enable mark support.
 
 - Type: `boolean`
 - Default: `false`
+- Details:
+  - [Figure](./guide/grammar/image.md#figure)
 
 Whether enable figure support.
 
@@ -184,29 +227,37 @@ Whether enable figure support.
 
 - Type: `boolean`
 - Default: `false`
+- Details:
+  - [Image Lazyload](./guide/grammar/image.md#image-lazyload)
 
 Whether to lazy load every image in page in native way.
 
 ### imgMark
 
 - Type: `ImageMarkOptions | boolean`
+
+  ```ts
+  interface ImageMarkOptions {
+    /** lightmode only IDs */
+    light?: string[];
+    /** darkmode only IDs */
+    dark?: string[];
+  }
+  ```
+
 - Default: `false`
+- Enabled in GFM: Yes
+- Details:
+  - [Image Mark](./guide/grammar/image.md#image-mark)
 
 Whether enable image mark support.
-
-```ts
-interface ImageMarkOptions {
-  /** lightmode only IDs */
-  light?: string[];
-  /** darkmode only IDs */
-  dark?: string[];
-}
-```
 
 ### imgSize
 
 - Type: `boolean`
 - Default: `false`
+- Details:
+  - [Image Size](./guide/grammar/image.md#image-size)
 
 Whether enable image size support.
 
@@ -214,53 +265,39 @@ Whether enable image size support.
 
 - Type: `boolean`
 - Default: `false`
+- Details:
+  - [Image Size](./guide/grammar/image.md#image-size)
 
 Whether enable obsidian image size support.
 
 ### tasklist
 
 - Type: `TaskListOptions | boolean`
+
+  ```ts
+  interface TaskListOptions {
+    /**
+     * Whether disable checkbox
+     *
+     * @default true
+     */
+    disabled?: boolean;
+
+    /**
+     * Whether use `<label>` to wrap text
+     *
+     * @default true
+     */
+    label?: boolean;
+  }
+  ```
+
 - Default: `false`
+- Enabled in GFM: Yes
+- Details:
+  - [Tasklist](./guide/grammar/tasklist.md)
 
 Whether to enable tasklist format support. You can pass an object to config task list.
-
-```ts
-interface TaskListOptions {
-  /**
-   * Whether disable checkbox
-   *
-   * @default true
-   */
-  disabled?: boolean;
-
-  /**
-   * Whether use `<label>` to wrap text
-   *
-   * @default true
-   */
-  label?: boolean;
-}
-```
-
-### katex
-
-- Type: `KatexOptions & { copy?: boolean; mhchem?: boolean } | boolean`
-- Default: `false`
-
-Whether to enable $\TeX$ syntax support through KaTeX. You can pass an object to config KaTeX.
-
-In particular, you can enable the copy and mhchem extensions with `katex.copy: true` and `katex.mhchem: true`.
-
-Please see [Katex Docs](https://katex.org/docs/options.html) for available options.
-
-### mathjax
-
-- Type: `MathJaxOptions | boolean`
-- Default: `false`
-
-Whether to enable $\TeX$ syntax support through Math Jax. You can pass an object to config Math Jax.
-
-Please see [source code](https://github.com/vuepress-theme-hope/vuepress-theme-hope/tree/main/packages/md-enhance/src/shared/mathjax.ts) for available options.
 
 ### include
 
@@ -285,20 +322,51 @@ Please see [source code](https://github.com/vuepress-theme-hope/vuepress-theme-h
   ```
 
 - Default: `false`
+- Details:
+  - [Include files](./guide/content/include.md)
 
 Whether to enable Markdown import support. You can pass in a function for path resolution.
 
-### card
+### katex
+
+- Type: `KatexOptions & { copy?: boolean; mhchem?: boolean } | boolean`
+- Default: `false`
+- Details:
+  - [TeX](./guide/grammar/tex.md)
+
+Whether to enable $\TeX$ syntax support through KaTeX. You can pass an object to config KaTeX.
+
+In particular, you can enable the copy and mhchem extensions with `katex.copy: true` and `katex.mhchem: true`.
+
+Please see [Katex Docs](https://katex.org/docs/options.html) for available options.
+
+### mathjax
+
+- Type: `MathJaxOptions | boolean`
+- Default: `false`
+- Enabled in GFM: Yes
+- Details:
+  - [TeX](./guide/grammar/tex.md)
+
+Whether to enable $\TeX$ syntax support through Math Jax. You can pass an object to config Math Jax.
+
+Please see [source code](https://github.com/vuepress-theme-hope/vuepress-theme-hope/tree/main/packages/md-enhance/src/shared/mathjax.ts) for available options.
+
+### component
 
 - Type: `boolean`
 - Default: `false`
+- Details:
+  - [Component](./guide/content/component.md)
 
-Whether to enable card support
+Whether to enable component support
 
 ### chart
 
 - Type: `boolean`
 - Default: `false`
+- Details:
+  - [Chart.js](./guide/chart/chartjs.md)
 
 Whether to enable chart support
 
@@ -306,6 +374,8 @@ Whether to enable chart support
 
 - Type: `boolean`
 - Default: `false`
+- Details:
+  - [Echarts](./guide/chart/echarts.md)
 
 Whether to enable ECharts support
 
@@ -313,15 +383,29 @@ Whether to enable ECharts support
 
 - Type: `boolean`
 - Default: `false`
+- Details:
+  - [Flowchart](./guide/chart/flowchart.md)
 
 Whether to enable flowchart support
 
+### markmap
+
+- Type: `boolean`
+- Default: `false`
+- Details:
+  - [Markmap](./guide/chart/markmap.md)
+
+Whether to enable [Markmap](https://markmap.js.org/) support.
+
 ### mermaid
 
-- Type: `MermaidConfig | boolean`
+- Type: `boolean`
 - Default: `false`
+- Enabled in GFM: Yes
+- Details:
+  - [Mermaid](./guide/chart/mermaid.md)
 
-Whether to enable [Mermaid](https://mermaid.js.org/) support, you can pass in a config object to customize the behavior of Mermaid.
+Whether to enable [Mermaid](https://mermaid.js.org/) support.
 
 ### stylize
 
@@ -366,6 +450,8 @@ Whether to enable [Mermaid](https://mermaid.js.org/) support, you can pass in a 
   ```
 
 - Default: `false`
+- Details:
+  - [Stylize](./guide/stylize/stylize.md)
 
 Stylize inline tokens to create snippet you want.
 
@@ -374,8 +460,6 @@ Stylize inline tokens to create snippet you want.
 - Type: `PlaygroundGlobalOptions`
 
   ```ts
-  import type { CompilerOptions } from "typescript";
-
   interface PlaygroundCodeConfig {
     /**
      * Code block extension
@@ -384,28 +468,22 @@ Stylize inline tokens to create snippet you want.
      */
     ext: string;
 
-    /**
-     * Code block content
-     */
+    /** Code block content */
     content: string;
   }
 
   interface PlaygroundData {
-    /**
-     * Title of Playground
-     */
+    /** Title of Playground */
     title?: string;
 
     /**
      * Import map file name
      *
-     * @default 'import-map.json'
+     * @default "import-map.json"
      */
     importMap?: string;
 
-    /**
-     * Playground files info
-     */
+    /** Playground files info */
     files: Record<
       /** File name */
       string,
@@ -420,22 +498,18 @@ Stylize inline tokens to create snippet you want.
      */
     settings: Record<string, unknown>;
 
-    /**
-     * hash key based on playground content
-     */
+    /** hash key based on playground content */
     key: string;
   }
 
   interface PlaygroundOptions {
-    /**
-     * Playground container name
-     */
+    /** Playground container name */
     name: string;
 
     /**
      * Playground component name
      *
-     * @default 'Playground'
+     * @default "Playground"
      */
     component?: string;
 
@@ -477,25 +551,50 @@ Stylize inline tokens to create snippet you want.
     ssr?: boolean;
   }
 
+  interface UnoPresetPlaygroundOptions {
+    /**
+     * external playground service url
+     *
+     * @default "https://unocss.dev/play"
+     */
+    service?: string;
+  }
+
+  type BuiltInPlaygroundPreset = "ts" | "vue" | "unocss";
+
   interface PlaygroundGlobalOptions {
     /** Playground presets */
-    presets: ("ts" | "vue" | PlaygroundOptions)[];
+    presets: (BuiltInPlaygroundPreset | PlaygroundOptions)[];
     /** Playground config */
     config?: {
       ts?: TSPresetPlaygroundOptions;
       vue?: VuePresetPlaygroundOptions;
+      unocss?: UnoPresetPlaygroundOptions;
     };
   }
   ```
 
 - Required: No
+- Details:
+  - [Playground](./guide/code/playground.md)
 
 Playground options.
+
+### kotlinPlayground
+
+- Type: `boolean`
+- Default: `false`
+- Details:
+  - [Kotlin Playground](./guide/code/kotlin-playground.md)
+
+Whether to enable kotlin playground support.
 
 ### vuePlayground
 
 - Type: `boolean`
 - Default: `false`
+- Details:
+  - [Vue Playground](./guide/code/vue-playground.md)
 
 Whether to enable vue playground support.
 
@@ -503,6 +602,8 @@ Whether to enable vue playground support.
 
 - Type: `CodeDemoGlobalOptions | boolean`
 - Default: `false`
+- Details:
+  - [Code Demo](./guide/code/demo/README.md)
 
 Whether to enable code demo support.
 
@@ -574,38 +675,59 @@ Default value: `"https://unpkg.com/react/umd/react.production.min.js"`
 
 Default value: `"https://unpkg.com/react-dom/umd/react-dom.production.min.js"`
 
-### presentation
+### revealJs
 
-- Type: `PresentationOptions | boolean`
-- Default: `false`
-
-Whether to enable presentation syntax support.
-
-You can set it with an object, the object will be used to config reveal.js.
-
-#### presentation.plugins
-
-- Type: `RevealPlugin[]`
+- Type: `RevealJsOptions | boolean`
 
   ```ts
-  type RevealPlugin = "highlight" | "math" | "search" | "notes" | "zoom";
+  type RevealJsPlugin = "highlight" | "math" | "search" | "notes" | "zoom";
+
+  type RevealJsTheme =
+    | "auto"
+    | "beige"
+    | "black"
+    | "blood"
+    | "league"
+    | "moon"
+    | "night"
+    | "serif"
+    | "simple"
+    | "sky"
+    | "solarized"
+    | "white";
+
+  /**
+   * reveal.js options
+   */
+  interface RevealJsOptions {
+    /**
+     * reveal.js plugins
+     *
+     * @default []
+     */
+    plugins?: RevealJsPlugin[];
+
+    /**
+     * reveal.js themes
+     *
+     * @default ["auto"]
+     */
+    themes?: RevealJsTheme[];
+  }
   ```
 
-- Required: No
+- Default: `false`
+- Details:
+  - [Reveal.js](./guide/content/revealjs/README.md)
 
-Plugins you want to use on reveal.js.
+Whether to enable slides support. You can pass an option to control plugins and themes to import.
 
-Acceptable values are:
+### sandpack
 
-- `"highlight"`
-- `"math"`
-- `"search"`
-- `"notes"`
-- `"zoom"`
+- Type: `boolean`
+- Default: `false`
 
-<!-- - `"anything"`
-- `"audio"`
-- `"chalkboard"` -->
+Whether to enable sandpack playground support.
 
 ### delay
 
@@ -692,21 +814,90 @@ Locales config for Markdown Enhance Plugin.
 
 ## Client Config
 
+### defineEchartsConfig
+
+```ts
+interface EchartsConfig {
+  /**
+   * Echarts global options
+   */
+  option?: EChartsOption;
+
+  /**
+   * Echarts setup function
+   */
+  setup?: () => Promise<void>;
+}
+
+const defineEchartsConfig: (config: EchartsConfig) => void;
+```
+
+Define global options and setup for Echarts.
+
 ### defineMermaidConfig
 
 ```ts
-export const defineMermaidConfig: (options: MermaidConfig) => void;
+const defineMermaidConfig: (options: MermaidConfig) => void;
 ```
 
 Define config which you want to pass to mermaid.
 
-### defineRevealConfig
+### defineRevealJsConfig
 
 ```ts
-export const defineRevealConfig: (options: RevealOptions) => void;
+const defineRevealJsConfig: (options: RevealOptions) => void;
 ```
 
 Define config which you want to pass to reveal.js.
+
+### defineKotlinPlaygroundConfig
+
+```ts
+interface KotlinPlaygroundOptions {
+  server?: string;
+  version?: string;
+
+  onChange?: (code: string) => void;
+  onRun?: () => void;
+  onError?: () => void;
+  getJsCode?: (code: string) => void;
+  onTestPassed?: () => void;
+  onTestFailed?: () => void;
+  onOpenConsole?: () => void;
+  onCloseConsole?: () => void;
+  callback?: (targetNode: HTMLElement, mountNode: HTMLElement) => void;
+  getInstance?: (instance: KotlinPlaygroundInstance) => void;
+}
+
+const defineKotlinPlaygroundConfig: (options: KotlinPlaygroundOptions) => void;
+```
+
+Define config which you want to pass to `kotlin-playground`.
+
+### defineSandpackConfig
+
+```ts
+ interface SandpackConfig {
+  /**
+   * specify the template
+   */
+  template?: SandpackPredefinedTemplate;
+
+  /**
+   * Options to configure the sandpack
+   */
+  options?: SandpackOptions;
+
+  /**
+   * Options to configure the customSetup
+   */
+  customSetup?: SandpackSetup;
+}
+
+const defineSandpackConfig = (config: SandpackConfig)=> void
+```
+
+Define config which you want to pass to `sandpack-vue3`.
 
 ### defineVuePlaygroundConfig
 
@@ -779,7 +970,7 @@ interface VuePlaygroundOptions {
   ssr?: boolean;
 }
 
-export const defineVuePlaygroundConfig: (options: VuePlaygroundOptions) => void;
+const defineVuePlaygroundConfig: (options: VuePlaygroundOptions) => void;
 ```
 
 Define config which you want to pass to `@vue/repl`.

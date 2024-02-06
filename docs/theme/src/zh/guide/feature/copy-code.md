@@ -10,11 +10,11 @@ tag:
 
 如果你是一个程序员，你可能希望你的用户能够一键复制你在正文中展示的代码。
 
-针对这一情况，`vuepress-theme-hope` 内置了 <ProjectLink name="copy-code2" path="/zh/">vuepress-plugin-copy-code2</ProjectLink>，提供了一个复制按钮。
+针对这一情况，`vuepress-theme-hope` 内置了 [`@vuepress/plugin-copy-code`][copy-code]，提供了一个复制按钮。
 
 ::: info
 
-`vuepress-theme-hope` 将主题选项中的 `plugins.copyCode` 选项作为插件选项提供给 `vuepress-plugin-copy-code2`。
+`vuepress-theme-hope` 将主题选项中的 `plugins.copyCode` 选项作为插件选项提供给 `@vuepress/plugin-copy-code`。
 
 :::
 
@@ -30,8 +30,7 @@ tag:
 
 ## 效果
 
-```js
-// .vuepress/config.js
+```js title=".vuepress/config.js"
 import { hopeTheme } from "vuepress-theme-hope";
 
 export default {
@@ -42,3 +41,5 @@ export default {
   }),
 };
 ```
+
+[copy-code]: https://ecosystem.vuejs.press/zh/plugins/copy-code.html

@@ -1,7 +1,7 @@
 ---
 home: true
 title: Home
-heroImage: /logo.svg
+heroImage: https://theme-hope-assets.vuejs.press/logo.svg
 heroText: vuepress-plugin-pwa2
 tagline: Turning on Progressive Web App Support
 actions:
@@ -21,8 +21,7 @@ pnpm add -D vuepress-plugin-pwa2
 
 ### Usage
 
-```ts
-// .vuepress/config.ts
+```ts title=".vuepress/config.ts"
 import { pwaPlugin } from "vuepress-plugin-pwa2";
 
 export default {

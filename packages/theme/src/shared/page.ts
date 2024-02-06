@@ -1,7 +1,7 @@
-import { type GitPluginPageData } from "@vuepress/plugin-git";
-import { type BlogPluginPageData } from "vuepress-plugin-blog2";
-import { type ReadingTimePluginPageData } from "vuepress-plugin-reading-time2";
-import { type SeoPluginPageData } from "vuepress-plugin-seo2";
+import type { BlogPluginPageData } from "@vuepress/plugin-blog";
+import type { GitPluginPageData } from "@vuepress/plugin-git";
+import type { ReadingTimePluginPageData } from "@vuepress/plugin-reading-time";
+import type { SeoPluginPageData } from "@vuepress/plugin-seo";
 
 export interface ThemePageData
   extends BlogPluginPageData,

@@ -1,6 +1,7 @@
-import { type App, inject } from "vue";
+import type { App } from "vue";
+import { inject } from "vue";
 
-import { type VuePlaygroundOptions } from "../typings/index.js";
+import type { VuePlaygroundOptions } from "../typings/index.js";
 
 const DEFAULT_VUE_PLAYGROUND_OPTIONS: VuePlaygroundOptions = {
   showCompileOutput: false,
@@ -15,7 +16,7 @@ let vuePlaygroundOptions: VuePlaygroundOptions = DEFAULT_VUE_PLAYGROUND_OPTIONS;
 const vuePlaygroundSymbol = Symbol(__VUEPRESS_DEV__ ? "vuePlayground" : "");
 
 export const defineVuePlaygroundConfig = (
-  options: VuePlaygroundOptions
+  options: VuePlaygroundOptions,
 ): void => {
   vuePlaygroundOptions = options;
 };

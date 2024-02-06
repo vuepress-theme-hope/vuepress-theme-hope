@@ -1,19 +1,18 @@
-import { createRequire } from "node:module";
+import { getRealPath } from "@vuepress/helper";
+import type { App } from "vuepress/core";
 
-import { type App } from "@vuepress/core";
-import { path } from "@vuepress/utils";
-
-import { type ThemeStatus } from "../../config/index.js";
+import { ArticleInfoType } from "../../../shared/index.js";
+import type { ThemeStatus } from "../../config/index.js";
 import { BUNDLE_FOLDER } from "../../utils.js";
 
-const require = createRequire(import.meta.url);
+const { url } = import.meta;
 
 /**
  * @private
  */
 export const prepareBundleConfigFile = (
   app: App,
-  { enableAutoCatalog, enableBlog, enableEncrypt, enableSlide }: ThemeStatus
+  { enableCatalog, enableBlog, enableEncrypt, enableSlide }: ThemeStatus,
 ): Promise<string> => {
   const imports: string[] = [];
   const enhances: string[] = [];
@@ -21,19 +20,33 @@ export const prepareBundleConfigFile = (
   const actions: string[] = [];
   const layouts = [];
 
-  if (enableAutoCatalog) {
+  if (enableCatalog) {
     imports.push(
-      `import { defineAutoCatalogIconComponent } from "${path.resolve(
-        require.resolve("vuepress-plugin-auto-catalog/client")
-      )}"`
+      `import { defineCatalogInfoGetter } from "${getRealPath(
+        "@vuepress/plugin-catalog/client",
+        url,
+      )}"`,
+      `import { h } from "vue"`,
     );
-    actions.push(`defineAutoCatalogIconComponent(HopeIcon);`);
+    actions.push(`\
+defineCatalogInfoGetter((meta) => {
+  const title = meta.${ArticleInfoType.title};
+  const shouldIndex = meta.${ArticleInfoType.index} !== false;
+  const icon = meta.${ArticleInfoType.icon};
+
+  return shouldIndex ? {
+    title,
+    content: icon ? () =>[h(HopeIcon, { icon }), title] : null,
+    order: meta.${ArticleInfoType.order},
+    index: meta.${ArticleInfoType.index},
+  } : null;
+});`);
   }
 
   if (enableBlog) {
     imports.push(
       `import { BlogCategory, BlogHome, BlogType, BloggerInfo, Timeline, setupBlog } from "${BUNDLE_FOLDER}modules/blog/export.js";`,
-      `import "${BUNDLE_FOLDER}modules/blog/styles/all.scss";`
+      `import "${BUNDLE_FOLDER}modules/blog/styles/all.scss";`,
     );
 
     enhances.push(`app.component("BloggerInfo", BloggerInfo);`);
@@ -46,20 +59,21 @@ export const prepareBundleConfigFile = (
   if (enableEncrypt) {
     imports.push(
       `import { GlobalEncrypt, LocalEncrypt } from "${BUNDLE_FOLDER}modules/encrypt/export.js";`,
-      `import "${BUNDLE_FOLDER}modules/encrypt/styles/all.scss"`
+      `import "${BUNDLE_FOLDER}modules/encrypt/styles/all.scss"`,
     );
 
     enhances.push(
       `app.component("GlobalEncrypt", GlobalEncrypt);`,
-      `app.component("LocalEncrypt", LocalEncrypt);`
+      `app.component("LocalEncrypt", LocalEncrypt);`,
     );
   }
 
   if (enableSlide) {
     imports.push(
-      `import Slide from "${path.resolve(
-        require.resolve("vuepress-plugin-md-enhance/SlidePage")
-      )}";`
+      `import Slide from "${getRealPath(
+        "vuepress-plugin-md-enhance/SlidePage",
+        url,
+      )}";`,
     );
     layouts.push("Slide,");
   }
@@ -67,7 +81,8 @@ export const prepareBundleConfigFile = (
   return app.writeTemp(
     `theme-hope/config.js`,
     `\
-import { defineClientConfig } from "@vuepress/client";
+import { defineClientConfig } from "vuepress/client";
+
 
 import { HopeIcon, Layout, NotFound, useScrollPromise, injectDarkmode, setupDarkmode, setupSidebarItems } from "${BUNDLE_FOLDER}export.js";
 
@@ -105,6 +120,6 @@ ${setups.map((item) => `    ${item}`).join("\n")}
     NotFound,
 ${layouts.map((item) => `    ${item}`).join("\n")}
   }
-});`
+});`,
   );
 };

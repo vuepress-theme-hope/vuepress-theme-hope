@@ -1,5 +1,6 @@
 import { useEventListener } from "@vueuse/core";
-import { type Ref, onMounted, ref } from "vue";
+import type { Ref } from "vue";
+import { onMounted, ref } from "vue";
 
 import cssVariables from "../styles/variables.module.scss?module";
 

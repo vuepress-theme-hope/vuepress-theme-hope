@@ -1,24 +1,22 @@
-import { type PluginFunction } from "@vuepress/core";
-import { getDirname, path } from "@vuepress/utils";
-import { useSassPalettePlugin } from "vuepress-plugin-sass-palette";
 import {
   addViteOptimizeDepsExclude,
-  checkVersion,
+  addViteSsrNoExternal,
   entries,
   fromEntries,
-  getLocales,
-} from "vuepress-shared/node";
+  getLocaleConfig,
+} from "@vuepress/helper";
+import type { PluginFunction } from "vuepress/core";
+import { useSassPalettePlugin } from "vuepress-plugin-sass-palette";
 
+import { convertOptions } from "./compact.js";
 import { photoSwipeLocales } from "./locales.js";
-import { type PhotoSwipeOptions } from "./options.js";
-import { PLUGIN_NAME, logger } from "./utils.js";
-
-const __dirname = getDirname(import.meta.url);
+import type { PhotoSwipeOptions } from "./options.js";
+import { CLIENT_FOLDER, PLUGIN_NAME, logger } from "./utils.js";
 
 export const photoSwipePlugin =
-  (options: PhotoSwipeOptions = {}): PluginFunction =>
+  (options: PhotoSwipeOptions = {}, legacy = true): PluginFunction =>
   (app) => {
-    checkVersion(app, PLUGIN_NAME, "2.0.0-beta.62");
+    if (legacy) convertOptions(options as Record<string, unknown>);
 
     if (app.env.isDebug) logger.info("Options:", options);
 
@@ -35,28 +33,32 @@ export const photoSwipePlugin =
         PHOTO_SWIPE_SCROLL_TO_CLOSE: options.scrollToClose ?? true,
         PHOTO_SWIPE_LOCALES: fromEntries(
           entries(
-            getLocales({
+            getLocaleConfig({
               app,
               name: PLUGIN_NAME,
               default: photoSwipeLocales,
               config: options.locales,
-            })
+            }),
           ).map(([localePath, localeOptions]) => [
             localePath,
             fromEntries(
               entries(localeOptions).map(([key, value]) => [
                 `${key}Title`,
                 value,
-              ])
+              ]),
             ),
-          ])
+          ]),
         ),
       }),
 
       extendsBundlerOptions: (bundlerOptions: unknown, app): void => {
         addViteOptimizeDepsExclude(bundlerOptions, app, "photoswipe");
+        addViteSsrNoExternal(bundlerOptions, app, [
+          "@vuepress/helper",
+          "vuepress-shared",
+        ]);
       },
 
-      clientConfigFile: path.resolve(__dirname, "../client/config.js"),
+      clientConfigFile: `${CLIENT_FOLDER}config.js`,
     };
   };

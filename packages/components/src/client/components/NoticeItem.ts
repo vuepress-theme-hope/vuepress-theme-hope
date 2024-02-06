@@ -1,18 +1,21 @@
 import {
-  type PropType,
+  isLinkAbsolute,
+  isLinkHttp,
+  startsWith,
+} from "@vuepress/helper/client";
+import type { PropType, VNode } from "vue";
+import {
   TransitionGroup,
-  type VNode,
   computed,
   defineComponent,
   h,
   onMounted,
   ref,
 } from "vue";
-import { useRoute, useRouter } from "vue-router";
-import { isAbsoluteUrl, isLinkHttp, startsWith } from "vuepress-shared/client";
+import { useRoute, useRouter } from "vuepress/client";
 
 import { CloseIcon } from "./icons.js";
-import { type NoticeActionOption } from "../../shared/index.js";
+import type { NoticeActionOption } from "../../shared/index.js";
 
 import "../styles/notice.scss";
 
@@ -111,13 +114,13 @@ export default defineComponent({
     const key = computed(() =>
       props.noticeKey
         ? `notice-${props.noticeKey}`
-        : `${props.title}${props.content}`
+        : `${props.title}${props.content}`,
     );
 
     const isMatched = computed(() =>
       props.match
         ? new RegExp(props.match).test(route.path)
-        : startsWith(route.path, props.path)
+        : startsWith(route.path, props.path),
     );
 
     onMounted(() => {
@@ -132,13 +135,13 @@ export default defineComponent({
       isVisible.value = false;
       (props.showOnce ? localStorage : sessionStorage).setItem(
         key.value,
-        "true"
+        "true",
       );
     };
 
     const openLink = (link?: string): void => {
       if (link)
-        if (isAbsoluteUrl(link)) void router.push(link);
+        if (isLinkAbsolute(link)) void router.push(link);
         else if (isLinkHttp(link)) window.open(link);
 
       close();
@@ -186,13 +189,13 @@ export default defineComponent({
                         class: ["vp-notice-footer-action", type],
                         onClick: () => openLink(link),
                         innerHTML: text,
-                      })
-                    )
+                      }),
+                    ),
                   ),
-                ]
+                ],
               ),
             ]
-          : []
+          : [],
       );
   },
 });

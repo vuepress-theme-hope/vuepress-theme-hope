@@ -1,4 +1,5 @@
-import { type VNode, defineComponent, h } from "vue";
+import type { VNode } from "vue";
+import { defineComponent, h } from "vue";
 
 // @ts-ignore
 import { useThemeLocaleData } from "@theme-hope/composables/index";
@@ -31,7 +32,7 @@ export default defineComponent({
         h(
           "h1",
           { class: "error-title" },
-          themeLocale.value.routeLocales["notFoundTitle"]
+          themeLocale.value.routeLocales["notFoundTitle"],
         ),
         h("p", { class: "error-hint" }, getMsg()),
       ]);

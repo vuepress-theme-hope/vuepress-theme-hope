@@ -1,6 +1,3 @@
-````md
-<!-- #region demo -->
-
 ::: echarts
 
 ```js
@@ -181,6 +178,3 @@ const height = 500;
 ```
 
 :::
-
-<!-- #endregion demo -->
-````

@@ -6,22 +6,14 @@
 
   min-height: 2rem;
   margin-top: 0;
-  padding-top: 0.5rem;
-  padding-bottom: 0.5rem;
-
-  // NOTE: Compatible with Android Wechat
-  // padding-inline: 2rem;
-  padding-inline-start: 2rem;
-  padding-inline-end: 2rem;
+  padding-block: 0.5rem;
+  padding-inline: 2rem;
   border-top: 1px solid var(--border-color);
 
   transition: border-top var(--color-transition);
 
   @media (max-width: hope-config.$pad) {
-    // NOTE: Compatible with Android Wechat
-    // padding-inline: 1rem;
-    padding-inline-start: 1rem;
-    padding-inline-end: 1rem;
+    padding-inline: 1rem;
   }
 
   @media print {
@@ -59,6 +51,12 @@
 
     .icon {
       margin-inline-end: 0.25em;
+      font-size: 1em;
+    }
+
+    img.icon {
+      vertical-align: -0.125em;
+      height: 1em;
     }
   }
 
@@ -67,6 +65,12 @@
 
     .icon {
       margin-inline-start: 0.25em;
+      font-size: 1em;
+    }
+
+    img.icon {
+      vertical-align: -0.125em;
+      height: 1em;
     }
   }
 }

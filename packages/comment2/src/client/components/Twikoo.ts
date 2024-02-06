@@ -1,13 +1,6 @@
-import { usePageData, usePageLang } from "@vuepress/client";
-import {
-  type VNode,
-  defineComponent,
-  h,
-  nextTick,
-  onMounted,
-  ref,
-  watch,
-} from "vue";
+import type { VNode } from "vue";
+import { defineComponent, h, nextTick, onMounted, ref, watch } from "vue";
+import { usePageLang } from "vuepress/client";
 import { LoadingIcon } from "vuepress-shared/client";
 
 import { useTwikooOptions } from "../helpers/index.js";
@@ -30,7 +23,6 @@ export default defineComponent({
   setup(props) {
     const twikooOptions = useTwikooOptions();
     const lang = usePageLang();
-    const page = usePageData();
 
     const loaded = ref(false);
 
@@ -60,9 +52,9 @@ export default defineComponent({
 
     onMounted(() => {
       watch(
-        () => page.value.path,
+        () => props.identifier,
         () => initTwikoo(),
-        { immediate: true }
+        { immediate: true },
       );
     });
 

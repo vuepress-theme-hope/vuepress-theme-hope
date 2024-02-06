@@ -1,7 +1,7 @@
 ---
 title: Copyright Plugin Config
 icon: copyright
-order: 4
+order: 6
 category:
   - Config
 tag:
@@ -12,36 +12,17 @@ tag:
 
 ## Intro
 
-The `vuepress-plugin-copyright2` plugin can append copyright information when users copy content from your site. Also, you can disable site copy or selection with this plugin.
+The theme can append copyright information while copying via `@vuepress/plugin-copyright`, and it's **not** enabled by default.
 
-This plugin is disabled by default.
-
-`vuepress-theme-hope` passes `plugins.copyright` in theme options as plugin options to `vuepress-plugin-copyright2` plugin.
+You can enabled this feature by setting `plugins.copyright` to `true` in theme options. The default behavior globally enables the plugin and use author and license defined in theme options.
 
 ## Plugin Options
 
-### hostname
+The theme passes `plugins.copyright` in theme options as plugin options to `@vuepress/plugin-copyright` plugin.
 
-- Type: `string`
-- Required: No
+You can pass your own options with `plugins.copyright`, here are some common ones:
 
-Deploy hostname
-
-### author
-
-- Type: `string | ((page: Page) => string)`
-- Required: No
-
-Author Information
-
-### license
-
-- Type: `string | ((page: Page) => string)`
-- Required: No
-
-License Information
-
-### triggerWords
+### triggerLength
 
 - Type: `number`
 - Default: `100`
@@ -69,39 +50,19 @@ Disable copy
 
 Disable selection
 
-### locales
+### canonical
 
-- Type: `CopyrightLocaleConfig`
-
-  ```ts
-  interface CopyrightLocaleData {
-    /**
-     * Author text
-     *
-     * @description `:author` will be replaced by author
-     */
-    author: string;
-
-    /**
-     * License text
-     *
-     * @description `:license` will be replaced by current license
-     */
-    license: string;
-
-    /**
-     * Link text
-     *
-     * @description `:url` will be replaced by current page link
-     */
-    link: string;
-  }
-
-  interface CopyrightLocaleConfig {
-    [localePath: string]: CopyrightLocaleData;
-  }
-  ```
-
+- Type: `string`
 - Required: No
 
-Locale config for copyright plugin.
+Canonical hostname with base.
+
+This is useful when your content are deploying in multiple places.
+
+::: info
+
+Check [copyright plugin documentation][copyright] for all available options.
+
+:::
+
+[copyright]: https://ecosystem.vuejs.press/plugins/copyright.html#options

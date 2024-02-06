@@ -5,7 +5,7 @@ icon: lightbulb
 
 ## Setting Options
 
-You can both set options with plugin options on Node side and set options in client config file on Browser side.
+You can both set options with plugin options on Node side and set options in [client config file][client-config] on Browser side.
 
 ::: tabs
 
@@ -29,18 +29,17 @@ export default {
 
 @tab With Client Config File
 
-```ts
-// .vuepress/client.ts
-import { defineClientConfig } from "@vuepress/client";
+```ts title=".vuepress/client.ts"
+import { defineClientConfig } from "vuepress/client";
 import {
-  defineArtalkOptions,
-  // defineGiscusOptions,
-  // defineTwikooOptions,
-  // defineWalineOptions,
-} from "@vuepress/plugin-comment2";
+  defineArtalkConfig,
+  // defineGiscusConfig,
+  // defineTwikooConfig,
+  // defineWalineConfig,
+} from "vuepress-plugin-comment2/client";
 
-defineArtalkOptions({
-  // options
+defineArtalkConfig({
+  // 选项
 });
 
 export default defineClientConfig({
@@ -89,12 +88,10 @@ By default it will be the `path` of the page, which means if you are deploying t
 
 Currently, you can choose from Giscus, Waline, Twikoo and Artalk.
 
-::: tip Choosing from comment services
+::: tip Recommended comment services
 
-People who your blog or documentation are targeting:
-
-- Programmers and developers: Giscus
-- General public: Waline
+- Facing programmers and developers: Giscus
+- Facing general public: Waline
 
 :::
 
@@ -105,3 +102,5 @@ People who your blog or documentation are targeting:
 - [Twikoo Guide](twikoo.md)
 
 - [Artalk Guide](artalk.md)
+
+[client-config]: https://vuejs.press/guide/configuration.html#client-config-file

@@ -1,6 +1,7 @@
-import { usePageFrontmatter } from "@vuepress/client";
-import { isArray } from "@vuepress/shared";
-import { type SlotsType, type VNode, computed, defineComponent, h } from "vue";
+import { isArray } from "@vuepress/helper/client";
+import type { SlotsType, VNode } from "vue";
+import { computed, defineComponent, h } from "vue";
+import { usePageFrontmatter } from "vuepress/client";
 
 import FeaturePanel from "@theme-hope/components/FeaturePanel";
 import HeroInfo from "@theme-hope/components/HeroInfo";
@@ -9,7 +10,7 @@ import MarkdownContent from "@theme-hope/components/MarkdownContent";
 import DropTransition from "@theme-hope/components/transitions/DropTransition";
 import { usePure } from "@theme-hope/composables/index";
 
-import { type ThemeProjectHomePageFrontmatter } from "../../shared/index.js";
+import type { ThemeProjectHomePageFrontmatter } from "../../shared/index.js";
 
 import "../styles/home-page.scss";
 
@@ -17,9 +18,9 @@ export default defineComponent({
   name: "HomePage",
 
   slots: Object as SlotsType<{
-    top?: () => VNode | VNode[];
-    center?: () => VNode | VNode[];
-    bottom?: () => VNode | VNode[];
+    top?: () => VNode[] | VNode | null;
+    center?: () => VNode[] | VNode | null;
+    bottom?: () => VNode[] | VNode | null;
   }>,
 
   setup(_props, { slots }) {
@@ -55,11 +56,11 @@ export default defineComponent({
           highlights.value?.map((highlight) =>
             "features" in highlight
               ? h(FeaturePanel, highlight)
-              : h(HighlightPanel, highlight)
+              : h(HighlightPanel, highlight),
           ) ||
             (features.value
               ? h(DropTransition, { appear: true, delay: 0.24 }, () =>
-                  h(FeaturePanel, { features: features.value! })
+                  h(FeaturePanel, { features: features.value! }),
                 )
               : null),
           slots.center?.(),
@@ -69,10 +70,10 @@ export default defineComponent({
               appear: true,
               delay: 0.32,
             },
-            () => h(MarkdownContent)
+            () => h(MarkdownContent),
           ),
           slots.bottom?.(),
-        ]
+        ],
       );
   },
 });

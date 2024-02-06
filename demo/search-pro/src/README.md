@@ -2,7 +2,7 @@
 home: true
 title: Home
 icon: homed
-heroImage: /logo.svg
+heroImage: https://theme-hope-assets.vuejs.press/logo.svg
 heroText: vuepress-plugin-search-pro
 tagline: Client search plugin for VuePress2
 actions:
@@ -22,8 +22,7 @@ pnpm add -D vuepress-plugin-search-pro
 
 ### Usage
 
-```ts
-// .vuepress/config.ts
+```ts title=".vuepress/config.ts"
 import { searchProPlugin } from "vuepress-plugin-search-pro";
 
 export default {

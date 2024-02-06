@@ -19,7 +19,9 @@
   font-size: 0.75rem;
   line-height: 2;
 
-  transition: background var(--color-transition), color var(--color-transition);
+  transition:
+    background var(--color-transition),
+    color var(--color-transition);
 
   @media print {
     padding: 0;

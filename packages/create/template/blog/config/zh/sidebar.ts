@@ -17,6 +17,10 @@ export default sidebar({
       children: "structure",
     },
     "intro",
-    "slides",
+    {
+      text: "幻灯片",
+      icon: "person-chalkboard",
+      link: "https://plugin-md-enhance.vuejs.press/zh/guide/content/revealjs/demo.html",
+    },
   ],
 });

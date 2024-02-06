@@ -2,9 +2,10 @@
 title: Markdown 介绍
 icon: fab fa-markdown
 dir:
-  order: 2
+  collapsible: false
+  order: 1
 category:
-  - 教程知识
+  - 教程
   - Markdown
 tag:
   - 介绍
@@ -113,7 +114,11 @@ Markdown 将会把它转换为:
 
 「一个以上相连接的行句组成」这句话其实暗示了 Markdown 允许段落内的强迫断行，这个特性和其他大部分的 text-to-HTML 格式不一样 (包括 MovableType 的「Convert Line Breaks」选项) ，其它的格式会把每个断行都转成 `<br />` 标签。
 
-如果你*真的*想要插入 `<br />` 标签的话，在行尾加上两个以上的空白，然后按 enter。
+<!-- markdownlint-disable MD038 -->
+
+如果你*真的*想要插入 `<br />` 标签的话，在行尾加上两个以上的空格 (` `) 或斜线 (`/`)，然后按 Enter。
+
+<!-- markdownlint-enable MD038 -->
 
 是的，这确实需要花比较多功夫来插入 `<br />` ，但是「每个换行都转换为 `<br />`」的方法在 Markdown 中并不适合， Markdown 中 email 式的 [块引言][bq] 和多段落的 [列表][l] 在使用换行来排版的时候，不但更好用，还更好阅读。
 
@@ -651,7 +656,7 @@ Use the `printf()` function.
 如果要在代码内插入反引号，你可以用多个反引号来开启和结束行内代码:
 
 ```md
-`` There is a literal backtick (`) here. ``
+``There is a literal backtick (`) here.``
 ```
 
 这段语法会产生:

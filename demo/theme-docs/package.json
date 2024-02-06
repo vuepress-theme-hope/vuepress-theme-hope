@@ -1,11 +1,11 @@
 {
   "name": "theme-docs-demo",
-  "version": "2.0.0-beta.181",
-  "type": "module",
+  "version": "2.0.0-rc.22",
   "private": true,
   "description": "Theme demo for vuepress-theme-hope",
   "license": "MIT",
   "author": "Mr.Hope",
+  "type": "module",
   "scripts": {
     "demo:serve": "http-server -a localhost dist -o",
     "demo:vite-build": "vuepress-vite build src",
@@ -16,14 +16,24 @@
     "demo:webpack-dev": "vuepress-webpack dev src"
   },
   "devDependencies": {
-    "@vuepress/cli": "2.0.0-beta.62",
-    "@vuepress/client": "2.0.0-beta.62",
-    "@vuepress/plugin-docsearch": "2.0.0-beta.62",
-    "@vuepress/utils": "2.0.0-beta.62",
-    "sass-loader": "13.3.1",
-    "vue": "3.3.4",
-    "vuepress-theme-hope": "workspace:*",
-    "vuepress-vite": "2.0.0-beta.62",
-    "vuepress-webpack": "2.0.0-beta.62"
+    "@vue/repl": "3.4.0",
+    "@vuepress/bundler-vite": "2.0.0-rc.6",
+    "@vuepress/bundler-webpack": "2.0.0-rc.6",
+    "@vuepress/plugin-docsearch": "2.0.0-rc.11",
+    "chart.js": "4.4.1",
+    "echarts": "5.4.3",
+    "katex": "0.16.9",
+    "kotlin-playground": "1.30.0",
+    "markmap-lib": "0.15.8",
+    "markmap-toolbar": "0.15.8",
+    "markmap-view": "0.15.8",
+    "mathjax-full": "3.2.2",
+    "mermaid": "10.8.0",
+    "reveal.js": "5.0.4",
+    "sandpack-vue3": "3.1.11",
+    "sass-loader": "14.1.0",
+    "vue": "3.4.15",
+    "vuepress": "2.0.0-rc.6",
+    "vuepress-theme-hope": "workspace:*"
   }
 }

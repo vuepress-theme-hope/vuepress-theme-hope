@@ -9,11 +9,11 @@ const generateSass = () =>
 
         if (!content.includes('@use "@sass-palette/hope-config";')) {
           file.contents = Buffer.from(
-            `@use "@sass-palette/hope-config";\n${content}`
+            `@use "@sass-palette/hope-config";\n${content}`,
           );
         }
         callback(null, file);
-      })
+      }),
     )
     .pipe(dest("lib/bundle"));
 

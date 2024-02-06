@@ -6,4 +6,4 @@ dir:
   order: 2
 ---
 
-<AutoCatalog />
+<Catalog />

@@ -1,14 +1,6 @@
-import { type Options as PlyrOptions } from "plyr";
-import {
-  type PropType,
-  type VNode,
-  computed,
-  defineComponent,
-  h,
-  onBeforeMount,
-  onMounted,
-  shallowRef,
-} from "vue";
+import type { Options as PlyrOptions } from "plyr";
+import type { PropType, VNode } from "vue";
+import { defineComponent, h, onBeforeMount, onMounted, shallowRef } from "vue";
 
 import { getLink } from "../utils/index.js";
 
@@ -87,24 +79,23 @@ export default defineComponent({
     let player: Plyr | null = null;
     const audio = shallowRef<HTMLAudioElement>();
 
-    const plyrOptions = computed(() => ({
-      hideYouTubeDOMError: true,
-      ...props.options,
-    }));
-
     onMounted(async () => {
       const { default: Plyr } = await import(
         /* webpackChunkName: "plyr" */ "plyr"
       );
 
-      player = new Plyr(audio.value!, plyrOptions.value);
+      player = new Plyr(audio.value!, {
+        // @ts-ignore
+        hideYouTubeDOMError: true,
+        ...props.options,
+      });
     });
 
     onBeforeMount(() => {
       try {
         player?.destroy();
       } catch (err: unknown) {
-        // do nothing
+        // Do nothing
       }
     });
 
@@ -127,6 +118,7 @@ export default defineComponent({
             ? h("img", {
                 class: "vp-audio-player-poster",
                 src: getLink(props.poster),
+                loading: "lazy",
                 "no-view": "",
               })
             : null,
@@ -146,10 +138,10 @@ export default defineComponent({
                 controls: "",
                 ...(props.loop ? { loop: "" } : {}),
               },
-              h("source", { src: getLink(props.src), type: props.type })
+              h("source", { src: getLink(props.src), type: props.type }),
             ),
           ]),
-        ]
+        ],
       );
   },
 });

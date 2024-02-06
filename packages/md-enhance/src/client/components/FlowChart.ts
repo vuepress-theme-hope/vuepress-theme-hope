@@ -1,16 +1,9 @@
+import { decodeData } from "@vuepress/helper/client";
 import { useDebounceFn, useEventListener } from "@vueuse/core";
-import { type Chart } from "flowchart.ts";
-import {
-  type PropType,
-  type VNode,
-  computed,
-  defineComponent,
-  h,
-  onMounted,
-  ref,
-  shallowRef,
-} from "vue";
-import { LoadingIcon, atou } from "vuepress-shared/client";
+import type { Chart } from "flowchart.ts";
+import type { PropType, VNode } from "vue";
+import { computed, defineComponent, h, onMounted, ref, shallowRef } from "vue";
+import { LoadingIcon } from "vuepress-shared/client";
 
 import { flowchartPresets } from "../utils/index.js";
 
@@ -72,17 +65,17 @@ export default defineComponent({
     onMounted(() => {
       void Promise.all([
         import(/* webpackChunkName: "flowchart" */ "flowchart.ts"),
-        // delay
+        // Delay
         new Promise((resolve) => setTimeout(resolve, MARKDOWN_ENHANCE_DELAY)),
       ]).then(([{ parse }]) => {
-        flowchart = parse(atou(props.code));
+        flowchart = parse(decodeData(props.code));
 
-        // update scale
+        // Update scale
         scale.value = getScale(window.innerWidth);
 
         loading.value = false;
 
-        // draw svg to #id
+        // Draw svg to #id
         flowchart.draw(props.id, { ...preset.value, scale: scale.value });
       });
 
@@ -98,7 +91,7 @@ export default defineComponent({
               flowchart.draw(props.id, { ...preset.value, scale: newScale });
             }
           }
-        }, 100)
+        }, 100),
       );
     });
 

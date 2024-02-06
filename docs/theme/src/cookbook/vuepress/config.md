@@ -111,7 +111,7 @@ In most cases, the config file is sufficient to configure your VuePress site. Ho
 A basic client config file looks like this:
 
 ```ts
-import { defineClientConfig } from "@vuepress/client";
+import { defineClientConfig } from "vuepress/client";
 
 export default defineClientConfig({
   enhance({ app, router, siteData }) {},

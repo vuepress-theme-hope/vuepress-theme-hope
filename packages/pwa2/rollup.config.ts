@@ -1,11 +1,11 @@
-import { bundle } from "../../scripts/rollup.js";
+import { rollupBundle } from "../../scripts/rollup.js";
 
 export default [
-  ...bundle("node/index", {
+  ...rollupBundle("node/index", {
     external: ["workbox-build"],
     dtsExternal: ["vuepress-shared"],
   }),
-  ...bundle(
+  ...rollupBundle(
     {
       base: "client",
       files: [
@@ -18,6 +18,6 @@ export default [
     {
       external: ["mitt", "register-service-worker"],
       copy: [["client/styles", "client"]],
-    }
+    },
   ),
 ];

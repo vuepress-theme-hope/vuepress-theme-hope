@@ -1,10 +1,10 @@
-import { keys } from "../../shared/index.js";
+import { keys } from "@vuepress/helper/client";
 
 export class Popup {
   private containerElement: HTMLElement;
   private popupElements: Record<number, HTMLDivElement> = {};
 
-  // generate or make sure popup container element
+  // Generate or make sure popup container element
   constructor() {
     const containerId = "popup-container";
     const containerElement = document.getElementById(containerId);

@@ -1,0 +1,98 @@
+.markmap-title {
+  margin: 1rem auto 0.5rem;
+  font-weight: 600;
+  font-size: 18px;
+  text-align: center;
+}
+
+.markmap-wrapper {
+  position: relative;
+  text-align: center;
+  transition: all 1s;
+
+  @media (max-width: hope-config.$tablet) {
+    margin: 0 -1rem;
+  }
+
+  .markmap-svg {
+    width: 100%;
+    min-height: 360px;
+
+    @media print {
+      page-break-inside: avoid;
+    }
+  }
+
+  .markmap-loading {
+    position: absolute;
+    inset: 0 0 auto;
+    color: var(--vp-tc);
+  }
+}
+
+.mm-toolbar {
+  display: flex;
+  align-items: center;
+
+  padding: 0.25rem;
+  border-width: 1px;
+  border-style: solid;
+  border-color: var(--vp-brc);
+  border-radius: 0.25rem;
+
+  background: var(--vp-bgl);
+
+  line-height: 1;
+
+  user-select: none;
+
+  &:hover {
+    box-shadow: 0 2px 12px 0 var(--card-shadow);
+  }
+
+  .mm-toolbar-brand {
+    display: none;
+  }
+
+  svg {
+    display: block;
+  }
+
+  a {
+    display: inline-block;
+    text-decoration-line: none;
+  }
+
+  > span {
+    padding-right: 0.25rem;
+    padding-left: 0.25rem;
+  }
+}
+
+.mm-toolbar-item {
+  &:not(:first-child) {
+    margin-left: 0.25rem;
+  }
+
+  > * {
+    min-width: 20px;
+    height: 20px;
+
+    font-size: 0.75rem;
+    line-height: 1rem;
+    line-height: 20px;
+    text-align: center;
+
+    cursor: pointer;
+  }
+
+  &.active,
+  &:hover {
+    border-radius: 0.25rem;
+    background-color: var(--vp-tc);
+
+    > * {
+      color: var(--vp-bgl);
+    }
+  }
+}

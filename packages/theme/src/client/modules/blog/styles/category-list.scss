@@ -29,7 +29,9 @@
 
   cursor: pointer;
 
-  transition: background var(--color-transition), color var(--color-transition);
+  transition:
+    background var(--color-transition),
+    color var(--color-transition);
 
   @media (max-width: hope-config.$mobile) {
     font-size: 0.9rem;

@@ -1,5 +1,6 @@
-import { type BackToTopLocaleConfig } from "../../shared/index.js";
+import type { BackToTopLocaleConfig } from "../../shared/index.js";
 
+/** @deprecated Please use '@vuepress/plugin-back-to-top' */
 export const backToTopLocales: BackToTopLocaleConfig = {
   "/en/": {
     backToTop: "Back to top",
@@ -46,7 +47,7 @@ export const backToTopLocales: BackToTopLocaleConfig = {
   },
 
   "/fr/": {
-    backToTop: "Back to top",
+    backToTop: "Retour en haut",
   },
 
   "/es/": {

@@ -1,6 +1,6 @@
-import { usePageData, useRouteLocale } from "@vuepress/client";
 import { useNow } from "@vueuse/core";
 import { computed, onMounted, watch } from "vue";
+import { usePageData, useRouteLocale } from "vuepress/client";
 
 const millisecondPerDay = 1000 * 60 * 60 * 24;
 
@@ -30,7 +30,7 @@ export const setupRunningTimeFooter = (
    *
    * @default false
    */
-  preserveContent = false
+  preserveContent = false,
 ): void => {
   const initialTimeStamp = (
     date instanceof Date ? date : new Date(date)
@@ -78,7 +78,7 @@ export const setupRunningTimeFooter = (
       {
         flush: "post",
         immediate: true,
-      }
+      },
     );
   });
 };

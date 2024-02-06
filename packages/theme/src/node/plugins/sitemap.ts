@@ -1,23 +1,23 @@
-import { type Plugin } from "@vuepress/core";
-import { type SitemapOptions, sitemapPlugin } from "vuepress-plugin-sitemap2";
-import { isPlainObject, keys } from "vuepress-shared/node";
+import { isPlainObject, keys } from "@vuepress/helper";
+import type { SitemapPluginOptions } from "@vuepress/plugin-sitemap";
+import { sitemapPlugin } from "@vuepress/plugin-sitemap";
+import type { Plugin } from "vuepress/core";
 
 /**
  * @private
  *
- * Resolve options for vuepress-plugin-sitemap2
+ * Resolve options for @vuepress/plugin-sitemap
  */
 export const getSitemapPlugin = (
-  options?: Omit<SitemapOptions, "hostname"> | boolean,
+  options?: Omit<SitemapPluginOptions, "hostname"> | boolean,
   hostname?: string,
-  legacy = false
 ): Plugin | null => {
   if (options === false) return null;
 
   const sitemapOptions = isPlainObject(options) ? options : {};
 
-  // disable sitemap if `hostname` is not set and no options for sitemap plugin
+  // Disable sitemap if `hostname` is not set and no options for sitemap plugin
   if (!keys(sitemapOptions).length && !hostname) return null;
 
-  return sitemapPlugin(<SitemapOptions>{ hostname, ...sitemapOptions }, legacy);
+  return sitemapPlugin(<SitemapPluginOptions>{ hostname, ...sitemapOptions });
 };

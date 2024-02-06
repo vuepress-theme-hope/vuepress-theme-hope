@@ -42,7 +42,7 @@ For these extensions, please read [Markdown extensions in VuePress](https://them
 
 By using [`vuepress-plugin-md-enhance`][md-enhance], the theme extends more Markdown syntax and provides richer writing functions.
 
-#### Custom Container
+#### Hint box
 
 ::: v-pre
 
@@ -52,7 +52,7 @@ Safely use {{ variable }} in Markdown.
 
 ::: info Custom Title
 
-A custom information container with `code`, [link](#custom-container).
+A custom information container with `code`, [link](#hint-box).
 
 ```js
 const a = 1;
@@ -72,9 +72,9 @@ A custom warning container
 
 :::
 
-::: danger Custom Title
+::: caution Custom Title
 
-A custom danger container
+A custom caution container
 
 :::
 
@@ -84,7 +84,7 @@ A custom details container
 
 :::
 
-- [View Detail](https://theme-hope.vuejs.press/guide/markdown/container.html)
+- [View Detail](https://theme-hope.vuejs.press/guide/markdown/hint.html)
 
 #### Tabs
 
@@ -187,19 +187,40 @@ Support setting color scheme and size
 
 - [View Detail](https://theme-hope.vuejs.press/guide/markdown/image.html)
 
-#### Card
+#### Component
 
-```card
+```component VPCard
 title: Mr.Hope
 desc: Where there is light, there is hope
-logo: https://mrhope.site/logo.svg
-link: https://mrhope.site
-color: rgba(253, 230, 138, 0.15)
+logo: https://mister-hope.com/logo.svg
+link: https://mister-hope.com
+background: rgba(253, 230, 138, 0.15)
 ```
 
-- [View Detail](https://theme-hope.vuejs.press/guide/markdown/card.html)
+- [View Detail](https://theme-hope.vuejs.press/guide/markdown/component.html)
 
-#### Chart
+#### Include files
+
+<!-- @include: ./README.md{11-17} -->
+
+- [View Detail](https://theme-hope.vuejs.press/guide/markdown/include.html)
+
+#### Stylize
+
+Donate Mr.Hope a cup of coffee. _Recommended_
+
+- [View Detail](https://theme-hope.vuejs.press/guide/markdown/stylize.html)
+
+#### Tex
+
+$$
+\frac {\partial^r} {\partial \omega^r} \left(\frac {y^{\omega}} {\omega}\right)
+= \left(\frac {y^{\omega}} {\omega}\right) \left\{(\log y)^r + \sum_{i=1}^r \frac {(-1)^i r \cdots (r-i+1) (\log y)^{r-i}} {\omega^i} \right\}
+$$
+
+- [View Detail](https://theme-hope.vuejs.press/guide/markdown/tex.html)
+
+#### Chart.js
 
 ::: chart A Scatter Chart
 
@@ -233,7 +254,7 @@ color: rgba(253, 230, 138, 0.15)
 
 :::
 
-- [View Detail](https://theme-hope.vuejs.press/guide/markdown/chart.html)
+- [View Detail](https://theme-hope.vuejs.press/guide/markdown/chartjs.html)
 
 #### Echarts
 
@@ -274,6 +295,45 @@ cond(no)->e
 
 - [View Detail](https://theme-hope.vuejs.press/guide/markdown/flowchart.html)
 
+#### MarkMap
+
+````markmap
+---
+markmap:
+  colorFreezeLevel: 2
+---
+
+# markmap
+
+## Links
+
+- <https://markmap.js.org/>
+- [GitHub](https://github.com/gera2ld/markmap)
+
+## Related Projects
+
+- [coc-markmap](https://github.com/gera2ld/coc-markmap)
+- [gatsby-remark-markmap](https://github.com/gera2ld/gatsby-remark-markmap)
+
+## Features
+
+- links
+- **strong** ~~del~~ *italic* ==highlight==
+- multiline
+  text
+- `inline code`
+-
+    ```js
+    console.log('code block');
+    ```
+- Katex
+  - $x = {-b \pm \sqrt{b^2-4ac} \over 2a}$
+  - [More Katex Examples](#?d=gist:af76a4c245b302206b16aec503dbe07b:katex.md)
+- Now we can wrap very very very very long text based on `maxWidth` option
+````
+
+- [View Detail](https://theme-hope.vuejs.press/guide/markdown/markmap.html)
+
 #### Mermaid
 
 ```mermaid
@@ -297,21 +357,6 @@ flowchart TB
 ```
 
 - [View Detail](https://theme-hope.vuejs.press/guide/markdown/mermaid.html)
-
-#### Tex
-
-$$
-\frac {\partial^r} {\partial \omega^r} \left(\frac {y^{\omega}} {\omega}\right)
-= \left(\frac {y^{\omega}} {\omega}\right) \left\{(\log y)^r + \sum_{i=1}^r \frac {(-1)^i r \cdots (r-i+1) (\log y)^{r-i}} {\omega^i} \right\}
-$$
-
-- [View Detail](https://theme-hope.vuejs.press/guide/markdown/tex.html)
-
-#### Include files
-
-<!-- @include: ./README.md{11-17} -->
-
-- [View Detail](https://theme-hope.vuejs.press/guide/markdown/include.html)
 
 #### Code Demo
 
@@ -338,29 +383,59 @@ span {
 
 - [View Detail](https://theme-hope.vuejs.press/guide/markdown/demo.html)
 
-#### Stylize
-
-Donate Mr.Hope a cup of coffee. _Recommended_
-
-- [View Detail](https://theme-hope.vuejs.press/guide/markdown/stylize.html)
-
 #### Playground
 
-::: playground#ts TS demo
+::: playground#unocss UnoCSS demo
 
-@file index.ts
+@file index.html
 
-```ts
-const msg = "hello world";
+```html
+<div class="flex flex-col text-center h-full justify-center">
+  <div class="text-red">TEST for default preset</div>
+  <div class="text-$fd-color">TEST for custom css</div>
+</div>
+```
 
-const speak = (msg: string) => console.log(msg);
+@file config.js
 
-speak(msg);
+```js
+import { defineConfig, presetUno } from "unocss";
+
+export default defineConfig({
+  presets: [presetUno()],
+});
+```
+
+@file custom.css
+
+```css
+:root {
+  --fd-color: green;
+}
 ```
 
 :::
 
 - [View Detail](https://theme-hope.vuejs.press/guide/markdown/playground.html)
+
+#### Kotlin Playground
+
+::: kotlin-playground Simple Playground
+
+@file main.kt
+
+```kotlin
+class Contact(val id: Int, var email: String)
+
+fun main(args: Array<String>) {
+    val contact = Contact(1, "mary@gmail.com")
+    println(contact.id)
+}
+```
+
+:::
+
+- [View Detail](https://theme-hope.vuejs.press/guide/markdown/kotlin-playground.html)
 
 #### Vue Playground
 
@@ -385,13 +460,36 @@ const msg = ref("Hello World!");
 
 - [View Detail](https://theme-hope.vuejs.press/guide/markdown/vue-playground.html)
 
-#### Presentation
+#### Sandpack Playground
+
+::: sandpack#vue Vue Demo
+
+@file /src/App.vue
+
+```vue
+<script setup>
+import { ref } from "vue";
+
+const msg = ref("Hello Playground!");
+</script>
+
+<template>
+  <h1>{{ msg }}</h1>
+  <input v-model="msg" />
+</template>
+```
+
+:::
+
+- [View Detail](https://theme-hope.vuejs.press/guide/markdown/sandpack.html)
+
+#### Reveal.js
 
 @slidestart
 
 ## Slide 1
 
-A paragraph with some text and a [link](https://mrhope.site)
+A paragraph with some text and a [link](https://mister-hope.com)
 
 ---
 
@@ -418,6 +516,6 @@ $$
 
 @slideend
 
-- [View Detail](https://theme-hope.vuejs.press/guide/markdown/presentation.html)
+- [View Detail](https://theme-hope.vuejs.press/guide/markdown/revealjs.html)
 
 [md-enhance]: https://md-enhance.vuejs.press/

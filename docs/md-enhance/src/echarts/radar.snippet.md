@@ -1,6 +1,3 @@
-````md
-<!-- #region demo -->
-
 ::: echarts A Radar Chart
 
 ```json
@@ -38,6 +35,3 @@
 ```
 
 :::
-
-<!-- #endregion demo -->
-````

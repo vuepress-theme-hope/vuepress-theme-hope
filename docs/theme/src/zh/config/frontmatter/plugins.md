@@ -11,9 +11,9 @@ tag:
 
 你可以在页面的 frontmatter 配置以下选项控制插件行为。
 
-## copyright2 插件
+## `@vuepress/plugin-copyright` 选项
 
-### copy.triggerWords
+### copy.triggerLength
 
 - 类型: `number`
 - 默认值: `100`
@@ -34,7 +34,7 @@ tag:
 
 禁用选择
 
-## feed2 插件
+## `@vuepress/plugin-feed` 选项
 
 ### feed.title
 
@@ -142,7 +142,7 @@ Feed 项目的标识符，用于标识 Feed 项目。
 
 :::
 
-## sitemap2 插件
+## `@vuepress/plugin-sitemap` 选项
 
 ### sitemap.changefreq
 

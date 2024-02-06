@@ -1,4 +1,5 @@
-import { type VNode, defineComponent, h, ref } from "vue";
+import type { VNode } from "vue";
+import { defineComponent, h, ref } from "vue";
 
 import "./toggle-rtl-button.scss";
 
@@ -8,7 +9,7 @@ export default defineComponent({
   setup() {
     const isRTL = ref(false);
 
-    const toggleRTL = () => {
+    const toggleRTL = (): void => {
       const { documentElement } = document;
 
       if (isRTL.value) {
@@ -29,7 +30,7 @@ export default defineComponent({
         h("span", {
           key: isRTL.value ? "on" : "off",
           class: [`fas fa-fw fa-2xl fa-toggle-${isRTL.value ? "on" : "off"}`],
-        })
+        }),
       );
   },
 });

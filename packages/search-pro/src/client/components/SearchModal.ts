@@ -1,7 +1,7 @@
-import { useSiteLocaleData } from "@vuepress/client";
+import { useLocaleConfig } from "@vuepress/helper/client";
 import { onClickOutside, useEventListener, useScrollLock } from "@vueuse/core";
+import type { VNode } from "vue";
 import {
-  type VNode,
   defineAsyncComponent,
   defineComponent,
   h,
@@ -13,7 +13,8 @@ import {
   shallowRef,
   watch,
 } from "vue";
-import { useIsMobile, useLocaleConfig } from "vuepress-shared/client";
+import { useSiteLocaleData } from "vuepress/client";
+import { useIsMobile } from "vuepress-shared/client";
 
 import { SearchLoading } from "./SearchLoading.js";
 import { SearchIcon } from "./icons.js";
@@ -65,7 +66,7 @@ export default defineComponent({
     } = useArrayCycle(suggestions);
 
     const inputElement = shallowRef<HTMLInputElement>();
-    const suggestionElement = shallowRef<HTMLDivElement>();
+    const suggestionsElement = shallowRef<HTMLDivElement>();
 
     const applySuggestion = (index = activeSuggestionIndex.value): void => {
       input.value = suggestions.value[index];
@@ -86,15 +87,15 @@ export default defineComponent({
     onMounted(() => {
       const isLocked = useScrollLock(document.body);
 
-      watch(isActive, (value) => {
+      watch(isActive, async (value) => {
         isLocked.value = value;
-        if (value)
-          void nextTick().then(() => {
-            inputElement.value?.focus();
-          });
+        if (value) {
+          await nextTick();
+          inputElement.value?.focus();
+        }
       });
 
-      onClickOutside(suggestionElement, () => {
+      onClickOutside(suggestionsElement, () => {
         displaySuggestion.value = false;
       });
 
@@ -119,7 +120,7 @@ export default defineComponent({
                   h(
                     "label",
                     { for: "search-pro", "aria-label": locale.value.search },
-                    h(SearchIcon)
+                    h(SearchIcon),
                   ),
                   h("input", {
                     ref: inputElement,
@@ -158,7 +159,7 @@ export default defineComponent({
                   input.value
                     ? h("button", {
                         type: "reset",
-                        class: "clear-button",
+                        class: "search-pro-clear-button",
                         innerHTML: CLOSE_ICON,
                         onClick: () => {
                           input.value = "";
@@ -169,57 +170,38 @@ export default defineComponent({
                   displaySuggestion.value &&
                   suggestions.value.length
                     ? h(
-                        "div",
+                        "ul",
                         {
-                          class: "search-pro-suggestions-wrapper",
-                          ref: suggestionElement,
+                          class: "search-pro-suggestions",
+                          ref: suggestionsElement,
                         },
-                        [
-                          h("ul", { class: "search-pro-suggestions" }, [
-                            suggestions.value.map((suggestion, index) =>
-                              h(
-                                "li",
-                                {
-                                  class: [
-                                    "search-pro-suggestion",
-                                    {
-                                      active:
-                                        index === activeSuggestionIndex.value,
-                                    },
-                                  ],
-                                  onClick: () => {
-                                    applySuggestion(index);
-                                  },
-                                },
-                                [
-                                  h(
-                                    "kbd",
-                                    {
-                                      class: "search-pro-auto-complete",
-                                      title: `Tab ${locale.value.autocomplete}`,
-                                    },
-                                    "Tab"
-                                  ),
-                                  suggestion,
-                                ]
-                              )
-                            ),
-                          ]),
+                        suggestions.value.map((suggestion, index) =>
                           h(
-                            "button",
+                            "li",
                             {
-                              type: "button",
-                              class: "search-pro-close-suggestion",
+                              class: [
+                                "search-pro-suggestion",
+                                {
+                                  active: index === activeSuggestionIndex.value,
+                                },
+                              ],
                               onClick: () => {
-                                displaySuggestion.value = false;
+                                applySuggestion(index);
                               },
                             },
                             [
-                              h("kbd", { innerHTML: ESC_KEY_ICON }),
-                              locale.value.exit,
-                            ]
+                              h(
+                                "kbd",
+                                {
+                                  class: "search-pro-auto-complete",
+                                  title: `Tab ${locale.value.autocomplete}`,
+                                },
+                                "Tab",
+                              ),
+                              suggestion,
+                            ],
                           ),
-                        ]
+                        ),
                       )
                     : null,
                 ]),
@@ -227,13 +209,13 @@ export default defineComponent({
                   "button",
                   {
                     type: "button",
-                    class: "close-button",
+                    class: "search-pro-close-button",
                     onClick: () => {
                       isActive.value = false;
                       input.value = "";
                     },
                   },
-                  locale.value.cancel
+                  locale.value.cancel,
                 ),
               ]),
 
@@ -248,7 +230,7 @@ export default defineComponent({
                 },
               }),
 
-              // key hints should only appears in pc
+              // Key hints should only appears in PC
               isMobile.value
                 ? null
                 : h("div", { class: "search-pro-hints" }, [

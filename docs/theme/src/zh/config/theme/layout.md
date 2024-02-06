@@ -37,7 +37,7 @@ tag:
 
   ```ts
   /**
-   * 导航栏组件
+   * 内置导航栏组件
    */
   type NavbarComponent =
     | "Brand"
@@ -188,7 +188,7 @@ tag:
 
   type SidebarSorterFunction = (
     infoA: SidebarInfo,
-    infoB: SidebarInfo
+    infoB: SidebarInfo,
   ) => number;
 
   type SidebarSorter =

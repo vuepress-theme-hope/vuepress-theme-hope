@@ -1,8 +1,8 @@
 // German [de]
+import { isArray } from "@vuepress/helper";
 import type dayjs from "dayjs";
 
-import { type Locale } from "./locale.js";
-import { isArray } from "../../../shared/index.js";
+import type { Locale } from "./locale.js";
 
 const texts = {
   s: "ein paar Sekunden",
@@ -21,7 +21,7 @@ const texts = {
 const relativeTimeFormatter = (
   number: string,
   withoutSuffix: boolean,
-  key: "s" | "m" | "mm" | "h" | "hh" | "d" | "dd" | "M" | "MM" | "y" | "yy"
+  key: "s" | "m" | "mm" | "h" | "hh" | "d" | "dd" | "M" | "MM" | "y" | "yy",
 ): string => {
   let l = texts[key];
 
@@ -33,13 +33,13 @@ const relativeTimeFormatter = (
 const locale: Partial<Locale> = {
   name: "de",
   weekdays: "Sonntag_Montag_Dienstag_Mittwoch_Donnerstag_Freitag_Samstag".split(
-    "_"
+    "_",
   ),
   weekdaysShort: "So._Mo._Di._Mi._Do._Fr._Sa.".split("_"),
   weekdaysMin: "So_Mo_Di_Mi_Do_Fr_Sa".split("_"),
   months:
     "Januar_Februar_März_April_Mai_Juni_Juli_August_September_Oktober_November_Dezember".split(
-      "_"
+      "_",
     ),
   monthsShort:
     "Jan._Feb._März_Apr._Mai_Juni_Juli_Aug._Sept._Okt._Nov._Dez.".split("_"),

@@ -5,7 +5,7 @@
 <h1 align="center">vuepress-plugin-md-enhance</h1>
 <h4 align="center">Markdown enhancement plugin📄 / Markdown 增强插件📄</h4>
 
-[![Author: Mr.Hope](https://img.shields.io/badge/Author-Mr.Hope-blue.svg?style=for-the-badge)](https://mrhope.site)
+[![Author: Mr.Hope](https://img.shields.io/badge/Author-Mr.Hope-blue.svg?style=for-the-badge)](https://mister-hope.com)
 
 <!-- markdownlint-restore -->
 
@@ -36,7 +36,7 @@ yarn add -D vuepress-plugin-md-enhance
 
   Links has been fixed in V2
 
-- new option `container` ![new](https://img.shields.io/badge/-new-brightgreen)
+- new option `hint` ![new](https://img.shields.io/badge/-new-brightgreen)
 
   Decides whether enable custom container that default theme provides
 
@@ -71,7 +71,7 @@ yarn add -D vuepress-plugin-md-enhance
 
   图片链接已经在 V2 中得到修正
 
-- 选项 `container` ![新增](https://img.shields.io/badge/-新增-brightgreen)
+- 选项 `hint` ![新增](https://img.shields.io/badge/-新增-brightgreen)
 
   决定是否启用默认主题提供的自定义容器
 

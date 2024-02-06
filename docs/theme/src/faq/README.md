@@ -10,6 +10,8 @@ Frequency asked questions and corresponding solutions using the theme are includ
 
 ## Catalog
 
+- [Common Question](common-question.md)
+
 - [Troubleshooting](troubleshooting.md)
 
 - [Common Errors](common-error.md)

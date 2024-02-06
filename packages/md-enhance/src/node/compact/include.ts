@@ -1,11 +1,11 @@
-import {
-  type IncludeEnv,
-  type MarkdownItIncludeOptions,
+import type {
+  IncludeEnv,
+  MarkdownItIncludeOptions,
 } from "@mdit/plugin-include";
-import { type MarkdownEnv } from "@vuepress/markdown";
-import { fs, path } from "@vuepress/utils";
-import { type PluginWithOptions } from "markdown-it";
-import { type RuleCore } from "markdown-it/lib/parser_core.js";
+import type { PluginWithOptions } from "markdown-it";
+import type { RuleCore } from "markdown-it/lib/parser_core.js";
+import type { MarkdownEnv } from "vuepress/markdown";
+import { fs, path } from "vuepress/utils";
 
 import { NEWLINES_RE } from "../markdown-it/utils.js";
 import { logger } from "../utils.js";
@@ -31,18 +31,18 @@ interface IncludeInfo {
 }
 
 const REGIONS_RE = [
-  /^\/\/ ?#?((?:end)?region) ([\w*-]+)$/, // javascript, typescript, java
-  /^\/\* ?#((?:end)?region) ([\w*-]+) ?\*\/$/, // css, less, scss
-  /^#pragma ((?:end)?region) ([\w*-]+)$/, // C, C++
-  /^<!-- #?((?:end)?region) ([\w*-]+) -->$/, // HTML, markdown
-  /^#((?:End )Region) ([\w*-]+)$/, // Visual Basic
-  /^::#((?:end)region) ([\w*-]+)$/, // Bat
-  /^# ?((?:end)?region) ([\w*-]+)$/, // C#, PHP, Powershell, Python, perl & misc
+  /^\/\/ ?#?((?:end)?region) ([\w*-]+)$/u, // Javascript, Typescript, Java
+  /^\/\* ?#((?:end)?region) ([\w*-]+) ?\*\/$/u, // CSS, Less, Scss
+  /^#pragma ((?:end)?region) ([\w*-]+)$/u, // C, C++
+  /^<!-- #?((?:end)?region) ([\w*-]+) -->$/u, // HTML, markdown
+  /^#((?:End )Region) ([\w*-]+)$/u, // Visual Basic
+  /^::#((?:end)region) ([\w*-]+)$/u, // Bat
+  /^# ?((?:end)?region) ([\w*-]+)$/u, // C#, PHP, Powershell, Python, perl & misc
 ];
 
-// regexp to match the import syntax
+// Regexp to match the import syntax
 const INCLUDE_RE =
-  /^@include\(([^)]+(?:\.[a-z0-9]+))(?:#([\w-]+))?(?:\{(\d+)?-(\d+)?\})?\)$/;
+  /^@include\(([^)]+(?:\.[a-z0-9]+))(?:#([\w-]+))?(?:\{(\d+)?-(\d+)?\})?\)$/u;
 
 const dedent = (text: string): string => {
   const lines = text.split("\n");
@@ -64,7 +64,7 @@ const testLine = (
   line: string,
   regexp: RegExp,
   regionName: string,
-  end = false
+  end = false,
 ): boolean => {
   const [full, tag, name] = regexp.exec(line.trim()) || [];
 
@@ -72,13 +72,13 @@ const testLine = (
     full &&
       tag &&
       name === regionName &&
-      tag.match(end ? /^[Ee]nd ?[rR]egion$/ : /^[rR]egion$/)
+      tag.match(end ? /^[Ee]nd ?[rR]egion$/ : /^[rR]egion$/),
   );
 };
 
 const findRegion = (
   lines: string[],
-  regionName: string
+  regionName: string,
 ): { lineStart: number; lineEnd: number } | null => {
   let regexp = null;
   let lineStart = -1;
@@ -100,14 +100,16 @@ const findRegion = (
 
 export const handleInclude = (
   info: ImportFileInfo,
-  { cwd, includedFiles, resolvedPath }: IncludeInfo
+  { cwd, includedFiles, resolvedPath }: IncludeInfo,
 ): string => {
   const { filePath } = info;
   let realPath = filePath;
 
   if (!path.isAbsolute(filePath)) {
-    // if the importPath is relative path, we need to resolve it
-    // according to the markdown filePath
+    /*
+     * If the importPath is relative path, we need to resolve it
+     * according to the markdown filePath
+     */
     if (!cwd) {
       logger.error(`[include]: Error when resolving path: ${filePath}`);
 
@@ -119,14 +121,14 @@ export const handleInclude = (
 
   includedFiles.push(realPath);
 
-  // check file existence
+  // Check file existence
   if (!fs.existsSync(realPath)) {
     logger.error(`Include: ${realPath} not found`);
 
     return "\nFile not found\n";
   }
 
-  // read file content
+  // Read file content
   const fileContent = fs.readFileSync(realPath).toString();
 
   const lines = fileContent.replace(NEWLINES_RE, "\n").split("\n");
@@ -149,26 +151,26 @@ export const handleInclude = (
     results.push("@include-pop()");
   }
 
-  return dedent(results.join("\n").replace(/\n?$/, "\n"));
+  return dedent(results.join("\n").replace(/\n?$/u, "\n"));
 };
 
 export const resolveInclude = (
   content: string,
-  options: Required<MarkdownItIncludeOptions>,
-  { currentPath, cwd, includedFiles }: IncludeInfo
+  options: Required<Omit<MarkdownItIncludeOptions, "useComment">>,
+  { currentPath, cwd, includedFiles }: IncludeInfo,
 ): string =>
   content
     .split("\n")
     .map((line) => {
       if (line.startsWith("@include")) {
-        // check if it’s matched the syntax
+        // Check if it’s matched the syntax
         const result = line.match(INCLUDE_RE);
 
         if (result) {
           logger.warn(
             `"@include(file)" is deprecated, you should use "<!-- @include: file -->" instead.${
               currentPath ? `\n Found in ${currentPath}.` : ""
-            }`
+            }`,
           );
 
           const [, includePath, region, lineStart, lineEnd] = result;
@@ -186,7 +188,7 @@ export const resolveInclude = (
                     lineEnd: lineEnd ? Number(lineEnd) : undefined,
                   }),
             },
-            { cwd, includedFiles, resolvedPath }
+            { cwd, includedFiles, resolvedPath },
           );
 
           return options.deep && actualPath.endsWith(".md")
@@ -194,8 +196,8 @@ export const resolveInclude = (
                 cwd: path.isAbsolute(actualPath)
                   ? path.dirname(actualPath)
                   : cwd
-                  ? path.resolve(cwd, path.dirname(actualPath))
-                  : null,
+                    ? path.resolve(cwd, path.dirname(actualPath))
+                    : null,
                 currentPath: currentPath ?? "",
                 includedFiles,
               })
@@ -208,10 +210,10 @@ export const resolveInclude = (
     .join("\n");
 
 export const createIncludeCoreRule =
-  (options: Required<MarkdownItIncludeOptions>): RuleCore =>
+  (options: Required<Omit<MarkdownItIncludeOptions, "useComment">>): RuleCore =>
   (state): void => {
     const env = <IncludeEnv & MarkdownEnv>state.env;
-    const includedFiles = env.includedFiles || (env.includedFiles = []);
+    const includedFiles = (env.includedFiles ||= []);
     const currentPath = options.currentPath(env);
 
     state.src = resolveInclude(state.src, options, {
@@ -224,7 +226,7 @@ export const createIncludeCoreRule =
 /** @deprecated */
 export const legacyInclude: PluginWithOptions<MarkdownItIncludeOptions> = (
   md,
-  options
+  options,
 ): void => {
   const {
     currentPath,
@@ -239,7 +241,7 @@ export const legacyInclude: PluginWithOptions<MarkdownItIncludeOptions> = (
 
     return;
   }
-  // add md_import core rule
+  // Add md_import core rule
   md.core.ruler.after(
     "normalize",
     "md_legacy_import",
@@ -249,6 +251,6 @@ export const legacyInclude: PluginWithOptions<MarkdownItIncludeOptions> = (
       deep,
       resolveLinkPath,
       resolveImagePath,
-    })
+    }),
   );
 };

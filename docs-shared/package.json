@@ -1,13 +1,13 @@
 {
   "name": "docs-shared",
-  "version": "2.0.0-beta.138",
+  "version": "2.0.0-rc.22",
   "private": true,
   "description": "Shared files for docs",
   "license": "MIT",
   "author": {
     "name": "Mr.Hope",
     "email": "mister-hope@outlook.com",
-    "url": "https://mrhope.site"
+    "url": "https://mister-hope.com"
   },
   "type": "module",
   "exports": {
@@ -25,28 +25,22 @@
   "scripts": {
     "build": "pnpm build:ts && pnpm copy",
     "build:ts": "tsc --build tsconfig.release.json",
-    "clean": "rimraf ./lib ./*.tsbuildinfo",
-    "copy": "cpx \"src/**/*.{vue,scss}\" lib",
+    "clean": "rimraf --glob ./lib ./*.tsbuildinfo",
+    "copy": "cpx \"src/**/*.scss\" lib",
     "dev": "concurrently \"pnpm dev:copy\" \"pnpm dev:ts\"",
     "dev:copy": "pnpm copy -w",
     "dev:ts": "tsc -b tsconfig.build.json --watch"
   },
   "dependencies": {
-    "@types/three": "0.152.1",
-    "@vuepress/cli": "2.0.0-beta.62",
-    "@vuepress/client": "2.0.0-beta.62",
-    "@vuepress/core": "2.0.0-beta.62",
-    "@vuepress/plugin-docsearch": "2.0.0-beta.62",
-    "@vuepress/shared": "2.0.0-beta.62",
-    "@vuepress/utils": "2.0.0-beta.62",
-    "three": "0.153.0",
-    "vue": "3.3.4",
-    "vuepress-plugin-redirect": "workspace:*",
-    "vuepress-plugin-remove-pwa": "workspace:*",
-    "vuepress-shared": "workspace:*",
+    "@types/three": "0.161.2",
+    "@vuepress/bundler-vite": "2.0.0-rc.6",
+    "@vuepress/bundler-webpack": "2.0.0-rc.6",
+    "@vuepress/helper": "2.0.0-rc.11",
+    "@vuepress/plugin-docsearch": "2.0.0-rc.11",
+    "@vuepress/plugin-redirect": "2.0.0-rc.11",
+    "three": "0.161.0",
+    "vue": "3.4.15",
+    "vuepress": "2.0.0-rc.6",
     "vuepress-theme-hope": "workspace:*"
-  },
-  "devDependencies": {
-    "@vuepress/bundler-vite": "2.0.0-beta.62"
   }
 }

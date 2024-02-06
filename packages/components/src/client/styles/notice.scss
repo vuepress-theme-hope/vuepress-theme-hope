@@ -14,13 +14,8 @@
 
 .vp-notice-mask {
   position: fixed;
-  top: 0;
-  left: 0;
+  inset: 0;
   z-index: 1499;
-
-  width: 100vw;
-  height: 100vh;
-
   backdrop-filter: blur(10px);
 
   @media print {
@@ -31,10 +26,7 @@
 .vp-notice-wrapper {
   position: fixed;
   top: 80px;
-
-  // NOTE: Compatible with Android Wechat
-  // inset-inline-end: 20px;
-  right: 20px;
+  inset-inline-end: 20px;
   z-index: 1500;
 
   overflow: hidden;
@@ -47,11 +39,6 @@
 
   @media print {
     display: none;
-  }
-
-  #{hope-config.$rtl-selector} &:not(.fullscreen) {
-    right: unset;
-    left: 20px;
   }
 
   &.fullscreen {

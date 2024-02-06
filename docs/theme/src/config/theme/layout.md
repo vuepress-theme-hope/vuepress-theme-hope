@@ -37,7 +37,7 @@ Whether display icons in navbar.
 
   ```ts
   /**
-   * Navbar component
+   * Built-in Navbar component
    */
   type NavbarComponent =
     | "Brand"
@@ -188,7 +188,7 @@ Whether show icons in the sidebar
 
   type SidebarSorterFunction = (
     infoA: SidebarInfo,
-    infoB: SidebarInfo
+    infoB: SidebarInfo,
   ) => number;
 
   type SidebarSorter =
@@ -342,7 +342,7 @@ Docs dir location in repo
 ### footer
 
 - Type: `string`
-- Required: false
+- Required: No
 
 The default content for the footer, can accept HTMLString.
 

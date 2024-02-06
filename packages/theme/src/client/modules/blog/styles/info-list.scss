@@ -8,7 +8,8 @@
     border-radius: 6px;
     background: var(--bg-color-float);
     box-shadow: 0 1px 3px 1px var(--card-shadow);
-    transition: background var(--color-transition),
+    transition:
+      background var(--color-transition),
       box-shadow var(--color-transition);
 
     &:hover {
@@ -74,10 +75,14 @@
   .icon {
     width: 100%;
     height: 100%;
+
+    .vp-sidebar.hide-icon & {
+      display: block !important;
+    }
   }
 }
 
-.vp-sticky-article-wrapper,
+.vp-star-article-wrapper,
 .vp-category-wrapper,
 .vp-tag-wrapper {
   padding: 8px 0;
@@ -103,17 +108,18 @@
   }
 }
 
-.vp-sticky-articles {
+.vp-star-articles {
   overflow-y: auto;
   max-height: 80vh;
   margin: 8px auto;
   line-height: 1.5;
 }
 
-.vp-sticky-article {
+.vp-star-article {
   padding: 12px 8px 4px;
   border-bottom: 1px dashed var(--grey);
-  transition: border-color var(--color-transition),
+  transition:
+    border-color var(--color-transition),
     color var(--color-transition);
 
   a {

@@ -1,7 +1,7 @@
 ---
 title: Disabling layout and features
 icon: gears
-order: 3
+order: 4
 category:
   - Guide
 tag:

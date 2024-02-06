@@ -1,13 +1,13 @@
-import { withBase } from "@vuepress/client";
-import { type FunctionalComponent, type VNode, h } from "vue";
-import { RouterLink } from "vue-router";
-import { isLinkExternal } from "vuepress-shared/client";
+import { isLinkExternal } from "@vuepress/helper/client";
+import type { FunctionalComponent, VNode } from "vue";
+import { h } from "vue";
+import { RouteLink, withBase } from "vuepress/client";
 
 import HopeIcon from "@theme-hope/components/HopeIcon";
 
-import {
-  type ThemeProjectHomeHighlightItem,
-  type ThemeProjectHomeHighlightOptions,
+import type {
+  ThemeProjectHomeHighlightItem,
+  ThemeProjectHomeHighlightOptions,
 } from "../../shared/index.js";
 
 import "../styles/highlight-panel.scss";
@@ -19,7 +19,7 @@ const HighlightPanel: FunctionalComponent<
     image?: (props: ThemeProjectHomeHighlightOptions) => VNode[] | VNode | null;
     info?: (props: ThemeProjectHomeHighlightOptions) => VNode[] | VNode | null;
     highlights?: (
-      props: ThemeProjectHomeHighlightItem[]
+      props: ThemeProjectHomeHighlightItem[],
     ) => VNode[] | VNode | null;
   }
 > = (props, { slots }): VNode => {
@@ -40,7 +40,7 @@ const HighlightPanel: FunctionalComponent<
     "div",
     {
       class: "vp-highlight-wrapper",
-      style: color ? { color: color } : {},
+      style: color ? { color } : {},
     },
     [
       bgImage
@@ -65,14 +65,14 @@ const HighlightPanel: FunctionalComponent<
             ? h("img", {
                 class: ["vp-highlight-image", { light: imageDark }],
                 src: withBase(image),
-                alt: header,
+                alt: "",
               })
             : null,
           imageDark
             ? h("img", {
                 class: "vp-highlight-image dark",
                 src: withBase(imageDark),
-                alt: header,
+                alt: "",
               })
             : null,
         ],
@@ -111,7 +111,7 @@ const HighlightPanel: FunctionalComponent<
                               })
                             : null,
                           h("span", { innerHTML: title }),
-                        ]
+                        ],
                       ),
                       details
                         ? h(type === "no-order" ? "dd" : "p", {
@@ -133,31 +133,29 @@ const HighlightPanel: FunctionalComponent<
                               {
                                 class: "vp-highlight-item link",
                                 href: link,
-                                role: "navigation",
                                 "aria-label": title,
                                 target: "_blank",
                               },
-                              children
+                              children,
                             )
                           : h(
-                              RouterLink,
+                              RouteLink,
                               {
                                 class: "vp-highlight-item link",
                                 to: link,
-                                role: "navigation",
                                 "aria-label": title,
                               },
-                              () => children
+                              () => children,
                             )
-                        : h("div", { class: "vp-highlight-item" }, children)
+                        : h("div", { class: "vp-highlight-item" }, children),
                     );
-                  })
+                  }),
                 ),
-            ])
+            ]),
           ),
         ],
       ]),
-    ]
+    ],
   );
 };
 

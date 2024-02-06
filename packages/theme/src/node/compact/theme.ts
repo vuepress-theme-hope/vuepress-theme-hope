@@ -1,10 +1,10 @@
-import { colors } from "@vuepress/utils";
-import { isArray, isPlainObject, values } from "vuepress-shared/node";
+import { isArray, isPlainObject, values } from "@vuepress/helper";
+import { colors } from "vuepress/utils";
 
 import { convertNavbarOptions } from "./navbar.js";
 import { convertSidebarOptions } from "./sidebar.js";
 import { deprecatedLogger, droppedLogger } from "./utils.js";
-import { type ThemeOptions } from "../../shared/index.js";
+import type { ThemeOptions } from "../../shared/index.js";
 import { logger } from "../utils.js";
 
 const DEPRECATED_THEME_OPTIONS: [string, string][] = [
@@ -77,7 +77,7 @@ const DROPPED_THEME_OPTIONS: [string, string?, string?][] = [
 const handleBlogOptions = (blogOptions: Record<string, unknown>): void => {
   if ("links" in blogOptions) {
     logger.warn(
-      '"blog.links" options is deprecated, please use "blog.medias" instead'
+      '"blog.links" options is deprecated, please use "blog.medias" instead',
     );
     blogOptions["medias"] = blogOptions["links"];
     delete blogOptions["links"];
@@ -85,7 +85,7 @@ const handleBlogOptions = (blogOptions: Record<string, unknown>): void => {
 
   if ("perPage" in blogOptions) {
     logger.warn(
-      '"blog.perPage" options is deprecated, please use "blog.articlePerPage" instead'
+      '"blog.perPage" options is deprecated, please use "blog.articlePerPage" instead',
     );
     blogOptions["articlePerPage"] = blogOptions["perPage"];
     delete blogOptions["perPage"];
@@ -93,7 +93,7 @@ const handleBlogOptions = (blogOptions: Record<string, unknown>): void => {
 
   if ("autoExcerpt" in blogOptions) {
     logger.error(
-      '"blog.autoExcerpt" options is no longer supported, please use "plugins.blog.excerptLength" instead'
+      '"blog.autoExcerpt" options is no longer supported, please use "plugins.blog.excerptLength" instead',
     );
     delete blogOptions["autoExcerpt"];
   }
@@ -104,11 +104,11 @@ const handleBlogOptions = (blogOptions: Record<string, unknown>): void => {
  */
 const handleFooterOptions = (options: Record<string, unknown>): void => {
   if (isPlainObject(options["footer"]) && options["footer"]) {
-    const footer = options["footer"];
+    const { footer } = options;
 
     if ("copyright" in footer) {
       logger.warn(
-        '"footer.copyright" options is deprecated, please use "copyright" instead'
+        '"footer.copyright" options is deprecated, please use "copyright" instead',
       );
 
       options["copyright"] = <string>footer["copyright"];
@@ -116,7 +116,7 @@ const handleFooterOptions = (options: Record<string, unknown>): void => {
 
     if ("display" in footer) {
       logger.warn(
-        '"footer.display" options is deprecated, please use "displayFooter" instead'
+        '"footer.display" options is deprecated, please use "displayFooter" instead',
       );
 
       options["displayFooter"] = <boolean>footer["display"];
@@ -124,7 +124,7 @@ const handleFooterOptions = (options: Record<string, unknown>): void => {
 
     if ("content" in footer) {
       logger.warn(
-        '"footer.content" options is deprecated, please use "footer" instead'
+        '"footer.content" options is deprecated, please use "footer" instead',
       );
 
       options["footer"] = <string>footer["content"];
@@ -138,9 +138,9 @@ const handleFooterOptions = (options: Record<string, unknown>): void => {
  * @deprecated You should use V2 standard options and avoid using it
  */
 export const convertThemeOptions = (
-  themeOptions: Record<string, unknown>
+  themeOptions: Record<string, unknown>,
 ): ThemeOptions => {
-  // ensure plugins
+  // Ensure plugins
   const plugins = (themeOptions["plugins"] ??= {}) as Record<string, unknown>;
 
   DEPRECATED_THEME_OPTIONS.forEach(([deprecatedOption, newOption]) =>
@@ -149,23 +149,23 @@ export const convertThemeOptions = (
       deprecatedOption,
       newOption,
       scope: "themeConfig",
-    })
+    }),
   );
   DROPPED_THEME_OPTIONS.forEach((item) => droppedLogger(themeOptions, ...item));
 
-  // handle navbar
+  // Handle navbar
   if ("navbar" in themeOptions)
     themeOptions["navbar"] = convertNavbarOptions(themeOptions["navbar"]);
 
-  // handle navbar layout
+  // Handle navbar layout
   if (isPlainObject(themeOptions["navbarLayout"])) {
     if ("left" in themeOptions["navbarLayout"]) {
       logger.warn(
         `To have better meaning under RTL layout, ${colors.magenta(
-          "navbarLayout.left"
+          "navbarLayout.left",
         )}" option is deprecated, please use ${colors.magenta(
-          "navbarLayout.start"
-        )} instead`
+          "navbarLayout.start",
+        )} instead`,
       );
       themeOptions["navbarLayout"]["start"] = themeOptions["navbarLayout"][
         "left"
@@ -175,10 +175,10 @@ export const convertThemeOptions = (
     if ("right" in themeOptions["navbarLayout"]) {
       logger.warn(
         `To have better meaning under RTL layout, ${colors.magenta(
-          "navbarLayout.right"
+          "navbarLayout.right",
         )}" option is deprecated, please use ${colors.magenta(
-          "navbarLayout.end"
-        )} instead`
+          "navbarLayout.end",
+        )} instead`,
       );
       themeOptions["navbarLayout"]["end"] = themeOptions["navbarLayout"][
         "right"
@@ -186,30 +186,30 @@ export const convertThemeOptions = (
     }
   }
 
-  // handle sidebar
+  // Handle sidebar
   if ("sidebar" in themeOptions)
     themeOptions["sidebar"] = convertSidebarOptions(themeOptions["sidebar"]);
 
-  // handle blog
+  // Handle blog
   if (isPlainObject(themeOptions["blog"]) && themeOptions["blog"]) {
     handleBlogOptions(themeOptions["blog"] as Record<string, unknown>);
 
     if (!plugins["blog"])
       logger.warn(
         `Blog feature is tree-shakable in v2, you should set ${colors.magenta(
-          "plugins.blog: true"
-        )} in theme options to enable it.`
+          "plugins.blog: true",
+        )} in theme options to enable it.`,
       );
   }
 
-  // handle component
+  // Handle component
   if (isArray(plugins["components"])) {
     logger.warn(
       `${colors.magenta(
-        "plugins.components"
+        "plugins.components",
       )} no longer accepts array, please set it to ${colors.magenta(
-        "plugin.components.components"
-      )} instead.`
+        "plugin.components.components",
+      )} instead.`,
     );
 
     plugins["components"] = {
@@ -217,39 +217,32 @@ export const convertThemeOptions = (
     };
   }
 
-  // handle copyright plugin
+  // Handle copyright plugin
   if (
     isPlainObject(themeOptions["copyright"]) ||
     themeOptions["copyright"] === true
   )
     logger.warn(
       `${colors.magenta(
-        "copyright"
+        "copyright",
       )} is deprecated in V2, please use ${colors.magenta(
-        "plugins.copyright"
-      )} instead.`
+        "plugins.copyright",
+      )} instead.`,
     );
 
-  // handle addThis
-  if (themeOptions["addThis"])
-    deprecatedLogger({
-      options: themeOptions,
-      deprecatedOption: "addThis",
-      newOption: "plugins.components.rootComponents.addThis",
-      scope: "themeConfig",
-    });
+  if (themeOptions["addThis"]) droppedLogger(themeOptions, "addThis");
 
-  // handle encrypt
+  // Handle encrypt
   if (isPlainObject(themeOptions["encrypt"]) && themeOptions["encrypt"]) {
     const encrypt = themeOptions["encrypt"] as Record<string, unknown>;
 
     if ("global" in encrypt && typeof encrypt["global"] !== "boolean") {
       logger.warn(
         `${colors.magenta(
-          "encrypt.global"
+          "encrypt.global",
         )} is deprecated in V2, please use ${colors.magenta(
-          "encrypt.admin"
-        )} instead.`
+          "encrypt.admin",
+        )} instead.`,
       );
 
       encrypt["admin"] = encrypt["global"];
@@ -258,10 +251,10 @@ export const convertThemeOptions = (
     if ("status" in encrypt) {
       logger.warn(
         `${colors.magenta(
-          "encrypt.status"
+          "encrypt.status",
         )} is deprecated, please use ${colors.magenta(
-          "encrypt.global"
-        )} instead.`
+          "encrypt.global",
+        )} instead.`,
       );
 
       encrypt["global"] = encrypt["status"] === "global";
@@ -269,12 +262,12 @@ export const convertThemeOptions = (
     }
   }
 
-  // handle footer
+  // Handle footer
   handleFooterOptions(themeOptions);
 
-  // handle each locale
+  // Handle each locale
   if ("locales" in themeOptions && isPlainObject(themeOptions["locales"]))
-    values(themeOptions["locales"]!).forEach(
+    values(themeOptions["locales"]).forEach(
       (localeConfig: Record<string, unknown>) => {
         DEPRECATED_THEME_OPTIONS.forEach(([deprecatedOption, newOption]) =>
           deprecatedLogger({
@@ -282,25 +275,25 @@ export const convertThemeOptions = (
             deprecatedOption,
             newOption,
             scope: "themeConfig.locales",
-          })
+          }),
         );
         DROPPED_THEME_OPTIONS.forEach((item) =>
-          droppedLogger(localeConfig, ...item)
+          droppedLogger(localeConfig, ...item),
         );
 
-        // handle navbar
+        // Handle navbar
         if ("navbar" in localeConfig)
           localeConfig["navbar"] = convertNavbarOptions(localeConfig["navbar"]);
 
-        // handle navbar layout
+        // Handle navbar layout
         if (isPlainObject(localeConfig["navbarLayout"])) {
           if ("left" in localeConfig["navbarLayout"]) {
             logger.warn(
               `To have better meaning under RTL layout, ${colors.magenta(
-                "navbarLayout.left"
+                "navbarLayout.left",
               )}" option is deprecated, please use ${colors.magenta(
-                "navbarLayout.start"
-              )} instead`
+                "navbarLayout.start",
+              )} instead`,
             );
             localeConfig["navbarLayout"]["start"] = localeConfig[
               "navbarLayout"
@@ -310,10 +303,10 @@ export const convertThemeOptions = (
           if ("right" in localeConfig["navbarLayout"]) {
             logger.warn(
               `To have better meaning under RTL layout, ${colors.magenta(
-                "navbarLayout.right"
+                "navbarLayout.right",
               )}" option is deprecated, please use ${colors.magenta(
-                "navbarLayout.end"
-              )} instead`
+                "navbarLayout.end",
+              )} instead`,
             );
             localeConfig["navbarLayout"]["end"] = localeConfig["navbarLayout"][
               "right"
@@ -321,25 +314,25 @@ export const convertThemeOptions = (
           }
         }
 
-        // handle sidebar
+        // Handle sidebar
         if ("sidebar" in localeConfig)
           localeConfig["sidebar"] = convertSidebarOptions(
-            localeConfig["sidebar"]
+            localeConfig["sidebar"],
           );
 
-        // handle footer
+        // Handle footer
         handleFooterOptions(localeConfig);
 
-        // handle blog
+        // Handle blog
         if (isPlainObject(localeConfig["blog"]) && localeConfig["blog"]) {
           handleBlogOptions(localeConfig["blog"] as Record<string, unknown>);
 
           if (!plugins["blog"])
             logger.warn(
-              'Blog feature is tree-shakable in v2, you should set "plugins.blog: true" in theme options to enable it.'
+              'Blog feature is tree-shakable in v2, you should set "plugins.blog: true" in theme options to enable it.',
             );
         }
-      }
+      },
     );
 
   return themeOptions;

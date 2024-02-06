@@ -10,7 +10,7 @@ const adminMultiplePassword = ["1234", "abcd"];
 const userSinglePassword = "5678";
 const userMultiplePassword = ["5678", "apple"];
 
-describe.skip("Should resolve encrypt option correctly", () => {
+describe("Should resolve encrypt option correctly", () => {
   it("should encrypt admin password", () => {
     const result1 = getEncryptConfig({ admin: adminSinglePassword });
 
@@ -19,7 +19,7 @@ describe.skip("Should resolve encrypt option correctly", () => {
     expect(result1.admin!.length).toEqual(1);
 
     expect(
-      compareSync(adminSinglePassword, result1.admin!.pop()!)
+      compareSync(adminSinglePassword, result1.admin!.pop()!),
     ).toBeTruthy();
 
     const result2 = getEncryptConfig({ admin: adminMultiplePassword });
@@ -28,8 +28,8 @@ describe.skip("Should resolve encrypt option correctly", () => {
 
     expect(
       adminMultiplePassword.every((token, index) =>
-        compareSync(token, result2.admin![index]!)
-      )
+        compareSync(token, result2.admin![index]),
+      ),
     ).toBeTruthy();
   });
 
@@ -42,7 +42,7 @@ describe.skip("Should resolve encrypt option correctly", () => {
     expect(result1.config!["/"].length).toEqual(1);
 
     expect(
-      compareSync(userSinglePassword, result1.config!["/"].pop()!)
+      compareSync(userSinglePassword, result1.config!["/"].pop()!),
     ).toBeTruthy();
 
     const result2 = getEncryptConfig({ config: { "/": userMultiplePassword } });
@@ -52,8 +52,8 @@ describe.skip("Should resolve encrypt option correctly", () => {
 
     expect(
       userMultiplePassword.every((token, index) =>
-        compareSync(token, result2.config!["/"][index])
-      )
+        compareSync(token, result2.config!["/"][index]),
+      ),
     ).toBeTruthy();
   });
 
@@ -74,6 +74,6 @@ describe.skip("Should resolve encrypt option correctly", () => {
     // @ts-expect-error
     const result4 = getEncryptConfig({ config: { "/": [1234, "1234"] } });
 
-    expect(result4.config!["/"]!.length).toEqual(1);
+    expect(result4.config!["/"].length).toEqual(1);
   });
 });

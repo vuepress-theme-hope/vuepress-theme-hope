@@ -9,7 +9,16 @@ tag:
   - Navbar
 ---
 
-The Navbar may contain your site title, [Search Box](#search-box), [Navbar Links](#navbar-links), [I18n](https://vuejs.press/guide/i18n.html), [Repository Link](#git-repository-and-edit-links) and [Outlook Popup](#outlook-popup). They all depend on your configuration.
+The Navbar contains:
+
+- Site title
+- [Search Box](#search-box)
+- [Navbar Links](#navbar-links)
+- [Language dropdown](https://vuejs.press/guide/i18n.html)
+- [Repository Link](#git-repository-and-edit-links)
+- [Outlook Popup](#outlook-popup)
+
+All of them are customizable, and you can also [fully customize Navbar layout](#layout-config).
 
 <!-- more -->
 
@@ -25,8 +34,7 @@ The easiest way to configure the navbar is to fill in the paths of the page file
 
 @tab TS
 
-```ts
-// .vuepress/config.ts
+```ts {7} title=".vuepress/config.ts"
 import { defineUserConfig } from "vuepress";
 import { hopeTheme } from "vuepress-theme-hope";
 
@@ -39,22 +47,22 @@ export default defineUserConfig({
 
 @tab JS
 
-```js
-// .vuepress/config.js
+```js {7} title=".vuepress/config.js"
+import { defineUserConfig } from "vuepress";
 import { hopeTheme } from "vuepress-theme-hope";
 
-export default {
+export default defineUserConfig({
   theme: hopeTheme({
     navbar: ["/guide/README.md", "/config/README.md", "/faq.md"],
   }),
-};
+});
 ```
 
 :::
 
 ::: tip
 
-You can omit the `.md` extension, and paths ending with `/` are inferred as `/README.md`.
+We recommend you to omit the `.md` extension, and paths ending with `/` are inferred as `/README.md`.
 
 :::
 
@@ -71,8 +79,7 @@ If you are not satisfied with the page's icon or feel that the page title is too
 
 @tab TS
 
-```ts
-// .vuepress/config.ts
+```ts title=".vuepress/config.ts"
 import { defineUserConfig } from "vuepress";
 import { hopeTheme } from "vuepress-theme-hope";
 
@@ -102,8 +109,7 @@ export default defineUserConfig({
 
 @tab JS
 
-```js
-// .vuepress/config.js
+```js title=".vuepress/config.js"
 import { hopeTheme } from "vuepress-theme-hope";
 
 export default {
@@ -154,8 +160,7 @@ You need to use object format and provide the additional `children` option to ne
 
 @tab TS
 
-```ts
-// .vuepress/config.ts
+```ts title=".vuepress/config.ts"
 import { defineUserConfig } from "vuepress";
 import { hopeTheme } from "vuepress-theme-hope";
 
@@ -174,8 +179,7 @@ export default defineUserConfig({
 
 @tab JS
 
-```js
-// .vuepress/config.js
+```js title=".vuepress/config.js"
 import { hopeTheme } from "vuepress-theme-hope";
 
 export default {
@@ -201,8 +205,7 @@ To simplify the configuration, you can add the `prefix` field to add a prefix to
 
 @tab TS
 
-```ts
-// .vuepress/config.ts
+```ts title=".vuepress/config.ts"
 import { defineUserConfig } from "vuepress";
 import { hopeTheme } from "vuepress-theme-hope";
 
@@ -222,8 +225,7 @@ export default defineUserConfig({
 
 @tab JS
 
-```js
-// .vuepress/config.js
+```js title=".vuepress/config.js"
 import { hopeTheme } from "vuepress-theme-hope";
 
 export default {
@@ -248,8 +250,7 @@ You can also have subgroups inside a dropdown by having nested `children`:
 
 @tab TS
 
-```ts
-// .vuepress/config.ts
+```ts title=".vuepress/config.ts"
 import { defineUserConfig } from "vuepress";
 import { hopeTheme } from "vuepress-theme-hope";
 
@@ -283,8 +284,7 @@ export default defineUserConfig({
 
 @tab JS
 
-```js
-// .vuepress/config.js
+```js title=".vuepress/config.js"
 import { hopeTheme } from "vuepress-theme-hope";
 
 export default {
@@ -325,8 +325,7 @@ To disable the navbar globally, set `navbar: false` in theme options:
 
 @tab TS
 
-```ts
-// .vuepress/config.ts
+```ts title=".vuepress/config.ts"
 import { defineUserConfig } from "vuepress";
 import { hopeTheme } from "vuepress-theme-hope";
 
@@ -339,8 +338,7 @@ export default defineUserConfig({
 
 @tab JS
 
-```js
-// .vuepress/config.js
+```js title=".vuepress/config.js"
 import { hopeTheme } from "vuepress-theme-hope";
 
 export default {
@@ -368,8 +366,7 @@ To disable the navbar icon, set `navbarIcon: false` in theme options:
 
 @tab TS
 
-```ts
-// .vuepress/config.ts
+```ts title=".vuepress/config.ts"
 import { defineUserConfig } from "vuepress";
 import { hopeTheme } from "vuepress-theme-hope";
 
@@ -382,8 +379,7 @@ export default defineUserConfig({
 
 @tab JS
 
-```js
-// .vuepress/config.js
+```js title=".vuepress/config.js"
 import { hopeTheme } from "vuepress-theme-hope";
 
 export default {
@@ -411,8 +407,7 @@ Please fill in an absolute path and place the logo in `.vuepress/public` folder.
 
 @tab TS
 
-```ts
-// .vuepress/config.ts
+```ts title=".vuepress/config.ts"
 import { defineUserConfig } from "vuepress";
 import { hopeTheme } from "vuepress-theme-hope";
 
@@ -425,8 +420,7 @@ export default defineUserConfig({
 
 @tab JS
 
-```js
-// .vuepress/config.js
+```js title=".vuepress/config.js"
 import { hopeTheme } from "vuepress-theme-hope";
 
 export default {
@@ -452,8 +446,7 @@ The theme's navbar supports [I18n](https://vuejs.press/guide/i18n.html), so you 
 
 @tab TS
 
-```ts
-// .vuepress/config.ts
+```ts title=".vuepress/config.ts"
 import { defineUserConfig } from "vuepress";
 import { hopeTheme } from "vuepress-theme-hope";
 
@@ -479,8 +472,7 @@ export default defineUserConfig({
 
 @tab JS
 
-```js
-// .vuepress/config.js
+```js title=".vuepress/config.js"
 import { hopeTheme } from "vuepress-theme-hope";
 
 export default {
@@ -521,8 +513,7 @@ You can control whether showing the repository button via `repoDisplay` in theme
 
 @tab TS
 
-```ts
-// .vuepress/config.ts
+```ts title=".vuepress/config.ts"
 import { defineUserConfig } from "vuepress";
 import { hopeTheme } from "vuepress-theme-hope";
 
@@ -541,8 +532,7 @@ export default defineUserConfig({
 
 @tab JS
 
-```js
-// .vuepress/config.js
+```js title=".vuepress/config.js"
 import { hopeTheme } from "vuepress-theme-hope";
 
 export default {
@@ -572,7 +562,7 @@ The following three functions are provided:
 
 `vuepress-theme-hope` allows you to customize navbar layout. You can add components in `start`, `center` and `end` keys under `navbarLayout` options.
 
-Available components:
+Navbar has the following built-in components that can be used:
 
 - Brand: Site Brand
 - Links: Navbar links
@@ -581,14 +571,15 @@ Available components:
 - Outlook: Outlook Popup
 - Repo: Project Repo
 
-By default, we are using the following options:
+And you can also use your own component names after you register them globally.
+
+We use the following options by default:
 
 ::: code-tabs#language
 
 @tab TS
 
-```ts
-// .vuepress/config.ts
+```ts title=".vuepress/config.ts"
 import { defineUserConfig } from "vuepress";
 import { hopeTheme } from "vuepress-theme-hope";
 
@@ -605,8 +596,7 @@ export default defineUserConfig({
 
 @tab JS
 
-```js
-// .vuepress/config.js
+```js title=".vuepress/config.js"
 import { hopeTheme } from "vuepress-theme-hope";
 
 export default {
@@ -636,8 +626,7 @@ They mainly deal with scenarios when you split your VuePress configuration into 
 
 @tab TS Helper
 
-```ts
-// .vuepress/navbar.ts
+```ts title=".vuepress/navbar.ts"
 import { navbar } from "vuepress-theme-hope";
 
 export default navbar([
@@ -647,8 +636,7 @@ export default navbar([
 
 @tab TS Type
 
-```ts
-// .vuepress/navbar.ts
+```ts title=".vuepress/navbar.ts"
 import type { NavbarConfig } from "vuepress-theme-hope";
 
 const navbarConfig: NavbarConfig = [
@@ -660,8 +648,7 @@ export default navbarConfig;
 
 @tab JS
 
-```js
-// .vuepress/navbar.js
+```js title=".vuepress/navbar.js"
 import { navbar } from "vuepress-theme-hope";
 
 export default navbar([
@@ -682,7 +669,7 @@ export default navbar([
 ```ts
 import { navbar } from "vuepress-theme-hope";
 
-<!-- @include: ../../.vuepress/navbar/en.ts{3-} -->
+<!-- @include: ../../.vuepress/navbar/en.ts#config -->
 ```
 
 @tab JS
@@ -690,7 +677,7 @@ import { navbar } from "vuepress-theme-hope";
 ```js
 import { navbar } from "vuepress-theme-hope";
 
-<!-- @include: ../../.vuepress/navbar/en.ts{3-} -->
+<!-- @include: ../../.vuepress/navbar/en.ts#config -->
 ```
 
 :::

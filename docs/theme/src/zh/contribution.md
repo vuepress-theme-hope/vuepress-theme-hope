@@ -11,24 +11,14 @@ category:
 
 ## 克隆并安装项目
 
-使用 Git 克隆项目到本地，并使用 `pnpm` 进行依赖的安装。
+你应该预先安装 Node.js 和 Git，并使用 `corepack enable` 启用 corepack。
+
+使用 Git 克隆项目到本地，并安装依赖:
 
 ```sh
 git clone git@github.com:vuepress-theme-hope/vuepress-theme-hope.git
-
 pnpm i
 ```
-
-::: tip
-
-如果你并未安装 pnpm，请使用下列命令安装它:
-
-```sh
-corepack enable
-corepack prepare pnpm@latest --activate
-```
-
-:::
 
 ## 项目文件结构
 
@@ -46,47 +36,30 @@ corepack prepare pnpm@latest --activate
 ├── demo → 演示项目
 │
 ├── docs → 文档目录
-│ ├── auto-catalog → auto-catalog 插件文档
-│ ├── blog → blog2 插件文档
 │ ├── comment → comment2 插件文档
 │ ├── components → components 插件文档
-│ ├── copy-code → copy-code2 插件文档
-│ ├── feed → feed2 插件文档
 │ ├── lightgallery → lightgallery 插件文档
 │ ├── md-enhance → md-enhance 插件文档
 │ ├── photo-swipe → photo-swipe 文档
 │ ├── pwa → pwa2 插件文档
-│ ├── reading-time → reading-time2 插件文档
-│ ├── remove-pwa → remove-pwa 插件文档
-│ ├── rtl → rtl 插件文档
 │ ├── sass-palette → sass-palette 插件文档
 │ ├── shared → vuepress-shared 文档
 │ ├── search-pro → search-pro 插件文档
-│ ├── seo → seo2 插件文档
 │ └── theme → 主题文档
 │
 ├── docs-shared → 文档的通用文件
 |
 ├── packages → 项目源代码
-│ ├── auto-catalog → auto-catalog 插件
-│ ├── blog2 → blog2 插件
 │ ├── comment2 → comment2 插件
 │ ├── components → components 插件
-│ ├── copy-code2 → copy-code2 插件
 │ ├── create → create-vuepress-theme-hope 助手
-│ ├── feed2 → feed2 插件
 │ ├── lightgallery → lightgallery 插件
 │ ├── md-enhance → md-enhance 插件
 │ ├── photo-swipe → photo-swipe 插件
 │ ├── pwa2 → pwa2 插件
-│ ├── reading-time2 → reading-time2 插件
-│ ├── remove-pwa → remove-pwa 插件
-│ ├── rtl → rtl 插件
 │ ├── sass-palette → sass-palette 插件
 │ ├── search-pro → search-pro 插件
-│ ├── seo2 → seo2 插件
 │ ├── shared → 共享文件
-│ ├── sitemap2 → sitemap2 插件
 │ └── theme → vuepress-theme-hope 主题
 │
 ├── scripts → 命令脚本
@@ -136,7 +109,7 @@ corepack prepare pnpm@latest --activate
      └── shared → 客户端和 Node.js 的共享文件
 ```
 
-VuePress 同时运行在客户端和 Node 端。 Node 侧有像 `fs` 这样的 node 模块，而客户端运行在有` document``windows``navigator `等全局变量的浏览器中，你应该清楚一段代码运行在哪里。
+VuePress 同时运行在客户端和 Node 端。 Node 侧有像 `fs` 这样的 node 模块，而客户端运行在有`document``windows``navigator`等全局变量的浏览器中，你应该清楚一段代码运行在哪里。
 
 - `client` 目录存储在浏览器中运行的代码
 - `node` 目录存储在 Node.js 中运行的代码

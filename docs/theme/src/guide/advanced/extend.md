@@ -13,31 +13,20 @@ tag:
 
 You can create your own theme based on `vuepress-theme-hope` and use it locally or publish it according to your needs.
 
-## Theme extending
+## How to Extend Theme Hope
 
 You need to create an entry file for your theme and import `hopeTheme` from `vuepress-theme-hope`.
 
 In your entry file, set `extends: hopeTheme(options)` to extend the `vuepress-theme-hope` theme.
 
-The aliases of the same name (`alias`) and layouts (`layouts`) of your own newly created theme has higher priority over the extended theme `vuepress-theme-hope`, which means that you can override `vuepress-theme-hope` components via `alias` option in theme api, and you can add or override layouts via `layouts` in client config file.
-
-The theme provides the following layouts:
-
-- Layout
-- NotFound
-- Slide (Only available when presentation is enabled)
-- BlogCategory (Only available when blog is enabled)
-- BlogHome (Only available when blog is enabled)
-- BlogType (Only available when blog is enabled)
-- Timeline (Only available when blog is enabled)
+The aliases of the same name (`alias`) and layouts (`layouts`) of your own newly created theme has higher priority over the extended theme `vuepress-theme-hope`, which means that you can override `vuepress-theme-hope` components via `alias` option in theme api, and you can add or override layouts via `layouts` in [client config file](../../cookbook/vuepress/config.md#client-config-file).
 
 ::: code-tabs#language
 
 @tab TS
 
-```ts
-// .vuepress/theme/index.ts
-import { getDirname, path } from "@vuepress/utils";
+```ts title=".vuepress/theme/index.ts"
+import { getDirname, path } from "vuepress/utils";
 import { hopeTheme } from "vuepress-theme-hope";
 import type { ThemeOptions } from "vuepress-theme-hope";
 
@@ -53,7 +42,7 @@ export default (options: ThemeOptions) => ({
     // For example, here we change the vuepress-theme-hope HomePage component to components/HomePage.vue under our own theme
     "@theme-hope/components/HomePage": path.resolve(
       __dirname,
-      "./components/HomePage.vue"
+      "./components/HomePage.vue",
     ),
   },
 });
@@ -61,9 +50,8 @@ export default (options: ThemeOptions) => ({
 
 @tab JS
 
-```js
-// .vuepress/theme/index.js
-import { getDirname, path } from "@vuepress/utils";
+```js title=".vuepress/theme/index.js"
+import { getDirname, path } from "vuepress/utils";
 import { hopeTheme } from "vuepress-theme-hope";
 
 const __dirname = getDirname(import.meta.url);
@@ -78,7 +66,7 @@ export default (options) => ({
     // For example, here we change the vuepress-theme-hope HomePage component to components/HomePage.vue under our own theme
     "@theme-hope/components/HomePage": path.resolve(
       __dirname,
-      "./components/HomePage.vue"
+      "./components/HomePage.vue",
     ),
   },
 });
@@ -88,42 +76,4 @@ export default (options) => ({
 
 Also, you can add or override layout provided by `vuepress-theme-hope` via `layouts` in your theme client config file.
 
-::: code-tabs#language
-
-@tab TS
-
-```ts
-// .vuepress/theme/config.ts
-import { defineClientConfig } from "@vuepress/client";
-import Changelog from "./layouts/Changelog.vue";
-import Layout from "./layouts/Layout.vue";
-
-export default defineClientConfig({
-  // You can override or add layouts here
-  layouts: {
-    // For example, here we change the default layout of vuepress-theme-hope to layouts/Layout.vue under our own theme
-    Layout,
-    // Also we added a Changelog layout
-    Changelog,
-  },
-});
-```
-
-@tab JS
-
-```js
-// .vuepress/theme/config.js
-import { defineClientConfig } from "@vuepress/client";
-import Changelog from "./layouts/Changelog.vue";
-import Layout from "./layouts/Layout.vue";
-
-export default defineClientConfig({
-  // You can override or add layouts here
-  layouts: {
-    // For example, here we change the default layout of vuepress-theme-hope to layouts/Layout.vue under our own theme
-    Layout,
-    // Also we added a Changelog layout
-    Changelog,
-  },
-});
-```
+<!-- @include: ../customize/layout.md#layout -->

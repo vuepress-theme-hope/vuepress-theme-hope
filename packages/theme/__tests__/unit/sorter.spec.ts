@@ -20,7 +20,7 @@ it("should handle readme", () => {
       { type: "file", filename: "README.md" },
 
       // @ts-ignore
-    ].sort(sidebarReadmeSorter)
+    ].sort(sidebarReadmeSorter),
   ).toEqual([
     { type: "file", filename: "README.md" },
     { type: "file", filename: "2.md" },
@@ -40,7 +40,7 @@ it("should handle readme", () => {
       { type: "file", filename: "22.md" },
 
       // @ts-ignore
-    ].sort(sidebarReadmeSorter)
+    ].sort(sidebarReadmeSorter),
   ).toEqual([
     { type: "file", filename: "README.md" },
     { type: "file", filename: "2.md" },
@@ -60,7 +60,7 @@ it("should handle readme", () => {
       { type: "file", filename: "readme.md" },
 
       // @ts-ignore
-    ].sort(sidebarReadmeSorter)
+    ].sort(sidebarReadmeSorter),
   ).toEqual([
     { type: "file", filename: "readme.md" },
     { type: "file", filename: "2.md" },
@@ -80,7 +80,7 @@ it("should handle readme", () => {
       { type: "file", filename: "22.md" },
 
       // @ts-ignore
-    ].sort(sidebarReadmeSorter)
+    ].sort(sidebarReadmeSorter),
   ).toEqual([
     { type: "file", filename: "readme.md" },
     { type: "file", filename: "2.md" },
@@ -101,7 +101,7 @@ describe("should handle order", () => {
         { label: "4", order: null },
 
         // @ts-ignore
-      ].sort(sidebarOrderSorter)
+      ].sort(sidebarOrderSorter),
     ).toEqual([
       { label: "1", order: null },
       { label: "2", order: null },
@@ -119,7 +119,7 @@ describe("should handle order", () => {
         { label: "4", order: null },
 
         // @ts-ignore
-      ].sort(sidebarOrderSorter)
+      ].sort(sidebarOrderSorter),
     ).toEqual([
       { label: "3", order: 1 },
       { label: "1", order: null },
@@ -135,7 +135,7 @@ describe("should handle order", () => {
         { label: "4", order: null },
 
         // @ts-ignore
-      ].sort(sidebarOrderSorter)
+      ].sort(sidebarOrderSorter),
     ).toEqual([
       { label: "2", order: 1 },
       { label: "3", order: 1 },
@@ -151,7 +151,7 @@ describe("should handle order", () => {
         { label: "4", order: null },
 
         // @ts-ignore
-      ].sort(sidebarOrderSorter)
+      ].sort(sidebarOrderSorter),
     ).toEqual([
       { label: "3", order: 1 },
       { label: "2", order: 2 },
@@ -167,7 +167,7 @@ describe("should handle order", () => {
         { label: "4", order: 1 },
 
         // @ts-ignore
-      ].sort(sidebarOrderSorter)
+      ].sort(sidebarOrderSorter),
     ).toEqual([
       { label: "4", order: 1 },
       { label: "3", order: 2 },
@@ -185,7 +185,7 @@ describe("should handle order", () => {
         { label: "4", order: null },
 
         // @ts-ignore
-      ].sort(sidebarOrderSorter)
+      ].sort(sidebarOrderSorter),
     ).toEqual([
       { label: "1", order: null },
       { label: "2", order: null },
@@ -201,7 +201,7 @@ describe("should handle order", () => {
         { label: "4", order: null },
 
         // @ts-ignore
-      ].sort(sidebarOrderSorter)
+      ].sort(sidebarOrderSorter),
     ).toEqual([
       { label: "1", order: null },
       { label: "4", order: null },
@@ -217,7 +217,7 @@ describe("should handle order", () => {
         { label: "4", order: null },
 
         // @ts-ignore
-      ].sort(sidebarOrderSorter)
+      ].sort(sidebarOrderSorter),
     ).toEqual([
       { label: "1", order: null },
       { label: "4", order: null },
@@ -233,7 +233,7 @@ describe("should handle order", () => {
         { label: "4", order: -4 },
 
         // @ts-ignore
-      ].sort(sidebarOrderSorter)
+      ].sort(sidebarOrderSorter),
     ).toEqual([
       { label: "4", order: -4 },
       { label: "3", order: -3 },
@@ -252,7 +252,7 @@ describe("should handle order", () => {
         { label: "5", order: null },
 
         // @ts-ignore
-      ].sort(sidebarOrderSorter)
+      ].sort(sidebarOrderSorter),
     ).toEqual([
       { label: "4", order: 1 },
       { label: "1", order: null },
@@ -274,7 +274,7 @@ describe("should handle time", () => {
         { label: "5", frontmatter: {} },
 
         // @ts-ignore
-      ].sort(sidebarDateSorter)
+      ].sort(sidebarDateSorter),
     ).toEqual([
       { label: "4", frontmatter: { date: new Date("1970-01-01") } },
       { label: "3", frontmatter: { date: new Date("2022-01-01") } },
@@ -294,7 +294,7 @@ describe("should handle time", () => {
         { label: "5", frontmatter: {} },
 
         // @ts-ignore
-      ].sort(sidebarDateDescSorter)
+      ].sort(sidebarDateDescSorter),
     ).toEqual([
       { label: "3", frontmatter: { date: new Date("2022-01-01") } },
       { label: "4", frontmatter: { date: new Date("1970-01-01") } },
@@ -317,7 +317,7 @@ describe("should handle title", () => {
         { title: "a b c" },
 
         // @ts-ignore
-      ].sort(sidebarTitleSorter)
+      ].sort(sidebarTitleSorter),
     ).toEqual([
       { title: "a" },
       { title: "A" },
@@ -339,7 +339,7 @@ describe("should handle title", () => {
         { title: "22" },
 
         // @ts-ignore
-      ].sort(sidebarTitleSorter)
+      ].sort(sidebarTitleSorter),
     ).toEqual([
       { title: "1" },
       { title: "2" },
@@ -359,7 +359,7 @@ describe("should handle title", () => {
         { title: "22" },
 
         // @ts-ignore
-      ].sort(sidebarTitleSorter)
+      ].sort(sidebarTitleSorter),
     ).toEqual([
       { title: "1" },
       { title: "2" },
@@ -379,7 +379,7 @@ describe("should handle title", () => {
         { title: "apple22" },
 
         // @ts-ignore
-      ].sort(sidebarTitleSorter)
+      ].sort(sidebarTitleSorter),
     ).toEqual([
       { title: "apple1" },
       { title: "apple2" },
@@ -399,7 +399,7 @@ describe("should handle title", () => {
         { title: "22apple" },
 
         // @ts-ignore
-      ].sort(sidebarTitleSorter)
+      ].sort(sidebarTitleSorter),
     ).toEqual([
       { title: "1apple" },
       { title: "2apple" },
@@ -419,7 +419,7 @@ describe("should handle title", () => {
         { title: "apple-22" },
 
         // @ts-ignore
-      ].sort(sidebarTitleSorter)
+      ].sort(sidebarTitleSorter),
     ).toEqual([
       { title: "apple-1" },
       { title: "apple-2" },
@@ -439,7 +439,7 @@ describe("should handle title", () => {
         { title: "22-apple" },
 
         // @ts-ignore
-      ].sort(sidebarTitleSorter)
+      ].sort(sidebarTitleSorter),
     ).toEqual([
       { title: "1-apple" },
       { title: "2-apple" },
@@ -459,7 +459,7 @@ describe("should handle title", () => {
         { title: "Banana 3" },
 
         // @ts-ignore
-      ].sort(sidebarTitleSorter)
+      ].sort(sidebarTitleSorter),
     ).toEqual([
       { title: "Apple 2" },
       { title: "Apple 5" },
@@ -482,7 +482,7 @@ it("should handle filename", () => {
       { type: "file", filename: "22.md" },
 
       // @ts-ignore
-    ].sort(sidebarFilenameSorter)
+    ].sort(sidebarFilenameSorter),
   ).toEqual([
     { type: "file", filename: "1.md" },
     { type: "file", filename: "2.md" },
@@ -502,7 +502,7 @@ it("should handle filename", () => {
       { type: "file", filename: "22.md" },
 
       // @ts-ignore
-    ].sort(sidebarFilenameSorter)
+    ].sort(sidebarFilenameSorter),
   ).toEqual([
     { type: "file", filename: "1.md" },
     { type: "file", filename: "2.md" },
@@ -522,7 +522,7 @@ it("should handle filename", () => {
       { type: "file", filename: "22.md" },
 
       // @ts-ignore
-    ].sort(sidebarFilenameSorter)
+    ].sort(sidebarFilenameSorter),
   ).toEqual([
     { type: "file", filename: "1.md" },
     { type: "file", filename: "2.md" },
@@ -542,7 +542,7 @@ it("should handle filename", () => {
       { type: "file", filename: "22.md" },
 
       // @ts-ignore
-    ].sort(sidebarFilenameSorter)
+    ].sort(sidebarFilenameSorter),
   ).toEqual([
     { type: "file", filename: "1.md" },
     { type: "file", filename: "2.md" },
@@ -566,7 +566,7 @@ it("should handle filename", () => {
       { type: "dir", dirname: "a" },
 
       // @ts-ignore
-    ].sort(sidebarFilenameSorter)
+    ].sort(sidebarFilenameSorter),
   ).toEqual([
     { type: "file", filename: "a.md" },
     { type: "dir", dirname: "a" },

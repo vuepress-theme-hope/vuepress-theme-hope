@@ -1,9 +1,8 @@
-import { usePageData } from "@vuepress/client";
-import { type GalleryItem } from "lightgallery/lg-utils.js";
+import type { GalleryItem } from "lightgallery/lg-utils.js";
 import lightGallery from "lightgallery/lightgallery.es5.js";
-import { type LightGallery } from "lightgallery/lightgallery.js";
+import type { LightGallery } from "lightgallery/lightgallery.js";
+import type { VNode } from "vue";
 import {
-  type VNode,
   defineComponent,
   h,
   nextTick,
@@ -12,6 +11,7 @@ import {
   shallowRef,
   watch,
 } from "vue";
+import { usePageData } from "vuepress/client";
 
 import { useLightGalleryPlugins } from "@temp/lightgallery/plugins.js";
 
@@ -26,12 +26,12 @@ const getImages = (images: HTMLImageElement[]): GalleryItem[] =>
   images.map(
     ({ alt, srcset, src }) =>
       <GalleryItem>{
-        alt: alt,
-        src: src,
+        src,
+        srcset,
         thumb: src || srcset,
-        srcset: srcset,
+        alt,
         subHtml: alt,
-      }
+      },
   );
 
 export default defineComponent({
@@ -54,8 +54,8 @@ export default defineComponent({
         nextTick().then(
           () =>
             new Promise<void>((resolve) =>
-              setTimeout(resolve, LIGHT_GALLERY_DELAY)
-            )
+              setTimeout(resolve, LIGHT_GALLERY_DELAY),
+            ),
         ),
       ]);
 
@@ -63,14 +63,14 @@ export default defineComponent({
         instance?.destroy();
 
         const images = Array.from(
-          document.querySelectorAll<HTMLImageElement>(IMAGE_SELECTOR)
+          document.querySelectorAll<HTMLImageElement>(IMAGE_SELECTOR),
         );
 
         instance = new lightGallery(container.value!, {
           ...lightGalleryOptions,
           dynamic: true,
           dynamicEl: getImages(images),
-          // this is a licenseKey to make this project under MIT, special thanks to @Sachin
+          // This is a licenseKey to make this project under MIT, special thanks to @Sachin
           licenseKey: "VSY7R-J@WED-CJY76-UMDXQ",
           plugins: lightGalleryPlugins.map(({ default: plugin }) => plugin),
         });
@@ -84,12 +84,7 @@ export default defineComponent({
     };
 
     onMounted(() => {
-      void initLightGallery();
-
-      watch(
-        () => page.value.path,
-        () => initLightGallery()
-      );
+      watch(() => page.value.path, initLightGallery, { immediate: true });
     });
 
     onUnmounted(() => instance?.destroy());

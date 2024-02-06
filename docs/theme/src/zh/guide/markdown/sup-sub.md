@@ -18,8 +18,7 @@ tag:
 
 @tab TS
 
-```ts {8-13}
-// .vuepress/config.ts
+```ts {8-13} title=".vuepress/config.ts"
 import { defineUserConfig } from "vuepress";
 import { hopeTheme } from "vuepress-theme-hope";
 
@@ -39,8 +38,7 @@ export default defineUserConfig({
 
 @tab JS
 
-```js {7-12}
-// .vuepress/config.js
+```js {7-12} title=".vuepress/config.js"
 import { hopeTheme } from "vuepress-theme-hope";
 
 export default {
@@ -64,26 +62,17 @@ export default {
 - 使用`^ ^`进行上角标标注。
 - 使用`~ ~`进行下角标标注。
 
-::: tip 转义
+::: md-demo 案例
 
-- 你可以使用 `\` 来转义 `^` 和 `~`:
-
-  ```md
-  H\~2~O 19\^th^
-  ```
-
-  会被渲染为
-
-  H\~2~O 19\^th^
+- 19^th^
+- H~2~O
 
 :::
 
-## 例子
+::: md-demo 转义
 
-- 19^th^
-- H~2~O
+你可以使用 `\` 来转义 `^` 和 `~`:
 
-```md
-- 19^th^
-- H~2~O
-```
+H\~2~O 19\^th^
+
+:::

@@ -1,15 +1,16 @@
-import { type PluginFunction } from "@vuepress/core";
+import { addViteOptimizeDepsExclude } from "@vuepress/helper";
+import type { PluginFunction } from "vuepress/core";
 import { useSassPalettePlugin } from "vuepress-plugin-sass-palette";
-import { addViteOptimizeDepsExclude, checkVersion } from "vuepress-shared/node";
 
-import { type LightGalleryOptions } from "./options.js";
+import { convertOptions } from "./compact.js";
+import type { LightGalleryOptions } from "./options.js";
 import { prepareLightGalleryPlugins } from "./prepare.js";
 import { CLIENT_FOLDER, PLUGIN_NAME, logger } from "./utils.js";
 
 export const lightgalleryPlugin =
-  (options: LightGalleryOptions = {}): PluginFunction =>
+  (options: LightGalleryOptions = {}, legacy = true): PluginFunction =>
   (app) => {
-    checkVersion(app, PLUGIN_NAME, "2.0.0-beta.62");
+    if (legacy) convertOptions(options as Record<string, unknown>);
 
     if (app.env.isDebug) logger.info("Options:", options);
 
@@ -38,7 +39,7 @@ export const lightgalleryPlugin =
         addViteOptimizeDepsExclude(bundlerOptions, app, [
           "lightgallery/lightgallery.es5.js",
           ...plugins.map(
-            (name) => `lightgallery/plugins/${name}/lg-${name}.es5.js`
+            (name) => `lightgallery/plugins/${name}/lg-${name}.es5.js`,
           ),
         ]);
         addViteOptimizeDepsExclude(bundlerOptions, app, ["lightgallery"]);

@@ -1,6 +1,6 @@
 import { theme } from "docs-shared";
 
-// the theme wrapper is located in <root>/docs-shared/src/theme-wrapper.ts
+// The theme wrapper is located in <root>/docs-shared/src/theme-wrapper.ts
 export default theme("shared", {
   locales: {
     "/": {
@@ -11,7 +11,7 @@ export default theme("shared", {
           text: "Node",
           icon: "fab fa-node-js",
           prefix: "/node/",
-          children: ["bundler", "locale", "content", "date", "env"],
+          children: ["locale"],
         },
         "/client",
       ],
@@ -27,7 +27,7 @@ export default theme("shared", {
           text: "Node",
           icon: "fab fa-node-js",
           prefix: "/zh/node/",
-          children: ["bundler", "locale", "content", "date", "env"],
+          children: ["locale"],
         },
         "/zh/client",
       ],

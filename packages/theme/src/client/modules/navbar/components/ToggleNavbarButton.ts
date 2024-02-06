@@ -1,4 +1,5 @@
-import { type FunctionalComponent, type VNode, h } from "vue";
+import type { FunctionalComponent, VNode } from "vue";
+import { h } from "vue";
 
 import "../styles/toggle-navbar-button.scss";
 
@@ -24,7 +25,7 @@ const ToggleNavbarButton: FunctionalComponent<
       h("span", { class: "vp-top" }),
       h("span", { class: "vp-middle" }),
       h("span", { class: "vp-bottom" }),
-    ])
+    ]),
   );
 
 ToggleNavbarButton.displayName = "ToggleNavbarButton";

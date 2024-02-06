@@ -176,7 +176,7 @@ Input:
 
 ````md
 ```ts {1,6-8}
-import type { UserConfig } from "@vuepress/cli";
+import type { UserConfig } from "vuepress/cli";
 import { defaultTheme } from "@vuepress/theme-default";
 
 export const config: UserConfig = {
@@ -192,7 +192,7 @@ export const config: UserConfig = {
 Output:
 
 ```ts {1,6-8}
-import type { UserConfig } from "@vuepress/cli";
+import type { UserConfig } from "vuepress/cli";
 import { defaultTheme } from "@vuepress/theme-default";
 
 export const config: UserConfig = {
@@ -369,7 +369,7 @@ Here is a complex example:
 Notice that path aliases are not available in import code syntax. You can use following config to handle path alias yourself:
 
 ```js
-import { getDirname, path } from "@vuepress/utils";
+import { getDirname, path } from "vuepress/utils";
 
 const __dirname = getDirname(import.meta.url);
 

@@ -1,19 +1,22 @@
 import { sidebar } from "docs-shared";
 
+// region config
 export const zhSidebarConfig = sidebar({
   "/zh/": [
     "",
+    "get-started/",
     {
       text: "指南",
       icon: "lightbulb",
       prefix: "guide/",
       children: [
-        "get-started/",
+        "intro/",
         "interface/",
         "layout/",
         "markdown/",
         "feature/",
         "blog/",
+        "customize/",
         "advanced/",
       ],
     },
@@ -34,24 +37,16 @@ export const zhSidebarConfig = sidebar({
       text: "教程",
       icon: "signs-post",
       prefix: "cookbook/",
-      children: ["tutorial/", "markdown/", "vuepress/", "customize/"],
-    },
-    {
-      text: "迁移",
-      icon: "code-compare",
-      prefix: "migration/",
-      children: ["highlight", "config", "page", "style"],
-    },
-    {
-      text: "常见问题",
-      icon: "circle-question",
-      prefix: "faq/",
-      children: ["", "troubleshooting", "common-error", "vite", "safari"],
+      children: ["markdown/", "vuepress/"],
     },
     "demo/",
+    "faq/",
+    "migration/",
     "changelog",
     "contribution",
   ],
+
+  "/zh/get-started/": "structure",
 
   "/zh/guide/": "structure",
 
@@ -60,4 +55,9 @@ export const zhSidebarConfig = sidebar({
   "/zh/cookbook/": "structure",
 
   "/zh/demo/": "structure",
+
+  "/zh/faq/": "structure",
+
+  "/zh/migration/": "structure",
 });
+// #endregion config

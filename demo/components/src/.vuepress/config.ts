@@ -1,7 +1,7 @@
-import { defineUserConfig } from "@vuepress/cli";
+import { addViteSsrNoExternal } from "@vuepress/helper";
 import { defaultTheme } from "@vuepress/theme-default";
+import { defineUserConfig } from "vuepress/cli";
 import { componentsPlugin } from "vuepress-plugin-components";
-import { addViteSsrNoExternal } from "vuepress-shared";
 
 const base = <"/" | `/${string}/`>process.env["BASE"] || "/";
 
@@ -12,7 +12,7 @@ export default defineUserConfig({
   description: "Components library for VuePress2",
 
   theme: defaultTheme({
-    logo: "/logo.svg",
+    logo: "https://theme-hope-assets.vuejs.press/logo.svg",
 
     repo: "vuepress-theme-hope/vuepress-theme-hope/tree/main/demo/components/",
 
@@ -20,25 +20,24 @@ export default defineUserConfig({
 
     sidebar: [
       "/demo/",
-      "/demo/artplayer",
-      "/demo/audioplayer",
+      "/demo/art-player",
+      "/demo/audio-player",
       "/demo/badge",
-      "/demo/bilibili",
-      "/demo/codepen",
-      "/demo/fonticon",
+      "/demo/bili-bili",
+      "/demo/code-pen",
+      "/demo/font-icon",
       "/demo/pdf",
-      "/demo/replit",
+      "/demo/repl-it",
       "/demo/share",
-      "/demo/siteinfo",
-      "/demo/stackblitz",
-      "/demo/videoplayer",
-      "/demo/xigua",
-      "/demo/youtube",
+      "/demo/site-info",
+      "/demo/stack-blitz",
+      "/demo/vp-banner",
+      "/demo/vp-card",
+      "/demo/video-player",
+      "/demo/vid-stack",
+      "/demo/xi-gua",
+      "/demo/you-tube",
     ],
-
-    themePlugins: {
-      backToTop: false,
-    },
   }),
 
   extendsBundlerOptions: (bundlerOptions, app) => {
@@ -59,6 +58,9 @@ export default defineUserConfig({
         "Share",
         "SiteInfo",
         "StackBlitz",
+        "VPBanner",
+        "VPCard",
+        "VidStack",
         "VideoPlayer",
         "XiGua",
         "YouTube",
@@ -74,8 +76,6 @@ export default defineUserConfig({
       },
 
       rootComponents: {
-        addThis: "ra-5f829c59e6c6bc9a",
-        backToTop: true,
         notice: [
           {
             match: /^\/$/,

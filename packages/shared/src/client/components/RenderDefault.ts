@@ -1,4 +1,4 @@
-import { type FunctionalComponent, type VNode } from "vue";
+import type { FunctionalComponent, VNode } from "vue";
 
 export const RenderDefault: FunctionalComponent<
   Record<never, never>,

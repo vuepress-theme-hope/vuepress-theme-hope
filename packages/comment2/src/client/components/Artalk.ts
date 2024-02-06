@@ -1,16 +1,18 @@
-import { usePageData, useSiteData } from "@vuepress/client";
+import { isString } from "@vuepress/helper/client";
 import type Artalk from "artalk";
+import type { VNode } from "vue";
 import {
-  type VNode,
   defineComponent,
   h,
   nextTick,
   onMounted,
+  onUnmounted,
   ref,
   shallowRef,
   watch,
 } from "vue";
-import { LoadingIcon, isString } from "vuepress-shared/client";
+import { usePageData, useSiteData } from "vuepress/client";
+import { LoadingIcon } from "vuepress-shared/client";
 
 import { useArtalkOptions } from "../helpers/index.js";
 
@@ -38,7 +40,7 @@ export default defineComponent({
     darkmode: Boolean,
   },
 
-  setup: (props) => {
+  setup(props) {
     const artalkOptions = useArtalkOptions();
     const page = usePageData();
     const site = useSiteData();
@@ -46,13 +48,13 @@ export default defineComponent({
     const loaded = ref(false);
     const artalkContainer = shallowRef<HTMLDivElement>();
 
-    let artalk: Artalk.default | null = null;
+    let artalk: Artalk | null = null;
 
     const enableArtalk = isString(artalkOptions.server);
 
     const initArtalk = async (): Promise<void> => {
-      const [{ default: _Artalk }] = await Promise.all([
-        import(/* webpackChunkName: "artalk" */ "artalk"),
+      const [{ default: Artalk }] = await Promise.all([
+        import(/* webpackChunkName: "artalk" */ "artalk/dist/Artalk.mjs"),
         new Promise<void>((resolve) => {
           setTimeout(() => {
             resolve();
@@ -60,54 +62,54 @@ export default defineComponent({
         }),
       ]);
 
-      // FIXME: Typescript type issues
-      const Artalk = _Artalk as unknown as typeof _Artalk.default;
-
       loaded.value = true;
       await nextTick();
 
-      try {
-        artalk = new Artalk({
-          useBackendConf: false,
-          site: site.value.title,
-          pageTitle: page.value.title,
-          ...artalkOptions,
-          el: artalkContainer.value!,
-          pageKey: props.identifier,
-          darkMode: props.darkmode,
-        });
+      artalk = Artalk.init({
+        useBackendConf: false,
+        site: site.value.title,
+        pageTitle: page.value.title,
+        ...artalkOptions,
+        el: artalkContainer.value!,
+        pageKey: props.identifier,
+        darkMode: props.darkmode,
+      });
 
-        if (artalkOptions.useBackendConf)
-          artalk.on("conf-loaded", () => {
-            artalk!.setDarkMode(props.darkmode);
-          });
-      } catch (err) {
-        // FIXME: Not sure what the issue is, relevant issue:
-        // https://github.com/vuepress/vuepress-next/issues/1249
-        // https://github.com/ArtalkJS/Artalk/discussions/367
-      }
+      if (artalkOptions.useBackendConf)
+        artalk.on("mounted", () => {
+          artalk!.setDarkMode(props.darkmode);
+        });
+    };
+
+    const updateArtalk = (): void => {
+      artalk!.update({
+        site: site.value.title,
+        pageTitle: page.value.title,
+        pageKey: props.identifier,
+      });
+      artalk!.reload();
     };
 
     onMounted(() => {
+      void initArtalk();
+
       watch(
-        () => page.value.path,
-        async () => {
-          try {
-            artalk?.destroy();
-          } catch (err) {
-            // do nothing
-          }
-          await initArtalk();
+        () => props.identifier,
+        () => {
+          if (artalk) void nextTick().then(() => updateArtalk());
         },
-        { immediate: true }
       );
 
       watch(
         () => props.darkmode,
         (value) => {
           artalk?.setDarkMode(value);
-        }
+        },
       );
+    });
+
+    onUnmounted(() => {
+      artalk?.destroy();
     });
 
     return (): VNode | null =>

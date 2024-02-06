@@ -1,17 +1,7 @@
-import { type PageHeader, usePageData } from "@vuepress/client";
-import {
-  type PropType,
-  type SlotsType,
-  type VNode,
-  defineComponent,
-  h,
-  onMounted,
-  ref,
-  shallowRef,
-  watch,
-} from "vue";
-import { RouterLink, useRoute } from "vue-router";
-import { isActiveLink } from "vuepress-shared/client";
+import type { PropType, SlotsType, VNode } from "vue";
+import { defineComponent, h, onMounted, ref, shallowRef, watch } from "vue";
+import type { PageHeader } from "vuepress/client";
+import { RouteLink, usePageData, useRoute } from "vuepress/client";
 
 import PrintButton from "@theme-hope/modules/info/components/PrintButton";
 import { useMetaLocale } from "@theme-hope/modules/info/composables/index";
@@ -20,17 +10,17 @@ import "../styles/toc.scss";
 
 const renderHeader = ({ title, level, slug }: PageHeader): VNode =>
   h(
-    RouterLink,
+    RouteLink,
     {
       to: `#${slug}`,
       class: ["toc-link", `level${level}`],
     },
-    () => title
+    () => title,
   );
 
 const renderChildren = (
   headers: PageHeader[],
-  headerDepth: number
+  headerDepth: number,
 ): VNode | null => {
   const route = useRoute();
 
@@ -47,14 +37,14 @@ const renderChildren = (
               {
                 class: [
                   "toc-item",
-                  { active: isActiveLink(route, `#${header.slug}`) },
+                  { active: route.hash === `#${header.slug}` },
                 ],
               },
-              renderHeader(header)
+              renderHeader(header),
             ),
             children ? h("li", children) : null,
           ];
-        })
+        }),
       )
     : null;
 };
@@ -85,8 +75,8 @@ export default defineComponent({
   },
 
   slots: Object as SlotsType<{
-    before?: () => VNode | VNode[];
-    after?: () => VNode | VNode[];
+    before?: () => VNode[] | VNode | null;
+    after?: () => VNode[] | VNode | null;
   }>,
 
   setup(props, { slots }) {
@@ -107,11 +97,11 @@ export default defineComponent({
 
         if (activeTocItem)
           tocMarkerTop.value = `${
-            // active toc item top
+            // Active toc item top
             activeTocItem.getBoundingClientRect().top -
-            // toc top
+            // Toc top
             toc.value.getBoundingClientRect().top +
-            // toc scroll top
+            // Toc scroll top
             toc.value.scrollTop
           }px`;
         else tocMarkerTop.value = "-1.7rem";
@@ -121,59 +111,58 @@ export default defineComponent({
     };
 
     onMounted(() => {
-      // scroll to active toc item
+      // Scroll to active toc item
       watch(
         () => route.hash,
         (hash): void => {
           if (toc.value) {
-            // get the active toc item DOM, whose href equals to the current route
+            // Get the active toc item DOM, whose href equals to the current route
             const activeTocItem = document.querySelector(
-              `#toc a.toc-link[href$="${hash}"]`
+              `#toc a.toc-link[href$="${hash}"]`,
             );
 
             if (!activeTocItem) return;
 
-            // get the top and height of the toc
+            // Get the top and height of the toc
             const { top: tocTop, height: tocHeight } =
               toc.value.getBoundingClientRect();
-            // get the top and height of the active toc item
+            // Get the top and height of the active toc item
             const { top: activeTocItemTop, height: activeTocItemHeight } =
               activeTocItem.getBoundingClientRect();
 
-            // when the active toc item overflows the top edge of toc
+            // When the active toc item overflows the top edge of toc
             if (activeTocItemTop < tocTop)
-              // scroll to the top edge of toc
+              // Scroll to the top edge of toc
               scrollTo(toc.value.scrollTop + activeTocItemTop - tocTop);
-            // when the active toc item overflows the bottom edge of toc
+            // When the active toc item overflows the bottom edge of toc
             else if (
               activeTocItemTop + activeTocItemHeight >
               tocTop + tocHeight
             )
-              // scroll to the bottom edge of toc
+              // Scroll to the bottom edge of toc
               scrollTo(
                 toc.value.scrollTop +
                   activeTocItemTop +
                   activeTocItemHeight -
                   tocTop -
-                  tocHeight
+                  tocHeight,
               );
           }
-        }
+        },
       );
 
-      watch(
-        () => route.fullPath,
-        () => updateTocMarker(),
-        { flush: "post", immediate: true }
-      );
+      watch(() => route.fullPath, updateTocMarker, {
+        flush: "post",
+        immediate: true,
+      });
     });
 
     return (): VNode | null => {
       const tocHeaders = props.items.length
         ? renderChildren(props.items, props.headerDepth)
         : page.value.headers
-        ? renderChildren(page.value.headers, props.headerDepth)
-        : null;
+          ? renderChildren(page.value.headers, props.headerDepth)
+          : null;
 
       return tocHeaders
         ? h("div", { class: "toc-place-holder" }, [

@@ -1,8 +1,9 @@
-import { type PropType, type VNode, computed, defineComponent, h } from "vue";
-import {
-  type ReadingTime,
-  type ReadingTimeLocale,
-} from "vuepress-plugin-reading-time2/client";
+import type {
+  ReadingTime,
+  ReadingTimeLocale,
+} from "@vuepress/plugin-reading-time/client";
+import type { PropType, VNode } from "vue";
+import { computed, defineComponent, h } from "vue";
 
 import { TimerIcon } from "@theme-hope/modules/info/components/icons";
 import { useMetaLocale } from "@theme-hope/modules/info/composables/index";
@@ -70,7 +71,7 @@ export default defineComponent({
                 property: "timeRequired",
                 content: readingTimeMeta.value,
               }),
-            ]
+            ],
           )
         : null;
   },

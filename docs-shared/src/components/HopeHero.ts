@@ -1,4 +1,5 @@
-import { type FunctionalComponent, type VNode, h } from "vue";
+import type { FunctionalComponent, VNode } from "vue";
+import { h } from "vue";
 import HeroInfo from "vuepress-theme-hope/components/HeroInfo.js";
 
 import HopeLogo from "./HopeLogo.js";

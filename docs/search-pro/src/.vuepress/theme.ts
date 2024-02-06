@@ -1,6 +1,6 @@
 import { theme } from "docs-shared";
 
-// the theme wrapper is located in <root>/docs-shared/src/theme-wrapper.ts
+// The theme wrapper is located in <root>/docs-shared/src/theme-wrapper.ts
 export default theme("search-pro", {
   locales: {
     "/": {
@@ -16,9 +16,12 @@ export default theme("search-pro", {
   },
 
   plugins: {
+    // @ts-ignore
+    docsearch: false,
     mdEnhance: {
       codetabs: true,
       imgMark: true,
     },
+    searchPro: true,
   },
 });

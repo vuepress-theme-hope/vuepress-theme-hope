@@ -2,15 +2,16 @@
 home: true
 title: Home
 icon: home
-heroImage: /logo.svg
 heroText: vuepress-plugin-sass-palette
 tagline: Sass palette plugin for VuePress2
 actions:
-  - text: Guide 💡
+  - text: Guide
+    icon: lightbulb
     link: ./guide.html
     type: primary
 
-  - text: Config 🛠
+  - text: Config
+    icon: tools
     link: ./config.html
 
 footer: Theme by <a href="https://theme-hope.vuejs.press" target="_blank">VuePress Theme Hope</a> | MIT Licensed, Copyright © 2019-present Mr.Hope
@@ -52,10 +53,9 @@ You must invoke `useSassPalettePlugin` function during plugin initialization to 
 
 @tab TS
 
-```ts
-// Your plugin or theme entry
+```ts title="Your plugin or theme entry"
 import { useSassPalettePlugin } from "vuepress-plugin-sass-palette";
-import type { PluginFunction } from "@vuepress/core";
+import type { PluginFunction } from "vuepress/core";
 
 export const yourPlugin =
   (options): PluginFunction =>
@@ -72,8 +72,7 @@ export const yourPlugin =
 
 @tab JS
 
-```js
-// Your plugin or theme entry
+```js title="Your plugin or theme entry"
 import { useSassPalettePlugin } from "vuepress-plugin-sass-palette";
 
 export const yourPlugin = (options) => (app) => {

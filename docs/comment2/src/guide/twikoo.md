@@ -7,6 +7,30 @@ A concise, safe and free static site commenting system, based on [Tencent Cloud 
 
 <!-- more -->
 
+## Install
+
+::: code-tabs#shell
+
+@tab pnpm
+
+```bash
+pnpm add -D twikoo
+```
+
+@tab yarn
+
+```bash
+yarn add -D twikoo
+```
+
+@tab npm
+
+```bash
+npm i -D twikoo
+```
+
+:::
+
 ## Getting started
 
 ### Vercel Deployment

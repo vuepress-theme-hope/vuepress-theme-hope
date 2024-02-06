@@ -8,118 +8,9 @@ tag:
   - 搜索
 ---
 
-主题对 <ProjectLink name="search-pro" path="/zh/">`vuepress-plugin-search-pro`</ProjectLink>、 [`@vuepress/plugin-docsearch`][docsearch] 和 [`@vuepress/plugin-search`][search] 提供了内置支持。你只需要添加并配置所需的搜索插件，就能够在导航栏获得一个搜索框。
-
-如果你需要搜索插件，请通过 [**VuePress 配置文件**](../../cookbook/vuepress/config.md) 的 `plugins` 选项应用它。
-
-::: warning
-
-主题只是添加了上述搜索插件的支持，而并没有捆绑它们，你需要自己安装和调用。
-
-:::
-
-::: danger
-
-**请勿**在主题选项中使用 `plugins.search`。
-
-由于主题只能调用它捆绑的插件，因此主题选项中的 `plugins` 字段仅接受**特定**插件名称。
-
-:::
+主题对 <ProjectLink name="search-pro" path="/zh/">`vuepress-plugin-search-pro`</ProjectLink>、 [`@vuepress/plugin-docsearch`][docsearch] 和 [`@vuepress/plugin-search`][search] 提供了内置支持。你只需要安装并配置所需的搜索插件，就能够在导航栏获得一个搜索框。
 
 <!-- more -->
-
-## 使用 `vuepress-plugin-search-pro`
-
-1. 安装 `vuepress-plugin-search-pro`
-
-   ::: code-tabs#shell
-
-   @tab pnpm
-
-   ```bash
-   pnpm add -D vuepress-plugin-search-pro
-   ```
-
-   @tab yarn
-
-   ```bash
-   yarn add -D vuepress-plugin-search-pro
-   ```
-
-   @tab npm
-
-   ```bash
-   npm i -D vuepress-plugin-search-pro
-   ```
-
-   :::
-
-1. 从 `vuepress-plugin-search-pro` 导入 `searchProPlugin` 并将其应用至 `config.{ts,js}` 下的 `plugins` 选项.
-
-   ::: code-tabs#language
-
-   @tab TS
-
-   ```ts
-   // .vuepress/config.ts
-   import { defineUserConfig } from "vuepress";
-   import { searchProPlugin } from "vuepress-plugin-search-pro";
-
-   export default defineUserConfig({
-     plugins: [
-       searchProPlugin({
-         // 索引全部内容
-         indexContent: true,
-         // 为分类和标签添加索引
-         customFields: [
-           {
-             getter: (page) => page.frontmatter.category,
-             formatter: "分类：$content",
-           },
-           {
-             getter: (page) => page.frontmatter.tag,
-             formatter: "标签：$content",
-           },
-         ],
-       }),
-     ],
-   });
-   ```
-
-   @tab JS
-
-   ```js
-   // .vuepress/config.js
-   import { searchProPlugin } from "vuepress-plugin-search-pro";
-
-   export default {
-     plugins: [
-       searchProPlugin({
-         // 索引全部内容
-         indexContent: true,
-         // 为分类和标签添加索引
-         customFields: [
-           {
-             getter: (page) => page.frontmatter.category,
-             formatter: "分类：$content",
-           },
-           {
-             getter: (page) => page.frontmatter.tag,
-             formatter: "标签：$content",
-           },
-         ],
-       }),
-     ],
-   };
-   ```
-
-   :::
-
-::: info 更多
-
-关于搜索插件的可用选项，详见 <ProjectLink name="search-pro" path="/zh/">插件文档</ProjectLink>。
-
-:::
 
 ## 使用 `@vuepress/plugin-docsearch`
 
@@ -147,7 +38,7 @@ tag:
        "https://YOUR_WEBSITE_URL/",
      ],
      sitemaps: [
-       // 如果你在使用 Sitemap 插件 (如: vuepress-plugin-sitemap2)，你可以提供 Sitemap 链接
+       // 如果你在使用 Sitemap 插件 (如: @vuepress/plugin-sitemap)，你可以提供 Sitemap 链接
        "https://YOUR_WEBSITE_URL/sitemap.xml",
      ],
      ignoreCanonicalTo: false,
@@ -294,41 +185,44 @@ tag:
 
    :::
 
-1. 从 `@vuepress/plugin-docsearch` 导入 `docsearchPlugin`，并在 `config.{ts,js}` 中的 `plugins` 应用。
+1. 通过 `plugins.docsearch` 选项配置插件
 
    ::: code-tabs#language
 
    @tab TS
 
-   ```ts
-   // .vuepress/config.ts
-   import { docsearchPlugin } from "@vuepress/plugin-docsearch";
+   ```ts {8-11} title=".vuepress/config.ts"
    import { defineUserConfig } from "vuepress";
+   import { hopeTheme } from "vuepress-theme-hope";
 
    export default defineUserConfig({
-     plugins: [
-       docsearchPlugin({
-         // 你的选项
-         // appId, apiKey 和 indexName 是必填的
-       }),
-     ],
+     theme: hopeTheme({
+       plugins: {
+         docsearch: {
+           // 你的选项
+           // appId, apiKey 和 indexName 是必填的
+         },
+       },
+     }),
    });
    ```
 
    @tab JS
 
-   ```js
-   // .vuepress/config.js
-   import { docsearchPlugin } from "@vuepress/plugin-docsearch";
+   ```js {8-11} title=".vuepress/config.js"
+   import { defineUserConfig } from "vuepress";
+   import { hopeTheme } from "vuepress-theme-hope";
 
-   export default {
-     plugins: [
-       docsearchPlugin({
-         // 你的选项
-         // appId, apiKey 和 indexName 是必填的
-       }),
-     ],
-   };
+   export default defineUserConfig({
+     theme: hopeTheme({
+       plugins: {
+         docsearch: {
+           // 你的选项
+           // appId, apiKey 和 indexName 是必填的
+         },
+       },
+     }),
+   });
    ```
 
    :::
@@ -339,136 +233,81 @@ tag:
 
 :::
 
-### `@vuepress/plugin-docsearch` 本地化翻译
+## 使用 `vuepress-plugin-search-pro`
 
-你可以通过插件选项中的 `locales` 配置多语言。
+1. 安装 `vuepress-plugin-search-pro`
 
-:::: details 中文多语言配置示例
+   ::: code-tabs#shell
 
-::: code-tabs#language
+   @tab pnpm
 
-@tab TS
+   ```bash
+   pnpm add -D vuepress-plugin-search-pro
+   ```
 
-```ts
-// .vuepress/config.ts
-import { defineUserConfig } from "vuepress";
-import { docsearchPlugin } from "@vuepress/plugin-docsearch";
+   @tab yarn
 
-export default defineUserConfig({
-  plugins: [
-    docsearchPlugin({
-      // ...
+   ```bash
+   yarn add -D vuepress-plugin-search-pro
+   ```
 
-      locales: {
-        "/zh/": {
-          placeholder: "搜索文档",
-          translations: {
-            button: {
-              buttonText: "搜索文档",
-              buttonAriaLabel: "搜索文档",
-            },
-            modal: {
-              searchBox: {
-                resetButtonTitle: "清除查询条件",
-                resetButtonAriaLabel: "清除查询条件",
-                cancelButtonText: "取消",
-                cancelButtonAriaLabel: "取消",
-              },
-              startScreen: {
-                recentSearchesTitle: "搜索历史",
-                noRecentSearchesText: "没有搜索历史",
-                saveRecentSearchButtonTitle: "保存至搜索历史",
-                removeRecentSearchButtonTitle: "从搜索历史中移除",
-                favoriteSearchesTitle: "收藏",
-                removeFavoriteSearchButtonTitle: "从收藏中移除",
-              },
-              errorScreen: {
-                titleText: "无法获取结果",
-                helpText: "你可能需要检查你的网络连接",
-              },
-              footer: {
-                selectText: "选择",
-                navigateText: "切换",
-                closeText: "关闭",
-                searchByText: "搜索提供者",
-              },
-              noResultsScreen: {
-                noResultsText: "无法找到相关结果",
-                suggestedQueryText: "你可以尝试查询",
-                reportMissingResultsText: "你认为该查询应该有结果？",
-                reportMissingResultsLinkText: "点击反馈",
-              },
-            },
-          },
-        },
-      },
-    }),
-  ],
-});
-```
+   @tab npm
 
-@tab JS
+   ```bash
+   npm i -D vuepress-plugin-search-pro
+   ```
 
-```js
-// .vuepress/config.js
-import { docsearchPlugin } from "@vuepress/plugin-docsearch";
+   :::
 
-export default {
-  plugins: [
-    docsearchPlugin({
-      // ...
+1. 在主题选项中配置 `plugins.searchPro`。
 
-      locales: {
-        "/zh/": {
-          placeholder: "搜索文档",
-          translations: {
-            button: {
-              buttonText: "搜索文档",
-              buttonAriaLabel: "搜索文档",
-            },
-            modal: {
-              searchBox: {
-                resetButtonTitle: "清除查询条件",
-                resetButtonAriaLabel: "清除查询条件",
-                cancelButtonText: "取消",
-                cancelButtonAriaLabel: "取消",
-              },
-              startScreen: {
-                recentSearchesTitle: "搜索历史",
-                noRecentSearchesText: "没有搜索历史",
-                saveRecentSearchButtonTitle: "保存至搜索历史",
-                removeRecentSearchButtonTitle: "从搜索历史中移除",
-                favoriteSearchesTitle: "收藏",
-                removeFavoriteSearchButtonTitle: "从收藏中移除",
-              },
-              errorScreen: {
-                titleText: "无法获取结果",
-                helpText: "你可能需要检查你的网络连接",
-              },
-              footer: {
-                selectText: "选择",
-                navigateText: "切换",
-                closeText: "关闭",
-                searchByText: "搜索提供者",
-              },
-              noResultsScreen: {
-                noResultsText: "无法找到相关结果",
-                suggestedQueryText: "你可以尝试查询",
-                openIssueText: "你认为该查询应该有结果？",
-                openIssueLinkText: "点击反馈",
-              },
-            },
-          },
-        },
-      },
-    }),
-  ],
-};
-```
+   你可以将 `plugins.searchPro` 设置为 `true` 来直接启用它，或者将其设置为一个对象来自定义插件。
+
+   ::: code-tabs#language
+
+   @tab TS
+
+   ```ts title=".vuepress/config.ts"
+   import { defineUserConfig } from "vuepress";
+   import { hopeTheme } from "vuepress-theme-hope";
+
+   export default defineUserConfig({
+     theme: hopeTheme({
+       plugins: {
+         searchPro: true,
+         // searchPro: {
+         //   插件选项
+         // },
+       },
+     }),
+   });
+   ```
+
+   @tab JS
+
+   ```js title=".vuepress/config.js"
+   import { defineUserConfig } from "vuepress";
+   import { hopeTheme } from "vuepress-theme-hope";
+
+   export default defineUserConfig({
+     theme: hopeTheme({
+       plugins: {
+         searchPro: true,
+         // searchPro: {
+         //   插件选项
+         // },
+       },
+     }),
+   });
+   ```
+
+   :::
+
+::: info 更多
+
+关于搜索插件的可用选项，详见 <ProjectLink name="search-pro" path="/zh/">插件文档</ProjectLink>。
 
 :::
-
-::::
 
 ## 使用 `@vuepress/plugin-search`
 
@@ -496,39 +335,46 @@ export default {
 
    :::
 
-1. 从 `@vuepress/plugin-search` 导入 `searchPlugin` 并将其应用至 `config.{ts,js}` 下的 `plugins` 选项.
+1. Customize `plugins.search` in theme options.
+
+1. 在主题选项中配置 `plugins.search`。
 
    ::: code-tabs#language
 
    @tab TS
 
-   ```ts
-   // .vuepress/config.ts
-   import { searchPlugin } from "@vuepress/plugin-search";
+   ```ts title=".vuepress/config.ts"
    import { defineUserConfig } from "vuepress";
+   import { hopeTheme } from "vuepress-theme-hope";
 
    export default defineUserConfig({
-     plugins: [
-       searchPlugin({
-         // 你的选项
-       }),
-     ],
+     theme: hopeTheme({
+       plugins: {
+         search: true,
+         // search: {
+         //   插件选项
+         // },
+       },
+     }),
    });
    ```
 
    @tab JS
 
-   ```js
-   // .vuepress/config.js
-   import { searchPlugin } from "@vuepress/plugin-search";
+   ```js title=".vuepress/config.js"
+   import { defineUserConfig } from "vuepress";
+   import { hopeTheme } from "vuepress-theme-hope";
 
-   export default {
-     plugins: [
-       searchPlugin({
-         // 你的选项
-       }),
-     ],
-   };
+   export default defineUserConfig({
+     theme: hopeTheme({
+       plugins: {
+         search: true,
+         // search: {
+         //   插件选项
+         // },
+       },
+     }),
+   });
    ```
 
    :::
@@ -539,60 +385,5 @@ export default {
 
 :::
 
-### `@vuepress/plugin-search` 本地化翻译
-
-如果你正在提供中文文档，你可以将其设置到插件选项中的 `locales` 中。
-
-:::: details 中文多语言配置
-
-::: code-tabs#language
-
-@tab TS
-
-```ts
-// .vuepress/config.ts
-import { defineUserConfig } from "vuepress";
-import { searchPlugin } from "@vuepress/plugin-search";
-
-export default defineUserConfig({
-  plugins: [
-    searchPlugin({
-      // ...
-
-      locales: {
-        "/zh/": {
-          placeholder: "搜索",
-        },
-      },
-    }),
-  ],
-});
-```
-
-@tab JS
-
-```js
-// .vuepress/config.js
-import { searchPlugin } from "@vuepress/plugin-search";
-
-export default {
-  plugins: [
-    searchPlugin({
-      // ...
-
-      locales: {
-        "/zh/": {
-          placeholder: "搜索",
-        },
-      },
-    }),
-  ],
-};
-```
-
-:::
-
-::::
-
-[docsearch]: https://vuejs.press/zh/reference/plugin/docsearch.html
-[search]: https://vuejs.press/zh/reference/plugin/search.html
+[docsearch]: https://ecosystem.vuejs.press/zh/plugins/docsearch.html
+[search]: https://ecosystem.vuejs.press/zh/plugins/search.html

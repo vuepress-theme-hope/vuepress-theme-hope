@@ -2,15 +2,16 @@
 home: true
 title: 主页
 icon: home
-heroImage: /logo.svg
 heroText: vuepress-plugin-sass-palette
 tagline: VuePress2 的 Sass 调色板插件
 actions:
-  - text: 快速上手 💡
+  - text: 快速上手
+    icon: lightbulb
     link: ./guide.html
     type: primary
 
-  - text: 配置 🛠
+  - text: 配置
+    icon: tools
     link: ./config.html
 
 footer: 使用 <a href="https://theme-hope.vuejs.press/zh/" target="_blank">VuePress Theme Hope</a> 主题 | MIT 协议, 版权所有 © 2019-present Mr.Hope
@@ -52,10 +53,9 @@ npm i -D vuepress-plugin-sass-palette
 
 @tab TS
 
-```ts
-// 你的插件或主题入口
+```ts title="你的插件或主题入口"
 import { useSassPalettePlugin } from "vuepress-plugin-sass-palette";
-import type { PluginFunction } from "@vuepress/core";
+import type { PluginFunction } from "vuepress/core";
 
 export const yourPlugin =
   (options): PluginFunction =>
@@ -72,8 +72,7 @@ export const yourPlugin =
 
 @tab JS
 
-```js
-// 你的插件或主题入口
+```js title="你的插件或主题入口"
 import { useSassPalettePlugin } from "vuepress-plugin-sass-palette";
 
 const yourPlugin = (options) => (app) => {

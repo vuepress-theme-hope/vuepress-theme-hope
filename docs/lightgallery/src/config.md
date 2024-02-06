@@ -19,9 +19,7 @@ Image selector
 
 Light Gallery Plugins to enable
 
-::: note
-
-Optional values:
+::: info Available plugins
 
 - `"autoplay"`
 - `"fullscreen"`
@@ -46,15 +44,8 @@ If the theme you are using has a switching animation, we recommend you setting t
 
 ### defineLightGalleryConfig
 
-Additional options which will pass to [`lightgallery`](https://www.lightgalleryjs.com/docs/settings/).
-
 ```ts
-// .vuepress/client.ts
-import { defineLightGalleryConfig } from "vuepress-plugin-lightgallery/client";
-
-defineLightGalleryConfig({
-  // set lightgallery options here
-});
-
-export default {};
+const defineLightGalleryConfig: (options: LightGallerySettings) => void;
 ```
+
+Additional options which will pass to [`lightgallery`](https://www.lightgalleryjs.com/docs/settings/).

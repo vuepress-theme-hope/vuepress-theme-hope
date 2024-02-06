@@ -1,6 +1,11 @@
-import { useRouteLocale, useSiteLocaleData, withBase } from "@vuepress/client";
-import { type VNode, computed, defineComponent, h } from "vue";
-import { RouterLink } from "vue-router";
+import type { VNode } from "vue";
+import { computed, defineComponent, h } from "vue";
+import {
+  RouteLink,
+  useRouteLocale,
+  useSiteLocaleData,
+  withBase,
+} from "vuepress/client";
 
 import { useThemeLocaleData } from "@theme-hope/composables/index";
 
@@ -15,24 +20,24 @@ export default defineComponent({
     const themeLocale = useThemeLocaleData();
 
     const siteBrandLink = computed(
-      () => themeLocale.value.home || routeLocale.value
+      () => themeLocale.value.home || routeLocale.value,
     );
 
     const siteTitle = computed(() => siteLocale.value.title);
     const siteBrandTitle = computed(
-      () => themeLocale.value.navTitle ?? siteTitle.value
+      () => themeLocale.value.navTitle ?? siteTitle.value,
     );
 
     const siteBrandLogo = computed(() =>
-      themeLocale.value.logo ? withBase(themeLocale.value.logo) : null
+      themeLocale.value.logo ? withBase(themeLocale.value.logo) : null,
     );
 
     const siteBrandLogoDark = computed(() =>
-      themeLocale.value.logoDark ? withBase(themeLocale.value.logoDark) : null
+      themeLocale.value.logoDark ? withBase(themeLocale.value.logoDark) : null,
     );
 
     return (): VNode =>
-      h(RouterLink, { to: siteBrandLink.value, class: "vp-brand" }, () => [
+      h(RouteLink, { to: siteBrandLink.value, class: "vp-brand" }, () => [
         siteBrandLogo.value
           ? h("img", {
               class: [
@@ -40,14 +45,14 @@ export default defineComponent({
                 { light: Boolean(siteBrandLogoDark.value) },
               ],
               src: siteBrandLogo.value,
-              alt: siteTitle.value,
+              alt: "",
             })
           : null,
         siteBrandLogoDark.value
           ? h("img", {
               class: ["vp-nav-logo dark"],
               src: siteBrandLogoDark.value,
-              alt: siteTitle.value,
+              alt: "",
             })
           : null,
         siteBrandTitle.value
@@ -63,7 +68,7 @@ export default defineComponent({
                   },
                 ],
               },
-              siteBrandTitle.value
+              siteBrandTitle.value,
             )
           : null,
       ]);

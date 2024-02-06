@@ -1,6 +1,6 @@
-import { createBaseApp } from "@vuepress/core";
-import { path } from "@vuepress/utils";
 import { describe, expect, it } from "vitest";
+import { createBaseApp } from "vuepress/core";
+import { path } from "vuepress/utils";
 
 import { emptyTheme } from "./__fixtures__/theme/empty.js";
 import { getStructureInfo } from "../../src/node/prepare/sidebar/structure.js";

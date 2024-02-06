@@ -23,7 +23,9 @@
 
   cursor: pointer;
 
-  transition: background var(--vp-ct), color var(--vp-ct);
+  transition:
+    background var(--vp-ct),
+    color var(--vp-ct);
 
   @media print {
     display: none;
@@ -76,6 +78,8 @@
   line-height: 1;
   letter-spacing: -0.1em;
 
-  transition: background var(--vp-ct), color var(--vp-ct),
+  transition:
+    background var(--vp-ct),
+    color var(--vp-ct),
     border var(--vp-ct) box-shadow var(--vp-ct);
 }

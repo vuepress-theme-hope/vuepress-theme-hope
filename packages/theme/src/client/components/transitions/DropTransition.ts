@@ -1,12 +1,5 @@
-import {
-  type PropType,
-  type SlotsType,
-  Transition,
-  TransitionGroup,
-  type VNode,
-  defineComponent,
-  h,
-} from "vue";
+import type { PropType, SlotsType, VNode } from "vue";
+import { Transition, TransitionGroup, defineComponent, h } from "vue";
 
 export default defineComponent({
   name: "DropTransition",
@@ -37,7 +30,7 @@ export default defineComponent({
   },
 
   slots: Object as SlotsType<{
-    default: () => VNode | VNode[];
+    default: () => VNode[] | VNode;
   }>,
 
   setup(props, { slots }) {
@@ -65,7 +58,7 @@ export default defineComponent({
           onAfterEnter: unsetStyle,
           onBeforeLeave: setStyle,
         },
-        () => slots.default()
+        () => slots.default(),
       );
   },
 });

@@ -7,12 +7,12 @@ export default hopeTheme({
 
   author: {
     name: "Mr.Hope",
-    url: "https://mrhope.site",
+    url: "https://mister-hope.com",
   },
 
   iconAssets: "fontawesome-with-brands",
 
-  logo: "/logo.svg",
+  logo: "https://theme-hope-assets.vuejs.press/logo.svg",
 
   repo: "vuepress-theme-hope/vuepress-theme-hope",
 
@@ -48,29 +48,22 @@ export default hopeTheme({
       categoryId: "DIC_kwDOG_Pt2M4COD69",
     },
 
+    components: {
+      components: ["Badge", "VPCard"],
+    },
+
     // All features are enabled for demo, only preserve features you need here
     mdEnhance: {
       align: true,
       attrs: true,
-      chart: true,
       codetabs: true,
+      component: true,
       demo: true,
-      echarts: true,
       figure: true,
-      flowchart: true,
-      gfm: true,
       imgLazyload: true,
       imgSize: true,
       include: true,
-      katex: true,
       mark: true,
-      mermaid: true,
-      playground: {
-        presets: ["ts", "vue"],
-      },
-      presentation: {
-        plugins: ["highlight", "math", "search", "notes", "zoom"],
-      },
       stylize: [
         {
           matcher: "Recommended",
@@ -88,10 +81,47 @@ export default hopeTheme({
       sup: true,
       tabs: true,
       vPre: true,
-      vuePlayground: true,
+
+      // install chart.js before enabling it
+      // chart: true,
+
+      // insert component easily
+
+      // install echarts before enabling it
+      // echarts: true,
+
+      // install flowchart.ts before enabling it
+      // flowchart: true,
+
+      // gfm requires mathjax-full to provide tex support
+      // gfm: true,
+
+      // install katex before enabling it
+      // katex: true,
+
+      // install mathjax-full before enabling it
+      // mathjax: true,
+
+      // install mermaid before enabling it
+      // mermaid: true,
+
+      // playground: {
+      //   presets: ["ts", "vue"],
+      // },
+
+      // install reveal.js before enabling it
+      // revealJs: {
+      //   plugins: ["highlight", "math", "search", "notes", "zoom"],
+      // },
+
+      // install @vue/repl before enabling it
+      // vuePlayground: true,
+
+      // install sandpack-vue3 before enabling it
+      // sandpack: true,
     },
 
-    // uncomment these if you want a pwa
+    // install vuepress-plugin-pwa2 and uncomment these if you want a PWA
     // pwa: {
     //   favicon: "/favicon.ico",
     //   cacheHTML: true,

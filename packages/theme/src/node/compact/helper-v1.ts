@@ -1,21 +1,16 @@
-import { type UserConfig } from "@vuepress/cli";
-import { type Plugin, type PluginConfig } from "@vuepress/core";
-import { type MarkdownOptions } from "@vuepress/markdown";
-import { colors } from "@vuepress/utils";
-import {
-  isArray,
-  isFunction,
-  isPlainObject,
-  isString,
-} from "vuepress-shared/node";
+import { isArray, isFunction, isPlainObject, isString } from "@vuepress/helper";
+import type { UserConfig } from "vuepress/cli";
+import type { Plugin, PluginConfig } from "vuepress/core";
+import type { MarkdownOptions } from "vuepress/markdown";
+import { colors } from "vuepress/utils";
 
 import { defineHopeConfig } from "./helper-v2.js";
 import { convertThemeOptions } from "./theme.js";
 import { deprecatedMsg } from "./utils.js";
-import {
-  type NavbarOptions,
-  type SidebarOptions,
-  type ThemeOptions,
+import type {
+  NavbarOptions,
+  SidebarOptions,
+  ThemeOptions,
 } from "../../shared/index.js";
 import { logger } from "../utils.js";
 
@@ -25,7 +20,7 @@ import { logger } from "../utils.js";
 export const navbarConfig = (config: NavbarOptions): NavbarOptions => {
   deprecatedMsg(
     "navbarConfig",
-    'import { navbar } from "vuepress-theme-hope";'
+    'import { navbar } from "vuepress-theme-hope";',
   );
 
   return config;
@@ -37,7 +32,7 @@ export const navbarConfig = (config: NavbarOptions): NavbarOptions => {
 export const sidebarConfig = (config: SidebarOptions): SidebarOptions => {
   deprecatedMsg(
     "sidebarConfig",
-    'import { sidebar } from "vuepress-theme-hope";'
+    'import { sidebar } from "vuepress-theme-hope";',
   );
 
   return config;
@@ -49,28 +44,28 @@ export const sidebarConfig = (config: SidebarOptions): SidebarOptions => {
 export const themeConfig = (themeConfig: ThemeOptions): ThemeOptions => {
   deprecatedMsg(
     "themeConfig",
-    'import { hopeThemeLegacy } from "vuepress-theme-hope";'
+    'import { hopeThemeLegacy } from "vuepress-theme-hope";',
   );
 
   return convertThemeOptions(
-    themeConfig as ThemeOptions & Record<string, unknown>
+    themeConfig as ThemeOptions & Record<string, unknown>,
   );
 };
 
 const checkMarkdownOptions = (
-  options: MarkdownOptions & Record<string, unknown> = {}
+  options: MarkdownOptions & Record<string, unknown> = {},
 ): void => {
-  // lineNumbers
+  // LineNumbers
   if ("lineNumbers" in options) {
     logger.warn(
       `${colors.magenta("markdown.lineNumbers")} is ${colors.yellow(
-        "deprecated"
+        "deprecated",
       )}  in VuePress2, please use ${colors.magenta(
-        "markdown.code.lineNumbers"
-      )} instead.`
+        "markdown.code.lineNumbers",
+      )} instead.`,
     );
 
-    options.code = options.code ?? {};
+    options.code ??= {};
 
     if (isPlainObject(options.code))
       options.code.lineNumbers = options["lineNumbers"] as boolean;
@@ -78,55 +73,55 @@ const checkMarkdownOptions = (
     delete options["lineNumbers"];
   }
 
-  // slugify
+  // Slugify
   if ("slugify" in options) {
     logger.error(
       `\
 ${colors.magenta("markdown.slugify")} is ${colors.red(
-        "no longer supported"
+        "no longer supported",
       )} in VuePress2.
 If you want to change the slugify function anyway, set the following options separately:
 · ${colors.blue("markdown.anchor.slugify")}
 · ${colors.blue("markdown.toc.slugify")}
 · ${colors.blue("markdown.headers.slugify")}
-`
+`,
     );
 
     delete options["slugify"];
   }
 
-  // pageSuffix
+  // PageSuffix
   if ("pageSuffix" in options) {
     logger.error(
       `${colors.magenta("markdown.pageSuffix")} is ${colors.red(
-        "no longer supported"
-      )} in VuePress2.`
+        "no longer supported",
+      )} in VuePress2.`,
     );
 
     delete options["pageSuffix"];
   }
 
-  // externalLinks
+  // ExternalLinks
   if ("externalLinks" in options) {
     logger.error(
       `${colors.magenta("markdown.externalLinks")} is ${colors.red(
-        "no longer supported"
+        "no longer supported",
       )} in VuePress2, please use ${colors.magenta(
-        "markdown.links.externalAttrs"
-      )} instead.`
+        "markdown.links.externalAttrs",
+      )} instead.`,
     );
 
     delete options["externalLinks"];
   }
 
-  // plugins
+  // Plugins
   if ("plugins" in options) {
     logger.error(
       `${colors.magenta("markdown.plugins")} is ${colors.red(
-        "no longer supported"
+        "no longer supported",
       )} in VuePress2, please use ${colors.magenta(
-        "extendsMarkdown"
-      )} hook instead.`
+        "extendsMarkdown",
+      )} hook instead.`,
     );
 
     delete options["plugins"];
@@ -134,7 +129,7 @@ If you want to change the slugify function anyway, set the following options sep
 };
 
 const checkPluginOptions = (plugins: unknown): PluginConfig => {
-  // check plugin array
+  // Check plugin array
   if (isArray(plugins))
     return plugins.flat().filter((item): item is Plugin => {
       if (isFunction(item)) return true;
@@ -142,25 +137,25 @@ const checkPluginOptions = (plugins: unknown): PluginConfig => {
       if (isPlainObject(item)) {
         const { name } = item as Plugin & Record<string, unknown>;
 
-        // check name
+        // Check name
         if (!isString(name)) {
           logger.error(
-            'VuePress2 requires "name" option in plugins and it should strict equal it\'s package name.'
+            'VuePress2 requires "name" option in plugins and it should strict equal it\'s package name.',
           );
 
           return false;
         }
 
-        // check name
+        // Check name
         if (!/^(@.*\/)?vuepress-plugin-/.test(name)) {
           logger.error(
-            "VuePress2 requires plugin name to strict equal a package name, you should fix it"
+            "VuePress2 requires plugin name to strict equal a package name, you should fix it",
           );
 
           return false;
         }
 
-        // check renamed options
+        // Check renamed options
         [
           // v1
           ["ready", "onPrepared"],
@@ -175,10 +170,10 @@ const checkPluginOptions = (plugins: unknown): PluginConfig => {
           if (deprecatedOption in item)
             logger.warn(
               `${colors.magenta(
-                deprecatedOption
+                deprecatedOption,
               )} options in plugin options is ${colors.yellow(
-                "deprecated"
-              )} in VuePress2, please use ${colors.magenta(newOption)} instead.`
+                "deprecated",
+              )} in VuePress2, please use ${colors.magenta(newOption)} instead.`,
             );
 
           // eslint-disable-next-line
@@ -188,7 +183,7 @@ const checkPluginOptions = (plugins: unknown): PluginConfig => {
           delete item[deprecatedOption];
         });
 
-        // check removed options
+        // Check removed options
         [
           // v1
           "plugins",
@@ -212,10 +207,10 @@ const checkPluginOptions = (plugins: unknown): PluginConfig => {
           if (removedOption in item)
             logger.error(
               `${colors.magenta(
-                removedOption
+                removedOption,
               )} option in plugin options is ${colors.red(
-                "no longer supported"
-              )} in VuePress2, make sure you are using a VuePress2 plugin.`
+                "no longer supported",
+              )} in VuePress2, make sure you are using a VuePress2 plugin.`,
             );
 
           // eslint-disable-next-line @typescript-eslint/no-unsafe-member-access
@@ -226,12 +221,12 @@ const checkPluginOptions = (plugins: unknown): PluginConfig => {
       return false;
     });
 
-  // check whether plugins is an object
+  // Check whether plugins is an object
   if (isPlainObject(plugins)) {
     logger.error(
       `${colors.magenta('object format "plugins"')} is ${colors.red(
-        "no longer supported"
-      )} in VuePress2, you should import plugins and call them in an array.`
+        "no longer supported",
+      )} in VuePress2, you should import plugins and call them in an array.`,
     );
 
     return [];
@@ -256,10 +251,10 @@ const checkBundlerOptions = (config: Record<string, unknown>): void => {
     if (removedOption in config)
       logger.error(
         `"${colors.magenta(
-          removedOption
+          removedOption,
         )}" option in config file is ${colors.red(
-          "no longer supported"
-        )} in VuePress2, you should set it in bundler options.`
+          "no longer supported",
+        )} in VuePress2, you should set it in bundler options.`,
       );
 
     // eslint-disable-next-line @typescript-eslint/no-unsafe-member-access
@@ -274,13 +269,13 @@ export const config = (userConfig: Record<string, unknown>): UserConfig => {
   checkMarkdownOptions(
     userConfig["markdown"] as
       | (MarkdownOptions & Record<string, unknown>)
-      | undefined
+      | undefined,
   );
   checkBundlerOptions(userConfig);
 
   userConfig["plugins"] = checkPluginOptions(userConfig["plugins"]);
 
-  // check renamed options
+  // Check renamed options
   [
     ["ready", "onPrepared"],
     ["updated", "onWatched"],
@@ -293,8 +288,8 @@ export const config = (userConfig: Record<string, unknown>): UserConfig => {
     if (deprecatedOption in userConfig)
       logger.warn(
         `"${deprecatedOption}" option in config file is ${colors.yellow(
-          "deprecated"
-        )} in VuePress2, please use "${newOption}" instead.`
+          "deprecated",
+        )} in VuePress2, please use "${newOption}" instead.`,
       );
 
     // eslint-disable-next-line
@@ -304,7 +299,7 @@ export const config = (userConfig: Record<string, unknown>): UserConfig => {
     delete userConfig[deprecatedOption];
   });
 
-  // check removed options
+  // Check removed options
   [
     ["chainMarkdown", 'please use "extendsMarkdown" instead'],
     ["extendsCli"],
@@ -325,20 +320,20 @@ export const config = (userConfig: Record<string, unknown>): UserConfig => {
     if (removedOption in userConfig)
       logger.error(
         `"${removedOption}" option in config is ${colors.red(
-          "no longer supported"
-        )} in VuePress2${hint ? `, ${hint}.` : "."}`
+          "no longer supported",
+        )} in VuePress2${hint ? `, ${hint}.` : "."}`,
       );
 
     // eslint-disable-next-line @typescript-eslint/no-unsafe-member-access
     delete userConfig[removedOption];
   });
 
-  // other options
+  // Other options
   if ("extraWatchFiles" in userConfig) {
     logger.error(
       `${colors.magenta("extraWatchFiles")} options is ${colors.red(
-        "removed"
-      )} in VuePress2, you should use "onWatched" hook.`
+        "removed",
+      )} in VuePress2, you should use "onWatched" hook.`,
     );
 
     delete userConfig["extraWatchFiles"];

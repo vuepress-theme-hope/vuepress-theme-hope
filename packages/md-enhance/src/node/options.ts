@@ -1,22 +1,19 @@
-import { type LocaleConfig } from "@vuepress/core";
-import { type MermaidConfig } from "mermaid";
+import type { LocaleConfig } from "vuepress/shared";
 
-import {
-  type AttrsOptions,
-  type FigureOptions,
-  type ImgMarkOptions,
-  type IncludeOptions,
-  type KatexOptions,
-  type MarkdownEnhanceLocaleData,
-  type MathjaxOptions,
-  type PlaygroundOptions,
-  type PresentationOptions,
-  type StylizeOptions,
-  type TSPresetPlaygroundOptions,
-  type TasklistOptions,
-  type VuePresetPlaygroundOptions,
+import type {
+  AttrsOptions,
+  FigureOptions,
+  ImgMarkOptions,
+  IncludeOptions,
+  KatexOptions,
+  MarkdownEnhanceLocaleData,
+  MathjaxOptions,
+  PlaygroundGlobalOptions,
+  RevealJsOptions,
+  StylizeOptions,
+  TasklistOptions,
 } from "./typings/index.js";
-import { type CodeDemoOptions } from "../shared/index.js";
+import type { CodeDemoOptions } from "../shared/index.js";
 
 export type LinksCheckStatus = "always" | "dev" | "build" | "never";
 
@@ -59,31 +56,33 @@ export interface MarkdownEnhanceOptions {
   gfm?: boolean;
 
   /**
-   * Whether to enable custom container including
+   * Whether to enable hint container including
    *
+   * - important
    * - info
    * - note
    * - tip
    * - warning
-   * - danger
+   * - caution
    * - details
    *
    * ⚠ The last 4 items conflict with default theme and will override it’s style.
    *
-   * 是否启用自定义容器
+   * 是否启用提示容器
    *
+   * - important
    * - info
    * - note
    * - tip
    * - warning
-   * - danger
+   * - caution
    * - details
    *
    * ⚠ 最后四个会和默认主题冲突，且会覆盖默认主题的样式与行为。
    *
    * @default false
    */
-  container?: boolean;
+  hint?: boolean;
 
   /**
    * Whether to enable v-pre wrapper.
@@ -93,6 +92,37 @@ export interface MarkdownEnhanceOptions {
    * @default false
    */
   vPre?: boolean;
+
+  /**
+   * Whether convert `\n` in paragraphs into `<br>`s
+   *
+   * 是否将段落中的 `\n` 转换为 `<br>`
+   *
+   * @description enabled in gfm mode
+   *
+   * @default false
+   */
+  breaks?: boolean;
+
+  /**
+   * Whether convert URL-like text into links
+   *
+   * 是否将文字中的链接格式文字转换为链接
+   *
+   * @description enabled in gfm mode
+   *
+   * @default false
+   */
+  linkify?: boolean;
+
+  /**
+   * Wether enable gfm alerts
+   *
+   * 是否启用 gfm 警告
+   *
+   * @default false
+   */
+  alert?: boolean;
 
   /**
    * Whether to enable tabs.
@@ -243,7 +273,7 @@ export interface MarkdownEnhanceOptions {
   katex?:
     | (KatexOptions & {
         /**
-         * whether enable copy plugin
+         * Whether enable copy plugin
          *
          * @default false
          */
@@ -265,13 +295,13 @@ export interface MarkdownEnhanceOptions {
   mathjax?: MathjaxOptions | boolean;
 
   /**
-   * Whether to enable card support
+   * Whether to enable component support
    *
-   * 是否启用卡片支持
+   * 是否启用组件支持
    *
    * @default false
    */
-  card?: boolean;
+  component?: boolean;
 
   /**
    * Whether to enable chart support
@@ -296,11 +326,18 @@ export interface MarkdownEnhanceOptions {
    *
    * 是否启用 flowchart 流程图支持
    *
-   * @deprecated The lib is lack of maintenance, use mermaid instead.
-   *
    * @default false
    */
   flowchart?: boolean;
+
+  /**
+   * Whether to enable markmap support
+   *
+   * 是否启用 markmap 流程图支持
+   *
+   * @default false
+   */
+  markmap?: boolean;
 
   /**
    * Whether to enable mermaid support
@@ -309,7 +346,7 @@ export interface MarkdownEnhanceOptions {
    *
    * @default false
    */
-  mermaid?: MermaidConfig | boolean;
+  mermaid?: boolean;
 
   /**
    * Whether to enable code-demo support
@@ -321,13 +358,13 @@ export interface MarkdownEnhanceOptions {
   demo?: Partial<CodeDemoOptions> | boolean;
 
   /**
-   * Whether to enable presentation support
+   * Whether to enable reveal.js support
    *
-   * 是否启用幻灯片支持
+   * 是否启用 Reveal.js 支持
    *
    * @default false
    */
-  presentation?: PresentationOptions | boolean;
+  revealJs?: RevealJsOptions | boolean;
 
   /**
    * Keyword enhancement
@@ -341,15 +378,16 @@ export interface MarkdownEnhanceOptions {
    *
    * 是否启用 playground 支持
    */
-  playground?: {
-    /** Playground presets */
-    presets: ("ts" | "vue" | PlaygroundOptions)[];
-    /** Playground config */
-    config?: {
-      ts?: TSPresetPlaygroundOptions;
-      vue?: VuePresetPlaygroundOptions;
-    };
-  };
+  playground?: PlaygroundGlobalOptions;
+
+  /**
+   * Whether to enable kotlin playground support
+   *
+   * 是否启用 kotlin Playground 支持
+   *
+   * @default false
+   */
+  kotlinPlayground?: boolean;
 
   /**
    * Whether to enable vue playground support
@@ -359,6 +397,15 @@ export interface MarkdownEnhanceOptions {
    * @default false
    */
   vuePlayground?: boolean;
+
+  /**
+   * Whether to enable sandpack support
+   *
+   * 是否启用 Sandpack 支持
+   *
+   * @default false
+   */
+  sandpack?: boolean;
 
   /**
    * The delay of operating dom, in ms
