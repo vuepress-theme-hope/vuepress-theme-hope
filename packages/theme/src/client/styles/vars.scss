@@ -100,6 +100,12 @@
   --nprogress-color: var(--vp-tc);
 }
 
+// plugin-photo-swipe
+body {
+  --photo-swipe-bullet: var(--white);
+  --photo-swipe-bullet-active: var(--vp-tc);
+}
+
 // plugin-redirect
 .language-modal-mask {
   --redirect-bg-color: var(--vp-bg);
