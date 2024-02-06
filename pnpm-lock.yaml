@@ -178,8 +178,8 @@ importers:
         specifier: 3.0.0-alpha.11
         version: 3.0.0-alpha.11(typescript@5.3.3)
       artalk:
-        specifier: 2.8.1
-        version: 2.8.1
+        specifier: 2.8.2
+        version: 2.8.2
       sass-loader:
         specifier: 14.1.0
         version: 14.1.0(sass@1.70.0)(webpack@5.90.1)
@@ -6122,8 +6122,8 @@ packages:
       marked: 11.2.0
     dev: false
 
-  /artalk@2.8.1:
-    resolution: {integrity: sha512-CfDPQZJSbb6fB5clrmBAmYB4dSeUQYadmQhRFrWUaph+LgcpALyhsE6GprjMPi37tJLzDgiuZjBaWbcFPc+dKQ==}
+  /artalk@2.8.2:
+    resolution: {integrity: sha512-dz3RssQUrR4sJeqPIxobnrlchEfpVuprNb9c8gkhlTk4Cc8e94ls6OrOPTtcKiMjHF50yDgeu6/+OenXY0k8aA==}
     dependencies:
       abortcontroller-polyfill: 1.7.5
       hanabi: 0.4.0
@@ -10361,6 +10361,7 @@ packages:
 
   /js-tokens@4.0.0:
     resolution: {integrity: sha512-RdJUflcE3cUzKiMqQgsCu06FPu9UdIJO0beYbPhHN4k6apgJtifcoCtT9bcxOpYBtpD2kCM6Sbzg4CausW/PKQ==}
+    requiresBuild: true
 
   /js-yaml@3.14.1:
     resolution: {integrity: sha512-okMH7OXXJ7YrN9Ok3/SXrnu4iX9yOk+25nqX4imS2npuvTYDmo/QEZoqwZkYaIDk3jVvBOTOIEgEhaLOynBS9g==}
