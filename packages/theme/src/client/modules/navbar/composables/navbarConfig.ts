@@ -54,7 +54,5 @@ export const useNavbarItems = (): ComputedRefWithControl<
     () => getNavbarItems(),
   );
 
-  console.log(navbarItems.value);
-
   return navbarItems;
 };
