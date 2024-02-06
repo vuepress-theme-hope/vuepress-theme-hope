@@ -102,11 +102,11 @@ tag:
 
 ## photoSwipe <Badge text="默认启用" />
 
-控制 `vuepress-plugin-photo-swipe`，提供图片浏览功能。
+控制 `@vuepress/plugin-photo-swipe`，提供图片浏览功能。
 
 默认不需要任何额外配置。如果你不需要此功能可设置为 `false`。
 
-插件选项请参阅 <ProjectLink name="photo-swipe" path="/zh/config.html">photo-swipe 插件文档</ProjectLink>。
+插件选项请参阅 [photo-swipe 插件文档][photo-swipe-config]。
 
 ## readingTime <Badge text="默认启用" />
 
@@ -141,6 +141,7 @@ tag:
 [catalog-config]: https://ecosystem.vuejs.press/zh/plugins/catalog.html#options
 [copy-code-config]: https://ecosystem.vuejs.press/zh/plugins/copy-code.html#options
 [git-config]: https://ecosystem.vuejs.press/zh/plugins/git.html#options
+[photo-swipe-config]: https://ecosystem.vuejs.press/zh/plugins/photo-swipe.html#options
 [reading-time-config]: https://ecosystem.vuejs.press/zh/plugins/reading-time.html#options
 [seo-config]: https://ecosystem.vuejs.press/zh/plugins/seo/config.html
 [sitemap-config]: https://ecosystem.vuejs.press/zh/plugins/sitemap/config.html

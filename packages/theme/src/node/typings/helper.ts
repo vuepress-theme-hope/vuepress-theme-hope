@@ -2,12 +2,12 @@ import type { CopyCodePluginOptions } from "@vuepress/plugin-copy-code";
 import type { CopyrightPluginOptions } from "@vuepress/plugin-copyright";
 import type { FeedPluginOptions } from "@vuepress/plugin-feed";
 import type { GitPluginOptions } from "@vuepress/plugin-git";
+import type { PhotoSwipePluginOptions } from "@vuepress/plugin-photo-swipe";
 import type { ReadingTimePluginOptions } from "@vuepress/plugin-reading-time";
 import type { SeoPluginOptions } from "@vuepress/plugin-seo";
 import type { SitemapPluginOptions } from "@vuepress/plugin-sitemap";
 import type { CommentOptions } from "vuepress-plugin-comment2";
 import type { MarkdownEnhanceOptions } from "vuepress-plugin-md-enhance";
-import type { PhotoSwipeOptions } from "vuepress-plugin-photo-swipe";
 import type { PWAOptions } from "vuepress-plugin-pwa2";
 
 import type {
@@ -43,7 +43,9 @@ export type ThemeFeedPluginHelper = Helper<
 export type ThemeGitPluginHelper = Helper<GitPluginOptions | false>;
 export type ThemeMdEnhancePluginHelper = Helper<MarkdownEnhanceOptions | false>;
 
-export type ThemePhotoSwipePluginHelper = Helper<PhotoSwipeOptions | false>;
+export type ThemePhotoSwipePluginHelper = Helper<
+  PhotoSwipePluginOptions | false
+>;
 
 export type ThemePWAPluginHelper = Helper<PWAOptions | false>;
 

@@ -44,7 +44,7 @@
   },
   "dependencies": {
     "@stackblitz/sdk": "^1.9.0",
-    "@vuepress/helper": "2.0.0-rc.11",
+    "@vuepress/helper": "2.0.0-rc.12",
     "@vueuse/core": "^10.7.2",
     "balloon-css": "^1.2.0",
     "create-codepen": "1.0.1",
@@ -55,7 +55,7 @@
   },
   "devDependencies": {
     "@types/qrcode": "1.5.5",
-    "@vuepress/bundler-vite": "2.0.0-rc.6"
+    "@vuepress/bundler-vite": "2.0.0-rc.7"
   },
   "peerDependencies": {
     "artplayer": "^5.0.0",
@@ -65,7 +65,7 @@
     "plyr": "^3.7.8",
     "sass-loader": "^14.0.0",
     "vidstack": "^1.9.0",
-    "vuepress": "2.0.0-rc.6"
+    "vuepress": "2.0.0-rc.7"
   },
   "peerDependenciesMeta": {
     "artplayer": {

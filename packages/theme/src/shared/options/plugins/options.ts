@@ -5,6 +5,7 @@ import type { CopyrightPluginOptions } from "@vuepress/plugin-copyright";
 import type { DocsearchPluginOptions } from "@vuepress/plugin-docsearch";
 import type { FeedPluginOptions } from "@vuepress/plugin-feed";
 import type { GitPluginOptions } from "@vuepress/plugin-git";
+import type { PhotoSwipePluginOptions } from "@vuepress/plugin-photo-swipe";
 import type { ReadingTimePluginOptions } from "@vuepress/plugin-reading-time";
 import type { RedirectPluginOptions } from "@vuepress/plugin-redirect";
 import type { SearchPluginOptions } from "@vuepress/plugin-search";
@@ -13,7 +14,6 @@ import type { SitemapPluginOptions } from "@vuepress/plugin-sitemap";
 import type { CommentPluginOptions } from "vuepress-plugin-comment2";
 import type { ComponentOptions } from "vuepress-plugin-components";
 import type { MarkdownEnhanceOptions } from "vuepress-plugin-md-enhance";
-import type { PhotoSwipeOptions } from "vuepress-plugin-photo-swipe";
 import type { PWAOptions } from "vuepress-plugin-pwa2";
 import type { SearchProOptions } from "vuepress-plugin-search-pro";
 
@@ -24,7 +24,11 @@ export interface PluginsOptions {
   /**
    * Enable @vuepress/active-header-links or not
    *
+   * @see https://ecosystem.vuejs.press/plugins/active-header-links.html
+   *
    * 是否启用 @vuepress/active-header-links 插件
+   *
+   * @see https://ecosystem.vuejs.press/zh/plugins/active-header-links.html
    *
    * @default true
    */
@@ -53,7 +57,11 @@ export interface PluginsOptions {
   /**
    * Options for @vuepress/catalog
    *
+   * @see https://ecosystem.vuejs.press/plugins/catalog.html
+   *
    * 自动目录插件选项
+   *
+   * @see https://ecosystem.vuejs.press/plugins/catalog.html
    *
    * @default true
    */
@@ -112,18 +120,22 @@ export interface PluginsOptions {
   /**
    * Options for @vuepress/docsearch
    *
-   * @see https://vuejs.press/reference/plugin/docsearch.html
+   * @see https://ecosystem.vuejs.press/plugins/docsearch.html
    *
    * @vuepress/docsearch 选项
    *
-   * @see https://vuejs.press/zh/reference/plugin/docsearch.html
+   * @see https://ecosystem.vuejs.press/zh/plugins/docsearch.html
    */
   docsearch?: DocsearchPluginOptions;
 
   /**
    * Enable @vuepress/external-link-icon or not
    *
+   * @see https://ecosystem.vuejs.press/plugins/external-link-icon.html
+   *
    * 是否启用 @vuepress/external-link-icon 插件
+   *
+   * @see https://ecosystem.vuejs.press/zh/plugins/external-link-icon.html
    *
    * @default true
    */
@@ -145,13 +157,13 @@ export interface PluginsOptions {
    *
    * @description By default this plugin is only enabled in production mode for performance reasons.
    *
-   * @see https://vuejs.press/reference/plugin/git.html
+   * @see https://ecosystem.vuejs.press/plugins/git.html
    *
    * Git 插件配置
    *
    * @description 默认情况下，出于性能原因，此插件仅在生产模式下启用。
    *
-   * @see https://vuejs.press/zh/reference/plugin/git.html
+   * @see https://ecosystem.vuejs.press/zh/plugins/git.html
    */
   git?: GitPluginOptions | boolean;
 
@@ -207,20 +219,24 @@ export interface PluginsOptions {
    *
    * @description This plugin is enabled by default
    *
-   * @see https://plugin-photo-swipe.vuejs.press/config/
+   * @see https://ecosystem.vuejs.press/plugins/photo-swipe.html
    *
    * 图片预览插件配置
    *
-   * @see https://plugin-photo-swipe.vuejs.press/zh/config/
+   * @see https://ecosystem.vuejs.press/zh/plugins/photo-swipe.html
    *
    * @default true
    */
-  photoSwipe?: PhotoSwipeOptions | boolean;
+  photoSwipe?: PhotoSwipePluginOptions | boolean;
 
   /**
    * Enable @vuepress/prismjs or not
    *
+   * @see https://ecosystem.vuejs.press/plugins/prismjs.html
+   *
    * 是否启用 @vuepress/prismjs 插件
+   *
+   * @see https://ecosystem.vuejs.press/zh/plugins/prismjs.html
    *
    * @default true
    */
@@ -255,22 +271,22 @@ export interface PluginsOptions {
   /**
    * Redirect options
    *
-   * @see https://plugin-redirect.vuejs.press/config/
+   * @see https://ecosystem.vuejs.press/plugins/redirect.html
    *
    * 重定向插件配置
    *
-   * @see https://plugin-redirect.vuejs.press/zh/config/
+   * @see https://ecosystem.vuejs.press/zh/plugins/redirect.html
    */
   redirect?: RedirectPluginOptions | boolean;
 
   /**
    * @vuepress/search plugin options
    *
-   * @see https://vuejs.press/reference/plugin/search.html
+   * @see https://ecosystem.vuejs.press/plugins/search.html
    *
    * @vuepress/search 插件配置
    *
-   * @see https://vuejs.press/zh/reference/plugin/search.html
+   * @see https://ecosystem.vuejs.press/zh/plugins/search.html
    */
   search?: SearchPluginOptions | boolean;
 

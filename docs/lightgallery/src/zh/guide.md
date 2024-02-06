@@ -15,7 +15,7 @@ icon: lightbulb
 
 你被警告了！
 
-如果你对此表示担忧，你可以考虑使用 <ProjectLink name="photo-swipe" path="/zh/">vuepress-plugin-photo-swipe</ProjectLink>。
+如果你对此表示担忧，你可以考虑使用 [@vuepress/plugin-photo-swipe][photo-swipe]。
 
 :::
 
@@ -81,3 +81,4 @@ export default defineClientConfig({
 <!-- markdownlint-restore -->
 
 [client-config]: https://vuejs.press/zh/guide/configuration.html#%E5%AE%A2%E6%88%B7%E7%AB%AF%E9%85%8D%E7%BD%AE%E6%96%87%E4%BB%B6
+[photo-swipe]: https://ecosystem.vuejs.press/zh/plugins/photo-swipe.html

@@ -58,6 +58,8 @@ The following plugins are enabled by default, and you can disable them:
 
 - [@vuepress/plugin-nprogress][nprogress]: progress bar
 
+- [@vuepress/plugin-photo-swipe][photo-swipe]: Image preview plugin based on photo-swipe
+
 - [@vuepress/plugin-prismjs][prismjs]: Code highlighting plugin using Prism.js
 
 - [@vuepress/plugin-reading-time][reading-time]: Reading time and word count
@@ -67,8 +69,6 @@ The following plugins are enabled by default, and you can disable them:
 - [@vuepress/plugin-sitemap][sitemap]: Sitemap plugin
 
 - <ProjectLink name="md-enhance">vuepress-plugin-md-enhance</ProjectLink>: Provides more Markdown syntax
-
-- <ProjectLink name="photo-swipe">vuepress-plugin-photo-swipe</ProjectLink>: Image preview plugin based on photo-swipe
 
 ### Plugins that need to be enabled manually
 
@@ -106,6 +106,7 @@ These plugins are supported by theme, but you need to install them manually whil
 [feed]: https://ecosystem.vuejs.press/plugins/feed/
 [git]: https://ecosystem.vuejs.press/plugins/git.html
 [nprogress]: https://ecosystem.vuejs.press/plugins/nprogress.html
+[photo-swipe]: https://ecosystem.vuejs.press/plugins/photo-swipe.html
 [prismjs]: https://ecosystem.vuejs.press/plugins/prismjs.html
 [reading-time]: https://ecosystem.vuejs.press/plugins/reading-time.html
 [redirect]: https://ecosystem.vuejs.press/plugins/redirect.html

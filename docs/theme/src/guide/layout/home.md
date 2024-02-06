@@ -92,7 +92,7 @@ For complete configuration items, see [Home Frontmatter Configuration](../../con
 
 :::
 
-::: detailsHighlight Homepage Code
+::: details Highlight Homepage Code
 
 @[code](../../README.md)
 

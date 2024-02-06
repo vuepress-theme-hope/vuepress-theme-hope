@@ -102,11 +102,11 @@ Prism.js theme used in darkmode.
 
 ## photoSwipe <Badge text="enabled by default" />
 
-Controls `vuepress-plugin-photo-swipe` which provides picture browsing feature.
+Controls `@vuepress/plugin-photo-swipe` which provides picture browsing feature.
 
 No extra config is required by default. Se it to `false` if you don't need it.
 
-Check <ProjectLink name="photo-swipe" path="/config.html">photo-swipe plugin docs</ProjectLink> for available plugin options.
+Check [photo-swipe plugin docs][photo-swipe-config] for available plugin options.
 
 ## readingTime <Badge text="enabled by default" />
 
@@ -141,6 +141,7 @@ Check [sitemap plugin docs][sitemap-config] for available plugin options.
 [catalog-config]: https://ecosystem.vuejs.press/plugins/catalog.html#options
 [copy-code-config]: https://ecosystem.vuejs.press/plugins/copy-code.html#options
 [git-config]: https://ecosystem.vuejs.press/plugins/git.html#options
+[photo-swipe-config]: https://ecosystem.vuejs.press/plugins/photo-swipe.html#options
 [reading-time-config]: https://ecosystem.vuejs.press/plugins/reading-time.html#options
 [seo-config]: https://ecosystem.vuejs.press/plugins/sitemap/config.html
 [sitemap-config]: https://ecosystem.vuejs.press/plugins/seo/config.html

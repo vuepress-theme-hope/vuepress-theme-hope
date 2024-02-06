@@ -403,7 +403,6 @@ root((VuePress))
     Plugins
       (components)
       (md-enhance)
-      (photo-swipe)
 ```
 
 :::

@@ -49,11 +49,6 @@ const features = [
     link: getLink("md-enhance"),
   },
   {
-    text: "图片预览插件",
-    icon: "image",
-    link: getLink("photo-swipe"),
-  },
-  {
     text: "PWA 插件",
     icon: "mobile",
     link: getLink("pwa2"),

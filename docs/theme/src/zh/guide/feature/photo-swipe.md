@@ -8,15 +8,9 @@ tag:
   - 图片浏览
 ---
 
-通过内置 <ProjectLink name="photo-swipe" path="/zh/">vuepress-plugin-photo-swipe</ProjectLink>, vuepress-theme-hope 会使页面正文内的图片在点击时进入浏览模式浏览。
+通过内置 [@vuepress/plugin-photo-swipe][photo-swipe], 点击页面正文内的图片会进入浏览模式。
 
 如果你不需要此功能，请在主题选项中设置 `plugins.photoSwipe: false`。
-
-::: info
-
-`vuepress-theme-hope` 将主题选项中的 `plugins.photoSwipe` 选项作为插件选项提供给 `vuepress-plugin-photo-swipe`。
-
-:::
 
 <!-- more -->
 
@@ -40,7 +34,9 @@ tag:
 
 ## 自定义配置
 
-`plugins.photoSwipe` 会作为插件选项传入 <ProjectLink name="photo-swipe" path="/zh/">`vuepress-plugin-photo-swipe`</ProjectLink>。 你可以查看 <ProjectLink name="photo-swipe" path="/zh/">插件文档</ProjectLink> 来来进行高级配置。
+`vuepress-theme-hope` 将主题选项中的 `plugins.photoSwipe` 选项作为插件选项提供给 `@vuepress/plugin-photo-swipe`。
+
+你可以查看 [photo-swipe 插件文档][photo-swipe] 来来进行高级配置。
 
 ## 演示
 
@@ -81,3 +77,5 @@ tag:
 </style>
 
 <!-- markdownlint-restore -->
+
+[photo-swipe]: https://ecosystem.vuejs.press/zh/plugins/photo-swipe.html

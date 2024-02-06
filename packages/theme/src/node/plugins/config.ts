@@ -66,7 +66,7 @@ export const getPluginConfig = (
       legacy,
     ),
     getMdEnhancePlugin(plugins.mdEnhance, legacy),
-    getPhotoSwipePlugin(plugins.photoSwipe, legacy),
+    getPhotoSwipePlugin(plugins.photoSwipe),
     getPWAPlugin(plugins.pwa, options.favicon, legacy),
     getSearchPlugin(app, themeData, plugins),
     getSitemapPlugin(plugins.sitemap, options.hostname),

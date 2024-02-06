@@ -59,7 +59,7 @@ files.forEach((pkgName) => {
         yarn: ">=2",
       },
       peerDependencies: {
-        vuepress: "2.0.0-rc.6",
+        vuepress: "2.0.0-rc.7",
       },
       publishConfig: {
         access: "public",
