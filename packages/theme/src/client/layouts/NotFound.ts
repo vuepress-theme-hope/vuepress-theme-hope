@@ -1,7 +1,6 @@
 import type { SlotsType, VNode } from "vue";
 import { defineComponent, h } from "vue";
-import { useLink } from "vue-router";
-import { useRouteLocale } from "vuepress/client";
+import { useRouteLocale, useRouter } from "vuepress/client";
 
 import CommonWrapper from "@theme-hope/components/CommonWrapper";
 import NotFoundHint from "@theme-hope/components/NotFoundHint";
@@ -18,12 +17,9 @@ export default defineComponent({
   }>,
 
   setup(_props, { slots }) {
+    const router = useRouter();
     const routeLocale = useRouteLocale();
     const themeLocale = useThemeLocaleData();
-
-    const { navigate } = useLink({
-      to: themeLocale.value.home ?? routeLocale.value,
-    });
 
     return (): VNode[] => [
       h(SkipLink),
@@ -50,7 +46,11 @@ export default defineComponent({
                 {
                   type: "button",
                   class: "action-button",
-                  onClick: () => navigate(),
+                  onClick: () => {
+                    void router.push(
+                      themeLocale.value.home ?? routeLocale.value,
+                    );
+                  },
                 },
                 themeLocale.value.routeLocales.home,
               ),

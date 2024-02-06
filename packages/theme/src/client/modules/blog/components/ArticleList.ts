@@ -8,7 +8,7 @@ import {
   ref,
   watch,
 } from "vue";
-import { useRoute, useRouter } from "vue-router";
+import { useRoute, useRouter } from "vuepress/client";
 
 import DropTransition from "@theme-hope/components/transitions/DropTransition";
 import ArticleItem from "@theme-hope/modules/blog/components/ArticleItem";

@@ -1,5 +1,5 @@
 import { isLinkAbsolute, isLinkWithProtocol } from "@vuepress/helper/client";
-import { useRoute, useRouter } from "vue-router";
+import { useRoute, useRouter } from "vuepress/client";
 
 export const useNavigate = (): ((url: string) => void) => {
   const router = useRouter();

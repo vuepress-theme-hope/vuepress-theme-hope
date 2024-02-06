@@ -1035,9 +1035,6 @@ importers:
       vue:
         specifier: ^3.4.15
         version: 3.4.15(typescript@5.3.3)
-      vue-router:
-        specifier: ^4.2.5
-        version: 4.2.5(vue@3.4.15)
       vuepress:
         specifier: 2.0.0-rc.6
         version: 2.0.0-rc.6(@vuepress/bundler-vite@2.0.0-rc.6)(@vuepress/bundler-webpack@2.0.0-rc.6)(typescript@5.3.3)(vue@3.4.15)
@@ -1223,9 +1220,6 @@ importers:
       vue:
         specifier: ^3.4.15
         version: 3.4.15(typescript@5.3.3)
-      vue-router:
-        specifier: ^4.2.5
-        version: 4.2.5(vue@3.4.15)
       vuepress:
         specifier: 2.0.0-rc.6
         version: 2.0.0-rc.6(@vuepress/bundler-vite@2.0.0-rc.6)(@vuepress/bundler-webpack@2.0.0-rc.6)(typescript@5.3.3)(vue@3.4.15)
@@ -1363,9 +1357,6 @@ importers:
       vue:
         specifier: ^3.4.15
         version: 3.4.15(typescript@5.3.3)
-      vue-router:
-        specifier: ^4.2.5
-        version: 4.2.5(vue@3.4.15)
       vuepress:
         specifier: 2.0.0-rc.6
         version: 2.0.0-rc.6(@vuepress/bundler-vite@2.0.0-rc.6)(@vuepress/bundler-webpack@2.0.0-rc.6)(typescript@5.3.3)(vue@3.4.15)

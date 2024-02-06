@@ -1,8 +1,7 @@
 import type { PropType, SlotsType, VNode } from "vue";
 import { defineComponent, h, onMounted, ref, shallowRef, watch } from "vue";
-import { useRoute } from "vue-router";
 import type { PageHeader } from "vuepress/client";
-import { RouteLink, usePageData } from "vuepress/client";
+import { RouteLink, usePageData, useRoute } from "vuepress/client";
 
 import PrintButton from "@theme-hope/modules/info/components/PrintButton";
 import { useMetaLocale } from "@theme-hope/modules/info/composables/index";

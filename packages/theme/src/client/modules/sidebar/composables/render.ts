@@ -1,7 +1,7 @@
 import { isString } from "@vuepress/helper/client";
 import type { VNode } from "vue";
 import { h } from "vue";
-import { useRoute } from "vue-router";
+import { useRoute } from "vuepress/client";
 
 import AutoLink from "@theme-hope/components/AutoLink";
 import HopeIcon from "@theme-hope/components/HopeIcon";

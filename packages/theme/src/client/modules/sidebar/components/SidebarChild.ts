@@ -1,6 +1,6 @@
 import type { PropType, VNode } from "vue";
 import { defineComponent } from "vue";
-import { useRoute } from "vue-router";
+import { useRoute } from "vuepress/client";
 
 import {
   renderSidebarChildren,

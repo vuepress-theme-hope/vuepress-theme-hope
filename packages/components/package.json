@@ -50,7 +50,6 @@
     "create-codepen": "1.0.1",
     "qrcode": "^1.5.3",
     "vue": "^3.4.15",
-    "vue-router": "^4.2.5",
     "vuepress-plugin-sass-palette": "workspace:*",
     "vuepress-shared": "workspace:*"
   },

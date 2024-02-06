@@ -7,8 +7,7 @@ import {
 import { ExternalLinkIcon } from "@vuepress/plugin-external-link-icon/client";
 import type { PropType, SlotsType, VNode } from "vue";
 import { computed, defineComponent, h, toRef } from "vue";
-import { useRoute } from "vue-router";
-import { RouteLink, useSiteData } from "vuepress/client";
+import { RouteLink, useRoute, useSiteData } from "vuepress/client";
 
 import HopeIcon from "@theme-hope/components/HopeIcon";
 

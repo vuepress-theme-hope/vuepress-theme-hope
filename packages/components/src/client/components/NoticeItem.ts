@@ -12,7 +12,7 @@ import {
   onMounted,
   ref,
 } from "vue";
-import { useRoute, useRouter } from "vue-router";
+import { useRoute, useRouter } from "vuepress/client";
 
 import { CloseIcon } from "./icons.js";
 import type { NoticeActionOption } from "../../shared/index.js";

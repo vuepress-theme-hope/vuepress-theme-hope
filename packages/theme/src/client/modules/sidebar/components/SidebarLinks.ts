@@ -1,6 +1,6 @@
 import type { PropType, VNode } from "vue";
 import { defineComponent, h, ref, watch } from "vue";
-import { useRoute } from "vue-router";
+import { useRoute } from "vuepress/client";
 
 import SidebarChild from "@theme-hope/modules/sidebar/components/SidebarChild";
 import SidebarGroup from "@theme-hope/modules/sidebar/components/SidebarGroup";

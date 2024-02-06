@@ -2,7 +2,7 @@ import { isString } from "@vuepress/helper/client";
 import { useMutationObserver } from "@vueuse/core";
 import type { VNode } from "vue";
 import { defineComponent, h, ref, shallowRef } from "vue";
-import { useRoute } from "vue-router";
+import { useRoute } from "vuepress/client";
 
 import { EyeIcon, FireIcon } from "@theme-hope/modules/info/components/icons";
 import { useMetaLocale } from "@theme-hope/modules/info/composables/index";

@@ -1,6 +1,6 @@
 import type { SlotsType, VNode } from "vue";
 import { defineComponent, h, onMounted, shallowRef, watch } from "vue";
-import { useRoute } from "vue-router";
+import { useRoute } from "vuepress/client";
 
 import { useThemeLocaleData } from "@theme-hope/composables/index";
 import SidebarLinks from "@theme-hope/modules/sidebar/components/SidebarLinks";

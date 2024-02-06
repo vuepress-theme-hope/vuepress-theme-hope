@@ -16,8 +16,7 @@ import {
   resolveComponent,
   watch,
 } from "vue";
-import { useRouter } from "vue-router";
-import { usePageData, usePageFrontmatter } from "vuepress/client";
+import { usePageData, usePageFrontmatter, useRouter } from "vuepress/client";
 import { RenderDefault, hasGlobalComponent } from "vuepress-shared/client";
 
 import PageFooter from "@theme-hope/components/PageFooter";

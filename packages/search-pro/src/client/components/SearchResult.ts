@@ -6,8 +6,7 @@ import {
 import { useEventListener } from "@vueuse/core";
 import type { VNode } from "vue";
 import { computed, defineComponent, h, reactive, ref, toRef, watch } from "vue";
-import { useRouter } from "vue-router";
-import { RouteLink, useRouteLocale } from "vuepress/client";
+import { RouteLink, useRouteLocale, useRouter } from "vuepress/client";
 
 import { SearchLoading } from "./SearchLoading.js";
 import { HeadingIcon, HeartIcon, HistoryIcon, TitleIcon } from "./icons.js";

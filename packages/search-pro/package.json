@@ -50,7 +50,6 @@
     "chokidar": "^3.5.3",
     "slimsearch": "^2.0.0",
     "vue": "^3.4.15",
-    "vue-router": "^4.2.5",
     "vuepress-plugin-sass-palette": "workspace:*",
     "vuepress-shared": "workspace:*"
   },
