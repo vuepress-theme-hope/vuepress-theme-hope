@@ -1,12 +1,11 @@
 import { useEventListener, useFullscreen } from "@vueuse/core";
 import type PhotoSwipe from "photoswipe";
-// eslint-disable-next-line no-duplicate-imports
-import { type SlideData } from "photoswipe";
+import type { SlideData } from "photoswipe";
 
 import { LOADING_ICON } from "./icon.js";
 import { getImageElementInfo, getImageUrlInfo } from "./images.js";
 import { scrollToClose } from "../define.js";
-import { type PhotoSwipeOptions } from "../helpers/index.js";
+import type { PhotoSwipeOptions } from "../helpers/index.js";
 
 export const registerPhotoswipeUI = (photoSwipe: PhotoSwipe): void => {
   const { isSupported, toggle } = useFullscreen();
@@ -85,7 +84,7 @@ export const registerPhotoswipeUI = (photoSwipe: PhotoSwipe): void => {
 
 export const registerPhotoSwipe = (
   images: HTMLImageElement[],
-  photoSwipeOptions: PhotoSwipeOptions
+  photoSwipeOptions: PhotoSwipeOptions,
 ): Promise<() => void> =>
   import(/* webpackChunkName: "photo-swipe" */ "photoswipe").then(
     ({ default: PhotoSwipe }) => {
@@ -140,7 +139,7 @@ export const registerPhotoSwipe = (
         : (): void => {
             // do nothing
           };
-    }
+    },
   );
 
 export interface PhotoSwipeState {
@@ -151,7 +150,7 @@ export interface PhotoSwipeState {
 
 export const createPhotoSwipe = (
   images: string[],
-  photoSwipeOptions: PhotoSwipeOptions
+  photoSwipeOptions: PhotoSwipeOptions,
 ): Promise<PhotoSwipeState> =>
   import(/* webpackChunkName: "photo-swipe" */ "photoswipe").then(
     ({ default: PhotoSwipe }) => {
@@ -200,5 +199,5 @@ export const createPhotoSwipe = (
         },
         destroy,
       };
-    }
+    },
   );
