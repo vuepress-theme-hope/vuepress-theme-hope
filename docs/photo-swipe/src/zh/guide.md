@@ -96,4 +96,74 @@ export default defineUserConfig({
 
 对于具体的选项，详见 [配置 → 多语言设置](./config.md#locales).
 
+## 高级
+
+你也可以通过 API 来调用 photoswipe。
+
+`createPhotoSwipe` 允许你以编程的方式查看图片链接:
+
+```vue
+<script setup lang="ts">
+import { onMounted, onUnmounted } from 'vue';
+import {
+  createPhotoSwipe,
+  registerPhotoSwipe,
+} from "vuepress-plugin-photo-swipe/client";
+
+let state: PhotoSwipeState | null = null;
+
+const openPhotoSwipe = (index: number) => {
+  state?.open(index - 1);
+};
+
+onMounted(async () => {
+  // 通过图片链接创建一个新的 photoswipe 实例
+  state=  await createPhotoSwipe(
+    [
+      'https://exmaple.com/image1.png'
+      'https://exmaple.com/image2.png'
+      'https://exmaple.com/image3.png'
+    ],
+    {
+      // photoswipe 选项
+    }
+  );
+});
+
+onUnmounted(() => {
+  state?.destroy()
+})
+</script>
+
+<template>
+  <button v-for="i in 3" @click="openPhotoSwipe(i)">open photo {{ i }}</button>
+</template>
+```
+
+`usePhotoSwipe` 允许你为给定的图片元素注册 photoswipe:
+
+```vue
+<script setup lang="ts">
+import { onMounted, onUnmounted } from "vue";
+import { usePhotoSwipe } from "vuepress-plugin-photo-swipe/client";
+
+let destroy: () => void | null = null;
+
+onMounted(async () => {
+  await nextTick();
+
+  const images = Array.from(document.querySelectorAll("img"));
+
+  // 通过图片元素创建一个新的 photoswipe 实例
+  state = await usePhotoSwipe(images, {
+    // photoswipe 选项
+  });
+});
+
+onUnmounted(() => {
+  destroy?.();
+});
+</script>
+```
+
 [client-config]: https://vuejs.press/zh/guide/configuration.html#%E5%AE%A2%E6%88%B7%E7%AB%AF%E9%85%8D%E7%BD%AE%E6%96%87%E4%BB%B6

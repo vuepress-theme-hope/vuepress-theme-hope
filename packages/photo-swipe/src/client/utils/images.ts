@@ -10,7 +10,9 @@ export const getImages = (selector: string | string[]): HTMLImageElement[] =>
         )
         .flat();
 
-export const getImageInfo = (image: HTMLImageElement): Promise<SlideData> =>
+export const getImageElementInfo = (
+  image: HTMLImageElement,
+): Promise<SlideData> =>
   new Promise<SlideData>((resolve, reject) => {
     if (image.complete) {
       resolve({
@@ -23,7 +25,16 @@ export const getImageInfo = (image: HTMLImageElement): Promise<SlideData> =>
         msrc: image.src,
       });
     } else {
-      image.onload = (): void => resolve(getImageInfo(image));
+      image.onload = (): void => resolve(getImageElementInfo(image));
       image.onerror = (err): void => reject(err);
     }
+  });
+
+export const getImageUrlInfo = (image: string): Promise<SlideData> =>
+  new Promise<SlideData>((resolve, reject) => {
+    const el = new Image();
+
+    el.src = image;
+    el.onload = (): void => resolve(getImageElementInfo(el));
+    el.onerror = (err): void => reject(err);
   });

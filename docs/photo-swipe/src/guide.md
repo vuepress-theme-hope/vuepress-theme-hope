@@ -96,4 +96,74 @@ export default defineUserConfig({
 
 For specific options, see [Config → Locale Settings](./config.md#locales).
 
+## Advanced
+
+You can also call photoswipe with apis.
+
+`createPhotoSwipe` allows you to programmatically view images links with PhotoSwipe:
+
+```vue
+<script setup lang="ts">
+import { onMounted, onUnmounted } from 'vue';
+import {
+  createPhotoSwipe,
+  registerPhotoSwipe,
+} from "vuepress-plugin-photo-swipe/client";
+
+let state: PhotoSwipeState | null = null;
+
+const openPhotoSwipe = (index: number) => {
+  state?.open(index - 1);
+};
+
+onMounted(async () => {
+  // create a new photoswipe instance with image links
+  state=  await createPhotoSwipe(
+    [
+      'https://exmaple.com/image1.png'
+      'https://exmaple.com/image2.png'
+      'https://exmaple.com/image3.png'
+    ],
+    {
+      // photoswipe options
+    }
+  );
+});
+
+onUnmounted(() => {
+  state?.destroy()
+})
+</script>
+
+<template>
+  <button v-for="i in 3" @click="openPhotoSwipe(i)">open photo {{ i }}</button>
+</template>
+```
+
+`usePhotoSwipe` allows you to register photoswipe for the given image elements:
+
+```vue
+<script setup lang="ts">
+import { onMounted, onUnmounted } from "vue";
+import { usePhotoSwipe } from "vuepress-plugin-photo-swipe/client";
+
+let destroy: () => void | null = null;
+
+onMounted(async () => {
+  await nextTick();
+
+  const images = Array.from(document.querySelectorAll("img"));
+
+  // create a new photoswipe instance on image elements
+  state = await usePhotoSwipe(images, {
+    // photoswipe options
+  });
+});
+
+onUnmounted(() => {
+  destroy?.();
+});
+</script>
+```
+
 [client-config]: https://vuejs.press/guide/configuration.html#client-config-file
