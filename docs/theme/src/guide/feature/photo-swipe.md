@@ -8,15 +8,9 @@ tag:
   - Image Preview
 ---
 
-By including <ProjectLink name="photo-swipe">vuepress-plugin-photo-swipe</ProjectLink>, vuepress-theme-hope will make the pictures in the body of the page enter the preview mode when clicked.
+By using [@vuepress/plugin-photo-swipe][photo-swipe], clicking images in pages will enter preview mode.
 
 If you don't need this feature, you can set `plugins.photoSwipe: false` in theme options to disable it.
-
-::: info
-
-`vuepress-theme-hope` passes `plugins.photoSwipe` in theme options as plugin options to `vuepress-plugin-photo-swipe`.
-
-:::
 
 <!-- more -->
 
@@ -40,7 +34,9 @@ In preview mode, you can:
 
 ## Customize Config
 
-You can check the <ProjectLink name="photo-swipe">plugin documentation</ProjectLink> for advanced configuration.
+`vuepress-theme-hope` passes `plugins.photoSwipe` in theme options as plugin options to `@vuepress/plugin-photo-swipe`.
+
+You can check the [photo-swipe plugin documentation][photo-swipe] for advanced configuration.
 
 ## Demo
 
@@ -81,3 +77,5 @@ You can check the <ProjectLink name="photo-swipe">plugin documentation</ProjectL
 </style>
 
 <!-- markdownlint-restore -->
+
+[photo-swipe]: https://ecosystem.vuejs.press/zh/plugins/photo-swipe.html

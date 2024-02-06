@@ -85,15 +85,6 @@ jobs:
           token: ${{ secrets.ACCESS_TOKEN }}
           single-commit: true
 
-      - name: Deploy photo-swipe docs
-        uses: JamesIves/github-pages-deploy-action@v4
-        with:
-          repository-name: vuepress-theme-hope/photo-swipe-docs
-          branch: netlify
-          folder: docs/photo-swipe/dist
-          token: ${{ secrets.ACCESS_TOKEN }}
-          single-commit: true
-
       - name: Deploy pwa2 docs
         uses: JamesIves/github-pages-deploy-action@v4
         with:
@@ -179,7 +170,6 @@ jobs:
           pnpm cpx "docs/components/dist/**" dist/components
           pnpm cpx "docs/lightgallery/dist/**" dist/lightgallery
           pnpm cpx "docs/md-enhance/dist/**" dist/md-enhance
-          pnpm cpx "docs/photo-swipe/dist/**" dist/photo-swipe
           pnpm cpx "docs/pwa2/dist/**" dist/pwa
           pnpm cpx "docs/sass-palette/dist/**" dist/sass-palette
           pnpm cpx "docs/search-pro/dist/**" dist/search-pro
@@ -269,7 +259,6 @@ jobs:
           - components
           - lightgallery
           - md-enhance
-          - photo-swipe
           - pwa2
           - sass-palette
           - search-pro

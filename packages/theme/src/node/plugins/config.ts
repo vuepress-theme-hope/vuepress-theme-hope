@@ -40,7 +40,7 @@ export const getPluginConfig = (
     ThemeOptions,
     "hostname" | "hotReload" | "iconAssets" | "iconPrefix" | "favicon"
   >,
-  legacy = false,
+  legacy = false
 ): PluginConfig => {
   checkPluginOptions(plugins);
 
@@ -63,10 +63,10 @@ export const getPluginConfig = (
       plugins.feed,
       options.hostname,
       options.favicon,
-      legacy,
+      legacy
     ),
     getMdEnhancePlugin(plugins.mdEnhance, legacy),
-    getPhotoSwipePlugin(plugins.photoSwipe, legacy),
+    getPhotoSwipePlugin(plugins.photoSwipe),
     getPWAPlugin(plugins.pwa, options.favicon, legacy),
     getSearchPlugin(app, themeData, plugins),
     getSitemapPlugin(plugins.sitemap, options.hostname),

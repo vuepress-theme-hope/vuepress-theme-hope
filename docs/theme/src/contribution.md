@@ -40,7 +40,6 @@ The project is a monorepo, managed by pnpm.
 │ ├── components → components plugin document
 │ ├── lightgallery → lightgallery plugin document
 │ ├── md-enhance → md-enhance plugin document
-│ ├── photo-swipe → photo-swipe document
 │ ├── pwa → pwa2 plugin document
 │ ├── sass-palette → sass-palette plugin document
 │ ├── search-pro → search-pro plugin document
@@ -52,7 +51,6 @@ The project is a monorepo, managed by pnpm.
 │ ├── create → create-vuepress-theme-hope helper
 │ ├── lightgallery → lightgallery plugin
 │ ├── md-enhance → md-enhance plugin
-│ ├── photo-swipe → photo-swipe plugin
 │ ├── pwa2 → pwa2 plugin
 │ ├── sass-palette → sass-palette plugin
 │ ├── search-pro → search-pro plugin

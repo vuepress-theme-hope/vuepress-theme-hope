@@ -58,6 +58,8 @@ tag:
 
 - [@vuepress/plugin-nprogress][nprogress]: 进度条
 
+- [@vuepress/plugin-photo-swipe][photo-swipe]: 基于 Photo Swipe 的图片浏览插件
+
 - [@vuepress/plugin-prismjs][prismjs]: 基于 prism.js 的代码高亮插件
 
 - [@vuepress/plugin-reading-time][reading-time]: 阅读时间与字数统计
@@ -67,8 +69,6 @@ tag:
 - [@vuepress/plugin-sitemap][sitemap]: Sitemap 插件
 
 - <ProjectLink name="md-enhance" path="/zh/">vuepress-plugin-md-enhance</ProjectLink>: 提供更多 Markdown 语法
-
-- <ProjectLink name="photo-swipe" path="/zh/">vuepress-plugin-photo-swipe</ProjectLink>: 基于 Photo Swipe 的图片浏览插件
 
 ### 需要手动启用的插件
 
@@ -108,6 +108,7 @@ tag:
 [feed]: https://ecosystem.vuejs.press/zh/plugins/feed/
 [git]: https://ecosystem.vuejs.press/zh/plugins/git.html
 [nprogress]: https://ecosystem.vuejs.press/zh/plugins/nprogress.html
+[photo-swipe]: https://ecosystem.vuejs.press/zh/plugins/photo-swipe.html
 [prismjs]: https://ecosystem.vuejs.press/zh/plugins/prismjs.html
 [redirect]: https://ecosystem.vuejs.press/zh/plugins/redirect.html
 [reading-time]: https://ecosystem.vuejs.press/zh/plugins/reading-time.html

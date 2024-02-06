@@ -89,6 +89,8 @@ export default {
 
 你被警告了！
 
-如果你对此表示担忧，你可以考虑使用 <ProjectLink name="photo-swipe" path="/zh/">vuepress-plugin-photo-swipe</ProjectLink>。
+如果你对此表示担忧，你可以考虑使用 [@vuepress/plugin-photo-swipe][photo-swipe]。
 
 :::
+
+[photo-swipe]: https://ecosystem.vuejs.press/zh/plugins/photo-swipe.html
