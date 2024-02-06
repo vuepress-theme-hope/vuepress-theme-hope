@@ -1,6 +1,6 @@
-import type { Plugin } from "vuepress/core";
-import type { PhotoSwipePluginOptions } from "vuepress-plugin-photo-swipe";
+import type { PhotoSwipePluginOptions } from "@vuepress/plugin-photo-swipe";
 import { photoSwipePlugin } from "@vuepress/plugin-photo-swipe";
+import type { Plugin } from "vuepress/core";
 
 /**
  * @private
@@ -8,7 +8,7 @@ import { photoSwipePlugin } from "@vuepress/plugin-photo-swipe";
  * Resolve options for @vuepress/plugin-photo-swipe
  */
 export const getPhotoSwipePlugin = (
-  options?: PhotoSwipePluginOptions | boolean
+  options?: PhotoSwipePluginOptions | boolean,
 ): Plugin | null => {
   if (options === false) return null;
 
