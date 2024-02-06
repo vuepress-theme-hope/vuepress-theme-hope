@@ -4,6 +4,18 @@ All notable changes to this project will be documented in this file. See [Conven
 
 <!-- #region recent-change -->
 
+## [2.0.0-rc.23](https://github.com/vuepress-theme-hope/vuepress-theme-hope/compare/v2.0.0-rc.22...v2.0.0-rc.23) (2024-02-06)
+
+### Features
+
+- **photo-swipe:** add api ([87b549d](https://github.com/vuepress-theme-hope/vuepress-theme-hope/commit/87b549d6c68779e860c586406ba3cb20da003b06))
+- remove photo-swipe plugin ([#3909](https://github.com/vuepress-theme-hope/vuepress-theme-hope/issues/3909)) ([4a38e37](https://github.com/vuepress-theme-hope/vuepress-theme-hope/commit/4a38e375bfcb840825da9a03d8cb4ff4ac004fa9))
+
+### Bug Fixes
+
+- **theme:** fix catalog and redirect modal color ([09cf8d5](https://github.com/vuepress-theme-hope/vuepress-theme-hope/commit/09cf8d56bda0c017ad83f8ca6a97c16ea1a9dcd5))
+- **theme:** remove debug logger ([75c3482](https://github.com/vuepress-theme-hope/vuepress-theme-hope/commit/75c34829aebe1aa01995c30ea95afaecc3bf90c7))
+
 ## [2.0.0-rc.22](https://github.com/vuepress-theme-hope/vuepress-theme-hope/compare/v2.0.0-rc.21...v2.0.0-rc.22) (2024-02-05)
 
 ### Bug Fixes
