@@ -46,15 +46,15 @@
     "dev:ts": "tsc -b tsconfig.build.json --watch"
   },
   "dependencies": {
-    "@vuepress/helper": "2.0.0-rc.12",
+    "@vuepress/helper": "2.0.0-rc.14",
     "@vueuse/core": "^10.7.2",
     "cheerio": "1.0.0-rc.12",
     "dayjs": "^1.11.10",
     "execa": "^8.0.1",
-    "fflate": "^0.8.1",
+    "fflate": "^0.8.2",
     "gray-matter": "^4.0.3",
     "semver": "^7.6.0",
-    "vue": "^3.4.15"
+    "vue": "^3.4.16"
   },
   "devDependencies": {
     "@types/connect": "3.4.38",
