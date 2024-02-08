@@ -43,7 +43,7 @@ tag:
 
 - 你可以使用 `@source` 别名来引用当前项目的源目录
 
-  ```structure:no-line-numbers
+  ```:no-line-numbers
   .
   ├── src → project folder
   │    ├── example
@@ -64,7 +64,7 @@ tag:
 
 - 你也可以使用 `alias` 选项来创建别名:
 
-  ```structure:no-line-numbers
+  ```:no-line-numbers
   .
   ├── src → project folder
   │    ├── .vuepress

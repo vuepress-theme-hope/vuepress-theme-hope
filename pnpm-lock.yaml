@@ -552,6 +552,9 @@ importers:
       '@vuepress/plugin-redirect':
         specifier: 2.0.0-rc.14
         version: 2.0.0-rc.14(typescript@5.3.3)(vuepress@2.0.0-rc.7)
+      '@vuepress/plugin-shiki':
+        specifier: 2.0.0-rc.14
+        version: 2.0.0-rc.14(vuepress@2.0.0-rc.7)
       three:
         specifier: 0.161.0
         version: 0.161.0
@@ -4302,6 +4305,10 @@ packages:
     requiresBuild: true
     optional: true
 
+  /@shikijs/core@1.0.0:
+    resolution: {integrity: sha512-UMKGMZ+8b88N0/n6DWwWth1PHsOaxjW+R2u+hzSiargZWTv+l3s1l8dhuIxUSsEUPlBDKLs2CSMiFZeviKQM1w==}
+    dev: false
+
   /@sinclair/typebox@0.27.8:
     resolution: {integrity: sha512-+Fj43pSMwJs4KRrH/938Uf+uAELIgVBmQzg/q1YG10djyfA3TnrU8N8XzqCh/okZdszqBQTZf96idMfE5lnwTA==}
     dev: true
@@ -5503,6 +5510,15 @@ packages:
       vuepress: 2.0.0-rc.7(@vuepress/bundler-vite@2.0.0-rc.7)(@vuepress/bundler-webpack@2.0.0-rc.7)(typescript@5.3.3)(vue@3.4.16)
     transitivePeerDependencies:
       - typescript
+
+  /@vuepress/plugin-shiki@2.0.0-rc.14(vuepress@2.0.0-rc.7):
+    resolution: {integrity: sha512-ezEV/3Iju6uTVm+ol5U4rvJO8crGRA3ICaAAYcJsPCHsv/tBjBxe/PUFnltbmW6mMn2xqT1edC+uUSWQEXghCQ==}
+    peerDependencies:
+      vuepress: 2.0.0-rc.7
+    dependencies:
+      shiki: 1.0.0
+      vuepress: 2.0.0-rc.7(@vuepress/bundler-vite@2.0.0-rc.7)(@vuepress/bundler-webpack@2.0.0-rc.7)(typescript@5.3.3)(vue@3.4.16)
+    dev: false
 
   /@vuepress/plugin-sitemap@2.0.0-rc.14(typescript@5.3.3)(vuepress@2.0.0-rc.7):
     resolution: {integrity: sha512-HyfZgTJ6WfTvCaSe1osTGvJFA49nePQTEvWAXNX7HXe9/V98LQZUg8I4Nlrwk4Vkm+PCmgVo/shk90rLUC9ylQ==}
@@ -13290,6 +13306,12 @@ packages:
 
   /shell-quote@1.8.1:
     resolution: {integrity: sha512-6j1W9l1iAs/4xYBI1SYOVZyFcCis9b4KCLQ8fgAGG07QvzaRLVVRQvAy85yNmmZSjYjg4MWh4gNvlPujU/5LpA==}
+
+  /shiki@1.0.0:
+    resolution: {integrity: sha512-rOUGJa3yFGgOrEoiELYxraoBbag3ZWf9bpodlr05Wjm85Scx8OIX+otdSefq9Pk7L47TKEzGodSQb4L38jka6A==}
+    dependencies:
+      '@shikijs/core': 1.0.0
+    dev: false
 
   /side-channel@1.0.5:
     resolution: {integrity: sha512-QcgiIWV4WV7qWExbN5llt6frQB/lBven9pqliLXfGPB+K9ZYXxDozp0wLkHS24kWCm+6YXH/f0HhnObZnZOBnQ==}

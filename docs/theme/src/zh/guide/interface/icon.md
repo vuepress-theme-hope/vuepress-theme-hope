@@ -62,7 +62,7 @@ head:
 - <HopeIcon icon="home" color="red" />
 - <HopeIcon icon="//theme-hope-assets.vuejs.press/logo.svg" size="4rem" />
 
-```MD
+```md
 - <HopeIcon icon="home" color="red" />
 - <HopeIcon icon="//theme-hope-assets.vuejs.press/logo.svg" size="4rem" />
 ```

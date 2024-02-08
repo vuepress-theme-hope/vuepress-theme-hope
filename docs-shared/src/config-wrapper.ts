@@ -1,4 +1,5 @@
 import { addViteOptimizeDepsInclude } from "@vuepress/helper";
+import { shikiPlugin } from "@vuepress/plugin-shiki";
 import type { UserConfig } from "vuepress/cli";
 import { defineUserConfig } from "vuepress/cli";
 import { getDirname, path } from "vuepress/utils";
@@ -35,7 +36,15 @@ export const config = (
       },
     },
 
-    plugins,
+    plugins: [
+      shikiPlugin({
+        themes: {
+          light: "github-light",
+          dark: "one-dark-pro",
+        },
+      }),
+      ...plugins,
+    ],
 
     alias: {
       "@theme-hope/components/HeroInfo": path.resolve(

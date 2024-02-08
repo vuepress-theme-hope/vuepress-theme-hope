@@ -151,7 +151,12 @@ Prism.js 快速且轻量，但它无法正确高亮所有语法。如果你想�
      plugins: [
        shikiPlugin({
          // 你的选项
-         theme: "one-dark-pro",
+
+         // 例子
+         themes: {
+           light: "github-light",
+           dark: "one-dark-pro",
+         },
        }),
      ],
    });
@@ -166,7 +171,12 @@ Prism.js 快速且轻量，但它无法正确高亮所有语法。如果你想�
      plugins: [
        shikiPlugin({
          // 你的选项
-         theme: "one-dark-pro",
+
+         // 例子
+         themes: {
+           light: "github-light",
+           dark: "one-dark-pro",
+         },
        }),
      ],
    };

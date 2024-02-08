@@ -301,7 +301,7 @@ const onePlusTwoPlusThree = {{ 1 + 2 + 3 }}
 1 + 2 + 3 = {{ 1 + 2 + 3 }}
 ```
 
-```md:no-v-pre
+```text:no-v-pre
 <!-- 这里会被 Vue 编译 -->
 1 + 2 + 3 = {{ 1 + 2 + 3 }}
 ```

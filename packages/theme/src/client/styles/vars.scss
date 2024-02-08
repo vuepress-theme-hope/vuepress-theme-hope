@@ -43,6 +43,12 @@
   }
 }
 
+// plugin-copy-code
+.vp-copy-code-button {
+  --copy-code-color: var(--code-ln-color);
+  --copy-code-hover: var(--code-hl-bg-color);
+}
+
 // plugin-docsearch
 // stylelint-disable selector-class-pattern
 .DocSearch-Button,

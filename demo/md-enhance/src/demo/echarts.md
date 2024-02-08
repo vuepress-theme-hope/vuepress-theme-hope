@@ -31,7 +31,7 @@ title: ECharts
 
 ::: echarts A line chart
 
-```javascript
+```js
 const option = {
   xAxis: {
     type: "category",

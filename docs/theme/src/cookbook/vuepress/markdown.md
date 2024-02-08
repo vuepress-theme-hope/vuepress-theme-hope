@@ -300,7 +300,7 @@ Output:
 1 + 2 + 3 = {{ 1 + 2 + 3 }}
 ```
 
-```md:no-v-pre
+```text:no-v-pre
 <!-- This will be compiled by Vue -->
 1 + 2 + 3 = {{ 1 + 2 + 3 }}
 ```

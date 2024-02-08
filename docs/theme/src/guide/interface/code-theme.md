@@ -151,7 +151,12 @@ Prism.js is fast and lightweight, but it can not highlight all syntax correctly.
      plugins: [
        shikiPlugin({
          // your options
-         theme: "one-dark-pro",
+
+         // example
+         themes: {
+           light: "github-light",
+           dark: "one-dark-pro",
+         },
        }),
      ],
    });
@@ -166,7 +171,12 @@ Prism.js is fast and lightweight, but it can not highlight all syntax correctly.
      plugins: [
        shikiPlugin({
          // your options
-         theme: "one-dark-pro",
+
+         // example
+         themes: {
+           light: "github-light",
+           dark: "one-dark-pro",
+         },
        }),
      ],
    };
