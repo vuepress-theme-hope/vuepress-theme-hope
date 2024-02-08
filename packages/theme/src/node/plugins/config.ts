@@ -47,12 +47,13 @@ export const getPluginConfig = (
   const pluginConfig = [
     getComponentsPlugin(options, plugins.components, legacy),
     getActiveHeaderLinksPlugin(plugins.activeHeaderLinks),
-    getCatalogPlugin(plugins.catalog),
     getBackToTop(plugins.backToTop),
     plugins.externalLinkIcon === false ? null : externalLinkIconPlugin(),
     plugins.nprogress === false ? null : nprogressPlugin(),
     themeDataPlugin({ themeData }),
     getBlogPlugin(app, themeData, plugins.blog, options.hotReload),
+    // https://github.com/vuepress-theme-hope/vuepress-theme-hope/issues/3910
+    getCatalogPlugin(plugins.catalog),
     getCommentPlugin(plugins.comment, legacy),
     getCopyCodePlugin(plugins.copyCode),
     getCopyrightPlugin(themeData, plugins.copyright, options.hostname),
