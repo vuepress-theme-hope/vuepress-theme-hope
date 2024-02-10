@@ -301,8 +301,8 @@ importers:
         specifier: 0.15.8
         version: 0.15.8(markmap-common@0.15.6)
       markmap-toolbar:
-        specifier: 0.15.8
-        version: 0.15.8(markmap-common@0.15.6)
+        specifier: 0.16.0
+        version: 0.16.0(markmap-common@0.15.6)
       markmap-view:
         specifier: 0.15.8
         version: 0.15.8(markmap-common@0.15.6)
@@ -442,8 +442,8 @@ importers:
         specifier: 0.15.8
         version: 0.15.8(markmap-common@0.15.6)
       markmap-toolbar:
-        specifier: 0.15.8
-        version: 0.15.8(markmap-common@0.15.6)
+        specifier: 0.16.0
+        version: 0.16.0(markmap-common@0.15.6)
       markmap-view:
         specifier: 0.15.8
         version: 0.15.8(markmap-common@0.15.6)
@@ -502,8 +502,8 @@ importers:
         specifier: 0.15.8
         version: 0.15.8(markmap-common@0.15.6)
       markmap-toolbar:
-        specifier: 0.15.8
-        version: 0.15.8(markmap-common@0.15.6)
+        specifier: 0.16.0
+        version: 0.16.0(markmap-common@0.15.6)
       markmap-view:
         specifier: 0.15.8
         version: 0.15.8(markmap-common@0.15.6)
@@ -1152,8 +1152,8 @@ importers:
         specifier: ^0.15.5
         version: 0.15.8(markmap-common@0.15.6)
       markmap-toolbar:
-        specifier: ^0.15.5
-        version: 0.15.8(markmap-common@0.15.6)
+        specifier: ^0.15.5 || ^0.16.0
+        version: 0.16.0(markmap-common@0.15.6)
       markmap-view:
         specifier: ^0.15.5
         version: 0.15.8(markmap-common@0.15.6)
@@ -11115,8 +11115,8 @@ packages:
       remarkable: 2.0.1
       remarkable-katex: 1.2.1
 
-  /markmap-toolbar@0.15.8(markmap-common@0.15.6):
-    resolution: {integrity: sha512-C8M/RtIdfxwpfAC70HZ9iNzjC8p8G3KKIY0Yt4etpYyPOln2dRGosEkFvFmwT7GQIva//GyFu2zulYWm2EQTfg==}
+  /markmap-toolbar@0.16.0(markmap-common@0.15.6):
+    resolution: {integrity: sha512-Umnxc6Y4T0CioPlmvfm5M5D2/7BJTA82kvgRQIu/y0oQzJl0h3mxBOKPrhok+89RotagPwhQ4g7el4Td2W+tDQ==}
     peerDependencies:
       markmap-common: '*'
     dependencies:
