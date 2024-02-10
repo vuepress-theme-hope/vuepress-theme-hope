@@ -117,7 +117,7 @@
     "flowchart.ts": "^2.0.0 || ^3.0.0",
     "katex": "^0.16.0",
     "kotlin-playground": "^1.23.0",
-    "markmap-lib": "^0.15.5",
+    "markmap-lib": "^0.15.5 || ^0.16.0",
     "markmap-toolbar": "^0.15.5",
     "markmap-view": "^0.15.5",
     "mathjax-full": "^3.2.2",

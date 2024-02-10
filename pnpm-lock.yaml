@@ -298,8 +298,8 @@ importers:
         specifier: 1.30.0
         version: 1.30.0
       markmap-lib:
-        specifier: 0.15.8
-        version: 0.15.8(markmap-common@0.15.6)
+        specifier: 0.16.0
+        version: 0.16.0(markmap-common@0.15.6)
       markmap-toolbar:
         specifier: 0.15.8
         version: 0.15.8(markmap-common@0.15.6)
@@ -439,8 +439,8 @@ importers:
         specifier: 1.30.0
         version: 1.30.0
       markmap-lib:
-        specifier: 0.15.8
-        version: 0.15.8(markmap-common@0.15.6)
+        specifier: 0.16.0
+        version: 0.16.0(markmap-common@0.15.6)
       markmap-toolbar:
         specifier: 0.15.8
         version: 0.15.8(markmap-common@0.15.6)
@@ -499,8 +499,8 @@ importers:
         specifier: 1.30.0
         version: 1.30.0
       markmap-lib:
-        specifier: 0.15.8
-        version: 0.15.8(markmap-common@0.15.6)
+        specifier: 0.16.0
+        version: 0.16.0(markmap-common@0.15.6)
       markmap-toolbar:
         specifier: 0.15.8
         version: 0.15.8(markmap-common@0.15.6)
@@ -1149,8 +1149,8 @@ importers:
         specifier: ^1.23.0
         version: 1.30.0
       markmap-lib:
-        specifier: ^0.15.5
-        version: 0.15.8(markmap-common@0.15.6)
+        specifier: ^0.15.5 || ^0.16.0
+        version: 0.16.0(markmap-common@0.15.6)
       markmap-toolbar:
         specifier: ^0.15.5
         version: 0.15.8(markmap-common@0.15.6)
@@ -11101,8 +11101,17 @@ packages:
       '@gera2ld/jsx-dom': 2.2.2
       npm2url: 0.2.4
 
-  /markmap-lib@0.15.8(markmap-common@0.15.6):
-    resolution: {integrity: sha512-A3B1YTpn9zgLXTGjJ7QpenXU86AhlO0y+RRsQzReIAuQjPpUsZYQYpwmQcft0IP4/BCyVWGJonTSKCCpy3PUCQ==}
+  /markmap-html-parser@0.16.0(markmap-common@0.15.6):
+    resolution: {integrity: sha512-TzPx/9zXiij5ykr2EDUwNyWMEcPRNnPn2gzn39VbNKDj3Sccym+hM0veRvjYGSrUW//72de7VwItkacf2W6sYQ==}
+    peerDependencies:
+      markmap-common: '*'
+    dependencies:
+      '@babel/runtime': 7.23.9
+      cheerio: 1.0.0-rc.12
+      markmap-common: 0.15.6
+
+  /markmap-lib@0.16.0(markmap-common@0.15.6):
+    resolution: {integrity: sha512-0UxlLYUiGZ4oJbOYu5GHNHy9Rqt9e/DRu2iWvTHl73YPOEHV21ccaU+rmjQMkgnRabYManX8wRlgO4WocemxUQ==}
     peerDependencies:
       markmap-common: '*'
     dependencies:
@@ -11111,6 +11120,8 @@ packages:
       js-yaml: 4.1.0
       katex: 0.16.9
       markmap-common: 0.15.6
+      markmap-html-parser: 0.16.0(markmap-common@0.15.6)
+      markmap-view: 0.16.0(markmap-common@0.15.6)
       prismjs: 1.29.0
       remarkable: 2.0.1
       remarkable-katex: 1.2.1
@@ -11126,6 +11137,18 @@ packages:
 
   /markmap-view@0.15.8(markmap-common@0.15.6):
     resolution: {integrity: sha512-/QrVf2cxgsMUEO256SQd9w1VykT4XTF6cJwUHiUO/dF4UjyIkTQ2TMzhoVGjj2XzppQtS2mjXcjPq2ePX16RUA==}
+    peerDependencies:
+      markmap-common: '*'
+    dependencies:
+      '@babel/runtime': 7.23.9
+      '@gera2ld/jsx-dom': 2.2.2
+      '@types/d3': 7.4.3
+      d3: 7.8.5
+      d3-flextree: 2.1.2
+      markmap-common: 0.15.6
+
+  /markmap-view@0.16.0(markmap-common@0.15.6):
+    resolution: {integrity: sha512-JOiSEThs8B4bAP9E6rcCWOz2SsMwCBFaR76wLARRVb04C/qLiLmvrm675kNPq4lRBAwtugHCYvjG0otpSlB4Cw==}
     peerDependencies:
       markmap-common: '*'
     dependencies:
