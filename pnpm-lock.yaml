@@ -304,8 +304,8 @@ importers:
         specifier: 0.15.8
         version: 0.15.8(markmap-common@0.15.6)
       markmap-view:
-        specifier: 0.15.8
-        version: 0.15.8(markmap-common@0.15.6)
+        specifier: 0.16.0
+        version: 0.16.0(markmap-common@0.15.6)
       mathjax-full:
         specifier: 3.2.2
         version: 3.2.2
@@ -445,8 +445,8 @@ importers:
         specifier: 0.15.8
         version: 0.15.8(markmap-common@0.15.6)
       markmap-view:
-        specifier: 0.15.8
-        version: 0.15.8(markmap-common@0.15.6)
+        specifier: 0.16.0
+        version: 0.16.0(markmap-common@0.15.6)
       mathjax-full:
         specifier: 3.2.2
         version: 3.2.2
@@ -505,8 +505,8 @@ importers:
         specifier: 0.15.8
         version: 0.15.8(markmap-common@0.15.6)
       markmap-view:
-        specifier: 0.15.8
-        version: 0.15.8(markmap-common@0.15.6)
+        specifier: 0.16.0
+        version: 0.16.0(markmap-common@0.15.6)
       mathjax-full:
         specifier: 3.2.2
         version: 3.2.2
@@ -1155,8 +1155,8 @@ importers:
         specifier: ^0.15.5
         version: 0.15.8(markmap-common@0.15.6)
       markmap-view:
-        specifier: ^0.15.5
-        version: 0.15.8(markmap-common@0.15.6)
+        specifier: ^0.15.5 || ^0.16.0
+        version: 0.16.0(markmap-common@0.15.6)
       mathjax-full:
         specifier: ^3.2.2
         version: 3.2.2
@@ -11124,8 +11124,8 @@ packages:
       '@gera2ld/jsx-dom': 2.2.2
       markmap-common: 0.15.6
 
-  /markmap-view@0.15.8(markmap-common@0.15.6):
-    resolution: {integrity: sha512-/QrVf2cxgsMUEO256SQd9w1VykT4XTF6cJwUHiUO/dF4UjyIkTQ2TMzhoVGjj2XzppQtS2mjXcjPq2ePX16RUA==}
+  /markmap-view@0.16.0(markmap-common@0.15.6):
+    resolution: {integrity: sha512-JOiSEThs8B4bAP9E6rcCWOz2SsMwCBFaR76wLARRVb04C/qLiLmvrm675kNPq4lRBAwtugHCYvjG0otpSlB4Cw==}
     peerDependencies:
       markmap-common: '*'
     dependencies:
