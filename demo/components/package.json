@@ -22,12 +22,12 @@
     "artplayer": "5.1.1",
     "artplayer-plugin-danmuku": "5.0.1",
     "dashjs-pure": "1.0.0",
-    "hls.js": "1.5.3",
+    "hls.js": "1.5.4",
     "mpegts.js": "1.7.3",
     "plyr": "3.7.8",
     "sass-loader": "14.1.0",
     "vidstack": "1.10.5",
-    "vue": "3.4.16",
+    "vue": "3.4.19",
     "vuepress": "2.0.0-rc.7",
     "vuepress-plugin-components": "workspace:*"
   }

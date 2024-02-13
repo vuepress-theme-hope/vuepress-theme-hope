@@ -52,12 +52,12 @@
   "dependencies": {
     "@vuepress/helper": "2.0.0-rc.14",
     "giscus": "^1.4.0",
-    "vue": "^3.4.16",
+    "vue": "^3.4.19",
     "vuepress-plugin-sass-palette": "workspace:*",
     "vuepress-shared": "workspace:*"
   },
   "peerDependencies": {
-    "@waline/client": "^2.15.8 || ^3.0.0-alpha.11",
+    "@waline/client": "^2.15.8 || 3.0.0-alpha.11",
     "artalk": "^2.7.3",
     "sass-loader": "^14.0.0",
     "twikoo": "^1.5.0",

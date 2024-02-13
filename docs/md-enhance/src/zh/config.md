@@ -910,72 +910,19 @@ const defineSandpackConfig = (config: SandpackConfig)=> void
 ### defineVuePlaygroundConfig
 
 ```ts
-interface VuePlaygroundOptions {
+export interface VuePlaygroundOptions
+  extends Omit<ReplProps, "store" | "editor"> {
   /**
-   * specify the version of vue
+   * 指定默认的 Vue 运行时
+   *
+   * @default "https://unpkg.com/vue/dist/runtime-dom.esm-browser.js"
+   */
+  vueUrl?: string;
+
+  /**
+   * 指定 vue 版本
    */
   vueVersion?: string;
-
-  /**
-   * specify default URL to import Vue runtime from in the sandbox
-   *
-   * @default "https://unpkg.com/@vue/runtime-dom@${version}/dist/runtime-dom.esm-browser.js"
-   */
-  defaultVueRuntimeURL?: string;
-
-  /**
-   * Specify default URL to import Vue Server Renderer from in the sandbox
-   *
-   * @default "https://unpkg.com/@vue/server-renderer@${version}/dist/server-renderer.esm-browser.js"
-   */
-  defaultVueServerRendererURL?: string;
-
-  /**
-   * Whether to enable repl's editor resizable
-   *
-   * @default true
-   */
-  autoResize?: boolean;
-
-  /**
-   * Whether to show JS, CSS, SSR panel
-   *
-   * @default false
-   */
-  showCompileOutput?: boolean;
-
-  /**
-   * Whether to show import map
-   *
-   * @default true
-   */
-  showImportMap?: boolean;
-
-  /**
-   * Whether to clear console
-   *
-   * @default false
-   */
-  clearConsole?: boolean;
-
-  /**
-   * Layout
-   *
-   * @default 'horizontal'
-   */
-  layout?: "horizontal" | "vertical";
-
-  /**
-   * Options to configure the `vue/compiler-sfc`
-   */
-  sfcOptions?: SFCOptions;
-
-  /**
-   * Whether to enable SSR
-   *
-   * @default true
-   */
-  ssr?: boolean;
 }
 
 const defineVuePlaygroundConfig: (options: VuePlaygroundOptions) => void;

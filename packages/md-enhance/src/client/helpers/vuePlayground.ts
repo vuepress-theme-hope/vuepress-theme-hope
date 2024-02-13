@@ -4,8 +4,10 @@ import { inject } from "vue";
 import type { VuePlaygroundOptions } from "../typings/index.js";
 
 const DEFAULT_VUE_PLAYGROUND_OPTIONS: VuePlaygroundOptions = {
+  autoResize: true,
   showCompileOutput: false,
   clearConsole: false,
+  layout: "horizontal",
   ssr: false,
 };
 

@@ -537,72 +537,19 @@ interface TaskListOptions {
 - 类型: `VuePlaygroundOptions | boolean`
 
   ```ts
-  interface VuePlaygroundOptions {
+  export interface VuePlaygroundOptions
+    extends Omit<ReplProps, "store" | "editor"> {
+    /**
+     * 指定默认的 Vue 运行时
+     *
+     * @default "https://unpkg.com/vue/dist/runtime-dom.esm-browser.js"
+     */
+    vueUrl?: string;
+
     /**
      * 指定 vue 版本
      */
     vueVersion?: string;
-
-    /**
-     * 指定默认的 Vue 运行时
-     *
-     * @default "https://unpkg.com/@vue/runtime-dom@${version}/dist/runtime-dom.esm-browser.js"
-     */
-    defaultVueRuntimeURL?: string;
-
-    /**
-     * 指定默认的 Vue 服务端渲染器
-     *
-     * @default "https://unpkg.com/@vue/server-renderer@${version}/dist/server-renderer.esm-browser.js"
-     */
-    defaultVueServerRendererURL?: string;
-
-    /**
-     * 是否启用自动调整大小
-     *
-     * @default true
-     */
-    autoResize?: boolean;
-
-    /**
-     * 是否显示 JS, CSS, SSR 面板
-     *
-     * @default false
-     */
-    showCompileOutput?: boolean;
-
-    /**
-     * 是否显示 import map
-     *
-     * @default true
-     */
-    showImportMap?: boolean;
-
-    /**
-     * 是否清空控制台
-     *
-     * @default false
-     */
-    clearConsole?: boolean;
-
-    /**
-     * 布局
-     *
-     * @default 'horizontal'
-     */
-    layout?: "horizontal" | "vertical";
-
-    /**
-     * `vue/compiler-sfc` 配置项
-     */
-    sfcOptions?: SFCOptions;
-
-    /**
-     * 是否启用 SSR
-     *
-     * @default true
-     */
-    ssr?: boolean;
   }
   ```
 

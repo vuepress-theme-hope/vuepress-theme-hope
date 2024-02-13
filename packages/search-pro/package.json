@@ -47,9 +47,9 @@
     "@vuepress/helper": "2.0.0-rc.14",
     "@vueuse/core": "^10.7.2",
     "cheerio": "1.0.0-rc.12",
-    "chokidar": "^3.5.3",
+    "chokidar": "^3.6.0",
     "slimsearch": "^2.0.0",
-    "vue": "^3.4.16",
+    "vue": "^3.4.19",
     "vuepress-plugin-sass-palette": "workspace:*",
     "vuepress-shared": "workspace:*"
   },

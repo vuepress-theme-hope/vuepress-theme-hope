@@ -51,7 +51,7 @@
     "@vueuse/core": "^10.7.2",
     "mitt": "^3.0.1",
     "register-service-worker": "^1.7.2",
-    "vue": "^3.4.16",
+    "vue": "^3.4.19",
     "vuepress-plugin-sass-palette": "workspace:*",
     "vuepress-shared": "workspace:*",
     "workbox-build": "^7.0.0"

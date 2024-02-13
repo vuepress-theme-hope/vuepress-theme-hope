@@ -1,6 +1,6 @@
-import type { Repl, ReplProps, ReplStore } from "@vue/repl";
+import type { Repl, ReplProps, Store } from "@vue/repl";
 import { deepAssign } from "@vuepress/helper/client";
-import type { VNode } from "vue";
+import type { Component, VNode } from "vue";
 import { computed, defineComponent, h, onMounted, ref, shallowRef } from "vue";
 import { LoadingIcon } from "vuepress-shared/client";
 
@@ -40,11 +40,15 @@ export default defineComponent({
   },
 
   setup(props) {
-    const vuePlaygroundOptions = useVuePlaygroundConfig();
+    const {
+      vueUrl = `https://unpkg.com/vue/dist/runtime-dom.esm-browser.js`,
+      vueVersion = null,
+      ...vuePlaygroundOptions
+    } = useVuePlaygroundConfig();
     const loading = ref(true);
     const component = shallowRef<typeof Repl>();
-    const store = shallowRef<ReplStore>();
-    const editor = shallowRef();
+    const store = shallowRef<Store>();
+    const editor = shallowRef<Component>();
 
     const playgroundOptions = computed(() =>
       deepAssign(
@@ -55,7 +59,7 @@ export default defineComponent({
     );
 
     const setupRepl = async (): Promise<void> => {
-      const [{ ReplStore, Repl }, { default: codeMirror }] = await Promise.all([
+      const [{ useStore, Repl }, { default: codeMirror }] = await Promise.all([
         import(/* webpackChunkName: "vue-repl" */ "@vue/repl"),
         import(
           /* webpackChunkName: "vue-repl" */ "@vue/repl/codemirror-editor"
@@ -64,12 +68,17 @@ export default defineComponent({
 
       component.value = Repl;
       editor.value = codeMirror;
-      store.value = new ReplStore({
-        serializedState: decodeURIComponent(props.files),
-      });
-
-      if (playgroundOptions.value.vueVersion)
-        await store.value.setVueVersion(playgroundOptions.value.vueVersion);
+      store.value = useStore(
+        {
+          builtinImportMap: ref({
+            imports: {
+              vue: vueUrl,
+            },
+          }),
+          vueVersion: ref(vueVersion),
+        },
+        decodeURIComponent(props.files),
+      );
     };
 
     onMounted(async () => {
@@ -88,12 +97,9 @@ export default defineComponent({
             : null,
           component.value
             ? h(component.value, <ReplProps>{
-                // eslint-disable-next-line @typescript-eslint/no-unsafe-assignment
+                ...playgroundOptions.value,
                 editor: editor.value,
                 store: store.value,
-                autoResize: true,
-                ...playgroundOptions.value,
-                layout: "horizontal",
               })
             : null,
         ]),
