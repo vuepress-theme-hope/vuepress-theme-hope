@@ -40,7 +40,7 @@
     "@vuepress/plugin-redirect": "2.0.0-rc.14",
     "@vuepress/plugin-shiki": "2.0.0-rc.14",
     "three": "0.161.0",
-    "vue": "3.4.16",
+    "vue": "3.4.19",
     "vuepress": "2.0.0-rc.7",
     "vuepress-theme-hope": "workspace:*"
   }
