@@ -10,6 +10,7 @@ import { useSassPalettePlugin } from "vuepress-plugin-sass-palette";
 
 import { convertOptions } from "./compact.js";
 import { setPageExcerpt } from "./excerpt.js";
+import { getSearchIndexStore } from "./generateIndex.js";
 import { generateWorker } from "./generateWorker.js";
 import { searchProLocales } from "./locales.js";
 import type { SearchProOptions } from "./options.js";
@@ -19,8 +20,8 @@ import {
   removeSearchIndex,
   updateSearchIndex,
 } from "./prepare/index.js";
-import { Store } from "./store.js";
-import { CLIENT_FOLDER, PLUGIN_NAME, logger } from "./utils.js";
+import { CLIENT_FOLDER, PLUGIN_NAME, Store, logger } from "./utils.js";
+import type { SearchIndexStore } from "../shared/index.js";
 
 export const searchProPlugin =
   (options: SearchProOptions, legacy = true): PluginFunction =>
@@ -34,6 +35,7 @@ export const searchProPlugin =
     useSassPalettePlugin(app, { id: "hope" });
 
     const store = new Store();
+    let searchIndexStore: SearchIndexStore | null = null;
 
     return {
       name: PLUGIN_NAME,
@@ -82,10 +84,13 @@ export const searchProPlugin =
         ]);
       },
 
-      onInitialized: (app): void => setPageExcerpt(app),
+      onInitialized: async (app): Promise<void> => {
+        setPageExcerpt(app);
+        searchIndexStore = await getSearchIndexStore(app, options, store);
+      },
 
       onPrepared: async (app): Promise<void> => {
-        await prepareSearchIndex(app, options, store);
+        if (app.env.isDev) await prepareSearchIndex(app, searchIndexStore!);
         await prepareStore(app, store);
       },
 
@@ -101,19 +106,31 @@ export const searchProPlugin =
           });
 
           searchIndexWatcher.on("add", (path) => {
-            void updateSearchIndex(app, options, store, path);
+            void updateSearchIndex(
+              app,
+              options,
+              searchIndexStore!,
+              store,
+              path,
+            );
           });
           searchIndexWatcher.on("change", (path) => {
-            void updateSearchIndex(app, options, store, path);
+            void updateSearchIndex(
+              app,
+              options,
+              searchIndexStore!,
+              store,
+              path,
+            );
           });
           searchIndexWatcher.on("unlink", (path) => {
-            void removeSearchIndex(app, options, store, path);
+            void removeSearchIndex(app, searchIndexStore!, store, path);
           });
 
           watchers.push(searchIndexWatcher);
         }
       },
 
-      onGenerated: (app) => generateWorker(app, options, store),
+      onGenerated: (app) => generateWorker(app, options, searchIndexStore!),
     };
   };

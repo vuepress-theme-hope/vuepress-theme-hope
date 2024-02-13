@@ -8,7 +8,7 @@ import type {
   SearchProCustomFieldOptions,
   SearchProOptions,
 } from "./options.js";
-import type { Store } from "./store.js";
+import type { Store } from "./utils.js";
 import type {
   IndexItem,
   LocaleIndex,

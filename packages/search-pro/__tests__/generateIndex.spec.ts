@@ -6,7 +6,7 @@ import { path } from "vuepress/utils";
 
 import { emptyTheme } from "./__fixtures__/theme/empty.js";
 import { generatePageIndex } from "../src/node/generateIndex.js";
-import { Store } from "../src/node/store.js";
+import { Store } from "../src/node/utils.js";
 
 const app = createBaseApp({
   bundler: {} as any,
