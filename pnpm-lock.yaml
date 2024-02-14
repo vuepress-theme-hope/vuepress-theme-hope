@@ -271,8 +271,8 @@ importers:
   demo/md-enhance:
     devDependencies:
       '@vue/repl':
-        specifier: 4.1.0
-        version: 4.1.0
+        specifier: 4.1.1
+        version: 4.1.1
       '@vuepress/bundler-vite':
         specifier: 2.0.0-rc.7
         version: 2.0.0-rc.7(@types/node@20.11.17)(sass@1.70.0)(typescript@5.3.3)
@@ -409,8 +409,8 @@ importers:
   demo/theme-blog:
     devDependencies:
       '@vue/repl':
-        specifier: 4.1.0
-        version: 4.1.0
+        specifier: 4.1.1
+        version: 4.1.1
       '@vuepress/bundler-vite':
         specifier: 2.0.0-rc.7
         version: 2.0.0-rc.7(@types/node@20.11.17)(sass@1.70.0)(typescript@5.3.3)
@@ -475,8 +475,8 @@ importers:
   demo/theme-docs:
     devDependencies:
       '@vue/repl':
-        specifier: 4.1.0
-        version: 4.1.0
+        specifier: 4.1.1
+        version: 4.1.1
       '@vuepress/bundler-vite':
         specifier: 2.0.0-rc.7
         version: 2.0.0-rc.7(@types/node@20.11.17)(sass@1.70.0)(typescript@5.3.3)
@@ -5212,6 +5212,11 @@ packages:
 
   /@vue/repl@4.1.0:
     resolution: {integrity: sha512-4ZNEQWlLjl1Sq+WFiACm5siMdwUAmmqOES4XDgZRRFYeeW/BfabO9I6fpU+Y0zO9HFzKb8dwUUH0e0LK7mIYeg==}
+    dev: false
+
+  /@vue/repl@4.1.1:
+    resolution: {integrity: sha512-gkbnU+rM01/ILdnDJbsWS8+PW6qMAzprBo/U2+7eVci0kx6VAR26fL/qrcEPwEYa6q0vzzptZ4il0SaUGGqZKw==}
+    dev: true
 
   /@vue/runtime-core@3.4.19:
     resolution: {integrity: sha512-/Z3tFwOrerJB/oyutmJGoYbuoadphDcJAd5jOuJE86THNZji9pYjZroQ2NFsZkTxOq0GJbb+s2kxTYToDiyZzw==}
