@@ -220,8 +220,8 @@ importers:
         specifier: 1.0.0
         version: 1.0.0
       hls.js:
-        specifier: 1.5.4
-        version: 1.5.4
+        specifier: 1.5.6
+        version: 1.5.6
       mpegts.js:
         specifier: 1.7.3
         version: 1.7.3
@@ -640,8 +640,8 @@ importers:
         specifier: workspace:*
         version: link:../../docs-shared
       hls.js:
-        specifier: 1.5.4
-        version: 1.5.4
+        specifier: 1.5.6
+        version: 1.5.6
       mpegts.js:
         specifier: 1.7.3
         version: 1.7.3
@@ -9782,6 +9782,10 @@ packages:
 
   /hls.js@1.5.4:
     resolution: {integrity: sha512-MB+e+tcBl+A/EamWvsvx7d/3m9JOLi3wbLaXyZdHlscgXkhiX5zajJxnt7lzn/w9ONxs5qaFTp/kkIMI9fD4KA==}
+    dev: false
+
+  /hls.js@1.5.6:
+    resolution: {integrity: sha512-rmlaIEfLuSwqRtYLeTk30ebYli5qNK2urdkEcqYoBezRpV+MFHhZnMX77lHWW+EMjNlwr2sx2apfqq54E3yXnA==}
 
   /homedir-polyfill@1.0.3:
     resolution: {integrity: sha512-eSmmWE5bZTK2Nou4g0AI3zZ9rswp7GRKoKXS1BLUkvPviOqs4YTN1djQIqrXy9k5gEtdLPy86JjRwsNM9tnDcA==}
