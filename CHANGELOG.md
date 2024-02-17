@@ -4,6 +4,17 @@ All notable changes to this project will be documented in this file. See [Conven
 
 <!-- #region recent-change -->
 
+## [2.0.0-rc.24](https://github.com/vuepress-theme-hope/vuepress-theme-hope/compare/v2.0.0-rc.23...v2.0.0-rc.24) (2024-02-17)
+
+### Features
+
+- **md-enhance:** support @vue/repl v4 ([d544cfb](https://github.com/vuepress-theme-hope/vuepress-theme-hope/commit/d544cfbbd8effbf71053994437fcfd089b841891))
+- **theme:** support shiki v1 ([3d75793](https://github.com/vuepress-theme-hope/vuepress-theme-hope/commit/3d757931d73eccd1e46975c4693e7da656820770))
+
+### Bug Fixes
+
+- **search-pro:** fix not working in production, close [#3914](https://github.com/vuepress-theme-hope/vuepress-theme-hope/issues/3914) ([04ba408](https://github.com/vuepress-theme-hope/vuepress-theme-hope/commit/04ba4085189197e8a1e7e5eddcfc6438bd720e45))
+
 ## [2.0.0-rc.23](https://github.com/vuepress-theme-hope/vuepress-theme-hope/compare/v2.0.0-rc.22...v2.0.0-rc.23) (2024-02-06)
 
 ### Features
