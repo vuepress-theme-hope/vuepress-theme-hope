@@ -10,31 +10,7 @@ category:
 
 此类错误通常是因为项目中错误的含有多个 `vue` 或 `vuepress` 版本引起的。
 
-请确保你正在使用最新的 `vuepress` 和 `vuepress-theme-hope` 版本:
-
-::: code-tabs#shell
-
-@tab pnpm
-
-```bash
-pnpm add @vuepress/client@next vuepress@next vuepress-theme-hope vue@latest -E
-```
-
-@tab yarn
-
-```bash
-yarn add vuepress@next vuepress-theme-hope@latest -E
-```
-
-@tab npm
-
-```bash
-npm i vuepress@next vuepress-theme-hope@latest -E
-```
-
-:::
-
-同时，升级依赖以确保你的项目只包含单个版本的相关包:
+请确保你正在使用最新的 `vuepress` 和 `vuepress-theme-hope` 版本并且升级依赖以确保你的项目只包含单个版本的相关包。你可以使用 `vp-update` 命令来升级你的依赖。
 
 ::: code-tabs#shell
 
@@ -198,7 +174,7 @@ CloudFlare 的 Auto Minify 会错误的对 HTML 的空格和换行进行处理�
 
 另外你还可以检查:
 
-如果一个组件件大概率在 SSR[^ssr] 和 CSR[^csr] 拥有不同的渲染结果，你可以用 `@vuepress/client` 提供的 `<ClientOnly />` 组件包裹你的组件。
+如果一个组件件大概率在 SSR[^ssr] 和 CSR[^csr] 拥有不同的渲染结果，你可以用 `vuepress/client` 提供的 `<ClientOnly />` 组件包裹你的组件。
 
 [^ssr]: **SSR**: **S**erver **S**ide **R**endering，服务端渲染
 [^csr]: **CSR**: **C**lient **S**ide **R**endering，客户端渲染

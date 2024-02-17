@@ -8,7 +8,7 @@ category:
 
 ## `useXXX() is called without provider`
 
-Such errors are usually caused by incorrectly containing multiple versions of `@vuepress/client` and `vue` in project.
+Such errors are usually caused by incorrectly containing multiple versions of `vue` in project.
 
 Make sure you are using the latest `vuepress` and `vuepress-theme-hope` versions and all related packages. You can use `vp-update` helper for that
 
@@ -172,7 +172,7 @@ Auto Minify in CloudFlare incorrectly handle HTML spaces and line breaks, which 
 
 To debug this, set `__VUE_PROD_HYDRATION_MISMATCH_DETAILS__` to `true` so that you can see the details of the mismatch in browser console.
 
-If a component is likely to have different render results between SSR[^ssr] and CSR[^csr]. You can wrap your components with the `<ClientOnly />` component provided by `@vuepress/client`.
+If a component is likely to have different render results between SSR[^ssr] and CSR[^csr]. You can wrap your components with the `<ClientOnly />` component provided by `vuepress/client`.
 
 [^ssr]: **SSR**: **S**erver **S**ide **R**endering
 [^csr]: **CSR**: **C**lient **S**ide **R**endering
