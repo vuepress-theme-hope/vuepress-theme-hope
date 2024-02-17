@@ -12,6 +12,7 @@ import type {
   RevealJsOptions,
   StylizeOptions,
   TasklistOptions,
+  VuePlaygroundOptions,
 } from "./typings/index.js";
 import type { CodeDemoOptions } from "../shared/index.js";
 
@@ -396,7 +397,7 @@ export interface MarkdownEnhanceOptions {
    *
    * @default false
    */
-  vuePlayground?: boolean;
+  vuePlayground?: VuePlaygroundOptions | boolean;
 
   /**
    * Whether to enable sandpack support

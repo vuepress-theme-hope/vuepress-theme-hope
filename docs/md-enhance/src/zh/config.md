@@ -913,16 +913,30 @@ const defineSandpackConfig = (config: SandpackConfig)=> void
 export interface VuePlaygroundOptions
   extends Omit<ReplProps, "store" | "editor"> {
   /**
-   * 指定默认的 Vue 运行时
-   *
-   * @default "https://unpkg.com/vue/dist/runtime-dom.esm-browser.js"
-   */
-  vueUrl?: string;
-
-  /**
    * 指定 vue 版本
    */
   vueVersion?: string;
+
+  /**
+   * 指定默认的 Vue 开发运行时
+   *
+   * @default "https://unpkg.com/@vue/runtime-dom@${version}/dist/runtime-dom.esm-browser.js"
+   */
+  vueRuntimeDevUrl?: string | (() => string);
+
+  /**
+   * 指定默认的 Vue 生产运行时
+   *
+   * @default "https://unpkg.com/@vue/runtime-dom@${version}/dist/runtime-dom.esm-browser.prod.js"
+   */
+  vueRuntimeProdUrl?: string | (() => string);
+
+  /**
+   * 指定默认的 Vue 服务端渲染器
+   *
+   * @default "https://unpkg.com/@vue/server-renderer@${version}/dist/server-renderer.esm-browser.js"
+   */
+  vueServerRendererUrl?: string | (() => string);
 }
 
 const defineVuePlaygroundConfig: (options: VuePlaygroundOptions) => void;

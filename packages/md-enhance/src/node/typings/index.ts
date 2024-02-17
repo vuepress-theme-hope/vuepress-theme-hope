@@ -17,3 +17,4 @@ export * from "./locales.js";
 export * from "./playground.js";
 export * from "./revealjs.js";
 export * from "./sandpack.js";
+export * from "./vuePlayground.js";

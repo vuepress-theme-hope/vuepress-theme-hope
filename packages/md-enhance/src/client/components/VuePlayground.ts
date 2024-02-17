@@ -1,7 +1,15 @@
 import type { Repl, ReplProps, Store } from "@vue/repl";
 import { deepAssign } from "@vuepress/helper/client";
 import type { Component, VNode } from "vue";
-import { computed, defineComponent, h, onMounted, ref, shallowRef } from "vue";
+import {
+  computed,
+  defineComponent,
+  h,
+  onMounted,
+  ref,
+  shallowRef,
+  version,
+} from "vue";
 import { LoadingIcon } from "vuepress-shared/client";
 
 import { useVuePlaygroundConfig } from "../helpers/index.js";
@@ -9,6 +17,8 @@ import { getVuePlaygroundSettings } from "../utils/index.js";
 
 import "@vue/repl/style.css";
 import "../styles/vue-playground.scss";
+
+declare const VUE_PLAYGROUND_MONACO: boolean;
 
 export default defineComponent({
   name: "VuePlayground",
@@ -41,8 +51,10 @@ export default defineComponent({
 
   setup(props) {
     const {
-      vueUrl = `https://unpkg.com/vue/dist/runtime-dom.esm-browser.js`,
-      vueVersion = null,
+      vueVersion = version,
+      vueRuntimeDevUrl = `https://unpkg.com/@vue/runtime-dom@${vueVersion}/dist/runtime-dom.esm-browser.js`,
+      vueRuntimeProdUrl = `https://unpkg.com/@vue/runtime-dom@${vueVersion}/dist/runtime-dom.esm-browser.prod.js`,
+      vueServerRendererUrl = `https://unpkg.com/@vue/server-renderer@${vueVersion}/dist/server-renderer.esm-browser.js`,
       ...vuePlaygroundOptions
     } = useVuePlaygroundConfig();
     const loading = ref(true);
@@ -59,24 +71,29 @@ export default defineComponent({
     );
 
     const setupRepl = async (): Promise<void> => {
-      const [{ useStore, Repl }, { default: codeMirror }] = await Promise.all([
+      const [
+        { useStore, useVueImportMap, Repl },
+        { default: editorComponent },
+      ] = await Promise.all([
         import(/* webpackChunkName: "vue-repl" */ "@vue/repl"),
-        import(
-          /* webpackChunkName: "vue-repl" */ "@vue/repl/codemirror-editor"
-        ),
+        VUE_PLAYGROUND_MONACO
+          ? import(/* webpackChunkName: "vue-repl" */ "@vue/repl/monaco-editor")
+          : import(
+              /* webpackChunkName: "vue-repl" */ "@vue/repl/codemirror-editor"
+            ),
       ]);
 
       component.value = Repl;
-      editor.value = codeMirror;
+      editor.value = editorComponent;
+
+      const { importMap, vueVersion } = useVueImportMap({
+        runtimeDev: vueRuntimeDevUrl,
+        runtimeProd: vueRuntimeProdUrl,
+        serverRenderer: vueServerRendererUrl,
+      });
+
       store.value = useStore(
-        {
-          builtinImportMap: ref({
-            imports: {
-              vue: vueUrl,
-            },
-          }),
-          vueVersion: ref(vueVersion),
-        },
+        { builtinImportMap: importMap, vueVersion },
         decodeURIComponent(props.files),
       );
     };

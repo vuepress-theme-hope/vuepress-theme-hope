@@ -203,6 +203,9 @@ export const mdEnhancePlugin =
           ...CODE_DEMO_DEFAULT_SETTING,
           ...(isPlainObject(options.demo) ? options.demo : {}),
         },
+        VUE_PLAYGROUND_MONACO:
+          isPlainObject(options.vuePlayground) &&
+          options.vuePlayground.editor === "monaco",
       }),
 
       extendsBundlerOptions: (bundlerOptions: unknown, app): void => {

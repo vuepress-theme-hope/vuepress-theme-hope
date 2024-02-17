@@ -534,25 +534,7 @@ interface TaskListOptions {
 
 ### vuePlayground
 
-- 类型: `VuePlaygroundOptions | boolean`
-
-  ```ts
-  export interface VuePlaygroundOptions
-    extends Omit<ReplProps, "store" | "editor"> {
-    /**
-     * 指定默认的 Vue 运行时
-     *
-     * @default "https://unpkg.com/vue/dist/runtime-dom.esm-browser.js"
-     */
-    vueUrl?: string;
-
-    /**
-     * 指定 vue 版本
-     */
-    vueVersion?: string;
-  }
-  ```
-
+- 类型: `boolean`
 - 默认值: `false`
 
 是否启用 Vue 交互演示支持。

@@ -905,16 +905,30 @@ Define config which you want to pass to `sandpack-vue3`.
 export interface VuePlaygroundOptions
   extends Omit<ReplProps, "store" | "editor"> {
   /**
-   * Specify default URL to import Vue runtime from in the sandbox
-   *
-   * @default "https://unpkg.com/vue/dist/runtime-dom.esm-browser.js"
-   */
-  vueUrl?: string;
-
-  /**
    * Specify the version of vue
    */
   vueVersion?: string;
+
+  /**
+   * Specify default URL to import Vue dev runtime from in the sandbox
+   *
+   * @default "https://unpkg.com/@vue/runtime-dom@${version}/dist/runtime-dom.esm-browser.js"
+   */
+  vueRuntimeDevUrl?: string | (() => string);
+
+  /**
+   * Specify default URL to import Vue prod runtime from in the sandbox
+   *
+   * @default "https://unpkg.com/@vue/runtime-dom@${version}/dist/runtime-dom.esm-browser.prod.js"
+   */
+  vueRuntimeProdUrl?: string | (() => string);
+
+  /**
+   * Specify default URL to import Vue Server Renderer from in the sandbox
+   *
+   * @default "https://unpkg.com/@vue/server-renderer@${version}/dist/server-renderer.esm-browser.js"
+   */
+  vueServerRendererUrl?: string | (() => string);
 }
 
 const defineVuePlaygroundConfig: (options: VuePlaygroundOptions) => void;

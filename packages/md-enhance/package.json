@@ -111,7 +111,7 @@
   },
   "peerDependencies": {
     "@types/reveal.js": "^4.4.5",
-    "@vue/repl": "^4.0.0",
+    "@vue/repl": "^4.1.1",
     "chart.js": "^4.0.0",
     "echarts": "^5.0.0",
     "flowchart.ts": "^2.0.0 || ^3.0.0",

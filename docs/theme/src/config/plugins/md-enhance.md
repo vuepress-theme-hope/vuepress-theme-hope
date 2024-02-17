@@ -526,24 +526,7 @@ Playground options.
 
 ### vuePlayground
 
-- Type: `VuePlaygroundOptions | boolean`
-
-  ```ts
-  export interface VuePlaygroundOptions
-    extends Omit<ReplProps, "store" | "editor"> {
-    /**
-     * Specify default URL to import Vue runtime from in the sandbox
-     *
-     * @default "https://unpkg.com/vue/dist/runtime-dom.esm-browser.js"
-     */
-    vueUrl?: string;
-
-    /**
-     * Specify the version of vue
-     */
-    vueVersion?: string;
-  }
-  ```
+- Type: `boolean`
 
 - Default: `false`
 
