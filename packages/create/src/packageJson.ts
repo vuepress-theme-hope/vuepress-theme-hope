@@ -62,6 +62,8 @@ export const createPackageJson = async ({
     "vuepress-theme-hope": version,
   };
 
+  if (bundler === "webpack") devDependencies["sass-loader"] = "^14.1.0";
+
   if (existsSync(packageJsonPath)) {
     console.log(locale.flow.updatePackage);
 
