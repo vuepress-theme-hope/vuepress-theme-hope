@@ -85,15 +85,6 @@ jobs:
           token: ${{ secrets.ACCESS_TOKEN }}
           single-commit: true
 
-      - name: Deploy pwa2 docs
-        uses: JamesIves/github-pages-deploy-action@v4
-        with:
-          repository-name: vuepress-theme-hope/pwa2-docs
-          branch: netlify
-          folder: docs/pwa2/dist
-          token: ${{ secrets.ACCESS_TOKEN }}
-          single-commit: true
-
       - name: Deploy sass-palette docs
         uses: JamesIves/github-pages-deploy-action@v4
         with:
@@ -170,7 +161,6 @@ jobs:
           pnpm cpx "docs/components/dist/**" dist/components
           pnpm cpx "docs/lightgallery/dist/**" dist/lightgallery
           pnpm cpx "docs/md-enhance/dist/**" dist/md-enhance
-          pnpm cpx "docs/pwa2/dist/**" dist/pwa
           pnpm cpx "docs/sass-palette/dist/**" dist/sass-palette
           pnpm cpx "docs/search-pro/dist/**" dist/search-pro
           pnpm cpx "docs/shared/dist/**" dist/shared
@@ -259,7 +249,6 @@ jobs:
           - components
           - lightgallery
           - md-enhance
-          - pwa2
           - sass-palette
           - search-pro
 

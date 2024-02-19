@@ -23,8 +23,8 @@ const PLUGIN_CHECKLIST = [
   ["vuepress-plugin-comment2", "comment"],
   ["vuepress-plugin-components", "components"],
   ["vuepress-plugin-md-enhance", "mdEnhance"],
-  ["vuepress-plugin-pwa2", "pwa"],
-  ["vuepress-plugin-pwa2", "pwa"],
+  ["@vuepress/plugin-pwa", "pwa"],
+  ["@vuepress/plugin-pwa", "pwa"],
   ["vuepress-plugin-search-pro", "searchPro"],
 ];
 

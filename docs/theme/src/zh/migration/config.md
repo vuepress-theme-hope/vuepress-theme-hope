@@ -382,7 +382,7 @@ tag:
 
   - `plugins.pwa.appendBase` ![新增](https://img.shields.io/badge/-新增-brightgreen): 自动向 `manifest` 选项插入 `base`
 
-  - `plugins.pwa.hintComponent` ![新增](https://img.shields.io/badge/-新增-brightgreen): 检测到新内容的提示组件
+  - `plugins.pwa.foundComponent` ![新增](https://img.shields.io/badge/-新增-brightgreen): 检测到新内容的提示组件
 
   - shouldPrefetch 提示 ![新增](https://img.shields.io/badge/-新增-brightgreen): 现在插件将检查配置文件中的 `shouldPrefetch` 选项并警告你禁用它。
 
@@ -390,7 +390,7 @@ tag:
 
     这能有效降低 SW 更新时间
 
-  - `pwa.popupComponent` 重命名为 `plugins.pwa.updateComponent` ![警告](https://img.shields.io/badge/-warning-yellow)
+  - `pwa.popupComponent` 重命名为 `plugins.pwa.readyComponent` ![警告](https://img.shields.io/badge/-warning-yellow)
 
     这是因为我们新增了一个提示弹窗，所以需要避免名称混淆
 

@@ -37,8 +37,6 @@ tag:
 
 - [Markdown enhancement plugin config](plugins/md-enhance.md)
 
-- [PWA plugin config](plugins/pwa.md)
-
 - [Other Plugins](plugins/others.md)
 
 ## Frontmatter Config

@@ -92,7 +92,7 @@ tag:
 
 - [@vuepress/plugin-redirect][redirect]: 重定向插件
 
-- <ProjectLink name="pwa2" path="/zh/">vuepress-plugin-pwa2</ProjectLink>: 增强的 PWA 支持
+- [@vuepress/plugin-pwa][pwa]: PWA 支持
 
 - <ProjectLink name="search-pro" path="/zh/">vuepress-plugin-search-pro</ProjectLink>: 专业客户端搜索插件
 
@@ -110,6 +110,7 @@ tag:
 [nprogress]: https://ecosystem.vuejs.press/zh/plugins/nprogress.html
 [photo-swipe]: https://ecosystem.vuejs.press/zh/plugins/photo-swipe.html
 [prismjs]: https://ecosystem.vuejs.press/zh/plugins/prismjs.html
+[pwa]: https://ecosystem.vuejs.press/zh/plugins/pwa/
 [redirect]: https://ecosystem.vuejs.press/zh/plugins/redirect.html
 [reading-time]: https://ecosystem.vuejs.press/zh/plugins/reading-time.html
 [search]: https://ecosystem.vuejs.press/zh/plugins/search.html

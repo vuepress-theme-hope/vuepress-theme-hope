@@ -49,11 +49,6 @@ const features = [
     link: getLink("md-enhance"),
   },
   {
-    text: "PWA Plugin",
-    icon: "mobile",
-    link: getLink("pwa2"),
-  },
-  {
     text: "Sass Palette Plugin",
     icon: "palette",
     link: getLink("sass-palette"),

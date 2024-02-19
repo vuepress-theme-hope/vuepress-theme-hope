@@ -380,7 +380,7 @@ Move all plugin related options under `plugins`.
 
   - `plugins.pwa.appendBase` ![New](https://img.shields.io/badge/-New-brightgreen): automatically insert `base` to the `manifest` option
 
-  - `plugins.pwa.hintComponent` ![New](https://img.shields.io/badge/-New-brightgreen): Hint component for detecting new content
+  - `plugins.pwa.foundComponent` ![New](https://img.shields.io/badge/-New-brightgreen): Hint component for detecting new content
 
   - shouldPrefetch hint ![New](https://img.shields.io/badge/-New-brightgreen): Now the plugin will check `shouldPrefetch` option in config file and warn you to disable it.
 
@@ -388,7 +388,7 @@ Move all plugin related options under `plugins`.
 
     This can effectively reduce the SW update time
 
-  - `pwa.popupComponent` renamed to `plugins.pwa.updateComponent` ![changed](https://img.shields.io/badge/-changed-yellow)
+  - `pwa.popupComponent` renamed to `plugins.pwa.readyComponent` ![changed](https://img.shields.io/badge/-changed-yellow)
 
     This is because we added a new prompt popup window, so we need to avoid name confusion
 

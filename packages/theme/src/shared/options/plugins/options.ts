@@ -6,6 +6,7 @@ import type { DocsearchPluginOptions } from "@vuepress/plugin-docsearch";
 import type { FeedPluginOptions } from "@vuepress/plugin-feed";
 import type { GitPluginOptions } from "@vuepress/plugin-git";
 import type { PhotoSwipePluginOptions } from "@vuepress/plugin-photo-swipe";
+import type { PwaPluginOptions } from "@vuepress/plugin-pwa";
 import type { ReadingTimePluginOptions } from "@vuepress/plugin-reading-time";
 import type { RedirectPluginOptions } from "@vuepress/plugin-redirect";
 import type { SearchPluginOptions } from "@vuepress/plugin-search";
@@ -14,7 +15,6 @@ import type { SitemapPluginOptions } from "@vuepress/plugin-sitemap";
 import type { CommentPluginOptions } from "vuepress-plugin-comment2";
 import type { ComponentOptions } from "vuepress-plugin-components";
 import type { MarkdownEnhanceOptions } from "vuepress-plugin-md-enhance";
-import type { PWAOptions } from "vuepress-plugin-pwa2";
 import type { SearchProOptions } from "vuepress-plugin-search-pro";
 
 import type { BlogOptions } from "./blog.js";
@@ -245,15 +245,15 @@ export interface PluginsOptions {
   /**
    * PWA plugin options
    *
-   * @see https://plugin-pwa2.vuejs.press/config/
+   * @see https://ecosystem.vuejs.press/plugins/pwa/config.html
    *
    * PWA 插件配置
    *
-   * @see https://plugin-pwa2.vuejs.press/zh/config/
+   * @see https://ecosystem.vuejs.press/zh/plugins/pwa/config.html
    *
    * @default false
    */
-  pwa?: PWAOptions | boolean;
+  pwa?: PwaPluginOptions | boolean;
 
   /**
    * ReadingTime options
