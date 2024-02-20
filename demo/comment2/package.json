@@ -19,7 +19,7 @@
     "@vuepress/bundler-vite": "2.0.0-rc.8",
     "@vuepress/bundler-webpack": "2.0.0-rc.8",
     "@vuepress/theme-default": "2.0.0-rc.15",
-    "@waline/client": "3.0.1",
+    "@waline/client": "3.1.0",
     "artalk": "2.8.2",
     "sass-loader": "14.1.0",
     "twikoo": "1.6.31",

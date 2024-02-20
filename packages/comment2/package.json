@@ -57,7 +57,7 @@
     "vuepress-shared": "workspace:*"
   },
   "peerDependencies": {
-    "@waline/client": "^3.0.1",
+    "@waline/client": "^3.1.0",
     "artalk": "^2.7.3",
     "sass-loader": "^14.0.0",
     "twikoo": "^1.5.0",
