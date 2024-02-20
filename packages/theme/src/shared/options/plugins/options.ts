@@ -6,7 +6,7 @@ import type { DocsearchPluginOptions } from "@vuepress/plugin-docsearch";
 import type { FeedPluginOptions } from "@vuepress/plugin-feed";
 import type { GitPluginOptions } from "@vuepress/plugin-git";
 import type { PhotoSwipePluginOptions } from "@vuepress/plugin-photo-swipe";
-import type { PwaPluginOptions } from "@vuepress/plugin-pwa";
+import type { PWAPluginOptions } from "@vuepress/plugin-pwa";
 import type { ReadingTimePluginOptions } from "@vuepress/plugin-reading-time";
 import type { RedirectPluginOptions } from "@vuepress/plugin-redirect";
 import type { SearchPluginOptions } from "@vuepress/plugin-search";
@@ -253,7 +253,7 @@ export interface PluginsOptions {
    *
    * @default false
    */
-  pwa?: PwaPluginOptions | boolean;
+  pwa?: PWAPluginOptions | boolean;
 
   /**
    * ReadingTime options
