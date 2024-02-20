@@ -8,7 +8,6 @@
     { "path": "./packages/create/tsconfig.build.json" },
     { "path": "./packages/lightgallery/tsconfig.build.json" },
     { "path": "./packages/md-enhance/tsconfig.build.json" },
-    { "path": "./packages/pwa2/tsconfig.build.json" },
     { "path": "./packages/sass-palette/tsconfig.build.json" },
     { "path": "./packages/search-pro/tsconfig.build.json" },
     { "path": "./packages/shared/tsconfig.build.json" },

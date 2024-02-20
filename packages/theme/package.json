@@ -69,23 +69,23 @@
     "dev:ts": "tsc -b tsconfig.build.json --watch"
   },
   "dependencies": {
-    "@vuepress/helper": "2.0.0-rc.14",
-    "@vuepress/plugin-active-header-links": "2.0.0-rc.14",
-    "@vuepress/plugin-catalog": "2.0.0-rc.14",
-    "@vuepress/plugin-back-to-top": "2.0.0-rc.14",
-    "@vuepress/plugin-blog": "2.0.0-rc.14",
-    "@vuepress/plugin-external-link-icon": "2.0.0-rc.14",
-    "@vuepress/plugin-copy-code": "2.0.0-rc.14",
-    "@vuepress/plugin-copyright": "2.0.0-rc.14",
-    "@vuepress/plugin-git": "2.0.0-rc.12",
-    "@vuepress/plugin-nprogress": "2.0.0-rc.14",
-    "@vuepress/plugin-photo-swipe": "2.0.0-rc.14",
-    "@vuepress/plugin-prismjs": "2.0.0-rc.12",
-    "@vuepress/plugin-reading-time": "2.0.0-rc.14",
-    "@vuepress/plugin-rtl": "2.0.0-rc.14",
-    "@vuepress/plugin-seo": "2.0.0-rc.14",
-    "@vuepress/plugin-sitemap": "2.0.0-rc.14",
-    "@vuepress/plugin-theme-data": "2.0.0-rc.14",
+    "@vuepress/helper": "2.0.0-rc.15",
+    "@vuepress/plugin-active-header-links": "2.0.0-rc.15",
+    "@vuepress/plugin-catalog": "2.0.0-rc.15",
+    "@vuepress/plugin-back-to-top": "2.0.0-rc.15",
+    "@vuepress/plugin-blog": "2.0.0-rc.15",
+    "@vuepress/plugin-external-link-icon": "2.0.0-rc.15",
+    "@vuepress/plugin-copy-code": "2.0.0-rc.15",
+    "@vuepress/plugin-copyright": "2.0.0-rc.15",
+    "@vuepress/plugin-git": "2.0.0-rc.15",
+    "@vuepress/plugin-nprogress": "2.0.0-rc.15",
+    "@vuepress/plugin-photo-swipe": "2.0.0-rc.15",
+    "@vuepress/plugin-prismjs": "2.0.0-rc.15",
+    "@vuepress/plugin-reading-time": "2.0.0-rc.15",
+    "@vuepress/plugin-rtl": "2.0.0-rc.15",
+    "@vuepress/plugin-seo": "2.0.0-rc.15",
+    "@vuepress/plugin-sitemap": "2.0.0-rc.15",
+    "@vuepress/plugin-theme-data": "2.0.0-rc.15",
     "@vueuse/core": "^10.7.2",
     "balloon-css": "^1.2.0",
     "bcrypt-ts": "^5.0.1",
@@ -100,18 +100,18 @@
     "vuepress-shared": "workspace:*"
   },
   "devDependencies": {
-    "@vuepress/bundler-vite": "2.0.0-rc.7",
-    "@vuepress/bundler-webpack": "2.0.0-rc.7"
+    "@vuepress/bundler-vite": "2.0.0-rc.8",
+    "@vuepress/bundler-webpack": "2.0.0-rc.8"
   },
   "peerDependencies": {
-    "@vuepress/plugin-docsearch": "2.0.0-rc.14",
-    "@vuepress/plugin-feed": "2.0.0-rc.14",
-    "@vuepress/plugin-redirect": "2.0.0-rc.14",
-    "@vuepress/plugin-search": "2.0.0-rc.14",
+    "@vuepress/plugin-docsearch": "2.0.0-rc.15",
+    "@vuepress/plugin-feed": "2.0.0-rc.15",
+    "@vuepress/plugin-pwa": "2.0.0-rc.16",
+    "@vuepress/plugin-redirect": "2.0.0-rc.15",
+    "@vuepress/plugin-search": "2.0.0-rc.15",
     "nodejs-jieba": "^0.1.2",
     "sass-loader": "^14.0.0",
-    "vuepress": "2.0.0-rc.7",
-    "vuepress-plugin-pwa2": "workspace:*",
+    "vuepress": "2.0.0-rc.8",
     "vuepress-plugin-search-pro": "workspace:*"
   },
   "peerDependenciesMeta": {
@@ -119,6 +119,9 @@
       "optional": true
     },
     "@vuepress/plugin-feed": {
+      "optional": true
+    },
+    "@vuepress/plugin-pwa": {
       "optional": true
     },
     "@vuepress/plugin-redirect": {
@@ -131,9 +134,6 @@
       "optional": true
     },
     "sass-loader": {
-      "optional": true
-    },
-    "vuepress-plugin-pwa2": {
       "optional": true
     },
     "vuepress-plugin-search-pro": {

@@ -1,3 +1,4 @@
+import { hasGlobalComponent } from "@vuepress/helper/client";
 import {
   useEventListener,
   useScrollLock,
@@ -17,7 +18,7 @@ import {
   watch,
 } from "vue";
 import { usePageData, usePageFrontmatter, useRouter } from "vuepress/client";
-import { RenderDefault, hasGlobalComponent } from "vuepress-shared/client";
+import { RenderDefault } from "vuepress-shared/client";
 
 import PageFooter from "@theme-hope/components/PageFooter";
 import {

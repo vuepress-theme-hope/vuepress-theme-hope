@@ -108,6 +108,14 @@ No extra config is required by default. Se it to `false` if you don't need it.
 
 Check [photo-swipe plugin docs][photo-swipe-config] for available plugin options.
 
+## pwa
+
+Controls `@vuepress/plugin-pwa` which provides PWA support.
+
+You can set `true` to directly enable it, or provide plugin options.
+
+Check [pwa plugin docs][pwa-config] for available plugin options.
+
 ## readingTime <Badge text="enabled by default" />
 
 Controls `@vuepress/plugin-reading-time` which generates words count and estimated reading time for pages.
@@ -142,6 +150,7 @@ Check [sitemap plugin docs][sitemap-config] for available plugin options.
 [copy-code-config]: https://ecosystem.vuejs.press/plugins/copy-code.html#options
 [git-config]: https://ecosystem.vuejs.press/plugins/git.html#options
 [photo-swipe-config]: https://ecosystem.vuejs.press/plugins/photo-swipe.html#options
+[pwa-config]: https://ecosystem.vuejs.press/plugins/pwa/config.html#options
 [reading-time-config]: https://ecosystem.vuejs.press/plugins/reading-time.html#options
 [seo-config]: https://ecosystem.vuejs.press/plugins/sitemap/config.html
 [sitemap-config]: https://ecosystem.vuejs.press/plugins/seo/config.html

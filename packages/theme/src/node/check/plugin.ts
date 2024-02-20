@@ -15,6 +15,7 @@ const PLUGIN_CHECKLIST = [
   ["@vuepress/plugin-search", "search"],
   ["@vuepress/plugin-feed", "feed"],
   ["@vuepress/plugin-photo-swipe", "photoSwipe"],
+  ["@vuepress/plugin-pwa", "pwa"],
   ["@vuepress/plugin-reading-time", "readingTime"],
   ["@vuepress/plugin-rtl", "", 'Set "rtl: true" in the needed theme locales.'],
   ["@vuepress/plugin-seo", "seo"],
@@ -23,8 +24,6 @@ const PLUGIN_CHECKLIST = [
   ["vuepress-plugin-comment2", "comment"],
   ["vuepress-plugin-components", "components"],
   ["vuepress-plugin-md-enhance", "mdEnhance"],
-  ["vuepress-plugin-pwa2", "pwa"],
-  ["vuepress-plugin-pwa2", "pwa"],
   ["vuepress-plugin-search-pro", "searchPro"],
 ];
 

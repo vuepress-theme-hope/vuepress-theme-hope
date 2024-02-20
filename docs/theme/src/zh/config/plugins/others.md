@@ -108,6 +108,14 @@ tag:
 
 插件选项请参阅 [photo-swipe 插件文档][photo-swipe-config]。
 
+## pwa
+
+控制 `@vuepress/plugin-pwa`，提供 PWA 功能。
+
+可以直接设置为 `true` 启用。
+
+插件选项请参阅 [pwa 插件文档][pwa-config]。
+
 ## readingTime <Badge text="默认启用" />
 
 控制 `@vuepress/plugin-reading-time`，为页面进行字数统计并生成预计的阅读时间。
@@ -142,6 +150,7 @@ tag:
 [copy-code-config]: https://ecosystem.vuejs.press/zh/plugins/copy-code.html#options
 [git-config]: https://ecosystem.vuejs.press/zh/plugins/git.html#options
 [photo-swipe-config]: https://ecosystem.vuejs.press/zh/plugins/photo-swipe.html#options
+[pwa-config]: https://ecosystem.vuejs.press/zh/plugins/pwa/config.html#options
 [reading-time-config]: https://ecosystem.vuejs.press/zh/plugins/reading-time.html#options
 [seo-config]: https://ecosystem.vuejs.press/zh/plugins/seo/config.html
 [sitemap-config]: https://ecosystem.vuejs.press/zh/plugins/sitemap/config.html

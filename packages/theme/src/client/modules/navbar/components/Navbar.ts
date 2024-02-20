@@ -1,3 +1,4 @@
+import { hasGlobalComponent } from "@vuepress/helper/client";
 import noopComponent from "@vuepress/helper/noopComponent";
 import type {
   Component,
@@ -7,7 +8,6 @@ import type {
   VNode,
 } from "vue";
 import { computed, defineComponent, h, ref, resolveComponent } from "vue";
-import { hasGlobalComponent } from "vuepress-shared/client";
 
 import {
   useThemeLocaleData,

@@ -97,7 +97,7 @@ if(!hasGlobalComponent("${item}")) app.component("${item}", ${item});
     `\
 import { defineClientConfig } from "vuepress/client";
 import { hasGlobalComponent } from "${getRealPath(
-      "vuepress-shared/client",
+      "@vuepress/helper/client",
       url,
     )}";
 ${

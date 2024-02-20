@@ -1,40 +1,36 @@
 import { isPlainObject } from "@vuepress/helper";
+import type { PWAPluginOptions } from "@vuepress/plugin-pwa";
 import type { Plugin } from "vuepress/core";
 import { colors } from "vuepress/utils";
-import type { PWAOptions } from "vuepress-plugin-pwa2";
 
 import { logger } from "../utils.js";
 
-let pwaPlugin: (options: PWAOptions, legacy?: boolean) => Plugin;
+let pwaPlugin: (options: PWAPluginOptions, legacy?: boolean) => Plugin;
 
 try {
-  ({ pwaPlugin } = await import("vuepress-plugin-pwa2"));
+  ({ pwaPlugin } = await import("@vuepress/plugin-pwa"));
 } catch (e) {
   // Do nothing
 }
 /**
  * @private
  *
- * Resolve options for vuepress-plugin-pwa2
+ * Resolve options for @vuepress/plugin-pwa
  */
 export const getPWAPlugin = (
-  options?: PWAOptions | boolean,
+  options?: PWAPluginOptions | boolean,
   favicon?: string,
-  legacy = false,
 ): Plugin | null => {
   if (!options) return null;
 
   if (!pwaPlugin) {
-    logger.error(`${colors.cyan("vuepress-plugin-pwa2")} is not installed!`);
+    logger.error(`${colors.cyan("@vuepress/plugin-pwa")} is not installed!`);
 
     return null;
   }
 
-  return pwaPlugin(
-    {
-      ...(favicon ? { favicon } : {}),
-      ...(isPlainObject(options) ? options : {}),
-    },
-    legacy,
-  );
+  return pwaPlugin({
+    ...(favicon ? { favicon } : {}),
+    ...(isPlainObject(options) ? options : {}),
+  });
 };

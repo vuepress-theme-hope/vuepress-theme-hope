@@ -49,11 +49,6 @@ const features = [
     link: getLink("md-enhance"),
   },
   {
-    text: "PWA 插件",
-    icon: "mobile",
-    link: getLink("pwa2"),
-  },
-  {
     text: "Sass 调色板插件",
     icon: "palette",
     link: getLink("sass-palette"),
