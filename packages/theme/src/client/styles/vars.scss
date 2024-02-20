@@ -106,10 +106,21 @@
   --nprogress-color: var(--vp-tc);
 }
 
-// plugin-photo-swipe
 body {
+  // plugin-photo-swipe
   --photo-swipe-bullet: var(--white);
   --photo-swipe-bullet-active: var(--vp-tc);
+
+  // plugin-pwa
+  --pwa-text-color: var(--vp-c);
+  --pwa-bg-color: var(--vp-bg);
+  --pwa-border-color: var(--vp-brc);
+  --pwa-btn-text-color: var(--vp-bg);
+  --pwa-btn-bg-color: var(--vp-tc);
+  --pwa-btn-hover-bg-color: var(--vp-tcl);
+  --pwa-shadow-color: var(--card-shadow);
+  --pwa-content-color: var(--grey3);
+  --pwa-content-light-color: var(--dark-grey);
 }
 
 // plugin-redirect
