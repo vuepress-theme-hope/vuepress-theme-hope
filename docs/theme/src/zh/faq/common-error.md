@@ -215,9 +215,9 @@ CloudFlare 的 Auto Minify 会错误的对 HTML 的空格和换行进行处理�
 @tab Vite
 
 ```ts title=".vuepress/config.ts"
-import { defineUserConfig } from "vuepress";
-import { addViteConfig } from "vuepress-shared/node";
+import { addViteConfig } from "@vuepress/helper";
 import postcssPresetEnv from "postcss-preset-env";
+import { defineUserConfig } from "vuepress";
 
 export default defineUserConfig({
   extendsBundlerOptions: (config, app) => {
@@ -235,9 +235,9 @@ export default defineUserConfig({
 @tab Webpack
 
 ```ts title=".vuepress/config.ts"
-import { defineUserConfig } from "vuepress";
-import { configWebpack } from "vuepress-shared/node";
+import { addViteConfig } from "@vuepress/helper";
 import postcssPresetEnv from "postcss-preset-env";
+import { defineUserConfig } from "vuepress";
 
 export default defineUserConfig({
   extendsBundlerOptions: (config, app) => {

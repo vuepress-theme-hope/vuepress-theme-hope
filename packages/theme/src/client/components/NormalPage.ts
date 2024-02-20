@@ -1,7 +1,8 @@
+import { hasGlobalComponent } from "@vuepress/helper/client";
 import type { ComponentOptions, SlotsType, VNode } from "vue";
 import { computed, defineComponent, h, resolveComponent } from "vue";
 import { usePageFrontmatter, withBase } from "vuepress/client";
-import { RenderDefault, hasGlobalComponent } from "vuepress-shared/client";
+import { RenderDefault } from "vuepress-shared/client";
 
 import BreadCrumb from "@theme-hope/components/BreadCrumb";
 import MarkdownContent from "@theme-hope/components/MarkdownContent";

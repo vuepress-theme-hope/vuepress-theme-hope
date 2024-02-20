@@ -21,7 +21,7 @@ export const prepareConfigFile = async (
   if (options.card && legacy) {
     imports.add(
       `import { hasGlobalComponent } from "${getRealPath(
-        "vuepress-shared/client",
+        "@vuepress/helper/client",
         url,
       )}";`,
     );
