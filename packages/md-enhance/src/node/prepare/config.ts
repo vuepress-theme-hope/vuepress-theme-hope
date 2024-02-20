@@ -46,7 +46,7 @@ export const prepareConfigFile = async (
     if (legacy) {
       imports.add(
         `import { hasGlobalComponent } from "${getRealPath(
-          "vuepress-shared/client",
+          "@vuepress/helper/client",
           url,
         )}";`,
       );
