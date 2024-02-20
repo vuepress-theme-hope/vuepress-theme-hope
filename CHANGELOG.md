@@ -4,6 +4,22 @@ All notable changes to this project will be documented in this file. See [Conven
 
 <!-- #region recent-change -->
 
+## [2.0.0-rc.25](https://github.com/vuepress-theme-hope/vuepress-theme-hope/compare/v2.0.0-rc.24...v2.0.0-rc.25) (2024-02-20)
+
+### ⚠ BREAKING CHANGES
+
+- use official pwa plugin (#3938)
+
+### Features
+
+- **theme:** compact with pwa style ([ac563d4](https://github.com/vuepress-theme-hope/vuepress-theme-hope/commit/ac563d42f197c2c04b3198c7e9bb2cf357fef5c7))
+- use official pwa plugin ([#3938](https://github.com/vuepress-theme-hope/vuepress-theme-hope/issues/3938)) ([b51ab67](https://github.com/vuepress-theme-hope/vuepress-theme-hope/commit/b51ab67f7aa36d5adeba07cb944852ef87e0ea43))
+
+### Bug Fixes
+
+- **create:** add sass-loader for webpack ([0aaf4e4](https://github.com/vuepress-theme-hope/vuepress-theme-hope/commit/0aaf4e4e060a3422dee978da351a070378ad1b8e))
+- **md-enhance:** fix import name ([a4cd69e](https://github.com/vuepress-theme-hope/vuepress-theme-hope/commit/a4cd69e2f4b3f385e1db22907c9e480ba9c90c4d))
+
 ## [2.0.0-rc.24](https://github.com/vuepress-theme-hope/vuepress-theme-hope/compare/v2.0.0-rc.23...v2.0.0-rc.24) (2024-02-17)
 
 ### Features
