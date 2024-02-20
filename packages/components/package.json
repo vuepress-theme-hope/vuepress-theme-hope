@@ -59,7 +59,7 @@
   },
   "peerDependencies": {
     "artplayer": "^5.0.0",
-    "dashjs-pure": "^1.0.0",
+    "dashjs": "4.7.4",
     "hls.js": "^1.4.12",
     "mpegts.js": "^1.7.3",
     "plyr": "^3.7.8",
@@ -71,7 +71,7 @@
     "artplayer": {
       "optional": true
     },
-    "dashjs-pure": {
+    "dashjs": {
       "optional": true
     },
     "hls.js": {

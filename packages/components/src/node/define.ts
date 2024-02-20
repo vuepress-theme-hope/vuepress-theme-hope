@@ -33,7 +33,7 @@ export const getDefine =
         setting: true,
         ...(options.componentOptions?.artPlayer || {}),
       };
-      result["DASHJS_INSTALLED"] = isInstalled("dashjs-pure");
+      result["DASHJS_INSTALLED"] = isInstalled("dashjs");
       result["HLS_JS_INSTALLED"] = isInstalled("hls.js");
       result["MPEGTS_JS_INSTALLED"] = isInstalled("mpegts.js");
     }

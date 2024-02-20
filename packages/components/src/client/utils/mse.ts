@@ -24,9 +24,8 @@ export const registerMseDash = async (
   startTime = 0,
 ): Promise<void> => {
   if (typeof DASHJS_INSTALLED !== "undefined" && DASHJS_INSTALLED) {
-    const dashjs = (
-      await import(/* webpackChunkName: "dashjs" */ "dashjs-pure")
-    ).default;
+    const dashjs = (await import(/* webpackChunkName: "dashjs" */ "dashjs"))
+      .default;
 
     if (dashjs.supportsMediaSource()) {
       const dashPlayer = dashjs.MediaPlayer().create();
