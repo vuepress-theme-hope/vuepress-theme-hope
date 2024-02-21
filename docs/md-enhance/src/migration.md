@@ -197,7 +197,7 @@ You can pass the second argument `true` to enable legacy mode when calling `mdEn
   ::: code-group-item npm:active
 
   ```bash
-  npm init vuepress-theme-hope [dir]
+  npm init vuepress-theme-hope@latest [dir]
   ```
 
   :::
@@ -219,7 +219,7 @@ You can pass the second argument `true` to enable legacy mode when calling `mdEn
   @tab:active npm
 
   ```bash
-  npm init vuepress-theme-hope [dir]
+  npm init vuepress-theme-hope@latest [dir]
   ```
 
   :::

@@ -49,7 +49,7 @@ yarn create vuepress-theme-hope my-docs
 @tab npm
 
 ```bash
-npm init vuepress-theme-hope my-docs
+npm init vuepress-theme-hope@latest my-docs
 ```
 
 :::

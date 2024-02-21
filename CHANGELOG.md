@@ -3181,7 +3181,7 @@ closed 2811
   ::: code-group-item npm:active
 
   ```bash
-  npm init vuepress-theme-hope@next [dir]
+  npm init vuepress-theme-hope@latest@next [dir]
   ```
 
   :::
@@ -3203,7 +3203,7 @@ closed 2811
   @tab:active npm
 
   ```bash
-  npm init vuepress-theme-hope@next [dir]
+  npm init vuepress-theme-hope@latest@next [dir]
   ```
 
   :::

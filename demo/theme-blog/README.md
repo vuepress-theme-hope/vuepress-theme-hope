@@ -6,7 +6,7 @@ You can use this demo directly via:
 
 ```bash
 # npm
-npm init vuepress-theme-hope [dir]
+npm init vuepress-theme-hope@latest [dir]
 
 # yarn
 yarn create vuepress-theme-hope [dir]

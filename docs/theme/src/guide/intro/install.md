@@ -37,7 +37,7 @@ yarn create vuepress-theme-hope [dir]
 @tab npm
 
 ```bash
-npm init vuepress-theme-hope [dir]
+npm init vuepress-theme-hope@latest [dir]
 ```
 
 :::
@@ -61,7 +61,7 @@ yarn create vuepress-theme-hope add [dir]
 @tab npm
 
 ```bash
-npm init vuepress-theme-hope add [dir]
+npm init vuepress-theme-hope@latest add [dir]
 ```
 
 :::
