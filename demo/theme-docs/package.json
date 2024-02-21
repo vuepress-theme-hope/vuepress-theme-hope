@@ -31,7 +31,7 @@
     "mermaid": "10.8.0",
     "reveal.js": "5.0.4",
     "sandpack-vue3": "3.1.11",
-    "sass-loader": "14.1.0",
+    "sass-loader": "14.1.1",
     "vue": "3.4.19",
     "vuepress": "2.0.0-rc.8",
     "vuepress-theme-hope": "workspace:*"
