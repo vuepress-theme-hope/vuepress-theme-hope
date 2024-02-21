@@ -35,7 +35,7 @@ export const useSearchResult = (query: Ref<string>): SearchRef => {
           type: "search",
           query: queryString,
           locale: routeLocale.value,
-          options: searchOptions,
+          options: searchOptions.value,
         })
           .then((searchResults) => {
             results.value = searchResults;

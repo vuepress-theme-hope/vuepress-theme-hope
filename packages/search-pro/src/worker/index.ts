@@ -10,19 +10,19 @@ import type { IndexItem, SearchIndexStore } from "../shared/index.js";
 declare const SEARCH_PRO_INDEX: string;
 
 const searchIndex: SearchIndexStore = fromEntries(
-  entries(<Record<string, IndexObject>>JSON.parse(SEARCH_PRO_INDEX)).map(
-    ([localePath, index]) => [
-      localePath,
-      loadIndex<IndexItem, string>(index, {
-        fields: [/** Heading */ "h", /** Text */ "t", /** CustomFields */ "c"],
-        storeFields: [
-          /** Heading */ "h",
-          /** Text */ "t",
-          /** CustomFields */ "c",
-        ],
-      }),
-    ],
-  ),
+  entries(
+    <Record<string, IndexObject<IndexItem>>>JSON.parse(SEARCH_PRO_INDEX),
+  ).map(([localePath, index]) => [
+    localePath,
+    loadIndex<string, IndexItem, IndexItem>(index, {
+      fields: [/** Heading */ "h", /** Text */ "t", /** CustomFields */ "c"],
+      storeFields: [
+        /** Heading */ "h",
+        /** Text */ "t",
+        /** CustomFields */ "c",
+      ],
+    }),
+  ]),
 );
 
 self.onmessage = ({

@@ -12,10 +12,17 @@ self.onmessage = async ({
 }: MessageEvent<MessageData>): Promise<void> => {
   const { default: localeIndex } = await database[locale]();
 
-  const searchLocaleIndex = loadJSONIndex<IndexItem, string>(localeIndex, {
-    fields: [/** Heading */ "h", /** Text */ "t", /** CustomFields */ "c"],
-    storeFields: [/** Heading */ "h", /** Text */ "t", /** CustomFields */ "c"],
-  });
+  const searchLocaleIndex = loadJSONIndex<string, IndexItem, IndexItem>(
+    localeIndex,
+    {
+      fields: [/** Heading */ "h", /** Text */ "t", /** CustomFields */ "c"],
+      storeFields: [
+        /** Heading */ "h",
+        /** Text */ "t",
+        /** CustomFields */ "c",
+      ],
+    },
+  );
 
   if (type === "suggest")
     self.postMessage(getSuggestions(query, searchLocaleIndex, options));

@@ -34,4 +34,7 @@ export type IndexItem = PageIndexItem | SectionIndexItem | CustomFieldIndexItem;
 
 export type LocaleIndex = Record<string, IndexItem[]>;
 
-export type SearchIndexStore = Record<string, SearchIndex<IndexItem, string>>;
+export type SearchIndexStore = Record<
+  string,
+  SearchIndex<string, IndexItem, IndexItem>
+>;

@@ -26,7 +26,7 @@ export const useSearchSuggestions = (query: Ref<string>): SuggestionsRef => {
             type: "suggest",
             query: queryString,
             locale: routeLocale.value,
-            options: searchOptions,
+            options: searchOptions.value,
           })
             .then((_suggestions) => {
               suggestions.value = _suggestions.length

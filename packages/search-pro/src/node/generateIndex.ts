@@ -204,7 +204,7 @@ export const getSearchIndexStore = async (
 
   await Promise.all(
     entries(indexesByLocale).map(async ([localePath, indexes]) => {
-      const index = createIndex<IndexItem, string>({
+      const index = createIndex<string, IndexItem, IndexItem>({
         ...indexOptions,
         ...indexLocaleOptions?.[localePath],
         fields: [/** Heading */ "h", /** Text */ "t", /** CustomFields */ "c"],

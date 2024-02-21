@@ -3,7 +3,6 @@ import type { MatchInfo, SearchIndex } from "slimsearch";
 import { getStoredFields, search } from "slimsearch";
 
 import { getMatchedContent } from "./matchContent.js";
-import { getSearchOptions } from "./utils.js";
 import type {
   CustomFieldIndexItem,
   IndexItem,
@@ -45,23 +44,20 @@ const sortWithMax = (valueA: PageResult, valueB: PageResult): number =>
 
 export const getResults = (
   query: string,
-  localeIndex: SearchIndex<IndexItem, string>,
+  localeIndex: SearchIndex<string, IndexItem, IndexItem>,
   searchOptions: SearchOptions = {},
 ): SearchResult[] => {
   const resultMap: ResultMap = {};
 
-  const results = search<IndexItem, string, IndexItem>(
-    localeIndex,
-    query,
-    getSearchOptions({
-      boost: {
-        [/** Heading */ "h"]: 2,
-        [/** Text */ "t"]: 1,
-        [/** CustomFields */ "c"]: 4,
-      },
-      ...searchOptions,
-    }),
-  );
+  const results = search(localeIndex, query, {
+    boost: {
+      [/** Heading */ "h"]: 2,
+      [/** Text */ "t"]: 1,
+      [/** CustomFields */ "c"]: 4,
+    },
+    prefix: true,
+    ...searchOptions,
+  });
 
   results.forEach((result) => {
     const { id, terms, score } = result;

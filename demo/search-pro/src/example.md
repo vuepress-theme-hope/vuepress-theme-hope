@@ -89,7 +89,7 @@ In codes above, two spaces are behind `at`.
 
 [Home page using absolute path](/)
 
-[Home page using relative path](../../README.md)
+[Home page using relative path](/README.md)
 
 ## Image
 
