@@ -4,6 +4,13 @@ All notable changes to this project will be documented in this file. See [Conven
 
 <!-- #region recent-change -->
 
+## [2.0.0-rc.26](https://github.com/vuepress-theme-hope/vuepress-theme-hope/compare/v2.0.0-rc.25...v2.0.0-rc.26) (2024-02-21)
+
+### Features
+
+- **search-pro:** improve chinese search ([aec768c](https://github.com/vuepress-theme-hope/vuepress-theme-hope/commit/aec768ca07ce9fca6d6d0a0862f0f324ec4b1e43))
+- use official links check plugin ([9295771](https://github.com/vuepress-theme-hope/vuepress-theme-hope/commit/9295771f9c03a2400b91f26393168e196e50d903))
+
 ## [2.0.0-rc.25](https://github.com/vuepress-theme-hope/vuepress-theme-hope/compare/v2.0.0-rc.24...v2.0.0-rc.25) (2024-02-20)
 
 ### ⚠ BREAKING CHANGES
