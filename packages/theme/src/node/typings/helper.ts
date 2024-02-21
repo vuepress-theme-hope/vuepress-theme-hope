@@ -3,7 +3,7 @@ import type { CopyrightPluginOptions } from "@vuepress/plugin-copyright";
 import type { FeedPluginOptions } from "@vuepress/plugin-feed";
 import type { GitPluginOptions } from "@vuepress/plugin-git";
 import type { PhotoSwipePluginOptions } from "@vuepress/plugin-photo-swipe";
-import type { PWAPluginOptions } from "@vuepress/plugin-pwa";
+import type { PwaPluginOptions } from "@vuepress/plugin-pwa";
 import type { ReadingTimePluginOptions } from "@vuepress/plugin-reading-time";
 import type { SeoPluginOptions } from "@vuepress/plugin-seo";
 import type { SitemapPluginOptions } from "@vuepress/plugin-sitemap";
@@ -47,7 +47,7 @@ export type ThemePhotoSwipePluginHelper = Helper<
   PhotoSwipePluginOptions | false
 >;
 
-export type ThemePWAPluginHelper = Helper<PWAPluginOptions | false>;
+export type ThemePwaPluginHelper = Helper<PwaPluginOptions | false>;
 
 export type ThemeReadingTimePluginHelper = Helper<
   ReadingTimePluginOptions | false

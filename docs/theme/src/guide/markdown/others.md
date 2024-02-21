@@ -10,37 +10,9 @@ tag:
 
 ## Link check
 
-The theme will check your Markdown links in dev mode by default.
+The theme will use `@vuepress/plugin-links-check` to check your Markdown links by default.
 
-You can customize this feature through `plugins.mdEnhance.checkLinks` in theme options. `checkLinks` receives an object.
-
-- You can customize link check status with `checkLinks.status` where you can choose from `'always'`, `'never'`, `'dev'` and `'build'`.
-- To ignore some links, you can set `checkLinks.ignore` with an array of string and RegExp, or a function that receives link and isDev as parameters and returns a boolean value indicating whether to ignore the link.
-
-E.g.:
-
-```ts title=".vuepress/config.ts"
-import { hopeTheme } from "vuepress-theme-hope";
-
-export default {
-  theme: hopeTheme({
-    plugins: {
-      mdEnhance: {
-        checkLinks: {
-          // only check links in dev mode
-          status: "dev",
-          ignore: [
-            // ignore links starting with `/api/`
-            /^\/api\//,
-            // ignore `/playground.html`
-            "/playground.html",
-          ],
-        },
-      },
-    },
-  }),
-};
-```
+You can customize this feature through `plugins.linksCheck` in theme options, check [links-check docs][links-check] for more details.
 
 ## GFM
 
@@ -71,3 +43,5 @@ Since VuePress2 has removed V1's v-pre container in core, the plugin provides `v
 :::
 
 ::::
+
+[links-check]: https://ecosystem.vuejs.press/plugins/links-check.html

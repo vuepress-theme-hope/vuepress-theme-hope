@@ -9,12 +9,6 @@ You can pass the second argument `true` to enable legacy mode when calling `mdEn
 
 ## New Features
 
-- Markdown link check
-
-  The plugin now check your Markdown links and warn you when broken links are detected.
-
-  You can control this behavior with `checkLinks` option
-
 - image mark support
 
   Use `#light` and `#dark` suffix to mark images to display them in light mode or dark mode via `imgMark` option.
@@ -266,8 +260,6 @@ You can pass the second argument `true` to enable legacy mode when calling `mdEn
 - `imageTitle` is renamed to `figure`
 
 - `revealjs` is renamed to `revealJS`
-
-- `linkCheck` is replaced by `checkLinks`
 
 - `card` is replaced by `components`
 

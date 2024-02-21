@@ -2,7 +2,7 @@ import { isArray, isPlainObject } from "@vuepress/helper";
 import { colors } from "vuepress/utils";
 import { createConverter } from "vuepress-shared/node";
 
-import type { LinksCheckStatus, MarkdownEnhanceOptions } from "../options.js";
+import type { MarkdownEnhanceOptions } from "../options.js";
 import type { RevealJsPlugin } from "../typings/index.js";
 import { logger } from "../utils.js";
 
@@ -82,23 +82,16 @@ export const convertOptions = (
     old: "imageFix",
     msg: "This option is no longer needed.",
   });
-
-  if ("linkCheck" in options) {
-    logger.warn(
-      `${colors.magenta(
-        "linkCheck",
-      )} is deprecated, please use ${colors.magenta("checkLinks")} instead`,
-    );
-
-    options.checkLinks = {
-      status:
-        typeof options["linkCheck"] === "boolean"
-          ? options["linkCheck"]
-            ? "always"
-            : "never"
-          : (options["linkCheck"] as LinksCheckStatus),
-    };
-  }
+  droppedLogger({
+    options,
+    old: "linkCheck",
+    msg: "Please use @vuepress/plugin-links-check instead.",
+  });
+  droppedLogger({
+    options,
+    old: "checkLinks",
+    msg: "Please use @vuepress/plugin-links-check instead.",
+  });
 
   if (options["card"])
     logger.error(

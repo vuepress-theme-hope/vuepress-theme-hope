@@ -72,6 +72,12 @@ The plugin is only enabled in build mode by default to improve devServer perform
 
 Check [git plugin docs][git-config] for available plugin options.
 
+## linksCheck <Badge text="enabled by default" />
+
+Controls `@vuepress/plugin-links-check` which provides markdown links check. You can manually set a boolean to control the plugin state, or provide plugin options.
+
+Check [links-check plugin docs][links-check-config] for available plugin options.
+
 ## nprogress <Badge text="enabled by default" />
 
 Controls `@vuepress/plugin-nprogress` which provides a progress bar through `nprogress` when switching pages .
@@ -149,6 +155,7 @@ Check [sitemap plugin docs][sitemap-config] for available plugin options.
 [catalog-config]: https://ecosystem.vuejs.press/plugins/catalog.html#options
 [copy-code-config]: https://ecosystem.vuejs.press/plugins/copy-code.html#options
 [git-config]: https://ecosystem.vuejs.press/plugins/git.html#options
+[links-check-config]: https://ecosystem.vuejs.press/plugins/links-check.html#options
 [photo-swipe-config]: https://ecosystem.vuejs.press/plugins/photo-swipe.html#options
 [pwa-config]: https://ecosystem.vuejs.press/plugins/pwa/config.html#options
 [reading-time-config]: https://ecosystem.vuejs.press/plugins/reading-time.html#options

@@ -10,37 +10,9 @@ tag:
 
 ## 链接检查
 
-主题默认在开发模式下检查你的 Markdown 链接。
+主题默认通过 `@vuepress/plugin-links-check` 检查你的 Markdown 链接。
 
-你可以通过插件选项中的 `checkLinks` 自定义此功能。 `checkLinks` 接收一个对象。
-
-- 你可以使用 `checkLinks.status` 自定义链接检查状态，你可以在 `'always'`、`'never'`、`'dev'` 和 `'build'` 中选择。
-- 要忽略某些链接，你可以将 `checkLinks.ignore` 设置为字符串和 RegExp 的数组，或者填入一个接收 link 和 isDev 作为参数并返回一个布尔值以标识是否忽略此链接的函数。
-
-例如:
-
-```ts title=".vuepress/config.ts"
-import { hopeTheme } from "vuepress-theme-hope";
-
-export default {
-  theme: hopeTheme({
-    plugins: {
-      mdEnhance: {
-        checkLinks: {
-          // 仅在开发模式下检查链接
-          status: "dev",
-          ignore: [
-            // 忽略以 `/api/` 开头的链接
-            /^\/api\//,
-            // 忽略 `/playground.html`
-            "/playground.html",
-          ],
-        },
-      },
-    },
-  }),
-};
-```
+你可以通过主题选项中的 `plugins.linksCheck` 自定义此功能，详见 [links-check 文档][links-check]。
 
 ## GFM
 
@@ -73,3 +45,5 @@ export default {
 :::
 
 ::::
+
+[links-check]: https://ecosystem.vuejs.press/zh/plugins/links-check.html

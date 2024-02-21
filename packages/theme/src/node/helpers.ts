@@ -7,8 +7,8 @@ import type {
   ThemeGitPluginHelper,
   ThemeMdEnhancePluginHelper,
   ThemeNavbarHelper,
-  ThemePWAPluginHelper,
   ThemePhotoSwipePluginHelper,
+  ThemePwaPluginHelper,
   ThemeReadingTimePluginHelper,
   ThemeSEOPluginHelper,
   ThemeSidebarArrayHelper,
@@ -48,7 +48,7 @@ export const mdEnhance: ThemeMdEnhancePluginHelper = (mdEnhanceConfig) =>
 export const photoSwipe: ThemePhotoSwipePluginHelper = (photoSwipeConfig) =>
   photoSwipeConfig;
 
-export const pwa: ThemePWAPluginHelper = (pwaConfig) => pwaConfig;
+export const pwa: ThemePwaPluginHelper = (pwaConfig) => pwaConfig;
 
 export const readingTime: ThemeReadingTimePluginHelper = (readingTimeConfig) =>
   readingTimeConfig;

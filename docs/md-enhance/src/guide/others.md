@@ -3,36 +3,6 @@ title: Others
 icon: ellipsis
 ---
 
-## Link check
-
-`vuepress-plugin-md-enhance` check your Markdown links in dev mode by default.
-
-You can customize this feature through `checkLinks` in plugin options. `checkLinks` receives an object.
-
-- You can customize link check status with `checkLinks.status` where you can choose from `'always'`, `'never'`, `'dev'` and `'build'`.
-- To ignore some links, you can set `checkLinks.ignore` with an array of string and RegExp, or a function that receives link and isDev as parameters and returns a boolean value indicating whether to ignore the link.
-
-E.g.:
-
-```js
-export default {
-  plugins: [
-    mdEnhancePlugin({
-      checkLinks: {
-        // only check links in dev mode
-        status: "dev",
-        ignore: [
-          // ignore links starting with `/api/`
-          /^\/api\//,
-          // ignore `/playground.html`
-          "/playground.html",
-        ],
-      },
-    }),
-  ],
-};
-```
-
 ## GFM
 
 If your docs both serve on documentation site and directly on GitHub, we provide a `gfm` option to align your Markdown behavior with GitHub.

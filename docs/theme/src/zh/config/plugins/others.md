@@ -72,6 +72,14 @@ tag:
 
 插件选项请参阅 [git 插件文档][git-config]。
 
+## linksCheck <Badge text="默认启用" />
+
+控制 `@vuepress/plugin-links-check`，提供 Markdown 链接检查。
+
+你可以手动设置一个布尔值控制插件状态，可以设置插件选项。
+
+插件选项请参阅 [links-check 插件文档][links-check-config]。
+
 ## nprogress <Badge text="默认启用" />
 
 控制 `@vuepress/plugin-nprogress`，通过 `nprogress` 提供切换页面时的进度条。
@@ -149,6 +157,7 @@ tag:
 [catalog-config]: https://ecosystem.vuejs.press/zh/plugins/catalog.html#options
 [copy-code-config]: https://ecosystem.vuejs.press/zh/plugins/copy-code.html#options
 [git-config]: https://ecosystem.vuejs.press/zh/plugins/git.html#options
+[links-check-config]: https://ecosystem.vuejs.press/zh/plugins/links-check.html#options
 [photo-swipe-config]: https://ecosystem.vuejs.press/zh/plugins/photo-swipe.html#options
 [pwa-config]: https://ecosystem.vuejs.press/zh/plugins/pwa/config.html#options
 [reading-time-config]: https://ecosystem.vuejs.press/zh/plugins/reading-time.html#options

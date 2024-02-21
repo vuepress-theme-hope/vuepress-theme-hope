@@ -49,34 +49,6 @@ order: 2
 
 :::
 
-### checkLinks
-
-- 类型: `LinksCheckOptions`
-
-  ```ts
-  type LinksCheckStatus = "always" | "dev" | "build" | "never";
-
-  interface LinksCheckOptions {
-    /**
-     * 是否检查 Markdown 中的死链
-     *
-     * @default "dev"
-     */
-    status?: LinksCheckStatus;
-
-    /**
-     * 忽略的死链
-     */
-    ignore?: (string | RegExp)[] | ((link: string, isDev: boolean) => boolean);
-  }
-  ```
-
-- 默认值: `{ status: "dev" }`
-- 详情:
-  - [链接检查](./guide/others.md#链接检查)
-
-是否启用链接检查。
-
 ### vPre
 
 - 类型: `boolean`

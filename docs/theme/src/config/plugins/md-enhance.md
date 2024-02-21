@@ -53,32 +53,6 @@ Whether to enable hint box including
 - caution
 - details
 
-### checkLinks
-
-- Type: `LinksCheckOptions`
-
-  ```ts
-  type LinksCheckStatus = "always" | "dev" | "build" | "never";
-
-  interface LinksCheckOptions {
-    /**
-     * Whether check dead links in markdown
-     *
-     * @default "dev"
-     */
-    status?: LinksCheckStatus;
-
-    /**
-     * Dead links to ignore
-     */
-    ignore?: (string | RegExp)[] | ((link: string, isDev: boolean) => boolean);
-  }
-  ```
-
-- Default: `{ status: "dev" }`
-
-Whether to enable links check.
-
 ### vPre
 
 - Type: `boolean`

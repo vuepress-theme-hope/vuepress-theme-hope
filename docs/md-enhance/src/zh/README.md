@@ -24,11 +24,6 @@ highlights:
     bgImage: https://theme-hope-assets.vuejs.press/bg/3-light.svg
     bgImageDark: https://theme-hope-assets.vuejs.press/bg/3-dark.svg
     highlights:
-      - title: 链接检查
-        icon: clipboard-check
-        details: 检查 Markdown 链接
-        link: ./guide/others.html#link-check
-
       - title: GFM 支持
         icon: clipboard-check
         details: 支持 GitHub 风格 Markdown

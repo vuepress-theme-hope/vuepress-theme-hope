@@ -1,11 +1,11 @@
 import { isPlainObject } from "@vuepress/helper";
-import type { PWAPluginOptions } from "@vuepress/plugin-pwa";
+import type { PwaPluginOptions } from "@vuepress/plugin-pwa";
 import type { Plugin } from "vuepress/core";
 import { colors } from "vuepress/utils";
 
 import { logger } from "../utils.js";
 
-let pwaPlugin: (options: PWAPluginOptions, legacy?: boolean) => Plugin;
+let pwaPlugin: (options: PwaPluginOptions, legacy?: boolean) => Plugin;
 
 try {
   ({ pwaPlugin } = await import("@vuepress/plugin-pwa"));
@@ -17,8 +17,8 @@ try {
  *
  * Resolve options for @vuepress/plugin-pwa
  */
-export const getPWAPlugin = (
-  options?: PWAPluginOptions | boolean,
+export const getPwaPlugin = (
+  options?: PwaPluginOptions | boolean,
   favicon?: string,
 ): Plugin | null => {
   if (!options) return null;

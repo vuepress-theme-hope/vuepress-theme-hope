@@ -50,34 +50,6 @@ The last 4 items conflict with default theme and will override its style.
 
 :::
 
-### checkLinks
-
-- Type: `LinksCheckOptions`
-
-  ```ts
-  type LinksCheckStatus = "always" | "dev" | "build" | "never";
-
-  interface LinksCheckOptions {
-    /**
-     * Whether check dead links in markdown
-     *
-     * @default "dev"
-     */
-    status?: LinksCheckStatus;
-
-    /**
-     * Dead links to ignore
-     */
-    ignore?: (string | RegExp)[] | ((link: string, isDev: boolean) => boolean);
-  }
-  ```
-
-- Default: `{ status: "dev" }`
-- Details:
-  - [Link Check](./guide/others.md#link-check)
-
-Whether to enable links check.
-
 ### vPre
 
 - Type: `boolean`

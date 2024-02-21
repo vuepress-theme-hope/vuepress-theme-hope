@@ -189,6 +189,7 @@ Since the theme no longer has a built-in search:
 ### Addition
 
 - Added `plugins.blog` to control blog links
+- Added `plugins.linksCheck` to check Markdown dead links
 - Added `plugins.nprogress` to control nprogress
 - Added `plugins.prismjs` to control Prism.js
 
@@ -251,12 +252,6 @@ Move all plugin related options under `plugins`.
   The theme use official plugin `@vuepress/plugin-git` now. ![warning](https://img.shields.io/badge/-warning-yellow)
 
 - move `mdEnhance` to `plugins.mdEnhance`
-
-  - Markdown link check ![New](https://img.shields.io/badge/-New-brightgreen)
-
-    The plugin now check your Markdown links and warn you when broken links are detected.
-
-    You can control this behavior with `plugins.mdEnhance.checkLinks` option
 
   - image mark support ![New](https://img.shields.io/badge/-New-brightgreen)
 

@@ -188,6 +188,7 @@ tag:
 
 - 新增 `plugins.blog` 控制博客地址
 - 新增 `plugins.nprogress` 控制加载进度条
+- 新增 `plugins.linksCheck` 检查 markdown 死链
 - 新增 `plugins.prismjs` 控制是否启用 Prism.js 高亮代码块
 
 ### 改动
@@ -249,12 +250,6 @@ tag:
   主题现在使用官方插件 `@vuepress/plugin-git`，所以支持选项有变化。 ![警告](https://img.shields.io/badge/-warning-yellow)
 
 - `mdEnhance` 移动至 `plugins.mdEnhance`
-
-  - Markdown 链接检查 ![新增](https://img.shields.io/badge/-新增-brightgreen)
-
-    该插件现在检查你的 Markdown 链接，并在检测到损坏的链接时警告你。
-
-    你可以通过 `plugins.mdEnhance.checkLinks` 选项控制此行为
 
   - 图像标记支持 ![新增](https://img.shields.io/badge/-新增-brightgreen)
 

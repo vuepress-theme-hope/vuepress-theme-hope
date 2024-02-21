@@ -14,7 +14,7 @@ import { getCopyrightPlugin } from "./copyright.js";
 import { getFeedPlugin } from "./feed.js";
 import { getMdEnhancePlugin } from "./mdEnhance.js";
 import { getPhotoSwipePlugin } from "./photoSwipe.js";
-import { getPWAPlugin } from "./pwa.js";
+import { getPwaPlugin } from "./pwa.js";
 import { getRedirectPlugin } from "./redirect.js";
 import { getRtlPlugin } from "./rtl.js";
 import { getSearchPlugin } from "./search.js";
@@ -67,7 +67,7 @@ export const getPluginConfig = (
     ),
     getMdEnhancePlugin(plugins.mdEnhance, legacy),
     getPhotoSwipePlugin(plugins.photoSwipe),
-    getPWAPlugin(plugins.pwa, options.favicon),
+    getPwaPlugin(plugins.pwa, options.favicon),
     getSearchPlugin(app, themeData, plugins),
     getSitemapPlugin(plugins.sitemap, options.hostname),
     getRtlPlugin(themeData),

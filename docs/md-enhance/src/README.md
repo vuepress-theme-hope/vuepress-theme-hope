@@ -24,11 +24,6 @@ highlights:
     bgImage: https://theme-hope-assets.vuejs.press/bg/3-light.svg
     bgImageDark: https://theme-hope-assets.vuejs.press/bg/3-dark.svg
     highlights:
-      - title: Links Check
-        icon: clipboard-check
-        details: Check markdown links
-        link: ./guide/others.html#link-check
-
       - title: Full GFM Support
         icon: fab fa-github
         details: Support github flavored markdown

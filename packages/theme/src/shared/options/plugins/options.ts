@@ -5,8 +5,9 @@ import type { CopyrightPluginOptions } from "@vuepress/plugin-copyright";
 import type { DocsearchPluginOptions } from "@vuepress/plugin-docsearch";
 import type { FeedPluginOptions } from "@vuepress/plugin-feed";
 import type { GitPluginOptions } from "@vuepress/plugin-git";
+import type { LinksCheckPluginOptions } from "@vuepress/plugin-links-check";
 import type { PhotoSwipePluginOptions } from "@vuepress/plugin-photo-swipe";
-import type { PWAPluginOptions } from "@vuepress/plugin-pwa";
+import type { PwaPluginOptions } from "@vuepress/plugin-pwa";
 import type { ReadingTimePluginOptions } from "@vuepress/plugin-reading-time";
 import type { RedirectPluginOptions } from "@vuepress/plugin-redirect";
 import type { SearchPluginOptions } from "@vuepress/plugin-search";
@@ -168,6 +169,17 @@ export interface PluginsOptions {
   git?: GitPluginOptions | boolean;
 
   /**
+   * Options for @vuepress/links-check
+   *
+   * @see https://ecosystem.vuejs.press/plugins/links-check.html
+   *
+   * @vuepress/links-check 插件配置
+   *
+   * @see https://ecosystem.vuejs.press/zh/plugins/links-check.html
+   */
+  linksCheck?: LinksCheckPluginOptions | boolean;
+
+  /**
    * md-enhance plugin options
    *
    * @see https://plugin-md-enhance.vuejs.press/config/
@@ -253,7 +265,7 @@ export interface PluginsOptions {
    *
    * @default false
    */
-  pwa?: PWAPluginOptions | boolean;
+  pwa?: PwaPluginOptions | boolean;
 
   /**
    * ReadingTime options

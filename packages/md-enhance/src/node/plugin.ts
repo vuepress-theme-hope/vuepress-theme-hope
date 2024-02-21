@@ -37,7 +37,6 @@ import {
   legacyFlowchart,
   legacyInclude,
 } from "./compact/index.js";
-import { getLinksCheckStatus, linksCheck } from "./linksCheck.js";
 import { markdownEnhanceLocales } from "./locales.js";
 import {
   CODE_DEMO_DEFAULT_SETTING,
@@ -139,11 +138,6 @@ export const mdEnhancePlugin =
       vuePlayground: getStatus("vuePlayground", false, ["@vue/repl"]),
     };
 
-    const { enabled: enableLinksCheck, isIgnoreLink } = getLinksCheckStatus(
-      app,
-      options,
-    );
-
     const katexOptions: KatexOptions<MarkdownEnv> = {
       mathFence: options.gfm ?? false,
       macros: {
@@ -191,8 +185,6 @@ export const mdEnhancePlugin =
       : {};
 
     useSassPalettePlugin(app, { id: "hope" });
-
-    let isAppInitialized = false;
 
     return {
       name: PLUGIN_NAME,
@@ -421,18 +413,9 @@ export const mdEnhancePlugin =
         if (status.sandpack) md.use(sandpack);
       },
 
-      extendsPage: (page, app): void => {
-        if (enableLinksCheck && isAppInitialized)
-          linksCheck(page, app, isIgnoreLink);
-
+      extendsPage: (page): void => {
         if (options.include)
           page.deps.push(...(<string[]>page.markdownEnv["includedFiles"]));
-      },
-
-      onInitialized: (app): void => {
-        isAppInitialized = true;
-        if (enableLinksCheck)
-          app.pages.forEach((page) => linksCheck(page, app, isIgnoreLink));
       },
 
       onPrepared: async (app): Promise<void> => {
