@@ -74,7 +74,7 @@ This means you are calling a theme-bundled plugin yourself in VuePress config fi
 - In most cases, when you use some plugins with theme, the theme automatically handles some plugin options for you,
 - Some plugins are required by the theme. If you do not enable the features used by theme, the theme will throw errors.
 
-So when you want to customize these plugins, you should set their options in `plugin.PLUGIN_NAME` under theme options and let the theme call these plugins for you.
+So when you want to customize these plugins, you should set their options in `plugins.PLUGIN_NAME` under theme options and let the theme call these plugins for you.
 
 For details on all plugins of the theme, please see [Theme Plugins](../config/plugins/intro.md).
 

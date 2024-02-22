@@ -94,7 +94,7 @@ export const checkUserPlugin = (app: App): void => {
         )}" yourself in ${colors.cyan("vuepress config file")}. ${
           hint ||
           (optionName
-            ? `Set "${colors.magenta(`plugin.${optionName}`)}" in ${colors.cyan(
+            ? `Set "${colors.magenta(`plugins.${optionName}`)}" in ${colors.cyan(
                 "theme options",
               )} to customize it.`
             : "")
