@@ -93,6 +93,8 @@ export default {
 
 PDF 链接，**不支持**相对路径。
 
+当填写路径名时，`base` 将自动添加到路径名的开头。
+
 ### width
 
 - 类型: `string | number`

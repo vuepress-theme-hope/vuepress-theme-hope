@@ -150,6 +150,8 @@ We recommend you to use [VidStack](./vid-stack.md) for better experience.
 
 Video source link
 
+Relative URL is NOT supported. When filling in a pathname, `base` will be automatically added to the beginning of the pathname.
+
 ### width
 
 - Type: `string | number`

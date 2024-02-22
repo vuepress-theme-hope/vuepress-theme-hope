@@ -2,9 +2,7 @@
 title: CodePen
 ---
 
-This component adds CodePen demos.
-
-You can use it in Markdown to add an embed demo.
+Embed CodePen demos in your markdown.
 
 <!-- more -->
 

@@ -63,28 +63,6 @@ Global config for components.
 - Details:
   - [Guide → ArtPlayer](./guide/media/art-player.md#global-config)
 
-### componentsOptions.share.services
-
-- Type: `(string | ShareService)[]`
-- Details:
-  - [Guide → Share → Setting component](./guide/utilities/share.md#setting-component)
-
-Share services
-
-### componentsOptions.share.contentSelector
-
-- Type: `string`
-- Default: `.theme-default-content`
-
-Page content selector.
-
-### componentsOptions.share.twitterUserName
-
-- Type: `string`
-- Required: No
-
-Twitter username.
-
 ### componentsOptions.fontIcon.assets
 
 - Type: `FontIconAssets`
@@ -128,6 +106,28 @@ Class prefix of font icon
   - [Guide → PDF → PDFJS](./guide/media/p-d-f.md#pdfjs-viewer)
 
 Location to pdfjs viewer.
+
+### componentsOptions.share.services
+
+- Type: `(string | ShareService)[]`
+- Details:
+  - [Guide → Share → Setting component](./guide/utilities/share.md#setting-component)
+
+Share services
+
+### componentsOptions.share.contentSelector
+
+- Type: `string`
+- Default: `.theme-default-content`
+
+Page content selector.
+
+### componentsOptions.share.twitterUserName
+
+- Type: `string`
+- Required: No
+
+Twitter username.
 
 ## rootComponents
 

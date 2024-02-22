@@ -9,6 +9,7 @@ import { LoadingIcon } from "vuepress-shared/client";
 
 import type { ArtPlayerOptions } from "../../shared/index.js";
 import { useSize } from "../composables/index.js";
+import { getLink } from "../utils/getLink.js";
 import {
   SUPPORTED_VIDEO_TYPES,
   getTypeByUrl,
@@ -215,7 +216,7 @@ export default defineComponent({
         ...ART_PLAYER_OPTIONS,
         container: el.value!,
         poster: props.poster,
-        url: props.src,
+        url: getLink(props.src),
         type: props.type || getTypeByUrl(props.src),
         lang: getLang(lang.value),
         ...props.config,

@@ -114,6 +114,8 @@ npm i -D vidstack@1
 
 视频源链接。
 
+不支持相对路径。当填写路径名时，`base` 将自动添加到路径名的开头。
+
 ### sources
 
 - 类型: `VidStackSource[]`

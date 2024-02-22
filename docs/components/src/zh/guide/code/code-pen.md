@@ -2,9 +2,7 @@
 title: CodePen
 ---
 
-CodePen 演示组件。
-
-你可以使用它在 Markdown 嵌入 Demo。
+在 Markdown 嵌入 CodePen 示例。
 
 <!-- more -->
 

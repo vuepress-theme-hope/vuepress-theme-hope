@@ -2,6 +2,8 @@ import { isPlainObject } from "@vuepress/helper/client";
 import type { PropType, VNode } from "vue";
 import { defineComponent, h, onMounted } from "vue";
 
+import { getLink } from "../utils/getLink.js";
+
 import "vidstack/player/styles/default/theme.css";
 import "vidstack/player/styles/default/layouts/audio.css";
 import "vidstack/player/styles/default/layouts/video.css";
@@ -90,8 +92,8 @@ export default defineComponent({
             : null,
           props.sources.map((source) =>
             isPlainObject(source)
-              ? h("source", source)
-              : h("source", { src: source }),
+              ? h("source", { ...source, src: getLink(source.src) })
+              : h("source", { src: getLink(source) }),
           ),
           props.tracks.map((tracks) => h("track", tracks)),
         ]),

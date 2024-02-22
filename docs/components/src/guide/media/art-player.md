@@ -90,6 +90,8 @@ npm i -D artplayer
 
 Video source link.
 
+Relative URL is NOT supported. When filling in a pathname, `base` will be automatically added to the beginning of the pathname.
+
 ### type
 
 - Type: `string`

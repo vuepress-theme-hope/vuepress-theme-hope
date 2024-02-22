@@ -93,6 +93,8 @@ The default PDFJS viewer does not support toolbar customization, if you want to 
 
 PDF document link, relative path is NOT supported.
 
+When filling in a pathname, `base` will be automatically added to the beginning of the pathname.
+
 ### width
 
 - Type: `string | number`

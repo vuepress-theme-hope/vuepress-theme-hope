@@ -114,6 +114,8 @@ npm i -D vidstack@1
 
 Video source link.
 
+Relative URL is NOT supported. When filling in a pathname, `base` will be automatically added to the beginning of the pathname.
+
 ### sources
 
 - Type: `VidStackSource[]`
