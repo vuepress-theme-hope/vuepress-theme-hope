@@ -24,25 +24,22 @@ Since you are generating the project from create helper, you will have the follo
 
 ```
 └─ src
-   ├─ guide
+   ├─ demo
    │  ├─ ...
    │  └─ page.md
    │  └─ markdown.md
    │  └─ README.md
    ├─ ...
-   ├─ slide.md
    └─ README.md
 ```
 
 The route path of your Markdown files are:
 
-| Relative Path      | Route Path          |
-| ------------------ | ------------------- |
-| `/README.md`       | `/`                 |
-| `/slide.md`        | `/slide.html`       |
-| `/guide/README.md` | `/guide/`           |
-| `/guide/slide.md`  | `/guide/slide.html` |
-| `/guide/page.md`   | `/guide/page.html`  |
+| Relative Path     | Route Path        |
+| ----------------- | ----------------- |
+| `/README.md`      | `/`               |
+| `/demo/README.md` | `/demo/`          |
+| `/demo/page.md`   | `/demo/page.html` |
 
 ::: tip README.md
 

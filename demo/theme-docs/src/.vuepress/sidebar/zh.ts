@@ -16,6 +16,6 @@ export const zhSidebar = sidebar({
       prefix: "guide/",
       children: "structure",
     },
-    "slides",
+    "slide",
   ],
 });
