@@ -93,7 +93,7 @@ Of course, if you are expect enough, you can achieve the layout you want by over
 
 By default, VuePress only extracts h2 and h3 titles from Markdown, so you will never see h4 titles by configuring the theme alone.
 
-You need to configure [markdown.header.levels](https://vuepress.vuejs.org/config/#markdown-headers) in the VuePress configuration file:
+You need to configure [markdown.header.levels](https://vuejs.press/reference/config/#markdown-headers) in the VuePress configuration file:
 
 ```ts title=".vuepress/config.ts"
 export default {
