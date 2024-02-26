@@ -313,8 +313,8 @@ importers:
         specifier: 10.8.0
         version: 10.8.0
       reveal.js:
-        specifier: 5.0.4
-        version: 5.0.4
+        specifier: 5.0.5
+        version: 5.0.5
       sandpack-vue3:
         specifier: 3.1.11
         version: 3.1.11(@lezer/common@1.2.1)(vue@3.4.19)
@@ -430,8 +430,8 @@ importers:
         specifier: 10.8.0
         version: 10.8.0
       reveal.js:
-        specifier: 5.0.4
-        version: 5.0.4
+        specifier: 5.0.5
+        version: 5.0.5
       sandpack-vue3:
         specifier: 3.1.11
         version: 3.1.11(@lezer/common@1.2.1)(vue@3.4.19)
@@ -490,8 +490,8 @@ importers:
         specifier: 10.8.0
         version: 10.8.0
       reveal.js:
-        specifier: 5.0.4
-        version: 5.0.4
+        specifier: 5.0.5
+        version: 5.0.5
       sandpack-vue3:
         specifier: 3.1.11
         version: 3.1.11(@lezer/common@1.2.1)(vue@3.4.19)
@@ -1068,7 +1068,7 @@ importers:
         specifier: ^13.0.7
         version: 13.0.7
       '@types/reveal.js':
-        specifier: ^4.4.5
+        specifier: ^4.4.5 || ^5.0.0
         version: 4.4.8
       '@vue/repl':
         specifier: ^4.1.1
@@ -13128,6 +13128,12 @@ packages:
   /reveal.js@5.0.4:
     resolution: {integrity: sha512-480pVhre9SXWuE4QbDwG0nPrip3TkifflqaKQWF8Ynf4iYIUBfgu5leeMso0srubQsZQ+G2OzktAfAkrvBY0Ww==}
     engines: {node: '>=18.0.0'}
+    dev: false
+
+  /reveal.js@5.0.5:
+    resolution: {integrity: sha512-MPWPV/cRlkZhh72dAGYv/bUCr9ulwM2/ucCqiL/KN4tvhb6VvN49iwOyWHE08wppj8lMQXi2xbS3kyKgfyTYqg==}
+    engines: {node: '>=18.0.0'}
+    dev: true
 
   /rimraf@3.0.2:
     resolution: {integrity: sha512-JZkJMZkAGFFPP2YqXZXPbMlMBgsxzE8ILs4lMIX/2o0L9UBw9O/Y3o6wFw/i9YLapcUJWwqbi3kdxIPdC62TIA==}
