@@ -99,11 +99,12 @@ flowchart LR
 
 ```ts title=".vuepress/config.ts"
 export default {
-  markdown: {
-    header: {
-      // 用到哪一级就提取哪一级
-      levels: [2, 3, 4, 5, 6],
-    },
+  extendsMarkdownOptions: (markdownOptions, app) => {
+    if (markdownOptions.headers === false) return
+    markdownOptions.headers ??= {}
+    if (markdownOptions.headers.level) return
+    // 用到哪一级就提取哪一级
+    markdownOptions.headers.level = [2, 3, 4, 5, 6]
   },
 
   // 其他配置
