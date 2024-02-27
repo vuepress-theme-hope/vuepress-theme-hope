@@ -5,6 +5,7 @@ import { footnote } from "@mdit/plugin-footnote";
 import { imgLazyload } from "@mdit/plugin-img-lazyload";
 import { imgMark } from "@mdit/plugin-img-mark";
 import { imgSize, obsidianImageSize } from "@mdit/plugin-img-size";
+import type { IncludeEnv } from "@mdit/plugin-include";
 import { include } from "@mdit/plugin-include";
 import { katex } from "@mdit/plugin-katex";
 import { mark } from "@mdit/plugin-mark";
@@ -26,7 +27,7 @@ import {
 } from "@vuepress/helper";
 import type { PluginFunction } from "vuepress/core";
 import type { MarkdownEnv } from "vuepress/markdown";
-import { colors } from "vuepress/utils";
+import { colors, path } from "vuepress/utils";
 import { useSassPalettePlugin } from "vuepress-plugin-sass-palette";
 
 import {
@@ -338,7 +339,7 @@ export const mdEnhancePlugin =
           md.use(katex, katexOptions);
         } else if (status.mathjax) {
           md.use(mathjax, mathjaxInstance!);
-          // Reset after each render
+          // Reset mathjax style in each render
           md.use((md) => {
             const originalRender = md.render.bind(md);
 
@@ -357,10 +358,34 @@ export const mdEnhancePlugin =
             currentPath: (env: MarkdownEnv) => env.filePath,
             ...(isPlainObject(options.include) ? options.include : {}),
           });
+
           if (legacy)
             md.use(legacyInclude, {
               currentPath: (env: MarkdownEnv) => env.filePath,
             });
+
+          // set include files to frontmatter after each render
+          md.use((md) => {
+            const originalRender = md.render.bind(md);
+
+            md.render = (
+              src: string,
+              env: MarkdownEnv &
+                IncludeEnv & { frontmatter?: { gitInclude?: string[] } },
+            ): string => {
+              const result = originalRender(src, env);
+              const { filePathRelative, includedFiles = [] } = env;
+
+              if (filePathRelative && includedFiles.length)
+                ((env.frontmatter ??= {}).gitInclude ??= []).push(
+                  ...includedFiles.map((item) =>
+                    path.relative(filePathRelative, item),
+                  ),
+                );
+
+              return result;
+            };
+          });
         }
 
         if (options.stylize)
@@ -414,6 +439,7 @@ export const mdEnhancePlugin =
       },
 
       extendsPage: (page): void => {
+        // mark included files as page deps
         if (options.include)
           page.deps.push(...(<string[]>page.markdownEnv["includedFiles"]));
       },
