@@ -95,10 +95,10 @@
     "@mdit/plugin-uml": "^0.8.0",
     "@types/markdown-it": "^13.0.7",
     "@vuepress/helper": "2.0.0-rc.17",
-    "@vueuse/core": "^10.8.0",
+    "@vueuse/core": "^10.9.0",
     "balloon-css": "^1.2.0",
     "js-yaml": "^4.1.0",
-    "vue": "^3.4.19",
+    "vue": "^3.4.20",
     "vuepress-plugin-sass-palette": "workspace:*",
     "vuepress-shared": "workspace:*"
   },
@@ -110,7 +110,7 @@
     "typescript": "5.3.3"
   },
   "peerDependencies": {
-    "@types/reveal.js": "^4.4.5",
+    "@types/reveal.js": "^5.0.0",
     "@vue/repl": "^4.1.1",
     "chart.js": "^4.0.0",
     "echarts": "^5.0.0",
