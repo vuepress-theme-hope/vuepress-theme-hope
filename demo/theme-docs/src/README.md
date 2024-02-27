@@ -175,7 +175,7 @@ highlights:
       - title: Slide Page
         icon: person-chalkboard
         details: Adding slide pages to display things you like
-        link: https://theme-hope.vuejs.press/guide/layout/slides
+        link: https://theme-hope.vuejs.press/guide/layout/slides.html
 
       - title: More
         icon: ellipsis

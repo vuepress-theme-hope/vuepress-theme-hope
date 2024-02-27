@@ -16,6 +16,6 @@ export const enSidebar = sidebar({
       prefix: "guide/",
       children: "structure",
     },
-    "slides",
+    "slide",
   ],
 });

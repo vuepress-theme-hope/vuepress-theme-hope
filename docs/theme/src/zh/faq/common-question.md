@@ -95,12 +95,12 @@ flowchart LR
 
 默认情况下，VuePress 只会从 Markdown 提取 h2 和 h3 标题，所以仅靠配置主题，你永远也看不见 h4 标题。
 
-你需要在 VuePress 配置文件中配置 [markdown.header.levels](https://vuejs.press/zh/reference/config.html#markdown-headers):
+你需要在 VuePress 配置文件中配置 [markdown.headers.levels](https://vuejs.press/zh/reference/config.html#markdown-headers):
 
 ```ts title=".vuepress/config.ts"
 export default {
   markdown: {
-    header: {
+    headers: {
       // 用到哪一级就提取哪一级
       levels: [2, 3, 4, 5, 6],
     },

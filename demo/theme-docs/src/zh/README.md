@@ -175,7 +175,7 @@ highlights:
       - title: 幻灯片页面
         icon: person-chalkboard
         details: 添加幻灯片页面以显示你喜欢的内容
-        link: https://theme-hope.vuejs.press/zh/guide/layout/slides
+        link: https://theme-hope.vuejs.press/zh/guide/layout/slides.html
 
       - title: 更多
         icon: ellipsis
