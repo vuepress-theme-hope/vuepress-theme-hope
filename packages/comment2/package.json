@@ -52,7 +52,7 @@
   "dependencies": {
     "@vuepress/helper": "2.0.0-rc.17",
     "giscus": "^1.5.0",
-    "vue": "^3.4.20",
+    "vue": "^3.4.21",
     "vuepress-plugin-sass-palette": "workspace:*",
     "vuepress-shared": "workspace:*"
   },

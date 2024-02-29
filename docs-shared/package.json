@@ -39,8 +39,8 @@
     "@vuepress/plugin-docsearch": "2.0.0-rc.17",
     "@vuepress/plugin-redirect": "2.0.0-rc.17",
     "@vuepress/plugin-shiki": "2.0.0-rc.17",
-    "three": "0.161.0",
-    "vue": "3.4.20",
+    "three": "0.162.0",
+    "vue": "3.4.21",
     "vuepress": "2.0.0-rc.8",
     "vuepress-theme-hope": "workspace:*"
   }
