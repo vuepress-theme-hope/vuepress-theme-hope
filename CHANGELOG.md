@@ -4,6 +4,22 @@ All notable changes to this project will be documented in this file. See [Conven
 
 <!-- #region recent-change -->
 
+## [2.0.0-rc.27](https://github.com/vuepress-theme-hope/vuepress-theme-hope/compare/v2.0.0-rc.26...v2.0.0-rc.27) (2024-02-29)
+
+### ⚠ BREAKING CHANGES
+
+- **theme:** heading keyword is no longer supported in sidebar
+
+### Features
+
+- **md-enhance:** improve git update time with include feature ([d2dd513](https://github.com/vuepress-theme-hope/vuepress-theme-hope/commit/d2dd5130a2b6b24e78935336cccd43e59f4a1399))
+- **theme:** support toc on mobile ([a8a07f9](https://github.com/vuepress-theme-hope/vuepress-theme-hope/commit/a8a07f9a66c7ab129b1c74e6c450fad3a64fb21d))
+
+### Bug Fixes
+
+- **components:** ensure base is appended ([2f66eef](https://github.com/vuepress-theme-hope/vuepress-theme-hope/commit/2f66eefe4a65e187583a83c4a55169d0ad19abf8))
+- **theme:** fix logger hint ([36b53be](https://github.com/vuepress-theme-hope/vuepress-theme-hope/commit/36b53be6eaf6819b2099b569cb07b5e30c4ee483))
+
 ## [2.0.0-rc.26](https://github.com/vuepress-theme-hope/vuepress-theme-hope/compare/v2.0.0-rc.25...v2.0.0-rc.26) (2024-02-21)
 
 ### Features
