@@ -83,7 +83,7 @@
     "@vuepress/plugin-photo-swipe": "2.0.0-rc.18",
     "@vuepress/plugin-prismjs": "2.0.0-rc.15",
     "@vuepress/plugin-reading-time": "2.0.0-rc.18",
-    "@vuepress/plugin-rtl": "2.0.0-rc.15",
+    "@vuepress/plugin-rtl": "2.0.0-rc.18",
     "@vuepress/plugin-seo": "2.0.0-rc.18",
     "@vuepress/plugin-sitemap": "2.0.0-rc.18",
     "@vuepress/plugin-theme-data": "2.0.0-rc.18",

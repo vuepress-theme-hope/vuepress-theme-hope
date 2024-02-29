@@ -1326,8 +1326,8 @@ importers:
         specifier: 2.0.0-rc.18
         version: 2.0.0-rc.18(typescript@5.3.3)(vuepress@2.0.0-rc.8)
       '@vuepress/plugin-rtl':
-        specifier: 2.0.0-rc.15
-        version: 2.0.0-rc.15(typescript@5.3.3)(vuepress@2.0.0-rc.8)
+        specifier: 2.0.0-rc.18
+        version: 2.0.0-rc.18(typescript@5.3.3)(vuepress@2.0.0-rc.8)
       '@vuepress/plugin-search':
         specifier: 2.0.0-rc.15
         version: 2.0.0-rc.15(typescript@5.3.3)(vuepress@2.0.0-rc.8)
@@ -5568,8 +5568,8 @@ packages:
       - typescript
     dev: false
 
-  /@vuepress/plugin-rtl@2.0.0-rc.15(typescript@5.3.3)(vuepress@2.0.0-rc.8):
-    resolution: {integrity: sha512-YTfLHWrLv92EuGYMbePGcqEuPoAhuAoVTpNbNyALya2TKzsUriFv5qwvg9wMwydFX769HowhSup4t3O+29BdiQ==}
+  /@vuepress/plugin-rtl@2.0.0-rc.18(typescript@5.3.3)(vuepress@2.0.0-rc.8):
+    resolution: {integrity: sha512-DXKQgwqYY9LteNy26M6vsiJFz/IX2NmpavvkTfPYB6Hoe5hk9o+t1/iiVf0TDWXvhTVlBHubYZdMuhO6p/JHVA==}
     peerDependencies:
       vuepress: 2.0.0-rc.8
     dependencies:
