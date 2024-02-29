@@ -53,15 +53,9 @@ export const checkFrontmatter = (page: Page): void => {
   }
 
   // Check sidebar
-  if (
-    "sidebar" in frontmatter &&
-    frontmatter.sidebar !== "heading" &&
-    typeof frontmatter.sidebar !== "boolean"
-  ) {
+  if ("sidebar" in frontmatter && typeof frontmatter.sidebar !== "boolean") {
     logger.warn(
-      `${colors.magenta("sidebar")} in frontMatter should be ${colors.cyan(
-        "heading",
-      )} or ${colors.cyan("boolean")}${
+      `${colors.magenta("sidebar")} in frontMatter should be ${colors.cyan("boolean")}${
         filePathRelative ? `, found in ${filePathRelative}` : ""
       }.`,
     );

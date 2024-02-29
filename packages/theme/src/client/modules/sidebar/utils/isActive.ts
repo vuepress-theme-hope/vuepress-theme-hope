@@ -13,7 +13,7 @@ export const isActiveSidebarItem = (
 
   if (isActiveLink(route, item.link)) return true;
 
-  if (item.children && !exact)
+  if ("children" in item && !exact)
     return item.children.some((child) => isActiveSidebarItem(route, child));
 
   return false;

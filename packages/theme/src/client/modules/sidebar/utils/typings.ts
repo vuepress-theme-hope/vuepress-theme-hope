@@ -3,14 +3,8 @@ import type {
   SidebarPageItem,
 } from "../../../../shared/index.js";
 
-export interface ResolvedSidebarHeaderItem extends SidebarPageItem {
-  type: "heading";
-  children: ResolvedSidebarHeaderItem[];
-}
-
 export interface ResolvedSidebarPageItem extends SidebarPageItem {
   type: "page";
-  children: ResolvedSidebarHeaderItem[];
 }
 
 export interface ResolvedSidebarGroupItem extends SidebarGroupItem {
@@ -20,6 +14,5 @@ export interface ResolvedSidebarGroupItem extends SidebarGroupItem {
 }
 
 export type ResolvedSidebarItem =
-  | ResolvedSidebarHeaderItem
   | ResolvedSidebarPageItem
   | ResolvedSidebarGroupItem;

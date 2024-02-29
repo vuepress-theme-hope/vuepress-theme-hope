@@ -58,35 +58,37 @@ const handleArraySidebarOptions = (
 export const convertSidebarOptions = (
   config: unknown,
 ): SidebarOptions | false => {
-  if (config === false || config === "structure" || config === "heading")
-    return config;
+  if (config === false || config === "structure") return config;
 
   if (isArray(config))
     return handleArraySidebarOptions(config as SidebarArrayOptions);
 
   if (isPlainObject(config) && config)
     return fromEntries(
-      entries(config).map<
-        [string, SidebarArrayOptions | "structure" | "heading" | false]
-      >(([key, value]) => {
-        if (isArray(value))
-          return [key, handleArraySidebarOptions(value as SidebarArrayOptions)];
+      entries(config).map<[string, SidebarArrayOptions | "structure" | false]>(
+        ([key, value]) => {
+          if (isArray(value))
+            return [
+              key,
+              handleArraySidebarOptions(value as SidebarArrayOptions),
+            ];
 
-        if (value === "structure" || value === "heading" || value === false)
-          return [key, <"structure" | "heading" | false>value];
+          if (value === "structure" || value === false)
+            return [key, <"structure" | false>value];
 
-        logger.error(
-          '"sidebar" value should be an array, "structure", "heading" or false when setting as an object',
-        );
+          logger.error(
+            '"sidebar" value should be an array, "structure" or false when setting as an object',
+          );
 
-        return [key, false];
-      }),
+          return [key, false];
+        },
+      ),
     );
 
   logger.error(
     `${colors.magenta(
       "sidebar",
-    )} config should be: an array, an object, "structure", "heading" or false`,
+    )} config should be: an array, an object, "structure" or false`,
   );
 
   return false;

@@ -62,13 +62,13 @@ tag:
 
 - 类型: `boolean`
 
-导航栏配置，填入 `false` 会禁用导航栏
+填入 `false` 会禁用导航栏
 
 ## sidebar
 
-- 类型: `"heading" | false`
+- 类型: `boolean`
 
-侧边栏配置选项。支持 `"heading"` 或 `false`。
+填入 `false` 会禁用侧边栏
 
 ## headerDepth
 
@@ -236,7 +236,7 @@ tag:
 - 类型: `boolean`
 - 默认值: 主题选项中的值
 
-在桌面模式下是否在右侧显示标题列表。
+是否显示标题列表。
 
 ## containerClass
 

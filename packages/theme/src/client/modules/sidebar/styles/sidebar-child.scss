@@ -2,7 +2,7 @@
 @use "vuepress-shared/styles/arrow";
 @use "@sass-palette/helper";
 
-.vp-sidebar-heading {
+.vp-sidebar-header {
   display: flex;
   align-items: center;
 
@@ -58,7 +58,7 @@
   }
 }
 
-button.vp-sidebar-heading {
+button.vp-sidebar-header {
   outline: none;
 
   font-weight: inherit;
@@ -96,17 +96,6 @@ button.vp-sidebar-heading {
 
     .icon {
       color: var(--theme-color);
-    }
-  }
-
-  .vp-sidebar-sub-headers & {
-    padding-top: 0.25rem;
-    padding-bottom: 0.25rem;
-    border-inline-start: none;
-
-    &.active {
-      background: transparent;
-      font-weight: 500;
     }
   }
 }

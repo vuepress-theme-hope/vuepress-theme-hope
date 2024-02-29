@@ -496,50 +496,7 @@ export default {
 
 :::
 
-## 自动生成侧边栏
-
-### 通过标题自动生成
-
-如果你希望自动生成一个仅仅包含了当前页面标题(headers)链接的侧边栏，你可以通过 frontmatter 来实现:
-
-```md
----
-sidebar: heading
----
-```
-
-你也可以通过配置来在所有页面中启用它:
-
-::: code-tabs#language
-
-@tab TS
-
-```ts {67 title=".vuepress/config.ts"
-import { defineUserConfig } from "vuepress";
-import { hopeTheme } from "vuepress-theme-hope";
-
-export default defineUserConfig({
-  theme: hopeTheme({
-    sidebar: "heading",
-  }),
-});
-```
-
-@tab JS
-
-```js {6} title=".vuepress/config.js"
-import { hopeTheme } from "vuepress-theme-hope";
-
-export default {
-  theme: hopeTheme({
-    sidebar: "heading",
-  }),
-};
-```
-
-:::
-
-### 通过文件结构自动生成 <Badge text="新增" type="tip" />
+## 通过文件结构自动生成侧边栏 <Badge text="新增" type="tip" />
 
 你可以在上述任意侧边栏配置中，将原来的“侧边栏数组”替换为 `"structure"` 关键词。这会让主题自动读取本地文件，为你生成对应的侧边栏结构，以大大减少你的配置工作量。
 
@@ -625,7 +582,7 @@ export default {
 
 :::
 
-#### 进阶控制
+### 进阶控制
 
 在从结构自动生成的过程中，你可以通过页面 Frontmatter 中的 `index` 选项控制同一文件夹下的文件是否被包含、并通过 `order` 控制它们的排序方式。
 
@@ -659,54 +616,21 @@ export default {
 
 对于嵌套文件夹，其分组信息由对应文件夹下的 `README.md` 控制，你可以通过 Frontmatter 中的 `dir` 选项控制文件夹分组的行为，相关可选项目如下:
 
-```ts
-interface SidebarDirInfo {
-  /**
-   * 目录标题
-   *
-   * @default README.md 标题
-   */
-  text?: string;
+- `dir.text`: 目录标题，默认为 README.md 标题
+- `dir.icon`: 目录图标，默认为 README.md 图标
+- `dir.collapsible`: 目录是否可折叠，默认为 `true`
+- `dir.link`: 目录是否可点击，默认为 `false`
+- `dir.index`: 是否索引此目录，默认为 `true`
+- `dir.order`: 目录在侧边栏中的顺序，默认为 `0`
 
-  /**
-   * 目录图标
-   *
-   * @default README.md 图标
-   */
-  icon?: string;
+以下是一个案例：
 
-  /**
-   * 目录是否可折叠
-   *
-   * @default true
-   */
-
-  collapsible?: boolean;
-
-  /**
-   * 目录是否可点击
-   *
-   * @description 将会将目录分组的链接设置为 README.md 对应的链接
-   *
-   * @default false
-   */
-
-  link?: boolean;
-
-  /**
-   * 是否索引此目录
-   *
-   * @default true
-   */
-  index?: boolean;
-
-  /**
-   * 目录在侧边栏中的顺序
-   *
-   * @default 0
-   */
-  order?: number | false;
-}
+```md
+---
+dir:
+  order: 1
+  text: Group 1
+---
 ```
 
 如果对应文件夹不存在 `README.md` 文件，则只有分组标题会从文件夹名称中生成。

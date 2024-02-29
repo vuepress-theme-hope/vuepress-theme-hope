@@ -4,7 +4,9 @@
   display: flex;
   flex-wrap: wrap;
 
+  max-width: var(--content-width, 740px);
   min-height: 2rem;
+  margin-inline: auto;
   margin-top: 0;
   padding-block: 0.5rem;
   padding-inline: 2rem;

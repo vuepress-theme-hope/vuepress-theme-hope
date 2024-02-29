@@ -21,7 +21,7 @@ export interface ThemePageFrontmatter extends BasePageFrontMatter {
    *
    * 侧边栏配置
    */
-  sidebar?: "heading" | false;
+  sidebar?: false;
 
   /**
    * Additional Class for Page container

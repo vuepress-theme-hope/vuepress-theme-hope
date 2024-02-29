@@ -61,7 +61,7 @@ export default defineComponent({
           collapsible ? "button" : "p",
           {
             class: [
-              "vp-sidebar-heading",
+              "vp-sidebar-header",
               {
                 clickable: collapsible || link,
                 exact: exact.value,

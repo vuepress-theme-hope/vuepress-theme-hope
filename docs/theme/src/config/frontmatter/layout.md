@@ -59,20 +59,20 @@ Whether path navigation icon is enabled on the current page.
 
 - Type: `boolean`
 
-The navbar configuration of the page, filling in `false` will disable the navbar
+Setting it to `false` will disable navbar
 
 ## sidebar
 
-- Type: `"heading" | false`
+- Type: `boolean`
 
-Page sidebar configuration options. Supports `"heading"` or `false`.
+Setting it to `false` will disable sidebar
 
 ## headerDepth
 
 - Type: `number`
 - Default: `2`
 
-The page's sidebar heading rendering depth.
+Heading rendering depth.
 
 ## index
 
@@ -234,7 +234,7 @@ Whether display the back to top button.
 - Type: `boolean`
 - Default value: value in theme options
 
-Whether display toc in desktop mode.
+Whether display toc
 
 ## containerClass
 

@@ -1,3 +1,4 @@
+import { useToggle } from "@vueuse/core";
 import type { PropType, SlotsType, VNode } from "vue";
 import { defineComponent, h, onMounted, ref, shallowRef, watch } from "vue";
 import type { PageHeader } from "vuepress/client";
@@ -13,7 +14,7 @@ const renderHeader = ({ title, level, slug }: PageHeader): VNode =>
     RouteLink,
     {
       to: `#${slug}`,
-      class: ["toc-link", `level${level}`],
+      class: ["vp-toc-link", `level${level}`],
     },
     () => title,
   );
@@ -27,7 +28,7 @@ const renderChildren = (
   return headers.length && headerDepth > 0
     ? h(
         "ul",
-        { class: "toc-list" },
+        { class: "vp-toc-list" },
         headers.map((header) => {
           const children = renderChildren(header.children, headerDepth - 1);
 
@@ -36,7 +37,7 @@ const renderChildren = (
               "li",
               {
                 class: [
-                  "toc-item",
+                  "vp-toc-item",
                   { active: route.hash === `#${header.slug}` },
                 ],
               },
@@ -83,6 +84,7 @@ export default defineComponent({
     const route = useRoute();
     const page = usePageData();
     const metaLocale = useMetaLocale();
+    const [isExpanded, toggleExpanded] = useToggle();
 
     const toc = shallowRef<HTMLElement>();
     const tocMarkerTop = ref("-1.7rem");
@@ -93,7 +95,7 @@ export default defineComponent({
 
     const updateTocMarker = (): void => {
       if (toc.value) {
-        const activeTocItem = document.querySelector(".toc-item.active");
+        const activeTocItem = document.querySelector(".vp-toc-item.active");
 
         if (activeTocItem)
           tocMarkerTop.value = `${
@@ -165,22 +167,41 @@ export default defineComponent({
           : null;
 
       return tocHeaders
-        ? h("div", { class: "toc-place-holder" }, [
+        ? h("div", { class: "vp-toc-placeholder" }, [
             h("aside", { id: "toc" }, [
               slots.before?.(),
-              h("div", { class: "toc-header" }, [
-                metaLocale.value.toc,
-                h(PrintButton),
-              ]),
-              h("div", { class: "toc-wrapper", ref: toc }, [
-                tocHeaders,
-                h("div", {
-                  class: "toc-marker",
-                  style: {
-                    top: tocMarkerTop.value,
+              h(
+                "div",
+                {
+                  class: "vp-toc-header",
+                  onClick: () => {
+                    toggleExpanded();
                   },
-                }),
-              ]),
+                },
+                [
+                  metaLocale.value.toc,
+                  h(PrintButton),
+                  h("div", {
+                    class: ["arrow", isExpanded.value ? "down" : "end"],
+                  }),
+                ],
+              ),
+              h(
+                "div",
+                {
+                  class: ["vp-toc-wrapper", isExpanded.value ? "open" : ""],
+                  ref: toc,
+                },
+                [
+                  tocHeaders,
+                  h("div", {
+                    class: "vp-toc-marker",
+                    style: {
+                      top: tocMarkerTop.value,
+                    },
+                  }),
+                ],
+              ),
               slots.after?.(),
             ]),
           ])

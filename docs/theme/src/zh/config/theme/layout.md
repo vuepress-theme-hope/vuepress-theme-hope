@@ -129,7 +129,7 @@ tag:
 
 ### sidebar <Badge text="建议配置" type="tip" />
 
-- 类型: `SidebarConfig | "structure" | "heading" | false`
+- 类型: `SidebarConfig | "structure" | false`
 - 默认值: `"structure"`
 
 侧边栏配置。
@@ -381,4 +381,4 @@ tag:
 - 类型: `boolean`
 - 默认值: `true`
 
-是否在桌面模式下右侧展示标题列表
+是否显示标题列表

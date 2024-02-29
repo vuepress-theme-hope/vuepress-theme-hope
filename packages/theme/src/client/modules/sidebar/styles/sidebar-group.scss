@@ -1,6 +1,6 @@
 .vp-sidebar-group {
   &:not(.collapsible) {
-    .vp-sidebar-heading:not(.clickable) {
+    .vp-sidebar-header:not(.clickable) {
       color: inherit;
       cursor: auto;
     }
@@ -9,7 +9,7 @@
   .vp-sidebar-group {
     padding-inline-start: 0.75rem;
 
-    .vp-sidebar-heading {
+    .vp-sidebar-header {
       font-size: 1em;
     }
   }

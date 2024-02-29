@@ -9,17 +9,6 @@
   ul {
     margin: 0;
     padding: 0;
-
-    &.vp-sidebar-sub-headers {
-      padding-inline-start: 0.75rem;
-      font-size: 0.95em;
-
-      .has-toc & {
-        @media (min-width: hope-config.$pc) {
-          display: none;
-        }
-      }
-    }
   }
 
   li {

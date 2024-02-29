@@ -76,12 +76,11 @@ export type SidebarArrayOptions = SidebarItem[];
 
 export type SidebarObjectOptions = Record<
   string,
-  SidebarArrayOptions | "structure" | "heading" | false
+  SidebarArrayOptions | "structure" | false
 >;
 
 export type SidebarOptions =
   | SidebarArrayOptions
   | SidebarObjectOptions
   | "structure"
-  | "heading"
   | false;

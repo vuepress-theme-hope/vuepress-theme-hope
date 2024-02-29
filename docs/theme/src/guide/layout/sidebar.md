@@ -502,50 +502,7 @@ In this case, the fallback sidebar must be defined last for this reason.
 
 :::
 
-## Auto Sidebar
-
-### Generate from Headers
-
-To automatically generate a sidebar that contains only the header links for the current page, you can use frontmatter on that page:
-
-```md
----
-sidebar: heading
----
-```
-
-You can also enable it in all pages by using config:
-
-::: code-tabs#language
-
-@tab TS
-
-```ts {7} title=".vuepress/config.ts"
-import { defineUserConfig } from "vuepress";
-import { hopeTheme } from "vuepress-theme-hope";
-
-export default defineUserConfig({
-  theme: hopeTheme({
-    sidebar: "heading",
-  }),
-});
-```
-
-@tab JS
-
-```js {6} title=".vuepress/config.js"
-import { hopeTheme } from "vuepress-theme-hope";
-
-export default {
-  theme: hopeTheme({
-    sidebar: "heading",
-  }),
-};
-```
-
-:::
-
-### Generate from File Structure <Badge text="New" type="tip" />
+## Generate Sidebar from File Structure <Badge text="New" type="tip" />
 
 You can replace the original "sidebarConfig array" with `"structure"` keyword in any of the above sidebar config. This will allow the theme to automatically read local files, then generate sidebar from file structure for you, to reduce your config workload.
 
@@ -631,7 +588,7 @@ However, recalculating the sidebar could be expensive for large sites, so the th
 
 :::
 
-#### Advanced Control
+### Advanced Control
 
 During the automatic generation from structure, you can control whether files in the same folder are included through the `index` option in the page Frontmatter, and control how they are sorted through `order`.
 
@@ -665,53 +622,21 @@ By default, the sidebar will be sorted according to the current language accordi
 
 For nested folders, the grouping information is controlled by `README.md` under that folder. You can control the behavior of folder grouping through the `dir` option in Frontmatter. The relevant optional items are as follows:
 
-```ts
-interface SidebarDirInfo {
-  /**
-   * Directory title
-   *
-   * @default README.md title
-   */
-  text?: string;
+- `dir.text`: Directory title, default to `README.md` title
+- `dir.icon`: Directory icon, default to `README.md` icon
+- `dir.collapsible`: Whether the directory is collapsible, default to `true`
+- `dir.link`: Whether the directory is clickable, default to `false`
+- `dir.index`: Whether index current dir, default to `true`
+- `dir.order`: Dir order in sidebar, default to `0`
 
-  /**
-   * Directory icon
-   *
-   * @default README.md icon
-   */
-  icon?: string;
+Here is an example:
 
-  /**
-   * Whether the directory is collapsible
-   *
-   * @default true
-   */
-
-  collapsible?: boolean;
-
-  /**
-   * Whether the directory is clickable
-   *
-   * @description will set the link of the directory grouping to the link corresponding to README.md
-   *
-   * @default false
-   */
-
-  link?: boolean;
-  /**
-   * Whether index current dir
-   *
-   * @default true
-   */
-  index?: boolean;
-
-  /**
-   * Dir order in sidebar
-   *
-   * @default 0
-   */
-  order?: number | false;
-}
+```md
+---
+dir:
+  order: 1
+  text: Group 1
+---
 ```
 
 If no `README.md` file exists for the corresponding folder, only the group header will be generated from the folder name.

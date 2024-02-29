@@ -94,7 +94,7 @@ In short, anyone can enjoy the convenience of Markdown's enhanced syntax.
 - [Sidebar](../layout/sidebar.md):
 
   - Support for icons and path prefix.
-  - Auto generating sidebars from [page headings](../layout/sidebar.md#generate-from-headers) and [file structure](../layout/sidebar.md#generate-from-file-structure).
+  - Auto generating sidebars from [file structure](../layout/sidebar.md#generate-from-file-structure).
 
 - [Brand-new Homepage with features and highlights](../layout/home.md)
 

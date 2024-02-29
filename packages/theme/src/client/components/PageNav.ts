@@ -49,7 +49,7 @@ const resolveFromSidebarItems = (
   }
 
   for (const item of sidebarItems)
-    if (item.children) {
+    if ("children" in item) {
       const childResult = resolveFromSidebarItems(
         item.children,
         currentPath,

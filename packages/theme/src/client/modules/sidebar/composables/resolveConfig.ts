@@ -7,7 +7,7 @@ import {
   keys,
   startsWith,
 } from "@vuepress/helper/client";
-import type { PageData, PageHeader } from "vuepress/client";
+import type { PageData } from "vuepress/client";
 
 import { sidebarData } from "@temp/theme-hope/sidebar.js";
 import { resolveLinkInfo, resolvePrefix } from "@theme-hope/utils/index";
@@ -20,31 +20,9 @@ import type {
 } from "../../../../shared/index.js";
 import type {
   ResolvedSidebarGroupItem,
-  ResolvedSidebarHeaderItem,
   ResolvedSidebarItem,
   ResolvedSidebarPageItem,
 } from "../utils/index.js";
-
-/**
- * Util to transform page header to sidebar item
- */
-export const headersToSidebarItemChildren = (
-  page: PageData,
-  headers: PageHeader[],
-  headerDepth: number,
-): ResolvedSidebarHeaderItem[] =>
-  headerDepth > 0
-    ? headers.map((header) => ({
-        type: "heading",
-        text: header.title,
-        link: `${page.path}#${header.slug}`,
-        children: headersToSidebarItemChildren(
-          page,
-          header.children,
-          headerDepth - 1,
-        ),
-      }))
-    : [];
 
 export interface ResolveArraySidebarOptions {
   config: SidebarArrayOptions;
@@ -58,8 +36,6 @@ export interface ResolveArraySidebarOptions {
  */
 export const resolveArraySidebarItems = ({
   config,
-  page,
-  headerDepth,
   prefix = "",
 }: ResolveArraySidebarOptions): ResolvedSidebarItem[] => {
   const handleChildItem = (
@@ -100,21 +76,6 @@ export const resolveArraySidebarItems = ({
     return {
       type: "page",
       ...childItem,
-      children:
-        /*
-         * If the sidebar item is current page and children is not set
-         * use headers of current page as children
-         */
-        childItem.link === page.path
-          ? headersToSidebarItemChildren(
-              page,
-              // Skip h1 header
-              page.headers[0]?.level === 1
-                ? page.headers[0].children
-                : page.headers,
-              headerDepth,
-            )
-          : [],
     };
   };
 
@@ -147,13 +108,7 @@ export const resolveMultiSidebarItems = ({
             config:
               matched === "structure"
                 ? <SidebarArrayOptions>sidebarData[base]
-                : matched === "heading"
-                  ? headersToSidebarItemChildren(
-                      page,
-                      page.headers,
-                      headerDepth,
-                    )
-                  : matched,
+                : matched,
             page,
             headerDepth,
             prefix: base,
@@ -185,17 +140,15 @@ export const resolveSidebarItems = ({
   headerDepth,
 }: ResolveSidebarOptions): ResolvedSidebarItem[] =>
   // Resolve sidebar items according to the config
-  config === "heading"
-    ? headersToSidebarItemChildren(page, page.headers, headerDepth)
-    : config === "structure"
-      ? resolveArraySidebarItems({
-          config: <SidebarArrayOptions>sidebarData[routeLocale],
-          page,
-          headerDepth,
-          prefix: routeLocale,
-        })
-      : isArray(config)
-        ? resolveArraySidebarItems({ config, page, headerDepth })
-        : isPlainObject(config)
-          ? resolveMultiSidebarItems({ config, page, headerDepth })
-          : [];
+  config === "structure"
+    ? resolveArraySidebarItems({
+        config: <SidebarArrayOptions>sidebarData[routeLocale],
+        page,
+        headerDepth,
+        prefix: routeLocale,
+      })
+    : isArray(config)
+      ? resolveArraySidebarItems({ config, page, headerDepth })
+      : isPlainObject(config)
+        ? resolveMultiSidebarItems({ config, page, headerDepth })
+        : [];
