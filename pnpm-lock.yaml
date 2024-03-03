@@ -1329,8 +1329,8 @@ importers:
         specifier: 2.0.0-rc.18
         version: 2.0.0-rc.18(typescript@5.3.3)(vuepress@2.0.0-rc.8)
       '@vuepress/plugin-search':
-        specifier: 2.0.0-rc.15
-        version: 2.0.0-rc.15(typescript@5.3.3)(vuepress@2.0.0-rc.8)
+        specifier: 2.0.0-rc.18
+        version: 2.0.0-rc.18(typescript@5.3.3)(vuepress@2.0.0-rc.8)
       '@vuepress/plugin-seo':
         specifier: 2.0.0-rc.18
         version: 2.0.0-rc.18(typescript@5.3.3)(vuepress@2.0.0-rc.8)
@@ -5579,8 +5579,8 @@ packages:
       - typescript
     dev: false
 
-  /@vuepress/plugin-search@2.0.0-rc.15(typescript@5.3.3)(vuepress@2.0.0-rc.8):
-    resolution: {integrity: sha512-AuoGb5pozrjoT+filXJlvoGEPm802btoAV3/WRlyAua7k4gi31PYSPgwZVblEFN8WaXWcDhSsdzKzX82eKpveA==}
+  /@vuepress/plugin-search@2.0.0-rc.18(typescript@5.3.3)(vuepress@2.0.0-rc.8):
+    resolution: {integrity: sha512-yUFOWuj3SjDOS4fT4Ge3uI4MG9SN6WqX4EWTr9/4MrBLKvf1N2H+Jr4TZp5Y+GzkQ6o7J8wk+GpFBGgkmXNb6Q==}
     peerDependencies:
       vuepress: 2.0.0-rc.8
     dependencies:
