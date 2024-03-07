@@ -8,7 +8,7 @@ All notable changes to this project will be documented in this file. See [Conven
 
 ### Features
 
-- add suggestionsFilter and resultsFilter ([bbcff53](https://github.com/vuepress-theme-hope/vuepress-theme-hope/commit/bbcff53be0359155d097519bd8b4a43090e27398))
+- **search-pro:** add suggestionsFilter and resultsFilter ([bbcff53](https://github.com/vuepress-theme-hope/vuepress-theme-hope/commit/bbcff53be0359155d097519bd8b4a43090e27398))
 - **search-pro:** improve createWorker api ([7789c89](https://github.com/vuepress-theme-hope/vuepress-theme-hope/commit/7789c8956862893beac53e1df028260cda434e82))
 - **theme:** collapse toc while clicking ([a5d3649](https://github.com/vuepress-theme-hope/vuepress-theme-hope/commit/a5d364986d34dc5452e9e4d7a7523f576ca8d71e))
 
