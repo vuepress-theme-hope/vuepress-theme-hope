@@ -69,6 +69,7 @@ export default defineComponent({
             "vp-sidebar",
             { "hide-icon": themeLocale.value.sidebarIcon === false },
           ],
+          key: "sidebar",
         },
         [
           slots.top?.(),

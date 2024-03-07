@@ -95,6 +95,7 @@ export default defineComponent({
       h(
         "header",
         {
+          key: "navbar",
           id: "navbar",
           class: [
             "vp-navbar",
@@ -116,7 +117,7 @@ export default defineComponent({
             (navbarLayout.value.start || []).map((item) =>
               h(
                 <ComponentOptions | FunctionalComponent>(
-                  getNavbarComponent(item)
+                  (getNavbarComponent(item), { key: item })
                 ),
               ),
             ),
