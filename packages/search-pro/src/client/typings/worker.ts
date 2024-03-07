@@ -1,24 +1,17 @@
-import type { SearchOptions as _SearchOptions } from "slimsearch";
+import type { SearchOptions } from "slimsearch";
 
-export interface SearchOptions<
-  // eslint-disable-next-line @typescript-eslint/no-explicit-any
-  ID = any,
-  // eslint-disable-next-line @typescript-eslint/no-explicit-any
-  Index extends Record<string, any> = Record<never, never>,
-> extends Omit<
-    _SearchOptions<ID, Index>,
-    // These are handled internally
-    "fields"
-  > {
-  locales?: Record<
-    string,
-    Omit<
-      _SearchOptions<ID, Index>,
-      // These are handled internally
-      "fields"
-    >
-  >;
-}
+import type { IndexItem } from "../../shared/index.js";
+
+export type WorkerSearchOptions = Omit<
+  SearchOptions<string, IndexItem>,
+  // These are handled internally
+  | "fields"
+  // These can not pass to worker
+  | "filter"
+  | "boostDocument"
+  | "tokenize"
+  | "processTerm"
+>;
 
 export interface MessageData {
   /**
@@ -27,6 +20,6 @@ export interface MessageData {
   type?: "search" | "suggest" | "all";
   query: string;
   locale: string;
-  options?: SearchOptions;
+  options?: WorkerSearchOptions;
   id: number;
 }

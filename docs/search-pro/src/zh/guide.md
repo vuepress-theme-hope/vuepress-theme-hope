@@ -285,7 +285,9 @@ export default defineClientConfig({
 
 ::: note
 
-由于搜索是在 Web Worker 中完成的，因此不支持设置选项为函数类型的值。
+由于搜索是在 Web Worker 中完成的，因此不支持 `slimsearch` 中需要被设置为函数的选项。
+
+为了提供建议和结果的过滤，我们额外提供了 `suggestFilter` 和 `searchFilter` 选项。你可以在这里设置一个函数来过滤建议和搜索结果。
 
 :::
 

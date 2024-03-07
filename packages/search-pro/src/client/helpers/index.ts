@@ -1,1 +1,1 @@
-export * from "./slimsearch.js";
+export * from "./search.js";

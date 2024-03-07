@@ -1,7 +1,7 @@
 import { useDebounceFn } from "@vueuse/core";
 import type { Ref } from "vue";
 import { onMounted, onUnmounted, ref, shallowRef, watch } from "vue";
-import { useRouteLocale } from "vuepress/client";
+import { usePageData, useRouteLocale } from "vuepress/client";
 
 import { searchProOptions } from "../define.js";
 import { useSearchOptions } from "../helpers/index.js";
@@ -16,6 +16,7 @@ export interface SearchRef {
 export const useSearchResult = (query: Ref<string>): SearchRef => {
   const searchOptions = useSearchOptions();
   const routeLocale = useRouteLocale();
+  const pageData = usePageData();
 
   const searching = ref(false);
   const results = shallowRef<SearchResult[]>([]);
@@ -33,8 +34,17 @@ export const useSearchResult = (query: Ref<string>): SearchRef => {
 
       if (queryString)
         void search(queryString, routeLocale.value, searchOptions.value)
-          .then((searchResults) => {
-            results.value = searchResults;
+          .then(
+            (results) =>
+              searchOptions.value.searchFilter?.(
+                results,
+                queryString,
+                routeLocale.value,
+                pageData.value,
+              ) ?? results,
+          )
+          .then((_results) => {
+            results.value = _results;
             searching.value = false;
           })
           .catch((err) => {

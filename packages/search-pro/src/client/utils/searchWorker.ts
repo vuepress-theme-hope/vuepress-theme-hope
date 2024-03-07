@@ -1,6 +1,7 @@
 import { values } from "@vuepress/helper/client";
 import type { SearchOptions } from "slimsearch";
 
+import type { IndexItem } from "../../shared/index.js";
 import { clientWorker, searchProOptions } from "../define.js";
 import type { QueryResult, SearchResult } from "../typings/index.js";
 
@@ -15,23 +16,56 @@ interface PromiseItem {
 }
 
 export interface SearchWorker {
+  /**
+   * Get both suggestions and results
+   *
+   * 同时获取建议和结果
+   *
+   * @param query - search query 搜素词
+   * @param localePath - locale path 语言路径
+   * @param options - search options 搜素选项
+   */
   all: (
     query: string,
-    locale?: string,
-    options?: SearchOptions,
+    localePath?: string,
+    options?: SearchOptions<string, IndexItem>,
   ) => Promise<QueryResult>;
 
+  /**
+   * Get suggestions
+   *
+   * 获取建议
+   *
+   * @param query - search query 搜素词
+   * @param localePath - locale path 语言路径
+   * @param options - search options 搜素选项
+   */
   suggest: (
     query: string,
-    locale?: string,
-    options?: SearchOptions,
+    localePath?: string,
+    options?: SearchOptions<string, IndexItem>,
   ) => Promise<string[]>;
 
+  /**
+   * Get search results
+   *
+   * 获取搜索结果
+   *
+   * @param query - search query 搜素词
+   * @param localePath - locale path 语言路径
+   * @param options - search options 搜素选项
+   */
   search: (
     query: string,
-    locale?: string,
-    options?: SearchOptions,
+    localePath?: string,
+    options?: SearchOptions<string, IndexItem>,
   ) => Promise<SearchResult[]>;
+
+  /**
+   * Terminate current worker
+   *
+   * 终止当前 worker
+   */
   terminate: () => void;
 }
 
@@ -78,7 +112,7 @@ export const createSearchWorker = (): SearchWorker => {
     suggest: (
       query: string,
       locale?: string,
-      options?: SearchOptions,
+      options?: SearchOptions<string, IndexItem>,
     ): Promise<string[]> =>
       new Promise((resolve, reject) => {
         const id = Date.now();
@@ -90,7 +124,7 @@ export const createSearchWorker = (): SearchWorker => {
     search: (
       query: string,
       locale?: string,
-      options?: SearchOptions,
+      options?: SearchOptions<string, IndexItem>,
     ): Promise<SearchResult[]> =>
       new Promise<SearchResult[]>((resolve, reject) => {
         const id = Date.now();
@@ -102,7 +136,7 @@ export const createSearchWorker = (): SearchWorker => {
     all: (
       query: string,
       locale?: string,
-      options?: SearchOptions,
+      options?: SearchOptions<string, IndexItem>,
     ): Promise<QueryResult> =>
       new Promise<QueryResult>((resolve, reject) => {
         const id = Date.now();

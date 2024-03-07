@@ -372,6 +372,43 @@ Multilingual configuration of the search plugin.
 
 Customize [search options](https://mister-hope.github.io/slimsearch/interfaces/SearchOptions.html).
 
+We also support these options internally:
+
+```ts
+interface SearchLocaleOptions
+  extends Omit<
+    SearchOptions,
+    // These are handled internally
+    | "fields"
+    // These can not pass to worker
+    | "filter"
+    | "boostDocument"
+    | "tokenize"
+    | "processTerm"
+  > {
+  /** A function to filter suggestions */
+  suggestionsFilter?: (
+    suggestions: string[],
+    query: string,
+    locale: string,
+    pageData: PageData,
+  ) => string[];
+
+  /** A function to filter search results */
+  searchFilter?: (
+    results: SearchResult[],
+    query: string,
+    locale: string,
+    pageData: PageData,
+  ) => SearchResult[];
+}
+
+interface SearchOptions extends SearchLocaleOptions {
+  /** Setting different options per locale */
+  locales?: Record<string, SearchLocaleOptions>;
+}
+```
+
 ```ts title=".vuepress/client.ts"
 import { defineSearchConfig } from "vuepress-plugin-search-pro/client";
 
@@ -427,23 +464,50 @@ interface SearchResult {
 }
 
 interface SearchWorker {
+  /**
+   * Get both suggestions and results
+   *
+   * @param query - search query
+   * @param localePath - locale path
+   * @param options - search options
+   */
   all: (
     query: string,
-    locale?: string,
-    options?: SearchOptions,
+    localePath?: string,
+    options?: SearchOptions<string, IndexItem>,
   ) => Promise<QueryResult>;
 
+  /**
+   * Get suggestions
+   *
+   *
+   * @param query - search query
+   * @param localePath - locale path
+   * @param options - search options
+   */
   suggest: (
     query: string,
-    locale?: string,
-    options?: SearchOptions,
+    localePath?: string,
+    options?: SearchOptions<string, IndexItem>,
   ) => Promise<string[]>;
 
+  /**
+   * Get search results
+   *
+   *
+   * @param query - search query
+   * @param localePath - locale path
+   * @param options - search options
+   */
   search: (
     query: string,
-    locale?: string,
-    options?: SearchOptions,
+    localePath?: string,
+    options?: SearchOptions<string, IndexItem>,
   ) => Promise<SearchResult[]>;
+
+  /**
+   * Terminate current worker
+   */
   terminate: () => void;
 }
 

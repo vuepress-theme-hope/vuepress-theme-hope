@@ -11,10 +11,10 @@ import type {
 import type {
   HeadingMatchedItem,
   MatchedItem,
-  SearchOptions,
   SearchResult,
   TitleMatchedItem,
   Word,
+  WorkerSearchOptions,
 } from "../typings/index.js";
 
 declare const SEARCH_PRO_SORT_STRATEGY: "max" | "total";
@@ -45,7 +45,7 @@ const sortWithMax = (valueA: PageResult, valueB: PageResult): number =>
 export const getResults = (
   query: string,
   localeIndex: SearchIndex<string, IndexItem, IndexItem>,
-  searchOptions: SearchOptions = {},
+  searchOptions: WorkerSearchOptions = {},
 ): SearchResult[] => {
   const resultMap: ResultMap = {};
 

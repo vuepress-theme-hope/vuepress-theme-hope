@@ -275,7 +275,9 @@ export default defineClientConfig({
 
 ::: note
 
-Since searching is done in a Web Worker, setting options to function-typed value is not supported.
+Since searching is done in a Web Worker, setting function-typed options for `slimsearch` is not supported.
+
+For filtering suggestions and search results, we provide `suggestFilter` and `searchFilter` for you.
 
 :::
 

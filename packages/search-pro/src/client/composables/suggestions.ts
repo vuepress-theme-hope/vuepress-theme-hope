@@ -2,7 +2,7 @@ import { startsWith } from "@vuepress/helper/client";
 import { useDebounceFn } from "@vueuse/core";
 import type { Ref } from "vue";
 import { onMounted, onUnmounted, ref, watch } from "vue";
-import { useRouteLocale } from "vuepress/client";
+import { usePageData, useRouteLocale } from "vuepress/client";
 
 import { enableAutoSuggestions, searchProOptions } from "../define.js";
 import { useSearchOptions } from "../helpers/index.js";
@@ -17,6 +17,7 @@ export const useSearchSuggestions = (query: Ref<string>): SuggestionsRef => {
 
   if (enableAutoSuggestions) {
     const searchOptions = useSearchOptions();
+    const pageData = usePageData();
     const routeLocale = useRouteLocale();
 
     onMounted(() => {
@@ -25,6 +26,15 @@ export const useSearchSuggestions = (query: Ref<string>): SuggestionsRef => {
       const performAutoSuggest = useDebounceFn((queryString: string): void => {
         if (queryString)
           void suggest(queryString, routeLocale.value, searchOptions.value)
+            .then(
+              (suggestions) =>
+                searchOptions.value.suggestionsFilter?.(
+                  suggestions,
+                  queryString,
+                  routeLocale.value,
+                  pageData.value,
+                ) ?? suggestions,
+            )
             .then((_suggestions) => {
               suggestions.value = _suggestions.length
                 ? startsWith(_suggestions[0], queryString) &&
