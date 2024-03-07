@@ -16,12 +16,13 @@ export interface SearchRef {
 export const useSearchResult = (query: Ref<string>): SearchRef => {
   const searchOptions = useSearchOptions();
   const routeLocale = useRouteLocale();
-  const { search, terminate } = createSearchWorker();
 
   const searching = ref(false);
   const results = shallowRef<SearchResult[]>([]);
 
   onMounted(() => {
+    const { search, terminate } = createSearchWorker();
+
     const endSearch = (): void => {
       results.value = [];
       searching.value = false;
@@ -31,12 +32,7 @@ export const useSearchResult = (query: Ref<string>): SearchRef => {
       searching.value = true;
 
       if (queryString)
-        void search({
-          type: "search",
-          query: queryString,
-          locale: routeLocale.value,
-          options: searchOptions.value,
-        })
+        void search(queryString, routeLocale.value, searchOptions.value)
           .then((searchResults) => {
             results.value = searchResults;
             searching.value = false;

@@ -287,11 +287,21 @@ If you want to use the search API, you need to import the `createSearchWorker` f
 import { defineClientConfig } from "vuepress/client";
 import { createSearchWorker } from "vuepress-plugin-search-pro/client";
 
-const { search, terminate } = createSearchWorker();
+const { all, suggest, search, terminate } = createSearchWorker();
 
-// use search API
+// suggest something
+suggest("key").then((suggestions) => {
+  // display search suggestions
+});
+
+// search something
 search("keyword").then((results) => {
-  // use search results
+  // display search results
+});
+
+// return both suggestions and results
+all("key").then(({ suggestions, results }) => {
+  // display search suggestions and results
 });
 
 // terminate the worker when you don't need it

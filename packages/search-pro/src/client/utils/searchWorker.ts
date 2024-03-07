@@ -1,23 +1,37 @@
+import { values } from "@vuepress/helper/client";
+import type { SearchOptions } from "slimsearch";
+
 import { clientWorker, searchProOptions } from "../define.js";
-import type {
-  MessageData,
-  QueryResult,
-  SearchResult,
-} from "../typings/index.js";
+import type { QueryResult, SearchResult } from "../typings/index.js";
 
 declare const __VUEPRESS_BASE__: string;
 declare const __VUEPRESS_DEV__: boolean;
 
+interface PromiseItem {
+  id: number;
+  // eslint-disable-next-line @typescript-eslint/no-explicit-any
+  resolve: (args: any) => void;
+  reject: (err: Error) => void;
+}
+
 export interface SearchWorker {
-  search: <T extends MessageData>(
-    options: T,
-  ) => Promise<
-    T["type"] extends "search"
-      ? SearchResult[]
-      : T["type"] extends "suggest"
-        ? string[]
-        : QueryResult
-  >;
+  all: (
+    query: string,
+    locale?: string,
+    options?: SearchOptions,
+  ) => Promise<QueryResult>;
+
+  suggest: (
+    query: string,
+    locale?: string,
+    options?: SearchOptions,
+  ) => Promise<string[]>;
+
+  search: (
+    query: string,
+    locale?: string,
+    options?: SearchOptions,
+  ) => Promise<SearchResult[]>;
   terminate: () => void;
 }
 
@@ -29,40 +43,82 @@ export const createSearchWorker = (): SearchWorker => {
       : `${__VUEPRESS_BASE__}${searchProOptions.worker}`,
     __VUEPRESS_DEV__ ? { type: "module" } : {},
   );
-  const queue: {
-    // eslint-disable-next-line @typescript-eslint/no-explicit-any
-    resolve: (args: any) => void;
-    reject: (err: Error) => void;
-  }[] = [];
+  const queues = {
+    suggest: [] as PromiseItem[],
+    search: [] as PromiseItem[],
+    all: [] as PromiseItem[],
+  };
 
   worker.addEventListener(
     "message",
-    ({ data }: MessageEvent<SearchResult[]>) => {
-      const { resolve } = queue.shift()!;
+    ({
+      data,
+    }: MessageEvent<
+      | ["suggest", number, string[]]
+      | ["search", number, SearchResult[]]
+      | ["all", number, QueryResult]
+    >) => {
+      const [type, timestamp, result] = data;
+      const queue = queues[type];
+      const index = queue.findIndex(({ id }) => id === timestamp);
 
-      resolve(data);
+      if (index > -1) {
+        const { resolve } = queue[index];
+
+        queue.forEach((item, i) => {
+          if (i > index) item.reject(new Error("Search has been canceled."));
+        });
+        queues[type] = queue.slice(index + 1);
+        resolve(result);
+      }
     },
   );
 
   return {
-    search: <T extends MessageData>(
-      options: T,
-    ): Promise<
-      T["type"] extends "search"
-        ? SearchResult[]
-        : T["type"] extends "suggest"
-          ? string[]
-          : QueryResult
-    > =>
+    suggest: (
+      query: string,
+      locale?: string,
+      options?: SearchOptions,
+    ): Promise<string[]> =>
       new Promise((resolve, reject) => {
-        worker.postMessage(options);
-        queue.push({ resolve, reject });
+        const id = Date.now();
+
+        worker.postMessage({ type: "suggest", id, query, locale, options });
+        queues.suggest.push({ id, resolve, reject });
       }),
+
+    search: (
+      query: string,
+      locale?: string,
+      options?: SearchOptions,
+    ): Promise<SearchResult[]> =>
+      new Promise<SearchResult[]>((resolve, reject) => {
+        const id = Date.now();
+
+        worker.postMessage({ type: "search", id, query, locale, options });
+        queues.search.push({ id, resolve, reject });
+      }),
+
+    all: (
+      query: string,
+      locale?: string,
+      options?: SearchOptions,
+    ): Promise<QueryResult> =>
+      new Promise<QueryResult>((resolve, reject) => {
+        const id = Date.now();
+
+        worker.postMessage({ type: "all", id, query, locale, options });
+        queues.all.push({ id, resolve, reject });
+      }),
+
     terminate: (): void => {
       worker.terminate();
-      queue.forEach(({ reject }) =>
-        reject(new Error("Worker has been terminated.")),
-      );
+
+      values(queues).forEach((item) => {
+        item.forEach(({ reject }) =>
+          reject(new Error("Worker has been terminated.")),
+        );
+      });
     },
   };
 };

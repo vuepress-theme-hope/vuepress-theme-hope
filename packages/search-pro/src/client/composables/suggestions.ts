@@ -20,14 +20,11 @@ export const useSearchSuggestions = (query: Ref<string>): SuggestionsRef => {
     const routeLocale = useRouteLocale();
 
     onMounted(() => {
+      const { suggest, terminate } = createSearchWorker();
+
       const performAutoSuggest = useDebounceFn((queryString: string): void => {
         if (queryString)
-          void search({
-            type: "suggest",
-            query: queryString,
-            locale: routeLocale.value,
-            options: searchOptions.value,
-          })
+          void suggest(queryString, routeLocale.value, searchOptions.value)
             .then((_suggestions) => {
               suggestions.value = _suggestions.length
                 ? startsWith(_suggestions[0], queryString) &&
@@ -41,8 +38,6 @@ export const useSearchSuggestions = (query: Ref<string>): SuggestionsRef => {
             });
         else suggestions.value = [];
       }, searchProOptions.suggestDelay);
-
-      const { search, terminate } = createSearchWorker();
 
       watch([query, routeLocale], () => performAutoSuggest(query.value), {
         immediate: true,

@@ -427,10 +427,22 @@ interface SearchResult {
 }
 
 interface SearchWorker {
+  all: (
+    query: string,
+    locale?: string,
+    options?: SearchOptions,
+  ) => Promise<QueryResult>;
+
+  suggest: (
+    query: string,
+    locale?: string,
+    options?: SearchOptions,
+  ) => Promise<string[]>;
+
   search: (
     query: string,
-    locale: string,
-    searchOptions?: SearchOptions,
+    locale?: string,
+    options?: SearchOptions,
   ) => Promise<SearchResult[]>;
   terminate: () => void;
 }

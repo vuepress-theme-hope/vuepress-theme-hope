@@ -28,4 +28,5 @@ export interface MessageData {
   query: string;
   locale: string;
   options?: SearchOptions;
+  id: number;
 }

@@ -296,11 +296,21 @@ export default defineClientConfig({
 ```ts
 import { createSearchWorker } from "vuepress-plugin-search-pro/client";
 
-const { search, terminate } = createSearchWorker();
+const { all, suggest, search, terminate } = createSearchWorker();
 
-// 使用搜索 API
+// 自动建议
+suggest("key").then((suggestions) => {
+  // 显示建议
+});
+
+// 搜素
 search("keyword").then((results) => {
-  // 使用结果
+  // 显示搜索结果
+});
+
+// 同时返回建议和搜索结果
+all("key").then(({ suggestions, results }) => {
+  // 显示建议和搜索结果
 });
 
 // 当不需要时终止 Worker

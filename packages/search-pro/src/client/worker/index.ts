@@ -8,9 +8,9 @@ import type { IndexItem } from "../../shared/index.js";
 import type { MessageData } from "../typings/index.js";
 
 self.onmessage = async ({
-  data: { type = "all", query, locale, options },
+  data: { type = "all", query, locale, options, id },
 }: MessageEvent<MessageData>): Promise<void> => {
-  const { default: localeIndex } = await database[locale]();
+  const { default: localeIndex } = await database[locale ?? "/"]();
 
   const searchLocaleIndex = loadJSONIndex<string, IndexItem, IndexItem>(
     localeIndex,
@@ -25,12 +25,20 @@ self.onmessage = async ({
   );
 
   if (type === "suggest")
-    self.postMessage(getSuggestions(query, searchLocaleIndex, options));
+    self.postMessage([
+      type,
+      id,
+      getSuggestions(query, searchLocaleIndex, options),
+    ]);
   else if (type === "search")
-    self.postMessage(getResults(query, searchLocaleIndex, options));
+    self.postMessage([type, id, getResults(query, searchLocaleIndex, options)]);
   else
     self.postMessage({
-      suggestions: getSuggestions(query, searchLocaleIndex, options),
-      results: getResults(query, searchLocaleIndex, options),
+      suggestions: [
+        type,
+        id,
+        getSuggestions(query, searchLocaleIndex, options),
+      ],
+      results: [type, id, getResults(query, searchLocaleIndex, options)],
     });
 };
