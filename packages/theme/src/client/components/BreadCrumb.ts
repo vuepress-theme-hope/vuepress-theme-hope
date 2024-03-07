@@ -65,19 +65,18 @@ export default defineComponent({
         routeLocale.value,
       )
         .map<BreadCrumbConfig | null>(({ link, name }) => {
-          const { path, meta } = resolveRoute<ArticleInfo>(link);
+          const { path, meta, notFound } = resolveRoute<ArticleInfo>(link);
 
-          if (meta)
-            return {
-              title:
-                meta[ArticleInfoType.shortTitle] ||
-                meta[ArticleInfoType.title] ||
-                name,
-              icon: meta[ArticleInfoType.icon],
-              path,
-            };
+          if (notFound) return null;
 
-          return null;
+          return {
+            title:
+              meta[ArticleInfoType.shortTitle] ||
+              meta[ArticleInfoType.title] ||
+              name,
+            icon: meta[ArticleInfoType.icon],
+            path,
+          };
         })
         .filter((item): item is BreadCrumbConfig => item !== null);
 

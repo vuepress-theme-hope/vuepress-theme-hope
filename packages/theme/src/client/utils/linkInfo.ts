@@ -15,10 +15,11 @@ export const resolveLinkInfo = (
   item: string,
   preferFull = false,
 ): AutoLinkOptions => {
-  const { meta, path } = resolveRoute<ArticleInfo>(item);
+  const { meta, path, notFound } = resolveRoute<ArticleInfo>(item);
 
-  return meta
-    ? {
+  return notFound
+    ? { text: path, link: path }
+    : {
         text:
           !preferFull && meta[ArticleInfoType.shortTitle]
             ? meta[ArticleInfoType.shortTitle]
@@ -27,6 +28,5 @@ export const resolveLinkInfo = (
         ...(meta[ArticleInfoType.icon]
           ? { icon: meta[ArticleInfoType.icon] }
           : {}),
-      }
-    : { text: path, link: path };
+      };
 };
