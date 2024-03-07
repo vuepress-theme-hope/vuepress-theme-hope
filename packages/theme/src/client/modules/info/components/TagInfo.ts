@@ -52,7 +52,7 @@ export default defineComponent({
             {
               class: "page-tag-info",
               "aria-label": `${metaLocale.value.tag}${props.pure ? "" : "🏷"}`,
-              ...(props.pure ? {} : { "data-balloon-pos": "down" }),
+              ...(props.pure ? {} : { "data-balloon-pos": "up" }),
             },
             [
               h(TagIcon),

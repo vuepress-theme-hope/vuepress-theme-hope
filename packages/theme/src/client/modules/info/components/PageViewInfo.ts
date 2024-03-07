@@ -57,7 +57,7 @@ export default defineComponent({
               "aria-label": `${metaLocale.value.views}${
                 props.pure ? "" : "🔢"
               }`,
-              ...(props.pure ? {} : { "data-balloon-pos": "down" }),
+              ...(props.pure ? {} : { "data-balloon-pos": "up" }),
             },
             [
               h(pageViews.value < 1000 ? EyeIcon : FireIcon),

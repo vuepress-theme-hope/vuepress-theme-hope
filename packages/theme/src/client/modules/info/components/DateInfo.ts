@@ -50,7 +50,7 @@ export default defineComponent({
             {
               class: "page-date-info",
               "aria-label": `${metaLocale.value.date}${props.pure ? "" : "📅"}`,
-              ...(props.pure ? {} : { "data-balloon-pos": "down" }),
+              ...(props.pure ? {} : { "data-balloon-pos": "up" }),
             },
             [
               h(CalendarIcon),

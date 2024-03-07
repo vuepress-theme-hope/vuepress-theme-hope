@@ -62,7 +62,7 @@ export default defineComponent({
               "aria-label": `${metaLocale.value.readingTime}${
                 props.pure ? "" : "⌛"
               }`,
-              ...(props.pure ? {} : { "data-balloon-pos": "down" }),
+              ...(props.pure ? {} : { "data-balloon-pos": "up" }),
             },
             [
               h(TimerIcon),

@@ -43,7 +43,7 @@ export default defineComponent({
               "aria-label": `${metaLocale.value.author}${
                 props.pure ? "" : "🖊"
               }`,
-              ...(props.pure ? {} : { "data-balloon-pos": "down" }),
+              ...(props.pure ? {} : { "data-balloon-pos": "up" }),
             },
             [
               h(AuthorIcon),

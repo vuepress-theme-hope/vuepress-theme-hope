@@ -54,7 +54,7 @@ export default defineComponent({
               "aria-label": `${metaLocale.value.category}${
                 props.pure ? "" : "🌈"
               }`,
-              ...(props.pure ? {} : { "data-balloon-pos": "down" }),
+              ...(props.pure ? {} : { "data-balloon-pos": "up" }),
             },
             [
               h(CategoryIcon),
