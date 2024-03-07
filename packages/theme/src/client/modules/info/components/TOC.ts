@@ -9,47 +9,6 @@ import { useMetaLocale } from "@theme-hope/modules/info/composables/index";
 
 import "../styles/toc.scss";
 
-const renderHeader = ({ title, level, slug }: PageHeader): VNode =>
-  h(
-    RouteLink,
-    {
-      to: `#${slug}`,
-      class: ["vp-toc-link", `level${level}`],
-    },
-    () => title,
-  );
-
-const renderChildren = (
-  headers: PageHeader[],
-  headerDepth: number,
-): VNode | null => {
-  const route = useRoute();
-
-  return headers.length && headerDepth > 0
-    ? h(
-        "ul",
-        { class: "vp-toc-list" },
-        headers.map((header) => {
-          const children = renderChildren(header.children, headerDepth - 1);
-
-          return [
-            h(
-              "li",
-              {
-                class: [
-                  "vp-toc-item",
-                  { active: route.hash === `#${header.slug}` },
-                ],
-              },
-              renderHeader(header),
-            ),
-            children ? h("li", children) : null,
-          ];
-        }),
-      )
-    : null;
-};
-
 export default defineComponent({
   name: "TOC",
 
@@ -160,6 +119,50 @@ export default defineComponent({
     });
 
     return (): VNode | null => {
+      const renderHeader = ({ title, level, slug }: PageHeader): VNode =>
+        h(
+          RouteLink,
+          {
+            to: `#${slug}`,
+            class: ["vp-toc-link", `level${level}`],
+            onClick: () => {
+              toggleExpanded();
+            },
+          },
+          () => title,
+        );
+
+      const renderChildren = (
+        headers: PageHeader[],
+        headerDepth: number,
+      ): VNode | null =>
+        headers.length && headerDepth > 0
+          ? h(
+              "ul",
+              { class: "vp-toc-list" },
+              headers.map((header) => {
+                const children = renderChildren(
+                  header.children,
+                  headerDepth - 1,
+                );
+
+                return [
+                  h(
+                    "li",
+                    {
+                      class: [
+                        "vp-toc-item",
+                        { active: route.hash === `#${header.slug}` },
+                      ],
+                    },
+                    renderHeader(header),
+                  ),
+                  children ? h("li", children) : null,
+                ];
+              }),
+            )
+          : null;
+
       const tocHeaders = props.items.length
         ? renderChildren(props.items, props.headerDepth)
         : page.value.headers
