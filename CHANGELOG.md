@@ -4,6 +4,17 @@ All notable changes to this project will be documented in this file. See [Conven
 
 <!-- #region recent-change -->
 
+## [2.0.0-rc.28](https://github.com/vuepress-theme-hope/vuepress-theme-hope/compare/v2.0.0-rc.27...v2.0.0-rc.28) (2024-03-07)
+
+### Features
+
+- **theme:** make label up, close [#3956](https://github.com/vuepress-theme-hope/vuepress-theme-hope/issues/3956) ([0868f2f](https://github.com/vuepress-theme-hope/vuepress-theme-hope/commit/0868f2ff63c510651d656410bd07024b460644c7))
+
+### Bug Fixes
+
+- **deps:** update dependency @types/three to v0.162.0 ([#3958](https://github.com/vuepress-theme-hope/vuepress-theme-hope/issues/3958)) ([254e621](https://github.com/vuepress-theme-hope/vuepress-theme-hope/commit/254e62116aa464f22771f15e83e07d9000ce31aa))
+- **theme:** fix link detect, close [#3961](https://github.com/vuepress-theme-hope/vuepress-theme-hope/issues/3961) ([29394b6](https://github.com/vuepress-theme-hope/vuepress-theme-hope/commit/29394b696c155e0982afde0d5f4cf9b9c8e3f5a4))
+
 ## [2.0.0-rc.27](https://github.com/vuepress-theme-hope/vuepress-theme-hope/compare/v2.0.0-rc.26...v2.0.0-rc.27) (2024-02-29)
 
 ### ⚠ BREAKING CHANGES
