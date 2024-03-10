@@ -6,8 +6,8 @@
   --waline-active-color: var(--vp-tcl);
   --waline-border: 1px solid var(--vp-brc);
   --waline-border-color: var(--vp-brc);
-  --waline-bgcolor: var(--vp-bg);
-  --waline-bgcolor-light: var(--vp-bgl);
+  --waline-bg-color: var(--vp-bg);
+  --waline-bg-color-light: var(--vp-bgl);
 
   @include wrapper.wrapper;
 
