@@ -26,15 +26,25 @@ const searchIndex: SearchIndexStore = fromEntries(
 );
 
 self.onmessage = ({
-  data: { type = "all", query, locale, options },
+  data: { type = "all", query, locale, options, id },
 }: MessageEvent<MessageData>): void => {
+  const searchLocaleIndex = searchIndex[locale];
+
   if (type === "suggest")
-    self.postMessage(getSuggestions(query, searchIndex[locale], options));
+    self.postMessage([
+      type,
+      id,
+      getSuggestions(query, searchLocaleIndex, options),
+    ]);
   else if (type === "search")
-    self.postMessage(getResults(query, searchIndex[locale], options));
+    self.postMessage([type, id, getResults(query, searchLocaleIndex, options)]);
   else
     self.postMessage({
-      suggestions: getSuggestions(query, searchIndex[locale], options),
-      results: getResults(query, searchIndex[locale], options),
+      suggestions: [
+        type,
+        id,
+        getSuggestions(query, searchLocaleIndex, options),
+      ],
+      results: [type, id, getResults(query, searchLocaleIndex, options)],
     });
 };
