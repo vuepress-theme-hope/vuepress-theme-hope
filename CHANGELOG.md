@@ -4,6 +4,14 @@ All notable changes to this project will be documented in this file. See [Conven
 
 <!-- #region recent-change -->
 
+## [2.0.0-rc.30](https://github.com/vuepress-theme-hope/vuepress-theme-hope/compare/v2.0.0-rc.29...v2.0.0-rc.30) (2024-03-10)
+
+### Bug Fixes
+
+- **create:** fix en blog template ([ed15833](https://github.com/vuepress-theme-hope/vuepress-theme-hope/commit/ed158334cc6ef488bd5bc88e9dee1ce7fec236e6))
+- **search-pro:** fix search-pro production worker ([69d2e37](https://github.com/vuepress-theme-hope/vuepress-theme-hope/commit/69d2e370e95649b575786843228e4a7e71ea2e63))
+- **theme:** fix toc active issue ([24aceb8](https://github.com/vuepress-theme-hope/vuepress-theme-hope/commit/24aceb8e5c0b7ece4cb97ab450790121f332efe4))
+
 ## [2.0.0-rc.29](https://github.com/vuepress-theme-hope/vuepress-theme-hope/compare/v2.0.0-rc.28...v2.0.0-rc.29) (2024-03-07)
 
 ### Features
