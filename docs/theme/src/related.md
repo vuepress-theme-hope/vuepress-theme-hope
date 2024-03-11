@@ -24,16 +24,6 @@ const getLink = (name: string): string =>
 
 const features = [
   {
-    text: "Append Date Plugin",
-    icon: "clock",
-    link: getLink("append-date"),
-  },
-  {
-    text: "Comment Plugin",
-    icon: "comment",
-    link: getLink("comment2"),
-  },
-  {
     text: "Components Plugin",
     icon: "puzzle-piece",
     link: getLink("components"),

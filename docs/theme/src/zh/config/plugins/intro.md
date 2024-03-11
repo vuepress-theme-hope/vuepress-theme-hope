@@ -78,7 +78,7 @@ tag:
 
 - [@vuepress/plugin-copyright][copyright]: 在用户复制时追加版权信息，或禁用站点的复制与选择。
 
-- <ProjectLink name="comment2" path="/zh/">vuepress-plugin-comment2</ProjectLink>: 提供评论与浏览量功能
+- [@vuepress/plugin-comment][comment]: 提供评论与浏览量功能
 
 ### 内置支持的插件
 
@@ -101,6 +101,7 @@ tag:
 [active-header-links]: https://ecosystem.vuejs.press/zh/plugins/active-header-links.html
 [blog]: https://ecosystem.vuejs.press/zh/plugins/blog.html
 [catalog]: https://ecosystem.vuejs.press/zh/plugins/catalog.html
+[comment]: https://ecosystem.vuejs.press/zh/plugins/comment/
 [copy-code]: https://ecosystem.vuejs.press/zh/plugins/copy-code.html
 [copyright]: https://ecosystem.vuejs.press/zh/plugins/copyright.html
 [docsearch]: https://ecosystem.vuejs.press/zh/plugins/docsearch.html

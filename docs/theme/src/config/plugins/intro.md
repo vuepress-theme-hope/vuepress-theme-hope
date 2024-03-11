@@ -78,7 +78,7 @@ The following plugins are bundled by theme, you can enable them via configuratio
 
 - [@vuepress/plugin-copyright][copyright]: Append copyright information when copying or disable copy and selection.
 
-- <ProjectLink name="comment2">vuepress-plugin-comment2</ProjectLink>: Provides comment and pageview function
+- [@vuepress/plugin-comment][comment]: Provides comment and pageview function
 
 ### Plugins with Built-in Support
 
@@ -100,6 +100,7 @@ These plugins are supported by theme, but you need to install them manually whil
 [blog]: https://ecosystem.vuejs.press/plugins/blog/
 [catalog]: https://ecosystem.vuejs.press/plugins/catalog.html
 [copy-code]: https://ecosystem.vuejs.press/plugins/copy-code.html
+[comment]: https://ecosystem.vuejs.press/plugins/comment/
 [copyright]: https://ecosystem.vuejs.press/plugins/copyright.html
 [docsearch]: https://ecosystem.vuejs.press/plugins/docsearch.html
 [external-link-icon]: https://ecosystem.vuejs.press/plugins/external-link-icon.html

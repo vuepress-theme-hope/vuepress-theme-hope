@@ -153,8 +153,6 @@ VuePress 在一定程度上扩展了 Markdown 语法，但仍然缺少一些常�
 
 本主题包含了以下内建插件，如果有需要，你也可以单独进行使用或搭配其他主题。
 
-- <ProjectLink name="comment2" path="/zh/">vuepress-plugin-comment2</ProjectLink>: 评论与浏览量功能
-
 - <ProjectLink name="components" path="/zh/">vuepress-plugin-components</ProjectLink>: 提供一些开箱即用的插件
 
 - <ProjectLink name="md-enhance" path="/zh/">vuepress-plugin-md-enhance</ProjectLink>: 提供更多 Markdown 语法
@@ -164,8 +162,6 @@ VuePress 在一定程度上扩展了 Markdown 语法，但仍然缺少一些常�
 ::: tip
 
 这里还有一些其他没有被主题捆绑的插件，你可以根据自己的需求自行启用。
-
-- <ProjectLink name="append-date" path="/zh/">vuepress-plugin-append-date</ProjectLink>: 向 Frontmatter 添加时间
 
 - <ProjectLink name="lightgallery" path="/zh/">vuepress-plugin-lightgallery</ProjectLink>: 基于 lightgallery 图片浏览插件
 

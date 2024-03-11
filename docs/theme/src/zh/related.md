@@ -23,16 +23,6 @@ const getLink = (name: string): string =>
   }`;
 
 const features = [
-    {
-    text: "追加时间插件",
-    icon: "clock",
-    link: getLink("append-date"),
-  },
-  {
-    text: "评论插件",
-    icon: "comment",
-    link: getLink("comment2"),
-  },
   {
     text: "组件库",
     icon: "puzzle-piece",

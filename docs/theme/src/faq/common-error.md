@@ -45,12 +45,6 @@ Here is a example:
 .
 ├─┬ @vuepress/plugin-docsearch 2.0.0-rc.7
 │ └── ✕ unmet peer vuepress@2.0.0-rc.2: found 2.0.0-rc.5
-├─┬ vuepress-plugin-append-date 2.0.0-rc.20
-│ ├── ✕ unmet peer vuepress@2.0.0-rc.2: found 2.0.0-rc.5
-│ ├─┬ @vuepress/helper 2.0.0-rc.9
-│ │ └── ✕ unmet peer vuepress@2.0.0-rc.2: found 2.0.0-rc.5
-│ └─┬ vuepress-shared 2.0.0-rc.20
-│   └── ✕ unmet peer vuepress@2.0.0-rc.2: found 2.0.0-rc.5
 ├─┬ @vuepress/plugin-git 2.0.0-rc.7
 │ └── ✕ unmet peer vuepress@2.0.0-rc.2: found 2.0.0-rc.5
 ├─┬ vuepress 2.0.0-rc.5

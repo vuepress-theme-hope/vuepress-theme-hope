@@ -1,5 +1,6 @@
 import type { BackToTopPluginOptions } from "@vuepress/plugin-back-to-top";
 import type { CatalogPluginOptions } from "@vuepress/plugin-catalog";
+import type { CommentPluginOptions } from "@vuepress/plugin-comment";
 import type { CopyCodePluginOptions } from "@vuepress/plugin-copy-code";
 import type { CopyrightPluginOptions } from "@vuepress/plugin-copyright";
 import type { DocsearchPluginOptions } from "@vuepress/plugin-docsearch";
@@ -13,7 +14,6 @@ import type { RedirectPluginOptions } from "@vuepress/plugin-redirect";
 import type { SearchPluginOptions } from "@vuepress/plugin-search";
 import type { SeoPluginOptions } from "@vuepress/plugin-seo";
 import type { SitemapPluginOptions } from "@vuepress/plugin-sitemap";
-import type { CommentPluginOptions } from "vuepress-plugin-comment2";
 import type { ComponentOptions } from "vuepress-plugin-components";
 import type { MarkdownEnhanceOptions } from "vuepress-plugin-md-enhance";
 import type { SearchProOptions } from "vuepress-plugin-search-pro";
@@ -86,11 +86,11 @@ export interface PluginsOptions {
   /**
    * Comment plugin options
    *
-   * @see https://plugin-comment2.vuejs.press/config/
+   * @see https://ecosystem.vuejs.press/plugins/comment/
    *
    * 评论插件配置
    *
-   * @see https://plugin-comment2.vuejs.press/zh/config/
+   * @see https://ecosystem.vuejs.press/zh/plugins/comment/
    */
   comment?: CommentPluginOptions | false;
 

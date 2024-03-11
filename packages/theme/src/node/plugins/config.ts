@@ -53,7 +53,7 @@ export const getPluginConfig = (
     plugins.nprogress === false ? null : nprogressPlugin(),
     themeDataPlugin({ themeData }),
     getBlogPlugin(app, themeData, plugins.blog, options.hotReload),
-    getCommentPlugin(plugins.comment, legacy),
+    getCommentPlugin(plugins.comment),
     getCopyCodePlugin(plugins.copyCode),
     getCopyrightPlugin(themeData, plugins.copyright, options.hostname),
     // Seo should work before feed

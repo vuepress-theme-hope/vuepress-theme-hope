@@ -12,9 +12,9 @@ tag:
 
 ## Intro
 
-The theme provide comment support using `vuepress-plugin-comment2`, and it passes `plugins.comment` in theme options to the plugin.
+The theme provide comment support using `@vuepress/plugin-comment`, and it passes `plugins.comment` in theme options to the plugin.
 
-`vuepress-plugin-comment2` currently supports 4 comment services:
+`@vuepress/plugin-comment` currently supports 4 comment services:
 
 - Artalk
 - Giscus
@@ -27,4 +27,4 @@ The theme provide comment support using `vuepress-plugin-comment2`, and it passe
 
 ## Options
 
-For details of each comment service options, please refer to <ProjectLink name="comment2" path="/config/">vuepress-plugin-comment2 documentation</ProjectLink>.
+For details of each comment service options, please refer to <ProjectLink name="comment2" path="/config/">@vuepress/plugin-comment documentation</ProjectLink>.

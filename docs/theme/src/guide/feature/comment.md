@@ -8,11 +8,11 @@ tag:
   - Feature
 ---
 
-`vuepress-theme-hope` implements the comment feature with built-in <ProjectLink name="comment2">`vuepress-plugin-comment2`</ProjectLink>.
+`vuepress-theme-hope` implements the comment feature with built-in [`@vuepress/plugin-comment`][comment].
 
 ::: info
 
-`vuepress-theme-hope` passes `plugins.comment` in theme options as plugin options to `vuepress-plugin-comment2`.
+`vuepress-theme-hope` passes `plugins.comment` in theme options as plugin options to `@vuepress/plugin-comment`.
 
 :::
 
@@ -67,7 +67,7 @@ Comment feature is enabled globally by default, controlled by `plugins.comment.c
 
 ::: tip
 
-For the complete config item of the plugin, please see <ProjectLink name="comment2">plugin documentation</ProjectLink>.
+For the complete config item of the plugin, please see [plugin documentation][comment].
 
 :::
 
@@ -97,7 +97,7 @@ After completing the above steps, please go to the [Giscus page](https://giscus.
 
 Please pass `data-repo`, `data-repo-id`, `data-category` and `data-category-id` as plugin options as `repo`, `repoId`, `category` `categoryId`.
 
-For other options, see <ProjectLink name="comment2" path="/config/giscus.html">Giscus Config</ProjectLink>.
+For other options, see [Giscus Config][giscus-config].
 
 ## Waline
 
@@ -176,7 +176,7 @@ export default {
 
 ::: tip
 
-Config will be listed on <ProjectLink name="comment2" path="/config/waline.html">Waline Config</ProjectLink>.
+Config will be listed on [Waline Config][waline-config].
 
 For more details, please see [Waline Docs](https://waline.js.org/en/)。
 
@@ -306,3 +306,7 @@ The plugin retains the `el` option and inserts Artalk itself on the page. At the
 Before VuePress2 provides client configuration, the two function options `imgUploader` and `avatarURLBuilder` are not supported.
 
 :::
+
+[comment]: https://ecosystem.vuejs.press/plugins/comment/
+[giscus-config]: https://ecosystem.vuejs.press/plugins/comment/giscus/config.html
+[waline-config]: https://ecosystem.vuejs.press/plugins/comment/waline/config.html

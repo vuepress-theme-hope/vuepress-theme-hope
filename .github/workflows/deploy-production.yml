@@ -40,24 +40,6 @@ jobs:
           NODE_OPTIONS: --max_old_space_size=8192
         run: pnpm run docs:vite-build
 
-      - name: Deploy append-date docs
-        uses: JamesIves/github-pages-deploy-action@v4
-        with:
-          repository-name: vuepress-theme-hope/append-date-docs
-          branch: netlify
-          folder: docs/append-date/dist
-          token: ${{ secrets.ACCESS_TOKEN }}
-          single-commit: true
-
-      - name: Deploy comment2 docs
-        uses: JamesIves/github-pages-deploy-action@v4
-        with:
-          repository-name: vuepress-theme-hope/comment2-docs
-          branch: netlify
-          folder: docs/comment2/dist
-          token: ${{ secrets.ACCESS_TOKEN }}
-          single-commit: true
-
       - name: Deploy components docs
         uses: JamesIves/github-pages-deploy-action@v4
         with:
@@ -156,8 +138,6 @@ jobs:
 
       - name: Combine output
         run: |
-          pnpm cpx "docs/append-date/dist/**" dist/append-date
-          pnpm cpx "docs/comment2/dist/**" dist/comment
           pnpm cpx "docs/components/dist/**" dist/components
           pnpm cpx "docs/lightgallery/dist/**" dist/lightgallery
           pnpm cpx "docs/md-enhance/dist/**" dist/md-enhance
@@ -245,7 +225,6 @@ jobs:
       fail-fast: false
       matrix:
         plugin-name:
-          - comment2
           - components
           - lightgallery
           - md-enhance

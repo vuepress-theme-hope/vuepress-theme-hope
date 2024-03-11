@@ -2,8 +2,6 @@
   "extends": "./tsconfig.build.base.json",
   "references": [
     { "path": "./docs-shared/tsconfig.build.json" },
-    { "path": "./packages/append-date/tsconfig.build.json" },
-    { "path": "./packages/comment2/tsconfig.build.json" },
     { "path": "./packages/components/tsconfig.build.json" },
     { "path": "./packages/create/tsconfig.build.json" },
     { "path": "./packages/lightgallery/tsconfig.build.json" },

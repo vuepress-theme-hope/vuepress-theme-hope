@@ -163,39 +163,6 @@ importers:
         specifier: 1.3.1
         version: 1.3.1(@types/node@20.11.25)
 
-  demo/comment2:
-    devDependencies:
-      '@vuepress/bundler-vite':
-        specifier: 2.0.0-rc.8
-        version: 2.0.0-rc.8(@types/node@20.11.25)(sass@1.71.1)(typescript@5.4.2)
-      '@vuepress/bundler-webpack':
-        specifier: 2.0.0-rc.8
-        version: 2.0.0-rc.8(esbuild@0.20.1)(typescript@5.4.2)
-      '@vuepress/theme-default':
-        specifier: 2.0.0-rc.19
-        version: 2.0.0-rc.19(sass-loader@14.1.1)(typescript@5.4.2)(vuepress@2.0.0-rc.8)
-      '@waline/client':
-        specifier: 3.1.3
-        version: 3.1.3(typescript@5.4.2)
-      artalk:
-        specifier: 2.8.3
-        version: 2.8.3
-      sass-loader:
-        specifier: 14.1.1
-        version: 14.1.1(sass@1.71.1)(webpack@5.90.3)
-      twikoo:
-        specifier: 1.6.31
-        version: 1.6.31
-      vue:
-        specifier: 3.4.21
-        version: 3.4.21(typescript@5.4.2)
-      vuepress:
-        specifier: 2.0.0-rc.8
-        version: 2.0.0-rc.8(@vuepress/bundler-vite@2.0.0-rc.8)(@vuepress/bundler-webpack@2.0.0-rc.8)(typescript@5.4.2)(vue@3.4.21)
-      vuepress-plugin-comment2:
-        specifier: workspace:*
-        version: link:../../packages/comment2
-
   demo/components:
     devDependencies:
       '@vuepress/bundler-vite':
@@ -208,8 +175,8 @@ importers:
         specifier: 2.0.0-rc.19
         version: 2.0.0-rc.19(typescript@5.4.2)(vuepress@2.0.0-rc.8)
       '@vuepress/theme-default':
-        specifier: 2.0.0-rc.19
-        version: 2.0.0-rc.19(sass-loader@14.1.1)(typescript@5.4.2)(vuepress@2.0.0-rc.8)
+        specifier: 2.0.0-rc.20
+        version: 2.0.0-rc.20(sass-loader@14.1.1)(typescript@5.4.2)(vuepress@2.0.0-rc.8)
       artplayer:
         specifier: 5.1.1
         version: 5.1.1
@@ -253,8 +220,8 @@ importers:
         specifier: 2.0.0-rc.8
         version: 2.0.0-rc.8(esbuild@0.20.1)(typescript@5.4.2)
       '@vuepress/theme-default':
-        specifier: 2.0.0-rc.19
-        version: 2.0.0-rc.19(sass-loader@14.1.1)(typescript@5.4.2)(vuepress@2.0.0-rc.8)
+        specifier: 2.0.0-rc.20
+        version: 2.0.0-rc.20(sass-loader@14.1.1)(typescript@5.4.2)(vuepress@2.0.0-rc.8)
       sass-loader:
         specifier: 14.1.1
         version: 14.1.1(sass@1.71.1)(webpack@5.90.3)
@@ -280,8 +247,8 @@ importers:
         specifier: 2.0.0-rc.8
         version: 2.0.0-rc.8(esbuild@0.20.1)(typescript@5.4.2)
       '@vuepress/theme-default':
-        specifier: 2.0.0-rc.19
-        version: 2.0.0-rc.19(sass-loader@14.1.1)(typescript@5.4.2)(vuepress@2.0.0-rc.8)
+        specifier: 2.0.0-rc.20
+        version: 2.0.0-rc.20(sass-loader@14.1.1)(typescript@5.4.2)(vuepress@2.0.0-rc.8)
       chart.js:
         specifier: 4.4.2
         version: 4.4.2
@@ -340,8 +307,8 @@ importers:
         specifier: 2.0.0-rc.8
         version: 2.0.0-rc.8(esbuild@0.20.1)(typescript@5.4.2)
       '@vuepress/theme-default':
-        specifier: 2.0.0-rc.19
-        version: 2.0.0-rc.19(sass-loader@14.1.1)(typescript@5.4.2)(vuepress@2.0.0-rc.8)
+        specifier: 2.0.0-rc.20
+        version: 2.0.0-rc.20(sass-loader@14.1.1)(typescript@5.4.2)(vuepress@2.0.0-rc.8)
       sass-loader:
         specifier: 14.1.1
         version: 14.1.1(sass@1.71.1)(webpack@5.90.3)
@@ -364,8 +331,8 @@ importers:
         specifier: 2.0.0-rc.8
         version: 2.0.0-rc.8(esbuild@0.20.1)(typescript@5.4.2)
       '@vuepress/theme-default':
-        specifier: 2.0.0-rc.19
-        version: 2.0.0-rc.19(sass-loader@14.1.1)(typescript@5.4.2)(vuepress@2.0.0-rc.8)
+        specifier: 2.0.0-rc.20
+        version: 2.0.0-rc.20(sass-loader@14.1.1)(typescript@5.4.2)(vuepress@2.0.0-rc.8)
       nodejs-jieba:
         specifier: 0.1.2
         version: 0.1.2
@@ -543,51 +510,6 @@ importers:
       vuepress-theme-hope:
         specifier: workspace:*
         version: link:../packages/theme
-
-  docs/append-date:
-    dependencies:
-      '@vuepress/bundler-vite':
-        specifier: 2.0.0-rc.8
-        version: 2.0.0-rc.8(@types/node@20.11.25)(sass@1.71.1)(typescript@5.4.2)
-      '@vuepress/bundler-webpack':
-        specifier: 2.0.0-rc.8
-        version: 2.0.0-rc.8(esbuild@0.20.1)(typescript@5.4.2)
-      docs-shared:
-        specifier: workspace:*
-        version: link:../../docs-shared
-      sass-loader:
-        specifier: 14.1.1
-        version: 14.1.1(sass@1.71.1)(webpack@5.90.3)
-      vue:
-        specifier: 3.4.21
-        version: 3.4.21(typescript@5.4.2)
-      vuepress:
-        specifier: 2.0.0-rc.8
-        version: 2.0.0-rc.8(@vuepress/bundler-vite@2.0.0-rc.8)(@vuepress/bundler-webpack@2.0.0-rc.8)(typescript@5.4.2)(vue@3.4.21)
-
-  docs/comment2:
-    dependencies:
-      '@vuepress/bundler-vite':
-        specifier: 2.0.0-rc.8
-        version: 2.0.0-rc.8(@types/node@20.11.25)(sass@1.71.1)(typescript@5.4.2)
-      '@vuepress/bundler-webpack':
-        specifier: 2.0.0-rc.8
-        version: 2.0.0-rc.8(esbuild@0.20.1)(typescript@5.4.2)
-      docs-shared:
-        specifier: workspace:*
-        version: link:../../docs-shared
-      sass-loader:
-        specifier: 14.1.1
-        version: 14.1.1(sass@1.71.1)(webpack@5.90.3)
-      vue:
-        specifier: 3.4.21
-        version: 3.4.21(typescript@5.4.2)
-      vuepress:
-        specifier: 2.0.0-rc.8
-        version: 2.0.0-rc.8(@vuepress/bundler-vite@2.0.0-rc.8)(@vuepress/bundler-webpack@2.0.0-rc.8)(typescript@5.4.2)(vue@3.4.21)
-      vuepress-plugin-comment2:
-        specifier: workspace:*
-        version: link:../../packages/comment2
 
   docs/components:
     dependencies:
@@ -849,54 +771,6 @@ importers:
       vuepress-theme-hope:
         specifier: workspace:*
         version: link:../../packages/theme
-
-  packages/append-date:
-    dependencies:
-      '@vuepress/helper':
-        specifier: 2.0.0-rc.19
-        version: 2.0.0-rc.19(typescript@5.4.2)(vuepress@2.0.0-rc.8)
-      '@vuepress/plugin-git':
-        specifier: 2.0.0-rc.15
-        version: 2.0.0-rc.15(vuepress@2.0.0-rc.8)
-      vuepress:
-        specifier: 2.0.0-rc.8
-        version: 2.0.0-rc.8(@vuepress/bundler-vite@2.0.0-rc.8)(@vuepress/bundler-webpack@2.0.0-rc.8)(typescript@5.4.2)(vue@3.4.21)
-      vuepress-shared:
-        specifier: workspace:*
-        version: link:../shared
-
-  packages/comment2:
-    dependencies:
-      '@vuepress/helper':
-        specifier: 2.0.0-rc.19
-        version: 2.0.0-rc.19(typescript@5.4.2)(vuepress@2.0.0-rc.8)
-      '@waline/client':
-        specifier: ^3.1.0
-        version: 3.1.3(typescript@5.4.2)
-      artalk:
-        specifier: ^2.7.3
-        version: 2.8.3
-      giscus:
-        specifier: ^1.5.0
-        version: 1.5.0
-      sass-loader:
-        specifier: ^14.0.0
-        version: 14.1.1(sass@1.71.1)(webpack@5.90.3)
-      twikoo:
-        specifier: ^1.5.0
-        version: 1.6.31
-      vue:
-        specifier: ^3.4.21
-        version: 3.4.21(typescript@5.4.2)
-      vuepress:
-        specifier: 2.0.0-rc.8
-        version: 2.0.0-rc.8(@vuepress/bundler-vite@2.0.0-rc.8)(@vuepress/bundler-webpack@2.0.0-rc.8)(typescript@5.4.2)(vue@3.4.21)
-      vuepress-plugin-sass-palette:
-        specifier: workspace:*
-        version: link:../sass-palette
-      vuepress-shared:
-        specifier: workspace:*
-        version: link:../shared
 
   packages/components:
     dependencies:
@@ -1284,8 +1158,11 @@ importers:
         specifier: 2.0.0-rc.19
         version: 2.0.0-rc.19(typescript@5.4.2)(vuepress@2.0.0-rc.8)
       '@vuepress/plugin-catalog':
-        specifier: 2.0.0-rc.19
-        version: 2.0.0-rc.19(typescript@5.4.2)(vuepress@2.0.0-rc.8)
+        specifier: 2.0.0-rc.20
+        version: 2.0.0-rc.20(typescript@5.4.2)(vuepress@2.0.0-rc.8)
+      '@vuepress/plugin-comment':
+        specifier: 2.0.0-rc.20
+        version: 2.0.0-rc.20(sass-loader@14.1.1)(typescript@5.4.2)(vuepress@2.0.0-rc.8)
       '@vuepress/plugin-copy-code':
         specifier: 2.0.0-rc.19
         version: 2.0.0-rc.19(typescript@5.4.2)(vuepress@2.0.0-rc.8)
@@ -1317,8 +1194,8 @@ importers:
         specifier: 2.0.0-rc.15
         version: 2.0.0-rc.15(vuepress@2.0.0-rc.8)
       '@vuepress/plugin-pwa':
-        specifier: 2.0.0-rc.19
-        version: 2.0.0-rc.19(typescript@5.4.2)(vuepress@2.0.0-rc.8)
+        specifier: 2.0.0-rc.20
+        version: 2.0.0-rc.20(typescript@5.4.2)(vuepress@2.0.0-rc.8)
       '@vuepress/plugin-reading-time':
         specifier: 2.0.0-rc.19
         version: 2.0.0-rc.19(typescript@5.4.2)(vuepress@2.0.0-rc.8)
@@ -1370,9 +1247,6 @@ importers:
       vuepress:
         specifier: 2.0.0-rc.8
         version: 2.0.0-rc.8(@vuepress/bundler-vite@2.0.0-rc.8)(@vuepress/bundler-webpack@2.0.0-rc.8)(typescript@5.4.2)(vue@3.4.21)
-      vuepress-plugin-comment2:
-        specifier: workspace:*
-        version: link:../comment2
       vuepress-plugin-components:
         specifier: workspace:*
         version: link:../components
@@ -4188,7 +4062,6 @@ packages:
     resolution: {integrity: sha512-0bK9aG1kIg0Su7OcFTlexkVeNZ5IzEsnz1ept87a0TUgZ6HplSgkJAnFpEVRW7GRcikT4GlPV0pbtVedOaXHQQ==}
     cpu: [arm64]
     os: [linux]
-    libc: [glibc]
     requiresBuild: true
     optional: true
 
@@ -4196,7 +4069,6 @@ packages:
     resolution: {integrity: sha512-qB6AFRXuP8bdkBI4D7UPUbE7OQf7u5OL+R94JE42Z2Qjmyj74FtDdLGeriRyBDhm4rQSvqAGCGC01b8Fu2LthQ==}
     cpu: [arm64]
     os: [linux]
-    libc: [musl]
     requiresBuild: true
     optional: true
 
@@ -4204,7 +4076,6 @@ packages:
     resolution: {integrity: sha512-sHig3LaGlpNgDj5o8uPEoGs98RII8HpNIqFtAI8/pYABO8i0nb1QzT0JDoXF/pxzqO+FkxvwkHZo9k0NJYDedg==}
     cpu: [riscv64]
     os: [linux]
-    libc: [glibc]
     requiresBuild: true
     optional: true
 
@@ -4212,7 +4083,6 @@ packages:
     resolution: {integrity: sha512-nD3YcUv6jBJbBNFvSbp0IV66+ba/1teuBcu+fBBPZ33sidxitc6ErhON3JNavaH8HlswhWMC3s5rgZpM4MtPqQ==}
     cpu: [x64]
     os: [linux]
-    libc: [glibc]
     requiresBuild: true
     optional: true
 
@@ -4220,7 +4090,6 @@ packages:
     resolution: {integrity: sha512-7/XVZqgBby2qp/cO0TQ8uJK+9xnSdJ9ct6gSDdEr4MfABrjTyrW6Bau7HQ73a2a5tPB7hno49A0y1jhWGDN9OQ==}
     cpu: [x64]
     os: [linux]
-    libc: [musl]
     requiresBuild: true
     optional: true
 
@@ -4686,7 +4555,7 @@ packages:
   /@types/sax@1.2.7:
     resolution: {integrity: sha512-rO73L89PJxeYM3s3pPPjiPgVVcymqU490g0YO5n5By0k2Erzj6tay/4lr1CHAAU4JyOWd1rpQ8bCf6cZfHU96A==}
     dependencies:
-      '@types/node': 17.0.45
+      '@types/node': 20.11.25
 
   /@types/semver@7.5.8:
     resolution: {integrity: sha512-I8EUhyrgfLrcTkzV3TSsGyl1tSuPrEDzr0yd5m90UgNxQkyDXULk3b6MlQqTCpZpNtWe1K0hzclnZkTcLBe2UQ==}
@@ -5236,12 +5105,39 @@ packages:
       - typescript
     dev: false
 
-  /@vuepress/plugin-catalog@2.0.0-rc.19(typescript@5.4.2)(vuepress@2.0.0-rc.8):
-    resolution: {integrity: sha512-qirFoqodgGmpHoZrmzESlv/WIDn6f69XY4WeOz2JYf7+JlS82+S+SBT0e6Sp0xRFQSU+PyfQM+3zZcneXLctyg==}
+  /@vuepress/plugin-catalog@2.0.0-rc.20(typescript@5.4.2)(vuepress@2.0.0-rc.8):
+    resolution: {integrity: sha512-Rb4Kldgyn7Fzit5/A6r0Kr0Sg0zQn5ahRwhClwZTfYd2WDZnizUnTcCMoZyY4QUcpchvug2fx4a0e8GI2mT8uA==}
     peerDependencies:
       vuepress: 2.0.0-rc.8
     dependencies:
       '@vuepress/helper': 2.0.0-rc.19(typescript@5.4.2)(vuepress@2.0.0-rc.8)
+      vue: 3.4.21(typescript@5.4.2)
+      vuepress: 2.0.0-rc.8(@vuepress/bundler-vite@2.0.0-rc.8)(@vuepress/bundler-webpack@2.0.0-rc.8)(typescript@5.4.2)(vue@3.4.21)
+    transitivePeerDependencies:
+      - typescript
+    dev: false
+
+  /@vuepress/plugin-comment@2.0.0-rc.20(sass-loader@14.1.1)(typescript@5.4.2)(vuepress@2.0.0-rc.8):
+    resolution: {integrity: sha512-B7Bh6oK/ijdmNgXxk8AJcB+bSCLirAK0y1nM62yieZ66rHTIenoYfCgqqkhrxKp/ABPyjiBPj9TEcgptmJC4bA==}
+    peerDependencies:
+      '@waline/client': ^3.1.0
+      artalk: ^2.7.3
+      sass-loader: ^14.0.0
+      twikoo: ^1.5.0
+      vuepress: 2.0.0-rc.8
+    peerDependenciesMeta:
+      '@waline/client':
+        optional: true
+      artalk:
+        optional: true
+      sass-loader:
+        optional: true
+      twikoo:
+        optional: true
+    dependencies:
+      '@vuepress/helper': 2.0.0-rc.19(typescript@5.4.2)(vuepress@2.0.0-rc.8)
+      giscus: 1.5.0
+      sass-loader: 14.1.1(sass@1.71.1)(webpack@5.90.3)
       vue: 3.4.21(typescript@5.4.2)
       vuepress: 2.0.0-rc.8(@vuepress/bundler-vite@2.0.0-rc.8)(@vuepress/bundler-webpack@2.0.0-rc.8)(typescript@5.4.2)(vue@3.4.21)
     transitivePeerDependencies:
@@ -5403,8 +5299,8 @@ packages:
       prismjs: 1.29.0
       vuepress: 2.0.0-rc.8(@vuepress/bundler-vite@2.0.0-rc.8)(@vuepress/bundler-webpack@2.0.0-rc.8)(typescript@5.4.2)(vue@3.4.21)
 
-  /@vuepress/plugin-pwa@2.0.0-rc.19(typescript@5.4.2)(vuepress@2.0.0-rc.8):
-    resolution: {integrity: sha512-DDtJc5w/2hl1SshhSAiJSBbJ2oKxzlhNBh1G/66v8yhkqIluzxfEHwq8ybDzYbl9G53YkkD/hgdXkc1he9hwHA==}
+  /@vuepress/plugin-pwa@2.0.0-rc.20(typescript@5.4.2)(vuepress@2.0.0-rc.8):
+    resolution: {integrity: sha512-wNlJCFXUnC7QFpalmy/wVMvnW6qcMgS6CGAziWdyRwW1lA/r+/fPJXLKWDKUGGIeuHIr/4IyuUBacSLJmKdQtA==}
     peerDependencies:
       vuepress: 2.0.0-rc.8
     dependencies:
@@ -5519,8 +5415,8 @@ packages:
     dependencies:
       '@mdit-vue/types': 2.0.0
 
-  /@vuepress/theme-default@2.0.0-rc.19(sass-loader@14.1.1)(typescript@5.4.2)(vuepress@2.0.0-rc.8):
-    resolution: {integrity: sha512-cB84sTnDXecfdAqGnujHIDJSuKlq4+x05vE3892xmVyHpr/a0jYg3KvUa1ghLlPFuQuYsdX8AebYacQ2y/vtBg==}
+  /@vuepress/theme-default@2.0.0-rc.20(sass-loader@14.1.1)(typescript@5.4.2)(vuepress@2.0.0-rc.8):
+    resolution: {integrity: sha512-fXiUNMdmG2d1V6RRigm9/lMHKrJp1MoXPO4CRxdJnfpfxlzgTA9JqEPfgBqeovS1OE+pm+GrFSxRToAHSfS68g==}
     peerDependencies:
       sass-loader: ^14.0.0
       vuepress: 2.0.0-rc.8
@@ -5595,6 +5491,7 @@ packages:
   /@waline/api@1.0.0-alpha.7:
     resolution: {integrity: sha512-IcMah3Li+ueS2Wr0Odd9Ri/PPh1ePOdHLE4CAw1KZNPgNTeLw0lFak/+B4ttVZuW8eFq7DTSmxoUFHGLhi8WoQ==}
     engines: {node: '>=18'}
+    dev: true
 
   /@waline/client@3.1.3(typescript@5.4.2):
     resolution: {integrity: sha512-jYSuu6Xihsz9Bg9YTXEwUho2vu3FXzxc+y3c3PscO8pYpShtVhrsVF9fzdpfKyh/FDIKa5BpCBOTkigMb2NK3A==}
@@ -5610,6 +5507,7 @@ packages:
     transitivePeerDependencies:
       - '@vue/composition-api'
       - typescript
+    dev: true
 
   /@webassemblyjs/ast@1.11.6:
     resolution: {integrity: sha512-IN1xI7PwOvLPgjcf180gC1bqn3q/QaOCwYUahIOhbYUu8KA/3tw2RT/T0Gidi1l7Hhj5D/INhJxiICObqpMu4Q==}
@@ -5722,9 +5620,6 @@ packages:
   /abbrev@2.0.0:
     resolution: {integrity: sha512-6/mh1E2u2YgEsCHdY0Yx5oW+61gZU+1vXaoiHHrpKeuRNNgFvS+/jrwHiQhB5apAf5oB7UB7E19ol2R2LKH8hQ==}
     engines: {node: ^14.17.0 || ^16.13.0 || >=18.0.0}
-
-  /abortcontroller-polyfill@1.7.5:
-    resolution: {integrity: sha512-JMJ5soJWP18htbbxJjG7bG6yuI6pRhgJ0scHHTfkUjf6wjP912xZWvM+A4sJK3gqd9E8fcPbDnOefbA9Th/FIQ==}
 
   /accepts@1.3.8:
     resolution: {integrity: sha512-PYAthTa2m2VKxuvSD3DPC/Gy+U+sOA1LAuT8mkmRuvw+NACSaeXEQ+NHcVF7rONl6qcaxV3Uuemwawk+7+SJLw==}
@@ -6113,14 +6008,6 @@ packages:
     engines: {node: '>=0.10.0'}
     dev: true
 
-  /artalk@2.8.3:
-    resolution: {integrity: sha512-AaBPo4LEyikJmJIj2kZ3YgLP3mT/8CuLdbyNffsmdpiMES1Kmn/Jlno2L3cXhON9jPXLuUqZVWz6oJOFQDSLWQ==}
-    dependencies:
-      abortcontroller-polyfill: 1.7.5
-      hanabi: 0.4.0
-      insane: 2.6.2
-      marked: 11.2.0
-
   /artplayer-plugin-danmuku@5.0.1:
     resolution: {integrity: sha512-b6/Y4/+X0rNmnqS5+zzQgow+WW4iVT8eFv4LAUzJgIyORIcf5Gn00Dy0PZ+kwGb1VJy0CUCRK6gVVvh0tWsRAg==}
 
@@ -6132,9 +6019,6 @@ packages:
   /assertion-error@1.1.0:
     resolution: {integrity: sha512-jgsaNduz+ndvGyFt3uSuWqvy4lCnIJiovtouQN5JZHOKCS2QuhEdbcQHFhVksz2N2U9hXJo8odG7ETyWlEeuDw==}
     dev: true
-
-  /assignment@2.0.0:
-    resolution: {integrity: sha512-naMULXjtgCs9SVUEtyvJNt68aF18em7/W+dhbR59kbz9cXWPEvUkCun2tqlgqRPSqZaKPpqLc5ZnwL8jVmJRvw==}
 
   /astral-regex@2.0.0:
     resolution: {integrity: sha512-Z7tMw1ytTXt5jqMcOP+OQteU1VuNK9Y02uuJtKQ1Sv69jXQKKg5cibLwGJow8yzZP+eAc18EmLGPal0bp36rvQ==}
@@ -6198,6 +6082,7 @@ packages:
 
   /autosize@6.0.1:
     resolution: {integrity: sha512-f86EjiUKE6Xvczc4ioP1JBlWG7FKrE13qe/DxBCpe8GCipCq2nFw73aO8QEBKHfSbYGDN5eB9jXWKen7tspDqQ==}
+    dev: true
 
   /available-typed-arrays@1.0.7:
     resolution: {integrity: sha512-wvUjBtSGN7+7SjNpq/9M2Tg350UZD3q62IFZLbRAR1bSMlCo1ZaeW+BJ+D090e4hIIZLBcTDWe4Mh4jvUDajzQ==}
@@ -6793,10 +6678,6 @@ packages:
   /commander@9.2.0:
     resolution: {integrity: sha512-e2i4wANQiSXgnrBlIatyHtP1odfUp0BbV5Y5nEGbxtIrStkEOAAzCUirvLBNXHLr7kwLvJl6V+4V3XV9x7Wd9w==}
     engines: {node: ^12.20.0 || >=14}
-
-  /comment-regex@1.0.1:
-    resolution: {integrity: sha512-IWlN//Yfby92tOIje7J18HkNmWRR7JESA/BK8W7wqY/akITpU5B0JQWnbTjCfdChSrDNb0DrdA9jfAxiiBXyiQ==}
-    engines: {node: '>=0.10.0'}
 
   /commit-and-tag-version@12.2.0:
     resolution: {integrity: sha512-t8kvDy8dVTCF/j2u7Elt/J3tzCPyh16ssK8ECpj44R6jJiCUJMhWwZ36L652iChvqz4BAem9XU7WyuMYHlmSvA==}
@@ -9628,11 +9509,6 @@ packages:
       glogg: 1.0.2
     dev: true
 
-  /hanabi@0.4.0:
-    resolution: {integrity: sha512-ixJH94fwmmVzUSdxl7TMkVZJmsq4d2JKrxedpM5V1V+91iVHL0q6NnJi4xiDahK6Vo00xT17H8H6b4F6RVbsOg==}
-    dependencies:
-      comment-regex: 1.0.1
-
   /handle-thing@2.0.1:
     resolution: {integrity: sha512-9Qn4yBxelxoh2Ow62nP+Ka/kMnOXRi8BXnRaUwezLNhqelnN49xKz4F/dPP8OYLxLxq6JDtZb2i9XznUQbNPTg==}
 
@@ -9695,10 +9571,6 @@ packages:
     engines: {node: '>= 0.4'}
     dependencies:
       function-bind: 1.1.2
-
-  /he@0.5.0:
-    resolution: {integrity: sha512-DoufbNNOFzwRPy8uecq+j+VCPQ+JyDelHTmSgygrA5TsR8Cbw4Qcir5sGtWiusB4BdT89nmlaVDhSJOqC/33vw==}
-    hasBin: true
 
   /he@1.2.0:
     resolution: {integrity: sha512-F/1DnUGPopORZi0ni+CvrCgHQ5FyEAHRLSApuYWMmrbSwoN2Mn/7k+Gl38gJnR7yyDZk6WLXwiGod1JOWNDKGw==}
@@ -10059,12 +9931,6 @@ packages:
       string-width: 4.2.3
       strip-ansi: 6.0.1
       wrap-ansi: 6.2.0
-
-  /insane@2.6.2:
-    resolution: {integrity: sha512-BqEL1CJsjJi+/C/zKZxv31zs3r6zkLH5Nz1WMFb7UBX2KHY2yXDpbFTSEmNHzomBbGDysIfkTX55A0mQZ2CQiw==}
-    dependencies:
-      assignment: 2.0.0
-      he: 0.5.0
 
   /internal-slot@1.0.7:
     resolution: {integrity: sha512-NGnrKwXzSms2qUUih/ILZ5JBqNTSa1+ZmP6flaIp6KmSElgE9qdndzS3cqjrDovwFdmwsGsLdeFgB6suw+1e9g==}
@@ -11156,16 +11022,13 @@ packages:
       marked: '>=4 <13'
     dependencies:
       marked: 12.0.1
-
-  /marked@11.2.0:
-    resolution: {integrity: sha512-HR0m3bvu0jAPYiIvLUUQtdg1g6D247//lvcekpHO1WMvbwDlwSkZAX9Lw4F4YHE1T0HaaNve0tuAWuV1UJ6vtw==}
-    engines: {node: '>= 18'}
-    hasBin: true
+    dev: true
 
   /marked@12.0.1:
     resolution: {integrity: sha512-Y1/V2yafOcOdWQCX0XpAKXzDakPOpn6U0YLxTJs3cww6VxOzZV1BTOOYWLvH3gX38cq+iLwljHHTnMtlDfg01Q==}
     engines: {node: '>= 18'}
     hasBin: true
+    dev: true
 
   /markmap-common@0.16.0:
     resolution: {integrity: sha512-q3nlNDMKuWXTm3VwZFY9V5zteL/+iBLZanUK5vS+e26bUbzTSG5VtAzsyJbmgJm1WhwmIIAxbXEnp6JdvtTduA==}
@@ -12878,6 +12741,7 @@ packages:
 
   /recaptcha-v3@1.10.0:
     resolution: {integrity: sha512-aGTxYSk3FFNKnXeKDbLpgRDRyIHRZNBF5HyaXXAN1Aj4TSyyZvmoAn9CylvpqLV3pYpIQavwc+2rzhNFn5SsLQ==}
+    dev: true
 
   /rechoir@0.6.2:
     resolution: {integrity: sha512-HFM8rkZ+i3zrV+4LQjwQ0W+ez98pApMGM3HUrN04j3CqzPOzl9nmP15Y8YXNm8QHGv/eacOVEjqhmWpkRV0NAw==}
@@ -14416,9 +14280,6 @@ packages:
       fsevents: 2.3.3
     dev: true
 
-  /twikoo@1.6.31:
-    resolution: {integrity: sha512-hme7cwPP2y3Dbrwu5nHIEYIpPC7WqkC88+b3McdN7nw7tpSkqhRKMnIc8TZJpNAa2SSBGUprMNemL/4irPqMqA==}
-
   /type-check@0.4.0:
     resolution: {integrity: sha512-XleUoc9uwGXqjWwXaUTZAmzMcFZ5858QA2vvx1Ur5xIcixXIP+8LnFDgRplU30us6teqdlskFfu+ae4K79Ooew==}
     engines: {node: '>= 0.8.0'}
@@ -15420,7 +15281,6 @@ packages:
 
   /workbox-google-analytics@7.0.0:
     resolution: {integrity: sha512-MEYM1JTn/qiC3DbpvP2BVhyIH+dV/5BjHk756u9VbwuAhu0QHyKscTnisQuz21lfRpOwiS9z4XdqeVAKol0bzg==}
-    deprecated: It is not compatible with newer versions of GA starting with v4, as long as you are using GAv3 it should be ok, but the package is not longer being maintained
     dependencies:
       workbox-background-sync: 7.0.0
       workbox-core: 7.0.0

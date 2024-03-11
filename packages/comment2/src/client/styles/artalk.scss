@@ -1,9 +1,0 @@
-@use "vuepress-shared/styles/wrapper";
-
-.artalk-wrapper {
-  @include wrapper.wrapper;
-
-  @media print {
-    display: none !important;
-  }
-}

@@ -36,7 +36,6 @@ pnpm i
 ├── demo → 演示项目
 │
 ├── docs → 文档目录
-│ ├── comment → comment2 插件文档
 │ ├── components → components 插件文档
 │ ├── lightgallery → lightgallery 插件文档
 │ ├── md-enhance → md-enhance 插件文档
@@ -48,7 +47,6 @@ pnpm i
 ├── docs-shared → 文档的通用文件
 |
 ├── packages → 项目源代码
-│ ├── comment2 → comment2 插件
 │ ├── components → components 插件
 │ ├── create → create-vuepress-theme-hope 助手
 │ ├── lightgallery → lightgallery 插件

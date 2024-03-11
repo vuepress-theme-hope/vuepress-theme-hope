@@ -77,7 +77,7 @@ export default defineComponent({
       if (SUPPORT_PAGEVIEW) {
         await nextTick();
         const { updatePageview } = await import(
-          /* webpackChunkName: "pageview" */ "vuepress-plugin-comment2/pageview"
+          /* webpackChunkName: "pageview" */ "@vuepress/plugin-comment/pageview"
         );
 
         await updatePageview();

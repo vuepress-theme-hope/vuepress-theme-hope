@@ -8,11 +8,11 @@ tag:
   - 评论
 ---
 
-通过内置 <ProjectLink name="comment2" path="/zh/">`vuepress-plugin-comment2`</ProjectLink>，`vuepress-theme-hope` 实现了评论功能。
+通过内置 [`@vuepress/plugin-comment`][comment]，`vuepress-theme-hope` 实现了评论功能。
 
 ::: info
 
-`vuepress-theme-hope` 将主题选项中的 `plugins.comment` 作为插件选项提供给 `vuepress-plugin-comment2`。
+`vuepress-theme-hope` 将主题选项中的 `plugins.comment` 作为插件选项提供给 `@vuepress/plugin-comment`。
 
 :::
 
@@ -67,7 +67,7 @@ export default {
 
 ::: info
 
-受篇幅限制，完整的评论插件配置，详见 <ProjectLink name="comment2" path="/zh/">插件文档</ProjectLink>。
+受篇幅限制，完整的评论插件配置，详见 [插件文档][comment]。
 
 :::
 
@@ -99,7 +99,7 @@ Giscus 是一个基于 GitHub Discussion 的评论系统，启用简便。
 
 请将 `data-repo`, `data-repo-id`, `data-category` 和 `data-category-id` 作为插件选项传入 `repo`, `repoId`, `category` `categoryId`。
 
-其他的配置项详见 <ProjectLink name="comment2" path="/zh/config/giscus.html">Giscus 配置</ProjectLink>。
+其他的配置项详见 [Giscus 配置][giscus-config]。
 
 ## Waline
 
@@ -176,7 +176,7 @@ export default {
 
 :::
 
-Waline 评论的其他配置将在 <ProjectLink name="comment2" path="/zh/config/waline.html">Waline 配置</ProjectLink> 中列出。
+Waline 评论的其他配置将在 [Waline 配置][waline-config] 中列出。
 
 ::: tip
 
@@ -316,3 +316,7 @@ npm i -D artalk
 在 VuePress2 提供客户端配置前，暂不支持 `imgUploader` 和 `avatarURLBuilder` 这两个函数选项。
 
 :::
+
+[comment]: https://ecosystem.vuejs.press/zh/plugins/comment/
+[giscus-config]: https://ecosystem.vuejs.press/zh/plugins/comment/giscus/config.html
+[waline-config]: https://ecosystem.vuejs.press/zh/plugins/comment/waline/config.html

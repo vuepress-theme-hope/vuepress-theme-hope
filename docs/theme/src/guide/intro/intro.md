@@ -155,8 +155,6 @@ The theme supports [blogging](../blog/intro.md), [with article list with sticky 
 
 The theme includes the following plugins, you can use them in other themes or directly.
 
-- <ProjectLink name="comment2">vuepress-plugin-comment2</ProjectLink>: Comment and pageviews
-
 - <ProjectLink name="components">vuepress-plugin-components</ProjectLink>: Provide some out of box plugins
 
 - <ProjectLink name="md-enhance">vuepress-plugin-md-enhance</ProjectLink>: Provide more Markdown syntax
@@ -166,8 +164,6 @@ The theme includes the following plugins, you can use them in other themes or di
 ::: tip
 
 Here are some other plugins that are not bundled by the theme, you can enable them according to your own needs.
-
-- <ProjectLink name="append-date">vuepress-plugin-append-date</ProjectLink>: Append date to page frontmatter
 
 - <ProjectLink name="lightgallery">vuepress-plugin-lightgallery</ProjectLink>: Image preview plugin based on lightgallery
 
