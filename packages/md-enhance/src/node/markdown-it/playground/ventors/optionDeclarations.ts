@@ -1,5 +1,5 @@
 /**
- * This file needs to be updated with typescript major and minor updates
+ * Note: This file needs to be updated with typescript major and minor updates
  *
  * https://www.typescriptlang.org/play
  *
@@ -75,6 +75,7 @@ export const optionDeclarations = [
       esnext: 99,
       node16: 100,
       nodenext: 199,
+      preserve: 200,
     },
   },
   { name: "lib", type: "list" },
