@@ -4,6 +4,18 @@ All notable changes to this project will be documented in this file. See [Conven
 
 <!-- #region recent-change -->
 
+## [2.0.0-rc.31](https://github.com/vuepress-theme-hope/vuepress-theme-hope/compare/v2.0.0-rc.30...v2.0.0-rc.31) (2024-03-11)
+
+### Features
+
+- **comment2:** update Giscus lang ([0328d85](https://github.com/vuepress-theme-hope/vuepress-theme-hope/commit/0328d85fab62f18440cc4ef0d86ae00c3bb0d785))
+- **md-enhance:** update ts playground config ([85f3166](https://github.com/vuepress-theme-hope/vuepress-theme-hope/commit/85f31669d3aaeb19f882f3b14f6a4df6c8aa5ec2))
+- remove append-date and comment plugin ([c0af3e5](https://github.com/vuepress-theme-hope/vuepress-theme-hope/commit/c0af3e57113039b666ab47c41dd988c89b7a4a37))
+
+### Bug Fixes
+
+- **comment2:** fix waline variable ([a7aa9be](https://github.com/vuepress-theme-hope/vuepress-theme-hope/commit/a7aa9be63ad964691edaa10b6e2b50be5e44db8d))
+
 ## [2.0.0-rc.30](https://github.com/vuepress-theme-hope/vuepress-theme-hope/compare/v2.0.0-rc.29...v2.0.0-rc.30) (2024-03-10)
 
 ### Bug Fixes
