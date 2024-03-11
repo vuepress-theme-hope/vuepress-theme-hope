@@ -17,6 +17,7 @@ import "../styles/giscus.scss";
 const SUPPORTED_LANGUAGES = [
   "ar",
   "ca",
+  "da",
   "de",
   "en",
   "eo",
@@ -36,6 +37,7 @@ const SUPPORTED_LANGUAGES = [
   "th",
   "tr",
   "uk",
+  "uz",
   "vi",
   "zh-CN",
   "zh-TW",
