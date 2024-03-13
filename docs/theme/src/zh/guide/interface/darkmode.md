@@ -60,11 +60,19 @@ export default {
 - `"enable"`: 强制深色模式
 - `"disable"`: 禁用深色模式
 
-::: info 全局变量
+## 获取状态
 
-你可以在任一 Markdown 文件中通过 `$isDarkmode` 来获取当前是否为深色模式。
+- 你可以在 Markdown 文件或 Vue 模板中通过 `$isDarkmode` 来获取当前是否为深色模式。
 
-:::
+- 你可以从 `vuepress-theme-hope/client` 导入 `useDarkmode` 来获取深色模式状态:
+
+  ```ts
+  import { useDarkmode } from "vuepress-theme-hope/client";
+
+  const { isDarkmode } = useDarkmode();
+
+  console.log(isDarkmode.value); // get darkmode status
+  ```
 
 <script setup lang="ts">
 import AppearanceSwitch from "@theme-hope/modules/outlook/components/AppearanceSwitch"

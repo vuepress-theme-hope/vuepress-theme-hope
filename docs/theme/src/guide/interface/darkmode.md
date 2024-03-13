@@ -60,11 +60,18 @@ Available options:
 - `"enable"`: only dark mode
 - `"disable"`: disable dark mode
 
-::: info Global Variables
+## Getting Status
 
-You can use `$isDarkmode` in any Markdown file to get darkmode status.
+- You can use `$isDarkmode` in Markdown files or Vue Template to get darkmode status.
+- You can import `useDarkmode` from `vuepress-theme-hope/client` to get darkmode status:
 
-:::
+  ```ts
+  import { useDarkmode } from "vuepress-theme-hope/client";
+
+  const { isDarkmode } = useDarkmode();
+
+  console.log(isDarkmode.value); // get darkmode status
+  ```
 
 <script setup lang="ts">
 import AppearanceSwitch from "@theme-hope/modules/outlook/components/AppearanceSwitch"
