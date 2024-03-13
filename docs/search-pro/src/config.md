@@ -401,6 +401,9 @@ interface SearchLocaleOptions
     locale: string,
     pageData: PageData,
   ) => SearchResult[];
+
+  /** Word spliter */
+  splitWord?: (query: string) => Promise<string[]>;
 }
 
 interface SearchOptions extends SearchLocaleOptions {

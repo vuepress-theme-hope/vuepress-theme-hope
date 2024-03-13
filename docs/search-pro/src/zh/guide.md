@@ -17,6 +17,8 @@ icon: lightbulb
 
 当索引不基于单词的语言时，例如中文、日语或韩语，你需要设置 `indexOptions` 和 `indexLocaleOptions` 以执行正确的分词，详见[自定义索引生成](#自定义索引生成)。
 
+同时为了更好的客户端搜索体验，你应该通过 `defineSearchConfig` 来自定义 `splitWord` 选项以对输入查询内容进行分词。
+
 :::
 
 ### 极致速度

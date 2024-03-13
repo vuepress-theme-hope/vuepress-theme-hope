@@ -120,7 +120,7 @@ export const rollupBundle = (
             )
           ? [
               /^@temp/,
-              "@vuepress/helper",
+              "@vuepress/helper/client",
               "@vueuse/core",
               "vue",
               "vuepress/client",

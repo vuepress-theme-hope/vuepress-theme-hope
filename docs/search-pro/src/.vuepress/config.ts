@@ -1,4 +1,5 @@
 import { config } from "docs-shared";
+import { path } from "vuepress/utils";
 
 import theme from "./theme.js";
 
@@ -18,4 +19,6 @@ export default config("search-pro", {
   },
 
   theme,
+
+  clientConfigFile: path.resolve(__dirname, "./client.ts"),
 });

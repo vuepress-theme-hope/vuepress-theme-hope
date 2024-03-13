@@ -1,5 +1,10 @@
 import { useLocaleConfig } from "@vuepress/helper/client";
-import { onClickOutside, useEventListener, useScrollLock } from "@vueuse/core";
+import {
+  onClickOutside,
+  useDebounceFn,
+  useEventListener,
+  useScrollLock,
+} from "@vueuse/core";
 import type { VNode } from "vue";
 import {
   defineAsyncComponent,
@@ -23,7 +28,12 @@ import {
   useArrayCycle,
   useSearchSuggestions,
 } from "../composables/index.js";
-import { enableAutoSuggestions, searchProLocales } from "../define.js";
+import {
+  enableAutoSuggestions,
+  searchProLocales,
+  searchProOptions,
+} from "../define.js";
+import { useSearchOptions } from "../helpers/index.js";
 import {
   CLOSE_ICON,
   DOWN_KEY_ICON,
@@ -54,9 +64,11 @@ export default defineComponent({
     const siteLocale = useSiteLocaleData();
     const isMobile = useIsMobile();
     const locale = useLocaleConfig(searchProLocales);
+    const searchOptions = useSearchOptions();
 
     const input = ref("");
-    const { suggestions } = useSearchSuggestions(input);
+    const queries = ref<string[]>([]);
+    const { suggestions } = useSearchSuggestions(queries);
     const displaySuggestion = ref(false);
 
     const {
@@ -83,6 +95,20 @@ export default defineComponent({
         isActive.value = false;
       }
     });
+
+    const updateQueries = useDebounceFn(
+      (): void => {
+        void (
+          searchOptions.value.splitWord?.(input.value) ||
+          Promise.resolve(input.value.split(" "))
+        ).then((result) => {
+          queries.value = result;
+        });
+      },
+      Math.min(searchProOptions.searchDelay, searchProOptions.suggestDelay),
+    );
+
+    watch(input, updateQueries, { immediate: true });
 
     onMounted(() => {
       const isLocked = useScrollLock(document.body);
@@ -220,7 +246,7 @@ export default defineComponent({
               ]),
 
               h(SearchResult, {
-                query: input.value,
+                queries: queries.value,
                 isFocusing: !displaySuggestion.value,
                 onClose: () => {
                   isActive.value = false;

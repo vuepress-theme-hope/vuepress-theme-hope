@@ -22,6 +22,9 @@ export default theme("search-pro", {
       codetabs: true,
       imgMark: true,
     },
-    searchPro: true,
+    searchPro: {
+      searchDelay: 800,
+      suggestDelay: 300,
+    },
   },
 });

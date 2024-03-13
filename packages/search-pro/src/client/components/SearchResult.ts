@@ -4,7 +4,7 @@ import {
   useLocaleConfig,
 } from "@vuepress/helper/client";
 import { useEventListener } from "@vueuse/core";
-import type { VNode } from "vue";
+import type { PropType, VNode } from "vue";
 import { computed, defineComponent, h, reactive, ref, toRef, watch } from "vue";
 import { RouteLink, useRouteLocale, useRouter } from "vuepress/client";
 
@@ -33,8 +33,8 @@ export default defineComponent({
      *
      * 查询字符串
      */
-    query: {
-      type: String,
+    queries: {
+      type: Array as PropType<string[]>,
       required: true,
     },
 
@@ -66,8 +66,8 @@ export default defineComponent({
     } = useSearchResultHistory();
     const enableHistory = enableQueryHistory || enableResultHistory;
 
-    const query = toRef(props, "query");
-    const { results, searching } = useSearchResult(query);
+    const queries = toRef(props, "queries");
+    const { results, searching } = useSearchResult(queries);
 
     const activatedHistoryStatus = reactive({ isQuery: true, index: 0 });
     const activatedResultIndex = ref(0);
@@ -183,7 +183,7 @@ export default defineComponent({
           const item =
             activatedResult.value.contents[activatedResultContentIndex.value];
 
-          addQueryHistory(props.query);
+          addQueryHistory(props.queries.join(" "));
           addResultHistory(item);
           void router.push(getPath(item));
           resetSearchResult();
@@ -225,11 +225,15 @@ export default defineComponent({
         {
           class: [
             "search-pro-result-wrapper",
-            { empty: query.value ? !hasResults.value : !hasHistory.value },
+            {
+              empty: props.queries.length
+                ? !hasResults.value
+                : !hasHistory.value,
+            },
           ],
           id: "search-pro-results",
         },
-        query.value === ""
+        !props.queries.length
           ? enableHistory
             ? hasHistory.value
               ? [
@@ -395,7 +399,7 @@ export default defineComponent({
                                 },
                               ],
                               onClick: () => {
-                                addQueryHistory(props.query);
+                                addQueryHistory(props.queries.join(" "));
                                 addResultHistory(item);
                                 resetSearchResult();
                               },

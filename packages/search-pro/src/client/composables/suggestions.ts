@@ -1,10 +1,9 @@
 import { startsWith } from "@vuepress/helper/client";
-import { useDebounceFn } from "@vueuse/core";
 import type { Ref } from "vue";
 import { onMounted, onUnmounted, ref, watch } from "vue";
 import { usePageData, useRouteLocale } from "vuepress/client";
 
-import { enableAutoSuggestions, searchProOptions } from "../define.js";
+import { enableAutoSuggestions } from "../define.js";
 import { useSearchOptions } from "../helpers/index.js";
 import { createSearchWorker } from "../utils/index.js";
 
@@ -12,7 +11,9 @@ export interface SuggestionsRef {
   suggestions: Ref<string[]>;
 }
 
-export const useSearchSuggestions = (query: Ref<string>): SuggestionsRef => {
+export const useSearchSuggestions = (
+  queries: Ref<string[]>,
+): SuggestionsRef => {
   const suggestions = ref<string[]>([]);
 
   if (enableAutoSuggestions) {
@@ -23,35 +24,46 @@ export const useSearchSuggestions = (query: Ref<string>): SuggestionsRef => {
     onMounted(() => {
       const { suggest, terminate } = createSearchWorker();
 
-      const performAutoSuggest = useDebounceFn((queryString: string): void => {
-        if (queryString)
-          void suggest(queryString, routeLocale.value, searchOptions.value)
-            .then(
-              (suggestions) =>
-                searchOptions.value.suggestionsFilter?.(
+      watch(
+        [queries, routeLocale],
+        ([queries]) => {
+          const query = queries.join(" ");
+          const {
+            // eslint-disable-next-line @typescript-eslint/no-unused-vars
+            searchFilter,
+            // eslint-disable-next-line @typescript-eslint/no-unused-vars
+            splitWord,
+            suggestionsFilter = (suggestions): string[] => suggestions,
+            ...options
+          } = searchOptions.value;
+
+          if (query)
+            suggest(query, routeLocale.value, options)
+              .then((suggestions) =>
+                suggestionsFilter(
                   suggestions,
-                  queryString,
+                  query,
                   routeLocale.value,
                   pageData.value,
-                ) ?? suggestions,
-            )
-            .then((_suggestions) => {
-              suggestions.value = _suggestions.length
-                ? startsWith(_suggestions[0], queryString) &&
-                  !_suggestions[0].slice(queryString.length).includes(" ")
-                  ? _suggestions
-                  : [queryString, ..._suggestions]
-                : [];
-            })
-            .catch((err) => {
-              console.error(err);
-            });
-        else suggestions.value = [];
-      }, searchProOptions.suggestDelay);
-
-      watch([query, routeLocale], () => performAutoSuggest(query.value), {
-        immediate: true,
-      });
+                ),
+              )
+              .then((_suggestions) => {
+                suggestions.value = _suggestions.length
+                  ? startsWith(_suggestions[0], query) &&
+                    !_suggestions[0].slice(query.length).includes(" ")
+                    ? _suggestions
+                    : [query, ..._suggestions]
+                  : [];
+              })
+              .catch((err) => {
+                console.error(err);
+              });
+          else suggestions.value = [];
+        },
+        {
+          immediate: true,
+        },
+      );
 
       onUnmounted(() => {
         terminate();

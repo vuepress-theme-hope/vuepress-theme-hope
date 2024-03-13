@@ -377,6 +377,9 @@ interface SearchLocaleOptions
     locale: string,
     pageData: PageData,
   ) => SearchResult[];
+
+  /** 分词器 */
+  splitWord?: (query: string) => Promise<string[]>;
 }
 
 interface SearchOptions extends SearchLocaleOptions {

@@ -21,20 +21,21 @@ export interface SearchLocaleOptions extends WorkerSearchOptions {
     locale: string,
     pageData: PageData,
   ) => SearchResult[];
+  splitWord?: (query: string) => Promise<string[]>;
 }
 
 export interface SearchOptions extends SearchLocaleOptions {
   locales?: Record<string, SearchLocaleOptions>;
 }
 
-let slimsearchOptions: SearchOptions = {};
+let searchOptions: SearchOptions = {};
 
 const slimsearchSymbol: InjectionKey<SearchOptions> = Symbol(
   __VUEPRESS_DEV__ ? "slimsearch" : "",
 );
 
 export const defineSearchConfig = (options: SearchOptions): void => {
-  slimsearchOptions = options as unknown as SearchOptions;
+  searchOptions = options as unknown as SearchOptions;
 };
 
 export const useSearchOptions = (): ComputedRef<SearchLocaleOptions> => {
@@ -51,5 +52,5 @@ export const useSearchOptions = (): ComputedRef<SearchLocaleOptions> => {
 };
 
 export const injectSearchConfig = (app: App): void => {
-  app.provide(slimsearchSymbol, slimsearchOptions);
+  app.provide(slimsearchSymbol, searchOptions);
 };

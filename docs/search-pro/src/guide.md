@@ -17,6 +17,8 @@ If you want only some of the pages to be indexed, set `filter` options in plugin
 
 When indexing languages that is not word based, like Chinese, Japanese or Korean, you should set `indexOptions` and `indexLocaleOptions` to perform correct word-splitting, see [Customize Index Generation](#customize-index-generation).
 
+Meanwhile, for better client search experience, you should customize the `splitWord` option to split the input query through `defineSearchConfig`.
+
 :::
 
 ### Ultra Fast
