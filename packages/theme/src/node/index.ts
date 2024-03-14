@@ -1,6 +1,3 @@
-/** @deprecated */
-export { hopeTheme as hope } from "./theme.js";
-
 // TODO: Remove this in v2 stable
 export * from "./compact/index.js";
 

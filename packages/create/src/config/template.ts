@@ -44,7 +44,6 @@ export const generateTemplate = async ({
     i18n: boolean;
     workflow: boolean;
   }>([
-    // TODO: Support it
     {
       name: "i18n",
       type: "confirm",
