@@ -140,11 +140,15 @@ export default defineComponent({
 
                   h("button", {
                     class: "bing-switch-prev",
+                    title: "prev image",
+                    type: "button",
                     disabled: bingStorage.value.index === 0,
                     onClick: () => prev(),
                   }),
                   h("button", {
                     class: "bing-switch-next",
+                    title: "next image",
+                    type: "button",
                     disabled:
                       bingStorage.value.index ===
                       bingStorage.value.data.length - 1,

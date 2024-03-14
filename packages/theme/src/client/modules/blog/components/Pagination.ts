@@ -206,6 +206,7 @@ export default defineComponent({
                   "button",
                   {
                     class: "vp-pagination-button",
+                    type: "button",
                     role: "navigation",
                     title: locale.value.action,
                     onClick: () => jumpPage(input.value),
