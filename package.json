@@ -71,7 +71,7 @@
     "cpx2": "7.0.1",
     "cross-env": "7.0.3",
     "cz-git": "1.9.0",
-    "esbuild": "0.20.1",
+    "esbuild": "0.20.2",
     "eslint": "8.57.0",
     "eslint-config-prettier": "9.1.0",
     "eslint-plugin-import": "2.29.1",
