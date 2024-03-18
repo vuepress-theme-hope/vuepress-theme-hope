@@ -265,8 +265,8 @@ importers:
         specifier: 1.30.0
         version: 1.30.0
       markmap-lib:
-        specifier: 0.16.0
-        version: 0.16.0(markmap-common@0.16.0)
+        specifier: 0.16.1
+        version: 0.16.1(markmap-common@0.16.0)
       markmap-toolbar:
         specifier: 0.16.0
         version: 0.16.0(markmap-common@0.16.0)
@@ -382,8 +382,8 @@ importers:
         specifier: 1.30.0
         version: 1.30.0
       markmap-lib:
-        specifier: 0.16.0
-        version: 0.16.0(markmap-common@0.16.0)
+        specifier: 0.16.1
+        version: 0.16.1(markmap-common@0.16.0)
       markmap-toolbar:
         specifier: 0.16.0
         version: 0.16.0(markmap-common@0.16.0)
@@ -442,8 +442,8 @@ importers:
         specifier: 1.30.0
         version: 1.30.0
       markmap-lib:
-        specifier: 0.16.0
-        version: 0.16.0(markmap-common@0.16.0)
+        specifier: 0.16.1
+        version: 0.16.1(markmap-common@0.16.0)
       markmap-toolbar:
         specifier: 0.16.0
         version: 0.16.0(markmap-common@0.16.0)
@@ -2777,27 +2777,6 @@ packages:
       '@commitlint/types': 19.0.3
     dev: true
 
-  /@commitlint/load@19.0.3(@types/node@20.11.25)(typescript@5.4.2):
-    resolution: {integrity: sha512-18Tk/ZcDFRKIoKfEcl7kC+bYkEQ055iyKmGsYDoYWpKf6FUvBrP9bIWapuy/MB+kYiltmP9ITiUx6UXtqC9IRw==}
-    engines: {node: '>=v18'}
-    requiresBuild: true
-    dependencies:
-      '@commitlint/config-validator': 19.0.3
-      '@commitlint/execute-rule': 19.0.0
-      '@commitlint/resolve-extends': 19.0.3
-      '@commitlint/types': 19.0.3
-      chalk: 5.3.0
-      cosmiconfig: 8.3.6(typescript@5.4.2)
-      cosmiconfig-typescript-loader: 5.0.0(@types/node@20.11.25)(cosmiconfig@8.3.6)(typescript@5.4.2)
-      lodash.isplainobject: 4.0.6
-      lodash.merge: 4.6.2
-      lodash.uniq: 4.5.0
-    transitivePeerDependencies:
-      - '@types/node'
-      - typescript
-    dev: true
-    optional: true
-
   /@commitlint/load@19.2.0(@types/node@20.11.25)(typescript@5.4.2):
     resolution: {integrity: sha512-XvxxLJTKqZojCxaBQ7u92qQLFMMZc4+p9qrIq/9kJDy8DOrEa7P1yx7Tjdc2u2JxIalqT4KOGraVgCE7eCYJyQ==}
     engines: {node: '>=v18'}
@@ -2841,20 +2820,6 @@ packages:
       git-raw-commits: 4.0.0
       minimist: 1.2.8
     dev: true
-
-  /@commitlint/resolve-extends@19.0.3:
-    resolution: {integrity: sha512-18BKmta8OC8+Ub+Q3QGM9l27VjQaXobloVXOrMvu8CpEwJYv62vC/t7Ka5kJnsW0tU9q1eMqJFZ/nN9T/cOaIA==}
-    engines: {node: '>=v18'}
-    requiresBuild: true
-    dependencies:
-      '@commitlint/config-validator': 19.0.3
-      '@commitlint/types': 19.0.3
-      global-directory: 4.0.1
-      import-meta-resolve: 4.0.0
-      lodash.mergewith: 4.6.2
-      resolve-from: 5.0.0
-    dev: true
-    optional: true
 
   /@commitlint/resolve-extends@19.1.0:
     resolution: {integrity: sha512-z2riI+8G3CET5CPgXJPlzftH+RiWYLMYv4C9tSLdLXdr6pBNimSKukYP9MS27ejmscqCTVA4almdLh0ODD2KYg==}
@@ -7244,21 +7209,6 @@ packages:
     dependencies:
       layout-base: 1.0.2
 
-  /cosmiconfig-typescript-loader@5.0.0(@types/node@20.11.25)(cosmiconfig@8.3.6)(typescript@5.4.2):
-    resolution: {integrity: sha512-+8cK7jRAReYkMwMiG+bxhcNKiHJDM6bR9FD/nGBXOWdMLuYawjF5cGrtLilJ+LGd3ZjCXnJjR5DkfWPoIVlqJA==}
-    engines: {node: '>=v16'}
-    peerDependencies:
-      '@types/node': '*'
-      cosmiconfig: '>=8.2'
-      typescript: '>=4'
-    dependencies:
-      '@types/node': 20.11.25
-      cosmiconfig: 8.3.6(typescript@5.4.2)
-      jiti: 1.21.0
-      typescript: 5.4.2
-    dev: true
-    optional: true
-
   /cosmiconfig-typescript-loader@5.0.0(@types/node@20.11.25)(cosmiconfig@9.0.0)(typescript@5.4.2):
     resolution: {integrity: sha512-+8cK7jRAReYkMwMiG+bxhcNKiHJDM6bR9FD/nGBXOWdMLuYawjF5cGrtLilJ+LGd3ZjCXnJjR5DkfWPoIVlqJA==}
     engines: {node: '>=v16'}
@@ -7272,24 +7222,6 @@ packages:
       jiti: 1.21.0
       typescript: 5.4.2
     dev: true
-
-  /cosmiconfig@8.3.6(typescript@5.4.2):
-    resolution: {integrity: sha512-kcZ6+W5QzcJ3P1Mt+83OUv/oHFqZHIx8DuxG6eZ5RGMERoLqp4BuGjhHLYGK+Kf5XVkQvqBSmAy/nGWN3qDgEA==}
-    engines: {node: '>=14'}
-    requiresBuild: true
-    peerDependencies:
-      typescript: '>=4.9.5'
-    peerDependenciesMeta:
-      typescript:
-        optional: true
-    dependencies:
-      import-fresh: 3.3.0
-      js-yaml: 4.1.0
-      parse-json: 5.2.0
-      path-type: 4.0.0
-      typescript: 5.4.2
-    dev: true
-    optional: true
 
   /cosmiconfig@9.0.0(typescript@5.4.2):
     resolution: {integrity: sha512-itvL5h8RETACmOTFc4UfIyB2RfEHi71Ax6E/PivVxq9NseKbOWpeyHEOIbmAw1rs8Ak0VursQNww7lf7YtUwzg==}
@@ -7470,7 +7402,7 @@ packages:
       longest: 2.0.1
       word-wrap: 1.2.5
     optionalDependencies:
-      '@commitlint/load': 19.0.3(@types/node@20.11.25)(typescript@5.4.2)
+      '@commitlint/load': 19.2.0(@types/node@20.11.25)(typescript@5.4.2)
     transitivePeerDependencies:
       - '@types/node'
       - typescript
@@ -11193,6 +11125,17 @@ packages:
       '@babel/runtime': 7.24.0
       cheerio: 1.0.0-rc.12
       markmap-common: 0.16.0
+    dev: false
+
+  /markmap-html-parser@0.16.1(markmap-common@0.16.0):
+    resolution: {integrity: sha512-/Mgm4g1qMQ8uEOz8h8K+jPspdgjfw29NqmfTLZSt8yG+vW7fWWduPjGRFc5axAZxCzP7PTzZLEuOxAqOwEg8Bg==}
+    peerDependencies:
+      markmap-common: '*'
+    dependencies:
+      '@babel/runtime': 7.24.0
+      cheerio: 1.0.0-rc.12
+      markmap-common: 0.16.0
+    dev: true
 
   /markmap-lib@0.16.0(markmap-common@0.16.0):
     resolution: {integrity: sha512-0UxlLYUiGZ4oJbOYu5GHNHy9Rqt9e/DRu2iWvTHl73YPOEHV21ccaU+rmjQMkgnRabYManX8wRlgO4WocemxUQ==}
@@ -11209,6 +11152,24 @@ packages:
       prismjs: 1.29.0
       remarkable: 2.0.1
       remarkable-katex: 1.2.1
+    dev: false
+
+  /markmap-lib@0.16.1(markmap-common@0.16.0):
+    resolution: {integrity: sha512-jD8VsB67m677IRehGSwwVJDlC6PS+xzDKsJOwdvjZ+ndfXrHa1lyqfvR6mIwvGGUIciF86YEITSKL9hQTHE4Rw==}
+    peerDependencies:
+      markmap-common: '*'
+    dependencies:
+      '@babel/runtime': 7.24.0
+      highlight.js: 11.9.0
+      js-yaml: 4.1.0
+      katex: 0.16.9
+      markmap-common: 0.16.0
+      markmap-html-parser: 0.16.1(markmap-common@0.16.0)
+      markmap-view: 0.16.0(markmap-common@0.16.0)
+      prismjs: 1.29.0
+      remarkable: 2.0.1
+      remarkable-katex: 1.2.1
+    dev: true
 
   /markmap-toolbar@0.16.0(markmap-common@0.16.0):
     resolution: {integrity: sha512-Umnxc6Y4T0CioPlmvfm5M5D2/7BJTA82kvgRQIu/y0oQzJl0h3mxBOKPrhok+89RotagPwhQ4g7el4Td2W+tDQ==}
