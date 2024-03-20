@@ -15,9 +15,13 @@ import {
   version,
 } from "./config/index.js";
 import { createPackageJson } from "./packageJson.js";
-import { getRegistry } from "./registry.js";
+import { createTsConfig } from "./tsconfig.js";
 import type { PackageManager } from "./utils/index.js";
-import { ensureDirExistSync, getPackageManager } from "./utils/index.js";
+import {
+  ensureDirExistSync,
+  getPackageManager,
+  getRegistry,
+} from "./utils/index.js";
 
 interface CreateOptions {
   bundler?: Bundler | null;
@@ -148,6 +152,7 @@ cli
           cwd: targetDir,
           source: "src",
         });
+        createTsConfig({ cwd: targetDir, source: "src", locale });
         await generateTemplate({
           preset,
           lang,
@@ -190,6 +195,8 @@ cli
           locale,
           source: targetDir,
         });
+
+        createTsConfig({ source: targetDir, locale });
 
         await generateTemplate({
           packageManager,

@@ -9,6 +9,8 @@ export interface CreateLocale {
     getVersion: string;
     createPackage: string;
     updatePackage: string;
+    createTsConfig: string;
+    updateTsConfig: string;
     generateTemplate: string;
     install: string;
     devServer: string;
@@ -53,6 +55,8 @@ export const i18n: Record<Lang, CreateLocale> = {
       getVersion: "获取依赖的最新版本...",
       createPackage: "生成 package.json...",
       updatePackage: "更新 package.json...",
+      createTsConfig: "生成 tsconfig.json...",
+      updateTsConfig: "更新 tsconfig.json...",
       generateTemplate: "生成模板...",
       install: "安装依赖...",
       devServer:
@@ -100,6 +104,8 @@ export const i18n: Record<Lang, CreateLocale> = {
       getVersion: "Getting latest version of deps...",
       createPackage: "Generating package.json...",
       updatePackage: "Updating package.json...",
+      createTsConfig: "Generating tsconfig.json...",
+      updateTsConfig: "Updating tsconfig.json...",
       generateTemplate: "Generating Template...",
       install: "Installing Deps...",
       devServer:
