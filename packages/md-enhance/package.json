@@ -106,7 +106,7 @@
     "@types/babel__core": "7.20.5",
     "@types/js-yaml": "4.0.9",
     "@vuepress/bundler-vite": "2.0.0-rc.8",
-    "markdown-it": "14.0.0",
+    "markdown-it": "14.1.0",
     "typescript": "5.4.2"
   },
   "peerDependencies": {
