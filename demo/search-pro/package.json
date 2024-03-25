@@ -15,7 +15,7 @@
     "demo:webpack-dev": "vuepress-webpack dev src"
   },
   "devDependencies": {
-    "@vuepress/bundler-vite": "2.0.0-rc.8",
+    "@vuepress/bundler-vite": "2.0.0-rc.9",
     "@vuepress/bundler-webpack": "2.0.0-rc.8",
     "@vuepress/theme-default": "2.0.0-rc.20",
     "nodejs-jieba": "0.1.2",
