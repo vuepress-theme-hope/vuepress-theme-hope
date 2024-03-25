@@ -4,6 +4,22 @@ All notable changes to this project will be documented in this file. See [Conven
 
 <!-- #region recent-change -->
 
+## [2.0.0-rc.32](https://github.com/vuepress-theme-hope/vuepress-theme-hope/compare/v2.0.0-rc.31...v2.0.0-rc.32) (2024-03-25)
+
+### Features
+
+- **create:** generate tsconfig.json ([663df71](https://github.com/vuepress-theme-hope/vuepress-theme-hope/commit/663df71f4cd4883b512d8c7f5b58f0e2099d0e43))
+- **search-pro:** add splitWords ([9f70b0e](https://github.com/vuepress-theme-hope/vuepress-theme-hope/commit/9f70b0ef1cf51cc1c35132ead4373c2e2102d916))
+- **theme:** improve a11y ([ca90c40](https://github.com/vuepress-theme-hope/vuepress-theme-hope/commit/ca90c407302a6447546515907b9c0d07bcc3de56))
+- **theme:** support breadcrumbExclude, close [#3971](https://github.com/vuepress-theme-hope/vuepress-theme-hope/issues/3971) ([7bd344b](https://github.com/vuepress-theme-hope/vuepress-theme-hope/commit/7bd344b9ecadd05d8ad55179cd10d3a9df64a034))
+
+### Bug Fixes
+
+- **deps:** update dependency inquirer to v9.2.16 ([#3977](https://github.com/vuepress-theme-hope/vuepress-theme-hope/issues/3977)) ([4caffcf](https://github.com/vuepress-theme-hope/vuepress-theme-hope/commit/4caffcfae6b3fcb994fddd608ddd613512f08945))
+- **md-enhance:** fix gitInclude issue, close [#3972](https://github.com/vuepress-theme-hope/vuepress-theme-hope/issues/3972) ([fb29e94](https://github.com/vuepress-theme-hope/vuepress-theme-hope/commit/fb29e9475ae4af8da1ffce3663f4e866fe4c2a80))
+- **theme:** fix comment width, close [#3986](https://github.com/vuepress-theme-hope/vuepress-theme-hope/issues/3986) ([934712a](https://github.com/vuepress-theme-hope/vuepress-theme-hope/commit/934712a8be6d0799774bcadddbe9aa12c3f1530f))
+- **theme:** fix route resolve ([95d9161](https://github.com/vuepress-theme-hope/vuepress-theme-hope/commit/95d91617aee2d57f8a66e6eb82e3d241a079ac41))
+
 ## [2.0.0-rc.31](https://github.com/vuepress-theme-hope/vuepress-theme-hope/compare/v2.0.0-rc.30...v2.0.0-rc.31) (2024-03-11)
 
 ### Features
