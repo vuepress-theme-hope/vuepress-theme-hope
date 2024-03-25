@@ -4,7 +4,7 @@ import type { MetaLocaleOptions, MetaLocateData } from "./meta.js";
 import type { NavbarLocaleData, NavbarLocaleOptions } from "./navbar.js";
 import type { RouteLocaleData } from "./route.js";
 import type { SidebarLocaleOptions, SidebarSorter } from "./sidebar.js";
-import type { PageInfo } from "../../info.js";
+import type { PageInfoType } from "../../info.js";
 
 export interface LayoutLocaleData {
   /**
@@ -79,7 +79,7 @@ export interface LayoutLocaleOptions
    *
    * @default ["Author", "Original", "Date", "PageView", "ReadingTime", "Category", "Tag"]
    */
-  pageInfo?: PageInfo[] | false;
+  pageInfo?: PageInfoType[] | false;
 
   /**
    * Whether show toc list in desktop mode

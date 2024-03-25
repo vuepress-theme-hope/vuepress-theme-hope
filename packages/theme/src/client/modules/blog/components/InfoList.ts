@@ -21,7 +21,7 @@ import {
   useTagMap,
 } from "@theme-hope/modules/blog/composables/index";
 
-import { ArticleInfoType } from "../../../../shared/index.js";
+import { PageInfo } from "../../../../shared/index.js";
 
 import "../styles/info-list.scss";
 
@@ -115,7 +115,7 @@ export default defineComponent({
                               h(
                                 RouteLink,
                                 { to: path },
-                                () => info[ArticleInfoType.title],
+                                () => info[PageInfo.title],
                               ),
                             ),
                         ),

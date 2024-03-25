@@ -15,6 +15,8 @@ tag:
 
 你也可以通过 `breadcrumbIcon` 字段 <Badge text="支持页面配置" /> 控制路径导航的图标显示，默认值为 `true`。
 
+如果你不希望某个页面被添加到路径导航中（例如：首页），你可以在页面的 frontmatter 中设置 `breadcrumbExclude: true`。
+
 <!-- more -->
 
 [^support-page-config]: **支持页面配置** <Badge text="支持页面配置" />

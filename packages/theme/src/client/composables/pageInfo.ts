@@ -23,7 +23,7 @@ import type {
 
 import { useThemeLocaleData } from "./themeData.js";
 import type {
-  PageInfo,
+  PageInfoType,
   ThemeNormalPageFrontmatter,
 } from "../../shared/index.js";
 
@@ -90,7 +90,7 @@ export const usePageDate = (): ComputedRef<Date | null> => {
 
 export const usePageInfo = (): {
   info: ComputedRef<PageInfoProps>;
-  items: ComputedRef<PageInfo[] | false | null>;
+  items: ComputedRef<PageInfoType[] | false | null>;
 } => {
   const themeLocale = useThemeLocaleData();
   const page = usePageData<{

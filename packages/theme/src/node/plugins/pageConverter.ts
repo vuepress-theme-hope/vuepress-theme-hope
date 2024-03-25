@@ -9,7 +9,7 @@ import type {
   ThemePageData,
   ThemeProjectHomePageFrontmatter,
 } from "../../shared/index.js";
-import { ArticleInfoType, PageType } from "../../shared/index.js";
+import { PageInfo } from "../../shared/index.js";
 import { checkFrontmatter } from "../check/index.js";
 import { convertFrontmatter } from "../compact/index.js";
 import type { HopeThemeBehaviorOptions } from "../typings/index.js";
@@ -20,41 +20,26 @@ import type { HopeThemeBehaviorOptions } from "../typings/index.js";
  * Inject basic page info
  */
 export const injectPageInfo = (page: Page<ThemePageData>): void => {
-  const { filePathRelative } = page;
   const frontmatter = page.frontmatter as
     | ThemeProjectHomePageFrontmatter
     | ThemeBlogHomePageFrontmatter
     | ThemeNormalPageFrontmatter;
 
-  const isArticle =
-    // Declaring this is an article
-    frontmatter.article ||
-    // Generated from markdown files
-    Boolean(frontmatter.article !== false && filePathRelative);
-  const isSlide = frontmatter.layout === "Slide";
+  // Set title
+  page.routeMeta[PageInfo.title] = page.title;
 
-  // Save page type to routeMeta
-  page.routeMeta[ArticleInfoType.type] = frontmatter.home
-    ? PageType.home
-    : isSlide
-      ? PageType.slide
-      : isArticle
-        ? PageType.article
-        : PageType.page;
+  // Set short title
+  if ("shortTitle" in frontmatter)
+    page.routeMeta[PageInfo.shortTitle] = frontmatter.shortTitle;
 
-  // Save relative file path into page data to generate edit link
-  page.data.filePathRelative = filePathRelative;
-
-  page.routeMeta[ArticleInfoType.title] = page.title;
-
-  if ("icon" in frontmatter)
-    page.routeMeta[ArticleInfoType.icon] = frontmatter.icon;
+  // Set icon
+  if ("icon" in frontmatter) page.routeMeta[PageInfo.icon] = frontmatter.icon;
 
   // Catalog related
   if (endsWith(page.path, "/")) {
     if (isPlainObject(frontmatter.dir)) {
       if ("order" in frontmatter.dir)
-        page.routeMeta[ArticleInfoType.order] = (
+        page.routeMeta[PageInfo.order] = (
           frontmatter as ThemeNormalPageFrontmatter
         ).dir!.order;
 
@@ -62,18 +47,18 @@ export const injectPageInfo = (page: Page<ThemePageData>): void => {
         "index" in frontmatter.dir &&
         (frontmatter as ThemeNormalPageFrontmatter).dir!.index === false
       )
-        page.routeMeta[ArticleInfoType.index] = false;
+        page.routeMeta[PageInfo.index] = false;
     }
   } else {
     if ("order" in frontmatter)
-      page.routeMeta[ArticleInfoType.order] = frontmatter.order;
+      page.routeMeta[PageInfo.order] = frontmatter.order;
     if ("index" in frontmatter && frontmatter.index === false)
-      page.routeMeta[ArticleInfoType.index] = false;
+      page.routeMeta[PageInfo.index] = false;
   }
 
-  // Resolve shortTitle
-  if ("shortTitle" in frontmatter)
-    page.routeMeta[ArticleInfoType.shortTitle] = frontmatter.shortTitle;
+  // breadcrumb
+  if (frontmatter.breadcrumbExclude)
+    page.routeMeta[PageInfo.breadcrumbExclude] = true;
 };
 
 export const extendsPagePlugin = (
@@ -88,10 +73,12 @@ export const extendsPagePlugin = (
     name: "vuepress-theme-hope-extends-page",
 
     extendsPage: (page): void => {
+      const { filePathRelative } = page;
+
       if (behavior.compact)
         page.frontmatter = convertFrontmatter(
           page.frontmatter,
-          page.filePathRelative,
+          filePathRelative,
         );
       if (behavior.check) checkFrontmatter(page);
 
@@ -102,6 +89,14 @@ export const extendsPagePlugin = (
         page.frontmatter["feed"] = false;
         page.frontmatter["seo"] = false;
       }
+
+      const enableEditLink =
+        themeData.locales[page.pathLocale].editLink ?? true;
+
+      // Set edit link
+      if (enableEditLink)
+        // Save relative file path into page data to generate edit link
+        (<Page<ThemePageData>>page).data.filePathRelative = filePathRelative;
 
       injectPageInfo(<Page<ThemePageData>>page);
       injectLocalizedDate(page);

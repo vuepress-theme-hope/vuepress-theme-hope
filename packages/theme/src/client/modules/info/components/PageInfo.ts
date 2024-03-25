@@ -20,7 +20,7 @@ import type {
   PageTag,
 } from "@theme-hope/modules/info/utils/index";
 
-import type { PageInfo } from "../../../../shared/index.js";
+import type { PageInfoType } from "../../../../shared/index.js";
 
 import "balloon-css/balloon.css";
 import "../styles/page-info.scss";
@@ -118,8 +118,8 @@ export default defineComponent({
      * 待展示的文章信息
      */
     items: {
-      type: [Array, Boolean] as PropType<PageInfo[] | false>,
-      default: (): PageInfo[] => [
+      type: [Array, Boolean] as PropType<PageInfoType[] | false>,
+      default: (): PageInfoType[] => [
         "Author",
         "Original",
         "Date",

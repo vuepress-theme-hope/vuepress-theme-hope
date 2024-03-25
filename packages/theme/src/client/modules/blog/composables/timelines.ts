@@ -4,20 +4,20 @@ import { useBlogType } from "@vuepress/plugin-blog/client";
 import type { ComputedRef, InjectionKey } from "vue";
 import { computed, inject, provide } from "vue";
 
-import type { ArticleInfo } from "../../../../shared/index.js";
-import { ArticleInfoType } from "../../../../shared/index.js";
+import type { ArticleInfoData } from "../../../../shared/index.js";
+import { ArticleInfo } from "../../../../shared/index.js";
 
 declare const __VUEPRESS_DEV__: boolean;
 
 export interface TimelineItem {
   year: number;
-  items: { date: string; path: string; info: ArticleInfo }[];
+  items: { date: string; path: string; info: ArticleInfoData }[];
 }
 
 export type TimelinesRef = ComputedRef<{
   path: string;
   config: TimelineItem[];
-  items: Article<ArticleInfo>[];
+  items: Article<ArticleInfoData>[];
 }>;
 
 export const timelinesSymbol: InjectionKey<TimelinesRef> = Symbol(
@@ -39,14 +39,14 @@ export const useTimelines = (): TimelinesRef => {
  * Provide timelines
  */
 export const setupTimelines = (): void => {
-  const timelines = useBlogType<ArticleInfo>("timeline");
+  const timelines = useBlogType<ArticleInfoData>("timeline");
 
   const timelineItems = computed(() => {
     const timelineItems: TimelineItem[] = [];
 
     // Filter before sort
     timelines.value.items.forEach(({ info, path }) => {
-      const result = getDate(info[ArticleInfoType.date]);
+      const result = getDate(info[ArticleInfo.date]);
 
       if (result) {
         const year = result.getFullYear();

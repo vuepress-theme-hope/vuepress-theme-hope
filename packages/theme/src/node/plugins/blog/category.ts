@@ -4,12 +4,12 @@ import type { GitData } from "@vuepress/plugin-git";
 
 import { defaultPageSorter } from "./utils.js";
 import type {
-  ArticleInfo,
+  ArticleInfoData,
   BlogOptions,
   ThemeData,
   ThemeNormalPageFrontmatter,
 } from "../../../shared/index.js";
-import { ArticleInfoType } from "../../../shared/index.js";
+import { ArticleInfo } from "../../../shared/index.js";
 
 /** @private */
 export const getBlogCategoryCategory = (
@@ -18,18 +18,18 @@ export const getBlogCategoryCategory = (
 ): BlogCategoryOptions<
   { git: GitData },
   ThemeNormalPageFrontmatter,
-  { routeMeta: ArticleInfo }
+  { routeMeta: ArticleInfoData }
 > =>
   <
     BlogCategoryOptions<
       { git: GitData },
       ThemeNormalPageFrontmatter,
-      { routeMeta: ArticleInfo }
+      { routeMeta: ArticleInfoData }
     >
   >{
     key: "category",
     getter: ({ routeMeta }) => {
-      const category = routeMeta[ArticleInfoType.category];
+      const category = routeMeta[ArticleInfo.category];
 
       return isArray(category) ? category : category ? [category] : [];
     },
@@ -61,18 +61,18 @@ export const getBlogTagCategory = (
 ): BlogCategoryOptions<
   { git: GitData },
   ThemeNormalPageFrontmatter,
-  { routeMeta: ArticleInfo }
+  { routeMeta: ArticleInfoData }
 > =>
   <
     BlogCategoryOptions<
       { git: GitData },
       ThemeNormalPageFrontmatter,
-      { routeMeta: ArticleInfo }
+      { routeMeta: ArticleInfoData }
     >
   >{
     key: "tag",
     getter: ({ routeMeta }) => {
-      const tag = routeMeta[ArticleInfoType.tag];
+      const tag = routeMeta[ArticleInfo.tag];
 
       return isArray(tag) ? tag : tag ? [tag] : [];
     },

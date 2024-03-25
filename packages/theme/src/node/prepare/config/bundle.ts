@@ -1,7 +1,7 @@
 import { getRealPath } from "@vuepress/helper";
 import type { App } from "vuepress/core";
 
-import { ArticleInfoType } from "../../../shared/index.js";
+import { PageInfo } from "../../../shared/index.js";
 import type { ThemeStatus } from "../../config/index.js";
 import { BUNDLE_FOLDER } from "../../utils.js";
 
@@ -30,15 +30,15 @@ export const prepareBundleConfigFile = (
     );
     actions.push(`\
 defineCatalogInfoGetter((meta) => {
-  const title = meta.${ArticleInfoType.title};
-  const shouldIndex = meta.${ArticleInfoType.index} !== false;
-  const icon = meta.${ArticleInfoType.icon};
+  const title = meta.${PageInfo.title};
+  const shouldIndex = meta.${PageInfo.index} !== false;
+  const icon = meta.${PageInfo.icon};
 
   return shouldIndex ? {
     title,
     content: icon ? () =>[h(HopeIcon, { icon }), title] : null,
-    order: meta.${ArticleInfoType.order},
-    index: meta.${ArticleInfoType.index},
+    order: meta.${PageInfo.order},
+    index: meta.${PageInfo.index},
   } : null;
 });`);
   }

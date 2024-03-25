@@ -3,11 +3,11 @@ import { useBlogType } from "@vuepress/plugin-blog/client";
 import type { ComputedRef, InjectionKey } from "vue";
 import { inject, provide } from "vue";
 
-import type { ArticleInfo } from "../../../../shared/index.js";
+import type { ArticleInfoData } from "../../../../shared/index.js";
 
 declare const __VUEPRESS_DEV__: boolean;
 
-export type ArticlesRef = ComputedRef<BlogTypeData<ArticleInfo>>;
+export type ArticlesRef = ComputedRef<BlogTypeData<ArticleInfoData>>;
 
 export const articlesSymbol: InjectionKey<ArticlesRef> = Symbol(
   __VUEPRESS_DEV__ ? "articles" : "",
@@ -25,7 +25,7 @@ export const useArticles = (): ArticlesRef => {
 };
 
 export const setupArticles = (): void => {
-  const articles = useBlogType<ArticleInfo>("article");
+  const articles = useBlogType<ArticleInfoData>("article");
 
   provide(articlesSymbol, articles);
 };

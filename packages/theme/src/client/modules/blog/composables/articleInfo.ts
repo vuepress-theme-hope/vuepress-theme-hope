@@ -18,16 +18,19 @@ import type {
 import { useCategoryMap } from "./categoryMap.js";
 import { useBlogOptions } from "./options.js";
 import { useTagMap } from "./tagMap.js";
-import type { ArticleInfo, PageInfo } from "../../../../shared/index.js";
-import { ArticleInfoType } from "../../../../shared/index.js";
+import type {
+  ArticleInfoData,
+  PageInfoType,
+} from "../../../../shared/index.js";
+import { ArticleInfo } from "../../../../shared/index.js";
 
 export type AuthorRef = ComputedRef<AuthorInfo[]>;
 
-export const useArticleAuthor = (info: Ref<ArticleInfo>): AuthorRef => {
+export const useArticleAuthor = (info: Ref<ArticleInfoData>): AuthorRef => {
   const themeLocale = useThemeLocaleData();
 
   return computed(() => {
-    const { [ArticleInfoType.author]: author } = info.value;
+    const { [ArticleInfo.author]: author } = info.value;
 
     if (author) return getAuthor(author);
     if (author === false) return [];
@@ -38,11 +41,11 @@ export const useArticleAuthor = (info: Ref<ArticleInfo>): AuthorRef => {
 
 export type CategoryRef = ComputedRef<PageCategory[]>;
 
-export const useArticleCategory = (info: Ref<ArticleInfo>): CategoryRef => {
+export const useArticleCategory = (info: Ref<ArticleInfoData>): CategoryRef => {
   const categoryMap = useCategoryMap();
 
   return computed(() =>
-    getCategory(info.value[ArticleInfoType.category]).map((name) => ({
+    getCategory(info.value[ArticleInfo.category]).map((name) => ({
       name,
       path: categoryMap.value.map[name].path,
     })),
@@ -51,11 +54,11 @@ export const useArticleCategory = (info: Ref<ArticleInfo>): CategoryRef => {
 
 export type TagRef = ComputedRef<PageTag[]>;
 
-export const useArticleTag = (info: Ref<ArticleInfo>): TagRef => {
+export const useArticleTag = (info: Ref<ArticleInfoData>): TagRef => {
   const tagMap = useTagMap();
 
   return computed(() =>
-    getTag(info.value[ArticleInfoType.tag]).map((name) => ({
+    getTag(info.value[ArticleInfo.tag]).map((name) => ({
       name,
       path: tagMap.value.map[name].path,
     })),
@@ -64,19 +67,19 @@ export const useArticleTag = (info: Ref<ArticleInfo>): TagRef => {
 
 export type DateRef = ComputedRef<Date | null>;
 
-export const useArticleDate = (info: Ref<ArticleInfo>): DateRef =>
+export const useArticleDate = (info: Ref<ArticleInfoData>): DateRef =>
   computed(() => {
-    const { [ArticleInfoType.date]: timestamp } = info.value;
+    const { [ArticleInfo.date]: timestamp } = info.value;
 
     return getDate(timestamp);
   });
 
 export const useArticleInfo = (props: {
-  info: ArticleInfo;
+  info: ArticleInfoData;
   path: string;
 }): {
   info: ComputedRef<PageInfoProps>;
-  items: ComputedRef<PageInfo[] | false | undefined>;
+  items: ComputedRef<PageInfoType[] | false | undefined>;
 } => {
   const articleInfo = toRef(props, "info");
   const blogOptions = useBlogOptions();
@@ -90,15 +93,15 @@ export const useArticleInfo = (props: {
     author: author.value,
     category: category.value,
     date: date.value,
-    localizedDate: articleInfo.value[ArticleInfoType.localizedDate] || "",
+    localizedDate: articleInfo.value[ArticleInfo.localizedDate] || "",
     tag: tag.value,
-    isOriginal: articleInfo.value[ArticleInfoType.isOriginal] || false,
-    readingTime: articleInfo.value[ArticleInfoType.readingTime] || null,
+    isOriginal: articleInfo.value[ArticleInfo.isOriginal] || false,
+    readingTime: articleInfo.value[ArticleInfo.readingTime] || null,
     readingTimeLocale:
-      articleInfo.value[ArticleInfoType.readingTime] &&
+      articleInfo.value[ArticleInfo.readingTime] &&
       readingTimeLocaleConfig.value
         ? getReadingTimeLocale(
-            articleInfo.value[ArticleInfoType.readingTime],
+            articleInfo.value[ArticleInfo.readingTime],
             readingTimeLocaleConfig.value,
           )
         : null,

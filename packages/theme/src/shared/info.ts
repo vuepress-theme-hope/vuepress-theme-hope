@@ -3,7 +3,7 @@
  *
  * 页面信息类型
  */
-export type PageInfo =
+export type PageInfoType =
   | "Author"
   | "Category"
   | "Date"

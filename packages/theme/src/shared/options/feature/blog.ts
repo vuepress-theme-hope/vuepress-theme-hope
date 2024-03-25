@@ -1,4 +1,4 @@
-import type { PageInfo } from "../../info.js";
+import type { PageInfoType } from "../../info.js";
 
 export interface BlogLocaleData extends Record<string, string> {
   /** 文章文字 */
@@ -167,7 +167,7 @@ export interface BlogLocaleOptions {
    *
    * @default ["Author", "Original", "Date", "PageView", "ReadingTime", "Category", "Tag"]
    */
-  articleInfo?: PageInfo[];
+  articleInfo?: PageInfoType[];
 }
 
 export interface BlogLocaleConfig extends Omit<BlogLocaleOptions, "media"> {

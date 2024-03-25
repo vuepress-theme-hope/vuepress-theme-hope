@@ -17,7 +17,7 @@ import {
   useStars,
 } from "@theme-hope/modules/blog/composables/index";
 
-import type { ArticleInfo } from "../../../../shared/index.js";
+import type { ArticleInfoData } from "../../../../shared/index.js";
 
 import "../styles/page.scss";
 
@@ -25,7 +25,7 @@ export default defineComponent({
   name: "BlogPage",
 
   setup() {
-    const blogType = useBlogType<ArticleInfo>();
+    const blogType = useBlogType<ArticleInfoData>();
     const frontmatter = usePageFrontmatter<BlogPluginFrontmatter>();
     const page = usePageData();
     const articles = useArticles();

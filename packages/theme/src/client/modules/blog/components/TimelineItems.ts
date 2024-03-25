@@ -11,7 +11,7 @@ import {
 } from "@theme-hope/modules/blog/composables/index";
 import TOC from "@theme-hope/modules/info/components/TOC";
 
-import { ArticleInfoType } from "../../../../shared/index.js";
+import { PageInfo } from "../../../../shared/index.js";
 
 import "../styles/timeline-items.scss";
 
@@ -68,7 +68,7 @@ export default defineComponent({
                             class: "timeline-title",
                             to: path,
                           },
-                          () => info[ArticleInfoType.title],
+                          () => info[PageInfo.title],
                         ),
                       ]),
                     ),

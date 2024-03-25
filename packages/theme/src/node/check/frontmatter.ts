@@ -87,6 +87,7 @@ export const checkFrontmatter = (page: Page): void => {
     "editLink",
     "breadcrumb",
     "breadcrumbIcon",
+    "breadcrumbExclude",
     "pageview",
     "article",
   ].forEach((key) => {

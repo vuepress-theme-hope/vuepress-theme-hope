@@ -4,12 +4,12 @@ import type { GitData } from "@vuepress/plugin-git";
 
 import { defaultPageSorter } from "./utils.js";
 import type {
-  ArticleInfo,
+  ArticleInfoData,
   BlogOptions,
   ThemeData,
   ThemeNormalPageFrontmatter,
 } from "../../../shared/index.js";
-import { ArticleInfoType } from "../../../shared/index.js";
+import { ArticleInfo } from "../../../shared/index.js";
 
 /** @private */
 export const getBlogArticleType = (
@@ -18,13 +18,13 @@ export const getBlogArticleType = (
 ): BlogTypeOptions<
   { git: GitData },
   ThemeNormalPageFrontmatter,
-  { routeMeta: ArticleInfo }
+  { routeMeta: ArticleInfoData }
 > =>
   <
     BlogTypeOptions<
       { git: GitData },
       ThemeNormalPageFrontmatter,
-      { routeMeta: ArticleInfo }
+      { routeMeta: ArticleInfoData }
     >
   >{
     key: "article",
@@ -54,13 +54,13 @@ export const getBlogStarType = (
 ): BlogTypeOptions<
   { git: GitData },
   ThemeNormalPageFrontmatter,
-  { routeMeta: ArticleInfo }
+  { routeMeta: ArticleInfoData }
 > =>
   <
     BlogTypeOptions<
       { git: GitData },
       ThemeNormalPageFrontmatter,
-      { routeMeta: ArticleInfo }
+      { routeMeta: ArticleInfoData }
     >
   >{
     key: "star",
@@ -75,8 +75,8 @@ export const getBlogStarType = (
       if (!prevKey && nextKey) return 1;
 
       return dateSorter(
-        pageA.routeMeta[ArticleInfoType.date],
-        pageB.routeMeta[ArticleInfoType.date],
+        pageA.routeMeta[ArticleInfo.date],
+        pageB.routeMeta[ArticleInfo.date],
       );
     },
 
@@ -98,22 +98,22 @@ export const getBlogTimelineType = (
 ): BlogTypeOptions<
   { git: GitData },
   ThemeNormalPageFrontmatter,
-  { routeMeta: ArticleInfo }
+  { routeMeta: ArticleInfoData }
 > =>
   <
     BlogTypeOptions<
       { git: GitData },
       ThemeNormalPageFrontmatter,
-      { routeMeta: ArticleInfo }
+      { routeMeta: ArticleInfoData }
     >
   >{
     key: "timeline",
     filter: ({ frontmatter, routeMeta }) =>
-      ArticleInfoType.date in routeMeta && frontmatter["timeline"] !== false,
+      ArticleInfo.date in routeMeta && frontmatter["timeline"] !== false,
     sorter: (pageA, pageB) =>
       dateSorter(
-        pageA.routeMeta[ArticleInfoType.date],
-        pageB.routeMeta[ArticleInfoType.date],
+        pageA.routeMeta[ArticleInfo.date],
+        pageB.routeMeta[ArticleInfo.date],
       ),
     path: options.timeline,
     layout: "Timeline",

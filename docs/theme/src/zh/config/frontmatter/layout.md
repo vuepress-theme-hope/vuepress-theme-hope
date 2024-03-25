@@ -58,6 +58,13 @@ tag:
 
 是否开启路径导航图标。
 
+## breadcrumbExclude
+
+- 类型: `boolean`
+- 默认值: `false`
+
+当前页面是否被路径导航排除。
+
 ## navbar
 
 - 类型: `boolean`

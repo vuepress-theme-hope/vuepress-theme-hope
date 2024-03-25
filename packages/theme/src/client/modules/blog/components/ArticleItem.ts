@@ -11,8 +11,15 @@ import { LockIcon } from "@theme-hope/modules/encrypt/components/icons";
 import type { PageInfoProps } from "@theme-hope/modules/info/components/PageInfo";
 import PageInfo from "@theme-hope/modules/info/components/PageInfo";
 
-import type { ArticleInfo } from "../../../../shared/index.js";
-import { ArticleInfoType, PageType } from "../../../../shared/index.js";
+import type {
+  ArticleInfoData,
+  PageInfoData,
+} from "../../../../shared/index.js";
+import {
+  ArticleInfo,
+  PageInfo as PageInfoEnum,
+  PageType,
+} from "../../../../shared/index.js";
 
 import "../styles/article-item.scss";
 
@@ -26,7 +33,7 @@ export default defineComponent({
      * 文章信息
      */
     info: {
-      type: Object as PropType<ArticleInfo>,
+      type: Object as PropType<PageInfoData & ArticleInfoData>,
       required: true,
     },
 
@@ -57,12 +64,12 @@ export default defineComponent({
 
     return (): VNode => {
       const {
-        [ArticleInfoType.title]: title,
-        [ArticleInfoType.type]: type,
-        [ArticleInfoType.isEncrypted]: isEncrypted = false,
-        [ArticleInfoType.cover]: cover,
-        [ArticleInfoType.excerpt]: excerpt,
-        [ArticleInfoType.sticky]: sticky,
+        [PageInfoEnum.title]: title,
+        [ArticleInfo.type]: type,
+        [ArticleInfo.isEncrypted]: isEncrypted = false,
+        [ArticleInfo.cover]: cover,
+        [ArticleInfo.excerpt]: excerpt,
+        [ArticleInfo.sticky]: sticky,
       } = articleInfo.value;
       const info = pageInfo.value;
 

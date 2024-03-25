@@ -7,7 +7,7 @@ import { useNavigate, useThemeLocaleData } from "@theme-hope/composables/index";
 import { TimelineIcon } from "@theme-hope/modules/blog/components/icons/index";
 import { useTimelines } from "@theme-hope/modules/blog/composables/index";
 
-import { ArticleInfoType } from "../../../../shared/index.js";
+import { PageInfo } from "../../../../shared/index.js";
 
 import "../styles/timeline-list.scss";
 
@@ -58,7 +58,7 @@ export default defineComponent({
                           h(
                             RouteLink,
                             { class: "timeline-title", to: path },
-                            () => info[ArticleInfoType.title],
+                            () => info[PageInfo.title],
                           ),
                         ]),
                       ),

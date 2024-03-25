@@ -14,7 +14,7 @@ You can configure page layout by setting the following frontmatter options.
 ## pageInfo
 
 - Type: `PageInfo[] | false`
-- Default value: value in theme options
+- Default: value in theme options
 
 | Item            | Corresponding Content | Page frontmatter Value                  |
 | --------------- | --------------------- | --------------------------------------- |
@@ -31,7 +31,7 @@ Set whether to show page details on the current page
 ## pageview
 
 - Type: `boolean`
-- Default value: value in theme options
+- Default: value in theme options
 
 Whether display page views.
 
@@ -44,16 +44,23 @@ The pageview feature requires you to have a valid Waline Comment Service config.
 ## breadcrumb
 
 - Type: `boolean`
-- Default value: value in theme options
+- Default: value in theme options
 
 Whether path navigation is enabled on the current page.
 
 ## breadcrumbIcon
 
 - Type: `boolean`
-- Default value: value in theme options
+- Default: value in theme options
 
 Whether path navigation icon is enabled on the current page.
+
+## breadcrumbExclude
+
+- Type: `boolean`
+- Default: `false`
+
+Whether to exclude the current page from the breadcrumb.
 
 ## navbar
 
@@ -147,28 +154,28 @@ Group order in sidebar.
 ## comment
 
 - Type: `boolean`
-- Default value: value in theme options
+- Default: value in theme options
 
 Whether to enable comments on the current page.
 
 ## lastUpdated
 
 - Type: `boolean`
-- Default value: value in theme options
+- Default: value in theme options
 
 Whether display lastUpdated time.
 
 ## editLink
 
 - Type: `boolean`
-- Default value: value in theme options
+- Default: value in theme options
 
 Whether to show edit link.
 
 ## contributors
 
 - Type: `boolean`
-- Default value: value in theme options
+- Default: value in theme options
 
 Whether to show contributors.
 
@@ -203,7 +210,7 @@ Next article link.
 ## footer
 
 - Type: `boolean | string | HTMLString`
-- Default value: the value configured globally
+- Default: the value configured globally
 
 Footer content.
 
@@ -216,7 +223,7 @@ For more details, please see [Page → Footer Support](../../guide/layout/footer
 ## copyright
 
 - Type: `string | false`
-- Default value: value in theme options
+- Default: value in theme options
 
 Copyright information
 
@@ -225,14 +232,14 @@ For more details, please see [Page → Footer Support](../../guide/layout/footer
 ## backToTop
 
 - Type: `boolean`
-- Default value: `true`
+- Default: `true`
 
 Whether display the back to top button.
 
 ## toc {#toc-heading}
 
 - Type: `boolean`
-- Default value: value in theme options
+- Default: value in theme options
 
 Whether display toc
 

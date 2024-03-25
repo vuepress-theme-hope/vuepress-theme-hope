@@ -602,28 +602,28 @@ The above two options are only used by third-party code demo service, you need t
 #### demo.jsfiddle
 
 - Type: `boolean`
-- Default value: `true`
+- Default: `true`
 
 Whether to display the JSFiddle button
 
 #### demo.codepen
 
 - Type: `boolean`
-- Default value: `true`
+- Default: `true`
 
 Whether to display the CodePen button
 
 #### demo.codepenLayout
 
 - Type: `"top" | "left" | "correct"`
-- Default value: `"left"`
+- Default: `"left"`
 
 CodePen editor layout
 
 #### demo.codepenEditors
 
 - Type: `string`
-- Default value: `"101"`
+- Default: `"101"`
 
 CodePen editor status
 

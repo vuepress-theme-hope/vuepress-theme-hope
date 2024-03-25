@@ -17,6 +17,8 @@ Without any config, a Breadcrumb that matches the theme color is displayed at th
 
 You can also control the icon display of the path navigation using `breadcrumbIcon` field <Badge text="Support page config" />, the default value is `true`.
 
+If you don't want a page to be added to the breadcrumb (e.g.: home page), you can set `breadcrumbExclude: true` in the Front Matter of the page.
+
 [^support-page-config]: **Page config support**
 
     **Support local configuration**<Badge text="Support page config" /> means that the theme allows the configuration of the page to override the global configuration.

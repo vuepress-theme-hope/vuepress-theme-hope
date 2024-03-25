@@ -3,11 +3,11 @@ import { useBlogType } from "@vuepress/plugin-blog/client";
 import type { ComputedRef, InjectionKey } from "vue";
 import { inject, provide } from "vue";
 
-import type { ArticleInfo } from "../../../../shared/index.js";
+import type { ArticleInfoData } from "../../../../shared/index.js";
 
 declare const __VUEPRESS_DEV__: boolean;
 
-export type StarsRef = ComputedRef<BlogTypeData<ArticleInfo>>;
+export type StarsRef = ComputedRef<BlogTypeData<ArticleInfoData>>;
 
 export const starsSymbol: InjectionKey<StarsRef> = Symbol(
   __VUEPRESS_DEV__ ? "stars" : "",
@@ -25,7 +25,7 @@ export const useStars = (): StarsRef => {
 };
 
 export const setupStars = (): void => {
-  const stars = useBlogType<ArticleInfo>("star");
+  const stars = useBlogType<ArticleInfoData>("star");
 
   provide(starsSymbol, stars);
 };

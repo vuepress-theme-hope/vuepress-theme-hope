@@ -20,10 +20,10 @@ import { useThemeLocaleData } from "@theme-hope/composables/index";
 import { getAncestorLinks } from "@theme-hope/utils/index";
 
 import type {
-  ArticleInfo,
+  PageInfoData,
   ThemeNormalPageFrontmatter,
 } from "../../shared/index.js";
-import { ArticleInfoType } from "../../shared/index.js";
+import { PageInfo } from "../../shared/index.js";
 
 import "../styles/breadcrumb.scss";
 
@@ -65,16 +65,13 @@ export default defineComponent({
         routeLocale.value,
       )
         .map<BreadCrumbConfig | null>(({ link, name }) => {
-          const { path, meta, notFound } = resolveRoute<ArticleInfo>(link);
+          const { path, meta, notFound } = resolveRoute<PageInfoData>(link);
 
-          if (notFound) return null;
+          if (notFound || meta[PageInfo.breadcrumbExclude]) return null;
 
           return {
-            title:
-              meta[ArticleInfoType.shortTitle] ||
-              meta[ArticleInfoType.title] ||
-              name,
-            icon: meta[ArticleInfoType.icon],
+            title: meta[PageInfo.shortTitle] || meta[PageInfo.title] || name,
+            icon: meta[PageInfo.icon],
             path,
           };
         })

@@ -3,9 +3,9 @@ import { useBlogCategory } from "@vuepress/plugin-blog/client";
 import type { ComputedRef, InjectionKey } from "vue";
 import { inject, provide } from "vue";
 
-import type { ArticleInfo } from "../../../../shared/index.js";
+import type { ArticleInfoData } from "../../../../shared/index.js";
 
-export type TagMapRef = ComputedRef<BlogCategoryData<ArticleInfo>>;
+export type TagMapRef = ComputedRef<BlogCategoryData<ArticleInfoData>>;
 
 export const tagMapSymbol: InjectionKey<TagMapRef> = Symbol.for("tagMap");
 
@@ -24,7 +24,7 @@ export const useTagMap = (): TagMapRef => {
  * Provide tagMap
  */
 export const setupTagMap = (): void => {
-  const tagMap = useBlogCategory<ArticleInfo>("tag");
+  const tagMap = useBlogCategory<ArticleInfoData>("tag");
 
   provide(tagMapSymbol, tagMap);
 };

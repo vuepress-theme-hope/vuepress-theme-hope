@@ -8,7 +8,7 @@ import type {
   ThemePageData,
   ThemeProjectHomePageFrontmatter,
 } from "../../../shared/index.js";
-import { ArticleInfoType } from "../../../shared/index.js";
+import { ArticleInfo, PageType } from "../../../shared/index.js";
 
 /** @private */
 export const injectBlogBasicInfo = (
@@ -21,51 +21,65 @@ export const injectBlogBasicInfo = (
     | ThemeNormalPageFrontmatter;
   const { createdTime } = page.data.git || {};
 
+  const isArticle =
+    // Declaring this is an article
+    frontmatter.article ||
+    // Generated from markdown files
+    Boolean(frontmatter.article !== false && page.filePathRelative);
+  const isSlide = frontmatter.layout === "Slide";
+
+  // Save page type to routeMeta
+  page.routeMeta[ArticleInfo.type] = frontmatter.home
+    ? PageType.home
+    : isSlide
+      ? PageType.slide
+      : isArticle
+        ? PageType.article
+        : PageType.page;
+
   // Resolve author
-  if ("author" in frontmatter)
-    info[ArticleInfoType.author] = frontmatter.author;
+  if ("author" in frontmatter) info[ArticleInfo.author] = frontmatter.author;
 
   // Resolve date
   if ("date" in frontmatter) {
     const date = getDate(page.frontmatter.date);
 
     if (date) {
-      info[ArticleInfoType.date] = date.getTime();
+      info[ArticleInfo.date] = date.getTime();
 
-      info[ArticleInfoType.localizedDate] = timeTransformer(date, {
+      info[ArticleInfo.localizedDate] = timeTransformer(date, {
         lang: page.lang,
         type: "date",
       });
     }
   } else if (createdTime) {
-    info[ArticleInfoType.date] = createdTime;
+    info[ArticleInfo.date] = createdTime;
   }
 
   // Resolve category
   if ("category" in frontmatter)
-    info[ArticleInfoType.category] = frontmatter.category;
+    info[ArticleInfo.category] = frontmatter.category;
   else if ("categories" in frontmatter)
-    info[ArticleInfoType.category] = frontmatter.categories;
+    info[ArticleInfo.category] = frontmatter.categories;
 
   // Resolve tag
-  if ("tag" in frontmatter) info[ArticleInfoType.tag] = frontmatter.tag;
-  else if ("tags" in frontmatter) info[ArticleInfoType.tag] = frontmatter.tags;
+  if ("tag" in frontmatter) info[ArticleInfo.tag] = frontmatter.tag;
+  else if ("tags" in frontmatter) info[ArticleInfo.tag] = frontmatter.tags;
 
   // Resolve sticky
-  if ("sticky" in frontmatter)
-    info[ArticleInfoType.sticky] = frontmatter.sticky;
+  if ("sticky" in frontmatter) info[ArticleInfo.sticky] = frontmatter.sticky;
 
   // Resolve image
-  if ("cover" in frontmatter) info[ArticleInfoType.cover] = frontmatter.cover;
+  if ("cover" in frontmatter) info[ArticleInfo.cover] = frontmatter.cover;
 
   // Resolve isOriginal
   if ("isOriginal" in frontmatter)
-    info[ArticleInfoType.isOriginal] = frontmatter.isOriginal;
+    info[ArticleInfo.isOriginal] = frontmatter.isOriginal;
 
   // Save page excerpt to routeMeta
-  if (frontmatter.excerpt) info[ArticleInfoType.excerpt] = frontmatter.excerpt;
-  else if (page.data.excerpt) info[ArticleInfoType.excerpt] = page.data.excerpt;
+  if (frontmatter.excerpt) info[ArticleInfo.excerpt] = frontmatter.excerpt;
+  else if (page.data.excerpt) info[ArticleInfo.excerpt] = page.data.excerpt;
   // Fallback to user-defined description
   else if (frontmatter.description && !page.data.autoDesc)
-    info[ArticleInfoType.excerpt] = frontmatter.description;
+    info[ArticleInfo.excerpt] = frontmatter.description;
 };

@@ -110,7 +110,7 @@ Set the label of the current page.
 ## license
 
 - Type: `string`
-- Default value: value in theme options
+- Default: value in theme options
 
 The license information. A license text will be displayed on footer with the license when it's set.
 
