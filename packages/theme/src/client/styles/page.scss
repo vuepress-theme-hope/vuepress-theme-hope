@@ -1,3 +1,5 @@
+@use "vuepress-shared/styles/wrapper";
+
 .vp-page {
   display: block;
   flex-grow: 1;
@@ -30,4 +32,8 @@
       border-radius: 0;
     }
   }
+}
+
+#vp-comment {
+  @include wrapper.wrapper;
 }
