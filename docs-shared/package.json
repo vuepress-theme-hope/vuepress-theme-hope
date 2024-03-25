@@ -34,7 +34,7 @@
   "dependencies": {
     "@types/three": "0.162.0",
     "@vuepress/bundler-vite": "2.0.0-rc.8",
-    "@vuepress/bundler-webpack": "2.0.0-rc.8",
+    "@vuepress/bundler-webpack": "2.0.0-rc.9",
     "@vuepress/helper": "2.0.0-rc.19",
     "@vuepress/plugin-docsearch": "2.0.0-rc.19",
     "@vuepress/plugin-redirect": "2.0.0-rc.19",

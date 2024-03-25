@@ -16,7 +16,7 @@
   },
   "devDependencies": {
     "@vuepress/bundler-vite": "2.0.0-rc.8",
-    "@vuepress/bundler-webpack": "2.0.0-rc.8",
+    "@vuepress/bundler-webpack": "2.0.0-rc.9",
     "@vuepress/theme-default": "2.0.0-rc.20",
     "nodejs-jieba": "0.1.2",
     "sass-loader": "14.1.1",

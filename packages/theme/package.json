@@ -102,7 +102,7 @@
   },
   "devDependencies": {
     "@vuepress/bundler-vite": "2.0.0-rc.8",
-    "@vuepress/bundler-webpack": "2.0.0-rc.8"
+    "@vuepress/bundler-webpack": "2.0.0-rc.9"
   },
   "peerDependencies": {
     "@vuepress/plugin-docsearch": "2.0.0-rc.19",
