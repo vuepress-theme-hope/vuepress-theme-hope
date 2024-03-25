@@ -23,7 +23,7 @@
     "chart.js": "4.4.2",
     "echarts": "5.5.0",
     "echarts-wordcloud": "2.1.0",
-    "katex": "0.16.9",
+    "katex": "0.16.10",
     "kotlin-playground": "1.30.0",
     "markmap-lib": "0.16.1",
     "markmap-toolbar": "0.16.0",
