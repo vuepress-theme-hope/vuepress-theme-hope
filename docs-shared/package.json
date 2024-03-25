@@ -41,7 +41,7 @@
     "@vuepress/plugin-shiki": "2.0.0-rc.18",
     "three": "0.162.0",
     "vue": "3.4.21",
-    "vuepress": "2.0.0-rc.8",
+    "vuepress": "2.0.0-rc.9",
     "vuepress-theme-hope": "workspace:*"
   }
 }

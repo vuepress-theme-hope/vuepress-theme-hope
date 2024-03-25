@@ -112,7 +112,7 @@
     "@vuepress/plugin-search": "2.0.0-rc.18",
     "nodejs-jieba": "^0.1.2",
     "sass-loader": "^14.0.0",
-    "vuepress": "2.0.0-rc.8",
+    "vuepress": "2.0.0-rc.9",
     "vuepress-plugin-search-pro": "workspace:*"
   },
   "peerDependenciesMeta": {

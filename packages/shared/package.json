@@ -66,7 +66,7 @@
     "vite": "5.1.6"
   },
   "peerDependencies": {
-    "vuepress": "2.0.0-rc.8"
+    "vuepress": "2.0.0-rc.9"
   },
   "engines": {
     "node": ">=18.16.0",

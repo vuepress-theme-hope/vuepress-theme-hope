@@ -33,7 +33,7 @@
     "sandpack-vue3": "3.1.11",
     "sass-loader": "14.1.1",
     "vue": "3.4.21",
-    "vuepress": "2.0.0-rc.8",
+    "vuepress": "2.0.0-rc.9",
     "vuepress-plugin-md-enhance": "workspace:*",
     "vuepress-shared": "workspace:*"
   }

@@ -65,7 +65,7 @@
     "plyr": "^3.7.8",
     "sass-loader": "^14.0.0",
     "vidstack": "^1.9.0",
-    "vuepress": "2.0.0-rc.8"
+    "vuepress": "2.0.0-rc.9"
   },
   "peerDependenciesMeta": {
     "artplayer": {
