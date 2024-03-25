@@ -89,6 +89,8 @@ export const mdEnhancePlugin =
 
     if (app.env.isDebug) logger.info("Options:", options);
 
+    const source = app.dir.source();
+
     const getStatus = (
       key: keyof MarkdownEnhanceOptions,
       gfm = false,
@@ -379,7 +381,10 @@ export const mdEnhancePlugin =
               if (filePathRelative && includedFiles.length)
                 ((env.frontmatter ??= {}).gitInclude ??= []).push(
                   ...includedFiles.map((item) =>
-                    path.relative(filePathRelative, item),
+                    path.relative(
+                      path.resolve(source, filePathRelative, ".."),
+                      path.resolve(source, filePathRelative, item),
+                    ),
                   ),
                 );
 
