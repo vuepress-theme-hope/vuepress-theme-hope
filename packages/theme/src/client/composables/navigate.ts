@@ -1,6 +1,8 @@
 import { isLinkAbsolute, isLinkWithProtocol } from "@vuepress/helper/client";
 import { useRoute, useRouter } from "vuepress/client";
 
+const FAKE_HOST = "http://.";
+
 export const useNavigate = (): ((url: string) => void) => {
   const router = useRouter();
   const route = useRoute();
@@ -15,9 +17,11 @@ export const useNavigate = (): ((url: string) => void) => {
         if (window) window.open(url);
       } else {
         // Inner relative path
-        const base = route.path.slice(0, route.path.lastIndexOf("/"));
+        const loc = route.path.slice(0, route.path.lastIndexOf("/"));
 
-        void router.push(`${base}/${encodeURI(url)}`);
+        void router.push(
+          new URL(`${loc}/${encodeURI(url)}`, FAKE_HOST).pathname,
+        );
       }
   };
 };
