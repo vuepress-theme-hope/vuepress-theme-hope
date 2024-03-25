@@ -1,8 +1,8 @@
 import type { PropType, VNode } from "vue";
 import { defineComponent, h } from "vue";
-import { usePageData, useRouter } from "vuepress/client";
 import { generateIndexFromHash } from "vuepress-shared/client";
 
+import { useNavigate } from "@theme-hope/composables/index";
 import { TagIcon } from "@theme-hope/modules/info/components/icons";
 import { useMetaLocale } from "@theme-hope/modules/info/composables/index";
 import type { PageTag } from "@theme-hope/modules/info/utils/index";
@@ -34,16 +34,8 @@ export default defineComponent({
   },
 
   setup(props) {
-    const router = useRouter();
-    const page = usePageData();
     const metaLocale = useMetaLocale();
-
-    const navigate = (event: Event, path = ""): void => {
-      if (path && page.value.path !== path) {
-        event.preventDefault();
-        void router.push(path);
-      }
-    };
+    const navigate = useNavigate();
 
     return (): VNode | null =>
       props.tag.length
@@ -70,7 +62,9 @@ export default defineComponent({
                       },
                     ],
                     role: path ? "navigation" : "",
-                    onClick: (event: Event) => navigate(event, path),
+                    onClick: () => {
+                      if (path) navigate(path);
+                    },
                   },
                   name,
                 ),
