@@ -65,7 +65,7 @@
   --docsearch-hit-color: var(--vp-cl);
   --docsearch-hit-active-color: var(--vp-bg);
   --docsearch-hit-background: var(--vp-bg);
-  --docsearch-hit-shadow: 0 1px 3px 0 var(--border-color);
+  --docsearch-hit-shadow: 0 1px 3px 0 var(--vp-brc);
   --docsearch-footer-background: var(--vp-bg);
 
   #{hope-config.$dark-selector} & {
@@ -139,7 +139,18 @@ body {
   --search-bg-color: var(--vp-bg);
   --search-accent-color: var(--vp-tc);
   --search-text-color: var(--vp-c);
-  --search-border-color: var(--border-color);
+  --search-border-color: var(--vp-brc);
   --search-item-text-color: var(--vp-clt);
   --search-item-focus-bg-color: var(--bg-color-secondary);
+}
+
+// plugin-comment
+.waline-wrapper {
+  --waline-bg-color: var(--vp-bg);
+  --waline-bg-color-light: var(--bg-color-secondary);
+  --waline-text-color: var(--vp-c);
+  --waline-border: 1px solid var(--vp-brc);
+  --waline-border-color: var(--vp-brc);
+  --waline-theme-color: var(--vp-tc);
+  --waline-active-color: var(--vp-tcl);
 }
