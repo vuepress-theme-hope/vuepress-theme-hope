@@ -13,27 +13,19 @@ head:
       href: //at.alicdn.com/t/c/font_2410206_5vb9zlyghj.css
 ---
 
-整个主题在多处都添加了 FontClass / 图片 格式图标的支持。
+整个主题在多处都添加了字体类名与图片格式图标的支持。
 
-目前你可以使用 iconfont、iconify 和 fontawesome 为你的项目添加图标，可以设置自己的图标资源。
-
-同时，png/svg 格式的图标也是支持的。你可以使用完整 URL 或路径名来添加图标。
+目前你可以使用 iconfont、iconify 和 fontawesome 为你的项目添加图标，可以设置自己的图标资源。同时，png/svg 格式的图标也是支持的。你可以使用完整 URL 或路径名来添加图标。
 
 我们推荐使用 iconify 或 fontawesome。
 
 <!-- more -->
 
-## 浏览图标
+## 浏览图标列表
 
 - Iconify: <https://icon-sets.iconify.design/>
 - Iconfont: <https://www.iconfont.cn/>
 - Fontawesome: <https://fontawesome.com/icons>
-
-::: details iconfont 关键词精选图标
-
-<IconDisplay link="//at.alicdn.com/t/c/font_2410206_5vb9zlyghj.css" />
-
-:::
 
 ## 设置图标
 
@@ -81,17 +73,12 @@ head:
 - css 和 js 格式的图标资源
 - 以上项目的数组
 
-::: code-tabs#language
-
-@tab TS
-
-```ts {8} title=".vuepress/config.ts"
-import { defineUserConfig } from "vuepress";
+```js {6,9,12-16} title=".vuepress/config.js"
 import { hopeTheme } from "vuepress-theme-hope";
 
-export default defineUserConfig({
+export default {
   theme: hopeTheme({
-    // 关键词: "iconfont", "iconify", "fontawesome", "fontawesome-with-brands"
+    // 关键词: "iconify", "fontawesome", "fontawesome-with-brands"
     iconAssets: "fontawesome",
 
     // 你想要的 URL
@@ -104,38 +91,12 @@ export default defineUserConfig({
       "fontawesome",
     ],
   }),
-});
+};
 ```
-
-@tab JS
-
-```js {8} title=".vuepress/config.ts"
-import { defineUserConfig } from "vuepress";
-import { hopeTheme } from "vuepress-theme-hope";
-
-export default defineUserConfig({
-  theme: hopeTheme({
-    // 关键词: "iconfont", "iconify", "fontawesome", "fontawesome-with-brands"
-    iconAssets: "fontawesome",
-
-    // 你想要的 URL
-    iconAssets: "/base/my/font-icon/resource.js",
-
-    // 上述内容的数组
-    iconAssets: [
-      "/base/my/font-icon/resource.js",
-      "https://example/my/fonr-icon/resouce.css",
-      "fontawesome",
-    ],
-  }),
-});
-```
-
-:::
 
 例如，你可以使用 [iconfont.cn](https://www.iconfont.cn/) 和 [fontawesome](https://fontawesome.com) 来生成你自己的资源
 
-为了便于上手，我们添加了内置关键字 `"iconfont"`、`"iconify"`、`"fontawesome"` 和 `"fontawesome-with-brand` 支持。
+为了便于上手，我们添加了内置关键字 `"iconify"`、`"fontawesome"` 和 `"fontawesome-with-brand` 支持。
 
 ::: caution
 
@@ -229,6 +190,5 @@ export default defineUserConfig({
 :::
 
 <script setup lang="ts">
-import IconDisplay from "@IconDisplay";
 import HopeIcon from "@theme-hope/components/HopeIcon";
 </script>

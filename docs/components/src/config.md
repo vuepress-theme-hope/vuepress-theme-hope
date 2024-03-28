@@ -74,11 +74,7 @@ Global config for components.
     | `http://${string}`
     | `https://${string}`;
 
-  type BuiltInFontIcon =
-    | "iconify"
-    | "iconfont"
-    | "fontawesome"
-    | "fontawesome-with-brands";
+  type BuiltInFontIcon = "iconify" | "fontawesome" | "fontawesome-with-brands";
 
   type FontIconAssets = BuiltInFontIcon | Link | (BuiltInFontIcon | Link)[];
   ```
@@ -87,7 +83,7 @@ Global config for components.
 - Details:
   - [Guide → FontIcon](./guide/utilities/font-icon.md)
 
-Link of font icon asset, `'iconfont'` and `'fontawesome'` keywords are supported.
+Link of font icon asset, `'iconify'` `'fontawesome'` and `'fontawesome-with-brands'` keywords are supported.
 
 ### componentsOptions.fontIcon.prefix
 

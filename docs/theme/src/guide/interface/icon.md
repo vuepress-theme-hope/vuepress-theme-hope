@@ -13,27 +13,19 @@ head:
       href: //at.alicdn.com/t/c/font_2410206_5vb9zlyghj.css
 ---
 
-The entire theme adds FontClass / Image format icon support in multiple places.
+The entire theme adds FontClass and Image format icon support in multiple places.
 
-You can use iconfont, iconify and fontawesome to add icons to your project, and you can also use your own icon assets.
-
-Also, png/svg format icon is supported. You can use full links or pathname to add icons.
+You can use iconfont, iconify and fontawesome to add icons to your project, and you can also use your own icon assets. Also, png/svg format icon is supported. You can use full links or pathname to add icons.
 
 We recommend you to use iconify or fontawesome.
 
 <!-- more -->
 
-## Browsing Icons
+## Browsing Icon List
 
 - Iconify: <https://icon-sets.iconify.design/>
 - Iconfont: <https://www.iconfont.cn/?lang=en-us>
 - Fontawesome: <https://fontawesome.com/icons>
-
-::: details Featured Icons with iconfont keyword
-
-<IconDisplay link="//at.alicdn.com/t/c/font_2410206_5vb9zlyghj.css" />
-
-:::
 
 ## Setting Icons
 
@@ -81,17 +73,12 @@ You should set icon related assets to `iconAssets`, where you can set:
 - icon resource in format of css and js
 - array of above
 
-::: code-tabs#language
-
-@tab TS
-
-```ts {8} title=".vuepress/config.ts"
-import { defineUserConfig } from "vuepress";
+```js {6,9,12-16} title=".vuepress/config.js"
 import { hopeTheme } from "vuepress-theme-hope";
 
-export default defineUserConfig({
+export default {
   theme: hopeTheme({
-    // keywords: "iconfont", "iconify", "fontawesome", "fontawesome-with-brands"
+    // keywords: "iconify", "fontawesome", "fontawesome-with-brands"
     iconAssets: "fontawesome",
 
     // an url you like
@@ -104,38 +91,12 @@ export default defineUserConfig({
       "fontawesome",
     ],
   }),
-});
+};
 ```
-
-@tab JS
-
-```js {8} title=".vuepress/config.ts"
-import { defineUserConfig } from "vuepress";
-import { hopeTheme } from "vuepress-theme-hope";
-
-export default defineUserConfig({
-  theme: hopeTheme({
-    // keywords: "iconfont", "iconify", "fontawesome", "fontawesome-with-brands"
-    iconAssets: "fontawesome",
-
-    // an url you like
-    iconAssets: "/base/my/font-icon/resource.js",
-
-    // an array of above
-    iconAssets: [
-      "/base/my/font-icon/resource.js",
-      "https://example/my/fonr-icon/resouce.css",
-      "fontawesome",
-    ],
-  }),
-});
-```
-
-:::
 
 For example, you may use [iconfont.cn](https://www.iconfont.cn/?lang=en-us) and [fontawesome](https://fontawesome.com) to generate your own assets.
 
-To keep it simple, we add built-in keywords `"iconfont"`, `"iconify"`, `"fontawesome"` and `"fontawesome-with-brand` support for you to get started easily.
+To keep it simple, we add built-in keywords `"iconify"`, `"fontawesome"` and `"fontawesome-with-brand` support for you to get started easily.
 
 ::: caution
 
@@ -233,6 +194,5 @@ So we do not recommend you to use multiple iconfont links as assets, if you read
 :::
 
 <script setup lang="ts">
-import IconDisplay from "@IconDisplay";
 import HopeIcon from "@theme-hope/components/HopeIcon";
 </script>

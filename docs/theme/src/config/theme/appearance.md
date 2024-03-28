@@ -30,11 +30,7 @@ These options are only valid when setting directly under the theme options, sett
     | `http://${string}`
     | `https://${string}`;
 
-  type BuiltInFontIcon =
-    | "iconify"
-    | "iconfont"
-    | "fontawesome"
-    | "fontawesome-with-brands";
+  type BuiltInFontIcon = "iconify" | "fontawesome" | "fontawesome-with-brands";
 
   type FontIconAssets = BuiltInFontIcon | Link | (BuiltInFontIcon | Link)[];
   ```
@@ -42,7 +38,7 @@ These options are only valid when setting directly under the theme options, sett
 - Required: No
 - Details: [Interface → Icon](../../guide/interface/icon.md)
 
-Link of font icon asset, `'iconfont'` and `'fontawesome'` keywords are supported.
+Link of font icon asset, `'iconify'` `'fontawesome'` and `'fontawesome-with-brands'` keywords are supported.
 
 ## darkmode <Badge text="Enabled by default" /> <Badge text="Root only" type="warning" />
 

@@ -59,7 +59,7 @@ Icon name
 
 例如，你可以使用 [iconfont.cn](https://www.iconfont.cn/) 和 [fontawesome](https://fontawesome.com) 来生成你自己的资源
 
-为了便于上手，我们添加了内置关键字 `"iconfont"`、`"iconify"`、`"fontawesome"` 和 `"fontawesome-with-brand` 支持。
+为了便于上手，我们添加了内置关键字 `"iconify"`、`"fontawesome"` 和 `"fontawesome-with-brand` 支持。
 
 ::: caution
 
@@ -82,12 +82,6 @@ Icon name
 - Iconify: <https://icon-sets.iconify.design/>
 - Iconfont: <https://www.iconfont.cn/>
 - Fontawesome: <https://fontawesome.com/icons>
-
-::: details iconfont 精选图标
-
-<IconDisplay link="//at.alicdn.com/t/c/font_2410206_5vb9zlyghj.css" />
-
-:::
 
 ## 高级
 
@@ -169,7 +163,3 @@ Icon name
 - [图标列表](https://fontawesome.com/icons)
 
 :::
-
-<script setup lang="ts">
-import IconDisplay from "@IconDisplay";
-</script>

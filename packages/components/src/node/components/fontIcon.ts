@@ -32,9 +32,7 @@ export const isFontAwesomeAssets = (assets: FontIconAssets): boolean =>
       isFontAwesomeLink(assets);
 
 export const isIconFontAssets = (assets: FontIconAssets): boolean =>
-  isArray(assets)
-    ? assets.every(isIconFontLink)
-    : assets === "iconfont" || isIconFontLink(assets);
+  isArray(assets) ? assets.every(isIconFontLink) : isIconFontLink(assets);
 
 export const isIconifyAssets = (assets: FontIconAssets): boolean =>
   isString(assets) && (isIconifyLink(assets) || assets === "iconify");
@@ -82,18 +80,6 @@ const getIconLink = (asset?: string): LinkInfo[] => {
 
     if (asset === "fontawesome-with-brands")
       return getFontAwesomeLink(["brands", "solid", "fontawesome"]);
-
-    if (asset === "iconfont")
-      return [
-        {
-          type: "style",
-          content: `\
-  useStyleTag(\`\\
-  @import url("https://at.alicdn.com/t/c/font_2410206_5vb9zlyghj.css");
-  \`);\
-`,
-        },
-      ];
 
     if (asset === "iconify")
       return [

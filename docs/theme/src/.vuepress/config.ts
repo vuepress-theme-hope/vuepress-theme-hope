@@ -40,10 +40,6 @@ export default config("", {
       __dirname,
       "../../../md-enhance/src/.vuepress/components/FlowChartPlayground.js",
     ),
-    "@IconDisplay": path.resolve(
-      __dirname,
-      "../../../components/src/.vuepress/components/IconDisplay.js",
-    ),
     "@KatexPlayground": path.resolve(
       __dirname,
       "../../../md-enhance/src/.vuepress/components/KatexPlayground.js",

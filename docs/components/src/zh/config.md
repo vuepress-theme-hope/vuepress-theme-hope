@@ -74,11 +74,7 @@ icon: gears
     | `http://${string}`
     | `https://${string}`;
 
-  type BuiltInFontIcon =
-    | "iconify"
-    | "iconfont"
-    | "fontawesome"
-    | "fontawesome-with-brands";
+  type BuiltInFontIcon = "iconify" | "fontawesome" | "fontawesome-with-brands";
 
   type FontIconAssets = BuiltInFontIcon | Link | (BuiltInFontIcon | Link)[];
   ```
@@ -87,7 +83,7 @@ icon: gears
 - 详情:
   - [指南 → FontIcon](./guide/utilities/font-icon.md)
 
-字体图标资源链接，支持 `'iconfont'` 和 `'fontawesome'` 关键字。
+字体图标资源链接，支持 `'iconify'` `'fontawesome'` 和 `'fontawesome-with-brands'` 关键字。
 
 ### componentsOptions.fontIcon.prefix
 

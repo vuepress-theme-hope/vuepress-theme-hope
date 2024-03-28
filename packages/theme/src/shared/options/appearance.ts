@@ -115,7 +115,7 @@ export interface AppearanceOptions {
    *
    * 字体图标资源链接
    *
-   * @description `"iconfont"` and `"fontawesome"` keywords are supported
+   * @description `"iconify"`, `"fontawesome"` and `"fontawesome-with-brands"` keywords are supported
    */
   iconAssets?: FontIconAssets;
 

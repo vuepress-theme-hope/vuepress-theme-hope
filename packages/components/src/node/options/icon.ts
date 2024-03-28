@@ -6,7 +6,6 @@ type Link =
 
 export type BuiltInFontIcon =
   | "iconify"
-  | "iconfont"
   | "fontawesome"
   | "fontawesome-with-brands";
 
@@ -21,7 +20,7 @@ export interface FontIconOptions {
    *
    * 字体图标资源链接
    *
-   * @description `"iconify"`, `"iconfont"`, `"fontawesome"` and `"fontawesome-with-brands"` keywords are supported
+   * @description `"iconify"`, `"fontawesome"` and `"fontawesome-with-brands"` keywords are supported
    */
   assets?: FontIconAssets;
 
