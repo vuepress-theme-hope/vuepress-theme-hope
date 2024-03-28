@@ -12,6 +12,7 @@ import { getComponentsPlugin } from "./components.js";
 import { getCopyCodePlugin } from "./copyCode.js";
 import { getCopyrightPlugin } from "./copyright.js";
 import { getFeedPlugin } from "./feed.js";
+import { getLinksCheckPlugin } from "./linksCheck.js";
 import { getMdEnhancePlugin } from "./mdEnhance.js";
 import { getPhotoSwipePlugin } from "./photoSwipe.js";
 import { getPwaPlugin } from "./pwa.js";
@@ -45,6 +46,7 @@ export const getPluginConfig = (
   checkPluginOptions(plugins);
 
   const pluginConfig = [
+    getLinksCheckPlugin(plugins.linksCheck),
     getComponentsPlugin(options, plugins.components, legacy),
     getActiveHeaderLinksPlugin(plugins.activeHeaderLinks),
     getCatalogPlugin(plugins.catalog),
