@@ -45,11 +45,7 @@ Then enabling via:
 
 <!-- #endregion before -->
 
-::: code-tabs#language
-
-@tab TS
-
-```ts {7-10} title=".vuepress/config.ts"
+```js {7,9} title=".vuepress/config.js"
 import { mdEnhancePlugin } from "vuepress-plugin-md-enhance";
 
 export default {
@@ -63,25 +59,6 @@ export default {
   ],
 };
 ```
-
-@tab JS
-
-```js {7-10} title=".vuepress/config.js"
-import { mdEnhancePlugin } from "vuepress-plugin-md-enhance";
-
-export default {
-  plugins: [
-    mdEnhancePlugin({
-      // Enable Tex Support using katex
-      katex: true,
-      // Enable Tex Support using mathjax
-      mathjax: true,
-    }),
-  ],
-};
-```
-
-:::
 
 <!-- #region after -->
 

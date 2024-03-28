@@ -9,11 +9,7 @@ icon: fab fa-markdown
 
 ## 配置
 
-::: code-tabs#language
-
-@tab TS
-
-```ts {8} title=".vuepress/config.ts"
+```js {7} title=".vuepress/config.js"
 import { mdEnhancePlugin } from "vuepress-plugin-md-enhance";
 
 export default {
@@ -25,23 +21,6 @@ export default {
   ],
 };
 ```
-
-@tab JS
-
-```js {8} title=".vuepress/config.js"
-import { mdEnhancePlugin } from "vuepress-plugin-md-enhance";
-
-export default {
-  plugins: [
-    mdEnhancePlugin({
-      // 启用导入支持
-      include: true,
-    }),
-  ],
-};
-```
-
-:::
 
 <!-- #region after -->
 
@@ -391,11 +370,7 @@ interface IncludeOptions {
 
 <!-- #endregion after -->
 
-::: code-tabs#language
-
-@tab TS
-
-```ts {10} title=".vuepress/config.ts"
+```js {10-17} title=".vuepress/config.js"
 import { getDirname, path } from "vuepress/utils";
 import { mdEnhancePlugin } from "vuepress-plugin-md-enhance";
 
@@ -417,33 +392,6 @@ export default {
   ],
 };
 ```
-
-@tab JS
-
-```js {10} title=".vuepress/config.js"
-import { getDirname, path } from "vuepress/utils";
-import { mdEnhancePlugin } from "vuepress-plugin-md-enhance";
-
-const __dirname = getDirname(import.meta.url);
-
-export default {
-  plugins: [
-    mdEnhancePlugin({
-      // 添加 `@src` 别名支持
-      include: {
-        resolvePath: (file) => {
-          if (file.startsWith("@src"))
-            return file.replace("@src", path.resolve(__dirname, ".."));
-
-          return file;
-        },
-      },
-    }),
-  ],
-};
-```
-
-:::
 
 此外，如果你想将 Markdown 文件直接放在实际文件旁边，但不希望它们呈现为页面，你可以在 VuePress 配置中设置 `pagePatterns` 选项。有关详细信息，请参阅 [pagePatterns](https://vuejs.press/zh/reference/config.html#pagepatterns)。
 
@@ -451,7 +399,7 @@ export default {
 
 @tab TS
 
-```ts {6-7} title=".vuepress/config.ts"
+```ts {6} title=".vuepress/config.ts"
 import { defineUserConfig } from "vuepress";
 import { mdEnhancePlugin } from "vuepress-plugin-md-enhance";
 
@@ -469,7 +417,7 @@ export default defineUserConfig({
 
 @tab JS
 
-```js {5-6} title=".vuepress/config.js"
+```js {5} title=".vuepress/config.js"
 import { mdEnhancePlugin } from "vuepress-plugin-md-enhance";
 
 export default {

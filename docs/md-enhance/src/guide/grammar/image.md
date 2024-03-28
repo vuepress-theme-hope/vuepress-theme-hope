@@ -9,11 +9,7 @@ Improve image syntax in Markdown to support color scheme and size.
 
 ## Settings
 
-::: code-tabs#language
-
-@tab TS
-
-```ts {7-14} title=".vuepress/config.ts"
+```js {7,9,11,13} title=".vuepress/config.js"
 import { mdEnhancePlugin } from "vuepress-plugin-md-enhance";
 
 export default {
@@ -31,29 +27,6 @@ export default {
   ],
 };
 ```
-
-@tab JS
-
-```js {7-14} title=".vuepress/config.js"
-import { mdEnhancePlugin } from "vuepress-plugin-md-enhance";
-
-export default {
-  plugins: [
-    mdEnhancePlugin({
-      // Enable figure
-      figure: true,
-      // Enable image lazyload
-      imgLazyload: true,
-      // Enable image mark
-      imgMark: true,
-      // Enable image size
-      imgSize: true,
-    }),
-  ],
-};
-```
-
-:::
 
 <!-- #region after -->
 

@@ -45,11 +45,7 @@ npm i -D mathjax-full
 
 <!-- #endregion before -->
 
-::: code-tabs#language
-
-@tab TS
-
-```ts {7-10} title=".vuepress/config.ts"
+```js {7,9} title=".vuepress/config.js"
 import { mdEnhancePlugin } from "vuepress-plugin-md-enhance";
 
 export default {
@@ -63,25 +59,6 @@ export default {
   ],
 };
 ```
-
-@tab JS
-
-```js {7-10} title=".vuepress/config.js"
-import { mdEnhancePlugin } from "vuepress-plugin-md-enhance";
-
-export default {
-  plugins: [
-    mdEnhancePlugin({
-      // 使用 KaTeX 启用 TeX 支持
-      katex: true,
-      // 使用 mathjax 启用 TeX 支持
-      mathjax: true,
-    }),
-  ],
-};
-```
-
-:::
 
 <!-- #region after -->
 

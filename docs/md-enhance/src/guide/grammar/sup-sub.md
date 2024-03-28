@@ -9,11 +9,7 @@ Let the Markdown file in your VuePress site support Subscript and Superscript.
 
 ## Settings
 
-::: code-tabs#language
-
-@tab TS
-
-```ts {8,10} title=".vuepress/config.ts"
+```js {7,9} title=".vuepress/config.js"
 import { mdEnhancePlugin } from "vuepress-plugin-md-enhance";
 
 export default {
@@ -27,25 +23,6 @@ export default {
   ],
 };
 ```
-
-@tab JS
-
-```js {8,10} title=".vuepress/config.js"
-import { mdEnhancePlugin } from "vuepress-plugin-md-enhance";
-
-export default {
-  plugins: [
-    mdEnhancePlugin({
-      // Enable Subscript
-      sub: true,
-      // Enable  Superscript
-      sup: true,
-    }),
-  ],
-};
-```
-
-:::
 
 ## Syntax
 

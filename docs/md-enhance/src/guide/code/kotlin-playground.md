@@ -39,11 +39,7 @@ Then enabling via:
 
 <!-- #endregion settings -->
 
-::: code-tabs#language
-
-@tab TS
-
-```ts {8} title=".vuepress/config.ts"
+```js {7} title=".vuepress/config.js"
 import { mdEnhance } from "vuepress-plugin-md-enhance";
 
 export default {
@@ -55,23 +51,6 @@ export default {
   ],
 };
 ```
-
-@tab JS
-
-```js {8} title=".vuepress/config.js"
-import { mdEnhance } from "vuepress-plugin-md-enhance";
-
-export default {
-  plugins: [
-    mdEnhance({
-      // enable kotlin playground
-      kotlinPlayground: true,
-    }),
-  ],
-};
-```
-
-:::
 
 <!-- #region after -->
 

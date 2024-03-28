@@ -11,11 +11,7 @@ icon: wand-magic-sparkles
 
 ## 配置
 
-::: code-tabs#language
-
-@tab TS
-
-```ts {7-9} title=".vuepress/config.ts"
+```js {6-8} title=".vuepress/config.js"
 import { mdEnhancePlugin } from "vuepress-plugin-md-enhance";
 
 export default {
@@ -28,24 +24,6 @@ export default {
   ],
 };
 ```
-
-@tab JS
-
-```js {7-9} title=".vuepress/config.js"
-import { mdEnhancePlugin } from "vuepress-plugin-md-enhance";
-
-export default {
-  plugins: [
-    mdEnhancePlugin({
-      stylize: [
-        // 选项
-      ],
-    }),
-  ],
-};
-```
-
-:::
 
 ## 使用
 
@@ -57,11 +35,7 @@ export default {
 
 例如，你可以使用以下配置将 `*Recommended*` 转换为徽章 `<Badge type="tip">Recommended</Badge>`：
 
-::: code-tabs#language
-
-@tab TS
-
-```ts {7-19} title=".vuepress/config.ts"
+```js {6-18} title=".vuepress/config.js"
 import { mdEnhancePlugin } from "vuepress-plugin-md-enhance";
 
 export default {
@@ -84,42 +58,10 @@ export default {
   ],
 };
 ```
-
-@tab JS
-
-```js {7-19} title=".vuepress/config.js"
-import { mdEnhancePlugin } from "vuepress-plugin-md-enhance";
-
-export default {
-  plugins: [
-    mdEnhancePlugin({
-      stylize: [
-        {
-          matcher: "Recommended",
-          replacer: ({ tag }) => {
-            if (tag === "em")
-              return {
-                tag: "Badge",
-                attrs: { type: "tip" },
-                content: "Recommended",
-              };
-          },
-        },
-      ],
-    }),
-  ],
-};
-```
-
-:::
 
 另一个例子是你想要将所有的“不或者没”开头的强调词设置为红色，这样 `设置它*没有*任何效果，请*不要*这样使用。`变成：“设置它<span style="color:red">没有</span>任何效果，请<span style="color:red">不要</span>这样使用。"
 
-::: code-tabs#language
-
-@tab TS
-
-```ts {7-19} title=".vuepress/config.ts"
+```js {6-18} title=".vuepress/config.js"
 import { mdEnhancePlugin } from "vuepress-plugin-md-enhance";
 
 export default {
@@ -142,34 +84,6 @@ export default {
   ],
 };
 ```
-
-@tab JS
-
-```js {7-19} title=".vuepress/config.js"
-import { mdEnhancePlugin } from "vuepress-plugin-md-enhance";
-
-export default {
-  plugins: [
-    mdEnhancePlugin({
-      stylize: [
-        {
-          matcher: /^不/,
-          replacer: ({ tag, attrs, content }) => {
-            if (tag === "em")
-              return {
-                tag: "span",
-                attrs: { ...attrs, style: "color: red" },
-                content,
-              };
-          },
-        },
-      ],
-    }),
-  ],
-};
-```
-
-:::
 
 同时，你也可以在 frontmatter 总通过 `stylize` 选项来自定义此页面额外的匹配标记的函数。
 

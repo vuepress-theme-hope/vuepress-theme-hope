@@ -9,11 +9,7 @@ icon: image
 
 ## 配置
 
-::: code-tabs#language
-
-@tab TS
-
-```ts {7-14} title=".vuepress/config.ts"
+```js {7,9,11,13} title=".vuepress/config.js"
 import { mdEnhancePlugin } from "vuepress-plugin-md-enhance";
 
 export default {
@@ -31,29 +27,6 @@ export default {
   ],
 };
 ```
-
-@tab JS
-
-```js {7-14} title=".vuepress/config.js"
-import { mdEnhancePlugin } from "vuepress-plugin-md-enhance";
-
-export default {
-  plugins: [
-    mdEnhancePlugin({
-      // 启用 figure
-      figure: true,
-      // 启用图片懒加载
-      imgLazyload: true,
-      // 启用图片标记
-      imgMark: true,
-      // 启用图片大小
-      imgSize: true,
-    }),
-  ],
-};
-```
-
-:::
 
 <!-- #region after -->
 

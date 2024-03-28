@@ -13,7 +13,7 @@ The plugin provides you playground support.
 
 @tab TS
 
-```ts {8-36} title=".vuepress/config.ts"
+```ts {7-35} title=".vuepress/config.ts"
 import { mdEnhance } from "vuepress-plugin-md-enhance";
 
 export default {
@@ -56,7 +56,7 @@ export default {
 
 @tab JS
 
-```js {8-36} title=".vuepress/config.js"
+```js {7-35} title=".vuepress/config.js"
 import { mdEnhance } from "vuepress-plugin-md-enhance";
 
 export default {

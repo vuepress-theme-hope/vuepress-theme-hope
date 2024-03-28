@@ -45,11 +45,7 @@ npm i -D sandpack-vue3
 
 <!-- #endregion before -->
 
-::: code-tabs#config
-
-@tab TS
-
-```ts {8} title=".vuepress/config.ts"
+```js {7} title=".vuepress/config.js"
 import { mdEnhance } from "vuepress-plugin-md-enhance";
 
 export default {
@@ -61,23 +57,6 @@ export default {
   ],
 };
 ```
-
-@tab JS
-
-```js {8} title=".vuepress/config.js"
-import { mdEnhance } from "vuepress-plugin-md-enhance";
-
-export default {
-  plugins: [
-    mdEnhance({
-      // 启用 Sandpack 交互演示
-      sandpack: true,
-    }),
-  ],
-};
-```
-
-:::
 
 <!-- #region after -->
 

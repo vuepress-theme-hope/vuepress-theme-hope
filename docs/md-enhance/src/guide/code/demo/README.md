@@ -17,11 +17,7 @@ So, this means you do not have access to internal components in your project. Ne
 
 ## Settings
 
-::: code-tabs#language
-
-@tab TS
-
-```ts {8} title=".vuepress/config.ts"
+```js {7} title=".vuepress/config.js"
 import { mdEnhancePlugin } from "vuepress-plugin-md-enhance";
 
 export default {
@@ -33,23 +29,6 @@ export default {
   ],
 };
 ```
-
-@tab JS
-
-```js {8} title=".vuepress/config.js"
-import { mdEnhancePlugin } from "vuepress-plugin-md-enhance";
-
-export default {
-  plugins: [
-    mdEnhancePlugin({
-      // Enable Code Demo
-      demo: true,
-    }),
-  ],
-};
-```
-
-:::
 
 <!-- #region syntax -->
 
