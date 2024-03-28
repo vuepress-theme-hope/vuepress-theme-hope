@@ -52,19 +52,19 @@ VuePress 在一定程度上扩展了 Markdown 语法，但仍然缺少一些常�
 
 主题为 Markdown 提供了大量的扩展语法支持，让你在正文插入更多的内容。
 
-- 如果你是一名文学爱好者想放置一些随笔，主题提供了 [自定义对齐](../markdown/align.md) 与 [脚注](../markdown/footnote.md)。
+- 如果你是一名文学爱好者想放置一些随笔，主题提供了 [自定义对齐](../markdown/stylize/align.md) 与 [脚注](../markdown/content/footnote.md)。
 
-- 我们对 [图片进行了一些内置增强](../markdown/image.md)。
+- 我们对 [图片进行了一些内置增强](../markdown/grammar/image.md)。
 
-- 如果你希望存放一些知识笔记，主题提供了 [自定义容器](../markdown/hint.md)、[标记](../markdown/mark.md)、[任务列表](../markdown/tasklist.md) 与 [公式](../markdown/tex.md) 支持。
+- 如果你希望存放一些知识笔记，主题提供了 [自定义容器](../markdown/stylize/hint.md)、[标记](../markdown/stylize/mark.md)、[任务列表](../markdown/grammar/tasklist.md)、[思维导图](../markdown/chart/markmap.md) 与 [公式](../markdown/grammar/tex.md) 支持。
 
-- 如果你是一名程序员需要大量展示代码与 demo，本主题为代码块提供了浅色与深色两种主题，[代码组](../markdown/code-tabs.md) 与 ["一键复制" 按钮](../feature/copy-code.md)。同时我们还提供 [代码演示](../markdown/demo.md)，[Playground](../markdown/playground.md) [Kotlin Playground](../markdown/kotlin-playground.md) 和 [Vue Playground](../markdown/vue-playground.md) 功能，方便你展示自己的 Vue、React 组件或者其他 demo。
+- 如果你是一名程序员需要大量展示代码与 demo，本主题为代码块提供了浅色与深色两种主题，[代码组](../markdown/code/code-tabs.md) 与 ["一键复制" 按钮](../feature/copy-code.md)。同时我们还提供 [代码演示](../markdown/code/demo.md)，[Playground](../markdown/code/playground.md) [Kotlin Playground](../markdown/code/kotlin-playground.md) 和 [Vue Playground](../markdown/code/vue-playground.md) 功能，方便你展示自己的 Vue、React 组件或者其他 demo。
 
-- 如果你需要提供产品文档与展示，主题提供了 [选项卡](../markdown/tabs.md)、[幻灯片](../markdown/revealjs.md)、[图表](../markdown/chartjs.md)、[echarts](../markdown/echarts.md)、[流程图](../markdown/flowchart.md) 与 [Mermaid 图表](../markdown/mermaid.md) 功能。
+- 如果你需要提供产品文档与展示，主题提供了 [选项卡](../markdown/content/tabs.md)、[幻灯片](../markdown/content/revealjs.md)、[图表](../markdown/chart/chartjs.md)、[echarts](../markdown/chart/echarts.md)、[流程图](../markdown/chart/flowchart.md) 与 [Mermaid 图表](../markdown/chart/mermaid.md) 功能。
 
-- 为了重新组织您的内容，主题提供了[文件包含](../markdown/include.md)功能。
+- 为了重新组织您的内容，主题提供了[文件包含](../markdown/content/include.md)功能。
 
-- 为了设置内容的样式，主题提供了[下标和上标](../markdown/sup-sub.md)、[属性设置](../markdown/attrs.md)和 [样式化](../markdown/stylize. md) 功能，并为您提供了很多[有用的组件](../component/built-in.md)。
+- 为了设置内容的样式，主题提供了[下标和上标](../markdown/grammar/sup-sub.md)、[属性设置](../markdown/stylize/attrs.md)和 [样式化](../markdown/stylize. md) 功能，并为您提供了很多[有用的组件](../component/built-in.md)。
 
 总之，任何人都可以享受 Markdown 增强语法带来的便利。
 

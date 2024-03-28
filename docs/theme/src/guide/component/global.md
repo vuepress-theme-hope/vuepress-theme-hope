@@ -32,9 +32,9 @@ For details about how to use the plugin, see [Official Documentation](https://ec
 
 ## Register via Client Config File
 
-You can create `.vuepress/client.ts` and register components manually.
+You can create `.vuepress/client.js` or `.vuepress/client.ts` and register components manually.
 
-```ts title=".vuepress/client.ts"
+```js title=".vuepress/config.js"
 import { defineClientConfig } from "vuepress/client";
 import MyComponent from "./MyComponent.vue";
 

@@ -187,11 +187,7 @@ tag:
 
 1. 通过 `plugins.docsearch` 选项配置插件
 
-   ::: code-tabs#language
-
-   @tab TS
-
-   ```ts {8-11} title=".vuepress/config.ts"
+   ```js {7-10} title=".vuepress/config.js"
    import { defineUserConfig } from "vuepress";
    import { hopeTheme } from "vuepress-theme-hope";
 
@@ -206,26 +202,6 @@ tag:
      }),
    });
    ```
-
-   @tab JS
-
-   ```js {8-11} title=".vuepress/config.js"
-   import { defineUserConfig } from "vuepress";
-   import { hopeTheme } from "vuepress-theme-hope";
-
-   export default defineUserConfig({
-     theme: hopeTheme({
-       plugins: {
-         docsearch: {
-           // 你的选项
-           // appId, apiKey 和 indexName 是必填的
-         },
-       },
-     }),
-   });
-   ```
-
-   :::
 
 ::: info 更多
 

@@ -69,7 +69,7 @@ export default {
     mdEnhancePlugin({
       stylize: [
         {
-          matcher: /^不/,
+          matcher: /^(不|没)/,
           replacer: ({ tag, attrs, content }) => {
             if (tag === "em")
               return {

@@ -26,31 +26,7 @@ tag:
 
 字段的键名是路径，值支持填入一个或多个数组格式的密码。
 
-::: code-tabs#language
-
-@tab TS
-
-```ts title=".vuepress/config.ts"
-import { defineUserConfig } from "vuepress";
-import { hopeTheme } from "vuepress-theme-hope";
-
-export default defineUserConfig({
-  theme: hopeTheme({
-    encrypt: {
-      config: {
-        // 这会加密整个 guide 目录，并且两个密码都是可用的
-        "/guide/": ["1234", "5678"],
-        // 这只会加密 config/page.html
-        "/config/page.html": "1234",
-      },
-    },
-  }),
-});
-```
-
-@tab JS
-
-```js title=".vuepress/config.js"
+```js{8,10} title=".vuepress/config.js"
 import { hopeTheme } from "vuepress-theme-hope";
 
 export default {
@@ -66,8 +42,6 @@ export default {
   }),
 };
 ```
-
-:::
 
 ::: warning
 

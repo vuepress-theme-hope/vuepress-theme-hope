@@ -48,7 +48,7 @@ tag:
 - 类型: `boolean`
 - 默认值: `true`
 - 详情:
-  - [提示容器](../../guide/markdown/hint.md)
+  - [提示容器](../../guide/markdown/stylize/hint.md)
 
 是否启用提示容器支持:
 
@@ -89,7 +89,7 @@ tag:
 - 类型: `boolean`
 - 默认值: `false`
 - 详情:
-  - [GFM 警告](../../guide/markdown/alert.md)
+  - [GFM 警告](../../guide/markdown/stylize/alert.md)
 
 是否启用 GFM 警告。
 
@@ -98,7 +98,7 @@ tag:
 - 类型: `boolean`
 - 默认值: `false`
 - 详情:
-  - [选项卡](../../guide/markdown/tabs.md)
+  - [选项卡](../../guide/markdown/content/tabs.md)
 
 是否启用选项卡。
 
@@ -107,7 +107,7 @@ tag:
 - 类型: `boolean`
 - 默认值: `false`
 - 详情:
-  - [代码组](../../guide/markdown/code-tabs.md)
+  - [代码组](../../guide/markdown/code/code-tabs.md)
 
 是否启用代码组。
 
@@ -116,7 +116,7 @@ tag:
 - 类型: `boolean`
 - 默认值: `false`
 - 详情:
-  - [自定义对齐](../../guide/markdown/align.md)
+  - [自定义对齐](../../guide/markdown/stylize/align.md)
 
 是否启用自定义对齐格式支持。
 
@@ -153,7 +153,7 @@ tag:
 
 - 默认值: `false`
 - 详情:
-  - [定义属性](../../guide/markdown/attrs.md)
+  - [定义属性](../../guide/markdown/stylize/attrs.md)
 
 是否启用自定义属性支持。
 
@@ -161,6 +161,8 @@ tag:
 
 - 类型: `boolean`
 - 默认值: `false`
+- 详情:
+  - [上标](../../guide/markdown/grammar/sup-sub.md)
 
 是否启用上角标格式支持。
 
@@ -168,6 +170,8 @@ tag:
 
 - 类型: `boolean`
 - 默认值: `false`
+- 详情:
+  - [下标](../../guide/markdown/grammar/sup-sub.md)
 
 是否启用下角标格式支持。
 
@@ -175,6 +179,8 @@ tag:
 
 - 类型: `boolean`
 - 默认值: `false`
+- 详情:
+  - [脚注](../../guide/markdown/content/footnote.md)
 
 是否启用脚注格式支持。
 
@@ -182,6 +188,8 @@ tag:
 
 - 类型: `boolean`
 - 默认值: `false`
+- 详情:
+  - [标记](../../guide/markdown/stylize/mark.md)
 
 是否启用标记格式支持。
 

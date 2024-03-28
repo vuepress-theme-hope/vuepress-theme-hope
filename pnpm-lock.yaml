@@ -522,9 +522,6 @@ importers:
       '@vuepress/helper':
         specifier: 2.0.0-rc.21
         version: 2.0.0-rc.21(typescript@5.4.3)(vuepress@2.0.0-rc.9)
-      '@vuepress/plugin-copy-code':
-        specifier: 2.0.0-rc.21
-        version: 2.0.0-rc.21(typescript@5.4.3)(vuepress@2.0.0-rc.9)
       artplayer:
         specifier: 5.1.1
         version: 5.1.1
@@ -717,6 +714,9 @@ importers:
       '@types/katex':
         specifier: 0.16.7
         version: 0.16.7
+      '@vue/repl':
+        specifier: 4.1.1
+        version: 4.1.1
       '@vuepress/bundler-vite':
         specifier: 2.0.0-rc.9
         version: 2.0.0-rc.9(@types/node@20.11.30)(sass@1.72.0)(typescript@5.4.3)
@@ -724,9 +724,6 @@ importers:
         specifier: 2.0.0-rc.9
         version: 2.0.0-rc.9(esbuild@0.20.2)(typescript@5.4.3)
       '@vuepress/helper':
-        specifier: 2.0.0-rc.21
-        version: 2.0.0-rc.21(typescript@5.4.3)(vuepress@2.0.0-rc.9)
-      '@vuepress/plugin-copy-code':
         specifier: 2.0.0-rc.21
         version: 2.0.0-rc.21(typescript@5.4.3)(vuepress@2.0.0-rc.9)
       '@vuepress/plugin-feed':
@@ -747,6 +744,18 @@ importers:
       katex:
         specifier: 0.16.10
         version: 0.16.10
+      kotlin-playground:
+        specifier: 1.30.0
+        version: 1.30.0
+      markmap-lib:
+        specifier: 0.16.1
+        version: 0.16.1(markmap-common@0.16.0)
+      markmap-toolbar:
+        specifier: 0.16.0
+        version: 0.16.0(markmap-common@0.16.0)
+      markmap-view:
+        specifier: 0.16.0
+        version: 0.16.0(markmap-common@0.16.0)
       mermaid:
         specifier: 10.9.0
         version: 10.9.0

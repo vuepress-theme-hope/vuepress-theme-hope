@@ -15,41 +15,18 @@ tag:
 
 ## 配置
 
-::: code-tabs#language
-
-@tab TS
-
-```ts {8-10} title=".vuepress/config.ts"
-import { defineUserConfig } from "vuepress";
-import { hopeTheme } from "vuepress-theme-hope";
-
-export default defineUserConfig({
-  theme: hopeTheme({
-    plugins: {
-      mdEnhance: {
-        component: true,
-      },
-    },
-  }),
-});
-```
-
-@tab JS
-
-```js {7-9} title=".vuepress/config.js"
+```js {7} title=".vuepress/config.js"
 import { hopeTheme } from "vuepress-theme-hope";
 
 export default {
   theme: hopeTheme({
     plugins: {
       mdEnhance: {
-        component: true,
+        components: true,
       },
     },
   }),
 };
 ```
-
-:::
 
 <!-- @include: @md-enhance/zh/guide/content/component.md#after -->

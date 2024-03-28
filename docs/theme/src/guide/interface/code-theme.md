@@ -15,29 +15,7 @@ tag:
 
 By default, we use `one-light` and `one-dark` for lightmode and darkmode respectively, and you can change them by setting `light` and `dark` in `plugins.prismjs`.
 
-::: code-tabs#language
-
-@tab TS
-
-```ts {7-12} title=".vuepress/config.ts"
-import { defineUserConfig } from "vuepress";
-import { hopeTheme } from "vuepress-theme-hope";
-
-export default defineUserConfig({
-  theme: hopeTheme({
-    plugins: {
-      prismjs: {
-        light: "light theme keyword",
-        dark: "dark theme keyword",
-      },
-    },
-  }),
-});
-```
-
-@tab JS
-
-```js {7-12} title=".vuepress/config.js"
+```js {6-10} title=".vuepress/config.js"
 import { hopeTheme } from "vuepress-theme-hope";
 
 export default {
@@ -51,8 +29,6 @@ export default {
   }),
 };
 ```
-
-:::
 
 ::: tip
 
@@ -139,40 +115,13 @@ Prism.js is fast and lightweight, but it can not highlight all syntax correctly.
 
 1. Import shiki plugin and use it:
 
-   ::: code-tabs#language
-
-   @tab TS
-
-   ```ts title=".vuepress/config.ts"
-   import { shikiPlugin } from "@vuepress/plugin-shiki";
-   import { defineUserConfig } from "vuepress";
-
-   export default defineUserConfig({
-     plugins: [
-       shikiPlugin({
-         // your options
-
-         // example
-         themes: {
-           light: "github-light",
-           dark: "one-dark-pro",
-         },
-       }),
-     ],
-   });
-   ```
-
-   @tab JS
-
-   ```js title=".vuepress/config.js"
+   ```js{5-11} title=".vuepress/config.js"
    import { shikiPlugin } from "@vuepress/plugin-shiki";
 
    export default {
      plugins: [
        shikiPlugin({
          // your options
-
-         // example
          themes: {
            light: "github-light",
            dark: "one-dark-pro",
@@ -181,8 +130,6 @@ Prism.js is fast and lightweight, but it can not highlight all syntax correctly.
      ],
    };
    ```
-
-   :::
 
 1. Set background color and font color for code blocks according to theme you want to use by adding these variables in `.vuepress/styles/config.scss`:.
 

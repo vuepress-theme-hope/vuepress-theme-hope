@@ -57,7 +57,7 @@ tag:
   ```md
   <MyComponent />
 
-  <script setup lang="ts">
+  <script setup>
   import MyComponent from "@source/example/MyComponent.vue";
   </script>
   ```
@@ -77,7 +77,7 @@ tag:
   └── ...
   ```
 
-  ```ts title=".vuepress/config.ts"
+  ```js title=".vuepress/config.js"
   import { getDirname, path } from "vuepress/utils";
 
   const __dirname = getDirname(import.meta.url);
@@ -92,7 +92,7 @@ tag:
   ```md
   <MyComponent />
 
-  <script setup lang="ts">
+  <script setup>
   import MyComponent from "@MyComponent";
   </script>
   ```

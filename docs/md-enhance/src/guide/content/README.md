@@ -14,7 +14,7 @@ This plugin provides the following ways to enrich your content.
 - Component: quickly insert component in M.
 - Footnotes: Supplementary explanation of key content
 - Import files: Easily split or reuse files
-- Slideshow: Show content
+- Presentation: Show content
 
 <!-- #endregion intro -->
 

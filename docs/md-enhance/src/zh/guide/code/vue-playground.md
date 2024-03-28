@@ -15,7 +15,7 @@ icon: fab fa-vuejs
 
 :::
 
-<!-- #region before -->
+<!-- #region settings -->
 
 ## 配置
 
@@ -45,7 +45,7 @@ npm i -D @vue/repl
 
 之后启用它:
 
-<!-- #endregion before -->
+<!-- #endregion settings -->
 
 ```js {7} title=".vuepress/config.js"
 import { mdEnhance } from "vuepress-plugin-md-enhance";

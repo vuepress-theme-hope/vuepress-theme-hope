@@ -188,11 +188,7 @@ The theme adds built-in support for <ProjectLink name="search-pro">`vuepress-plu
 
 1. Customize the plugin with `plugins.docsearch` in theme options.
 
-   ::: code-tabs#language
-
-   @tab TS
-
-   ```ts {8-11} title=".vuepress/config.ts"
+   ```js {7-10} title=".vuepress/config.js"
    import { defineUserConfig } from "vuepress";
    import { hopeTheme } from "vuepress-theme-hope";
 
@@ -207,26 +203,6 @@ The theme adds built-in support for <ProjectLink name="search-pro">`vuepress-plu
      }),
    });
    ```
-
-   @tab JS
-
-   ```js {8-11} title=".vuepress/config.js"
-   import { defineUserConfig } from "vuepress";
-   import { hopeTheme } from "vuepress-theme-hope";
-
-   export default defineUserConfig({
-     theme: hopeTheme({
-       plugins: {
-         docsearch: {
-           // plugin options here
-           // appId, apiKey and indexName are required
-         },
-       },
-     }),
-   });
-   ```
-
-   :::
 
 ::: info More
 

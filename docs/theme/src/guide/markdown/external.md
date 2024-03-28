@@ -48,33 +48,3 @@ Output:
 For detailed parameters and usage, please see [Home](https://shields.io/).
 
 :::
-
-## Markmap
-
-Markmap is a tool for converting Markdown into mind maps. It supports more format and content than the built-in flowchart of the theme.
-
-1. Use [Markmap](https://markmap.js.org/) to generate mind map HTML file
-1. Place the HTML file under `.vuepress/public/`
-1. Insert into Markdown via `<iframe>`
-
-Input:
-
-```html
-<iframe
-  :src="$withBase('/markmap/demo.html')"
-  width="100%"
-  height="400"
-  frameborder="0"
-  scrolling="No"
-  leftmargin="0"
-  topmargin="0"
-/>
-```
-
-Output:
-
-<!-- markdownlint-disable -->
-
-<iframe :src="$withBase('/markmap/demo.html')" width="100%" height="400" frameborder="0" scrolling="No" leftmargin="0" topmargin="0" />
-
-<!-- markdownlint-restore -->

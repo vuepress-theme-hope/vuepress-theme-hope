@@ -161,16 +161,16 @@ You can now [set different themes](../guide/interface/code-theme.md) for code bl
 
 The following new features are added:
 
-- [Image Mark](../guide/markdown/image.md#image-mark)
+- [Image Mark](../guide/markdown/grammar/image.md#image-mark)
 
 - [GFM](../guide/markdown/others.md#gfm)
 
-- [Chart.js](../guide/markdown/chartjs.md)
+- [Chart.js](../guide/markdown/chart/chartjs.md)
 
-- [ECharts](../guide/markdown/echarts.md)
+- [ECharts](../guide/markdown/chart/echarts.md)
 
-- [File Include](../guide/markdown/include.md)
+- [File Include](../guide/markdown/content/include.md)
 
-- [Code Tabs](../guide/markdown/code-tabs.md)
+- [Code Tabs](../guide/markdown/code/code-tabs.md)
 
-- [Tabs](../guide/markdown/tabs.md)
+- [Tabs](../guide/markdown/content/tabs.md)

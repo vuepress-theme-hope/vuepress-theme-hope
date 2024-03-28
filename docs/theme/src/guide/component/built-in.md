@@ -40,43 +40,7 @@ By default, `<Badge />` is available to align with `@vuepress/theme-default`.
 
 :::
 
-::: code-tabs#language
-
-@tab TS
-
-```ts {8-10} title=".vuepress/config.ts"
-import { defineUserConfig } from "vuepress";
-import { hopeTheme } from "vuepress-theme-hope";
-
-export default defineUserConfig({
-  theme: hopeTheme({
-    plugins: {
-      components: {
-        // components you want
-        components: [
-          "ArtPlayer",
-          "Badge",
-          "BiliBili",
-          "CodePen",
-          "PDF",
-          "Replit",
-          "Share",
-          "SiteInfo",
-          "StackBlitz",
-          "VPBanner",
-          "VPCard",
-          "VidStack",
-          "XiGua",
-        ],
-      },
-    },
-  }),
-});
-```
-
-@tab JS
-
-```js {7-9} title=".vuepress/config.js"
+```js {8-22} title=".vuepress/config.js"
 import { hopeTheme } from "vuepress-theme-hope";
 
 export default {
@@ -104,8 +68,6 @@ export default {
   }),
 };
 ```
-
-:::
 
 ## Utilities
 

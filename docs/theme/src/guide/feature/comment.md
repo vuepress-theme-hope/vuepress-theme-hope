@@ -20,30 +20,6 @@ tag:
 
 ## Enable <Badge text="Support page config" />
 
-::: code-tabs#language
-
-@tab TS
-
-```ts {9,12} title=".vuepress/config.ts"
-import { defineUserConfig } from "vuepress";
-import { hopeTheme } from "vuepress-theme-hope";
-
-export default defineUserConfig({
-  theme: hopeTheme({
-    plugins: {
-      comment: {
-        provider: "Waline",
-
-        // waline 模式下
-        serverURL: "...", // your serverURL
-      },
-    },
-  }),
-});
-```
-
-@tab JS
-
 ```js {8,11} title=".vuepress/config.js"
 import { hopeTheme } from "vuepress-theme-hope";
 
@@ -51,17 +27,16 @@ export default {
   theme: hopeTheme({
     plugins: {
       comment: {
+        // choose a comment provider
         provider: "Waline",
 
-        // waline 模式下
+        // provider options
         serverURL: "...", // your serverURL
       },
     },
   }),
 };
 ```
-
-:::
 
 Comment feature is enabled globally by default, controlled by `plugins.comment.comment` options.
 
@@ -135,29 +110,7 @@ Then input your new GitHub repo name and set `LEAN_ID`, `LEAN_KEY` and `LEAN_MAS
 
 Click `Deploy` button to deploy. It will show you deploy successfully after some time. Then config the vercel link in your theme options:
 
-::: code-tabs#language
-
-@tab TS
-
-```ts title=".vuepress/config.ts"
-import { defineUserConfig } from "vuepress";
-import { hopeTheme } from "vuepress-theme-hope";
-
-export default defineUserConfig({
-  theme: hopeTheme({
-    plugins: {
-      comment: {
-        provider: "Waline",
-        serverURL: "YOUR_SERVER_URL", // your server url
-      },
-    },
-  }),
-});
-```
-
-@tab JS
-
-```js title=".vuepress/config.js"
+```js{7,8} title=".vuepress/config.js"
 import { hopeTheme } from "vuepress-theme-hope";
 
 export default {
@@ -171,8 +124,6 @@ export default {
   }),
 };
 ```
-
-:::
 
 ::: tip
 
@@ -220,29 +171,7 @@ npm i -D twikoo
 1. Go to Overview, click the link under Domains, if the environment configuration is correct, you can see the prompt "Twikoo cloud function is running normally"
 1. Vercel Domains (with `https://` prefix, for example `https://xxx.vercel.app`) is your environment ID
 
-::: code-tabs#language
-
-@tab TS
-
-```ts title=".vuepress/config.ts"
-import { defineUserConfig } from "vuepress";
-import { hopeTheme } from "vuepress-theme-hope";
-
-export default defineUserConfig({
-  theme: hopeTheme({
-    plugins: {
-      comment: {
-        provider: "Twikoo",
-        envId: "YOUR_SERVER_URL", // your server url
-      },
-    },
-  }),
-});
-```
-
-@tab JS
-
-```js title=".vuepress/config.js"
+```js{7,8} title=".vuepress/config.js"
 import { hopeTheme } from "vuepress-theme-hope";
 
 export default {
@@ -256,8 +185,6 @@ export default {
   }),
 };
 ```
-
-:::
 
 ::: note
 

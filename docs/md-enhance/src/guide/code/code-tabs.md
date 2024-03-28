@@ -22,11 +22,11 @@ export default {
 };
 ```
 
+<!-- region after -->
+
 ## Usage
 
 This is the same as [tabs feature](../content/tabs.md), but it's special built for code blocks.
-
-<!-- region after -->
 
 Only code fence after `@tab` marker is allowed inside code tabs, other Markdown content will be ignored.
 

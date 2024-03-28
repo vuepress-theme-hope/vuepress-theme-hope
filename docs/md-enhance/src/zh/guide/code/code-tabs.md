@@ -22,11 +22,11 @@ export default {
 };
 ```
 
+<!-- #region after -->
+
 ## 使用
 
 此功能和 [选项卡功能](../content/tabs.md) 相同，但它是专门为代码块构建的。
-
-<!-- #region after -->
 
 代码选项卡只会渲染 `@tab` 标记后的代码块，其他 Markdown 内容将被忽略。
 

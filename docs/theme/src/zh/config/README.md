@@ -37,8 +37,6 @@ tag:
 
 - [Markdown 增强插件配置](plugins/md-enhance.md)
 
-- [PWA 插件配置](plugins/pwa.md)
-
 - [其他插件](plugins/others.md)
 
 ## Frontmatter 配置

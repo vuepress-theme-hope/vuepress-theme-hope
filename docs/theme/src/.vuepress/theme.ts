@@ -158,6 +158,7 @@ export default theme(
 
             return file;
           },
+          resolveLinkPath: false,
         },
         kotlinPlayground: true,
         mathjax: true,

@@ -42,7 +42,7 @@ Some of the behavior might be different, for example to support Vue syntax, we a
 - Type: `boolean`
 - Default: `false`
 - Details:
-  - [Hint box](../../guide/markdown/hint.md)
+  - [Hint box](../../guide/markdown/stylize/hint.md)
 
 Whether to enable hint box including
 
@@ -83,7 +83,7 @@ Whether convert URL-like text into links
 - Type: `boolean`
 - Default: `false`
 - Details:
-  - [GFM Alerts](../../guide/markdown/alert.md)
+  - [GFM Alerts](../../guide/markdown/stylize/alert.md)
 
 Whether to enable gfm alerts.
 
@@ -92,7 +92,7 @@ Whether to enable gfm alerts.
 - Type: `boolean`
 - Default: `false`
 - Details:
-  - [Tabs](../../guide/markdown/tabs.md)
+  - [Tabs](../../guide/markdown/content/tabs.md)
 
 Whether to enable tabs.
 
@@ -101,7 +101,7 @@ Whether to enable tabs.
 - Type: `boolean`
 - Default: `false`
 - Details:
-  - [Code Tabs](../../guide/markdown/code-tabs.md)
+  - [Code Tabs](../../guide/markdown/code/code-tabs.md)
 
 Whether to enable codetabs.
 
@@ -110,7 +110,7 @@ Whether to enable codetabs.
 - Type: `boolean`
 - Default: `false`
 - Details:
-  - [Align](../../guide/markdown/align.md)
+  - [Align](../../guide/markdown/stylize/align.md)
 
 Whether to enable custom align.
 
@@ -147,7 +147,7 @@ Whether to enable custom align.
 
 - Default: `false`
 - Details:
-  - [Attrs](../../guide/markdown/attrs.md)
+  - [Attrs](../../guide/markdown/stylize/attrs.md)
 
 Whether to enable attribute customize support.
 
@@ -155,6 +155,8 @@ Whether to enable attribute customize support.
 
 - Type: `boolean`
 - Default: `false`
+- Details:
+  - [Superscript](../../guide/markdown/grammar/sup-sub.md)
 
 Whether to enable the upper format support.
 
@@ -162,6 +164,8 @@ Whether to enable the upper format support.
 
 - Type: `boolean`
 - Default: `false`
+- Details:
+  - [Subscript](../../guide/markdown/grammar/sup-sub.md)
 
 Whether to enable the lower corner format support.
 
@@ -169,6 +173,8 @@ Whether to enable the lower corner format support.
 
 - Type: `boolean`
 - Default: `false`
+- Details:
+  - [Footnote](../../guide/markdown/content/footnote.md)
 
 Whether to enable footnote format support.
 
@@ -176,6 +182,8 @@ Whether to enable footnote format support.
 
 - Type: `boolean`
 - Default: `false`
+- Details:
+  - [Mark](../../guide/markdown/stylize/mark.md)
 
 Whether to enable mark support.
 

@@ -48,33 +48,3 @@ tag:
 详细的参数与使用请见 [首页](https://shields.io/)。
 
 :::
-
-## Markmap
-
-Markmap 是一个将 Markdown 转换为思维导图的工具。它相对于主题内置的 flowchart 支持更多的格式与内容。
-
-1. 使用 [Markmap](https://markmap.js.org/) 生成思维导图 HTML 文件
-1. 将 HTML 文件放在 `.vuepress/public/` 下
-1. 通过 `<iframe>` 插入到 Markdown
-
-输入:
-
-```html
-<iframe
-  :src="$withBase('/markmap/demo-zh.html')"
-  width="100%"
-  height="400"
-  frameborder="0"
-  scrolling="No"
-  leftmargin="0"
-  topmargin="0"
-/>
-```
-
-输出:
-
-<!-- markdownlint-disable -->
-
-<iframe :src="$withBase('/markmap/demo-zh.html')" width="100%" height="400" frameborder="0" scrolling="No" leftmargin="0" topmargin="0" />
-
-<!-- markdownlint-restore -->

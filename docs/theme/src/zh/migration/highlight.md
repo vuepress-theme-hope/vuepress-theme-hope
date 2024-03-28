@@ -162,16 +162,16 @@ VuePressThemeHope@v2 使用组合 API 重写，其样式系统从 stylus 迁移�
 
 添加了以下新功能:
 
-- [图像标记](../guide/markdown/image.md#图片-id-标记)
+- [图像标记](../guide/markdown/grammar/image.md#图片-id-标记)
 
 - [GFM](../guide/markdown/others.md#gfm)
 
-- [Chart.js](../guide/markdown/chartjs.md)
+- [Chart.js](../guide/markdown/chart/chartjs.md)
 
-- [ECharts](../guide/markdown/echarts.md)
+- [ECharts](../guide/markdown/chart/echarts.md)
 
-- [文件引入](../guide/markdown/include.md)
+- [文件引入](../guide/markdown/content/include.md)
 
-- [代码组](../guide/markdown/code-tabs.md)
+- [代码组](../guide/markdown/code/code-tabs.md)
 
-- [选项卡](../guide/markdown/tabs.md)
+- [选项卡](../guide/markdown/content/tabs.md)
