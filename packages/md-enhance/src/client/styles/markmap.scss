@@ -28,6 +28,20 @@
     inset: 0 0 auto;
     color: var(--vp-tc);
   }
+
+  pre {
+    padding: 0 !important;
+    line-height: inherit !important;
+
+    code {
+      padding: 0 !important;
+    }
+  }
+
+  // FIXME: Probably markmap bug
+  .katex-html {
+    display: none;
+  }
 }
 
 .mm-toolbar {
