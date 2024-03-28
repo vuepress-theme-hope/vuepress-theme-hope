@@ -49,6 +49,12 @@
 // otherwise highlight-lines can not work
 div[class*="language-"] {
   pre {
-    background: transparent !important;
+    &,
+    #{hope-config.$dark-selector} & {
+      &,
+      span {
+        background: transparent !important;
+      }
+    }
   }
 }
