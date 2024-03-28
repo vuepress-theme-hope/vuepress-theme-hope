@@ -30,7 +30,7 @@ tag:
 
 插件的使用方法详见 [官方文档](https://ecosystem.vuejs.press/zh/plugins/register-components.html)。
 
-### 通过 ClientConfigFile 注册
+### 通过客户端配置文件注册
 
 你可以通过创建 `.vuepress/client.ts` 手动注册组件。
 

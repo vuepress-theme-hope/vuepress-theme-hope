@@ -20,7 +20,7 @@ Every Markdown file is first compiled to HTML and then converted to a Vue Single
 - `<script>` and `<style>` tags are directly treated as tags in Vue SFC. In other words, they are promoted from the `<template>` tag to the top level of the SFC.
 - All content other than `<script>` and `<style>` tags will be compiled to HTML and then treated as `<template>` tags in Vue SFC.
 
-The converted Vue SFC will be cached in the `.vuepress/.temp/pages` directory, and will be rendered as `<Content />` component in layouts.
+The converted Vue SFC will be cached in the `.vuepress/.temp/pages` directory, and will be rendered by the internal `<Content />` component.
 
 ## Using Vue syntax in Markdown
 

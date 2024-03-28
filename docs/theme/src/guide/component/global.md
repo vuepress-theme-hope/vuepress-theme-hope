@@ -30,7 +30,7 @@ You can automatically register components via the `@vuepress/plugin-register-com
 
 For details about how to use the plugin, see [Official Documentation](https://ecosystem.vuejs.press/plugins/register-components.html).
 
-## Register via ClientConfigFile
+## Register via Client Config File
 
 You can create `.vuepress/client.ts` and register components manually.
 

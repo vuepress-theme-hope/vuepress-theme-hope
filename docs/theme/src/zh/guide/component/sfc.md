@@ -21,7 +21,7 @@ tag:
 
 - 除了 `<script>` 和 `<style>` 标签之外的所有内容都会被编译为 HTML，然后被视为 Vue SFC 中的 `<template>` 标签。
 
-转换后的 Vue SFC 会被缓存到 `.vuepress/.temp/pages` 目录中，并会在布局中以 `<Content />` 组件的形式渲染。
+转换后的 Vue SFC 会被缓存到 `.vuepress/.temp/pages` 目录中，并会在布局中通过内置的 `<Content />` 组件渲染。
 
 ## 在 Markdown 中使用 Vue 语法
 
