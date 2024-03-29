@@ -126,7 +126,7 @@ export default defineComponent({
       }
 
       return props.user && props.repl
-        ? `https://replit.com/@${props.user}/${props.repl}${
+        ? `https://replit.com/@${props.user}/${props.repl}?embed=true${
             props.file?.length ? `#${props.file}` : ""
           }`
         : null;
