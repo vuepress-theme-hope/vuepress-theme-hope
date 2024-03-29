@@ -38,16 +38,11 @@ export const useSearchResultHistory = (): SearchResultHistory => {
       };
 
       if ("header" in item) result.header = item.header;
-      if (searchProResultStorage.value.length < resultHistoryCount)
-        searchProResultStorage.value = [
-          result,
-          ...searchProResultStorage.value,
-        ];
-      else
-        searchProResultStorage.value = [
-          result,
-          ...searchProResultStorage.value.slice(0, resultHistoryCount - 1),
-        ];
+
+      searchProResultStorage.value = [
+        result,
+        ...searchProResultStorage.value.slice(0, resultHistoryCount - 1),
+      ];
     }
   };
 
