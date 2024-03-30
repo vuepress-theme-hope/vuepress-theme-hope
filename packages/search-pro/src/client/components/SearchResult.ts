@@ -67,7 +67,7 @@ export default defineComponent({
     const enableHistory = enableQueryHistory || enableResultHistory;
 
     const queries = toRef(props, "queries");
-    const { results, searching } = useSearchResult(queries);
+    const { results, isSearching: searching } = useSearchResult(queries);
 
     const activatedHistoryStatus = reactive({ isQuery: true, index: 0 });
     const activatedResultIndex = ref(0);

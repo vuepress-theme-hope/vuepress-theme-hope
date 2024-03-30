@@ -1,2 +1,2 @@
+export { type SearchWorker, createSearchWorker } from "./createSearchWorker.js";
 export * from "./helpers/index.js";
-export { type SearchWorker, createSearchWorker } from "./utils/index.js";
