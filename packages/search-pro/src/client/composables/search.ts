@@ -1,15 +1,15 @@
 import { useDebounceFn } from "@vueuse/core";
 import type { Ref } from "vue";
-import { onMounted, onUnmounted, ref, shallowRef, watch } from "vue";
+import { computed, onMounted, onUnmounted, ref, shallowRef, watch } from "vue";
 import { usePageData, useRouteLocale } from "vuepress/client";
 
+import { createSearchWorker } from "../createSearchWorker.js";
 import { searchProOptions } from "../define.js";
 import { useSearchOptions } from "../helpers/index.js";
 import type { SearchResult } from "../typings/index.js";
-import { createSearchWorker } from "../utils/index.js";
 
 export interface SearchRef {
-  searching: Ref<boolean>;
+  isSearching: Ref<boolean>;
   results: Ref<SearchResult[]>;
 }
 
@@ -18,16 +18,12 @@ export const useSearchResult = (queries: Ref<string[]>): SearchRef => {
   const routeLocale = useRouteLocale();
   const pageData = usePageData();
 
-  const searching = ref(false);
+  const searchingProcessNumber = ref(0);
+  const isSearching = computed(() => searchingProcessNumber.value > 0);
   const results = shallowRef<SearchResult[]>([]);
 
   onMounted(() => {
     const { search, terminate } = createSearchWorker();
-
-    const endSearch = (): void => {
-      results.value = [];
-      searching.value = false;
-    };
 
     const performSearch = useDebounceFn((queries: string[]): void => {
       const query = queries.join(" ");
@@ -40,22 +36,25 @@ export const useSearchResult = (queries: Ref<string[]>): SearchRef => {
         ...options
       } = searchOptions.value;
 
-      searching.value = true;
+      if (query) {
+        searchingProcessNumber.value += 1;
 
-      if (query)
         search(queries.join(" "), routeLocale.value, options)
           .then((results) =>
             searchFilter(results, query, routeLocale.value, pageData.value),
           )
           .then((_results) => {
+            searchingProcessNumber.value -= 1;
             results.value = _results;
-            searching.value = false;
           })
           .catch((err) => {
-            console.error(err);
-            endSearch();
+            console.warn(err);
+            searchingProcessNumber.value -= 1;
+            if (!searchingProcessNumber.value) results.value = [];
           });
-      else endSearch();
+      } else {
+        results.value = [];
+      }
     }, searchProOptions.searchDelay - searchProOptions.suggestDelay);
 
     watch([queries, routeLocale], ([queries]) => performSearch(queries), {
@@ -68,7 +67,7 @@ export const useSearchResult = (queries: Ref<string[]>): SearchRef => {
   });
 
   return {
-    searching,
+    isSearching,
     results,
   };
 };

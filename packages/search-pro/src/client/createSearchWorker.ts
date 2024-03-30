@@ -1,9 +1,9 @@
 import { values } from "@vuepress/helper/client";
 import type { SearchOptions } from "slimsearch";
 
-import type { IndexItem } from "../../shared/index.js";
-import { clientWorker, searchProOptions } from "../define.js";
-import type { QueryResult, SearchResult } from "../typings/index.js";
+import { searchProOptions } from "./define.js";
+import type { QueryResult, SearchResult } from "./typings/index.js";
+import type { IndexItem } from "../shared/index.js";
 
 declare const __VUEPRESS_BASE__: string;
 declare const __VUEPRESS_DEV__: boolean;
@@ -69,18 +69,20 @@ export interface SearchWorker {
   terminate: () => void;
 }
 
+const ERR_MSG = "Canceled because of new search request.";
+
 export const createSearchWorker = (): SearchWorker => {
-  // Service worker with module only works on webkit browsers now, so we only used it in dev
   const worker = new Worker(
     __VUEPRESS_DEV__
-      ? clientWorker
+      ? new URL("./worker/index.js", import.meta.url)
       : `${__VUEPRESS_BASE__}${searchProOptions.worker}`,
     __VUEPRESS_DEV__ ? { type: "module" } : {},
   );
-  const queues = {
-    suggest: [] as PromiseItem[],
-    search: [] as PromiseItem[],
-    all: [] as PromiseItem[],
+
+  const states: Record<"suggest" | "search" | "all", PromiseItem | null> = {
+    suggest: null,
+    search: null,
+    all: null,
   };
 
   worker.addEventListener(
@@ -93,20 +95,15 @@ export const createSearchWorker = (): SearchWorker => {
       | ["all", number, QueryResult]
     >) => {
       const [type, timestamp, result] = data;
-      const queue = queues[type];
-      const index = queue.findIndex(({ id }) => id === timestamp);
+      const state = states[type];
 
-      if (index > -1) {
-        const { resolve } = queue[index];
-
-        queue.forEach((item, i) => {
-          if (i > index) item.reject(new Error("Search has been canceled."));
-        });
-        queues[type] = queue.slice(index + 1);
-        resolve(result);
-      }
+      if (state?.id === timestamp) state.resolve(result);
     },
   );
+
+  worker.addEventListener("error", (err) => {
+    console.error("Search Worker error:", err);
+  });
 
   return {
     suggest: (
@@ -115,10 +112,11 @@ export const createSearchWorker = (): SearchWorker => {
       options?: SearchOptions<string, IndexItem>,
     ): Promise<string[]> =>
       new Promise((resolve, reject) => {
+        states.suggest?.reject(new Error(ERR_MSG));
         const id = Date.now();
 
         worker.postMessage({ type: "suggest", id, query, locale, options });
-        queues.suggest.push({ id, resolve, reject });
+        states.suggest = { id, resolve, reject };
       }),
 
     search: (
@@ -127,10 +125,13 @@ export const createSearchWorker = (): SearchWorker => {
       options?: SearchOptions<string, IndexItem>,
     ): Promise<SearchResult[]> =>
       new Promise<SearchResult[]>((resolve, reject) => {
+        states.search?.reject(new Error(ERR_MSG));
+
         const id = Date.now();
 
         worker.postMessage({ type: "search", id, query, locale, options });
-        queues.search.push({ id, resolve, reject });
+        console.log("post");
+        states.search = { id, resolve, reject };
       }),
 
     all: (
@@ -139,19 +140,19 @@ export const createSearchWorker = (): SearchWorker => {
       options?: SearchOptions<string, IndexItem>,
     ): Promise<QueryResult> =>
       new Promise<QueryResult>((resolve, reject) => {
+        states.all?.reject(new Error(ERR_MSG));
+
         const id = Date.now();
 
         worker.postMessage({ type: "all", id, query, locale, options });
-        queues.all.push({ id, resolve, reject });
+        states.all = { id, resolve, reject };
       }),
 
     terminate: (): void => {
       worker.terminate();
 
-      values(queues).forEach((item) => {
-        item.forEach(({ reject }) =>
-          reject(new Error("Worker has been terminated.")),
-        );
+      values(states).forEach((item) => {
+        item?.reject(new Error("Worker has been terminated."));
       });
     },
   };

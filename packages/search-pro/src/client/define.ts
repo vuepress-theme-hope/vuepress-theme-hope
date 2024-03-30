@@ -27,4 +27,3 @@ export const enableAutoSuggestions = SEARCH_PRO_ENABLE_AUTO_SUGGESTIONS;
 export const searchProClientCustomFiledConfig = SEARCH_PRO_CUSTOM_FIELDS;
 export const searchProHotKeys = searchProOptions.hotKeys;
 export const searchProLocales = SEARCH_PRO_LOCALES;
-export const clientWorker = new URL("./worker/index.js", import.meta.url);
