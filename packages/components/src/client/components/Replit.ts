@@ -73,14 +73,11 @@ export default defineComponent({
     },
 
     /**
-     * Replit theme
+     * Whether to enable dark mode
      *
-     * Replit 主题
+     * 是否启用暗黑模式
      */
-    theme: {
-      type: String,
-      default: "light",
-    },
+    darkmode: Boolean,
 
     /**
      * The default file to open in the editor
@@ -116,17 +113,21 @@ export default defineComponent({
     const shouldLoad = ref(false);
     const loaded = ref(false);
 
+    /**
+     * @see https://docs.replit.com/hosting/embedding-repls#how-to-embed-a-repl
+     */
     const replLink = computed(() => {
       if (props.link) {
         const url = new URL(props.link);
 
         url.searchParams.set("embed", "true");
+        url.searchParams.set("theme", props.darkmode ? "dark" : "light");
 
         return url.toString();
       }
 
       return props.user && props.repl
-        ? `https://replit.com/@${props.user}/${props.repl}${
+        ? `https://replit.com/@${props.user}/${props.repl}?embed=true&theme=${props.darkmode ? "dark" : "light"}${
             props.file?.length ? `#${props.file}` : ""
           }`
         : null;
