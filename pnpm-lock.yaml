@@ -63,8 +63,8 @@ importers:
         specifier: 7.0.3
         version: 7.0.3
       cz-git:
-        specifier: 1.9.0
-        version: 1.9.0
+        specifier: 1.9.1
+        version: 1.9.1
       esbuild:
         specifier: 0.20.2
         version: 0.20.2
@@ -7235,8 +7235,8 @@ packages:
       - typescript
     dev: true
 
-  /cz-git@1.9.0:
-    resolution: {integrity: sha512-xxqJwVS4MseVXLOlIK6w97WSHlo14BaOmhO3H6qB0H2Q5Kf3URMwJuYbInq1GxAVT14XLUZBhMy/3Di+lux/Cg==}
+  /cz-git@1.9.1:
+    resolution: {integrity: sha512-GK3EI5R7GApS8u+g9QPvy/50z0NiG7ijc1NASxZaDnQn0ARzr73MjZb3Lt4cZQvKJBd8GrfvOWqHgwMQQ/OlaA==}
     engines: {node: '>=v12.20.0'}
     dev: true
 
