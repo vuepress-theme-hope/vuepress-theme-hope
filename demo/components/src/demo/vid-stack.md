@@ -1,11 +1,5 @@
 # VidStack
 
-::: warning
-
-VidStack has some known issues with Vue. So stop using it until we fixed it.
-
-:::
-
 ## Demo
 
 A video player:
