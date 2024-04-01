@@ -30,31 +30,7 @@ You can use this component to embed a PDF viewer.
 
 Not all browsers support embed PDF viewer (E.g.: No mobile browser supports this now), so we add support for PDFJS Viewer.
 
-Since PDFJS Viewer is large, you will need to manually download it from [GitHub](https://github.com/mozilla/pdf.js/releases)
-
-After finish downloading, unzip it to a location you want in `.vuepress/public` folder, then set destination relative to `.vuepress/public` to `componentOptions.pdf.pdfjs` in component options.
-
-::: details Example
-
-If you unzip pdfjs to `.vuepress/public/assets/lib/pdfjs`, you shall set:
-
-```ts title=".vuepress/config.ts"
-import { componentsPlugin } from "vuepress-plugin-components";
-
-export default {
-  plugins: [
-    componentsPlugin({
-      componentOptions: {
-        pdf: {
-          pdfjs: "/assets/lib/pdfjs",
-        },
-      },
-    }),
-  ],
-};
-```
-
-:::
+By default the pdfjs viewer is fetched from `https://theme-hope-assets.vuejs.press/pdfjs/`. You can customize `componentOptions.pdf.pdfjs` in component options to specific another one.
 
 ::: details noToolbar support
 
@@ -115,6 +91,13 @@ PDF viewer height
 - Default: `16 / 9`
 
 PDF viewer ratio, ONLY valid when `height` not set.
+
+### viewer
+
+- Type: `boolean`
+- Default: `false`
+
+Whether to force use PDFJS viewer.
 
 ### page
 

@@ -95,6 +95,13 @@ export default defineComponent({
       type: [String, Number],
       default: 100,
     },
+
+    /**
+     * Whether use pdfjs viewer by force
+     *
+     * 是否强制使用 pdfjs 阅读器
+     */
+    viewer: Boolean,
   },
 
   setup(props) {
@@ -108,8 +115,9 @@ export default defineComponent({
         options: {
           page: props.page,
           noToolbar: props.noToolbar,
-          zoom: props.zoom,
+          ...(props.zoom.toString() === "100" ? {} : { zoom: props.zoom }),
         },
+        force: props.viewer,
       });
       resize();
     });

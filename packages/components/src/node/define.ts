@@ -45,7 +45,12 @@ export const getDefine =
         default: pdfLocaleConfig,
         config: options.locales?.pdf,
       });
-      result["PDFJS_URL"] = options.componentOptions?.pdf?.pdfjs || null;
+      result["PDFJS_URL"] =
+        typeof options.componentOptions?.pdf?.pdfjs === "string"
+          ? options.componentOptions?.pdf?.pdfjs
+          : options.componentOptions?.pdf?.pdfjs === false
+            ? null
+            : "https://theme-hope-assets.vuejs.press/pdfjs/";
     }
 
     if (options.components?.includes("Share")) {

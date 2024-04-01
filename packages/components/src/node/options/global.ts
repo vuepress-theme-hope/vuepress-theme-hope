@@ -28,7 +28,7 @@ export interface ComponentGlobalOptions {
      *
      * pdfjs 的位置
      */
-    pdfjs?: string;
+    pdfjs?: string | boolean;
   };
 
   /**

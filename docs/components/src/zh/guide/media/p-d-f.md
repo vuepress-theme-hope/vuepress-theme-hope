@@ -30,31 +30,7 @@ PDF 预览组件。
 
 并非所有浏览器都支持嵌入 PDF 查看器 (如: 现在没有移动浏览器支持此功能)，因此我们添加了对 PDFJS 查看器的支持。
 
-由于 PDFJS 查看器 很大，你需要从 [Github](https://github.com/mozilla/pdf.js/releases) 手动下载它。
-
-下载完成后，请在 `.vuepress/public` 文件夹中解压到你想要的位置，然后在组件选项中将 `componentOptions.pdf.pdfjs` 设置为相对于 `.vuepress/public` 的路径。
-
-::: details 示例
-
-如果你将 PDFJS 解压到 `.vuepress/public/assets/lib/pdfjs` ，你应该设置：
-
-```ts title=".vuepress/config.ts"
-import { componentsPlugin } from "vuepress-plugin-components";
-
-export default {
-  plugins: [
-    componentsPlugin({
-      componentOptions: {
-        pdf: {
-          pdfjs: "/assets/lib/pdfjs",
-        },
-      },
-    }),
-  ],
-};
-```
-
-::::
+默认情况下，PDFJS 查看器是从 `https://theme-hope-assets.vuejs.press/pdfjs/` 获取的。你可以在组件选项中自定义 `componentOptions.pdf.pdfjs` 以指定其他位置。
 
 ::: details noToolbar 支持
 
@@ -115,6 +91,13 @@ PDF 浏览器件高度
 - 默认值: `16 / 9`
 
 PDF 浏览器高度宽高比，只有当未指定 `height` 时有效。
+
+### viewer
+
+- 类型: `boolean`
+- 默认值: `false`
+
+是否强制使用 PDFJS 查看器。
 
 ### page
 

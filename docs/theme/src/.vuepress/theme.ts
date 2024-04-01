@@ -69,9 +69,6 @@ export default theme(
         ],
 
         componentOptions: {
-          pdf: {
-            pdfjs: "/assets/lib/pdfjs/",
-          },
           share: {
             services: AVAILABLE_SERVICES,
           },

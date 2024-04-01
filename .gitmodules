@@ -1,9 +1,0 @@
-[submodule "components-demo-pdfjs-lib"]
-	path = demo/components/src/.vuepress/public/assets/lib/pdfjs
-	url = git@github.com:vuepress-theme-hope/pdfjs.git
-[submodule "components-docs-pdfjs-lib"]
-	path = docs/components/src/.vuepress/public/assets/lib/pdfjs
-	url = git@github.com:vuepress-theme-hope/pdfjs.git
-[submodule "theme-docs-pdfjs-lib"]
-	path = docs/theme/src/.vuepress/public/assets/lib/pdfjs
-	url = git@github.com:vuepress-theme-hope/pdfjs.git

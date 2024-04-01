@@ -34,6 +34,10 @@ export interface ViewPDFOptions {
   title: string;
   hint: string;
   options: Record<string, string | number | boolean> | undefined;
+  /**
+   * Force using PDFJS
+   */
+  force?: boolean;
 }
 
 const logError = (msg: string): void => {
@@ -117,7 +121,7 @@ const addPDFViewer = (
 export const viewPDF = (
   url: string,
   targetSelector: string | HTMLElement | null,
-  { title, hint, options = {} }: ViewPDFOptions,
+  { title, hint, options = {}, force }: ViewPDFOptions,
 ): HTMLElement | null => {
   if (typeof window === "undefined" || !window?.navigator?.userAgent)
     return null;
@@ -172,6 +176,17 @@ export const viewPDF = (
   }
 
   const pdfTitle = title || /\/([^/]+).pdf/.exec(url)?.[1] || "PDF Viewer";
+
+  if (force) {
+    if (!PDFJS_URL) {
+      targetNode.innerHTML = hint.replace(/\[url\]/g, url);
+      logError("PDFJS URL is not defined");
+
+      return null;
+    }
+
+    return addPDFViewer("pdfjs", targetNode, url, options, pdfTitle);
+  }
 
   if (supportsPDFs || !isMobileDevice) {
     /*

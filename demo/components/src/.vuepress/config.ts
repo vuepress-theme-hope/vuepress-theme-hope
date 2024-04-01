@@ -70,9 +70,6 @@ export default defineUserConfig({
         fontIcon: {
           assets: "fontawesome",
         },
-        pdf: {
-          pdfjs: "/assets/lib/pdfjs/",
-        },
       },
 
       rootComponents: {
