@@ -1,8 +1,10 @@
-# VideoPlayer
+# VideoPlayer (Deprecated)
 
 ## Demo
 
-<VideoPlayer src="https://cdn.plyr.io/static/demo/View_From_A_Blue_Moon_Trailer-720p.mp4" />
+<VideoPlayer
+  src="https://cdn.plyr.io/static/demo/View_From_A_Blue_Moon_Trailer-720p.mp4"
+/>
 
 <VideoPlayer
   :src="[

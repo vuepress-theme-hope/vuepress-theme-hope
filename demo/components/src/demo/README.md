@@ -4,8 +4,6 @@
 
 - [ArtPlayer](art-player.md)
 
-- [AudioPlayer](audio-player.md)
-
 - [Badge](badge.md)
 
 - [BiliBili](bili-bili.md)
@@ -30,8 +28,10 @@
 
 - [VidStack](vid-stack.md)
 
-- [VideoPlayer](video-player.md)
-
 - [XiGua](xi-gua.md)
 
-- [YouTube](you-tube.md)
+- [AudioPlayer (Deprecated)](audio-player.md)
+
+- [VideoPlayer (Deprecated)](video-player.md)
+
+- [YouTube (Deprecated)](you-tube.md)

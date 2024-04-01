@@ -1,4 +1,4 @@
-# AudioPlayer
+# AudioPlayer (Deprecated)
 
 ## Demo
 
