@@ -44,13 +44,12 @@ ignorePatterns:
   - "!.vuepress/"
   - ".vuepress/.cache/"
   - ".vuepress/.temp/"
+  - "gulpfile.js"
 
 rules:
-  "@typescript-eslint/ban-ts-comment":
-    - off
+  "@typescript-eslint/ban-ts-comment": off
 
-  "@typescript-eslint/consistent-type-imports":
-    - warn
+  "@typescript-eslint/consistent-type-imports": warn
 
   "@typescript-eslint/explicit-function-return-type":
     - warn
@@ -380,8 +379,7 @@ overrides:
       - "**/__tests__/**/*.spec.{j,t}s?(x)"
 
     rules:
-      "@typescript-eslint/no-explicit-any":
-        - off
+      "@typescript-eslint/no-explicit-any": off
       "@typescript-eslint/no-unsafe-call":
         - off
       "@typescript-eslint/no-unsafe-assignment":

@@ -1,5 +1,5 @@
-const { dest, parallel, src } = require("gulp");
-const through = require("through2");
+import { dest, src } from "gulp";
+import through from "through2";
 
 const generateSass = () =>
   src("src/client/**/*.scss")
@@ -17,4 +17,4 @@ const generateSass = () =>
     )
     .pipe(dest("lib/bundle"));
 
-exports.default = generateSass;
+export default generateSass;

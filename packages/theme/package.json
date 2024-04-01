@@ -55,8 +55,7 @@
     "templates"
   ],
   "scripts": {
-    "build": "pnpm build:rollup && pnpm build:gulp && pnpm build:ts && pnpm copy",
-    "build:gulp": "gulp -f gulpfile.cjs",
+    "build": "pnpm build:rollup && pnpm gulp && pnpm build:ts && pnpm copy",
     "build:rollup": "rollup -c rollup.config.ts --configPlugin esbuild",
     "build:ts": "tsc -b tsconfig.release.json",
     "clean": "rimraf --glob ./lib ./*.tsbuildinfo",
