@@ -4,6 +4,25 @@ All notable changes to this project will be documented in this file. See [Conven
 
 <!-- #region recent-change -->
 
+## [2.0.0-rc.33](https://github.com/vuepress-theme-hope/vuepress-theme-hope/compare/v2.0.0-rc.32...v2.0.0-rc.33) (2024-04-02)
+
+### Features
+
+- **components:** remove iconfont keyword ([a50a4d5](https://github.com/vuepress-theme-hope/vuepress-theme-hope/commit/a50a4d546bcbb981966c3b6144293936e443c274))
+- **components:** update pdf components ([815160d](https://github.com/vuepress-theme-hope/vuepress-theme-hope/commit/815160d1b640f0b1ebbfcb86b3926df440fd8e09))
+- **md-enhance:** tweaks ([a8f0b6b](https://github.com/vuepress-theme-hope/vuepress-theme-hope/commit/a8f0b6b9aa745591bb6e731333c53d84d9eab14b))
+- **search-pro:** improve search queue ([ee53fa6](https://github.com/vuepress-theme-hope/vuepress-theme-hope/commit/ee53fa650fdf3b70fd616673e8a360065c3adf9a))
+
+### Bug Fixes
+
+- **components:** fix Replit ([996a9cf](https://github.com/vuepress-theme-hope/vuepress-theme-hope/commit/996a9cfbb788720d9ea9a4da671d55a41ae8e0b8))
+- **md-enhance:** fix markmap style ([75e62b1](https://github.com/vuepress-theme-hope/vuepress-theme-hope/commit/75e62b11a2be97a17ff7ee807c4df4bcea65bdea))
+- **theme:** fix hint font-size ([1065498](https://github.com/vuepress-theme-hope/vuepress-theme-hope/commit/106549869dd12346e45f7907958139629efce9a9))
+- **theme:** fix link check ([89afa6f](https://github.com/vuepress-theme-hope/vuepress-theme-hope/commit/89afa6f1382aeefc290e7c03af45abf202fd13f6))
+- **theme:** fix relative link resolve in PageNav, close [#4005](https://github.com/vuepress-theme-hope/vuepress-theme-hope/issues/4005) ([994f99a](https://github.com/vuepress-theme-hope/vuepress-theme-hope/commit/994f99ab6bb91a19161ee03ce057a52a62e02044))
+- **theme:** fix shiki background in darkmode ([e2c69b7](https://github.com/vuepress-theme-hope/vuepress-theme-hope/commit/e2c69b703b1b539d1888fa4adbaeea511f124776))
+- **theme:** fix waline color ([9a08f20](https://github.com/vuepress-theme-hope/vuepress-theme-hope/commit/9a08f20be2772401d41ce417b1b4263db5b51ee4))
+
 ## [2.0.0-rc.32](https://github.com/vuepress-theme-hope/vuepress-theme-hope/compare/v2.0.0-rc.31...v2.0.0-rc.32) (2024-03-25)
 
 ### Features

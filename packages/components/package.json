@@ -1,6 +1,6 @@
 {
   "name": "vuepress-plugin-components",
-  "version": "2.0.0-rc.32",
+  "version": "2.0.0-rc.33",
   "description": "Components collection plugin for VuePress2",
   "keywords": [
     "vuepress",
