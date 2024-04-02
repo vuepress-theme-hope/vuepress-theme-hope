@@ -1,5 +1,8 @@
-import { ensureEndingSlash, isLinkAbsolute } from "@vuepress/helper/client";
-import { resolveRoute } from "vuepress/client";
+import {
+  ensureEndingSlash,
+  isLinkAbsolute,
+  resolveRoute,
+} from "@vuepress/helper/client";
 
 import type { AutoLinkOptions, PageInfoData } from "../../shared/index.js";
 import { PageInfo } from "../../shared/index.js";
@@ -14,8 +17,9 @@ export const resolvePrefix = (prefix = "", path = ""): string =>
 export const resolveLinkInfo = (
   item: string,
   preferFull = false,
+  current?: string,
 ): AutoLinkOptions => {
-  const { meta, path, notFound } = resolveRoute<PageInfoData>(item);
+  const { meta, path, notFound } = resolveRoute<PageInfoData>(item, current);
 
   return notFound
     ? { text: path, link: path }
