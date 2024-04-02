@@ -1,6 +1,6 @@
 @use "vuepress-shared/styles/wrapper";
 
-.page-meta {
+.vp-page-meta {
   @include wrapper.horizontal-wrapper;
 
   display: flex;
@@ -21,10 +21,10 @@
     display: block;
   }
 
-  .meta-item {
+  .vp-meta-item {
     flex-grow: 1;
 
-    .label {
+    .vp-meta-label {
       font-weight: 500;
 
       &:not(a) {
@@ -32,7 +32,7 @@
       }
     }
 
-    .info {
+    .vp-meta-info {
       color: var(--dark-grey);
       font-weight: 400;
     }
