@@ -25,9 +25,9 @@ export default defineComponent({
     return (): VNode =>
       h(
         "div",
-        { class: "nav-item vp-repo" },
+        { class: "vp-nav-item vp-action" },
         h("a", {
-          class: "vp-repo-link",
+          class: "vp-action-link",
           href: link.value,
           target: "_blank",
           rel: "noopener noreferrer",

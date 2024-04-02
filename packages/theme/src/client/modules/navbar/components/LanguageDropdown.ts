@@ -15,10 +15,10 @@ export default defineComponent({
       dropdown.value
         ? h(
             "div",
-            { class: "nav-item" },
+            { class: "vp-nav-item" },
             h(
               DropdownLink,
-              { class: "i18n-dropdown", config: dropdown.value },
+              { config: dropdown.value },
               {
                 title: () =>
                   h(I18nIcon, {
