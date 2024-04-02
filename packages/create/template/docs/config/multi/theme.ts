@@ -64,7 +64,8 @@ export default hopeTheme({
   },
 
   plugins: {
-    // You should generate and use your own comment service
+    // Note: This is for testing ONLY!
+    // You MUST generate and use your own comment service in production.
     comment: {
       provider: "Giscus",
       repo: "vuepress-theme-hope/giscus-discussions",
@@ -107,46 +108,46 @@ export default hopeTheme({
       tabs: true,
       vPre: true,
 
-      // install chart.js before enabling it
+      // Install chart.js before enabling it
       // chart: true,
 
       // insert component easily
 
-      // install echarts before enabling it
+      // Install echarts before enabling it
       // echarts: true,
 
-      // install flowchart.ts before enabling it
+      // Install flowchart.ts before enabling it
       // flowchart: true,
 
       // gfm requires mathjax-full to provide tex support
       // gfm: true,
 
-      // install katex before enabling it
+      // Install katex before enabling it
       // katex: true,
 
-      // install mathjax-full before enabling it
+      // Install mathjax-full before enabling it
       // mathjax: true,
 
-      // install mermaid before enabling it
+      // Install mermaid before enabling it
       // mermaid: true,
 
       // playground: {
       //   presets: ["ts", "vue"],
       // },
 
-      // install reveal.js before enabling it
+      // Install reveal.js before enabling it
       // revealJs: {
       //   plugins: ["highlight", "math", "search", "notes", "zoom"],
       // },
 
-      // install @vue/repl before enabling it
+      // Install @vue/repl before enabling it
       // vuePlayground: true,
 
-      // install sandpack-vue3 before enabling it
+      // Install sandpack-vue3 before enabling it
       // sandpack: true,
     },
 
-    // install @vuepress/plugin-pwa and uncomment these if you want a PWA
+    // Install @vuepress/plugin-pwa and uncomment these if you want a PWA
     // pwa: {
     //   favicon: "/favicon.ico",
     //   cacheHTML: true,

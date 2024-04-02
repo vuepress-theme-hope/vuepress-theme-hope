@@ -39,7 +39,8 @@ export default hopeTheme({
   },
 
   plugins: {
-    // You should generate and use your own comment service
+    // Note: This is for testing ONLY!
+    // You MUST generate and use your own comment service in production.
     comment: {
       provider: "Giscus",
       repo: "vuepress-theme-hope/giscus-discussions",
