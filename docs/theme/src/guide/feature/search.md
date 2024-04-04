@@ -65,7 +65,10 @@ The theme adds built-in support for <ProjectLink name="search-pro">`vuepress-plu
            return helpers.docsearch({
              recordProps: {
                lvl0: {
-                 selectors: ".sidebar-heading.active",
+                 selectors: [
+                   ".vp-sidebar-page.active",
+                   ".theme-hope-content h1",
+                 ],
                  defaultValue: "Documentation",
                },
                lvl1: ".theme-hope-content h1",
@@ -76,7 +79,7 @@ The theme adds built-in support for <ProjectLink name="search-pro">`vuepress-plu
                lvl6: ".theme-hope-content h6",
                content: ".theme-hope-content p, .theme-hope-content li",
              },
-             indexHeadings: true,
+             recordVersion: "v3",
            });
          },
        },
