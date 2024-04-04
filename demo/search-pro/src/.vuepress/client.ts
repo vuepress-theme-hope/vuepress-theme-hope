@@ -15,7 +15,7 @@ interface APIResult {
 
 defineSearchConfig({
   splitWord: (query: string) =>
-    query
+    query.match(/[^\x20-\xff]/)
       ? fetch(
           `https://apis.tianapi.com/nlpwords/index?key=a4db17885c693a18495690cc7118b510&content=${query}`,
         )
@@ -28,7 +28,7 @@ defineSearchConfig({
               )
               .filter((word) => word.trim()),
           )
-      : Promise.resolve([]),
+      : Promise.resolve([query]),
 });
 
 export default {};
