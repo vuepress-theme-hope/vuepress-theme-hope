@@ -376,8 +376,11 @@ overrides:
         - error
 
   - files:
-      - "**/__tests__/**/*.spec.{j,t}s?(x)"
-
+      - "**/__tests__/**/*.spec.{j,t}s"
+    plugins:
+      - vitest
+    extends:
+      - plugin:vitest/recommended
     rules:
       "@typescript-eslint/no-explicit-any": off
       "@typescript-eslint/no-unsafe-call":

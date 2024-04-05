@@ -7,107 +7,15 @@ exports[`playground > Should not throw 1`] = `
 `;
 
 exports[`playground > basic > Should resolve playground info 1`] = `
-{
-  "files": {
-    "App.vue": {
-      "content": "<script setup>
-import { ref } from 'vue'
-const msg = ref('Hello World!')
-</script>
-<template>
-  <h1>{{ msg }}</h1>
-  <input v-model="msg" />
-</template>
-",
-      "ext": "vue",
-    },
-    "Comp.vue": {
-      "content": "<template>
-  <div>Comp</div>
-</template>
-",
-      "ext": "vue",
-    },
-    "import-map.json": {
-      "content": "{
-  "imports": {
-    "vue": "https://sfc.vuejs.org/vue.runtime.esm-browser.js"
-  }
-}
-",
-      "ext": "json",
-    },
-  },
-  "importMap": "import-map.json",
-  "key": "62b3bf5a",
-  "settings": {},
-  "title": "Playground%20demo",
-}
+"<Playground key="&quot;62b3bf5a&quot;" title="&quot;Playground%20demo&quot;" settings="{}" files="{&quot;App.vue&quot;:{&quot;ext&quot;:&quot;vue&quot;,&quot;content&quot;:&quot;&lt;script setup&gt;\\nimport { ref } from &#039;vue&#039;\\nconst msg = ref(&#039;Hello World!&#039;)\\n&lt;/script&gt;\\n&lt;template&gt;\\n  &lt;h1&gt;{{ msg }}&lt;/h1&gt;\\n  &lt;input v-model=\\&quot;msg\\&quot; /&gt;\\n&lt;/template&gt;\\n&quot;},&quot;Comp.vue&quot;:{&quot;ext&quot;:&quot;vue&quot;,&quot;content&quot;:&quot;&lt;template&gt;\\n  &lt;div&gt;Comp&lt;/div&gt;\\n&lt;/template&gt;\\n&quot;}}">
+</Playground>
+"
 `;
 
-exports[`playground > basic > Should resolve playground info with settings 1`] = `
-{
-  "files": {
-    "App.vue": {
-      "content": "<script setup>
-import { ref } from 'vue'
-const msg = ref('Hello World!')
-</script>
-<template>
-  <h1>{{ msg }}</h1>
-  <input v-model="msg" />
-</template>
-",
-      "ext": "vue",
-    },
-    "Comp.vue": {
-      "content": "<template>
-  <div>Comp</div>
-</template>
-",
-      "ext": "vue",
-    },
-  },
-  "key": "1877a7d0",
-  "settings": {
-    "service": "https://element-plus.run/",
-  },
-  "title": "Playground%20demo2",
-}
-`;
-
-exports[`playground > basic > Should resolve playground info with settings 2`] = `
-{
-  "files": {
-    "App.vue": {
-      "content": "<script setup>
-import { ref } from 'vue'
-const msg = ref('Hello World!')
-</script>
-<template>
-  <h1>{{ msg }}</h1>
-  <input v-model="msg" />
-</template>
-",
-      "ext": "vue",
-    },
-    "import-map.json": {
-      "content": "{
-  "imports": {
-    "vue": "https://sfc.vuejs.org/vue.runtime.esm-browser.js"
-  }
-}
-",
-      "ext": "json",
-    },
-  },
-  "importMap": "import-map.json",
-  "key": "1877a7d0",
-  "settings": {
-    "service": "https://element-plus.run/",
-  },
-  "title": "Playground%20demo2",
-}
+exports[`playground > basic > Should resolve playground info with imports and settings 1`] = `
+"<Playground key="&quot;1877a7d0&quot;" title="&quot;Playground%20demo2&quot;" settings="{&quot;service&quot;:&quot;https://element-plus.run/&quot;}" files="{&quot;App.vue&quot;:{&quot;ext&quot;:&quot;vue&quot;,&quot;content&quot;:&quot;&lt;script setup&gt;\\nimport { ref } from &#039;vue&#039;\\nconst msg = ref(&#039;Hello World!&#039;)\\n&lt;/script&gt;\\n&lt;template&gt;\\n&lt;h1&gt;{{ msg }}&lt;/h1&gt;\\n&lt;input v-model=\\&quot;msg\\&quot; /&gt;\\n&lt;/template&gt;\\n&quot;},&quot;import-map.json&quot;:{&quot;ext&quot;:&quot;json&quot;,&quot;content&quot;:&quot;{\\n\\&quot;imports\\&quot;: {\\n  \\&quot;vue\\&quot;: \\&quot;https://sfc.vuejs.org/vue.runtime.esm-browser.js\\&quot;\\n}\\n}\\n&quot;}}" importMap="&quot;import-map.json&quot;">
+</Playground>
+"
 `;
 
 exports[`playground > ts preset > Should work 1`] = `

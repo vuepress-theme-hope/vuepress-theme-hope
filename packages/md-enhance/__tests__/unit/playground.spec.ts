@@ -45,15 +45,17 @@ abc
     const markdownIt = MarkdownIt({ linkify: true }).use(playground, {
       name: "playground",
       component: "Playground",
-      propsGetter: (data) => {
-        expect(data).toMatchSnapshot();
-
-        return {};
-      },
+      propsGetter: (data) =>
+        Object.fromEntries(
+          Object.entries(data).map(([key, value]) => [
+            key,
+            JSON.stringify(value),
+          ]),
+        ),
     });
 
     it("Should resolve playground info", () => {
-      markdownIt.render(
+      const result = markdownIt.render(
         `
 ::: playground Playground demo
 
@@ -77,23 +79,16 @@ const msg = ref('Hello World!')
 </template>
 \`\`\`
 
-@import
-
-\`\`\`json
-{
-  "imports": {
-    "vue": "https://sfc.vuejs.org/vue.runtime.esm-browser.js"
-  }
-}
-\`\`\`
 :::
 `,
         {},
       );
+
+      expect(result).toMatchSnapshot();
     });
 
-    it("Should resolve playground info with settings", () => {
-      markdownIt.render(
+    it("Should resolve playground info with imports and settings", () => {
+      const result = markdownIt.render(
         `
 ::: playground Playground demo2
 
@@ -105,48 +100,8 @@ import { ref } from 'vue'
 const msg = ref('Hello World!')
 </script>
 <template>
-  <h1>{{ msg }}</h1>
-  <input v-model="msg" />
-</template>
-\`\`\`
-
-@file Comp.vue
-
-\`\`\`vue
-<template>
-  <div>Comp</div>
-</template>
-\`\`\`
-
-@setting
-
-\`\`\`json
-{
-  "service": "https://element-plus.run/"
-}
-\`\`\`
-
-:::
-`,
-        {},
-      );
-    });
-
-    it("Should resolve playground info with settings", () => {
-      markdownIt.render(
-        `
-::: playground Playground demo2
-
-@file App.vue
-
-\`\`\`vue
-<script setup>
-import { ref } from 'vue'
-const msg = ref('Hello World!')
-</script>
-<template>
-  <h1>{{ msg }}</h1>
-  <input v-model="msg" />
+<h1>{{ msg }}</h1>
+<input v-model="msg" />
 </template>
 \`\`\`
 
@@ -154,9 +109,9 @@ const msg = ref('Hello World!')
 
 \`\`\`json
 {
-  "imports": {
-    "vue": "https://sfc.vuejs.org/vue.runtime.esm-browser.js"
-  }
+"imports": {
+  "vue": "https://sfc.vuejs.org/vue.runtime.esm-browser.js"
+}
 }
 \`\`\`
 
@@ -164,7 +119,7 @@ const msg = ref('Hello World!')
 
 \`\`\`json
 {
-  "service": "https://element-plus.run/"
+"service": "https://element-plus.run/"
 }
 \`\`\`
 
@@ -172,6 +127,8 @@ const msg = ref('Hello World!')
 `,
         {},
       );
+
+      expect(result).toMatchSnapshot();
     });
   });
 

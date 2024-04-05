@@ -8,15 +8,15 @@ import { getThemeData } from "../../src/node/config/themeData.js";
 import { getSidebarData } from "../../src/node/prepare/sidebar/index.js";
 import type { ThemeOptions } from "../../src/shared/index.js";
 
-describe("should generate sidebarData correctly", async () => {
-  const app = createBaseApp({
-    bundler: {} as any,
-    source: path.resolve(__dirname, "./__fixtures__/src"),
-    theme: emptyTheme,
-  });
+const app = createBaseApp({
+  bundler: {} as any,
+  source: path.resolve(__dirname, "./__fixtures__/src"),
+  theme: emptyTheme,
+});
 
-  await app.init();
+await app.init();
 
+describe("should generate sidebarData correctly", () => {
   it("Should resolve structure in root", () => {
     const themeOptions: ThemeOptions = {
       sidebar: "structure",
