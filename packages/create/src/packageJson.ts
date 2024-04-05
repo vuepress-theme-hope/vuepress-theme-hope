@@ -3,8 +3,9 @@ import { resolve } from "node:path";
 
 import inquirer from "inquirer";
 
-import type { Bundler, CreateLocale } from "./config/index.js";
+import type { Bundler } from "./config/index.js";
 import { bundlers, version } from "./config/index.js";
+import type { CreateLocale } from "./i18n/typings.js";
 import type { PackageManager } from "./utils/index.js";
 import { PACKAGE_NAME_REG, VERSION_REG, deepAssign } from "./utils/index.js";
 

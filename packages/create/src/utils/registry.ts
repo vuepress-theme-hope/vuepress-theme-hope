@@ -1,7 +1,7 @@
 import { execaCommandSync } from "execa";
 import inquirer from "inquirer";
 
-import type { Lang } from "../config/i18n.js";
+import type { Lang } from "../i18n/index.js";
 
 import type { PackageManager } from "./index.js";
 

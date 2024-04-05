@@ -6,14 +6,15 @@ import { cac } from "cac";
 import { execaCommand, execaCommandSync } from "execa";
 import inquirer from "inquirer";
 
-import type { Bundler, CreateLocale, Lang, Preset } from "./config/index.js";
+import type { Bundler, Preset } from "./config/index.js";
 import {
   bundlers,
   generateTemplate,
-  getLanguage,
   presets,
   version,
 } from "./config/index.js";
+import type { CreateLocale, Lang } from "./i18n/index.js";
+import { getLanguage } from "./i18n/index.js";
 import { createPackageJson } from "./packageJson.js";
 import { createTsConfig } from "./tsconfig.js";
 import type { PackageManager } from "./utils/index.js";

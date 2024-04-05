@@ -2,7 +2,7 @@ import { join } from "node:path";
 
 import { execaCommandSync } from "execa";
 
-import type { CreateLocale } from "./i18n.js";
+import type { CreateLocale } from "../i18n/index.js";
 import type { PackageManager } from "../utils/index.js";
 
 export const getWorkflowContent = (

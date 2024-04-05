@@ -1,7 +1,7 @@
 import { existsSync, readFileSync, writeFileSync } from "node:fs";
 import { resolve } from "node:path";
 
-import type { CreateLocale } from "./config/index.js";
+import type { CreateLocale } from "./i18n/index.js";
 import { deepAssign } from "./utils/index.js";
 
 interface CreateTsConfigOptions {

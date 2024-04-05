@@ -8,8 +8,8 @@ import inquirer from "inquirer";
 import type { Preset } from "./config.js";
 import { presets } from "./config.js";
 import { updateGitIgnore } from "./gitignore.js";
-import type { CreateLocale, Lang } from "./i18n.js";
 import { getWorkflowContent } from "./workflow.js";
+import type { CreateLocale, Lang } from "../i18n/index.js";
 import type { PackageManager } from "../utils/index.js";
 import {
   checkGitInstalled,
@@ -35,6 +35,7 @@ interface TemplateOptions {
 export const generateTemplate = async ({
   cwd = process.cwd(),
   targetDir,
+  lang,
   locale,
   preset,
   packageManager,
