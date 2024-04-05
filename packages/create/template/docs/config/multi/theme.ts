@@ -106,6 +106,7 @@ export default hopeTheme({
       sub: true,
       sup: true,
       tabs: true,
+      tasklist: true,
       vPre: true,
 
       // Install chart.js before enabling it

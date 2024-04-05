@@ -132,6 +132,7 @@ export default hopeTheme(
         sub: true,
         sup: true,
         tabs: true,
+        tasklist: true,
         vPre: true,
         vuePlayground: true,
       },

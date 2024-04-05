@@ -41,7 +41,7 @@ Support setting title, color scheme and size
 - [x] Plan A
 - [ ] Plan B
 
-- [View Detail](./tasklist.md)
+[View Detail](./tasklist.md)
 
 ### Tex
 

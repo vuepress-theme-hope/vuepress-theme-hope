@@ -179,7 +179,7 @@ You can mark ==important words== .
 - [x] Plan A
 - [ ] Plan B
 
-- [View Detail](https://theme-hope.vuejs.press/guide/markdown/tasklist.html)
+[View Detail](https://theme-hope.vuejs.press/guide/markdown/tasklist.html)
 
 #### Image Enhancement
 

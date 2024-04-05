@@ -133,6 +133,7 @@ export default defineUserConfig({
       sub: true,
       sup: true,
       tabs: true,
+      tasklist: true,
       vPre: true,
       vuePlayground: true,
     }),

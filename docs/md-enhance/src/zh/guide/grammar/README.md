@@ -41,7 +41,7 @@ index: false
 - [x] 计划 1
 - [ ] 计划 2
 
-- [查看详情](./tasklist.md)
+[查看详情](./tasklist.md)
 
 ### Tex 语法
 
