@@ -35,7 +35,6 @@ interface TemplateOptions {
 export const generateTemplate = async ({
   cwd = process.cwd(),
   targetDir,
-  lang,
   locale,
   preset,
   packageManager,
@@ -122,7 +121,7 @@ export const generateTemplate = async ({
 
     writeFileSync(
       resolve(workflowDir, "deploy-docs.yml"),
-      getWorkflowContent(packageManager, targetDir, lang),
+      getWorkflowContent(packageManager, cwd, targetDir, locale),
       { encoding: "utf-8" },
     );
   }
@@ -145,7 +144,7 @@ export const generateTemplate = async ({
     ]);
 
     if (git) {
-      execaCommandSync("git init", { cwd });
+      execaCommandSync("git init -b main", { cwd });
       updateGitIgnore(targetDir, cwd);
     }
   }

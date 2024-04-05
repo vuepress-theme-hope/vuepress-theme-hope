@@ -1,25 +1,23 @@
 import { join } from "node:path";
 
-import type { Lang } from "./i18n.js";
+import { execaCommandSync } from "execa";
+
+import type { CreateLocale } from "./i18n.js";
 import type { PackageManager } from "../utils/index.js";
 
 export const getWorkflowContent = (
   packageManager: PackageManager,
+  cwd: string,
   dir: string,
-  lang: Lang,
+  { workflow }: CreateLocale,
 ): string =>
   `
-name: ${lang === "简体中文" ? "部署文档" : "Deploy Docs"}
+name: ${workflow.name}
 
 on:
   push:
     branches:
-      # ${
-        lang === "简体中文"
-          ? "确保这是你正在使用的分支名称"
-          : "make sure this is the branch you are using"
-      }
-      - main
+      - ${execaCommandSync("git branch --show-current", { cwd }).stdout.trim()}
 
 permissions:
   contents: write
@@ -32,58 +30,46 @@ jobs:
         uses: actions/checkout@v3
         with:
           fetch-depth: 0
-          # ${
-            lang === "简体中文"
-              ? "如果你文档需要 Git 子模块，取消注释下一行"
-              : "if your docs needs submodules, uncomment the following line"
-          }
+          # ${workflow.submodule}
           # submodules: true
 
 ${
   packageManager === "pnpm"
     ? `\
-      - name: ${lang === "简体中文" ? "安装 pnpm" : "Install pnpm"}
+      - name: ${workflow.setupPnpm}
         uses: pnpm/action-setup@v2
         with:
-          run_install: true
           version: 8
 `
     : ""
 }
 
-      - name: ${lang === "简体中文" ? "设置 Node.js" : "Setup Node.js"}
+      - name: ${workflow.setupNode}
         uses: actions/setup-node@v3
         with:
           node-version: 20
           cache: ${packageManager}
 
-${
-  packageManager === "pnpm"
-    ? ""
-    : `\
-      - name: ${lang === "简体中文" ? "安装依赖" : "Install Deps"}
-        run: ${
-          packageManager === "npm"
-            ? "npm ci"
-            : `${packageManager} install --frozen-lockfile`
-        }
-`
-}
-      - name: ${lang === "简体中文" ? "构建文档" : "Build Docs"}
+      - name: ${workflow.install}
+        run: |
+          corepack enable
+          ${
+            packageManager === "npm"
+              ? "npm ci"
+              : `${packageManager} install --frozen-lockfile`
+          }
+
+      - name: ${workflow.build}
         env:
           NODE_OPTIONS: --max_old_space_size=8192
         run: |-
           ${packageManager} run docs:build
           > ${join(dir, ".vuepress/dist/.nojekyll").replace(/\\/g, "/")}
 
-      - name: ${lang === "简体中文" ? "部署文档" : "Deploy Docs"}
+      - name: ${workflow.deploy}
         uses: JamesIves/github-pages-deploy-action@v4
         with:
-          # ${
-            lang === "简体中文"
-              ? "这是文档部署到的分支名称"
-              : "This is the branch where the docs are deployed to"
-          }
+          # ${workflow.deploy}
           branch: gh-pages
           folder: ${join(dir, ".vuepress/dist").replace(/\\/g, "/")}
 `;

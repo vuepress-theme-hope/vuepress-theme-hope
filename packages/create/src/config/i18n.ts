@@ -38,6 +38,18 @@ export interface CreateLocale {
     devServer: (packageManager: PackageManager) => string;
   };
 
+  workflow: {
+    name: string;
+    checkout: string;
+    submodule: string;
+    setupPnpm: string;
+    setupNode: string;
+    install: string;
+    build: string;
+    deploy: string;
+    deployBranch: string;
+  };
+
   error: {
     name: string;
     version: string;
@@ -83,6 +95,18 @@ export const i18n: Record<Lang, CreateLocale> = {
       finish: "模板已成功生成!",
       devServer: (packageManager: PackageManager): string =>
         `提示: 请使用 "${packageManager} run docs:dev" 命令启动开发服务器`,
+    },
+
+    workflow: {
+      name: "部署文档",
+      checkout: "检出代码",
+      submodule: "如果你文档需要 Git 子模块，取消注释下一行",
+      setupPnpm: "设置 pnpm",
+      setupNode: "设置 Node.js",
+      install: "安装依赖",
+      build: "构建文档",
+      deploy: "部署文档",
+      deployBranch: "这是文档部署到的分支名称",
     },
 
     error: {
@@ -132,6 +156,18 @@ export const i18n: Record<Lang, CreateLocale> = {
       finish: "Successful Generated!",
       devServer: (packageManager: PackageManager): string =>
         `Hint: You should execute "${packageManager} run docs:dev" to start dev server.`,
+    },
+
+    workflow: {
+      name: "Deploy Docs",
+      checkout: "Checkout code",
+      submodule: "if your docs needs submodules, uncomment the following line",
+      setupPnpm: "Setup pnpm",
+      setupNode: "Setup Node.js",
+      install: "Install Deps",
+      build: "Build Docs",
+      deploy: "Deploy Docs",
+      deployBranch: "This is the branch where the docs are deployed to",
     },
 
     error: {
