@@ -38,10 +38,10 @@ const CONTENT_BLOCK_TAGS =
 /**
  * @description Not all the inline tags are included, because some of them shall not be indexed, e.g.: pre
  *
- * routerlink is added to the list, because it is a special link tag
+ * routelink and routerlink are added to the list, because they are link components
  */
 const CONTENT_INLINE_TAGS =
-  "routerlink,a,b,abbr,bdi,bdo,cite,code,dfn,em,i,kbd,mark,q,rp,rt,ruby,s,samp,small,span,strong,sub,sup,time,u,var,wbr,del,ins,button,label,legend,meter,optgroup,option,output,progress,select".split(
+  "routelink,routerlink,a,b,abbr,bdi,bdo,cite,code,dfn,em,i,kbd,mark,q,rp,rt,ruby,s,samp,small,span,strong,sub,sup,time,u,var,wbr,del,ins,button,label,legend,meter,optgroup,option,output,progress,select".split(
     ",",
   );
 

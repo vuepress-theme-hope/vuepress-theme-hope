@@ -125,6 +125,10 @@ exports[`generateIndex > Should generate full index 2`] = `
   {
     "h": "Link",
     "id": "1#link",
+    "t": [
+      "Home page using absolute path",
+      "Home page using relative path",
+    ],
   },
   {
     "h": "Image",
@@ -710,6 +714,10 @@ exports[`generateIndex > Should support customFields with full index 2`] = `
   {
     "h": "Link",
     "id": "1#link",
+    "t": [
+      "Home page using absolute path",
+      "Home page using relative path",
+    ],
   },
   {
     "h": "Image",
