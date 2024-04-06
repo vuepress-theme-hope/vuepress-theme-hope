@@ -4,33 +4,13 @@ import { theme } from "docs-shared";
 export default theme("shared", {
   locales: {
     "/": {
-      navbar: [
-        "/",
-        "/shared",
-        {
-          text: "Node",
-          icon: "fab fa-node-js",
-          prefix: "/node/",
-          children: ["locale"],
-        },
-        "/client",
-      ],
+      navbar: ["/", "/shared", "/node", "/client"],
 
       sidebar: "structure",
     },
 
     "/zh/": {
-      navbar: [
-        "/zh/",
-        "/zh/shared",
-        {
-          text: "Node",
-          icon: "fab fa-node-js",
-          prefix: "/zh/node/",
-          children: ["locale"],
-        },
-        "/zh/client",
-      ],
+      navbar: ["/zh/", "/zh/shared", "/zh/node", "/zh/client"],
 
       sidebar: "structure",
     },

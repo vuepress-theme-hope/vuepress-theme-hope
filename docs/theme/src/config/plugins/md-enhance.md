@@ -595,6 +595,6 @@ Whether to enable slides support. You can pass an option to control plugins and 
 
 ::: info
 
-Check <ProjectLink name="md-enhance" path="/config/">md-enhance plugin documentation</ProjectLink> for all available options.
+Check <ProjectLink name="md-enhance" path="/config.html">md-enhance plugin documentation</ProjectLink> for all available options.
 
 :::
