@@ -115,18 +115,6 @@ export const generateTemplate = async ({
     );
   }
 
-  if (workflow) {
-    const workflowDir = resolve(cwd, ".github/workflows");
-
-    ensureDirExistSync(workflowDir);
-
-    writeFileSync(
-      resolve(workflowDir, "deploy-docs.yml"),
-      getWorkflowContent(packageManager, cwd, targetDir, locale),
-      { encoding: "utf-8" },
-    );
-  }
-
   // Git related
   const isGitRepo = checkGitRepo(cwd);
 
@@ -148,5 +136,17 @@ export const generateTemplate = async ({
       execaCommandSync("git init -b main", { cwd });
       updateGitIgnore(targetDir, cwd);
     }
+  }
+
+  if (workflow) {
+    const workflowDir = resolve(cwd, ".github/workflows");
+
+    ensureDirExistSync(workflowDir);
+
+    writeFileSync(
+      resolve(workflowDir, "deploy-docs.yml"),
+      getWorkflowContent(packageManager, cwd, targetDir, locale),
+      { encoding: "utf-8" },
+    );
   }
 };
