@@ -1,15 +1,8 @@
 import { useLocaleConfig } from "@vuepress/helper/client";
 import type { VNode } from "vue";
-import { computed, defineComponent, h, resolveComponent } from "vue";
+import { defineComponent, h } from "vue";
 import { withBase } from "vuepress/client";
-import {
-  BitbucketIcon,
-  GitHubIcon,
-  GitLabIcon,
-  GiteeIcon,
-  SourceIcon,
-  resolveRepoType,
-} from "vuepress-shared/client";
+import { RepoIcon } from "vuepress-shared/client";
 
 import type { SiteInfoLocaleConfig } from "../../shared/index.js";
 
@@ -20,14 +13,6 @@ declare const SITE_INFO_LOCALES: SiteInfoLocaleConfig;
 
 export default defineComponent({
   name: "SiteInfo",
-
-  components: {
-    BitbucketIcon,
-    GiteeIcon,
-    GitHubIcon,
-    GitLabIcon,
-    SourceIcon,
-  },
 
   props: {
     /**
@@ -93,9 +78,6 @@ export default defineComponent({
 
   setup(props) {
     const locale = useLocaleConfig(SITE_INFO_LOCALES);
-    const repoType = computed(() =>
-      props.repo ? resolveRepoType(props.repo) : null,
-    );
 
     return (): VNode =>
       h("div", { class: "vp-site-info", "data-name": props.name }, [
@@ -141,7 +123,7 @@ export default defineComponent({
                   title: locale.value.source,
                   target: "_blank",
                 },
-                h(resolveComponent(`${repoType.value!}Icon`)),
+                h(RepoIcon, { link: props.repo }),
               ),
             )
           : null,

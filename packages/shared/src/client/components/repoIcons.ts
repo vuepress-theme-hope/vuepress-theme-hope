@@ -2,6 +2,7 @@ import type { FunctionalComponent } from "vue";
 import { h } from "vue";
 
 import { IconBase } from "./IconBase.js";
+import { resolveRepoType } from "../utils/resolveRepo.js";
 
 export const GitHubIcon: FunctionalComponent = () =>
   h(IconBase, { name: "github" }, () =>
@@ -47,3 +48,24 @@ export const SourceIcon: FunctionalComponent = () =>
   );
 
 SourceIcon.displayName = "SourceIcon";
+
+export const RepoIcon: FunctionalComponent<{
+  link?: string;
+  type?: string;
+}> = ({ link, type = resolveRepoType(link ?? "") }) => {
+  if (!type) return null;
+
+  const repoType = type.toLowerCase();
+
+  return h(
+    repoType === "bitbucket"
+      ? BitbucketIcon
+      : repoType === "github"
+        ? GitHubIcon
+        : repoType === "gitlab"
+          ? "GitLab"
+          : repoType === "gitee"
+            ? GiteeIcon
+            : SourceIcon,
+  );
+};
