@@ -11,7 +11,6 @@ export interface ThemeStatus {
   enableReadingTime: boolean;
   blogType: { key: string; path: string }[];
   hasMultipleLanguages: boolean;
-  supportPageview: boolean;
 }
 
 /** @private */
@@ -38,8 +37,5 @@ export const getStatus = (
         })) || []
       : [],
     hasMultipleLanguages: keys(locales).length > 1,
-    supportPageview: Boolean(
-      plugins.comment && plugins.comment.provider === "Waline",
-    ),
   };
 };

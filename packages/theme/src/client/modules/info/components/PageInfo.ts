@@ -26,7 +26,6 @@ import "balloon-css/balloon.css";
 import "../styles/page-info.scss";
 
 declare const ENABLE_READING_TIME: boolean;
-declare const SUPPORT_PAGEVIEW: boolean;
 
 export interface PageInfoProps {
   /**
@@ -105,7 +104,7 @@ export default defineComponent({
     CategoryInfo,
     DateInfo,
     OriginalInfo,
-    PageViewInfo: SUPPORT_PAGEVIEW ? PageViewInfo : (): null => null,
+    PageViewInfo,
     ReadingTimeInfo: ENABLE_READING_TIME ? ReadingTimeInfo : (): null => null,
     TagInfo,
     WordInfo,

@@ -3,7 +3,7 @@ import type {
   MarkdownItIncludeOptions,
 } from "@mdit/plugin-include";
 import type { PluginWithOptions } from "markdown-it";
-import type { RuleCore } from "markdown-it/lib/parser_core.js";
+import type { RuleCore } from "markdown-it/lib/parser_core.mjs";
 import type { MarkdownEnv } from "vuepress/markdown";
 import { fs, path } from "vuepress/utils";
 
