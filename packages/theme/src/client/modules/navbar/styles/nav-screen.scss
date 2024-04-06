@@ -17,8 +17,6 @@
 
   background: var(--bg-color);
 
-  transition: background 0.5s;
-
   @media (max-width: hope-config.$tablet) {
     display: block;
   }

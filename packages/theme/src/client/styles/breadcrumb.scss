@@ -72,7 +72,7 @@
     }
 
     &.is-active a {
-      color: var(--light-grey);
+      color: var(--grey-light);
       cursor: default;
       pointer-events: none;
     }
@@ -80,6 +80,6 @@
 
   li + li::before {
     content: "/";
-    color: var(--light-grey);
+    color: var(--grey-light);
   }
 }

@@ -15,7 +15,7 @@
 
     padding: 0 0.25rem;
 
-    color: var(--dark-grey);
+    color: var(--grey-dark);
 
     font-weight: 500;
     font-size: inherit;
@@ -91,7 +91,7 @@
     margin-bottom: 0;
     border-bottom: none;
 
-    color: var(--dark-grey);
+    color: var(--grey-dark);
 
     font-weight: 400;
     font-size: 0.875rem;
@@ -112,14 +112,12 @@
     margin: 0;
     padding: 0.5rem 0.25rem 0;
 
-    color: var(--light-grey);
+    color: var(--grey-light);
 
     font-weight: 600;
     font-size: 0.75rem;
     line-height: 2;
     text-transform: uppercase;
-
-    transition: color var(--color-transition);
   }
 
   .dropdown-subitem-wrapper {

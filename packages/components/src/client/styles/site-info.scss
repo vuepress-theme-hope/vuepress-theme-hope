@@ -14,7 +14,7 @@
 
   cursor: pointer;
 
-  transition: box-shadow var(--transform-transition);
+  transition: box-shadow var(--vp-tt);
 
   @media (max-width: hope-config.$pad) {
     width: calc(100% - 24px);
@@ -103,7 +103,7 @@
     z-index: 1;
 
     margin-bottom: 8px;
-    border-bottom: 1px solid var(--dark-grey);
+    border-bottom: 1px solid var(--grey-dark);
 
     color: var(--black);
 
@@ -142,7 +142,7 @@
 
     background: var(--black);
 
-    transition: transform var(--transform-transition);
+    transition: transform var(--vp-tt);
 
     &::before {
       display: none;

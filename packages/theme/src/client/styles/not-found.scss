@@ -30,7 +30,7 @@
 
     font-size: 1rem;
 
-    transition: background 0.1s ease;
+    transition: background var(--color-transition);
 
     &:hover {
       background: var(--theme-color-light);

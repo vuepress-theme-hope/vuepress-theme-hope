@@ -16,14 +16,12 @@
 
     font-size: 16px;
     line-height: 1.5rem;
-
-    transition: border-bottom-color var(--color-transition);
   }
 
   .nav-link {
     display: inline-block;
     width: 100%;
-    color: var(--dark-grey);
+    color: var(--grey-dark);
     font-weight: normal;
 
     &:hover {

@@ -163,7 +163,7 @@ $headings: (2, 3, 4, 5, 6);
 
   background: var(--theme-color);
 
-  transition: top var(--vp-tt);
+  transition: top var(--transform-transition);
 
   @media (min-width: hope-config.$pc) {
     display: block;
@@ -179,7 +179,7 @@ $headings: (2, 3, 4, 5, 6);
 
   max-width: 100%;
 
-  color: var(--light-grey);
+  color: var(--grey-light);
 
   line-height: inherit;
   text-overflow: ellipsis;

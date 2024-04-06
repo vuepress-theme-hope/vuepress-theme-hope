@@ -22,10 +22,7 @@
   line-height: var(--navbar-line-height);
   white-space: nowrap;
 
-  transition:
-    transform ease-in-out 0.3s,
-    background var(--color-transition),
-    box-shadow var(--color-transition);
+  transition: transform var(--transform-transition);
 
   backdrop-filter: saturate(150%) blur(12px);
 
@@ -39,7 +36,7 @@
 
   .nav-link {
     padding: 0 0.25rem;
-    color: var(--dark-grey);
+    color: var(--grey-dark);
 
     &.active {
       color: var(--theme-color);

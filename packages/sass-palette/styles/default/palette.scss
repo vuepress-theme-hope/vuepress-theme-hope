@@ -53,11 +53,11 @@ $black: (
   light: #000,
   dark: #fff,
 ) !default;
-$dark-grey: (
+$grey-dark: (
   light: #666,
   dark: #999,
 ) !default;
-$light-grey: (
+$grey-light: (
   light: #999,
   dark: #666,
 ) !default;
@@ -65,11 +65,11 @@ $white: (
   light: #fff,
   dark: #000,
 ) !default;
-$grey3: (
+$grey-lighter: (
   light: #333,
   dark: #bbb,
 ) !default;
-$grey12: (
+$grey-darker: (
   light: #bbb,
   dark: #333,
 ) !default;

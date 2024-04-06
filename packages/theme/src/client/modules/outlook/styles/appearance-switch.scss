@@ -6,13 +6,11 @@
   margin: 0;
   padding: 0 0.25rem;
 
-  color: var(--light-grey);
+  color: var(--grey-light);
 
   font-weight: 600;
   font-size: 0.75rem;
   line-height: 2;
-
-  transition: color var(--color-transition);
 }
 
 #appearance-switch {
@@ -21,7 +19,7 @@
 
   padding: 6px;
 
-  color: var(--dark-grey);
+  color: var(--grey-dark);
 
   cursor: pointer;
 

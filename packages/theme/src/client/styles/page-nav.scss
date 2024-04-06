@@ -12,8 +12,6 @@
   padding-inline: 2rem;
   border-top: 1px solid var(--border-color);
 
-  transition: border-top var(--color-transition);
-
   @media (max-width: hope-config.$pad) {
     padding-inline: 1rem;
   }
@@ -36,7 +34,7 @@
     }
 
     .hint {
-      color: var(--light-grey);
+      color: var(--grey-light);
       font-size: 0.875rem;
       line-height: 2;
     }

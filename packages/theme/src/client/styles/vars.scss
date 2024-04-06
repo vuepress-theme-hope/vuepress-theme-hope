@@ -53,23 +53,23 @@
 // stylelint-disable selector-class-pattern
 .DocSearch-Button,
 .DocSearch {
-  --docsearch-primary-color: var(--vp-tc);
-  --docsearch-text-color: var(--vp-c);
-  --docsearch-highlight-color: var(--vp-tc);
-  --docsearch-muted-color: var(--light-grey);
+  --docsearch-primary-color: var(--theme-color);
+  --docsearch-text-color: var(--text-color);
+  --docsearch-highlight-color: var(--theme-color);
+  --docsearch-muted-color: var(--grey-light);
   --docsearch-container-background: rgb(9 10 17 / 80%);
   --docsearch-modal-background: var(--bg-color-float);
   --docsearch-searchbox-background: var(--bg-color-secondary);
-  --docsearch-searchbox-focus-background: var(--vp-bg);
-  --docsearch-searchbox-shadow: inset 0 0 0 2px var(--vp-tc);
-  --docsearch-hit-color: var(--vp-cl);
-  --docsearch-hit-active-color: var(--vp-bg);
-  --docsearch-hit-background: var(--vp-bg);
-  --docsearch-hit-shadow: 0 1px 3px 0 var(--vp-brc);
-  --docsearch-footer-background: var(--vp-bg);
+  --docsearch-searchbox-focus-background: var(--bg-color);
+  --docsearch-searchbox-shadow: inset 0 0 0 2px var(--theme-color);
+  --docsearch-hit-color: var(--text-color-light);
+  --docsearch-hit-active-color: var(--bg-color);
+  --docsearch-hit-background: var(--bg-color);
+  --docsearch-hit-shadow: 0 1px 3px 0 var(--border-color);
+  --docsearch-footer-background: var(--bg-color);
 
   #{hope-config.$dark-selector} & {
-    --docsearch-logo-color: var(--vp-c);
+    --docsearch-logo-color: var(--text-color);
     --docsearch-modal-shadow: inset 1px 1px 0 0 #2c2e40, 0 3px 8px 0 #000309;
     --docsearch-key-shadow: inset 0 -2px 0 0 #282d55, inset 0 0 1px 1px #51577d,
       0 2px 2px 0 rgb(3 4 9 / 30%);
@@ -82,75 +82,75 @@
 
 // plugin-back-to-top
 .vp-back-to-top-button {
-  --back-to-top-color: var(--vp-tc);
-  --back-to-top-color-hover: var(--vp-tcl);
-  --back-to-top-bg-color: var(--vp-bg);
+  --back-to-top-color: var(--theme-color);
+  --back-to-top-color-hover: var(--theme-color-light);
+  --back-to-top-bg-color: var(--bg-color);
 }
 
 // plugin-catalog
 .vp-catalog-wrapper {
-  --catalog-bg-color: var(--vp-bg);
-  --catalog-bg-secondary-color: var(--vp-bgl);
-  --catalog-border-color: var(--vp-brc);
-  --catalog-active-color: var(--vp-tc);
-  --catalog-hover-color: var(--vp-tcl);
+  --catalog-bg-color: var(--bg-color);
+  --catalog-bg-secondary-color: var(--bg-color-light);
+  --catalog-border-color: var(--border-color);
+  --catalog-active-color: var(--theme-color);
+  --catalog-hover-color: var(--theme-color-light);
 }
 
 // plugin-external-link-icon
 .external-link-icon {
-  --external-link-icon-color: var(--light-grey);
+  --external-link-icon-color: var(--grey-light);
 }
 
 // plugin-nprogress
 #nprogress {
-  --nprogress-color: var(--vp-tc);
+  --nprogress-color: var(--theme-color);
 }
 
 body {
   // plugin-photo-swipe
   --photo-swipe-bullet: var(--white);
-  --photo-swipe-bullet-active: var(--vp-tc);
+  --photo-swipe-bullet-active: var(--theme-color);
 
   // plugin-pwa
-  --pwa-text-color: var(--vp-c);
-  --pwa-bg-color: var(--vp-bg);
-  --pwa-border-color: var(--vp-brc);
-  --pwa-btn-text-color: var(--vp-bg);
-  --pwa-btn-bg-color: var(--vp-tc);
-  --pwa-btn-hover-bg-color: var(--vp-tcl);
+  --pwa-text-color: var(--text-color);
+  --pwa-bg-color: var(--bg-color);
+  --pwa-border-color: var(--border-color);
+  --pwa-btn-text-color: var(--bg-color);
+  --pwa-btn-bg-color: var(--theme-color);
+  --pwa-btn-hover-bg-color: var(--theme-color-light);
   --pwa-shadow-color: var(--card-shadow);
-  --pwa-content-color: var(--grey3);
-  --pwa-content-light-color: var(--dark-grey);
+  --pwa-content-color: var(--grey-lighter);
+  --pwa-content-light-color: var(--grey-dark);
 }
 
 // plugin-redirect
 .language-modal-mask {
-  --redirect-bg-color: var(--vp-bg);
-  --redirect-bg-color-light: var(--vp-bgl);
-  --redirect-bg-color-lighter: var(--vp-bglt);
-  --redirect-text-color: var(--vp-c);
-  --redirect-primary-color: var(--vp-tc);
-  --redirect-primary-hover-color: var(--vp-tcl);
+  --redirect-bg-color: var(--bg-color);
+  --redirect-bg-color-light: var(--bg-color-light);
+  --redirect-bg-color-lighter: var(--bg-color-tertiary);
+  --redirect-text-color: var(--text-color);
+  --redirect-primary-color: var(--theme-color);
+  --redirect-primary-hover-color: var(--theme-color-light);
   --redirect-primary-text-color: var(--white);
 }
 
 // plugin-search
 .search-box {
-  --search-bg-color: var(--vp-bg);
-  --search-accent-color: var(--vp-tc);
-  --search-text-color: var(--vp-c);
-  --search-border-color: var(--vp-brc);
-  --search-item-text-color: var(--vp-clt);
+  --search-bg-color: var(--bg-color);
+  --search-accent-color: var(--theme-color);
+  --search-text-color: var(--text-color);
+  --search-border-color: var(--border-color);
+  --search-item-text-color: var(--text-color-lighter);
   --search-item-focus-bg-color: var(--bg-color-secondary);
 }
 
 // plugin-comment
 .waline-wrapper {
-  --waline-bg-color: var(--vp-bg);
+  --waline-bg-color: var(--bg-color);
   --waline-bg-color-light: var(--bg-color-secondary);
-  --waline-text-color: var(--vp-c);
-  --waline-border: 1px solid var(--vp-brc);
-  --waline-border-color: var(--vp-brc);
-  --waline-theme-color: var(--vp-tc);
-  --waline-active-color: var(--vp-tcl);
+  --waline-text-color: var(--text-color);
+  --waline-border: 1px solid var(--border-color);
+  --waline-border-color: var(--border-color);
+  --waline-theme-color: var(--theme-color);
+  --waline-active-color: var(--theme-color-light);
 }

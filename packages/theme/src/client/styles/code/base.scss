@@ -31,8 +31,6 @@
       -moz-hyphens: none;
       hyphens: none;
 
-      transition: color var(--color-transition);
-
       -webkit-font-smoothing: auto;
       -moz-osx-font-smoothing: auto;
 
@@ -49,14 +47,9 @@
 
 div[class*="language-"] {
   position: relative;
-
   border-radius: 6px;
-
   background: var(--code-bg-color);
-
   font-size: 16px;
-
-  transition: background var(--color-transition);
 
   // narrow mobile
   @media (max-width: hope-config.$mobile) {
@@ -77,8 +70,6 @@ div[class*="language-"] {
     color: var(--code-line-color);
 
     font-size: 0.75rem;
-
-    transition: color var(--color-transition);
   }
 
   pre {
@@ -103,7 +94,6 @@ div[class*="language-"] {
 
   .highlight-line {
     background: var(--code-highlight-line-color);
-    transition: background var(--color-transition);
   }
 
   &.line-numbers-mode {
@@ -119,8 +109,6 @@ div[class*="language-"] {
       width: var(--line-numbers-width);
       border-right: 1px solid var(--code-highlight-line-color);
       border-radius: 6px 0 0 6px;
-
-      transition: border-color var(--color-transition);
 
       @media (max-width: hope-config.$mobile) {
         border-radius: 0;
@@ -176,8 +164,6 @@ div[class*="language-"] {
 
       counter-reset: line-number;
       text-align: center;
-
-      transition: color var(--color-transition);
 
       @media print {
         display: none;

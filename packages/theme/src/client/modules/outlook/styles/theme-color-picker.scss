@@ -16,13 +16,11 @@ $enable-theme-color: map.has-key(
   margin: 0;
   padding: 0 0.25rem;
 
-  color: var(--light-grey);
+  color: var(--grey-light);
 
   font-weight: 600;
   font-size: 0.75rem;
   line-height: 2;
-
-  transition: color var(--color-transition);
 }
 
 #theme-color-picker {
@@ -60,7 +58,7 @@ $enable-theme-color: map.has-key(
 @if $enable-theme-color {
   @each $color in hope-config.$theme-colors {
     :root.theme-#{list.index(hope-config.$theme-colors, $color)} {
-      --theme-color: #{$color};
+      --theme-colo: #{$color};
       --theme-color-light: #{color.scale($color, $lightness: 10%)};
       --theme-color-dark: #{color.scale($color, $lightness: -10%)};
       --theme-color-mask: #{color.change($color, $alpha: 0.15)};

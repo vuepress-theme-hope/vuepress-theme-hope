@@ -5,7 +5,6 @@
 html,
 body {
   background: var(--bg-color);
-  transition: background var(--color-transition);
 }
 
 :root {
@@ -37,9 +36,6 @@ kbd {
 
 code {
   font-family: var(--font-family-mono);
-  transition:
-    background var(--color-transition),
-    color var(--color-transition);
 
   #{hope-config.$dark-selector} & {
     background: #333;
@@ -53,9 +49,6 @@ code {
 blockquote {
   border-color: #eee;
   color: #666;
-  transition:
-    border-color var(--color-transition),
-    color var(--color-transition);
 
   #{hope-config.$dark-selector} & {
     border-color: #333;
@@ -80,12 +73,10 @@ h1 {
 
 h2 {
   border-color: var(--border-color);
-  transition: border-bottom-color var(--color-transition);
 }
 
 hr {
   border-color: var(--border-color);
-  transition: border-top-color var(--color-transition);
 }
 
 tr:nth-child(odd) {

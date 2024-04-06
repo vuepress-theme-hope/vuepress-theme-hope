@@ -12,7 +12,7 @@
   width: 100%;
   padding: 0;
 
-  color: var(--dark-grey);
+  color: var(--grey-dark);
 
   font-size: inherit;
   font-family: inherit;
@@ -84,14 +84,12 @@
     margin: 0;
     padding-inline-start: 0.25rem;
 
-    color: var(--light-grey);
+    color: var(--grey-light);
 
     font-weight: 600;
     font-size: 0.75rem;
     line-height: 2;
     text-transform: uppercase;
-
-    transition: color var(--color-transition);
 
     .nav-link {
       padding: 0;

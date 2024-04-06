@@ -8,9 +8,7 @@
     border-radius: 6px;
     background: var(--bg-color-float);
     box-shadow: 0 1px 3px 1px var(--card-shadow);
-    transition:
-      background var(--color-transition),
-      box-shadow var(--color-transition);
+    transition: box-shadow var(--color-transition);
 
     &:hover {
       box-shadow: 0 2px 6px 2px var(--card-shadow);
@@ -37,9 +35,7 @@
   margin: 0 8px;
   padding: 4px;
 
-  color: var(--grey3);
-
-  transition: color var(--color-transition);
+  color: var(--grey-lighter);
 
   &:focus {
     outline: none;
