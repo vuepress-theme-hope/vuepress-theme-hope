@@ -492,8 +492,8 @@ importers:
         specifier: 2.0.0-rc.23
         version: 2.0.0-rc.23(typescript@5.4.3)(vuepress@2.0.0-rc.9)
       '@vuepress/plugin-shiki':
-        specifier: 2.0.0-rc.22
-        version: 2.0.0-rc.22(vuepress@2.0.0-rc.9)
+        specifier: 2.0.0-rc.24
+        version: 2.0.0-rc.24(vuepress@2.0.0-rc.9)
       three:
         specifier: 0.163.0
         version: 0.163.0
@@ -5454,8 +5454,8 @@ packages:
     transitivePeerDependencies:
       - typescript
 
-  /@vuepress/plugin-shiki@2.0.0-rc.22(vuepress@2.0.0-rc.9):
-    resolution: {integrity: sha512-L1L0GXaJgvOqqh1MnSavxbhTS/qR1y5/aeK/jQYCLQbo7I0l8e0FgxEEyqXfc+2aZmyouMzAGI0eCuw8I7mlIw==}
+  /@vuepress/plugin-shiki@2.0.0-rc.24(vuepress@2.0.0-rc.9):
+    resolution: {integrity: sha512-FUoNm0Ge94HVkvbrdVDc+vXOO39gYDb/pY9CRduVUoUawAjwbUg80PkG+0uNN7ngW9DP0Zzk9mUzuID3cazxOA==}
     peerDependencies:
       vuepress: 2.0.0-rc.9
     dependencies:
