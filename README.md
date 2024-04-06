@@ -42,12 +42,12 @@ We recommend you to contact using [issues](https://github.com/vuepress-theme-hop
 
 ## Details
 
-V2 is based on [_VuePress2_](https://vuejs.press), with the power of [_Vite5_](https://vitejs.dev) / [_Webpack5_](https://webpack.js.org) using [_Vue3_](https://vuejs.org) to provide powerful features.
+V2 is based on [**VuePress2**](https://vuejs.press), with the power of [**Vite5**](https://vitejs.dev) / [**Webpack5**](https://webpack.js.org) using [**Vue3**](https://vuejs.org) to provide powerful features.
 
 V2 is a full rewrite including:
 
-- All the components are rewritten with _Composition API in Vue3_
-- All the styles are migrated to _Sass_
+- All the components are rewritten with **Composition API in Vue3**
+- All the styles are migrated to **Sass**
 
 Also V2 has a better performance:🚀
 

@@ -24,12 +24,12 @@
 
 ## 详情
 
-V2 基于 [_VuePress2_](https://vuejs.press/zh/)， 通过 [_Vite5_](https://cn.vitejs.dev/) / [_Webpack5_](https://webpack.docschina.org/) 提供通过 [_Vue3_](https://cn.vuejs.org/) 提供强大功能。
+V2 基于 [**VuePress2**](https://vuejs.press/zh/)， 通过 [**Vite5**](https://cn.vitejs.dev/) / [**Webpack5**](https://webpack.docschina.org/) 提供通过 [**Vue3**](https://cn.vuejs.org/) 提供强大功能。
 
 V2 完全重写，包括:
 
-- 所有组件都用 _Vue3 中的 Composition API_ 重写
-- 所有样式都迁移到 _Sass_
+- 所有组件都用 **Vue3 中的 Composition API** 重写
+- 所有样式都迁移到 **Sass**
 
 V2 也有更好的性能 🚀:
 
