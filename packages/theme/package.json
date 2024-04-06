@@ -84,7 +84,7 @@
     "@vuepress/plugin-prismjs": "2.0.0-rc.21",
     "@vuepress/plugin-reading-time": "2.0.0-rc.23",
     "@vuepress/plugin-rtl": "2.0.0-rc.21",
-    "@vuepress/plugin-seo": "2.0.0-rc.23",
+    "@vuepress/plugin-seo": "2.0.0-rc.24",
     "@vuepress/plugin-sitemap": "2.0.0-rc.23",
     "@vuepress/plugin-theme-data": "2.0.0-rc.21",
     "@vueuse/core": "^10.9.0",
