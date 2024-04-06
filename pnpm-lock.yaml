@@ -1190,8 +1190,8 @@ importers:
         specifier: 2.0.0-rc.22
         version: 2.0.0-rc.22(vuepress@2.0.0-rc.9)
       '@vuepress/plugin-links-check':
-        specifier: 2.0.0-rc.23
-        version: 2.0.0-rc.23(typescript@5.4.3)(vuepress@2.0.0-rc.9)
+        specifier: 2.0.0-rc.24
+        version: 2.0.0-rc.24(typescript@5.4.3)(vuepress@2.0.0-rc.9)
       '@vuepress/plugin-nprogress':
         specifier: 2.0.0-rc.21
         version: 2.0.0-rc.21(typescript@5.4.3)(vuepress@2.0.0-rc.9)
@@ -5120,6 +5120,21 @@ packages:
     transitivePeerDependencies:
       - typescript
 
+  /@vuepress/helper@2.0.0-rc.24(typescript@5.4.3)(vuepress@2.0.0-rc.9):
+    resolution: {integrity: sha512-qXC+tXTKfZ7eJ+h3wYC/7Q903Tbqcz9Vqxku63R6pmcpbsRtt3l8XQRdJ/LMT5yX0wZln4Qzx1NY6S4psr0lzw==}
+    peerDependencies:
+      vuepress: 2.0.0-rc.9
+    dependencies:
+      '@vue/shared': 3.4.21
+      cheerio: 1.0.0-rc.12
+      fflate: 0.8.2
+      gray-matter: 4.0.3
+      vue: 3.4.21(typescript@5.4.3)
+      vuepress: 2.0.0-rc.9(@vuepress/bundler-vite@2.0.0-rc.9)(@vuepress/bundler-webpack@2.0.0-rc.9)(typescript@5.4.3)(vue@3.4.21)
+    transitivePeerDependencies:
+      - typescript
+    dev: false
+
   /@vuepress/markdown@2.0.0-rc.9:
     resolution: {integrity: sha512-e7as2ar3RQp0bUyMiwBPi7L/G2fzscb3s0BywNcAwubFR22o0/dBEYRYdrN0clPQ2FXpPxF6AFj4aD7O1heCbw==}
     dependencies:
@@ -5318,6 +5333,18 @@ packages:
       vuepress: 2.0.0-rc.9(@vuepress/bundler-vite@2.0.0-rc.9)(@vuepress/bundler-webpack@2.0.0-rc.9)(typescript@5.4.3)(vue@3.4.21)
     transitivePeerDependencies:
       - typescript
+    dev: true
+
+  /@vuepress/plugin-links-check@2.0.0-rc.24(typescript@5.4.3)(vuepress@2.0.0-rc.9):
+    resolution: {integrity: sha512-+HPIutNZhMP2eSf1Gb217WLCQlQhsMkebTfuZYyDSGGvY5TQmXOAuu/X7Xwh1lJlml9asPUXTcFe2cZcEtHHIA==}
+    peerDependencies:
+      vuepress: 2.0.0-rc.9
+    dependencies:
+      '@vuepress/helper': 2.0.0-rc.24(typescript@5.4.3)(vuepress@2.0.0-rc.9)
+      vuepress: 2.0.0-rc.9(@vuepress/bundler-vite@2.0.0-rc.9)(@vuepress/bundler-webpack@2.0.0-rc.9)(typescript@5.4.3)(vue@3.4.21)
+    transitivePeerDependencies:
+      - typescript
+    dev: false
 
   /@vuepress/plugin-medium-zoom@2.0.0-rc.23(typescript@5.4.3)(vuepress@2.0.0-rc.9):
     resolution: {integrity: sha512-WdvsPolNMOS9RoKBMCjK/aZO8SVo2FFLzH1YrP3yiaOF5oPUAMtboEB2byhnXHIiAIHOSXg3kWc8Z0oFFBGOCQ==}
