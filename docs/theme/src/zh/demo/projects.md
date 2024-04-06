@@ -276,6 +276,13 @@ docs:
     repo: https://github.com/JustUndertaker/ComWeChatBotClient
     preview: /assets/image/comwechat-client.jpg
 
+  - name: CoderMast 编程桅杆
+    desc: 「编程桅杆」包含了大部分 Java 程序员所需要掌握的核心知识！
+    logo: https://www.codermast.com/logo.png
+    url: https://www.codermast.com/
+    repo: https://github.com/CoderMast/CoderMast-Notes
+    preview: /assets/image/codermast-notes.png
+
 blog:
   - name: Mr.Hope's Blog
     desc: Where there is light, there is hope
