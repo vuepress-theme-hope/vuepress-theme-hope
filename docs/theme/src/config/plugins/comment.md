@@ -27,4 +27,6 @@ The theme provide comment support using `@vuepress/plugin-comment`, and it passe
 
 ## Options
 
-For details of each comment service options, please refer to <ProjectLink name="comment2" path="/config/">@vuepress/plugin-comment documentation</ProjectLink>.
+For details of each comment service options, please refer to [@vuepress/plugin-comment documentation][comment-config].
+
+[comment-config]: https://ecosystem.vuejs.press/plugins/comment/
