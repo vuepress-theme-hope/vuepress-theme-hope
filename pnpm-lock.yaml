@@ -1202,8 +1202,8 @@ importers:
         specifier: 2.0.0-rc.21
         version: 2.0.0-rc.21(vuepress@2.0.0-rc.9)
       '@vuepress/plugin-pwa':
-        specifier: 2.0.0-rc.23
-        version: 2.0.0-rc.23(typescript@5.4.4)(vuepress@2.0.0-rc.9)
+        specifier: 2.0.0-rc.24
+        version: 2.0.0-rc.24(typescript@5.4.4)(vuepress@2.0.0-rc.9)
       '@vuepress/plugin-reading-time':
         specifier: 2.0.0-rc.24
         version: 2.0.0-rc.24(typescript@5.4.4)(vuepress@2.0.0-rc.9)
@@ -1214,8 +1214,8 @@ importers:
         specifier: 2.0.0-rc.21
         version: 2.0.0-rc.21(typescript@5.4.4)(vuepress@2.0.0-rc.9)
       '@vuepress/plugin-search':
-        specifier: 2.0.0-rc.21
-        version: 2.0.0-rc.21(typescript@5.4.4)(vuepress@2.0.0-rc.9)
+        specifier: 2.0.0-rc.24
+        version: 2.0.0-rc.24(typescript@5.4.4)(vuepress@2.0.0-rc.9)
       '@vuepress/plugin-seo':
         specifier: 2.0.0-rc.24
         version: 2.0.0-rc.24(typescript@5.4.4)(vuepress@2.0.0-rc.9)
@@ -5530,8 +5530,8 @@ packages:
       prismjs: 1.29.0
       vuepress: 2.0.0-rc.9(@vuepress/bundler-vite@2.0.0-rc.9)(@vuepress/bundler-webpack@2.0.0-rc.9)(typescript@5.4.4)(vue@3.4.21)
 
-  /@vuepress/plugin-pwa@2.0.0-rc.23(typescript@5.4.4)(vuepress@2.0.0-rc.9):
-    resolution: {integrity: sha512-Hg5FclDKqxE0/hUGERDcnMbOScp7FyV2p+qKXv2UdE0C1pg2D6ngT30BxZQJ4/5922yZGJOIUGVi52r3DkrfsA==}
+  /@vuepress/plugin-pwa@2.0.0-rc.24(typescript@5.4.4)(vuepress@2.0.0-rc.9):
+    resolution: {integrity: sha512-fdBiJlqWFob5MHPlS5ARt2JtqalRbFmf/2T/i7I5rf7wTOj5PtnKRb1cie3zd0KXkip8w1wyTIhhjlNynLjnhg==}
     peerDependencies:
       vuepress: 2.0.0-rc.9
     dependencies:
@@ -5604,8 +5604,8 @@ packages:
       - typescript
     dev: false
 
-  /@vuepress/plugin-search@2.0.0-rc.21(typescript@5.4.4)(vuepress@2.0.0-rc.9):
-    resolution: {integrity: sha512-Dci/gN0ScbQXOKIB2JnUv8x4Ea+0wmU3xKe1IalyKdyg7cnayNqbmXmpqd32p4tlRXcFj9qhipa6AxvdhPcXqA==}
+  /@vuepress/plugin-search@2.0.0-rc.24(typescript@5.4.4)(vuepress@2.0.0-rc.9):
+    resolution: {integrity: sha512-GgjKMCb+IUYTo/Nui7vCIzQV5KpZD05VknhPmy3aySYXGd55vem8IVDVOV71CU1mX9qnHnQt5DFX2sBtmu2SRQ==}
     peerDependencies:
       vuepress: 2.0.0-rc.9
     dependencies:
