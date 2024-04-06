@@ -1,4 +1,5 @@
 import { isString } from "@vuepress/helper/client";
+import { isSupported } from "@vuepress/plugin-comment/pageview";
 import { useMutationObserver } from "@vueuse/core";
 import type { VNode } from "vue";
 import { defineComponent, h, ref, shallowRef } from "vue";
@@ -34,16 +35,17 @@ export default defineComponent({
   setup(props) {
     const route = useRoute();
     const metaLocale = useMetaLocale();
-
     const pageviewElement = shallowRef<HTMLSpanElement>();
     const pageViews = ref(0);
 
     useMutationObserver(
       pageviewElement,
       () => {
-        const count = pageviewElement.value!.textContent;
+        if (isSupported) {
+          const count = pageviewElement.value!.textContent;
 
-        if (count && !isNaN(Number(count))) pageViews.value = Number(count);
+          if (count && !isNaN(Number(count))) pageViews.value = Number(count);
+        }
       },
       { childList: true },
     );
@@ -66,9 +68,11 @@ export default defineComponent({
                 {
                   ref: pageviewElement,
                   id: "ArtalkPV",
-                  class: "waline-pageview-count",
-                  /** VisitorID */
+                  class: "vp-pageview waline-pageview-count",
                   "data-path": isString(props.pageview)
+                    ? props.pageview
+                    : route.path,
+                  "data-page-key": isString(props.pageview)
                     ? props.pageview
                     : route.path,
                 },

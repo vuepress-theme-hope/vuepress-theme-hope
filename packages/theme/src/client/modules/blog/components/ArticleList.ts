@@ -1,3 +1,4 @@
+import { isSupported, usePageview } from "@vuepress/plugin-comment/pageview";
 import type { PropType, VNode } from "vue";
 import {
   computed,
@@ -23,8 +24,6 @@ import type {
 
 import "../styles/article-list.scss";
 
-declare const SUPPORT_PAGEVIEW: boolean;
-
 export default defineComponent({
   name: "ArticleList",
 
@@ -46,8 +45,8 @@ export default defineComponent({
   setup(props) {
     const route = useRoute();
     const router = useRouter();
-
     const blogOptions = useBlogOptions();
+    const updatePageview = usePageview();
 
     const currentPage = ref(1);
 
@@ -80,13 +79,9 @@ export default defineComponent({
         await router.push({ path: route.path, query });
       }
 
-      if (SUPPORT_PAGEVIEW) {
+      if (isSupported) {
         await nextTick();
-        const { updatePageview } = await import(
-          /* webpackChunkName: "pageview" */ "@vuepress/plugin-comment/pageview"
-        );
-
-        await updatePageview();
+        updatePageview({ selector: ".vp-pageview" });
       }
     };
 

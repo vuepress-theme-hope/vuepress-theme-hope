@@ -1,7 +1,7 @@
 import { container } from "@mdit/plugin-container";
 import { encodeData } from "@vuepress/helper";
 import type { PluginSimple } from "markdown-it";
-import type Token from "markdown-it/lib/token.js";
+import type Token from "markdown-it/lib/token.mjs";
 
 const echartsRender = (tokens: Token[], index: number): string => {
   const token = tokens[index];

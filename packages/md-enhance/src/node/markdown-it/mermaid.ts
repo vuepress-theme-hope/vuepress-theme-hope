@@ -1,8 +1,8 @@
 import { encodeData } from "@vuepress/helper";
 import type { PluginSimple } from "markdown-it";
-import type Renderer from "markdown-it/lib/renderer.js";
+import type { RenderRule } from "markdown-it/lib/renderer.mjs";
 
-const mermaidRenderer: Renderer.RenderRule = (tokens, index) =>
+const mermaidRenderer: RenderRule = (tokens, index) =>
   `<Mermaid id="mermaid-${index}" code="${encodeData(
     tokens[index].content,
   )}"></Mermaid>`;

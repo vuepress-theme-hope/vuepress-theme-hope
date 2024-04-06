@@ -79,7 +79,6 @@ export const hopeTheme = (
         ENABLE_BLOG: status.enableBlog,
         ENABLE_READING_TIME: status.enableReadingTime,
         HAS_MULTIPLE_LANGUAGES: status.hasMultipleLanguages,
-        SUPPORT_PAGEVIEW: status.supportPageview,
       }),
 
       extendsBundlerOptions,

@@ -93,8 +93,8 @@
     "@mdit/plugin-tasklist": "^0.8.0",
     "@mdit/plugin-tex": "^0.8.0",
     "@mdit/plugin-uml": "^0.8.0",
-    "@types/markdown-it": "^13.0.7",
-    "@vuepress/helper": "2.0.0-rc.23",
+    "@types/markdown-it": "^14.0.0",
+    "@vuepress/helper": "2.0.0-rc.24",
     "@vueuse/core": "^10.9.0",
     "balloon-css": "^1.2.0",
     "js-yaml": "^4.1.0",
@@ -107,7 +107,7 @@
     "@types/js-yaml": "4.0.9",
     "@vuepress/bundler-vite": "2.0.0-rc.9",
     "markdown-it": "14.1.0",
-    "typescript": "5.4.3"
+    "typescript": "5.4.4"
   },
   "peerDependencies": {
     "@types/reveal.js": "^5.0.0",
