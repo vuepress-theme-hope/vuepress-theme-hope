@@ -4,6 +4,23 @@ All notable changes to this project will be documented in this file. See [Conven
 
 <!-- #region recent-change -->
 
+## [2.0.0-rc.34](https://github.com/vuepress-theme-hope/vuepress-theme-hope/compare/v2.0.0-rc.33...v2.0.0-rc.34) (2024-04-06)
+
+### Features
+
+- improve RepoIcon ([88ec1db](https://github.com/vuepress-theme-hope/vuepress-theme-hope/commit/88ec1db7e6f8a374ad47bbccc237f1e49f9129cf))
+- rebuild styles and remove transition, close [#3747](https://github.com/vuepress-theme-hope/vuepress-theme-hope/issues/3747) ([32ac951](https://github.com/vuepress-theme-hope/vuepress-theme-hope/commit/32ac951649f18f0255f564b7f56a7d1cdbde4809))
+- **search-pro:** improve suggestions ([7cfa7fb](https://github.com/vuepress-theme-hope/vuepress-theme-hope/commit/7cfa7fb578c9adefbba125f4520a04d14a17bbad))
+
+### Bug Fixes
+
+- **components:** fix ArtPlayer with vite devServer ([9560bc0](https://github.com/vuepress-theme-hope/vuepress-theme-hope/commit/9560bc00c83e5b672f90ca6dc5e394d8794aa3d7))
+- **create:** enable tasklist ([4a262ca](https://github.com/vuepress-theme-hope/vuepress-theme-hope/commit/4a262cae79738a7ef8937f5ee01b60d508b556bb))
+- **create:** fix branch name, close[#4019](https://github.com/vuepress-theme-hope/vuepress-theme-hope/issues/4019) ([1ce69c8](https://github.com/vuepress-theme-hope/vuepress-theme-hope/commit/1ce69c8f844d7089c1b7cca84b87052ca222ca4e))
+- **deps:** update dependency vidstack to v1.11.10 ([#4012](https://github.com/vuepress-theme-hope/vuepress-theme-hope/issues/4012)) ([5ab421f](https://github.com/vuepress-theme-hope/vuepress-theme-hope/commit/5ab421f054ab1cf5ab34ce5ab6cdaba59e0b73d5))
+- **search-pro:** add routelink support in index ([98c9874](https://github.com/vuepress-theme-hope/vuepress-theme-hope/commit/98c9874b5c87707e4f5d0f9b5909ab15073851d6))
+- **search-pro:** improve search modal ([71a77e1](https://github.com/vuepress-theme-hope/vuepress-theme-hope/commit/71a77e19dc7e38d581c8f128be1c6d495ff5be34))
+
 ## [2.0.0-rc.33](https://github.com/vuepress-theme-hope/vuepress-theme-hope/compare/v2.0.0-rc.32...v2.0.0-rc.33) (2024-04-02)
 
 ### Features
