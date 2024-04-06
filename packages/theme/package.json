@@ -105,7 +105,7 @@
   },
   "peerDependencies": {
     "@vuepress/plugin-docsearch": "2.0.0-rc.21",
-    "@vuepress/plugin-feed": "2.0.0-rc.23",
+    "@vuepress/plugin-feed": "2.0.0-rc.24",
     "@vuepress/plugin-pwa": "2.0.0-rc.23",
     "@vuepress/plugin-redirect": "2.0.0-rc.23",
     "@vuepress/plugin-search": "2.0.0-rc.21",
