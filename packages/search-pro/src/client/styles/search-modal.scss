@@ -56,12 +56,11 @@
   }
 
   @media (max-width: hope-config.$tablet) {
-    top: 0;
-    bottom: 0;
+    inset: 0;
 
-    width: calc(
-      100% - env(--safe-area-inset-top, 0) - env(--safe-area-inset-top, 0)
-    );
+    box-sizing: border-box;
+
+    width: 100%;
     max-width: unset;
     padding: env(--safe-area-inset-top) env(--safe-area-inset-right)
       env(--safe-area-inset-bottom) env(--safe-area-inset-left);
@@ -114,7 +113,7 @@
   margin-inline: 0.5rem -0.5rem;
   padding: 0.5rem;
 
-  color: var(--grey-lighter);
+  color: var(--grey-darker);
 
   font-size: 1rem;
 
