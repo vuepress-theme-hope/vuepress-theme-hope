@@ -1,2 +1,4 @@
-export * from "./ancestorLinks.js";
-export * from "./linkInfo.js";
+export * from "./getAncestorLinks.js";
+export * from "./isLinkInternal.js";
+export * from "./resolveLinkInfo.js";
+export * from "./resolvePrefix.js";

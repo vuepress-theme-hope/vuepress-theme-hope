@@ -1,7 +1,5 @@
-/* eslint-disable @typescript-eslint/no-unsafe-argument */
 import {
   isArray,
-  isLinkExternal,
   isPlainObject,
   isString,
   keys,
@@ -10,7 +8,11 @@ import {
 import type { PageData } from "vuepress/client";
 
 import { sidebarData } from "@temp/theme-hope/sidebar.js";
-import { resolveLinkInfo, resolvePrefix } from "@theme-hope/utils/index";
+import {
+  isLinkInternal,
+  resolveLinkInfo,
+  resolvePrefix,
+} from "@theme-hope/utils/index";
 
 import type {
   SidebarArrayOptions,
@@ -47,12 +49,12 @@ export const resolveArraySidebarItems = ({
       : item.link
         ? {
             ...item,
-            ...(isLinkExternal(item.link)
-              ? {}
-              : {
+            ...(isLinkInternal(item.link)
+              ? {
                   link: resolveLinkInfo(resolvePrefix(pathPrefix, item.link))
                     .link,
-                }),
+                }
+              : {}),
           }
         : item;
 

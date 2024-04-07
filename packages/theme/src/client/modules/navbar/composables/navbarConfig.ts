@@ -1,9 +1,13 @@
-import { isLinkExternal, isString } from "@vuepress/helper/client";
+import { isString } from "@vuepress/helper/client";
 import type { ComputedRefWithControl } from "@vueuse/core";
 import { computedWithControl } from "@vueuse/core";
 
 import { useThemeLocaleData } from "@theme-hope/composables/index";
-import { resolveLinkInfo, resolvePrefix } from "@theme-hope/utils/index";
+import {
+  isLinkInternal,
+  resolveLinkInfo,
+  resolvePrefix,
+} from "@theme-hope/utils/index";
 
 import type {
   AutoLinkOptions,
@@ -22,7 +26,7 @@ export const resolveNavbarItem = (
   if ("children" in item)
     return {
       ...item,
-      ...(item.link && !isLinkExternal(item.link)
+      ...(item.link && isLinkInternal(item.link)
         ? resolveLinkInfo(resolvePrefix(prefix, item.link))
         : {}),
       children: item.children.map(
@@ -35,9 +39,9 @@ export const resolveNavbarItem = (
 
   return {
     ...item,
-    link: isLinkExternal(item.link)
-      ? item.link
-      : resolveLinkInfo(resolvePrefix(prefix, item.link)).link,
+    link: isLinkInternal(item.link)
+      ? resolveLinkInfo(resolvePrefix(prefix, item.link)).link
+      : item.link,
   };
 };
 

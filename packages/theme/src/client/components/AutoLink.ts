@@ -74,7 +74,7 @@ export default defineComponent({
     );
 
     // Resolve the `rel` attr
-    const anchorRel = computed(
+    const linkRel = computed(
       () =>
         config.value.rel ||
         (isBlankTarget.value ? "noopener noreferrer" : null),
@@ -135,7 +135,7 @@ export default defineComponent({
             "a",
             {
               href: link,
-              rel: anchorRel.value,
+              rel: linkRel.value,
               target: linkTarget.value,
               "aria-label": linkAriaLabel.value,
               ...attrs,
