@@ -30,6 +30,10 @@ export default [
       "vue",
     ],
     copy: [["client/styles", "client"]],
-    dtsExternal: ["@vuepress/helper/client", "vuepress/shared"],
+    dtsExternal: [
+      "@vuepress/helper/client",
+      "vuepress/client",
+      "vuepress/shared",
+    ],
   }),
 ];
