@@ -1,3 +1,3 @@
-export * from "./sidebar.js";
-export * from "./sorter.js";
-export * from "./structure.js";
+export * from "./getSidebarSorter.js";
+export * from "./getStructureInfo.js";
+export * from "./prepareSidebarData.js";

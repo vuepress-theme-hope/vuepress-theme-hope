@@ -1,1 +1,1 @@
-export * from "./checkToken.js";
+export * from "./isTokenMatched.js";

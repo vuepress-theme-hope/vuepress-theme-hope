@@ -1,1 +1,1 @@
-export * from "./setup.js";
+export * from "./setupSidebarItems.js";

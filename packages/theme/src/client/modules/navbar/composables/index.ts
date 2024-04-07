@@ -1,3 +1,3 @@
-export * from "./navbarConfig.js";
-export * from "./navbarLanguageDropdown.js";
-export * from "./repoLink.js";
+export * from "./useNavbarItems.js";
+export * from "./useNavbarLanguageDropdown.js";
+export * from "./useNavbarRepo.js";

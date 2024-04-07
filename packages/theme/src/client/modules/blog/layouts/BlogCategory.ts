@@ -6,7 +6,7 @@ import type { VNode } from "vue";
 import { defineComponent, h } from "vue";
 import { usePageData, usePageFrontmatter } from "vuepress/client";
 
-import DropTransition from "@theme-hope/components/transitions/DropTransition";
+import { DropTransition } from "@theme-hope/components/transitions/index";
 import ArticleList from "@theme-hope/modules/blog/components/ArticleList";
 import BlogWrapper from "@theme-hope/modules/blog/components/BlogWrapper";
 import CategoryList from "@theme-hope/modules/blog/components/CategoryList";

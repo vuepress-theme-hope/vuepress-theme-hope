@@ -3,7 +3,7 @@ import { computed, defineComponent, h } from "vue";
 import { usePageFrontmatter } from "vuepress/client";
 
 import MarkdownContent from "@theme-hope/components/MarkdownContent";
-import DropTransition from "@theme-hope/components/transitions/DropTransition";
+import { DropTransition } from "@theme-hope/components/transitions/index";
 import ArticleList from "@theme-hope/modules/blog/components/ArticleList";
 import BlogHero from "@theme-hope/modules/blog/components/BlogHero";
 import InfoPanel from "@theme-hope/modules/blog/components/InfoPanel";

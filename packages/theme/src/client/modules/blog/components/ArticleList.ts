@@ -11,7 +11,7 @@ import {
 } from "vue";
 import { useRoute, useRouter } from "vuepress/client";
 
-import DropTransition from "@theme-hope/components/transitions/DropTransition";
+import { DropTransition } from "@theme-hope/components/transitions/index";
 import ArticleItem from "@theme-hope/modules/blog/components/ArticleItem";
 import Pagination from "@theme-hope/modules/blog/components/Pagination";
 import { EmptyIcon } from "@theme-hope/modules/blog/components/icons/index";

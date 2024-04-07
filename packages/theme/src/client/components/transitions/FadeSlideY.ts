@@ -1,32 +1,25 @@
-import type { SlotsType, VNode } from "vue";
-import { Transition, defineComponent, h } from "vue";
+import type { FunctionalComponent, VNode } from "vue";
+import { Transition, h } from "vue";
 
-import { useScrollPromise } from "@theme-hope/composables/index";
+import { scrollPromise } from "@theme-hope/utils/index";
 
 import "../../styles/fade-slide-y.scss";
 
-export default defineComponent({
-  name: "FadeSlideY",
+export const FadeSlideY: FunctionalComponent<
+  Record<never, never>,
+  Record<never, never>,
+  { default: () => VNode }
+> = (_props, { slots }): VNode =>
+  h(
+    Transition,
+    {
+      name: "fade-slide-y",
+      mode: "out-in",
+      // Handle scrollBehavior with transition
+      onBeforeEnter: scrollPromise.resolve,
+      onBeforeLeave: scrollPromise.pending,
+    },
+    () => slots.default?.(),
+  );
 
-  slots: Object as SlotsType<{
-    default: () => VNode;
-  }>,
-
-  setup(_props, { slots }) {
-    // Handle scrollBehavior with transition
-    const { resolve: onBeforeEnter, pending: onBeforeLeave } =
-      useScrollPromise();
-
-    return (): VNode =>
-      h(
-        Transition,
-        {
-          name: "fade-slide-y",
-          mode: "out-in",
-          onBeforeEnter,
-          onBeforeLeave,
-        },
-        () => slots.default?.(),
-      );
-  },
-});
+FadeSlideY.displayName = "FadeSlideY";

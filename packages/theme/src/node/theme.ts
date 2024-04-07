@@ -3,21 +3,21 @@ import { watch } from "chokidar";
 import type { ThemeFunction } from "vuepress/core";
 import { TEMPLATE_RENDERER_OUTLETS } from "vuepress/utils";
 
-import { getAlias } from "./alias.js";
-import { extendsBundlerOptions } from "./bundler.js";
 import {
-  checkHeader,
-  checkUserPlugin,
+  checkMarkdownOptions,
+  checkUserPlugins,
   checkVuePressVersion,
 } from "./check/index.js";
 import { checkLegacyStyle, convertThemeOptions } from "./compact/index.js";
 import {
-  checkSocialMediaIcons,
-  getStatus,
+  getSocialMediaIcons,
   getThemeData,
+  getThemeStatus,
 } from "./config/index.js";
+import { extendsBundlerOptions } from "./extendsBundlerOptions.js";
+import { getAlias } from "./getAlias.js";
 import { addFavicon } from "./init/index.js";
-import { getPluginConfig, usePlugin } from "./plugins/index.js";
+import { getPlugins, usePlugins } from "./plugins/index.js";
 import {
   prepareBundleConfigFile,
   prepareHighLighterScss,
@@ -61,11 +61,11 @@ export const hopeTheme = (
 
     if (behaviorOptions.compact) checkLegacyStyle(app);
 
-    const status = getStatus(app, options);
+    const status = getThemeStatus(app, options);
     const themeData = getThemeData(app, themeOptions, status);
-    const icons = status.enableBlog ? checkSocialMediaIcons(themeData) : {};
+    const icons = status.enableBlog ? getSocialMediaIcons(themeData) : {};
 
-    usePlugin(app, themeData, plugins, hotReload, behaviorOptions);
+    usePlugins(app, themeData, plugins, hotReload, behaviorOptions);
 
     if (isDebug) console.log("Theme plugin options:", plugins);
 
@@ -84,12 +84,13 @@ export const hopeTheme = (
       extendsBundlerOptions,
 
       extendsMarkdownOptions: (markdownOptions): void => {
-        if (behaviorOptions.check) checkHeader(markdownOptions, themeData);
+        if (behaviorOptions.check)
+          checkMarkdownOptions(markdownOptions, themeData);
       },
 
       onInitialized: (app): void => {
         if (favicon) addFavicon(app, favicon);
-        if (behaviorOptions.check) checkUserPlugin(app);
+        if (behaviorOptions.check) checkUserPlugins(app);
       },
 
       onPrepared: (app): Promise<void> =>
@@ -121,7 +122,7 @@ export const hopeTheme = (
         }
       },
 
-      plugins: getPluginConfig(
+      plugins: getPlugins(
         app,
         plugins,
         themeData,

@@ -7,7 +7,7 @@ import FeaturePanel from "@theme-hope/components/FeaturePanel";
 import HeroInfo from "@theme-hope/components/HeroInfo";
 import HighlightPanel from "@theme-hope/components/HighlightPanel";
 import MarkdownContent from "@theme-hope/components/MarkdownContent";
-import DropTransition from "@theme-hope/components/transitions/DropTransition";
+import { DropTransition } from "@theme-hope/components/transitions/index";
 import { usePure } from "@theme-hope/composables/index";
 
 import type { ThemeProjectHomePageFrontmatter } from "../../shared/index.js";

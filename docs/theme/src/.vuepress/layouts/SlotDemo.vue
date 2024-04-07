@@ -2,7 +2,7 @@
 import CommonWrapper from "@theme-hope/components/CommonWrapper";
 import NormalPage from "@theme-hope/components/NormalPage";
 import SkipLink from "@theme-hope/components/SkipLink";
-import FadeSlideY from "@theme-hope/components/transitions/FadeSlideY";
+import { FadeSlideY } from "@theme-hope/components/transitions/index";
 </script>
 
 <template>

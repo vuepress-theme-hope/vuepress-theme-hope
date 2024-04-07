@@ -7,7 +7,7 @@ import {
   withBase,
 } from "vuepress/client";
 
-import DropTransition from "@theme-hope/components/transitions/DropTransition";
+import { DropTransition } from "@theme-hope/components/transitions/index";
 
 import { SlideDownIcon } from "./icons/icons.js";
 import type { ThemeBlogHomePageFrontmatter } from "../../../../shared/index.js";

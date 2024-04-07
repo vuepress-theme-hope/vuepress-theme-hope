@@ -96,11 +96,11 @@ Components:
 - `@theme-hope/components/PageNav`: page navigation
 - `@theme-hope/components/PageTitle`: page title
 - `@theme-hope/components/SkipLink`: skip to main content
-- `@theme-hope/components/transitions/DropTransition`: drop transition component
-- `@theme-hope/components/transitions/FadeSlideY`: fade slide y transition component
+- `@theme-hope/components/transitions`: drop transition component
 
 Miscellaneous:
 
+- `@theme-hope/components/transitions/index`: theme transitions
 - `@theme-hope/components/icons/index`: theme icons
 - `@theme-hope/composables/index`: theme Composition API
 - `@theme-hope/utils/index`: theme utility functions

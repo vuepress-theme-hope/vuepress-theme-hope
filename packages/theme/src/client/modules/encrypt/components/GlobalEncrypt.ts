@@ -1,7 +1,7 @@
 import type { SlotsType, VNode } from "vue";
 import { defineComponent, h, onMounted, ref } from "vue";
 
-import FadeSlideY from "@theme-hope/components/transitions/FadeSlideY";
+import { FadeSlideY } from "@theme-hope/components/transitions/index";
 import PasswordModal from "@theme-hope/modules/encrypt/components/PasswordModal";
 import { useGlobalEncrypt } from "@theme-hope/modules/encrypt/composables/index";
 

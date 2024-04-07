@@ -8,8 +8,8 @@ export * from "./typings/index.js";
 export * from "../shared/index.js";
 
 // Internal methods
-export * from "./alias.js";
-export * from "./bundler.js";
+export * from "./getAlias.js";
+export * from "./extendsBundlerOptions.js";
 export * from "./config/index.js";
 export * from "./plugins/index.js";
 export * from "./prepare/index.js";

@@ -6,7 +6,7 @@ import BingHeroBackground from "vuepress-theme-hope/presets/BingHeroBackground.j
 import HitokotoBlogHero from "vuepress-theme-hope/presets/HitokotoBlogHero.js";
 
 import MarkdownContent from "@theme-hope/components/MarkdownContent";
-import DropTransition from "@theme-hope/components/transitions/DropTransition";
+import { DropTransition } from "@theme-hope/components/transitions/index";
 import ArticleList from "@theme-hope/modules/blog/components/ArticleList";
 import BlogHero from "@theme-hope/modules/blog/components/BlogHero";
 import BlogWrapper from "@theme-hope/modules/blog/components/BlogWrapper";

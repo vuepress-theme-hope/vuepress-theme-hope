@@ -1,1 +1,1 @@
-export * from "./favicon.js";
+export * from "./addFavicon.js";

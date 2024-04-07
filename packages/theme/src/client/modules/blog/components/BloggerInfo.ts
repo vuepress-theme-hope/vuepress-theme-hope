@@ -11,7 +11,7 @@ import {
   useBlogOptions,
   useCategoryMap,
   useTagMap,
-  useTimelines,
+  useTimeline,
 } from "@theme-hope/modules/blog/composables/index";
 
 import "../styles/blogger-info.scss";
@@ -26,7 +26,7 @@ export default defineComponent({
     const articles = useArticles();
     const categoryMap = useCategoryMap();
     const tagMap = useTagMap();
-    const timelines = useTimelines();
+    const timelines = useTimeline();
     const navigate = useNavigate();
 
     const bloggerName = computed(

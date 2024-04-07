@@ -1,7 +1,7 @@
 import type { FunctionalComponent } from "vue";
 import { h } from "vue";
 
-import DropTransition from "@theme-hope/components/transitions/DropTransition";
+import { DropTransition } from "@theme-hope/components/transitions/index";
 import BlogWrapper from "@theme-hope/modules/blog/components/BlogWrapper";
 import InfoPanel from "@theme-hope/modules/blog/components/InfoPanel";
 import TimelineItems from "@theme-hope/modules/blog/components/TimelineItems";

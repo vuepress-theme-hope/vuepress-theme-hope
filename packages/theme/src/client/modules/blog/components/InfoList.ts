@@ -3,7 +3,7 @@ import type { FunctionalComponent, VNode } from "vue";
 import { computed, defineComponent, h, ref } from "vue";
 import { RouteLink } from "vuepress/client";
 
-import DropTransition from "@theme-hope/components/transitions/DropTransition";
+import { DropTransition } from "@theme-hope/components/transitions/index";
 import { useNavigate, useThemeLocaleData } from "@theme-hope/composables/index";
 import CategoryList from "@theme-hope/modules/blog/components/CategoryList";
 import TagList from "@theme-hope/modules/blog/components/TagList";

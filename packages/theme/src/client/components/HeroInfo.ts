@@ -8,7 +8,7 @@ import {
 } from "vuepress/client";
 
 import AutoLink from "@theme-hope/components/AutoLink";
-import DropTransition from "@theme-hope/components/transitions/DropTransition";
+import { DropTransition } from "@theme-hope/components/transitions/index";
 
 import HopeIcon from "./HopeIcon.js";
 import type { ThemeProjectHomePageFrontmatter } from "../../shared/index.js";

@@ -98,11 +98,10 @@ export default {
 - `@theme-hope/components/PageNav` 页面导航
 - `@theme-hope/components/PageTitle` 页面标题
 - `@theme-hope/components/SkipLink` 跳转到主内容
-- `@theme-hope/components/transitions/DropTransition`: 主题下坠渐变动画
-- `@theme-hope/components/transitions/FadeSlideY`: 主题竖直滑动渐变动画
 
 杂项:
 
+- `@theme-hope/components/transitions/index`: 主题动画
 - `@theme-hope/components/icons/index` 主题图标
 - `@theme-hope/composables/index` 主题可组合 API
 - `@theme-hope/utils/index` 主题通用函数

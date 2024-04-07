@@ -1,2 +1,2 @@
-export * from "./editLink.js";
+export * from "./resolveEditLink.js";
 export * from "./typings.js";
