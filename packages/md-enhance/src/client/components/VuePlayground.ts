@@ -13,12 +13,15 @@ import {
 import { LoadingIcon } from "vuepress-shared/client";
 
 import { useVuePlaygroundConfig } from "../helpers/index.js";
-import { getVuePlaygroundSettings } from "../utils/index.js";
+import type { VuePlaygroundOptions } from "../typings/index.js";
 
 import "@vue/repl/style.css";
 import "../styles/vue-playground.scss";
 
 declare const VUE_PLAYGROUND_MONACO: boolean;
+
+const getVuePlaygroundSettings = (settings: string): VuePlaygroundOptions =>
+  <VuePlaygroundOptions>JSON.parse(decodeURIComponent(settings));
 
 export default defineComponent({
   name: "VuePlayground",

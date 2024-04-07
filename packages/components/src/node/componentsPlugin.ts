@@ -7,9 +7,9 @@ import type { PluginFunction } from "vuepress/core";
 import { useSassPalettePlugin } from "vuepress-plugin-sass-palette";
 
 import { convertOptions } from "./compact/index.js";
-import { getDefine } from "./define.js";
+import { getDefine } from "./getDefine.js";
 import type { ComponentOptions } from "./options/index.js";
-import { prepareConfigFile } from "./prepare.js";
+import { prepareConfigFile } from "./prepareConfigFile.js";
 import { PLUGIN_NAME, logger } from "./utils.js";
 
 export const componentsPlugin =

@@ -16,7 +16,7 @@ import {
   registerMseDash,
   registerMseFlv,
   registerMseHls,
-} from "../utils/mse.js";
+} from "../utils/registerMse.js";
 
 import "../styles/art-player.scss";
 

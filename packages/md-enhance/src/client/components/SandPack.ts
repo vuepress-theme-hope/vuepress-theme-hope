@@ -1,7 +1,10 @@
-import { deepAssign } from "@vuepress/helper/client";
+import { decodeData, deepAssign } from "@vuepress/helper/client";
 import { useMutationObserver } from "@vueuse/core";
 import type {
+  SandpackFiles,
+  SandpackOptions,
   SandpackPredefinedTemplate,
+  SandpackSetup,
   SandpackThemeProp,
 } from "sandpack-vue3";
 import { Sandpack } from "sandpack-vue3";
@@ -9,14 +12,18 @@ import type { PropType, VNode } from "vue";
 import { computed, defineComponent, h, onMounted, ref } from "vue";
 
 import { useSandpackConfig } from "../helpers/index.js";
-import {
-  getDarkmodeStatus,
-  getSandpackCustomSetup,
-  getSandpackFiles,
-  getSandpackOptions,
-} from "../utils/index.js";
+import { getDarkmodeStatus } from "../utils/index.js";
 
 import "../styles/sandpack.scss";
+
+const getSandpackFiles = (files: string): SandpackFiles =>
+  <SandpackFiles>JSON.parse(decodeData(files));
+
+const getSandpackOptions = (options: string): SandpackOptions =>
+  <SandpackOptions>JSON.parse(decodeData(options));
+
+const getSandpackCustomSetup = (customSetup: string): SandpackSetup =>
+  <SandpackSetup>JSON.parse(decodeData(customSetup));
 
 export default defineComponent({
   name: "SandPack",

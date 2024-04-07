@@ -6,7 +6,7 @@ import type { App } from "vuepress/core";
  *
  * Composition Api to use `@vuepress/plugin-prismjs`
  */
-export const usePrismPlugin = (app: App): void => {
+export const usePrismjsPlugin = (app: App): void => {
   const { plugins } = app.pluginApi;
 
   if (
@@ -25,7 +25,7 @@ export const usePrismPlugin = (app: App): void => {
  *
  * Composition Api to remove `@vuepress/plugin-prismjs`
  */
-export const removePrismPlugin = (app: App): void => {
+export const removePrismjsPlugin = (app: App): void => {
   const { plugins } = app.pluginApi;
 
   const index = plugins.findIndex(

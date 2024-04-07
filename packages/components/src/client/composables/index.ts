@@ -1,1 +1,1 @@
-export * from "./size.js";
+export * from "./useSize.js";

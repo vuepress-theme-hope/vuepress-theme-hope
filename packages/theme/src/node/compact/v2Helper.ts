@@ -11,7 +11,7 @@ import type {
   SidebarOptions,
   ThemeOptions,
 } from "../../shared/index.js";
-import { hopeTheme } from "../theme.js";
+import { hopeTheme } from "../hopeTheme.js";
 import { logger } from "../utils.js";
 
 /**

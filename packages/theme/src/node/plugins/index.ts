@@ -10,7 +10,7 @@ export * from "./getPlugins.js";
 export * from "./mdEnhance.js";
 export * from "./pageConverter.js";
 export * from "./photoSwipe.js";
-export * from "./prism.js";
+export * from "./prismjs.js";
 export * from "./pwa.js";
 export * from "./rtl.js";
 export * from "./search.js";

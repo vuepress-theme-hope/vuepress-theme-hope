@@ -4,7 +4,7 @@ import { useSassPalettePlugin } from "vuepress-plugin-sass-palette";
 
 import { convertOptions } from "./compact.js";
 import type { LightGalleryOptions } from "./options.js";
-import { prepareLightGalleryPlugins } from "./prepare.js";
+import { prepareLightGalleryPlugins } from "./prepareLightGalleryPlugins.js";
 import { CLIENT_FOLDER, PLUGIN_NAME, logger } from "./utils.js";
 
 export const lightgalleryPlugin =

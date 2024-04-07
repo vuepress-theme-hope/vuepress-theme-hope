@@ -1,18 +1,23 @@
+import type { BackToTopPluginOptions } from "@vuepress/plugin-back-to-top";
 import type { CommentOptions } from "@vuepress/plugin-comment";
 import type { CopyCodePluginOptions } from "@vuepress/plugin-copy-code";
 import type { CopyrightPluginOptions } from "@vuepress/plugin-copyright";
 import type { FeedPluginOptions } from "@vuepress/plugin-feed";
 import type { GitPluginOptions } from "@vuepress/plugin-git";
+import type { LinksCheckPluginOptions } from "@vuepress/plugin-links-check";
 import type { PhotoSwipePluginOptions } from "@vuepress/plugin-photo-swipe";
 import type { PwaPluginOptions } from "@vuepress/plugin-pwa";
 import type { ReadingTimePluginOptions } from "@vuepress/plugin-reading-time";
+import type { RedirectPluginOptions } from "@vuepress/plugin-redirect";
 import type { SeoPluginOptions } from "@vuepress/plugin-seo";
 import type { SitemapPluginOptions } from "@vuepress/plugin-sitemap";
+import type { ComponentOptions } from "vuepress-plugin-components";
 import type { MarkdownEnhanceOptions } from "vuepress-plugin-md-enhance";
 
 import type {
   BlogOptions,
   NavbarOptions,
+  PrismjsOptions,
   SidebarArrayOptions,
   SidebarObjectOptions,
   SidebarOptions,
@@ -28,9 +33,15 @@ export type ThemeSidebarArrayHelper = Helper<SidebarArrayOptions>;
 
 export type ThemeSidebarObjectHelper = Helper<SidebarObjectOptions>;
 
+export type ThemeBackToTopPluginHelper = Helper<
+  BackToTopPluginOptions | boolean
+>;
+
 export type ThemeBlogPluginHelper = Helper<BlogOptions | boolean>;
 
 export type ThemeCommentPluginHelper = Helper<CommentOptions | false>;
+
+export type ThemeComponentPluginHelper = Helper<ComponentOptions | false>;
 
 export type ThemeCopyCodePluginHelper = Helper<CopyCodePluginOptions | false>;
 
@@ -41,17 +52,26 @@ export type ThemeFeedPluginHelper = Helper<
 >;
 
 export type ThemeGitPluginHelper = Helper<GitPluginOptions | false>;
+
+export type ThemeLinksCheckPluginHelper = Helper<
+  LinksCheckPluginOptions | false
+>;
+
 export type ThemeMdEnhancePluginHelper = Helper<MarkdownEnhanceOptions | false>;
 
 export type ThemePhotoSwipePluginHelper = Helper<
   PhotoSwipePluginOptions | false
 >;
 
+export type ThemePrismJsPluginHelper = Helper<PrismjsOptions | false>;
+
 export type ThemePwaPluginHelper = Helper<PwaPluginOptions | false>;
 
 export type ThemeReadingTimePluginHelper = Helper<
   ReadingTimePluginOptions | false
 >;
+
+export type ThemeRedirectPluginHelper = Helper<RedirectPluginOptions | false>;
 
 export type ThemeSEOPluginHelper = Helper<
   Omit<SeoPluginOptions, "hostname" | "author"> | false

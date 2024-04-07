@@ -68,7 +68,7 @@ import {
 import type { MarkdownEnhanceOptions } from "./options.js";
 import {
   prepareConfigFile,
-  prepareMathjaxStyleFile,
+  prepareMathjaxStyle,
   prepareRevealJsPluginFile,
   prepareRevealJsStyleFile,
 } from "./prepare/index.js";
@@ -442,7 +442,7 @@ export const mdEnhancePlugin =
         const promises = [];
 
         if (status.mathjax)
-          promises.push(prepareMathjaxStyleFile(app, mathjaxInstance!));
+          promises.push(prepareMathjaxStyle(app, mathjaxInstance!));
 
         if (status.revealJs)
           promises.push(

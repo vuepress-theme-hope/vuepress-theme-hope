@@ -5,8 +5,6 @@ export type ScriptLoadState = Record<string, Promise<void>>;
 
 const state: ScriptLoadState = {};
 
-export const useState = (): ScriptLoadState => state;
-
 export const loadReact = (code: Code): Promise<void[]> =>
   Promise.all([
     loadScript(state, code.babel),

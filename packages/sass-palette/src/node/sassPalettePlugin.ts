@@ -2,7 +2,7 @@ import { watch } from "chokidar";
 import type { PluginFunction } from "vuepress/core";
 import { getDirname, path } from "vuepress/utils";
 
-import { injectConfigModule } from "./inject.js";
+import { injectScssConfigModule } from "./injectScssConfigModule.js";
 import type { SassPaletteOptions } from "./options.js";
 import {
   prepareConfigFile,
@@ -71,7 +71,7 @@ export const sassPalettePlugin =
       },
 
       extendsBundlerOptions: (config: unknown, app): void => {
-        injectConfigModule(config, app, id);
+        injectScssConfigModule(config, app, id);
       },
 
       onInitialized: (): Promise<void> =>

@@ -1,3 +1,3 @@
-export * from "./config.js";
-export * from "./mathjax.js";
-export * from "./reveal.js";
+export * from "./prepareConfigFile.js";
+export * from "./prepareMathjaxStyle.js";
+export * from "./prepareRevealJs.js";

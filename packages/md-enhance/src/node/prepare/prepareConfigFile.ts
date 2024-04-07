@@ -96,10 +96,10 @@ export const prepareConfigFile = async (
 
   if (options.hint) {
     imports.add(
-      `import { useHint } from "${CLIENT_FOLDER}composables/hint.js";`,
+      `import { useHintContainers } from "${CLIENT_FOLDER}composables/useHintContainers.js";`,
     );
     imports.add(`import "${CLIENT_FOLDER}styles/hint/index.scss";`);
-    setups.add("useHint();");
+    setups.add("useHintContainers();");
   }
 
   if (status["imgMark"])

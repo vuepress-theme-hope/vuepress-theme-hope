@@ -1,2 +1,2 @@
+export * from "./lightgalleryPlugin.js";
 export * from "./options.js";
-export * from "./plugin.js";

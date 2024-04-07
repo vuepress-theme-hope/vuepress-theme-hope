@@ -8,7 +8,7 @@ mjx-container {
 }
 `;
 
-export const prepareMathjaxStyleFile = async (
+export const prepareMathjaxStyle = async (
   app: App,
   mathjaxInstance: MathjaxInstance,
 ): Promise<void> => {

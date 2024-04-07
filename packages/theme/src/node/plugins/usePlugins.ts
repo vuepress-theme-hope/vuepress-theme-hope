@@ -5,7 +5,7 @@ import { useSassPalettePlugin } from "vuepress-plugin-sass-palette";
 
 import { useGitPlugin } from "./git.js";
 import { useExtendsPagePlugin } from "./pageConverter.js";
-import { usePrismPlugin } from "./prism.js";
+import { usePrismjsPlugin } from "./prismjs.js";
 import type { PluginsOptions, ThemeData } from "../../shared/index.js";
 import type { HopeThemeBehaviorOptions } from "../typings/index.js";
 import { TEMPLATE_FOLDER } from "../utils.js";
@@ -50,7 +50,7 @@ export const usePlugins = (
       isPlainObject(plugins.readingTime) ? plugins.readingTime : {},
     );
 
-  if (plugins.prismjs !== false) usePrismPlugin(app);
+  if (plugins.prismjs !== false) usePrismjsPlugin(app);
 
   useSassPalettePlugin(app, {
     id: "hope",

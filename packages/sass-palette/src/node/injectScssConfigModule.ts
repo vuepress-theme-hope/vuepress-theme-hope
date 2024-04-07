@@ -26,7 +26,7 @@ type LoaderContext =
  * @param app VuePress Node App
  * @param id Module id
  */
-export const injectConfigModule = (
+export const injectScssConfigModule = (
   config: unknown,
   app: App,
   id: string,
