@@ -36,7 +36,6 @@ export default [
         "dashjs",
         "hls.js/dist/hls.min.js",
         "mpegts.js/dist/mpegts.js",
-        "plyr",
         "qrcode",
         "vidstack/player",
         "vidstack/player/layouts",

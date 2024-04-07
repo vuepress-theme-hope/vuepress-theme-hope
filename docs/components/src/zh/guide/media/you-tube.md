@@ -2,15 +2,15 @@
 title: YouTube
 ---
 
-在 Markdown 文件中嵌入 YouTube 视频。
-
-<!-- more -->
-
-::: tip
+::: warning 已废弃
 
 为了更好的体验，我们建议你使用 [VidStack](./vid-stack.md)。
 
 :::
+
+在 Markdown 文件中嵌入 YouTube 视频。
+
+<!-- more -->
 
 ## 示例
 

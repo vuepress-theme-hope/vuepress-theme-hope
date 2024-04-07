@@ -36,54 +36,134 @@ npm i -D vidstack@1
 
 ::: md-demo 视频播放器
 
-<VidStack src="https://vp-demo.u2sb.com/video/caminandes_03_llamigos_720p.mp4" />
+<VidStack
+  src="https://files.vidstack.io/sprite-fight/720p.mp4"
+  poster="https://files.vidstack.io/sprite-fight/poster.webp"
+/>
 
 :::
 
-::: md-demo 有封面、章节、缩略图和音轨的播放器
+::: md-demo 有封面、章节、缩略图和字幕的播放器
 
 <VidStack
-  src="https://media-files.vidstack.io/720p.mp4"
   title="Agent 327 Operation Barber Shop"
-  poster="https://media-files.vidstack.io/poster-2.png"
-  :sourses="[
+  poster="https://files.vidstack.io/agent-327/poster.png"
+  :src="[
     {
-      src: 'https://media-files.vidstack.io/720p.mp4',
+      src: 'https://files.vidstack.io/agent-327/720p.mp4',
       type: 'video/mp4',
     },
     {
-      src:  'https://media-files.vidstack.io/720p.avi',
+      src:  'https://files.vidstack.io/agent-327/720p.avi',
       type: 'video/avi',
     },
     {
-      src:  'https://media-files.vidstack.io/720p.ogv',
+      src:  'https://files.vidstack.io/agent-327/720p.ogv',
       type: 'video/ogg',
     },
   ]"
   :tracks="[
     {
-      src: 'https://media-files.vidstack.io/subs/english.vtt',
+      src: 'https://files.vidstack.io/agent-327/subs/english.vtt',
       label: 'English',
       language: 'en-US',
       kind: 'subtitles',
       default: true,
     },
     {
-      src: 'https://media-files.vidstack.io/subs/spanish.vtt',
+      src: 'https://files.vidstack.io/agent-327/subs/spanish.vtt',
       label: 'Spanish',
       language: 'es-ES',
       kind: 'subtitles',
     },
+    {
+      src: 'https://files.vidstack.io/agent-327/subs/french.vtt',
+      label: 'French',
+      language: 'fr-FR',
+      kind: 'subtitles',
+    },
+    {
+      src: 'https://files.vidstack.io/agent-327/subs/german.vtt',
+      label: 'German',
+      language: 'ge-GE',
+      kind: 'subtitles',
+    },
+    {
+      src: 'https://files.vidstack.io/agent-327/subs/italian.vtt',
+      label: 'Italian',
+      language: 'it-IT',
+      kind: 'subtitles',
+    },
+    {
+      src: 'https://files.vidstack.io/agent-327/subs/russian.vtt',
+      label: 'Russian',
+      language: 'ru-RU',
+      kind: 'subtitles',
+    },
     // Chapters
     {
-      src: 'https://media-files.vidstack.io/chapters.vtt',
+      src: 'https://files.vidstack.io/agent-327/chapters.vtt',
       kind: 'chapters',
       language: 'en-US',
       default: true,
     },
   ]"
-  thumbnails="https://media-files.vidstack.io/thumbnails.vtt"
-  crossorigin
+  thumbnails="https://files.vidstack.io/agent-327/thumbnails.vtt"
+/>
+
+:::
+
+::: md-demo 一个流式视频播放器
+
+<VidStack
+  src="https://files.vidstack.io/sprite-fight/hls/stream.m3u8"
+  :tracks="[
+    {
+      src: 'https://files.vidstack.io/agent-327/subs/english.vtt',
+      label: 'English',
+      language: 'en-US',
+      kind: 'subtitles',
+      default: true,
+    },
+    {
+      src: 'https://files.vidstack.io/agent-327/subs/spanish.vtt',
+      label: 'Spanish',
+      language: 'es-ES',
+      kind: 'subtitles',
+    },
+    {
+      src: 'https://files.vidstack.io/agent-327/subs/french.vtt',
+      label: 'French',
+      language: 'fr-FR',
+      kind: 'subtitles',
+    },
+    {
+      src: 'https://files.vidstack.io/agent-327/subs/german.vtt',
+      label: 'German',
+      language: 'ge-GE',
+      kind: 'subtitles',
+    },
+    {
+      src: 'https://files.vidstack.io/agent-327/subs/italian.vtt',
+      label: 'Italian',
+      language: 'it-IT',
+      kind: 'subtitles',
+    },
+    {
+      src: 'https://files.vidstack.io/agent-327/subs/russian.vtt',
+      label: 'Russian',
+      language: 'ru-RU',
+      kind: 'subtitles',
+    },
+    // Chapters
+    {
+      src: 'https://files.vidstack.io/agent-327/chapters.vtt',
+      kind: 'chapters',
+      language: 'en-US',
+      default: true,
+    },
+  ]"
+  thumbnails="https://files.vidstack.io/agent-327/thumbnails.vtt"
 />
 
 :::
@@ -105,31 +185,44 @@ npm i -D vidstack@1
 
 <!-- #endregion demo -->
 
+## Streaming
+
+## 流式
+
+VideoStack 支持流式视频，默认通过 jsdelivr CDN 加载 `hls.js` 和 `dash.js` 以支持的 HLS 和 DASH 流式传输。
+
+由于 jsdelivr 在大陆很不稳定，你可以在项目中安装 `hls.js` 和 `dash.js` 以使用这些包的本地版本。
+
 ## 属性
 
 ### src
 
-- 类型: `string`
-- 必填: 否
+- 类型: `PlayerSrc`
+
+  ```ts
+  type PlayerSrc = MediaSrc | MediaSrc[];
+  type MediaSrc =
+    | string
+    | AudioSrc
+    | VideoSrc
+    | HLSSrc
+    | DASHSrc
+    | YouTubeSrc
+    | VimeoSrc;
+  ```
+
+- 必填: 是
 
 视频源链接。
 
 不支持相对路径。当填写路径名时，`base` 将自动添加到路径名的开头。
 
-### sources
+### tracks
 
-- 类型: `VidStackSource[]`
-
-  ```ts
-  interface VidStackSource {
-    src: string;
-    type: string;
-  }
-  ```
-
+- 类型: `TextTrackInit[]`
 - 必填: 否
 
-带有类型的详细音频/视频源。
+视频/音频字幕和章节。
 
 ### title
 
@@ -145,13 +238,6 @@ npm i -D vidstack@1
 
 视频封面 (不适用于音频)
 
-### alt
-
-- 类型: `string`
-- 默认值: `poster`
-
-视频封面替代文字 (不适用于音频)
-
 ### thumbnails
 
 - 类型: `string`
@@ -159,9 +245,16 @@ npm i -D vidstack@1
 
 视频缩略图 (不适用于音频)
 
-### aspect-ratio
+### player
 
-- 类型: `${number}/${number}`
+- 类型: `Omit<VidstackPlayerConfig, "target" | "src" | "sources" | "tracks">`
 - 必填: 否
 
-视频宽高比 (不适用于音频)。例如: `16/9`
+VidStack 播放器选项
+
+### layout
+
+- 类型: `Partial<DefaultLayoutProps>`
+- 必填: 否
+
+VidStack 布局选项

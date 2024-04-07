@@ -1,81 +1,45 @@
-import { isArray } from "@vuepress/helper/client";
-import type { UseMediaTextTrackSource } from "@vueuse/core";
-import type { Options as PlyrOptions } from "plyr";
+import { isArray, isString } from "@vuepress/helper/client";
+import type { PlayerSrc, PlyrLayoutProps, TextTrackInit } from "vidstack";
+import type { MediaPlayerElement } from "vidstack/elements";
+import type { VidstackPlayerConfig } from "vidstack/global/player";
+import { PlyrLayout, VidstackPlayer } from "vidstack/global/player";
 import type { PropType, VNode } from "vue";
 import {
-  computed,
   defineComponent,
   h,
-  onBeforeMount,
+  onBeforeUnmount,
   onMounted,
   shallowRef,
 } from "vue";
 
 import { getLink } from "../utils/index.js";
 
-import "plyr/dist/plyr.css";
+import "vidstack/player/styles/base.css";
+import "vidstack/player/styles/plyr/theme.css";
 import "../styles/video-player.scss";
 
-export interface VidePlayerSource {
-  src: string;
-  type: string;
-  size: string | number;
-}
+declare const DASHJS_INSTALLED: boolean;
+declare const HLS_JS_INSTALLED: boolean;
 
 export default defineComponent({
   name: "VideoPlayer",
 
   props: {
-    /** Options object for plyr config. **/
-    options: {
-      type: Object as PropType<PlyrOptions>,
-      default: () => ({}),
-    },
-
     /**
-     * Video source
-     *
-     * 视频源
+     * sources
      */
     src: {
-      type: [String, Array] as PropType<string | VidePlayerSource[]>,
+      type: [String, Array, Object] as PropType<PlayerSrc>,
       required: true,
     },
 
     /**
-     * Video title
-     *
-     * 视频标题
+     * tracks
      */
-    title: {
-      type: String,
-      default: "A video",
-    },
+    tracks: { type: Array as PropType<TextTrackInit[]>, default: () => [] },
 
     /**
-     * Video file type
-     *
-     * 视频文件类型
-     */
-    type: {
-      type: String,
-      default: "",
-    },
-
-    /**
-     * Video tracks
-     *
-     * 视频字幕
-     */
-    tracks: {
-      type: Array as PropType<UseMediaTextTrackSource[]>,
-      default: (): UseMediaTextTrackSource[] => [],
-    },
-
-    /**
-     * Video poster
-     *
-     * 视频封面
+     * poster
      */
     poster: {
       type: String,
@@ -83,87 +47,92 @@ export default defineComponent({
     },
 
     /**
-     * Component width
-     *
-     * 组件宽度
+     * thumbnails
      */
-    width: {
-      type: [String, Number],
-      default: "100%",
+    thumbnails: {
+      type: String,
+      default: "",
     },
 
     /**
-     * Whether to loop the video
-     *
-     * 是否循环播放
+     * title
      */
-    loop: Boolean,
+    title: {
+      type: String,
+      default: "",
+    },
+
+    /**
+     * VidStack player options
+     */
+    player: {
+      type: Object as PropType<
+        Omit<
+          VidstackPlayerConfig,
+          "target" | "src" | "sources" | "tracks" | "title" | "poster"
+        >
+      >,
+
+      default: () => ({}),
+    },
+
+    /**
+     * VidStack layout options
+     */
+    layout: {
+      type: Object as PropType<Partial<PlyrLayoutProps>>,
+      default: () => ({}),
+    },
   },
 
   setup(props) {
-    let player: Plyr | null = null;
     const video = shallowRef<HTMLVideoElement>();
 
-    const plyrOptions = computed(() => ({
-      hideYouTubeDOMError: true,
-      ...props.options,
-    }));
+    let player: MediaPlayerElement | null = null;
 
     onMounted(async () => {
-      const { default: Plyr } = await import(
-        /* webpackChunkName: "plyr" */ "plyr"
-      );
+      const options: VidstackPlayerConfig = {
+        target: video.value!,
+        crossOrigin: true,
+        poster: props.poster,
+        title: props.title,
+        ...props.player,
+        layout: new PlyrLayout({
+          thumbnails: props.thumbnails,
+          ...props.layout,
+        }),
+      };
 
-      player = new Plyr(video.value!, plyrOptions.value);
+      options.src = isString(props.src)
+        ? getLink(props.src)
+        : isArray(props.src)
+          ? props.src.map((src) => (isString(src) ? getLink(src) : src))
+          : props.src;
+
+      if (props.tracks.length) options.tracks = props.tracks;
+
+      player = await VidstackPlayer.create(options);
+
+      player.addEventListener("provider-change", (event) => {
+        const provider = event.detail;
+
+        if (provider?.type === "hls" && HLS_JS_INSTALLED)
+          // @ts-ignore
+          // eslint-disable-next-line @typescript-eslint/explicit-function-return-type
+          provider.library = () =>
+            import(/* webpackChunkName: "hls" */ "hls.js/dist/hls.min.js");
+        else if (provider?.type === "dashjs" && DASHJS_INSTALLED)
+          // @ts-ignore
+          // eslint-disable-next-line @typescript-eslint/explicit-function-return-type
+          provider.library = () =>
+            import(/* webpackChunkName: "dashjs" */ "dashjs");
+      });
     });
 
-    onBeforeMount(() => {
-      try {
-        player?.destroy();
-      } catch (err: unknown) {
-        // Do nothing
-      }
+    onBeforeUnmount(() => {
+      player?.destroy();
     });
 
-    return (): VNode =>
-      h(
-        "div",
-        {
-          class: "vp-video-player",
-          style: {
-            width: props.width,
-          },
-        },
-        [
-          h(
-            "a",
-            {
-              class: "sr-only",
-              href: getLink(isArray(props.src) ? props.src[0].src : props.src),
-            },
-            props.title,
-          ),
-          h(
-            "video",
-            {
-              ref: video,
-              title: props.title,
-              crossorigin: "anonymous",
-              poster: getLink(props.poster),
-              preload: "metadata",
-              controls: "",
-              ...(props.loop ? { loop: "" } : {}),
-            },
-            [
-              props.tracks.map((track) =>
-                h("track", { ...track, src: getLink(track.src) }),
-              ),
-              isArray(props.src)
-                ? props.src.map((item) => h("source", item))
-                : h("source", { src: getLink(props.src), type: props.type }),
-            ],
-          ),
-        ],
-      );
+    return (): VNode => h("div", { ref: video });
   },
 });

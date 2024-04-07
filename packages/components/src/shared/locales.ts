@@ -1,4 +1,5 @@
 import type { ExactLocaleConfig } from "@vuepress/helper";
+import type { DefaultLayoutTranslations } from "vidstack";
 
 /** @deprecated Please use '@vuepress/plugin-back-to-top' */
 export interface BackToTopLocaleData {
@@ -40,3 +41,7 @@ export interface SiteInfoLocaleData {
 }
 
 export type SiteInfoLocaleConfig = ExactLocaleConfig<SiteInfoLocaleData>;
+
+export type VidstackLocaleData = Partial<DefaultLayoutTranslations>;
+
+export type VidstackLocaleConfig = ExactLocaleConfig<VidstackLocaleData>;

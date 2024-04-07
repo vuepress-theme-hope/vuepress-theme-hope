@@ -69,6 +69,7 @@ export const backToTopLocales: BackToTopLocaleConfig = {
   "/fi/": {
     backToTop: "Takaisin ylös",
   },
+
   "/hu/": {
     backToTop: "Vissza a tetejére",
   },

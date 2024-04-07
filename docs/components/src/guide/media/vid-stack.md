@@ -36,61 +36,144 @@ npm i -D vidstack@1
 
 ::: md-demo A video player
 
-<VidStack src="https://vp-demo.u2sb.com/video/caminandes_03_llamigos_720p.mp4" />
+<VidStack
+  src="https://files.vidstack.io/sprite-fight/720p.mp4"
+  poster="https://files.vidstack.io/sprite-fight/poster.webp"
+/>
 
 :::
 
-::: md-demo A video player with poster, thumbnail, chapter and tracks
+::: md-demo A video player with poster, subtitles, chapters and thumbnails
 
 <VidStack
-  src="https://media-files.vidstack.io/720p.mp4"
   title="Agent 327 Operation Barber Shop"
-  poster="https://media-files.vidstack.io/poster-2.png"
-  :sourses="[
+  poster="https://files.vidstack.io/agent-327/poster.png"
+  :src="[
     {
-      src: 'https://media-files.vidstack.io/720p.mp4',
+      src: 'https://files.vidstack.io/agent-327/720p.mp4',
       type: 'video/mp4',
     },
     {
-      src:  'https://media-files.vidstack.io/720p.avi',
+      src:  'https://files.vidstack.io/agent-327/720p.avi',
       type: 'video/avi',
     },
     {
-      src:  'https://media-files.vidstack.io/720p.ogv',
+      src:  'https://files.vidstack.io/agent-327/720p.ogv',
       type: 'video/ogg',
     },
   ]"
   :tracks="[
     {
-      src: 'https://media-files.vidstack.io/subs/english.vtt',
+      src: 'https://files.vidstack.io/agent-327/subs/english.vtt',
       label: 'English',
       language: 'en-US',
       kind: 'subtitles',
       default: true,
     },
     {
-      src: 'https://media-files.vidstack.io/subs/spanish.vtt',
+      src: 'https://files.vidstack.io/agent-327/subs/spanish.vtt',
       label: 'Spanish',
       language: 'es-ES',
       kind: 'subtitles',
     },
+    {
+      src: 'https://files.vidstack.io/agent-327/subs/french.vtt',
+      label: 'French',
+      language: 'fr-FR',
+      kind: 'subtitles',
+    },
+    {
+      src: 'https://files.vidstack.io/agent-327/subs/german.vtt',
+      label: 'German',
+      language: 'ge-GE',
+      kind: 'subtitles',
+    },
+    {
+      src: 'https://files.vidstack.io/agent-327/subs/italian.vtt',
+      label: 'Italian',
+      language: 'it-IT',
+      kind: 'subtitles',
+    },
+    {
+      src: 'https://files.vidstack.io/agent-327/subs/russian.vtt',
+      label: 'Russian',
+      language: 'ru-RU',
+      kind: 'subtitles',
+    },
     // Chapters
     {
-      src: 'https://media-files.vidstack.io/chapters.vtt',
+      src: 'https://files.vidstack.io/agent-327/chapters.vtt',
       kind: 'chapters',
       language: 'en-US',
       default: true,
     },
   ]"
-  thumbnails="https://media-files.vidstack.io/thumbnails.vtt"
-  crossorigin
+  thumbnails="https://files.vidstack.io/agent-327/thumbnails.vtt"
+/>
+
+:::
+
+::: md-demo A streaming video player
+
+<VidStack
+  src="https://files.vidstack.io/sprite-fight/hls/stream.m3u8"
+  :tracks="[
+    {
+      src: 'https://files.vidstack.io/agent-327/subs/english.vtt',
+      label: 'English',
+      language: 'en-US',
+      kind: 'subtitles',
+      default: true,
+    },
+    {
+      src: 'https://files.vidstack.io/agent-327/subs/spanish.vtt',
+      label: 'Spanish',
+      language: 'es-ES',
+      kind: 'subtitles',
+    },
+    {
+      src: 'https://files.vidstack.io/agent-327/subs/french.vtt',
+      label: 'French',
+      language: 'fr-FR',
+      kind: 'subtitles',
+    },
+    {
+      src: 'https://files.vidstack.io/agent-327/subs/german.vtt',
+      label: 'German',
+      language: 'ge-GE',
+      kind: 'subtitles',
+    },
+    {
+      src: 'https://files.vidstack.io/agent-327/subs/italian.vtt',
+      label: 'Italian',
+      language: 'it-IT',
+      kind: 'subtitles',
+    },
+    {
+      src: 'https://files.vidstack.io/agent-327/subs/russian.vtt',
+      label: 'Russian',
+      language: 'ru-RU',
+      kind: 'subtitles',
+    },
+    // Chapters
+    {
+      src: 'https://files.vidstack.io/agent-327/chapters.vtt',
+      kind: 'chapters',
+      language: 'en-US',
+      default: true,
+    },
+  ]"
+  thumbnails="https://files.vidstack.io/agent-327/thumbnails.vtt"
 />
 
 :::
 
 ::: md-demo An audio player
 
-<VidStack src="//theme-hope-assets.vuejs.press/files/sample.mp3" title="VidStack Audio Demo" />
+<VidStack
+  src="//theme-hope-assets.vuejs.press/files/sample.mp3"
+  title="VidStack Audio Demo"
+/>
 
 :::
 
@@ -105,31 +188,42 @@ npm i -D vidstack@1
 
 <!-- #endregion demo -->
 
+## Streaming
+
+VidStack supports streaming video, by default it loads `hls.js` and `dash.js` to support HLS and DASH streaming via jsdelivr CDN.
+
+To use local version of package, install `hls.js` and `dash.js` in your project.
+
 ## Props
 
 ### src
 
-- Type: `string`
-- Required: No
+- Type: `PlayerSrc`
+
+  ```ts
+  type PlayerSrc = MediaSrc | MediaSrc[];
+  type MediaSrc =
+    | string
+    | AudioSrc
+    | VideoSrc
+    | HLSSrc
+    | DASHSrc
+    | YouTubeSrc
+    | VimeoSrc;
+  ```
+
+- Required: Yes
 
 Video source link.
 
 Relative URL is NOT supported. When filling in a pathname, `base` will be automatically added to the beginning of the pathname.
 
-### sources
+### tracks
 
-- Type: `VidStackSource[]`
-
-  ```ts
-  interface VidStackSource {
-    src: string;
-    type: string;
-  }
-  ```
-
+- Type: `TextTrackInit[]`
 - Required: No
 
-Detailed audio/video source with type.
+Audio/Video subtitles and chapters.
 
 ### title
 
@@ -145,13 +239,6 @@ Audio/Video title
 
 Video poster (not working with audio)
 
-### alt
-
-- Type: `string`
-- Default: `poster`
-
-Video poster alt (not working with audio)
-
 ### thumbnails
 
 - Type: `string`
@@ -159,9 +246,16 @@ Video poster alt (not working with audio)
 
 Video thumbnails (not working with audio)
 
-### aspect-ratio
+### player
 
-- Type: `${number}/${number}`
+- Type: `Omit<VidstackPlayerConfig, "target" | "src" | "sources" | "tracks">`
 - Required: No
 
-Video aspect ratio (not working with audio). E.g.: `16/9`
+VidStack player options
+
+### layout
+
+- Type: `Partial<DefaultLayoutProps>`
+- Required: No
+
+VidStack layout options

@@ -31,9 +31,9 @@ export const AVAILABLE_COMPONENTS: AvailableComponent[] = [
 
 export const COMPONENT_PKG: Record<string, string[]> = {
   ArtPlayer: ["artplayer"],
-  AudioPlayer: ["plyr"],
+  AudioPlayer: ["vidstack"],
   VidStack: ["vidstack"],
-  VideoPlayer: ["plyr"],
+  VideoPlayer: ["vidstack"],
 };
 
 export const CLIENT_FOLDER = ensureEndingSlash(

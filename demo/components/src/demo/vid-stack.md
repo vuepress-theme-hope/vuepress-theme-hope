@@ -2,62 +2,139 @@
 
 ## Demo
 
-A video player:
+A basic video player:
 
 <VidStack
-  src="https://media-files.vidstack.io/720p.mp4"
-  poster="https://media-files.vidstack.io/poster-2.png"
+  src="https://files.vidstack.io/sprite-fight/720p.mp4"
+  poster="https://files.vidstack.io/sprite-fight/poster.webp"
 />
 
-A video player with poster and tracks:
+A video player with poster, tracks, subtitles, chapters and thumbnails:
 
 <VidStack
-  src="https://media-files.vidstack.io/720p.mp4"
   title="Agent 327 Operation Barber Shop"
-  poster="https://media-files.vidstack.io/poster-2.png"
-  :sourses="[
+  poster="https://files.vidstack.io/agent-327/poster.png"
+  :src="[
     {
-      src: 'https://media-files.vidstack.io/720p.mp4',
+      src: 'https://files.vidstack.io/agent-327/720p.mp4',
       type: 'video/mp4',
+      width: 1280,
+      height: 720,
     },
     {
-      src:  'https://media-files.vidstack.io/720p.avi',
+      src:  'https://files.vidstack.io/agent-327/720p.avi',
       type: 'video/avi',
+      width: 1280,
+      height: 720,
     },
     {
-      src:  'https://media-files.vidstack.io/720p.ogv',
+      src:  'https://files.vidstack.io/agent-327/720p.ogv',
       type: 'video/ogg',
+      width: 1280,
+      height: 720,
     },
   ]"
   :tracks="[
     {
-      src: 'https://media-files.vidstack.io/subs/english.vtt',
+      src: 'https://files.vidstack.io/agent-327/subs/english.vtt',
       label: 'English',
       language: 'en-US',
       kind: 'subtitles',
       default: true,
     },
     {
-      src: 'https://media-files.vidstack.io/subs/spanish.vtt',
+      src: 'https://files.vidstack.io/agent-327/subs/spanish.vtt',
       label: 'Spanish',
       language: 'es-ES',
       kind: 'subtitles',
     },
+    {
+      src: 'https://files.vidstack.io/agent-327/subs/french.vtt',
+      label: 'French',
+      language: 'fr-FR',
+      kind: 'subtitles',
+    },
+    {
+      src: 'https://files.vidstack.io/agent-327/subs/german.vtt',
+      label: 'German',
+      language: 'ge-GE',
+      kind: 'subtitles',
+    },
+    {
+      src: 'https://files.vidstack.io/agent-327/subs/italian.vtt',
+      label: 'Italian',
+      language: 'it-IT',
+      kind: 'subtitles',
+    },
+    {
+      src: 'https://files.vidstack.io/agent-327/subs/russian.vtt',
+      label: 'Russian',
+      language: 'ru-RU',
+      kind: 'subtitles',
+    },
     // Chapters
     {
-      src: 'https://media-files.vidstack.io/chapters.vtt',
+      src: 'https://files.vidstack.io/agent-327/chapters.vtt',
       kind: 'chapters',
       language: 'en-US',
       default: true,
     },
   ]"
-  thumbnails="https://media-files.vidstack.io/thumbnails.vtt"
-  crossorigin
+  thumbnails="https://files.vidstack.io/agent-327/thumbnails.vtt"
 />
 
 HLS:
 
-<VidStack src="https://mse-demo.u2sb.com/dash/master.m3u8" />
+<VidStack
+  src="https://files.vidstack.io/sprite-fight/hls/stream.m3u8"
+  :tracks="[
+    {
+      src: 'https://files.vidstack.io/agent-327/subs/english.vtt',
+      label: 'English',
+      language: 'en-US',
+      kind: 'subtitles',
+      default: true,
+    },
+    {
+      src: 'https://files.vidstack.io/agent-327/subs/spanish.vtt',
+      label: 'Spanish',
+      language: 'es-ES',
+      kind: 'subtitles',
+    },
+    {
+      src: 'https://files.vidstack.io/agent-327/subs/french.vtt',
+      label: 'French',
+      language: 'fr-FR',
+      kind: 'subtitles',
+    },
+    {
+      src: 'https://files.vidstack.io/agent-327/subs/german.vtt',
+      label: 'German',
+      language: 'ge-GE',
+      kind: 'subtitles',
+    },
+    {
+      src: 'https://files.vidstack.io/agent-327/subs/italian.vtt',
+      label: 'Italian',
+      language: 'it-IT',
+      kind: 'subtitles',
+    },
+    {
+      src: 'https://files.vidstack.io/agent-327/subs/russian.vtt',
+      label: 'Russian',
+      language: 'ru-RU',
+      kind: 'subtitles',
+    },
+    // Chapters
+    {
+      src: 'https://files.vidstack.io/agent-327/chapters.vtt',
+      kind: 'chapters',
+      language: 'en-US',
+      default: true,
+    },
+  ]"
+  thumbnails="https://files.vidstack.io/agent-327/thumbnails.vtt"
+/>
 
 An audio player:
 

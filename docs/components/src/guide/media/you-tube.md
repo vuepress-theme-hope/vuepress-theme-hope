@@ -2,15 +2,15 @@
 title: YouTube
 ---
 
-Embed YouTube videos in Markdown files.
-
-<!-- more -->
-
-::: tip
+::: warning Deprecated
 
 We recommend you to use [VidStack](./vid-stack.md) for better experience.
 
 :::
+
+Embed YouTube videos in Markdown files.
+
+<!-- more -->
 
 ## Demo
 

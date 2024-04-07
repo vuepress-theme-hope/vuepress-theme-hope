@@ -2,15 +2,39 @@
 title: AudioPlayer
 ---
 
-在 Markdown 文件中嵌入音频。
-
-<!-- more -->
-
-::: tip
+::: warning 已废弃
 
 为了更好的体验，我们建议你使用 [VidStack](./vid-stack.md)。
 
 :::
+
+在 Markdown 文件中嵌入音频。
+
+使用本组件前，请先在你的项目中安装 `vidstack@1` 包:
+
+::: code-tabs#shell
+
+@tab pnpm
+
+```bash
+pnpm add -D vidstack@1
+```
+
+@tab yarn
+
+```bash
+yarn add -D vidstack@1
+```
+
+@tab npm
+
+```bash
+npm i -D vidstack@1
+```
+
+:::
+
+<!-- more -->
 
 ## 示例
 
@@ -38,43 +62,43 @@ title: AudioPlayer
 
 ### src
 
-- 类型: `string`
+- 类型: `PlayerSrc`
+
+  ```ts
+  type PlayerSrc = MediaSrc | MediaSrc[];
+  type MediaSrc =
+    | string
+    | AudioSrc
+    | VideoSrc
+    | HLSSrc
+    | DASHSrc
+    | YouTubeSrc
+    | VimeoSrc;
+  ```
+
 - 必填: 是
 
-音频文件地址。
+视频源链接。
 
 不支持相对路径。当填写路径名时，`base` 将自动添加到路径名的开头。
 
-### width
+### tracks
 
-- 类型: `string | number`
-- 默认值: `100%`
-
-音频组件宽度。
-
-### type
-
-- 类型: `string`
+- 类型: `TextTrackInit[]`
 - 必填: 否
 
-音频类型。
+视频/音频字幕和章节。
 
-::: note
+### player
 
-如果你的服务器不能为音频文件返回正确的 mime 类型，你应该指定它。 (例如：`audio/mp3`)
-
-:::
-
-### title
-
-- 类型: `string`
+- 类型: `Omit<VidstackPlayerConfig, "target" | "src" | "sources" | "tracks">`
 - 必填: 否
 
-音频标题
+VidStack 播放器选项
 
-### poster
+### layout
 
-- 类型: `string`
+- 类型: `Partial<DefaultLayoutProps>`
 - 必填: 否
 
-音频封面
+VidStack 布局选项

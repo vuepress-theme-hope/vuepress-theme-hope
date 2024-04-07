@@ -1,56 +1,45 @@
-import type { Options as PlyrOptions } from "plyr";
+import { isArray, isString } from "@vuepress/helper/client";
+import type { PlayerSrc, PlyrLayoutProps, TextTrackInit } from "vidstack";
+import type { MediaPlayerElement } from "vidstack/elements";
+import type { VidstackPlayerConfig } from "vidstack/global/player";
+import { PlyrLayout, VidstackPlayer } from "vidstack/global/player";
 import type { PropType, VNode } from "vue";
-import { defineComponent, h, onBeforeMount, onMounted, shallowRef } from "vue";
+import {
+  defineComponent,
+  h,
+  onBeforeUnmount,
+  onMounted,
+  shallowRef,
+} from "vue";
 
 import { getLink } from "../utils/index.js";
 
-import "plyr/dist/plyr.css";
+import "vidstack/player/styles/base.css";
+import "vidstack/player/styles/plyr/theme.css";
 import "../styles/audio-player.scss";
+
+declare const DASHJS_INSTALLED: boolean;
+declare const HLS_JS_INSTALLED: boolean;
 
 export default defineComponent({
   name: "AudioPlayer",
 
   props: {
-    /** Options object for plyr config. **/
-    options: {
-      type: Object as PropType<PlyrOptions>,
-      default: () => ({}),
-    },
-
     /**
-     * Audio source
-     *
-     * 音频源
+     * sources
      */
     src: {
-      type: String,
+      type: [String, Array, Object] as PropType<PlayerSrc>,
       required: true,
     },
 
     /**
-     * Audio title
-     *
-     * 音频标题
+     * tracks
      */
-    title: {
-      type: String,
-      default: "",
-    },
+    tracks: { type: Array as PropType<TextTrackInit[]>, default: () => [] },
 
     /**
-     * Audio file type
-     *
-     * 音频文件类型
-     */
-    type: {
-      type: String,
-      default: "",
-    },
-
-    /**
-     * Audio poster
-     *
-     * 音频封面
+     * poster
      */
     poster: {
       type: String,
@@ -58,90 +47,92 @@ export default defineComponent({
     },
 
     /**
-     * Component width
-     *
-     * 组件宽度
+     * thumbnails
      */
-    width: {
-      type: [String, Number],
-      default: "100%",
+    thumbnails: {
+      type: String,
+      default: "",
     },
 
     /**
-     * Whether to loop the video
-     *
-     * 是否循环播放
+     * title
      */
-    loop: Boolean,
+    title: {
+      type: String,
+      default: "",
+    },
+
+    /**
+     * VidStack player options
+     */
+    player: {
+      type: Object as PropType<
+        Omit<
+          VidstackPlayerConfig,
+          "target" | "src" | "sources" | "tracks" | "title" | "poster"
+        >
+      >,
+
+      default: () => ({}),
+    },
+
+    /**
+     * VidStack layout options
+     */
+    layout: {
+      type: Object as PropType<Partial<PlyrLayoutProps>>,
+      default: () => ({}),
+    },
   },
 
   setup(props) {
-    let player: Plyr | null = null;
     const audio = shallowRef<HTMLAudioElement>();
 
-    onMounted(async () => {
-      const { default: Plyr } = await import(
-        /* webpackChunkName: "plyr" */ "plyr"
-      );
+    let player: MediaPlayerElement | null = null;
 
-      player = new Plyr(audio.value!, {
-        // @ts-ignore
-        hideYouTubeDOMError: true,
-        ...props.options,
+    onMounted(async () => {
+      const options: VidstackPlayerConfig = {
+        target: audio.value!,
+        crossOrigin: true,
+        poster: props.poster,
+        title: props.title,
+        ...props.player,
+        layout: new PlyrLayout({
+          thumbnails: props.thumbnails,
+          ...props.layout,
+        }),
+      };
+
+      options.src = isString(props.src)
+        ? getLink(props.src)
+        : isArray(props.src)
+          ? props.src.map((src) => (isString(src) ? getLink(src) : src))
+          : props.src;
+
+      if (props.tracks.length) options.tracks = props.tracks;
+
+      player = await VidstackPlayer.create(options);
+
+      player.addEventListener("provider-change", (event) => {
+        const provider = event.detail;
+
+        if (provider?.type === "hls" && HLS_JS_INSTALLED)
+          // @ts-ignore
+          // eslint-disable-next-line @typescript-eslint/explicit-function-return-type
+          provider.library = () =>
+            import(/* webpackChunkName: "hls" */ "hls.js/dist/hls.min.js");
+        else if (provider?.type === "dashjs" && DASHJS_INSTALLED)
+          // @ts-ignore
+          // eslint-disable-next-line @typescript-eslint/explicit-function-return-type
+          provider.library = () =>
+            import(/* webpackChunkName: "dashjs" */ "dashjs");
       });
     });
 
-    onBeforeMount(() => {
-      try {
-        player?.destroy();
-      } catch (err: unknown) {
-        // Do nothing
-      }
+    onBeforeUnmount(() => {
+      player?.destroy();
     });
 
-    return (): VNode =>
-      h(
-        "div",
-        {
-          class: "vp-audio-player",
-          style: {
-            width: props.width,
-          },
-        },
-        [
-          h("a", {
-            class: "sr-only",
-            href: getLink(props.src),
-            innerHTML: props.title || "An audio",
-          }),
-          props.poster
-            ? h("img", {
-                class: "vp-audio-player-poster",
-                src: getLink(props.poster),
-                loading: "lazy",
-                "no-view": "",
-              })
-            : null,
-          h("div", { class: "vp-audio-player-info" }, [
-            props.title
-              ? h("div", {
-                  class: "vp-audio-player-title",
-                  innerHTML: props.title,
-                })
-              : null,
-            h(
-              "audio",
-              {
-                ref: audio,
-                crossorigin: "anonymous",
-                preload: "metadata",
-                controls: "",
-                ...(props.loop ? { loop: "" } : {}),
-              },
-              h("source", { src: getLink(props.src), type: props.type }),
-            ),
-          ]),
-        ],
-      );
+    return (): VNode => h("div", { ref: audio });
   },
 });

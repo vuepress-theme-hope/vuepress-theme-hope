@@ -2,39 +2,39 @@
 title: VideoPlayer
 ---
 
+::: warning Deprecated
+
+We recommend you to use [VidStack](./vid-stack.md) for better experience.
+
+:::
+
 Embed videos in Markdown files.
 
-Install `plyr` package in your project first to use this component:
+Install `vidstack@1` package in your project first to use this component:
 
 ::: code-tabs#shell
 
 @tab pnpm
 
 ```bash
-pnpm add -D plyr
+pnpm add -D vidstack@1
 ```
 
 @tab yarn
 
 ```bash
-yarn add -D plyr
+yarn add -D vidstack@1
 ```
 
 @tab npm
 
 ```bash
-npm i -D plyr
+npm i -D vidstack@1
 ```
 
 :::
 
 <!-- more -->
-
-::: tip
-
-We recommend you to use [VidStack](./vid-stack.md) for better experience.
-
-:::
 
 ## Demo
 
@@ -145,80 +145,64 @@ We recommend you to use [VidStack](./vid-stack.md) for better experience.
 
 ### src
 
-- Type: `string`
+- Type: `PlayerSrc`
+
+  ```ts
+  type PlayerSrc = MediaSrc | MediaSrc[];
+  type MediaSrc =
+    | string
+    | AudioSrc
+    | VideoSrc
+    | HLSSrc
+    | DASHSrc
+    | YouTubeSrc
+    | VimeoSrc;
+  ```
+
 - Required: Yes
 
-Video source link
+Video source link.
 
 Relative URL is NOT supported. When filling in a pathname, `base` will be automatically added to the beginning of the pathname.
 
-### width
+### tracks
 
-- Type: `string | number`
-- Default: `100%`
-
-Video component width.
-
-### type
-
-- Type: `string`
+- Type: `TextTrackInit[]`
 - Required: No
 
-Video type.
-
-::: note
-
-If your server cannot return a correct mime type for your video files, you should specify it. (e.g.: `video/mp4`)
-
-:::
-
-### poster
-
-- Type: `string`
-- Required: No
-
-Video poster
+Audio/Video subtitles and chapters.
 
 ### title
 
 - Type: `string`
 - Required: No
 
-Video title
+Audio/Video title
 
-### tracks
+### poster
 
-- Type: `UseMediaTextTrackSource[]`
-
-  ```ts
-  interface UseMediaTextTrackSource {
-    /**
-     * Indicates that the track should be enabled unless the user's preferences indicate
-     * that another track is more appropriate
-     */
-    default?: boolean;
-    /**
-     * How the text track is meant to be used. If omitted the default kind is subtitles.
-     */
-    kind: TextTrackKind;
-    /**
-     * A user-readable title of the text track which is used by the browser
-     * when listing available text tracks.
-     */
-    label: string;
-    /**
-     * Address of the track (.vtt file). Must be a valid URL. This attribute
-     * must be specified and its URL value must have the same origin as the document
-     */
-    src: string;
-    /**
-     * Language of the track text data. It must be a valid BCP 47 language tag.
-     * If the kind attribute is set to subtitles, then srcLang must be defined.
-     */
-    srcLang: string;
-  }
-  ```
-
+- Type: `string`
 - Required: No
 
-Tracks for video.
+Video poster (not working with audio)
+
+### thumbnails
+
+- Type: `string`
+- Required: No
+
+Video thumbnails (not working with audio)
+
+### player
+
+- Type: `Omit<VidstackPlayerConfig, "target" | "src" | "sources" | "tracks">`
+- Required: No
+
+VidStack player options
+
+### layout
+
+- Type: `Partial<DefaultLayoutProps>`
+- Required: No
+
+VidStack layout options

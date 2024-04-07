@@ -2,39 +2,39 @@
 title: VideoPlayer
 ---
 
+::: warning 已废弃
+
+为了更好的体验，我们建议你使用 [VidStack](./vid-stack.md)。
+
+:::
+
 在 Markdown 文件中嵌入视频。
 
-使用本组件前，请先在你的项目中安装 `plyr` 包:
+使用本组件前，请先在你的项目中安装 `vidstack@1` 包:
 
 ::: code-tabs#shell
 
 @tab pnpm
 
 ```bash
-pnpm add -D plyr
+pnpm add -D vidstack@1
 ```
 
 @tab yarn
 
 ```bash
-yarn add -D plyr
+yarn add -D vidstack@1
 ```
 
 @tab npm
 
 ```bash
-npm i -D plyr
+npm i -D vidstack@1
 ```
 
 :::
 
 <!-- more -->
-
-::: tip
-
-为了更好的体验，我们建议你使用 [VidStack](./vid-stack.md)。
-
-:::
 
 ## 示例
 
@@ -145,80 +145,64 @@ npm i -D plyr
 
 ### src
 
-- 类型: `string`
+- 类型: `PlayerSrc`
+
+  ```ts
+  type PlayerSrc = MediaSrc | MediaSrc[];
+  type MediaSrc =
+    | string
+    | AudioSrc
+    | VideoSrc
+    | HLSSrc
+    | DASHSrc
+    | YouTubeSrc
+    | VimeoSrc;
+  ```
+
 - 必填: 是
 
-视频文件地址。
+视频源链接。
 
 不支持相对路径。当填写路径名时，`base` 将自动添加到路径名的开头。
 
-### width
+### tracks
 
-- 类型: `string | number`
-- 默认值: `100%`
-
-视频宽度。
-
-### type
-
-- 类型: `string`
+- 类型: `TextTrackInit[]`
 - 必填: 否
 
-视频类型。
-
-::: note
-
-如果你的服务器不能为视频文件返回正确的 mime 类型，你应该指定它。 (例如：`video/mp4`)
-
-:::
+视频/音频字幕和章节。
 
 ### title
 
 - 类型: `string`
 - 必填: 否
 
-视频标题
+音频/视频标题
 
 ### poster
 
 - 类型: `string`
 - 必填: 否
 
-视频封面
+视频封面 (不适用于音频)
 
-### tracks
+### thumbnails
 
-- 类型: `UseMediaTextTrackSource[]`
-
-  ```ts
-  interface UseMediaTextTrackSource {
-    /**
-     * Indicates that the track should be enabled unless the user's preferences indicate
-     * that another track is more appropriate
-     */
-    default?: boolean;
-    /**
-     * How the text track is meant to be used. If omitted the default kind is subtitles.
-     */
-    kind: TextTrackKind;
-    /**
-     * A user-readable title of the text track which is used by the browser
-     * when listing available text tracks.
-     */
-    label: string;
-    /**
-     * Address of the track (.vtt file). Must be a valid URL. This attribute
-     * must be specified and its URL value must have the same origin as the document
-     */
-    src: string;
-    /**
-     * Language of the track text data. It must be a valid BCP 47 language tag.
-     * If the kind attribute is set to subtitles, then srcLang must be defined.
-     */
-    srcLang: string;
-  }
-  ```
-
+- 类型: `string`
 - 必填: 否
 
-视频的音轨
+视频缩略图 (不适用于音频)
+
+### player
+
+- 类型: `Omit<VidstackPlayerConfig, "target" | "src" | "sources" | "tracks">`
+- 必填: 否
+
+VidStack 播放器选项
+
+### layout
+
+- 类型: `Partial<DefaultLayoutProps>`
+- 必填: 否
+
+VidStack 布局选项

@@ -4,6 +4,7 @@ import type {
   BackToTopLocaleData,
   PDFLocaleData,
   SiteInfoLocaleData,
+  VidstackLocaleData,
 } from "../../shared/index.js";
 
 export interface ComponentLocaleOptions {
@@ -29,4 +30,11 @@ export interface ComponentLocaleOptions {
    * 站点信息 组件国际化配置
    */
   siteInfo?: LocaleConfig<SiteInfoLocaleData>;
+
+  /**
+   * VidStack Locales config
+   *
+   * VidStack 组件国际化配置
+   */
+  vidstack?: LocaleConfig<VidstackLocaleData>;
 }

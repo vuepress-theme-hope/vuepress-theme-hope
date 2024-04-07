@@ -2,39 +2,39 @@
 title: AudioPlayer
 ---
 
+::: warning Deprecated
+
+We recommend you to use [VidStack](./vid-stack.md) for better experience.
+
+:::
+
 Embed audios in Markdown files.
 
-Install `plyr` package in your project first to use this component:
+Install `vidstack@1` package in your project first to use this component:
 
 ::: code-tabs#shell
 
 @tab pnpm
 
 ```bash
-pnpm add -D plyr
+pnpm add -D vidstack@1
 ```
 
 @tab yarn
 
 ```bash
-yarn add -D plyr
+yarn add -D vidstack@1
 ```
 
 @tab npm
 
 ```bash
-npm i -D plyr
+npm i -D vidstack@1
 ```
 
 :::
 
 <!-- more -->
-
-::: tip
-
-We recommend you to use [VidStack](./vid-stack.md) for better experience.
-
-:::
 
 ## Demo
 
@@ -62,41 +62,43 @@ We recommend you to use [VidStack](./vid-stack.md) for better experience.
 
 ### src
 
-- Type: `string`
+- Type: `PlayerSrc`
+
+  ```ts
+  type PlayerSrc = MediaSrc | MediaSrc[];
+  type MediaSrc =
+    | string
+    | AudioSrc
+    | VideoSrc
+    | HLSSrc
+    | DASHSrc
+    | YouTubeSrc
+    | VimeoSrc;
+  ```
+
 - Required: Yes
 
-Audio source link
+Video source link.
 
-### width
+Relative URL is NOT supported. When filling in a pathname, `base` will be automatically added to the beginning of the pathname.
 
-- Type: `string | number`
-- Default: `100%`
+### tracks
 
-Audio component width.
-
-### type
-
-- Type: `string`
+- Type: `TextTrackInit[]`
 - Required: No
 
-Audio type.
+Audio/Video subtitles and chapters.
 
-::: note
+### player
 
-If your server cannot return a correct mime type for your audio files, you should specify it. (e.g.: `audio/mp3`)
-
-:::
-
-### title
-
-- Type: `string`
+- Type: `Omit<VidstackPlayerConfig, "target" | "src" | "sources" | "tracks">`
 - Required: No
 
-Audio title
+VidStack player options
 
-### poster
+### layout
 
-- Type: `string`
+- Type: `Partial<DefaultLayoutProps>`
 - Required: No
 
-Audio poster
+VidStack layout options

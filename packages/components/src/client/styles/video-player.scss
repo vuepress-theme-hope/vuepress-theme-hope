@@ -1,24 +1,9 @@
-.vp-video-player {
+.plyr--video {
   --plyr-audio-controls-background: var(--vp-bg);
   --plyr-audio-control-color: var(--vp-c);
   --plyr-color-main: var(--vp-tc);
 
-  position: relative;
-  margin-top: 5px;
-  border-radius: 6px;
-  background: rgb(0 0 0 / 15%);
-
   @media print {
     display: none;
-  }
-
-  video {
-    display: block;
-    width: 100%;
-    height: 100%;
-
-    @media print {
-      display: none;
-    }
   }
 }

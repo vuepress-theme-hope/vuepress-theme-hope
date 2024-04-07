@@ -6,6 +6,7 @@ import {
   backToTopLocales,
   pdfLocaleConfig,
   siteInfoLocaleConfig,
+  vidstackLocales,
 } from "./locales/index.js";
 import type { ComponentOptions } from "./options/index.js";
 import { isInstalled } from "./utils.js";
@@ -26,6 +27,14 @@ export const getDefine =
       result["FONT_ICON_PREFIX"] = iconPrefix;
     }
 
+    if (
+      options.components?.includes("ArtPlayer") ||
+      options.components?.includes("VidStack")
+    ) {
+      result["DASHJS_INSTALLED"] = isInstalled("dashjs");
+      result["HLS_JS_INSTALLED"] = isInstalled("hls.js");
+    }
+
     if (options.components?.includes("ArtPlayer")) {
       result["ART_PLAYER_OPTIONS"] = {
         fullscreen: true,
@@ -33,8 +42,6 @@ export const getDefine =
         setting: true,
         ...(options.componentOptions?.artPlayer || {}),
       };
-      result["DASHJS_INSTALLED"] = isInstalled("dashjs");
-      result["HLS_JS_INSTALLED"] = isInstalled("hls.js");
       result["MPEGTS_JS_INSTALLED"] = isInstalled("mpegts.js");
     }
 
@@ -66,6 +73,14 @@ export const getDefine =
         name: "siteInfo",
         default: siteInfoLocaleConfig,
         config: options.locales?.siteInfo,
+      });
+
+    if (options.components?.includes("VidStack"))
+      result["VIDSTACK_LOCALES"] = getLocaleConfig({
+        app,
+        name: "vidstack",
+        default: vidstackLocales,
+        config: options.locales?.vidstack,
       });
 
     // TODO: Remove in v2 stable
