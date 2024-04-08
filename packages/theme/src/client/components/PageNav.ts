@@ -2,7 +2,7 @@ import { isPlainObject, isString } from "@vuepress/helper/client";
 import { useEventListener } from "@vueuse/core";
 import type { VNode } from "vue";
 import { computed, defineComponent, h } from "vue";
-import { usePageData, usePageFrontmatter } from "vuepress/client";
+import { usePageData, usePageFrontmatter, useRoute } from "vuepress/client";
 
 import AutoLink from "@theme-hope/components/AutoLink";
 import HopeIcon from "@theme-hope/components/HopeIcon";
@@ -23,11 +23,12 @@ import "../styles/page-nav.scss";
  */
 const resolveFromFrontmatterConfig = (
   config: unknown,
+  current: string,
 ): AutoLinkOptions | null | false =>
   config === false || isPlainObject<AutoLinkOptions>(config)
     ? config
     : isString(config)
-      ? resolveLinkInfo(config, true)
+      ? resolveLinkInfo(config, true, current)
       : null;
 
 /**
@@ -71,9 +72,13 @@ export default defineComponent({
     const sidebarItems = useSidebarItems();
     const page = usePageData();
     const navigate = useNavigate();
+    const route = useRoute();
 
     const prevNavLink = computed(() => {
-      const prevConfig = resolveFromFrontmatterConfig(frontmatter.value.prev);
+      const prevConfig = resolveFromFrontmatterConfig(
+        frontmatter.value.prev,
+        route.path,
+      );
 
       return prevConfig === false
         ? null
@@ -88,7 +93,10 @@ export default defineComponent({
     });
 
     const nextNavLink = computed(() => {
-      const nextConfig = resolveFromFrontmatterConfig(frontmatter.value.next);
+      const nextConfig = resolveFromFrontmatterConfig(
+        frontmatter.value.next,
+        route.path,
+      );
 
       return nextConfig === false
         ? null
