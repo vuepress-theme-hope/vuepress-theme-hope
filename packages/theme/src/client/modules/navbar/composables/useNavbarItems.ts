@@ -1,6 +1,7 @@
 import { isString } from "@vuepress/helper/client";
 import type { ComputedRefWithControl } from "@vueuse/core";
 import { computedWithControl } from "@vueuse/core";
+import { resolveRoute } from "vuepress/client";
 
 import { useThemeLocaleData } from "@theme-hope/composables/index";
 import {
@@ -27,7 +28,7 @@ export const resolveNavbarItem = (
     return {
       ...item,
       ...(item.link && isLinkInternal(item.link)
-        ? resolveLinkInfo(resolvePrefix(prefix, item.link))
+        ? { link: resolveRoute(resolvePrefix(prefix, item.link)).path }
         : {}),
       children: item.children.map(
         (child) =>
@@ -40,7 +41,7 @@ export const resolveNavbarItem = (
   return {
     ...item,
     link: isLinkInternal(item.link)
-      ? resolveLinkInfo(resolvePrefix(prefix, item.link)).link
+      ? resolveRoute(resolvePrefix(prefix, item.link)).path
       : item.link,
   };
 };

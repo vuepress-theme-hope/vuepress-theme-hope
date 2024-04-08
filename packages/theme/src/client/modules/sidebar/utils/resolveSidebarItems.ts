@@ -6,6 +6,7 @@ import {
   startsWith,
 } from "@vuepress/helper/client";
 import type { PageData } from "vuepress/client";
+import { resolveRoute } from "vuepress/client";
 
 import { sidebarData } from "@temp/theme-hope/sidebar.js";
 import {
@@ -51,8 +52,7 @@ export const resolveArraySidebarItems = ({
             ...item,
             ...(isLinkInternal(item.link)
               ? {
-                  link: resolveLinkInfo(resolvePrefix(pathPrefix, item.link))
-                    .link,
+                  link: resolveRoute(resolvePrefix(pathPrefix, item.link)).path,
                 }
               : {}),
           }
