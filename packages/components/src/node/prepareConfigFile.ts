@@ -7,7 +7,10 @@ import {
 import type { App } from "vuepress/core";
 
 import { getIconLinks, getNoticeOptions } from "./components/index.js";
-import type { BackToTopOptions, ComponentOptions } from "./options/index.js";
+import type {
+  BackToTopOptions,
+  ComponentPluginOptions,
+} from "./options/index.js";
 import {
   AVAILABLE_COMPONENTS,
   CLIENT_FOLDER,
@@ -23,7 +26,7 @@ export const prepareConfigFile = (
     components = [],
     componentOptions = {},
     rootComponents = {},
-  }: ComponentOptions,
+  }: ComponentPluginOptions,
   legacy: boolean,
 ): Promise<string> => {
   const imports: string[] = [];

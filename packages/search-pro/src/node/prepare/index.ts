@@ -1,2 +1,2 @@
-export * from "./searchIndex.js";
-export * from "./store.js";
+export * from "./prepareSearchIndex.js";
+export * from "./prepareStore.js";

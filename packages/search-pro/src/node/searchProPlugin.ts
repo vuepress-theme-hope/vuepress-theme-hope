@@ -9,26 +9,28 @@ import type { PluginFunction } from "vuepress/core";
 import { useSassPalettePlugin } from "vuepress-plugin-sass-palette";
 
 import { convertOptions } from "./compact.js";
-import { setPageExcerpt } from "./excerpt.js";
 import { getSearchIndexStore } from "./generateIndex.js";
 import { generateWorker } from "./generateWorker.js";
 import { searchProLocales } from "./locales.js";
-import type { SearchProOptions } from "./options.js";
+import type { SearchProPluginOptions } from "./options.js";
 import {
   prepareSearchIndex,
   prepareStore,
   removeSearchIndex,
   updateSearchIndex,
 } from "./prepare/index.js";
+import { setPageExcerpt } from "./setPageExcerpt.js";
 import { CLIENT_FOLDER, PLUGIN_NAME, Store, logger } from "./utils.js";
 import type { SearchIndexStore } from "../shared/index.js";
 
 export const searchProPlugin =
-  (options: SearchProOptions, legacy = true): PluginFunction =>
+  (options: SearchProPluginOptions, legacy = true): PluginFunction =>
   (app) => {
     // TODO: Remove this in v2 stable
     if (legacy)
-      convertOptions(options as SearchProOptions & Record<string, unknown>);
+      convertOptions(
+        options as SearchProPluginOptions & Record<string, unknown>,
+      );
 
     if (app.env.isDebug) logger.info("Options:", options);
 

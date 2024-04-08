@@ -52,7 +52,7 @@ export interface SearchProCustomFieldOptions {
   formatter?: SearchProCustomFieldFormatter;
 }
 
-export interface DeprecatedSearchProOptions {
+export interface DeprecatedSearchProPluginOptions {
   /**
    * @deprecated use `indexContent` instead
    */
@@ -69,7 +69,8 @@ export interface DeprecatedSearchProOptions {
   delay?: never;
 }
 
-export interface SearchProOptions extends DeprecatedSearchProOptions {
+export interface SearchProPluginOptions
+  extends DeprecatedSearchProPluginOptions {
   /**
    * Whether index page content
    *

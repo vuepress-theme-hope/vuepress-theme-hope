@@ -8,16 +8,18 @@ import { useSassPalettePlugin } from "vuepress-plugin-sass-palette";
 
 import { convertOptions } from "./compact/index.js";
 import { getDefine } from "./getDefine.js";
-import type { ComponentOptions } from "./options/index.js";
+import type { ComponentPluginOptions } from "./options/index.js";
 import { prepareConfigFile } from "./prepareConfigFile.js";
 import { PLUGIN_NAME, logger } from "./utils.js";
 
 export const componentsPlugin =
-  (options: ComponentOptions, legacy = true): PluginFunction =>
+  (options: ComponentPluginOptions, legacy = true): PluginFunction =>
   (app) => {
     // TODO: Remove this in v2 stable
     if (legacy)
-      convertOptions(options as ComponentOptions & Record<string, unknown>);
+      convertOptions(
+        options as ComponentPluginOptions & Record<string, unknown>,
+      );
 
     if (app.env.isDebug) logger.info("Options:", options);
 

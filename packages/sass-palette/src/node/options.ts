@@ -1,4 +1,4 @@
-export interface SassPaletteOptions {
+export interface SassPalettePluginOptions {
   /**
    * Identifier for palette, used to avoid duplicate registration.
    *

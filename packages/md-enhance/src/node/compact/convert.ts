@@ -2,13 +2,13 @@ import { isArray, isPlainObject } from "@vuepress/helper";
 import { colors } from "vuepress/utils";
 import { createConverter } from "vuepress-shared/node";
 
-import type { MarkdownEnhanceOptions } from "../options.js";
+import type { MarkdownEnhancePluginOptions } from "../options.js";
 import type { RevealJsPlugin } from "../typings/index.js";
 import { logger } from "../utils.js";
 
 /** @deprecated */
 export const convertOptions = (
-  options: MarkdownEnhanceOptions & Record<string, unknown>,
+  options: MarkdownEnhancePluginOptions & Record<string, unknown>,
 ): void => {
   const { deprecatedLogger, droppedLogger } = createConverter("md-enhance");
 

@@ -3,7 +3,7 @@ import type { PluginFunction } from "vuepress/core";
 import { getDirname, path } from "vuepress/utils";
 
 import { injectScssConfigModule } from "./injectScssConfigModule.js";
-import type { SassPaletteOptions } from "./options.js";
+import type { SassPalettePluginOptions } from "./options.js";
 import {
   prepareConfigFile,
   prepareConfigSass,
@@ -16,7 +16,7 @@ import { PLUGIN_NAME, logger } from "./utils.js";
 const __dirname = getDirname(import.meta.url);
 
 export const sassPalettePlugin =
-  (options: SassPaletteOptions): PluginFunction =>
+  (options: SassPalettePluginOptions): PluginFunction =>
   (app) => {
     if (app.env.isDebug) logger.info("Options:", options);
 
