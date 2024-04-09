@@ -4,6 +4,22 @@ All notable changes to this project will be documented in this file. See [Conven
 
 <!-- #region recent-change -->
 
+## [2.0.0-rc.35](https://github.com/vuepress-theme-hope/vuepress-theme-hope/compare/v2.0.0-rc.34...v2.0.0-rc.35) (2024-04-09)
+
+### Features
+
+- **components:** rebuild vidstack, audio-player and video-player ([9bd481d](https://github.com/vuepress-theme-hope/vuepress-theme-hope/commit/9bd481dbc30ccda5533b4693895eacd5404c9e8c))
+- **md-enhance:** update font settings, close [#4047](https://github.com/vuepress-theme-hope/vuepress-theme-hope/issues/4047) ([e7436d8](https://github.com/vuepress-theme-hope/vuepress-theme-hope/commit/e7436d8646cb263cb21e9a12b1d22fede9f3ae00))
+- **shared:** improve hash function ([9cb475e](https://github.com/vuepress-theme-hope/vuepress-theme-hope/commit/9cb475e306d4054cebc69a2754e47a385f4240aa))
+
+### Bug Fixes
+
+- **create:** fix git issue in workflow ([bf99fea](https://github.com/vuepress-theme-hope/vuepress-theme-hope/commit/bf99fead31f3ea6d4398d8e124a1090b6992d3ab))
+- fix color, close [#4048](https://github.com/vuepress-theme-hope/vuepress-theme-hope/issues/4048) ([8a1b028](https://github.com/vuepress-theme-hope/vuepress-theme-hope/commit/8a1b028786ecd8df49fa3593e9ee15a6478d2455))
+- fix grey color ([66af625](https://github.com/vuepress-theme-hope/vuepress-theme-hope/commit/66af62586f215a95b2db3c31d2a563317e951266))
+- **theme:** fix link resolve, close [#4044](https://github.com/vuepress-theme-hope/vuepress-theme-hope/issues/4044) ([04c840d](https://github.com/vuepress-theme-hope/vuepress-theme-hope/commit/04c840d317d1e52f8c5a7144574b1859178401a0))
+- **theme:** fix PageNav ([00f6459](https://github.com/vuepress-theme-hope/vuepress-theme-hope/commit/00f6459e8aea08627985d34c23d5c7691eaa1d9b))
+
 ## [2.0.0-rc.34](https://github.com/vuepress-theme-hope/vuepress-theme-hope/compare/v2.0.0-rc.33...v2.0.0-rc.34) (2024-04-06)
 
 ### Features
