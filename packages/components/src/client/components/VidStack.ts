@@ -1,5 +1,11 @@
 import { isArray, isString, useLocaleConfig } from "@vuepress/helper/client";
-import type { DefaultLayoutProps, PlayerSrc, TextTrackInit } from "vidstack";
+import type {
+  DASHConstructor,
+  DefaultLayoutProps,
+  HLSConstructor,
+  PlayerSrc,
+  TextTrackInit,
+} from "vidstack";
 import type { MediaPlayerElement } from "vidstack/elements";
 import type { VidstackPlayerConfig } from "vidstack/global/player";
 import { VidstackPlayer, VidstackPlayerLayout } from "vidstack/global/player";
@@ -118,19 +124,17 @@ export default defineComponent({
 
       player = await VidstackPlayer.create(options);
 
-      player.addEventListener("provider-change", (event) => {
-        const provider = event.detail;
+      player.addEventListener("provider-change", () => {
+        const provider = player!.provider;
 
         if (provider?.type === "hls" && HLS_JS_INSTALLED)
-          // @ts-ignore
-          // eslint-disable-next-line @typescript-eslint/explicit-function-return-type
-          provider.library = () =>
+          provider.library = (): Promise<{ default: HLSConstructor }> =>
             import(/* webpackChunkName: "hls" */ "hls.js/dist/hls.min.js");
-        else if (provider?.type === "dashjs" && DASHJS_INSTALLED)
-          // @ts-ignore
-          // eslint-disable-next-line @typescript-eslint/explicit-function-return-type
-          provider.library = () =>
-            import(/* webpackChunkName: "dashjs" */ "dashjs");
+        else if (provider?.type === "dash" && DASHJS_INSTALLED)
+          provider.library = (): Promise<{ default: DASHConstructor }> =>
+            import(/* webpackChunkName: "dashjs" */ "dashjs").then(
+              ({ default: dash }) => ({ default: dash.MediaPlayer }),
+            );
       });
     });
 
