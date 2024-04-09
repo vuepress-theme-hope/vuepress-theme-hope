@@ -6,7 +6,7 @@ import type { App, Page } from "vuepress/core";
 
 import type {
   SearchProCustomFieldOptions,
-  SearchProOptions,
+  SearchProPluginOptions,
 } from "./options.js";
 import type { Store } from "./utils.js";
 import type {
@@ -188,7 +188,7 @@ export const getSearchIndexStore = async (
     filter = (): boolean => true,
     indexOptions,
     indexLocaleOptions,
-  }: SearchProOptions,
+  }: SearchProPluginOptions,
   store: Store,
 ): Promise<SearchIndexStore> => {
   const indexesByLocale: LocaleIndex = {};

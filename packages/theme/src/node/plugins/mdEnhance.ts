@@ -1,5 +1,5 @@
 import type { Plugin } from "vuepress/core";
-import type { MarkdownEnhanceOptions } from "vuepress-plugin-md-enhance";
+import type { MarkdownEnhancePluginOptions } from "vuepress-plugin-md-enhance";
 import { mdEnhancePlugin } from "vuepress-plugin-md-enhance";
 
 /**
@@ -8,7 +8,7 @@ import { mdEnhancePlugin } from "vuepress-plugin-md-enhance";
  * Resolve options for vuepress-plugin-md-enhance
  */
 export const getMdEnhancePlugin = (
-  options?: Partial<MarkdownEnhanceOptions> | false,
+  options?: Partial<MarkdownEnhancePluginOptions> | false,
   legacy = false,
 ): Plugin | null => {
   if (options === false) return null;

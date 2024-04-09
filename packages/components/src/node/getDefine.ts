@@ -8,12 +8,12 @@ import {
   siteInfoLocaleConfig,
   vidstackLocales,
 } from "./locales/index.js";
-import type { ComponentOptions } from "./options/index.js";
+import type { ComponentPluginOptions } from "./options/index.js";
 import { isInstalled } from "./utils.js";
 
 export const getDefine =
   (
-    options: ComponentOptions,
+    options: ComponentPluginOptions,
     legacy: boolean,
   ): ((app: App) => Record<string, unknown>) =>
   (app) => {

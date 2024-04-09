@@ -1,11 +1,11 @@
 import type { App, PluginObject } from "vuepress/core";
 
-import type { SassPaletteOptions } from "./options.js";
+import type { SassPalettePluginOptions } from "./options.js";
 import { sassPalettePlugin } from "./sassPalettePlugin.js";
 
 export const useSassPalettePlugin = (
   app: App,
-  options: SassPaletteOptions,
+  options: SassPalettePluginOptions,
 ): void => {
   const { plugins } = app.pluginApi;
 

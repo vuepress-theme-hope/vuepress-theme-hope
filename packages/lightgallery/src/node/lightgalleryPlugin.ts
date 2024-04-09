@@ -3,12 +3,12 @@ import type { PluginFunction } from "vuepress/core";
 import { useSassPalettePlugin } from "vuepress-plugin-sass-palette";
 
 import { convertOptions } from "./compact.js";
-import type { LightGalleryOptions } from "./options.js";
+import type { LightGalleryPluginOptions } from "./options.js";
 import { prepareLightGalleryPlugins } from "./prepareLightGalleryPlugins.js";
 import { CLIENT_FOLDER, PLUGIN_NAME, logger } from "./utils.js";
 
 export const lightgalleryPlugin =
-  (options: LightGalleryOptions = {}, legacy = true): PluginFunction =>
+  (options: LightGalleryPluginOptions = {}, legacy = true): PluginFunction =>
   (app) => {
     if (legacy) convertOptions(options as Record<string, unknown>);
 

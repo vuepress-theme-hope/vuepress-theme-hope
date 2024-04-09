@@ -14,9 +14,9 @@ import type { RedirectPluginOptions } from "@vuepress/plugin-redirect";
 import type { SearchPluginOptions } from "@vuepress/plugin-search";
 import type { SeoPluginOptions } from "@vuepress/plugin-seo";
 import type { SitemapPluginOptions } from "@vuepress/plugin-sitemap";
-import type { ComponentOptions } from "vuepress-plugin-components";
-import type { MarkdownEnhanceOptions } from "vuepress-plugin-md-enhance";
-import type { SearchProOptions } from "vuepress-plugin-search-pro";
+import type { ComponentPluginOptions } from "vuepress-plugin-components";
+import type { MarkdownEnhancePluginOptions } from "vuepress-plugin-md-enhance";
+import type { SearchProPluginOptions } from "vuepress-plugin-search-pro";
 
 import type { BlogOptions } from "./blog.js";
 import type { PrismjsOptions } from "./prism.js";
@@ -81,7 +81,7 @@ export interface PluginsOptions {
    *
    * @see https://plugin-components.vuejs.press/zh/config.html
    */
-  components?: ComponentOptions;
+  components?: ComponentPluginOptions;
 
   /**
    * Comment plugin options
@@ -189,7 +189,7 @@ export interface PluginsOptions {
    * @see https://plugin-md-enhance.vuejs.press/zh/config/
    */
   mdEnhance?:
-    | (Omit<MarkdownEnhanceOptions, "hint"> & {
+    | (Omit<MarkdownEnhancePluginOptions, "hint"> & {
         /**
          * Whether to enable hint container including
          *
@@ -311,7 +311,7 @@ export interface PluginsOptions {
    *
    * @see https://plugin-search-pro.vuejs.press/zh/config/
    */
-  searchPro?: SearchProOptions | boolean;
+  searchPro?: SearchProPluginOptions | boolean;
 
   /**
    * Options for @vuepress/seo

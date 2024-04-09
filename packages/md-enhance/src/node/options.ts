@@ -19,7 +19,7 @@ import type { CodeDemoOptions } from "../shared/index.js";
 /**
  * md-enhance plugin configuration
  */
-export interface MarkdownEnhanceOptions {
+export interface MarkdownEnhancePluginOptions {
   /**
    * Whether enable standard GFM support
    *

@@ -13,7 +13,7 @@ export type LightGalleryPlugin =
 /**
  * Options of plugin
  */
-export interface LightGalleryOptions {
+export interface LightGalleryPluginOptions {
   /**
    * Image selector
    *

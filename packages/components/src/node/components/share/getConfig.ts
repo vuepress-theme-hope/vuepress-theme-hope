@@ -5,10 +5,10 @@ import type {
   ShareService,
   ShareServiceOptions,
 } from "../../../shared/index.js";
-import type { ComponentOptions } from "../../options/index.js";
+import type { ComponentPluginOptions } from "../../options/index.js";
 
 export const getShareServiceConfig = (
-  options: ComponentOptions,
+  options: ComponentPluginOptions,
 ): ShareServiceOptions[] => {
   const services: ShareService[] = options.componentOptions?.share
     ?.services ?? [

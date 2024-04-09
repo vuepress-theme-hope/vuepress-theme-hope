@@ -2,12 +2,12 @@ import { isNumber, isPlainObject } from "@vuepress/helper";
 import { colors } from "vuepress/utils";
 import { createConverter } from "vuepress-shared/node";
 
-import type { ComponentOptions } from "../options/index.js";
+import type { ComponentPluginOptions } from "../options/index.js";
 import { logger } from "../utils.js";
 
 /** @deprecated */
 export const convertOptions = (
-  options: ComponentOptions & Record<string, unknown>,
+  options: ComponentPluginOptions & Record<string, unknown>,
 ): void => {
   const { deprecatedLogger, droppedLogger } = createConverter("components");
 

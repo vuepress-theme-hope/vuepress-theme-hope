@@ -65,7 +65,7 @@ import {
   vueDemo,
   vuePlayground,
 } from "./markdown-it/index.js";
-import type { MarkdownEnhanceOptions } from "./options.js";
+import type { MarkdownEnhancePluginOptions } from "./options.js";
 import {
   prepareConfigFile,
   prepareMathjaxStyle,
@@ -77,14 +77,14 @@ import { PLUGIN_NAME, isInstalled, logger } from "./utils.js";
 
 export const mdEnhancePlugin =
   (
-    options: MarkdownEnhanceOptions = { gfm: true },
+    options: MarkdownEnhancePluginOptions = { gfm: true },
     legacy = true,
   ): PluginFunction =>
   (app) => {
     // TODO: Remove this in v2 stable
     if (legacy)
       convertOptions(
-        options as MarkdownEnhanceOptions & Record<string, unknown>,
+        options as MarkdownEnhancePluginOptions & Record<string, unknown>,
       );
 
     if (app.env.isDebug) logger.info("Options:", options);
@@ -92,7 +92,7 @@ export const mdEnhancePlugin =
     const source = app.dir.source();
 
     const getStatus = (
-      key: keyof MarkdownEnhanceOptions,
+      key: keyof MarkdownEnhancePluginOptions,
       gfm = false,
       pkgs: string[] = [],
     ): boolean => {

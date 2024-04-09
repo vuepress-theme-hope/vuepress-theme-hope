@@ -11,8 +11,8 @@ import type { ReadingTimePluginOptions } from "@vuepress/plugin-reading-time";
 import type { RedirectPluginOptions } from "@vuepress/plugin-redirect";
 import type { SeoPluginOptions } from "@vuepress/plugin-seo";
 import type { SitemapPluginOptions } from "@vuepress/plugin-sitemap";
-import type { ComponentOptions } from "vuepress-plugin-components";
-import type { MarkdownEnhanceOptions } from "vuepress-plugin-md-enhance";
+import type { ComponentPluginOptions } from "vuepress-plugin-components";
+import type { MarkdownEnhancePluginOptions } from "vuepress-plugin-md-enhance";
 
 import type {
   BlogOptions,
@@ -41,7 +41,7 @@ export type ThemeBlogPluginHelper = Helper<BlogOptions | boolean>;
 
 export type ThemeCommentPluginHelper = Helper<CommentOptions | false>;
 
-export type ThemeComponentPluginHelper = Helper<ComponentOptions | false>;
+export type ThemeComponentPluginHelper = Helper<ComponentPluginOptions | false>;
 
 export type ThemeCopyCodePluginHelper = Helper<CopyCodePluginOptions | false>;
 
@@ -57,7 +57,9 @@ export type ThemeLinksCheckPluginHelper = Helper<
   LinksCheckPluginOptions | false
 >;
 
-export type ThemeMdEnhancePluginHelper = Helper<MarkdownEnhanceOptions | false>;
+export type ThemeMdEnhancePluginHelper = Helper<
+  MarkdownEnhancePluginOptions | false
+>;
 
 export type ThemePhotoSwipePluginHelper = Helper<
   PhotoSwipePluginOptions | false

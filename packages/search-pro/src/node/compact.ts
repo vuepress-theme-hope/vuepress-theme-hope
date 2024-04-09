@@ -1,10 +1,10 @@
 import { createConverter } from "vuepress-shared/node";
 
-import type { SearchProOptions } from "./options.js";
+import type { SearchProPluginOptions } from "./options.js";
 
 /** @deprecated */
 export const convertOptions = (
-  options: SearchProOptions & Record<string, unknown>,
+  options: SearchProPluginOptions & Record<string, unknown>,
 ): void => {
   const { deprecatedLogger } = createConverter("search-pro");
 

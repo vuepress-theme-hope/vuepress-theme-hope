@@ -1,14 +1,14 @@
 import { getRealPath, isPlainObject } from "@vuepress/helper";
 import type { App } from "vuepress/core";
 
-import type { MarkdownEnhanceOptions } from "../options.js";
+import type { MarkdownEnhancePluginOptions } from "../options.js";
 import { CLIENT_FOLDER } from "../utils.js";
 
 const { url } = import.meta;
 
 export const prepareConfigFile = async (
   app: App,
-  options: MarkdownEnhanceOptions,
+  options: MarkdownEnhancePluginOptions,
   status: Record<string, boolean>,
   legacy = true,
 ): Promise<string> => {

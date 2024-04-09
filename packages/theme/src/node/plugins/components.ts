@@ -1,6 +1,6 @@
 import { isString } from "@vuepress/helper";
 import type { Plugin } from "vuepress/core";
-import type { ComponentOptions } from "vuepress-plugin-components";
+import type { ComponentPluginOptions } from "vuepress-plugin-components";
 import { componentsPlugin } from "vuepress-plugin-components";
 
 import type { ThemeOptions } from "../../shared/index.js";
@@ -19,7 +19,7 @@ export const getComponentsPlugin = (
     components = ["Badge", "FontIcon"],
     componentOptions = {},
     rootComponents = {},
-  }: ComponentOptions = {},
+  }: ComponentPluginOptions = {},
   legacy = false,
 ): Plugin =>
   componentsPlugin(

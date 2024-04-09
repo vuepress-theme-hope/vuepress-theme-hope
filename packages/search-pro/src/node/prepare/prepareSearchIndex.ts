@@ -4,7 +4,7 @@ import type { App } from "vuepress/core";
 
 import type { PageIndexId, SearchIndexStore } from "../../shared/index.js";
 import { generatePageIndex } from "../generateIndex.js";
-import type { SearchProOptions } from "../options.js";
+import type { SearchProPluginOptions } from "../options.js";
 import type { Store } from "../utils.js";
 import { getLocaleChunkName } from "../utils.js";
 
@@ -36,7 +36,7 @@ export const prepareSearchIndex = async (
 
 export const updateSearchIndex = async (
   app: App,
-  options: SearchProOptions,
+  options: SearchProPluginOptions,
   searchIndexStore: SearchIndexStore,
   store: Store,
   path: string,
