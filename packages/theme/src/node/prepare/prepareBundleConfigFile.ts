@@ -97,7 +97,7 @@ export default defineClientConfig({
     const { scrollBehavior } = router.options;
 
     router.options.scrollBehavior = async (...args) => {
-      await scrollPromise().wait();
+      await scrollPromise.wait();
 
       return scrollBehavior(...args);
     };
