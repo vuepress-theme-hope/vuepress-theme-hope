@@ -111,7 +111,7 @@ export const prepareConfigFile = async (
 
     if (isPlainObject(options.katex) && options.katex.copy) {
       imports.add(
-        `import { useKatexCopy } from "${CLIENT_FOLDER}composables/katex.js";`,
+        `import { useKatexCopy } from "${CLIENT_FOLDER}composables/useKatexCopy.js";`,
       );
       setups.add(`useKatexCopy();`);
     }
