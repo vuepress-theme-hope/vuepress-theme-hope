@@ -4,6 +4,13 @@ All notable changes to this project will be documented in this file. See [Conven
 
 <!-- #region recent-change -->
 
+## [2.0.0-rc.36](https://github.com/vuepress-theme-hope/vuepress-theme-hope/compare/v2.0.0-rc.35...v2.0.0-rc.36) (2024-04-11)
+
+### Bug Fixes
+
+- **md-enhance:** fix KatexCopy, close [#4058](https://github.com/vuepress-theme-hope/vuepress-theme-hope/issues/4058) ([1abd79f](https://github.com/vuepress-theme-hope/vuepress-theme-hope/commit/1abd79f2ce800ce128f6e0a4d7e69214bf77bf11))
+- **theme:** scrollPromise is not function ([#4055](https://github.com/vuepress-theme-hope/vuepress-theme-hope/issues/4055)) ([b93c078](https://github.com/vuepress-theme-hope/vuepress-theme-hope/commit/b93c0783d96f38287a65e89f7db1ede51c2382f0))
+
 ## [2.0.0-rc.35](https://github.com/vuepress-theme-hope/vuepress-theme-hope/compare/v2.0.0-rc.34...v2.0.0-rc.35) (2024-04-09)
 
 ### Features
