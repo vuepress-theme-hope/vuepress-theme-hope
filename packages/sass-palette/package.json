@@ -51,7 +51,7 @@
   "dependencies": {
     "@vuepress/helper": "2.0.0-rc.24",
     "chokidar": "^3.6.0",
-    "sass": "^1.74.1",
+    "sass": "^1.75.0",
     "vuepress-shared": "workspace:*"
   },
   "devDependencies": {
