@@ -140,7 +140,7 @@ export default {
 
 此外，你还可以通过嵌套的 `children` 来在下拉列表中设置分组:
 
-```js{13-15,20-22} title=".vuepress/config.js"
+```js{12-14,18-20} title=".vuepress/config.js"
 import { hopeTheme } from "vuepress-theme-hope";
 
 export default {

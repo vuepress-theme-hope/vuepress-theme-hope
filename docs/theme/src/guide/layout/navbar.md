@@ -140,7 +140,7 @@ export default {
 
 You can also have subgroups inside a dropdown by having nested `children`:
 
-```js{13-15,20-22} title=".vuepress/config.js"
+```js{12-14,18-20} title=".vuepress/config.js"
 import { hopeTheme } from "vuepress-theme-hope";
 
 export default {
@@ -152,14 +152,12 @@ export default {
         children: [
           {
             text: "Built in Plugins",
-            icon: "puzzle-piece",
             children: [
               /* Some items */
             ],
           },
           {
             text: "Third party Plugins",
-            icon: "puzzle-piece",
             children: [
               /* Some items */
             ],
