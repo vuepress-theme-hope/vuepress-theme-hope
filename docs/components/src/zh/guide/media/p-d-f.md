@@ -112,6 +112,13 @@ PDF 文档的初始页面
 
 :::
 
+### noFullscreen
+
+- 类型: `boolean`
+- 默认值: `false`
+
+是否禁用全屏按钮
+
 ### noToolbar
 
 - 类型: `boolean`

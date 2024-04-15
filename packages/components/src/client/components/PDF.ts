@@ -1,7 +1,12 @@
 /* eslint-disable vue/no-unused-properties */
 import { useLocaleConfig } from "@vuepress/helper/client";
+import { useScrollLock } from "@vueuse/core";
 import type { VNode } from "vue";
-import { defineComponent, h, onMounted } from "vue";
+import { defineComponent, h, onMounted, onUnmounted, ref, watch } from "vue";
+import {
+  CancelFullScreenIcon,
+  EnterFullScreenIcon,
+} from "vuepress-shared/client";
 
 import type { PDFLocaleConfig } from "../../shared/locales.js";
 import { useSize } from "../composables/index.js";
@@ -87,6 +92,13 @@ export default defineComponent({
     noToolbar: Boolean,
 
     /**
+     * Whether disable fullscreen button
+     *
+     * 是否禁用全屏按钮
+     */
+    noFullscreen: Boolean,
+
+    /**
      * Initial zoom level (in percent)
      *
      * 初始缩放比率 (百分比)
@@ -107,9 +119,11 @@ export default defineComponent({
   setup(props) {
     const { el, width, height, resize } = useSize<HTMLDivElement>(props);
     const locales = useLocaleConfig(PDF_LOCALES);
+    const viewer = ref<HTMLElement>();
+    const isFullscreen = ref(false);
 
     onMounted(() => {
-      viewPDF(getLink(props.url), el.value!, {
+      viewPDF(getLink(props.url), viewer.value!, {
         title: props.title,
         hint: locales.value.hint,
         options: {
@@ -120,16 +134,51 @@ export default defineComponent({
         force: props.viewer,
       });
       resize();
+
+      const isLocked = useScrollLock(document.body);
+
+      watch(isFullscreen, (value) => {
+        isLocked.value = value;
+      });
+
+      onUnmounted(() => {
+        isLocked.value = false;
+      });
     });
 
     return (): VNode =>
-      h("div", {
-        class: "pdf-viewer-wrapper",
-        ref: el,
-        style: {
-          width: width.value,
-          height: height.value,
+      h(
+        "div",
+        {
+          class: ["pdf-viewer-wrapper", { fullscreen: isFullscreen.value }],
+          ref: el,
+          style: isFullscreen.value
+            ? {}
+            : {
+                width: width.value,
+                height: height.value,
+              },
         },
-      });
+        [
+          h("div", { ref: viewer }),
+          props.noFullscreen
+            ? null
+            : h(
+                "button",
+                {
+                  class: "pdf-fullscreen-button",
+                  onClick: () => {
+                    isFullscreen.value = !isFullscreen.value;
+                  },
+                },
+                h(
+                  isFullscreen.value
+                    ? CancelFullScreenIcon
+                    : EnterFullScreenIcon,
+                  { class: "pdf-fullscreen-icon" },
+                ),
+              ),
+        ],
+      );
   },
 });

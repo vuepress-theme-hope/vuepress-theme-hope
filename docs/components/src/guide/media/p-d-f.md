@@ -112,6 +112,13 @@ This prop only works on Chromium-based browsers.
 
 :::
 
+### noFullscreen
+
+- Type: `boolean`
+- Default: `false`
+
+Whether disable fullscreen button.
+
 ### noToolbar
 
 - Type: `boolean`
