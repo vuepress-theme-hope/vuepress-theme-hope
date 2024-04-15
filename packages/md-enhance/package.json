@@ -93,7 +93,7 @@
     "@mdit/plugin-tasklist": "^0.8.0",
     "@mdit/plugin-tex": "^0.8.0",
     "@mdit/plugin-uml": "^0.8.0",
-    "@types/markdown-it": "^14.0.0",
+    "@types/markdown-it": "^14.0.1",
     "@vuepress/helper": "2.0.0-rc.24",
     "@vueuse/core": "^10.9.0",
     "balloon-css": "^1.2.0",

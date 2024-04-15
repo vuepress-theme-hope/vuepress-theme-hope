@@ -1,6 +1,6 @@
 import { encodeData, entries, keys } from "@vuepress/helper";
 import type { PluginSimple } from "markdown-it";
-import type ParserBlock from "markdown-it/lib/parser_block.mjs";
+import type { RuleBlock } from "markdown-it/lib/parser_block.mjs";
 import type {
   SandpackFile,
   SandpackOptions,
@@ -28,7 +28,7 @@ const jsRunner = (jsCode: string): unknown =>
   new Function(`return ${jsCode};`)();
 
 const getSandpackRule =
-  (name: string): ParserBlock.RuleBlock =>
+  (name: string): RuleBlock =>
   (state, startLine, endLine, silent) => {
     let start = state.bMarks[startLine] + state.tShift[startLine];
     let max = state.eMarks[startLine];
@@ -160,7 +160,7 @@ const getSandpackRule =
   };
 
 const atMarkerRule =
-  (markerName: string): ParserBlock.RuleBlock =>
+  (markerName: string): RuleBlock =>
   (state, startLine, endLine, silent) => {
     let start = state.bMarks[startLine] + state.tShift[startLine];
     let max = state.eMarks[startLine];

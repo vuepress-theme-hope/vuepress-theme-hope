@@ -1,6 +1,6 @@
 import { entries } from "@vuepress/helper";
 import type { PluginWithOptions } from "markdown-it";
-import type ParserBlock from "markdown-it/lib/parser_block.mjs";
+import type { RuleBlock } from "markdown-it/lib/parser_block.mjs";
 import { hash } from "vuepress/utils";
 
 import type { PlaygroundData, PlaygroundOptions } from "../../typings/index.js";
@@ -10,7 +10,7 @@ const AT_MARKER = `@`;
 const VALID_MARKERS = ["file", "import", "setting"] as const;
 
 const getPlaygroundRule =
-  (name: string): ParserBlock.RuleBlock =>
+  (name: string): RuleBlock =>
   (state, startLine, endLine, silent) => {
     let start = state.bMarks[startLine] + state.tShift[startLine];
     let max = state.eMarks[startLine];
@@ -129,7 +129,7 @@ const getPlaygroundRule =
   };
 
 const atMarkerRule =
-  (markerName: string): ParserBlock.RuleBlock =>
+  (markerName: string): RuleBlock =>
   (state, startLine, endLine, silent) => {
     let start = state.bMarks[startLine] + state.tShift[startLine];
     let max = state.eMarks[startLine];
