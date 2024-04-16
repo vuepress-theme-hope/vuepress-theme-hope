@@ -37,7 +37,7 @@
     "markmap-view": "0.16.0",
     "mermaid": "10.9.0",
     "sandpack-vue3": "3.1.11",
-    "sass-loader": "14.2.0",
+    "sass-loader": "14.2.1",
     "vue": "3.4.21",
     "vuepress": "2.0.0-rc.9",
     "vuepress-plugin-components": "workspace:*",
