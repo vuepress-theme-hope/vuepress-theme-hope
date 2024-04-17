@@ -96,8 +96,6 @@ tag:
 
 - rename `navAutoHide`to `navbarAutoHide`
 
-- added `navbarIcon` option to control navbar icon display
-
 - added `navbarLayout` option to control navbar layout
 
 ### Sidebar

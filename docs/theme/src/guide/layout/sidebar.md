@@ -459,10 +459,6 @@ export default {
 };
 ```
 
-## Icon Support
-
-Icon support is enabled in the sidebar by default, and the icon of the page will be displayed before the link in the sidebar (by reading `icon` field in frontmatter). It can be disabled by setting `sidebarIcon` to `false` in theme options.
-
 ## I18n Support
 
 The theme's navbar supports [I18n](https://vuejs.press/guide/i18n.html), so you can set sidebar individually in each language:

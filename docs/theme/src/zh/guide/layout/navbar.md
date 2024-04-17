@@ -191,20 +191,6 @@ navbar: false
 ---
 ```
 
-## 禁用导航栏图标
-
-你可以在主题选项中设置 `navbarIcon: false` 来禁用所有页面的导航栏图标:
-
-```js{5} title=".vuepress/config.js"
-import { hopeTheme } from "vuepress-theme-hope";
-
-export default {
-  theme: hopeTheme({
-    navbarIcon: false,
-  }),
-};
-```
-
 ## 网站图标
 
 你可以在主题选项中使用 `logo` 来配置站点的图标，请填入绝对路径。

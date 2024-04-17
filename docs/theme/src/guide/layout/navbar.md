@@ -191,20 +191,6 @@ navbar: false
 ---
 ```
 
-## Disable Navbar Icon
-
-To disable the navbar icon, set `navbarIcon: false` in theme options:
-
-```js{5} title=".vuepress/config.js"
-import { hopeTheme } from "vuepress-theme-hope";
-
-export default {
-  theme: hopeTheme({
-    navbarIcon: false,
-  }),
-};
-```
-
 ## Site Logo
 
 You can use `logo` options to set site logo displayed in navbar.

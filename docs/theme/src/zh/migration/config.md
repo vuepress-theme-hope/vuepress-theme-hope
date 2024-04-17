@@ -96,8 +96,6 @@ tag:
 
 - `navAutoHide` 重命名为 `navbarAutoHide`
 
-- 新增 `navbarIcon` 选项控制导航栏图标
-
 - 新增 `navbarLayout` 选项控制导航栏布局
 
 由于主题不再内置搜索:

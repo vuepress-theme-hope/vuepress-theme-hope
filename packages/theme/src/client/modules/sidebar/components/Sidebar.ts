@@ -2,7 +2,6 @@ import type { SlotsType, VNode } from "vue";
 import { defineComponent, h, onMounted, shallowRef, watch } from "vue";
 import { useRoute } from "vuepress/client";
 
-import { useThemeLocaleData } from "@theme-hope/composables/index";
 import SidebarLinks from "@theme-hope/modules/sidebar/components/SidebarLinks";
 import { useSidebarItems } from "@theme-hope/modules/sidebar/composables/index";
 
@@ -19,7 +18,6 @@ export default defineComponent({
 
   setup(_props, { slots }) {
     const route = useRoute();
-    const themeLocale = useThemeLocaleData();
     const sidebarItems = useSidebarItems();
 
     const sidebar = shallowRef<HTMLElement>();
@@ -64,12 +62,9 @@ export default defineComponent({
         "aside",
         {
           ref: sidebar,
-          id: "sidebar",
-          class: [
-            "vp-sidebar",
-            { "hide-icon": themeLocale.value.sidebarIcon === false },
-          ],
           key: "sidebar",
+          id: "sidebar",
+          class: "vp-sidebar",
         },
         [
           slots.top?.(),

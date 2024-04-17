@@ -68,15 +68,6 @@ export interface SidebarLocaleOptions {
   sidebar?: SidebarOptions;
 
   /**
-   * Whether show icons in the sidebar
-   *
-   * 是否在侧边栏显示图标
-   *
-   * @default true
-   */
-  sidebarIcon?: boolean;
-
-  /**
    * Heading depth for sidebar and toc
    *
    * - Set to `0` to disable all levels

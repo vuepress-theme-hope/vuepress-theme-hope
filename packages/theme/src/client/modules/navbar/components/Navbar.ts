@@ -97,13 +97,7 @@ export default defineComponent({
         {
           key: "navbar",
           id: "navbar",
-          class: [
-            "vp-navbar",
-            {
-              "auto-hide": autoHide.value,
-              "hide-icon": themeLocale.value.navbarIcon === false,
-            },
-          ],
+          class: ["vp-navbar", { "auto-hide": autoHide.value }],
         },
         [
           h("div", { class: "vp-navbar-start" }, [

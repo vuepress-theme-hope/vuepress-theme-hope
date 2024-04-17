@@ -186,6 +186,8 @@ You can create a [client config file](../../cookbook/vuepress/config.md#client-c
 ### Others
 
 - `"vuepress-theme-hope/presets/bounce-icon.scss"`: Add a mouseover bounce effect to the page icon.
+- `"vuepress-theme-hope/presets/hide-navbar-icon.scss"`: Hide navbar icon.
+- `"vuepress-theme-hope/presets/hide-sidebar-icon.scss"`: Hide sidebar icon.
 
 ## More
 
