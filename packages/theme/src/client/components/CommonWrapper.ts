@@ -155,13 +155,6 @@ export default defineComponent({
         else toggleMobileSidebar(false);
     };
 
-    /** Get scroll distance */
-    const getScrollTop = (): number =>
-      window.pageYOffset ||
-      document.documentElement.scrollTop ||
-      document.body.scrollTop ||
-      0;
-
     // Close sidebar after navigation
     let lastDistance = 0;
 
@@ -169,7 +162,7 @@ export default defineComponent({
       "scroll",
       useThrottleFn(
         () => {
-          const distance = getScrollTop();
+          const distance = window.scrollY;
 
           // At top or scroll up
           if (distance <= 58 || distance < lastDistance)
