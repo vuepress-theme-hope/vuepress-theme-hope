@@ -85,6 +85,8 @@ export interface LayoutLocaleOptions
    * Whether show toc list in desktop mode
    *
    * 是否在桌面模式下展示标题列表
+   *
+   * @default true
    */
   toc?: boolean;
 
@@ -92,6 +94,8 @@ export interface LayoutLocaleOptions
    * Whether rtl layout should be used
    *
    * 是否使用 rtl 布局
+   *
+   * @default false
    */
   rtl?: boolean;
 

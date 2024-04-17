@@ -158,7 +158,7 @@ tag:
 
 - `blog.links` 重命名为 `blog.medias`
 
-- `blog.roundAvatar` 默认值由 `true` 改为 `false`
+- `blog.roundAvatar` 移除
 
 - `blog.perPage` 重命名为 `blog.articlePerPage`
 

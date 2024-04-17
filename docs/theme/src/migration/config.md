@@ -160,7 +160,7 @@ Since the theme no longer has a built-in search:
 
 - rename `blog.links` to `blog.medias`
 
-- change default value of `blog.roundAvatar` from `true` to `false`
+- remove `blog.roundAvatar`
 
 - rename `blog.perPage` to `blog.articlePerPage`
 

@@ -183,13 +183,6 @@ The following social medias has built-in icons:
 
 ::::
 
-### blog.roundAvatar
-
-- Type: `boolean`
-- Default: `false`
-
-Whether clipping the avatar with round shape
-
 ### blog.sidebarDisplay
 
 - Type: `"mobile" | "none" | "always"`

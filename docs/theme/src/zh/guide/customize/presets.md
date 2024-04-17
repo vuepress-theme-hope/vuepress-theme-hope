@@ -180,6 +180,7 @@ export default defineClientConfig({
 ### 博客
 
 - `"vuepress-theme-hope/presets/left-blog-info.scss"`: 将博主信息移动至文章列表的左侧。
+- `"vuepress-theme-hope/presets/round-blogger-avatar.scss"`: 将博主信息移动至文章列表的左侧。
 
 ### 其他
 

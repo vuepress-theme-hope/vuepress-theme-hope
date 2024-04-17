@@ -125,15 +125,6 @@ export interface BlogLocaleOptions {
   medias?: Record<string, [string, string] | string>;
 
   /**
-   * Whether clipping the avatar with round shape
-   *
-   * 是否剪裁头像为圆形形状
-   *
-   * @default false
-   */
-  roundAvatar?: boolean;
-
-  /**
    * Whether to display blogger info in sidebar
    *
    * 是否在侧边栏展示博主信息

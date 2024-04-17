@@ -181,6 +181,7 @@ You can create a [client config file](../../cookbook/vuepress/config.md#client-c
 ### Blog
 
 - `"vuepress-theme-hope/presets/left-blog-info.scss"`: Move the blogger information to the left of the article list.
+- `"vuepress-theme-hope/presets/round-blogger-avatar.scss"`: Clip blogger avatar to round shape
 
 ### Others
 

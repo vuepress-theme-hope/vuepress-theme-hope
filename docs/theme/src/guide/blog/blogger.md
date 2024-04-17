@@ -26,12 +26,6 @@ If you don't set those options, they automatically fall back to the site logo (`
 
 :::
 
-::: tip
-
-If you want the avatar to be clipped with round shape, set `blog.roundAvatar: true`.
-
-:::
-
 ## Motto, Social Media & Profile Link
 
 You can use `blog.description` to set your own introduction, motto or slogan.
