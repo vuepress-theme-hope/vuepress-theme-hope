@@ -48,7 +48,7 @@
   "dependencies": {
     "@vuepress/helper": "2.0.0-rc.24",
     "lightgallery": "^2.7.2",
-    "vue": "^3.4.21",
+    "vue": "^3.4.23",
     "vuepress-plugin-sass-palette": "workspace:*",
     "vuepress-shared": "workspace:*"
   },

@@ -24,9 +24,9 @@
     "dashjs": "4.7.4",
     "hls.js": "1.5.8",
     "mpegts.js": "1.7.3",
-    "sass-loader": "14.2.0",
+    "sass-loader": "14.2.1",
     "vidstack": "1.11.17",
-    "vue": "3.4.21",
+    "vue": "3.4.23",
     "vuepress": "2.0.0-rc.9",
     "vuepress-plugin-components": "workspace:*"
   }

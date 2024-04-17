@@ -60,8 +60,8 @@
     "@rollup/plugin-replace": "5.0.5",
     "@types/inquirer": "9.0.7",
     "@types/node": "20.12.7",
-    "@typescript-eslint/eslint-plugin": "7.6.0",
-    "@typescript-eslint/parser": "7.6.0",
+    "@typescript-eslint/eslint-plugin": "7.7.0",
+    "@typescript-eslint/parser": "7.7.0",
     "@vitest/coverage-v8": "1.5.0",
     "@vue/eslint-config-typescript": "13.0.0",
     "bumpp": "9.4.0",
@@ -82,7 +82,7 @@
     "gulp": "5.0.0",
     "http-server": "14.1.1",
     "husky": "9.0.11",
-    "inquirer": "9.2.18",
+    "inquirer": "9.2.19",
     "markdownlint-cli2": "0.13.0",
     "nano-staged": "0.8.0",
     "ora": "8.0.1",
@@ -103,7 +103,7 @@
     "typescript": "5.4.5",
     "vitest": "1.5.0"
   },
-  "packageManager": "pnpm@8.15.7",
+  "packageManager": "pnpm@9.0.1",
   "engines": {
     "node": ">=20"
   },

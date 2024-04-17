@@ -98,7 +98,7 @@
     "@vueuse/core": "^10.9.0",
     "balloon-css": "^1.2.0",
     "js-yaml": "^4.1.0",
-    "vue": "^3.4.21",
+    "vue": "^3.4.23",
     "vuepress-plugin-sass-palette": "workspace:*",
     "vuepress-shared": "workspace:*"
   },
