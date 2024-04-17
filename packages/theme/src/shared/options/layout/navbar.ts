@@ -85,7 +85,7 @@ export interface NavbarLocaleOptions {
    *
    * @default $siteLocale.title
    */
-  navTitle?: string | false;
+  navbarTitle?: string;
 
   /**
    * Repository link

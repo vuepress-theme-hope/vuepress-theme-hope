@@ -21,7 +21,7 @@ export default theme(
 
     fullscreen: true,
 
-    navTitle: false,
+    navbarTitle: "",
 
     extraLocales: {
       Русский: "https://theme-hope-ru.vuejs.press/:route",

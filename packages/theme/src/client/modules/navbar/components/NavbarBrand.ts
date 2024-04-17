@@ -25,7 +25,7 @@ export default defineComponent({
 
     const siteTitle = computed(() => siteLocale.value.title);
     const siteBrandTitle = computed(
-      () => themeLocale.value.navTitle ?? siteTitle.value,
+      () => themeLocale.value.navbarTitle ?? siteTitle.value,
     );
 
     const siteBrandLogo = computed(() =>

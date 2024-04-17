@@ -75,12 +75,12 @@ tag:
 
 夜间模式下导航栏图标，应为基于 `.vuepress/public` 文件夹的绝对路径。
 
-### navTitle
+### navbarTitle
 
-- 类型: `string | false`
+- 类型: `string`
 - 默认值: `$siteLocale.title`
 
-导航栏标题
+导航栏标题，你可以设置为 `''` 来隐藏它。
 
 ### repo
 
