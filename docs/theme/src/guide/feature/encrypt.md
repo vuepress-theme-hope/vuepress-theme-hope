@@ -33,7 +33,7 @@ export default {
       config: {
         // This will encrypt the entire guide directory, and both passwords are available
         "/guide/": ["1234", "5678"],
-        // This will only encrypt config/page.html
+        // This will only encrypt /config/page.html
         "/config/page.html": "1234",
       },
     },

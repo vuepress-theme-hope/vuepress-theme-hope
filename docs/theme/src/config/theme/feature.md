@@ -268,7 +268,7 @@ The encryption configuration is an object with a key name matching the path and 
 {
   // This will encrypt the entire guide directory and both passwords will be available
   "/guide/": ["1234", "5678"],
-  // this will only encrypt config/page.html
+  // this will only encrypt /config/page.html
   "/config/page.html": "1234"
 }
 ```
