@@ -12,7 +12,7 @@ Vite only supports "modern browsers" by default, see [Vite support](https://vite
 
 ## Slow in a cold boot with Vite
 
-This is the expected behavior. We are adding more features, which means we have 2× to 8× lines of code comparing with `@vuepress/theme-default` according to the functions you are using. So transpiling and sending the theme and plugins code to browser is expected to increase from `0.8s - 2s` in `@vuepress/theme-default` to `3s - 10s` (range due to machine performance).
+This is the expected behavior. We are adding more features, which means we have 2× to 8× lines of code comparing with `@vuepress/theme-default` according to the functions you are using. So transforming and sending the theme and plugins code to browser is expected to increase from `0.8s - 2s` in `@vuepress/theme-default` to `3s - 10s` (range due to machine performance).
 
 ::: info Tree-shaking burden
 
