@@ -12,7 +12,7 @@ category:
 
 你可以通过 `node -v` 查看它的版本，如果不满足要求，请 [下载并安装 LTS 版本的 Node.js](../get-started/env.md#nodejs)。
 
-同时，你应该使用满足下方要求的包管理器 (推荐 `pnpm@8`):
+同时，你应该使用满足下方要求的包管理器 (推荐 `pnpm@9`):
 
 - pnpm: >= 7
 
@@ -30,7 +30,7 @@ category:
 
 - npm: `corepack use npm@10`
 - yarn: `corepack use yarn@4`
-- pnpm: `corepack use pnpm@8`
+- pnpm: `corepack use pnpm@9`
 
 ## 确定使用最新版本与正确的依赖树
 

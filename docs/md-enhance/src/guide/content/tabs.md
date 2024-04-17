@@ -106,7 +106,7 @@ npm should be installed with Node.js.
 
 ```bash
 corepack enable
-corepack use pnpm@8
+corepack use pnpm@latest
 ```
 
 :::
