@@ -48,8 +48,8 @@ importers:
         specifier: 9.4.0
         version: 9.4.0
       commit-and-tag-version:
-        specifier: 12.2.0
-        version: 12.2.0
+        specifier: 12.4.0
+        version: 12.4.0
       commitizen:
         specifier: 4.3.0
         version: 4.3.0(@types/node@20.12.7)(typescript@5.4.5)
@@ -4161,8 +4161,8 @@ packages:
     resolution: {integrity: sha512-e2i4wANQiSXgnrBlIatyHtP1odfUp0BbV5Y5nEGbxtIrStkEOAAzCUirvLBNXHLr7kwLvJl6V+4V3XV9x7Wd9w==}
     engines: {node: ^12.20.0 || >=14}
 
-  commit-and-tag-version@12.2.0:
-    resolution: {integrity: sha512-t8kvDy8dVTCF/j2u7Elt/J3tzCPyh16ssK8ECpj44R6jJiCUJMhWwZ36L652iChvqz4BAem9XU7WyuMYHlmSvA==}
+  commit-and-tag-version@12.4.0:
+    resolution: {integrity: sha512-8uZyuGmVPCyq2Bzg/1GkUCdbCTRPrx0bP2hCYyYHTRTruq960WgCf7hYwg2/UiqSrdoZMrRBsHK5eLYeanSTkA==}
     engines: {node: '>=18'}
     hasBin: true
 
@@ -12450,7 +12450,7 @@ snapshots:
 
   commander@9.2.0: {}
 
-  commit-and-tag-version@12.2.0:
+  commit-and-tag-version@12.4.0:
     dependencies:
       chalk: 2.4.2
       conventional-changelog: 3.1.25
@@ -12466,6 +12466,7 @@ snapshots:
       jsdom: 23.2.0
       semver: 7.6.0
       w3c-xmlserializer: 5.0.0
+      yaml: 2.4.1
       yargs: 17.7.2
     transitivePeerDependencies:
       - bufferutil
