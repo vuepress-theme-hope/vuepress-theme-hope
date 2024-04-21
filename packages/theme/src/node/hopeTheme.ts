@@ -75,9 +75,12 @@ export const hopeTheme = (
       alias: behaviorOptions.custom ? getAlias(isDebug) : {},
 
       define: () => ({
-        BLOG_TYPE_INFO: status.blogType,
-        ENABLE_BLOG: status.enableBlog,
-        ENABLE_READING_TIME: status.enableReadingTime,
+        // eslint-disable-next-line @typescript-eslint/naming-convention
+        __VP_BLOG__: status.enableBlog,
+        // eslint-disable-next-line @typescript-eslint/naming-convention
+        __VP_BLOG_TYPES__: status.blogType,
+        // eslint-disable-next-line @typescript-eslint/naming-convention
+        __VP_READING_TIME__: status.enableReadingTime,
         HAS_MULTIPLE_LANGUAGES: status.hasMultipleLanguages,
       }),
 

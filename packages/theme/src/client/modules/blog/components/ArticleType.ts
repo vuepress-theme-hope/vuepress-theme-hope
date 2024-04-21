@@ -10,7 +10,7 @@ import {
 
 import "../styles/article-type.scss";
 
-declare const BLOG_TYPE_INFO: { key: string; path: string }[];
+declare const __VP_BLOG_TYPES__: { key: string; path: string }[];
 
 export default defineComponent({
   name: "ArticleType",
@@ -31,7 +31,7 @@ export default defineComponent({
           path: articles.value.path,
         },
         { text: locale.star, path: stars.value.path },
-        ...BLOG_TYPE_INFO.map(({ key, path }) => ({
+        ...__VP_BLOG_TYPES__.map(({ key, path }) => ({
           text: locale[key],
           path: path.replace(/^\//, localePath.value),
         })),

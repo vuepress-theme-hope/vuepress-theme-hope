@@ -30,6 +30,7 @@ export interface BasePageFrontMatter extends PageFrontmatter {
    * 页面分类
    */
   category?: string | string[];
+  categories?: string[];
 
   /**
    * Page Tag(s)
@@ -37,6 +38,7 @@ export interface BasePageFrontMatter extends PageFrontmatter {
    * 页面标签
    */
   tag?: string[] | string;
+  tags?: string[];
 
   /**
    * Whether the content is original
@@ -98,14 +100,4 @@ export interface BasePageFrontMatter extends PageFrontmatter {
    * @deprecated use `date` instead
    */
   time?: Date | string;
-
-  /**
-   * @deprecated use `category` instead
-   */
-  categories?: string[];
-
-  /**
-   * @deprecated use `tag` instead
-   */
-  tags?: string[];
 }

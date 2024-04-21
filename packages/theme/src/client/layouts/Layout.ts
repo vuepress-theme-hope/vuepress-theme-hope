@@ -15,7 +15,7 @@ import {
 
 import type { ThemePageFrontmatter } from "../../shared/index.js";
 
-declare const ENABLE_BLOG: boolean;
+declare const __VP_BLOG__: boolean;
 
 export default defineComponent({
   // eslint-disable-next-line vue/multi-word-component-names
@@ -42,7 +42,7 @@ export default defineComponent({
     const { isMobile } = useWindowSize();
 
     const sidebarDisplay = computed(() =>
-      ENABLE_BLOG
+      __VP_BLOG__
         ? themeLocale.value.blog?.sidebarDisplay ||
           themeData.value.blog?.sidebarDisplay ||
           "mobile"

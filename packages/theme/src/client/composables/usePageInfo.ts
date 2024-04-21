@@ -27,7 +27,7 @@ import type {
   ThemeNormalPageFrontmatter,
 } from "../../shared/index.js";
 
-declare const ENABLE_BLOG: boolean;
+declare const __VP_BLOG__: boolean;
 
 export const usePageAuthor = (): ComputedRef<AuthorInfo[]> => {
   const themeLocale = useThemeLocaleData();
@@ -45,26 +45,26 @@ export const usePageAuthor = (): ComputedRef<AuthorInfo[]> => {
 
 export const usePageCategory = (): ComputedRef<PageCategory[]> => {
   const frontmatter = usePageFrontmatter<BasePageFrontMatter>();
-  const categoryMap = ENABLE_BLOG
+  const categoryMap = __VP_BLOG__
     ? inject<CategoryMapRef>(Symbol.for("categoryMap"))
-    : undefined;
+    : null;
 
   return computed(() =>
-    getCategory(frontmatter.value.category).map((name) => ({
-      name,
-      path: categoryMap?.value.map[name]?.path || "",
-    })),
+    getCategory(frontmatter.value.category || frontmatter.value.categories).map(
+      (name) => ({
+        name,
+        path: categoryMap?.value.map[name]?.path || "",
+      }),
+    ),
   );
 };
 
 export const usePageTag = (): ComputedRef<PageTag[]> => {
   const frontmatter = usePageFrontmatter<BasePageFrontMatter>();
-  const tagMap = ENABLE_BLOG
-    ? inject<TagMapRef>(Symbol.for("tagMap"))
-    : undefined;
+  const tagMap = __VP_BLOG__ ? inject<TagMapRef>(Symbol.for("tagMap")) : null;
 
   return computed(() =>
-    getTag(frontmatter.value.tag).map((name) => ({
+    getTag(frontmatter.value.tag || frontmatter.value.tags).map((name) => ({
       name,
       path: tagMap?.value.map[name]?.path || "",
     })),

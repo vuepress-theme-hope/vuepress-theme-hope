@@ -1,3 +1,5 @@
+import noopComponent from "@vuepress/helper/client/noopComponent.js";
+import { isSupported } from "@vuepress/plugin-comment/pageview";
 import type {
   ReadingTime,
   ReadingTimeLocale,
@@ -25,7 +27,7 @@ import type { PageInfoType } from "../../../../shared/index.js";
 import "balloon-css/balloon.css";
 import "../styles/page-info.scss";
 
-declare const ENABLE_READING_TIME: boolean;
+declare const __VP_READING_TIME__: boolean;
 
 export interface PageInfoProps {
   /**
@@ -104,8 +106,8 @@ export default defineComponent({
     CategoryInfo,
     DateInfo,
     OriginalInfo,
-    PageViewInfo,
-    ReadingTimeInfo: ENABLE_READING_TIME ? ReadingTimeInfo : (): null => null,
+    PageViewInfo: isSupported ? PageViewInfo : noopComponent,
+    ReadingTimeInfo: __VP_READING_TIME__ ? ReadingTimeInfo : noopComponent,
     TagInfo,
     WordInfo,
   },
