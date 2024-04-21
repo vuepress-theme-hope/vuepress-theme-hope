@@ -42,6 +42,7 @@ export default defineUserConfig({
         "/demo/mark",
         "/demo/markmap",
         "/demo/mermaid",
+        "/demo/plantuml",
         "/demo/playground",
         "/demo/revealjs",
         "/demo/sandpack",
@@ -87,6 +88,7 @@ export default defineUserConfig({
       markmap: true,
       mermaid: true,
       kotlinPlayground: true,
+      plantuml: true,
       playground: {
         presets: ["ts", "vue", "unocss"],
       },

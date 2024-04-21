@@ -162,6 +162,7 @@ export default theme(
         mark: true,
         markmap: true,
         mermaid: true,
+        plantuml: true,
         playground: {
           presets: ["ts", "vue", "unocss"],
         },

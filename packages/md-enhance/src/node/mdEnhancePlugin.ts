@@ -23,6 +23,7 @@ import {
   addViteSsrNoExternal,
   chainWebpack,
   getLocaleConfig,
+  isArray,
   isPlainObject,
 } from "@vuepress/helper";
 import type { PluginFunction } from "vuepress/core";
@@ -56,6 +57,7 @@ import {
   mdDemo,
   mermaid,
   normalDemo,
+  plantuml,
   playground,
   reactDemo,
   revealJs,
@@ -388,6 +390,8 @@ export const mdEnhancePlugin =
         }
         if (status.chart) md.use(chart);
         if (status.echarts) md.use(echarts);
+        if (isArray(options.plantuml)) md.use(plantuml, options);
+        else if (options.plantuml) md.use(plantuml);
         if (options.demo) {
           md.use(mdDemo);
           md.use(normalDemo);

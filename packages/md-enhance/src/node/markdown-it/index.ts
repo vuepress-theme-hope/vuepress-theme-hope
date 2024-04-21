@@ -9,6 +9,7 @@ export * from "./hint.js";
 export * from "./kotlinPlayground.js";
 export * from "./markmap.js";
 export * from "./mermaid.js";
+export * from "./plantuml.js";
 export * from "./playground/index.js";
 export * from "./revealjs.js";
 export * from "./tabs.js";

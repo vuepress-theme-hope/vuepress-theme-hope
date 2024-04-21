@@ -191,7 +191,7 @@ background: rgba(253, 230, 138, 0.15)
 
 - [查看详情](https://theme-hope.vuejs.press/zh/guide/markdown/stylize.html)
 
-#### Tex 语法
+#### TeX 语法
 
 $$
 \frac {\partial^r} {\partial \omega^r} \left(\frac {y^{\omega}} {\omega}\right)

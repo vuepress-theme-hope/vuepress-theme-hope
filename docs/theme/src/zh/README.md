@@ -46,7 +46,7 @@ highlights:
         details: 检查 Markdown 链接
         link: ./guide/markdown/others.html#link-check
 
-      - title: 提示容器支持
+      - title: 提示容器
         icon: box-archive
         details: 用样式装饰 Markdown 内容
         link: ./guide/markdown/stylize/hint.html
@@ -66,34 +66,34 @@ highlights:
         details: 使用选项卡对相似代码进行分组
         link: ./guide/markdown/code/code-tabs.html
 
-      - title: 自定义对齐支持
+      - title: 自定义对齐
         icon: align-center
-        details: 让你在 Markdown 中对段落进行对齐
+        details: Markdown 中对内容进行自定义对齐
         link: ./guide/markdown/stylize/align.html
 
-      - title: 自定义属性支持
+      - title: 自定义属性
         icon: code
-        details: 让你为 Markdown 元素添加属性
+        details: 为 Markdown 元素添加属性
         link: ./guide/markdown/stylize/attrs.html
 
-      - title: 上下角标支持
+      - title: 上下角标
         icon: superscript
-        details: 你的 Markdown 现在将支持上下角标
+        details: 轻松在 Markdown 中添加上下角标
         link: ./guide/markdown/grammar/sup-sub.html
 
       - title: 脚注
         icon: quote-left
-        details: 你的 Markdown 现在将支持脚注
+        details: 在内容中插入脚注
         link: ./guide/markdown/content/footnote.html
 
-      - title: 标记支持
+      - title: 标记
         icon: highlighter
-        details: 让你在 Markdown 中对词句进行标记
+        details: 标记并高亮你需要的内容
         link: ./guide/markdown/stylize/mark.html
 
       - title: 任务列表
         icon: square-check
-        details: 在 Markdown 中使用任务列表
+        details: 轻松插入任务列表
         link: ./guide/markdown/grammar/tasklist.html
 
       - title: 图片语法
@@ -111,20 +111,25 @@ highlights:
         details: 开箱即用的常用组件
         link: ./guide/component/built-in.html
 
-      - title: 图表支持
+      - title: Chart.js 支持
         icon: chart-simple
-        details: 在 Markdown 中展示图表
+        details: 在 Markdown 中展示 Chart.js 图表
         link: ./guide/markdown/chartjs.html
 
       - title: 流程图支持
         icon: route
-        details: 可以在 Markdown 中直接写出流程图
+        details: 在 Markdown 中直接写出流程图
         link: ./guide/markdown/chart/flowchart.html
 
       - title: Mermaid 支持
         icon: chart-pie
-        details: 可以在 Markdown 中添加 Mermaid 图例
+        details: 在 Markdown 中添加 Mermaid 图例
         link: ./guide/markdown/chart/mermaid.html
+
+      - title: Plantuml 支持
+        icon: diagram-project
+        details: 在 Markdown 中添加 Plant UML 图表
+        link: ./guide/markdown/chart/plantuml.html
 
       - title: Tex 支持
         icon: square-root-variable

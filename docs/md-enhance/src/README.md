@@ -155,6 +155,11 @@ highlights:
         details: Add mermaid diagram in Markdown
         link: ./guide/chart/mermaid.html
 
+      - title: Plantuml Support
+        icon: diagram-project
+        details: Add plantuml diagram in Markdown
+        link: ./guide/chart/plantuml.html
+
   - header: Showing your codes and works
     image: /assets/image/code.svg
     bgImage: https://theme-hope-assets.vuejs.press/bg/4-light.svg

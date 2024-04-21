@@ -31,6 +31,10 @@ index: false
 
   常用图表的强大集合。
 
+- Plantuml: 基于 Java 的 UML 图表
+
+  没有任何运行时，极其轻量。
+
 <!-- #endregion intro -->
 
 <!-- more -->
@@ -170,5 +174,67 @@ flowchart TB
 ```
 
 - [查看详情](./mermaid.md)
+
+### Plantuml
+
+@startuml
+scale 5 as 150 pixels
+
+clock clk with period 1
+binary "启用" as en
+binary "读/写" as rw
+binary "数据有效" as dv
+concise "数据总线" as db
+concise "地址总线" as addr
+
+@6 as :write_beg
+@10 as :write_end
+
+@15 as :read_beg
+@19 as :read_end
+
+@0
+en is low
+db is "0x0"
+addr is "0x03f"
+rw is low
+dv is 0
+
+@:write_beg-3
+en is high
+@:write_beg-2
+db is "0xDEADBEEF"
+@:write_beg-1
+dv is 1
+@:write_beg
+rw is high
+
+@:write_end
+rw is low
+dv is low
+@:write_end+1
+rw is low
+db is "0x0"
+addr is "0x23"
+
+@12
+dv is high
+@13
+db is "0xFFFF"
+
+@20
+en is low
+dv is low
+@21
+db is "0x0"
+
+highlight :write_beg to :write_end #Gold:写
+highlight :read_beg to :read_end #lightBlue:读
+
+db@:write_beg-1 <-> @:write_end : 设置时间
+db@:write_beg-1 -> addr@:write_end+1 : 保持
+@enduml
+
+- [查看详情](./plantuml.md)
 
 <!-- #endregion demo -->

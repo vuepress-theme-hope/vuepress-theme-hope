@@ -71,32 +71,32 @@ highlights:
         details: Let you decide to align paragraphs in the way you like
         link: ./guide/markdown/stylize/align.html
 
-      - title: Attrs support
+      - title: Attrs
         icon: code
         details: Allow you to add attributes for Markdown content
         link: ./guide/markdown/stylize/attrs.html
 
-      - title: Superscript and subscript support
+      - title: Superscript and subscript
         icon: superscript
-        details: Your Markdown now support superscript and subscript
+        details: Inserting superscript and subscript
         link: ./guide/markdown/grammar/sup-sub.html
 
-      - title: Footnote support
+      - title: Footnote
         icon: quote-left
         details: Your Markdown now support footnotes
         link: ./guide/markdown/content/footnote.html
 
-      - title: Mark Support
+      - title: Mark
         icon: highlighter
         details: Mark words and sentences in Markdown
         link: ./guide/markdown/stylize/mark.html
 
-      - title: Tasklist Support
+      - title: Tasklist
         icon: square-check
         details: Use tasklist in Markdown
         link: ./guide/markdown/grammar/tasklist.html
 
-      - title: image syntax
+      - title: Image syntax
         icon: image
         details: improve syntax to specify size and color scheme
         link: ./guide/markdown/grammar/image.html
@@ -125,6 +125,11 @@ highlights:
         icon: chart-pie
         details: Add mermaid diagram in Markdown
         link: ./guide/markdown/chart/mermaid.html
+
+      - title: Plantuml Support
+        icon: diagram-project
+        details: Add plantuml in Markdown
+        link: ./guide/markdown/chart/plantuml.html
 
       - title: Tex Support
         icon: square-root-variable

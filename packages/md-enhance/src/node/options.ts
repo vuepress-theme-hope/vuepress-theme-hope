@@ -1,3 +1,4 @@
+import type { MarkdownItPlantumlOptions } from "@mdit/plugin-plantuml";
 import type { LocaleConfig } from "vuepress/shared";
 
 import type {
@@ -321,6 +322,15 @@ export interface MarkdownEnhancePluginOptions {
    * @default false
    */
   mermaid?: boolean;
+
+  /**
+   * Whether enable plantuml support
+   *
+   * 是否启用 plantuml 支持
+   *
+   * @default false
+   */
+  plantuml?: MarkdownItPlantumlOptions[] | boolean;
 
   /**
    * Whether to enable code-demo support

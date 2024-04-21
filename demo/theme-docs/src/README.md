@@ -116,9 +116,9 @@ highlights:
         details: Add mermaid diagram in Markdown
         link: https://theme-hope.vuejs.press/guide/markdown/mermaid.html
 
-      - title: Tex Support
+      - title: TeX Support
         icon: square-root-variable
-        details: Markdown now have Tex Support so you can write your formula
+        details: Markdown now have TeX Support so you can write your formula
         link: https://theme-hope.vuejs.press/guide/markdown/tex.html
 
       - title: Include snippet Support

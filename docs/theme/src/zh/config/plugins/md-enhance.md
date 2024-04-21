@@ -343,6 +343,13 @@ interface TaskListOptions {
 
 是否启用 [Mermaid](https://mermaid.js.org/) 支持，你可以传入一个对象作为 Mermaid 的配置选项。
 
+### plantuml
+
+- 类型: `MarkdownItPlantumlOptions[] | boolean`
+- 默认值: `false`
+
+是否启用 [plantuml](https://plantuml.com/zh/) 支持。
+
 ### stylize
 
 - 类型: `StylizeOptions | false`

@@ -1,5 +1,5 @@
 ---
-title: Tex
+title: TeX
 ---
 
 ## Demo

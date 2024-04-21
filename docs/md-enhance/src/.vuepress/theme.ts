@@ -54,6 +54,7 @@ export default theme("md-enhance", {
       mark: true,
       markmap: true,
       mermaid: true,
+      plantuml: true,
       playground: {
         presets: ["ts", "vue", "unocss"],
       },

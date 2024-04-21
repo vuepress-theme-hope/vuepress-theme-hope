@@ -379,6 +379,15 @@ Whether to enable [Markmap](https://markmap.js.org/) support.
 
 Whether to enable [Mermaid](https://mermaid.js.org/) support.
 
+### plantuml
+
+- Type: `MarkdownItPlantumlOptions[] | boolean`
+- Default: `false`
+- Details:
+  - [Plantuml](./guide/chart/plantuml.md)
+
+Whether to enable [plantuml](https://plantuml.com/) support.
+
 ### stylize
 
 - Type: `StylizeOptions | false`

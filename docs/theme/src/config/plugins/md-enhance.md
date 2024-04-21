@@ -337,6 +337,13 @@ Whether to enable flowchart support
 
 Whether to enable [Mermaid](https://mermaid.js.org/) support, you can pass in a config object to customize the behavior of Mermaid.
 
+### plantuml
+
+- Type: `MarkdownItPlantumlOptions[] | boolean`
+- Default: `false`
+
+Whether to enable [plantuml](https://plantuml.com/) support.
+
 ### stylize
 
 - Type: `StylizeOptions | false`

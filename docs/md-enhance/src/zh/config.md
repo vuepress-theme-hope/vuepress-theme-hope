@@ -378,6 +378,15 @@ order: 2
 
 是否启用 [Mermaid](https://mermaid.js.org/) 支持。
 
+### plantuml
+
+- 类型: `MarkdownItPlantumlOptions[] | boolean`
+- 默认值: `false`
+- 详情:
+  - [Plantuml](./guide/chart/plantuml.md)
+
+是否启用 [plantuml](https://plantuml.com/zh/) 支持。
+
 ### stylize
 
 - 类型: `StylizeOptions | false`

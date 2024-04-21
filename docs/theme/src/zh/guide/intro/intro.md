@@ -60,7 +60,7 @@ VuePress 在一定程度上扩展了 Markdown 语法，但仍然缺少一些常�
 
 - 如果你是一名程序员需要大量展示代码与 demo，本主题为代码块提供了浅色与深色两种主题，[代码组](../markdown/code/code-tabs.md) 与 ["一键复制" 按钮](../feature/copy-code.md)。同时我们还提供 [代码演示](../markdown/code/demo.md)，[Playground](../markdown/code/playground.md) [Kotlin Playground](../markdown/code/kotlin-playground.md) 和 [Vue Playground](../markdown/code/vue-playground.md) 功能，方便你展示自己的 Vue、React 组件或者其他 demo。
 
-- 如果你需要提供产品文档与展示，主题提供了 [选项卡](../markdown/content/tabs.md)、[幻灯片](../markdown/content/revealjs.md)、[图表](../markdown/chart/chartjs.md)、[echarts](../markdown/chart/echarts.md)、[流程图](../markdown/chart/flowchart.md) 与 [Mermaid 图表](../markdown/chart/mermaid.md) 功能。
+- 如果你需要提供产品文档与展示，主题提供了 [选项卡](../markdown/content/tabs.md)、[幻灯片](../markdown/content/revealjs.md)、[图表](../markdown/chart/chartjs.md)、[echarts](../markdown/chart/echarts.md)、[流程图](../markdown/chart/flowchart.md)、 [Mermaid 图表](../markdown/chart/mermaid.md) 与 [Plant UML](../markdown/chart/plantuml.md) 功能。
 
 - 为了重新组织您的内容，主题提供了[文件包含](../markdown/content/include.md)功能。
 
