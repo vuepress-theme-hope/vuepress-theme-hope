@@ -4,6 +4,21 @@ All notable changes to this project will be documented in this file. See [Conven
 
 <!-- #region recent-change -->
 
+## [2.0.0-rc.37](https://github.com/vuepress-theme-hope/vuepress-theme-hope/compare/v2.0.0-rc.36...v2.0.0-rc.37) (2024-04-21)
+
+### Features
+
+- add plantuml feature ([913bbe7](https://github.com/vuepress-theme-hope/vuepress-theme-hope/commit/913bbe7e077d38bd3f052c70184686cb03ddc5f6))
+- **components:** add fullscreen button, close [#4001](https://github.com/vuepress-theme-hope/vuepress-theme-hope/issues/4001) ([1f390d4](https://github.com/vuepress-theme-hope/vuepress-theme-hope/commit/1f390d4b8197f60e49ac7f515d97178910e05064))
+- **theme:** remove blogger.roundAvatar and make it a preset ([f3ee699](https://github.com/vuepress-theme-hope/vuepress-theme-hope/commit/f3ee699659537e6c4a55284b8ee6f540dba2f60b))
+- **theme:** remove navbarIcon and sidebarIcon and make them presets ([73f6eb2](https://github.com/vuepress-theme-hope/vuepress-theme-hope/commit/73f6eb22775843ee4aef10d255788887dedddbb6))
+- **theme:** rename navTitle to navbarTitle ([416395e](https://github.com/vuepress-theme-hope/vuepress-theme-hope/commit/416395e9c426c7d587a6c33de1410998dab82d23))
+
+### Bug Fixes
+
+- **theme:** fix pageview, close [#4067](https://github.com/vuepress-theme-hope/vuepress-theme-hope/issues/4067) ([99c3c69](https://github.com/vuepress-theme-hope/vuepress-theme-hope/commit/99c3c69ea954d4ab9f998d5add95c0e64446d1d7))
+- **theme:** support categories and tags in PageInfo ([0cfbbf5](https://github.com/vuepress-theme-hope/vuepress-theme-hope/commit/0cfbbf5f0a0b08dd3a1fe696aa57a5d2e8b48bfc))
+
 ## [2.0.0-rc.36](https://github.com/vuepress-theme-hope/vuepress-theme-hope/compare/v2.0.0-rc.35...v2.0.0-rc.36) (2024-04-11)
 
 ### Bug Fixes
