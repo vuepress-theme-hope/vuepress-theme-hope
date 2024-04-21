@@ -347,7 +347,7 @@ Whether to enable chart support
 - Type: `boolean`
 - Default: `false`
 - Details:
-  - [Echarts](./guide/chart/echarts.md)
+  - [ECharts](./guide/chart/echarts.md)
 
 Whether to enable ECharts support
 
@@ -786,25 +786,25 @@ Locales config for Markdown Enhance Plugin.
 
 ## Client Config
 
-### defineEchartsConfig
+### defineEChartsConfig
 
 ```ts
-interface EchartsConfig {
+interface EChartsConfig {
   /**
-   * Echarts global options
+   * ECharts global options
    */
   option?: EChartsOption;
 
   /**
-   * Echarts setup function
+   * ECharts setup function
    */
   setup?: () => Promise<void>;
 }
 
-const defineEchartsConfig: (config: EchartsConfig) => void;
+const defineEChartsConfig: (config: EChartsConfig) => void;
 ```
 
-Define global options and setup for Echarts.
+Define global options and setup for ECharts.
 
 ### defineMermaidConfig
 

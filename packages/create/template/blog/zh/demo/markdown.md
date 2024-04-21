@@ -206,7 +206,7 @@ $$
 
 - [查看详情](https://theme-hope.vuejs.press/zh/guide/markdown/chartjs.html)
 
-#### Echarts
+#### ECharts
 
 <iframe src="https://plugin-md-enhance-demo.vuejs.press/snippet/echarts.html" width="100%" height="800"/>
 

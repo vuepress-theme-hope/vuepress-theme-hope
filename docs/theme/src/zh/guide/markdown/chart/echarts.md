@@ -8,6 +8,8 @@ tag:
   - Markdown
 ---
 
+<!-- @include: @md-enhance/zh/guide/chart/echarts.md#before -->
+
 ```js {7} title=".vuepress/config.js"
 import { hopeTheme } from "vuepress-theme-hope";
 

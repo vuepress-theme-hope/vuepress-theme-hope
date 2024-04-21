@@ -12,12 +12,12 @@ import {
 } from "vue";
 import { LoadingIcon } from "vuepress-shared/client";
 
-import { useEchartsConfig } from "../helpers/index.js";
+import { useEChartsConfig } from "../helpers/index.js";
 import "../styles/echarts.scss";
 
 declare const MARKDOWN_ENHANCE_DELAY: number;
 
-interface EchartsConfig {
+interface EChartsConfig {
   width?: number;
   height?: number;
   option: EChartsOption;
@@ -30,7 +30,7 @@ const parseEChartsConfig = (
   config: string,
   type: "js" | "json",
   myChart: EChartsType,
-): Promise<EchartsConfig> => {
+): Promise<EChartsConfig> => {
   if (type === "js") {
     // eslint-disable-next-line
     const runner = AsyncFunction(
@@ -46,7 +46,7 @@ return __echarts_config__;
     );
 
     // eslint-disable-next-line @typescript-eslint/no-unsafe-call
-    return <Promise<EchartsConfig>>runner(myChart);
+    return <Promise<EChartsConfig>>runner(myChart);
   }
 
   return Promise.resolve({ option: <EChartsOption>JSON.parse(config) });
@@ -57,7 +57,7 @@ export default defineComponent({
 
   props: {
     /**
-     * Echarts config
+     * ECharts config
      *
      * 图表配置
      */
@@ -86,7 +86,7 @@ export default defineComponent({
   },
 
   setup(props) {
-    const echartsConfig = useEchartsConfig();
+    const echartsConfig = useEChartsConfig();
 
     const loading = ref(true);
     const echartsContainer = shallowRef<HTMLElement>();

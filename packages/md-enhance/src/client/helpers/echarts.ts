@@ -4,32 +4,35 @@ import { inject } from "vue";
 
 declare const __VUEPRESS_DEV__: boolean;
 
-export interface EchartsConfig {
+export interface EChartsConfig {
   /**
-   * Echarts global options
+   * ECharts global options
    *
-   * Echarts 全局选项
+   * ECharts 全局选项
    */
   option?: EChartsOption;
 
   /**
-   * Echarts setup function
+   * ECharts setup function
    *
-   * Echarts 初始化函数
+   * ECharts 初始化函数
    */
   setup?: () => Promise<void>;
 }
 
-let echartsConfig: EchartsConfig = {};
+let echartsConfig: EChartsConfig = {};
 
 const echartsSymbol = Symbol(__VUEPRESS_DEV__ ? "echarts" : "");
 
-export const defineEchartsConfig = (config: EchartsConfig): void => {
+export const defineEChartsConfig = (config: EChartsConfig): void => {
   echartsConfig = config;
 };
 
-export const useEchartsConfig = (): EchartsConfig => inject(echartsSymbol)!;
+/** @deprecated: use defineEChartsConfig instead */
+export const defineEchartsConfig = defineEChartsConfig;
 
-export const injectEchartsConfig = (app: App): void => {
+export const useEChartsConfig = (): EChartsConfig => inject(echartsSymbol)!;
+
+export const injectEChartsConfig = (app: App): void => {
   app.provide(echartsSymbol, echartsConfig);
 };

@@ -74,10 +74,10 @@ export const prepareConfigFile = async (
   if (status["echarts"]) {
     imports.add(`import ECharts from "${CLIENT_FOLDER}components/ECharts.js";`);
     imports.add(
-      `import { injectEchartsConfig } from "${CLIENT_FOLDER}/index.js";`,
+      `import { injectEChartsConfig } from "${CLIENT_FOLDER}/index.js";`,
     );
     enhances.add(`app.component("ECharts", ECharts);`);
-    enhances.add(`injectEchartsConfig(app);`);
+    enhances.add(`injectEChartsConfig(app);`);
   }
 
   if (options.figure)

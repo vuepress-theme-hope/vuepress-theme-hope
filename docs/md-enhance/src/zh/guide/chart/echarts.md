@@ -58,7 +58,7 @@ export default {
 
 ### 使用 JSON
 
-如果你可以很轻松的生成数据，你可以直接通过一个 JSON 代码块来提供 Echarts 配置:
+如果你可以很轻松的生成数据，你可以直接通过一个 JSON 代码块来提供 ECharts 配置:
 
 ````md
 ::: echarts 标题
@@ -76,7 +76,7 @@ export default {
 
 如果你需要通过脚本来获取数据，你可以使用 `js` 和 `javascript` 的代码块。
 
-我们将通过 `myChart` 变量暴露 Echarts 实例，并且你应该将 Echart 配置赋值给 `option` 变量。同时，你也可以赋值 `width` 和 `height` 来设置图表大小。
+我们将通过 `myChart` 变量暴露 ECharts 实例，并且你应该将 Echart 配置赋值给 `option` 变量。同时，你也可以赋值 `width` 和 `height` 来设置图表大小。
 
 ````md
 ::: echarts Title
@@ -98,18 +98,18 @@ const option = {
 
 ## 高级
 
-你可以在[客户端配置文件][client-config]中导入并使用 `defineEchartsConfig` 来自定义 Echarts:
+你可以在[客户端配置文件][client-config]中导入并使用 `defineEChartsConfig` 来自定义 ECharts:
 
 ```ts title=".vuepress/client.ts"
 import { defineClientConfig } from "vuepress/client";
-import { defineEchartsConfig } from "vuepress-plugin-md-enhance/client";
+import { defineEChartsConfig } from "vuepress-plugin-md-enhance/client";
 
-defineEchartsConfig({
+defineEChartsConfig({
   options: {
-    // 全局 Echarts 配置
+    // 全局 ECharts 配置
   },
   setup: async () => {
-    // Echarts 设置
+    // ECharts 设置
     // 例如: await import("echarts-wordcloud")
   },
 });

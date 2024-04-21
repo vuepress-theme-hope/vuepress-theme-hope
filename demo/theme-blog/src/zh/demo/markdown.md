@@ -236,7 +236,7 @@ $$
 
 - [查看详情](https://theme-hope.vuejs.press/zh/guide/markdown/chartjs.html)
 
-#### Echarts
+#### ECharts
 
 ::: echarts 一个折线图案例
 

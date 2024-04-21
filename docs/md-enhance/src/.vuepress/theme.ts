@@ -30,7 +30,6 @@ export default theme("md-enhance", {
       chart: true,
       codetabs: true,
       component: true,
-      container: true,
       demo: true,
       echarts: true,
       figure: true,

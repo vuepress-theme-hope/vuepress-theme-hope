@@ -5,13 +5,15 @@ icon: chart-simple
 
 <!-- #region before -->
 
-Let the Markdown file support chart in your VuePress site.
+Add [chart.js][] support to the Markdown files in your VuePress site.
+
+[chart.js]: https://www.chartjs.org/docs/latest/
 
 <!-- more -->
 
 ## Settings
 
-Install [chart.js](https://www.chartjs.org/docs/latest/) in your project:
+Install [chart.js][] in your project:
 
 ::: code-tabs#shell
 

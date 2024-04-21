@@ -1,9 +1,9 @@
 import ProjectLink from "docs-shared/components/ProjectLink.js";
 import SocialLink from "docs-shared/components/SocialLink.js";
 import { defineClientConfig } from "vuepress/client";
-import { defineEchartsConfig } from "vuepress-plugin-md-enhance/client";
+import { defineEChartsConfig } from "vuepress-plugin-md-enhance/client";
 
-defineEchartsConfig({
+defineEChartsConfig({
   setup: async () => {
     await import("echarts-wordcloud");
   },

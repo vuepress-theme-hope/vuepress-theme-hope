@@ -256,7 +256,7 @@ $$
 
 - [View Detail](https://theme-hope.vuejs.press/guide/markdown/chartjs.html)
 
-#### Echarts
+#### ECharts
 
 ::: echarts A line chart
 

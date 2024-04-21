@@ -9,15 +9,15 @@ index: false
 
 <!-- #region intro -->
 
-该插件提供了 4 种方法让您将图表插入到 Markdown 文件中。
+该插件提供了 6 种方法让您将图表插入到 Markdown 文件中。
 
 - Chart.js：一个轻量级、易于使用、高度可定制的图表库。
 
-  与 Echarts 相比，Chart.js 更轻量。
+  与 ECharts 相比，Chart.js 更轻量。
 
-- Echarts：一个强大的、交互式的浏览器图表和可视化库。
+- ECharts：一个强大的、交互式的浏览器图表和可视化库。
 
-  与 Chart.js 相比，Echarts 更强大。
+  与 Chart.js 相比，ECharts 更强大。
 
 - flowchart: Markdown 扩展，用于生成流程图和序列图。
 
@@ -27,7 +27,7 @@ index: false
 
   运行环境非常重，不推荐使用。
 
-- Mermaid：以与 Markdown 类似的方式从文本生成图表和流程图。
+- Mermaid：从 Markdown 生成图表和流程图。
 
   常用图表的强大集合。
 
@@ -75,7 +75,7 @@ index: false
 
 - [查看详情](./chartjs.md)
 
-### Echarts
+### ECharts
 
 ::: echarts 一个折线图案例
 
