@@ -51,7 +51,7 @@ export default defineComponent({
     );
 
     return (): VNode | null =>
-      props.pageview
+      props.pageview && isSupported
         ? h(
             "span",
             {
