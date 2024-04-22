@@ -120,7 +120,7 @@
     "kotlin-playground": "^1.23.0",
     "markmap-lib": "^0.15.5 || ^0.16.0",
     "markmap-toolbar": "^0.15.5 || ^0.16.0",
-    "markmap-view": "^0.15.5 || ^0.16.0",
+    "markmap-view": "^0.15.5 || ^0.16.0 || ^0.17.0",
     "mathjax-full": "^3.2.2",
     "mermaid": "^10.8.0",
     "reveal.js": "^5.0.0",

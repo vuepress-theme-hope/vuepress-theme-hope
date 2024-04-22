@@ -270,8 +270,8 @@ importers:
         specifier: 0.16.0
         version: 0.16.0(markmap-common@0.16.0)
       markmap-view:
-        specifier: 0.16.0
-        version: 0.16.0(markmap-common@0.16.0)
+        specifier: 0.17.0
+        version: 0.17.0(markmap-common@0.16.0)
       mathjax-full:
         specifier: 3.2.2
         version: 3.2.2
@@ -387,8 +387,8 @@ importers:
         specifier: 0.16.0
         version: 0.16.0(markmap-common@0.16.0)
       markmap-view:
-        specifier: 0.16.0
-        version: 0.16.0(markmap-common@0.16.0)
+        specifier: 0.17.0
+        version: 0.17.0(markmap-common@0.16.0)
       mathjax-full:
         specifier: 3.2.2
         version: 3.2.2
@@ -447,8 +447,8 @@ importers:
         specifier: 0.16.0
         version: 0.16.0(markmap-common@0.16.0)
       markmap-view:
-        specifier: 0.16.0
-        version: 0.16.0(markmap-common@0.16.0)
+        specifier: 0.17.0
+        version: 0.17.0(markmap-common@0.16.0)
       mathjax-full:
         specifier: 3.2.2
         version: 3.2.2
@@ -750,8 +750,8 @@ importers:
         specifier: 0.16.0
         version: 0.16.0(markmap-common@0.16.0)
       markmap-view:
-        specifier: 0.16.0
-        version: 0.16.0(markmap-common@0.16.0)
+        specifier: 0.17.0
+        version: 0.17.0(markmap-common@0.16.0)
       mermaid:
         specifier: 10.9.0
         version: 10.9.0
@@ -989,8 +989,8 @@ importers:
         specifier: ^0.15.5 || ^0.16.0
         version: 0.16.0(markmap-common@0.16.0)
       markmap-view:
-        specifier: ^0.15.5 || ^0.16.0
-        version: 0.16.0(markmap-common@0.16.0)
+        specifier: ^0.15.5 || ^0.16.0 || ^0.17.0
+        version: 0.17.0(markmap-common@0.16.0)
       mathjax-full:
         specifier: ^3.2.2
         version: 3.2.2
@@ -6580,6 +6580,11 @@ packages:
     peerDependencies:
       markmap-common: '*'
 
+  markmap-view@0.17.0:
+    resolution: {integrity: sha512-V4n5gXbIk7b/ns/gzoNoMaRu7Es+9OLUqfRqj/EiWuiYMlmmQ/rN8NDCgPcuTAnr0hJmor7UXaKYqWL275LspA==}
+    peerDependencies:
+      markmap-common: '*'
+
   mathjax-full@3.2.2:
     resolution: {integrity: sha512-+LfG9Fik+OuI8SLwsiR02IVdjcnRCy5MufYLi0C3TdMT56L/pjB0alMVGgoWJF8pN9Rc7FESycZB9BMNWIid5w==}
 
@@ -8894,6 +8899,7 @@ packages:
 
   workbox-google-analytics@7.0.0:
     resolution: {integrity: sha512-MEYM1JTn/qiC3DbpvP2BVhyIH+dV/5BjHk756u9VbwuAhu0QHyKscTnisQuz21lfRpOwiS9z4XdqeVAKol0bzg==}
+    deprecated: It is not compatible with newer versions of GA starting with v4, as long as you are using GAv3 it should be ok, but the package is not longer being maintained
 
   workbox-navigation-preload@7.0.0:
     resolution: {integrity: sha512-juWCSrxo/fiMz3RsvDspeSLGmbgC0U9tKqcUPZBCf35s64wlaLXyn2KdHHXVQrb2cqF7I0Hc9siQalainmnXJA==}
@@ -15212,6 +15218,15 @@ snapshots:
       markmap-common: 0.16.0
 
   markmap-view@0.16.0(markmap-common@0.16.0):
+    dependencies:
+      '@babel/runtime': 7.24.4
+      '@gera2ld/jsx-dom': 2.2.2
+      '@types/d3': 7.4.3
+      d3: 7.9.0
+      d3-flextree: 2.1.2
+      markmap-common: 0.16.0
+
+  markmap-view@0.17.0(markmap-common@0.16.0):
     dependencies:
       '@babel/runtime': 7.24.4
       '@gera2ld/jsx-dom': 2.2.2
