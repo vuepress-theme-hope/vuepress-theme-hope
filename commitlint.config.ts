@@ -1,8 +1,13 @@
-const { execSync } = require("node:child_process");
-const fs = require("node:fs");
-const path = require("node:path");
+import { execSync } from "node:child_process";
+import { readdirSync } from "node:fs";
+import { dirname, join } from "node:path";
+import { fileURLToPath } from "node:url";
 
-const packages = fs.readdirSync(path.resolve(__dirname, "packages"));
+import type { UserConfig } from "cz-git";
+
+const packages = readdirSync(
+  join(dirname(fileURLToPath(import.meta.url)), "./packages/"),
+);
 
 const scopeComplete = execSync("git status --porcelain || true")
   .toString()
@@ -12,8 +17,7 @@ const scopeComplete = execSync("git status --porcelain || true")
   ?.replace(/\//g, "%%")
   ?.match(/packages%%((\w|-)*)/)?.[1];
 
-/** @type {import('cz-git').UserConfig} */
-module.exports = {
+export default {
   extends: ["@commitlint/config-conventional"],
   rules: {
     "scope-enum": [2, "always", ["demo", "release", ...packages]],
@@ -24,4 +28,4 @@ module.exports = {
     allowCustomIssuePrefix: false,
     allowEmptyIssuePrefix: false,
   },
-};
+} as UserConfig;

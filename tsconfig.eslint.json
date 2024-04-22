@@ -12,7 +12,6 @@
     "**/*.vue",
     "**/.vuepress/**/*.ts",
     "**/.vuepress/**/*.vue",
-    ".commitlintrc.cjs",
     ".markdownlint-cli2.mjs"
   ]
 }
