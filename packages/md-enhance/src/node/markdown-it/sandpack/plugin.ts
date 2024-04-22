@@ -16,11 +16,11 @@ const AT_MARKER = `@`;
 const VALID_MARKERS = ["file", "options", "setup"] as const;
 
 const propsGetter = (sandpackData: SandpackData): Record<string, string> => ({
-  title: sandpackData.title || "",
-  template: sandpackData.template || "",
-  files: encodeData(encodeFiles(sandpackData.files || {})),
-  options: encodeData(JSON.stringify(sandpackData.options || {})),
-  customSetup: encodeData(JSON.stringify(sandpackData.customSetup || {})),
+  title: sandpackData.title ?? "",
+  template: sandpackData.template ?? "",
+  files: encodeData(encodeFiles(sandpackData.files ?? {})),
+  options: encodeData(JSON.stringify(sandpackData.options ?? {})),
+  customSetup: encodeData(JSON.stringify(sandpackData.customSetup ?? {})),
 });
 
 const jsRunner = (jsCode: string): unknown =>
@@ -127,8 +127,8 @@ const getSandpackRule =
     const oldParent = state.parentType;
     const oldLineMax = state.lineMax;
 
-    // @ts-expect-error
-    state.parentType = `${name}`;
+    // @ts-expect-error: name is an unknown type to markdown-it
+    state.parentType = name;
 
     // This will prevent lazy continuations from ever going past our end marker
     state.lineMax = nextLine - (autoClosed ? 1 : 0);
@@ -234,8 +234,8 @@ const atMarkerRule =
     const oldParent = state.parentType;
     const oldLineMax = state.lineMax;
 
-    // @ts-expect-error
-    state.parentType = `${markerName}`;
+    // @ts-expect-error: unknown type to markdown-it
+    state.parentType = markerName;
 
     // This will prevent lazy continuations from ever going past our end marker
     state.lineMax = nextLine;
@@ -268,9 +268,8 @@ export const sandpack: PluginSimple = (md) => {
   });
 
   VALID_MARKERS.forEach((marker) => {
-    // WARNING:  Here we use an internal variable to make sure tab rule is not registered
-
-    // @ts-ignore
+    // Note: Here we use an internal variable to make sure tab rule is not registered
+    // @ts-expect-error: __rules__ is a private property
     // eslint-disable-next-line
     if (!md.block.ruler.__rules__.find(({ name }) => name === `at-${marker}`))
       md.block.ruler.before("fence", `at-${marker}`, atMarkerRule(marker), {
@@ -294,7 +293,7 @@ export const sandpack: PluginSimple = (md) => {
     const arr = containerName.split("#");
 
     if (arr.length > 1)
-      sandpackData.template = <SandpackPredefinedTemplate>arr[1];
+      sandpackData.template = arr[1] as SandpackPredefinedTemplate;
 
     let currentKey: string | null = null;
     let foundOptions = false;
@@ -346,7 +345,7 @@ export const sandpack: PluginSimple = (md) => {
         // Parse options
         if (foundOptions) {
           if (type === "fence" && (info === "js" || info === "javascript"))
-            sandpackData.options = <SandpackOptions>jsRunner(content.trim());
+            sandpackData.options = jsRunner(content.trim()) as SandpackOptions;
 
           foundOptions = false;
         }
@@ -354,7 +353,9 @@ export const sandpack: PluginSimple = (md) => {
         // Parse setup
         if (foundSetup) {
           if (type === "fence" && (info === "js" || info === "javascript"))
-            sandpackData.customSetup = <SandpackSetup>jsRunner(content.trim());
+            sandpackData.customSetup = jsRunner(
+              content.trim(),
+            ) as SandpackSetup;
 
           foundSetup = false;
         }

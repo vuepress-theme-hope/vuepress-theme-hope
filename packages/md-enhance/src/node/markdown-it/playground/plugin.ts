@@ -97,8 +97,8 @@ const getPlaygroundRule =
     const oldParent = state.parentType;
     const oldLineMax = state.lineMax;
 
-    // @ts-expect-error
-    state.parentType = `${name}`;
+    // @ts-expect-error: name is an unknown type to markdown-it
+    state.parentType = name;
 
     // This will prevent lazy continuations from ever going past our end marker
     state.lineMax = nextLine - (autoClosed ? 1 : 0);
@@ -113,7 +113,7 @@ const getPlaygroundRule =
     state.md.block.tokenize(
       state,
       startLine + 1,
-      nextLine - (autoClosed ? 1 : 0),
+      nextLine - (autoClosed ? 1 : 0)
     );
 
     const closeToken = state.push(`${name}_close`, "template", -1);
@@ -203,8 +203,8 @@ const atMarkerRule =
     const oldParent = state.parentType;
     const oldLineMax = state.lineMax;
 
-    // @ts-expect-error
-    state.parentType = `${markerName}`;
+    // @ts-expect-error: unknown type for markdown-it
+    state.parentType = markerName;
 
     // This will prevent lazy continuations from ever going past our end marker
     state.lineMax = nextLine;
@@ -232,10 +232,10 @@ const atMarkerRule =
   };
 
 const defaultPropsGetter = (
-  playgroundData: PlaygroundData,
+  playgroundData: PlaygroundData
 ): Record<string, string> => ({
   key: playgroundData.key,
-  title: playgroundData.title || "",
+  title: playgroundData.title ?? "",
   files: encodeURIComponent(JSON.stringify(playgroundData.files)),
   settings: encodeURIComponent(JSON.stringify(playgroundData.settings || {})),
 });
@@ -250,16 +250,15 @@ export const playground: PluginWithOptions<PlaygroundOptions> = (
     name: "playground",
     component: "Playground",
     propsGetter: defaultPropsGetter,
-  },
+  }
 ) => {
   md.block.ruler.before("fence", `${name}`, getPlaygroundRule(name), {
     alt: ["paragraph", "reference", "blockquote", "list"],
   });
 
   VALID_MARKERS.forEach((marker) => {
-    // WARNING:  Here we use an internal variable to make sure tab rule is not registered
-
-    // @ts-ignore
+    // Note: Here we use an internal variable to make sure tab rule is not registered
+    // @ts-expect-error: __rules__ is a private property
     // eslint-disable-next-line
     if (!md.block.ruler.__rules__.find(({ name }) => name === `at-${marker}`))
       md.block.ruler.before("fence", `at-${marker}`, atMarkerRule(marker), {
@@ -311,9 +310,10 @@ export const playground: PluginWithOptions<PlaygroundOptions> = (
         if (foundSettings) {
           // Handle json blocks
           if (type === "fence" && info === "json")
-            playgroundData.settings = <Record<string, unknown>>(
-              JSON.parse(content.trim())
-            );
+            playgroundData.settings = JSON.parse(content.trim()) as Record<
+              string,
+              unknown
+            >;
         }
         // Add code block content
         else if (type === "fence" && currentKey) {

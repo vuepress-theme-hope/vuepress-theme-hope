@@ -89,11 +89,10 @@ export default defineComponent({
         transition: "slide",
         slideNumber: true,
         ...revealOptions,
-        ...(frontmatter.value.revealJs || {}),
+        ...frontmatter.value.revealJs,
         embedded: frontmatter.value.layout !== "Slide",
         markdown: {
           separator: "^\r?\\n---\r?\n$",
-          // @ts-ignore
           verticalSeparator: "^\r?\n--\r?\n$",
         },
 

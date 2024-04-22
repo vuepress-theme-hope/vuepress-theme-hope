@@ -151,7 +151,7 @@ export default defineComponent({
                     type: "button",
                     ref: (element) => {
                       if (element)
-                        tabRefs.value[index] = <HTMLUListElement>element;
+                        tabRefs.value[index] = element as HTMLUListElement;
                     },
                     class: ["vp-tab-nav", { active: isActive }],
                     role: "tab",

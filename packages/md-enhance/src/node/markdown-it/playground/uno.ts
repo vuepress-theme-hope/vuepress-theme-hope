@@ -9,11 +9,7 @@ import type {
 import { logger } from "../../utils.js";
 
 /** Gets a query string representation (hash + queries) */
-const getUrlJoinParam = (
-  key: string,
-  value: string,
-  sign: string = "&",
-): string => {
+const getUrlJoinParam = (key: string, value: string, sign = "&"): string => {
   if (value) return `${sign}${key}=${encode(value)}`;
 
   return "";

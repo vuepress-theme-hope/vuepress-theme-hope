@@ -76,7 +76,7 @@ ${flowchartDemo}
       decodeData(
         /<Mermaid id="mermaid.*?" code="(.*?)"><\/Mermaid>/.exec(
           renderResult,
-        )?.[1] || "",
+        )?.[1] ?? "",
       ),
     ).toMatch(flowchartDemo);
     expect(renderResult).toMatchSnapshot();

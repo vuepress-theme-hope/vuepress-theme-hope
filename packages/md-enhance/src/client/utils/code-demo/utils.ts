@@ -55,14 +55,14 @@ export const preProcessorConfig: Record<
 export const h = (
   tag: string,
   attrs?: Record<string, string>,
-  children?: HTMLElement[],
+  children?: HTMLElement[]
 ): HTMLElement => {
   const node = document.createElement(tag);
 
   if (isPlainObject(attrs))
     keys(attrs).forEach((key) => {
       if (key.indexOf("data")) {
-        // @ts-ignore
+        // @ts-expect-error: Type is not accurate
         node[key] = attrs[key];
       } else {
         const k = key.replace("data", "");
@@ -80,21 +80,21 @@ export const h = (
 };
 
 export const getConfig = (
-  config: Partial<CodeDemoOptions>,
+  config: Partial<CodeDemoOptions>
 ): CodeDemoOptions => ({
   ...options,
   ...config,
   jsLib: Array.from(
-    new Set([...(options.jsLib || []), ...(config.jsLib || [])]),
+    new Set([...(options.jsLib || []), ...(config.jsLib ?? [])])
   ),
   cssLib: Array.from(
-    new Set([...(options.cssLib || []), ...(config.cssLib || [])]),
+    new Set([...(options.cssLib || []), ...(config.cssLib ?? [])])
   ),
 });
 
 export const loadScript = (
   state: Record<string, Promise<void>>,
-  link: string,
+  link: string
 ): Promise<void> => {
   if (isDef(state[link])) return state[link];
 
@@ -119,7 +119,7 @@ export const injectCSS = (shadowRoot: ShadowRoot, code: Code): void => {
     code.css &&
     // Style not injected
     Array.from(shadowRoot.childNodes).every(
-      (element) => element.nodeName !== "STYLE",
+      (element) => element.nodeName !== "STYLE"
     )
   ) {
     const style = h("style", { innerHTML: code.css });
@@ -131,7 +131,7 @@ export const injectCSS = (shadowRoot: ShadowRoot, code: Code): void => {
 export const injectScript = (
   id: string,
   shadowRoot: ShadowRoot,
-  code: Code,
+  code: Code
 ): void => {
   const scriptText = code.getScript();
 
@@ -139,7 +139,7 @@ export const injectScript = (
     scriptText &&
     // Style not injected
     Array.from(shadowRoot.childNodes).every(
-      (element) => element.nodeName !== "SCRIPT",
+      (element) => element.nodeName !== "SCRIPT"
     )
   ) {
     const script = document.createElement("script");
@@ -147,8 +147,8 @@ export const injectScript = (
     script.appendChild(
       document.createTextNode(
         // Here we are fixing `document` variable back to shadowDOM
-        `{const document=window.document.querySelector('#${id} .vp-code-demo-display').shadowRoot;\n${scriptText}}`,
-      ),
+        `{const document=window.document.querySelector('#${id} .vp-code-demo-display').shadowRoot;\n${scriptText}}`
+      )
     );
     shadowRoot.appendChild(script);
   }

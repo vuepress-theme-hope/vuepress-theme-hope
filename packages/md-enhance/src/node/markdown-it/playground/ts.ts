@@ -35,7 +35,7 @@ export const getURL = (
       if (isPlainObject(type)) {
         const result = type[value as keyof typeof type];
 
-        return result?.toString() || "";
+        return result?.toString() ?? "";
       }
 
       return `${key}=${encodeURIComponent(value as string)}`;
@@ -65,8 +65,8 @@ export const getTSPlaygroundPreset = ({
       files[tsFiles[0]].content,
       deepAssign(
         {},
-        <CompilerOptions>settings || {},
-        <CompilerOptions>compilerOptions,
+        (settings as CompilerOptions) || {},
+        compilerOptions as CompilerOptions,
       ),
     )}`;
 

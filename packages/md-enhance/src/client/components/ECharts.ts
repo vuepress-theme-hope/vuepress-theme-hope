@@ -46,10 +46,10 @@ return __echarts_config__;
     );
 
     // eslint-disable-next-line @typescript-eslint/no-unsafe-call
-    return <Promise<EChartsConfig>>runner(myChart);
+    return runner(myChart) as Promise<EChartsConfig>;
   }
 
-  return Promise.resolve({ option: <EChartsOption>JSON.parse(config) });
+  return Promise.resolve({ option: JSON.parse(config) as EChartsOption });
 };
 
 export default defineComponent({

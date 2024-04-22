@@ -40,12 +40,10 @@ export const getVuePlaygroundPreset = (
         .filter(([, { ext }]) => VUE_SUPPORTED_EXTENSIONS.includes(ext))
         .map(([key, { content }]) => {
           if (key === "import-map.json") {
-            const importMap = <
-              {
-                imports: Record<string, string>;
-                scopes?: Record<string, Record<string, string>>;
-              }
-            >JSON.parse(content);
+            const importMap = JSON.parse(content) as {
+              imports: Record<string, string>;
+              scopes?: Record<string, Record<string, string>>;
+            };
 
             return [
               key,

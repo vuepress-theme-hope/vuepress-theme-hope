@@ -11,6 +11,8 @@ declare global {
   }
 }
 
+const AVAILABLE_LANGUAGES = ["html", "js", "css"] as const;
+
 export const getCode = (code: Record<string, string>): CodeType => {
   const languages = keys(code);
   const result: CodeType = {
@@ -20,9 +22,9 @@ export const getCode = (code: Record<string, string>): CodeType => {
     isLegal: false,
   };
 
-  (["html", "js", "css"] as const).forEach((type) => {
+  AVAILABLE_LANGUAGES.forEach((type) => {
     const match = languages.filter((language) =>
-      preProcessorConfig[type].types.includes(language),
+      preProcessorConfig[type].types.includes(language)
     );
 
     if (match.length) {
@@ -30,7 +32,7 @@ export const getCode = (code: Record<string, string>): CodeType => {
 
       result[type] = [
         code[language].replace(/^\n|\n$/g, ""),
-        preProcessorConfig[type].map[language] || language,
+        preProcessorConfig[type].map[language] ?? language,
       ];
     }
   });
@@ -56,18 +58,18 @@ const getReactTemplate = (code: string): string =>
     .replace("export default ", "const $reactApp = ")
     .replace(
       /App\.__style__(\s*)=(\s*)`([\s\S]*)?`/,
-      "",
+      ""
     )};\nReactDOM.createRoot(document.getElementById("app")).render(React.createElement($reactApp))`;
 
 const getVueJsTemplate = (js: string): string =>
   js
     .replace(
       /export\s+default\s*\{(\n*[\s\S]*)\n*\}\s*;?$/u,
-      "Vue.createApp({$1}).mount('#app')",
+      "Vue.createApp({$1}).mount('#app')"
     )
     .replace(
       /export\s+default\s*define(Async)?Component\s*\(\s*\{(\n*[\s\S]*)\n*\}\s*\)\s*;?$/u,
-      "Vue.createApp({$1}).mount('#app')",
+      "Vue.createApp({$1}).mount('#app')"
     )
     .trim();
 
@@ -76,20 +78,20 @@ export const wrapper = (scriptStr: string): string =>
 
 export const getNormalCode = (
   code: CodeType,
-  config: Partial<CodeDemoOptions>,
+  config: Partial<CodeDemoOptions>
 ): Code => {
   const codeConfig = getConfig(config);
-  const js = code.js[0] || "";
+  const js = code.js[0] ?? "";
 
   return {
     ...codeConfig,
-    html: handleHTML(code.html[0] || ""),
+    html: handleHTML(code.html[0] ?? ""),
     js,
-    css: code.css[0] || "",
+    css: code.css[0] ?? "",
     isLegal: code.isLegal,
     getScript: (): string =>
       codeConfig.useBabel
-        ? window.Babel.transform(js, { presets: ["es2015"] })?.code || ""
+        ? window.Babel.transform(js, { presets: ["es2015"] })?.code ?? ""
         : js,
   };
 };
@@ -101,15 +103,15 @@ const VUE_STYLE_REG =
 
 export const getVueCode = (
   code: CodeType,
-  config: Partial<CodeDemoOptions>,
+  config: Partial<CodeDemoOptions>
 ): Code => {
   const codeConfig = getConfig(config);
 
-  const vueTemplate = code.html[0] || "";
+  const vueTemplate = code.html[0] ?? "";
   const htmlBlock = VUE_TEMPLATE_REG.exec(vueTemplate);
   const jsBlock = VUE_SCRIPT_REG.exec(vueTemplate);
   const cssBlock = VUE_STYLE_REG.exec(vueTemplate);
-  const html = htmlBlock ? htmlBlock[1].replace(/^\n|\n$/g, "") : "";
+  const html = htmlBlock?.[1].replace(/^\n|\n$/g, "") ?? "";
   const [js = "", jsLang = ""] = jsBlock
     ? [jsBlock[4].replace(/^\n|\n$/g, ""), jsBlock[3]]
     : [];
@@ -128,14 +130,14 @@ export const getVueCode = (
     jsLib: [codeConfig.vue, ...codeConfig.jsLib],
     getScript: (): string => {
       const scriptStr = config.useBabel
-        ? window.Babel?.transform(js, { presets: ["es2015"] })?.code || ""
+        ? window.Babel?.transform(js, { presets: ["es2015"] })?.code ?? ""
         : js.replace(/export\s+default/u, "return");
 
       return `const app=window.document.createElement('div');document.firstElementChild.appendChild(app);const appOptions=${wrapper(
-        scriptStr,
+        scriptStr
       )};appOptions.template=\`${html.replace(
         "`",
-        '\\`"',
+        '\\`"'
       )}\`;window.Vue.createApp(appOptions).mount(app);`;
     },
   };
@@ -143,32 +145,32 @@ export const getVueCode = (
 
 export const getReactCode = (
   code: CodeType,
-  config: Partial<CodeDemoOptions>,
+  config: Partial<CodeDemoOptions>
 ): Code => {
   const codeConfig = getConfig(config);
+  const js = code.js[0] ?? "";
 
   return {
     ...codeConfig,
     html: getHtmlTemplate(""),
-    js: getReactTemplate(code.js[0] || ""),
+    js: getReactTemplate(js),
     css:
-      code.css[0] ||
-      (code.js[0]
-        ? code.js[0]
-            .replace(/App\.__style__(?:\s*)=(?:\s*)`([\s\S]*)?`/, "$1")
-            .trim()
-        : ""),
+      code.css[0] ??
+      code.js[0]
+        ?.replace(/App\.__style__(?:\s*)=(?:\s*)`([\s\S]*)?`/, "$1")
+        .trim() ??
+      "",
     isLegal: code.isLegal,
     jsLib: [codeConfig.react, codeConfig.reactDOM, ...codeConfig.jsLib],
     jsx: true,
     getScript: (): string => {
       const scriptStr =
-        window.Babel?.transform(code.js[0] || "", {
+        window.Babel?.transform(js, {
           presets: ["es2015", "react"],
-        })?.code || "";
+        })?.code ?? "";
 
       return `window.ReactDOM.createRoot(document.firstElementChild).render(window.React.createElement(${wrapper(
-        scriptStr,
+        scriptStr
       )}))`;
     },
   };

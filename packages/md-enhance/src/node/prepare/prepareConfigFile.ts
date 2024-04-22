@@ -17,7 +17,7 @@ export const prepareConfigFile = async (
   const setups = new Set<string>();
 
   // TODO: Remove this in v2 stable
-  // @ts-expect-error
+  // @ts-expect-error: card does not exist
   if (options.card && legacy) {
     imports.add(
       `import { hasGlobalComponent } from "${getRealPath(

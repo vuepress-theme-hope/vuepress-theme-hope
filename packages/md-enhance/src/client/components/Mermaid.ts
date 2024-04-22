@@ -124,7 +124,6 @@ export default defineComponent({
       ]);
 
       mermaid.initialize({
-        // @ts-ignore
         theme: "base",
         themeVariables: {
           ...getThemeVariables(isDarkmode.value),

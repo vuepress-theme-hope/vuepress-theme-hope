@@ -48,7 +48,7 @@ const cardRender = (
 
   if (content.trim().startsWith("{"))
     try {
-      config = <unknown>JSON.parse(content);
+      config = JSON.parse(content) as unknown;
     } catch (err) {
       // Do nothing
       logger.error(`Parsing card as JSON config failed:`, err);
@@ -95,7 +95,7 @@ export const legacyCard: PluginSimple = (md) => {
     const { info } = tokens[index];
 
     if (info === "card")
-      return cardRender(tokens, index, options, <MarkdownEnv>env);
+      return cardRender(tokens, index, options, env as MarkdownEnv);
 
     const [realInfo] = info.split(":", 2);
 
@@ -104,7 +104,7 @@ export const legacyCard: PluginSimple = (md) => {
         "Language declaration for card is deprecated, please remove them.",
       );
 
-      return cardRender(tokens, index, options, <MarkdownEnv>env);
+      return cardRender(tokens, index, options, env as MarkdownEnv);
     }
 
     return fence!(...args);

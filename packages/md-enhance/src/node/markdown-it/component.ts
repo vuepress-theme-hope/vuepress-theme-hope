@@ -22,7 +22,7 @@ const getComponentRender =
 
     if (content.trim().startsWith("{"))
       try {
-        config = <unknown>JSON.parse(content);
+        config = JSON.parse(content) as unknown;
       } catch (err) {
         // Do nothing
       }

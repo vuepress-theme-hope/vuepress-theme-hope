@@ -23,7 +23,7 @@ const parseChartConfig = (
   config: string,
   type: "js" | "json",
 ): ChartConfiguration => {
-  if (type === "json") return <ChartConfiguration>JSON.parse(config);
+  if (type === "json") return JSON.parse(config) as ChartConfiguration;
 
   // eslint-disable-next-line @typescript-eslint/no-implied-eval
   const runner = new Function(
@@ -37,7 +37,7 @@ return __chart_js_config__;\
 `,
   );
 
-  return <ChartConfiguration>runner();
+  return runner() as ChartConfiguration;
 };
 
 export default defineComponent({

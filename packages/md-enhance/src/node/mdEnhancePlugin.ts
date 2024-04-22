@@ -80,13 +80,13 @@ import { PLUGIN_NAME, isInstalled, logger } from "./utils.js";
 export const mdEnhancePlugin =
   (
     options: MarkdownEnhancePluginOptions = { gfm: true },
-    legacy = true,
+    legacy = true
   ): PluginFunction =>
   (app) => {
     // TODO: Remove this in v2 stable
     if (legacy)
       convertOptions(
-        options as MarkdownEnhancePluginOptions & Record<string, unknown>,
+        options as MarkdownEnhancePluginOptions & Record<string, unknown>
       );
 
     if (app.env.isDebug) logger.info("Options:", options);
@@ -96,12 +96,11 @@ export const mdEnhancePlugin =
     const getStatus = (
       key: keyof MarkdownEnhancePluginOptions,
       gfm = false,
-      pkgs: string[] = [],
+      pkgs: string[] = []
     ): boolean => {
-      const enabled =
-        key in options ? Boolean(options[key]) : (gfm && options.gfm) || false;
+      const enabled = Boolean(options?.[key] ?? (gfm && options.gfm) ?? false);
       const pkgInstalled = pkgs.every((pkg) =>
-        isInstalled(pkg, Boolean(options[key])),
+        isInstalled(pkg, Boolean(options[key]))
       );
 
       return enabled && pkgInstalled;
@@ -162,7 +161,7 @@ export const mdEnhancePlugin =
           logger.warn(
             `Found unicode character ${token.text} inside tex${
               filePathRelative ? ` in ${colors.cyan(filePathRelative)}` : ""
-            }. You should use ${colors.magenta(`\\text{${token.text}`)}`,
+            }. You should use ${colors.magenta(`\\text{${token.text}`)}`
           );
         else
           logger.warn(
@@ -170,7 +169,7 @@ export const mdEnhancePlugin =
               filePathRelative
                 ? `\nFound in ${colors.cyan(filePathRelative)}`
                 : ""
-            }`,
+            }`
           );
       },
       ...(isPlainObject(options.katex) ? options.katex : {}),
@@ -195,7 +194,7 @@ export const mdEnhancePlugin =
       name: PLUGIN_NAME,
 
       define: (): Record<string, unknown> => ({
-        MARKDOWN_ENHANCE_DELAY: options.delay || 800,
+        MARKDOWN_ENHANCE_DELAY: options.delay ?? 800,
         CODE_DEMO_OPTIONS: {
           ...CODE_DEMO_DEFAULT_SETTING,
           ...(isPlainObject(options.demo) ? options.demo : {}),
@@ -218,7 +217,7 @@ export const mdEnhancePlugin =
           addViteOptimizeDepsExclude(
             bundlerOptions,
             app,
-            "chart.js/auto/auto.mjs",
+            "chart.js/auto/auto.mjs"
           );
           addViteSsrExternal(bundlerOptions, app, "chart.js");
         }
@@ -256,7 +255,7 @@ export const mdEnhancePlugin =
             "reveal.js/dist/reveal.esm.js",
             "reveal.js/plugin/markdown/markdown.esm.js",
             ...(revealJsOptions.plugins ?? []).map(
-              (plugin) => `reveal.js/plugin/${plugin}/${plugin}.esm.js`,
+              (plugin) => `reveal.js/plugin/${plugin}/${plugin}.esm.js`
             ),
           ]);
 
@@ -268,7 +267,7 @@ export const mdEnhancePlugin =
           addViteOptimizeDepsNeedsInterop(
             bundlerOptions,
             app,
-            "kotlin-playground",
+            "kotlin-playground"
           );
           addViteSsrExternal(bundlerOptions, app, "kotlin-playground");
         }
@@ -311,7 +310,7 @@ export const mdEnhancePlugin =
         if (status.imgMark)
           md.use(
             imgMark,
-            isPlainObject(options.imgMark) ? options.imgMark : {},
+            isPlainObject(options.imgMark) ? options.imgMark : {}
           );
 
         if (options.attrs)
@@ -328,12 +327,12 @@ export const mdEnhancePlugin =
         if (options.sub) md.use(sub);
 
         // TODO: Remove this in v2 stable
-        // @ts-expect-error
+        // @ts-expect-error: card does not exist
         if (options.card && legacy) md.use(legacyCard);
 
         // Additional functions
         if (
-          options.vPre ||
+          options.vPre ??
           // TODO: Remove this in v2 stable
           legacy
         )
@@ -408,11 +407,11 @@ export const mdEnhancePlugin =
 
           presets.forEach((preset) => {
             if (preset === "ts")
-              md.use(playground, getTSPlaygroundPreset(config.ts || {}));
+              md.use(playground, getTSPlaygroundPreset(config.ts ?? {}));
             else if (preset === "vue")
-              md.use(playground, getVuePlaygroundPreset(config.vue || {}));
+              md.use(playground, getVuePlaygroundPreset(config.vue ?? {}));
             else if (preset === "unocss")
-              md.use(playground, getUnoPlaygroundPreset(config.unocss || {}));
+              md.use(playground, getUnoPlaygroundPreset(config.unocss ?? {}));
             else if (isPlainObject(preset)) md.use(playground, preset);
           });
         }
@@ -425,19 +424,19 @@ export const mdEnhancePlugin =
         const { markdownEnv, frontmatter, filePathRelative } = page;
 
         if (options.include) {
-          const { includedFiles = [] } = <IncludeEnv>markdownEnv;
+          const { includedFiles = [] } = markdownEnv as IncludeEnv;
 
           // mark included files as page deps
           page.deps.push(...includedFiles);
 
           // add included files as git deps
-          ((<string[]>frontmatter["gitInclude"]) ??= []).push(
+          ((frontmatter["gitInclude"] as string[]) ??= []).push(
             ...includedFiles.map((file) =>
               path.relative(
                 path.resolve(source, filePathRelative, ".."),
-                path.resolve(source, filePathRelative, file),
-              ),
-            ),
+                path.resolve(source, filePathRelative, file)
+              )
+            )
           );
         }
       },
@@ -451,7 +450,7 @@ export const mdEnhancePlugin =
         if (status.revealJs)
           promises.push(
             prepareRevealJsPluginFile(app, revealJsOptions.plugins),
-            prepareRevealJsStyleFile(app, revealJsOptions.themes),
+            prepareRevealJsStyleFile(app, revealJsOptions.themes)
           );
 
         await Promise.all(promises);

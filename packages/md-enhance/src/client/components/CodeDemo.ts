@@ -89,15 +89,16 @@ export default defineComponent({
 
     const config = computed(
       () =>
-        <Partial<CodeDemoOptions>>(
-          JSON.parse(props.config ? decodeData(props.config) : "{}")
-        ),
+        JSON.parse(
+          props.config ? decodeData(props.config) : "{}",
+        ) as Partial<CodeDemoOptions>,
     );
 
     const codeType = computed(() => {
-      const codeConfig = <Record<string, string>>(
-        JSON.parse(decodeData(props.code))
-      );
+      const codeConfig = JSON.parse(decodeData(props.code)) as Record<
+        string,
+        string
+      >;
 
       return getCode(codeConfig);
     });

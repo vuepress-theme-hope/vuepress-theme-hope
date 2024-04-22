@@ -17,13 +17,13 @@ import { getDarkmodeStatus } from "../utils/index.js";
 import "../styles/sandpack.scss";
 
 const getSandpackFiles = (files: string): SandpackFiles =>
-  <SandpackFiles>JSON.parse(decodeData(files));
+  JSON.parse(decodeData(files)) as SandpackFiles;
 
 const getSandpackOptions = (options: string): SandpackOptions =>
-  <SandpackOptions>JSON.parse(decodeData(options));
+  JSON.parse(decodeData(options)) as SandpackOptions;
 
 const getSandpackCustomSetup = (customSetup: string): SandpackSetup =>
-  <SandpackSetup>JSON.parse(decodeData(customSetup));
+  JSON.parse(decodeData(customSetup)) as SandpackSetup;
 
 export default defineComponent({
   name: "SandPack",

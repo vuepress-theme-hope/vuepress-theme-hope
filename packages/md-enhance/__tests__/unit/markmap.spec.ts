@@ -50,7 +50,7 @@ ${content}
       decodeData(
         /<MarkMap id="markmap-\d+" content="(.*?)"><\/MarkMap>/.exec(
           renderResult,
-        )?.[1] || "",
+        )?.[1] ?? "",
       ),
     ).toMatch(content);
     expect(renderResult).toMatchSnapshot();
