@@ -49,11 +49,11 @@ export const searchProPlugin =
       define: {
         SEARCH_PRO_ENABLE_AUTO_SUGGESTIONS: options.autoSuggestions !== false,
         SEARCH_PRO_CUSTOM_FIELDS: fromEntries(
-          (options.customFields || [])
-            .map(({ formatter }, index) =>
+          options.customFields
+            ?.map(({ formatter }, index) =>
               formatter ? [index.toString(), formatter] : null,
             )
-            .filter((item): item is [string, string] => item !== null),
+            .filter((item): item is [string, string] => item !== null) ?? [],
         ),
         SEARCH_PRO_LOCALES: getLocaleConfig({
           app,
@@ -66,13 +66,13 @@ export const searchProPlugin =
           suggestDelay: options.suggestDelay ?? 0,
           queryHistoryCount: options.queryHistoryCount ?? 5,
           resultHistoryCount: options.resultHistoryCount ?? 5,
-          hotKeys: options.hotKeys || [
+          hotKeys: options.hotKeys ?? [
             { key: "k", ctrl: true },
             { key: "/", ctrl: true },
           ],
-          worker: options.worker || "search-pro.worker.js",
+          worker: options.worker ?? "search-pro.worker.js",
         },
-        SEARCH_PRO_SORT_STRATEGY: JSON.stringify(options.sortStrategy || "max"),
+        SEARCH_PRO_SORT_STRATEGY: JSON.stringify(options.sortStrategy ?? "max"),
       },
 
       clientConfigFile: `${CLIENT_FOLDER}config.js`,

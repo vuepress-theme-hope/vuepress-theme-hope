@@ -89,27 +89,27 @@ const locale: Partial<Locale> = {
   relativeTime: {
     future: "za %s", // Should be `o %s` (change when moment/moment#5408 is fixed)
     past: "pred %s",
-    // @ts-ignore
+    // @ts-expect-error: dayjs locale is not correctly typed
     s: translate,
-    // @ts-ignore
+    // @ts-expect-error: dayjs locale is not correctly typed
     m: translate,
-    // @ts-ignore
+    // @ts-expect-error: dayjs locale is not correctly typed
     mm: translate,
-    // @ts-ignore
+    // @ts-expect-error: dayjs locale is not correctly typed
     h: translate,
-    // @ts-ignore
+    // @ts-expect-error: dayjs locale is not correctly typed
     hh: translate,
-    // @ts-ignore
+    // @ts-expect-error: dayjs locale is not correctly typed
     d: translate,
-    // @ts-ignore
+    // @ts-expect-error: dayjs locale is not correctly typed
     dd: translate,
-    // @ts-ignore
+    // @ts-expect-error: dayjs locale is not correctly typed
     M: translate,
-    // @ts-ignore
+    // @ts-expect-error: dayjs locale is not correctly typed
     MM: translate,
-    // @ts-ignore
+    // @ts-expect-error: dayjs locale is not correctly typed
     y: translate,
-    // @ts-ignore
+    // @ts-expect-error: dayjs locale is not correctly typed
     yy: translate,
   },
 };

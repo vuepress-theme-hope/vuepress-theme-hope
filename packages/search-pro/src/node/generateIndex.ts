@@ -57,7 +57,7 @@ const renderHeader = (node: Element): string => {
     node.children[0].tagName === "a" &&
     node.children[0].attribs["class"] === "header-anchor"
   )
-    node.children = (<Element>node.children[0].children[0]).children;
+    node.children = (node.children[0].children[0] as Element).children;
 
   return node.children
     .map((node) => (node.type === "text" ? node.data : null))
@@ -74,8 +74,8 @@ export const generatePageIndex = (
   indexContent = false,
 ): IndexItem[] => {
   const { contentRendered, data, title } = page;
-  const pageId = <PageIndexId>store.addItem(page.path).toString();
-  const hasExcerpt = "excerpt" in data && data["excerpt"].length;
+  const pageId = store.addItem(page.path).toString() as PageIndexId;
+  const hasExcerpt = "excerpt" in data && data.excerpt.length;
 
   const pageIndex: PageIndexItem = { id: pageId, h: title };
   const results: IndexItem[] = [pageIndex];

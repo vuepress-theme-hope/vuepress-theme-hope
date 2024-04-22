@@ -61,7 +61,7 @@ const locale: Partial<Locale> = {
   ),
   weekdaysShort: "ndz_pon_wt_śr_czw_pt_sob".split("_"),
   weekdaysMin: "Nd_Pn_Wt_Śr_Cz_Pt_So".split("_"),
-  // @ts-ignore
+  // @ts-expect-error: dayjs locale is not correctly typed
   months,
   monthsShort: "sty_lut_mar_kwi_maj_cze_lip_sie_wrz_paź_lis_gru".split("_"),
   ordinal: (n) => `${n}.`,
@@ -71,21 +71,21 @@ const locale: Partial<Locale> = {
     future: "za %s",
     past: "%s temu",
     s: "kilka sekund",
-    // @ts-ignore
+    // @ts-expect-error: dayjs locale is not correctly typed
     m: translate,
-    // @ts-ignore
+    // @ts-expect-error: dayjs locale is not correctly typed
     mm: translate,
-    // @ts-ignore
+    // @ts-expect-error: dayjs locale is not correctly typed
     h: translate,
-    // @ts-ignore
+    // @ts-expect-error: dayjs locale is not correctly typed
     hh: translate,
     d: "1 dzień",
     dd: "%d dni",
     M: "miesiąc",
-    // @ts-ignore
+    // @ts-expect-error: dayjs locale is not correctly typed
     MM: translate,
     y: "rok",
-    // @ts-ignore
+    // @ts-expect-error: dayjs locale is not correctly typed
     yy: translate,
   },
   formats: {

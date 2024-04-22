@@ -11,7 +11,7 @@ export const setPageExcerpt = (app: App): void => {
 
   if (!hasExcerpt)
     pages.forEach((page: Page<{ excerpt?: string }>) => {
-      page.data["excerpt"] = getPageExcerpt(app, page, {
+      page.data.excerpt = getPageExcerpt(app, page, {
         length: 300,
       });
     });

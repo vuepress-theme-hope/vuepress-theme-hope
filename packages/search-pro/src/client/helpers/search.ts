@@ -44,10 +44,10 @@ export const useSearchOptions = (): ComputedRef<SearchLocaleOptions> => {
 
   return computed(
     () =>
-      <SearchLocaleOptions>{
+      ({
         ...options,
         ...(locales[routeLocale.value] || {}),
-      },
+      }) as SearchLocaleOptions,
   );
 };
 

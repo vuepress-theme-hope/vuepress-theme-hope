@@ -30,9 +30,7 @@ interface PageResult {
   contents: [result: MatchedItem, score: number][];
 }
 
-interface ResultMap {
-  [key: string]: PageResult;
-}
+type ResultMap = Record<string, PageResult>;
 
 const sortWithTotal = (valueA: PageResult, valueB: PageResult): number =>
   valueB.contents.reduce((total, [, score]) => total + score, 0) -
@@ -86,7 +84,7 @@ export const getResults = (
           index: info,
           display: displayTerms
             .map((term) =>
-              (<CustomFieldIndexItem>result).c.map((field) =>
+              (result as CustomFieldIndexItem).c.map((field) =>
                 getMatchedContent(field, term),
               ),
             )
@@ -97,17 +95,17 @@ export const getResults = (
       ]);
     } else {
       const headerContent = displayTerms
-        .map((term) => getMatchedContent((<PageIndexItem>result).h, term))
+        .map((term) => getMatchedContent((result as PageIndexItem).h, term))
         .filter((item): item is Word[] => item !== null);
 
       if (headerContent.length)
         contents.push([
-          <TitleMatchedItem | HeadingMatchedItem>{
+          {
             type: isSection ? "heading" : "title",
             id: pageId,
             ...(isSection && { anchor: info }),
             display: headerContent,
-          },
+          } as TitleMatchedItem | HeadingMatchedItem,
           score,
         ]);
 

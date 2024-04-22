@@ -35,7 +35,7 @@ export const injectScssConfigModule = (
 
   // For vite
   if (bundlerName === "vite") {
-    const viteBundlerConfig = <ViteBundlerOptions>config;
+    const viteBundlerConfig = config as ViteBundlerOptions;
 
     // eslint-disable-next-line @typescript-eslint/no-unsafe-assignment
     const originalAdditionalData:
@@ -48,7 +48,7 @@ export const injectScssConfigModule = (
 
     // eslint-disable-next-line
     viteBundlerConfig.viteOptions = mergeViteConfig(
-      viteBundlerConfig.viteOptions || {},
+      viteBundlerConfig.viteOptions ?? {},
       {
         css: {
           preprocessorOptions: {
@@ -79,7 +79,7 @@ export const injectScssConfigModule = (
 
   // For webpack
   else if (bundlerName === "webpack") {
-    const webpackBundlerConfig = <WebpackBundlerOptions>config;
+    const webpackBundlerConfig = config as WebpackBundlerOptions;
 
     if (!webpackBundlerConfig.scss) webpackBundlerConfig.scss = {};
 

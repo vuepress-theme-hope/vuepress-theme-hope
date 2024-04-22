@@ -59,7 +59,7 @@ export const updateSearchIndex = async (
       options.indexContent,
     );
     const { pathLocale } = page;
-    const pageId = <PageIndexId>store.addItem(page.path).toString();
+    const pageId = store.addItem(page.path).toString() as PageIndexId;
     const localeSearchIndex = searchIndexStore[pathLocale];
 
     // Update index
@@ -108,7 +108,7 @@ export const removeSearchIndex = async (
 
   if (page) {
     const { pathLocale } = page;
-    const pageId = <PageIndexId>store.addItem(page.path).toString();
+    const pageId = store.addItem(page.path).toString() as PageIndexId;
     const localeSearchIndex = searchIndexStore[pathLocale];
 
     // Remove previous index

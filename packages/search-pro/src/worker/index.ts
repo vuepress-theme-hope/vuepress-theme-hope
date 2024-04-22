@@ -11,7 +11,7 @@ declare const SEARCH_PRO_INDEX: string;
 
 const searchIndex: SearchIndexStore = fromEntries(
   entries(
-    <Record<string, IndexObject<IndexItem>>>JSON.parse(SEARCH_PRO_INDEX),
+    JSON.parse(SEARCH_PRO_INDEX) as Record<string, IndexObject<IndexItem>>,
   ).map(([localePath, index]) => [
     localePath,
     loadIndex<string, IndexItem, IndexItem>(index, {

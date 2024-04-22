@@ -73,9 +73,9 @@ const locale: Partial<Locale> = {
     "воскресенье_понедельник_вторник_среда_четверг_пятница_суббота".split("_"),
   weekdaysShort: "вск_пнд_втр_срд_чтв_птн_сбт".split("_"),
   weekdaysMin: "вс_пн_вт_ср_чт_пт_сб".split("_"),
-  // @ts-ignore
+  // @ts-expect-error: dayjs locale is not correctly typed
   months,
-  // @ts-ignore
+  // @ts-expect-error: dayjs locale is not correctly typed
   monthsShort,
   weekStart: 1,
   yearStart: 4,
@@ -91,21 +91,21 @@ const locale: Partial<Locale> = {
     future: "через %s",
     past: "%s назад",
     s: "несколько секунд",
-    // @ts-ignore
+    // @ts-expect-error: dayjs locale is not correctly typed
     m: relativeTimeWithPlural,
-    // @ts-ignore
+    // @ts-expect-error: dayjs locale is not correctly typed
     mm: relativeTimeWithPlural,
     h: "час",
-    // @ts-ignore
+    // @ts-expect-error: dayjs locale is not correctly typed
     hh: relativeTimeWithPlural,
     d: "день",
-    // @ts-ignore
+    // @ts-expect-error: dayjs locale is not correctly typed
     dd: relativeTimeWithPlural,
     M: "месяц",
-    // @ts-ignore
+    // @ts-expect-error: dayjs locale is not correctly typed
     MM: relativeTimeWithPlural,
     y: "год",
-    // @ts-ignore
+    // @ts-expect-error: dayjs locale is not correctly typed
     yy: relativeTimeWithPlural,
   },
   ordinal: (n) => n,

@@ -51,8 +51,8 @@ describe("dayjs()", () => {
     expect(
       dayjs("2018-4-28")
         .locale("xx", {
-          weekdays: Array(7).fill("week"),
-          months: Array(12).fill("month"),
+          weekdays: Array<string>(7).fill("week"),
+          months: Array<string>(12).fill("month"),
         })
         .format(format),
     ).toBe("week 28, month");

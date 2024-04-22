@@ -10,7 +10,7 @@ export const generateWorker = async (
   options: SearchProPluginOptions,
   searchStore: SearchIndexStore,
 ): Promise<void> => {
-  const workerFilePath = app.dir.dest(options.worker || "search-pro.worker.js");
+  const workerFilePath = app.dir.dest(options.worker ?? "search-pro.worker.js");
   const searchIndexContent = JSON.stringify(searchStore);
 
   const workerFileContent = await fs.readFile(WORKER_FILE, "utf8");
@@ -25,7 +25,7 @@ export const generateWorker = async (
       )
       .replace(
         "SEARCH_PRO_SORT_STRATEGY",
-        JSON.stringify(options.sortStrategy || "max"),
+        JSON.stringify(options.sortStrategy ?? "max"),
       ),
   );
 };

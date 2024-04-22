@@ -57,27 +57,27 @@ const locale: Partial<Locale> = {
   relativeTime: {
     future: "in %s",
     past: "vor %s",
-    // @ts-ignore
+    // @ts-expect-error: dayjs locale is not correctly typed
     s: relativeTimeFormatter,
-    // @ts-ignore
+    // @ts-expect-error: dayjs locale is not correctly typed
     m: relativeTimeFormatter,
-    // @ts-ignore
+    // @ts-expect-error: dayjs locale is not correctly typed
     mm: relativeTimeFormatter,
-    // @ts-ignore
+    // @ts-expect-error: dayjs locale is not correctly typed
     h: relativeTimeFormatter,
-    // @ts-ignore
+    // @ts-expect-error: dayjs locale is not correctly typed
     hh: relativeTimeFormatter,
-    // @ts-ignore
+    // @ts-expect-error: dayjs locale is not correctly typed
     d: relativeTimeFormatter,
-    // @ts-ignore
+    // @ts-expect-error: dayjs locale is not correctly typed
     dd: relativeTimeFormatter,
-    // @ts-ignore
+    // @ts-expect-error: dayjs locale is not correctly typed
     M: relativeTimeFormatter,
-    // @ts-ignore
+    // @ts-expect-error: dayjs locale is not correctly typed
     MM: relativeTimeFormatter,
-    // @ts-ignore
+    // @ts-expect-error: dayjs locale is not correctly typed
     y: relativeTimeFormatter,
-    // @ts-ignore
+    // @ts-expect-error: dayjs locale is not correctly typed
     yy: relativeTimeFormatter,
   },
 };

@@ -21,7 +21,7 @@ describe("generateIndex", () => {
     const store = new Store();
 
     app.pages.forEach((page) => {
-      page.data["excerpt"] = getPageExcerpt(app, page, {
+      page.data.excerpt = getPageExcerpt(app, page, {
         length: 0,
       });
 
@@ -33,7 +33,7 @@ describe("generateIndex", () => {
     const store = new Store();
 
     app.pages.forEach((page) => {
-      page.data["excerpt"] = getPageExcerpt(app, page, {
+      page.data.excerpt = getPageExcerpt(app, page, {
         length: 0,
       });
 
@@ -45,7 +45,7 @@ describe("generateIndex", () => {
     const store = new Store();
 
     app.pages.forEach((page) => {
-      page.data["excerpt"] = getPageExcerpt(app, page, {
+      page.data.excerpt = getPageExcerpt(app, page, {
         length: 0,
       });
 

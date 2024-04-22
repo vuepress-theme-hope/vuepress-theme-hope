@@ -46,7 +46,7 @@ export default defineComponent({
          * Event does not come from the search box itself or
          * user isn't focusing (and thus perhaps typing in) a text control
          */
-        !isFocusingTextControl(event.target as EventTarget)
+        !isFocusingTextControl(event.target!)
       ) {
         event.preventDefault();
         isActive.value = true;
