@@ -19,19 +19,19 @@ import { useLightGalleryOptions } from "../helpers/index.js";
 
 import "lightgallery/scss/lightgallery.scss";
 
-declare const IMAGE_SELECTOR: string;
-declare const LIGHT_GALLERY_DELAY: number;
+declare const __LG_SELECTOR__: string;
+declare const __LG_DELAY__: number;
 
 const getImages = (images: HTMLImageElement[]): GalleryItem[] =>
   images.map(
     ({ alt, srcset, src }) =>
-      <GalleryItem>{
+      ({
         src,
         srcset,
         thumb: src || srcset,
         alt,
         subHtml: alt,
-      },
+      }) as GalleryItem,
   );
 
 export default defineComponent({
@@ -53,9 +53,7 @@ export default defineComponent({
         useLightGalleryPlugins(),
         nextTick().then(
           () =>
-            new Promise<void>((resolve) =>
-              setTimeout(resolve, LIGHT_GALLERY_DELAY),
-            ),
+            new Promise<void>((resolve) => setTimeout(resolve, __LG_DELAY__)),
         ),
       ]);
 
@@ -63,7 +61,7 @@ export default defineComponent({
         instance?.destroy();
 
         const images = Array.from(
-          document.querySelectorAll<HTMLImageElement>(IMAGE_SELECTOR),
+          document.querySelectorAll<HTMLImageElement>(__LG_SELECTOR__),
         );
 
         instance = new lightGallery(container.value!, {

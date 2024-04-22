@@ -1,6 +1,6 @@
-type LightGalleryPlugin<T = unknown> = {
+interface LightGalleryPlugin<T = unknown> {
   default: new (instance: LightGallery, $LG: LgQuery) => T;
-};
+}
 
 declare module "lightgallery/lightgallery.es5.js" {
   import { LightGallery } from "lightgallery/lightgallery.js";
