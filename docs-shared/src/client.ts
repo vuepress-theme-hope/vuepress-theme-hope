@@ -7,9 +7,9 @@ import SocialLink from "./components/SocialLink.js";
 import "vuepress-theme-hope/presets/shinning-feature-panel.scss";
 
 // eslint-disable-next-line @typescript-eslint/no-unnecessary-type-assertion
-export default <ClientConfig>defineClientConfig({
+export default defineClientConfig({
   enhance: ({ app }) => {
     app.component("ProjectLink", ProjectLink);
     app.component("SocialLink", SocialLink);
   },
-});
+}) as ClientConfig;

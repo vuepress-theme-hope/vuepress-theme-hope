@@ -16,7 +16,7 @@ export default theme("search-pro", {
   },
 
   plugins: {
-    // @ts-ignore
+    // @ts-expect-error: Force disable docsearch
     docsearch: false,
     mdEnhance: {
       codetabs: true,

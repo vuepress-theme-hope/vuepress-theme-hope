@@ -13,7 +13,7 @@ export default defineComponent({
     const themeLocale = useThemeLocaleData();
 
     const getMsg = (): string => {
-      const messages = themeLocale.value.routeLocales["notFoundMsg"];
+      const messages = themeLocale.value.routeLocales.notFoundMsg;
 
       return messages[Math.floor(Math.random() * messages.length)];
     };
@@ -32,7 +32,7 @@ export default defineComponent({
         h(
           "h1",
           { class: "error-title" },
-          themeLocale.value.routeLocales["notFoundTitle"],
+          themeLocale.value.routeLocales.notFoundTitle,
         ),
         h("p", { class: "error-hint" }, getMsg()),
       ]);

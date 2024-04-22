@@ -3,13 +3,11 @@ import { createRequire } from "node:module";
 import { navbar } from "docs-shared";
 import { fs } from "vuepress/utils";
 
-const { version } = <{ version: string }>(
-  fs.readJsonSync(
-    createRequire(import.meta.url).resolve(
-      "vuepress-plugin-md-enhance/package.json",
-    ),
-  )
-);
+const { version } = fs.readJsonSync(
+  createRequire(import.meta.url).resolve(
+    "vuepress-plugin-md-enhance/package.json",
+  ),
+) as { version: string };
 
 export const enNavbar = navbar([
   "/",

@@ -70,7 +70,7 @@ export default defineComponent({
           scale.value = getScale(window.innerWidth);
 
           // draw svg to #id
-          // @ts-ignore
+          // @ts-expect-error: Preset type issues
           flowchart.draw(id, {
             ...flowchartPresets[preset.value],
             scale: scale.value,
@@ -91,7 +91,7 @@ export default defineComponent({
             element.value!.innerHTML = "";
 
             // draw svg to #id
-            // @ts-ignore
+            // @ts-expect-error: Preset type issues
             flowchart.draw(id, {
               ...flowchartPresets[preset.value],
               scale: scale.value,
@@ -110,7 +110,7 @@ export default defineComponent({
             if (scale.value !== newScale) {
               scale.value = newScale;
 
-              // @ts-ignore
+              // @ts-expect-error: Preset type issues
               flowchart.draw(id, {
                 ...flowchartPresets[preset.value],
                 scale: newScale,

@@ -1,7 +1,7 @@
 declare module "artplayer-plugin-danmuku" {
   import type Artplayer from "artplayer";
 
-  export type Danmu = {
+  export interface Danmu {
     /**
      * 弹幕文本
      */
@@ -30,9 +30,9 @@ declare module "artplayer-plugin-danmuku" {
      * @default false
      */
     border?: boolean;
-  };
+  }
 
-  export type ArtPlayerDanmukuOptions = {
+  export interface ArtPlayerDanmukuOptions {
     /**
      * 弹幕源，可以是弹幕数组，xml 地址或者一个返回 Promise 的函数
      */
@@ -122,9 +122,9 @@ declare module "artplayer-plugin-danmuku" {
      * 发送弹幕前的自定义校验，返回 true 则可以发送
      */
     beforeEmit?: (danmu: Danmu) => boolean;
-  };
+  }
 
-  export type ArtPlayerDanmukuPlugin = {
+  export interface ArtPlayerDanmukuPlugin {
     name: "artplayerPluginDanmuku";
 
     /**
@@ -161,7 +161,7 @@ declare module "artplayer-plugin-danmuku" {
      * 是否弹幕层停止状态
      */
     isStop: boolean;
-  };
+  }
 
   declare const artplayerPluginDanmuku: (
     option: ArtPlayerDanmukuOptions,

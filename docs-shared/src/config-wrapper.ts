@@ -20,7 +20,7 @@ export const config = (
   const docsBase = IS_NETLIFY
     ? "/"
     : base
-      ? <`/${string}/`>`/v2/${base}/`
+      ? (`/v2/${base}/` as `/${string}/`)
       : "/v2/";
 
   return defineUserConfig({
