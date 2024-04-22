@@ -20,9 +20,9 @@ export const createTsConfig = ({
   if (existsSync(tsconfigPath)) {
     console.log(locale.flow.updateTsConfig);
 
-    const tsconfigContent = <Record<string, unknown> & { include?: string[] }>(
-      JSON.parse(readFileSync(tsconfigPath, { encoding: "utf-8" }))
-    );
+    const tsconfigContent = JSON.parse(
+      readFileSync(tsconfigPath, { encoding: "utf-8" }),
+    ) as Record<string, unknown> & { include?: string[] };
 
     deepAssign(tsconfigContent, {
       compilerOptions: {

@@ -21,7 +21,7 @@ export const getVersion = async (
 
             res.on("data", (data) => (body += data));
             res.on("end", () => {
-              resolve((<Record<string, string>>JSON.parse(body))[tag]);
+              resolve((JSON.parse(body) as Record<string, string>)[tag]);
             });
           } else {
             reject();
