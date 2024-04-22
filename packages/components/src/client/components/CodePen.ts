@@ -94,13 +94,13 @@ export default defineComponent({
       };
     };
 
-    const user = computed(() => getInfo().user || props.user);
+    const user = computed(() => getInfo().user ?? props.user);
 
-    const slugHash = computed(() => getInfo().slugHash || props.slugHash);
+    const slugHash = computed(() => getInfo().slugHash ?? props.slugHash);
 
     const options = computed(
       () =>
-        <CodePenOptions>{
+        ({
           user: user.value,
           "slug-hash": slugHash.value,
           "theme-id": props.theme,
@@ -108,7 +108,7 @@ export default defineComponent({
           "pen-title": props.title,
           height: props.height,
           preview: props.status === "preview" ? "true" : "",
-        },
+        }) as CodePenOptions,
     );
 
     onMounted(() => {

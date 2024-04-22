@@ -44,7 +44,7 @@ export const convertOptions = (
 
   if (isPlainObject(options.rootComponents)) {
     droppedLogger({
-      options: <Record<string, unknown>>options.rootComponents,
+      options: options.rootComponents as Record<string, unknown>,
       old: "addThis",
     });
 

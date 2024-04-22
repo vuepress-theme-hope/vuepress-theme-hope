@@ -17,7 +17,7 @@ export const getDefine =
     legacy: boolean,
   ): ((app: App) => Record<string, unknown>) =>
   (app) => {
-    const { assets, prefix } = options.componentOptions?.fontIcon || {};
+    const { assets, prefix } = options.componentOptions?.fontIcon ?? {};
     const result: Record<string, unknown> = {};
 
     if (options.components?.includes("FontIcon")) {
@@ -40,7 +40,7 @@ export const getDefine =
         fullscreen: true,
         playbackRate: true,
         setting: true,
-        ...(options.componentOptions?.artPlayer || {}),
+        ...options.componentOptions?.artPlayer,
       };
       result["MPEGTS_JS_INSTALLED"] = isInstalled("mpegts.js");
     }

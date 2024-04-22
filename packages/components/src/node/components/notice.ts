@@ -8,17 +8,17 @@ export const getNoticeOptions = (
       if ("match" in item) {
         const stringRegExp = item.match.toString();
 
-        return <NoticeClientOptions>{
+        return {
           noticeKey: key,
           ...item,
           match: stringRegExp.slice(1, stringRegExp.length - 1),
-        };
+        } as NoticeClientOptions;
       }
 
-      return <NoticeClientOptions>{
+      return {
         noticeKey: key,
         ...item,
-      };
+      } as NoticeClientOptions;
     })
     .sort((a, b) =>
       "match" in a

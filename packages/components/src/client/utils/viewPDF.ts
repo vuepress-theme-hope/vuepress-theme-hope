@@ -105,7 +105,7 @@ const addPDFViewer = (
   const el = document.createElement(elementType);
 
   el.className = "pdf-viewer";
-  // @ts-ignore
+  // @ts-expect-error: Force override iframe type
   el.type = "application/pdf";
   el.title = title;
   el.src = source;

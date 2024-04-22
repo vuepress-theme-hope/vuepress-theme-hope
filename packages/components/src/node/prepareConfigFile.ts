@@ -67,7 +67,7 @@ if(!hasGlobalComponent("${item}")) app.component("${item}", ${item});
   if (legacy && rootComponents.backToTop) {
     const { threshold, progress } = isPlainObject(rootComponents.backToTop)
       ? rootComponents.backToTop
-      : <BackToTopOptions>{};
+      : ({} as BackToTopOptions);
 
     shouldImportH = true;
     imports.push(

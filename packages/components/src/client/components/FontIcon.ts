@@ -59,7 +59,7 @@ export default defineComponent({
 
       if (props.size)
         styleObject["font-size"] = Number.isNaN(Number(props.size))
-          ? <string>props.size
+          ? (props.size as string)
           : `${props.size}px`;
 
       return keys(styleObject).length ? styleObject : null;

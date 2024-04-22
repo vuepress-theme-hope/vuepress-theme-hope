@@ -25,7 +25,7 @@ export const useSize = <E extends HTMLElement>(
   extraHeight: MaybeRef<number> = 0,
 ): SizeInfo<E> => {
   const el = shallowRef<E>();
-  const width = computed(() => getValue(unref(options.width) || "100%"));
+  const width = computed(() => getValue(unref(options.width) ?? "100%"));
   const height = ref("auto");
 
   const getRadio = (ratio: number | string | undefined): number => {

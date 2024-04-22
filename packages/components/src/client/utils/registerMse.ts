@@ -14,7 +14,7 @@ if (typeof MPEGTS_JS_INSTALLED !== "undefined" && MPEGTS_JS_INSTALLED)
   SUPPORTED_VIDEO_TYPES.push("ts", "flv");
 
 export const getTypeByUrl = (url: string): string =>
-  url?.split(".").pop() || "";
+  url?.split(".").pop() ?? "";
 
 export const registerMseDash = async (
   mediaElement: HTMLMediaElement,

@@ -74,7 +74,7 @@ export default defineComponent({
       }: PageData<
         Record<never, never>,
         { tag?: string | string[]; tags?: string | string[] }
-      >) => frontmatter["tag"] || frontmatter["tags"],
+      >) => frontmatter.tag ?? frontmatter.tags,
     },
 
     /**
