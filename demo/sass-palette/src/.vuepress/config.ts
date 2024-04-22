@@ -2,7 +2,7 @@ import { defaultTheme } from "@vuepress/theme-default";
 import { defineUserConfig } from "vuepress/cli";
 import { sassPalettePlugin } from "vuepress-plugin-sass-palette";
 
-const base = <"/" | `/${string}/`>process.env["BASE"] || "/";
+const base = (process.env["BASE"] as "/" | `/${string}/`) || "/";
 
 export default defineUserConfig({
   base,
