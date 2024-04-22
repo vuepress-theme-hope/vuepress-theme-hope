@@ -47,7 +47,7 @@ export const searchProPlugin =
       },
 
       define: {
-        SEARCH_PRO_ENABLE_AUTO_SUGGESTIONS: options.autoSuggestions !== false,
+        SEARCH_PRO_ENABLE_AUTO_SUGGESTIONS: options.autoSuggestions ?? true,
         SEARCH_PRO_CUSTOM_FIELDS: fromEntries(
           options.customFields
             ?.map(({ formatter }, index) =>

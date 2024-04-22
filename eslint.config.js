@@ -36,7 +36,7 @@ export default tseslint.config(
       parserOptions: {
         parser: tseslint.parser,
         tsconfigDirName: import.meta.dirname,
-        project: ["./tsconfig.json"],
+        project: ["./tsconfig.eslint.json"],
         extraFileExtensions: [".vue"],
       },
     },
@@ -181,8 +181,9 @@ export default tseslint.config(
         },
       ],
       "@typescript-eslint/no-explicit-any": ["warn", { ignoreRestArgs: true }],
-      "@typescript-eslint/no-non-null-assertion": "off",
+      // "@typescript-eslint/no-non-null-assertion": "off",
       "@typescript-eslint/no-unsafe-member-access": "warn",
+      "@typescript-eslint/prefer-nullish-coalescing": "warn",
     },
   },
   {
@@ -192,9 +193,19 @@ export default tseslint.config(
     },
   },
   {
-    files: ["scripts/**.js"],
+    files: ["scripts/**.js", "**/gulpfile.js"],
     languageOptions: {
       globals: globals.node,
+    },
+  },
+  {
+    files: ["**/*.cjs"],
+    languageOptions: {
+      globals: globals.node,
+    },
+    rules: {
+      "@typescript-eslint/no-var-requires": "off",
+      "import/no-commonjs": "off",
     },
   },
   {

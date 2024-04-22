@@ -117,12 +117,12 @@ export default defineComponent({
         const provider = event.detail;
 
         if (provider?.type === "hls" && HLS_JS_INSTALLED)
-          // @ts-ignore
+          // @ts-expect-error: Issue in vidstack
           // eslint-disable-next-line @typescript-eslint/explicit-function-return-type
           provider.library = () =>
             import(/* webpackChunkName: "hls" */ "hls.js/dist/hls.min.js");
         else if (provider?.type === "dashjs" && DASHJS_INSTALLED)
-          // @ts-ignore
+          // @ts-expect-error: Issue in vidstack
           // eslint-disable-next-line @typescript-eslint/explicit-function-return-type
           provider.library = () =>
             import(/* webpackChunkName: "dashjs" */ "dashjs");

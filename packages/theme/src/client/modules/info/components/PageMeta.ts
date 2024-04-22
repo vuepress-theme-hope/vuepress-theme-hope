@@ -50,7 +50,7 @@ export default defineComponent({
                 ),
               ])
             : null,
-          contributors.value && contributors.value.length
+          contributors.value?.length
             ? h("div", { class: "contributors" }, [
                 h(
                   "span",

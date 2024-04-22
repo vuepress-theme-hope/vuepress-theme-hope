@@ -1,12 +1,13 @@
 {
   "extends": "../tsconfig.build.base.json",
   "compilerOptions": {
+    "baseUrl": "./",
     "lib": ["DOM", "ESNext"],
     "rootDir": "./src",
     "outDir": "./lib",
     "paths": {
-      "@theme-hope/*": ["../packages/theme/src/client/*.js"]
+      "@theme-hope/*": ["./node_modules/vuepress-theme-hope/src/client/*.js"]
     }
   },
-  "include": ["./src", "./src/*.d.ts"]
+  "include": ["./src"]
 }
