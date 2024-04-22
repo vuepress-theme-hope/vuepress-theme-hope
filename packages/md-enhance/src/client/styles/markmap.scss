@@ -5,6 +5,16 @@
   text-align: center;
 }
 
+// override css variables
+.markmap {
+  --markmap-a-color: var(--vp-tc) !important;
+  --markmap-a-hover-color: var(--vp-tc) !important;
+  --markmap-code-bg: var(--vp-brc) !important;
+  --markmap-code-color: var(--vp-c) !important;
+  --markup-circle-open-bg: var(--white) !important;
+  --markup-text-color: var(--vp-c) !important;
+}
+
 .markmap-wrapper {
   position: relative;
   text-align: center;
@@ -17,6 +27,7 @@
   .markmap-svg {
     width: 100%;
     min-height: 360px;
+    color: var(--vp-c);
 
     @media print {
       page-break-inside: avoid;
@@ -35,6 +46,8 @@
 
     code {
       padding: 0 !important;
+      background-color: var(--vp-brc) !important;
+      color: inherit;
     }
   }
 
