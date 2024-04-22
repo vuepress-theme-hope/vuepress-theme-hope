@@ -33,7 +33,7 @@ export const getBlogPlugin = (
     encryptedPaths.some((key) => startsWith(decodeURI(path), key));
 
   return blogPlugin({
-    excerpt: blogOptions.excerpt !== false,
+    excerpt: blogOptions.excerpt ?? true,
 
     ...("excerptLength" in blogOptions
       ? { excerptLength: blogOptions.excerptLength }

@@ -1,3 +1,4 @@
+/* eslint-disable @typescript-eslint/no-unsafe-enum-comparison */
 import { entries, fromEntries, isArray, keys } from "@vuepress/helper";
 import type { AnyNode, Element } from "cheerio";
 import { load } from "cheerio";

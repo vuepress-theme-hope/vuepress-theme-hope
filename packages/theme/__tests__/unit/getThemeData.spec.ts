@@ -1,5 +1,6 @@
 /* eslint-disable @typescript-eslint/naming-convention */
 import { describe, expect, it } from "vitest";
+import type { Bundler } from "vuepress/core";
 import { createBaseApp } from "vuepress/core";
 import { path } from "vuepress/utils";
 
@@ -16,7 +17,7 @@ describe("should generate themeData correctly", () => {
           lang: "en-US",
         },
       },
-      bundler: {} as any,
+      bundler: {} as Bundler,
       source: path.resolve(__dirname, "./__fixtures__/src"),
       theme: emptyTheme,
     });
@@ -37,7 +38,7 @@ describe("should generate themeData correctly", () => {
           lang: "en-US",
         },
       },
-      bundler: {} as any,
+      bundler: {} as Bundler,
       source: path.resolve(__dirname, "./__fixtures__/src"),
       theme: emptyTheme,
     });
@@ -64,7 +65,7 @@ describe("should generate themeData correctly", () => {
           lang: "zh-CN",
         },
       },
-      bundler: {} as any,
+      bundler: {} as Bundler,
       source: path.resolve(__dirname, "./__fixtures__/src"),
       theme: emptyTheme,
     });
@@ -105,7 +106,7 @@ describe("should generate themeData correctly", () => {
           lang: "zh-CN",
         },
       },
-      bundler: {} as any,
+      bundler: {} as Bundler,
       source: path.resolve(__dirname, "./__fixtures__/src"),
       theme: emptyTheme,
     });
@@ -137,7 +138,7 @@ describe("should generate themeData correctly", () => {
           lang: "en-US",
         },
       },
-      bundler: {} as any,
+      bundler: {} as Bundler,
       source: path.resolve(__dirname, "./__fixtures__/src"),
       theme: emptyTheme,
     });

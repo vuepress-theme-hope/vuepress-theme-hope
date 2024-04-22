@@ -64,7 +64,7 @@ export default defineComponent({
                   {
                     "hide-in-pad":
                       siteBrandLogo.value &&
-                      themeLocale.value.hideSiteNameOnMobile !== false,
+                      (themeLocale.value.hideSiteNameOnMobile ?? true),
                   },
                 ],
               },
