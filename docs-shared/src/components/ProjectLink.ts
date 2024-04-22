@@ -15,20 +15,18 @@ const ProjectLink: FunctionalComponent<
   ProjectLinkProps,
   Record<never, never>,
   { default: () => string }
-> = (props, { slots }) => {
-  const path = ensureLeadingSlash(props.path || "/");
-  const base =
-    props.name === "hope" ? "" : `/${props.name.replace(/\d+$/, "")}`;
+> = ({ name, type = "plugin", path = "/" }, { slots }) => {
+  const base = name === "hope" ? "" : `/${name.replace(/\d+$/, "")}`;
 
   return h(
     "a",
     {
       href: `https://${
         IS_NETLIFY
-          ? `${props.type || "plugin"}-${props.name}.vuejs.press${path}`
+          ? `${type ?? "plugin"}-${name}.vuejs.press${ensureLeadingSlash(path)}`
           : `vuepress-theme-hope.${
               IS_GITEE ? "gitee" : "github"
-            }.io/v2${base}${path}`
+            }.io/v2${base}${ensureLeadingSlash(path)}`
       }`,
       target: "_blank",
     },
