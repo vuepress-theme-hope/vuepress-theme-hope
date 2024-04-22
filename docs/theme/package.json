@@ -33,7 +33,7 @@
     "katex": "0.16.10",
     "kotlin-playground": "1.30.0",
     "markmap-lib": "0.16.1",
-    "markmap-toolbar": "0.16.0",
+    "markmap-toolbar": "0.17.0",
     "markmap-view": "0.16.0",
     "mermaid": "10.9.0",
     "sandpack-vue3": "3.1.11",

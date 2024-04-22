@@ -267,8 +267,8 @@ importers:
         specifier: 0.16.1
         version: 0.16.1(markmap-common@0.16.0)
       markmap-toolbar:
-        specifier: 0.16.0
-        version: 0.16.0(markmap-common@0.16.0)
+        specifier: 0.17.0
+        version: 0.17.0(markmap-common@0.16.0)
       markmap-view:
         specifier: 0.16.0
         version: 0.16.0(markmap-common@0.16.0)
@@ -384,8 +384,8 @@ importers:
         specifier: 0.16.1
         version: 0.16.1(markmap-common@0.16.0)
       markmap-toolbar:
-        specifier: 0.16.0
-        version: 0.16.0(markmap-common@0.16.0)
+        specifier: 0.17.0
+        version: 0.17.0(markmap-common@0.16.0)
       markmap-view:
         specifier: 0.16.0
         version: 0.16.0(markmap-common@0.16.0)
@@ -444,8 +444,8 @@ importers:
         specifier: 0.16.1
         version: 0.16.1(markmap-common@0.16.0)
       markmap-toolbar:
-        specifier: 0.16.0
-        version: 0.16.0(markmap-common@0.16.0)
+        specifier: 0.17.0
+        version: 0.17.0(markmap-common@0.16.0)
       markmap-view:
         specifier: 0.16.0
         version: 0.16.0(markmap-common@0.16.0)
@@ -747,8 +747,8 @@ importers:
         specifier: 0.16.1
         version: 0.16.1(markmap-common@0.16.0)
       markmap-toolbar:
-        specifier: 0.16.0
-        version: 0.16.0(markmap-common@0.16.0)
+        specifier: 0.17.0
+        version: 0.17.0(markmap-common@0.16.0)
       markmap-view:
         specifier: 0.16.0
         version: 0.16.0(markmap-common@0.16.0)
@@ -986,8 +986,8 @@ importers:
         specifier: ^0.15.5 || ^0.16.0
         version: 0.16.1(markmap-common@0.16.0)
       markmap-toolbar:
-        specifier: ^0.15.5 || ^0.16.0
-        version: 0.16.0(markmap-common@0.16.0)
+        specifier: ^0.15.5 || ^0.16.0 || ^0.17.0
+        version: 0.17.0(markmap-common@0.16.0)
       markmap-view:
         specifier: ^0.15.5 || ^0.16.0
         version: 0.16.0(markmap-common@0.16.0)
@@ -6570,8 +6570,8 @@ packages:
     peerDependencies:
       markmap-common: '*'
 
-  markmap-toolbar@0.16.0:
-    resolution: {integrity: sha512-Umnxc6Y4T0CioPlmvfm5M5D2/7BJTA82kvgRQIu/y0oQzJl0h3mxBOKPrhok+89RotagPwhQ4g7el4Td2W+tDQ==}
+  markmap-toolbar@0.17.0:
+    resolution: {integrity: sha512-zRkg+pYtjDefJ4lSG0KownAN3eqkJcrTei+HbobBWsWTsc7qdUMn2Ewd97SFHCkGoo1nrG0aW7dzDP6lHWuDkw==}
     peerDependencies:
       markmap-common: '*'
 
@@ -8894,6 +8894,7 @@ packages:
 
   workbox-google-analytics@7.0.0:
     resolution: {integrity: sha512-MEYM1JTn/qiC3DbpvP2BVhyIH+dV/5BjHk756u9VbwuAhu0QHyKscTnisQuz21lfRpOwiS9z4XdqeVAKol0bzg==}
+    deprecated: It is not compatible with newer versions of GA starting with v4, as long as you are using GAv3 it should be ok, but the package is not longer being maintained
 
   workbox-navigation-preload@7.0.0:
     resolution: {integrity: sha512-juWCSrxo/fiMz3RsvDspeSLGmbgC0U9tKqcUPZBCf35s64wlaLXyn2KdHHXVQrb2cqF7I0Hc9siQalainmnXJA==}
@@ -15205,7 +15206,7 @@ snapshots:
       remarkable: 2.0.1
       remarkable-katex: 1.2.1
 
-  markmap-toolbar@0.16.0(markmap-common@0.16.0):
+  markmap-toolbar@0.17.0(markmap-common@0.16.0):
     dependencies:
       '@babel/runtime': 7.24.4
       '@gera2ld/jsx-dom': 2.2.2
