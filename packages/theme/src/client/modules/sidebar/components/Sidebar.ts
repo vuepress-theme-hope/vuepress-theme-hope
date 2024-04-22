@@ -68,7 +68,7 @@ export default defineComponent({
         },
         [
           slots.top?.(),
-          slots.default?.() || h(SidebarLinks, { config: sidebarItems.value }),
+          slots.default?.() ?? h(SidebarLinks, { config: sidebarItems.value }),
           slots.bottom?.(),
         ],
       );

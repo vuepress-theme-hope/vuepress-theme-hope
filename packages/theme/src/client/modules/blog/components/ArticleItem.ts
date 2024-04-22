@@ -84,7 +84,7 @@ export default defineComponent({
             typeof: "Article",
           },
           [
-            slots.cover?.({ cover }) ||
+            slots.cover?.({ cover }) ??
               (cover
                 ? [
                     h("img", {
@@ -104,14 +104,14 @@ export default defineComponent({
               RouteLink,
               { to: props.path },
               () =>
-                slots.title?.({ title, isEncrypted, type }) ||
+                slots.title?.({ title, isEncrypted, type }) ??
                 h("header", { class: "vp-article-title" }, [
                   isEncrypted ? h(LockIcon) : null,
                   type === PageType.slide ? h(SlideIcon) : null,
                   h("span", { property: "headline" }, title),
                 ]),
             ),
-            slots.excerpt?.({ excerpt }) ||
+            slots.excerpt?.({ excerpt }) ??
               (excerpt
                 ? h("div", {
                     class: "vp-article-excerpt",
@@ -119,7 +119,7 @@ export default defineComponent({
                   })
                 : null),
             h("hr", { class: "vp-article-hr" }),
-            slots.info?.({ info }) ||
+            slots.info?.({ info }) ??
               h(PageInfo, {
                 info,
                 ...(items.value ? { items: items.value } : {}),

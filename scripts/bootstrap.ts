@@ -8,7 +8,7 @@ const packagesDir = resolve(process.cwd(), "packages");
 const files = readdirSync(packagesDir);
 
 files.forEach((pkgName) => {
-  if (pkgName.charAt(0) === "." || pkgName === "theme") return;
+  if (pkgName.startsWith(".") || pkgName === "theme") return;
 
   const desc = `${pkgName} plugin for VuePress`;
   const pkgPath = join(packagesDir, pkgName, "package.json");

@@ -26,15 +26,13 @@ export const useNavbarLanguageDropdown =
 
     return computedWithControl(
       __VUEPRESS_DEV__
-        ? <WatchSource>(
-            (() => [
-              route.path,
-              siteLocale.value.locales,
-              themeData.value.extraLocales,
-              themeLocale.value.navbarLocales,
-            ])
-          )
-        : <WatchSource>(() => route.path),
+        ? ((() => [
+            route.path,
+            siteLocale.value.locales,
+            themeData.value.extraLocales,
+            themeLocale.value.navbarLocales,
+          ]) as WatchSource)
+        : ((() => route.path) as WatchSource),
       () => {
         const localePaths = keys(siteLocale.value.locales);
         const extraLocales = entries(themeData.value.extraLocales ?? {});
@@ -55,7 +53,7 @@ export const useNavbarLanguageDropdown =
                 siteLocale.value.locales?.[targetLocalePath] ?? {};
               const targetThemeLocale =
                 themeData.value.locales?.[targetLocalePath] ?? {};
-              const targetLang = targetSiteLocale.lang || "";
+              const targetLang = targetSiteLocale.lang;
 
               const text =
                 targetThemeLocale.navbarLocales?.langName ?? targetLang;

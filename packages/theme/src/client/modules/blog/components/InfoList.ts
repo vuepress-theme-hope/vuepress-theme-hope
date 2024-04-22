@@ -56,7 +56,7 @@ export default defineComponent({
         h(
           "div",
           { class: "vp-blog-type-switcher" },
-          (<[InfoType, FunctionalComponent][]>entries(buttons)).map(
+          (entries(buttons) as [InfoType, FunctionalComponent][]).map(
             ([key, Icon]) =>
               h(
                 "button",

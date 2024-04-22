@@ -36,9 +36,9 @@ export const checkVuePressVersion = (): boolean => {
 
   do {
     if (fs.existsSync(path.resolve(dir, "package.json"))) {
-      const content = <PackageJSON>(
-        JSON.parse(fs.readFileSync(path.resolve(dir, "package.json"), "utf-8"))
-      );
+      const content = JSON.parse(
+        fs.readFileSync(path.resolve(dir, "package.json"), "utf-8"),
+      ) as PackageJSON;
 
       const checkPackage = (pkgName: string): void => {
         if (pkgName === "vuepress") foundVuePress = true;
@@ -81,12 +81,11 @@ export const checkVuePressVersion = (): boolean => {
 
   let isVersionMatch = true;
 
-  const { version: vuePressVersion } = <PackageJSON>(
-    require("vuepress/package.json")
-  );
+  const { version: vuePressVersion } =
+    require("vuepress/package.json") as PackageJSON;
 
   bundlerNames.forEach((pkgName) => {
-    const { version } = <PackageJSON>require(`${pkgName}/package.json`);
+    const { version } = require(`${pkgName}/package.json`) as PackageJSON;
 
     if (version !== vuePressVersion) {
       console.error(
@@ -102,7 +101,7 @@ export const checkVuePressVersion = (): boolean => {
   });
 
   corePackageNames.forEach((pkgName) => {
-    const { version } = <PackageJSON>require(`${pkgName}/package.json`);
+    const { version } = require(`${pkgName}/package.json`) as PackageJSON;
 
     if (version !== vuePressVersion) {
       console.error(

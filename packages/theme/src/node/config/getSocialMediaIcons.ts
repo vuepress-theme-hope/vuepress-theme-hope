@@ -59,7 +59,7 @@ export const getSocialMediaIcons = (
     return false;
   };
 
-  entries(themeData.blog?.medias || {}).forEach(([key, value]) => {
+  entries(themeData.blog?.medias ?? {}).forEach(([key, value]) => {
     const result = checkIcon(key, value);
 
     if (result) themeData.blog!.medias![key] = result;
@@ -68,7 +68,7 @@ export const getSocialMediaIcons = (
 
   if (themeData.locales)
     values(themeData.locales).forEach((localeConfig) => {
-      entries(localeConfig.blog?.medias || {}).forEach(([key, value]) => {
+      entries(localeConfig.blog?.medias ?? {}).forEach(([key, value]) => {
         const result = checkIcon(key, value);
 
         if (result) localeConfig.blog!.medias![key] = result;

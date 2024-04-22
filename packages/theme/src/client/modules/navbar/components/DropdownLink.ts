@@ -36,7 +36,7 @@ export default defineComponent({
     const config = toRef(props, "config");
 
     const dropdownAriaLabel = computed(
-      () => config.value.ariaLabel || config.value.text,
+      () => config.value.ariaLabel ?? config.value.text,
     );
 
     const open = ref(false);

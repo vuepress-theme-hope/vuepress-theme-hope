@@ -24,9 +24,9 @@ export default defineComponent({
     const skipToMainContent = shallowRef<HTMLSpanElement>();
 
     const focusMainContent = ({ target }: Event): void => {
-      const el = document.querySelector(
+      const el: HTMLElement = document.querySelector(
         (target as HTMLAnchorElement).hash,
-      ) as HTMLAnchorElement;
+      )!;
 
       if (el) {
         const removeTabIndex = (): void => {

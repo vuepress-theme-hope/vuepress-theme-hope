@@ -62,7 +62,7 @@ export default defineComponent({
 
     // Resolve the `target` attr
     const linkTarget = computed(
-      () => config.value.target || (isHttp.value ? "_blank" : undefined),
+      () => config.value.target ?? (isHttp.value ? "_blank" : undefined),
     );
 
     // If the `target` attr is "_blank"
@@ -76,13 +76,12 @@ export default defineComponent({
     // Resolve the `rel` attr
     const linkRel = computed(
       () =>
-        config.value.rel ||
-        (isBlankTarget.value ? "noopener noreferrer" : null),
+        config.value.rel ?? (isBlankTarget.value ? "noopener noreferrer" : ""),
     );
 
     // Resolve the `aria-label` attr
     const linkAriaLabel = computed(
-      () => config.value.ariaLabel || config.value.text,
+      () => config.value.ariaLabel ?? config.value.text,
     );
 
     // Should be active when current route is a subpath of this link

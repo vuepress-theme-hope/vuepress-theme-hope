@@ -19,13 +19,13 @@ export const injectBlogBasicInfo = (
     | ThemeProjectHomePageFrontmatter
     | ThemeBlogHomePageFrontmatter
     | ThemeNormalPageFrontmatter;
-  const { createdTime } = page.data.git || {};
+  const { createdTime } = page.data.git ?? {};
 
   const isArticle =
     // Declaring this is an article
-    frontmatter.article ||
-    // Generated from markdown files
-    Boolean(frontmatter.article !== false && page.filePathRelative);
+    frontmatter.article ??
+    // Generated from markdown files and not homepage
+    (!frontmatter.home && Boolean(page.filePathRelative));
   const isSlide = frontmatter.layout === "Slide";
 
   // Save page type to routeMeta

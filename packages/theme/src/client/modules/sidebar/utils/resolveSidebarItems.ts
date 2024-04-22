@@ -109,7 +109,7 @@ export const resolveMultiSidebarItems = ({
         ? resolveArraySidebarItems({
             config:
               matched === "structure"
-                ? <SidebarArrayOptions>sidebarData[base]
+                ? (sidebarData[base] as SidebarArrayOptions)
                 : matched,
             page,
             headerDepth,
@@ -144,7 +144,7 @@ export const resolveSidebarItems = ({
   // Resolve sidebar items according to the config
   config === "structure"
     ? resolveArraySidebarItems({
-        config: <SidebarArrayOptions>sidebarData[routeLocale],
+        config: sidebarData[routeLocale] as SidebarArrayOptions,
         page,
         headerDepth,
         prefix: routeLocale,

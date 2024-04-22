@@ -31,7 +31,7 @@ const handleArraySidebarOptions = (
 
         convertConfig.forEach(([deprecatedOption, newOption]) =>
           deprecatedLogger({
-            // @ts-ignore
+            // @ts-expect-error: Type is too narrow
             options: item,
             deprecatedOption,
             newOption,
@@ -39,7 +39,7 @@ const handleArraySidebarOptions = (
           }),
         );
 
-        // @ts-ignore
+        // @ts-expect-error: Type is too narrow
         droppedLogger(item, "sidebarDepth", "Found in sidebar");
 
         if ("children" in item && isArray(item.children))
@@ -74,7 +74,7 @@ export const convertSidebarOptions = (
             ];
 
           if (value === "structure" || value === false)
-            return [key, <"structure" | false>value];
+            return [key, value as "structure" | false];
 
           logger.error(
             '"sidebar" value should be an array, "structure" or false when setting as an object',

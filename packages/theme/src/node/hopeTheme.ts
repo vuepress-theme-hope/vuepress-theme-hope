@@ -130,7 +130,7 @@ export const hopeTheme = (
         plugins,
         themeData,
 
-        // @ts-ignore
+        // @ts-expect-error: hostname might not exist
         {
           hostname,
           hotReload,

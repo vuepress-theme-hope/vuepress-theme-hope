@@ -72,7 +72,7 @@ export default defineComponent({
 
     const getImage = (): Promise<BingWallpaperInfo[]> =>
       fetch("https://bing-wallpaper.vuejs.press/api/wallpaper").then(
-        (response) => <Promise<BingWallpaperInfo[]>>response.json(),
+        (response) => response.json() as Promise<BingWallpaperInfo[]>,
       );
 
     const prev = (): void => {
@@ -95,7 +95,7 @@ export default defineComponent({
 
     return (): VNode => {
       const { title, headline, url, backstage, quickFact, copyright } =
-        currentWallpaper.value || {};
+        currentWallpaper.value ?? {};
 
       return h(ClientOnly, () =>
         url

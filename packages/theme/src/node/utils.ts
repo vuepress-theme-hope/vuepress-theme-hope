@@ -19,6 +19,9 @@ export const TEMPLATE_FOLDER = ensureEndingSlash(
   path.resolve(__dirname, "../../templates"),
 );
 
-export const VERSION = (<Record<string, unknown> & { version: string }>(
-  createRequire(import.meta.url)("vuepress-theme-hope/package.json")
-)).version;
+export const VERSION = (
+  createRequire(import.meta.url)("vuepress-theme-hope/package.json") as Record<
+    string,
+    unknown
+  > & { version: string }
+).version;

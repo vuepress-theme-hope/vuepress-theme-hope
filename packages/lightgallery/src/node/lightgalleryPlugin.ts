@@ -34,7 +34,7 @@ export const lightgalleryPlugin =
         addViteOptimizeDepsExclude(bundlerOptions, app, [
           "lightgallery/lightgallery.es5.js",
           ...plugins.map(
-            (name) => `lightgallery/plugins/${name}/lg-${name}.es5.js`
+            (name) => `lightgallery/plugins/${name}/lg-${name}.es5.js`,
           ),
         ]);
         addViteOptimizeDepsExclude(bundlerOptions, app, ["lightgallery"]);

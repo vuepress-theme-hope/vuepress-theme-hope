@@ -72,7 +72,7 @@ export default defineComponent({
               value: password.value,
               placeholder: locale.value.placeholder,
               onInput: ({ target }: InputEvent) => {
-                password.value = (<HTMLInputElement>target).value;
+                password.value = (target as HTMLInputElement).value;
               },
               onKeydown: ({ key }: KeyboardEvent) => {
                 if (key === "Enter") verify();

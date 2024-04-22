@@ -34,7 +34,7 @@ export const getThemeStatus = (
       ? plugins.blog?.type?.map(({ key, path }) => ({
           key,
           path: path || `/${key}/`,
-        })) || []
+        })) ?? []
       : [],
     hasMultipleLanguages: keys(locales).length > 1,
   };

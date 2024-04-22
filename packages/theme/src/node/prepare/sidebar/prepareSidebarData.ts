@@ -43,7 +43,7 @@ const getGeneratePaths = (
   sidebarConfig.forEach((item) => {
     // It’s a sidebar group config
     if (isPlainObject(item) && "children" in item) {
-      const childPrefix = `${prefix}${item.prefix || ""}`;
+      const childPrefix = `${prefix}${item.prefix ?? ""}`;
 
       // The children needs to be generated
       if (item.children === "structure") result.push(childPrefix);

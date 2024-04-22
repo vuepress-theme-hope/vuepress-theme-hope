@@ -24,7 +24,7 @@ const sync = async (): Promise<void> => {
           new Promise<void>((resolve) => {
             const req = request(
               new URL(
-                `https://registry-direct.npmmirror.com/${content["name"]}/sync?sync_upstream=true`,
+                `https://registry-direct.npmmirror.com/${content.name}/sync?sync_upstream=true`,
               ),
               {
                 method: "PUT",

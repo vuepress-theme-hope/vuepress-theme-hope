@@ -65,7 +65,7 @@ export const extendsPagePlugin = (
   themeData: ThemeData,
   behavior: HopeThemeBehaviorOptions,
 ): PluginObject => {
-  const encryptedPaths = keys(themeData.encrypt.config || {});
+  const encryptedPaths = keys(themeData.encrypt.config ?? {});
   const isPageEncrypted = ({ path }: Page): boolean =>
     encryptedPaths.some((key) => startsWith(decodeURI(path), key));
 
@@ -78,7 +78,7 @@ export const extendsPagePlugin = (
       if (behavior.compact)
         page.frontmatter = convertFrontmatter(
           page.frontmatter,
-          filePathRelative,
+          filePathRelative ?? "",
         );
       if (behavior.check) checkFrontmatter(page);
 
@@ -96,9 +96,9 @@ export const extendsPagePlugin = (
       // Set edit link
       if (enableEditLink)
         // Save relative file path into page data to generate edit link
-        (<Page<ThemePageData>>page).data.filePathRelative = filePathRelative;
+        (page as Page<ThemePageData>).data.filePathRelative = filePathRelative;
 
-      injectPageInfo(<Page<ThemePageData>>page);
+      injectPageInfo(page as Page<ThemePageData>);
       injectLocalizedDate(page);
     },
   };

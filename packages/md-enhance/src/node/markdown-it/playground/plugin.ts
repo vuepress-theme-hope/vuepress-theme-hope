@@ -113,7 +113,7 @@ const getPlaygroundRule =
     state.md.block.tokenize(
       state,
       startLine + 1,
-      nextLine - (autoClosed ? 1 : 0)
+      nextLine - (autoClosed ? 1 : 0),
     );
 
     const closeToken = state.push(`${name}_close`, "template", -1);
@@ -232,7 +232,7 @@ const atMarkerRule =
   };
 
 const defaultPropsGetter = (
-  playgroundData: PlaygroundData
+  playgroundData: PlaygroundData,
 ): Record<string, string> => ({
   key: playgroundData.key,
   title: playgroundData.title ?? "",
@@ -250,7 +250,7 @@ export const playground: PluginWithOptions<PlaygroundOptions> = (
     name: "playground",
     component: "Playground",
     propsGetter: defaultPropsGetter,
-  }
+  },
 ) => {
   md.block.ruler.before("fence", `${name}`, getPlaygroundRule(name), {
     alt: ["paragraph", "reference", "blockquote", "list"],

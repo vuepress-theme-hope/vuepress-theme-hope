@@ -46,11 +46,7 @@ export default defineComponent({
                   `${metaLocales.lastUpdated}: `,
                 ),
                 h(ClientOnly, () =>
-                  h(
-                    "span",
-                    { class: "vp-meta-info" },
-                    <string>updateTime.value,
-                  ),
+                  h("span", { class: "vp-meta-info" }, updateTime.value!),
                 ),
               ])
             : null,

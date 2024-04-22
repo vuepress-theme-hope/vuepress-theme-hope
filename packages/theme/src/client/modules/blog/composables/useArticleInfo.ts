@@ -93,10 +93,10 @@ export const useArticleInfo = (props: {
     author: author.value,
     category: category.value,
     date: date.value,
-    localizedDate: articleInfo.value[ArticleInfo.localizedDate] || "",
+    localizedDate: articleInfo.value[ArticleInfo.localizedDate] ?? "",
     tag: tag.value,
-    isOriginal: articleInfo.value[ArticleInfo.isOriginal] || false,
-    readingTime: articleInfo.value[ArticleInfo.readingTime] || null,
+    isOriginal: articleInfo.value[ArticleInfo.isOriginal] ?? false,
+    readingTime: articleInfo.value[ArticleInfo.readingTime] ?? null,
     readingTimeLocale:
       articleInfo.value[ArticleInfo.readingTime] &&
       readingTimeLocaleConfig.value

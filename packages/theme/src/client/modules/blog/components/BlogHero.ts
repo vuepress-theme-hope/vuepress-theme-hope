@@ -65,7 +65,7 @@ export default defineComponent({
         tagline: tagline ?? "",
         image: heroImage ? withBase(heroImage) : null,
         imageDark: heroImageDark ? withBase(heroImageDark) : null,
-        alt: heroAlt || heroText || "",
+        alt: heroAlt ?? heroText ?? "",
         style: heroImageStyle,
         isFullScreen: isFullScreen.value,
       };
@@ -102,7 +102,7 @@ export default defineComponent({
               ],
             },
             [
-              slots.heroBg?.(bgInfo.value) || [
+              slots.heroBg?.(bgInfo.value) ?? [
                 bgInfo.value.image
                   ? h("div", {
                       class: [
@@ -129,7 +129,7 @@ export default defineComponent({
                     })
                   : null,
               ],
-              slots.heroInfo?.(heroInfo.value) || [
+              slots.heroInfo?.(heroInfo.value) ?? [
                 h(
                   DropTransition,
                   { appear: true, type: "group", delay: 0.04 },

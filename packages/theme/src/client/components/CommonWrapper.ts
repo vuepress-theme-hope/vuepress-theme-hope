@@ -113,10 +113,9 @@ export default defineComponent({
         return false;
 
       return Boolean(
-        page.value.title ||
-          themeLocale.value.logo ||
-          themeLocale.value.repo ||
-          themeLocale.value.navbar,
+        themeLocale.value.logo ??
+          themeLocale.value.repo ??
+          themeLocale.value.navbar
       );
     });
 
@@ -134,7 +133,7 @@ export default defineComponent({
       props.noToc || frontmatter.value.home
         ? false
         : frontmatter.value.toc ||
-          (themeLocale.value.toc !== false && frontmatter.value.toc !== false),
+          (themeLocale.value.toc !== false && frontmatter.value.toc !== false)
     );
 
     const touchStart = { x: 0, y: 0 };
@@ -174,8 +173,8 @@ export default defineComponent({
           lastDistance = distance;
         },
         300,
-        true,
-      ),
+        true
+      )
     );
 
     watch(isMobile, (value) => {
@@ -202,7 +201,7 @@ export default defineComponent({
     return (): VNode =>
       h(
         hasGlobalComponent("GlobalEncrypt")
-          ? <ComponentOptions>resolveComponent("GlobalEncrypt")
+          ? (resolveComponent("GlobalEncrypt") as ComponentOptions)
           : RenderDefault,
         () =>
           h(
@@ -215,7 +214,9 @@ export default defineComponent({
                   "no-navbar": !enableNavbar.value,
                   "no-sidebar":
                     !enableSidebar.value &&
-                    !(slots.sidebar || slots.sidebarTop || slots.sidebarBottom),
+                    !slots.sidebar &&
+                    !slots.sidebarTop &&
+                    !slots.sidebarBottom,
                   "has-toc": enableToc.value,
                   "hide-navbar": hideNavbar.value,
                   "sidebar-collapsed":
@@ -225,7 +226,7 @@ export default defineComponent({
                   "sidebar-open": isMobile.value && isMobileSidebarOpen.value,
                 },
                 props.containerClass,
-                frontmatter.value.containerClass || "",
+                frontmatter.value.containerClass ?? "",
               ],
               onTouchStart,
               onTouchEnd,
@@ -245,7 +246,7 @@ export default defineComponent({
                       endAfter: () => slots.navbarEndAfter?.(),
                       screenTop: () => slots.navScreenTop?.(),
                       screenBottom: () => slots.navScreenBottom?.(),
-                    },
+                    }
                   )
                 : null,
               // Sidebar mask
@@ -255,7 +256,7 @@ export default defineComponent({
                       class: "vp-sidebar-mask",
                       onClick: () => toggleMobileSidebar(false),
                     })
-                  : null,
+                  : null
               ),
               // Toggle sidebar button
               h(Transition, { name: "fade" }, () =>
@@ -272,8 +273,8 @@ export default defineComponent({
                           "arrow",
                           isDesktopSidebarCollapsed.value ? "end" : "start",
                         ],
-                      }),
-                    ),
+                      })
+                    )
               ),
               // Sidebar
               h(
@@ -283,12 +284,12 @@ export default defineComponent({
                   ...(slots.sidebar ? { default: () => slots.sidebar!() } : {}),
                   top: () => slots.sidebarTop?.(),
                   bottom: () => slots.sidebarBottom?.(),
-                },
+                }
               ),
               slots.default(),
               h(PageFooter),
-            ],
-          ),
+            ]
+          )
       );
   },
 });

@@ -50,10 +50,10 @@ export const usePageCategory = (): ComputedRef<PageCategory[]> => {
     : null;
 
   return computed(() =>
-    getCategory(frontmatter.value.category || frontmatter.value.categories).map(
+    getCategory(frontmatter.value.category ?? frontmatter.value.categories).map(
       (name) => ({
         name,
-        path: categoryMap?.value.map[name]?.path || "",
+        path: categoryMap?.value.map[name]?.path ?? "",
       }),
     ),
   );
@@ -64,9 +64,9 @@ export const usePageTag = (): ComputedRef<PageTag[]> => {
   const tagMap = __VP_BLOG__ ? inject<TagMapRef>(Symbol.for("tagMap")) : null;
 
   return computed(() =>
-    getTag(frontmatter.value.tag || frontmatter.value.tags).map((name) => ({
+    getTag(frontmatter.value.tag ?? frontmatter.value.tags).map((name) => ({
       name,
-      path: tagMap?.value.map[name]?.path || "",
+      path: tagMap?.value.map[name]?.path ?? "",
     })),
   );
 };
@@ -80,7 +80,7 @@ export const usePageDate = (): ComputedRef<Date | null> => {
 
     if (date) return date;
 
-    const { createdTime } = page.value.git || {};
+    const { createdTime } = page.value.git ?? {};
 
     if (createdTime) return new Date(createdTime);
 
@@ -108,18 +108,18 @@ export const usePageInfo = (): {
 
   const info = computed(
     () =>
-      <PageInfoProps>{
+      ({
         author: author.value,
         category: category.value,
         date: date.value,
         localizedDate: page.value.localizedDate,
         tag: tag.value,
-        isOriginal: frontmatter.value.isOriginal || false,
+        isOriginal: frontmatter.value.isOriginal ?? false,
         readingTime: readingTimeData.value,
         readingTimeLocale: readingTimeLocale.value,
         pageview:
           "pageview" in frontmatter.value ? frontmatter.value.pageview : true,
-      },
+      }) as PageInfoProps,
   );
 
   const items = computed(() =>

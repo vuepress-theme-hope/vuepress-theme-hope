@@ -51,7 +51,7 @@ export default defineComponent({
     const currentPage = ref(1);
 
     const articlePerPage = computed(
-      () => blogOptions.value.articlePerPage || 10,
+      () => blogOptions.value.articlePerPage ?? 10,
     );
 
     const currentArticles = computed(() =>

@@ -50,7 +50,7 @@ const getPlugin =
 <CodeDemo id="code-demo-${index}" type="${name.split("-")[0]}"${
           title ? ` title="${encodeURIComponent(title)}"` : ""
         }${config ? ` config="${config}"` : ""} code="${encodeData(
-          JSON.stringify(code)
+          JSON.stringify(code),
         )}">
 `;
       },
@@ -68,7 +68,7 @@ export const mdDemo: PluginSimple = (md) => {
     name: "md-demo",
     openRender: (tokens, index) =>
       `<MdDemo title="${escapeHtml(
-        tokens[index].info
+        tokens[index].info,
       )}" id="md-demo-${index}"><template #default>\n`,
     codeRender: (tokens, index, options, _env, self) => {
       const token = tokens[index];
@@ -81,7 +81,7 @@ export const mdDemo: PluginSimple = (md) => {
         .split("\n")
         .filter(
           (item) =>
-            !item.startsWith("@") || !/^@include-p(?:ush\(.*\)|op)$/.test(item)
+            !item.startsWith("@") || !/^@include-p(?:ush\(.*\)|op)$/.test(item),
         )
         .join("\n");
 
@@ -90,7 +90,7 @@ export const mdDemo: PluginSimple = (md) => {
         index,
         options,
         _env,
-        self
+        self,
       )}`;
     },
     closeRender: () => "</template></MdDemo>",

@@ -57,7 +57,7 @@ export default defineComponent({
             "features" in highlight
               ? h(FeaturePanel, highlight)
               : h(HighlightPanel, highlight),
-          ) ||
+          ) ??
             (features.value
               ? h(DropTransition, { appear: true, delay: 0.24 }, () =>
                   h(FeaturePanel, { features: features.value! }),

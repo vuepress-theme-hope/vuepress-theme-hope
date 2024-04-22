@@ -70,7 +70,7 @@ export default defineComponent({
         image: heroImage ? withBase(heroImage) : null,
         imageDark: heroImageDark ? withBase(heroImageDark) : null,
         style: heroImageStyle,
-        alt: heroAlt || heroText || "",
+        alt: heroAlt ?? heroText ?? "",
         isFullScreen: isFullScreen.value,
       };
     });
@@ -93,7 +93,7 @@ export default defineComponent({
         "header",
         { class: ["vp-hero-info-wrapper", { fullscreen: isFullScreen.value }] },
         [
-          slots.heroBg?.(bgInfo.value) || [
+          slots.heroBg?.(bgInfo.value) ?? [
             bgInfo.value.image
               ? h("div", {
                   class: ["vp-hero-mask", { light: bgInfo.value.imageDark }],
@@ -117,7 +117,7 @@ export default defineComponent({
           ],
 
           h("div", { class: "vp-hero-info" }, [
-            slots.heroImage?.(heroImage.value) ||
+            slots.heroImage?.(heroImage.value) ??
               h(DropTransition, { appear: true, type: "group" }, () => [
                 heroImage.value.image
                   ? h("img", {
@@ -167,7 +167,7 @@ export default defineComponent({
                             {
                               class: [
                                 "vp-hero-action",
-                                action.type || "default",
+                                action.type ?? "default",
                               ],
                               config: action,
                               noExternalLinkIcon: true,

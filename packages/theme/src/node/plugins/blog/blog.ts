@@ -28,11 +28,11 @@ export const getBlogPlugin = (
   if (!options) return null;
 
   const blogOptions = options === true ? {} : options;
-  const encryptedPaths = keys(themeData.encrypt.config || {});
+  const encryptedPaths = keys(themeData.encrypt.config ?? {});
   const isPageEncrypted = ({ path }: Page): boolean =>
     encryptedPaths.some((key) => startsWith(decodeURI(path), key));
 
-  return blogPlugin(<BlogPluginOptions>{
+  return blogPlugin({
     excerpt: blogOptions.excerpt !== false,
 
     ...("excerptLength" in blogOptions
@@ -49,7 +49,7 @@ export const getBlogPlugin = (
       return !isEncrypted && !("excerpt" in page.frontmatter);
     },
 
-    filter: blogOptions.filter || blogFilter,
+    filter: blogOptions.filter ?? blogFilter,
 
     getInfo: (page: Page<ThemePageData>) => {
       const info: Record<string, unknown> = {};
@@ -85,7 +85,7 @@ export const getBlogPlugin = (
       getBlogArticleType(blogOptions, themeData),
       getBlogStarType(blogOptions, themeData),
       getBlogTimelineType(blogOptions, themeData),
-      ...(blogOptions.type?.map((type) => ({ layout: "BlogType", ...type })) ||
+      ...(blogOptions.type?.map((type) => ({ layout: "BlogType", ...type })) ??
         []),
     ],
 
@@ -94,5 +94,5 @@ export const getBlogPlugin = (
     hotReload,
     ...("hotReload" in blogOptions ? { hotReload: blogOptions.hotReload } : {}),
     ...("slugify" in blogOptions ? { slugify: blogOptions.slugify } : {}),
-  });
+  } as BlogPluginOptions);
 };

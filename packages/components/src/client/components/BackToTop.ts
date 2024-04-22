@@ -53,11 +53,11 @@ export default defineComponent({
     /** Whether to display button */
     const show = computed(
       () =>
-        pageFrontmatter.value.backToTop !== false && y.value > props.threshold
+        pageFrontmatter.value.backToTop !== false && y.value > props.threshold,
     );
 
     const progress = computed(
-      () => (y.value / (bodyHeight.value - windowHeight.value)) * 100
+      () => (y.value / (bodyHeight.value - windowHeight.value)) * 100,
     );
 
     onMounted(() => {
@@ -103,13 +103,13 @@ export default defineComponent({
                               4 * Math.PI
                             }px)`,
                           },
-                        })
-                      )
+                        }),
+                      ),
                     ),
                 h(BackToTopIcon),
-              ]
+              ],
             )
-          : null
+          : null,
       );
   },
 });

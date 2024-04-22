@@ -20,13 +20,7 @@ export const getBlogCategoryCategory = (
   ThemeNormalPageFrontmatter,
   { routeMeta: ArticleInfoData }
 > =>
-  <
-    BlogCategoryOptions<
-      { git: GitData },
-      ThemeNormalPageFrontmatter,
-      { routeMeta: ArticleInfoData }
-    >
-  >{
+  ({
     key: "category",
     getter: ({ routeMeta }) => {
       const category = routeMeta[ArticleInfo.category];
@@ -52,7 +46,11 @@ export const getBlogCategoryCategory = (
       sitemap: false,
     }),
     itemLayout: "BlogCategory",
-  };
+  }) as BlogCategoryOptions<
+    { git: GitData },
+    ThemeNormalPageFrontmatter,
+    { routeMeta: ArticleInfoData }
+  >;
 
 /** @private */
 export const getBlogTagCategory = (
@@ -63,13 +61,7 @@ export const getBlogTagCategory = (
   ThemeNormalPageFrontmatter,
   { routeMeta: ArticleInfoData }
 > =>
-  <
-    BlogCategoryOptions<
-      { git: GitData },
-      ThemeNormalPageFrontmatter,
-      { routeMeta: ArticleInfoData }
-    >
-  >{
+  ({
     key: "tag",
     getter: ({ routeMeta }) => {
       const tag = routeMeta[ArticleInfo.tag];
@@ -95,4 +87,8 @@ export const getBlogTagCategory = (
       feed: false,
       sitemap: false,
     }),
-  };
+  }) as BlogCategoryOptions<
+    { git: GitData },
+    ThemeNormalPageFrontmatter,
+    { routeMeta: ArticleInfoData }
+  >;

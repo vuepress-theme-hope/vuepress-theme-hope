@@ -30,7 +30,7 @@ export default defineComponent({
 
     return (): VNode => {
       const { key = "", name = "" } =
-        <BlogCategoryFrontmatterOptions>frontmatter.value.blog || {};
+        (frontmatter.value.blog as BlogCategoryFrontmatterOptions) || {};
 
       const items = name
         ? key === "category"

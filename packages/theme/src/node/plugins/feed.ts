@@ -44,7 +44,7 @@ export const getFeedPlugin = (
   const globalAuthor = getAuthor(themeData.author);
 
   const defaultOptions: FeedPluginOptions = {
-    // @ts-expect-error
+    // @ts-expect-error: hostname may not exist here
     hostname,
     channel: {
       ...(favicon ? { icon: favicon } : {}),

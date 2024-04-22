@@ -46,17 +46,17 @@ export default defineComponent({
 
     const enable = computed(
       () =>
-        (frontmatter.value.breadcrumb ||
-          (frontmatter.value.breadcrumb !== false &&
-            themeLocale.value.breadcrumb !== false)) &&
+        (frontmatter.value.breadcrumb ??
+          themeLocale.value.breadcrumb ??
+          true) &&
         config.value.length > 1,
     );
 
-    const iconEnable = computed(
+    const enableIcon = computed(
       () =>
-        frontmatter.value.breadcrumbIcon ||
-        (frontmatter.value.breadcrumbIcon !== false &&
-          themeLocale.value.breadcrumbIcon !== false),
+        frontmatter.value.breadcrumbIcon ??
+        themeLocale.value.breadcrumbIcon ??
+        true,
     );
 
     const getBreadCrumbConfig = (): void => {
@@ -113,7 +113,7 @@ export default defineComponent({
                       },
                       () => [
                         // Icon
-                        iconEnable.value
+                        enableIcon.value
                           ? h(HopeIcon, { icon: item.icon })
                           : null,
                         // Text

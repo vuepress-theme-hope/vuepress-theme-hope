@@ -61,9 +61,8 @@ export const checkMarkdownOptions = (
       };
     }
   } else {
-    const { level = [2, 3] } = <HeadersPluginOptions>(
-      (markdownOptions.headers ??= {})
-    );
+    const { level = [2, 3] } = (markdownOptions.headers ??=
+      {}) as HeadersPluginOptions;
 
     if (
       Array.from({ length: headerDepth }, (_, index) => index + 2).some(

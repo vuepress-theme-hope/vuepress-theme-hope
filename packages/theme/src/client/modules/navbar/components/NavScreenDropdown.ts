@@ -32,7 +32,7 @@ export default defineComponent({
     const config = toRef(props, "config");
 
     const dropdownAriaLabel = computed(
-      () => config.value.ariaLabel || config.value.text,
+      () => config.value.ariaLabel ?? config.value.text,
     );
 
     const open = ref(false);
@@ -82,7 +82,7 @@ export default defineComponent({
                     { class: "dropdown-subtitle" },
                     child.link
                       ? h(AutoLink, {
-                          config: <AutoLinkType>child,
+                          config: child as AutoLinkType,
                           onFocusout: () => {
                             if (
                               isLastItemOfArray(child, config.value.children) &&

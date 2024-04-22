@@ -43,8 +43,8 @@ export default defineComponent({
 
     const sidebarDisplay = computed(() =>
       __VP_BLOG__
-        ? themeLocale.value.blog?.sidebarDisplay ||
-          themeData.value.blog?.sidebarDisplay ||
+        ? themeLocale.value.blog?.sidebarDisplay ??
+          themeData.value.blog?.sidebarDisplay ??
           "mobile"
         : "none",
     );
@@ -56,7 +56,7 @@ export default defineComponent({
         {},
         {
           default: () =>
-            slots.default?.() ||
+            slots.default?.() ??
             (frontmatter.value.home
               ? h(HomePage)
               : h(FadeSlideY, () =>

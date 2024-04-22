@@ -87,7 +87,7 @@ If you want to change the slugify function anyway, set the following options sep
 `,
     );
 
-    delete options["slugify"];
+    delete options.slugify;
   }
 
   // PageSuffix

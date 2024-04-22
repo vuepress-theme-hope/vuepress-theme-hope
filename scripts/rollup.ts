@@ -28,7 +28,7 @@ export interface BundleOptions {
   inlineDynamicImports?: boolean;
   preserveShebang?: boolean;
   replace?: RollupReplaceOptions;
-  alias?: Alias[] | { [find: string]: string };
+  alias?: Alias[] | Record<string, string>;
   moduleSideEffects?: ModuleSideEffectsOption;
 }
 
@@ -68,7 +68,7 @@ export const rollupBundle = (
       {
         ...(typeof filePath === "object"
           ? {
-              dir: `./lib/${filePath.target || filePath.base}`,
+              dir: `./lib/${filePath.target ?? filePath.base}`,
               entryFileNames: "[name].js",
             }
           : { file: `./lib/${filePath}.js` }),
@@ -170,7 +170,7 @@ export const rollupBundle = (
             {
               ...(typeof filePath === "object"
                 ? {
-                    dir: `./lib/${filePath.target || filePath.base}`,
+                    dir: `./lib/${filePath.target ?? filePath.base}`,
                     entryFileNames: "[name].d.ts",
                   }
                 : { file: `./lib/${filePath}.d.ts` }),

@@ -61,18 +61,18 @@ export const getThemeData = (
             ]) => {
               // Remove locales if their features are not enabled
               if (!enableBlog) {
-                // @ts-expect-error
+                // @ts-expect-error: The type is not optional
                 delete config.blogLocales;
 
-                // @ts-expect-error
+                // @ts-expect-error: The type is not optional
                 delete config.paginationLocales;
               }
 
               if (!enableEncrypt)
-                // @ts-expect-error
+                // @ts-expect-error: The type is not optional
                 delete config.encryptLocales;
 
-              return [locale, <ThemeLocaleConfig>config];
+              return [locale, config as ThemeLocaleConfig];
             },
           ),
         ),
@@ -81,10 +81,10 @@ export const getThemeData = (
           entries<ThemeLocaleOptions>({
             // Ensure default locale
             "/": {},
-            ...(themeOptions.locales || {}),
+            ...(themeOptions.locales ?? {}),
           }).map(([localePath, localeConfig]) => [
             localePath,
-            <ThemeLocaleConfig>{
+            {
               // Root config
               ...fromEntries(
                 entries(themeOptions).filter(([key]) =>
@@ -93,7 +93,7 @@ export const getThemeData = (
               ),
               // Locale options
               ...localeConfig,
-            },
+            } as ThemeLocaleConfig,
           ]),
         ),
       }),

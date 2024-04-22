@@ -33,14 +33,14 @@ const DROPPED_FRONTMATTER_OPTIONS: [string, string][] = [
  */
 export const convertFrontmatter = (
   frontmatter: Record<string, unknown>,
-  filePathRelative: string | null = null,
+  filePathRelative: string,
 ): ThemePageFrontmatter & Record<string, unknown> => {
   DEPRECATED_FRONTMATTER_OPTIONS.forEach(([deprecatedOption, newOption]) =>
     deprecatedLogger({
       options: frontmatter,
       deprecatedOption,
       newOption,
-      scope: `${filePathRelative || ""} frontmatter`,
+      scope: `${filePathRelative} frontmatter`,
     }),
   );
 
@@ -107,7 +107,7 @@ export const convertFrontmatter = (
             options: frontmatter,
             deprecatedOption,
             newOption,
-            scope: `${filePathRelative || ""} frontmatter`,
+            scope: `${filePathRelative} frontmatter`,
           }),
       );
   }

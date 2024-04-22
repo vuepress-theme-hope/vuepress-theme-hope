@@ -111,7 +111,7 @@ const handleFooterOptions = (options: Record<string, unknown>): void => {
         '"footer.copyright" options is deprecated, please use "copyright" instead',
       );
 
-      options["copyright"] = <string>footer["copyright"];
+      options["copyright"] = footer["copyright"] as string;
     }
 
     if ("display" in footer) {
@@ -119,7 +119,7 @@ const handleFooterOptions = (options: Record<string, unknown>): void => {
         '"footer.display" options is deprecated, please use "displayFooter" instead',
       );
 
-      options["displayFooter"] = <boolean>footer["display"];
+      options["displayFooter"] = footer["display"] as boolean;
     }
 
     if ("content" in footer) {
@@ -127,7 +127,7 @@ const handleFooterOptions = (options: Record<string, unknown>): void => {
         '"footer.content" options is deprecated, please use "footer" instead',
       );
 
-      options["footer"] = <string>footer["content"];
+      options["footer"] = footer["content"] as string;
     } else {
       delete options["footer"];
     }

@@ -31,13 +31,13 @@ export default defineComponent({
 
     const bloggerName = computed(
       () =>
-        blogOptions.value.name ||
-        getAuthor(themeLocale.value.author)[0]?.name ||
+        blogOptions.value.name ??
+        getAuthor(themeLocale.value.author)[0]?.name ??
         siteLocale.value.title,
     );
 
     const bloggerAvatar = computed(
-      () => blogOptions.value.avatar || themeLocale.value.logo,
+      () => blogOptions.value.avatar ?? themeLocale.value.logo,
     );
 
     const locale = computed(() => themeLocale.value.blogLocales);

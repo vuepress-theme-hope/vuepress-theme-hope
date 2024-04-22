@@ -58,20 +58,20 @@ describe("Should resolve encrypt option correctly", () => {
   });
 
   it("should remove incorrect password", () => {
-    // @ts-expect-error
+    // @ts-expect-error: number password is not typed
     expect(getEncryptConfig({ admin: 1234 })).toEqual({});
 
-    // @ts-expect-error
+    // @ts-expect-error: number password is not typed
     const result2 = getEncryptConfig({ admin: ["1234", 1234] });
 
     expect(result2.admin!.length).toEqual(1);
 
-    // @ts-expect-error
+    // @ts-expect-error: number password is not typed
     const result3 = getEncryptConfig({ config: { "/": 1234, "/zh/": "1234" } });
 
     expect(Object.keys(result3.config!)).toEqual(["/zh/"]);
 
-    // @ts-expect-error
+    // @ts-expect-error: number password is not typed
     const result4 = getEncryptConfig({ config: { "/": [1234, "1234"] } });
 
     expect(result4.config!["/"].length).toEqual(1);

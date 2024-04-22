@@ -25,7 +25,7 @@ export default defineComponent({
 
     const hint = computed(
       () =>
-        blogOptions.value.timeline ||
+        blogOptions.value.timeline ??
         themeLocale.value.blogLocales.timelineTitle,
     );
 

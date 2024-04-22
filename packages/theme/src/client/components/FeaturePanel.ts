@@ -63,7 +63,7 @@ const FeaturePanel: FunctionalComponent<
           style: color ? { color } : {},
         },
         [
-          slots.image?.(props) || [
+          slots.image?.(props) ?? [
             image
               ? h("img", {
                   class: ["vp-feature-image", { light: imageDark }],
@@ -80,7 +80,7 @@ const FeaturePanel: FunctionalComponent<
               : null,
           ],
 
-          slots.info?.(props) || [
+          slots.info?.(props) ?? [
             header ? h("h2", { class: "vp-feature-header" }, header) : null,
             description
               ? h("p", {

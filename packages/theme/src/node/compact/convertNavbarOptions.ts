@@ -23,7 +23,7 @@ const handleNavbarOptions = (config: LegacyNavbarOptions): NavbarOptions =>
 
       if (isPlainObject(item) && item) {
         deprecatedLogger({
-          // @ts-ignore
+          // @ts-expect-error: Type is too narrow
           options: item,
           deprecatedOption: "items",
           newOption: "children",

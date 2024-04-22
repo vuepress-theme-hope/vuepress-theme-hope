@@ -64,12 +64,12 @@ export default defineComponent({
 
     const navbarLayout = computed(
       () =>
-        themeLocale.value.navbarLayout ||
-        <NavbarLayoutOptions>{
+        themeLocale.value.navbarLayout ??
+        ({
           start: ["Brand"],
           center: ["Links"],
           end: ["Language", "Repo", "Outlook", "Search"],
-        },
+        } as NavbarLayoutOptions),
     );
 
     const navbarComponentMap: Record<string, Component | string> = {
@@ -108,11 +108,11 @@ export default defineComponent({
               },
             }),
             slots.startBefore?.(),
-            (navbarLayout.value.start || []).map((item) =>
+            navbarLayout.value.start?.map((item) =>
               h(
-                <ComponentOptions | FunctionalComponent>(
-                  getNavbarComponent(item)
-                ),
+                getNavbarComponent(item) as
+                  | ComponentOptions
+                  | FunctionalComponent,
               ),
             ),
             slots.startAfter?.(),
@@ -120,11 +120,11 @@ export default defineComponent({
 
           h("div", { class: "vp-navbar-center" }, [
             slots.centerBefore?.(),
-            (navbarLayout.value.center || []).map((item) =>
+            navbarLayout.value.center?.map((item) =>
               h(
-                <ComponentOptions | FunctionalComponent>(
-                  getNavbarComponent(item)
-                ),
+                getNavbarComponent(item) as
+                  | ComponentOptions
+                  | FunctionalComponent,
               ),
             ),
             slots.centerAfter?.(),
@@ -132,11 +132,11 @@ export default defineComponent({
 
           h("div", { class: "vp-navbar-end" }, [
             slots.endBefore?.(),
-            (navbarLayout.value.end || []).map((item) =>
+            navbarLayout.value.end?.map((item) =>
               h(
-                <ComponentOptions | FunctionalComponent>(
-                  getNavbarComponent(item)
-                ),
+                getNavbarComponent(item) as
+                  | ComponentOptions
+                  | FunctionalComponent,
               ),
             ),
             slots.endAfter?.(),

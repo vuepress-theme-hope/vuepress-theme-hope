@@ -37,9 +37,7 @@ export default defineComponent({
     const themeLocale = useThemeLocaleData();
 
     const tocEnable = computed(
-      () =>
-        frontmatter.value.toc ||
-        (frontmatter.value.toc !== false && themeLocale.value.toc !== false),
+      () => frontmatter.value.toc ?? themeLocale.value.toc ?? true,
     );
 
     return (): VNode =>
@@ -48,7 +46,7 @@ export default defineComponent({
         { id: "main-content", class: "vp-page" },
         h(
           hasGlobalComponent("LocalEncrypt")
-            ? <ComponentOptions>resolveComponent("LocalEncrypt")
+            ? (resolveComponent("LocalEncrypt") as ComponentOptions)
             : RenderDefault,
           () => [
             slots.top?.(),

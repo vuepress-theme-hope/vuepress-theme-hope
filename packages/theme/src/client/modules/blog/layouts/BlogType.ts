@@ -33,7 +33,7 @@ export default defineComponent({
 
     const items = computed(() => {
       const { key = "", type } =
-        <BlogTypeFrontmatterOptions>frontmatter.value.blog || {};
+        (frontmatter.value.blog as BlogTypeFrontmatterOptions) || {};
 
       return key === "star"
         ? stars.value.items

@@ -18,12 +18,10 @@ export const blogFilter = ({
     | ThemeNormalPageFrontmatter;
 
   const isArticle =
-    // Not homepage
-    !pageFrontmatter.home &&
-    // Declaring this is an article
-    (pageFrontmatter.article ||
-      // Generated from markdown files
-      Boolean(pageFrontmatter.article !== false && filePathRelative));
+    /// Declaring this is an article
+    pageFrontmatter.article ??
+    // Generated from markdown files and not homepage
+    (!pageFrontmatter.home && Boolean(filePathRelative));
 
   return isArticle;
 };

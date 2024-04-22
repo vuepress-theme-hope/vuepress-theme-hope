@@ -20,22 +20,14 @@ export const getBlogArticleType = (
   ThemeNormalPageFrontmatter,
   { routeMeta: ArticleInfoData }
 > =>
-  <
-    BlogTypeOptions<
-      { git: GitData },
-      ThemeNormalPageFrontmatter,
-      { routeMeta: ArticleInfoData }
-    >
-  >{
+  ({
     key: "article",
     sorter: defaultPageSorter,
     filter: ({ frontmatter, filePathRelative }): boolean =>
-      // Not homepage
-      !frontmatter.home &&
       // Declaring this is an article
-      (frontmatter.article ||
-        // Generated from markdown files
-        Boolean(frontmatter.article !== false && filePathRelative)),
+      frontmatter.article ??
+      // Generated from markdown files and not homepage
+      (Boolean(filePathRelative) && !frontmatter.home),
     path: options.article,
     layout: "BlogType",
     frontmatter: (localePath) => ({
@@ -45,7 +37,11 @@ export const getBlogArticleType = (
       feed: false,
       sitemap: false,
     }),
-  };
+  }) as BlogTypeOptions<
+    { git: GitData },
+    ThemeNormalPageFrontmatter,
+    { routeMeta: ArticleInfoData }
+  >;
 
 /** @private */
 export const getBlogStarType = (
@@ -56,13 +52,7 @@ export const getBlogStarType = (
   ThemeNormalPageFrontmatter,
   { routeMeta: ArticleInfoData }
 > =>
-  <
-    BlogTypeOptions<
-      { git: GitData },
-      ThemeNormalPageFrontmatter,
-      { routeMeta: ArticleInfoData }
-    >
-  >{
+  ({
     key: "star",
     filter: ({ frontmatter }) => Boolean(frontmatter.star),
     sorter: (pageA, pageB) => {
@@ -89,7 +79,11 @@ export const getBlogStarType = (
       feed: false,
       sitemap: false,
     }),
-  };
+  }) as BlogTypeOptions<
+    { git: GitData },
+    ThemeNormalPageFrontmatter,
+    { routeMeta: ArticleInfoData }
+  >;
 
 /** @private */
 export const getBlogTimelineType = (
@@ -100,13 +94,7 @@ export const getBlogTimelineType = (
   ThemeNormalPageFrontmatter,
   { routeMeta: ArticleInfoData }
 > =>
-  <
-    BlogTypeOptions<
-      { git: GitData },
-      ThemeNormalPageFrontmatter,
-      { routeMeta: ArticleInfoData }
-    >
-  >{
+  ({
     key: "timeline",
     filter: ({ frontmatter, routeMeta }) =>
       ArticleInfo.date in routeMeta && frontmatter["timeline"] !== false,
@@ -124,4 +112,8 @@ export const getBlogTimelineType = (
       feed: false,
       sitemap: false,
     }),
-  };
+  }) as BlogTypeOptions<
+    { git: GitData },
+    ThemeNormalPageFrontmatter,
+    { routeMeta: ArticleInfoData }
+  >;

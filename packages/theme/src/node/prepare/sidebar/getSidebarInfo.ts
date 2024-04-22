@@ -45,8 +45,8 @@ const getSidebarChildrenInfo = (
     .filter((item): item is SidebarInfo => item !== null)
     // sort items
     .sort((infoA, infoB) => {
-      for (let i = 0; i < sorters.length; i++) {
-        const result = sorters[i](infoA, infoB);
+      for (const sorter of sorters) {
+        const result = sorter(infoA, infoB);
 
         if (result !== 0) return result;
       }
@@ -63,11 +63,9 @@ const getSidebarInfoFromStructure = (
 ): SidebarInfo | null => {
   // handle file
   if (info.type === "file") {
-    const page = <Page<ThemePageData, ThemeNormalPageFrontmatter>>(
-      pages.find(
-        ({ filePathRelative }) => filePathRelative === `${scope}${info.path}`,
-      )!
-    );
+    const page = pages.find(
+      ({ filePathRelative }) => filePathRelative === `${scope}${info.path}`,
+    )! as Page<ThemePageData, ThemeNormalPageFrontmatter>;
 
     if (page.frontmatter.index === false) return null;
 
@@ -75,7 +73,7 @@ const getSidebarInfoFromStructure = (
       type: "file",
       filename: info.filename,
 
-      title: page.frontmatter.shortTitle || page.title,
+      title: page.frontmatter.shortTitle ?? page.title,
       order: "order" in page.frontmatter ? page.frontmatter.order : null,
       path: decodeURI(page.path) === page.pathInferred ? null : page.path,
 
@@ -98,19 +96,17 @@ const getSidebarInfoFromStructure = (
   );
 
   if (READMEFile) {
-    const readmePage = <Page<ThemePageData, ThemeNormalPageFrontmatter>>(
-      relatedPages.find(
-        ({ filePathRelative }) =>
-          filePathRelative === `${scope}${READMEFile.path}`,
-      )!
-    );
+    const readmePage = relatedPages.find(
+      ({ filePathRelative }) =>
+        filePathRelative === `${scope}${READMEFile.path}`,
+    )! as Page<ThemePageData, ThemeNormalPageFrontmatter>;
 
     // get dir information
     const dirOptions = readmePage.frontmatter.dir;
 
     const title =
-      dirOptions?.text || readmePage.frontmatter.shortTitle || readmePage.title;
-    const icon = dirOptions?.icon || readmePage.frontmatter.icon;
+      dirOptions?.text ?? readmePage.frontmatter.shortTitle ?? readmePage.title;
+    const icon = dirOptions?.icon ?? readmePage.frontmatter.icon;
     const collapsible =
       dirOptions && "collapsible" in dirOptions ? dirOptions.collapsible : true;
 
@@ -132,7 +128,7 @@ const getSidebarInfoFromStructure = (
       ),
 
       title,
-      order: dirOptions?.order || null,
+      order: dirOptions?.order ?? null,
       // group information
       groupInfo: {
         ...(collapsible ? { collapsible } : {}),
@@ -191,8 +187,8 @@ SidebarInfo[] =>
     .filter((item): item is SidebarInfo => item !== null)
     // sort items
     .sort((infoA, infoB) => {
-      for (let i = 0; i < sorters.length; i++) {
-        const result = sorters[i](infoA, infoB);
+      for (const sorter of sorters) {
+        const result = sorter(infoA, infoB);
 
         if (result !== 0) return result;
       }

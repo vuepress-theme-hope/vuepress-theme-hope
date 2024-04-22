@@ -101,7 +101,7 @@ export const getSearchPlugin = (
   themeData: ThemeData,
   plugins: PluginsOptions,
 ): Plugin | null => {
-  const encryptedPaths = keys(themeData.encrypt.config || {});
+  const encryptedPaths = keys(themeData.encrypt.config ?? {});
   const isPageEncrypted = ({ path }: Page): boolean =>
     encryptedPaths.some((key) => startsWith(decodeURI(path), key));
   const { locales } = app.options;

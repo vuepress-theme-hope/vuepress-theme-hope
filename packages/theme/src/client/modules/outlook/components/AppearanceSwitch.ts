@@ -31,17 +31,19 @@ export default defineComponent({
 
     const updateDarkmodeStatus = (): void => {
       if (config.value === "switch")
-        status.value = (<Record<DarkmodeStatus, DarkmodeStatus>>{
-          light: "dark",
-          dark: "auto",
-          auto: "light",
-        })[status.value];
+        status.value = (
+          {
+            light: "dark",
+            dark: "auto",
+            auto: "light",
+          } as Record<DarkmodeStatus, DarkmodeStatus>
+        )[status.value];
       else status.value = status.value === "light" ? "dark" : "light";
     };
 
     const toggleDarkmode = async (event: MouseEvent): Promise<void> => {
       const useViewTransition =
-        // @ts-expect-error
+        // @ts-expect-error: Providing backward compatibility
         document.startViewTransition &&
         !window.matchMedia("(prefers-reduced-motion: reduce)").matches &&
         !pure.value;

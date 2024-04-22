@@ -47,7 +47,7 @@ export const DropTransition = defineComponent({
 
     return (): VNode =>
       h(
-        // @ts-ignore
+        // @ts-expect-error: The type can not be inferred
         props.type === "single" ? Transition : TransitionGroup,
         {
           name: "drop",

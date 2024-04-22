@@ -17,7 +17,7 @@ export interface RepoConfig {
 export const useNavbarRepo = (): ComputedRef<RepoConfig | null> => {
   const themeLocale = useThemeLocaleData();
 
-  const repo = computed(() => themeLocale.value.repo || null);
+  const repo = computed(() => themeLocale.value.repo);
 
   const repoLink = computed(() =>
     repo.value ? resolveRepoLink(repo.value) : null,
@@ -29,8 +29,7 @@ export const useNavbarRepo = (): ComputedRef<RepoConfig | null> => {
 
   const repoLabel = computed(() =>
     repoLink.value
-      ? themeLocale.value.repoLabel ??
-        (repoType.value === null ? "Source" : repoType.value)
+      ? themeLocale.value.repoLabel ?? repoType.value ?? "Source"
       : null,
   );
 
@@ -43,7 +42,7 @@ export const useNavbarRepo = (): ComputedRef<RepoConfig | null> => {
       return null;
 
     return {
-      type: repoType.value || "Source",
+      type: repoType.value ?? "Source",
       label: repoLabel.value,
       link: repoLink.value,
     };

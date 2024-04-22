@@ -21,7 +21,7 @@ export const getCopyrightPlugin = (
 ): Plugin | null => {
   if (!options) return null;
 
-  return copyrightPlugin(<CopyrightPluginOptions>{
+  return copyrightPlugin({
     canonical: hostname,
     author: getAuthor(themeData.author)?.[0]?.name,
     license: themeData.license,
@@ -32,5 +32,5 @@ export const getCopyrightPlugin = (
       page: Page<Record<string, never>, ThemeNormalPageFrontmatter>,
     ) => page.frontmatter.license,
     ...(isPlainObject(options) ? options : { global: true }),
-  });
+  } as CopyrightPluginOptions);
 };

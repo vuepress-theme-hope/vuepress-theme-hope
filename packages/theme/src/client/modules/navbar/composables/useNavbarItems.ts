@@ -32,9 +32,9 @@ export const resolveNavbarItem = (
         : {}),
       children: item.children.map(
         (child) =>
-          <NavGroup<AutoLinkOptions> | AutoLinkOptions>(
-            resolveNavbarItem(child, resolvePrefix(prefix, item.prefix))
-          ),
+          resolveNavbarItem(child, resolvePrefix(prefix, item.prefix)) as
+            | NavGroup<AutoLinkOptions>
+            | AutoLinkOptions,
       ),
     };
 

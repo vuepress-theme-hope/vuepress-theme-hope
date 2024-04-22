@@ -68,7 +68,7 @@ export default defineComponent({
 
     const getHitokoto = (): Promise<void> =>
       fetch("https://v1.hitokoto.cn")
-        .then((res) => <Promise<HitokotoResult>>res.json())
+        .then((res) => res.json() as Promise<HitokotoResult>)
         .then(({ from, hitokoto }) => {
           text.value = hitokoto;
           author.value = from;
