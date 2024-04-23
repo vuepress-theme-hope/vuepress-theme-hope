@@ -64,7 +64,6 @@
     "@vue/eslint-config-typescript": "13.0.0",
     "bumpp": "9.4.0",
     "commit-and-tag-version": "12.4.0",
-    "commitizen": "4.3.0",
     "concurrently": "8.2.2",
     "cpx2": "7.0.1",
     "cross-env": "7.0.3",
