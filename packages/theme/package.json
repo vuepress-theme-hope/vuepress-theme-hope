@@ -93,7 +93,7 @@
     "cheerio": "1.0.0-rc.12",
     "chokidar": "^3.6.0",
     "gray-matter": "^4.0.3",
-    "vue": "^3.4.23",
+    "vue": "^3.4.24",
     "vuepress-plugin-components": "workspace:*",
     "vuepress-plugin-md-enhance": "workspace:*",
     "vuepress-plugin-sass-palette": "workspace:*",

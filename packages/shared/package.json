@@ -54,7 +54,7 @@
     "fflate": "^0.8.2",
     "gray-matter": "^4.0.3",
     "semver": "^7.6.0",
-    "vue": "^3.4.23"
+    "vue": "^3.4.24"
   },
   "devDependencies": {
     "@types/connect": "3.4.38",
