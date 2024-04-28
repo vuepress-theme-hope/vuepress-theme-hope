@@ -73,7 +73,7 @@
     "eslint-config-prettier": "9.1.0",
     "eslint-plugin-import": "2.29.1",
     "eslint-plugin-prettier": "5.1.3",
-    "eslint-plugin-vitest": "0.5.3",
+    "eslint-plugin-vitest": "0.5.4",
     "eslint-plugin-vue": "9.25.0",
     "execa": "8.0.1",
     "globals": "15.0.0",
