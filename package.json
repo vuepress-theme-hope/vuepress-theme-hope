@@ -93,7 +93,7 @@
     "rollup-plugin-esbuild": "6.1.1",
     "rollup-plugin-resolve-shebang": "1.0.1",
     "sort-package-json": "2.10.0",
-    "stylelint": "16.3.1",
+    "stylelint": "16.4.0",
     "stylelint-config-hope": "6.0.1",
     "through2": "4.0.2",
     "tslib": "2.6.2",
