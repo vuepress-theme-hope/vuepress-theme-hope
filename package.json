@@ -60,7 +60,7 @@
     "@rollup/plugin-replace": "5.0.5",
     "@types/inquirer": "9.0.7",
     "@types/node": "20.12.7",
-    "@vitest/coverage-v8": "1.5.0",
+    "@vitest/coverage-v8": "1.5.2",
     "@vue/eslint-config-typescript": "13.0.0",
     "bumpp": "9.4.0",
     "commit-and-tag-version": "12.4.1",
@@ -100,7 +100,7 @@
     "tsx": "4.7.3",
     "typescript": "5.4.5",
     "typescript-eslint": "7.7.1",
-    "vitest": "1.5.0"
+    "vitest": "1.5.2"
   },
   "packageManager": "pnpm@9.0.6",
   "engines": {
