@@ -49,12 +49,12 @@
     "@vuepress/helper": "2.0.0-rc.26",
     "@vueuse/core": "^10.9.0",
     "cheerio": "1.0.0-rc.12",
-    "dayjs": "^1.11.10",
+    "dayjs": "^1.11.11",
     "execa": "^8.0.1",
     "fflate": "^0.8.2",
     "gray-matter": "^4.0.3",
     "semver": "^7.6.0",
-    "vue": "^3.4.24"
+    "vue": "^3.4.25"
   },
   "devDependencies": {
     "@types/connect": "3.4.38",
