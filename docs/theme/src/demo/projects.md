@@ -146,13 +146,6 @@ docs:
     repo: https://github.com/gorse-io/docs
     preview: /assets/image/gorse.jpg
 
-  - name: CnosDB
-    desc: An open source distributed time series database with high performance, high compression rate and high ease of use
-    logo: https://www.cnosdb.com/wp-content/uploads/2022/05/CnosDB_%E7%99%BD-300x108.png
-    url: https://docs.cnosdb.com/en/latest/
-    repo: https://github.com/cnosdb/docs
-    preview: /assets/image/cnosdb.jpg
-
   - name: Suibase
     desc: Open-Source Development Tools and Community Cookbook
     logo: https://suibase.io/logo.png

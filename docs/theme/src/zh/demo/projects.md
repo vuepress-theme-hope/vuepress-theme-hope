@@ -187,13 +187,6 @@ docs:
     repo: https://github.com/NixOS-CN/nixos-cn.github.io
     preview: /assets/image/nixos.jpg
 
-  - name: MapstructPlus
-    desc: 可能是最简单最强大的 Java Bean 转换工具
-    logo: https://mapstruct.plus/logo.svg
-    url: https://mapstruct.plus/
-    repo: https://github.com/linpeilie/mapstruct-plus
-    preview: /assets/image/mapstruct-plus.jpg
-
   - name: EasyRelation
     desc: 简单、高效的数据关联框架
     logo: https://easy-relation.easii.cn/logo.svg
@@ -221,13 +214,6 @@ docs:
     url: https://docs.crawlab.cn/zh/guide/
     repo: https://github.com/crawlab-team/crawlab-docs
     preview: /assets/image/crawlab-zh.jpg
-
-  - name: CnosDB
-    desc: 一款高性能、高压缩率、高易用性的开源分布式时序数据库
-    logo: https://www.cnosdb.com/wp-content/uploads/2022/05/CnosDB_%E7%99%BD-300x108.png
-    url: https://docs.cnosdb.com/zh/latest/
-    repo: https://github.com/cnosdb/docs
-    preview: /assets/image/cnosdb.jpg
 
   - name: TimeHelper
     desc: 一个简单快捷的PHP日期时间助手类库 ✨
@@ -305,13 +291,6 @@ blog:
     repo: https://github.com/xkrivzooh/wenchao.ren
     preview: /assets/image/wenchao_blog_preview.png
 
-  - name: zfh's blog
-    desc: 无他，唯手熟尔
-    logo: https://zfhblog.top/logo.jpg
-    url: https://zfhblog.top
-    repo: https://github.com/zhangfanhang/zfhblog
-    preview: /assets/image/zfh.jpg
-
   - name: 计算机应试全家桶
     desc: 磨刀不误砍柴工、读完硕士再打工...
     logo: https://408.142vip.cn/assets/408_logo.png
@@ -344,20 +323,6 @@ blog:
     url: https://xiangweizeng.github.io/damone-blog/
     repo: https://github.com/xiangweizeng/damone-blog
     preview: /assets/image/damone.jpg
-
-  - name: 老怪兽
-    desc: 会敲代码的怪兽
-    logo: https://zswei.xyz/logo.png
-    url: https://zswei.xyz/
-    repo: https://github.com/001monster/monster_blog
-    preview: /assets/image/monster.jpg
-
-  - name: Java-Navigation
-    desc: 记录自学所得，并不断完善、更新。包含：Java基础知识、web开发用到的前端知识以及常用的各种框架和中间件，涵盖计算机基础、数据库、部署工具以及代码风格和规范的全栈知识体系（含面试和实战项目推荐）✨
-    logo: https://java-navigation.gitee.io/logo.svg
-    url: https://java-navigation.gitee.io/
-    repo: https://github.com/HelloCode66/Java-Navigation
-    preview: /assets/image/java-navigation.jpg
 
   - name: 小孙同学 の 第二大脑
     desc: 任何没有经过自己大脑处理过的知识永远都不会真正属于你！
@@ -477,13 +442,6 @@ blog:
     url: https://xxxweii.github.io/XXXWeiiBlog
     repo: https://github.com/XXXWeii/XXXWeiiBlog
     preview: https://xxxweii.github.io/XXXWeiiBlog/assets/images/XXXWeii.png
-
-  - name: xiaou的学习笔记
-    desc: 热爱可抵岁月漫长
-    logo: https://mydocs.guoyaxue.top/site_logo.png
-    url: https://mydocs.guoyaxue.top
-    repo: https://github.com/xiaou61/mydocs
-    preview: https://xiaou-1305448902.cos.ap-nanjing.myqcloud.com/img/202308291337109.png
 
   - name: Simeis 147' Blog
     desc: In Time
