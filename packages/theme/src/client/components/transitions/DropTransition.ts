@@ -56,7 +56,7 @@ export const DropTransition = defineComponent({
         onAfterEnter: unsetStyle,
         onBeforeLeave: setStyle,
       };
-      const children = () => slots.default();
+      const children = (): VNode | VNode[] => slots.default();
 
       return props.type === "group"
         ? h(TransitionGroup, attrs, children)

@@ -1,5 +1,11 @@
 import { isArray, isString } from "@vuepress/helper/client";
-import type { PlayerSrc, PlyrLayoutProps, TextTrackInit } from "vidstack";
+import type {
+  DASHNamespaceLoader,
+  HLSConstructorLoader,
+  PlayerSrc,
+  PlyrLayoutProps,
+  TextTrackInit,
+} from "vidstack";
 import type { MediaPlayerElement } from "vidstack/elements";
 import type { VidstackPlayerConfig } from "vidstack/global/player";
 import { PlyrLayout, VidstackPlayer } from "vidstack/global/player";
@@ -113,19 +119,17 @@ export default defineComponent({
 
       player = await VidstackPlayer.create(options);
 
-      player.addEventListener("provider-change", (event) => {
-        const provider = event.detail;
-
-        if (provider?.type === "hls" && HLS_JS_INSTALLED)
-          // @ts-expect-error: Issue in vidstack
-          // eslint-disable-next-line @typescript-eslint/explicit-function-return-type
-          provider.library = () =>
-            import(/* webpackChunkName: "hls" */ "hls.js/dist/hls.min.js");
-        else if (provider?.type === "dashjs" && DASHJS_INSTALLED)
-          // @ts-expect-error: Issue in vidstack
-          // eslint-disable-next-line @typescript-eslint/explicit-function-return-type
-          provider.library = () =>
-            import(/* webpackChunkName: "dashjs" */ "dashjs");
+      player.addEventListener("provider-change", () => {
+        if (player!.provider?.type === "hls" && HLS_JS_INSTALLED)
+          player!.provider.library = (() =>
+            import(
+              /* webpackChunkName: "hls" */ "hls.js/dist/hls.min.js"
+            )) as HLSConstructorLoader;
+        else if (player!.provider?.type === "dash" && DASHJS_INSTALLED)
+          player!.provider.library = (() =>
+            import(
+              /* webpackChunkName: "dashjs" */ "dashjs"
+            )) as DASHNamespaceLoader;
       });
     });
 
