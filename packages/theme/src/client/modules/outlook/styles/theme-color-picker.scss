@@ -58,7 +58,7 @@ $enable-theme-color: map.has-key(
 @if $enable-theme-color {
   @each $color in hope-config.$theme-colors {
     :root.theme-#{list.index(hope-config.$theme-colors, $color)} {
-      --theme-colo: #{$color};
+      --theme-color: #{$color};
       --theme-color-light: #{color.scale($color, $lightness: 10%)};
       --theme-color-dark: #{color.scale($color, $lightness: -10%)};
       --theme-color-mask: #{color.change($color, $alpha: 0.15)};
