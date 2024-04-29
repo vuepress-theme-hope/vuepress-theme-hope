@@ -1,0 +1,277 @@
+@keyframes cursor-blink {
+  0% {
+    opacity: 1;
+  }
+
+  50% {
+    opacity: 0;
+  }
+
+  100% {
+    opacity: 1;
+  }
+}
+
+.vp-portfolio-wrapper {
+  position: relative;
+  z-index: 1;
+  overflow: hidden;
+  box-sizing: border-box;
+
+  &:not(.bg) {
+    background: var(--theme-color-mask);
+
+    &::after {
+      content: "";
+
+      position: absolute;
+      top: -200px;
+      left: -200px;
+      z-index: -1;
+
+      width: 1000px;
+      height: 1000px;
+      border-radius: 50%;
+
+      background-color: var(--white);
+
+      @media (max-width: hope-config.$pad) {
+        display: none;
+      }
+    }
+  }
+}
+
+.vp-portfolio-mask {
+  position: absolute;
+  inset: 0;
+
+  &::after {
+    content: " ";
+
+    position: absolute;
+    inset: 0;
+    z-index: 1;
+
+    display: block;
+
+    background: var(--light-grey);
+
+    opacity: 0.2;
+  }
+
+  &.light {
+    display: block;
+
+    html[data-theme="dark"] & {
+      display: none;
+    }
+  }
+
+  &.dark {
+    display: none;
+
+    html[data-theme="dark"] & {
+      display: block;
+    }
+  }
+}
+
+.vp-portfolio-avatar {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 0;
+
+  display: flex;
+  align-items: end;
+  justify-content: center;
+
+  overflow: hidden;
+
+  width: 50vw;
+  height: 100vh;
+  border-radius: 10px;
+
+  @media (min-width: hope-config.$pc) {
+    width: 60vw;
+  }
+
+  @media (max-width: hope-config.$pad) {
+    width: 100vw;
+  }
+
+  img {
+    max-height: 93vh;
+
+    &.light {
+      display: block;
+
+      html[data-theme="dark"] & {
+        display: none;
+      }
+    }
+
+    &.dark {
+      display: none;
+
+      html[data-theme="dark"] & {
+        display: block;
+      }
+    }
+  }
+}
+
+.vp-portfolio-container {
+  position: relative;
+  z-index: 1;
+
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+
+  box-sizing: border-box;
+
+  min-height: 100vh;
+  padding-top: 120px;
+  padding-bottom: 70px;
+}
+
+.vp-portfolio-info {
+  position: relative;
+
+  flex: 0 0 50%;
+
+  box-sizing: border-box;
+
+  max-width: 50%;
+  padding: 0 25px;
+
+  @media (max-width: hope-config.$pad) {
+    position: absolute;
+    right: 15px;
+    bottom: 0;
+    left: 15px;
+
+    flex: 0 0 100%;
+
+    max-width: unset;
+    padding: 2rem 1.5rem;
+    border-radius: 0.5rem;
+
+    background: var(--bg-color-blur);
+
+    text-align: center;
+
+    .vp-social-medias {
+      justify-content: center;
+    }
+  }
+
+  .vp-social-medias {
+    justify-content: start;
+  }
+}
+
+.vp-portfolio-name {
+  margin: 0 0 10px;
+  padding: 0;
+
+  color: var(--black);
+
+  font-weight: bold;
+  font-size: 60px;
+
+  @media (min-width: hope-config.$pc) {
+    font-size: 70px;
+  }
+
+  @media (max-width: hope-config.$pad) {
+    font-size: 40px;
+  }
+}
+
+.vp-portfolio-title {
+  position: relative;
+
+  margin: 0;
+  padding: 0;
+  border-bottom: none;
+
+  color: var(--theme-color);
+
+  font-weight: 500;
+  font-weight: bold;
+  font-size: 25px;
+
+  @media (max-width: hope-config.$pad) {
+    font-size: 18px;
+  }
+
+  &::after {
+    content: "";
+
+    display: inline-block;
+    vertical-align: top;
+
+    width: 2px;
+    height: 1.3em;
+
+    background: var(--theme-color);
+
+    animation-name: cursor-blink;
+    animation-duration: 1s;
+    animation-iteration-count: infinite;
+  }
+}
+
+.vp-portfolio-welcome {
+  margin: 0 0 10px;
+  padding: 0;
+  color: var(--theme-color);
+  font-size: 28px;
+
+  @media (max-width: hope-config.$pad) {
+    font-size: 18px;
+  }
+}
+
+.vp-portfolio-medias {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  padding-top: 20px;
+
+  @media (min-width: hope-config.$pad) {
+    justify-content: flex-start;
+  }
+
+  .vp-portfolio-media {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+
+    width: 2rem;
+    height: 2rem;
+    border-radius: 50%;
+
+    background: var(--theme-color);
+    color: var(--white);
+
+    transition: ease all 0.35s;
+
+    &:hover {
+      background-color: var(--theme-color-light);
+      cursor: pointer;
+    }
+
+    &::after {
+      --balloon-font-size: 10px;
+      padding: 0.2em 0.4em !important;
+    }
+
+    + a {
+      margin-left: 5px;
+    }
+  }
+}

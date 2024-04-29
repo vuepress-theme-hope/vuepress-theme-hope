@@ -1,12 +1,12 @@
 import type { FunctionalComponent } from "vue";
 import { h } from "vue";
 
-import BlogHome from "@theme-hope/modules/blog/components/BlogHome";
+import BlogHomePage from "@theme-hope/modules/blog/components/BlogHomePage";
 import BlogWrapper from "@theme-hope/modules/blog/components/BlogWrapper";
 
-const BlogHomeLayout: FunctionalComponent = () =>
-  h(BlogWrapper, () => h(BlogHome));
+const BlogHome: FunctionalComponent = () =>
+  h(BlogWrapper, () => h(BlogHomePage));
 
-BlogHomeLayout.displayName = "BlogHomeLayout";
+BlogHome.displayName = "BlogHome";
 
-export default BlogHomeLayout;
+export default BlogHome;

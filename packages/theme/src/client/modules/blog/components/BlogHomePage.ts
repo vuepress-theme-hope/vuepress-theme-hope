@@ -15,7 +15,7 @@ import type { ThemeBlogHomePageFrontmatter } from "../../../../shared/index.js";
 import "../styles/home.scss";
 
 export default defineComponent({
-  name: "BlogHome",
+  name: "BlogHomePage",
 
   setup() {
     const articles = useArticles();

@@ -10,17 +10,21 @@
   height: 26px;
   margin: 4px;
 
-  transition: transform 0.18s ease-out 0.18s;
-  transform: scale(1, 1);
+  svg {
+    transition: transform var(--transform-transition);
+  }
 
   &:hover {
     cursor: pointer;
-    transform: scale(1.2, 1.2);
+
+    svg {
+      transform: scale(1.1, 1.1);
+    }
   }
 
   &::after {
-    --balloon-font-size: 12px;
-    padding: 0.3em 0.6em;
+    --balloon-font-size: 10px;
+    padding: 0.2em 0.4em !important;
   }
 
   .icon {

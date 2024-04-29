@@ -15,17 +15,13 @@ export default defineComponent({
     const blogOptions = useBlogOptions();
     const isPure = usePure();
 
-    const mediaLinks = computed(() => {
-      const config = blogOptions.value.medias;
-
-      return config
-        ? entries(config).map(([media, url]) => ({
-            name: media,
-            icon: icons[media],
-            url,
-          }))
-        : [];
-    });
+    const mediaLinks = computed(() =>
+      entries(blogOptions.value.medias ?? {}).map(([media, url]) => ({
+        name: media,
+        icon: icons[media],
+        url,
+      })),
+    );
 
     return (): VNode | null =>
       mediaLinks.value.length
@@ -38,7 +34,7 @@ export default defineComponent({
                 href: url,
                 rel: "noopener noreferrer",
                 target: "_blank",
-                "aria-label": name,
+                "aria-label": name || "",
                 ...(isPure.value ? {} : { "data-balloon-pos": "up" }),
                 innerHTML: icon,
               }),

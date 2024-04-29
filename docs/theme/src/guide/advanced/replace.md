@@ -186,6 +186,7 @@ Components:
 - `@theme-hope/modules/blog/components/InfoList`: blog info list
 - `@theme-hope/modules/blog/components/InfoPanel`: blog info panel
 - `@theme-hope/modules/blog/components/Pagination`: pagination
+- `@theme-hope/modules/blog/components/PortfolioHome`: portfolio homepage
 - `@theme-hope/modules/blog/components/ProjectPanel`: blog homepage project panel
 - `@theme-hope/modules/blog/components/SocialMedia`: social media links
 - `@theme-hope/modules/blog/components/TagList`: tag list
@@ -319,6 +320,12 @@ Components that provide slots are as follows:
 
   - `info` slot will receive `text` `tagline` `image` `imageDark` `style` `alt` and `isFullScreen` props.
   - `bg` slot will receive `image` `bgStyle` and `isFullScreen` props.
+
+- `PortfolioHero`: `avatar` `bg`, `info`
+
+  - `avatar` slot will receive `avatar` `avatarDark` `avatarStyle` and `alt` props.
+  - `info` slot will receive `name` `welcome` `title` `titles` and `links` props.
+  - `bg` slot will receive `image` `imageDark` and `bgStyle` props.
 
 **NavBar**:
 

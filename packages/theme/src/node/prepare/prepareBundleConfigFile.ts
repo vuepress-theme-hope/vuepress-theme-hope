@@ -45,7 +45,7 @@ defineCatalogInfoGetter((meta) => {
 
   if (enableBlog) {
     imports.push(
-      `import { BlogCategory, BlogHome, BlogType, BloggerInfo, Timeline, setupBlog } from "${BUNDLE_FOLDER}modules/blog/export.js";`,
+      `import { BlogCategory, BlogHome, BlogType, BloggerInfo, PortfolioHome, Timeline, setupBlog } from "${BUNDLE_FOLDER}modules/blog/export.js";`,
       `import "${BUNDLE_FOLDER}modules/blog/styles/all.scss";`,
     );
 
@@ -53,7 +53,13 @@ defineCatalogInfoGetter((meta) => {
 
     setups.push("setupBlog();");
 
-    layouts.push("BlogCategory,", "BlogHome,", "BlogType,", "Timeline,");
+    layouts.push(
+      "BlogCategory",
+      "BlogHome",
+      "BlogType",
+      "PortfolioHome",
+      "Timeline",
+    );
   }
 
   if (enableEncrypt) {
@@ -75,7 +81,7 @@ defineCatalogInfoGetter((meta) => {
         url,
       )}";`,
     );
-    layouts.push("Slide,");
+    layouts.push("Slide");
   }
 
   return app.writeTemp(
@@ -118,7 +124,7 @@ ${setups.map((item) => `    ${item}`).join("\n")}
   layouts: {
     Layout,
     NotFound,
-${layouts.map((item) => `    ${item}`).join("\n")}
+${layouts.map((item) => `    ${item},`).join("\n")}
   }
 });`,
   );

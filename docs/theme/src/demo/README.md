@@ -26,6 +26,8 @@ actions:
 
 - [Custom Blog HomePage](./custom-blog-home.md)
 
+- [Portfolio HomePage](./portfolio-home.md)
+
 - [Encrypt Page](./encrypt.md) (Password: 1234)
 
 - <ProjectLink name="md-enhance" path="/guide/content/revealjs/demo.html">Slide Page</ProjectLink>

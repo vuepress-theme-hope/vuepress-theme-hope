@@ -12,14 +12,14 @@ tag:
 
 `vuepress-theme-hope` 允许你启用博客风格的首页。
 
-你需要在相应的页面的 frontmatter 中，设置 `home: true` 和 `layout: BlogHome` 来使用博客主页。
-
 <!-- more -->
+
+## 博客类型主页
+
+你需要在相应的页面的 frontmatter 中，设置 `home: true` 和 `layout: BlogHome` 来使用博客主页。
 
 ![首页截图](./assets/blog-light.jpg#light)
 ![首页截图](./assets/blog-dark.jpg#dark)
-
-## 主页信息
 
 你可以使用 `heroText` 设置主标题，并通过 `tagline` 设置副标题。
 
@@ -29,11 +29,7 @@ tag:
 
 如果你需要定制一些样式，你可以通过 `heroImageStyle` 和 `bgImageStyle` 设置 Logo 与背景图片的样式。
 
-## 项目展示
-
-通常情况下，你可能希望在主页中展示一些项目、书籍、文章、链接、友链等。
-
-你可以通过 `projects` 设置它们，它是一个数组，每个元素都是一个对象，包含以下键值:
+通常情况下，你可能希望在主页中展示一些项目、书籍、文章、链接、友链等。你可以通过 `projects` 设置它们，它是一个数组，每个元素都是一个对象，包含以下键值:
 
 - `name`: 项目名称，必填
 - `link`: 项目链接，必填，填入外部链接或绝对路径。
@@ -48,7 +44,25 @@ tag:
 
 :::
 
-## 即时案例
+::: info 即时案例
 
 - [当前文档的博客主页](../../demo/blog-home.md)
 - [当前文档的自定义博客主页](../../demo/custom-blog-home.md)
+
+:::
+
+## 档案类型主页
+
+在主页的 frontmatter 中设置 `layout: PortfolioHome` 和 `home: true`。
+
+名称默认为主题选项中的 `author` 选项，你可以在 frontmatter 中设置 `name` 进行自定义。欢迎信息也可以通过 frontmatter 中的 `welcome` 选项进行自定义。
+
+为了描述自己，请在 frontmatter 中通过 `titles` 设置适合你的职称。另外你需要使用 `avatar` 设置你的图像 (如果需要，还可以使用 `avatarDark` 用于深色模式)。 你还可以设置 `bgImage` (如果需要，还可以设置 `bgImageDark` 用于深色模式) 来自定义背景图像。你可以使用 `avatarStyle` 和 `bgImageStyle` 选项来完成对形象和背景图片样式调整。
+
+默认情况下，会显示在 `blog.medias` 中设置的媒体链接，同时你也可以在 frontmatter 中设置 `medias` 进行覆盖，你需要为每个媒体设置 `name`、`icon` 和 `url`。
+
+::: info 即时案例
+
+- [一个档案主页案例](../../demo/portfolio-home.md)
+
+:::

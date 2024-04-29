@@ -35,7 +35,7 @@ If you are using the VuePress Theme Hope template, you can find the following th
 
 This means you can use:
 
-::: code-tabs#shell
+::: tabs#shell
 
 @tab pnpm
 

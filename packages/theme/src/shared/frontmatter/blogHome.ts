@@ -32,6 +32,17 @@ export interface ThemeBlogHomeProjectOptions {
    * @description 支持图片链接或者图标字体类，同时也支持 `"link"`、`"project"`、`"book"`、`"article"`、`"friend"`
    */
   icon?: string;
+
+  /**
+   * Background color
+   *
+   * @description Can be css variables
+   *
+   * 背景颜色
+   *
+   * @description 可以是 CSS 变量
+   */
+  background?: string;
 }
 
 export interface ThemeBlogHomePageFrontmatter extends ThemeHopePageFrontmatter {
@@ -41,5 +52,10 @@ export interface ThemeBlogHomePageFrontmatter extends ThemeHopePageFrontmatter {
    */
   hero?: boolean;
 
+  /**
+   * Projects
+   *
+   * 项目
+   */
   projects: ThemeBlogHomeProjectOptions[];
 }

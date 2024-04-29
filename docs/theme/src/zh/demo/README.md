@@ -28,6 +28,8 @@ actions:
 
 - [自定义博客主页](./custom-blog-home.md)
 
+- [档案主页](./portfolio-home.md)
+
 - [加密文章](./encrypt.md) (密码: 1234)
 
 - <ProjectLink name="md-enhance" path="/zh/guide/content/revealjs/demo.html">幻灯片页面</ProjectLink>

@@ -116,7 +116,7 @@ export default {
 - `@theme-hope/modules/navbar/components/LanguageDropdown` 语言下拉列表
 - `@theme-hope/modules/navbar/components/NavActions` 导航栏功能
 - `@theme-hope/modules/navbar/components/Navbar` 导航栏
-- `@theme-hope/modules/navbar/components/NavbarBrand` 导航栏品牌信息
+- `@theme-hope/modules/navbar/components/NavbarBr和` 导航栏品牌信息
 - `@theme-hope/modules/navbar/components/NavbarLinks` 导航栏链接
 - `@theme-hope/modules/navbar/components/NavScreen` 移动视图下的导航屏
 - `@theme-hope/modules/navbar/components/NavScreenDropdown` 移动视图下导航栏下拉菜单
@@ -187,6 +187,7 @@ export default {
 - `@theme-hope/modules/blog/components/InfoList` 博客信息列表
 - `@theme-hope/modules/blog/components/InfoPanel` 博客信息面板
 - `@theme-hope/modules/blog/components/Pagination` 分页组件
+- `@theme-hope/modules/blog/components/Portfolio` 档案组件
 - `@theme-hope/modules/blog/components/ProjectPanel` 博客主页项目面板
 - `@theme-hope/modules/blog/components/SocialMedia` 社交媒体链接
 - `@theme-hope/modules/blog/components/TagList` 标签列表
@@ -323,6 +324,12 @@ import HopeHomePage from "vuepress-theme-hope/components/HomePage.js";
 
   - `info` 插槽将接收 `text` `tagline` `image` `imageDark` `style` `alt` 和 `isFullScreen` 属性。
   - `bg` 插槽将接收 `image` `bgStyle` 和 `isFullScreen` 属性。
+
+- `PortfolioHero`: `avatar` `bg`, `info`
+
+  - `avatar` 插槽将接收 `avatar` `avatarDark` `avatarStyle` 和 `alt` 属性。
+  - `info` 插槽将接收 `name` `welcome` `title` `titles` 和 `links` 属性。
+  - `bg` 插槽将接收 `image` `imageDark` 和 `bgStyle` 属性。
 
 **导航栏**:
 

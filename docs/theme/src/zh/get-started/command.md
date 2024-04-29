@@ -35,7 +35,7 @@ tag:
 
 这意味着你可以使用:
 
-::: code-tabs#shell
+::: tabs#shell
 
 @tab pnpm
 

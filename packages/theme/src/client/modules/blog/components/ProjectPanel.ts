@@ -67,15 +67,16 @@ export default defineComponent({
       h(
         "div",
         { class: "vp-project-panel" },
-        props.items.map(({ icon, link, name, desc }, index) =>
+        props.items.map(({ icon, link, name, desc, background }, index) =>
           h(
             "div",
             {
               class: [
                 "vp-project-card",
                 // TODO: magic number 9 is tricky here
-                { [`project${index % 9}`]: !pure.value },
+                { [`project${index % 9}`]: !pure.value && !background },
               ],
+              ...(background ? { style: background } : {}),
               onClick: () => navigate(link),
             },
             [
