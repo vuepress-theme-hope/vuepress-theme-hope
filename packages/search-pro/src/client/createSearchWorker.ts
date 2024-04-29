@@ -130,7 +130,6 @@ export const createSearchWorker = (): SearchWorker => {
         const id = Date.now();
 
         worker.postMessage({ type: "search", id, query, locale, options });
-        console.log("post");
         states.search = { id, resolve, reject };
       }),
 
