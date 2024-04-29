@@ -46,6 +46,12 @@ export const getFeedPlugin = (
   const defaultOptions: FeedPluginOptions = {
     // @ts-expect-error: hostname may not exist here
     hostname,
+    filter: ({ frontmatter, filePathRelative }) =>
+      Boolean(
+        frontmatter.feed ??
+          frontmatter["article"] ??
+          (filePathRelative && !frontmatter["home"]),
+      ),
     channel: {
       ...(favicon ? { icon: favicon } : {}),
       ...(themeData.locales["/"].logo

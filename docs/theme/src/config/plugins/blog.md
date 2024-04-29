@@ -44,7 +44,12 @@ Length of excerpt when auto generating.
 ### filter
 
 - Type: `(page: Page) => boolean`
-- Default: `(page) => Boolean(page.filePathRelative) && !page.frontmatter.home`
+- Default:
+
+  ```js
+  ({ frontmatter, filePathRelative }) =>
+    frontmatter.article ?? (Boolean(filePathRelative) && !frontmatter.home);
+  ```
 
 Page filter, determine whether a page should be included.
 
@@ -105,6 +110,8 @@ Slugify function, used to convert key name which they are register in routes.
     layout?: string;
   }
   ```
+
+```
 
 - Default: `[]`
 - Details:
@@ -167,3 +174,4 @@ Timeline list route path.
 - Default: Whether using `--debug` flag
 
 Whether to enable hot reload in the development server.
+```
