@@ -144,9 +144,16 @@ Whether to add the article to the article list.
 
 Whether to add the article to the timeline list.
 
-## image
+## cover
 
 - Type: `string`
 - Required: No
 
 Current page's image, needs an absolute path.
+
+## banner
+
+- Type: `string`
+- Required: No
+
+Current page's banner image, needs an absolute path.
