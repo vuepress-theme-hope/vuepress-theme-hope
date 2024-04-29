@@ -6,10 +6,4 @@ dir:
 index: false
 ---
 
-- [VPBanner](banner.md)
-
-- [VPCard](card.md)
-
-- [SiteInfo](site-info.md)
-
-  站点信息展示
+<Catalog />

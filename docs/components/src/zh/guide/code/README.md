@@ -6,8 +6,4 @@ dir:
 index: false
 ---
 
-- [CodePen](./code-pen.md)
-
-- [Replit](./repl-it.md)
-
-- [StackBlitz](./stack-blitz.md)
+<Catalog />

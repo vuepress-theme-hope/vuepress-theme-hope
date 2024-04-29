@@ -6,7 +6,7 @@
 
 <Replit user="FuckDoctors" repl="Java-Test" file="Main.java" :darkmode="isDarkmode" />
 
-<Replit user="FuckDoctors" repl="Java-Test" auto-load :darkmode="isDarkmode" />
+<Replit user="FuckDoctors" repl="Java-Test" click-to-load :darkmode="isDarkmode" />
 
 <Replit link="https://replit.com/@FuckDoctors/Java-Test" :darkmode="isDarkmode" />
 

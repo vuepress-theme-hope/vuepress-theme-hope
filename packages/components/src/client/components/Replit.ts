@@ -94,7 +94,7 @@ export default defineComponent({
      *
      * 加载状态
      */
-    autoLoad: Boolean,
+    clickToLoad: Boolean,
 
     /**
      * Load button text
@@ -138,8 +138,19 @@ export default defineComponent({
         ? h(
             "div",
             { class: "replit-wrapper" },
-            props.autoLoad || shouldLoad.value
-              ? [
+            props.clickToLoad && !shouldLoad.value
+              ? h(
+                  "button",
+                  {
+                    type: "button",
+                    class: "replit-button",
+                    onClick: () => {
+                      shouldLoad.value = true;
+                    },
+                  },
+                  props.text,
+                )
+              : [
                   h("iframe", {
                     ref: el,
                     class: "replit-iframe",
@@ -154,18 +165,7 @@ export default defineComponent({
                     },
                   }),
                   loaded.value ? null : h(LoadingIcon),
-                ]
-              : h(
-                  "button",
-                  {
-                    type: "button",
-                    class: "replit-button",
-                    onClick: () => {
-                      shouldLoad.value = true;
-                    },
-                  },
-                  props.text,
-                ),
+                ],
           )
         : null;
   },

@@ -37,7 +37,6 @@ tag:
 - `"CodePen"`
 - `"FontIcon"`
 - `"PDF"`
-- `"Replit"`
 - `"Share"`
 - `"StackBlitz"`
 - `"VPBanner"`

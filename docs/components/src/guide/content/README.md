@@ -6,10 +6,4 @@ dir:
 index: false
 ---
 
-- [VPBanner](banner.md)
-
-- [VPCard](card.md)
-
-- [SiteInfo](site-info.md)
-
-  Site Info display
+<Catalog />

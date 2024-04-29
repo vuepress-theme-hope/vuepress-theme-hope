@@ -33,7 +33,7 @@ title: CodePen
 
 :::
 
-::: md-demo 一个加载运行的案例
+::: md-demo 一个点击运行的案例
 
 <CodePen
   link="https://codepen.io/kowlor/pen/ZYYQoy"

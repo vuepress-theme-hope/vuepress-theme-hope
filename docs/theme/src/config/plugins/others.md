@@ -37,7 +37,6 @@ Available component which can be used in markdown files are:
 - `"CodePen"`
 - `"FontIcon"`
 - `"PDF"`
-- `"Replit"`
 - `"Share"`
 - `"StackBlitz"`
 - `"VPBanner"`

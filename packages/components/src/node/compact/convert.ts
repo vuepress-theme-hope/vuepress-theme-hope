@@ -78,6 +78,13 @@ export const convertOptions = (
       )} instead.`,
     );
 
+  if ((options.components as unknown[])?.includes("Replit"))
+    logger.warn(
+      `${colors.cyan(
+        "Replit",
+      )} component is deprecated because you can no longer run code in embed mode.`,
+    );
+
   ["VideoPlayer", "AudioPlayer", "YouTube"].forEach((component) => {
     if ((options.components as unknown[])?.includes(component))
       logger.warn(

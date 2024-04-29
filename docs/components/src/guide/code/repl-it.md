@@ -4,6 +4,12 @@ title: Replit
 
 Embed Replit demo in Markdown files.
 
+::: warning
+
+Since Replit no longer allows to run code in embed mode, this component is deprecated and will be removed in future.
+
+:::
+
 <!-- more -->
 
 ## Demo
@@ -22,9 +28,9 @@ Embed Replit demo in Markdown files.
 
 :::
 
-::: md-demo An autoload replit
+::: md-demo An click to load replit
 
-<Replit user="FuckDoctors" repl="Java-Test" auto-load />
+<Replit user="FuckDoctors" repl="Java-Test" click-to-load />
 
 :::
 
@@ -87,12 +93,12 @@ Replit component height.
 
 Replit component ratio, ONLY valid when `height` not set.
 
-### autoLoad
+### clickToLoad
 
 - Type: `boolean`
 - Default: `false`
 
-Wether auto-load ReplIt.
+Wether to click to load ReplIt.
 
 ### text
 

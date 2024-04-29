@@ -4,6 +4,12 @@ title: Replit
 
 在 Markdown 文件中嵌入 Replit 演示。
 
+::: warning
+
+由于 Replit 不再允许在嵌入式窗口运行代码，此组件以废弃并会在未来版本中移除，请避免使用它。
+
+:::
+
 <!-- more -->
 
 ## 示例
@@ -22,7 +28,7 @@ title: Replit
 
 :::
 
-::: md-demo 一个自动加载的 replit
+::: md-demo 一个点击加载的 replit
 
 <Replit user="FuckDoctors" repl="Java-Test" auto-load />
 
@@ -87,12 +93,12 @@ Replit 组件高度。
 
 Replit 组件高度宽高比，只有当未指定 `height` 时有效。
 
-### autoLoad
+### clickToLoad
 
 - 类型: `boolean`
 - 默认值: `false`
 
-是否自动加载 ReplIt。
+是否点击加载 ReplIt。
 
 ### text
 

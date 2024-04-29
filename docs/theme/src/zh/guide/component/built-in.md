@@ -19,7 +19,6 @@ tag:
 - CodePen
 - FontIcon
 - PDF
-- Replit
 - Share
 - StackBlitz
 - SiteInfo
@@ -54,7 +53,6 @@ export default {
           "BiliBili",
           "CodePen",
           "PDF",
-          "Replit",
           "Share",
           "SiteInfo",
           "StackBlitz",
@@ -109,7 +107,7 @@ export default {
 
 ## 媒体
 
-## VidStack
+### VidStack
 
 > 先安装 `vidstack@1` 。
 
@@ -150,12 +148,6 @@ PDF 浏览器组件。
 <!-- @include: @components/zh/guide/code/code-pen.md#demo -->
 
 有关可用属性，请参阅 <ProjectLink name="components" path="/zh/guide/code/code-pen.html">CodePen</ProjectLink> 页面。
-
-### Replit
-
-<!-- @include: @components/zh/guide/code/repl-it.md#demo -->
-
-有关可用属性，请参阅 <ProjectLink name="components" path="/zh/guide/code/repl-it.html">Replit</ProjectLink> 页面。
 
 ### StackBlitz
 

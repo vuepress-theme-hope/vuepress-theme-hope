@@ -59,7 +59,6 @@ export default theme(
           "BiliBili",
           "CodePen",
           "PDF",
-          "Replit",
           "Share",
           "SiteInfo",
           "StackBlitz",

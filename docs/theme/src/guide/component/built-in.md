@@ -19,7 +19,6 @@ Available components:
 - CodePen
 - FontIcon
 - PDF
-- Replit
 - Share
 - StackBlitz
 - SiteInfo
@@ -54,7 +53,6 @@ export default {
           "BiliBili",
           "CodePen",
           "PDF",
-          "Replit",
           "Share",
           "SiteInfo",
           "StackBlitz",
@@ -107,14 +105,6 @@ See <ProjectLink name="components" path="/guide/utilities/share.html">Share</Pro
 
 ## Medias
 
-### PDF
-
-PDF viewer component.
-
-<!-- @include: @components/guide/media/p-d-f.md#demo -->
-
-See <ProjectLink name="components" path="/guide/media/p-d-f.html">PDF</ProjectLink> page for available props.
-
 ### VidStack
 
 > Install `vidstack@1` first.
@@ -122,6 +112,14 @@ See <ProjectLink name="components" path="/guide/media/p-d-f.html">PDF</ProjectLi
 <!-- @include: @components/guide/media/vid-stack.md#demo -->
 
 See <ProjectLink name="components" path="/guide/media/vid-stack.html">VidStack</ProjectLink> page for available props.
+
+### PDF
+
+PDF viewer component.
+
+<!-- @include: @components/guide/media/p-d-f.md#demo -->
+
+See <ProjectLink name="components" path="/guide/media/p-d-f.html">PDF</ProjectLink> page for available props.
 
 ### BiliBili
 
@@ -148,12 +146,6 @@ A component which allows you to embed CodePen demo.
 <!-- @include: @components/guide/code/code-pen.md#demo -->
 
 See <ProjectLink name="components" path="/guide/code/code-pen.html">CodePen</ProjectLink> page for available props.
-
-### Replit
-
-<!-- @include: @components/guide/code/repl-it.md#demo -->
-
-See <ProjectLink name="components" path="/guide/code/repl-it.html">Replit</ProjectLink> page for available props.
 
 ### StackBlitz
 
