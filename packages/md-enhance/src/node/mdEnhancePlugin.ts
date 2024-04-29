@@ -161,7 +161,7 @@ export const mdEnhancePlugin =
           logger.warn(
             `Found unicode character ${token.text} inside tex${
               filePathRelative ? ` in ${colors.cyan(filePathRelative)}` : ""
-            }. You should use ${colors.magenta(`\\text{${token.text}`)}`,
+            }. You should use ${colors.magenta(`\\text{${token.text}}`)}`,
           );
         else
           logger.warn(
