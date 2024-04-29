@@ -25,11 +25,11 @@ const projects = computed(() => frontmatter.value.projects ?? []);
   <BlogWrapper>
     <div class="vp-blog vp-page">
       <BlogHero>
-        <template #heroInfo="heroInfo">
-          <HitokotoBlogHero v-bind="heroInfo" />
+        <template #info="info">
+          <HitokotoBlogHero v-bind="info" />
         </template>
 
-        <template #heroBg>
+        <template #bg>
           <BingHeroBackground />
         </template>
       </BlogHero>

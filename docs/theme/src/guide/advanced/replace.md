@@ -297,11 +297,11 @@ Components that provide slots are as follows:
 
 - `AutoLink`: `default`, `before`, `after`
 - `CommonWrapper`: `default`, `navbarStartBefore`, `navbarStartAfter`, `navbarCenterBefore`, `navbarCenterAfter`, `navbarEndBefore`, `navbarEndAfter`, `navScreenTop`, `navScreenBottom`, `sidebar`, `sidebarTop`, `sidebarBottom`
-- `HeroInfo`: `heroImage`, `heroInfo`, `heroBg`
+- `HeroInfo`: `logo`, `info`, `bg`
 
-  - `heroInfo` slot will receive `text` `tagline` and `isFullScreen` props.
-  - `heroImage` slot will receive `image` `imageDark` `style` `alt` and `isFullScreen` props.
-  - `heroBg` slot will receive `image` `bgStyle` and `isFullScreen` props.
+  - `info` slot will receive `text` `tagline` and `isFullScreen` props.
+  - `logo` slot will receive `image` `imageDark` `style` `alt` and `isFullScreen` props.
+  - `bg` slot will receive `image` `bgStyle` and `isFullScreen` props.
 
 - `HomePage`: `top`, `center`, `bottom`
 - `NormalPage`: `top`, `contentBefore`, `contentAfter`, `bottom`, `tocBefore`, `tocAfter`
@@ -315,10 +315,10 @@ Components that provide slots are as follows:
   - `cover` slot will receive `cover` props.
   - `info` slot will receive `info` props.
 
-- `BlogHero`: `heroBg`, `heroInfo`
+- `BlogHero`: `bg`, `info`
 
-  - `heroInfo` slot will receive `text` `tagline` `image` `imageDark` `style` `alt` and `isFullScreen` props.
-  - `heroBg` slot will receive `image` `bgStyle` and `isFullScreen` props.
+  - `info` slot will receive `text` `tagline` `image` `imageDark` `style` `alt` and `isFullScreen` props.
+  - `bg` slot will receive `image` `bgStyle` and `isFullScreen` props.
 
 **NavBar**:
 

@@ -29,7 +29,7 @@ Components:
 
 Usage:
 
-Override `@theme-hope/modules/blog/components/BlogHero` and import the above component into the `heroBg` slot of the original `BlogHero`.
+Override `@theme-hope/modules/blog/components/BlogHero` and import the above component into the `bg` slot of the original `BlogHero`.
 
 ::: details Code Example
 
@@ -60,7 +60,7 @@ import BingHeroBackground from "vuepress-theme-hope/presets/BingHeroBackground.j
 
 <template>
   <BlogHero>
-    <template #heroBg>
+    <template #bg>
       <BingHeroBackground />
     </template>
   </BlogHero>
@@ -79,7 +79,7 @@ Components:
 
 Usage:
 
-Override `@theme-hope/modules/blog/components/BlogHero`, import the above component into the `heroInfo` slot of the original `BlogHero`, and pass in the slot properties as they are.
+Override `@theme-hope/modules/blog/components/BlogHero`, import the above component into the `info` slot of the original `BlogHero`, and pass in the slot properties as they are.
 
 ::: details Code Example
 
@@ -110,8 +110,8 @@ import HitokotoBlogHero from "vuepress-theme-hope/presets/HitokotoBlogHero.js";
 
 <template>
   <BlogHero>
-    <template #heroInfo="heroInfo">
-      <HitokotoBlogHero v-bind="heroInfo" />
+    <template #info="info">
+      <HitokotoBlogHero v-bind="info" />
     </template>
   </BlogHero>
 </template>

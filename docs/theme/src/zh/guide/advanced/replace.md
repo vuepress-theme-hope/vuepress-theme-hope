@@ -301,11 +301,11 @@ import HopeHomePage from "vuepress-theme-hope/components/HomePage.js";
 
 - `AutoLink`: `default`, `before`, `after`
 - `CommonWrapper`: `default`, `navbarStartBefore`, `navbarStartAfter`, `navbarCenterBefore`, `navbarCenterAfter`, `navbarEndBefore`, `navbarEndAfter`, `navScreenTop`, `navScreenBottom`, `sidebar`, `sidebarTop`, `sidebarBottom`
-- `HeroInfo`: `heroImage`, `heroInfo`, `heroBg`
+- `HeroInfo`: `logo`, `info`, `bg`
 
-  - `heroInfo` 插槽将接收 `text` `tagline` 和 `isFullScreen` 属性。
-  - `heroImage` 插槽将接收 `image` `imageDark` `style` `alt` 和 `isFullScreen` 属性。
-  - `heroBg` 插槽将接收 `image` `bgStyle` 和 `isFullScreen` 属性。
+  - `logo` 插槽将接收 `image` `imageDark` `style` `alt` 和 `isFullScreen` 属性。
+  - `info` 插槽将接收 `text` `tagline` 和 `isFullScreen` 属性。
+  - `bg` 插槽将接收 `image` `bgStyle` 和 `isFullScreen` 属性。
 
 - `HomePage`: `top`, `center`, `bottom`
 - `NormalPage`: `top`, `contentBefore`, `contentAfter`, `bottom`, `tocBefore`, `tocAfter`
@@ -319,10 +319,10 @@ import HopeHomePage from "vuepress-theme-hope/components/HomePage.js";
   - `cover` 插槽将接收 `cover` 属性。
   - `info` 插槽将接收 `info` 属性。
 
-- `BlogHero`: `heroBg`, `heroInfo`
+- `BlogHero`: `bg`, `info`
 
-  - `heroInfo` 插槽将接收 `text` `tagline` `image` `imageDark` `style` `alt` 和 `isFullScreen` 属性。
-  - `heroBg` 插槽将接收 `image` `bgStyle` 和 `isFullScreen` 属性。
+  - `info` 插槽将接收 `text` `tagline` `image` `imageDark` `style` `alt` 和 `isFullScreen` 属性。
+  - `bg` 插槽将接收 `image` `bgStyle` 和 `isFullScreen` 属性。
 
 **导航栏**:
 

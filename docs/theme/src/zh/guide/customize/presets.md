@@ -28,7 +28,7 @@ tag:
 
 使用:
 
-覆盖 `@theme-hope/modules/blog/components/BlogHero`，将上方组件导入原 `BlogHero` 的 `heroBg` 插槽。
+覆盖 `@theme-hope/modules/blog/components/BlogHero`，将上方组件导入原 `BlogHero` 的 `bg` 插槽。
 
 ::: details 代码示例
 
@@ -59,7 +59,7 @@ import BingHeroBackground from "vuepress-theme-hope/presets/BingHeroBackground.j
 
 <template>
   <BlogHero>
-    <template #heroBg>
+    <template #bg>
       <BingHeroBackground />
     </template>
   </BlogHero>
@@ -78,7 +78,7 @@ import BingHeroBackground from "vuepress-theme-hope/presets/BingHeroBackground.j
 
 使用:
 
-覆盖 `@theme-hope/modules/blog/components/BlogHero`，将上方组件导入原 `BlogHero` 的 `heroInfo` 插槽，同时原样传入插槽属性。
+覆盖 `@theme-hope/modules/blog/components/BlogHero`，将上方组件导入原 `BlogHero` 的 `info` 插槽，同时原样传入插槽属性。
 
 ::: details 示例
 
@@ -109,8 +109,8 @@ import HitokotoBlogHero from "vuepress-theme-hope/presets/HitokotoBlogHero.js";
 
 <template>
   <BlogHero>
-    <template #heroInfo="heroInfo">
-      <HitokotoBlogHero v-bind="heroInfo" />
+    <template #info="info">
+      <HitokotoBlogHero v-bind="info" />
     </template>
   </BlogHero>
 </template>
