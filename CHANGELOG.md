@@ -4,6 +4,25 @@ All notable changes to this project will be documented in this file. See [Conven
 
 <!-- #region recent-change -->
 
+## [2.0.0-rc.38](https://github.com/vuepress-theme-hope/vuepress-theme-hope/compare/v2.0.0-rc.37...v2.0.0-rc.38) (2024-04-29)
+
+### Features
+
+- **components:** deprecate Replit ([feeb461](https://github.com/vuepress-theme-hope/vuepress-theme-hope/commit/feeb461d1d0dbf4e320ba3a95b530306e86053df))
+- **theme:** add portfolio homepage ([6c08166](https://github.com/vuepress-theme-hope/vuepress-theme-hope/commit/6c08166b054b3969d0085e6fbd8d42b650df075b))
+- **theme:** update slot name ([95ac540](https://github.com/vuepress-theme-hope/vuepress-theme-hope/commit/95ac5403c567f919e5039138b5a49e6a289df8e5))
+
+### Bug Fixes
+
+- **deps:** update dependency @vue/repl to v4.1.2 ([#4094](https://github.com/vuepress-theme-hope/vuepress-theme-hope/issues/4094)) ([3d7709b](https://github.com/vuepress-theme-hope/vuepress-theme-hope/commit/3d7709ba57c8f1931ff5d36b9530e681d17215a6))
+- **deps:** update dependency inquirer to v9.2.20 ([#4095](https://github.com/vuepress-theme-hope/vuepress-theme-hope/issues/4095)) ([fe95a0c](https://github.com/vuepress-theme-hope/vuepress-theme-hope/commit/fe95a0c9fb172f377f69f89884539e5fb7e03bc5))
+- **deps:** update dependency three to v0.164.1 ([#4098](https://github.com/vuepress-theme-hope/vuepress-theme-hope/issues/4098)) ([b257ca3](https://github.com/vuepress-theme-hope/vuepress-theme-hope/commit/b257ca30312f330c5158b38a350e57824fa4110e))
+- **md-enhance:** fix katex logger ([a1bd30d](https://github.com/vuepress-theme-hope/vuepress-theme-hope/commit/a1bd30d0b3eb227cd9fe8484e7fe2e515ad5010a))
+- **md-enhance:** fix markmap color ([3bdf212](https://github.com/vuepress-theme-hope/vuepress-theme-hope/commit/3bdf212702ca762012d13bff51161793a70d6842))
+- **search-pro:** remove debug logger ([4d96a20](https://github.com/vuepress-theme-hope/vuepress-theme-hope/commit/4d96a20ec2ed326d09736f3d7997bf80b8521717))
+- **theme:** fix redirect modal ([edd7814](https://github.com/vuepress-theme-hope/vuepress-theme-hope/commit/edd7814fa0f8a29006f55156e67ad947e633128c))
+- **theme:** fix theme color picker, close [#4089](https://github.com/vuepress-theme-hope/vuepress-theme-hope/issues/4089) ([03c04fb](https://github.com/vuepress-theme-hope/vuepress-theme-hope/commit/03c04fba4f6782d2516d01ad5afdb57d66310fbe))
+
 ## [2.0.0-rc.37](https://github.com/vuepress-theme-hope/vuepress-theme-hope/compare/v2.0.0-rc.36...v2.0.0-rc.37) (2024-04-21)
 
 ### Features
