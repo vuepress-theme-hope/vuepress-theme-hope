@@ -205,10 +205,12 @@
 
   // code block fix
   div[class*="language-"] {
-    overflow: auto hidden;
+    overflow-x: auto;
+    margin: 0.85rem 0;
 
     pre {
-      margin: 0.85rem 0;
+      margin: 0;
+      padding: 1rem;
       line-height: 1.375;
 
       code {
