@@ -10,14 +10,14 @@ import type {
   NavGroup,
 } from "../../../../shared/index.js";
 
-import "../styles/nav-screen-dropdown.scss";
+import "../styles/nav-screen-menu.scss";
 
 export default defineComponent({
-  name: "NavScreenDropdown",
+  name: "NavScreenMenu",
 
   props: {
     /**
-     * Navbar Screen Dropdown list config
+     * Navbar Screen nav-screen-menu list config
      *
      * 导航栏下拉列表配置
      */
@@ -31,7 +31,7 @@ export default defineComponent({
     const page = usePageData();
     const config = toRef(props, "config");
 
-    const dropdownAriaLabel = computed(
+    const ariaLabel = computed(
       () => config.value.ariaLabel ?? config.value.text,
     );
 
@@ -52,14 +52,14 @@ export default defineComponent({
         "button",
         {
           type: "button",
-          class: ["nav-screen-dropdown-title", { active: open.value }],
-          "aria-label": dropdownAriaLabel.value,
+          class: ["vp-nav-screen-menu-title", { active: open.value }],
+          "aria-label": ariaLabel.value,
           onClick: () => {
             open.value = !open.value;
           },
         },
         [
-          h("span", { class: "title" }, [
+          h("span", { class: "text" }, [
             h(HopeIcon, { icon: config.value.icon }),
             props.config.text,
           ]),
@@ -69,17 +69,17 @@ export default defineComponent({
       h(
         "ul",
         {
-          class: ["nav-screen-dropdown", { hide: !open.value }],
+          class: ["vp-nav-screen-menu", { hide: !open.value }],
         },
         config.value.children.map((child) =>
           h(
             "li",
-            { class: "dropdown-item" },
+            { class: "vp-nav-screen-menu-item" },
             "children" in child
               ? [
                   h(
                     "h4",
-                    { class: "dropdown-subtitle" },
+                    { class: "vp-nav-screen-menu-subtitle" },
                     child.link
                       ? h(AutoLink, {
                           config: child as AutoLinkType,
@@ -91,15 +91,15 @@ export default defineComponent({
                               open.value = false;
                           },
                         })
-                      : h("span", child.text),
+                      : child.text,
                   ),
                   h(
                     "ul",
-                    { class: "dropdown-subitem-wrapper" },
+                    { class: "vp-nav-screen-menu-subitems" },
                     child.children.map((grandchild) =>
                       h(
                         "li",
-                        { class: "dropdown-subitem" },
+                        { class: "vp-nav-screen-menu-subitem" },
                         h(AutoLink, {
                           config: grandchild,
                           onFocusout: () => {

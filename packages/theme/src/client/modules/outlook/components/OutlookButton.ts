@@ -4,7 +4,7 @@ import { computed, defineComponent, h, ref, watch } from "vue";
 import { usePageData } from "vuepress/client";
 
 import { usePure, useThemeData } from "@theme-hope/composables/index";
-import AppearanceSwitch from "@theme-hope/modules/outlook/components/AppearanceSwitch";
+import ColorModeSwitch from "@theme-hope/modules/outlook/components/ColorModeSwitch";
 import OutlookSettings from "@theme-hope/modules/outlook/components/OutlookSettings";
 import { enableThemeColor } from "@theme-hope/modules/outlook/components/ThemeColor";
 import ToggleFullScreenButton from "@theme-hope/modules/outlook/components/ToggleFullScreenButton";
@@ -41,9 +41,9 @@ export default defineComponent({
         ? h(
             "div",
             { class: "vp-nav-item hide-in-mobile" },
-            // Only AppearanceSwitch is enabled
+            // Only ColorModeSwitch is enabled
             canToggle.value && !enableFullScreen.value && !enableThemeColor
-              ? h(AppearanceSwitch)
+              ? h(ColorModeSwitch)
               : // Only FullScreen is enabled
                 enableFullScreen.value && !canToggle.value && !enableThemeColor
                 ? h(ToggleFullScreenButton)
@@ -51,7 +51,7 @@ export default defineComponent({
                     "button",
                     {
                       type: "button",
-                      class: ["outlook-button", { open: open.value }],
+                      class: ["vp-outlook-button", { open: open.value }],
                       tabindex: "-1",
                       "aria-hidden": true,
                     },
@@ -59,7 +59,7 @@ export default defineComponent({
                       h(OutlookIcon),
                       h(
                         "div",
-                        { class: "outlook-dropdown" },
+                        { class: "vp-outlook-dropdown" },
                         h(OutlookSettings),
                       ),
                     ],

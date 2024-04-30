@@ -79,7 +79,7 @@ export default defineComponent({
           if (toc.value) {
             // Get the active toc item DOM, whose href equals to the current route
             const activeTocItem = document.querySelector(
-              `#toc a.toc-link[href$="${hash}"]`,
+              `#toc a.vp-toc-link[href$="${hash}"]`,
             );
 
             if (!activeTocItem) return;

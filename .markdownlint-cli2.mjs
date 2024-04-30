@@ -42,7 +42,7 @@ export default {
         "VideoPlayer",
         "YouTube",
         "MyComponent",
-        "AppearanceSwitch",
+        "ColorModeSwitch",
         "HopeIcon",
         "FlowChartPlayground",
         "IconDisplay",

@@ -17,7 +17,7 @@ In dark mode, the page uses a dark background to make you comfortable.
 
 Toggle the button below to see effects.
 
-<AppearanceSwitch />
+<ColorModeSwitch />
 
 ## Options
 
@@ -55,5 +55,5 @@ Available options:
   ```
 
 <script setup lang="ts">
-import AppearanceSwitch from "@theme-hope/modules/outlook/components/AppearanceSwitch"
+import ColorModeSwitch from "@theme-hope/modules/outlook/components/ColorModeSwitch"
 </script>

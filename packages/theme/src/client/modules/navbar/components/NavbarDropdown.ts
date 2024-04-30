@@ -10,10 +10,10 @@ import type {
   NavGroup,
 } from "../../../../shared/index.js";
 
-import "../styles/dropdown-link.scss";
+import "../styles/navbar-dropdown.scss";
 
 export default defineComponent({
-  name: "NavbarDropdownLink",
+  name: "NavbarDropdown",
 
   props: {
     /**
@@ -63,36 +63,35 @@ export default defineComponent({
     };
 
     return (): VNode =>
-      h("div", { class: ["dropdown-wrapper", { open: open.value }] }, [
+      h("div", { class: ["vp-dropdown-wrapper", { open: open.value }] }, [
         h(
           "button",
           {
             type: "button",
-            class: "dropdown-title",
+            class: "vp-dropdown-title",
             "aria-label": dropdownAriaLabel.value,
             onClick: handleDropdown,
           },
           [
-            slots.title?.() ||
-              h("span", { class: "title" }, [
-                h(HopeIcon, { icon: config.value.icon }),
-                props.config.text,
-              ]),
+            slots.title?.() || [
+              h(HopeIcon, { icon: config.value.icon }),
+              props.config.text,
+            ],
             h("span", { class: "arrow" }),
             h(
               "ul",
-              { class: "nav-dropdown" },
+              { class: "vp-dropdown" },
               config.value.children.map((child, index) => {
                 const isLastChild = index === config.value.children.length - 1;
 
                 return h(
                   "li",
-                  { class: "dropdown-item" },
+                  { class: "vp-dropdown-item" },
                   "children" in child
                     ? [
                         h(
                           "h4",
-                          { class: "dropdown-subtitle" },
+                          { class: "vp-dropdown-subtitle" },
                           child.link
                             ? h(AutoLink, {
                                 config: child as AutoLinkType,
@@ -105,15 +104,15 @@ export default defineComponent({
                                     open.value = false;
                                 },
                               })
-                            : h("span", child.text),
+                            : child.text,
                         ),
                         h(
                           "ul",
-                          { class: "dropdown-subitem-wrapper" },
+                          { class: "vp-dropdown-subitems" },
                           child.children.map((grandchild, grandIndex) =>
                             h(
                               "li",
-                              { class: "dropdown-subitem" },
+                              { class: "vp-dropdown-subitem" },
                               h(AutoLink, {
                                 config: grandchild,
                                 onFocusout: () => {

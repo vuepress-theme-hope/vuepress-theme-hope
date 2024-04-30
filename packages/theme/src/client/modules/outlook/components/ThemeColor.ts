@@ -6,7 +6,7 @@ import { useThemeLocaleData } from "@theme-hope/composables/index";
 import ThemeColorPicker from "@theme-hope/modules/outlook/components/ThemeColorPicker";
 
 import cssVariables from "../../../styles/variables.module.scss?module";
-import "../styles/theme-color-picker.scss";
+import "../styles/theme-color.scss";
 
 export const enableThemeColor = cssVariables["enableThemeColor"] === "true";
 
@@ -26,10 +26,10 @@ export default defineComponent({
 
     return (): VNode | null =>
       enableThemeColor
-        ? h("div", { class: "theme-color-wrapper" }, [
+        ? h("div", { class: "vp-theme-color" }, [
             h(
               "label",
-              { class: "theme-color-title", for: "theme-color-picker" },
+              { class: "vp-theme-color-title", for: "theme-color-picker" },
               locale.value,
             ),
             h(ThemeColorPicker, { themeColor }),

@@ -17,7 +17,7 @@ tag:
 
 切换下面的按钮以查看效果。
 
-<AppearanceSwitch />
+<ColorModeSwitch />
 
 ## 选项
 
@@ -56,5 +56,5 @@ export default {
   ```
 
 <script setup lang="ts">
-import AppearanceSwitch from "@theme-hope/modules/outlook/components/AppearanceSwitch"
+import ColorModeSwitch from "@theme-hope/modules/outlook/components/ColorModeSwitch"
 </script>

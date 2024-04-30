@@ -42,7 +42,7 @@ You can enable it using `imgMark` option.
 
 ::: md-demo Image mark demo
 
-<AppearanceSwitch /> (Try to toggle theme mode)
+<ColorModeSwitch /> (Try to toggle theme mode)
 
 ![GitHub Light](/assets/image/github-light.svg#gh-dark-mode-only)
 ![GitHub Dark](/assets/image/github-dark.svg#gh-light-mode-only)
@@ -109,7 +109,7 @@ If the image is standalone in a line, wrapped or not wrapped by link, it will be
 <!-- markdownlint-enable MD034 -->
 
 <script setup lang="ts">
-import AppearanceSwitch from "@theme-hope/modules/outlook/components/AppearanceSwitch";
+import ColorModeSwitch from "@theme-hope/modules/outlook/components/ColorModeSwitch";
 </script>
 
 <!-- #endregion after -->

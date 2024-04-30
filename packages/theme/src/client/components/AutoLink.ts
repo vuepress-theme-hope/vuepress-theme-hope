@@ -16,8 +16,6 @@ import type { AutoLinkOptions } from "../../shared/index.js";
 export default defineComponent({
   name: "AutoLink",
 
-  inheritAttrs: false,
-
   props: {
     /**
      * @description Autolink config
@@ -46,7 +44,7 @@ export default defineComponent({
     default?: () => VNode[] | VNode;
   }>,
 
-  setup(props, { attrs, emit, slots }) {
+  setup(props, { emit, slots }) {
     const route = useRoute();
     const siteData = useSiteData();
 
@@ -118,11 +116,12 @@ export default defineComponent({
         ? h(
             RouteLink,
             {
+              class: "vp-link",
               to: link,
+              active: isActive.value,
+              activeClass: "active",
               "aria-label": linkAriaLabel.value,
-              ...attrs,
               // Class needs to be merged manually
-              class: ["nav-link", { active: isActive.value }, attrs["class"]],
               onFocusout: () => emit("focusout"),
             },
             () =>
@@ -133,13 +132,11 @@ export default defineComponent({
         : h(
             "a",
             {
+              class: "vp-link",
               href: link,
               rel: linkRel.value,
               target: linkTarget.value,
               "aria-label": linkAriaLabel.value,
-              ...attrs,
-              // Class needs to be merged manually
-              class: ["nav-link", attrs["class"]],
               onFocusout: () => emit("focusout"),
             },
             defaultSlot

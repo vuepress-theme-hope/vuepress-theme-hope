@@ -3,7 +3,7 @@ import { computed, defineComponent, h } from "vue";
 import { ClientOnly } from "vuepress/client";
 
 import { usePure, useThemeData } from "@theme-hope/composables/index";
-import AppearanceMode from "@theme-hope/modules/outlook/components/AppearanceMode";
+import ColorMode from "@theme-hope/modules/outlook/components/ColorMode";
 import ThemeColor, {
   enableThemeColor,
 } from "@theme-hope/modules/outlook/components/ThemeColor";
@@ -23,7 +23,7 @@ export default defineComponent({
     return (): VNode =>
       h(ClientOnly, () => [
         enableThemeColor ? h(ThemeColor) : null,
-        h(AppearanceMode),
+        h(ColorMode),
         enableFullScreen.value ? h(ToggleFullScreenButton) : null,
       ]);
   },

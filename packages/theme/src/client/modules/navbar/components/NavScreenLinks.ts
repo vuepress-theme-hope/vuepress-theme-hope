@@ -2,7 +2,7 @@ import type { VNode } from "vue";
 import { defineComponent, h } from "vue";
 
 import AutoLink from "@theme-hope/components/AutoLink";
-import NavScreenDropdown from "@theme-hope/modules/navbar/components/NavScreenDropdown";
+import NavScreenMenu from "@theme-hope/modules/navbar/components/NavScreenMenu";
 import { useNavbarItems } from "@theme-hope/modules/navbar/composables/index";
 
 import "../styles/nav-screen-links.scss";
@@ -23,7 +23,7 @@ export default defineComponent({
                 "div",
                 { class: "navbar-links-item" },
                 "children" in config
-                  ? h(NavScreenDropdown, { config })
+                  ? h(NavScreenMenu, { config })
                   : h(AutoLink, { config }),
               ),
             ),

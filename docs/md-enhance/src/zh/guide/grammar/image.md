@@ -46,7 +46,7 @@ GFM 支持通过 ID 标记图片，使得图片只在特定的模式显示。我
 
 ::: md-demo ID 标记 案例
 
-<AppearanceSwitch /> (尝试切换主题)
+<ColorModeSwitch /> (尝试切换主题)
 
 ```md
 ![GitHub Light](/assets/image/github-light.svg#gh-dark-mode-only)
@@ -115,7 +115,7 @@ interface ImageMarkOptions {
 <!-- markdownlint-enable MD034 -->
 
 <script setup lang="ts">
-import AppearanceSwitch from "@theme-hope/modules/outlook/components/AppearanceSwitch";
+import ColorModeSwitch from "@theme-hope/modules/outlook/components/ColorModeSwitch";
 </script>
 
 <!-- #endregion after -->

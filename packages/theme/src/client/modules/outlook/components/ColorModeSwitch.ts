@@ -10,7 +10,7 @@ import {
 import type { DarkmodeStatus } from "@theme-hope/modules/outlook/composables/index";
 import { useDarkmode } from "@theme-hope/modules/outlook/composables/index";
 
-import "../styles/appearance-switch.scss";
+import "../styles/color-mode-switch.scss";
 
 declare global {
   interface ViewTransition {
@@ -23,7 +23,7 @@ declare global {
 }
 
 export default defineComponent({
-  name: "AppearanceSwitch",
+  name: "ColorModeSwitch",
 
   setup() {
     const { config, isDarkmode, status } = useDarkmode();
@@ -98,7 +98,8 @@ export default defineComponent({
         "button",
         {
           type: "button",
-          id: "appearance-switch",
+          class: "vp-color-mode-switch",
+          id: "color-mode-switch",
           onClick: toggleDarkmode,
         },
         [

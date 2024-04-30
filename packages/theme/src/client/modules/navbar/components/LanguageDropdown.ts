@@ -1,7 +1,7 @@
 import type { VNode } from "vue";
 import { defineComponent, h } from "vue";
 
-import DropdownLink from "@theme-hope/modules/navbar/components/DropdownLink";
+import NavbarDropdown from "@theme-hope/modules/navbar/components/NavbarDropdown";
 import { I18nIcon } from "@theme-hope/modules/navbar/components/icons/index";
 import { useNavbarLanguageDropdown } from "@theme-hope/modules/navbar/composables/index";
 
@@ -17,7 +17,7 @@ export default defineComponent({
             "div",
             { class: "vp-nav-item" },
             h(
-              DropdownLink,
+              NavbarDropdown,
               { config: dropdown.value },
               {
                 title: () =>

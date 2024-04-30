@@ -48,7 +48,7 @@ export default defineComponent({
     });
 
     return (): VNode =>
-      h("ul", { id: "theme-color-picker" }, [
+      h("ul", { class: "vp-theme-color-picker", id: "theme-color-picker" }, [
         h(
           "li",
           h("span", {

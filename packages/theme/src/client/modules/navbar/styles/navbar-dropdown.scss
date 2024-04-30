@@ -1,0 +1,134 @@
+@use "vuepress-shared/styles/arrow";
+@use "vuepress-shared/styles/reset";
+
+.vp-dropdown-wrapper {
+  cursor: pointer;
+
+  &:not(:hover) {
+    .arrow {
+      transform: rotate(-180deg);
+    }
+  }
+
+  .vp-link {
+    position: relative;
+
+    display: block;
+
+    margin-bottom: 0;
+    border-bottom: none;
+
+    color: var(--grey-dark);
+
+    font-weight: 400;
+    font-size: 0.875rem;
+    line-height: 1.7rem;
+
+    transition: color var(--color-transition);
+
+    &:hover {
+      color: var(--theme-color);
+    }
+
+    &.active {
+      color: var(--theme-color);
+    }
+  }
+}
+
+.vp-dropdown-title {
+  @include reset.button;
+
+  padding: 0 0.25rem;
+
+  color: var(--grey-dark);
+
+  font-weight: 500;
+  font-size: inherit;
+  font-family: inherit;
+  line-height: inherit;
+
+  cursor: inherit;
+
+  &:hover {
+    border-color: transparent;
+  }
+
+  .icon {
+    margin-inline-end: 0.25em;
+    font-size: 1em;
+  }
+
+  .arrow {
+    @include arrow.arrow;
+    font-size: 1.2em;
+  }
+}
+
+.vp-dropdown {
+  position: absolute;
+  top: 100%;
+  inset-inline-end: 0;
+
+  overflow-y: auto;
+  box-sizing: border-box;
+
+  min-width: 6rem;
+  max-height: calc(100vh - var(--navbar-height));
+  margin: 0;
+  padding: 0.5rem 0.75rem;
+  border: 1px solid var(--grey14);
+  border-radius: 0.5rem;
+
+  background: var(--bg-color);
+  box-shadow: 2px 2px 10px var(--card-shadow);
+  list-style-type: none;
+
+  text-align: start;
+  white-space: nowrap;
+
+  opacity: 0;
+  visibility: hidden;
+
+  transition: all 0.18s ease-out;
+  transform: scale(0.9);
+
+  .vp-dropdown-wrapper:hover &,
+  .vp-dropdown-wrapper.open & {
+    z-index: 2;
+    opacity: 1;
+    visibility: visible;
+    transform: none;
+  }
+}
+
+.vp-dropdown-item {
+  color: inherit;
+  line-height: 1.7rem;
+}
+
+.vp-dropdown-subtitle {
+  margin: 0;
+  padding: 0.5rem 0.25rem 0;
+
+  color: var(--grey-light);
+
+  font-weight: 600;
+  font-size: 0.75rem;
+  line-height: 2;
+  text-transform: uppercase;
+
+  .vp-dropdown-item:first-child & {
+    padding-top: 0;
+  }
+}
+
+.vp-dropdown-subitems {
+  margin: 0;
+  padding: 0 0 0.25rem;
+  list-style-type: none;
+
+  .vp-dropdown-item:last-child & {
+    padding-bottom: 0;
+  }
+}

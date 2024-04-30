@@ -112,14 +112,14 @@ export default {
 
 组件:
 
-- `@theme-hope/modules/navbar/components/DropdownLink` 下拉列表
+- `@theme-hope/modules/navbar/components/NavbarDropdown` 下拉列表
 - `@theme-hope/modules/navbar/components/LanguageDropdown` 语言下拉列表
 - `@theme-hope/modules/navbar/components/NavActions` 导航栏功能
 - `@theme-hope/modules/navbar/components/Navbar` 导航栏
 - `@theme-hope/modules/navbar/components/NavbarBr和` 导航栏品牌信息
 - `@theme-hope/modules/navbar/components/NavbarLinks` 导航栏链接
 - `@theme-hope/modules/navbar/components/NavScreen` 移动视图下的导航屏
-- `@theme-hope/modules/navbar/components/NavScreenDropdown` 移动视图下导航栏下拉菜单
+- `@theme-hope/modules/navbar/components/NavScreenMenu` 移动视图下导航栏下拉菜单
 - `@theme-hope/modules/navbar/components/NavScreenLinks` 移动式视图下导航栏链接
 - `@theme-hope/modules/navbar/components/RepoLink` 仓库链接
 - `@theme-hope/modules/navbar/components/ToggleNavbarButton` 导航栏切换按钮
@@ -220,8 +220,8 @@ export default {
 
 组件:
 
-- `@theme-hope/modules/outlook/components/AppearanceMode` 主题外观模式
-- `@theme-hope/modules/outlook/components/AppearanceSwitch` 主题外观开关
+- `@theme-hope/modules/outlook/components/ColorMode` 主题颜色模式
+- `@theme-hope/modules/outlook/components/ColorModeSwitch` 主题颜色开关
 - `@theme-hope/modules/outlook/components/OutlookButton` 外观按钮
 - `@theme-hope/modules/outlook/components/OutlookSettings` 外观设置
 - `@theme-hope/modules/outlook/components/ThemeColor` 主题色
@@ -333,12 +333,12 @@ import HopeHomePage from "vuepress-theme-hope/components/HomePage.js";
 
 **导航栏**:
 
-- `DropdownLink`: `title`
+- `NavbarDropdown`: `title`
 - `NavActions`: `before`, `after`
 - `Navbar`: `startBefore`, `startAfter`, `centerBefore`, `centerAfter`, `endBefore`, `endAfter`
 - `NavbarBrand`: `default`
 - `NavScreen`: `before`, `after`
-- `NavScreenDropdown`: `before`, `after`
+- `NavScreenMenu`: `before`, `after`
 
 **侧边栏**:
 

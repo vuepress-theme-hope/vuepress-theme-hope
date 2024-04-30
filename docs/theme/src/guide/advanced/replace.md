@@ -111,14 +111,14 @@ Miscellaneous:
 
 Components:
 
-- `@theme-hope/modules/navbar/components/DropdownLink`: dropdown list
+- `@theme-hope/modules/navbar/components/NavbarDropdown`: dropdown list
 - `@theme-hope/modules/navbar/components/LanguageDropdown`: language dropdown
 - `@theme-hope/modules/navbar/components/NavActions`: navbar functions
 - `@theme-hope/modules/navbar/components/Navbar`: navbar
 - `@theme-hope/modules/navbar/components/NavbarBrand`: navbar brand information
 - `@theme-hope/modules/navbar/components/NavbarLinks`: navbar links
 - `@theme-hope/modules/navbar/components/NavScreen`: navigation screen in mobile view
-- `@theme-hope/modules/navbar/components/NavScreenDropdown`: mobile view navbar dropdown menu
+- `@theme-hope/modules/navbar/components/NavScreenMenu`: mobile view navbar dropdown menu
 - `@theme-hope/modules/navbar/components/NavScreenLinks`: mobile view navbar links
 - `@theme-hope/modules/navbar/components/RepoLink`: repository link
 - `@theme-hope/modules/navbar/components/ToggleNavbarButton`: navbar toggle button
@@ -217,8 +217,8 @@ Miscellaneous:
 
 ::: details Appearance module component alias
 
-- `@theme-hope/modules/outlook/components/AppearanceMode`: theme mode
-- `@theme-hope/modules/outlook/components/AppearanceSwitch`: theme appearance switch
+- `@theme-hope/modules/outlook/components/ColorMode`: theme color mode
+- `@theme-hope/modules/outlook/components/ColorModeSwitch`: theme color mode switch
 - `@theme-hope/modules/outlook/components/OutlookButton`: appearance button
 - `@theme-hope/modules/outlook/components/OutlookSettings`: appearance settings
 - `@theme-hope/modules/outlook/components/ThemeColor`: theme color
@@ -329,12 +329,12 @@ Components that provide slots are as follows:
 
 **NavBar**:
 
-- `DropdownLink`: `title`
+- `NavbarDropdown`: `title`
 - `NavActions`: `before`, `after`
 - `Navbar`: `startBefore`, `startAfter`, `centerBefore`, `centerAfter`, `endBefore`, `endAfter`
 - `NavbarBrand`: `default`
 - `NavScreen`: `before`, `after`
-- `NavScreenDropdown`: `before`, `after`
+- `NavScreenMenu`: `before`, `after`
 
 **SideBar**:
 

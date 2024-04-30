@@ -81,7 +81,7 @@ export default defineComponent({
           props.show
             ? h(
                 "div",
-                { id: "nav-screen" },
+                { id: "nav-screen", class: "vp-nav-screen" },
                 h("div", { class: "vp-nav-screen-container" }, [
                   slots.before?.(),
                   h(NavScreenLinks),

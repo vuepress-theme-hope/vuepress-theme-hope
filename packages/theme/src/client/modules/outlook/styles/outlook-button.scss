@@ -1,6 +1,6 @@
 @use "vuepress-shared/styles/reset";
 
-.outlook-button {
+.vp-outlook-button {
   @include reset.button;
 
   position: relative;
@@ -14,7 +14,7 @@
   }
 }
 
-.outlook-dropdown {
+.vp-outlook-dropdown {
   position: absolute;
   top: 100%;
   inset-inline-end: 0;
@@ -45,8 +45,8 @@
     border-bottom: 1px solid var(--grey14);
   }
 
-  .outlook-button:hover &,
-  .outlook-button.open & {
+  .vp-outlook-button:hover &,
+  .vp-outlook-button.open & {
     z-index: 2;
     opacity: 1;
     visibility: visible;
