@@ -65,7 +65,10 @@ export default defineComponent({
 
           markupMap = Markmap.create(
             markmapSvg.value!,
-            deriveOptions(frontmatter?.markmap ?? {}),
+            deriveOptions({
+              maxWidth: 240,
+              ...frontmatter?.markmap,
+            }),
           );
 
           const { el } = Toolbar.create(markupMap);
