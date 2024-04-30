@@ -174,7 +174,7 @@
     "**/dist/**": true,
     "packages/*/lib/**": true
   },
-  "vitest.commandLine": "pnpm vitest",
   "prettier.prettierPath": "./node_modules/prettier",
+  "stylelint.validate": ["css", "scss"],
   "typescript.tsdk": "node_modules/typescript/lib"
 }
