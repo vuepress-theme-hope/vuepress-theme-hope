@@ -1,0 +1,164 @@
+import { useEventListener, useStyleTag } from "@vueuse/core";
+import { computed, nextTick, onMounted, watch } from "vue";
+import { usePageFrontmatter, useRoute, useRouteLocale } from "vuepress/client";
+
+import "./transparent-navbar.scss";
+
+const BLOG_HOMEPAGE_STYLE = `\
+.theme-container .vp-page.vp-blog {
+  padding-top: 0;
+}
+.vp-blog-hero.fullscreen {
+  height: 100vh;
+}
+`;
+
+const HOMEPAGE_STYLE =
+  BLOG_HOMEPAGE_STYLE +
+  `\
+.vp-project-home {
+  padding-top: 0;
+}
+
+.vp-hero-info-wrapper{
+  padding-top: var(--navbar-height);
+}
+`;
+
+const COLOR_SELECTORS = [
+  ".vp-navbar",
+  ".vp-site-name",
+  ".nav-link",
+  ".nav-link.active",
+  ".dropdown-wrapper .dropdown-title",
+  ".dropdown-wrapper .dropdown-subtitle",
+  ".vp-action-link",
+  "#appearance-switch",
+  ".outlook-button",
+  ".search-pro-button",
+  ".DocSearch-Button",
+];
+
+const BACKGROUND_SELECTORS = [
+  ".vp-toggle-navbar-button .vp-top",
+  ".vp-toggle-navbar-button .vp-middle",
+  ".vp-toggle-navbar-button .vp-bottom",
+  ".vp-toggle-sidebar-button .icon",
+  ".vp-toggle-sidebar-button:before",
+  ".vp-toggle-sidebar-button:after",
+];
+
+const encodeDataURI = (content: string): string =>
+  content
+    .replace(/"/g, "'")
+    .replace(/%/g, "%25")
+    .replace(/#/g, "%23")
+    .replace(/{/g, "%7B")
+    .replace(/}/g, "%7D")
+    .replace(/</g, "%3C")
+    .replace(/>/g, "%3E");
+
+const getStyle = (color: string, parentSelector = ""): string =>
+  `\
+${COLOR_SELECTORS.map((item) => `${parentSelector} .transparent-navbar ${item}`).join(",")} {
+  color: ${color};
+}
+${BACKGROUND_SELECTORS.map((item) => `${parentSelector} .transparent-navbar ${item}`).join(",")} {
+  background: ${color};
+}
+
+${parentSelector}.transparent-navbar .dropdown-wrapper .dropdown-title > .arrow {
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24'%3E%3Cpath fill='${encodeDataURI(
+    color,
+  )}' d='M7.41 15.41L12 10.83l4.59 4.58L18 14l-6-6-6 6z'/%3E%3C/svg%3E");
+}
+`;
+
+export interface TransparentNavbarOptions {
+  /**
+   * @default 'blog-homepage'
+   */
+  type?: "homepage" | "blog-homepage" | "all";
+
+  /**
+   * Transparent threshold
+   *
+   * 透明的临界距离
+   *
+   * @default 50
+   */
+  threshold?: number;
+
+  /**
+   * Text color in lightmode
+   *
+   * 浅色模式下字体颜色
+   *
+   * @default '#fff'
+   */
+  light?: string;
+
+  /**
+   * Text color in darkmode
+   *
+   * 深色模式下字体颜色
+   *
+   * @default '#bbb'
+   */
+  dark?: string;
+}
+
+/**
+ * Transparent navbar if needed
+ *
+ * 将导航栏设置为透明
+ */
+export const setupTransparentNavbar = ({
+  type,
+  threshold = 50,
+  light = "#fff",
+  dark = "#bbb",
+}: TransparentNavbarOptions = {}): void => {
+  const route = useRoute();
+  const routeLocale = useRouteLocale();
+  const frontmatter = usePageFrontmatter();
+
+  const shouldTransparent = computed(
+    type === "all"
+      ? (): boolean => true
+      : type === "homepage"
+        ? (): boolean =>
+            (frontmatter.value["home"] as boolean | undefined) ??
+            route.path === routeLocale.value
+        : (): boolean =>
+            ["BlogHome", "PortfolioHome"].includes(frontmatter.value.layout!),
+  );
+
+  const transparentNavbar = (): void => {
+    const app = document.querySelector("#app");
+
+    if (window.scrollY < threshold && shouldTransparent.value) {
+      app?.classList.add("transparent-navbar");
+    } else {
+      app?.classList.remove("transparent-navbar");
+    }
+  };
+
+  useStyleTag(
+    (type === "homepage" ? HOMEPAGE_STYLE : BLOG_HOMEPAGE_STYLE) +
+      (light === dark
+        ? getStyle(light, "")
+        : getStyle(light, "[data-theme=light] ") +
+          getStyle(dark, "[data-theme=dark] ")),
+  );
+  useEventListener("scroll", transparentNavbar);
+
+  watch(
+    () => route.path,
+    () => nextTick().then(transparentNavbar),
+  );
+
+  onMounted(() => {
+    transparentNavbar();
+  });
+};

@@ -1,0 +1,22 @@
+.transparent-navbar {
+  .vp-navbar {
+    background-color: transparent;
+    box-shadow: none;
+    backdrop-filter: none;
+  }
+
+  .dropdown-wrapper .nav-dropdown {
+    border: none;
+    background: rgb(0 0 0 / 25%);
+  }
+
+  .search-pro-button {
+    border-color: transparent;
+    background-color: transparent;
+  }
+
+  // stylelint-disable-next-line selector-class-pattern
+  .DocSearch-Button {
+    background: transparent;
+  }
+}

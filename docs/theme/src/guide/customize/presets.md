@@ -121,6 +121,59 @@ import HitokotoBlogHero from "vuepress-theme-hope/presets/HitokotoBlogHero.js";
 
 ## Composable Related
 
+### Transparent Navbar
+
+Make navbar transparent in certain pages while at page top.
+
+```ts
+export interface TransparentNavbarOptions {
+  /**
+   * @default 'blog-homepage'
+   */
+  type?: "homepage" | "blog-homepage" | "all";
+
+  /**
+   * Transparent threshold
+   *
+   * @default 50
+   */
+  threshold?: number;
+
+  /**
+   * Text color in lightmode
+   *
+   * @default '#fff'
+   */
+  light?: string;
+
+  /**
+   * Text color in darkmode
+   *
+   * @default '#bbb'
+   */
+  dark?: string;
+}
+
+export const setupTransparentNavbar: (
+  options?: TransparentNavbarOptions,
+) => void;
+```
+
+::: details Code Example
+
+```ts title=".vuepress/client.ts"
+import { defineClientConfig } from "vuepress/client";
+import { setupTransparentNavbar } from "vuepress-theme-hope/presets/transparentNavbar.js";
+
+export default defineClientConfig({
+  setup: () => {
+    setupTransparentNavbar({ type: "homepage" });
+  },
+});
+```
+
+:::
+
 ### Running time
 
 Get the running time of the site in footer.

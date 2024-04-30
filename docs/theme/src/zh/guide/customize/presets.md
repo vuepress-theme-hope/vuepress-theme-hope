@@ -120,6 +120,57 @@ import HitokotoBlogHero from "vuepress-theme-hope/presets/HitokotoBlogHero.js";
 
 ## 组合式 API 相关
 
+### 透明导航栏
+
+让导航栏在特定页面中，位于页面顶部时透明。
+
+```ts
+export interface TransparentNavbarOptions {
+  /**
+   * @default 'blog-homepage'
+   */
+  type?: "homepage" | "blog-homepage" | "all";
+
+  /**
+   * 透明的临界距离
+   *
+   * @default 50
+   */
+  threshold?: number;
+
+  /**
+   * 浅色模式下字体颜色
+   *
+   * @default '#fff'
+   */
+  light?: string;
+
+  /**
+   * 深色模式下字体颜色
+   *
+   * @default '#bbb'
+   */
+  dark?: string;
+}
+
+const setupTransparentNavbar: (options?: TransparentNavbarOptions) => void;
+```
+
+::: details 代码示例
+
+```ts title=".vuepress/client.ts"
+import { defineClientConfig } from "vuepress/client";
+import { setupTransparentNavbar } from "vuepress-theme-hope/presets/transparentNavbar.js";
+
+export default defineClientConfig({
+  setup: () => {
+    setupTransparentNavbar({ type: "homepage" });
+  },
+});
+```
+
+:::
+
 ### 运行时间
 
 获取站点的运行时间。
