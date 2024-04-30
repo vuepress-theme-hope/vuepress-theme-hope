@@ -64,10 +64,10 @@
   }
 
   &.fullscreen {
-    height: calc(100vh - var(--navbar-height)) !important;
+    height: calc(100vh - var(--navbar-height));
 
     .vp-blog-mask {
-      background-position-y: top !important;
+      background-position-y: top;
     }
 
     .slide-down-button {
