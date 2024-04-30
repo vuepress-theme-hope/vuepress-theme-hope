@@ -22,9 +22,9 @@ If you are a new learner and don't know how to write Markdown, please read [Mark
 
 VuePress introduce configuration for each markdown page using Frontmatter.
 
-::: info
+::: important Frontmatter
 
-Frontmatter is a important concept in VuePress. If you don't know it, you need to read [Frontmatter Introduction](https://theme-hope.vuejs.press/cookbook/vuepress/page.html#front-matter).
+Frontmatter is an important concept in VuePress. If you don't know it, you need to read [Frontmatter Introduction](https://theme-hope.vuejs.press/cookbook/vuepress/page.html#front-matter).
 
 :::
 

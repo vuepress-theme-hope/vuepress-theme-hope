@@ -29,6 +29,7 @@
     "@vue/repl": "4.1.2",
     "artplayer": "5.1.1",
     "docs-shared": "workspace:*",
+    "echarts-wordcloud": "2.1.0",
     "flowchart.ts": "3.0.0",
     "katex": "0.16.10",
     "kotlin-playground": "1.30.0",

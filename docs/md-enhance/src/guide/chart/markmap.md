@@ -52,7 +52,7 @@ export default {
 };
 ```
 
-<!-- region after -->
+<!-- #region after -->
 
 ## Syntax
 
@@ -98,3 +98,5 @@ markmap:
 ````
 
 :::
+
+<!-- #endregion after -->

@@ -16,7 +16,7 @@ You should create and write Markdown files, so that VuePress can convert them to
 <!-- more -->
 
 ```component VPBanner
-title: Markdown Introduction
+title: Markdown Intro
 content: If you are a newcomer and don't know how to write Markdown, please read the following section.
 logo: /assets/image/markdown.svg
 background: var(--bg-2)
@@ -30,24 +30,20 @@ actions:
 
 VuePress introduce configuration for each Markdown page using Frontmatter.
 
-::: info
+::: important Frontmatter
 
-Frontmatter is an important concept in VuePress. If you don't know it, you need to read [Frontmatter Introduction](../../cookbook/vuepress/page.md#frontmatter).
+Frontmatter is an important concept in VuePress, read [Frontmatter Intro](../../cookbook/vuepress/page.md#frontmatter) for details.
 
 :::
 
-## Markdown Extension
+## Markdown Extensions
 
 The Markdown content in VuePress will be parsed by [markdown-it](https://github.com/markdown-it/markdown-it), which supports [syntax extensions](https://github.com/markdown-it/markdown-it#syntax-extensions) via markdown-it plugins.
 
-## VuePress Enhancement
+- VuePress Enhancement
 
-To enrich document content, VuePress extends standard Markdown syntax.
+  To enrich document content, VuePress extends standard Markdown syntax, read [Built-in Markdown Features](../../cookbook/vuepress/markdown.md) for details.
 
-For these extended syntax, please see [Built-in Markdown Features](../../cookbook/vuepress/markdown.md).
+- Theme Enhancement
 
-## Theme Enhancement
-
-By using <ProjectLink name="md-enhance">`vuepress-plugin-md-enhance`</ProjectLink>, the theme extends more Markdown syntax and provides richer writing functions.
-
-For these extensions, please see [Theme Enhancement](../markdown/README.md).
+  With <ProjectLink name="md-enhance">`vuepress-plugin-md-enhance`</ProjectLink>, the theme extends more Markdown syntax, see [Theme Enhancement](../markdown/README.md) for details.

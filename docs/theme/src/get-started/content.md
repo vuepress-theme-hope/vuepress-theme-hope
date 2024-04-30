@@ -73,7 +73,7 @@ In about fifteen minutes, you can learn how to write Markdown, remember to come 
 
 ## Frontmatter
 
-Frontmatter is a very important concept in VuePress, it is used to carry config of Markdown files. Markdown files can contain a [YAML](https://yaml.org/) Frontmatter.
+Frontmatter is an important concept in VuePress, it is used to carry config of Markdown files. Markdown files can contain a [YAML](https://yaml.org/) Frontmatter.
 
 Frontmatter must be at the top of the Markdown file, surrounded by a pair of triple dashes. Here is a basic example:
 

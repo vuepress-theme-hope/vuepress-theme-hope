@@ -728,6 +728,9 @@ importers:
       docs-shared:
         specifier: workspace:*
         version: link:../../docs-shared
+      echarts-wordcloud:
+        specifier: 2.1.0
+        version: 2.1.0(echarts@5.5.0)
       flowchart.ts:
         specifier: 3.0.0
         version: 3.0.0

@@ -9,7 +9,7 @@ index: false
 
 <!-- #region intro -->
 
-该插件向 Markdown 引入了以下新语法。
+此插件向 Markdown 引入了以下新语法。
 
 - 图像：转换为图形，根据配色方案和设置尺寸进行切换
 - 上标和下标

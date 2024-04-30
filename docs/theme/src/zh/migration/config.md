@@ -393,11 +393,11 @@ tag:
 
   - JSON-LD 支持 ![新增](https://img.shields.io/badge/-新增-brightgreen)
 
-    该插件现在可以为你生成 JSON-LD 脚本标签，并提供一个选项 `plugins.seo.jsonLd` 让你自定义 JSON-LD 属性。
+    此插件现在可以为你生成 JSON-LD 脚本标签，并提供一个选项 `plugins.seo.jsonLd` 让你自定义 JSON-LD 属性。
 
   - 自动描述生成 ![新增](https://img.shields.io/badge/-新增-brightgreen)
 
-    该插件可以通过 `plugins.seo.autoDescription` 选项自动为你生成描述
+    此插件可以通过 `plugins.seo.autoDescription` 选项自动为你生成描述
 
   - 规范链接 ![新增](https://img.shields.io/badge/-新增-brightgreen)
 

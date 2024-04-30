@@ -1,6 +1,6 @@
 ---
 title: Theme Intro
-icon: lightbulb
+icon: circle-info
 index: false
 dir:
   order: 1
