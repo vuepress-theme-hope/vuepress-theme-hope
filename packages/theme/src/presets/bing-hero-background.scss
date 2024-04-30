@@ -44,7 +44,7 @@ $location-icon: '<svg viewBox="0 0 12 12"><path d="M6.5 3A1.5 1.5 0 1 0 8 4.5 1.
   border: none;
   border-radius: 0.375rem;
 
-  background: rgba(0 0 0 / 40%);
+  background: rgb(0 0 0 / 40%);
 
   &:hover {
     cursor: pointer;
@@ -83,7 +83,7 @@ $location-icon: '<svg viewBox="0 0 12 12"><path d="M6.5 3A1.5 1.5 0 1 0 8 4.5 1.
   padding: 0 0.75rem;
   border-radius: 0.375rem;
 
-  background-color: rgba(0 0 0 / 40%);
+  background-color: rgb(0 0 0 / 40%);
 
   line-height: 2.5rem;
 
@@ -111,7 +111,7 @@ $location-icon: '<svg viewBox="0 0 12 12"><path d="M6.5 3A1.5 1.5 0 1 0 8 4.5 1.
   padding: 0.5rem;
   border-radius: 0.375rem;
 
-  background-color: rgba(0 0 0 / 50%);
+  background-color: rgb(0 0 0 / 50%);
 
   font-weight: normal;
   font-family: var(--font-family);
