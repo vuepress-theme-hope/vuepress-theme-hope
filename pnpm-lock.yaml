@@ -878,71 +878,71 @@ importers:
   packages/md-enhance:
     dependencies:
       '@mdit/plugin-alert':
-        specifier: ^0.9.0
-        version: 0.9.0(markdown-it@14.1.0)
+        specifier: ^0.10.0
+        version: 0.10.0(markdown-it@14.1.0)
       '@mdit/plugin-align':
-        specifier: ^0.9.0
-        version: 0.9.0(markdown-it@14.1.0)
+        specifier: ^0.10.0
+        version: 0.10.0(markdown-it@14.1.0)
       '@mdit/plugin-attrs':
-        specifier: ^0.9.0
-        version: 0.9.0(markdown-it@14.1.0)
+        specifier: ^0.10.0
+        version: 0.10.0(markdown-it@14.1.0)
       '@mdit/plugin-container':
-        specifier: ^0.9.0
-        version: 0.9.0(markdown-it@14.1.0)
+        specifier: ^0.10.0
+        version: 0.10.0(markdown-it@14.1.0)
       '@mdit/plugin-demo':
-        specifier: ^0.9.0
-        version: 0.9.0(markdown-it@14.1.0)
+        specifier: ^0.10.0
+        version: 0.10.0(markdown-it@14.1.0)
       '@mdit/plugin-figure':
-        specifier: ^0.9.0
-        version: 0.9.0(markdown-it@14.1.0)
+        specifier: ^0.10.0
+        version: 0.10.0(markdown-it@14.1.0)
       '@mdit/plugin-footnote':
-        specifier: ^0.9.0
-        version: 0.9.0(markdown-it@14.1.0)
+        specifier: ^0.10.0
+        version: 0.10.0(markdown-it@14.1.0)
       '@mdit/plugin-img-lazyload':
-        specifier: ^0.9.0
-        version: 0.9.0(markdown-it@14.1.0)
+        specifier: ^0.10.0
+        version: 0.10.0(markdown-it@14.1.0)
       '@mdit/plugin-img-mark':
-        specifier: ^0.9.0
-        version: 0.9.0(markdown-it@14.1.0)
+        specifier: ^0.10.0
+        version: 0.10.0(markdown-it@14.1.0)
       '@mdit/plugin-img-size':
-        specifier: ^0.9.0
-        version: 0.9.0(markdown-it@14.1.0)
+        specifier: ^0.10.0
+        version: 0.10.0(markdown-it@14.1.0)
       '@mdit/plugin-include':
-        specifier: ^0.9.0
-        version: 0.9.0(markdown-it@14.1.0)
-      '@mdit/plugin-katex':
-        specifier: ^0.9.0
-        version: 0.9.0(katex@0.16.10)(markdown-it@14.1.0)
+        specifier: ^0.10.0
+        version: 0.10.0(markdown-it@14.1.0)
+      '@mdit/plugin-katex-slim':
+        specifier: ^0.10.0
+        version: 0.10.0(katex@0.16.10)(markdown-it@14.1.0)
       '@mdit/plugin-mark':
-        specifier: ^0.9.0
-        version: 0.9.0(markdown-it@14.1.0)
-      '@mdit/plugin-mathjax':
-        specifier: ^0.9.0
-        version: 0.9.0(markdown-it@14.1.0)(mathjax-full@3.2.2)
+        specifier: ^0.10.0
+        version: 0.10.0(markdown-it@14.1.0)
+      '@mdit/plugin-mathjax-slim':
+        specifier: ^0.10.0
+        version: 0.10.0(markdown-it@14.1.0)(mathjax-full@3.2.2)
       '@mdit/plugin-plantuml':
-        specifier: ^0.9.0
-        version: 0.9.0(markdown-it@14.1.0)
+        specifier: ^0.10.0
+        version: 0.10.0(markdown-it@14.1.0)
       '@mdit/plugin-stylize':
-        specifier: ^0.9.0
-        version: 0.9.0(markdown-it@14.1.0)
+        specifier: ^0.10.0
+        version: 0.10.0(markdown-it@14.1.0)
       '@mdit/plugin-sub':
-        specifier: ^0.9.0
-        version: 0.9.0(markdown-it@14.1.0)
+        specifier: ^0.10.0
+        version: 0.10.0(markdown-it@14.1.0)
       '@mdit/plugin-sup':
-        specifier: ^0.9.0
-        version: 0.9.0(markdown-it@14.1.0)
+        specifier: ^0.10.0
+        version: 0.10.0(markdown-it@14.1.0)
       '@mdit/plugin-tab':
-        specifier: ^0.9.0
-        version: 0.9.0(markdown-it@14.1.0)
+        specifier: ^0.10.0
+        version: 0.10.0(markdown-it@14.1.0)
       '@mdit/plugin-tasklist':
-        specifier: ^0.9.0
-        version: 0.9.0(markdown-it@14.1.0)
+        specifier: ^0.10.0
+        version: 0.10.0(markdown-it@14.1.0)
       '@mdit/plugin-tex':
-        specifier: ^0.9.0
-        version: 0.9.0(markdown-it@14.1.0)
+        specifier: ^0.10.0
+        version: 0.10.0(markdown-it@14.1.0)
       '@mdit/plugin-uml':
-        specifier: ^0.9.0
-        version: 0.9.0(markdown-it@14.1.0)
+        specifier: ^0.10.0
+        version: 0.10.0(markdown-it@14.1.0)
       '@types/markdown-it':
         specifier: ^14.0.1
         version: 14.0.1
@@ -2537,16 +2537,16 @@ packages:
   '@mdit-vue/types@2.1.0':
     resolution: {integrity: sha512-TMBB/BQWVvwtpBdWD75rkZx4ZphQ6MN0O4QB2Bc0oI5PC2uE57QerhNxdRZ7cvBHE2iY2C+BUNUziCfJbjIRRA==}
 
-  '@mdit/plugin-alert@0.9.0':
-    resolution: {integrity: sha512-MEYr/hLTwtr9FSMb4ob4aNPqwn7biRyRuRFtXFKoAMqENquKWHLscKSaUBoxOo7pXE+fAma0wX4xjALSoDKDlQ==}
+  '@mdit/plugin-alert@0.10.0':
+    resolution: {integrity: sha512-nQonxnf5fxbWNE5F+WHIVbb2hObRsYl1G66v7TetBvEMuJwmxLRePIXaxOAdcDMRw1zspQgOOK0+GeoNzC1/IQ==}
     peerDependencies:
       markdown-it: ^14.1.0
     peerDependenciesMeta:
       markdown-it:
         optional: true
 
-  '@mdit/plugin-align@0.9.0':
-    resolution: {integrity: sha512-mj/2/Fi9csS6FNGQkGL6jqNWzHHvsMu0MVE145K4Av0eMrIaGE0IUvUgeMcvp1Hr9uyOl3AmStfvVHR4i6roBA==}
+  '@mdit/plugin-align@0.10.0':
+    resolution: {integrity: sha512-+crRKBaFjb1eFreRrMuLbYlXlVyuEHy6D3V43nt8KwvXyJRSYbwLO9C9uggVwFLBIeB8YDDyc+p1w5BYNILiKg==}
     engines: {node: '>= 18'}
     peerDependencies:
       markdown-it: ^14.1.0
@@ -2554,8 +2554,8 @@ packages:
       markdown-it:
         optional: true
 
-  '@mdit/plugin-attrs@0.9.0':
-    resolution: {integrity: sha512-cLJI0St1G9qsuY6NU6smznXNBeSWBtyub70ti1eZIt0gRc50Sm23jrxAFhqbpQv/WzvZ5CG7U3epPYLu1hAL+w==}
+  '@mdit/plugin-attrs@0.10.0':
+    resolution: {integrity: sha512-gj7c08hTPpLvV3hww3eu2v2WWTexNheE2hAqtkF1b+kmrsxj9le+YVSN/ylZmLUnNofWZN/yCYloMyLV77QaYQ==}
     engines: {node: '>= 18'}
     peerDependencies:
       markdown-it: ^14.1.0
@@ -2563,8 +2563,8 @@ packages:
       markdown-it:
         optional: true
 
-  '@mdit/plugin-container@0.9.0':
-    resolution: {integrity: sha512-ZE8mnhToydKexItHodWY6ZcZ+b876lEFQbNOyuMDZRTMxPksLY8Y5vz7xk4k+entMgpAQTlzteU7oGkL5zzDcA==}
+  '@mdit/plugin-container@0.10.0':
+    resolution: {integrity: sha512-G8cFIDOMg2HTf39LI+LCkDMWyCFHiU5q9rHubMdFGCCpp1yu4dKinPf9o+RgnpSA0RO7O9EMI3KK6LyQY3VlUg==}
     engines: {node: '>= 18'}
     peerDependencies:
       markdown-it: ^14.1.0
@@ -2572,16 +2572,16 @@ packages:
       markdown-it:
         optional: true
 
-  '@mdit/plugin-demo@0.9.0':
-    resolution: {integrity: sha512-QTzSnWp1YxHqpvuwIfDIOUpxloi+xqwMyZdfsmch9Owz5kGOLkB2x/0QLGyqLXMJG1vFgI61CTnt3lCzYLfSag==}
+  '@mdit/plugin-demo@0.10.0':
+    resolution: {integrity: sha512-58gdKUw1gvMfM3thuCIh9JZTtBLWu4SiYHMp1UBsOpCWV+Cdp4YaU/Qu3Bwt7+GBbUENyic01apk7zz9Lad7YQ==}
     peerDependencies:
       markdown-it: ^14.1.0
     peerDependenciesMeta:
       markdown-it:
         optional: true
 
-  '@mdit/plugin-figure@0.9.0':
-    resolution: {integrity: sha512-3cEtAf+NkNpI1kCs9a3W6TwWlC9hwlMOb7D60+wc9JqK8W+uwPNcSIupqp+NFJk/mWyOSx5CTvyTi3F7wb3zPg==}
+  '@mdit/plugin-figure@0.10.0':
+    resolution: {integrity: sha512-xk4Lqr0Mv7psQ0nQtlastYBqXnErs3gkmbAiNrbFJUGVJdZPj8eEjsUKF/WliEcyc8PGo1AuNSHNl8XMaPl0NQ==}
     engines: {node: '>= 18'}
     peerDependencies:
       markdown-it: ^14.1.0
@@ -2589,23 +2589,14 @@ packages:
       markdown-it:
         optional: true
 
-  '@mdit/plugin-footnote@0.9.0':
-    resolution: {integrity: sha512-akH650vMnmBiKM39/ujAUzDG09m9zpZS7XdJmhVBMWDpkx7mVjIRUKeSLvtT8SYmfzMPfYgQD/8woRLi2SW93A==}
+  '@mdit/plugin-footnote@0.10.0':
+    resolution: {integrity: sha512-2V1mNX2HVq5Fl2OpqMDNt+YA/N+gj82HKoT1RCsZ7PQ18mRghbTDJlMYl6SJ9ppmAwhYWRzQQ7ORSYUcyUxbZg==}
     engines: {node: '>= 18'}
     peerDependencies:
       markdown-it: ^14.1.0
 
-  '@mdit/plugin-img-lazyload@0.9.0':
-    resolution: {integrity: sha512-cs2B0x6DZq4LC715KFKYCD/dyTIIObkPXe+0+gXqltNHdwpE5sBHD/vntvehLEojdDx/tqpNMWVlM5JC7sOmvA==}
-    engines: {node: '>= 18'}
-    peerDependencies:
-      markdown-it: ^14.1.0
-    peerDependenciesMeta:
-      markdown-it:
-        optional: true
-
-  '@mdit/plugin-img-mark@0.9.0':
-    resolution: {integrity: sha512-YKuGuYPSiReKwxGz5VVhCuaVJzfzKKZbt4hVwi9Z5m3Kt1nPP4Uxt0AWpcLKwecr0CTYfQDnmIPI136eb0K3Ww==}
+  '@mdit/plugin-img-lazyload@0.10.0':
+    resolution: {integrity: sha512-k6n0y9o4YGSkvR1+N56PBjI75lUWeMeNCVd+giOZjw0ZGDIgwpCz9HhOq2J6lZiCkD8NFLYlWQhqvzaOgOgX1g==}
     engines: {node: '>= 18'}
     peerDependencies:
       markdown-it: ^14.1.0
@@ -2613,8 +2604,8 @@ packages:
       markdown-it:
         optional: true
 
-  '@mdit/plugin-img-size@0.9.0':
-    resolution: {integrity: sha512-JKETpwJh7AvnCzZnLazPRZ36Q0nd/VC53D0Z2Jv7KmRDDxomfZ54pIFLe379ropkr46kD5SeFFr79R9Nazd9hw==}
+  '@mdit/plugin-img-mark@0.10.0':
+    resolution: {integrity: sha512-y7pM5DlNgxoVV5MMYFD/0Nvz1qE0owqui+aBVVFXBe1xgw1vLL5HwgtcBm76eOst6ddqzRGxyKQStnHFGXzggQ==}
     engines: {node: '>= 18'}
     peerDependencies:
       markdown-it: ^14.1.0
@@ -2622,16 +2613,25 @@ packages:
       markdown-it:
         optional: true
 
-  '@mdit/plugin-include@0.9.0':
-    resolution: {integrity: sha512-2qfM+hpsKKMBaVhPluATeuUvVOKZ+IxGtgBvro5LcOiBTtscDgKPyqYuHkdJtRwidYFOaz1CV95c3rNArkM6uA==}
+  '@mdit/plugin-img-size@0.10.0':
+    resolution: {integrity: sha512-EikLAHTMN14Zmco0FMDbftzfXOFyz/YMc4g8MvOWM8E0DKTyhcwz/h0dKl148FLWyfrgkQb6Njv7ecQq/cE5IQ==}
+    engines: {node: '>= 18'}
     peerDependencies:
       markdown-it: ^14.1.0
     peerDependenciesMeta:
       markdown-it:
         optional: true
 
-  '@mdit/plugin-katex@0.9.0':
-    resolution: {integrity: sha512-dLAjDW9TWD3mwjzENAYV0PtW9QyBec6EfJwBauKuj3dbSIhfIBaorMIL94tbYe35ZYT/f4Zisl+4YIixU2m9XQ==}
+  '@mdit/plugin-include@0.10.0':
+    resolution: {integrity: sha512-ad57RM7MV+nmNz008Hg09EQaaEVude0fu+azgEdLUYWRF20Y6052dtISgLL5AYaxA/Sf2pX7Pg8nxSBRiQE+GQ==}
+    peerDependencies:
+      markdown-it: ^14.1.0
+    peerDependenciesMeta:
+      markdown-it:
+        optional: true
+
+  '@mdit/plugin-katex-slim@0.10.0':
+    resolution: {integrity: sha512-9wSQoo7X6T5j/RL8OSs7yIxGcMMh9/ClAzLIEzbBe1xwOs5KodRug+uvni+KAiZz7swS/6NfHkCgXImdFOq26w==}
     engines: {node: '>= 18'}
     peerDependencies:
       katex: ^0.16.9
@@ -2642,8 +2642,8 @@ packages:
       markdown-it:
         optional: true
 
-  '@mdit/plugin-mark@0.9.0':
-    resolution: {integrity: sha512-YJv+mYxxRUMugmsFbP1XD8tT7HT00JqtXKWFzh8K3FIOaGCNOIEqG6HQKanJpUY+3eG+z33sLf6zZ88mNZfWnQ==}
+  '@mdit/plugin-mark@0.10.0':
+    resolution: {integrity: sha512-uTt85JGzPabwybH2+a/FsSnZb3IG6pYKu1+mNCvsE9OvVWiG0/n70Qe3p5puu/kKOd4Zt2mdD9Aezfgp2b4Fsw==}
     engines: {node: '>= 18'}
     peerDependencies:
       markdown-it: ^14.1.0
@@ -2651,8 +2651,8 @@ packages:
       markdown-it:
         optional: true
 
-  '@mdit/plugin-mathjax@0.9.0':
-    resolution: {integrity: sha512-smwYJFrntVF5LhXI/0UEx7rq9IFbbU9EgIfiDo75HhjUfG3AdFLDP5ra9XHockJo5zakp+L8Pt5LUQbaAfak/g==}
+  '@mdit/plugin-mathjax-slim@0.10.0':
+    resolution: {integrity: sha512-CqebC0yKFeXZ0xe4oLLmXarUpL0L3XrGHHPniHqO5p45hLXKu3CBj732LVCGswcMA5wXcVc0RJ/qwoHXAZwzUg==}
     engines: {node: '>= 18'}
     peerDependencies:
       markdown-it: ^14.1.0
@@ -2663,16 +2663,16 @@ packages:
       mathjax-full:
         optional: true
 
-  '@mdit/plugin-plantuml@0.9.0':
-    resolution: {integrity: sha512-VQ5iuiyaUTtQW/gv6G7j8GkVfk+CWSC9lKi/PXtHrv0DK99UWsuu/+NPVFT+6poKF/Tm//it25vJpmpb8hW96g==}
+  '@mdit/plugin-plantuml@0.10.0':
+    resolution: {integrity: sha512-BTcfEvImvStJCmevfsB+NLZ9wCUGq9Wo59JCGS4/lwZXEJ0+Tk3hP7p9vUv5kqN4q5Y+75qLGXuEnuvw7R8KPw==}
     peerDependencies:
       markdown-it: ^14.1.0
     peerDependenciesMeta:
       markdown-it:
         optional: true
 
-  '@mdit/plugin-stylize@0.9.0':
-    resolution: {integrity: sha512-GgYQLaNhjGLJuXFSqJIgcHqwPnxULj7DTcWY1YOxVRuRZnTAjwFPyyNUWQxMJRih6A9ev1L9jdcDvTGW2NIwuQ==}
+  '@mdit/plugin-stylize@0.10.0':
+    resolution: {integrity: sha512-0qbjugQbawNinRYcHD2hMgWzvnMLrcH2Z5CyRJM4rWVaYHP/+bWhHBb3D9an2jajc1rtrCS9URMSoUjhkmxCWA==}
     engines: {node: '>= 18'}
     peerDependencies:
       markdown-it: ^14.1.0
@@ -2680,8 +2680,8 @@ packages:
       markdown-it:
         optional: true
 
-  '@mdit/plugin-sub@0.9.0':
-    resolution: {integrity: sha512-e/qodj8/WiaA9Aq6gw8jJmZkZ79YWwBGDlEQR5kTkaUSSHTc7Yn0IIuyH3GuMPt5MpLnIHQcgvCrvaoRJWNoEg==}
+  '@mdit/plugin-sub@0.10.0':
+    resolution: {integrity: sha512-GF+sOy7XbnsVa/dADLzgIKUQXb9Zk/by4Mv7g9/BkiGTs0I00UYeRBBs95pIajcqW1mnIyus2PavetjLw4nshA==}
     engines: {node: '>= 18'}
     peerDependencies:
       markdown-it: ^14.1.0
@@ -2689,8 +2689,8 @@ packages:
       markdown-it:
         optional: true
 
-  '@mdit/plugin-sup@0.9.0':
-    resolution: {integrity: sha512-2IFEK0WbveRyFCb93AF3YNCRXCgDv+Ms1F+ZIOnAbnzX6BVNhxCPqlufKeTFWPlQsO8wUY7eym1BUyXppazwPQ==}
+  '@mdit/plugin-sup@0.10.0':
+    resolution: {integrity: sha512-jDcnzVjRVZYUts8jPgA/qqTNF5Se7Brj02f7isdh9cRENDl91aUpYBToWwM/5ylbR582wFhGiF0O9xai4RBVnA==}
     engines: {node: '>= 18'}
     peerDependencies:
       markdown-it: ^14.1.0
@@ -2698,16 +2698,16 @@ packages:
       markdown-it:
         optional: true
 
-  '@mdit/plugin-tab@0.9.0':
-    resolution: {integrity: sha512-LE3DHEI6bedUDYMb5kTCOzV1pYgaKm1aapGGU4fVNUSzDfleIBC9zvPv65vLJ9veX27ZBz08oWZxdSpolHxFlg==}
+  '@mdit/plugin-tab@0.10.0':
+    resolution: {integrity: sha512-gBpq1HG4p+9W5Vqoe8tJjH1IyfDeiTMSFPVy1BpJDroo6A79dzxYDvsoCAszrtHpZhOCYugQinaJhGH56IAcyg==}
     peerDependencies:
       markdown-it: ^14.1.0
     peerDependenciesMeta:
       markdown-it:
         optional: true
 
-  '@mdit/plugin-tasklist@0.9.0':
-    resolution: {integrity: sha512-Jf8qpTmp2qSMteHOCtkDjoWQpzUVLUm4onyN5mSpp64XjtnZmVMFtcTufGAGou+PsiM1l7w7+fVLJJkhKGwWQQ==}
+  '@mdit/plugin-tasklist@0.10.0':
+    resolution: {integrity: sha512-xYjX8McAgapKr/6RG0SraGuEHHCWgvBI7bQ4ClqwkSCpiWnFlSjxKRiB6VjMwEHZm0D445rkfq902BrRwgGxQw==}
     engines: {node: '>= 18'}
     peerDependencies:
       markdown-it: ^14.1.0
@@ -2715,8 +2715,8 @@ packages:
       markdown-it:
         optional: true
 
-  '@mdit/plugin-tex@0.9.0':
-    resolution: {integrity: sha512-/ARmRJ9poreTDmlyHdzOWe480X1W3zSlRqINwJh/9JQr0AyuOZ/3zs5CWurTqw0QvuFaHc5bnPKBAS995miQvQ==}
+  '@mdit/plugin-tex@0.10.0':
+    resolution: {integrity: sha512-ZyDWgCVCMTCeAwMzh5Bgi9Nyh5RzN9SHevf3hkWQZZUgXkW4H03nUOBfj/J0+xiskV1JAl1FkXmihqSwfNdDeA==}
     engines: {node: '>= 18'}
     peerDependencies:
       markdown-it: ^14.1.0
@@ -2724,8 +2724,8 @@ packages:
       markdown-it:
         optional: true
 
-  '@mdit/plugin-uml@0.9.0':
-    resolution: {integrity: sha512-dMhmq196bsg1aVE91At+IZo7gKeMGbkil0ctYDE4bvMAU3mzwgw+nDepCRIMtrk0KSHETt80qsACO2ZKeF17uQ==}
+  '@mdit/plugin-uml@0.10.0':
+    resolution: {integrity: sha512-AgYhRq4MVwmg6ZoCkqIaTT5AVCUD9i7eaS7wjG08Qev5kBrEfMblcHKCPAv2w1xASOIbmmH8CmYmCxWyiE7S+g==}
     engines: {node: '>= 18'}
     peerDependencies:
       markdown-it: ^14.1.0
@@ -10414,141 +10414,141 @@ snapshots:
 
   '@mdit-vue/types@2.1.0': {}
 
-  '@mdit/plugin-alert@0.9.0(markdown-it@14.1.0)':
+  '@mdit/plugin-alert@0.10.0(markdown-it@14.1.0)':
     dependencies:
       '@types/markdown-it': 14.0.1
     optionalDependencies:
       markdown-it: 14.1.0
 
-  '@mdit/plugin-align@0.9.0(markdown-it@14.1.0)':
+  '@mdit/plugin-align@0.10.0(markdown-it@14.1.0)':
     dependencies:
-      '@mdit/plugin-container': 0.9.0(markdown-it@14.1.0)
+      '@mdit/plugin-container': 0.10.0(markdown-it@14.1.0)
       '@types/markdown-it': 14.0.1
     optionalDependencies:
       markdown-it: 14.1.0
 
-  '@mdit/plugin-attrs@0.9.0(markdown-it@14.1.0)':
-    dependencies:
-      '@types/markdown-it': 14.0.1
-    optionalDependencies:
-      markdown-it: 14.1.0
-
-  '@mdit/plugin-container@0.9.0(markdown-it@14.1.0)':
+  '@mdit/plugin-attrs@0.10.0(markdown-it@14.1.0)':
     dependencies:
       '@types/markdown-it': 14.0.1
     optionalDependencies:
       markdown-it: 14.1.0
 
-  '@mdit/plugin-demo@0.9.0(markdown-it@14.1.0)':
+  '@mdit/plugin-container@0.10.0(markdown-it@14.1.0)':
     dependencies:
       '@types/markdown-it': 14.0.1
     optionalDependencies:
       markdown-it: 14.1.0
 
-  '@mdit/plugin-figure@0.9.0(markdown-it@14.1.0)':
+  '@mdit/plugin-demo@0.10.0(markdown-it@14.1.0)':
     dependencies:
       '@types/markdown-it': 14.0.1
     optionalDependencies:
       markdown-it: 14.1.0
 
-  '@mdit/plugin-footnote@0.9.0(markdown-it@14.1.0)':
-    dependencies:
-      '@types/markdown-it': 14.0.1
-      markdown-it: 14.1.0
-
-  '@mdit/plugin-img-lazyload@0.9.0(markdown-it@14.1.0)':
+  '@mdit/plugin-figure@0.10.0(markdown-it@14.1.0)':
     dependencies:
       '@types/markdown-it': 14.0.1
     optionalDependencies:
       markdown-it: 14.1.0
 
-  '@mdit/plugin-img-mark@0.9.0(markdown-it@14.1.0)':
+  '@mdit/plugin-footnote@0.10.0(markdown-it@14.1.0)':
+    dependencies:
+      '@types/markdown-it': 14.0.1
+      markdown-it: 14.1.0
+
+  '@mdit/plugin-img-lazyload@0.10.0(markdown-it@14.1.0)':
     dependencies:
       '@types/markdown-it': 14.0.1
     optionalDependencies:
       markdown-it: 14.1.0
 
-  '@mdit/plugin-img-size@0.9.0(markdown-it@14.1.0)':
+  '@mdit/plugin-img-mark@0.10.0(markdown-it@14.1.0)':
     dependencies:
       '@types/markdown-it': 14.0.1
     optionalDependencies:
       markdown-it: 14.1.0
 
-  '@mdit/plugin-include@0.9.0(markdown-it@14.1.0)':
+  '@mdit/plugin-img-size@0.10.0(markdown-it@14.1.0)':
+    dependencies:
+      '@types/markdown-it': 14.0.1
+    optionalDependencies:
+      markdown-it: 14.1.0
+
+  '@mdit/plugin-include@0.10.0(markdown-it@14.1.0)':
     dependencies:
       '@types/markdown-it': 14.0.1
       upath: 2.0.1
     optionalDependencies:
       markdown-it: 14.1.0
 
-  '@mdit/plugin-katex@0.9.0(katex@0.16.10)(markdown-it@14.1.0)':
+  '@mdit/plugin-katex-slim@0.10.0(katex@0.16.10)(markdown-it@14.1.0)':
     dependencies:
-      '@mdit/plugin-tex': 0.9.0(markdown-it@14.1.0)
+      '@mdit/plugin-tex': 0.10.0(markdown-it@14.1.0)
       '@types/katex': 0.16.7
       '@types/markdown-it': 14.0.1
     optionalDependencies:
       katex: 0.16.10
       markdown-it: 14.1.0
 
-  '@mdit/plugin-mark@0.9.0(markdown-it@14.1.0)':
+  '@mdit/plugin-mark@0.10.0(markdown-it@14.1.0)':
     dependencies:
       '@types/markdown-it': 14.0.1
     optionalDependencies:
       markdown-it: 14.1.0
 
-  '@mdit/plugin-mathjax@0.9.0(markdown-it@14.1.0)(mathjax-full@3.2.2)':
+  '@mdit/plugin-mathjax-slim@0.10.0(markdown-it@14.1.0)(mathjax-full@3.2.2)':
     dependencies:
-      '@mdit/plugin-tex': 0.9.0(markdown-it@14.1.0)
+      '@mdit/plugin-tex': 0.10.0(markdown-it@14.1.0)
       '@types/markdown-it': 14.0.1
       upath: 2.0.1
     optionalDependencies:
       markdown-it: 14.1.0
       mathjax-full: 3.2.2
 
-  '@mdit/plugin-plantuml@0.9.0(markdown-it@14.1.0)':
+  '@mdit/plugin-plantuml@0.10.0(markdown-it@14.1.0)':
     dependencies:
-      '@mdit/plugin-uml': 0.9.0(markdown-it@14.1.0)
+      '@mdit/plugin-uml': 0.10.0(markdown-it@14.1.0)
       '@types/markdown-it': 14.0.1
     optionalDependencies:
       markdown-it: 14.1.0
 
-  '@mdit/plugin-stylize@0.9.0(markdown-it@14.1.0)':
-    dependencies:
-      '@types/markdown-it': 14.0.1
-    optionalDependencies:
-      markdown-it: 14.1.0
-
-  '@mdit/plugin-sub@0.9.0(markdown-it@14.1.0)':
+  '@mdit/plugin-stylize@0.10.0(markdown-it@14.1.0)':
     dependencies:
       '@types/markdown-it': 14.0.1
     optionalDependencies:
       markdown-it: 14.1.0
 
-  '@mdit/plugin-sup@0.9.0(markdown-it@14.1.0)':
+  '@mdit/plugin-sub@0.10.0(markdown-it@14.1.0)':
     dependencies:
       '@types/markdown-it': 14.0.1
     optionalDependencies:
       markdown-it: 14.1.0
 
-  '@mdit/plugin-tab@0.9.0(markdown-it@14.1.0)':
+  '@mdit/plugin-sup@0.10.0(markdown-it@14.1.0)':
     dependencies:
       '@types/markdown-it': 14.0.1
     optionalDependencies:
       markdown-it: 14.1.0
 
-  '@mdit/plugin-tasklist@0.9.0(markdown-it@14.1.0)':
+  '@mdit/plugin-tab@0.10.0(markdown-it@14.1.0)':
     dependencies:
       '@types/markdown-it': 14.0.1
     optionalDependencies:
       markdown-it: 14.1.0
 
-  '@mdit/plugin-tex@0.9.0(markdown-it@14.1.0)':
+  '@mdit/plugin-tasklist@0.10.0(markdown-it@14.1.0)':
     dependencies:
       '@types/markdown-it': 14.0.1
     optionalDependencies:
       markdown-it: 14.1.0
 
-  '@mdit/plugin-uml@0.9.0(markdown-it@14.1.0)':
+  '@mdit/plugin-tex@0.10.0(markdown-it@14.1.0)':
+    dependencies:
+      '@types/markdown-it': 14.0.1
+    optionalDependencies:
+      markdown-it: 14.1.0
+
+  '@mdit/plugin-uml@0.10.0(markdown-it@14.1.0)':
     dependencies:
       '@types/markdown-it': 14.0.1
     optionalDependencies:
@@ -10985,7 +10985,7 @@ snapshots:
 
   '@types/markdown-it-emoji@2.0.5':
     dependencies:
-      '@types/markdown-it': 13.0.7
+      '@types/markdown-it': 14.0.1
 
   '@types/markdown-it@13.0.7':
     dependencies:
