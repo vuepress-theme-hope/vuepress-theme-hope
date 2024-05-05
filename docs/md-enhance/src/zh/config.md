@@ -148,6 +148,15 @@ order: 2
 
 是否启用自定义属性支持。
 
+## spoiler
+
+- 类型: `boolean`
+- 默认值: `false`
+- 详情:
+  - [剧透](./guide/stylize/spoiler.md)
+
+是否启用剧透支持。
+
 ### sup
 
 - 类型: `boolean`

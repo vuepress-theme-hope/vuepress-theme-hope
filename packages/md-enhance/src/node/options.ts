@@ -217,6 +217,15 @@ export interface MarkdownEnhancePluginOptions {
   mark?: boolean;
 
   /**
+   * Whether to enable spoiler support
+   *
+   * 是否启用剧透支持
+   *
+   * @default false
+   */
+  spoiler?: boolean;
+
+  /**
    * Whether to enable tasklist format support
    *
    * 是否启用任务列表支持

@@ -192,6 +192,9 @@ app.component(
     );
   }
 
+  if (options.spoiler)
+    imports.add(`import "${getRealPath("@mdit/plugin-spoiler/style", url)}";`);
+
   if (status["tasklist"])
     imports.add(`import "${CLIENT_FOLDER}styles/tasklist.scss";`);
 

@@ -117,8 +117,13 @@ highlights:
 
       - title: Mark Support
         icon: highlighter
-        details: Mark words and sentences in Markdown
+        details: Mark and highlight contents
         link: ./guide/stylize/mark.html
+
+      - title: Spoiler Support
+        icon: eraser
+        details: Mark spoiler contents
+        link: ./guide/stylize/spoiler.html
 
       - title: Stylize tokens
         icon: wand-magic-sparkles

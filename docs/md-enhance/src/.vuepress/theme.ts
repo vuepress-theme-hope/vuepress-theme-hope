@@ -76,6 +76,7 @@ export default theme("md-enhance", {
         ],
       },
       sandpack: true,
+      spoiler: true,
       stylize: [
         {
           matcher: "Recommended",

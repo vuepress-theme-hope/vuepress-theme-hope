@@ -16,6 +16,7 @@ This plugin provides the following features to stylize your content:
 - Hint box: Wrap contents in different types of hint box
 - Attrs: Adding attrs to markdown contents
 - Mark: Highlight contents
+- Spoiler: Hide spoiler content
 - Stylize: Customizable token stylizer
 
 <!-- #endregion intro -->

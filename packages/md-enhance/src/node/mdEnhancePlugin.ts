@@ -10,6 +10,7 @@ import { include } from "@mdit/plugin-include";
 import { katex } from "@mdit/plugin-katex-slim";
 import { mark } from "@mdit/plugin-mark";
 import { createMathjaxInstance, mathjax } from "@mdit/plugin-mathjax-slim";
+import { spoiler } from "@mdit/plugin-spoiler";
 import { stylize } from "@mdit/plugin-stylize";
 import { sub } from "@mdit/plugin-sub";
 import { sup } from "@mdit/plugin-sup";
@@ -323,6 +324,7 @@ export const mdEnhancePlugin =
         if (options.imgSize) md.use(imgSize);
         if (options.mark) md.use(mark);
         if (options.obsidianImgSize) md.use(obsidianImageSize);
+        if (options.spoiler) md.use(spoiler);
         if (options.sup) md.use(sup);
         if (options.sub) md.use(sub);
 

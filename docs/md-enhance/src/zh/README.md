@@ -114,8 +114,13 @@ highlights:
 
       - title: 标记
         icon: highlighter
-        details: 让你在 Markdown 中对词句进行标记
+        details: 标记并高亮内容
         link: ./guide/stylize/mark.html
+
+      - title: 剧透
+        icon: eraser
+        details: 添加剧透标记支持
+        link: ./guide/stylize/spoiler.html
 
       - title: 样式化字符
         icon: wand-magic-sparkles

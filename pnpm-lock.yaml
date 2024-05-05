@@ -904,6 +904,9 @@ importers:
       '@mdit/plugin-plantuml':
         specifier: ^0.10.1
         version: 0.10.1(markdown-it@14.1.0)
+      '@mdit/plugin-spoiler':
+        specifier: ^0.10.1
+        version: 0.10.1(markdown-it@14.1.0)
       '@mdit/plugin-stylize':
         specifier: ^0.10.1
         version: 0.10.1(markdown-it@14.1.0)
@@ -2543,6 +2546,15 @@ packages:
 
   '@mdit/plugin-plantuml@0.10.1':
     resolution: {integrity: sha512-yX5LEo1pCPsNWd3ErwMdO19psj+SV8edURSZFtT++kzI3irF4A70TBkRozORfcAxm5NhvcrVYOnvMrkMfDFIgg==}
+    peerDependencies:
+      markdown-it: ^14.1.0
+    peerDependenciesMeta:
+      markdown-it:
+        optional: true
+
+  '@mdit/plugin-spoiler@0.10.1':
+    resolution: {integrity: sha512-yztrC45oCq03JZcan6If/lPBSBaaFTUQ+ROojEB/NldgcEBTiB5cnTvfK/tx1Kz0xDiBJNUI5wfy1IpqfQ3bDQ==}
+    engines: {node: '>= 18'}
     peerDependencies:
       markdown-it: ^14.1.0
     peerDependenciesMeta:
@@ -10566,6 +10578,12 @@ snapshots:
   '@mdit/plugin-plantuml@0.10.1(markdown-it@14.1.0)':
     dependencies:
       '@mdit/plugin-uml': 0.10.1(markdown-it@14.1.0)
+      '@types/markdown-it': 14.1.1
+    optionalDependencies:
+      markdown-it: 14.1.0
+
+  '@mdit/plugin-spoiler@0.10.1(markdown-it@14.1.0)':
+    dependencies:
       '@types/markdown-it': 14.1.1
     optionalDependencies:
       markdown-it: 14.1.0

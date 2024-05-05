@@ -50,31 +50,6 @@ The last 4 items conflict with default theme and will override its style.
 
 :::
 
-### vPre
-
-- Type: `boolean`
-- Default: `false`
-- Details:
-  - [v-pre wrapper](./guide/others.md#v-pre)
-
-Whether to enable v-pre wrapper.
-
-### breaks
-
-- Type: `boolean`
-- Default: `false`
-- Enabled in GFM: Yes
-
-Whether convert `\n` in paragraphs into `<br>`s
-
-### linkify
-
-- Type: `boolean`
-- Default: `false`
-- Enabled in GFM: Yes
-
-Whether convert URL-like text into links
-
 ### alert
 
 - Type: `boolean`
@@ -387,6 +362,15 @@ Whether to enable [Mermaid](https://mermaid.js.org/) support.
   - [Plantuml](./guide/chart/plantuml.md)
 
 Whether to enable [plantuml](https://plantuml.com/) support.
+
+### spoiler
+
+- Type: `boolean`
+- Default: `false`
+- Details:
+  - [Spoiler](./guide/stylize/spoiler.md)
+
+Whether to enable spoiler support.
 
 ### stylize
 
@@ -709,6 +693,31 @@ Whether to enable slides support. You can pass an option to control plugins and 
 - Default: `false`
 
 Whether to enable sandpack playground support.
+
+### vPre
+
+- Type: `boolean`
+- Default: `false`
+- Details:
+  - [v-pre wrapper](./guide/others.md#v-pre)
+
+Whether to enable v-pre wrapper.
+
+### breaks
+
+- Type: `boolean`
+- Default: `false`
+- Enabled in GFM: Yes
+
+Whether convert `\n` in paragraphs into `<br>`s
+
+### linkify
+
+- Type: `boolean`
+- Default: `false`
+- Enabled in GFM: Yes
+
+Whether convert URL-like text into links
 
 ### delay
 
