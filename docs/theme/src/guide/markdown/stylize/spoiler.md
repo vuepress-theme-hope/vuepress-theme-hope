@@ -1,14 +1,14 @@
 ---
-title: Mark
-icon: highlighter
+title: Spoiler
+icon: eraser
 category:
   - Markdown
 tag:
-  - Mark
+  - Markup
   - Markdown
 ---
 
-Highlight content with `<mark>` tag in your VuePress site.
+Hide spoiler contents in your VuePress site.
 
 <!-- more -->
 
@@ -21,7 +21,7 @@ export default {
   theme: hopeTheme({
     plugins: {
       mdEnhance: {
-        mark: true,
+        spoiler: true,
       },
     },
   }),
@@ -30,10 +30,10 @@ export default {
 
 ## Syntax
 
-Use `== ==` to mark.
+Use `!! !!` to mark a content as spoiler.
 
 ::: md-demo Demo
 
-VuePress Theme Hope is ==powerful==.
+VuePress Theme Hope is !!powerful!!.
 
 :::

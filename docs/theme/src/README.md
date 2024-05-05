@@ -88,8 +88,13 @@ highlights:
 
       - title: Mark
         icon: highlighter
-        details: Mark words and sentences in Markdown
+        details: Mark and highlight contents
         link: ./guide/markdown/stylize/mark.html
+
+      - title: Spoiler
+        icon: eraser
+        details: Mark spoiler contents
+        link: ./guide/markdown/stylize/spoiler.html
 
       - title: Tasklist
         icon: square-check

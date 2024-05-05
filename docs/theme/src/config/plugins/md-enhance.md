@@ -344,6 +344,13 @@ Whether to enable [Mermaid](https://mermaid.js.org/) support, you can pass in a 
 
 Whether to enable [plantuml](https://plantuml.com/) support.
 
+### spoiler
+
+- Type: `boolean`
+- Default: `false`
+
+Whether to enable spoiler support.
+
 ### stylize
 
 - Type: `StylizeOptions | false`

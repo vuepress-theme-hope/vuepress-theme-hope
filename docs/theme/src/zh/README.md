@@ -88,8 +88,13 @@ highlights:
 
       - title: 标记
         icon: highlighter
-        details: 标记并高亮你需要的内容
+        details: 标记并高亮内容
         link: ./guide/markdown/stylize/mark.html
+
+      - title: 剧透
+        icon: eraser
+        details: 添加剧透标记支持
+        link: ./guide/markdown/stylize/spoiler.html
 
       - title: 任务列表
         icon: square-check

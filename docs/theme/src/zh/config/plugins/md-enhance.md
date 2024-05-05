@@ -350,6 +350,13 @@ interface TaskListOptions {
 
 是否启用 [plantuml](https://plantuml.com/zh/) 支持。
 
+## spoiler
+
+- 类型: `boolean`
+- 默认值: `false`
+
+是否启用剧透支持。
+
 ### stylize
 
 - 类型: `StylizeOptions | false`

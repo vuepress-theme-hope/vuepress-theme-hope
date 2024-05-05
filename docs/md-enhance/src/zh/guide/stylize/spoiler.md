@@ -1,6 +1,6 @@
 ---
 title: 剧透
-icon: highlighter
+icon: eraser
 ---
 
 在你的 VuePress 站点中添加剧透文字。
