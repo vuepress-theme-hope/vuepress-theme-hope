@@ -46,9 +46,7 @@ import "../styles/search-modal.scss";
 
 const SearchResult = defineAsyncComponent({
   loader: () =>
-    import(
-      /* webpackChunkName: "search-pro-result" */ "vuepress-plugin-search-pro/result"
-    ),
+    import(/* webpackChunkName: "search-pro-result" */ "./SearchResult.js"),
   loadingComponent: () => {
     const localeConfig = useLocaleConfig(searchProLocales);
 

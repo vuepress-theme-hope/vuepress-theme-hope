@@ -11,11 +11,7 @@ export default [
       files: ["components/SearchResult", "config", "index", "worker/index"],
     },
     {
-      external: [
-        "@internal/pagesComponents",
-        "slimsearch",
-        "vuepress-plugin-search-pro/result",
-      ],
+      external: ["@internal/pagesComponents", "slimsearch"],
       copy: [["client/styles", "client"]],
     },
   ),
