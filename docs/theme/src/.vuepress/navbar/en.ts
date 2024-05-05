@@ -18,7 +18,7 @@ export const enNavbarConfig = navbar([
       },
       {
         text: "Project",
-        children: ["/changelog", "/migration/", "/related", "/contribution"],
+        children: ["/changelog", "/related", "/contribution"],
       },
     ],
   },

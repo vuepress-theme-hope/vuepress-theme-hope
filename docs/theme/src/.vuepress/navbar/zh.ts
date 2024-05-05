@@ -20,7 +20,7 @@ export const zhNavbarConfig = navbar([
       },
       {
         text: "项目",
-        children: ["changelog", "migration/", "related", "contribution"],
+        children: ["changelog", "related", "contribution"],
       },
     ],
   },

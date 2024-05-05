@@ -42,7 +42,6 @@ export const enSidebarConfig = sidebar({
 
     "demo/",
     "faq/",
-    "migration/",
     "changelog",
     "contribution",
   ],
@@ -58,7 +57,5 @@ export const enSidebarConfig = sidebar({
   "/demo/": "structure",
 
   "/faq/": "structure",
-
-  "/migration/": "structure",
 });
 // #endregion config

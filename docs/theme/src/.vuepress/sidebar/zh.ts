@@ -41,7 +41,6 @@ export const zhSidebarConfig = sidebar({
     },
     "demo/",
     "faq/",
-    "migration/",
     "changelog",
     "contribution",
   ],
@@ -57,7 +56,5 @@ export const zhSidebarConfig = sidebar({
   "/zh/demo/": "structure",
 
   "/zh/faq/": "structure",
-
-  "/zh/migration/": "structure",
 });
 // #endregion config

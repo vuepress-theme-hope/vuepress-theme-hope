@@ -8,67 +8,11 @@ import type { ThemeOptions } from "../../shared/index.js";
 import { logger } from "../utils.js";
 
 const DEPRECATED_THEME_OPTIONS: [string, string][] = [
-  // v1
-  ["darkLogo", "logoDark"],
-  ["navAutoHide", "navbarAutoHide"],
-  ["hideSiteTitleonMobile", "hideSiteNameOnMobile"],
-  ["sidebarDepth ", "headerDepth"],
-  ["prevLinks", "prevLink"],
-  ["nextLinks", "nextLink"],
-  ["editLinks", "editLink"],
-  ["updateTime", "lastUpdated"],
-  ["anchorDisplay", "toc"],
-  ["nav", "navbar"],
-  ["activeHash", "plugins.activeHeaderLinks"],
-  ["comment", "plugins.comment"],
-  ["copyCode", "plugins.copyCode"],
-  ["feed", "plugins.feed"],
-  ["git", "plugins.git"],
-  ["mdEnhance", "plugins.mdEnhance"],
-  ["readingTime", "plugins.readingTime"],
-  ["photoswipe", "plugins.photoswipe"],
-  ["pwa", "plugins.pwa"],
-  ["sitemap", "plugins.sitemap"],
-  ["seo", "plugins.seo"],
-  ["wordPerMinute", "plugins.readingTime.wordPerMinute"],
-
   // v2
   ["hideSiteNameonMobile", "hideSiteNameOnMobile"],
   ["fullScreen", "fullscreen"],
   ["headingDepth", "headerDepth"],
   ["wideBreakPoint", "pcBreakPoint"],
-];
-
-const DROPPED_THEME_OPTIONS: [string, string?, string?][] = [
-  // v1
-  [
-    "algolia",
-    'The theme no longer bundles docsearch package, you should install and use "@vuepress/plugin-docsearch".',
-  ],
-  [
-    "algoliaType",
-    'The theme no longer bundles docsearch package, you should install and use "@vuepress/plugin-docsearch".',
-  ],
-  [
-    "custom",
-    "VuePress2 remove markdown slot support, you should extend theme layout to support similar feature.",
-  ],
-  [
-    "displayAllHeaders",
-    "Due to scalability consideration, V2 no longer supports this.",
-  ],
-  [
-    "chunkRename",
-    "Since it's hard to implement such feature on vite, we no longer support this plugin in V2.",
-  ],
-  [
-    "cleanUrl",
-    "Due to better seo consideration, we no longer support this plugin in V2.",
-  ],
-  [
-    "smoothScroll",
-    "We provides smooth scrolling via CSS in V2, so this plugin is no longer needed.",
-  ],
 ];
 
 /**
@@ -151,7 +95,6 @@ export const convertThemeOptions = (
       scope: "themeConfig",
     }),
   );
-  DROPPED_THEME_OPTIONS.forEach((item) => droppedLogger(themeOptions, ...item));
 
   // Handle navbar
   if ("navbar" in themeOptions)
@@ -276,9 +219,6 @@ export const convertThemeOptions = (
             newOption,
             scope: "themeConfig.locales",
           }),
-        );
-        DROPPED_THEME_OPTIONS.forEach((item) =>
-          droppedLogger(localeConfig, ...item),
         );
 
         // Handle navbar
