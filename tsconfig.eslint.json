@@ -2,12 +2,14 @@
   "extends": "./tsconfig.base.json",
   "compilerOptions": {
     "allowJs": true,
+    "checkJs": true,
     "baseUrl": "./",
     "paths": {
       "@theme-hope/*": ["./packages/theme/src/client/*.js"]
     }
   },
   "include": [
+    "**/*.js",
     "**/*.ts",
     "**/*.vue",
     "**/.vuepress/**/*.ts",

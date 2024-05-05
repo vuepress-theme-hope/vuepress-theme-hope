@@ -46,15 +46,13 @@ const getPlugin =
             else code[language] = content;
         }
 
-        return `
-<CodeDemo id="code-demo-${index}" type="${name.split("-")[0]}"${
+        return `<CodeDemo id="code-demo-${index}" type="${name.split("-")[0]}"${
           title ? ` title="${encodeURIComponent(title)}"` : ""
         }${config ? ` config="${config}"` : ""} code="${encodeData(
           JSON.stringify(code),
-        )}">
-`;
+        )}">\n`;
       },
-      closeRender: () => `</CodeDemo>`,
+      closeRender: () => `</CodeDemo>\n`,
     });
 
 export const normalDemo: PluginSimple = getPlugin("normal-demo");
@@ -69,7 +67,7 @@ export const mdDemo: PluginSimple = (md) => {
     openRender: (tokens, index) =>
       `<MdDemo title="${escapeHtml(
         tokens[index].info,
-      )}" id="md-demo-${index}"><template #default>\n`,
+      )}" id="md-demo-${index}">\n`,
     codeRender: (tokens, index, options, _env, self) => {
       const token = tokens[index];
 
@@ -85,14 +83,16 @@ export const mdDemo: PluginSimple = (md) => {
         )
         .join("\n");
 
-      return `</template><template #code>\n${self.rules.fence!(
+      return `<template #code>\n${self.rules.fence!(
         tokens,
         index,
         options,
         _env,
         self,
-      )}`;
+      )}</template>\n`;
     },
-    closeRender: () => "</template></MdDemo>",
+    contentOpenRender: () => `<template #default>\n`,
+    contentCloseRender: () => `</template>\n`,
+    closeRender: () => "</MdDemo>\n",
   });
 };

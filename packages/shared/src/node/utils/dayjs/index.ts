@@ -1,3 +1,4 @@
+/* eslint-disable import/no-named-as-default-member */
 import dayjs from "dayjs";
 import localizedFormat from "dayjs/plugin/localizedFormat.js";
 import objectSupport from "dayjs/plugin/objectSupport.js";

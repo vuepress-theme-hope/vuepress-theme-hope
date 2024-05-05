@@ -1,8 +1,7 @@
 // Vitest Snapshot v1, https://vitest.dev/guide/snapshot.html
 
 exports[`demo > Should resolve demo info 1`] = `
-"
-<CodeDemo id="code-demo-0" type="normal" title="A%20normal%20demo" code="eJw9jkELwjAMhf9KjBcFcXjV2psHwYMg7NTLaCObdu1su4mM/XfTCV4SknzvvYxYp9biHkW9k2VP10AxioIH5UQnzxFE7CoHjTkqHCh8FMrcRJHXEjr/pnDvrSg6VuAGH5HNjNd9Sy5tXz2zN7Kkkw8rhcufxXpbGXMamLg0MZGjfNO20U+FG1it4ShhVA6gshQS30qW/bMWbHBQbsqFE3XMkfOXs0Z768MeApkMMTJ9AbrSTOs=">
+"<CodeDemo id="code-demo-0" type="normal" title="A%20normal%20demo" code="eJw9jkELwjAMhf9KjBcFcXjV2psHwYMg7NTLaCObdu1su4mM/XfTCV4SknzvvYxYp9biHkW9k2VP10AxioIH5UQnzxFE7CoHjTkqHCh8FMrcRJHXEjr/pnDvrSg6VuAGH5HNjNd9Sy5tXz2zN7Kkkw8rhcufxXpbGXMamLg0MZGjfNO20U+FG1it4ShhVA6gshQS30qW/bMWbHBQbsqFE3XMkfOXs0Z768MeApkMMTJ9AbrSTOs=">
 <pre><code class="language-html">&lt;h1&gt;VuePress&lt;/h1&gt;
 &lt;p&gt;Is &lt;span id=&quot;very&quot;&gt;very&lt;/span&gt; powerful&lt;/p&gt;
 </code></pre>
@@ -70,13 +69,18 @@ document.querySelector(&quot;h1&quot;).innerHTML = message;
   }
 }
 </code></pre>
-</CodeDemo><MdDemo title="A Markdown demo" id="md-demo-17"><template #default>
+</CodeDemo>
+<MdDemo title="A Markdown demo" id="md-demo-17">
+<template #default>
 <h1>Title</h1>
 <p>VuePress is powerful.</p>
-</template><template #code>
+</template>
+<template #code>
 <pre><code class="language-md"># Title
 
 VuePress is powerful.
 </code></pre>
-</template></MdDemo>"
+</template>
+</MdDemo>
+"
 `;

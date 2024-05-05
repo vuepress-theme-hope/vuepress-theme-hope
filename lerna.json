@@ -1,0 +1,15 @@
+{
+  "npmClient": "pnpm",
+  "version": "2.0.0-rc.38",
+  "command": {
+    "version": {
+      "allowBranch": "main",
+      "conventionalCommits": true,
+      "exact": true,
+      "message": "build: publish v%v",
+      "syncWorkspaceLock": true
+    }
+  },
+  "packages": ["packages/*"],
+  "ignoreChanges": ["**/__tests__/**", "**/*.md"]
+}
