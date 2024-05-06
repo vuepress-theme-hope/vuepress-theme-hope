@@ -14,7 +14,6 @@ export const FONT_AWESOME_PREFIX = "fas fa-";
 export const ICON_FONT_PREFIX = "iconfont icon-";
 
 const isIconifyLink = (link: string): boolean =>
-  /^(?:https:)?\/\/kit\.fontawesome\.com\//.test(link) ||
   /\/iconify-icon(?:[@/]|$)/.test(link);
 
 const isFontAwesomeLink = (link: string): boolean =>
