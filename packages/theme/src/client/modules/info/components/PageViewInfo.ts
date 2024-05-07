@@ -1,5 +1,4 @@
 import { isString } from "@vuepress/helper/client";
-import { isSupported } from "@vuepress/plugin-comment/pageview";
 import { useMutationObserver } from "@vueuse/core";
 import type { VNode } from "vue";
 import { defineComponent, h, ref, shallowRef } from "vue";
@@ -37,17 +36,15 @@ export default defineComponent({
     useMutationObserver(
       pageviewElement,
       () => {
-        if (isSupported) {
-          const count = pageviewElement.value!.textContent;
+        const count = pageviewElement.value!.textContent;
 
-          if (count && !isNaN(Number(count))) pageViews.value = Number(count);
-        }
+        if (count && !isNaN(Number(count))) pageViews.value = Number(count);
       },
       { childList: true },
     );
 
     return (): VNode | null =>
-      props.pageview && isSupported
+      props.pageview
         ? h(
             "span",
             {
