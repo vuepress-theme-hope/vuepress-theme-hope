@@ -28,7 +28,7 @@ export const componentsPlugin =
     return {
       name: PLUGIN_NAME,
 
-      define: getDefine(options, legacy),
+      define: getDefine(options),
 
       extendsBundlerOptions: (bundlerOptions, app): void => {
         if (options?.components?.includes("ArtPlayer"))
@@ -42,6 +42,6 @@ export const componentsPlugin =
         ]);
       },
 
-      clientConfigFile: (app) => prepareConfigFile(app, options, legacy),
+      clientConfigFile: (app) => prepareConfigFile(app, options),
     };
   };

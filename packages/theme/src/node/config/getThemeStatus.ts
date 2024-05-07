@@ -25,8 +25,7 @@ export const getThemeStatus = (
     enableCatalog: plugins.catalog !== false,
     enableBlog: Boolean(plugins.blog),
     enableEncrypt: Boolean(
-      themeOptions.encrypt &&
-        ("admin" in themeOptions.encrypt || "config" in themeOptions.encrypt),
+      themeOptions.encrypt?.admin || themeOptions.encrypt?.config,
     ),
     enableSlide: Boolean(plugins.mdEnhance && plugins.mdEnhance.revealJs),
     enableReadingTime: plugins.readingTime !== false,

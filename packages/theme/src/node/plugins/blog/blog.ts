@@ -38,7 +38,6 @@ export const getBlogPlugin = (
     ...("excerptLength" in blogOptions
       ? { excerptLength: blogOptions.excerptLength }
       : {}),
-
     ...("excerptSeparator" in blogOptions
       ? { excerptSeparator: blogOptions.excerptSeparator }
       : {}),
@@ -46,10 +45,12 @@ export const getBlogPlugin = (
     excerptFilter: (page) => {
       const isEncrypted = isPageEncrypted(page);
 
-      return !isEncrypted && !("excerpt" in page.frontmatter);
+      return !isEncrypted && !page.frontmatter["excerpt"];
     },
 
     filter: blogOptions.filter ?? blogFilter,
+
+    ...("slugify" in blogOptions ? { slugify: blogOptions.slugify } : {}),
 
     getInfo: (page: Page<ThemePageData>) => {
       const info: Record<string, unknown> = {};
@@ -91,8 +92,6 @@ export const getBlogPlugin = (
 
     metaScope: "",
 
-    hotReload,
-    ...("hotReload" in blogOptions ? { hotReload: blogOptions.hotReload } : {}),
-    ...("slugify" in blogOptions ? { slugify: blogOptions.slugify } : {}),
+    hotReload: blogOptions.hotReload ?? hotReload,
   } as BlogPluginOptions);
 };

@@ -93,8 +93,7 @@ export const searchProPlugin =
       },
 
       onWatched: (app, watchers): void => {
-        const hotReload =
-          "hotReload" in options ? options.hotReload : app.env.isDebug;
+        const hotReload = options.hotReload ?? app.env.isDebug;
 
         if (hotReload) {
           // This ensure the page is generated or updated

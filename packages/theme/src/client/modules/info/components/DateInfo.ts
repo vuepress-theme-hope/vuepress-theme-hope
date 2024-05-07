@@ -2,6 +2,7 @@ import type { PropType, VNode } from "vue";
 import { defineComponent, h } from "vue";
 import { ClientOnly, usePageLang } from "vuepress/client";
 
+import { usePure } from "@theme-hope/composables/index";
 import { CalendarIcon } from "@theme-hope/modules/info/components/icons";
 import { useMetaLocale } from "@theme-hope/modules/info/composables/index";
 
@@ -30,18 +31,12 @@ export default defineComponent({
       type: String,
       default: "",
     },
-
-    /**
-     * Whether in pure mode
-     *
-     * 是否处于纯净模式
-     */
-    pure: Boolean,
   },
 
   setup(props) {
     const lang = usePageLang();
     const metaLocale = useMetaLocale();
+    const pure = usePure();
 
     return (): VNode | null =>
       props.date
@@ -49,8 +44,8 @@ export default defineComponent({
             "span",
             {
               class: "page-date-info",
-              "aria-label": `${metaLocale.value.date}${props.pure ? "" : "📅"}`,
-              ...(props.pure ? {} : { "data-balloon-pos": "up" }),
+              "aria-label": `${metaLocale.value.date}${pure.value ? "" : "📅"}`,
+              ...(pure.value ? {} : { "data-balloon-pos": "up" }),
             },
             [
               h(CalendarIcon),

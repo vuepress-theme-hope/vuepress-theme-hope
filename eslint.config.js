@@ -6,8 +6,8 @@ import hopeConfig, {
 import { vue, vueParser } from "eslint-config-mister-hope/vue";
 
 export default config(
-  ...hopeConfig,
   ...vue,
+  ...hopeConfig,
 
   {
     ignores: [
@@ -38,6 +38,7 @@ export default config(
   },
 
   {
+    files: ["**/*.ts"],
     settings: {
       "import/internal-regex": "^@(?:internal|temp|theme-hope)/",
     },

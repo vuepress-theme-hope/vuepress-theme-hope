@@ -26,15 +26,13 @@ export const usePlugins = (
   if ("git" in plugins)
     useGitPlugin(
       app,
-      "git" in plugins
-        ? plugins.git === true
-          ? {
-              createdTime: true,
-              contributors: true,
-              updatedTime: true,
-            }
-          : plugins.git
-        : {},
+      plugins.git === true
+        ? {
+            createdTime: true,
+            contributors: true,
+            updatedTime: true,
+          }
+        : plugins.git,
     );
   // Only use git plugin in production or debug mode
   else if (hotReload || app.env.isBuild)

@@ -43,17 +43,13 @@ export const injectPageInfo = (page: Page<ThemePageData>): void => {
           frontmatter as ThemeNormalPageFrontmatter
         ).dir!.order;
 
-      if (
-        "index" in frontmatter.dir &&
-        (frontmatter as ThemeNormalPageFrontmatter).dir!.index === false
-      )
+      if ((frontmatter as ThemeNormalPageFrontmatter).dir?.index === false)
         page.routeMeta[PageInfo.index] = false;
     }
   } else {
     if ("order" in frontmatter)
       page.routeMeta[PageInfo.order] = frontmatter.order;
-    if ("index" in frontmatter && frontmatter.index === false)
-      page.routeMeta[PageInfo.index] = false;
+    if (frontmatter.index === false) page.routeMeta[PageInfo.index] = false;
   }
 
   // breadcrumb

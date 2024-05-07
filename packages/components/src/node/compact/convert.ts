@@ -1,4 +1,4 @@
-import { isNumber, isPlainObject } from "@vuepress/helper";
+import { isPlainObject } from "@vuepress/helper";
 import { colors } from "vuepress/utils";
 import { createConverter } from "vuepress-shared/node";
 
@@ -48,15 +48,13 @@ export const convertOptions = (
       old: "addThis",
     });
 
-    if (isNumber(options.rootComponents.backToTop)) {
+    if (options.rootComponents.backToTop) {
       logger.error(
         `"${colors.magenta(
           "rootComponents.backToTop",
         )}" is removed, please use ${colors.cyan("@vuepress/plugin-back-to-top")} instead.`,
       );
-      options.rootComponents.backToTop = {
-        threshold: options.rootComponents.backToTop,
-      };
+      delete options.rootComponents.backToTop;
     }
 
     if (isPlainObject(options.rootComponents.notice)) {

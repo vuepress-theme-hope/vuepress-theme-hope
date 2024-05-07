@@ -74,7 +74,7 @@ const getSidebarInfoFromStructure = (
       filename: info.filename,
 
       title: page.frontmatter.shortTitle ?? page.title,
-      order: "order" in page.frontmatter ? page.frontmatter.order : null,
+      order: page.frontmatter.order ?? null,
       path: decodeURI(page.path) === page.pathInferred ? null : page.path,
 
       frontmatter: page.frontmatter,
@@ -107,8 +107,7 @@ const getSidebarInfoFromStructure = (
     const title =
       dirOptions?.text ?? readmePage.frontmatter.shortTitle ?? readmePage.title;
     const icon = dirOptions?.icon ?? readmePage.frontmatter.icon;
-    const collapsible =
-      dirOptions && "collapsible" in dirOptions ? dirOptions.collapsible : true;
+    const collapsible = dirOptions?.collapsible ?? true;
 
     if (dirOptions?.index === false) return null;
 

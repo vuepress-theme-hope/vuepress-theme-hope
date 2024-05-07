@@ -1,16 +1,8 @@
-import {
-  getRealPath,
-  isArray,
-  isNumber,
-  isPlainObject,
-} from "@vuepress/helper";
+import { getRealPath, isArray } from "@vuepress/helper";
 import type { App } from "vuepress/core";
 
 import { getIconLinks, getNoticeOptions } from "./components/index.js";
-import type {
-  BackToTopOptions,
-  ComponentPluginOptions,
-} from "./options/index.js";
+import type { ComponentPluginOptions } from "./options/index.js";
 import {
   AVAILABLE_COMPONENTS,
   CLIENT_FOLDER,
@@ -27,7 +19,6 @@ export const prepareConfigFile = (
     componentOptions = {},
     rootComponents = {},
   }: ComponentPluginOptions,
-  legacy: boolean,
 ): Promise<string> => {
   const imports: string[] = [];
   let enhance = "";
@@ -62,27 +53,6 @@ if(!hasGlobalComponent("${item}")) app.component("${item}", ${item});
         setups.push(content);
       });
   });
-
-  // TODO: Remove in v2 stable
-  if (legacy && rootComponents.backToTop) {
-    const { threshold, progress } = isPlainObject(rootComponents.backToTop)
-      ? rootComponents.backToTop
-      : ({} as BackToTopOptions);
-
-    shouldImportH = true;
-    imports.push(
-      `import BackToTop from "${CLIENT_FOLDER}components/BackToTop.js";`,
-    );
-
-    const config = isPlainObject(rootComponents.backToTop)
-      ? {
-          ...(isNumber(threshold) ? { threshold } : {}),
-          ...(progress === false ? { noProgress: true } : {}),
-        }
-      : {};
-
-    configRootComponents.push(`() => h(BackToTop, ${JSON.stringify(config)}),`);
-  }
 
   if (isArray(rootComponents.notice)) {
     shouldImportH = true;

@@ -3,7 +3,6 @@ import type { App } from "vuepress/core";
 
 import { getIconInfo, getShareServiceConfig } from "./components/index.js";
 import {
-  backToTopLocales,
   pdfLocaleConfig,
   siteInfoLocaleConfig,
   vidstackLocales,
@@ -12,10 +11,7 @@ import type { ComponentPluginOptions } from "./options/index.js";
 import { isInstalled } from "./utils.js";
 
 export const getDefine =
-  (
-    options: ComponentPluginOptions,
-    legacy: boolean,
-  ): ((app: App) => Record<string, unknown>) =>
+  (options: ComponentPluginOptions): ((app: App) => Record<string, unknown>) =>
   (app) => {
     const { assets, prefix } = options.componentOptions?.fontIcon ?? {};
     const result: Record<string, unknown> = {};
@@ -81,15 +77,6 @@ export const getDefine =
         name: "vidstack",
         default: vidstackLocales,
         config: options.locales?.vidstack,
-      });
-
-    // TODO: Remove in v2 stable
-    if (legacy && options.rootComponents?.backToTop)
-      result["BACK_TO_TOP_LOCALES"] = getLocaleConfig({
-        app,
-        name: "backToTop",
-        default: backToTopLocales,
-        config: options.locales?.backToTop,
       });
 
     return result;

@@ -2,6 +2,7 @@ import type { PropType, VNode } from "vue";
 import { defineComponent, h } from "vue";
 import type { AuthorInfo } from "vuepress-shared/client";
 
+import { usePure } from "@theme-hope/composables/index";
 import { AuthorIcon } from "@theme-hope/modules/info/components/icons";
 import { useMetaLocale } from "@theme-hope/modules/info/composables/index";
 
@@ -22,17 +23,11 @@ export default defineComponent({
       type: Array as PropType<AuthorInfo[]>,
       required: true,
     },
-
-    /**
-     * Whether in pure mode
-     *
-     * 是否处于纯净模式
-     */
-    pure: Boolean,
   },
 
   setup(props) {
     const metaLocale = useMetaLocale();
+    const pure = usePure();
 
     return (): VNode | null =>
       props.author.length
@@ -41,9 +36,9 @@ export default defineComponent({
             {
               class: "page-author-info",
               "aria-label": `${metaLocale.value.author}${
-                props.pure ? "" : "🖊"
+                pure.value ? "" : "🖊"
               }`,
-              ...(props.pure ? {} : { "data-balloon-pos": "up" }),
+              ...(pure.value ? {} : { "data-balloon-pos": "up" }),
             },
             [
               h(AuthorIcon),

@@ -117,17 +117,12 @@ export const usePageInfo = (): {
         isOriginal: frontmatter.value.isOriginal ?? false,
         readingTime: readingTimeData.value,
         readingTimeLocale: readingTimeLocale.value,
-        pageview:
-          "pageview" in frontmatter.value ? frontmatter.value.pageview : true,
+        pageview: frontmatter.value.pageview ?? true,
       }) as PageInfoProps,
   );
 
-  const items = computed(() =>
-    "pageInfo" in frontmatter.value
-      ? frontmatter.value.pageInfo
-      : "pageInfo" in themeLocale.value
-        ? themeLocale.value.pageInfo
-        : null,
+  const items = computed(
+    () => frontmatter.value.pageInfo ?? themeLocale.value.pageInfo ?? null,
   );
 
   return { info, items };

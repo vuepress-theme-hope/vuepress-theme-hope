@@ -2,7 +2,7 @@ import type { PropType, VNode } from "vue";
 import { defineComponent, h } from "vue";
 import { generateIndexFromHash } from "vuepress-shared/client";
 
-import { useNavigate } from "@theme-hope/composables/index";
+import { useNavigate, usePure } from "@theme-hope/composables/index";
 import { CategoryIcon } from "@theme-hope/modules/info/components/icons";
 import { useMetaLocale } from "@theme-hope/modules/info/composables/index";
 import type { PageCategory } from "@theme-hope/modules/info/utils/index";
@@ -24,18 +24,12 @@ export default defineComponent({
       type: Array as PropType<PageCategory[]>,
       required: true,
     },
-
-    /**
-     * Whether in pure mode
-     *
-     * 是否处于纯净模式
-     */
-    pure: Boolean,
   },
 
   setup(props) {
     const metaLocale = useMetaLocale();
     const navigate = useNavigate();
+    const pure = usePure();
 
     return (): VNode | null =>
       props.category.length
@@ -44,9 +38,9 @@ export default defineComponent({
             {
               class: "page-category-info",
               "aria-label": `${metaLocale.value.category}${
-                props.pure ? "" : "🌈"
+                pure.value ? "" : "🌈"
               }`,
-              ...(props.pure ? {} : { "data-balloon-pos": "up" }),
+              ...(pure.value ? {} : { "data-balloon-pos": "up" }),
             },
             [
               h(CategoryIcon),
@@ -60,7 +54,7 @@ export default defineComponent({
                       {
                         // TODO: magic number 9 is tricky here
                         [`category${generateIndexFromHash(name, 9)}`]:
-                          !props.pure,
+                          !pure.value,
                         clickable: path,
                       },
                     ],
