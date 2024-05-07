@@ -81,7 +81,7 @@ Icon name
 
 - Iconify: <https://icon-sets.iconify.design/>
 - Iconfont: <https://www.iconfont.cn/>
-- Fontawesome: <https://fontawesome.com/icons>
+- Fontawesome: <https://fontawesome.com/search?o=r&m=free>
 
 ## 高级
 
@@ -160,6 +160,6 @@ Icon name
 详情请关注 [fontawesome 文档](https://fontawesome.com/)。
 
 - [使用说明](https://fontawesome.com/docs/web/add-icons/how-to)
-- [图标列表](https://fontawesome.com/icons)
+- [图标列表](https://fontawesome.com/search?o=r&m=free)
 
 :::

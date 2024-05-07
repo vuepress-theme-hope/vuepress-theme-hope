@@ -81,7 +81,7 @@ In other cases where you use iconify or your own url, you can manually set this 
 
 - Iconify: <https://icon-sets.iconify.design/>
 - Iconfont: <https://www.iconfont.cn/?lang=en-us>
-- Fontawesome: <https://fontawesome.com/icons>
+- Fontawesome: <https://fontawesome.com/search?o=r&m=free>
 
 ## Advanced
 
@@ -160,6 +160,6 @@ Fontawesome kits with pro features support pro icons, more icon styles and uploa
 For details, please follow [fontawesome document](https://fontawesome.com/).
 
 - [Usage Instructions](https://fontawesome.com/docs/web/add-icons/how-to)
-- [Icon List](https://fontawesome.com/icons)
+- [Icon List](https://fontawesome.com/search?o=r&m=free)
 
 :::

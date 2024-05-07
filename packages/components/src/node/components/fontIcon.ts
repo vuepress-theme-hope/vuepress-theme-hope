@@ -18,7 +18,7 @@ const isIconifyLink = (link: string): boolean =>
 
 const isFontAwesomeLink = (link: string): boolean =>
   /^(?:https:)?\/\/kit\.fontawesome\.com\//.test(link) ||
-  link.includes("/@fortawesome/fontawesome-free/");
+  /\/fontawesome(?:[@/-]|$)/.test(link);
 
 const isIconFontLink = (link: string): boolean =>
   /^(?:https:)?\/\/at\.alicdn\.com\/t\//.test(link);
