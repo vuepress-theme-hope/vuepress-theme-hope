@@ -70,7 +70,7 @@
     "cz-git": "1.9.1",
     "esbuild": "0.20.2",
     "eslint": "8.57.0",
-    "eslint-config-mister-hope": "0.0.8",
+    "eslint-config-mister-hope": "0.1.0",
     "eslint-plugin-vue": "9.25.0",
     "execa": "8.0.1",
     "gulp": "5.0.0",
