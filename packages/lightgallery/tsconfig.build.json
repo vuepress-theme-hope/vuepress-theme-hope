@@ -7,8 +7,5 @@
     "outDir": "./lib"
   },
   "include": ["./src", "./src/*.d.ts"],
-  "references": [
-    { "path": "../sass-palette/tsconfig.build.json" },
-    { "path": "../shared/tsconfig.build.json" }
-  ]
+  "references": [{ "path": "../shared/tsconfig.build.json" }]
 }

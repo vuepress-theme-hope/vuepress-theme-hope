@@ -44,13 +44,13 @@
   },
   "dependencies": {
     "@stackblitz/sdk": "^1.9.0",
-    "@vuepress/helper": "2.0.0-rc.26",
+    "@vuepress/helper": "2.0.0-rc.27",
+    "@vuepress/plugin-sass-palette": "2.0.0-rc.27",
     "@vueuse/core": "^10.9.0",
     "balloon-css": "^1.2.0",
     "create-codepen": "1.0.1",
     "qrcode": "^1.5.3",
     "vue": "^3.4.26",
-    "vuepress-plugin-sass-palette": "workspace:*",
     "vuepress-shared": "workspace:*"
   },
   "devDependencies": {

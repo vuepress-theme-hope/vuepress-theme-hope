@@ -3,8 +3,8 @@ import {
   addViteOptimizeDepsInclude,
   addViteSsrNoExternal,
 } from "@vuepress/helper";
+import { useSassPalettePlugin } from "@vuepress/plugin-sass-palette";
 import type { PluginFunction } from "vuepress/core";
-import { useSassPalettePlugin } from "vuepress-plugin-sass-palette";
 
 import { convertOptions } from "./compact/index.js";
 import { getDefine } from "./getDefine.js";

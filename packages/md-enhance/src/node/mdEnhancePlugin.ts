@@ -27,10 +27,10 @@ import {
   isArray,
   isPlainObject,
 } from "@vuepress/helper";
+import { useSassPalettePlugin } from "@vuepress/plugin-sass-palette";
 import type { PluginFunction } from "vuepress/core";
 import type { MarkdownEnv } from "vuepress/markdown";
 import { colors, path } from "vuepress/utils";
-import { useSassPalettePlugin } from "vuepress-plugin-sass-palette";
 
 import {
   convertOptions,

@@ -1,7 +1,7 @@
 import { isPlainObject } from "@vuepress/helper";
 import { useReadingTimePlugin } from "@vuepress/plugin-reading-time";
+import { useSassPalettePlugin } from "@vuepress/plugin-sass-palette";
 import type { App } from "vuepress/core";
-import { useSassPalettePlugin } from "vuepress-plugin-sass-palette";
 
 import { useGitPlugin } from "./git.js";
 import { useExtendsPagePlugin } from "./pageConverter.js";

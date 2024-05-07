@@ -36,11 +36,11 @@ For example:
 
 The following plugins are used internally and can not be disabled:
 
+- [@vuepress/plugin-sass-palette][sass-palette]: Sass plugin for plugins and themes
+
 - [@vuepress/plugin-theme-data][theme-data]: Composition API plugin for theme data
 
 - <ProjectLink name="components">vuepress-plugin-components</ProjectLink>: Provides common components out of the box.
-
-- <ProjectLink name="sass-palette">vuepress-plugin-sass-palette</ProjectLink>: Sass style plugin for all plugins and themes
 
 ### Automatically Enabled Plugins
 
@@ -112,6 +112,7 @@ These plugins are supported by theme, but you need to install them manually whil
 [pwa]: https://ecosystem.vuejs.press/plugins/pwa/
 [reading-time]: https://ecosystem.vuejs.press/plugins/reading-time.html
 [redirect]: https://ecosystem.vuejs.press/plugins/redirect.html
+[sass-palette]: https://ecosystem.vuejs.press/plugins/sass-palette/
 [search]: https://ecosystem.vuejs.press/plugins/search.html
 [seo]: https://ecosystem.vuejs.press/plugins/seo/
 [sitemap]: https://ecosystem.vuejs.press/plugins/sitemap/

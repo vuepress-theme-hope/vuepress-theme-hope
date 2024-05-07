@@ -39,11 +39,6 @@ const features = [
     link: getLink("md-enhance"),
   },
   {
-    text: "Sass Palette Plugin",
-    icon: "palette",
-    link: getLink("sass-palette"),
-  },
-  {
     text: "Client Search Plugin",
     icon: "search",
     link: getLink("search-pro"),

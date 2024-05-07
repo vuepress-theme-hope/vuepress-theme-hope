@@ -46,7 +46,7 @@
     "dev:ts": "tsc -b tsconfig.build.json --watch"
   },
   "dependencies": {
-    "@vuepress/helper": "2.0.0-rc.26",
+    "@vuepress/helper": "2.0.0-rc.27",
     "@vueuse/core": "^10.9.0",
     "cheerio": "1.0.0-rc.12",
     "dayjs": "^1.11.11",

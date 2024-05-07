@@ -39,11 +39,6 @@ const features = [
     link: getLink("md-enhance"),
   },
   {
-    text: "Sass 调色板插件",
-    icon: "palette",
-    link: getLink("sass-palette"),
-  },
-  {
     text: "客户端搜索插件",
     icon: "search",
     link: getLink("search-pro"),

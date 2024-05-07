@@ -4,9 +4,9 @@ import {
   fromEntries,
   getLocaleConfig,
 } from "@vuepress/helper";
+import { useSassPalettePlugin } from "@vuepress/plugin-sass-palette";
 import { watch } from "chokidar";
 import type { PluginFunction } from "vuepress/core";
-import { useSassPalettePlugin } from "vuepress-plugin-sass-palette";
 
 import { convertOptions } from "./compact.js";
 import { getSearchIndexStore } from "./generateIndex.js";

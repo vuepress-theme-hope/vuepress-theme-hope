@@ -157,8 +157,6 @@ VuePress 在一定程度上扩展了 Markdown 语法，但仍然缺少一些常�
 
 - <ProjectLink name="md-enhance" path="/zh/">vuepress-plugin-md-enhance</ProjectLink>: 提供更多 Markdown 语法
 
-- <ProjectLink name="sass-palette" path="/zh/">vuepress-plugin-sass-palette</ProjectLink>: 面向全部插件和主题的 Sass 配置插件
-
 ::: tip
 
 这里还有一些其他没有被主题捆绑的插件，你可以根据自己的需求自行启用。

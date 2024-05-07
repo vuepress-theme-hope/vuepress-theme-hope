@@ -66,15 +66,6 @@ jobs:
           token: ${{ secrets.ACCESS_TOKEN }}
           single-commit: true
 
-      - name: Deploy sass-palette docs
-        uses: JamesIves/github-pages-deploy-action@v4
-        with:
-          repository-name: vuepress-theme-hope/sass-palette-docs
-          branch: netlify
-          folder: docs/sass-palette/dist
-          token: ${{ secrets.ACCESS_TOKEN }}
-          single-commit: true
-
       - name: Deploy search-pro docs
         uses: JamesIves/github-pages-deploy-action@v4
         with:
@@ -139,7 +130,6 @@ jobs:
           pnpm cpx "docs/components/dist/**" dist/components
           pnpm cpx "docs/lightgallery/dist/**" dist/lightgallery
           pnpm cpx "docs/md-enhance/dist/**" dist/md-enhance
-          pnpm cpx "docs/sass-palette/dist/**" dist/sass-palette
           pnpm cpx "docs/search-pro/dist/**" dist/search-pro
           pnpm cpx "docs/shared/dist/**" dist/shared
           pnpm cpx "docs/theme/dist/**" dist
@@ -226,7 +216,6 @@ jobs:
           - components
           - lightgallery
           - md-enhance
-          - sass-palette
           - search-pro
 
     steps:

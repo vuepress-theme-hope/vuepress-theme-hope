@@ -36,11 +36,11 @@ tag:
 
 下列插件被内部调用，不可禁用:
 
+- [@vuepress/plugin-sass-palette][sass-palette]: 面向插件和主题的 Sass 配置插件
+
 - [@vuepress/plugin-theme-data][theme-data]: 主题配置的 Composition API 插件
 
 - <ProjectLink name="components" path="/zh/">vuepress-plugin-components</ProjectLink>: 提供一些开箱即用的组件
-
-- <ProjectLink name="sass-palette" path="/zh/">vuepress-plugin-sass-palette</ProjectLink>: 面向全部插件和主题的 Sass 配置插件
 
 ### 自动启用的插件
 
@@ -114,6 +114,7 @@ tag:
 [pwa]: https://ecosystem.vuejs.press/zh/plugins/pwa/
 [redirect]: https://ecosystem.vuejs.press/zh/plugins/redirect.html
 [reading-time]: https://ecosystem.vuejs.press/zh/plugins/reading-time.html
+[sass-palette]: https://ecosystem.vuejs.press/zh/plugins/sass-palette/
 [search]: https://ecosystem.vuejs.press/zh/plugins/search.html
 [seo]: https://ecosystem.vuejs.press/zh/plugins/seo/
 [sitemap]: https://ecosystem.vuejs.press/zh/plugins/sitemap/

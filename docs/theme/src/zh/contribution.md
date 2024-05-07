@@ -39,7 +39,6 @@ pnpm i
 │ ├── components → components 插件文档
 │ ├── lightgallery → lightgallery 插件文档
 │ ├── md-enhance → md-enhance 插件文档
-│ ├── sass-palette → sass-palette 插件文档
 │ ├── shared → vuepress-shared 文档
 │ ├── search-pro → search-pro 插件文档
 │ └── theme → 主题文档
@@ -51,7 +50,6 @@ pnpm i
 │ ├── create → create-vuepress-theme-hope 助手
 │ ├── lightgallery → lightgallery 插件
 │ ├── md-enhance → md-enhance 插件
-│ ├── sass-palette → sass-palette 插件
 │ ├── search-pro → search-pro 插件
 │ ├── shared → 共享文件
 │ └── theme → vuepress-theme-hope 主题

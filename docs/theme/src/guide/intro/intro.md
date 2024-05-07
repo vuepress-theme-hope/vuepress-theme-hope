@@ -159,8 +159,6 @@ The theme includes the following plugins, you can use them in other themes or di
 
 - <ProjectLink name="md-enhance">vuepress-plugin-md-enhance</ProjectLink>: Provide more Markdown syntax
 
-- <ProjectLink name="sass-palette">vuepress-plugin-sass-palette</ProjectLink>: Sass style plugin for all plugins and themes
-
 ::: tip
 
 Here are some other plugins that are not bundled by the theme, you can enable them according to your own needs.
