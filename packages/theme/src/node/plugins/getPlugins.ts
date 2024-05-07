@@ -54,7 +54,7 @@ export const getPlugins = (
     pluginsOptions.externalLinkIcon === false ? null : externalLinkIconPlugin(),
     pluginsOptions.nprogress === false ? null : nprogressPlugin(),
     themeDataPlugin({ themeData }),
-    getBlogPlugin(app, themeData, pluginsOptions.blog, options.hotReload),
+    getBlogPlugin(themeData, pluginsOptions.blog, options.hotReload),
     getCommentPlugin(pluginsOptions.comment),
     getCopyCodePlugin(pluginsOptions.copyCode),
     getCopyrightPlugin(themeData, pluginsOptions.copyright, options.hostname),

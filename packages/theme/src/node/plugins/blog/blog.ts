@@ -1,7 +1,7 @@
 import { keys, startsWith } from "@vuepress/helper";
 import type { BlogPluginOptions } from "@vuepress/plugin-blog";
 import { blogPlugin } from "@vuepress/plugin-blog";
-import type { App, Page, Plugin } from "vuepress/core";
+import type { Page, Plugin } from "vuepress/core";
 
 import { getBlogCategoryCategory, getBlogTagCategory } from "./category.js";
 import { blogFilter } from "./filter.js";
@@ -20,7 +20,6 @@ import { ArticleInfo } from "../../../shared/index.js";
 
 /** @private */
 export const getBlogPlugin = (
-  app: App,
   themeData: ThemeData,
   options?: BlogOptions | boolean,
   hotReload = false,
@@ -63,11 +62,6 @@ export const getBlogPlugin = (
 
       // Resolve reading-time
       if (
-        /*
-         * Reading time data is sensitive with markdown contents
-         * we use this to prevent user triggers a page reload every time
-         */
-        (hotReload || app.env.isBuild) &&
         // Ensure a valid reading time exists
         page.data.readingTime &&
         page.data.readingTime.words !== 0

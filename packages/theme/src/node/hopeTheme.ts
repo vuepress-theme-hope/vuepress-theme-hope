@@ -105,11 +105,14 @@ export const hopeTheme = (
 
       onWatched: (app, watchers): void => {
         if (hotReload) {
-          // This ensures the page is generated or updated
-          const structureSidebarWatcher = watch("pages/**/*.vue", {
-            cwd: app.dir.temp(),
-            ignoreInitial: true,
-          });
+          const structureSidebarWatcher = watch(
+            // This ensures the page is generated or updated
+            "pages/**/*.vue",
+            {
+              cwd: app.dir.temp(),
+              ignoreInitial: true,
+            },
+          );
 
           structureSidebarWatcher.on("add", () => {
             void prepareSidebarData(app, themeData, sidebarSorter);
