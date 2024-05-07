@@ -1,3 +1,9 @@
+.vp-navbar {
+  transition:
+    background var(--vp-ct),
+    box-shadow var(--vp-ct);
+}
+
 .transparent-navbar {
   .vp-navbar {
     background-color: transparent;
