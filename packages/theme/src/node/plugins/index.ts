@@ -17,3 +17,4 @@ export * from "./search.js";
 export * from "./seo.js";
 export * from "./sitemap.js";
 export * from "./usePlugins.js";
+export * from "./watermark.js";

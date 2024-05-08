@@ -20,6 +20,7 @@ import type { SearchProPluginOptions } from "vuepress-plugin-search-pro";
 
 import type { BlogOptions } from "./blog.js";
 import type { PrismjsOptions } from "./prism.js";
+import type { WatermarkPluginOptions } from "@vuepress/plugin-watermark";
 
 export interface PluginsOptions {
   /**
@@ -338,4 +339,17 @@ export interface PluginsOptions {
    * @default true
    */
   sitemap?: Omit<SitemapPluginOptions, "hostname"> | boolean;
+
+  /**
+   * Options for @vuepress/watermark
+   *
+   * @see https://ecosystem.vuejs.press/plugins/watermark.html
+   *
+   * 水印插件配置
+   *
+   * @see https://ecosystem.vuejs.press/zh/plugins/watermark.html
+   *
+   * @default false
+   */
+  watermark?: WatermarkPluginOptions | boolean;
 }

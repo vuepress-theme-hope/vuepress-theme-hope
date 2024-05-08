@@ -80,6 +80,8 @@ tag:
 
 - [@vuepress/plugin-comment][comment]: 提供评论与浏览量功能
 
+- [@vuepress/plugin-watermark][watermark]: 水印插件
+
 ### 内置支持的插件
 
 以下插件受到主题支持，但你需要在使用前自行安装它们:
@@ -119,3 +121,4 @@ tag:
 [seo]: https://ecosystem.vuejs.press/zh/plugins/seo/
 [sitemap]: https://ecosystem.vuejs.press/zh/plugins/sitemap/
 [theme-data]: https://ecosystem.vuejs.press/zh/plugins/theme-data.html
+[watermark]: https://ecosystem.vuejs.press/zh/plugins/watermark.html

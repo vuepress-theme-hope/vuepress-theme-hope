@@ -21,6 +21,7 @@ const PLUGIN_CHECKLIST = [
   ["@vuepress/plugin-seo", "seo"],
   ["@vuepress/plugin-sitemap", "sitemap"],
   "@vuepress/plugin-theme-data",
+  ["@vuepress/plugin-watermark", "watermark"],
   ["vuepress-plugin-components", "components"],
   ["vuepress-plugin-md-enhance", "mdEnhance"],
   ["vuepress-plugin-search-pro", "searchPro"],

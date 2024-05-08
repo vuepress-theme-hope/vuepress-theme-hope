@@ -21,6 +21,7 @@ import { getRtlPlugin } from "./rtl.js";
 import { getSearchPlugin } from "./search.js";
 import { getSEOPlugin } from "./seo.js";
 import { getSitemapPlugin } from "./sitemap.js";
+import { getWatermarkPlugin } from "./watermark.js";
 import type {
   PluginsOptions,
   ThemeData,
@@ -74,6 +75,7 @@ export const getPlugins = (
     getSitemapPlugin(pluginsOptions.sitemap, options.hostname),
     getRtlPlugin(themeData),
     getRedirectPlugin(pluginsOptions.redirect),
+    getWatermarkPlugin(pluginsOptions.watermark),
   ].filter((item) => item !== null) as PluginConfig;
 
   return plugins;

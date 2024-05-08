@@ -29,6 +29,7 @@ const KNOWN_THEME_PLUGINS = [
   "searchPro",
   "seo",
   "sitemap",
+  "watermark",
 ];
 
 /**

@@ -80,6 +80,8 @@ The following plugins are bundled by theme, you can enable them via configuratio
 
 - [@vuepress/plugin-comment][comment]: Provides comment and pageview function
 
+- [@vuepress/plugin-watermark][watermark]: Watermark plugin
+
 ### Plugins with Built-in Support
 
 These plugins are supported by theme, but you need to install them manually while using:
@@ -117,3 +119,4 @@ These plugins are supported by theme, but you need to install them manually whil
 [seo]: https://ecosystem.vuejs.press/plugins/seo/
 [sitemap]: https://ecosystem.vuejs.press/plugins/sitemap/
 [theme-data]: https://ecosystem.vuejs.press/plugins/theme-data.html
+[watermark]: https://ecosystem.vuejs.press/plugins/watermark.html

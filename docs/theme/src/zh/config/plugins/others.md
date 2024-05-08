@@ -152,6 +152,12 @@ tag:
 
 插件选项请参阅 [sitemap 插件文档][sitemap-config]。
 
+## watermark
+
+控制 `@vuepress/plugin-watermark`，为网站生成水印。
+
+插件选项请参阅 [watermark 插件文档][watermark-config]。
+
 [back-to-top-config]: https://ecosystem.vuejs.press/zh/plugins/back-to-top.html#options
 [catalog-config]: https://ecosystem.vuejs.press/zh/plugins/catalog.html#options
 [copy-code-config]: https://ecosystem.vuejs.press/zh/plugins/copy-code.html#options
@@ -162,3 +168,4 @@ tag:
 [reading-time-config]: https://ecosystem.vuejs.press/zh/plugins/reading-time.html#options
 [seo-config]: https://ecosystem.vuejs.press/zh/plugins/seo/config.html
 [sitemap-config]: https://ecosystem.vuejs.press/zh/plugins/sitemap/config.html
+[watermark-config]: https://ecosystem.vuejs.press/zh/plugins/watermark.html

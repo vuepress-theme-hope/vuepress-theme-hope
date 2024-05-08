@@ -150,6 +150,12 @@ No extra config is required by default. Se it to `false` if you don't need it.
 
 Check [sitemap plugin docs][sitemap-config] for available plugin options.
 
+## watermark
+
+Controls `@vuepress/plugin-watermark` which provides watermark.
+
+Check [watermark plugin docs][watermark-config] for available plugin options.
+
 [back-to-top-config]: https://ecosystem.vuejs.press/plugins/back-to-top.html#options
 [catalog-config]: https://ecosystem.vuejs.press/plugins/catalog.html#options
 [copy-code-config]: https://ecosystem.vuejs.press/plugins/copy-code.html#options
@@ -158,5 +164,6 @@ Check [sitemap plugin docs][sitemap-config] for available plugin options.
 [photo-swipe-config]: https://ecosystem.vuejs.press/plugins/photo-swipe.html#options
 [pwa-config]: https://ecosystem.vuejs.press/plugins/pwa/config.html#options
 [reading-time-config]: https://ecosystem.vuejs.press/plugins/reading-time.html#options
-[seo-config]: https://ecosystem.vuejs.press/plugins/sitemap/config.html
-[sitemap-config]: https://ecosystem.vuejs.press/plugins/seo/config.html
+[seo-config]: https://ecosystem.vuejs.press/plugins/seo/config.html
+[sitemap-config]: https://ecosystem.vuejs.press/plugins/sitemap/config.html
+[watermark-config]: https://ecosystem.vuejs.press/plugins/watermark.html

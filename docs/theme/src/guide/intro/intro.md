@@ -129,7 +129,10 @@ In short, anyone can enjoy the convenience of Markdown's enhanced syntax.
 
 - [Page Encryption](../feature/encrypt.md) feature to limit access.
 
-- [Copyright appending](../feature/copyright.md) while copying, or directly disable page copy and selection
+- Copyright
+
+  - [Copyright appending](../feature/copyright.md) while copying, or directly disable page copy and selection
+  - Add [Watermark](../feature/watermark.md)
 
 - Search Engine Optimization
 

@@ -1137,6 +1137,9 @@ importers:
       '@vuepress/plugin-theme-data':
         specifier: 2.0.0-rc.28
         version: 2.0.0-rc.28(typescript@5.4.5)(vuepress@2.0.0-rc.9(@vuepress/bundler-vite@2.0.0-rc.9(@types/node@20.12.8)(jiti@1.21.0)(sass@1.77.0)(terser@5.31.0)(tsx@4.9.3)(typescript@5.4.5))(@vuepress/bundler-webpack@2.0.0-rc.9(esbuild@0.20.2)(typescript@5.4.5))(typescript@5.4.5)(vue@3.4.27(typescript@5.4.5)))
+      '@vuepress/plugin-watermark':
+        specifier: 2.0.0-rc.28
+        version: 2.0.0-rc.28(typescript@5.4.5)(vuepress@2.0.0-rc.9(@vuepress/bundler-vite@2.0.0-rc.9(@types/node@20.12.8)(jiti@1.21.0)(sass@1.77.0)(terser@5.31.0)(tsx@4.9.3)(typescript@5.4.5))(@vuepress/bundler-webpack@2.0.0-rc.9(esbuild@0.20.2)(typescript@5.4.5))(typescript@5.4.5)(vue@3.4.27(typescript@5.4.5)))
       '@vueuse/core':
         specifier: ^10.9.0
         version: 10.9.0(vue@3.4.27(typescript@5.4.5))
@@ -3497,6 +3500,11 @@ packages:
 
   '@vuepress/plugin-theme-data@2.0.0-rc.28':
     resolution: {integrity: sha512-unI71Ybfl42TSwrc+JpU6PfVR2ETy5RihBDq04ca5xOePjY0liampjn5O65bgIFkrHVP9azym8KLnVLOERhcdQ==}
+    peerDependencies:
+      vuepress: 2.0.0-rc.9
+
+  '@vuepress/plugin-watermark@2.0.0-rc.28':
+    resolution: {integrity: sha512-rsxNCBOT2MznUEWf13yuz+SqS5YX/ZNPXhQQzdevhmFn7LXn5V6ZK2KPPxfQEG/mTIHPOoLRdbLH7d13OvPoRQ==}
     peerDependencies:
       vuepress: 2.0.0-rc.9
 
@@ -8615,6 +8623,10 @@ packages:
     resolution: {integrity: sha512-8wrBCMtVhqcXP2Sup1ctSkga6uc2Bx0IIvKyT7yTFier5AXHooSI+QyQQAtTb7+E0IUCCKyTFmXqdqgum2XWGg==}
     engines: {node: '>=10.13.0'}
 
+  watermark-js-plus@1.4.24:
+    resolution: {integrity: sha512-tKgP/StyzPlaTQELbzMKLtaVUhPSYB1SMba9ENAQC8pCl4aGsBrnsbIR9m1AKmIv/uVBSB1/rEwugR7w51AwDA==}
+    engines: {node: '>=16.0.0'}
+
   wbuf@1.7.3:
     resolution: {integrity: sha512-O84QOnr0icsbFGLS0O3bI5FswxzRr8/gHwWkDlQFskhSPryQXvrTMxjxGP4+iWYoauLoBvfDpkrOauZ+0iZpDA==}
 
@@ -11852,6 +11864,15 @@ snapshots:
       '@vue/devtools-api': 6.6.1
       vue: 3.4.27(typescript@5.4.5)
       vuepress: 2.0.0-rc.9(@vuepress/bundler-vite@2.0.0-rc.9(@types/node@20.12.8)(jiti@1.21.0)(sass@1.77.0)(terser@5.31.0)(tsx@4.9.3)(typescript@5.4.5))(@vuepress/bundler-webpack@2.0.0-rc.9(esbuild@0.20.2)(typescript@5.4.5))(typescript@5.4.5)(vue@3.4.27(typescript@5.4.5))
+    transitivePeerDependencies:
+      - typescript
+
+  '@vuepress/plugin-watermark@2.0.0-rc.28(typescript@5.4.5)(vuepress@2.0.0-rc.9(@vuepress/bundler-vite@2.0.0-rc.9(@types/node@20.12.8)(jiti@1.21.0)(sass@1.77.0)(terser@5.31.0)(tsx@4.9.3)(typescript@5.4.5))(@vuepress/bundler-webpack@2.0.0-rc.9(esbuild@0.20.2)(typescript@5.4.5))(typescript@5.4.5)(vue@3.4.27(typescript@5.4.5)))':
+    dependencies:
+      '@vuepress/helper': 2.0.0-rc.28(typescript@5.4.5)(vuepress@2.0.0-rc.9(@vuepress/bundler-vite@2.0.0-rc.9(@types/node@20.12.8)(jiti@1.21.0)(sass@1.77.0)(terser@5.31.0)(tsx@4.9.3)(typescript@5.4.5))(@vuepress/bundler-webpack@2.0.0-rc.9(esbuild@0.20.2)(typescript@5.4.5))(typescript@5.4.5)(vue@3.4.27(typescript@5.4.5)))
+      vue: 3.4.27(typescript@5.4.5)
+      vuepress: 2.0.0-rc.9(@vuepress/bundler-vite@2.0.0-rc.9(@types/node@20.12.8)(jiti@1.21.0)(sass@1.77.0)(terser@5.31.0)(tsx@4.9.3)(typescript@5.4.5))(@vuepress/bundler-webpack@2.0.0-rc.9(esbuild@0.20.2)(typescript@5.4.5))(typescript@5.4.5)(vue@3.4.27(typescript@5.4.5))
+      watermark-js-plus: 1.4.24
     transitivePeerDependencies:
       - typescript
 
@@ -17607,6 +17628,8 @@ snapshots:
     dependencies:
       glob-to-regexp: 0.4.1
       graceful-fs: 4.2.11
+
+  watermark-js-plus@1.4.24: {}
 
   wbuf@1.7.3:
     dependencies:

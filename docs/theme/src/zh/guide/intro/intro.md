@@ -127,7 +127,10 @@ VuePress 在一定程度上扩展了 Markdown 语法，但仍然缺少一些常�
 
 - [页面加密](../feature/encrypt.md) 功能来限制访问。
 
-- 复制时 [附加版权信息](../feature/copyright.md)，或直接禁用页面复制和选择
+- 版权
+
+  - 复制时 [附加版权信息](../feature/copyright.md)，或直接禁用页面复制和选择
+  - 为站点 [添加水印](../feature/watermark.md)
 
 - 搜索引擎优化
 

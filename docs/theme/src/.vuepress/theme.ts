@@ -242,6 +242,10 @@ export default theme(
         vPre: true,
         vuePlayground: true,
       },
+
+      watermark: {
+        enabled: false,
+      },
     },
   },
   "",
