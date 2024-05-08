@@ -7,8 +7,6 @@ import { enSidebarConfig, zhSidebarConfig } from "./sidebar/index.js";
 
 const __dirname = getDirname(import.meta.url);
 
-const IS_NETLIFY = "NETLIFY" in process.env;
-
 // The theme wrapper is located in <root>/docs-shared/src/theme-wrapper.ts
 export default theme(
   "theme",
@@ -105,38 +103,6 @@ export default theme(
             services: AVAILABLE_SERVICES,
           },
         },
-
-        rootComponents: IS_NETLIFY
-          ? {}
-          : {
-              notice: [
-                {
-                  path: "/",
-                  title: "New docs location",
-                  content:
-                    "Our docs has moved to a new domain vuejs.press<br>Current docs is built from the latest commit on the main branch, and may contain <strong>unreleased changes</strong>!",
-                  actions: [
-                    {
-                      text: "Visit Now",
-                      link: "https://theme-hope.vuejs.press",
-                    },
-                  ],
-                },
-                {
-                  path: "/zh/",
-                  title: "新的文档地址",
-                  content:
-                    "我们的文档已经迁移至新域名 vuejs.press 下。<br>当前文档是基于主分支最新提交构建的，可能包含<strong>未发布的更改</strong>。",
-
-                  actions: [
-                    {
-                      text: "立即访问",
-                      link: "https://theme-hope.vuejs.press/zh/",
-                    },
-                  ],
-                },
-              ],
-            },
       },
 
       copyright: {

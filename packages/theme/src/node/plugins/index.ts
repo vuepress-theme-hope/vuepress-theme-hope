@@ -8,6 +8,7 @@ export * from "./copyright.js";
 export * from "./feed.js";
 export * from "./getPlugins.js";
 export * from "./mdEnhance.js";
+export * from "./notice.js";
 export * from "./pageConverter.js";
 export * from "./photoSwipe.js";
 export * from "./prismjs.js";

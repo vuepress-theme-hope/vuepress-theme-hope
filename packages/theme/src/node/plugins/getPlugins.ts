@@ -14,6 +14,7 @@ import { getCopyrightPlugin } from "./copyright.js";
 import { getFeedPlugin } from "./feed.js";
 import { getLinksCheckPlugin } from "./linksCheck.js";
 import { getMdEnhancePlugin } from "./mdEnhance.js";
+import { getNoticePlugin } from "./notice.js";
 import { getPhotoSwipePlugin } from "./photoSwipe.js";
 import { getPwaPlugin } from "./pwa.js";
 import { getRedirectPlugin } from "./redirect.js";
@@ -69,6 +70,7 @@ export const getPlugins = (
       legacy,
     ),
     getMdEnhancePlugin(pluginsOptions.mdEnhance, legacy),
+    getNoticePlugin(pluginsOptions.notice),
     getPhotoSwipePlugin(pluginsOptions.photoSwipe),
     getPwaPlugin(pluginsOptions.pwa, options.favicon),
     getSearchPlugin(app, themeData, pluginsOptions),

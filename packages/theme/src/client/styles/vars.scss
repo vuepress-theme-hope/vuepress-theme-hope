@@ -90,7 +90,7 @@
 // plugin-catalog
 .vp-catalog-wrapper {
   --catalog-bg-color: var(--bg-color);
-  --catalog-bg-secondary-color: var(--bg-color-light);
+  --catalog-bg-secondary-color: var(--bg-color-secondary);
   --catalog-border-color: var(--border-color);
   --catalog-active-color: var(--theme-color);
   --catalog-hover-color: var(--theme-color-light);
@@ -123,10 +123,21 @@ body {
   --pwa-content-light-color: var(--grey-dark);
 }
 
+// plugin-notice
+.vp-notice-wrapper {
+  --notice-color: var(--text-color);
+  --notice-bg-color: var(--bg-color);
+  --notice-primary-color: var(--theme-color);
+  --notice-primary-text-color: var(--white);
+  --notice-primary-hover-color: var(--theme-color-light);
+  --notice-button-color: var(--bg-color-tertiary);
+  --notice-button-hover-color: var(--bg-color-secondary);
+}
+
 // plugin-redirect
 .redirect-modal-mask {
   --redirect-bg-color: var(--bg-color);
-  --redirect-bg-color-light: var(--bg-color-light);
+  --redirect-bg-color-light: var(--bg-color-secondary);
   --redirect-bg-color-lighter: var(--bg-color-tertiary);
   --redirect-text-color: var(--text-color);
   --redirect-primary-color: var(--theme-color);

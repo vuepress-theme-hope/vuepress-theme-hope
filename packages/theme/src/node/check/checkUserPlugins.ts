@@ -2,30 +2,7 @@ import type { App } from "vuepress/core";
 import { colors } from "vuepress/utils";
 
 import { logger } from "../utils.js";
-
-const PLUGIN_CHECKLIST = [
-  ["@vuepress/plugin-active-header-links", "activeHeaderLinks"],
-  ["@vuepress/plugin-blog", "blog"],
-  ["@vuepress/plugin-catalog", "catalog"],
-  ["@vuepress/plugin-copy-code", "copyCode"],
-  ["@vuepress/plugin-copyright", "copyright"],
-  ["@vuepress/plugin-comment", "comment"],
-  ["@vuepress/plugin-docsearch", "docsearch"],
-  ["@vuepress/plugin-search", "search"],
-  ["@vuepress/plugin-feed", "feed"],
-  ["@vuepress/plugin-links-check", "linksCheck"],
-  ["@vuepress/plugin-photo-swipe", "photoSwipe"],
-  ["@vuepress/plugin-pwa", "pwa"],
-  ["@vuepress/plugin-reading-time", "readingTime"],
-  ["@vuepress/plugin-rtl", "", 'Set "rtl: true" in the needed theme locales.'],
-  ["@vuepress/plugin-seo", "seo"],
-  ["@vuepress/plugin-sitemap", "sitemap"],
-  "@vuepress/plugin-theme-data",
-  ["@vuepress/plugin-watermark", "watermark"],
-  ["vuepress-plugin-components", "components"],
-  ["vuepress-plugin-md-enhance", "mdEnhance"],
-  ["vuepress-plugin-search-pro", "searchPro"],
-];
+import { PLUGIN_CHECKLIST } from "./utils.js";
 
 /**
  * @private

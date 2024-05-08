@@ -1,7 +1,5 @@
 # Demo
 
-- Notice (Root Components)
-
 - [ArtPlayer](art-player.md)
 
 - [Badge](badge.md)

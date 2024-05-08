@@ -3,34 +3,11 @@ import { colors } from "vuepress/utils";
 
 import type { PluginsOptions } from "../../shared/index.js";
 import { logger } from "../utils.js";
+import { PLUGIN_CHECKLIST } from "./utils.js";
 
-const KNOWN_THEME_PLUGINS = [
-  "activeHeaderLinks",
-  "backToTop",
-  "blog",
-  "catalog",
-  "components",
-  "comment",
-  "copyCode",
-  "copyright",
-  "docsearch",
-  "externalLinkIcon",
-  "feed",
-  "git",
-  "linksCheck",
-  "mdEnhance",
-  "nprogress",
-  "photoSwipe",
-  "prismjs",
-  "pwa",
-  "readingTime",
-  "redirect",
-  "search",
-  "searchPro",
-  "seo",
-  "sitemap",
-  "watermark",
-];
+const KNOWN_THEME_PLUGINS = PLUGIN_CHECKLIST.map(([, config]) => config).filter(
+  Boolean,
+);
 
 /**
  * @private
