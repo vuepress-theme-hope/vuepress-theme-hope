@@ -65,5 +65,6 @@ export default {
     "**/__tests__/**",
     // markdown import demo
     "**/*.snippet.md",
+    "**/CHANGELOG.md",
   ],
 };

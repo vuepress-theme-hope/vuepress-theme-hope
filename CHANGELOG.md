@@ -2,8 +2,6 @@
 
 All notable changes to this project will be documented in this file. See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
-<!-- #region recent-change -->
-
 ## [2.0.0-rc.38](https://github.com/vuepress-theme-hope/vuepress-theme-hope/compare/v2.0.0-rc.37...v2.0.0-rc.38) (2024-04-29)
 
 ### Features
@@ -803,8 +801,6 @@ This version is not actually released.
 - **shared:** improve compareDate ([fd9494b](https://github.com/vuepress-theme-hope/vuepress-theme-hope/commit/fd9494b47836bf9dfa7cacfcea585617625e2cb2))
 - **theme:** remove workaround ([eba8720](https://github.com/vuepress-theme-hope/vuepress-theme-hope/commit/eba872022688890656264fab720de14a0108fe51))
 - **theme:** split pageview chunk ([a9bc830](https://github.com/vuepress-theme-hope/vuepress-theme-hope/commit/a9bc830c327c1e02a4659edb08e0a7f87c989928))
-
-<!-- #endregion recent-change -->
 
 ## [2.0.0-beta.237](https://github.com/vuepress-theme-hope/vuepress-theme-hope/compare/v2.0.0-beta.236...v2.0.0-beta.237) (2023-09-05)
 
