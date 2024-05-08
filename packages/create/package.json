@@ -45,14 +45,14 @@
   },
   "dependencies": {
     "cac": "6.7.14",
-    "execa": "8.0.1",
+    "execa": "9.0.0",
     "inquirer": "9.2.20"
   },
   "devDependencies": {
     "@types/inquirer": "9.0.7"
   },
   "engines": {
-    "node": ">=18.18.0",
+    "node": ">=18.19.0",
     "npm": ">=8",
     "pnpm": ">=7",
     "yarn": ">=2"
