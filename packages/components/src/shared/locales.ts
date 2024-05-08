@@ -1,19 +1,6 @@
 import type { ExactLocaleConfig } from "@vuepress/helper";
 import type { DefaultLayoutTranslations } from "vidstack";
 
-/** @deprecated Please use '@vuepress/plugin-back-to-top' */
-export interface BackToTopLocaleData {
-  /**
-   * Back to top button label text
-   *
-   * 返回顶部文字
-   */
-  backToTop: string;
-}
-
-/** @deprecated Please use '@vuepress/plugin-back-to-top' */
-export type BackToTopLocaleConfig = ExactLocaleConfig<BackToTopLocaleData>;
-
 export interface PDFLocaleData {
   /**
    * PDF hint text

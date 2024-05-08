@@ -69,45 +69,43 @@ export const theme = (
         mapping: "url",
       },
 
-      components: IS_NETLIFY
-        ? {}
-        : {
-            rootComponents: {
-              notice: [
-                {
-                  path: "/",
-                  title: "New docs location",
-                  content:
-                    "Our docs has moved to a new domain vuejs.press<br>Current docs is built from the latest commit on the main branch, and may contain <strong>unreleased changes</strong>!",
-                  actions: [
-                    {
-                      text: "Visit Now",
-                      link: canonical,
-                    },
-                  ],
-                },
-                {
-                  path: "/zh/",
-                  title: "新的文档地址",
-                  content:
-                    "我们的文档已经迁移至新域名 vuejs.press 下。<br>当前文档是基于主分支最新提交构建的，可能包含<strong>未发布的更改</strong>。",
-                  actions: [
-                    {
-                      text: "立即访问",
-                      link: `${canonical}/zh/`,
-                    },
-                  ],
-                },
-              ],
-            },
-          },
-
       docsearch: {
         appId: "VXIEHELDL1",
         apiKey: "595796f71b6ba14326719682c3738c0c",
         indexName: `vuepress-theme-hope-${indexName ?? name}`,
         indexBase: base ? `/v2/${base}/` : "/v2/",
       },
+
+      ...(IS_NETLIFY
+        ? {}
+        : {
+            notice: [
+              {
+                path: "/",
+                title: "New docs location",
+                content:
+                  "Our docs has moved to a new domain vuejs.press<br>Current docs is built from the latest commit on the main branch, and may contain <strong>unreleased changes</strong>!",
+                actions: [
+                  {
+                    text: "Visit Now",
+                    link: canonical,
+                  },
+                ],
+              },
+              {
+                path: "/zh/",
+                title: "新的文档地址",
+                content:
+                  "我们的文档已经迁移至新域名 vuejs.press 下。<br>当前文档是基于主分支最新提交构建的，可能包含<strong>未发布的更改</strong>。",
+                actions: [
+                  {
+                    text: "立即访问",
+                    link: `${canonical}/zh/`,
+                  },
+                ],
+              },
+            ],
+          }),
 
       prismjs: false,
 

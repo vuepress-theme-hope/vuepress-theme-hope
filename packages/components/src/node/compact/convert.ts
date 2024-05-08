@@ -57,11 +57,13 @@ export const convertOptions = (
       delete options.rootComponents.backToTop;
     }
 
-    if (isPlainObject(options.rootComponents.notice)) {
+    if (options.rootComponents.notice) {
       logger.error(
         `"${colors.magenta(
           "rootComponents.notice",
-        )}" no longer support object config, please check the docs at https://plugin-components.vuejs.press/guide/notice.html.`,
+        )}" component is no longer supported, please use ${colors.magenta(
+          "@vuepress/plugin-notice",
+        )} instead.`,
       );
       delete options.rootComponents.notice;
     }

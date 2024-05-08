@@ -13,7 +13,3 @@ index: false
 - [FontIcon](./font-icon.md): 字体图标
 
 - [Share](share.md): 分享组件
-
-## 根组件
-
-- [Notice](./notice.md): 站点公告

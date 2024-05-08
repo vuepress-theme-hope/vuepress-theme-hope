@@ -123,6 +123,17 @@ body {
   --pwa-content-light-color: var(--grey-dark);
 }
 
+// plugin-notice
+.vp-notice-wrapper {
+  --notice-color: var(--text-color);
+  --notice-bg-color: var(--bg-color);
+  --notice-primary-color: var(--theme-color);
+  --notice-primary-text-color: var(--white);
+  --notice-primary-hover-color: var(--theme-color-light);
+  --notice-button-color: var(--bg-color-light);
+  --notice-button-hover-color: var(--bg-color-tertiary);
+}
+
 // plugin-redirect
 .redirect-modal-mask {
   --redirect-bg-color: var(--bg-color);

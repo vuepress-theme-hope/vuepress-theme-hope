@@ -71,25 +71,6 @@ export default defineUserConfig({
           assets: "fontawesome",
         },
       },
-
-      rootComponents: {
-        notice: [
-          {
-            match: /^\/$/,
-            title: "Notice Title",
-            content: "Notice Content",
-            actions: [
-              {
-                text: "Primary Action",
-                link: "https://theme-hope.vuejs.press/",
-                type: "primary",
-              },
-              { text: "Default Action" },
-            ],
-            fullscreen: true,
-          },
-        ],
-      },
     }),
   ],
 });

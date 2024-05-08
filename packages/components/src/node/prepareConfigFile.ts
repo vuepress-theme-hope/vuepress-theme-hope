@@ -1,7 +1,7 @@
-import { getRealPath, isArray } from "@vuepress/helper";
+import { getRealPath } from "@vuepress/helper";
 import type { App } from "vuepress/core";
 
-import { getIconLinks, getNoticeOptions } from "./components/index.js";
+import { getIconLinks } from "./components/index.js";
 import type { ComponentPluginOptions } from "./options/index.js";
 import {
   AVAILABLE_COMPONENTS,
@@ -14,17 +14,13 @@ const { url } = import.meta;
 
 export const prepareConfigFile = (
   app: App,
-  {
-    components = [],
-    componentOptions = {},
-    rootComponents = {},
-  }: ComponentPluginOptions,
+  { components = [], componentOptions = {} }: ComponentPluginOptions,
 ): Promise<string> => {
   const imports: string[] = [];
   let enhance = "";
   const setups: string[] = [];
   const configRootComponents: string[] = [];
-  let shouldImportH = false;
+  const shouldImportH = false;
   let shouldImportUseScriptTag = false;
   let shouldImportUseStyleTag = false;
 
@@ -53,17 +49,6 @@ if(!hasGlobalComponent("${item}")) app.component("${item}", ${item});
         setups.push(content);
       });
   });
-
-  if (isArray(rootComponents.notice)) {
-    shouldImportH = true;
-    imports.push(`import Notice from "${CLIENT_FOLDER}components/Notice.js";`);
-
-    configRootComponents.push(
-      `() => h(Notice, { config: ${JSON.stringify(
-        getNoticeOptions(rootComponents.notice),
-      )} }),`,
-    );
-  }
 
   return app.writeTemp(
     `components/config.js`,
