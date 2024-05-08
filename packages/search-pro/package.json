@@ -44,13 +44,13 @@
     "dev:ts": "tsc -b tsconfig.build.json --watch"
   },
   "dependencies": {
-    "@vuepress/helper": "2.0.0-rc.27",
-    "@vuepress/plugin-sass-palette": "2.0.0-rc.27",
+    "@vuepress/helper": "2.0.0-rc.28",
+    "@vuepress/plugin-sass-palette": "2.0.0-rc.28",
     "@vueuse/core": "^10.9.0",
     "cheerio": "1.0.0-rc.12",
     "chokidar": "^3.6.0",
     "slimsearch": "^2.1.1",
-    "vue": "^3.4.26",
+    "vue": "^3.4.27",
     "vuepress-shared": "workspace:*"
   },
   "peerDependencies": {
