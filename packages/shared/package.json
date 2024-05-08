@@ -50,10 +50,10 @@
     "@vueuse/core": "^10.9.0",
     "cheerio": "1.0.0-rc.12",
     "dayjs": "^1.11.11",
-    "execa": "^8.0.1",
+    "execa": "^9.0.0",
     "fflate": "^0.8.2",
     "gray-matter": "^4.0.3",
-    "semver": "^7.6.0",
+    "semver": "^7.6.1",
     "vue": "^3.4.27"
   },
   "devDependencies": {
@@ -69,7 +69,7 @@
     "vuepress": "2.0.0-rc.9"
   },
   "engines": {
-    "node": ">=18.18.0",
+    "node": ">=18.19.0",
     "npm": ">=8",
     "pnpm": ">=7",
     "yarn": ">=2"

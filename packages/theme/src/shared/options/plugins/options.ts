@@ -7,6 +7,10 @@ import type { DocsearchPluginOptions } from "@vuepress/plugin-docsearch";
 import type { FeedPluginOptions } from "@vuepress/plugin-feed";
 import type { GitPluginOptions } from "@vuepress/plugin-git";
 import type { LinksCheckPluginOptions } from "@vuepress/plugin-links-check";
+import type {
+  NoticeOptions,
+  NoticePluginOptions,
+} from "@vuepress/plugin-notice";
 import type { PhotoSwipePluginOptions } from "@vuepress/plugin-photo-swipe";
 import type { PwaPluginOptions } from "@vuepress/plugin-pwa";
 import type { ReadingTimePluginOptions } from "@vuepress/plugin-reading-time";
@@ -219,6 +223,15 @@ export interface PluginsOptions {
     | false;
 
   /**
+   * Notice options
+   *
+   * 公告选项
+   *
+   * @default true
+   */
+  notice?: NoticeOptions[] | NoticePluginOptions;
+
+  /**
    * Enable @vuepress/nprogress or not
    *
    * 是否启用 @vuepress/nprogress 插件
@@ -228,7 +241,7 @@ export interface PluginsOptions {
   nprogress?: boolean;
 
   /**
-   * Photo Swipe plugin options
+   * @vuepress/photo-swipe options
    *
    * @description This plugin is enabled by default
    *

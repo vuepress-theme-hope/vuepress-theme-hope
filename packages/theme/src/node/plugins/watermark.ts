@@ -1,9 +1,7 @@
-import {
-  watermarkPlugin,
-  type WatermarkPluginOptions,
-} from "@vuepress/plugin-watermark";
+import { isPlainObject } from "@vuepress/helper";
+import { watermarkPlugin } from "@vuepress/plugin-watermark";
+import type { WatermarkPluginOptions } from "@vuepress/plugin-watermark";
 import type { Plugin } from "vuepress";
-import { isPlainObject } from "vuepress/shared";
 
 /**
  * @private
