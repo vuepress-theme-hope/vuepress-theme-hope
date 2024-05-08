@@ -1,3 +1,20 @@
+# Change Log
+
+All notable changes to this project will be documented in this file.
+See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
+
+## [2.0.0-rc.39](https://github.com/vuepress-theme-hope/vuepress-theme-hope/compare/v2.0.0-rc.38...v2.0.0-rc.39) (2024-05-08)
+
+### Features
+
+- bump deps ([57c69a7](https://github.com/vuepress-theme-hope/vuepress-theme-hope/commit/57c69a755cd866e89b3e6941af898330c77933f0))
+- improve icon ([6a98f13](https://github.com/vuepress-theme-hope/vuepress-theme-hope/commit/6a98f13cecbe877bbac9682605d7f55f2b02baf5))
+- **theme:** support notice ([#4118](https://github.com/vuepress-theme-hope/vuepress-theme-hope/issues/4118)) ([71048b8](https://github.com/vuepress-theme-hope/vuepress-theme-hope/commit/71048b8c9710b0867418fba8539b2f98281fd9b4))
+
+### Bug Fixes
+
+- **components:** fix iconify link detect ([6b868b2](https://github.com/vuepress-theme-hope/vuepress-theme-hope/commit/6b868b2d6822a052b2859bddf707ffc9a7c5de70))
+
 ## 2.0.0-rc.38 (2024-04-29)
 
 - chore: tweaks ([81511f5](https://github.com/vuepress-theme-hope/vuepress-theme-hope/commit/81511f5))

@@ -1,3 +1,25 @@
+# Change Log
+
+All notable changes to this project will be documented in this file.
+See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
+
+## [2.0.0-rc.39](https://github.com/vuepress-theme-hope/vuepress-theme-hope/compare/v2.0.0-rc.38...v2.0.0-rc.39) (2024-05-08)
+
+### Features
+
+- **theme:** add hr-driving-car preset ([66fff7e](https://github.com/vuepress-theme-hope/vuepress-theme-hope/commit/66fff7e35411511909d0e4ae9916cd1d5f188711))
+- **theme:** add transparentNavbar preset ([cdb4731](https://github.com/vuepress-theme-hope/vuepress-theme-hope/commit/cdb47310c750d324156c829b7ff88b04a9a1cc69))
+- **theme:** add watermark feature ([cc7dbde](https://github.com/vuepress-theme-hope/vuepress-theme-hope/commit/cc7dbde1e5214fb8fc93a1d34a6cae205c9bdaa0))
+- **theme:** remove v1 compact and remove migration guide ([9e0f13b](https://github.com/vuepress-theme-hope/vuepress-theme-hope/commit/9e0f13b7e402764a1bab5af5989524896e14dd37))
+- **theme:** support notice ([#4118](https://github.com/vuepress-theme-hope/vuepress-theme-hope/issues/4118)) ([71048b8](https://github.com/vuepress-theme-hope/vuepress-theme-hope/commit/71048b8c9710b0867418fba8539b2f98281fd9b4))
+
+### Bug Fixes
+
+- **theme:** fix excerpt code blocks, close [#4106](https://github.com/vuepress-theme-hope/vuepress-theme-hope/issues/4106) ([1522c11](https://github.com/vuepress-theme-hope/vuepress-theme-hope/commit/1522c114e5f4651133f0fde27a54c0b963e3f170))
+- **theme:** fix transparent navbar preset ([29e236a](https://github.com/vuepress-theme-hope/vuepress-theme-hope/commit/29e236a1892d7b81bc70b9ae695127c3f00359be))
+- **theme:** improve feed filter ([8ebe9e8](https://github.com/vuepress-theme-hope/vuepress-theme-hope/commit/8ebe9e80e8e10eb7ca28d209fc0b48db5b39a8b5))
+- **theme:** update reading time in dev server ([3931c73](https://github.com/vuepress-theme-hope/vuepress-theme-hope/commit/3931c731df9b33ebed7eddb7d92b208954a3017e))
+
 ## 2.0.0-rc.38 (2024-04-29)
 
 - chore: tweaks ([28f96cc](https://github.com/vuepress-theme-hope/vuepress-theme-hope/commit/28f96cc))

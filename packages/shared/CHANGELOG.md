@@ -1,3 +1,14 @@
+# Change Log
+
+All notable changes to this project will be documented in this file.
+See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
+
+## [2.0.0-rc.39](https://github.com/vuepress-theme-hope/vuepress-theme-hope/compare/v2.0.0-rc.38...v2.0.0-rc.39) (2024-05-08)
+
+### Features
+
+- bump deps ([57c69a7](https://github.com/vuepress-theme-hope/vuepress-theme-hope/commit/57c69a755cd866e89b3e6941af898330c77933f0))
+
 ## 2.0.0-rc.38 (2024-04-29)
 
 - chore: tweaks ([2207820](https://github.com/vuepress-theme-hope/vuepress-theme-hope/commit/2207820))

@@ -1,3 +1,20 @@
+# Change Log
+
+All notable changes to this project will be documented in this file.
+See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
+
+## [2.0.0-rc.39](https://github.com/vuepress-theme-hope/vuepress-theme-hope/compare/v2.0.0-rc.38...v2.0.0-rc.39) (2024-05-08)
+
+### Features
+
+- bump deps ([57c69a7](https://github.com/vuepress-theme-hope/vuepress-theme-hope/commit/57c69a755cd866e89b3e6941af898330c77933f0))
+- **md-enhance:** add spoiler support, close [#3857](https://github.com/vuepress-theme-hope/vuepress-theme-hope/issues/3857) ([3dcc0a1](https://github.com/vuepress-theme-hope/vuepress-theme-hope/commit/3dcc0a158ad0cfa92cb2ca6d98d7c7d750d90034))
+- **md-enhance:** set maxWidth: 240 by default with markmap ([46ed756](https://github.com/vuepress-theme-hope/vuepress-theme-hope/commit/46ed756cd3fb21b41432f8d02b342e55c2d3b605))
+
+### Performance Improvements
+
+- **md-enhance:** inline google fonts to improve page loading speed ([e9550c9](https://github.com/vuepress-theme-hope/vuepress-theme-hope/commit/e9550c9c785fde3f91fec0dbedd74fdb9d9e2a44))
+
 ## 2.0.0-rc.38 (2024-04-29)
 
 - chore: tweaks ([aa326cd](https://github.com/vuepress-theme-hope/vuepress-theme-hope/commit/aa326cd))

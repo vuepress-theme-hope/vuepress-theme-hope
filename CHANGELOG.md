@@ -1,6 +1,33 @@
 # Change Log
 
-All notable changes to this project will be documented in this file. See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
+All notable changes to this project will be documented in this file.
+See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
+
+## [2.0.0-rc.39](https://github.com/vuepress-theme-hope/vuepress-theme-hope/compare/v2.0.0-rc.38...v2.0.0-rc.39) (2024-05-08)
+
+### Features
+
+- bump deps ([57c69a7](https://github.com/vuepress-theme-hope/vuepress-theme-hope/commit/57c69a755cd866e89b3e6941af898330c77933f0))
+- improve icon ([6a98f13](https://github.com/vuepress-theme-hope/vuepress-theme-hope/commit/6a98f13cecbe877bbac9682605d7f55f2b02baf5))
+- **md-enhance:** add spoiler support, close [#3857](https://github.com/vuepress-theme-hope/vuepress-theme-hope/issues/3857) ([3dcc0a1](https://github.com/vuepress-theme-hope/vuepress-theme-hope/commit/3dcc0a158ad0cfa92cb2ca6d98d7c7d750d90034))
+- **md-enhance:** set maxWidth: 240 by default with markmap ([46ed756](https://github.com/vuepress-theme-hope/vuepress-theme-hope/commit/46ed756cd3fb21b41432f8d02b342e55c2d3b605))
+- **theme:** add hr-driving-car preset ([66fff7e](https://github.com/vuepress-theme-hope/vuepress-theme-hope/commit/66fff7e35411511909d0e4ae9916cd1d5f188711))
+- **theme:** add transparentNavbar preset ([cdb4731](https://github.com/vuepress-theme-hope/vuepress-theme-hope/commit/cdb47310c750d324156c829b7ff88b04a9a1cc69))
+- **theme:** add watermark feature ([cc7dbde](https://github.com/vuepress-theme-hope/vuepress-theme-hope/commit/cc7dbde1e5214fb8fc93a1d34a6cae205c9bdaa0))
+- **theme:** remove v1 compact and remove migration guide ([9e0f13b](https://github.com/vuepress-theme-hope/vuepress-theme-hope/commit/9e0f13b7e402764a1bab5af5989524896e14dd37))
+- **theme:** support notice ([#4118](https://github.com/vuepress-theme-hope/vuepress-theme-hope/issues/4118)) ([71048b8](https://github.com/vuepress-theme-hope/vuepress-theme-hope/commit/71048b8c9710b0867418fba8539b2f98281fd9b4))
+
+### Bug Fixes
+
+- **components:** fix iconify link detect ([6b868b2](https://github.com/vuepress-theme-hope/vuepress-theme-hope/commit/6b868b2d6822a052b2859bddf707ffc9a7c5de70))
+- **theme:** fix excerpt code blocks, close [#4106](https://github.com/vuepress-theme-hope/vuepress-theme-hope/issues/4106) ([1522c11](https://github.com/vuepress-theme-hope/vuepress-theme-hope/commit/1522c114e5f4651133f0fde27a54c0b963e3f170))
+- **theme:** fix transparent navbar preset ([29e236a](https://github.com/vuepress-theme-hope/vuepress-theme-hope/commit/29e236a1892d7b81bc70b9ae695127c3f00359be))
+- **theme:** improve feed filter ([8ebe9e8](https://github.com/vuepress-theme-hope/vuepress-theme-hope/commit/8ebe9e80e8e10eb7ca28d209fc0b48db5b39a8b5))
+- **theme:** update reading time in dev server ([3931c73](https://github.com/vuepress-theme-hope/vuepress-theme-hope/commit/3931c731df9b33ebed7eddb7d92b208954a3017e))
+
+### Performance Improvements
+
+- **md-enhance:** inline google fonts to improve page loading speed ([e9550c9](https://github.com/vuepress-theme-hope/vuepress-theme-hope/commit/e9550c9c785fde3f91fec0dbedd74fdb9d9e2a44))
 
 ## [2.0.0-rc.38](https://github.com/vuepress-theme-hope/vuepress-theme-hope/compare/v2.0.0-rc.37...v2.0.0-rc.38) (2024-04-29)
 
