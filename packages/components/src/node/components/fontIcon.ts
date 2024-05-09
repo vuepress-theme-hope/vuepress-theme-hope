@@ -9,6 +9,11 @@ import {
 import type { FontIconAssets } from "../options/index.js";
 import { logger } from "../utils.js";
 
+export interface LinkInfo {
+  type: "style" | "script";
+  content: string;
+}
+
 export const FONT_AWESOME_PREFIX = "fas fa-";
 
 export const ICON_FONT_PREFIX = "iconfont icon-";
@@ -55,39 +60,38 @@ export const getIconInfo = (
   return { type: "custom", prefix: prefix ?? "" };
 };
 
-export interface LinkInfo {
-  type: "style" | "script";
-  content: string;
-}
+const getFontAwesomeCDNLink = (item: string) =>
+  `https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@6/js/${item}.min.js`;
 
-const getFontAwesomeLink = (links: string[]): LinkInfo[] =>
-  links.map((item) => ({
-    type: "script",
-    content: `\
+const getFontAwesomeLink = (link: string): LinkInfo => ({
+  type: "script",
+  content: `\
 useScriptTag(
-  \`https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@6/js/${item}.min.js\`,
+  \`${link}\`,
   () => {},
   { attrs: { "data-auto-replace-svg": "nest" } }
 );
 `,
-  }));
+});
 
 const getIconLink = (asset?: string): LinkInfo[] => {
   if (isString(asset)) {
     if (asset === "fontawesome")
-      return getFontAwesomeLink(["solid", "fontawesome"]);
+      return ["solid", "fontawesome"]
+        .map(getFontAwesomeCDNLink)
+        .map(getFontAwesomeLink);
 
     if (asset === "fontawesome-with-brands")
-      return getFontAwesomeLink(["brands", "solid", "fontawesome"]);
+      return ["brands", "solid", "fontawesome"]
+        .map(getFontAwesomeCDNLink)
+        .map(getFontAwesomeLink);
 
     if (asset === "iconify")
       return [
         {
           type: "script",
           content: `\
-useScriptTag(
-  \`https://cdn.jsdelivr.net/npm/iconify-icon@1\`
-);\
+useScriptTag(\`https://cdn.jsdelivr.net/npm/iconify-icon@1\`);\
 `,
         },
       ];
@@ -111,14 +115,16 @@ useStyleTag(\`\\
       ];
 
     if (endsWith(actualLink, ".js"))
-      return [
-        {
-          type: "script",
-          content: `\
+      return isFontAwesomeLink(actualLink)
+        ? [getFontAwesomeLink(actualLink)]
+        : [
+            {
+              type: "script",
+              content: `\
 useScriptTag(\`${actualLink}\`);\
 `,
-        },
-      ];
+            },
+          ];
 
     logger.error(`Can not recognize icon link: "${asset}"`);
   }
