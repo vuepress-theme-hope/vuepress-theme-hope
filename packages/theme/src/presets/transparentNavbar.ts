@@ -135,12 +135,10 @@ export const setupTransparentNavbar = ({
   );
 
   const transparentNavbar = (): void => {
-    const app = document.querySelector("#app");
-
     if (window.scrollY < threshold && shouldTransparent.value) {
-      app?.classList.add("transparent-navbar");
+      document.body.classList.add("transparent-navbar");
     } else {
-      app?.classList.remove("transparent-navbar");
+      document.body.classList.remove("transparent-navbar");
     }
   };
 
