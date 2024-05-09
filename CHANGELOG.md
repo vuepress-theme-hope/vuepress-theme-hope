@@ -3,6 +3,13 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [2.0.0-rc.40](https://github.com/vuepress-theme-hope/vuepress-theme-hope/compare/v2.0.0-rc.39...v2.0.0-rc.40) (2024-05-09)
+
+### Bug Fixes
+
+- **components:** fix fontawesome icon assets ([456a382](https://github.com/vuepress-theme-hope/vuepress-theme-hope/commit/456a3828520238a3b805da889a4b12fdde59d581))
+- **theme:** fix bundle style ([165c35a](https://github.com/vuepress-theme-hope/vuepress-theme-hope/commit/165c35af9cd103e4c0c002d7653890bc9e4a451b))
+
 ## [2.0.0-rc.39](https://github.com/vuepress-theme-hope/vuepress-theme-hope/compare/v2.0.0-rc.38...v2.0.0-rc.39) (2024-05-08)
 
 ### Features
