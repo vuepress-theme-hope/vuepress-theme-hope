@@ -10,26 +10,26 @@ We recommend you to use [VidStack](./vid-stack.md) for better experience.
 
 Embed videos in Markdown files.
 
-Install `vidstack@1` package in your project first to use this component:
+Install `vidstack@next` package in your project first to use this component:
 
 ::: code-tabs#shell
 
 @tab pnpm
 
 ```bash
-pnpm add -D vidstack@1
+pnpm add -D vidstack@next
 ```
 
 @tab yarn
 
 ```bash
-yarn add -D vidstack@1
+yarn add -D vidstack@next
 ```
 
 @tab npm
 
 ```bash
-npm i -D vidstack@1
+npm i -D vidstack@next
 ```
 
 :::

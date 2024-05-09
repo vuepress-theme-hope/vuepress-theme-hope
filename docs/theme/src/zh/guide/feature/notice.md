@@ -1,12 +1,11 @@
 ---
 title: 公告
-icon: xmarks-lines
+icon: bell
 category:
   - 功能
 tag:
   - 功能
   - 公告
-watermark: true
 ---
 
 VuePress Theme Hope 允许你通过 [`@vuepress/plugin-notice`][notice] 添加公告。

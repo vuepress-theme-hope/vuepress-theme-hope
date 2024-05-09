@@ -110,6 +110,7 @@ export default hopeTheme(
           plugins: ["highlight", "math", "search", "notes", "zoom"],
         },
         sandpack: true,
+        spoiler: true,
         stylize: [
           {
             matcher: "Recommended",

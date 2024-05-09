@@ -10,26 +10,26 @@ title: VideoPlayer
 
 在 Markdown 文件中嵌入视频。
 
-使用本组件前，请先在你的项目中安装 `vidstack@1` 包:
+使用本组件前，请先在你的项目中安装 `vidstack@next` 包:
 
 ::: code-tabs#shell
 
 @tab pnpm
 
 ```bash
-pnpm add -D vidstack@1
+pnpm add -D vidstack@next
 ```
 
 @tab yarn
 
 ```bash
-yarn add -D vidstack@1
+yarn add -D vidstack@next
 ```
 
 @tab npm
 
 ```bash
-npm i -D vidstack@1
+npm i -D vidstack@next
 ```
 
 :::

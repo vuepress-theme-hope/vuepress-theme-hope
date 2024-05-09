@@ -111,6 +111,8 @@ export default hopeTheme({
       imgSize: true,
       include: true,
       mark: true,
+      plantuml: true,
+      spoiler: true,
       stylize: [
         {
           matcher: "Recommended",

@@ -6,7 +6,6 @@ category:
 tag:
   - Feature
   - Notice
-watermark: true
 ---
 
 VuePress Theme Hope allows you to add notice with [`@vuepress/plugin-notice`][notice].

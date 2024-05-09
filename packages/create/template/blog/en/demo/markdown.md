@@ -42,7 +42,107 @@ For these extensions, please read [Markdown extensions in VuePress](https://them
 
 By using [`vuepress-plugin-md-enhance`][md-enhance], the theme extends more Markdown syntax and provides richer writing functions.
 
-#### Hint box
+#### Code Tabs
+
+::: code-tabs#shell
+
+@tab pnpm
+
+```bash
+pnpm add -D vuepress-theme-hope
+```
+
+@tab yarn
+
+```bash
+yarn add -D vuepress-theme-hope
+```
+
+@tab:active npm
+
+```bash
+npm i -D vuepress-theme-hope
+```
+
+:::
+
+- [View Detail](https://theme-hope.vuejs.press/guide/markdown/code/code-tabs.html)
+
+#### Tabs
+
+::: tabs#fruit
+
+@tab apple
+
+Apple
+
+@tab banana
+
+Banana
+
+@tab orange
+
+Orange
+
+:::
+
+- [View Detail](https://theme-hope.vuejs.press/guide/markdown/content/tabs.html)
+
+#### Footnote
+
+This text has footnote[^first].
+
+[^first]: This is footnote content
+
+- [View Detail](https://theme-hope.vuejs.press/guide/markdown/content/footnote.html)
+
+#### Include files
+
+<!-- @include: ./README.md{11-17} -->
+
+- [View Detail](https://theme-hope.vuejs.press/guide/markdown/content/include.html)
+
+#### TeX
+
+$$
+\frac {\partial^r} {\partial \omega^r} \left(\frac {y^{\omega}} {\omega}\right)
+= \left(\frac {y^{\omega}} {\omega}\right) \left\{(\log y)^r + \sum_{i=1}^r \frac {(-1)^i r \cdots (r-i+1) (\log y)^{r-i}} {\omega^i} \right\}
+$$
+
+- [View Detail](https://theme-hope.vuejs.press/guide/markdown/grammar/tex.html)
+
+#### Tasklist
+
+- [x] Plan A
+- [ ] Plan B
+
+[View Detail](https://theme-hope.vuejs.press/guide/markdown/grammar/tasklist.html)
+
+#### Image Enhancement
+
+Support setting color scheme and size.
+
+- [View Detail](https://theme-hope.vuejs.press/guide/markdown/grammar/image.html)
+
+#### Superscript and Subscript
+
+19^th^ H~2~O
+
+- [View Detail](https://theme-hope.vuejs.press/guide/markdown/grammar/sup-sub.html)
+
+#### Component
+
+```component VPCard
+title: Mr.Hope
+desc: Where there is light, there is hope
+logo: https://mister-hope.com/logo.svg
+link: https://mister-hope.com
+background: rgba(253, 230, 138, 0.15)
+```
+
+- [View Detail](https://theme-hope.vuejs.press/guide/component/grammar.html)
+
+#### Hint box and GFM alerts
 
 ::: v-pre
 
@@ -52,7 +152,7 @@ Safely use {{ variable }} in Markdown.
 
 ::: info Custom Title
 
-A custom information container with `code`, [link](#hint-box).
+A custom information container with `code`, [link](#markdown-extension).
 
 ```js
 const a = 1;
@@ -84,59 +184,8 @@ A custom details container
 
 :::
 
-- [View Detail](https://theme-hope.vuejs.press/guide/markdown/hint.html)
-
-#### Tabs
-
-::: tabs#fruit
-
-@tab apple
-
-Apple
-
-@tab banana
-
-Banana
-
-@tab orange
-
-Orange
-
-:::
-
-- [View Detail](https://theme-hope.vuejs.press/guide/markdown/tabs.html)
-
-#### Code Tabs
-
-::: code-tabs#shell
-
-@tab pnpm
-
-```bash
-pnpm add -D vuepress-theme-hope
-```
-
-@tab yarn
-
-```bash
-yarn add -D vuepress-theme-hope
-```
-
-@tab:active npm
-
-```bash
-npm i -D vuepress-theme-hope
-```
-
-:::
-
-- [View Detail](https://theme-hope.vuejs.press/guide/markdown/code-tabs.html)
-
-#### Superscript and Subscript
-
-19^th^ H~2~O
-
-- [View Detail](https://theme-hope.vuejs.press/guide/markdown/sup-sub.html)
+- [GitHub Alert](https://theme-hope.vuejs.press/guide/markdown/stylize/alert.html)
+- [Hint boxes](https://theme-hope.vuejs.press/guide/markdown/stylize/hint.html)
 
 #### Align
 
@@ -152,138 +201,125 @@ I am right align
 
 :::
 
-- [View Detail](https://theme-hope.vuejs.press/guide/markdown/align.html)
+- [View Detail](https://theme-hope.vuejs.press/guide/markdown/stylize/align.html)
 
 #### Attrs
 
 A **word**{#word} having id.
 
-- [View Detail](https://theme-hope.vuejs.press/guide/markdown/attrs.html)
-
-#### Footnote
-
-This text has footnote[^first].
-
-[^first]: This is footnote content
-
-- [View Detail](https://theme-hope.vuejs.press/guide/markdown/footnote.html)
+- [View Detail](https://theme-hope.vuejs.press/guide/markdown/stylize/attrs.html)
 
 #### Mark
 
 You can mark ==important words== .
 
-- [View Detail](https://theme-hope.vuejs.press/guide/markdown/mark.html)
+- [View Detail](https://theme-hope.vuejs.press/guide/markdown/stylize/mark.html)
 
-#### Tasklist
+#### Spoiler
 
-- [x] Plan A
-- [ ] Plan B
+VuePress Theme Hope is !!powerful!!.
 
-[View Detail](https://theme-hope.vuejs.press/guide/markdown/tasklist.html)
-
-#### Image Enhancement
-
-Support setting color scheme and size
-
-- [View Detail](https://theme-hope.vuejs.press/guide/markdown/image.html)
-
-#### Component
-
-```component VPCard
-title: Mr.Hope
-desc: Where there is light, there is hope
-logo: https://mister-hope.com/logo.svg
-link: https://mister-hope.com
-background: rgba(253, 230, 138, 0.15)
-```
-
-- [View Detail](https://theme-hope.vuejs.press/guide/markdown/component.html)
-
-#### Include files
-
-<!-- @include: ./README.md{11-17} -->
-
-- [View Detail](https://theme-hope.vuejs.press/guide/markdown/include.html)
+- [View Detail](https://theme-hope.vuejs.press/guide/markdown/stylize/spoiler.html)
 
 #### Stylize
 
 Donate Mr.Hope a cup of coffee. _Recommended_
 
-- [View Detail](https://theme-hope.vuejs.press/guide/markdown/stylize.html)
-
-#### Tex
-
-$$
-\frac {\partial^r} {\partial \omega^r} \left(\frac {y^{\omega}} {\omega}\right)
-= \left(\frac {y^{\omega}} {\omega}\right) \left\{(\log y)^r + \sum_{i=1}^r \frac {(-1)^i r \cdots (r-i+1) (\log y)^{r-i}} {\omega^i} \right\}
-$$
-
-- [View Detail](https://theme-hope.vuejs.press/guide/markdown/tex.html)
-
-#### Chart.js
-
-<iframe src="https://plugin-md-enhance-demo.vuejs.press/snippet/chartjs.html" width="100%" height="450"/>
-
-- [View Detail](https://theme-hope.vuejs.press/guide/markdown/chartjs.html)
-
-#### ECharts
-
-<iframe src="https://plugin-md-enhance-demo.vuejs.press/snippet/echarts.html" width="100%" height="800"/>
-
-- [View Detail](https://theme-hope.vuejs.press/guide/markdown/echarts.html)
-
-#### Flowchart
-
-<iframe src="https://plugin-md-enhance-demo.vuejs.press/snippet/flowchart.html" width="100%" height="450"/>
-
-- [View Detail](https://theme-hope.vuejs.press/guide/markdown/flowchart.html)
-
-#### MarkMap
-
-<iframe src="https://plugin-md-enhance-demo.vuejs.press/snippet/markmap.html" width="100%" height="380"/>
-
-- [View Detail](https://theme-hope.vuejs.press/guide/markdown/markmap.html)
-
-#### Mermaid
-
-<iframe src="https://plugin-md-enhance-demo.vuejs.press/snippet/mermaid.html" width="100%" height="620"/>
-
-- [View Detail](https://theme-hope.vuejs.press/guide/markdown/mermaid.html)
-
-#### Code Demo
-
-<iframe src="https://plugin-md-enhance-demo.vuejs.press/snippet/code-demo.html" width="100%" height="450"/>
-
-- [View Detail](https://theme-hope.vuejs.press/guide/markdown/demo.html)
-
-#### Playground
-
-<iframe src="https://plugin-md-enhance-demo.vuejs.press/snippet/playground.html" width="100%" height="480"/>
-
-- [View Detail](https://theme-hope.vuejs.press/guide/markdown/playground.html)
-
-#### Kotlin Playground
-
-<iframe src="https://plugin-md-enhance-demo.vuejs.press/snippet/kotlin-playground.html" width="100%" height="220"/>
-
-- [View Detail](https://theme-hope.vuejs.press/guide/markdown/kotlin-playground.html)
-
-#### Vue Playground
-
-<iframe src="https://plugin-md-enhance-demo.vuejs.press/snippet/vue-playground.html" width="100%" height="380"/>
-
-- [View Detail](https://theme-hope.vuejs.press/guide/markdown/vue-playground.html)
-
-#### Sandpack Playground
-
-<iframe src="https://plugin-md-enhance-demo.vuejs.press/snippet/sandpack.html" width="100%" height="380"/>
-
-- [View Detail](https://theme-hope.vuejs.press/guide/markdown/sandpack.html)
+- [View Detail](https://theme-hope.vuejs.press/guide/markdown/stylize/stylize.html)
 
 #### Reveal.js
 
 <iframe src="https://plugin-md-enhance-demo.vuejs.press/snippet/revealjs.html" width="100%" height="400"/>
 
-- [View Detail](https://theme-hope.vuejs.press/guide/markdown/revealjs.html)
+- [View Detail](https://theme-hope.vuejs.press/guide/markdown/content/revealjs.html)
+
+#### Chart.js
+
+<iframe src="https://plugin-md-enhance-demo.vuejs.press/snippet/chartjs.html" width="100%" height="450"/>
+
+- [View Detail](https://theme-hope.vuejs.press/guide/markdown/chart/chartjs.html)
+
+#### ECharts
+
+<iframe src="https://plugin-md-enhance-demo.vuejs.press/snippet/echarts.html" width="100%" height="800"/>
+
+- [View Detail](https://theme-hope.vuejs.press/guide/markdown/chart/echarts.html)
+
+#### Flowchart
+
+<iframe src="https://plugin-md-enhance-demo.vuejs.press/snippet/flowchart.html" width="100%" height="450"/>
+
+- [View Detail](https://theme-hope.vuejs.press/guide/markdown/chart/flowchart.html)
+
+#### MarkMap
+
+<iframe src="https://plugin-md-enhance-demo.vuejs.press/snippet/markmap.html" width="100%" height="380"/>
+
+- [View Detail](https://theme-hope.vuejs.press/guide/markdown/chart/markmap.html)
+
+#### Mermaid
+
+<iframe src="https://plugin-md-enhance-demo.vuejs.press/snippet/mermaid.html" width="100%" height="620"/>
+
+- [View Detail](https://theme-hope.vuejs.press/guide/markdown/chart/mermaid.html)
+
+#### PlantUML
+
+@startuml
+Alice -> Bob: Authentication Request
+
+alt successful case
+
+    Bob -> Alice: Authentication Accepted
+
+else some kind of failure
+
+    Bob -> Alice: Authentication Failure
+    group My own label
+    Alice -> Log : Log attack start
+        loop 1000 times
+            Alice -> Bob: DNS Attack
+        end
+    Alice -> Log : Log attack end
+    end
+
+else Another type of failure
+
+Bob -> Alice: Please repeat
+
+end
+@enduml
+
+- [View Detail](https://theme-hope.vuejs.press/guide/markdown/chart/plantuml.html)
+
+#### Code Demo
+
+<iframe src="https://plugin-md-enhance-demo.vuejs.press/snippet/code-demo.html" width="100%" height="450"/>
+
+- [View Detail](https://theme-hope.vuejs.press/guide/markdown/code/demo.html)
+
+#### Playground
+
+<iframe src="https://plugin-md-enhance-demo.vuejs.press/snippet/playground.html" width="100%" height="480"/>
+
+- [View Detail](https://theme-hope.vuejs.press/guide/markdown/code/playground.html)
+
+#### Kotlin Playground
+
+<iframe src="https://plugin-md-enhance-demo.vuejs.press/snippet/kotlin-playground.html" width="100%" height="220"/>
+
+- [View Detail](https://theme-hope.vuejs.press/guide/markdown/code/kotlin-playground.html)
+
+#### Sandpack Playground
+
+<iframe src="https://plugin-md-enhance-demo.vuejs.press/snippet/sandpack.html" width="100%" height="380"/>
+
+- [View Detail](https://theme-hope.vuejs.press/guide/markdown/code/sandpack.html)
+
+#### Vue Playground
+
+<iframe src="https://plugin-md-enhance-demo.vuejs.press/snippet/vue-playground.html" width="100%" height="380"/>
+
+- [View Detail](https://theme-hope.vuejs.press/guide/markdown/code/vue-playground.html)
 
 [md-enhance]: https://md-enhance.vuejs.press/

@@ -47,6 +47,7 @@ export default defineUserConfig({
         "/demo/revealjs",
         "/demo/sandpack",
         "/demo/slide-page",
+        "/demo/spoiler",
         "/demo/stylized",
         "/demo/sup-sub",
         "/demo/tabs",
@@ -113,6 +114,7 @@ export default defineUserConfig({
         ],
       },
       sandpack: true,
+      spoiler: true,
       stylize: [
         {
           matcher: "Recommended",

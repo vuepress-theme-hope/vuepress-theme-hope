@@ -27,6 +27,7 @@ title: Get Started
 - [Playground](playground.md)
 - [Presentation](revealjs.md)
 - [Sandpack](sandpack.md)
+- [Spoiler](spoiler.md)
 - [Stylized](stylized.md)
 - [Subscript and Superscript](sup-sub.md)
 - [Tabs](tabs.md)

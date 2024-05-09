@@ -42,6 +42,117 @@ VuePress 会使用 [markdown-it](https://github.com/markdown-it/markdown-it) 来
 
 通过 [`vuepress-plugin-md-enhance`][md-enhance]，主题扩展了更多 Markdown 语法，提供更加丰富的写作功能。
 
+#### 选项卡
+
+::: tabs#fruit
+
+@tab apple
+
+Apple
+
+@tab banana
+
+Banana
+
+@tab orange
+
+Orange
+
+:::
+
+- [查看详情](https://theme-hope.vuejs.press/zh/guide/markdown/content/tabs.html)
+
+#### 脚注
+
+此文字有脚注[^first].
+
+[^first]: 这是脚注内容
+
+- [查看详情](https://theme-hope.vuejs.press/zh/guide/markdown/content/footnote.html)
+
+#### 导入文件
+
+<!-- @include: ./README.md{11-17} -->
+
+- [查看详情](https://theme-hope.vuejs.press/zh/guide/markdown/content/include.html)
+
+#### 幻灯片
+
+@slidestart
+
+## 幻灯片 1
+
+一个有文字和 [链接](https://mister-hope.com) 的段落
+
+---
+
+## 幻灯片 2
+
+- 项目 1
+- 项目 2
+
+---
+
+## 幻灯片 3.1
+
+```js
+const a = 1;
+```
+
+--
+
+## 幻灯片 3.2
+
+$$
+J(\theta_0,\theta_1) = \sum_{i=0}
+$$
+
+@slideend
+
+- [查看详情](https://theme-hope.vuejs.press/zh/guide/markdown/content/revealjs.html)
+
+<!-- markdownlint-disable MD001 -->
+
+#### TeX 语法
+
+$$
+\frac {\partial^r} {\partial \omega^r} \left(\frac {y^{\omega}} {\omega}\right)
+= \left(\frac {y^{\omega}} {\omega}\right) \left\{(\log y)^r + \sum_{i=1}^r \frac {(-1)^i r \cdots (r-i+1) (\log y)^{r-i}} {\omega^i} \right\}
+$$
+
+- [查看详情](https://theme-hope.vuejs.press/zh/guide/markdown/grammar/tex.html)
+
+#### 任务列表
+
+- [x] 计划 1
+- [ ] 计划 2
+
+[查看详情](https://theme-hope.vuejs.press/zh/guide/markdown/grammar/tasklist.html)
+
+### 图片增强
+
+支持为图片设置颜色模式和大小。
+
+- [查看详情](https://theme-hope.vuejs.press/zh/guide/markdown/grammar/image.html)
+
+#### 上下角标
+
+19^th^ H~2~O
+
+- [查看详情](https://theme-hope.vuejs.press/zh/guide/markdown/grammar/sup-sub.html)
+
+#### 组件
+
+```component VPCard
+title: Mr.Hope
+desc: Where there is light, there is hope
+logo: https://mister-hope.com/logo.svg
+link: https://mister-hope.com
+background: rgba(253, 230, 138, 0.15)
+```
+
+- [查看详情](https://theme-hope.vuejs.press/zh/guide/component/grammar.html)
+
 #### 提示容器
 
 ::: v-pre
@@ -84,39 +195,8 @@ const a = 1;
 
 :::
 
-- [查看详情](https://theme-hope.vuejs.press/zh/guide/markdown/hint.html)
-
-#### 代码块
-
-::: code-tabs
-
-@tab pnpm
-
-```bash
-pnpm add -D vuepress-theme-hope
-```
-
-@tab yarn
-
-```bash
-yarn add -D vuepress-theme-hope
-```
-
-@tab:active npm
-
-```bash
-npm i -D vuepress-theme-hope
-```
-
-:::
-
-- [查看详情](https://theme-hope.vuejs.press/zh/guide/markdown/code-tabs.html)
-
-#### 上下角标
-
-19^th^ H~2~O
-
-- [查看详情](https://theme-hope.vuejs.press/zh/guide/markdown/sup-sub.html)
+- [GitHub 警示](https://theme-hope.vuejs.press/zh/guide/markdown/stylize/alert.html)
+- [提示框](https://theme-hope.vuejs.press/zh/guide/markdown/stylize/hint.html)
 
 #### 自定义对齐
 
@@ -132,73 +212,31 @@ npm i -D vuepress-theme-hope
 
 :::
 
-- [查看详情](https://theme-hope.vuejs.press/zh/guide/markdown/align.html)
+- [查看详情](https://theme-hope.vuejs.press/zh/guide/markdown/stylize/align.html)
 
-#### Attrs
+#### 属性支持
 
 一个拥有 ID 的 **单词**{#word}。
 
-- [查看详情](https://theme-hope.vuejs.press/zh/guide/markdown/attrs.html)
-
-#### 脚注
-
-此文字有脚注[^first].
-
-[^first]: 这是脚注内容
-
-- [查看详情](https://theme-hope.vuejs.press/zh/guide/markdown/footnote.html)
+- [查看详情](https://theme-hope.vuejs.press/zh/guide/markdown/stylize/attrs.html)
 
 #### 标记
 
 你可以标记 ==重要的内容== 。
 
-- [查看详情](https://theme-hope.vuejs.press/zh/guide/markdown/mark.html)
+- [查看详情](https://theme-hope.vuejs.press/zh/guide/markdown/stylize/mark.html)
 
-#### 任务列表
+#### 剧透
 
-- [x] 计划 1
-- [ ] 计划 2
+VuePress Theme Hope !!十分强大!!.
 
-[查看详情](https://theme-hope.vuejs.press/zh/guide/markdown/tasklist.html)
-
-### 图片增强
-
-支持为图片设置颜色模式和大小
-
-- [查看详情](https://theme-hope.vuejs.press/zh/guide/markdown/image.html)
-
-#### 组件
-
-```component VPCard
-title: Mr.Hope
-desc: Where there is light, there is hope
-logo: https://mister-hope.com/logo.svg
-link: https://mister-hope.com
-background: rgba(253, 230, 138, 0.15)
-```
-
-- [查看详情](https://theme-hope.vuejs.press/zh/guide/markdown/component.html)
-
-#### 导入文件
-
-<!-- @include: ./README.md{11-17} -->
-
-- [查看详情](https://theme-hope.vuejs.press/zh/guide/markdown/include.html)
+- [查看详情](https://theme-hope.vuejs.press/zh/guide/markdown/stylize/spoiler.html)
 
 #### 样式化
 
 向 Mr.Hope 捐赠一杯咖啡。 _Recommended_
 
-- [查看详情](https://theme-hope.vuejs.press/zh/guide/markdown/stylize.html)
-
-#### TeX 语法
-
-$$
-\frac {\partial^r} {\partial \omega^r} \left(\frac {y^{\omega}} {\omega}\right)
-= \left(\frac {y^{\omega}} {\omega}\right) \left\{(\log y)^r + \sum_{i=1}^r \frac {(-1)^i r \cdots (r-i+1) (\log y)^{r-i}} {\omega^i} \right\}
-$$
-
-- [查看详情](https://theme-hope.vuejs.press/zh/guide/markdown/tex.html)
+- [查看详情](https://theme-hope.vuejs.press/zh/guide/markdown/stylize/stylize.html)
 
 #### 图表
 
@@ -234,7 +272,7 @@ $$
 
 :::
 
-- [查看详情](https://theme-hope.vuejs.press/zh/guide/markdown/chartjs.html)
+- [查看详情](https://theme-hope.vuejs.press/zh/guide/markdown/chart/chartjs.html)
 
 #### ECharts
 
@@ -260,7 +298,7 @@ $$
 
 :::
 
-- [查看详情](https://theme-hope.vuejs.press/zh/guide/markdown/echarts.html)
+- [查看详情](https://theme-hope.vuejs.press/zh/guide/markdown/chart/echarts.html)
 
 #### 流程图
 
@@ -273,7 +311,7 @@ cond(yes)->process->e
 cond(no)->e
 ```
 
-- [查看详情](https://theme-hope.vuejs.press/zh/guide/markdown/flowchart.html)
+- [查看详情](https://theme-hope.vuejs.press/zh/guide/markdown/chart/flowchart.html)
 
 #### MarkMap
 
@@ -306,7 +344,7 @@ markmap:
 - 现在我们可以通过 `maxWidth` 选项自动换行非常非常非常非常非常非常非常非常非常非常长的内容
 ````
 
-- [查看详情](https://theme-hope.vuejs.press/zh/guide/markdown/markmap.html)
+- [查看详情](https://theme-hope.vuejs.press/zh/guide/markdown/chart/markmap.html)
 
 #### Mermaid
 
@@ -330,7 +368,62 @@ flowchart TB
     two --> c2
 ```
 
-- [查看详情](https://theme-hope.vuejs.press/zh/guide/markdown/mermaid.html)
+- [查看详情](https://theme-hope.vuejs.press/zh/guide/markdown/chart/mermaid.html)
+
+#### PlantUML
+
+@startuml
+Alice -> Bob: 认证请求
+
+alt 成功情况
+
+    Bob -> Alice: 认证接受
+
+else 某种失败情况
+
+    Bob -> Alice: 认证失败
+    group 我自己的标签
+    Alice -> Log : 开始记录攻击日志
+        loop 1000次
+            Alice -> Bob: DNS 攻击
+        end
+    Alice -> Log : 结束记录攻击日志
+    end
+
+else 另一种失败
+
+    Bob -> Alice: 请重复
+
+end
+@enduml
+
+- [View Detail](https://theme-hope.vuejs.press/zh/guide/markdown/chart/plantuml.html)
+
+#### 代码块
+
+::: code-tabs
+
+@tab pnpm
+
+```bash
+pnpm add -D vuepress-theme-hope
+```
+
+@tab yarn
+
+```bash
+yarn add -D vuepress-theme-hope
+```
+
+@tab:active npm
+
+```bash
+npm i -D vuepress-theme-hope
+```
+
+:::
+
+- [查看详情](https://theme-hope.vuejs.press/zh/guide/markdown/code/code-tabs.html)
 
 #### 代码演示
 
@@ -355,7 +448,7 @@ span {
 
 :::
 
-- [查看详情](https://theme-hope.vuejs.press/zh/guide/markdown/demo.html)
+- [查看详情](https://theme-hope.vuejs.press/zh/guide/markdown/code/demo.html)
 
 #### 交互演示
 
@@ -390,7 +483,7 @@ export default defineConfig({
 
 :::
 
-- [查看详情](https://theme-hope.vuejs.press/zh/guide/markdown/playground.html)
+- [查看详情](https://theme-hope.vuejs.press/zh/guide/markdown/code/playground.html)
 
 #### Kotlin 交互演示
 
@@ -409,30 +502,7 @@ fun main(args: Array<String>) {
 
 :::
 
-- [View Detail](https://theme-hope.vuejs.press/zh/guide/markdown/kotlin-playground.html)
-
-#### Vue 交互演示
-
-::: vue-playground Vue 交互演示
-
-@file App.vue
-
-```vue
-<script setup>
-import { ref } from "vue";
-
-const msg = ref("Hello World!");
-</script>
-
-<template>
-  <h1>{{ msg }}</h1>
-  <input v-model="msg" />
-</template>
-```
-
-:::
-
-- [查看详情](https://theme-hope.vuejs.press/zh/guide/markdown/vue-playground.html)
+- [查看详情](https://theme-hope.vuejs.press/zh/guide/markdown/code/kotlin-playground.html)
 
 #### Sandpack 交互演示
 
@@ -455,41 +525,29 @@ const msg = ref("Hello Playground!");
 
 :::
 
-- [查看详情](https://theme-hope.vuejs.press/zh/guide/markdown/sandpack.html)
+- [查看详情](https://theme-hope.vuejs.press/zh/guide/markdown/code/sandpack.html)
 
-#### 幻灯片
+#### Vue 交互演示
 
-@slidestart
+::: vue-playground Vue 交互演示
 
-## 幻灯片 1
+@file App.vue
 
-一个有文字和 [链接](https://mister-hope.com) 的段落
+```vue
+<script setup>
+import { ref } from "vue";
 
----
+const msg = ref("Hello World!");
+</script>
 
-## 幻灯片 2
-
-- 项目 1
-- 项目 2
-
----
-
-## 幻灯片 3.1
-
-```js
-const a = 1;
+<template>
+  <h1>{{ msg }}</h1>
+  <input v-model="msg" />
+</template>
 ```
 
---
+:::
 
-## 幻灯片 3.2
-
-$$
-J(\theta_0,\theta_1) = \sum_{i=0}
-$$
-
-@slideend
-
-- [查看详情](https://theme-hope.vuejs.press/zh/guide/markdown/revealjs.html)
+- [查看详情](https://theme-hope.vuejs.press/zh/guide/markdown/code/vue-playground.html)
 
 [md-enhance]: https://plugin-md-enhance.vuejs.press/zh/

@@ -109,7 +109,7 @@ export default {
 
 ### VidStack
 
-> 先安装 `vidstack@1` 。
+> 先安装 `vidstack@next` 。
 
 <!-- @include: @components/zh/guide/media/vid-stack.md#demo -->
 

@@ -107,7 +107,7 @@ See <ProjectLink name="components" path="/guide/utilities/share.html">Share</Pro
 
 ### VidStack
 
-> Install `vidstack@1` first.
+> Install `vidstack@next` first.
 
 <!-- @include: @components/guide/media/vid-stack.md#demo -->
 

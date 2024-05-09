@@ -8,7 +8,7 @@ tag:
   - Markdown
 ---
 
-<!-- @include: @md-enhance/zh/guide/chart/plantuml.md#before -->
+<!-- @include: @md-enhance/guide/chart/plantuml.md#before -->
 
 ```js {7} title=".vuepress/config.js"
 import { hopeTheme } from "vuepress-theme-hope";
@@ -24,4 +24,4 @@ export default {
 };
 ```
 
-<!-- @include: @md-enhance/zh/guide/chart/plantuml.md#after -->
+<!-- @include: @md-enhance/guide/chart/plantuml.md#after -->

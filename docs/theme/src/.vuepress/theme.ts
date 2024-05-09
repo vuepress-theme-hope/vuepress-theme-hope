@@ -182,6 +182,7 @@ export default theme(
           ],
         },
         sandpack: true,
+        spoiler: true,
         stylize: [
           {
             matcher: "Recommended",
