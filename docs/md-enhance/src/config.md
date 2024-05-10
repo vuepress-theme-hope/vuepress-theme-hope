@@ -577,18 +577,18 @@ Whether to enable code demo support.
 - Type: `string[]`
 - Required: No
 
-CodePen, JsFiddle requires an external JS library for dating.
+External JS libraries for CodePen, JsFiddle only.
 
 #### demo.cssLib
 
 - Type: `string[]`
 - Required: No
 
-CodePen, JsFiddle need an external CSS library for dating.
+External JS libraries for CodePen, JsFiddle only.
 
 ::: warning
 
-The above two options are only used by third-party code demo service, you need to import these libraries in `head`.
+The above two options are only used by third-party code demo service, you need to import these libraries in `head` to get it work..
 
 :::
 
