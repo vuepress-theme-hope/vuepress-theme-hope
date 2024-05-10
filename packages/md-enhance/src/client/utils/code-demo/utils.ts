@@ -85,10 +85,10 @@ export const getConfig = (
   ...options,
   ...config,
   jsLib: Array.from(
-    new Set([...(options.jsLib || []), ...(config.jsLib ?? [])]),
+    new Set([...(options.jsLib ?? []), ...(config.jsLib ?? [])]),
   ),
   cssLib: Array.from(
-    new Set([...(options.cssLib || []), ...(config.cssLib ?? [])]),
+    new Set([...(options.cssLib ?? []), ...(config.cssLib ?? [])]),
   ),
 });
 

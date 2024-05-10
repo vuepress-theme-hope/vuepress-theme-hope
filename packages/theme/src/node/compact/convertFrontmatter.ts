@@ -62,7 +62,7 @@ export const convertFrontmatter = (
     );
 
     frontmatter["head"] = [
-      ...((frontmatter["head"] as unknown[]) || []),
+      ...((frontmatter["head"] as unknown[]) ?? []),
       (frontmatter["meta"] as unknown[]).map((item) => ["meta", item]),
     ];
 
@@ -79,7 +79,7 @@ export const convertFrontmatter = (
     );
 
     frontmatter["head"] = [
-      ...((frontmatter["head"] as unknown[]) || []),
+      ...((frontmatter["head"] as unknown[]) ?? []),
       ["link", { rel: "canonical", href: frontmatter["canonicalUrl"] }],
     ];
 

@@ -5,7 +5,6 @@ import {
   keys,
   startsWith,
 } from "@vuepress/helper/client";
-import type { PageData } from "vuepress/client";
 import { resolveRoute } from "vuepress/client";
 
 import { sidebarData } from "@temp/theme-hope/sidebar.js";
@@ -29,7 +28,6 @@ import type {
 
 export interface ResolveArraySidebarOptions {
   config: SidebarArrayOptions;
-  page: PageData;
   headerDepth: number;
   prefix?: string;
 }
@@ -86,7 +84,7 @@ export const resolveArraySidebarItems = ({
 
 export interface ResolveMultiSidebarOptions {
   config: SidebarObjectOptions;
-  page: PageData;
+  routePath: string;
   headerDepth: number;
 }
 
@@ -95,14 +93,14 @@ export interface ResolveMultiSidebarOptions {
  */
 export const resolveMultiSidebarItems = ({
   config,
-  page,
+  routePath,
   headerDepth,
 }: ResolveMultiSidebarOptions): ResolvedSidebarItem[] => {
   const sidebarRoutes = keys(config).sort((x, y) => y.length - x.length);
 
   // Find matching config
   for (const base of sidebarRoutes)
-    if (startsWith(decodeURI(page.path), base)) {
+    if (startsWith(decodeURI(routePath), base)) {
       const matched = config[base];
 
       return matched
@@ -111,23 +109,22 @@ export const resolveMultiSidebarItems = ({
               matched === "structure"
                 ? (sidebarData[base] as SidebarArrayOptions)
                 : matched,
-            page,
             headerDepth,
             prefix: base,
           })
         : [];
     }
 
-  console.warn(`${page.path} is missing sidebar config.`);
+  console.warn(`${decodeURI(routePath)} is missing sidebar config.`);
 
   return [];
 };
 
 export interface ResolveSidebarOptions {
   config: SidebarOptions;
-  routeLocale: string;
-  page: PageData;
   headerDepth: number;
+  routeLocale: string;
+  routePath: string;
 }
 
 /**
@@ -137,20 +134,19 @@ export interface ResolveSidebarOptions {
  */
 export const resolveSidebarItems = ({
   config,
-  routeLocale,
-  page,
   headerDepth,
+  routeLocale,
+  routePath,
 }: ResolveSidebarOptions): ResolvedSidebarItem[] =>
   // Resolve sidebar items according to the config
   config === "structure"
     ? resolveArraySidebarItems({
-        config: sidebarData[routeLocale] as SidebarArrayOptions,
-        page,
+        config: sidebarData[routeLocale],
         headerDepth,
         prefix: routeLocale,
       })
     : isArray(config)
-      ? resolveArraySidebarItems({ config, page, headerDepth })
+      ? resolveArraySidebarItems({ config, headerDepth })
       : isPlainObject(config)
-        ? resolveMultiSidebarItems({ config, page, headerDepth })
+        ? resolveMultiSidebarItems({ config, routePath, headerDepth })
         : [];

@@ -1,6 +1,4 @@
 import { isString } from "@vuepress/helper/client";
-import type { ComputedRefWithControl } from "@vueuse/core";
-import { computedWithControl } from "@vueuse/core";
 import { resolveRoute } from "vuepress/client";
 
 import { useThemeLocaleData } from "@theme-hope/composables/index";
@@ -17,6 +15,7 @@ import type {
   NavbarItem,
 } from "../../../../shared/index.js";
 import type { ResolvedThemeNavbarItem } from "../utils/index.js";
+import { computed, type ComputedRef } from "vue";
 
 export const resolveNavbarItem = (
   item: NavbarItem | NavbarGroup | string,
@@ -46,18 +45,10 @@ export const resolveNavbarItem = (
   };
 };
 
-export const useNavbarItems = (): ComputedRefWithControl<
-  ResolvedThemeNavbarItem[]
-> => {
+export const useNavbarItems = (): ComputedRef<ResolvedThemeNavbarItem[]> => {
   const themeLocaleData = useThemeLocaleData();
 
-  const getNavbarItems = (): ResolvedThemeNavbarItem[] =>
-    (themeLocaleData.value.navbar || []).map((item) => resolveNavbarItem(item));
-
-  const navbarItems = computedWithControl(
-    () => themeLocaleData.value.navbar,
-    () => getNavbarItems(),
+  return computed(() =>
+    (themeLocaleData.value.navbar || []).map((item) => resolveNavbarItem(item)),
   );
-
-  return navbarItems;
 };
