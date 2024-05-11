@@ -11,6 +11,7 @@ titles:
   - Lan’s childhood sweetheart
   - The biggest rival of the black organization
 
+content: true
 footer: false
 ---
 

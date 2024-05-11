@@ -61,6 +61,8 @@ tag:
 
 默认情况下，会显示在 `blog.medias` 中设置的媒体链接，同时你也可以在 frontmatter 中设置 `medias` 进行覆盖，你需要为每个媒体设置 `name`、`icon` 和 `url`。
 
+Markdown 中的内容默认会被隐藏，你可以通过 `content` 选项来显示。
+
 ::: info 即时案例
 
 - [一个档案主页案例](../../demo/portfolio-home.md)

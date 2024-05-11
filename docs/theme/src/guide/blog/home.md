@@ -63,6 +63,8 @@ The name is default to `author` option in theme options, while you can set `name
 
 By default, media links set in `blog.medias` is displayed, while you can also set `medias` in frontmatter with `name` `icon` and `url` for each media to override.
 
+Contents from markdown are hided by default, you can set `content` to `true` to show them.
+
 ::: info Living Demo
 
 - [A portfolio demo](../../demo/portfolio-home.md)

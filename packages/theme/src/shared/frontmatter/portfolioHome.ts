@@ -14,4 +14,8 @@ export interface PortfolioHomeFrontmatter {
     icon: string;
     url: string;
   }[];
+  /**
+   * @default false
+   */
+  content?: boolean;
 }
