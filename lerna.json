@@ -12,6 +12,7 @@
   },
   "changelogPreset": {
     "name": "conventionalcommits",
+    "header": "",
     "types": [
       {
         "type": "feat",

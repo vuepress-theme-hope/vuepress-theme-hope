@@ -1,13 +1,8 @@
-# Change Log
-
 # Changelog
 
 All notable changes to this project will be documented in this file. See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
 <!-- #region recent-change -->
-
-All notable changes to this project will be documented in this file.
-See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
 ## [2.0.0-rc.41](https://github.com/vuepress-theme-hope/vuepress-theme-hope/compare/v2.0.0-rc.40...v2.0.0-rc.41) (2024-05-11)
 
@@ -46,6 +41,8 @@ See [Conventional Commits](https://conventionalcommits.org) for commit guideline
 - **theme:** fix transparent navbar preset ([29e236a](https://github.com/vuepress-theme-hope/vuepress-theme-hope/commit/29e236a1892d7b81bc70b9ae695127c3f00359be))
 - **theme:** improve feed filter ([8ebe9e8](https://github.com/vuepress-theme-hope/vuepress-theme-hope/commit/8ebe9e80e8e10eb7ca28d209fc0b48db5b39a8b5))
 - **theme:** update reading time in dev server ([3931c73](https://github.com/vuepress-theme-hope/vuepress-theme-hope/commit/3931c731df9b33ebed7eddb7d92b208954a3017e))
+
+<!-- #endregion recent-change -->
 
 ## 2.0.0-rc.38 (2024-04-29)
 

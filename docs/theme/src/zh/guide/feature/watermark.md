@@ -13,7 +13,7 @@ VuePress Theme Hope 允许你通过 [`@vuepress/plugin-watermark`][watermark] �
 
 <!-- more -->
 
-## Introduction
+## 介绍
 
 你可以通过主题选项的 `plugins.watermark` 自定义行为，最简单的就是设置 `true` 以直接添加一个站点名称水印。
 

@@ -12,7 +12,7 @@ VuePress Theme Hope 允许你通过 [`@vuepress/plugin-notice`][notice] 添加�
 
 <!-- more -->
 
-## Introduction
+## 介绍
 
 你可以通过主题选项的 `plugins.notice`为站点的不同路径设置多个公告。
 

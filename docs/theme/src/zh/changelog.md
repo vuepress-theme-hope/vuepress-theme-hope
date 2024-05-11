@@ -3,7 +3,7 @@ title: 变更日志
 icon: clock
 ---
 
-该文件包含 `vuepress-theme-hope` 及其插件的变更日志。
+以下是 VuePress Theme Hope 的变更日志。
 
 <!-- more -->
 
