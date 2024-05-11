@@ -240,12 +240,7 @@ export default defineComponent({
                               href: url,
                               rel: "noopener noreferrer",
                               target: "_blank",
-                              ...(name
-                                ? {
-                                    "aria-label": name,
-                                    "data-balloon-pos": "up",
-                                  }
-                                : {}),
+                              title: name,
                             },
                             h(HopeIcon, { icon }),
                           ),
