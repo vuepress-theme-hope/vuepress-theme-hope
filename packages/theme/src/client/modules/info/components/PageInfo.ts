@@ -109,7 +109,7 @@ export default defineComponent({
     PageViewInfo: isSupported ? PageViewInfo : noopComponent,
     ReadingTimeInfo: __VP_READING_TIME__ ? ReadingTimeInfo : noopComponent,
     TagInfo,
-    WordInfo,
+    WordInfo: __VP_READING_TIME__ ? WordInfo : noopComponent,
   },
 
   props: {
