@@ -14,8 +14,6 @@ import {
 
 import type { AutoLinkOptions, NavGroup } from "../../../../shared/index.js";
 
-declare const __VUEPRESS_DEV__: boolean;
-
 /**
  * Get navbar config of select language dropdown
  */
