@@ -69,7 +69,7 @@
     "cross-env": "7.0.3",
     "cz-git": "1.9.1",
     "esbuild": "0.21.1",
-    "eslint": "8.57.0",
+    "eslint": "9.2.0",
     "eslint-config-mister-hope": "0.1.0",
     "eslint-plugin-vue": "9.26.0",
     "execa": "9.0.2",
