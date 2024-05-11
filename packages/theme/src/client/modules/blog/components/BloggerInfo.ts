@@ -5,7 +5,7 @@ import { RouteLink, useSiteLocaleData, withBase } from "vuepress/client";
 import { getAuthor } from "vuepress-shared/client";
 
 import { useNavigate, useThemeLocaleData } from "@theme-hope/composables/index";
-import SocialMedia from "@theme-hope/modules/blog/components/SocialMedia";
+import SocialMedias from "@theme-hope/modules/blog/components/SocialMedias";
 import {
   useArticles,
   useBlogOptions,
@@ -113,7 +113,7 @@ export default defineComponent({
               ]),
             ),
           ),
-          h(SocialMedia),
+          h(SocialMedias),
         ],
       );
     };

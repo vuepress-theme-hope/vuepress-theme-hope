@@ -1,7 +1,7 @@
 ---
 title: Slide
 icon: person-chalkboard
-order: 8
+order: 9
 category:
   - Layout
 tag:
@@ -13,14 +13,9 @@ tag:
 
 You need to set `layout: Slide` in the frontmatter of the corresponding page to enable the slides page.
 
+- <ProjectLink name="md-enhance" path="/guide/content/revealjs/demo.html">A demo containing all slide features</ProjectLink>.
+
 <!-- more -->
-
-## Demo
-
-<ProjectLink name="md-enhance" path="/guide/content/revealjs/demo.html">Here is a demo containing all the slide features</ProjectLink>.
-
-![Slide page screenshot](./assets/slides-light.png#light)
-![Slide page screenshot](./assets/slides-dark.png#dark)
 
 ## Attention
 

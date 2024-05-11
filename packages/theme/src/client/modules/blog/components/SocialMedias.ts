@@ -6,10 +6,10 @@ import { icons } from "@temp/theme-hope/socialMedia.js";
 import { usePure } from "@theme-hope/composables/index";
 import { useBlogOptions } from "@theme-hope/modules/blog/composables/index";
 
-import "../styles/social-media.scss";
+import "../styles/social-medias.scss";
 
 export default defineComponent({
-  name: "SocialMedia",
+  name: "SocialMedias",
 
   setup() {
     const blogOptions = useBlogOptions();

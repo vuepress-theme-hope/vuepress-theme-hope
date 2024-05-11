@@ -45,21 +45,18 @@ defineCatalogInfoGetter((meta) => {
 
   if (enableBlog) {
     imports.push(
-      `import { BlogCategory, BlogHome, BlogType, BloggerInfo, PortfolioHome, Timeline, setupBlog } from "${CLIENT_FOLDER}modules/blog/export.js";`,
+      `import { BlogCategory, BlogHome, BlogType, BloggerInfo, SocialMedias, Timeline, setupBlog } from "${CLIENT_FOLDER}modules/blog/export.js";`,
       `import "${CLIENT_FOLDER}modules/blog/styles/layout.scss";`,
     );
 
-    enhances.push(`app.component("BloggerInfo", BloggerInfo);`);
+    enhances.push(
+      `app.component("BloggerInfo", BloggerInfo);`,
+      `app.component("SocialMedias", SocialMedias);`,
+    );
 
     setups.push("setupBlog();");
 
-    layouts.push(
-      "BlogCategory",
-      "BlogHome",
-      "BlogType",
-      "PortfolioHome",
-      "Timeline",
-    );
+    layouts.push("BlogCategory", "BlogHome", "BlogType", "Timeline");
   }
 
   if (enableEncrypt) {

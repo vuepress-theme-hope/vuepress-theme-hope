@@ -50,21 +50,3 @@ tag:
 - [当前文档的自定义博客主页](../../demo/custom-blog-home.md)
 
 :::
-
-## 档案类型主页
-
-在主页的 frontmatter 中设置 `layout: PortfolioHome` 和 `home: true`。
-
-名称默认为主题选项中的 `author` 选项，你可以在 frontmatter 中设置 `name` 进行自定义。欢迎信息也可以通过 frontmatter 中的 `welcome` 选项进行自定义。
-
-为了描述自己，请在 frontmatter 中通过 `titles` 设置适合你的职称。另外你需要使用 `avatar` 设置你的图像 (如果需要，还可以使用 `avatarDark` 用于深色模式)。 你还可以设置 `bgImage` (如果需要，还可以设置 `bgImageDark` 用于深色模式) 来自定义背景图像。你可以使用 `avatarStyle` 和 `bgImageStyle` 选项来完成对形象和背景图片样式调整。
-
-默认情况下，会显示在 `blog.medias` 中设置的媒体链接，同时你也可以在 frontmatter 中设置 `medias` 进行覆盖，你需要为每个媒体设置 `name`、`icon` 和 `url`。
-
-Markdown 中的内容默认会被隐藏，你可以通过 `content` 选项来显示。
-
-::: info 即时案例
-
-- [一个档案主页案例](../../demo/portfolio-home.md)
-
-:::

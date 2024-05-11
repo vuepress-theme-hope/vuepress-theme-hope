@@ -50,23 +50,3 @@ For complete configuration items, see [Blog Home Frontmatter Configuration](../.
 - [A customized blog homepage for current docs](../../demo/custom-blog-home.md)
 
 :::
-
-## Portfolio Style HomePage
-
-Set `layout: PortfolioHome` and `home: true` in the frontmatter of homepage.
-
-To describe yourself, set `titles` in frontmatter with titles that fits you.
-
-You are expected to set a image of yours with `avatar` (and `avatarDark` for darkmode if needed). You can also set `bgImage` (and `bgImageDark` for darkmode if needed) to customize background image. Advanced style adjusting can be done with `avatarStyle` and `bgImageStyle` option.
-
-The name is default to `author` option in theme options, while you can set `name` in frontmatter to customize it. The welcome message can also be customized through `welcome` option in frontmatter.
-
-By default, media links set in `blog.medias` is displayed, while you can also set `medias` in frontmatter with `name` `icon` and `url` for each media to override.
-
-Contents from markdown are hided by default, you can set `content` to `true` to show them.
-
-::: info Living Demo
-
-- [A portfolio demo](../../demo/portfolio-home.md)
-
-:::

@@ -1,7 +1,7 @@
 ---
 title: 幻灯片
 icon: person-chalkboard
-order: 8
+order: 9
 category:
   - 布局
 tag:
@@ -13,14 +13,9 @@ tag:
 
 你需要在相应的页面的 frontmatter 中，设置 `layout: Slide` 来开启幻灯片风格。
 
+- <ProjectLink name="md-enhance" path="/zh/guide/content/revealjs/demo.html">一个展示了所有幻灯片功能的案例</ProjectLink>.
+
 <!-- more -->
-
-## 演示
-
-<ProjectLink name="md-enhance" path="/zh/guide/content/revealjs/demo.html">这里是一个展示了所有幻灯片功能的案例</ProjectLink>.
-
-![幻灯片页截图](./assets/slides-light.png#light)
-![幻灯片页截图](./assets/slides-dark.png#dark)
 
 ## 注意事项
 

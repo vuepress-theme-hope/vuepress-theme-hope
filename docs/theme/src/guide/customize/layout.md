@@ -125,7 +125,6 @@ The theme provides the following layouts:
 - BlogCategory (Only available when blog is enabled)
 - BlogHome (Only available when blog is enabled)
 - BlogType (Only available when blog is enabled)
-- PortfolioHome (Only available when blog is enabled)
 - Timeline (Only available when blog is enabled)
 
 ## By Overriding Components

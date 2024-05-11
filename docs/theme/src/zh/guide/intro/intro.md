@@ -94,7 +94,9 @@ VuePress 在一定程度上扩展了 Markdown 语法，但仍然缺少一些常�
   - 支持图标和路径前缀。
   - 从 [页面标题](../layout/sidebar.md#通过标题自动生成) 和 [文件结构](../layout/sidebar.md#通过文件结构自动生成) 自动生成。
 
-- [全新主页外观，支持特性与亮点](../layout/home.md)
+- [全新主页，支持特性与亮点](../layout/home.md)
+
+- [档案主页](../layout/portfolio.md)
 
 - 更多:
 

@@ -111,7 +111,7 @@ Slugify 函数，用于转换 key 在路由中注册的形式。
     layout?: string;
 
     /**
-     * Front Matter 配置
+     * frontmatter 配置
      */
     frontmatter?: (localePath: string) => Record<string, string>;
   }

@@ -131,7 +131,8 @@ export const setupTransparentNavbar = ({
             (frontmatter.value["home"] as boolean | undefined) ??
             route.path === routeLocale.value
         : (): boolean =>
-            ["BlogHome", "PortfolioHome"].includes(frontmatter.value.layout!),
+            (frontmatter.value["portfolio"] as boolean | undefined) ??
+            frontmatter.value.layout === "BlogHome",
   );
 
   const transparentNavbar = (): void => {

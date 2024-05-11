@@ -1,6 +1,6 @@
 ---
 home: true
-layout: PortfolioHome
+portfolio: true
 title: 档案主页
 icon: home
 welcome: 你好，我是
@@ -18,6 +18,6 @@ footer: false
 
 这是一个档案主页的案例。
 
-要使用此布局，你应该在页面前端设置 `layout: PortfolioHome` 和 `home: true`。
+要使用此布局，你应该在页面 Frontmatter 中设置 `home: true` 和 `portfolio: true`。
 
 相关配置文档请见 [档案主页](../guide/blog/home.md#档案类型主页)。

@@ -162,14 +162,14 @@
     background: var(--bg-color-blur);
 
     text-align: center;
-
-    .vp-social-medias {
-      justify-content: center;
-    }
   }
 
   .vp-social-medias {
     justify-content: start;
+
+    @media (max-width: hope-config.$pad) {
+      justify-content: center;
+    }
   }
 }
 

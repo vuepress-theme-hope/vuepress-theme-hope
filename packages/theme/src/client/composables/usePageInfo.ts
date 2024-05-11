@@ -21,6 +21,7 @@ import type {
   PageTag,
 } from "@theme-hope/modules/info/utils/index";
 
+import { useAuthorInfo } from "./useAuthorInfo.js";
 import { useThemeLocaleData } from "./useThemeData.js";
 import type {
   PageInfoType,
@@ -30,8 +31,8 @@ import type {
 declare const __VP_BLOG__: boolean;
 
 export const usePageAuthor = (): ComputedRef<AuthorInfo[]> => {
-  const themeLocale = useThemeLocaleData();
   const frontmatter = usePageFrontmatter<BasePageFrontMatter>();
+  const authorInfo = useAuthorInfo();
 
   return computed(() => {
     const { author } = frontmatter.value;
@@ -39,7 +40,7 @@ export const usePageAuthor = (): ComputedRef<AuthorInfo[]> => {
     if (author) return getAuthor(author);
     if (author === false) return [];
 
-    return getAuthor(themeLocale.value.author, false);
+    return getAuthor(authorInfo.value, false);
   });
 };
 

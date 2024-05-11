@@ -59,7 +59,7 @@ export default defineUserConfig({
 
 ## 每页
 
-如果你需要添加页面级别的 CSS 与 JS，请在 [Front Matter](../../cookbook/vuepress/page.md#frontmatter) 中配置 `head` 选项。
+如果你需要添加页面级别的 CSS 与 JS，请在 [frontmatter](../../cookbook/vuepress/page.md#frontmatter) 中配置 `head` 选项。
 
 ```md
 ---

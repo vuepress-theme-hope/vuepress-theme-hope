@@ -1,4 +1,8 @@
-export interface PortfolioHomeFrontmatter {
+import type { ThemePageFrontmatter } from "./base.js";
+
+export interface PortfolioHomeFrontmatter extends ThemePageFrontmatter {
+  home: true;
+  portfolio: true;
   name?: string;
   titles?: string[];
   avatar: string | null;

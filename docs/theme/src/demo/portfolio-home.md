@@ -1,6 +1,6 @@
 ---
 home: true
-layout: PortfolioHome
+portfolio: true
 title: Portfolio Home
 icon: home
 name: Conan Edogawa
@@ -17,6 +17,6 @@ footer: false
 
 This is a portfolio home page demo.
 
-To use this layout, you should set both `layout: PortfolioHome` and `home: true` in the page front matter.
+To use this layout, you should set `home: true` and `portfolio: true` in the page front matter.
 
 For related configuration docs, please see [portfolio homepage](../guide/blog/home.md#portfolio-style-homepage).

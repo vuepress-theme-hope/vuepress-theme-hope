@@ -1,4 +1,4 @@
-import { isString } from "@vuepress/helper/client";
+import { hasGlobalComponent, isString } from "@vuepress/helper/client";
 import type { SlotsType, VNode } from "vue";
 import {
   computed,
@@ -7,18 +7,18 @@ import {
   nextTick,
   onMounted,
   ref,
+  resolveComponent,
   watch,
 } from "vue";
 import { usePageFrontmatter, withBase } from "vuepress/client";
 
 import HopeIcon from "@theme-hope/components/HopeIcon";
 import { DropTransition } from "@theme-hope/components/transitions/index";
-import SocialMedia from "@theme-hope/modules/blog/components/SocialMedia";
-import { useAuthorInfo } from "@theme-hope/modules/blog/composables/index";
+import { useAuthorInfo } from "@theme-hope/composables/index";
 
-import type { PortfolioHomeFrontmatter } from "../../../../shared/index.js";
+import type { PortfolioHomeFrontmatter } from "../../shared/index.js";
 
-import "../styles/portfolio.scss";
+import "../styles/portfolio-hero.scss";
 
 export interface PortfolioAvatar {
   avatar: string | null;
@@ -251,7 +251,9 @@ export default defineComponent({
                           ),
                         ),
                       )
-                    : h(SocialMedia),
+                    : hasGlobalComponent("SocialMedias")
+                      ? h(resolveComponent("SocialMedias"))
+                      : null,
                 ),
               ]),
           ),

@@ -5,6 +5,7 @@ import { usePageData, usePageFrontmatter } from "vuepress/client";
 import CommonWrapper from "@theme-hope/components/CommonWrapper";
 import HomePage from "@theme-hope/components/HomePage";
 import NormalPage from "@theme-hope/components/NormalPage";
+import PortfolioHome from "@theme-hope/components/PortfolioHome";
 import SkipLink from "@theme-hope/components/SkipLink";
 import { FadeSlideY } from "@theme-hope/components/transitions/index";
 import {
@@ -57,22 +58,24 @@ export default defineComponent({
         {
           default: () =>
             slots.default?.() ??
-            (frontmatter.value.home
-              ? h(HomePage)
-              : h(FadeSlideY, () =>
-                  h(
-                    NormalPage,
-                    { key: page.value.path },
-                    {
-                      top: () => slots.top?.(),
-                      bottom: () => slots.bottom?.(),
-                      contentBefore: () => slots.contentBefore?.(),
-                      contentAfter: () => slots.contentAfter?.(),
-                      tocBefore: () => slots.tocBefore?.(),
-                      tocAfter: () => slots.tocAfter?.(),
-                    },
-                  ),
-                )),
+            (frontmatter.value["portfolio"]
+              ? h(PortfolioHome)
+              : frontmatter.value.home
+                ? h(HomePage)
+                : h(FadeSlideY, () =>
+                    h(
+                      NormalPage,
+                      { key: page.value.path },
+                      {
+                        top: () => slots.top?.(),
+                        bottom: () => slots.bottom?.(),
+                        contentBefore: () => slots.contentBefore?.(),
+                        contentAfter: () => slots.contentAfter?.(),
+                        tocBefore: () => slots.tocBefore?.(),
+                        tocAfter: () => slots.tocAfter?.(),
+                      },
+                    ),
+                  )),
           ...(sidebarDisplay.value === "none"
             ? {}
             : { navScreenBottom: () => h(resolveComponent("BloggerInfo")) }),

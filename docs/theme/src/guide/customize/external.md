@@ -59,7 +59,7 @@ export default defineUserConfig({
 
 ## Per Page
 
-If you need to add page-level CSS and JS, please set `head` option in [Front Matter](../../cookbook/vuepress/page.md#frontmatter).
+If you need to add page-level CSS and JS, please set `head` option in [frontmatter](../../cookbook/vuepress/page.md#frontmatter).
 
 ```md
 ---

@@ -95,6 +95,7 @@ Components:
 - `@theme-hope/components/PageFooter`: page footer
 - `@theme-hope/components/PageNav`: page navigation
 - `@theme-hope/components/PageTitle`: page title
+- `@theme-hope/components/PortfolioHero`: portfolio hero
 - `@theme-hope/components/SkipLink`: skip to main content
 - `@theme-hope/components/transitions`: drop transition component
 
@@ -186,9 +187,8 @@ Components:
 - `@theme-hope/modules/blog/components/InfoList`: blog info list
 - `@theme-hope/modules/blog/components/InfoPanel`: blog info panel
 - `@theme-hope/modules/blog/components/Pagination`: pagination
-- `@theme-hope/modules/blog/components/PortfolioHome`: portfolio homepage
 - `@theme-hope/modules/blog/components/ProjectPanel`: blog homepage project panel
-- `@theme-hope/modules/blog/components/SocialMedia`: social media links
+- `@theme-hope/modules/blog/components/SocialMedias`: social media links
 - `@theme-hope/modules/blog/components/TagList`: tag list
 - `@theme-hope/modules/blog/components/TimelineItems`: timeline items
 - `@theme-hope/modules/blog/components/TimelineList`: timeline List

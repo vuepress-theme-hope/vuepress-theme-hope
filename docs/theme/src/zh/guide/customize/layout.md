@@ -125,7 +125,6 @@ export default defineClientConfig({
 - BlogCategory: 仅当博客启用时有效
 - BlogHome: 仅当博客启用时有效
 - BlogType: 仅当博客启用时有效
-- PortfolioHome: 仅当博客启用时有效
 - Timeline: 仅当博客启用时有效
 
 ### 通过覆盖组件

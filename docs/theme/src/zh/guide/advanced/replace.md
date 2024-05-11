@@ -97,6 +97,7 @@ export default {
 - `@theme-hope/components/PageFooter` 页脚
 - `@theme-hope/components/PageNav` 页面导航
 - `@theme-hope/components/PageTitle` 页面标题
+- `@theme-hope/components/PortfolioHero` 档案主页
 - `@theme-hope/components/SkipLink` 跳转到主内容
 
 杂项:
@@ -187,9 +188,8 @@ export default {
 - `@theme-hope/modules/blog/components/InfoList` 博客信息列表
 - `@theme-hope/modules/blog/components/InfoPanel` 博客信息面板
 - `@theme-hope/modules/blog/components/Pagination` 分页组件
-- `@theme-hope/modules/blog/components/Portfolio` 档案组件
 - `@theme-hope/modules/blog/components/ProjectPanel` 博客主页项目面板
-- `@theme-hope/modules/blog/components/SocialMedia` 社交媒体链接
+- `@theme-hope/modules/blog/components/SocialMedias` 社交媒体链接
 - `@theme-hope/modules/blog/components/TagList` 标签列表
 - `@theme-hope/modules/blog/components/TimelineItems` 时间线项目
 - `@theme-hope/modules/blog/components/TimelineList` 时间线列表

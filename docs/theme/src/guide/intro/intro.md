@@ -98,6 +98,8 @@ In short, anyone can enjoy the convenience of Markdown's enhanced syntax.
 
 - [Brand-new Homepage with features and highlights](../layout/home.md)
 
+- [Portfolio HomePage](../layout/portfolio.md)
+
 - More:
 
   Adds [breadcrumb](../layout/breadcrumb.md), [toc](../layout/page.md#header-list) and [footer](../layout/footer.md) support.
