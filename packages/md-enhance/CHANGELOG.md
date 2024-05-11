@@ -1,7 +1,19 @@
 # Change Log
 
+# Changelog
+
+All notable changes to this project will be documented in this file. See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
+
+<!-- #region recent-change -->
+
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
+
+## [2.0.0-rc.41](https://github.com/vuepress-theme-hope/vuepress-theme-hope/compare/v2.0.0-rc.40...v2.0.0-rc.41) (2024-05-11)
+
+### 🚀 Performance Improvements
+
+- **theme:** remove computedWithControl ([b80da06](https://github.com/vuepress-theme-hope/vuepress-theme-hope/commit/b80da06b185fdd15c66d0ee44a0029c33cf68983))
 
 ## [2.0.0-rc.39](https://github.com/vuepress-theme-hope/vuepress-theme-hope/compare/v2.0.0-rc.38...v2.0.0-rc.39) (2024-05-08)
 

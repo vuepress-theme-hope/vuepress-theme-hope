@@ -1,7 +1,28 @@
 # Change Log
 
+# Changelog
+
+All notable changes to this project will be documented in this file. See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
+
+<!-- #region recent-change -->
+
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
+
+## [2.0.0-rc.41](https://github.com/vuepress-theme-hope/vuepress-theme-hope/compare/v2.0.0-rc.40...v2.0.0-rc.41) (2024-05-11)
+
+### ✨ Features
+
+- **theme:** hide content by default in PortfolioHome ([5d265be](https://github.com/vuepress-theme-hope/vuepress-theme-hope/commit/5d265be4c56582acb40f26c07890d5bbcdd36f2c))
+
+### 🪲 Bug Fixes
+
+- **theme:** fix layout issue when navbar is disabled ([a013448](https://github.com/vuepress-theme-hope/vuepress-theme-hope/commit/a013448e47401604222f4c32aae4497dcdc638d8))
+- **theme:** fix sidebar style ([6b9f88b](https://github.com/vuepress-theme-hope/vuepress-theme-hope/commit/6b9f88b264d0f55d061125ba6acea45a50f36129))
+
+### 🚀 Performance Improvements
+
+- **theme:** remove computedWithControl ([b80da06](https://github.com/vuepress-theme-hope/vuepress-theme-hope/commit/b80da06b185fdd15c66d0ee44a0029c33cf68983))
 
 ## [2.0.0-rc.40](https://github.com/vuepress-theme-hope/vuepress-theme-hope/compare/v2.0.0-rc.39...v2.0.0-rc.40) (2024-05-09)
 

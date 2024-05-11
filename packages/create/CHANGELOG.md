@@ -1,7 +1,19 @@
 # Change Log
 
+# Changelog
+
+All notable changes to this project will be documented in this file. See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
+
+<!-- #region recent-change -->
+
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
+
+## [2.0.0-rc.41](https://github.com/vuepress-theme-hope/vuepress-theme-hope/compare/v2.0.0-rc.40...v2.0.0-rc.41) (2024-05-11)
+
+### ✨ Features
+
+- **create:** add portfolio homepage in blog demo ([f321ecd](https://github.com/vuepress-theme-hope/vuepress-theme-hope/commit/f321ecd167060981a8dd0514b27bc5bbe25e6648))
 
 ## [2.0.0-rc.39](https://github.com/vuepress-theme-hope/vuepress-theme-hope/compare/v2.0.0-rc.38...v2.0.0-rc.39) (2024-05-08)
 
