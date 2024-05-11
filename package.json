@@ -37,7 +37,7 @@
   "nano-staged": {
     "**/*": "prettier --write --ignore-unknown",
     "*.vue": "eslint --fix",
-    "*.{js,ts}": [
+    "*.{cjs,mjs,js,ts}": [
       "eslint --fix",
       "cross-env TZ=Etc/UTC vitest related --run"
     ],
@@ -71,8 +71,8 @@
     "esbuild": "0.21.1",
     "eslint": "8.57.0",
     "eslint-config-mister-hope": "0.1.0",
-    "eslint-plugin-vue": "9.25.0",
-    "execa": "9.0.0",
+    "eslint-plugin-vue": "9.26.0",
+    "execa": "9.0.2",
     "gulp": "5.0.0",
     "http-server": "14.1.1",
     "husky": "9.0.11",
@@ -80,7 +80,7 @@
     "nano-staged": "0.8.0",
     "ora": "8.0.1",
     "prettier": "3.2.5",
-    "rimraf": "5.0.5",
+    "rimraf": "5.0.6",
     "rollup": "4.17.2",
     "rollup-plugin-copy": "3.5.0",
     "rollup-plugin-dts": "6.1.0",
@@ -91,7 +91,7 @@
     "stylelint-config-hope": "6.0.1",
     "through2": "4.0.2",
     "tslib": "2.6.2",
-    "tsx": "4.9.3",
+    "tsx": "4.9.4",
     "typescript": "5.4.5",
     "vitest": "1.6.0"
   },
