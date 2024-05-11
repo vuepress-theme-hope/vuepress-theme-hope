@@ -6,34 +6,28 @@
       "allowBranch": "main",
       "conventionalCommits": true,
       "exact": true,
-      "message": "build: publish v%v",
-      "syncWorkspaceLock": true
+      "message": "chore(release): publish v%v",
+      "changelogHeaderMessage": "# Changelog\n\nAll notable changes to this project will be documented in this file. See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.\n\n<!-- #region recent-change -->\n"
     }
   },
   "changelogPreset": {
     "name": "conventionalcommits",
-    "header": "# Changelog\n\nAll notable changes to this project will be documented in this file. See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.\n\n<!-- #region recent-change -->\n",
-    "releaseCommitMessageFormat": "chore(release): publish v{{currentTag}}",
     "types": [
       {
         "type": "feat",
-        "section": "Features"
-      },
-      {
-        "type": "feature",
-        "section": "Features"
+        "section": "✨ Features"
       },
       {
         "type": "fix",
-        "section": "Bug Fixes"
+        "section": "🪲 Bug Fixes"
       },
       {
         "type": "perf",
-        "section": "Performance Improvements"
+        "section": "🚀 Performance Improvements"
       },
       {
         "type": "revert",
-        "section": "Reverts"
+        "section": "↩️ Reverts"
       },
       {
         "type": "docs",

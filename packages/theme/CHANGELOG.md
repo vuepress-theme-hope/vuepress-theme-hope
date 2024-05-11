@@ -5,13 +5,13 @@ See [Conventional Commits](https://conventionalcommits.org) for commit guideline
 
 ## [2.0.0-rc.40](https://github.com/vuepress-theme-hope/vuepress-theme-hope/compare/v2.0.0-rc.39...v2.0.0-rc.40) (2024-05-09)
 
-### Bug Fixes
+### 🪲 Bug Fixes
 
 - **theme:** fix bundle style ([165c35a](https://github.com/vuepress-theme-hope/vuepress-theme-hope/commit/165c35af9cd103e4c0c002d7653890bc9e4a451b))
 
 ## [2.0.0-rc.39](https://github.com/vuepress-theme-hope/vuepress-theme-hope/compare/v2.0.0-rc.38...v2.0.0-rc.39) (2024-05-08)
 
-### Features
+### ✨ Features
 
 - **theme:** add hr-driving-car preset ([66fff7e](https://github.com/vuepress-theme-hope/vuepress-theme-hope/commit/66fff7e35411511909d0e4ae9916cd1d5f188711))
 - **theme:** add transparentNavbar preset ([cdb4731](https://github.com/vuepress-theme-hope/vuepress-theme-hope/commit/cdb47310c750d324156c829b7ff88b04a9a1cc69))
@@ -19,7 +19,7 @@ See [Conventional Commits](https://conventionalcommits.org) for commit guideline
 - **theme:** remove v1 compact and remove migration guide ([9e0f13b](https://github.com/vuepress-theme-hope/vuepress-theme-hope/commit/9e0f13b7e402764a1bab5af5989524896e14dd37))
 - **theme:** support notice ([#4118](https://github.com/vuepress-theme-hope/vuepress-theme-hope/issues/4118)) ([71048b8](https://github.com/vuepress-theme-hope/vuepress-theme-hope/commit/71048b8c9710b0867418fba8539b2f98281fd9b4))
 
-### Bug Fixes
+### 🪲 Bug Fixes
 
 - **theme:** fix excerpt code blocks, close [#4106](https://github.com/vuepress-theme-hope/vuepress-theme-hope/issues/4106) ([1522c11](https://github.com/vuepress-theme-hope/vuepress-theme-hope/commit/1522c114e5f4651133f0fde27a54c0b963e3f170))
 - **theme:** fix transparent navbar preset ([29e236a](https://github.com/vuepress-theme-hope/vuepress-theme-hope/commit/29e236a1892d7b81bc70b9ae695127c3f00359be))

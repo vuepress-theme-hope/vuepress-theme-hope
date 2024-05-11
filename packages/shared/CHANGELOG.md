@@ -5,7 +5,7 @@ See [Conventional Commits](https://conventionalcommits.org) for commit guideline
 
 ## [2.0.0-rc.39](https://github.com/vuepress-theme-hope/vuepress-theme-hope/compare/v2.0.0-rc.38...v2.0.0-rc.39) (2024-05-08)
 
-### Features
+### ✨ Features
 
 - bump deps ([57c69a7](https://github.com/vuepress-theme-hope/vuepress-theme-hope/commit/57c69a755cd866e89b3e6941af898330c77933f0))
 
