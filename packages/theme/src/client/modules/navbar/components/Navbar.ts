@@ -26,7 +26,7 @@ import type { NavbarLayoutOptions } from "../../../../shared/index.js";
 
 import "../styles/navbar.scss";
 
-declare const HAS_MULTIPLE_LANGUAGES: boolean;
+declare const __VP_MULTI_LANGUAGES__: boolean;
 
 export default defineComponent({
   name: "NavBar",
@@ -74,7 +74,7 @@ export default defineComponent({
 
     const navbarComponentMap: Record<string, Component | string> = {
       Brand: NavbarBrand,
-      Language: HAS_MULTIPLE_LANGUAGES ? LanguageDropdown : noopComponent,
+      Language: __VP_MULTI_LANGUAGES__ ? LanguageDropdown : noopComponent,
       Links: NavbarLinks,
       Repo: RepoLink,
       Outlook: OutlookButton,

@@ -1,4 +1,4 @@
-import { isPlainObject, keys } from "@vuepress/helper";
+import { isPlainObject, keys, values } from "@vuepress/helper";
 import type { App } from "vuepress/core";
 
 import type { ThemeOptions } from "../../shared/index.js";
@@ -11,6 +11,7 @@ export interface ThemeStatus {
   enableReadingTime: boolean;
   blogType: { key: string; path: string }[];
   hasMultipleLanguages: boolean;
+  hasRepo: boolean;
 }
 
 /** @private */
@@ -19,7 +20,7 @@ export const getThemeStatus = (
   themeOptions: ThemeOptions,
 ): ThemeStatus => {
   const { locales } = app.options;
-  const { plugins = {} } = themeOptions;
+  const { locales: themeLocales = {}, plugins = {} } = themeOptions;
 
   return {
     enableCatalog: plugins.catalog !== false,
@@ -36,5 +37,8 @@ export const getThemeStatus = (
         })) ?? []
       : [],
     hasMultipleLanguages: keys(locales).length > 1,
+    hasRepo:
+      "repo" in themeOptions ||
+      values(themeLocales).some(({ repo }) => Boolean(repo)),
   };
 };

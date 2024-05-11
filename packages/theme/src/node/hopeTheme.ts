@@ -80,8 +80,10 @@ export const hopeTheme = (
         // eslint-disable-next-line @typescript-eslint/naming-convention
         __VP_BLOG_TYPES__: status.blogType,
         // eslint-disable-next-line @typescript-eslint/naming-convention
+        __VP_MULTI_LANGUAGES__: status.hasMultipleLanguages,
+        // eslint-disable-next-line @typescript-eslint/naming-convention
         __VP_READING_TIME__: status.enableReadingTime,
-        HAS_MULTIPLE_LANGUAGES: status.hasMultipleLanguages,
+        __VP_REPO__: status.hasRepo,
       }),
 
       extendsBundlerOptions,
