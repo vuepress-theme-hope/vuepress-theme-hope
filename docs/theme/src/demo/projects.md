@@ -202,6 +202,12 @@ docs:
     repo: https://github.com/theme-shoka-x/shokaX-docs
     preview: /assets/image/shokax.jpg
 
+portfolio:
+  - name: Cheng Shang
+    url: https://cheng-shang.me
+    preview: https://cheng-shang.me/portfolio.avif
+    repo: https://github.com/Mister-Hope/cheng-shang-portfolio
+
 blog:
   - name: Mr.Hope's Blog
     desc: Where there is light, there is hope
@@ -229,6 +235,14 @@ blog:
 
 <SiteInfo
   v-for="item in $frontmatter.docs"
+  :key="item.link"
+  v-bind="item"
+/>
+
+## Portfolio using VuePress Theme Hope
+
+<SiteInfo
+  v-for="item in $frontmatter.portfolio"
   :key="item.link"
   v-bind="item"
 />

@@ -87,8 +87,6 @@
   align-items: end;
   justify-content: center;
 
-  overflow: hidden;
-
   width: 50vw;
   height: 100vh;
   border-radius: 10px;
@@ -150,14 +148,14 @@
   @media (max-width: hope-config.$pad) {
     position: absolute;
     right: 15px;
-    bottom: 0;
+    bottom: 15px;
     left: 15px;
 
     flex: 0 0 100%;
 
     max-width: unset;
     padding: 2rem 1.5rem;
-    border-radius: 0.5rem;
+    border-radius: 0.5rem 0.5rem 0 0;
 
     background: var(--bg-color-blur);
 

@@ -13,7 +13,7 @@ docs:
     repo: https://github.com/walinejs/waline
     preview: /assets/image/waline.jpg
 
-  - name: in东师
+  - name: inNENU
     desc: 最全东师新生攻略
     logo: https://innenu.com/logo.svg
     url: https://innenu.com
@@ -269,6 +269,12 @@ docs:
     repo: https://github.com/CoderMast/CoderMast-Notes
     preview: /assets/image/codermast-notes.png
 
+portfolio:
+  - name: 尚程
+    url: https://cheng-shang.me/zh/
+    preview: https://cheng-shang.me/portfolio.avif
+    repo: https://github.com/Mister-Hope/cheng-shang-portfolio
+
 blog:
   - name: Mr.Hope's Blog
     desc: Where there is light, there is hope
@@ -469,6 +475,14 @@ blog:
 
 <SiteInfo
   v-for="item in $frontmatter.docs"
+  :key="item.link"
+  v-bind="item"
+/>
+
+## 使用 VuePress Theme Hope 的档案
+
+<SiteInfo
+  v-for="item in $frontmatter.portfolio"
   :key="item.link"
   v-bind="item"
 />
