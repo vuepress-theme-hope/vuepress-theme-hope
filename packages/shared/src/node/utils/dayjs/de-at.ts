@@ -2,9 +2,9 @@
 import { isArray } from "@vuepress/helper";
 import type dayjs from "dayjs";
 
-import type { Locale } from "./locale.js";
+import type { FormatKey, Locale } from "./locale.js";
 
-const texts = {
+const texts: Record<FormatKey, [string, string] | string> = {
   s: "ein paar Sekunden",
   m: ["eine Minute", "einer Minute"],
   mm: "%d Minuten",
@@ -21,7 +21,7 @@ const texts = {
 const relativeTimeFormatter = (
   number: string,
   withoutSuffix: boolean,
-  key: "s" | "m" | "mm" | "h" | "hh" | "d" | "dd" | "M" | "MM" | "y" | "yy",
+  key: FormatKey,
 ): string => {
   let l = texts[key];
 

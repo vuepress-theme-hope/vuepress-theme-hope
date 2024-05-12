@@ -21,7 +21,7 @@ const plural = (word: string, num: number): string => {
     ? forms[0]
     : num % 10 >= 2 && num % 10 <= 4 && (num % 100 < 10 || num % 100 >= 20)
       ? forms[1]
-      : forms[2]; // eslint-disable-line
+      : forms[2];
 };
 
 const relativeTimeWithPlural = (

@@ -1,3 +1,16 @@
+export type FormatKey =
+  | "s"
+  | "m"
+  | "mm"
+  | "h"
+  | "hh"
+  | "d"
+  | "dd"
+  | "M"
+  | "MM"
+  | "y"
+  | "yy";
+
 export interface Locale {
   name: string;
   weekdays?: string[];
