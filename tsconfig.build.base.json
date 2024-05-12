@@ -1,18 +1,17 @@
 {
   "compilerOptions": {
     // types
-    "allowSyntheticDefaultImports": true,
+    "allowArbitraryExtensions": false,
     "allowUnreachableCode": false,
     "allowUnusedLabels": false,
     "exactOptionalPropertyTypes": true,
     "noFallthroughCasesInSwitch": true,
-    "strict": true,
     "noImplicitOverride": true,
     "noImplicitReturns": true,
     "noPropertyAccessFromIndexSignature": true,
-    "noUncheckedIndexedAccess": false,
     "noUnusedLocals": true,
     "noUnusedParameters": true,
+    "strict": true,
     "verbatimModuleSyntax": true,
 
     // Modules
@@ -23,31 +22,37 @@
 
     // Emit
     "declaration": true,
+    "declarationMap": true,
     "downlevelIteration": false,
     "importHelpers": true,
+    "inlineSources": false,
+    "inlineSourceMap": false,
     "newLine": "lf",
     "noEmitOnError": true,
     "removeComments": false,
-    "inlineSources": false,
-    "inlineSourceMap": false,
     "sourceMap": true,
-    "pretty": true,
 
     // JavaScript
     "allowJs": false,
     "checkJs": false,
 
     // Interop Constraints
+    "allowSyntheticDefaultImports": true,
     "esModuleInterop": true,
     "forceConsistentCasingInFileNames": true,
 
+    // output formatting
+    "pretty": true,
+
     // lib
-    "lib": ["ES2021"],
-    // minimal node 16 support
-    "target": "ES2021",
+    "lib": ["DOM", "ESNext"],
+    // minimal node 18 support
+    "target": "ES2022",
+
+    // projects
+    "composite": true,
 
     // Compiler Diagnostics
-    "composite": true,
     "diagnostics": false,
     "listEmittedFiles": false,
     "skipLibCheck": true
