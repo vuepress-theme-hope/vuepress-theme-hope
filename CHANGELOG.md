@@ -1,6 +1,26 @@
+# Change Log
+
 # Changelog
 
 All notable changes to this project will be documented in this file. See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
+
+<!-- #region recent-change -->
+
+All notable changes to this project will be documented in this file.
+See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
+
+## [2.0.0-rc.42](https://github.com/vuepress-theme-hope/vuepress-theme-hope/compare/v2.0.0-rc.41...v2.0.0-rc.42) (2024-05-12)
+
+### ✨ Features
+
+- **theme:** get number of colors ([0043d51](https://github.com/vuepress-theme-hope/vuepress-theme-hope/commit/0043d51a613cb92ea3e8917fa6ff987ef06e29a6))
+- **theme:** make portfolio a common layout ([9ff5452](https://github.com/vuepress-theme-hope/vuepress-theme-hope/commit/9ff545223c56625bef0265d84783f21080fd985c))
+
+### 🪲 Bug Fixes
+
+- **theme:** fix a11y issue ([fe8f375](https://github.com/vuepress-theme-hope/vuepress-theme-hope/commit/fe8f375b978ccd13e64599c85eb473ff79658a9d))
+- **theme:** fix header anchor ([d490c51](https://github.com/vuepress-theme-hope/vuepress-theme-hope/commit/d490c513a774535d8ae81e8a3883eab669c8fc2a))
+- **theme:** fix portfolio style on pad ([375a0cb](https://github.com/vuepress-theme-hope/vuepress-theme-hope/commit/375a0cb905d188569223e74c6bdf43daabdd7102))
 
 <!-- #region recent-change -->
 

@@ -1,6 +1,19 @@
+# Change Log
+
 # Changelog
 
 All notable changes to this project will be documented in this file. See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
+
+<!-- #region recent-change -->
+
+All notable changes to this project will be documented in this file.
+See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
+
+## [2.0.0-rc.42](https://github.com/vuepress-theme-hope/vuepress-theme-hope/compare/v2.0.0-rc.41...v2.0.0-rc.42) (2024-05-12)
+
+### 🪲 Bug Fixes
+
+- **theme:** fix header anchor ([d490c51](https://github.com/vuepress-theme-hope/vuepress-theme-hope/commit/d490c513a774535d8ae81e8a3883eab669c8fc2a))
 
 <!-- #region recent-change -->
 
