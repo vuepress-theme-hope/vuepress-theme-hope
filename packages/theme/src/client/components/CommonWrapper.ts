@@ -237,14 +237,30 @@ export default defineComponent({
                     Navbar,
                     { onToggleSidebar: () => toggleMobileSidebar() },
                     {
-                      startBefore: () => slots.navbarStartBefore?.(),
-                      startAfter: () => slots.navbarStartAfter?.(),
-                      centerBefore: () => slots.navbarCenterBefore?.(),
-                      centerAfter: () => slots.navbarCenterAfter?.(),
-                      endBefore: () => slots.navbarEndBefore?.(),
-                      endAfter: () => slots.navbarEndAfter?.(),
-                      screenTop: () => slots.navScreenTop?.(),
-                      screenBottom: () => slots.navScreenBottom?.(),
+                      startBefore: slots.navbarStartBefore
+                        ? () => slots.navbarStartBefore!()
+                        : null,
+                      startAfter: slots.navbarStartAfter
+                        ? () => slots.navbarStartAfter!()
+                        : null,
+                      centerBefore: slots.navbarCenterBefore
+                        ? () => slots.navbarCenterBefore!()
+                        : null,
+                      centerAfter: slots.navbarCenterAfter
+                        ? () => slots.navbarCenterAfter!()
+                        : null,
+                      endBefore: slots.navbarEndBefore
+                        ? () => slots.navbarEndBefore!()
+                        : null,
+                      endAfter: slots.navbarEndAfter
+                        ? () => slots.navbarEndAfter!()
+                        : null,
+                      screenTop: slots.navScreenTop
+                        ? () => slots.navScreenTop!()
+                        : null,
+                      screenBottom: slots.navScreenBottom
+                        ? () => slots.navScreenBottom!()
+                        : null,
                     },
                   )
                 : null,
@@ -280,9 +296,11 @@ export default defineComponent({
                 Sidebar,
                 {},
                 {
-                  ...(slots.sidebar ? { default: () => slots.sidebar!() } : {}),
-                  top: () => slots.sidebarTop?.(),
-                  bottom: () => slots.sidebarBottom?.(),
+                  default: slots.sidebar ? () => slots.sidebar!() : null,
+                  top: slots.sidebarTop ? () => slots.sidebarTop!() : null,
+                  bottom: slots.sidebarBottom
+                    ? () => slots.sidebarBottom!()
+                    : null,
                 },
               ),
               slots.default(),

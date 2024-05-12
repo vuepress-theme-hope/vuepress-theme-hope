@@ -27,7 +27,7 @@ export default defineComponent({
 
   setup() {
     const { config, isDarkmode, status } = useDarkmode();
-    const pure = usePure();
+    const isPure = usePure();
 
     const updateDarkmodeStatus = (): void => {
       if (config.value === "switch")
@@ -46,7 +46,7 @@ export default defineComponent({
         // @ts-expect-error: Providing backward compatibility
         document.startViewTransition &&
         !window.matchMedia("(prefers-reduced-motion: reduce)").matches &&
-        !pure.value;
+        !isPure.value;
 
       if (!useViewTransition || !event) {
         updateDarkmodeStatus();

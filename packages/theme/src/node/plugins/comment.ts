@@ -25,6 +25,6 @@ export const getCommentPlugin = (
     ...(options?.provider === "Waline"
       ? { dark: 'html[data-theme="dark"]' }
       : {}),
-    ...(options || {}),
+    ...options,
   } as CommentPluginOptions);
 };

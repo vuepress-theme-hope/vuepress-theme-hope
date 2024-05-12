@@ -159,8 +159,8 @@ export default defineComponent({
           },
         },
         {
-          before: () => slots.screenTop?.(),
-          after: () => slots.screenBottom?.(),
+          before: slots.screenTop ? () => slots.screenTop!() : null,
+          after: slots.screenBottom ? () => slots.screenBottom!() : null,
         },
       ),
     ];

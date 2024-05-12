@@ -81,7 +81,7 @@ export const getThemeData = (
           entries<ThemeLocaleOptions>({
             // Ensure default locale
             "/": {},
-            ...(themeOptions.locales ?? {}),
+            ...themeOptions.locales,
           }).map(([localePath, localeConfig]) => [
             localePath,
             {

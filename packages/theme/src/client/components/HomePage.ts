@@ -24,8 +24,8 @@ export default defineComponent({
   }>,
 
   setup(_props, { slots }) {
-    const pure = usePure();
     const frontmatter = usePageFrontmatter<ThemeProjectHomePageFrontmatter>();
+    const isPure = usePure();
 
     const features = computed(() => {
       const { features } = frontmatter.value;
@@ -46,7 +46,7 @@ export default defineComponent({
         "main",
         {
           id: "main-content",
-          class: ["vp-project-home ", { pure: pure.value }],
+          class: ["vp-project-home ", { pure: isPure.value }],
           "aria-labelledby":
             frontmatter.value.heroText === null ? "" : "main-title",
         },

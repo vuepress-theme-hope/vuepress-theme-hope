@@ -9,12 +9,14 @@ import PortfolioHome from "@theme-hope/components/PortfolioHome";
 import SkipLink from "@theme-hope/components/SkipLink";
 import { FadeSlideY } from "@theme-hope/components/transitions/index";
 import {
+  usePure,
   useThemeData,
   useThemeLocaleData,
   useWindowSize,
 } from "@theme-hope/composables/index";
 
 import type { ThemePageFrontmatter } from "../../shared/index.js";
+import { RenderDefault } from "vuepress-shared/client";
 
 declare const __VP_BLOG__: boolean;
 
@@ -40,6 +42,7 @@ export default defineComponent({
     const themeLocale = useThemeLocaleData();
     const page = usePageData();
     const frontmatter = usePageFrontmatter<ThemePageFrontmatter>();
+    const isPure = usePure();
     const { isMobile } = useWindowSize();
 
     const sidebarDisplay = computed(() =>
@@ -62,26 +65,38 @@ export default defineComponent({
               ? h(PortfolioHome)
               : frontmatter.value.home
                 ? h(HomePage)
-                : h(FadeSlideY, () =>
+                : h(isPure.value ? RenderDefault : FadeSlideY, () =>
                     h(
                       NormalPage,
                       { key: page.value.path },
                       {
-                        top: () => slots.top?.(),
-                        bottom: () => slots.bottom?.(),
-                        contentBefore: () => slots.contentBefore?.(),
-                        contentAfter: () => slots.contentAfter?.(),
-                        tocBefore: () => slots.tocBefore?.(),
-                        tocAfter: () => slots.tocAfter?.(),
+                        top: slots.top ? () => slots.top!() : null,
+                        bottom: slots.bottom ? () => slots.bottom!() : null,
+                        contentBefore: slots.contentBefore
+                          ? () => slots.contentBefore!()
+                          : null,
+                        contentAfter: slots.contentAfter
+                          ? () => slots.contentAfter!()
+                          : null,
+                        tocBefore: slots.tocBefore
+                          ? () => slots.tocBefore!()
+                          : null,
+                        tocAfter: slots.tocAfter
+                          ? () => slots.tocAfter!()
+                          : null,
                       },
                     ),
                   )),
-          ...(sidebarDisplay.value === "none"
-            ? {}
-            : { navScreenBottom: () => h(resolveComponent("BloggerInfo")) }),
-          ...(!isMobile.value && sidebarDisplay.value === "always"
-            ? { sidebar: () => h(resolveComponent("BloggerInfo")) }
-            : {}),
+
+          navScreenBottom:
+            sidebarDisplay.value === "none"
+              ? () => h(resolveComponent("BloggerInfo"))
+              : null,
+
+          sidebar:
+            !isMobile.value && sidebarDisplay.value === "always"
+              ? () => h(resolveComponent("BloggerInfo"))
+              : null,
         },
       ),
     ];

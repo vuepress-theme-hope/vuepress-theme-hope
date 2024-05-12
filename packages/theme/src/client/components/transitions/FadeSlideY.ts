@@ -19,7 +19,7 @@ export const FadeSlideY: FunctionalComponent<
       onBeforeEnter: scrollPromise.resolve,
       onBeforeLeave: scrollPromise.pending,
     },
-    () => slots.default?.(),
+    () => slots.default(),
   );
 
 FadeSlideY.displayName = "FadeSlideY";

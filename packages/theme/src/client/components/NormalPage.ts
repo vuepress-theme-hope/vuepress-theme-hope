@@ -40,6 +40,10 @@ export default defineComponent({
       () => frontmatter.value.toc ?? themeLocale.value.toc ?? true,
     );
 
+    const headerDepth = computed(
+      () => frontmatter.value.headerDepth ?? themeLocale.value.headerDepth ?? 2,
+    );
+
     return (): VNode =>
       h(
         "main",
@@ -66,15 +70,10 @@ export default defineComponent({
             tocEnable.value
               ? h(
                   TOC,
+                  { headerDepth: headerDepth.value },
                   {
-                    headerDepth:
-                      frontmatter.value.headerDepth ??
-                      themeLocale.value.headerDepth ??
-                      2,
-                  },
-                  {
-                    before: () => slots.tocBefore?.(),
-                    after: () => slots.tocAfter?.(),
+                    before: slots.tocBefore ? () => slots.tocBefore!() : null,
+                    after: slots.tocAfter ? () => slots.tocAfter!() : null,
                   },
                 )
               : null,

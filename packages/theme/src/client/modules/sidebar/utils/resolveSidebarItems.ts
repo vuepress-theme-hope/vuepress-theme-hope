@@ -48,11 +48,9 @@ export const resolveArraySidebarItems = ({
       : item.link
         ? {
             ...item,
-            ...(isLinkInternal(item.link)
-              ? {
-                  link: resolveRoute(resolvePrefix(pathPrefix, item.link)).path,
-                }
-              : {}),
+            link: isLinkInternal(item.link)
+              ? resolveRoute(resolvePrefix(pathPrefix, item.link)).path
+              : item.link,
           }
         : item;
 
