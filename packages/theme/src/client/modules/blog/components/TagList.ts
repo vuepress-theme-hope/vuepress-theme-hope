@@ -6,6 +6,7 @@ import { RouteLink, usePageFrontmatter } from "vuepress/client";
 import { generateIndexFromHash } from "vuepress-shared/client";
 
 import { useTagMap } from "@theme-hope/modules/blog/composables/index";
+import cssVariables from "../../../styles/variables.module.scss?module";
 
 import "../styles/tag-list.scss";
 
@@ -32,8 +33,7 @@ export default defineComponent({
               {
                 class: [
                   "tag",
-                  // TODO: magic number 9 is tricky here
-                  `tag${generateIndexFromHash(tag, 9)}`,
+                  `color${generateIndexFromHash(tag, Number(cssVariables["colorNumber"]))}`,
                   { active: isActive(tag) },
                 ],
               },

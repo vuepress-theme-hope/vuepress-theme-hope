@@ -6,6 +6,7 @@ import { useNavigate, usePure } from "@theme-hope/composables/index";
 import { CategoryIcon } from "@theme-hope/modules/info/components/icons";
 import { useMetaLocale } from "@theme-hope/modules/info/composables/index";
 import type { PageCategory } from "@theme-hope/modules/info/utils/index";
+import cssVariables from "../../../styles/variables.module.scss?module";
 
 import "../styles/category-info.scss";
 
@@ -52,8 +53,7 @@ export default defineComponent({
                     class: [
                       "page-category-item",
                       {
-                        // TODO: magic number 9 is tricky here
-                        [`color${generateIndexFromHash(name, 9)}`]:
+                        [`color${generateIndexFromHash(name, Number(cssVariables["colorNumber"]))}`]:
                           !isPure.value,
                         clickable: path,
                       },

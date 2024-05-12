@@ -6,6 +6,7 @@ import { useNavigate, usePure } from "@theme-hope/composables/index";
 import { TagIcon } from "@theme-hope/modules/info/components/icons";
 import { useMetaLocale } from "@theme-hope/modules/info/composables/index";
 import type { PageTag } from "@theme-hope/modules/info/utils/index";
+import cssVariables from "../../../styles/variables.module.scss?module";
 
 import "../styles/tag-info.scss";
 
@@ -50,8 +51,7 @@ export default defineComponent({
                     class: [
                       "page-tag-item",
                       {
-                        // TODO: magic number 9 is tricky here
-                        [`color${generateIndexFromHash(name, 9)}`]:
+                        [`color${generateIndexFromHash(name, Number(cssVariables["colorNumber"]))}`]:
                           !isPure.value,
                         clickable: path,
                       },

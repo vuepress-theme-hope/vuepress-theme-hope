@@ -61,7 +61,7 @@
   @each $color in hope-config.$colors {
     $index: list.index(hope-config.$colors, $color) - 1;
 
-    &.project#{$index} {
+    &.color#{$index} {
       background: color.scale($color, $lightness: 90%);
 
       &:hover {

@@ -17,4 +17,5 @@ $enable-theme-color: map.has-key(
       theme-#{list.index(hope-config.$theme-colors, $color)}: $color;
     }
   }
+  colorNumber: list.length(hope-config.$colors);
 }

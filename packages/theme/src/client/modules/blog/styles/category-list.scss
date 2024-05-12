@@ -56,45 +56,45 @@
     line-height: 1.2rem;
     text-align: center;
   }
-}
 
-@each $color in hope-config.$colors {
-  $index: list.index(hope-config.$colors, $color) - 1;
+  @each $color in hope-config.$colors {
+    $index: list.index(hope-config.$colors, $color) - 1;
 
-  .vp-category#{$index} {
-    background: color.scale($color, $lightness: 90%);
-    color: color.scale($color, $lightness: -10%);
-
-    #{hope-config.$dark-selector} & {
-      background: color.scale($color, $lightness: -75%);
-      color: color.scale($color, $lightness: 20%);
-    }
-
-    &:hover {
-      background: color.scale($color, $lightness: 75%);
+    &.color#{$index} {
+      background: color.scale($color, $lightness: 90%);
+      color: color.scale($color, $lightness: -10%);
 
       #{hope-config.$dark-selector} & {
-        background: color.scale($color, $lightness: -60%);
+        background: color.scale($color, $lightness: -75%);
+        color: color.scale($color, $lightness: 20%);
       }
-    }
 
-    &.active {
-      background: $color;
-      color: #fff;
+      &:hover {
+        background: color.scale($color, $lightness: 75%);
 
-      #{hope-config.$dark-selector} & {
-        background: color.scale($color, $lightness: -20%);
-        color: var(--bg-color);
+        #{hope-config.$dark-selector} & {
+          background: color.scale($color, $lightness: -60%);
+        }
+      }
+
+      &.active {
+        background: $color;
+        color: #fff;
+
+        #{hope-config.$dark-selector} & {
+          background: color.scale($color, $lightness: -20%);
+          color: var(--bg-color);
+        }
+
+        .count {
+          background: var(--bg-color);
+          color: $color;
+        }
       }
 
       .count {
-        background: var(--bg-color);
-        color: $color;
+        background: $color;
       }
-    }
-
-    .count {
-      background: $color;
     }
   }
 }
