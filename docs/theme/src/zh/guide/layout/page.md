@@ -65,8 +65,6 @@ icon: home
 
 ## 上 / 下一篇链接
 
-<!-- TODO: Improve it -->
-
 上一篇和下一篇文章的链接将会自动地根据当前页面的侧边栏的顺序来获取。你也可以通过主题选项或 frontmatter 来明确地重写或者禁用它:
 
 ```md
@@ -75,6 +73,8 @@ prev: ./some-other-page
 next: false
 ---
 ```
+
+你也可以通过传递一个拥有 title, icon 和 link 的对象来完全自定义它。
 
 ## 评论
 

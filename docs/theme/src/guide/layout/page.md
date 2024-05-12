@@ -65,8 +65,6 @@ Please see [Page Meta](../feature/meta.md).
 
 ## Prev / Next Links
 
-<!-- TODO: Improve it -->
-
 Prev and next links are automatically inferred based on the sidebar order of the active page. You can also explicitly overwrite or disable them globally with theme config or on specific pages using `Front matter`:
 
 ```md
@@ -75,6 +73,8 @@ prev: ./some-other-page
 next: false
 ---
 ```
+
+You can also fully customize it by passing an object containing text, icon and link.
 
 ## Comment
 
