@@ -23,7 +23,8 @@ export const getCopyrightPlugin = (
 
   return copyrightPlugin({
     canonical: hostname,
-    author: getAuthor(themeData.author)?.[0]?.name,
+    author: getAuthor(themeData.author ?? themeData.locales["/"]?.author)?.[0]
+      ?.name,
     license: themeData.license,
     authorGetter: (
       page: Page<Record<string, never>, ThemeNormalPageFrontmatter>,

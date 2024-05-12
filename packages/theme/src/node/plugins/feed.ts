@@ -41,7 +41,9 @@ export const getFeedPlugin = (
     return null;
   }
 
-  const globalAuthor = getAuthor(themeData.author);
+  const globalAuthor = getAuthor(
+    themeData.author ?? themeData.locales["/"]?.author,
+  );
 
   const defaultOptions: FeedPluginOptions = {
     // @ts-expect-error: hostname may not exist here
