@@ -34,7 +34,7 @@ export default defineComponent({
                 href: url,
                 rel: "noopener noreferrer",
                 target: "_blank",
-                ariaLabel: name || "",
+                "aria-label": name || "",
                 ...(isPure.value ? {} : { "data-balloon-pos": "up" }),
                 innerHTML: icon,
               }),

@@ -64,7 +64,7 @@ export default defineComponent({
             { class: ["vp-decrypt-hint", { tried: hasTried.value }] },
             hasTried.value
               ? locale.value.errorHint
-              : h(LockIcon, { ariaLabel: locale.value.iconLabel }),
+              : h(LockIcon, { "aria-label": locale.value.iconLabel }),
           ),
           h("div", { class: "vp-decrypt-input" }, [
             h("input", {

@@ -67,8 +67,7 @@ export default defineComponent({
               class: "vp-blogger",
               ...(intro.value
                 ? {
-                    style: { cursor: "pointer" },
-                    ariaLabel: locale.value.intro,
+                    "aria-label": locale.value.intro,
                     "data-balloon-pos": "down",
                     role: "link",
                     onClick: () => navigate(intro.value!),

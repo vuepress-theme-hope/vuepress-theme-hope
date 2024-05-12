@@ -133,7 +133,7 @@ const HighlightPanel: FunctionalComponent<
                               {
                                 class: "vp-highlight-item link",
                                 href: link,
-                                ariaLabel: title,
+                                "aria-label": title,
                                 target: "_blank",
                               },
                               children,
@@ -143,7 +143,7 @@ const HighlightPanel: FunctionalComponent<
                               {
                                 class: "vp-highlight-item link",
                                 to: link,
-                                ariaLabel: title,
+                                "aria-label": title,
                               },
                               () => children,
                             )

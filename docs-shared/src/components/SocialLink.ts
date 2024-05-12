@@ -31,7 +31,7 @@ export default defineComponent({
           href: link.value,
           target: "_blank",
           rel: "noopener noreferrer",
-          ariaLabel: "telegram",
+          "aria-label": "telegram",
           innerHTML: icon.value,
         }),
       );

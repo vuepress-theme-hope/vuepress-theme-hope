@@ -16,7 +16,7 @@ const ToggleNavbarButton: FunctionalComponent<
     {
       type: "button",
       class: ["vp-toggle-navbar-button", { "is-active": active }],
-      ariaLabel: "Toggle Navbar",
+      "aria-label": "Toggle Navbar",
       "aria-expanded": active,
       "aria-controls": "nav-screen",
       onClick: () => emit("toggle"),

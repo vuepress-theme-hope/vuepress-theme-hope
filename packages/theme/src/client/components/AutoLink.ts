@@ -120,7 +120,7 @@ export default defineComponent({
               to: link,
               active: isActive.value,
               activeClass: "active",
-              ariaLabel: linkAriaLabel.value,
+              "aria-label": linkAriaLabel.value,
               // Class needs to be merged manually
               onFocusout: () => emit("focusout"),
             },
@@ -136,7 +136,7 @@ export default defineComponent({
               href: link,
               rel: linkRel.value,
               target: linkTarget.value,
-              ariaLabel: linkAriaLabel.value,
+              "aria-label": linkAriaLabel.value,
               onFocusout: () => emit("focusout"),
             },
             defaultSlot

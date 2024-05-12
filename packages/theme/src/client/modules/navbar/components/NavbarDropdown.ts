@@ -69,7 +69,7 @@ export default defineComponent({
           {
             type: "button",
             class: "vp-dropdown-title",
-            ariaLabel: dropdownAriaLabel.value,
+            "aria-label": dropdownAriaLabel.value,
             onClick: handleDropdown,
           },
           [

@@ -118,7 +118,7 @@ export default defineComponent({
                   class: "vp-site-info-source",
                   href: props.repo,
                   // Hint text
-                  ariaLabel: locale.value.source,
+                  "aria-label": locale.value.source,
                   "data-balloon-pos": "left",
                   title: locale.value.source,
                   target: "_blank",
