@@ -137,7 +137,7 @@ export default hopeTheme(
           {
             key: "tutorial",
             filter: (page): boolean =>
-              page.filePathRelative?.includes("demo/") ?? false,
+              Boolean(page.filePathRelative?.includes("demo/")),
             sorter: (pageA, pageB): number =>
               dateSorter(pageA.frontmatter.date, pageB.frontmatter.date),
             layout: "BlogType",

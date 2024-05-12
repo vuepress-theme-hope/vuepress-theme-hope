@@ -29,6 +29,10 @@ export default defineComponent({
       () => !pure.value && themeData.value.fullscreen && isSupported,
     );
 
+    const enabled = computed(
+      () => enableThemeColor || canToggle.value || enableFullScreen.value,
+    );
+
     watch(
       () => page.value.path,
       () => {
@@ -37,7 +41,7 @@ export default defineComponent({
     );
 
     return (): VNode | null =>
-      canToggle.value || enableFullScreen.value || enableThemeColor
+      enabled.value
         ? h(
             "div",
             { class: "vp-nav-item hide-in-mobile" },

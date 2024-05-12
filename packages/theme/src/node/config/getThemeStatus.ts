@@ -9,7 +9,7 @@ export interface ThemeStatus {
   enableEncrypt: boolean;
   enableSlide: boolean;
   enableReadingTime: boolean;
-  blogType: { key: string; path: string }[];
+  blogType: { key: string; path: string | false }[];
   hasMultipleLanguages: boolean;
   hasRepo: boolean;
 }
@@ -25,16 +25,18 @@ export const getThemeStatus = (
   return {
     enableCatalog: plugins.catalog !== false,
     enableBlog: Boolean(plugins.blog),
-    enableEncrypt: Boolean(
-      themeOptions.encrypt?.admin || themeOptions.encrypt?.config,
-    ),
+    enableEncrypt:
+      isPlainObject(themeOptions.encrypt) &&
+      ("admin" in themeOptions.encrypt || "config" in themeOptions.encrypt),
     enableSlide: Boolean(plugins.mdEnhance && plugins.mdEnhance.revealJs),
     enableReadingTime: plugins.readingTime !== false,
     blogType: isPlainObject(plugins.blog)
-      ? plugins.blog?.type?.map(({ key, path }) => ({
-          key,
-          path: path || `/${key}/`,
-        })) ?? []
+      ? plugins.blog?.type
+          ?.map(({ key, path = `/${key}/` }) => ({
+            key,
+            path: path ?? `/${key}/`,
+          }))
+          .filter(({ path }) => Boolean(path)) ?? []
       : [],
     hasMultipleLanguages: keys(locales).length > 1,
     hasRepo:

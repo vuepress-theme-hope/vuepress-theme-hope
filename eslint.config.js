@@ -64,6 +64,12 @@ export default config(
   {
     files: ["**/*.{ts,vue}"],
     rules: {
+      "@typescript-eslint/prefer-nullish-coalescing": [
+        "warn",
+        {
+          ignoreConditionalTests: true,
+        },
+      ],
       "@typescript-eslint/naming-convention": [
         "warn",
         {

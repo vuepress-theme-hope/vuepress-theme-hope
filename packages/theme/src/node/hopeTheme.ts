@@ -83,6 +83,7 @@ export const hopeTheme = (
         __VP_MULTI_LANGUAGES__: status.hasMultipleLanguages,
         // eslint-disable-next-line @typescript-eslint/naming-convention
         __VP_READING_TIME__: status.enableReadingTime,
+        // eslint-disable-next-line @typescript-eslint/naming-convention
         __VP_REPO__: status.hasRepo,
       }),
 

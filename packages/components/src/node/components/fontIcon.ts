@@ -60,7 +60,7 @@ export const getIconInfo = (
   return { type: "custom", prefix: prefix ?? "" };
 };
 
-const getFontAwesomeCDNLink = (item: string) =>
+const getFontAwesomeCDNLink = (item: string): string =>
   `https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@6/js/${item}.min.js`;
 
 const getFontAwesomeLink = (link: string): LinkInfo => ({

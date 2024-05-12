@@ -20,7 +20,7 @@ export default defineComponent({
     const themeLocale = useThemeLocaleData();
 
     const siteBrandLink = computed(
-      () => themeLocale.value.home || routeLocale.value,
+      () => themeLocale.value.home ?? routeLocale.value,
     );
 
     const siteTitle = computed(() => siteLocale.value.title);

@@ -175,7 +175,7 @@ export const viewPDF = (
     return null;
   }
 
-  const pdfTitle = title || /\/([^/]+).pdf/.exec(url)?.[1] || "PDF Viewer";
+  const pdfTitle = (title || /\/([^/]+).pdf/.exec(url)?.[1]) ?? "PDF Viewer";
 
   if (force) {
     if (!PDFJS_URL) {

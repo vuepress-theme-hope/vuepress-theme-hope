@@ -1,5 +1,5 @@
-import { defineComponent } from "vue";
-import { h } from "vue";
+import { defineComponent, h } from "vue";
+import type { VNode } from "vue";
 
 import MarkdownContent from "@theme-hope/components/MarkdownContent";
 import { DropTransition } from "@theme-hope/components/transitions/DropTransition";
@@ -14,7 +14,7 @@ export default defineComponent({
   setup() {
     const frontmatter = usePageFrontmatter<PortfolioHomeFrontmatter>();
 
-    return () => [
+    return (): VNode[] => [
       h(CommonWrapper, () => [
         h(PortfolioHero),
         frontmatter.value.content

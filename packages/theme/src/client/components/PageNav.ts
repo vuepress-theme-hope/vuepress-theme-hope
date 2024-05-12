@@ -100,7 +100,7 @@ export default defineComponent({
 
       return nextConfig === false
         ? null
-        : nextConfig ||
+        : nextConfig ??
             (themeLocale.value.nextLink === false
               ? null
               : resolveFromSidebarItems(

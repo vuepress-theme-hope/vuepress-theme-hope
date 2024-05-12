@@ -1,4 +1,4 @@
-import type { FontIconOptions } from "./icon.js";
+import type { FontIconOptions } from "./font-icon.js";
 import type { ShareOptions } from "./share.js";
 import type { ArtPlayerOptions } from "../../shared/index.js";
 

@@ -5,13 +5,12 @@ import type {
   ShareService,
   ShareServiceOptions,
 } from "../../../shared/index.js";
-import type { ComponentPluginOptions } from "../../options/index.js";
+import type { ShareOptions } from "../../options/index.js";
 
 export const getShareServiceConfig = (
-  options: ComponentPluginOptions,
+  shareOptions?: ShareOptions,
 ): ShareServiceOptions[] => {
-  const services: ShareService[] = options.componentOptions?.share
-    ?.services ?? [
+  const services: ShareService[] = shareOptions?.services ?? [
     "twitter",
     "facebook",
     "reddit",
@@ -30,7 +29,7 @@ export const getShareServiceConfig = (
           // Handle twitter user name
           link: SHARE_CONFIG[service].link.replace(
             "[twitter-user]",
-            options.componentOptions?.share?.twitterUserName ?? "",
+            shareOptions?.twitterUserName ?? "",
           ),
         });
       // A built-in service

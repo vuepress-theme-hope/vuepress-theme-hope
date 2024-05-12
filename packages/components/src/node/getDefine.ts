@@ -11,72 +11,72 @@ import type { ComponentPluginOptions } from "./options/index.js";
 import { isInstalled } from "./utils.js";
 
 export const getDefine =
-  (options: ComponentPluginOptions): ((app: App) => Record<string, unknown>) =>
+  ({
+    components = [],
+    componentOptions = {},
+    locales = {},
+  }: ComponentPluginOptions): ((app: App) => Record<string, unknown>) =>
   (app) => {
-    const { assets, prefix } = options.componentOptions?.fontIcon ?? {};
+    const { assets, prefix } = componentOptions.fontIcon ?? {};
     const result: Record<string, unknown> = {};
 
-    if (options.components?.includes("FontIcon")) {
+    if (components.includes("FontIcon")) {
       const { type, prefix: iconPrefix } = getIconInfo(assets, prefix);
 
       result["FONT_ICON_TYPE"] = type;
       result["FONT_ICON_PREFIX"] = iconPrefix;
     }
 
-    if (
-      options.components?.includes("ArtPlayer") ||
-      options.components?.includes("VidStack")
-    ) {
+    if (components.includes("ArtPlayer") || components.includes("VidStack")) {
       result["DASHJS_INSTALLED"] = isInstalled("dashjs");
       result["HLS_JS_INSTALLED"] = isInstalled("hls.js");
     }
 
-    if (options.components?.includes("ArtPlayer")) {
+    if (components.includes("ArtPlayer")) {
       result["ART_PLAYER_OPTIONS"] = {
         fullscreen: true,
         playbackRate: true,
         setting: true,
-        ...options.componentOptions?.artPlayer,
+        ...componentOptions.artPlayer,
       };
       result["MPEGTS_JS_INSTALLED"] = isInstalled("mpegts.js");
     }
 
-    if (options.components?.includes("PDF")) {
+    if (components.includes("PDF")) {
       result["PDF_LOCALES"] = getLocaleConfig({
         app,
         name: "pdf",
         default: pdfLocaleConfig,
-        config: options.locales?.pdf,
+        config: locales.pdf,
       });
       result["PDFJS_URL"] =
-        typeof options.componentOptions?.pdf?.pdfjs === "string"
-          ? options.componentOptions?.pdf?.pdfjs
-          : options.componentOptions?.pdf?.pdfjs === false
+        typeof componentOptions.pdf?.pdfjs === "string"
+          ? componentOptions.pdf?.pdfjs
+          : componentOptions.pdf?.pdfjs === false
             ? null
             : "https://theme-hope-assets.vuejs.press/pdfjs/";
     }
 
-    if (options.components?.includes("Share")) {
+    if (components.includes("Share")) {
       result["SHARE_CONTENT_SELECTOR"] =
-        options.componentOptions?.share?.contentSelector ??
-        ".theme-default-content";
-      result["SHARE_SERVICES"] = getShareServiceConfig(options);
+        componentOptions.share?.contentSelector ?? ".theme-default-content";
+      result["SHARE_SERVICES"] = getShareServiceConfig(componentOptions.share);
     }
 
-    if (options.components?.includes("SiteInfo"))
+    if (components.includes("SiteInfo"))
       result["SITE_INFO_LOCALES"] = getLocaleConfig({
         app,
         name: "siteInfo",
         default: siteInfoLocaleConfig,
-        config: options.locales?.siteInfo,
+        config: locales.siteInfo,
       });
 
-    if (options.components?.includes("VidStack"))
+    if (components.includes("VidStack"))
       result["VIDSTACK_LOCALES"] = getLocaleConfig({
         app,
         name: "vidstack",
         default: vidstackLocales,
-        config: options.locales?.vidstack,
+        config: locales.vidstack,
       });
 
     return result;

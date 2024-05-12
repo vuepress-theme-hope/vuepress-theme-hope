@@ -1,7 +1,7 @@
 import { existsSync, readdirSync, writeFileSync } from "node:fs";
 import { join, resolve } from "node:path";
 
-import { version } from "../package.json";
+import { version } from "../lerna.json";
 
 const packagesDir = resolve(process.cwd(), "packages");
 

@@ -69,7 +69,7 @@ export default defineComponent({
         avatar: avatar ? withBase(avatar) : null,
         avatarDark: avatarDark ? withBase(avatarDark) : null,
         avatarStyle,
-        alt: avatarAlt || name || "",
+        alt: (avatarAlt || name) ?? "",
       };
     });
 
@@ -126,7 +126,7 @@ export default defineComponent({
 
       void typeNext();
 
-      return () => {
+      return (): void => {
         shouldStop = true;
       };
     };
