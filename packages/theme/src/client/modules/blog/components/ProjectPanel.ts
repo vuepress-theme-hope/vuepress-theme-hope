@@ -39,7 +39,7 @@ export default defineComponent({
   },
 
   setup(props) {
-    const pure = usePure();
+    const isPure = usePure();
     const navigate = useNavigate();
 
     const renderIcon = (icon = "", alt = "icon"): VNode | null => {
@@ -74,7 +74,7 @@ export default defineComponent({
               class: [
                 "vp-project-card",
                 // TODO: magic number 9 is tricky here
-                { [`project${index % 9}`]: !pure.value && !background },
+                { [`project${index % 9}`]: !isPure.value && !background },
               ],
               ...(background ? { style: background } : {}),
               onClick: () => navigate(link),

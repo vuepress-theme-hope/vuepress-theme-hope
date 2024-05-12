@@ -112,7 +112,7 @@ const FeaturePanel: FunctionalComponent<
                           {
                             class: "vp-feature-item link",
                             href: link,
-                            "aria-label": title,
+                            ariaLabel: title,
                             target: "_blank",
                           },
                           children,
@@ -122,7 +122,7 @@ const FeaturePanel: FunctionalComponent<
                           {
                             class: "vp-feature-item link",
                             to: link,
-                            "aria-label": title,
+                            ariaLabel: title,
                           },
                           () => children,
                         )

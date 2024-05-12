@@ -36,7 +36,7 @@ export default defineComponent({
   setup(props) {
     const lang = usePageLang();
     const metaLocale = useMetaLocale();
-    const pure = usePure();
+    const isPure = usePure();
 
     return (): VNode | null =>
       props.date
@@ -44,8 +44,8 @@ export default defineComponent({
             "span",
             {
               class: "page-date-info",
-              "aria-label": `${metaLocale.value.date}${pure.value ? "" : "📅"}`,
-              ...(pure.value ? {} : { "data-balloon-pos": "up" }),
+              "aria-label": `${metaLocale.value.date}${isPure.value ? "" : "📅"}`,
+              ...(isPure.value ? {} : { "data-balloon-pos": "up" }),
             },
             [
               h(CalendarIcon),

@@ -143,7 +143,7 @@ export default defineComponent({
   },
 
   setup(props) {
-    const pure = usePure();
+    const isPure = usePure();
 
     return (): VNode | null =>
       props.items
@@ -153,7 +153,7 @@ export default defineComponent({
             props.items.map((item) =>
               h(resolveComponent(`${item}Info`), {
                 ...props.info,
-                pure: pure.value,
+                isPure: isPure.value,
               }),
             ),
           )

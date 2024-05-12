@@ -38,7 +38,7 @@ export default defineComponent({
 
   setup(props) {
     const metaLocale = useMetaLocale();
-    const pure = usePure();
+    const isPure = usePure();
 
     const readingTimeMeta = computed(() => {
       if (!props.readingTime) return null;
@@ -55,9 +55,9 @@ export default defineComponent({
             {
               class: "page-reading-time-info",
               "aria-label": `${metaLocale.value.readingTime}${
-                pure.value ? "" : "⌛"
+                isPure.value ? "" : "⌛"
               }`,
-              ...(pure.value ? {} : { "data-balloon-pos": "up" }),
+              ...(isPure.value ? {} : { "data-balloon-pos": "up" }),
             },
             [
               h(TimerIcon),

@@ -48,14 +48,18 @@
     }
   }
 
-  &.clickable:hover {
+  &.clickable {
     cursor: pointer;
+
+    &:not([class*="color"]):hover {
+      color: var(--theme-color);
+    }
   }
 
   @each $color in hope-config.$colors {
     $index: list.index(hope-config.$colors, $color) - 1;
 
-    &.tag#{$index} {
+    &.color#{$index} {
       background: color.scale($color, $lightness: 90%);
       background:
         linear-gradient(

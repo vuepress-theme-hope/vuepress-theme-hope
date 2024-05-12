@@ -4,6 +4,7 @@ import { h } from "vue";
 export interface IconBaseProps {
   name?: string;
   color?: string;
+  ariaLabel?: string;
 }
 
 /**
@@ -14,7 +15,7 @@ export const IconBase: FunctionalComponent<
   IconBaseProps,
   Record<never, never>,
   { default: () => VNode | VNode[] }
-> = ({ name = "", color = "currentColor" }, { slots }) =>
+> = ({ name = "", color = "currentColor", ariaLabel }, { attrs, slots }) =>
   h(
     "svg",
     {
@@ -22,7 +23,8 @@ export const IconBase: FunctionalComponent<
       class: ["icon", `${name}-icon`],
       viewBox: "0 0 1024 1024",
       fill: color,
-      "aria-label": `${name} icon`,
+      "aria-label": ariaLabel ?? `${name} icon`,
+      ...attrs,
     },
     slots.default?.(),
   );

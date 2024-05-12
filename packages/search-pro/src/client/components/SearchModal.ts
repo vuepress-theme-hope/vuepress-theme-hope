@@ -143,7 +143,7 @@ export default defineComponent({
                 h("form", [
                   h(
                     "label",
-                    { for: "search-pro", "aria-label": locale.value.search },
+                    { for: "search-pro", ariaLabel: locale.value.search },
                     h(SearchIcon),
                   ),
                   h("input", {

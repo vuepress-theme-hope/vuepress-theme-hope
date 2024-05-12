@@ -24,7 +24,7 @@ export default defineComponent({
                 href: repo.value.link,
                 target: "_blank",
                 rel: "noopener noreferrer",
-                "aria-label": repo.value.label,
+                ariaLabel: repo.value.label,
               },
               h(RepoIcon, {
                 type: repo.value.type,

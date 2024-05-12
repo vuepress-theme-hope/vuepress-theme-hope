@@ -74,7 +74,7 @@ export default defineComponent({
                       "icon-wrapper",
                       { active: activeType.value === key },
                     ],
-                    "aria-label": locale.value[key],
+                    ariaLabel: locale.value[key],
                     "data-balloon-pos": "up",
                   },
                   h(Icon),

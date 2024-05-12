@@ -68,7 +68,7 @@ export default defineComponent({
         {
           type: "button",
           class: "search-pro-button",
-          "aria-label": locale.value.search,
+          ariaLabel: locale.value.search,
           onClick: () => {
             isActive.value = true;
           },

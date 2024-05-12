@@ -213,7 +213,7 @@ export default defineComponent({
           {
             type: "button",
             class: ["vp-share-button", { plain }],
-            "aria-label": name,
+            ariaLabel: name,
             "data-balloon-pos": "up",
             onClick: () => share(),
           },

@@ -12,7 +12,6 @@ export default theme(
   "theme",
   {
     repo: "vuepress-theme-hope/vuepress-theme-hope",
-
     blog: {
       name: "VuePress Theme Hope",
       medias: {

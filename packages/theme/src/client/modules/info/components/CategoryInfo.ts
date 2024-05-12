@@ -29,7 +29,7 @@ export default defineComponent({
   setup(props) {
     const metaLocale = useMetaLocale();
     const navigate = useNavigate();
-    const pure = usePure();
+    const isPure = usePure();
 
     return (): VNode | null =>
       props.category.length
@@ -38,9 +38,9 @@ export default defineComponent({
             {
               class: "page-category-info",
               "aria-label": `${metaLocale.value.category}${
-                pure.value ? "" : "🌈"
+                isPure.value ? "" : "🌈"
               }`,
-              ...(pure.value ? {} : { "data-balloon-pos": "up" }),
+              ...(isPure.value ? {} : { "data-balloon-pos": "up" }),
             },
             [
               h(CategoryIcon),
@@ -53,8 +53,8 @@ export default defineComponent({
                       "page-category-item",
                       {
                         // TODO: magic number 9 is tricky here
-                        [`category${generateIndexFromHash(name, 9)}`]:
-                          !pure.value,
+                        [`color${generateIndexFromHash(name, 9)}`]:
+                          !isPure.value,
                         clickable: path,
                       },
                     ],

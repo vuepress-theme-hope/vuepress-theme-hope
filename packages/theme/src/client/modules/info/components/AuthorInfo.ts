@@ -27,7 +27,7 @@ export default defineComponent({
 
   setup(props) {
     const metaLocale = useMetaLocale();
-    const pure = usePure();
+    const isPure = usePure();
 
     return (): VNode | null =>
       props.author.length
@@ -36,9 +36,9 @@ export default defineComponent({
             {
               class: "page-author-info",
               "aria-label": `${metaLocale.value.author}${
-                pure.value ? "" : "🖊"
+                isPure.value ? "" : "🖊"
               }`,
-              ...(pure.value ? {} : { "data-balloon-pos": "up" }),
+              ...(isPure.value ? {} : { "data-balloon-pos": "up" }),
             },
             [
               h(AuthorIcon),

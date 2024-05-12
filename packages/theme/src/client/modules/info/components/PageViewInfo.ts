@@ -28,7 +28,7 @@ export default defineComponent({
   setup(props) {
     const route = useRoute();
     const metaLocale = useMetaLocale();
-    const pure = usePure();
+    const isPure = usePure();
 
     const pageviewElement = shallowRef<HTMLElement>();
     const pageViews = ref(0);
@@ -50,9 +50,9 @@ export default defineComponent({
             {
               class: "page-pageview-info",
               "aria-label": `${metaLocale.value.views}${
-                pure.value ? "" : "🔢"
+                isPure.value ? "" : "🔢"
               }`,
-              ...(pure.value ? {} : { "data-balloon-pos": "up" }),
+              ...(isPure.value ? {} : { "data-balloon-pos": "up" }),
             },
             [
               h(pageViews.value < 1000 ? EyeIcon : FireIcon),

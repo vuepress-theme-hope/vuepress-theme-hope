@@ -68,7 +68,7 @@ export default defineComponent({
               ...(intro.value
                 ? {
                     style: { cursor: "pointer" },
-                    "aria-label": locale.value.intro,
+                    ariaLabel: locale.value.intro,
                     "data-balloon-pos": "down",
                     role: "link",
                     onClick: () => navigate(intro.value!),

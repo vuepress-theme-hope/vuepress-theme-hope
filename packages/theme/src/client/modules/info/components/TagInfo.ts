@@ -29,7 +29,7 @@ export default defineComponent({
   setup(props) {
     const metaLocale = useMetaLocale();
     const navigate = useNavigate();
-    const pure = usePure();
+    const isPure = usePure();
 
     return (): VNode | null =>
       props.tag.length
@@ -37,8 +37,8 @@ export default defineComponent({
             "span",
             {
               class: "page-tag-info",
-              "aria-label": `${metaLocale.value.tag}${pure.value ? "" : "🏷"}`,
-              ...(pure.value ? {} : { "data-balloon-pos": "up" }),
+              "aria-label": `${metaLocale.value.tag}${isPure.value ? "" : "🏷"}`,
+              ...(isPure.value ? {} : { "data-balloon-pos": "up" }),
             },
             [
               h(TagIcon),
@@ -51,7 +51,8 @@ export default defineComponent({
                       "page-tag-item",
                       {
                         // TODO: magic number 9 is tricky here
-                        [`tag${generateIndexFromHash(name, 9)}`]: !pure.value,
+                        [`color${generateIndexFromHash(name, 9)}`]:
+                          !isPure.value,
                         clickable: path,
                       },
                     ],

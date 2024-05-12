@@ -53,7 +53,7 @@ export default defineComponent({
         {
           type: "button",
           class: ["vp-nav-screen-menu-title", { active: open.value }],
-          "aria-label": ariaLabel.value,
+          ariaLabel: ariaLabel.value,
           onClick: () => {
             open.value = !open.value;
           },

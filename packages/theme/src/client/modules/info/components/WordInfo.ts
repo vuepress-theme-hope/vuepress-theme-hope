@@ -38,7 +38,7 @@ export default defineComponent({
 
   setup(props) {
     const metaLocale = useMetaLocale();
-    const pure = usePure();
+    const isPure = usePure();
 
     return (): VNode | null =>
       props.readingTimeLocale?.words
@@ -47,9 +47,9 @@ export default defineComponent({
             {
               class: "page-word-info",
               "aria-label": `${metaLocale.value.words}${
-                pure.value ? "" : "🔠"
+                isPure.value ? "" : "🔠"
               }`,
-              ...(pure.value ? {} : { "data-balloon-pos": "up" }),
+              ...(isPure.value ? {} : { "data-balloon-pos": "up" }),
             },
             [
               h(WordIcon),
