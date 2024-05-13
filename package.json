@@ -27,7 +27,7 @@
     "packages:check-update": "pnpm dlx npm-check-updates -u --deep --timeout 600000",
     "packages:update": "pnpm up -r",
     "prepare": "husky",
-    "release": "pnpm clean && pnpm build && pnpm release:bump && pnpm release:publish && pnpm release:sync",
+    "release": "pnpm clean && pnpm build && pnpm release:version && pnpm release:publish && pnpm release:sync",
     "release:publish": "lerna publish from-package --yes",
     "release:sync": "cross-env NODE_OPTIONS=\"--experimental-json-modules\" tsx scripts/sync.ts",
     "release:version": "lerna version",

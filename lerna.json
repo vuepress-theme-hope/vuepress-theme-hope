@@ -7,7 +7,7 @@
       "conventionalCommits": true,
       "exact": true,
       "message": "chore(release): publish v%v",
-      "changelogHeaderMessage": "# Changelog\n\nAll notable changes to this project will be documented in this file. See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.\n\n<!-- #region recent-change -->\n"
+      "changelogHeaderMessage": "\n<!-- #region recent-change -->\n"
     }
   },
   "changelogPreset": {
