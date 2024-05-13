@@ -34,7 +34,11 @@ export default defineComponent({
     const content = computed(() => {
       const { footer } = frontmatter.value;
 
-      return footer ?? themeLocale.value.footer;
+      return footer === false
+        ? false
+        : isString(footer)
+          ? footer
+          : themeLocale.value.footer ?? "";
     });
 
     const authorText = computed(() =>
