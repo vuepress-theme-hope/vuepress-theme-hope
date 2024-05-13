@@ -27,7 +27,9 @@ export default defineComponent({
         {
           default: () => slots.default(),
           navScreenBottom: () => h(BloggerInfo),
-          sidebar: isMobile.value ? () => h(InfoList) : null,
+          sidebar: isMobile.value
+            ? (): VNode | VNode[] | null => h(InfoList)
+            : null,
         },
       ),
     ];

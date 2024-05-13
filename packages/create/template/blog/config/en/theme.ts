@@ -1,7 +1,6 @@
 import { hopeTheme } from "vuepress-theme-hope";
 import navbar from "./navbar.js";
 import sidebar from "./sidebar.js";
-import { MR_HOPE_AVATAR } from "./logo.js";
 
 export default hopeTheme({
   hostname: "https://mister-hope.github.io",
@@ -70,7 +69,10 @@ export default hopeTheme({
       Whatsapp: "https://example.com",
       Youtube: "https://example.com",
       Zhihu: "https://example.com",
-      MrHope: ["https://mister-hope.com", MR_HOPE_AVATAR],
+      VuePressThemeHope: [
+        "https://theme-hope.vuejs.press",
+        "https://theme-hope-assets.vuejs.press/logo.svg",
+      ],
     },
   },
 

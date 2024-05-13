@@ -790,6 +790,12 @@ importers:
       '@types/inquirer':
         specifier: 9.0.7
         version: 9.0.7
+      vuepress:
+        specifier: 2.0.0-rc.9
+        version: 2.0.0-rc.9(@vuepress/bundler-vite@2.0.0-rc.9(@types/node@20.12.11)(sass@1.77.1)(terser@5.31.0)(tsx@4.10.1)(typescript@5.4.5))(@vuepress/bundler-webpack@2.0.0-rc.9(esbuild@0.21.2)(typescript@5.4.5))(typescript@5.4.5)(vue@3.4.27(typescript@5.4.5))
+      vuepress-theme-hope:
+        specifier: workspace:*
+        version: link:../theme
 
   packages/lightgallery:
     dependencies:

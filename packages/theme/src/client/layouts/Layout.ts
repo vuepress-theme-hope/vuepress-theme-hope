@@ -70,19 +70,23 @@ export default defineComponent({
                       NormalPage,
                       { key: page.value.path },
                       {
-                        top: slots.top ? () => slots.top!() : null,
-                        bottom: slots.bottom ? () => slots.bottom!() : null,
+                        top: slots.top
+                          ? (): VNode | VNode[] | null => slots.top!()
+                          : null,
+                        bottom: slots.bottom
+                          ? (): VNode | VNode[] | null => slots.bottom!()
+                          : null,
                         contentBefore: slots.contentBefore
-                          ? () => slots.contentBefore!()
+                          ? (): VNode | VNode[] | null => slots.contentBefore!()
                           : null,
                         contentAfter: slots.contentAfter
-                          ? () => slots.contentAfter!()
+                          ? (): VNode | VNode[] | null => slots.contentAfter!()
                           : null,
                         tocBefore: slots.tocBefore
-                          ? () => slots.tocBefore!()
+                          ? (): VNode | VNode[] | null => slots.tocBefore!()
                           : null,
                         tocAfter: slots.tocAfter
-                          ? () => slots.tocAfter!()
+                          ? (): VNode | VNode[] | null => slots.tocAfter!()
                           : null,
                       },
                     ),
@@ -90,12 +94,12 @@ export default defineComponent({
 
           navScreenBottom:
             sidebarDisplay.value === "none"
-              ? () => h(resolveComponent("BloggerInfo"))
+              ? (): VNode | VNode[] | null => h(resolveComponent("BloggerInfo"))
               : null,
 
           sidebar:
             !isMobile.value && sidebarDisplay.value === "always"
-              ? () => h(resolveComponent("BloggerInfo"))
+              ? (): VNode | VNode[] | null => h(resolveComponent("BloggerInfo"))
               : null,
         },
       ),

@@ -17,7 +17,6 @@ export default config(
       "docs-shared/lib/**",
       "packages/*/assets/**",
       "packages/*/lib/**",
-      "packages/create/template/**",
       "**/.vuepress/.cache/",
       "**/.vuepress/.temp/",
     ],
@@ -115,6 +114,14 @@ export default config(
           format: ["PascalCase"],
         },
       ],
+    },
+  },
+
+  {
+    files: ["packages/create/template/**/*.ts"],
+    rules: {
+      "@typescript-eslint/naming-convention": "off",
+      "@typescript-eslint/explicit-function-return-type": "off",
     },
   },
 

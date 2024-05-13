@@ -159,8 +159,12 @@ export default defineComponent({
           },
         },
         {
-          before: slots.screenTop ? () => slots.screenTop!() : null,
-          after: slots.screenBottom ? () => slots.screenBottom!() : null,
+          before: slots.screenTop
+            ? (): VNode | VNode[] | null => slots.screenTop!()
+            : null,
+          after: slots.screenBottom
+            ? (): VNode | VNode[] | null => slots.screenBottom!()
+            : null,
         },
       ),
     ];
