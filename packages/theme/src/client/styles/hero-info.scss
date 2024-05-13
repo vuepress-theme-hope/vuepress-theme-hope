@@ -236,7 +236,7 @@
     // stylelint-enable max-nesting-depth
   }
 
-  .vp-project-home:not(.pure) &:active {
+  .theme-container:not(.pure) &:active {
     transform: scale(0.96);
   }
 

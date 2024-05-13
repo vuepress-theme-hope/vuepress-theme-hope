@@ -164,9 +164,29 @@
 
   &.link {
     cursor: pointer;
+    transition: transform var(--transform-transition);
 
     @media print {
       text-decoration: none;
+    }
+
+    &:hover {
+      background-color: var(--bg-color-secondary);
+
+      .vp-feature-bg + .vp-feature & {
+        background-color: transparent;
+        backdrop-filter: blur(12px);
+      }
+
+      &::before {
+        content: "➜";
+        display: block;
+        float: right;
+      }
+    }
+
+    &:active {
+      transform: scale(0.96);
     }
   }
 
@@ -180,17 +200,6 @@
 
     font-weight: normal;
     font-size: 1.1em;
-  }
-
-  &:hover {
-    background-color: var(--bg-color-secondary);
-    box-shadow: 0 2px 12px 0 var(--card-shadow);
-    transform: translate(-2px, -2px);
-    transform: scale(1.05);
-
-    .vp-feature-bg + .vp-feature & {
-      background-color: transparent;
-    }
   }
 
   &:only-child {

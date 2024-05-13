@@ -65,8 +65,7 @@
   }
 
   &.no-navbar {
-    .vp-page,
-    .vp-project-home {
+    .vp-page {
       // clear space for navbar
       padding-top: 0;
     }

@@ -8,7 +8,6 @@ import HeroInfo from "@theme-hope/components/HeroInfo";
 import HighlightPanel from "@theme-hope/components/HighlightPanel";
 import MarkdownContent from "@theme-hope/components/MarkdownContent";
 import { DropTransition } from "@theme-hope/components/transitions/index";
-import { usePure } from "@theme-hope/composables/index";
 
 import type { ThemeProjectHomePageFrontmatter } from "../../shared/index.js";
 
@@ -25,7 +24,6 @@ export default defineComponent({
 
   setup(_props, { slots }) {
     const frontmatter = usePageFrontmatter<ThemeProjectHomePageFrontmatter>();
-    const isPure = usePure();
 
     const features = computed(() => {
       const { features } = frontmatter.value;
@@ -46,7 +44,7 @@ export default defineComponent({
         "main",
         {
           id: "main-content",
-          class: ["vp-project-home ", { pure: isPure.value }],
+          class: "vp-page vp-project-home",
           "aria-labelledby":
             frontmatter.value.heroText === null ? "" : "main-title",
         },

@@ -22,6 +22,7 @@ import { RenderDefault } from "vuepress-shared/client";
 
 import PageFooter from "@theme-hope/components/PageFooter";
 import {
+  usePure,
   useThemeLocaleData,
   useWindowSize,
 } from "@theme-hope/composables/index";
@@ -93,6 +94,7 @@ export default defineComponent({
     >();
     const themeLocale = useThemeLocaleData();
     const { isMobile, isPC } = useWindowSize();
+    const isPure = usePure();
 
     const [isMobileSidebarOpen, toggleMobileSidebar] = useToggle(false);
     const [isDesktopSidebarCollapsed, toggleDesktopSidebar] = useToggle(false);
@@ -210,19 +212,27 @@ export default defineComponent({
                 "theme-container",
                 // Classes
                 {
-                  "no-navbar": !enableNavbar.value,
-                  "no-sidebar":
-                    !enableSidebar.value &&
-                    !slots.sidebar &&
-                    !slots.sidebarTop &&
-                    !slots.sidebarBottom,
-                  "has-toc": enableToc.value,
+                  // navbar
                   "hide-navbar": hideNavbar.value,
+                  "no-navbar": !enableNavbar.value,
+
+                  // sidebar
                   "sidebar-collapsed":
                     !isMobile.value &&
                     !isPC.value &&
                     isDesktopSidebarCollapsed.value,
                   "sidebar-open": isMobile.value && isMobileSidebarOpen.value,
+                  "no-sidebar":
+                    !enableSidebar.value &&
+                    !slots.sidebar &&
+                    !slots.sidebarTop &&
+                    !slots.sidebarBottom,
+
+                  // pure
+                  pure: isPure.value,
+
+                  // toc
+                  "has-toc": enableToc.value,
                 },
                 props.containerClass,
                 frontmatter.value.containerClass ?? "",

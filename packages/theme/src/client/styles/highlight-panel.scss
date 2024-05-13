@@ -145,22 +145,32 @@
 }
 
 .vp-highlight-item-wrapper {
+  position: relative;
   padding: 0.5em 0.5em 0.5em 1.75em;
   border-radius: 0.5rem;
   list-style: none;
 
   &.link {
     cursor: pointer;
-  }
-
-  &:hover {
-    background-color: var(--bg-color-secondary);
-    box-shadow: 0 2px 12px 0 var(--card-shadow);
     transition: transform var(--transform-transition);
-    transform: translate(-2px, -2px);
 
-    .vp-highlight-bg + .vp-highlight & {
-      background-color: transparent;
+    &:hover {
+      background-color: var(--bg-color-secondary);
+
+      .vp-highlight-bg + .vp-highlight & {
+        background-color: transparent;
+        backdrop-filter: blur(12px);
+      }
+
+      &::before {
+        content: "➜";
+        display: block;
+        float: right;
+      }
+    }
+
+    &:active {
+      transform: scale(0.96);
     }
   }
 
