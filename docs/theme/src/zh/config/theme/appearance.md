@@ -60,6 +60,13 @@ tag:
 
 :::
 
+## externalLinkIcon <Badge text="enabled by default" />
+
+- 类型: `boolean`
+- 默认值: `true`
+
+控制是否在外部链接上显示图标。
+
 ## fullscreen
 
 - 类型: `boolean`

@@ -12,6 +12,13 @@
 
     transition: transform var(--vp-tt);
 
+    > a[href*="://"],
+    > a[target=_blank] {
+      &::after {
+        display: none !important;
+      }
+    }
+
     img {
       overflow: hidden;
       margin: 0 auto;
@@ -24,28 +31,6 @@
         &:focus {
           box-shadow: 2px 2px 10px 0 var(--card-shadow);
         }
-      }
-    }
-
-    // stylelint-disable-next-line selector-max-compound-selectors
-    > a {
-      // add links after anchor
-      // stylelint-disable-next-line selector-max-compound-selectors
-      &[href^="http://"],
-      &[href^="https://"]
-      {
-        // stylelint-disable-next-line
-        &::after {
-          // stylelint-disable-next-line selector-max-compound-selectors
-          @media print {
-            content: "";
-          }
-        }
-      }
-
-      // stylelint-disable-next-line selector-max-compound-selectors
-      .external-link-icon {
-        display: none;
       }
     }
 

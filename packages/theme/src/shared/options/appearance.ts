@@ -84,6 +84,15 @@ export interface AppearanceOptions {
   darkmode?: DarkmodeOptions;
 
   /**
+   * Whether show external link icon
+   *
+   * 是否显示外部链接图标
+   *
+   * @default true
+   */
+  externalLinkIcon?: boolean;
+
+  /**
    * Whether enable theme color picker
    *
    * 是否启用主题色选择器

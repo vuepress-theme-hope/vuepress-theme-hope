@@ -4,14 +4,22 @@ import {
   keys,
   startsWith,
 } from "@vuepress/helper/client";
-import { ExternalLinkIcon } from "@vuepress/plugin-external-link-icon/client";
 import type { PropType, SlotsType, VNode } from "vue";
 import { computed, defineComponent, h, toRef } from "vue";
-import { RouteLink, useRoute, useSiteData } from "vuepress/client";
+import {
+  RouteLink,
+  usePageFrontmatter,
+  useRoute,
+  useSiteData,
+} from "vuepress/client";
 
 import HopeIcon from "@theme-hope/components/HopeIcon";
+import { useThemeData } from "@theme-hope/composables/index";
 
-import type { AutoLinkOptions } from "../../shared/index.js";
+import type {
+  AutoLinkOptions,
+  ThemeNormalPageFrontmatter,
+} from "../../shared/index.js";
 
 export default defineComponent({
   name: "AutoLink",
@@ -31,7 +39,7 @@ export default defineComponent({
     exact: Boolean,
 
     /**
-     * @description Whether to hide externalLinkIcon
+     * @description Whether to hide external link icon
      */
     noExternalLinkIcon: Boolean,
   },
@@ -45,6 +53,9 @@ export default defineComponent({
   }>,
 
   setup(props, { emit, slots }) {
+    const frontmatter = usePageFrontmatter<ThemeNormalPageFrontmatter>();
+    const themeData = useThemeData();
+
     const route = useRoute();
     const siteData = useSiteData();
 
@@ -108,6 +119,15 @@ export default defineComponent({
         : false,
     );
 
+    // external-link-icon
+    const enableExternalLinkIcon = computed(
+      () =>
+        props.noExternalLinkIcon === false &&
+        (frontmatter.value.externalLinkIcon ??
+          themeData.value.externalLinkIcon ??
+          true),
+    );
+
     return (): VNode => {
       const { before, after, default: defaultSlot } = slots;
       const { text, icon, link } = config.value;
@@ -132,7 +152,10 @@ export default defineComponent({
         : h(
             "a",
             {
-              class: "vp-link",
+              class: [
+                "vp-link",
+                { "vp-external-link-icon": enableExternalLinkIcon },
+              ],
               href: link,
               rel: linkRel.value,
               target: linkTarget.value,
@@ -141,12 +164,7 @@ export default defineComponent({
             },
             defaultSlot
               ? defaultSlot()
-              : [
-                  before ? before() : h(HopeIcon, { icon }),
-                  text,
-                  props.noExternalLinkIcon ? null : h(ExternalLinkIcon),
-                  after?.(),
-                ],
+              : [before ? before() : h(HopeIcon, { icon }), text, after?.()],
           );
     };
   },

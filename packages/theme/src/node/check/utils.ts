@@ -6,7 +6,6 @@ export const PLUGIN_CHECKLIST = [
   ["@vuepress/plugin-copy-code", "copyCode"],
   ["@vuepress/plugin-copyright", "copyright"],
   ["@vuepress/plugin-docsearch", "docsearch"],
-  ["@vuepress/plugin-external-link-icon", "externalLinkIcon"],
   ["@vuepress/plugin-feed", "feed"],
   ["@vuepress/plugin-git", "git"],
   ["@vuepress/plugin-links-check", "linksCheck"],

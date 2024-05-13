@@ -5,6 +5,8 @@ export interface ThemePageFrontmatter extends BasePageFrontMatter {
    * Whether is home page
    *
    * 是否是主页
+   *
+   * @default false
    */
 
   home?: boolean;
@@ -13,6 +15,8 @@ export interface ThemePageFrontmatter extends BasePageFrontMatter {
    * Whether enable navbar
    *
    * 是否启用导航栏
+   *
+   * @default true
    */
   navbar?: boolean;
 
@@ -29,4 +33,13 @@ export interface ThemePageFrontmatter extends BasePageFrontMatter {
    * 页面容器的额外类名
    */
   containerClass?: string;
+
+  /**
+   * Whether show external link icon
+   *
+   * 是否启用外部链接图标
+   *
+   * @default true
+   */
+  externalLinkIcon?: boolean;
 }

@@ -135,19 +135,6 @@ export interface PluginsOptions {
   docsearch?: DocsearchPluginOptions;
 
   /**
-   * Enable @vuepress/external-link-icon or not
-   *
-   * @see https://ecosystem.vuejs.press/plugins/external-link-icon.html
-   *
-   * 是否启用 @vuepress/external-link-icon 插件
-   *
-   * @see https://ecosystem.vuejs.press/zh/plugins/external-link-icon.html
-   *
-   * @default true
-   */
-  externalLinkIcon?: boolean;
-
-  /**
    * Feed plugin options
    *
    * @see https://ecosystem.vuejs.press/plugins/feed/config.html

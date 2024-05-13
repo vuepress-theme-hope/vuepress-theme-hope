@@ -59,10 +59,6 @@ No extra config is required by default. Se it to `false` if you don't need it.
 
 Check [copy-code plugin docs][copy-code-config] for available plugin options.
 
-## externalLinkIcon <Badge text="enabled by default" />
-
-Controls whether enable `@vuepress/external-link-icon` or not, only accept boolean value.
-
 ## git <Badge text="enabled in production" />
 
 Controls `@vuepress/plugin-git` which provides page meta via Git.

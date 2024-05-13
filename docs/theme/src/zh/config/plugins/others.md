@@ -57,10 +57,6 @@ tag:
 
 插件选项请参阅 [copy-code 插件文档][copy-code-config]。
 
-## externalLinkIcon <Badge text="enabled by default" />
-
-控制是否启用 `@vuepress/external-link-icon`，仅接受布尔值。
-
 ## git <Badge text="默认仅限构建模式" />
 
 控制 `@vuepress/plugin-git`，通过 Git 提交历史提供文件信息。

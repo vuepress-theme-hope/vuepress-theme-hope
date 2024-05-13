@@ -1,4 +1,3 @@
-import { externalLinkIconPlugin } from "@vuepress/plugin-external-link-icon";
 import { nprogressPlugin } from "@vuepress/plugin-nprogress";
 import { themeDataPlugin } from "@vuepress/plugin-theme-data";
 import type { App, PluginConfig } from "vuepress/core";
@@ -53,7 +52,6 @@ export const getPlugins = (
     getActiveHeaderLinksPlugin(pluginsOptions.activeHeaderLinks),
     getCatalogPlugin(pluginsOptions.catalog),
     getBackToTop(pluginsOptions.backToTop),
-    pluginsOptions.externalLinkIcon === false ? null : externalLinkIconPlugin(),
     pluginsOptions.nprogress === false ? null : nprogressPlugin(),
     themeDataPlugin({ themeData }),
     getBlogPlugin(themeData, pluginsOptions.blog, options.hotReload),

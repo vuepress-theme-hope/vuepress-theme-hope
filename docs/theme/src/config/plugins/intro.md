@@ -52,8 +52,6 @@ The following plugins are enabled by default, and you can disable them:
 
 - [@vuepress/plugin-copy-code][copy-code]: Provides copy button for code blocks.
 
-- [@vuepress/plugin-external-link-icon][external-link-icon]: Add external link icon for external links in Markdown.
-
 - [@vuepress/plugin-git][git]: Git-based info plugin
 
 - [@vuepress/plugin-nprogress][nprogress]: progress bar
@@ -105,7 +103,6 @@ These plugins are supported by theme, but you need to install them manually whil
 [comment]: https://ecosystem.vuejs.press/plugins/comment/
 [copyright]: https://ecosystem.vuejs.press/plugins/copyright.html
 [docsearch]: https://ecosystem.vuejs.press/plugins/docsearch.html
-[external-link-icon]: https://ecosystem.vuejs.press/plugins/external-link-icon.html
 [feed]: https://ecosystem.vuejs.press/plugins/feed/
 [git]: https://ecosystem.vuejs.press/plugins/git.html
 [nprogress]: https://ecosystem.vuejs.press/plugins/nprogress.html

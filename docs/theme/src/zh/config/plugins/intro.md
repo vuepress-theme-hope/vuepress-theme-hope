@@ -48,8 +48,6 @@ tag:
 
 - [@vuepress/plugin-active-header-links][active-header-links]: 自动更新路由 Hash
 
-- [@vuepress/external-link-icon][external-link-icon]: 为 Markdown 的外部链接添加外部链接图标。
-
 - [@vuepress/plugin-catalog][catalog]: 提供目录页自动生成与 `<Catalog />` 组件
 
 - [@vuepress/plugin-copy-code][copy-code]: 为代码块提供复制按钮。
@@ -107,7 +105,6 @@ tag:
 [copy-code]: https://ecosystem.vuejs.press/zh/plugins/copy-code.html
 [copyright]: https://ecosystem.vuejs.press/zh/plugins/copyright.html
 [docsearch]: https://ecosystem.vuejs.press/zh/plugins/docsearch.html
-[external-link-icon]: https://ecosystem.vuejs.press/zh/plugins/external-link-icon.html
 [feed]: https://ecosystem.vuejs.press/zh/plugins/feed/
 [git]: https://ecosystem.vuejs.press/zh/plugins/git.html
 [nprogress]: https://ecosystem.vuejs.press/zh/plugins/nprogress.html

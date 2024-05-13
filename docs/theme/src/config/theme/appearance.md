@@ -60,6 +60,13 @@ If you don't need this feature, set `darkmode: "disable"` to disable it.
 
 :::
 
+## externalLinkIcon <Badge text="enabled by default" />
+
+- Type: `boolean`
+- Default: `true`
+
+Controls whether an icon is displayed on external links.
+
 ## fullscreen <Badge text="Root only" type="warning" />
 
 - Type: `boolean`

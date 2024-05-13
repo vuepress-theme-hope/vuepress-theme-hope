@@ -23,6 +23,7 @@ import { RenderDefault } from "vuepress-shared/client";
 import PageFooter from "@theme-hope/components/PageFooter";
 import {
   usePure,
+  useThemeData,
   useThemeLocaleData,
   useWindowSize,
 } from "@theme-hope/composables/index";
@@ -92,6 +93,7 @@ export default defineComponent({
     const frontmatter = usePageFrontmatter<
       ThemeProjectHomePageFrontmatter | ThemeNormalPageFrontmatter
     >();
+    const themeData = useThemeData();
     const themeLocale = useThemeLocaleData();
     const { isMobile, isPC } = useWindowSize();
     const isPure = usePure();
@@ -129,6 +131,14 @@ export default defineComponent({
         !frontmatter.value.home
       );
     });
+
+    // external-link-icon
+    const enableExternalLinkIcon = computed(
+      () =>
+        frontmatter.value.externalLinkIcon ??
+        themeData.value.externalLinkIcon ??
+        true,
+    );
 
     const enableToc = computed(
       () =>
@@ -227,6 +237,9 @@ export default defineComponent({
                     !slots.sidebar &&
                     !slots.sidebarTop &&
                     !slots.sidebarBottom,
+
+                  // external-link-icon
+                  "external-link-icon": enableExternalLinkIcon.value,
 
                   // pure
                   pure: isPure.value,

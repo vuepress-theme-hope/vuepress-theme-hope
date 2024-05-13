@@ -236,13 +236,8 @@ pre {
     font-size: inherit !important;
     text-decoration: underline;
 
-    // add links after anchor
-    &[href^="http://"],
-    &[href^="https://"]
-    {
-      &::after {
-        content: " (" attr(href) ") ";
-      }
+    &.header-anchor {
+      text-decoration: none;
     }
   }
 

@@ -1,0 +1,38 @@
+@use "@sass-palette/hope-config";
+
+.vp-external-link-icon::after {
+  content: "";
+
+  display: inline-block;
+  flex-shrink: 0;
+
+  width: 11px;
+  height: 11px;
+  margin-top: -1px;
+  margin-left: 4px;
+
+  background: var(--external-link-icon-color);
+
+  mask-image: var(--external-link-icon);
+}
+
+.external-link-icon #{hope-config.$content-class} {
+  a[href*="://"],
+  a[target=_blank] {
+    &:not(.no-external-link-icon)::after {
+      content: "";
+
+      display: inline-block;
+      flex-shrink: 0;
+
+      width: 11px;
+      height: 11px;
+      margin-top: -1px;
+      margin-left: 4px;
+
+      background: var(--external-link-icon-color);
+
+      mask-image: var(--external-link-icon);
+    }
+  }
+}
