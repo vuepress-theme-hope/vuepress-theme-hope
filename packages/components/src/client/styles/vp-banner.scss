@@ -63,6 +63,8 @@
     line-height: 3;
     text-decoration: none !important;
 
+    transition: transform var(--vp-tt);
+
     @media (max-width: hope-config.$tablet) {
       height: 2.5rem;
       line-height: 2.5;
@@ -70,6 +72,10 @@
 
     &:hover {
       background-color: var(--c-border);
+    }
+
+    &:active {
+      transform: scale(0.96);
     }
 
     &.primary {
