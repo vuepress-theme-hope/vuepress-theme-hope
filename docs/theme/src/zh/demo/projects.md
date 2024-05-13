@@ -269,13 +269,13 @@ docs:
     repo: https://github.com/CoderMast/CoderMast-Notes
     preview: /assets/image/codermast-notes.png
 
-portfolio:
+portfolios:
   - name: 尚程
     url: https://cheng-shang.me/zh/
     preview: https://cheng-shang.me/portfolio.avif
     repo: https://github.com/Mister-Hope/cheng-shang-portfolio
 
-blog:
+blogs:
   - name: Mr.Hope's Blog
     desc: Where there is light, there is hope
     logo: https://mister-hope.com/logo.svg
@@ -482,7 +482,7 @@ blog:
 ## 使用 VuePress Theme Hope 的档案
 
 <SiteInfo
-  v-for="item in $frontmatter.portfolio"
+  v-for="item in $frontmatter.portfolios"
   :key="item.link"
   v-bind="item"
 />
@@ -490,7 +490,7 @@ blog:
 ## 使用 VuePress Theme Hope 的博客
 
 <SiteInfo
-  v-for="item in $frontmatter.blog"
+  v-for="item in $frontmatter.blogs"
   :key="item.link"
   v-bind="item"
 />
