@@ -1,7 +1,7 @@
 ---
 home: true
 layout: CustomBlogHome
-icon: home
+icon: blog
 title: 自定义博客主页
 heroImage: https://theme-hope-assets.vuejs.press/logo.svg
 heroText: 你博客的名称

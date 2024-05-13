@@ -1,17 +1,15 @@
-.theme-container {
-  .vp-page.vp-blog {
-    display: flex;
-    flex-direction: column;
-    justify-content: space-between;
+.vp-page.vp-blog {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
 
-    box-sizing: border-box;
+  box-sizing: border-box;
 
-    padding-bottom: 2rem;
+  padding-bottom: 2rem;
 
-    background: var(--bg-color-back);
-  }
+  background: var(--bg-color-back);
 
-  &.has-toc .vp-page.vp-blog {
+  .theme-container.has-toc & {
     @media (min-width: hope-config.$pc) {
       // fix toc padding
       padding-inline-end: 0;

@@ -221,7 +221,11 @@ export default defineComponent({
                   ),
                 ),
                 h(DropTransition, { appear: true, delay: 0.12 }, () =>
-                  h("h1", { class: "vp-portfolio-name" }, info.value.name),
+                  h(
+                    "h1",
+                    { class: "vp-portfolio-name", id: "main-title" },
+                    info.value.name,
+                  ),
                 ),
                 h(DropTransition, { appear: true, delay: 0.16 }, () =>
                   h("h2", { class: "vp-portfolio-title" }, title.value),

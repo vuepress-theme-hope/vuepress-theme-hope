@@ -12,7 +12,6 @@ titles:
   - 小兰的青梅竹马
   - 黑衣组织的最大对手
 
-content: true
 footer: false
 ---
 

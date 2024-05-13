@@ -18,8 +18,9 @@ export interface PortfolioHomeFrontmatter extends ThemePageFrontmatter {
     icon: string;
     url: string;
   }[];
+
   /**
-   * @default false
+   * @default 'portfolio'
    */
-  content?: boolean;
+  content?: "doc" | "portfolio" | "none";
 }

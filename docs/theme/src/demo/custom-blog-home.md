@@ -1,7 +1,7 @@
 ---
 home: true
 layout: CustomBlogHome
-icon: home
+icon: blog
 title: Customized Blog Home
 heroImage: https://theme-hope-assets.vuejs.press/logo.svg
 heroText: The name of your blog

@@ -2,7 +2,7 @@
 home: true
 portfolio: true
 title: Portfolio Home
-icon: home
+icon: user-tag
 name: Conan Edogawa
 avatar: https://theme-hope-assets.vuejs.press/hero/conan.png
 
@@ -11,7 +11,6 @@ titles:
   - Lan’s childhood sweetheart
   - The biggest rival of the black organization
 
-content: true
 footer: false
 ---
 
