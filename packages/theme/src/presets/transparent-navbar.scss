@@ -9,6 +9,10 @@
     background-color: transparent;
     box-shadow: none;
     backdrop-filter: none;
+
+    &:has(.vp-toggle-navbar-button.is-active) {
+      background-color: var(--navbar-bg-color);
+    }
   }
 
   .vp-dropdown-wrapper .vp-dropdown {
