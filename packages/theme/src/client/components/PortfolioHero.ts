@@ -16,7 +16,7 @@ import HopeIcon from "@theme-hope/components/HopeIcon";
 import { DropTransition } from "@theme-hope/components/transitions/index";
 import { useAuthorInfo } from "@theme-hope/composables/index";
 
-import type { PortfolioHomeFrontmatter } from "../../shared/index.js";
+import type { ThemePortfolioFrontmatter } from "../../shared/index.js";
 
 import "../styles/portfolio-hero.scss";
 
@@ -52,7 +52,7 @@ export default defineComponent({
 
   setup(_props, { slots }) {
     const authorInfo = useAuthorInfo();
-    const frontmatter = usePageFrontmatter<PortfolioHomeFrontmatter>();
+    const frontmatter = usePageFrontmatter<ThemePortfolioFrontmatter>();
 
     const index = ref(0);
     const currentTitle = computed(
@@ -149,7 +149,7 @@ export default defineComponent({
         "section",
         {
           id: "portfolio",
-          class: ["vp-portfolio-wrapper", { bg: bg.value.image }],
+          class: ["vp-portfolio", { bg: bg.value.image }],
         },
         [
           slots.bg?.(bg.value) ?? [

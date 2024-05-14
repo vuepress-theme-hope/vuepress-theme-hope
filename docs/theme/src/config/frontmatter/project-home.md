@@ -1,20 +1,17 @@
 ---
-title: Home Frontmatter Config
+title: Project Home Frontmatter Config
 icon: home
 order: 4
 category:
   - Config
 tag:
   - Frontmatter
-  - Home
+  - Project Home
 ---
 
 ## home
 
-- Type: `boolean`
-- Default: `false`
-
-Enable homepage style when setting to `true`
+Must be `true` to use project home layout.
 
 ## title
 

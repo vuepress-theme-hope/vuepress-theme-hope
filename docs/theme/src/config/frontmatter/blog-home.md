@@ -1,7 +1,7 @@
 ---
 title: Blog Home Frontmatter Config
 icon: blog
-order: 5
+order: 6
 category:
   - Config
 tag:
@@ -11,10 +11,11 @@ tag:
 
 ## home
 
-- Type: `boolean`
-- Default: `false`
+Must be `true` to use blog home layout.
 
-Enable homepage style when setting to `true`
+## layout
+
+Must be `BlogHome` to use blog home layout.
 
 ## title
 

@@ -1,20 +1,17 @@
 ---
-title: 主页 Frontmatter 配置
+title: 项目主页 Frontmatter 配置
 icon: home
 order: 4
 category:
   - 配置
 tag:
   - Frontmatter
-  - 主页
+  - 项目主页
 ---
 
 ## home
 
-- 类型: `boolean`
-- 默认值: `false`
-
-设置为 `true` 时启用首页样式
+必须设置为 `true` 以使用项目首页。
 
 ## title
 

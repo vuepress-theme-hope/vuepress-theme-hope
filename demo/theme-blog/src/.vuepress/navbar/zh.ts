@@ -4,7 +4,6 @@ import { version } from "../version.js";
 
 export const zhNavbar = navbar([
   "/zh/",
-  "/zh/portfolio",
   "/zh/demo/",
   {
     text: "博文",

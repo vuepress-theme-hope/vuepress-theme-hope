@@ -1,7 +1,7 @@
 ---
 title: 博客主页 Frontmatter 配置
 icon: blog
-order: 5
+order: 6
 category:
   - 配置
 tag:
@@ -11,10 +11,11 @@ tag:
 
 ## home
 
-- 类型: `boolean`
-- 默认值: `false`
+必须设置为 `true` 以使用博客主页布局。
 
-设置为 `true` 时启用首页样式
+## layout
+
+必须设置为 `BlogHome` 以使用博客主页布局。
 
 ## hero
 

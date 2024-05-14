@@ -5,13 +5,15 @@ import MarkdownContent from "@theme-hope/components/MarkdownContent";
 import { DropTransition } from "@theme-hope/components/transitions/DropTransition";
 import PortfolioHero from "@theme-hope/components/PortfolioHero";
 import { usePageFrontmatter } from "vuepress/client";
-import type { PortfolioHomeFrontmatter } from "../../shared/index.js";
+import type { ThemePortfolioFrontmatter } from "../../shared/index.js";
+
+import "../styles/portfolio-home.scss";
 
 export default defineComponent({
   name: "PortfolioHome",
 
   setup() {
-    const frontmatter = usePageFrontmatter<PortfolioHomeFrontmatter>();
+    const frontmatter = usePageFrontmatter<ThemePortfolioFrontmatter>();
 
     const content = computed(() => frontmatter.value.content ?? "portfolio");
 
@@ -20,10 +22,7 @@ export default defineComponent({
         "main",
         {
           id: "main-content",
-          class: [
-            "vp-page vp-portfolio-home",
-            { custom: content.value === "portfolio" },
-          ],
+          class: "vp-page vp-portfolio-home",
           "aria-labelledby": "main-title",
         },
         [
@@ -34,7 +33,11 @@ export default defineComponent({
                 "div",
                 {},
                 h(DropTransition, { appear: true, delay: 0.24 }, () =>
-                  h(MarkdownContent),
+                  h(MarkdownContent, {
+                    class: {
+                      "vp-portfolio-content": content.value === "portfolio",
+                    },
+                  }),
                 ),
               ),
         ],

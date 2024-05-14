@@ -15,6 +15,8 @@ titles:
 footer: false
 ---
 
+## 介绍
+
 这是一个档案主页的案例。
 
 要使用此布局，你应该在页面 Frontmatter 中设置 `home: true` 和 `portfolio: true`。

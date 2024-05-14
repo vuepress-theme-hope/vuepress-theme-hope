@@ -4,6 +4,7 @@ import { version } from "../version.js";
 
 export const enNavbar = navbar([
   "/",
+  "/portfolio",
   "/demo/",
   {
     text: "Guide",

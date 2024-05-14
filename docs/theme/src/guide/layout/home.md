@@ -73,7 +73,7 @@ Highlights also support the following properties:
 
 ::: info
 
-For complete configuration items, see [Home Frontmatter Configuration](../../config/frontmatter/home.md).
+For complete configuration items, see [Home Frontmatter Configuration](../../config/frontmatter/project-home.md).
 
 :::
 

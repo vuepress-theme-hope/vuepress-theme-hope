@@ -21,7 +21,7 @@ tag:
 
 同时你可以在 frontmatter 中设置 `medias` 设置一些媒体，你需要为每个媒体设置 `name`、`icon` 和 `url`。当博客功能启用时，会默认渲染在 `blog.medias` 中设置的媒体链接，
 
-Markdown 中的内容默认会被隐藏，你可以通过 `content` 选项来显示。
+默认情况下，我们会对档案页面的内容应用特殊样式，您可以在 frontmatter 中设置 `content: doc` 来恢复原始样式，或者设置 `content: none` 来隐藏 Markdown 内容。
 
 ::: info 即时案例
 

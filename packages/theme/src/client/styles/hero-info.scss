@@ -108,44 +108,44 @@
       }
     }
   }
-}
 
-#main-title {
-  margin: 0.5rem 0;
+  &-title {
+    margin: 0.5rem 0;
 
-  background: linear-gradient(
-    120deg,
-    var(--theme-color-light),
-    var(--theme-color) 30%,
-    color.adjust(hope-config.$theme-color, $hue: 60deg) 100%
-  );
-  -webkit-background-clip: text;
-  background-clip: text;
+    background: linear-gradient(
+      120deg,
+      var(--theme-color-light),
+      var(--theme-color) 30%,
+      color.adjust(hope-config.$theme-color, $hue: 60deg) 100%
+    );
+    -webkit-background-clip: text;
+    background-clip: text;
 
-  font-weight: bold;
-  font-size: 3.6rem;
-  font-family: var(--font-family);
-  line-height: 1.5;
+    font-weight: bold;
+    font-size: 3.6rem;
+    font-family: var(--font-family);
+    line-height: 1.5;
 
-  -webkit-text-fill-color: transparent;
+    -webkit-text-fill-color: transparent;
 
-  @media (max-width: hope-config.$tablet) {
-    margin: 0;
-  }
+    @media (max-width: hope-config.$tablet) {
+      margin: 0;
+    }
 
-  @media (max-width: hope-config.$pad) {
-    font-size: 2.5rem;
-    text-align: center;
-  }
+    @media (max-width: hope-config.$pad) {
+      font-size: 2.5rem;
+      text-align: center;
+    }
 
-  @media (max-width: hope-config.$tablet) {
-    font-size: 2.25rem;
-    text-align: center;
-  }
+    @media (max-width: hope-config.$tablet) {
+      font-size: 2.25rem;
+      text-align: center;
+    }
 
-  @media (max-width: hope-config.$mobile) {
-    margin: 0 auto;
-    font-size: 2rem;
+    @media (max-width: hope-config.$mobile) {
+      margin: 0 auto;
+      font-size: 2rem;
+    }
   }
 }
 

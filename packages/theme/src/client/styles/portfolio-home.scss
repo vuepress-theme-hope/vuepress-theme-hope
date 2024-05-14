@@ -1,0 +1,98 @@
+@use "sass:color";
+@use "@sass-palette/hope-config";
+@use "@sass-palette/helper";
+
+#{hope-config.$content-class}.vp-portfolio-content {
+  --content-width: min(84%, 1200px);
+
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+
+  @media (min-width: hope-config.$laptop) {
+    font-size: 18px;
+  }
+
+  @media (max-width: hope-config.$mobile) {
+    font-size: 14px;
+  }
+
+  > {
+    h2,
+    h3,
+    h4,
+    h5,
+    h6 {
+      margin-bottom: 1rem;
+      border-bottom: none;
+      text-align: center;
+    }
+
+    h2 {
+      font-size: 2.5rem;
+
+      @media (max-width: hope-config.$mobile) {
+        font-size: 2rem;
+      }
+    }
+
+    h3 {
+      font-size: 2rem;
+
+      @media (max-width: hope-config.$mobile) {
+        font-size: 1.75rem;
+      }
+    }
+
+    p {
+      align-self: stretch;
+    }
+  }
+
+  .header-anchor > span {
+    --underline: #{color.change(
+        helper.get-dark-color(hope-config.$theme-color),
+        $alpha: 0.4
+      )};
+
+    background: linear-gradient(var(--underline), var(--underline)) no-repeat;
+    background-position: -0.1em calc(100% - 0.05em);
+    background-size: calc(100% + 0.1em) 0.2em;
+    text-shadow:
+      0.05em 0 var(--bg-color),
+      -0.05em 0 var(--bg-color);
+
+    #{hope-config.$dark-selector} & {
+      --underline: #{color.change(
+          helper.get-dark-color(hope-config.$theme-color),
+          $alpha: 0.4
+        )};
+    }
+
+    &::before,
+    &::after {
+      content: "";
+
+      position: relative;
+      bottom: 0.05em;
+
+      display: inline-block;
+      vertical-align: text-bottom;
+
+      width: 0.1em;
+      height: 0.2em;
+
+      background-color: var(--underline);
+    }
+
+    &::before {
+      left: -0.1em;
+      border-radius: 0.2em 0 0 0.2em;
+    }
+
+    &::after {
+      right: -0.1em;
+      border-radius: 0 0.2em 0.2em 0;
+    }
+  }
+}

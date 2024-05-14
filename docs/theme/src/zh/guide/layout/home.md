@@ -69,7 +69,7 @@ tag:
 
 ::: info
 
-关于完整的配置项目，请参见 [主页 Frontmatter 配置](../../config/frontmatter/home.md)。
+关于完整的配置项目，请参见 [主页 Frontmatter 配置](../../config/frontmatter/project-home.md)。
 
 :::
 

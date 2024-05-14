@@ -146,7 +146,11 @@ export default defineComponent({
               h("div", { class: "vp-hero-infos" }, [
                 info.value.text
                   ? h(DropTransition, { appear: true, delay: 0.04 }, () =>
-                      h("h1", { id: "main-title" }, info.value.text),
+                      h(
+                        "h1",
+                        { id: "main-title", class: "vp-hero-title" },
+                        info.value.text,
+                      ),
                     )
                   : null,
                 info.value.tagline

@@ -21,7 +21,7 @@ To describe yourself, set `titles` in frontmatter with titles that fits you. You
 
 You can set social medias using `medias` in frontmatter with `name` `icon` and `url` for each media. When blog feature is enabled, media links set in `blog.medias` are displayed by default.
 
-Contents from markdown are hided by default, you can set `content` to `true` to show them.
+By default, we will apply special styles to contents in portfolio page, you may set `content: doc` in frontmatter to revert to original style, or set `content: none` to hide markdown contents.
 
 ::: info Living Demo
 
