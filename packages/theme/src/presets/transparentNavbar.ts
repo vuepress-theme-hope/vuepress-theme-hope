@@ -17,7 +17,7 @@ const BLOG_HOMEPAGE_STYLE = `\
 const HOMEPAGE_STYLE =
   BLOG_HOMEPAGE_STYLE +
   `\
-.vp-project-home {
+.theme-container .vp-project-home {
   padding-top: 0;
 }
 
