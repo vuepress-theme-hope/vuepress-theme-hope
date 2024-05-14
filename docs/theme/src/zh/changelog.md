@@ -3,10 +3,6 @@ title: 变更日志
 icon: clock
 ---
 
-以下是 VuePress Theme Hope 的变更日志。
-
-<!-- more -->
-
 <!-- @include: ../../../../packages/theme/CHANGELOG.md#recent-change -->
 
 ## 更多

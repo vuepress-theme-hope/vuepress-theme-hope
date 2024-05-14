@@ -3,10 +3,6 @@ title: Changelog
 icon: clock
 ---
 
-This file contains notable changes of VuePress Theme Hope.
-
-<!-- more -->
-
 <!-- @include: ../../../packages/theme/CHANGELOG.md#recent-change -->
 
 ## More
