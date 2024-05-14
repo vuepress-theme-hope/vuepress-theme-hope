@@ -9,8 +9,6 @@ import cssVariables from "../../../styles/variables.module.scss?module";
 
 import "../styles/category-list.scss";
 
-console.log(cssVariables);
-
 export default defineComponent({
   name: "CategoryList",
 
