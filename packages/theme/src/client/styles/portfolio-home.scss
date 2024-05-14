@@ -1,8 +1,7 @@
 @use "sass:color";
-@use "@sass-palette/hope-config";
 @use "@sass-palette/helper";
 
-#{hope-config.$content-class}.vp-portfolio-content {
+.theme-hope-content.vp-portfolio-content {
   --content-width: min(84%, 1200px);
 
   display: flex;

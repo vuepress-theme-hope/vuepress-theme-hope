@@ -1,5 +1,3 @@
-@use "@sass-palette/hope-config";
-
 .vp-external-link-icon::after {
   content: "";
 
@@ -16,7 +14,7 @@
   mask-image: var(--external-link-icon);
 }
 
-.external-link-icon #{hope-config.$content-class} {
+.external-link-icon .theme-hope-content {
   a[href*="://"],
   a[target=_blank] {
     &:not(.no-external-link-icon)::after {
