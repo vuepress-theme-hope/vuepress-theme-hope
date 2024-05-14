@@ -1,6 +1,6 @@
 ---
 title: 剧透
-icon: highlighter
+icon: eraser
 category:
   - Markdown
 tag:
