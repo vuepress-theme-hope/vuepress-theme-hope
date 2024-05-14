@@ -17,6 +17,7 @@ import {
 
 import type { ThemePageFrontmatter } from "../../shared/index.js";
 import { RenderDefault } from "vuepress-shared/client";
+import { hasGlobalComponent } from "@vuepress/helper/client";
 
 declare const __VP_BLOG__: boolean;
 
@@ -93,12 +94,14 @@ export default defineComponent({
                   )),
 
           navScreenBottom:
-            sidebarDisplay.value === "none"
+            sidebarDisplay.value === "none" && hasGlobalComponent("BloggerInfo")
               ? (): VNode | VNode[] | null => h(resolveComponent("BloggerInfo"))
               : null,
 
           sidebar:
-            !isMobile.value && sidebarDisplay.value === "always"
+            !isMobile.value &&
+            sidebarDisplay.value === "always" &&
+            hasGlobalComponent("BloggerInfo")
               ? (): VNode | VNode[] | null => h(resolveComponent("BloggerInfo"))
               : null,
         },
