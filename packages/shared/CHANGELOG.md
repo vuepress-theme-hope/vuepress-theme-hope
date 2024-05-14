@@ -1,8 +1,15 @@
 # Change Log
 
-# Changelog
+<!-- #region recent-change -->
 
-All notable changes to this project will be documented in this file. See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
+All notable changes to this project will be documented in this file.
+See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
+
+## [2.0.0-rc.43](https://github.com/vuepress-theme-hope/vuepress-theme-hope/compare/v2.0.0-rc.42...v2.0.0-rc.43) (2024-05-14)
+
+### ✨ Features
+
+- **theme:** remove plugin externalLinkIcon ([d18762d](https://github.com/vuepress-theme-hope/vuepress-theme-hope/commit/d18762d039fec265df4a78b93c4af1bd4011a665))
 
 <!-- #region recent-change -->
 

@@ -1,8 +1,13 @@
 # Change Log
 
-# Changelog
+<!-- #region recent-change -->
 
-All notable changes to this project will be documented in this file. See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
+All notable changes to this project will be documented in this file.
+See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
+
+## [2.0.0-rc.43](https://github.com/vuepress-theme-hope/vuepress-theme-hope/compare/v2.0.0-rc.42...v2.0.0-rc.43) (2024-05-14)
+
+**Note:** Version bump only for package vuepress-plugin-lightgallery
 
 <!-- #region recent-change -->
 

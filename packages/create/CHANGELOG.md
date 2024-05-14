@@ -1,6 +1,19 @@
-# Changelog
+# Change Log
 
-All notable changes to this project will be documented in this file. See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
+<!-- #region recent-change -->
+
+All notable changes to this project will be documented in this file.
+See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
+
+## [2.0.0-rc.43](https://github.com/vuepress-theme-hope/vuepress-theme-hope/compare/v2.0.0-rc.42...v2.0.0-rc.43) (2024-05-14)
+
+### ✨ Features
+
+- **theme:** update portfolio content ([4814255](https://github.com/vuepress-theme-hope/vuepress-theme-hope/commit/4814255fc68bec6740ce6f725090f01101b2dd91))
+
+### 🪲 Bug Fixes
+
+- **theme:** fix portfolio layout ([d4da736](https://github.com/vuepress-theme-hope/vuepress-theme-hope/commit/d4da7363bb14b782182f4f5d9f1f0e876fea30a8))
 
 <!-- #region recent-change -->
 
