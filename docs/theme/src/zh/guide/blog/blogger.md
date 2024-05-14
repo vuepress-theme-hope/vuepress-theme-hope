@@ -169,19 +169,19 @@ export default defineUserConfig({
         // GitHub 已经内置了图标
         GitHub: "https://github.com/Mister-Hope",
         // 一个自定义媒体 MediaX (仅作示例)
-        MediaX: [
-          // 链接
-          "https://mediax.com/UserX/",
+        MediaX: {
           // 图标 SVG 字符串
-          "<svg ....</svg>",
-        ],
-        // 一个自定义媒体 MediaY (仅作示例)
-        MediaY: [
+          icon: "<svg ....</svg>",
           // 链接
-          "https://mediay.com/UserY/",
+          link: "https://mediax.com/UserX/",
+        },
+        // 一个自定义媒体 MediaY (仅作示例)
+        MediaY: {
           // 图标地址
-          path.resolve(__dirname, "icons/mediay.svg"),
-        ],
+          icon: "https://mediay.com/logo.svg",
+          // 链接
+          link: "https://mediay.com/UserY/",
+        },
       },
     },
   }),
@@ -203,19 +203,19 @@ export default {
         // GitHub 已经内置了图标
         GitHub: "https://github.com/Mister-Hope",
         // 一个自定义媒体 MediaX (仅作示例)
-        MediaX: [
-          // 链接
-          "https://mediax.com/UserX/",
+        MediaX: {
           // 图标 SVG 字符串
-          "<svg ....</svg>",
-        ],
-        // 一个自定义媒体 MediaY (仅作示例)
-        MediaY: [
+          icon: "<svg ....</svg>",
           // 链接
-          "https://mediay.com/UserY/",
+          link: "https://mediax.com/UserX/",
+        },
+        // 一个自定义媒体 MediaY (仅作示例)
+        MediaY: {
           // 图标地址
-          path.resolve(__dirname, "icons/mediay.svg"),
-        ],
+          icon: "https://mediay.com/logo.svg",
+          // 链接
+          link: "https://mediay.com/UserY/",
+        },
       },
     },
   }),

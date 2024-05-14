@@ -122,7 +122,7 @@ export interface BlogLocaleOptions {
    * }
    * ```
    */
-  medias?: Record<string, [string, string] | string>;
+  medias?: Record<string, { icon: string; link: string } | string>;
 
   /**
    * Whether to display blogger info in sidebar
@@ -161,6 +161,4 @@ export interface BlogLocaleOptions {
   articleInfo?: PageInfoType[];
 }
 
-export interface BlogLocaleConfig extends Omit<BlogLocaleOptions, "media"> {
-  medias?: Record<string, string>;
-}
+export type BlogLocaleConfig = BlogLocaleOptions;

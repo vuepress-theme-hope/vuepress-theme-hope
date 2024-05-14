@@ -63,7 +63,7 @@ export const hopeTheme = (
 
     const status = getThemeStatus(app, options);
     const themeData = getThemeData(app, themeOptions, status);
-    const icons = status.enableBlog ? getSocialMediaIcons(themeData) : {};
+    const icons = status.enableBlog ? getSocialMediaIcons(themeData) : null;
 
     usePlugins(app, themeData, plugins, hotReload, behaviorOptions);
 

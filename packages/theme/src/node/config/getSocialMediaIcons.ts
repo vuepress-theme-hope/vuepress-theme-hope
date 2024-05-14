@@ -1,9 +1,9 @@
 import {
   entries,
-  isArray,
+  isLinkHttp,
+  isPlainObject,
   isString,
   startsWith,
-  values,
 } from "@vuepress/helper";
 import { fs } from "vuepress/utils";
 
@@ -14,67 +14,59 @@ import { TEMPLATE_FOLDER, logger } from "../utils.js";
 export const getSocialMediaIcons = (
   themeData: ThemeData,
 ): Record<string, string> => {
-  const icons: Record<string, string> = {};
+  const iconData: Record<string, string> = {};
 
-  const checkIcon = (
+  const isIconInvalid = (
     key: string,
-    value: string | [string, string],
-  ): string | false => {
+    value: string | { icon: string; link: string },
+  ): boolean => {
     if (isString(value)) {
       const templatePath = `${TEMPLATE_FOLDER}socialMediaIcons/${key.toLocaleLowerCase()}.svg`;
 
       if (fs.existsSync(templatePath)) {
-        icons[key] = fs.readFileSync(templatePath, { encoding: "utf-8" });
+        iconData[key] = fs.readFileSync(templatePath, { encoding: "utf-8" });
 
-        return value;
+        return false;
       }
 
-      logger.warn(`${key} icon in blog media config not found!`);
+      logger.warn(
+        `${key} is not a built-in media, you should provide an icon for it!`,
+      );
 
-      return false;
+      return true;
     }
 
-    if (isArray(value)) {
-      // It’s a svg string
-      if (startsWith(value[1], "<svg")) {
-        icons[key] = value[1];
+    if (isPlainObject(value)) {
+      if (
+        // It's a link
+        isLinkHttp(value.icon) ||
+        // It’s a svg string
+        startsWith(value.icon, "<svg")
+      )
+        return false;
 
-        return value[0];
-      }
+      logger.warn(
+        `${key}'s icon ${value.icon} in blog media config is invalid!`,
+      );
 
-      // It’s probably a path
-      if (fs.existsSync(value[1])) {
-        icons[key] = fs.readFileSync(value[1], { encoding: "utf-8" });
-
-        return value[0];
-      }
-
-      logger.warn(`${key}'s icon ${value[1]} in blog media config is invalid!`);
-
-      return false;
+      return true;
     }
 
     logger.warn(`${key} icon in blog media config has an invalid config!`);
 
-    return false;
+    return true;
   };
 
   entries(themeData.blog?.medias ?? {}).forEach(([key, value]) => {
-    const result = checkIcon(key, value);
-
-    if (result) themeData.blog!.medias![key] = result;
-    else delete themeData.blog!.medias![key];
+    if (isIconInvalid(key, value)) delete themeData.blog?.medias?.[key];
   });
 
-  if (themeData.locales)
-    values(themeData.locales).forEach((localeConfig) => {
-      entries(localeConfig.blog?.medias ?? {}).forEach(([key, value]) => {
-        const result = checkIcon(key, value);
-
-        if (result) localeConfig.blog!.medias![key] = result;
-        else delete localeConfig.blog!.medias![key];
-      });
+  entries(themeData.locales).forEach(([path, { blog }]) => {
+    entries(blog?.medias ?? {}).forEach(([key, value]) => {
+      if (isIconInvalid(key, value))
+        delete themeData.locales[path].blog?.medias?.[key];
     });
+  });
 
-  return icons;
+  return iconData;
 };

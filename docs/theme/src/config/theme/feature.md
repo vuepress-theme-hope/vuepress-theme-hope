@@ -63,15 +63,13 @@ Visitors can click on the avatar or name in "Blogger Information" to enter the p
 
 ### blog.medias
 
-- Type: `Record<string, string | [string, string]>`
+- Type: `Record<string, string | { icon: string ; link: string }>`
 - Required: No
 
 Set social links.
 
 - If the social media icon is available below, you can set `MediaName: MediaLink` directly.
-- Otherwise, you should pass in a tuple `MediaName: [MediaLink , MediaSvgIconString or MediaSvgIconPath]`,
-
-  The second element in the tuple must be a valid SVG string or a full path of an existing SVG file.
+- Otherwise, you should pass in a object `MediaName: { icon: MediaSvgIconString or MediaUrl MediaLink, link: MediaLink }`,
 
 :::: info Available Social Media
 

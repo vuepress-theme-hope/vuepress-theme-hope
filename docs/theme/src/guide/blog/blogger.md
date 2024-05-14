@@ -167,19 +167,19 @@ export default defineUserConfig({
         // GitHub Icon is available
         GitHub: "https://github.com/Mister-Hope",
         // A custom Media called "MediaX" (just an example)
-        MediaX: [
-          // link
-          "https://mediax.com/UserX/",
+        MediaX: {
           // icon string
-          "<svg ....</svg>",
-        ],
-        // A custom Media called "MediaY" (just an example)
-        MediaY: [
+          icon: "<svg ....</svg>",
           // link
-          "https://mediay.com/UserY/",
+          link: "https://mediax.com/UserX/",
+        },
+        // A custom Media called "MediaY" (just an example)
+        MediaY: {
           // icon path
-          path.resolve(__dirname, "icons/mediay.svg"),
-        ],
+          icon: "https://mediay.com/logo.svg",
+          // link
+          link: "https://mediay.com/UserY/",
+        },
       },
     },
   }),
@@ -201,19 +201,19 @@ export default {
         // GitHub Icon is available
         GitHub: "https://github.com/Mister-Hope",
         // A custom Media called "MediaX" (just an example)
-        MediaX: [
-          // link
-          "https://mediax.com/UserX/",
+        MediaX: {
           // icon string
-          "<svg ....</svg>",
-        ],
-        // A custom Media called "MediaY" (just an example)
-        MediaY: [
+          icon: "<svg ....</svg>",
           // link
-          "https://mediay.com/UserY/",
+          link: "https://mediax.com/UserX/",
+        },
+        // A custom Media called "MediaY" (just an example)
+        MediaY: {
           // icon path
-          path.resolve(__dirname, "icons/mediay.svg"),
-        ],
+          icon: "https://mediay.com/logo.svg",
+          // link
+          link: "https://mediay.com/UserY/",
+        },
       },
     },
   }),

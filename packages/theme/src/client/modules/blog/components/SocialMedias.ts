@@ -1,4 +1,4 @@
-import { entries } from "@vuepress/helper/client";
+import { entries, isLinkHttp } from "@vuepress/helper/client";
 import type { VNode } from "vue";
 import { computed, defineComponent, h } from "vue";
 
@@ -16,11 +16,15 @@ export default defineComponent({
     const isPure = usePure();
 
     const mediaLinks = computed(() =>
-      entries(blogOptions.value.medias ?? {}).map(([media, url]) => ({
-        name: media,
-        icon: icons[media],
-        url,
-      })),
+      entries(blogOptions.value.medias ?? {}).map(([media, config]) =>
+        typeof config === "string"
+          ? {
+              name: media,
+              icon: icons[media],
+              link: config,
+            }
+          : { name: media, ...config },
+      ),
     );
 
     return (): VNode | null =>
@@ -28,15 +32,17 @@ export default defineComponent({
         ? h(
             "div",
             { class: "vp-social-medias" },
-            mediaLinks.value.map(({ name, icon, url }) =>
+            mediaLinks.value.map(({ name, icon, link }) =>
               h("a", {
                 class: "vp-social-media",
-                href: url,
+                href: link,
                 rel: "noopener noreferrer",
                 target: "_blank",
                 "aria-label": name || "",
                 ...(isPure.value ? {} : { "data-balloon-pos": "up" }),
-                innerHTML: icon,
+                innerHTML: isLinkHttp(icon)
+                  ? `<img class="icon ${name}-icon" src="${icon}">`
+                  : icon,
               }),
             ),
           )
