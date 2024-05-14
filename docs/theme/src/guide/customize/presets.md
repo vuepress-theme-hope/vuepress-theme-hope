@@ -126,7 +126,7 @@ import HitokotoBlogHero from "vuepress-theme-hope/presets/HitokotoBlogHero.js";
 Make navbar transparent in certain pages while at page top.
 
 ```ts
-export interface TransparentNavbarOptions {
+const setupTransparentNavbar: (options?: {
   /**
    * @default 'blog-homepage'
    */
@@ -152,11 +152,7 @@ export interface TransparentNavbarOptions {
    * @default '#bbb'
    */
   dark?: string;
-}
-
-export const setupTransparentNavbar: (
-  options?: TransparentNavbarOptions,
-) => void;
+}) => void;
 ```
 
 ::: details Code Example
@@ -217,6 +213,62 @@ export default defineClientConfig({
       },
       true,
     );
+  },
+});
+```
+
+:::
+
+### Snowfall
+
+Add snowfall effect to the site.
+
+```ts
+const setupSnowFall: (options: {
+  /**
+   * Image of snowflake
+   */
+  image?: string;
+
+  /**
+   * Count of snowflakes
+   *
+   * @default 25
+   */
+  count?: number;
+
+  /**
+   * Min size of snowflake in pixels
+   *
+   * @default 5
+   */
+  minSize?: number;
+
+  /**
+   * Max size of snowflake in pixels
+   *
+   * @default 10
+   */
+  maxSize?: number;
+
+  /**
+   * Speed of snowflake
+   *
+   * @default 1
+   */
+  speed?: number;
+}) => void;
+```
+
+::: details Code Example
+
+```ts title=".vuepress/client.ts"
+import { defineClientConfig } from "vuepress/client";
+import { setupSnowFall } from "vuepress-theme-hope/presets/setupSnowFall.js";
+
+export default defineClientConfig({
+  setup() {
+    setupSnowFall();
   },
 });
 ```

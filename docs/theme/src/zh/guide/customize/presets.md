@@ -125,7 +125,7 @@ import HitokotoBlogHero from "vuepress-theme-hope/presets/HitokotoBlogHero.js";
 让导航栏在特定页面中，位于页面顶部时透明。
 
 ```ts
-export interface TransparentNavbarOptions {
+const setupTransparentNavbar: (options?: {
   /**
    * @default 'blog-homepage'
    */
@@ -151,9 +151,7 @@ export interface TransparentNavbarOptions {
    * @default '#bbb'
    */
   dark?: string;
-}
-
-const setupTransparentNavbar: (options?: TransparentNavbarOptions) => void;
+}) => void;
 ```
 
 ::: details 代码示例
@@ -214,6 +212,62 @@ export default defineClientConfig({
       },
       true,
     );
+  },
+});
+```
+
+:::
+
+### 下雪效果
+
+为站点添加下雪效果。
+
+```ts
+const setupSnowFall: (options: {
+  /**
+   * 雪花的图片文件
+   */
+  image?: string;
+
+  /**
+   * 雪花数量
+   *
+   * @default 25
+   */
+  count?: number;
+
+  /**
+   * 雪花的最小大小 (像素)
+   *
+   * @default 5
+   */
+  minSize?: number;
+
+  /**
+   * 雪花的最大大小 (像素)
+   *
+   * @default 10
+   */
+  maxSize?: number;
+
+  /**
+   * 雪花的下落速度
+   *
+   * @default 1
+   */
+  speed?: number;
+}) => void;
+```
+
+::: details 代码示例
+
+```ts title=".vuepress/client.ts"
+import { defineClientConfig } from "vuepress/client";
+import { setupSnowFall } from "vuepress-theme-hope/presets/setupSnowFall.js";
+
+export default defineClientConfig({
+  setup() {
+    setupSnowFall();
   },
 });
 ```
