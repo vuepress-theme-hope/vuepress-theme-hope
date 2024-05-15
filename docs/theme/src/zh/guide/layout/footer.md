@@ -69,7 +69,7 @@ tag:
   ```md
   ---
   footer: <a href="https://github.com/Mister-Hope">Mr.Hope</a>
-  copyrightText: MIT LICENSE
+  copyright: MIT LICENSE
   ---
   ```
 

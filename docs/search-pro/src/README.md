@@ -46,7 +46,7 @@ features:
     link: ./guide.html#query-and-search-history
 
 footer: MIT Licensed | Copyright © 2022-present Mr.Hope
-copyrightText: false
+copyright: false
 ---
 
 ## How to use

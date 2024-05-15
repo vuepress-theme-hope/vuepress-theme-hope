@@ -59,11 +59,10 @@ export default defineComponent({
         copyright ??
         (license
           ? getCopyrightText(license)
-          : isString(globalCopyright)
-            ? globalCopyright
-            : authorText.value || globalLicense
+          : globalCopyright ??
+            (authorText.value || globalLicense
               ? getCopyrightText(globalLicense)
-              : false)
+              : false))
       );
     });
 

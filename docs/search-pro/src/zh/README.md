@@ -46,7 +46,7 @@ features:
     link: ./guide.html#查询和搜索的历史记录
 
 footer: MIT Licensed | Copyright © 2022-present Mr.Hope
-copyrightText: false
+copyright: false
 ---
 
 ## 使用插件
