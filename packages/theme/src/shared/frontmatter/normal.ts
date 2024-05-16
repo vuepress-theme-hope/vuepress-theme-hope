@@ -1,6 +1,6 @@
 import type { ThemePageFrontmatter } from "./base.js";
 import type { PageInfoType } from "../info.js";
-import type { AutoLinkOptions } from "../utils.js";
+import type { AutoLinkConfig } from "../utils.js";
 
 export interface ThemeNormalPageFrontmatter extends ThemePageFrontmatter {
   /**
@@ -144,14 +144,14 @@ export interface ThemeNormalPageFrontmatter extends ThemePageFrontmatter {
    *
    * 上一页链接
    */
-  prev?: string | AutoLinkOptions;
+  prev?: string | AutoLinkConfig;
 
   /**
    * Next page link
    *
    * 下一页链接
    */
-  next?: string | AutoLinkOptions;
+  next?: string | AutoLinkConfig;
 
   /**
    * Whether show toc list in desktop mode

@@ -4,7 +4,7 @@ import { figure } from "@mdit/plugin-figure";
 import { footnote } from "@mdit/plugin-footnote";
 import { imgLazyload } from "@mdit/plugin-img-lazyload";
 import { imgMark } from "@mdit/plugin-img-mark";
-import { imgSize, obsidianImageSize } from "@mdit/plugin-img-size";
+import { imgSize, obsidianImgSize } from "@mdit/plugin-img-size";
 import type { IncludeEnv } from "@mdit/plugin-include";
 import { include } from "@mdit/plugin-include";
 import { katex } from "@mdit/plugin-katex-slim";
@@ -174,14 +174,16 @@ export const mdEnhancePlugin =
           );
       },
       ...(isPlainObject(options.katex) ? options.katex : {}),
-      vPre: true,
+      transformer: (content: string) =>
+        content.replace(/^(<[a-z]+ )/g, "$1v-pre "),
     };
 
     const mathjaxInstance = status.mathjax
       ? createMathjaxInstance({
           mathFence: options.gfm ?? false,
           ...(isPlainObject(options.mathjax) ? options.mathjax : {}),
-          vPre: true,
+          transformer: (content: string) =>
+            content.replace(/^<mjx-container/, "<mjx-container v-pre"),
         })
       : null;
 
@@ -323,7 +325,7 @@ export const mdEnhancePlugin =
         if (options.imgLazyload) md.use(imgLazyload);
         if (options.imgSize) md.use(imgSize);
         if (options.mark) md.use(mark);
-        if (options.obsidianImgSize) md.use(obsidianImageSize);
+        if (options.obsidianImgSize) md.use(obsidianImgSize);
         if (options.spoiler) md.use(spoiler);
         if (options.sup) md.use(sup);
         if (options.sub) md.use(sub);

@@ -1,6 +1,6 @@
-import type { AutoLinkOptions, TextItemOptions } from "./utils.js";
+import type { AutoLinkConfig, TextItemOptions } from "./utils.js";
 
-export type SidebarPageItem = AutoLinkOptions;
+export type SidebarPageItem = AutoLinkConfig;
 
 export interface SidebarStructureItem extends TextItemOptions {
   /**

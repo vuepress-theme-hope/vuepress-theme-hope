@@ -5,7 +5,7 @@ import { RouteLink, usePageData } from "vuepress/client";
 import { generateIndexFromHash } from "vuepress-shared/client";
 
 import { useCategoryMap } from "@theme-hope/modules/blog/composables/index";
-import cssVariables from "../../../styles/variables.module.scss?module";
+import { colorNumber } from "../../../styles/variables.module.scss?module";
 
 import "../styles/category-list.scss";
 
@@ -29,7 +29,7 @@ export default defineComponent({
               {
                 class: [
                   "vp-category",
-                  `color${generateIndexFromHash(category, Number(cssVariables["colorNumber"]))}`,
+                  `color${generateIndexFromHash(category, Number(colorNumber))}`,
                   { active: path === page.value.path },
                 ],
               },

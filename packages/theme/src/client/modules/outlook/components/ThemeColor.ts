@@ -1,18 +1,23 @@
-import { entries, fromEntries } from "@vuepress/helper/client";
+import { fromEntries } from "@vuepress/helper/client";
 import type { VNode } from "vue";
 import { computed, defineComponent, h } from "vue";
 
 import { useThemeLocaleData } from "@theme-hope/composables/index";
 import ThemeColorPicker from "@theme-hope/modules/outlook/components/ThemeColorPicker";
 
-import cssVariables from "../../../styles/variables.module.scss?module";
+import {
+  enableThemeColor as _enableThemeColor,
+  themeColors,
+} from "../../../styles/variables.module.scss?module";
 import "../styles/theme-color.scss";
 
-export const enableThemeColor = cssVariables["enableThemeColor"] === "true";
+export const enableThemeColor = _enableThemeColor === "true";
 
 const themeColor = enableThemeColor
   ? fromEntries(
-      entries(cssVariables).filter(([key]) => key.startsWith("theme-")),
+      themeColors
+        .split("|")
+        .map((color, index) => [`theme-${index + 1}`, color]),
     )
   : {};
 

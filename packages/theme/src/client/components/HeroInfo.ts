@@ -173,9 +173,9 @@ export default defineComponent({
                               class: [
                                 "vp-hero-action",
                                 action.type ?? "default",
+                                "no-external-link-icon",
                               ],
                               config: action,
-                              noExternalLinkIcon: true,
                             },
                             action.icon
                               ? {

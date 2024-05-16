@@ -59,7 +59,7 @@
     "@rollup/plugin-node-resolve": "15.2.3",
     "@rollup/plugin-replace": "5.0.5",
     "@types/inquirer": "9.0.7",
-    "@types/node": "20.12.11",
+    "@types/node": "20.12.12",
     "@vitest/coverage-v8": "1.6.0",
     "@vue/eslint-config-typescript": "13.0.0",
     "concurrently": "8.2.2",
@@ -67,11 +67,11 @@
     "cpx2": "7.0.1",
     "cross-env": "7.0.3",
     "cz-git": "1.9.1",
-    "esbuild": "0.21.2",
+    "esbuild": "0.21.3",
     "eslint": "8.57.0",
     "eslint-config-mister-hope": "0.1.0",
     "eslint-plugin-vue": "9.26.0",
-    "execa": "9.0.2",
+    "execa": "9.1.0",
     "gulp": "5.0.0",
     "http-server": "14.1.1",
     "husky": "9.0.11",
@@ -90,17 +90,12 @@
     "stylelint-config-hope": "6.0.1",
     "through2": "4.0.2",
     "tslib": "2.6.2",
-    "tsx": "4.10.1",
+    "tsx": "4.10.3",
     "typescript": "5.4.5",
     "vitest": "1.6.0"
   },
   "packageManager": "pnpm@9.1.1",
   "engines": {
     "node": ">=20"
-  },
-  "pnpm": {
-    "overrides": {
-      "@types/markdown-it": "^14.1.1"
-    }
   }
 }

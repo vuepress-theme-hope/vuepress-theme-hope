@@ -48,13 +48,8 @@ GFM 支持通过 ID 标记图片，使得图片只在特定的模式显示。我
 
 <ColorModeSwitch /> (尝试切换主题)
 
-```md
-![GitHub Light](/assets/image/github-light.svg#gh-dark-mode-only)
-![GitHub Dark](/assets/image/github-dark.svg#gh-light-mode-only)
-
 ![GitHub Light](/assets/image/github-light.svg#dark)
 ![GitHub Dark](/assets/image/github-dark.svg#light)
-```
 
 :::
 

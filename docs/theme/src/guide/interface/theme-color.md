@@ -42,11 +42,11 @@ The default theme color above will always be the first one in picker.
 <script setup lang="ts">
 import { computed } from "vue";
 import { entries, fromEntries } from '@vuepress/helper/client';
-import cssVariables from "vuepress-theme-hope/styles/variables.module.scss?module";
+import { themeColors } from "vuepress-theme-hope/styles/variables.module.scss?module";
 
 import ThemeColorPicker from "@theme-hope/modules/outlook/components/ThemeColorPicker";
 
 const themeColor = fromEntries(
-  entries(cssVariables).filter(([key]) => key.startsWith("theme-"))
+  themeColors.split('|').map((color,index) => [`theme-${index+1}`, color])
 )
 </script>

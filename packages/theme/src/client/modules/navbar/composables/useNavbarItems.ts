@@ -9,7 +9,7 @@ import {
 } from "@theme-hope/utils/index";
 
 import type {
-  AutoLinkOptions,
+  AutoLinkConfig,
   NavGroup,
   NavbarGroup,
   NavbarItem,
@@ -32,8 +32,8 @@ export const resolveNavbarItem = (
       children: item.children.map(
         (child) =>
           resolveNavbarItem(child, resolvePrefix(prefix, item.prefix)) as
-            | NavGroup<AutoLinkOptions>
-            | AutoLinkOptions,
+            | NavGroup<AutoLinkConfig>
+            | AutoLinkConfig,
       ),
     };
 

@@ -1,5 +1,7 @@
 declare module "*.module.scss?module" {
-  const cssVar: Record<string, string>;
-
-  export default cssVar;
+  export const mobileBreakPoint: string;
+  export const pcBreakPoint: string;
+  export const enableThemeColor: "true" | "false";
+  export const themeColors: string;
+  export const colorNumber: `${number}`;
 }

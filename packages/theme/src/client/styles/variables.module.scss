@@ -1,6 +1,7 @@
 @use "sass:list";
 @use "sass:map";
 @use "sass:meta";
+@use "sass:string";
 @use "@sass-palette/hope-config";
 
 $enable-theme-color: map.has-key(
@@ -8,14 +9,21 @@ $enable-theme-color: map.has-key(
   "theme-colors"
 );
 
+$theme-colors: "";
+
+@if ($enable-theme-color) {
+  @each $color in hope-config.$theme-colors {
+    @if (string.length($theme-colors) > 0) {
+      $theme-colors: $theme-colors + "|";
+    }
+    $theme-colors: $theme-colors + #{$color};
+  }
+}
+
 :export {
   mobileBreakPoint: hope-config.$tablet;
   pcBreakPoint: hope-config.$pc;
   enableThemeColor: $enable-theme-color;
-  @if ($enable-theme-color) {
-    @each $color in hope-config.$theme-colors {
-      theme-#{list.index(hope-config.$theme-colors, $color)}: $color;
-    }
-  }
+  themeColors: string.unquote($theme-colors);
   colorNumber: list.length(hope-config.$colors);
 }

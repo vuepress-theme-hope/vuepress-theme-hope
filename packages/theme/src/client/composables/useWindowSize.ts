@@ -2,9 +2,10 @@ import { useEventListener } from "@vueuse/core";
 import type { Ref } from "vue";
 import { onMounted, ref } from "vue";
 
-import cssVariables from "../styles/variables.module.scss?module";
-
-const { mobileBreakPoint, pcBreakPoint } = cssVariables;
+import {
+  mobileBreakPoint,
+  pcBreakPoint,
+} from "../styles/variables.module.scss?module";
 
 export interface WindowSizeRef {
   isMobile: Ref<boolean>;

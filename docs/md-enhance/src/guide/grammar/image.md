@@ -44,9 +44,6 @@ You can enable it using `imgMark` option.
 
 <ColorModeSwitch /> (Try to toggle theme mode)
 
-![GitHub Light](/assets/image/github-light.svg#gh-dark-mode-only)
-![GitHub Dark](/assets/image/github-dark.svg#gh-light-mode-only)
-
 ![GitHub Light](/assets/image/github-light.svg#dark)
 ![GitHub Dark](/assets/image/github-dark.svg#light)
 

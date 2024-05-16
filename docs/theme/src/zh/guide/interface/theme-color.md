@@ -46,11 +46,11 @@ $theme-colors: #2196f3, #f26d6d, #3eaf7c, #fb9b5f;
 <script setup lang="ts">
 import { computed } from "vue";
 import { entries, fromEntries } from '@vuepress/helper/client';
-import cssVariables from "vuepress-theme-hope/styles/variables.module.scss?module";
+import { themeColors } from "vuepress-theme-hope/styles/variables.module.scss?module";
 
 import ThemeColorPicker from "@theme-hope/modules/outlook/components/ThemeColorPicker";
 
 const themeColor = fromEntries(
-  entries(cssVariables).filter(([key]) => key.startsWith("theme-"))
+  themeColors.split('|').map((color,index) => [`theme-${index+1}`, color])
 )
 </script>

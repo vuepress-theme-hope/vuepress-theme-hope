@@ -13,7 +13,7 @@ import {
   LinkIcon,
   ProjectIcon,
 } from "@theme-hope/modules/blog/components/icons/index";
-import cssVariables from "../../../styles/variables.module.scss?module";
+import { colorNumber } from "../../../styles/variables.module.scss?module";
 
 import type { ThemeBlogHomeProjectOptions } from "../../../../shared/index.js";
 
@@ -76,7 +76,7 @@ export default defineComponent({
               class: [
                 "vp-project-card",
                 {
-                  [`color${generateIndexFromHash(name, Number(cssVariables["colorNumber"]))}`]:
+                  [`color${generateIndexFromHash(name, Number(colorNumber))}`]:
                     !isPure.value && !background,
                 },
               ],

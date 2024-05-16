@@ -27,7 +27,7 @@ export interface TextItemOptions {
 /**
  * Props for `<AutoLink>`
  */
-export interface AutoLinkOptions extends TextItemOptions {
+export interface AutoLinkConfig extends TextItemOptions {
   /**
    * Link of item
    *
@@ -55,4 +55,11 @@ export interface AutoLinkOptions extends TextItemOptions {
    * 匹配激活的正则表达式
    */
   activeMatch?: string;
+
+  /**
+   * Whether it's active only when exact match
+   *
+   * 是否仅在完全匹配时激活
+   */
+  exact?: boolean;
 }
