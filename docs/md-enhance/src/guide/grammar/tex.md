@@ -51,9 +51,9 @@ import { mdEnhancePlugin } from "vuepress-plugin-md-enhance";
 export default {
   plugins: [
     mdEnhancePlugin({
-      // Enable Tex Support using katex
+      // Enable TeX Support using katex
       katex: true,
-      // Enable Tex Support using mathjax
+      // Enable TeX Support using mathjax
       mathjax: true,
     }),
   ],
@@ -113,7 +113,7 @@ $$
 
 ## Support List
 
-Plugin tutorial and FAQs: [Tex](https://mdit-plugins.github.io/tex.html#tex-tutorial)
+Plugin tutorial and FAQs: [TeX](https://mdit-plugins.github.io/tex.html#tex-tutorial)
 
 Katex:
 
@@ -147,10 +147,10 @@ Also, you can set `tex` option which is passed to TeX input parser, and you can 
 
 :::
 
-## Tex Tutorial
+## TeX Tutorial
 
-- [Tex Tutorial](https://www.overleaf.com/learn/latex/Learn_LaTeX_in_30_minutes)
-- [Tex Cheat Sheets](https://mdit-plugins.github.io/tex.html#tex-tutorial)
+- [TeX Tutorial](https://www.overleaf.com/learn/latex/Learn_LaTeX_in_30_minutes)
+- [TeX Cheat Sheets](https://mdit-plugins.github.io/tex.html#tex-tutorial)
 
 <script setup lang="ts">
 import { defineAsyncComponent } from 'vue';

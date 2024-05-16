@@ -1,5 +1,5 @@
 ---
-title: Tex 语法
+title: TeX 语法
 icon: square-root-variable
 ---
 
@@ -109,7 +109,7 @@ $$
 
 ## 支持列表
 
-插件教程和常见问题: [Tex](https://mdit-plugins.github.io/zh/tex.html#tex-%E6%95%99%E7%A8%8B)
+插件教程和常见问题: [TeX](https://mdit-plugins.github.io/zh/tex.html#tex-%E6%95%99%E7%A8%8B)
 
 Katex:
 
@@ -145,8 +145,8 @@ Mathjax:
 
 ## TeX 教程
 
-- [Tex 教程](https://www.overleaf.com/learn/latex/Learn_LaTeX_in_30_minutes)
-- [Tex 速查表](https://mdit-plugins.github.io/zh/tex.html#tex-tutorial)
+- [TeX 教程](https://www.overleaf.com/learn/latex/Learn_LaTeX_in_30_minutes)
+- [TeX 速查表](https://mdit-plugins.github.io/zh/tex.html#tex-tutorial)
 
 <script setup lang="ts">
 import { defineAsyncComponent } from 'vue';
