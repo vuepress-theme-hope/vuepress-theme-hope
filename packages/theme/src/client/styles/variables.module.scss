@@ -20,10 +20,14 @@ $theme-colors: "";
   }
 }
 
+@if (string.length($theme-colors) > 0) {
+  $theme-colors: string.unquote($theme-colors);
+}
+
 :export {
   mobileBreakPoint: hope-config.$tablet;
   pcBreakPoint: hope-config.$pc;
   enableThemeColor: $enable-theme-color;
-  themeColors: string.unquote($theme-colors);
+  themeColors: $theme-colors;
   colorNumber: list.length(hope-config.$colors);
 }
