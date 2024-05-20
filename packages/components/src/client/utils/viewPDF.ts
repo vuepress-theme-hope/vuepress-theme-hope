@@ -16,7 +16,7 @@ import {
   ensureEndingSlash,
   entries,
   isDef,
-  isString,
+  isLinkHttp,
 } from "@vuepress/helper/client";
 import { withBase } from "vuepress/client";
 import {
@@ -25,6 +25,7 @@ import {
   checkIsiPad,
 } from "vuepress-shared/client";
 
+declare const __VUEPRESS_DEV__: boolean;
 declare const PDFJS_URL: string | null;
 
 export interface ViewPDFOptions {
@@ -161,8 +162,14 @@ export const viewPDF = (
       // Modern versions of Firefox come bundled with PDFJS
       isFirefoxWithPDFJS);
 
-  if (!isString(url)) {
-    logError("URL is not valid");
+  const pdfLink = isLinkHttp(url)
+    ? url
+    : __VUEPRESS_DEV__
+      ? null
+      : `${window.origin}${url}`;
+
+  if (!pdfLink) {
+    logError("PDF link is not accessible.");
 
     return null;
   }
@@ -175,11 +182,12 @@ export const viewPDF = (
     return null;
   }
 
-  const pdfTitle = (title || /\/([^/]+).pdf/.exec(url)?.[1]) ?? "PDF Viewer";
+  const pdfTitle =
+    (title || /\/([^/]+).pdf/.exec(pdfLink)?.[1]) ?? "PDF Viewer";
 
   if (force) {
     if (!PDFJS_URL) {
-      targetNode.innerHTML = hint.replace(/\[url\]/g, url);
+      targetNode.innerHTML = hint.replace(/\[url\]/g, pdfLink);
       logError("PDFJS URL is not defined");
 
       return null;

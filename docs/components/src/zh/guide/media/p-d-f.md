@@ -32,6 +32,14 @@ PDF 预览组件。
 
 默认情况下，PDFJS 查看器是从 `https://theme-hope-assets.vuejs.press/pdfjs/` 获取的。你可以在组件选项中自定义 `componentOptions.pdf.pdfjs` 以指定其他位置。
 
+::: important PDFJS 查看器
+
+我们的 PDFJS 查看器仅供非商业用途的社区使用，要使用 PDFJS 查看器，您的 PDF 文件应包含允许`theme-hope-assets.vuejs.press` 的 CORS 标头。
+
+如果您不能满足上述条件，则需自行托管 PDFJS 查看器。为此，您应该从 <https://github.com/mozilla/pdf.js/releases> 下载最新的 PDFJS 查看器，然后将其复制到 `.vuepress/public` 文件夹。 之后，在组件选项中将`componentOptions.pdf.pdfjs` 设置为 `<BASE><public 文件夹内的相对路径>`。
+
+:::
+
 ::: details noToolbar 支持
 
 默认的 PDFJS 查看器不支持自定义工具栏，如果你想添加这个功能的支持，你应该手动将以下代码添加到在 `pdfjs` 文件夹中的 `web/viewer.html` 的 `<script src="viewer.js"></script>` 行之前：
@@ -67,9 +75,17 @@ PDF 预览组件。
 - 类型: `string`
 - 必填: 是
 
-PDF 链接，**不支持**相对路径。
+PDF 链接
 
 当填写路径名时，`base` 将自动添加到路径名的开头。
+
+::: warning 限制
+
+- 始终推荐完整的 URL
+- 不支持相对路径。
+- 路径名不适用于开发服务器中的嵌入 PDFJS 查看器，并且必须在生产环境中配置正确的 CORS 策略。
+
+:::
 
 ### width
 

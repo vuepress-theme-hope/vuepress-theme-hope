@@ -32,6 +32,14 @@ Not all browsers support embed PDF viewer (E.g.: No mobile browser supports this
 
 By default the pdfjs viewer is fetched from `https://theme-hope-assets.vuejs.press/pdfjs/`. You can customize `componentOptions.pdf.pdfjs` in component options to specific another one.
 
+::: important PDFJS Viewer
+
+Our PDFJS viewer is served for community with non-commercial use only, and to use the PDFJS viewer, your PDF file should be served with CORS headers that allows `theme-hope-assets.vuejs.press`.
+
+If you can not satisfy the above conditions, you shall host the PDFJS viewer by yourself. To do this, you should download the latest PDFJS viewer from <https://github.com/mozilla/pdf.js/releases>, then copy it to `.vuepress/public` folder. After that, set `componentOptions.pdf.pdfjs` to `<BASE_URL><RELATIVE_PATH_TO_YOUR_FOLDER_INSIDE_PUBLIC>` in component options.
+
+:::
+
 ::: details noToolbar support
 
 The default PDFJS viewer does not support toolbar customization, if you want to add support for this, you shall manually add the following code to `web/viewer.html` before line `<script src="viewer.js"></script>` in `pdfjs` folder:
@@ -67,9 +75,17 @@ The default PDFJS viewer does not support toolbar customization, if you want to 
 - Type: `string`
 - Required: Yes
 
-PDF document link, relative path is NOT supported.
+PDF document link.
 
 When filling in a pathname, `base` will be automatically added to the beginning of the pathname.
+
+::: warning Limitations
+
+- Full URL is always recommended
+- relative path is NOT supported.
+- Pathname is not working with embed PDFJS viewer in devServer, and the production environment must be configured to have a correct CORS policy.
+
+:::
 
 ### width
 
