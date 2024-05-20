@@ -64,4 +64,8 @@
   img {
     max-width: 100%;
   }
+
+  table img {
+    max-width: unset;
+  }
 }
