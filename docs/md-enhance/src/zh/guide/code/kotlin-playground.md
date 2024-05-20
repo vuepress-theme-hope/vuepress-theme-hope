@@ -73,9 +73,9 @@ export default {
   - `data-target-platform`: 目标平台，可以是 `junit`，`canvas`，`js` 或 `java`（默认）。
   - `data-highlight-only`: 只读模式，仅高亮。`data-highlight-only: "nocursor"` 表示不在编辑器上聚焦。
 
-    或者，您可以通过将其放置在 `//sampleStart` 和 `//sampleEnd` 标记之间来使代码的一部分只读。如果您不需要此功能，请设置 `none-markers`。
+    或者，你可以通过将其放置在 `//sampleStart` 和 `//sampleEnd` 标记之间来使代码的一部分只读。如果你不需要此功能，请设置 `none-markers`。
 
-  - `data-js-libs`: 默认情况下，组件会加载 jQuery 并使其可用于在编辑器中运行的代码。如果您需要任何其他 JS 库，请将它们指定为此属性中的逗号分隔列表。
+  - `data-js-libs`: 默认情况下，组件会加载 jQuery 并使其可用于在编辑器中运行的代码。如果你需要任何其他 JS 库，请将它们指定为此属性中的逗号分隔列表。
   - `data-output-height`: 在输出中以 px 设置 iframe 高度。用于目标平台画布，默认值为 `200`。
   - `data-crosslink`: 显示在 playground 中打开的链接，可以是 `enabled` 或 `disabled`，默认为 `undefined` - 仅在 playground 中支持。
   - `data-shorter-height`: 如果高度大于属性值，则显示展开器，默认值为 `100`。
@@ -92,7 +92,7 @@ export default {
   - `from` 和 `to`: 创建代码的一部分。例如从第 5 行到第 10 行。
   - `match-brackets`: 确定每当光标移动到括号旁边时是否匹配括号，可以是 `true` 或 `false`（默认）。
 
-  您可以查看下面的演示以了解更多细节。
+  你可以查看下面的演示以了解更多细节。
 
 你可以在[客户端配置文件][client-config]中导入并调用 `defineKotlinPlaygroundConfig` 来自定义 `kotlin-playground`:
 

@@ -34,9 +34,9 @@ PDF 预览组件。
 
 ::: important PDFJS 查看器
 
-我们的 PDFJS 查看器仅供非商业用途的社区使用，要使用 PDFJS 查看器，您的 PDF 文件应包含允许`theme-hope-assets.vuejs.press` 的 CORS 标头。
+我们的 PDFJS 查看器仅供非商业用途的社区使用，要使用 PDFJS 查看器，你的 PDF 文件应包含允许 `theme-hope-assets.vuejs.press` 的 CORS 标头。
 
-如果您不能满足上述条件，则需自行托管 PDFJS 查看器。为此，您应该从 <https://github.com/mozilla/pdf.js/releases> 下载最新的 PDFJS 查看器，然后将其复制到 `.vuepress/public` 文件夹。 之后，在组件选项中将`componentOptions.pdf.pdfjs` 设置为 `<BASE><public 文件夹内的相对路径>`。
+如果你不能满足上述条件，则需自行托管 PDFJS 查看器。为此，你应该从 <https://github.com/mozilla/pdf.js/releases> 下载最新的 PDFJS 查看器，然后将其复制到 `.vuepress/public` 文件夹。 之后，在组件选项中将`componentOptions.pdf.pdfjs` 设置为 `<BASE><public 文件夹内的相对路径>`。
 
 :::
 
@@ -83,7 +83,7 @@ PDF 链接
 
 - 始终推荐完整的 URL
 - 不支持相对路径。
-- 路径名不适用于开发服务器中的嵌入 PDFJS 查看器，并且必须在生产环境中配置正确的 CORS 策略。
+- 路径名无法在开发服务器中和嵌入 PDFJS 查看器一起使用，并且生产环境的 URL 必须拥有合适的 CORS 策略。
 
 :::
 

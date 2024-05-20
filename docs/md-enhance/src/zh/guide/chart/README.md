@@ -9,7 +9,7 @@ index: false
 
 <!-- #region intro -->
 
-此插件提供了 6 种方法让您将图表插入到 Markdown 文件中。
+此插件提供了 6 种方法让你将图表插入到 Markdown 文件中。
 
 - Chart.js：一个轻量级、易于使用、高度可定制的图表库。
 

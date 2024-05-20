@@ -14,16 +14,16 @@ VuePress Theme Hope 是一个包含大量功能的 VuePress 主题。
 
 它被设计为一个强大且可扩展的主题，内置了大量主题插件。
 
-首先，您应该已经对以下内容有基本的了解：
+首先，你应该已经对以下内容有基本的了解：
 
 - [Markdown](../cookbook/markdown/README.md)（包括 [YAML Frontmatter](../cookbook/vuepress/page.md#frontmatter) 概念）
 - [VuePress 基础知识](../cookbook/vuepress/README.md)
 
 ::: tip
 
-- 如果您对 VuePress、Markdown 或其他东西完全陌生，请从我们的 [快速上手](../get-started/README.md) 开始。
+- 如果你对 VuePress、Markdown 或其他东西完全陌生，请从我们的 [快速上手](../get-started/README.md) 开始。
 
-- 如果您熟悉上述内容，请[从这里开始](./intro/intro.md)。
+- 如果你熟悉上述内容，请[从这里开始](./intro/intro.md)。
 
 :::
 

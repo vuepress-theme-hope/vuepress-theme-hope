@@ -62,9 +62,9 @@ VuePress 在一定程度上扩展了 Markdown 语法，但仍然缺少一些常�
 
 - 如果你需要提供产品文档与展示，主题提供了 [选项卡](../markdown/content/tabs.md)、[幻灯片](../markdown/content/revealjs.md)、[图表](../markdown/chart/chartjs.md)、[echarts](../markdown/chart/echarts.md)、[流程图](../markdown/chart/flowchart.md)、 [Mermaid 图表](../markdown/chart/mermaid.md) 与 [Plant UML](../markdown/chart/plantuml.md) 功能。
 
-- 为了重新组织您的内容，主题提供了[文件包含](../markdown/content/include.md)功能。
+- 为了重新组织你的内容，主题提供了[文件包含](../markdown/content/include.md)功能。
 
-- 为了设置内容的样式，主题提供了[下标和上标](../markdown/grammar/sup-sub.md)、[属性设置](../markdown/stylize/attrs.md)和 [样式化](../markdown/stylize. md) 功能，并为您提供了很多[有用的组件](../component/built-in.md)。
+- 为了设置内容的样式，主题提供了[下标和上标](../markdown/grammar/sup-sub.md)、[属性设置](../markdown/stylize/attrs.md)和 [样式化](../markdown/stylize. md) 功能，并为你提供了很多[有用的组件](../component/built-in.md)。
 
 总之，任何人都可以享受 Markdown 增强语法带来的便利。
 
@@ -76,7 +76,7 @@ VuePress 在一定程度上扩展了 Markdown 语法，但仍然缺少一些常�
 
 - [自定义代码块主题](../interface/code-theme.md)
 
-- [主题颜色](../interface/theme-color.md): 允许您在浏览过程中动态切换
+- [主题颜色](../interface/theme-color.md): 允许你在浏览过程中动态切换
 
 - 更多:
 

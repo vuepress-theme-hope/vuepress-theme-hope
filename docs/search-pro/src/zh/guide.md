@@ -35,7 +35,7 @@ icon: lightbulb
 
 ### 查询和搜索的历史记录
 
-插件将显示您最后输入的 5 个查询和您选择的最后 5 个搜索结果。此行为可以通过设置 `queryHistoryCount` 和 `resultHistoryCount` 选项来改变。你可以将它们设置为 `0` 来禁用它们。
+插件将显示你最后输入的 5 个查询和你选择的最后 5 个搜索结果。此行为可以通过设置 `queryHistoryCount` 和 `resultHistoryCount` 选项来改变。你可以将它们设置为 `0` 来禁用它们。
 
 ### 完整键盘支持
 

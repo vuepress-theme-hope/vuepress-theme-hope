@@ -55,7 +55,7 @@ $navbar-height = 80px;
 
 ### 通过添加/覆盖布局
 
-您可以通过 [客户端配置文件](../../cookbook/vuepress/config.md#客户端配置文件) 中的“layouts”选项添加新布局或覆盖现有布局。
+你可以通过 [客户端配置文件](../../cookbook/vuepress/config.md#客户端配置文件) 中的“layouts”选项添加新布局或覆盖现有布局。
 
 <!-- #region layout -->
 

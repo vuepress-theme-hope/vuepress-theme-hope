@@ -83,7 +83,7 @@ When filling in a pathname, `base` will be automatically added to the beginning 
 
 - Full URL is always recommended
 - relative path is NOT supported.
-- Pathname is not working with embed PDFJS viewer in devServer, and the production environment must be configured to have a correct CORS policy.
+- Pathname is not working with embed PDFJS viewer in devServer, and its URL in production must has a correct CORS policy.
 
 :::
 
