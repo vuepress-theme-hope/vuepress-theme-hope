@@ -203,6 +203,13 @@ Navbar config
     link?: string;
 
     /**
+     * Whether current group is expanded by default
+     *
+     * @default false
+     */
+    expanded?: boolean;
+
+    /**
      * Whether current group is collapsible
      *
      * @default false
@@ -230,6 +237,13 @@ Navbar config
      * Link of current group
      */
     link?: string;
+
+    /**
+     * Whether current group is expanded by default
+     *
+     * @default false
+     */
+    expanded?: boolean;
 
     /**
      * Whether current group is collapsible

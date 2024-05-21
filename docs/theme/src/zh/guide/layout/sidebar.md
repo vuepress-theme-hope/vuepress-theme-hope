@@ -97,7 +97,11 @@ export default {
 
 如果你需要展示嵌套结构的侧边栏，你可以将同类链接整理成菜单分组。
 
-你需要使用 [对象格式](#对象格式) ，并提供额外的 `children` 选项设置链接列表。和导航栏一样，你可以在侧边栏中使用 `prefix` 来为组内的每个链接添加默认的路径前缀，并且侧边栏额外支持设置 `collapsible: true` 来使菜单分组可折叠。
+你需要使用 [对象格式](#对象格式) ，并提供额外的 `children` 选项设置链接列表。
+
+和导航栏一样，你可以在侧边栏中使用 `prefix` 来为组内的每个链接添加默认的路径前缀，
+
+侧边栏额外支持设置 `collapsible: true` 来使菜单分组可折叠，并且你可以设置 `expanded: true` 来使可折叠的分组默认展开。
 
 ```js{18-22,26-30} title=".vuepress/config.js"
 import { hopeTheme } from "vuepress-theme-hope";
@@ -116,6 +120,8 @@ export default {
         prefix: "/foo/",
         // 可选的, 设置分组是否可以折叠，默认值是 false,
         collapsible: true,
+        // 可选的。设置分组是否默认展开，默认值是 false
+        expanded: true,
         // 必要的，分组的子项目
         children: [
           "README.md" /* /foo/index.html */,
@@ -367,6 +373,7 @@ export default {
 - `dir.text`: 目录标题，默认为 README.md 标题
 - `dir.icon`: 目录图标，默认为 README.md 图标
 - `dir.collapsible`: 目录是否可折叠，默认为 `true`
+- `dir.expanded`: 目录是否默认展开，默认为 `false`
 - `dir.link`: 目录是否可点击，默认为 `false`
 - `dir.index`: 是否索引此目录，默认为 `true`
 - `dir.order`: 目录在侧边栏中的顺序，默认为 `0`

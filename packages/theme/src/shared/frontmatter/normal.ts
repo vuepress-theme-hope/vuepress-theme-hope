@@ -61,6 +61,15 @@ export interface ThemeNormalPageFrontmatter extends ThemePageFrontmatter {
     icon?: string;
 
     /**
+     * Whether dir is expanded by default
+     *
+     * 当前目录是否默认展开
+     *
+     * @default false
+     */
+    expanded?: boolean;
+
+    /**
      * Whether Dir is collapsible
      *
      * 目录是否可折叠

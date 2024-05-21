@@ -18,6 +18,15 @@ export interface SidebarStructureItem extends TextItemOptions {
   link?: string;
 
   /**
+   * Whether current group is expanded by default
+   *
+   * 当前分组的链接是否默认展开
+   *
+   * @default false
+   */
+  expanded?: boolean;
+
+  /**
    * Whether current group is collapsible
    *
    * 当前分组的链接是否可折叠
@@ -43,6 +52,15 @@ export interface SidebarGroupItem extends TextItemOptions {
    * 当前分组的链接
    */
   link?: string;
+
+  /**
+   * Whether current group is expanded by default
+   *
+   * 当前分组的链接是否默认展开
+   *
+   * @default false
+   */
+  expanded?: boolean;
 
   /**
    * Whether current group is collapsible

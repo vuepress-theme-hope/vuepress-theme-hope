@@ -201,6 +201,13 @@ tag:
     link?: string;
 
     /**
+     * 当前分组的链接是否默认展开
+     *
+     * @default false
+     */
+    expanded?: boolean;
+
+    /**
      * 当前分组的链接是否可折叠
      *
      * @default false
@@ -228,6 +235,13 @@ tag:
      * 当前分组的链接
      */
     link?: string;
+
+    /**
+     * 当前分组的链接是否默认展开
+     *
+     * @default false
+     */
+    expanded?: boolean;
 
     /**
      * 当前分组的链接是否可折叠

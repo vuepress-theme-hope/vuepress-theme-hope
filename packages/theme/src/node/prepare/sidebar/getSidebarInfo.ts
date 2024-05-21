@@ -108,6 +108,7 @@ const getSidebarInfoFromStructure = (
       dirOptions?.text ?? readmePage.frontmatter.shortTitle ?? readmePage.title;
     const icon = dirOptions?.icon ?? readmePage.frontmatter.icon;
     const collapsible = dirOptions?.collapsible ?? true;
+    const expanded = collapsible && dirOptions?.expanded === true;
 
     if (dirOptions?.index === false) return null;
 
@@ -131,6 +132,7 @@ const getSidebarInfoFromStructure = (
       // group information
       groupInfo: {
         ...(collapsible ? { collapsible } : {}),
+        ...(expanded ? { expanded } : {}),
         ...(icon ? { icon } : {}),
         ...(dirOptions?.link
           ? {

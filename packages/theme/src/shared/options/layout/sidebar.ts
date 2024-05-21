@@ -24,6 +24,7 @@ export interface SidebarDirInfo {
 
   groupInfo: {
     icon?: string;
+    expanded?: boolean;
     collapsible?: boolean;
     link?: string;
   };
