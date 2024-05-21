@@ -105,7 +105,7 @@
     "@vuepress/bundler-webpack": "2.0.0-rc.9"
   },
   "peerDependencies": {
-    "@vuepress/plugin-docsearch": "2.0.0-rc.28",
+    "@vuepress/plugin-docsearch": "2.0.0-rc.30",
     "@vuepress/plugin-feed": "2.0.0-rc.28",
     "@vuepress/plugin-pwa": "2.0.0-rc.28",
     "@vuepress/plugin-redirect": "2.0.0-rc.29",

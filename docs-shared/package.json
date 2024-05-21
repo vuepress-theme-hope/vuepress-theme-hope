@@ -35,7 +35,7 @@
     "@vuepress/bundler-vite": "2.0.0-rc.9",
     "@vuepress/bundler-webpack": "2.0.0-rc.9",
     "@vuepress/helper": "2.0.0-rc.28",
-    "@vuepress/plugin-docsearch": "2.0.0-rc.28",
+    "@vuepress/plugin-docsearch": "2.0.0-rc.30",
     "@vuepress/plugin-redirect": "2.0.0-rc.29",
     "@vuepress/plugin-shiki": "2.0.0-rc.28",
     "three": "0.164.1",
