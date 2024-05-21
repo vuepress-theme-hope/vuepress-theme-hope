@@ -45,7 +45,7 @@
   },
   "dependencies": {
     "@vuepress/helper": "2.0.0-rc.28",
-    "@vuepress/plugin-sass-palette": "2.0.0-rc.28",
+    "@vuepress/plugin-sass-palette": "2.0.0-rc.30",
     "@vueuse/core": "^10.9.0",
     "cheerio": "1.0.0-rc.12",
     "chokidar": "^3.6.0",
