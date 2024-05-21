@@ -24,7 +24,7 @@ export default defineComponent({
     const projects = computed(() => frontmatter.value.projects ?? []);
 
     return (): VNode =>
-      h("div", { class: "vp-page vp-blog" }, [
+      h("div", { class: "vp-page vp-blog-home" }, [
         h(BlogHero),
         h("div", { class: "blog-page-wrapper" }, [
           h("main", { id: "main-content", class: "vp-blog-main" }, [

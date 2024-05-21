@@ -274,6 +274,115 @@ export default defineClientConfig({
 
 :::
 
+## 配置相关
+
+### 自定义博客类型
+
+- 最近更新:
+
+  ```ts
+  // vuepress-theme-hope/presets/getRecentUpdatedArticles.js
+  export interface RecentUpdateArticlesOptions {
+    /**
+     * 此博客类型的路径
+     *
+     * @default "/recent-updated/"
+     */
+    path?: string;
+
+    /**
+     * 博客类型的本地化文字
+     *
+     * @example {
+     *  '/': 'Recent Updated',
+     *  '/zh/': '最近更新',
+     * }
+     */
+    locales?: Record<string, string>;
+  }
+
+  export const getRecentUpdatedArticles: (
+    options: RecentUpdateArticlesOptions,
+  ) => BlogTypeOptions;
+  ```
+
+  ::: details 代码示例
+
+  ```ts
+  import { getRecentUpdatedArticles } from "vuepress-theme-hope/presets/getSlides.js";
+
+  export default {
+    theme: hopeTheme({
+      plugins: {
+        blog: {
+          type: [
+            getRecentUpdatedArticles({
+              locales: {
+                "/": "Recent Updated",
+                "/zh/": "最近更新",
+              },
+            }),
+          ],
+        },
+      },
+    }),
+  };
+  ```
+
+  :::
+
+- Slides:
+
+  ```ts
+  // vuepress-theme-hope/presets/getSlides.js
+  export interface SlidesOptions {
+    /**
+     * 此博客类型的路径
+     *
+     *
+     * @default "/slides/"
+     */
+    path?: string;
+
+    /**
+     * 博客类型的本地化文文字
+     *
+     * @example {
+     *  '/': 'Slides',
+     *  '/zh/': '幻灯片',
+     * }
+     */
+    locales?: Record<string, string>;
+  }
+
+  export const getSlides = (options: SlidesOptions) => BlogTypeOptions;
+  ```
+
+  ::: details 代码示例
+
+  ```ts
+  import { getSlides } from "vuepress-theme-hope/presets/getSlides.js";
+
+  export default {
+    theme: hopeTheme({
+      plugins: {
+        blog: {
+          type: [
+            getSlides({
+              locales: {
+                "/": "Slides",
+                "/zh/": "幻灯片",
+              },
+            }),
+          ],
+        },
+      },
+    }),
+  };
+  ```
+
+  :::
+
 ## 样式相关
 
 你可以创建 [客户端配置文件](../../cookbook/vuepress/config.md#客户端配置文件) `.vuepress/client.{ts,js}`，并通过 `import` 语句导入下方文件。

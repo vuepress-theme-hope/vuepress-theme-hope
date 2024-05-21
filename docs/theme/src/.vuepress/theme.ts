@@ -1,6 +1,8 @@
 import { theme } from "docs-shared";
 import { getDirname, path } from "vuepress/utils";
 import { AVAILABLE_SERVICES } from "vuepress-plugin-components";
+import { getRecentUpdatedArticles } from "vuepress-theme-hope/presets/getRecentUpdatedArticles.js";
+import { getSlides } from "vuepress-theme-hope/presets/getSlides.js";
 
 import { enNavbarConfig, zhNavbarConfig } from "./navbar/index.js";
 import { enSidebarConfig, zhSidebarConfig } from "./sidebar/index.js";
@@ -80,6 +82,14 @@ export default theme(
     plugins: {
       blog: {
         excerptLength: 0,
+        type: [
+          getRecentUpdatedArticles({
+            locales: { "/": "Recent Updated", "/zh/": "最近更新" },
+          }),
+          getSlides({
+            locales: { "/": "Slides", "/zh/": "幻灯片" },
+          }),
+        ],
       },
 
       components: {

@@ -91,7 +91,10 @@ By default, the type list path will be `/key/` (with `key` replaced by your actu
 
 :::
 
-Also, you need to set `blogLocales[key]` in theme locales with the actual type name, so that the theme can display the type name correctly.
+To let theme display the type name correctly, you need to:
+
+- Either set `blogLocales[key]` in theme locales with the actual type name,
+- Or set `title` in the frontmatter of the layout page.
 
 To get start with, we would like to show you some examples.
 

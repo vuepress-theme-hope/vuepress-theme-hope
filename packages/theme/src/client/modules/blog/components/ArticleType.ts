@@ -1,12 +1,18 @@
 import type { VNode } from "vue";
 import { computed, defineComponent, h } from "vue";
-import { RouteLink, usePageData, useRouteLocale } from "vuepress/client";
+import {
+  RouteLink,
+  resolveRoute,
+  usePageData,
+  useRouteLocale,
+} from "vuepress/client";
 
 import { useThemeLocaleData } from "@theme-hope/composables/index";
 import {
   useArticles,
   useStars,
 } from "@theme-hope/modules/blog/composables/index";
+import { PageInfo } from "../../../../shared/index.js";
 
 import "../styles/article-type.scss";
 
@@ -31,10 +37,17 @@ export default defineComponent({
           path: articles.value.path,
         },
         { text: locale.star, path: stars.value.path },
-        ...__VP_BLOG_TYPES__.map(({ key, path }) => ({
-          text: locale[key],
-          path: path.replace(/^\//, localePath.value),
-        })),
+        ...__VP_BLOG_TYPES__.map(({ key, path }) => {
+          const routePath = path.replace(/^\//, localePath.value);
+
+          return {
+            text:
+              locale[key] ??
+              resolveRoute(routePath).meta[PageInfo.title] ??
+              key,
+            path: routePath,
+          };
+        }),
       ];
     });
 

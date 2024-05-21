@@ -275,6 +275,114 @@ export default defineClientConfig({
 
 :::
 
+## Config Related
+
+### Custom Blog Types
+
+- Recent Updated:
+
+  ```ts
+  // vuepress-theme-hope/presets/getRecentUpdatedArticles.js
+  export interface RecentUpdateArticlesOptions {
+    /**
+     * Path of this blog type
+     *
+     * @default "/recent-updated/"
+     */
+    path?: string;
+
+    /**
+     * Locale text for the blog type
+     *
+     * @example {
+     *  '/': 'Recent Updated',
+     *  '/zh/': '最近更新',
+     * }
+     */
+    locales?: Record<string, string>;
+  }
+
+  export const getRecentUpdatedArticles: (
+    options: RecentUpdateArticlesOptions,
+  ) => BlogTypeOptions;
+  ```
+
+  ::: details Code Example
+
+  ```ts
+  import { getRecentUpdatedArticles } from "vuepress-theme-hope/presets/getSlides.js";
+
+  export default {
+    theme: hopeTheme({
+      plugins: {
+        blog: {
+          type: [
+            getRecentUpdatedArticles({
+              locales: {
+                "/": "Recent Updated",
+                "/zh/": "最近更新",
+              },
+            }),
+          ],
+        },
+      },
+    }),
+  };
+  ```
+
+  :::
+
+- Slides:
+
+  ```ts
+  // vuepress-theme-hope/presets/getSlides.js
+  export interface SlidesOptions {
+    /**
+     * Path of this blog type
+     *
+     * @default "/slides/"
+     */
+    path?: string;
+
+    /**
+     * Locales for the blog type
+     *
+     * @example {
+     *  '/': 'Slides',
+     *  '/zh/': '幻灯片',
+     * }
+     */
+    locales?: Record<string, string>;
+  }
+
+  export const getSlides = (options: SlidesOptions) => BlogTypeOptions;
+  ```
+
+  ::: details Code Example
+
+  ```ts
+  import { getSlides } from "vuepress-theme-hope/presets/getSlides.js";
+
+  export default {
+    theme: hopeTheme({
+      plugins: {
+        blog: {
+          type: [
+            getSlides({
+              locales: {
+                "/": "Slides",
+                "/zh/": "幻灯片",
+              },
+            }),
+          ],
+        },
+      },
+    }),
+  };
+  ```
+
+  :::
+
 ## Style Related
 
 You can create a [client config file](../../cookbook/vuepress/config.md#client-config-file) and import the following files through the `import` statement.

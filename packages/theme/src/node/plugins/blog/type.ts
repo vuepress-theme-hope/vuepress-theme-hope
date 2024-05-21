@@ -22,14 +22,18 @@ export const getBlogArticleType = (
 > =>
   ({
     key: "article",
-    sorter: defaultPageSorter,
+
     filter: ({ frontmatter, filePathRelative }): boolean =>
       // Declaring this is an article
       frontmatter.article ??
       // Generated from markdown files and not homepage
       (Boolean(filePathRelative) && !frontmatter.home),
+
+    sorter: defaultPageSorter,
+
     path: options.article,
     layout: "BlogType",
+
     frontmatter: (localePath) => ({
       title: themeData.locales[localePath].blogLocales.article,
       dir: { index: false },
@@ -54,7 +58,9 @@ export const getBlogStarType = (
 > =>
   ({
     key: "star",
+
     filter: ({ frontmatter }) => Boolean(frontmatter.star),
+
     sorter: (pageA, pageB) => {
       const prevKey = pageA.frontmatter.star;
       const nextKey = pageB.frontmatter.star;
@@ -72,6 +78,7 @@ export const getBlogStarType = (
 
     path: options.star,
     layout: "BlogType",
+
     frontmatter: (localePath) => ({
       title: themeData.locales[localePath].blogLocales.star,
       dir: { index: false },
@@ -96,15 +103,19 @@ export const getBlogTimelineType = (
 > =>
   ({
     key: "timeline",
+
     filter: ({ frontmatter, routeMeta }) =>
       ArticleInfo.date in routeMeta && frontmatter["timeline"] !== false,
+
     sorter: (pageA, pageB) =>
       dateSorter(
         pageA.routeMeta[ArticleInfo.date],
         pageB.routeMeta[ArticleInfo.date],
       ),
+
     path: options.timeline,
     layout: "Timeline",
+
     frontmatter: (localePath) => ({
       title: themeData.locales[localePath].blogLocales.timeline,
       dir: { index: false },

@@ -6,7 +6,7 @@ import "./transparent-navbar.scss";
 
 const BLOG_HOMEPAGE_STYLE = `\
 .theme-container .vp-page.vp-portfolio-home,
-.theme-container .vp-page.vp-blog {
+.theme-container .vp-page.vp-blog-home {
   padding-top: 0;
 }
 .vp-blog-hero.fullscreen {
