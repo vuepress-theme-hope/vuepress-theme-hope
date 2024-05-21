@@ -77,7 +77,7 @@
     "@vuepress/plugin-copy-code": "2.0.0-rc.28",
     "@vuepress/plugin-copyright": "2.0.0-rc.28",
     "@vuepress/plugin-git": "2.0.0-rc.22",
-    "@vuepress/plugin-links-check": "2.0.0-rc.28",
+    "@vuepress/plugin-links-check": "2.0.0-rc.30",
     "@vuepress/plugin-notice": "2.0.0-rc.29",
     "@vuepress/plugin-nprogress": "2.0.0-rc.28",
     "@vuepress/plugin-photo-swipe": "2.0.0-rc.28",
