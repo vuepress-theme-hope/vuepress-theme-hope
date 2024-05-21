@@ -73,7 +73,7 @@
     "@vuepress/plugin-back-to-top": "2.0.0-rc.28",
     "@vuepress/plugin-blog": "2.0.0-rc.28",
     "@vuepress/plugin-catalog": "2.0.0-rc.28",
-    "@vuepress/plugin-comment": "2.0.0-rc.28",
+    "@vuepress/plugin-comment": "2.0.0-rc.30",
     "@vuepress/plugin-copy-code": "2.0.0-rc.28",
     "@vuepress/plugin-copyright": "2.0.0-rc.28",
     "@vuepress/plugin-git": "2.0.0-rc.22",
