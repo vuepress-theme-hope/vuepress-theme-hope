@@ -52,8 +52,8 @@
   "devDependencies": {
     "@commitlint/cli": "19.3.0",
     "@commitlint/config-conventional": "19.2.2",
-    "@lerna-lite/cli": "3.3.3",
-    "@lerna-lite/publish": "3.3.3",
+    "@lerna-lite/cli": "3.4.0",
+    "@lerna-lite/publish": "3.4.0",
     "@rollup/plugin-alias": "5.1.0",
     "@rollup/plugin-commonjs": "25.0.7",
     "@rollup/plugin-node-resolve": "15.2.3",
@@ -82,7 +82,7 @@
     "rimraf": "5.0.7",
     "rollup": "4.17.2",
     "rollup-plugin-copy": "3.5.0",
-    "rollup-plugin-dts": "6.1.0",
+    "rollup-plugin-dts": "6.1.1",
     "rollup-plugin-esbuild": "6.1.1",
     "rollup-plugin-resolve-shebang": "1.0.1",
     "sort-package-json": "2.10.0",
@@ -94,7 +94,7 @@
     "typescript": "5.4.5",
     "vitest": "1.6.0"
   },
-  "packageManager": "pnpm@9.1.1",
+  "packageManager": "pnpm@9.1.2",
   "engines": {
     "node": ">=20"
   },

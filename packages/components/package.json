@@ -48,7 +48,7 @@
     "@vuepress/plugin-sass-palette": "2.0.0-rc.28",
     "@vueuse/core": "^10.9.0",
     "balloon-css": "^1.2.0",
-    "create-codepen": "1.0.1",
+    "create-codepen": "^2.0.0",
     "qrcode": "^1.5.3",
     "vue": "^3.4.27",
     "vuepress-shared": "workspace:*"
