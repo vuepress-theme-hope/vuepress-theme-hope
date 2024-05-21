@@ -108,7 +108,7 @@
     "@vuepress/plugin-docsearch": "2.0.0-rc.28",
     "@vuepress/plugin-feed": "2.0.0-rc.28",
     "@vuepress/plugin-pwa": "2.0.0-rc.28",
-    "@vuepress/plugin-redirect": "2.0.0-rc.29",
+    "@vuepress/plugin-redirect": "2.0.0-rc.30",
     "@vuepress/plugin-search": "2.0.0-rc.28",
     "nodejs-jieba": "^0.1.2",
     "sass-loader": "^14.0.0",
