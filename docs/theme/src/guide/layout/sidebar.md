@@ -97,7 +97,11 @@ But you may have multiple folders with files under `/path/`. To avoid multiple d
 
 If you need a sidebar that displays a nested structure, you can group similar links.
 
-You should use [object format](#object-format) and provide an additional `children` option to set the list of links. Like navbar, you can use `prefix` in the sidebar to add a default path prefix to each link in the group, and the sidebar additionally supports setting `collapsible: true` to make the menu group collapsible.
+You should use [object format](#object-format) and provide an additional `children` option to set the list of links.
+
+Like navbar, you can use `prefix` in the sidebar to add a default path prefix to each link in the group.
+
+The sidebar additionally supports setting `collapsible: true` to make the menu group collapsible, and you can se `expanded: true` to make the menu group default expanded.
 
 ```js{18-22,26-30} title=".vuepress/config.js"
 import { hopeTheme } from "vuepress-theme-hope";
@@ -115,7 +119,10 @@ export default {
         // optional, will be appended to each item link
         prefix: "/foo/",
         // optional, defaults to false
-        collapsible: false,
+        collapsible: true,
+        // optional, representing the original state of a collapsible sidebar group,
+        // defaults to false
+        expanded: true,
         // required, items of group
         children: [
           "README.md" /* /foo/index.html */,
@@ -375,6 +382,7 @@ For nested folders, the grouping information is controlled by `README.md` under 
 - `dir.text`: Directory title, default to `README.md` title
 - `dir.icon`: Directory icon, default to `README.md` icon
 - `dir.collapsible`: Whether the directory is collapsible, default to `true`
+- `dir.expanded`: Whether the directory is default expanded, default to `false`
 - `dir.link`: Whether the directory is clickable, default to `false`
 - `dir.index`: Whether index current dir, default to `true`
 - `dir.order`: Dir order in sidebar, default to `0`

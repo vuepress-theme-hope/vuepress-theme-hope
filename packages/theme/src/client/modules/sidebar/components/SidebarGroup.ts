@@ -1,5 +1,5 @@
 import type { PropType, VNode } from "vue";
-import { computed, defineComponent, h } from "vue";
+import { computed, defineComponent, h, ref } from "vue";
 import { useRoute } from "vuepress/client";
 
 import AutoLink from "@theme-hope/components/AutoLink";
@@ -40,10 +40,17 @@ export default defineComponent({
 
   setup(props, { emit }) {
     const route = useRoute();
+
+    const hasBeenToggled = ref(false);
+
     const active = computed(() => isActiveSidebarItem(route, props.config));
 
     const exact = computed(() =>
       isActiveSidebarItem(route, props.config, true),
+    );
+
+    const shouldOpen = computed(
+      () => props.open || (props.config.expanded && !hasBeenToggled.value),
     );
 
     return (): VNode => {
@@ -71,7 +78,10 @@ export default defineComponent({
             ...(collapsible
               ? {
                   type: "button",
-                  onClick: () => emit("toggle"),
+                  onClick: () => {
+                    hasBeenToggled.value = true;
+                    emit("toggle");
+                  },
                   onKeydown: (event: KeyboardEvent): void => {
                     if (event.key === "Enter") emit("toggle");
                   },
@@ -91,12 +101,14 @@ export default defineComponent({
               : h("span", { class: "vp-sidebar-title" }, text),
             // Arrow
             collapsible
-              ? h("span", { class: ["vp-arrow", props.open ? "down" : "end"] })
+              ? h("span", {
+                  class: ["vp-arrow", shouldOpen.value ? "down" : "end"],
+                })
               : null,
           ],
         ),
 
-        props.open || !collapsible
+        shouldOpen.value || !collapsible
           ? h(SidebarLinks, { key: prefix, config: children })
           : null,
       ]);
