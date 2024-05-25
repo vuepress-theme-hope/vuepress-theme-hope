@@ -24,7 +24,7 @@
     "docs-shared": "workspace:*",
     "sass-loader": "14.2.1",
     "vue": "3.4.27",
-    "vuepress": "2.0.0-rc.9",
+    "vuepress": "2.0.0-rc.11",
     "vuepress-plugin-lightgallery": "workspace:*"
   }
 }

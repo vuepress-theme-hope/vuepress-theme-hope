@@ -69,8 +69,8 @@
   },
   "dependencies": {
     "@vuepress/helper": "2.0.0-rc.28",
-    "@vuepress/plugin-active-header-links": "2.0.0-rc.28",
-    "@vuepress/plugin-back-to-top": "2.0.0-rc.28",
+    "@vuepress/plugin-active-header-links": "2.0.0-rc.30",
+    "@vuepress/plugin-back-to-top": "2.0.0-rc.30",
     "@vuepress/plugin-blog": "2.0.0-rc.28",
     "@vuepress/plugin-catalog": "2.0.0-rc.28",
     "@vuepress/plugin-comment": "2.0.0-rc.28",
@@ -79,7 +79,7 @@
     "@vuepress/plugin-git": "2.0.0-rc.22",
     "@vuepress/plugin-links-check": "2.0.0-rc.28",
     "@vuepress/plugin-notice": "2.0.0-rc.29",
-    "@vuepress/plugin-nprogress": "2.0.0-rc.28",
+    "@vuepress/plugin-nprogress": "2.0.0-rc.30",
     "@vuepress/plugin-photo-swipe": "2.0.0-rc.28",
     "@vuepress/plugin-prismjs": "2.0.0-rc.28",
     "@vuepress/plugin-reading-time": "2.0.0-rc.28",
@@ -107,12 +107,12 @@
   "peerDependencies": {
     "@vuepress/plugin-docsearch": "2.0.0-rc.28",
     "@vuepress/plugin-feed": "2.0.0-rc.28",
-    "@vuepress/plugin-pwa": "2.0.0-rc.28",
+    "@vuepress/plugin-pwa": "2.0.0-rc.30",
     "@vuepress/plugin-redirect": "2.0.0-rc.29",
-    "@vuepress/plugin-search": "2.0.0-rc.28",
+    "@vuepress/plugin-search": "2.0.0-rc.30",
     "nodejs-jieba": "^0.1.2",
     "sass-loader": "^14.0.0",
-    "vuepress": "2.0.0-rc.9",
+    "vuepress": "2.0.0-rc.11",
     "vuepress-plugin-search-pro": "workspace:*"
   },
   "peerDependenciesMeta": {
