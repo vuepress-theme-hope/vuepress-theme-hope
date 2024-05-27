@@ -6,13 +6,12 @@
       "allowBranch": "main",
       "conventionalCommits": true,
       "exact": true,
-      "message": "chore(release): publish v%v",
-      "changelogHeaderMessage": "\n<!-- #region recent-change -->\n"
+      "message": "chore(release): publish v%v"
     }
   },
   "changelogPreset": {
     "name": "conventionalcommits",
-    "header": "",
+    "header": "# Changelog\n\nAll notable changes to this project will be documented in this file. See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.\n\n<!-- #region recent-change -->\n",
     "types": [
       {
         "type": "feat",
