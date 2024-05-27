@@ -1,23 +1,24 @@
 import { prismjsPlugin } from "@vuepress/plugin-prismjs";
 import type { App } from "vuepress/core";
+import { isPlainObject } from "vuepress/shared";
+
+import type { PrismjsOptions } from "../../shared/index.js";
+import { isHighlighterPlugin } from "./utils.js";
 
 /**
  * @private
  *
  * Composition Api to use `@vuepress/plugin-prismjs`
  */
-export const usePrismjsPlugin = (app: App): void => {
+export const usePrismjsPlugin = (
+  app: App,
+  options?: PrismjsOptions | true,
+): void => {
   const { plugins } = app.pluginApi;
 
-  if (
-    plugins.every(
-      (plugin) =>
-        // Ensure highlight plugin is not used
-        plugin.name !== "@vuepress/plugin-prismjs" &&
-        plugin.name !== "@vuepress/plugin-shiki",
-    )
-  )
-    app.use(prismjsPlugin());
+  // Ensure highlighter plugin is not enabled
+  if (plugins.every((plugin) => !isHighlighterPlugin(plugin)))
+    app.use(prismjsPlugin(isPlainObject(options) ? options : {}));
 };
 
 /**

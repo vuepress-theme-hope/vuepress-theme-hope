@@ -16,15 +16,10 @@
 }
 
 #app {
-  // code-block fix
-  --code-hl-bg-color: var(--code-highlight-line-color);
-  --code-ln-color: var(--code-line-color);
-  --code-ln-wrapper-width: var(--line-numbers-width);
-
   // plugin md-enhance code tabs
   --code-tabs-nav-text-color: var(--code-color);
   --code-tabs-nav-bg-color: var(--code-border-color);
-  --code-tabs-nav-hover-color: var(--code-highlight-line-color);
+  --code-tabs-nav-hover-color: var(--code-highlight-bg-color);
 
   // sidebar space
   --sidebar-space: var(--sidebar-width);
@@ -51,8 +46,8 @@
 
 // plugin-copy-code
 .vp-copy-code-button {
-  --copy-code-color: var(--code-ln-color);
-  --copy-code-hover: var(--code-hl-bg-color);
+  --copy-code-color: var(--code-line-number-color);
+  --copy-code-hover: var(--code-highlight-bg-color);
 }
 
 // plugin-docsearch

@@ -58,7 +58,7 @@ The theme provides a lot of extended syntax support for Markdown, allowing you t
 
 - To store some knowledge notes, the theme provides [Custom container](../markdown/stylize/hint.md), [Mark](../markdown/stylize/mark.md), [Task list](../markdown/grammar/tasklist.md) [mindmap](../markdown/chart/markmap.md) and [Tex](../markdown/grammar/tex.md) support.
 
-- If you are a programmer and need to show a lot of codes and demos, this theme provides light and dark themes for code blocks, [code tabs](../markdown/code/code-tabs.md) and the ["one-click copy" button](../feature/copy-code.md). At the same time, we also provide the [Code Demo](../markdown/code/demo.md), [Playground](../markdown/code/playground.md), [Kotlin Playground](../markdown/code/kotlin-playground.md) and [Vue Playground](../markdown/code/vue-playground.md) functions, which is convenient for you to show your own Vue, React components or other demos and provide playground for visitors.
+- If you are a programmer and need to show a lot of codes and demos, this theme provides light and dark themes for code blocks, [code tabs](../markdown/code/code-tabs.md) and [copy button for code blocks](../interface/code-block.md#copy-code). At the same time, we also provide the [Code Demo](../markdown/code/demo.md), [Playground](../markdown/code/playground.md), [Kotlin Playground](../markdown/code/kotlin-playground.md) and [Vue Playground](../markdown/code/vue-playground.md) functions, which is convenient for you to show your own Vue, React components or other demos and provide playground for visitors.
 
 - If you are providing product documentation and presentation, the theme provides [tabs](../markdown/content/tabs.md), [slide](../markdown/content/revealjs.md), [chart](../markdown/chart/chartjs.md), [echarts](../markdown/chart/echarts.md), [flowchart](../markdown/chart/flowchart.md), [mermaid diagram](../markdown/chart/mermaid.md) and [plantuml](../markdown/chart/plantuml.md) functions.
 
@@ -76,7 +76,7 @@ In short, anyone can enjoy the convenience of Markdown's enhanced syntax.
 
 - [Icon Support](../interface/icon.md)
 
-- [Customizing Code Block Theme](../interface/code-theme.md)
+- [Customizing Code Blocks](../interface/code-block.md)
 
 - [Theme colors](../interface/theme-color.md): allowing you to switch dynamically during browsing
 

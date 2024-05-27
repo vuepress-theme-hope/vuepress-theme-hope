@@ -33,6 +33,14 @@ $card-shadow: (
   dark: rgb(0 0 0 / 30%),
 ) !default;
 
+// code
+$code-highlight-error-bg-color: rgba(244 63 94 / 16%) !default;
+$code-highlight-warning-bg-color: rgba(255 193 7 / 16%) !default;
+$code-line-diff-add-color: rgba(16 185 129 / 16%) !default;
+$code-line-diff-add-symbol-color: #298459 !default;
+$code-line-diff-remove-color: rgba(244 63 94 / 16%) !default;
+$code-line-diff-remove-symbol-color: #e0575b !default;
+
 // constants
 $black: (
   light: #000,

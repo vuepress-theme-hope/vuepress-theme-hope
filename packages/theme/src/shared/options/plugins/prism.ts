@@ -1,3 +1,5 @@
+import type { PrismjsPluginOptions } from "@vuepress/plugin-prismjs";
+
 export type PrismjsLightTheme =
   | "ateliersulphurpool-light"
   | "coldark-cold"
@@ -39,17 +41,28 @@ export type PrismjsDarkTheme =
 
 export type PrismjsTheme = PrismjsDarkTheme | PrismjsLightTheme;
 
-export interface PrismjsOptions {
+export interface PrismjsOptions extends PrismjsPluginOptions {
   /**
-   * Light theme
+   * Single theme
    *
-   * @default 'one-light'
+   * 单个主题
+   *
+   * @default 'nord'
    */
-  light?: PrismjsTheme;
+  theme?: PrismjsTheme;
 
   /**
-   * Dark theme
-   * @default 'one-dark'
+   * Dual themes
+   *
+   * 双主题
+   *
+   * @default {
+   *   light: 'one-light'
+   *   dark: 'one-dark',
+   * }
    */
-  dark?: PrismjsTheme;
+  themes?: {
+    light: PrismjsTheme;
+    dark: PrismjsTheme;
+  };
 }

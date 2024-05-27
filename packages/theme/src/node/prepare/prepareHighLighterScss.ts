@@ -47,9 +47,6 @@ const PRISMJS_THEMES: readonly PrismjsTheme[] = [
   "z-touch",
 ] as const;
 
-const DEFAULT_PRISMJS_LIGHT_THEME: PrismjsTheme = "one-light";
-const DEFAULT_PRISMJS_DARK_THEME: PrismjsTheme = "one-dark";
-
 /**
  * @private
  */
@@ -61,11 +58,11 @@ export const prepareHighLighterScss = async (
   const prismjsOptions: PrismjsOptions = isPlainObject(prismjs) ? prismjs : {};
 
   const highlighter = plugins.some(
-    (plugin) => plugin.name === "@vuepress/plugin-prismjs",
+    (plugin) => plugin.name === "@vuepress/plugin-shiki",
   )
-    ? "prismjs"
-    : plugins.some((plugin) => plugin.name === "@vuepress/plugin-shiki")
-      ? "shiki"
+    ? "shiki"
+    : plugins.some((plugin) => plugin.name === "@vuepress/plugin-prismjs")
+      ? "prismjs"
       : "none";
 
   let content = `\
@@ -73,26 +70,26 @@ $highlighter: "${highlighter}";
 `;
 
   if (highlighter === "prismjs") {
-    const lightTheme = prismjsOptions.light
-      ? PRISMJS_THEMES.includes(prismjsOptions.light)
-        ? prismjsOptions.light
-        : (logger.warn(
-            `Unsupported code theme ${
-              prismjsOptions.light
-            } found in ${colors.magenta("plugins.prismjs.light")}`,
-          ),
-          DEFAULT_PRISMJS_LIGHT_THEME)
-      : DEFAULT_PRISMJS_LIGHT_THEME;
-    const darkTheme = prismjsOptions.dark
-      ? PRISMJS_THEMES.includes(prismjsOptions.dark)
-        ? prismjsOptions.dark
-        : (logger.warn(
-            `Unsupported code theme ${
-              prismjsOptions.dark
-            } found in ${colors.magenta("plugins.prismjs.dark")}`,
-          ),
-          DEFAULT_PRISMJS_DARK_THEME)
-      : DEFAULT_PRISMJS_DARK_THEME;
+    const lightConfig = prismjsOptions.themes?.light ?? prismjsOptions.theme;
+    const darkConfig = prismjsOptions.themes?.dark ?? prismjsOptions.theme;
+
+    let lightTheme: PrismjsTheme = "one-light";
+    let darkTheme: PrismjsTheme = "one-dark";
+
+    if (lightConfig) {
+      if (PRISMJS_THEMES.includes(lightConfig)) lightTheme = lightConfig;
+      else
+        logger.warn(
+          `Unsupported code theme ${lightConfig} found in ${colors.magenta("plugins.prismjs.light")}`,
+        );
+    }
+    if (darkConfig) {
+      if (PRISMJS_THEMES.includes(darkConfig)) darkTheme = darkConfig;
+      else
+        logger.warn(
+          `Unsupported code theme ${darkConfig} found in ${colors.magenta("plugins.prismjs.dark")}`,
+        );
+    }
 
     content += `\
 $light-theme: "${lightTheme}";

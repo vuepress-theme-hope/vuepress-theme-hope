@@ -25,6 +25,7 @@ import type { SearchProPluginOptions } from "vuepress-plugin-search-pro";
 import type { BlogOptions } from "./blog.js";
 import type { PrismjsOptions } from "./prism.js";
 import type { WatermarkPluginOptions } from "@vuepress/plugin-watermark";
+import type { ShikiPluginOptions } from "@vuepress/plugin-shiki";
 
 export interface PluginsOptions {
   /**
@@ -251,7 +252,7 @@ export interface PluginsOptions {
    *
    * @see https://ecosystem.vuejs.press/zh/plugins/prismjs.html
    *
-   * @default true
+   * @default false
    */
   prismjs?: PrismjsOptions | boolean;
 
@@ -326,6 +327,19 @@ export interface PluginsOptions {
    * @default true
    */
   seo?: Omit<SeoPluginOptions, "hostname" | "author"> | boolean;
+
+  /**
+   * Enable @vuepress/shiki or not
+   *
+   * @see https://ecosystem.vuejs.press/plugins/shiki.html
+   *
+   * 是否启用 @vuepress/shiki 插件
+   *
+   * @see https://ecosystem.vuejs.press/zh/plugins/shiki.html
+   *
+   * @default true
+   */
+  shiki?: ShikiPluginOptions | boolean;
 
   /**
    * Options for @vuepress/sitemap

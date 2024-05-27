@@ -1,7 +1,6 @@
 ---
 title: Catalog Page
 icon: network-wired
-order: 6
 category:
   - Feature
 tag:

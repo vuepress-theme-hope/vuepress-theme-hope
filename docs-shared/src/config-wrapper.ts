@@ -1,5 +1,4 @@
 import { addViteOptimizeDepsInclude } from "@vuepress/helper";
-import { shikiPlugin } from "@vuepress/plugin-shiki";
 import type { UserConfig } from "vuepress/cli";
 import { defineUserConfig } from "vuepress/cli";
 import { getDirname, path } from "vuepress/utils";
@@ -14,7 +13,7 @@ const IS_GITHUB = !IS_GITEE && !IS_NETLIFY;
 
 export const config = (
   name: string,
-  { alias = {}, plugins = [], ...config }: UserConfig
+  { alias = {}, plugins = [], ...config }: UserConfig,
 ): UserConfig => {
   const base = name.replace(/\d+$/, "");
   const docsBase = IS_NETLIFY
@@ -30,25 +29,16 @@ export const config = (
 
     head: pwaHead,
 
-    plugins: [
-      shikiPlugin({
-        lineNumbers: 15,
-        themes: {
-          light: "github-light",
-          dark: "one-dark-pro",
-        },
-      }),
-      ...plugins,
-    ],
+    plugins,
 
     alias: {
       "@theme-hope/components/HeroInfo": path.resolve(
         __dirname,
-        "./components/HopeHero.js"
+        "./components/HopeHero.js",
       ),
       "@theme-hope/components/NotFoundHint": path.resolve(
         __dirname,
-        "./components/HopeNotFoundHint.js"
+        "./components/HopeNotFoundHint.js",
       ),
       ...alias,
     },

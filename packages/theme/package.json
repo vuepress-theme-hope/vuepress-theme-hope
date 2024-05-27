@@ -81,10 +81,10 @@
     "@vuepress/plugin-notice": "2.0.0-rc.31",
     "@vuepress/plugin-nprogress": "2.0.0-rc.31",
     "@vuepress/plugin-photo-swipe": "2.0.0-rc.31",
-    "@vuepress/plugin-prismjs": "2.0.0-rc.31",
     "@vuepress/plugin-reading-time": "2.0.0-rc.31",
     "@vuepress/plugin-rtl": "2.0.0-rc.31",
     "@vuepress/plugin-sass-palette": "2.0.0-rc.31",
+    "@vuepress/plugin-shiki": "2.0.0-rc.32",
     "@vuepress/plugin-seo": "2.0.0-rc.31",
     "@vuepress/plugin-sitemap": "2.0.0-rc.31",
     "@vuepress/plugin-theme-data": "2.0.0-rc.31",
@@ -107,6 +107,7 @@
   "peerDependencies": {
     "@vuepress/plugin-docsearch": "2.0.0-rc.31",
     "@vuepress/plugin-feed": "2.0.0-rc.31",
+    "@vuepress/plugin-prismjs": "2.0.0-rc.32",
     "@vuepress/plugin-pwa": "2.0.0-rc.31",
     "@vuepress/plugin-redirect": "2.0.0-rc.31",
     "@vuepress/plugin-search": "2.0.0-rc.31",
@@ -120,6 +121,9 @@
       "optional": true
     },
     "@vuepress/plugin-feed": {
+      "optional": true
+    },
+    "@vuepress/plugin-prismjs": {
       "optional": true
     },
     "@vuepress/plugin-pwa": {

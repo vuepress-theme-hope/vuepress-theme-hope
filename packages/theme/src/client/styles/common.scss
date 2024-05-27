@@ -24,6 +24,10 @@
     display: none;
   }
 
+  @media print {
+    display: none;
+  }
+
   &:hover {
     background: rgb(127 127 127 / 5%);
     cursor: pointer;

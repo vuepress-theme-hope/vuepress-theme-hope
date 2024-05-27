@@ -192,10 +192,10 @@ highlights:
         details: 支持自定义主题色并允许用户在预设的主题颜色之间切换
         link: ./guide/interface/theme-color.html
 
-      - title: 代码块主题
+      - title: 代码块
         icon: wand-magic-sparkles
-        details: 自定义代码块主题
-        link: ./guide/interface/code-theme.html
+        details: 自定义代码块主题、行号、行高亮、复制按钮等
+        link: ./guide/interface/code-block.html
 
       - title: 更多
         icon: ellipsis

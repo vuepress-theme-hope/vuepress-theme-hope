@@ -192,10 +192,10 @@ highlights:
         details: Set theme color with the brand color and even a picker
         link: ./guide/interface/theme-color.html
 
-      - title: Code Block Themes
+      - title: Code Block
         icon: wand-magic-sparkles
-        details: Customize code block themes
-        link: ./guide/interface/code-theme.html
+        details: Customize code block themes, line number, highlight lines, copy button, etc.
+        link: ./guide/interface/code-block.html
 
       - title: More
         icon: ellipsis
