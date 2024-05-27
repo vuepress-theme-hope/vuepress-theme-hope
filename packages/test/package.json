@@ -1,0 +1,51 @@
+{
+  "name": "vuepress-test-utils",
+  "version": "2.0.0-beta.212",
+  "private": true,
+  "description": "Test utils for VuePress2",
+  "keywords": [
+    "vuepress",
+    "vuepress2",
+    "test-utils"
+  ],
+  "homepage": "https://github.com/vuepress-theme-hope/vuepress-theme-hope/packages/test#readme",
+  "bugs": {
+    "url": "https://github.com/vuepress-theme-hope/vuepress-theme-hope/issues"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/vuepress-theme-hope/vuepress-theme-hope.git",
+    "directory": "packages/test"
+  },
+  "license": "MIT",
+  "author": {
+    "name": "Mr.Hope",
+    "email": "mister-hope@outlook.com",
+    "url": "https://mrhope.site"
+  },
+  "type": "module",
+  "exports": {
+    ".": "./lib/index.js",
+    "./package.json": "./package.json"
+  },
+  "main": "lib/index.js",
+  "types": "lib/index.d.ts",
+  "files": [
+    "lib"
+  ],
+  "scripts": {
+    "build": "rollup -c",
+    "clean": "rimraf ./lib ./*.tsbuildinfo",
+    "dev": "pnpm dev:ts",
+    "dev:ts": "tsc -b tsconfig.build.json --watch"
+  },
+  "publishConfig": {
+    "access": "public"
+  },
+  "dependencies": {
+    "vitest": "1.6.0",
+    "vue": "^3.4.17",
+    "vuepress": "2.0.0-rc.12",
+    "vue-router": "^4.2.1"
+  }
+}
