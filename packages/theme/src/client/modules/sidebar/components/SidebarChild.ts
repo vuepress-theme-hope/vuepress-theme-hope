@@ -7,7 +7,7 @@ import AutoLink from "@theme-hope/components/AutoLink";
 import HopeIcon from "@theme-hope/components/HopeIcon";
 import { isActiveSidebarItem } from "@theme-hope/modules/sidebar/utils/index";
 
-import type { AutoLinkOptions as AutoLinkType } from "../../../../shared/index.js";
+import type { AutoLinkConfig } from "../../../../shared/index.js";
 import type { ResolvedSidebarPageItem } from "../utils/index.js";
 
 import "../styles/sidebar-child.scss";
@@ -39,8 +39,10 @@ export default defineComponent({
               `vp-sidebar-page`,
               { active: isActiveSidebarItem(route, props.config, true) },
             ],
-            exact: true,
-            config: props.config as AutoLinkType,
+            config: {
+              ...props.config,
+              exact: true,
+            } as AutoLinkConfig,
           })
         : // If the item only has text, render it as `<p>`
           h("p", props, [

@@ -97,7 +97,7 @@ Site favicon.
     ariaLabel?: string;
   }
 
-  interface AutoLinkOptions extends TextItemOptions {
+  interface AutoLinkConfig extends TextItemOptions {
     /**
      * link of item
      */
@@ -136,7 +136,7 @@ Site favicon.
     children: T[];
   }
 
-  type NavbarItem = AutoLinkOptions;
+  type NavbarItem = AutoLinkConfig;
   type NavbarGroup = NavGroup<NavbarGroup | NavbarItem | string>;
   type NavbarConfig = (NavbarItem | NavbarGroup | string)[];
   ```
@@ -167,7 +167,7 @@ Navbar config
     ariaLabel?: string;
   }
 
-  interface AutoLinkOptions extends TextItemOptions {
+  interface AutoLinkConfig extends TextItemOptions {
     /**
      * link of item
      */
@@ -189,7 +189,7 @@ Navbar config
     activeMatch?: string;
   }
 
-  type SidebarPageItem = AutoLinkOptions;
+  type SidebarPageItem = AutoLinkConfig;
 
   interface SidebarGroupItem extends TextItemOptions {
     /**

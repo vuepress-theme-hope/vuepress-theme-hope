@@ -3,7 +3,7 @@ import { colors } from "vuepress/utils";
 
 import { deprecatedLogger } from "./utils.js";
 import type {
-  AutoLinkOptions,
+  AutoLinkConfig,
   NavbarGroup,
   NavbarItem,
   NavbarOptions,
@@ -12,8 +12,8 @@ import { logger } from "../utils.js";
 
 type LegacyNavbarOptions = (
   | string
-  | AutoLinkOptions
-  | (NavbarGroup & { items?: (AutoLinkOptions | string)[] })
+  | AutoLinkConfig
+  | (NavbarGroup & { items?: (AutoLinkConfig | string)[] })
 )[];
 
 const handleNavbarOptions = (config: LegacyNavbarOptions): NavbarOptions =>

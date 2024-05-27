@@ -69,6 +69,7 @@ export default defineComponent({
         avatar: avatar ? withBase(avatar) : null,
         avatarDark: avatarDark ? withBase(avatarDark) : null,
         avatarStyle,
+        // eslint-disable-next-line @typescript-eslint/prefer-nullish-coalescing
         alt: (avatarAlt || name) ?? "",
       };
     });

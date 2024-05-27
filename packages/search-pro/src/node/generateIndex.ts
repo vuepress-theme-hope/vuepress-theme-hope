@@ -37,7 +37,7 @@ const CONTENT_BLOCK_TAGS =
   );
 
 /**
- * @description Not all the inline tags are included, because some of them shall not be indexed, e.g.: pre
+ * @description Not all the inline tags are included, because some of them shall not be indexed
  *
  * routelink and routerlink are added to the list, because they are link components
  */
@@ -87,18 +87,21 @@ export const generatePageIndex = (
   let currentContent = "";
   let isContentBeforeFirstHeader = true;
 
+  const addContentToText = () => {
+    if (currentContent && shouldIndexContent) {
+      ((isContentBeforeFirstHeader ? pageIndex : currentSectionIndex!).t ??=
+        []).push(currentContent.replace(/[\n\s]+/gu, " "));
+      currentContent = "";
+    }
+  };
+
   const render = (node: AnyNode, preserveSpace = false): void => {
     if (node.type === "tag") {
       if (HEADING_TAGS.includes(node.name)) {
         const { id } = node.attribs;
         const header = renderHeader(node);
 
-        if (currentContent && shouldIndexContent) {
-          // Add last content
-          ((isContentBeforeFirstHeader ? pageIndex : currentSectionIndex!).t ??=
-            []).push(currentContent.replace(/\s+/gu, " "));
-          currentContent = "";
-        }
+        addContentToText();
 
         // Update current section index only if it has an id
         if (id) {
@@ -113,12 +116,7 @@ export const generatePageIndex = (
           ((currentSectionIndex ?? pageIndex).t ??= []).push(header);
         }
       } else if (CONTENT_BLOCK_TAGS.includes(node.name)) {
-        if (currentContent && shouldIndexContent) {
-          // Add last content
-          ((isContentBeforeFirstHeader ? pageIndex : currentSectionIndex)!.t ??=
-            []).push(currentContent.replace(/\s+/gu, " "));
-          currentContent = "";
-        }
+        addContentToText();
         node.childNodes.forEach((item) =>
           render(item, preserveSpace || node.name === "pre"),
         );
@@ -163,9 +161,7 @@ export const generatePageIndex = (
   });
 
   // Push contents in last block tags
-  if (shouldIndexContent && currentContent)
-    ((isContentBeforeFirstHeader ? pageIndex : currentSectionIndex)!.t ??=
-      []).push(currentContent);
+  addContentToText();
 
   // Push last section
   if (currentSectionIndex) results.push(currentSectionIndex);

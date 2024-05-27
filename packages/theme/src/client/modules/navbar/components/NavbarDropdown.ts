@@ -5,10 +5,7 @@ import { usePageData } from "vuepress/client";
 import AutoLink from "@theme-hope/components/AutoLink";
 import HopeIcon from "@theme-hope/components/HopeIcon";
 
-import type {
-  AutoLinkOptions as AutoLinkType,
-  NavGroup,
-} from "../../../../shared/index.js";
+import type { AutoLinkConfig, NavGroup } from "../../../../shared/index.js";
 
 import "../styles/navbar-dropdown.scss";
 
@@ -22,7 +19,10 @@ export default defineComponent({
      * 下拉列表配置
      */
     config: {
-      type: Object as PropType<NavGroup<AutoLinkType | NavGroup<AutoLinkType>>>,
+      type: Object as PropType<
+        NavGroup<AutoLinkConfig | NavGroup<AutoLinkConfig>>
+      >,
+
       required: true,
     },
   },
@@ -94,7 +94,7 @@ export default defineComponent({
                           { class: "vp-dropdown-subtitle" },
                           child.link
                             ? h(AutoLink, {
-                                config: child as AutoLinkType,
+                                config: child as AutoLinkConfig,
                                 onFocusout: () => {
                                   if (
                                     // No children

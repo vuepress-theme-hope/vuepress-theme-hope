@@ -5,7 +5,7 @@ import { computed, defineComponent, h } from "vue";
 import { useThemeLocaleData } from "@theme-hope/composables/index";
 import ThemeColorPicker from "@theme-hope/modules/outlook/components/ThemeColorPicker";
 
-import cssVariables from "../../../styles/variables.module.scss?module";
+import cssVariables from "../../../styles/variables.module.scss";
 import "../styles/theme-color.scss";
 
 export const enableThemeColor = cssVariables["enableThemeColor"] === "true";

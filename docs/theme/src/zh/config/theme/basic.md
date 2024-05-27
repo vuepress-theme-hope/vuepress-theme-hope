@@ -95,7 +95,7 @@ tag:
     ariaLabel?: string;
   }
 
-  interface AutoLinkOptions extends TextItemOptions {
+  interface AutoLinkConfig extends TextItemOptions {
     /**
      * 当前页面链接
      */
@@ -134,7 +134,7 @@ tag:
     children: T[];
   }
 
-  type NavbarItem = AutoLinkOptions;
+  type NavbarItem = AutoLinkConfig;
   type NavbarGroup = NavGroup<NavbarGroup | NavbarItem | string>;
   type NavbarConfig = (NavbarItem | NavbarGroup | string)[];
   ```
@@ -165,7 +165,7 @@ tag:
     ariaLabel?: string;
   }
 
-  interface AutoLinkOptions extends TextItemOptions {
+  interface AutoLinkConfig extends TextItemOptions {
     /**
      * 当前页面链接
      */
@@ -187,7 +187,7 @@ tag:
     activeMatch?: string;
   }
 
-  type SidebarPageItem = AutoLinkOptions;
+  type SidebarPageItem = AutoLinkConfig;
 
   interface SidebarGroupItem extends TextItemOptions {
     /**

@@ -80,7 +80,7 @@
     "ora": "8.0.1",
     "prettier": "3.2.5",
     "rimraf": "5.0.7",
-    "rollup": "4.17.2",
+    "rollup": "4.18.0",
     "rollup-plugin-copy": "3.5.0",
     "rollup-plugin-dts": "6.1.1",
     "rollup-plugin-esbuild": "6.1.1",
@@ -97,10 +97,5 @@
   "packageManager": "pnpm@9.1.2",
   "engines": {
     "node": ">=20"
-  },
-  "pnpm": {
-    "overrides": {
-      "@types/markdown-it": "^14.1.1"
-    }
   }
 }

@@ -296,7 +296,6 @@ exports[`generateIndex > Should generate index 1`] = `
     "id": "0",
     "t": [
       "Here is article excerpt.",
-      "const a = 1; ",
     ],
   },
   {
@@ -434,7 +433,6 @@ exports[`generateIndex > Should support customFields 1`] = `
     "id": "0",
     "t": [
       "Here is article excerpt.",
-      "const a = 1; ",
     ],
   },
   {

@@ -70,6 +70,7 @@ export default defineComponent({
             class: [
               "vp-sidebar-header",
               {
+                // eslint-disable-next-line @typescript-eslint/prefer-nullish-coalescing
                 clickable: collapsible || link,
                 exact: exact.value,
                 active: active.value,
@@ -78,7 +79,7 @@ export default defineComponent({
             ...(collapsible
               ? {
                   type: "button",
-                  onClick: () => {
+                  onClick: (): void => {
                     hasBeenToggled.value = true;
                     emit("toggle");
                   },
@@ -94,9 +95,8 @@ export default defineComponent({
             // Title
             link
               ? h(AutoLink, {
-                  class: "vp-sidebar-title",
+                  class: "vp-sidebar-title no-external-link-icon",
                   config: { text, link },
-                  noExternalLinkIcon: true,
                 })
               : h("span", { class: "vp-sidebar-title" }, text),
             // Arrow

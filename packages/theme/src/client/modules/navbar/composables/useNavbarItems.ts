@@ -9,7 +9,7 @@ import {
 } from "@theme-hope/utils/index";
 
 import type {
-  AutoLinkOptions,
+  AutoLinkConfig,
   NavGroup,
   NavbarGroup,
   NavbarItem,
@@ -32,8 +32,8 @@ export const resolveNavbarItem = (
       children: item.children.map(
         (child) =>
           resolveNavbarItem(child, resolvePrefix(prefix, item.prefix)) as
-            | NavGroup<AutoLinkOptions>
-            | AutoLinkOptions,
+            | NavGroup<AutoLinkConfig>
+            | AutoLinkConfig,
       ),
     };
 
@@ -49,6 +49,7 @@ export const useNavbarItems = (): ComputedRef<ResolvedThemeNavbarItem[]> => {
   const themeLocaleData = useThemeLocaleData();
 
   return computed(() =>
+    // eslint-disable-next-line @typescript-eslint/prefer-nullish-coalescing
     (themeLocaleData.value.navbar || []).map((item) => resolveNavbarItem(item)),
   );
 };

@@ -1,4 +1,4 @@
-declare module "*.module.scss?module" {
+declare module "*.module.scss" {
   const cssVar: Record<string, string>;
 
   export default cssVar;

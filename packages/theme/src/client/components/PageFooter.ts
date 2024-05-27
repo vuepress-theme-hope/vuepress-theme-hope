@@ -27,6 +27,7 @@ export default defineComponent({
 
       return (
         footer !== false &&
+        // eslint-disable-next-line @typescript-eslint/prefer-nullish-coalescing
         Boolean(copyright || footer || themeLocale.value.displayFooter)
       );
     });
