@@ -46,7 +46,7 @@ class Snowflake {
     this.speed = speed;
   }
 
-  move() {
+  move(): void {
     this.y += this.speed;
     if (this.y > this.context.canvas.height) {
       this.y = 0 - this.size;
@@ -54,7 +54,7 @@ class Snowflake {
     }
   }
 
-  draw() {
+  draw(): void {
     this.context.drawImage(this.image, this.x, this.y, this.size, this.size);
   }
 }
@@ -116,7 +116,7 @@ export const setupSnowFall = ({
           new Snowflake(snowflakeImage, context, { maxSize, minSize, speed }),
         );
 
-      const drawSnowflakes = () => {
+      const drawSnowflakes = (): void => {
         context.clearRect(0, 0, canvas.width, canvas.height);
 
         for (const snowflake of snowflakes) {
