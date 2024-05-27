@@ -14,7 +14,7 @@ const IS_GITHUB = !IS_GITEE && !IS_NETLIFY;
 
 export const config = (
   name: string,
-  { alias = {}, plugins = [], ...config }: UserConfig,
+  { alias = {}, plugins = [], ...config }: UserConfig
 ): UserConfig => {
   const base = name.replace(/\d+$/, "");
   const docsBase = IS_NETLIFY
@@ -44,11 +44,11 @@ export const config = (
     alias: {
       "@theme-hope/components/HeroInfo": path.resolve(
         __dirname,
-        "./components/HopeHero.js",
+        "./components/HopeHero.js"
       ),
       "@theme-hope/components/NotFoundHint": path.resolve(
         __dirname,
-        "./components/HopeNotFoundHint.js",
+        "./components/HopeNotFoundHint.js"
       ),
       ...alias,
     },
@@ -80,7 +80,7 @@ Theme by <a href="https://theme-hope.vuejs.press" target="_blank">VuePress Theme
   <img src="https://www.netlify.com/img/global/badges/netlify-dark.svg" alt="由 Netlify 部署" data-mode="darkmode-only">
 </a>
 <br/>
-使用 <a href="https://theme-hope.vuejs.press/zh/" target="_blank">VuePress Theme Hope</a> 主题 | MIT 协议, 版权所有 © 2019-present Mr.Hope
+使用 <a href="https://theme-hope.vuejs.press/zh/" target="_blank">VuePress Theme Hope</a> 主题 | MIT 协议, 版权所有 © 2019-至今 Mr.Hope
 `;
       }
     },
