@@ -45,11 +45,6 @@ All notable changes to this project will be documented in this file. See [Conven
 - **theme:** fix transparent navbar preset ([91a7fc1](https://github.com/vuepress-theme-hope/vuepress-theme-hope/commit/91a7fc13b5f51b65690db1a32be8c45c58b19362))
 - **theme:** read root locale author ([c8200f8](https://github.com/vuepress-theme-hope/vuepress-theme-hope/commit/c8200f8d02a56d4d967bbe8b5ee760bed80e3b26))
 
-<!-- #region recent-change -->
-
-All notable changes to this project will be documented in this file.
-See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
-
 ## [2.0.0-rc.42](https://github.com/vuepress-theme-hope/vuepress-theme-hope/compare/v2.0.0-rc.41...v2.0.0-rc.42) (2024-05-12)
 
 ### ✨ Features

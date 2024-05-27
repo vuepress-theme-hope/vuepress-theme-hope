@@ -20,16 +20,9 @@ All notable changes to this project will be documented in this file. See [Conven
 
 - revert ariaLabel ([22ed6e0](https://github.com/vuepress-theme-hope/vuepress-theme-hope/commit/22ed6e0f3420a2f88785e3484b0a42b9948a35f1))
 
-<!-- #region recent-change -->
-
-All notable changes to this project will be documented in this file.
-See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
-
 ## [2.0.0-rc.42](https://github.com/vuepress-theme-hope/vuepress-theme-hope/compare/v2.0.0-rc.41...v2.0.0-rc.42) (2024-05-12)
 
 **Note:** Version bump only for package vuepress-plugin-md-enhance
-
-<!-- #region recent-change -->
 
 ## [2.0.0-rc.41](https://github.com/vuepress-theme-hope/vuepress-theme-hope/compare/v2.0.0-rc.40...v2.0.0-rc.41) (2024-05-11)
 
