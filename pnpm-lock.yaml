@@ -213,8 +213,8 @@ importers:
   demo/md-enhance:
     devDependencies:
       '@vue/repl':
-        specifier: 4.1.2
-        version: 4.1.2
+        specifier: 4.2.0
+        version: 4.2.0
       '@vuepress/bundler-vite':
         specifier: 2.0.0-rc.9
         version: 2.0.0-rc.9(@types/node@20.12.12)(jiti@1.21.0)(sass@1.77.1)(terser@5.31.0)(tsx@4.11.0)(typescript@5.4.5)
@@ -303,8 +303,8 @@ importers:
   demo/theme-blog:
     devDependencies:
       '@vue/repl':
-        specifier: 4.1.2
-        version: 4.1.2
+        specifier: 4.2.0
+        version: 4.2.0
       '@vuepress/bundler-vite':
         specifier: 2.0.0-rc.9
         version: 2.0.0-rc.9(@types/node@20.12.12)(jiti@1.21.0)(sass@1.77.1)(terser@5.31.0)(tsx@4.11.0)(typescript@5.4.5)
@@ -369,8 +369,8 @@ importers:
   demo/theme-docs:
     devDependencies:
       '@vue/repl':
-        specifier: 4.1.2
-        version: 4.1.2
+        specifier: 4.2.0
+        version: 4.2.0
       '@vuepress/bundler-vite':
         specifier: 2.0.0-rc.9
         version: 2.0.0-rc.9(@types/node@20.12.12)(jiti@1.21.0)(sass@1.77.1)(terser@5.31.0)(tsx@4.11.0)(typescript@5.4.5)
@@ -645,8 +645,8 @@ importers:
         specifier: 0.16.7
         version: 0.16.7
       '@vue/repl':
-        specifier: 4.1.2
-        version: 4.1.2
+        specifier: 4.2.0
+        version: 4.2.0
       '@vuepress/bundler-vite':
         specifier: 2.0.0-rc.9
         version: 2.0.0-rc.9(@types/node@20.12.12)(jiti@1.21.0)(sass@1.77.1)(terser@5.31.0)(tsx@4.11.0)(typescript@5.4.5)
@@ -3439,6 +3439,9 @@ packages:
 
   '@vue/repl@4.1.2':
     resolution: {integrity: sha512-h5JQ5NRN9HOCNfE4QCbZsFgAFS7/A21V3zrltxV2Uag1JIvtQb68qfmj795CPFjMBnRNpCddOBi34AKlq5yHbg==}
+
+  '@vue/repl@4.2.0':
+    resolution: {integrity: sha512-JpWFiscTqLo6VRhZEc6lLB9Ipg7wLXnk16w0Uk+5p2HszIaLN2vmrQ7DQ6UE9On2Eq39O2V9Zeyk0DLnjPgwhw==}
 
   '@vue/runtime-core@3.4.27':
     resolution: {integrity: sha512-7aYA9GEbOOdviqVvcuweTLe5Za4qBZkUY7SvET6vE8kyypxVgaT1ixHLg4urtOlrApdgcdgHoTZCUuTGap/5WA==}
@@ -11611,6 +11614,8 @@ snapshots:
       '@vue/shared': 3.4.27
 
   '@vue/repl@4.1.2': {}
+
+  '@vue/repl@4.2.0': {}
 
   '@vue/runtime-core@3.4.27':
     dependencies:
