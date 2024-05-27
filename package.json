@@ -97,10 +97,5 @@
   "packageManager": "pnpm@9.1.2",
   "engines": {
     "node": ">=20"
-  },
-  "pnpm": {
-    "overrides": {
-      "@types/markdown-it": "^14.1.1"
-    }
   }
 }

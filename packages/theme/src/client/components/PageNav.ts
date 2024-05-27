@@ -12,7 +12,7 @@ import type { ResolvedSidebarItem } from "@theme-hope/modules/sidebar/utils/inde
 import { resolveLinkInfo } from "@theme-hope/utils/index";
 
 import type {
-  AutoLinkOptions,
+  AutoLinkConfig,
   ThemeNormalPageFrontmatter,
 } from "../../shared/index.js";
 
@@ -24,8 +24,8 @@ import "../styles/page-nav.scss";
 const resolveFromFrontmatterConfig = (
   config: unknown,
   current: string,
-): AutoLinkOptions | null | false =>
-  config === false || isPlainObject<AutoLinkOptions>(config)
+): AutoLinkConfig | null | false =>
+  config === false || isPlainObject<AutoLinkConfig>(config)
     ? config
     : isString(config)
       ? resolveLinkInfo(config, true, current)
@@ -38,7 +38,7 @@ const resolveFromSidebarItems = (
   sidebarItems: ResolvedSidebarItem[],
   currentPath: string,
   offset: number,
-): AutoLinkOptions | null => {
+): AutoLinkConfig | null => {
   const index = sidebarItems.findIndex((item) => item.link === currentPath);
 
   if (index !== -1) {
@@ -46,7 +46,7 @@ const resolveFromSidebarItems = (
 
     if (!targetItem?.link) return null;
 
-    return targetItem as AutoLinkOptions;
+    return targetItem as AutoLinkConfig;
   }
 
   for (const item of sidebarItems)

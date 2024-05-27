@@ -1,36 +1,36 @@
-.vp-external-link-icon::after {
-  content: "";
+@mixin external-link-icon {
+  &::after {
+    content: "";
 
-  display: inline-block;
-  flex-shrink: 0;
+    display: inline-block;
+    flex-shrink: 0;
 
-  width: 11px;
-  height: 11px;
-  margin-top: -1px;
-  margin-left: 4px;
+    width: 11px;
+    height: 11px;
+    margin-top: -1px;
+    margin-left: 4px;
 
-  background: var(--external-link-icon-color);
+    background: var(--external-link-icon-color);
 
-  mask-image: var(--external-link-icon);
+    mask-image: var(--external-link-icon);
+  }
 }
 
-.external-link-icon .theme-hope-content {
-  a[href*="://"],
-  a[target=_blank] {
-    &:not(.no-external-link-icon)::after {
-      content: "";
+.vp-external-link-icon {
+  @include external-link-icon;
+}
 
-      display: inline-block;
-      flex-shrink: 0;
+.external-link-icon {
+  .external-link:not(.no-external-link-icon) {
+    @include external-link-icon;
+  }
 
-      width: 11px;
-      height: 11px;
-      margin-top: -1px;
-      margin-left: 4px;
-
-      background: var(--external-link-icon-color);
-
-      mask-image: var(--external-link-icon);
+  .theme-hope-content {
+    a[href*="://"],
+    a[target=_blank] {
+      &:not(.no-external-link-icon) {
+        @include external-link-icon;
+      }
     }
   }
 }

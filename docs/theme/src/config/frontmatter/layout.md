@@ -181,10 +181,10 @@ Whether to show contributors.
 
 ## prev
 
-- Type: `AutoLinkOptions | string | false`
+- Type: `AutoLinkConfig | string | false`
 
   ```ts
-  interface AutoLinkOptions {
+  interface AutoLinkConfig {
     text: string;
     icon: string;
     link: string;
@@ -195,10 +195,10 @@ Previous article link.
 
 ## next
 
-- Type: `AutoLinkOptions |string | false`
+- Type: `AutoLinkConfig |string | false`
 
   ```ts
-  interface AutoLinkOptions {
+  interface AutoLinkConfig {
     text: string;
     icon: string;
     link: string;

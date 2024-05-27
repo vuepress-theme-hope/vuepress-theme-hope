@@ -30,14 +30,9 @@ export const config = (
 
     head: pwaHead,
 
-    markdown: {
-      code: {
-        lineNumbers: 10,
-      },
-    },
-
     plugins: [
       shikiPlugin({
+        lineNumbers: 15,
         themes: {
           light: "github-light",
           dark: "one-dark-pro",

@@ -184,10 +184,10 @@ tag:
 
 ## prev
 
-- 类型: `AutoLinkOptions | string | false`
+- 类型: `AutoLinkConfig | string | false`
 
   ```ts
-  interface AutoLinkOptions {
+  interface AutoLinkConfig {
     text: string;
     icon: string;
     link: string;
@@ -198,10 +198,10 @@ tag:
 
 ## next
 
-- 类型: `AutoLinkOptions | string | false`
+- 类型: `AutoLinkConfig | string | false`
 
   ```ts
-  interface AutoLinkOptions {
+  interface AutoLinkConfig {
     text: string;
     icon: string;
     link: string;

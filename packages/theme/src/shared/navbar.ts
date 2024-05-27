@@ -1,4 +1,4 @@
-import type { AutoLinkOptions, TextItemOptions } from "./utils.js";
+import type { AutoLinkConfig, TextItemOptions } from "./utils.js";
 
 /**
  * Base nav group, has nav items children
@@ -29,6 +29,6 @@ export interface NavGroup<T> extends TextItemOptions {
 /**
  * Navbar types
  */
-export type NavbarItem = AutoLinkOptions;
+export type NavbarItem = AutoLinkConfig;
 export type NavbarGroup = NavGroup<NavbarGroup | NavbarItem | string>;
 export type NavbarOptions = (NavbarItem | NavbarGroup | string)[];

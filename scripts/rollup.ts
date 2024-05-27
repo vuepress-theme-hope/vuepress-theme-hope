@@ -126,7 +126,7 @@ export const rollupBundle = (
               "vuepress/client",
               "vuepress/shared",
               "vuepress-shared/client",
-              /\.s?css(?:\?module)?$/,
+              /\.s?css$/,
             ]
           : (
                 typeof filePath === "object"

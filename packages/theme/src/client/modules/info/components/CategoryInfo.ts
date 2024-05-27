@@ -6,7 +6,7 @@ import { useNavigate, usePure } from "@theme-hope/composables/index";
 import { CategoryIcon } from "@theme-hope/modules/info/components/icons";
 import { useMetaLocale } from "@theme-hope/modules/info/composables/index";
 import type { PageCategory } from "@theme-hope/modules/info/utils/index";
-import cssVariables from "../../../styles/variables.module.scss?module";
+import cssVariables from "../../../styles/variables.module.scss";
 
 import "../styles/category-info.scss";
 
