@@ -1,9 +1,19 @@
-# Change Log
+# Changelog
+
+All notable changes to this project will be documented in this file. See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
 <!-- #region recent-change -->
 
-All notable changes to this project will be documented in this file.
-See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
+## [2.0.0-rc.44](https://github.com/vuepress-theme-hope/vuepress-theme-hope/compare/v2.0.0-rc.43...v2.0.0-rc.44) (2024-05-27)
+
+### ✨ Features
+
+- support latest vuepress ([738a31b](https://github.com/vuepress-theme-hope/vuepress-theme-hope/commit/738a31b9f3e4b321a2cc0cdb554ce0669108b217))
+- **theme:** rebuild social media icons ([4390a14](https://github.com/vuepress-theme-hope/vuepress-theme-hope/commit/4390a140d3de7530ba8eac0ff39e741d1ff1a773))
+
+### 🪲 Bug Fixes
+
+- **deps:** update dependency execa to v9.1.0 ([#4125](https://github.com/vuepress-theme-hope/vuepress-theme-hope/issues/4125)) ([34efdf5](https://github.com/vuepress-theme-hope/vuepress-theme-hope/commit/34efdf51ac788341982e29cf1d89a04955743cc8))
 
 ## [2.0.0-rc.43](https://github.com/vuepress-theme-hope/vuepress-theme-hope/compare/v2.0.0-rc.42...v2.0.0-rc.43) (2024-05-14)
 

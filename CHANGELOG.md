@@ -1,9 +1,28 @@
-# Change Log
+# Changelog
+
+All notable changes to this project will be documented in this file. See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
 <!-- #region recent-change -->
 
-All notable changes to this project will be documented in this file.
-See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
+## [2.0.0-rc.44](https://github.com/vuepress-theme-hope/vuepress-theme-hope/compare/v2.0.0-rc.43...v2.0.0-rc.44) (2024-05-27)
+
+### ✨ Features
+
+- support latest vuepress ([738a31b](https://github.com/vuepress-theme-hope/vuepress-theme-hope/commit/738a31b9f3e4b321a2cc0cdb554ce0669108b217))
+- **theme:** add blog type presets, close [#4166](https://github.com/vuepress-theme-hope/vuepress-theme-hope/issues/4166) ([0f32699](https://github.com/vuepress-theme-hope/vuepress-theme-hope/commit/0f326990c9c42470453fecca1f6585341ba017f9))
+- **theme:** rebuild social media icons ([4390a14](https://github.com/vuepress-theme-hope/vuepress-theme-hope/commit/4390a140d3de7530ba8eac0ff39e741d1ff1a773))
+- **theme:** support expanded in sidebar, close [#4141](https://github.com/vuepress-theme-hope/vuepress-theme-hope/issues/4141) ([#4172](https://github.com/vuepress-theme-hope/vuepress-theme-hope/issues/4172)) ([8e119c0](https://github.com/vuepress-theme-hope/vuepress-theme-hope/commit/8e119c0d08fb46a6b799b73f73f8d9023c2866f0))
+
+### 🪲 Bug Fixes
+
+- **components:** give warnings in dev server with embed pdf viewer, close [#4140](https://github.com/vuepress-theme-hope/vuepress-theme-hope/issues/4140) ([75da43e](https://github.com/vuepress-theme-hope/vuepress-theme-hope/commit/75da43e9e4260018b9a6c537c95c0959bf2e9307))
+- **deps:** update dependency @types/three to v0.164.1 ([#4177](https://github.com/vuepress-theme-hope/vuepress-theme-hope/issues/4177)) ([f655016](https://github.com/vuepress-theme-hope/vuepress-theme-hope/commit/f655016ae34ad16e6c5d1d40f6551afda58ca33c))
+- **deps:** update dependency @vue/repl to v4.2.0 ([#4186](https://github.com/vuepress-theme-hope/vuepress-theme-hope/issues/4186)) ([5b43674](https://github.com/vuepress-theme-hope/vuepress-theme-hope/commit/5b43674e8f619e63289f06a269821067708b191e))
+- **deps:** update dependency execa to v9.1.0 ([#4125](https://github.com/vuepress-theme-hope/vuepress-theme-hope/issues/4125)) ([34efdf5](https://github.com/vuepress-theme-hope/vuepress-theme-hope/commit/34efdf51ac788341982e29cf1d89a04955743cc8))
+- **theme:** avoid warning in navscreen ([388943b](https://github.com/vuepress-theme-hope/vuepress-theme-hope/commit/388943b0fd730433ede5d2aec9ad9b7b6add00ab))
+- **theme:** fix image in table, close [#4143](https://github.com/vuepress-theme-hope/vuepress-theme-hope/issues/4143) ([6d853e6](https://github.com/vuepress-theme-hope/vuepress-theme-hope/commit/6d853e6ec7cb45c054adab9da060d64d2b8a4bd1))
+- **theme:** fix navScreen open with transparent navbar ([cd4b5c1](https://github.com/vuepress-theme-hope/vuepress-theme-hope/commit/cd4b5c1f87b1387b80fe401e20e6edf7472dd483))
+- **theme:** fix themeConfig copyright, close [#4137](https://github.com/vuepress-theme-hope/vuepress-theme-hope/issues/4137) ([65a07c0](https://github.com/vuepress-theme-hope/vuepress-theme-hope/commit/65a07c07ae48a9a6dc6727bebfd3cb6a30cff33c))
 
 ## [2.0.0-rc.43](https://github.com/vuepress-theme-hope/vuepress-theme-hope/compare/v2.0.0-rc.42...v2.0.0-rc.43) (2024-05-14)
 

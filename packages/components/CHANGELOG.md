@@ -1,9 +1,18 @@
-# Change Log
+# Changelog
+
+All notable changes to this project will be documented in this file. See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
 <!-- #region recent-change -->
 
-All notable changes to this project will be documented in this file.
-See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
+## [2.0.0-rc.44](https://github.com/vuepress-theme-hope/vuepress-theme-hope/compare/v2.0.0-rc.43...v2.0.0-rc.44) (2024-05-27)
+
+### ✨ Features
+
+- support latest vuepress ([738a31b](https://github.com/vuepress-theme-hope/vuepress-theme-hope/commit/738a31b9f3e4b321a2cc0cdb554ce0669108b217))
+
+### 🪲 Bug Fixes
+
+- **components:** give warnings in dev server with embed pdf viewer, close [#4140](https://github.com/vuepress-theme-hope/vuepress-theme-hope/issues/4140) ([75da43e](https://github.com/vuepress-theme-hope/vuepress-theme-hope/commit/75da43e9e4260018b9a6c537c95c0959bf2e9307))
 
 ## [2.0.0-rc.43](https://github.com/vuepress-theme-hope/vuepress-theme-hope/compare/v2.0.0-rc.42...v2.0.0-rc.43) (2024-05-14)
 
