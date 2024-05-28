@@ -1,9 +1,19 @@
-import { prismjsPlugin } from "@vuepress/plugin-prismjs";
-import type { App } from "vuepress/core";
+import type { PrismjsPluginOptions } from "@vuepress/plugin-prismjs";
+import type { App, Plugin } from "vuepress/core";
 import { isPlainObject } from "vuepress/shared";
+import { colors } from "vuepress/utils";
 
 import type { PrismjsOptions } from "../../shared/index.js";
 import { isHighlighterPlugin } from "./utils.js";
+import { logger } from "../utils.js";
+
+let prismjsPlugin: (options: PrismjsPluginOptions) => Plugin;
+
+try {
+  ({ prismjsPlugin } = await import("@vuepress/plugin-prismjs"));
+} catch (e) {
+  // Do nothing
+}
 
 /**
  * @private
@@ -15,6 +25,14 @@ export const usePrismjsPlugin = (
   options?: PrismjsOptions | true,
 ): void => {
   const { plugins } = app.pluginApi;
+
+  if (!prismjsPlugin) {
+    logger.error(
+      `${colors.cyan("@vuepress/plugin-prismjs")} is not installed!`,
+    );
+
+    return;
+  }
 
   // Ensure highlighter plugin is not enabled
   if (plugins.every((plugin) => !isHighlighterPlugin(plugin)))
