@@ -87,7 +87,7 @@ export const generatePageIndex = (
   let currentContent = "";
   let isContentBeforeFirstHeader = true;
 
-  const addContentToText = () => {
+  const addContentToText = (): void => {
     if (currentContent && shouldIndexContent) {
       ((isContentBeforeFirstHeader ? pageIndex : currentSectionIndex!).t ??=
         []).push(currentContent.replace(/[\n\s]+/gu, " "));
