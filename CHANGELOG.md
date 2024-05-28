@@ -4,6 +4,22 @@ All notable changes to this project will be documented in this file. See [Conven
 
 <!-- #region recent-change -->
 
+## [2.0.0-rc.45](https://github.com/vuepress-theme-hope/vuepress-theme-hope/compare/v2.0.0-rc.44...v2.0.0-rc.45) (2024-05-28)
+
+### ⚠ BREAKING CHANGES
+
+- **theme:** use shiki as default highlighter
+
+### ✨ Features
+
+- **theme:** use shiki as default highlighter ([88848cc](https://github.com/vuepress-theme-hope/vuepress-theme-hope/commit/88848cc2531d6425a8fab2b034b93544d9b83755))
+
+### 🐛 Bug Fixes
+
+- **theme:** fix code block scroll bar ([5d1daa1](https://github.com/vuepress-theme-hope/vuepress-theme-hope/commit/5d1daa10c1917ae5864eaf1e1b26dfe9592fc077))
+
+<!-- #region recent-change -->
+
 ## [2.0.0-rc.44](https://github.com/vuepress-theme-hope/vuepress-theme-hope/compare/v2.0.0-rc.43...v2.0.0-rc.44) (2024-05-27)
 
 ### ✨ Features
