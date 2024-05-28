@@ -106,7 +106,7 @@ npm i -D @vuepress/plugin-prismjs@next
 
 你可以通过类似于 Shiki 的 `plugins.prismjs.theme` 或 `plugins.prismjs.themes` 来自定义代码块的主题，与 shiki 类似。默认情况下，我们使用 `one-light` 和 `one-dark` 双主题。
 
-```js{5-11} title=".vuepress/config.js"
+```js{8,11-14} title=".vuepress/config.js"
 import { hopeTheme } from "vuepress-theme-hope";
 
 export default {
@@ -171,8 +171,6 @@ export default {
 - z-touch
 
 :::
-
-## Copy Button
 
 ## 复制按钮
 

@@ -89,17 +89,17 @@ You can set all available options in `@vuepress/plugin-prismjs` here, additional
 
 - Type: `PrismjsTheme`
 - Required: No
-- Details: [Interface → Code Themes](../../guide/interface/code-block.md#prismjs)
+- Details: [Interface → Code Themes](../../guide/feature/code-block.md#prismjs)
 
-Prism.js theme config. Available theme keywords can be found in [Prism.js Themes](../../guide/interface/code-block.md#prismjs).
+Prism.js theme config. Available theme keywords can be found in [Prism.js Themes](../../guide/feature/code-block.md#prismjs).
 
 ### prismjs.themes
 
 - Type: `{ light: PrismjsTheme, dark: PrismjsTheme }`
 - Default: `{ light: "one-light", dark: "one-dark" }`
-- Details: [Interface → Code Themes](../../guide/interface/code-block.md#prismjs)
+- Details: [Interface → Code Themes](../../guide/feature/code-block.md#prismjs)
 
-Prism.js dual theme config. Available theme keywords can be found in [Prism.js Themes](../../guide/interface/code-block.md#prismjs).
+Prism.js dual theme config. Available theme keywords can be found in [Prism.js Themes](../../guide/feature/code-block.md#prismjs).
 
 ## photoSwipe <Badge text="enabled by default" />
 

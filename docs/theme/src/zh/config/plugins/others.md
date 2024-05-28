@@ -89,17 +89,17 @@ tag:
 
 - 类型: `PrismjsTheme`
 - 必填: 否
-- 详情: [界面 → 代码块](../../guide/interface/code-block.md#prismjs)
+- 详情: [界面 → 代码块](../../guide/feature/code-block.md#prismjs)
 
-使用的 Prism.js 主题。可用的主题关键字详见 [Prism.js 主题](../../guide/interface/code-block.md#prismjs)。
+使用的 Prism.js 主题。可用的主题关键字详见 [Prism.js 主题](../../guide/feature/code-block.md#prismjs)。
 
 ### prismjs.themes
 
 - 类型: `{ light: PrismjsTheme, dark: PrismjsTheme }`
 - 默认值: `{ light: "one-light", dark: "one-dark" }`
-- 详情: [界面 → 代码块](../../guide/interface/code-block.md#prismjs)
+- 详情: [界面 → 代码块](../../guide/feature/code-block.md#prismjs)
 
-使用的 Prism.js 双主题。可用的主题关键字详见 [Prism.js 主题](../../guide/interface/code-block.md#prismjs)。
+使用的 Prism.js 双主题。可用的主题关键字详见 [Prism.js 主题](../../guide/feature/code-block.md#prismjs)。
 
 ## photoSwipe <Badge text="默认启用" />
 

@@ -106,7 +106,7 @@ We support all options in [`@vuepress/plugin-prismjs`][prismjs].
 
 Besides, you can customize the theme of code block with `plugins.prismjs.theme` or `plugins.prismjs.themes` similar to shiki. By default, we use `one-light` and `one-dark` dual themes.
 
-```js{5-11} title=".vuepress/config.js"
+```js{8,11-14} title=".vuepress/config.js"
 import { hopeTheme } from "vuepress-theme-hope";
 
 export default {

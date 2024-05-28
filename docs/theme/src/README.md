@@ -192,11 +192,6 @@ highlights:
         details: Set theme color with the brand color and even a picker
         link: ./guide/interface/theme-color.html
 
-      - title: Code Block
-        icon: wand-magic-sparkles
-        details: Customize code block themes, line number, highlight lines, copy button, etc.
-        link: ./guide/interface/code-block.html
-
       - title: More
         icon: ellipsis
         details: RTL layout, print support, fullscreen button, etc.
@@ -258,10 +253,10 @@ highlights:
         details: Support docsearch and client search
         link: ./guide/feature/search.html
 
-      - title: Copy Code Blocks
-        icon: copy
-        details: Copy codes with one click in code blocks
-        link: ./guide/feature/copy-code.html
+      - title: Code Block
+        icon: code
+        details: Customize code block themes, line number, highlight lines, copy button, etc.
+        link: ./guide/feature/code-block.html
 
       - title: Image Preview
         icon: image
