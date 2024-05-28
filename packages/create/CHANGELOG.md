@@ -11,7 +11,7 @@ All notable changes to this project will be documented in this file. See [Conven
 - support latest vuepress ([738a31b](https://github.com/vuepress-theme-hope/vuepress-theme-hope/commit/738a31b9f3e4b321a2cc0cdb554ce0669108b217))
 - **theme:** rebuild social media icons ([4390a14](https://github.com/vuepress-theme-hope/vuepress-theme-hope/commit/4390a140d3de7530ba8eac0ff39e741d1ff1a773))
 
-### 🪲 Bug Fixes
+### 🐛 Bug Fixes
 
 - **deps:** update dependency execa to v9.1.0 ([#4125](https://github.com/vuepress-theme-hope/vuepress-theme-hope/issues/4125)) ([34efdf5](https://github.com/vuepress-theme-hope/vuepress-theme-hope/commit/34efdf51ac788341982e29cf1d89a04955743cc8))
 
@@ -21,7 +21,7 @@ All notable changes to this project will be documented in this file. See [Conven
 
 - **theme:** update portfolio content ([4814255](https://github.com/vuepress-theme-hope/vuepress-theme-hope/commit/4814255fc68bec6740ce6f725090f01101b2dd91))
 
-### 🪲 Bug Fixes
+### 🐛 Bug Fixes
 
 - **theme:** fix portfolio layout ([d4da736](https://github.com/vuepress-theme-hope/vuepress-theme-hope/commit/d4da7363bb14b782182f4f5d9f1f0e876fea30a8))
 

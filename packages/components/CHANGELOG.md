@@ -10,7 +10,7 @@ All notable changes to this project will be documented in this file. See [Conven
 
 - support latest vuepress ([738a31b](https://github.com/vuepress-theme-hope/vuepress-theme-hope/commit/738a31b9f3e4b321a2cc0cdb554ce0669108b217))
 
-### 🪲 Bug Fixes
+### 🐛 Bug Fixes
 
 - **components:** give warnings in dev server with embed pdf viewer, close [#4140](https://github.com/vuepress-theme-hope/vuepress-theme-hope/issues/4140) ([75da43e](https://github.com/vuepress-theme-hope/vuepress-theme-hope/commit/75da43e9e4260018b9a6c537c95c0959bf2e9307))
 
@@ -20,7 +20,7 @@ All notable changes to this project will be documented in this file. See [Conven
 
 - **components:** improve banner button active style ([a07eaf1](https://github.com/vuepress-theme-hope/vuepress-theme-hope/commit/a07eaf15db1ad1bfff5eef7678d1635528b58dbd))
 
-### 🪲 Bug Fixes
+### 🐛 Bug Fixes
 
 - revert ariaLabel ([22ed6e0](https://github.com/vuepress-theme-hope/vuepress-theme-hope/commit/22ed6e0f3420a2f88785e3484b0a42b9948a35f1))
 
@@ -34,7 +34,7 @@ All notable changes to this project will be documented in this file. See [Conven
 
 ## [2.0.0-rc.40](https://github.com/vuepress-theme-hope/vuepress-theme-hope/compare/v2.0.0-rc.39...v2.0.0-rc.40) (2024-05-09)
 
-### 🪲 Bug Fixes
+### 🐛 Bug Fixes
 
 - **components:** fix fontawesome icon assets ([456a382](https://github.com/vuepress-theme-hope/vuepress-theme-hope/commit/456a3828520238a3b805da889a4b12fdde59d581))
 
@@ -46,7 +46,7 @@ All notable changes to this project will be documented in this file. See [Conven
 - improve icon ([6a98f13](https://github.com/vuepress-theme-hope/vuepress-theme-hope/commit/6a98f13cecbe877bbac9682605d7f55f2b02baf5))
 - **theme:** support notice ([#4118](https://github.com/vuepress-theme-hope/vuepress-theme-hope/issues/4118)) ([71048b8](https://github.com/vuepress-theme-hope/vuepress-theme-hope/commit/71048b8c9710b0867418fba8539b2f98281fd9b4))
 
-### 🪲 Bug Fixes
+### 🐛 Bug Fixes
 
 - **components:** fix iconify link detect ([6b868b2](https://github.com/vuepress-theme-hope/vuepress-theme-hope/commit/6b868b2d6822a052b2859bddf707ffc9a7c5de70))
 

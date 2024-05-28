@@ -13,7 +13,7 @@ All notable changes to this project will be documented in this file. See [Conven
 - **theme:** rebuild social media icons ([4390a14](https://github.com/vuepress-theme-hope/vuepress-theme-hope/commit/4390a140d3de7530ba8eac0ff39e741d1ff1a773))
 - **theme:** support expanded in sidebar, close [#4141](https://github.com/vuepress-theme-hope/vuepress-theme-hope/issues/4141) ([#4172](https://github.com/vuepress-theme-hope/vuepress-theme-hope/issues/4172)) ([8e119c0](https://github.com/vuepress-theme-hope/vuepress-theme-hope/commit/8e119c0d08fb46a6b799b73f73f8d9023c2866f0))
 
-### 🪲 Bug Fixes
+### 🐛 Bug Fixes
 
 - **theme:** avoid warning in navscreen ([388943b](https://github.com/vuepress-theme-hope/vuepress-theme-hope/commit/388943b0fd730433ede5d2aec9ad9b7b6add00ab))
 - **theme:** fix image in table, close [#4143](https://github.com/vuepress-theme-hope/vuepress-theme-hope/issues/4143) ([6d853e6](https://github.com/vuepress-theme-hope/vuepress-theme-hope/commit/6d853e6ec7cb45c054adab9da060d64d2b8a4bd1))
@@ -30,7 +30,7 @@ All notable changes to this project will be documented in this file. See [Conven
 - **theme:** remove plugin externalLinkIcon ([d18762d](https://github.com/vuepress-theme-hope/vuepress-theme-hope/commit/d18762d039fec265df4a78b93c4af1bd4011a665))
 - **theme:** update portfolio content ([4814255](https://github.com/vuepress-theme-hope/vuepress-theme-hope/commit/4814255fc68bec6740ce6f725090f01101b2dd91))
 
-### 🪲 Bug Fixes
+### 🐛 Bug Fixes
 
 - revert ariaLabel ([22ed6e0](https://github.com/vuepress-theme-hope/vuepress-theme-hope/commit/22ed6e0f3420a2f88785e3484b0a42b9948a35f1))
 - **theme:** fix bundle style ([bea5ca5](https://github.com/vuepress-theme-hope/vuepress-theme-hope/commit/bea5ca5b90bc97ac8d2c7871aa74a4a5ce5cddae))
@@ -47,7 +47,7 @@ All notable changes to this project will be documented in this file. See [Conven
 - **theme:** get number of colors ([0043d51](https://github.com/vuepress-theme-hope/vuepress-theme-hope/commit/0043d51a613cb92ea3e8917fa6ff987ef06e29a6))
 - **theme:** make portfolio a common layout ([9ff5452](https://github.com/vuepress-theme-hope/vuepress-theme-hope/commit/9ff545223c56625bef0265d84783f21080fd985c))
 
-### 🪲 Bug Fixes
+### 🐛 Bug Fixes
 
 - **theme:** fix a11y issue ([fe8f375](https://github.com/vuepress-theme-hope/vuepress-theme-hope/commit/fe8f375b978ccd13e64599c85eb473ff79658a9d))
 - **theme:** fix portfolio style on pad ([375a0cb](https://github.com/vuepress-theme-hope/vuepress-theme-hope/commit/375a0cb905d188569223e74c6bdf43daabdd7102))
@@ -60,7 +60,7 @@ All notable changes to this project will be documented in this file. See [Conven
 
 - **theme:** hide content by default in PortfolioHome ([5d265be](https://github.com/vuepress-theme-hope/vuepress-theme-hope/commit/5d265be4c56582acb40f26c07890d5bbcdd36f2c))
 
-### 🪲 Bug Fixes
+### 🐛 Bug Fixes
 
 - **theme:** fix layout issue when navbar is disabled ([a013448](https://github.com/vuepress-theme-hope/vuepress-theme-hope/commit/a013448e47401604222f4c32aae4497dcdc638d8))
 - **theme:** fix sidebar style ([6b9f88b](https://github.com/vuepress-theme-hope/vuepress-theme-hope/commit/6b9f88b264d0f55d061125ba6acea45a50f36129))
@@ -71,7 +71,7 @@ All notable changes to this project will be documented in this file. See [Conven
 
 ## [2.0.0-rc.40](https://github.com/vuepress-theme-hope/vuepress-theme-hope/compare/v2.0.0-rc.39...v2.0.0-rc.40) (2024-05-09)
 
-### 🪲 Bug Fixes
+### 🐛 Bug Fixes
 
 - **theme:** fix bundle style ([165c35a](https://github.com/vuepress-theme-hope/vuepress-theme-hope/commit/165c35af9cd103e4c0c002d7653890bc9e4a451b))
 
@@ -85,7 +85,7 @@ All notable changes to this project will be documented in this file. See [Conven
 - **theme:** remove v1 compact and remove migration guide ([9e0f13b](https://github.com/vuepress-theme-hope/vuepress-theme-hope/commit/9e0f13b7e402764a1bab5af5989524896e14dd37))
 - **theme:** support notice ([#4118](https://github.com/vuepress-theme-hope/vuepress-theme-hope/issues/4118)) ([71048b8](https://github.com/vuepress-theme-hope/vuepress-theme-hope/commit/71048b8c9710b0867418fba8539b2f98281fd9b4))
 
-### 🪲 Bug Fixes
+### 🐛 Bug Fixes
 
 - **theme:** fix excerpt code blocks, close [#4106](https://github.com/vuepress-theme-hope/vuepress-theme-hope/issues/4106) ([1522c11](https://github.com/vuepress-theme-hope/vuepress-theme-hope/commit/1522c114e5f4651133f0fde27a54c0b963e3f170))
 - **theme:** fix transparent navbar preset ([29e236a](https://github.com/vuepress-theme-hope/vuepress-theme-hope/commit/29e236a1892d7b81bc70b9ae695127c3f00359be))

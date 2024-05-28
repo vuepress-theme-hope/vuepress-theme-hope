@@ -16,7 +16,7 @@ All notable changes to this project will be documented in this file. See [Conven
 
 - **theme:** remove plugin externalLinkIcon ([d18762d](https://github.com/vuepress-theme-hope/vuepress-theme-hope/commit/d18762d039fec265df4a78b93c4af1bd4011a665))
 
-### 🪲 Bug Fixes
+### 🐛 Bug Fixes
 
 - revert ariaLabel ([22ed6e0](https://github.com/vuepress-theme-hope/vuepress-theme-hope/commit/22ed6e0f3420a2f88785e3484b0a42b9948a35f1))
 

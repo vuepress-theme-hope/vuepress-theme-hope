@@ -18,7 +18,7 @@ All notable changes to this project will be documented in this file. See [Conven
 
 ## [2.0.0-rc.42](https://github.com/vuepress-theme-hope/vuepress-theme-hope/compare/v2.0.0-rc.41...v2.0.0-rc.42) (2024-05-12)
 
-### 🪲 Bug Fixes
+### 🐛 Bug Fixes
 
 - **theme:** fix header anchor ([d490c51](https://github.com/vuepress-theme-hope/vuepress-theme-hope/commit/d490c513a774535d8ae81e8a3883eab669c8fc2a))
 

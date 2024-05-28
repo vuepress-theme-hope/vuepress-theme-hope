@@ -12,7 +12,7 @@ All notable changes to this project will be documented in this file. See [Conven
 
 ## [2.0.0-rc.43](https://github.com/vuepress-theme-hope/vuepress-theme-hope/compare/v2.0.0-rc.42...v2.0.0-rc.43) (2024-05-14)
 
-### 🪲 Bug Fixes
+### 🐛 Bug Fixes
 
 - revert ariaLabel ([22ed6e0](https://github.com/vuepress-theme-hope/vuepress-theme-hope/commit/22ed6e0f3420a2f88785e3484b0a42b9948a35f1))
 
