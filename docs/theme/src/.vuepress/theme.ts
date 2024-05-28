@@ -219,6 +219,15 @@ export default theme(
         vuePlayground: true,
       },
 
+      shiki: {
+        lineNumbers: 15,
+        notationDiff: true,
+        themes: {
+          light: "github-light",
+          dark: "one-dark-pro",
+        },
+      },
+
       watermark: {
         enabled: false,
       },

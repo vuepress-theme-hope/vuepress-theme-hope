@@ -20,8 +20,6 @@ category:
 
 - [Vite 相关问题](vite.md)
 
-- [Safari 相关问题](safari.md)
-
 ## 联系我们
 
 在联系我们之前，请确定按照 [故障排查](troubleshooting.md) 部分进行了检查。
@@ -40,7 +38,7 @@ category:
 
 - 如果你有关于 Vue、TypeScript、Sass 的学习与使用问题，或者你不知道如何写你想要的东西，你可能需要在 Vue 论坛、Stack Overflow 等地方提问。
 
-- 如果你有 VuePress 的相关问题，请在 [VuePress 仓库](https://github.com/vuepress/vuepress-next) 中 [新开一个讨论](https://github.com/vuepress/vuepress-next/discussions/new)，作为 VuePress 团队成员，Mr.Hope 会在空闲时间尽量给予回答。
+- 如果你有 VuePress 的相关问题，请在 [VuePress 仓库](https://github.com/vuepress/core) 中 [新开一个讨论](https://github.com/vuepress/core/discussions/new)，作为 VuePress 团队成员，Mr.Hope 会在空闲时间尽量给予回答。
 
 请只在主题仓库发起 VuePress Theme Hope 主题与 Mr.Hope 编写的 VuePress 插件的相关讨论。
 

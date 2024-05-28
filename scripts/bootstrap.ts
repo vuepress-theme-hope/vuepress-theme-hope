@@ -53,7 +53,7 @@ files.forEach((pkgName) => {
         "dev:ts": "tsc -b tsconfig.build.json --watch",
       },
       engines: {
-        node: ">=18.16.0",
+        node: ">=18.19.0",
         npm: ">=8",
         pnpm: ">=7",
         yarn: ">=2",

@@ -88,11 +88,11 @@ This value can be greater than the actual memory size of your machine.
 
 With GitHub workflow, set `env` in your workflow file.
 
-```diff
-  - name: Build project
-+   env:
-+     NODE_OPTIONS: --max_old_space_size=8192
-    run: pnpm run build
+```yml
+- name: Build project
+  env: // [!code ++]
+    NODE_OPTIONS: --max_old_space_size=8192 // [!code ++]
+  run: pnpm run build
 ```
 
 On windows, you can follow [this guide](https://www.technewstoday.com/how-to-set-windows-environment-variables/).

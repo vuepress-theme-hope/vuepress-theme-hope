@@ -1,6 +1,6 @@
 # Code of Conduct
 
-VuePress Theme Hope and related plugins are community theme and plugins for [VuePress](https://github.com/vuepress/vuepress-next)
+VuePress Theme Hope and related plugins are community theme and plugins for [VuePress](https://github.com/vuepress/core)
 
 We want all visitors of VuePress Theme Hope to have an enjoyable and fulfilling experience. Accordingly, all projects built by VuePress Theme Hope or related plugins are expected to show respect and courtesy to visitors.
 

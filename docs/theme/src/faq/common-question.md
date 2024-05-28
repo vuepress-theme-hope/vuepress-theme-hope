@@ -1,7 +1,7 @@
 ---
 title: Common question
 order: 1
-icon: triangle-exclamation
+icon: circle-question
 category:
   - FAQ
 ---
@@ -10,11 +10,7 @@ category:
 
 You can use `extendsMarkdown` hook in [config file](../cookbook/vuepress/config.md#config-file) to add Markdown extensions:
 
-::: code-tabs#language
-
-@tab TS
-
-```ts title=".vuepress/config.ts"
+```js {7-9} title=".vuepress/config.js"
 import { defineUserConfig } from "vuepress";
 
 export default defineUserConfig({
@@ -26,23 +22,6 @@ export default defineUserConfig({
   },
 });
 ```
-
-@tab JS
-
-```js title=".vuepress/config.js"
-import { defineUserConfig } from "vuepress";
-
-export default defineUserConfig({
-  // site config
-  // ...
-
-  extendsMarkdown: (md) => {
-    md.use(yourExtension, options);
-  },
-});
-```
-
-:::
 
 ## Foldable Sidebar / TOC on Mobile / Left Sidebar on PC
 
@@ -95,18 +74,20 @@ By default, VuePress only extracts h2 and h3 titles from Markdown, so you will n
 
 You need to configure [markdown.headers.level](https://vuejs.press/reference/config/#markdown-headers) in the VuePress configuration file:
 
-```ts title=".vuepress/config.ts"
-export default {
+```ts {7-12} title=".vuepress/config.ts"
+import { defineUserConfig } from "vuepress";
+
+export default defineUserConfig({
+  // other site config
+  // ...
+
   markdown: {
     headers: {
       // extract levels you need
       levels: [2, 3, 4, 5, 6],
     },
   },
-
-  // other config
-  // ...
-};
+});
 ```
 
 After extracting deeper level titles above, you can display more titles by increasing the value of `headerDepth` in [theme config](../config/theme/layout.md#headerdepth) or [page Frontmatter](../config/frontmatter/layout.md#headerdepth).

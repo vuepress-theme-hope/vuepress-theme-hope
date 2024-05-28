@@ -88,11 +88,11 @@ npx vp-update
 
 使用 GitHub 工作流时，在你的工作流文件中设置 `env`:
 
-```diff
-  - name: Build project
-+   env:
-+     NODE_OPTIONS: --max_old_space_size=8192
-    run: pnpm run build
+```yml
+- name: Build project
+  env: // [!code ++]
+    NODE_OPTIONS: --max_old_space_size=8192 // [!code ++]
+  run: pnpm run build
 ```
 
 在 Windows，你可以参考 [此指南](https://blog.csdn.net/weixin_37204973/article/details/82504570).
