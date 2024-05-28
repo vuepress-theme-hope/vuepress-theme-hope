@@ -16,13 +16,12 @@ You should create and write Markdown files, so that VuePress can convert them to
 <!-- more -->
 
 ```component VPBanner
-title: Markdown Intro
-content: If you are a newcomer and don't know how to write Markdown, please read the following section.
+title: Markdown Tutorial
 logo: /assets/image/markdown.svg
 background: var(--bg-2)
 color: var(--banner-text)
 actions:
-  - text: Markdown Tutorial
+  - text: Learn More
     link: ../../cookbook/markdown/
 ```
 
@@ -38,7 +37,7 @@ Frontmatter is an important concept in VuePress, read [Frontmatter Intro](../../
 
 ## Markdown Extensions
 
-The Markdown content in VuePress will be parsed by [markdown-it](https://github.com/markdown-it/markdown-it), which supports [syntax extensions](https://github.com/markdown-it/markdown-it#syntax-extensions) via markdown-it plugins.
+The Markdown content in VuePress will be parsed by [markdown-it](https://github.com/markdown-it/markdown-it), which supports syntax extensions via markdown-it plugins.
 
 - VuePress Enhancement
 
@@ -47,3 +46,7 @@ The Markdown content in VuePress will be parsed by [markdown-it](https://github.
 - Theme Enhancement
 
   With <ProjectLink name="md-enhance">`vuepress-plugin-md-enhance`</ProjectLink>, the theme extends more Markdown syntax, see [Theme Enhancement](../markdown/README.md) for details.
+
+- Self Enhancement
+
+  You can find suitable Markdown It plugins to extend Markdown syntax by yourself, [Markdown It Plugins](https://mdit-plugins.github.io/) can be a good choice.

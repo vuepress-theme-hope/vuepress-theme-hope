@@ -29,11 +29,7 @@ $theme-color: #f00;
 $theme-colors: #2196f3, #f26d6d, #3eaf7c, #fb9b5f;
 ```
 
-::: tip
-
 上方的默认主题色会成为选择器的第一个颜色。
-
-:::
 
 ### 尝试
 
