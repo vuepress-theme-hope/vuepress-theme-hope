@@ -4,6 +4,14 @@ All notable changes to this project will be documented in this file. See [Conven
 
 <!-- #region recent-change -->
 
+## [2.0.0-rc.46](https://github.com/vuepress-theme-hope/vuepress-theme-hope/compare/v2.0.0-rc.45...v2.0.0-rc.46) (2024-05-28)
+
+### 🐛 Bug Fixes
+
+- **theme:** ensure prismjs is optional ([58abe09](https://github.com/vuepress-theme-hope/vuepress-theme-hope/commit/58abe095b7823bf7b6e48afe85ba2a5f08edfaa7))
+
+<!-- #region recent-change -->
+
 ## [2.0.0-rc.45](https://github.com/vuepress-theme-hope/vuepress-theme-hope/compare/v2.0.0-rc.44...v2.0.0-rc.45) (2024-05-28)
 
 ### ⚠ BREAKING CHANGES
