@@ -192,11 +192,6 @@ highlights:
         details: 支持自定义主题色并允许用户在预设的主题颜色之间切换
         link: ./guide/interface/theme-color.html
 
-      - title: 代码块主题
-        icon: wand-magic-sparkles
-        details: 自定义代码块主题
-        link: ./guide/interface/code-theme.html
-
       - title: 更多
         icon: ellipsis
         details: RTL 布局，打印支持，全局按钮等
@@ -263,10 +258,10 @@ highlights:
         details: 支持 docsearch 和基于客户端的搜索
         link: ./guide/feature/search.html
 
-      - title: 代码复制
-        icon: copy
-        details: 一键复制代码块中的代码
-        link: ./guide/feature/copy-code.html
+      - title: 代码块
+        icon: code
+        details: 自定义代码块主题、行号、行高亮、复制按钮等
+        link: ./guide/feature/code-block.html
 
       - title: 图片预览
         icon: image

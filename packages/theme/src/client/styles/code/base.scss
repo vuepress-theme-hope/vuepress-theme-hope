@@ -1,60 +1,14 @@
 @use "@sass-palette/hope-config";
 
-.theme-hope-content {
-  /* Code blocks */
-  pre {
-    overflow: auto;
-
-    margin: 0.85rem 0;
-    padding: 1rem;
-    border-radius: 6px;
-
-    // WARNING: Safari only support integer pixels for `<pre>` tag line-height
-    // so we override this into a integer
-    line-height: 1.375;
-
-    code {
-      padding: 0;
-      border-radius: 0;
-
-      background: transparent !important;
-      color: var(--code-color);
-
-      font-family: var(--font-family-mono);
-      text-align: left;
-      white-space: pre;
-      word-spacing: normal;
-      word-wrap: normal;
-      word-break: normal;
-      overflow-wrap: unset;
-      -webkit-hyphens: none;
-      -moz-hyphens: none;
-      hyphens: none;
-
-      -webkit-font-smoothing: auto;
-      -moz-osx-font-smoothing: auto;
-
-      @media print {
-        white-space: pre-wrap;
-      }
-    }
-  }
-
-  .line-number {
-    font-family: var(--font-family-mono);
-  }
-}
-
 div[class*="language-"] {
   position: relative;
   border-radius: 6px;
-  background: var(--code-bg-color);
   font-size: 16px;
 
   // narrow mobile
   @media (max-width: hope-config.$mobile) {
     .theme-hope-content > & {
-      margin: 0.85rem -1.5rem;
+      margin: 0.875rem -1.5rem;
       border-radius: 0;
     }
   }
@@ -67,7 +21,7 @@ div[class*="language-"] {
     right: 1em;
     z-index: 3;
 
-    color: var(--code-line-color);
+    color: var(--code-line-number-color);
 
     font-size: 0.75rem;
   }
@@ -75,27 +29,135 @@ div[class*="language-"] {
   pre {
     position: relative;
     z-index: 1;
+
+    overflow: auto;
+
+    margin: 0.875rem 0;
+    border-radius: 6px;
+
+    // force overriding background color for shiki
+    background: var(--code-bg-color) !important;
+
+    line-height: 1.6;
+
     scrollbar-gutter: stable;
+
+    code {
+      display: block;
+
+      box-sizing: border-box;
+
+      width: fit-content;
+      min-width: 100%;
+      padding: 1.25rem;
+      border-radius: 0;
+
+      background: transparent;
+      color: var(--code-color);
+
+      font-family: var(--font-family-mono);
+
+      @media print {
+        padding: 0.5rem;
+      }
+    }
   }
 
-  .highlight-lines {
-    position: absolute;
-    top: 0;
-    bottom: 0;
-    left: 0;
+  /*
+   * Highlight lines and notation highlight
+   * - `// [!code highlight]` and `// [!code hl]` are the same:
+   *   - `// [!code highlight]`
+   *   - `// [!code highlight:3]`
+   *   - `// [!code hl]`
+   *   - `// [!code hl:3]`
+   * - It also has the style of error level,
+   *   covering the background color with 'warning' and 'error' classes.
+   *   - `// [!code warning]`
+   *   - `// [!code error]`
+   *   - `// [!code warning:3]`
+   *   - `// [!code error:3]`
+   */
+  .line.highlighted {
+    display: inline-block;
 
     width: 100%;
-    padding: 1rem 0;
+    margin: 0 -24px;
+    padding: 0 24px;
 
-    line-height: 1.375;
+    background-color: var(--code-highlight-bg-color);
 
-    user-select: none;
+    transition: background-color 0.5s;
+
+    &.error {
+      background-color: var(--code-highlight-error-bg-color);
+    }
+
+    &.warning {
+      background-color: var(--code-highlight-warning-bg-color);
+    }
   }
 
-  .highlight-line {
-    background: var(--code-highlight-line-color);
+  /*
+   * notation diff line
+   *
+   * - class="diff add": `// [!code ++]` or `// [!code ++:3]`
+   * - class="diff remove": `// [!code --]` or `// [!code --:3]`
+   */
+  .line.diff {
+    display: inline-block;
+
+    width: 100%;
+    margin: 0 -24px;
+    padding: 0 24px;
+
+    transition: background-color 0.5s;
+
+    &::before {
+      position: absolute;
+      left: 10px;
+    }
+
+    &.remove {
+      background-color: var(--code-line-diff-remove-color);
+      opacity: 0.7;
+
+      &::before {
+        content: "-";
+        color: var(--code-line-diff-remove-symbol-color);
+      }
+    }
+
+    &.add {
+      background-color: var(--code-line-diff-add-color);
+
+      &::before {
+        content: "+";
+        color: var(--code-line-diff-add-symbol-color);
+      }
+    }
   }
 
+  /*
+   * Focus lines
+   * - `// [!code focus]`
+   * - `// [!code focus:3]`
+   */
+  .has-focused-lines {
+    .line:not(.has-focus) {
+      opacity: 0.7;
+      filter: blur(0.095rem);
+      transition:
+        filter 0.35s,
+        opacity 0.35s;
+    }
+
+    &:hover .line:not(.has-focus) {
+      opacity: 1;
+      filter: blur(0);
+    }
+  }
+
+  // line numbers
   &.line-numbers-mode {
     &::after {
       content: "";
@@ -106,9 +168,11 @@ div[class*="language-"] {
       left: 0;
       z-index: 2;
 
-      width: var(--line-numbers-width);
-      border-right: 1px solid var(--code-highlight-line-color);
+      width: var(--code-line-number-width);
+      border-right: 1px solid var(--code-highlight-bg-color);
       border-radius: 6px 0 0 6px;
+
+      background: var(--code-bg-color);
 
       @media (max-width: hope-config.$mobile) {
         border-radius: 0;
@@ -119,32 +183,16 @@ div[class*="language-"] {
       }
     }
 
-    .highlight-line {
-      position: relative;
-
-      &::before {
-        content: " ";
-
-        position: absolute;
-        top: 0;
-        left: 0;
-        z-index: 3;
-
-        display: block;
-
-        width: var(--line-numbers-width);
-        height: 100%;
-      }
-    }
-
     pre {
       vertical-align: middle;
-      margin-left: var(--line-numbers-width);
-      padding-left: 0.5rem;
+      margin-left: var(--code-line-number-width);
 
       @media print {
         margin-left: 0;
-        padding-left: 1rem;
+      }
+
+      code {
+        padding-left: 0.5rem;
       }
     }
 
@@ -157,11 +205,14 @@ div[class*="language-"] {
       display: flex;
       flex-direction: column;
 
-      width: var(--line-numbers-width);
-      padding: 1rem 0;
+      width: var(--code-line-number-width);
+      padding: 1.25rem 0;
 
-      color: var(--code-line-color);
+      color: var(--code-line-number-color);
 
+      font-size: 0.875em;
+      font-family: var(--font-family-mono);
+      line-height: 1.6;
       counter-reset: line-number;
       text-align: center;
 
@@ -172,22 +223,11 @@ div[class*="language-"] {
 
     .line-number {
       position: relative;
-      z-index: 4;
-
-      display: flex;
-      flex: 1;
-      align-items: center;
-      justify-content: center;
-
+      z-index: 3;
       user-select: none;
 
       &::before {
         content: counter(line-number);
-
-        display: block;
-
-        font-size: 0.8em;
-        line-height: 1;
         counter-increment: line-number;
       }
     }

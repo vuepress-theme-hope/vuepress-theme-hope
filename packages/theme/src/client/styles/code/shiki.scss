@@ -32,29 +32,11 @@
 }
 
 #{hope-config.$dark-selector} {
-  .shiki,
-  .shiki span {
+  .shiki {
     background-color: var(--shiki-dark-bg) !important;
-    color: var(--shiki-dark) !important;
-
-    font-weight: var(--shiki-dark-font-weight) !important;
-
-    /* Optional, if you also want font styles */
-    font-style: var(--shiki-dark-font-style) !important;
-    text-decoration: var(--shiki-dark-text-decoration) !important;
   }
-}
 
-// force clearing the background color to be compatible with shiki
-// otherwise highlight-lines can not work
-div[class*="language-"] {
-  pre {
-    &,
-    #{hope-config.$dark-selector} & {
-      &,
-      span {
-        background: transparent !important;
-      }
-    }
+  .shiki span {
+    color: var(--shiki-dark) !important;
   }
 }

@@ -37,7 +37,6 @@
     "@vuepress/helper": "2.0.0-rc.31",
     "@vuepress/plugin-docsearch": "2.0.0-rc.31",
     "@vuepress/plugin-redirect": "2.0.0-rc.31",
-    "@vuepress/plugin-shiki": "2.0.0-rc.31",
     "three": "0.164.1",
     "vue": "3.4.27",
     "vuepress": "2.0.0-rc.12",

@@ -3,7 +3,7 @@
 .vp-code-tabs-nav {
   overflow-x: auto;
 
-  margin: 0.85rem 0 -0.85rem;
+  margin: 0.875rem 0 -0.875rem;
   padding: 0;
   border-radius: 6px 6px 0 0;
 
@@ -38,7 +38,7 @@
   color: var(--code-tabs-nav-text-color, #eee);
 
   font-weight: 600;
-  font-size: 0.85em;
+  font-size: 0.875em;
   line-height: 1.4;
 
   cursor: pointer;
@@ -124,7 +124,7 @@
     border-top-right-radius: 0;
 
     @media (max-width: hope-config.$mobile) {
-      margin: 0.85rem -1.5rem;
+      margin: 0.875rem -1.5rem;
       border-radius: 0;
     }
 

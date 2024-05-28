@@ -54,7 +54,7 @@ code {
 
   background: rgb(127 127 127 / 12%);
 
-  font-size: 0.85em;
+  font-size: 0.875em;
   overflow-wrap: break-word;
 
   table & {
@@ -199,7 +199,24 @@ td {
 }
 
 pre {
+  text-align: left;
+  white-space: pre;
+  word-spacing: normal;
+  word-wrap: normal;
+  word-break: normal;
+  overflow-wrap: unset;
+  hyphens: none;
+
   direction: ltr;
+
+  @media print {
+    white-space: pre-wrap;
+  }
+
+  code {
+    padding: 0;
+    border-radius: 0;
+  }
 }
 
 @page {

@@ -6,6 +6,7 @@ import type { App } from "vuepress/core";
 import { useGitPlugin } from "./git.js";
 import { useExtendsPagePlugin } from "./pageConverter.js";
 import { usePrismjsPlugin } from "./prismjs.js";
+import { useShikiPlugin } from "./shiki.js";
 import type { PluginsOptions, ThemeData } from "../../shared/index.js";
 import type { HopeThemeBehaviorOptions } from "../typings/index.js";
 import { TEMPLATE_FOLDER } from "../utils.js";
@@ -48,7 +49,9 @@ export const usePlugins = (
       isPlainObject(plugins.readingTime) ? plugins.readingTime : {},
     );
 
-  if (plugins.prismjs !== false) usePrismjsPlugin(app);
+  if (plugins.shiki !== false && !plugins.prismjs)
+    useShikiPlugin(app, plugins.shiki);
+  else if (plugins.prismjs) usePrismjsPlugin(app, plugins.prismjs);
 
   useSassPalettePlugin(app, {
     id: "hope",

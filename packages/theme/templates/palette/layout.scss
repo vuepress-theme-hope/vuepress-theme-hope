@@ -18,10 +18,10 @@ $home-page-width: 1160px !default;
 // font
 $font-family: '-apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, "Noto Sans", STHeiti, "Microsoft YaHei", SimSun, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji"' !default;
 $font-family-heading: $font-family !default;
+$font-family-mono: 'Consolas, Monaco, "Andale Mono", "Ubuntu Mono", monospace' !default;
 
 // code
-$font-family-mono: 'Consolas, Monaco, "Andale Mono", "Ubuntu Mono", monospace' !default;
-$line-numbers-width: 2.5rem !default;
+$code-line-number-width: 2rem !default;
 
 // transition
 $color-transition: "0.3s ease" !default;

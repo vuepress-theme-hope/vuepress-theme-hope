@@ -206,7 +206,7 @@
   // code block fix
   div[class*="language-"] {
     overflow-x: auto;
-    margin: 0.85rem 0;
+    margin: 0.875rem 0;
 
     pre {
       margin: 0;
@@ -221,7 +221,7 @@
 
     // line number fix
     &.line-numbers-mode .line-numbers {
-      padding: 0.85rem 0;
+      padding: 0.875rem 0;
     }
   }
 

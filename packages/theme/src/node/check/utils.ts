@@ -19,6 +19,7 @@ export const PLUGIN_CHECKLIST = [
   ["@vuepress/plugin-rtl", "", 'Set "rtl: true" in the needed theme locales.'],
   ["@vuepress/plugin-search", "search"],
   ["@vuepress/plugin-seo", "seo"],
+  ["@vuepress/plugin-shiki", "shiki"],
   ["@vuepress/plugin-sitemap", "sitemap"],
   ["@vuepress/plugin-theme-data", "", "This plugin is called internally."],
   ["@vuepress/plugin-watermark", "watermark"],

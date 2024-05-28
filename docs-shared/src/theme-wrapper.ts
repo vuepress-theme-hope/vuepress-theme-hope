@@ -107,11 +107,17 @@ export const theme = (
             ],
           }),
 
-      prismjs: false,
-
       redirect: { switchLocale: "modal" },
 
       seo: hostname === canonical ? {} : { canonical },
+
+      shiki: {
+        lineNumbers: 15,
+        themes: {
+          light: "github-light",
+          dark: "one-dark-pro",
+        },
+      },
 
       ...plugins,
     },
