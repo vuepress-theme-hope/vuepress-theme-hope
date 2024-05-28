@@ -84,7 +84,7 @@ export default defineUserConfig({
   markdown: {
     headers: {
       // extract levels you need
-      levels: [2, 3, 4, 5, 6],
+      level: [2, 3, 4, 5, 6],
     },
   },
 });
