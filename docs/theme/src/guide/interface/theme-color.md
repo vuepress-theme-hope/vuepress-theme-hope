@@ -23,17 +23,13 @@ $theme-color: #f00;
 
 ## Theme Color Picker {#theme-color-picker-title}
 
-Top use it, set a list of theme colors you want to use in `.vuepress/styles/config.scss` with `$theme-colors`:
+To use it, set a list of theme colors you want to use in `.vuepress/styles/config.scss` with `$theme-colors`:
 
 ```scss
 $theme-colors: #2196f3, #f26d6d, #3eaf7c, #fb9b5f;
 ```
 
-::: tip
-
 The default theme color above will always be the first one in picker.
-
-:::
 
 ### Try it
 

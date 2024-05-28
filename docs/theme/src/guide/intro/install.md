@@ -12,7 +12,7 @@ tag:
 
 ## Requirement
 
-- Env: LTS Versions of Node.js (18, 20)
+- Env: LTS Versions of Node.js (>=18.19.0, 20.x)
 - Package Manager: npm >= 8, yarn >= 2, pnpm >= 7
 - A VuePress2 project with Vue3
 

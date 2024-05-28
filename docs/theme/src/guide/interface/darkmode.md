@@ -9,15 +9,9 @@ tag:
   - Interface
 ---
 
-In dark mode, the page uses a dark background to make you comfortable.
+The theme supports darkmode and allows you to customize it.
 
 <!-- more -->
-
-## Try it
-
-Toggle the button below to see effects.
-
-<ColorModeSwitch />
 
 ## Options
 
@@ -40,6 +34,12 @@ Available options:
 - `"auto"`: Automatically decide whether to apply dark mode based on user device's color-scheme or current time
 - `"enable"`: only dark mode
 - `"disable"`: disable dark mode
+
+::: tip Try it
+
+Toggle the button to see effects: <ColorModeSwitch />
+
+:::
 
 ## Getting Status
 
