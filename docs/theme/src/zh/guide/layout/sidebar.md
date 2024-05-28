@@ -27,7 +27,7 @@ tag:
 
 同导航栏，你可以填入一个包含多个文件链接的数组，作为侧边栏基本的配置:
 
-```js{5} title=".vuepress/config.js"
+```js {5} title=".vuepress/config.js"
 import { hopeTheme } from "vuepress-theme-hope";
 
 export default {
@@ -54,7 +54,7 @@ export default {
 - `icon`: 项目图标 (可选)
 - `activeMatch`: 项目激活匹配 (可选)，支持正则字符串。
 
-```js{5-22} title=".vuepress/config.js"
+```js {5-22} title=".vuepress/config.js"
 import { hopeTheme } from "vuepress-theme-hope";
 
 export default {
@@ -103,7 +103,7 @@ export default {
 
 侧边栏额外支持设置 `collapsible: true` 来使菜单分组可折叠，并且你可以设置 `expanded: true` 来使可折叠的分组默认展开。
 
-```js{18-22,26-30} title=".vuepress/config.js"
+```js {18-22,26-30} title=".vuepress/config.js"
 import { hopeTheme } from "vuepress-theme-hope";
 
 export default {
@@ -144,7 +144,7 @@ export default {
 
 侧边栏分组也可以进行嵌套:
 
-```js{11-22} title=".vuepress/config.js"
+```js {11-22} title=".vuepress/config.js"
 import { hopeTheme } from "vuepress-theme-hope";
 
 export default {
@@ -464,7 +464,7 @@ export default {
 
 主题的侧边栏支持 [多语言](https://vuejs.press/zh/guide/i18n.html)，所以你可以为每个语言单独设置侧边栏:
 
-```js{7-9,12-14} title=".vuepress/config.js"
+```js {7-9,12-14} title=".vuepress/config.js"
 import { hopeTheme } from "vuepress-theme-hope";
 
 export default {

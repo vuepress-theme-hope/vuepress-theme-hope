@@ -26,7 +26,7 @@ tag:
 
 字段的键名是路径，值支持填入一个或多个数组格式的密码。
 
-```js{8,10} title=".vuepress/config.js"
+```js {8,10} title=".vuepress/config.js"
 import { hopeTheme } from "vuepress-theme-hope";
 
 export default {

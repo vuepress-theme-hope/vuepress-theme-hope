@@ -24,7 +24,7 @@ Please **DO NOT USE** this encryption function for any sensitive and confidentia
 
 You can configure encryption options through the `encrypt.config` options in theme options.
 
-```js{8,10} title=".vuepress/config.js"
+```js {8,10} title=".vuepress/config.js"
 import { hopeTheme } from "vuepress-theme-hope";
 
 export default {

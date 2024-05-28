@@ -56,7 +56,7 @@ export default defineUserConfig({
 - `icon`: 项目图标 (可选)
 - `activeMatch`: 项目激活匹配 (可选)，支持正则字符串。
 
-```js{5-22} title=".vuepress/config.js"
+```js {5-22} title=".vuepress/config.js"
 import { hopeTheme } from "vuepress-theme-hope";
 
 export default {
@@ -101,7 +101,7 @@ export default {
 
 你需要设置对象式导航栏配置项，并提供额外的 `children` 选项设置链接列表:
 
-```js{6-10} title=".vuepress/config.js"
+```js {6-10} title=".vuepress/config.js"
 import { hopeTheme } from "vuepress-theme-hope";
 
 export default {
@@ -121,7 +121,7 @@ export default {
 
 为了简化配置，你可以添加 `prefix` 字段为分组的每一个子链接添加一个前缀:
 
-```js{9,10} title=".vuepress/config.js"
+```js {9,10} title=".vuepress/config.js"
 import { hopeTheme } from "vuepress-theme-hope";
 
 export default {
@@ -140,7 +140,7 @@ export default {
 
 此外，你还可以通过嵌套的 `children` 来在下拉列表中设置分组:
 
-```js{12-14,18-20} title=".vuepress/config.js"
+```js {12-14,18-20} title=".vuepress/config.js"
 import { hopeTheme } from "vuepress-theme-hope";
 
 export default {
@@ -173,7 +173,7 @@ export default {
 
 你可以在主题选项中设置 `navbar: false` 来禁用所有页面的导航栏:
 
-```js{5} title=".vuepress/config.js"
+```js {5} title=".vuepress/config.js"
 import { hopeTheme } from "vuepress-theme-hope";
 
 export default {
@@ -203,7 +203,7 @@ navbar: false
 
 配置图标后，图标将移动设备上取代先前的站点名称显示在导航栏上。
 
-```js{5} title=".vuepress/config.js"
+```js {5} title=".vuepress/config.js"
 import { hopeTheme } from "vuepress-theme-hope";
 
 export default {
@@ -223,7 +223,7 @@ export default {
 
 主题的导航栏支持 [多语言](https://vuejs.press/zh/guide/i18n.html)，所以你可以为每个语言单独设置上面提到的导航栏选项:
 
-```js{7-10,13-16} title=".vuepress/config.js"
+```js {7-10,13-16} title=".vuepress/config.js"
 import { hopeTheme } from "vuepress-theme-hope";
 
 export default {
@@ -258,7 +258,7 @@ export default {
 
 你可以在主题选项中通过 `repoDisplay` 控制是否显示仓库按钮。
 
-```js{6,9,11} title=".vuepress/config.js"
+```js {6,9,11} title=".vuepress/config.js"
 import { hopeTheme } from "vuepress-theme-hope";
 
 export default {
@@ -299,7 +299,7 @@ export default {
 
 我们默认使用以下选项:
 
-```js{5-9} title=".vuepress/config.js"
+```js {5-9} title=".vuepress/config.js"
 import { hopeTheme } from "vuepress-theme-hope";
 
 export default {

@@ -56,7 +56,7 @@ If you are not satisfied with the page's icon or feel that the page title is too
 - `icon`: item icon (optional)
 - `activeMatch`: item active math (optional), support regexp strings
 
-```js{5-22} title=".vuepress/config.js"
+```js {5-22} title=".vuepress/config.js"
 import { hopeTheme } from "vuepress-theme-hope";
 
 export default {
@@ -101,7 +101,7 @@ To display more links, you can group similar links into a dropdown list.
 
 You need to use object format and provide the additional `children` option to nest links:
 
-```js{6-10} title=".vuepress/config.js"
+```js {6-10} title=".vuepress/config.js"
 import { hopeTheme } from "vuepress-theme-hope";
 
 export default {
@@ -121,7 +121,7 @@ In most cases, the grouped items in the navbar belong to the same category and w
 
 To simplify the configuration, you can add the `prefix` field to add a prefix to each sub-link in the group:
 
-```js{9,10} title=".vuepress/config.js"
+```js {9,10} title=".vuepress/config.js"
 import { hopeTheme } from "vuepress-theme-hope";
 
 export default {
@@ -140,7 +140,7 @@ export default {
 
 You can also have subgroups inside a dropdown by having nested `children`:
 
-```js{12-14,18-20} title=".vuepress/config.js"
+```js {12-14,18-20} title=".vuepress/config.js"
 import { hopeTheme } from "vuepress-theme-hope";
 
 export default {
@@ -173,7 +173,7 @@ export default {
 
 To disable the navbar globally, set `navbar: false` in theme options:
 
-```js{5} title=".vuepress/config.js"
+```js {5} title=".vuepress/config.js"
 import { hopeTheme } from "vuepress-theme-hope";
 
 export default {
@@ -203,7 +203,7 @@ Please fill in an absolute path and place the logo in `.vuepress/public` folder.
 
 :::
 
-```js{5} title=".vuepress/config.js"
+```js {5} title=".vuepress/config.js"
 import { hopeTheme } from "vuepress-theme-hope";
 
 export default {
@@ -223,7 +223,7 @@ You can set `logoDark` to display another logo in dark mode.
 
 The theme's navbar supports [I18n](https://vuejs.press/guide/i18n.html), so you can set navbar options mentioned above individually in each language:
 
-```js{7-10,13-16} title=".vuepress/config.js"
+```js {7-10,13-16} title=".vuepress/config.js"
 import { hopeTheme } from "vuepress-theme-hope";
 
 export default {
@@ -258,7 +258,7 @@ A repo button will appear in navbar if you set `repo` in theme options.
 
 You can control whether showing the repository button via `repoDisplay` in theme options.
 
-```js{6,9,11} title=".vuepress/config.js"
+```js {6,9,11} title=".vuepress/config.js"
 import { hopeTheme } from "vuepress-theme-hope";
 
 export default {
@@ -299,7 +299,7 @@ And you can also use your own component names after you register them globally.
 
 We use the following options by default:
 
-```js{5-9} title=".vuepress/config.js"
+```js {5-9} title=".vuepress/config.js"
 import { hopeTheme } from "vuepress-theme-hope";
 
 export default {

@@ -38,21 +38,21 @@ To get correct hints, importing `defineUserConfig` from `vuepress` and wrapping 
 
 @tab TS
 
-```ts{2,4,6} title=".vuepress/config.ts"
+```ts {2,4,6} title=".vuepress/config.ts"
 import { defineUserConfig } from "vuepress";
 
 export default defineUserConfig({
-   // put your config here
+  // put your config here
 });
 ```
 
 @tab JS
 
-```js{2,4,6} title=".vuepress/config.ts"
+```js {2,4,6} title=".vuepress/config.ts"
 import { defineUserConfig } from "vuepress";
 
 export default defineUserConfig({
-   // put your config here
+  // put your config here
 });
 ```
 

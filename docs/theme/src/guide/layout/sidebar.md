@@ -27,7 +27,7 @@ You should use `sidebar` in theme options to control sidebar.
 
 Just like navbar, you can fill in an array of multiple file links as the basic configuration of the sidebar:
 
-```js{5} title=".vuepress/config.js"
+```js {5} title=".vuepress/config.js"
 import { hopeTheme } from "vuepress-theme-hope";
 
 export default {
@@ -54,7 +54,7 @@ Just like navbar, if you are not satisfied with the page's icon or feel that the
 - `icon`: item icon (optional)
 - `activeMatch`: item active math (optional), support regexp strings
 
-```js{5-22} title=".vuepress/config.js"
+```js {5-22} title=".vuepress/config.js"
 import { hopeTheme } from "vuepress-theme-hope";
 
 export default {
@@ -103,7 +103,7 @@ Like navbar, you can use `prefix` in the sidebar to add a default path prefix to
 
 The sidebar additionally supports setting `collapsible: true` to make the menu group collapsible, and you can se `expanded: true` to make the menu group default expanded.
 
-```js{18-22,26-30} title=".vuepress/config.js"
+```js {18-22,26-30} title=".vuepress/config.js"
 import { hopeTheme } from "vuepress-theme-hope";
 
 export default {
@@ -145,7 +145,7 @@ export default {
 
 You can also nest Sidebar grouping:
 
-```js{11-22} title=".vuepress/config.js"
+```js {11-22} title=".vuepress/config.js"
 import { hopeTheme } from "vuepress-theme-hope";
 
 export default {
@@ -471,7 +471,7 @@ export default {
 
 The theme's navbar supports [I18n](https://vuejs.press/guide/i18n.html), so you can set sidebar individually in each language:
 
-```js{7-9,12-14} title=".vuepress/config.js"
+```js {7-9,12-14} title=".vuepress/config.js"
 import { hopeTheme } from "vuepress-theme-hope";
 
 export default {

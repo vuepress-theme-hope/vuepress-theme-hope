@@ -54,26 +54,6 @@ Vite 默认情况下仅支持“现代浏览器”，详见 [Vite 支持](https:
 
 在 VuePress2 中，你在 `index.scss` 中通过 `@import` 导入网络 CSS 是无效的。你可能需要在 VuePress 配置的 `head` 选项中手动导入它们。
 
-<!-- ```ts {5-13}
-import { defineUserConfig } from "vuepress-theme-hope";
-
-export default defineUserConfig({
-  head: [
-    [
-      "link",
-      {
-        rel: "preload",
-        as: "style",
-        onload: 'this.onload=null;this.rel="stylesheet"',
-        href: "//at.alicdn.com/t/c/font_2410206_5vb9zlyghj.css",
-      },
-    ],
-  ],
-
-  // ...
-});
-``` -->
-
 ::: code-tabs#language
 
 @tab TS

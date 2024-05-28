@@ -24,7 +24,7 @@ With [`@vuepress/plugin-shiki`][shiki], you can use [shiki](https://shiki.style)
 
 If you want to use a single theme, you can set `plugins.shiki.theme` in theme options:
 
-```js{8} title=".vuepress/config.js"
+```js {8} title=".vuepress/config.js"
 import { hopeTheme } from "vuepress-theme-hope";
 
 export default {
@@ -41,7 +41,7 @@ export default {
 
 If you want to use different themes for light mode and dark mode, you can set `plugins.shiki.themes` in theme options:
 
-```js{8-11} title=".vuepress/config.js"
+```js {8-11} title=".vuepress/config.js"
 import { hopeTheme } from "vuepress-theme-hope";
 
 export default {
@@ -106,7 +106,7 @@ We support all options in [`@vuepress/plugin-prismjs`][prismjs].
 
 Besides, you can customize the theme of code block with `plugins.prismjs.theme` or `plugins.prismjs.themes` similar to shiki. By default, we use `one-light` and `one-dark` dual themes.
 
-```js{8,11-14} title=".vuepress/config.js"
+```js {8,11-14} title=".vuepress/config.js"
 import { hopeTheme } from "vuepress-theme-hope";
 
 export default {

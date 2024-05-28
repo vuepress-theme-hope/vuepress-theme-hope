@@ -24,7 +24,7 @@ tag:
 
 如果你想要使用单一主题，你可以在主题选项中设置 `plugins.shiki.theme`：
 
-```js{8} title=".vuepress/config.js"
+```js {8} title=".vuepress/config.js"
 import { hopeTheme } from "vuepress-theme-hope";
 
 export default {
@@ -41,7 +41,7 @@ export default {
 
 如果你想要在日间模式和夜间模式下使用不同的主题，你可以在主题选项中设置 `plugins.shiki.themes`：
 
-```js{8-11} title=".vuepress/config.js"
+```js {8-11} title=".vuepress/config.js"
 import { hopeTheme } from "vuepress-theme-hope";
 
 export default {
@@ -106,7 +106,7 @@ npm i -D @vuepress/plugin-prismjs@next
 
 你可以通过类似于 Shiki 的 `plugins.prismjs.theme` 或 `plugins.prismjs.themes` 来自定义代码块的主题，与 shiki 类似。默认情况下，我们使用 `one-light` 和 `one-dark` 双主题。
 
-```js{8,11-14} title=".vuepress/config.js"
+```js {8,11-14} title=".vuepress/config.js"
 import { hopeTheme } from "vuepress-theme-hope";
 
 export default {
