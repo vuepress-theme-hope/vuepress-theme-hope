@@ -33,52 +33,52 @@ export interface ResolveArraySidebarOptions {
 }
 
 /**
+ * Resolve sidebar item
+ */
+export const resolveSidebarItem = (
+  item: SidebarItem,
+  pathPrefix: string,
+): ResolvedSidebarPageItem | ResolvedSidebarGroupItem => {
+  const config = isString(item)
+    ? resolveLinkInfo(resolvePrefix(pathPrefix, item))
+    : item.link
+      ? {
+          ...item,
+          link: isLinkInternal(item.link)
+            ? resolveRoute(resolvePrefix(pathPrefix, item.link)).path
+            : item.link,
+        }
+      : item;
+
+  // Resolved group item
+  if ("children" in config) {
+    const prefix = resolvePrefix(pathPrefix, config.prefix);
+
+    const children =
+      config.children === "structure" ? sidebarData[prefix] : config.children;
+
+    return {
+      type: "group",
+      ...config,
+      prefix,
+      children: children.map((item) => resolveSidebarItem(item, prefix)),
+    };
+  }
+
+  return {
+    type: "page",
+    ...config,
+  };
+};
+
+/**
  * Resolve sidebar items if the config is an array
  */
 export const resolveArraySidebarItems = ({
   config,
   prefix = "",
-}: ResolveArraySidebarOptions): ResolvedSidebarItem[] => {
-  const handleChildItem = (
-    item: SidebarItem,
-    pathPrefix = prefix,
-  ): ResolvedSidebarPageItem | ResolvedSidebarGroupItem => {
-    const childItem = isString(item)
-      ? resolveLinkInfo(resolvePrefix(pathPrefix, item))
-      : item.link
-        ? {
-            ...item,
-            link: isLinkInternal(item.link)
-              ? resolveRoute(resolvePrefix(pathPrefix, item.link)).path
-              : item.link,
-          }
-        : item;
-
-    // Resolved group item
-    if ("children" in childItem) {
-      const prefix = resolvePrefix(pathPrefix, childItem.prefix);
-
-      const children =
-        childItem.children === "structure"
-          ? sidebarData[prefix]
-          : childItem.children;
-
-      return {
-        type: "group",
-        ...childItem,
-        prefix,
-        children: children.map((item) => handleChildItem(item, prefix)),
-      };
-    }
-
-    return {
-      type: "page",
-      ...childItem,
-    };
-  };
-
-  return config.map((item) => handleChildItem(item));
-};
+}: ResolveArraySidebarOptions): ResolvedSidebarItem[] =>
+  config.map((item) => resolveSidebarItem(item, prefix));
 
 export interface ResolveMultiSidebarOptions {
   config: SidebarObjectOptions;
@@ -101,16 +101,11 @@ export const resolveMultiSidebarItems = ({
     if (startsWith(decodeURI(routePath), base)) {
       const matched = config[base];
 
-      return matched
-        ? resolveArraySidebarItems({
-            config:
-              matched === "structure"
-                ? (sidebarData[base] as SidebarArrayOptions)
-                : matched,
-            headerDepth,
-            prefix: base,
-          })
-        : [];
+      return resolveArraySidebarItems({
+        config: matched === "structure" ? sidebarData[base] : matched || [],
+        headerDepth,
+        prefix: base,
+      });
     }
 
   console.warn(`${decodeURI(routePath)} is missing sidebar config.`);
