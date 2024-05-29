@@ -10,6 +10,7 @@ import type { PwaPluginOptions } from "@vuepress/plugin-pwa";
 import type { ReadingTimePluginOptions } from "@vuepress/plugin-reading-time";
 import type { RedirectPluginOptions } from "@vuepress/plugin-redirect";
 import type { SeoPluginOptions } from "@vuepress/plugin-seo";
+import type { ShikiPluginOptions } from "@vuepress/plugin-shiki";
 import type { SitemapPluginOptions } from "@vuepress/plugin-sitemap";
 import type { ComponentPluginOptions } from "vuepress-plugin-components";
 import type { MarkdownEnhancePluginOptions } from "vuepress-plugin-md-enhance";
@@ -65,7 +66,7 @@ export type ThemePhotoSwipePluginHelper = Helper<
   PhotoSwipePluginOptions | false
 >;
 
-export type ThemePrismJsPluginHelper = Helper<PrismjsOptions | false>;
+export type ThemePrismJsPluginHelper = Helper<PrismjsOptions | boolean>;
 
 export type ThemePwaPluginHelper = Helper<PwaPluginOptions | false>;
 
@@ -78,6 +79,8 @@ export type ThemeRedirectPluginHelper = Helper<RedirectPluginOptions | false>;
 export type ThemeSEOPluginHelper = Helper<
   Omit<SeoPluginOptions, "hostname" | "author"> | false
 >;
+
+export type ThemeShikiPluginHelper = Helper<ShikiPluginOptions | boolean>;
 
 export type ThemeSitemapPluginHelper = Helper<
   Omit<SitemapPluginOptions, "hostname"> | false

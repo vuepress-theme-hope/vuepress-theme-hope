@@ -16,6 +16,7 @@ import type {
   ThemeReadingTimePluginHelper,
   ThemeRedirectPluginHelper,
   ThemeSEOPluginHelper,
+  ThemeShikiPluginHelper,
   ThemeSidebarArrayHelper,
   ThemeSidebarHelper,
   ThemeSidebarObjectHelper,
@@ -64,5 +65,7 @@ export const readingTime: ThemeReadingTimePluginHelper = (options) => options;
 export const redirect: ThemeRedirectPluginHelper = (options) => options;
 
 export const seo: ThemeSEOPluginHelper = (options) => options;
+
+export const shiki: ThemeShikiPluginHelper = (options) => options;
 
 export const sitemap: ThemeSitemapPluginHelper = (options) => options;
