@@ -86,7 +86,7 @@
     "rollup-plugin-esbuild": "6.1.1",
     "rollup-plugin-resolve-shebang": "1.0.1",
     "sort-package-json": "2.10.0",
-    "stylelint": "16.6.0",
+    "stylelint": "16.6.1",
     "stylelint-config-hope": "6.0.1",
     "through2": "4.0.2",
     "tslib": "2.6.2",
@@ -94,8 +94,13 @@
     "typescript": "5.4.5",
     "vitest": "1.6.0"
   },
-  "packageManager": "pnpm@9.1.2",
+  "packageManager": "pnpm@9.1.3",
   "engines": {
     "node": ">=20"
+  },
+  "pnpm": {
+    "overrides": {
+      "vite": "5.2.11"
+    }
   }
 }

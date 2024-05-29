@@ -89,7 +89,7 @@
     "@vuepress/plugin-sitemap": "2.0.0-rc.31",
     "@vuepress/plugin-theme-data": "2.0.0-rc.31",
     "@vuepress/plugin-watermark": "2.0.0-rc.31",
-    "@vueuse/core": "^10.9.0",
+    "@vueuse/core": "^10.10.0",
     "balloon-css": "^1.2.0",
     "bcrypt-ts": "^5.0.2",
     "cheerio": "1.0.0-rc.12",
