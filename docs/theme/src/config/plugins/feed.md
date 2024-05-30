@@ -82,4 +82,4 @@ Check [feed plugin documentation][feed-config] for all available options.
 
 :::
 
-[feed-config]: https://ecosystem.vuejs.press/plugins/feed/
+[feed-config]: https://ecosystem.vuejs.press/plugins/blog/feed/

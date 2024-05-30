@@ -31,11 +31,11 @@ export interface PluginsOptions {
   /**
    * Enable @vuepress/active-header-links or not
    *
-   * @see https://ecosystem.vuejs.press/plugins/active-header-links.html
+   * @see https://ecosystem.vuejs.press/plugins/development/active-header-links.html
    *
    * 是否启用 @vuepress/active-header-links 插件
    *
-   * @see https://ecosystem.vuejs.press/zh/plugins/active-header-links.html
+   * @see https://ecosystem.vuejs.press/zh/plugins/development/active-header-links.html
    *
    * @default true
    */
@@ -64,11 +64,11 @@ export interface PluginsOptions {
   /**
    * Options for @vuepress/catalog
    *
-   * @see https://ecosystem.vuejs.press/plugins/catalog.html
+   * @see https://ecosystem.vuejs.press/plugins/features/catalog.html
    *
    * 自动目录插件选项
    *
-   * @see https://ecosystem.vuejs.press/plugins/catalog.html
+   * @see https://ecosystem.vuejs.press/plugins/features/catalog.html
    *
    * @default true
    */
@@ -92,33 +92,33 @@ export interface PluginsOptions {
   /**
    * Comment plugin options
    *
-   * @see https://ecosystem.vuejs.press/plugins/comment/
+   * @see https://ecosystem.vuejs.press/plugins/blog/comment/
    *
    * 评论插件配置
    *
-   * @see https://ecosystem.vuejs.press/zh/plugins/comment/
+   * @see https://ecosystem.vuejs.press/zh/plugins/blog/comment/
    */
   comment?: CommentPluginOptions | false;
 
   /**
    * Options for @vuepress/copy-code
    *
-   * @see https://ecosystem.vuejs.press/plugins/copy-code.html
+   * @see https://ecosystem.vuejs.press/plugins/features/copy-code.html
    *
    * 代码复制插件配置
    *
-   * @see https://ecosystem.vuejs.press/zh/plugins/copy-code.html
+   * @see https://ecosystem.vuejs.press/zh/plugins/features/copy-code.html
    */
   copyCode?: CopyCodePluginOptions | boolean;
 
   /**
    * Options for @vuepress/copyright
    *
-   * @see https://ecosystem.vuejs.press/plugins/copyright.html
+   * @see https://ecosystem.vuejs.press/plugins/features/copyright.html
    *
    * 版权信息插件配置
    *
-   * @see https://ecosystem.vuejs.press/zh/plugins/copyright.html
+   * @see https://ecosystem.vuejs.press/zh/plugins/features/copyright.html
    *
    * @default false
    */
@@ -127,22 +127,22 @@ export interface PluginsOptions {
   /**
    * Options for @vuepress/docsearch
    *
-   * @see https://ecosystem.vuejs.press/plugins/docsearch.html
+   * @see https://ecosystem.vuejs.press/plugins/search/docsearch.html
    *
    * @vuepress/docsearch 选项
    *
-   * @see https://ecosystem.vuejs.press/zh/plugins/docsearch.html
+   * @see https://ecosystem.vuejs.press/zh/plugins/search/docsearch.html
    */
   docsearch?: DocsearchPluginOptions;
 
   /**
    * Feed plugin options
    *
-   * @see https://ecosystem.vuejs.press/plugins/feed/config.html
+   * @see https://ecosystem.vuejs.press/plugins/blog/feed/config.html
    *
    * Feed 插件配置
    *
-   * @see https://ecosystem.vuejs.press/zh/plugins/feed/config.html
+   * @see https://ecosystem.vuejs.press/zh/plugins/blog/feed/config.html
    */
   feed?: Omit<FeedPluginOptions, "hostname"> | boolean;
 
@@ -151,24 +151,24 @@ export interface PluginsOptions {
    *
    * @description By default this plugin is only enabled in production mode for performance reasons.
    *
-   * @see https://ecosystem.vuejs.press/plugins/git.html
+   * @see https://ecosystem.vuejs.press/plugins/development/git.html
    *
    * Git 插件配置
    *
    * @description 默认情况下，出于性能原因，此插件仅在生产模式下启用。
    *
-   * @see https://ecosystem.vuejs.press/zh/plugins/git.html
+   * @see https://ecosystem.vuejs.press/zh/plugins/development/git.html
    */
   git?: GitPluginOptions | boolean;
 
   /**
    * Options for @vuepress/links-check
    *
-   * @see https://ecosystem.vuejs.press/plugins/links-check.html
+   * @see https://ecosystem.vuejs.press/plugins/markdown/links-check.html
    *
    * @vuepress/links-check 插件配置
    *
-   * @see https://ecosystem.vuejs.press/zh/plugins/links-check.html
+   * @see https://ecosystem.vuejs.press/zh/plugins/markdown/links-check.html
    */
   linksCheck?: LinksCheckPluginOptions | boolean;
 
@@ -233,11 +233,11 @@ export interface PluginsOptions {
    *
    * @description This plugin is enabled by default
    *
-   * @see https://ecosystem.vuejs.press/plugins/photo-swipe.html
+   * @see https://ecosystem.vuejs.press/plugins/features/photo-swipe.html
    *
    * 图片预览插件配置
    *
-   * @see https://ecosystem.vuejs.press/zh/plugins/photo-swipe.html
+   * @see https://ecosystem.vuejs.press/zh/plugins/features/photo-swipe.html
    *
    * @default true
    */
@@ -246,11 +246,11 @@ export interface PluginsOptions {
   /**
    * Enable @vuepress/prismjs or not
    *
-   * @see https://ecosystem.vuejs.press/plugins/prismjs.html
+   * @see https://ecosystem.vuejs.press/plugins/markdown/prismjs.html
    *
    * 是否启用 @vuepress/prismjs 插件
    *
-   * @see https://ecosystem.vuejs.press/zh/plugins/prismjs.html
+   * @see https://ecosystem.vuejs.press/zh/plugins/markdown/prismjs.html
    *
    * @default false
    */
@@ -259,11 +259,11 @@ export interface PluginsOptions {
   /**
    * PWA plugin options
    *
-   * @see https://ecosystem.vuejs.press/plugins/pwa/config.html
+   * @see https://ecosystem.vuejs.press/plugins/pwa/pwa/config.html
    *
    * PWA 插件配置
    *
-   * @see https://ecosystem.vuejs.press/zh/plugins/pwa/config.html
+   * @see https://ecosystem.vuejs.press/zh/plugins/pwa/pwa/config.html
    *
    * @default false
    */
@@ -272,11 +272,11 @@ export interface PluginsOptions {
   /**
    * ReadingTime options
    *
-   * @see https://ecosystem.vuejs.press/plugins/reading-time.html
+   * @see https://ecosystem.vuejs.press/plugins/development/reading-time.html
    *
    * 阅读时间插件配置
    *
-   * @see https://ecosystem.vuejs.press/zh/plugins/reading-time.html
+   * @see https://ecosystem.vuejs.press/zh/plugins/development/reading-time.html
    *
    * @default true
    */
@@ -285,22 +285,22 @@ export interface PluginsOptions {
   /**
    * Redirect options
    *
-   * @see https://ecosystem.vuejs.press/plugins/redirect.html
+   * @see https://ecosystem.vuejs.press/plugins/tools/redirect.html
    *
    * 重定向插件配置
    *
-   * @see https://ecosystem.vuejs.press/zh/plugins/redirect.html
+   * @see https://ecosystem.vuejs.press/zh/plugins/tools/redirect.html
    */
   redirect?: RedirectPluginOptions | boolean;
 
   /**
    * @vuepress/search plugin options
    *
-   * @see https://ecosystem.vuejs.press/plugins/search.html
+   * @see https://ecosystem.vuejs.press/plugins/search/search.html
    *
    * @vuepress/search 插件配置
    *
-   * @see https://ecosystem.vuejs.press/zh/plugins/search.html
+   * @see https://ecosystem.vuejs.press/zh/plugins/search/search.html
    */
   search?: SearchPluginOptions | boolean;
 
@@ -318,11 +318,11 @@ export interface PluginsOptions {
   /**
    * Options for @vuepress/seo
    *
-   * @see https://ecosystem.vuejs.press/plugins/seo/config.html
+   * @see https://ecosystem.vuejs.press/plugins/seo/seo/config.html
    *
    * SEO 插件配置
    *
-   * @see https://ecosystem.vuejs.press/zh/plugins/seo/config.html
+   * @see https://ecosystem.vuejs.press/zh/plugins/seo/seo/config.html
    *
    * @default true
    */
@@ -331,11 +331,11 @@ export interface PluginsOptions {
   /**
    * Enable @vuepress/shiki or not
    *
-   * @see https://ecosystem.vuejs.press/plugins/shiki.html
+   * @see https://ecosystem.vuejs.press/plugins/markdown/shiki.html
    *
    * 是否启用 @vuepress/shiki 插件
    *
-   * @see https://ecosystem.vuejs.press/zh/plugins/shiki.html
+   * @see https://ecosystem.vuejs.press/zh/plugins/markdown/shiki.html
    *
    * @default true
    */
@@ -344,11 +344,11 @@ export interface PluginsOptions {
   /**
    * Options for @vuepress/sitemap
    *
-   * @see https://ecosystem.vuejs.press/plugins/sitemap/config.html
+   * @see https://ecosystem.vuejs.press/plugins/seo/sitemap/config.html
    *
    * Sitemap 插件配置
    *
-   * @see https://ecosystem.vuejs.press/zh/plugins/sitemap/config.html
+   * @see https://ecosystem.vuejs.press/zh/plugins/seo/sitemap/config.html
    *
    * @default true
    */
@@ -357,11 +357,11 @@ export interface PluginsOptions {
   /**
    * Options for @vuepress/watermark
    *
-   * @see https://ecosystem.vuejs.press/plugins/watermark.html
+   * @see https://ecosystem.vuejs.press/plugins/features/watermark.html
    *
    * 水印插件配置
    *
-   * @see https://ecosystem.vuejs.press/zh/plugins/watermark.html
+   * @see https://ecosystem.vuejs.press/zh/plugins/features/watermark.html
    *
    * @default false
    */

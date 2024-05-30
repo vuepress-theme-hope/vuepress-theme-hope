@@ -104,4 +104,4 @@ However, if you want users to confirm the notice, you can set `confirm: true`, s
 
 :::
 
-[notice]: https://ecosystem.vuejs.press/plugins/notice.html
+[notice]: https://ecosystem.vuejs.press/plugins/features/notice.html

@@ -234,6 +234,6 @@ Before VuePress2 provides client configuration, the two function options `imgUpl
 
 :::
 
-[comment]: https://ecosystem.vuejs.press/plugins/comment/
-[giscus-config]: https://ecosystem.vuejs.press/plugins/comment/giscus/config.html
-[waline-config]: https://ecosystem.vuejs.press/plugins/comment/waline/config.html
+[comment]: https://ecosystem.vuejs.press/plugins/blog/comment/
+[giscus-config]: https://ecosystem.vuejs.press/plugins/blog/comment/giscus/config.html
+[waline-config]: https://ecosystem.vuejs.press/plugins/blog/comment/waline/config.html

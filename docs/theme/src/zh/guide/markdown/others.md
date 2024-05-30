@@ -46,4 +46,4 @@ tag:
 
 ::::
 
-[links-check]: https://ecosystem.vuejs.press/zh/plugins/links-check.html
+[links-check]: https://ecosystem.vuejs.press/zh/plugins/markdown/links-check.html

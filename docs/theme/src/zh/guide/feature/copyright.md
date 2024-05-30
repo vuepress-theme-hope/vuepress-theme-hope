@@ -56,4 +56,4 @@ copy:
 
 关于插件文档，请参见 [@vuepress/plugin-copyright 文档][copyright]。
 
-[copyright]: https://ecosystem.vuejs.press/zh/plugins/copyright.html
+[copyright]: https://ecosystem.vuejs.press/zh/plugins/features/copyright.html

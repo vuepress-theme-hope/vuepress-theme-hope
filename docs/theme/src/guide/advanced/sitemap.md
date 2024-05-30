@@ -55,4 +55,4 @@ Google introduced the Sitemaps protocol, so web developers can publish lists of 
 
 :::
 
-[sitemap]: https://ecosystem.vuejs.press/plugins/sitemap/
+[sitemap]: https://ecosystem.vuejs.press/plugins/seo/sitemap/

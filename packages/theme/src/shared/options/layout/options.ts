@@ -129,7 +129,7 @@ export interface LayoutOptions {
    *
    * 结构化侧边栏排序器
    *
-   * @default ["readme", "index", "title", "filename"]
+   * @default ["readme", "order", "title", "filename"]
    */
   sidebarSorter?: SidebarSorter;
 }

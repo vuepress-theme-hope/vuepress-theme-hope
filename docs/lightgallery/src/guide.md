@@ -83,4 +83,4 @@ If your theme adds animations when switching pages, you may need to delay when l
 <!-- markdownlint-restore -->
 
 [client-config]: https://vuejs.press/guide/configuration.html#client-config-file
-[photo-swipe]: https://ecosystem.vuejs.press/plugins/photo-swipe.html
+[photo-swipe]: https://ecosystem.vuejs.press/plugins/features/photo-swipe.html

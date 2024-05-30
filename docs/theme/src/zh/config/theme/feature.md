@@ -275,4 +275,4 @@ tag:
 
 :::
 
-[blog]: https://ecosystem.vuejs.press/zh/plugins/blog/
+[blog]: https://ecosystem.vuejs.press/zh/plugins/blog/blog/

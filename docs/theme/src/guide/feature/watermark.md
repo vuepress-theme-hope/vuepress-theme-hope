@@ -21,5 +21,5 @@ You can also customize a page's watermark with `watermark` in page frontmatter.
 
 For detailed configuration, see [watermark plugin docs][watermark-config].
 
-[watermark]: https://ecosystem.vuejs.press/plugins/watermark.html
-[watermark-config]: https://ecosystem.vuejs.press/plugins/watermark.html#options
+[watermark]: https://ecosystem.vuejs.press/plugins/features/watermark.html
+[watermark-config]: https://ecosystem.vuejs.press/plugins/features/watermark.html#options

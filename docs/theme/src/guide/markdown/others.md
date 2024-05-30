@@ -44,4 +44,4 @@ Since VuePress2 has removed V1's v-pre container in core, the plugin provides `v
 
 ::::
 
-[links-check]: https://ecosystem.vuejs.press/plugins/links-check.html
+[links-check]: https://ecosystem.vuejs.press/plugins/markdown/links-check.html

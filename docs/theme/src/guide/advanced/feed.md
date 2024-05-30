@@ -76,7 +76,7 @@ The plugin generates separate feeds for each language.
 
 You can provide different settings for different languages via `plugins.feed.locales`.
 
-[feed]: https://ecosystem.vuejs.press/plugins/feed/
-[feed-channel]: https://ecosystem.vuejs.press/plugins/feed/channel.html
-[feed-frontmatter]: https://ecosystem.vuejs.press/plugins/feed/frontmatter.html
-[feed-getter]: https://ecosystem.vuejs.press/plugins/feed/getter.html
+[feed]: https://ecosystem.vuejs.press/plugins/blog/feed/
+[feed-channel]: https://ecosystem.vuejs.press/plugins/blog/feed/channel.html
+[feed-frontmatter]: https://ecosystem.vuejs.press/plugins/blog/feed/frontmatter.html
+[feed-getter]: https://ecosystem.vuejs.press/plugins/blog/feed/getter.html

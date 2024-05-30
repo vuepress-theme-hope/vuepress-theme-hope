@@ -209,5 +209,5 @@ function customHead(
 
 - [Google 富媒体结构测试工具](https://search.google.com/test/rich-results)
 
-[seo]: https://ecosystem.vuejs.press/zh/plugins/seo/
-[seo-config]: https://ecosystem.vuejs.press/zh/plugins/seo/config.html
+[seo]: https://ecosystem.vuejs.press/zh/plugins/seo/seo/
+[seo-config]: https://ecosystem.vuejs.press/zh/plugins/seo/seo/config.html

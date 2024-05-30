@@ -214,5 +214,5 @@ As an internet marketing strategy, SEO considers how search engines work, the co
 
 - [Google Rich Media Structure Test Tool](https://search.google.com/test/rich-results)
 
-[seo]: https://ecosystem.vuejs.press/plugins/seo/
-[seo-config]: https://ecosystem.vuejs.press/plugins/seo/config.html
+[seo]: https://ecosystem.vuejs.press/plugins/seo/seo/
+[seo-config]: https://ecosystem.vuejs.press/plugins/seo/seo/config.html

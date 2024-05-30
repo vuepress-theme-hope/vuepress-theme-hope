@@ -244,6 +244,6 @@ npm i -D artalk
 
 :::
 
-[comment]: https://ecosystem.vuejs.press/zh/plugins/comment/
-[giscus-config]: https://ecosystem.vuejs.press/zh/plugins/comment/giscus/config.html
-[waline-config]: https://ecosystem.vuejs.press/zh/plugins/comment/waline/config.html
+[comment]: https://ecosystem.vuejs.press/zh/plugins/blog/comment/
+[giscus-config]: https://ecosystem.vuejs.press/zh/plugins/blog/comment/giscus/config.html
+[waline-config]: https://ecosystem.vuejs.press/zh/plugins/blog/comment/waline/config.html

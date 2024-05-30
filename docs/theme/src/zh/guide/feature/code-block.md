@@ -186,6 +186,6 @@ export default {
 
 用户按下复制按钮后，将显示一个成功提示，默认持续时间为 `2000` 毫秒，你可以通过主题选项中的 `plugins.copyCode.duration` 自定义它，也可以通过将持续时间设置为 `0` 来禁用提示。
 
-[copy-code]: https://ecosystem.vuejs.press/zh/plugins/copy-code.html
-[prismjs]: https://ecosystem.vuejs.press/zh/plugins/prismjs.html
-[shiki]: https://ecosystem.vuejs.press/zh/plugins/shiki.html
+[copy-code]: https://ecosystem.vuejs.press/zh/plugins/features/copy-code.html
+[prismjs]: https://ecosystem.vuejs.press/zh/plugins/markdown/prismjs.html
+[shiki]: https://ecosystem.vuejs.press/zh/plugins/markdown/shiki.html

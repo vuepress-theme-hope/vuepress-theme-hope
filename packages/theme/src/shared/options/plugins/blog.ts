@@ -95,11 +95,11 @@ export interface BlogOptions
   /**
    * Additional Article Type
    *
-   * @description This is an advanced option, please refer to the [blog plugin documentation](https://ecosystem.vuejs.press/plugins/blog/) for details
+   * @description This is an advanced option, please refer to the [blog plugin documentation](https://ecosystem.vuejs.press/plugins/blog/blog/) for details
    *
    * 额外的文章类型
    *
-   * @description 这是一个高级选项，请参考 [blog 插件文档](https://ecosystem.vuejs.press/zh/plugins/blog/) 了解详情
+   * @description 这是一个高级选项，请参考 [blog 插件文档](https://ecosystem.vuejs.press/zh/plugins/blog/blog/) 了解详情
    *
    * @default []
    */

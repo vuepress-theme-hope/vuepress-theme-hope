@@ -364,5 +364,5 @@ tag:
 
 :::
 
-[docsearch]: https://ecosystem.vuejs.press/zh/plugins/docsearch.html
-[search]: https://ecosystem.vuejs.press/zh/plugins/search.html
+[docsearch]: https://ecosystem.vuejs.press/zh/plugins/search/docsearch.html
+[search]: https://ecosystem.vuejs.press/zh/plugins/search/search.html

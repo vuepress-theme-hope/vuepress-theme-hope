@@ -81,4 +81,4 @@ export default defineClientConfig({
 <!-- markdownlint-restore -->
 
 [client-config]: https://vuejs.press/zh/guide/configuration.html#%E5%AE%A2%E6%88%B7%E7%AB%AF%E9%85%8D%E7%BD%AE%E6%96%87%E4%BB%B6
-[photo-swipe]: https://ecosystem.vuejs.press/zh/plugins/photo-swipe.html
+[photo-swipe]: https://ecosystem.vuejs.press/zh/plugins/features/photo-swipe.html

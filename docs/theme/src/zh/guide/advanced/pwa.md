@@ -169,5 +169,5 @@ import { PWAReadyPopup } from "@vuepress/plugin-pwa/client";
 - [MDN PWA](https://developer.mozilla.org/zh-CN/docs/Web/Progressive_web_apps)
 - [W3C Manifest 规范](https://w3c.github.io/manifest/)
 
-[pwa]: https://ecosystem.vuejs.press/zh/plugins/pwa/
-[pwa-config]: https://ecosystem.vuejs.press/zh/plugins/pwa/config.html
+[pwa]: https://ecosystem.vuejs.press/zh/plugins/pwa/pwa/
+[pwa-config]: https://ecosystem.vuejs.press/zh/plugins/pwa/pwa/config.html

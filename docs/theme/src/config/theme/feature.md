@@ -273,4 +273,4 @@ The encryption configuration is an object with a key name matching the path and 
 
 :::
 
-[blog]: https://ecosystem.vuejs.press/plugins/blog/
+[blog]: https://ecosystem.vuejs.press/plugins/blog/blog/

@@ -153,13 +153,13 @@ tag:
 插件选项请参阅 [watermark 插件文档][watermark-config]。
 
 [back-to-top-config]: https://ecosystem.vuejs.press/zh/plugins/back-to-top.html#options
-[catalog-config]: https://ecosystem.vuejs.press/zh/plugins/catalog.html#options
-[copy-code-config]: https://ecosystem.vuejs.press/zh/plugins/copy-code.html#options
-[git-config]: https://ecosystem.vuejs.press/zh/plugins/git.html#options
-[links-check-config]: https://ecosystem.vuejs.press/zh/plugins/links-check.html#options
-[photo-swipe-config]: https://ecosystem.vuejs.press/zh/plugins/photo-swipe.html#options
-[pwa-config]: https://ecosystem.vuejs.press/zh/plugins/pwa/config.html#options
-[reading-time-config]: https://ecosystem.vuejs.press/zh/plugins/reading-time.html#options
-[seo-config]: https://ecosystem.vuejs.press/zh/plugins/seo/config.html
-[sitemap-config]: https://ecosystem.vuejs.press/zh/plugins/sitemap/config.html
-[watermark-config]: https://ecosystem.vuejs.press/zh/plugins/watermark.html
+[catalog-config]: https://ecosystem.vuejs.press/zh/plugins/features/catalog.html#options
+[copy-code-config]: https://ecosystem.vuejs.press/zh/plugins/features/copy-code.html#options
+[git-config]: https://ecosystem.vuejs.press/zh/plugins/development/git.html#options
+[links-check-config]: https://ecosystem.vuejs.press/zh/plugins/markdown/links-check.html#options
+[photo-swipe-config]: https://ecosystem.vuejs.press/zh/plugins/features/photo-swipe.html#options
+[pwa-config]: https://ecosystem.vuejs.press/zh/plugins/pwa/pwa/config.html#options
+[reading-time-config]: https://ecosystem.vuejs.press/zh/plugins/development/reading-time.html#options
+[seo-config]: https://ecosystem.vuejs.press/zh/plugins/seo/seo/config.html
+[sitemap-config]: https://ecosystem.vuejs.press/zh/plugins/seo/sitemap/config.html
+[watermark-config]: https://ecosystem.vuejs.press/zh/plugins/features/watermark.html
