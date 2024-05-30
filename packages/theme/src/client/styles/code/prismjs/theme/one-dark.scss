@@ -10,13 +10,10 @@
   @include var.color($code-color: #abb2bf, $code-bg-color: #282c34);
 }
 
-code[class*="language-"],
 pre[class*="language-"] {
   text-shadow: 0 1px rgb(0 0 0 / 30%);
 
   // tab size
-  -moz-tab-size: 2;
-  -o-tab-size: 2;
   tab-size: 2;
 
   /* Print */

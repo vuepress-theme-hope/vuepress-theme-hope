@@ -12,16 +12,9 @@
   @include var.color($code-color: #9efeff, $code-bg-color: #1e1e3f);
 }
 
-code[class*="language-"],
 pre[class*="language-"] {
   letter-spacing: 0.5px;
   text-shadow: 0 1px #222245;
-
-  // tab size
-
-  -moz-tab-size: 4;
-  -o-tab-size: 4;
-  tab-size: 4;
 
   // Selection
   &::selection,

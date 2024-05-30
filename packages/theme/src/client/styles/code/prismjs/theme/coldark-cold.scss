@@ -14,13 +14,7 @@
   @include var.color($code-color: #111b27, $code-bg-color: #e3eaf2);
 }
 
-code[class*="language-"],
 pre[class*="language-"] {
-  // tab size
-  -moz-tab-size: 4;
-  -o-tab-size: 4;
-  tab-size: 4;
-
   // Selection
   &::selection,
   ::selection {

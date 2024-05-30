@@ -12,7 +12,6 @@
   @include var.color($code-color: #f8f8f2, $code-bg-color: #263e52);
 }
 
-code[class*="language-"],
 pre[class*="language-"] {
   text-shadow: 0 1px rgb(0 0 0 / 30%);
 }

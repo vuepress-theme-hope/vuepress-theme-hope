@@ -11,13 +11,10 @@
   @include var.color($code-color: #76d9e6, $code-bg-color: #2a2a2a);
 }
 
-code[class*="language-"],
 pre[class*="language-"] {
   box-shadow: 1px 1px 0.3em -0.1em #000 inset;
 
   // tab size
-  -moz-tab-size: 2;
-  -o-tab-size: 2;
   tab-size: 2;
 
   // Selection

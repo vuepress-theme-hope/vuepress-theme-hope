@@ -10,11 +10,8 @@
   @include var.color($code-color: #383a42, $code-bg-color: #ecf4fa);
 }
 
-code[class*="language-"],
 pre[class*="language-"] {
   // tab size
-  -moz-tab-size: 2;
-  -o-tab-size: 2;
   tab-size: 2;
 
   // Selection

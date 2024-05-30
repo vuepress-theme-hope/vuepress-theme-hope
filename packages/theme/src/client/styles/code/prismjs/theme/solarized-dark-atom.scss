@@ -11,14 +11,8 @@
   @include var.color($code-color: #839496, $code-bg-color: #002b36);
 }
 
-code[class*="language-"],
 pre[class*="language-"] {
   text-shadow: 0 1px rgb(0 0 0 / 30%);
-
-  // tab size
-  -moz-tab-size: 4;
-  -o-tab-size: 4;
-  tab-size: 4;
 
   /* Print */
   @media print {
