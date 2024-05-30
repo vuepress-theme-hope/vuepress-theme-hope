@@ -94,4 +94,4 @@ Feed 项目的排序器。
 
 :::
 
-[feed-config]: https://ecosystem.vuejs.press/zh/plugins/feed/
+[feed-config]: https://ecosystem.vuejs.press/zh/plugins/blog/feed/

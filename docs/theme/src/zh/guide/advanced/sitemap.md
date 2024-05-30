@@ -57,4 +57,4 @@ Google 引入了 Google 网站地图使得网页开发者可以发布整个站�
 
 :::
 
-[sitemap]: https://ecosystem.vuejs.press/zh/plugins/sitemap/
+[sitemap]: https://ecosystem.vuejs.press/zh/plugins/seo/sitemap/

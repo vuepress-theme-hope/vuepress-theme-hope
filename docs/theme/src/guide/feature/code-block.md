@@ -186,6 +186,6 @@ By default, the copy button is only displayed on desktop mode. Set `plugins.copy
 
 A success hint will be displayed once user press the copy button, and its default duration is `2000` ms, you can customize it with `plugins.copyCode.duration` in theme options, and you can disable the hint by setting duration to `0`.
 
-[copy-code]: https://ecosystem.vuejs.press/plugins/copy-code.html
-[prismjs]: https://ecosystem.vuejs.press/plugins/prismjs.html
-[shiki]: https://ecosystem.vuejs.press/plugins/shiki.html
+[copy-code]: https://ecosystem.vuejs.press/plugins/features/copy-code.html
+[prismjs]: https://ecosystem.vuejs.press/plugins/markdown/prismjs.html
+[shiki]: https://ecosystem.vuejs.press/plugins/markdown/shiki.html

@@ -75,11 +75,6 @@ features:
     details: Support docsearch and client search
     link: /guide/feature/search.html
 
-  - title: Copy Code Blocks
-    icon: copy
-    details: Copy codes with one click in code blocks
-    link: /guide/feature/copy-code.html
-
   - title: Image Preview
     icon: image
     details: Support viewing, zooming, sharing your page images like a gallery

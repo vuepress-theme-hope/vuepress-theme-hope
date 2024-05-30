@@ -36,5 +36,5 @@ You can use the `<Catalog>` component directly in Markdown to display the catalo
 
 :::
 
-[catalog]: https://ecosystem.vuejs.press/plugins/catalog.html
-[catalog-config]: https://ecosystem.vuejs.press/plugins/catalog.html#options
+[catalog]: https://ecosystem.vuejs.press/plugins/features/catalog.html
+[catalog-config]: https://ecosystem.vuejs.press/plugins/features/catalog.html#options

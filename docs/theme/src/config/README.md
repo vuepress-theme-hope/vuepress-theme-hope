@@ -33,7 +33,7 @@ tag:
 
 - [Blog plugin config](plugins/blog.md)
 
-- [Feed plugin config](plugins/feed.md)
+- [Feed plugin config](plugins/blog/feed.md)
 
 - [Markdown enhancement plugin config](plugins/md-enhance.md)
 

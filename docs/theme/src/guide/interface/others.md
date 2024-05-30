@@ -116,4 +116,4 @@ import PrintButton from "@theme-hope/modules/info/components/PrintButton";
 import ToggleRTLButton from "@ToggleRTLButton";
 </script>
 
-[back-to-top]: https://ecosystem.vuejs.press/plugins/back-to-top.html
+[back-to-top]: https://ecosystem.vuejs.press/plugins/features/back-to-top.html

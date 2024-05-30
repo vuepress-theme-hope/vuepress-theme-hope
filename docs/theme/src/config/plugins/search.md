@@ -54,5 +54,5 @@ You need to install `@vuepress/plugin-search` manually.
 
 :::
 
-[docsearch]: https://ecosystem.vuejs.press/plugins/docsearch.html
-[search]: https://ecosystem.vuejs.press/plugins/search.html
+[docsearch]: https://ecosystem.vuejs.press/plugins/search/docsearch.html
+[search]: https://ecosystem.vuejs.press/plugins/search/search.html

@@ -80,7 +80,7 @@ tag:
 
 你可以通过插件选项中的 `locales` 分别对不同语言提供不同的默认设置。
 
-[feed]: https://ecosystem.vuejs.press/zh/plugins/feed/
-[feed-channel]: https://ecosystem.vuejs.press/zh/plugins/feed/channel.html
-[feed-frontmatter]: https://ecosystem.vuejs.press/zh/plugins/feed/frontmatter.html
-[feed-getter]: https://ecosystem.vuejs.press/zh/plugins/feed/getter.html
+[feed]: https://ecosystem.vuejs.press/zh/plugins/blog/feed/
+[feed-channel]: https://ecosystem.vuejs.press/zh/plugins/blog/feed/channel.html
+[feed-frontmatter]: https://ecosystem.vuejs.press/zh/plugins/blog/feed/frontmatter.html
+[feed-getter]: https://ecosystem.vuejs.press/zh/plugins/blog/feed/getter.html

@@ -21,5 +21,5 @@ VuePress Theme Hope 允许你通过 [`@vuepress/plugin-watermark`][watermark] �
 
 有关详细的配置，请参见 [水印插件文档][watermark-config]。
 
-[watermark]: https://ecosystem.vuejs.press/zh/plugins/watermark.html
-[watermark-config]: https://ecosystem.vuejs.press/zh/plugins/watermark.html#options
+[watermark]: https://ecosystem.vuejs.press/zh/plugins/features/watermark.html
+[watermark-config]: https://ecosystem.vuejs.press/zh/plugins/features/watermark.html#options

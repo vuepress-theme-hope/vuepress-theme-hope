@@ -65,4 +65,4 @@ tag:
 
 :::
 
-[copyright]: https://ecosystem.vuejs.press/zh/plugins/copyright.html
+[copyright]: https://ecosystem.vuejs.press/zh/plugins/features/copyright.html

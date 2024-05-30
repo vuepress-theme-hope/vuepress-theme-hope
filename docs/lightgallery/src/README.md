@@ -93,4 +93,4 @@ If you are worried about this, please consider using [@vuepress/plugin-photo-swi
 
 :::
 
-[photo-swipe]: https://ecosystem.vuejs.press/plugins/photo-swipe.html
+[photo-swipe]: https://ecosystem.vuejs.press/plugins/features/photo-swipe.html

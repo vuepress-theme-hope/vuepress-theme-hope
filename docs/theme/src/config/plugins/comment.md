@@ -29,4 +29,4 @@ The theme provide comment support using `@vuepress/plugin-comment`, and it passe
 
 For details of each comment service options, please refer to [@vuepress/plugin-comment documentation][comment-config].
 
-[comment-config]: https://ecosystem.vuejs.press/plugins/comment/
+[comment-config]: https://ecosystem.vuejs.press/plugins/blog/comment/

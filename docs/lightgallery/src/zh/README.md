@@ -93,4 +93,4 @@ export default {
 
 :::
 
-[photo-swipe]: https://ecosystem.vuejs.press/zh/plugins/photo-swipe.html
+[photo-swipe]: https://ecosystem.vuejs.press/zh/plugins/features/photo-swipe.html

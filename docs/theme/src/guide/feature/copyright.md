@@ -55,4 +55,4 @@ Please copy this text and paste it to any location to see the effect. Please cop
 
 For plugin documentation, please visit [@vuepress/plugin-copyright docs][copyright].
 
-[copyright]: https://ecosystem.vuejs.press/plugins/copyright.html
+[copyright]: https://ecosystem.vuejs.press/plugins/features/copyright.html

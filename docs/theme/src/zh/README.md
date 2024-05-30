@@ -119,7 +119,7 @@ highlights:
       - title: Chart.js 支持
         icon: chart-simple
         details: 在 Markdown 中展示 Chart.js 图表
-        link: ./guide/markdown/chartjs.html
+        link: ./guide/markdown/chart/chartjs.html
 
       - title: 流程图支持
         icon: route
@@ -159,7 +159,7 @@ highlights:
       - title: Vue 交互演示支持
         icon: fab fa-vuejs
         details: 在交互演示中展示 Vue 组件
-        link: ./guide/markdown/vue-playground.html
+        link: ./guide/markdown/code/vue-playground.html
 
       - title: Sandpack 交互演示支持
         icon: code

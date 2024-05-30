@@ -65,4 +65,4 @@ Check [copyright plugin documentation][copyright] for all available options.
 
 :::
 
-[copyright]: https://ecosystem.vuejs.press/plugins/copyright.html#options
+[copyright]: https://ecosystem.vuejs.press/plugins/features/copyright.html#options

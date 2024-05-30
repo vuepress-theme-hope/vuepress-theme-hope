@@ -104,4 +104,4 @@ export default {
 
 :::
 
-[notice]: https://ecosystem.vuejs.press/zh/plugins/notice.html
+[notice]: https://ecosystem.vuejs.press/zh/plugins/features/notice.html

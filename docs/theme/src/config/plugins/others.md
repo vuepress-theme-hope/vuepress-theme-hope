@@ -153,13 +153,13 @@ Controls `@vuepress/plugin-watermark` which provides watermark.
 Check [watermark plugin docs][watermark-config] for available plugin options.
 
 [back-to-top-config]: https://ecosystem.vuejs.press/plugins/back-to-top.html#options
-[catalog-config]: https://ecosystem.vuejs.press/plugins/catalog.html#options
-[copy-code-config]: https://ecosystem.vuejs.press/plugins/copy-code.html#options
-[git-config]: https://ecosystem.vuejs.press/plugins/git.html#options
-[links-check-config]: https://ecosystem.vuejs.press/plugins/links-check.html#options
-[photo-swipe-config]: https://ecosystem.vuejs.press/plugins/photo-swipe.html#options
-[pwa-config]: https://ecosystem.vuejs.press/plugins/pwa/config.html#options
-[reading-time-config]: https://ecosystem.vuejs.press/plugins/reading-time.html#options
-[seo-config]: https://ecosystem.vuejs.press/plugins/seo/config.html
-[sitemap-config]: https://ecosystem.vuejs.press/plugins/sitemap/config.html
-[watermark-config]: https://ecosystem.vuejs.press/plugins/watermark.html
+[catalog-config]: https://ecosystem.vuejs.press/plugins/features/catalog.html#options
+[copy-code-config]: https://ecosystem.vuejs.press/plugins/features/copy-code.html#options
+[git-config]: https://ecosystem.vuejs.press/plugins/development/git.html#options
+[links-check-config]: https://ecosystem.vuejs.press/plugins/markdown/links-check.html#options
+[photo-swipe-config]: https://ecosystem.vuejs.press/plugins/features/photo-swipe.html#options
+[pwa-config]: https://ecosystem.vuejs.press/plugins/pwa/pwa/config.html#options
+[reading-time-config]: https://ecosystem.vuejs.press/plugins/development/reading-time.html#options
+[seo-config]: https://ecosystem.vuejs.press/plugins/seo/seo/config.html
+[sitemap-config]: https://ecosystem.vuejs.press/plugins/seo/sitemap/config.html
+[watermark-config]: https://ecosystem.vuejs.press/plugins/features/watermark.html

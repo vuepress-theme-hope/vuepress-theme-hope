@@ -164,5 +164,5 @@ For more details, please see:
 - [MDN PWA](https://developer.mozilla.org/en-US/docs/Web/Progressive_web_apps)
 - [W3C Manifest Specification](https://w3c.github.io/manifest/)
 
-[pwa]: https://ecosystem.vuejs.press/plugins/pwa/
-[pwa-config]: https://ecosystem.vuejs.press/plugins/pwa/config.html
+[pwa]: https://ecosystem.vuejs.press/plugins/pwa/pwa/
+[pwa-config]: https://ecosystem.vuejs.press/plugins/pwa/pwa/config.html

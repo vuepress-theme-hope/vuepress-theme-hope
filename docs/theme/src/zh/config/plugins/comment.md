@@ -29,4 +29,4 @@ tag:
 
 对于每个评论服务对应选项的详细信息，请参考 [@vuepress/plugin-comment 文档][comment]。
 
-[comment]: https://ecosystem.vuejs.press/zh/plugins/comment/
+[comment]: https://ecosystem.vuejs.press/zh/plugins/blog/comment/

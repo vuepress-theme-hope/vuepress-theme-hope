@@ -78,4 +78,4 @@ You can check the [photo-swipe plugin documentation][photo-swipe] for advanced c
 
 <!-- markdownlint-restore -->
 
-[photo-swipe]: https://ecosystem.vuejs.press/zh/plugins/photo-swipe.html
+[photo-swipe]: https://ecosystem.vuejs.press/zh/plugins/features/photo-swipe.html

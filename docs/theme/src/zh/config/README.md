@@ -33,7 +33,7 @@ tag:
 
 - [博客插件配置](plugins/blog.md)
 
-- [Feed 插件配置](plugins/feed.md)
+- [Feed 插件配置](plugins/blog/feed.md)
 
 - [Markdown 增强插件配置](plugins/md-enhance.md)
 
