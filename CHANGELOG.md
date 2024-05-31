@@ -4,6 +4,18 @@ All notable changes to this project will be documented in this file. See [Conven
 
 <!-- #region recent-change -->
 
+## [2.0.0-rc.47](https://github.com/vuepress-theme-hope/vuepress-theme-hope/compare/v2.0.0-rc.46...v2.0.0-rc.47) (2024-05-31)
+
+### ✨ Features
+
+- **theme:** add shiki helper ([0dc83ff](https://github.com/vuepress-theme-hope/vuepress-theme-hope/commit/0dc83ff2bdf8a7d9549463bc94471ade6cd35802))
+
+### 🐛 Bug Fixes
+
+- **theme:** fix toc z-index, close [#4195](https://github.com/vuepress-theme-hope/vuepress-theme-hope/issues/4195) ([4ff3bcd](https://github.com/vuepress-theme-hope/vuepress-theme-hope/commit/4ff3bcd2c844173c9e1cc9ce994e6516cabffe76))
+
+<!-- #region recent-change -->
+
 ## [2.0.0-rc.46](https://github.com/vuepress-theme-hope/vuepress-theme-hope/compare/v2.0.0-rc.45...v2.0.0-rc.46) (2024-05-28)
 
 ### 🐛 Bug Fixes

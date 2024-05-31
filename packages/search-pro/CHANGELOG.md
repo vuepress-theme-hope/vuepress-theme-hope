@@ -4,6 +4,12 @@ All notable changes to this project will be documented in this file. See [Conven
 
 <!-- #region recent-change -->
 
+## [2.0.0-rc.47](https://github.com/vuepress-theme-hope/vuepress-theme-hope/compare/v2.0.0-rc.46...v2.0.0-rc.47) (2024-05-31)
+
+**Note:** Version bump only for package vuepress-plugin-search-pro
+
+<!-- #region recent-change -->
+
 ## [2.0.0-rc.45](https://github.com/vuepress-theme-hope/vuepress-theme-hope/compare/v2.0.0-rc.44...v2.0.0-rc.45) (2024-05-28)
 
 ### ⚠ BREAKING CHANGES
