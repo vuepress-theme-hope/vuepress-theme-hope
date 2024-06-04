@@ -10,17 +10,7 @@ tag:
   - Theme Config
 ---
 
-## Content
-
-- [Theme Basic Config](basic.md)
-
-- [Theme Feature Config](feature.md)
-
-- [Theme Layout Config](layout.md)
-
-- [Theme Appearance Config](appearance.md)
-
-- [Theme I18n Config](i18n.md)
+<Catalog />
 
 ## Demo
 
