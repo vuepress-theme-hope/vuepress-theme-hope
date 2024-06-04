@@ -89,7 +89,7 @@ const VPBanner: FunctionalComponent<BannerProps> = ({
             ? h(
                 "a",
                 {
-                  class: ["vp-banner-action", type],
+                  class: ["vp-banner-action", type, "no-external-link-icon"],
                   href: link,
                   target: "_blank",
                 },
