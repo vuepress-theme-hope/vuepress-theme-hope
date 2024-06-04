@@ -82,9 +82,6 @@ export default defineComponent({
                     hasBeenToggled.value = true;
                     emit("toggle");
                   },
-                  onKeydown: (event: KeyboardEvent): void => {
-                    if (event.key === "Enter") emit("toggle");
-                  },
                 }
               : {}),
           },

@@ -23,7 +23,7 @@ export default [
         },
       ],
       external: [
-        "@vuepress/helper/noopComponent.js",
+        "@vuepress/helper/noopComponent",
         "@vuepress/plugin-blog/client",
         "@vuepress/plugin-comment/pageview",
         "@vuepress/plugin-reading-time/client",

@@ -1,4 +1,4 @@
-import noopComponent from "@vuepress/helper/client/noopComponent.js";
+import noopComponent from "@vuepress/helper/noopComponent";
 import { isSupported } from "@vuepress/plugin-comment/pageview";
 import type {
   ReadingTime,
