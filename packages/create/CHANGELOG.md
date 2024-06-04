@@ -8,25 +8,17 @@ All notable changes to this project will be documented in this file. See [Conven
 
 **Note:** Version bump only for package create-vuepress-theme-hope
 
-<!-- #region recent-change -->
-
 ## [2.0.0-rc.47](https://github.com/vuepress-theme-hope/vuepress-theme-hope/compare/v2.0.0-rc.46...v2.0.0-rc.47) (2024-05-31)
 
 **Note:** Version bump only for package create-vuepress-theme-hope
-
-<!-- #region recent-change -->
 
 ## [2.0.0-rc.46](https://github.com/vuepress-theme-hope/vuepress-theme-hope/compare/v2.0.0-rc.45...v2.0.0-rc.46) (2024-05-28)
 
 **Note:** Version bump only for package create-vuepress-theme-hope
 
-<!-- #region recent-change -->
-
-## [2.0.0-rc.45](https://github.com/vuepress-theme-hope/vuepress-theme-hope/compare/v2.0.0-rc.44...v2.0.0-rc.45) (2024-05-28)
+b.com/vuepress-theme-hope/vuepress-theme-hope/compare/v2.0.0-rc.44...v2.0.0-rc.45) (2024-05-28)
 
 **Note:** Version bump only for package create-vuepress-theme-hope
-
-<!-- #region recent-change -->
 
 ## [2.0.0-rc.44](https://github.com/vuepress-theme-hope/vuepress-theme-hope/compare/v2.0.0-rc.43...v2.0.0-rc.44) (2024-05-27)
 
@@ -48,8 +40,6 @@ All notable changes to this project will be documented in this file. See [Conven
 ### 🐛 Bug Fixes
 
 - **theme:** fix portfolio layout ([d4da736](https://github.com/vuepress-theme-hope/vuepress-theme-hope/commit/d4da7363bb14b782182f4f5d9f1f0e876fea30a8))
-
-<!-- #region recent-change -->
 
 ## [2.0.0-rc.41](https://github.com/vuepress-theme-hope/vuepress-theme-hope/compare/v2.0.0-rc.40...v2.0.0-rc.41) (2024-05-11)
 

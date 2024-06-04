@@ -2,21 +2,15 @@
 
 All notable changes to this project will be documented in this file. See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
-<!-- #region recent-change -->
-
 ## [2.0.0-rc.48](https://github.com/vuepress-theme-hope/vuepress-theme-hope/compare/v2.0.0-rc.47...v2.0.0-rc.48) (2024-06-04)
 
 ### ✨ Features
 
 - **theme:** improve types ([fbaceb0](https://github.com/vuepress-theme-hope/vuepress-theme-hope/commit/fbaceb0ff2d4521dcbb2d9f08a23e57000cdb457))
 
-<!-- #region recent-change -->
-
 ## [2.0.0-rc.47](https://github.com/vuepress-theme-hope/vuepress-theme-hope/compare/v2.0.0-rc.46...v2.0.0-rc.47) (2024-05-31)
 
 **Note:** Version bump only for package vuepress-plugin-md-enhance
-
-<!-- #region recent-change -->
 
 ## [2.0.0-rc.45](https://github.com/vuepress-theme-hope/vuepress-theme-hope/compare/v2.0.0-rc.44...v2.0.0-rc.45) (2024-05-28)
 
@@ -27,8 +21,6 @@ All notable changes to this project will be documented in this file. See [Conven
 ### ✨ Features
 
 - **theme:** use shiki as default highlighter ([88848cc](https://github.com/vuepress-theme-hope/vuepress-theme-hope/commit/88848cc2531d6425a8fab2b034b93544d9b83755))
-
-<!-- #region recent-change -->
 
 ## [2.0.0-rc.44](https://github.com/vuepress-theme-hope/vuepress-theme-hope/compare/v2.0.0-rc.43...v2.0.0-rc.44) (2024-05-27)
 
