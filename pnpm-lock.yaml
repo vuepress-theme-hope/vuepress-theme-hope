@@ -159,8 +159,8 @@ importers:
         specifier: 5.1.4
         version: 5.1.4
       artplayer-plugin-danmuku:
-        specifier: 5.1.0
-        version: 5.1.0
+        specifier: 5.1.1
+        version: 5.1.1
       dashjs:
         specifier: 4.7.4
         version: 4.7.4
@@ -474,8 +474,8 @@ importers:
         specifier: 5.1.4
         version: 5.1.4
       artplayer-plugin-danmuku:
-        specifier: 5.1.0
-        version: 5.1.0
+        specifier: 5.1.1
+        version: 5.1.1
       dashjs:
         specifier: 4.7.4
         version: 4.7.4
@@ -3933,11 +3933,12 @@ packages:
     resolution: {integrity: sha512-bMxMKAjg13EBSVscxTaYA4mRc5t1UAXa2kXiGTNfZ079HIWXEkKmkgFrh/nJqamaLSrXO5H4WFFkPEaLJWbs3A==}
     engines: {node: '>= 0.4'}
 
-  artplayer-plugin-danmuku@5.1.0:
-    resolution: {integrity: sha512-F2dGt8nmSrAkGGNoKErrPipNqW8OueTYsE/Yh8Cze8oSWSHpXnaZbhqkg5ZFtLCNp85/MHrU0OUv3+D4wKmYGA==}
+  artplayer-plugin-danmuku@5.1.1:
+    resolution: {integrity: sha512-5A0j9pjKZI5hy5q2zk94shty4LoKdQgdUjlAfgiK9AgcfBv6EZE0itYNwoYzTMYJhSWmZ4CTDxpePXGMV261wQ==}
 
   artplayer@5.1.4:
     resolution: {integrity: sha512-QFRYEURCFJSJ05mOLIAWmoowVxFP8X3aBAUTQepfraY7GqnUns1TcnEQ53dkOKIV+LSY7IEJAOvY7sIA74JKQw==}
+    deprecated: This version is deprecated due to critical bugs. Please use version 5.1.4 or later.
 
   assertion-error@1.1.0:
     resolution: {integrity: sha512-jgsaNduz+ndvGyFt3uSuWqvy4lCnIJiovtouQN5JZHOKCS2QuhEdbcQHFhVksz2N2U9hXJo8odG7ETyWlEeuDw==}
@@ -12729,7 +12730,7 @@ snapshots:
       is-array-buffer: 3.0.4
       is-shared-array-buffer: 1.0.3
 
-  artplayer-plugin-danmuku@5.1.0: {}
+  artplayer-plugin-danmuku@5.1.1: {}
 
   artplayer@5.1.4:
     dependencies:
