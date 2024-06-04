@@ -46,7 +46,7 @@
     "dev:ts": "tsc -b tsconfig.build.json --watch"
   },
   "dependencies": {
-    "@vuepress/helper": "2.0.0-rc.33",
+    "@vuepress/helper": "2.0.0-rc.34",
     "@vueuse/core": "^10.10.0",
     "cheerio": "1.0.0-rc.12",
     "dayjs": "^1.11.11",
@@ -59,14 +59,14 @@
   "devDependencies": {
     "@types/connect": "3.4.38",
     "@types/semver": "7.5.8",
-    "@vuepress/bundler-vite": "2.0.0-rc.12",
-    "@vuepress/bundler-webpack": "2.0.0-rc.12",
-    "@vuepress/plugin-git": "2.0.0-rc.33",
+    "@vuepress/bundler-vite": "2.0.0-rc.13",
+    "@vuepress/bundler-webpack": "2.0.0-rc.13",
+    "@vuepress/plugin-git": "2.0.0-rc.34",
     "ora": "8.0.1",
     "vite": "5.2.11"
   },
   "peerDependencies": {
-    "vuepress": "2.0.0-rc.12"
+    "vuepress": "2.0.0-rc.13"
   },
   "engines": {
     "node": ">=18.19.0",
