@@ -9,18 +9,18 @@ import {
 } from "@theme-hope/utils/index";
 
 import type {
-  AutoLinkConfig,
+  AutoLinkOptions,
   NavGroup,
-  NavbarGroup,
-  NavbarItem,
+  NavbarGroupOptions,
+  NavbarLinkOptions,
 } from "../../../../shared/index.js";
-import type { ResolvedThemeNavbarItem } from "../utils/index.js";
+import type { NavbarItem } from "../utils/index.js";
 import { computed, type ComputedRef } from "vue";
 
 export const resolveNavbarItem = (
-  item: NavbarItem | NavbarGroup | string,
+  item: NavbarLinkOptions | NavbarGroupOptions | string,
   prefix = "",
-): ResolvedThemeNavbarItem => {
+): NavbarItem => {
   if (isString(item)) return resolveLinkInfo(resolvePrefix(prefix, item));
 
   if ("children" in item)
@@ -32,8 +32,8 @@ export const resolveNavbarItem = (
       children: item.children.map(
         (child) =>
           resolveNavbarItem(child, resolvePrefix(prefix, item.prefix)) as
-            | NavGroup<AutoLinkConfig>
-            | AutoLinkConfig,
+            | NavGroup<AutoLinkOptions>
+            | AutoLinkOptions,
       ),
     };
 
@@ -45,7 +45,7 @@ export const resolveNavbarItem = (
   };
 };
 
-export const useNavbarItems = (): ComputedRef<ResolvedThemeNavbarItem[]> => {
+export const useNavbarItems = (): ComputedRef<NavbarItem[]> => {
   const themeLocaleData = useThemeLocaleData();
 
   return computed(() =>

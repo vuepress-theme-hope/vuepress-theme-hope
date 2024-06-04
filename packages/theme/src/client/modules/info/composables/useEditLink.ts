@@ -6,12 +6,12 @@ import { useThemeLocaleData } from "@theme-hope/composables/index";
 import { resolveEditLink } from "@theme-hope/modules/info/utils/index";
 
 import type {
-  AutoLinkConfig,
+  AutoLinkOptions,
   ThemeNormalPageFrontmatter,
   ThemePageData,
 } from "../../../../shared/index.js";
 
-export const useEditLink = (): ComputedRef<null | AutoLinkConfig> => {
+export const useEditLink = (): ComputedRef<null | AutoLinkOptions> => {
   const themeLocale = useThemeLocaleData();
   const page = usePageData<ThemePageData>();
   const frontmatter = usePageFrontmatter<ThemeNormalPageFrontmatter>();

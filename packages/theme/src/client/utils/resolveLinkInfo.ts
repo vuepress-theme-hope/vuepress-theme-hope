@@ -1,6 +1,6 @@
 import { resolveRoute } from "vuepress/client";
 
-import type { AutoLinkConfig, PageInfoData } from "../../shared/index.js";
+import type { AutoLinkOptions, PageInfoData } from "../../shared/index.js";
 import { PageInfo } from "../../shared/index.js";
 
 /**
@@ -11,7 +11,7 @@ export const resolveLinkInfo = (
   item: string,
   preferFull = false,
   currentPath?: string,
-): AutoLinkConfig => {
+): AutoLinkOptions => {
   const { meta, path, notFound } = resolveRoute<PageInfoData>(
     item,
     currentPath,

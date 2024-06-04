@@ -40,7 +40,7 @@ const REGIONS_RE = [
   /^# ?((?:end)?region) ([\w*-]+)$/u, // C#, PHP, Powershell, Python, perl & misc
 ];
 
-// Regexp to match the import syntax
+// RegExp to match the import syntax
 const INCLUDE_RE =
   /^@include\(([^)]+(?:\.[a-z0-9]+))(?:#([\w-]+))?(?:\{(\d+)?-(\d+)?\})?\)$/u;
 

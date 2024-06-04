@@ -12,13 +12,13 @@ import {
   useThemeLocaleData,
 } from "@theme-hope/composables/index";
 
-import type { AutoLinkConfig, NavGroup } from "../../../../shared/index.js";
+import type { AutoLinkOptions, NavGroup } from "../../../../shared/index.js";
 
 /**
  * Get navbar config of select language dropdown
  */
 export const useNavbarLanguageDropdown =
-  (): ComputedRef<NavGroup<AutoLinkConfig> | null> => {
+  (): ComputedRef<NavGroup<AutoLinkOptions> | null> => {
     const routePaths = useRoutePaths();
     const route = useRoute();
     const routeLocale = useRouteLocale();
@@ -37,7 +37,7 @@ export const useNavbarLanguageDropdown =
       const { path, fullPath } = route;
       const { navbarLocales } = themeLocale.value;
 
-      const languageDropdown: NavGroup<AutoLinkConfig> = {
+      const languageDropdown: NavGroup<AutoLinkOptions> = {
         text: "",
         ariaLabel: navbarLocales?.selectLangAriaLabel,
         children: [

@@ -13,7 +13,7 @@ import { getSidebarInfo } from "./getSidebarInfo.js";
 import { getSidebarSorter } from "./getSidebarSorter.js";
 import type {
   SidebarArrayOptions,
-  SidebarGroupItem,
+  SidebarGroupOptions,
   SidebarInfo,
   SidebarOptions,
   SidebarSorter,
@@ -54,7 +54,9 @@ const getGeneratePaths = (
   return result;
 };
 
-const getSidebarItems = (infos: SidebarInfo[]): (SidebarGroupItem | string)[] =>
+const getSidebarItems = (
+  infos: SidebarInfo[],
+): (SidebarGroupOptions | string)[] =>
   infos.map((info) => {
     if (info.type === "file")
       return info.path ?? removeExtension(sanitizeFileName(info.filename));

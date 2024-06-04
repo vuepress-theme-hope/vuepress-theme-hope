@@ -8,11 +8,11 @@ import AutoLink from "@theme-hope/components/AutoLink";
 import HopeIcon from "@theme-hope/components/HopeIcon";
 import { useNavigate, useThemeLocaleData } from "@theme-hope/composables/index";
 import { useSidebarItems } from "@theme-hope/modules/sidebar/composables/index";
-import type { ResolvedSidebarItem } from "@theme-hope/modules/sidebar/utils/index";
+import type { SidebarItem } from "@theme-hope/modules/sidebar/utils/index";
 import { resolveLinkInfo } from "@theme-hope/utils/index";
 
 import type {
-  AutoLinkConfig,
+  AutoLinkOptions,
   ThemeNormalPageFrontmatter,
 } from "../../shared/index.js";
 
@@ -24,8 +24,8 @@ import "../styles/page-nav.scss";
 const resolveFromFrontmatterConfig = (
   config: unknown,
   current: string,
-): AutoLinkConfig | null | false =>
-  config === false || isPlainObject<AutoLinkConfig>(config)
+): AutoLinkOptions | null | false =>
+  config === false || isPlainObject<AutoLinkOptions>(config)
     ? config
     : isString(config)
       ? resolveLinkInfo(config, true, current)
@@ -35,10 +35,10 @@ const resolveFromFrontmatterConfig = (
  * Resolve `prev` or `next` config from sidebar items
  */
 const resolveFromSidebarItems = (
-  sidebarItems: ResolvedSidebarItem[],
+  sidebarItems: SidebarItem[],
   currentPath: string,
   offset: number,
-): AutoLinkConfig | null => {
+): AutoLinkOptions | null => {
   const index = sidebarItems.findIndex((item) => item.link === currentPath);
 
   if (index !== -1) {
@@ -46,7 +46,7 @@ const resolveFromSidebarItems = (
 
     if (!targetItem?.link) return null;
 
-    return targetItem as AutoLinkConfig;
+    return targetItem as AutoLinkOptions;
   }
 
   for (const item of sidebarItems)

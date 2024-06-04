@@ -4,7 +4,7 @@ import { AutoLink } from "vuepress/client";
 
 import HopeIcon from "@theme-hope/components/HopeIcon";
 
-import type { AutoLinkConfig } from "../../shared/index.js";
+import type { AutoLinkOptions } from "../../shared/index.js";
 
 export default defineComponent({
   name: "AutoLink",
@@ -14,7 +14,7 @@ export default defineComponent({
      * @description Autolink config
      */
     config: {
-      type: Object as PropType<AutoLinkConfig>,
+      type: Object as PropType<AutoLinkOptions>,
       required: true,
     },
   },

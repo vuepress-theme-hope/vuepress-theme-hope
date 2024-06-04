@@ -10,7 +10,7 @@ import { colors } from "vuepress/utils";
 import { deprecatedLogger, droppedLogger } from "./utils.js";
 import type {
   SidebarArrayOptions,
-  SidebarItem,
+  SidebarItemOptions,
   SidebarOptions,
 } from "../../shared/index.js";
 import { logger } from "../utils.js";
@@ -45,12 +45,12 @@ const handleArraySidebarOptions = (
         if ("children" in item && isArray(item.children))
           handleArraySidebarOptions(item.children);
 
-        return item as SidebarItem;
+        return item as SidebarItemOptions;
       }
 
       return null;
     })
-    .filter((item): item is SidebarItem => item !== null);
+    .filter((item): item is SidebarItemOptions => item !== null);
 
 /**
  * @deprecated You should use V2 standard sidebar config and avoid using it

@@ -1,7 +1,7 @@
 /**
- * Base link item, displayed as text
+ * Base nav item, displayed as text
  */
-export interface TextItemOptions {
+export interface NavItemOptions {
   /**
    * Text of item
    *
@@ -25,9 +25,9 @@ export interface TextItemOptions {
 }
 
 /**
- * Props for `<AutoLink>`
+ * Options for `<AutoLink>`
  */
-export interface AutoLinkConfig extends TextItemOptions {
+export interface AutoLinkOptions extends NavItemOptions {
   /**
    * Link of item
    *
@@ -50,7 +50,7 @@ export interface AutoLinkConfig extends TextItemOptions {
   target?: string;
 
   /**
-   * Regexp mode to be active
+   * RegExp mode to be active
    *
    * 匹配激活的正则表达式
    */

@@ -5,10 +5,10 @@ import { useRoute } from "vuepress/client";
 
 import AutoLink from "@theme-hope/components/AutoLink";
 import HopeIcon from "@theme-hope/components/HopeIcon";
-import { isActiveSidebarItem } from "@theme-hope/modules/sidebar/utils/index";
+import { isActiveItem } from "@theme-hope/utils/index";
 
-import type { AutoLinkConfig } from "../../../../shared/index.js";
-import type { ResolvedSidebarPageItem } from "../utils/index.js";
+import type { AutoLinkOptions } from "../../../../shared/index.js";
+import type { SidebarLinkItem } from "../utils/index.js";
 
 import "../styles/sidebar-child.scss";
 
@@ -22,7 +22,7 @@ export default defineComponent({
      * 侧边栏项目配置
      */
     config: {
-      type: Object as PropType<ResolvedSidebarPageItem>,
+      type: Object as PropType<SidebarLinkItem>,
       required: true,
     },
   },
@@ -36,13 +36,12 @@ export default defineComponent({
           h(AutoLink, {
             class: [
               "vp-sidebar-link",
-              `vp-sidebar-page`,
-              { active: isActiveSidebarItem(route, props.config, true) },
+              { active: isActiveItem(route, props.config) },
             ],
             config: {
               ...props.config,
               exact: true,
-            } as AutoLinkConfig,
+            } as AutoLinkOptions,
           })
         : // If the item only has text, render it as `<p>`
           h("p", props, [

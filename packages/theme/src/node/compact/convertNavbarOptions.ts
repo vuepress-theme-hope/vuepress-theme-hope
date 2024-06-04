@@ -3,17 +3,17 @@ import { colors } from "vuepress/utils";
 
 import { deprecatedLogger } from "./utils.js";
 import type {
-  AutoLinkConfig,
-  NavbarGroup,
-  NavbarItem,
+  AutoLinkOptions,
+  NavbarGroupOptions,
+  NavbarLinkOptions,
   NavbarOptions,
 } from "../../shared/index.js";
 import { logger } from "../utils.js";
 
 type LegacyNavbarOptions = (
   | string
-  | AutoLinkConfig
-  | (NavbarGroup & { items?: (AutoLinkConfig | string)[] })
+  | AutoLinkOptions
+  | (NavbarGroupOptions & { items?: (AutoLinkOptions | string)[] })
 )[];
 
 const handleNavbarOptions = (config: LegacyNavbarOptions): NavbarOptions =>
@@ -33,12 +33,15 @@ const handleNavbarOptions = (config: LegacyNavbarOptions): NavbarOptions =>
         if ("children" in item && isArray(item.children))
           handleNavbarOptions(item.children);
 
-        return item as NavbarItem | NavbarGroup;
+        return item as NavbarLinkOptions | NavbarGroupOptions;
       }
 
       return null;
     })
-    .filter((item): item is NavbarItem | NavbarGroup | string => item !== null);
+    .filter(
+      (item): item is NavbarLinkOptions | NavbarGroupOptions | string =>
+        item !== null,
+    );
 
 /**
  * @deprecated You should use V2 standard navbar config and avoid using it

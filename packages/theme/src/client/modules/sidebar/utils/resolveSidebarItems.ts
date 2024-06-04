@@ -15,18 +15,18 @@ import {
 } from "@theme-hope/utils/index";
 
 import type {
-  ResolvedSidebarGroupItem,
-  ResolvedSidebarItem,
-  ResolvedSidebarPageItem,
+  SidebarGroupItem,
+  SidebarItem,
+  SidebarLinkItem,
 } from "./typings.js";
 import type {
   SidebarArrayOptions,
-  SidebarItem,
+  SidebarItemOptions,
   SidebarObjectOptions,
   SidebarOptions,
 } from "../../../../shared/index.js";
 
-export interface ResolveArraySidebarOptions {
+export interface SidebarArrayItem {
   config: SidebarArrayOptions;
   headerDepth: number;
   prefix?: string;
@@ -36,9 +36,9 @@ export interface ResolveArraySidebarOptions {
  * Resolve sidebar item
  */
 export const resolveSidebarItem = (
-  item: SidebarItem,
+  item: SidebarItemOptions,
   pathPrefix: string,
-): ResolvedSidebarPageItem | ResolvedSidebarGroupItem => {
+): SidebarLinkItem | SidebarGroupItem => {
   const config = isString(item)
     ? resolveLinkInfo(resolvePrefix(pathPrefix, item))
     : item.link
@@ -58,7 +58,6 @@ export const resolveSidebarItem = (
       config.children === "structure" ? sidebarData[prefix] : config.children;
 
     return {
-      type: "group",
       ...config,
       prefix,
       children: children.map((item) => resolveSidebarItem(item, prefix)),
@@ -66,7 +65,6 @@ export const resolveSidebarItem = (
   }
 
   return {
-    type: "page",
     ...config,
   };
 };
@@ -77,7 +75,7 @@ export const resolveSidebarItem = (
 export const resolveArraySidebarItems = ({
   config,
   prefix = "",
-}: ResolveArraySidebarOptions): ResolvedSidebarItem[] =>
+}: SidebarArrayItem): SidebarItem[] =>
   config.map((item) => resolveSidebarItem(item, prefix));
 
 export interface ResolveMultiSidebarOptions {
@@ -93,7 +91,7 @@ export const resolveMultiSidebarItems = ({
   config,
   routePath,
   headerDepth,
-}: ResolveMultiSidebarOptions): ResolvedSidebarItem[] => {
+}: ResolveMultiSidebarOptions): SidebarItem[] => {
   const sidebarRoutes = keys(config).sort((x, y) => y.length - x.length);
 
   // Find matching config
@@ -130,7 +128,7 @@ export const resolveSidebarItems = ({
   headerDepth,
   routeLocale,
   routePath,
-}: ResolveSidebarOptions): ResolvedSidebarItem[] =>
+}: ResolveSidebarOptions): SidebarItem[] =>
   // Resolve sidebar items according to the config
   config === "structure"
     ? resolveArraySidebarItems({

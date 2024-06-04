@@ -80,7 +80,10 @@ Site favicon.
 - Type: `NavbarConfig`
 
   ```ts
-  interface TextItemOptions {
+  /**
+   * Base nav item, displayed as text
+   */
+  export interface NavItemOptions {
     /**
      * Text of item
      */
@@ -97,9 +100,12 @@ Site favicon.
     ariaLabel?: string;
   }
 
-  interface AutoLinkConfig extends TextItemOptions {
+  /**
+   * Options for `<AutoLink>`
+   */
+  export interface AutoLinkOptions extends NavItemOptions {
     /**
-     * link of item
+     * Link of item
      */
     link: string;
 
@@ -114,12 +120,20 @@ Site favicon.
     target?: string;
 
     /**
-     * Regexp mode to be active
+     * RegExp mode to be active
      */
     activeMatch?: string;
+
+    /**
+     * Whether it's active only when exact match
+     */
+    exact?: boolean;
   }
 
-  interface NavGroup<T> extends TextItemOptions {
+  /**
+   * Base nav group, has nav items children
+   */
+  export interface NavGroup<T> extends NavItemOptions {
     /**
      * Link prefix of current group
      */
@@ -136,9 +150,20 @@ Site favicon.
     children: T[];
   }
 
-  type NavbarItem = AutoLinkConfig;
-  type NavbarGroup = NavGroup<NavbarGroup | NavbarItem | string>;
-  type NavbarConfig = (NavbarItem | NavbarGroup | string)[];
+  // Navbar types
+
+  // types for NavbarItem
+  export type NavbarLinkOptions = AutoLinkOptions;
+  // types for NavbarDropdown
+  export type NavbarGroupOptions = NavGroup<
+    NavbarLinkOptions | NavGroup<NavbarLinkOptions> | string
+  >;
+  // types for navbar options
+  export type NavbarOptions = (
+    | NavbarLinkOptions
+    | NavbarGroupOptions
+    | string
+  )[];
   ```
 
 - Details: [Layout → Navbar](../../guide/layout/navbar.md)
@@ -150,7 +175,10 @@ Navbar config
 - Type: `SidebarConfig`
 
   ```ts
-  interface TextItemOptions {
+  /**
+   * Base nav item, displayed as text
+   */
+  export interface NavItemOptions {
     /**
      * Text of item
      */
@@ -167,9 +195,12 @@ Navbar config
     ariaLabel?: string;
   }
 
-  interface AutoLinkConfig extends TextItemOptions {
+  /**
+   * Options for `<AutoLink>`
+   */
+  export interface AutoLinkOptions extends NavItemOptions {
     /**
-     * link of item
+     * Link of item
      */
     link: string;
 
@@ -184,14 +215,19 @@ Navbar config
     target?: string;
 
     /**
-     * Regexp mode to be active
+     * RegExp mode to be active
      */
     activeMatch?: string;
+
+    /**
+     * Whether it's active only when exact match
+     */
+    exact?: boolean;
   }
 
-  type SidebarPageItem = AutoLinkConfig;
+  export type SidebarLinkOptions = AutoLinkOptions;
 
-  interface SidebarGroupItem extends TextItemOptions {
+  export interface SidebarGroupOptions extends NavItemOptions {
     /**
      * Link prefix of current group
      */
@@ -219,15 +255,10 @@ Navbar config
     /**
      * Children of current group
      */
-    children: (
-      | SidebarPageItem
-      | SidebarGroupItem
-      | SidebarStructureItem
-      | string
-    )[];
+    children: SidebarItemOptions[];
   }
 
-  interface SidebarStructureItem extends TextItemOptions {
+  export interface SidebarStructureOptions extends NavItemOptions {
     /**
      * Link prefix of current group
      */
@@ -255,20 +286,24 @@ Navbar config
     children: "structure";
   }
 
-  type SidebarItem =
-    | SidebarPageItem
-    | SidebarGroupItem
-    | SidebarStructureItem
+  export type SidebarItemOptions =
+    | SidebarLinkOptions
+    | SidebarGroupOptions
+    | SidebarStructureOptions
     | string;
 
-  type SidebarArrayConfig = SidebarItem[];
+  export type SidebarArrayOptions = SidebarItemOptions[];
 
-  type SidebarObjectConfig = Record<
+  export type SidebarObjectOptions = Record<
     string,
-    SidebarArrayConfig | "structure" | false
+    SidebarArrayOptions | "structure" | false
   >;
 
-  type SidebarConfig = SidebarArrayConfig | SidebarObjectConfig;
+  export type SidebarOptions =
+    | SidebarArrayOptions
+    | SidebarObjectOptions
+    | "structure"
+    | false;
   ```
 
 - Details: [Layout → Sidebar](../../guide/layout/sidebar.md)

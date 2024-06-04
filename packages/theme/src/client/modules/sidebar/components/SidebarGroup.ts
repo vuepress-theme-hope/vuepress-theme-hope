@@ -6,8 +6,9 @@ import AutoLink from "@theme-hope/components/AutoLink";
 import HopeIcon from "@theme-hope/components/HopeIcon";
 import SidebarLinks from "@theme-hope/modules/sidebar/components/SidebarLinks";
 import { isActiveSidebarItem } from "@theme-hope/modules/sidebar/utils/index";
+import { isActiveItem } from "@theme-hope/utils/index";
 
-import type { ResolvedSidebarGroupItem } from "../utils/index.js";
+import type { SidebarGroupItem } from "../utils/index.js";
 
 import "../styles/sidebar-group.scss";
 
@@ -21,7 +22,7 @@ export default defineComponent({
      * 侧边栏分组配置
      */
     config: {
-      type: Object as PropType<ResolvedSidebarGroupItem>,
+      type: Object as PropType<SidebarGroupItem>,
       required: true,
     },
 
@@ -45,9 +46,7 @@ export default defineComponent({
 
     const active = computed(() => isActiveSidebarItem(route, props.config));
 
-    const exact = computed(() =>
-      isActiveSidebarItem(route, props.config, true),
-    );
+    const exact = computed(() => isActiveItem(route, props.config));
 
     const shouldOpen = computed(
       () => props.open || (props.config.expanded && !hasBeenToggled.value),

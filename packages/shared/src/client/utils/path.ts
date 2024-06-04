@@ -21,8 +21,8 @@ export const normalizePath = (path: string): string =>
   decodeURI(path)
     .replace(HASH_REGEXP, "")
     .replace(/\/index\.html$/iu, "/")
-    .replace(/\.html$/iu, "")
-    .replace(/(README|index)?\.md$/iu, "");
+    .replace(/\/(README|index)\.md$/iu, "/")
+    .replace(/\.(?:html|md)$/iu, "");
 
 /**
  * Whether the lick is active

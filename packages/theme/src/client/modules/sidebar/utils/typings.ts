@@ -1,18 +1,13 @@
 import type {
-  SidebarGroupItem,
-  SidebarPageItem,
+  SidebarGroupOptions,
+  SidebarLinkOptions,
 } from "../../../../shared/index.js";
 
-export interface ResolvedSidebarPageItem extends SidebarPageItem {
-  type: "page";
-}
+export type SidebarLinkItem = SidebarLinkOptions;
 
-export interface ResolvedSidebarGroupItem extends SidebarGroupItem {
-  type: "group";
+export interface SidebarGroupItem extends SidebarGroupOptions {
   prefix: string;
-  children: ResolvedSidebarItem[];
+  children: SidebarItem[];
 }
 
-export type ResolvedSidebarItem =
-  | ResolvedSidebarPageItem
-  | ResolvedSidebarGroupItem;
+export type SidebarItem = SidebarLinkItem | SidebarGroupItem;

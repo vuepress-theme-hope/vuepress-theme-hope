@@ -78,7 +78,10 @@ tag:
 - 类型: `NavbarConfig`
 
   ```ts
-  interface TextItemOptions {
+  /**
+   * Base nav item, displayed as text
+   */
+  export interface NavItemOptions {
     /**
      * 项目文字
      */
@@ -95,7 +98,10 @@ tag:
     ariaLabel?: string;
   }
 
-  interface AutoLinkConfig extends TextItemOptions {
+  /**
+   * Options for `<AutoLink>`
+   */
+  export interface AutoLinkOptions extends NavItemOptions {
     /**
      * 当前页面链接
      */
@@ -115,9 +121,17 @@ tag:
      * 匹配激活的正则表达式
      */
     activeMatch?: string;
+
+    /**
+     * 是否仅在完全匹配时激活
+     */
+    exact?: boolean;
   }
 
-  interface NavGroup<T> extends TextItemOptions {
+  /**
+   * Base nav group, has nav items children
+   */
+  export interface NavGroup<T> extends NavItemOptions {
     /**
      * 当前分组的页面前缀
      */
@@ -134,9 +148,20 @@ tag:
     children: T[];
   }
 
-  type NavbarItem = AutoLinkConfig;
-  type NavbarGroup = NavGroup<NavbarGroup | NavbarItem | string>;
-  type NavbarConfig = (NavbarItem | NavbarGroup | string)[];
+  // Navbar types
+
+  // types for NavbarItem
+  export type NavbarLinkOptions = AutoLinkOptions;
+  // types for NavbarDropdown
+  export type NavbarGroupOptions = NavGroup<
+    NavbarLinkOptions | NavGroup<NavbarLinkOptions> | string
+  >;
+  // types for navbar options
+  export type NavbarOptions = (
+    | NavbarLinkOptions
+    | NavbarGroupOptions
+    | string
+  )[];
   ```
 
 - 详情: [布局 → 导航栏](../../guide/layout/navbar.md)
@@ -148,7 +173,10 @@ tag:
 - 类型: `SidebarConfig`
 
   ```ts
-  interface TextItemOptions {
+  /**
+   * Base nav item, displayed as text
+   */
+  export interface NavItemOptions {
     /**
      * 项目文字
      */
@@ -165,7 +193,10 @@ tag:
     ariaLabel?: string;
   }
 
-  interface AutoLinkConfig extends TextItemOptions {
+  /**
+   * Options for `<AutoLink>`
+   */
+  export interface AutoLinkOptions extends NavItemOptions {
     /**
      * 当前页面链接
      */
@@ -185,11 +216,16 @@ tag:
      * 匹配激活的正则表达式
      */
     activeMatch?: string;
+
+    /**
+     * 是否仅在完全匹配时激活
+     */
+    exact?: boolean;
   }
 
-  type SidebarPageItem = AutoLinkConfig;
+  export type SidebarLinkOptions = AutoLinkOptions;
 
-  interface SidebarGroupItem extends TextItemOptions {
+  export interface SidebarGroupOptions extends NavItemOptions {
     /**
      * 当前分组的页面前缀
      */
@@ -217,15 +253,10 @@ tag:
     /**
      * 当前分组的子项
      */
-    children: (
-      | SidebarPageItem
-      | SidebarGroupItem
-      | SidebarStructureItem
-      | string
-    )[];
+    children: SidebarItemOptions[];
   }
 
-  interface SidebarStructureItem extends TextItemOptions {
+  export interface SidebarStructureOptions extends NavItemOptions {
     /**
      * 当前分组的页面前缀
      */
@@ -253,20 +284,24 @@ tag:
     children: "structure";
   }
 
-  type SidebarItem =
-    | SidebarPageItem
-    | SidebarGroupItem
-    | SidebarStructureItem
+  export type SidebarItemOptions =
+    | SidebarLinkOptions
+    | SidebarGroupOptions
+    | SidebarStructureOptions
     | string;
 
-  type SidebarArrayConfig = SidebarItem[];
+  export type SidebarArrayOptions = SidebarItemOptions[];
 
-  type SidebarObjectConfig = Record<
+  export type SidebarObjectOptions = Record<
     string,
-    SidebarArrayConfig | "structure" | false
+    SidebarArrayOptions | "structure" | false
   >;
 
-  type SidebarConfig = SidebarArrayConfig | SidebarObjectConfig;
+  export type SidebarOptions =
+    | SidebarArrayOptions
+    | SidebarObjectOptions
+    | "structure"
+    | false;
   ```
 
 - 详情: [布局 → 侧边栏](../../guide/layout/sidebar.md)

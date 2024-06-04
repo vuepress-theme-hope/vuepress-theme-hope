@@ -1,20 +1,14 @@
 import type { RouteLocationNormalizedLoaded } from "vuepress/client";
 import { isActiveLink } from "vuepress-shared/client";
 
-import type { ResolvedSidebarItem } from "./typings.js";
+import { isActiveItem } from "../../../utils/isActiveItem.js";
+import type { SidebarItem } from "./typings.js";
 
 export const isActiveSidebarItem = (
   route: RouteLocationNormalizedLoaded,
-  item: ResolvedSidebarItem,
-  exact = false,
-): boolean => {
-  if ("activeMatch" in item)
-    return new RegExp(item.activeMatch, "u").test(route.path);
-
-  if (isActiveLink(route, item.link)) return true;
-
-  if ("children" in item && !exact)
-    return item.children.some((child) => isActiveSidebarItem(route, child));
-
-  return false;
-};
+  item: SidebarItem,
+): boolean =>
+  "children" in item
+    ? (Boolean(item.prefix) && isActiveLink(route, item.prefix)) ||
+      item.children.some((child) => isActiveSidebarItem(route, child))
+    : isActiveItem(route, item);

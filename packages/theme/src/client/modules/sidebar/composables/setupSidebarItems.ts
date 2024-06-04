@@ -9,12 +9,12 @@ import {
 import { useThemeLocaleData } from "@theme-hope/composables/index";
 
 import type { ThemeNormalPageFrontmatter } from "../../../../shared/index.js";
-import type { ResolvedSidebarItem } from "../utils/index.js";
+import type { SidebarItem } from "../utils/index.js";
 import { resolveSidebarItems } from "../utils/index.js";
 
 declare const __VUEPRESS_DEV__: boolean;
 
-export type SidebarItemsRef = ComputedRef<ResolvedSidebarItem[]>;
+export type SidebarItemsRef = ComputedRef<SidebarItem[]>;
 
 export const sidebarItemsSymbol: InjectionKey<SidebarItemsRef> = Symbol(
   __VUEPRESS_DEV__ ? "sidebarItems" : "",
