@@ -4,6 +4,15 @@ All notable changes to this project will be documented in this file. See [Conven
 
 <!-- #region recent-change -->
 
+## [2.0.0-rc.48](https://github.com/vuepress-theme-hope/vuepress-theme-hope/compare/v2.0.0-rc.47...v2.0.0-rc.48) (2024-06-04)
+
+### 🐛 Bug Fixes
+
+- **components:** add custom element for font-icon, close [#4211](https://github.com/vuepress-theme-hope/vuepress-theme-hope/issues/4211) ([0354cd7](https://github.com/vuepress-theme-hope/vuepress-theme-hope/commit/0354cd71e49355c839b0e3b94517bc4312312250))
+- **components:** disable external link icon on VPBanner ([d8f3488](https://github.com/vuepress-theme-hope/vuepress-theme-hope/commit/d8f34887da192c2c8f9fe35a155c0cbb82de0cff))
+
+<!-- #region recent-change -->
+
 ## [2.0.0-rc.47](https://github.com/vuepress-theme-hope/vuepress-theme-hope/compare/v2.0.0-rc.46...v2.0.0-rc.47) (2024-05-31)
 
 **Note:** Version bump only for package vuepress-plugin-components

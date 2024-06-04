@@ -4,6 +4,23 @@ All notable changes to this project will be documented in this file. See [Conven
 
 <!-- #region recent-change -->
 
+## [2.0.0-rc.48](https://github.com/vuepress-theme-hope/vuepress-theme-hope/compare/v2.0.0-rc.47...v2.0.0-rc.48) (2024-06-04)
+
+### ✨ Features
+
+- **theme:** improve auto prev and next links ([07ec17d](https://github.com/vuepress-theme-hope/vuepress-theme-hope/commit/07ec17d9b0142909da811a96086db81804d9ea9c))
+- **theme:** improve types ([fbaceb0](https://github.com/vuepress-theme-hope/vuepress-theme-hope/commit/fbaceb0ff2d4521dcbb2d9f08a23e57000cdb457))
+
+### 🐛 Bug Fixes
+
+- **components:** add custom element for font-icon, close [#4211](https://github.com/vuepress-theme-hope/vuepress-theme-hope/issues/4211) ([0354cd7](https://github.com/vuepress-theme-hope/vuepress-theme-hope/commit/0354cd71e49355c839b0e3b94517bc4312312250))
+- **components:** disable external link icon on VPBanner ([d8f3488](https://github.com/vuepress-theme-hope/vuepress-theme-hope/commit/d8f34887da192c2c8f9fe35a155c0cbb82de0cff))
+- **deps:** update dependency artplayer-plugin-danmuku to v5.1.1 ([#4206](https://github.com/vuepress-theme-hope/vuepress-theme-hope/issues/4206)) ([fce7660](https://github.com/vuepress-theme-hope/vuepress-theme-hope/commit/fce7660bb008a1645a7aecefa0133b0ea8d0f8c2))
+- **theme:** fix keyboard action of sidebar group ([e86b320](https://github.com/vuepress-theme-hope/vuepress-theme-hope/commit/e86b320fef04ff30b4c2d4649e17f6eb9959a21f))
+- **theme:** fix shiki color ([ac221a1](https://github.com/vuepress-theme-hope/vuepress-theme-hope/commit/ac221a10ec4dbbc78a98d5a3efe5e52083eae5f5))
+
+<!-- #region recent-change -->
+
 ## [2.0.0-rc.47](https://github.com/vuepress-theme-hope/vuepress-theme-hope/compare/v2.0.0-rc.46...v2.0.0-rc.47) (2024-05-31)
 
 ### ✨ Features
