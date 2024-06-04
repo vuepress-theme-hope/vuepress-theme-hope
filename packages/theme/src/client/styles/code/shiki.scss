@@ -31,10 +31,10 @@
   }
 }
 
-#{hope-config.$dark-selector} .shiki {
-  --code-bg-color: var(--shiki-dark-bg);
+#{hope-config.$light-selector} .shiki span {
+  color: var(--shiki-light);
+}
 
-  span {
-    color: var(--shiki-dark);
-  }
+#{hope-config.$dark-selector} .shiki span {
+  color: var(--shiki-dark);
 }
