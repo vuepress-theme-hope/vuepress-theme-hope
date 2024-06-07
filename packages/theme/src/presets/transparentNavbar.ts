@@ -32,7 +32,7 @@ const COLOR_SELECTORS = [
   ".vp-dropdown-title",
   ".vp-dropdown-subtitle",
   ".vp-navbar .auto-link",
-  ".vp-navbar .auto-link.active",
+  ".vp-navbar .auto-link.route-link-active",
   ".vp-action-link",
   ".vp-color-mode-switch",
   ".vp-outlook-button",

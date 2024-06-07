@@ -36,12 +36,12 @@
       transition: inset 0.2s ease-in-out;
     }
 
-    &.active {
+    &.route-link-active {
       color: var(--theme-color);
     }
 
     &:hover,
-    &.active {
+    &.route-link-active {
       &::after {
         inset: auto 0 0;
         visibility: visible;
