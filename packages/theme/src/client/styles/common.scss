@@ -3,9 +3,9 @@
 
 .toggle-sidebar-wrapper {
   position: fixed;
+  inset-inline-start: var(--sidebar-space);
   top: var(--navbar-height);
   bottom: 0;
-  inset-inline-start: var(--sidebar-space);
   z-index: 100;
 
   display: flex;
@@ -40,7 +40,7 @@
 
 .theme-container {
   display: flex;
-  flex-direction: column;
+  flex-flow: column;
   justify-content: space-between;
   min-height: 100vh;
 

@@ -2,7 +2,6 @@
   position: relative;
 
   box-sizing: border-box;
-
   width: 100%;
   margin: 0 auto 1.25rem;
 
@@ -44,8 +43,8 @@
 
   .sticky-icon {
     position: absolute;
-    top: 0;
     inset-inline-end: 0;
+    top: 0;
 
     width: 1.5rem;
     height: 1.5rem;
@@ -101,6 +100,7 @@
     visibility: hidden;
 
     transition: transform var(--transform-transition);
+
     transform: scaleX(0);
   }
 
@@ -189,11 +189,9 @@
     margin-bottom: 0.5em;
   }
 
-  // stylelint-disable selector-max-compound-selectors
   h1 + p {
     margin-top: 0.5em;
   }
-  // stylelint-enable selector-max-compound-selectors
 
   p:first-child {
     margin-top: 0.5em;
@@ -245,7 +243,7 @@
 
   figure {
     display: flex;
-    flex-direction: column;
+    flex-flow: column;
 
     width: auto;
     margin: 1rem auto;

@@ -42,12 +42,10 @@
 
     &:hover,
     &.active {
-      // stylelint-disable max-nesting-depth
       &::after {
         inset: auto 0 0;
         visibility: visible;
       }
-      // stylelint-enable max-nesting-depth
     }
   }
 }

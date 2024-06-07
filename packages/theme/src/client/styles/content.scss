@@ -30,12 +30,11 @@
         padding-top: calc(1rem + var(--navbar-height));
         outline: none;
 
-        // stylelint-disable max-nesting-depth
+        // stylelint-disable-next-line max-nesting-depth
         .theme-container.no-navbar & {
           margin-top: 1.5rem;
           padding-top: 0;
         }
-        // stylelint-enable max-nesting-depth
       }
 
       // paragraph fix

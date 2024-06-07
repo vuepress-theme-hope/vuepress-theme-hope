@@ -46,11 +46,12 @@
     z-index: 49;
 
     opacity: 0;
-    fill: var(--white);
 
     transition:
       left 0.2s ease-out,
       opacity 0.2s ease-out;
+
+    fill: var(--white);
   }
 
   .home-button {
@@ -58,11 +59,12 @@
     z-index: 48;
 
     opacity: 0;
-    fill: var(--white);
 
     transition:
       left 0.2s ease-out,
       opacity 0.2s ease-out;
+
+    fill: var(--white);
   }
 
   .menu-button,
@@ -73,7 +75,6 @@
     bottom: 2rem;
 
     box-sizing: content-box;
-
     width: 1rem;
     height: 1rem;
     padding: 0.5rem;
@@ -88,7 +89,6 @@
     }
   }
 
-  // stylelint-disable selector-max-compound-selectors
   .active {
     .menu-button {
       &::before {
@@ -103,7 +103,6 @@
         transform: translateY(-0.4em) rotate(-135deg);
       }
     }
-    // stylelint-enable selector-max-compound-selectors
 
     .back-button {
       left: 4.5rem;

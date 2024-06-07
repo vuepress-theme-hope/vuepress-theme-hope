@@ -6,7 +6,7 @@
 
   &:nth-child(odd) {
     .vp-highlight {
-      flex-direction: row-reverse;
+      flex-flow: row-reverse;
     }
   }
 }

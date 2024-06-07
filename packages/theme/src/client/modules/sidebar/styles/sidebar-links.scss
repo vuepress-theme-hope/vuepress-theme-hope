@@ -19,7 +19,6 @@
     }
 
     > li {
-      // stylelint-disable selector-max-compound-selectors
       > .vp-sidebar-link {
         font-size: 1.1em;
       }
@@ -27,7 +26,6 @@
       &:not(:first-child) {
         margin-top: 0.5rem;
       }
-      // stylelint-enable selector-max-compound-selectors
     }
   }
 }

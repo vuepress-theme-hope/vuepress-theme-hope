@@ -29,7 +29,6 @@
     display: inline-block;
 
     box-sizing: border-box;
-
     width: 1em;
     height: 1em;
     padding-inline-start: 0;
@@ -77,8 +76,8 @@
       content: "";
 
       position: absolute;
-      top: 0.1em;
       inset-inline-start: 0.4em;
+      top: 0.1em;
       z-index: 1;
 
       width: 0.2em;

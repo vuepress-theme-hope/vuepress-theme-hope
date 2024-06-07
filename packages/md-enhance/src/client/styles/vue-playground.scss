@@ -31,7 +31,7 @@
     /**
      * copied from https://github.com/vuejs/repl/blob/main/src/codemirror/codemirror.css
      */
-    // stylelint-disable selector-class-pattern
+    // stylelint-disable-next-line selector-class-pattern
     .CodeMirror {
       --symbols: #89ddff;
       --base: #a6accd;
@@ -50,7 +50,6 @@
 
       color: var(--symbols);
     }
-    // stylelint-enable selector-class-pattern
   }
 }
 
@@ -89,8 +88,6 @@
   }
 
   // internal styles
-  // stylelint-disable selector-max-compound-selectors
-  // stylelint-disable max-nesting-depth
   .repl-container {
     position: relative;
 
@@ -120,6 +117,4 @@
       }
     }
   }
-  // stylelint-enable max-nesting-depth
-  // stylelint-enable selector-max-compound-selectors
 }

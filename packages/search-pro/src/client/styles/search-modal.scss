@@ -29,9 +29,9 @@
   inset: 0;
   z-index: 998;
 
-  animation: 0.25s search-pro-fade-in;
-
   backdrop-filter: blur(10px);
+
+  animation: 0.25s search-pro-fade-in;
 }
 
 .search-pro-modal {
@@ -39,7 +39,7 @@
   z-index: 999;
 
   display: flex;
-  flex-direction: column;
+  flex-flow: column;
 
   width: calc(100% - 6rem);
   max-width: 50em;
@@ -49,6 +49,7 @@
   box-shadow: 2px 2px 10px 0 var(--card-shadow);
 
   transition: background var(--vp-ct);
+
   animation: 0.15s pwa-opened;
 
   @media (max-width: hope-config.$laptop) {
@@ -59,7 +60,6 @@
     inset: 0;
 
     box-sizing: border-box;
-
     width: 100%;
     max-width: unset;
     padding: env(--safe-area-inset-top) env(--safe-area-inset-right)
@@ -79,8 +79,8 @@
 
   label {
     position: absolute;
-    top: calc(50% - 0.75rem);
     inset-inline-start: 0.5rem;
+    top: calc(50% - 0.75rem);
     color: var(--vp-tc);
 
     .search-icon {
@@ -93,8 +93,8 @@
 .search-pro-clear-button {
   @include reset.button;
   position: absolute;
-  top: calc(50% - 10px);
   inset-inline-end: 0.75rem;
+  top: calc(50% - 10px);
 
   padding: 0;
 

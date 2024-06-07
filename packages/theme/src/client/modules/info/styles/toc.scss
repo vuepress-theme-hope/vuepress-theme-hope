@@ -94,9 +94,9 @@ $headings: (2, 3, 4, 5, 6);
   text-overflow: ellipsis;
   white-space: nowrap;
 
-  transition: height 0.5s;
-
   scroll-behavior: smooth;
+
+  transition: height 0.5s;
 
   @media (min-width: hope-config.$pc) {
     height: auto;
@@ -129,9 +129,9 @@ $headings: (2, 3, 4, 5, 6);
     content: " ";
 
     position: absolute;
+    inset-inline-start: 0;
     top: 0;
     bottom: 0;
-    inset-inline-start: 0;
     z-index: -1;
 
     width: 2px;
@@ -152,8 +152,8 @@ $headings: (2, 3, 4, 5, 6);
 
 .vp-toc-marker {
   position: absolute;
-  top: 0;
   inset-inline-start: 0;
+  top: 0;
   z-index: 2;
 
   display: none;
@@ -197,7 +197,6 @@ $headings: (2, 3, 4, 5, 6);
   position: relative;
 
   box-sizing: border-box;
-
   height: 1.7rem;
 
   list-style: none;

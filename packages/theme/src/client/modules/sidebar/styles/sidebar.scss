@@ -1,8 +1,8 @@
 .vp-sidebar {
   position: fixed;
+  inset-inline-start: 0;
   top: 0;
   bottom: 0;
-  inset-inline-start: 0;
 
   // this prevents footer issue on tablet
   z-index: 1;
@@ -18,11 +18,12 @@
 
   font-size: 0.94rem;
 
+  backdrop-filter: saturate(150%) blur(12px);
+
   transition:
     padding var(--transform-transition),
     transform var(--transform-transition);
 
-  backdrop-filter: saturate(150%) blur(12px);
   scrollbar-color: var(--theme-color) var(--border-color);
   scrollbar-width: thin;
 

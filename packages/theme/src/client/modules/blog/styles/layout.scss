@@ -2,11 +2,10 @@
   &.vp-blog,
   &.vp-blog-home {
     display: flex;
-    flex-direction: column;
+    flex-flow: column;
     justify-content: space-between;
 
     box-sizing: border-box;
-
     padding-bottom: 2rem;
 
     background: var(--bg-color-back);
@@ -26,7 +25,6 @@
   justify-content: center;
 
   box-sizing: border-box;
-
   width: 100%;
   margin: 0 auto;
   padding: 0 2rem;

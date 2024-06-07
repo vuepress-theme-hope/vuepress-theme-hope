@@ -22,8 +22,8 @@
 
   // fix strange outline
   overflow: hidden;
-  box-sizing: border-box;
 
+  box-sizing: border-box;
   width: calc(100% - 1rem);
   margin: 0;
   margin-inline: 0.5rem;
@@ -41,6 +41,7 @@
   user-select: none;
 
   transition: color 0.15s ease;
+
   transform: rotate(0);
 
   &.open {

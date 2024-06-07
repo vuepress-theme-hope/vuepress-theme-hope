@@ -92,6 +92,7 @@ tag:
 虽然说 VuePress 为所有的页面通过 SSG[^ssg] 生成了 HTML 文件，但是这些文件主要用于 SEO[^seo]，并能够让你在后端不做 SPA[^spa] 配置的情况下能够直接访问任何链接。
 
 [^ssg]: **SSG**: **S**tatic **S**ite **G**enerating，静态站点生成。
+
 [^seo]: **SEO**: **S**earch **E**ngine **O**ptimization，搜索引擎增强，
 
     详见 [SEO 介绍](https://mister-hope.com/code/website/html/definition/seo.html)

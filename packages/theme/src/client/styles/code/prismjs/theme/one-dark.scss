@@ -118,15 +118,13 @@ pre[class*="language-"] {
   color: #c678dd;
 }
 
-// stylelint-disable selector-max-compound-selectors
+// stylelint-disable-next-line selector-max-compound-selectors
 .language-javascript
   .token.template-string
   > .token.interpolation
   > .token.interpolation-punctuation.punctuation {
   color: #be5046;
 }
-
-// stylelint-enable selector-max-compound-selectors
 
 /* JSON overrides */
 .language-json .token.operator {

@@ -5,7 +5,7 @@
   --content-width: min(84%, 1200px);
 
   display: flex;
-  flex-direction: column;
+  flex-flow: column;
   align-items: center;
 
   @media (min-width: hope-config.$laptop) {

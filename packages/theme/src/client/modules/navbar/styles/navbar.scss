@@ -12,7 +12,6 @@
   justify-content: space-between;
 
   box-sizing: border-box;
-
   height: var(--navbar-height);
   padding: var(--navbar-vertical-padding) var(--navbar-horizontal-padding);
 
@@ -22,9 +21,9 @@
   line-height: var(--navbar-line-height);
   white-space: nowrap;
 
-  transition: transform var(--transform-transition);
-
   backdrop-filter: saturate(150%) blur(12px);
+
+  transition: transform var(--transform-transition);
 
   @media print {
     display: none;

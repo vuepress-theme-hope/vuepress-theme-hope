@@ -1,4 +1,3 @@
-// stylelint-disable order/order
 // stylelint-disable scss/operator-no-newline-after
 @use "sass:math";
 @use "sass:string";
@@ -25,6 +24,7 @@
     $encoded: #{$encoded}#{$chunk};
     $index: $index + $slice;
   }
+
   @return url("data:image/svg+xml;utf8,#{$encoded}");
 }
 
@@ -35,18 +35,15 @@
 @mixin mask-svg($svg, $color: currentColor) {
   background-color: $color;
 
-  -webkit-mask-image: encode-svg($svg);
   mask-image: encode-svg($svg);
-  -webkit-mask-position: 50%;
   mask-position: 50%;
-  -webkit-mask-repeat: no-repeat;
-  mask-repeat: no-repeat;
-  -webkit-mask-size: 1em;
   mask-size: 1em;
+  mask-repeat: no-repeat;
 }
 
 @function str-replace($string, $search, $replace: "") {
   $index: string.index($string, $search);
+
   @return if(
     $index,
     string.slice($string, 1, $index - 1) + $replace +

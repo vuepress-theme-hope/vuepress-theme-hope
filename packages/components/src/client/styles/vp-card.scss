@@ -50,8 +50,8 @@
   &-container {
     display: flex;
     flex-wrap: wrap;
-    align-items: stretch;
     place-content: stretch center;
+    align-items: stretch;
 
     .vp-card {
       flex-basis: calc(50% - 3rem);

@@ -58,7 +58,8 @@ export default () => {
       <code>vuepress-theme-hope</code> is
       <span id="powerful" onClick={handler}>
         {message}
-      </span>!
+      </span>
+      !
     </div>
   );
 };

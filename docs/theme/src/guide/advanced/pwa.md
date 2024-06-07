@@ -92,7 +92,9 @@ If you have small sites, and would like to make document fully offline available
 Though VuePress generates HTML files through SSG[^ssg] for all pages, these files are mainly used for SEO[^seo] and allow you to directly configure the backend without SPA[^spa] Visit any link.
 
 [^ssg]: **SSG**: **S**tatic **S**ite **G**eneration,
+
 [^seo]: **SEO**: **S**earch **E**ngine **O**ptimization.
+
 [^spa]: **SPA**: **S**ingle **P**age **A**pplication, most of them only have the homepage, and use history mode to handle routing instead of actually navigating between pages.
 
 VuePress is essentially an SPA. This means that you only need to cache the home page and enter from the home page to access all pages normally. Therefore, not caching other HTML by default can effectively reduce the cache size (40% smaller in size) and speed up the SW update speed.

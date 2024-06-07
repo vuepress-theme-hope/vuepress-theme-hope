@@ -65,8 +65,8 @@
       content: " ";
 
       position: absolute;
-      top: 14px;
       inset-inline-start: 0;
+      top: 14px;
       z-index: -1;
 
       width: 4px;
@@ -91,9 +91,8 @@
 
     &::before {
       @include dot;
-
-      top: 50%;
       inset-inline-start: -20px;
+      top: 50%;
 
       width: 8px;
       height: 8px;
@@ -119,8 +118,8 @@
 
     &::before {
       @include dot;
-      top: 24px;
       inset-inline-start: -19px;
+      top: 24px;
 
       width: 6px;
       height: 6px;
@@ -155,12 +154,11 @@
       .timeline-date {
         color: var(--theme-color);
 
-        // stylelint-disable max-nesting-depth
+        // stylelint-disable-next-line max-nesting-depth
         &::before {
           border-color: var(--dot-color);
           background: var(--theme-color);
         }
-        // stylelint-enable max-nesting-depth
       }
 
       .timeline-title {

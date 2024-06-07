@@ -3,8 +3,8 @@
 
 ::view-transition-old(root),
 ::view-transition-new(root) {
-  animation: none;
   mix-blend-mode: normal;
+  animation: none;
 }
 
 #{hope-config.$light-selector}::view-transition-old(root),
@@ -40,7 +40,6 @@
 }
 
 // docsearch fix
-// stylelint-disable selector-class-pattern
 #docsearch-container {
   min-width: 145.7px !important;
 
@@ -49,6 +48,7 @@
   }
 }
 
+// stylelint-disable selector-class-pattern
 .DocSearch {
   &.DocSearch-Button {
     margin-left: 0;

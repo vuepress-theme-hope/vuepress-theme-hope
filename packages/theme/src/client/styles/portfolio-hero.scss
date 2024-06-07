@@ -104,7 +104,7 @@
       &.light {
         display: block;
 
-        // stylelint-disable-next-line
+        // stylelint-disable-next-line max-nesting-depth
         html[data-theme="dark"] & {
           display: none;
         }
@@ -113,7 +113,7 @@
       &.dark {
         display: none;
 
-        // stylelint-disable-next-line
+        // stylelint-disable-next-line max-nesting-depth
         html[data-theme="dark"] & {
           display: block;
         }
@@ -130,7 +130,6 @@
     justify-content: flex-end;
 
     box-sizing: border-box;
-
     min-height: 100vh;
     padding-top: 120px;
     padding-bottom: 70px;
@@ -142,7 +141,6 @@
     flex: 0 0 50%;
 
     box-sizing: border-box;
-
     max-width: 50%;
     padding: 0 25px;
 

@@ -228,12 +228,10 @@
     background: var(--theme-color);
     color: var(--white);
 
-    // stylelint-disable max-nesting-depth
     &:hover {
       border-color: var(--theme-color-light);
       background: var(--theme-color-light);
     }
-    // stylelint-enable max-nesting-depth
   }
 
   .theme-container:not(.pure) &:active {

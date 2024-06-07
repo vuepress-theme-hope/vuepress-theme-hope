@@ -169,6 +169,7 @@ To debug this, set `__VUE_PROD_HYDRATION_MISMATCH_DETAILS__` to `true` so that y
 If a component is likely to have different render results between SSR[^ssr] and CSR[^csr]. You can wrap your components with the `<ClientOnly />` component provided by `vuepress/client`.
 
 [^ssr]: **SSR**: **S**erver **S**ide **R**endering
+
 [^csr]: **CSR**: **C**lient **S**ide **R**endering
 
 ## HotReload not working in DevServer

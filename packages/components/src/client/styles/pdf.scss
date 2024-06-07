@@ -26,8 +26,8 @@
 .pdf-fullscreen-button {
   @include reset.button;
   position: absolute;
-  bottom: 1rem;
   inset-inline-end: 1rem;
+  bottom: 1rem;
 
   width: 2rem;
   height: 2rem;

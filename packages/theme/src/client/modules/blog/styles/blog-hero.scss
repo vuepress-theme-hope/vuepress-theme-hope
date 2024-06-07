@@ -4,7 +4,7 @@
   position: relative;
 
   display: flex;
-  flex-direction: column;
+  flex-flow: column;
   justify-content: center;
 
   height: 450px;
@@ -50,8 +50,8 @@
       animation-name: bounce-down;
       animation-duration: 1.5s;
       animation-timing-function: linear;
-      animation-iteration-count: infinite;
       animation-direction: alternate;
+      animation-iteration-count: infinite;
 
       &:first-child {
         color: rgb(255 255 255 / 15%);

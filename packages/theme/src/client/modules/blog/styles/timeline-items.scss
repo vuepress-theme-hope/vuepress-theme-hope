@@ -56,8 +56,8 @@
       content: " ";
 
       position: absolute;
-      top: 14px;
       inset-inline-start: 64px;
+      top: 14px;
       z-index: -1;
 
       width: 4px;
@@ -179,12 +179,11 @@
           color var(--color-transition),
           font-size var(--transform-transition);
 
-        // stylelint-disable max-nesting-depth
+        // stylelint-disable-next-line max-nesting-depth
         &::before {
           border-color: var(--theme-color);
           background: var(--bg-color-secondary);
         }
-        // stylelint-enable max-nesting-depth
       }
 
       .timeline-title {

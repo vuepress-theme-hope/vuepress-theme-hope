@@ -67,12 +67,12 @@
 
 .vp-dropdown {
   position: absolute;
-  top: 100%;
   inset-inline-end: 0;
+  top: 100%;
 
   overflow-y: auto;
-  box-sizing: border-box;
 
+  box-sizing: border-box;
   min-width: 6rem;
   max-height: calc(100vh - var(--navbar-height));
   margin: 0;
@@ -91,6 +91,7 @@
   visibility: hidden;
 
   transition: all 0.18s ease-out;
+
   transform: scale(0.9);
 
   .vp-dropdown-wrapper:hover &,
