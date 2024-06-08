@@ -15,8 +15,8 @@ importers:
         specifier: 19.2.2
         version: 19.2.2
       '@lerna-lite/cli':
-        specifier: 3.5.0
-        version: 3.5.0(@lerna-lite/publish@3.5.0(typescript@5.4.5))(@lerna-lite/version@3.5.0(@lerna-lite/publish@3.5.0(typescript@5.4.5))(typescript@5.4.5))(typescript@5.4.5)
+        specifier: 3.5.1
+        version: 3.5.1(@lerna-lite/publish@3.5.0(typescript@5.4.5))(typescript@5.4.5)
       '@lerna-lite/publish':
         specifier: 3.5.0
         version: 3.5.0(typescript@5.4.5)
@@ -2424,12 +2424,45 @@ packages:
       '@lerna-lite/watch':
         optional: true
 
+  '@lerna-lite/cli@3.5.1':
+    resolution: {integrity: sha512-kWhjomm8iwI6MxC/Au7Mv9pztOm4QVEKR72+YQ59qfP1sVwIX6jlWNaBmszXonry34v226GDs6gDE31Vl3QHoQ==}
+    engines: {node: ^18.0.0 || >=20.0.0}
+    hasBin: true
+    peerDependencies:
+      '@lerna-lite/exec': '*'
+      '@lerna-lite/list': '*'
+      '@lerna-lite/publish': '*'
+      '@lerna-lite/run': '*'
+      '@lerna-lite/version': '*'
+      '@lerna-lite/watch': '*'
+    peerDependenciesMeta:
+      '@lerna-lite/exec':
+        optional: true
+      '@lerna-lite/list':
+        optional: true
+      '@lerna-lite/publish':
+        optional: true
+      '@lerna-lite/run':
+        optional: true
+      '@lerna-lite/version':
+        optional: true
+      '@lerna-lite/watch':
+        optional: true
+
   '@lerna-lite/core@3.5.0':
     resolution: {integrity: sha512-TFBVpPN0OjY8RR1JyFzVsdh535ZXtCaSf10fieyv9YiWFHykullm+UM/atiEpIr4LShkYf05pHBECOJ2+f+JEA==}
     engines: {node: ^18.0.0 || >=20.0.0}
 
+  '@lerna-lite/core@3.5.1':
+    resolution: {integrity: sha512-cPOcwlEETXyraa2A0202B4GKYdlHsJ7i2YGzPY5PYrtV7AkjpETqKbQhhWzuQWXFJpdIuzuowmMeX/6XcVtorA==}
+    engines: {node: ^18.0.0 || >=20.0.0}
+
   '@lerna-lite/init@3.5.0':
     resolution: {integrity: sha512-kd51wBShaYRq8Y6uVWAeBF7AsTojUsusaQmfyE8af5AcujQYzHoF/JEoM9v8gBKagXlSU24XdHBKH+QxhxclcQ==}
+    engines: {node: ^18.0.0 || >=20.0.0}
+
+  '@lerna-lite/init@3.5.1':
+    resolution: {integrity: sha512-N7p9ByH4OE/UaWUzz7BL51pnkNxU4tQetEMbn/4QFTh0EfFYP4OXF3zq2Y5Egs8l1Mx/iso9Ly68VHaE8aKPeQ==}
     engines: {node: ^18.0.0 || >=20.0.0}
 
   '@lerna-lite/publish@3.5.0':
@@ -10767,7 +10800,59 @@ snapshots:
       - supports-color
       - typescript
 
+  '@lerna-lite/cli@3.5.1(@lerna-lite/publish@3.5.0(typescript@5.4.5))(typescript@5.4.5)':
+    dependencies:
+      '@lerna-lite/core': 3.5.1(typescript@5.4.5)
+      '@lerna-lite/init': 3.5.1(typescript@5.4.5)
+      dedent: 1.5.3
+      dotenv: 16.4.5
+      import-local: 3.1.0
+      load-json-file: 7.0.1
+      npmlog: 7.0.1
+      yargs: 17.7.2
+    optionalDependencies:
+      '@lerna-lite/publish': 3.5.0(typescript@5.4.5)
+    transitivePeerDependencies:
+      - babel-plugin-macros
+      - bluebird
+      - supports-color
+      - typescript
+
   '@lerna-lite/core@3.5.0(typescript@5.4.5)':
+    dependencies:
+      '@npmcli/run-script': 8.1.0
+      chalk: 5.3.0
+      clone-deep: 4.0.1
+      config-chain: 1.1.13
+      cosmiconfig: 9.0.0(typescript@5.4.5)
+      dedent: 1.5.3
+      execa: 8.0.1
+      fs-extra: 11.2.0
+      glob-parent: 6.0.2
+      globby: 14.0.1
+      inquirer: 9.2.23
+      is-ci: 3.0.1
+      json5: 2.2.3
+      load-json-file: 7.0.1
+      minimatch: 9.0.4
+      npm-package-arg: 11.0.2
+      npmlog: 7.0.1
+      p-map: 7.0.2
+      p-queue: 8.0.1
+      resolve-from: 5.0.0
+      semver: 7.6.2
+      slash: 5.1.0
+      strong-log-transformer: 2.1.0
+      write-file-atomic: 5.0.1
+      write-json-file: 5.0.0
+      write-package: 7.0.1
+    transitivePeerDependencies:
+      - babel-plugin-macros
+      - bluebird
+      - supports-color
+      - typescript
+
+  '@lerna-lite/core@3.5.1(typescript@5.4.5)':
     dependencies:
       '@npmcli/run-script': 8.1.0
       chalk: 5.3.0
@@ -10804,6 +10889,18 @@ snapshots:
   '@lerna-lite/init@3.5.0(typescript@5.4.5)':
     dependencies:
       '@lerna-lite/core': 3.5.0(typescript@5.4.5)
+      fs-extra: 11.2.0
+      p-map: 7.0.2
+      write-json-file: 5.0.0
+    transitivePeerDependencies:
+      - babel-plugin-macros
+      - bluebird
+      - supports-color
+      - typescript
+
+  '@lerna-lite/init@3.5.1(typescript@5.4.5)':
+    dependencies:
+      '@lerna-lite/core': 3.5.1(typescript@5.4.5)
       fs-extra: 11.2.0
       p-map: 7.0.2
       write-json-file: 5.0.0
