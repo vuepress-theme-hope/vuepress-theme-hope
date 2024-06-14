@@ -19,7 +19,7 @@ All notable changes to this project will be documented in this file. See [Conven
 - **theme:** fix keyboard action of sidebar group ([e86b320](https://github.com/vuepress-theme-hope/vuepress-theme-hope/commit/e86b320fef04ff30b4c2d4649e17f6eb9959a21f))
 - **theme:** fix shiki color ([ac221a1](https://github.com/vuepress-theme-hope/vuepress-theme-hope/commit/ac221a10ec4dbbc78a98d5a3efe5e52083eae5f5))
 
-ress-theme-hope/compare/v2.0.0-rc.46...v2.0.0-rc.47) (2024-05-31)
+## [2.0.0-rc.47](https://github.com/vuepress-theme-hope/vuepress-theme-hope/compare/v2.0.0-rc.46...v2.0.0-rc.47) (2024-05-31)
 
 ### ✨ Features
 
@@ -29,7 +29,7 @@ ress-theme-hope/compare/v2.0.0-rc.46...v2.0.0-rc.47) (2024-05-31)
 
 - **theme:** fix toc z-index, close [#4195](https://github.com/vuepress-theme-hope/vuepress-theme-hope/issues/4195) ([4ff3bcd](https://github.com/vuepress-theme-hope/vuepress-theme-hope/commit/4ff3bcd2c844173c9e1cc9ce994e6516cabffe76))
 
-b.com/vuepress-theme-hope/vuepress-theme-hope/compare/v2.0.0-rc.45...v2.0.0-rc.46) (2024-05-28)
+## [2.0.0-rc.46](https://github.com/vuepress-theme-hope/vuepress-theme-hope/compare/v2.0.0-rc.45...v2.0.0-rc.46) (2024-05-28)
 
 ### 🐛 Bug Fixes
 
@@ -49,7 +49,7 @@ b.com/vuepress-theme-hope/vuepress-theme-hope/compare/v2.0.0-rc.45...v2.0.0-rc.4
 
 - **theme:** fix code block scroll bar ([5d1daa1](https://github.com/vuepress-theme-hope/vuepress-theme-hope/commit/5d1daa10c1917ae5864eaf1e1b26dfe9592fc077))
 
-b.com/vuepress-theme-hope/vuepress-theme-hope/compare/v2.0.0-rc.43...v2.0.0-rc.44) (2024-05-27)
+## [2.0.0-rc.44](https://github.com/vuepress-theme-hope/vuepress-theme-hope/compare/v2.0.0-rc.43...v2.0.0-rc.44) (2024-05-27)
 
 ### ✨ Features
 
@@ -103,7 +103,9 @@ b.com/vuepress-theme-hope/vuepress-theme-hope/compare/v2.0.0-rc.43...v2.0.0-rc.4
 - **theme:** fix header anchor ([d490c51](https://github.com/vuepress-theme-hope/vuepress-theme-hope/commit/d490c513a774535d8ae81e8a3883eab669c8fc2a))
 - **theme:** fix portfolio style on pad ([375a0cb](https://github.com/vuepress-theme-hope/vuepress-theme-hope/commit/375a0cb905d188569223e74c6bdf43daabdd7102))
 
-b.com/vuepress-theme-hope/vuepress-theme-hope/compare/v2.0.0-rc.40...v2.0.0-rc.41) (2024-05-11)
+<!-- #region recent-change -->
+
+## [2.0.0-rc.41](https://github.com/vuepress-theme-hope/vuepress-theme-hope/compare/v2.0.0-rc.40...v2.0.0-rc.41) (2024-05-11)
 
 ### ✨ Features
 
