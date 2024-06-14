@@ -98,10 +98,10 @@
     "@types/markdown-it": "^14.1.1",
     "@vuepress/helper": "2.0.0-rc.34",
     "@vuepress/plugin-sass-palette": "2.0.0-rc.34",
-    "@vueuse/core": "^10.10.0",
+    "@vueuse/core": "^10.11.0",
     "balloon-css": "^1.2.0",
     "js-yaml": "^4.1.0",
-    "vue": "^3.4.27",
+    "vue": "^3.4.28",
     "vuepress-shared": "workspace:*"
   },
   "devDependencies": {
