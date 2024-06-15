@@ -153,8 +153,8 @@ importers:
         specifier: 2.0.0-rc.34
         version: 2.0.0-rc.34(sass-loader@14.2.1(sass@1.77.5)(webpack@5.92.0(esbuild@0.21.5)))(typescript@5.4.5)(vuepress@2.0.0-rc.13(@vuepress/bundler-vite@2.0.0-rc.13(@types/node@20.14.2)(jiti@1.21.6)(lightningcss@1.25.1)(sass@1.77.5)(terser@5.31.1)(tsx@4.15.4)(typescript@5.4.5))(@vuepress/bundler-webpack@2.0.0-rc.13(esbuild@0.21.5)(typescript@5.4.5))(typescript@5.4.5)(vue@3.4.28(typescript@5.4.5)))
       artplayer:
-        specifier: 5.1.5
-        version: 5.1.5
+        specifier: 5.1.6
+        version: 5.1.6
       artplayer-plugin-danmuku:
         specifier: 5.1.4
         version: 5.1.4
@@ -468,8 +468,8 @@ importers:
         specifier: 2.0.0-rc.34
         version: 2.0.0-rc.34(typescript@5.4.5)(vuepress@2.0.0-rc.13(@vuepress/bundler-vite@2.0.0-rc.13(@types/node@20.14.2)(lightningcss@1.25.1)(sass@1.77.5)(terser@5.31.1)(tsx@4.15.4)(typescript@5.4.5))(@vuepress/bundler-webpack@2.0.0-rc.13(esbuild@0.21.5)(typescript@5.4.5))(typescript@5.4.5)(vue@3.4.28(typescript@5.4.5)))
       artplayer:
-        specifier: 5.1.5
-        version: 5.1.5
+        specifier: 5.1.6
+        version: 5.1.6
       artplayer-plugin-danmuku:
         specifier: 5.1.4
         version: 5.1.4
@@ -657,8 +657,8 @@ importers:
         specifier: 10.11.0
         version: 10.11.0(vue@3.4.28(typescript@5.4.5))
       artplayer:
-        specifier: 5.1.5
-        version: 5.1.5
+        specifier: 5.1.6
+        version: 5.1.6
       docs-shared:
         specifier: workspace:*
         version: link:../../docs-shared
@@ -3942,6 +3942,9 @@ packages:
 
   artplayer@5.1.5:
     resolution: {integrity: sha512-hqTVqKpVlrY0+WYM2mB6uYt6zuUKL2U9K2Yoe55m9d01dHA8Byw1qZsFsTIu1eCJTh8QL7v5ThWqNucyKULbAg==}
+
+  artplayer@5.1.6:
+    resolution: {integrity: sha512-cqnVVLKCKWCryKl6Pmop50/Di9IQwOeNNQs5qWGzJDPiM0qTC7Q/Enusa+8JQid8p09fvp4Vc32ViSSYutdEeQ==}
 
   assertion-error@1.1.0:
     resolution: {integrity: sha512-jgsaNduz+ndvGyFt3uSuWqvy4lCnIJiovtouQN5JZHOKCS2QuhEdbcQHFhVksz2N2U9hXJo8odG7ETyWlEeuDw==}
@@ -12839,6 +12842,10 @@ snapshots:
     dependencies:
       option-validator: 2.0.6
 
+  artplayer@5.1.6:
+    dependencies:
+      option-validator: 2.0.6
+
   assertion-error@1.1.0: {}
 
   astral-regex@2.0.0: {}
@@ -14149,7 +14156,7 @@ snapshots:
       eslint: 8.57.0
       eslint-config-prettier: 9.1.0(eslint@8.57.0)
       eslint-import-resolver-typescript: 3.6.1(@typescript-eslint/parser@7.13.0(eslint@8.57.0)(typescript@5.4.5))(eslint-plugin-import@2.29.1(@typescript-eslint/parser@7.13.0(eslint@8.57.0)(typescript@5.4.5))(eslint@8.57.0))(eslint@8.57.0)
-      eslint-plugin-import: 2.29.1(@typescript-eslint/parser@7.13.0(eslint@8.57.0)(typescript@5.4.5))(eslint-import-resolver-typescript@3.6.1)(eslint@8.57.0)
+      eslint-plugin-import: 2.29.1(@typescript-eslint/parser@7.13.0(eslint@8.57.0)(typescript@5.4.5))(eslint-import-resolver-typescript@3.6.1(@typescript-eslint/parser@7.13.0(eslint@8.57.0)(typescript@5.4.5))(eslint-plugin-import@2.29.1(@typescript-eslint/parser@7.13.0(eslint@8.57.0)(typescript@5.4.5))(eslint@8.57.0))(eslint@8.57.0))(eslint@8.57.0)
       eslint-plugin-prettier: 5.1.3(@types/eslint@8.56.10)(eslint-config-prettier@9.1.0(eslint@8.57.0))(eslint@8.57.0)(prettier@3.3.2)
       eslint-plugin-vitest: 0.5.4(eslint@8.57.0)(typescript@5.4.5)(vitest@1.6.0(@types/node@20.14.2)(lightningcss@1.25.1)(sass@1.77.5)(terser@5.31.1))
       globals: 15.4.0
@@ -14186,7 +14193,7 @@ snapshots:
       enhanced-resolve: 5.17.0
       eslint: 8.57.0
       eslint-module-utils: 2.8.1(@typescript-eslint/parser@7.13.0(eslint@8.57.0)(typescript@5.4.5))(eslint-import-resolver-node@0.3.9)(eslint-import-resolver-typescript@3.6.1(@typescript-eslint/parser@7.13.0(eslint@8.57.0)(typescript@5.4.5))(eslint-plugin-import@2.29.1(@typescript-eslint/parser@7.13.0(eslint@8.57.0)(typescript@5.4.5))(eslint@8.57.0))(eslint@8.57.0))(eslint@8.57.0)
-      eslint-plugin-import: 2.29.1(@typescript-eslint/parser@7.13.0(eslint@8.57.0)(typescript@5.4.5))(eslint-import-resolver-typescript@3.6.1)(eslint@8.57.0)
+      eslint-plugin-import: 2.29.1(@typescript-eslint/parser@7.13.0(eslint@8.57.0)(typescript@5.4.5))(eslint-import-resolver-typescript@3.6.1(@typescript-eslint/parser@7.13.0(eslint@8.57.0)(typescript@5.4.5))(eslint-plugin-import@2.29.1(@typescript-eslint/parser@7.13.0(eslint@8.57.0)(typescript@5.4.5))(eslint@8.57.0))(eslint@8.57.0))(eslint@8.57.0)
       fast-glob: 3.3.2
       get-tsconfig: 4.7.5
       is-core-module: 2.13.1
@@ -14208,7 +14215,7 @@ snapshots:
     transitivePeerDependencies:
       - supports-color
 
-  eslint-plugin-import@2.29.1(@typescript-eslint/parser@7.13.0(eslint@8.57.0)(typescript@5.4.5))(eslint-import-resolver-typescript@3.6.1)(eslint@8.57.0):
+  eslint-plugin-import@2.29.1(@typescript-eslint/parser@7.13.0(eslint@8.57.0)(typescript@5.4.5))(eslint-import-resolver-typescript@3.6.1(@typescript-eslint/parser@7.13.0(eslint@8.57.0)(typescript@5.4.5))(eslint-plugin-import@2.29.1(@typescript-eslint/parser@7.13.0(eslint@8.57.0)(typescript@5.4.5))(eslint@8.57.0))(eslint@8.57.0))(eslint@8.57.0):
     dependencies:
       array-includes: 3.1.8
       array.prototype.findlastindex: 1.2.5
