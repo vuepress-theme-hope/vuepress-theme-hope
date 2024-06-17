@@ -90,7 +90,7 @@
     "stylelint-config-hope": "7.0.2",
     "through2": "4.0.2",
     "tslib": "2.6.3",
-    "tsx": "4.15.4",
+    "tsx": "4.15.6",
     "typescript": "5.4.5",
     "vitest": "1.6.0"
   },
