@@ -1,8 +1,8 @@
 import type { RouteLocationNormalizedLoaded } from "vuepress/client";
 import { isActiveLink } from "vuepress-shared/client";
 
-import { isActiveItem } from "../../../utils/isActiveItem.js";
 import type { SidebarItem } from "./typings.js";
+import { isActiveItem } from "../../../utils/isActiveItem.js";
 
 export const isActiveSidebarItem = (
   route: RouteLocationNormalizedLoaded,

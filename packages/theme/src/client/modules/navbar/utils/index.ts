@@ -1,7 +1,7 @@
 import type {
   AutoLinkOptions,
-  NavbarLinkOptions,
   NavGroup,
+  NavbarLinkOptions,
 } from "../../../../shared/index.js";
 
 export type NavbarItem =

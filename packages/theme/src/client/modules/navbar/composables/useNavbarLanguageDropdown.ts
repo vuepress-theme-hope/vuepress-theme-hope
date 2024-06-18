@@ -1,5 +1,6 @@
 import { entries, keys, useRoutePaths } from "@vuepress/helper/client";
-import { computed, type ComputedRef } from "vue";
+import type { ComputedRef } from "vue";
+import { computed } from "vue";
 import {
   useRoute,
   useRouteLocale,

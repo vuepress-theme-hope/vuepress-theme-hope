@@ -1,6 +1,6 @@
 import { isPlainObject } from "@vuepress/helper";
-import { watermarkPlugin } from "@vuepress/plugin-watermark";
 import type { WatermarkPluginOptions } from "@vuepress/plugin-watermark";
+import { watermarkPlugin } from "@vuepress/plugin-watermark";
 import type { Plugin } from "vuepress";
 
 /**

@@ -1,9 +1,9 @@
 import { keys } from "@vuepress/helper";
 import { colors } from "vuepress/utils";
 
+import { PLUGIN_CHECKLIST } from "./utils.js";
 import type { PluginsOptions } from "../../shared/index.js";
 import { logger } from "../utils.js";
-import { PLUGIN_CHECKLIST } from "./utils.js";
 
 const KNOWN_THEME_PLUGINS = PLUGIN_CHECKLIST.map(([, config]) => config).filter(
   Boolean,

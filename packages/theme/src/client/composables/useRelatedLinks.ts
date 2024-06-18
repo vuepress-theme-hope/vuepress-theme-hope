@@ -1,4 +1,5 @@
 import { isPlainObject, isString } from "@vuepress/helper/client";
+import type { ComputedRef } from "vue";
 import { computed } from "vue";
 import { resolveRoute, usePageFrontmatter, useRoute } from "vuepress/client";
 
@@ -11,7 +12,6 @@ import type {
   AutoLinkOptions,
   ThemeNormalPageFrontmatter,
 } from "../../shared/index.js";
-import type { ComputedRef } from "vue";
 
 const resolveFromFrontmatterConfig = (
   config: unknown,

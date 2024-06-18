@@ -1,4 +1,6 @@
 import { isString } from "@vuepress/helper/client";
+import type { ComputedRef } from "vue";
+import { computed } from "vue";
 import { resolveRoute } from "vuepress/client";
 
 import { useThemeLocaleData } from "@theme-hope/composables/index";
@@ -15,7 +17,6 @@ import type {
   NavbarLinkOptions,
 } from "../../../../shared/index.js";
 import type { NavbarItem } from "../utils/index.js";
-import { computed, type ComputedRef } from "vue";
 
 export const resolveNavbarItem = (
   item: NavbarLinkOptions | NavbarGroupOptions | string,

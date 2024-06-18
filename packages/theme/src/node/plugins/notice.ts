@@ -1,9 +1,9 @@
 import { isArray, isPlainObject } from "@vuepress/helper";
-import { noticePlugin } from "@vuepress/plugin-notice";
 import type {
   NoticeOptions,
   NoticePluginOptions,
 } from "@vuepress/plugin-notice";
+import { noticePlugin } from "@vuepress/plugin-notice";
 import type { Plugin } from "vuepress";
 
 /**

@@ -3,8 +3,8 @@ import type { App, Plugin } from "vuepress/core";
 import { isPlainObject } from "vuepress/shared";
 import { colors } from "vuepress/utils";
 
-import type { PrismjsOptions } from "../../shared/index.js";
 import { isHighlighterPlugin } from "./utils.js";
+import type { PrismjsOptions } from "../../shared/index.js";
 import { logger } from "../utils.js";
 
 let prismjsPlugin: (options: PrismjsPluginOptions) => Plugin;

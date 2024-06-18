@@ -1,11 +1,12 @@
+import { dateSorter } from "@vuepress/helper";
 import type { BlogTypeOptions } from "@vuepress/plugin-blog";
 import type { GitData } from "@vuepress/plugin-git";
+import type { Page } from "vuepress";
+
 import type {
   ArticleInfoData,
   ThemeNormalPageFrontmatter,
 } from "../shared/index.js";
-import type { Page } from "vuepress";
-import { dateSorter } from "@vuepress/helper";
 
 export interface RecentUpdateArticlesOptions {
   /**

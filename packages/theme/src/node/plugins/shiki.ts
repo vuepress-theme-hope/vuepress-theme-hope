@@ -1,6 +1,8 @@
-import { shikiPlugin, type ShikiPluginOptions } from "@vuepress/plugin-shiki";
+import type { ShikiPluginOptions } from "@vuepress/plugin-shiki";
+import { shikiPlugin } from "@vuepress/plugin-shiki";
 import type { App } from "vuepress/core";
 import { isPlainObject } from "vuepress/shared";
+
 import { isHighlighterPlugin } from "./utils.js";
 
 /**

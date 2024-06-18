@@ -1,10 +1,11 @@
-import { computed, defineComponent, h } from "vue";
 import type { VNode } from "vue";
+import { computed, defineComponent, h } from "vue";
+import { usePageFrontmatter } from "vuepress/client";
 
 import MarkdownContent from "@theme-hope/components/MarkdownContent";
-import { DropTransition } from "@theme-hope/components/transitions/DropTransition";
 import PortfolioHero from "@theme-hope/components/PortfolioHero";
-import { usePageFrontmatter } from "vuepress/client";
+import { DropTransition } from "@theme-hope/components/transitions/DropTransition";
+
 import type { ThemePortfolioFrontmatter } from "../../shared/index.js";
 
 import "../styles/portfolio-home.scss";

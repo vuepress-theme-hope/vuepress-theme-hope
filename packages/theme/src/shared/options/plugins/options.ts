@@ -17,15 +17,15 @@ import type { ReadingTimePluginOptions } from "@vuepress/plugin-reading-time";
 import type { RedirectPluginOptions } from "@vuepress/plugin-redirect";
 import type { SearchPluginOptions } from "@vuepress/plugin-search";
 import type { SeoPluginOptions } from "@vuepress/plugin-seo";
+import type { ShikiPluginOptions } from "@vuepress/plugin-shiki";
 import type { SitemapPluginOptions } from "@vuepress/plugin-sitemap";
+import type { WatermarkPluginOptions } from "@vuepress/plugin-watermark";
 import type { ComponentPluginOptions } from "vuepress-plugin-components";
 import type { MarkdownEnhancePluginOptions } from "vuepress-plugin-md-enhance";
 import type { SearchProPluginOptions } from "vuepress-plugin-search-pro";
 
 import type { BlogOptions } from "./blog.js";
 import type { PrismjsOptions } from "./prism.js";
-import type { WatermarkPluginOptions } from "@vuepress/plugin-watermark";
-import type { ShikiPluginOptions } from "@vuepress/plugin-shiki";
 
 export interface PluginsOptions {
   /**

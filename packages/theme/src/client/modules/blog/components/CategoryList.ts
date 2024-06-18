@@ -5,6 +5,7 @@ import { RouteLink, usePageData } from "vuepress/client";
 import { generateIndexFromHash } from "vuepress-shared/client";
 
 import { useCategoryMap } from "@theme-hope/modules/blog/composables/index";
+
 import cssVariables from "../../../styles/variables.module.scss";
 
 import "../styles/category-list.scss";

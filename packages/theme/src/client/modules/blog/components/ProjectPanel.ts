@@ -13,9 +13,9 @@ import {
   LinkIcon,
   ProjectIcon,
 } from "@theme-hope/modules/blog/components/icons/index";
-import cssVariables from "../../../styles/variables.module.scss";
 
 import type { ThemeBlogHomeProjectOptions } from "../../../../shared/index.js";
+import cssVariables from "../../../styles/variables.module.scss";
 
 import "../styles/project-panel.scss";
 

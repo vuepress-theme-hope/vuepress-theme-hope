@@ -1,11 +1,11 @@
 import type { SlotsType, VNode } from "vue";
 import { defineComponent, h, onMounted, ref } from "vue";
+import { RenderDefault } from "vuepress-shared/client";
 
 import { FadeSlideY } from "@theme-hope/components/transitions/index";
+import { usePure } from "@theme-hope/composables/index";
 import PasswordModal from "@theme-hope/modules/encrypt/components/PasswordModal";
 import { useGlobalEncrypt } from "@theme-hope/modules/encrypt/composables/index";
-import { usePure } from "@theme-hope/composables/index";
-import { RenderDefault } from "vuepress-shared/client";
 
 export default defineComponent({
   name: "GlobalEncrypt",

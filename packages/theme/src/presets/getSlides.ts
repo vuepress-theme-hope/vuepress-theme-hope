@@ -1,12 +1,13 @@
-import type { BlogTypeOptions } from "@vuepress/plugin-blog";
-import type { Page } from "vuepress";
-import {
-  ArticleInfo,
-  type ArticleInfoData,
-  type ThemeNormalPageFrontmatter,
-} from "../shared/index.js";
 import { dateSorter } from "@vuepress/helper";
+import type { BlogTypeOptions } from "@vuepress/plugin-blog";
 import type { GitData } from "@vuepress/plugin-git";
+import type { Page } from "vuepress";
+
+import type {
+  ArticleInfoData,
+  ThemeNormalPageFrontmatter,
+} from "../shared/index.js";
+import { ArticleInfo } from "../shared/index.js";
 
 export interface SlidesOptions {
   /**
