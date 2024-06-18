@@ -4,9 +4,15 @@
   "command": {
     "version": {
       "allowBranch": "main",
+      "allowPeerDependenciesUpdate": true,
       "conventionalCommits": true,
       "exact": true,
-      "message": "chore(release): publish v%v"
+      "message": "chore(release): publish v%v",
+      "syncWorkspaceLock": true
+    },
+    "publish": {
+      "graphType": "all",
+      "removePackageFields": ["devDependencies", "scripts"]
     }
   },
   "changelogPreset": {
