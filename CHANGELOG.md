@@ -4,6 +4,16 @@ All notable changes to this project will be documented in this file. See [Conven
 
 <!-- #region recent-change -->
 
+## [2.0.0-rc.49](https://github.com/vuepress-theme-hope/vuepress-theme-hope/compare/v2.0.0-rc.48...v2.0.0-rc.49) (2024-06-18)
+
+### 🐛 Bug Fixes
+
+- **deps:** update dependency vidstack to v1.11.22 ([#4219](https://github.com/vuepress-theme-hope/vuepress-theme-hope/issues/4219)) ([5b2d642](https://github.com/vuepress-theme-hope/vuepress-theme-hope/commit/5b2d6427ec1ab4b6c46ef5975704ee8c1c091c40))
+- **md-enhance:** fix hint container with code block styles ([1d41825](https://github.com/vuepress-theme-hope/vuepress-theme-hope/commit/1d41825b14d2973256ae62a35aa4c726550af151))
+- **theme:** fix navbar active state ([db398eb](https://github.com/vuepress-theme-hope/vuepress-theme-hope/commit/db398eb3b0adde11922acb1b905f5d89ed6f1836))
+
+<!-- #region recent-change -->
+
 ## [2.0.0-rc.48](https://github.com/vuepress-theme-hope/vuepress-theme-hope/compare/v2.0.0-rc.47...v2.0.0-rc.48) (2024-06-04)
 
 ### ✨ Features

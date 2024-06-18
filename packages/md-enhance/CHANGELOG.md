@@ -2,6 +2,14 @@
 
 All notable changes to this project will be documented in this file. See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+<!-- #region recent-change -->
+
+## [2.0.0-rc.49](https://github.com/vuepress-theme-hope/vuepress-theme-hope/compare/v2.0.0-rc.48...v2.0.0-rc.49) (2024-06-18)
+
+### 🐛 Bug Fixes
+
+- **md-enhance:** fix hint container with code block styles ([1d41825](https://github.com/vuepress-theme-hope/vuepress-theme-hope/commit/1d41825b14d2973256ae62a35aa4c726550af151))
+
 ## [2.0.0-rc.48](https://github.com/vuepress-theme-hope/vuepress-theme-hope/compare/v2.0.0-rc.47...v2.0.0-rc.48) (2024-06-04)
 
 ### ✨ Features

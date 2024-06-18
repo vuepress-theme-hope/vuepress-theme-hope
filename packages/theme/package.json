@@ -1,6 +1,6 @@
 {
   "name": "vuepress-theme-hope",
-  "version": "2.0.0-rc.48",
+  "version": "2.0.0-rc.49",
   "description": "A light vuepress theme with tons of features",
   "keywords": [
     "vuepress",
@@ -102,7 +102,8 @@
   },
   "devDependencies": {
     "@vuepress/bundler-vite": "2.0.0-rc.13",
-    "@vuepress/bundler-webpack": "2.0.0-rc.13"
+    "@vuepress/bundler-webpack": "2.0.0-rc.13",
+    "vuepress-plugin-search-pro": "workspace:*"
   },
   "peerDependencies": {
     "@vuepress/plugin-docsearch": "2.0.0-rc.36",
