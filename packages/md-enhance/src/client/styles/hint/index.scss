@@ -157,7 +157,7 @@
       }
     }
 
-    code {
+    :not(pre) > code {
       background: var(--important-code-bg-color);
     }
   }
@@ -174,7 +174,7 @@
       }
     }
 
-    code {
+    :not(pre) > code {
       background: var(--info-code-bg-color);
     }
   }
@@ -191,7 +191,7 @@
       }
     }
 
-    code {
+    :not(pre) > code {
       background: var(--note-code-bg-color);
     }
   }
@@ -208,7 +208,7 @@
       }
     }
 
-    code {
+    :not(pre) > code {
       background: var(--tip-code-bg-color);
     }
   }
@@ -225,7 +225,7 @@
       }
     }
 
-    code {
+    :not(pre) > code {
       background: var(--warning-code-bg-color);
     }
   }
@@ -242,7 +242,7 @@
       }
     }
 
-    code {
+    :not(pre) > code {
       background: var(--caution-code-bg-color);
     }
   }
@@ -283,7 +283,7 @@
       color: var(--vp-tc);
     }
 
-    code {
+    :not(pre) > code {
       background: var(--detail-code-bg-color);
     }
 
