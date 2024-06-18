@@ -154,6 +154,18 @@ div[class*="language-"] {
     }
   }
 
+  // notation word highlight
+  // - `// [\!code word:xxx]`
+  // - `// [\!code word:xxx:3]`
+  .highlighted-word {
+    margin: -1px -2px;
+    padding: 1px 2px;
+    border: solid 1px var(--code-word-highlight-border);
+    border-radius: 4px;
+
+    background-color: var(--code-word-highlight-bg-color);
+  }
+
   // line numbers
   &.line-numbers-mode {
     &::after {
@@ -235,5 +247,25 @@ div[class*="language-"] {
     .line-numbers {
       display: none;
     }
+  }
+
+  // whitespace
+  .tab,
+  .space {
+    position: relative;
+  }
+
+  .tab::before,
+  .space::before {
+    position: absolute;
+    opacity: 0.3;
+  }
+
+  .tab::before {
+    content: "⇥";
+  }
+
+  .space::before {
+    content: "·";
   }
 }
