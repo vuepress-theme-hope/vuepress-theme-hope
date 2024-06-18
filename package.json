@@ -59,7 +59,7 @@
     "@rollup/plugin-node-resolve": "15.2.3",
     "@rollup/plugin-replace": "5.0.7",
     "@types/inquirer": "9.0.7",
-    "@types/node": "20.14.2",
+    "@types/node": "20.14.5",
     "@vitest/coverage-v8": "1.6.0",
     "@vue/eslint-config-typescript": "13.0.0",
     "concurrently": "8.2.2",
@@ -90,11 +90,11 @@
     "stylelint-config-hope": "7.0.2",
     "through2": "4.0.2",
     "tslib": "2.6.3",
-    "tsx": "4.15.4",
+    "tsx": "4.15.6",
     "typescript": "5.4.5",
     "vitest": "1.6.0"
   },
-  "packageManager": "pnpm@9.2.0",
+  "packageManager": "pnpm@9.4.0",
   "engines": {
     "node": ">=20"
   }

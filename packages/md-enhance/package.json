@@ -101,7 +101,7 @@
     "@vueuse/core": "^10.11.0",
     "balloon-css": "^1.2.0",
     "js-yaml": "^4.1.0",
-    "vue": "^3.4.28",
+    "vue": "^3.4.29",
     "vuepress-shared": "workspace:*"
   },
   "devDependencies": {

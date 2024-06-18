@@ -50,7 +50,7 @@
     "balloon-css": "^1.2.0",
     "create-codepen": "^2.0.0",
     "qrcode": "^1.5.3",
-    "vue": "^3.4.28",
+    "vue": "^3.4.29",
     "vuepress-shared": "workspace:*"
   },
   "devDependencies": {
