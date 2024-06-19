@@ -127,7 +127,7 @@
     "reveal.js": "^5.0.0",
     "sandpack-vue3": "^3.0.0",
     "sass-loader": "^14.0.0",
-    "vuepress": "2.0.0-rc.13"
+    "vuepress": "2.0.0-rc.14"
   },
   "peerDependenciesMeta": {
     "@types/reveal.js": {

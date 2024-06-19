@@ -39,7 +39,7 @@
     "@vuepress/plugin-redirect": "2.0.0-rc.36",
     "three": "0.165.0",
     "vue": "3.4.29",
-    "vuepress": "2.0.0-rc.13",
+    "vuepress": "2.0.0-rc.14",
     "vuepress-theme-hope": "workspace:*"
   }
 }
