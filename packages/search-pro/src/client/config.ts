@@ -1,4 +1,3 @@
-import type { ClientConfig } from "vuepress/client";
 import { defineClientConfig } from "vuepress/client";
 
 import SearchBox from "./components/SearchBox.js";
@@ -16,4 +15,4 @@ export default defineClientConfig({
     setupSearchModal();
   },
   rootComponents: [SearchModal],
-}) as ClientConfig;
+});

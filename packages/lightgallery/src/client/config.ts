@@ -1,4 +1,3 @@
-import type { ClientConfig } from "vuepress/client";
 import { defineClientConfig } from "vuepress/client";
 
 import LightGallery from "./components/LightGallery.js";
@@ -10,4 +9,4 @@ export default defineClientConfig({
     injectLightGalleryConfig(app);
   },
   rootComponents: [LightGallery],
-}) as ClientConfig;
+});
