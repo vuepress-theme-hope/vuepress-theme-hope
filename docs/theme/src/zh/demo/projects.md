@@ -283,6 +283,13 @@ blogs:
     repo: https://github.com/Mister-Hope/Mister-Hope.github.io
     preview: /assets/image/mrhope.jpg
 
+  - name: 熊黎龙的官方文档
+    desc: 包含python、javascript、ubuntu相关教程内容。
+    logo: http://www.xionglilong.com/logo.svg
+    url: http://www.xionglilong.com
+    repo: https://github.com/xionglilong/blog-vuepress2
+    preview: http://www.xionglilong.com/blog_preview.png
+
   - name: 墨七
     desc: 简单快乐，理应如此。
     logo: https://file.mo7.cc/static/lxh_gif/lxh_71.gif
