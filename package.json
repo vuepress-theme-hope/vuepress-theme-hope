@@ -67,7 +67,7 @@
     "cpx2": "7.0.1",
     "cross-env": "7.0.3",
     "cz-git": "1.9.3",
-    "esbuild": "0.21.5",
+    "esbuild": "0.22.0",
     "eslint": "8.57.0",
     "eslint-config-mister-hope": "0.1.1",
     "eslint-plugin-vue": "9.26.0",
