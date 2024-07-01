@@ -225,11 +225,11 @@ importers:
         specifier: 4.4.3
         version: 4.4.3
       echarts:
-        specifier: 5.5.0
-        version: 5.5.0
+        specifier: 5.5.1
+        version: 5.5.1
       echarts-wordcloud:
         specifier: 2.1.0
-        version: 2.1.0(echarts@5.5.0)
+        version: 2.1.0(echarts@5.5.1)
       katex:
         specifier: 0.16.10
         version: 0.16.10
@@ -321,8 +321,8 @@ importers:
         specifier: 4.4.3
         version: 4.4.3
       echarts:
-        specifier: 5.5.0
-        version: 5.5.0
+        specifier: 5.5.1
+        version: 5.5.1
       katex:
         specifier: 0.16.10
         version: 0.16.10
@@ -381,8 +381,8 @@ importers:
         specifier: 4.4.3
         version: 4.4.3
       echarts:
-        specifier: 5.5.0
-        version: 5.5.0
+        specifier: 5.5.1
+        version: 5.5.1
       katex:
         specifier: 0.16.10
         version: 0.16.10
@@ -550,7 +550,7 @@ importers:
         version: link:../../docs-shared
       echarts-wordcloud:
         specifier: 2.1.0
-        version: 2.1.0(echarts@5.5.0)
+        version: 2.1.0(echarts@5.5.1)
       flowchart.ts:
         specifier: 3.0.0
         version: 3.0.0
@@ -664,7 +664,7 @@ importers:
         version: link:../../docs-shared
       echarts-wordcloud:
         specifier: 2.1.0
-        version: 2.1.0(echarts@5.5.0)
+        version: 2.1.0(echarts@5.5.1)
       flowchart.ts:
         specifier: 3.0.0
         version: 3.0.0
@@ -4966,6 +4966,9 @@ packages:
 
   echarts@5.5.0:
     resolution: {integrity: sha512-rNYnNCzqDAPCr4m/fqyUFv7fD9qIsd50S6GDFgO1DxZhncCsNsG7IfUlAlvZe5oSEQxtsjnHiUuppzccry93Xw==}
+
+  echarts@5.5.1:
+    resolution: {integrity: sha512-Fce8upazaAXUVUVsjgV6mBnGuqgO+JNDlcgF79Dksy4+wgGpQB2lmYoO4TSweFg/mZITdpGHomw/cNBJZj1icA==}
 
   ee-first@1.1.1:
     resolution: {integrity: sha512-WMwm9LhRUo+WUaRN+vRuETqG89IgZphVSNkdFgeb6sS/E4OrDIN7t48CAewSHXc6C8lefD8KKfr5vY61brQlow==}
@@ -9344,6 +9347,9 @@ packages:
 
   zrender@5.5.0:
     resolution: {integrity: sha512-O3MilSi/9mwoovx77m6ROZM7sXShR/O/JIanvzTwjN3FORfLSr81PsUGd7jlaYOeds9d8tw82oP44+3YucVo+w==}
+
+  zrender@5.6.0:
+    resolution: {integrity: sha512-uzgraf4njmmHAbEUxMJ8Oxg+P3fT04O+9p7gY+wJRVxo8Ge+KmYv0WJev945EH4wFuc4OY2NLXz46FZrWS9xJg==}
 
 snapshots:
 
@@ -13910,14 +13916,19 @@ snapshots:
 
   eastasianwidth@0.2.0: {}
 
-  echarts-wordcloud@2.1.0(echarts@5.5.0):
+  echarts-wordcloud@2.1.0(echarts@5.5.1):
     dependencies:
-      echarts: 5.5.0
+      echarts: 5.5.1
 
   echarts@5.5.0:
     dependencies:
       tslib: 2.3.0
       zrender: 5.5.0
+
+  echarts@5.5.1:
+    dependencies:
+      tslib: 2.3.0
+      zrender: 5.6.0
 
   ee-first@1.1.1: {}
 
@@ -18830,5 +18841,9 @@ snapshots:
   yoctocolors@2.0.2: {}
 
   zrender@5.5.0:
+    dependencies:
+      tslib: 2.3.0
+
+  zrender@5.6.0:
     dependencies:
       tslib: 2.3.0

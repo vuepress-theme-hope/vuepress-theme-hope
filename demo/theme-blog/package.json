@@ -22,7 +22,7 @@
     "@vuepress/plugin-docsearch": "2.0.0-rc.37",
     "@waline/client": "3.2.2",
     "chart.js": "4.4.3",
-    "echarts": "5.5.0",
+    "echarts": "5.5.1",
     "katex": "0.16.10",
     "kotlin-playground": "1.30.0",
     "markmap-lib": "0.17.0",
