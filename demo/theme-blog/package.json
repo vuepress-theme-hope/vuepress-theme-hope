@@ -20,7 +20,7 @@
     "@vuepress/bundler-webpack": "2.0.0-rc.14",
     "@vuepress/helper": "2.0.0-rc.37",
     "@vuepress/plugin-docsearch": "2.0.0-rc.37",
-    "@waline/client": "3.2.2",
+    "@waline/client": "3.2.6",
     "chart.js": "4.4.3",
     "echarts": "5.5.0",
     "katex": "0.16.10",
