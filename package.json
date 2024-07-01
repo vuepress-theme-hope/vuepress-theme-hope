@@ -59,7 +59,7 @@
     "@rollup/plugin-node-resolve": "15.2.3",
     "@rollup/plugin-replace": "5.0.7",
     "@types/inquirer": "9.0.7",
-    "@types/node": "20.14.7",
+    "@types/node": "20.14.9",
     "@vitest/coverage-v8": "1.6.0",
     "@vue/eslint-config-typescript": "13.0.0",
     "concurrently": "8.2.2",
