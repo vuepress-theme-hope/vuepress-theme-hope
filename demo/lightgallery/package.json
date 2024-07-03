@@ -18,7 +18,7 @@
     "@vuepress/bundler-webpack": "2.0.0-rc.14",
     "@vuepress/theme-default": "2.0.0-rc.37",
     "sass-loader": "14.2.1",
-    "vue": "3.4.29",
+    "vue": "3.4.31",
     "vuepress": "2.0.0-rc.14",
     "vuepress-plugin-lightgallery": "workspace:*"
   }
