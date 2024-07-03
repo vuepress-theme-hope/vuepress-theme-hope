@@ -53,6 +53,10 @@
     inset: 0;
     z-index: 2;
     display: block;
+
+    &::after {
+      display: none;
+    }
   }
 
   &-preview {
