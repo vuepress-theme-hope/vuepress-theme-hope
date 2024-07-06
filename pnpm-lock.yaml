@@ -210,8 +210,8 @@ importers:
   demo/md-enhance:
     devDependencies:
       '@vue/repl':
-        specifier: 4.3.0
-        version: 4.3.0
+        specifier: 4.3.1
+        version: 4.3.1
       '@vuepress/bundler-vite':
         specifier: 2.0.0-rc.14
         version: 2.0.0-rc.14(@types/node@20.14.10)(jiti@1.21.6)(lightningcss@1.25.1)(sass@1.77.6)(terser@5.31.1)(tsx@4.16.2)(typescript@5.5.3)(yaml@2.4.5)
@@ -300,8 +300,8 @@ importers:
   demo/theme-blog:
     devDependencies:
       '@vue/repl':
-        specifier: 4.3.0
-        version: 4.3.0
+        specifier: 4.3.1
+        version: 4.3.1
       '@vuepress/bundler-vite':
         specifier: 2.0.0-rc.14
         version: 2.0.0-rc.14(@types/node@20.14.10)(jiti@1.21.6)(lightningcss@1.25.1)(sass@1.77.6)(terser@5.31.1)(tsx@4.16.2)(typescript@5.5.3)(yaml@2.4.5)
@@ -366,8 +366,8 @@ importers:
   demo/theme-docs:
     devDependencies:
       '@vue/repl':
-        specifier: 4.3.0
-        version: 4.3.0
+        specifier: 4.3.1
+        version: 4.3.1
       '@vuepress/bundler-vite':
         specifier: 2.0.0-rc.14
         version: 2.0.0-rc.14(@types/node@20.14.10)(jiti@1.21.6)(lightningcss@1.25.1)(sass@1.77.6)(terser@5.31.1)(tsx@4.16.2)(typescript@5.5.3)(yaml@2.4.5)
@@ -639,8 +639,8 @@ importers:
         specifier: 0.16.7
         version: 0.16.7
       '@vue/repl':
-        specifier: 4.3.0
-        version: 4.3.0
+        specifier: 4.3.1
+        version: 4.3.1
       '@vuepress/bundler-vite':
         specifier: 2.0.0-rc.14
         version: 2.0.0-rc.14(@types/node@20.14.10)(jiti@1.21.6)(lightningcss@1.25.1)(sass@1.77.6)(terser@5.31.1)(tsx@4.16.2)(typescript@5.5.3)(yaml@2.4.5)
@@ -3470,6 +3470,9 @@ packages:
 
   '@vue/repl@4.3.0':
     resolution: {integrity: sha512-TTo3Ie75YMpJ1LGWTsgq1jn/wCI4W++9sefkL0Vc7PpRv7s7+rPxUNgniyqaf1+yZEvC0oVNI/2Jiof42ihhpA==}
+
+  '@vue/repl@4.3.1':
+    resolution: {integrity: sha512-yzUuLhR+MqOGBDES+xbnm27SfPIEv7XKwhFWWpQhL7HUbXj77GVu+x50Q56JhCWWKTUJzk9MOvAn7bSgdvB5og==}
 
   '@vue/runtime-core@3.4.31':
     resolution: {integrity: sha512-LDkztxeUPazxG/p8c5JDDKPfkCDBkkiNLVNf7XZIUnJ+66GVGkP+TIh34+8LtPisZ+HMWl2zqhIw0xN5MwU1cw==}
@@ -12023,6 +12026,8 @@ snapshots:
       '@vue/shared': 3.4.31
 
   '@vue/repl@4.3.0': {}
+
+  '@vue/repl@4.3.1': {}
 
   '@vue/runtime-core@3.4.31':
     dependencies:
