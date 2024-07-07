@@ -20,6 +20,13 @@ docs:
     repo: https://github.com/inNENU/resource/
     preview: /assets/image/innenu.jpg
 
+  - name: viptv - 云视听
+    desc: 便捷 、高效 、最有价值的视听链
+    logo: https://viptv.work/logo.svg
+    url: https://viptv.work/
+    repo: https://github.com/viptv-work/viptv/
+    preview: https://viptv.work/assets/png/4h-transparent-file.png
+
   - name: MaaAssistantArknights
     desc: 一款明日方舟游戏小助手
     logo: https://cdn.jsdelivr.net/gh/MaaAssistantArknights/design@main/logo/maa-logo_512x512.png
