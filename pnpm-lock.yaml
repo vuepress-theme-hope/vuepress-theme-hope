@@ -96,8 +96,8 @@ importers:
         specifier: 3.3.2
         version: 3.3.2
       rimraf:
-        specifier: 5.0.7
-        version: 5.0.7
+        specifier: 5.0.9
+        version: 5.0.9
       rollup:
         specifier: 4.18.0
         version: 4.18.0
@@ -7940,9 +7940,9 @@ packages:
     deprecated: Rimraf versions prior to v4 are no longer supported
     hasBin: true
 
-  rimraf@5.0.7:
-    resolution: {integrity: sha512-nV6YcJo5wbLW77m+8KjH8aB/7/rxQy9SZ0HY5shnwULfS+9nmTtVXAJET5NdZmCzA4fPI/Hm1wo/Po/4mopOdg==}
-    engines: {node: '>=14.18'}
+  rimraf@5.0.9:
+    resolution: {integrity: sha512-3i7b8OcswU6CpU8Ej89quJD4O98id7TtVM5U4Mybh84zQXdrFmDLouWBEEaD/QfO3gDDfH+AGFCGsR7kngzQnA==}
+    engines: {node: 14 >=14.20 || 16 >=16.20 || >=18}
     hasBin: true
 
   robust-predicates@3.0.2:
@@ -17179,7 +17179,7 @@ snapshots:
     dependencies:
       glob: 7.2.3
 
-  rimraf@5.0.7:
+  rimraf@5.0.9:
     dependencies:
       glob: 10.4.2
 
@@ -18450,7 +18450,7 @@ snapshots:
       launch-editor: 2.8.0
       open: 10.1.0
       p-retry: 6.2.0
-      rimraf: 5.0.7
+      rimraf: 5.0.9
       schema-utils: 4.2.0
       selfsigned: 2.4.1
       serve-index: 1.9.1
