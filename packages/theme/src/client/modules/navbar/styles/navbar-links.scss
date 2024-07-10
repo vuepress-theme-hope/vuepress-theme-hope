@@ -20,7 +20,7 @@
   > .auto-link {
     color: var(--grey-dark);
 
-    &::after {
+    &::before {
       content: " ";
 
       position: absolute;
@@ -42,7 +42,7 @@
 
     &:hover,
     &.route-link-active {
-      &::after {
+      &::before {
         inset: auto 0 0;
         visibility: visible;
       }
