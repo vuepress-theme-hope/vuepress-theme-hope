@@ -82,7 +82,7 @@ export default defineComponent({
     return (): VNode =>
       h("div", { class: "vp-site-info", "data-name": props.name }, [
         h("a", {
-          class: "vp-site-info-navigator",
+          class: ["vp-site-info-navigator", "no-external-link-icon"],
           title: props.name,
           href: props.url,
           target: "_blank",
