@@ -43,7 +43,7 @@
     "dev:ts": "tsc -b tsconfig.build.json --watch"
   },
   "dependencies": {
-    "@stackblitz/sdk": "^1.10.0",
+    "@stackblitz/sdk": "^1.11.0",
     "@vuepress/helper": "2.0.0-rc.37",
     "@vuepress/plugin-sass-palette": "2.0.0-rc.37",
     "@vueuse/core": "^10.11.0",
