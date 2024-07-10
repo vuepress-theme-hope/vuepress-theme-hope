@@ -1,13 +1,8 @@
+import { select } from "@inquirer/prompts";
 import { execaCommandSync } from "execa";
-import inquirer from "inquirer";
 
-import type { Lang } from "../i18n/index.js";
-
-import type { PackageManager } from "./index.js";
-
-export interface RegistryAnswer {
-  registry: "国内镜像源" | "当前源";
-}
+import type { PackageManager } from "../config/index.js";
+import type { SupportedLang } from "../i18n/index.js";
 
 const NPM_MIRROR_REGISTRY = "https://registry.npmmirror.com/";
 
@@ -23,7 +18,7 @@ const getUserRegistry = (
 
 export const getRegistry = async (
   packageManager: PackageManager,
-  lang: Lang,
+  lang: SupportedLang,
 ): Promise<string> => {
   const isYarnModern =
     packageManager === "yarn" &&
@@ -43,15 +38,14 @@ export const getRegistry = async (
     );
   }
 
-  if (lang === "简体中文") {
-    const { registry } = await inquirer.prompt<RegistryAnswer>([
-      {
-        name: "registry",
-        type: "list",
-        message: "选择你想使用的源",
-        choices: ["国内镜像源", "当前源"],
-      },
-    ]);
+  if (lang === "zh") {
+    const registry = await select({
+      message: "选择你想使用的源",
+      choices: ["国内镜像源", "当前源"].map((registry) => ({
+        name: registry,
+        value: registry,
+      })),
+    });
 
     return registry === "国内镜像源" ? NPM_MIRROR_REGISTRY : userRegistry;
   }

@@ -2,8 +2,8 @@ import { join } from "node:path";
 
 import { execaCommandSync } from "execa";
 
+import type { PackageManager } from "../config/index.js";
 import type { CreateLocale } from "../i18n/index.js";
-import type { PackageManager } from "../utils/index.js";
 
 export const getWorkflowContent = (
   packageManager: PackageManager,
@@ -27,7 +27,7 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - name: Checkout
-        uses: actions/checkout@v3
+        uses: actions/checkout@v4
         with:
           fetch-depth: 0
           # ${workflow.submodule}
@@ -45,7 +45,7 @@ ${
 }
 
       - name: ${workflow.setupNode}
-        uses: actions/setup-node@v3
+        uses: actions/setup-node@v4
         with:
           node-version: 20
           cache: ${packageManager}

@@ -44,12 +44,11 @@
     "dev:ts": "tsc -b tsconfig.build.json --watch"
   },
   "dependencies": {
+    "@inquirer/prompts": "^5.1.2",
     "cac": "6.7.14",
-    "execa": "9.3.0",
-    "inquirer": "10.0.1"
+    "execa": "9.3.0"
   },
   "devDependencies": {
-    "@types/inquirer": "9.0.7",
     "vuepress": "2.0.0-rc.14",
     "vuepress-theme-hope": "workspace:*"
   },

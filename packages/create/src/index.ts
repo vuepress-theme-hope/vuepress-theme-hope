@@ -2,38 +2,38 @@
 import { existsSync, readdirSync } from "node:fs";
 import { resolve } from "node:path";
 
+import { confirm, select } from "@inquirer/prompts";
 import { cac } from "cac";
 import { execaCommand, execaCommandSync } from "execa";
-import inquirer from "inquirer";
 
-import type { Bundler, Preset } from "./config/index.js";
+import type {
+  PackageManager,
+  SupportedBundler,
+  SupportedPreset,
+} from "./config/index.js";
 import {
-  bundlers,
+  availablePackageManagers,
   generateTemplate,
-  presets,
+  supportedBundlers,
+  supportedPresets,
   version,
 } from "./config/index.js";
-import type { CreateLocale, Lang } from "./i18n/index.js";
+import type { CreateLocale, SupportedLang } from "./i18n/index.js";
 import { getLanguage } from "./i18n/index.js";
 import { createPackageJson } from "./packageJson.js";
 import { createTsConfig } from "./tsconfig.js";
-import type { PackageManager } from "./utils/index.js";
-import {
-  ensureDirExistSync,
-  getPackageManager,
-  getRegistry,
-} from "./utils/index.js";
+import { ensureDirExistSync, getRegistry } from "./utils/index.js";
 
 interface CreateOptions {
-  bundler?: Bundler | null;
-  preset?: Preset | null;
+  bundler?: SupportedBundler | null;
+  preset?: SupportedPreset | null;
 }
 
 const preAction = async (
   targetDir: string,
   { bundler, preset }: CreateOptions,
 ): Promise<{
-  lang: Lang;
+  lang: SupportedLang;
   locale: CreateLocale;
   packageManager: PackageManager;
 } | void> => {
@@ -44,11 +44,11 @@ const preAction = async (
   const { lang, locale } = await getLanguage();
 
   // Check bundler
-  if (bundler && !bundlers.includes(bundler))
+  if (bundler && !supportedBundlers.includes(bundler))
     return console.log(locale.error.bundler);
 
   // Check presets
-  if (preset && !presets.includes(preset))
+  if (preset && !supportedPresets.includes(preset))
     return console.log(locale.error.preset);
 
   const targetDirPath = resolve(process.cwd(), targetDir);
@@ -58,9 +58,13 @@ const preAction = async (
     return console.error(locale.error.dirNotEmpty(targetDir));
 
   // Get packageManager
-  const packageManager = await getPackageManager(
-    locale.question.packageManager,
-  );
+  const packageManager = await select({
+    message: locale.question.packageManager,
+    choices: availablePackageManagers.map((manager) => ({
+      name: manager,
+      value: manager,
+    })),
+  });
 
   // Check if the user is a noob and warn him 🤪
   if (targetDir.startsWith("[") && targetDir.endsWith("]"))
@@ -73,7 +77,7 @@ const preAction = async (
 };
 
 interface PostActionOptions {
-  lang: Lang;
+  lang: SupportedLang;
   cwd?: string;
   locale: CreateLocale;
   packageManager: PackageManager;
@@ -105,16 +109,12 @@ const postAction = async ({
    * Open dev server
    */
 
-  const { choice } = await inquirer.prompt<{ choice: boolean }>([
-    {
-      name: "choice",
-      type: "confirm",
+  if (
+    await confirm({
       message: locale.question.devServer,
       default: true,
-    },
-  ]);
-
-  if (choice) {
+    })
+  ) {
     console.log(locale.flow.devServer);
 
     await execaCommand(`${packageManager} run docs:dev`, {
@@ -215,12 +215,12 @@ cli
 cli.help(() => [
   {
     title:
-      "pnpm create vuepress-theme-hope [dir] / yarn create vuepress-theme-hope [dir] / npm init vuepress-theme-hope@latest [dir]",
+      "pnpm create vuepress-theme-hope [dir] / npm init vuepress-theme-hope@latest [dir] / yarn create vuepress-theme-hope [dir]",
     body: "Create a vuepress-theme-hope template in [dir]",
   },
   {
     title:
-      "pnpm create vuepress-theme-hope inject [dir] / yarn create vuepress-theme-hope add [dir] / npm init vuepress-theme-hope@latest inject [dir]",
+      "pnpm create vuepress-theme-hope inject [dir] / npm init vuepress-theme-hope@latest inject [dir] / yarn create vuepress-theme-hope add [dir]",
     body: "Add vuepress-theme-hope template in [dir] under current project",
   },
 ]);

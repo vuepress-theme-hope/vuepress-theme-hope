@@ -1,31 +1,26 @@
-import inquirer from "inquirer";
+import { select } from "@inquirer/prompts";
 
 import { en } from "./en.js";
-import type { CreateLocale, Lang } from "./typings.js";
+import type { CreateLocale, SupportedLang } from "./typings.js";
 import { zh } from "./zh.js";
 
 export * from "./typings.js";
 
-const i18n: Record<Lang, CreateLocale> = {
-  // eslint-disable-next-line @typescript-eslint/naming-convention
-  "english (US)": en,
-  简体中文: zh,
-};
+const i18n: Record<SupportedLang, CreateLocale> = { en, zh };
 
 interface LanguageResult {
-  lang: Lang;
+  lang: SupportedLang;
   locale: CreateLocale;
 }
 
 export const getLanguage = async (): Promise<LanguageResult> => {
-  const { language } = await inquirer.prompt<{ language: Lang }>([
-    {
-      name: "language",
-      type: "list",
-      message: "Select a language to display / 选择显示语言",
-      choices: ["english (US)", "简体中文"],
-    },
-  ]);
+  const language = await select<SupportedLang>({
+    message: "Select a language to display / 选择显示语言",
+    choices: [
+      { name: "English", value: "en" },
+      { name: "简体中文", value: "zh" },
+    ],
+  });
 
   return {
     lang: language,
