@@ -120,12 +120,18 @@
   }
 
   div[class*="language-"] {
-    border-top-left-radius: 0;
-    border-top-right-radius: 0;
+    &.line-numbers-mode::after {
+      border-top-left-radius: 0 !important;
+    }
 
-    @media (max-width: hope-config.$mobile) {
-      margin: 0.875rem -1.5rem;
-      border-radius: 0;
+    pre {
+      border-top-left-radius: 0 !important;
+      border-top-right-radius: 0 !important;
+
+      @media (max-width: hope-config.$mobile) {
+        margin: 0.875rem -1.5rem;
+        border-radius: 0 !important;
+      }
     }
 
     code {
