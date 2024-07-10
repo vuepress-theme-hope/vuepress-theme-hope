@@ -241,6 +241,11 @@ div[class*="language-"] {
         counter-increment: line-number;
       }
     }
+
+    // fix diff marker position with line numbers
+    .line.diff::before {
+      left: 4px;
+    }
   }
 
   &:not(.line-numbers-mode) {
