@@ -109,7 +109,8 @@
     "@types/js-yaml": "4.0.9",
     "@vuepress/bundler-vite": "2.0.0-rc.14",
     "markdown-it": "14.1.0",
-    "typescript": "5.5.3"
+    "typescript": "5.5.3",
+    "rollup": "4.18.1"
   },
   "peerDependencies": {
     "@types/reveal.js": "^5.0.0",
