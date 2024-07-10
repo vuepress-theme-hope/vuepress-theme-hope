@@ -51,14 +51,14 @@ icon: code
 
 ::: code-tabs
 
-@tab html引入
+@tab html 引入
 
 ```html
 <!-- 引入到演示的 html 中，修改为你的 href -->
 <link rel="stylesheet" href="__uno.css" />
 ```
 
-@tab js引入
+@tab js 引入
 
 ```js
 // 引入下面部分到演示的 js 中，修改为你的 href

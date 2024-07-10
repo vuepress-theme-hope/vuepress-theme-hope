@@ -156,7 +156,7 @@ tag:
 - `"HuYa"`: 虎牙
 - `"iQiYi"`: 爱奇艺
 - `"KuaiShou"`: 快手
-- `"Nico"`: NicoNico动画
+- `"Nico"`: NicoNico 动画
 - `"QQVideo"`: 腾讯视频
 - `"Twitch"`: Twitch
 - `"WechatCh"`: 微信视频号
@@ -167,7 +167,7 @@ tag:
 @tab 其他
 
 - `"115"`: 115 网盘
-- `"360Yun"`: 360云盘
+- `"360Yun"`: 360 云盘
 - `"AliDrive"`: 阿里云盘
 - `"AliPay"`: 支付宝
 - `"BaiduDisk"`: 百度网盘

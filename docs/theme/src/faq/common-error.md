@@ -40,7 +40,7 @@ This means you have wrong deps installed in your project.
 
 Here is a example:
 
-```
+```shell
  WARN  Issues with peer dependencies found
 .
 ├─┬ @vuepress/plugin-docsearch 2.0.0-rc.7
@@ -61,7 +61,7 @@ The example shows that:
 
 You can always edit your deps version to let them fit each other. Usually you are trying to upgrade vuepress, vuepress bundler and plugins to latest version, but there could be chances where a plugin is not compatible with the latest version of vuepress. In this case, you should downgrade vuepress to the version that is compatible with the plugin or temporarily removing the plugin till it supports latest vuepress.
 
-## `You are not allowed to use plugin XXX yourself in vuepress config file.`
+## You are not allowed to use plugin XXX yourself in vuepress config file
 
 This means you are calling a theme-bundled plugin yourself in VuePress config file.
 
@@ -99,13 +99,13 @@ On windows, you can follow [this guide](https://www.technewstoday.com/how-to-set
 
 :::
 
-## `xxx isn't assign with a lang, and will return 'en-US' instead.`
+## xxx isn't assign with a lang, and will return 'en-US' instead
 
 If you see `xxx isn't assign with a lang, and will return 'en-US' instead.` while the dev process is starting up, please check whether you set lang for every language.
 
 Even if you only have one language, you still need to [set language](../config/i18n.md#setting-language).
 
-## `xxx is missing sidebar config.`
+## xxx is missing sidebar config
 
 Using object format sidebar config means you want to set different sidebar based on routes.
 
@@ -152,7 +152,7 @@ To remove them, run theme with `--debug` flag, and you will get warning logs tel
 
 To use them anyway, check [here](https://vuejs.press/guide/markdown.html#non-standard-html-tags) to get a workaround.
 
-## `Hydration completed but contains mismatches.`
+## Hydration completed but contains mismatches
 
 This error indicates that you have an SSR mismatch, and it should not be a problem with theme.
 

@@ -116,7 +116,7 @@ Markdown 将会把它转换为:
 
 <!-- markdownlint-disable MD038 -->
 
-如果你*真的*想要插入 `<br />` 标签的话，在行尾加上两个以上的空格 (` `) 或斜线 (`/`)，然后按 Enter。
+如果你*真的*想要插入 `<br />` 标签的话，在行尾加上两个以上的空格 () 或斜线 (`/`)，然后按 Enter。
 
 <!-- markdownlint-enable MD038 -->
 
@@ -184,14 +184,14 @@ Markdown 也允许你只在整个段落的第一行最前面加上 `>` :
 引言的块内也可以使用其他的 Markdown 语法，包括标题、列表、代码块等:
 
 ```md
-> ## This is a header.
+> ## This is a header
 >
 > 1. This is the first list item.
 > 1. This is the second list item.
 >
 > Here's some example code:
 >
->     return shell_exec("echo $input | $markdown_script");
+> plain return shell_exec("echo $input | $markdown_script");
 ```
 
 任何标准的文字编辑器都能简单地建立 email 样式的引言，例如 BBEdit ，你可以选取文字后然后从选单中选择*增加引言阶层*。
@@ -398,7 +398,7 @@ end tell
 在代码块里面， `&` 、 `<` 和 `>` 会自动转成 HTML 实体，这样的方式让你非常容易使用 Markdown 插入范例用的 HTML 原始码，只需要复制粘贴，再加上缩进就可以了，剩下的 Markdown 都会帮你处理，例如:
 
 ````md
-```
+```plain
 <div class="footer">
   &copy; 2004 Foo Corporation
 </div>

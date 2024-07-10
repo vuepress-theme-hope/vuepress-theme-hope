@@ -54,14 +54,14 @@ Alice -> Bob: 认证请求
 
 alt 成功情况
 
-    Bob -> Alice: 认证接受
+   plain Bob -> Alice: 认证接受
 
 else 某种失败情况
 
-    Bob -> Alice: 认证失败
+   plain Bob -> Alice: 认证失败
     group 我自己的标签
     Alice -> Log : 开始记录攻击日志
-        loop 1000次
+         loop 1000次
             Alice -> Bob: DNS 攻击
         end
     Alice -> Log : 结束记录攻击日志
@@ -69,7 +69,7 @@ else 某种失败情况
 
 else 另一种失败
 
-    Bob -> Alice: 请重复
+   plain Bob -> Alice: 请重复
 
 end
 @enduml
@@ -152,7 +152,7 @@ if (Page.onSecurityCheck) then (true)
       stop
     endif
 
-    if (isPost?) then (yes)
+   plain if (isPost?) then (yes)
       :Page.onPost();
     else (no)
       :Page.onGet();
@@ -260,15 +260,15 @@ NewYork --> CapitalCity::USA
 ::: md-demo 部署图
 
 @startuml
-node 节点1
-node 节点2
-node 节点3
-node 节点4
-node 节点5
-节点1 -- 节点2 : 标签1
-节点1 .. 节点3 : 标签2
-节点1 ~~ 节点4 : 标签3
-节点1 == 节点5
+node 节点 1
+node 节点 2
+node 节点 3
+node 节点 4
+node 节点 5
+节点 1 -- 节点 2 : 标签 1
+节点 1 .. 节点 3 : 标签 2
+节点 1 ~~ 节点 4 : 标签 3
+节点 1 == 节点 5
 @enduml
 
 :::
@@ -356,7 +356,7 @@ nwdiag {
   network 缓冲区 {
       address = "210.x.x.x/24"
 
-      user [description = "<&person*4.5>\n 用户1"];
+   plain   user [description = "<&person*4.5>\n 用户1"];
       web01 [address = "210.x.x.1, 210.x.x.20",  description = "<&cog*4>\n网战01"]
       web02 [address = "210.x.x.2",  description = "<&cog*4>\n网站02"];
 
@@ -364,7 +364,7 @@ nwdiag {
   network 内网 {
       address = "172.x.x.x/24";
 
-      web01 [address = "172.x.x.1"];
+   plain   web01 [address = "172.x.x.1"];
       web02 [address = "172.x.x.2"];
       db01 [address = "172.x.x.100",  description = "<&spreadsheet*4>\n 数据库01"];
       db02 [address = "172.x.x.101",  description = "<&spreadsheet*4>\n 数据库02"];
