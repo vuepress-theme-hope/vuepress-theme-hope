@@ -1,12 +1,11 @@
 import { existsSync, readFileSync, writeFileSync } from "node:fs";
 import { resolve } from "node:path";
 
-import inquirer from "inquirer";
+import { input, select } from "@inquirer/prompts";
 
-import type { Bundler } from "./config/index.js";
-import { bundlers, version } from "./config/index.js";
+import type { PackageManager, SupportedBundler } from "./config/index.js";
+import { supportedBundlers, version } from "./config/index.js";
 import type { CreateLocale } from "./i18n/typings.js";
-import type { PackageManager } from "./utils/index.js";
 import { PACKAGE_NAME_REG, VERSION_REG, deepAssign } from "./utils/index.js";
 
 const getScript = (
@@ -31,7 +30,7 @@ interface CreatePackageJsonOptions {
   cwd?: string;
   packageManager: PackageManager;
   locale: CreateLocale;
-  bundler: Bundler | null;
+  bundler: SupportedBundler | null;
 }
 
 export const createPackageJson = async ({
@@ -42,14 +41,13 @@ export const createPackageJson = async ({
   cwd = process.cwd(),
 }: CreatePackageJsonOptions): Promise<void> => {
   if (!bundler)
-    ({ bundler } = await inquirer.prompt<{ bundler: Bundler }>([
-      {
-        name: "bundler",
-        type: "list",
-        message: locale.question.bundler,
-        choices: bundlers,
-      },
-    ]));
+    bundler = await select<SupportedBundler>({
+      message: locale.question.bundler,
+      choices: supportedBundlers.map((bundler) => ({
+        name: bundler,
+        value: bundler,
+      })),
+    });
 
   /**
    * Generate package.json
@@ -83,46 +81,35 @@ export const createPackageJson = async ({
   } else {
     console.log(locale.flow.createPackage);
 
-    interface PackageJsonAnswer {
-      name: string;
-      version: string;
-      description: string;
-      license: string;
-    }
+    const name = await input({
+      message: locale.question.name,
+      default: "vuepress-theme-hope-template",
+      validate: (input: string): true | string =>
+        PACKAGE_NAME_REG.exec(input) ? true : locale.error.name,
+    });
 
-    const result = await inquirer.prompt<PackageJsonAnswer>([
-      {
-        name: "name",
-        type: "input",
-        message: locale.question.name,
-        default: "vuepress-theme-hope-template",
-        validate: (input: string): true | string =>
-          PACKAGE_NAME_REG.exec(input) ? true : locale.error.name,
-      },
-      {
-        name: "version",
-        type: "input",
-        message: locale.question.version,
-        default: "2.0.0",
-        validate: (input: string): true | string =>
-          VERSION_REG.exec(input) ? true : locale.error.version,
-      },
-      {
-        name: "description",
-        type: "input",
-        message: locale.question.description,
-        default: "A project of vuepress-theme-hope",
-      },
-      {
-        name: "license",
-        type: "input",
-        message: locale.question.license,
-        default: "MIT",
-      },
-    ]);
+    const description = await input({
+      message: locale.question.description,
+      default: "A project of vuepress-theme-hope",
+    });
+
+    const version = await input({
+      message: locale.question.version,
+      default: "2.0.0",
+      validate: (input: string): true | string =>
+        VERSION_REG.exec(input) ? true : locale.error.version,
+    });
+
+    const license = await input({
+      message: locale.question.license,
+      default: "MIT",
+    });
 
     const packageContent = {
-      ...result,
+      name,
+      description,
+      version,
+      license,
       type: "module",
       scripts,
       devDependencies,

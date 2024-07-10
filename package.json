@@ -52,15 +52,14 @@
   "devDependencies": {
     "@commitlint/cli": "19.3.0",
     "@commitlint/config-conventional": "19.2.2",
-    "@lerna-lite/cli": "3.6.0",
-    "@lerna-lite/publish": "3.6.0",
+    "@lerna-lite/cli": "3.7.0",
+    "@lerna-lite/publish": "3.7.0",
     "@rollup/plugin-alias": "5.1.0",
     "@rollup/plugin-commonjs": "26.0.1",
     "@rollup/plugin-node-resolve": "15.2.3",
     "@rollup/plugin-replace": "5.0.7",
-    "@types/inquirer": "9.0.7",
     "@types/node": "20.14.10",
-    "@vitest/coverage-v8": "1.6.0",
+    "@vitest/coverage-v8": "2.0.1",
     "@vue/eslint-config-typescript": "13.0.0",
     "concurrently": "8.2.2",
     "conventional-changelog-conventionalcommits": "8.0.0",
@@ -79,8 +78,8 @@
     "nano-staged": "0.8.0",
     "ora": "8.0.1",
     "prettier": "3.3.2",
-    "rimraf": "5.0.7",
-    "rollup": "4.18.0",
+    "rimraf": "6.0.0",
+    "rollup": "4.18.1",
     "rollup-plugin-copy": "3.5.0",
     "rollup-plugin-dts": "6.1.1",
     "rollup-plugin-esbuild": "6.1.1",
@@ -92,9 +91,9 @@
     "tslib": "2.6.3",
     "tsx": "4.16.2",
     "typescript": "5.5.3",
-    "vitest": "1.6.0"
+    "vitest": "2.0.1"
   },
-  "packageManager": "pnpm@9.4.0",
+  "packageManager": "pnpm@9.5.0",
   "engines": {
     "node": ">=20"
   }

@@ -1,5 +1,5 @@
 import type { CreateLocale } from "./typings.js";
-import type { PackageManager } from "../utils/index.js";
+import type { PackageManager } from "../config/index.js";
 
 export const en: CreateLocale = {
   flow: {

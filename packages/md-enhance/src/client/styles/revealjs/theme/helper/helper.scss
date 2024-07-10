@@ -100,12 +100,12 @@ $default-variables: meta.module-variables("vars");
     --r-overlay-element-bg-color: #{$overlay-element-bg-color};
     --r-overlay-element-fg-color: #{$overlay-element-fg-color};
 
-    @content;
-
     @if $viewport-color {
       --r-viewport-color: #{$viewport-color};
     } @else {
       --r-viewport-color: #{$background-color};
     }
+
+    @content;
   }
 }

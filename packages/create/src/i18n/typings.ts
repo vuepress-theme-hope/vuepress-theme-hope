@@ -1,6 +1,6 @@
-import type { PackageManager } from "../utils/index.js";
+import type { PackageManager } from "../config/index.js";
 
-export type Lang = "english (US)" | "简体中文";
+export type SupportedLang = "en" | "zh";
 
 export interface CreateLocale {
   flow: {
