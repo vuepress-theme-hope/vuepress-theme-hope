@@ -1,6 +1,6 @@
 {
   "name": "vuepress-plugin-md-enhance",
-  "version": "2.0.0-rc.50",
+  "version": "2.0.0-rc.51",
   "description": "Markdown enhancement plugin for vuepress",
   "keywords": [
     "vuepress",
@@ -109,8 +109,8 @@
     "@types/js-yaml": "4.0.9",
     "@vuepress/bundler-vite": "2.0.0-rc.14",
     "markdown-it": "14.1.0",
-    "typescript": "5.5.3",
-    "rollup": "4.18.1"
+    "rollup": "4.18.1",
+    "typescript": "5.5.3"
   },
   "peerDependencies": {
     "@types/reveal.js": "^5.0.0",

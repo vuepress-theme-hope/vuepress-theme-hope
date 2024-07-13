@@ -4,6 +4,18 @@ All notable changes to this project will be documented in this file. See [Conven
 
 <!-- #region recent-change -->
 
+## [2.0.0-rc.51](https://github.com/vuepress-theme-hope/vuepress-theme-hope/compare/v2.0.0-rc.50...v2.0.0-rc.51) (2024-07-13)
+
+### ✨ Features
+
+- **create:** slim package size and workflow improvements ([638abf7](https://github.com/vuepress-theme-hope/vuepress-theme-hope/commit/638abf797965e0de24a8d0b5bccaa6abf149bf8d))
+
+### 🐛 Bug Fixes
+
+- fix code tab and code block border radius, close [#4235](https://github.com/vuepress-theme-hope/vuepress-theme-hope/issues/4235) ([2467234](https://github.com/vuepress-theme-hope/vuepress-theme-hope/commit/246723447267c659f3c82d1b2ef3295e8aa8414e))
+
+<!-- #region recent-change -->
+
 ## [2.0.0-rc.50](https://github.com/vuepress-theme-hope/vuepress-theme-hope/compare/v2.0.0-rc.49...v2.0.0-rc.50) (2024-06-21)
 
 **Note:** Version bump only for package vuepress-plugin-md-enhance

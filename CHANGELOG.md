@@ -4,6 +4,26 @@ All notable changes to this project will be documented in this file. See [Conven
 
 <!-- #region recent-change -->
 
+## [2.0.0-rc.51](https://github.com/vuepress-theme-hope/vuepress-theme-hope/compare/v2.0.0-rc.50...v2.0.0-rc.51) (2024-07-13)
+
+### ✨ Features
+
+- **create:** slim package size and workflow improvements ([638abf7](https://github.com/vuepress-theme-hope/vuepress-theme-hope/commit/638abf797965e0de24a8d0b5bccaa6abf149bf8d))
+
+### 🐛 Bug Fixes
+
+- **components:** use no-external-link-icon for SiteInfo ([f915322](https://github.com/vuepress-theme-hope/vuepress-theme-hope/commit/f915322f9d62369a3c303e2fda2172eb88695aa1))
+- **components:** fix site info ([60c6013](https://github.com/vuepress-theme-hope/vuepress-theme-hope/commit/60c60138a6dd8cea563b0115eaba1903406f5edf))
+- **deps:** update dependency inquirer to v9.3.2 ([#4244](https://github.com/vuepress-theme-hope/vuepress-theme-hope/issues/4244)) ([891e31b](https://github.com/vuepress-theme-hope/vuepress-theme-hope/commit/891e31b93268416256f8941624fa31b27efeb518))
+- **deps:** update dependency inquirer to v9.3.4 ([#4253](https://github.com/vuepress-theme-hope/vuepress-theme-hope/issues/4253)) ([e25340b](https://github.com/vuepress-theme-hope/vuepress-theme-hope/commit/e25340b3576c59f77ada45547ceace6c8b495a7f))
+- **deps:** update dependency three to v0.166.0 ([#4245](https://github.com/vuepress-theme-hope/vuepress-theme-hope/issues/4245)) ([917d0c6](https://github.com/vuepress-theme-hope/vuepress-theme-hope/commit/917d0c65a1fe32cac4b08c7aeb69855972ccba93))
+- **deps:** update dependency vidstack to v1.11.24 ([#4230](https://github.com/vuepress-theme-hope/vuepress-theme-hope/issues/4230)) ([7d40701](https://github.com/vuepress-theme-hope/vuepress-theme-hope/commit/7d40701ca2db9c4983a3d2783863967a9596ddaf))
+- fix code tab and code block border radius, close [#4235](https://github.com/vuepress-theme-hope/vuepress-theme-hope/issues/4235) ([2467234](https://github.com/vuepress-theme-hope/vuepress-theme-hope/commit/246723447267c659f3c82d1b2ef3295e8aa8414e))
+- **theme:** fix diff marker with line numbers, close [#4247](https://github.com/vuepress-theme-hope/vuepress-theme-hope/issues/4247) ([3248205](https://github.com/vuepress-theme-hope/vuepress-theme-hope/commit/324820503f08bf22e61d2f6db72d4677f751fd1a))
+- **theme:** fix navbar link style, close [#4246](https://github.com/vuepress-theme-hope/vuepress-theme-hope/issues/4246) ([9514e8a](https://github.com/vuepress-theme-hope/vuepress-theme-hope/commit/9514e8a773a2e82e4382d94a1368dce67700b2fd))
+
+<!-- #region recent-change -->
+
 ## [2.0.0-rc.50](https://github.com/vuepress-theme-hope/vuepress-theme-hope/compare/v2.0.0-rc.49...v2.0.0-rc.50) (2024-06-21)
 
 **Note:** Version bump only for package vuepress-theme-hope-root

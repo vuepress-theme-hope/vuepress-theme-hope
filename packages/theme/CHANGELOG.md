@@ -4,6 +4,16 @@ All notable changes to this project will be documented in this file. See [Conven
 
 <!-- #region recent-change -->
 
+## [2.0.0-rc.51](https://github.com/vuepress-theme-hope/vuepress-theme-hope/compare/v2.0.0-rc.50...v2.0.0-rc.51) (2024-07-13)
+
+### 🐛 Bug Fixes
+
+- fix code tab and code block border radius, close [#4235](https://github.com/vuepress-theme-hope/vuepress-theme-hope/issues/4235) ([2467234](https://github.com/vuepress-theme-hope/vuepress-theme-hope/commit/246723447267c659f3c82d1b2ef3295e8aa8414e))
+- **theme:** fix diff marker with line numbers, close [#4247](https://github.com/vuepress-theme-hope/vuepress-theme-hope/issues/4247) ([3248205](https://github.com/vuepress-theme-hope/vuepress-theme-hope/commit/324820503f08bf22e61d2f6db72d4677f751fd1a))
+- **theme:** fix navbar link style, close [#4246](https://github.com/vuepress-theme-hope/vuepress-theme-hope/issues/4246) ([9514e8a](https://github.com/vuepress-theme-hope/vuepress-theme-hope/commit/9514e8a773a2e82e4382d94a1368dce67700b2fd))
+
+<!-- #region recent-change -->
+
 ## [2.0.0-rc.50](https://github.com/vuepress-theme-hope/vuepress-theme-hope/compare/v2.0.0-rc.49...v2.0.0-rc.50) (2024-06-21)
 
 **Note:** Version bump only for package vuepress-theme-hope

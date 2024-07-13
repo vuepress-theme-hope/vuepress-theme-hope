@@ -4,6 +4,19 @@ All notable changes to this project will be documented in this file. See [Conven
 
 <!-- #region recent-change -->
 
+## [2.0.0-rc.51](https://github.com/vuepress-theme-hope/vuepress-theme-hope/compare/v2.0.0-rc.50...v2.0.0-rc.51) (2024-07-13)
+
+### ✨ Features
+
+- **create:** slim package size and workflow improvements ([638abf7](https://github.com/vuepress-theme-hope/vuepress-theme-hope/commit/638abf797965e0de24a8d0b5bccaa6abf149bf8d))
+
+### 🐛 Bug Fixes
+
+- **deps:** update dependency inquirer to v9.3.2 ([#4244](https://github.com/vuepress-theme-hope/vuepress-theme-hope/issues/4244)) ([891e31b](https://github.com/vuepress-theme-hope/vuepress-theme-hope/commit/891e31b93268416256f8941624fa31b27efeb518))
+- **deps:** update dependency inquirer to v9.3.4 ([#4253](https://github.com/vuepress-theme-hope/vuepress-theme-hope/issues/4253)) ([e25340b](https://github.com/vuepress-theme-hope/vuepress-theme-hope/commit/e25340b3576c59f77ada45547ceace6c8b495a7f))
+
+<!-- #region recent-change -->
+
 ## [2.0.0-rc.50](https://github.com/vuepress-theme-hope/vuepress-theme-hope/compare/v2.0.0-rc.49...v2.0.0-rc.50) (2024-06-21)
 
 **Note:** Version bump only for package create-vuepress-theme-hope

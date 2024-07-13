@@ -4,6 +4,19 @@ All notable changes to this project will be documented in this file. See [Conven
 
 <!-- #region recent-change -->
 
+## [2.0.0-rc.51](https://github.com/vuepress-theme-hope/vuepress-theme-hope/compare/v2.0.0-rc.50...v2.0.0-rc.51) (2024-07-13)
+
+### ✨ Features
+
+- **create:** slim package size and workflow improvements ([638abf7](https://github.com/vuepress-theme-hope/vuepress-theme-hope/commit/638abf797965e0de24a8d0b5bccaa6abf149bf8d))
+
+### 🐛 Bug Fixes
+
+- **components:** use no-external-link-icon for SiteInfo ([f915322](https://github.com/vuepress-theme-hope/vuepress-theme-hope/commit/f915322f9d62369a3c303e2fda2172eb88695aa1))
+- **components:** fix site info ([60c6013](https://github.com/vuepress-theme-hope/vuepress-theme-hope/commit/60c60138a6dd8cea563b0115eaba1903406f5edf))
+
+<!-- #region recent-change -->
+
 ## [2.0.0-rc.50](https://github.com/vuepress-theme-hope/vuepress-theme-hope/compare/v2.0.0-rc.49...v2.0.0-rc.50) (2024-06-21)
 
 **Note:** Version bump only for package vuepress-plugin-components
