@@ -33,10 +33,10 @@ const getPlugin =
         for (let i = index; i < tokens.length; i++) {
           const { type, content, info } = tokens[i];
           const language = info
-            ? md.utils
+            ? (md.utils
                 .unescapeAll(info)
                 .trim()
-                .match(/^([^ :[{]+)/)?.[1] ?? "text"
+                .match(/^([^ :[{]+)/)?.[1] ?? "text")
             : "";
 
           if (type === `container_${name}_close`) break;

@@ -71,7 +71,7 @@ export const useNavbarLanguageDropdown =
                 ? // try to keep current hash and query across languages
                   fullPath.replace(path, targetLocalePage)
                 : // Or fallback to homepage
-                  targetThemeLocale.home ?? targetLocalePath;
+                  (targetThemeLocale.home ?? targetLocalePath);
             }
 
             return {

@@ -3,6 +3,7 @@ import {
   addViteOptimizeDepsExclude,
   addViteOptimizeDepsInclude,
   addViteSsrNoExternal,
+  chainWebpack,
 } from "@vuepress/helper";
 import type { App } from "vuepress/core";
 
@@ -25,4 +26,18 @@ export const extendsBundlerOptions = (
     "@vuepress/plugin-reading-time",
     "vuepress-shared",
   ]);
+  chainWebpack(bundlerOptions, app, (config) => {
+    config.module
+      .rule("scss")
+      .use("sass-loader")
+      .tap((options) => ({
+        api: "modern-compiler",
+        ...options,
+        // eslint-disable-next-line @typescript-eslint/no-unsafe-assignment
+        sassOptions: {
+          silenceDeprecations: ["mixed-decls"],
+          ...options["sassOptions"],
+        },
+      }));
+  });
 };

@@ -33,7 +33,7 @@ export const setupSidebarItems = (): void => {
   const sidebarOptions = computed(() =>
     frontmatter.value.home
       ? false
-      : frontmatter.value.sidebar ?? themeLocale.value.sidebar ?? "structure",
+      : (frontmatter.value.sidebar ?? themeLocale.value.sidebar ?? "structure"),
   );
   const headerDepth = computed(
     () => frontmatter.value.headerDepth ?? themeLocale.value.headerDepth ?? 2,

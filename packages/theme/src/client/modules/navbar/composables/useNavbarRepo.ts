@@ -29,7 +29,7 @@ export const useNavbarRepo = (): ComputedRef<RepoConfig | null> => {
 
   const repoLabel = computed(() =>
     repoLink.value
-      ? themeLocale.value.repoLabel ?? repoType.value ?? "Source"
+      ? (themeLocale.value.repoLabel ?? repoType.value ?? "Source")
       : null,
   );
 

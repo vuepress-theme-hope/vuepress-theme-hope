@@ -107,10 +107,10 @@ export const useRelatedLinks = (): RelatedLinks => {
 
     return prevConfig === false
       ? null
-      : prevConfig ??
+      : (prevConfig ??
           (themeLocale.value.prevLink === false
             ? null
-            : resolveFromSidebarItems(sidebarItems.value, route.path, -1));
+            : resolveFromSidebarItems(sidebarItems.value, route.path, -1)));
   });
 
   const nextLink = computed(() => {
@@ -121,10 +121,10 @@ export const useRelatedLinks = (): RelatedLinks => {
 
     return nextConfig === false
       ? null
-      : nextConfig ??
+      : (nextConfig ??
           (themeLocale.value.nextLink === false
             ? null
-            : resolveFromSidebarItems(sidebarItems.value, route.path, 1));
+            : resolveFromSidebarItems(sidebarItems.value, route.path, 1)));
   });
 
   return {

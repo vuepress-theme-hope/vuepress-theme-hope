@@ -31,12 +31,12 @@ export const getThemeStatus = (
     enableSlide: Boolean(plugins.mdEnhance && plugins.mdEnhance.revealJs),
     enableReadingTime: plugins.readingTime !== false,
     blogType: isPlainObject(plugins.blog)
-      ? plugins.blog?.type
+      ? (plugins.blog?.type
           ?.map(({ key, path = `/${key}/` }) => ({
             key,
             path: path ?? `/${key}/`,
           }))
-          .filter(({ path }) => Boolean(path)) ?? []
+          .filter(({ path }) => Boolean(path)) ?? [])
       : [],
     hasMultipleLanguages: keys(locales).length > 1,
     hasRepo:

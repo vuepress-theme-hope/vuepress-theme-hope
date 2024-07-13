@@ -91,7 +91,7 @@ export const getNormalCode = (
     isLegal: code.isLegal,
     getScript: (): string =>
       codeConfig.useBabel
-        ? window.Babel.transform(js, { presets: ["es2015"] })?.code ?? ""
+        ? (window.Babel.transform(js, { presets: ["es2015"] })?.code ?? "")
         : js,
   };
 };
@@ -130,7 +130,7 @@ export const getVueCode = (
     jsLib: [codeConfig.vue, ...codeConfig.jsLib],
     getScript: (): string => {
       const scriptStr = config.useBabel
-        ? window.Babel?.transform(js, { presets: ["es2015"] })?.code ?? ""
+        ? (window.Babel?.transform(js, { presets: ["es2015"] })?.code ?? "")
         : js.replace(/export\s+default/u, "return");
 
       return `const app=window.document.createElement('div');document.firstElementChild.appendChild(app);const appOptions=${wrapper(

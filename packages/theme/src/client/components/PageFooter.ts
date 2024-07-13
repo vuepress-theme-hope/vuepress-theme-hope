@@ -39,7 +39,7 @@ export default defineComponent({
         ? false
         : isString(footer)
           ? footer
-          : themeLocale.value.footer ?? "";
+          : (themeLocale.value.footer ?? "");
     });
 
     const authorText = computed(() =>
@@ -60,10 +60,10 @@ export default defineComponent({
         copyright ??
         (license
           ? getCopyrightText(license)
-          : globalCopyright ??
+          : (globalCopyright ??
             (authorText.value || globalLicense
               ? getCopyrightText(globalLicense)
-              : false))
+              : false)))
       );
     });
 

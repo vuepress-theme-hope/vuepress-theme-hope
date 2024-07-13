@@ -125,7 +125,7 @@ export default defineComponent({
         getMetaContent("og:description") ??
         getMetaContent("twitter:description");
       const url =
-        props.url ?? typeof window === "undefined"
+        (props.url ?? typeof window === "undefined")
           ? null
           : window.location.href;
       const cover = props.cover ?? getMetaContent("og:image");

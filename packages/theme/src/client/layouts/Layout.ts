@@ -48,9 +48,9 @@ export default defineComponent({
 
     const sidebarDisplay = computed(() =>
       __VP_BLOG__
-        ? themeLocale.value.blog?.sidebarDisplay ??
+        ? (themeLocale.value.blog?.sidebarDisplay ??
           themeData.value.blog?.sidebarDisplay ??
-          "mobile"
+          "mobile")
         : "none",
     );
 
