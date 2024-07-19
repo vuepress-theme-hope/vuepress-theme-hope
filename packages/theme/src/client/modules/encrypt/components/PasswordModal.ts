@@ -81,11 +81,12 @@ export default defineComponent({
           ]),
           h("div", { class: "vp-remember-password" }, [
             h("input", {
+              id: "remember-password",
               type: "checkbox",
               value: remember.value,
               onChange: () => (remember.value = !remember.value),
             }),
-            locale.value.remember,
+            h("label", { for: "remember-password" }, locale.value.remember),
           ]),
           h(
             "button",
