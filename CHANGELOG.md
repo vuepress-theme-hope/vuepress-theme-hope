@@ -4,6 +4,20 @@ All notable changes to this project will be documented in this file. See [Conven
 
 <!-- #region recent-change -->
 
+## [2.0.0-rc.52](https://github.com/vuepress-theme-hope/vuepress-theme-hope/compare/v2.0.0-rc.51...v2.0.0-rc.52) (2024-07-19)
+
+### ✨ Features
+
+- update deps ([ab785f0](https://github.com/vuepress-theme-hope/vuepress-theme-hope/commit/ab785f02513a815698e85a979383c61c5ce6d074))
+
+### 🐛 Bug Fixes
+
+- **md-enhance:** improve tasklist checkbox style ([aa0d0c7](https://github.com/vuepress-theme-hope/vuepress-theme-hope/commit/aa0d0c70b04a48a71cb369a0e4c1bec573c9cf1f))
+- **theme:** fix checkbox on firefox, close [#4267](https://github.com/vuepress-theme-hope/vuepress-theme-hope/issues/4267) ([2692a67](https://github.com/vuepress-theme-hope/vuepress-theme-hope/commit/2692a67f45db1682785c57fa54134237b4140131))
+- **theme:** hide sass warnings ([09d127b](https://github.com/vuepress-theme-hope/vuepress-theme-hope/commit/09d127b5bb4ae74d8ea77b4bb6e058c54b79fa14))
+
+<!-- #region recent-change -->
+
 ## [2.0.0-rc.51](https://github.com/vuepress-theme-hope/vuepress-theme-hope/compare/v2.0.0-rc.50...v2.0.0-rc.51) (2024-07-13)
 
 ### ✨ Features
