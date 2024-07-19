@@ -99,12 +99,13 @@ export const hopeTheme = (
         if (behaviorOptions.check) checkUserPlugins(app);
       },
 
-      onPrepared: (app): Promise<void> =>
-        Promise.all([
+      onPrepared: async (app): Promise<void> => {
+        await Promise.all([
           prepareSidebarData(app, themeData, sidebarSorter),
           prepareHighLighterScss(app),
           prepareSocialMediaIcons(app, icons),
-        ]).then(() => void 0),
+        ]);
+      },
 
       onWatched: (app, watchers): void => {
         if (hotReload) {
