@@ -16,9 +16,14 @@
 .task-list-item-checkbox {
   position: relative;
 
-  // width: 0;
-  // margin-inline-end: 1.5em;
+  vertical-align: text-bottom;
+
+  height: 1em;
+  margin-inline-end: 1.5em;
+
   cursor: pointer;
+
+  appearance: none;
 
   &::after {
     content: " ";
