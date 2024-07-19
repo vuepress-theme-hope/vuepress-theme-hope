@@ -1,0 +1,80 @@
+/* stylelint-disable scss/operator-no-newline-after */
+@use "sass:color";
+@use "@sass-palette/helper";
+@use "@sass-palette/hope-config";
+@use "@temp/theme-hope/highlighter";
+
+div[class*="language-"] {
+  margin: 0.75rem 0;
+  transition:
+    background-color var(--vp-ct),
+    color var(--vp-ct);
+
+  // narrow mobile
+  @media (max-width: hope-config.$mobile) {
+    .theme-hope-content > & {
+      --code-border-radius: 0;
+
+      margin: 0.75rem -1.5rem;
+    }
+  }
+
+  pre code {
+    @media print {
+      padding: 0.5rem;
+    }
+  }
+
+  // transitions for code notation highlighting
+  .line {
+    &.diff,
+    &.highlighted {
+      transition: background-color var(--vp-ct);
+    }
+  }
+}
+
+@mixin code-vars($code-color, $code-bg-color) {
+  --code-color: #{$code-color};
+  --code-bg-color: #{$code-bg-color};
+  --code-border-color: #{color.scale(
+      $code-bg-color,
+      $saturation: if(color.whiteness($code-bg-color) < 50%, 10%, 20%),
+      $lightness: if(color.whiteness($code-bg-color) < 50%, 10%, -10%)
+    )};
+  --code-highlight-bg-color: #{color.scale(
+      $code-bg-color,
+      $saturation: if(color.whiteness($code-bg-color) < 50%, 5%, 10%),
+      $lightness: if(color.whiteness($code-bg-color) < 50%, 5%, -5%)
+    )};
+  --code-line-number-color: #{color.scale($code-color, $alpha: -33%)};
+}
+
+@if highlighter.$highlighter == "shiki" {
+  @if helper.get-color(hope-config.$code-color) ==
+    helper.get-dark-color(hope-config.$code-color) and
+    helper.get-color(hope-config.$code-bg-color) ==
+    helper.get-dark-color(hope-config.$code-bg-color)
+  {
+    :root {
+      @include code-vars(
+        $code-color: hope-config.$code-color,
+        $code-bg-color: hope-config.$code-bg-color
+      );
+    }
+  } @else {
+    #{hope-config.$light-selector} {
+      @include code-vars(
+        $code-color: helper.get-color(hope-config.$code-color),
+        $code-bg-color: helper.get-color(hope-config.$code-bg-color)
+      );
+    }
+
+    #{hope-config.$dark-selector} {
+      @include code-vars(
+        $code-color: helper.get-dark-color(hope-config.$code-color),
+        $code-bg-color: helper.get-dark-color(hope-config.$code-bg-color)
+      );
+    }
+  }
+}

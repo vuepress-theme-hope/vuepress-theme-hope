@@ -4,7 +4,6 @@ import { isPlainObject } from "vuepress/shared";
 import { colors } from "vuepress/utils";
 
 import { isHighlighterPlugin } from "./utils.js";
-import type { PrismjsOptions } from "../../shared/index.js";
 import { logger } from "../utils.js";
 
 let prismjsPlugin: (options: PrismjsPluginOptions) => Plugin;
@@ -22,7 +21,7 @@ try {
  */
 export const usePrismjsPlugin = (
   app: App,
-  options?: PrismjsOptions | true,
+  options?: PrismjsPluginOptions | true,
 ): void => {
   const { plugins } = app.pluginApi;
 

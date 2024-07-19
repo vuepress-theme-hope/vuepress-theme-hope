@@ -83,23 +83,7 @@ You can set `false` to disable it.
 
 Controls `@vuepress/plugin-prismjs` which provides code block highlighting via `prismjs`.
 
-You can set all available options in `@vuepress/plugin-prismjs` here, additionally with the following options:
-
-### prismjs.theme
-
-- Type: `PrismjsTheme`
-- Required: No
-- Details: [Interface → Code Themes](../../guide/feature/code-block.md#prismjs)
-
-Prism.js theme config. Available theme keywords can be found in [Prism.js Themes](../../guide/feature/code-block.md#prismjs).
-
-### prismjs.themes
-
-- Type: `{ light: PrismjsTheme, dark: PrismjsTheme }`
-- Default: `{ light: "one-light", dark: "one-dark" }`
-- Details: [Interface → Code Themes](../../guide/feature/code-block.md#prismjs)
-
-Prism.js dual theme config. Available theme keywords can be found in [Prism.js Themes](../../guide/feature/code-block.md#prismjs).
+Check [prismjs plugin docs][prismjs-config] for available plugin options.
 
 ## photoSwipe <Badge text="enabled by default" />
 
@@ -158,6 +142,7 @@ Check [watermark plugin docs][watermark-config] for available plugin options.
 [git-config]: https://ecosystem.vuejs.press/plugins/development/git.html#options
 [links-check-config]: https://ecosystem.vuejs.press/plugins/markdown/links-check.html#options
 [photo-swipe-config]: https://ecosystem.vuejs.press/plugins/features/photo-swipe.html#options
+[prismjs-config]: https://ecosystem.vuejs.press/plugins/markdown/prismjs.html#options
 [pwa-config]: https://ecosystem.vuejs.press/plugins/pwa/pwa/config.html#options
 [reading-time-config]: https://ecosystem.vuejs.press/plugins/development/reading-time.html#options
 [seo-config]: https://ecosystem.vuejs.press/plugins/seo/seo/config.html

@@ -73,7 +73,7 @@ $default-variables: meta.module-variables("vars");
   $overlay-element-bg-color: map.get($variables, "overlay-element-bg-color");
   $overlay-element-fg-color: map.get($variables, "overlay-element-fg-color");
 
-  .reveal[data-theme="#{$theme}"] {
+  .revealhtml[data-theme="#{$theme}"] {
     --r-background-color: #{$background-color};
     --r-main-font: #{$main-font};
     --r-main-font-size: #{$main-font-size};

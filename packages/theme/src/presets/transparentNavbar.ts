@@ -148,8 +148,8 @@ export const setupTransparentNavbar = ({
     (type === "homepage" ? HOMEPAGE_STYLE : BLOG_HOMEPAGE_STYLE) +
       (light === dark
         ? getStyle(light, "")
-        : getStyle(light, "[data-theme=light] ") +
-          getStyle(dark, "[data-theme=dark] ")),
+        : getStyle(light, "html[data-theme=light] ") +
+          getStyle(dark, "html[data-theme=dark] ")),
   );
   useEventListener("scroll", transparentNavbar);
 

@@ -44,7 +44,7 @@
     "dev:ts": "tsc -b tsconfig.build.json --watch"
   },
   "dependencies": {
-    "@inquirer/prompts": "^5.1.2",
+    "@inquirer/prompts": "^5.2.0",
     "cac": "6.7.14",
     "execa": "9.3.0"
   },

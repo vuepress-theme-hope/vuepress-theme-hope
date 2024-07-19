@@ -223,7 +223,7 @@ export default theme(
         lineNumbers: 15,
         notationDiff: true,
         themes: {
-          light: "github-light",
+          light: "one-light",
           dark: "one-dark-pro",
         },
       },

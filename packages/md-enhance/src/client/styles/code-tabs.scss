@@ -1,5 +1,11 @@
 @use "vuepress-shared/styles/reset";
 
+:root {
+  --code-tabs-c-text: var(--code-c-text);
+  --code-tabs-c-bg: var(--code-highlight-bg-color);
+  --code-tabs-c-hover: var(--code-c-bg);
+}
+
 .vp-code-tabs-nav {
   overflow-x: auto;
 
@@ -7,7 +13,7 @@
   padding: 0;
   border-radius: 6px 6px 0 0;
 
-  background: var(--code-tabs-nav-bg-color, #3a404c);
+  background: var(--code-tabs-c-bg, #3a404c);
   list-style: none;
 
   white-space: nowrap;
@@ -35,7 +41,7 @@
   border-radius: 6px 6px 0 0;
 
   background: transparent;
-  color: var(--code-tabs-nav-text-color, #eee);
+  color: var(--code-tabs-c-text, #eee);
 
   font-weight: 600;
   font-size: 0.875em;
@@ -48,7 +54,7 @@
     color var(--vp-ct);
 
   &:hover {
-    background: var(--code-tabs-nav-hover-color, #434a57);
+    background: var(--code-tabs-c-hover, #434a57);
   }
 
   &::before,
@@ -72,13 +78,13 @@
   }
 
   &.active {
-    background: var(--code-bg-color, #282c34);
+    background: var(--code-c-bg, #282c34);
 
     &::before {
       background: radial-gradient(
         12px at left top,
         transparent 50%,
-        var(--code-bg-color, #282c34) 50%
+        var(--code-c-bg, #282c34) 50%
       );
     }
 
@@ -86,7 +92,7 @@
       background: radial-gradient(
         12px at right top,
         transparent 50%,
-        var(--code-bg-color, #282c34) 50%
+        var(--code-c-bg, #282c34) 50%
       );
     }
   }

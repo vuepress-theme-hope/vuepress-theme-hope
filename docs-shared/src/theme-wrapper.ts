@@ -114,7 +114,7 @@ export const theme = (
       shiki: {
         lineNumbers: 15,
         themes: {
-          light: "github-light",
+          light: "one-light",
           dark: "one-dark-pro",
         },
       },

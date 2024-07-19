@@ -12,6 +12,7 @@ import type {
   NoticePluginOptions,
 } from "@vuepress/plugin-notice";
 import type { PhotoSwipePluginOptions } from "@vuepress/plugin-photo-swipe";
+import type { PrismjsPluginOptions } from "@vuepress/plugin-prismjs";
 import type { PwaPluginOptions } from "@vuepress/plugin-pwa";
 import type { ReadingTimePluginOptions } from "@vuepress/plugin-reading-time";
 import type { RedirectPluginOptions } from "@vuepress/plugin-redirect";
@@ -25,7 +26,6 @@ import type { MarkdownEnhancePluginOptions } from "vuepress-plugin-md-enhance";
 import type { SearchProPluginOptions } from "vuepress-plugin-search-pro";
 
 import type { BlogOptions } from "./blog.js";
-import type { PrismjsOptions } from "./prism.js";
 
 export interface PluginsOptions {
   /**
@@ -254,7 +254,7 @@ export interface PluginsOptions {
    *
    * @default false
    */
-  prismjs?: PrismjsOptions | boolean;
+  prismjs?: PrismjsPluginOptions | boolean;
 
   /**
    * PWA plugin options

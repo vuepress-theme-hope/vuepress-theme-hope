@@ -83,23 +83,7 @@ tag:
 
 控制 `@vuepress/plugin-prismjs`，通过 PrismJS 提供代码块高亮。
 
-你可以在这里设置 `@vuepress/plugin-prismjs` 中的所有可用选项，另外还有以下选项:
-
-### prismjs.theme
-
-- 类型: `PrismjsTheme`
-- 必填: 否
-- 详情: [界面 → 代码块](../../guide/feature/code-block.md#prismjs)
-
-使用的 Prism.js 主题。可用的主题关键字详见 [Prism.js 主题](../../guide/feature/code-block.md#prismjs)。
-
-### prismjs.themes
-
-- 类型: `{ light: PrismjsTheme, dark: PrismjsTheme }`
-- 默认值: `{ light: "one-light", dark: "one-dark" }`
-- 详情: [界面 → 代码块](../../guide/feature/code-block.md#prismjs)
-
-使用的 Prism.js 双主题。可用的主题关键字详见 [Prism.js 主题](../../guide/feature/code-block.md#prismjs)。
+插件选项请参阅 [prismjs 插件文档][prismjs-config]。
 
 ## photoSwipe <Badge text="默认启用" />
 
@@ -158,6 +142,7 @@ tag:
 [git-config]: https://ecosystem.vuejs.press/zh/plugins/development/git.html#options
 [links-check-config]: https://ecosystem.vuejs.press/zh/plugins/markdown/links-check.html#options
 [photo-swipe-config]: https://ecosystem.vuejs.press/zh/plugins/features/photo-swipe.html#options
+[prismjs-config]: https://ecosystem.vuejs.press/zh/plugins/markdown/prismjs.html#options
 [pwa-config]: https://ecosystem.vuejs.press/zh/plugins/pwa/pwa/config.html#options
 [reading-time-config]: https://ecosystem.vuejs.press/zh/plugins/development/reading-time.html#options
 [seo-config]: https://ecosystem.vuejs.press/zh/plugins/seo/seo/config.html

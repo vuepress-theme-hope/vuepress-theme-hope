@@ -50,7 +50,7 @@ export default {
       shiki: {
         // themes you want to use
         themes: {
-          light: "github-light",
+          light: "one-light",
           dark: "one-dark-pro",
         },
       },
@@ -101,76 +101,6 @@ npm i -D @vuepress/plugin-prismjs@next
 Then enable prismjs plugin and customize it with `plugins.prismjs` in theme options (you must not set `plugins.shiki` option):
 
 We support all options in [`@vuepress/plugin-prismjs`][prismjs].
-
-#### Code Block Themes
-
-Besides, you can customize the theme of code block with `plugins.prismjs.theme` or `plugins.prismjs.themes` similar to shiki. By default, we use `one-light` and `one-dark` dual themes.
-
-```js {8,11-14} title=".vuepress/config.js"
-import { hopeTheme } from "vuepress-theme-hope";
-
-export default {
-  theme: hopeTheme({
-    plugins: {
-      prismjs: {
-        // theme you want to use
-        theme: "nord",
-
-        // themes you want to use
-        themes: {
-          light: "one-light",
-          dark: "one-dark",
-        },
-      },
-    },
-  }),
-};
-```
-
-::: info Available Prism.js Light themes
-
-- ateliersulphurpool-light
-- coldark-cold
-- coy
-- duotone-light
-- ghcolors
-- gruvbox-light
-- material-light
-- one-light
-- vs
-
-:::
-
-::: info Available Prism.js Dark themes
-
-- atom-dark
-- cb
-- coldark-dark
-- dark
-- dracula
-- duotone-dark
-- duotone-earth
-- duotone-forest
-- duotone-sea
-- duotone-space
-- gruvbox-dark
-- holi
-- hopscotch
-- lucario
-- material-dark
-- material-oceanic
-- night-owl
-- nord
-- one-dark
-- pojoaque
-- shades-of-purple
-- solarized-dark-atom
-- tomorrow
-- vsc-dark-plus
-- xonokai
-- z-touch
-
-:::
 
 ## Copy Button
 

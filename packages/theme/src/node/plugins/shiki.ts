@@ -24,7 +24,7 @@ export const useShikiPlugin = (
           ? options
           : {
               themes: {
-                light: "github-light",
+                light: "one-light",
                 dark: "one-dark-pro",
               },
             },

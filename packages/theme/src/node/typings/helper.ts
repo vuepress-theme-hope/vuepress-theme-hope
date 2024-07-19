@@ -6,6 +6,7 @@ import type { FeedPluginOptions } from "@vuepress/plugin-feed";
 import type { GitPluginOptions } from "@vuepress/plugin-git";
 import type { LinksCheckPluginOptions } from "@vuepress/plugin-links-check";
 import type { PhotoSwipePluginOptions } from "@vuepress/plugin-photo-swipe";
+import type { PrismjsPluginOptions } from "@vuepress/plugin-prismjs";
 import type { PwaPluginOptions } from "@vuepress/plugin-pwa";
 import type { ReadingTimePluginOptions } from "@vuepress/plugin-reading-time";
 import type { RedirectPluginOptions } from "@vuepress/plugin-redirect";
@@ -18,7 +19,6 @@ import type { MarkdownEnhancePluginOptions } from "vuepress-plugin-md-enhance";
 import type {
   BlogOptions,
   NavbarOptions,
-  PrismjsOptions,
   SidebarArrayOptions,
   SidebarObjectOptions,
   SidebarOptions,
@@ -66,7 +66,7 @@ export type ThemePhotoSwipePluginHelper = Helper<
   PhotoSwipePluginOptions | false
 >;
 
-export type ThemePrismJsPluginHelper = Helper<PrismjsOptions | boolean>;
+export type ThemePrismJsPluginHelper = Helper<PrismjsPluginOptions | boolean>;
 
 export type ThemePwaPluginHelper = Helper<PwaPluginOptions | false>;
 

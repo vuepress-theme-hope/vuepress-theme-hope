@@ -50,7 +50,7 @@ export default {
       shiki: {
         // 你想要使用的主题
         themes: {
-          light: "github-light",
+          light: "one-light",
           dark: "one-dark-pro",
         },
       },
@@ -101,76 +101,6 @@ npm i -D @vuepress/plugin-prismjs@next
 之后在主题选项中启用 prismjs 插件并使用 `plugins.prismjs` 进行自定义（你不能设置 `plugins.shiki` 选项）：
 
 我们支持所有 [`@vuepress/plugin-prismjs`][prismjs] 中的选项。
-
-#### 代码主题
-
-你可以通过类似于 Shiki 的 `plugins.prismjs.theme` 或 `plugins.prismjs.themes` 来自定义代码块的主题，与 shiki 类似。默认情况下，我们使用 `one-light` 和 `one-dark` 双主题。
-
-```js {8,11-14} title=".vuepress/config.js"
-import { hopeTheme } from "vuepress-theme-hope";
-
-export default {
-  theme: hopeTheme({
-    plugins: {
-      prismjs: {
-        // 你想要使用的主题
-        theme: "nord",
-
-        // 你想要使用的主题
-        themes: {
-          light: "one-light",
-          dark: "one-dark",
-        },
-      },
-    },
-  }),
-};
-```
-
-::: info 可用的 Prism.js 浅色主题
-
-- ateliersulphurpool-light
-- coldark-cold
-- coy
-- duotone-light
-- ghcolors
-- gruvbox-light
-- material-light
-- one-light
-- vs
-
-:::
-
-::: info 可用的 Prism.js 深色主题
-
-- atom-dark
-- cb
-- coldark-dark
-- dark
-- dracula
-- duotone-dark
-- duotone-earth
-- duotone-forest
-- duotone-sea
-- duotone-space
-- gruvbox-dark
-- holi
-- hopscotch
-- lucario
-- material-dark
-- material-oceanic
-- night-owl
-- nord
-- one-dark
-- pojoaque
-- shades-of-purple
-- solarized-dark-atom
-- tomorrow
-- vsc-dark-plus
-- xonokai
-- z-touch
-
-:::
 
 ## 复制按钮
 

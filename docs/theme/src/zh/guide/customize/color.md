@@ -44,12 +44,12 @@ $bg-color: (
 有些时候，你可能希望修改一些不在 `palette.scss` 中的颜色，比如代码块的背景色，此时你可以通过开发者工具查看对应的颜色属性值是否是 CSS 变量，如果是你可以在 `index.scss` 中手动覆盖这一变量值:
 
 ```scss title=".vuepress/styles/index.scss"
-// 覆盖代码块背景色
+// 覆盖代码块演示标题颜色
 #app {
-  --code-bg-color: #000;
+  --code-demo-header-bg-color: #fff;
 
   html[data-theme="dark"] & {
-    --code-bg-color: #222;
+    --code-demo-header-bg-color: #000;
   }
 }
 ```
