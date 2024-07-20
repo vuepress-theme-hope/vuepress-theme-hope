@@ -111,7 +111,7 @@ export const rollupBundle = (
     ],
 
     external: [
-      ...(resolve
+      resolve
         ? []
         : (
               typeof filePath === "object"
@@ -145,9 +145,9 @@ export const rollupBundle = (
                 /^vuepress-plugin-/,
                 "vuepress-shared/node",
               ]
-            : []),
-      ...external,
-    ],
+            : [],
+      external,
+    ].flat(),
 
     treeshake: {
       moduleSideEffects,
@@ -191,7 +191,7 @@ export const rollupBundle = (
             }),
           ],
           external: [
-            ...(resolve
+            resolve
               ? []
               : (
                     typeof filePath === "object"
@@ -218,9 +218,9 @@ export const rollupBundle = (
                       "vuepress/utils",
                       "vuepress-shared/node",
                     ]
-                  : []),
-            ...dtsExternal,
-          ],
+                  : [],
+            dtsExternal,
+          ].flat(),
         } as RollupOptions,
       ]
     : []),

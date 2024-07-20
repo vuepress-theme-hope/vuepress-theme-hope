@@ -97,10 +97,10 @@ export default defineComponent({
         },
 
         plugins: [
-          ...plugins.map(({ default: plugin }) => plugin),
+          plugins.map(({ default: plugin }) => plugin),
           // eslint-disable-next-line @typescript-eslint/no-unsafe-assignment
-          ...(revealOptions.plugins ?? []),
-        ],
+          revealOptions.plugins ?? [],
+        ].flat(),
       });
 
       await reveal.initialize();

@@ -84,11 +84,9 @@ export const getConfig = (
 ): CodeDemoOptions => ({
   ...options,
   ...config,
-  jsLib: Array.from(
-    new Set([...(options.jsLib ?? []), ...(config.jsLib ?? [])]),
-  ),
+  jsLib: Array.from(new Set([options.jsLib ?? [], config.jsLib ?? []].flat())),
   cssLib: Array.from(
-    new Set([...(options.cssLib ?? []), ...(config.cssLib ?? [])]),
+    new Set([options.cssLib ?? [], config.cssLib ?? []].flat()),
   ),
 });
 
