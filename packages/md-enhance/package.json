@@ -96,12 +96,12 @@
     "@mdit/plugin-tex": "^0.12.0",
     "@mdit/plugin-uml": "^0.12.0",
     "@types/markdown-it": "^14.1.1",
-    "@vuepress/helper": "2.0.0-rc.39",
-    "@vuepress/plugin-sass-palette": "2.0.0-rc.39",
+    "@vuepress/helper": "2.0.0-rc.40",
+    "@vuepress/plugin-sass-palette": "2.0.0-rc.40",
     "@vueuse/core": "^10.11.0",
     "balloon-css": "^1.2.0",
     "js-yaml": "^4.1.0",
-    "vue": "^3.4.33",
+    "vue": "^3.4.34",
     "vuepress-shared": "workspace:*"
   },
   "devDependencies": {
@@ -109,8 +109,8 @@
     "@types/js-yaml": "4.0.9",
     "@vuepress/bundler-vite": "2.0.0-rc.14",
     "markdown-it": "14.1.0",
-    "rollup": "4.18.1",
-    "typescript": "5.5.3"
+    "rollup": "4.19.0",
+    "typescript": "5.5.4"
   },
   "peerDependencies": {
     "@types/reveal.js": "^5.0.0",
@@ -127,7 +127,7 @@
     "mermaid": "^10.8.0",
     "reveal.js": "^5.0.0",
     "sandpack-vue3": "^3.0.0",
-    "sass-loader": "^14.0.0",
+    "sass-loader": "^15.0.0",
     "vuepress": "2.0.0-rc.14"
   },
   "peerDependenciesMeta": {

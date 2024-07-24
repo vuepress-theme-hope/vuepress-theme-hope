@@ -56,12 +56,12 @@ export const createPackageJson = async ({
   const scripts = getScript(packageManager, bundler, source);
   const devDependencies = {
     [`@vuepress/bundler-${bundler}`]: "2.0.0-rc.14",
-    vue: "^3.4.31",
+    vue: "^3.4.34",
     vuepress: "2.0.0-rc.14",
     "vuepress-theme-hope": version,
   };
 
-  if (bundler === "webpack") devDependencies["sass-loader"] = "^14.2.1";
+  if (bundler === "webpack") devDependencies["sass-loader"] = "^15.0.0";
 
   if (existsSync(packageJsonPath)) {
     console.log(locale.flow.updatePackage);
