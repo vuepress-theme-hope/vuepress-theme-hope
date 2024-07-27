@@ -114,7 +114,7 @@
     "@vuepress/plugin-redirect": "2.0.0-rc.40",
     "@vuepress/plugin-search": "2.0.0-rc.40",
     "nodejs-jieba": "^0.1.2",
-    "sass-loader": "^15.0.0",
+    "sass-loader": "^15.0.0 || ^16.0.0",
     "vuepress": "2.0.0-rc.14",
     "vuepress-plugin-search-pro": "workspace:*"
   },
