@@ -165,7 +165,7 @@ export default defineUserConfig({
 
 ::: note
 
-有大量内容时，进行客户端搜素可能会很慢，在这种情况下你可能需要增加此值来确保开始搜索时用户已完成输入。
+有大量内容时，进行客户端搜索可能会很慢，在这种情况下你可能需要增加此值来确保开始搜索时用户已完成输入。
 
 :::
 
@@ -268,12 +268,12 @@ export default defineUserConfig({
     placeholder: string;
 
     /**
-     * 搜素文字
+     * 搜索文字
      */
     search: string;
 
     /**
-     * 搜素中文字
+     * 搜索中文字
      */
     searching: string;
 
@@ -370,7 +370,7 @@ interface SearchLocaleOptions
     pageData: PageData,
   ) => string[];
 
-  /** 一个过滤搜素结果的函数 */
+  /** 一个过滤搜索结果的函数 */
   searchFilter?: (
     results: SearchResult[],
     query: string,
@@ -446,9 +446,9 @@ interface SearchWorker {
   /**
    * 同时获取建议和结果
    *
-   * @param query - 搜素词
+   * @param query - 搜索词
    * @param localePath - 语言路径
-   * @param options - 搜素选项
+   * @param options - 搜索选项
    */
   all: (
     query: string,
@@ -459,9 +459,9 @@ interface SearchWorker {
   /**
    * 获取建议
    *
-   * @param query - 搜素词
+   * @param query - 搜索词
    * @param localePath - 语言路径
-   * @param options - 搜素选项
+   * @param options - 搜索选项
    */
   suggest: (
     query: string,
@@ -472,9 +472,9 @@ interface SearchWorker {
   /**
    * 获取搜索结果
    *
-   * @param query - 搜素词
+   * @param query - 搜索词
    * @param localePath - 语言路径
-   * @param options - 搜素选项
+   * @param options - 搜索选项
    */
   search: (
     query: string,
