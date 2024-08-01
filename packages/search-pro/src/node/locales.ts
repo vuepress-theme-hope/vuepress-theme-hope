@@ -39,7 +39,7 @@ export const searchProLocales: SearchProLocaleConfig = {
   "/zh-tw/": {
     cancel: "取消",
     placeholder: "搜索",
-    search: "搜素",
+    search: "搜索",
     searching: "搜索中",
     defaultTitle: "文檔",
     select: "選擇",

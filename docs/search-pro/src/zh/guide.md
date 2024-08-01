@@ -307,7 +307,7 @@ suggest("key").then((suggestions) => {
   // 显示建议
 });
 
-// 搜素
+// 搜索
 search("keyword").then((results) => {
   // 显示搜索结果
 });
