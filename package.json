@@ -58,7 +58,7 @@
     "@rollup/plugin-commonjs": "26.0.1",
     "@rollup/plugin-node-resolve": "15.2.3",
     "@rollup/plugin-replace": "5.0.7",
-    "@types/node": "20.14.12",
+    "@types/node": "20.14.14",
     "@vitest/coverage-v8": "2.0.4",
     "@vue/eslint-config-typescript": "13.0.0",
     "concurrently": "8.2.2",
