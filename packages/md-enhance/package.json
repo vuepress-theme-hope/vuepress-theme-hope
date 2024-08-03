@@ -81,7 +81,7 @@
     "@mdit/plugin-footnote": "^0.12.0",
     "@mdit/plugin-img-lazyload": "^0.12.0",
     "@mdit/plugin-img-mark": "^0.12.0",
-    "@mdit/plugin-img-size": "^0.12.0",
+    "@mdit/plugin-img-size": "^0.13.0",
     "@mdit/plugin-include": "^0.12.0",
     "@mdit/plugin-katex-slim": "^0.12.0",
     "@mdit/plugin-mark": "^0.12.0",
