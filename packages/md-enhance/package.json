@@ -77,7 +77,7 @@
     "@mdit/plugin-attrs": "^0.12.0",
     "@mdit/plugin-container": "^0.12.0",
     "@mdit/plugin-demo": "^0.12.0",
-    "@mdit/plugin-figure": "^0.12.0",
+    "@mdit/plugin-figure": "^0.13.0",
     "@mdit/plugin-footnote": "^0.12.0",
     "@mdit/plugin-img-lazyload": "^0.12.0",
     "@mdit/plugin-img-mark": "^0.12.0",
