@@ -79,7 +79,7 @@
     "@mdit/plugin-demo": "^0.12.0",
     "@mdit/plugin-figure": "^0.12.0",
     "@mdit/plugin-footnote": "^0.12.0",
-    "@mdit/plugin-img-lazyload": "^0.12.0",
+    "@mdit/plugin-img-lazyload": "^0.13.0",
     "@mdit/plugin-img-mark": "^0.12.0",
     "@mdit/plugin-img-size": "^0.12.0",
     "@mdit/plugin-include": "^0.12.0",
