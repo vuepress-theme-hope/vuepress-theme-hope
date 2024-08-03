@@ -39,7 +39,7 @@
     "sandpack-vue3": "3.1.11",
     "sass-embedded": "1.77.8",
     "sass-loader": "15.0.0",
-    "vue": "3.4.34",
+    "vue": "3.4.35",
     "vuepress": "2.0.0-rc.14",
     "vuepress-plugin-components": "workspace:*",
     "vuepress-plugin-md-enhance": "workspace:*",

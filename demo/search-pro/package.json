@@ -19,7 +19,7 @@
     "@vuepress/theme-default": "2.0.0-rc.40",
     "nodejs-jieba": "0.1.2",
     "sass-loader": "15.0.0",
-    "vue": "3.4.34",
+    "vue": "3.4.35",
     "vuepress": "2.0.0-rc.14",
     "vuepress-plugin-search-pro": "workspace:*"
   }
