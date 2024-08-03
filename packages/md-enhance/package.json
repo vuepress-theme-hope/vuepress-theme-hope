@@ -89,7 +89,7 @@
     "@mdit/plugin-plantuml": "^0.12.0",
     "@mdit/plugin-spoiler": "^0.12.0",
     "@mdit/plugin-stylize": "^0.12.0",
-    "@mdit/plugin-sub": "^0.12.0",
+    "@mdit/plugin-sub": "^0.13.0",
     "@mdit/plugin-sup": "^0.12.0",
     "@mdit/plugin-tab": "^0.12.0",
     "@mdit/plugin-tasklist": "^0.12.0",
