@@ -9,7 +9,7 @@ let redirectPlugin: (options: RedirectPluginOptions) => Plugin;
 
 try {
   ({ redirectPlugin } = await import("@vuepress/plugin-redirect"));
-} catch (e) {
+} catch {
   // Do nothing
 }
 

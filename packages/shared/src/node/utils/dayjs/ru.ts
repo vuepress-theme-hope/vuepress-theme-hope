@@ -1,6 +1,6 @@
 // Russian [ru]
-// eslint-disable-next-line import/no-named-default
-import type { Dayjs, default as dayjs } from "dayjs";
+import type { Dayjs } from "dayjs";
+import type dayjs from "dayjs";
 
 import type { Locale } from "./locale.js";
 

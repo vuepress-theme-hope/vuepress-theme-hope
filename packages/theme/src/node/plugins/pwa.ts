@@ -9,7 +9,7 @@ let pwaPlugin: (options: PwaPluginOptions, legacy?: boolean) => Plugin;
 
 try {
   ({ pwaPlugin } = await import("@vuepress/plugin-pwa"));
-} catch (e) {
+} catch {
   // Do nothing
 }
 /**

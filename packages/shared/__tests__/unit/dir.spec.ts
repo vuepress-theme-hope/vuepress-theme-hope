@@ -1,4 +1,3 @@
-/* eslint-disable @typescript-eslint/naming-convention */
 import { expect, it } from "vitest";
 import { path } from "vuepress/utils";
 

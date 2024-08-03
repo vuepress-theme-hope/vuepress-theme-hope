@@ -1,4 +1,3 @@
-/* eslint-disable @typescript-eslint/naming-convention */
 import { decodeData } from "@vuepress/helper";
 import MarkdownIt from "markdown-it";
 import { describe, expect, it } from "vitest";
@@ -9,7 +8,7 @@ const decodeFiles = (content: string): string[] =>
   JSON.parse(decodeData(content)) as string[];
 
 const getFiles = (renderResult: string): string[] | null => {
-  const result = renderResult.match(/files="(.*?)"/s);
+  const result = /files="(.*?)"/s.exec(renderResult);
 
   if (!result) return null;
 
@@ -17,7 +16,7 @@ const getFiles = (renderResult: string): string[] | null => {
 };
 
 const getSettings = (renderResult: string): Record<string, unknown> | null => {
-  const result = renderResult.match(/settings="(.*?)"/s);
+  const result = /settings="(.*?)"/s.exec(renderResult);
 
   if (!result) return null;
 

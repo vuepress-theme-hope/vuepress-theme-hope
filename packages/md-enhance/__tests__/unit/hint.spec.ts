@@ -6,7 +6,6 @@ import { hint } from "../../src/node/markdown-it/hint.js";
 describe("hint", () => {
   describe("with options", () => {
     const markdownIt = MarkdownIt({ linkify: true }).use(hint, {
-      // eslint-disable-next-line @typescript-eslint/naming-convention
       "/": {
         info: "Info",
         note: "Note",

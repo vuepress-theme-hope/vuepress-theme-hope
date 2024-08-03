@@ -69,7 +69,7 @@ export default defineComponent({
 
   setup(props, { slots }) {
     // Index of current active item
-    // eslint-disable-next-line vue/no-setup-props-destructure
+
     const activeIndex = ref(props.active);
 
     // Refs of the tab buttons

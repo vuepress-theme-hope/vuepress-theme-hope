@@ -23,13 +23,13 @@ const getComponentRender =
     if (content.trim().startsWith("{"))
       try {
         config = JSON.parse(content) as unknown;
-      } catch (err) {
+      } catch {
         // Do nothing
       }
     else
       try {
         config = load(content);
-      } catch (err) {
+      } catch {
         // Do nothing
       }
 
@@ -51,7 +51,6 @@ export const component: PluginSimple = (md) => {
   const { fence } = md.renderer.rules;
 
   md.renderer.rules.fence = (...args): string => {
-    // eslint-disable-next-line @typescript-eslint/no-unsafe-assignment
     const [tokens, index] = args;
     const { info } = tokens[index];
 

@@ -1,6 +1,6 @@
 // Polish [pl]
-// eslint-disable-next-line import/no-named-default
-import type { Dayjs, default as dayjs } from "dayjs";
+import type { Dayjs } from "dayjs";
+import type dayjs from "dayjs";
 
 import type { Locale } from "./locale.js";
 
@@ -43,10 +43,9 @@ const monthStandalone =
   "styczeń_luty_marzec_kwiecień_maj_czerwiec_lipiec_sierpień_wrzesień_październik_listopad_grudzień".split(
     "_",
   );
-const MONTHS_IN_FORMAT = /D MMMM/;
 
 const months = (dayjsInstance: Dayjs, format: string): string => {
-  if (MONTHS_IN_FORMAT.test(format)) return monthFormat[dayjsInstance.month()];
+  if (format.includes("D MMMM")) return monthFormat[dayjsInstance.month()];
 
   return monthStandalone[dayjsInstance.month()];
 };

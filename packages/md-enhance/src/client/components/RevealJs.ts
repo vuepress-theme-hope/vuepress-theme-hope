@@ -37,7 +37,6 @@ type ThemeType =
   | "moon";
 
 export default defineComponent({
-  // eslint-disable-next-line vue/multi-word-component-names
   name: "RevealJs",
 
   props: {
@@ -98,7 +97,7 @@ export default defineComponent({
 
         plugins: [
           plugins.map(({ default: plugin }) => plugin),
-          // eslint-disable-next-line @typescript-eslint/no-unsafe-assignment
+
           revealOptions.plugins ?? [],
         ].flat(),
       });

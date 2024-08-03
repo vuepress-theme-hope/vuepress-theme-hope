@@ -12,7 +12,6 @@ const sync = async (): Promise<void> => {
 
   await Promise.all(
     packages.map((packageName) =>
-      // eslint-disable-next-line import/dynamic-import-chunkname
       import(`../packages/${packageName}/package.json`, {
         assert: { type: "json" },
       }).then(
