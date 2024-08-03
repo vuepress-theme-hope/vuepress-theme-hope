@@ -85,7 +85,7 @@
     "@mdit/plugin-include": "^0.12.0",
     "@mdit/plugin-katex-slim": "^0.12.0",
     "@mdit/plugin-mark": "^0.12.0",
-    "@mdit/plugin-mathjax-slim": "^0.12.0",
+    "@mdit/plugin-mathjax-slim": "^0.13.0",
     "@mdit/plugin-plantuml": "^0.12.0",
     "@mdit/plugin-spoiler": "^0.12.0",
     "@mdit/plugin-stylize": "^0.12.0",
