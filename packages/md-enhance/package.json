@@ -92,7 +92,7 @@
     "@mdit/plugin-sub": "^0.12.0",
     "@mdit/plugin-sup": "^0.12.0",
     "@mdit/plugin-tab": "^0.12.0",
-    "@mdit/plugin-tasklist": "^0.12.0",
+    "@mdit/plugin-tasklist": "^0.13.0",
     "@mdit/plugin-tex": "^0.12.0",
     "@mdit/plugin-uml": "^0.12.0",
     "@types/markdown-it": "^14.1.1",
