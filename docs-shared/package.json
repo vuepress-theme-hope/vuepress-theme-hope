@@ -39,7 +39,7 @@
     "@vuepress/plugin-docsearch": "2.0.0-rc.40",
     "@vuepress/plugin-redirect": "2.0.0-rc.40",
     "three": "0.166.1",
-    "vue": "3.4.34",
+    "vue": "3.4.37",
     "vuepress": "2.0.0-rc.14",
     "vuepress-theme-hope": "workspace:*"
   }
