@@ -25,7 +25,7 @@
     "@vuepress/bundler-webpack": "2.0.0-rc.14",
     "@vuepress/helper": "2.0.0-rc.40",
     "@vuepress/plugin-feed": "2.0.0-rc.40",
-    "@vueuse/core": "10.11.0",
+    "@vueuse/core": "10.11.1",
     "artplayer": "5.1.6",
     "docs-shared": "workspace:*",
     "echarts-wordcloud": "2.1.0",
