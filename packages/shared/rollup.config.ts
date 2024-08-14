@@ -7,7 +7,6 @@ export default [
       "@vuepress/helper",
       "node:http",
       "vuepress/utils",
-      "cheerio",
       "execa",
       "fflate/node",
       "gray-matter",

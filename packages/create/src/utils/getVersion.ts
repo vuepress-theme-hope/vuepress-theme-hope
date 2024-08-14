@@ -24,11 +24,11 @@ export const getVersion = async (
               resolve((JSON.parse(body) as Record<string, string>)[tag]);
             });
           } else {
-            reject();
+            reject(new Error("fetch failed"));
           }
         },
       ).on("error", () => {
-        reject();
+        reject(new Error("fetch failed"));
       });
     });
 

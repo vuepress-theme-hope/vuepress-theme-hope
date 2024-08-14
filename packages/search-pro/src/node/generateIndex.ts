@@ -1,7 +1,7 @@
 /* eslint-disable @typescript-eslint/no-unsafe-enum-comparison */
 import { entries, fromEntries, isArray, keys } from "@vuepress/helper";
-import type { AnyNode, Element } from "cheerio";
 import { load } from "cheerio";
+import type { AnyNode, Element } from "domhandler";
 import { addAllAsync, createIndex } from "slimsearch";
 import type { App, Page } from "vuepress/core";
 

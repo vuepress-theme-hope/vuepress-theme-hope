@@ -2,7 +2,9 @@ import hopeConfig, {
   config,
   globals,
   tsParser,
+  // eslint-disable-next-line import-x/no-unresolved
 } from "eslint-config-mister-hope";
+// eslint-disable-next-line import-x/no-unresolved
 import { vue, vueParser } from "eslint-config-mister-hope/vue";
 
 export default config(
@@ -39,10 +41,16 @@ export default config(
   {
     files: ["**/*.ts"],
     settings: {
-      "import/internal-regex": "^@(?:internal|temp|theme-hope)/",
+      "import-x/internal-regex": "^@(?:internal|temp|theme-hope)/",
+      "import-x/resolver": {
+        typescript: {
+          alwaysTryTypes: true,
+          project: "tsconfig.json",
+        },
+      },
     },
     rules: {
-      "import/no-restricted-paths": [
+      "import-x/no-restricted-paths": [
         "error",
         {
           zones: [
@@ -54,6 +62,18 @@ export default config(
               target: "packages/*/src/node/**",
               from: "packages/*/src/client/**",
             },
+          ],
+        },
+      ],
+      "import-x/no-unresolved": [
+        "error",
+        {
+          ignore: [
+            "@temp/",
+            "vuepress/client",
+            "vuepress-theme-hope/blog/",
+            "vuepress-theme-hope/client/",
+            "vuepress-theme-hope/presets/",
           ],
         },
       ],
@@ -128,7 +148,8 @@ export default config(
   {
     files: ["packages/*/src/client/**/*.ts"],
     rules: {
-      "import/dynamic-import-chunkname": "error",
+      // FIXME: Should be error
+      "import-x/dynamic-import-chunkname": "off",
     },
   },
 

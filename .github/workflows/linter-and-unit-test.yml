@@ -29,6 +29,8 @@ jobs:
         run: pnpm install --frozen-lockfile
 
       - name: Linter test
+        env:
+          NODE_OPTIONS: --max_old_space_size=8192
         run: |
           pnpm run lint:check
           pnpm run lint:md

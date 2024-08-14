@@ -16,7 +16,7 @@ let feedPlugin: (options: FeedPluginOptions, legacy?: boolean) => Plugin;
 
 try {
   ({ feedPlugin } = await import("@vuepress/plugin-feed"));
-} catch (e) {
+} catch {
   // Do nothing
 }
 

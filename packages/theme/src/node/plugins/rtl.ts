@@ -1,5 +1,5 @@
 import { entries } from "@vuepress/helper";
-import { rltPlugin } from "@vuepress/plugin-rtl";
+import { rtlPlugin } from "@vuepress/plugin-rtl";
 import type { Plugin } from "vuepress/core";
 
 import type { ThemeData } from "../../shared/index.js";
@@ -14,5 +14,5 @@ export const getRtlPlugin = (themeData: ThemeData): Plugin | null => {
     .filter(([, { rtl }]) => rtl)
     .map(([localePath]) => localePath);
 
-  return rltLocales.length ? rltPlugin({ locales: rltLocales }) : null;
+  return rltLocales.length ? rtlPlugin({ locales: rltLocales }) : null;
 };

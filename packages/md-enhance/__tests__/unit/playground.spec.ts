@@ -192,7 +192,7 @@ speak(msg);
     );
 
     const getVueFiles = (content: string): Record<string, string> | null => {
-      const result = decodeURIComponent(content).match(/link="(.*?)"/);
+      const result = /link="(.*?)"/.exec(decodeURIComponent(content));
 
       if (!result) return null;
 
