@@ -164,7 +164,7 @@ export const resolveInclude = (
     .map((line) => {
       if (line.startsWith("@include")) {
         // Check if it’s matched the syntax
-        const result = line.match(INCLUDE_RE);
+        const result = INCLUDE_RE.exec(line);
 
         if (result) {
           logger.warn(

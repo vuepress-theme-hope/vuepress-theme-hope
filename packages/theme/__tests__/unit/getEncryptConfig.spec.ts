@@ -1,4 +1,3 @@
-/* eslint-disable @typescript-eslint/naming-convention */
 import { compareSync } from "bcrypt-ts";
 import { describe, expect, it } from "vitest";
 

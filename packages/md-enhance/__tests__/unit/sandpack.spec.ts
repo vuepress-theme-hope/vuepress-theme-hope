@@ -9,7 +9,7 @@ const decodeFiles = (content: string): Record<string, string> =>
   JSON.parse(decodeData(content)) as Record<string, string>;
 
 const getTemplate = (renderResult: string): string | null => {
-  const result = renderResult.match(/template="(.*?)"/s);
+  const result = /template="(.*?)"/s.exec(renderResult);
 
   if (!result) return null;
 
@@ -17,7 +17,7 @@ const getTemplate = (renderResult: string): string | null => {
 };
 
 const getFiles = (renderResult: string): Record<string, string> | null => {
-  const result = renderResult.match(/files="(.*?)"/s);
+  const result = /files="(.*?)"/s.exec(renderResult);
 
   if (!result) return null;
 
@@ -25,7 +25,7 @@ const getFiles = (renderResult: string): Record<string, string> | null => {
 };
 
 const getOptions = (renderResult: string): Record<string, unknown> | null => {
-  const result = renderResult.match(/options="(.*?)"/s);
+  const result = /options="(.*?)"/s.exec(renderResult);
 
   if (!result) return null;
 
@@ -35,7 +35,7 @@ const getOptions = (renderResult: string): Record<string, unknown> | null => {
 const getCustomSetup = (
   renderResult: string,
 ): Record<string, unknown> | null => {
-  const result = renderResult.match(/customSetup="(.*?)"/s);
+  const result = /customSetup="(.*?)"/s.exec(renderResult);
 
   if (!result) return null;
 

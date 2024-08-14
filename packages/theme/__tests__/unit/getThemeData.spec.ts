@@ -1,4 +1,3 @@
-/* eslint-disable @typescript-eslint/naming-convention */
 import { describe, expect, it } from "vitest";
 import type { Bundler } from "vuepress/core";
 import { createBaseApp } from "vuepress/core";

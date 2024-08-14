@@ -10,10 +10,10 @@ import { dirname } from "node:path";
 export const ensureDirExistSync = (dirPath: string): void => {
   try {
     readdirSync(dirPath);
-  } catch (err) {
+  } catch {
     try {
       mkdirSync(dirPath, { recursive: true });
-    } catch (err) {
+    } catch {
       // This is the case where the directory already exists but can not read, e.g.: D:\
     }
   }

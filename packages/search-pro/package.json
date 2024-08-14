@@ -44,17 +44,17 @@
     "dev:ts": "tsc -b tsconfig.build.json --watch"
   },
   "dependencies": {
-    "@vuepress/helper": "2.0.0-rc.39",
-    "@vuepress/plugin-sass-palette": "2.0.0-rc.39",
-    "@vueuse/core": "^10.11.0",
-    "cheerio": "1.0.0-rc.12",
+    "@vuepress/helper": "2.0.0-rc.41",
+    "@vuepress/plugin-sass-palette": "2.0.0-rc.41",
+    "@vueuse/core": "^10.11.1",
+    "cheerio": "1.0.0",
     "chokidar": "^3.6.0",
     "slimsearch": "^2.1.1",
-    "vue": "^3.4.33",
+    "vue": "^3.4.37",
     "vuepress-shared": "workspace:*"
   },
   "peerDependencies": {
-    "sass-loader": "^14.0.0",
+    "sass-loader": "^16.0.0",
     "vuepress": "2.0.0-rc.14"
   },
   "peerDependenciesMeta": {
@@ -63,7 +63,8 @@
     }
   },
   "devDependencies": {
-    "rollup": "4.18.1"
+    "domhandler": "5.0.3",
+    "rollup": "4.20.0"
   },
   "engines": {
     "node": ">=18.19.0",

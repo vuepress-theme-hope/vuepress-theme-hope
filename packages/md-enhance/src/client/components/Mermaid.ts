@@ -141,7 +141,6 @@ export default defineComponent({
         startOnLoad: false,
       });
 
-      // eslint-disable-next-line
       svgCode.value = (await mermaid.render(props.id, code.value)).svg;
     };
 
