@@ -16,14 +16,14 @@ export interface SearchProLocaleData {
   /**
    * Search text
    *
-   * 搜素文字
+   * 搜索文字
    */
   search: string;
 
   /**
    * Searching text
    *
-   * 搜素中文字
+   * 搜索中文字
    */
   searching: string;
 

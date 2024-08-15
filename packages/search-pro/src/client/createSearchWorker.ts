@@ -21,9 +21,9 @@ export interface SearchWorker {
    *
    * 同时获取建议和结果
    *
-   * @param query - search query 搜素词
+   * @param query - search query 搜索词
    * @param localePath - locale path 语言路径
-   * @param options - search options 搜素选项
+   * @param options - search options 搜索选项
    */
   all: (
     query: string,
@@ -36,9 +36,9 @@ export interface SearchWorker {
    *
    * 获取建议
    *
-   * @param query - search query 搜素词
+   * @param query - search query 搜索词
    * @param localePath - locale path 语言路径
-   * @param options - search options 搜素选项
+   * @param options - search options 搜索选项
    */
   suggest: (
     query: string,
@@ -51,9 +51,9 @@ export interface SearchWorker {
    *
    * 获取搜索结果
    *
-   * @param query - search query 搜素词
+   * @param query - search query 搜索词
    * @param localePath - locale path 语言路径
-   * @param options - search options 搜素选项
+   * @param options - search options 搜索选项
    */
   search: (
     query: string,
