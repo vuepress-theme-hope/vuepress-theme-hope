@@ -47,7 +47,7 @@
   },
   "dependencies": {
     "@vuepress/helper": "2.0.0-rc.39",
-    "@vueuse/core": "^10.11.0",
+    "@vueuse/core": "^11.0.0",
     "cheerio": "1.0.0-rc.12",
     "dayjs": "^1.11.12",
     "execa": "^9.3.0",
