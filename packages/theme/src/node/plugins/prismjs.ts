@@ -10,7 +10,7 @@ let prismjsPlugin: (options: PrismjsPluginOptions) => Plugin;
 
 try {
   ({ prismjsPlugin } = await import("@vuepress/plugin-prismjs"));
-} catch (e) {
+} catch {
   // Do nothing
 }
 
