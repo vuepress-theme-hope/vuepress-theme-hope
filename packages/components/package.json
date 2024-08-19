@@ -55,7 +55,7 @@
   },
   "devDependencies": {
     "@types/qrcode": "1.5.5",
-    "@vuepress/bundler-vite": "2.0.0-rc.14",
+    "@vuepress/bundler-vite": "2.0.0-rc.15",
     "rollup": "4.18.1"
   },
   "peerDependencies": {
