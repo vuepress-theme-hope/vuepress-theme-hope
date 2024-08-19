@@ -31,7 +31,7 @@
     "sass-loader": "14.2.1",
     "vidstack": "1.11.29",
     "vue": "3.4.33",
-    "vuepress": "2.0.0-rc.14",
+    "vuepress": "2.0.0-rc.15",
     "vuepress-plugin-components": "workspace:*",
     "vuepress-shared": "workspace:*"
   }
