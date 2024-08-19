@@ -14,7 +14,7 @@ import InfoPanel from "@theme-hope/modules/blog/components/InfoPanel";
 import ProjectPanel from "@theme-hope/modules/blog/components/ProjectPanel";
 import { useArticles } from "@theme-hope/modules/blog/composables/index";
 
-import "vuepress-theme-hope/modules/blog/styles/home.scss";
+import "vuepress-theme-hope/blog/styles/home.scss";
 
 const articles = useArticles();
 const frontmatter = usePageFrontmatter<ThemeBlogHomePageFrontmatter>();
