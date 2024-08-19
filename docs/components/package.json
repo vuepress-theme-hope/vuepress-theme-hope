@@ -30,7 +30,7 @@
     "mpegts.js": "1.7.3",
     "sass-loader": "14.2.1",
     "vidstack": "1.11.29",
-    "vue": "3.4.33",
+    "vue": "3.4.38",
     "vuepress": "2.0.0-rc.14",
     "vuepress-plugin-components": "workspace:*",
     "vuepress-shared": "workspace:*"
