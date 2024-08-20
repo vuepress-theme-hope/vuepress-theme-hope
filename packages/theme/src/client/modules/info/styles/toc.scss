@@ -89,7 +89,6 @@ $headings: (2, 3, 4, 5, 6);
   height: 0;
   max-height: 8rem;
   margin: 0 0.5rem;
-  padding-inline-start: 8px;
 
   text-overflow: ellipsis;
   white-space: nowrap;
@@ -125,18 +124,22 @@ $headings: (2, 3, 4, 5, 6);
     }
   }
 
-  &::before {
-    content: " ";
+  > .vp-toc-list {
+    padding-inline-start: 8px;
 
-    position: absolute;
-    inset-inline-start: 0;
-    top: 0;
-    bottom: 0;
-    z-index: -1;
+    &::before {
+      content: " ";
 
-    width: 2px;
+      position: absolute;
+      inset-inline-start: 4px;
+      top: 0;
+      bottom: 0;
+      z-index: -1;
 
-    background: var(--border-color);
+      width: 2px;
+
+      background: var(--border-color);
+    }
   }
 }
 
@@ -152,7 +155,7 @@ $headings: (2, 3, 4, 5, 6);
 
 .vp-toc-marker {
   position: absolute;
-  inset-inline-start: 0;
+  inset-inline-start: 4px;
   top: 0;
   z-index: 2;
 
