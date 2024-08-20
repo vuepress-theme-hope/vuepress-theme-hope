@@ -22,7 +22,7 @@ import type {
 import { logger } from "../../utils.js";
 
 const removeExtension = (path: string): string =>
-  path.replace(/README\.md$/u, "").replace(/\.md$/u, "");
+  path.replace(/^(README|index)\.md$/iu, "").replace(/\.md$/u, "");
 
 const getGeneratePaths = (
   sidebarConfig: SidebarArrayOptions,

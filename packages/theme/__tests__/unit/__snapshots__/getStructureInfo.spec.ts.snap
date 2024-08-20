@@ -101,6 +101,57 @@ exports[`should generate structure info correctly > Should generate structure in
   {
     "children": [
       {
+        "filename": "file.md",
+        "path": "dir-with-index/file.md",
+        "type": "file",
+      },
+      {
+        "filename": "index.md",
+        "path": "dir-with-index/index.md",
+        "type": "file",
+      },
+    ],
+    "dirname": "dir-with-index",
+    "path": "dir-with-index",
+    "type": "dir",
+  },
+  {
+    "children": [
+      {
+        "filename": "file.md",
+        "path": "dir-with-lowercase-readme/file.md",
+        "type": "file",
+      },
+      {
+        "filename": "readme.md",
+        "path": "dir-with-lowercase-readme/readme.md",
+        "type": "file",
+      },
+    ],
+    "dirname": "dir-with-lowercase-readme",
+    "path": "dir-with-lowercase-readme",
+    "type": "dir",
+  },
+  {
+    "children": [
+      {
+        "filename": "file.md",
+        "path": "dir-with-uppercase-index/file.md",
+        "type": "file",
+      },
+      {
+        "filename": "index.md",
+        "path": "dir-with-uppercase-index/index.md",
+        "type": "file",
+      },
+    ],
+    "dirname": "dir-with-uppercase-index",
+    "path": "dir-with-uppercase-index",
+    "type": "dir",
+  },
+  {
+    "children": [
+      {
         "filename": "file1.md",
         "path": "dir/file1.md",
         "type": "file",
