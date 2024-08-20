@@ -285,6 +285,15 @@ exports[`should generate sidebarData correctly > Should resolve structure in roo
     },
     {
       "children": [
+        "",
+        "file",
+      ],
+      "collapsible": true,
+      "prefix": "dir-with-index/",
+      "text": "Dir with Index",
+    },
+    {
+      "children": [
         "file2",
         "file4",
         "file1",
@@ -298,6 +307,16 @@ exports[`should generate sidebarData correctly > Should resolve structure in roo
     {
       "children": [
         "",
+        "file",
+      ],
+      "collapsible": true,
+      "icon": "dir-icon",
+      "prefix": "dir-with-lowercase-readme/",
+      "text": "Dir with lowercase readme",
+    },
+    {
+      "children": [
+        "",
         "file2",
         "file4",
         "file1",
@@ -306,6 +325,15 @@ exports[`should generate sidebarData correctly > Should resolve structure in roo
       "icon": "my-icon",
       "prefix": "options/",
       "text": "Dir with options",
+    },
+    {
+      "children": [
+        "",
+        "file",
+      ],
+      "collapsible": true,
+      "prefix": "dir-with-uppercase-index/",
+      "text": "Dir with Uppercase Index",
     },
     {
       "children": [
