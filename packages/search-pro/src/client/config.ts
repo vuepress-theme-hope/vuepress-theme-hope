@@ -5,7 +5,6 @@ import SearchModal from "./components/SearchModal.js";
 import { setupSearchModal } from "./composables/index.js";
 import { injectSearchConfig } from "./helpers/index.js";
 
-// eslint-disable-next-line @typescript-eslint/no-unnecessary-type-assertion
 export default defineClientConfig({
   enhance({ app }) {
     injectSearchConfig(app);

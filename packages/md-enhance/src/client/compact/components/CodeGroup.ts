@@ -3,7 +3,6 @@ import { defineComponent, h, onBeforeUpdate, ref, shallowRef } from "vue";
 
 import "../styles/code-group.scss";
 
-// eslint-disable-next-line @typescript-eslint/naming-convention
 declare const __VUEPRESS_DEV__: boolean;
 
 export interface CodeGroupItemProps {

@@ -1,4 +1,3 @@
-/* eslint-disable @typescript-eslint/no-explicit-any */
 import type { App, ComputedRef, InjectionKey } from "vue";
 import { computed, inject } from "vue";
 import type { PageData } from "vuepress/client";
