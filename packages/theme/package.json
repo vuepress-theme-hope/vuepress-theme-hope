@@ -93,7 +93,7 @@
     "balloon-css": "^1.2.0",
     "bcrypt-ts": "^5.0.2",
     "chokidar": "^3.6.0",
-    "vue": "^3.4.33",
+    "vue": "^3.4.38",
     "vuepress-plugin-components": "workspace:*",
     "vuepress-plugin-md-enhance": "workspace:*",
     "vuepress-shared": "workspace:*"
