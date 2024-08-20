@@ -29,9 +29,7 @@ export default [
         "@vuepress/plugin-reading-time/client",
         "@vuepress/plugin-theme-data/client",
         "bcrypt-ts/browser",
-        "body-scroll-lock",
         "vuepress-plugin-md-enhance/SlidePage",
-        /\.jpg$/,
       ],
       dts: false,
       moduleSideEffects: (id) =>

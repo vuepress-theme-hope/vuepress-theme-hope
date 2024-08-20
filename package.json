@@ -60,7 +60,6 @@
     "@rollup/plugin-replace": "5.0.7",
     "@types/node": "20.14.11",
     "@vitest/coverage-v8": "2.0.3",
-    "@vue/eslint-config-typescript": "13.0.0",
     "concurrently": "8.2.2",
     "conventional-changelog-conventionalcommits": "8.0.0",
     "cpx2": "7.0.1",
