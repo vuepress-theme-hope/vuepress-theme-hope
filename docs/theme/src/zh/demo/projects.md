@@ -269,6 +269,13 @@ docs:
     repo: https://github.com/CoderMast/CoderMast-Notes
     preview: /assets/image/codermast-notes.png
 
+  - name: AmongUs 模组档案
+    desc: 一个记录所有Among Us模组的网站。
+    logo: https://aumod.site/AuModDocs(50r).png
+    url: https://aumod.site/
+    repo: https://github.com/QingFeng-awa
+    preview: https://aumod.site/AuModDocs-BG.png
+
 portfolios:
   - name: 尚程
     url: https://cheng-shang.me/zh/
