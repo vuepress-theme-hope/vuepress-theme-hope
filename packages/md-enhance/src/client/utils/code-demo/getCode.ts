@@ -74,7 +74,7 @@ const getVueJsTemplate = (js: string): string =>
     .trim();
 
 export const wrapper = (scriptStr: string): string =>
-  `(function(exports){var module={};module.exports=exports;${scriptStr};return module.exports.__esModule.exports.default:module.exports;})({})`;
+  `(function(exports){var module={};module.exports=exports;${scriptStr};return module.exports.__esModule?exports.default:module.exports;})({})`;
 
 export const getNormalCode = (
   code: CodeType,
