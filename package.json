@@ -58,7 +58,7 @@
     "@rollup/plugin-commonjs": "26.0.1",
     "@rollup/plugin-node-resolve": "15.2.3",
     "@rollup/plugin-replace": "5.0.7",
-    "@types/node": "20.14.11",
+    "@types/node": "20.16.5",
     "@vitest/coverage-v8": "2.0.3",
     "concurrently": "8.2.2",
     "conventional-changelog-conventionalcommits": "8.0.0",
