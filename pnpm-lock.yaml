@@ -546,8 +546,8 @@ importers:
         specifier: 2.1.0
         version: 2.1.0(echarts@5.5.1)
       flowchart.ts:
-        specifier: 3.0.0
-        version: 3.0.0
+        specifier: 3.0.1
+        version: 3.0.1
       katex:
         specifier: 0.16.11
         version: 0.16.11
@@ -660,8 +660,8 @@ importers:
         specifier: 2.1.0
         version: 2.1.0(echarts@5.5.1)
       flowchart.ts:
-        specifier: 3.0.0
-        version: 3.0.0
+        specifier: 3.0.1
+        version: 3.0.1
       katex:
         specifier: 0.16.11
         version: 0.16.11
@@ -5544,6 +5544,10 @@ packages:
     resolution: {integrity: sha512-yD+0wVJHvV6SutpNpao5S0hQp+7tnPuETtPORIodGEuUAP8LzegVVSUy+NFDWU9pUO2F1E+PikBD83PddoCfnw==}
     engines: {node: ^18.0.0 || >= 20}
 
+  flowchart.ts@3.0.1:
+    resolution: {integrity: sha512-bBlP6IAe6A/Y9UXb27YhbGS39fTaGLHx1dyjNazIc0d6ntVGC2eIHP6siUQj9PMEX1M5vKXbTecpi+dn4Bhhjg==}
+    engines: {node: ^18.0.0 || >= 20}
+
   follow-redirects@1.15.6:
     resolution: {integrity: sha512-wWN62YITEaOpSK584EZXJafH1AGpO8RVgElfkuXbTOrPX4fIfOyEpW/CsiNd8JdYrAoOvafRTOEnvsO++qCqFA==}
     engines: {node: '>=4.0'}
@@ -8806,6 +8810,9 @@ packages:
 
   tslib@2.6.3:
     resolution: {integrity: sha512-xNvxJEOUiWPGhUuUdQgAJPKOOJfGnIyKySOc09XkKsgdUV/3E2zvwZYdejjmRgPCgcym1juLH3226yA7sEFJKQ==}
+
+  tslib@2.7.0:
+    resolution: {integrity: sha512-gLXCKdN1/j47AiHiOkJN69hJmcbGTHI0ImLmbYLHykhgeN0jVGola9yVjFgzCUklsZQMW55o+dW7IXv3RCXDzA==}
 
   tsx@4.17.0:
     resolution: {integrity: sha512-eN4mnDA5UMKDt4YZixo9tBioibaMBpoxBkD+rIPAjVmYERSG0/dWEY1CEFuV89CgASlKL499q8AhmkMnnjtOJg==}
@@ -15007,6 +15014,12 @@ snapshots:
       raphael: 2.3.0
       tslib: 2.6.3
 
+  flowchart.ts@3.0.1:
+    dependencies:
+      '@types/raphael': 2.3.9
+      raphael: 2.3.0
+      tslib: 2.7.0
+
   follow-redirects@1.15.6: {}
 
   for-each@0.3.3:
@@ -18439,6 +18452,8 @@ snapshots:
   tslib@2.3.0: {}
 
   tslib@2.6.3: {}
+
+  tslib@2.7.0: {}
 
   tsx@4.17.0:
     dependencies:
