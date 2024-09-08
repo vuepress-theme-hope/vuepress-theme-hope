@@ -52,7 +52,7 @@
   "devDependencies": {
     "@commitlint/cli": "19.4.0",
     "@commitlint/config-conventional": "19.2.2",
-    "@lerna-lite/cli": "3.9.0",
+    "@lerna-lite/cli": "3.9.1",
     "@lerna-lite/publish": "3.9.0",
     "@rollup/plugin-alias": "5.1.0",
     "@rollup/plugin-commonjs": "26.0.1",
