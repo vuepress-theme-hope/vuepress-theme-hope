@@ -19,7 +19,7 @@
     "@vuepress/bundler-vite": "2.0.0-rc.14",
     "@vuepress/bundler-webpack": "2.0.0-rc.14",
     "@vuepress/helper": "2.0.0-rc.41",
-    "@vuepress/plugin-docsearch": "2.0.0-rc.41",
+    "@vuepress/plugin-docsearch": "2.0.0-rc.42",
     "@waline/client": "3.3.0",
     "chart.js": "4.4.3",
     "echarts": "5.5.1",
