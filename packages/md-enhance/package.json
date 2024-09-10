@@ -96,7 +96,7 @@
     "@mdit/plugin-tex": "^0.13.0",
     "@mdit/plugin-uml": "^0.13.0",
     "@types/markdown-it": "^14.1.2",
-    "@vuepress/helper": "2.0.0-rc.41",
+    "@vuepress/helper": "2.0.0-rc.42",
     "@vuepress/plugin-sass-palette": "2.0.0-rc.41",
     "@vueuse/core": "^10.11.1",
     "balloon-css": "^1.2.0",

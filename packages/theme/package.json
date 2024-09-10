@@ -68,7 +68,7 @@
     "dev:ts": "tsc -b tsconfig.build.json --watch"
   },
   "dependencies": {
-    "@vuepress/helper": "2.0.0-rc.41",
+    "@vuepress/helper": "2.0.0-rc.42",
     "@vuepress/plugin-active-header-links": "2.0.0-rc.41",
     "@vuepress/plugin-back-to-top": "2.0.0-rc.41",
     "@vuepress/plugin-blog": "2.0.0-rc.41",
