@@ -24,7 +24,7 @@
     "@vuepress/bundler-vite": "2.0.0-rc.14",
     "@vuepress/bundler-webpack": "2.0.0-rc.14",
     "@vuepress/helper": "2.0.0-rc.41",
-    "@vuepress/plugin-feed": "2.0.0-rc.41",
+    "@vuepress/plugin-feed": "2.0.0-rc.42",
     "@vueuse/core": "10.11.1",
     "artplayer": "5.1.7",
     "docs-shared": "workspace:*",
