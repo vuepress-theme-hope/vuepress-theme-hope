@@ -64,7 +64,7 @@
   },
   "devDependencies": {
     "domhandler": "5.0.3",
-    "rollup": "4.21.0"
+    "rollup": "4.21.2"
   },
   "engines": {
     "node": ">=18.19.0",
