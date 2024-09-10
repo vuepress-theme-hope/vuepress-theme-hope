@@ -29,10 +29,10 @@ export interface NavGroup<T> extends NavItemOptions {
 // Navbar types
 
 // types for NavbarItem
-export type NavbarLinkOptions = AutoLinkOptions;
+export type NavbarLinkOptions = AutoLinkOptions | string;
 // types for NavbarDropdown
 export type NavbarGroupOptions = NavGroup<
-  NavbarLinkOptions | NavGroup<NavbarLinkOptions> | string
+  NavbarLinkOptions | NavGroup<NavbarLinkOptions>
 >;
 // types for navbar options
-export type NavbarOptions = (NavbarLinkOptions | NavbarGroupOptions | string)[];
+export type NavbarOptions = (NavbarLinkOptions | NavbarGroupOptions)[];
