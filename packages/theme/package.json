@@ -83,7 +83,7 @@
     "@vuepress/plugin-photo-swipe": "2.0.0-rc.41",
     "@vuepress/plugin-reading-time": "2.0.0-rc.41",
     "@vuepress/plugin-rtl": "2.0.0-rc.41",
-    "@vuepress/plugin-sass-palette": "2.0.0-rc.41",
+    "@vuepress/plugin-sass-palette": "2.0.0-rc.42",
     "@vuepress/plugin-seo": "2.0.0-rc.41",
     "@vuepress/plugin-shiki": "2.0.0-rc.41",
     "@vuepress/plugin-sitemap": "2.0.0-rc.41",
