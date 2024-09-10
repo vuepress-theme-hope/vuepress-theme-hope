@@ -74,7 +74,7 @@
     "@vuepress/plugin-blog": "2.0.0-rc.41",
     "@vuepress/plugin-catalog": "2.0.0-rc.41",
     "@vuepress/plugin-comment": "2.0.0-rc.41",
-    "@vuepress/plugin-copy-code": "2.0.0-rc.41",
+    "@vuepress/plugin-copy-code": "2.0.0-rc.42",
     "@vuepress/plugin-copyright": "2.0.0-rc.41",
     "@vuepress/plugin-git": "2.0.0-rc.38",
     "@vuepress/plugin-links-check": "2.0.0-rc.41",
