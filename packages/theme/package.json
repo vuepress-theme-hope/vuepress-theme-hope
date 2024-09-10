@@ -86,7 +86,7 @@
     "@vuepress/plugin-sass-palette": "2.0.0-rc.41",
     "@vuepress/plugin-seo": "2.0.0-rc.41",
     "@vuepress/plugin-shiki": "2.0.0-rc.41",
-    "@vuepress/plugin-sitemap": "2.0.0-rc.41",
+    "@vuepress/plugin-sitemap": "2.0.0-rc.42",
     "@vuepress/plugin-theme-data": "2.0.0-rc.41",
     "@vuepress/plugin-watermark": "2.0.0-rc.41",
     "@vueuse/core": "^10.11.1",
