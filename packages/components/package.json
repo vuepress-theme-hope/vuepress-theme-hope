@@ -56,7 +56,7 @@
   "devDependencies": {
     "@types/qrcode": "1.5.5",
     "@vuepress/bundler-vite": "2.0.0-rc.14",
-    "rollup": "4.21.0"
+    "rollup": "4.21.2"
   },
   "peerDependencies": {
     "artplayer": "^5.0.0",
