@@ -25,7 +25,7 @@
     "nodejs-jieba": "0.1.2",
     "sass-loader": "16.0.1",
     "vue": "3.4.38",
-    "vuepress": "2.0.0-rc.14",
+    "vuepress": "2.0.0-rc.15",
     "vuepress-plugin-search-pro": "workspace:*",
     "vuepress-theme-hope": "workspace:*"
   }
