@@ -6,3 +6,10 @@ rules:
   no-descending-specificity: null
 ignoreFiles:
   - "**/*.module.scss"
+  - "**/node_modules/**"
+  - "**/dist/**"
+  - "docs-shared/lib/**"
+  - "packages/*/lib/**"
+  - "**/.vuepress/.cache/**"
+  - "**/.vuepress/.temp/**"
+  - "**/.vuepress/dist/**"

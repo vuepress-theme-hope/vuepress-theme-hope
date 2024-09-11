@@ -22,7 +22,7 @@
     "lint:check": "prettier . --check && eslint . && pnpm lint:stylelint",
     "lint:md": "markdownlint-cli2 '**/*.md'",
     "lint:prettier": "prettier --check .",
-    "lint:stylelint": "stylelint packages/*/{src,styles,templates}/**/*.{css,scss}",
+    "lint:stylelint": "stylelint \"**/*.{css,scss}\" \"**/.vuepress/**/*.{css,scss}\"",
     "packages:bootstrap": "tsx scripts/bootstrap.ts",
     "packages:check-update": "pnpm dlx npm-check-updates -u --deep --timeout 600000",
     "packages:update": "pnpm up -r",

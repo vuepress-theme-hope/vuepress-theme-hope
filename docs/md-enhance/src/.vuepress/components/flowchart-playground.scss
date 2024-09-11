@@ -1,5 +1,7 @@
 .flowchart-playground {
   textarea {
+    resize: vertical;
+
     width: 100%;
     min-height: 240px;
     border-color: var(--border-color);
@@ -9,8 +11,6 @@
     color: var(--text-color);
 
     font-size: 18px;
-
-    resize: vertical;
 
     &:active,
     &:focus-visible {

@@ -1,5 +1,7 @@
 .katex-playground {
   textarea {
+    resize: vertical;
+
     width: 100%;
     border-color: var(--border-color);
     border-radius: 0.5rem;
@@ -8,8 +10,6 @@
     color: var(--text-color);
 
     font-size: 18px;
-
-    resize: vertical;
 
     &:active,
     &:focus-visible {
@@ -27,9 +27,9 @@
 
 .katex-display {
   overflow: auto hidden;
-  -webkit-overflow-scrolling: touch;
   padding-top: 0.2em;
   padding-bottom: 0.2em;
+  -webkit-overflow-scrolling: touch;
 
   &::-webkit-scrollbar {
     height: 3px;
