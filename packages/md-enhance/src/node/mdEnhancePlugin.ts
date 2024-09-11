@@ -249,7 +249,11 @@ export const mdEnhancePlugin =
         }
 
         if (status.mermaid) {
-          addViteOptimizeDepsInclude(bundlerOptions, app, "mermaid");
+          addViteOptimizeDepsInclude(
+            bundlerOptions,
+            app,
+            "mermaid/dist/mermaid.esm.mjs",
+          );
           addViteSsrExternal(bundlerOptions, app, "mermaid");
         }
 
