@@ -111,13 +111,6 @@ Location to pdfjs viewer.
 
 Share services
 
-### componentsOptions.share.contentSelector
-
-- Type: `string`
-- Default: `.theme-default-content`
-
-Page content selector.
-
 ### componentsOptions.share.twitterUserName
 
 - Type: `string`

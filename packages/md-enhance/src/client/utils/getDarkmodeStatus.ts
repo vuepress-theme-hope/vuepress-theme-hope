@@ -1,4 +1,3 @@
-// FIXME: Should correct handle dark selector
 export const getDarkmodeStatus = (): boolean => {
   const html = document.documentElement;
 

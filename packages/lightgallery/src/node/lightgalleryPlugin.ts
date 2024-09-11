@@ -24,8 +24,7 @@ export const lightgalleryPlugin =
       define: (): Record<string, unknown> => ({
         // eslint-disable-next-line @typescript-eslint/naming-convention
         __LG_SELECTOR__:
-          options.selector ??
-          ".theme-default-content :not(a) > img:not([no-view])",
+          options.selector ?? "[vp-content] :not(a) > img:not([no-view])",
         // eslint-disable-next-line @typescript-eslint/naming-convention
         __LG_DELAY__: options.delay ?? 800,
       }),

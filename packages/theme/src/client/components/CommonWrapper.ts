@@ -250,6 +250,7 @@ export default defineComponent({
                 props.containerClass,
                 frontmatter.value.containerClass ?? "",
               ],
+              "vp-container": "",
               onTouchStart,
               onTouchEnd,
             },

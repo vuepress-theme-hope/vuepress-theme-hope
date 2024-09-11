@@ -58,8 +58,6 @@ export const getDefine =
     }
 
     if (components.includes("Share")) {
-      result["SHARE_CONTENT_SELECTOR"] =
-        componentOptions.share?.contentSelector ?? ".theme-default-content";
       result["SHARE_SERVICES"] = getShareServiceConfig(componentOptions.share);
     }
 

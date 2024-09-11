@@ -69,7 +69,7 @@ export default defineComponent({
 
     return (): VNode | null =>
       enable.value
-        ? h("footer", { class: "vp-footer-wrapper" }, [
+        ? h("footer", { class: "vp-footer-wrapper", "vp-footer": "" }, [
             content.value
               ? h("div", { class: "vp-footer", innerHTML: content.value })
               : null,

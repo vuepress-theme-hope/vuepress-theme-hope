@@ -9,19 +9,6 @@ export interface ShareOptions {
   services: ShareService[];
 
   /**
-   * Main content selector
-   *
-   * @description used to select page content
-   *
-   * 主要内容选择器
-   *
-   * @description 用于选择页面内容
-   *
-   * @default '.theme-default-content'
-   */
-  contentSelector?: string;
-
-  /**
    * Your twitter twitter user name
    *
    * @description required when you are using twitter service

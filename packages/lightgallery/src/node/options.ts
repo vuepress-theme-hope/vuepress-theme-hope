@@ -19,7 +19,7 @@ export interface LightGalleryPluginOptions {
    *
    * 图片选择器
    *
-   * @default ".theme-default-content :not(a) > img:not([no-view])"
+   * @default "[vp-content] :not(a) > img:not([no-view])"
    */
   selector?: string;
 

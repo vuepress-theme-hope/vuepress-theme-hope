@@ -4,7 +4,8 @@ import { Content } from "vuepress/client";
 
 const MarkdownContent: FunctionalComponent<{ custom?: boolean }> = ({
   custom,
-}): VNode => h(Content, { class: ["theme-hope-content", { custom }] });
+}): VNode =>
+  h(Content, { class: ["theme-hope-content", { custom }], "vp-content": "" });
 
 MarkdownContent.displayName = "MarkdownContent";
 

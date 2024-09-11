@@ -65,6 +65,7 @@ export default defineComponent({
           key: "sidebar",
           id: "sidebar",
           class: "vp-sidebar",
+          "vp-sidebar": "",
         },
         [
           slots.top?.(),
