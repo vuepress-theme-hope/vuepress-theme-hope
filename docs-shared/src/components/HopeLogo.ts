@@ -1,4 +1,3 @@
-import type Three from "three";
 import type { Mesh } from "three";
 import type { OrbitControls } from "three/examples/jsm/controls/OrbitControls.js";
 import type { STLLoader } from "three/examples/jsm/loaders/STLLoader.js";
@@ -28,7 +27,8 @@ export default defineComponent({
     );
 
     const renderLogo = async (
-      three: typeof Three,
+      // eslint-disable-next-line @typescript-eslint/consistent-type-imports
+      three: typeof import("three"),
       STLLoaderConstructor: typeof STLLoader,
       OrbitControlsConstructor: typeof OrbitControls,
     ): Promise<void> => {

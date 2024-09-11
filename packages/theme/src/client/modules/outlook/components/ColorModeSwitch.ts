@@ -12,16 +12,6 @@ import { useDarkmode } from "@theme-hope/modules/outlook/composables/index";
 
 import "../styles/color-mode-switch.scss";
 
-declare global {
-  interface ViewTransition {
-    ready: Promise<void>;
-  }
-
-  interface Document {
-    startViewTransition: (callback: () => Promise<void>) => ViewTransition;
-  }
-}
-
 export default defineComponent({
   name: "ColorModeSwitch",
 
