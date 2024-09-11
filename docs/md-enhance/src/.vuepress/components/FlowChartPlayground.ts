@@ -56,7 +56,7 @@ export default defineComponent({
       width < 419 ? 0.8 : width > 1280 ? 1 : 0.9;
 
     onMounted(() => {
-      let parseAction: ((input?: string | undefined) => Chart) | null = null;
+      let parseAction: ((input?: string) => Chart) | null = null;
 
       void Promise.all([
         import("flowchart.ts"),

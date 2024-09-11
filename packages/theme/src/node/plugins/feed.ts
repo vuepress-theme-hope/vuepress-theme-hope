@@ -27,7 +27,7 @@ try {
  */
 export const getFeedPlugin = (
   themeData: ThemeData,
-  options?: Omit<FeedPluginOptions, "hostname"> | boolean | undefined,
+  options?: Omit<FeedPluginOptions, "hostname"> | boolean,
   hostname?: string,
   favicon?: string,
   legacy = false,

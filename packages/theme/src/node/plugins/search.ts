@@ -24,7 +24,7 @@ import { logger } from "../utils.js";
 let docsearchPlugin: (options: DocsearchPluginOptions) => Plugin;
 let searchPlugin: (options: SearchPluginOptions) => Plugin;
 let searchProPlugin: (options: SearchProPluginOptions) => Plugin;
-let cut: (content: string, strict?: boolean | undefined) => string[];
+let cut: (content: string, strict?: boolean) => string[];
 
 try {
   ({ docsearchPlugin } = await import("@vuepress/plugin-docsearch"));
