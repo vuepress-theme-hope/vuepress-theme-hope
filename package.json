@@ -60,7 +60,7 @@
     "@rollup/plugin-replace": "5.0.7",
     "@types/node": "22.5.4",
     "@vitest/coverage-v8": "2.0.3",
-    "concurrently": "9.0.0",
+    "concurrently": "9.0.1",
     "conventional-changelog-conventionalcommits": "8.0.0",
     "cpx2": "7.0.1",
     "cross-env": "7.0.3",
