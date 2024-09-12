@@ -34,7 +34,7 @@
     "test": "cross-env TZ=Etc/UTC vitest --coverage"
   },
   "nano-staged": {
-    "**/*": "prettier --write --ignore-unknown",
+    "**/*": "prettier --write -u",
     "*.vue": "eslint --fix",
     "*.{cjs,mjs,js,ts}": [
       "eslint --fix",
@@ -50,8 +50,8 @@
     }
   },
   "devDependencies": {
-    "@commitlint/cli": "19.4.1",
-    "@commitlint/config-conventional": "19.4.1",
+    "@commitlint/cli": "19.5.0",
+    "@commitlint/config-conventional": "19.5.0",
     "@lerna-lite/cli": "3.9.1",
     "@lerna-lite/publish": "3.9.1",
     "@rollup/plugin-alias": "5.1.0",
@@ -59,8 +59,8 @@
     "@rollup/plugin-node-resolve": "15.2.3",
     "@rollup/plugin-replace": "5.0.7",
     "@types/node": "22.5.4",
-    "@vitest/coverage-v8": "2.0.3",
-    "concurrently": "9.0.0",
+    "@vitest/coverage-istanbul": "2.0.5",
+    "concurrently": "9.0.1",
     "conventional-changelog-conventionalcommits": "8.0.0",
     "cpx2": "7.0.1",
     "cross-env": "7.0.3",
@@ -72,7 +72,7 @@
     "execa": "9.3.1",
     "gulp": "5.0.0",
     "http-server": "14.1.1",
-    "husky": "9.1.5",
+    "husky": "9.1.6",
     "markdownlint-cli2": "0.14.0",
     "nano-staged": "0.8.0",
     "ora": "8.1.0",
@@ -88,9 +88,9 @@
     "stylelint-config-hope": "7.0.2",
     "through2": "4.0.2",
     "tslib": "2.7.0",
-    "tsx": "4.19.0",
+    "tsx": "4.19.1",
     "typescript": "5.6.2",
-    "vitest": "2.0.3"
+    "vitest": "2.0.5"
   },
   "packageManager": "pnpm@9.10.0",
   "engines": {
