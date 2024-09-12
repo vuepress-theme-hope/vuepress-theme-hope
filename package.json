@@ -72,7 +72,7 @@
     "execa": "9.3.1",
     "gulp": "5.0.0",
     "http-server": "14.1.1",
-    "husky": "9.1.5",
+    "husky": "9.1.6",
     "markdownlint-cli2": "0.14.0",
     "nano-staged": "0.8.0",
     "ora": "8.1.0",
