@@ -27,6 +27,7 @@
     "@vuepress/plugin-feed": "2.0.0-rc.41",
     "@vueuse/core": "11.0.3",
     "artplayer": "5.1.7",
+    "desmos": "^1.5.4",
     "docs-shared": "workspace:*",
     "echarts-wordcloud": "2.1.0",
     "flowchart.ts": "3.0.1",

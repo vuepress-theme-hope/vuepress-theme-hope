@@ -323,6 +323,13 @@ Whether to enable chart support
 
 Whether to enable ECharts support
 
+### desmos
+
+- Type: `boolean`
+- Default: `false`
+
+Whether to enable Desmos function graphs support
+
 ### flowchart
 
 - Type: `boolean`

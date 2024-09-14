@@ -329,6 +329,13 @@ interface TaskListOptions {
 
 是否启用 ECharts 图表支持。
 
+### desmos
+
+- 类型: `boolean`
+- 默认值: `false`
+
+是否启用 Desmos 函数图像支持。
+
 ### flowchart
 
 - 类型: `boolean`

@@ -121,6 +121,11 @@ highlights:
         details: Display charts in Markdown
         link: ./guide/markdown/chart/chartjs.html
 
+      - title: Desmos Support
+        icon: fa-solid fa-chart-area
+        details: Plot function graphs in Markdown
+        link: ./guide/markdown/chart/desmos.html
+
       - title: Flowchart Support
         icon: route
         details: Create your flowchart in Markdown

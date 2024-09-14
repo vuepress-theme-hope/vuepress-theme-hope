@@ -133,6 +133,7 @@ export default theme(
         component: true,
         demo: true,
         echarts: true,
+        desmos: true,
         figure: true,
         flowchart: true,
         gfm: true,

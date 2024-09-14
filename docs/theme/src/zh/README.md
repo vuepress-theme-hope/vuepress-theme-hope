@@ -121,6 +121,11 @@ highlights:
         details: 在 Markdown 中展示 Chart.js 图表
         link: ./guide/markdown/chart/chartjs.html
 
+      - title: Desmos 支持
+        icon: fa-solid fa-chart-area
+        details: 在 Markdown 中绘制函数图像
+        link: ./guide/markdown/chart/desmos.html
+
       - title: 流程图支持
         icon: route
         details: 在 Markdown 中直接写出流程图
