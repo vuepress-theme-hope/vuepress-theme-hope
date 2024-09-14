@@ -38,7 +38,7 @@
     "mermaid": "11.2.0",
     "sandpack-vue3": "3.1.11",
     "sass-loader": "16.0.1",
-    "vue": "3.5.4",
+    "vue": "3.5.5",
     "vuepress": "2.0.0-rc.14",
     "vuepress-plugin-components": "workspace:*",
     "vuepress-plugin-md-enhance": "workspace:*",
