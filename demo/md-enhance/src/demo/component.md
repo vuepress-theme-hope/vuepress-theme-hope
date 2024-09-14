@@ -1,6 +1,4 @@
----
-title: Component
----
+# Component
 
 ```component Badge
 text: Mr.Hope
