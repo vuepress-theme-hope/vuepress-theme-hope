@@ -9,6 +9,10 @@ import type { Plugin } from "vuepress/core";
  * Resolve options for @vuepress/plugin-markdown-math
  */
 export const getMarkdownMathPlugin = (
-  options?: Partial<MarkdownMathPluginOptions>,
+  options?: Partial<MarkdownMathPluginOptions> | boolean,
 ): Plugin | null =>
-  isPlainObject(options) ? markdownMathPlugin(options) : null;
+  isPlainObject(options)
+    ? markdownMathPlugin(options)
+    : options
+      ? markdownMathPlugin()
+      : null;

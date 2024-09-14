@@ -218,7 +218,7 @@ export interface PluginsOptions {
    *
    * @see https://ecosystem.vuejs.press/zh/plugins/markdown/markdown-math.html
    */
-  markdownMath?: MarkdownMathPluginOptions;
+  markdownMath?: MarkdownMathPluginOptions | boolean;
 
   /**
    * md-enhance plugin options
