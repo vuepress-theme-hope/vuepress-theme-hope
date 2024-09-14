@@ -80,7 +80,7 @@
     "@vuepress/plugin-links-check": "2.0.0-rc.41",
     "@vuepress/plugin-notice": "2.0.0-rc.41",
     "@vuepress/plugin-nprogress": "2.0.0-rc.41",
-    "@vuepress/plugin-photo-swipe": "2.0.0-rc.41",
+    "@vuepress/plugin-photo-swipe": "2.0.0-rc.43",
     "@vuepress/plugin-reading-time": "2.0.0-rc.41",
     "@vuepress/plugin-rtl": "2.0.0-rc.41",
     "@vuepress/plugin-sass-palette": "2.0.0-rc.41",
