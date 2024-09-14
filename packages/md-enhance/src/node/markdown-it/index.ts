@@ -3,6 +3,7 @@ export * from "./chart.js";
 export * from "./codeDemo.js";
 export * from "./codeTabs.js";
 export * from "./component.js";
+export * from "./desmos.js";
 export * from "./echarts.js";
 export * from "./flowchart.js";
 export * from "./hint.js";

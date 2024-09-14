@@ -113,9 +113,11 @@
     "typescript": "5.6.2"
   },
   "peerDependencies": {
+    "@types/desmos": "^1.6.3",
     "@types/reveal.js": "^5.0.0",
     "@vue/repl": "^4.1.1",
     "chart.js": "^4.0.0",
+    "desmos": "^1.5.4",
     "echarts": "^5.0.0",
     "flowchart.ts": "^2.0.0 || ^3.0.0",
     "katex": "^0.16.0",
@@ -138,6 +140,9 @@
       "optional": true
     },
     "chart.js": {
+      "optional": true
+    },
+    "desmos": {
       "optional": true
     },
     "echarts": {

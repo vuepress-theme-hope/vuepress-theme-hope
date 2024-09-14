@@ -47,6 +47,7 @@ import {
   chart,
   codeTabs,
   component,
+  desmos,
   echarts,
   flowchart,
   getTSPlaygroundPreset,
@@ -118,6 +119,7 @@ export const mdEnhancePlugin =
       alert: getStatus("alert", true),
       breaks: getStatus("breaks", true),
       chart: getStatus("chart", false, ["chart.js"]),
+      desmos: getStatus("desmos", false, ["desmos"]),
       echarts: getStatus("echarts", false, ["echarts"]),
       flowchart: getStatus("flowchart", false, ["flowchart.ts"]),
       footnote: getStatus("footnote", true),
@@ -223,6 +225,11 @@ export const mdEnhancePlugin =
             "chart.js/auto/auto.mjs",
           );
           addViteSsrExternal(bundlerOptions, app, "chart.js");
+        }
+
+        if (status.desmos) {
+          addViteOptimizeDepsExclude(bundlerOptions, app, "desmos");
+          addViteSsrExternal(bundlerOptions, app, "desmos");
         }
 
         if (status.echarts) {
@@ -396,6 +403,7 @@ export const mdEnhancePlugin =
           if (legacy) md.use(legacyFlowchart);
         }
         if (status.chart) md.use(chart);
+        if (status.desmos) md.use(desmos);
         if (status.echarts) md.use(echarts);
         if (isArray(options.plantuml)) md.use(plantuml, options);
         else if (options.plantuml) md.use(plantuml);

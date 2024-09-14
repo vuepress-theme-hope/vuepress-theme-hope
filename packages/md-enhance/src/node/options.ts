@@ -288,6 +288,14 @@ export interface MarkdownEnhancePluginOptions {
   component?: boolean;
 
   /**
+   * Whether to enable desmos support
+   *
+   * 是否启用 desmos 函数图像计算器支持
+   *
+   * @default false
+   */
+  desmos?: boolean;
+  /**
    * Whether to enable chart support
    *
    * 是否启用 chart 图表支持

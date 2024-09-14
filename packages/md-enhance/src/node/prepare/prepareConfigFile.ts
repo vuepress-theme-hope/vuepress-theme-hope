@@ -71,6 +71,11 @@ export const prepareConfigFile = async (
     enhances.add(`app.component("MdDemo", MdDemo);`);
   }
 
+  if (status["desmos"]) {
+    imports.add(`import Desmos from "${CLIENT_FOLDER}components/Desmos.js";`);
+    enhances.add(`app.component("Desmos", Desmos);`);
+  }
+
   if (status["echarts"]) {
     imports.add(`import ECharts from "${CLIENT_FOLDER}components/ECharts.js";`);
     imports.add(

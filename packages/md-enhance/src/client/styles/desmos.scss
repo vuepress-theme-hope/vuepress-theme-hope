@@ -1,0 +1,9 @@
+.desmos-wrapper {
+  .desmos-container {
+    height: 360px;
+
+    @media print {
+      page-break-inside: avoid;
+    }
+  }
+}
