@@ -31,6 +31,7 @@ export default theme("md-enhance", {
       codetabs: true,
       component: true,
       demo: true,
+      desmos: true,
       echarts: true,
       figure: true,
       flowchart: true,
