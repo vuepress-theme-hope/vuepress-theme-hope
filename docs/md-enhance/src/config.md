@@ -326,6 +326,15 @@ Whether to enable chart support
 
 Whether to enable ECharts support
 
+### desmos
+
+- Type: `boolean`
+- Default: `false`
+- Details:
+  - [Desmos](./guide/chart/desmos.md)
+
+Whether to enable Desmos function graphs support
+
 ### flowchart
 
 - Type: `boolean`

@@ -142,6 +142,11 @@ highlights:
         details: 在 Markdown 中展示 ECharts 图表
         link: ./guide/chart/echarts.html
 
+      - title: Desmos
+        icon: fa-solid fa-chart-area
+        details: 在 Markdown 中绘制函数图像
+        link: ./guide/chart/desmos.html
+
       - title: 流程图
         icon: route
         details: 在 Markdown 中添加流程图

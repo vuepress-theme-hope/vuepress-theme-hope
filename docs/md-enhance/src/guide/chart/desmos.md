@@ -5,13 +5,15 @@ icon: fa-solid fa-chart-area
 
 <!-- #region before -->
 
-让你 VuePress 站点中的 Markdown 文件支持函数图像。
+Add [Desmos][] support to the Markdown files in your VuePress site.
+
+[Desmos]: https://www.desmos.com/calculator
 
 <!-- more -->
 
-## 配置
+## Settings
 
-在你的项目中安装 [Desmos](https://www.desmos.com/calculator?lang=zh-CN):
+Install [Desmos][] in your project:
 
 ::: code-tabs#shell
 
@@ -35,7 +37,7 @@ npm i -D desmos
 
 :::
 
-之后启用它:
+Then enabling via:
 
 <!-- #endregion before -->
 
@@ -45,7 +47,7 @@ import { mdEnhancePlugin } from "vuepress-plugin-md-enhance";
 export default {
   plugins: [
     mdEnhancePlugin({
-      // 启用 desmos 函数图像
+      // Enable Desmos
       desmos: true,
     }),
   ],
@@ -54,23 +56,23 @@ export default {
 
 <!-- #region after -->
 
-## 语法
+## Syntax
 
 ```md
 ::: desmos
 
-$latex表达式$
+$latex Expression$
 
-$latex表达式$
+$latex Expression$
 
-$latex表达式$
+$latex Expression$
 
 :::
 ```
 
-## 案例
+## Demo
 
-::::: md-demo 直线：斜截式
+::::: md-demo Lines: Slope Intercept Form
 
 ::: desmos
 
@@ -80,7 +82,7 @@ $y=2x+3$
 
 :::::
 
-::::: md-demo 直线：点斜式
+::::: md-demo Lines: Point Slope Form
 
 ::: desmos
 
@@ -104,7 +106,7 @@ $\left(x_{2},y_{2}\right)$
 
 :::::
 
-::::: md-demo 抛物线：标准式
+::::: md-demo Parabolas: Standard Form
 
 ::: desmos
 
@@ -120,7 +122,7 @@ $c=1$
 
 :::::
 
-::::: md-demo 抛物线：顶点式
+::::: md-demo Parabolas: Vertex Form
 
 ::: desmos
 
@@ -136,7 +138,7 @@ $k=0$
 
 :::::
 
-::::: md-demo 抛物线：标准式和切线
+::::: md-demo Parabolas: Standard Form + Tangent
 
 ::: desmos
 
@@ -154,7 +156,7 @@ $y=bx+c$
 
 :::::
 
-::::: md-demo 三角函数：周期和幅值
+::::: md-demo Trigonometry: Period and Amplitude
 
 ::: desmos
 
@@ -172,7 +174,7 @@ $\left(bt,\ a\right)$
 
 :::::
 
-::::: md-demo 三角函数：单位圆
+::::: md-demo Trigonometry: Unit Circle
 
 ::: desmos
 
@@ -194,7 +196,7 @@ $x=\cos(a)\left\{\sin(a)<y<0\right\}$
 
 :::::
 
-::::: md-demo 极坐标系：玫瑰线
+::::: md-demo Polar: Rose
 
 ::: desmos
 
@@ -208,7 +210,7 @@ $b=6$
 
 :::::
 
-::::: md-demo 极坐标系：等角螺线
+::::: md-demo Polar: Logarithmic Spiral
 
 ::: desmos
 
@@ -220,7 +222,7 @@ $a=1.25$
 
 :::::
 
-::::: md-demo 参数：摆线
+::::: md-demo Parametric: Cycloid
 
 ::: desmos
 
@@ -236,7 +238,7 @@ $\left(a-\sin\left(a\right),1-\cos\left(a\right)\right)$
 
 :::::
 
-::::: md-demo 变换：函数平移
+::::: md-demo Transformations: Translating a Function
 
 ::: desmos
 
@@ -252,7 +254,7 @@ $h=-1$
 
 :::::
 
-::::: md-demo 变换：函数缩放
+::::: md-demo Transformations: Scaling a Function
 
 ::: desmos
 
@@ -268,7 +270,7 @@ $b=1$
 
 :::::
 
-::::: md-demo 变换：函数逆变换(反函数)
+::::: md-demo Transformations: Inverse of a Function
 
 ::: desmos
 
@@ -288,7 +290,7 @@ $\left(f\left(a\right),a\right)$
 
 :::::
 
-::::: md-demo 列表：曲线拼接
+::::: md-demo Lists: Curve Stitching
 
 ::: desmos
 
@@ -302,7 +304,7 @@ $y=a+\frac{a}{a-11}x\left\{x\ge0\right\}\left\{y\ge0\right\}$
 
 :::::
 
-::::: md-demo 微积分：导数
+::::: md-demo Calculus: Derivatives
 
 ::: desmos
 
@@ -318,7 +320,7 @@ $g\left(x\right)\ =\ \frac{d}{dx}f\left(x\right)$
 
 :::::
 
-::::: md-demo 微积分：割线
+::::: md-demo Calculus: Secant Line
 
 ::: desmos
 
@@ -340,7 +342,7 @@ $\left(a+h,f\left(a+h\right)\right)$
 
 :::::
 
-::::: md-demo 微积分：切线
+::::: md-demo Calculus: Tangent Line
 
 ::: desmos
 
@@ -358,7 +360,7 @@ $\left(a,\ f\left(a\right)\right)$
 
 :::::
 
-::::: md-demo 微积分：sin(x)的泰勒展开式
+::::: md-demo Calculus: Taylor Expansion of sin(x)
 
 ::: desmos
 
@@ -372,7 +374,7 @@ $a=1$
 
 :::::
 
-::::: md-demo 微积分: 积分
+::::: md-demo Calculus: Integrals
 
 ::: desmos
 
@@ -392,7 +394,7 @@ $F\left(1\right)$
 
 :::::
 
-::::: md-demo 微积分: 边界可调整的积分
+::::: md-demo Calculus: Integral with adjustable bounds
 
 ::: desmos
 
@@ -424,7 +426,7 @@ $\left(b,\ F\left(b\right)\right)$
 
 :::::
 
-::::: md-demo 微积分: 微积分基本定理
+::::: md-demo Calculus: Fundamental Theorem of Calculus
 
 ::: desmos
 

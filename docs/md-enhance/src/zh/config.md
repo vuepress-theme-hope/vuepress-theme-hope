@@ -357,7 +357,14 @@ order: 2
 - 详情:
   - [ECharts](./guide/chart/echarts.md)
 
-是否启用 ECharts 图表支持。
+### desmos
+
+- 类型: `boolean`
+- 默认值: `false`
+- 详情:
+  - [Desmos](./guide/chart/desmos.md)
+
+是否启用 Desmos 函数图像支持。
 
 ### flowchart
 

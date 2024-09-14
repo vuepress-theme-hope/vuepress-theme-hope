@@ -9,7 +9,7 @@ index: false
 
 <!-- #region intro -->
 
-此插件提供了 6 种方法让你将图表插入到 Markdown 文件中。
+此插件提供了 7 种方法让你将图表插入到 Markdown 文件中。
 
 - Chart.js：一个轻量级、易于使用、高度可定制的图表库。
 
@@ -18,6 +18,10 @@ index: false
 - ECharts：一个强大的、交互式的浏览器图表和可视化库。
 
   与 Chart.js 相比，ECharts 更强大。
+
+- Desmos: 一款功能强大的函数图像计算器和数学工具。
+
+  运行环境较重，绘制函数图形、解方程、数学概念可视化。
 
 - flowchart: Markdown 扩展，用于生成流程图和序列图。
 
@@ -104,6 +108,20 @@ index: false
 :::
 
 - [查看详情](./echarts.md)
+
+### Desmos 绘制函数图像
+
+::: desmos
+
+$f\left(x\right)=x^{3}-2x+1$
+
+$F\left(x\right)=\int_{0}^{x}f\left(t\right)dt$
+
+$F'\left(x\right)$
+
+:::
+
+- [查看详情](./desmos.md)
 
 ### 流程图
 

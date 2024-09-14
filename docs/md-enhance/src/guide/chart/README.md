@@ -9,7 +9,7 @@ index: false
 
 <!-- #region intro -->
 
-This plugin provides 6 ways to let you insert charts into your markdown file.
+This plugin provides 7 ways to let you insert charts into your markdown file.
 
 - Chart.js: A lightweight, easy-to-use, highly customizable chart library.
 
@@ -18,6 +18,10 @@ This plugin provides 6 ways to let you insert charts into your markdown file.
 - ECharts: A powerful, interactive charting and visualization library for browser.
 
   ECharts is more powerful comparing to Chart.js.
+
+- Desmos: A powerful function graphing calculator and mathematical tool.
+
+  The runtime is heavy, Used for plotting function graphs, solving equations, and visualizing mathematical concepts.
 
 - Flowchart: A simple markdown extension to generate flowcharts and sequence diagrams.
 
@@ -104,6 +108,20 @@ This plugin provides 6 ways to let you insert charts into your markdown file.
 :::
 
 - [View Detail](./echarts.md)
+
+### Desmos
+
+::: desmos
+
+$f\left(x\right)=x^{3}-2x+1$
+
+$F\left(x\right)=\int_{0}^{x}f\left(t\right)dt$
+
+$F'\left(x\right)$
+
+:::
+
+- [查看详情](./desmos.md)
 
 ### Flowchart
 

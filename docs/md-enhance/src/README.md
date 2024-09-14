@@ -145,6 +145,11 @@ highlights:
         details: Display ECharts in Markdown
         link: ./guide/chart/echarts.html
 
+      - title: Desmos Support
+        icon: fa-solid fa-chart-area
+        details: Plot function graphs in Markdown
+        link: ./guide/chart/desmos.html
+
       - title: Flowchart Support
         icon: route
         details: Create your flowchart in Markdown
