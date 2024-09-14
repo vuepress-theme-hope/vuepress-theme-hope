@@ -11,9 +11,16 @@
   ],
   "packageRules": [
     {
-      "excludePackageNames": ["vite", "vuepress"],
-      "excludePackagePrefixes": ["@vuepress/", "vuepress-"],
-      "matchPackagePatterns": ["*"]
+      "groupName": "vuepress",
+      "matchPackageNames": ["vuepress", "@vuepress/**", "vuepress-**"]
+    },
+    {
+      "matchPackageNames": [
+        "!vite",
+        "!vuepress",
+        "!@vuepress/**",
+        "!vuepress-**"
+      ]
     },
     {
       "matchPackageNames": ["vite"],
@@ -27,9 +34,12 @@
     "extends": ["group:allNonMajor", "schedule:weekly"],
     "packageRules": [
       {
-        "excludePackageNames": ["vite", "vuepress"],
-        "excludePackagePrefixes": ["@vuepress/", "vuepress-"],
-        "matchPackagePatterns": ["*"]
+        "matchPackageNames": [
+          "!vite",
+          "!vuepress",
+          "!@vuepress/**",
+          "!vuepress-**"
+        ]
       },
       {
         "matchPackageNames": ["vite"],
