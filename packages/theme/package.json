@@ -88,7 +88,7 @@
     "@vuepress/plugin-shiki": "2.0.0-rc.41",
     "@vuepress/plugin-sitemap": "2.0.0-rc.41",
     "@vuepress/plugin-theme-data": "2.0.0-rc.41",
-    "@vuepress/plugin-watermark": "2.0.0-rc.41",
+    "@vuepress/plugin-watermark": "2.0.0-rc.43",
     "@vueuse/core": "^11.0.3",
     "balloon-css": "^1.2.0",
     "bcrypt-ts": "^5.0.2",
