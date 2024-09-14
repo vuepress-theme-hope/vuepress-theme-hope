@@ -16,7 +16,7 @@
   "devDependencies": {
     "@vuepress/bundler-vite": "2.0.0-rc.14",
     "@vuepress/bundler-webpack": "2.0.0-rc.14",
-    "@vuepress/helper": "2.0.0-rc.41",
+    "@vuepress/helper": "2.0.0-rc.43",
     "@vuepress/theme-default": "2.0.0-rc.41",
     "artplayer": "5.1.7",
     "artplayer-plugin-danmuku": "5.1.4",

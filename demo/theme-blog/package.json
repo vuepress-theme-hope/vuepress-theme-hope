@@ -18,7 +18,7 @@
     "@vue/repl": "4.4.1",
     "@vuepress/bundler-vite": "2.0.0-rc.14",
     "@vuepress/bundler-webpack": "2.0.0-rc.14",
-    "@vuepress/helper": "2.0.0-rc.41",
+    "@vuepress/helper": "2.0.0-rc.43",
     "@vuepress/plugin-docsearch": "2.0.0-rc.41",
     "@waline/client": "3.3.1",
     "chart.js": "4.4.4",
