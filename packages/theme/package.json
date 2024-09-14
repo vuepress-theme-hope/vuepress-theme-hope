@@ -106,7 +106,7 @@
   },
   "peerDependencies": {
     "@vuepress/plugin-docsearch": "2.0.0-rc.41",
-    "@vuepress/plugin-feed": "2.0.0-rc.41",
+    "@vuepress/plugin-feed": "2.0.0-rc.43",
     "@vuepress/plugin-prismjs": "2.0.0-rc.41",
     "@vuepress/plugin-pwa": "2.0.0-rc.41",
     "@vuepress/plugin-redirect": "2.0.0-rc.41",
