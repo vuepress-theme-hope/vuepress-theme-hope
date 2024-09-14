@@ -109,7 +109,7 @@
     "@vuepress/plugin-feed": "2.0.0-rc.41",
     "@vuepress/plugin-prismjs": "2.0.0-rc.41",
     "@vuepress/plugin-pwa": "2.0.0-rc.41",
-    "@vuepress/plugin-redirect": "2.0.0-rc.41",
+    "@vuepress/plugin-redirect": "2.0.0-rc.43",
     "@vuepress/plugin-search": "2.0.0-rc.41",
     "nodejs-jieba": "^0.1.2",
     "sass-loader": "^16.0.0",
