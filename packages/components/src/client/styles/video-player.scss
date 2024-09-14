@@ -1,7 +1,7 @@
 .plyr--video {
-  --plyr-audio-controls-background: var(--vp-bg);
-  --plyr-audio-control-color: var(--vp-c);
-  --plyr-color-main: var(--vp-tc);
+  --plyr-audio-controls-background: var(--vp-c-bg);
+  --plyr-audio-control-color: var(--vp-c-text);
+  --plyr-color-main: var(--vp-c-accent-bg);
 
   @media print {
     display: none;

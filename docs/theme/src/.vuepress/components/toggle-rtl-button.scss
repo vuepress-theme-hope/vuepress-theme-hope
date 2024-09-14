@@ -3,5 +3,5 @@
 .toggle-rtl-button {
   @include reset.button;
 
-  color: var(--text-color);
+  color: var(--vp-c-text);
 }

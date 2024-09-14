@@ -37,22 +37,6 @@ Some of the behavior might be different, for example to support Vue syntax, we a
 
 :::
 
-### hint
-
-- Type: `boolean`
-- Default: `false`
-- Details:
-  - [Hint box](../../guide/markdown/stylize/hint.md)
-
-Whether to enable hint box including
-
-- info
-- note
-- tip
-- warning
-- caution
-- details
-
 ### vPre
 
 - Type: `boolean`
@@ -77,15 +61,6 @@ Whether convert `\n` in paragraphs into `<br>`s
 - Enabled in GFM: Yes
 
 Whether convert URL-like text into links
-
-### alert
-
-- Type: `boolean`
-- Default: `false`
-- Details:
-  - [GFM Alerts](../../guide/markdown/stylize/alert.md)
-
-Whether to enable gfm alerts.
 
 ### tabs
 
@@ -187,50 +162,6 @@ Whether to enable footnote format support.
 
 Whether to enable mark support.
 
-### figure
-
-- Type: `boolean`
-- Default: `false`
-
-Whether enable figure support.
-
-### imgLazyload
-
-- Type: `boolean`
-- Default: `false`
-
-Whether to lazy load every image in page in native way.
-
-### imgMark
-
-- Type: `ImageMarkOptions | boolean`
-- Default: `false`
-
-Whether enable image mark support.
-
-```ts
-interface ImageMarkOptions {
-  /** lightmode only IDs */
-  light?: string[];
-  /** darkmode only IDs */
-  dark?: string[];
-}
-```
-
-### imgSize
-
-- Type: `boolean`
-- Default: `false`
-
-Whether enable image size support.
-
-### obsidianImgSize
-
-- Type: `boolean`
-- Default: `false`
-
-Whether enable obsidian image size support.
-
 ### tasklist
 
 - Type: `TaskListOptions | boolean`
@@ -255,26 +186,6 @@ interface TaskListOptions {
   label?: boolean;
 }
 ```
-
-### katex
-
-- Type: `KatexOptions & { copy?: boolean; mhchem?: boolean } | boolean`
-- Default: `false`
-
-Whether to enable $\TeX$ syntax support through KaTeX. You can pass an object to config KaTeX.
-
-In particular, you can enable the copy and mhchem extensions with `katex.copy: true` and `katex.mhchem: true`.
-
-Please see [Katex Docs](https://katex.org/docs/options.html) for available options.
-
-### mathjax
-
-- Type: `MathJaxOptions | boolean`
-- Default: `false`
-
-Whether to enable $\TeX$ syntax support through Math Jax. You can pass an object to config Math Jax.
-
-Please see [source code](https://github.com/vuepress-theme-hope/vuepress-theme-hope/tree/main/packages/md-enhance/src/shared/mathjax.ts) for available options.
 
 ### include
 

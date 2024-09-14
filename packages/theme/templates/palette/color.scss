@@ -1,64 +1,83 @@
 @use "sass:list";
 @use "sass:map";
 
-$theme-color: #3eaf7c !default;
-$text-color: (
-  light: #2c3e50,
-  dark: #9e9e9e,
+// accent color
+$vp-c-accent: (
+  light: #299764,
+  dark: #3dd68c,
 ) !default;
-$bg-color: (
+$vp-c-accent-bg: (
+  light: #3eaf7c,
+  dark: #3aa675,
+) !default;
+$vp-c-accent-hover: (
+  light: #4abf8a,
+  dark: #349469,
+) !default;
+$vp-c-accent-text: var(--vp-c-white) !default;
+$vp-c-accent-soft: (
+  light: rgb(16 185 129 / 14%),
+  dark: rgb(16 185 129 / 16%),
+) !default;
+
+// background
+$vp-c-bg: (
   light: #fff,
-  dark: #0d1117,
+  dark: #1b1b1f,
 ) !default;
-$bg-color-secondary: (
-  light: #f8f8f8,
-  dark: #161b22,
+$vp-c-bg-alt: (
+  light: #f6f6f7,
+  dark: #161618,
 ) !default;
-$bg-color-tertiary: (
-  light: #efeef4,
-  dark: #21262c,
+$vp-c-bg-elv: (
+  light: #fff,
+  dark: #202127,
 ) !default;
-$border-color: (
+
+// text
+$vp-c-text: (
+  light: rgb(60 60 67),
+  dark: rgb(235 235 245 / 86%),
+) !default;
+$vp-c-text-mute: (
+  light: rgb(60 60 67 / 78%),
+  dark: rgb(235 235 245 / 60%),
+) !default;
+$vp-c-text-subtle: (
+  light: rgb(60 60 67 / 56%),
+  dark: rgb(235 235 245 / 38%),
+) !default;
+
+// border
+$vp-c-border: (
+  light: #d7d9da,
+  dark: #3e4c5a,
+) !default;
+$vp-c-border-hard: (
+  light: #d1d4d7,
+  dark: #405064,
+) !default;
+$vp-c-gutter: (
   light: #eaecef,
-  dark: #30363d,
+  dark: #373f4c,
 ) !default;
 
 // shadow
-$box-shadow: (
-  light: #f0f1f2,
-  dark: #282a32,
-) !default;
-$card-shadow: (
+$vp-c-shadow: (
   light: rgb(0 0 0 / 15%),
   dark: rgb(0 0 0 / 30%),
 ) !default;
 
-// constants
-$black: (
-  light: #000,
-  dark: #fff,
-);
-$grey-dark: (
-  light: #666,
-  dark: #999,
-);
-$grey-light: (
-  light: #999,
-  dark: #666,
-);
-$white: (
-  light: #fff,
-  dark: #000,
-);
-$grey-darker: (
-  light: #333,
-  dark: #bbb,
-);
-$grey-lighter: (
-  light: #bbb,
-  dark: #333,
-);
-$grey14: (
-  light: #eee,
-  dark: #111,
-);
+// control
+$vp-c-control: (
+  light: #f9fafb,
+  dark: #2d3135,
+) !default;
+$vp-c-control-hover: (
+  light: #f1f3f5,
+  dark: #303640,
+) !default;
+$vp-c-control-disabled: (
+  light: #eaeaea,
+  dark: #363636,
+) !default;

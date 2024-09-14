@@ -3,6 +3,10 @@
 
 .theme-hope-content.vp-portfolio-content {
   --content-width: min(84%, 1200px);
+  --header-underline: #{color.change(
+      helper.get-color(hope-config.$vp-c-accent),
+      $alpha: 0.4
+    )};
 
   display: flex;
   flex-flow: column;
@@ -14,6 +18,13 @@
 
   @media (max-width: hope-config.$mobile) {
     font-size: 14px;
+  }
+
+  [data-theme="dark"] & {
+    --header-underline: #{color.change(
+        helper.get-dark-color(hope-config.$vp-c-accent),
+        $alpha: 0.4
+      )};
   }
 
   > {
@@ -49,24 +60,16 @@
   }
 
   .header-anchor > span {
-    --underline: #{color.change(
-        helper.get-dark-color(hope-config.$theme-color),
-        $alpha: 0.4
-      )};
-
-    background: linear-gradient(var(--underline), var(--underline)) no-repeat;
+    background: linear-gradient(
+        var(--header-underline),
+        var(--header-underline)
+      )
+      no-repeat;
     background-position: -0.1em calc(100% - 0.05em);
     background-size: calc(100% + 0.1em) 0.2em;
     text-shadow:
-      0.05em 0 var(--bg-color),
-      -0.05em 0 var(--bg-color);
-
-    #{hope-config.$dark-selector} & {
-      --underline: #{color.change(
-          helper.get-dark-color(hope-config.$theme-color),
-          $alpha: 0.4
-        )};
-    }
+      0.05em 0 var(--vp-c-bg),
+      -0.05em 0 var(--vp-c-bg);
 
     &::before,
     &::after {
@@ -81,7 +84,7 @@
       width: 0.1em;
       height: 0.2em;
 
-      background-color: var(--underline);
+      background-color: var(--header-underline);
     }
 
     &::before {

@@ -43,22 +43,6 @@ tag:
 
 :::
 
-### hint
-
-- 类型: `boolean`
-- 默认值: `true`
-- 详情:
-  - [提示容器](../../guide/markdown/stylize/hint.md)
-
-是否启用提示容器支持:
-
-- info
-- note
-- tip
-- warning
-- caution
-- details
-
 ### vPre
 
 - 类型: `boolean`
@@ -83,15 +67,6 @@ tag:
 - 在 GFM 中启用: 是
 
 是否将文字中的链接格式文字转换为链接
-
-### alert
-
-- 类型: `boolean`
-- 默认值: `false`
-- 详情:
-  - [GFM 警告](../../guide/markdown/stylize/alert.md)
-
-是否启用 GFM 警告。
 
 ### tabs
 
@@ -193,50 +168,6 @@ tag:
 
 是否启用标记格式支持。
 
-### figure
-
-- 类型: `boolean`
-- 默认值: `false`
-
-是否启用图片 Figure 支持。
-
-### imgLazyload
-
-- 类型: `boolean`
-- 默认值: `false`
-
-是否使用原生方式懒加载页面图片。
-
-### imgMark
-
-- 类型: `ImageMarkOptions | boolean`
-- 默认值: `false`
-
-是否启用图片标注支持
-
-```ts
-interface ImageMarkOptions {
-  /** 日间模式的 ID */
-  light?: string[];
-  /** 夜间模式的 ID */
-  dark?: string[];
-}
-```
-
-### imgSize
-
-- 类型: `boolean`
-- 默认值: `false`
-
-是否启用图片尺寸支持。
-
-### obsidianImgSize
-
-- 类型: `boolean`
-- 默认值: `false`
-
-是否启用 obsidian 图片尺寸支持。
-
 ### tasklist
 
 - 类型: `TaskListOptions | boolean`
@@ -287,26 +218,6 @@ interface TaskListOptions {
 - 默认值: `false`
 
 是否启用 Markdown 导入支持。你可以传入一个函数进行路径解析。
-
-### katex
-
-- 类型: `KatexOptions & { copy?: boolean; mhchem?: boolean } | boolean`
-- 默认值: `false`
-
-是否通过 KaTeX 启用 $\TeX$ 语法支持。你可以传入一个对象作为 KaTeX 的配置选项。
-
-特别地，你可以通过 `katex.copy: true` 和 `katex.mhchem: true` 来启用 copy 和 mhchem 扩展。
-
-可用的选项，详见 [Katex 文档](https://katex.org/docs/options.html)。
-
-### mathjax
-
-- 类型: `MathJaxOptions | boolean`
-- 默认值: `false`
-
-是否通过 Math Jax 启用 $\TeX$ 语法支持。你可以传递一个对象来配置 Math Jax。
-
-可用的选项，详见 [源代码](https://github.com/vuepress-theme-hope/vuepress-theme-hope/tree/main/packages/md-enhance/src/shared/mathjax.ts)。
 
 ### component
 
@@ -668,62 +579,3 @@ CodePen 编辑器显示情况，第一位代表 HTML ，第二位代表 JS，第
 - 默认值: `false`
 
 是否启用幻灯片支持。你可以传递选项控制导入的插件和主题。
-
-### delay
-
-- 类型: `number`
-- 默认值: `800`
-
-操作页面 DOM 的延时，单位 ms。
-
-::: tip
-
-如果你使用的主题有切换动画，建议配置此选项为 `切换动画时长 + 200`。
-
-:::
-
-### locales
-
-- 类型: `MarkdownEnhanceLocaleConfig`
-
-  ```ts
-  interface MarkdownEnhanceLocaleData {
-    /**
-     * 信息块的默认标题
-     */
-    info: string;
-
-    /**
-     * 注释块的默认标题
-     */
-    note: string;
-
-    /**
-     * 提示块的默认标题
-     */
-    tip: string;
-
-    /**
-     * 注意块的默认标题
-     */
-    warning: string;
-
-    /**
-     * 警告块的默认标题
-     */
-    danger: string;
-
-    /**
-     * 详情块的默认标题
-     */
-    details: string;
-  }
-
-  interface MarkdownEnhanceLocaleConfig {
-    [localePath: string]: MarkdownEnhanceLocaleData;
-  }
-  ```
-
-- 必填: 否
-
-Markdown 增强插件的国际化配置。

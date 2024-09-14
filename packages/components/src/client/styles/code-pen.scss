@@ -1,38 +1,38 @@
+@use "vuepress-shared/styles/reset";
+
 .codepen-wrapper {
   margin: 1rem auto;
   padding: 1rem;
-  border: 1px solid var(--vp-brc);
+  border: 1px solid var(--vp-c-border);
+  border-radius: 8px;
 
   text-align: center;
 
   transition:
-    background var(--vp-ct),
-    border var(--vp-ct);
+    background var(--vp-t-color),
+    border var(--vp-t-color);
+}
 
-  .codepen-button {
-    display: block;
+.codepen-button {
+  @include reset.button;
 
-    margin: 16px auto;
-    padding: 8px 16px;
-    border: 1px solid var(--vp-tc);
-    border-radius: 4px;
+  display: block;
 
-    background: transparent;
-    color: var(--vp-tc);
+  margin: 12px auto;
+  padding: 8px 12px;
+  border-radius: 4px;
 
-    font-size: 16px;
+  background: var(--vp-c-control);
+  color: var(--vp-c-text);
 
-    cursor: pointer;
+  font-size: 1rem;
 
-    transition:
-      background var(--vp-ct),
-      border var(--vp-ct),
-      color var(--vp-ct);
+  cursor: pointer;
 
-    &:hover {
-      background: var(--vp-tcl);
-      color: var(--vp-bg);
-    }
+  transition: background var(--vp-t-color);
+
+  &:hover {
+    background: var(--vp-c-control-hover);
   }
 }
 

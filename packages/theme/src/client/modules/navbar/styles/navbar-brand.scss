@@ -11,7 +11,7 @@
     display: none;
   }
 
-  #{hope-config.$dark-selector} & {
+  [data-theme="dark"] & {
     &.light {
       display: none;
     }
@@ -24,7 +24,7 @@
 
 .vp-site-name {
   position: relative;
-  color: var(--text-color);
+  color: var(--vp-c-text);
   font-size: 1.25rem;
 
   @media (max-width: hope-config.$tablet) {
@@ -35,6 +35,6 @@
   }
 
   .vp-brand:hover & {
-    color: var(--theme-color);
+    color: var(--vp-c-accent);
   }
 }

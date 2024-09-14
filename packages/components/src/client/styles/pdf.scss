@@ -26,7 +26,7 @@
 .pdf-fullscreen-button {
   @include reset.button;
   position: absolute;
-  inset-inline-end: 1rem;
+  inset-inline-end: 1.5rem;
   bottom: 1rem;
 
   width: 2rem;
@@ -34,15 +34,15 @@
   padding: 2px;
   border-radius: 0.5rem;
 
-  background-color: var(--vp-tc);
+  color: var(--vp-c-accent-bg);
 
   &:hover {
-    background-color: var(--vp-tcl);
+    color: var(--vp-c-accent-hover);
   }
 }
 
 .pdf-fullscreen-icon {
   width: 100%;
   height: 100%;
-  color: var(--white) !important;
+  color: inherit;
 }

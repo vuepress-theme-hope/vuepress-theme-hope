@@ -1,17 +1,17 @@
 @use "@sass-palette/hope-config";
 
 :root {
-  --container-header-bg-color: #eee;
+  --container-c-bg-header: #eee;
 }
 
-#{hope-config.$dark-selector} {
-  --container-header-bg-color: #333;
+[data-theme="dark"] {
+  --container-c-bg-header: #333;
 }
 
 .vp-container {
   overflow: hidden;
   margin: 0.75rem 0;
-  border: 1px solid var(--vp-brc);
+  border: 1px solid var(--vp-c-border);
   border-radius: 0.5rem;
 }
 
@@ -23,14 +23,14 @@
 
   padding: 0.5rem 0.75rem;
 
-  background: var(--container-header-bg-color, #eee);
+  background: var(--container-c-bg-header, #eee);
 
   font-weight: 500;
   text-align: start;
 
   transition:
-    background var(--vp-ct),
-    border-color var(--vp-ct);
+    background var(--vp-t-color),
+    border-color var(--vp-t-color);
 }
 
 .vp-container-title {

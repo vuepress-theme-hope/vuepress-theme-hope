@@ -72,7 +72,7 @@ $pc: 1920px;
 可用的颜色变量:
 
 - `$theme-color`: 主题色
-- `$text-color`: 字体颜色
+- `$vp-c-text`: 字体颜色
 - `$bg-color`: 背景色
 - `$bg-color-secondary`: 另一个浅背景色
 - `$bg-color-tertiary`: 另一个更浅的背景色

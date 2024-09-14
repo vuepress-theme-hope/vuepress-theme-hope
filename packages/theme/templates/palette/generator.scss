@@ -3,55 +3,11 @@
 @use "sass:map";
 @use "@sass-palette/helper";
 
-$bg-color-light: (
-  light: helper.get-color($bg-color),
-  dark: color.scale(helper.get-dark-color($bg-color-secondary)),
+$vp-c-bg-soft: (
+  light: color.change(helper.get-color($vp-c-bg), $alpha: 0.9),
+  dark: color.change(helper.get-dark-color($vp-c-bg), $alpha: 0.9),
 ) !default;
-$bg-color-back: (
-  light: helper.get-color($bg-color-secondary),
-  dark: color.scale(helper.get-dark-color($bg-color)),
-) !default;
-$bg-color-float: (
-  light: helper.get-color($bg-color),
-  dark: color.scale(helper.get-dark-color($bg-color-secondary)),
-) !default;
-$bg-color-blur: (
-  light: color.change(helper.get-color($bg-color), $alpha: 0.9),
-  dark: color.change(helper.get-dark-color($bg-color), $alpha: 0.9),
-) !default;
-$bg-color-float-blur: (
-  light: color.change(helper.get-color($bg-color-float), $alpha: 0.9),
-  dark: color.change(helper.get-dark-color($bg-color-float), $alpha: 0.9),
-) !default;
-$text-color-light: (
-  light: color.scale(helper.get-color($text-color), $lightness: 10%),
-  dark: color.scale(helper.get-dark-color($text-color), $lightness: 10%),
-) !default;
-$text-color-lighter: (
-  light: color.scale(helper.get-color($text-color), $lightness: 20%),
-  dark: color.scale(helper.get-dark-color($text-color), $lightness: 20%),
-) !default;
-$text-color-bright: (
-  light: color.scale(helper.get-color($text-color), $lightness: 40%),
-  dark: color.scale(helper.get-dark-color($text-color), $lightness: 40%),
-) !default;
-$border-color-light: (
-  light: color.scale(helper.get-color($border-color), $lightness: 10%),
-  dark: color.scale(helper.get-dark-color($border-color), $lightness: -5%),
-) !default;
-$border-color-dark: (
-  light: color.scale(helper.get-color($border-color), $lightness: -10%),
-  dark: color.scale(helper.get-dark-color($border-color), $lightness: 5%),
-) !default;
-$theme-color-dark: (
-  light: color.scale(helper.get-color($theme-color), $lightness: -10%),
-  dark: color.scale(helper.get-dark-color($theme-color), $lightness: -10%),
-) !default;
-$theme-color-light: (
-  light: color.scale(helper.get-color($theme-color), $lightness: 10%),
-  dark: color.scale(helper.get-dark-color($theme-color), $lightness: 10%),
-) !default;
-$theme-color-mask: (
-  light: color.change(helper.get-color($theme-color), $alpha: 0.15),
-  dark: color.change(helper.get-dark-color($theme-color), $alpha: 0.15),
+$vp-c-bg-elv-soft: (
+  light: color.change(helper.get-color($vp-c-bg-elv), $alpha: 0.9),
+  dark: color.change(helper.get-dark-color($vp-c-bg-elv), $alpha: 0.9),
 ) !default;

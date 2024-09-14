@@ -12,19 +12,19 @@
   margin-bottom: 0;
   padding: 0.5rem;
   border: 0;
-  border: 1px solid var(--vp-bgl);
+  border: 1px solid var(--vp-c-border);
   border-radius: 1rem;
 
-  background: var(--vp-bgl);
-  color: var(--vp-c);
+  background: var(--vp-c-control);
+  color: var(--vp-c-text);
 
   font-weight: 500;
 
   cursor: pointer;
 
   transition:
-    background var(--vp-ct),
-    color var(--vp-ct);
+    background var(--vp-t-color),
+    color var(--vp-t-color);
 
   @media print {
     display: none;
@@ -35,9 +35,8 @@
   }
 
   &:hover {
-    border: 1px solid var(--vp-tc);
-    background-color: var(--vp-bglt);
-    color: var(--vp-clt);
+    border: 1px solid var(--vp-c-accent-bg);
+    background-color: var(--vp-c-control-hover);
   }
 
   .search-icon {
@@ -69,16 +68,17 @@
   min-width: 1em;
   margin-inline: 0.125rem;
   padding: 0.25rem;
-  border: 1px solid var(--vp-brc);
+  border: 1px solid var(--vp-c-border);
   border-radius: 4px;
 
-  box-shadow: 1px 1px 4px 0 var(--card-shadow);
+  box-shadow: 1px 1px 4px 0 var(--vp-c-shadow);
 
   line-height: 1;
   letter-spacing: -0.1em;
 
   transition:
-    background var(--vp-ct),
-    color var(--vp-ct),
-    border var(--vp-ct) box-shadow var(--vp-ct);
+    background var(--vp-t-color),
+    color var(--vp-t-color),
+    border var(--vp-t-color),
+    box-shadow var(--vp-t-transform);
 }

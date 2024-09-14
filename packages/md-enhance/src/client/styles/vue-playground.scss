@@ -1,6 +1,6 @@
 @use "vuepress-shared/styles/reset";
 
-#{hope-config.$dark-selector} {
+[data-theme="dark"] {
   // vue-repl dark mode
 
   /**
@@ -49,7 +49,7 @@
 
 .vue-playground-wrapper {
   .vue-preview-loading {
-    color: var(--vp-tc);
+    color: var(--vp-c-accent-bg);
   }
 
   // internal styles
@@ -60,9 +60,9 @@
 
     height: auto;
 
-    background: var(--vp-bg);
+    background: var(--vp-c-bg);
 
-    transition: background var(--vp-ct);
+    transition: background var(--vp-t-color);
 
     @media print {
       page-break-inside: avoid;
@@ -73,7 +73,7 @@
     }
 
     // reset pre
-    #{hope-config.$content-class} & {
+    [vp-content] & {
       pre,
       pre[class*="language-"] {
         margin: 0;

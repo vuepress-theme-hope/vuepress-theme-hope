@@ -7,12 +7,12 @@
 
 // override css variables
 .markmap {
-  --markmap-a-color: var(--vp-tc) !important;
-  --markmap-a-hover-color: var(--vp-tc) !important;
-  --markmap-code-bg: var(--vp-brc) !important;
-  --markmap-code-color: var(--vp-c) !important;
-  --markup-circle-open-bg: var(--white) !important;
-  --markup-text-color: var(--vp-c) !important;
+  --markmap-a-color: var(--vp-c-accent) !important;
+  --markmap-a-hover-color: var(--vp-c-accent) !important;
+  --markmap-code-bg: var(--vp-c-border) !important;
+  --markmap-code-color: var(--vp-c-text) !important;
+  --markup-circle-open-bg: var(--vp-c-white) !important;
+  --markup-text-color: var(--vp-c-text) !important;
 }
 
 .markmap-wrapper {
@@ -27,7 +27,7 @@
   .markmap-svg {
     width: 100%;
     min-height: 360px;
-    color: var(--vp-c);
+    color: var(--vp-c-text);
 
     @media print {
       page-break-inside: avoid;
@@ -37,7 +37,7 @@
   .markmap-loading {
     position: absolute;
     inset: 0 0 auto;
-    color: var(--vp-tc);
+    color: var(--vp-c-accent-bg);
   }
 
   pre {
@@ -46,7 +46,7 @@
 
     code {
       padding: 0 !important;
-      background-color: var(--vp-brc) !important;
+      background-color: var(--vp-c-border) !important;
       color: inherit;
     }
   }
@@ -64,17 +64,17 @@
   padding: 0.25rem;
   border-width: 1px;
   border-style: solid;
-  border-color: var(--vp-brc);
+  border-color: var(--vp-c-border);
   border-radius: 0.25rem;
 
-  background: var(--vp-bgl);
+  background: var(--vp-c-control);
 
   line-height: 1;
 
   user-select: none;
 
   &:hover {
-    box-shadow: 0 2px 12px 0 var(--card-shadow);
+    box-shadow: 0 2px 12px 0 var(--vp-c-shadow);
   }
 
   .mm-toolbar-brand {
@@ -116,10 +116,10 @@
   &.active,
   &:hover {
     border-radius: 0.25rem;
-    background-color: var(--vp-tc);
+    background-color: var(--vp-c-accent-bg);
 
     > * {
-      color: var(--vp-bgl);
+      color: var(--vp-c-control);
     }
   }
 }

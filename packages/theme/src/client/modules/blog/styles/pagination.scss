@@ -22,7 +22,7 @@
 
   height: 30px;
   margin: 0 0.5rem;
-  border: 1px solid var(--border-color);
+  border: 1px solid var(--vp-c-border);
   border-radius: 0.25rem;
 
   div {
@@ -30,8 +30,8 @@
 
     padding: 0 0.5rem;
 
-    background: var(--bg-color);
-    color: var(--theme-color);
+    background: var(--vp-c-bg);
+    color: var(--vp-c-accent);
 
     cursor: pointer;
 
@@ -45,7 +45,7 @@
 
       width: 1px;
 
-      background: var(--border-color);
+      background: var(--vp-c-border);
     }
 
     &:first-child::before {
@@ -53,20 +53,20 @@
     }
 
     &:hover {
-      color: var(--theme-color-light);
+      color: var(--vp-c-accent-hover);
     }
 
     &.active {
-      background: var(--theme-color);
-      color: var(--white);
+      background: var(--vp-c-accent-bg);
+      color: var(--vp-c-white);
 
       &::before {
-        background: var(--theme-color);
+        background: var(--vp-c-accent-bg);
       }
     }
 
     &.active + div::before {
-      background: var(--theme-color);
+      background: var(--vp-c-accent-bg);
     }
 
     &.prev,
@@ -91,11 +91,11 @@
   input {
     width: 3.5rem;
     margin: 6px 5px;
-    border: 1px solid var(--border-color);
+    border: 1px solid var(--vp-c-border);
     border-radius: 0.25em;
 
-    background: var(--bg-color);
-    color: var(--text-color);
+    background: var(--vp-c-bg);
+    color: var(--vp-c-text);
     outline: none;
 
     line-height: 2;
@@ -107,11 +107,11 @@
   overflow: hidden;
 
   padding: 0 0.75em;
-  border: 1px solid var(--border-color);
+  border: 1px solid var(--vp-c-border);
   border-radius: 0.25em;
 
-  background: var(--bg-color);
-  color: var(--theme-color);
+  background: var(--vp-c-bg);
+  color: var(--vp-c-accent);
   outline: none;
 
   font-weight: 600;
@@ -121,6 +121,6 @@
   cursor: pointer;
 
   &:hover {
-    color: var(--theme-color-light);
+    color: var(--vp-c-accent-hover);
   }
 }

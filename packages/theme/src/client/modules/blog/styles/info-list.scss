@@ -6,12 +6,12 @@
 
   .vp-page & {
     border-radius: 6px;
-    background: var(--bg-color-float);
-    box-shadow: 0 1px 3px 1px var(--card-shadow);
-    transition: box-shadow var(--color-transition);
+    background: var(--vp-c-bg-elv);
+    box-shadow: 0 1px 3px 1px var(--vp-c-shadow);
+    transition: box-shadow var(--vp-t-transform);
 
     &:hover {
-      box-shadow: 0 2px 6px 2px var(--card-shadow);
+      box-shadow: 0 2px 6px 2px var(--vp-c-shadow);
     }
   }
 
@@ -35,7 +35,7 @@
   margin: 0 8px;
   padding: 4px;
 
-  color: var(--grey-darker);
+  color: var(--vp-c-text);
 
   &:focus {
     outline: none;
@@ -49,9 +49,9 @@
 
     background: rgb(127 127 127 / 15%);
 
-    transition: background var(--color-transition);
+    transition: background var(--vp-t-color);
 
-    #{hope-config.$dark-selector} & {
+    [data-theme="dark"] & {
       background: rgb(255 255 255 / 15%);
     }
 
@@ -60,11 +60,7 @@
     }
 
     &.active {
-      background: var(--theme-color-light);
-
-      #{hope-config.$dark-selector} & {
-        background: var(--theme-color-dark);
-      }
+      background: var(--vp-c-accent-hover);
     }
   }
 
@@ -109,10 +105,10 @@
 
 .vp-star-article {
   padding: 12px 8px 4px;
-  border-bottom: 1px dashed var(--grey);
+  border-bottom: 1px dashed var(--vp-c-border-hard);
   transition:
-    border-color var(--color-transition),
-    color var(--color-transition);
+    border-color var(--vp-t-color),
+    color var(--vp-t-color);
 
   a {
     color: inherit;
@@ -122,7 +118,7 @@
     cursor: pointer;
 
     a {
-      color: var(--theme-color);
+      color: var(--vp-c-accent);
     }
   }
 }

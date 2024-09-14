@@ -35,7 +35,7 @@
       height: 0.2em;
       border-radius: 0.05em;
 
-      background: var(--white);
+      background: var(--vp-c-white);
 
       transition: transform 0.2s ease-in-out;
     }
@@ -51,7 +51,7 @@
       left 0.2s ease-out,
       opacity 0.2s ease-out;
 
-    fill: var(--white);
+    fill: var(--vp-c-white);
   }
 
   .home-button {
@@ -64,7 +64,7 @@
       left 0.2s ease-out,
       opacity 0.2s ease-out;
 
-    fill: var(--white);
+    fill: var(--vp-c-white);
   }
 
   .menu-button,
@@ -81,11 +81,11 @@
     border-radius: 50%;
 
     background: rgb(127 127 127 / 35%);
-    color: var(--white);
+    color: var(--vp-c-white);
     outline: none;
 
     &:hover {
-      background: var(--vp-tc);
+      background: var(--vp-c-accent-bg);
     }
   }
 

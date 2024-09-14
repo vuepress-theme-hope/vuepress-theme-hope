@@ -23,16 +23,10 @@
   margin: 0 auto;
   padding: 1.5rem 2.5rem;
 
-  color: #222;
-
   @media (max-width: hope-config.$tablet) {
     display: block;
     padding-inline: 1.5rem;
     text-align: center;
-  }
-
-  #{hope-config.$dark-selector} & {
-    color: #eee;
   }
 }
 
@@ -53,7 +47,7 @@
     display: none;
   }
 
-  #{hope-config.$dark-selector} & {
+  [data-theme="dark"] & {
     &.light {
       display: none;
     }
@@ -85,7 +79,7 @@
     display: none;
   }
 
-  #{hope-config.$dark-selector} & {
+  [data-theme="dark"] & {
     &.light {
       display: none;
     }
@@ -152,10 +146,10 @@
 
   &.link {
     cursor: pointer;
-    transition: transform var(--transform-transition);
+    transition: transform var(--vp-t-transform);
 
     &:hover {
-      background-color: var(--bg-color-secondary);
+      background-color: var(--vp-c-bg-alt);
 
       .vp-highlight-bg + .vp-highlight & {
         background-color: transparent;

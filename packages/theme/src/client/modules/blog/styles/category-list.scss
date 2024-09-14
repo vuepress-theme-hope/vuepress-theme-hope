@@ -23,15 +23,15 @@
   border-radius: 0.25rem;
 
   color: var(--grey-dark);
-  box-shadow: 0 1px 4px 0 var(--card-shadow);
+  box-shadow: 0 1px 4px 0 var(--vp-c-shadow);
 
   word-break: break-word;
 
   cursor: pointer;
 
   transition:
-    background var(--color-transition),
-    color var(--color-transition);
+    background var(--vp-t-color),
+    color var(--vp-t-color);
 
   @media (max-width: hope-config.$mobile) {
     font-size: 0.9rem;
@@ -50,7 +50,7 @@
     padding: 0 0.1rem;
     border-radius: 0.6rem;
 
-    color: var(--white);
+    color: var(--vp-c-white);
 
     font-size: 0.7rem;
     line-height: 1.2rem;
@@ -64,7 +64,7 @@
       background: color.scale($color, $lightness: 90%);
       color: color.scale($color, $lightness: -10%);
 
-      #{hope-config.$dark-selector} & {
+      [data-theme="dark"] & {
         background: color.scale($color, $lightness: -75%);
         color: color.scale($color, $lightness: 20%);
       }
@@ -72,22 +72,21 @@
       &:hover {
         background: color.scale($color, $lightness: 75%);
 
-        #{hope-config.$dark-selector} & {
+        [data-theme="dark"] & {
           background: color.scale($color, $lightness: -60%);
         }
       }
 
       &.active {
         background: $color;
-        color: #fff;
+        color: var(--vp-c-white);
 
-        #{hope-config.$dark-selector} & {
+        [data-theme="dark"] & {
           background: color.scale($color, $lightness: -20%);
-          color: var(--bg-color);
         }
 
         .count {
-          background: var(--bg-color);
+          background: var(--vp-c-white);
           color: $color;
         }
       }

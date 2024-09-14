@@ -19,7 +19,7 @@
   box-sizing: border-box;
 
   &:not(.bg) {
-    background: var(--theme-color-mask);
+    background: var(--vp-c-accent-soft);
 
     &::after {
       content: "";
@@ -33,7 +33,7 @@
       height: 1000px;
       border-radius: 50%;
 
-      background-color: var(--white);
+      background-color: var(--vp-c-white);
 
       @media (max-width: hope-config.$pad) {
         display: none;
@@ -54,7 +54,7 @@
 
       display: block;
 
-      background: var(--grey-light);
+      background: #888;
 
       opacity: 0.2;
     }
@@ -156,7 +156,7 @@
       padding: 2rem 1.5rem;
       border-radius: 0.5rem;
 
-      background: var(--bg-color-blur);
+      background: var(--vp-c-bg-soft);
 
       text-align: center;
     }
@@ -174,7 +174,7 @@
     margin: 0 0 10px;
     padding: 0;
 
-    color: var(--theme-color);
+    color: var(--vp-c-accent);
 
     font-weight: 600;
     font-size: 28px;
@@ -209,7 +209,7 @@
     padding: 0;
     border-bottom: none;
 
-    color: var(--theme-color);
+    color: var(--vp-c-accent);
 
     font-weight: 600;
     font-size: 25px;
@@ -227,7 +227,7 @@
       width: 2px;
       height: 1.3em;
 
-      background: var(--theme-color);
+      background: var(--vp-c-accent-bg);
 
       animation-name: cursor-blink;
       animation-duration: 1s;
@@ -255,13 +255,13 @@
     height: 2rem;
     border-radius: 50%;
 
-    background: var(--theme-color);
-    color: var(--white);
+    background: var(--vp-c-accent-bg);
+    color: var(--vp-c-white);
 
     transition: ease all 0.35s;
 
     &:hover {
-      background-color: var(--theme-color-light);
+      background-color: var(--vp-c-accent-hover);
       cursor: pointer;
     }
 

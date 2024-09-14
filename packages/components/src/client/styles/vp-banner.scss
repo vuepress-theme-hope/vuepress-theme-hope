@@ -4,13 +4,13 @@
   padding: 2.5rem;
   border-radius: 1.5rem;
 
-  background: var(--vp-bg);
+  background: var(--vp-c-bg);
   color: inherit;
-  box-shadow: 2px 2px 10px 2px var(--card-shadow);
+  box-shadow: 2px 2px 10px 2px var(--vp-c-shadow);
 
   transition:
-    background var(--vp-ct),
-    box-shadow var(--vp-ct);
+    background var(--vp-t-color),
+    box-shadow var(--vp-t-transform);
 
   @media (max-width: hope-config.$tablet) {
     margin: 0.75rem 0;
@@ -56,14 +56,14 @@
     padding: 0 1.75rem;
     border-radius: 1.5rem;
 
-    background-color: rgb(127 127 127 / 10%);
+    background-color: var(--vp-c-control);
     color: inherit;
 
     font-size: 1rem;
     line-height: 3;
     text-decoration: none !important;
 
-    transition: transform var(--vp-tt);
+    transition: transform var(--vp-t-transform);
 
     @media (max-width: hope-config.$tablet) {
       height: 2.5rem;
@@ -71,7 +71,7 @@
     }
 
     &:hover {
-      background-color: var(--c-border);
+      background-color: var(--vp-c-control-hover);
     }
 
     &:active {
@@ -79,11 +79,11 @@
     }
 
     &.primary {
-      background: var(--vp-tc);
-      color: var(--white);
+      background: var(--vp-c-accent-bg);
+      color: var(--vp-c-white);
 
       &:hover {
-        background: var(--vp-tcl);
+        background: var(--vp-c-accent-hover);
       }
     }
   }

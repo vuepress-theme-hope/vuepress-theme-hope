@@ -72,7 +72,7 @@ For all colors, if they are the same in light mode and dark mode, you can set th
 Available color variables:
 
 - `$theme-color`: theme color
-- `$text-color`: text color
+- `$vp-c-text`: text color
 - `$bg-color`: background color
 - `$bg-color-secondary`: another "light" background color
 - `$bg-color-tertiary`: another "lighter" background color

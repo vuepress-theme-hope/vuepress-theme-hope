@@ -1,5 +1,5 @@
 .empty-icon {
-  #{hope-config.$dark-selector} & {
+  [data-theme="dark"] & {
     g.people {
       opacity: 0.8;
     }

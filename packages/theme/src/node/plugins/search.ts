@@ -7,7 +7,7 @@ import {
   keys,
   startsWith,
 } from "@vuepress/helper";
-import type { DocsearchPluginOptions } from "@vuepress/plugin-docsearch";
+import type { DocSearchPluginOptions } from "@vuepress/plugin-docsearch";
 import type { SearchPluginOptions } from "@vuepress/plugin-search";
 import type { App, Page, Plugin } from "vuepress/core";
 import { colors } from "vuepress/utils";
@@ -21,7 +21,7 @@ import type {
 import { themeLocalesData } from "../locales/index.js";
 import { logger } from "../utils.js";
 
-let docsearchPlugin: (options: DocsearchPluginOptions) => Plugin;
+let docsearchPlugin: (options: DocSearchPluginOptions) => Plugin;
 let searchPlugin: (options: SearchPluginOptions) => Plugin;
 let searchProPlugin: (options: SearchProPluginOptions) => Plugin;
 let cut: (content: string, strict?: boolean) => string[];

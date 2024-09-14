@@ -1,5 +1,6 @@
 @use "sass:color";
 @use "sass:list";
+@use "@sass-palette/helper";
 @use "vuepress-shared/styles/shining";
 
 .vp-hero {
@@ -54,7 +55,7 @@
     &.light {
       display: block;
 
-      #{hope-config.$dark-selector} & {
+      [data-theme="dark"] & {
         display: none;
       }
     }
@@ -62,7 +63,7 @@
     &.dark {
       display: none;
 
-      #{hope-config.$dark-selector} & {
+      [data-theme="dark"] & {
         display: block;
       }
     }
@@ -95,7 +96,7 @@
     &.light {
       display: block;
 
-      #{hope-config.$dark-selector} & {
+      [data-theme="dark"] & {
         display: none;
       }
     }
@@ -103,7 +104,7 @@
     &.dark {
       display: none;
 
-      #{hope-config.$dark-selector} & {
+      [data-theme="dark"] & {
         display: block;
       }
     }
@@ -114,9 +115,9 @@
 
     background: linear-gradient(
       120deg,
-      var(--theme-color-light),
-      var(--theme-color) 30%,
-      color.adjust(hope-config.$theme-color, $hue: 60deg) 100%
+      var(--vp-c-accent-hover),
+      var(--vp-c-accent) 30%,
+      color.adjust(helper.get-color(hope-config.$vp-c-accent), $hue: 60deg) 100%
     );
     -webkit-background-clip: text;
     background-clip: text;
@@ -146,6 +147,19 @@
       margin: 0 auto;
       font-size: 2rem;
     }
+
+    [data-theme="dark"] {
+      background: linear-gradient(
+        120deg,
+        var(--vp-c-accent-hover),
+        var(--vp-c-accent) 30%,
+        color.adjust(
+            helper.get-dark-color(hope-config.$vp-c-accent),
+            $hue: 60deg
+          )
+          100%
+      );
+    }
   }
 }
 
@@ -170,7 +184,7 @@
 #main-description {
   max-width: 35rem;
 
-  color: var(--text-color-light);
+  color: var(--vp-c-text-mute);
 
   font-weight: 500;
   font-size: 1.6rem;
@@ -195,16 +209,16 @@
   padding: 0.5em 1.5rem;
   border-radius: 2rem;
 
-  background: var(--bg-color-secondary);
-  color: var(--text-color);
+  background: var(--vp-c-control);
+  color: var(--vp-c-text);
 
   font-size: 1.2rem;
   text-align: center;
 
   transition:
-    color var(--color-transition),
-    color var(--color-transition),
-    transform var(--transform-transition);
+    color var(--vp-t-color),
+    color var(--vp-t-color),
+    transform var(--vp-t-transform);
 
   @media (max-width: hope-config.$tablet) {
     padding: 0.5rem 1rem;
@@ -220,17 +234,17 @@
   }
 
   &:hover {
-    background: var(--bg-color-tertiary);
+    background: var(--vp-control-hover);
   }
 
   &.primary {
-    border-color: var(--theme-color);
-    background: var(--theme-color);
-    color: var(--white);
+    border-color: var(--vp-c-accent-bg);
+    background: var(--vp-c-accent-bg);
+    color: var(--vp-c-white);
 
     &:hover {
-      border-color: var(--theme-color-light);
-      background: var(--theme-color-light);
+      border-color: var(--vp-c-accent-hover);
+      background: var(--vp-c-accent-hover);
     }
   }
 

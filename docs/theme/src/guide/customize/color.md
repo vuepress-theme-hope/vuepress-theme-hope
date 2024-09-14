@@ -46,10 +46,10 @@ Sometimes, you may want to modify some colors that are not in `palette.scss`, su
 ```scss title=".vuepress/styles/index.scss"
 // override code demo header color
 #app {
-  --code-demo-header-bg-color: #fff;
+  --code-demo-c-bg-header: #fff;
 
   html[data-theme="dark"] & {
-    --code-demo-header-bg-color: #000;
+    --code-demo-c-bg-header: #000;
   }
 }
 ```

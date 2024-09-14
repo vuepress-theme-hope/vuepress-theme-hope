@@ -227,7 +227,7 @@ export default defineComponent({
                     class: "jsfiddle-button",
                     innerHTML: JSFIDDLE_SVG,
                     "aria-label": "JSFiddle",
-                    "data-balloon-pos": "up",
+                    "data-balloon-pos": "down",
                   }),
                 ],
               )
@@ -277,7 +277,7 @@ export default defineComponent({
                     innerHTML: CODEPEN_SVG,
                     class: "codepen-button",
                     "aria-label": "Codepen",
-                    "data-balloon-pos": "up",
+                    "data-balloon-pos": "down",
                   }),
                 ],
               )

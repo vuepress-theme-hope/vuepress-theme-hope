@@ -7,17 +7,18 @@
   padding: 1rem;
   border-radius: 0.5rem;
 
-  background: var(--vp-bg);
+  background: var(--vp-c-control);
   color: inherit;
-  box-shadow: 2px 2px 10px 0 var(--card-shadow);
+  box-shadow: 2px 2px 10px 0 var(--vp-c-shadow);
+
+  text-decoration: none !important;
 
   transition:
-    background var(--vp-ct),
-    box-shadow var(--vp-ct);
+    background var(--vp-t-color),
+    box-shadow var(--vp-t-transform);
 
   &:hover {
-    background: var(--vp-bgl);
-    text-decoration: none !important;
+    background: var(--vp-c-control-hover);
   }
 
   hr {
@@ -44,7 +45,7 @@
     color: #888;
     font-size: 0.9em;
     line-height: 1.5;
-    transition: color var(--vp-ct);
+    transition: color var(--vp-t-color);
   }
 
   &-container {

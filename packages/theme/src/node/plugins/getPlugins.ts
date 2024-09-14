@@ -12,6 +12,9 @@ import { getCopyCodePlugin } from "./copyCode.js";
 import { getCopyrightPlugin } from "./copyright.js";
 import { getFeedPlugin } from "./feed.js";
 import { getLinksCheckPlugin } from "./linksCheck.js";
+import { getMarkdownHintPlugin } from "./markdownHint.js";
+import { getMarkdownImagePlugin } from "./markdownImage.js";
+import { getMarkdownMathPlugin } from "./markdownMath.js";
 import { getMdEnhancePlugin } from "./mdEnhance.js";
 import { getNoticePlugin } from "./notice.js";
 import { getPhotoSwipePlugin } from "./photoSwipe.js";
@@ -67,6 +70,10 @@ export const getPlugins = (
       options.favicon,
       legacy,
     ),
+
+    getMarkdownHintPlugin(pluginsOptions.markdownHint),
+    getMarkdownImagePlugin(pluginsOptions.markdownImage),
+    getMarkdownMathPlugin(pluginsOptions.markdownMath),
     getMdEnhancePlugin(pluginsOptions.mdEnhance, legacy),
     getNoticePlugin(pluginsOptions.notice),
     getPhotoSwipePlugin(pluginsOptions.photoSwipe),
