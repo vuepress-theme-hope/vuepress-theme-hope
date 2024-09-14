@@ -252,7 +252,7 @@ export const mdEnhancePlugin =
           addViteOptimizeDepsInclude(
             bundlerOptions,
             app,
-            "mermaid/dist/mermaid.esm.mjs",
+            "mermaid/dist/mermaid.esm.min.mjs",
           );
           addViteSsrExternal(bundlerOptions, app, "mermaid");
         }

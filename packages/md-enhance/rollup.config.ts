@@ -45,7 +45,7 @@ export default [
         "markmap-lib",
         "markmap-toolbar",
         "markmap-view",
-        "mermaid",
+        "mermaid/dist/mermaid.esm.min.mjs",
         /^reveal\.js/,
         "sandpack-vue3",
       ],
