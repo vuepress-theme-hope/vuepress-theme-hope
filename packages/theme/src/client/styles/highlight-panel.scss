@@ -136,6 +136,11 @@
 .vp-highlights {
   margin-inline-start: -1.25em;
   padding-inline-start: 0;
+
+  // prevent inline code text unreadable
+  :not(pre) > code {
+    color: var(--vp-c-text);
+  }
 }
 
 .vp-highlight-item-wrapper {

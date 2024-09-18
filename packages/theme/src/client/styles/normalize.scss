@@ -1,21 +1,11 @@
 @use "@sass-palette/hope-config";
 @use "fonts/crimson.css";
 
-html,
-body {
-  background: var(--vp-c-bg);
-}
-
 :root {
   color-scheme: light;
 }
 
-[data-theme="dark"] {
-  color-scheme: dark;
-}
-
 body {
-  color: var(--vp-c-text);
   font-family: var(--font-family);
 
   @media (min-width: hope-config.$pc) {
@@ -37,60 +27,6 @@ h1 {
   @media (max-width: hope-config.$mobile) {
     font-size: 1.9rem;
   }
-}
-
-h2 {
-  border-color: var(--vp-c-border);
-  transition: border-color var(--vp-t-color);
-}
-
-a {
-  color: var(--vp-c-accent);
-}
-
-code {
-  :not(pre) > & {
-    background: var(--vp-c-grey-soft);
-    color: var(--vp-c-text-mute);
-    font-family: var(--font-family-mono);
-    transition: background-color var(--vp-t-color);
-  }
-
-  p a & {
-    color: var(--vp-c-accent);
-  }
-}
-
-kbd {
-  border-color: var(--vp-c-border-hard);
-  font-family: var(--font-family-mono);
-  transition: border-color var(--vp-t-color);
-}
-
-blockquote {
-  border-color: var(--vp-c-border-hard);
-  color: var(--vp-c-text-mute);
-  transition: border-color var(--vp-t-color);
-}
-
-hr {
-  border-color: var(--vp-c-gutter);
-  transition: border-color var(--vp-t-color);
-}
-
-table {
-  transition: border-color var(--vp-t-color);
-}
-
-tbody tr:nth-child(odd) {
-  background-color: var(--vp-c-bg-alt);
-  transition: background-color var(--vp-t-color);
-}
-
-th,
-td {
-  border-color: var(--vp-c-border-hard);
-  transition: border-color var(--vp-t-color);
 }
 
 @media print {
