@@ -46,11 +46,11 @@
     "@stackblitz/sdk": "^1.11.0",
     "@vuepress/helper": "2.0.0-rc.43",
     "@vuepress/plugin-sass-palette": "2.0.0-rc.43",
-    "@vueuse/core": "^11.0.3",
+    "@vueuse/core": "^11.1.0",
     "balloon-css": "^1.2.0",
     "create-codepen": "^2.0.0",
     "qrcode": "^1.5.4",
-    "vue": "^3.5.5",
+    "vue": "^3.5.6",
     "vuepress-shared": "workspace:*"
   },
   "devDependencies": {

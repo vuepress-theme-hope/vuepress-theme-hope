@@ -49,7 +49,7 @@
     "@vuepress/helper": "2.0.0-rc.43",
     "@vuepress/plugin-sass-palette": "2.0.0-rc.43",
     "lightgallery": "^2.7.2",
-    "vue": "^3.5.5",
+    "vue": "^3.5.6",
     "vuepress-shared": "workspace:*"
   },
   "devDependencies": {
