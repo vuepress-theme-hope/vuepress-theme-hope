@@ -70,12 +70,12 @@ $vp-c-shadow: (
 
 // control
 $vp-c-control: (
-  light: #f9fafb,
-  dark: #2d3135,
+  light: rgb(142 150 170 / 10%),
+  dark: rgb(101 117 133 / 12%),
 ) !default;
 $vp-c-control-hover: (
-  light: #f1f3f5,
-  dark: #303640,
+  light: rgb(142 150 170 / 16%),
+  dark: rgb(101 117 133 / 18%),
 ) !default;
 $vp-c-control-disabled: (
   light: #eaeaea,
