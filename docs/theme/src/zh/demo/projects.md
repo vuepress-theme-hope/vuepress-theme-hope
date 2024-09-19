@@ -283,6 +283,13 @@ docs:
     repo: https://github.com/hydro-dev/Hydro
     preview: /assets/image/hydro.jpg
 
+  - name: BukkiWiki
+    desc: BukkitWiki是一个Minecraft（我的世界）多人联机资源站
+    logo: https://bukkit.wiki/logo.svg
+    url: https://bukkit.wiki/
+    repo: https://github.com/BukkitWiki/BukkitWiki
+    preview: /assets/image/bukkitwiki.jpg
+
 portfolios:
   - name: 尚程
     url: https://cheng-shang.me/zh/
