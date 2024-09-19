@@ -281,7 +281,7 @@ docs:
     logo: https://hydro.js.org/favicon.png
     url: https://hydro.js.org/
     repo: https://github.com/hydro-dev/Hydro
-    preview: /assets/image/hydro.png
+    preview: /assets/image/hydro.jpg
 
 portfolios:
   - name: 尚程
