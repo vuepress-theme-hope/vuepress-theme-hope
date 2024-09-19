@@ -276,6 +276,13 @@ docs:
     repo: https://github.com/QingFeng-awa
     preview: https://aumod.site/AuModDocs-BG.png
 
+  - name: Hydro
+    desc: 高性能在线测评系统
+    logo: https://hydro.js.org/favicon.png
+    url: https://hydro.js.org/
+    repo: https://github.com/hydro-dev/Hydro
+    preview: /assets/image/hydro.jpg
+
 portfolios:
   - name: 尚程
     url: https://cheng-shang.me/zh/
