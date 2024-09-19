@@ -35,7 +35,7 @@ div[class*="language-"] {
 }
 
 @function whiteness($color) {
-  @return color.channel(color.to-space($color, hsl), "lightness");
+  @return color.channel($color, "whiteness", $space: hwb);
 }
 
 @mixin code-vars($code-color, $code-bg-color) {
