@@ -14,12 +14,14 @@
 
 .vp-tabs {
   margin: 1.5rem 0;
-  border: 2px solid var(--vp-c-border);
+  border: 1px solid var(--vp-c-border);
   border-radius: 8px;
 
   @media (max-width: hope-config.$mobile) {
     [vp-content] > & {
       margin-inline: -1.5rem;
+      border: none;
+      border-bottom: 1px solid var(--vp-c-border);
       border-radius: 0;
     }
   }
@@ -30,7 +32,7 @@
 
   margin: 0;
   padding: 0;
-  border-radius: 8px 8px 0 0;
+  border-radius: 0.5rem 0.5rem 0 0;
 
   background: var(--tab-c-bg-nav);
   list-style: none;
@@ -56,7 +58,7 @@
   min-width: 4rem;
   margin: 0;
   padding: 0.5em 1em;
-  border-radius: 8px 8px 0 0;
+  border-radius: 0.5rem 0.5rem 0 0;
 
   background: transparent;
   color: var(--tab-c-nav);
@@ -124,8 +126,12 @@
 
 .vp-tab {
   display: none;
+
   padding: 1rem 0.75rem;
+  border-radius: 0 0 0.5rem 0.5rem;
+
   background: var(--tab-c-bg);
+
   transition: background var(--vp-t-color);
 
   @media print {
