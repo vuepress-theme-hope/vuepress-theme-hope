@@ -14,7 +14,7 @@ tag:
 
 ## shields.io
 
-你可以使用 [shields.io](https://shields.io/) 生成大量的动态勋章，比如项目的 Stars，NPM 版本号，下载量等。
+你可以使用 [shields.io](https://shields.io/) 生成大量的动态徽章，比如项目的 Stars，NPM 版本号，下载量等。
 
 输入:
 

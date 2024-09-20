@@ -13,19 +13,19 @@ By using `vuepress-plugin-components`, you can import and use some components in
 
 Available components:
 
-- ArtPlayer
-- Badge
-- BiliBili
-- CodePen
-- FontIcon
-- PDF
-- Share
-- StackBlitz
-- SiteInfo
-- VPBanner
-- VPCard
-- VidStack
-- XiGua
+- ArtPlayer: A video player powered by ArtPlayer.
+- Badge: Colorful badge component
+- BiliBili: Embedded BiliBili video
+- CodePen: Embed CodePen demo
+- FontIcon: font icon component.
+- PDF: Embed PDF viewer
+- Share: Sharing current page with social medias
+- StackBlitz: Embed StackBlitz demo
+- SiteInfo: Display sites
+- VPBanner: A banner component
+- VPCard: A card component
+- VidStack: Audio/Video player powered by VidStack
+- XiGua: Embed XiGua video
 
 To enable components, you should set `plugins.components.components` with an array of components names.
 
@@ -76,6 +76,7 @@ export default {
 - <Badge text="tip" type="tip" vertical="middle" />
 - <Badge text="warning" type="warning" vertical="middle" />
 - <Badge text="danger" type="danger" vertical="middle" />
+- <Badge text="important" type="important" vertical="middle" />
 - <Badge text="info" type="info" vertical="middle" />
 - <Badge text="note" type="note" vertical="middle" />
 

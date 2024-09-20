@@ -61,21 +61,19 @@ tag:
 
 控制 `@vuepress/plugin-git`，通过 Git 提交历史提供文件信息。
 
-默认情况下，为了提高开发服务器性能仅在构建模式下启用。你可以手动设置一个布尔值控制插件状态，可以设置插件选项。
+默认情况下，为了提高开发服务器性能仅在构建模式下启用。你可以手动设置一个布尔值控制插件状态，或提供插件选项。
 
 插件选项请参阅 [git 插件文档][git-config]。
 
 ## linksCheck <Badge text="默认启用" />
 
-控制 `@vuepress/plugin-links-check`，提供 Markdown 链接检查。
-
-你可以手动设置一个布尔值控制插件状态，可以设置插件选项。
+控制 `@vuepress/plugin-links-check`，提供 Markdown 链接检查。你可以手动设置一个布尔值控制插件状态，或提供插件选项。
 
 插件选项请参阅 [links-check 插件文档][links-check-config]。
 
 ## markdownHint <Badge text="默认启用" />
 
-控制 `@vuepress/plugin-markdown-hint`，提供 Markdown 提示容器。 你可以手动设置一个布尔值控制插件状态，或者提供插件选项。
+控制 `@vuepress/plugin-markdown-hint`，提供 Markdown 提示容器。你可以手动设置一个布尔值控制插件状态，或提供插件选项。
 
 默认情况下启用提示容器，你可以设置 `false` 禁用插件。
 
@@ -83,7 +81,7 @@ tag:
 
 ## markdownImage <Badge text="默认启用" />
 
-控制 `@vuepress/plugin-markdown-image`，提供 Markdown 图片增强。 你可以手动设置一个布尔值控制插件状态，或者提供插件选项。
+控制 `@vuepress/plugin-markdown-image`，提供 Markdown 图片增强。你可以手动设置一个布尔值控制插件状态，或提供插件选项。
 
 默认情况下启用懒加载和 figure 转换，你可以设置 `false` 禁用插件。
 
@@ -91,7 +89,7 @@ tag:
 
 ## markdownMath
 
-控制 `@vuepress/plugin-markdown-math`，提供 Markdown 中的数学支持。 你可以手动设置一个布尔值控制插件状态，或者提供插件选项。
+控制 `@vuepress/plugin-markdown-math`，提供 Markdown 中的数学支持。你可以手动设置一个布尔值控制插件状态，或提供插件选项。
 
 你可以设置 `true` 启用它，或者提供插件选项。
 
@@ -119,9 +117,7 @@ tag:
 
 ## pwa
 
-控制 `@vuepress/plugin-pwa`，提供 PWA 功能。
-
-可以直接设置为 `true` 启用。
+控制 `@vuepress/plugin-pwa`，提供 PWA 功能。你可以手动设置一个布尔值控制插件状态，或提供插件选项。
 
 插件选项请参阅 [pwa 插件文档][pwa-config]。
 
@@ -129,28 +125,17 @@ tag:
 
 控制 `@vuepress/plugin-reading-time`，为页面进行字数统计并生成预计的阅读时间。
 
-### readingTime.wordPerMinute
-
-- 类型: `number`
-- 默认值: `300`
-
-每分钟的阅读字数。
-
 插件选项请参阅 [reading-time 插件文档][reading-time-config]。
 
 ## seo <Badge text="默认启用" />
 
-控制 `@vuepress/plugin-seo`，提供搜索引擎增强。
-
-默认不需要任何额外配置。如果你不需要此功能可设置为 `false`。
+控制 `@vuepress/plugin-seo`，提供搜索引擎增强。默认情况选无需额外配置。如果你不需要此功能可设置为 `false`。
 
 插件选项请参阅 [seo 插件文档][seo-config]。
 
 ## sitemap <Badge text="默认启用" />
 
-控制 `@vuepress/plugin-sitemap`，为网站自动生成 Sitemap。
-
-默认不需要任何额外配置。如果你不需要此功能可设置为 `false`。
+控制 `@vuepress/plugin-sitemap`，为网站自动生成 Sitemap。默认情况选无需额外配置。如果你不需要此功能可设置为 `false`。
 
 插件选项请参阅 [sitemap 插件文档][sitemap-config]。
 

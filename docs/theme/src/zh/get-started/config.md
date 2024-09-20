@@ -149,9 +149,7 @@ VuePress Theme Hope 主题捆绑了一些插件，你可以在主题选项中通
 
 ::: info 样式配置
 
-VuePress Theme Hope 主题按照约定俗称，使用 `.vuepress/styles` 文件夹存放样式配置。
-
-你可以在此文件夹中:
+VuePress Theme Hope 主题使用 `.vuepress/styles` 文件夹存放样式配置。你可以在此文件夹中:
 
 - 创建 `index.scss` 来注入额外的 CSS 样式
 - 创建 `config.scss` 来进行样式配置

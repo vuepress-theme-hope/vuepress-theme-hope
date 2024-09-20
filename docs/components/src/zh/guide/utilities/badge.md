@@ -12,9 +12,9 @@ title: Badge
 
 ::: md-demo
 
-## 标题勋章 <Badge text="新" type="tip" /> <Badge text="MrHope" color="grey" />
+## 标题徽章 <Badge text="新" type="tip" /> <Badge text="MrHope" color="grey" />
 
-勋章测试 <Badge text="构建中" type="warning" /> <Badge text="MrHope" color="grey" />
+徽章测试 <Badge text="构建中" type="warning" /> <Badge text="MrHope" color="grey" />
 
 :::
 
