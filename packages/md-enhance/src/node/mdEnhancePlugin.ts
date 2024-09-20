@@ -184,7 +184,7 @@ export const mdEnhancePlugin =
         }
 
         if (status.mermaid) {
-          addViteOptimizeDepsInclude(
+          addViteOptimizeDepsExclude(
             bundlerOptions,
             app,
             "mermaid/dist/mermaid.esm.min.mjs",

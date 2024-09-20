@@ -4,6 +4,14 @@ All notable changes to this project will be documented in this file. See [Conven
 
 <!-- #region recent-change -->
 
+## [2.0.0-rc.53](https://github.com/vuepress-theme-hope/vuepress-theme-hope/compare/v2.0.0-rc.52...v2.0.0-rc.53) (2024-09-20)
+
+### ✨ Features
+
+- implement theme guidelines and use official plugins ([#4453](https://github.com/vuepress-theme-hope/vuepress-theme-hope/issues/4453)) ([6ad693a](https://github.com/vuepress-theme-hope/vuepress-theme-hope/commit/6ad693a905fdced0f7a47ff423ed3e086d8ebd17))
+
+<!-- #region recent-change -->
+
 ## [2.0.0-rc.52](https://github.com/vuepress-theme-hope/vuepress-theme-hope/compare/v2.0.0-rc.51...v2.0.0-rc.52) (2024-07-19)
 
 ### ✨ Features

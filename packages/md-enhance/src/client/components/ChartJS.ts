@@ -15,7 +15,7 @@ import { LoadingIcon } from "vuepress-shared/client";
 
 import { getDarkmodeStatus } from "../utils/index.js";
 
-import "../styles/chart.scss";
+import "../styles/chartjs.scss";
 
 declare const MARKDOWN_ENHANCE_DELAY: number;
 

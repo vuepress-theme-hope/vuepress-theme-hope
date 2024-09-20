@@ -26,7 +26,7 @@ export const prepareRevealJsPluginFile = async (
   revealPlugins: RevealJsPlugin[] = [],
 ): Promise<void> => {
   await app.writeTemp(
-    "md-enhance/revealjs-plugins.js",
+    "md-enhance/revealjs.js",
     `\
 export const useRevealJs = () => [
   import(/* webpackChunkName: "reveal" */ "${getRealPath(

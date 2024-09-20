@@ -13,19 +13,19 @@ tag:
 
 可用组件:
 
-- ArtPlayer
-- Badge
-- BiliBili
-- CodePen
-- FontIcon
-- PDF
-- Share
-- StackBlitz
-- SiteInfo
-- VPBanner
-- VPCard
-- VidStack
-- XiGua
+- ArtPlayer: 由 ArtPlayer 驱动的视频播放器。
+- Badge: 多彩的徽章组件
+- BiliBili: 嵌入 BiliBili 视频
+- CodePen: 嵌入 CodePen 演示
+- FontIcon: 字体图标组件。
+- PDF: 嵌入 PDF 查看器
+- Share: 通过社交媒体分享当前页面
+- StackBlitz: 嵌入 StackBlitz 演示
+- SiteInfo: 显示站点
+- VPBanner: 一个横幅组件
+- VPCard: 一个卡片组件
+- VidStack: 由 VidStack 驱动的音频/视频播放器
+- XiGua: 嵌入 XiGua 视频
 
 为了启用组件，你需要将 `plugins.components.components` 设置为一个组件名的数组。
 
@@ -33,7 +33,7 @@ tag:
 
 ::: note
 
-`<Badge />` 默认可用的，以便与 `@vuepress/theme-default` 行为一直。
+`<Badge />` 是默认可用的，以便与 `@vuepress/theme-default` 行为一致。
 
 `<FontIcon />` 总会被启用，因为它被主题内部用于提供 [图标功能](../interface/icon.md)。
 
@@ -78,6 +78,7 @@ export default {
 - <Badge text="tip" type="tip" vertical="middle" />
 - <Badge text="warning" type="warning" vertical="middle" />
 - <Badge text="danger" type="danger" vertical="middle" />
+- <Badge text="important" type="important" vertical="middle" />
 - <Badge text="info" type="info" vertical="middle" />
 - <Badge text="note" type="note" vertical="middle" />
 

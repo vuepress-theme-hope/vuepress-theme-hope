@@ -149,9 +149,7 @@ If you want to use additional plugins, please import the plugin yourself and pas
 
 ::: info Style Config
 
-VuePress Theme Hope is using `.vuepress/styles` folder to store style config like other themes.
-
-In this folder you can:
+VuePress Theme Hope is using `.vuepress/styles` folder to store style config. In this folder you can:
 
 - Create `index.scss` to inject additional CSS styles
 - Create `config.scss` for styling config

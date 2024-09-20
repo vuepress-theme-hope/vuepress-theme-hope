@@ -12,7 +12,7 @@ import {
 import { usePageFrontmatter } from "vuepress/client";
 import { LoadingIcon } from "vuepress-shared/client";
 
-import { useRevealJs } from "@temp/md-enhance/revealjs-plugins.js";
+import { useRevealJs } from "@temp/md-enhance/revealjs.js";
 
 import { useRevealJsConfig } from "../helpers/index.js";
 

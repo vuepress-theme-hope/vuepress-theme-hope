@@ -1,6 +1,6 @@
 {
   "name": "create-vuepress-theme-hope",
-  "version": "2.0.0-rc.52",
+  "version": "2.0.0-rc.53",
   "description": "Create vuepress-theme-hope demo project helper",
   "keywords": [
     "create",
@@ -49,7 +49,7 @@
     "execa": "9.4.0"
   },
   "devDependencies": {
-    "rollup": "4.22.1",
+    "rollup": "4.22.2",
     "vuepress": "2.0.0-rc.15",
     "vuepress-theme-hope": "workspace:*"
   },

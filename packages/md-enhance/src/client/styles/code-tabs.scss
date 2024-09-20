@@ -9,7 +9,7 @@
 .vp-code-tabs-nav {
   overflow-x: auto;
 
-  margin: 0.875rem 0 -0.875rem;
+  margin: 0.75rem 0 -0.75rem;
   padding: 0;
   border-radius: 6px 6px 0 0;
 
@@ -126,18 +126,24 @@
   }
 
   div[class*="language-"] {
-    margin: 0.75rem -1.5rem;
+    border-top-left-radius: 0;
+    border-top-right-radius: 0;
+
+    @media (max-width: hope-config.$mobile) {
+      margin: 0.75rem -1.5rem;
+      border-radius: 0;
+    }
 
     &.line-numbers-mode::after {
-      border-top-left-radius: 0 !important;
+      border-top-left-radius: 0;
     }
 
     pre {
-      border-top-left-radius: 0 !important;
-      border-top-right-radius: 0 !important;
+      border-top-left-radius: 0;
+      border-top-right-radius: 0;
 
       @media (max-width: hope-config.$mobile) {
-        border-radius: 0 !important;
+        border-radius: 0;
       }
     }
 
