@@ -131,6 +131,7 @@ export default theme(
       markdownImage: {
         figure: true,
         lazyload: true,
+        mark: true,
       },
 
       markdownMath: {
