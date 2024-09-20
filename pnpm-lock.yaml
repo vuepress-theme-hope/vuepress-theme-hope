@@ -165,8 +165,8 @@ importers:
         specifier: 16.0.1
         version: 16.0.1(sass-embedded@1.79.2)(sass@1.79.2)(webpack@5.94.0(esbuild@0.23.1))
       vidstack:
-        specifier: 1.12.10
-        version: 1.12.10(webpack-sources@3.2.3)
+        specifier: 1.12.11
+        version: 1.12.11(webpack-sources@3.2.3)
       vue:
         specifier: 3.5.6
         version: 3.5.6(typescript@5.6.2)
@@ -502,8 +502,8 @@ importers:
         specifier: 16.0.1
         version: 16.0.1(sass-embedded@1.79.2)(sass@1.79.2)(webpack@5.94.0(esbuild@0.23.1))
       vidstack:
-        specifier: 1.12.10
-        version: 1.12.10(webpack-sources@3.2.3)
+        specifier: 1.12.11
+        version: 1.12.11(webpack-sources@3.2.3)
       vue:
         specifier: 3.5.6
         version: 3.5.6(typescript@5.6.2)
@@ -9372,10 +9372,6 @@ packages:
 
   vfile@6.0.3:
     resolution: {integrity: sha512-KzIbH/9tXat2u30jf+smMwFCsno4wHVdNmzFyL+T/L3UGqqk6JKfVqOFOZEpZSHADH1k40ab6NUIXZq422ov3Q==}
-
-  vidstack@1.12.10:
-    resolution: {integrity: sha512-WQ30sTDY6j9vPjlHfe92SNKV269DF/Q9ACfkb2t+4+l06IXiYHpvuqK38hMnaQC1QRDHja3YgJaqdegINl4cdw==}
-    engines: {node: '>=18'}
 
   vidstack@1.12.11:
     resolution: {integrity: sha512-SH9ppMV6Y4nrYTH0xyV9bPe37yK14CalaB9NUKwd54wyEoIET1KnfRDhj2hYQRwBJVlvz3Qw8BgdyLyppKefEQ==}
@@ -19201,15 +19197,6 @@ snapshots:
     dependencies:
       '@types/unist': 3.0.3
       vfile-message: 4.0.2
-
-  vidstack@1.12.10(webpack-sources@3.2.3):
-    dependencies:
-      '@floating-ui/dom': 1.6.11
-      lit-html: 2.8.0
-      media-captions: 1.0.4
-      unplugin: 1.14.1(webpack-sources@3.2.3)
-    transitivePeerDependencies:
-      - webpack-sources
 
   vidstack@1.12.11(webpack-sources@3.2.3):
     dependencies:
