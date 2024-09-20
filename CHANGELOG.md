@@ -4,6 +4,25 @@ All notable changes to this project will be documented in this file. See [Conven
 
 <!-- #region recent-change -->
 
+## [2.0.0-rc.53](https://github.com/vuepress-theme-hope/vuepress-theme-hope/compare/v2.0.0-rc.52...v2.0.0-rc.53) (2024-09-20)
+
+### ✨ Features
+
+- apply guidelines ([ea175e6](https://github.com/vuepress-theme-hope/vuepress-theme-hope/commit/ea175e6520b4ec9ab53373b4e7fc2770afcb663b))
+- implement theme guidelines and use official plugins ([#4453](https://github.com/vuepress-theme-hope/vuepress-theme-hope/issues/4453)) ([6ad693a](https://github.com/vuepress-theme-hope/vuepress-theme-hope/commit/6ad693a905fdced0f7a47ff423ed3e086d8ebd17))
+- **md-enhance:** reduce style size ([7987eb5](https://github.com/vuepress-theme-hope/vuepress-theme-hope/commit/7987eb52ae8eead380078184d4e4ebc756527d8f))
+- **md-enhance:** use mermaid v11 ([37bf9dd](https://github.com/vuepress-theme-hope/vuepress-theme-hope/commit/37bf9dd352644292ca4b16ab300afeff29f22b25))
+
+### 🐛 Bug Fixes
+
+- **md-enhance:** fix reveal style, close [#4335](https://github.com/vuepress-theme-hope/vuepress-theme-hope/issues/4335) ([fe71ad0](https://github.com/vuepress-theme-hope/vuepress-theme-hope/commit/fe71ad029fc8a2d1047767c0eafc827339b938d4))
+- **md-enhance:** incorrect js code wrapper, close [#4355](https://github.com/vuepress-theme-hope/vuepress-theme-hope/issues/4355) ([#4356](https://github.com/vuepress-theme-hope/vuepress-theme-hope/issues/4356)) ([c9ff77d](https://github.com/vuepress-theme-hope/vuepress-theme-hope/commit/c9ff77d2b9f9e28157b51abaebbb41ca4167177d))
+- **theme:** fix navbar types ([433e837](https://github.com/vuepress-theme-hope/vuepress-theme-hope/commit/433e8375d8f06fa24cd85ec56e51d075626b52d1))
+- **theme:** fix toc style, close [#4269](https://github.com/vuepress-theme-hope/vuepress-theme-hope/issues/4269) ([1f9b99f](https://github.com/vuepress-theme-hope/vuepress-theme-hope/commit/1f9b99f69fa338339efdfeb0060a2d2739dcd0dd))
+- **theme:** improve structure sidebar, close [#4351](https://github.com/vuepress-theme-hope/vuepress-theme-hope/issues/4351), [#4352](https://github.com/vuepress-theme-hope/vuepress-theme-hope/issues/4352) ([#4353](https://github.com/vuepress-theme-hope/vuepress-theme-hope/issues/4353)) ([3d56d25](https://github.com/vuepress-theme-hope/vuepress-theme-hope/commit/3d56d2514c672a91ddd0117561dfbe91e03b8ae5))
+
+<!-- #region recent-change -->
+
 ## [2.0.0-rc.52](https://github.com/vuepress-theme-hope/vuepress-theme-hope/compare/v2.0.0-rc.51...v2.0.0-rc.52) (2024-07-19)
 
 ### ✨ Features
