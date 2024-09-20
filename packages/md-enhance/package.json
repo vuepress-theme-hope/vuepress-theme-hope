@@ -77,15 +77,9 @@
     "@mdit/plugin-attrs": "^0.13.1",
     "@mdit/plugin-container": "^0.13.1",
     "@mdit/plugin-demo": "^0.13.1",
-    "@mdit/plugin-figure": "^0.13.1",
     "@mdit/plugin-footnote": "^0.13.1",
-    "@mdit/plugin-img-lazyload": "^0.13.1",
-    "@mdit/plugin-img-mark": "^0.13.1",
-    "@mdit/plugin-img-size": "^0.13.1",
     "@mdit/plugin-include": "^0.13.1",
-    "@mdit/plugin-katex-slim": "^0.13.1",
     "@mdit/plugin-mark": "^0.13.1",
-    "@mdit/plugin-mathjax-slim": "^0.13.1",
     "@mdit/plugin-plantuml": "^0.13.1",
     "@mdit/plugin-spoiler": "^0.13.1",
     "@mdit/plugin-stylize": "^0.13.1",
@@ -93,15 +87,14 @@
     "@mdit/plugin-sup": "^0.13.1",
     "@mdit/plugin-tab": "^0.13.1",
     "@mdit/plugin-tasklist": "^0.13.1",
-    "@mdit/plugin-tex": "^0.13.1",
     "@mdit/plugin-uml": "^0.13.1",
     "@types/markdown-it": "^14.1.2",
-    "@vuepress/helper": "2.0.0-rc.45",
-    "@vuepress/plugin-sass-palette": "2.0.0-rc.45",
+    "@vuepress/helper": "2.0.0-rc.46",
+    "@vuepress/plugin-sass-palette": "2.0.0-rc.46",
     "@vueuse/core": "^11.1.0",
     "balloon-css": "^1.2.0",
     "js-yaml": "^4.1.0",
-    "vue": "^3.5.6",
+    "vue": "^3.5.7",
     "vuepress-shared": "workspace:*"
   },
   "devDependencies": {
@@ -117,19 +110,17 @@
     "@vue/repl": "^4.1.1",
     "chart.js": "^4.0.0",
     "echarts": "^5.0.0",
-    "flowchart.ts": "^2.0.0 || ^3.0.0",
-    "katex": "^0.16.0",
+    "flowchart.ts": "^3.0.0",
     "kotlin-playground": "^1.23.0",
     "markmap-lib": "^0.17.0",
     "markmap-toolbar": "^0.17.0",
     "markmap-view": "^0.17.0",
-    "mathjax-full": "^3.2.2",
     "mermaid": "^11.2.0",
     "reveal.js": "^5.0.0",
     "sandpack-vue3": "^3.0.0",
     "sass": "^1.79.2",
     "sass-embedded": "^1.79.2",
-    "sass-loader": "^16.0.0",
+    "sass-loader": "^16.0.2",
     "vuepress": "2.0.0-rc.15"
   },
   "peerDependenciesMeta": {
@@ -148,9 +139,6 @@
     "flowchart.ts": {
       "optional": true
     },
-    "katex": {
-      "optional": true
-    },
     "kotlin-playground": {
       "optional": true
     },
@@ -161,9 +149,6 @@
       "optional": true
     },
     "markmap-view": {
-      "optional": true
-    },
-    "mathjax-full": {
       "optional": true
     },
     "mermaid": {
