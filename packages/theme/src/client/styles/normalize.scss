@@ -29,6 +29,10 @@ h1 {
   }
 }
 
+code {
+  font-family: var(--vp-font-mono);
+}
+
 @media print {
   @page {
     --vp-c-bg: #fff !important;

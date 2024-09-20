@@ -71,23 +71,55 @@ $pc: 1920px;
 
 可用的颜色变量:
 
-- `$theme-color`: 主题色
-- `$vp-c-text`: 字体颜色
-- `$bg-color`: 背景色
-- `$bg-color-secondary`: 另一个浅背景色
-- `$bg-color-tertiary`: 另一个更浅的背景色
-- `$border-color`: 边框颜色
-- `$box-shadow`: 元素阴影色
-- `$card-shadow`: 卡片阴影色
+#### 文字
+
+- `$vp-c-text`：默认文本颜色。
+- `$vp-c-text-mute`：用于静音文本的颜色，例如“非活动菜单”或“信息文本”。
+- `$vp-c-text-subtle`：用于细微文本的颜色，例如“占位符”或“插入符号”。
+
+#### 背景
+
+- `$vp-c-bg`：用于主屏幕的背景颜色。
+- `$vp-c-bg-alt`：用于“侧边栏”或“代码块”等地方的备用背景颜色。
+- `$vp-c-bg-elv`：用于“浮动”部分的提升背景颜色，例如“对话框”。
+
+#### 阴影
+
+- `$vp-c-shadow`：阴影颜色
+
+#### 强调
+
+用于交互组件的强调颜色和品牌颜色。
+
+- `$vp-c-accent`：主要用于彩色文本的最实色。它必须满足与放在 `$vp-c-accent-soft` 顶部时的对比度。
+- `$vp-c-accent-hover`：用于悬停状态的颜色。
+- `$vp-c-accent-bg`：用于实色背景的颜色。它必须满足与放在其顶部的 `$vp-c-accent-text` 的对比度。
+- `$vp-c-accent-text`：用于 `$vp-c-accent-bg` 背景的文本颜色。它必须满足与 `$vp-c-accent-bg` 的对比度。
+- `$vp-c-accent-soft`：用于自定义容器或徽章等细微背景的颜色。当将 `$vp-c-accent` 颜色放在其顶部时，它必须满足对比度。
+
+  软色必须是半透明的 alpha 通道。这是至关重要的，因为它允许将多个“软”颜色叠加在一起以创建强调，例如在自定义容器内部有内联代码块时。
+
+#### 边框
+
+- `$vp-c-border`：交互组件的边框颜色。例如，这应该用于按钮轮廓。
+- `$vp-c-border-hard`：较暗的边框颜色，用于紧贴文本的“硬”边框，例如表格和 kbd。
+- `$vp-c-divider`：分隔符的颜色，用于在同一组件内分隔部分，例如在“h2”标题上放置分隔符。
+
+#### 控件
+
+- `$vp-c-control`：用于交互控件（例如按钮或复选框）的背景颜色。
+- `$vp-c-control-hover`：用于交互控件悬停状态的背景颜色。
+- `$vp-c-control-disabled`：用于交互控件禁用状态的颜色。
 
 ::: details 例子
 
 ```scss
 // 将主题颜色设置为红色
-$theme-color: red;
+// 注: 为保持一致，你还应该设置其他主题颜色变量
+$vp-c-accent: red;
 
 // 将边框颜色加深
-$border-color: (
+$vp-c-border: (
   light: #ddd,
   dark: #444,
 );
@@ -108,11 +140,11 @@ $border-color: (
 导航栏:
 
 - `$navbar-height`: 导航栏高度
-- `$navbar-horizontal-padding`: 导航栏水平填充
-- `$navbar-vertical-padding`: 导航栏垂直填充
+- `$navbar-padding-x`: 导航栏水平填充
+- `$navbar-padding-y`: 导航栏垂直填充
 - `$navbar-mobile-height`: 移动设备上的导航栏高度
-- `$navbar-mobile-horizontal-padding`: 移动设备上的导航栏水平填充
-- `$navbar-mobile-vertical-padding`: 移动设备上的导航栏垂直填充
+- `$navbar-mobile-padding-x`: 移动设备上的导航栏水平填充
+- `$navbar-mobile-padding-y`: 移动设备上的导航栏垂直填充
 
 侧边栏:
 
@@ -124,29 +156,11 @@ $border-color: (
 - `$content-width`: 主要内容的宽度
 - `$home-page-width`: 主页内容的宽度
 
-字体:
-
-- `$font-family`: 普通文本上使用的字体
-- `$font-family-heading:` 用于标题元素的字体
-
-代码:
-
-- `$font-family-mono`: 代码上使用的字体
-- `$line-numbers-width`: 代码块中行号的宽度
-
-过渡:
-
-- `$color-transition`: 用于颜色的过渡
-- `$transform-transition`: 用于变换动画的过渡
-
 ::: details 例子
 
 ```scss
 // 加大移动设备上的导航栏高度
 $navbar-mobile-height: 3.5rem;
-
-// 将 Windows 网页字体设置为思源宋体 (当然你也要记得导入这个字体)
-$font-family: 'Georgia, -apple-system, "Nimbus Roman No9 L", "PingFang SC", "Hiragino Sans GB", "Noto Serif SC", "Microsoft Yahei", "WenQuanYi Micro Hei", "ST Heiti", sans-serif';
 ```
 
 :::
@@ -154,6 +168,33 @@ $font-family: 'Georgia, -apple-system, "Nimbus Roman No9 L", "PingFang SC", "Hir
 ::: details 默认值
 
 @[code](../../../../../packages/theme/templates/palette/layout.scss)
+
+:::
+
+### 字体
+
+可用的字体变量:
+
+- `$vp-font`: 正常文本的字体系列
+- `$vp-font-heading`: 标题元素的字体系列
+- `$vp-font-mono`: 代码块的字体系列
+
+::: details 默认值
+
+@[code](../../../../../packages/theme/templates/palette/font.scss)
+
+:::
+
+### 过渡时间
+
+可用的过渡时间变量:
+
+- `$vp-t-color`：颜色过渡时间。
+- `$vp-t-transform`：变换过渡时间。
+
+::: details 默认值
+
+@[code](../../../../../packages/theme/templates/palette/transition.scss)
 
 :::
 
