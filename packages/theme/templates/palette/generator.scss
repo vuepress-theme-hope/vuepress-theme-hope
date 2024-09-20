@@ -3,6 +3,7 @@
 @use "sass:map";
 @use "@sass-palette/helper";
 
+// background
 $vp-c-bg-soft: (
   light: color.change(helper.get-color($vp-c-bg), $alpha: 0.9),
   dark: color.change(helper.get-dark-color($vp-c-bg), $alpha: 0.9),
@@ -10,4 +11,20 @@ $vp-c-bg-soft: (
 $vp-c-bg-elv-soft: (
   light: color.change(helper.get-color($vp-c-bg-elv), $alpha: 0.9),
   dark: color.change(helper.get-dark-color($vp-c-bg-elv), $alpha: 0.9),
+) !default;
+
+// text
+$vp-c-text-mute: (
+  light: color.scale(helper.get-color($vp-c-text), $alpha: -22%),
+  dark: color.scale(helper.get-dark-color($vp-c-text), $alpha: -30%),
+) !default;
+$vp-c-text-subtle: (
+  light: color.scale(helper.get-color($vp-c-text), $alpha: -44%),
+  dark: color.scale(helper.get-dark-color($vp-c-text), $alpha: -56%),
+) !default;
+
+// border
+$vp-c-border-hard: (
+  light: color.scale(helper.get-color($vp-c-border), $lightness: -5%),
+  dark: color.scale(helper.get-dark-color($vp-c-border), $lightness: 5%),
 ) !default;

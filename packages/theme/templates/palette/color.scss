@@ -39,27 +39,15 @@ $vp-c-text: (
   light: rgb(60 60 67),
   dark: rgb(235 235 245 / 86%),
 ) !default;
-$vp-c-text-mute: (
-  light: rgb(60 60 67 / 78%),
-  dark: rgb(235 235 245 / 60%),
-) !default;
-$vp-c-text-subtle: (
-  light: rgb(60 60 67 / 56%),
-  dark: rgb(235 235 245 / 38%),
-) !default;
 
 // border
 $vp-c-border: (
-  light: #d7d9da,
-  dark: #3e4c5a,
-) !default;
-$vp-c-border-hard: (
-  light: #d1d4d7,
-  dark: #405064,
+  light: #c2c2c4,
+  dark: #3c3f44,
 ) !default;
 $vp-c-gutter: (
-  light: #eaecef,
-  dark: #373f4c,
+  light: #e2e2e3,
+  dark: #000,
 ) !default;
 
 // shadow
