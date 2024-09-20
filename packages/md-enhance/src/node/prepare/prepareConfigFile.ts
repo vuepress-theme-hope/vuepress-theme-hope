@@ -14,7 +14,6 @@ export const prepareConfigFile = async (
 ): Promise<string> => {
   const imports = new Set<string>();
   const enhances = new Set<string>();
-  const setups = new Set<string>();
 
   // TODO: Remove this in v2 stable
   // @ts-expect-error: card does not exist
@@ -190,12 +189,10 @@ ${Array.from(imports.values()).join("\n")}
 export default defineClientConfig({
   enhance: ({ app }) => {
 ${Array.from(enhances.values())
-  .map((item) => `    ${item}`)
+  .map((item) => item.split("\n").map((line) => `    ${line}`))
+  .flat()
   .join("\n")}
   },
-  setup: () => {
-${Array.from(setups.values()).join("\n")}
-  }
 });
 `,
   );

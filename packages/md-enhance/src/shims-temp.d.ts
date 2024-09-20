@@ -1,4 +1,4 @@
-declare module "@temp/md-enhance/revealjs-plugins.js" {
+declare module "@temp/md-enhance/revealjs.js" {
   import type { PluginFunction } from "reveal.js";
 
   export const useRevealJs: () => [
