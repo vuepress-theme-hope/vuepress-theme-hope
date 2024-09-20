@@ -78,11 +78,9 @@ export default defineComponent({
       Links: NavbarLinks,
       Repo: RepoLink,
       Outlook: OutlookButton,
-      Search: hasGlobalComponent("Docsearch")
-        ? resolveComponent("Docsearch")
-        : hasGlobalComponent("SearchBox")
-          ? resolveComponent("SearchBox")
-          : noopComponent,
+      Search: hasGlobalComponent("SearchBox")
+        ? resolveComponent("SearchBox")
+        : noopComponent,
     };
 
     const getNavbarComponent = (component: string): Component | string =>

@@ -1,6 +1,6 @@
 import type { PropType, VNode } from "vue";
 import { defineComponent, h } from "vue";
-import { ClientOnly, usePageLang } from "vuepress/client";
+import { usePageLang } from "vuepress/client";
 
 import { usePure } from "@theme-hope/composables/index";
 import { CalendarIcon } from "@theme-hope/modules/info/components/icons";
@@ -51,12 +51,9 @@ export default defineComponent({
               h(CalendarIcon),
               h(
                 "span",
-                h(
-                  ClientOnly,
-                  () =>
-                    props.localizedDate ||
-                    props.date!.toLocaleDateString(lang.value),
-                ),
+                { "data-allow-mismatch": "text" },
+                props.localizedDate ||
+                  props.date.toLocaleDateString(lang.value),
               ),
               h("meta", {
                 property: "datePublished",

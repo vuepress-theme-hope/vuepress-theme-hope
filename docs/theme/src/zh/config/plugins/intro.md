@@ -58,6 +58,10 @@ tag:
 
 - [@vuepress/plugin-links-check][links-check]: 检查 Markdown 链接
 
+- [@vuepress/plugin-markdown-hint][markdown-hint]: Markdown 提示容器
+
+- [@vuepress/plugin-markdown-image][markdown-image]: Markdown 图片增强
+
 - [@vuepress/plugin-nprogress][nprogress]: 进度条
 
 - [@vuepress/plugin-photo-swipe][photo-swipe]: 基于 Photo Swipe 的图片浏览插件
@@ -81,6 +85,8 @@ tag:
 - [@vuepress/plugin-copyright][copyright]: 在用户复制时追加版权信息，或禁用站点的复制与选择。
 
 - [@vuepress/plugin-comment][comment]: 提供评论与浏览量功能
+
+- [@vuepress/plugin-markdown-math][markdown-math]: 公式支持
 
 - [@vuepress/plugin-notice][notice]: 提供公告
 
@@ -118,6 +124,9 @@ tag:
 [docsearch]: https://ecosystem.vuejs.press/zh/plugins/search/docsearch.html
 [feed]: https://ecosystem.vuejs.press/zh/plugins/blog/feed/
 [git]: https://ecosystem.vuejs.press/zh/plugins/development/git.html
+[markdown-hint]: https://ecosystem.vuejs.press/zh/plugins/markdown/markdown-hint.html
+[markdown-image]: https://ecosystem.vuejs.press/zh/plugins/markdown/markdown-image.html
+[markdown-math]: https://ecosystem.vuejs.press/zh/plugins/markdown/markdown-math.html
 [links-check]: https://ecosystem.vuejs.press/zh/plugins/markdown/links-check.html
 [notice]: https://ecosystem.vuejs.press/zh/plugins/features/notice.html
 [nprogress]: https://ecosystem.vuejs.press/zh/plugins/features/nprogress.html

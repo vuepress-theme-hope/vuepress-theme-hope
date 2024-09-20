@@ -125,9 +125,17 @@ export default defineComponent({
     });
 
     return (): (VNode | null)[] => [
-      h("div", { class: "sandpack-wrapper" }, [
+      h("div", { class: "vp-container sandpack-wrapper" }, [
         props.title
-          ? h("div", { class: "header" }, decodeURIComponent(props.title))
+          ? h(
+              "div",
+              { class: "vp-container-header" },
+              h(
+                "div",
+                { class: "vp-container-title" },
+                decodeURIComponent(props.title),
+              ),
+            )
           : null,
         h(
           "div",

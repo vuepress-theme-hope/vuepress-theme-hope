@@ -124,8 +124,21 @@ export default theme(
         rss: true,
       },
 
-      mdEnhance: {
+      markdownHint: {
         alert: true,
+      },
+
+      markdownImage: {
+        figure: true,
+        lazyload: true,
+        mark: true,
+      },
+
+      markdownMath: {
+        type: "mathjax",
+      },
+
+      mdEnhance: {
         align: true,
         attrs: true,
         chart: true,
@@ -134,12 +147,8 @@ export default theme(
         demo: true,
         echarts: true,
         desmos: true,
-        figure: true,
         flowchart: true,
         gfm: true,
-        imgLazyload: true,
-        imgMark: true,
-        imgSize: true,
         include: {
           deep: true,
           resolvePath: (file) => {
@@ -166,7 +175,6 @@ export default theme(
           resolveLinkPath: false,
         },
         kotlinPlayground: true,
-        mathjax: true,
         mark: true,
         markmap: true,
         mermaid: true,

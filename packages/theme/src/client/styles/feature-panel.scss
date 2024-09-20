@@ -19,7 +19,7 @@
     display: none;
   }
 
-  #{hope-config.$dark-selector} & {
+  [data-theme="dark"] & {
     &.light {
       display: none;
     }
@@ -37,14 +37,14 @@
   margin: 0 auto;
   padding: 1.5rem 1rem;
 
-  color: var(--text-color-lighter);
+  color: var(--vp-c-text-mute);
 
   text-align: center;
 
   .vp-feature-bg + & {
     color: #222;
 
-    #{hope-config.$dark-selector} & {
+    [data-theme="dark"] & {
       color: #eee;
     }
 
@@ -70,7 +70,7 @@
     display: none;
   }
 
-  #{hope-config.$dark-selector} & {
+  [data-theme="dark"] & {
     &.light {
       display: none;
     }
@@ -86,7 +86,7 @@
   border-bottom: none;
 
   font-size: 3rem;
-  font-family: var(--font-family);
+  font-family: var(--vp-font);
   text-align: center;
 
   @media (max-width: hope-config.$pad) {
@@ -123,7 +123,7 @@
   }
 
   &:first-child {
-    border-top: 1px solid var(--border-color);
+    border-top: 1px solid var(--vp-c-border);
   }
 }
 
@@ -140,9 +140,9 @@
   color: inherit;
 
   transition:
-    background var(--color-transition),
-    box-shadow var(--color-transition),
-    transform var(--transform-transition);
+    background var(--vp-t-color),
+    box-shadow var(--vp-t-transform),
+    transform var(--vp-t-transform);
 
   @media (min-width: hope-config.$pc) {
     flex-basis: calc(25% - 3rem);
@@ -164,14 +164,14 @@
 
   &.link {
     cursor: pointer;
-    transition: transform var(--transform-transition);
+    transition: transform var(--vp-t-transform);
 
     @media print {
       text-decoration: none;
     }
 
     &:hover {
-      background-color: var(--bg-color-secondary);
+      background-color: var(--vp-c-grey-soft);
 
       .vp-feature-bg + .vp-feature & {
         background-color: transparent;
@@ -196,7 +196,7 @@
     height: 1.1em;
     margin-inline-end: 0.5rem;
 
-    color: var(--theme-color);
+    color: var(--vp-c-accent);
 
     font-weight: normal;
     font-size: 1.1em;
@@ -220,7 +220,7 @@
   margin: 0.25rem 0 0.5rem;
   font-weight: bold;
   font-size: 1.3rem;
-  font-family: var(--font-family);
+  font-family: var(--vp-font);
 
   @media (max-width: hope-config.$mobile) {
     font-size: 1.2rem;

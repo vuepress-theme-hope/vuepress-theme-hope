@@ -71,6 +71,5 @@ export const idLocale: ThemeLocaleData = {
     ],
     back: "Kembali",
     home: "Ke Beranda",
-    openInNewWindow: "Buka di jendela baru",
   },
 };

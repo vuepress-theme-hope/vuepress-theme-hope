@@ -38,7 +38,7 @@
     height: 2px;
     border-radius: 1px;
 
-    background: var(--theme-color);
+    background: var(--vp-c-accent-bg);
 
     visibility: hidden;
 
@@ -55,7 +55,7 @@
     position: relative;
 
     a {
-      color: var(--theme-color);
+      color: var(--vp-c-accent);
       transform: scale(1.1, 1.1);
     }
   }

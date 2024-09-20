@@ -140,15 +140,11 @@ const setupTransparentNavbar: (options?: {
 
   /**
    * 浅色模式下字体颜色
-   *
-   * @default '#fff'
    */
   light?: string;
 
   /**
    * 深色模式下字体颜色
-   *
-   * @default '#bbb'
    */
   dark?: string;
 }) => void;

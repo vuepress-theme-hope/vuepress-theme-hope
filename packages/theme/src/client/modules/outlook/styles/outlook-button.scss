@@ -5,7 +5,7 @@
 
   position: relative;
   padding: 0.375rem;
-  color: var(--grey-dark);
+  color: var(--vp-c-text-mute);
 
   .icon {
     vertical-align: middle;
@@ -25,11 +25,11 @@
   min-width: 100px;
   margin: 0;
   padding: 0.5rem 0.75rem;
-  border: 1px solid var(--grey14);
+  border: 1px solid var(--vp-c-gutter);
   border-radius: 0.25rem;
 
-  background: var(--bg-color);
-  box-shadow: 2px 2px 10px var(--card-shadow);
+  background: var(--vp-c-bg);
+  box-shadow: 2px 2px 10px var(--vp-c-shadow);
 
   text-align: start;
   white-space: nowrap;
@@ -43,7 +43,7 @@
 
   > *:not(:last-child) {
     padding-bottom: 0.5rem;
-    border-bottom: 1px solid var(--grey14);
+    border-bottom: 1px solid var(--vp-c-border);
   }
 
   .vp-outlook-button:hover &,

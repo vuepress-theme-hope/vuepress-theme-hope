@@ -23,16 +23,10 @@
   margin: 0 auto;
   padding: 1.5rem 2.5rem;
 
-  color: #222;
-
   @media (max-width: hope-config.$tablet) {
     display: block;
     padding-inline: 1.5rem;
     text-align: center;
-  }
-
-  #{hope-config.$dark-selector} & {
-    color: #eee;
   }
 }
 
@@ -53,7 +47,7 @@
     display: none;
   }
 
-  #{hope-config.$dark-selector} & {
+  [data-theme="dark"] & {
     &.light {
       display: none;
     }
@@ -85,7 +79,7 @@
     display: none;
   }
 
-  #{hope-config.$dark-selector} & {
+  [data-theme="dark"] & {
     &.light {
       display: none;
     }
@@ -119,7 +113,7 @@
   margin-bottom: 1.5rem;
   border-bottom: none;
   font-size: 3rem;
-  font-family: var(--font-family);
+  font-family: var(--vp-font);
 
   @media (max-width: hope-config.$pad) {
     font-size: 2.5rem;
@@ -142,6 +136,11 @@
 .vp-highlights {
   margin-inline-start: -1.25em;
   padding-inline-start: 0;
+
+  // prevent inline code text unreadable
+  :not(pre) > code {
+    color: var(--vp-c-text);
+  }
 }
 
 .vp-highlight-item-wrapper {
@@ -152,10 +151,10 @@
 
   &.link {
     cursor: pointer;
-    transition: transform var(--transform-transition);
+    transition: transform var(--vp-t-transform);
 
     &:hover {
-      background-color: var(--bg-color-secondary);
+      background-color: var(--vp-c-bg-alt);
 
       .vp-highlight-bg + .vp-highlight & {
         background-color: transparent;
@@ -193,7 +192,7 @@
   margin: 0;
   font-weight: 600;
   font-size: 1.125rem;
-  font-family: var(--font-family);
+  font-family: var(--vp-font);
 
   .icon {
     margin-inline-end: 0.25em;

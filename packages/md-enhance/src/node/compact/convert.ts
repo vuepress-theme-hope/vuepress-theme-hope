@@ -24,26 +24,6 @@ export const convertOptions = (
   });
   deprecatedLogger({
     options,
-    old: "lazyload",
-    new: "imgLazyload",
-  });
-  deprecatedLogger({
-    options,
-    old: "imageLazyload",
-    new: "imgLazyload",
-  });
-  deprecatedLogger({
-    options,
-    old: "imageMark",
-    new: "imgMark",
-  });
-  deprecatedLogger({
-    options,
-    old: "imageSize",
-    new: "imgSize",
-  });
-  deprecatedLogger({
-    options,
     old: "mdImport",
     new: "include",
   });
@@ -81,6 +61,61 @@ export const convertOptions = (
     options,
     old: "imageFix",
     msg: "This option is no longer needed.",
+  });
+  droppedLogger({
+    options,
+    old: "alert",
+    msg: "Please use @vuepress/plugin-markdown-hint instead.",
+  });
+  droppedLogger({
+    options,
+    old: "hint",
+    msg: "Please use @vuepress/plugin-markdown-hint instead.",
+  });
+  droppedLogger({
+    options,
+    old: "figure",
+    msg: "Please use @vuepress/plugin-markdown-image instead.",
+  });
+  droppedLogger({
+    options,
+    old: "imageMark",
+    msg: "Please use @vuepress/plugin-markdown-image instead.",
+  });
+  droppedLogger({
+    options,
+    old: "imgMark",
+    msg: "Please use @vuepress/plugin-markdown-image instead.",
+  });
+  droppedLogger({
+    options,
+    old: "imgSize",
+    msg: "Please use @vuepress/plugin-markdown-image instead.",
+  });
+  droppedLogger({
+    options,
+    old: "imageSize",
+    msg: "Please use @vuepress/plugin-markdown-image instead.",
+  });
+  droppedLogger({
+    options,
+    old: "lazyload",
+    msg: "Please use @vuepress/plugin-markdown-image instead.",
+  });
+  droppedLogger({
+    options,
+    old: "imageLazyload",
+    msg: "Please use @vuepress/plugin-markdown-image instead.",
+  });
+  droppedLogger({
+    options,
+    old: "imgLazyload",
+    msg: "Please use @vuepress/plugin-markdown-image instead.",
+  });
+  droppedLogger({
+    options,
+    old: "obsidianImgSize",
+    msg: "Please use @vuepress/plugin-markdown-image instead.",
   });
   droppedLogger({
     options,

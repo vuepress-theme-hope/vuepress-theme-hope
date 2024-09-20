@@ -40,7 +40,7 @@ $headings: (2, 3, 4, 5, 6);
 #toc {
   margin-bottom: 1rem;
   border-radius: 8px;
-  background: var(--bg-color-secondary);
+  background: var(--vp-c-bg-alt);
 
   @media (min-width: hope-config.$pc) {
     position: absolute;
@@ -117,11 +117,7 @@ $headings: (2, 3, 4, 5, 6);
   }
 
   &::-webkit-scrollbar-thumb:vertical {
-    background: #ddd;
-
-    #{hope-config.$dark-selector} & {
-      background: #333;
-    }
+    background: var(--vp-c-border);
   }
 
   > .vp-toc-list {
@@ -138,7 +134,7 @@ $headings: (2, 3, 4, 5, 6);
 
       width: 2px;
 
-      background: var(--border-color);
+      background: var(--vp-c-border);
     }
   }
 }
@@ -164,9 +160,9 @@ $headings: (2, 3, 4, 5, 6);
   width: 2px;
   height: 1.7rem;
 
-  background: var(--theme-color);
+  background: var(--vp-c-accent-bg);
 
-  transition: top var(--transform-transition);
+  transition: top var(--vp-t-transform);
 
   @media (min-width: hope-config.$pc) {
     display: block;
@@ -182,7 +178,7 @@ $headings: (2, 3, 4, 5, 6);
 
   max-width: 100%;
 
-  color: var(--grey-light);
+  color: var(--vp-c-text-mute);
 
   line-height: inherit;
   text-overflow: ellipsis;
@@ -212,13 +208,13 @@ $headings: (2, 3, 4, 5, 6);
 
   &:hover {
     > .vp-toc-link {
-      color: var(--theme-color);
+      color: var(--vp-c-accent);
     }
   }
 
   &.active {
     > .vp-toc-link {
-      color: var(--theme-color);
+      color: var(--vp-c-accent);
       font-weight: bold;
     }
   }

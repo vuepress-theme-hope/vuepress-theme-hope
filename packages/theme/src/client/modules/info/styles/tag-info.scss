@@ -17,14 +17,13 @@
   margin: 0.125rem;
   padding: 0.125rem 0.25rem 0.125rem 0.625rem;
 
-  background: var(--bg-color-secondary);
+  background: var(--vp-c-grey-soft);
   background:
-    linear-gradient(135deg, transparent 0.75em, var(--bg-color-secondary) 0) top,
-    linear-gradient(45deg, transparent 0.75em, var(--bg-color-secondary) 0)
-      bottom;
+    linear-gradient(135deg, transparent 0.75em, var(--vp-c-grey-soft) 0) top,
+    linear-gradient(45deg, transparent 0.75em, var(--vp-c-grey-soft) 0) bottom;
   background-size: 100% 52% !important;
   background-repeat: no-repeat !important;
-  color: var(--text-color-light);
+  color: var(--vp-c-text-mute);
 
   font-weight: bold;
   font-size: 0.625rem;
@@ -32,8 +31,8 @@
   text-align: center;
 
   transition:
-    background var(--color-transition),
-    color var(--color-transition);
+    background var(--vp-t-color),
+    color var(--vp-t-color);
 
   @media print {
     padding: 0;
@@ -52,7 +51,7 @@
     cursor: pointer;
 
     &:not([class*="color"]):hover {
-      color: var(--theme-color);
+      color: var(--vp-c-accent);
     }
   }
 
@@ -76,7 +75,7 @@
           bottom;
       color: color.scale($color, $lightness: 20%);
 
-      #{hope-config.$dark-selector} & {
+      [data-theme="dark"] & {
         background: color.scale($color, $lightness: -75%);
         background:
           linear-gradient(
@@ -110,7 +109,7 @@
             )
             bottom;
 
-        #{hope-config.$dark-selector} & {
+        [data-theme="dark"] & {
           background: color.scale($color, $lightness: -60%);
           background:
             linear-gradient(

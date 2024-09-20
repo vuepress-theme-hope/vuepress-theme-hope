@@ -1,4 +1,3 @@
-export * from "./alert.js";
 export * from "./chart.js";
 export * from "./codeDemo.js";
 export * from "./codeTabs.js";
@@ -6,7 +5,6 @@ export * from "./component.js";
 export * from "./desmos.js";
 export * from "./echarts.js";
 export * from "./flowchart.js";
-export * from "./hint.js";
 export * from "./kotlinPlayground.js";
 export * from "./markmap.js";
 export * from "./mermaid.js";

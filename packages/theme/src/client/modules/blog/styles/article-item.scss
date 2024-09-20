@@ -23,11 +23,13 @@
   padding: 0.75rem 1.25rem;
   border-radius: 0.4rem;
 
-  background: var(--bg-color-float);
+  background: var(--vp-c-bg-elv);
   color: inherit;
-  box-shadow: 0 1px 3px 1px var(--card-shadow);
+  box-shadow: 0 1px 3px 1px var(--vp-c-shadow);
 
-  transition: box-shadow var(--color-transition);
+  transition:
+    background var(--vp-t-color),
+    box-shadow var(--vp-t-transform);
 
   @media (max-width: hope-config.$pad) {
     padding: 0.75rem 1rem;
@@ -38,7 +40,7 @@
   }
 
   &:hover {
-    box-shadow: 0 2px 6px 2px var(--card-shadow);
+    box-shadow: 0 2px 6px 2px var(--vp-c-shadow);
   }
 
   .sticky-icon {
@@ -49,7 +51,7 @@
     width: 1.5rem;
     height: 1.5rem;
 
-    color: var(--theme-color);
+    color: var(--vp-c-accent);
   }
 
   .page-info {
@@ -79,10 +81,10 @@
 
   display: inline-block;
 
-  color: var(--text-color);
+  color: var(--vp-c-text);
 
   font-size: 1.25rem;
-  font-family: var(--font-family-heading);
+  font-family: var(--vp-font-heading);
   line-height: 1.6;
 
   cursor: pointer;
@@ -95,11 +97,11 @@
 
     height: 2px;
 
-    background: var(--theme-color);
+    background: var(--vp-c-accent);
 
     visibility: hidden;
 
-    transition: transform var(--transform-transition);
+    transition: transform var(--vp-t-transform);
 
     transform: scaleX(0);
   }
@@ -130,7 +132,7 @@
     height: 1em;
     margin-inline-end: 0.25em;
 
-    color: var(--theme-color);
+    color: var(--vp-c-accent);
   }
 
   > span {
@@ -250,7 +252,7 @@
 
     text-align: center;
 
-    transition: transform var(--transform-transition);
+    transition: transform var(--vp-t-transform);
 
     img {
       overflow: hidden;

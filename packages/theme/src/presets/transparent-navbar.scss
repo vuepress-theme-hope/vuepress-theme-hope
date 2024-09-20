@@ -1,7 +1,7 @@
 .vp-navbar {
   transition:
-    background var(--vp-ct),
-    box-shadow var(--vp-ct);
+    background var(--vp-t-color),
+    box-shadow var(--vp-t-transform);
 }
 
 .transparent-navbar {
@@ -11,7 +11,7 @@
     backdrop-filter: none;
 
     &:has(.vp-toggle-navbar-button.is-active) {
-      background-color: var(--navbar-bg-color);
+      background-color: var(--navbar-c-bg);
     }
   }
 

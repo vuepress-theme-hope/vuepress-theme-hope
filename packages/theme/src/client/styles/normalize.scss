@@ -1,56 +1,15 @@
 @use "@sass-palette/hope-config";
 @use "fonts/crimson.css";
 
-html,
-body {
-  background: var(--bg-color);
-}
-
 :root {
   color-scheme: light;
 }
 
-#{hope-config.$dark-selector} {
-  color-scheme: dark;
-}
-
 body {
-  color: var(--text-color);
-  font-family: var(--font-family);
+  font-family: var(--vp-font);
 
   @media (min-width: hope-config.$pc) {
     font-size: 17px;
-  }
-}
-
-a {
-  color: var(--theme-color);
-}
-
-kbd {
-  border-color: var(--border-color-dark);
-  background: var(--bg-color-secondary);
-  font-family: var(--font-family-mono);
-}
-
-code {
-  font-family: var(--font-family-mono);
-
-  #{hope-config.$dark-selector} & {
-    background: #333;
-  }
-
-  p a & {
-    color: var(--theme-color);
-  }
-}
-
-blockquote {
-  border-color: #eee;
-  color: #666;
-
-  #{hope-config.$dark-selector} & {
-    border-color: #333;
   }
 }
 
@@ -60,7 +19,7 @@ h3,
 h4,
 h5,
 h6 {
-  font-family: var(--font-family-heading);
+  font-family: var(--vp-font-heading);
 }
 
 h1 {
@@ -70,27 +29,14 @@ h1 {
   }
 }
 
-h2 {
-  border-color: var(--border-color);
-}
-
-hr {
-  border-color: var(--border-color);
-}
-
-tr:nth-child(odd) {
-  background: var(--bg-color-secondary);
-}
-
-th,
-td {
-  border-color: var(--border-color-dark);
+code {
+  font-family: var(--vp-font-mono);
 }
 
 @media print {
   @page {
-    --text-color: #000 !important;
-    --bg-color: #fff !important;
+    --vp-c-bg: #fff !important;
+    --vp-c-text: #000 !important;
   }
 
   // ensure line numbers and ext hint are placed at right place

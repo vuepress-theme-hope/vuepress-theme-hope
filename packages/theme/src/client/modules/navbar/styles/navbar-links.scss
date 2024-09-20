@@ -18,7 +18,7 @@
   }
 
   > .auto-link {
-    color: var(--grey-dark);
+    color: var(--vp-c-text);
 
     &::before {
       content: " ";
@@ -29,7 +29,7 @@
       height: 2px;
       border-radius: 1px;
 
-      background: var(--theme-color-light);
+      background: var(--vp-c-accent-hover);
 
       visibility: hidden;
 
@@ -37,7 +37,7 @@
     }
 
     &.route-link-active {
-      color: var(--theme-color);
+      color: var(--vp-c-accent);
     }
 
     &:hover,
@@ -47,5 +47,9 @@
         visibility: visible;
       }
     }
+  }
+
+  .i18n-icon {
+    color: var(--vp-c-text-mute);
   }
 }

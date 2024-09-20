@@ -7,8 +7,8 @@
 div[class*="language-"] {
   margin: 0.75rem 0;
   transition:
-    background-color var(--vp-ct),
-    color var(--vp-ct);
+    background-color var(--vp-t-color),
+    color var(--vp-t-color);
 
   // narrow mobile
   @media (max-width: hope-config.$mobile) {
@@ -29,25 +29,24 @@ div[class*="language-"] {
   .line {
     &.diff,
     &.highlighted {
-      transition: background-color var(--vp-ct);
+      transition: background-color var(--vp-t-color);
     }
   }
 }
 
+@function whiteness($color) {
+  @return color.channel($color, "whiteness", $space: hwb);
+}
+
 @mixin code-vars($code-color, $code-bg-color) {
-  --code-color: #{$code-color};
-  --code-bg-color: #{$code-bg-color};
-  --code-border-color: #{color.scale(
+  --code-c-text: #{$code-color};
+  --code-c-bg: #{$code-bg-color};
+  --code-c-highlight-bg: #{color.scale(
       $code-bg-color,
-      $saturation: if(color.whiteness($code-bg-color) < 50%, 10%, 20%),
-      $lightness: if(color.whiteness($code-bg-color) < 50%, 10%, -10%)
+      $saturation: if(whiteness($code-bg-color) < 50%, 5%, 10%),
+      $lightness: if(whiteness($code-bg-color) < 50%, 5%, -5%)
     )};
-  --code-highlight-bg-color: #{color.scale(
-      $code-bg-color,
-      $saturation: if(color.whiteness($code-bg-color) < 50%, 5%, 10%),
-      $lightness: if(color.whiteness($code-bg-color) < 50%, 5%, -5%)
-    )};
-  --code-line-number-color: #{color.scale($code-color, $alpha: -33%)};
+  --code-c-line-number: #{color.scale($code-color, $alpha: -33%)};
 }
 
 @if highlighter.$highlighter == "shiki" {
@@ -63,14 +62,14 @@ div[class*="language-"] {
       );
     }
   } @else {
-    #{hope-config.$light-selector} {
+    :root {
       @include code-vars(
         $code-color: helper.get-color(hope-config.$code-color),
         $code-bg-color: helper.get-color(hope-config.$code-bg-color)
       );
     }
 
-    #{hope-config.$dark-selector} {
+    [data-theme="dark"] {
       @include code-vars(
         $code-color: helper.get-dark-color(hope-config.$code-color),
         $code-bg-color: helper.get-dark-color(hope-config.$code-bg-color)

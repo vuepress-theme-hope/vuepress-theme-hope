@@ -30,7 +30,7 @@
 }
 
 .mermaid-loading {
-  color: var(--vp-tc);
+  color: var(--vp-c-accent-bg);
 }
 
 .mermaid-content {
@@ -58,7 +58,7 @@
 
   background-color: rgb(255 255 255 / 80%);
 
-  #{hope-config.$dark-selector} & {
+  [data-theme="dark"] & {
     background-color: rgb(0 0 0 / 80%);
   }
 
@@ -74,8 +74,12 @@
 
   width: 2rem;
   height: 2rem;
-  padding: 0.25rem;
-  color: var(--grey-dark);
+  margin: 0.25rem;
+  padding: 0.5rem;
+  border-radius: 0.5rem;
+
+  background: var(--vp-c-control);
+  color: var(--vp-c-text-mute);
 
   @media (max-width: hope-config.$tablet) {
     width: 1.5rem;
@@ -83,7 +87,7 @@
   }
 
   &:hover {
-    color: var(--vp-tc);
+    background: var(--vp-c-control-hover);
   }
 
   svg {

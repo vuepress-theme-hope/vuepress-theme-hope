@@ -16,6 +16,6 @@ export default defineClientConfig({
     app.component("SocialLink", SocialLink);
   },
   setup: () => {
-    setupTransparentNavbar({ type: "homepage", light: "#333", dark: "#bbb" });
+    setupTransparentNavbar({ type: "homepage" });
   },
 });

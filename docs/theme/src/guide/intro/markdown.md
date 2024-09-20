@@ -45,7 +45,7 @@ The Markdown content in VuePress will be parsed by [markdown-it](https://github.
 
 - Theme Enhancement
 
-  With <ProjectLink name="md-enhance">`vuepress-plugin-md-enhance`</ProjectLink>, the theme extends more Markdown syntax, see [Theme Enhancement](../markdown/README.md) for details.
+  With VuePress plugins, the theme extends more Markdown syntax, see [Theme Enhancement](../markdown/README.md) for details.
 
 - Self Enhancement
 

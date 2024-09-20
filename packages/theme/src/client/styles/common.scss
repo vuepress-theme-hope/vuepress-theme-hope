@@ -14,7 +14,7 @@
 
   font-size: 2rem;
 
-  transition: inset-inline-start var(--transform-transition);
+  transition: inset-inline-start var(--vp-t-transform);
 
   @media (max-width: hope-config.$tablet) {
     display: none;
@@ -107,7 +107,7 @@
       // collapse sidebar
       transform: translateX(-100%);
 
-      #{hope-config.$rtl-selector} & {
+      [dir="rtl"] & {
         transform: translateX(100%);
       }
     }
@@ -148,7 +148,7 @@
   &.sidebar-open {
     .vp-sidebar {
       // show box shadow
-      box-shadow: 2px 0 8px var(--card-shadow);
+      box-shadow: 2px 0 8px var(--vp-c-shadow);
 
       // show sidebar
       transform: translateX(0);

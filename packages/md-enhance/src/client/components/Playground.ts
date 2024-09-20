@@ -24,14 +24,14 @@ const Playground: FunctionalComponent<PlaygroundProps> = ({
   title = "",
   link,
 }) =>
-  h("div", { class: "vp-playground" }, [
-    h("div", { class: "vp-playground-header" }, [
+  h("div", { class: "vp-container vp-playground" }, [
+    h("div", { class: "vp-container-header" }, [
       title
-        ? h("div", { class: "vp-playground-title" }, decodeURIComponent(title))
+        ? h("div", { class: "vp-container-title" }, decodeURIComponent(title))
         : null,
       h("div", { class: "vp-playground-actions" }, [
         h("a", {
-          class: "vp-playground-action",
+          class: "vp-playground-action no-external-link-icon",
           href: decodeURIComponent(link),
           target: "_blank",
           innerHTML: PLAY_SVG,

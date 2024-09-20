@@ -1,6 +1,5 @@
 import type { VNode } from "vue";
 import { defineComponent, h } from "vue";
-import { ClientOnly } from "vuepress/client";
 
 import AutoLink from "@theme-hope/components/AutoLink";
 import { EditIcon } from "@theme-hope/components/icons/index";
@@ -45,8 +44,10 @@ export default defineComponent({
                   { class: "vp-meta-label" },
                   `${metaLocales.lastUpdated}: `,
                 ),
-                h(ClientOnly, () =>
-                  h("span", { class: "vp-meta-info" }, updateTime.value!),
+                h(
+                  "span",
+                  { class: "vp-meta-info", "data-allow-mismatch": "text" },
+                  updateTime.value,
                 ),
               ])
             : null,

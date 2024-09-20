@@ -60,15 +60,26 @@ export default hopeTheme({
     },
 
     // 此处开启了很多功能用于演示，你应仅保留用到的功能。
+    markdownImage: {
+      figure: true,
+      lazyload: true,
+      size: true,
+    },
+
+    // markdownMath: {
+    //   // 启用前安装 katex
+    //   type: "katex",
+    //   // 或者安装 mathjax-full
+    //   type: "mathjax",
+    // },
+
+    // 此处开启了很多功能用于演示，你应仅保留用到的功能。
     mdEnhance: {
       align: true,
       attrs: true,
       codetabs: true,
       component: true,
       demo: true,
-      figure: true,
-      imgLazyload: true,
-      imgSize: true,
       include: true,
       mark: true,
       plantuml: true,
@@ -105,12 +116,6 @@ export default hopeTheme({
 
       // gfm requires mathjax-full to provide tex support
       // gfm: true,
-
-      // 在启用之前安装 katex
-      // katex: true,
-
-      // 在启用之前安装 mathjax-full
-      // mathjax: true,
 
       // 在启用之前安装 mermaid
       // mermaid: true,

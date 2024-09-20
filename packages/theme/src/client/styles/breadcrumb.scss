@@ -49,7 +49,7 @@
     }
 
     &:hover {
-      color: var(--theme-color);
+      color: var(--vp-c-accent);
     }
   }
 
@@ -72,7 +72,7 @@
     }
 
     &.is-active a {
-      color: var(--grey-light);
+      color: var(--vp-c-text-mute);
       cursor: default;
       pointer-events: none;
     }
@@ -80,6 +80,6 @@
 
   li + li::before {
     content: "/";
-    color: var(--grey-light);
+    color: var(--vp-c-text-mute);
   }
 }

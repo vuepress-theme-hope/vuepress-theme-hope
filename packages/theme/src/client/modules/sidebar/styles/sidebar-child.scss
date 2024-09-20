@@ -9,23 +9,23 @@
   padding: 0.25rem 0.5rem;
   border-radius: 0.375rem;
 
-  color: var(--text-color);
+  color: var(--vp-c-text);
 
   font-weight: 400;
   font-size: 1em;
   line-height: 1.5;
 
   &:hover {
-    background: var(--bg-color-secondary);
+    background: var(--vp-c-control);
   }
 
   &.active {
-    background: var(--theme-color-mask);
-    color: var(--theme-color);
+    background: var(--vp-c-accent-soft);
+    color: var(--vp-c-accent);
     font-weight: 500;
 
     .icon {
-      color: var(--theme-color);
+      color: var(--vp-c-accent);
     }
   }
 }

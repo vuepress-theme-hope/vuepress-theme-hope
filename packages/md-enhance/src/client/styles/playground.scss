@@ -1,50 +1,9 @@
-@use "vuepress-shared/styles/reset";
-
-:root {
-  --playground-header-bg-color: #eee;
-}
-
-#{hope-config.$dark-selector} {
-  --playground-header-bg-color: #333;
-}
+@use "container-common";
 
 .vp-playground {
-  overflow: hidden;
-
-  margin-top: 1rem;
-  margin-bottom: 1rem;
-  border: 1px solid var(--vp-brc);
-  border-radius: 6px;
-
   @media print {
     display: none !important;
   }
-}
-
-.vp-playground-header {
-  display: flex;
-  flex-flow: row wrap;
-
-  padding: 8px 10px;
-  border-bottom: 1px solid var(--vp-brc);
-
-  background: var(--playground-header-bg-color, #eee);
-
-  font-weight: 500;
-
-  transition:
-    background var(--vp-ct),
-    border-color var(--vp-ct);
-}
-
-.vp-playground-title {
-  flex: 1;
-
-  overflow: hidden;
-
-  font-size: 1.25rem;
-  text-overflow: ellipsis;
-  white-space: nowrap;
 }
 
 .vp-playground-actions {
@@ -59,19 +18,19 @@
   .icon {
     width: 1.5rem;
     height: 1.5rem;
-    fill: #777;
+    fill: var(--vp-c-text-mute);
   }
 
   &:hover .icon {
-    fill: var(--vp-tc);
+    fill: var(--vp-c-accent-bg);
   }
 }
 
 .vp-playground-container {
   position: relative;
   overflow: hidden;
-  background: var(--vp-bg);
-  transition: background var(--vp-ct);
+  background: var(--vp-c-bg);
+  transition: background var(--vp-t-color);
 
   @media print {
     page-break-inside: avoid;

@@ -1,14 +1,8 @@
 import type { MarkdownItPlantumlOptions } from "@mdit/plugin-plantuml";
-import type { LocaleConfig } from "vuepress/shared";
 
 import type {
   AttrsOptions,
-  FigureOptions,
-  ImgMarkOptions,
   IncludeOptions,
-  KatexOptions,
-  MarkdownEnhanceLocaleData,
-  MathjaxOptions,
   PlaygroundGlobalOptions,
   RevealJsOptions,
   StylizeOptions,
@@ -17,10 +11,58 @@ import type {
 } from "./typings/index.js";
 import type { CodeDemoOptions } from "../shared/index.js";
 
+export interface DeprecatedMarkdownEnhancePluginOptions {
+  /**
+   * @deprecated use `@vuepress/plugin-markdown-hint` instead
+   */
+  alert?: never;
+
+  /**
+   * @deprecated use `@vuepress/plugin-markdown-hint` instead
+   */
+  hint?: never;
+
+  /**
+   * @deprecated use `@vuepress/plugin-markdown-math` instead
+   */
+  katex?: never;
+
+  /**
+   * @deprecated use `@vuepress/plugin-markdown-math` instead
+   */
+  mathjax?: never;
+
+  /**
+   * @deprecated use `@vuepress/plugin-markdown-image` instead
+   */
+  figure?: never;
+
+  /**
+   * @deprecated use `@vuepress/plugin-markdown-image` instead
+   */
+  imgLazyload?: never;
+
+  /**
+   * @deprecated use `@vuepress/plugin-markdown-image` instead
+   */
+  imgMark?: never;
+
+  /**
+   * @deprecated use `@vuepress/plugin-markdown-image` instead
+   */
+  imgSize?: never;
+
+  /**
+   * @deprecated use `@vuepress/plugin-markdown-image` instead
+   */
+  obsidianImgSize?: never;
+}
+
 /**
  * md-enhance plugin configuration
  */
-export interface MarkdownEnhancePluginOptions {
+export interface MarkdownEnhancePluginOptions
+  extends DeprecatedMarkdownEnhancePluginOptions {
   /**
    * Whether enable standard GFM support
    *
@@ -29,35 +71,6 @@ export interface MarkdownEnhancePluginOptions {
    * @default false
    */
   gfm?: boolean;
-
-  /**
-   * Whether to enable hint container including
-   *
-   * - important
-   * - info
-   * - note
-   * - tip
-   * - warning
-   * - caution
-   * - details
-   *
-   * ⚠ The last 4 items conflict with default theme and will override it’s style.
-   *
-   * 是否启用提示容器
-   *
-   * - important
-   * - info
-   * - note
-   * - tip
-   * - warning
-   * - caution
-   * - details
-   *
-   * ⚠ 最后四个会和默认主题冲突，且会覆盖默认主题的样式与行为。
-   *
-   * @default false
-   */
-  hint?: boolean;
 
   /**
    * Whether to enable v-pre wrapper.
@@ -89,15 +102,6 @@ export interface MarkdownEnhancePluginOptions {
    * @default false
    */
   linkify?: boolean;
-
-  /**
-   * Wether enable gfm alerts
-   *
-   * 是否启用 gfm 警告
-   *
-   * @default false
-   */
-  alert?: boolean;
 
   /**
    * Whether to enable tabs.
@@ -154,15 +158,6 @@ export interface MarkdownEnhancePluginOptions {
   sub?: boolean;
 
   /**
-   * Whether render figure with standalone imag
-   *
-   * 是否将单独的图片渲染为 figure
-   *
-   * @default false
-   */
-  figure?: FigureOptions | boolean;
-
-  /**
    * Whether to enable footnote format support
    *
    * 是否启用脚注格式支持。
@@ -170,42 +165,6 @@ export interface MarkdownEnhancePluginOptions {
    * @default false
    */
   footnote?: boolean;
-
-  /**
-   * Whether enable native image lazy loading
-   *
-   * 是否启用原生的图片懒加载。
-   *
-   * @default false
-   */
-  imgLazyload?: boolean;
-
-  /**
-   * Whether to enable gfm image id mark support
-   *
-   * 是否启用 GFM 图片 ID 标记。
-   *
-   * @default false
-   */
-  imgMark?: ImgMarkOptions | boolean;
-
-  /**
-   * Whether to enable image size mark support
-   *
-   * 是否启用图片大小标记支持。
-   *
-   * @default false
-   */
-  imgSize?: boolean;
-
-  /**
-   * Whether to enable obsidian image size mark support
-   *
-   * 是否启用 obsidian 图片大小标记支持。
-   *
-   * @default false
-   */
-  obsidianImgSize?: boolean;
 
   /**
    * Whether to enable mark format support
@@ -242,41 +201,6 @@ export interface MarkdownEnhancePluginOptions {
    * @default false
    */
   include?: Partial<IncludeOptions> | boolean;
-
-  /**
-   * Whether to enable katex support
-   *
-   * @see https://katex.org/docs/options.html
-   *
-   * 是否启用 katex 语法支持
-   *
-   * @see https://katex.org/docs/options.html
-   *
-   * @default false
-   */
-  katex?:
-    | (KatexOptions & {
-        /**
-         * Whether enable copy plugin
-         *
-         * @default false
-         */
-        copy?: boolean;
-      })
-    | boolean;
-
-  /**
-   * Whether to enable mathjax support
-   *
-   * @see http://docs.mathjax.org/en/latest/options/index.html
-   *
-   * 是否启用 mathjax 语法支持
-   *
-   * @see http://docs.mathjax.org/en/latest/options/index.html
-   *
-   * @default false
-   */
-  mathjax?: MathjaxOptions | boolean;
 
   /**
    * Whether to enable component support
@@ -420,11 +344,4 @@ export interface MarkdownEnhancePluginOptions {
    * @default 800
    */
   delay?: number;
-
-  /**
-   * Locale config
-   *
-   * 国际化配置选项
-   */
-  locales?: LocaleConfig<MarkdownEnhanceLocaleData>;
 }

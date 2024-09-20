@@ -71,6 +71,5 @@ export const skLocale: ThemeLocaleData = {
     ],
     back: "Choď späť",
     home: "Poď na domovskú stránku",
-    openInNewWindow: "Otvoriť v novom okne",
   },
 };

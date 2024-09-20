@@ -1,7 +1,7 @@
 .font-icon {
   display: inline-block;
 
-  #{hope-config.$content-class} & {
+  [vp-content] & {
     vertical-align: middle;
   }
 }

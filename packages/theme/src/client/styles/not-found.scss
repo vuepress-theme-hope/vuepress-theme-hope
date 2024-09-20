@@ -19,19 +19,18 @@
     margin: 0.25rem;
     padding: 0.75rem 1rem;
     border-width: 0;
-    border-bottom: 1px solid var(--theme-color-dark);
     border-radius: 3rem;
 
-    background: var(--theme-color);
-    color: var(--white);
+    background: var(--vp-c-accent-bg);
+    color: var(--vp-c-white);
     outline: none;
 
     font-size: 1rem;
 
-    transition: background var(--color-transition);
+    transition: background var(--vp-t-color);
 
     &:hover {
-      background: var(--theme-color-light);
+      background: var(--vp-c-accent-hover);
       cursor: pointer;
     }
   }

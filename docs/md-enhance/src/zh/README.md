@@ -34,11 +34,6 @@ highlights:
     bgImage: https://theme-hope-assets.vuejs.press/bg/2-light.svg
     bgImageDark: https://theme-hope-assets.vuejs.press/bg/2-dark.svg
     highlights:
-      - title: 扩展图片语法
-        icon: image
-        details: 指定图片大小与颜色模式，并将它们转化为插图
-        link: ./guide/grammar/image.html
-
       - title: 上下角标支持
         icon: superscript
         details: 你的 Markdown 现在将支持上下角标
@@ -48,11 +43,6 @@ highlights:
         icon: square-check
         details: 在 Markdown 中使用任务列表
         link: ./guide/grammar/tasklist.html
-
-      - title: TeX
-        icon: square-root-variable
-        details: Markdown 现在也可以支持 TeX 语法以显示公式
-        link: ./guide/grammar/tex.html
 
   - header: 聚焦内容
     image: /assets/image/edit.svg
@@ -92,16 +82,6 @@ highlights:
       background-repeat: repeat
       background-size: initial
     highlights:
-      - title: 提示容器
-        icon: box-archive
-        details: 用样式装饰 Markdown 内容
-        link: ./guide/stylize/hint.html
-
-      - title: GFM 警告
-        icon: bell
-        details: GFM 风格的警告容器
-        link: ./guide/stylize/alert.html
-
       - title: 自定义对齐
         icon: align-center
         details: 让你在 Markdown 中对段落进行对齐

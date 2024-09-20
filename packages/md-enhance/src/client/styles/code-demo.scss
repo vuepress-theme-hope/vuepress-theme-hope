@@ -1,87 +1,57 @@
 @use "vuepress-shared/styles/arrow";
 @use "vuepress-shared/styles/reset";
-
-:root {
-  --code-demo-header-bg-color: #eee;
-}
-
-#{hope-config.$dark-selector} {
-  --code-demo-header-bg-color: #333;
-}
+@use "container-common";
 
 .vp-code-demo {
-  margin: 8px 0;
-  border: 1px solid var(--vp-brc);
-  border-radius: 8px;
   transition: all 0.2s;
 
   &:hover {
-    box-shadow: 0 2px 12px var(--card-shadow);
+    box-shadow: 0 2px 12px var(--vp-c-shadow);
+  }
+
+  .vp-container-header {
+    justify-content: space-between;
+  }
+
+  .vp-container-title {
+    vertical-align: top;
+
+    &:first-child {
+      margin-inline-start: 0.5rem;
+    }
   }
 }
 
-.vp-code-demo-header {
+.codepen-button,
+.jsfiddle-button {
+  @include reset.button;
   position: relative;
 
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
+  box-sizing: content-box;
+  width: 1.25rem;
+  height: 1.25rem;
+  margin: 0 4px;
+  padding: 4px;
+  border-radius: 50%;
 
-  padding: 8px 12px;
-  border-radius: 8px 8px 0 0;
+  background: var(--vp-c-control);
+  outline: none;
 
-  background: var(--code-demo-header-bg-color);
+  transition: background var(--vp-t-color);
 
-  text-align: start;
+  @media print {
+    display: none;
+  }
 
-  .codepen-button,
-  .jsfiddle-button {
-    @include reset.button;
-    position: relative;
-
-    box-sizing: content-box;
+  svg {
     width: 1.25rem;
     height: 1.25rem;
-    margin: 0 4px;
-    padding: 4px;
-    border-radius: 50%;
+    transition: fill var(--vp-t-color);
+    fill: var(--vp-c-text-mute);
+  }
 
-    background: #ccc;
-    outline: none;
-
-    @media print {
-      display: none;
-    }
-
-    #{hope-config.$dark-selector} & {
-      background: #555;
-    }
-
-    svg {
-      width: 1.25rem;
-      height: 1.25rem;
-      fill: #777;
-
-      #{hope-config.$dark-selector} & {
-        fill: #aaa;
-      }
-    }
-
-    &:hover {
-      background: #aaa;
-
-      #{hope-config.$dark-selector} & {
-        background: #777;
-      }
-
-      svg {
-        fill: #333;
-
-        #{hope-config.$dark-selector} & {
-          fill: #fff;
-        }
-      }
-    }
+  &:hover {
+    background: var(--vp-c-control-hover);
   }
 }
 
@@ -107,35 +77,21 @@
     display: none;
   }
 
-  #{hope-config.$dark-selector} & {
+  [data-theme="dark"] & {
     background-color: #555;
   }
 
   &:hover {
     background-color: #aaa;
 
-    #{hope-config.$dark-selector} & {
+    [data-theme="dark"] & {
       background-color: #777;
     }
   }
 }
 
-.vp-code-demo-title {
-  display: inline-block;
-  vertical-align: top;
-  flex: 1;
-
-  font-weight: 500;
-  font-size: 1.25rem;
-  line-height: 2.5rem;
-
-  &:first-child {
-    margin-inline-start: 0.5rem;
-  }
-}
-
 .vp-code-demo-loading {
-  color: var(--vp-tc);
+  color: var(--vp-c-accent-bg);
 }
 
 .vp-code-demo-display {
@@ -145,7 +101,7 @@
 
   max-height: 400px;
   padding: 20px;
-  border-bottom: 1px solid var(--vp-brc);
+  border-bottom: 1px solid var(--vp-c-border);
 
   @media print {
     page-break-inside: avoid;

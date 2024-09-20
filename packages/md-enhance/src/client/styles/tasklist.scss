@@ -11,8 +11,6 @@
   list-style: none;
 }
 
-// FIXME: Firefox does not support ::before and ::after on input[type=checkbox]
-// this can be a bug
 .task-list-item-checkbox {
   position: relative;
 
@@ -37,43 +35,33 @@
     width: 1em;
     height: 1em;
     padding-inline-start: 0;
-    border: 1px solid #ddd;
+    border: 1px solid var(--vp-c-border);
     border-radius: 2px;
 
-    background: #fff;
+    background: var(--vp-c-control);
 
     text-align: center;
 
     visibility: visible;
 
     transition:
-      background var(--vp-ct),
-      border-color var(--vp-ct);
+      border-color var(--vp-t-color),
+      background var(--vp-t-color);
 
     @media print {
-      border-color: var(--vp-c);
-    }
-
-    #{hope-config.$dark-selector} & {
-      border-color: #666;
-      background: #333;
+      border-color: var(--vp-c-text);
     }
   }
 
   &:checked {
     &::after {
       content: "";
-      border-color: var(--vp-tc);
-      background: var(--vp-tc);
+      border-color: var(--vp-c-accent-bg);
+      background: var(--vp-c-accent-bg);
 
       @media print {
-        border-color: var(--vp-c);
+        border-color: var(--vp-c-text);
         background: transparent;
-      }
-
-      #{hope-config.$dark-selector} & {
-        border-color: var(--vp-tc);
-        background: var(--vp-tc);
       }
     }
 
@@ -81,19 +69,21 @@
       content: "";
 
       position: absolute;
-      inset-inline-start: 0.4em;
+      inset-inline-start: 0.35em;
       top: 0.1em;
       z-index: 1;
 
       width: 0.2em;
       height: 0.5em;
-      border: solid var(--white);
+      border: solid var(--vp-c-white);
       border-width: 0 0.15em 0.15em 0;
+
+      transition: border-color var(--vp-t-color);
 
       transform: rotate(45deg);
 
       @media print {
-        border-color: var(--vp-c);
+        border-color: var(--vp-c-text);
       }
     }
   }

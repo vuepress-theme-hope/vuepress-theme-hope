@@ -118,7 +118,7 @@ import { FadeSlideY } from "@theme-hope/components/transitions/index";
 <style lang="scss" scoped>
 .slot-demo-inline {
   display: inline-block;
-  background-color: var(--bg-color-tertiary);
+  background-color: var(--vp-c-bg-alt);
   border-radius: 0.5rem;
 
   display: flex;
@@ -131,7 +131,7 @@ import { FadeSlideY } from "@theme-hope/components/transitions/index";
 }
 
 .slot-demo-block {
-  background-color: var(--bg-color-tertiary);
+  background-color: var(--vp-c-bg-alt);
   border-radius: 0.5rem;
   padding: 1rem 2rem;
   margin: 0.5rem 1rem;
@@ -140,6 +140,6 @@ import { FadeSlideY } from "@theme-hope/components/transitions/index";
   justify-content: center;
   align-items: center;
   font-size: 18px;
-  color: var(--text-color-light);
+  color: var(--vp-c-text-mute);
 }
 </style>

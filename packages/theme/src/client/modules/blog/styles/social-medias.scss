@@ -11,7 +11,7 @@
   margin: 4px;
 
   svg {
-    transition: transform var(--transform-transition);
+    transition: transform var(--vp-t-transform);
   }
 
   &:hover {

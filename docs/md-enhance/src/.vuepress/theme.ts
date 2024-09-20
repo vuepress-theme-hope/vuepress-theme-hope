@@ -24,6 +24,11 @@ export default theme("md-enhance", {
       components: ["Badge", "VPCard"],
     },
 
+    markdownImage: {
+      figure: true,
+      lazyload: true,
+    },
+
     mdEnhance: {
       align: true,
       attrs: true,
@@ -33,12 +38,8 @@ export default theme("md-enhance", {
       demo: true,
       desmos: true,
       echarts: true,
-      figure: true,
       flowchart: true,
       gfm: true,
-      imgLazyload: true,
-      imgMark: true,
-      imgSize: true,
       include: {
         resolvePath: (file) => {
           if (file.startsWith("@echarts"))
@@ -51,7 +52,6 @@ export default theme("md-enhance", {
         },
       },
       kotlinPlayground: true,
-      mathjax: true,
       mark: true,
       markmap: true,
       mermaid: true,

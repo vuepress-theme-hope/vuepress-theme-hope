@@ -44,8 +44,8 @@ export default defineComponent({
     });
 
     return (): VNode =>
-      h("div", { class: "vp-md-demo", id: props.id }, [
-        h("div", { class: "vp-md-demo-header" }, [
+      h("div", { class: "vp-container vp-md-demo", id: props.id }, [
+        h("div", { class: "vp-container-header" }, [
           h("button", {
             type: "button",
             title: "toggle",
@@ -61,7 +61,13 @@ export default defineComponent({
               toggleIsExpand();
             },
           }),
-          props.title ? decodeURIComponent(props.title) : null,
+          props.title
+            ? h(
+                "div",
+                { class: "vp-container-title" },
+                decodeURIComponent(props.title),
+              )
+            : null,
         ]),
 
         h("div", { class: "vp-md-demo-display" }, slots.default?.()),

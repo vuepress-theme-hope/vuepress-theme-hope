@@ -460,5 +460,5 @@ You should try to avoid using deprecated HTML tags. However, to use those tags a
 
 - Adding a [v-pre](https://v3.vuejs.org/api/directives.html#v-pre) directive to skip the compilation of the element and its children. Notice that the template syntax would also be invalid.
 - Using [compilerOptions.isCustomElement](https://v3.vuejs.org/api/application-config.html#compileroptions) to tell Vue template compiler not try to resolve them as components.
-  - For `@bundler-webpack`, set [vue.compilerOptions](https://vuejs.press/reference/bundler/webpack.html#vue)
-  - For `@bundler-vite`, set [vuePluginOptions.template.compilerOptions](https://vuejs.press/reference/bundler/vite.html#vuepluginoptions)
+  - For `@vuepress/bundler-webpack`, set [vue.compilerOptions](https://vuejs.press/reference/bundler/webpack.html#vue)
+  - For `@vuepress/bundler-vite`, set [vuePluginOptions.template.compilerOptions](https://vuejs.press/reference/bundler/vite.html#vuepluginoptions)

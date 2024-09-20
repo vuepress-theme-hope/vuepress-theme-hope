@@ -10,7 +10,7 @@
   margin-top: 0;
   padding-block: 0.5rem;
   padding-inline: 2rem;
-  border-top: 1px solid var(--border-color);
+  border-top: 1px solid var(--vp-c-border);
 
   @media (max-width: hope-config.$pad) {
     padding-inline: 1rem;
@@ -26,15 +26,15 @@
 
     margin: 0.25rem;
     padding: 0.25rem 0.5rem;
-    border: 1px solid var(--border-color);
+    border: 1px solid var(--vp-c-border);
     border-radius: 0.25rem;
 
     &:hover {
-      background: var(--bg-color-secondary);
+      background: var(--vp-c-control);
     }
 
     .hint {
-      color: var(--grey-light);
+      color: var(--vp-c-text-mute);
       font-size: 0.875rem;
       line-height: 2;
     }

@@ -1,7 +1,7 @@
 @use "vuepress-shared/styles/reset";
 
 .search-pro-result-wrapper {
-  scrollbar-color: var(--vp-tc) var(--vp-brc);
+  scrollbar-color: var(--vp-c-accent) var(--vp-c-border);
   scrollbar-width: thin;
 
   @media (max-width: hope-config.$mobile) {
@@ -22,10 +22,10 @@
   &::-webkit-scrollbar-thumb {
     -webkit-border-radius: 6px;
     border-radius: 6px;
-    background: var(--vp-tc);
+    background: var(--vp-c-accent-bg);
 
     &:active {
-      background: var(--vp-tcl);
+      background: var(--vp-c-accent-hover);
     }
   }
 
@@ -54,8 +54,8 @@
   margin-bottom: 0.25rem;
   padding: 4px;
 
-  background: var(--vp-bg);
-  color: var(--vp-tc);
+  background: var(--vp-c-bg);
+  color: var(--vp-c-accent);
 
   font-weight: 600;
   font-size: 0.875em;
@@ -63,7 +63,7 @@
   text-indent: 0.5em;
 
   .search-pro-result-item.active & {
-    color: var(--vp-tc);
+    color: var(--vp-c-accent);
   }
 }
 
@@ -75,7 +75,7 @@
   margin-inline-start: -0.5rem;
   padding: 0.5rem;
 
-  color: var(--vp-tc);
+  color: var(--vp-c-accent);
 }
 
 .search-pro-remove-icon {
@@ -85,7 +85,7 @@
   padding: 0;
   border-radius: 50%;
 
-  color: var(--vp-tc);
+  color: var(--vp-c-accent);
 
   font-size: 1rem;
 
@@ -110,7 +110,7 @@
 
   .content-header {
     margin-bottom: 0.25rem;
-    border-bottom: 1px solid var(--vp-brcd);
+    border-bottom: 1px solid var(--vp-c-border-hard);
     font-size: 0.9em;
   }
 }
@@ -123,28 +123,28 @@
   padding: 0.5rem 0.75rem;
   border-radius: 0.25rem;
 
-  background: var(--vp-bgl);
+  background: var(--vp-c-bg-alt);
   color: inherit;
-  box-shadow: 0 1px 3px 0 var(--card-shadow);
+  box-shadow: 0 1px 3px 0 var(--vp-c-shadow);
 
   font-weight: normal;
   white-space: pre-wrap;
   word-wrap: break-word;
 
   strong {
-    color: var(--vp-tc);
+    color: var(--vp-c-accent);
   }
 
   &:hover,
   &.active {
-    background-color: var(--vp-tcl);
-    color: var(--white);
+    background-color: var(--vp-c-accent-hover);
+    color: var(--vp-c-white);
     cursor: pointer;
 
     .search-pro-result-type,
     .search-pro-remove-icon,
     strong {
-      color: var(--white);
+      color: var(--vp-c-white);
     }
   }
 }

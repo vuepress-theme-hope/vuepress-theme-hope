@@ -1,4 +1,4 @@
-import { getRealPath, isPlainObject } from "@vuepress/helper";
+import { getRealPath } from "@vuepress/helper";
 import type { App } from "vuepress/core";
 
 import type { MarkdownEnhancePluginOptions } from "../options.js";
@@ -85,9 +85,6 @@ export const prepareConfigFile = async (
     enhances.add(`injectEChartsConfig(app);`);
   }
 
-  if (options.figure)
-    imports.add(`import "${CLIENT_FOLDER}styles/figure.scss";`);
-
   if (status["flowchart"]) {
     imports.add(
       `import FlowChart from "${CLIENT_FOLDER}components/FlowChart.js";`,
@@ -98,29 +95,6 @@ export const prepareConfigFile = async (
 
   if (status["footnote"])
     imports.add(`import "${CLIENT_FOLDER}styles/footnote.scss";`);
-
-  if (options.hint) {
-    imports.add(
-      `import { useHintContainers } from "${CLIENT_FOLDER}composables/useHintContainers.js";`,
-    );
-    imports.add(`import "${CLIENT_FOLDER}styles/hint/index.scss";`);
-    setups.add("useHintContainers();");
-  }
-
-  if (status["imgMark"])
-    imports.add(`import "${CLIENT_FOLDER}styles/image-mark.scss"`);
-
-  if (status["katex"]) {
-    imports.add(`import "${getRealPath("katex/dist/katex.min.css", url)}";`);
-    imports.add(`import "${CLIENT_FOLDER}styles/katex.scss";`);
-
-    if (isPlainObject(options.katex) && options.katex.copy) {
-      imports.add(
-        `import { useKatexCopy } from "${CLIENT_FOLDER}composables/useKatexCopy.js";`,
-      );
-      setups.add(`useKatexCopy();`);
-    }
-  }
 
   if (status["kotlinPlayground"]) {
     imports.add(
@@ -137,8 +111,6 @@ export const prepareConfigFile = async (
     imports.add(`import MarkMap from "${CLIENT_FOLDER}components/MarkMap.js";`);
     enhances.add(`app.component("MarkMap", MarkMap);`);
   }
-
-  if (status["mathjax"]) imports.add(`import "./mathjax.css";`);
 
   if (status["mermaid"]) {
     imports.add(`import Mermaid from "${CLIENT_FOLDER}components/Mermaid.js";`);

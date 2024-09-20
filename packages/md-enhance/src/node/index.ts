@@ -1,4 +1,3 @@
-export * from "./locales.js";
 export * from "./markdown-it/index.js";
 export * from "./mdEnhancePlugin.js";
 export * from "./options.js";

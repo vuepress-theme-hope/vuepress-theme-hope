@@ -30,7 +30,7 @@
     width: 16px;
     height: 2px;
 
-    background: var(--grey-dark);
+    background: var(--vp-c-text);
 
     transition:
       top 0.25s,
@@ -96,7 +96,7 @@
       .vp-top,
       .vp-middle,
       .vp-bottom {
-        background: var(--theme-color);
+        background: var(--vp-c-accent-bg);
         transition:
           top 0.25s,
           background 0.25s,

@@ -25,11 +25,11 @@
       display: none;
     }
 
-    #{hope-config.$dark-selector} & {
+    [data-theme="dark"] & {
       background: rgb(255 255 255 / 15%);
     }
 
-    #{hope-config.$rtl-selector} & {
+    [dir="rtl"] & {
       transform: scale3d(-1.9, 1.4, 1) rotate3d(0, 0, 1, 45deg)
         translate3d(0, -125%, 0);
     }
@@ -40,7 +40,7 @@
       transform: scale3d(1.9, 1.4, 1) rotate3d(0, 0, 1, 45deg)
         translate3d(0, 125%, 0);
 
-      #{hope-config.$rtl-selector} & {
+      [dir="rtl"] & {
         transform: scale3d(-1.9, 1.4, 1) rotate3d(0, 0, 1, 45deg)
           translate3d(0, 125%, 0);
       }

@@ -23,7 +23,6 @@ export default defineUserConfig({
 
     sidebar: {
       "/demo/": [
-        "/demo/alert",
         "/demo/align",
         "/demo/attrs",
         "/demo/chart",
@@ -31,12 +30,8 @@ export default defineUserConfig({
         "/demo/code-demo",
         "/demo/code-tabs",
         "/demo/component",
-        "/demo/figure",
         "/demo/flowchart",
         "/demo/footnote",
-        "/demo/hint",
-        "/demo/image-mark",
-        "/demo/image-size",
         "/demo/include",
         "/demo/kotlin-playground",
         "/demo/mark",
@@ -52,24 +47,13 @@ export default defineUserConfig({
         "/demo/sup-sub",
         "/demo/tabs",
         "/demo/tasklist",
-        "/demo/tex",
         "/demo/vue-playground",
       ],
-    },
-
-    themePlugins: {
-      container: {
-        tip: false,
-        warning: false,
-        danger: false,
-        details: false,
-      },
     },
   }),
 
   plugins: [
     mdEnhancePlugin({
-      alert: true,
       align: true,
       attrs: true,
       chart: true,
@@ -77,13 +61,8 @@ export default defineUserConfig({
       component: true,
       demo: true,
       echarts: true,
-      figure: true,
       flowchart: true,
       gfm: true,
-      hint: true,
-      imgLazyload: true,
-      imgMark: true,
-      imgSize: true,
       include: true,
       mark: true,
       markmap: true,
@@ -92,9 +71,6 @@ export default defineUserConfig({
       plantuml: true,
       playground: {
         presets: ["ts", "vue", "unocss"],
-      },
-      mathjax: {
-        output: "chtml",
       },
       revealJs: {
         plugins: ["highlight", "math", "search", "notes", "zoom"],

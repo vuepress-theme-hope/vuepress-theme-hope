@@ -9,14 +9,14 @@
     margin: auto;
     padding: 6px;
 
-    color: var(--grey-dark);
+    color: var(--vp-c-text-mute);
 
     // fix icon position
     line-height: 1;
 
     &:hover,
     &:active {
-      color: var(--theme-color);
+      color: var(--vp-c-accent-bg);
     }
   }
 }

@@ -8,7 +8,7 @@
 @use "highlight/dark";
 @use "highlight/light";
 
-#{hope-config.$light-selector} {
+[data-theme="light"] {
   $link-color: #2a76dd;
 
   @include helper.theme(
@@ -45,7 +45,7 @@
   }
 }
 
-#{hope-config.$dark-selector} {
+[data-theme="dark"] {
   $link-color: #42affa;
 
   @include helper.theme(

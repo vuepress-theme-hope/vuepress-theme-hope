@@ -23,34 +23,10 @@ export const extendsBundlerOptions = (
     css: {
       preprocessorOptions: {
         sass: {
-          logger: {
-            warn: (
-              message: string,
-              {
-                deprecation,
-                deprecationType,
-              }: { deprecation: boolean; deprecationType: { id: string } },
-            ): void => {
-              if (deprecation && deprecationType.id === "mixed-decls") return;
-
-              console.warn(message);
-            },
-          },
+          silenceDeprecations: ["mixed-decls"],
         },
         scss: {
-          logger: {
-            warn: (
-              message: string,
-              {
-                deprecation,
-                deprecationType,
-              }: { deprecation: boolean; deprecationType: { id: string } },
-            ): void => {
-              if (deprecation && deprecationType.id === "mixed-decls") return;
-
-              console.warn(message);
-            },
-          },
+          silenceDeprecations: ["mixed-decls"],
         },
       },
     },
@@ -62,12 +38,13 @@ export const extendsBundlerOptions = (
     "@vuepress/plugin-reading-time",
     "vuepress-shared",
   ]);
+
+  // FIXME: hide sass deprecation warning for mixed-decls
   chainWebpack(bundlerOptions, app, (config) => {
     config.module
       .rule("scss")
       .use("sass-loader")
       .tap((options) => ({
-        api: "modern-compiler",
         ...options,
         // eslint-disable-next-line @typescript-eslint/no-unsafe-assignment
         sassOptions: {

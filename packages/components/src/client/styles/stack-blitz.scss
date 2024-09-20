@@ -13,18 +13,15 @@
   padding: 0.5rem 1rem;
   border-radius: 0.5rem;
 
-  background: var(--vp-bglt);
-  color: var(--vp-c);
+  background: var(--vp-c-control);
+  color: var(--vp-c-text);
 
   font-weight: 600;
   line-height: 1.5;
 
-  transition:
-    background var(--vp-ct),
-    color var(--vp-ct);
+  transition: background var(--vp-t-color);
 
   &:hover {
-    background: var(--vp-tc);
-    color: var(--white);
+    background: var(--vp-c-control-hover);
   }
 }

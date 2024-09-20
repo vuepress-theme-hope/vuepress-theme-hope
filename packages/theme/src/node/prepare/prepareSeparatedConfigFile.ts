@@ -89,6 +89,7 @@ import { HopeIcon, Layout, NotFound, injectDarkmode, setupDarkmode, setupSidebar
 
 ${imports.join("\n")}
 
+import "${getRealPath("@vuepress/helper/colors.css", url)}";
 import "${getRealPath("@vuepress/helper/normalize.css", url)}";
 import "${CLIENT_FOLDER}styles/index.scss";
 
