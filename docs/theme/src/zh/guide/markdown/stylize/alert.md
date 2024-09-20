@@ -14,35 +14,13 @@ tag:
 
 ## 配置
 
-::: code-tabs#language
-
-@tab TS
-
-```ts {8-11} title=".vuepress/config.ts"
-import { defineUserConfig } from "vuepress";
-import { hopeTheme } from "vuepress-theme-hope";
-
-export default defineUserConfig({
-  theme: hopeTheme({
-    plugins: {
-      mdEnhance: {
-        // 启用 GFM 警告
-        alert: true,
-      },
-    },
-  }),
-});
-```
-
-@tab JS
-
-```js {7-10} title=".vuepress/config.js"
+```js {8} title=".vuepress/config.js"
 import { hopeTheme } from "vuepress-theme-hope";
 
 export default {
   theme: hopeTheme({
     plugins: {
-      mdEnhance: {
+      markdownHint: {
         // 启用 GFM 警告
         alert: true,
       },
@@ -51,6 +29,28 @@ export default {
 };
 ```
 
+<!-- markdownlint-disable MD028 -->
+
+::: md-demo 警告案例
+
+> [!important]
+> 重要文字
+
+> [!info]
+> 信息文字
+
+> [!tip]
+> 提示文字
+
+> [!warning]
+> 注意文字
+
+> [!caution]
+> 警告文字
+
+> [!note]
+> 注释文字
+
 :::
 
-<!-- @include: @md-enhance/zh/guide/stylize/alert.md#after -->
+<!-- markdownlint-enable MD028 -->
