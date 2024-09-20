@@ -43,15 +43,14 @@ export default {
 
 此功能允许你通过 `#light` 和 `#dark` 标记图片，使得图片只在特定的模式显示。
 
+::: md-demo 图片 ID 标记示例
+
 <ColorModeSwitch /> (尝试切换主题)
 
-![GitHub Light](/images/icon/github-light.svg#dark)
-![GitHub Dark](/images/icon/github-dark.svg#light)
+[GitHub Light](/assets/image/github-light.svg#dark)
+![GitHub Dark](/assets/image/github-dark.svg#light)
 
-```md
-![GitHub Light](/images/icon/github-light.svg#dark)
-![GitHub Dark](/images/icon/github-dark.svg#light)
-```
+:::
 
 ### 高级用法
 
