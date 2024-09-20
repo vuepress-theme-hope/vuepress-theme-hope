@@ -43,7 +43,7 @@
 
   > *:not(:last-child) {
     padding-bottom: 0.5rem;
-    border-bottom: 1px solid var(--vp-c-text-subtle);
+    border-bottom: 1px solid var(--vp-c-border);
   }
 
   .vp-outlook-button:hover &,

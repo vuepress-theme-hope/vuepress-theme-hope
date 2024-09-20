@@ -39,19 +39,14 @@ div[class*="language-"] {
 }
 
 @mixin code-vars($code-color, $code-bg-color) {
-  --code-color: #{$code-color};
-  --code-bg-color: #{$code-bg-color};
-  --code-border-color: #{color.scale(
-      $code-bg-color,
-      $saturation: if(whiteness($code-bg-color) < 50%, 10%, 20%),
-      $lightness: if(whiteness($code-bg-color) < 50%, 10%, -10%)
-    )};
-  --code-highlight-bg-color: #{color.scale(
+  --code-c-text: #{$code-color};
+  --code-c-bg: #{$code-bg-color};
+  --code-c-highlight-bg: #{color.scale(
       $code-bg-color,
       $saturation: if(whiteness($code-bg-color) < 50%, 5%, 10%),
       $lightness: if(whiteness($code-bg-color) < 50%, 5%, -5%)
     )};
-  --code-line-number-color: #{color.scale($code-color, $alpha: -33%)};
+  --code-c-line-number: #{color.scale($code-color, $alpha: -33%)};
 }
 
 @if highlighter.$highlighter == "shiki" {

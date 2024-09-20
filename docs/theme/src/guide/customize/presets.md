@@ -141,15 +141,11 @@ const setupTransparentNavbar: (options?: {
 
   /**
    * Text color in lightmode
-   *
-   * @default '#fff'
    */
   light?: string;
 
   /**
    * Text color in darkmode
-   *
-   * @default '#bbb'
    */
   dark?: string;
 }) => void;

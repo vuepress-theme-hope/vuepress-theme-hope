@@ -12,6 +12,6 @@ export default defineClientConfig({
       },
       true,
     );
-    setupTransparentNavbar({ type: "homepage", light: "#333", dark: "#bbb" });
+    setupTransparentNavbar({ type: "homepage" });
   },
 });
