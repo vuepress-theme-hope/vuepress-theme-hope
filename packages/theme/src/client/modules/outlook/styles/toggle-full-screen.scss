@@ -1,4 +1,10 @@
-.vp-color-mode-title {
+.full-screen-wrapper {
+  @media print {
+    display: none;
+  }
+}
+
+.full-screen-title {
   display: block;
 
   margin: 0;

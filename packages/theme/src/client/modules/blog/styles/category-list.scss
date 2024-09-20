@@ -22,7 +22,8 @@
   padding: 0.4rem 0.8rem;
   border-radius: 0.25rem;
 
-  color: var(--grey-dark);
+  background: var(--vp-c-grey-soft);
+  color: var(--vp-c-text);
   box-shadow: 0 1px 4px 0 var(--vp-c-shadow);
 
   word-break: break-word;
@@ -41,7 +42,7 @@
     color: inherit;
   }
 
-  .count {
+  .vp-category-count {
     display: inline-block;
 
     min-width: 1rem;
@@ -50,6 +51,7 @@
     padding: 0 0.1rem;
     border-radius: 0.6rem;
 
+    background: var(--vp-c-accent-bg);
     color: var(--vp-c-white);
 
     font-size: 0.7rem;

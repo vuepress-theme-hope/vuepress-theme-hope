@@ -86,7 +86,7 @@
   border-bottom: none;
 
   font-size: 3rem;
-  font-family: var(--font-family);
+  font-family: var(--vp-font);
   text-align: center;
 
   @media (max-width: hope-config.$pad) {
@@ -220,7 +220,7 @@
   margin: 0.25rem 0 0.5rem;
   font-weight: bold;
   font-size: 1.3rem;
-  font-family: var(--font-family);
+  font-family: var(--vp-font);
 
   @media (max-width: hope-config.$mobile) {
     font-size: 1.2rem;

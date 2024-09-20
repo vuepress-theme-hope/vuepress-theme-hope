@@ -12,7 +12,7 @@
 
   color: #eee;
 
-  font-family: var(--font-family-heading);
+  font-family: var(--vp-font-heading);
 
   @media (max-width: hope-config.$tablet) {
     height: 350px;
@@ -89,9 +89,7 @@
 
     display: block;
 
-    background: var(--grey-light);
-
-    opacity: 0.2;
+    background: var(--vp-c-grey-soft);
   }
 
   &.light {

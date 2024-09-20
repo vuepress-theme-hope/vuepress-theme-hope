@@ -1,6 +1,6 @@
 .vp-navbar {
   --navbar-line-height: calc(
-    var(--navbar-height) - var(--navbar-vertical-padding) * 2
+    var(--navbar-height) - var(--navbar-padding-y) * 2
   );
 
   position: fixed;
@@ -13,7 +13,7 @@
 
   box-sizing: border-box;
   height: var(--navbar-height);
-  padding: var(--navbar-vertical-padding) var(--navbar-horizontal-padding);
+  padding: var(--navbar-padding-y) var(--navbar-padding-x);
 
   background: var(--navbar-c-bg);
   box-shadow: 0 2px 8px var(--vp-c-shadow);
@@ -35,7 +35,7 @@
 
   .auto-link {
     padding: 0 0.25rem;
-    color: var(--vp-c-grey-text);
+    color: var(--vp-c-text);
 
     &.route-link-active {
       color: var(--vp-c-accent);

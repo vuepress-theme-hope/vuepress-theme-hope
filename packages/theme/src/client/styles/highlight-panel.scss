@@ -113,7 +113,7 @@
   margin-bottom: 1.5rem;
   border-bottom: none;
   font-size: 3rem;
-  font-family: var(--font-family);
+  font-family: var(--vp-font);
 
   @media (max-width: hope-config.$pad) {
     font-size: 2.5rem;
@@ -192,7 +192,7 @@
   margin: 0;
   font-weight: 600;
   font-size: 1.125rem;
-  font-family: var(--font-family);
+  font-family: var(--vp-font);
 
   .icon {
     margin-inline-end: 0.25em;

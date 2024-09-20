@@ -91,7 +91,7 @@
       position: relative;
       margin: 0 2px;
       font-size: 22px;
-      font-family: var(--font-family-heading);
+      font-family: var(--vp-font-heading);
     }
   }
 }
@@ -124,7 +124,7 @@
 }
 
 .vp-category-wrapper {
-  .category-list-wrapper {
+  .vp-category-list {
     overflow-y: auto;
     max-height: 80vh;
     margin: 8px auto;
@@ -132,7 +132,7 @@
 }
 
 .vp-tag-wrapper {
-  .tag-list-wrapper {
+  .vp-tag-list {
     overflow-y: auto;
     max-height: 80vh;
     margin: 8px auto;

@@ -14,10 +14,16 @@
   --sidebar-c-bg: var(--vp-c-bg-soft);
   --sidebar-space: var(--sidebar-width);
 
+  // catalog
+  --catalog-header-offset: var(--navbar-height);
+
+  // message
+  --message-offset: var(--navbar-height);
+
   @media (max-width: hope-config.$pad) {
     --navbar-height: var(--navbar-mobile-height);
-    --navbar-vertical-padding: var(--navbar-mobile-vertical-padding);
-    --navbar-horizontal-padding: var(--navbar-mobile-horizontal-padding);
+    --navbar-padding-y: var(--navbar-mobile-padding-y);
+    --navbar-padding-x: var(--navbar-mobile-padding-x);
     --sidebar-width: var(--sidebar-mobile-width);
   }
 

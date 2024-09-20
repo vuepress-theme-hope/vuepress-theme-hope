@@ -7,7 +7,7 @@ import ColorMode from "@theme-hope/modules/outlook/components/ColorMode";
 import ThemeColor, {
   enableThemeColor,
 } from "@theme-hope/modules/outlook/components/ThemeColor";
-import ToggleFullScreenButton from "@theme-hope/modules/outlook/components/ToggleFullScreenButton";
+import ToggleFullScreen from "@theme-hope/modules/outlook/components/ToggleFullScreen";
 
 export default defineComponent({
   name: "OutlookSettings",
@@ -24,7 +24,7 @@ export default defineComponent({
       h(ClientOnly, () => [
         enableThemeColor ? h(ThemeColor) : null,
         h(ColorMode),
-        enableFullScreen.value ? h(ToggleFullScreenButton) : null,
+        enableFullScreen.value ? h(ToggleFullScreen) : null,
       ]);
   },
 });

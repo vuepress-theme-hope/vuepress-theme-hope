@@ -36,7 +36,7 @@ export default defineComponent({
               },
               h(RouteLink, { to: path }, () => [
                 category,
-                h("span", { class: "count" }, items.length),
+                h("span", { class: "vp-category-count" }, items.length),
               ]),
             ),
           ),
