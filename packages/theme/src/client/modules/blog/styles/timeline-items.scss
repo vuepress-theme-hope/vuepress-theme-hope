@@ -13,8 +13,8 @@
   background: var(--dot-color);
 
   transition:
-    background var(--color-transition),
-    border-color var(--color-transition);
+    background var(--vp-t-color),
+    border-color var(--vp-t-color);
 }
 
 .timeline-wrapper {
@@ -30,7 +30,7 @@
     margin: 0 1.2rem;
   }
 
-  #{hope-config.$dark-selector} & {
+  [data-theme="dark"] & {
     --dot-color: #444;
     --dot-bar-color: #333;
     --dot-border-color: #555;
@@ -66,15 +66,15 @@
 
       background: var(--dot-bar-color);
 
-      transition: background var(--color-transition);
+      transition: background var(--vp-t-color);
     }
   }
 
   .motto {
     position: relative;
-    color: var(--text-color);
+    color: var(--vp-c-text);
     font-size: 18px;
-    transition: color var(--color-transition);
+    transition: color var(--vp-t-color);
 
     @media (min-width: hope-config.$laptop) {
       font-size: 20px;
@@ -94,13 +94,13 @@
     margin-bottom: 0.5rem;
     padding-top: var(--navbar-height);
 
-    color: var(--text-color);
+    color: var(--vp-c-text);
 
     font-weight: 700;
     font-size: 26px;
-    font-family: var(--font-family-heading);
+    font-family: var(--vp-font-heading);
 
-    transition: color var(--color-transition);
+    transition: color var(--vp-t-color);
 
     span {
       position: relative;
@@ -149,8 +149,8 @@
     line-height: 30px;
 
     transition:
-      color var(--color-transition),
-      font-size var(--transform-transition);
+      color var(--vp-t-color),
+      font-size var(--vp-t-transform);
   }
 
   .timeline-item {
@@ -163,11 +163,11 @@
 
     // make sure dot is aligned
     padding: 30px 0 10px;
-    border-bottom: 1px dashed var(--border-color);
+    border-bottom: 1px dashed var(--vp-c-border);
 
     list-style: none;
 
-    transition: border-color var(--color-transition);
+    transition: border-color var(--vp-t-color);
 
     &:hover {
       cursor: pointer;
@@ -175,19 +175,19 @@
       .timeline-date {
         font-size: 16px;
         transition:
-          border-color var(--color-transition),
-          color var(--color-transition),
-          font-size var(--transform-transition);
+          border-color var(--vp-t-color),
+          color var(--vp-t-color),
+          font-size var(--vp-t-transform);
 
         // stylelint-disable-next-line max-nesting-depth
         &::before {
-          border-color: var(--theme-color);
-          background: var(--bg-color-secondary);
+          border-color: var(--vp-c-accent-bg);
+          background: var(--vp-c-bg-alt);
         }
       }
 
       .timeline-title {
-        color: var(--theme-color);
+        color: var(--vp-c-accent);
         font-size: 18px;
       }
     }

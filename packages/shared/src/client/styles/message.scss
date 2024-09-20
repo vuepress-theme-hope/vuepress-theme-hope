@@ -24,7 +24,7 @@
 
 #message-container {
   position: fixed;
-  inset: calc(var(--navbar-height, 3.6rem) + 1rem) 0 auto;
+  inset: calc(var(--message-offset, 3.6rem) + 1rem) 0 auto;
   z-index: 75;
   text-align: center;
 
@@ -34,9 +34,9 @@
     padding: 8px 10px;
     border-radius: 3px;
 
-    background: var(--vp-bg);
-    color: var(--vp-c);
-    box-shadow: 0 0 10px 0 var(--box-shadow, #f0f1f2);
+    background: var(--vp-c-bg);
+    color: var(--vp-c-text);
+    box-shadow: 0 0 10px 0 var(--vp-c-shadow);
 
     font-size: 14px;
 

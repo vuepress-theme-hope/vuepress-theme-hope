@@ -45,10 +45,10 @@
   max-width: 50em;
   border-radius: 10px;
 
-  background: var(--vp-bg);
-  box-shadow: 2px 2px 10px 0 var(--card-shadow);
+  background: var(--vp-c-bg);
+  box-shadow: 2px 2px 10px 0 var(--vp-c-shadow);
 
-  transition: background var(--vp-ct);
+  transition: background var(--vp-t-color);
 
   animation: 0.15s pwa-opened;
 
@@ -81,7 +81,7 @@
     position: absolute;
     inset-inline-start: 0.5rem;
     top: calc(50% - 0.75rem);
-    color: var(--vp-tc);
+    color: var(--vp-c-accent);
 
     .search-icon {
       width: 1.5rem;
@@ -98,7 +98,7 @@
 
   padding: 0;
 
-  color: var(--vp-tc);
+  color: var(--vp-c-accent-bg);
 
   &:hover {
     border-radius: 50%;
@@ -113,7 +113,7 @@
   margin-inline: 0.5rem -0.5rem;
   padding: 0.5rem;
 
-  color: var(--grey-darker);
+  color: var(--vp-c-text-mute);
 
   font-size: 1rem;
 
@@ -130,11 +130,11 @@
   padding-block: 0.25rem;
   padding-inline: 2.5rem 2rem;
   border: 0;
-  border: 2px solid var(--vp-tc);
+  border: 2px solid var(--vp-c-accent-bg);
   border-radius: 8px;
 
-  background: var(--vp-bg);
-  color: var(--vp-c);
+  background: var(--vp-c-bg);
+  color: var(--vp-c-text);
   outline: none;
 
   font-size: 1.25rem;
@@ -161,8 +161,8 @@
   padding: 0;
   border-radius: 0.5rem;
 
-  background-color: var(--vp-bg);
-  box-shadow: 2px 2px 10px 0 var(--card-shadow);
+  background-color: var(--vp-c-bg);
+  box-shadow: 2px 2px 10px 0 var(--vp-c-shadow);
   list-style: none;
 
   line-height: 1.5;
@@ -170,7 +170,7 @@
 
 .search-pro-suggestion {
   padding: 0.25rem 1rem;
-  border-top: 1px solid var(--vp-brc);
+  border-top: 1px solid var(--vp-c-border);
   cursor: pointer;
 
   &:first-child {
@@ -179,7 +179,7 @@
 
   &.active,
   &:hover {
-    background-color: var(--vp-bglt);
+    background-color: var(--vp-c-bg-alt);
   }
 }
 
@@ -189,10 +189,10 @@
 
   margin: 0 0.5rem;
   padding: 4px;
-  border: 1px solid var(--vp-brc);
+  border: 1px solid var(--vp-c-border);
   border-radius: 4px;
 
-  box-shadow: 1px 1px 4px 0 var(--card-shadow);
+  box-shadow: 1px 1px 4px 0 var(--vp-c-shadow);
 
   font-size: 12px;
   line-height: 1;
@@ -233,7 +233,7 @@
 .search-pro-hints {
   margin-top: 1rem;
   padding: 0.75rem 0.5rem;
-  box-shadow: 0 -1px 4px 0 var(--card-shadow);
+  box-shadow: 0 -1px 4px 0 var(--vp-c-shadow);
   line-height: 1;
 }
 
@@ -245,10 +245,10 @@
   kbd {
     margin: 0 0.5rem;
     padding: 2px;
-    border: 1px solid var(--vp-brc);
+    border: 1px solid var(--vp-c-border);
     border-radius: 4px;
 
-    box-shadow: 1px 1px 4px 0 var(--card-shadow);
+    box-shadow: 1px 1px 4px 0 var(--vp-c-shadow);
 
     + kbd {
       margin-inline-start: -0.25rem;

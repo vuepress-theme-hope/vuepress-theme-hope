@@ -71,6 +71,5 @@ export const viLocale: ThemeLocaleData = {
     ],
     back: "Quay lại",
     home: "Trang chủ",
-    openInNewWindow: "Open in new window",
   },
 };

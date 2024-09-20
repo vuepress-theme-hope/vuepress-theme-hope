@@ -1,36 +1,27 @@
 import { align } from "@mdit/plugin-align";
 import { attrs } from "@mdit/plugin-attrs";
-import { figure } from "@mdit/plugin-figure";
 import { footnote } from "@mdit/plugin-footnote";
-import { imgLazyload } from "@mdit/plugin-img-lazyload";
-import { imgMark } from "@mdit/plugin-img-mark";
-import { imgSize, obsidianImgSize } from "@mdit/plugin-img-size";
 import type { IncludeEnv } from "@mdit/plugin-include";
 import { include } from "@mdit/plugin-include";
-import { katex } from "@mdit/plugin-katex-slim";
-import { mark } from "@mdit/plugin-mark";
-import { createMathjaxInstance, mathjax } from "@mdit/plugin-mathjax-slim";
 import { spoiler } from "@mdit/plugin-spoiler";
 import { stylize } from "@mdit/plugin-stylize";
 import { sub } from "@mdit/plugin-sub";
 import { sup } from "@mdit/plugin-sup";
 import { tasklist } from "@mdit/plugin-tasklist";
 import {
-  addCustomElement,
   addViteOptimizeDepsExclude,
   addViteOptimizeDepsInclude,
   addViteOptimizeDepsNeedsInterop,
   addViteSsrExternal,
   addViteSsrNoExternal,
   chainWebpack,
-  getLocaleConfig,
   isArray,
   isPlainObject,
 } from "@vuepress/helper";
 import { useSassPalettePlugin } from "@vuepress/plugin-sass-palette";
 import type { PluginFunction } from "vuepress/core";
 import type { MarkdownEnv } from "vuepress/markdown";
-import { colors, path } from "vuepress/utils";
+import { path } from "vuepress/utils";
 
 import {
   convertOptions,
@@ -40,10 +31,8 @@ import {
   legacyFlowchart,
   legacyInclude,
 } from "./compact/index.js";
-import { markdownEnhanceLocales } from "./locales.js";
 import {
   CODE_DEMO_DEFAULT_SETTING,
-  alert,
   chart,
   codeTabs,
   component,
@@ -52,7 +41,6 @@ import {
   getTSPlaygroundPreset,
   getUnoPlaygroundPreset,
   getVuePlaygroundPreset,
-  hint,
   kotlinPlayground,
   markmap,
   mdDemo,
@@ -71,11 +59,9 @@ import {
 import type { MarkdownEnhancePluginOptions } from "./options.js";
 import {
   prepareConfigFile,
-  prepareMathjaxStyle,
   prepareRevealJsPluginFile,
   prepareRevealJsStyleFile,
 } from "./prepare/index.js";
-import type { KatexOptions } from "./typings/index.js";
 import { PLUGIN_NAME, isInstalled, logger } from "./utils.js";
 
 export const mdEnhancePlugin =
@@ -107,25 +93,13 @@ export const mdEnhancePlugin =
       return enabled && pkgInstalled;
     };
 
-    const locales = getLocaleConfig({
-      app,
-      name: PLUGIN_NAME,
-      default: markdownEnhanceLocales,
-      config: options.locales,
-    });
-
     const status = {
-      alert: getStatus("alert", true),
       breaks: getStatus("breaks", true),
       chart: getStatus("chart", false, ["chart.js"]),
       echarts: getStatus("echarts", false, ["echarts"]),
       flowchart: getStatus("flowchart", false, ["flowchart.ts"]),
       footnote: getStatus("footnote", true),
-      imgLazyload: getStatus("imgLazyload"),
-      imgMark: getStatus("imgMark", true),
       linkify: getStatus("linkify", true),
-      katex: getStatus("katex", false, ["katex"]),
-      mathjax: !options.katex && getStatus("mathjax", true, ["mathjax-full"]),
       mark: getStatus("mark"),
       markmap: getStatus("markmap", false, [
         "markmap-lib",
@@ -142,50 +116,6 @@ export const mdEnhancePlugin =
       sandpack: getStatus("sandpack", false, ["sandpack-vue3"]),
       vuePlayground: getStatus("vuePlayground", false, ["@vue/repl"]),
     };
-
-    const katexOptions: KatexOptions<MarkdownEnv> = {
-      mathFence: options.gfm ?? false,
-      macros: {
-        // Support more symbols
-        // eslint-disable-next-line @typescript-eslint/naming-convention
-        "\\liiiint": "\\int\\!\\!\\!\\iiint",
-        // eslint-disable-next-line @typescript-eslint/naming-convention
-        "\\iiiint": "\\int\\!\\!\\!\\!\\iiint",
-        // eslint-disable-next-line @typescript-eslint/naming-convention
-        "\\idotsint": "\\int\\!\\cdots\\!\\int",
-      },
-      logger: (errorCode, errorMsg, token, { filePathRelative }) => {
-        // Ignore this error
-        if (errorCode === "newLineInDisplayMode") return;
-
-        if (errorCode === "unicodeTextInMathMode")
-          logger.warn(
-            `Found unicode character ${token.text} inside tex${
-              filePathRelative ? ` in ${colors.cyan(filePathRelative)}` : ""
-            }. You should use ${colors.magenta(`\\text{${token.text}}`)}`,
-          );
-        else
-          logger.warn(
-            `${errorMsg}.${
-              filePathRelative
-                ? `\nFound in ${colors.cyan(filePathRelative)}`
-                : ""
-            }`,
-          );
-      },
-      ...(isPlainObject(options.katex) ? options.katex : {}),
-      transformer: (content: string) =>
-        content.replace(/^(<[a-z]+ )/g, "$1v-pre "),
-    };
-
-    const mathjaxInstance = status.mathjax
-      ? createMathjaxInstance({
-          mathFence: options.gfm ?? false,
-          ...(isPlainObject(options.mathjax) ? options.mathjax : {}),
-          transformer: (content: string) =>
-            content.replace(/^<mjx-container/, "<mjx-container v-pre"),
-        })
-      : null;
 
     const revealJsOptions = isPlainObject(options.revealJs)
       ? options.revealJs
@@ -213,8 +143,6 @@ export const mdEnhancePlugin =
           "fflate",
           "vuepress-shared",
         ]);
-
-        if (status.mathjax) addCustomElement(bundlerOptions, app, /^mjx-/);
 
         if (status.chart) {
           addViteOptimizeDepsExclude(
@@ -308,28 +236,15 @@ export const mdEnhancePlugin =
         if (status.linkify) md.options.linkify = true;
 
         // GFM syntax
-        if (status.alert) md.use(alert, locales);
         if (status.footnote) md.use(footnote);
         if (status.tasklist)
           md.use(tasklist, [
             isPlainObject(options.tasklist) ? options.tasklist : {},
           ]);
-        if (status.imgMark)
-          md.use(
-            imgMark,
-            isPlainObject(options.imgMark) ? options.imgMark : {},
-          );
-
         if (options.attrs)
           md.use(attrs, isPlainObject(options.attrs) ? options.attrs : {});
         if (options.align) md.use(align);
         if (options.component) md.use(component);
-        if (options.figure) md.use(figure);
-        if (options.hint) md.use(hint, locales);
-        if (options.imgLazyload) md.use(imgLazyload);
-        if (options.imgSize) md.use(imgSize);
-        if (options.mark) md.use(mark);
-        if (options.obsidianImgSize) md.use(obsidianImgSize);
         if (options.spoiler) md.use(spoiler);
         if (options.sup) md.use(sup);
         if (options.sub) md.use(sub);
@@ -345,24 +260,6 @@ export const mdEnhancePlugin =
           legacy
         )
           md.use(vPre);
-
-        if (status.katex) {
-          md.use(katex, katexOptions);
-        } else if (status.mathjax) {
-          md.use(mathjax, mathjaxInstance!);
-          // Reset mathjax style in each render
-          md.use((md) => {
-            const originalRender = md.render.bind(md);
-
-            md.render = (src: string, env: unknown): string => {
-              const result = originalRender(src, env);
-
-              mathjaxInstance!.reset();
-
-              return result;
-            };
-          });
-        }
 
         if (options.include) {
           md.use(include, {
@@ -451,9 +348,6 @@ export const mdEnhancePlugin =
 
       onPrepared: async (app): Promise<void> => {
         const promises = [];
-
-        if (status.mathjax)
-          promises.push(prepareMathjaxStyle(app, mathjaxInstance!));
 
         if (status.revealJs)
           promises.push(

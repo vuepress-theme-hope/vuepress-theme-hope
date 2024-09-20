@@ -1,11 +1,10 @@
-/* layout */
 // navbar
 $navbar-height: 3.75rem !default;
-$navbar-horizontal-padding: 1.5rem !default;
-$navbar-vertical-padding: 0.7rem !default;
+$navbar-padding-x: 1.5rem !default;
+$navbar-padding-y: 0.7rem !default;
 $navbar-mobile-height: 3.25rem !default;
-$navbar-mobile-horizontal-padding: 1rem !default;
-$navbar-mobile-vertical-padding: 0.5rem !default;
+$navbar-mobile-padding-x: 1rem !default;
+$navbar-mobile-padding-y: 0.5rem !default;
 
 // sidebar
 $sidebar-width: 18rem !default;
@@ -14,15 +13,3 @@ $sidebar-mobile-width: 16rem !default;
 // content
 $content-width: 780px !default;
 $home-page-width: 1160px !default;
-
-// font
-$font-family: '-apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, "Noto Sans", STHeiti, "Microsoft YaHei", SimSun, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji"' !default;
-$font-family-heading: $font-family !default;
-$font-family-mono: 'Consolas, Monaco, "Andale Mono", "Ubuntu Mono", monospace' !default;
-
-// code
-$code-line-number-width: 2rem !default;
-
-// transition
-$color-transition: "0.3s ease" !default;
-$transform-transition: "0.3s ease" !default;

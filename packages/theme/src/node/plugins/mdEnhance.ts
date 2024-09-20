@@ -11,12 +11,4 @@ export const getMdEnhancePlugin = (
   options?: Partial<MarkdownEnhancePluginOptions> | false,
   legacy = false,
 ): Plugin | null =>
-  options === false
-    ? null
-    : mdEnhancePlugin(
-        {
-          hint: true,
-          ...options,
-        },
-        legacy,
-      );
+  options === false ? null : mdEnhancePlugin(options, legacy);

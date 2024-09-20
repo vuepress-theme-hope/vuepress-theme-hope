@@ -44,27 +44,35 @@
     "dev:ts": "tsc -b tsconfig.build.json --watch"
   },
   "dependencies": {
-    "@vuepress/helper": "2.0.0-rc.41",
-    "@vuepress/plugin-sass-palette": "2.0.0-rc.41",
-    "@vueuse/core": "^11.0.3",
+    "@vuepress/helper": "2.0.0-rc.45",
+    "@vuepress/plugin-sass-palette": "2.0.0-rc.45",
+    "@vueuse/core": "^11.1.0",
     "cheerio": "1.0.0",
     "chokidar": "^3.6.0",
     "slimsearch": "^2.1.1",
-    "vue": "^3.5.5",
+    "vue": "^3.5.6",
     "vuepress-shared": "workspace:*"
   },
   "peerDependencies": {
+    "sass": "^1.79.2",
+    "sass-embedded": "^1.79.2",
     "sass-loader": "^16.0.0",
-    "vuepress": "2.0.0-rc.14"
+    "vuepress": "2.0.0-rc.15"
   },
   "peerDependenciesMeta": {
+    "sass": {
+      "optional": true
+    },
+    "sass-embedded": {
+      "optional": true
+    },
     "sass-loader": {
       "optional": true
     }
   },
   "devDependencies": {
     "domhandler": "5.0.3",
-    "rollup": "4.21.3"
+    "rollup": "4.22.1"
   },
   "engines": {
     "node": ">=18.19.0",

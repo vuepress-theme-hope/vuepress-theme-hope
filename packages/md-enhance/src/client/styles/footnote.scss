@@ -1,7 +1,7 @@
 // footnote anchor position
 .footnote-item {
-  margin-top: calc(0rem - var(--navbar-height, 3.6rem));
-  padding-top: calc(var(--navbar-height, 3.6rem) + 0.5rem);
+  margin-top: calc(0rem - var(--header-offset, 3.6rem));
+  padding-top: calc(var(--header-offset, 3.6rem) + 0.5rem);
 
   > p {
     margin-bottom: 0;
@@ -14,5 +14,5 @@
 
 .footnote-anchor {
   position: absolute;
-  top: calc(-0.5rem - var(--navbar-height, 3.6rem));
+  top: calc(-0.5rem - var(--header-offset, 3.6rem));
 }

@@ -223,6 +223,7 @@ Miscellaneous:
 - `@theme-hope/modules/outlook/components/OutlookSettings`: appearance settings
 - `@theme-hope/modules/outlook/components/ThemeColor`: theme color
 - `@theme-hope/modules/outlook/components/ThemeColorPicker`: theme color picker
+- `@theme-hope/modules/outlook/components/ToggleFullScreen`: fullscreen
 - `@theme-hope/modules/outlook/components/ToggleFullScreenButton`: fullscreen toggle button
 
 Miscellaneous:

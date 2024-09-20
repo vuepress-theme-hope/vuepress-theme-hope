@@ -12,7 +12,7 @@
   width: 100%;
   padding: 0;
 
-  color: var(--grey-dark);
+  color: var(--vp-c-text);
 
   font-size: inherit;
   font-family: inherit;
@@ -22,7 +22,7 @@
 
   &:hover,
   &.active {
-    color: var(--text-color);
+    color: var(--vp-c-text);
   }
 
   .text {
@@ -64,11 +64,11 @@
     line-height: 2;
 
     &:hover {
-      color: var(--theme-color);
+      color: var(--vp-c-accent);
     }
 
     &.route-link-active {
-      color: var(--theme-color);
+      color: var(--vp-c-accent);
     }
 
     .icon {
@@ -86,7 +86,7 @@
   margin: 0;
   padding-inline-start: 0.25rem;
 
-  color: var(--grey-light);
+  color: var(--vp-c-text-mute);
 
   font-weight: 600;
   font-size: 0.75rem;

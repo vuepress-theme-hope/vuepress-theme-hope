@@ -3,18 +3,17 @@
     resize: vertical;
 
     width: 100%;
-    border-color: var(--border-color);
+    border-color: var(--vp-c-border);
     border-radius: 0.5rem;
 
-    background: var(--bg-color-light);
-    color: var(--text-color);
+    background: var(--vp-c-grey-soft);
+    color: var(--vp-c-text);
 
     font-size: 18px;
 
     &:active,
     &:focus-visible {
-      background: var(--bg-color-secondary);
-      outline: 1px solid var(--grey-light);
+      outline: 1px solid var(--vp-c-brand-bg);
     }
   }
 }

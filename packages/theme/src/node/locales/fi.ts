@@ -71,6 +71,5 @@ export const fiLocale: ThemeLocaleData = {
     ],
     back: "Palaa takaisin",
     home: "Etusivulle",
-    openInNewWindow: "Avaa uudessa ikkunassa",
   },
 };

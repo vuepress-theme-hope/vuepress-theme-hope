@@ -71,6 +71,5 @@ export const brLocale: ThemeLocaleData = {
     ],
     back: "Voltar",
     home: "Leve-me para casa",
-    openInNewWindow: "Open in new window",
   },
 };

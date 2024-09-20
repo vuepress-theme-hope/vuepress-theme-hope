@@ -11,15 +11,15 @@
   width: 2em;
   height: 2em;
   color: #fff;
-  transition: transform var(--vp-tt);
+  transition: transform var(--vp-t-transform);
 
   &.plain {
     width: 1.5em;
     height: 1.5em;
-    color: var(--grey-dark);
+    color: var(--vp-c-text-mute);
 
-    :hover {
-      color: var(--vp-tc);
+    &:hover {
+      color: var(--vp-c-accent-bg);
     }
   }
 

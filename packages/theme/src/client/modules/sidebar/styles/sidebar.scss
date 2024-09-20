@@ -13,18 +13,18 @@
   margin: 0;
   padding-inline-start: calc(var(--sidebar-space) - var(--sidebar-width));
 
-  background: var(--sidebar-bg-color);
-  box-shadow: 2px 0 8px var(--card-shadow);
+  background: var(--sidebar-c-bg);
+  box-shadow: 2px 0 8px var(--vp-c-shadow);
 
   font-size: 0.94rem;
 
   backdrop-filter: saturate(150%) blur(12px);
 
   transition:
-    padding var(--transform-transition),
-    transform var(--transform-transition);
+    padding var(--vp-t-transform),
+    transform var(--vp-t-transform);
 
-  scrollbar-color: var(--theme-color) var(--border-color);
+  scrollbar-color: var(--vp-c-accent-bg) var(--vp-c-border);
   scrollbar-width: thin;
 
   @media (max-width: hope-config.$pad) {
@@ -41,7 +41,7 @@
     // sidebar should be collapsed by default
     transform: translateX(-100%);
 
-    #{hope-config.$rtl-selector} & {
+    [dir="rtl"] & {
       transform: translateX(100%);
     }
   }
@@ -59,7 +59,7 @@
 
   a {
     display: inline-block;
-    color: var(--text-color);
+    color: var(--vp-c-text);
     font-weight: normal;
   }
 

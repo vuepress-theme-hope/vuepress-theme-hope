@@ -17,7 +17,7 @@
 
   @media screen and (max-width: hope-config.$tablet) {
     display: block;
-    padding-inline-end: var(--navbar-mobile-horizontal-padding);
+    padding-inline-end: var(--navbar-mobile-padding-x);
   }
 
   &::before,
@@ -29,7 +29,7 @@
     height: 2px;
     border-radius: 0.05em;
 
-    background: var(--grey-dark);
+    background: var(--vp-c-text);
 
     transition: transform 0.2s ease-in-out;
   }

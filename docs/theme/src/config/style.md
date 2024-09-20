@@ -71,23 +71,55 @@ For all colors, if they are the same in light mode and dark mode, you can set th
 
 Available color variables:
 
-- `$theme-color`: theme color
-- `$text-color`: text color
-- `$bg-color`: background color
-- `$bg-color-secondary`: another "light" background color
-- `$bg-color-tertiary`: another "lighter" background color
-- `$border-color`: border color
-- `$box-shadow`: shadow color using on elements
-- `$card-shadow`: shadow color using on cards
+#### Text
+
+- `$vp-c-text`: Default text color.
+- `$vp-c-text-mute`: Colors for muted texts, such as "inactive menu" or "info texts".
+- `$vp-c-text-subtle`: Color for subtle text, such as as "placeholders" or "caret icon".
+
+#### Background
+
+- `$vp-c-bg`: The bg color used for main screen.
+- `$vp-c-bg-alt`: The alternative bg color used in places such as "sidebar", or "code block".
+- `$vp-c-bg-elv`: The elevated bg color. This is used at parts where it "floats", such as "dialog".
+
+#### Shadow
+
+- `$vp-c-shadow`: Shadow color
+
+#### Accent
+
+Accent color and brand colors which used for interactive components.
+
+- `$vp-c-accent`: The most solid color used mainly for colored text. It must satisfy the contrast ratio against when used on top of `$vp-c-accent-soft`.
+- `$vp-c-accent-hover`: Color used for hover state.
+- `$vp-c-accent-bg`: Color used for solid background. It must satisfy the contrast ratio with `$vp-c-accent-text` on top of it.
+- `$vp-c-accent-text`: Color used for text with `$vp-c-accent-bg` background. It must satisfy the contrast ratio with `$vp-c-accent-bg`.
+- `$vp-c-accent-soft`: The color used for subtle background such as custom container or badges. It must satisfy the contrast ratio when putting `$vp-c-accent` colors on top of it.
+
+  The soft color must be semi transparent alpha channel. This is crucial because it allows adding multiple "soft" colors on top of each other to create a accent, such as when having inline code block inside custom containers.
+
+#### Borders
+
+- `$vp-c-border`: Border color for interactive components. For example this should be used for a button outline.
+- `$vp-c-border-hard`: Darker border colors, which is used for "hard" borders closed to text, such as table and kbd.
+- `$vp-c-divider`: Color for separators, used to divide sections within the same components, such as having separator on "h2" heading.
+
+#### Controls
+
+- `$vp-c-control`: Background color for interactive controls, such as buttons or checkboxes.
+- `$vp-c-control-hover`: Background color for hover state of interactive controls.
+- `$vp-c-control-disabled`: Color for disabled state of interactive controls.
 
 ::: details Demo
 
 ```scss
-// set theme color to red
-$theme-color: red;
+// set accent color to red
+// Note: you should also set other accent color variables to make them constant
+$vp-c-accent: red;
 
 // setting border color with a darker value
-$border-color: (
+$vp-c-border: (
   light: #ddd,
   dark: #444,
 );
@@ -108,11 +140,11 @@ Available layout variables:
 Navbar:
 
 - `$navbar-height`: navbar height
-- `$navbar-horizontal-padding`: navbar horizontal padding
-- `$navbar-vertical-padding`: navbar vertical padding
+- `$navbar-padding-x`: navbar horizontal padding
+- `$navbar-padding-y`: navbar vertical padding
 - `$navbar-mobile-height`: navbar height on mobile devices
-- `$navbar-mobile-horizontal-padding`: navbar horizontal padding on mobile
-- `$navbar-mobile-vertical-padding`: navbar vertical padding on mobile
+- `$navbar-mobile-padding-x`: navbar horizontal padding on mobile
+- `$navbar-mobile-padding-y`: navbar vertical padding on mobile
 
 Sidebar:
 
@@ -124,29 +156,11 @@ Content:
 - `$content-width`: width of main content
 - `$home-page-width`: width of homepage content
 
-Fonts:
-
-- `$font-family`: font family used on normal text
-- `$font-family-heading:` font family used on heading elements
-
-Code:
-
-- `$font-family-mono`: font family used on code
-- `$line-numbers-width`: width of line number in code blocks
-
-Transition:
-
-- `$color-transition`: transition used on colors
-- `$transform-transition`: transition used on transform animation
-
 ::: details Demo
 
 ```scss
 // update navbar height on mobile
 $navbar-mobile-height: 3.5rem;
-
-// Override default font
-$font-family: 'Georgia, -apple-system, "Nimbus Roman No9 L", "PingFang SC", "Hiragino Sans GB", sans-serif';
 ```
 
 :::
@@ -154,6 +168,33 @@ $font-family: 'Georgia, -apple-system, "Nimbus Roman No9 L", "PingFang SC", "Hir
 ::: details Default value
 
 @[code](../../../../packages/theme/templates/palette/layout.scss)
+
+:::
+
+### Font
+
+Available font variables:
+
+- `$vp-font`: font family for normal text
+- `$vp-font-heading`: font family for heading elements
+- `$vp-font-mono`: font family for code blocks
+
+::: details Default value
+
+@[code](../../../../packages/theme/templates/palette/font.scss)
+
+:::
+
+### Transition
+
+Available transition variables:
+
+- `$vp-t-color`: transition used on colors
+- `$vp-t-transform`: transition used on transform animation
+
+::: details Default value
+
+@[code](../../../../packages/theme/templates/palette/transition.scss)
 
 :::
 

@@ -6,16 +6,17 @@
     <meta name="generator" content="VuePress {{ version }}" />
     <meta name="theme" content="VuePress Theme Hope {{ themeVersion }}" />
     <style>
-      html {
-        background: var(--bg-color, #fff);
+      :root {
+        --vp-c-bg: #fff;
       }
 
-      html[data-theme="dark"] {
-        background: var(--bg-color, #1d1e1f);
+      [data-theme="dark"] {
+        --vp-c-bg: #1b1b1f;
       }
 
+      html,
       body {
-        background: var(--bg-color);
+        background: var(--vp-c-bg);
       }
     </style>
     <script>

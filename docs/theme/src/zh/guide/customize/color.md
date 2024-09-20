@@ -46,10 +46,10 @@ $bg-color: (
 ```scss title=".vuepress/styles/index.scss"
 // 覆盖代码块演示标题颜色
 #app {
-  --code-demo-header-bg-color: #fff;
+  --code-demo-c-bg-header: #fff;
 
   html[data-theme="dark"] & {
-    --code-demo-header-bg-color: #000;
+    --code-demo-c-bg-header: #000;
   }
 }
 ```

@@ -26,7 +26,6 @@ export default [
         "components/Tabs",
         "components/VuePlayground",
         "composables/useHintContainers",
-        "composables/useKatexCopy",
         "SlidePage",
       ],
     },

@@ -8,17 +8,17 @@
 
   padding-block: 0.75rem;
   padding-inline: calc(var(--sidebar-space) + 2rem) 2rem;
-  border-top: 1px solid var(--border-color);
+  border-top: 1px solid var(--vp-c-border);
 
-  background: var(--bg-color);
-  color: var(--grey-dark);
+  background: var(--vp-c-bg);
+  color: var(--vp-c-text-mute);
 
   text-align: center;
 
   transition:
-    border-top-color var(--color-transition),
-    background var(--color-transition),
-    padding var(--transform-transition);
+    border-top-color var(--vp-t-color),
+    background var(--vp-t-color),
+    padding var(--vp-t-transform);
 
   @media (max-width: hope-config.$tablet) {
     padding-inline-start: 2rem;

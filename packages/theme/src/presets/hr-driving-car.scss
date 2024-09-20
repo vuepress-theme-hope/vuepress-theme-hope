@@ -26,7 +26,7 @@ hr {
     z-index: 1;
 
     height: 0;
-    border: 1px dashed var(--black);
+    border: 1px dashed var(--vp-c-text);
 
     opacity: 0.5;
   }
@@ -44,7 +44,7 @@ hr {
     width: 1.6em;
     height: 1.6em;
 
-    color: var(--black);
+    color: var(--vp-c-text);
 
     line-height: 1.6em;
 

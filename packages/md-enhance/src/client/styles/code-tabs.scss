@@ -2,7 +2,7 @@
 
 :root {
   --code-tabs-c-text: var(--code-c-text);
-  --code-tabs-c-bg: var(--code-highlight-bg-color);
+  --code-tabs-c-bg: var(--code-c-highlight-bg);
   --code-tabs-c-hover: var(--code-c-bg);
 }
 
@@ -13,12 +13,12 @@
   padding: 0;
   border-radius: 6px 6px 0 0;
 
-  background: var(--code-tabs-c-bg, #3a404c);
+  background: var(--code-tabs-c-bg);
   list-style: none;
 
   white-space: nowrap;
 
-  transition: background var(--vp-ct);
+  transition: background var(--vp-t-color);
 
   @media print {
     display: none;
@@ -41,7 +41,7 @@
   border-radius: 6px 6px 0 0;
 
   background: transparent;
-  color: var(--code-tabs-c-text, #eee);
+  color: var(--code-tabs-c-text);
 
   font-weight: 600;
   font-size: 0.875em;
@@ -50,11 +50,11 @@
   cursor: pointer;
 
   transition:
-    background var(--vp-ct),
-    color var(--vp-ct);
+    background var(--vp-t-color),
+    color var(--vp-t-color);
 
   &:hover {
-    background: var(--code-tabs-c-hover, #434a57);
+    background: var(--code-tabs-c-hover);
   }
 
   &::before,
@@ -78,13 +78,13 @@
   }
 
   &.active {
-    background: var(--code-c-bg, #282c34);
+    background: var(--code-c-bg);
 
     &::before {
       background: radial-gradient(
         12px at left top,
         transparent 50%,
-        var(--code-c-bg, #282c34) 50%
+        var(--code-c-bg) 50%
       );
     }
 
@@ -92,7 +92,7 @@
       background: radial-gradient(
         12px at right top,
         transparent 50%,
-        var(--code-c-bg, #282c34) 50%
+        var(--code-c-bg) 50%
       );
     }
   }
@@ -102,7 +102,7 @@
       display: none;
     }
 
-    #{hope-config.$rtl-selector} & {
+    [dir="rtl"] & {
       &::before {
         display: block;
       }
@@ -126,6 +126,8 @@
   }
 
   div[class*="language-"] {
+    margin: 0.75rem -1.5rem;
+
     &.line-numbers-mode::after {
       border-top-left-radius: 0 !important;
     }
@@ -135,7 +137,6 @@
       border-top-right-radius: 0 !important;
 
       @media (max-width: hope-config.$mobile) {
-        margin: 0.875rem -1.5rem;
         border-radius: 0 !important;
       }
     }

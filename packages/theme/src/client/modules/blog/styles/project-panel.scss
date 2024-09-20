@@ -25,11 +25,11 @@
   padding: 12px;
   border-radius: 8px;
 
-  background: var(--bg-color-float);
+  background: var(--vp-c-bg-elv);
 
   transition:
-    background var(--color-transition),
-    transform var(--transform-transition);
+    background var(--vp-t-color),
+    transform var(--vp-t-transform);
 
   @media (max-width: hope-config.$pad) {
     width: calc(50% - 40px);
@@ -53,7 +53,7 @@
     width: 20px;
     height: 20px;
 
-    #{hope-config.$rtl-selector} & {
+    [dir="rtl"] & {
       float: left;
     }
   }
@@ -68,7 +68,7 @@
         background: color.scale($color, $lightness: 75%);
       }
 
-      #{hope-config.$dark-selector} & {
+      [data-theme="dark"] & {
         background: color.scale($color, $lightness: -75%);
 
         &:hover {
@@ -83,12 +83,12 @@
   position: relative;
   z-index: 2;
 
-  color: var(--grey-darker);
+  color: var(--vp-c-text);
 
   font-weight: 500;
   font-size: 16px;
 
-  transition: color var(--color-transition);
+  transition: color var(--vp-t-color);
 }
 
 .vp-project-desc {
@@ -97,7 +97,7 @@
 
   margin: 6px 0;
 
-  color: var(--grey-dark);
+  color: var(--vp-c-text-mute);
 
   font-size: 13px;
 }
@@ -111,7 +111,7 @@
   width: 40px;
   height: 40px;
 
-  #{hope-config.$rtl-selector} & {
+  [dir="rtl"] & {
     float: left;
   }
 }

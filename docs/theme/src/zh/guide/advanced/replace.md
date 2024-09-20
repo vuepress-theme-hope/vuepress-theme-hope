@@ -226,6 +226,7 @@ export default {
 - `@theme-hope/modules/outlook/components/OutlookSettings` 外观设置
 - `@theme-hope/modules/outlook/components/ThemeColor` 主题色
 - `@theme-hope/modules/outlook/components/ThemeColorPicker` 主题色选择器
+- `@theme-hope/modules/outlook/components/ToggleFullScreen` 全屏切换
 - `@theme-hope/modules/outlook/components/ToggleFullScreenButton` 全屏切换按钮
 
 杂项:

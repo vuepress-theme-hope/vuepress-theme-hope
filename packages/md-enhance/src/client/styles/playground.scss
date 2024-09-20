@@ -18,19 +18,19 @@
   .icon {
     width: 1.5rem;
     height: 1.5rem;
-    fill: #777;
+    fill: var(--vp-c-text-mute);
   }
 
   &:hover .icon {
-    fill: var(--vp-tc);
+    fill: var(--vp-c-accent-bg);
   }
 }
 
 .vp-playground-container {
   position: relative;
   overflow: hidden;
-  background: var(--vp-bg);
-  transition: background var(--vp-ct);
+  background: var(--vp-c-bg);
+  transition: background var(--vp-t-color);
 
   @media print {
     page-break-inside: avoid;

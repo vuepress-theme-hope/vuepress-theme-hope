@@ -1,10 +1,10 @@
 .vp-blogger-info {
   padding: 0.5rem;
-  font-family: var(--font-family-heading);
+  font-family: var(--vp-font-heading);
   overflow-wrap: break-word;
 
   .vp-page & {
-    background: var(--bg-color-float);
+    background: var(--vp-c-bg-elv);
   }
 
   .vp-sidebar &.mobile {
@@ -30,7 +30,7 @@
   text-align: center;
 
   &[role="link"] {
-    cursor: "pointer";
+    cursor: pointer;
   }
 }
 
@@ -68,10 +68,10 @@
 
   cursor: pointer;
 
-  transition: color var(--color-transition);
+  transition: color var(--vp-t-color);
 
   &:hover {
-    color: var(--theme-color);
+    color: var(--vp-c-accent);
   }
 
   .count {

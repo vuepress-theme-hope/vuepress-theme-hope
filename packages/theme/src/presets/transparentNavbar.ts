@@ -94,8 +94,6 @@ export interface TransparentNavbarOptions {
    * Text color in lightmode
    *
    * 浅色模式下字体颜色
-   *
-   * @default '#fff'
    */
   light?: string;
 
@@ -103,8 +101,6 @@ export interface TransparentNavbarOptions {
    * Text color in darkmode
    *
    * 深色模式下字体颜色
-   *
-   * @default '#bbb'
    */
   dark?: string;
 }
@@ -117,8 +113,8 @@ export interface TransparentNavbarOptions {
 export const setupTransparentNavbar = ({
   type,
   threshold = 50,
-  light = "#fff",
-  dark = "#bbb",
+  light,
+  dark,
 }: TransparentNavbarOptions = {}): void => {
   const route = useRoute();
   const routeLocale = useRouteLocale();
@@ -146,10 +142,8 @@ export const setupTransparentNavbar = ({
 
   useStyleTag(
     (type === "homepage" ? HOMEPAGE_STYLE : BLOG_HOMEPAGE_STYLE) +
-      (light === dark
-        ? getStyle(light, "")
-        : getStyle(light, "html[data-theme=light] ") +
-          getStyle(dark, "html[data-theme=dark] ")),
+      (light ? getStyle(light, "") : "") +
+      (dark && light !== dark ? getStyle(dark, '[data-theme="dark"]') : ""),
   );
   useEventListener("scroll", transparentNavbar);
 

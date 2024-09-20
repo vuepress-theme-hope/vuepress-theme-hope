@@ -1,9 +1,9 @@
 :root {
-  --playground-header-bg-color: #eee;
+  --kotlin-playground-c-bg-header: #eee;
 }
 
-#{hope-config.$dark-selector} {
-  --playground-header-bg-color: #333;
+[data-theme="dark"] {
+  --kotlin-playground-c-bg-header: #333;
 }
 
 .kotlin-playground-wrapper {
@@ -11,21 +11,21 @@
 
   margin-top: 1rem;
   margin-bottom: 1rem;
-  border: 1px solid var(--vp-brc);
+  border: 1px solid var(--vp-c-border);
   border-radius: 6px;
 
   .header {
     padding: 0.5rem 0.75rem;
-    border-bottom: 1px solid var(--vp-brc);
+    border-bottom: 1px solid var(--vp-c-border);
 
-    background: var(--playground-header-bg-color, #eee);
+    background: var(--kotlin-playground-c-bg-header);
 
     font-weight: 500;
     font-size: 1.1rem;
     line-height: 1.5;
     overflow-wrap: break-word;
 
-    transition: background var(--vp-ct) border-color var(--vp-ct);
+    transition: background var(--vp-t-color) border-color var(--vp-t-color);
   }
 }
 
@@ -59,7 +59,7 @@
 
 .kotlin-playground {
   border-radius: 8px;
-  background-color: var(--vp-bgl);
+  background-color: var(--vp-c-bg-alt);
 
   pre {
     padding: 0.5rem 1rem;

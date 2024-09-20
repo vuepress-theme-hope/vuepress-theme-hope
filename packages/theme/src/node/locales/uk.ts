@@ -71,6 +71,5 @@ export const ukLocale: ThemeLocaleData = {
     ],
     back: "Повернутися назад",
     home: "Повернутися на головну",
-    openInNewWindow: "Відкрити в новому вікні",
   },
 };

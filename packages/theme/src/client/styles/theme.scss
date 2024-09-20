@@ -7,13 +7,13 @@
   animation: none;
 }
 
-#{hope-config.$light-selector}::view-transition-old(root),
-#{hope-config.$dark-selector}::view-transition-new(root) {
+[data-theme="light"]::view-transition-old(root),
+[data-theme="dark"]::view-transition-new(root) {
   z-index: 1;
 }
 
-#{hope-config.$light-selector}::view-transition-new(root),
-#{hope-config.$dark-selector}::view-transition-old(root) {
+[data-theme="light"]::view-transition-new(root),
+[data-theme="dark"]::view-transition-old(root) {
   z-index: 99999;
 }
 
@@ -35,7 +35,7 @@
 }
 
 // rtl
-#{hope-config.$rtl-selector} a.header-anchor::before {
+[dir="rtl"] a.header-anchor::before {
   right: -0.75em;
 }
 
@@ -80,7 +80,7 @@
   }
 
   .DocSearch-Button-Key {
-    background: var(--bg-color);
+    background: var(--vp-c-bg);
     box-shadow: none;
   }
 }

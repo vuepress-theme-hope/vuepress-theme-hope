@@ -45,7 +45,7 @@ VuePress 会使用 [Markdown It](https://github.com/markdown-it/markdown-it) 来
 
 - 主题扩展
 
-  通过 <ProjectLink name="md-enhance" path="/zh/">`vuepress-plugin-md-enhance`</ProjectLink>，主题扩展了更多 Markdown 语法，请阅读 [主题 Markdown 扩展](../markdown/README.md) 了解详情。
+  通过 VuePress 插件，主题扩展了更多 Markdown 语法，请阅读 [主题 Markdown 扩展](../markdown/README.md) 了解详情。
 
 - 自行扩展
 

@@ -8,7 +8,7 @@
     box-sizing: border-box;
     padding-bottom: 2rem;
 
-    background: var(--bg-color-back);
+    background: var(--vp-c-bg);
 
     .theme-container.has-toc & {
       @media (min-width: hope-config.$pc) {

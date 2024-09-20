@@ -29,7 +29,7 @@ title: Badge
 
 ### type
 
-- 类型: `"tip" | "warning" | "danger" | "info" | "note"`
+- 类型: `"tip" | "warning" | "danger" | "important" | "info" | "note"`
 - 默认值: `"info"`
 
 徽章的类型
@@ -37,6 +37,7 @@ title: Badge
 - <Badge text="tip" type="tip" vertical="middle" />
 - <Badge text="warning" type="warning" vertical="middle" />
 - <Badge text="danger" type="danger" vertical="middle" />
+- <Badge text="important" type="important" vertical="middle" />
 - <Badge text="info" type="info" vertical="middle" />
 - <Badge text="note" type="note" vertical="middle" />
 

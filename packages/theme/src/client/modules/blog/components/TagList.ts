@@ -24,7 +24,7 @@ export default defineComponent({
     return (): VNode =>
       h(
         "ul",
-        { class: "tag-list-wrapper" },
+        { class: "vp-tag-list" },
         entries(tagMap.value.map)
           // Sort from more to less
           .sort(([, a], [, b]) => b.items.length - a.items.length)
@@ -33,14 +33,14 @@ export default defineComponent({
               "li",
               {
                 class: [
-                  "tag",
+                  "vp-tag",
                   `color${generateIndexFromHash(tag, Number(cssVariables["colorNumber"]))}`,
                   { active: isActive(tag) },
                 ],
               },
               h(RouteLink, { to: path }, () => [
                 tag,
-                h("span", { class: "tag-num" }, items.length),
+                h("span", { class: "vp-tag-count" }, items.length),
               ]),
             ),
           ),

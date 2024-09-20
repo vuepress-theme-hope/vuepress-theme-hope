@@ -71,6 +71,5 @@ export const deATLocale: ThemeLocaleData = {
     ],
     back: "Zurück",
     home: "Zur Startseite",
-    openInNewWindow: "Open in new window",
   },
 };

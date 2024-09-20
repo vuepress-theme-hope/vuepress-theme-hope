@@ -71,6 +71,5 @@ export const zhTWLocale: ThemeLocaleData = {
     ],
     back: "返回上一頁",
     home: "帶我回家",
-    openInNewWindow: "Open in new window",
   },
 };

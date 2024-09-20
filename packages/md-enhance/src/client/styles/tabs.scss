@@ -1,24 +1,24 @@
 @use "vuepress-shared/styles/reset";
 
 :root {
-  --tab-bg-color: var(--vp-bg);
-  --tab-nav-text-color: var(--vp-c);
-  --tab-nav-bg-color: #e0e0e0;
-  --tab-nav-hover-color: #eee;
+  --tab-c-bg: var(--vp-c-bg);
+  --tab-c-nav: var(--vp-c-text);
+  --tab-c-bg-nav: #e0e0e0;
+  --tab-c-bg-nav-hover: #eee;
 }
 
-#{hope-config.$dark-selector} {
-  --tab-nav-bg-color: #34343f;
-  --tab-nav-hover-color: #2d2d38;
+[data-theme="dark"] {
+  --tab-c-bg-nav: #34343f;
+  --tab-c-bg-nav-hover: #2d2d38;
 }
 
 .vp-tabs {
   margin: 1.5rem 0;
-  border: 2px solid var(--vp-brc);
+  border: 2px solid var(--vp-c-border);
   border-radius: 8px;
 
   @media (max-width: hope-config.$mobile) {
-    #{hope-config.$content-class} > & {
+    [vp-content] > & {
       margin-inline: -1.5rem;
       border-radius: 0;
     }
@@ -32,12 +32,12 @@
   padding: 0;
   border-radius: 8px 8px 0 0;
 
-  background: var(--tab-nav-bg-color);
+  background: var(--tab-c-bg-nav);
   list-style: none;
 
   white-space: nowrap;
 
-  transition: background var(--vp-ct);
+  transition: background var(--vp-t-color);
 
   @media print {
     display: none;
@@ -59,7 +59,7 @@
   border-radius: 8px 8px 0 0;
 
   background: transparent;
-  color: var(--tab-nav-text-color);
+  color: var(--tab-c-nav);
 
   font-weight: 600;
   font-size: 0.875em;
@@ -68,11 +68,11 @@
   cursor: pointer;
 
   transition:
-    background var(--vp-ct),
-    color var(--vp-ct);
+    background var(--vp-t-color),
+    color var(--vp-t-color);
 
   &:hover {
-    background: var(--tab-nav-hover-color);
+    background: var(--tab-c-bg-nav-hover);
   }
 
   &::before,
@@ -96,13 +96,13 @@
   }
 
   &.active {
-    background: var(--tab-bg-color);
+    background: var(--tab-c-bg);
 
     &::before {
       background: radial-gradient(
         16px at left top,
         transparent 50%,
-        var(--tab-bg-color) 50%
+        var(--tab-c-bg) 50%
       );
     }
 
@@ -110,7 +110,7 @@
       background: radial-gradient(
         16px at right top,
         transparent 50%,
-        var(--tab-bg-color) 50%
+        var(--tab-c-bg) 50%
       );
     }
   }
@@ -125,8 +125,8 @@
 .vp-tab {
   display: none;
   padding: 1rem 0.75rem;
-  background: var(--tab-bg-color);
-  transition: background var(--vp-ct);
+  background: var(--tab-c-bg);
+  transition: background var(--vp-t-color);
 
   @media print {
     display: block;
@@ -145,7 +145,7 @@
 .vp-tab-title {
   display: none;
   padding: 0.25rem 0;
-  border-top: 1px solid var(--vp-brc);
+  border-top: 1px solid var(--vp-c-border);
   font-weight: 500;
 
   @media print {

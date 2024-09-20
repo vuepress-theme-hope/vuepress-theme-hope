@@ -11,7 +11,7 @@ export interface BadgeProps {
    *
    * @default "info"
    */
-  type?: string;
+  type?: "tip" | "warning" | "danger" | "info" | "important" | "note";
   /**
    * Badge text
    *
@@ -31,9 +31,16 @@ export interface BadgeProps {
   vertical?: "top" | "middle" | "baseline" | "bottom";
 
   /**
-   * Badge color
+   * Badge background color
    *
-   * 徽章颜色
+   * 徽章北境颜色
+   */
+  bgColor?: string;
+
+  /**
+   * Badge text color
+   *
+   * 徽章字体颜色
    */
   color?: string;
 }
@@ -42,14 +49,15 @@ const Badge: FunctionalComponent<
   BadgeProps,
   Record<never, never>,
   { default?: () => VNode | VNode[] | undefined }
-> = ({ type = "info", text = "", vertical, color }, { slots }) =>
+> = ({ type = "info", text = "", vertical, color, bgColor }, { slots }) =>
   h(
     "span",
     {
-      class: ["vp-badge", type, { diy: color }],
+      class: ["vp-badge", type, { diy: color || bgColor }],
       style: {
         verticalAlign: vertical ?? false,
-        backgroundColor: color ?? false,
+        backgroundColor: bgColor ?? false,
+        color: color ?? false,
       },
     },
     slots.default?.() ?? text,

@@ -83,6 +83,16 @@ export default hopeTheme(
         components: ["Badge", "VPCard"],
       },
 
+      markdownImage: {
+        figure: true,
+        lazyload: true,
+        size: true,
+      },
+
+      markdownMath: {
+        type: "katex",
+      },
+
       // All features are enabled for demo, only preserve features you need here
       mdEnhance: {
         align: true,
@@ -92,13 +102,9 @@ export default hopeTheme(
         component: true,
         demo: true,
         echarts: true,
-        figure: true,
         flowchart: true,
         gfm: true,
-        imgLazyload: true,
-        imgSize: true,
         include: true,
-        katex: true,
         kotlinPlayground: true,
         mark: true,
         markmap: true,

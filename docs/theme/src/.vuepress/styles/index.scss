@@ -1,7 +1,6 @@
 @use "vuepress-theme-hope/presets/shinning-feature-panel";
 
 :root {
-  --banner-text: #111;
   --bg-2: url("https://theme-hope-assets.vuejs.press/bg/2-light.svg");
   --bg-9: url("https://theme-hope-assets.vuejs.press/bg/9-light.svg") no-repeat
     center/cover;
@@ -11,8 +10,7 @@
     no-repeat center/cover;
 }
 
-html[data-theme="dark"] {
-  --banner-text: #eee;
+[data-theme="dark"] {
   --bg-2: url("https://theme-hope-assets.vuejs.press/bg/2-dark.svg");
   --bg-9: url("https://theme-hope-assets.vuejs.press/bg/9-dark.svg") no-repeat
     center/cover;
@@ -58,11 +56,11 @@ html[data-theme="dark"] {
 
   .font-icon {
     margin-bottom: 4px;
-    color: var(--vp-tc);
+    color: var(--vp-c-accent);
     font-size: 1.5em;
   }
 
   &:hover {
-    box-shadow: 0 2px 12px 0 var(--card-shadow);
+    box-shadow: 0 2px 12px 0 var(--vp-c-shadow);
   }
 }

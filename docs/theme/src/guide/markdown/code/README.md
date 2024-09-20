@@ -31,19 +31,19 @@ The theme provides the following features to enhance coding:
 @tab pnpm
 
 ```bash
-pnpm add -D vuepress-plugin-md-enhance
+pnpm add -D vuepress-theme-hope
 ```
 
 @tab yarn
 
 ```bash
-yarn add -D vuepress-plugin-md-enhance
+yarn add -D vuepress-theme-hope
 ```
 
 @tab:active npm
 
 ```bash
-npm i -D vuepress-plugin-md-enhance
+npm i -D vuepress-theme-hope
 ```
 
 :::

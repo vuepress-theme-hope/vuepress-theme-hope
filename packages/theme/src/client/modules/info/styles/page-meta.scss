@@ -28,12 +28,12 @@
       font-weight: 500;
 
       &:not(a) {
-        color: var(--text-color-lighter);
+        color: var(--vp-c-text);
       }
     }
 
     .vp-meta-info {
-      color: var(--grey-dark);
+      color: var(--vp-c-text-mute);
       font-weight: 400;
     }
   }

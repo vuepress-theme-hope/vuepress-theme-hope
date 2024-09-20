@@ -71,6 +71,5 @@ export const nlLocale: ThemeLocaleData = {
     ],
     back: "Ga terug",
     home: "Ga terug naar home",
-    openInNewWindow: "Open in een nieuw venster",
   },
 };
