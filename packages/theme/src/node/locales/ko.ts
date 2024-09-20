@@ -71,6 +71,5 @@ export const koLocale: ThemeLocaleData = {
     ],
     back: "뒤로가기",
     home: "메인으로",
-    openInNewWindow: "새 창에서 열기",
   },
 };

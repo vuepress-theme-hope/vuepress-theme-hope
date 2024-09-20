@@ -73,6 +73,30 @@ Controls `@vuepress/plugin-links-check` which provides markdown links check. You
 
 Check [links-check plugin docs][links-check-config] for available plugin options.
 
+## markdownHint <Badge text="enabled by default" />
+
+Controls `@vuepress/plugin-markdown-hint` which adds hint container support in markdown. You can manually set a boolean to control the plugin state, or provide plugin options.
+
+The hint containers are enabled by default, and you can set `false` to disable the plugin.
+
+Check [markdown-hint plugin docs][markdown-hint-config] for available plugin options.
+
+## markdownImage <Badge text="enabled by default" />
+
+Controls `@vuepress/plugin-markdown-image` which provides image enhancement in markdown. You can manually set a boolean to control the plugin state, or provide plugin options.
+
+Lazyload and figure feature are enabled by default, and you can set `false` to disable the plugin.
+
+Check [markdown-image plugin docs][markdown-image-config] for available plugin options.
+
+## markdownMath
+
+Controls `@vuepress/plugin-markdown-math` which provides math support in markdown. You can manually set a boolean to control the plugin state, or provide plugin options.
+
+You can set `true` to enable it, or provide plugin options.
+
+Check [markdown-math plugin docs][markdown-math-config] for available plugin options.
+
 ## nprogress <Badge text="enabled by default" />
 
 Controls `@vuepress/plugin-nprogress` which provides a progress bar through `nprogress` when switching pages .
@@ -141,6 +165,9 @@ Check [watermark plugin docs][watermark-config] for available plugin options.
 [copy-code-config]: https://ecosystem.vuejs.press/plugins/features/copy-code.html#options
 [git-config]: https://ecosystem.vuejs.press/plugins/development/git.html#options
 [links-check-config]: https://ecosystem.vuejs.press/plugins/markdown/links-check.html#options
+[markdown-hint-config]: https://ecosystem.vuejs.press/plugins/markdown/markdown-hint.html#options
+[markdown-image-config]: https://ecosystem.vuejs.press/plugins/markdown/markdown-image.html#options
+[markdown-math-config]: https://ecosystem.vuejs.press/plugins/markdown/markdown-math.html#options
 [photo-swipe-config]: https://ecosystem.vuejs.press/plugins/features/photo-swipe.html#options
 [prismjs-config]: https://ecosystem.vuejs.press/plugins/markdown/prismjs.html#options
 [pwa-config]: https://ecosystem.vuejs.press/plugins/pwa/pwa/config.html#options

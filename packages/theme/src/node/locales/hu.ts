@@ -71,6 +71,5 @@ export const huLocale: ThemeLocaleData = {
     ],
     back: "Vissza",
     home: "Kezdőlap",
-    openInNewWindow: "Megnyitás új ablakban",
   },
 };

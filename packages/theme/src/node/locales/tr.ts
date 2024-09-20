@@ -71,6 +71,5 @@ export const trLocale: ThemeLocaleData = {
     ],
     back: "Geri dön",
     home: "Ana sayfaya git",
-    openInNewWindow: "Yeni pencerede aç",
   },
 };

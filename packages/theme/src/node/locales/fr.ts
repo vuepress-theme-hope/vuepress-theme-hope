@@ -71,6 +71,5 @@ export const frLocale: ThemeLocaleData = {
     ],
     back: "Revenir",
     home: "Retour à la maison",
-    openInNewWindow: "Ouvrir une nouvelle fenêtre",
   },
 };

@@ -67,7 +67,7 @@ In about fifteen minutes, you can learn how to write Markdown, remember to come 
 
 - VuePress itself extends some Markdown syntax. For details, see [VuePress → Markdown](../cookbook/vuepress/markdown.md).
 
-- The theme additionally enables some syntax extensions via `vuepress-plugin-md-enhance`, see [Guide → Markdown](../guide/intro/markdown.md).
+- The theme additionally enables some syntax extensions via VuePress plugins, see [Guide → Markdown](../guide/intro/markdown.md).
 
 :::
 

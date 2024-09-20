@@ -71,6 +71,5 @@ export const esLocale: ThemeLocaleData = {
     ],
     back: "Regresar",
     home: "Llévame al inicio",
-    openInNewWindow: "Abrir en nueva ventana",
   },
 };

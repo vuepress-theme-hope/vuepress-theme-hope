@@ -40,7 +40,7 @@ For these extensions, please read [Markdown extensions in VuePress](https://them
 
 ### Theme Enhancement
 
-By using [`vuepress-plugin-md-enhance`][md-enhance], the theme extends more Markdown syntax and provides richer writing functions.
+By using VuePress plugins, the theme extends more Markdown syntax and provides richer writing functions.
 
 #### Code Tabs
 
@@ -321,5 +321,3 @@ end
 <iframe src="https://plugin-md-enhance-demo.vuejs.press/snippet/vue-playground.html" width="100%" height="380"/>
 
 - [View Detail](https://theme-hope.vuejs.press/guide/markdown/code/vue-playground.html)
-
-[md-enhance]: https://md-enhance.vuejs.press/

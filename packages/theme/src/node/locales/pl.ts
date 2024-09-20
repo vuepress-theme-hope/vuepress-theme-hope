@@ -71,6 +71,5 @@ export const plLocale: ThemeLocaleData = {
     ],
     back: "Wróć",
     home: "Strona główna",
-    openInNewWindow: "Otwórz w nowym oknie",
   },
 };

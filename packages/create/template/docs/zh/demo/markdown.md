@@ -40,7 +40,7 @@ VuePress 会使用 [markdown-it](https://github.com/markdown-it/markdown-it) 来
 
 ### 主题扩展
 
-通过 [`vuepress-plugin-md-enhance`][md-enhance]，主题扩展了更多 Markdown 语法，提供更加丰富的写作功能。
+通过 VuePress 插件，主题扩展了更多 Markdown 语法，提供更加丰富的写作功能。
 
 #### 选项卡
 
@@ -321,5 +321,3 @@ npm i -D vuepress-theme-hope
 <iframe src="https://plugin-md-enhance-demo.vuejs.press/snippet/revealjs.html" width="100%" height="400"/>
 
 - [查看详情](https://theme-hope.vuejs.press/zh/guide/markdown/content/revealjs.html)
-
-[md-enhance]: https://plugin-md-enhance.vuejs.press/zh/

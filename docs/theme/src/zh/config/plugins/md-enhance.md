@@ -12,19 +12,11 @@ tag:
 
 ## 介绍
 
-`vuepress-plugin-md-enhance` 插件默认启用，提供 Markdown 增强功能。
-
-`vuepress-theme-hope` 将主题选项中的 `plugins.mdEnhance` 作为插件选项传递给 `vuepress-plugin-md-enhance` 插件。
-
-::: info
-
-`vuepress-theme-hope` 会默认将 `hint` 选项设置为 `true`。
-
-有关更多详细信息，请参见 <ProjectLink name="md-enhance" path="/zh/config.html">md-enhance 文档</ProjectLink>。
-
-:::
+主题可以通过 `vuepress-plugin-md-enhance` 插件提供 Markdown 增强功能。你可以在主题选项中的 `plugins.mdEnhance` 中配置这些功能。
 
 ## 插件选项
+
+`vuepress-theme-hope` 将主题选项中的 `plugins.mdEnhance` 作为插件选项传递给 `vuepress-plugin-md-enhance` 插件。
 
 ### gfm
 

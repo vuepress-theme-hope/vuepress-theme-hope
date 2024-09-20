@@ -71,6 +71,5 @@ export const enLocale: ThemeLocaleData = {
     ],
     back: "Go back",
     home: "Take me home",
-    openInNewWindow: "Open in new window",
   },
 };

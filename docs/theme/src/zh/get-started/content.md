@@ -67,7 +67,7 @@ VuePress 是以 Markdown 为中心的。你项目中的每一个 Markdown 文件
 
 - VuePress 自身对 Markdown 语法进行了一些扩展，关于这些扩展的语法，详见 [VuePress → Markdown](../cookbook/vuepress/markdown.md)。
 
-- 主题通过 `vuepress-plugin-md-enhance` 额外启用了一些语法扩展，详见 [指南 → Markdown](../guide/intro/markdown.md)。
+- 主题通过 VuePress 插件额外启用了一些语法扩展，详见 [指南 → Markdown](../guide/intro/markdown.md)。
 
 :::
 

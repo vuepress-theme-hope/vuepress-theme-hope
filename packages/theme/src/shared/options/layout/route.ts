@@ -29,11 +29,4 @@ export interface RouteLocaleData {
    * 返回上一页
    */
   back: string;
-
-  /**
-   * Screen reader only message in `<ExternalLinkIcon>`
-   *
-   * 在 `<ExternalLinkIcon>` 中的屏幕阅读器消息
-   */
-  openInNewWindow: string;
 }

@@ -12,9 +12,7 @@ tag:
 
 ## Intro
 
-The theme can enhance Markdown syntax via `vuepress-plugin-md-enhance`, and by default, the theme will enable linkCheck and hint feature.
-
-You can set the following options with `plugins.mdEnhance` in theme options.
+The theme can enhance Markdown syntax via `vuepress-plugin-md-enhance`. You can set the following options with `plugins.mdEnhance` in theme options.
 
 ## Plugin Options
 

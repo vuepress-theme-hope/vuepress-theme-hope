@@ -71,6 +71,5 @@ export const ruLocale: ThemeLocaleData = {
     ],
     back: "Вернуться назад",
     home: "Вернуться на главную",
-    openInNewWindow: "Открыть в новом окне",
   },
 };

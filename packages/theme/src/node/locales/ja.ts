@@ -71,6 +71,5 @@ export const jaLocale: ThemeLocaleData = {
     ],
     back: "前のページへ戻る",
     home: "メインページに戻る",
-    openInNewWindow: "新しいウィンドウで開く",
   },
 };

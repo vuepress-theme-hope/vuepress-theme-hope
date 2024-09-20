@@ -58,6 +58,10 @@ The following plugins are enabled by default, and you can disable them:
 
 - [@vuepress/plugin-links-check][links-check]: check links in markdown files
 
+- [@vuepress/plugin-markdown-hint][markdown-hint]: Markdown hint containers
+
+- [@vuepress/plugin-markdown-image][markdown-image]: Markdown image enhancement
+
 - [@vuepress/plugin-nprogress][nprogress]: progress bar
 
 - [@vuepress/plugin-photo-swipe][photo-swipe]: Image preview plugin based on photo-swipe
@@ -81,6 +85,8 @@ The following plugins are bundled by theme, you can enable them via configuratio
 - [@vuepress/plugin-copyright][copyright]: Append copyright information when copying or disable copy and selection.
 
 - [@vuepress/plugin-comment][comment]: Provides comment and pageview function
+
+- [@vuepress/plugin-markdown-math][markdown-math]: Formula support
 
 - [@vuepress/plugin-notice][notice]: Provides notice
 
@@ -117,6 +123,9 @@ These plugins are supported by theme, but you need to install them manually whil
 [feed]: https://ecosystem.vuejs.press/plugins/blog/feed/
 [git]: https://ecosystem.vuejs.press/plugins/development/git.html
 [links-check]: https://ecosystem.vuejs.press/plugins/markdown/links-check.html
+[markdown-hint]: https://ecosystem.vuejs.press/plugins/markdown/markdown-hint.html
+[markdown-image]: https://ecosystem.vuejs.press/plugins/markdown/markdown-image.html
+[markdown-math]: https://ecosystem.vuejs.press/plugins/markdown/markdown-math.html
 [notice]: https://ecosystem.vuejs.press/plugins/features/notice.html
 [nprogress]: https://ecosystem.vuejs.press/plugins/features/nprogress.html
 [photo-swipe]: https://ecosystem.vuejs.press/plugins/features/photo-swipe.html
