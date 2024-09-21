@@ -84,7 +84,6 @@ defineCatalogInfoGetter((meta) => {
   return app.writeTemp(
     `theme-hope/config.js`,
     `\
-import { defineClientConfig } from "vuepress/client";
 import { HopeIcon, Layout, NotFound, injectDarkmode, setupDarkmode, setupSidebarItems, scrollPromise } from "${BUNDLE_FOLDER}export.js";
 
 ${imports.join("\n")}
@@ -123,6 +122,7 @@ ${setups.map((item) => `    ${item}`).join("\n")}
     NotFound,
 ${layouts.map((item) => `    ${item},`).join("\n")}
   }
-});`,
+};
+`,
   );
 };

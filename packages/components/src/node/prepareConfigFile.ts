@@ -53,7 +53,6 @@ if(!hasGlobalComponent("${item}")) app.component("${item}", ${item});
   return app.writeTemp(
     `components/config.js`,
     `\
-import { defineClientConfig } from "vuepress/client";
 import { hasGlobalComponent } from "${getRealPath(
       "@vuepress/helper/client",
       url,
@@ -83,7 +82,7 @@ ${imports.join("\n")}
 
 import "${CLIENT_FOLDER}styles/sr-only.scss";
 
-export default defineClientConfig({
+export default {
   enhance: ({ app }) => {
 ${enhance
   .split("\n")
@@ -96,7 +95,7 @@ ${setups.map((item) => `    ${item}`).join("\n")}
   rootComponents: [
 ${configRootComponents.map((item) => `    ${item}`).join("\n")}
   ],
-});
+};
 `,
   );
 };

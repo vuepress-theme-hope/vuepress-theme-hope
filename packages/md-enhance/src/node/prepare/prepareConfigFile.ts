@@ -183,17 +183,16 @@ app.component(
   return app.writeTemp(
     `md-enhance/config.js`,
     `\
-import { defineClientConfig } from "vuepress/client";
 ${Array.from(imports.values()).join("\n")}
 
-export default defineClientConfig({
+export default {
   enhance: ({ app }) => {
 ${Array.from(enhances.values())
   .map((item) => item.split("\n").map((line) => `    ${line}`))
   .flat()
   .join("\n")}
   },
-});
+};
 `,
   );
 };

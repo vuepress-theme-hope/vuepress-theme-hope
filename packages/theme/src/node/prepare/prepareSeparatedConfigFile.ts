@@ -82,9 +82,6 @@ defineCatalogInfoGetter((meta) => {
   return app.writeTemp(
     `theme-hope/config.js`,
     `\
-import { defineClientConfig } from "vuepress/client";
-
-
 import { HopeIcon, Layout, NotFound, injectDarkmode, setupDarkmode, setupSidebarItems, scrollPromise } from "${CLIENT_FOLDER}export.js";
 
 ${imports.join("\n")}
@@ -95,7 +92,7 @@ import "${CLIENT_FOLDER}styles/index.scss";
 
 ${actions.join("\n")}
 
-export default defineClientConfig({
+export default {
   enhance: ({ app, router }) => {
     const { scrollBehavior } = router.options;
 
@@ -123,6 +120,7 @@ ${setups.map((item) => `    ${item}`).join("\n")}
     NotFound,
 ${layouts.map((item) => `    ${item},`).join("\n")}
   }
-});`,
+};
+`,
   );
 };
