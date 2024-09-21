@@ -37,40 +37,48 @@ export default defineComponent({
     );
 
     return (): VNode =>
-      h(RouteLink, { to: siteBrandLink.value, class: "vp-brand" }, () => [
-        siteBrandLogo.value
-          ? h("img", {
-              class: [
-                "vp-nav-logo",
-                { light: Boolean(siteBrandLogoDark.value) },
-              ],
-              src: siteBrandLogo.value,
-              alt: "",
-            })
-          : null,
-        siteBrandLogoDark.value
-          ? h("img", {
-              class: ["vp-nav-logo dark"],
-              src: siteBrandLogoDark.value,
-              alt: "",
-            })
-          : null,
-        siteBrandTitle.value
-          ? h(
-              "span",
-              {
+      h(
+        RouteLink,
+        {
+          to: siteBrandLink.value,
+          class: "vp-brand",
+          "aria-label": themeLocale.value.routeLocales.home,
+        },
+        () => [
+          siteBrandLogo.value
+            ? h("img", {
                 class: [
-                  "vp-site-name",
-                  {
-                    "hide-in-pad":
-                      siteBrandLogo.value &&
-                      (themeLocale.value.hideSiteNameOnMobile ?? true),
-                  },
+                  "vp-nav-logo",
+                  { light: Boolean(siteBrandLogoDark.value) },
                 ],
-              },
-              siteBrandTitle.value,
-            )
-          : null,
-      ]);
+                src: siteBrandLogo.value,
+                alt: "",
+              })
+            : null,
+          siteBrandLogoDark.value
+            ? h("img", {
+                class: ["vp-nav-logo dark"],
+                src: siteBrandLogoDark.value,
+                alt: "",
+              })
+            : null,
+          siteBrandTitle.value
+            ? h(
+                "span",
+                {
+                  class: [
+                    "vp-site-name",
+                    {
+                      "hide-in-pad":
+                        siteBrandLogo.value &&
+                        (themeLocale.value.hideSiteNameOnMobile ?? true),
+                    },
+                  ],
+                },
+                siteBrandTitle.value,
+              )
+            : null,
+        ],
+      );
   },
 });
