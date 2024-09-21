@@ -75,6 +75,7 @@ Theme by <a href="https://theme-hope.vuejs.press" target="_blank">VuePress Theme
       }
     },
 
+    shouldPrefetch: false,
     shouldPreload: false,
 
     clientConfigFile: path.resolve(__dirname, "./client.js"),

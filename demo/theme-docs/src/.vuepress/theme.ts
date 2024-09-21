@@ -89,9 +89,7 @@ export default hopeTheme(
         size: true,
       },
 
-      markdownMath: {
-        type: "katex",
-      },
+      markdownMath: true,
 
       // All features are enabled for demo, only preserve features you need here
       mdEnhance: {

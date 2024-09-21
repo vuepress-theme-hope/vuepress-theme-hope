@@ -132,11 +132,10 @@ export default theme(
         figure: true,
         lazyload: true,
         mark: true,
+        size: true,
       },
 
-      markdownMath: {
-        type: "mathjax",
-      },
+      markdownMath: true,
 
       mdEnhance: {
         align: true,
