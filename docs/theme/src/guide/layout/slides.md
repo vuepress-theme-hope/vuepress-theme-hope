@@ -37,6 +37,4 @@ layout: SlidePage
 
 - [A demo containing all slide features][revealjs-demo].
 
-You can customize the layout name via `plugins.revealjs.layout` or set it to `false to disable the layout.
-
 [revealjs-demo]: https://ecosystem.vuejs.press/plugins/markdown/revealjs/demo.html

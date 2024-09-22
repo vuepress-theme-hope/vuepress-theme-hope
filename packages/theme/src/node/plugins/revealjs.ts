@@ -19,7 +19,7 @@ try {
  * Resolve options for @vuepress/plugin-revealjs
  */
 export const getRevealJsPlugin = (
-  options?: RevealJsPluginOptions | boolean,
+  options?: Omit<RevealJsPluginOptions, "layout"> | boolean,
 ): Plugin | null => {
   if (options === false) return null;
 
@@ -31,5 +31,7 @@ export const getRevealJsPlugin = (
     return null;
   }
 
-  return revealJsPlugin(isPlainObject(options) ? options : {});
+  return revealJsPlugin(
+    isPlainObject(options) ? { ...options, layout: "SlidePage" } : {},
+  );
 };

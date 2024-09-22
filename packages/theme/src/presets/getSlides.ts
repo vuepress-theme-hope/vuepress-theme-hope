@@ -39,7 +39,8 @@ export const getSlides = ({
   ({
     key: "slides",
 
-    filter: ({ frontmatter }: Page): boolean => frontmatter.layout === "Slide",
+    filter: ({ frontmatter }: Page): boolean =>
+      frontmatter.layout === "SlidePage",
 
     sorter: (
       pageA: Page<

@@ -111,7 +111,7 @@ tag:
 
 1. 增加了一种幻灯片页面。
 
-   所有幻灯片页面都应在 frontmatter 中包含 `layout: Slide`。 并且顺序无关紧要。
+   所有幻灯片页面都应在 frontmatter 中包含 `layout: SlidePage`。 并且顺序无关紧要。
 
 1. 添加原创类型。
 

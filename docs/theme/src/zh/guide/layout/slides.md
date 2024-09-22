@@ -41,6 +41,4 @@ layout: SlidePage
 
 - [包含了所有幻灯片功能的页面][revealjs-demo].
 
-你可以通过 `plugins.revealjs.layout` 来自定义布局名称，或者将其设置为 `false` 来禁用布局。
-
 [revealjs-demo]: https://ecosystem.vuejs.press/zh/plugins/markdown/revealjs/demo.html

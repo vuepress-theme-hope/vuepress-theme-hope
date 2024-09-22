@@ -102,7 +102,7 @@ To get start with, we would like to show you some examples.
 
 1. Adding a type of slide pages.
 
-   All slide pages should have `layout: Slide` in frontmatter. And the sequence doesn't matter.
+   All slide pages should have `layout: SlidePage` in frontmatter. And the sequence doesn't matter.
 
 1. Adding an original type.
 

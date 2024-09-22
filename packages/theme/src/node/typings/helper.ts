@@ -19,6 +19,7 @@ import type { PrismjsPluginOptions } from "@vuepress/plugin-prismjs";
 import type { PwaPluginOptions } from "@vuepress/plugin-pwa";
 import type { ReadingTimePluginOptions } from "@vuepress/plugin-reading-time";
 import type { RedirectPluginOptions } from "@vuepress/plugin-redirect";
+import type { RevealJsPluginOptions } from "@vuepress/plugin-revealjs";
 import type { SeoPluginOptions } from "@vuepress/plugin-seo";
 import type { ShikiPluginOptions } from "@vuepress/plugin-shiki";
 import type { SitemapPluginOptions } from "@vuepress/plugin-sitemap";
@@ -109,6 +110,10 @@ export type ThemeReadingTimePluginHelper = Helper<
 >;
 
 export type ThemeRedirectPluginHelper = Helper<RedirectPluginOptions | boolean>;
+
+export type ThemeRevealPluginHelper = Helper<
+  Omit<RevealJsPluginOptions, "layout"> | boolean
+>;
 
 export type ThemeSEOPluginHelper = Helper<
   Omit<SeoPluginOptions, "hostname" | "author"> | boolean

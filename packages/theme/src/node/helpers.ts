@@ -21,6 +21,7 @@ import type {
   ThemePwaPluginHelper,
   ThemeReadingTimePluginHelper,
   ThemeRedirectPluginHelper,
+  ThemeRevealPluginHelper,
   ThemeSEOPluginHelper,
   ThemeShikiPluginHelper,
   ThemeSidebarArrayHelper,
@@ -63,6 +64,7 @@ export const prismjs: ThemePrismJsPluginHelper = (options) => options;
 export const pwa: ThemePwaPluginHelper = (options) => options;
 export const readingTime: ThemeReadingTimePluginHelper = (options) => options;
 export const redirect: ThemeRedirectPluginHelper = (options) => options;
+export const revealjs: ThemeRevealPluginHelper = (options) => options;
 export const seo: ThemeSEOPluginHelper = (options) => options;
 export const shiki: ThemeShikiPluginHelper = (options) => options;
 export const sitemap: ThemeSitemapPluginHelper = (options) => options;
