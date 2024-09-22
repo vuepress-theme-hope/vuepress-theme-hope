@@ -56,7 +56,7 @@ export const getFeedPlugin = (
       ),
     channel: {
       ...(favicon ? { icon: favicon } : {}),
-      ...(themeData.locales["/"].logo
+      ...(themeData.locales["/"]?.logo
         ? { image: themeData.locales["/"].logo }
         : {}),
       ...(globalAuthor.length ? { author: globalAuthor[0] } : {}),
