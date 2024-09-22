@@ -1,8 +1,7 @@
-import { decodeData } from "@vuepress/helper/client";
+import { LoadingIcon, decodeData, wait } from "@vuepress/helper/client";
 import { useEventListener, useToggle } from "@vueuse/core";
 import type { PropType, SlotsType, VNode } from "vue";
 import { computed, defineComponent, h, onMounted, ref, shallowRef } from "vue";
-import { LoadingIcon } from "vuepress-shared/client";
 
 import { CODEPEN_SVG, JSFIDDLE_SVG } from "./icons.js";
 import type { CodeDemoOptions } from "../../shared/index.js";
@@ -154,10 +153,9 @@ export default defineComponent({
       toggleIsExpand(true);
     });
 
-    onMounted(() => {
-      setTimeout(() => {
-        void loadDemo();
-      }, MARKDOWN_ENHANCE_DELAY);
+    onMounted(async () => {
+      await wait(MARKDOWN_ENHANCE_DELAY);
+      await loadDemo();
     });
 
     return (): VNode =>

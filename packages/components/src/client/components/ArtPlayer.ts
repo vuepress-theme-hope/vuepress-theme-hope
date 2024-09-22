@@ -1,11 +1,10 @@
 /* eslint-disable vue/no-unused-properties */
-import { keys } from "@vuepress/helper/client";
+import { LoadingIcon, keys } from "@vuepress/helper/client";
 import type Artplayer from "artplayer";
 import type { Option as ArtPlayerInitOptions } from "artplayer/types/option.js";
 import type { PropType, VNode } from "vue";
 import { camelize, defineComponent, h, onMounted, onUnmounted, ref } from "vue";
 import { usePageLang } from "vuepress/client";
-import { LoadingIcon } from "vuepress-shared/client";
 
 import type { ArtPlayerOptions } from "../../shared/index.js";
 import { useSize } from "../composables/index.js";

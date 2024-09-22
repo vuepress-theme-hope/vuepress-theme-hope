@@ -100,7 +100,7 @@ export const prepareConfigFile = async (
     imports.add(`import { defineAsyncComponent } from "vue";`);
     imports.add(
       `import { LoadingIcon } from "${getRealPath(
-        "vuepress-shared/client",
+        "@vuepress/helper/client",
         url,
       )}";`,
     );

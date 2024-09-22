@@ -1,4 +1,9 @@
-import { decodeData, isFunction } from "@vuepress/helper/client";
+import {
+  LoadingIcon,
+  decodeData,
+  isFunction,
+  wait,
+} from "@vuepress/helper/client";
 import { useMutationObserver } from "@vueuse/core";
 import type { VNode } from "vue";
 import {
@@ -10,7 +15,6 @@ import {
   shallowRef,
   watch,
 } from "vue";
-import { LoadingIcon } from "vuepress-shared/client";
 
 import { useMermaidOptions } from "../helpers/index.js";
 import type { MermaidThemeVariables } from "../typings/index.js";
@@ -119,10 +123,7 @@ export default defineComponent({
         ),
         loaded
           ? Promise.resolve()
-          : ((loaded = true),
-            new Promise((resolve) =>
-              setTimeout(resolve, MARKDOWN_ENHANCE_DELAY),
-            )),
+          : ((loaded = true), wait(MARKDOWN_ENHANCE_DELAY)),
       ]);
 
       mermaid.initialize({
