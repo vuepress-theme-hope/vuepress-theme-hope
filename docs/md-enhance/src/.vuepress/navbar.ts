@@ -27,17 +27,6 @@ export const enNavbar = navbar([
   },
   "/config",
   "/demo",
-  {
-    text: version,
-    icon: "bookmark",
-    children: [
-      "/migration",
-      {
-        text: "V1 Docs",
-        link: "https://vuepress-theme-hope.github.io/v1/md-enhance/",
-      },
-    ],
-  },
 ]);
 
 export const zhNavbar = navbar([

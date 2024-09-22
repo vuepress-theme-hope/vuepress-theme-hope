@@ -14,22 +14,7 @@ const { version } = fs.readJsonSync(
 export default theme("components", {
   locales: {
     "/": {
-      navbar: [
-        "/",
-        "/guide/",
-        "/config",
-        "/demo",
-        {
-          text: version,
-          icon: "bookmark",
-          children: [
-            {
-              text: "V1 Docs",
-              link: "https://vuepress-theme-hope.github.io/v1/components/",
-            },
-          ],
-        },
-      ],
+      navbar: ["/", "/guide/", "/config", "/demo"],
 
       sidebar: [
         "/",
@@ -106,10 +91,16 @@ export default theme("components", {
       },
     },
 
+    markdownImage: {
+      mark: true,
+    },
+
+    markdownTab: {
+      codeTabs: true,
+    },
+
     mdEnhance: {
-      codetabs: true,
       demo: true,
-      imgMark: true,
       include: true,
     },
   },

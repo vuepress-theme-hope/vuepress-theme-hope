@@ -59,16 +59,6 @@ highlights:
         details: 将你的文档分段，并在 Markdown 中导入
         link: ./guide/content/include.html
 
-      - title: 幻灯片
-        icon: person-chalkboard
-        details: 通过 Reveal.js 在 Markdown 中插入幻灯片
-        link: ./guide/content/revealjs/
-
-      - title: 选项卡
-        icon: table-columns
-        details: 使用选项卡对相似内容进行分组
-        link: ./guide/content/tabs.html
-
       - title: 组件
         icon: puzzle-piece
         details: 在 Markdown 中快速插入组件
@@ -147,11 +137,6 @@ highlights:
     bgImage: https://theme-hope-assets.vuejs.press/bg/4-light.svg
     bgImageDark: https://theme-hope-assets.vuejs.press/bg/4-dark.svg
     highlights:
-      - title: 代码选项卡
-        icon: code
-        details: 使用选项卡对相似代码进行分组
-        link: ./guide/code/code-tabs.html
-
       - title: 代码案例
         icon: laptop-code
         details: 你可以很方便的插入代码案例

@@ -17,9 +17,12 @@ export default theme("shared", {
   },
 
   plugins: {
-    mdEnhance: {
-      codetabs: true,
-      imgMark: true,
+    markdownImage: {
+      mark: true,
+    },
+
+    markdownTab: {
+      codeTabs: true,
     },
   },
 });

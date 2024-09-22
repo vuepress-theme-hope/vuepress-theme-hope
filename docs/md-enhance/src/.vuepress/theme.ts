@@ -27,13 +27,17 @@ export default theme("md-enhance", {
     markdownImage: {
       figure: true,
       lazyload: true,
+      mark: true,
+    },
+
+    markdownTab: {
+      codeTabs: true,
     },
 
     mdEnhance: {
       align: true,
       attrs: true,
       chart: true,
-      codetabs: true,
       component: true,
       demo: true,
       echarts: true,
@@ -58,23 +62,6 @@ export default theme("md-enhance", {
       playground: {
         presets: ["ts", "vue", "unocss"],
       },
-      revealJs: {
-        plugins: ["highlight", "math", "search", "notes", "zoom"],
-        themes: [
-          "auto",
-          "beige",
-          "black",
-          "blood",
-          "league",
-          "moon",
-          "night",
-          "serif",
-          "simple",
-          "sky",
-          "solarized",
-          "white",
-        ],
-      },
       sandpack: true,
       spoiler: true,
       stylize: [
@@ -98,7 +85,6 @@ export default theme("md-enhance", {
       ],
       sub: true,
       sup: true,
-      tabs: true,
       tasklist: true,
       vPre: true,
       vuePlayground: true,

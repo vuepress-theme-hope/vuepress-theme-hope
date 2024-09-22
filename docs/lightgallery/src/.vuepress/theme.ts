@@ -17,9 +17,12 @@ export default theme("lightgallery", {
   },
 
   plugins: {
-    mdEnhance: {
-      codetabs: true,
-      imgMark: true,
+    markdownImage: {
+      mark: true,
+    },
+
+    markdownTab: {
+      codeTabs: true,
     },
 
     photoSwipe: false,

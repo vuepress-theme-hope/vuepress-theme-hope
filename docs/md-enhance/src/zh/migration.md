@@ -9,10 +9,6 @@ icon: code-compare
 
 ## 新功能
 
-- 图像标记支持
-
-  通过 `imgMark` 选项使用 `#light` 和 `#dark` 后缀标记图像以在日间模式或夜间模式下显示它们。
-
 - `v-pre` 支持
 
   VuePress 2 删除了以下容器支持，因此添加了 `vPre` 选项
@@ -95,10 +91,6 @@ icon: code-compare
 
   - `<!-- @include: filename#region -->`
 
-- 选项卡支持
-
-  新增 `tabs` 选项通过 `tabs` 容器创建选项卡。
-
 - MarkMap 支持
 
   新增 `markmap` 选项通过 `markmap` 容器创建 [Markmap](https://markmap.js.org/)。
@@ -115,23 +107,9 @@ icon: code-compare
 
   通过 `@vue/repl` 提供 Vue 交互演示
 
-- Mathjax 支持
-
-  通过 `mathjax` 选项提供 [Mathjax](https://www.mathjax.org/) 支持
-
-- GFM 警告
-
-  通过 `alert` 选项新增 GFM 警告支持
-
 ## 变更
 
 - 现在所有选项均默认不开启
-
-- 重命名 `container` 为 `hint`
-
-  为了对齐 GFM， danger 容器重命名为 caution， 同时新增 important 和 note 容器
-
-- 重命名 `codegroup` 为 `codetabs`
 
 - 代码演示语法变更
 
@@ -179,56 +157,6 @@ icon: code-compare
   :::
   ```
 
-- 代码组语法变更
-
-  旧语法:
-
-  ````md
-  :::: code-group
-
-  ::: code-group-item pnpm
-
-  ```bash
-  pnpm create vuepress-theme-hope [dir]
-  ```
-
-  :::
-
-  ::: code-group-item npm:active
-
-  ```bash
-  npm init vuepress-theme-hope@latest [dir]
-  ```
-
-  :::
-
-  ::::
-  ````
-
-  新语法:
-
-  ````md
-  ::: code-tabs
-
-  @tab pnpm
-
-  ```bash
-  pnpm create vuepress-theme-hope [dir]
-  ```
-
-  @tab:active npm
-
-  ```bash
-  npm init vuepress-theme-hope@latest [dir]
-  ```
-
-  :::
-  ````
-
-- `presentation` 被重构为 `reveal.js`
-
-  支持主题的 Tree-shaking，并通过[客户端配置文件][client-config]自定义 Reveal.js
-
 ## 移除的选项
 
 - `enableAll` 被移除
@@ -243,26 +171,52 @@ icon: code-compare
 
   Mr.Hope 已经做了一个 PR 来修复 Markdown 中损坏的图片链接
 
+- `alert` 被移除
+
+  请用 `@vuepress/plugin-markdown-hint` 代替
+
+- `container`, `hint` 被移除
+
+  请用 `@vuepress/plugin-markdown-hint` 代替
+
+- `imageLazyload`, `lazyload` `imgLazyload` 被移除
+
+  请用 `@vuepress/plugin-markdown-image` 代替
+
+- `imageTitle`, `figure` 被移除
+
+  请用 `@vuepress/plugin-markdown-image` 代替
+
+- `imageMark`, `imgMark` 被移除
+
+  请用 `@vuepress/plugin-markdown-image` 代替
+
+- `imgSize`, `imageSize` 被移除
+
+  请用 `@vuepress/plugin-markdown-image` 代替
+
+- `tex`, `katex`, `mathjax` 被移除
+
+  请用 `@vuepress/plugin-markdown-math` 代替
+
+- `codegroup`, `codetabs` 被移除
+
+  请用 `@vuepress/plugin-markdown-tab` 代替
+
+- `tabs` 被移除
+
+  请用 `@vuepress/plugin-markdown-tab` 代替
+
+- `presentation` `revealJs` `revealjs` 被移除
+
+  请用 `@vuepress/plugin-revealjs` 代替
+
 ## 预发布版本中的选项调整
-
-- `container` 被重命名为 `hint`
-
-- `lazyload` 和 `imageLazyload` 被重命名为 `imgLazyload`
-
-- `imageMark` 被重命名为 `imgMark`
 
 - `mdImport` 被重命名为 `include`
 
-- `tex` (使用 katex) 被重命名为 `katex`
-
 - `vpre` 选项被重命名为 `vPre`
-
-- `imageTitle` 被重命名为 `figure`
-
-- `revealjs` 被重命名为 `revealJS`
 
 - `card` 由 `components` 替代
 
-- `mermaid` `revealJs` `vuePlayground` 等选项不再接受相关库的配置
-
-[client-config]: https://vuejs.press/zh/guide/configuration.html#%E5%AE%A2%E6%88%B7%E7%AB%AF%E9%85%8D%E7%BD%AE%E6%96%87%E4%BB%B6
+- `mermaid` `vuePlayground` 等选项不再接受相关库的配置

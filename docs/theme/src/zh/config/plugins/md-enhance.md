@@ -60,24 +60,6 @@ tag:
 
 是否将文字中的链接格式文字转换为链接
 
-### tabs
-
-- 类型: `boolean`
-- 默认值: `false`
-- 详情:
-  - [选项卡](../../guide/markdown/content/tabs.md)
-
-是否启用选项卡。
-
-### codetabs
-
-- 类型: `boolean`
-- 默认值: `false`
-- 详情:
-  - [代码组](../../guide/markdown/code/code-tabs.md)
-
-是否启用代码组。
-
 ### align
 
 - 类型: `boolean`
@@ -526,48 +508,3 @@ CodePen 编辑器显示情况，第一位代表 HTML ，第二位代表 JS，第
 ##### demo.reactDOM
 
 默认值: `"https://unpkg.com/react-dom/umd/react-dom.production.min.js"`
-
-### revealJs
-
-- 类型: `RevealJsOptions | boolean`
-
-  ```ts
-  type RevealJsPlugin = "highlight" | "math" | "search" | "notes" | "zoom";
-
-  type RevealJsTheme =
-    | "auto"
-    | "beige"
-    | "black"
-    | "blood"
-    | "league"
-    | "moon"
-    | "night"
-    | "serif"
-    | "simple"
-    | "sky"
-    | "solarized"
-    | "white";
-
-  /**
-   * reveal.js 选项
-   */
-  interface RevealJsOptions {
-    /**
-     * reveal.js 插件
-     *
-     * @default []
-     */
-    plugins?: RevealJsPlugin[];
-
-    /**
-     * reveal.js 主题
-     *
-     * @default ["auto"]
-     */
-    themes?: RevealJsTheme[];
-  }
-  ```
-
-- 默认值: `false`
-
-是否启用幻灯片支持。你可以传递选项控制导入的插件和主题。

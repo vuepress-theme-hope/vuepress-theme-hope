@@ -9,10 +9,6 @@ You can pass the second argument `true` to enable legacy mode when calling `mdEn
 
 ## New Features
 
-- image mark support
-
-  Use `#light` and `#dark` suffix to mark images to display them in light mode or dark mode via `imgMark` option.
-
 - `v-pre` support
 
   The following container support is removed, so `vPre` option is added
@@ -95,10 +91,6 @@ You can pass the second argument `true` to enable legacy mode when calling `mdEn
 
   - `<!-- @include: filename#region -->`
 
-- tabs support
-
-  Use `tabs` container to create tabs via `tabs` option.
-
 - markmap support
 
   Add `markmap` container to create [Markmap](https://markmap.js.org/) via `markmap` option.
@@ -115,23 +107,9 @@ You can pass the second argument `true` to enable legacy mode when calling `mdEn
 
   Provide Vue playground via `@vue/repl`
 
-- Mathjax Support
-
-  Add `mathjax` option to enable Mathjax support
-
-- GFM Alerts
-
-  Support GFM alerts via `alert` option
-
 ## Changed
 
 - Now all options are disabled by default
-
-- renamed `container` to `hint`
-
-  To align with GFM, `danger` container is renamed to `caution`, also important and note containers are added
-
-- renamed `codegroup` to `codetabs`
 
 - Code demo syntax changed
 
@@ -179,56 +157,6 @@ You can pass the second argument `true` to enable legacy mode when calling `mdEn
   :::
   ```
 
-- Code Group changed to code tab
-
-  Before:
-
-  ````md
-  :::: code-group
-
-  ::: code-group-item pnpm
-
-  ```bash
-  pnpm create vuepress-theme-hope [dir]
-  ```
-
-  :::
-
-  ::: code-group-item npm:active
-
-  ```bash
-  npm init vuepress-theme-hope@latest [dir]
-  ```
-
-  :::
-
-  ::::
-  ````
-
-  After:
-
-  ````md
-  ::: code-tabs
-
-  @tab pnpm
-
-  ```bash
-  pnpm create vuepress-theme-hope [dir]
-  ```
-
-  @tab:active npm
-
-  ```bash
-  npm init vuepress-theme-hope@latest [dir]
-  ```
-
-  :::
-  ````
-
-- `presentation` is rebuilt to `reveal.js`
-
-  Support theme tree-shaking, and you can customize Reveal.js via [client config file][client-config].
-
 ## Removed Options
 
 - `enableAll` removed
@@ -243,26 +171,52 @@ You can pass the second argument `true` to enable legacy mode when calling `mdEn
 
   Mr.Hope already made a PR to fix broken image links in Markdown, so it's no longer needed
 
+- `alert` removed
+
+  Please use `@vuepress/plugin-markdown-hint` instead
+
+- `container`, `hint` removed
+
+  Please use `@vuepress/plugin-markdown-hint` instead
+
+- `imageLazyload`, `lazyload` `imgLazyload` removed
+
+  Please use `@vuepress/plugin-markdown-image` instead
+
+- `imageTitle`, `figure` removed
+
+  Please use `@vuepress/plugin-markdown-image` instead
+
+- `imageMark`, `imgMark` removed
+
+  Please use `@vuepress/plugin-markdown-image` instead
+
+- `imgSize`, `imageSize` removed
+
+  Please use `@vuepress/plugin-markdown-image` instead
+
+- `tex`, `katex`, `mathjax` removed
+
+  Please use `@vuepress/plugin-markdown-math` instead
+
+- `codegroup`, `codetabs` removed
+
+  Please use `@vuepress/plugin-markdown-tab` instead
+
+- `tabs` removed
+
+  Please use `@vuepress/plugin-markdown-tab` instead
+
+- `presentation` `revealJs` `revealjs` removed
+
+  Please use `@vuepress/plugin-revealjs` instead
+
 ## Options Adjustments in Pre-release Version
-
-- `container` is renamed to `hint`
-
-- `lazyload` and `imageLazyload` are renamed to `imgLazyload`
-
-- `imageMark` is renamed to `imgMark`
 
 - `mdImport` is renamed to `include`
 
-- `tex` (Using katex) is renamed to `katex`
-
 - `vpre` is renamed to `vPre`
-
-- `imageTitle` is renamed to `figure`
-
-- `revealjs` is renamed to `revealJS`
 
 - `card` is replaced by `components`
 
-- `mermaid` `revealJs` `vuePlayground` no longer accept lib options
-
-[client-config]: https://vuejs.press/guide/configuration.html#client-config-file
+- `mermaid` `vuePlayground` no longer accept lib options

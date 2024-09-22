@@ -91,12 +91,13 @@ export default hopeTheme(
 
       markdownMath: true,
 
+      markdownTab: true,
+
       // All features are enabled for demo, only preserve features you need here
       mdEnhance: {
         align: true,
         attrs: true,
         chart: true,
-        codetabs: true,
         component: true,
         demo: true,
         echarts: true,
@@ -109,9 +110,6 @@ export default hopeTheme(
         mermaid: true,
         playground: {
           presets: ["ts", "vue", "unocss"],
-        },
-        revealJs: {
-          plugins: ["highlight", "math", "search", "notes", "zoom"],
         },
         sandpack: true,
         spoiler: true,
@@ -136,7 +134,6 @@ export default hopeTheme(
         ],
         sub: true,
         sup: true,
-        tabs: true,
         tasklist: true,
         vPre: true,
         vuePlayground: true,
@@ -197,6 +194,10 @@ export default hopeTheme(
             },
           ],
         },
+      },
+
+      revealjs: {
+        plugins: ["highlight", "math", "search", "notes", "zoom"],
       },
 
       seo:

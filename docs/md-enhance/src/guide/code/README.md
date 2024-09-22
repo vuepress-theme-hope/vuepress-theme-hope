@@ -11,7 +11,6 @@ index: false
 
 This plugin provides the following features to enhance coding:
 
-- Code Tabs: Add tabs to your code block.
 - Code Demo: Display and run code snippets in browser.
 - Playground: Embed external playground site.
 - Kotlin Playground: Reactive kotlin playground.
@@ -24,32 +23,6 @@ This plugin provides the following features to enhance coding:
 ## Demo
 
 <!-- #region demo -->
-
-### Code Tabs
-
-::: code-tabs#shell
-
-@tab pnpm
-
-```bash
-pnpm add -D vuepress-plugin-md-enhance
-```
-
-@tab yarn
-
-```bash
-yarn add -D vuepress-plugin-md-enhance
-```
-
-@tab:active npm
-
-```bash
-npm i -D vuepress-plugin-md-enhance
-```
-
-:::
-
-- [View Detail](./code-tabs.md)
 
 ### Code Demo
 

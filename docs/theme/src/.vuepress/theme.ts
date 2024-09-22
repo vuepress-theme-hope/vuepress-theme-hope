@@ -137,11 +137,12 @@ export default theme(
 
       markdownMath: true,
 
+      markdownTab: true,
+
       mdEnhance: {
         align: true,
         attrs: true,
         chart: true,
-        codetabs: true,
         component: true,
         demo: true,
         echarts: true,
@@ -180,23 +181,6 @@ export default theme(
         playground: {
           presets: ["ts", "vue", "unocss"],
         },
-        revealJs: {
-          plugins: ["highlight", "math", "search", "notes", "zoom"],
-          themes: [
-            "auto",
-            "beige",
-            "black",
-            "blood",
-            "league",
-            "moon",
-            "night",
-            "serif",
-            "simple",
-            "sky",
-            "solarized",
-            "white",
-          ],
-        },
         sandpack: true,
         spoiler: true,
         stylize: [
@@ -220,10 +204,27 @@ export default theme(
         ],
         sub: true,
         sup: true,
-        tabs: true,
         tasklist: true,
         vPre: true,
         vuePlayground: true,
+      },
+
+      revealjs: {
+        plugins: ["highlight", "math", "search", "notes", "zoom"],
+        themes: [
+          "auto",
+          "beige",
+          "black",
+          "blood",
+          "league",
+          "moon",
+          "night",
+          "serif",
+          "simple",
+          "sky",
+          "solarized",
+          "white",
+        ],
       },
 
       shiki: {
