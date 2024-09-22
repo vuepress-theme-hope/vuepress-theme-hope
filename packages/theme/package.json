@@ -114,7 +114,7 @@
     "@vuepress/plugin-prismjs": "2.0.0-rc.47",
     "@vuepress/plugin-pwa": "2.0.0-rc.47",
     "@vuepress/plugin-redirect": "2.0.0-rc.47",
-    "@vuepress/plugin-revealjs": "2.0.0-rc.47",
+    "@vuepress/plugin-revealjs": "2.0.0-rc.48",
     "@vuepress/plugin-search": "2.0.0-rc.47",
     "nodejs-jieba": "^0.1.2",
     "sass": "^1.79.3",
