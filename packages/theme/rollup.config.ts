@@ -29,7 +29,6 @@ export default [
         "@vuepress/plugin-reading-time/client",
         "@vuepress/plugin-theme-data/client",
         "bcrypt-ts/browser",
-        "vuepress-plugin-md-enhance/SlidePage",
       ],
       dts: false,
       moduleSideEffects: (id) =>
