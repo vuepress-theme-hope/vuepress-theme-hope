@@ -31,19 +31,19 @@ tag:
 
 可以在 Markdown 中使用的可用组件为:
 
-- `"ArtPlayer"`
-- `"Badge"`
-- `"BiliBili"`
-- `"CodePen"`
-- `"FontIcon"`
-- `"PDF"`
-- `"Share"`
-- `"StackBlitz"`
-- `"VPBanner"`
-- `"VPCard"`
-- `"VidStack"`
-- `"SiteInfo"`
-- `"XiGua"`
+- ArtPlayer: 由 ArtPlayer 驱动的视频播放器。
+- Badge: 多彩的徽章组件
+- BiliBili: 嵌入 BiliBili 视频
+- CodePen: 嵌入 CodePen 演示
+- FontIcon: 字体图标组件。
+- PDF: 嵌入 PDF 查看器
+- Share: 通过社交媒体分享当前页面
+- StackBlitz: 嵌入 StackBlitz 演示
+- SiteInfo: 显示站点
+- VPBanner: 一个横幅组件
+- VPCard: 一个卡片组件
+- VidStack: 由 VidStack 驱动的音频/视频播放器
+- XiGua: 嵌入 XiGua 视频
 
 你可以将 `plugins.components.components` 设置为需要的组件数组，默认情况下为 `["Badge"]`。
 
@@ -91,9 +91,17 @@ tag:
 
 控制 `@vuepress/plugin-markdown-math`，提供 Markdown 中的数学支持。你可以手动设置一个布尔值控制插件状态，或提供插件选项。
 
-你可以设置 `true` 启用它，或者提供插件选项。
+设置为 `true` 意味着使用默认配置的 Katex。
 
 插件选项请参阅 [markdown-math 插件文档][markdown-math-config]。
+
+## markdownTab
+
+控制 `@vuepress/plugin-markdown-tab`，提供 Markdown 中的数学支持。你可以手动设置一个布尔值控制插件状态，或提供插件选项。
+
+设置 `true` 意味着启用两个功能。
+
+插件选项请参阅 [markdown-tab 插件文档][markdown-tab-config]。
 
 ## nprogress <Badge text="默认启用" />
 
@@ -127,6 +135,12 @@ tag:
 
 插件选项请参阅 [reading-time 插件文档][reading-time-config]。
 
+## revealjs
+
+控制 `@vuepress/plugin-revealjs`，提供幻灯片功能。
+
+插件选项请参阅 [revealjs 插件文档][revealjs-config]。
+
 ## seo <Badge text="默认启用" />
 
 控制 `@vuepress/plugin-seo`，提供搜索引擎增强。默认情况选无需额外配置。如果你不需要此功能可设置为 `false`。
@@ -153,10 +167,12 @@ tag:
 [markdown-hint-config]: https://ecosystem.vuejs.press/zh/plugins/markdown/markdown-hint.html#options
 [markdown-image-config]: https://ecosystem.vuejs.press/zh/plugins/markdown/markdown-image.html#options
 [markdown-math-config]: https://ecosystem.vuejs.press/zh/plugins/markdown/markdown-math.html#options
+[markdown-tab-config]: https://ecosystem.vuejs.press/zh/plugins/markdown/markdown-tab.html#options
 [photo-swipe-config]: https://ecosystem.vuejs.press/zh/plugins/features/photo-swipe.html#options
 [prismjs-config]: https://ecosystem.vuejs.press/zh/plugins/markdown/prismjs.html#options
 [pwa-config]: https://ecosystem.vuejs.press/zh/plugins/pwa/pwa/config.html#options
 [reading-time-config]: https://ecosystem.vuejs.press/zh/plugins/development/reading-time.html#options
+[revealjs-config]: https://ecosystem.vuejs.press/zh/plugins/markdown/revealjs/#options
 [seo-config]: https://ecosystem.vuejs.press/zh/plugins/seo/seo/config.html
 [sitemap-config]: https://ecosystem.vuejs.press/zh/plugins/seo/sitemap/config.html
 [watermark-config]: https://ecosystem.vuejs.press/zh/plugins/features/watermark.html

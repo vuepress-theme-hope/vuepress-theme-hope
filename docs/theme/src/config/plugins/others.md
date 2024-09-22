@@ -31,19 +31,19 @@ Controls `vuepress-plugin-components`, providing a set of components for Markdow
 
 Available component which can be used in markdown files are:
 
-- `"ArtPlayer"`
-- `"Badge"`
-- `"BiliBili"`
-- `"CodePen"`
-- `"FontIcon"`
-- `"PDF"`
-- `"Share"`
-- `"StackBlitz"`
-- `"VPBanner"`
-- `"VPCard"`
-- `"VidStack"`
-- `"SiteInfo"`
-- `"XiGua"`
+- ArtPlayer: A video player powered by ArtPlayer
+- Badge: Colorful badge component
+- BiliBili: Embedded BiliBili video
+- CodePen: Embedded CodePen demo
+- FontIcon: Font icon component
+- PDF: Embedded PDF viewer
+- Share: Sharing current page with social medias
+- StackBlitz: Embedded StackBlitz demo
+- SiteInfo: Display sites
+- VPBanner: A banner component
+- VPCard: A card component
+- VidStack: Audio/Video player powered by VidStack
+- XiGua: Embedded XiGua video
 
 You can set `plugins.components.components` with an array of components you want, by default it will be `["Badge"]`.
 
@@ -93,9 +93,17 @@ Check [markdown-image plugin docs][markdown-image-config] for available plugin o
 
 Controls `@vuepress/plugin-markdown-math` which provides math support in markdown. You can manually set a boolean to control the plugin state, or provide plugin options.
 
-You can set `true` to enable it, or provide plugin options.
+Setting `true` means using katex with defaults.
 
 Check [markdown-math plugin docs][markdown-math-config] for available plugin options.
+
+## markdownTab
+
+Controls `@vuepress/plugin-markdown-tab` which provides code tabs and tabs in markdown. You can manually set a boolean to control the plugin state, or provide plugin options.
+
+Setting to `true` means enabling both features.
+
+Check [markdown-tab plugin docs][markdown-tab-config] for available plugin options.
 
 ## nprogress <Badge text="enabled by default" />
 
@@ -138,6 +146,14 @@ Reading speed (words per minute)
 
 Check [reading-time plugin docs][reading-time-config] for available plugin options.
 
+## revealjs
+
+Controls `@vuepress/plugin-revealjs` which provides presentation support.
+
+You can set `true` to directly enable it, or provide plugin options.
+
+Check [revealjs plugin docs][revealjs-config] for available plugin options.
+
 ## seo <Badge text="enabled by default" />
 
 Controls `@vuepress/plugin-seo` which provides search engine enhancements.
@@ -168,10 +184,12 @@ Check [watermark plugin docs][watermark-config] for available plugin options.
 [markdown-hint-config]: https://ecosystem.vuejs.press/plugins/markdown/markdown-hint.html#options
 [markdown-image-config]: https://ecosystem.vuejs.press/plugins/markdown/markdown-image.html#options
 [markdown-math-config]: https://ecosystem.vuejs.press/plugins/markdown/markdown-math.html#options
+[markdown-tab-config]: https://ecosystem.vuejs.press/plugins/markdown/markdown-tab.html#options
 [photo-swipe-config]: https://ecosystem.vuejs.press/plugins/features/photo-swipe.html#options
 [prismjs-config]: https://ecosystem.vuejs.press/plugins/markdown/prismjs.html#options
 [pwa-config]: https://ecosystem.vuejs.press/plugins/pwa/pwa/config.html#options
 [reading-time-config]: https://ecosystem.vuejs.press/plugins/development/reading-time.html#options
+[revealjs-config]: https://ecosystem.vuejs.press/plugins/markdown/revealjs/#options
 [seo-config]: https://ecosystem.vuejs.press/plugins/seo/seo/config.html
 [sitemap-config]: https://ecosystem.vuejs.press/plugins/seo/sitemap/config.html
 [watermark-config]: https://ecosystem.vuejs.press/plugins/features/watermark.html
