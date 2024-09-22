@@ -9,7 +9,7 @@ import { isPlainObject } from "vuepress/shared";
  * Resolve options for @vuepress/plugin-markdown-hint
  */
 export const getMarkdownHintPlugin = (
-  options?: Partial<MarkdownHintPluginOptions> | boolean,
+  options?: MarkdownHintPluginOptions | boolean,
 ): Plugin | null =>
   options === false
     ? null

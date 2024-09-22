@@ -1,9 +1,8 @@
-import { isArray, isPlainObject } from "@vuepress/helper";
+import { isPlainObject } from "@vuepress/helper";
 import { colors } from "vuepress/utils";
 import { createConverter } from "vuepress-shared/node";
 
 import type { MarkdownEnhancePluginOptions } from "../options.js";
-import type { RevealJsPlugin } from "../typings/index.js";
 import { logger } from "../utils.js";
 
 /** @deprecated */
@@ -14,39 +13,15 @@ export const convertOptions = (
 
   deprecatedLogger({
     options,
-    old: "container",
-    new: "hint",
-  });
-  deprecatedLogger({
-    options,
-    old: "codegroup",
-    new: "codetabs",
-  });
-  deprecatedLogger({
-    options,
     old: "mdImport",
     new: "include",
-  });
-  deprecatedLogger({
-    options,
-    old: "tex",
-    new: "katex",
   });
   deprecatedLogger({
     options,
     old: "vpre",
     new: "vPre",
   });
-  deprecatedLogger({
-    options,
-    old: "imageTitle",
-    new: "figure",
-  });
-  deprecatedLogger({
-    options,
-    old: "revealjs",
-    new: "revealJs",
-  });
+
   droppedLogger({
     options,
     old: "enableAll",
@@ -54,13 +29,19 @@ export const convertOptions = (
   });
   droppedLogger({
     options,
+    old: "imageFix",
+    msg: "This option is no longer needed.",
+  });
+
+  droppedLogger({
+    options,
     old: "lineNumbers",
-    msg: "Please use the built-in lineNumbers option of vuepress instead!",
+    msg: "Please use the lineNumbers option in @vuepress/plugin-prismjs or @vuepress/plugin-shiki !",
   });
   droppedLogger({
     options,
-    old: "imageFix",
-    msg: "This option is no longer needed.",
+    old: "container",
+    msg: "Please use @vuepress/plugin-markdown-hint instead.",
   });
   droppedLogger({
     options,
@@ -71,6 +52,11 @@ export const convertOptions = (
     options,
     old: "hint",
     msg: "Please use @vuepress/plugin-markdown-hint instead.",
+  });
+  droppedLogger({
+    options,
+    old: "imageTitle",
+    msg: "Please use @vuepress/plugin-markdown-image instead.",
   });
   droppedLogger({
     options,
@@ -127,6 +113,51 @@ export const convertOptions = (
     old: "checkLinks",
     msg: "Please use @vuepress/plugin-links-check instead.",
   });
+  droppedLogger({
+    options,
+    old: "tex",
+    msg: "Please use @vuepress/plugin-markdown-math instead.",
+  });
+  droppedLogger({
+    options,
+    old: "katex",
+    msg: "Please use @vuepress/plugin-markdown-math instead.",
+  });
+  droppedLogger({
+    options,
+    old: "mathjax",
+    msg: "Please use @vuepress/plugin-markdown-math instead.",
+  });
+  droppedLogger({
+    options,
+    old: "revealjs",
+    msg: "Please use @vuepress/plugin-revealjs instead.",
+  });
+  droppedLogger({
+    options,
+    old: "revealJs",
+    msg: "Please use @vuepress/plugin-revealjs instead.",
+  });
+  droppedLogger({
+    options,
+    old: "presentation",
+    msg: "Please use @vuepress/plugin-revealjs instead.",
+  });
+  droppedLogger({
+    options,
+    old: "codetabs",
+    msg: "Please use @vuepress/plugin-markdown-tab instead.",
+  });
+  droppedLogger({
+    options,
+    old: "codegroup",
+    msg: "Please use @vuepress/plugin-markdown-tab instead.",
+  });
+  droppedLogger({
+    options,
+    old: "tabs",
+    msg: "Please use @vuepress/plugin-markdown-tab instead.",
+  });
 
   if (options["card"])
     logger.error(
@@ -144,41 +175,6 @@ export const convertOptions = (
       )} from ${colors.magenta("vuepress-plugin-md-enhance/client")} instead.`,
     );
     options.mermaid = true;
-  }
-
-  if (options["presentation"]) {
-    logger.error(
-      `${colors.magenta(
-        "presentation",
-      )} is no longer supported, please use ${colors.magenta(
-        "revealJs",
-      )} instead.`,
-    );
-
-    if (isPlainObject(options["presentation"])) {
-      if ("plugins" in options["presentation"])
-        options.revealJs = {
-          plugins: options["presentation"]["plugins"] as RevealJsPlugin[],
-        };
-      else options.revealJs = true;
-
-      if ("revealConfig" in options["presentation"])
-        logger.error(
-          `Customizing revealJs with option ${colors.magenta(
-            "presentation.revealConfig",
-          )} is no longer supported, please import and use ${colors.magenta(
-            "defineRevealJsConfig",
-          )} from ${colors.magenta(
-            "vuepress-plugin-md-enhance/client",
-          )} instead.`,
-        );
-    } else if (isArray(options["presentation"])) {
-      options.revealJs = {
-        plugins: options["presentation"] as RevealJsPlugin[],
-      };
-    }
-
-    delete options["presentation"];
   }
 
   if (isPlainObject(options.vuePlayground)) {

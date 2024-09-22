@@ -11,7 +11,6 @@ index: false
 
 此插件提供以下功能来增强代码编写。
 
-- 代码选项卡：为代码块添加选项卡。
 - 代码演示：在浏览器中显示和运行代码片段。
 - 交互演示：嵌入外部演示站点。
 - Kotlin 交互演示：响应式 Kotlin 演示。
@@ -24,32 +23,6 @@ index: false
 ## 案例
 
 <!-- #region demo -->
-
-### 代码选项卡
-
-::: code-tabs#shell
-
-@tab pnpm
-
-```bash
-pnpm add -D vuepress-plugin-md-enhance
-```
-
-@tab yarn
-
-```bash
-yarn add -D vuepress-plugin-md-enhance
-```
-
-@tab:active npm
-
-```bash
-npm i -D vuepress-plugin-md-enhance
-```
-
-:::
-
-- [查看详情](./code-tabs.md)
 
 ### 代码演示
 

@@ -1,4 +1,4 @@
-import { useLocaleConfig } from "@vuepress/helper/client";
+import { useLocaleConfig, wait } from "@vuepress/helper/client";
 import { useDebounceFn, useEventListener } from "@vueuse/core";
 import type { Chart } from "flowchart.ts";
 import type { VNode } from "vue";
@@ -60,7 +60,7 @@ export default defineComponent({
 
       void Promise.all([
         import("flowchart.ts"),
-        new Promise((resolve) => setTimeout(resolve, MARKDOWN_ENHANCE_DELAY)),
+        wait(MARKDOWN_ENHANCE_DELAY),
       ]).then(([{ parse }]) => {
         parseAction = parse;
         try {

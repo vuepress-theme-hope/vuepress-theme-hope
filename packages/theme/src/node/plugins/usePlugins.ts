@@ -24,24 +24,9 @@ export const usePlugins = (
   behavior: HopeThemeBehaviorOptions,
 ): void => {
   // Respect git options
-  if ("git" in plugins)
-    useGitPlugin(
-      app,
-      plugins.git === true
-        ? {
-            createdTime: true,
-            contributors: true,
-            updatedTime: true,
-          }
-        : plugins.git,
-    );
+  if ("git" in plugins) useGitPlugin(app, plugins.git);
   // Only use git plugin in production or debug mode
-  else if (hotReload || app.env.isBuild)
-    useGitPlugin(app, {
-      createdTime: true,
-      contributors: true,
-      updatedTime: true,
-    });
+  else if (hotReload || app.env.isBuild) useGitPlugin(app, true);
 
   if (plugins.readingTime !== false)
     useReadingTimePlugin(

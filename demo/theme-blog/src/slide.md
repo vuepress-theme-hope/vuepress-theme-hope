@@ -1,7 +1,7 @@
 ---
 title: Slide page
 icon: person-chalkboard
-layout: Slide
+layout: SlidePage
 ---
 
 <!-- markdownlint-disable MD024 MD051 -->

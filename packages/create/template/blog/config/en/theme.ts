@@ -113,11 +113,13 @@ export default hopeTheme({
     //   type: "mathjax",
     // },
 
+    // This features is enabled for demo, only preserve if you need it
+    markdownTab: true,
+
     // These features are enabled for demo, only preserve features you need here
     mdEnhance: {
       align: true,
       attrs: true,
-      codetabs: true,
       component: true,
       demo: true,
       include: true,
@@ -139,7 +141,6 @@ export default hopeTheme({
       ],
       sub: true,
       sup: true,
-      tabs: true,
       tasklist: true,
       vPre: true,
 
@@ -162,11 +163,6 @@ export default hopeTheme({
 
       // playground: {
       //   presets: ["ts", "vue"],
-      // },
-
-      // install reveal.js before enabling it
-      // revealJs: {
-      //   plugins: ["highlight", "math", "search", "notes", "zoom"],
       // },
 
       // install @vue/repl before enabling it
@@ -231,6 +227,11 @@ export default hopeTheme({
     //       },
     //     ],
     //   },
+    // },
+
+    // install @vuepress/plugin-revealjs and uncomment these if you need slides
+    // revealjs: {
+    //   plugins: ["highlight", "math", "search", "notes", "zoom"],
     // },
   },
 });

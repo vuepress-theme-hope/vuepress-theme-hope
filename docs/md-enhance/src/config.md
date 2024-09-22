@@ -27,24 +27,6 @@ Some of the behavior might be different, for example to support Vue syntax, we a
 
 :::
 
-### tabs
-
-- Type: `boolean`
-- Default: `false`
-- Details:
-  - [Tabs](./guide/content/tabs.md)
-
-Whether to enable tabs.
-
-### codetabs
-
-- Type: `boolean`
-- Default: `false`
-- Details:
-  - [Code Tabs](./guide/code/code-tabs.md)
-
-Whether to enable codetabs.
-
 ### align
 
 - Type: `boolean`
@@ -526,53 +508,6 @@ Default value: `"https://unpkg.com/react/umd/react.production.min.js"`
 
 Default value: `"https://unpkg.com/react-dom/umd/react-dom.production.min.js"`
 
-### revealJs
-
-- Type: `RevealJsOptions | boolean`
-
-  ```ts
-  type RevealJsPlugin = "highlight" | "math" | "search" | "notes" | "zoom";
-
-  type RevealJsTheme =
-    | "auto"
-    | "beige"
-    | "black"
-    | "blood"
-    | "league"
-    | "moon"
-    | "night"
-    | "serif"
-    | "simple"
-    | "sky"
-    | "solarized"
-    | "white";
-
-  /**
-   * reveal.js options
-   */
-  interface RevealJsOptions {
-    /**
-     * reveal.js plugins
-     *
-     * @default []
-     */
-    plugins?: RevealJsPlugin[];
-
-    /**
-     * reveal.js themes
-     *
-     * @default ["auto"]
-     */
-    themes?: RevealJsTheme[];
-  }
-  ```
-
-- Default: `false`
-- Details:
-  - [Reveal.js](./guide/content/revealjs/README.md)
-
-Whether to enable slides support. You can pass an option to control plugins and themes to import.
-
 ### sandpack
 
 - Type: `boolean`
@@ -647,14 +582,6 @@ const defineMermaidConfig: (options: MermaidConfig) => void;
 ```
 
 Define config which you want to pass to mermaid.
-
-### defineRevealJsConfig
-
-```ts
-const defineRevealJsConfig: (options: RevealOptions) => void;
-```
-
-Define config which you want to pass to reveal.js.
 
 ### defineKotlinPlaygroundConfig
 

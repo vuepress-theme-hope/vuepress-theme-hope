@@ -229,7 +229,7 @@ Donate Mr.Hope a cup of coffee. _Recommended_
 
 #### Reveal.js
 
-<iframe src="https://plugin-md-enhance-demo.vuejs.press/snippet/revealjs.html" width="100%" height="400"/>
+<iframe src="https://ecosystem.vuejs.press/plugins/markdown/revealjs/demo.html" width="100%" height="420"/>
 
 - [View Detail](https://theme-hope.vuejs.press/guide/markdown/content/revealjs.html)
 

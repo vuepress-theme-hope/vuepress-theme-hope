@@ -7,7 +7,6 @@ export interface ThemeStatus {
   enableBlog: boolean;
   enableCatalog: boolean;
   enableEncrypt: boolean;
-  enableSlide: boolean;
   enableReadingTime: boolean;
   blogType: { key: string; path: string | false }[];
   hasMultipleLanguages: boolean;
@@ -28,7 +27,6 @@ export const getThemeStatus = (
     enableEncrypt:
       isPlainObject(themeOptions.encrypt) &&
       ("admin" in themeOptions.encrypt || "config" in themeOptions.encrypt),
-    enableSlide: Boolean(plugins.mdEnhance && plugins.mdEnhance.revealJs),
     enableReadingTime: plugins.readingTime !== false,
     blogType: isPlainObject(plugins.blog)
       ? (plugins.blog?.type

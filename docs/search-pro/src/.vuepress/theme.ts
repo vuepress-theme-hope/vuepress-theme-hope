@@ -18,10 +18,15 @@ export default theme("search-pro", {
   plugins: {
     // @ts-expect-error: Force disable docsearch
     docsearch: false,
-    mdEnhance: {
-      codetabs: true,
-      imgMark: true,
+
+    markdownImage: {
+      mark: true,
     },
+
+    markdownTab: {
+      codeTabs: true,
+    },
+
     searchPro: {
       searchDelay: 800,
       suggestDelay: 300,

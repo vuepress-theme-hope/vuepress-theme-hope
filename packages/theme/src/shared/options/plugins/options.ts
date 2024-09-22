@@ -10,6 +10,7 @@ import type { LinksCheckPluginOptions } from "@vuepress/plugin-links-check";
 import type { MarkdownHintPluginOptions } from "@vuepress/plugin-markdown-hint";
 import type { MarkdownImagePluginOptions } from "@vuepress/plugin-markdown-image";
 import type { MarkdownMathPluginOptions } from "@vuepress/plugin-markdown-math";
+import type { MarkdownTabPluginOptions } from "@vuepress/plugin-markdown-tab";
 import type {
   NoticeOptions,
   NoticePluginOptions,
@@ -19,6 +20,7 @@ import type { PrismjsPluginOptions } from "@vuepress/plugin-prismjs";
 import type { PwaPluginOptions } from "@vuepress/plugin-pwa";
 import type { ReadingTimePluginOptions } from "@vuepress/plugin-reading-time";
 import type { RedirectPluginOptions } from "@vuepress/plugin-redirect";
+import type { RevealJsPluginOptions } from "@vuepress/plugin-revealjs";
 import type { SearchPluginOptions } from "@vuepress/plugin-search";
 import type { SeoPluginOptions } from "@vuepress/plugin-seo";
 import type { ShikiPluginOptions } from "@vuepress/plugin-shiki";
@@ -221,6 +223,17 @@ export interface PluginsOptions {
   markdownMath?: MarkdownMathPluginOptions | boolean;
 
   /**
+   * Options for @vuepress/markdown-tab
+   *
+   * @see https://ecosystem.vuejs.press/plugins/markdown/markdown-tab.html
+   *
+   * @vuepress/markdown-tab 插件配置
+   *
+   * @see https://ecosystem.vuejs.press/zh/plugins/markdown/markdown-tab.html
+   */
+  markdownTab?: MarkdownTabPluginOptions | boolean;
+
+  /**
    * md-enhance plugin options
    *
    * @see https://plugin-md-enhance.vuejs.press/config/
@@ -313,6 +326,17 @@ export interface PluginsOptions {
    * @see https://ecosystem.vuejs.press/zh/plugins/tools/redirect.html
    */
   redirect?: RedirectPluginOptions | boolean;
+
+  /**
+   * Redirect options
+   *
+   * @see https://ecosystem.vuejs.press/plugins/markdown/revealjs/
+   *
+   * 重定向插件配置
+   *
+   * @see https://ecosystem.vuejs.press/zh/plugins/markdown/revealjs/
+   */
+  revealjs?: RevealJsPluginOptions | boolean;
 
   /**
    * @vuepress/search plugin options

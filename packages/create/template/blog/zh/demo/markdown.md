@@ -318,6 +318,6 @@ npm i -D vuepress-theme-hope
 
 #### 幻灯片
 
-<iframe src="https://plugin-md-enhance-demo.vuejs.press/snippet/revealjs.html" width="100%" height="400"/>
+<iframe src="https://ecosystem.vuejs.press/zh/plugins/markdown/revealjs/demo.html" width="100%" height="420"/>
 
 - [查看详情](https://theme-hope.vuejs.press/zh/guide/markdown/content/revealjs.html)

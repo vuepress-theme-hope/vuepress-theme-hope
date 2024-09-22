@@ -1,5 +1,5 @@
 import type { Repl, ReplProps, Store } from "@vue/repl";
-import { deepAssign } from "@vuepress/helper/client";
+import { LoadingIcon, deepAssign } from "@vuepress/helper/client";
 import type { Component, VNode } from "vue";
 import {
   computed,
@@ -10,7 +10,6 @@ import {
   shallowRef,
   version,
 } from "vue";
-import { LoadingIcon } from "vuepress-shared/client";
 
 import { useVuePlaygroundConfig } from "../helpers/index.js";
 import type { VuePlaygroundOptions } from "../typings/index.js";

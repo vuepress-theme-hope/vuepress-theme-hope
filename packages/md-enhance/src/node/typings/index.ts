@@ -8,6 +8,5 @@ export type IncludeOptions = Omit<MarkdownItIncludeOptions, "currentPath">;
 export type StylizeOptions = MarkdownItStylizeConfig[];
 
 export * from "./playground.js";
-export * from "./revealjs.js";
 export * from "./sandpack.js";
 export * from "./vuePlayground.js";

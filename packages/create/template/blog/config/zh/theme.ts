@@ -116,11 +116,13 @@ export default hopeTheme({
     //   type: "mathjax",
     // },
 
+    // 此功能被开启用于演示，你应仅当使用时保留。
+    markdownTab: true,
+
     // 此处开启了很多功能用于演示，你应仅保留用到的功能。
     mdEnhance: {
       align: true,
       attrs: true,
-      codetabs: true,
       component: true,
       demo: true,
       include: true,
@@ -142,7 +144,6 @@ export default hopeTheme({
       ],
       sub: true,
       sup: true,
-      tabs: true,
       tasklist: true,
       vPre: true,
 
@@ -165,11 +166,6 @@ export default hopeTheme({
 
       // playground: {
       //   presets: ["ts", "vue"],
-      // },
-
-      // 在启用之前安装 reveal.js
-      // revealJs: {
-      //   plugins: ["highlight", "math", "search", "notes", "zoom"],
       // },
 
       // 在启用之前安装 @vue/repl
@@ -234,6 +230,11 @@ export default hopeTheme({
     //       },
     //     ],
     //   },
+    // },
+
+    // 如果你需要幻灯片，安装 @vuepress/plugin-revealjs 并取消下方注释
+    // revealjs: {
+    //   plugins: ["highlight", "math", "search", "notes", "zoom"],
     // },
   },
 });

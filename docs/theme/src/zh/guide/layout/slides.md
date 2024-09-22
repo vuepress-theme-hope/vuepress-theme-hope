@@ -11,30 +11,34 @@ tag:
 
 `vuepress-theme-hope` 允许你添加幻灯片页面。
 
-你需要在相应的页面的 frontmatter 中，设置 `layout: Slide` 来开启幻灯片风格。
-
-- <ProjectLink name="md-enhance" path="/zh/guide/content/revealjs/demo.html">一个展示了所有幻灯片功能的案例</ProjectLink>.
-
 <!-- more -->
 
-## 注意事项
+::: tip
 
-::: warning 启用功能
+想要使用此功能，你应该先启用[幻灯片功能](../markdown/content/revealjs.md)。
+
+:::
 
 你应该在主题选项中通过设置 `plugins.mdEnhance.revealjs` 在 `vuepress-plugin-md-enhance` 中启用幻灯片功能，否则幻灯片无法被正确渲染。
 
 :::
 
-::: warning 不含多个幻灯片
+为渲染幻灯片页面，你应该在相应页面的 frontmatter 中设置 `layout: SlidePage`。
 
-该页面只能拥有一个幻灯片语法。多个幻灯片可能会引发渲染问题。
+在使用此布局的页面中，你应该只包含单个幻灯片语法，不包含其他内容，以避免渲染问题:
 
 ```md
-@slidestart [your theme]
+---
+layout: SlidePage
+---
 
-// your slides
+@slidestart
+
+<!-- 此处是幻灯片内容 -->
 
 @slideend
 ```
 
-:::
+- [包含了所有幻灯片功能的页面][revealjs-demo].
+
+[revealjs-demo]: https://ecosystem.vuejs.press/zh/plugins/markdown/revealjs/demo.html

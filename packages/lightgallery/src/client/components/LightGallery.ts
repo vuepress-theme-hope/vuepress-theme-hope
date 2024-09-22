@@ -1,3 +1,4 @@
+import { wait } from "@vuepress/helper/client";
 import type { GalleryItem } from "lightgallery/lg-utils.js";
 import lightGallery from "lightgallery/lightgallery.es5.js";
 import type { LightGallery } from "lightgallery/lightgallery.js";
@@ -51,10 +52,7 @@ export default defineComponent({
 
       const [lightGalleryPlugins] = await Promise.all([
         useLightGalleryPlugins(),
-        nextTick().then(
-          () =>
-            new Promise<void>((resolve) => setTimeout(resolve, __LG_DELAY__)),
-        ),
+        nextTick().then(() => wait(__LG_DELAY__)),
       ]);
 
       if (timeID === id) {

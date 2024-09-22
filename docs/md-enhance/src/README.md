@@ -62,16 +62,6 @@ highlights:
         details: split your docs with different parts and import them in Markdown
         link: ./guide/content/include.html
 
-      - title: Presentation Support
-        icon: person-chalkboard
-        details: Insert presentation in Markdown files via Reveal.js
-        link: ./guide/content/revealjs/
-
-      - title: Tabs
-        icon: table-columns
-        details: Group similar content with tabs and switch them together
-        link: ./guide/content/tabs.html
-
       - title: Component Support
         icon: puzzle-piece
         details: Easily insert components in Markdown
@@ -150,11 +140,6 @@ highlights:
     bgImage: https://theme-hope-assets.vuejs.press/bg/4-light.svg
     bgImageDark: https://theme-hope-assets.vuejs.press/bg/4-dark.svg
     highlights:
-      - title: Code Tabs
-        icon: code
-        details: Group similar codes with tabs
-        link: ./guide/code/code-tabs.html
-
       - title: Code Demo Support
         icon: laptop-code
         details: You can insert code demo easily

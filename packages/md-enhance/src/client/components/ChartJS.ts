@@ -1,4 +1,4 @@
-import { decodeData } from "@vuepress/helper/client";
+import { LoadingIcon, decodeData, wait } from "@vuepress/helper/client";
 import { useMutationObserver } from "@vueuse/core";
 import type { Chart, ChartConfiguration } from "chart.js";
 import type { PropType, VNode } from "vue";
@@ -11,7 +11,6 @@ import {
   shallowRef,
   watch,
 } from "vue";
-import { LoadingIcon } from "vuepress-shared/client";
 
 import { getDarkmodeStatus } from "../utils/index.js";
 
@@ -103,10 +102,7 @@ export default defineComponent({
         import(/* webpackChunkName: "chart" */ "chart.js/auto"),
         loaded
           ? Promise.resolve()
-          : ((loaded = true),
-            new Promise((resolve) =>
-              setTimeout(resolve, MARKDOWN_ENHANCE_DELAY),
-            )),
+          : ((loaded = true), wait(MARKDOWN_ENHANCE_DELAY)),
       ]);
 
       Chart.defaults.borderColor = isDarkmode ? "#ccc" : "#36A2EB";

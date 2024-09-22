@@ -26,7 +26,7 @@ export const injectBlogBasicInfo = (
     frontmatter.article ??
     // Generated from markdown files and not homepage
     (!frontmatter.home && Boolean(page.filePathRelative));
-  const isSlide = frontmatter.layout === "Slide";
+  const isSlide = frontmatter.layout === "SlidePage";
 
   // Save page type to routeMeta
   page.routeMeta[ArticleInfo.type] = frontmatter.home

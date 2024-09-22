@@ -60,24 +60,6 @@ Whether convert `\n` in paragraphs into `<br>`s
 
 Whether convert URL-like text into links
 
-### tabs
-
-- Type: `boolean`
-- Default: `false`
-- Details:
-  - [Tabs](../../guide/markdown/content/tabs.md)
-
-Whether to enable tabs.
-
-### codetabs
-
-- Type: `boolean`
-- Default: `false`
-- Details:
-  - [Code Tabs](../../guide/markdown/code/code-tabs.md)
-
-Whether to enable codetabs.
-
 ### align
 
 - Type: `boolean`
@@ -468,56 +450,5 @@ External JS libraries for CodePen, JsFiddle only.
 ::: warning
 
 The above two options are only used by third-party code demo service, you need to import these libraries in `head` to get it work..
-
-:::
-
-### revealJs
-
-- Type: `RevealJsOptions | boolean`
-
-  ```ts
-  type RevealJsPlugin = "highlight" | "math" | "search" | "notes" | "zoom";
-
-  type RevealJsTheme =
-    | "auto"
-    | "beige"
-    | "black"
-    | "blood"
-    | "league"
-    | "moon"
-    | "night"
-    | "serif"
-    | "simple"
-    | "sky"
-    | "solarized"
-    | "white";
-
-  /**
-   * reveal.js options
-   */
-  interface RevealJsOptions {
-    /**
-     * reveal.js plugins
-     *
-     * @default []
-     */
-    plugins?: RevealJsPlugin[];
-
-    /**
-     * reveal.js themes
-     *
-     * @default ["auto"]
-     */
-    themes?: RevealJsTheme[];
-  }
-  ```
-
-- Default: `false`
-
-Whether to enable slides support. You can pass an option to control plugins and themes to import.
-
-::: info
-
-Check <ProjectLink name="md-enhance" path="/config.html">md-enhance plugin documentation</ProjectLink> for all available options.
 
 :::

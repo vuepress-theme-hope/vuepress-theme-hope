@@ -20,7 +20,7 @@ export const enSidebar = sidebar({
     {
       text: "Slides",
       icon: "person-chalkboard",
-      link: "https://plugin-md-enhance.vuejs.press/guide/content/revealjs/demo.html",
+      link: "https://ecosystem.vuejs.press/plugins/markdown/revealjs/demo.html",
     },
   ],
 });

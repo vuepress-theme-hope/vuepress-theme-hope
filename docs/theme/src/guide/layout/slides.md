@@ -11,30 +11,30 @@ tag:
 
 `vuepress-theme-hope` allows you to add slides pages.
 
-You need to set `layout: Slide` in the frontmatter of the corresponding page to enable the slides page.
-
-- <ProjectLink name="md-enhance" path="/guide/content/revealjs/demo.html">A demo containing all slide features</ProjectLink>.
-
 <!-- more -->
 
-## Attention
+::: tip
 
-::: warning Enable presentation
-
-You should enable presentation feature in `vuepress-plugin-md-enhance` by setting `plugins.mdEnhance.revealjs` in theme options, otherwise the layout won't be rendered correctly.
+To use this feature, you should enable [presentation feature](../markdown/content/revealjs.md) first.
 
 :::
 
-::: warning No multiple slides
+To render a slide page, set `layout: SlidePage` in the frontmatter of the corresponding page.
 
-You should only include a single slide syntax on this page to avoid rendering problems.
+In these pages, you should only include a single slide syntax and no other contents to avoid rendering problems.
 
 ```md
-@slidestart [your theme]
+---
+layout: SlidePage
+---
 
-// your slides
+@slidestart
+
+<!-- slide content here -->
 
 @slideend
 ```
 
-:::
+- [A demo containing all slide features][revealjs-demo].
+
+[revealjs-demo]: https://ecosystem.vuejs.press/plugins/markdown/revealjs/demo.html

@@ -1,4 +1,4 @@
-import { decodeData } from "@vuepress/helper/client";
+import { LoadingIcon, decodeData, wait } from "@vuepress/helper/client";
 import { useDebounceFn, useEventListener } from "@vueuse/core";
 import type { Markmap } from "markmap-view";
 import type { VNode } from "vue";
@@ -10,7 +10,6 @@ import {
   ref,
   shallowRef,
 } from "vue";
-import { LoadingIcon } from "vuepress-shared/client";
 
 import "../styles/markmap.scss";
 
@@ -54,8 +53,7 @@ export default defineComponent({
         import(/* webpackChunkName: "markmap" */ "markmap-lib"),
         import(/* webpackChunkName: "markmap" */ "markmap-toolbar"),
         import(/* webpackChunkName: "markmap" */ "markmap-view"),
-        // Delay
-        new Promise((resolve) => setTimeout(resolve, MARKDOWN_ENHANCE_DELAY)),
+        wait(MARKDOWN_ENHANCE_DELAY),
       ]).then(
         async ([{ Transformer }, { Toolbar }, { Markmap, deriveOptions }]) => {
           const transformer = new Transformer();
