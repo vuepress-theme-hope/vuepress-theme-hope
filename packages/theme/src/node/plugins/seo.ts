@@ -1,8 +1,9 @@
 import { isPlainObject, keys } from "@vuepress/helper";
+import type { SeoPluginOptions } from "@vuepress/plugin-seo";
 import { seoPlugin } from "@vuepress/plugin-seo";
 import type { Page, Plugin } from "vuepress/core";
 
-import type { PluginsOptions, ThemeData } from "../../shared/index.js";
+import type { ThemeData } from "../../shared/index.js";
 
 /**
  * @private
@@ -11,7 +12,7 @@ import type { PluginsOptions, ThemeData } from "../../shared/index.js";
  */
 export const getSEOPlugin = (
   themeData: ThemeData,
-  { seo }: PluginsOptions,
+  seo?: Omit<SeoPluginOptions, "hostname" | "author"> | boolean,
   hostname = "",
 ): Plugin | null => {
   if (seo === false) return null;

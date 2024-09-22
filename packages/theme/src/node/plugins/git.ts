@@ -1,6 +1,7 @@
 import type { GitPluginOptions } from "@vuepress/plugin-git";
 import { gitPlugin } from "@vuepress/plugin-git";
 import type { App } from "vuepress/core";
+import { isPlainObject } from "vuepress/shared";
 
 /**
  * @private
@@ -9,7 +10,7 @@ import type { App } from "vuepress/core";
  */
 export const useGitPlugin = (
   app: App,
-  options: GitPluginOptions | false,
+  options: GitPluginOptions | boolean,
 ): void => {
   const { plugins } = app.pluginApi;
 
@@ -17,7 +18,17 @@ export const useGitPlugin = (
     plugins.every((plugin) => plugin.name !== "@vuepress/plugin-git") &&
     options
   )
-    app.use(gitPlugin(options));
+    app.use(
+      gitPlugin(
+        isPlainObject(options)
+          ? options
+          : {
+              createdTime: true,
+              contributors: true,
+              updatedTime: true,
+            },
+      ),
+    );
 };
 
 /**

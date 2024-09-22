@@ -12,8 +12,5 @@ export const getPhotoSwipePlugin = (
 ): Plugin | null => {
   if (options === false) return null;
 
-  return photoSwipePlugin({
-    selector: ".theme-hope-content :not(a) > img:not([no-view])",
-    ...(options === true ? {} : options),
-  });
+  return photoSwipePlugin(options === true ? {} : options);
 };

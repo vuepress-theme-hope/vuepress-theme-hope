@@ -15,11 +15,13 @@ import { getLinksCheckPlugin } from "./linksCheck.js";
 import { getMarkdownHintPlugin } from "./markdownHint.js";
 import { getMarkdownImagePlugin } from "./markdownImage.js";
 import { getMarkdownMathPlugin } from "./markdownMath.js";
+import { getMarkdownTabPlugin } from "./markdownTab.js";
 import { getMdEnhancePlugin } from "./mdEnhance.js";
 import { getNoticePlugin } from "./notice.js";
 import { getPhotoSwipePlugin } from "./photoSwipe.js";
 import { getPwaPlugin } from "./pwa.js";
 import { getRedirectPlugin } from "./redirect.js";
+import { getRevealJsPlugin } from "./revealjs.js";
 import { getRtlPlugin } from "./rtl.js";
 import { getSearchPlugin } from "./search.js";
 import { getSEOPlugin } from "./seo.js";
@@ -62,7 +64,7 @@ export const getPlugins = (
     getCopyCodePlugin(pluginsOptions.copyCode),
     getCopyrightPlugin(themeData, pluginsOptions.copyright, options.hostname),
     // Seo should work before feed
-    getSEOPlugin(themeData, pluginsOptions, options.hostname),
+    getSEOPlugin(themeData, pluginsOptions.seo, options.hostname),
     getFeedPlugin(
       themeData,
       pluginsOptions.feed,
@@ -74,6 +76,7 @@ export const getPlugins = (
     getMarkdownHintPlugin(pluginsOptions.markdownHint),
     getMarkdownImagePlugin(pluginsOptions.markdownImage),
     getMarkdownMathPlugin(pluginsOptions.markdownMath),
+    getMarkdownTabPlugin(pluginsOptions.markdownTab),
     getMdEnhancePlugin(pluginsOptions.mdEnhance, legacy),
     getNoticePlugin(pluginsOptions.notice),
     getPhotoSwipePlugin(pluginsOptions.photoSwipe),
@@ -82,6 +85,7 @@ export const getPlugins = (
     getSitemapPlugin(pluginsOptions.sitemap, options.hostname),
     getRtlPlugin(themeData),
     getRedirectPlugin(pluginsOptions.redirect),
+    getRevealJsPlugin(pluginsOptions.revealjs),
     getWatermarkPlugin(pluginsOptions.watermark),
   ].filter((item) => item !== null) as PluginConfig;
 
