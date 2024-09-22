@@ -35,32 +35,6 @@ export const prepareConfigFile = async (
     enhances.add(`app.component("ChartJS", ChartJS)`);
   }
 
-  if (options.codetabs) {
-    imports.add(
-      `import CodeTabs from "${CLIENT_FOLDER}components/CodeTabs.js";`,
-    );
-    enhances.add(`app.component("CodeTabs", CodeTabs);`);
-
-    // TODO: Remove this in v2 stable
-    if (legacy) {
-      imports.add(
-        `import { hasGlobalComponent } from "${getRealPath(
-          "@vuepress/helper/client",
-          url,
-        )}";`,
-      );
-      imports.add(
-        `import { CodeGroup, CodeGroupItem } from "${CLIENT_FOLDER}compact/index.js";`,
-      );
-      enhances.add(
-        `if(!hasGlobalComponent("CodeGroup", app)) app.component("CodeGroup", CodeGroup);`,
-      );
-      enhances.add(
-        `if(!hasGlobalComponent("CodeGroupItem", app)) app.component("CodeGroupItem", CodeGroupItem);`,
-      );
-    }
-  }
-
   if (options.demo) {
     imports.add(
       `import CodeDemo from "${CLIENT_FOLDER}components/CodeDemo.js";`,
@@ -120,23 +94,6 @@ export const prepareConfigFile = async (
       `import Playground from "${CLIENT_FOLDER}components/Playground.js";`,
     );
     enhances.add(`app.component("Playground", Playground);`);
-  }
-
-  if (status["revealJs"]) {
-    imports.add(`import "${getRealPath("reveal.js/dist/reveal.css", url)}";`);
-    imports.add(
-      `import RevealJs from "${CLIENT_FOLDER}components/RevealJs.js";`,
-    );
-    imports.add(
-      `import { injectRevealJsConfig } from "${CLIENT_FOLDER}index.js";`,
-    );
-    enhances.add(`injectRevealJsConfig(app);`);
-    enhances.add(`app.component("RevealJs", RevealJs);`);
-  }
-
-  if (options.tabs) {
-    imports.add(`import Tabs from "${CLIENT_FOLDER}components/Tabs.js";`);
-    enhances.add(`app.component("Tabs", Tabs);`);
   }
 
   if (status["sandpack"]) {

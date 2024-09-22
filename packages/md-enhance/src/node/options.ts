@@ -4,7 +4,6 @@ import type {
   AttrsOptions,
   IncludeOptions,
   PlaygroundGlobalOptions,
-  RevealJsOptions,
   StylizeOptions,
   TasklistOptions,
   VuePlaygroundOptions,
@@ -56,6 +55,21 @@ export interface DeprecatedMarkdownEnhancePluginOptions {
    * @deprecated use `@vuepress/plugin-markdown-image` instead
    */
   obsidianImgSize?: never;
+
+  /**
+   * @deprecated use `@vuepress/plugin-markdown-tab` instead
+   */
+  tabs?: never;
+
+  /**
+   * @deprecated use `@vuepress/plugin-markdown-tab` instead
+   */
+  codetabs?: never;
+
+  /**
+   * @deprecated use `@vuepress/plugin-revealjs` instead
+   */
+  revealJs?: never;
 }
 
 /**
@@ -102,24 +116,6 @@ export interface MarkdownEnhancePluginOptions
    * @default false
    */
   linkify?: boolean;
-
-  /**
-   * Whether to enable tabs.
-   *
-   * 是否启用标签页分组。
-   *
-   * @default false
-   */
-  tabs?: boolean;
-
-  /**
-   * Whether to enable codetabs.
-   *
-   * 是否启用代码组。
-   *
-   * @default false
-   */
-  codetabs?: boolean;
 
   /**
    * Whether to enable align support
@@ -273,15 +269,6 @@ export interface MarkdownEnhancePluginOptions
    * @default false
    */
   demo?: Partial<CodeDemoOptions> | boolean;
-
-  /**
-   * Whether to enable reveal.js support
-   *
-   * 是否启用 Reveal.js 支持
-   *
-   * @default false
-   */
-  revealJs?: RevealJsOptions | boolean;
 
   /**
    * Keyword enhancement

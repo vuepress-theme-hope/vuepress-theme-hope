@@ -12,7 +12,7 @@ const { url } = import.meta;
  */
 export const prepareSeparatedConfigFile = (
   app: App,
-  { enableCatalog, enableBlog, enableEncrypt, enableSlide }: ThemeStatus,
+  { enableCatalog, enableBlog, enableEncrypt }: ThemeStatus,
 ): Promise<string> => {
   const imports: string[] = [];
   const enhances: string[] = [];
@@ -67,16 +67,6 @@ defineCatalogInfoGetter((meta) => {
       `app.component("GlobalEncrypt", GlobalEncrypt);`,
       `app.component("LocalEncrypt", LocalEncrypt);`,
     );
-  }
-
-  if (enableSlide) {
-    imports.push(
-      `import Slide from "${getRealPath(
-        "vuepress-plugin-md-enhance/SlidePage",
-        url,
-      )}";`,
-    );
-    layouts.push("Slide");
   }
 
   return app.writeTemp(

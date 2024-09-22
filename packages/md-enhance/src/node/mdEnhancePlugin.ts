@@ -28,14 +28,12 @@ import {
   convertOptions,
   legacyCard,
   legacyCodeDemo,
-  legacyCodeGroup,
   legacyFlowchart,
   legacyInclude,
 } from "./compact/index.js";
 import {
   CODE_DEMO_DEFAULT_SETTING,
   chart,
-  codeTabs,
   component,
   echarts,
   flowchart,
@@ -50,19 +48,13 @@ import {
   plantuml,
   playground,
   reactDemo,
-  revealJs,
   sandpack,
-  tabs,
   vPre,
   vueDemo,
   vuePlayground,
 } from "./markdown-it/index.js";
 import type { MarkdownEnhancePluginOptions } from "./options.js";
-import {
-  prepareConfigFile,
-  prepareRevealJsPluginFile,
-  prepareRevealJsStyleFile,
-} from "./prepare/index.js";
+import { prepareConfigFile } from "./prepare/index.js";
 import { PLUGIN_NAME, isInstalled, logger } from "./utils.js";
 
 export const mdEnhancePlugin =
@@ -109,7 +101,6 @@ export const mdEnhancePlugin =
       ]),
       mermaid: getStatus("mermaid", false, ["mermaid"]),
       obsidianImgSize: getStatus("obsidianImgSize"),
-      revealJs: getStatus("revealJs", false, ["reveal.js"]),
       tasklist: getStatus("tasklist", true),
       kotlinPlayground: getStatus("kotlinPlayground", false, [
         "kotlin-playground",
@@ -117,10 +108,6 @@ export const mdEnhancePlugin =
       sandpack: getStatus("sandpack", false, ["sandpack-vue3"]),
       vuePlayground: getStatus("vuePlayground", false, ["@vue/repl"]),
     };
-
-    const revealJsOptions = isPlainObject(options.revealJs)
-      ? options.revealJs
-      : {};
 
     useSassPalettePlugin(app, { id: "hope" });
 
@@ -184,18 +171,6 @@ export const mdEnhancePlugin =
             "mermaid/dist/mermaid.esm.min.mjs",
           );
           addViteSsrExternal(bundlerOptions, app, "mermaid");
-        }
-
-        if (status.revealJs) {
-          addViteOptimizeDepsExclude(bundlerOptions, app, [
-            "reveal.js/dist/reveal.esm.js",
-            "reveal.js/plugin/markdown/markdown.esm.js",
-            ...(revealJsOptions.plugins ?? []).map(
-              (plugin) => `reveal.js/plugin/${plugin}/${plugin}.esm.js`,
-            ),
-          ]);
-
-          addViteSsrExternal(bundlerOptions, app, "reveal.js");
         }
 
         if (status.kotlinPlayground) {
@@ -282,13 +257,6 @@ export const mdEnhancePlugin =
               env.frontmatter?.["stylize"] || null,
           });
 
-        // Features
-        if (options.codetabs) {
-          md.use(codeTabs);
-          // TODO: Remove this in v2 stable
-          if (legacy) md.use(legacyCodeGroup);
-        }
-        if (options.tabs) md.use(tabs);
         if (status.flowchart) {
           md.use(flowchart);
           // TODO: Remove this in v2 stable
@@ -308,7 +276,6 @@ export const mdEnhancePlugin =
         }
         if (status.markmap) md.use(markmap);
         if (status.mermaid) md.use(mermaid);
-        if (status.revealJs) md.use(revealJs);
         if (isPlainObject(options.playground)) {
           const { presets = [], config = {} } = options.playground;
 
@@ -346,18 +313,6 @@ export const mdEnhancePlugin =
             ),
           );
         }
-      },
-
-      onPrepared: async (app): Promise<void> => {
-        const promises = [];
-
-        if (status.revealJs)
-          promises.push(
-            prepareRevealJsPluginFile(app, revealJsOptions.plugins),
-            prepareRevealJsStyleFile(app, revealJsOptions.themes),
-          );
-
-        await Promise.all(promises);
       },
 
       clientConfigFile: (app) =>

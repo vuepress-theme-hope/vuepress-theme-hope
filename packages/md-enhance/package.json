@@ -55,7 +55,6 @@
     ".": "./lib/node/index.js",
     "./client": "./lib/client/index.js",
     "./client/*": "./lib/client/*",
-    "./SlidePage": "./lib/client/SlidePage.js",
     "./package.json": "./package.json"
   },
   "main": "./lib/node/index.js",
@@ -85,7 +84,6 @@
     "@mdit/plugin-stylize": "^0.13.1",
     "@mdit/plugin-sub": "^0.13.1",
     "@mdit/plugin-sup": "^0.13.1",
-    "@mdit/plugin-tab": "^0.13.1",
     "@mdit/plugin-tasklist": "^0.13.1",
     "@mdit/plugin-uml": "^0.13.1",
     "@types/markdown-it": "^14.1.2",
