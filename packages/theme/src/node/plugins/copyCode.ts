@@ -13,8 +13,5 @@ export const getCopyCodePlugin = (
 ): Plugin | null => {
   if (options === false) return null;
 
-  return copyCodePlugin({
-    selector: '.theme-hope-content div[class*="language-"] pre',
-    ...(isPlainObject(options) ? options : {}),
-  });
+  return copyCodePlugin(isPlainObject(options) ? options : {});
 };

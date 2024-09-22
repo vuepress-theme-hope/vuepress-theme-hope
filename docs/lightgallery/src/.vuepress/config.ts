@@ -21,9 +21,5 @@ export default config("lightgallery", {
 
   theme,
 
-  plugins: [
-    lightgalleryPlugin({
-      selector: ".theme-hope-content :not(a) > img:not([no-view])",
-    }),
-  ],
+  plugins: [lightgalleryPlugin()],
 });

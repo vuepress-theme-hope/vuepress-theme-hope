@@ -61,23 +61,19 @@ The theme adds built-in support for <ProjectLink name="search-pro">`vuepress-plu
          // controls how algolia extracts records from your site
          recordExtractor: ({ $, helpers }) => {
            // The following are the default options for vuepress-theme-hope
-           // vuepress-theme-hope default container class name is theme-hope-content
            return helpers.docsearch({
              recordProps: {
                lvl0: {
-                 selectors: [
-                   ".vp-sidebar-page.active",
-                   ".theme-hope-content h1",
-                 ],
+                 selectors: [".vp-sidebar-link.active", "[vp-content] h1"],
                  defaultValue: "Documentation",
                },
-               lvl1: ".theme-hope-content h1",
-               lvl2: ".theme-hope-content h2",
-               lvl3: ".theme-hope-content h3",
-               lvl4: ".theme-hope-content h4",
-               lvl5: ".theme-hope-content h5",
-               lvl6: ".theme-hope-content h6",
-               content: ".theme-hope-content p, .theme-hope-content li",
+               lvl1: "[vp-content] h1",
+               lvl2: "[vp-content] h2",
+               lvl3: "[vp-content] h3",
+               lvl4: "[vp-content] h4",
+               lvl5: "[vp-content] h5",
+               lvl6: "[vp-content] h6",
+               content: "[vp-content] p, [vp-content] li",
              },
              recordVersion: "v3",
            });
