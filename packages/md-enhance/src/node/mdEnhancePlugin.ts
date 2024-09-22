@@ -3,6 +3,7 @@ import { attrs } from "@mdit/plugin-attrs";
 import { footnote } from "@mdit/plugin-footnote";
 import type { IncludeEnv } from "@mdit/plugin-include";
 import { include } from "@mdit/plugin-include";
+import { mark } from "@mdit/plugin-mark";
 import { spoiler } from "@mdit/plugin-spoiler";
 import { stylize } from "@mdit/plugin-stylize";
 import { sub } from "@mdit/plugin-sub";
@@ -245,6 +246,7 @@ export const mdEnhancePlugin =
           md.use(attrs, isPlainObject(options.attrs) ? options.attrs : {});
         if (options.align) md.use(align);
         if (options.component) md.use(component);
+        if (options.mark) md.use(mark);
         if (options.spoiler) md.use(spoiler);
         if (options.sup) md.use(sup);
         if (options.sub) md.use(sub);
