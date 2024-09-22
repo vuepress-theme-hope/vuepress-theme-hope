@@ -201,7 +201,7 @@ $$
 
 ### 高级配置
 
-你也可以在[客户端配置文件][client-config]中导入并调用 `defineRevealJsConfig` 来自定义 reveal.js:
+你也可以在[客户端配置文件](../../../cookbook/vuepress/config.md#客户端配置文件) 中导入并调用 `defineRevealJsConfig` 来自定义 reveal.js:
 
 ```ts title=".vuepress/client.ts"
 import { defineRevealJsConfig } from "@vuepress/plugin-revealjs/client";
