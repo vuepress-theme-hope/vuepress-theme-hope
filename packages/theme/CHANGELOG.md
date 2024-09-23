@@ -4,6 +4,15 @@ All notable changes to this project will be documented in this file. See [Conven
 
 <!-- #region recent-change -->
 
+## [2.0.0-rc.55](https://github.com/vuepress-theme-hope/vuepress-theme-hope/compare/v2.0.0-rc.54...v2.0.0-rc.55) (2024-09-23)
+
+### 🐛 Bug Fixes
+
+- **theme:** fix bundled config file ([ed15353](https://github.com/vuepress-theme-hope/vuepress-theme-hope/commit/ed1535312112fcfe4e0e2bb877c610a5268a8d36))
+- **theme:** revealjs should be default disabled ([ce6c7ea](https://github.com/vuepress-theme-hope/vuepress-theme-hope/commit/ce6c7eaee2d1b00605b3a2415f1925ec5ac02edc))
+
+<!-- #region recent-change -->
+
 ## [2.0.0-rc.54](https://github.com/vuepress-theme-hope/vuepress-theme-hope/compare/v2.0.0-rc.53...v2.0.0-rc.54) (2024-09-23)
 
 ### ⚠ BREAKING CHANGES
