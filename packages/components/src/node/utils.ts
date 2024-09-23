@@ -52,13 +52,5 @@ export const PLUGIN_NAME = "vuepress-plugin-components";
 
 export const logger = new Logger(PLUGIN_NAME);
 
-export const isInstalled = (pkg: string, hint = true): boolean => {
-  const isInstalled = getInstalledStatus(pkg, import.meta.url);
-
-  if (hint && !isInstalled)
-    logger.error(
-      `Package ${pkg} is not installed, please install it manually!`,
-    );
-
-  return isInstalled;
-};
+export const isInstalled = (pkg: string): boolean =>
+  getInstalledStatus(pkg, import.meta.url);
