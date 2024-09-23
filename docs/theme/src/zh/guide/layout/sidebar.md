@@ -64,8 +64,6 @@ export default {
         text: "指南",
         link: "/zh/guide/README.md",
         icon: "lightbulb",
-        // 仅在 `/zh/guide/` 激活
-        activeMatch: "^/zh/guide/$",
       },
       { text: "配置", link: "/zh/config/README.md", icon: "config" },
       {
@@ -83,13 +81,7 @@ export default {
 
 ::: tip activeMatch 的高级用法
 
-`activeMatch` 主要给予你控制路径是否激活的能力，比如你可能有如下链接:
-
-- `/path/`
-- `/path/a/`
-- `/path/b/`
-
-此时你可能想避免在 `/path/a/` 以及 `/path/b/` 开头的路径下，出现两个菜单同时激活的情况。将第一项的 `activeMatch` 选项设置为 `^/path/(?:(?!a/|b/).*)?$` 就可以有效避免。
+`activeMatch` 给予你通过正则表达式控制路径是否激活的能力。
 
 :::
 

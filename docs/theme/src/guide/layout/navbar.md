@@ -85,13 +85,15 @@ export default {
 
 ::: tip Advanced usage of activeMatch
 
-`activeMatch` gives you the ability to control whether the path is active, for example you may have the following dropdown:
+`activeMatch` gives you the ability to control whether the path is active through RegExps.
+
+For example you may have the following dropdown:
 
 - `/path/`
 - `/path/a/`
 - `/path/b/`
 
-But you may have multiple folders with files under `/path/`. To avoid multiple dropdown items been activated under route starting with `/path/a/` or `/path/b/`, you can set `activeMatch` option for the first item with `^/path/(?:(?!a/|b/).*)?$`.
+To avoid multiple dropdown items been activated under route starting with `/path/a/` or `/path/b/`, you can set `activeMatch` option for `/path/` with `^/path/(?:(?!a/|b/).*)?$`.
 
 :::
 
