@@ -5,13 +5,26 @@ const generateSass = () =>
   src("src/client/**/*.scss")
     .pipe(
       through.obj((file, _encoding, callback) => {
-        const content = file.contents.toString();
+        let content = file.contents.toString();
+        let changed = false;
 
-        if (!content.includes('@use "@sass-palette/hope-config";')) {
-          file.contents = Buffer.from(
-            `@use "@sass-palette/hope-config";\n${content}`,
-          );
+        if (
+          content.includes("hope-config") &&
+          !content.includes('@use "@sass-palette/hope-config";')
+        ) {
+          changed = true;
+          content = `@use "@sass-palette/hope-config";\n${content}`;
         }
+        if (
+          content.includes("hope-palette") &&
+          !content.includes('@use "@sass-palette/hope-palette";')
+        ) {
+          changed = true;
+          content = `@use "@sass-palette/hope-palette";\n${content}`;
+        }
+
+        if (changed) file.contents = Buffer.from(content);
+
         callback(null, file);
       }),
     )
