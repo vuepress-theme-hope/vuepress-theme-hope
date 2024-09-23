@@ -21,7 +21,7 @@ try {
 export const getRevealJsPlugin = (
   options?: Omit<RevealJsPluginOptions, "layout"> | boolean,
 ): Plugin | null => {
-  if (options === false) return null;
+  if (!options) return null;
 
   if (!revealJsPlugin) {
     logger.error(
