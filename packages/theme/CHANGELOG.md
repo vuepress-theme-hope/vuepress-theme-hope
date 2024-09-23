@@ -4,6 +4,27 @@ All notable changes to this project will be documented in this file. See [Conven
 
 <!-- #region recent-change -->
 
+## [2.0.0-rc.54](https://github.com/vuepress-theme-hope/vuepress-theme-hope/compare/v2.0.0-rc.53...v2.0.0-rc.54) (2024-09-23)
+
+### ⚠ BREAKING CHANGES
+
+- use official plugins and remove md-enhance features (#4469)
+
+### ✨ Features
+
+- **theme:** allow auto generating theme color ([003153f](https://github.com/vuepress-theme-hope/vuepress-theme-hope/commit/003153faacf8f95dca73b36de51c7e4ba5c61fec))
+- **theme:** apply guideline ([a4c5404](https://github.com/vuepress-theme-hope/vuepress-theme-hope/commit/a4c54045eb03850fb983c732a873866f561e2bf4))
+- use official plugins and remove md-enhance features ([#4469](https://github.com/vuepress-theme-hope/vuepress-theme-hope/issues/4469)) ([99f5159](https://github.com/vuepress-theme-hope/vuepress-theme-hope/commit/99f51595991189f49f6330d6732ee1aef467dfc5))
+
+### 🐛 Bug Fixes
+
+- **theme:** fix bing switch location ([d35c877](https://github.com/vuepress-theme-hope/vuepress-theme-hope/commit/d35c8773b5ae1c57e767052111cba9b0d6798863))
+- **theme:** fix comment wrapper ([3637c6c](https://github.com/vuepress-theme-hope/vuepress-theme-hope/commit/3637c6cc014127ec81631227f27e652a9c20bfed))
+- **theme:** improve navbar brand a11y ([21ca45f](https://github.com/vuepress-theme-hope/vuepress-theme-hope/commit/21ca45fa8f7d4025ffc672335d4a9d79472bba2c))
+- **theme:** update known plugins ([dcd5ee2](https://github.com/vuepress-theme-hope/vuepress-theme-hope/commit/dcd5ee294b5714c4c8231d4c56a6785d024dea59))
+
+<!-- #region recent-change -->
+
 ## [2.0.0-rc.53](https://github.com/vuepress-theme-hope/vuepress-theme-hope/compare/v2.0.0-rc.52...v2.0.0-rc.53) (2024-09-20)
 
 ### ✨ Features

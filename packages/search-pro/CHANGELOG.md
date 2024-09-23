@@ -4,6 +4,19 @@ All notable changes to this project will be documented in this file. See [Conven
 
 <!-- #region recent-change -->
 
+## [2.0.0-rc.54](https://github.com/vuepress-theme-hope/vuepress-theme-hope/compare/v2.0.0-rc.53...v2.0.0-rc.54) (2024-09-23)
+
+### ⚠ BREAKING CHANGES
+
+- use official plugins and remove md-enhance features (#4469)
+
+### ✨ Features
+
+- **theme:** allow auto generating theme color ([003153f](https://github.com/vuepress-theme-hope/vuepress-theme-hope/commit/003153faacf8f95dca73b36de51c7e4ba5c61fec))
+- use official plugins and remove md-enhance features ([#4469](https://github.com/vuepress-theme-hope/vuepress-theme-hope/issues/4469)) ([99f5159](https://github.com/vuepress-theme-hope/vuepress-theme-hope/commit/99f51595991189f49f6330d6732ee1aef467dfc5))
+
+<!-- #region recent-change -->
+
 ## [2.0.0-rc.53](https://github.com/vuepress-theme-hope/vuepress-theme-hope/compare/v2.0.0-rc.52...v2.0.0-rc.53) (2024-09-20)
 
 ### ✨ Features
