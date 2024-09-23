@@ -15,7 +15,7 @@ tag:
 
 ## 内置增强
 
-VuePress 自带的 GitHub 风格的表格，Emoji、TOC、代码行号、特定行高亮等都是开箱即用的。
+VuePress 自带的 GitHub 风格的表格，Emoji、TOC 都是开箱即用的。
 
 详细语法详见 [内置 Markdown 扩展](../../cookbook/vuepress/markdown.md)。
 

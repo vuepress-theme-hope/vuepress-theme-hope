@@ -167,42 +167,86 @@ Emoji 扩展由 [markdown-it-emoji](https://github.com/markdown-it/markdown-it-e
 
 ### 代码块
 
-下列代码块扩展是在 Node 端进行 Markdown 解析的时候实现的。这意味着代码块并不会在客户端被处理。
+下列代码块扩展都是在 Node 端进行 Markdown 解析时实现的，也就是代码块并不会在客户端被处理。
 
-#### 行高亮
+通过 [@vuepress/plugin-prismjs][prismjs] 和 [@vuepress/plugin-shiki][shiki]，你可以通过 [Prism](https://prismjs.com/) 或 [Shiki](https://shiki.tmrs.site/) 来高亮代码块。
 
-你可以在代码块添加行数范围标记，来为对应代码行进行高亮:
+#### 代码标题
+
+你可以在代码块添加一个 `title` 键值对来为代码块设置标题。
 
 输入:
 
 ````md
-```ts {1,6-8}
-import type { UserConfig } from "vuepress/cli";
+```ts title=".vuepress/config.ts"
 import { defaultTheme } from "@vuepress/theme-default";
+import { defineUserConfig } from "vuepress";
 
-export const config: UserConfig = {
+export default defineUserConfig({
   title: "你好， VuePress",
 
   theme: defaultTheme({
     logo: "https://vuejs.org/images/logo.png",
   }),
-};
+});
 ```
 ````
 
 输出:
 
-```ts {1,6-8}
-import type { UserConfig } from "vuepress/cli";
+```ts title=".vuepress/config.ts"
 import { defaultTheme } from "@vuepress/theme-default";
+import { defineUserConfig } from "vuepress";
 
-export const config: UserConfig = {
+export default defineUserConfig({
   title: "你好， VuePress",
 
   theme: defaultTheme({
     logo: "https://vuejs.org/images/logo.png",
   }),
-};
+});
+```
+
+::: tip
+
+代码标题是通过高亮器插件默认支持的。它可以和下列的其他标记一起使用。请在它们之间使用空格分隔。
+
+:::
+
+#### 行高亮
+
+你可以在代码块添加行数范围标记，来为对应代码行进行高亮。
+
+输入:
+
+````md
+```ts{1,7-9}
+import { defaultTheme } from '@vuepress/theme-default'
+import { defineUserConfig } from 'vuepress'
+
+export default defineUserConfig({
+  title: '你好， VuePress',
+
+  theme: defaultTheme({
+    logo: 'https://vuejs.org/images/logo.png',
+  }),
+})
+```
+````
+
+输出:
+
+```ts{1,7-9}
+import { defaultTheme } from '@vuepress/theme-default'
+import { defineUserConfig } from 'vuepress'
+
+export default defineUserConfig({
+  title: '你好， VuePress',
+
+  theme: defaultTheme({
+    logo: 'https://vuejs.org/images/logo.png',
+  }),
+})
 ```
 
 行数范围标记的例子:
@@ -212,9 +256,11 @@ export const config: UserConfig = {
 - 组合: `{4,7-13,16,23-27,40}`
 
 ::: tip
-行高亮扩展是由我们的内置插件支持的，该扩展 Fork 并修改自 [markdown-it-highlight-lines](https://github.com/egoist/markdown-it-highlight-lines)。
 
-配置参考: [markdown.code.highlightLines](https://vuejs.press/zh/reference/config.html#markdown-code-highlightlines)
+行高亮扩展是通过高亮器插件默认支持的。
+
+配置参考: [prism 行高亮](https://ecosystem.vuejs.press/zh/plugins/markdown/prismjs.html#highlightlines) 和 [shiki 行高亮](https://ecosystem.vuejs.press/zh/plugins/markdown/shiki.html#highlightlines)
+
 :::
 
 #### 行号
@@ -254,9 +300,11 @@ const line3 = 'This is line 3'
 ```
 
 ::: tip
-行号扩展是由我们的内置插件支持的。
 
-配置参考: [markdown.code.lineNumbers](https://vuejs.press/zh/reference/config.html#markdown-code-linenumbers)
+行号扩展是通过高亮器插件默认支持的。
+
+配置参考: [prism 行号](https://ecosystem.vuejs.press/zh/plugins/markdown/prismjs.html#linenumbers) 和 [shiki 行号](https://ecosystem.vuejs.press/zh/plugins/markdown/shiki.html#linenumbers)
+
 :::
 
 #### 添加 v-pre
@@ -465,3 +513,6 @@ export default {
 - 设置 [compilerOptions.isCustomElement](https://v3.vuejs.org/api/application-config.html#compileroptions) 来告诉 Vue 模板编译器不要尝试作为组件来解析它们。
   - 对于 `@vuepress/bundler-webpack` ，设置 [vue.compilerOptions](https://vuejs.press/zh/reference/bundler/webpack.html#vue)
   - 对于 `@vuepress/bundler-vite` ，设置 [vuePluginOptions.template.compilerOptions](https://vuejs.press/zh/reference/bundler/vite.html#vuepluginoptions)
+
+[prismjs]: https://ecosystem.vuejs.press/zh/plugins/markdown/prismjs.html
+[shiki]: https://ecosystem.vuejs.press/zh/plugins/markdown/shiki.html

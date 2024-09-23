@@ -17,11 +17,7 @@ tag:
 
 <!-- more -->
 
-::: code-tabs#language
-
-@tab TS
-
-```ts title=".vuepress/config.ts"
+```js title=".vuepress/config.js"
 import { defineUserConfig } from "vuepress";
 import { hopeTheme } from "vuepress-theme-hope";
 
@@ -40,29 +36,6 @@ export default defineUserConfig({
   ),
 });
 ```
-
-@tab JS
-
-```js title=".vuepress/config.js"
-import { hopeTheme } from "vuepress-theme-hope";
-
-export default {
-  // 站点选项
-  // ...
-
-  theme: hopeTheme(
-    {
-      // 主题选项
-      // ...
-    },
-    {
-      // 主题行为选项 (可选)
-    },
-  ),
-};
-```
-
-:::
 
 ## check
 

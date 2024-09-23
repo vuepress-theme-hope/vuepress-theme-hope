@@ -88,6 +88,34 @@ export default defineUserConfig({
 });
 ```
 
+## 完整无障碍支持
+
+主题完全支持无障碍功能。
+
+- 主题全部的页面结构都经过语义化处理。
+
+- 所有的按钮、图标都有其相应的无障碍标签
+
+- 所有主要可交互元素均可通过键盘进行聚焦与交互
+
+这是我们为全球视障人群做出的支持! :heart:
+
+## 纯净模式
+
+如果你的网站是一个纯文档站点，并且你更喜欢干净的样式，你可以在主题选项中设置 `pure: true` 启用纯净模式。
+
+```js {5} title=".vuepress/config.js"
+import { hopeTheme } from "vuepress-theme-hope";
+
+export default {
+  theme: hopeTheme({
+    pure: true,
+  }),
+};
+```
+
+在这个模式下，我们会禁用一些花哨的动画以及一些色彩，只提供功能。
+
 ## RTL 布局
 
 `vuepress-theme-hope` 完全支持 RTL 布局。只需在多语言配置内的对应语言设置 `rtl: true`

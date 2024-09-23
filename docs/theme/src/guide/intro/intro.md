@@ -80,7 +80,7 @@ In short, anyone can enjoy the convenience of Markdown's enhanced syntax.
 
 - More:
 
-  [Full Screen Button](../interface/others.md#fullscreen-button), [Back to top button](../interface/others.md#back-to-top-button), [Print button](../interface/others.md#print-button), [Full A11y support](../interface/accessibility.md) and [RTL layout](../interface/others.md#rtl-layout).
+  [Full Screen Button](../interface/others.md#fullscreen-button), [Back to top button](../interface/others.md#back-to-top-button), [Print button](../interface/others.md#print-button), [Full A11y support](../interface/others.md#full-a11y-support) and [RTL layout](../interface/others.md#rtl-layout).
 
 ### Layouts Improvement
 

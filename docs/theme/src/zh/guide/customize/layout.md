@@ -59,28 +59,6 @@ $navbar-height = 80px;
 
 <!-- #region layout -->
 
-::: code-tabs#language
-
-@tab TS
-
-```ts title=".vuepress/client.ts"
-import { defineClientConfig } from "vuepress/client";
-import Changelog from "./layouts/Changelog.vue";
-import Layout from "./layouts/Layout.vue";
-
-export default defineClientConfig({
-  // 你可以在这里添加或覆盖布局
-  layouts: {
-    // 例如，在这里我们将 vuepress-theme-hope 的默认布局更改为 layouts/Layout.vue
-    Layout,
-    // 我们还添加了一个 Changelog 布局
-    Changelog,
-  },
-});
-```
-
-@tab JS
-
 ```js title=".vuepress/client.js"
 import { defineClientConfig } from "vuepress/client";
 import Changelog from "./layouts/Changelog.vue";
@@ -96,8 +74,6 @@ export default defineClientConfig({
   },
 });
 ```
-
-:::
 
 <!-- #endregion layout -->
 

@@ -395,11 +395,7 @@ export default {
 
 Also, to place your Markdown files directly besides your actual files, but don't want them rendered as pages, you can set `pagePatterns` options in VuePress config. See [pagePatterns](https://vuejs.press/reference/config.html#pagepatterns) for more details.
 
-::: code-tabs#language
-
-@tab TS
-
-```ts {6} title=".vuepress/config.ts"
+```js {6} title=".vuepress/config.js"
 import { defineUserConfig } from "vuepress";
 import { mdEnhancePlugin } from "vuepress-plugin-md-enhance";
 
@@ -414,22 +410,3 @@ export default defineUserConfig({
   ],
 });
 ```
-
-@tab JS
-
-```js {5} title=".vuepress/config.js"
-import { mdEnhancePlugin } from "vuepress-plugin-md-enhance";
-
-export default {
-  // now any file with `.snippet.md` extension will not be rendered as a page
-  pagePatterns: ["**/*.md", "!**/*.snippet.md", "!.vuepress", "!node_modules"],
-
-  plugins: [
-    mdEnhancePlugin({
-      include: true,
-    }),
-  ],
-};
-```
-
-:::

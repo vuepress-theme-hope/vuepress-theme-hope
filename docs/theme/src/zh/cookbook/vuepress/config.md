@@ -27,11 +27,7 @@ VuePress 站点的基本配置文件是 `.vuepress/config.js` ，但也同样支
 
 一个基础的配置文件是这样的:
 
-::: code-tabs#language
-
-@tab TS
-
-```ts
+```js
 import { defineUserConfig } from "vuepress";
 import { hopeTheme } from "vuepress-theme-hope";
 
@@ -48,27 +44,6 @@ export default defineUserConfig({
   }),
 });
 ```
-
-@tab JS
-
-```js
-import { hopeTheme } from "vuepress-theme-hope";
-
-export default {
-  // 站点配置
-  lang: "zh-CN",
-  title: "你好， VuePress ！",
-  description: "这是我的第一个 VuePress 站点",
-
-  // 主题
-  theme: hopeTheme({
-    // 主题配置
-    logo: "https://vuejs.org/images/logo.png",
-  }),
-};
-```
-
-:::
 
 ::: tip
 

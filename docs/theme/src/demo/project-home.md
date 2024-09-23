@@ -161,11 +161,7 @@ npm init vuepress-theme-hope@latest add [dir]
 
 ## 🚀Usage
 
-::: code-tabs#language
-
-@tab TS
-
-```ts title=".vuepress/config.ts"
+```js title=".vuepress/config.js"
 import { defineUserConfig } from "vuepress";
 import { hopeTheme } from "vuepress-theme-hope";
 
@@ -175,20 +171,6 @@ export default defineUserConfig({
   }),
 });
 ```
-
-@tab JS
-
-```js title=".vuepress/config.js"
-import { hopeTheme } from "vuepress-theme-hope";
-
-export default {
-  theme: hopeTheme({
-    // your theme config here
-  }),
-};
-```
-
-:::
 
 ## Telegram Group
 

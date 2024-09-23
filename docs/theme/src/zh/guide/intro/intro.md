@@ -78,7 +78,7 @@ VuePress 在一定程度上扩展了 Markdown 语法，但仍然缺少一些常�
 
 - 更多:
 
-  [全屏按钮](../interface/others.md#全屏按钮)、[返回顶部按钮](../interface/others.md#返回顶部按钮)、[打印按钮](../interface/others.md#打印按钮)、[无障碍完整支持](../interface/accessibility.md) 和 [RTL 布局](../interface/others.md#rtl-布局)。
+  [全屏按钮](../interface/others.md#全屏按钮)、[返回顶部按钮](../interface/others.md#返回顶部按钮)、[打印按钮](../interface/others.md#打印按钮)、[无障碍完整支持](../interface/others.md#完整无障碍支持) 和 [RTL 布局](../interface/others.md#rtl-布局)。
 
 ### 布局改进
 

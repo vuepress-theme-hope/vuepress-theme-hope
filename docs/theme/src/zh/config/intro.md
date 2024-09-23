@@ -26,11 +26,7 @@ VuePress 主要通过目录下的 `.vuepress/` 文件夹存放配置和需要的
 
 ## 使用主题
 
-::: code-tabs#language
-
-@tab TS
-
-```ts title=".vuepress/config.ts"
+```js title=".vuepress/config.js"
 import { defineUserConfig } from "vuepress";
 import { hopeTheme } from "vuepress-theme-hope";
 
@@ -49,28 +45,5 @@ export default defineUserConfig({
   ),
 });
 ```
-
-@tab JS
-
-```js title=".vuepress/config.js"
-import { hopeTheme } from "vuepress-theme-hope";
-
-export default {
-  // 站点选项
-  // ...
-
-  theme: hopeTheme(
-    {
-      // 主题选项
-      // ...
-    },
-    {
-      // 主题行为选项 (可选)
-    },
-  ),
-};
-```
-
-:::
 
 [config]: https://vuejs.press/zh/guide/configuration.html#%E9%85%8D%E7%BD%AE%E6%96%87%E4%BB%B6

@@ -188,10 +188,9 @@ The theme adds built-in support for <ProjectLink name="search-pro">`vuepress-plu
 1. Customize the plugin with `plugins.docsearch` in theme options.
 
    ```js {7-10} title=".vuepress/config.js"
-   import { defineUserConfig } from "vuepress";
    import { hopeTheme } from "vuepress-theme-hope";
 
-   export default defineUserConfig({
+   export default {
      theme: hopeTheme({
        plugins: {
          docsearch: {
@@ -200,7 +199,7 @@ The theme adds built-in support for <ProjectLink name="search-pro">`vuepress-plu
          },
        },
      }),
-   });
+   };
    ```
 
 ::: info More
@@ -239,33 +238,10 @@ See [Plugin Docs][docsearch] for how to use docsearch plugin and its available o
 
    You can set `plugins.searchPro` to `true` to enable it directly, or set it to an object to customize the plugin.
 
-   ::: code-tabs#language
-
-   @tab TS
-
-   ```ts title=".vuepress/config.ts"
-   import { defineUserConfig } from "vuepress";
-   import { hopeTheme } from "vuepress-theme-hope";
-
-   export default defineUserConfig({
-     theme: hopeTheme({
-       plugins: {
-         searchPro: true,
-         // searchPro: {
-         //   plugin options here
-         // },
-       },
-     }),
-   });
-   ```
-
-   @tab JS
-
    ```js title=".vuepress/config.js"
-   import { defineUserConfig } from "vuepress";
    import { hopeTheme } from "vuepress-theme-hope";
 
-   export default defineUserConfig({
+   export default {
      theme: hopeTheme({
        plugins: {
          searchPro: true,
@@ -274,10 +250,8 @@ See [Plugin Docs][docsearch] for how to use docsearch plugin and its available o
          // },
        },
      }),
-   });
+   };
    ```
-
-   :::
 
 ::: info More
 
@@ -313,33 +287,10 @@ See <ProjectLink name="search-pro">Plugin Docs</ProjectLink> for available optio
 
 1. Customize `plugins.search` in theme options.
 
-   ::: code-tabs#language
-
-   @tab TS
-
-   ```ts title=".vuepress/config.ts"
-   import { defineUserConfig } from "vuepress";
-   import { hopeTheme } from "vuepress-theme-hope";
-
-   export default defineUserConfig({
-     theme: hopeTheme({
-       plugins: {
-         search: true,
-         // search: {
-         //   plugin options here
-         // },
-       },
-     }),
-   });
-   ```
-
-   @tab JS
-
    ```js title=".vuepress/config.js"
-   import { defineUserConfig } from "vuepress";
    import { hopeTheme } from "vuepress-theme-hope";
 
-   export default defineUserConfig({
+   export default {
      theme: hopeTheme({
        plugins: {
          search: true,
@@ -348,10 +299,8 @@ See <ProjectLink name="search-pro">Plugin Docs</ProjectLink> for available optio
          // },
        },
      }),
-   });
+   };
    ```
-
-   :::
 
 ::: info More
 

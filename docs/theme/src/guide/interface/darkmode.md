@@ -43,8 +43,9 @@ Toggle the button to see effects: <ColorModeSwitch />
 
 ## Getting Status
 
-- You can use `$isDarkmode` in Markdown files or Vue Template to get darkmode status.
-- You can import `useDarkmode` from `vuepress-theme-hope/client` to get darkmode status:
+- In Markdown files or Vue Template, you can access `$isDarkmode` to get darkmode status directly.
+
+- In scripts, you can import `useDarkmode` from `vuepress-theme-hope/client` to get darkmode status:
 
   ```ts
   import { useDarkmode } from "vuepress-theme-hope/client";

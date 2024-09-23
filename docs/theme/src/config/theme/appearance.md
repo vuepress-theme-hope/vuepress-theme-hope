@@ -36,7 +36,8 @@ These options are only valid when setting directly under the theme options, sett
   ```
 
 - Required: No
-- Details: [Interface → Icon](../../guide/interface/icon.md)
+- Details:
+  - [Interface → Icon](../../guide/interface/icon.md)
 
 Link of font icon asset, `'iconify'` `'fontawesome'` and `'fontawesome-with-brands'` keywords are supported.
 
@@ -44,7 +45,8 @@ Link of font icon asset, `'iconify'` `'fontawesome'` and `'fontawesome-with-bran
 
 - Type: `"switch" | "toggle" | "auto" | "enable" | "disable"`
 - Default: `"switch"`
-- Details: [Interface → Darkmode](../../guide/interface/darkmode.md)
+- Details:
+  - [Interface → Darkmode](../../guide/interface/darkmode.md)
 
 Dark mode support options:
 
@@ -71,7 +73,8 @@ Controls whether an icon is displayed on external links.
 
 - Type: `boolean`
 - Default: `false`
-- Details: [Interface → FullScreen](../../guide/interface/others.md#fullscreen-button)
+- Details:
+  - [Interface → FullScreen](../../guide/interface/others.md#fullscreen-button)
 
 Whether show the "full screen" button.
 
@@ -79,7 +82,8 @@ Whether show the "full screen" button.
 
 - Type: `boolean`
 - Default: `false`
-- Details: [Interface → Pure mode](../../guide/interface/pure.md)
+- Details:
+  - [Interface → Pure mode](../../guide/interface/others.md#pure-mode)
 
 Whether enable pure mode.
 
@@ -95,6 +99,8 @@ Useful when you want to provide "A pure document site".
 
 - Type: `boolean`
 - Default: `true`
+- Details:
+  - [Interface → Print button](../../guide/interface/others.md#print-button)
 
 Whether display print icon in desktop mode.
 
@@ -102,6 +108,7 @@ Whether display print icon in desktop mode.
 
 - Type: `string`
 - Default: Inferred from iconAssets
-- Details: [Interface → Icon](../../guide/interface/icon.md)
+- Details:
+  - [Interface → Icon](../../guide/interface/icon.md)
 
 Prefix of icon FontClass, usually, it can be automatically set by the theme.

@@ -149,46 +149,7 @@ tag:
 
 ::::
 
-:::: details 例子
-
-::: code-tabs#language
-
-@tab TS
-
-```ts title=".vuepress/config.ts"
-import { getDirname, path } from "vuepress/utils";
-import { defineUserConfig } from "vuepress";
-import { hopeTheme } from "vuepress-theme-hope";
-
-const __dirname = getDirname(import.meta.url);
-
-export default defineUserConfig({
-  theme: hopeTheme({
-    blog: {
-      medias: {
-        // GitHub 已经内置了图标
-        GitHub: "https://github.com/Mister-Hope",
-        // 一个自定义媒体 MediaX (仅作示例)
-        MediaX: {
-          // 图标 SVG 字符串
-          icon: "<svg ....</svg>",
-          // 链接
-          link: "https://mediax.com/UserX/",
-        },
-        // 一个自定义媒体 MediaY (仅作示例)
-        MediaY: {
-          // 图标地址
-          icon: "https://mediay.com/logo.svg",
-          // 链接
-          link: "https://mediay.com/UserY/",
-        },
-      },
-    },
-  }),
-});
-```
-
-@tab JS
+::: details 例子
 
 ```js title=".vuepress/config.js"
 import { getDirname, path } from "vuepress/utils";
@@ -223,5 +184,3 @@ export default {
 ```
 
 :::
-
-::::

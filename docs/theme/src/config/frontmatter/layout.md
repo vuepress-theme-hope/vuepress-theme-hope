@@ -15,6 +15,10 @@ You can configure page layout by setting the following frontmatter options.
 
 - Type: `PageInfo[] | false`
 - Default: value in theme options
+- Details:
+  - [Feature → PageInfo](../../guide/feature/page-info.md)
+
+Customize page info items in current page.
 
 | Item            | Corresponding Content | Page frontmatter Value                  |
 | --------------- | --------------------- | --------------------------------------- |
@@ -26,12 +30,12 @@ You can configure page layout by setting the following frontmatter options.
 | `"Word"`        | Word count            | N/A (automatically generated)           |
 | `"PageView"`    | Visit Number          | `pageview` (only available with Waline) |
 
-Set whether to show page details on the current page
-
 ## pageview
 
 - Type: `boolean`
 - Default: value in theme options
+- Details:
+  - [Feature → Comment](../../guide/feature/comment.md#waline)
 
 Whether display page views.
 

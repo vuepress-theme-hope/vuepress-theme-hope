@@ -57,10 +57,9 @@ If the current browser does not support full screen, the full screen button is a
 You can set `plugins.backToTop: false` in theme options to disable it, or set it with an object to customize its threshold distance and progress bar display:
 
 ```js {8,13-26} title=".vuepress/config.js"
-import { defineUserConfig } from "vuepress";
 import { hopeTheme } from "vuepress-theme-hope";
 
-export default defineUserConfig({
+export default {
   theme: hopeTheme({
     plugins: {
       // disable back to top button
@@ -85,8 +84,38 @@ export default defineUserConfig({
       },
     },
   }),
-});
+};
 ```
+
+## Full A11y Support
+
+"A11y" stands for "accessibility".
+
+The theme adds full support of accessibility.
+
+- All page structures of the theme are processed semantically.
+
+- All buttons and icons have their corresponding accessibility labels
+
+- All main interactive elements can be focused and interacted through the keyboard
+
+This is our support for the visually impaired people around the world! :heart:
+
+## Pure Mode
+
+If your site is a documentation-only site, and you prefer a clean style, you can enable pure mode by setting `pure: true` in theme options.
+
+```js {5} title=".vuepress/config.js"
+import { hopeTheme } from "vuepress-theme-hope";
+
+export default {
+  theme: hopeTheme({
+    pure: true,
+  }),
+};
+```
+
+In this mode, we disable some fancy animations and some colors and just provide functionality.
 
 ## RTL Layout
 

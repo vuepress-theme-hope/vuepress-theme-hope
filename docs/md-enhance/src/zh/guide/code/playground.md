@@ -9,52 +9,7 @@ icon: code
 
 ## 配置
 
-::: code-tabs#language
-
-@tab TS
-
-```ts {7-35} title=".vuepress/config.ts"
-import { mdEnhance } from "vuepress-plugin-md-enhance";
-
-export default {
-  plugins: [
-    mdEnhance({
-      // 在此放置交互演示配置
-      playground: {
-        // 添加预设
-        presets: [
-          "ts",
-          "vue",
-          "unocss",
-          {
-            name: "playground#language",
-            component: "PlaygroundComponent",
-            propsGetter: (
-              playgroundData: PlaygroundData,
-            ): Record<string, string> => ({
-              // 交互演示属性
-            }),
-          },
-        ],
-        // 设置内置预设 (可选)
-        config: {
-          ts: {
-            // ...
-          },
-          vue: {
-            // ...
-          },
-          unocss: {
-            // ...
-          },
-        },
-      },
-    }),
-  ],
-};
-```
-
-@tab JS
+::
 
 ```js {7-35} title=".vuepress/config.js"
 import { mdEnhance } from "vuepress-plugin-md-enhance";
@@ -72,9 +27,7 @@ export default {
           {
             name: "playground#language",
             component: "PlaygroundComponent",
-            propsGetter: (
-              playgroundData: PlaygroundData
-            ): Record<string, string> => ({
+            propsGetter: (playgroundData) => ({
               // 交互演示属性
             }),
           },
@@ -96,8 +49,6 @@ export default {
   ],
 };
 ```
-
-:::
 
 <!-- #region after -->
 

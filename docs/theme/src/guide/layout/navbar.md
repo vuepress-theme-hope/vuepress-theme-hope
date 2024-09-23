@@ -31,14 +31,13 @@ You can add links to the navbar via `navbar` options, it accepts an array.
 The easiest way to configure the navbar is to fill in the paths of the page files to be displayed in turn, so that the text, icons and links of the item will be automatically generated from the corresponding files.
 
 ```js {6} title=".vuepress/config.js"
-import { defineUserConfig } from "vuepress";
 import { hopeTheme } from "vuepress-theme-hope";
 
-export default defineUserConfig({
+export default {
   theme: hopeTheme({
     navbar: ["/guide/README.md", "/config/README.md", "/faq.md"],
   }),
-});
+};
 ```
 
 ::: tip

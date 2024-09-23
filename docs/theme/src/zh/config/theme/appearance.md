@@ -71,7 +71,8 @@ tag:
 
 - 类型: `boolean`
 - 默认值: `false`
-- 详情: [界面 → 全屏按钮](../../guide/interface/others.md#全屏按钮)
+- 详情:
+  - [界面 → 全屏按钮](../../guide/interface/others.md#全屏按钮)
 
 是否显示全屏按钮。
 
@@ -79,7 +80,8 @@ tag:
 
 - 类型: `boolean`
 - 默认值: `false`
-- 详情: [界面 → 纯净模式](../../guide/interface/pure.md)
+- 详情:
+  - [界面 → 纯净模式](../../guide/interface/others.md#纯净模式)
 
 是否开启纯净模式。
 
@@ -95,6 +97,8 @@ tag:
 
 - 类型: `boolean`
 - 默认值: `true`
+- 详情:
+  - [界面 → 打印按钮](../../guide/interface/others.md#打印按钮)
 
 是否在桌面模式下显示打印按钮。
 
@@ -102,6 +106,7 @@ tag:
 
 - 类型: `string`
 - 默认值: 尝试从 iconAssets 推断
-- 详情: [界面 → 图标](../../guide/interface/icon.md)
+- 详情:
+  - [界面 → 图标](../../guide/interface/icon.md)
 
 通常情况下，它可以识别 iconAssets 并自动设置，如果识别失败，你可以手动设置图标的 FontClass 前缀。

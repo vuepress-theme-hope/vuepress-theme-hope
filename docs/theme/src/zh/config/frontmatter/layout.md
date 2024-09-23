@@ -15,6 +15,10 @@ tag:
 
 - 类型: `PageInfo[] | false`
 - 默认值: 主题选项中的值
+- 详情:
+  - [功能 → 页面信息](../../guide/feature/page-info.md)
+
+自定义当前页面的页面信息。
 
 `PageInfo` 可选的值和对应内容如下:
 
@@ -29,12 +33,12 @@ tag:
 | `"Word"`        | 字数         | N/A(自动生成)               |
 | `"PageView"`    | 访问量       | `pageview` (仅 Waline 可用) |
 
-文章信息展示项目。
-
 ## pageview
 
 - 类型: `boolean`
 - 默认值: 主题选项中的值
+- 详情:
+  - [功能 → 评论](../../guide/feature/comment.md#waline)
 
 是否显示浏览量。
 

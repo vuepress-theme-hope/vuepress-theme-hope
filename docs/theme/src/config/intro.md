@@ -26,32 +26,6 @@ In VuePress, there are three config concepts:
 
 ## Theme Usage
 
-::: code-tabs#language
-
-@tab TS
-
-```ts title=".vuepress/config.ts"
-import { defineUserConfig } from "vuepress";
-import { hopeTheme } from "vuepress-theme-hope";
-
-export default defineUserConfig({
-  // siteConfig here
-  // ...
-
-  theme: hopeTheme(
-    {
-      // themeConfig here
-      // ...
-    },
-    {
-      // theme behavior options here (optional)
-    },
-  ),
-});
-```
-
-@tab JS
-
 ```js title=".vuepress/config.js"
 import { defineUserConfig } from "vuepress";
 import { hopeTheme } from "vuepress-theme-hope";
@@ -71,5 +45,3 @@ export default defineUserConfig({
   ),
 });
 ```
-
-:::

@@ -187,10 +187,9 @@ tag:
 1. 通过 `plugins.docsearch` 选项配置插件
 
    ```js {7-10} title=".vuepress/config.js"
-   import { defineUserConfig } from "vuepress";
    import { hopeTheme } from "vuepress-theme-hope";
 
-   export default defineUserConfig({
+   export default {
      theme: hopeTheme({
        plugins: {
          docsearch: {
@@ -199,7 +198,7 @@ tag:
          },
        },
      }),
-   });
+   };
    ```
 
 ::: info 更多
@@ -238,33 +237,10 @@ tag:
 
    你可以将 `plugins.searchPro` 设置为 `true` 来直接启用它，或者将其设置为一个对象来自定义插件。
 
-   ::: code-tabs#language
-
-   @tab TS
-
-   ```ts title=".vuepress/config.ts"
-   import { defineUserConfig } from "vuepress";
-   import { hopeTheme } from "vuepress-theme-hope";
-
-   export default defineUserConfig({
-     theme: hopeTheme({
-       plugins: {
-         searchPro: true,
-         // searchPro: {
-         //   插件选项
-         // },
-       },
-     }),
-   });
-   ```
-
-   @tab JS
-
    ```js title=".vuepress/config.js"
-   import { defineUserConfig } from "vuepress";
    import { hopeTheme } from "vuepress-theme-hope";
 
-   export default defineUserConfig({
+   export default {
      theme: hopeTheme({
        plugins: {
          searchPro: true,
@@ -273,10 +249,8 @@ tag:
          // },
        },
      }),
-   });
+   };
    ```
-
-   :::
 
 ::: info 更多
 
@@ -314,33 +288,10 @@ tag:
 
 1. 在主题选项中配置 `plugins.search`。
 
-   ::: code-tabs#language
-
-   @tab TS
-
-   ```ts title=".vuepress/config.ts"
-   import { defineUserConfig } from "vuepress";
-   import { hopeTheme } from "vuepress-theme-hope";
-
-   export default defineUserConfig({
-     theme: hopeTheme({
-       plugins: {
-         search: true,
-         // search: {
-         //   插件选项
-         // },
-       },
-     }),
-   });
-   ```
-
-   @tab JS
-
    ```js title=".vuepress/config.js"
-   import { defineUserConfig } from "vuepress";
    import { hopeTheme } from "vuepress-theme-hope";
 
-   export default defineUserConfig({
+   export default {
      theme: hopeTheme({
        plugins: {
          search: true,
@@ -349,10 +300,8 @@ tag:
          // },
        },
      }),
-   });
+   };
    ```
-
-   :::
 
 ::: info 更多
 

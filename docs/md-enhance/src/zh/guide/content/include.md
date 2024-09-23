@@ -395,11 +395,7 @@ export default {
 
 此外，如果你想将 Markdown 文件直接放在实际文件旁边，但不希望它们呈现为页面，你可以在 VuePress 配置中设置 `pagePatterns` 选项。有关详细信息，请参阅 [pagePatterns](https://vuejs.press/zh/reference/config.html#pagepatterns)。
 
-::: code-tabs#language
-
-@tab TS
-
-```ts {6} title=".vuepress/config.ts"
+```js {6} title=".vuepress/config.js"
 import { defineUserConfig } from "vuepress";
 import { mdEnhancePlugin } from "vuepress-plugin-md-enhance";
 
@@ -414,22 +410,3 @@ export default defineUserConfig({
   ],
 });
 ```
-
-@tab JS
-
-```js {5} title=".vuepress/config.js"
-import { mdEnhancePlugin } from "vuepress-plugin-md-enhance";
-
-export default {
-  // 现在任何带有 `.snippet.md` 扩展名的文件都不会呈现为页面
-  pagePatterns: ["**/*.md", "!**/*.snippet.md", "!.vuepress", "!node_modules"],
-
-  plugins: [
-    mdEnhancePlugin({
-      include: true,
-    }),
-  ],
-};
-```
-
-:::

@@ -17,38 +17,6 @@ When setting `{ custom: true }` in [Behavior options](../../config/theme/behavio
 
 You need to replace the component alias used in the theme with `alias` option in your own VuePress config file.
 
-::: code-tabs#language
-
-@tab TS
-
-```ts title=".vuepress/config.ts"
-import { getDirname, path } from "vuepress/utils";
-import { defineUserConfig } from "vuepress";
-import { hopeTheme } from "vuepress-theme-hope";
-
-const __dirname = getDirname(import.meta.url);
-
-export default defineUserConfig({
-  theme: hopeTheme(
-    {
-      // your theme config here
-    },
-    { custom: true },
-  ),
-
-  alias: {
-    // Here you can redirect aliases to your own components
-    // For example, here we change the theme's home page component to HomePage.vue under user .vuepress/components
-    "@theme-hope/components/HomePage": path.resolve(
-      __dirname,
-      "./components/HomePage.vue",
-    ),
-  },
-});
-```
-
-@tab JS
-
 ```js title=".vuepress/config.js"
 import { getDirname, path } from "vuepress/utils";
 import { hopeTheme } from "vuepress-theme-hope";
@@ -73,8 +41,6 @@ export default {
   },
 };
 ```
-
-:::
 
 Here are list of aliases.
 
@@ -251,12 +217,11 @@ For example, if your site has strong social attributes, and you want to display 
 
 ```ts title=".vuepress/config.ts"
 import { getDirname, path } from "vuepress/utils";
-import { defineUserConfig } from "vuepress";
 import { hopeTheme } from "vuepress-theme-hope";
 
 const __dirname = getDirname(import.meta.url);
 
-export default defineUserConfig({
+export default {
   theme: hopeTheme(
     {
       // your theme config here
@@ -272,7 +237,7 @@ export default defineUserConfig({
       "./components/HomePage.vue",
     ),
   },
-});
+};
 ```
 
 @tab HomePage.vue

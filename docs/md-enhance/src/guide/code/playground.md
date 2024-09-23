@@ -9,53 +9,6 @@ The plugin provides you playground support.
 
 ## Settings
 
-::: code-tabs#language
-
-@tab TS
-
-```ts {7-35} title=".vuepress/config.ts"
-import { mdEnhance } from "vuepress-plugin-md-enhance";
-
-export default {
-  plugins: [
-    mdEnhance({
-      // playground config here
-      playground: {
-        // add presets here
-        presets: [
-          "ts",
-          "vue",
-          "unocss",
-          {
-            name: "playground#language",
-            component: "PlaygroundComponent",
-            propsGetter: (
-              playgroundData: PlaygroundData,
-            ): Record<string, string> => ({
-              // playground props
-            }),
-          },
-        ],
-        // configure built-in presets (optional)
-        config: {
-          ts: {
-            // ...
-          },
-          vue: {
-            // ...
-          },
-          unocss: {
-            // ...
-          },
-        },
-      },
-    }),
-  ],
-};
-```
-
-@tab JS
-
 ```js {7-35} title=".vuepress/config.js"
 import { mdEnhance } from "vuepress-plugin-md-enhance";
 
@@ -72,9 +25,7 @@ export default {
           {
             name: "playground#language",
             component: "PlaygroundComponent",
-            propsGetter: (
-              playgroundData: PlaygroundData
-            ): Record<string, string> => ({
+            propsGetter: (playgroundData) => ({
               // playground props
             }),
           },
@@ -96,8 +47,6 @@ export default {
   ],
 };
 ```
-
-:::
 
 <!-- #region after -->
 

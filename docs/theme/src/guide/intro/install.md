@@ -76,23 +76,6 @@ npm init vuepress-theme-hope@latest add [dir]
 
 Please import and use `hopeTheme` to use `vuepress-theme-hope`, the first argument accepted by `hopeTheme` will be used as the theme config:
 
-::: code-tabs#language
-
-@tab TS
-
-```ts {6} title=".vuepress/config.ts"
-import { defineUserConfig } from "vuepress";
-import { hopeTheme } from "vuepress-theme-hope";
-
-export default defineUserConfig({
-  theme: hopeTheme({
-    // your theme config here
-  }),
-});
-```
-
-@tab JS
-
 ```js {5} title=".vuepress/config.js"
 import { hopeTheme } from "vuepress-theme-hope";
 
@@ -102,8 +85,6 @@ export default {
   }),
 };
 ```
-
-:::
 
 You can view [Config of this site][docs-config] as an example.
 

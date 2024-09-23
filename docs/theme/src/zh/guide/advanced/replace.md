@@ -17,39 +17,6 @@ tag:
 
 你需要在自己的 VuePress 配置文件通过 `alias` 替换主题中使用的组件别名。
 
-::: code-tabs#language
-
-@tab TS
-
-```ts title=".vuepress/config.ts"
-import { getDirname, path } from "vuepress/utils";
-import { defineUserConfig } from "vuepress";
-import { hopeTheme } from "vuepress-theme-hope";
-
-const __dirname = getDirname(import.meta.url);
-
-export default defineUserConfig({
-  theme: hopeTheme(
-    {
-      // 主题选项
-      // ...
-    },
-    { custom: true },
-  ),
-
-  alias: {
-    // 你可以在这里将别名定向到自己的组件
-    // 比如这里我们将主题的主页组件改为用户 .vuepress/components 下的 HomePage.vue
-    "@theme-hope/components/HomePage": path.resolve(
-      __dirname,
-      "./components/HomePage.vue",
-    ),
-  },
-});
-```
-
-@tab JS
-
 ```js title=".vuepress/config.js"
 import { getDirname, path } from "vuepress/utils";
 import { hopeTheme } from "vuepress-theme-hope";
@@ -75,8 +42,6 @@ export default {
   },
 };
 ```
-
-:::
 
 可以支持的别名如下。
 
@@ -254,12 +219,11 @@ export default {
 
 ```ts title=".vuepress/config.ts"
 import { getDirname, path } from "vuepress/utils";
-import { defineUserConfig } from "vuepress";
 import { hopeTheme } from "vuepress-theme-hope";
 
 const __dirname = getDirname(import.meta.url);
 
-export default defineUserConfig({
+export default {
   theme: hopeTheme(
     {
       // 主题选项
@@ -276,7 +240,7 @@ export default defineUserConfig({
       "./components/HomePage.vue",
     ),
   },
-});
+};
 ```
 
 @tab HomePage.vue

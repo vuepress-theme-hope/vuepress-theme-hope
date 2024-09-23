@@ -47,7 +47,7 @@ export default {
 
 <ColorModeSwitch /> (尝试切换主题)
 
-[GitHub Light](/assets/image/github-light.svg#dark)
+![GitHub Light](/assets/image/github-light.svg#dark)
 ![GitHub Dark](/assets/image/github-dark.svg#light)
 
 :::

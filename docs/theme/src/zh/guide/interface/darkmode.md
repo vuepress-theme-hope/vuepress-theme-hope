@@ -43,9 +43,9 @@ export default {
 
 ## 获取状态
 
-- 你可以在 Markdown 文件或 Vue 模板中通过 `$isDarkmode` 来获取当前是否为深色模式。
+- 在 Markdown 文件或 Vue 模板中，你可以直接获取 `$isDarkmode` 来获取当前是否为深色模式。
 
-- 你可以从 `vuepress-theme-hope/client` 导入 `useDarkmode` 来获取深色模式状态:
+- 在脚本中，你可以从 `vuepress-theme-hope/client` 导入 `useDarkmode` 来获取深色模式状态:
 
   ```ts
   import { useDarkmode } from "vuepress-theme-hope/client";
