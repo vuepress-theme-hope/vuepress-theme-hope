@@ -9,41 +9,40 @@ tag:
   - Layout
 ---
 
-`vuepress-theme-hope` provides footer feature for all pages <Badge text="Support page config" />.
+`vuepress-theme-hope` provides footer feature for all pages.
 
 <!-- more -->
 
-## Global Config
+## Introduction
 
-You can set the default footer content and copyright information globally using `footer` and `copyright` in theme options.
+Footer contains customizable footer content and copyright information.
 
-The footer is not displayed by default. To display the footer, you need to set `displayFooter: true` in theme options.
+You can set the default footer content and copyright information globally using `footer`, `copyright` and `license` in theme options.
 
 ::: info Different Locales
 
-You can set footers for each language individually under `locales` field in theme options.
+You can customize these options for each language individually under `locales` field in theme options.
 
 :::
 
-## Page Config
+You can also set `footer`, `copyright` and `license` options in page frontmatter to customize a specific page.
 
-You can configure `footer` and `copyright` options in the frontmatter of the page to set footer content of a specific page.
+## Footer Config
 
-### footer
+The footer content will be inserted with `v-html` command, so both HTML and plain text are supported. You can set global content using `footer` in theme options.
 
-- When setting `displayFooter: true` in theme options, you can set `footer: false` in frontmatter to disable footer in a specific page.
+The footer is hidden by default. If you want to display it globally by default, please set `displayFooter: true` in theme options.
 
-- When the global display of footer is not enabled, setting `footer: true` means displaying the default footer.
+- When footer is hidden by default, setting `footer: true` in frontmatter will display the default footer.
+- When footer is displayed by default, set `footer: false` in frontmatter will disable the default footer.
+- If `footer` in frontmatter is a string, it will be inserted into the footer as content with `v-html` command, so both HTML and plain text are supported.
 
-- If you fill in a string, it will be inserted into the footer as content with `v-html` command, so you can fill in HTMLString.
+## Copyright Information
 
-### copyright
+You can set the copyright and license information globally or for a specific page using `copyright` and `license`.
 
-The `copyright` field is used as copyright information of a specific page (useful when you cite an article and the article uses a specific license). It also supports HTMLString.
-
-The default copyright text will be generated from author and license in theme options.
-
-When setting `displayFooter: true` in theme options, you can also set `copyright: false` to hide the copyright information in a specific page.
+- `copyright` field indicates the content of the copyright information, which will be inserted with `v-html` command, so both HTML and plain text are supported. You can set `false` to hide the copyright information of this page.
+- `license` field indicates the name of the license. We recommend that you strictly follow the provisions of the license for specification. After specifying, `copyright` will have the default copyright information based on the license name (of course, you can still customize `copyright`).
 
 ## Examples
 
@@ -52,6 +51,14 @@ When setting `displayFooter: true` in theme options, you can also set `copyright
   ```md
   ---
   footer: true
+  ---
+  ```
+
+- When you set `displayFooter: true` in theme options, you can also disable it locally:
+
+  ```md
+  ---
+  footer: false
   ---
   ```
 
@@ -69,22 +76,15 @@ When setting `displayFooter: true` in theme options, you can also set `copyright
   ```md
   ---
   footer: <a href="https://github.com/Mister-Hope"> Mr.Hope </a>
-  copyright: License under CC4.0, author Mr.Hope
+  license: CC 4.0
   ---
   ```
 
-- When you set `displayFooter: true` in theme options, you can also disable it locally:
-
-  ```md
-  ---
-  footer: false
-  ---
-  ```
-
-- To remove the default footer content while keeping copyright information displayed, please use an empty string.
+- To remove the default footer content while displaying a customized copyright information:
 
   ```md
   ---
   footer: ""
+  copyright: Customized copyright text
   ---
   ```

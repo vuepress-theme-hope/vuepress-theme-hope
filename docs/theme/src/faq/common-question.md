@@ -101,3 +101,23 @@ If you are not satisfied with the default content width, you can adjust the cont
 If you feel that the content width is very narrow, this is probably your personal aesthetic problem, because vuepress-theme-hope follows the best layout design practices. For related discussions and solutions to make the content fill the screen, see [this discussion](https://github.com/orgs/vuepress-theme-hope/discussions/3742).
 
 :::
+
+## Links in Config
+
+The bundler needs to know the path of the assets to be bundled, so only contents that can be statically analyzed can be bundled. This means that:
+
+- In Markdown: Only relative page links and images links are supported
+- In html (including vue template): Only relative links are supported, including `src` attribute of `img` and `video` tag
+- In style files (css, scss): Some kinds of assets, including background image urls, font files, etc.
+- In script files: Links in `import` statements or `import()` expressions
+
+But for all kinds of configuration in VuePress, including [frontmatter](../cookbook/vuepress/page.md#frontmatter), [vuepress config file](../cookbook/vuepress/config.md) as well as theme options and plugin options, VuePress parse them as data, so they can not be statically analyzed by bundlers. This means any links will be kept as is, so you must make it resolvable.
+
+Most link will accept the following values:
+
+- A full link: can be accessed directly, like `https://example.com/example.jpg`
+- A route link: will be resolved to the root of the site, like `/foo/example.jpg`. It will be different under different base path, e.g.: `/foo/example.jpg` for base `/` and `/bar/foo/example.jpg` for base `/bar/`
+
+ad` 选项。
+
+Only a few options keep the input unchanged, which means that the input starting with `/` will not automatically add the base path. These options will have a warning in the document, such as the `head` option in the [VuePress configuration file](../cookbook/vuepress/config.md#config-file).

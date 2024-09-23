@@ -37,7 +37,7 @@ tag:
 - 类型: `string`
 - 必填: 否
 - 详情:
-  - [指南 → 图标支持](../../guide/interface/icon.md)
+  - [界面 → 图标支持](../../guide/interface/icon.md)
 
 当前页面图标的 FontClass 或文件路径 (建议填写)。
 
@@ -69,6 +69,8 @@ tag:
   ```
 
 - 必填: 否
+- 详情:
+  - [功能 → 页面信息](../../guide/feature/page-info.md#作者)
 
 作者，如果不填，则会回退到默认作者。
 
@@ -82,6 +84,8 @@ tag:
 
 - 类型: `boolean`
 - 默认值: `false`
+- 详情:
+  - [功能 → 页面信息](../../guide/feature/page-info.md#参数)
 
 当前文章是否为原创。
 
@@ -89,14 +93,17 @@ tag:
 
 - 类型: `DateString`
 - 必填: 否
-- 格式: `YYYY-MM-DD` 或 `YYYY-MM-DD hh:mm:ss`
+- 详情:
+  - [功能 → 页面信息](../../guide/feature/page-info.md#写作日期)
 
-写作时间。
+写作时间，格式: `YYYY-MM-DD` 或 `YYYY-MM-DD hh:mm:ss`
 
 ## category
 
 - 类型: `string | string[]`
 - 必填: 否
+- 详情:
+  - [功能 → 页面信息](../../guide/feature/page-info.md#分类与标签)
 
 分类。
 
@@ -104,6 +111,8 @@ tag:
 
 - 类型: `string | string[]`
 - 必填: 否
+- 详情:
+  - [功能 → 页面信息](../../guide/feature/page-info.md#分类与标签)
 
 标签。
 
@@ -111,29 +120,26 @@ tag:
 
 - 类型: `string`
 - 默认值: 主题选项中的值
+- 详情:
+  - [布局 → 页脚](../../guide/layout/footer.md#版权信息)
 
-页面的协议信息。设置后协议文字将会展现在页脚。
+页面的协议名称。
 
-更多详情请看 [页面 → 页脚支持](../../guide/layout/footer.md)
+## copyright
 
-## sticky
+- 类型: `string | false`
+- 默认值: 主题选项中的值
+- 详情:
+  - [布局 → 页脚](../../guide/layout/footer.md#版权信息)
 
-- 类型: `boolean | number`
-- 默认值: `false`
-
-是否在列表中置顶。当填入数字时，数字越大，排名越靠前。
-
-## star
-
-- 类型: `boolean | number`
-- 默认值: `false`
-
-是否标为星标文章。当填入数字时，数字越大，排名越靠前。
+页面的版权信息，会在页脚中显示。
 
 ## article
 
 - 类型: `boolean`
 - 默认值: `true`
+- 详情:
+  - [博客 → 文章](../../guide/blog/article.md#文章)
 
 是否将该文章添加至文章列表中。
 
@@ -141,19 +147,43 @@ tag:
 
 - 类型: `boolean`
 - 默认值: `true`
+- 详情:
+  - [博客 → 时间线](../../guide/blog/timeline.md#排除文章)
 
 是否将该文章添加至时间线中。
+
+## sticky
+
+- 类型: `boolean | number`
+- 默认值: `false`
+- 详情:
+  - [博客 → 文章](../../guide/blog/article.md#文章)
+
+是否在列表中置顶。当填入数字时，数字越大，排名越靠前。
+
+## star
+
+- 类型: `boolean | number`
+- 默认值: `false`
+- 详情:
+  - [博客 → 文章](../../guide/blog/article.md#星标文章)
+
+是否标为星标文章。当填入数字时，数字越大，排名越靠前。
 
 ## cover
 
 - 类型: `string`
 - 必填: 否
+- 详情:
+  - [常见问题 → 配置中的链接](../../faq/common-question.md#配置中的链接)
 
-设置预览图 (分享图)，请填入绝对路径。
+页面的预览图。
 
 ## banner
 
 - 类型: `string`
 - 必填: 否
+- 详情:
+  - [常见问题 → 配置中的链接](../../faq/common-question.md#配置中的链接)
 
-设置横幅图片 (宽屏分享图)，请填入绝对路径。
+页面的宽屏分享图。

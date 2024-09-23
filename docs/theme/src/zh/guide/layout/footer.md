@@ -9,41 +9,40 @@ tag:
   - 页脚
 ---
 
-`vuepress-theme-hope` 为所有页面提供了页脚功能 <Badge text="支持页面配置" />。
+`vuepress-theme-hope` 为所有页面提供了页脚功能。
 
 <!-- more -->
 
-## 全局配置
+## 介绍
 
-在主题选项中，`footer` 字段用于全局配置页脚。你可以在主题选项中设置 `footer` 和 `copyright` 全局设置默认的页脚内容与版权信息。
+页脚包含可自定义的页脚内容和版权信息。
 
-默认情况下页脚不会显示在页面中。如果希望每个页面都显示页脚，需要在主题选项中设置 `displayFooter: true`。
+你可以在主题选项中设置 `footer`，`copyright` `license` 全局设置默认的页脚内容与版权信息。
 
 ::: info 多语言配置支持
 
-你可以在主题选项中通过 `locales` 为每个语言分别设置页脚。
+你可以在主题选项中通过 `locales` 为每个语言分别设置这些选项。
 
 :::
 
-## 页面配置
+你也可以在页面 frontmatter 中配置 `footer`，`copyright` 和 `license` 字段，指定特定页面的页脚内容。
 
-你可以在页面的 frontmatter 中配置 `footer`，`copyright` 字段，指定特定页面的页脚内容。
+## 页脚配置
 
-### footer
+页脚的内容会通过 `v-html` 插入，因此同时支持 HTML 和纯文本，你可以在主题选项中通过 `footer` 选项设置全局内容。
 
-- 当 `displayFooter: true` 时，你可以在 frontmatter 中将 `footer` 设置为 `false` 来禁用特定页面的页脚。
+页脚是默认隐藏的。如果希望默认全局显示，请在主题选项中设置 `displayFooter: true`。
 
-- 当全局显示页脚未开启时，将 `footer` 设置为 `true` 会显示默认的页脚文字。
+- 当全局显示页脚未开启时，在页面 Frontmatter 中将 `footer` 设置为 `true` 会显示默认的页脚文字。
+- 当全局显示页脚已开启时，在页面 Frontmatter 中将 `footer` 设置为 `false` 会禁用默认的页脚。
+- 如果页面 Frontmatter 中的 `footer` 是一个字符串，它将被用作页脚内容。
 
-- 如果你填入一个字符串，它会以 `v-html` 指令的形式插入到页脚的位置作为页脚的内容，所以你可以填入 HTMLString。
+## 版权信息
 
-### copyright
+你可以通过 `copyright` 和 `license` 字段设置全局或特定页面的版权与协议信息。
 
-`copyright` 字段用于设置特定页面的版权信息，它同样也支持 HTMLString (当你引用了文章且文章使用了特定许可的情况下很有用)。
-
-默认的版权信息文字会从主题选项中的作者和许可信息生成。
-
-当然在 `displayFooter: true` 时，你也可以填入 `false` 来隐藏特定页面的版权信息。
+- `copyright` 字段标识版权信息内容，它会通过 `v-html` 插入，因此同时支持 HTML 和纯文本。你可以在页面 Frontmatter 中将 `copyright` 设置为 `false` 隐藏此页面的版权信息。
+- `license` 字段标识协议名称，我们推荐你严格遵守协议的规定进行指定。指定后，`copyright` 会拥有基于协议名称的默认版权信息（当然你仍然可以自定义 `copyright`）。
 
 ## 例子
 
@@ -52,6 +51,14 @@ tag:
   ```md
   ---
   footer: true
+  ---
+  ```
+
+- 当你在主题选项中设置 `displayFooter: true` 时，你还可以局部禁用它:
+
+  ```md
+  ---
+  footer: false
   ---
   ```
 
@@ -69,22 +76,15 @@ tag:
   ```md
   ---
   footer: <a href="https://github.com/Mister-Hope">Mr.Hope</a>
-  copyright: MIT LICENSE
+  license: CC 4.0
   ---
   ```
 
-- 当你在主题选项中设置 `displayFooter: true` 时，你还可以局部禁用它:
-
-  ```md
-  ---
-  footer: false
-  ---
-  ```
-
-- 如果你希望移除默认的 footer 内容同时保持版权信息显示，请传入一个空字符串:
+- 如果你希望移除默认的 footer 内容同时显示自定义版权信息:
 
   ```md
   ---
   footer: ""
+  copyright: 自定义版权信息
   ---
   ```

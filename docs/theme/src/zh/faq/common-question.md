@@ -101,3 +101,21 @@ export default defineUserConfig({
 如果你觉得内容宽度很窄，这大概率是你的个人审美问题，因为 vuepress-theme-hope 遵循了最佳布局设计实践。相关讨论与让内容占满屏幕的方式的解决办法，详见 [此讨论](https://github.com/orgs/vuepress-theme-hope/discussions/3742)。
 
 :::
+
+## 配置中的链接
+
+打包工具需要知道要打包的资源的路径，所以只有可以静态分析的内容才能被打包。这意味着：
+
+- 在 Markdown 中：只支持相对页面链接和图片链接
+- 在 html 中 (包括 vue 模板) ：只支持相对链接，包括 `img` 和 `video` 标签的 `src` 属性
+- 在样式文件中 (css, scss) ：一些资源，包括背景图片 url，字体文件等
+- 在脚本文件中：`import` 语句或 `import()` 表达式中的链接
+
+而对于 VuePress 中所有的配置，包括 [frontmatter](../cookbook/vuepress/page.md#frontmatter) 、[VuePress 配置文件](../cookbook/vuepress/config.md) 以及主题选项和插件选项，VuePress 都会将它们解析为数据，所以它们不能被打包工具静态分析。这意味着任何链接都会保持原样，所以你必须使其可解析。
+
+大多数链接将接受以下值：
+
+- 完整链接: 可以直接访问，如 `https://example.com/example.jpg`
+- 路由链接: 将被解析为站点根目录，如 `/foo/example.jpg`。在不同的基础路径下会有所不同，例如：基础路径为 `/` 时为 `/foo/example.jpg`，基础路径为 `/bar/` 时为 `/bar/foo/example.jpg`
+
+只有少数选项保持输入不变，这意味着以 `/` 开头的输入不会自动添加基础路径。这些选项会在文档中给出警告提示，如 [VuePress 配置文件](../cookbook/vuepress/config.md#配置文件) 中的 `head` 选项。

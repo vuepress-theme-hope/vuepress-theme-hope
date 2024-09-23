@@ -11,9 +11,17 @@ tag:
 
 ## home
 
+- Type: `true`
+- Details:
+  - [Blog → Blog HomePage](../../guide/blog/home.md#blog-style-homepage)
+
 Must be `true` to use blog home layout.
 
 ## layout
+
+- Type: `"BlogHome"`
+- Details:
+  - [Blog → Blog HomePage](../../guide/blog/home.md#blog-style-homepage)
 
 Must be `BlogHome` to use blog home layout.
 
@@ -21,6 +29,8 @@ Must be `BlogHome` to use blog home layout.
 
 - Type: `string`
 - Required: No
+- Details:
+  - [Blog → Blog HomePage](../../guide/blog/home.md#blog-style-homepage)
 
 Page title, will be used in breadcrumb, seo, etc.
 
@@ -28,13 +38,17 @@ Page title, will be used in breadcrumb, seo, etc.
 
 - Type: `string | false`
 - Default: `"Hello"`
+- Details:
+  - [Blog → Blog HomePage](../../guide/blog/home.md#blog-style-homepage)
 
 Hero Title
 
 ## tagline
 
-- Type: `string | false`
-- Default: `"Welcome to your VuePress site"`
+- Type: `string`
+- Required: No
+- Details:
+  - [Blog → Blog HomePage](../../guide/blog/home.md#blog-style-homepage)
 
 Short description in hero
 
@@ -42,27 +56,37 @@ Short description in hero
 
 - Type: `string`
 - Required: No
+- Details:
+  - [Blog → Blog HomePage](../../guide/blog/home.md#blog-style-homepage)
+  - [FAQ → Links in Config](../../faq/common-question.md#links-in-config)
 
-Home hero (logo) image address, relative path is not supported.
+Image link used as home hero (logo).
 
 ## heroImageDark
 
 - Type: `string`
 - Default: `heroImage`
+- Details:
+  - [Blog → Blog HomePage](../../guide/blog/home.md#blog-style-homepage)
+  - [FAQ → Links in Config](../../faq/common-question.md#links-in-config)
 
-Darkmode Home hero (logo) image address, relative path is not supported.
+Darkmode Home hero (logo) image link.
 
 ## heroImageStyle
 
 - Type: `Record<string, string> | string`
 - Required: No
+- Details:
+  - [Blog → Blog HomePage](../../guide/blog/home.md#blog-style-homepage)
 
-CSS style for home icon
+CSS style for home hero (logo) image
 
 ## heroAlt
 
 - Type: `string`
 - Required: No
+- Details:
+  - [Blog → Blog HomePage](../../guide/blog/home.md#blog-style-homepage)
 
 Home icon alt text
 
@@ -70,6 +94,9 @@ Home icon alt text
 
 - Type: `string | false`
 - Default: A built-in picture
+- Details:
+  - [Blog → Blog HomePage](../../guide/blog/home.md#blog-style-homepage)
+  - [FAQ → Links in Config](../../faq/common-question.md#links-in-config)
 
 Link of background image, relative path is not supported.
 
@@ -77,6 +104,9 @@ Link of background image, relative path is not supported.
 
 - Type: `string`
 - Default: `bgImage`
+- Details:
+  - [Blog → Blog HomePage](../../guide/blog/home.md#blog-style-homepage)
+  - [FAQ → Links in Config](../../faq/common-question.md#links-in-config)
 
 Link of darkmode background image, relative path is not supported.
 
@@ -84,6 +114,8 @@ Link of darkmode background image, relative path is not supported.
 
 - Type: `Record<string, string> | string`
 - Required: No
+- Details:
+  - [Blog → Blog HomePage](../../guide/blog/home.md#blog-style-homepage)
 
 The CSS style of the background image.
 
@@ -91,6 +123,8 @@ The CSS style of the background image.
 
 - Type: `boolean`
 - Default: `false`
+- Details:
+  - [Blog → Blog HomePage](../../guide/blog/home.md#blog-style-homepage)
 
 Whether Hero is full screen displayed
 
@@ -125,5 +159,7 @@ Whether Hero is full screen displayed
   ```
 
 - Required: No
+- Details:
+  - [Blog → Blog HomePage](../../guide/blog/home.md#blog-style-homepage)
 
-Project list
+Project list displayed in blog homepage.
