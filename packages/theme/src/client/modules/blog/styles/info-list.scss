@@ -40,28 +40,29 @@
   &:focus {
     outline: none;
   }
+}
 
-  .icon-wrapper {
-    width: 20px;
-    height: 20px;
-    padding: 8px;
-    border-radius: 50%;
+.vp-blog-type-icon-wrapper {
+  width: 20px;
+  height: 20px;
+  padding: 8px;
+  border-radius: 50%;
 
-    background: rgb(127 127 127 / 15%);
+  background: rgb(127 127 127 / 15%);
 
-    transition: background var(--vp-t-color);
+  transition: background var(--vp-t-color);
 
-    [data-theme="dark"] & {
-      background: rgb(255 255 255 / 15%);
-    }
+  [data-theme="dark"] & {
+    background: rgb(255 255 255 / 15%);
+  }
 
-    &:hover {
-      cursor: pointer;
-    }
+  &:hover {
+    cursor: pointer;
+  }
 
-    &.active {
-      background: var(--vp-c-accent-hover);
-    }
+  &.active {
+    background: var(--vp-c-accent-bg);
+    color: var(--vp-c-accent-text);
   }
 
   .icon {

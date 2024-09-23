@@ -79,7 +79,7 @@
     "@mdit/plugin-uml": "^0.13.1",
     "@types/markdown-it": "^14.1.2",
     "@vuepress/helper": "2.0.0-rc.47",
-    "@vuepress/plugin-sass-palette": "2.0.0-rc.47",
+    "@vuepress/plugin-sass-palette": "2.0.0-rc.51",
     "@vueuse/core": "^11.1.0",
     "balloon-css": "^1.2.0",
     "js-yaml": "^4.1.0",

@@ -29,6 +29,7 @@ Responsive breakpoints:
 
 Theme Colors:
 
+- `$theme-color`: primary theme color
 - `$theme-colors`: theme colors you want to use besides primary theme color
 
 Code block (Only available with shiki):
@@ -36,7 +37,9 @@ Code block (Only available with shiki):
 - `$code-bg-color`: background color for code blocks
 - `$code-color`: font color for code blocks
 
-Color list: `$colors`
+Color list:
+
+- `$colors`: Used to generate color list.
 
 ::: details Demo
 
@@ -61,7 +64,7 @@ $pc: 1920px;
 
 All variables here (including your newly added variables) will be converted to kebab-case format and injected as CSS variables.
 
-For example `$theme-color` will be injected as `--theme-color`, and `$backgroundColor` will be injected as `--background-color`.
+For example `$vp-c-text` will be injected as `--vp-c-text`, and `$vp-c-bg` will be injected as `--vp-c-bg`.
 
 :::
 
@@ -74,6 +77,9 @@ Available color variables:
 #### Text
 
 - `$vp-c-text`: Default text color.
+
+By default, the theme automatically generates the following colors based on the `$vp-c-text`, but you can still customize them:
+
 - `$vp-c-text-mute`: Colors for muted texts, such as "inactive menu" or "info texts".
 - `$vp-c-text-subtle`: Color for subtle text, such as as "placeholders" or "caret icon".
 
@@ -91,6 +97,8 @@ Available color variables:
 
 Accent color and brand colors which used for interactive components.
 
+By default, the theme automatically generates the following accent colors based on the `$theme-color` in config file, but you can still customize them:
+
 - `$vp-c-accent`: The most solid color used mainly for colored text. It must satisfy the contrast ratio against when used on top of `$vp-c-accent-soft`.
 - `$vp-c-accent-hover`: Color used for hover state.
 - `$vp-c-accent-bg`: Color used for solid background. It must satisfy the contrast ratio with `$vp-c-accent-text` on top of it.
@@ -102,8 +110,11 @@ Accent color and brand colors which used for interactive components.
 #### Borders
 
 - `$vp-c-border`: Border color for interactive components. For example this should be used for a button outline.
-- `$vp-c-border-hard`: Darker border colors, which is used for "hard" borders closed to text, such as table and kbd.
 - `$vp-c-divider`: Color for separators, used to divide sections within the same components, such as having separator on "h2" heading.
+
+By default, the theme automatically generates the following colors based on the `$vp-c-border`, but you can still customize them:
+
+- `$vp-c-border-hard`: Darker border colors, which is used for "hard" borders closed to text, such as table and kbd.
 
 #### Controls
 

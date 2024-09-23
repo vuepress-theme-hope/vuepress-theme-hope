@@ -71,7 +71,7 @@ export default defineComponent({
                   "div",
                   {
                     class: [
-                      "icon-wrapper",
+                      "vp-blog-type-icon-wrapper",
                       { active: activeType.value === key },
                     ],
                     "aria-label": locale.value[key],

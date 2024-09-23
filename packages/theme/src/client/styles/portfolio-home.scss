@@ -4,7 +4,7 @@
 .theme-hope-content.vp-portfolio-content {
   --content-width: min(84%, 1200px);
   --header-underline: #{color.change(
-      helper.get-color(hope-config.$vp-c-accent),
+      helper.get-color(hope-palette.$vp-c-accent),
       $alpha: 0.4
     )};
 
@@ -22,7 +22,7 @@
 
   [data-theme="dark"] & {
     --header-underline: #{color.change(
-        helper.get-dark-color(hope-config.$vp-c-accent),
+        helper.get-dark-color(hope-palette.$vp-c-accent),
         $alpha: 0.4
       )};
   }

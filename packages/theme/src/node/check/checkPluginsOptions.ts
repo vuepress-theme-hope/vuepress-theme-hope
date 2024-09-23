@@ -5,7 +5,7 @@ import { PLUGIN_CHECKLIST } from "./utils.js";
 import type { PluginsOptions } from "../../shared/index.js";
 import { logger } from "../utils.js";
 
-const KNOWN_THEME_PLUGINS = PLUGIN_CHECKLIST.map(([, config]) => config).filter(
+const KNOWN_THEME_PLUGIN_KEYS = PLUGIN_CHECKLIST.map(([, key]) => key).filter(
   Boolean,
 );
 
@@ -16,7 +16,7 @@ const KNOWN_THEME_PLUGINS = PLUGIN_CHECKLIST.map(([, config]) => config).filter(
  */
 export const checkPluginsOptions = (plugins: PluginsOptions): void => {
   keys(plugins).forEach((key) => {
-    if (!KNOWN_THEME_PLUGINS.includes(key))
+    if (!KNOWN_THEME_PLUGIN_KEYS.includes(key))
       logger.warn(
         `You are setting "${colors.magenta(
           `plugins.${key}`,

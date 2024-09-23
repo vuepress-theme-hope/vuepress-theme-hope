@@ -15,7 +15,7 @@ The theme allows you to customize theme color and even provide a picker.
 
 ## Setting Default Theme Color
 
-You should set the default theme color of your site in `.vuepress/styles/palette.scss` through `$theme-color`:
+You should set the default theme color of your site in `.vuepress/styles/config.scss` through `$theme-color`:
 
 ```scss
 $theme-color: #f00;

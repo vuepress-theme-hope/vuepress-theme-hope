@@ -15,7 +15,7 @@ tag:
 
 ## 设置默认主题色
 
-你应该在 `.vuepress/styles/palette.scss` 中通过 `$theme-color` 设置站点的默认主题颜色：
+你应该在 `.vuepress/styles/config.scss` 中通过 `$theme-color` 设置站点的默认主题颜色：
 
 ```scss
 $theme-color: #f00;

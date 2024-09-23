@@ -22,9 +22,7 @@ export const getCommentPlugin = (
           darkTheme: `https://unpkg.com/vuepress-theme-hope@${VERSION}/templates/giscus/dark.css`,
         }
       : {}),
-    ...(options?.provider === "Waline"
-      ? { dark: 'html[data-theme="dark"]' }
-      : {}),
+    ...(options?.provider === "Waline" ? { dark: '[data-theme="dark"]' } : {}),
     ...options,
   } as CommentPluginOptions);
 };

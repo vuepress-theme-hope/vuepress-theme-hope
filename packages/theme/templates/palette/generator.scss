@@ -1,7 +1,44 @@
+/* stylelint-disable scss/dollar-variable-pattern */
 @use "sass:color";
 @use "sass:list";
 @use "sass:map";
 @use "@sass-palette/helper";
+@use "@sass-palette/hope-config";
+
+// getting config values
+$_theme_color_light: helper.get-color(hope-config.$theme-color);
+$_theme_color_dark: helper.get-dark-color(hope-config.$theme-color);
+
+// accent color
+$vp-c-accent: (
+  light: color.change($_theme_color_light, $lightness: 35%, $alpha: 1),
+  dark: color.change($_theme_color_dark, $lightness: 55%, $alpha: 1),
+) !default;
+$vp-c-accent-bg: (
+  light: color.change($_theme_color_light, $lightness: 45%, $alpha: 1),
+  dark: color.change($_theme_color_dark, $lightness: 47.5%, $alpha: 1),
+) !default;
+$vp-c-accent-hover: (
+  light: color.change($_theme_color_light, $lightness: 50%, $alpha: 1),
+  dark: color.change($_theme_color_dark, $lightness: 45%, $alpha: 1),
+) !default;
+$vp-c-accent-soft: (
+  light:
+    color.change(
+      $_theme_color_light,
+      $lightness: 40%,
+      $saturation: 80%,
+      $alpha: 0.14
+    ),
+  dark:
+    color.change(
+      $_theme_color_dark,
+      $lightness: 40%,
+      $saturation: 80%,
+      $alpha: 0.16
+    ),
+) !default;
+$vp-c-accent-text: var(--vp-c-white) !default;
 
 // background
 $vp-c-bg-soft: (
@@ -13,14 +50,18 @@ $vp-c-bg-elv-soft: (
   dark: color.change(helper.get-dark-color($vp-c-bg-elv), $alpha: 0.9),
 ) !default;
 
+// getting palette values
+$_text_color_light: helper.get-color($vp-c-text);
+$_text_color_dark: helper.get-dark-color($vp-c-text);
+
 // text
 $vp-c-text-mute: (
-  light: color.scale(helper.get-color($vp-c-text), $alpha: -22%),
-  dark: color.scale(helper.get-dark-color($vp-c-text), $alpha: -30%),
+  light: color.scale($_text_color_light, $alpha: -22%),
+  dark: color.scale($_text_color_dark, $alpha: -30%),
 ) !default;
 $vp-c-text-subtle: (
-  light: color.scale(helper.get-color($vp-c-text), $alpha: -44%),
-  dark: color.scale(helper.get-dark-color($vp-c-text), $alpha: -56%),
+  light: color.scale($_text_color_light, $alpha: -44%),
+  dark: color.scale($_text_color_dark, $alpha: -56%),
 ) !default;
 
 // border

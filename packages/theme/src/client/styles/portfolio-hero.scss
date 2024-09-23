@@ -62,7 +62,7 @@
     &.light {
       display: block;
 
-      html[data-theme="dark"] & {
+      [data-theme="dark"] & {
         display: none;
       }
     }
@@ -70,7 +70,7 @@
     &.dark {
       display: none;
 
-      html[data-theme="dark"] & {
+      [data-theme="dark"] & {
         display: block;
       }
     }
@@ -105,7 +105,7 @@
         display: block;
 
         // stylelint-disable-next-line max-nesting-depth
-        html[data-theme="dark"] & {
+        [data-theme="dark"] & {
           display: none;
         }
       }
@@ -114,7 +114,7 @@
         display: none;
 
         // stylelint-disable-next-line max-nesting-depth
-        html[data-theme="dark"] & {
+        [data-theme="dark"] & {
           display: block;
         }
       }

@@ -32,11 +32,11 @@ $enable-theme-color: map.has-key(
 
       // original theme-color
       &.theme-color {
-        background: helper.get-color(hope-config.$vp-c-accent-bg);
+        background: helper.get-color(hope-palette.$vp-c-accent-bg);
 
         /* stylelint-disable-next-line max-nesting-depth */
         [data-theme="dark"] {
-          background: helper.get-dark-color(hope-config.$vp-c-accent-bg);
+          background: helper.get-dark-color(hope-palette.$vp-c-accent-bg);
         }
       }
     }
@@ -48,15 +48,21 @@ $enable-theme-color: map.has-key(
     $index: list.index(hope-config.$theme-colors, $color);
 
     :root.theme-#{$index} {
-      --vp-c-accent-bg: #{$color};
-      --vp-c-accent-soft: #{color.change($color, $alpha: 0.15)};
-      --vp-c-accent: #{color.scale($color, $lightness: -20%)};
-      --vp-c-accent-hover: #{color.scale($color, $lightness: 10%)};
+      --vp-c-accent: #{color.change($color, $lightness: 35%, $alpha: 1)};
+      --vp-c-accent-bg: #{color.change($color, $lightness: 45%, $alpha: 1)};
+      --vp-c-accent-hover: #{color.change($color, $lightness: 50%, $alpha: 1)};
+      --vp-c-accent-soft: #{color.change(
+          $color,
+          $lightness: 40%,
+          $saturation: 80%,
+          $alpha: 0.15
+        )};
     }
 
     [data-theme="dark"].theme-#{$index} {
-      --vp-c-accent: #{color.scale($color, $lightness: 20%)};
-      --vp-c-accent-hover: #{color.scale($color, $lightness: -10%)};
+      --vp-c-accent: #{color.change($color, $lightness: 55%, $alpha: 1)};
+      --vp-c-accent-bg: #{color.change($color, $lightness: 47.5%, $alpha: 1)};
+      --vp-c-accent-hover: #{color.change($color, $lightness: 45%, $alpha: 1)};
     }
   }
 }

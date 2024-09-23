@@ -1,25 +1,6 @@
 @use "sass:list";
 @use "sass:map";
 
-// accent color
-$vp-c-accent: (
-  light: #299764,
-  dark: #3dd68c,
-) !default;
-$vp-c-accent-bg: (
-  light: #3eaf7c,
-  dark: #3aa675,
-) !default;
-$vp-c-accent-hover: (
-  light: #4abf8a,
-  dark: #349469,
-) !default;
-$vp-c-accent-text: var(--vp-c-white) !default;
-$vp-c-accent-soft: (
-  light: rgb(16 185 129 / 14%),
-  dark: rgb(16 185 129 / 16%),
-) !default;
-
 // background
 $vp-c-bg: (
   light: #fff,
