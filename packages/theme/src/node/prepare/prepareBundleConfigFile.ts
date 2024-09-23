@@ -84,7 +84,7 @@ import "${BUNDLE_FOLDER}styles/all.scss";
 
 ${actions.join("\n")}
 
-export default defineClientConfig({
+export default {
   enhance: ({ app, router }) => {
     const { scrollBehavior } = router.options;
 
