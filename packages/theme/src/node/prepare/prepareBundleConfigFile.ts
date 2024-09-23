@@ -112,7 +112,6 @@ ${setups.map((item) => `    ${item}`).join("\n")}
     NotFound,
 ${layouts.map((item) => `    ${item},`).join("\n")}
   }
-};
-`,
+});`,
   );
 };
