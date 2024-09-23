@@ -19,16 +19,17 @@ export const useShikiPlugin = (
   // Ensure highlighter plugin is not enabled
   if (plugins.every((plugin) => !isHighlighterPlugin(plugin)))
     app.use(
-      shikiPlugin(
-        isPlainObject(options)
-          ? options
+      shikiPlugin({
+        ...(isPlainObject(options) && "theme" in options
+          ? {}
           : {
               themes: {
                 light: "one-light",
                 dark: "one-dark-pro",
               },
-            },
-      ),
+            }),
+        ...(isPlainObject(options) ? options : {}),
+      }),
     );
 };
 
