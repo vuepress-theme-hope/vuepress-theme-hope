@@ -134,6 +134,21 @@ License name of the page.
 
 The copyright information of the page, will be displayed in footer
 
+## pageview
+
+- Type: `boolean`
+- Default: value in theme options
+- Details:
+  - [Feature → Comment](../../guide/feature/comment.md#waline)
+
+Whether display page views.
+
+::: tip
+
+The pageview feature requires you to have a valid Waline Comment Service config.
+
+:::
+
 ## article
 
 - Type: `boolean`

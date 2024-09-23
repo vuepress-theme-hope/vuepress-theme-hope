@@ -11,7 +11,7 @@ tag:
 
 `vuepress-theme-hope` provides a powerful home page.
 
-To use it, set `home: true` in page frontmatter. Any extra content after the `YAML front matter` will be parsed as normal Markdown and rendered after the features section.
+To use it, set `home: true` in page frontmatter. Any extra content after frontmatter will be parsed as normal Markdown and rendered after the features section.
 
 <!-- more -->
 

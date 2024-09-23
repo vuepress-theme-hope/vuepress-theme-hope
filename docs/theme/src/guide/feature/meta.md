@@ -47,7 +47,7 @@ You can automatically generate edit links for each page by setting the following
 
 ## Display Control
 
-To hide these items globally, set the corresponding items below to `false` in theme options. You can also enable/disable specific pages by setting these items in `YAML front matter`:
+To hide these items globally, set the corresponding items below to `false` in theme options. You can also enable/disable specific pages by setting these items in page frontmatter:
 
 - `lastUpdated`: whether to display last update time of the page
 - `contributors`: whether to show page contributors

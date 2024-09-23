@@ -30,51 +30,46 @@ Customize page info items in current page.
 | `"Word"`        | Word count            | N/A (automatically generated)           |
 | `"PageView"`    | Visit Number          | `pageview` (only available with Waline) |
 
-## pageview
-
-- Type: `boolean`
-- Default: value in theme options
-- Details:
-  - [Feature → Comment](../../guide/feature/comment.md#waline)
-
-Whether display page views.
-
-::: tip
-
-The pageview feature requires you to have a valid Waline Comment Service config.
-
-:::
-
 ## breadcrumb
 
 - Type: `boolean`
 - Default: value in theme options
+- Details:
+  - [Layout → Page](../../guide/layout/page.md#breadcrumb)
 
-Whether path navigation is enabled on the current page.
+Whether enable breadcrumb.
 
 ## breadcrumbIcon
 
 - Type: `boolean`
 - Default: value in theme options
+- Details:
+  - [Layout → Page](../../guide/layout/page.md#breadcrumb)
 
-Whether path navigation icon is enabled on the current page.
+Whether show icons in breadcrumb.
 
 ## breadcrumbExclude
 
 - Type: `boolean`
 - Default: `false`
+- Details:
+  - [Layout → Page](../../guide/layout/page.md#breadcrumb)
 
 Whether to exclude the current page from the breadcrumb.
 
 ## navbar
 
 - Type: `boolean`
+- Details:
+  - [Layout → Navbar](../../guide/layout/navbar.md#disabling-navbar)
 
 Setting it to `false` will disable navbar
 
 ## sidebar
 
 - Type: `boolean`
+- Details:
+  - [Layout → Sidebar](../../guide/layout/sidebar.md#disabling-sidebar)
 
 Setting it to `false` will disable sidebar
 
@@ -82,6 +77,8 @@ Setting it to `false` will disable sidebar
 
 - Type: `number`
 - Default: `2`
+- Details:
+  - [Layout → Page](../../guide/layout/page.md#setting-header-depth)
 
 Heading rendering depth.
 

@@ -33,25 +33,12 @@ tag:
 | `"Word"`        | 字数         | N/A(自动生成)               |
 | `"PageView"`    | 访问量       | `pageview` (仅 Waline 可用) |
 
-## pageview
-
-- 类型: `boolean`
-- 默认值: 主题选项中的值
-- 详情:
-  - [功能 → 评论](../../guide/feature/comment.md#waline)
-
-是否显示浏览量。
-
-::: tip
-
-显示浏览量功能需要你拥有有效的 Waline 评论服务配置。
-
-:::
-
 ## breadcrumb
 
 - 类型: `boolean`
 - 默认值: 主题选项中的值
+- 详情:
+  - [布局 → 页面](../../guide/layout/page.md#路径导航)
 
 是否开启路径导航。
 
@@ -59,25 +46,33 @@ tag:
 
 - 类型: `boolean`
 - 默认值: 主题选项中的值
+- 详情:
+  - [布局 → 页面](../../guide/layout/page.md#路径导航)
 
-是否开启路径导航图标。
+是否在路径导航中显示图标。
 
 ## breadcrumbExclude
 
 - 类型: `boolean`
 - 默认值: `false`
+- 详情:
+  - [布局 → 页面](../../guide/layout/page.md#路径导航)
 
 当前页面是否被路径导航排除。
 
 ## navbar
 
 - 类型: `boolean`
+- 详情:
+  - [布局 → 导航栏](../../guide/layout/navbar.md#禁用导航栏)
 
 填入 `false` 会禁用导航栏
 
 ## sidebar
 
 - 类型: `boolean`
+- 详情:
+  - [布局 → 侧边栏](../../guide/layout/sidebar.md#禁用侧边栏)
 
 填入 `false` 会禁用侧边栏
 
@@ -85,6 +80,8 @@ tag:
 
 - 类型: `number`
 - 默认值: `2`
+- 详情:
+  - [布局 → 页面](../../guide/layout/page.md#设置标题深度)
 
 标题渲染深度。
 

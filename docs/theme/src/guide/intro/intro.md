@@ -100,7 +100,7 @@ In short, anyone can enjoy the convenience of Markdown's enhanced syntax.
 
 - More:
 
-  Adds [breadcrumb](../layout/breadcrumb.md), [toc](../layout/page.md#header-list) and [footer](../layout/footer.md) support.
+  Adds [breadcrumb](../layout/page.md#breadcrumb), [toc](../layout/page.md#header-list) and [footer](../layout/footer.md) support.
 
 ### Page Meta
 

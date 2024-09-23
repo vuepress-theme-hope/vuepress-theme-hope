@@ -37,7 +37,13 @@ Please see [Page Info Section](../feature/page-info.md)
 
 ## Breadcrumb
 
-Please see [Breadcrumb](breadcrumb.md).
+The theme provides out-of-the-box support for breadcrumb navigation.
+
+You can control the display of breadcrumb globally and on specific pages by setting a boolean value through `breadcrumb` in theme options and page frontmatter.
+
+The icon of the breadcrumb is also configurable. You can control the behavior of the global and specific pages by setting a boolean value through `breadcrumbIcon` in theme options and page frontmatter.
+
+If you don't want a page to be added to the breadcrumb (e.g., the homepage), you can set `breadcrumbExclude: true` in frontmatter of that page.
 
 ## Header List
 
@@ -53,7 +59,7 @@ You can customize the depth of the header list by setting `headerDepth` in theme
 
 ::: note
 
-The valid maximum value depends on which levels of headers you have extracted via [markdown.headers.level](https://vuejs.press/reference/config.html#markdown-headers).
+The valid maximum value of header depth depends on which levels of headers you have extracted via [markdown.headers.level](https://vuejs.press/reference/config.html#markdown-headers).
 
 Since the default value of [markdown.headers.level](https://vuejs.press/reference/config.html#markdown-headers) is `[2, 3]`, so The default maximum value for `headerDepth` is `2`.
 

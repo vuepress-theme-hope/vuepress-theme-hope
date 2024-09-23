@@ -33,7 +33,13 @@ icon: home
 
 ## 路径导航
 
-详见 [路径导航](breadcrumb.md) 章节。
+主题添加了开箱即用的路径导航支持。
+
+你可以在主题选项和页面 Frontmatter 中通过 `breadcrumb` 设置一个布尔值来控制全局和特定页面的路径导航显示。
+
+路径导航的图标也是可配置的，你可以在主题选项和页面 Frontmatter 中通过 `breadcrumbIcon` 设置一个布尔值来控制全局和特定页面的行为。
+
+如果你不希望某个页面被添加到路径导航中（例如：首页），你可以在页面的 Frontmatter 中设置 `breadcrumbExclude: true`。
 
 ## 文章信息展示
 
@@ -45,15 +51,15 @@ icon: home
 
 如果你不希望在桌面模式下显示右侧的标题列表，请在主题选项中设置 `toc: false`。
 
-你也可以在特定页面的 frontmatter 中通过 `toc` 来指定它。
+你也可以在特定页面的 Frontmatter 中通过 `toc` 来指定它。
 
 ### 设置标题深度
 
-你可以通过在主题选项和页面 frontmatter 中设置 headerDepth 来自定义标题列表的深度。
+你可以通过在主题选项和页面 Frontmatter 中设置 `headerDepth` 来自定义标题列表的深度。
 
 ::: note
 
-有效最大值取决于你通过 [markdown.headers.level](https://vuejs.press/zh/reference/config.html#markdown.headers) 提取了哪些级别的标题。
+标题深度的有效最大值取决于你通过 [markdown.headers.level](https://vuejs.press/zh/reference/config.html#markdown.headers) 提取了哪些级别的标题。
 
 由于 [markdown.headers.level](https://vuejs.press/zh/reference/config.html#markdown.headers) 的默认值是 `[2, 3]` ，因此 `headerDepth` 的默认最大值是 `2` 。
 

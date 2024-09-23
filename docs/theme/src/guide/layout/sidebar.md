@@ -408,7 +408,7 @@ Corresponding to the above advanced control, its default value is `["readme", "o
 
 ### Disabling Sidebar
 
-You can disable the sidebar on a specific page with `YAML front matter`:
+You can disable the sidebar on a specific page via frontmatter:
 
 ```md
 ---

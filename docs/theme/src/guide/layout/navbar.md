@@ -170,7 +170,7 @@ export default {
 };
 ```
 
-## Disable Navbar
+## Disabling Navbar
 
 To disable the navbar globally, set `navbar: false` in theme options:
 
@@ -184,7 +184,7 @@ export default {
 };
 ```
 
-You can disable the navbar for a specific page via `YAML front matter`:
+You can disable the navbar for a specific page via frontmatter:
 
 ```md
 ---

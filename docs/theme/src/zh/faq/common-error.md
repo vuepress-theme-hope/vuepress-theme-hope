@@ -57,8 +57,6 @@ npx vp-update
 
 - `vuepress` 需要一个与自己相同版本的 `@vuepress/bundler-vite`，但是你拥有 `rc.4` 版本的打包器和 `rc.5` 版本的 vuepress。
 
-- Some of the plugin requires `vuepress@2.0.0-rc.2`.
-
 - 一些插件要求 `vuepress@2.0.0-rc.2`，但你当前是 `2.0.0-rc.5`。
 
 你总可以编辑你的依赖版本以使它们相互匹配。通常你会尝试将 vuepress、vuepress 打包器和插件升级到最新版本，但也有可能插件尚未兼容最新版本的 vuepress。在这种情况下，你应该将 vuepress 降级到与插件兼容的版本，或者暂时删除插件直到它支持最新的 vuepress。

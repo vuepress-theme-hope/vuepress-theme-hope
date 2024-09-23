@@ -185,7 +185,7 @@ export default {
 };
 ```
 
-你也可以通过 `YAML front matter` 来禁用某个指定页面的导航栏:
+你也可以通过 Frontmatter 来禁用某个指定页面的导航栏:
 
 ```md
 ---

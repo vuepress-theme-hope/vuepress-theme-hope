@@ -116,6 +116,8 @@ export default defineUserConfig({
 大多数链接将接受以下值：
 
 - 完整链接: 可以直接访问，如 `https://example.com/example.jpg`
-- 路由链接: 将被解析为站点根目录，如 `/foo/example.jpg`。在不同的基础路径下会有所不同，例如：基础路径为 `/` 时为 `/foo/example.jpg`，基础路径为 `/bar/` 时为 `/bar/foo/example.jpg`
+- 路由链接: 将从站点根目录解析，如 `/foo/example.jpg`。
 
-只有少数选项保持输入不变，这意味着以 `/` 开头的输入不会自动添加基础路径。这些选项会在文档中给出警告提示，如 [VuePress 配置文件](../cookbook/vuepress/config.md#配置文件) 中的 `head` 选项。
+  在不同的基础路径下，路由链接对应的实际路径名会有所不同，例如：基础路径为 `/` 时为 `/foo/example.jpg`，基础路径为 `/bar/` 时为 `/bar/foo/example.jpg`
+
+只有少数选项会保持输入不变，这意味着以 `/` 开头的输入不会自动添加基础路径。这些选项会在文档中给出警告提示，如 [VuePress 配置文件](../cookbook/vuepress/config.md#配置文件) 中的 `head` 选项。

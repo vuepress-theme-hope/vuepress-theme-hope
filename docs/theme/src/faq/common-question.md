@@ -116,8 +116,8 @@ But for all kinds of configuration in VuePress, including [frontmatter](../cookb
 Most link will accept the following values:
 
 - A full link: can be accessed directly, like `https://example.com/example.jpg`
-- A route link: will be resolved to the root of the site, like `/foo/example.jpg`. It will be different under different base path, e.g.: `/foo/example.jpg` for base `/` and `/bar/foo/example.jpg` for base `/bar/`
+- A route link: will be resolved from the root of the site, like `/foo/example.jpg`.
 
-ad` 选项。
+  Pathname of route link will be different with different base path, e.g.: `/foo/example.jpg` for base `/` and `/bar/foo/example.jpg` for base `/bar/`
 
 Only a few options keep the input unchanged, which means that the input starting with `/` will not automatically add the base path. These options will have a warning in the document, such as the `head` option in the [VuePress configuration file](../cookbook/vuepress/config.md#config-file).

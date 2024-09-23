@@ -134,6 +134,21 @@ tag:
 
 页面的版权信息，会在页脚中显示。
 
+## pageview
+
+- 类型: `boolean`
+- 默认值: 主题选项中的值
+- 详情:
+  - [功能 → 评论](../../guide/feature/comment.md#waline)
+
+是否显示浏览量。
+
+::: tip
+
+显示浏览量功能需要你拥有有效的 Waline 评论服务配置。
+
+:::
+
 ## article
 
 - 类型: `boolean`

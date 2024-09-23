@@ -399,7 +399,7 @@ dir:
 
 ## 禁用侧边栏
 
-你可以通过 `YAML front matter` 来禁用指定页面的侧边栏:
+你可以通过 `Frontmatter 来禁用指定页面的侧边栏:
 
 ```md
 ---
