@@ -22,7 +22,7 @@ export const checkPluginsOptions = (plugins: PluginsOptions): void => {
           `plugins.${key}`,
         )}" option in ${colors.cyan(
           "theme options",
-        )}, but it's not supported by theme. You need to install the plugin yourself and import then call it manually in "${colors.magenta(
+        )}, but it's not supported by theme. You need to install the plugin yourself and import. Then call it manually in "${colors.magenta(
           "plugins",
         )}" options in ${colors.cyan("vuepress config file")} directly.`,
       );
