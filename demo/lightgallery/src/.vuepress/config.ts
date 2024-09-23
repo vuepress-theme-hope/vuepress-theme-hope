@@ -1,5 +1,5 @@
 import { defaultTheme } from "@vuepress/theme-default";
-import { defineUserConfig } from "vuepress/cli";
+import { defineUserConfig } from "vuepress";
 import { lightgalleryPlugin } from "vuepress-plugin-lightgallery";
 
 const base = (process.env["BASE"] as "/" | `/${string}/`) || "/";

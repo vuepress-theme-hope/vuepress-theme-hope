@@ -1,6 +1,6 @@
 import { defaultTheme } from "@vuepress/theme-default";
 import { cut } from "nodejs-jieba";
-import { defineUserConfig } from "vuepress/cli";
+import { defineUserConfig } from "vuepress";
 import { searchProPlugin } from "vuepress-plugin-search-pro";
 
 const base = (process.env["BASE"] as "/" | `/${string}/`) || "/";

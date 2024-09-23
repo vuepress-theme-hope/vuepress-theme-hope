@@ -1,6 +1,6 @@
 import { addViteOptimizeDepsInclude } from "@vuepress/helper";
-import type { UserConfig } from "vuepress/cli";
-import { defineUserConfig } from "vuepress/cli";
+import type { UserConfig } from "vuepress";
+import { defineUserConfig } from "vuepress";
 import { getDirname, path } from "vuepress/utils";
 
 import { pwaHead } from "./head.js";
