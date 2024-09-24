@@ -31,7 +31,7 @@ $theme-color: #3eaf7c;
 对于后者，你需要设置拥有 `light` 和 `dark` 键名的颜色映射，如：
 
 ```scss title=".vuepress/styles/palette.scss"
-$bg-color: (
+$vp-c-bg: (
   light: #fff,
   dark: #000,
 );
