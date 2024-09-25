@@ -58,6 +58,8 @@ It should contain full protocol (e.g. `https://example.com`).
   ```
 
 - Required: No
+- Details:
+  - [Feature → Page Info](../../guide/feature/page-info.md#author)
 
 Global default author.
 
@@ -65,6 +67,8 @@ Global default author.
 
 - Type: `string`
 - Required: No
+- Details:
+  - [Layout → Footer](../../guide/layout/footer.md#copyright-information)
 
 The default license of site.
 

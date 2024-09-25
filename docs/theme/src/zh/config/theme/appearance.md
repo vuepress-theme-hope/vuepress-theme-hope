@@ -36,7 +36,8 @@ tag:
   ```
 
 - 必填: 否
-- 详情: [界面 → 图标](../../guide/interface/icon.md)
+- 详情:
+  - [界面 → 图标](../../guide/interface/icon.md)
 
 字体图标资源链接，支持 `'iconify'` `'fontawesome'` 和 `'fontawesome-with-brands'` 关键字。
 
@@ -44,7 +45,8 @@ tag:
 
 - 类型: `"switch" | "toggle" | "auto" | "enable" | "disable"`
 - 默认值: `"switch"`
-- 详情: [界面 → 深色模式](../../guide/interface/darkmode.md)
+- 详情:
+  - [界面 → 深色模式](../../guide/interface/darkmode.md)
 
 深色模式支持选项:
 

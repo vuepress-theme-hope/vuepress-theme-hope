@@ -57,12 +57,17 @@ tag:
 
 - 必填: 否
 
+- 详情:
+  - [功能 → 页面信息](../../guide/feature/page-info.md#作者)
+
 文章显示的默认作者
 
 ## license
 
 - 类型: `string`
 - 必填: 否
+- 详情:
+  - [布局 → 页脚](../../guide/layout/footer.md#版权信息)
 
 站点的默认协议
 

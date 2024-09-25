@@ -39,38 +39,58 @@ By default, it will display "Author, Visit Number, Writing Date, Category, Tags,
 
 ### author <Badge text="Support page config" />
 
+You can set `author` in theme options to set the default author info globally, or set `author` in page frontmatter for a page.
+
+An author info can be a string representing author names, or an object with the following fields:
+
+- `name`: author name, required
+- `url`: author website, optional
+- `email`: author email, optional
+
+If there should be multiple authors, you can also set an array of them.
+
+When a default author info is set in theme options, you can set `author: false` in page to avoid fallback to the default author.
+
 Example:
 
-```md
----
-author: Mr.Hope
----
-```
+- A single author name:
 
-You can configure `author` in the plugin options to set the default author. And you can also configure `author` in frontmatter with a new value in the page to override the default author, or set it to `false` to cancel the author display.
+  ```md
+  ---
+  author: Mr.Hope
+  ---
+  ```
 
-Authors support `string[]`, `string`, `AuthorInfo` and `AuthorInfo[]`.
+- Multiple author names:
 
-The format of AuthorInfo is as follows:
+  ```md
+  ---
+  author: Mr.Hope
+  ---
+  ```
 
-```ts
-interface AuthorInfo {
-  /**
-   * Author name
-   */
-  name: string;
+- Author info object:
 
-  /**
-   * Author website
-   */
-  url?: string;
+  ```md
+  ---
+  author:
+    name: Mr.Hope
+    url: https://mister-hope.com
+    email: mister-hope@outlook.com
+  ---
+  ```
 
-  /**
-   * Author email
-   */
-  email?: string;
-}
-```
+- Multiple author info objects:
+
+  ```md
+  ---
+  author:
+    - name: Mr.Hope
+      url: https://mister-hope.com
+      email: mister-hope@outlook.com
+    - name: Meteorlxy
+  ---
+  ```
 
 ### Writing Date
 

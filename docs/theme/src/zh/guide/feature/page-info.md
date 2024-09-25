@@ -39,38 +39,58 @@ tag:
 
 ### 作者 <Badge text="支持页面配置" />
 
+你可以在主题选项中设置 `author` 来全局配置默认作者信息，或者在页面的 frontmatter 中设置 `author` 来为特定页面设置作者。
+
+作者信息可以是一个字符串表示作者名字，也可以是一个对象，对象包含以下字段:
+
+- `name`: 作者名字，必填
+- `url`: 作者网站，可选
+- `email`: 作者邮箱，可选
+
+如果有多个作者，你也可以设置一个作者数组。
+
+当主题选项中已经设置了默认的作者信息时，你可以在页面的 frontmatter 中设置 `author: false` 来避免回退到默认作者。
+
 例子:
 
-```md
----
-author: Mr.Hope
----
-```
+- 单个作者名字:
 
-作者姓名也可以在主题选项中通过 `author` 全局配置，这样每篇文章都会显示默认作者。这时，你仍可以在页面中配置 front matter 中的 `author` 为一个新值来覆盖默认作者，或者设置 `author` 为 `false` 取消作者显示。
+  ```md
+  ---
+  author: Mr.Hope
+  ---
+  ```
 
-作者支持 `string[]`、`string`、`AuthorInfo` 和 `AuthorInfo[]`。
+- 多个作者名字:
 
-其中 AuthorInfo 格式如下:
+  ```md
+  ---
+  author: Mr.Hope
+  ---
+  ```
 
-```ts
-interface AuthorInfo {
-  /**
-   * 作者姓名
-   */
-  name: string;
+- 作者信息对象:
 
-  /**
-   * 作者网站
-   */
-  url?: string;
+  ```md
+  ---
+  author:
+    name: Mr.Hope
+    url: https://mister-hope.com
+    email: mister-hope@outlook.com
+  ---
+  ```
 
-  /**
-   * 作者 Email
-   */
-  email?: string;
-}
-```
+- 多个作者信息对象:
+
+  ```md
+  ---
+  author:
+    - name: Mr.Hope
+      url: https://mister-hope.com
+      email: mister-hope@outlook.com
+    - name: Meteorlxy
+  ---
+  ```
 
 ### 写作日期
 
