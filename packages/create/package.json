@@ -49,7 +49,7 @@
     "execa": "9.4.0"
   },
   "devDependencies": {
-    "rollup": "4.22.4",
+    "rollup": "4.22.5",
     "vuepress": "2.0.0-rc.15",
     "vuepress-theme-hope": "workspace:*"
   },
