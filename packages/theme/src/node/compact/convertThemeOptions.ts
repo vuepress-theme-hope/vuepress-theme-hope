@@ -244,7 +244,7 @@ export const convertThemeOptions = (
   // Ensure plugins
   const plugins = (themeOptions["plugins"] ??= {}) as Record<string, unknown>;
 
-  covertPluginOptions(plugins);
+  covertPluginOptions(themeOptions);
 
   DEPRECATED_THEME_OPTIONS.forEach(([deprecatedOption, newOption]) =>
     deprecatedLogger({
