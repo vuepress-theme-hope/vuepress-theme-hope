@@ -172,7 +172,7 @@ export default {
 
 ## Disabling Navbar
 
-To disable the navbar globally, set `navbar: false` in theme options:
+To disable navbar globally, set `navbar: false` in theme options:
 
 ```js {5} title=".vuepress/config.js"
 import { hopeTheme } from "vuepress-theme-hope";
@@ -184,7 +184,7 @@ export default {
 };
 ```
 
-You can disable the navbar for a specific page via frontmatter:
+You can also disable the navbar for a specific page via frontmatter:
 
 ```md
 ---
@@ -285,9 +285,9 @@ The following three functions are provided:
 
 ## Layout config
 
-`vuepress-theme-hope` allows you to customize navbar layout. You can add components in `start`, `center` and `end` keys under `navbarLayout` options.
+You can customize navbar layout via `navbarLayout` in theme options, where you can add components using `start`, `center` and `end` keys.
 
-Navbar has the following built-in components that can be used:
+The following built-in components can be used directly via their names:
 
 - Brand: Site Brand
 - Links: Navbar links
@@ -296,9 +296,9 @@ Navbar has the following built-in components that can be used:
 - Outlook: Outlook Popup
 - Repo: Project Repo
 
-And you can also use your own component names after you register them globally.
+And you can also use other names of global components.
 
-We use the following options by default:
+By default, the theme use the following options:
 
 ```js {5-9} title=".vuepress/config.js"
 import { hopeTheme } from "vuepress-theme-hope";

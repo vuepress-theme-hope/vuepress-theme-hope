@@ -15,14 +15,15 @@ The following options control theme layout.
 
 ## Navbar Config
 
-For related guide, please see [Layout → Navbar](../../guide/layout/navbar.md).
-
 ### navbar <Badge text="Recommended" type="tip" />
 
 - Type: `NavbarConfig | false`
 - Default: `false`
+- Details:
+  - [Layout → Navbar → Navbar links](../../guide/layout/navbar.md#navbar-links)
+  - [Layout → Navbar → Disable Navbar](../../guide/layout/navbar.md#disabling-navbar)
 
-Navbar config
+Navbar config.
 
 ### navbarLayout
 
@@ -51,6 +52,8 @@ Navbar config
   ```
 
 - Default: `{ start: ["Brand"], center: ["Links"], end: ["Language", "Repo", "Outlook", "Search"] }`
+- Details:
+  - [Layout → Navbar → Navbar layout](../../guide/layout/navbar.md#layout-config)
 
 Customize navbar layout.
 

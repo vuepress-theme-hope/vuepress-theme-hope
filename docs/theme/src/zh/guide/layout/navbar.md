@@ -173,7 +173,7 @@ export default {
 
 ## 禁用导航栏
 
-你可以在主题选项中设置 `navbar: false` 来禁用所有页面的导航栏:
+你可以在主题选项中设置 `navbar: false` 以全局禁用导航栏:
 
 ```js {5} title=".vuepress/config.js"
 import { hopeTheme } from "vuepress-theme-hope";
@@ -286,9 +286,9 @@ export default {
 
 ## 布局配置
 
-主题允许你自定义导航栏布局。 你可以在 `navbarLayout` 选项下的 `start`、`center` 和 `end` 键中添加组件。
+你可以在主题选项中通过 `navbarLayout` 自定义导航栏，你可以在选项中通过 `start`、`center` 和 `end` 键中添加组件。
 
-导航栏包含了下列可以使用的内置组件:
+你可以直接使用以下内置组件名称:
 
 - Brand: 站点品牌
 - Links: 导航栏链接

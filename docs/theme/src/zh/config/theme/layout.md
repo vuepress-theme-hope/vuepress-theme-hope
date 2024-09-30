@@ -15,14 +15,15 @@ tag:
 
 ## 导航栏
 
-具体介绍详见 [布局 → 导航栏](../../guide/layout/navbar.md)。
-
 ### navbar <Badge text="建议配置" type="tip" />
 
 - 类型: `NavbarConfig | false`
 - 默认值: `false`
+- 详情:
+  - [布局 → 导航栏 → 导航栏链接](../../guide/layout/navbar.md#导航栏链接)
+  - [布局 → 导航栏 → 禁用导航栏](../../guide/layout/navbar.md#禁用导航栏)
 
-导航栏配置，具体配置方式见上方详情。
+导航栏配置。
 
 ### navbarLayout
 
@@ -51,8 +52,10 @@ tag:
   ```
 
 - 默认值: `{ start: ["Brand"], center: ["Links"], end: ["Language", "Repo", "Outlook", "Search"] }`
+- 详情:
+  - [布局 → 导航栏 → 导航栏布局](../../guide/layout/navbar.md#布局配置)
 
-自定义导航栏布局
+自定义导航栏布局。
 
 ### logo <Badge text="建议配置" type="tip" />
 
