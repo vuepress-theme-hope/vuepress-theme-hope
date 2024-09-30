@@ -50,7 +50,7 @@
     "cheerio": "1.0.0",
     "chokidar": "^3.6.0",
     "slimsearch": "^2.1.1",
-    "vue": "^3.5.8",
+    "vue": "^3.5.10",
     "vuepress-shared": "workspace:*"
   },
   "peerDependencies": {
@@ -72,7 +72,7 @@
   },
   "devDependencies": {
     "domhandler": "5.0.3",
-    "rollup": "4.22.4"
+    "rollup": "4.22.5"
   },
   "engines": {
     "node": ">=18.19.0",

@@ -34,9 +34,9 @@ __chart_js_config__=config;
 }
 return __chart_js_config__;\
 `,
-  );
+  ) as () => ChartConfiguration;
 
-  return runner() as ChartConfiguration;
+  return runner();
 };
 
 export default defineComponent({

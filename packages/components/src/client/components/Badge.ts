@@ -33,7 +33,7 @@ export interface BadgeProps {
   /**
    * Badge background color
    *
-   * 徽章北境颜色
+   * 徽章背景颜色
    */
   bgColor?: string;
 
@@ -53,6 +53,7 @@ const Badge: FunctionalComponent<
   h(
     "span",
     {
+      // eslint-disable-next-line @typescript-eslint/prefer-nullish-coalescing
       class: ["vp-badge", type, { diy: color || bgColor }],
       style: {
         verticalAlign: vertical ?? false,

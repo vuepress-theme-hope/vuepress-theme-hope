@@ -50,13 +50,13 @@
     "balloon-css": "^1.2.0",
     "create-codepen": "^2.0.0",
     "qrcode": "^1.5.4",
-    "vue": "^3.5.8",
+    "vue": "^3.5.10",
     "vuepress-shared": "workspace:*"
   },
   "devDependencies": {
     "@types/qrcode": "1.5.5",
     "@vuepress/bundler-vite": "2.0.0-rc.15",
-    "rollup": "4.22.4"
+    "rollup": "4.22.5"
   },
   "peerDependencies": {
     "artplayer": "^5.0.0",

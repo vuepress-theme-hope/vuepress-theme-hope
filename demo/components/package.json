@@ -23,10 +23,10 @@
     "dashjs": "4.7.4",
     "hls.js": "1.5.15",
     "mpegts.js": "1.7.3",
-    "sass-embedded": "1.79.3",
+    "sass-embedded": "1.79.4",
     "sass-loader": "16.0.2",
     "vidstack": "1.12.11",
-    "vue": "3.5.8",
+    "vue": "3.5.10",
     "vuepress": "2.0.0-rc.15",
     "vuepress-plugin-components": "workspace:*"
   }

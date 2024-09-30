@@ -25,7 +25,7 @@ const propsGetter = (sandpackData: SandpackData): Record<string, string> => ({
 
 const jsRunner = (jsCode: string): unknown =>
   // eslint-disable-next-line @typescript-eslint/no-implied-eval
-  new Function(`return ${jsCode};`)();
+  (new Function(`return ${jsCode};`) as () => unknown)();
 
 const getSandpackRule =
   (name: string): RuleBlock =>

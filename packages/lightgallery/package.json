@@ -49,11 +49,11 @@
     "@vuepress/helper": "2.0.0-rc.47",
     "@vuepress/plugin-sass-palette": "2.0.0-rc.51",
     "lightgallery": "^2.7.2",
-    "vue": "^3.5.8",
+    "vue": "^3.5.10",
     "vuepress-shared": "workspace:*"
   },
   "devDependencies": {
-    "rollup": "4.22.4"
+    "rollup": "4.22.5"
   },
   "peerDependencies": {
     "sass": "^1.79.3",
