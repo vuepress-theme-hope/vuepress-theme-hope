@@ -35,14 +35,3 @@
     );
   }
 }
-
-// FIXME: An upstream bug
-.waline-wrapper {
-  --waline-bg-color: var(--vp-c-bg);
-  --waline-bg-color-light: var(--v-c-bg-alt);
-  --waline-text-color: var(--vp-c-text);
-  --waline-border: 1px solid var(--vp-c-border);
-  --waline-border-color: var(--vp-c-border);
-  --waline-theme-color: var(--vp-c-accent);
-  --waline-active-color: var(--vp-c-accent-hover);
-}

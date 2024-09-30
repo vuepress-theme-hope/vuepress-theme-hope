@@ -17,28 +17,6 @@
   z-index: 99999;
 }
 
-@media (min-width: hope-config.$laptop) {
-  .chart-wrapper,
-  .flowchart-wrapper,
-  .mermaid-wrapper {
-    &::-webkit-scrollbar {
-      width: 8px;
-      height: 8px;
-    }
-
-    &::-webkit-scrollbar-track-piece {
-      -webkit-border-radius: 8px;
-      border-radius: 8px;
-      background: rgb(0 0 0 / 10%);
-    }
-  }
-}
-
-// rtl
-[dir="rtl"] a.header-anchor::before {
-  right: -0.75em;
-}
-
 // docsearch fix
 #docsearch-container {
   min-width: 145.7px !important;
@@ -85,3 +63,10 @@
   }
 }
 // stylelint-enable selector-class-pattern
+
+// plugin-markdown-hint
+.hint-container {
+  @media (max-width: hope-config.$mobile) {
+    margin-inline: -0.75rem;
+  }
+}

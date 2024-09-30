@@ -13,6 +13,5 @@ export const getActiveHeaderLinksPlugin = (
 
   return activeHeaderLinksPlugin({
     headerLinkSelector: ".vp-sidebar-link, .vp-toc-link",
-    headerAnchorSelector: ".header-anchor",
   });
 };

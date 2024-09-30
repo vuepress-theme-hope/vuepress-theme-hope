@@ -50,7 +50,7 @@
   },
   "devDependencies": {
     "rollup": "4.22.5",
-    "vuepress": "2.0.0-rc.15",
+    "vuepress": "2.0.0-rc.17",
     "vuepress-theme-hope": "workspace:*"
   },
   "engines": {
