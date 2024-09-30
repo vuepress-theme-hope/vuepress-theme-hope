@@ -240,8 +240,8 @@ importers:
         specifier: 0.17.0
         version: 0.17.0(markmap-common@0.17.1)
       markmap-view:
-        specifier: 0.17.0
-        version: 0.17.0(markmap-common@0.17.1)
+        specifier: 0.17.2
+        version: 0.17.2(markmap-common@0.17.1)
       mathjax-full:
         specifier: 3.2.2
         version: 3.2.2
@@ -342,8 +342,8 @@ importers:
         specifier: 0.17.0
         version: 0.17.0(markmap-common@0.17.1)
       markmap-view:
-        specifier: 0.17.0
-        version: 0.17.0(markmap-common@0.17.1)
+        specifier: 0.17.2
+        version: 0.17.2(markmap-common@0.17.1)
       mathjax-full:
         specifier: 3.2.2
         version: 3.2.2
@@ -408,8 +408,8 @@ importers:
         specifier: 0.17.0
         version: 0.17.0(markmap-common@0.17.1)
       markmap-view:
-        specifier: 0.17.0
-        version: 0.17.0(markmap-common@0.17.1)
+        specifier: 0.17.2
+        version: 0.17.2(markmap-common@0.17.1)
       mathjax-full:
         specifier: 3.2.2
         version: 3.2.2
@@ -715,8 +715,8 @@ importers:
         specifier: 0.17.0
         version: 0.17.0(markmap-common@0.17.1)
       markmap-view:
-        specifier: 0.17.0
-        version: 0.17.0(markmap-common@0.17.1)
+        specifier: 0.17.2
+        version: 0.17.2(markmap-common@0.17.1)
       mermaid:
         specifier: 11.2.1
         version: 11.2.1
@@ -7154,6 +7154,11 @@ packages:
 
   markmap-view@0.17.0:
     resolution: {integrity: sha512-V4n5gXbIk7b/ns/gzoNoMaRu7Es+9OLUqfRqj/EiWuiYMlmmQ/rN8NDCgPcuTAnr0hJmor7UXaKYqWL275LspA==}
+    peerDependencies:
+      markmap-common: '*'
+
+  markmap-view@0.17.2:
+    resolution: {integrity: sha512-kF9bbXWF/10UBFTatv0kPQSBgVb8+Xn4Bttep78i9879nzqRaIjCNzZYGtpxK0gx9B4U9NGMZrx/B4cTTwmeQA==}
     peerDependencies:
       markmap-common: '*'
 
@@ -16938,6 +16943,15 @@ snapshots:
       markmap-common: 0.17.1
 
   markmap-view@0.17.0(markmap-common@0.17.1):
+    dependencies:
+      '@babel/runtime': 7.25.6
+      '@gera2ld/jsx-dom': 2.2.2
+      '@types/d3': 7.4.3
+      d3: 7.9.0
+      d3-flextree: 2.1.2
+      markmap-common: 0.17.1
+
+  markmap-view@0.17.2(markmap-common@0.17.1):
     dependencies:
       '@babel/runtime': 7.25.6
       '@gera2ld/jsx-dom': 2.2.2
