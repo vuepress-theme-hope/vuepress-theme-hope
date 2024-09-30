@@ -4,6 +4,20 @@ All notable changes to this project will be documented in this file. See [Conven
 
 <!-- #region recent-change -->
 
+## [2.0.0-rc.57](https://github.com/vuepress-theme-hope/vuepress-theme-hope/compare/v2.0.0-rc.56...v2.0.0-rc.57) (2024-09-30)
+
+### ✨ Features
+
+- **theme:** improve compact ([0c383ed](https://github.com/vuepress-theme-hope/vuepress-theme-hope/commit/0c383edc03e2ef2e276b6bfbed166ad8e7cd9062))
+- **theme:** improve timline time format ([5063586](https://github.com/vuepress-theme-hope/vuepress-theme-hope/commit/50635863bd3a4447b0843aae65a895578bd12722))
+- **theme:** use dual theme for shiki by default ([d20d8cd](https://github.com/vuepress-theme-hope/vuepress-theme-hope/commit/d20d8cd63fc71875abcea139885088132b486b96))
+
+### 🐛 Bug Fixes
+
+- **theme:** make redirect plugin required ([1d325c6](https://github.com/vuepress-theme-hope/vuepress-theme-hope/commit/1d325c63e24d34c15de56fd0a815a72279268bfc))
+
+<!-- #region recent-change -->
+
 ## [2.0.0-rc.56](https://github.com/vuepress-theme-hope/vuepress-theme-hope/compare/v2.0.0-rc.55...v2.0.0-rc.56) (2024-09-23)
 
 **Note:** Version bump only for package vuepress-theme-hope

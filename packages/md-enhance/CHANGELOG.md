@@ -4,6 +4,14 @@ All notable changes to this project will be documented in this file. See [Conven
 
 <!-- #region recent-change -->
 
+## [2.0.0-rc.57](https://github.com/vuepress-theme-hope/vuepress-theme-hope/compare/v2.0.0-rc.56...v2.0.0-rc.57) (2024-09-30)
+
+### ✨ Features
+
+- **theme:** improve compact ([0c383ed](https://github.com/vuepress-theme-hope/vuepress-theme-hope/commit/0c383edc03e2ef2e276b6bfbed166ad8e7cd9062))
+
+<!-- #region recent-change -->
+
 ## [2.0.0-rc.54](https://github.com/vuepress-theme-hope/vuepress-theme-hope/compare/v2.0.0-rc.53...v2.0.0-rc.54) (2024-09-23)
 
 ### ⚠ BREAKING CHANGES
