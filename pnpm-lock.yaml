@@ -237,8 +237,8 @@ importers:
         specifier: 0.17.0
         version: 0.17.0(markmap-common@0.17.1)
       markmap-toolbar:
-        specifier: 0.17.0
-        version: 0.17.0(markmap-common@0.17.1)
+        specifier: 0.17.2
+        version: 0.17.2(markmap-common@0.17.1)
       markmap-view:
         specifier: 0.17.0
         version: 0.17.0(markmap-common@0.17.1)
@@ -339,8 +339,8 @@ importers:
         specifier: 0.17.0
         version: 0.17.0(markmap-common@0.17.1)
       markmap-toolbar:
-        specifier: 0.17.0
-        version: 0.17.0(markmap-common@0.17.1)
+        specifier: 0.17.2
+        version: 0.17.2(markmap-common@0.17.1)
       markmap-view:
         specifier: 0.17.0
         version: 0.17.0(markmap-common@0.17.1)
@@ -405,8 +405,8 @@ importers:
         specifier: 0.17.0
         version: 0.17.0(markmap-common@0.17.1)
       markmap-toolbar:
-        specifier: 0.17.0
-        version: 0.17.0(markmap-common@0.17.1)
+        specifier: 0.17.2
+        version: 0.17.2(markmap-common@0.17.1)
       markmap-view:
         specifier: 0.17.0
         version: 0.17.0(markmap-common@0.17.1)
@@ -712,8 +712,8 @@ importers:
         specifier: 0.17.0
         version: 0.17.0(markmap-common@0.17.1)
       markmap-toolbar:
-        specifier: 0.17.0
-        version: 0.17.0(markmap-common@0.17.1)
+        specifier: 0.17.2
+        version: 0.17.2(markmap-common@0.17.1)
       markmap-view:
         specifier: 0.17.0
         version: 0.17.0(markmap-common@0.17.1)
@@ -7149,6 +7149,11 @@ packages:
 
   markmap-toolbar@0.17.0:
     resolution: {integrity: sha512-zRkg+pYtjDefJ4lSG0KownAN3eqkJcrTei+HbobBWsWTsc7qdUMn2Ewd97SFHCkGoo1nrG0aW7dzDP6lHWuDkw==}
+    peerDependencies:
+      markmap-common: '*'
+
+  markmap-toolbar@0.17.2:
+    resolution: {integrity: sha512-WQ05P2xvQmZT0ybRUE0uRzrs30aXlJ6/yEUsA6A9nYEwm8T9jSwBxIM/5zYlkH/XzUcsRRxtCa4k1IWR74gkpQ==}
     peerDependencies:
       markmap-common: '*'
 
@@ -16932,6 +16937,12 @@ snapshots:
       prismjs: 1.29.0
 
   markmap-toolbar@0.17.0(markmap-common@0.17.1):
+    dependencies:
+      '@babel/runtime': 7.25.6
+      '@gera2ld/jsx-dom': 2.2.2
+      markmap-common: 0.17.1
+
+  markmap-toolbar@0.17.2(markmap-common@0.17.1):
     dependencies:
       '@babel/runtime': 7.25.6
       '@gera2ld/jsx-dom': 2.2.2
