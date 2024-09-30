@@ -3,6 +3,7 @@ import type { Article } from "@vuepress/plugin-blog/client";
 import { useBlogType } from "@vuepress/plugin-blog/client";
 import type { ComputedRef, InjectionKey } from "vue";
 import { computed, inject, provide } from "vue";
+import { usePageLang } from "vuepress/client";
 
 import type { ArticleInfoData } from "../../../../shared/index.js";
 import { ArticleInfo } from "../../../../shared/index.js";
@@ -40,6 +41,7 @@ export const useTimeline = (): TimelineRef => {
  */
 export const setupTimeline = (): void => {
   const timeline = useBlogType<ArticleInfoData>("timeline");
+  const pageLang = usePageLang();
 
   const timelineItems = computed(() => {
     const timelineItems: TimelineItem[] = [];
@@ -50,14 +52,15 @@ export const setupTimeline = (): void => {
 
       if (result) {
         const year = result.getFullYear();
-        const month = result.getMonth() + 1;
-        const day = result.getDate();
 
         if (!timelineItems[0] || timelineItems[0].year !== year)
           timelineItems.unshift({ year, items: [] });
 
         timelineItems[0].items.push({
-          date: `${month}/${day}`,
+          date: result.toLocaleDateString(pageLang.value, {
+            month: "numeric",
+            day: "numeric",
+          }),
           info,
           path,
         });
