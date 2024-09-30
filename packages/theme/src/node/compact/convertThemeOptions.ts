@@ -1,7 +1,10 @@
-import { isArray, isPlainObject, values } from "@vuepress/helper";
+import { entries, isArray, isPlainObject } from "@vuepress/helper";
 import { colors } from "vuepress/utils";
 
-import { convertNavbarOptions } from "./convertNavbarOptions.js";
+import {
+  convertNavbarLayoutOptions,
+  convertNavbarOptions,
+} from "./convertNavbarOptions.js";
 import { convertSidebarOptions } from "./convertSidebarOptions.js";
 import { deprecatedLogger, droppedLogger } from "./utils.js";
 import type { ThemeOptions } from "../../shared/index.js";
@@ -18,62 +21,216 @@ const DEPRECATED_THEME_OPTIONS: [string, string][] = [
 /**
  * @deprecated You should use V2 standard options and avoid using it
  */
-const handleBlogOptions = (blogOptions: Record<string, unknown>): void => {
-  if ("links" in blogOptions) {
-    logger.warn(
-      '"blog.links" options is deprecated, please use "blog.medias" instead',
-    );
-    blogOptions["medias"] = blogOptions["links"];
-    delete blogOptions["links"];
-  }
+const convertBlogOptions = (
+  options: Record<string, unknown>,
+  plugins: Record<string, unknown>,
+  localePath?: string,
+): void => {
+  // Handle blog
+  if (isPlainObject<Record<string, unknown>>(options["blog"])) {
+    const blogOptions = options["blog"];
 
-  if ("perPage" in blogOptions) {
-    logger.warn(
-      '"blog.perPage" options is deprecated, please use "blog.articlePerPage" instead',
-    );
-    blogOptions["articlePerPage"] = blogOptions["perPage"];
-    delete blogOptions["perPage"];
-  }
+    if ("links" in blogOptions) {
+      logger.warn(
+        `${colors.magenta("blog.links")} options is deprecated, please use ${colors.magenta("blog.medias")} instead${localePath ? ` , found in locale path ${localePath}` : ""}.`,
+      );
+      blogOptions["medias"] = blogOptions["links"];
+      delete blogOptions["links"];
+    }
 
-  if ("autoExcerpt" in blogOptions) {
-    logger.error(
-      '"blog.autoExcerpt" options is no longer supported, please use "plugins.blog.excerptLength" instead',
-    );
-    delete blogOptions["autoExcerpt"];
+    if ("perPage" in blogOptions) {
+      logger.warn(
+        `${colors.magenta("blog.perPage")} options is deprecated, please use ${colors.magenta("blog.articlePerPage")} instead${localePath ? ` , found in locale path ${localePath}` : ""}.`,
+      );
+      blogOptions["articlePerPage"] = blogOptions["perPage"];
+      delete blogOptions["perPage"];
+    }
+
+    if ("autoExcerpt" in blogOptions) {
+      logger.error(
+        `${colors.magenta("blog.autoExcerpt")} options is no longer supported, please use ${colors.magenta("plugins.blog.excerptLength")} instead${localePath ? ` , found in locale path ${localePath}` : ""}.`,
+      );
+      delete blogOptions["autoExcerpt"];
+    }
+
+    if (!plugins["blog"])
+      logger.warn(
+        `Blog feature is tree-shakable in v2, you should set ${colors.magenta(
+          "plugins.blog: true",
+        )} in theme options to enable it.`,
+      );
   }
 };
 
 /**
  * @deprecated You should use V2 standard options and avoid using it
  */
-const handleFooterOptions = (options: Record<string, unknown>): void => {
-  if (isPlainObject(options["footer"]) && options["footer"]) {
-    const { footer } = options;
+const convertFooterOptions = (
+  themeLocaleOptions: Record<string, unknown>,
+  localePath?: string,
+): void => {
+  if (
+    isPlainObject(themeLocaleOptions["footer"]) &&
+    themeLocaleOptions["footer"]
+  ) {
+    const { footer } = themeLocaleOptions;
 
     if ("copyright" in footer) {
       logger.warn(
-        '"footer.copyright" options is deprecated, please use "copyright" instead',
+        `${colors.magenta("footer.copyright")} options is deprecated, please use ${colors.magenta("copyright")} instead${localePath ? ` , found in locale path ${localePath}` : ""}.`,
       );
 
-      options["copyright"] = footer["copyright"] as string;
+      themeLocaleOptions["copyright"] = footer["copyright"] as string;
     }
 
     if ("display" in footer) {
       logger.warn(
-        '"footer.display" options is deprecated, please use "displayFooter" instead',
+        `${colors.magenta("footer.display")} options is deprecated, please use ${colors.magenta("displayFooter")} instead${localePath ? ` , found in locale path ${localePath}` : ""}.`,
       );
 
-      options["displayFooter"] = footer["display"] as boolean;
+      themeLocaleOptions["displayFooter"] = footer["display"] as boolean;
     }
 
     if ("content" in footer) {
       logger.warn(
-        '"footer.content" options is deprecated, please use "footer" instead',
+        `${colors.magenta("footer.content")} options is deprecated, please use ${colors.magenta("footer")} instead${localePath ? ` , found in locale path ${localePath}` : ""}.`,
       );
 
-      options["footer"] = footer["content"] as string;
+      themeLocaleOptions["footer"] = footer["content"] as string;
     } else {
-      delete options["footer"];
+      delete themeLocaleOptions["footer"];
+    }
+  }
+};
+
+/**
+ * @deprecated You should use V2 standard options and avoid using it
+ */
+const covertPluginOptions = (themeOptions: Record<string, unknown>): void => {
+  const pluginOptions = themeOptions["plugins"] as Record<string, unknown>;
+
+  // Handle component
+  if (isArray(pluginOptions["components"])) {
+    logger.warn(
+      `${colors.magenta(
+        "plugins.components",
+      )} no longer accepts array, please set it to ${colors.magenta(
+        "plugin.components.components",
+      )} instead.`,
+    );
+
+    pluginOptions["components"] = {
+      components: pluginOptions["components"],
+    };
+  }
+
+  if (isPlainObject(pluginOptions["mdEnhance"])) {
+    const { mdEnhance: mdEnhanceOptions } = pluginOptions;
+
+    if ("alert" in mdEnhanceOptions) {
+      deprecatedLogger({
+        options: themeOptions,
+        deprecatedOption: "plugins.mdEnhance.alert",
+        newOption: "plugins.markdownHint.alert",
+      });
+    }
+
+    if ("hint" in mdEnhanceOptions) {
+      deprecatedLogger({
+        options: themeOptions,
+        deprecatedOption: "plugins.mdEnhance.hint",
+        newOption: "plugins.markdownHint.hint",
+      });
+    }
+
+    if ("figure" in mdEnhanceOptions) {
+      deprecatedLogger({
+        options: themeOptions,
+        deprecatedOption: "plugins.mdEnhance.figure",
+        newOption: "plugins.markdownImage.figure",
+      });
+    }
+
+    if ("imgSize" in mdEnhanceOptions) {
+      deprecatedLogger({
+        options: themeOptions,
+        deprecatedOption: "plugins.mdEnhance.imgSize",
+        newOption: "plugins.markdownImage.size",
+      });
+    }
+
+    if ("imgSize" in mdEnhanceOptions) {
+      deprecatedLogger({
+        options: themeOptions,
+        deprecatedOption: "plugins.mdEnhance.obsidianImgSize",
+        newOption: "plugins.markdownImage.obsidianSize",
+      });
+    }
+
+    if ("imgLazyload" in mdEnhanceOptions) {
+      deprecatedLogger({
+        options: themeOptions,
+        deprecatedOption: "plugins.mdEnhance.imgLazyload",
+        newOption: "plugins.markdownImage.lazyload",
+      });
+    }
+
+    if ("imgMark" in mdEnhanceOptions) {
+      deprecatedLogger({
+        options: themeOptions,
+        deprecatedOption: "plugins.mdEnhance.imgMark",
+        newOption: "plugins.markdownImage.mark",
+      });
+    }
+
+    if ("katex" in mdEnhanceOptions) {
+      logger.warn(
+        `${colors.magenta("plugins.mdEnhance.katex")} is deprecated, you should use ${colors.magenta("plugins.markdownMath")} instead.`,
+      );
+
+      pluginOptions["markdownMath"] = {
+        type: "katex",
+        ...(isPlainObject(mdEnhanceOptions["katex"])
+          ? mdEnhanceOptions["katex"]
+          : {}),
+      };
+    }
+
+    if ("mathjax" in mdEnhanceOptions) {
+      logger.warn(
+        `${colors.magenta("plugins.mdEnhance.mathjax")} is deprecated, you should use ${colors.magenta("plugins.markdownMath")} instead.`,
+      );
+
+      pluginOptions["markdownMath"] = {
+        type: "mathjax",
+        ...(isPlainObject(mdEnhanceOptions["mathjax"])
+          ? mdEnhanceOptions["mathjax"]
+          : {}),
+      };
+    }
+
+    if ("codetabs" in mdEnhanceOptions) {
+      deprecatedLogger({
+        options: themeOptions,
+        deprecatedOption: "plugins.mdEnhance.codetabs",
+        newOption: "plugins.markdownTab.codeTabs",
+      });
+    }
+
+    if ("tabs" in mdEnhanceOptions) {
+      deprecatedLogger({
+        options: themeOptions,
+        deprecatedOption: "plugins.mdEnhance.tabs",
+        newOption: "plugins.markdownTab.tabs",
+      });
+    }
+
+    if ("revealJs" in mdEnhanceOptions) {
+      logger.warn(
+        `${colors.magenta("plugins.mdEnhance.revealJs")} is deprecated, you should install ${colors.cyan("@vuepress/plugin-revealjs")} and use ${colors.magenta("plugins.revealjs")} instead.`,
+      );
+
+      pluginOptions["revealjs"] = true;
     }
   }
 };
@@ -86,6 +243,8 @@ export const convertThemeOptions = (
 ): ThemeOptions => {
   // Ensure plugins
   const plugins = (themeOptions["plugins"] ??= {}) as Record<string, unknown>;
+
+  covertPluginOptions(plugins);
 
   DEPRECATED_THEME_OPTIONS.forEach(([deprecatedOption, newOption]) =>
     deprecatedLogger({
@@ -100,65 +259,15 @@ export const convertThemeOptions = (
   if ("navbar" in themeOptions)
     themeOptions["navbar"] = convertNavbarOptions(themeOptions["navbar"]);
 
-  // Handle navbar layout
-  if (isPlainObject(themeOptions["navbarLayout"])) {
-    if ("left" in themeOptions["navbarLayout"]) {
-      logger.warn(
-        `To have better meaning under RTL layout, ${colors.magenta(
-          "navbarLayout.left",
-        )}" option is deprecated, please use ${colors.magenta(
-          "navbarLayout.start",
-        )} instead`,
-      );
-      themeOptions["navbarLayout"]["start"] = themeOptions["navbarLayout"][
-        "left"
-      ] as string[];
-    }
-
-    if ("right" in themeOptions["navbarLayout"]) {
-      logger.warn(
-        `To have better meaning under RTL layout, ${colors.magenta(
-          "navbarLayout.right",
-        )}" option is deprecated, please use ${colors.magenta(
-          "navbarLayout.end",
-        )} instead`,
-      );
-      themeOptions["navbarLayout"]["end"] = themeOptions["navbarLayout"][
-        "right"
-      ] as string[];
-    }
-  }
-
-  // Handle sidebar
   if ("sidebar" in themeOptions)
     themeOptions["sidebar"] = convertSidebarOptions(themeOptions["sidebar"]);
 
-  // Handle blog
-  if (isPlainObject(themeOptions["blog"]) && themeOptions["blog"]) {
-    handleBlogOptions(themeOptions["blog"] as Record<string, unknown>);
+  convertNavbarLayoutOptions(themeOptions);
+  convertBlogOptions(themeOptions, plugins);
+  convertFooterOptions(themeOptions);
 
-    if (!plugins["blog"])
-      logger.warn(
-        `Blog feature is tree-shakable in v2, you should set ${colors.magenta(
-          "plugins.blog: true",
-        )} in theme options to enable it.`,
-      );
-  }
-
-  // Handle component
-  if (isArray(plugins["components"])) {
-    logger.warn(
-      `${colors.magenta(
-        "plugins.components",
-      )} no longer accepts array, please set it to ${colors.magenta(
-        "plugin.components.components",
-      )} instead.`,
-    );
-
-    plugins["components"] = {
-      components: plugins["components"],
-    };
-  }
+  // handle addThis
+  if (themeOptions["addThis"]) droppedLogger(themeOptions, "addThis");
 
   // Handle copyright plugin
   if (
@@ -172,8 +281,6 @@ export const convertThemeOptions = (
         "plugins.copyright",
       )} instead.`,
     );
-
-  if (themeOptions["addThis"]) droppedLogger(themeOptions, "addThis");
 
   // Handle encrypt
   if (isPlainObject(themeOptions["encrypt"]) && themeOptions["encrypt"]) {
@@ -205,13 +312,10 @@ export const convertThemeOptions = (
     }
   }
 
-  // Handle footer
-  handleFooterOptions(themeOptions);
-
   // Handle each locale
   if ("locales" in themeOptions && isPlainObject(themeOptions["locales"]))
-    values(themeOptions["locales"]).forEach(
-      (localeConfig: Record<string, unknown>) => {
+    entries(themeOptions["locales"]).forEach(
+      ([localePath, localeConfig]: [string, Record<string, unknown>]) => {
         DEPRECATED_THEME_OPTIONS.forEach(([deprecatedOption, newOption]) =>
           deprecatedLogger({
             options: localeConfig,
@@ -225,53 +329,15 @@ export const convertThemeOptions = (
         if ("navbar" in localeConfig)
           localeConfig["navbar"] = convertNavbarOptions(localeConfig["navbar"]);
 
-        // Handle navbar layout
-        if (isPlainObject(localeConfig["navbarLayout"])) {
-          if ("left" in localeConfig["navbarLayout"]) {
-            logger.warn(
-              `To have better meaning under RTL layout, ${colors.magenta(
-                "navbarLayout.left",
-              )}" option is deprecated, please use ${colors.magenta(
-                "navbarLayout.start",
-              )} instead`,
-            );
-            localeConfig["navbarLayout"]["start"] = localeConfig[
-              "navbarLayout"
-            ]["left"] as string[];
-          }
-
-          if ("right" in localeConfig["navbarLayout"]) {
-            logger.warn(
-              `To have better meaning under RTL layout, ${colors.magenta(
-                "navbarLayout.right",
-              )}" option is deprecated, please use ${colors.magenta(
-                "navbarLayout.end",
-              )} instead`,
-            );
-            localeConfig["navbarLayout"]["end"] = localeConfig["navbarLayout"][
-              "right"
-            ] as string[];
-          }
-        }
-
         // Handle sidebar
         if ("sidebar" in localeConfig)
           localeConfig["sidebar"] = convertSidebarOptions(
             localeConfig["sidebar"],
           );
 
-        // Handle footer
-        handleFooterOptions(localeConfig);
-
-        // Handle blog
-        if (isPlainObject(localeConfig["blog"]) && localeConfig["blog"]) {
-          handleBlogOptions(localeConfig["blog"] as Record<string, unknown>);
-
-          if (!plugins["blog"])
-            logger.warn(
-              'Blog feature is tree-shakable in v2, you should set "plugins.blog: true" in theme options to enable it.',
-            );
-        }
+        convertNavbarLayoutOptions(localeConfig);
+        convertBlogOptions(localeConfig, plugins, localePath);
+        convertFooterOptions(localeConfig);
       },
     );
 

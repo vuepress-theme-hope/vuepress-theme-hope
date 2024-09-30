@@ -28,7 +28,7 @@ export const prepareConfigFile = (
     if (
       AVAILABLE_COMPONENTS.includes(item) &&
       (!COMPONENT_PKG[item] ||
-        COMPONENT_PKG[item].every((pkg) => isInstalled(pkg, true)))
+        COMPONENT_PKG[item].every((pkg) => isInstalled(pkg)))
     ) {
       imports.push(
         `import ${item} from "${CLIENT_FOLDER}components/${item}.js";`,

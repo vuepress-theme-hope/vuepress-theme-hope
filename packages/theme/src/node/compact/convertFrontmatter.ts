@@ -112,5 +112,17 @@ export const convertFrontmatter = (
       );
   }
 
+  if (frontmatter["layout"] === "Slides") {
+    logger.warn(
+      `${colors.magenta(
+        "layout: Slides",
+      )} in frontmatter is deprecated, please use ${colors.magenta(
+        "layout: SlidePage",
+      )} instead.${filePathRelative ? `Found in ${filePathRelative}` : ""}`,
+    );
+
+    frontmatter["layout"] = "SlidePage";
+  }
+
   return frontmatter;
 };

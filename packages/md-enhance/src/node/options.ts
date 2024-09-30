@@ -12,7 +12,7 @@ import type { CodeDemoOptions } from "../shared/index.js";
 
 export interface DeprecatedMarkdownEnhancePluginOptions {
   /**
-   * @deprecated use `@vuepress/plugin-markdown-hint` instead
+   * @deprecated use `alert` from `@vuepress/plugin-markdown-hint` instead
    */
   alert?: never;
 
@@ -32,37 +32,37 @@ export interface DeprecatedMarkdownEnhancePluginOptions {
   mathjax?: never;
 
   /**
-   * @deprecated use `@vuepress/plugin-markdown-image` instead
+   * @deprecated use `figure` from `@vuepress/plugin-markdown-image` instead
    */
   figure?: never;
 
   /**
-   * @deprecated use `@vuepress/plugin-markdown-image` instead
+   * @deprecated use `lazyload` in `@vuepress/plugin-markdown-image` instead
    */
   imgLazyload?: never;
 
   /**
-   * @deprecated use `@vuepress/plugin-markdown-image` instead
+   * @deprecated use `mark` from `@vuepress/plugin-markdown-image` instead
    */
   imgMark?: never;
 
   /**
-   * @deprecated use `@vuepress/plugin-markdown-image` instead
+   * @deprecated use `size` from `@vuepress/plugin-markdown-image` instead
    */
   imgSize?: never;
 
   /**
-   * @deprecated use `@vuepress/plugin-markdown-image` instead
+   * @deprecated use `obsidianSize` from `@vuepress/plugin-markdown-image` instead
    */
   obsidianImgSize?: never;
 
   /**
-   * @deprecated use `@vuepress/plugin-markdown-tab` instead
+   * @deprecated use `tabs` from `@vuepress/plugin-markdown-tab` instead
    */
   tabs?: never;
 
   /**
-   * @deprecated use `@vuepress/plugin-markdown-tab` instead
+   * @deprecated use `codeTabs` from `@vuepress/plugin-markdown-tab` instead
    */
   codetabs?: never;
 
