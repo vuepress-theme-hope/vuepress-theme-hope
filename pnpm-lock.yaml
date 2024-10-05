@@ -45,8 +45,8 @@ importers:
         specifier: 8.0.0
         version: 8.0.0
       cpx2:
-        specifier: 7.0.1
-        version: 7.0.1
+        specifier: 8.0.0
+        version: 8.0.0
       cross-env:
         specifier: 7.0.3
         version: 7.0.3
@@ -4871,9 +4871,9 @@ packages:
       typescript:
         optional: true
 
-  cpx2@7.0.1:
-    resolution: {integrity: sha512-ZgK/DRvPFM5ATZ5DQ5UzY6ajkBrI/p9Uc7VyLHc7b4OSFeBO4yOQz/GEmccc4Om6capGYlY4K1XX+BtYQiPPIA==}
-    engines: {node: '>=18', npm: '>=10'}
+  cpx2@8.0.0:
+    resolution: {integrity: sha512-RxD9jrSVNSOmfcbiPlr3XnKbUKH9K1w2HCv0skczUKhsZTueiDBecxuaSAKQkYSLQaGVA4ZQJZlTj5hVNNEvKg==}
+    engines: {node: ^20.0.0 || >=22.0.0, npm: '>=10'}
     hasBin: true
 
   create-codepen@2.0.0:
@@ -6345,6 +6345,10 @@ packages:
     resolution: {integrity: sha512-hsBTNUqQTDwkWtcdYI2i06Y/nUBEsNEDJKjWdigLvegy8kDuJAS8uRlpkkcQpyEXL0Z/pjDy5HBmMjRCJ2gq+g==}
     engines: {node: '>= 4'}
 
+  ignore@6.0.2:
+    resolution: {integrity: sha512-InwqeHHN2XpumIkMvpl/DCJVrAHgCsG5+cn1XlnLWGwtZBm8QJfSusItfrwx81CTp5agNZqpKU2J/ccC5nGT4A==}
+    engines: {node: '>= 4'}
+
   immediate@3.0.6:
     resolution: {integrity: sha512-XXOFtyqDjNDAQxVfYxuF7g9Il/IbWmmlQg2MYKOH8ExIT1qg6xc4zyS3HaEEATgs1btfzxq15ciUiY7gjSXRGQ==}
 
@@ -7627,10 +7631,6 @@ packages:
   p-map@4.0.0:
     resolution: {integrity: sha512-/bjOqmgETBYB5BoEeGVea8dmvHb2m9GLy1E9W43yeyfP6QQCZGFNa+XRceJEuDB6zqr+gKpIAmlLebMpykw/MQ==}
     engines: {node: '>=10'}
-
-  p-map@6.0.0:
-    resolution: {integrity: sha512-T8BatKGY+k5rU+Q/GTYgrEf2r4xRMevAN5mtXc2aPc4rS1j3s+vWTaO2Wag94neXuCAUAs8cxBL9EeB5EA6diw==}
-    engines: {node: '>=16'}
 
   p-map@7.0.2:
     resolution: {integrity: sha512-z4cYYMMdKHzw4O5UkWJImbZynVIo0lSGTXc7bzB1e/rrDqkgGUNysK/o4bTr+0+xKvvLoTyGqYC4Fgljy9qe1Q==}
@@ -14457,17 +14457,17 @@ snapshots:
     optionalDependencies:
       typescript: 5.6.2
 
-  cpx2@7.0.1:
+  cpx2@8.0.0:
     dependencies:
       debounce: 2.1.1
       debug: 4.3.7
       duplexer: 0.1.2
       fs-extra: 11.2.0
-      glob: 10.4.5
+      glob: 11.0.0
       glob2base: 0.0.12
-      ignore: 5.3.2
-      minimatch: 9.0.5
-      p-map: 6.0.0
+      ignore: 6.0.2
+      minimatch: 10.0.1
+      p-map: 7.0.2
       resolve: 1.22.8
       safe-buffer: 5.2.1
       shell-quote: 1.8.1
@@ -16243,6 +16243,8 @@ snapshots:
 
   ignore@5.3.2: {}
 
+  ignore@6.0.2: {}
+
   immediate@3.0.6: {}
 
   immutable@4.3.7: {}
@@ -17488,8 +17490,6 @@ snapshots:
   p-map@4.0.0:
     dependencies:
       aggregate-error: 3.1.0
-
-  p-map@6.0.0: {}
 
   p-map@7.0.2: {}
 
