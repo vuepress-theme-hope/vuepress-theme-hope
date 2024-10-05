@@ -61,7 +61,7 @@
     "@vitest/coverage-istanbul": "2.1.1",
     "concurrently": "9.0.1",
     "conventional-changelog-conventionalcommits": "8.0.0",
-    "cpx2": "7.0.1",
+    "cpx2": "7.0.2",
     "cross-env": "7.0.3",
     "cz-git": "1.10.0",
     "esbuild": "0.24.0",
