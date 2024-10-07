@@ -106,7 +106,7 @@
   "devDependencies": {
     "@vuepress/bundler-vite": "2.0.0-rc.17",
     "@vuepress/bundler-webpack": "2.0.0-rc.17",
-    "rollup": "4.22.5",
+    "rollup": "4.24.0",
     "vuepress-plugin-search-pro": "workspace:*"
   },
   "peerDependencies": {
