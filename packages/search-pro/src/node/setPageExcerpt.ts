@@ -10,9 +10,11 @@ export const setPageExcerpt = (app: App): void => {
     isBlogPluginEnabled || pages.some((page) => "excerpt" in page.data);
 
   if (!hasExcerpt)
-    pages.forEach((page: Page<{ excerpt?: string }>) => {
-      page.data.excerpt = getPageExcerpt(app, page, {
-        length: 300,
-      });
-    });
+    pages.forEach(
+      (page: Page<{ excerpt?: string } & Record<string, unknown>>) => {
+        page.data.excerpt = getPageExcerpt(app, page, {
+          length: 300,
+        });
+      },
+    );
 };
