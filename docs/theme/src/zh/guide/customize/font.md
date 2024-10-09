@@ -25,24 +25,24 @@ tag:
 
 ## 修改主题字体
 
-主题在 `.vuepress/styles/palette.scss` 中提供了 `$font-family`、`$font-family-heading` 和 `$font-family-mono` 三个变量控制字体。
+主题在 `.vuepress/styles/palette.scss` 中提供了 `$vp-font`、`$vp-font-heading` 和 `$vp-font-mono` 三个变量控制字体。
 
-- `$font-family`: 普通文本上使用的字体
-- `$font-family-heading:` 用于标题元素的字体
-- `$font-family-mono`: 代码上使用的字体
+- `$vp-font`: 普通文本上使用的字体
+- `$vp-font-heading:` 用于标题元素的字体
+- `$vp-font-mono`: 代码上使用的字体
 
 默认情况下，主题在普通文本上使用无衬线体。
 
 ::: tip 使用衬线体
 
-如果你更喜欢衬线体，你可以自行修改 `$font-family` 为你想要的字体。
+如果你更喜欢衬线体，你可以自行修改 `$vp-font` 为你想要的字体。
 
 中文博客下最常使用的字体是 Adobe 发布的思源宋体[^noto-serif-sc]，因为它具有非常宽松的协议。当然，思源宋体并不存在于大多设备上，所以你可能需要导入这个字体。你可以通过 [GitHub](https://github.com/googlefonts/noto-cjk) 下载该字体引入或直接使用 [Google Font CDN](https://fonts.google.com/noto/specimen/Noto+Serif+SC)。
 
 如下字体族是我们推荐的衬线体首选:
 
 ```scss
-$font-family: 'Georgia, -apple-system, "Nimbus Roman No9 L", "PingFang SC", "Hiragino Sans GB", "Noto Serif SC", "Microsoft Yahei", "WenQuanYi Micro Hei", "ST Heiti", sans-serif';
+$vp-font: 'Georgia, -apple-system, "Nimbus Roman No9 L", "PingFang SC", "Hiragino Sans GB", "Noto Serif SC", "Microsoft Yahei", "WenQuanYi Micro Hei", "ST Heiti", sans-serif';
 ```
 
 :::
@@ -108,11 +108,11 @@ export default defineUserConfig({
 });
 ```
 
-同时在调色板文件中修改 `$font-family` 变量:
+同时在调色板文件中修改 `$vp-font` 变量:
 
 ```scss title=".vuepress/styles/palette.scss"
 // 应用字体
-$font-family: '"Noto Serif SC", serif';
+$vp-font: '"Noto Serif SC", serif';
 ```
 
 这样你就可以在网站中使用思源宋体字体了。

@@ -19,22 +19,22 @@ For common font families, they can generally be divided into **serif**[^serif] a
 
 ## Modifying Fonts
 
-The theme provides `$font-family`, `$font-family-heading` and `$font-family-mono` three variables to control the font in `.vuepress/styles/palette.scss`.
+The theme provides `$vp-font`, `$vp-font-heading` and `$vp-font-mono` three variables to control the font in `.vuepress/styles/palette.scss`.
 
-- `$font-family`: the font used on normal text
-- `$font-family-heading:` font for heading elements
-- `$font-family-mono`: the font used in code block and inline codes
+- `$vp-font`: the font used on normal text
+- `$vp-font-heading:` font for heading elements
+- `$vp-font-mono`: the font used in code block and inline codes
 
 By default, the theme uses sans serif with normal text.
 
 ::: tip Use Serifs
 
-If you prefer serif fonts, you can modify `$font-family` to the font you want.
+If you prefer serif fonts, you can modify `$vp-font` to the font you want.
 
 The following font families are our recommended first choice for serif fonts:
 
 ```scss
-$font-family: 'Georgia, -apple-system, "Nimbus Roman No9 L", sans-serif';
+$vp-font: 'Georgia, -apple-system, "Nimbus Roman No9 L", sans-serif';
 ```
 
 :::
@@ -100,11 +100,11 @@ export default defineUserConfig({
 });
 ```
 
-Also modify the `$font-family` variable in the palette file:
+Also modify the `$vp-font` variable in the palette file:
 
 ```scss title=".vuepress/styles/palette.scss"
 // apply font
-$font-family: "Lora, serif";
+$vp-font: "Lora, serif";
 ```
 
 In this way, you can use lora font in your website.
