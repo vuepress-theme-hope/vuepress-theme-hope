@@ -157,6 +157,10 @@
 }
 
 .vp-article-excerpt {
+  --code-padding-y: 0.75rem;
+  --code-padding-x: 0.75rem;
+  --code-line-number-width: 2em;
+
   overflow: hidden;
   line-height: 1.6;
   cursor: default;
@@ -203,25 +207,11 @@
     margin-bottom: 0.5em;
   }
 
-  // code block fix
+  // shrink code block
   div[class*="language-"] {
-    overflow-x: auto;
-    margin: 0.875rem 0;
-
-    pre {
-      margin: 0;
-      padding: 1rem;
-      line-height: 1.375;
-
-      code {
-        padding: 0;
-        background: transparent;
-      }
-    }
-
-    // line number fix
+    pre,
     &.line-numbers-mode .line-numbers {
-      padding: 0.875rem 0;
+      line-height: 1.5;
     }
   }
 
