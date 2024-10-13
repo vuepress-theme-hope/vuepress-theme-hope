@@ -55,10 +55,10 @@ export const createPackageJson = async ({
   const packageJsonPath = resolve(cwd, "package.json");
   const scripts = getScript(packageManager, bundler, source);
   const devDependencies = {
-    [`@vuepress/bundler-${bundler}`]: "2.0.0-rc.17",
-    "sass-embedded": "^1.79.4",
-    vue: "^3.5.11",
-    vuepress: "2.0.0-rc.17",
+    [`@vuepress/bundler-${bundler}`]: "2.0.0-rc.18",
+    "sass-embedded": "^1.79.5",
+    vue: "^3.5.12",
+    vuepress: "2.0.0-rc.18",
     "vuepress-theme-hope": version,
   };
 

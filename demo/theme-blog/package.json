@@ -16,11 +16,11 @@
   },
   "devDependencies": {
     "@vue/repl": "4.4.2",
-    "@vuepress/bundler-vite": "2.0.0-rc.17",
-    "@vuepress/bundler-webpack": "2.0.0-rc.17",
-    "@vuepress/helper": "2.0.0-rc.52",
-    "@vuepress/plugin-docsearch": "2.0.0-rc.52",
-    "@vuepress/plugin-revealjs": "2.0.0-rc.52",
+    "@vuepress/bundler-vite": "2.0.0-rc.18",
+    "@vuepress/bundler-webpack": "2.0.0-rc.18",
+    "@vuepress/helper": "2.0.0-rc.55",
+    "@vuepress/plugin-docsearch": "2.0.0-rc.55",
+    "@vuepress/plugin-revealjs": "2.0.0-rc.55",
     "@waline/client": "3.3.2",
     "chart.js": "4.4.4",
     "echarts": "5.5.1",
@@ -33,10 +33,10 @@
     "mermaid": "11.3.0",
     "reveal.js": "5.1.0",
     "sandpack-vue3": "3.1.12",
-    "sass-embedded": "1.79.4",
+    "sass-embedded": "1.79.5",
     "sass-loader": "16.0.2",
-    "vue": "3.5.11",
-    "vuepress": "2.0.0-rc.17",
+    "vue": "3.5.12",
+    "vuepress": "2.0.0-rc.18",
     "vuepress-theme-hope": "workspace:*"
   }
 }
