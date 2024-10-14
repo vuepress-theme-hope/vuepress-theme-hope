@@ -171,7 +171,7 @@ export default defineComponent({
 
       return tocHeaders
         ? h("div", { class: "vp-toc-placeholder" }, [
-            h("aside", { id: "toc" }, [
+            h("aside", { id: "toc", "vp-toc": "" }, [
               slots.before?.(),
               h(
                 "div",
