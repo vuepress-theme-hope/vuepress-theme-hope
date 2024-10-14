@@ -22,7 +22,7 @@
     "@vuepress/bundler-vite": "2.0.0-rc.18",
     "@vuepress/bundler-webpack": "2.0.0-rc.18",
     "docs-shared": "workspace:*",
-    "nodejs-jieba": "0.2.0",
+    "nodejs-jieba": "0.2.1",
     "sass-embedded": "1.79.5",
     "sass-loader": "16.0.2",
     "vue": "3.5.12",
