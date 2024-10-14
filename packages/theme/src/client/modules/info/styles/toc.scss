@@ -123,18 +123,20 @@ $headings: (2, 3, 4, 5, 6);
   > .vp-toc-list {
     padding-inline-start: 8px;
 
-    &::before {
-      content: " ";
+    @media (min-width: hope-config.$pc) {
+      &::before {
+        content: " ";
 
-      position: absolute;
-      inset-inline-start: 4px;
-      top: 0;
-      bottom: 0;
-      z-index: -1;
+        position: absolute;
+        inset-inline-start: 4px;
+        top: 0;
+        bottom: 0;
+        z-index: -1;
 
-      width: 2px;
+        width: 2px;
 
-      background: var(--vp-c-border);
+        background: var(--vp-c-border);
+      }
     }
   }
 }
