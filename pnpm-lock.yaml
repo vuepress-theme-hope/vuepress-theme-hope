@@ -282,8 +282,8 @@ importers:
         specifier: 2.0.0-rc.55
         version: 2.0.0-rc.55(markdown-it@14.1.0)(sass-embedded@1.79.5)(sass-loader@16.0.2(sass-embedded@1.79.5)(sass@1.79.5)(webpack@5.95.0(esbuild@0.24.0)))(sass@1.79.5)(typescript@5.6.3)(vuepress@2.0.0-rc.18(@vuepress/bundler-vite@2.0.0-rc.18(@types/node@22.7.5)(jiti@1.21.6)(lightningcss@1.27.0)(sass-embedded@1.79.5)(sass@1.79.5)(terser@5.34.1)(tsx@4.19.1)(typescript@5.6.3)(yaml@2.5.1))(@vuepress/bundler-webpack@2.0.0-rc.18(esbuild@0.24.0)(typescript@5.6.3))(typescript@5.6.3)(vue@3.5.12(typescript@5.6.3)))
       nodejs-jieba:
-        specifier: 0.2.0
-        version: 0.2.0(encoding@0.1.13)
+        specifier: 0.2.1
+        version: 0.2.1(encoding@0.1.13)
       sass-embedded:
         specifier: 1.79.5
         version: 1.79.5
@@ -619,8 +619,8 @@ importers:
         specifier: workspace:*
         version: link:../../docs-shared
       nodejs-jieba:
-        specifier: 0.2.0
-        version: 0.2.0(encoding@0.1.13)
+        specifier: 0.2.1
+        version: 0.2.1(encoding@0.1.13)
       sass-embedded:
         specifier: 1.79.5
         version: 1.79.5
@@ -7421,6 +7421,10 @@ packages:
 
   nodejs-jieba@0.2.0:
     resolution: {integrity: sha512-e6gxDgEuCf5s41lMQg7fdPlb6tQIWfyu7Z8SBwdiwEeZ7Wt+vU5z9hOXMwCB3y1nxxi8tx/0SuciikrPzUZ07Q==}
+    engines: {node: ^18.0.0 || ^20.0.0 || ^22.0.0}
+
+  nodejs-jieba@0.2.1:
+    resolution: {integrity: sha512-211M6vWoXBZn9+3C6cBuiAXRmwnidbV4eK5O63VZb7kK0miNMkWknUS5Usv/n5gUrT99kHgps+4xL9g/r0F89A==}
     engines: {node: ^18.0.0 || ^20.0.0 || ^22.0.0}
 
   nopt@5.0.0:
@@ -17204,6 +17208,15 @@ snapshots:
   node-releases@2.0.18: {}
 
   nodejs-jieba@0.2.0(encoding@0.1.13):
+    dependencies:
+      '@mapbox/node-pre-gyp': 1.0.11(encoding@0.1.13)
+      node-addon-api: 8.2.1
+      node-gyp: 10.2.0
+    transitivePeerDependencies:
+      - encoding
+      - supports-color
+
+  nodejs-jieba@0.2.1(encoding@0.1.13):
     dependencies:
       '@mapbox/node-pre-gyp': 1.0.11(encoding@0.1.13)
       node-addon-api: 8.2.1
