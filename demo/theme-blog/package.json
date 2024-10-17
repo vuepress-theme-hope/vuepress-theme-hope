@@ -33,7 +33,7 @@
     "mermaid": "11.3.0",
     "reveal.js": "5.1.0",
     "sandpack-vue3": "3.1.12",
-    "sass-embedded": "1.79.5",
+    "sass-embedded": "1.80.2",
     "sass-loader": "16.0.2",
     "vue": "3.5.12",
     "vuepress": "2.0.0-rc.18",
