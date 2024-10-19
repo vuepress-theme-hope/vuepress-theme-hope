@@ -153,8 +153,8 @@ importers:
         specifier: 4.7.4
         version: 4.7.4
       hls.js:
-        specifier: 1.5.16
-        version: 1.5.16
+        specifier: 1.5.17
+        version: 1.5.17
       mpegts.js:
         specifier: 1.7.3
         version: 1.7.3
@@ -496,8 +496,8 @@ importers:
         specifier: workspace:*
         version: link:../../docs-shared
       hls.js:
-        specifier: 1.5.16
-        version: 1.5.16
+        specifier: 1.5.17
+        version: 1.5.17
       mpegts.js:
         specifier: 1.7.3
         version: 1.7.3
@@ -6163,6 +6163,9 @@ packages:
 
   hls.js@1.5.16:
     resolution: {integrity: sha512-+wAWr4aeRq9ODN8/Vgz0Cee1Cw6Ysr7vyEkZJCwOJYNwlld7CNmhKE+dLwfpUO2UuotYLGF0of6UFiN6zA7mig==}
+
+  hls.js@1.5.17:
+    resolution: {integrity: sha512-wA66nnYFvQa1o4DO/BFgLNRKnBTVXpNeldGRBJ2Y0SvFtdwvFKCbqa9zhHoZLoxHhZ+jYsj3aIBkWQQCPNOhMw==}
 
   homedir-polyfill@1.0.3:
     resolution: {integrity: sha512-eSmmWE5bZTK2Nou4g0AI3zZ9rswp7GRKoKXS1BLUkvPviOqs4YTN1djQIqrXy9k5gEtdLPy86JjRwsNM9tnDcA==}
@@ -15985,6 +15988,8 @@ snapshots:
   highlight.js@11.10.0: {}
 
   hls.js@1.5.16: {}
+
+  hls.js@1.5.17: {}
 
   homedir-polyfill@1.0.3:
     dependencies:
