@@ -219,8 +219,8 @@ importers:
         specifier: 2.0.0-rc.55
         version: 2.0.0-rc.55(markdown-it@14.1.0)(sass-embedded@1.79.5)(sass-loader@16.0.2(sass-embedded@1.79.5)(sass@1.79.5)(webpack@5.95.0(esbuild@0.24.0)))(sass@1.79.5)(typescript@5.6.3)(vuepress@2.0.0-rc.18(@vuepress/bundler-vite@2.0.0-rc.18(@types/node@22.7.5)(jiti@1.21.6)(lightningcss@1.27.0)(sass-embedded@1.79.5)(sass@1.79.5)(terser@5.34.1)(tsx@4.19.1)(typescript@5.6.3)(yaml@2.6.0))(@vuepress/bundler-webpack@2.0.0-rc.18(esbuild@0.24.0)(typescript@5.6.3))(typescript@5.6.3)(vue@3.5.12(typescript@5.6.3)))
       chart.js:
-        specifier: 4.4.4
-        version: 4.4.4
+        specifier: 4.4.5
+        version: 4.4.5
       echarts:
         specifier: 5.5.1
         version: 5.5.1
@@ -324,8 +324,8 @@ importers:
         specifier: 3.3.2
         version: 3.3.2(typescript@5.6.3)
       chart.js:
-        specifier: 4.4.4
-        version: 4.4.4
+        specifier: 4.4.5
+        version: 4.4.5
       echarts:
         specifier: 5.5.1
         version: 5.5.1
@@ -390,8 +390,8 @@ importers:
         specifier: 2.0.0-rc.55
         version: 2.0.0-rc.55(markdown-it@14.1.0)(typescript@5.6.3)(vuepress@2.0.0-rc.18(@vuepress/bundler-vite@2.0.0-rc.18(@types/node@22.7.5)(jiti@1.21.6)(lightningcss@1.27.0)(sass-embedded@1.79.5)(sass@1.79.5)(terser@5.34.1)(tsx@4.19.1)(typescript@5.6.3)(yaml@2.6.0))(@vuepress/bundler-webpack@2.0.0-rc.18(esbuild@0.24.0)(typescript@5.6.3))(typescript@5.6.3)(vue@3.5.12(typescript@5.6.3)))
       chart.js:
-        specifier: 4.4.4
-        version: 4.4.4
+        specifier: 4.4.5
+        version: 4.4.5
       echarts:
         specifier: 5.5.1
         version: 5.5.1
@@ -4540,6 +4540,10 @@ packages:
 
   chart.js@4.4.4:
     resolution: {integrity: sha512-emICKGBABnxhMjUjlYRR12PmOXhJ2eJjEHL2/dZlWjxRAZT1D8xplLFq5M0tMQK8ja+wBS/tuVEJB5C6r7VxJA==}
+    engines: {pnpm: '>=8'}
+
+  chart.js@4.4.5:
+    resolution: {integrity: sha512-CVVjg1RYTJV9OCC8WeJPMx8gsV8K6WIyIEQUE3ui4AR9Hfgls9URri6Ja3hyMVBbTF8Q2KFa19PE815gWcWhng==}
     engines: {pnpm: '>=8'}
 
   check-error@2.1.1:
@@ -14049,6 +14053,10 @@ snapshots:
   chardet@0.7.0: {}
 
   chart.js@4.4.4:
+    dependencies:
+      '@kurkle/color': 0.3.2
+
+  chart.js@4.4.5:
     dependencies:
       '@kurkle/color': 0.3.2
 
