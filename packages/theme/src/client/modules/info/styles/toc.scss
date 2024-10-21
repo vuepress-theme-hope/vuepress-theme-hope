@@ -6,13 +6,15 @@ $headings: (2, 3, 4, 5, 6);
 .vp-toc-placeholder {
   @include wrapper.horizontal-wrapper;
 
-  position: sticky;
-  top: calc(var(--navbar-height) + 0.5rem);
-  z-index: 99;
+  & {
+    position: sticky;
+    top: calc(var(--navbar-height) + 0.5rem);
+    z-index: 99;
 
-  display: none;
+    display: none;
 
-  max-width: var(--content-width, 740px);
+    max-width: var(--content-width, 740px);
+  }
 
   @media (max-width: hope-config.$tablet) {
     .hide-navbar & {

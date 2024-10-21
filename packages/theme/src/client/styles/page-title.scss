@@ -3,10 +3,12 @@
 .vp-page-title {
   @include wrapper.horizontal-wrapper;
 
-  position: relative;
-  z-index: 1;
-  padding-top: 1rem;
-  padding-bottom: 0;
+  & {
+    position: relative;
+    z-index: 1;
+    padding-top: 1rem;
+    padding-bottom: 0;
+  }
 
   @media print {
     padding-inline: 0 !important;

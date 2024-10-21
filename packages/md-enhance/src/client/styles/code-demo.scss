@@ -59,19 +59,21 @@
   @include reset.button;
   @include arrow.arrow;
 
-  position: relative;
+  & {
+    position: relative;
 
-  margin: 8px 12px 8px 8px;
-  padding: 0;
-  border-color: transparent;
-  border-radius: 50%;
+    margin: 8px 12px 8px 8px;
+    padding: 0;
+    border-color: transparent;
+    border-radius: 50%;
 
-  background-color: #ccc;
-  outline: none;
+    background-color: #ccc;
+    outline: none;
 
-  font-size: 24px;
+    font-size: 24px;
 
-  cursor: pointer;
+    cursor: pointer;
+  }
 
   @media print {
     display: none;
