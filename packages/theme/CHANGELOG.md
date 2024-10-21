@@ -4,6 +4,17 @@ All notable changes to this project will be documented in this file. See [Conven
 
 <!-- #region recent-change -->
 
+## 2.0.0-rc.59 (2024-10-21)
+
+- chore: bump deps ([6da06cf](https://github.com/vuepress-theme-hope/vuepress-theme-hope/commit/6da06cf))
+- chore: bump deps ([221625e](https://github.com/vuepress-theme-hope/vuepress-theme-hope/commit/221625e))
+- chore: bump deps ([52867bf](https://github.com/vuepress-theme-hope/vuepress-theme-hope/commit/52867bf))
+- chore: update deps ([07a6417](https://github.com/vuepress-theme-hope/vuepress-theme-hope/commit/07a6417))
+- feat(theme): improve toc ([65cbe1f](https://github.com/vuepress-theme-hope/vuepress-theme-hope/commit/65cbe1f))
+- fix(theme): fix code block in article excerpt, close #4497 #4498 ([6aed841](https://github.com/vuepress-theme-hope/vuepress-theme-hope/commit/6aed841)), closes [#4497](https://github.com/vuepress-theme-hope/vuepress-theme-hope/issues/4497) [#4498](https://github.com/vuepress-theme-hope/vuepress-theme-hope/issues/4498)
+
+<!-- #region recent-change -->
+
 ## [2.0.0-rc.58](https://github.com/vuepress-theme-hope/vuepress-theme-hope/compare/v2.0.0-rc.57...v2.0.0-rc.58) (2024-09-30)
 
 ### 🐛 Bug Fixes

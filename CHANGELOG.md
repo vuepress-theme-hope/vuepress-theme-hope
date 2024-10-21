@@ -4,6 +4,25 @@ All notable changes to this project will be documented in this file. See [Conven
 
 <!-- #region recent-change -->
 
+## 2.0.0-rc.59 (2024-10-21)
+
+- chore: bump deps ([6da06cf](https://github.com/vuepress-theme-hope/vuepress-theme-hope/commit/6da06cf))
+- chore: bump deps ([221625e](https://github.com/vuepress-theme-hope/vuepress-theme-hope/commit/221625e))
+- chore: bump deps ([52867bf](https://github.com/vuepress-theme-hope/vuepress-theme-hope/commit/52867bf))
+- chore: update deps ([07a6417](https://github.com/vuepress-theme-hope/vuepress-theme-hope/commit/07a6417))
+- chore(deps): update dependency cpx2 to v8 (#4504) ([4d4fb12](https://github.com/vuepress-theme-hope/vuepress-theme-hope/commit/4d4fb12)), closes [#4504](https://github.com/vuepress-theme-hope/vuepress-theme-hope/issues/4504)
+- chore(deps): update dependency eslint-config-mister-hope to v0.3.0 (#4517) ([099e337](https://github.com/vuepress-theme-hope/vuepress-theme-hope/commit/099e337)), closes [#4517](https://github.com/vuepress-theme-hope/vuepress-theme-hope/issues/4517)
+- chore(deps): update dependency stylelint to v16.10.0 (#4516) ([010c74a](https://github.com/vuepress-theme-hope/vuepress-theme-hope/commit/010c74a)), closes [#4516](https://github.com/vuepress-theme-hope/vuepress-theme-hope/issues/4516)
+- chore(deps): update pnpm to v9.12.0 (#4502) ([af4d047](https://github.com/vuepress-theme-hope/vuepress-theme-hope/commit/af4d047)), closes [#4502](https://github.com/vuepress-theme-hope/vuepress-theme-hope/issues/4502)
+- chore(search-pro): improve types ([78ecb3c](https://github.com/vuepress-theme-hope/vuepress-theme-hope/commit/78ecb3c))
+- feat(theme): improve toc ([65cbe1f](https://github.com/vuepress-theme-hope/vuepress-theme-hope/commit/65cbe1f))
+- fix(deps): update dependency @inquirer/prompts to v7 (#4508) ([0e8da76](https://github.com/vuepress-theme-hope/vuepress-theme-hope/commit/0e8da76)), closes [#4508](https://github.com/vuepress-theme-hope/vuepress-theme-hope/issues/4508)
+- fix(theme): fix code block in article excerpt, close #4497 #4498 ([6aed841](https://github.com/vuepress-theme-hope/vuepress-theme-hope/commit/6aed841)), closes [#4497](https://github.com/vuepress-theme-hope/vuepress-theme-hope/issues/4497) [#4498](https://github.com/vuepress-theme-hope/vuepress-theme-hope/issues/4498)
+- docs: update changelog and security ([b89d8c1](https://github.com/vuepress-theme-hope/vuepress-theme-hope/commit/b89d8c1))
+- docs(theme): correct font docs, close #4505 ([65a618b](https://github.com/vuepress-theme-hope/vuepress-theme-hope/commit/65a618b)), closes [#4505](https://github.com/vuepress-theme-hope/vuepress-theme-hope/issues/4505)
+
+<!-- #region recent-change -->
+
 ## [2.0.0-rc.58](https://github.com/vuepress-theme-hope/vuepress-theme-hope/compare/v2.0.0-rc.57...v2.0.0-rc.58) (2024-09-30)
 
 ### 🐛 Bug Fixes
