@@ -219,6 +219,41 @@ section 21st century
     Industry 5.0 : Artificial intelligence, Big data,3D printing
 ```
 
+### Requirement
+
+```requirement
+requirement test_req {
+id: 1
+text: the test text.
+risk: high
+verifymethod: test
+}
+
+element test_entity {
+type: simulation
+}
+
+test_entity - satisfies -> test_req
+```
+
+### Quadrant Chart
+
+```quadrant
+title Reach and engagement of campaigns
+x-axis Low Reach --> High Reach
+y-axis Low Engagement --> High Engagement
+quadrant-1 We should expand
+quadrant-2 Need to promote
+quadrant-3 Re-evaluate
+quadrant-4 May be improved
+Campaign A: [0.3, 0.6]
+Campaign B: [0.45, 0.23]
+Campaign C: [0.57, 0.69]
+Campaign D: [0.78, 0.34]
+Campaign E: [0.40, 0.34]
+Campaign F: [0.35, 0.78]
+```
+
 ### Sankey
 
 ```sankey
@@ -292,39 +327,19 @@ Wave,Electricity grid,19.013
 Wind,Electricity grid,289.366
 ```
 
-### Requirement
+### Architecture
 
-```requirement
-requirement test_req {
-id: 1
-text: the test text.
-risk: high
-verifymethod: test
-}
+```architecture
+group api(logos:aws-lambda)[API]
 
-element test_entity {
-type: simulation
-}
+service db(logos:aws-aurora)[Database] in api
+service disk1(logos:aws-glacier)[Storage] in api
+service disk2(logos:aws-s3)[Storage] in api
+service server(logos:aws-ec2)[Server] in api
 
-test_entity - satisfies -> test_req
-```
-
-### Quadrant Chart
-
-```quadrant
-title Reach and engagement of campaigns
-x-axis Low Reach --> High Reach
-y-axis Low Engagement --> High Engagement
-quadrant-1 We should expand
-quadrant-2 Need to promote
-quadrant-3 Re-evaluate
-quadrant-4 May be improved
-Campaign A: [0.3, 0.6]
-Campaign B: [0.45, 0.23]
-Campaign C: [0.57, 0.69]
-Campaign D: [0.78, 0.34]
-Campaign E: [0.40, 0.34]
-Campaign F: [0.35, 0.78]
+db:L -- R:server
+disk1:T -- B:server
+disk2:T -- B:db
 ```
 
 ### XY Chart
@@ -349,6 +364,17 @@ classDef front fill:#696,stroke:#333;
 classDef back fill:#969,stroke:#333;
 class Frontend front
 class Backend,Database back
+```
+
+### Packet
+
+```packet
+title UDP Packet
+0-15: "Source Port"
+16-31: "Destination Port"
+32-47: "Length"
+48-63: "Checksum"
+64-95: "Data (variable length)"
 ```
 
 ### A Complex Example

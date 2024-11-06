@@ -11,12 +11,14 @@ interface MermaidOptions {
   content: string;
   diagram?: string;
   title?: string;
+  indent?: boolean;
 }
 
 export const getMermaidContent = ({
   diagram = "mermaid",
   content,
   title = "",
+  indent = diagram !== "mermaid",
 }: MermaidOptions): string => `\
 ${
   title
@@ -36,12 +38,12 @@ ${diagram}
 `
 }\
 ${
-  diagram === "mermaid" || diagram === "sankey-beta"
+  indent
     ? content
-    : content
         .split("\n")
         .map((line) => (line ? `  ${line}` : ""))
         .join("\n")
+    : content
 }\
 `;
 
@@ -50,23 +52,28 @@ const getMermaid = (options: MermaidOptions, index: number): string =>
     options.title ? ` title="${encodeData(options.title)}"` : ""
   }></Mermaid>`;
 
-const DIAGRAM_MAP: Record<string, string> = {
-  block: "block-beta",
-  class: "classDiagram",
-  c4c: "C4Context",
-  er: "erDiagram",
-  gantt: "gantt",
-  "git-graph": "gitGraph",
-  journey: "journey",
-  mindmap: "mindmap",
-  pie: "pie",
-  quadrant: "quadrantChart",
-  requirement: "requirementDiagram",
-  sankey: "sankey-beta",
-  sequence: "sequenceDiagram",
-  state: "stateDiagram-v2",
-  timeline: "timeline",
-  xy: "xychart-beta",
+const DIAGRAM_MAP: Record<string, [diagramName: string, indent?: boolean]> = {
+  class: ["classDiagram"],
+  c4c: ["C4Context"],
+  er: ["erDiagram"],
+  gantt: [""],
+  "git-graph": ["gitGraph"],
+  journey: [""],
+  mindmap: [""],
+  kanban: [""],
+  pie: [""],
+  quadrant: ["quadrantChart"],
+  requirement: ["requirementDiagram"],
+  sequence: ["sequenceDiagram"],
+  state: ["stateDiagram-v2"],
+  timeline: [""],
+
+  // beta diagrams
+  architecture: ["architecture-beta"],
+  block: ["block-beta", false],
+  packet: ["packet-beta", false],
+  sankey: ["sankey-beta", false],
+  xy: ["xychart-beta", false],
 };
 
 export const mermaid: PluginSimple = (md) => {
@@ -79,13 +86,19 @@ export const mermaid: PluginSimple = (md) => {
 
     const fenceInfo = info.trim();
 
-    if (fenceInfo === "mermaid") return getMermaid({ content }, index);
+    if (fenceInfo === "mermaid")
+      return getMermaid({ content, indent: false }, index);
 
     const [name, ...rest] = fenceInfo.split(" ");
 
-    if (DIAGRAM_MAP[name])
+    if (name in DIAGRAM_MAP)
       return getMermaid(
-        { diagram: DIAGRAM_MAP[name], title: rest.join(" "), content },
+        {
+          diagram: DIAGRAM_MAP[name][0] || name,
+          title: rest.join(" "),
+          content,
+          indent: DIAGRAM_MAP[name][1] ?? true,
+        },
         index,
       );
 

@@ -73,13 +73,17 @@ export default {
 - git-graph: `gitGraph`
 - journey: `journey`
 - mindmap: `mindmap`
+- kanban: `kanban`
 - pie: `pie`
 - quadrant: `quadrantChart`
 - requirement: `requirementDiagram`
-- sankey: `sankey-beta`
 - sequence: `sequenceDiagram`
 - state: `stateDiagram-v2`
 - timeline: `timeline`
+- architecture: `architecture-beta`
+- block: `block-beta`
+- packet: `packet-beta`
+- sankey: `sankey-beta`
 - xy: `xychart-beta`
 
 你不需要再声明图表类型，也不需要缩进图表代码。
