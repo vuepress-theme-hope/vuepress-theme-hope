@@ -19,7 +19,7 @@
     "@vuepress/bundler-vite": "2.0.0-rc.18",
     "@vuepress/bundler-webpack": "2.0.0-rc.18",
     "@vuepress/theme-default": "2.0.0-rc.56",
-    "chart.js": "4.4.5",
+    "chart.js": "4.4.6",
     "echarts": "5.5.1",
     "echarts-wordcloud": "2.1.0",
     "katex": "0.16.11",
