@@ -144,8 +144,8 @@ importers:
         specifier: 2.0.0-rc.56
         version: 2.0.0-rc.56(markdown-it@14.1.0)(sass-embedded@1.80.3)(sass-loader@16.0.2(sass-embedded@1.80.3)(sass@1.80.3)(webpack@5.95.0(esbuild@0.24.0)))(sass@1.80.3)(typescript@5.6.3)(vuepress@2.0.0-rc.18(@vuepress/bundler-vite@2.0.0-rc.18(@types/node@22.7.7)(jiti@1.21.6)(lightningcss@1.27.0)(sass-embedded@1.80.3)(sass@1.80.3)(terser@5.36.0)(tsx@4.19.1)(typescript@5.6.3)(yaml@2.6.0))(@vuepress/bundler-webpack@2.0.0-rc.18(esbuild@0.24.0)(typescript@5.6.3))(typescript@5.6.3)(vue@3.5.12(typescript@5.6.3)))
       artplayer:
-        specifier: 5.2.0
-        version: 5.2.0
+        specifier: 5.2.1
+        version: 5.2.1
       artplayer-plugin-danmuku:
         specifier: 5.1.4
         version: 5.1.4
@@ -484,8 +484,8 @@ importers:
         specifier: 2.0.0-rc.56
         version: 2.0.0-rc.56(typescript@5.6.3)(vuepress@2.0.0-rc.18(@vuepress/bundler-vite@2.0.0-rc.18(@types/node@22.7.7)(jiti@1.21.6)(lightningcss@1.27.0)(sass-embedded@1.80.3)(sass@1.80.3)(terser@5.36.0)(tsx@4.19.1)(typescript@5.6.3)(yaml@2.6.0))(@vuepress/bundler-webpack@2.0.0-rc.18(esbuild@0.24.0)(typescript@5.6.3))(typescript@5.6.3)(vue@3.5.12(typescript@5.6.3)))
       artplayer:
-        specifier: 5.2.0
-        version: 5.2.0
+        specifier: 5.2.1
+        version: 5.2.1
       artplayer-plugin-danmuku:
         specifier: 5.1.4
         version: 5.1.4
@@ -691,8 +691,8 @@ importers:
         specifier: 11.1.0
         version: 11.1.0(vue@3.5.12(typescript@5.6.3))
       artplayer:
-        specifier: 5.2.0
-        version: 5.2.0
+        specifier: 5.2.1
+        version: 5.2.1
       docs-shared:
         specifier: workspace:*
         version: link:../../docs-shared
@@ -4326,6 +4326,9 @@ packages:
 
   artplayer@5.2.0:
     resolution: {integrity: sha512-7wDdmlo5oSvx/oxSIfMjH0KTrVEefwG3ZNJeNrmI/Hc4cYhTr6CPeBggjMbswXsroRE8XbKEhW3jVs0JRp4NMA==}
+
+  artplayer@5.2.1:
+    resolution: {integrity: sha512-xhNE9zSLT2z4O2CJwcMSWADsS3Cvq0PwNanvMzRsqgfUhsMOpum8HlMtIUPOTyMGjIhKV8sl109HFUalQK6WJQ==}
 
   assertion-error@2.0.1:
     resolution: {integrity: sha512-Izi8RQcffqCeNVgFigKli1ssklIbpHnCYc6AknXGYoB6grJqyeby7jv12JUQgmTAnIDnbck1uxksT4dzN3PWBA==}
@@ -13818,6 +13821,10 @@ snapshots:
   artplayer-plugin-danmuku@5.1.4: {}
 
   artplayer@5.2.0:
+    dependencies:
+      option-validator: 2.0.6
+
+  artplayer@5.2.1:
     dependencies:
       option-validator: 2.0.6
 

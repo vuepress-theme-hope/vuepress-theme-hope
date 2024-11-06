@@ -27,7 +27,7 @@
     "@vuepress/plugin-feed": "2.0.0-rc.56",
     "@vuepress/plugin-revealjs": "2.0.0-rc.56",
     "@vueuse/core": "11.1.0",
-    "artplayer": "5.2.0",
+    "artplayer": "5.2.1",
     "docs-shared": "workspace:*",
     "echarts-wordcloud": "2.1.0",
     "flowchart.ts": "3.0.1",
