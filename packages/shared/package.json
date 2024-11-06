@@ -58,7 +58,7 @@
     "@vuepress/plugin-git": "2.0.0-rc.54",
     "ora": "8.1.0",
     "rollup": "4.24.0",
-    "vite": "5.4.9"
+    "vite": "5.4.10"
   },
   "peerDependencies": {
     "vuepress": "2.0.0-rc.18"
