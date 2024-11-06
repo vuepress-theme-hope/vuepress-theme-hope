@@ -246,8 +246,8 @@ importers:
         specifier: 3.2.2
         version: 3.2.2
       mermaid:
-        specifier: 11.3.0
-        version: 11.3.0
+        specifier: 11.4.0
+        version: 11.4.0
       reveal.js:
         specifier: 5.1.0
         version: 5.1.0
@@ -348,8 +348,8 @@ importers:
         specifier: 3.2.2
         version: 3.2.2
       mermaid:
-        specifier: 11.3.0
-        version: 11.3.0
+        specifier: 11.4.0
+        version: 11.4.0
       reveal.js:
         specifier: 5.1.0
         version: 5.1.0
@@ -414,8 +414,8 @@ importers:
         specifier: 3.2.2
         version: 3.2.2
       mermaid:
-        specifier: 11.3.0
-        version: 11.3.0
+        specifier: 11.4.0
+        version: 11.4.0
       reveal.js:
         specifier: 5.1.0
         version: 5.1.0
@@ -580,8 +580,8 @@ importers:
         specifier: 0.16.11
         version: 0.16.11
       mermaid:
-        specifier: 11.3.0
-        version: 11.3.0
+        specifier: 11.4.0
+        version: 11.4.0
       sandpack-vue3:
         specifier: 3.1.12
         version: 3.1.12(@lezer/common@1.2.3)(vue@3.5.12(typescript@5.6.3))
@@ -718,8 +718,8 @@ importers:
         specifier: 0.17.2
         version: 0.17.2(markmap-common@0.17.1)
       mermaid:
-        specifier: 11.3.0
-        version: 11.3.0
+        specifier: 11.4.0
+        version: 11.4.0
       sandpack-vue3:
         specifier: 3.1.12
         version: 3.1.12(@lezer/common@1.2.3)(vue@3.5.12(typescript@5.6.3))
@@ -3503,6 +3503,9 @@ packages:
   '@types/debug@4.1.12':
     resolution: {integrity: sha512-vIChWdVG3LG1SMxEvI/AK+FWJthlrqlTu7fbrlywTkkaONwk/UAGaULXRlf8vkzFBLVm0zkMdCquhL5aOjhXPQ==}
 
+  '@types/dompurify@3.0.5':
+    resolution: {integrity: sha512-1Wg0g3BtQF7sSb27fJQAKck1HECM6zV1EB66j8JH9i3LCjYabJa0FSdiSgsD5K/RbrsR0SiraKacLB+T8ZVYAg==}
+
   '@types/estree@0.0.39':
     resolution: {integrity: sha512-EYNwp3bU+98cpU4lAWYYL7Zz+2gryWH1qbdDTidVd6hkiR6weksdbMadyXKXNPEkQFhXM+hVO9ZygomHXp+AIw==}
 
@@ -5140,6 +5143,9 @@ packages:
 
   dagre-d3-es@7.0.10:
     resolution: {integrity: sha512-qTCQmEhcynucuaZgY5/+ti3X/rnszKZhEQH/ZdWdtP1tA/y3VoHJzcVrO9pjjJCNpigfscAtoUB5ONcd2wNn0A==}
+
+  dagre-d3-es@7.0.11:
+    resolution: {integrity: sha512-tvlJLyQf834SylNKax8Wkzco/1ias1OPw8DcUMDE7oUIoSEW25riQVuiu/0OWEFqT0cxHT3Pa9/D82Jr47IONw==}
 
   dargs@8.1.0:
     resolution: {integrity: sha512-wAV9QHOsNbwnWdNW2FYvE1P56wtgSbM+3SZcdGiWQILwVjACCXDCI3Ai8QlCjMDB8YK5zySiXZYBiwGmNY3lnw==}
@@ -7207,6 +7213,9 @@ packages:
 
   mermaid@11.3.0:
     resolution: {integrity: sha512-fFmf2gRXLtlGzug4wpIGN+rQdZ30M8IZEB1D3eZkXNqC7puhqeURBcD/9tbwXsqBO+A6Nzzo3MSSepmnw5xSeg==}
+
+  mermaid@11.4.0:
+    resolution: {integrity: sha512-mxCfEYvADJqOiHfGpJXLs4/fAjHz448rH0pfY5fAoxiz70rQiDSzUUy4dNET2T08i46IVpjohPd6WWbzmRHiPA==}
 
   meshoptimizer@0.18.1:
     resolution: {integrity: sha512-ZhoIoL7TNV4s5B6+rx5mC//fw8/POGyNxS/DZyCJeiZ12ScLfVwRE/GfsxwiTkMYYD5DmK2/JXnEVXqL4rF+Sw==}
@@ -12552,6 +12561,10 @@ snapshots:
     dependencies:
       '@types/ms': 0.7.34
 
+  '@types/dompurify@3.0.5':
+    dependencies:
+      '@types/trusted-types': 2.0.7
+
   '@types/estree@0.0.39': {}
 
   '@types/estree@1.0.6': {}
@@ -14747,6 +14760,11 @@ snapshots:
       d3-zoom: 3.0.0
 
   dagre-d3-es@7.0.10:
+    dependencies:
+      d3: 7.9.0
+      lodash-es: 4.17.21
+
+  dagre-d3-es@7.0.11:
     dependencies:
       d3: 7.9.0
       lodash-es: 4.17.21
@@ -17017,6 +17035,32 @@ snapshots:
       d3: 7.9.0
       d3-sankey: 0.12.3
       dagre-d3-es: 7.0.10
+      dayjs: 1.11.13
+      dompurify: 3.1.6
+      katex: 0.16.11
+      khroma: 2.1.0
+      lodash-es: 4.17.21
+      marked: 13.0.3
+      roughjs: 4.6.6
+      stylis: 4.3.4
+      ts-dedent: 2.2.0
+      uuid: 9.0.1
+    transitivePeerDependencies:
+      - supports-color
+
+  mermaid@11.4.0:
+    dependencies:
+      '@braintree/sanitize-url': 7.1.0
+      '@iconify/utils': 2.1.33
+      '@mermaid-js/parser': 0.3.0
+      '@types/d3': 7.4.3
+      '@types/dompurify': 3.0.5
+      cytoscape: 3.30.2
+      cytoscape-cose-bilkent: 4.1.0(cytoscape@3.30.2)
+      cytoscape-fcose: 2.2.0(cytoscape@3.30.2)
+      d3: 7.9.0
+      d3-sankey: 0.12.3
+      dagre-d3-es: 7.0.11
       dayjs: 1.11.13
       dompurify: 3.1.6
       katex: 0.16.11
