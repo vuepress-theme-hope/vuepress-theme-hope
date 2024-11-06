@@ -67,7 +67,7 @@
     "esbuild": "0.24.0",
     "eslint": "9.13.0",
     "eslint-config-mister-hope": "0.3.0",
-    "eslint-plugin-vue": "9.29.1",
+    "eslint-plugin-vue": "9.30.0",
     "gulp": "5.0.0",
     "http-server": "14.1.1",
     "husky": "9.1.6",
