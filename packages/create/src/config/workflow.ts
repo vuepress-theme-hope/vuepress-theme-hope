@@ -38,8 +38,6 @@ ${
     ? `\
       - name: ${workflow.setupPnpm}
         uses: pnpm/action-setup@v4
-        with:
-          version: 8
 `
     : ""
 }
@@ -47,7 +45,7 @@ ${
       - name: ${workflow.setupNode}
         uses: actions/setup-node@v4
         with:
-          node-version: 20
+          node-version: 22
           cache: ${packageManager}
 
       - name: ${workflow.install}
