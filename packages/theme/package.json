@@ -96,7 +96,7 @@
     "@vuepress/plugin-watermark": "2.0.0-rc.56",
     "@vueuse/core": "^11.2.0",
     "balloon-css": "^1.2.0",
-    "bcrypt-ts": "^5.0.2",
+    "bcrypt-ts": "^5.0.3",
     "chokidar": "^3.6.0",
     "vue": "^3.5.12",
     "vuepress-plugin-components": "workspace:*",
@@ -106,7 +106,7 @@
   "devDependencies": {
     "@vuepress/bundler-vite": "2.0.0-rc.18",
     "@vuepress/bundler-webpack": "2.0.0-rc.18",
-    "rollup": "4.24.4",
+    "rollup": "4.26.0",
     "vuepress-plugin-search-pro": "workspace:*"
   },
   "peerDependencies": {
