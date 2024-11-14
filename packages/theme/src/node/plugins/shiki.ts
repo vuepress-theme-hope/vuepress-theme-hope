@@ -1,7 +1,6 @@
 import type { ShikiPluginOptions } from "@vuepress/plugin-shiki";
 import { shikiPlugin } from "@vuepress/plugin-shiki";
 import type { App } from "vuepress/core";
-import { isPlainObject } from "vuepress/shared";
 
 import { isHighlighterPlugin } from "./utils.js";
 
@@ -12,7 +11,7 @@ import { isHighlighterPlugin } from "./utils.js";
  */
 export const useShikiPlugin = (
   app: App,
-  options?: ShikiPluginOptions | true,
+  options: ShikiPluginOptions = {},
 ): void => {
   const { plugins } = app.pluginApi;
 
@@ -20,7 +19,7 @@ export const useShikiPlugin = (
   if (plugins.every((plugin) => !isHighlighterPlugin(plugin)))
     app.use(
       shikiPlugin({
-        ...(isPlainObject(options) && "theme" in options
+        ...("theme" in options
           ? {}
           : {
               themes: {
@@ -28,7 +27,7 @@ export const useShikiPlugin = (
                 dark: "one-dark-pro",
               },
             }),
-        ...(isPlainObject(options) ? options : {}),
+        ...options,
       }),
     );
 };

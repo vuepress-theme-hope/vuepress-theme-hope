@@ -1,6 +1,5 @@
 export * from "./chart.js";
 export * from "./codeDemo.js";
-export * from "./component.js";
 export * from "./echarts.js";
 export * from "./flowchart.js";
 export * from "./kotlinPlayground.js";
@@ -8,6 +7,5 @@ export * from "./markmap.js";
 export * from "./mermaid.js";
 export * from "./plantuml.js";
 export * from "./playground/index.js";
-export * from "./vPre.js";
 export * from "./vuePlayground.js";
 export * from "./sandpack/index.js";

@@ -1,6 +1,5 @@
 import type { PrismjsPluginOptions } from "@vuepress/plugin-prismjs";
 import type { App, Plugin } from "vuepress/core";
-import { isPlainObject } from "vuepress/shared";
 import { colors } from "vuepress/utils";
 
 import { isHighlighterPlugin } from "./utils.js";
@@ -21,7 +20,7 @@ try {
  */
 export const usePrismjsPlugin = (
   app: App,
-  options?: PrismjsPluginOptions | true,
+  options: PrismjsPluginOptions = {},
 ): void => {
   const { plugins } = app.pluginApi;
 
@@ -35,7 +34,7 @@ export const usePrismjsPlugin = (
 
   // Ensure highlighter plugin is not enabled
   if (plugins.every((plugin) => !isHighlighterPlugin(plugin)))
-    app.use(prismjsPlugin(isPlainObject(options) ? options : {}));
+    app.use(prismjsPlugin(options));
 };
 
 /**

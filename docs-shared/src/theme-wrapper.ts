@@ -10,7 +10,7 @@ const IS_GITHUB = !IS_GITEE && !IS_NETLIFY;
 
 export const theme = (
   name: string,
-  { plugins = {}, ...options }: ThemeOptions,
+  { markdown = {}, plugins = {}, ...options }: ThemeOptions,
   base = name.replace(/\d+$/, ""),
   indexName?: string,
 ): ThemeFunction => {
@@ -60,6 +60,18 @@ export const theme = (
     displayFooter: true,
 
     pageInfo: ["ReadingTime", "Category", "Tag"],
+
+    markdown: {
+      highlighter: {
+        type: "shiki",
+        lineNumbers: 15,
+        themes: {
+          light: "one-light",
+          dark: "one-dark-pro",
+        },
+      },
+      ...markdown,
+    },
 
     plugins: {
       comment: {
@@ -128,14 +140,6 @@ export const theme = (
       redirect: { switchLocale: "modal" },
 
       seo: hostname === canonical ? {} : { canonical },
-
-      shiki: {
-        lineNumbers: 15,
-        themes: {
-          light: "one-light",
-          dark: "one-dark-pro",
-        },
-      },
 
       ...plugins,
     },

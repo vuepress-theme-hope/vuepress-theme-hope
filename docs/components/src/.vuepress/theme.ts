@@ -59,6 +59,12 @@ export default theme("components", {
     },
   },
 
+  markdown: {
+    codeTabs: true,
+    imgMark: true,
+    include: true,
+  },
+
   plugins: {
     components: {
       components: [
@@ -91,17 +97,8 @@ export default theme("components", {
       },
     },
 
-    markdownImage: {
-      mark: true,
-    },
-
-    markdownTab: {
-      codeTabs: true,
-    },
-
     mdEnhance: {
       demo: true,
-      include: true,
     },
   },
 });

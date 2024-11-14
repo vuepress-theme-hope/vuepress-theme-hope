@@ -107,6 +107,10 @@ const convertFooterOptions = (
  * @deprecated You should use V2 standard options and avoid using it
  */
 const covertPluginOptions = (themeOptions: Record<string, unknown>): void => {
+  const markdownOptions = (themeOptions["markdown"] ??= {}) as Record<
+    string,
+    unknown
+  >;
   const pluginOptions = themeOptions["plugins"] as Record<string, unknown>;
 
   // Handle component
@@ -124,6 +128,13 @@ const covertPluginOptions = (themeOptions: Record<string, unknown>): void => {
     };
   }
 
+  if (pluginOptions["linksCheck"]) {
+    deprecatedLogger({
+      options: themeOptions,
+      deprecatedOption: "plugins.linksCheck",
+      newOption: "markdown.linksCheck",
+    });
+  }
   if (isPlainObject(pluginOptions["mdEnhance"])) {
     const { mdEnhance: mdEnhanceOptions } = pluginOptions;
 
@@ -131,7 +142,7 @@ const covertPluginOptions = (themeOptions: Record<string, unknown>): void => {
       deprecatedLogger({
         options: themeOptions,
         deprecatedOption: "plugins.mdEnhance.alert",
-        newOption: "plugins.markdownHint.alert",
+        newOption: "markdown.alert",
       });
     }
 
@@ -139,7 +150,7 @@ const covertPluginOptions = (themeOptions: Record<string, unknown>): void => {
       deprecatedLogger({
         options: themeOptions,
         deprecatedOption: "plugins.mdEnhance.hint",
-        newOption: "plugins.markdownHint.hint",
+        newOption: "markdown.hint",
       });
     }
 
@@ -147,23 +158,7 @@ const covertPluginOptions = (themeOptions: Record<string, unknown>): void => {
       deprecatedLogger({
         options: themeOptions,
         deprecatedOption: "plugins.mdEnhance.figure",
-        newOption: "plugins.markdownImage.figure",
-      });
-    }
-
-    if ("imgSize" in mdEnhanceOptions) {
-      deprecatedLogger({
-        options: themeOptions,
-        deprecatedOption: "plugins.mdEnhance.imgSize",
-        newOption: "plugins.markdownImage.size",
-      });
-    }
-
-    if ("imgSize" in mdEnhanceOptions) {
-      deprecatedLogger({
-        options: themeOptions,
-        deprecatedOption: "plugins.mdEnhance.obsidianImgSize",
-        newOption: "plugins.markdownImage.obsidianSize",
+        newOption: "markdown.figure",
       });
     }
 
@@ -171,7 +166,23 @@ const covertPluginOptions = (themeOptions: Record<string, unknown>): void => {
       deprecatedLogger({
         options: themeOptions,
         deprecatedOption: "plugins.mdEnhance.imgLazyload",
-        newOption: "plugins.markdownImage.lazyload",
+        newOption: "markdown.imgLazyload",
+      });
+    }
+
+    if ("imgSize" in mdEnhanceOptions) {
+      deprecatedLogger({
+        options: themeOptions,
+        deprecatedOption: "plugins.mdEnhance.imgSize",
+        newOption: "markdown.imgSize",
+      });
+    }
+
+    if ("imgSize" in mdEnhanceOptions) {
+      deprecatedLogger({
+        options: themeOptions,
+        deprecatedOption: "plugins.mdEnhance.obsidianImgSize",
+        newOption: "markdown.obsidianImgSize",
       });
     }
 
@@ -179,16 +190,16 @@ const covertPluginOptions = (themeOptions: Record<string, unknown>): void => {
       deprecatedLogger({
         options: themeOptions,
         deprecatedOption: "plugins.mdEnhance.imgMark",
-        newOption: "plugins.markdownImage.mark",
+        newOption: "markdown.imgMark",
       });
     }
 
     if ("katex" in mdEnhanceOptions) {
       logger.warn(
-        `${colors.magenta("plugins.mdEnhance.katex")} is deprecated, you should use ${colors.magenta("plugins.markdownMath")} instead.`,
+        `${colors.magenta("plugins.mdEnhance.katex")} is deprecated, you should use ${colors.magenta("markdown.math")} instead.`,
       );
 
-      pluginOptions["markdownMath"] = {
+      markdownOptions["math"] = {
         type: "katex",
         ...(isPlainObject(mdEnhanceOptions["katex"])
           ? mdEnhanceOptions["katex"]
@@ -198,10 +209,10 @@ const covertPluginOptions = (themeOptions: Record<string, unknown>): void => {
 
     if ("mathjax" in mdEnhanceOptions) {
       logger.warn(
-        `${colors.magenta("plugins.mdEnhance.mathjax")} is deprecated, you should use ${colors.magenta("plugins.markdownMath")} instead.`,
+        `${colors.magenta("plugins.mdEnhance.mathjax")} is deprecated, you should use ${colors.magenta("markdown.math")} instead.`,
       );
 
-      pluginOptions["markdownMath"] = {
+      markdownOptions["math"] = {
         type: "mathjax",
         ...(isPlainObject(mdEnhanceOptions["mathjax"])
           ? mdEnhanceOptions["mathjax"]
@@ -213,7 +224,7 @@ const covertPluginOptions = (themeOptions: Record<string, unknown>): void => {
       deprecatedLogger({
         options: themeOptions,
         deprecatedOption: "plugins.mdEnhance.codetabs",
-        newOption: "plugins.markdownTab.codeTabs",
+        newOption: "markdown.codeTabs",
       });
     }
 
@@ -221,17 +232,167 @@ const covertPluginOptions = (themeOptions: Record<string, unknown>): void => {
       deprecatedLogger({
         options: themeOptions,
         deprecatedOption: "plugins.mdEnhance.tabs",
-        newOption: "plugins.markdownTab.tabs",
+        newOption: "markdown.tabs",
+      });
+    }
+
+    if ("gfm" in mdEnhanceOptions) {
+      deprecatedLogger({
+        options: themeOptions,
+        deprecatedOption: "plugins.mdEnhance.gfm",
+        newOption: "markdown.gfm",
+      });
+    }
+
+    if ("footnote" in mdEnhanceOptions) {
+      deprecatedLogger({
+        options: themeOptions,
+        deprecatedOption: "plugins.mdEnhance.footnote",
+        newOption: "markdown.footnote",
+      });
+    }
+
+    if ("tasklist" in mdEnhanceOptions) {
+      deprecatedLogger({
+        options: themeOptions,
+        deprecatedOption: "plugins.mdEnhance.tasklist",
+        newOption: "markdown.tasklist",
+      });
+    }
+
+    if ("breaks" in mdEnhanceOptions) {
+      deprecatedLogger({
+        options: themeOptions,
+        deprecatedOption: "plugins.mdEnhance.breaks",
+        newOption: "markdown.breaks",
+      });
+    }
+
+    if ("linkify" in mdEnhanceOptions) {
+      deprecatedLogger({
+        options: themeOptions,
+        deprecatedOption: "plugins.mdEnhance.linkify",
+        newOption: "markdown.linkify",
+      });
+    }
+
+    if ("component" in mdEnhanceOptions) {
+      deprecatedLogger({
+        options: themeOptions,
+        deprecatedOption: "plugins.mdEnhance.component",
+        newOption: "markdown.component",
+      });
+    }
+
+    if ("vPre" in mdEnhanceOptions) {
+      deprecatedLogger({
+        options: themeOptions,
+        deprecatedOption: "plugins.mdEnhance.vPre",
+        newOption: "markdown.vPre",
+      });
+    }
+
+    if ("include" in mdEnhanceOptions) {
+      deprecatedLogger({
+        options: themeOptions,
+        deprecatedOption: "plugins.mdEnhance.include",
+        newOption: "markdown.include",
+      });
+    }
+
+    if ("align" in mdEnhanceOptions) {
+      deprecatedLogger({
+        options: themeOptions,
+        deprecatedOption: "plugins.mdEnhance.align",
+        newOption: "markdown.align",
+      });
+    }
+
+    if ("attrs" in mdEnhanceOptions) {
+      deprecatedLogger({
+        options: themeOptions,
+        deprecatedOption: "plugins.mdEnhance.attrs",
+        newOption: "markdown.attrs",
+      });
+    }
+
+    if ("mark" in mdEnhanceOptions) {
+      deprecatedLogger({
+        options: themeOptions,
+        deprecatedOption: "plugins.mdEnhance.mark",
+        newOption: "markdown.mark",
+      });
+    }
+
+    if ("spoiler" in mdEnhanceOptions) {
+      deprecatedLogger({
+        options: themeOptions,
+        deprecatedOption: "plugins.mdEnhance.spoiler",
+        newOption: "markdown.spoiler",
+      });
+    }
+
+    if ("sup" in mdEnhanceOptions) {
+      deprecatedLogger({
+        options: themeOptions,
+        deprecatedOption: "plugins.mdEnhance.sup",
+        newOption: "markdown.sup",
+      });
+    }
+
+    if ("sub" in mdEnhanceOptions) {
+      deprecatedLogger({
+        options: themeOptions,
+        deprecatedOption: "plugins.mdEnhance.sub",
+        newOption: "markdown.sub",
+      });
+    }
+
+    if ("stylize" in mdEnhanceOptions) {
+      deprecatedLogger({
+        options: themeOptions,
+        deprecatedOption: "plugins.mdEnhance.stylize",
+        newOption: "markdown.stylize",
       });
     }
 
     if ("revealJs" in mdEnhanceOptions) {
       logger.warn(
-        `${colors.magenta("plugins.mdEnhance.revealJs")} is deprecated, you should install ${colors.cyan("@vuepress/plugin-revealjs")} and use ${colors.magenta("plugins.revealjs")} instead.`,
+        `${colors.magenta("plugins.mdEnhance.revealJs")} is deprecated, you should install ${colors.cyan("@vuepress/plugin-revealjs")} and use ${colors.magenta("markdown.revealjs")} instead.`,
       );
 
-      pluginOptions["revealjs"] = true;
+      markdownOptions["revealjs"] = true;
     }
+  }
+
+  if (pluginOptions["markdownHint"]) {
+    logger.warn(
+      `${colors.magenta("plugins.markdownHint")} is deprecated, you should use ${colors.magenta("markdown.alert")} and ${colors.magenta("markdown.hint")} instead.`,
+    );
+  }
+
+  if (pluginOptions["markdownImg"]) {
+    logger.warn(
+      `${colors.magenta("plugins.markdownImg")} is deprecated, you should use ${colors.magenta("markdown.figure")} ${colors.magenta("markdown.imgLazyload")} ${colors.magenta("markdown.imgMark")} ${colors.magenta("markdown.imgSize")} and ${colors.magenta("markdown.obsidianImgSize")} instead.`,
+    );
+  }
+
+  if (pluginOptions["markdownMath"]) {
+    logger.warn(
+      `${colors.magenta("plugins.markdownMath")} is deprecated, you should use ${colors.magenta("markdown.math")} instead.`,
+    );
+  }
+
+  if (pluginOptions["markdownTab"]) {
+    logger.warn(
+      `${colors.magenta("plugins.markdownTab")} is deprecated, you should use ${colors.magenta("markdown.tabs")} and ${colors.magenta("markdown.codeTabs")} instead.`,
+    );
+  }
+
+  if (pluginOptions["revealjs"]) {
+    logger.warn(
+      `${colors.magenta("plugins.revealjs")} is deprecated, you should use ${colors.magenta("markdown.revealjs")} instead.`,
+    );
   }
 };
 

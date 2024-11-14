@@ -1,14 +1,3 @@
-import { align } from "@mdit/plugin-align";
-import { attrs } from "@mdit/plugin-attrs";
-import { footnote } from "@mdit/plugin-footnote";
-import type { IncludeEnv } from "@mdit/plugin-include";
-import { include } from "@mdit/plugin-include";
-import { mark } from "@mdit/plugin-mark";
-import { spoiler } from "@mdit/plugin-spoiler";
-import { stylize } from "@mdit/plugin-stylize";
-import { sub } from "@mdit/plugin-sub";
-import { sup } from "@mdit/plugin-sup";
-import { tasklist } from "@mdit/plugin-tasklist";
 import {
   addViteOptimizeDepsExclude,
   addViteOptimizeDepsInclude,
@@ -21,20 +10,15 @@ import {
 } from "@vuepress/helper";
 import { useSassPalettePlugin } from "@vuepress/plugin-sass-palette";
 import type { PluginFunction } from "vuepress/core";
-import type { MarkdownEnv } from "vuepress/markdown";
-import { path } from "vuepress/utils";
 
 import {
   convertOptions,
-  legacyCard,
   legacyCodeDemo,
   legacyFlowchart,
-  legacyInclude,
 } from "./compact/index.js";
 import {
   CODE_DEMO_DEFAULT_SETTING,
   chart,
-  component,
   echarts,
   flowchart,
   getTSPlaygroundPreset,
@@ -49,7 +33,6 @@ import {
   playground,
   reactDemo,
   sandpack,
-  vPre,
   vueDemo,
   vuePlayground,
 } from "./markdown-it/index.js";
@@ -58,10 +41,7 @@ import { prepareConfigFile } from "./prepare/index.js";
 import { PLUGIN_NAME, isInstalled, logger } from "./utils.js";
 
 export const mdEnhancePlugin =
-  (
-    options: MarkdownEnhancePluginOptions = { gfm: true },
-    legacy = true,
-  ): PluginFunction =>
+  (options: MarkdownEnhancePluginOptions = {}, legacy = true): PluginFunction =>
   (app) => {
     // TODO: Remove this in v2 stable
     if (legacy)
@@ -71,42 +51,27 @@ export const mdEnhancePlugin =
 
     if (app.env.isDebug) logger.info("Options:", options);
 
-    const source = app.dir.source();
-
     const getStatus = (
       key: keyof MarkdownEnhancePluginOptions,
-      gfm = false,
       pkgs: string[] = [],
-    ): boolean => {
-      const enabled = Boolean(options?.[key] ?? (gfm && options.gfm) ?? false);
-      const pkgInstalled = pkgs.every((pkg) =>
-        isInstalled(pkg, Boolean(options[key])),
-      );
-
-      return enabled && pkgInstalled;
-    };
+    ): boolean =>
+      Boolean(options?.[key]) &&
+      pkgs.every((pkg) => isInstalled(pkg, Boolean(options[key])));
 
     const status = {
-      breaks: getStatus("breaks", true),
-      chart: getStatus("chart", false, ["chart.js"]),
-      echarts: getStatus("echarts", false, ["echarts"]),
-      flowchart: getStatus("flowchart", false, ["flowchart.ts"]),
-      footnote: getStatus("footnote", true),
-      linkify: getStatus("linkify", true),
+      chart: getStatus("chart", ["chart.js"]),
+      echarts: getStatus("echarts", ["echarts"]),
+      flowchart: getStatus("flowchart", ["flowchart.ts"]),
       mark: getStatus("mark"),
-      markmap: getStatus("markmap", false, [
+      markmap: getStatus("markmap", [
         "markmap-lib",
         "markmap-toolbar",
         "markmap-view",
       ]),
-      mermaid: getStatus("mermaid", false, ["mermaid"]),
-      obsidianImgSize: getStatus("obsidianImgSize"),
-      tasklist: getStatus("tasklist", true),
-      kotlinPlayground: getStatus("kotlinPlayground", false, [
-        "kotlin-playground",
-      ]),
-      sandpack: getStatus("sandpack", false, ["sandpack-vue3"]),
-      vuePlayground: getStatus("vuePlayground", false, ["@vue/repl"]),
+      mermaid: getStatus("mermaid", ["mermaid"]),
+      kotlinPlayground: getStatus("kotlinPlayground", ["kotlin-playground"]),
+      sandpack: getStatus("sandpack", ["sandpack-vue3"]),
+      vuePlayground: getStatus("vuePlayground", ["@vue/repl"]),
     };
 
     useSassPalettePlugin(app, { id: "hope" });
@@ -207,56 +172,6 @@ export const mdEnhancePlugin =
       },
 
       extendsMarkdown: (md): void => {
-        // Behavior
-        if (status.breaks) md.options.breaks = true;
-        if (status.linkify) md.options.linkify = true;
-
-        // GFM syntax
-        if (status.footnote) md.use(footnote);
-        if (status.tasklist)
-          md.use(tasklist, [
-            isPlainObject(options.tasklist) ? options.tasklist : {},
-          ]);
-        if (options.attrs)
-          md.use(attrs, isPlainObject(options.attrs) ? options.attrs : {});
-        if (options.align) md.use(align);
-        if (options.component) md.use(component);
-        if (options.mark) md.use(mark);
-        if (options.spoiler) md.use(spoiler);
-        if (options.sup) md.use(sup);
-        if (options.sub) md.use(sub);
-
-        // TODO: Remove this in v2 stable
-        // @ts-expect-error: card does not exist
-        if (options.card && legacy) md.use(legacyCard);
-
-        // Additional functions
-        if (
-          options.vPre ??
-          // TODO: Remove this in v2 stable
-          legacy
-        )
-          md.use(vPre);
-
-        if (options.include) {
-          md.use(include, {
-            currentPath: (env: MarkdownEnv) => env.filePath,
-            ...(isPlainObject(options.include) ? options.include : {}),
-          });
-
-          if (legacy)
-            md.use(legacyInclude, {
-              currentPath: (env: MarkdownEnv) => env.filePath,
-            });
-        }
-
-        if (options.stylize)
-          md.use(stylize, {
-            config: options.stylize,
-            localConfigGetter: (env: MarkdownEnv) =>
-              env.frontmatter?.["stylize"] || null,
-          });
-
         if (status.flowchart) {
           md.use(flowchart);
           // TODO: Remove this in v2 stable
@@ -294,28 +209,6 @@ export const mdEnhancePlugin =
         if (status.sandpack) md.use(sandpack);
       },
 
-      extendsPage: (page): void => {
-        const { markdownEnv, frontmatter, filePathRelative } = page;
-
-        if (options.include) {
-          const { includedFiles = [] } = markdownEnv as IncludeEnv;
-
-          // mark included files as page deps
-          page.deps.push(...includedFiles);
-
-          // add included files as git deps
-          ((frontmatter["gitInclude"] as string[]) ??= []).push(
-            ...includedFiles.map((file) =>
-              path.relative(
-                path.resolve(source, filePathRelative, ".."),
-                path.resolve(source, filePathRelative, file),
-              ),
-            ),
-          );
-        }
-      },
-
-      clientConfigFile: (app) =>
-        prepareConfigFile(app, options, status, legacy),
+      clientConfigFile: (app) => prepareConfigFile(app, options, status),
     };
   };

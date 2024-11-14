@@ -1,11 +1,7 @@
 import type { MarkdownItPlantumlOptions } from "@mdit/plugin-plantuml";
 
 import type {
-  AttrsOptions,
-  IncludeOptions,
   PlaygroundGlobalOptions,
-  StylizeOptions,
-  TasklistOptions,
   VuePlaygroundOptions,
 } from "./typings/index.js";
 import type { CodeDemoOptions } from "../shared/index.js";
@@ -70,6 +66,81 @@ export interface DeprecatedMarkdownEnhancePluginOptions {
    * @deprecated use `@vuepress/plugin-revealjs` instead
    */
   revealJs?: never;
+
+  /**
+   * @deprecated use `@vuepress/plugin-markdown-ext` instead
+   */
+  footnote?: never;
+
+  /**
+   * @deprecated use `@vuepress/plugin-markdown-ext` instead
+   */
+  tasklist?: never;
+
+  /**
+   * @deprecated use `@vuepress/plugin-markdown-ext` instead
+   */
+  gfm?: never;
+
+  /**
+   * @deprecated use `@vuepress/plugin-markdown-ext` instead
+   */
+  vPre?: never;
+
+  /**
+   * @deprecated use `@vuepress/plugin-markdown-ext` instead
+   */
+  breaks?: never;
+
+  /**
+   * @deprecated use `@vuepress/plugin-markdown-ext` instead
+   */
+  linkify?: never;
+
+  /**
+   * @deprecated use `@vuepress/plugin-markdown-ext` instead
+   */
+  component?: never;
+
+  /**
+   * @deprecated use `@vuepress/plugin-markdown-stylize` instead
+   */
+  align?: never;
+
+  /**
+   * @deprecated use `@vuepress/plugin-markdown-stylize` instead
+   */
+  attrs?: never;
+
+  /**
+   * @deprecated use `@vuepress/plugin-markdown-stylize` instead
+   */
+  sup?: never;
+
+  /**
+   * @deprecated use `@vuepress/plugin-markdown-stylize` instead
+   */
+  sub?: never;
+
+  /**
+   * @deprecated use `@vuepress/plugin-markdown-stylize` instead
+   */
+  mark?: never;
+
+  /**
+   * @deprecated use `@vuepress/plugin-markdown-stylize` instead
+   */
+  spoiler?: never;
+
+  /**
+   * @deprecated use `@vuepress/plugin-markdown-stylize` instead
+   */
+  stylize?: never;
+
+  /**
+   * @deprecated use `@vuepress/plugin-markdown-include` instead
+   */
+  include?: never;
 }
 
 /**
@@ -77,136 +148,6 @@ export interface DeprecatedMarkdownEnhancePluginOptions {
  */
 export interface MarkdownEnhancePluginOptions
   extends DeprecatedMarkdownEnhancePluginOptions {
-  /**
-   * Whether enable standard GFM support
-   *
-   * 是否启用标准的 GitHub Favor Markdown 支持
-   *
-   * @default false
-   */
-  gfm?: boolean;
-
-  /**
-   * Whether to enable v-pre wrapper.
-   *
-   * 是否启用 v-pre 容器。
-   *
-   * @default false
-   */
-  vPre?: boolean;
-
-  /**
-   * Whether convert `\n` in paragraphs into `<br>`s
-   *
-   * 是否将段落中的 `\n` 转换为 `<br>`
-   *
-   * @description enabled in gfm mode
-   *
-   * @default false
-   */
-  breaks?: boolean;
-
-  /**
-   * Whether convert URL-like text into links
-   *
-   * 是否将文字中的链接格式文字转换为链接
-   *
-   * @description enabled in gfm mode
-   *
-   * @default false
-   */
-  linkify?: boolean;
-
-  /**
-   * Whether to enable align support
-   *
-   * 是否启用自定义对齐支持。
-   *
-   * @default false
-   */
-  align?: boolean;
-
-  /**
-   * Whether to enable attr support
-   *
-   * 是否启用属性支持。
-   *
-   * @default false
-   */
-  attrs?: AttrsOptions | boolean;
-
-  /**
-   * Whether to enable superscript format support
-   *
-   * 是否启用上角标格式支持。
-   *
-   * @default false
-   */
-  sup?: boolean;
-
-  /**
-   * Whether to enable subscript format support
-   *
-   * 是否启用下角标格式支持。
-   *
-   * @default false
-   */
-  sub?: boolean;
-
-  /**
-   * Whether to enable footnote format support
-   *
-   * 是否启用脚注格式支持。
-   *
-   * @default false
-   */
-  footnote?: boolean;
-
-  /**
-   * Whether to enable mark format support
-   *
-   * 是否启用标注支持。
-   *
-   * @default false
-   */
-  mark?: boolean;
-
-  /**
-   * Whether to enable spoiler support
-   *
-   * 是否启用剧透支持
-   *
-   * @default false
-   */
-  spoiler?: boolean;
-
-  /**
-   * Whether to enable tasklist format support
-   *
-   * 是否启用任务列表支持
-   *
-   * @default false
-   */
-  tasklist?: TasklistOptions | boolean;
-
-  /**
-   * Whether to enable include syntax support
-   *
-   * 是否启用导入语法支持
-   *
-   * @default false
-   */
-  include?: Partial<IncludeOptions> | boolean;
-
-  /**
-   * Whether to enable component support
-   *
-   * 是否启用组件支持
-   *
-   * @default false
-   */
-  component?: boolean;
-
   /**
    * Whether to enable chart support
    *
@@ -269,13 +210,6 @@ export interface MarkdownEnhancePluginOptions
    * @default false
    */
   demo?: Partial<CodeDemoOptions> | boolean;
-
-  /**
-   * Keyword enhancement
-   *
-   * 关键词显示增强选项
-   */
-  stylize?: StylizeOptions;
 
   /**
    * Whether to enable playground support

@@ -16,11 +16,6 @@ export const convertOptions = (
     old: "mdImport",
     new: "include",
   });
-  deprecatedLogger({
-    options,
-    old: "vpre",
-    new: "vPre",
-  });
 
   droppedLogger({
     options,
@@ -157,6 +152,46 @@ export const convertOptions = (
     options,
     old: "tabs",
     msg: "Please use @vuepress/plugin-markdown-tab instead.",
+  });
+  droppedLogger({
+    options,
+    old: "vpre",
+    msg: "Please use @vuepress/plugin-markdown-ext instead.",
+  });
+  droppedLogger({
+    options,
+    old: "vPre",
+    msg: "Please use @vuepress/plugin-markdown-ext instead.",
+  });
+  droppedLogger({
+    options,
+    old: "breaks",
+    msg: "Please use @vuepress/plugin-markdown-ext instead.",
+  });
+  droppedLogger({
+    options,
+    old: "linkify",
+    msg: "Please use @vuepress/plugin-markdown-ext instead.",
+  });
+  droppedLogger({
+    options,
+    old: "gfm",
+    msg: "Please use @vuepress/plugin-markdown-ext instead.",
+  });
+  droppedLogger({
+    options,
+    old: "footnote",
+    msg: "Please use @vuepress/plugin-markdown-ext instead.",
+  });
+  droppedLogger({
+    options,
+    old: "tasklist",
+    msg: "Please use @vuepress/plugin-markdown-ext instead.",
+  });
+  droppedLogger({
+    options,
+    old: "component",
+    msg: "Please use @vuepress/plugin-markdown-ext instead.",
   });
 
   if (options["card"])

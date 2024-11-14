@@ -2,7 +2,7 @@ import { rollupBundle } from "../../scripts/rollup.js";
 
 export default [
   ...rollupBundle("node/index", {
-    external: [/^@mdit\/plugin-/, "js-yaml"],
+    external: [/^@mdit\/plugin-/],
     dtsExternal: ["vuepress-shared"],
   }),
   ...rollupBundle(
@@ -10,7 +10,6 @@ export default [
       base: "client",
       files: [
         "index",
-        "compact/index",
         "components/ChartJS",
         "components/CodeDemo",
         "components/ECharts",

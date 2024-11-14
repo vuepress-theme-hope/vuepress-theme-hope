@@ -44,6 +44,52 @@ export default hopeTheme({
   // 如果想要实时查看任何改变，启用它。注: 这对更新性能有很大负面影响
   // hotReload: true,
 
+  // 此处开启了很多功能用于演示，你应仅保留用到的功能。
+  markdown: {
+    align: true,
+    attrs: true,
+    codeTabs: true,
+    component: true,
+    figure: true,
+    gfm: true,
+    imgLazyload: true,
+    imgSize: true,
+    include: true,
+    mark: true,
+    spoiler: true,
+    stylize: [
+      {
+        matcher: "Recommended",
+        replacer: ({ tag }) => {
+          if (tag === "em")
+            return {
+              tag: "Badge",
+              attrs: { type: "tip" },
+              content: "Recommended",
+            };
+        },
+      },
+    ],
+    sub: true,
+    sup: true,
+    tabs: true,
+    tasklist: true,
+    vPre: true,
+
+    // 取消注释它们如果你需要 TeX 支持
+    // markdownMath: {
+    //   // 启用前安装 katex
+    //   type: "katex",
+    //   // 或者安装 mathjax-full
+    //   type: "mathjax",
+    // },
+
+    // 如果你需要幻灯片，安装 @vuepress/plugin-revealjs 并取消下方注释
+    // revealjs: {
+    //   plugins: ["highlight", "math", "search", "notes", "zoom"],
+    // },
+  },
+
   // 在这里配置主题提供的插件
   plugins: {
     // 注意: 仅用于测试! 你必须自行生成并在生产环境中使用自己的评论服务
@@ -60,49 +106,9 @@ export default hopeTheme({
     },
 
     // 此处开启了很多功能用于演示，你应仅保留用到的功能。
-    markdownImage: {
-      figure: true,
-      lazyload: true,
-      size: true,
-    },
-
-    // markdownMath: {
-    //   // 启用前安装 katex
-    //   type: "katex",
-    //   // 或者安装 mathjax-full
-    //   type: "mathjax",
-    // },
-
-    // 此功能被开启用于演示，你应仅当使用时保留。
-    markdownTab: true,
-
-    // 此处开启了很多功能用于演示，你应仅保留用到的功能。
     mdEnhance: {
-      align: true,
-      attrs: true,
-      component: true,
       demo: true,
-      include: true,
-      mark: true,
       plantuml: true,
-      spoiler: true,
-      stylize: [
-        {
-          matcher: "Recommended",
-          replacer: ({ tag }) => {
-            if (tag === "em")
-              return {
-                tag: "Badge",
-                attrs: { type: "tip" },
-                content: "Recommended",
-              };
-          },
-        },
-      ],
-      sub: true,
-      sup: true,
-      tasklist: true,
-      vPre: true,
 
       // 在启用之前安装 chart.js
       // chart: true,
@@ -114,9 +120,6 @@ export default hopeTheme({
 
       // 在启用之前安装 flowchart.ts
       // flowchart: true,
-
-      // gfm requires mathjax-full to provide tex support
-      // gfm: true,
 
       // 在启用之前安装 mermaid
       // mermaid: true,
@@ -187,11 +190,6 @@ export default hopeTheme({
     //       },
     //     ],
     //   },
-    // },
-
-    // 如果你需要幻灯片，安装 @vuepress/plugin-revealjs 并取消下方注释
-    // revealjs: {
-    //   plugins: ["highlight", "math", "search", "notes", "zoom"],
     // },
   },
 });
