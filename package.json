@@ -60,7 +60,7 @@
     "@types/node": "22.9.0",
     "@vitest/coverage-istanbul": "2.1.5",
     "concurrently": "9.1.0",
-    "conventional-changelog-conventionalcommits": "7.0.0",
+    "conventional-changelog-conventionalcommits": "8.0.0",
     "cpx2": "8.0.0",
     "cross-env": "7.0.3",
     "cz-git": "1.11.0",
