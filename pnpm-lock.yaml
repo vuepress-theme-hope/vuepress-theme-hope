@@ -42,8 +42,8 @@ importers:
         specifier: 9.1.0
         version: 9.1.0
       conventional-changelog-conventionalcommits:
-        specifier: 7.0.0
-        version: 7.0.0
+        specifier: 7.0.2
+        version: 7.0.2
       cpx2:
         specifier: 8.0.0
         version: 8.0.0
@@ -4794,10 +4794,6 @@ packages:
 
   conventional-changelog-angular@7.0.0:
     resolution: {integrity: sha512-ROjNchA9LgfNMTTFSIWPzebCwOGFdgkEq45EnvvrmSLvCtAw0HSmrCs7/ty+wAeYUZyNay0YMUNYFTRL72PkBQ==}
-    engines: {node: '>=16'}
-
-  conventional-changelog-conventionalcommits@7.0.0:
-    resolution: {integrity: sha512-iu2Zt5f7ESwpGJStnbHAG2fL/kBA5h/s1AuDYGKqb7gQcXpWlyfGiF8wM+mfFD5M/cYt9Hl3iWNDm3n72qBA1w==}
     engines: {node: '>=16'}
 
   conventional-changelog-conventionalcommits@7.0.2:
@@ -14326,10 +14322,6 @@ snapshots:
   content-type@1.0.5: {}
 
   conventional-changelog-angular@7.0.0:
-    dependencies:
-      compare-func: 2.0.0
-
-  conventional-changelog-conventionalcommits@7.0.0:
     dependencies:
       compare-func: 2.0.0
 
