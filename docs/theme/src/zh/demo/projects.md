@@ -295,7 +295,7 @@ docs:
     logo: https://doc.wzciot.site/img/fastRequestnew.svg
     url: https://doc.wzciot.site
     repo: https://wzciot.site
-    preview: /assets/image/wwiot-camerasys-home
+    preview: /assets/image/wwiot-camerasys-home.jpg
 
 portfolios:
   - name: 尚程
