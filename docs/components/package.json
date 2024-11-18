@@ -28,7 +28,7 @@
     "docs-shared": "workspace:*",
     "hls.js": "1.5.17",
     "mpegts.js": "1.7.3",
-    "sass-embedded": "1.80.7",
+    "sass-embedded": "1.81.0",
     "sass-loader": "16.0.3",
     "vidstack": "1.12.12",
     "vue": "3.5.12",
