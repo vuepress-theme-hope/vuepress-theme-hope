@@ -202,13 +202,6 @@ docs:
     repo: https://github.com/theme-shoka-x/shokaX-docs
     preview: /assets/image/shokax.jpg
 
-  - name: Wwiot-Camerasys
-    desc: Wwiot-Camerasys is an unexpected video surveillance platform
-    logo: https://doc.wzciot.site/img/fastRequestnew.svg
-    url: https://doc.wzciot.site
-    repo: https://wzciot.site
-    preview: /assets/image/wwiot-camerasys-home
-
 portfolios:
   - name: Cheng Shang
     url: https://cheng-shang.me
