@@ -75,7 +75,14 @@
 }
 
 .vp-navbar-start {
-  justify-content: start;
+  // TODO: Since start is not supported in chrome < 93 and Safari < 15.4
+  // we use old ones with rtl selector here
+  // justify-content: start;
+  justify-content: left;
+
+  [dir="rtl"] & {
+    justify-content: right;
+  }
 }
 
 .vp-navbar-center {
@@ -83,5 +90,12 @@
 }
 
 .vp-navbar-end {
-  justify-content: end;
+  // TODO: Since end is not supported in chrome < 93 and Safari < 15.4
+  // we use old ones with rtl selector here
+  // justify-content: end;
+  justify-content: right;
+
+  [dir="rtl"] & {
+    justify-content: left;
+  }
 }
