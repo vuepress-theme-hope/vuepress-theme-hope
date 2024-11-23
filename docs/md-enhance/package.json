@@ -22,7 +22,7 @@
     "@types/katex": "0.16.7",
     "@vuepress/bundler-vite": "2.0.0-rc.18",
     "@vuepress/bundler-webpack": "2.0.0-rc.18",
-    "@vuepress/helper": "2.0.0-rc.60",
+    "@vuepress/helper": "2.0.0-rc.61",
     "@vueuse/core": "11.3.0",
     "docs-shared": "workspace:*",
     "echarts-wordcloud": "2.1.0",

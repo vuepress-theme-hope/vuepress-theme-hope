@@ -44,8 +44,8 @@
     "dev:ts": "tsc -b tsconfig.build.json --watch"
   },
   "dependencies": {
-    "@vuepress/helper": "2.0.0-rc.60",
-    "@vuepress/plugin-sass-palette": "2.0.0-rc.60",
+    "@vuepress/helper": "2.0.0-rc.61",
+    "@vuepress/plugin-sass-palette": "2.0.0-rc.61",
     "@vueuse/core": "^11.3.0",
     "cheerio": "1.0.0",
     "chokidar": "^3.6.0",
@@ -54,8 +54,8 @@
     "vuepress-shared": "workspace:*"
   },
   "peerDependencies": {
-    "sass": "^1.80.3",
-    "sass-embedded": "^1.80.3",
+    "sass": "^1.81.0",
+    "sass-embedded": "^1.81.0",
     "sass-loader": "^16.0.2",
     "vuepress": "2.0.0-rc.18"
   },

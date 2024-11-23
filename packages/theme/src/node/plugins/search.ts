@@ -2,7 +2,7 @@ import {
   entries,
   fromEntries,
   getLocaleConfig,
-  getRootLangPath,
+  inferRootLocalePath,
   isPlainObject,
   keys,
   startsWith,
@@ -118,7 +118,7 @@ export const getSearchPlugin = (
     return docsearchPlugin({
       locales: locales["/zh/"]
         ? { "/zh/": DOCSEARCH_ZH_LOCALES }
-        : getRootLangPath(app) === "/zh/"
+        : inferRootLocalePath(app) === "/zh/"
           ? { "/": DOCSEARCH_ZH_LOCALES }
           : {},
       ...plugins.docsearch,
@@ -177,7 +177,7 @@ export const getSearchPlugin = (
                       fieldName === "id" ? [text] : cut(text, true),
                   },
                 }
-              : getRootLangPath(app) === "/zh/"
+              : inferRootLocalePath(app) === "/zh/"
                 ? {
                     "/": {
                       tokenize: (text, fieldName) =>
@@ -204,7 +204,7 @@ export const getSearchPlugin = (
       isSearchable: (page) => !isPageEncrypted(page),
       locales: locales["/zh/"]
         ? { "/zh/": SEARCH_ZH_LOCALES }
-        : getRootLangPath(app) === "/zh/"
+        : inferRootLocalePath(app) === "/zh/"
           ? { "/": SEARCH_ZH_LOCALES }
           : {},
       ...(isPlainObject(plugins.search) ? plugins.search : {}),
