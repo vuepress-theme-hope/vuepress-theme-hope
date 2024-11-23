@@ -42,7 +42,6 @@ export const optionDeclarations = [
   { name: "version", type: "boolean" },
   { name: "init", type: "boolean" },
   { name: "project", type: "string" },
-  { name: "build", type: "boolean" },
   { name: "showConfig", type: "boolean" },
   { name: "listFilesOnly", type: "boolean" },
   {
@@ -60,6 +59,7 @@ export const optionDeclarations = [
       es2021: 8,
       es2022: 9,
       es2023: 10,
+      es2024: 11,
       esnext: 99,
     },
   },
@@ -149,6 +149,7 @@ export const optionDeclarations = [
   { name: "allowUmdGlobalAccess", type: "boolean" },
   { name: "moduleSuffixes", type: "list" },
   { name: "allowImportingTsExtensions", type: "boolean" },
+  { name: "rewriteRelativeImportExtensions", type: "boolean" },
   { name: "resolvePackageJsonExports", type: "boolean" },
   { name: "resolvePackageJsonImports", type: "boolean" },
   { name: "customConditions", type: "list" },

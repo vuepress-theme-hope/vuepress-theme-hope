@@ -290,6 +290,13 @@ docs:
     repo: https://github.com/BukkitWiki/BukkitWiki
     preview: /assets/image/bukkitwiki.jpg
 
+  - name: Wwiot-Camerasys
+    desc: Wwiot-Camerasys是一个意想不到的视频监控平台
+    logo: https://doc.wzciot.site/img/fastRequestnew.svg
+    url: https://doc.wzciot.site
+    repo: https://wzciot.site
+    preview: /assets/image/wwiot-camerasys-home.jpg
+
 portfolios:
   - name: 尚程
     url: https://cheng-shang.me/zh/
