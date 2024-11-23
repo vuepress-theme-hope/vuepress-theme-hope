@@ -94,7 +94,7 @@ Example:
 
 ### Writing Date
 
-We recommend filling it with a standard date format. A standard format is in the form of `xxxx-xx-xx`, such as "April 1, 2020" should be written as `2020-04-01`.
+We recommend filling it with a standard date format. A standard format is in the form of `yyyy-mm-dd`, such as "April 1, 2020" should be written as `2020-04-01`.
 
 Example:
 
