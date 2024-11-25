@@ -8,7 +8,8 @@
     "inlineSources": true,
     "paths": {
       "@theme-hope/*": ["./src/client/*.js"]
-    }
+    },
+    "types": ["vuepress/client-types", "vite/client", "webpack-env"]
   },
   "include": ["./src/client", "./src/shared", "./src/presets", "./src/*.d.ts"]
 }

@@ -24,5 +24,5 @@ export const markmap: PluginSimple = (md) => {
     return fence!(...args);
   };
 
-  md.renderer.rules["markmap"] = markmapRender;
+  md.renderer.rules.markmap = markmapRender;
 };

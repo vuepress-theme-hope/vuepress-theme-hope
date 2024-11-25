@@ -3,7 +3,7 @@ import type { ThemeFunction } from "vuepress/core";
 import type { ThemeOptions } from "vuepress-theme-hope";
 import { hopeTheme } from "vuepress-theme-hope";
 
-const IS_PROD = process.env["NODE_ENV"] === "production";
+const IS_PROD = process.env.NODE_ENV === "production";
 const IS_GITEE = "GITEE" in process.env;
 const IS_NETLIFY = "NETLIFY" in process.env;
 const IS_GITHUB = !IS_GITEE && !IS_NETLIFY;

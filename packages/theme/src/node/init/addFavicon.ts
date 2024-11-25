@@ -11,11 +11,7 @@ export const addFavicon = (app: App, favicon: string): void => {
   if (
     head.every(
       ([tag, attrs]) =>
-        !(
-          tag === "link" &&
-          attrs["rel"] === "icon" &&
-          attrs["href"] === faviconLink
-        ),
+        !(tag === "link" && attrs.rel === "icon" && attrs.href === faviconLink),
     )
   )
     head.push(["link", { rel: "icon", href: faviconLink }]);

@@ -254,7 +254,7 @@ export const mdEnhancePlugin =
           md.use(stylize, {
             config: options.stylize,
             localConfigGetter: (env: MarkdownEnv) =>
-              env.frontmatter?.["stylize"] || null,
+              env.frontmatter?.stylize || null,
           });
 
         if (status.flowchart) {
@@ -304,7 +304,7 @@ export const mdEnhancePlugin =
           page.deps.push(...includedFiles);
 
           // add included files as git deps
-          ((frontmatter["gitInclude"] as string[]) ??= []).push(
+          ((frontmatter.gitInclude as string[]) ??= []).push(
             ...includedFiles.map((file) =>
               path.relative(
                 path.resolve(source, filePathRelative, ".."),

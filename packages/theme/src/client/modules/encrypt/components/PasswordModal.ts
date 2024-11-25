@@ -55,7 +55,7 @@ export default defineComponent({
         {
           class: [
             "vp-decrypt-layer",
-            { expand: props.full || frontmatter.value["home"] },
+            { expand: props.full || frontmatter.value.home },
           ],
         },
         h("div", { class: "vp-decrypt-modal" }, [

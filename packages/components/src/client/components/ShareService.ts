@@ -130,8 +130,7 @@ export default defineComponent({
       const image = document
         .querySelector<HTMLImageElement>("[vp-content] :not(a) > img")
         ?.getAttribute("src");
-      const tags =
-        props.tag ?? frontmatter.value["tag"] ?? frontmatter.value["tags"];
+      const tags = props.tag ?? frontmatter.value.tag ?? frontmatter.value.tags;
       const tag = isArray(tags)
         ? tags.filter(isString).join(",")
         : isString(tags)

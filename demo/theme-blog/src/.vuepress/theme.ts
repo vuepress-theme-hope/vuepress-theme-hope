@@ -5,7 +5,7 @@ import { enNavbar, zhNavbar } from "./navbar/index.js";
 import { enSidebar, zhSidebar } from "./sidebar/index.js";
 
 const hostname =
-  process.env["HOSTNAME"] ?? "https://theme-hope-blog-demo.vuejs.press";
+  process.env.HOSTNAME ?? "https://theme-hope-blog-demo.vuejs.press";
 
 export default hopeTheme(
   {

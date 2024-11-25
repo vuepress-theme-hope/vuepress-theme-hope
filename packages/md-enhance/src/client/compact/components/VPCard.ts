@@ -76,8 +76,8 @@ export const VPCard: FunctionalComponent<CardProps> = ({
 
   const style: Record<string, string> = {};
 
-  if (background) style["background"] = background;
-  if (color) style["color"] = color;
+  if (background) style.background = background;
+  if (color) style.color = color;
 
   return link
     ? isLinkExternal(link)

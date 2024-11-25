@@ -2,7 +2,7 @@ import { defineUserConfig } from "vuepress";
 
 import theme from "./theme.js";
 
-const base = (process.env["BASE"] as "/" | `/${string}/`) || "/";
+const base = (process.env.BASE as "/" | `/${string}/`) || "/";
 
 export default defineUserConfig({
   base,

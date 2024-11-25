@@ -8,7 +8,7 @@ import ThemeColorPicker from "@theme-hope/modules/outlook/components/ThemeColorP
 import cssVariables from "../../../styles/variables.module.scss";
 import "../styles/theme-color.scss";
 
-export const enableThemeColor = cssVariables["enableThemeColor"] === "true";
+export const enableThemeColor = cssVariables.enableThemeColor === "true";
 
 const themeColor = enableThemeColor
   ? fromEntries(

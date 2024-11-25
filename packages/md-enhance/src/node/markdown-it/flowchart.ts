@@ -27,5 +27,5 @@ export const flowchart: PluginSimple = (md) => {
     return fence!(...args);
   };
 
-  md.renderer.rules["flowchart"] = flowchartRender;
+  md.renderer.rules.flowchart = flowchartRender;
 };

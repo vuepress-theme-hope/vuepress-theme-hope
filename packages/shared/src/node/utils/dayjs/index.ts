@@ -23,9 +23,13 @@ import { loadViLocale } from "./vi.js";
 import { loadZhTWLocale } from "./zh-tw.js";
 import { loadZhLocale } from "./zh.js";
 
+// eslint-disable-next-line import-x/no-named-as-default-member
 dayjs.extend(localizedFormat);
+// eslint-disable-next-line import-x/no-named-as-default-member
 dayjs.extend(objectSupport);
+// eslint-disable-next-line import-x/no-named-as-default-member
 dayjs.extend(utc);
+// eslint-disable-next-line import-x/no-named-as-default-member
 dayjs.extend(timezone);
 
 loadDeLocale(dayjs);

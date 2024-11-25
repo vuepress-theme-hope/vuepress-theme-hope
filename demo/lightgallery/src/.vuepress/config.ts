@@ -2,7 +2,7 @@ import { defaultTheme } from "@vuepress/theme-default";
 import { defineUserConfig } from "vuepress";
 import { lightgalleryPlugin } from "vuepress-plugin-lightgallery";
 
-const base = (process.env["BASE"] as "/" | `/${string}/`) || "/";
+const base = (process.env.BASE as "/" | `/${string}/`) || "/";
 
 export default defineUserConfig({
   base,

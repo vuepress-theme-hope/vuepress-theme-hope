@@ -76,7 +76,7 @@ export default defineComponent({
               class: [
                 "vp-project-card",
                 {
-                  [`color${generateIndexFromHash(name, Number(cssVariables["colorNumber"]))}`]:
+                  [`color${generateIndexFromHash(name, Number(cssVariables.colorNumber))}`]:
                     !isPure.value && !background,
                 },
               ],

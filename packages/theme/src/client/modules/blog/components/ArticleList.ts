@@ -67,14 +67,14 @@ export default defineComponent({
       const query = { ...route.query };
 
       const needUpdate = !(
-        query["page"] === page.toString() || // Page equal as query
+        query.page === page.toString() || // Page equal as query
         // Page is 1 and query is empty
-        (page === 1 && !query["page"])
+        (page === 1 && !query.page)
       );
 
       if (needUpdate) {
-        if (page === 1) delete query["page"];
-        else query["page"] = page.toString();
+        if (page === 1) delete query.page;
+        else query.page = page.toString();
 
         await router.push({ path: route.path, query });
       }

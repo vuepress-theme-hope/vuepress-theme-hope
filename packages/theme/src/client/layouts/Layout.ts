@@ -62,7 +62,7 @@ export default defineComponent({
         {
           default: () =>
             slots.default?.() ??
-            (frontmatter.value["portfolio"]
+            (frontmatter.value.portfolio
               ? h(PortfolioHome)
               : frontmatter.value.home
                 ? h(HomePage)

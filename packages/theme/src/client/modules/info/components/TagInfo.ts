@@ -52,7 +52,7 @@ export default defineComponent({
                     class: [
                       "page-tag-item",
                       {
-                        [`color${generateIndexFromHash(name, Number(cssVariables["colorNumber"]))}`]:
+                        [`color${generateIndexFromHash(name, Number(cssVariables.colorNumber))}`]:
                           !isPure.value,
                         clickable: path,
                       },

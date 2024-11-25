@@ -28,7 +28,7 @@ export const echarts: PluginSimple = (md) => {
     return fence!(...args);
   };
 
-  md.renderer.rules["echarts"] = echartsRender;
+  md.renderer.rules.echarts = echartsRender;
 
   container(md, {
     name: "echarts",

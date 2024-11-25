@@ -24,7 +24,7 @@ export interface CardOptions {
 const CARD_PROPS = ["title", "desc", "logo", "link", "color"];
 
 const checkCardProps = (config: unknown): CardOptions | null => {
-  if (isPlainObject(config) && isString(config["title"]))
+  if (isPlainObject(config) && isString(config.title))
     return fromEntries(
       entries(config).filter(
         (item): item is [string, string] =>
@@ -110,5 +110,5 @@ export const legacyCard: PluginSimple = (md) => {
     return fence!(...args);
   };
 
-  md.renderer.rules["card"] = cardRender;
+  md.renderer.rules.card = cardRender;
 };
