@@ -75,7 +75,7 @@ export interface DeprecatedBlogLocaleData {
    * }
    * ```
    */
-  roundAvatar: never;
+  roundAvatar?: never;
 }
 
 /**
