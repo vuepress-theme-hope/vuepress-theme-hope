@@ -39,11 +39,6 @@ const features = [
     link: getLink("md-enhance"),
   },
   {
-    text: "客户端搜索插件",
-    icon: "search",
-    link: getLink("search-pro"),
-  },
-  {
     text: "VuePress 工具函数",
     icon: "toolbox",
     link: getLink("shared"),

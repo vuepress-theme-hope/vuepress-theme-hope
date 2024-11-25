@@ -276,36 +276,6 @@ importers:
         specifier: workspace:*
         version: link:../../packages/md-enhance
 
-  demo/search-pro:
-    devDependencies:
-      '@vuepress/bundler-vite':
-        specifier: 2.0.0-rc.18
-        version: 2.0.0-rc.18(@types/node@22.9.2)(jiti@1.21.6)(lightningcss@1.28.1)(sass-embedded@1.81.0)(sass@1.81.0)(terser@5.36.0)(tsx@4.19.2)(typescript@5.7.2)(yaml@2.6.1)
-      '@vuepress/bundler-webpack':
-        specifier: 2.0.0-rc.18
-        version: 2.0.0-rc.18(esbuild@0.24.0)(typescript@5.7.2)
-      '@vuepress/theme-default':
-        specifier: 2.0.0-rc.61
-        version: 2.0.0-rc.61(markdown-it@14.1.0)(sass-embedded@1.81.0)(sass-loader@16.0.3(sass-embedded@1.81.0)(sass@1.81.0)(webpack@5.96.1(esbuild@0.24.0)))(sass@1.81.0)(typescript@5.7.2)(vuepress@2.0.0-rc.18(@vuepress/bundler-vite@2.0.0-rc.18(@types/node@22.9.2)(jiti@1.21.6)(lightningcss@1.28.1)(sass-embedded@1.81.0)(sass@1.81.0)(terser@5.36.0)(tsx@4.19.2)(typescript@5.7.2)(yaml@2.6.1))(@vuepress/bundler-webpack@2.0.0-rc.18(esbuild@0.24.0)(typescript@5.7.2))(typescript@5.7.2)(vue@3.5.13(typescript@5.7.2)))
-      nodejs-jieba:
-        specifier: 0.2.1
-        version: 0.2.1(encoding@0.1.13)
-      sass-embedded:
-        specifier: 1.81.0
-        version: 1.81.0
-      sass-loader:
-        specifier: 16.0.3
-        version: 16.0.3(sass-embedded@1.81.0)(sass@1.81.0)(webpack@5.96.1(esbuild@0.24.0))
-      vue:
-        specifier: 3.5.13
-        version: 3.5.13(typescript@5.7.2)
-      vuepress:
-        specifier: 2.0.0-rc.18
-        version: 2.0.0-rc.18(@vuepress/bundler-vite@2.0.0-rc.18(@types/node@22.9.2)(jiti@1.21.6)(lightningcss@1.28.1)(sass-embedded@1.81.0)(sass@1.81.0)(terser@5.36.0)(tsx@4.19.2)(typescript@5.7.2)(yaml@2.6.1))(@vuepress/bundler-webpack@2.0.0-rc.18(esbuild@0.24.0)(typescript@5.7.2))(typescript@5.7.2)(vue@3.5.13(typescript@5.7.2))
-      vuepress-plugin-search-pro:
-        specifier: workspace:*
-        version: link:../../packages/search-pro
-
   demo/theme-blog:
     devDependencies:
       '@vue/repl':
@@ -609,39 +579,6 @@ importers:
       vuepress-shared:
         specifier: workspace:*
         version: link:../../packages/shared
-      vuepress-theme-hope:
-        specifier: workspace:*
-        version: link:../../packages/theme
-
-  docs/search-pro:
-    dependencies:
-      '@vuepress/bundler-vite':
-        specifier: 2.0.0-rc.18
-        version: 2.0.0-rc.18(@types/node@22.9.2)(jiti@1.21.6)(lightningcss@1.28.1)(sass-embedded@1.81.0)(sass@1.81.0)(terser@5.36.0)(tsx@4.19.2)(typescript@5.7.2)(yaml@2.6.1)
-      '@vuepress/bundler-webpack':
-        specifier: 2.0.0-rc.18
-        version: 2.0.0-rc.18(esbuild@0.24.0)(typescript@5.7.2)
-      docs-shared:
-        specifier: workspace:*
-        version: link:../../docs-shared
-      nodejs-jieba:
-        specifier: 0.2.1
-        version: 0.2.1(encoding@0.1.13)
-      sass-embedded:
-        specifier: 1.81.0
-        version: 1.81.0
-      sass-loader:
-        specifier: 16.0.3
-        version: 16.0.3(sass-embedded@1.81.0)(sass@1.81.0)(webpack@5.96.1(esbuild@0.24.0))
-      vue:
-        specifier: 3.5.13
-        version: 3.5.13(typescript@5.7.2)
-      vuepress:
-        specifier: 2.0.0-rc.18
-        version: 2.0.0-rc.18(@vuepress/bundler-vite@2.0.0-rc.18(@types/node@22.9.2)(jiti@1.21.6)(lightningcss@1.28.1)(sass-embedded@1.81.0)(sass@1.81.0)(terser@5.36.0)(tsx@4.19.2)(typescript@5.7.2)(yaml@2.6.1))(@vuepress/bundler-webpack@2.0.0-rc.18(esbuild@0.24.0)(typescript@5.7.2))(typescript@5.7.2)(vue@3.5.13(typescript@5.7.2))
-      vuepress-plugin-search-pro:
-        specifier: workspace:*
-        version: link:../../packages/search-pro
       vuepress-theme-hope:
         specifier: workspace:*
         version: link:../../packages/theme
@@ -974,52 +911,6 @@ importers:
         specifier: 5.7.2
         version: 5.7.2
 
-  packages/search-pro:
-    dependencies:
-      '@vuepress/helper':
-        specifier: 2.0.0-rc.61
-        version: 2.0.0-rc.61(typescript@5.7.2)(vuepress@2.0.0-rc.18(@vuepress/bundler-vite@2.0.0-rc.18(@types/node@22.9.2)(jiti@1.21.6)(lightningcss@1.28.1)(sass-embedded@1.81.0)(sass@1.81.0)(terser@5.36.0)(tsx@4.19.2)(typescript@5.7.2)(yaml@2.6.1))(@vuepress/bundler-webpack@2.0.0-rc.18(esbuild@0.24.0)(typescript@5.7.2))(typescript@5.7.2)(vue@3.5.13(typescript@5.7.2)))
-      '@vuepress/plugin-sass-palette':
-        specifier: 2.0.0-rc.61
-        version: 2.0.0-rc.61(sass-embedded@1.81.0)(sass-loader@16.0.3(sass-embedded@1.81.0)(sass@1.81.0)(webpack@5.96.1(esbuild@0.24.0)))(sass@1.81.0)(typescript@5.7.2)(vuepress@2.0.0-rc.18(@vuepress/bundler-vite@2.0.0-rc.18(@types/node@22.9.2)(jiti@1.21.6)(lightningcss@1.28.1)(sass-embedded@1.81.0)(sass@1.81.0)(terser@5.36.0)(tsx@4.19.2)(typescript@5.7.2)(yaml@2.6.1))(@vuepress/bundler-webpack@2.0.0-rc.18(esbuild@0.24.0)(typescript@5.7.2))(typescript@5.7.2)(vue@3.5.13(typescript@5.7.2)))
-      '@vueuse/core':
-        specifier: ^11.3.0
-        version: 11.3.0(vue@3.5.13(typescript@5.7.2))
-      cheerio:
-        specifier: 1.0.0
-        version: 1.0.0
-      chokidar:
-        specifier: ^3.6.0
-        version: 3.6.0
-      sass:
-        specifier: ^1.81.0
-        version: 1.81.0
-      sass-embedded:
-        specifier: ^1.81.0
-        version: 1.81.0
-      sass-loader:
-        specifier: ^16.0.2
-        version: 16.0.3(sass-embedded@1.81.0)(sass@1.81.0)(webpack@5.96.1(esbuild@0.24.0))
-      slimsearch:
-        specifier: ^2.2.1
-        version: 2.2.1
-      vue:
-        specifier: ^3.5.13
-        version: 3.5.13(typescript@5.7.2)
-      vuepress:
-        specifier: 2.0.0-rc.18
-        version: 2.0.0-rc.18(@vuepress/bundler-vite@2.0.0-rc.18(@types/node@22.9.2)(jiti@1.21.6)(lightningcss@1.28.1)(sass-embedded@1.81.0)(sass@1.81.0)(terser@5.36.0)(tsx@4.19.2)(typescript@5.7.2)(yaml@2.6.1))(@vuepress/bundler-webpack@2.0.0-rc.18(esbuild@0.24.0)(typescript@5.7.2))(typescript@5.7.2)(vue@3.5.13(typescript@5.7.2))
-      vuepress-shared:
-        specifier: workspace:*
-        version: link:../shared
-    devDependencies:
-      domhandler:
-        specifier: 5.0.3
-        version: 5.0.3
-      rollup:
-        specifier: 4.27.3
-        version: 4.27.3
-
   packages/shared:
     dependencies:
       '@vuepress/helper':
@@ -1213,12 +1104,12 @@ importers:
       '@vuepress/bundler-webpack':
         specifier: 2.0.0-rc.18
         version: 2.0.0-rc.18(esbuild@0.24.0)(typescript@5.7.2)
+      '@vuepress/plugin-slimsearch':
+        specifier: 2.0.0-rc.61
+        version: 2.0.0-rc.61(typescript@5.7.2)(vuepress@2.0.0-rc.18(@vuepress/bundler-vite@2.0.0-rc.18(@types/node@22.9.2)(jiti@1.21.6)(lightningcss@1.28.1)(sass-embedded@1.81.0)(sass@1.81.0)(terser@5.36.0)(tsx@4.19.2)(typescript@5.7.2)(yaml@2.6.1))(@vuepress/bundler-webpack@2.0.0-rc.18(esbuild@0.24.0)(typescript@5.7.2))(typescript@5.7.2)(vue@3.5.13(typescript@5.7.2)))
       rollup:
         specifier: 4.27.3
         version: 4.27.3
-      vuepress-plugin-search-pro:
-        specifier: workspace:*
-        version: link:../search-pro
 
 packages:
 
@@ -4114,6 +4005,11 @@ packages:
 
   '@vuepress/plugin-sitemap@2.0.0-rc.61':
     resolution: {integrity: sha512-Heg3SYA44tWTcwEmtY5+Ll9CZe+YY8DuSEqTPgShU4hNAUxEB6hs1qNyXx0xxVlzK3icolPbVdms3szJnvX9aw==}
+    peerDependencies:
+      vuepress: 2.0.0-rc.18
+
+  '@vuepress/plugin-slimsearch@2.0.0-rc.61':
+    resolution: {integrity: sha512-Ti0ZED+BsHgv7qT4CMpWrUpT7hBLa7D+RUZBUkY5Wxj4ZTq+rOEpWxx7lfaVgH+PcH1U6biV1y0pvWZv31CMxg==}
     peerDependencies:
       vuepress: 2.0.0-rc.18
 
@@ -13596,6 +13492,19 @@ snapshots:
     dependencies:
       '@vuepress/helper': 2.0.0-rc.61(typescript@5.7.2)(vuepress@2.0.0-rc.18(@vuepress/bundler-vite@2.0.0-rc.18(@types/node@22.9.2)(jiti@1.21.6)(lightningcss@1.28.1)(sass-embedded@1.81.0)(sass@1.81.0)(terser@5.36.0)(tsx@4.19.2)(typescript@5.7.2)(yaml@2.6.1))(@vuepress/bundler-webpack@2.0.0-rc.18(esbuild@0.24.0)(typescript@5.7.2))(typescript@5.7.2)(vue@3.5.13(typescript@5.7.2)))
       sitemap: 8.0.0
+      vuepress: 2.0.0-rc.18(@vuepress/bundler-vite@2.0.0-rc.18(@types/node@22.9.2)(jiti@1.21.6)(lightningcss@1.28.1)(sass-embedded@1.81.0)(sass@1.81.0)(terser@5.36.0)(tsx@4.19.2)(typescript@5.7.2)(yaml@2.6.1))(@vuepress/bundler-webpack@2.0.0-rc.18(esbuild@0.24.0)(typescript@5.7.2))(typescript@5.7.2)(vue@3.5.13(typescript@5.7.2))
+    transitivePeerDependencies:
+      - '@vue/composition-api'
+      - typescript
+
+  '@vuepress/plugin-slimsearch@2.0.0-rc.61(typescript@5.7.2)(vuepress@2.0.0-rc.18(@vuepress/bundler-vite@2.0.0-rc.18(@types/node@22.9.2)(jiti@1.21.6)(lightningcss@1.28.1)(sass-embedded@1.81.0)(sass@1.81.0)(terser@5.36.0)(tsx@4.19.2)(typescript@5.7.2)(yaml@2.6.1))(@vuepress/bundler-webpack@2.0.0-rc.18(esbuild@0.24.0)(typescript@5.7.2))(typescript@5.7.2)(vue@3.5.13(typescript@5.7.2)))':
+    dependencies:
+      '@vuepress/helper': 2.0.0-rc.61(typescript@5.7.2)(vuepress@2.0.0-rc.18(@vuepress/bundler-vite@2.0.0-rc.18(@types/node@22.9.2)(jiti@1.21.6)(lightningcss@1.28.1)(sass-embedded@1.81.0)(sass@1.81.0)(terser@5.36.0)(tsx@4.19.2)(typescript@5.7.2)(yaml@2.6.1))(@vuepress/bundler-webpack@2.0.0-rc.18(esbuild@0.24.0)(typescript@5.7.2))(typescript@5.7.2)(vue@3.5.13(typescript@5.7.2)))
+      '@vueuse/core': 11.3.0(vue@3.5.13(typescript@5.7.2))
+      cheerio: 1.0.0
+      chokidar: 3.6.0
+      slimsearch: 2.2.1
+      vue: 3.5.13(typescript@5.7.2)
       vuepress: 2.0.0-rc.18(@vuepress/bundler-vite@2.0.0-rc.18(@types/node@22.9.2)(jiti@1.21.6)(lightningcss@1.28.1)(sass-embedded@1.81.0)(sass@1.81.0)(terser@5.36.0)(tsx@4.19.2)(typescript@5.7.2)(yaml@2.6.1))(@vuepress/bundler-webpack@2.0.0-rc.18(esbuild@0.24.0)(typescript@5.7.2))(typescript@5.7.2)(vue@3.5.13(typescript@5.7.2))
     transitivePeerDependencies:
       - '@vue/composition-api'

@@ -17,10 +17,10 @@ import type { RedirectPluginOptions } from "@vuepress/plugin-redirect";
 import type { SearchPluginOptions } from "@vuepress/plugin-search";
 import type { SeoPluginOptions } from "@vuepress/plugin-seo";
 import type { SitemapPluginOptions } from "@vuepress/plugin-sitemap";
+import type { SlimSearchPluginOptions } from "@vuepress/plugin-slimsearch";
 import type { WatermarkPluginOptions } from "@vuepress/plugin-watermark";
 import type { ComponentPluginOptions } from "vuepress-plugin-components";
 import type { MarkdownEnhancePluginOptions } from "vuepress-plugin-md-enhance";
-import type { SearchProPluginOptions } from "vuepress-plugin-search-pro";
 
 import type { BlogOptions } from "./blog.js";
 
@@ -64,6 +64,11 @@ export interface DeprecatedPluginsOptions {
    * @deprecated Use `markdown.highlighter` instead
    */
   shiki?: never;
+
+  /**
+   * @deprecated Use `plugins.slimsearch` instead
+   */
+  searchPro?: never;
 }
 
 export interface PluginsOptions extends DeprecatedPluginsOptions {
@@ -293,15 +298,15 @@ export interface PluginsOptions extends DeprecatedPluginsOptions {
   search?: SearchPluginOptions | boolean;
 
   /**
-   * search-pro plugin options
+   * slimsearch plugin options
    *
-   * @see https://plugin-search-pro.vuejs.press/config/
+   * @see https://ecosystem.vuejs.press/zh/plugins/search/slimsearch.html
    *
-   * search-pro 插件配置
+   * slimsearch 插件配置
    *
-   * @see https://plugin-search-pro.vuejs.press/zh/config/
+   * @see https://ecosystem.vuejs.press/zh/plugins/search/slimsearch.html
    */
-  searchPro?: SearchProPluginOptions | boolean;
+  slimsearch?: SlimSearchPluginOptions | boolean;
 
   /**
    * Options for @vuepress/seo

@@ -39,11 +39,6 @@ const features = [
     link: getLink("md-enhance"),
   },
   {
-    text: "Client Search Plugin",
-    icon: "search",
-    link: getLink("search-pro"),
-  },
-  {
     text: "VuePress shared",
     icon: "toolbox",
     link: getLink("shared"),
