@@ -125,10 +125,10 @@ export const setupTransparentNavbar = ({
       ? (): boolean => true
       : type === "homepage"
         ? (): boolean =>
-            (frontmatter.value["home"] as boolean | undefined) ??
+            (frontmatter.value.home as boolean | undefined) ??
             route.path === routeLocale.value
         : (): boolean =>
-            (frontmatter.value["portfolio"] as boolean | undefined) ??
+            (frontmatter.value.portfolio as boolean | undefined) ??
             frontmatter.value.layout === "BlogHome",
   );
 

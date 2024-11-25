@@ -61,12 +61,12 @@ export const convertFrontmatter = (
       )} instead.${filePathRelative ? `Found in ${filePathRelative}` : ""}`,
     );
 
-    frontmatter["head"] = [
-      ...((frontmatter["head"] as unknown[]) ?? []),
-      (frontmatter["meta"] as unknown[]).map((item) => ["meta", item]),
+    frontmatter.head = [
+      ...((frontmatter.head as unknown[]) ?? []),
+      (frontmatter.meta as unknown[]).map((item) => ["meta", item]),
     ];
 
-    delete frontmatter["meta"];
+    delete frontmatter.meta;
   }
 
   if ("canonicalUrl" in frontmatter) {
@@ -78,16 +78,16 @@ export const convertFrontmatter = (
       )} instead.${filePathRelative ? `Found in ${filePathRelative}` : ""}`,
     );
 
-    frontmatter["head"] = [
-      ...((frontmatter["head"] as unknown[]) ?? []),
-      ["link", { rel: "canonical", href: frontmatter["canonicalUrl"] }],
+    frontmatter.head = [
+      ...((frontmatter.head as unknown[]) ?? []),
+      ["link", { rel: "canonical", href: frontmatter.canonicalUrl }],
     ];
 
-    delete frontmatter["canonicalUrl"];
+    delete frontmatter.canonicalUrl;
   }
 
-  if (frontmatter["home"] === true) {
-    if (frontmatter["layout"] === "Blog") {
+  if (frontmatter.home === true) {
+    if (frontmatter.layout === "Blog") {
       logger.warn(
         `${colors.magenta(
           "layout: Blog",
@@ -96,7 +96,7 @@ export const convertFrontmatter = (
         )} instead.${filePathRelative ? `Found in ${filePathRelative}` : ""}`,
       );
 
-      frontmatter["layout"] = "BlogHome";
+      frontmatter.layout = "BlogHome";
     }
 
     // Check project homepage
@@ -112,7 +112,7 @@ export const convertFrontmatter = (
       );
   }
 
-  if (frontmatter["layout"] === "Slides") {
+  if (frontmatter.layout === "Slides") {
     logger.warn(
       `${colors.magenta(
         "layout: Slides",
@@ -121,7 +121,7 @@ export const convertFrontmatter = (
       )} instead.${filePathRelative ? `Found in ${filePathRelative}` : ""}`,
     );
 
-    frontmatter["layout"] = "SlidePage";
+    frontmatter.layout = "SlidePage";
   }
 
   return frontmatter;

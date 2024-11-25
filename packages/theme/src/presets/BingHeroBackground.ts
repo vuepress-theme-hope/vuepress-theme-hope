@@ -63,7 +63,7 @@ export default defineComponent({
           url,
           wallpaper,
           downloadable,
-          ...(locales[langCode!] ?? locales["en"]),
+          ...(locales[langCode!] ?? locales.en),
         };
       }
 

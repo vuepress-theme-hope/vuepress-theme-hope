@@ -68,8 +68,8 @@ const VPBanner: FunctionalComponent<BannerProps> = ({
 }) => {
   const style: Record<string, string> = {};
 
-  if (background) style["background"] = background;
-  if (color) style["color"] = color;
+  if (background) style.background = background;
+  if (color) style.color = color;
 
   return h("div", { class: "vp-banner", style }, [
     logo

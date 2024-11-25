@@ -56,7 +56,7 @@ const renderHeader = (node: Element): string => {
     node.children.length === 1 &&
     node.children[0].type === "tag" &&
     node.children[0].tagName === "a" &&
-    node.children[0].attribs["class"] === "header-anchor"
+    node.children[0].attribs.class === "header-anchor"
   )
     node.children = (node.children[0].children[0] as Element).children;
 
@@ -191,7 +191,7 @@ export const getSearchIndexStore = async (
   const indexesByLocale: LocaleIndex = {};
 
   app.pages.forEach((page) => {
-    if (filter(page) && page.frontmatter["search"] !== false)
+    if (filter(page) && page.frontmatter.search !== false)
       (indexesByLocale[page.pathLocale] ??= []).push(
         ...generatePageIndex(page, store, customFields, indexContent),
       );

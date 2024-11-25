@@ -13,11 +13,9 @@ const HopeIcon: FunctionalComponent<IconProps> = (props) => {
   const { icon = "", color, size } = props;
   const style = color || size ? ({} as Record<string, string>) : null;
 
-  if (color) style!["color"] = color;
+  if (color) style!.color = color;
   if (size)
-    style!["height"] = Number.isNaN(Number(size))
-      ? (size as string)
-      : `${size}px`;
+    style!.height = Number.isNaN(Number(size)) ? (size as string) : `${size}px`;
 
   return isLinkHttp(icon)
     ? h("img", {

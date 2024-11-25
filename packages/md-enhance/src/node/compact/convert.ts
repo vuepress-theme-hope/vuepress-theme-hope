@@ -194,7 +194,7 @@ export const convertOptions = (
     msg: "Please use @vuepress/plugin-markdown-ext instead.",
   });
 
-  if (options["card"])
+  if (options.card)
     logger.error(
       `${colors.magenta("card")} is deprecated, please import  ${colors.magenta(
         "VPCard",

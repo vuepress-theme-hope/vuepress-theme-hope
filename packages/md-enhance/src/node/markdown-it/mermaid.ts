@@ -105,5 +105,5 @@ export const mermaid: PluginSimple = (md) => {
     return fence!(...args);
   };
 
-  md.renderer.rules["mermaid"] = mermaidRenderer;
+  md.renderer.rules.mermaid = mermaidRenderer;
 };

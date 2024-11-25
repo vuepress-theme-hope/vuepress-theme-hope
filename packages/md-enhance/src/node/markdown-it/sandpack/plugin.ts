@@ -277,7 +277,7 @@ export const sandpack: PluginSimple = (md) => {
       });
   });
 
-  md.renderer.rules["sandpack_open"] = (tokens, index): string => {
+  md.renderer.rules.sandpack_open = (tokens, index): string => {
     const { content, info } = tokens[index];
 
     const attrs = getAttrs(content);
@@ -385,5 +385,5 @@ export const sandpack: PluginSimple = (md) => {
       .join(" ")}>\n`;
   };
 
-  md.renderer.rules["sandpack_close"] = (): string => `</SandPack>\n`;
+  md.renderer.rules.sandpack_close = (): string => `</SandPack>\n`;
 };

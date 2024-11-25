@@ -30,7 +30,7 @@ export default defineComponent({
               {
                 class: [
                   "vp-category",
-                  `color${generateIndexFromHash(category, Number(cssVariables["colorNumber"]))}`,
+                  `color${generateIndexFromHash(category, Number(cssVariables.colorNumber))}`,
                   { active: path === page.value.path },
                 ],
               },

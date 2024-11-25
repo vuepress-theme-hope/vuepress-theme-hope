@@ -55,7 +55,7 @@ export default defineComponent({
     const style = computed(() => {
       const styleObject: Record<string, string> = {};
 
-      if (props.color) styleObject["color"] = props.color;
+      if (props.color) styleObject.color = props.color;
 
       if (props.size)
         styleObject["font-size"] = Number.isNaN(Number(props.size))

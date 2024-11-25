@@ -3,7 +3,7 @@ import { isArray, isPlainObject, isString } from "@vuepress/helper/shared";
 import type { Author, AuthorInfo } from "../types/index.js";
 
 const isAuthorInfo = (author: unknown): author is AuthorInfo =>
-  isPlainObject(author) && isString(author["name"]);
+  isPlainObject(author) && isString(author.name);
 
 export const getAuthor = (
   author: Author | false | undefined,

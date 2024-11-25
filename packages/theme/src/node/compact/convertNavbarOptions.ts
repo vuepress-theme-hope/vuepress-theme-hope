@@ -64,8 +64,8 @@ export const convertNavbarLayoutOptions = (
   options: Record<string, unknown>,
 ): void => {
   // Handle navbar layout
-  if (isPlainObject(options["navbarLayout"])) {
-    if ("left" in options["navbarLayout"]) {
+  if (isPlainObject(options.navbarLayout)) {
+    if ("left" in options.navbarLayout) {
       logger.warn(
         `To have better meaning under RTL layout, ${colors.magenta(
           "navbarLayout.left",
@@ -73,12 +73,10 @@ export const convertNavbarLayoutOptions = (
           "navbarLayout.start",
         )} instead`,
       );
-      options["navbarLayout"]["start"] = options["navbarLayout"][
-        "left"
-      ] as string[];
+      options.navbarLayout.start = options.navbarLayout.left as string[];
     }
 
-    if ("right" in options["navbarLayout"]) {
+    if ("right" in options.navbarLayout) {
       logger.warn(
         `To have better meaning under RTL layout, ${colors.magenta(
           "navbarLayout.right",
@@ -86,9 +84,7 @@ export const convertNavbarLayoutOptions = (
           "navbarLayout.end",
         )} instead`,
       );
-      options["navbarLayout"]["end"] = options["navbarLayout"][
-        "right"
-      ] as string[];
+      options.navbarLayout.end = options.navbarLayout.right as string[];
     }
   }
 };

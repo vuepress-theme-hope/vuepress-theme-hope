@@ -44,7 +44,7 @@ export const getBlogPlugin = (
     excerptFilter: (page) => {
       const isEncrypted = isPageEncrypted(page);
 
-      return !isEncrypted && !page.frontmatter["excerpt"];
+      return !isEncrypted && !page.frontmatter.excerpt;
     },
 
     filter: blogOptions.filter ?? blogFilter,

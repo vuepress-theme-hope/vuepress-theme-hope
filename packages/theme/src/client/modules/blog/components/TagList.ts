@@ -34,7 +34,7 @@ export default defineComponent({
               {
                 class: [
                   "vp-tag",
-                  `color${generateIndexFromHash(tag, Number(cssVariables["colorNumber"]))}`,
+                  `color${generateIndexFromHash(tag, Number(cssVariables.colorNumber))}`,
                   { active: isActive(tag) },
                 ],
               },

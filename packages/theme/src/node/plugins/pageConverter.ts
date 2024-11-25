@@ -82,8 +82,8 @@ export const extendsPagePlugin = (
 
       // Encrypt page shall not appear in feed items or perform seo
       if (isEncrypted) {
-        page.frontmatter["feed"] = false;
-        page.frontmatter["seo"] = false;
+        page.frontmatter.feed = false;
+        page.frontmatter.seo = false;
       }
 
       const enableEditLink =

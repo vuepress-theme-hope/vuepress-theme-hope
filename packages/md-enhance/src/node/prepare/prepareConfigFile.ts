@@ -14,7 +14,7 @@ export const prepareConfigFile = async (
   const imports = new Set<string>();
   const enhances = new Set<string>();
 
-  if (status["chart"]) {
+  if (status.chart) {
     imports.add(`import ChartJS from "${CLIENT_FOLDER}components/ChartJS.js";`);
     enhances.add(`app.component("ChartJS", ChartJS)`);
   }
@@ -28,7 +28,7 @@ export const prepareConfigFile = async (
     enhances.add(`app.component("MdDemo", MdDemo);`);
   }
 
-  if (status["echarts"]) {
+  if (status.echarts) {
     imports.add(`import ECharts from "${CLIENT_FOLDER}components/ECharts.js";`);
     imports.add(
       `import { injectEChartsConfig } from "${CLIENT_FOLDER}/index.js";`,
@@ -37,7 +37,7 @@ export const prepareConfigFile = async (
     enhances.add(`injectEChartsConfig(app);`);
   }
 
-  if (status["flowchart"]) {
+  if (status.flowchart) {
     imports.add(
       `import FlowChart from "${CLIENT_FOLDER}components/FlowChart.js";`,
     );
@@ -45,7 +45,7 @@ export const prepareConfigFile = async (
     enhances.add(`app.component("FlowChart", FlowChart);`);
   }
 
-  if (status["kotlinPlayground"]) {
+  if (status.kotlinPlayground) {
     imports.add(
       `import KotlinPlayground from "${CLIENT_FOLDER}components/KotlinPlayground.js";`,
     );
@@ -56,12 +56,12 @@ export const prepareConfigFile = async (
     enhances.add(`app.component("KotlinPlayground", KotlinPlayground);`);
   }
 
-  if (status["markmap"]) {
+  if (status.markmap) {
     imports.add(`import MarkMap from "${CLIENT_FOLDER}components/MarkMap.js";`);
     enhances.add(`app.component("MarkMap", MarkMap);`);
   }
 
-  if (status["mermaid"]) {
+  if (status.mermaid) {
     imports.add(`import Mermaid from "${CLIENT_FOLDER}components/Mermaid.js";`);
     imports.add(
       `import { injectMermaidConfig } from "${CLIENT_FOLDER}/index.js";`,
@@ -77,7 +77,7 @@ export const prepareConfigFile = async (
     enhances.add(`app.component("Playground", Playground);`);
   }
 
-  if (status["sandpack"]) {
+  if (status.sandpack) {
     imports.add(`import { defineAsyncComponent } from "vue";`);
     imports.add(
       `import { LoadingIcon } from "${getRealPath(
@@ -101,7 +101,7 @@ app.component(
     );
   }
 
-  if (status["vuePlayground"]) {
+  if (status.vuePlayground) {
     imports.add(
       `import VuePlayground from "${CLIENT_FOLDER}components/VuePlayground.js";`,
     );

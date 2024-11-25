@@ -23,33 +23,33 @@ export const getDefine =
     if (components.includes("FontIcon")) {
       const { type, prefix: iconPrefix } = getIconInfo(assets, prefix);
 
-      result["FONT_ICON_TYPE"] = type;
-      result["FONT_ICON_PREFIX"] = iconPrefix;
+      result.FONT_ICON_TYPE = type;
+      result.FONT_ICON_PREFIX = iconPrefix;
     }
 
     if (components.includes("ArtPlayer") || components.includes("VidStack")) {
-      result["DASHJS_INSTALLED"] = isInstalled("dashjs");
-      result["HLS_JS_INSTALLED"] = isInstalled("hls.js");
+      result.DASHJS_INSTALLED = isInstalled("dashjs");
+      result.HLS_JS_INSTALLED = isInstalled("hls.js");
     }
 
     if (components.includes("ArtPlayer")) {
-      result["ART_PLAYER_OPTIONS"] = {
+      result.ART_PLAYER_OPTIONS = {
         fullscreen: true,
         playbackRate: true,
         setting: true,
         ...componentOptions.artPlayer,
       };
-      result["MPEGTS_JS_INSTALLED"] = isInstalled("mpegts.js");
+      result.MPEGTS_JS_INSTALLED = isInstalled("mpegts.js");
     }
 
     if (components.includes("PDF")) {
-      result["PDF_LOCALES"] = getLocaleConfig({
+      result.PDF_LOCALES = getLocaleConfig({
         app,
         name: "pdf",
         default: pdfLocaleConfig,
         config: locales.pdf,
       });
-      result["PDFJS_URL"] =
+      result.PDFJS_URL =
         typeof componentOptions.pdf?.pdfjs === "string"
           ? componentOptions.pdf?.pdfjs
           : componentOptions.pdf?.pdfjs === false
@@ -58,11 +58,11 @@ export const getDefine =
     }
 
     if (components.includes("Share")) {
-      result["SHARE_SERVICES"] = getShareServiceConfig(componentOptions.share);
+      result.SHARE_SERVICES = getShareServiceConfig(componentOptions.share);
     }
 
     if (components.includes("SiteInfo"))
-      result["SITE_INFO_LOCALES"] = getLocaleConfig({
+      result.SITE_INFO_LOCALES = getLocaleConfig({
         app,
         name: "siteInfo",
         default: siteInfoLocaleConfig,
@@ -70,7 +70,7 @@ export const getDefine =
       });
 
     if (components.includes("VidStack"))
-      result["VIDSTACK_LOCALES"] = getLocaleConfig({
+      result.VIDSTACK_LOCALES = getLocaleConfig({
         app,
         name: "vidstack",
         default: vidstackLocales,

@@ -12779,7 +12779,7 @@ snapshots:
 
   '@types/sax@1.2.7':
     dependencies:
-      '@types/node': 17.0.45
+      '@types/node': 22.9.2
 
   '@types/send@0.17.4':
     dependencies:
