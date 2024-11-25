@@ -125,7 +125,7 @@ VuePress 在一定程度上扩展了 Markdown 语法，但仍然缺少一些常�
 - 搜索功能
 
   - [基于 docsearch 的爬虫搜索支持](../feature/search.md#使用-vuepressplugin-docsearch)
-  - [基于 slimsearch 的强大客户端搜索支持](../feature/search.md#使用-vuepress-plugin-search-pro)。
+  - [基于 slimsearch 的强大客户端搜索支持](../feature/search.md#使用-vuepressplugin-slimsearch)。
 
 - [页面加密](../feature/encrypt.md) 功能来限制访问。
 
@@ -167,7 +167,5 @@ VuePress 在一定程度上扩展了 Markdown 语法，但仍然缺少一些常�
 这里还有一些其他没有被主题捆绑的插件，你可以根据自己的需求自行启用。
 
 - <ProjectLink name="lightgallery" path="/zh/">vuepress-plugin-lightgallery</ProjectLink>: 基于 lightgallery 图片浏览插件
-
-- <ProjectLink name="search-pro" path="/zh/">vuepress-plugin-search-pro</ProjectLink>: 客户端搜索插件
 
 :::

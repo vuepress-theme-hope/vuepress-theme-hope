@@ -187,7 +187,7 @@ export const getSearchPlugin = (
                 : {},
           }
         : {}),
-      ...(isPlainObject(plugins.searchPro) ? plugins.searchPro : {}),
+      ...(isPlainObject(plugins.slimsearch) ? plugins.slimsearch : {}),
     });
   }
 

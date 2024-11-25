@@ -127,7 +127,7 @@ In short, anyone can enjoy the convenience of Markdown's enhanced syntax.
 - Search feature
 
   - [Crawler search support with docsearch](../feature/search.md#use-vuepressplugin-docsearch)
-  - [Powerful client search support with slimsearch](../feature/search.md#use-vuepress-plugin-search-pro).
+  - [Powerful client search support with slimsearch](../feature/search.md#use-vuepressplugin-slimsearch).
 
 - [Page Encryption](../feature/encrypt.md) feature to limit access.
 
@@ -169,7 +169,5 @@ The theme includes the following plugins, you can use them in other themes or di
 Here are some other plugins that are not bundled by the theme, you can enable them according to your own needs.
 
 - <ProjectLink name="lightgallery">vuepress-plugin-lightgallery</ProjectLink>: Image preview plugin based on lightgallery
-
-- <ProjectLink name="search-pro">vuepress-plugin-search-pro</ProjectLink>: Client search plugin
 
 :::

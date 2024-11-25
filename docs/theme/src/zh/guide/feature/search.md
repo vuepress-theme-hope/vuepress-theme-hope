@@ -8,7 +8,7 @@ tag:
   - 搜索
 ---
 
-主题对 <ProjectLink name="search-pro" path="/zh/">`vuepress-plugin-search-pro`</ProjectLink>、 [`@vuepress/plugin-docsearch`][docsearch] 和 [`@vuepress/plugin-search`][search] 提供了内置支持。你只需要安装并配置所需的搜索插件，就能够在导航栏获得一个搜索框。
+主题对 [`@vuepress/plugin-docsearch`][docsearch] 、[@vuepress/plugin-slimsearch][slimsearch] 和 [`@vuepress/plugin-search`][search] 提供了内置支持。你只需要安装并配置所需的搜索插件，就能够在导航栏获得一个搜索框。
 
 <!-- more -->
 
@@ -207,35 +207,35 @@ tag:
 
 :::
 
-## 使用 `vuepress-plugin-search-pro`
+## 使用 `@vuepress/plugin-slimsearch`
 
-1. 安装 `vuepress-plugin-search-pro`
+1. 安装 `@vuepress/plugin-slimsearch`
 
    ::: code-tabs#shell
 
    @tab pnpm
 
    ```bash
-   pnpm add -D vuepress-plugin-search-pro
+   pnpm add -D @vuepress/plugin-slimsearch@next
    ```
 
    @tab yarn
 
    ```bash
-   yarn add -D vuepress-plugin-search-pro
+   yarn add -D @vuepress/plugin-slimsearch@next
    ```
 
    @tab npm
 
    ```bash
-   npm i -D vuepress-plugin-search-pro
+   npm i -D @vuepress/plugin-slimsearch@next
    ```
 
    :::
 
-1. 在主题选项中配置 `plugins.searchPro`。
+1. 在主题选项中配置 `plugins.slimsearch`。
 
-   你可以将 `plugins.searchPro` 设置为 `true` 来直接启用它，或者将其设置为一个对象来自定义插件。
+   你可以将 `plugins.slimsearch` 设置为 `true` 来直接启用它，或者将其设置为一个对象来自定义插件。
 
    ```js title=".vuepress/config.js"
    import { hopeTheme } from "vuepress-theme-hope";
@@ -243,10 +243,13 @@ tag:
    export default {
      theme: hopeTheme({
        plugins: {
-         searchPro: true,
-         // searchPro: {
-         //   插件选项
-         // },
+         slimsearch: true,
+
+         // 或
+
+         slimsearch: {
+           // 插件选项
+         },
        },
      }),
    };
@@ -254,7 +257,7 @@ tag:
 
 ::: info 更多
 
-关于搜索插件的可用选项，详见 <ProjectLink name="search-pro" path="/zh/">插件文档</ProjectLink>。
+关于搜索插件的可用选项，详见 [插件文档][slimsearch]。
 
 :::
 
@@ -311,3 +314,4 @@ tag:
 
 [docsearch]: https://ecosystem.vuejs.press/zh/plugins/search/docsearch.html
 [search]: https://ecosystem.vuejs.press/zh/plugins/search/search.html
+[slimsearch]: https://ecosystem.vuejs.press/zh/plugins/search/slimsearch.html
