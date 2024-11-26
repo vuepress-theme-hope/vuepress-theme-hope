@@ -1,5 +1,7 @@
 export { default as HopeIcon } from "@theme-hope/components/HopeIcon";
 export {
+  // Note: This api is exposed to users
+  useDarkmode,
   injectDarkmode,
   setupDarkmode,
 } from "@theme-hope/modules/outlook/composables/index";
