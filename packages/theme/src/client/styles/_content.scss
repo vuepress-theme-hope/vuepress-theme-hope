@@ -1,5 +1,5 @@
-@use "vuepress-shared/styles/wrapper";
 @use "@sass-palette/hope-config";
+@use "wrapper";
 
 .theme-hope-content {
   @media print {

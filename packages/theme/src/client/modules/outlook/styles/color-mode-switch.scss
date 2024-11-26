@@ -1,5 +1,21 @@
 @use "vuepress-shared/styles/reset";
 
+::view-transition-old(root),
+::view-transition-new(root) {
+  mix-blend-mode: normal;
+  animation: none;
+}
+
+[data-theme="light"]::view-transition-old(root),
+[data-theme="dark"]::view-transition-new(root) {
+  z-index: 1;
+}
+
+[data-theme="light"]::view-transition-new(root),
+[data-theme="dark"]::view-transition-old(root) {
+  z-index: 99999;
+}
+
 .vp-color-mode-switch {
   @include reset.button;
   vertical-align: middle;

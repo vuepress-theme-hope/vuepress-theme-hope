@@ -1,23 +1,12 @@
-@use "vuepress-shared/styles/wrapper";
 @use "@sass-palette/hope-config";
+@use "wrapper";
 
-::view-transition-old(root),
-::view-transition-new(root) {
-  mix-blend-mode: normal;
-  animation: none;
+// plugin-comment
+[vp-comment] {
+  @include wrapper.wrapper;
 }
 
-[data-theme="light"]::view-transition-old(root),
-[data-theme="dark"]::view-transition-new(root) {
-  z-index: 1;
-}
-
-[data-theme="light"]::view-transition-new(root),
-[data-theme="dark"]::view-transition-old(root) {
-  z-index: 99999;
-}
-
-// docsearch fix
+// plugin-docsearch
 #docsearch-container {
   min-width: 145.7px !important;
 

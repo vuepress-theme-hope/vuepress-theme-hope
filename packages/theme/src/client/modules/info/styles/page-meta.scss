@@ -1,4 +1,4 @@
-@use "vuepress-shared/styles/wrapper";
+@use "../../../styles/wrapper";
 
 .vp-page-meta {
   @include wrapper.horizontal-wrapper;

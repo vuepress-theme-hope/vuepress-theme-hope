@@ -13,17 +13,15 @@
  */
 
 import {
+  checkIsMobile,
+  checkIsSafari,
+  checkIsiPad,
   ensureEndingSlash,
   entries,
   isDef,
   isLinkHttp,
 } from "@vuepress/helper/client";
 import { withBase } from "vuepress/client";
-import {
-  checkIsMobile,
-  checkIsSafari,
-  checkIsiPad,
-} from "vuepress-shared/client";
 
 declare const __VUEPRESS_DEV__: boolean;
 declare const PDFJS_URL: string | null;

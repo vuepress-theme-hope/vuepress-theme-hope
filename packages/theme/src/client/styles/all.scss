@@ -1,9 +1,18 @@
 // For perf mode only
+
+// contents from index.scss
+@use "vuepress-shared/styles/sr-only";
 @use "vars";
 @use "normalize";
-@use "breadcrumb";
-@use "common";
+@use "code";
 @use "external-link-icon";
+@use "content";
+@use "layout";
+@use "plugins";
+
+// component styles
+@use "breadcrumb";
+@use "common-wrapper";
 @use "fade-slide-y";
 @use "feature-panel";
 @use "footer";
@@ -18,11 +27,6 @@
 @use "portfolio-hero";
 @use "portfolio-home";
 @use "skip-link";
-@use "code";
-@use "sr-only";
-@use "content";
-@use "theme";
-@use "layout";
 @use "../modules/info/styles/all" as info;
 @use "../modules/navbar/styles/all" as navbar;
 @use "../modules/outlook/styles/all" as outlook;

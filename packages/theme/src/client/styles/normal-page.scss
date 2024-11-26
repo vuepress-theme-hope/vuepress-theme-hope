@@ -1,4 +1,4 @@
-@use "vuepress-shared/styles/wrapper";
+@use "wrapper";
 
 .vp-page {
   display: block;
@@ -32,8 +32,4 @@
       border-radius: 0;
     }
   }
-}
-
-[vp-comment] {
-  @include wrapper.wrapper;
 }
