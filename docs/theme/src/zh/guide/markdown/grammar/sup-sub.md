@@ -14,18 +14,16 @@ tag:
 
 ## 配置
 
-```js {8,10} title=".vuepress/config.js"
+```ts {7,9} title=".vuepress/config.ts"
 import { hopeTheme } from "vuepress-theme-hope";
 
 export default {
   theme: hopeTheme({
-    plugins: {
-      mdEnhance: {
-        // 启用下角标功能
-        sub: true,
-        // 启用上角标
-        sup: true,
-      },
+    markdown: {
+      // 启用下角标功能
+      sub: true,
+      // 启用上角标
+      sup: true,
     },
   }),
 };

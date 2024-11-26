@@ -14,22 +14,20 @@ tag:
 
 ## 配置
 
-```js {8,10,12,14} title=".vuepress/config.js"
+```ts {7,9,11,13} title=".vuepress/config.ts"
 import { hopeTheme } from "vuepress-theme-hope";
 
 export default {
   theme: hopeTheme({
-    plugins: {
-      markdownImage: {
-        // 启用 figure
-        figure: true,
-        // 启用图片懒加载
-        lazyload: true,
-        // 启用图片标记
-        mark: true,
-        // 启用图片大小
-        size: true,
-      },
+    markdown: {
+      // 启用 figure
+      figure: true,
+      // 启用图片懒加载
+      imgLazyload: true,
+      // 启用图片标记
+      imgMark: true,
+      // 启用图片大小
+      imgSize: true,
     },
   }),
 };

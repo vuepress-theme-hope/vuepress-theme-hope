@@ -17,7 +17,7 @@ The behavior option can also accept a boolean value:
 
 <!-- more -->
 
-```js title=".vuepress/config.js"
+```ts title=".vuepress/config.ts"
 import { defineUserConfig } from "vuepress";
 import { hopeTheme } from "vuepress-theme-hope";
 

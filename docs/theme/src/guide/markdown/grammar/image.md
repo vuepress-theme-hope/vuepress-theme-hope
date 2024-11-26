@@ -14,22 +14,20 @@ Improve image syntax in Markdown to support color scheme and size.
 
 ## Settings
 
-```js {8,10,12,14} title=".vuepress/config.js"
+```ts {7,9,11,13} title=".vuepress/config.ts"
 import { hopeTheme } from "vuepress-theme-hope";
 
 export default {
   theme: hopeTheme({
-    plugins: {
-      mdEnhance: {
-        // Enable figure
-        figure: true,
-        // Enable image lazyload
-        imgLazyload: true,
-        // Enable image mark
-        imgMark: true,
-        // Enable image size
-        imgSize: true,
-      },
+    markdown: {
+      // Enable figure
+      figure: true,
+      // Enable image lazyload
+      imgLazyload: true,
+      // Enable image mark
+      imgMark: true,
+      // Enable image size
+      imgSize: true,
     },
   }),
 };
