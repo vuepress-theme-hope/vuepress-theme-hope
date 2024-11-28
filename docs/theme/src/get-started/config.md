@@ -34,8 +34,6 @@ You need to set up a config object in the config file `.vuepress/config.ts` (or 
 
 To get correct hints, importing `defineUserConfig` from `vuepress` and wrapping the config object is recommended:
 
-@tab JS
-
 ```js {2,4,6} title=".vuepress/config.js"
 import { defineUserConfig } from "vuepress";
 
