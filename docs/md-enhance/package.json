@@ -28,7 +28,7 @@
     "echarts-wordcloud": "2.1.0",
     "flowchart.ts": "3.0.1",
     "katex": "0.16.11",
-    "mermaid": "11.4.0",
+    "mermaid": "11.4.1",
     "sandpack-vue3": "3.1.12",
     "sass-embedded": "1.81.0",
     "sass-loader": "16.0.3",
