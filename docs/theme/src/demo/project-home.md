@@ -161,7 +161,7 @@ npm init vuepress-theme-hope@latest add [dir]
 
 ## 🚀Usage
 
-```js title=".vuepress/config.js"
+```ts title=".vuepress/config.ts"
 import { defineUserConfig } from "vuepress";
 import { hopeTheme } from "vuepress-theme-hope";
 

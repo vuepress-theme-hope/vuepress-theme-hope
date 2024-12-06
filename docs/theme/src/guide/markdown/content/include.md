@@ -57,7 +57,7 @@ export default {
 
 Also, to place your Markdown files directly besides your actual files, but don't want them rendered as pages, you can set `pagePatterns` options in VuePress config. See [pagePatterns](https://vuejs.press/reference/config.html#pagepatterns) for more details.
 
-```js {6} title=".vuepress/config.js"
+```ts {6} title=".vuepress/config.ts"
 import { defineUserConfig } from "vuepress";
 import { hopeTheme } from "vuepress-theme-hope";
 

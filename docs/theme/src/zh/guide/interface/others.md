@@ -56,7 +56,7 @@ export default {
 
 你可以在主题选项中设置 `plugins.backToTop: false` 来禁用它，或者用一个对象来设置它来自定义它的阈值距离和进度条显示：
 
-```js {8,13-26} title=".vuepress/config.js"
+```ts {8,13-26} title=".vuepress/config.ts"
 import { defineUserConfig } from "vuepress";
 import { hopeTheme } from "vuepress-theme-hope";
 

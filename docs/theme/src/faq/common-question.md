@@ -10,7 +10,7 @@ category:
 
 You can use `extendsMarkdown` hook in [config file](../cookbook/vuepress/config.md#config-file) to add Markdown extensions:
 
-```js {7-9} title=".vuepress/config.js"
+```ts {7-9} title=".vuepress/config.ts"
 import { defineUserConfig } from "vuepress";
 
 export default defineUserConfig({
