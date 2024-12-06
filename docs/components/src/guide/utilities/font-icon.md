@@ -49,6 +49,12 @@ Color used for icon.
 
 Icon size.
 
+### verticalAlign
+
+- Type: `string`
+
+Vertical alignment of the icon.
+
 ## Global Settings
 
 You can set icon assets url and icon prefix globally via `componentsOptions.fontIcon.assets` and `componentsOptions.fontIcon.prefix`.

@@ -56,9 +56,9 @@ const Badge: FunctionalComponent<
       // eslint-disable-next-line @typescript-eslint/prefer-nullish-coalescing
       class: ["vp-badge", type, { diy: color || bgColor }],
       style: {
-        verticalAlign: vertical ?? false,
         backgroundColor: bgColor ?? false,
         color: color ?? false,
+        verticalAlign: vertical ?? false,
       },
     },
     slots.default?.() ?? text,
