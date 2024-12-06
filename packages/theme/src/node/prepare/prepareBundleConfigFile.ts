@@ -80,6 +80,7 @@ ${imports.join("\n")}
 
 import "${getRealPath("@vuepress/helper/colors.css", url)}";
 import "${getRealPath("@vuepress/helper/normalize.css", url)}";
+import "${getRealPath("@vuepress/helper/sr-only.css", url)}";
 import "${BUNDLE_FOLDER}styles/all.scss";
 
 ${actions.join("\n")}
