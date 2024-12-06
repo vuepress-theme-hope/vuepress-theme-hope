@@ -111,7 +111,7 @@ tag:
 - 类型: `boolean`
 - 默认值: `false`
 - 详情:
-  - [上标](../../guide/markdown/grammar/sup-sub.md)
+  - [上标](../../guide/markdown/stylize/sup-sub.md)
 
 是否启用上角标格式支持。
 
@@ -120,7 +120,7 @@ tag:
 - 类型: `boolean`
 - 默认值: `false`
 - 详情:
-  - [下标](../../guide/markdown/grammar/sup-sub.md)
+  - [下标](../../guide/markdown/stylize/sup-sub.md)
 
 是否启用下角标格式支持。
 

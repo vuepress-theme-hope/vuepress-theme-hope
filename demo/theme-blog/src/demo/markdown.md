@@ -139,7 +139,7 @@ Support setting color scheme and size.
 
 19^th^ H~2~O
 
-- [View Detail](https://theme-hope.vuejs.press/guide/markdown/grammar/sup-sub.html)
+- [View Detail](https://theme-hope.vuejs.press/guide/markdown/stylize/sup-sub.html)
 
 #### Component
 

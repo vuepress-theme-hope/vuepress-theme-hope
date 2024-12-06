@@ -18,6 +18,7 @@ The theme provides the following features to stylize your content:
 - Align: Customize content alignment
 - Attrs: Adding attrs to markdown contents
 - Mark: Highlight contents
+- Superscript and Subscript
 - Spoiler: Hide spoiler content
 - Stylize: Customizable token stylizer
 
@@ -63,8 +64,20 @@ You can mark ==important words==.
 
 - [View Detail](./mark.md)
 
+## Spoiler
+
+VuePress Theme Hope is !!powerful!!.
+
+- [View Detail](./spoiler.md)
+
 ### Stylize
 
 Donate Mr.Hope a cup of coffee. _Recommended_
 
 - [View Detail](./stylize.md)
+
+### Superscript and Subscript
+
+19^th^ H~2~O
+
+- [View Detail](./sup-sub.md)

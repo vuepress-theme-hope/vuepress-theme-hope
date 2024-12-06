@@ -74,7 +74,7 @@ highlights:
       - title: Superscript and subscript
         icon: superscript
         details: Inserting superscript and subscript
-        link: https://theme-hope.vuejs.press/guide/markdown/grammar/sup-sub.html
+        link: https://theme-hope.vuejs.press/guide/markdown/stylize/sup-sub.html
 
       - title: Footnote
         icon: quote-left

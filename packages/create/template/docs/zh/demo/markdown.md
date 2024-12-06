@@ -102,7 +102,7 @@ $$
 
 19^th^ H~2~O
 
-- [查看详情](https://theme-hope.vuejs.press/zh/guide/markdown/grammar/sup-sub.html)
+- [查看详情](https://theme-hope.vuejs.press/zh/guide/markdown/stylize/sup-sub.html)
 
 #### 组件
 

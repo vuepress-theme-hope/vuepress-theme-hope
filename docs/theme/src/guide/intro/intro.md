@@ -64,7 +64,7 @@ The theme provides a lot of extended syntax support for Markdown, allowing you t
 
 - To reorganize your content, the theme provides [File Include](../markdown/content/include.md) function.
 
-- To style your content, the theme provides [Subscript and Superscript](../markdown/grammar/sup-sub.md), [Attrs setting](../markdown/stylize/attrs.md) and [Stylize](../markdown/stylize/stylize.md) function.
+- To style your content, the theme provides [Subscript and Superscript](../markdown/stylize/sup-sub.md), [Attrs setting](../markdown/stylize/attrs.md) and [Stylize](../markdown/stylize/stylize.md) function.
 
 - The theme also provides you a lot of [useful components](../component/built-in.md).
 

@@ -15,7 +15,6 @@ tag:
 The theme introduce the following new grammar to Markdown.
 
 - Image: Covert to figure, switched with color scheme and setting size
-- Superscript and Subscript
 - Tasklist
 - TeX: Support KaTeX and Mathjax
 
@@ -26,12 +25,6 @@ The theme introduce the following new grammar to Markdown.
 Support setting title, color scheme and size
 
 - [View Detail](./image.md)
-
-### Superscript and Subscript
-
-19^th^ H~2~O
-
-- [View Detail](./sup-sub.md)
 
 ### Task List
 

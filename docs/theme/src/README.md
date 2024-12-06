@@ -79,7 +79,7 @@ highlights:
       - title: Superscript and subscript
         icon: superscript
         details: Inserting superscript and subscript
-        link: ./guide/markdown/grammar/sup-sub.html
+        link: ./guide/markdown/stylize/sup-sub.html
 
       - title: Footnote
         icon: quote-left

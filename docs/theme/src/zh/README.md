@@ -79,7 +79,7 @@ highlights:
       - title: 上下角标
         icon: superscript
         details: 轻松在 Markdown 中添加上下角标
-        link: ./guide/markdown/grammar/sup-sub.html
+        link: ./guide/markdown/stylize/sup-sub.html
 
       - title: 脚注
         icon: quote-left
