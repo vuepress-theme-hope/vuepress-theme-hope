@@ -106,7 +106,7 @@ interface MarkdownItAttrsOptions {
 
 ## 示例
 
-> 所有的 class 都使用 `margin: 4px;padding: 4px;border: 1px solid red;` 进行显示以展示效果。
+> 所有的 class 都使用 `margin:4px;padding:4px;border: 1px solid red;` 进行显示以展示效果。
 
 ::: md-demo 行内元素
 

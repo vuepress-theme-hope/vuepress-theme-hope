@@ -1,20 +1,17 @@
 ---
-title: Markdown Config
+title: Markdown Stylize Config
 icon: fab fa-markdown
-order: 2
+order: 3
 category:
   - Config
 tag:
-  - Markdown
-  - Plugin Config
+  - Markdown Config
   - Theme Config
 ---
 
 The following options adds new stylize feature, and can be set **under `markdown` property** in theme options.
 
-## Stylize Related
-
-### align
+## align
 
 - Type: `boolean`
 - Default: `false`
@@ -24,7 +21,7 @@ The following options adds new stylize feature, and can be set **under `markdown
 
 Whether to enable custom align.
 
-### attrs
+## attrs
 
 - Type: `MarkdownItAttrsOptions | boolean`
 
@@ -63,7 +60,7 @@ Whether to enable custom align.
 
 - Default: `false`
 - Details:
-  - [Attrs](../../guide/markdown/stylize/attrs.md)
+  - [Markdown → Attrs](../../guide/markdown/stylize/attrs.md)
   - [@vuepress/plugin-markdown-stylize → attrs][attrs]
 
 Whether to enable attribute customize support.
@@ -98,7 +95,7 @@ Whether to enable the superscript support.
 
 Whether to enable subscript support.
 
-### spoiler
+## spoiler
 
 - Type: `boolean`
 - Default: `false`
@@ -108,7 +105,7 @@ Whether to enable subscript support.
 
 Whether to enable spoiler support.
 
-### stylize
+## stylize
 
 - Type: `MarkdownItStylizeConfig[] | false`
 
@@ -116,20 +113,14 @@ Whether to enable spoiler support.
   interface MarkdownItStylizeResult {
     /**
      * Tag name
-     *
-     * 渲染的标签名称
      */
     tag: string;
     /**
      * Attributes settings
-     *
-     * 属性设置
      */
     attrs: Record<string, string>;
     /**
      * Tag content
-     *
-     * 标签内容
      */
     content: string;
   }
@@ -137,14 +128,10 @@ Whether to enable spoiler support.
   interface MarkdownItStylizeConfig {
     /**
      * Inline token matcher
-     *
-     * 字符匹配
      */
     matcher: string | RegExp;
     /**
      * Content Replacer
-     *
-     * 内容替换
      */
     replacer: (options: {
       tag: string;

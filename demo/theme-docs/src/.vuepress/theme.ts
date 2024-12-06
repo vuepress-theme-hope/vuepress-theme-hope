@@ -111,6 +111,19 @@ export default hopeTheme(
       tabs: true,
       tasklist: true,
       vPre: true,
+
+      chartjs: true,
+      demo: true,
+      echarts: true,
+      flowchart: true,
+      kotlinPlayground: true,
+      markmap: true,
+      mermaid: true,
+      playground: {
+        presets: ["ts", "vue", "unocss"],
+      },
+      sandpack: true,
+      vuePlayground: true,
     },
 
     plugins: {
@@ -124,22 +137,6 @@ export default hopeTheme(
 
       components: {
         components: ["Badge", "VPCard"],
-      },
-
-      // FIXME: All features are enabled for demo, only preserve features you need here
-      mdEnhance: {
-        chart: true,
-        demo: true,
-        echarts: true,
-        flowchart: true,
-        kotlinPlayground: true,
-        markmap: true,
-        mermaid: true,
-        playground: {
-          presets: ["ts", "vue", "unocss"],
-        },
-        sandpack: true,
-        vuePlayground: true,
       },
 
       pwa: {

@@ -6,6 +6,10 @@ export const chart: PluginSimple = (md) => {
   container(md, {
     name: "chart",
     openRender: (tokens, index) => {
+      console.warn(
+        "chart container is deprecated, use chartjs container instead.",
+      );
+
       const title = tokens[index].info
         .trimStart()
         // "chart" length

@@ -1,4 +1,4 @@
-export * from "./chart.js";
+export * from "./chartjs.js";
 export * from "./codeDemo.js";
 export * from "./echarts.js";
 export * from "./flowchart.js";

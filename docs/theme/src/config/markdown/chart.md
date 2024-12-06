@@ -1,18 +1,19 @@
 ---
-title: Markdown Config
+title: Markdown Chart Config
 icon: fab fa-markdown
-order: 2
+order: 4
 category:
   - Config
 tag:
-  - Markdown
-  - Plugin Config
+  - Markdown Config
   - Theme Config
 ---
 
 The following options supports different charts in markdown, and can be set **under `markdown` property** in theme options.
 
-### chartjs
+<!-- more -->
+
+## chartjs
 
 - Type: `boolean`
 - Default: `false`
@@ -21,7 +22,7 @@ The following options supports different charts in markdown, and can be set **un
 
 Whether to enable Chart.js support
 
-### echarts
+## echarts
 
 - Type: `boolean`
 - Default: `false`
@@ -30,7 +31,7 @@ Whether to enable Chart.js support
 
 Whether to enable ECharts support
 
-### flowchart
+## flowchart
 
 - Type: `boolean`
 - Default: `false`
@@ -39,16 +40,16 @@ Whether to enable ECharts support
 
 Whether to enable flowchart support
 
-### mermaid
+## mermaid
 
-- Type: `MermaidConfig | boolean`
+- Type: `boolean`
 - Default: `false`
 - Details:
   - [Markdown → Mermaid](../../guide/markdown/chart/mermaid.md)
 
 Whether to enable [Mermaid](https://mermaid.js.org/) support, you can pass in a config object to customize the behavior of Mermaid.
 
-### plantuml
+## plantuml
 
 - Type: `MarkdownItPlantumlOptions[] | boolean`
 - Default: `false`

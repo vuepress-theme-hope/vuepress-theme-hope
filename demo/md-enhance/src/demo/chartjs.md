@@ -6,7 +6,7 @@ title: Chart.js
 
 ### Bar Chart
 
-::: chart A bar chart
+::: chartjs A bar chart
 
 ```json
 {
@@ -49,7 +49,7 @@ title: Chart.js
 
 :::
 
-::: chart A bar chart
+::: chartjs A bar chart
 
 ```js
 const config = {
@@ -92,7 +92,7 @@ const config = {
 
 :::
 
-::: chart A bar chart
+::: chartjs A bar chart
 
 ```javascript
 config = {
@@ -137,7 +137,7 @@ config = {
 
 ### Bubble Chart
 
-::: chart A Bubble Chart
+::: chartjs A Bubble Chart
 
 ```json
 {
@@ -161,7 +161,7 @@ config = {
 
 ### Line Chart
 
-::: chart A Line Chart
+::: chartjs A Line Chart
 
 ```json
 {
@@ -185,7 +185,7 @@ config = {
 
 ### Polar Area Chart
 
-::: chart A Polar Area Chart
+::: chartjs A Polar Area Chart
 
 ```json
 {
@@ -213,7 +213,7 @@ config = {
 
 ### Radar Chart
 
-::: chart A Radar Chart
+::: chartjs A Radar Chart
 
 ```json
 {
@@ -267,7 +267,7 @@ config = {
 
 ### Scatter Chart
 
-::: chart A Scatter Chart
+::: chartjs A Scatter Chart
 
 ```json
 {

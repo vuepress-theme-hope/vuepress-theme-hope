@@ -361,6 +361,96 @@ const covertPluginOptions = (themeOptions: Record<string, unknown>): void => {
 
       markdownOptions.revealjs = true;
     }
+
+    if ("chart" in mdEnhanceOptions) {
+      deprecatedLogger({
+        options: themeOptions,
+        deprecatedOption: "plugins.mdEnhance.chart",
+        newOption: "markdown.chartjs",
+      });
+    }
+
+    if ("echarts" in mdEnhanceOptions) {
+      deprecatedLogger({
+        options: themeOptions,
+        deprecatedOption: "plugins.mdEnhance.echarts",
+        newOption: "markdown.echarts",
+      });
+    }
+
+    if ("flowchart" in mdEnhanceOptions) {
+      deprecatedLogger({
+        options: themeOptions,
+        deprecatedOption: "plugins.mdEnhance.flowchart",
+        newOption: "markdown.flowchart",
+      });
+    }
+
+    if ("mermaid" in mdEnhanceOptions) {
+      deprecatedLogger({
+        options: themeOptions,
+        deprecatedOption: "plugins.mdEnhance.mermaid",
+        newOption: "markdown.mermaid",
+      });
+    }
+
+    if ("markmap" in mdEnhanceOptions) {
+      deprecatedLogger({
+        options: themeOptions,
+        deprecatedOption: "plugins.mdEnhance.markmap",
+        newOption: "markdown.markmap",
+      });
+    }
+
+    if ("plantuml" in mdEnhanceOptions) {
+      deprecatedLogger({
+        options: themeOptions,
+        deprecatedOption: "plugins.mdEnhance.plantuml",
+        newOption: "markdown.plantuml",
+      });
+    }
+
+    if ("demo" in mdEnhanceOptions) {
+      deprecatedLogger({
+        options: themeOptions,
+        deprecatedOption: "plugins.mdEnhance.demo",
+        newOption: "markdown.demo",
+      });
+    }
+
+    if ("vuePlayground" in mdEnhanceOptions) {
+      deprecatedLogger({
+        options: themeOptions,
+        deprecatedOption: "plugins.mdEnhance.vuePlayground",
+        newOption: "markdown.vuePlayground",
+      });
+    }
+
+    if ("kotlinPlayground" in mdEnhanceOptions) {
+      deprecatedLogger({
+        options: themeOptions,
+        deprecatedOption: "plugins.mdEnhance.kotlinPlayground",
+        newOption: "markdown.kotlinPlayground",
+      });
+    }
+
+    if ("sandpack" in mdEnhanceOptions) {
+      deprecatedLogger({
+        options: themeOptions,
+        deprecatedOption: "plugins.mdEnhance.sandpack",
+        newOption: "markdown.sandpack",
+      });
+    }
+
+    if ("playground" in mdEnhanceOptions) {
+      deprecatedLogger({
+        options: themeOptions,
+        deprecatedOption: "plugins.mdEnhance.playground",
+        newOption: "markdown.playground",
+      });
+    }
+
+    delete pluginOptions.mdEnhance;
   }
 
   if (pluginOptions.markdownHint) {

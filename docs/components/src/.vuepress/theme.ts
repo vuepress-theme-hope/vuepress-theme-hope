@@ -63,6 +63,7 @@ export default theme("components", {
     codeTabs: true,
     imgMark: true,
     include: true,
+    demo: true,
   },
 
   plugins: {
@@ -95,10 +96,6 @@ export default theme("components", {
           services: AVAILABLE_SERVICES,
         },
       },
-    },
-
-    mdEnhance: {
-      demo: true,
     },
   },
 });

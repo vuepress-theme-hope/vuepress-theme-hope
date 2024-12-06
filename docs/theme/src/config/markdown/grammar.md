@@ -5,8 +5,7 @@ order: 2
 category:
   - Config
 tag:
-  - Markdown
-  - Plugin Config
+  - Markdown Config
   - Theme Config
 ---
 
@@ -18,9 +17,9 @@ The following options adds new markdown grammar, and can be set **under `markdow
 - Default: `false`
 - Details:
   - [Component → Grammar](../../guide/component/grammar.md)
-  - [@vuepress/plugin-markdown-ext][component]
+  - [@vuepress/plugin-markdown-ext → component][component]
 
-Whether to enable component support
+Whether to enable component support.
 
 ## footnote
 
@@ -29,7 +28,7 @@ Whether to enable component support
 - Enabled in GFM: Yes
 - Details:
   - [Markdown → Footnote](../../guide/markdown/content/footnote.md)
-  - [@vuepress/plugin-markdown-ext][footnote]
+  - [@vuepress/plugin-markdown-ext → footnote][footnote]
 
 Whether to enable footnote format support.
 
@@ -61,6 +60,8 @@ Whether to enable image size.
   - [Markdown → Image Size](../../guide/markdown/grammar/image.md#image-size)
   - [@vuepress/plugin-markdown-image → obsidianSize][obsidianSize]
 
+Whether to enable obsidian image size.
+
 ## include
 
 - Type: `MarkdownIncludePluginOptions | boolean`
@@ -88,7 +89,7 @@ Whether to enable image size.
   - [Markdown → Include](../../guide/markdown/content/include.md)
   - [@vuepress/plugin-markdown-include][include]
 
-Whether to enable Markdown import support. You can pass in a function for path resolution.
+Whether to enable Markdown import support. You can pass in a object to customize behavior.
 
 ## tabs
 
@@ -158,7 +159,7 @@ Whether to enable tasklist format support. You can pass an object to config task
 
 - Default: `false`
 - Details:
-  - [Markdown → TeX](../../guide/markdown/grammar/math.md)
+  - [Markdown → Math](../../guide/markdown/grammar/math.md)
   - [@vuepress/plugin-markdown-math][math]
 
 Whether to enable math formula support. You can set `true` to auto detect the installed one of katex/mathjax, or provide plugin options.
@@ -172,15 +173,11 @@ Whether to enable math formula support. You can set `true` to auto detect the in
     /**
      * Reveal.js plugins
      *
-     * 幻灯片插件
-     *
      * @default []
      */
     plugins?: RevealJsPlugin[];
     /**
      * Reveal.js themes
-     *
-     * 幻灯片主题
      *
      * @default ["auto"]
      */

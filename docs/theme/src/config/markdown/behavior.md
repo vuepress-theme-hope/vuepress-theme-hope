@@ -1,12 +1,11 @@
 ---
 title: Markdown Behavior Config
 icon: fab fa-markdown
-order: 2
+order: 1
 category:
   - Config
 tag:
-  - Markdown
-  - Plugin Config
+  - Markdown Config
   - Theme Config
 ---
 
@@ -63,16 +62,6 @@ Whether convert `\n` in paragraphs into `<br>`s
 
 Whether convert URL-like text into links
 
-## imgLazyload
-
-- Type: `boolean`
-- Default: `false`
-- Details:
-  - [Markdown → Image Lazy Loading](../../guide/markdown/grammar/image.md#image-lazyload)
-  - [@vuepress/plugin-markdown-image → lazyload][lazyload]
-
-Whether to enable lazy loading for images in markdown.
-
 ## figure
 
 - Type: `boolean`
@@ -82,6 +71,16 @@ Whether to enable lazy loading for images in markdown.
   - [@vuepress/plugin-markdown-image → figure][figure]
 
 Whether to convert standalone `<img>` into `<figure>`.
+
+## imgLazyload
+
+- Type: `boolean`
+- Default: `false`
+- Details:
+  - [Markdown → Image Lazy Loading](../../guide/markdown/grammar/image.md#image-lazyload)
+  - [@vuepress/plugin-markdown-image → lazyload][lazyload]
+
+Whether to enable lazy loading for images in markdown.
 
 ## highlighter
 
@@ -100,10 +99,21 @@ Whether to convert standalone `<img>` into `<figure>`.
 
 The markdown code block highlighter. You can choose `"prismjs"`, `"shiki"`, `false` or an object with `type` field declaring the highlighter name and other plugin options.
 
-- `prismjs`: Use [@vuepress/plugin-prismjs][prismjs].
-- `shiki`: Use [@vuepress/plugin-shiki][shiki].
+- `"prismjs"`: Use [@vuepress/plugin-prismjs][prismjs].
+- `"shiki"`: Use [@vuepress/plugin-shiki][shiki].
 - `false`: Disable code block highlighting.
 
+### linksCheck <Badge text="Enabled by default" />
+
+- Type: `LinksCheckPluginOptions | Options`
+- Default: `true`
+- Details:
+  - [Markdown → Link check](../../guide/markdown/others.md#link-check)
+  - [@vuepress/plugin-links-check][links-check]
+
+Whether to enable `@vuepress/plugin-links-check` plugin, which provides link check for Markdown. You can manually set a boolean value to control the plugin status, or provide plugin options.
+
+[links-check]: https://ecosystem.vuejs.press/plugins/markdown/links-check.html#options
 [breaks]: https://ecosystem.vuejs.press/plugins/markdown/markdown-ext.html#breaks
 [linkify]: https://ecosystem.vuejs.press/plugins/markdown/markdown-ext.html#linkify
 [gfm]: https://ecosystem.vuejs.press/plugins/markdown/markdown-ext.html#gfm

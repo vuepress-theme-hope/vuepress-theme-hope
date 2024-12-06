@@ -9,6 +9,7 @@ import type { MarkdownTabPluginOptions } from "@vuepress/plugin-markdown-tab";
 import type { PrismjsPluginOptions } from "@vuepress/plugin-prismjs";
 import type { RevealJsPluginOptions } from "@vuepress/plugin-revealjs";
 import type { ShikiPluginOptions } from "@vuepress/plugin-shiki";
+import type { MarkdownEnhancePluginOptions } from "vuepress-plugin-md-enhance";
 
 export type MarkdownHighlighterOptions =
   | ({ type: "prismjs" } & PrismjsPluginOptions)
@@ -19,7 +20,21 @@ export interface MarkdownOptions
     Pick<MarkdownHintPluginOptions, "alert" | "hint">,
     Pick<MarkdownImagePluginOptions, "figure">,
     Omit<MarkdownStylizePluginOptions, "custom">,
-    MarkdownTabPluginOptions {
+    MarkdownTabPluginOptions,
+    Pick<
+      MarkdownEnhancePluginOptions,
+      | "chartjs"
+      | "echarts"
+      | "flowchart"
+      | "markmap"
+      | "mermaid"
+      | "plantuml"
+      | "demo"
+      | "playground"
+      | "kotlinPlayground"
+      | "vuePlayground"
+      | "sandpack"
+    > {
   /**
    * Options for @vuepress/links-check
    *

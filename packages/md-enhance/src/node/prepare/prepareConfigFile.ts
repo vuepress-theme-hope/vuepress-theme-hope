@@ -14,7 +14,7 @@ export const prepareConfigFile = async (
   const imports = new Set<string>();
   const enhances = new Set<string>();
 
-  if (status.chart) {
+  if (status.chartjs) {
     imports.add(`import ChartJS from "${CLIENT_FOLDER}components/ChartJS.js";`);
     enhances.add(`app.component("ChartJS", ChartJS)`);
   }

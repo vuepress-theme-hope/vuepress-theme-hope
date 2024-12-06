@@ -1,11 +1,11 @@
 ---
-title: Tex 语法
+title: 数学公式
 icon: square-root-variable
 category:
   - Markdown
 tag:
   - Markdown
-  - TEX
+  - 数学公式
 ---
 
 让你的 VuePress 站点中的 Markdown 文件支持 $\TeX$ 语法。

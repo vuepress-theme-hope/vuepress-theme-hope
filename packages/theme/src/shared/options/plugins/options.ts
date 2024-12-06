@@ -20,7 +20,6 @@ import type { SitemapPluginOptions } from "@vuepress/plugin-sitemap";
 import type { SlimSearchPluginOptions } from "@vuepress/plugin-slimsearch";
 import type { WatermarkPluginOptions } from "@vuepress/plugin-watermark";
 import type { ComponentPluginOptions } from "vuepress-plugin-components";
-import type { MarkdownEnhancePluginOptions } from "vuepress-plugin-md-enhance";
 
 import type { BlogOptions } from "./blog.js";
 
@@ -69,6 +68,11 @@ export interface DeprecatedPluginsOptions {
    * @deprecated Use `plugins.slimsearch` instead
    */
   searchPro?: never;
+
+  /**
+   * @deprecated Use `markdown` instead
+   */
+  mdEnhance?: never;
 }
 
 export interface PluginsOptions extends DeprecatedPluginsOptions {
@@ -204,17 +208,6 @@ export interface PluginsOptions extends DeprecatedPluginsOptions {
    * @see https://ecosystem.vuejs.press/zh/plugins/development/git.html
    */
   git?: GitPluginOptions | boolean;
-
-  /**
-   * md-enhance plugin options
-   *
-   * @see https://plugin-md-enhance.vuejs.press/config/
-   *
-   * md-enhance 插件配置
-   *
-   * @see https://plugin-md-enhance.vuejs.press/zh/config/
-   */
-  mdEnhance?: Omit<MarkdownEnhancePluginOptions, "delay"> | false;
 
   /**
    * Notice options

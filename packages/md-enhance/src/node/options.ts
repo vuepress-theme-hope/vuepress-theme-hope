@@ -8,6 +8,11 @@ import type { CodeDemoOptions } from "../shared/index.js";
 
 export interface DeprecatedMarkdownEnhancePluginOptions {
   /**
+   * @deprecated use `chartjs` instead
+   */
+  chartjs?: boolean;
+
+  /**
    * @deprecated use `alert` from `@vuepress/plugin-markdown-hint` instead
    */
   alert?: never;
@@ -155,7 +160,7 @@ export interface MarkdownEnhancePluginOptions
    *
    * @default false
    */
-  chart?: boolean;
+  chartjs?: boolean;
 
   /**
    * Whether to enable echarts support

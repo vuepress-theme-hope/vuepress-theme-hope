@@ -1,5 +1,5 @@
 ---
-title: Enable Enhance
+title: Markdown Intro
 icon: toggle-on
 order: 1
 category:

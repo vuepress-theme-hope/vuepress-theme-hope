@@ -1,15 +1,15 @@
 import MarkdownIt from "markdown-it";
 import { describe, expect, it } from "vitest";
 
-import { chart } from "../../src/node/markdown-it/chart.js";
+import { chartjs } from "../../src/node/markdown-it/chartjs.js";
 
-describe("chart", () => {
-  const markdownIt = MarkdownIt({ linkify: true }).use(chart);
+describe("chartjs", () => {
+  const markdownIt = MarkdownIt({ linkify: true }).use(chartjs);
 
-  it("Should resolve chart info with json block", () => {
+  it("Should resolve chartjs info with json block", () => {
     const result = markdownIt.render(
       `
-::: chart A bar chart
+::: chartjs A bar chart
 
 \`\`\`json
 {
@@ -64,7 +64,7 @@ describe("chart", () => {
   it("Should resolve chart info with js block", () => {
     const result = markdownIt.render(
       `
-::: chart A bar chart
+::: chartjs A bar chart
 
 \`\`\`js
 const config = {
@@ -119,7 +119,7 @@ const config = {
   it("Should resolve chart info with javascript block", () => {
     const result = markdownIt.render(
       `
-::: chart A bar chart
+::: chartjs A bar chart
 
 \`\`\`javascript
 const config = {
@@ -174,7 +174,7 @@ const config = {
   it("Should resolve chart with empty title and body", () => {
     const result = markdownIt.render(
       `
-::: chart
+::: chartjs
 
 :::
 `,

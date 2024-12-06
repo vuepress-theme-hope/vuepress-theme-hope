@@ -12,13 +12,14 @@ import { useSassPalettePlugin } from "@vuepress/plugin-sass-palette";
 import type { PluginFunction } from "vuepress/core";
 
 import {
+  chart,
   convertOptions,
   legacyCodeDemo,
   legacyFlowchart,
 } from "./compact/index.js";
 import {
   CODE_DEMO_DEFAULT_SETTING,
-  chart,
+  chartjs,
   echarts,
   flowchart,
   getTSPlaygroundPreset,
@@ -59,7 +60,7 @@ export const mdEnhancePlugin =
       pkgs.every((pkg) => isInstalled(pkg, Boolean(options[key])));
 
     const status = {
-      chart: getStatus("chart", ["chart.js"]),
+      chartjs: getStatus("chartjs", ["chart.js"]),
       echarts: getStatus("echarts", ["echarts"]),
       flowchart: getStatus("flowchart", ["flowchart.ts"]),
       mark: getStatus("mark"),
@@ -97,7 +98,7 @@ export const mdEnhancePlugin =
           "vuepress-shared",
         ]);
 
-        if (status.chart) {
+        if (status.chartjs) {
           addViteOptimizeDepsExclude(
             bundlerOptions,
             app,
@@ -177,7 +178,10 @@ export const mdEnhancePlugin =
           // TODO: Remove this in v2 stable
           if (legacy) md.use(legacyFlowchart);
         }
-        if (status.chart) md.use(chart);
+        if (status.chartjs) {
+          md.use(chartjs);
+          if (legacy) md.use(chart);
+        }
         if (status.echarts) md.use(echarts);
         if (isArray(options.plantuml)) md.use(plantuml, options);
         else if (options.plantuml) md.use(plantuml);

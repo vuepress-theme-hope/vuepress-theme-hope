@@ -8,7 +8,7 @@ order: 2
 
 You can pass these options to the plugin:
 
-### chart
+### chartjs
 
 - Type: `boolean`
 - Default: `false`
@@ -231,7 +231,7 @@ External JS libraries for CodePen, JsFiddle only.
 
 ::: warning
 
-The above two options are only used by third-party code demo service, you need to import these libraries in `head` to get it work..
+The above two options are only used by third-party code demo service, you need to import these libraries in `head` to get it work.
 
 :::
 

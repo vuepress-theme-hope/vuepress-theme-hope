@@ -45,7 +45,7 @@ This plugin provides 6 ways to let you insert charts into your markdown file.
 
 ### Chart.js
 
-::: chart A Scatter Chart
+::: chartjs A Scatter Chart
 
 ```json
 {

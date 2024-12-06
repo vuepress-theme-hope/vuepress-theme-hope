@@ -169,6 +169,20 @@ export default theme(
           dark: "one-dark-pro",
         },
       },
+
+      chartjs: true,
+      demo: true,
+      echarts: true,
+      flowchart: true,
+      kotlinPlayground: true,
+      markmap: true,
+      mermaid: true,
+      plantuml: true,
+      playground: {
+        presets: ["ts", "vue", "unocss"],
+      },
+      sandpack: true,
+      vuePlayground: true,
     },
 
     plugins: {
@@ -214,22 +228,6 @@ export default theme(
         atom: true,
         json: true,
         rss: true,
-      },
-
-      mdEnhance: {
-        chart: true,
-        demo: true,
-        echarts: true,
-        flowchart: true,
-        kotlinPlayground: true,
-        markmap: true,
-        mermaid: true,
-        plantuml: true,
-        playground: {
-          presets: ["ts", "vue", "unocss"],
-        },
-        sandpack: true,
-        vuePlayground: true,
       },
 
       watermark: {

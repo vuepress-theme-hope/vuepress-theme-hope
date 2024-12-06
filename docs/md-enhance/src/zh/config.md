@@ -8,7 +8,7 @@ order: 2
 
 你可以设置以下插件选项来启用或禁用一些功能。
 
-### chart
+### chartjs
 
 - 类型: `boolean`
 - 默认值: `false`

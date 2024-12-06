@@ -23,7 +23,7 @@ export default defineUserConfig({
 
     sidebar: {
       "/demo/": [
-        "/demo/chart",
+        "/demo/chartjs",
         "/demo/echarts",
         "/demo/code-demo",
         "/demo/flowchart",
@@ -41,7 +41,7 @@ export default defineUserConfig({
 
   plugins: [
     mdEnhancePlugin({
-      chart: true,
+      chartjs: true,
       demo: true,
       echarts: true,
       flowchart: true,

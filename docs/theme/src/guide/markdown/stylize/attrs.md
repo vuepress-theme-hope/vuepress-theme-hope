@@ -120,7 +120,7 @@ interface MarkdownItAttrsOptions {
 
 ## Demo
 
-> All class are styled with `margin: 4px;padding: 4px;border: 1px solid red;` to show the effect.
+> All class are styled with `margin:4px;padding:4px;border: 1px solid red;` to show the effect.
 
 ::: md-demo Inline
 

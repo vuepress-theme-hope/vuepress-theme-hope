@@ -240,7 +240,7 @@ Donate Mr.Hope a cup of coffee. _Recommended_
 
 #### Chart.js
 
-::: chart A Scatter Chart
+::: chartjs A Scatter Chart
 
 ```json
 {

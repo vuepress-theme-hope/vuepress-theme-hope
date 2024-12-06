@@ -1,12 +1,11 @@
 ---
-title: Markdown Config
+title: Markdown Code Config
 icon: fab fa-markdown
-order: 2
+order: 5
 category:
   - Config
 tag:
-  - Markdown
-  - Plugin Config
+  - Markdown Config
   - Theme Config
 ---
 

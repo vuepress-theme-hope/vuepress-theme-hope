@@ -12,7 +12,6 @@ import { photoSwipePlugin } from "@vuepress/plugin-photo-swipe";
 import { themeDataPlugin } from "@vuepress/plugin-theme-data";
 import { watermarkPlugin } from "@vuepress/plugin-watermark";
 import type { App, PluginConfig } from "vuepress/core";
-import { mdEnhancePlugin } from "vuepress-plugin-md-enhance";
 
 import { getActiveHeaderLinksPlugin } from "./activeHeaderLinks.js";
 import { getBlogPlugin } from "./blog/index.js";
@@ -23,6 +22,7 @@ import { getCopyrightPlugin } from "./copyright.js";
 import { getFeedPlugin } from "./feed.js";
 import { getMarkdownImagePlugin } from "./markdownImage.js";
 import { getMarkdownStylizePlugin } from "./markdownStylize.js";
+import { getMdEnhancePlugin } from "./mdEnhance.js";
 import { getNoticePlugin } from "./notice.js";
 import { getPwaPlugin } from "./pwa.js";
 import { getRedirectPlugin } from "./redirect.js";
@@ -67,8 +67,7 @@ export const getPlugins = (
     linksCheck,
     math,
   } = markdownOptions;
-  const { backToTop, copyCode, mdEnhance, photoSwipe, watermark } =
-    pluginsOptions;
+  const { backToTop, copyCode, photoSwipe, watermark } = pluginsOptions;
 
   return [
     /*
@@ -94,9 +93,7 @@ export const getPlugins = (
         : null,
     // @vuepress/plugin-markdown-tab
     markdownTabPlugin(markdownOptions),
-    // vuepress-plugin-md-enhance
-    mdEnhance === false ? null : mdEnhancePlugin(mdEnhance, legacy),
-
+    getMdEnhancePlugin(markdownOptions, legacy),
     getMarkdownImagePlugin(markdownOptions),
     getMarkdownStylizePlugin(markdownOptions),
     getRevealJsPlugin(markdownOptions.revealjs),

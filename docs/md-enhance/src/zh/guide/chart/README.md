@@ -45,7 +45,7 @@ index: false
 
 ### Chart.js
 
-::: chart 一个散点图案例
+::: chartjs 一个散点图案例
 
 ```json
 {

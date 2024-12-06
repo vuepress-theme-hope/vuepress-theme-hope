@@ -4,7 +4,7 @@ title: Get Started
 
 ## Catalog
 
-- [Chart](chart.md)
+- [Chart.js](chartjs.md)
 - [ECharts](echarts.md)
 - [Code Demo](code-demo.md)
 - [Flowchart](flowchart.md)

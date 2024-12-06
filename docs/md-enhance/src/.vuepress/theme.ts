@@ -35,27 +35,24 @@ export default theme("md-enhance", {
         return file;
       },
     },
+    chartjs: true,
+    demo: true,
+    echarts: true,
+    flowchart: true,
+    kotlinPlayground: true,
+    markmap: true,
+    mermaid: true,
+    plantuml: true,
+    playground: {
+      presets: ["ts", "vue", "unocss"],
+    },
+    sandpack: true,
+    vuePlayground: true,
   },
 
   plugins: {
     components: {
       components: ["Badge", "VPCard"],
-    },
-
-    mdEnhance: {
-      chart: true,
-      demo: true,
-      echarts: true,
-      flowchart: true,
-      kotlinPlayground: true,
-      markmap: true,
-      mermaid: true,
-      plantuml: true,
-      playground: {
-        presets: ["ts", "vue", "unocss"],
-      },
-      sandpack: true,
-      vuePlayground: true,
     },
   },
 });
