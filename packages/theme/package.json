@@ -1,6 +1,6 @@
 {
   "name": "vuepress-theme-hope",
-  "version": "2.0.0-rc.59",
+  "version": "2.0.0-rc.60",
   "description": "A light vuepress theme with tons of features",
   "keywords": [
     "vuepress",
@@ -78,8 +78,8 @@
     "@vuepress/plugin-copyright": "2.0.0-rc.63",
     "@vuepress/plugin-git": "2.0.0-rc.62",
     "@vuepress/plugin-links-check": "2.0.0-rc.63",
-    "@vuepress/plugin-markdown-hint": "2.0.0-rc.63",
     "@vuepress/plugin-markdown-ext": "2.0.0-rc.63",
+    "@vuepress/plugin-markdown-hint": "2.0.0-rc.63",
     "@vuepress/plugin-markdown-image": "2.0.0-rc.63",
     "@vuepress/plugin-markdown-include": "2.0.0-rc.63",
     "@vuepress/plugin-markdown-math": "2.0.0-rc.63",

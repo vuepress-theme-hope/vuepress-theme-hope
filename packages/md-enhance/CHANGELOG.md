@@ -4,6 +4,19 @@ All notable changes to this project will be documented in this file. See [Conven
 
 <!-- #region recent-change -->
 
+## [2.0.0-rc.60](https://github.com/vuepress-theme-hope/vuepress-theme-hope/compare/v2.0.0-rc.59...v2.0.0-rc.60) (2024-12-06)
+
+### ⚠ BREAKING CHANGES
+
+- replace plugins with official ones and rebuild markdown options (#4553)
+
+### ✨ Features
+
+- **md-enhance:** support more diagrams ([124093d](https://github.com/vuepress-theme-hope/vuepress-theme-hope/commit/124093d4374fc113f03e23eea2ebd865d8f16abc))
+- replace plugins with official ones and rebuild markdown options ([#4553](https://github.com/vuepress-theme-hope/vuepress-theme-hope/issues/4553)) ([22787ac](https://github.com/vuepress-theme-hope/vuepress-theme-hope/commit/22787ac127e25c078638b854eec74f2caa44598c))
+
+<!-- #region recent-change -->
+
 ## 2.0.0-rc.59 (2024-10-21)
 
 - chore: bump deps ([6da06cf](https://github.com/vuepress-theme-hope/vuepress-theme-hope/commit/6da06cf))

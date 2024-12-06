@@ -1,6 +1,6 @@
 {
   "npmClient": "pnpm",
-  "version": "2.0.0-rc.59",
+  "version": "2.0.0-rc.60",
   "command": {
     "version": {
       "allowBranch": "main",

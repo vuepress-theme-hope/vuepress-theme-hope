@@ -4,6 +4,31 @@ All notable changes to this project will be documented in this file. See [Conven
 
 <!-- #region recent-change -->
 
+## [2.0.0-rc.60](https://github.com/vuepress-theme-hope/vuepress-theme-hope/compare/v2.0.0-rc.59...v2.0.0-rc.60) (2024-12-06)
+
+### ⚠ BREAKING CHANGES
+
+- replace plugins with official ones and rebuild markdown options (#4553)
+
+### ✨ Features
+
+- **md-enhance:** support more diagrams ([124093d](https://github.com/vuepress-theme-hope/vuepress-theme-hope/commit/124093d4374fc113f03e23eea2ebd865d8f16abc))
+- replace plugins with official ones and rebuild markdown options ([#4553](https://github.com/vuepress-theme-hope/vuepress-theme-hope/issues/4553)) ([22787ac](https://github.com/vuepress-theme-hope/vuepress-theme-hope/commit/22787ac127e25c078638b854eec74f2caa44598c))
+- **theme:** add squircle-blogger-avatar preset ([#4614](https://github.com/vuepress-theme-hope/vuepress-theme-hope/issues/4614)) ([a4c1a79](https://github.com/vuepress-theme-hope/vuepress-theme-hope/commit/a4c1a791cb6ae340709b87adbba901625e1b3059))
+- **theme:** check dot keys in frontmatter ([568c783](https://github.com/vuepress-theme-hope/vuepress-theme-hope/commit/568c7830e1deb6bb7d533f90ac559ae91ff5a38e))
+- **theme:** evenly space between vp-blogger-name ([#4583](https://github.com/vuepress-theme-hope/vuepress-theme-hope/issues/4583)) ([10df7a9](https://github.com/vuepress-theme-hope/vuepress-theme-hope/commit/10df7a9292ea162c043ca2419c78905d1fa10e82))
+- **theme:** export useDarkmode api ([26aa81d](https://github.com/vuepress-theme-hope/vuepress-theme-hope/commit/26aa81d1295908b0df74f97302b9ed1c437e510e))
+- **theme:** improve navbar styles ([ce50cba](https://github.com/vuepress-theme-hope/vuepress-theme-hope/commit/ce50cba85696b8c8d09c005ba2075c0b4d3a73a8))
+
+### 🐛 Bug Fixes
+
+- **deps:** update dependency vidstack to v1.12.12 ([#4535](https://github.com/vuepress-theme-hope/vuepress-theme-hope/issues/4535)) ([ab4cfe7](https://github.com/vuepress-theme-hope/vuepress-theme-hope/commit/ab4cfe7eea2026ca562bee1db50600f22c8561c5))
+- **search-pro:** fix hotkey display, close [#4539](https://github.com/vuepress-theme-hope/vuepress-theme-hope/issues/4539) ([46f73e7](https://github.com/vuepress-theme-hope/vuepress-theme-hope/commit/46f73e72a7c1558d327eec85e1a3df299ab70886))
+- **theme:** fix styles with social media icons, close [#4584](https://github.com/vuepress-theme-hope/vuepress-theme-hope/issues/4584) ([77676b3](https://github.com/vuepress-theme-hope/vuepress-theme-hope/commit/77676b3d2eb1e4f176b2c798abdfe1a8e7980d25))
+- **theme:** fix toc layout shift on PC, close [#4611](https://github.com/vuepress-theme-hope/vuepress-theme-hope/issues/4611) ([2489301](https://github.com/vuepress-theme-hope/vuepress-theme-hope/commit/248930120bfac3aae6ff4326ca906dfebee3aeb0))
+
+<!-- #region recent-change -->
+
 ## 2.0.0-rc.59 (2024-10-21)
 
 - chore: bump deps ([6da06cf](https://github.com/vuepress-theme-hope/vuepress-theme-hope/commit/6da06cf))
