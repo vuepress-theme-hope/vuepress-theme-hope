@@ -56,7 +56,7 @@ The theme provides a lot of extended syntax support for Markdown, allowing you t
 
 - If you are a literature lover and want to place some essays, the theme provides [Custom Alignment](../markdown/stylize/align.md) and [footnote](../markdown/content/footnote.md).
 
-- To store some knowledge notes, the theme provides [Custom container](../markdown/stylize/hint.md), [Mark](../markdown/stylize/mark.md), [Task list](../markdown/grammar/tasklist.md) [mindmap](../markdown/chart/markmap.md) and [Tex](../markdown/grammar/tex.md) support.
+- To store some knowledge notes, the theme provides [Custom container](../markdown/stylize/hint.md), [Mark](../markdown/stylize/mark.md), [Task list](../markdown/grammar/tasklist.md) [mindmap](../markdown/chart/markmap.md) and [math](../markdown/grammar/math.md) support.
 
 - If you are a programmer and need to show a lot of codes and demos, this theme provides [multiple themes for code blocks](../markdown/code/fence.md#code-block-themes), [code tabs](../markdown/code/code-tabs.md) and [copy button for code blocks](../markdown/code/fence.md#copy-button). At the same time, we also provide the [Code Demo](../markdown/code/demo.md), [Playground](../markdown/code/playground.md), [Kotlin Playground](../markdown/code/kotlin-playground.md) and [Vue Playground](../markdown/code/vue-playground.md) functions, which is convenient for you to show your own Vue, React components or other demos and provide playground for visitors.
 

@@ -56,7 +56,7 @@ VuePress 在一定程度上扩展了 Markdown 语法，但仍然缺少一些常�
 
 - 我们对 [图片进行了一些内置增强](../markdown/grammar/image.md)。
 
-- 如果你希望存放一些知识笔记，主题提供了 [自定义容器](../markdown/stylize/hint.md)、[标记](../markdown/stylize/mark.md)、[任务列表](../markdown/grammar/tasklist.md)、[思维导图](../markdown/chart/markmap.md) 与 [公式](../markdown/grammar/tex.md) 支持。
+- 如果你希望存放一些知识笔记，主题提供了 [自定义容器](../markdown/stylize/hint.md)、[标记](../markdown/stylize/mark.md)、[任务列表](../markdown/grammar/tasklist.md)、[思维导图](../markdown/chart/markmap.md) 与 [数学公式](../markdown/grammar/math.md) 支持。
 
 - 如果你是一名程序员需要大量展示代码与 demo，本主题为代码块提供了[多种主题](../markdown/code/fence.md#代码主题)，[代码组](../markdown/code/code-tabs.md) 与 [代码块复制按钮](../markdown/code/fence.md#复制按钮)。同时我们还提供 [代码演示](../markdown/code/demo.md)，[Playground](../markdown/code/playground.md) [Kotlin Playground](../markdown/code/kotlin-playground.md) 和 [Vue Playground](../markdown/code/vue-playground.md) 功能，方便你展示自己的 Vue、React 组件或者其他 demo。
 

@@ -26,18 +26,18 @@ Support setting title, color scheme and size
 
 - [View Detail](./image.md)
 
-### Task List
-
-- [x] Plan A
-- [ ] Plan B
-
-[View Detail](./tasklist.md)
-
-### Tex
+### Math
 
 $$
 \frac {\partial^r} {\partial \omega^r} \left(\frac {y^{\omega}} {\omega}\right)
 = \left(\frac {y^{\omega}} {\omega}\right) \left\{(\log y)^r + \sum_{i=1}^r \frac {(-1)^i r \cdots (r-i+1) (\log y)^{r-i}} {\omega^i} \right\}
 $$
 
-- [View Detail](./tex.md)
+- [View Detail](./math.md)
+
+### Task List
+
+- [x] Plan A
+- [ ] Plan B
+
+[View Detail](./tasklist.md)

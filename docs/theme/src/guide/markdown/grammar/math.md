@@ -1,14 +1,14 @@
 ---
-title: TeX
+title: Math
 icon: square-root-variable
 category:
   - Markdown
 tag:
   - Markdown
-  - TEX
+  - Math
 ---
 
-the Markdown file in your VuePress site support the $\TeX$ syntax.
+Adds $\TeX$ support in your VuePress site.
 
 <!-- more -->
 

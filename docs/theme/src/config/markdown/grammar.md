@@ -158,7 +158,7 @@ Whether to enable tasklist format support. You can pass an object to config task
 
 - Default: `false`
 - Details:
-  - [Markdown → TeX](../../guide/markdown/grammar/tex.md)
+  - [Markdown → TeX](../../guide/markdown/grammar/math.md)
   - [@vuepress/plugin-markdown-math][math]
 
 Whether to enable math formula support. You can set `true` to auto detect the installed one of katex/mathjax, or provide plugin options.

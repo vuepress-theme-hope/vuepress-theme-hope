@@ -31,7 +31,7 @@ export default defineUserConfig({
 
 ::: tip
 
-The json block is optional, for config please see [config](../../../config/plugins/md-enhance.md#demo).
+The json block is optional, for config please see [config](../../../config/markdown/code.md#demo).
 
 :::
 

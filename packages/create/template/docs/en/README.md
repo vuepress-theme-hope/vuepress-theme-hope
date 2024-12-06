@@ -134,7 +134,7 @@ highlights:
       - title: Tex Support
         icon: square-root-variable
         details: Markdown now have Tex Support so you can write your formula
-        link: https://theme-hope.vuejs.press/guide/markdown/grammar/tex.html
+        link: https://theme-hope.vuejs.press/guide/markdown/grammar/math.html
 
       - title: Include snippet Support
         icon: fab fa-markdown
