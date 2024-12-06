@@ -13,15 +13,11 @@ All notable changes to this project will be documented in this file. See [Conven
 - feat(theme): improve toc ([65cbe1f](https://github.com/vuepress-theme-hope/vuepress-theme-hope/commit/65cbe1f))
 - fix(theme): fix code block in article excerpt, close #4497 #4498 ([6aed841](https://github.com/vuepress-theme-hope/vuepress-theme-hope/commit/6aed841)), closes [#4497](https://github.com/vuepress-theme-hope/vuepress-theme-hope/issues/4497) [#4498](https://github.com/vuepress-theme-hope/vuepress-theme-hope/issues/4498)
 
-<!-- #region recent-change -->
-
 ## [2.0.0-rc.58](https://github.com/vuepress-theme-hope/vuepress-theme-hope/compare/v2.0.0-rc.57...v2.0.0-rc.58) (2024-09-30)
 
 ### 🐛 Bug Fixes
 
 - **theme:** fix plugin compact ([89b6647](https://github.com/vuepress-theme-hope/vuepress-theme-hope/commit/89b6647c9e079deb7b85596a94b0a05b6f37587e))
-
-<!-- #region recent-change -->
 
 ## [2.0.0-rc.57](https://github.com/vuepress-theme-hope/vuepress-theme-hope/compare/v2.0.0-rc.56...v2.0.0-rc.57) (2024-09-30)
 
@@ -35,13 +31,9 @@ All notable changes to this project will be documented in this file. See [Conven
 
 - **theme:** make redirect plugin required ([1d325c6](https://github.com/vuepress-theme-hope/vuepress-theme-hope/commit/1d325c63e24d34c15de56fd0a815a72279268bfc))
 
-<!-- #region recent-change -->
-
 ## [2.0.0-rc.56](https://github.com/vuepress-theme-hope/vuepress-theme-hope/compare/v2.0.0-rc.55...v2.0.0-rc.56) (2024-09-23)
 
 **Note:** Version bump only for package vuepress-theme-hope
-
-<!-- #region recent-change -->
 
 ## [2.0.0-rc.55](https://github.com/vuepress-theme-hope/vuepress-theme-hope/compare/v2.0.0-rc.54...v2.0.0-rc.55) (2024-09-23)
 
@@ -49,8 +41,6 @@ All notable changes to this project will be documented in this file. See [Conven
 
 - **theme:** fix bundled config file ([ed15353](https://github.com/vuepress-theme-hope/vuepress-theme-hope/commit/ed1535312112fcfe4e0e2bb877c610a5268a8d36))
 - **theme:** revealjs should be default disabled ([ce6c7ea](https://github.com/vuepress-theme-hope/vuepress-theme-hope/commit/ce6c7eaee2d1b00605b3a2415f1925ec5ac02edc))
-
-<!-- #region recent-change -->
 
 ## [2.0.0-rc.54](https://github.com/vuepress-theme-hope/vuepress-theme-hope/compare/v2.0.0-rc.53...v2.0.0-rc.54) (2024-09-23)
 
@@ -71,8 +61,6 @@ All notable changes to this project will be documented in this file. See [Conven
 - **theme:** improve navbar brand a11y ([21ca45f](https://github.com/vuepress-theme-hope/vuepress-theme-hope/commit/21ca45fa8f7d4025ffc672335d4a9d79472bba2c))
 - **theme:** update known plugins ([dcd5ee2](https://github.com/vuepress-theme-hope/vuepress-theme-hope/commit/dcd5ee294b5714c4c8231d4c56a6785d024dea59))
 
-<!-- #region recent-change -->
-
 ## [2.0.0-rc.53](https://github.com/vuepress-theme-hope/vuepress-theme-hope/compare/v2.0.0-rc.52...v2.0.0-rc.53) (2024-09-20)
 
 ### ✨ Features
@@ -86,8 +74,6 @@ All notable changes to this project will be documented in this file. See [Conven
 - **theme:** fix toc style, close [#4269](https://github.com/vuepress-theme-hope/vuepress-theme-hope/issues/4269) ([1f9b99f](https://github.com/vuepress-theme-hope/vuepress-theme-hope/commit/1f9b99f69fa338339efdfeb0060a2d2739dcd0dd))
 - **theme:** improve structure sidebar, close [#4351](https://github.com/vuepress-theme-hope/vuepress-theme-hope/issues/4351), [#4352](https://github.com/vuepress-theme-hope/vuepress-theme-hope/issues/4352) ([#4353](https://github.com/vuepress-theme-hope/vuepress-theme-hope/issues/4353)) ([3d56d25](https://github.com/vuepress-theme-hope/vuepress-theme-hope/commit/3d56d2514c672a91ddd0117561dfbe91e03b8ae5))
 
-<!-- #region recent-change -->
-
 ## [2.0.0-rc.52](https://github.com/vuepress-theme-hope/vuepress-theme-hope/compare/v2.0.0-rc.51...v2.0.0-rc.52) (2024-07-19)
 
 ### ✨ Features
@@ -99,8 +85,6 @@ All notable changes to this project will be documented in this file. See [Conven
 - **theme:** fix checkbox on firefox, close [#4267](https://github.com/vuepress-theme-hope/vuepress-theme-hope/issues/4267) ([2692a67](https://github.com/vuepress-theme-hope/vuepress-theme-hope/commit/2692a67f45db1682785c57fa54134237b4140131))
 - **theme:** hide sass warnings ([09d127b](https://github.com/vuepress-theme-hope/vuepress-theme-hope/commit/09d127b5bb4ae74d8ea77b4bb6e058c54b79fa14))
 
-<!-- #region recent-change -->
-
 ## [2.0.0-rc.51](https://github.com/vuepress-theme-hope/vuepress-theme-hope/compare/v2.0.0-rc.50...v2.0.0-rc.51) (2024-07-13)
 
 ### 🐛 Bug Fixes
@@ -109,21 +93,15 @@ All notable changes to this project will be documented in this file. See [Conven
 - **theme:** fix diff marker with line numbers, close [#4247](https://github.com/vuepress-theme-hope/vuepress-theme-hope/issues/4247) ([3248205](https://github.com/vuepress-theme-hope/vuepress-theme-hope/commit/324820503f08bf22e61d2f6db72d4677f751fd1a))
 - **theme:** fix navbar link style, close [#4246](https://github.com/vuepress-theme-hope/vuepress-theme-hope/issues/4246) ([9514e8a](https://github.com/vuepress-theme-hope/vuepress-theme-hope/commit/9514e8a773a2e82e4382d94a1368dce67700b2fd))
 
-<!-- #region recent-change -->
-
 ## [2.0.0-rc.50](https://github.com/vuepress-theme-hope/vuepress-theme-hope/compare/v2.0.0-rc.49...v2.0.0-rc.50) (2024-06-21)
 
 **Note:** Version bump only for package vuepress-theme-hope
-
-<!-- #region recent-change -->
 
 ## [2.0.0-rc.49](https://github.com/vuepress-theme-hope/vuepress-theme-hope/compare/v2.0.0-rc.48...v2.0.0-rc.49) (2024-06-18)
 
 ### 🐛 Bug Fixes
 
 - **theme:** fix navbar active state ([db398eb](https://github.com/vuepress-theme-hope/vuepress-theme-hope/commit/db398eb3b0adde11922acb1b905f5d89ed6f1836))
-
-<!-- #region recent-change -->
 
 ## [2.0.0-rc.48](https://github.com/vuepress-theme-hope/vuepress-theme-hope/compare/v2.0.0-rc.47...v2.0.0-rc.48) (2024-06-04)
 

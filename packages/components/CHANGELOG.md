@@ -10,8 +10,6 @@ All notable changes to this project will be documented in this file. See [Conven
 - chore: bump deps ([52867bf](https://github.com/vuepress-theme-hope/vuepress-theme-hope/commit/52867bf))
 - chore: update deps ([07a6417](https://github.com/vuepress-theme-hope/vuepress-theme-hope/commit/07a6417))
 
-<!-- #region recent-change -->
-
 ## [2.0.0-rc.57](https://github.com/vuepress-theme-hope/vuepress-theme-hope/compare/v2.0.0-rc.56...v2.0.0-rc.57) (2024-09-30)
 
 ### ✨ Features
@@ -21,8 +19,6 @@ All notable changes to this project will be documented in this file. See [Conven
 ### 🐛 Bug Fixes
 
 - **components:** stop warn optional deps ([ed0a9e3](https://github.com/vuepress-theme-hope/vuepress-theme-hope/commit/ed0a9e31eac34907bd20f53dbae9de1ebf4455b1))
-
-<!-- #region recent-change -->
 
 ## [2.0.0-rc.54](https://github.com/vuepress-theme-hope/vuepress-theme-hope/compare/v2.0.0-rc.53...v2.0.0-rc.54) (2024-09-23)
 
@@ -35,8 +31,6 @@ All notable changes to this project will be documented in this file. See [Conven
 - **theme:** allow auto generating theme color ([003153f](https://github.com/vuepress-theme-hope/vuepress-theme-hope/commit/003153faacf8f95dca73b36de51c7e4ba5c61fec))
 - use official plugins and remove md-enhance features ([#4469](https://github.com/vuepress-theme-hope/vuepress-theme-hope/issues/4469)) ([99f5159](https://github.com/vuepress-theme-hope/vuepress-theme-hope/commit/99f51595991189f49f6330d6732ee1aef467dfc5))
 
-<!-- #region recent-change -->
-
 ## [2.0.0-rc.53](https://github.com/vuepress-theme-hope/vuepress-theme-hope/compare/v2.0.0-rc.52...v2.0.0-rc.53) (2024-09-20)
 
 ### ✨ Features
@@ -44,15 +38,11 @@ All notable changes to this project will be documented in this file. See [Conven
 - apply guidelines ([ea175e6](https://github.com/vuepress-theme-hope/vuepress-theme-hope/commit/ea175e6520b4ec9ab53373b4e7fc2770afcb663b))
 - implement theme guidelines and use official plugins ([#4453](https://github.com/vuepress-theme-hope/vuepress-theme-hope/issues/4453)) ([6ad693a](https://github.com/vuepress-theme-hope/vuepress-theme-hope/commit/6ad693a905fdced0f7a47ff423ed3e086d8ebd17))
 
-<!-- #region recent-change -->
-
 ## [2.0.0-rc.52](https://github.com/vuepress-theme-hope/vuepress-theme-hope/compare/v2.0.0-rc.51...v2.0.0-rc.52) (2024-07-19)
 
 ### ✨ Features
 
 - update deps ([ab785f0](https://github.com/vuepress-theme-hope/vuepress-theme-hope/commit/ab785f02513a815698e85a979383c61c5ce6d074))
-
-<!-- #region recent-change -->
 
 ## [2.0.0-rc.51](https://github.com/vuepress-theme-hope/vuepress-theme-hope/compare/v2.0.0-rc.50...v2.0.0-rc.51) (2024-07-13)
 
@@ -65,19 +55,13 @@ All notable changes to this project will be documented in this file. See [Conven
 - **components:** use no-external-link-icon for SiteInfo ([f915322](https://github.com/vuepress-theme-hope/vuepress-theme-hope/commit/f915322f9d62369a3c303e2fda2172eb88695aa1))
 - **components:** fix site info ([60c6013](https://github.com/vuepress-theme-hope/vuepress-theme-hope/commit/60c60138a6dd8cea563b0115eaba1903406f5edf))
 
-<!-- #region recent-change -->
-
 ## [2.0.0-rc.50](https://github.com/vuepress-theme-hope/vuepress-theme-hope/compare/v2.0.0-rc.49...v2.0.0-rc.50) (2024-06-21)
 
 **Note:** Version bump only for package vuepress-plugin-components
 
-<!-- #region recent-change -->
-
 ## [2.0.0-rc.49](https://github.com/vuepress-theme-hope/vuepress-theme-hope/compare/v2.0.0-rc.48...v2.0.0-rc.49) (2024-06-18)
 
 **Note:** Version bump only for package vuepress-plugin-components
-
-<!-- #region recent-change -->
 
 ## [2.0.0-rc.48](https://github.com/vuepress-theme-hope/vuepress-theme-hope/compare/v2.0.0-rc.47...v2.0.0-rc.48) (2024-06-04)
 

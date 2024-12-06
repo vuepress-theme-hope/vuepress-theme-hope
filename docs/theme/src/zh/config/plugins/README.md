@@ -2,7 +2,7 @@
 title: 插件配置
 icon: puzzle-piece
 dir:
-  order: 4
+  order: 5
 ---
 
 ::: warning 通过主题使用主题插件

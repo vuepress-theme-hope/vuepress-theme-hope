@@ -1,6 +1,7 @@
 ---
 title: Code Tabs
 icon: code
+order: 2
 category:
   - Markdown
 tag:
@@ -14,18 +15,17 @@ The theme provides you code tabs support.
 
 ## Settings
 
-```js {7} title=".vuepress/config.js"
+```ts {7} title=".vuepress/config.ts"
+import { defineUserConfig } from "vuepress";
 import { hopeTheme } from "vuepress-theme-hope";
 
-export default {
+export default defineUserConfig({
   theme: hopeTheme({
-    plugins: {
-      markdownTab: {
-        codeTabs: true,
-      },
+    markdown: {
+      codeTabs: true,
     },
   }),
-};
+});
 ```
 
 ## Usage

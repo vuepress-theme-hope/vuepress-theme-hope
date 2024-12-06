@@ -23,15 +23,13 @@ $vp-c-accent-hover: (
   dark: color.change($_theme_color_dark, $lightness: 45%, $alpha: 1),
 ) !default;
 $vp-c-accent-soft: (
-  light:
-    color.change(
+  light: color.change(
       $_theme_color_light,
       $lightness: 40%,
       $saturation: 80%,
       $alpha: 0.14
     ),
-  dark:
-    color.change(
+  dark: color.change(
       $_theme_color_dark,
       $lightness: 40%,
       $saturation: 80%,

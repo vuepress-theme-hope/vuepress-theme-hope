@@ -14,25 +14,24 @@ Improve image syntax in Markdown to support color scheme and size.
 
 ## Settings
 
-```js {8,10,12,14} title=".vuepress/config.js"
+```ts {8,10,12,14} title=".vuepress/config.ts"
+import { defineUserConfig } from "vuepress";
 import { hopeTheme } from "vuepress-theme-hope";
 
-export default {
+export default defineUserConfig({
   theme: hopeTheme({
-    plugins: {
-      mdEnhance: {
-        // Enable figure
-        figure: true,
-        // Enable image lazyload
-        imgLazyload: true,
-        // Enable image mark
-        imgMark: true,
-        // Enable image size
-        imgSize: true,
-      },
+    markdown: {
+      // Enable figure
+      figure: true,
+      // Enable image lazyload
+      imgLazyload: true,
+      // Enable image mark
+      imgMark: true,
+      // Enable image size
+      imgSize: true,
     },
   }),
-};
+});
 ```
 
 ## Image Lazyload
@@ -43,9 +42,9 @@ This feature enables lazyload with native HTML5, so your browser must support [l
 
 This feature allows you to mark images with `#light` and `#dark` suffix to display them in a specific color scheme.
 
-::: md-demo Image mark demo
+<ColorModeSwitch /> 👈 Try to toggle theme mode
 
-<ColorModeSwitch /> (Try to toggle theme mode)
+::: md-demo Image mark demo
 
 ![GitHub Light](/assets/image/github-light.svg#dark)
 ![GitHub Dark](/assets/image/github-dark.svg#light)
@@ -54,15 +53,24 @@ This feature allows you to mark images with `#light` and `#dark` suffix to displ
 
 ### Advanced
 
-You can pass an object to `plugins.markdownImage.mark` to config ID marks, available options are:
+You can pass an object to `markdown.imgMark` to config ID marks:
 
-```ts
-interface ImageMarkOptions {
-  /** lightmode only IDs */
-  light?: string[];
-  /** darkmode only IDs */
-  dark?: string[];
-}
+```ts {9,11} title=".vuepress/config.ts"
+import { defineUserConfig } from "vuepress";
+import { hopeTheme } from "vuepress-theme-hope";
+
+export default defineUserConfig({
+  theme: hopeTheme({
+    markdown: {
+      imgMark: {
+        /** lightmode only IDs */
+        light: ["light"],
+        /** darkmode only IDs */
+        dark: ["dark"],
+      },
+    },
+  }),
+});
 ```
 
 ## Image Size

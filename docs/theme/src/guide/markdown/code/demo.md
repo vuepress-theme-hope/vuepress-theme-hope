@@ -14,25 +14,24 @@ Let you insert code demos in your Markdown file.
 
 ## Settings
 
-```js {7} title=".vuepress/config.js"
+```ts {7} title=".vuepress/config.ts"
+import { defineUserConfig } from "vuepress";
 import { hopeTheme } from "vuepress-theme-hope";
 
-export default {
+export default defineUserConfig({
   theme: hopeTheme({
-    plugins: {
-      mdEnhance: {
-        demo: true,
-      },
+    markdown: {
+      demo: true,
     },
   }),
-};
+});
 ```
 
 <!-- @include: @md-enhance/guide/code/demo/README.md#syntax -->
 
 ::: tip
 
-The json block is optional, for config please see [config](../../../config/plugins/md-enhance.md#demo).
+The json block is optional, for config please see [config](../../../config/markdown/code.md#demo).
 
 :::
 

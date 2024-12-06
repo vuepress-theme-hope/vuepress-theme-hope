@@ -11,31 +11,21 @@ All notable changes to this project will be documented in this file. See [Conven
 - chore: update deps ([07a6417](https://github.com/vuepress-theme-hope/vuepress-theme-hope/commit/07a6417))
 - fix(deps): update dependency @inquirer/prompts to v7 (#4508) ([0e8da76](https://github.com/vuepress-theme-hope/vuepress-theme-hope/commit/0e8da76)), closes [#4508](https://github.com/vuepress-theme-hope/vuepress-theme-hope/issues/4508)
 
-<!-- #region recent-change -->
-
 ## [2.0.0-rc.58](https://github.com/vuepress-theme-hope/vuepress-theme-hope/compare/v2.0.0-rc.57...v2.0.0-rc.58) (2024-09-30)
 
 **Note:** Version bump only for package create-vuepress-theme-hope
-
-<!-- #region recent-change -->
 
 ## [2.0.0-rc.57](https://github.com/vuepress-theme-hope/vuepress-theme-hope/compare/v2.0.0-rc.56...v2.0.0-rc.57) (2024-09-30)
 
 **Note:** Version bump only for package create-vuepress-theme-hope
 
-<!-- #region recent-change -->
-
 ## [2.0.0-rc.56](https://github.com/vuepress-theme-hope/vuepress-theme-hope/compare/v2.0.0-rc.55...v2.0.0-rc.56) (2024-09-23)
 
 **Note:** Version bump only for package create-vuepress-theme-hope
 
-<!-- #region recent-change -->
-
 ## [2.0.0-rc.55](https://github.com/vuepress-theme-hope/vuepress-theme-hope/compare/v2.0.0-rc.54...v2.0.0-rc.55) (2024-09-23)
 
 **Note:** Version bump only for package create-vuepress-theme-hope
-
-<!-- #region recent-change -->
 
 ## [2.0.0-rc.54](https://github.com/vuepress-theme-hope/vuepress-theme-hope/compare/v2.0.0-rc.53...v2.0.0-rc.54) (2024-09-23)
 
@@ -48,23 +38,17 @@ All notable changes to this project will be documented in this file. See [Conven
 - **create:** update template ([13e0519](https://github.com/vuepress-theme-hope/vuepress-theme-hope/commit/13e051969bb5d3c37bb4a169c2e19a5cdea0d0a0))
 - use official plugins and remove md-enhance features ([#4469](https://github.com/vuepress-theme-hope/vuepress-theme-hope/issues/4469)) ([99f5159](https://github.com/vuepress-theme-hope/vuepress-theme-hope/commit/99f51595991189f49f6330d6732ee1aef467dfc5))
 
-<!-- #region recent-change -->
-
 ## [2.0.0-rc.53](https://github.com/vuepress-theme-hope/vuepress-theme-hope/compare/v2.0.0-rc.52...v2.0.0-rc.53) (2024-09-20)
 
 ### ✨ Features
 
 - implement theme guidelines and use official plugins ([#4453](https://github.com/vuepress-theme-hope/vuepress-theme-hope/issues/4453)) ([6ad693a](https://github.com/vuepress-theme-hope/vuepress-theme-hope/commit/6ad693a905fdced0f7a47ff423ed3e086d8ebd17))
 
-<!-- #region recent-change -->
-
 ## [2.0.0-rc.52](https://github.com/vuepress-theme-hope/vuepress-theme-hope/compare/v2.0.0-rc.51...v2.0.0-rc.52) (2024-07-19)
 
 ### ✨ Features
 
 - update deps ([ab785f0](https://github.com/vuepress-theme-hope/vuepress-theme-hope/commit/ab785f02513a815698e85a979383c61c5ce6d074))
-
-<!-- #region recent-change -->
 
 ## [2.0.0-rc.51](https://github.com/vuepress-theme-hope/vuepress-theme-hope/compare/v2.0.0-rc.50...v2.0.0-rc.51) (2024-07-13)
 
@@ -77,19 +61,13 @@ All notable changes to this project will be documented in this file. See [Conven
 - **deps:** update dependency inquirer to v9.3.2 ([#4244](https://github.com/vuepress-theme-hope/vuepress-theme-hope/issues/4244)) ([891e31b](https://github.com/vuepress-theme-hope/vuepress-theme-hope/commit/891e31b93268416256f8941624fa31b27efeb518))
 - **deps:** update dependency inquirer to v9.3.4 ([#4253](https://github.com/vuepress-theme-hope/vuepress-theme-hope/issues/4253)) ([e25340b](https://github.com/vuepress-theme-hope/vuepress-theme-hope/commit/e25340b3576c59f77ada45547ceace6c8b495a7f))
 
-<!-- #region recent-change -->
-
 ## [2.0.0-rc.50](https://github.com/vuepress-theme-hope/vuepress-theme-hope/compare/v2.0.0-rc.49...v2.0.0-rc.50) (2024-06-21)
 
 **Note:** Version bump only for package create-vuepress-theme-hope
 
-<!-- #region recent-change -->
-
 ## [2.0.0-rc.49](https://github.com/vuepress-theme-hope/vuepress-theme-hope/compare/v2.0.0-rc.48...v2.0.0-rc.49) (2024-06-18)
 
 **Note:** Version bump only for package create-vuepress-theme-hope
-
-<!-- #region recent-change -->
 
 ## [2.0.0-rc.48](https://github.com/vuepress-theme-hope/vuepress-theme-hope/compare/v2.0.0-rc.47...v2.0.0-rc.48) (2024-06-04)
 

@@ -20,13 +20,14 @@
     background: rgb(0 0 0 / 25%);
   }
 
-  .search-pro-button {
-    border-color: transparent;
-    background-color: transparent;
-  }
-
+  // styles for search plugins
   // stylelint-disable-next-line selector-class-pattern
   .DocSearch-Button {
     background: transparent;
+  }
+
+  .slimsearch-button {
+    border-color: transparent;
+    background-color: transparent;
   }
 }

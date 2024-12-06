@@ -78,6 +78,7 @@ ${imports.join("\n")}
 
 import "${getRealPath("@vuepress/helper/colors.css", url)}";
 import "${getRealPath("@vuepress/helper/normalize.css", url)}";
+import "${getRealPath("@vuepress/helper/sr-only.css", url)}";
 import "${CLIENT_FOLDER}styles/index.scss";
 
 ${actions.join("\n")}

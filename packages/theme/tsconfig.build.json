@@ -14,7 +14,6 @@
   "references": [
     { "path": "../components/tsconfig.build.json" },
     { "path": "../md-enhance/tsconfig.build.json" },
-    { "path": "../search-pro/tsconfig.build.json" },
     { "path": "../shared/tsconfig.build.json" }
   ]
 }

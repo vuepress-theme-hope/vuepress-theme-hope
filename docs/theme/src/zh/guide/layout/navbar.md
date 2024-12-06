@@ -30,7 +30,7 @@ tag:
 
 配置导航栏最简单的方式，是依次填入需要展示的页面文件的路径，这样导航栏的文字、图标和链接会自动通过对应文件生成。
 
-```js {6} title=".vuepress/config.js"
+```ts {6} title=".vuepress/config.ts"
 import { defineUserConfig } from "vuepress";
 import { hopeTheme } from "vuepress-theme-hope";
 

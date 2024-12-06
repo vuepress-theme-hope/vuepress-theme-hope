@@ -1,4 +1,4 @@
-import type { PropType, VNode } from "vue";
+import type { CSSProperties, PropType, VNode } from "vue";
 import {
   defineComponent,
   h,
@@ -55,7 +55,7 @@ export default defineComponent({
 
     /** Hero image style */
     imageStyle: {
-      type: [String, Object] as PropType<string | Record<string, string>>,
+      type: [String, Object] as PropType<string | CSSProperties>,
       default: null,
     },
   },

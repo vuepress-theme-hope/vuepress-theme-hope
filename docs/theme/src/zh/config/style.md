@@ -1,7 +1,7 @@
 ---
 title: 样式配置
 icon: wand-magic-sparkles
-order: 6
+order: 7
 category:
   - 配置
 tag:

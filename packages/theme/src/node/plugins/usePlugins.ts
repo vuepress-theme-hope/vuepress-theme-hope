@@ -7,7 +7,11 @@ import { useGitPlugin } from "./git.js";
 import { useExtendsPagePlugin } from "./pageConverter.js";
 import { usePrismjsPlugin } from "./prismjs.js";
 import { useShikiPlugin } from "./shiki.js";
-import type { PluginsOptions, ThemeData } from "../../shared/index.js";
+import type {
+  MarkdownOptions,
+  PluginsOptions,
+  ThemeData,
+} from "../../shared/index.js";
 import type { HopeThemeBehaviorOptions } from "../typings/index.js";
 import { TEMPLATE_FOLDER } from "../utils.js";
 
@@ -19,6 +23,7 @@ import { TEMPLATE_FOLDER } from "../utils.js";
 export const usePlugins = (
   app: App,
   themeData: ThemeData,
+  { highlighter }: MarkdownOptions,
   plugins: PluginsOptions,
   hotReload: boolean,
   behavior: HopeThemeBehaviorOptions,
@@ -34,9 +39,16 @@ export const usePlugins = (
       isPlainObject(plugins.readingTime) ? plugins.readingTime : {},
     );
 
-  if (plugins.shiki !== false && !plugins.prismjs)
-    useShikiPlugin(app, plugins.shiki);
-  else if (plugins.prismjs) usePrismjsPlugin(app, plugins.prismjs);
+  if (isPlainObject(highlighter)) {
+    if (highlighter.type === "prismjs") usePrismjsPlugin(app, highlighter);
+    else useShikiPlugin(app, highlighter);
+  } else if (highlighter !== false) {
+    if (highlighter === "prismjs") {
+      usePrismjsPlugin(app);
+    } else {
+      useShikiPlugin(app);
+    }
+  }
 
   useSassPalettePlugin(app, {
     id: "hope",

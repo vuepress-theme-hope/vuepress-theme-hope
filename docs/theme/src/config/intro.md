@@ -26,7 +26,7 @@ In VuePress, there are three config concepts:
 
 ## Theme Usage
 
-```js title=".vuepress/config.js"
+```ts title=".vuepress/config.ts"
 import { defineUserConfig } from "vuepress";
 import { hopeTheme } from "vuepress-theme-hope";
 

@@ -1,5 +1,5 @@
 ---
-title: Markdown Enhance
+title: Markdown
 icon: fab fa-markdown
 index: false
 dir:

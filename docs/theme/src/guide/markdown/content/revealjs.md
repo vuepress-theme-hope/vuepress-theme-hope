@@ -40,16 +40,17 @@ npm i -D @vuepress/plugin-revealjs@next
 
 Then enabling via:
 
-```js {6} title=".vuepress/config.js"
+```ts {7} title=".vuepress/config.ts"
+import { defineUserConfig } from "vuepress";
 import { hopeTheme } from "vuepress-theme-hope";
 
-export default {
+export default defineUserConfig({
   theme: hopeTheme({
-    plugins: {
+    markdown: {
       revealjs: true,
     },
   }),
-};
+});
 ```
 
 ## Slide Syntax

@@ -59,6 +59,13 @@ export default theme("components", {
     },
   },
 
+  markdown: {
+    codeTabs: true,
+    imgMark: true,
+    include: true,
+    demo: true,
+  },
+
   plugins: {
     components: {
       components: [
@@ -89,19 +96,6 @@ export default theme("components", {
           services: AVAILABLE_SERVICES,
         },
       },
-    },
-
-    markdownImage: {
-      mark: true,
-    },
-
-    markdownTab: {
-      codeTabs: true,
-    },
-
-    mdEnhance: {
-      demo: true,
-      include: true,
     },
   },
 });

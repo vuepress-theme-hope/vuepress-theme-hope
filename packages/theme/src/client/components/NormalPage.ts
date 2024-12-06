@@ -15,7 +15,7 @@ import { useDarkmode } from "@theme-hope/modules/outlook/composables/index";
 
 import type { ThemeNormalPageFrontmatter } from "../../shared/index.js";
 
-import "../styles/page.scss";
+import "../styles/normal-page.scss";
 
 export default defineComponent({
   name: "NormalPage",

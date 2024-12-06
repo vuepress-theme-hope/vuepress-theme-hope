@@ -79,7 +79,7 @@ highlights:
       - title: Superscript and subscript
         icon: superscript
         details: Inserting superscript and subscript
-        link: ./guide/markdown/grammar/sup-sub.html
+        link: ./guide/markdown/stylize/sup-sub.html
 
       - title: Footnote
         icon: quote-left
@@ -139,7 +139,7 @@ highlights:
       - title: Tex Support
         icon: square-root-variable
         details: Markdown now have Tex Support so you can write your formula
-        link: ./guide/markdown/grammar/tex.html
+        link: ./guide/markdown/grammar/math.html
 
       - title: Include snippet Support
         icon: fab fa-markdown

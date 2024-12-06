@@ -10,18 +10,17 @@ tag:
 
 <!-- @include: @md-enhance/guide/chart/markmap.md#before -->
 
-```js {7} title=".vuepress/config.js"
+```ts {7} title=".vuepress/config.ts"
+import { defineUserConfig } from "vuepress";
 import { hopeTheme } from "vuepress-theme-hope";
 
-export default {
+export default defineUserConfig({
   theme: hopeTheme({
-    plugins: {
-      mdEnhance: {
-        markmap: true,
-      },
+    markdown: {
+      markmap: true,
     },
   }),
-};
+});
 ```
 
 <!-- @include: @md-enhance/guide/chart/markmap.md#after -->

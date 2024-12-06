@@ -1,0 +1,35 @@
+@use "wrapper";
+
+.vp-page {
+  display: block;
+  flex-grow: 1;
+  padding-bottom: 2rem;
+  transition: padding var(--vp-t-transform);
+
+  // ensure page margin
+  @media print {
+    min-height: auto !important;
+    margin: 0 !important;
+    padding: 0 !important;
+  }
+}
+
+.page-cover {
+  width: var(--content-width);
+  margin-inline: auto;
+
+  @media (max-width: hope-config.$tablet) {
+    width: 100%;
+  }
+
+  img {
+    object-fit: cover;
+    width: 100%;
+    max-height: 25vh;
+    border-radius: 0.5rem;
+
+    @media (max-width: hope-config.$tablet) {
+      border-radius: 0;
+    }
+  }
+}

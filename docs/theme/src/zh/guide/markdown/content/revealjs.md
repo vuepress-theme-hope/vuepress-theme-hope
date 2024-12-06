@@ -40,16 +40,17 @@ npm i -D @vuepress/plugin-revealjs@next
 
 之后启用它:
 
-```js {6} title=".vuepress/config.js"
+```ts {7} title=".vuepress/config.ts"
+import { defineUserConfig } from "vuepress";
 import { hopeTheme } from "vuepress-theme-hope";
 
-export default {
+export default defineUserConfig({
   theme: hopeTheme({
-    plugins: {
+    markdown: {
       revealjs: true,
     },
   }),
-};
+});
 ```
 
 ## 幻灯片语法

@@ -48,11 +48,11 @@ npm i -D @vue/repl
 <!-- #endregion settings -->
 
 ```js {7} title=".vuepress/config.js"
-import { mdEnhance } from "vuepress-plugin-md-enhance";
+import { mdEnhancePlugin } from "vuepress-plugin-md-enhance";
 
 export default {
   plugins: [
-    mdEnhance({
+    mdEnhancePlugin({
       // 启用 vue 交互演示
       vuePlayground: true,
     }),

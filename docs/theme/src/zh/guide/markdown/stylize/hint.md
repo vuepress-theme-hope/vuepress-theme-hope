@@ -1,6 +1,7 @@
 ---
 title: 提示容器
 icon: box-open
+order: 1
 category:
   - Markdown
 tag:
@@ -14,19 +15,20 @@ tag:
 
 ## 配置
 
-```js {8} title=".vuepress/config.js"
+提示容器默认启用，你可以禁用它:
+
+```ts {8} title=".vuepress/config.ts"
+import { defineUserConfig } from "vuepress";
 import { hopeTheme } from "vuepress-theme-hope";
 
-export default {
+export default defineUserConfig({
   theme: hopeTheme({
-    plugins: {
-      markdownHint: {
-        // 这就是默认选项，所以你可以直接使用此功能
-        hint: true,
-      },
+    markdown: {
+      // 禁用提示容器
+      hint: false,
     },
   }),
-};
+});
 ```
 
 ## 演示

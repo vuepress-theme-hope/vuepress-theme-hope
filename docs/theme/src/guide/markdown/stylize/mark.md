@@ -14,18 +14,17 @@ Highlight content with `<mark>` tag in your VuePress site.
 
 ## Settings
 
-```js {7} title=".vuepress/config.js"
+```ts {7} title=".vuepress/config.ts"
+import { defineUserConfig } from "vuepress";
 import { hopeTheme } from "vuepress-theme-hope";
 
-export default {
+export default defineUserConfig({
   theme: hopeTheme({
-    plugins: {
-      mdEnhance: {
-        mark: true,
-      },
+    markdown: {
+      mark: true,
     },
   }),
-};
+});
 ```
 
 ## Syntax

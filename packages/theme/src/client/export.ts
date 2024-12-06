@@ -1,6 +1,6 @@
 export { default as HopeIcon } from "@theme-hope/components/HopeIcon";
 export {
-  // Note: This api is exposed to users
+  // Note: This api is exposed to users for accessing darkmode status
   useDarkmode,
   injectDarkmode,
   setupDarkmode,

@@ -14,18 +14,43 @@ Let the Markdown file in your VuePress site support footnotes.
 
 ## Settings
 
-```js {7} title=".vuepress/config.js"
+```ts {7} title=".vuepress/config.ts"
+import { defineUserConfig } from "vuepress";
 import { hopeTheme } from "vuepress-theme-hope";
 
-export default {
+export default defineUserConfig({
   theme: hopeTheme({
-    plugins: {
-      mdEnhance: {
-        footnote: true,
-      },
+    markdown: {
+      footnote: true,
     },
   }),
-};
+});
 ```
 
-<!-- @include: @md-enhance/guide/content/footnote.md#after -->
+## Syntax
+
+- Use `[^Anchor text]` in Markdown to define a footnote
+
+- Use `[^Anchor text]: ...` to describe footnote content
+
+- If there are multiple paragraphs in footnote, the paragraph show be double indented
+
+## Demo
+
+::: md-demo
+
+Footnote 1 link[^first].
+
+Footnote 2 link[^second].
+
+Inline footnote^[Text of inline footnote] definition.
+
+Duplicated footnote reference[^second].
+
+[^first]: Footnote **can have markup**
+
+    and multiple paragraphs.
+
+[^second]: Footnote text.
+
+:::

@@ -19,75 +19,40 @@ export default theme("md-enhance", {
     },
   },
 
+  markdown: {
+    codeTabs: true,
+    figure: true,
+    imgLazyload: true,
+    imgMark: true,
+    include: {
+      resolvePath: (file) => {
+        if (file.startsWith("@echarts"))
+          return file.replace(
+            "@echarts",
+            path.resolve(__dirname, "../echarts"),
+          );
+
+        return file;
+      },
+    },
+    chartjs: true,
+    demo: true,
+    echarts: true,
+    flowchart: true,
+    kotlinPlayground: true,
+    markmap: true,
+    mermaid: true,
+    plantuml: true,
+    playground: {
+      presets: ["ts", "vue", "unocss"],
+    },
+    sandpack: true,
+    vuePlayground: true,
+  },
+
   plugins: {
     components: {
       components: ["Badge", "VPCard"],
-    },
-
-    markdownImage: {
-      figure: true,
-      lazyload: true,
-      mark: true,
-    },
-
-    markdownTab: {
-      codeTabs: true,
-    },
-
-    mdEnhance: {
-      align: true,
-      attrs: true,
-      chart: true,
-      component: true,
-      demo: true,
-      echarts: true,
-      flowchart: true,
-      gfm: true,
-      include: {
-        resolvePath: (file) => {
-          if (file.startsWith("@echarts"))
-            return file.replace(
-              "@echarts",
-              path.resolve(__dirname, "../echarts"),
-            );
-
-          return file;
-        },
-      },
-      kotlinPlayground: true,
-      mark: true,
-      markmap: true,
-      mermaid: true,
-      plantuml: true,
-      playground: {
-        presets: ["ts", "vue", "unocss"],
-      },
-      sandpack: true,
-      spoiler: true,
-      stylize: [
-        {
-          matcher: "Recommended",
-          replacer: ({
-            tag,
-          }): {
-            tag: string;
-            attrs: Record<string, string>;
-            content: string;
-          } | void => {
-            if (tag === "em")
-              return {
-                tag: "Badge",
-                attrs: { type: "tip" },
-                content: "Recommended",
-              };
-          },
-        },
-      ],
-      sub: true,
-      sup: true,
-      tasklist: true,
-      vPre: true,
-      vuePlayground: true,
     },
   },
 });

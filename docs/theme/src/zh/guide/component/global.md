@@ -34,7 +34,7 @@ tag:
 
 你可以通过创建 `.vuepress/client.js` 或 `.vuepress/client.ts` 手动注册组件。
 
-```js title=".vuepress/config.js"
+```ts title=".vuepress/config.ts"
 import { defineClientConfig } from "vuepress/client";
 import MyComponent from "./MyComponent.vue";
 

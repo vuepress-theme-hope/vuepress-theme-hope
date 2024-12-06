@@ -1,6 +1,7 @@
 ---
 title: 代码块分组
 icon: code
+order: 2
 category:
   - Markdown
 tag:
@@ -14,18 +15,17 @@ tag:
 
 ## 配置
 
-```js {7} title=".vuepress/config.js"
+```ts {7} title=".vuepress/config.ts"
+import { defineUserConfig } from "vuepress";
 import { hopeTheme } from "vuepress-theme-hope";
 
-export default {
+export default defineUserConfig({
   theme: hopeTheme({
-    plugins: {
-      markdownTab: {
-        codeTabs: true,
-      },
+    markdown: {
+      codeTabs: true,
     },
   }),
-};
+});
 ```
 
 ## 使用

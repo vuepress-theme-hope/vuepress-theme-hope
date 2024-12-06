@@ -7,15 +7,18 @@ export interface IconProps {
   icon?: string | undefined;
   color?: string | undefined;
   size?: string | number | undefined;
+  verticalAlign?: string | undefined;
 }
 
 const HopeIcon: FunctionalComponent<IconProps> = (props) => {
-  const { icon = "", color, size } = props;
-  const style = color || size ? ({} as Record<string, string>) : null;
+  const { icon = "", color, size, verticalAlign } = props;
+  const style =
+    color || size || verticalAlign ? ({} as Record<string, string>) : null;
 
   if (color) style!.color = color;
   if (size)
     style!.height = Number.isNaN(Number(size)) ? (size as string) : `${size}px`;
+  if (verticalAlign) style!.verticalAlign = verticalAlign;
 
   return isLinkHttp(icon)
     ? h("img", {
@@ -38,5 +41,6 @@ const HopeIcon: FunctionalComponent<IconProps> = (props) => {
 };
 
 HopeIcon.displayName = "HopeIcon";
+HopeIcon.props = ["icon", "color", "size", "verticalAlign"];
 
 export default HopeIcon;

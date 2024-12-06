@@ -46,11 +46,11 @@ npm i -D sandpack-vue3
 <!-- #endregion before -->
 
 ```js {7} title=".vuepress/config.js"
-import { mdEnhance } from "vuepress-plugin-md-enhance";
+import { mdEnhancePlugin } from "vuepress-plugin-md-enhance";
 
 export default {
   plugins: [
-    mdEnhance({
+    mdEnhancePlugin({
       // 启用 Sandpack 交互演示
       sandpack: true,
     }),

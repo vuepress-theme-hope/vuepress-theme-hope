@@ -28,7 +28,7 @@ icon: code-compare
   新增 `chart` 选项提供 [chart.js](https://www.chartjs.org/docs/latest/) 支持
 
   ````md
-  ::: chart 标题
+  ::: chartjs 标题
 
   ```json
   {
@@ -38,7 +38,7 @@ icon: code-compare
 
   :::
 
-  ::: chart 标题
+  ::: chartjs 标题
 
   ```js
   const config = {

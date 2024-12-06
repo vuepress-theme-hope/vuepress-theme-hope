@@ -80,7 +80,7 @@ import { useStyleTag } from "${getRealPath("@vueuse/core/index.mjs", url)}";
 }\
 ${imports.join("\n")}
 
-import "${CLIENT_FOLDER}styles/sr-only.scss";
+import "${getRealPath("@vuepress/helper/sr-only.css", url)}";
 
 export default {
   enhance: ({ app }) => {

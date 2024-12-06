@@ -1,5 +1,5 @@
 import { isLinkExternal } from "@vuepress/helper/client";
-import type { FunctionalComponent } from "vue";
+import type { CSSProperties, FunctionalComponent } from "vue";
 import { h } from "vue";
 import { RouteLink, withBase } from "vuepress/client";
 
@@ -74,7 +74,7 @@ const VPCard: FunctionalComponent<CardProps> = ({
     ]),
   ];
 
-  const style: Record<string, string> = {};
+  const style: CSSProperties = {};
 
   if (background) style.background = background;
   if (color) style.color = color;
