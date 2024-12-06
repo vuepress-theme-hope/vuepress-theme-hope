@@ -1,6 +1,8 @@
 ---
 title: Markdown Config
 icon: fab fa-markdown
+dir:
+  order: 4
 category:
   - Config
 tag:

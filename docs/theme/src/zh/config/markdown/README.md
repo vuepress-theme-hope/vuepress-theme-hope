@@ -1,6 +1,8 @@
 ---
 title: Markdown 配置
 icon: fab fa-markdown
+dir:
+  order: 4
 category:
   - 配置
 tag:
