@@ -92,7 +92,7 @@
     "vite": "5.4.11",
     "vitest": "2.1.5"
   },
-  "packageManager": "pnpm@9.14.2",
+  "packageManager": "pnpm@9.15.0",
   "engines": {
     "node": ">=20"
   }
