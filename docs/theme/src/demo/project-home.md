@@ -60,11 +60,6 @@ features:
     details: Switch between light and dark modes freely
     link: /guide/interface/darkmode.html
 
-  - title: Full A11y support
-    icon: universal-access
-    details: Full support of accessibility in your site
-    link: /guide/interface/accessibility.html
-
   - title: Article Encryption
     icon: lock
     details: Encrypt you articles based on page links, so that only the one you want could see them

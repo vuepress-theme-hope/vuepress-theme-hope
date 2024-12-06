@@ -60,11 +60,6 @@ features:
     details: 可以自由切换浅色模式与深色模式
     link: /zh/guide/interface/darkmode.html
 
-  - title: 完整的无障碍支持
-    icon: universal-access
-    details: 为你的网站带来完整的无障碍支持
-    link: /zh/guide/interface/accessibility.html
-
   - title: 文章加密
     icon: lock
     details: 你可以为你的特定页面或特定目录进行加密，以便陌生人不能随意访问它们
