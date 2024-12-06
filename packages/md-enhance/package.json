@@ -74,7 +74,7 @@
     "@mdit/plugin-spoiler": "^0.13.1",
     "@mdit/plugin-stylize": "^0.13.3",
     "@mdit/plugin-sub": "^0.13.1",
-    "@mdit/plugin-sup": "^0.13.1",
+    "@mdit/plugin-sup": "^0.14.0",
     "@mdit/plugin-tasklist": "^0.13.1",
     "@mdit/plugin-uml": "^0.13.1",
     "@types/markdown-it": "^14.1.2",
