@@ -1,6 +1,7 @@
 ---
 title: Code Tabs
 icon: code
+order: 2
 category:
   - Markdown
 tag:

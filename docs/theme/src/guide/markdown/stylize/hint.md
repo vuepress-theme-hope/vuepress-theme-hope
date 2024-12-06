@@ -1,6 +1,7 @@
 ---
 title: Hint box
 icon: box-open
+order: 1
 category:
   - Markdown
 tag:

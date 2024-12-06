@@ -1,6 +1,7 @@
 ---
 title: Stylize
 icon: wand-magic-sparkles
+order: -1
 category:
   - Markdown
 tag:
