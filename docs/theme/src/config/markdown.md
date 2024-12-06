@@ -216,7 +216,7 @@ Whether to enable Markdown import support. You can pass in a function for path r
 - Default: `"shiki"`
 
 - Details:
-  - [Feature → Code Block](../guide/feature/code-block.md)
+  - [Feature → Code Block](../guide/markdown/code/fence.md)
 
 The markdown code block highlighter. You can choose `"prismjs"`, `"shiki"`, `false` or an object with `type` field declaring the highlighter name and other plugin options.
 
