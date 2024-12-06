@@ -21,8 +21,6 @@ All notable changes to this project will be documented in this file. See [Conven
 - docs: update changelog and security ([b89d8c1](https://github.com/vuepress-theme-hope/vuepress-theme-hope/commit/b89d8c1))
 - docs(theme): correct font docs, close #4505 ([65a618b](https://github.com/vuepress-theme-hope/vuepress-theme-hope/commit/65a618b)), closes [#4505](https://github.com/vuepress-theme-hope/vuepress-theme-hope/issues/4505)
 
-<!-- #region recent-change -->
-
 ## [2.0.0-rc.58](https://github.com/vuepress-theme-hope/vuepress-theme-hope/compare/v2.0.0-rc.57...v2.0.0-rc.58) (2024-09-30)
 
 ### 🐛 Bug Fixes
