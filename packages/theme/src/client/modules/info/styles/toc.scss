@@ -108,6 +108,11 @@ $headings: (2, 3, 4, 5, 6);
     height: auto;
     margin-top: 0.5rem;
     padding-bottom: 0.5rem;
+
+    @media (min-width: hope-config.$pc) {
+      margin-top: 0;
+      padding-bottom: 0;
+    }
   }
 
   &::-webkit-scrollbar-track-piece {
