@@ -1,5 +1,3 @@
-import { createRequire } from "node:module";
+import pkg from "../../package.json" with { type: "json" };
 
-export const { version } = createRequire(import.meta.url)(
-  "create-vuepress-theme-hope/package.json",
-) as Record<string, unknown> & { version: string };
+export const version = pkg.version;

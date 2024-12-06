@@ -1,13 +1,5 @@
-import { createRequire } from "node:module";
-
 import { navbar } from "docs-shared";
-import { fs } from "vuepress/utils";
-
-const { version } = fs.readJsonSync(
-  createRequire(import.meta.url).resolve(
-    "vuepress-plugin-md-enhance/package.json",
-  ),
-) as { version: string };
+import pkg from "vuepress-plugin-md-enhance/package.json" with { type: "json" };
 
 export const enNavbar = navbar([
   "/",
@@ -19,6 +11,11 @@ export const enNavbar = navbar([
   },
   "/config",
   "/demo",
+  {
+    text: pkg.version,
+    icon: "bookmark",
+    link: "",
+  },
 ]);
 
 export const zhNavbar = navbar([
@@ -32,14 +29,8 @@ export const zhNavbar = navbar([
   "/zh/config",
   "/zh/demo",
   {
-    text: version,
+    text: pkg.version,
     icon: "bookmark",
-    children: [
-      "/zh/migration",
-      {
-        text: "V1 文档",
-        link: "https://vuepress-theme-hope.github.io/v1/md-enhance/zh/",
-      },
-    ],
+    link: "",
   },
 ]);

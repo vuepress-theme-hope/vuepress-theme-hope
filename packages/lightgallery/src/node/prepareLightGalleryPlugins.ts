@@ -1,9 +1,7 @@
-import { getRealPath } from "@vuepress/helper";
+import { getModulePath } from "@vuepress/helper";
 import type { App } from "vuepress/core";
 
 import type { LightGalleryPlugin } from "./options.js";
-
-const { url } = import.meta;
 
 export const prepareLightGalleryPlugins = async (
   app: App,
@@ -11,14 +9,14 @@ export const prepareLightGalleryPlugins = async (
 ): Promise<void> => {
   const plugins = pluginNames.map(
     (pluginName) =>
-      `import(/* webpackChunkName: "lightgallery" */ "${getRealPath(
+      `import(/* webpackChunkName: "lightgallery" */ "${getModulePath(
         `lightgallery/plugins/${pluginName}/lg-${pluginName}.es5.js`,
-        url,
+        import.meta,
       )}")`,
   );
   const pluginsStyles = pluginNames.map(
     (pluginName) =>
-      `import "${getRealPath(`lightgallery/css/lg-${pluginName}.css`, url)}";`,
+      `import "${getModulePath(`lightgallery/css/lg-${pluginName}.css`, import.meta)}";`,
   );
 
   await app.writeTemp(

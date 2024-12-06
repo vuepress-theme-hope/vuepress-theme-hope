@@ -98,6 +98,10 @@ export const rollupBundle = (
         charset: "utf8",
         minify: isProduction,
         target: "node18",
+        loaders: {
+          // eslint-disable-next-line @typescript-eslint/naming-convention
+          ".json": "json",
+        },
       }),
       copyOptions.length
         ? copy({

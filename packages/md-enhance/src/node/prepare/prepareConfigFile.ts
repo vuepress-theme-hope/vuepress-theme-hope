@@ -1,10 +1,8 @@
-import { getRealPath } from "@vuepress/helper";
+import { getModulePath } from "@vuepress/helper";
 import type { App } from "vuepress/core";
 
 import type { MarkdownEnhancePluginOptions } from "../options.js";
 import { CLIENT_FOLDER } from "../utils.js";
-
-const { url } = import.meta;
 
 export const prepareConfigFile = async (
   app: App,
@@ -80,9 +78,9 @@ export const prepareConfigFile = async (
   if (status.sandpack) {
     imports.add(`import { defineAsyncComponent } from "vue";`);
     imports.add(
-      `import { LoadingIcon } from "${getRealPath(
+      `import { LoadingIcon } from "${getModulePath(
         "@vuepress/helper/client",
-        url,
+        import.meta,
       )}";`,
     );
     imports.add(
