@@ -49,6 +49,12 @@ Icon name
 
 图标大小。
 
+### verticalAlign
+
+- 类型: `string`
+
+图标的垂直对齐方式。
+
 ## 全局设置
 
 你可以通过 `componentsOptions.fontIcon.assets` 和 `componentsOptions.fontIcon.prefix` 全局设置图标资源 url 和图标前缀。

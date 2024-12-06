@@ -52,14 +52,13 @@
 
 .vp-blog-counts {
   display: flex;
+  justify-content: space-evenly;
   width: 80%;
   margin: 0 auto 1rem;
 }
 
 .vp-blog-count {
   display: block;
-
-  width: 25%;
 
   color: inherit;
 
