@@ -64,7 +64,7 @@
   "dependencies": {
     "@mdit/plugin-alert": "^0.13.1",
     "@mdit/plugin-align": "^0.13.1",
-    "@mdit/plugin-attrs": "^0.13.1",
+    "@mdit/plugin-attrs": "^0.14.0",
     "@mdit/plugin-container": "^0.13.1",
     "@mdit/plugin-demo": "^0.13.1",
     "@mdit/plugin-footnote": "^0.13.1",
