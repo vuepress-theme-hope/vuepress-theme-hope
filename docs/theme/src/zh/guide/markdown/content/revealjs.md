@@ -139,6 +139,12 @@ const add = (a, b) => {
 
 各主题的外观，详见 [幻灯片主题][revealjs-themes-demo]。
 
+::: important 资源路径
+
+由于 `@slidestart` 和 `@slideend` 之间的 Markdown 内容由 Reveal.js 在浏览器中处理，因此你只能在幻灯片中使用绝对路径的资源，这些资源必须可以直接在浏览器中访问，不支持相对路径或别名。
+
+:::
+
 ## 演示
 
 ::: md-demo 简单幻灯片演示

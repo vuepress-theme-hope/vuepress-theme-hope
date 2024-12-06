@@ -139,6 +139,12 @@ You can enable the following themes in reveal.js via `themes` in plugin options:
 
 For the appearance of each theme, see [Themes demo][revealjs-themes-demo].
 
+::: important Assets Path
+
+Since markdown contents between `@slidestart` and `@slideend` are handled by Reveal.js at browser, so you can only use absolute paths for assets in slides, which must be accessible directly in browser, relative paths or alias are not supported.
+
+:::
+
 ## Demo
 
 ::: md-demo Simple presentation demo
