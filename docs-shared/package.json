@@ -34,14 +34,14 @@
     "@types/three": "0.170.0",
     "@vuepress/bundler-vite": "2.0.0-rc.18",
     "@vuepress/bundler-webpack": "2.0.0-rc.18",
-    "@vuepress/helper": "2.0.0-rc.61",
-    "@vuepress/plugin-docsearch": "2.0.0-rc.61",
-    "three": "0.170.0",
+    "@vuepress/helper": "2.0.0-rc.62",
+    "@vuepress/plugin-docsearch": "2.0.0-rc.62",
+    "three": "0.171.0",
     "vue": "3.5.13",
     "vuepress": "2.0.0-rc.18",
     "vuepress-theme-hope": "workspace:*"
   },
   "devDependencies": {
-    "@vuepress/plugin-git": "2.0.0-rc.60"
+    "@vuepress/plugin-git": "2.0.0-rc.62"
   }
 }

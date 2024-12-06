@@ -62,14 +62,14 @@
     "dev:ts": "tsc -b tsconfig.build.json --watch"
   },
   "dependencies": {
-    "@mdit/plugin-container": "^0.13.1",
-    "@mdit/plugin-demo": "^0.13.1",
-    "@mdit/plugin-plantuml": "^0.13.1",
-    "@mdit/plugin-uml": "^0.13.1",
+    "@mdit/plugin-container": "^0.14.0",
+    "@mdit/plugin-demo": "^0.14.0",
+    "@mdit/plugin-plantuml": "^0.14.0",
+    "@mdit/plugin-uml": "^0.14.0",
     "@types/markdown-it": "^14.1.2",
-    "@vuepress/helper": "2.0.0-rc.61",
-    "@vuepress/plugin-sass-palette": "2.0.0-rc.61",
-    "@vueuse/core": "^11.3.0",
+    "@vuepress/helper": "2.0.0-rc.62",
+    "@vuepress/plugin-sass-palette": "2.0.0-rc.62",
+    "@vueuse/core": "^12.0.0",
     "balloon-css": "^1.2.0",
     "js-yaml": "^4.1.0",
     "vue": "^3.5.13",
@@ -79,7 +79,7 @@
     "@types/babel__core": "7.20.5",
     "@vuepress/bundler-vite": "2.0.0-rc.18",
     "markdown-it": "14.1.0",
-    "rollup": "4.27.3",
+    "rollup": "4.28.0",
     "typescript": "5.7.2"
   },
   "peerDependencies": {

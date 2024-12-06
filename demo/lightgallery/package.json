@@ -16,9 +16,9 @@
   "devDependencies": {
     "@vuepress/bundler-vite": "2.0.0-rc.18",
     "@vuepress/bundler-webpack": "2.0.0-rc.18",
-    "@vuepress/theme-default": "2.0.0-rc.61",
-    "sass-embedded": "1.81.0",
-    "sass-loader": "16.0.3",
+    "@vuepress/theme-default": "2.0.0-rc.62",
+    "sass-embedded": "1.82.0",
+    "sass-loader": "16.0.4",
     "vue": "3.5.13",
     "vuepress": "2.0.0-rc.18",
     "vuepress-plugin-lightgallery": "workspace:*"
