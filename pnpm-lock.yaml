@@ -907,8 +907,8 @@ importers:
         specifier: ^0.13.1
         version: 0.13.1(markdown-it@14.1.0)
       '@mdit/plugin-spoiler':
-        specifier: ^0.13.1
-        version: 0.13.1(markdown-it@14.1.0)
+        specifier: ^0.14.0
+        version: 0.14.0(markdown-it@14.1.0)
       '@mdit/plugin-stylize':
         specifier: ^0.13.3
         version: 0.13.3(markdown-it@14.1.0)
@@ -2895,8 +2895,8 @@ packages:
       markdown-it:
         optional: true
 
-  '@mdit/plugin-spoiler@0.13.1':
-    resolution: {integrity: sha512-6aOD+kjGavkn+Ta0Iq8AUfBG3UsKsL5e0pxi0Eng13lIEp8DrDw36W+E6fLOFtX8Te3ays6eTkTc1I5WzHO0Gw==}
+  '@mdit/plugin-spoiler@0.14.0':
+    resolution: {integrity: sha512-c+tSj35JygQF9gNRAcH3gk68pBpjS7zGiooz/UK+tw8GSqez2c1Z+PWvu1u4xX0O/HO3y+amu7GqTjwkfgLC7g==}
     engines: {node: '>= 18'}
     peerDependencies:
       markdown-it: ^14.1.0
@@ -11911,7 +11911,7 @@ snapshots:
     optionalDependencies:
       markdown-it: 14.1.0
 
-  '@mdit/plugin-spoiler@0.13.1(markdown-it@14.1.0)':
+  '@mdit/plugin-spoiler@0.14.0(markdown-it@14.1.0)':
     dependencies:
       '@types/markdown-it': 14.1.2
     optionalDependencies:
