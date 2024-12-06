@@ -11,7 +11,7 @@ tag:
 
 以下选项在 markdown 中添加了新的代码功能，可以在主题选项的 `markdown` 属性下进行设置。
 
-## codeTabs
+## markdown.markdown.codeTabs
 
 - 类型: `boolean`
 - 默认值: `false`
@@ -21,7 +21,7 @@ tag:
 
 是否启用选项卡支持。
 
-### playground
+## markdown.playground
 
 - 类型: `PlaygroundGlobalOptions`
 
@@ -148,7 +148,7 @@ tag:
 
 交互演示选项。
 
-### vuePlayground
+## markdown.vuePlayground
 
 - 类型: `boolean`
 - 默认值: `false`
@@ -157,7 +157,7 @@ tag:
 
 是否启用 Vue 交互演示支持。
 
-### sandpack
+## markdown.sandpack
 
 - 类型: `boolean`
 - 默认值: `false`
@@ -166,7 +166,7 @@ tag:
 
 是否启用 Sandpack 交互演示支持。
 
-### demo
+## markdown.demo
 
 - 类型: `CodeDemoGlobalOptions | boolean`
 - 默认值: `false`
@@ -175,14 +175,14 @@ tag:
 
 是否启用代码演示支持。
 
-#### demo.jsLib
+### markdown.demo.jsLib
 
 - 类型: `string[]`
 - 必填: 否
 
 CodePen, JsFiddle 需要引入的外部 JS 库。
 
-#### demo.cssLib
+### markdown.demo.cssLib
 
 - 类型: `string[]`
 - Required: No
@@ -194,5 +194,40 @@ CodePen, JsFiddle 需要引入的外部 CSS 库。
 上述两个选项仅仅是给第三方代码演示使用的，你需要自行在 `head` 中导入这些库。
 
 :::
+
+### markdown.demo.jsfiddle
+
+- 类型: `boolean`
+- 默认值: `true`
+
+是否显示 JSFiddle 按钮
+
+### markdown.demo.codepen
+
+- 类型: `boolean`
+- 默认值: `true`
+
+是否显示 CodePen 按钮
+
+### markdown.demo.codepenLayout
+
+- 类型: `"top" | "left" | "right"`
+- 默认值: `"left"`
+
+CodePen 编辑器布局
+
+### markdown.demo.codepenEditors
+
+- 类型: `string`
+- 默认值: `"101"`
+
+CodePen 编辑器状态
+
+### markdown.demo.editors
+
+- 类型: `string`
+- 默认值: `"101"`
+
+CodePen 编辑器显示情况，第一位代表 HTML ，第二位代表 JS，第三位代表演示页面。
 
 [codeTabs]: https://ecosystem.vuejs.press/zh/plugins/markdown/markdown-tab.html#codeTabs

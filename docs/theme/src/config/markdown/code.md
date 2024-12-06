@@ -11,7 +11,7 @@ tag:
 
 The following options adds new code feature in markdown, and can be set **under `markdown` property** in theme options.
 
-## codeTabs
+## markdown.markdown.codeTabs
 
 - Type: `boolean`
 - Default: `false`
@@ -21,7 +21,7 @@ The following options adds new code feature in markdown, and can be set **under 
 
 Whether to enable tabs support.
 
-### playground
+## markdown.playground
 
 - Type: `PlaygroundGlobalOptions`
 
@@ -146,7 +146,7 @@ Whether to enable tabs support.
 
 Playground options.
 
-### vuePlayground
+## markdown.vuePlayground
 
 - Type: `boolean`
 - Default: `false`
@@ -155,7 +155,7 @@ Playground options.
 
 Whether to enable vue playground support.
 
-### sandpack
+## markdown.sandpack
 
 - Type: `boolean`
 - Default: `false`
@@ -164,7 +164,7 @@ Whether to enable vue playground support.
 
 Whether to enable sandpack playground support.
 
-### demo
+## markdown.demo
 
 - Type: `CodeDemoGlobalOptions | boolean`
 - Default: `false`
@@ -173,14 +173,14 @@ Whether to enable sandpack playground support.
 
 Whether to enable code demo support.
 
-#### demo.jsLib
+### markdown.demo.jsLib
 
 - Type: `string[]`
 - Required: No
 
 External JS libraries for CodePen, JsFiddle only.
 
-#### demo.cssLib
+### markdown.demo.cssLib
 
 - Type: `string[]`
 - Required: No
@@ -189,8 +189,36 @@ External JS libraries for CodePen, JsFiddle only.
 
 ::: warning
 
-The above two options are only used by third-party code demo service, you need to import these libraries in `head` to get it work..
+The above two options are only used by third-party code demo service, you need to import these libraries in `head` to get it work.
 
 :::
+
+### markdown.demo.jsfiddle
+
+- Type: `boolean`
+- Default: `true`
+
+Whether to display the JSFiddle button
+
+### markdown.demo.codepen
+
+- Type: `boolean`
+- Default: `true`
+
+Whether to display the CodePen button
+
+### markdown.demo.codepenLayout
+
+- Type: `"top" | "left" | "correct"`
+- Default: `"left"`
+
+CodePen editor layout
+
+### markdown.demo.codepenEditors
+
+- Type: `string`
+- Default: `"101"`
+
+CodePen editor status
 
 [codeTabs]: https://ecosystem.vuejs.press/plugins/markdown/markdown-tab.html#codeTabs

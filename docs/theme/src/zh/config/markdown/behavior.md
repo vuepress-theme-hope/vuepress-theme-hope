@@ -13,7 +13,7 @@ tag:
 
 <!-- more -->
 
-## gfm
+## markdown.markdown.gfm
 
 - 类型: `boolean`
 - 默认值: `false`
@@ -31,7 +31,7 @@ tag:
 
 :::
 
-## vPre
+## markdown.markdown.vPre
 
 - 类型: `boolean`
 - 默认值: `false`
@@ -39,7 +39,7 @@ tag:
   - [v-pre 容器](../../guide/markdown/others.md#v-pre)
   - [@vuepress/plugin-markdown-ext → vPre][vPre]
 
-## breaks
+## markdown.markdown.breaks
 
 - 类型: `boolean`
 - 默认值: `false`
@@ -49,7 +49,7 @@ tag:
 
 是否将段落中的 `\n` 转换为 `<br>`。
 
-## linkify
+## markdown.markdown.linkify
 
 - 类型: `boolean`
 - 默认值: `false`
@@ -59,7 +59,7 @@ tag:
 
 是否将文本中的 URL 转换为链接。
 
-## figure
+## markdown.markdown.figure
 
 - 类型: `boolean`
 - 默认值: `false`
@@ -69,7 +69,7 @@ tag:
 
 是否将独立的 `<img>` 转换为 `<figure>`。
 
-## imgLazyload
+## markdown.markdown.imgLazyload
 
 - 类型: `boolean`
 - 默认值: `false`
@@ -79,7 +79,7 @@ tag:
 
 是否启用图片懒加载。
 
-## highlighter
+## markdown.markdown.highlighter
 
 - 类型: `MarkdownHighlighterOptions | "prismjs" | "shiki" | false`
 
@@ -100,7 +100,7 @@ Markdown 代码块高亮器。可以选择 `"prismjs"`、`"shiki"`、`false` 或
 - `"shiki"`: 使用 [@vuepress/plugin-shiki][shiki]。
 - `false`: 禁用代码块高亮。
 
-### linksCheck <Badge text="默认启用" />
+## markdown.linksCheck <Badge text="默认启用" />
 
 - 类型: `LinksCheckPluginOptions | Options`
 - 默认值: `true`

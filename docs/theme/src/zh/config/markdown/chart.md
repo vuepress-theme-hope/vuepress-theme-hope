@@ -13,7 +13,7 @@ tag:
 
 <!-- more -->
 
-## chartjs
+## markdown.chartjs
 
 - 类型: `boolean`
 - 默认值: `false`
@@ -22,7 +22,7 @@ tag:
 
 是否启用 Chart.js 支持
 
-## echarts
+## markdown.echarts
 
 - 类型: `boolean`
 - 默认值: `false`
@@ -31,7 +31,7 @@ tag:
 
 是否启用 ECharts 支持
 
-## flowchart
+## markdown.flowchart
 
 - 类型: `boolean`
 - 默认值: `false`
@@ -40,7 +40,7 @@ tag:
 
 是否启用流程图支持
 
-## mermaid
+## markdown.mermaid
 
 - 类型: `boolean`
 - 默认值: `false`
@@ -49,7 +49,7 @@ tag:
 
 是否启用 [Mermaid](https://mermaid.js.org/) 支持，你可以传入一个对象作为 Mermaid 的配置选项。
 
-## plantuml
+## markdown.plantuml
 
 - 类型: `MarkdownItPlantumlOptions[] | boolean`
 - 默认值: `false`

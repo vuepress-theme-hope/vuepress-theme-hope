@@ -11,7 +11,7 @@ tag:
 
 The following options adds new markdown grammar, and can be set **under `markdown` property** in theme options.
 
-## component
+## markdown.component
 
 - Type: `boolean`
 - Default: `false`
@@ -21,7 +21,7 @@ The following options adds new markdown grammar, and can be set **under `markdow
 
 Whether to enable component support.
 
-## footnote
+## markdown.footnote
 
 - Type: `boolean`
 - Default: `false`
@@ -32,7 +32,7 @@ Whether to enable component support.
 
 Whether to enable footnote format support.
 
-## imgMark
+## markdown.imgMark
 
 - Type: `boolean`
 - Default: `false`
@@ -42,7 +42,7 @@ Whether to enable footnote format support.
 
 Whether to enable image mark.
 
-## imgSize
+## markdown.imgSize
 
 - Type: `boolean`
 - Default: `false`
@@ -52,7 +52,7 @@ Whether to enable image mark.
 
 Whether to enable image size.
 
-## obsidianImgSize
+## markdown.obsidianImgSize
 
 - Type: `boolean`
 - Default: `false`
@@ -62,7 +62,7 @@ Whether to enable image size.
 
 Whether to enable obsidian image size.
 
-## include
+## markdown.include
 
 - Type: `MarkdownIncludePluginOptions | boolean`
 
@@ -91,7 +91,7 @@ Whether to enable obsidian image size.
 
 Whether to enable Markdown import support. You can pass in a object to customize behavior.
 
-## tabs
+## markdown.tabs
 
 - Type: `boolean`
 - Default: `false`
@@ -101,7 +101,7 @@ Whether to enable Markdown import support. You can pass in a object to customize
 
 Whether to enable tabs support.
 
-## tasklist
+## markdown.tasklist
 
 - Type: `MarkdownItTaskListOptions | boolean`
 
@@ -131,7 +131,7 @@ Whether to enable tabs support.
 
 Whether to enable tasklist format support. You can pass an object to config task list.
 
-## math
+## markdown.math
 
 - Type: `MarkdownMathPluginOptions | boolean`
 
@@ -164,7 +164,7 @@ Whether to enable tasklist format support. You can pass an object to config task
 
 Whether to enable math formula support. You can set `true` to auto detect the installed one of katex/mathjax, or provide plugin options.
 
-## revealjs
+## markdown.revealjs
 
 - Type: `RevealJsOptions | boolean`
 

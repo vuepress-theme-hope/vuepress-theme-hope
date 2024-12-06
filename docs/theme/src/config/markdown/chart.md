@@ -13,7 +13,7 @@ The following options supports different charts in markdown, and can be set **un
 
 <!-- more -->
 
-## chartjs
+## markdown.chartjs
 
 - Type: `boolean`
 - Default: `false`
@@ -22,7 +22,7 @@ The following options supports different charts in markdown, and can be set **un
 
 Whether to enable Chart.js support
 
-## echarts
+## markdown.echarts
 
 - Type: `boolean`
 - Default: `false`
@@ -31,7 +31,7 @@ Whether to enable Chart.js support
 
 Whether to enable ECharts support
 
-## flowchart
+## markdown.flowchart
 
 - Type: `boolean`
 - Default: `false`
@@ -40,7 +40,7 @@ Whether to enable ECharts support
 
 Whether to enable flowchart support
 
-## mermaid
+## markdown.mermaid
 
 - Type: `boolean`
 - Default: `false`
@@ -49,7 +49,7 @@ Whether to enable flowchart support
 
 Whether to enable [Mermaid](https://mermaid.js.org/) support, you can pass in a config object to customize the behavior of Mermaid.
 
-## plantuml
+## markdown.plantuml
 
 - Type: `MarkdownItPlantumlOptions[] | boolean`
 - Default: `false`

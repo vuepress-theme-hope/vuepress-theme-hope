@@ -11,7 +11,7 @@ tag:
 
 以下选项在 markdown 中添加了新的样式化功能，可以在主题选项的 `markdown` 属性下进行设置。
 
-## align
+## markdown.align
 
 - 类型: `boolean`
 - 默认值: `false`
@@ -21,7 +21,7 @@ tag:
 
 是否启用自定义对齐。
 
-## attrs
+## markdown.attrs
 
 - 类型: `MarkdownItAttrsOptions | boolean`
 
@@ -65,7 +65,7 @@ tag:
 
 是否启用属性自定义支持。
 
-## mark
+## markdown.mark
 
 - 类型: `boolean`
 - 默认值: `false`
@@ -75,7 +75,7 @@ tag:
 
 是否启用标记支持。
 
-## sup
+## markdown.sup
 
 - 类型: `boolean`
 - 默认值: `false`
@@ -85,7 +85,7 @@ tag:
 
 是否启用上标支持。
 
-## sub
+## markdown.sub
 
 - 类型: `boolean`
 - 默认值: `false`
@@ -95,7 +95,7 @@ tag:
 
 是否启用下标支持。
 
-## spoiler
+## markdown.spoiler
 
 - 类型: `boolean`
 - 默认值: `false`
@@ -105,7 +105,7 @@ tag:
 
 是否启用隐藏内容支持。
 
-## stylize
+## markdown.stylize
 
 - 类型: `MarkdownItStylizeConfig[] | false`
 

@@ -13,7 +13,7 @@ The following options change markdown renderer behaviors, and can be set **under
 
 <!-- more -->
 
-## gfm
+## markdown.gfm
 
 - Type: `boolean`
 - Default: `false`
@@ -32,7 +32,7 @@ in VuePress.
 
 :::
 
-## vPre
+## markdown.vPre
 
 - Type: `boolean`
 - Default: `false`
@@ -42,7 +42,7 @@ in VuePress.
 
 Whether to enable v-pre wrapper.
 
-## breaks
+## markdown.breaks
 
 - Type: `boolean`
 - Default: `false`
@@ -52,7 +52,7 @@ Whether to enable v-pre wrapper.
 
 Whether convert `\n` in paragraphs into `<br>`s
 
-## linkify
+## markdown.linkify
 
 - Type: `boolean`
 - Default: `false`
@@ -62,7 +62,7 @@ Whether convert `\n` in paragraphs into `<br>`s
 
 Whether convert URL-like text into links
 
-## figure
+## markdown.figure
 
 - Type: `boolean`
 - Default: `false`
@@ -72,7 +72,7 @@ Whether convert URL-like text into links
 
 Whether to convert standalone `<img>` into `<figure>`.
 
-## imgLazyload
+## markdown.imgLazyload
 
 - Type: `boolean`
 - Default: `false`
@@ -82,7 +82,7 @@ Whether to convert standalone `<img>` into `<figure>`.
 
 Whether to enable lazy loading for images in markdown.
 
-## highlighter
+## markdown.highlighter
 
 - Type: `MarkdownHighlighterOptions | "prismjs" | "shiki" | false`
 
@@ -103,7 +103,7 @@ The markdown code block highlighter. You can choose `"prismjs"`, `"shiki"`, `fal
 - `"shiki"`: Use [@vuepress/plugin-shiki][shiki].
 - `false`: Disable code block highlighting.
 
-### linksCheck <Badge text="Enabled by default" />
+## markdown.linksCheck <Badge text="Enabled by default" />
 
 - Type: `LinksCheckPluginOptions | Options`
 - Default: `true`

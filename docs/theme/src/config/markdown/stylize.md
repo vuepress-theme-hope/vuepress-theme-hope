@@ -11,7 +11,7 @@ tag:
 
 The following options adds new stylize feature, and can be set **under `markdown` property** in theme options.
 
-## align
+## markdown.align
 
 - Type: `boolean`
 - Default: `false`
@@ -21,7 +21,7 @@ The following options adds new stylize feature, and can be set **under `markdown
 
 Whether to enable custom align.
 
-## attrs
+## markdown.attrs
 
 - Type: `MarkdownItAttrsOptions | boolean`
 
@@ -65,7 +65,7 @@ Whether to enable custom align.
 
 Whether to enable attribute customize support.
 
-## mark
+## markdown.mark
 
 - Type: `boolean`
 - Default: `false`
@@ -75,7 +75,7 @@ Whether to enable attribute customize support.
 
 Whether to enable mark support.
 
-## sup
+## markdown.sup
 
 - Type: `boolean`
 - Default: `false`
@@ -85,7 +85,7 @@ Whether to enable mark support.
 
 Whether to enable the superscript support.
 
-## sub
+## markdown.sub
 
 - Type: `boolean`
 - Default: `false`
@@ -95,7 +95,7 @@ Whether to enable the superscript support.
 
 Whether to enable subscript support.
 
-## spoiler
+## markdown.spoiler
 
 - Type: `boolean`
 - Default: `false`
@@ -105,7 +105,7 @@ Whether to enable subscript support.
 
 Whether to enable spoiler support.
 
-## stylize
+## markdown.stylize
 
 - Type: `MarkdownItStylizeConfig[] | false`
 

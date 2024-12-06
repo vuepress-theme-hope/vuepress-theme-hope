@@ -13,7 +13,7 @@ The following options adds new markdown grammar, and can be set **under `markdow
 
 以下选项在 markdown 中添加了新的语法，可以在主题选项的 `markdown` 属性下进行设置。
 
-## component
+## markdown.component
 
 - 类型: `boolean`
 - 默认值: `false`
@@ -23,7 +23,7 @@ The following options adds new markdown grammar, and can be set **under `markdow
 
 是否启用组件支持。
 
-## footnote
+## markdown.footnote
 
 - 类型: `boolean`
 - 默认值: `false`
@@ -34,7 +34,7 @@ The following options adds new markdown grammar, and can be set **under `markdow
 
 是否启用脚注格式支持。
 
-## imgMark
+## markdown.imgMark
 
 - 类型: `boolean`
 - 默认值: `false`
@@ -44,7 +44,7 @@ The following options adds new markdown grammar, and can be set **under `markdow
 
 是否启用图片标记。
 
-## imgSize
+## markdown.imgSize
 
 - 类型: `boolean`
 - 默认值: `false`
@@ -54,7 +54,7 @@ The following options adds new markdown grammar, and can be set **under `markdow
 
 是否启用图片大小。
 
-## obsidianImgSize
+## markdown.obsidianImgSize
 
 - 类型: `boolean`
 - 默认值: `false`
@@ -64,7 +64,7 @@ The following options adds new markdown grammar, and can be set **under `markdow
 
 是否启用 Obsidian 图片大小。
 
-## include
+## markdown.include
 
 - 类型: `MarkdownIncludePluginOptions | boolean`
 
@@ -93,7 +93,7 @@ The following options adds new markdown grammar, and can be set **under `markdow
 
 是否启用 Markdown 导入支持。您可以传递一个选项来自定义行为。
 
-## tabs
+## markdown.tabs
 
 - 类型: `boolean`
 - 默认值: `false`
@@ -103,7 +103,7 @@ The following options adds new markdown grammar, and can be set **under `markdow
 
 是否启用选项卡支持。
 
-## tasklist
+## markdown.tasklist
 
 - 类型: `MarkdownItTaskListOptions | boolean`
 
@@ -133,7 +133,7 @@ The following options adds new markdown grammar, and can be set **under `markdow
 
 是否启用任务列表格式支持。你可以传递一个对象来配置任务列表。
 
-## math
+## markdown.math
 
 - 类型: `MarkdownMathPluginOptions | boolean`
 
@@ -166,7 +166,7 @@ The following options adds new markdown grammar, and can be set **under `markdow
 
 是否启用数学公式支持。你可以设置 `true` 来自动检测已安装的 katex/mathjax，或提供插件选项。
 
-## revealjs
+## markdown.revealjs
 
 - 类型: `RevealJsOptions | boolean`
 
