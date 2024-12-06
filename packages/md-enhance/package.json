@@ -69,7 +69,7 @@
     "@mdit/plugin-demo": "^0.13.1",
     "@mdit/plugin-footnote": "^0.13.1",
     "@mdit/plugin-include": "^0.13.1",
-    "@mdit/plugin-mark": "^0.13.1",
+    "@mdit/plugin-mark": "^0.14.0",
     "@mdit/plugin-plantuml": "^0.13.1",
     "@mdit/plugin-spoiler": "^0.13.1",
     "@mdit/plugin-stylize": "^0.13.3",
