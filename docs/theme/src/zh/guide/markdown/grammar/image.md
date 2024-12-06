@@ -14,10 +14,11 @@ tag:
 
 ## 配置
 
-```ts {7,9,11,13} title=".vuepress/config.ts"
+```ts {8,10,12,14} title=".vuepress/config.ts"
+import { defineUserConfig } from "vuepress";
 import { hopeTheme } from "vuepress-theme-hope";
 
-export default {
+export default defineUserConfig({
   theme: hopeTheme({
     markdown: {
       // 启用 figure
@@ -30,7 +31,7 @@ export default {
       imgSize: true,
     },
   }),
-};
+});
 ```
 
 ## 图片懒加载
@@ -43,7 +44,7 @@ export default {
 
 ::: md-demo 图片 ID 标记示例
 
-<ColorModeSwitch /> (尝试切换主题)
+<ColorModeSwitch /> 👈 尝试切换主题
 
 ![GitHub Light](/assets/image/github-light.svg#dark)
 ![GitHub Dark](/assets/image/github-dark.svg#light)
@@ -52,15 +53,24 @@ export default {
 
 ### 高级用法
 
-你可以将对象传递给 `mark` 以配置 ID 标记，可用选项如下：
+你可以将对象传递给 `markdown.imgMark` 以配置 ID 标记：
 
-```ts
-interface ImageMarkOptions {
-  /** 仅限日间模式的 ID */
-  light?: string[];
-  /** 仅限夜间模式的 ID */
-  dark?: string[];
-}
+```ts {9,11} title=".vuepress/config.ts"
+import { defineUserConfig } from "vuepress";
+import { hopeTheme } from "vuepress-theme-hope";
+
+export default defineUserConfig({
+  theme: hopeTheme({
+    markdown: {
+      imgMark: {
+        /** 仅限日间模式的 ID */
+        light: ["light"],
+        /** 仅限夜间模式的 ID */
+        dark: ["dark"],
+      },
+    },
+  }),
+});
 ```
 
 ## 图片尺寸

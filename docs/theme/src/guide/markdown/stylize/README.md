@@ -12,4 +12,59 @@ tag:
   - Markdown
 ---
 
-<!-- @include: @md-enhance/guide/stylize/README.md -->
+The theme provides the following features to stylize your content:
+
+- Hint Container: Stylized hint
+- Align: Customize content alignment
+- Attrs: Adding attrs to markdown contents
+- Mark: Highlight contents
+- Spoiler: Hide spoiler content
+- Stylize: Customizable token stylizer
+
+<!-- more -->
+
+## Demo
+
+### Hint Container
+
+::: tip
+
+Hint message
+
+:::
+
+- [View Detail](./hint.md)
+
+### Align
+
+::: center
+
+I am center
+
+:::
+
+::: right
+
+I am right align
+
+:::
+
+- [View Detail](./align.md)
+
+### Attrs
+
+A **word**{#word} having id.
+
+- [View Detail](./attrs.md)
+
+### Mark
+
+You can mark ==important words==.
+
+- [View Detail](./mark.md)
+
+### Stylize
+
+Donate Mr.Hope a cup of coffee. _Recommended_
+
+- [View Detail](./stylize.md)

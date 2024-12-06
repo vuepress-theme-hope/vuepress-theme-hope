@@ -8,7 +8,7 @@ category:
 
 ## 运行错误
 
-Vite 默认情况下仅支持“现代浏览器”，详见 [Vite 支持](https://vitejs.dev/guide/build.html#browser-compatibility)。
+Vite 默认情况下仅支持“现代浏览器”，详见 [Vite 支持](https://vite.dev/guide/build.html#browser-compatibility)。
 
 ## Vite 冷启动速度慢
 

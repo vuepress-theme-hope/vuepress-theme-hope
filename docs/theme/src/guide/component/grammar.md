@@ -15,18 +15,75 @@ You can easily insert components in Markdown content with component code block.
 
 ## Settings
 
-```js {7} title=".vuepress/config.js"
+```ts {7} title=".vuepress/config.ts"
+import { defineUserConfig } from "vuepress";
 import { hopeTheme } from "vuepress-theme-hope";
 
-export default {
+export default defineUserConfig({
   theme: hopeTheme({
-    plugins: {
-      mdEnhance: {
-        components: true,
-      },
+    markdown: {
+      components: true,
     },
   }),
-};
+});
 ```
 
-<!-- @include: @md-enhance/guide/content/component.md#after -->
+## Usage
+
+You can use component fence block to add a component into your markdown content. Both YAML and JSON format props data are supported:
+
+- YAML <Badge text="Recommended" type="tip" />:
+
+  ````md
+  ```component ComponentName
+  # component data here
+  ```
+  ````
+
+- JSON:
+
+  ````md
+  ```component ComponentName
+  {
+    // component data here
+  }
+  ```
+  ````
+
+## Demo
+
+::: md-demo VPCard
+
+```component VPCard
+title: Mr.Hope
+desc: Where there is light, there is hope
+logo: https://mister-hope.com/logo.svg
+link: https://mister-hope.com
+background: rgba(253, 230, 138, 0.15)
+```
+
+```component VPCard
+{
+  "title": "Mr.Hope",
+  "desc": "Where there is light, there is hope",
+  "logo": "https://mister-hope.com/logo.svg",
+  "link": "https://mister-hope.com",
+  "background": "rgba(253, 230, 138, 0.15)"
+}
+```
+
+:::
+
+`<VPCard>` here is a global component.
+
+The above code blocks are equivalent to:
+
+```md
+<VPCard
+  title="Mr.Hope"
+  desc="Where there is light, there is hope"
+  logo="https://mister-hope.com/logo.svg"
+  link="https://mister-hope.com"
+  background="rgba(253, 230, 138, 0.15)"
+/>
+```

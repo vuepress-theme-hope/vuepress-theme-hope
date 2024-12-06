@@ -14,19 +14,17 @@ tag:
 
 ## 配置
 
-```js {8} title=".vuepress/config.js"
+```ts {7} title=".vuepress/config.ts"
+import { defineUserConfig } from "vuepress";
 import { hopeTheme } from "vuepress-theme-hope";
 
-export default {
+export default defineUserConfig({
   theme: hopeTheme({
-    plugins: {
-      markdownHint: {
-        // 启用 GFM 警告
-        alert: true,
-      },
+    markdown: {
+      alert: true,
     },
   }),
-};
+});
 ```
 
 <!-- markdownlint-disable MD028 -->

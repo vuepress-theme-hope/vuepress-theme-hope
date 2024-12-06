@@ -8,7 +8,7 @@ category:
 
 ## Running error
 
-Vite only supports "modern browsers" by default, see [Vite support](https://vitejs.dev/guide/build.html#browser-compatibility) for details.
+Vite only supports "modern browsers" by default, see [Vite support](https://vite.dev/guide/build.html#browser-compatibility) for details.
 
 ## Slow in a cold boot with Vite
 

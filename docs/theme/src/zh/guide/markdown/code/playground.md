@@ -14,12 +14,13 @@ tag:
 
 ## 配置
 
-```js {7-37} title=".vuepress/config.js"
+```ts {8-34} title=".vuepress/config.ts"
+import { defineUserConfig } from "vuepress";
 import { hopeTheme } from "vuepress-theme-hope";
 
-export default {
+export default defineUserConfig({
   theme: hopeTheme({
-    mdEnhance: {
+    markdown: {
       // 在此放置交互演示配置
       playground: {
         // 添加预设
@@ -50,7 +51,7 @@ export default {
       },
     },
   }),
-};
+});
 ```
 
 <!-- @include: @md-enhance/zh/guide/code/playground.md#after -->

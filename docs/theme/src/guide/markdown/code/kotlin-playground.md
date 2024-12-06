@@ -14,18 +14,17 @@ Let the Markdown file support kotlin playground in your VuePress site.
 
 <!-- @include: @md-enhance/guide/code/kotlin-playground.md#settings -->
 
-```js {7} title=".vuepress/config.js"
+```ts {7} title=".vuepress/config.ts"
+import { defineUserConfig } from "vuepress";
 import { hopeTheme } from "vuepress-theme-hope";
 
-export default {
+export default defineUserConfig({
   theme: hopeTheme({
-    plugins: {
-      mdEnhance: {
-        kotlinPlayground: true,
-      },
+    markdown: {
+      kotlinPlayground: true,
     },
   }),
-};
+});
 ```
 
 <!-- @include: @md-enhance/guide/code/kotlin-playground.md#after -->

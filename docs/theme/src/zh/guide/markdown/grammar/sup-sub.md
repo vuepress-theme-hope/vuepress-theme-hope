@@ -14,19 +14,20 @@ tag:
 
 ## 配置
 
-```ts {7,9} title=".vuepress/config.ts"
+```ts {8,10} title=".vuepress/config.ts"
+import { defineUserConfig } from "vuepress";
 import { hopeTheme } from "vuepress-theme-hope";
 
-export default {
+export default defineUserConfig({
   theme: hopeTheme({
     markdown: {
-      // 启用下角标功能
+      // 启用下角标
       sub: true,
       // 启用上角标
       sup: true,
     },
   }),
-};
+});
 ```
 
 ## 语法

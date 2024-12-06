@@ -14,45 +14,44 @@ Let the Markdown file support playground in your VuePress site.
 
 ## Settings
 
-```js {7-37} title=".vuepress/config.js"
+```ts {8-34} title=".vuepress/config.ts"
+import { defineUserConfig } from "vuepress";
 import { hopeTheme } from "vuepress-theme-hope";
 
-export default {
+export default defineUserConfig({
   theme: hopeTheme({
-    plugins: {
-      mdEnhance: {
-        // playground config here
-        playground: {
-          // add presets here
-          presets: [
-            "ts",
-            "vue",
-            "unocss",
-            {
-              name: "playground#language",
-              component: "PlaygroundComponent",
-              propsGetter: (playgroundData) => ({
-                // playground props
-              }),
-            },
-          ],
-          // configure built-in presets (optional)
-          config: {
-            ts: {
-              // ...
-            },
-            vue: {
-              // ...
-            },
-            unocss: {
-              // ...
-            },
+    markdown: {
+      // playground config here
+      playground: {
+        // add presets here
+        presets: [
+          "ts",
+          "vue",
+          "unocss",
+          {
+            name: "playground#language",
+            component: "PlaygroundComponent",
+            propsGetter: (playgroundData) => ({
+              // playground props
+            }),
+          },
+        ],
+        // configure built-in presets (optional)
+        config: {
+          ts: {
+            // ...
+          },
+          vue: {
+            // ...
+          },
+          unocss: {
+            // ...
           },
         },
       },
     },
   }),
-};
+});
 ```
 
 <!-- @include: @md-enhance/guide/code/playground.md#after -->

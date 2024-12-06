@@ -20,8 +20,6 @@ const HopeIcon: FunctionalComponent<IconProps> = (props) => {
     style!.height = Number.isNaN(Number(size)) ? (size as string) : `${size}px`;
   if (verticalAlign) style!.verticalAlign = verticalAlign;
 
-  console.log(props);
-
   return isLinkHttp(icon)
     ? h("img", {
         class: "icon",

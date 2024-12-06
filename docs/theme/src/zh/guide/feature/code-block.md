@@ -10,9 +10,28 @@ tag:
 
 ## 高亮器
 
+VuePress 提供 [`@vuepress/plugin-prismjs`][prismjs] 和 [`@vuepress/plugin-shiki`][shiki] 两种代码高亮器插件，主题对它们都提供了支持，并默认使用 Shiki。
+
+你可以通过 `markdown.highlighter` 配置项来选择高亮器，`shiki` 为 Shiki，`prismjs` 为 Prism.js。
+
+```js {8} title=".vuepress/config.js"
+import { hopeTheme } from "vuepress-theme-hope";
+
+export default {
+  theme: hopeTheme({
+    plugins: {
+      shiki: {
+        // 你想要使用的主题
+        theme: "nord",
+      },
+    },
+  }),
+};
+```
+
 ### Shiki
 
-使用 [`@vuepress/plugin-shiki`][shiki]，你可以使用 [shiki](https://shiki.style) 来高亮你的代码块。
+使用 [shiki](https://shiki.style) 来高亮你的代码块。
 
 ::: info
 
