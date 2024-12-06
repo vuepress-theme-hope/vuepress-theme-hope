@@ -391,6 +391,7 @@ export default defineClientConfig({
 
 - `"vuepress-theme-hope/presets/left-blog-info.scss"`: 将博主信息移动至文章列表的左侧。
 - `"vuepress-theme-hope/presets/round-blogger-avatar.scss"`: 将博主头像裁剪为圆形。
+- `"vuepress-theme-hope/presets/squircle-blogger-avatar.scss"`: 将博主头像裁剪为圆角矩形。
 
 ### 其他
 
