@@ -1,9 +1,3 @@
-import { createRequire } from "node:module";
+import pkg from "vuepress-theme-hope/package.json" with { type: "json" };
 
-import { fs } from "vuepress/utils";
-
-const require = createRequire(import.meta.url);
-
-export const { version } = fs.readJsonSync(
-  require.resolve("vuepress-theme-hope/package.json"),
-) as { version: string };
+export const version = pkg.version;

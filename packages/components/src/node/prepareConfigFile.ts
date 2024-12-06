@@ -1,4 +1,4 @@
-import { getRealPath } from "@vuepress/helper";
+import { getModulePath } from "@vuepress/helper";
 import type { App } from "vuepress/core";
 
 import { getIconLinks } from "./components/index.js";
@@ -9,8 +9,6 @@ import {
   COMPONENT_PKG,
   isInstalled,
 } from "./utils.js";
-
-const { url } = import.meta;
 
 export const prepareConfigFile = (
   app: App,
@@ -53,9 +51,9 @@ if(!hasGlobalComponent("${item}")) app.component("${item}", ${item});
   return app.writeTemp(
     `components/config.js`,
     `\
-import { hasGlobalComponent } from "${getRealPath(
+import { hasGlobalComponent } from "${getModulePath(
       "@vuepress/helper/client",
-      url,
+      import.meta,
     )}";
 ${
   shouldImportH
@@ -67,20 +65,20 @@ import { h } from "vue";
 ${
   shouldImportUseScriptTag
     ? `\
-import { useScriptTag } from "${getRealPath("@vueuse/core/index.mjs", url)}";
+import { useScriptTag } from "${getModulePath("@vueuse/core/index.mjs", import.meta)}";
 `
     : ""
 }\
 ${
   shouldImportUseStyleTag
     ? `\
-import { useStyleTag } from "${getRealPath("@vueuse/core/index.mjs", url)}";
+import { useStyleTag } from "${getModulePath("@vueuse/core/index.mjs", import.meta)}";
 `
     : ""
 }\
 ${imports.join("\n")}
 
-import "${getRealPath("@vuepress/helper/sr-only.css", url)}";
+import "${getModulePath("@vuepress/helper/sr-only.css", import.meta)}";
 
 export default {
   enhance: ({ app }) => {

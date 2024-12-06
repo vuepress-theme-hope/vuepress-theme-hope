@@ -1,20 +1,22 @@
-import { createRequire } from "node:module";
-
 import { theme } from "docs-shared";
-import { fs } from "vuepress/utils";
 import { AVAILABLE_SERVICES } from "vuepress-plugin-components";
-
-const { version } = fs.readJsonSync(
-  createRequire(import.meta.url).resolve(
-    "vuepress-plugin-components/package.json",
-  ),
-) as { version: string };
+import pkg from "vuepress-plugin-components/package.json" with { type: "json" };
 
 // The theme wrapper is located in <root>/docs-shared/src/theme-wrapper.ts
 export default theme("components", {
   locales: {
     "/": {
-      navbar: ["/", "/guide/", "/config", "/demo"],
+      navbar: [
+        "/",
+        "/guide/",
+        "/config",
+        "/demo",
+        {
+          text: pkg.version,
+          icon: "bookmark",
+          link: "",
+        },
+      ],
 
       sidebar: [
         "/",
@@ -35,14 +37,9 @@ export default theme("components", {
         "/zh/config",
         "/zh/demo",
         {
-          text: version,
+          text: pkg.version,
           icon: "bookmark",
-          children: [
-            {
-              text: "V1 文档",
-              link: "https://vuepress-theme-hope.github.io/v1/components/zh/",
-            },
-          ],
+          link: "",
         },
       ],
 

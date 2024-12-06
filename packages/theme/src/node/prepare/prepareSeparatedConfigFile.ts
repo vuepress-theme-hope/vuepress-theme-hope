@@ -1,11 +1,9 @@
-import { getRealPath } from "@vuepress/helper";
+import { getModulePath } from "@vuepress/helper";
 import type { App } from "vuepress/core";
 
 import { PageInfo } from "../../shared/index.js";
 import type { ThemeStatus } from "../config/index.js";
 import { CLIENT_FOLDER } from "../utils.js";
-
-const { url } = import.meta;
 
 /**
  * @private
@@ -22,9 +20,9 @@ export const prepareSeparatedConfigFile = (
 
   if (enableCatalog) {
     imports.push(
-      `import { defineCatalogInfoGetter } from "${getRealPath(
+      `import { defineCatalogInfoGetter } from "${getModulePath(
         "@vuepress/plugin-catalog/client",
-        url,
+        import.meta,
       )}"`,
       `import { h } from "vue"`,
     );
@@ -76,9 +74,9 @@ import { HopeIcon, Layout, NotFound, injectDarkmode, setupDarkmode, setupSidebar
 
 ${imports.join("\n")}
 
-import "${getRealPath("@vuepress/helper/colors.css", url)}";
-import "${getRealPath("@vuepress/helper/normalize.css", url)}";
-import "${getRealPath("@vuepress/helper/sr-only.css", url)}";
+import "${getModulePath("@vuepress/helper/colors.css", import.meta)}";
+import "${getModulePath("@vuepress/helper/normalize.css", import.meta)}";
+import "${getModulePath("@vuepress/helper/sr-only.css", import.meta)}";
 import "${CLIENT_FOLDER}styles/index.scss";
 
 ${actions.join("\n")}
