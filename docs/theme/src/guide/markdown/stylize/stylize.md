@@ -1,6 +1,7 @@
 ---
 title: Stylize
 icon: wand-magic-sparkles
+order: -1
 category:
   - Markdown
 tag:
@@ -14,20 +15,19 @@ Stylize inline tokens including changing tags, adding attributes and modifying c
 
 ## Settings
 
-```js {7-9} title=".vuepress/config.js"
+```ts {7-9} title=".vuepress/config.ts"
+import { defineUserConfig } from "vuepress";
 import { hopeTheme } from "vuepress-theme-hope";
 
-export default {
+export default defineUserConfig({
   theme: hopeTheme({
-    plugins: {
-      mdEnhance: {
-        stylize: [
-          // options
-        ],
-      },
+    markdown: {
+      stylize: [
+        // options
+      ],
     },
   }),
-};
+});
 ```
 
 ## Usage
@@ -40,58 +40,56 @@ The `stylize` receives an array, where each element accepts 2 options:
 
 For example, you can use the following config to transform `*Recommended*` into a Badge `<Badge type="tip">Recommended</Badge>`:
 
-```js {7-19} title=".vuepress/config.js"
+```ts {7-19} title=".vuepress/config.ts"
+import { defineUserConfig } from "vuepress";
 import { hopeTheme } from "vuepress-theme-hope";
 
-export default {
+export default defineUserConfig({
   theme: hopeTheme({
-    plugins: {
-      mdEnhance: {
-        stylize: [
-          {
-            matcher: "Recommended",
-            replacer: ({ tag }) => {
-              if (tag === "em")
-                return {
-                  tag: "Badge",
-                  attrs: { type: "tip" },
-                  content: "Recommended",
-                };
-            },
+    markdown: {
+      stylize: [
+        {
+          matcher: "Recommended",
+          replacer: ({ tag }) => {
+            if (tag === "em")
+              return {
+                tag: "Badge",
+                attrs: { type: "tip" },
+                content: "Recommended",
+              };
           },
-        ],
-      },
+        },
+      ],
     },
   }),
-};
+});
 ```
 
 Another example is you want to set all the emphasis `n't` words to red color, so that `Setting this to a invalid syntax *doesn't* have any effect.` becomes: "Setting this to an invalid syntax <span style="color:red">doesn't</span> have any effect."
 
-```js {7-19} title=".vuepress/config.js"
-import { mdEnhancePlugin } from "vuepress-plugin-md-enhance";
+```ts {7-19} title=".vuepress/config.ts"
+import { defineUserConfig } from "vuepress";
+import { hopeTheme } from "vuepress-theme-hope";
 
-export default {
+export default defineUserConfig({
   theme: hopeTheme({
-    plugins: {
-      mdEnhance: {
-        stylize: [
-          {
-            matcher: /n't$/,
-            replacer: ({ tag, attrs, content }) => {
-              if (tag === "em")
-                return {
-                  tag: "span",
-                  attrs: { ...attrs, style: "color: red" },
-                  content,
-                };
-            },
+    markdown: {
+      stylize: [
+        {
+          matcher: /n't$/,
+          replacer: ({ tag, attrs, content }) => {
+            if (tag === "em")
+              return {
+                tag: "span",
+                attrs: { ...attrs, style: "color: red" },
+                content,
+              };
           },
-        ],
-      },
+        },
+      ],
     },
   }),
-};
+});
 ```
 
 Also, you can use `stylize` in frontmatter to provide extra stylize rules for content of the page.

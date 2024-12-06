@@ -10,11 +10,11 @@ The plugin provides you playground support.
 ## Settings
 
 ```js {7-35} title=".vuepress/config.js"
-import { mdEnhance } from "vuepress-plugin-md-enhance";
+import { mdEnhancePlugin } from "vuepress-plugin-md-enhance";
 
 export default {
   plugins: [
-    mdEnhance({
+    mdEnhancePlugin({
       // playground config here
       playground: {
         // add presets here

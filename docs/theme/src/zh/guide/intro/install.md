@@ -76,7 +76,7 @@ npm init vuepress-theme-hope@latest add [dir]
 
 请在配置文件中导入并使用 `hopeTheme` 以使用 `vuepress-theme-hope`，`hopeTheme` 接受的第一个参数会作为主题配置：
 
-```js {6} title=".vuepress/config.js"
+```ts {6} title=".vuepress/config.ts"
 import { defineUserConfig } from "vuepress";
 import { hopeTheme } from "vuepress-theme-hope";
 

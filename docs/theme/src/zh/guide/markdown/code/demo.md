@@ -14,25 +14,24 @@ tag:
 
 ## 配置
 
-```js {7} title=".vuepress/config.js"
+```ts {7} title=".vuepress/config.ts"
+import { defineUserConfig } from "vuepress";
 import { hopeTheme } from "vuepress-theme-hope";
 
-export default {
+export default defineUserConfig({
   theme: hopeTheme({
-    plugins: {
-      mdEnhance: {
-        demo: true,
-      },
+    markdown: {
+      demo: true,
     },
   }),
-};
+});
 ```
 
 <!-- @include: @md-enhance/zh/guide/code/demo/README.md#syntax -->
 
 ::: tip
 
-JSON 块是可选的，可用的配置详见 [配置](../../../config/plugins/md-enhance.md#demo)。
+JSON 块是可选的，可用的配置详见 [配置](../../../config/markdown/code.md#demo)。
 
 :::
 

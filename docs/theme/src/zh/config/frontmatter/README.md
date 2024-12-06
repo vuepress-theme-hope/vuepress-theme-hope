@@ -3,7 +3,7 @@ title: Frontmatter 配置
 icon: gears
 index: false
 dir:
-  order: 5
+  order: 6
 category:
   - 配置
 tag:

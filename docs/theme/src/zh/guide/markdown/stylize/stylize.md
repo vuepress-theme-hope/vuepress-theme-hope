@@ -1,6 +1,7 @@
 ---
 title: 样式化
 icon: wand-magic-sparkles
+order: -1
 category:
   - Markdown
 tag:
@@ -14,20 +15,19 @@ tag:
 
 ## 配置
 
-```js {7-9} title=".vuepress/config.js"
+```ts {7-9} title=".vuepress/config.ts"
+import { defineUserConfig } from "vuepress";
 import { hopeTheme } from "vuepress-theme-hope";
 
-export default {
+export default defineUserConfig({
   theme: hopeTheme({
-    plugins: {
-      mdEnhance: {
-        stylize: [
-          // 选项
-        ],
-      },
+    markdown: {
+      stylize: [
+        // options
+      ],
     },
   }),
-};
+});
 ```
 
 ## 使用
@@ -40,58 +40,56 @@ export default {
 
 例如，你可以使用以下配置将 `*Recommended*` 转换为徽章 `<Badge type="tip">Recommended</Badge>`：
 
-```js {7-19} title=".vuepress/config.js"
+```ts {7-19} title=".vuepress/config.ts"
+import { defineUserConfig } from "vuepress";
 import { hopeTheme } from "vuepress-theme-hope";
 
-export default {
+export default defineUserConfig({
   theme: hopeTheme({
-    plugins: {
-      mdEnhance: {
-        stylize: [
-          {
-            matcher: "Recommended",
-            replacer: ({ tag }) => {
-              if (tag === "em")
-                return {
-                  tag: "Badge",
-                  attrs: { type: "tip" },
-                  content: "Recommended",
-                };
-            },
+    markdown: {
+      stylize: [
+        {
+          matcher: "Recommended",
+          replacer: ({ tag }) => {
+            if (tag === "em")
+              return {
+                tag: "Badge",
+                attrs: { type: "tip" },
+                content: "Recommended",
+              };
           },
-        ],
-      },
+        },
+      ],
     },
   }),
-};
+});
 ```
 
 另一个例子是你想要将所有的“不或者没”开头的强调词设置为红色，这样 `设置它*没有*任何效果，请*不要*这样使用。`变成：“设置它<span style="color:red">没有</span>任何效果，请<span style="color:red">不要</span>这样使用。"
 
-```js {7-19} title=".vuepress/config.js"
-import { mdEnhancePlugin } from "vuepress-plugin-md-enhance";
+```ts {7-19} title=".vuepress/config.ts"
+import { defineUserConfig } from "vuepress";
+import { hopeTheme } from "vuepress-theme-hope";
 
-export default {
+export default defineUserConfig({
   theme: hopeTheme({
-    plugins: {
-      mdEnhance: {
-        stylize: [
-          {
-            matcher: /^(不|没)/,
-            replacer: ({ tag, attrs, content }) => {
-              if (tag === "em")
-                return {
-                  tag: "span",
-                  attrs: { ...attrs, style: "color: red" },
-                  content,
-                };
-            },
+    markdown: {
+      stylize: [
+        {
+          matcher: /n't$/,
+          replacer: ({ tag, attrs, content }) => {
+            if (tag === "em")
+              return {
+                tag: "span",
+                attrs: { ...attrs, style: "color: red" },
+                content,
+              };
           },
-        ],
-      },
+        },
+      ],
     },
   }),
-};
+});
 ```
 
 同时，你也可以在 frontmatter 总通过 `stylize` 选项来自定义此页面额外的匹配标记的函数。

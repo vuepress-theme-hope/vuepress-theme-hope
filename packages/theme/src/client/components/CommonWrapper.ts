@@ -36,7 +36,7 @@ import type {
   ThemeProjectHomePageFrontmatter,
 } from "../../shared/index.js";
 
-import "../styles/common.scss";
+import "../styles/common-wrapper.scss";
 
 export default defineComponent({
   name: "CommonWrapper",

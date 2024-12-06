@@ -64,6 +64,20 @@ export interface PaginationLocaleData {
   errorText: string;
 }
 
+/** @deprecated */
+export interface DeprecatedBlogLocaleData {
+  /**
+   * @deprecated Add the following styles to `.vuepress/styles/index.scss`:
+   *
+   * ```css
+   * .vp-blogger-avatar {
+   *   border-radius: 50%;
+   * }
+   * ```
+   */
+  roundAvatar?: never;
+}
+
 /**
  * 博客选项
  *
@@ -71,7 +85,7 @@ export interface PaginationLocaleData {
  *
  * @kind locale
  */
-export interface BlogLocaleOptions {
+export interface BlogLocaleOptions extends DeprecatedBlogLocaleData {
   /**
    * Name of the Blogger
    *

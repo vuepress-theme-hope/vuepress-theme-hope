@@ -1,7 +1,7 @@
-import { isPlainObject } from "@vuepress/helper";
-import type { MarkdownImagePluginOptions } from "@vuepress/plugin-markdown-image";
 import { markdownImagePlugin } from "@vuepress/plugin-markdown-image";
 import type { Plugin } from "vuepress/core";
+
+import type { MarkdownOptions } from "../../shared/index.js";
 
 /**
  * @private
@@ -9,15 +9,12 @@ import type { Plugin } from "vuepress/core";
  * Resolve options for @vuepress/plugin-markdown-image
  */
 export const getMarkdownImagePlugin = (
-  options?: Partial<MarkdownImagePluginOptions> | boolean,
+  options: MarkdownOptions,
 ): Plugin | null =>
-  options === false
-    ? null
-    : markdownImagePlugin(
-        isPlainObject(options)
-          ? options
-          : {
-              figure: true,
-              lazyload: true,
-            },
-      );
+  markdownImagePlugin({
+    figure: options.figure ?? false,
+    lazyload: options.imgLazyload ?? false,
+    mark: options.imgMark ?? false,
+    size: options.imgSize ?? false,
+    obsidianSize: options.obsidianImgSize ?? false,
+  });

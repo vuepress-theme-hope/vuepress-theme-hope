@@ -109,7 +109,7 @@ $$
 = \left(\frac {y^{\omega}} {\omega}\right) \left\{(\log y)^r + \sum_{i=1}^r \frac {(-1)^i r \cdots (r-i+1) (\log y)^{r-i}} {\omega^i} \right\}
 $$
 
-- [View Detail](https://theme-hope.vuejs.press/guide/markdown/grammar/tex.html)
+- [View Detail](https://theme-hope.vuejs.press/guide/markdown/grammar/math.html)
 
 #### Tasklist
 
@@ -128,7 +128,7 @@ Support setting color scheme and size.
 
 19^th^ H~2~O
 
-- [View Detail](https://theme-hope.vuejs.press/guide/markdown/grammar/sup-sub.html)
+- [View Detail](https://theme-hope.vuejs.press/guide/markdown/stylize/sup-sub.html)
 
 #### Component
 

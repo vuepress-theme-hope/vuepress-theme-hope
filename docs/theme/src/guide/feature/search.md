@@ -8,7 +8,7 @@ tag:
   - Search
 ---
 
-The theme adds built-in support for <ProjectLink name="search-pro">`vuepress-plugin-search-pro`</ProjectLink>, [`@vuepress/plugin-docsearch`][docsearch] and [`@vuepress/plugin-search`][search]. Just install the plugin you want and config it, you will get a search box in navbar.
+The theme adds built-in support for [`@vuepress/plugin-docsearch`][docsearch], [@vuepress/plugin-slimsearch][slimsearch] and [`@vuepress/plugin-search`][search]. Just install the plugin you want and config it, you will get a search box in navbar.
 
 <!-- more -->
 
@@ -204,39 +204,39 @@ The theme adds built-in support for <ProjectLink name="search-pro">`vuepress-plu
 
 ::: info More
 
-See [Plugin Docs][docsearch] for how to use docsearch plugin and its available options.
+See [plugin docs][docsearch] for how to use docsearch plugin and its available options.
 
 :::
 
-## Use `vuepress-plugin-search-pro`
+## Use `@vuepress/plugin-slimsearch`
 
-1. Install `vuepress-plugin-search-pro`
+1. Install `@vuepress/plugin-slimsearch`
 
    ::: code-tabs#shell
 
    @tab pnpm
 
    ```bash
-   pnpm add -D vuepress-plugin-search-pro
+   pnpm add -D @vuepress/plugin-slimsearch@next
    ```
 
    @tab yarn
 
    ```bash
-   yarn add -D vuepress-plugin-search-pro
+   yarn add -D @vuepress/plugin-slimsearch@next
    ```
 
    @tab npm
 
    ```bash
-   npm i -D vuepress-plugin-search-pro
+   npm i -D @vuepress/plugin-slimsearch@next
    ```
 
    :::
 
-1. Customize `plugins.searchPro` in theme options.
+1. Customize `plugins.slimsearch` in theme options.
 
-   You can set `plugins.searchPro` to `true` to enable it directly, or set it to an object to customize the plugin.
+   You can set `plugins.slimsearch` to `true` to enable it directly, or set it to an object to customize the plugin.
 
    ```js title=".vuepress/config.js"
    import { hopeTheme } from "vuepress-theme-hope";
@@ -244,10 +244,13 @@ See [Plugin Docs][docsearch] for how to use docsearch plugin and its available o
    export default {
      theme: hopeTheme({
        plugins: {
-         searchPro: true,
-         // searchPro: {
-         //   插件选项
-         // },
+         slimsearch: true,
+
+         // 或
+
+         slimsearch: {
+           // 插件选项
+         },
        },
      }),
    };
@@ -255,7 +258,7 @@ See [Plugin Docs][docsearch] for how to use docsearch plugin and its available o
 
 ::: info More
 
-See <ProjectLink name="search-pro">Plugin Docs</ProjectLink> for available options.
+See [plugin docs][slimsearch] for available options.
 
 :::
 
@@ -304,9 +307,10 @@ See <ProjectLink name="search-pro">Plugin Docs</ProjectLink> for available optio
 
 ::: info More
 
-See [Plugin Docs][search] for available options.
+See [plugin docs][search] for available options.
 
 :::
 
 [docsearch]: https://ecosystem.vuejs.press/plugins/search/docsearch.html
 [search]: https://ecosystem.vuejs.press/plugins/search/search.html
+[slimsearch]: https://ecosystem.vuejs.press/plugins/search/slimsearch.html

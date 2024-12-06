@@ -19,24 +19,6 @@ Output will only include codes of features you enabled, so no need to worry abou
 
 :::
 
-## Grammar
-
-<!-- @include: ./grammar/README.md#intro -->
-
-<!-- @include: ./grammar/README.md#demo -->
-
-## Content
-
-<!-- @include: ./content/README.md#intro -->
-
-<!-- @include: ./content/README.md#demo -->
-
-## Stylize
-
-<!-- @include: ./stylize/README.md#intro -->
-
-<!-- @include: ./stylize/README.md#demo -->
-
 ## Charts
 
 <!-- @include: ./chart/README.md#intro -->

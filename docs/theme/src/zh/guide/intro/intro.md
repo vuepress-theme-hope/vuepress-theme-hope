@@ -56,15 +56,15 @@ VuePress 在一定程度上扩展了 Markdown 语法，但仍然缺少一些常�
 
 - 我们对 [图片进行了一些内置增强](../markdown/grammar/image.md)。
 
-- 如果你希望存放一些知识笔记，主题提供了 [自定义容器](../markdown/stylize/hint.md)、[标记](../markdown/stylize/mark.md)、[任务列表](../markdown/grammar/tasklist.md)、[思维导图](../markdown/chart/markmap.md) 与 [公式](../markdown/grammar/tex.md) 支持。
+- 如果你希望存放一些知识笔记，主题提供了 [自定义容器](../markdown/stylize/hint.md)、[标记](../markdown/stylize/mark.md)、[任务列表](../markdown/grammar/tasklist.md)、[思维导图](../markdown/chart/markmap.md) 与 [数学公式](../markdown/grammar/math.md) 支持。
 
-- 如果你是一名程序员需要大量展示代码与 demo，本主题为代码块提供了浅色与深色两种主题，[代码组](../markdown/code/code-tabs.md) 与 [代码块复制按钮](../feature/code-block.md)。同时我们还提供 [代码演示](../markdown/code/demo.md)，[Playground](../markdown/code/playground.md) [Kotlin Playground](../markdown/code/kotlin-playground.md) 和 [Vue Playground](../markdown/code/vue-playground.md) 功能，方便你展示自己的 Vue、React 组件或者其他 demo。
+- 如果你是一名程序员需要大量展示代码与 demo，本主题为代码块提供了[多种主题](../markdown/code/fence.md#代码主题)，[代码组](../markdown/code/code-tabs.md) 与 [代码块复制按钮](../markdown/code/fence.md#复制按钮)。同时我们还提供 [代码演示](../markdown/code/demo.md)，[Playground](../markdown/code/playground.md) [Kotlin Playground](../markdown/code/kotlin-playground.md) 和 [Vue Playground](../markdown/code/vue-playground.md) 功能，方便你展示自己的 Vue、React 组件或者其他 demo。
 
 - 如果你需要提供产品文档与展示，主题提供了 [选项卡](../markdown/content/tabs.md)、[幻灯片](../markdown/content/revealjs.md)、[图表](../markdown/chart/chartjs.md)、[echarts](../markdown/chart/echarts.md)、[流程图](../markdown/chart/flowchart.md)、 [Mermaid 图表](../markdown/chart/mermaid.md) 与 [Plant UML](../markdown/chart/plantuml.md) 功能。
 
 - 为了重新组织你的内容，主题提供了[文件包含](../markdown/content/include.md)功能。
 
-- 为了设置内容的样式，主题提供了[下标和上标](../markdown/grammar/sup-sub.md)、[属性设置](../markdown/stylize/attrs.md)和 [样式化](../markdown/stylize/stylize.md) 功能，并为你提供了很多[有用的组件](../component/built-in.md)。
+- 为了设置内容的样式，主题提供了[下标和上标](../markdown/stylize/sup-sub.md)、[属性设置](../markdown/stylize/attrs.md)和 [样式化](../markdown/stylize/stylize.md) 功能，并为你提供了很多[有用的组件](../component/built-in.md)。
 
 总之，任何人都可以享受 Markdown 增强语法带来的便利。
 
@@ -116,8 +116,6 @@ VuePress 在一定程度上扩展了 Markdown 语法，但仍然缺少一些常�
 
 ### 功能
 
-- [自定义代码块](../feature/code-block.md)
-
 - [图片预览](../feature/photo-swipe.md) 支持缩放、拖动、幻灯片浏览、分享和下载
 
 - [自动生成目录页](../feature/catalog.md)
@@ -125,7 +123,7 @@ VuePress 在一定程度上扩展了 Markdown 语法，但仍然缺少一些常�
 - 搜索功能
 
   - [基于 docsearch 的爬虫搜索支持](../feature/search.md#使用-vuepressplugin-docsearch)
-  - [基于 slimsearch 的强大客户端搜索支持](../feature/search.md#使用-vuepress-plugin-search-pro)。
+  - [基于 slimsearch 的强大客户端搜索支持](../feature/search.md#使用-vuepressplugin-slimsearch)。
 
 - [页面加密](../feature/encrypt.md) 功能来限制访问。
 
@@ -167,7 +165,5 @@ VuePress 在一定程度上扩展了 Markdown 语法，但仍然缺少一些常�
 这里还有一些其他没有被主题捆绑的插件，你可以根据自己的需求自行启用。
 
 - <ProjectLink name="lightgallery" path="/zh/">vuepress-plugin-lightgallery</ProjectLink>: 基于 lightgallery 图片浏览插件
-
-- <ProjectLink name="search-pro" path="/zh/">vuepress-plugin-search-pro</ProjectLink>: 客户端搜索插件
 
 :::

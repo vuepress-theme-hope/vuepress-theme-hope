@@ -10,18 +10,17 @@ tag:
 
 <!-- @include: @md-enhance/zh/guide/code/kotlin-playground.md#before -->
 
-```js {7} title=".vuepress/config.js"
+```ts {7} title=".vuepress/config.ts"
+import { defineUserConfig } from "vuepress";
 import { hopeTheme } from "vuepress-theme-hope";
 
-export default {
+export default defineUserConfig({
   theme: hopeTheme({
-    plugins: {
-      mdEnhance: {
-        kotlinPlayground: true,
-      },
+    markdown: {
+      kotlinPlayground: true,
     },
   }),
-};
+});
 ```
 
 <!-- @include: @md-enhance/zh/guide/code/kotlin-playground.md#after -->

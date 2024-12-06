@@ -46,18 +46,18 @@
     "dev:ts": "tsc -b tsconfig.build.json --watch"
   },
   "dependencies": {
-    "@vuepress/helper": "2.0.0-rc.56",
-    "@vuepress/plugin-sass-palette": "2.0.0-rc.56",
-    "lightgallery": "^2.8.1",
+    "@vuepress/helper": "2.0.0-rc.62",
+    "@vuepress/plugin-sass-palette": "2.0.0-rc.62",
+    "lightgallery": "^2.8.2",
     "vue": "^3.5.13",
     "vuepress-shared": "workspace:*"
   },
   "devDependencies": {
-    "rollup": "4.27.3"
+    "rollup": "4.28.1"
   },
   "peerDependencies": {
-    "sass": "^1.80.3",
-    "sass-embedded": "^1.80.3",
+    "sass": "^1.81.0",
+    "sass-embedded": "^1.81.0",
     "sass-loader": "^16.0.2",
     "vuepress": "2.0.0-rc.18"
   },

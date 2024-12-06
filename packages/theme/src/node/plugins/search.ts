@@ -2,16 +2,16 @@ import {
   entries,
   fromEntries,
   getLocaleConfig,
-  getRootLangPath,
+  inferRootLocalePath,
   isPlainObject,
   keys,
   startsWith,
 } from "@vuepress/helper";
 import type { DocSearchPluginOptions } from "@vuepress/plugin-docsearch";
 import type { SearchPluginOptions } from "@vuepress/plugin-search";
+import type { SlimSearchPluginOptions } from "@vuepress/plugin-slimsearch";
 import type { App, Page, Plugin } from "vuepress/core";
 import { colors } from "vuepress/utils";
-import type { SearchProPluginOptions } from "vuepress-plugin-search-pro";
 
 import type {
   PluginsOptions,
@@ -23,7 +23,7 @@ import { logger } from "../utils.js";
 
 let docsearchPlugin: (options: DocSearchPluginOptions) => Plugin;
 let searchPlugin: (options: SearchPluginOptions) => Plugin;
-let searchProPlugin: (options: SearchProPluginOptions) => Plugin;
+let slimsearchPlugin: (options: SlimSearchPluginOptions) => Plugin;
 let cut: (content: string, strict?: boolean) => string[];
 
 try {
@@ -39,7 +39,7 @@ try {
 }
 
 try {
-  ({ searchProPlugin } = await import("vuepress-plugin-search-pro"));
+  ({ slimsearchPlugin } = await import("@vuepress/plugin-slimsearch"));
   ({ cut } = await import("nodejs-jieba"));
 } catch {
   // Do nothing
@@ -94,7 +94,7 @@ const SEARCH_ZH_LOCALES = {
 /**
  * @private
  *
- * Resolve options for @vuepress/plugin-docsearch, @vuepress/plugin-search and vuepress-plugin-search-pro
+ * Resolve options for @vuepress/plugin-docsearch, @vuepress/plugin-search and @vuepress/plugin-slimsearch
  */
 export const getSearchPlugin = (
   app: App,
@@ -118,23 +118,23 @@ export const getSearchPlugin = (
     return docsearchPlugin({
       locales: locales["/zh/"]
         ? { "/zh/": DOCSEARCH_ZH_LOCALES }
-        : getRootLangPath(app) === "/zh/"
+        : inferRootLocalePath(app) === "/zh/"
           ? { "/": DOCSEARCH_ZH_LOCALES }
           : {},
       ...plugins.docsearch,
     });
   }
 
-  if (plugins.searchPro) {
-    if (!searchProPlugin) {
+  if (plugins.slimsearch) {
+    if (!slimsearchPlugin) {
       logger.error(
-        `${colors.cyan("vuepress-plugin-search-pro")} is not installed!`,
+        `${colors.cyan("@vuepress/plugin-slimsearch")} is not installed!`,
       );
 
       return null;
     }
 
-    return searchProPlugin({
+    return slimsearchPlugin({
       indexContent: true,
       // Add supports for category and tags
       customFields: [
@@ -177,7 +177,7 @@ export const getSearchPlugin = (
                       fieldName === "id" ? [text] : cut(text, true),
                   },
                 }
-              : getRootLangPath(app) === "/zh/"
+              : inferRootLocalePath(app) === "/zh/"
                 ? {
                     "/": {
                       tokenize: (text, fieldName) =>
@@ -187,7 +187,7 @@ export const getSearchPlugin = (
                 : {},
           }
         : {}),
-      ...(isPlainObject(plugins.searchPro) ? plugins.searchPro : {}),
+      ...(isPlainObject(plugins.slimsearch) ? plugins.slimsearch : {}),
     });
   }
 
@@ -204,7 +204,7 @@ export const getSearchPlugin = (
       isSearchable: (page) => !isPageEncrypted(page),
       locales: locales["/zh/"]
         ? { "/zh/": SEARCH_ZH_LOCALES }
-        : getRootLangPath(app) === "/zh/"
+        : inferRootLocalePath(app) === "/zh/"
           ? { "/": SEARCH_ZH_LOCALES }
           : {},
       ...(isPlainObject(plugins.search) ? plugins.search : {}),

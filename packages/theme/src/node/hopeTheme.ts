@@ -49,6 +49,7 @@ export const hopeTheme = (
     const {
       favicon,
       hotReload = isDebug,
+      markdown = {},
       plugins = {},
       hostname,
       iconAssets,
@@ -65,7 +66,7 @@ export const hopeTheme = (
     const themeData = getThemeData(app, themeOptions, status);
     const icons = status.enableBlog ? getSocialMediaIcons(themeData) : null;
 
-    usePlugins(app, themeData, plugins, hotReload, behaviorOptions);
+    usePlugins(app, themeData, markdown, plugins, hotReload, behaviorOptions);
 
     if (isDebug) console.log("Theme plugin options:", plugins);
 
@@ -134,11 +135,12 @@ export const hopeTheme = (
 
       plugins: getPlugins(
         app,
-        plugins,
         themeData,
 
         // @ts-expect-error: hostname might not exist
         {
+          markdown,
+          plugins,
           hostname,
           hotReload,
           iconAssets,

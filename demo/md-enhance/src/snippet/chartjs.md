@@ -3,7 +3,7 @@ title: Chart.js
 layout: Snippet
 ---
 
-::: chart A bar chart
+::: chartjs A bar chart
 
 ```json
 {

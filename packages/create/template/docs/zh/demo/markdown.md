@@ -83,7 +83,7 @@ $$
 = \left(\frac {y^{\omega}} {\omega}\right) \left\{(\log y)^r + \sum_{i=1}^r \frac {(-1)^i r \cdots (r-i+1) (\log y)^{r-i}} {\omega^i} \right\}
 $$
 
-- [查看详情](https://theme-hope.vuejs.press/zh/guide/markdown/grammar/tex.html)
+- [查看详情](https://theme-hope.vuejs.press/zh/guide/markdown/grammar/math.html)
 
 #### 任务列表
 
@@ -102,7 +102,7 @@ $$
 
 19^th^ H~2~O
 
-- [查看详情](https://theme-hope.vuejs.press/zh/guide/markdown/grammar/sup-sub.html)
+- [查看详情](https://theme-hope.vuejs.press/zh/guide/markdown/stylize/sup-sub.html)
 
 #### 组件
 

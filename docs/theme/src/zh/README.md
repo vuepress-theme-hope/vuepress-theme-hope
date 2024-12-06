@@ -79,7 +79,7 @@ highlights:
       - title: 上下角标
         icon: superscript
         details: 轻松在 Markdown 中添加上下角标
-        link: ./guide/markdown/grammar/sup-sub.html
+        link: ./guide/markdown/stylize/sup-sub.html
 
       - title: 脚注
         icon: quote-left
@@ -139,7 +139,7 @@ highlights:
       - title: Tex 支持
         icon: square-root-variable
         details: Markdown 现在也可以支持 Tex 语法以显示公式
-        link: ./guide/markdown/grammar/tex.html
+        link: ./guide/markdown/grammar/math.html
 
       - title: 导入文件支持
         icon: fab fa-markdown

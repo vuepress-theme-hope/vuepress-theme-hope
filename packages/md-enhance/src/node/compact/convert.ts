@@ -13,13 +13,8 @@ export const convertOptions = (
 
   deprecatedLogger({
     options,
-    old: "mdImport",
-    new: "include",
-  });
-  deprecatedLogger({
-    options,
-    old: "vpre",
-    new: "vPre",
+    old: "chart",
+    new: "chartjs",
   });
 
   droppedLogger({
@@ -32,12 +27,12 @@ export const convertOptions = (
     old: "imageFix",
     msg: "This option is no longer needed.",
   });
-
   droppedLogger({
     options,
     old: "lineNumbers",
     msg: "Please use the lineNumbers option in @vuepress/plugin-prismjs or @vuepress/plugin-shiki !",
   });
+
   droppedLogger({
     options,
     old: "container",
@@ -53,6 +48,18 @@ export const convertOptions = (
     old: "hint",
     msg: "Please use @vuepress/plugin-markdown-hint instead.",
   });
+
+  droppedLogger({
+    options,
+    old: "mdImport",
+    msg: "Please use @vuepress/plugin-markdown-include instead.",
+  });
+  droppedLogger({
+    options,
+    old: "include",
+    msg: "Please use @vuepress/plugin-markdown-include instead.",
+  });
+
   droppedLogger({
     options,
     old: "imageTitle",
@@ -88,6 +95,7 @@ export const convertOptions = (
     old: "lazyload",
     msg: "Please use @vuepress/plugin-markdown-image instead.",
   });
+
   droppedLogger({
     options,
     old: "imageLazyload",
@@ -103,6 +111,7 @@ export const convertOptions = (
     old: "obsidianImgSize",
     msg: "Please use @vuepress/plugin-markdown-image instead.",
   });
+
   droppedLogger({
     options,
     old: "linkCheck",
@@ -113,6 +122,7 @@ export const convertOptions = (
     old: "checkLinks",
     msg: "Please use @vuepress/plugin-links-check instead.",
   });
+
   droppedLogger({
     options,
     old: "tex",
@@ -128,6 +138,7 @@ export const convertOptions = (
     old: "mathjax",
     msg: "Please use @vuepress/plugin-markdown-math instead.",
   });
+
   droppedLogger({
     options,
     old: "revealjs",
@@ -143,11 +154,7 @@ export const convertOptions = (
     old: "presentation",
     msg: "Please use @vuepress/plugin-revealjs instead.",
   });
-  droppedLogger({
-    options,
-    old: "codetabs",
-    msg: "Please use @vuepress/plugin-markdown-tab instead.",
-  });
+
   droppedLogger({
     options,
     old: "codegroup",
@@ -155,8 +162,90 @@ export const convertOptions = (
   });
   droppedLogger({
     options,
+    old: "codetabs",
+    msg: "Please use @vuepress/plugin-markdown-tab instead.",
+  });
+  droppedLogger({
+    options,
     old: "tabs",
     msg: "Please use @vuepress/plugin-markdown-tab instead.",
+  });
+
+  droppedLogger({
+    options,
+    old: "vpre",
+    msg: "Please use @vuepress/plugin-markdown-ext instead.",
+  });
+  droppedLogger({
+    options,
+    old: "vPre",
+    msg: "Please use @vuepress/plugin-markdown-ext instead.",
+  });
+  droppedLogger({
+    options,
+    old: "breaks",
+    msg: "Please use @vuepress/plugin-markdown-ext instead.",
+  });
+  droppedLogger({
+    options,
+    old: "linkify",
+    msg: "Please use @vuepress/plugin-markdown-ext instead.",
+  });
+  droppedLogger({
+    options,
+    old: "gfm",
+    msg: "Please use @vuepress/plugin-markdown-ext instead.",
+  });
+  droppedLogger({
+    options,
+    old: "footnote",
+    msg: "Please use @vuepress/plugin-markdown-ext instead.",
+  });
+  droppedLogger({
+    options,
+    old: "tasklist",
+    msg: "Please use @vuepress/plugin-markdown-ext instead.",
+  });
+  droppedLogger({
+    options,
+    old: "component",
+    msg: "Please use @vuepress/plugin-markdown-ext instead.",
+  });
+
+  droppedLogger({
+    options,
+    old: "align",
+    msg: "Please use @vuepress/plugin-markdown-stylize instead.",
+  });
+  droppedLogger({
+    options,
+    old: "attrs",
+    msg: "Please use @vuepress/plugin-markdown-stylize instead.",
+  });
+  droppedLogger({
+    options,
+    old: "mark",
+    msg: "Please use @vuepress/plugin-markdown-stylize instead.",
+  });
+  droppedLogger({
+    options,
+    old: "spoiler",
+    msg: "Please use @vuepress/plugin-markdown-stylize instead.",
+  });
+  droppedLogger({
+    options,
+    old: "sub",
+    msg: "Please use @vuepress/plugin-markdown-stylize instead.",
+  });
+  droppedLogger({
+    options,
+    old: "sup",
+    msg: "Please use @vuepress/plugin-markdown-stylize instead.",
+  });
+  droppedLogger({
+    options,
+    old: "stylize",
+    msg: "Please use @vuepress/plugin-markdown-stylize instead.",
   });
 
   if (options.card)

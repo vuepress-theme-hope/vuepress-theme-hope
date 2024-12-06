@@ -56,15 +56,15 @@ The theme provides a lot of extended syntax support for Markdown, allowing you t
 
 - If you are a literature lover and want to place some essays, the theme provides [Custom Alignment](../markdown/stylize/align.md) and [footnote](../markdown/content/footnote.md).
 
-- To store some knowledge notes, the theme provides [Custom container](../markdown/stylize/hint.md), [Mark](../markdown/stylize/mark.md), [Task list](../markdown/grammar/tasklist.md) [mindmap](../markdown/chart/markmap.md) and [Tex](../markdown/grammar/tex.md) support.
+- To store some knowledge notes, the theme provides [Custom container](../markdown/stylize/hint.md), [Mark](../markdown/stylize/mark.md), [Task list](../markdown/grammar/tasklist.md) [mindmap](../markdown/chart/markmap.md) and [math](../markdown/grammar/math.md) support.
 
-- If you are a programmer and need to show a lot of codes and demos, this theme provides light and dark themes for code blocks, [code tabs](../markdown/code/code-tabs.md) and [copy button for code blocks](../feature/code-block.md#copy-button). At the same time, we also provide the [Code Demo](../markdown/code/demo.md), [Playground](../markdown/code/playground.md), [Kotlin Playground](../markdown/code/kotlin-playground.md) and [Vue Playground](../markdown/code/vue-playground.md) functions, which is convenient for you to show your own Vue, React components or other demos and provide playground for visitors.
+- If you are a programmer and need to show a lot of codes and demos, this theme provides [multiple themes for code blocks](../markdown/code/fence.md#code-block-themes), [code tabs](../markdown/code/code-tabs.md) and [copy button for code blocks](../markdown/code/fence.md#copy-button). At the same time, we also provide the [Code Demo](../markdown/code/demo.md), [Playground](../markdown/code/playground.md), [Kotlin Playground](../markdown/code/kotlin-playground.md) and [Vue Playground](../markdown/code/vue-playground.md) functions, which is convenient for you to show your own Vue, React components or other demos and provide playground for visitors.
 
 - If you are providing product documentation and presentation, the theme provides [tabs](../markdown/content/tabs.md), [slide](../markdown/content/revealjs.md), [chart](../markdown/chart/chartjs.md), [echarts](../markdown/chart/echarts.md), [flowchart](../markdown/chart/flowchart.md), [mermaid diagram](../markdown/chart/mermaid.md) and [plantuml](../markdown/chart/plantuml.md) functions.
 
 - To reorganize your content, the theme provides [File Include](../markdown/content/include.md) function.
 
-- To style your content, the theme provides [Subscript and Superscript](../markdown/grammar/sup-sub.md), [Attrs setting](../markdown/stylize/attrs.md) and [Stylize](../markdown/stylize/stylize.md) function.
+- To style your content, the theme provides [Subscript and Superscript](../markdown/stylize/sup-sub.md), [Attrs setting](../markdown/stylize/attrs.md) and [Stylize](../markdown/stylize/stylize.md) function.
 
 - The theme also provides you a lot of [useful components](../component/built-in.md).
 
@@ -118,8 +118,6 @@ In short, anyone can enjoy the convenience of Markdown's enhanced syntax.
 
 ### New Features
 
-- [Customizing Code Blocks](../feature/code-block.md)
-
 - [Picture Preview](../feature/photo-swipe.md) which supports zooming, dragging, slides browsing, sharing and downloading
 
 - [Catalog Page auto-generation](../feature/catalog.md)
@@ -127,7 +125,7 @@ In short, anyone can enjoy the convenience of Markdown's enhanced syntax.
 - Search feature
 
   - [Crawler search support with docsearch](../feature/search.md#use-vuepressplugin-docsearch)
-  - [Powerful client search support with slimsearch](../feature/search.md#use-vuepress-plugin-search-pro).
+  - [Powerful client search support with slimsearch](../feature/search.md#use-vuepressplugin-slimsearch).
 
 - [Page Encryption](../feature/encrypt.md) feature to limit access.
 
@@ -169,7 +167,5 @@ The theme includes the following plugins, you can use them in other themes or di
 Here are some other plugins that are not bundled by the theme, you can enable them according to your own needs.
 
 - <ProjectLink name="lightgallery">vuepress-plugin-lightgallery</ProjectLink>: Image preview plugin based on lightgallery
-
-- <ProjectLink name="search-pro">vuepress-plugin-search-pro</ProjectLink>: Client search plugin
 
 :::

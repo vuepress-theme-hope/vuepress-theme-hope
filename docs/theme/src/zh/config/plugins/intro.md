@@ -102,6 +102,8 @@ tag:
 
 - [@vuepress/plugin-search][search]: 简单的客户端搜索插件
 
+- [@vuepress/plugin-slimsearch][slimsearch]: 基于 SlimSearch 的客户端搜索插件
+
 - [@vuepress/plugin-feed][feed]: Feed 支持
 
 - [@vuepress/plugin-prismjs][prismjs]: 基于 prism.js 的代码高亮插件
@@ -109,8 +111,6 @@ tag:
 - [@vuepress/plugin-redirect][redirect]: 重定向插件
 
 - [@vuepress/plugin-pwa][pwa]: PWA 支持
-
-- <ProjectLink name="search-pro" path="/zh/">vuepress-plugin-search-pro</ProjectLink>: 专业客户端搜索插件
 
 ### 官方插件
 
@@ -141,5 +141,6 @@ tag:
 [seo]: https://ecosystem.vuejs.press/zh/plugins/seo/seo/
 [shiki]: https://ecosystem.vuejs.press/zh/plugins/markdown/shiki.html
 [sitemap]: https://ecosystem.vuejs.press/zh/plugins/seo/sitemap/
+[slimsearch]: https://ecosystem.vuejs.press/zh/plugins/search/slimsearch.html
 [theme-data]: https://ecosystem.vuejs.press/zh/plugins/development/theme-data.html
 [watermark]: https://ecosystem.vuejs.press/zh/plugins/features/watermark.html

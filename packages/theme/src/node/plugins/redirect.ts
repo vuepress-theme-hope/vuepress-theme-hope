@@ -1,17 +1,7 @@
 import { isPlainObject, keys } from "@vuepress/helper";
 import type { RedirectPluginOptions } from "@vuepress/plugin-redirect";
+import { redirectPlugin } from "@vuepress/plugin-redirect";
 import type { Plugin } from "vuepress/core";
-import { colors } from "vuepress/utils";
-
-import { logger } from "../utils.js";
-
-let redirectPlugin: (options: RedirectPluginOptions) => Plugin;
-
-try {
-  ({ redirectPlugin } = await import("@vuepress/plugin-redirect"));
-} catch {
-  // Do nothing
-}
 
 /**
  * @private
@@ -24,14 +14,6 @@ export const getRedirectPlugin = (
   // Disable redirect if no options for redirect plugin
   if (options === false || (isPlainObject(options) && !keys(options).length))
     return null;
-
-  if (!redirectPlugin) {
-    logger.error(
-      `${colors.cyan("@vuepress/plugin-redirect")} is not installed!`,
-    );
-
-    return null;
-  }
 
   return redirectPlugin(
     isPlainObject(options) ? options : { switchLocale: "modal" },

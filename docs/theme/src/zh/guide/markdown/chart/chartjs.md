@@ -10,18 +10,17 @@ tag:
 
 <!-- @include: @md-enhance/zh/guide/chart/chartjs.md#before -->
 
-```js {7} title=".vuepress/config.js"
+```ts {7} title=".vuepress/config.ts"
+import { defineUserConfig } from "vuepress";
 import { hopeTheme } from "vuepress-theme-hope";
 
-export default {
+export default defineUserConfig({
   theme: hopeTheme({
-    plugins: {
-      mdEnhance: {
-        chart: true,
-      },
+    markdown: {
+      chart: true,
     },
   }),
-};
+});
 ```
 
 <!-- @include: @md-enhance/zh/guide/chart/chartjs.md#after -->

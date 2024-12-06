@@ -48,7 +48,7 @@ export default {
   plugins: [
     mdEnhancePlugin({
       // Enable Chart
-      chart: true,
+      chartjs: true,
     }),
   ],
 };
@@ -59,7 +59,7 @@ export default {
 ## Syntax
 
 ````md
-::: chart Title
+::: chartjs Title
 
 ```json
 {
@@ -76,7 +76,7 @@ export default {
 
 :::: md-demo Bar Chart
 
-::: chart A bar chart
+::: chartjs A bar chart
 
 ```json
 {
@@ -123,7 +123,7 @@ export default {
 
 :::: md-demo Bubble Chart
 
-::: chart A Bubble Chart
+::: chartjs A Bubble Chart
 
 ```json
 {
@@ -149,7 +149,7 @@ export default {
 
 :::: md-demo Line Chart
 
-::: chart A Line Chart
+::: chartjs A Line Chart
 
 ```json
 {
@@ -175,7 +175,7 @@ export default {
 
 :::: md-demo Polar Area Chart
 
-::: chart A Polar Area Chart
+::: chartjs A Polar Area Chart
 
 ```json
 {
@@ -205,7 +205,7 @@ export default {
 
 :::: md-demo Radar Chart
 
-::: chart A Radar Chart
+::: chartjs A Radar Chart
 
 ```json
 {
@@ -261,7 +261,7 @@ export default {
 
 :::: md-demo Scatter Chart
 
-::: chart A Scatter Chart
+::: chartjs A Scatter Chart
 
 ```json
 {

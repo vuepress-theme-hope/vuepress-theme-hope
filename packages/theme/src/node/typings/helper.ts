@@ -6,10 +6,6 @@ import type { CopyrightPluginOptions } from "@vuepress/plugin-copyright";
 import type { FeedPluginOptions } from "@vuepress/plugin-feed";
 import type { GitPluginOptions } from "@vuepress/plugin-git";
 import type { LinksCheckPluginOptions } from "@vuepress/plugin-links-check";
-import type { MarkdownHintPluginOptions } from "@vuepress/plugin-markdown-hint";
-import type { MarkdownImagePluginOptions } from "@vuepress/plugin-markdown-image";
-import type { MarkdownMathPluginOptions } from "@vuepress/plugin-markdown-math";
-import type { MarkdownTabPluginOptions } from "@vuepress/plugin-markdown-tab";
 import type {
   NoticeOptions,
   NoticePluginOptions,
@@ -25,7 +21,6 @@ import type { ShikiPluginOptions } from "@vuepress/plugin-shiki";
 import type { SitemapPluginOptions } from "@vuepress/plugin-sitemap";
 import type { WatermarkPluginOptions } from "@vuepress/plugin-watermark";
 import type { ComponentPluginOptions } from "vuepress-plugin-components";
-import type { MarkdownEnhancePluginOptions } from "vuepress-plugin-md-enhance";
 
 import type {
   BlogOptions,
@@ -71,26 +66,6 @@ export type ThemeGitPluginHelper = Helper<GitPluginOptions | boolean>;
 
 export type ThemeLinksCheckPluginHelper = Helper<
   LinksCheckPluginOptions | boolean
->;
-
-export type ThemeMarkdownHintPluginHelper = Helper<
-  MarkdownHintPluginOptions | boolean
->;
-
-export type ThemeMarkdownImagePluginHelper = Helper<
-  MarkdownImagePluginOptions | boolean
->;
-
-export type ThemeMarkdownMathPluginHelper = Helper<
-  MarkdownMathPluginOptions | boolean
->;
-
-export type ThemeMarkdownTabPluginHelper = Helper<
-  MarkdownTabPluginOptions | boolean
->;
-
-export type ThemeMdEnhancePluginHelper = Helper<
-  MarkdownEnhancePluginOptions | false
 >;
 
 export type ThemeNoticePluginHelper = Helper<

@@ -5,9 +5,9 @@ import { PLUGIN_CHECKLIST } from "./utils.js";
 import type { PluginsOptions } from "../../shared/index.js";
 import { logger } from "../utils.js";
 
-const KNOWN_THEME_PLUGIN_KEYS = PLUGIN_CHECKLIST.map(([, key]) => key).filter(
-  Boolean,
-);
+const KNOWN_THEME_PLUGIN_KEYS = PLUGIN_CHECKLIST.map(([, key]) => key)
+  .filter(Boolean)
+  .flat();
 
 /**
  * @private
@@ -22,9 +22,9 @@ export const checkPluginsOptions = (plugins: PluginsOptions): void => {
           `plugins.${key}`,
         )}" option in ${colors.cyan(
           "theme options",
-        )}, but it's not supported by theme. You need to install the plugin yourself and import. Then call it manually in "${colors.magenta(
-          "plugins",
-        )}" options in ${colors.cyan("vuepress config file")} directly.`,
+        )}, but it's not supported by theme. You need to install the plugin yourself, import it in ${colors.cyan(
+          "vuepress config file",
+        )} and call it manually in "${colors.magenta("plugins")}" options.`,
       );
   });
 };

@@ -34,7 +34,7 @@ VuePress 使用文档文件夹中的 `.vuepress` 文件夹存放配置，所有 
 
 为了能够得到正确的提示，我们建议从 `vuepress` 导入 `defineUserConfig` 并包裹配置对象:
 
-```js title=".vuepress/config.js"
+```ts title=".vuepress/config.ts"
 import { defineUserConfig } from "vuepress";
 
 export default defineUserConfig({

@@ -28,7 +28,7 @@ You can pass the second argument `true` to enable legacy mode when calling `mdEn
   Adds [chart.js](https://www.chartjs.org/docs/latest/) support via `chart` option
 
   ````md
-  ::: chart Title
+  ::: chartjs Title
 
   ```json
   {
@@ -38,7 +38,7 @@ You can pass the second argument `true` to enable legacy mode when calling `mdEn
 
   :::
 
-  ::: chart Title
+  ::: chartjs Title
 
   ```js
   const config = {

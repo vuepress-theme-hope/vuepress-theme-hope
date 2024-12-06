@@ -3,7 +3,7 @@ title: Frontmatter Config
 icon: gears
 index: false
 dir:
-  order: 5
+  order: 6
 category:
   - Config
 tag:

@@ -102,6 +102,8 @@ These plugins are supported by theme, but you need to install them manually whil
 
 - [@vuepress/plugin-search][search]: Simple client search plugin
 
+- [@vuepress/plugin-slimsearch][slimsearch]: Client search plugin using SlimSearch
+
 - [@vuepress/plugin-feed][feed]: Feed support
 
 - [@vuepress/plugin-prismjs][prismjs]: Code highlighting plugin using Prism.js
@@ -109,8 +111,6 @@ These plugins are supported by theme, but you need to install them manually whil
 - [@vuepress/plugin-pwa][pwa]: PWA support
 
 - [@vuepress/plugin-redirect][redirect]: Redirect pages
-
-- <ProjectLink name="search-pro">vuepress-plugin-search-pro</ProjectLink>: Professional Client search plugin
 
 [active-header-links]: https://ecosystem.vuejs.press/plugins/development/active-header-links.html
 [back-to-top]: https://ecosystem.vuejs.press/plugins/features/back-to-top.html
@@ -139,5 +139,6 @@ These plugins are supported by theme, but you need to install them manually whil
 [seo]: https://ecosystem.vuejs.press/plugins/seo/seo/
 [shiki]: https://ecosystem.vuejs.press/plugins/markdown/shiki.html
 [sitemap]: https://ecosystem.vuejs.press/plugins/seo/sitemap/
+[slimsearch]: https://ecosystem.vuejs.press/plugins/search/slimsearch.html
 [theme-data]: https://ecosystem.vuejs.press/plugins/development/theme-data.html
 [watermark]: https://ecosystem.vuejs.press/plugins/features/watermark.html

@@ -9,11 +9,6 @@ import type {
   ThemeFeedPluginHelper,
   ThemeGitPluginHelper,
   ThemeLinksCheckPluginHelper,
-  ThemeMarkdownHintPluginHelper,
-  ThemeMarkdownImagePluginHelper,
-  ThemeMarkdownMathPluginHelper,
-  ThemeMarkdownTabPluginHelper,
-  ThemeMdEnhancePluginHelper,
   ThemeNavbarHelper,
   ThemeNoticePluginHelper,
   ThemePhotoSwipePluginHelper,
@@ -52,12 +47,6 @@ export const copyright: ThemeCopyrightPluginHelper = (options) => options;
 export const feed: ThemeFeedPluginHelper = (options) => options;
 export const git: ThemeGitPluginHelper = (options) => options;
 export const linksCheck: ThemeLinksCheckPluginHelper = (options) => options;
-export const markdownHint: ThemeMarkdownHintPluginHelper = (options) => options;
-export const markdownImage: ThemeMarkdownImagePluginHelper = (options) =>
-  options;
-export const markdownMath: ThemeMarkdownMathPluginHelper = (options) => options;
-export const markdownTab: ThemeMarkdownTabPluginHelper = (options) => options;
-export const mdEnhance: ThemeMdEnhancePluginHelper = (options) => options;
 export const notice: ThemeNoticePluginHelper = (options) => options;
 export const photoSwipe: ThemePhotoSwipePluginHelper = (options) => options;
 export const prismjs: ThemePrismJsPluginHelper = (options) => options;

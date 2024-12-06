@@ -64,6 +64,52 @@ export default hopeTheme({
     },
   },
 
+  // These features are enabled for demo, only preserve features you need here
+  markdown: {
+    align: true,
+    attrs: true,
+    codeTabs: true,
+    component: true,
+    figure: true,
+    gfm: true,
+    imgLazyload: true,
+    imgSize: true,
+    include: true,
+    mark: true,
+    spoiler: true,
+    stylize: [
+      {
+        matcher: "Recommended",
+        replacer: ({ tag }) => {
+          if (tag === "em")
+            return {
+              tag: "Badge",
+              attrs: { type: "tip" },
+              content: "Recommended",
+            };
+        },
+      },
+    ],
+    sub: true,
+    sup: true,
+    tabs: true,
+    tasklist: true,
+    vPre: true,
+
+    // uncomment these if you need TeX support
+    // math: {
+    //   // install katex before enabling it
+    //   type: "katex",
+    //   // or install mathjax-full before enabling it
+    //   type: "mathjax",
+    // },
+
+    // install @vuepress/plugin-revealjs and uncomment these if you need slides
+    // revealjs: {
+    //   plugins: ["highlight", "math", "search", "notes", "zoom"],
+    // },
+  },
+
   plugins: {
     // Note: This is for testing ONLY!
     // You MUST generate and use your own comment service in production.
@@ -80,49 +126,9 @@ export default hopeTheme({
     },
 
     // These features are enabled for demo, only preserve features you need here
-    markdownImage: {
-      figure: true,
-      lazyload: true,
-      size: true,
-    },
-
-    // markdownMath: {
-    //   // install katex before enabling it
-    //   type: "katex",
-    //   // or install mathjax-full before enabling it
-    //   type: "mathjax",
-    // },
-
-    // This features is enabled for demo, only preserve if you need it
-    markdownTab: true,
-
-    // These features are enabled for demo, only preserve features you need here
     mdEnhance: {
-      align: true,
-      attrs: true,
-      component: true,
       demo: true,
-      include: true,
-      mark: true,
       plantuml: true,
-      spoiler: true,
-      stylize: [
-        {
-          matcher: "Recommended",
-          replacer: ({ tag }) => {
-            if (tag === "em")
-              return {
-                tag: "Badge",
-                attrs: { type: "tip" },
-                content: "Recommended",
-              };
-          },
-        },
-      ],
-      sub: true,
-      sup: true,
-      tasklist: true,
-      vPre: true,
 
       // Install chart.js before enabling it
       // chart: true,
@@ -134,9 +140,6 @@ export default hopeTheme({
 
       // Install flowchart.ts before enabling it
       // flowchart: true,
-
-      // gfm requires mathjax-full to provide tex support
-      // gfm: true,
 
       // Install mermaid before enabling it
       // mermaid: true,
@@ -207,11 +210,6 @@ export default hopeTheme({
     //       },
     //     ],
     //   },
-    // },
-
-    // install @vuepress/plugin-revealjs and uncomment these if you need slides
-    // revealjs: {
-    //   plugins: ["highlight", "math", "search", "notes", "zoom"],
     // },
   },
 });

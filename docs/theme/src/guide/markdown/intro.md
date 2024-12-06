@@ -1,5 +1,5 @@
 ---
-title: Enable Enhance
+title: Markdown Intro
 icon: toggle-on
 order: 1
 category:
@@ -9,7 +9,18 @@ tag:
   - Markdown
 ---
 
-Besides Markdown syntaxes VuePress itself adds, `vuepress-theme-hope` enables more syntax in Markdown via <ProjectLink name="md-enhance">vuepress-plugin-md-enhance</ProjectLink>, [@vuepress/plugin-markdown-hint][markdown-hint], [@vuepress/plugin-markdown-image][markdown-image] and [@vuepress/plugin-markdown-math][markdown-math].
+Besides Markdown syntaxes VuePress itself adds, `vuepress-theme-hope` enables more syntax and features in Markdown via the following plugins:
+
+- [@vuepress/plugin-markdown-ext][markdown-ext]
+- [@vuepress/plugin-markdown-image][markdown-image]
+- [@vuepress/plugin-markdown-include][markdown-include]
+- [@vuepress/plugin-markdown-hint][markdown-hint]
+- [@vuepress/plugin-markdown-math][markdown-math]
+- [@vuepress/plugin-markdown-stylize][markdown-stylize]
+- [@vuepress/plugin-markdown-tab][markdown-tab]
+- [@vuepress/plugin-link-check][link-check]
+- [@vuepress/plugin-revealjs][revealjs]
+- <ProjectLink name="md-enhance">vuepress-plugin-md-enhance</ProjectLink>
 
 <!-- more -->
 
@@ -21,21 +32,7 @@ For detailed syntax, please see [Built-in Markdown Enhance](../../cookbook/vuepr
 
 ## Enable Markdown Enhancement
 
-The following options in the theme options will be passed to the plugin:
-
-- `plugins.markdownHint` will be passed to `@vuepress/plugin-markdown-hint` as a plugin option
-- `plugins.markdownImage` will be passed to `@vuepress/plugin-markdown-image` as a plugin option
-- `plugins.markdownMath` will be passed to `@vuepress/plugin-markdown-math` as a plugin option
-- `plugins.mdEnhance` will be passed to `vuepress-plugin-md-enhance` as a plugin option
-
-So you can also read their documentation directly to see how to use them:
-
-- [@vuepress/plugin-markdown-hint docs][markdown-hint]
-- [@vuepress/plugin-markdown-image docs][markdown-image]
-- [@vuepress/plugin-markdown-math docs][markdown-math]
-- <ProjectLink name="md-enhance">vuepress-plugin-md-enhance Docs</ProjectLink>
-
-`plugins.mdEnhance` in theme options will be passed to the plugin as a plugin option. Visit <ProjectLink name="md-enhance">plugin documentation</ProjectLink> to see the usage.
+You can control Markdown syntax and features through the `markdown` option in the theme options.
 
 ::: tip
 
@@ -43,6 +40,12 @@ Don't worry about the size of your site. If you don't enable related features, t
 
 :::
 
-[markdown-hint]: https://ecosystem.vuejs.press/plugins/markdown/markdown-hint.html
+[markdown-ext]: https://ecosystem.vuejs.press/plugins/markdown/markdown-ext.html
 [markdown-image]: https://ecosystem.vuejs.press/plugins/markdown/markdown-image.html
+[markdown-include]: https://ecosystem.vuejs.press/plugins/markdown/markdown-include.html
+[markdown-hint]: https://ecosystem.vuejs.press/plugins/markdown/markdown-hint.html
 [markdown-math]: https://ecosystem.vuejs.press/plugins/markdown/markdown-math.html
+[markdown-stylize]: https://ecosystem.vuejs.press/plugins/markdown/markdown-stylize.html
+[markdown-tab]: https://ecosystem.vuejs.press/plugins/markdown/markdown-tab.html
+[link-check]: https://ecosystem.vuejs.press/plugins/markdown/link-check.html
+[revealjs]: https://ecosystem.vuejs.press/plugins/markdown/revealjs/

@@ -1,6 +1,0 @@
----
-tag:
-  - markdown
----
-
-Markdown content.

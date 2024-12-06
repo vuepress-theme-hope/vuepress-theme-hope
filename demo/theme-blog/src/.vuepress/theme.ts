@@ -131,6 +131,62 @@ export default hopeTheme(
       },
     },
 
+    // FIXME: All features are enabled for demo, only preserve features you need here
+    markdown: {
+      align: true,
+      attrs: true,
+      codeTabs: true,
+      component: true,
+      figure: true,
+      gfm: true,
+      imgLazyload: true,
+      imgSize: true,
+      include: true,
+      mark: true,
+      math: true,
+      revealjs: {
+        plugins: ["highlight", "math", "search", "notes", "zoom"],
+      },
+      spoiler: true,
+      stylize: [
+        {
+          matcher: "Recommended",
+          replacer: ({
+            tag,
+          }): {
+            tag: string;
+            attrs: Record<string, string>;
+            content: string;
+          } | void => {
+            if (tag === "em")
+              return {
+                tag: "Badge",
+                attrs: { type: "tip" },
+                content: "Recommended",
+              };
+          },
+        },
+      ],
+      sub: true,
+      sup: true,
+      tabs: true,
+      tasklist: true,
+      vPre: true,
+
+      chartjs: true,
+      demo: true,
+      echarts: true,
+      flowchart: true,
+      kotlinPlayground: true,
+      markmap: true,
+      mermaid: true,
+      playground: {
+        presets: ["ts", "vue", "unocss"],
+      },
+      sandpack: true,
+      vuePlayground: true,
+    },
+
     plugins: {
       blog: {
         type: [
@@ -152,62 +208,6 @@ export default hopeTheme(
 
       components: {
         components: ["Badge", "VPCard"],
-      },
-
-      markdownImage: {
-        figure: true,
-        lazyload: true,
-        size: true,
-      },
-
-      markdownMath: true,
-
-      markdownTab: true,
-
-      // All features are enabled for demo, only preserve features you need here
-      mdEnhance: {
-        align: true,
-        attrs: true,
-        chart: true,
-        component: true,
-        demo: true,
-        echarts: true,
-        flowchart: true,
-        gfm: true,
-        include: true,
-        kotlinPlayground: true,
-        mark: true,
-        markmap: true,
-        mermaid: true,
-        playground: {
-          presets: ["ts", "vue", "unocss"],
-        },
-        sandpack: true,
-        spoiler: true,
-        stylize: [
-          {
-            matcher: "Recommended",
-            replacer: ({
-              tag,
-            }): {
-              tag: string;
-              attrs: Record<string, string>;
-              content: string;
-            } | void => {
-              if (tag === "em")
-                return {
-                  tag: "Badge",
-                  attrs: { type: "tip" },
-                  content: "Recommended",
-                };
-            },
-          },
-        ],
-        sub: true,
-        sup: true,
-        tasklist: true,
-        vPre: true,
-        vuePlayground: true,
       },
 
       pwa: {
@@ -265,10 +265,6 @@ export default hopeTheme(
             },
           ],
         },
-      },
-
-      revealjs: {
-        plugins: ["highlight", "math", "search", "notes", "zoom"],
       },
 
       seo:

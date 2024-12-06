@@ -12,11 +12,11 @@ icon: code
 ::
 
 ```js {7-35} title=".vuepress/config.js"
-import { mdEnhance } from "vuepress-plugin-md-enhance";
+import { mdEnhancePlugin } from "vuepress-plugin-md-enhance";
 
 export default {
   plugins: [
-    mdEnhance({
+    mdEnhancePlugin({
       // 在此放置交互演示配置
       playground: {
         // 添加预设

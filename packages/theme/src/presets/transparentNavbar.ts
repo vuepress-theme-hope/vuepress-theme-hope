@@ -36,7 +36,8 @@ const COLOR_SELECTORS = [
   ".vp-action-link",
   ".vp-color-mode-switch",
   ".vp-outlook-button",
-  ".search-pro-button",
+  // search icons
+  ".slimsearch-button",
   ".DocSearch-Button",
 ];
 

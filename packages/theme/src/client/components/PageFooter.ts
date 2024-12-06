@@ -11,7 +11,7 @@ import {
 
 import type { ThemeNormalPageFrontmatter } from "../../shared/index.js";
 
-import "../styles/footer.scss";
+import "../styles/page-footer.scss";
 
 export default defineComponent({
   name: "PageFooter",

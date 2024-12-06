@@ -14,18 +14,17 @@ Hide spoiler contents in your VuePress site.
 
 ## Settings
 
-```js {7} title=".vuepress/config.js"
+```ts {7} title=".vuepress/config.ts"
+import { defineUserConfig } from "vuepress";
 import { hopeTheme } from "vuepress-theme-hope";
 
-export default {
+export default defineUserConfig({
   theme: hopeTheme({
-    plugins: {
-      mdEnhance: {
-        spoiler: true,
-      },
+    markdown: {
+      spoiler: true,
     },
   }),
-};
+});
 ```
 
 ## Syntax

@@ -2,7 +2,7 @@
 title: Plugin Config
 icon: puzzle-piece
 dir:
-  order: 4
+  order: 5
 ---
 
 ::: warning Use theme plugins through theme

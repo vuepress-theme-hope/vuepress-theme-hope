@@ -67,55 +67,11 @@ The plugin is only enabled in build mode by default to improve devServer perform
 
 Check [git plugin docs][git-config] for available plugin options.
 
-## linksCheck <Badge text="enabled by default" />
-
-Controls `@vuepress/plugin-links-check` which provides markdown links check. You can manually set a boolean to control the plugin state, or provide plugin options.
-
-Check [links-check plugin docs][links-check-config] for available plugin options.
-
-## markdownHint <Badge text="enabled by default" />
-
-Controls `@vuepress/plugin-markdown-hint` which adds hint container support in markdown. You can manually set a boolean to control the plugin state, or provide plugin options.
-
-The hint containers are enabled by default, and you can set `false` to disable the plugin.
-
-Check [markdown-hint plugin docs][markdown-hint-config] for available plugin options.
-
-## markdownImage <Badge text="enabled by default" />
-
-Controls `@vuepress/plugin-markdown-image` which provides image enhancement in markdown. You can manually set a boolean to control the plugin state, or provide plugin options.
-
-Lazyload and figure feature are enabled by default, and you can set `false` to disable the plugin.
-
-Check [markdown-image plugin docs][markdown-image-config] for available plugin options.
-
-## markdownMath
-
-Controls `@vuepress/plugin-markdown-math` which provides math support in markdown. You can manually set a boolean to control the plugin state, or provide plugin options.
-
-Setting `true` means using katex with defaults.
-
-Check [markdown-math plugin docs][markdown-math-config] for available plugin options.
-
-## markdownTab
-
-Controls `@vuepress/plugin-markdown-tab` which provides code tabs and tabs in markdown. You can manually set a boolean to control the plugin state, or provide plugin options.
-
-Setting to `true` means enabling both features.
-
-Check [markdown-tab plugin docs][markdown-tab-config] for available plugin options.
-
 ## nprogress <Badge text="enabled by default" />
 
 Controls `@vuepress/plugin-nprogress` which provides a progress bar through `nprogress` when switching pages .
 
 You can set `false` to disable it.
-
-## prismjs
-
-Controls `@vuepress/plugin-prismjs` which provides code block highlighting via `prismjs`.
-
-Check [prismjs plugin docs][prismjs-config] for available plugin options.
 
 ## photoSwipe <Badge text="enabled by default" />
 
@@ -146,14 +102,6 @@ Reading speed (words per minute)
 
 Check [reading-time plugin docs][reading-time-config] for available plugin options.
 
-## revealjs
-
-Controls `@vuepress/plugin-revealjs` which provides presentation support.
-
-You can set `true` to directly enable it, or provide plugin options.
-
-Check [revealjs plugin docs][revealjs-config] for available plugin options.
-
 ## seo <Badge text="enabled by default" />
 
 Controls `@vuepress/plugin-seo` which provides search engine enhancements.
@@ -180,16 +128,9 @@ Check [watermark plugin docs][watermark-config] for available plugin options.
 [catalog-config]: https://ecosystem.vuejs.press/plugins/features/catalog.html#options
 [copy-code-config]: https://ecosystem.vuejs.press/plugins/features/copy-code.html#options
 [git-config]: https://ecosystem.vuejs.press/plugins/development/git.html#options
-[links-check-config]: https://ecosystem.vuejs.press/plugins/markdown/links-check.html#options
-[markdown-hint-config]: https://ecosystem.vuejs.press/plugins/markdown/markdown-hint.html#options
-[markdown-image-config]: https://ecosystem.vuejs.press/plugins/markdown/markdown-image.html#options
-[markdown-math-config]: https://ecosystem.vuejs.press/plugins/markdown/markdown-math.html#options
-[markdown-tab-config]: https://ecosystem.vuejs.press/plugins/markdown/markdown-tab.html#options
 [photo-swipe-config]: https://ecosystem.vuejs.press/plugins/features/photo-swipe.html#options
-[prismjs-config]: https://ecosystem.vuejs.press/plugins/markdown/prismjs.html#options
 [pwa-config]: https://ecosystem.vuejs.press/plugins/pwa/pwa/config.html#options
 [reading-time-config]: https://ecosystem.vuejs.press/plugins/development/reading-time.html#options
-[revealjs-config]: https://ecosystem.vuejs.press/plugins/markdown/revealjs/#options
 [seo-config]: https://ecosystem.vuejs.press/plugins/seo/seo/config.html
 [sitemap-config]: https://ecosystem.vuejs.press/plugins/seo/sitemap/config.html
 [watermark-config]: https://ecosystem.vuejs.press/plugins/features/watermark.html

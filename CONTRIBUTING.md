@@ -42,7 +42,6 @@ The project is a monorepo, managed by pnpm.
 │ ├── lightgallery → lightgallery plugin document
 │ ├── md-enhance → md-enhance plugin document
 │ ├── shared → vuepress-shared document
-│ ├── search-pro → search-pro plugin document
 │ └── theme → theme document
 │
 ├── docs-shared → common files for docs
@@ -52,7 +51,6 @@ The project is a monorepo, managed by pnpm.
 │ ├── create → create-vuepress-theme-hope helper
 │ ├── lightgallery → lightgallery plugin
 │ ├── md-enhance → md-enhance plugin
-│ ├── search-pro → search-pro plugin
 │ ├── shared → shared file
 │ └── theme → vuepress-theme-hope theme
 │

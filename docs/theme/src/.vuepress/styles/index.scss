@@ -35,32 +35,3 @@
 
   overflow-wrap: break-word;
 }
-
-.plugins-wrapper {
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: space-between;
-}
-
-.plugin-item {
-  margin: 8px 12px;
-  padding: 12px 16px;
-  border-radius: 8px;
-
-  background: var(--vp-c-bg-alt);
-  color: inherit;
-
-  font-size: 18px;
-  text-align: center;
-  text-decoration: none !important;
-
-  .font-icon {
-    margin-bottom: 4px;
-    color: var(--vp-c-accent);
-    font-size: 1.5em;
-  }
-
-  &:hover {
-    box-shadow: 0 2px 12px 0 var(--vp-c-shadow);
-  }
-}
