@@ -76,7 +76,7 @@
     "@mdit/plugin-sub": "^0.13.1",
     "@mdit/plugin-sup": "^0.13.1",
     "@mdit/plugin-tasklist": "^0.13.1",
-    "@mdit/plugin-uml": "^0.13.1",
+    "@mdit/plugin-uml": "^0.14.0",
     "@types/markdown-it": "^14.1.2",
     "@vuepress/helper": "2.0.0-rc.56",
     "@vuepress/plugin-sass-palette": "2.0.0-rc.56",
