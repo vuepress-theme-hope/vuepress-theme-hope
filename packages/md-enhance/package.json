@@ -79,7 +79,7 @@
     "@types/babel__core": "7.20.5",
     "@vuepress/bundler-vite": "2.0.0-rc.18",
     "markdown-it": "14.1.0",
-    "rollup": "4.28.0",
+    "rollup": "4.28.1",
     "typescript": "5.7.2"
   },
   "peerDependencies": {

@@ -110,7 +110,7 @@
     "@vuepress/bundler-vite": "2.0.0-rc.18",
     "@vuepress/bundler-webpack": "2.0.0-rc.18",
     "@vuepress/plugin-slimsearch": "2.0.0-rc.62",
-    "rollup": "4.28.0"
+    "rollup": "4.28.1"
   },
   "peerDependencies": {
     "@vuepress/plugin-docsearch": "2.0.0-rc.62",
