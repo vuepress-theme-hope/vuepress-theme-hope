@@ -174,7 +174,12 @@
   }
 
   h1 {
-    display: none;
+    display: 1.75em;
+
+    // hide first h1 has it should be page title
+    &:first-of-type {
+      display: none;
+    }
   }
 
   h2 {
