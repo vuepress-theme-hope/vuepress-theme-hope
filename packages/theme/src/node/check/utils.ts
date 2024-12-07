@@ -1,3 +1,5 @@
+import { colors } from "vuepress/utils";
+
 export const PLUGIN_CHECKLIST = [
   ["@vuepress/plugin-active-header-links", "activeHeaderLinks"],
   ["@vuepress/plugin-blog", "blog"],
@@ -8,26 +10,30 @@ export const PLUGIN_CHECKLIST = [
   ["@vuepress/plugin-docsearch", "docsearch"],
   ["@vuepress/plugin-feed", "feed"],
   ["@vuepress/plugin-git", "git"],
-  ["@vuepress/plugin-links-check", "linksCheck"],
+  [
+    "@vuepress/plugin-links-check",
+    "",
+    `Set ${colors.cyan("markdown.linksCheck")} in theme options`,
+  ],
   [
     "@vuepress/plugin-markdown-hint",
     "",
-    'Set "markdown.alert" and "markdown.hint" in theme options',
+    `Set ${colors.cyan("markdown.alert")} and${colors.cyan("markdown.hint")} in theme options`,
   ],
   [
     "@vuepress/plugin-markdown-image",
     "",
-    'Set "markdown.figure", "markdown.imgLazyload", "markdown.imgMark", "markdown.imgSize" and "markdown.obsidianImgSize" in theme options',
+    `Set ${colors.cyan("markdown.figure")}, ${colors.cyan("markdown.imgLazyload")}, ${colors.cyan("markdown.imgMark")}, ${colors.cyan("markdown.imgSize")} and ${colors.cyan("markdown.obsidianImgSize")} in theme options`,
   ],
   [
     "@vuepress/plugin-markdown-math",
     "",
-    'Set "markdown.math" in theme options',
+    `Set ${colors.cyan("markdown.math")} in theme options`,
   ],
   [
     "@vuepress/plugin-markdown-tab",
     "",
-    "Set 'markdown.tabs' and 'markdown.codeTabs' in theme options",
+    `Set ${colors.cyan("markdown.tabs")} and ${colors.cyan("markdown.codeTabs")} in theme options`,
   ],
   ["@vuepress/plugin-notice", "notice"],
   ["@vuepress/plugin-nprogress", "nprogress"],
@@ -36,11 +42,16 @@ export const PLUGIN_CHECKLIST = [
   ["@vuepress/plugin-pwa", "pwa"],
   ["@vuepress/plugin-reading-time", "readingTime"],
   ["@vuepress/plugin-redirect", "redirect"],
-  ["@vuepress/plugin-revealjs", "", 'Set "markdown.revealjs" in theme options'],
+  [
+    "@vuepress/plugin-revealjs",
+    "",
+    `Set ${colors.cyan("markdown.revealjs")} in theme options`,
+  ],
   ["@vuepress/plugin-rtl", "", 'Set "rtl: true" in the needed theme locales.'],
   ["@vuepress/plugin-search", "search"],
   ["@vuepress/plugin-seo", "seo"],
   ["@vuepress/plugin-shiki", "shiki"],
+  ["@vuepress/plugin-slimsearch", "slimsearch"],
   ["@vuepress/plugin-sitemap", "sitemap"],
   ["@vuepress/plugin-theme-data", "", "This plugin is called internally."],
   ["@vuepress/plugin-watermark", "watermark"],

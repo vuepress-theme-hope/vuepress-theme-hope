@@ -477,6 +477,12 @@ const covertPluginOptions = (themeOptions: Record<string, unknown>): void => {
     );
   }
 
+  if (pluginOptions.searchPro) {
+    logger.warn(
+      `${colors.magenta("plugins.searchPro")} is deprecated, you should replace ${colors.cyan("vuepress-plugin-search-pro")} with ${colors.cyan("@vuepress/plugin-slimsearch")} in ${colors.green("package.json")} and use ${colors.magenta("markdown.slimsearch")} instead.`,
+    );
+  }
+
   if (pluginOptions.revealjs) {
     logger.warn(
       `${colors.magenta("plugins.revealjs")} is deprecated, you should use ${colors.magenta("markdown.revealjs")} instead.`,
