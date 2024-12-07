@@ -4,6 +4,14 @@ All notable changes to this project will be documented in this file. See [Conven
 
 <!-- #region recent-change -->
 
+## [2.0.0-rc.61](https://github.com/vuepress-theme-hope/vuepress-theme-hope/compare/v2.0.0-rc.60...v2.0.0-rc.61) (2024-12-07)
+
+### 🐛 Bug Fixes
+
+- **theme:** fix bundle style ([49d1c97](https://github.com/vuepress-theme-hope/vuepress-theme-hope/commit/49d1c97857805025741a3eaec166bb20acbc13d7))
+
+<!-- #region recent-change -->
+
 ## [2.0.0-rc.60](https://github.com/vuepress-theme-hope/vuepress-theme-hope/compare/v2.0.0-rc.59...v2.0.0-rc.60) (2024-12-06)
 
 ### ⚠ BREAKING CHANGES
