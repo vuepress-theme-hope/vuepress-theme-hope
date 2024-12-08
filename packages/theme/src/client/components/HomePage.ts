@@ -46,7 +46,7 @@ export default defineComponent({
           id: "main-content",
           class: "vp-page vp-project-home",
           "aria-labelledby":
-            frontmatter.value.heroText === null ? "" : "main-title",
+            frontmatter.value.heroText === "" ? "" : "main-title",
         },
         [
           slots.top?.(),
@@ -58,6 +58,7 @@ export default defineComponent({
           ) ??
             (features.value
               ? h(DropTransition, { appear: true, delay: 0.24 }, () =>
+                  // eslint-disable-next-line @typescript-eslint/no-non-null-assertion
                   h(FeaturePanel, { features: features.value! }),
                 )
               : null),

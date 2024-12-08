@@ -10,7 +10,13 @@ import type { MediaPlayerElement } from "vidstack/elements";
 import type { VidstackPlayerConfig } from "vidstack/global/player";
 import { VidstackPlayer, VidstackPlayerLayout } from "vidstack/global/player";
 import type { PropType, VNode } from "vue";
-import { defineComponent, h, onBeforeUnmount, onMounted, ref } from "vue";
+import {
+  defineComponent,
+  h,
+  onBeforeUnmount,
+  onMounted,
+  shallowRef,
+} from "vue";
 
 import type { VidstackLocaleConfig } from "../../shared/index.js";
 import { getLink } from "../utils/getLink.js";
@@ -94,13 +100,14 @@ export default defineComponent({
   },
 
   setup(props) {
-    const vidstack = ref<HTMLElement>();
+    const vidstack = shallowRef<HTMLElement>();
     const locale = useLocaleConfig(VIDSTACK_LOCALES);
 
     let player: MediaPlayerElement | null = null;
 
     onMounted(async () => {
       const options: VidstackPlayerConfig = {
+        // eslint-disable-next-line @typescript-eslint/no-non-null-assertion
         target: vidstack.value!,
         crossOrigin: true,
         poster: props.poster,
@@ -125,12 +132,16 @@ export default defineComponent({
       player = await VidstackPlayer.create(options);
 
       player.addEventListener("provider-change", () => {
+        // eslint-disable-next-line @typescript-eslint/no-non-null-assertion
         if (player!.provider?.type === "hls" && HLS_JS_INSTALLED)
+          // eslint-disable-next-line @typescript-eslint/no-non-null-assertion
           player!.provider.library = (() =>
             import(
               /* webpackChunkName: "hls" */ "hls.js/dist/hls.min.js"
             )) as HLSConstructorLoader;
+        // eslint-disable-next-line @typescript-eslint/no-non-null-assertion
         else if (player!.provider?.type === "dash" && DASHJS_INSTALLED)
+          // eslint-disable-next-line @typescript-eslint/no-non-null-assertion
           player!.provider.library = (() =>
             import(
               /* webpackChunkName: "dashjs" */ "dashjs"

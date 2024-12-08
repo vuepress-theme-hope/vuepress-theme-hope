@@ -21,6 +21,7 @@ export const markmap: PluginSimple = (md) => {
 
     if (realInfo === "markmap") return markmapRender(tokens, index);
 
+    // eslint-disable-next-line @typescript-eslint/no-non-null-assertion
     return fence!(...args);
   };
 

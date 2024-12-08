@@ -19,7 +19,7 @@ export default defineComponent({
     );
 
     return (): VNode | null =>
-      isSupported
+      isSupported.value
         ? h("div", { class: "full-screen-wrapper" }, [
             h(
               "label",

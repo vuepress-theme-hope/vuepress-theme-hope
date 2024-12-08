@@ -44,12 +44,12 @@ tag:
 
 ## heroText
 
-- 类型: `string | false`
-- 默认值: `"Hello"`
+- 类型: `string`
+- 默认值: 站点标题
 - 详情:
   - [博客 → 博客主页](../../guide/blog/home.md#博客类型主页)
 
-主页标题
+主页标题，可通过设置为空字符串来隐藏默认标题。
 
 ## tagline
 

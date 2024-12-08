@@ -14,7 +14,7 @@ import type { ThemeBlogHomePageFrontmatter } from "../../../../shared/index.js";
 
 import "../styles/blog-hero.scss";
 
-export interface HeroInfo {
+export interface HeroInfoData {
   text: string | null;
   tagline: string | null;
   image: string | null;
@@ -24,7 +24,7 @@ export interface HeroInfo {
   isFullScreen: boolean;
 }
 
-export interface HeroBackground {
+export interface HeroBackgroundData {
   image: string | null;
   bgStyle: string | Record<string, string> | undefined;
   isFullScreen: boolean;
@@ -36,8 +36,8 @@ export default defineComponent({
   name: "BlogHero",
 
   slots: Object as SlotsType<{
-    bg?: (props: HeroBackground) => VNode[] | VNode | null;
-    info?: (props: HeroInfo) => VNode[] | VNode | null;
+    bg?: (props: HeroBackgroundData) => VNode[] | VNode | null;
+    info?: (props: HeroInfoData) => VNode[] | VNode | null;
   }>,
 
   setup(_props, { slots }) {
@@ -61,7 +61,7 @@ export default defineComponent({
       } = frontmatter.value;
 
       return {
-        text: heroText ?? siteLocale.value.title ?? "Hello",
+        text: heroText ?? (siteLocale.value.title || "Hello"),
         tagline: tagline ?? "",
         image: heroImage ? withBase(heroImage) : null,
         imageDark: heroImageDark ? withBase(heroImageDark) : null,
@@ -177,6 +177,7 @@ export default defineComponent({
                       class: "slide-down-button",
                       onClick: () => {
                         window.scrollTo({
+                          // eslint-disable-next-line @typescript-eslint/no-non-null-assertion
                           top: hero.value!.clientHeight,
                           behavior: "smooth",
                         });

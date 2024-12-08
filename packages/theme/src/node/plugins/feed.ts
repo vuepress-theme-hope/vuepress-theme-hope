@@ -12,7 +12,9 @@ import { getAuthor } from "vuepress-shared/node";
 import type { ThemeData } from "../../shared/index.js";
 import { logger } from "../utils.js";
 
-let feedPlugin: (options: FeedPluginOptions, legacy?: boolean) => Plugin;
+let feedPlugin:
+  | ((options: FeedPluginOptions, legacy?: boolean) => Plugin)
+  | null = null;
 
 try {
   ({ feedPlugin } = await import("@vuepress/plugin-feed"));
@@ -42,7 +44,7 @@ export const getFeedPlugin = (
   }
 
   const globalAuthor = getAuthor(
-    themeData.author ?? themeData.locales["/"]?.author,
+    themeData.author ?? themeData.locales["/"].author,
   );
 
   const defaultOptions: FeedPluginOptions = {
@@ -56,7 +58,7 @@ export const getFeedPlugin = (
       ),
     channel: {
       ...(favicon ? { icon: favicon } : {}),
-      ...(themeData.locales["/"]?.logo
+      ...(themeData.locales["/"].logo
         ? { image: themeData.locales["/"].logo }
         : {}),
       ...(globalAuthor.length ? { author: globalAuthor[0] } : {}),

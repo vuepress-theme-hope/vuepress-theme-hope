@@ -207,12 +207,13 @@ export default defineComponent({
     const { el, width, height, resize } = useSize<HTMLDivElement>(props, 0);
 
     const loaded = ref(false);
-    let artPlayerInstance: Artplayer;
+    let artPlayerInstance: Artplayer | null = null;
 
     const getInitOptions = (): ArtPlayerInitOptions => {
       const initOptions: ArtPlayerInitOptions = {
         theme: "#3eaf7c",
         ...ART_PLAYER_OPTIONS,
+        // eslint-disable-next-line @typescript-eslint/no-non-null-assertion
         container: el.value!,
         poster: props.poster,
         url: getLink(props.src),

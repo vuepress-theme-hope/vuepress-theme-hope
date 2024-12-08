@@ -31,12 +31,14 @@ export const useGlobalEncrypt = (): GlobalEncrypt => {
     if (isEncrypted.value) {
       if (localToken.value)
         // None of the token matches
+        // eslint-disable-next-line @typescript-eslint/no-non-null-assertion
         return encryptData.value.admin!.some((hash) =>
           compareSync(localToken.value, hash),
         );
 
       if (sessionToken.value)
         // None of the token matches
+        // eslint-disable-next-line @typescript-eslint/no-non-null-assertion
         return encryptData.value.admin!.some((hash) =>
           compareSync(sessionToken.value, hash),
         );

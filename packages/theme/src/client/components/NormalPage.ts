@@ -72,12 +72,8 @@ export default defineComponent({
                   TOC,
                   { headerDepth: headerDepth.value },
                   {
-                    before: slots.tocBefore
-                      ? (): VNode | VNode[] | null => slots.tocBefore!()
-                      : null,
-                    after: slots.tocAfter
-                      ? (): VNode | VNode[] | null => slots.tocAfter!()
-                      : null,
+                    before: slots.tocBefore,
+                    after: slots.tocAfter,
                   },
                 )
               : null,

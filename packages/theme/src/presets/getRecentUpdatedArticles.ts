@@ -53,12 +53,12 @@ export const getRecentUpdatedArticles = ({
 
     sorter: (
       pageA: Page<
-        { git: GitData },
+        { git?: GitData },
         ThemeNormalPageFrontmatter,
         { routeMeta: ArticleInfoData }
       >,
       pageB: Page<
-        { git: GitData },
+        { git?: GitData },
         ThemeNormalPageFrontmatter,
         { routeMeta: ArticleInfoData }
       >,

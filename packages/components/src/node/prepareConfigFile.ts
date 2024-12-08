@@ -18,13 +18,13 @@ export const prepareConfigFile = (
   let enhance = "";
   const setups: string[] = [];
   const configRootComponents: string[] = [];
-  const shouldImportH = false;
   let shouldImportUseScriptTag = false;
   let shouldImportUseStyleTag = false;
 
   components.forEach((item) => {
     if (
       AVAILABLE_COMPONENTS.includes(item) &&
+      // eslint-disable-next-line @typescript-eslint/no-unnecessary-condition
       (!COMPONENT_PKG[item] ||
         COMPONENT_PKG[item].every((pkg) => isInstalled(pkg)))
     ) {
@@ -56,13 +56,7 @@ import { hasGlobalComponent } from "${getModulePath(
       import.meta,
     )}";
 ${
-  shouldImportH
-    ? `\
-import { h } from "vue";
-`
-    : ""
-}
-${
+  // eslint-disable-next-line @typescript-eslint/no-unnecessary-condition
   shouldImportUseScriptTag
     ? `\
 import { useScriptTag } from "${getModulePath("@vueuse/core/index.mjs", import.meta)}";
@@ -70,6 +64,7 @@ import { useScriptTag } from "${getModulePath("@vueuse/core/index.mjs", import.m
     : ""
 }\
 ${
+  // eslint-disable-next-line @typescript-eslint/no-unnecessary-condition
   shouldImportUseStyleTag
     ? `\
 import { useStyleTag } from "${getModulePath("@vueuse/core/index.mjs", import.meta)}";

@@ -34,11 +34,12 @@ export default defineComponent({
     const toggleDarkmode = async (event: MouseEvent): Promise<void> => {
       const useViewTransition =
         // @ts-expect-error: Providing backward compatibility
+        // eslint-disable-next-line @typescript-eslint/no-unnecessary-condition
         document.startViewTransition &&
         !window.matchMedia("(prefers-reduced-motion: reduce)").matches &&
         !isPure.value;
 
-      if (!useViewTransition || !event) {
+      if (!useViewTransition) {
         updateDarkmodeStatus();
 
         return;

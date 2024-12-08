@@ -86,7 +86,9 @@ export default defineComponent({
     });
 
     /** Navigate to certain page */
-    const navigate = (page: number): void => emit("updateCurrentPage", page);
+    const navigate = (page: number): void => {
+      emit("updateCurrentPage", page);
+    };
 
     /** Check and navigate to certain page */
     const jumpPage = (index: string): void => {
@@ -121,7 +123,9 @@ export default defineComponent({
                         class: "prev",
                         role: "navigation",
                         unselectable: "on",
-                        onClick: () => navigate(props.current - 1),
+                        onClick: () => {
+                          navigate(props.current - 1);
+                        },
                       },
                       locale.value.prev,
                     )
@@ -134,7 +138,9 @@ export default defineComponent({
                         "div",
                         {
                           role: "navigation",
-                          onClick: () => navigate(1),
+                          onClick: () => {
+                            navigate(1);
+                          },
                         },
                         1,
                       ),
@@ -149,7 +155,9 @@ export default defineComponent({
                       key: num,
                       class: { active: props.current === num },
                       role: "navigation",
-                      onClick: () => navigate(num),
+                      onClick: () => {
+                        navigate(num);
+                      },
                     },
                     num,
                   ),
@@ -163,7 +171,9 @@ export default defineComponent({
                         "div",
                         {
                           role: "navigation",
-                          onClick: () => navigate(totalPages.value),
+                          onClick: () => {
+                            navigate(totalPages.value);
+                          },
                         },
                         totalPages.value,
                       ),
@@ -177,7 +187,9 @@ export default defineComponent({
                         class: "next",
                         role: "navigation",
                         unselectable: "on",
-                        onClick: () => navigate(props.current + 1),
+                        onClick: () => {
+                          navigate(props.current + 1);
+                        },
                       },
                       locale.value.next,
                     )
@@ -209,7 +221,9 @@ export default defineComponent({
                     type: "button",
                     role: "navigation",
                     title: locale.value.action,
-                    onClick: () => jumpPage(input.value),
+                    onClick: () => {
+                      jumpPage(input.value);
+                    },
                   },
                   locale.value.action,
                 ),

@@ -56,7 +56,9 @@ export default defineComponent({
               ? h(SidebarGroup, {
                   config,
                   open: index === openGroupIndex.value,
-                  onToggle: () => toggleGroup(index),
+                  onToggle: () => {
+                    toggleGroup(index);
+                  },
                 })
               : h(SidebarChild, { config }),
           ),

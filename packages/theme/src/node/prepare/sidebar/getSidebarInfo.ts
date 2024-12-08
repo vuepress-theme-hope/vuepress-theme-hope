@@ -65,7 +65,7 @@ const getSidebarInfoFromStructure = (
   if (info.type === "file") {
     const page = pages.find(
       ({ filePathRelative }) => filePathRelative === `${scope}${info.path}`,
-    )! as Page<ThemePageData, ThemeNormalPageFrontmatter>;
+    ) as Page<ThemePageData, ThemeNormalPageFrontmatter>;
 
     if (page.frontmatter.index === false) return null;
 
@@ -99,7 +99,7 @@ const getSidebarInfoFromStructure = (
     const readmePage = relatedPages.find(
       ({ filePathRelative }) =>
         filePathRelative === `${scope}${READMEFile.path}`,
-    )! as Page<ThemePageData, ThemeNormalPageFrontmatter>;
+    ) as Page<ThemePageData, ThemeNormalPageFrontmatter>;
 
     // get dir information
     const dirOptions = readmePage.frontmatter.dir;

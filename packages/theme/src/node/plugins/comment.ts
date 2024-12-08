@@ -16,13 +16,13 @@ export const getCommentPlugin = (
 
   return commentPlugin({
     provider: "None",
-    ...(options?.provider === "Giscus"
+    ...(options.provider === "Giscus"
       ? {
           lightTheme: `https://unpkg.com/vuepress-theme-hope@${VERSION}/templates/giscus/light.css`,
           darkTheme: `https://unpkg.com/vuepress-theme-hope@${VERSION}/templates/giscus/dark.css`,
         }
       : {}),
-    ...(options?.provider === "Waline" ? { dark: '[data-theme="dark"]' } : {}),
+    ...(options.provider === "Waline" ? { dark: '[data-theme="dark"]' } : {}),
     ...options,
   } as CommentPluginOptions);
 };

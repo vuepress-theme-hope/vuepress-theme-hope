@@ -25,6 +25,7 @@ export const echarts: PluginSimple = (md) => {
 
     if (realInfo === "echarts") return echartsRender(tokens, index);
 
+    // eslint-disable-next-line @typescript-eslint/no-non-null-assertion
     return fence!(...args);
   };
 

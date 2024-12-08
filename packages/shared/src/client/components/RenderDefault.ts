@@ -4,4 +4,4 @@ export const RenderDefault: FunctionalComponent<
   Record<never, never>,
   Record<never, never>,
   { default: () => VNode | VNode[] }
-> = (_props, { slots }) => slots.default?.();
+> = (_props, { slots }) => slots.default();

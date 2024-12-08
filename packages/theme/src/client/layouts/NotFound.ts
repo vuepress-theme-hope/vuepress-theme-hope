@@ -13,7 +13,7 @@ export default defineComponent({
   name: "NotFound",
 
   slots: Object as SlotsType<{
-    default: () => VNode[] | VNode | null;
+    default?: () => VNode[] | VNode | null;
   }>,
 
   setup(_props, { slots }) {

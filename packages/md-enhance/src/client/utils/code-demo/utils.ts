@@ -84,10 +84,8 @@ export const getConfig = (
 ): CodeDemoOptions => ({
   ...options,
   ...config,
-  jsLib: Array.from(new Set([options.jsLib ?? [], config.jsLib ?? []].flat())),
-  cssLib: Array.from(
-    new Set([options.cssLib ?? [], config.cssLib ?? []].flat()),
-  ),
+  jsLib: Array.from(new Set([options.jsLib, config.jsLib ?? []].flat())),
+  cssLib: Array.from(new Set([options.cssLib, config.cssLib ?? []].flat())),
 });
 
 export const loadScript = (

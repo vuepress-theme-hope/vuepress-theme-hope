@@ -29,10 +29,10 @@ export const getThemeStatus = (
       ("admin" in themeOptions.encrypt || "config" in themeOptions.encrypt),
     enableReadingTime: plugins.readingTime !== false,
     blogType: isPlainObject(plugins.blog)
-      ? (plugins.blog?.type
+      ? (plugins.blog.type
           ?.map(({ key, path = `/${key}/` }) => ({
             key,
-            path: path ?? `/${key}/`,
+            path,
           }))
           .filter(({ path }) => Boolean(path)) ?? [])
       : [],

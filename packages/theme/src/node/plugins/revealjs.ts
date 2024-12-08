@@ -5,7 +5,7 @@ import { colors } from "vuepress/utils";
 
 import { logger } from "../utils.js";
 
-let revealJsPlugin: (options: RevealJsPluginOptions) => Plugin;
+let revealJsPlugin: ((options: RevealJsPluginOptions) => Plugin) | null = null;
 
 try {
   ({ revealJsPlugin } = await import("@vuepress/plugin-revealjs"));

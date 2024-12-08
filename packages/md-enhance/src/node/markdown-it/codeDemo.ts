@@ -21,7 +21,7 @@ export const CODE_DEMO_DEFAULT_SETTING: CodeDemoOptions = {
 
 const getPlugin =
   (name: string): PluginSimple =>
-  (md) =>
+  (md) => {
     container(md, {
       name,
       openRender: (tokens: Token[], index: number): string => {
@@ -52,6 +52,7 @@ const getPlugin =
       },
       closeRender: () => `</CodeDemo>\n`,
     });
+  };
 
 export const normalDemo: PluginSimple = getPlugin("normal-demo");
 
@@ -81,6 +82,7 @@ export const mdDemo: PluginSimple = (md) => {
         )
         .join("\n");
 
+      // eslint-disable-next-line @typescript-eslint/no-non-null-assertion
       return `<template #code>\n${self.rules.fence!(
         tokens,
         index,

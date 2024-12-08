@@ -10,6 +10,7 @@ import { CLIENT_FOLDER, PLUGIN_NAME, logger } from "./utils.js";
 export const lightgalleryPlugin =
   (options: LightGalleryPluginOptions = {}, legacy = true): PluginFunction =>
   (app) => {
+    // eslint-disable-next-line @typescript-eslint/no-deprecated
     if (legacy) convertOptions(options as Record<string, unknown>);
 
     if (app.env.isDebug) logger.info("Options:", options);

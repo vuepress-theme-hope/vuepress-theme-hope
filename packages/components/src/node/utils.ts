@@ -10,6 +10,7 @@ const __dirname = getDirname(import.meta.url);
 
 export const AVAILABLE_COMPONENTS: (
   | AvailableComponent
+  // eslint-disable-next-line @typescript-eslint/no-deprecated
   | DeprecatedComponent
 )[] = [
   "ArtPlayer",

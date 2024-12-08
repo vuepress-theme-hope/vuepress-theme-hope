@@ -3,6 +3,7 @@ type IAnyObject = Record<any, any>;
 
 const { isArray } = Array;
 
+// eslint-disable-next-line @typescript-eslint/no-unnecessary-type-parameters
 const isPlainObject = <T extends IAnyObject = IAnyObject>(
   val: unknown,
 ): val is T => Object.prototype.toString.call(val) === "[object Object]";
@@ -11,6 +12,7 @@ const isPlainObject = <T extends IAnyObject = IAnyObject>(
 export const deepAssign = <
   T extends IAnyObject,
   U extends IAnyObject = T,
+  // eslint-disable-next-line @typescript-eslint/no-unnecessary-type-parameters
   V extends Partial<T> & Partial<U> = T & U,
 >(
   originObject: T,

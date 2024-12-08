@@ -25,7 +25,7 @@ export const getBlogCategoryCategory = (
     getter: ({ routeMeta }) => {
       const category = routeMeta[ArticleInfo.category];
 
-      return isArray(category) ? category : category ? [category] : [];
+      return isArray(category) ? category : [];
     },
     sorter: defaultPageSorter,
     path: options.category,
@@ -66,7 +66,7 @@ export const getBlogTagCategory = (
     getter: ({ routeMeta }) => {
       const tag = routeMeta[ArticleInfo.tag];
 
-      return isArray(tag) ? tag : tag ? [tag] : [];
+      return isArray(tag) ? tag : [];
     },
     sorter: defaultPageSorter,
     path: options.tag,

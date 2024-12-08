@@ -1,3 +1,4 @@
+/* eslint-disable @typescript-eslint/no-deprecated */
 import { entries, isArray, isPlainObject } from "@vuepress/helper";
 import { colors } from "vuepress/utils";
 
@@ -69,7 +70,7 @@ const convertFooterOptions = (
   themeLocaleOptions: Record<string, unknown>,
   localePath?: string,
 ): void => {
-  if (isPlainObject(themeLocaleOptions.footer) && themeLocaleOptions.footer) {
+  if (isPlainObject(themeLocaleOptions.footer)) {
     const { footer } = themeLocaleOptions;
 
     if ("copyright" in footer) {
@@ -501,14 +502,14 @@ export const convertThemeOptions = (
 
   covertPluginOptions(themeOptions);
 
-  DEPRECATED_THEME_OPTIONS.forEach(([deprecatedOption, newOption]) =>
+  DEPRECATED_THEME_OPTIONS.forEach(([deprecatedOption, newOption]) => {
     deprecatedLogger({
       options: themeOptions,
       deprecatedOption,
       newOption,
       scope: "themeConfig",
-    }),
-  );
+    });
+  });
 
   // Handle navbar
   if ("navbar" in themeOptions)
@@ -535,7 +536,7 @@ export const convertThemeOptions = (
     );
 
   // Handle encrypt
-  if (isPlainObject(themeOptions.encrypt) && themeOptions.encrypt) {
+  if (isPlainObject(themeOptions.encrypt)) {
     const encrypt = themeOptions.encrypt as Record<string, unknown>;
 
     if ("global" in encrypt && typeof encrypt.global !== "boolean") {
@@ -568,14 +569,14 @@ export const convertThemeOptions = (
   if ("locales" in themeOptions && isPlainObject(themeOptions.locales))
     entries(themeOptions.locales).forEach(
       ([localePath, localeConfig]: [string, Record<string, unknown>]) => {
-        DEPRECATED_THEME_OPTIONS.forEach(([deprecatedOption, newOption]) =>
+        DEPRECATED_THEME_OPTIONS.forEach(([deprecatedOption, newOption]) => {
           deprecatedLogger({
             options: localeConfig,
             deprecatedOption,
             newOption,
             scope: "themeConfig.locales",
-          }),
-        );
+          });
+        });
 
         // Handle navbar
         if ("navbar" in localeConfig)

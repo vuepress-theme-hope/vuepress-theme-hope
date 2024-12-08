@@ -57,7 +57,8 @@ export default defineComponent({
             onClick: () => {
               height.value = isExpanded.value
                 ? "0"
-                : `${codeContainer.value!.clientHeight + 13.8}px`;
+                : // eslint-disable-next-line @typescript-eslint/no-non-null-assertion
+                  `${codeContainer.value!.clientHeight + 13.8}px`;
               toggleIsExpand();
             },
           }),
@@ -70,7 +71,7 @@ export default defineComponent({
             : null,
         ]),
 
-        h("div", { class: "vp-md-demo-display" }, slots.default?.()),
+        h("div", { class: "vp-md-demo-display" }, slots.default()),
 
         h(
           "div",
@@ -84,7 +85,7 @@ export default defineComponent({
               ref: codeContainer,
               class: "vp-md-demo-codes",
             },
-            slots.code?.(),
+            slots.code(),
           ),
         ),
       ]);

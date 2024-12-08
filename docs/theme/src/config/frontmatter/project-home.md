@@ -22,10 +22,10 @@ Page title, will be used in breadcrumb, seo, etc.
 
 ## heroText
 
-- Type: `string | false`
-- Default: `"Hello"`
+- Type: `string`
+- Default: Site title
 
-Hero Title
+Hero Title, can be set to an empty string to hide the default title.
 
 ## tagline
 

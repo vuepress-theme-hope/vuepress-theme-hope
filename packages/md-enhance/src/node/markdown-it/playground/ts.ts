@@ -26,7 +26,7 @@ export const getURL = (
 
   const queryString = entries(compilerOptions)
     .map(([key, value]) => {
-      const item = optionDeclarations.find((option) => option.name === key)!;
+      const item = optionDeclarations.find((option) => option.name === key);
 
       if (!item || value === null || !isDef(value)) return "";
 
@@ -65,7 +65,7 @@ export const getTSPlaygroundPreset = ({
       files[tsFiles[0]].content,
       deepAssign(
         {},
-        (settings as CompilerOptions) || {},
+        settings as CompilerOptions,
         compilerOptions as CompilerOptions,
       ),
     )}`;

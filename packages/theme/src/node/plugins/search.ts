@@ -21,10 +21,12 @@ import type {
 import { themeLocalesData } from "../locales/index.js";
 import { logger } from "../utils.js";
 
-let docsearchPlugin: (options: DocSearchPluginOptions) => Plugin;
-let searchPlugin: (options: SearchPluginOptions) => Plugin;
-let slimsearchPlugin: (options: SlimSearchPluginOptions) => Plugin;
-let cut: (content: string, strict?: boolean) => string[];
+let docsearchPlugin: ((options: DocSearchPluginOptions) => Plugin) | null =
+  null;
+let searchPlugin: ((options: SearchPluginOptions) => Plugin) | null = null;
+let slimsearchPlugin: ((options: SlimSearchPluginOptions) => Plugin) | null =
+  null;
+let cut: ((content: string, strict?: boolean) => string[]) | null = null;
 
 try {
   ({ docsearchPlugin } = await import("@vuepress/plugin-docsearch"));
@@ -116,6 +118,7 @@ export const getSearchPlugin = (
     }
 
     return docsearchPlugin({
+      // eslint-disable-next-line @typescript-eslint/no-unnecessary-condition
       locales: locales["/zh/"]
         ? { "/zh/": DOCSEARCH_ZH_LOCALES }
         : inferRootLocalePath(app) === "/zh/"
@@ -170,6 +173,7 @@ export const getSearchPlugin = (
       filter: (page) => !isPageEncrypted(page),
       ...(cut
         ? {
+            // eslint-disable-next-line @typescript-eslint/no-unnecessary-condition
             indexLocaleOptions: locales["/zh/"]
               ? {
                   "/zh/": {
@@ -202,6 +206,7 @@ export const getSearchPlugin = (
 
     return searchPlugin({
       isSearchable: (page) => !isPageEncrypted(page),
+      // eslint-disable-next-line @typescript-eslint/no-unnecessary-condition
       locales: locales["/zh/"]
         ? { "/zh/": SEARCH_ZH_LOCALES }
         : inferRootLocalePath(app) === "/zh/"

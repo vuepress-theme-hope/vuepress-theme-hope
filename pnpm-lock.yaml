@@ -60,8 +60,8 @@ importers:
         specifier: 9.16.0
         version: 9.16.0(jiti@1.21.6)
       eslint-config-mister-hope:
-        specifier: 0.3.0
-        version: 0.3.0(@types/eslint@9.6.1)(@typescript-eslint/utils@8.17.0(eslint@9.16.0(jiti@1.21.6))(typescript@5.7.2))(eslint-plugin-vue@9.32.0(eslint@9.16.0(jiti@1.21.6)))(eslint@9.16.0(jiti@1.21.6))(prettier@3.4.2)(typescript@5.7.2)(vitest@2.1.8(@types/node@22.10.1)(lightningcss@1.28.2)(sass-embedded@1.82.0)(sass@1.82.0)(terser@5.37.0))(vue-eslint-parser@9.4.3(eslint@9.16.0(jiti@1.21.6)))
+        specifier: 0.4.0-beta.3
+        version: 0.4.0-beta.3(@types/eslint@9.6.1)(@typescript-eslint/utils@8.17.0(eslint@9.16.0(jiti@1.21.6))(typescript@5.7.2))(eslint-plugin-vue@9.32.0(eslint@9.16.0(jiti@1.21.6)))(eslint@9.16.0(jiti@1.21.6))(prettier@3.4.2)(typescript@5.7.2)(vitest@2.1.8(@types/node@22.10.1)(lightningcss@1.28.2)(sass-embedded@1.82.0)(sass@1.82.0)(terser@5.37.0))(vue-eslint-parser@9.4.3(eslint@9.16.0(jiti@1.21.6)))
       eslint-plugin-vue:
         specifier: 9.32.0
         version: 9.32.0(eslint@9.16.0(jiti@1.21.6))
@@ -5296,11 +5296,11 @@ packages:
     resolution: {integrity: sha512-TtpcNJ3XAzx3Gq8sWRzJaVajRs0uVxA2YAkdb1jm2YkPz4G6egUFAyA3n5vtEIZefPk5Wa4UXbKuS5fKkJWdgA==}
     engines: {node: '>=10'}
 
-  eslint-config-mister-hope@0.3.0:
-    resolution: {integrity: sha512-CntbuzJycf1ooc72MMJLA0NvuzPbdNukGX9Ksem09Rqta2sHXVzNDRlnb3F7iCGBrVfqbMy2Ws17Ie/tlsWLlg==}
+  eslint-config-mister-hope@0.4.0-beta.3:
+    resolution: {integrity: sha512-D9E+TROZIg9fx/7JU3mOuX59VC1XlqkGZO9Jcmha1lspdZqRNZjVXam8+6haG1tjisuUqBPm7NAicLG1NlTFng==}
     peerDependencies:
-      eslint: ^9.8.0
-      eslint-plugin-vue: ^9.27.0
+      eslint: ^9.15.0
+      eslint-plugin-vue: ^9.31.0
       vue-eslint-parser: ^9.4.3
     peerDependenciesMeta:
       eslint-plugin-vue:
@@ -14894,7 +14894,7 @@ snapshots:
 
   escape-string-regexp@4.0.0: {}
 
-  eslint-config-mister-hope@0.3.0(@types/eslint@9.6.1)(@typescript-eslint/utils@8.17.0(eslint@9.16.0(jiti@1.21.6))(typescript@5.7.2))(eslint-plugin-vue@9.32.0(eslint@9.16.0(jiti@1.21.6)))(eslint@9.16.0(jiti@1.21.6))(prettier@3.4.2)(typescript@5.7.2)(vitest@2.1.8(@types/node@22.10.1)(lightningcss@1.28.2)(sass-embedded@1.82.0)(sass@1.82.0)(terser@5.37.0))(vue-eslint-parser@9.4.3(eslint@9.16.0(jiti@1.21.6))):
+  eslint-config-mister-hope@0.4.0-beta.3(@types/eslint@9.6.1)(@typescript-eslint/utils@8.17.0(eslint@9.16.0(jiti@1.21.6))(typescript@5.7.2))(eslint-plugin-vue@9.32.0(eslint@9.16.0(jiti@1.21.6)))(eslint@9.16.0(jiti@1.21.6))(prettier@3.4.2)(typescript@5.7.2)(vitest@2.1.8(@types/node@22.10.1)(lightningcss@1.28.2)(sass-embedded@1.82.0)(sass@1.82.0)(terser@5.37.0))(vue-eslint-parser@9.4.3(eslint@9.16.0(jiti@1.21.6))):
     dependencies:
       '@eslint/js': 9.16.0
       '@vitest/eslint-plugin': 1.1.14(@typescript-eslint/utils@8.17.0(eslint@9.16.0(jiti@1.21.6))(typescript@5.7.2))(eslint@9.16.0(jiti@1.21.6))(typescript@5.7.2)(vitest@2.1.8(@types/node@22.10.1)(lightningcss@1.28.2)(sass-embedded@1.82.0)(sass@1.82.0)(terser@5.37.0))

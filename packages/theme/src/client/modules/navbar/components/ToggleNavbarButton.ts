@@ -19,7 +19,9 @@ const ToggleNavbarButton: FunctionalComponent<
       "aria-label": "Toggle Navbar",
       "aria-expanded": active,
       "aria-controls": "nav-screen",
-      onClick: () => emit("toggle"),
+      onClick: () => {
+        emit("toggle");
+      },
     },
     h("span", [
       h("span", { class: "vp-top" }),

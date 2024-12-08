@@ -237,7 +237,7 @@ const defaultPropsGetter = (
   key: playgroundData.key,
   title: playgroundData.title ?? "",
   files: encodeURIComponent(JSON.stringify(playgroundData.files)),
-  settings: encodeURIComponent(JSON.stringify(playgroundData.settings || {})),
+  settings: encodeURIComponent(JSON.stringify(playgroundData.settings)),
 });
 
 export const playground: PluginWithOptions<PlaygroundOptions> = (
@@ -252,7 +252,7 @@ export const playground: PluginWithOptions<PlaygroundOptions> = (
     propsGetter: defaultPropsGetter,
   },
 ) => {
-  md.block.ruler.before("fence", `${name}`, getPlaygroundRule(name), {
+  md.block.ruler.before("fence", name, getPlaygroundRule(name), {
     alt: ["paragraph", "reference", "blockquote", "list"],
   });
 

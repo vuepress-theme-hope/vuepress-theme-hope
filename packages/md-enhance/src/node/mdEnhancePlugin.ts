@@ -46,6 +46,7 @@ export const mdEnhancePlugin =
   (app) => {
     // TODO: Remove this in v2 stable
     if (legacy)
+      // eslint-disable-next-line @typescript-eslint/no-deprecated
       convertOptions(
         options as MarkdownEnhancePluginOptions & Record<string, unknown>,
       );
@@ -56,7 +57,7 @@ export const mdEnhancePlugin =
       key: keyof MarkdownEnhancePluginOptions,
       pkgs: string[] = [],
     ): boolean =>
-      Boolean(options?.[key]) &&
+      Boolean(options[key]) &&
       pkgs.every((pkg) => isInstalled(pkg, Boolean(options[key])));
 
     const status = {
@@ -176,6 +177,7 @@ export const mdEnhancePlugin =
         if (status.flowchart) {
           md.use(flowchart);
           // TODO: Remove this in v2 stable
+          // eslint-disable-next-line @typescript-eslint/no-deprecated
           if (legacy) md.use(legacyFlowchart);
         }
         if (status.chartjs) {
@@ -191,6 +193,7 @@ export const mdEnhancePlugin =
           md.use(vueDemo);
           md.use(reactDemo);
           // TODO: Remove this in v2 stable
+          // eslint-disable-next-line @typescript-eslint/no-deprecated
           if (legacy) md.use(legacyCodeDemo);
         }
         if (status.markmap) md.use(markmap);

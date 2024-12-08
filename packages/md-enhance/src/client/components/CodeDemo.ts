@@ -115,6 +115,7 @@ export default defineComponent({
     const initDom = (innerHTML = false): void => {
       // Attach a shadow root to demo
 
+      // eslint-disable-next-line @typescript-eslint/no-non-null-assertion
       const shadowRoot = demoWrapper.value!.attachShadow({ mode: "open" });
       const appElement = document.createElement("div");
 
@@ -137,14 +138,20 @@ export default defineComponent({
     const loadDemo = (): Promise<void> => {
       switch (props.type) {
         case "react": {
-          return loadReact(code.value).then(() => initDom());
+          return loadReact(code.value).then(() => {
+            initDom();
+          });
         }
         case "vue": {
-          return loadVue(code.value).then(() => initDom());
+          return loadVue(code.value).then(() => {
+            initDom();
+          });
         }
 
         default: {
-          return loadNormal(code.value).then(() => initDom(true));
+          return loadNormal(code.value).then(() => {
+            initDom(true);
+          });
         }
       }
     };
@@ -173,7 +180,8 @@ export default defineComponent({
                 onClick: () => {
                   height.value = isExpanded.value
                     ? "0"
-                    : `${codeContainer.value!.clientHeight + 13.8}px`;
+                    : // eslint-disable-next-line @typescript-eslint/no-non-null-assertion
+                      `${codeContainer.value!.clientHeight + 13.8}px`;
                   toggleIsExpand();
                 },
               })
@@ -254,19 +262,13 @@ export default defineComponent({
                       css_external: code.value.cssLib.join(";"),
                       layout: code.value.codepenLayout,
                       // eslint-disable-next-line @typescript-eslint/naming-convention
-                      html_pre_processor: codeType.value
-                        ? codeType.value.html[1]
-                        : "none",
+                      html_pre_processor: codeType.value.html[1] ?? "none",
                       // eslint-disable-next-line @typescript-eslint/naming-convention
-                      js_pre_processor: codeType.value
-                        ? codeType.value.js[1]
-                        : code.value.jsx
-                          ? "babel"
-                          : "none",
+                      js_pre_processor:
+                        codeType.value.js[1] ??
+                        (code.value.jsx ? "babel" : "none"),
                       // eslint-disable-next-line @typescript-eslint/naming-convention
-                      css_pre_processor: codeType.value
-                        ? codeType.value.css[1]
-                        : "none",
+                      css_pre_processor: codeType.value.css[1] ?? "none",
                       editors: code.value.codepenEditors,
                     }),
                   }),
@@ -302,7 +304,7 @@ export default defineComponent({
               ref: codeContainer,
               class: "vp-code-demo-codes",
             },
-            slots.default?.(),
+            slots.default(),
           ),
         ),
       ]);
