@@ -98,11 +98,12 @@ export const setupDarkmode = (): void => {
   onMounted(() => {
     watch(
       isDarkmode,
-      (isDarkmode) =>
+      (isDarkmode) => {
         document.documentElement.setAttribute(
           "data-theme",
           isDarkmode ? "dark" : "light",
-        ),
+        );
+      },
       { immediate: true },
     );
   });

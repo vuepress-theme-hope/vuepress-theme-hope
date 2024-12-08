@@ -21,7 +21,7 @@ const handleNavbarOptions = (config: LegacyNavbarOptions): NavbarOptions =>
     .map((item) => {
       if (isString(item)) return item;
 
-      if (isPlainObject(item) && item) {
+      if (isPlainObject(item)) {
         deprecatedLogger({
           // @ts-expect-error: Type is too narrow
           options: item,

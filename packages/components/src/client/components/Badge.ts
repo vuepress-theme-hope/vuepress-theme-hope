@@ -54,7 +54,7 @@ const Badge: FunctionalComponent<
     "span",
     {
       // eslint-disable-next-line @typescript-eslint/prefer-nullish-coalescing
-      class: ["vp-badge", type, { diy: color || bgColor }],
+      class: ["vp-badge", type, { diy: Boolean(color || bgColor) }],
       style: {
         backgroundColor: bgColor ?? false,
         color: color ?? false,

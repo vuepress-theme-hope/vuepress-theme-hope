@@ -60,7 +60,7 @@ export const sidebarDateSorter = (
   if (infoA.frontmatter?.date instanceof Date) {
     if (infoB.frontmatter?.date instanceof Date)
       return (
-        infoA.frontmatter?.date.getTime() - infoB.frontmatter.date.getTime()
+        infoA.frontmatter.date.getTime() - infoB.frontmatter.date.getTime()
       );
 
     return -1;

@@ -15,13 +15,13 @@ import type { ThemeProjectHomePageFrontmatter } from "../../shared/index.js";
 
 import "../styles/hero-info.scss";
 
-export interface HeroInfo {
+export interface HeroInfoData {
   text: string | null;
   tagline: string | null;
   isFullScreen: boolean;
 }
 
-export interface HeroImage {
+export interface HeroImageData {
   image: string | null;
   imageDark: string | null;
   imageStyle: string | Record<string, string> | undefined;
@@ -29,7 +29,7 @@ export interface HeroImage {
   isFullScreen: boolean;
 }
 
-export interface HeroBackground {
+export interface HeroBackgroundData {
   image: string | null;
   bgStyle: string | Record<string, string> | undefined;
   isFullScreen: boolean;
@@ -39,9 +39,9 @@ export default defineComponent({
   name: "HeroInfo",
 
   slots: Object as SlotsType<{
-    bg?: (props: HeroBackground) => VNode[] | VNode | null;
-    logo?: (props: HeroImage) => VNode[] | VNode | null;
-    info?: (props: HeroInfo) => VNode[] | VNode | null;
+    bg?: (props: HeroBackgroundData) => VNode[] | VNode | null;
+    logo?: (props: HeroImageData) => VNode[] | VNode | null;
+    info?: (props: HeroInfoData) => VNode[] | VNode | null;
   }>,
 
   setup(_props, { slots }) {
@@ -56,8 +56,8 @@ export default defineComponent({
       const { heroText, tagline } = frontmatter.value;
 
       return {
-        text: heroText ?? siteLocale.value.title ?? "Hello",
-        tagline: tagline ?? siteLocale.value.description ?? "",
+        text: heroText ?? (siteLocale.value.title || "Hello"),
+        tagline: tagline ?? siteLocale.value.description,
         isFullScreen: isFullScreen.value,
       };
     });

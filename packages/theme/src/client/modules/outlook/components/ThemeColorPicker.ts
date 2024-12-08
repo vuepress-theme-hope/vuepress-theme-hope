@@ -53,7 +53,9 @@ export default defineComponent({
           "li",
           h("span", {
             class: "theme-color",
-            onClick: () => setThemeColor(),
+            onClick: () => {
+              setThemeColor();
+            },
           }),
         ),
         entries(props.themeColor).map(([color, value]) =>
@@ -61,7 +63,9 @@ export default defineComponent({
             "li",
             h("span", {
               style: { background: value },
-              onClick: () => setThemeColor(color),
+              onClick: () => {
+                setThemeColor(color);
+              },
             }),
           ),
         ),

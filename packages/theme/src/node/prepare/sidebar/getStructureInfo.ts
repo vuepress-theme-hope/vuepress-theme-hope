@@ -39,6 +39,7 @@ export const getStructureInfo = (
         { filePathRelative: filePathRelative1 },
         { filePathRelative: filePathRelative2 },
       ) =>
+        // eslint-disable-next-line @typescript-eslint/no-non-null-assertion
         filePathRelative1!.localeCompare(filePathRelative2!, undefined, {
           numeric: true,
           sensitivity: "accent",
@@ -48,6 +49,7 @@ export const getStructureInfo = (
   const structure: StructureInfo[] = [];
 
   sortedPages.forEach((page) => {
+    // eslint-disable-next-line @typescript-eslint/no-non-null-assertion
     const relativePath = path.relative(scope, page.filePathRelative!);
     const filename = path.basename(relativePath);
 

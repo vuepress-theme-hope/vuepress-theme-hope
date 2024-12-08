@@ -39,9 +39,9 @@ const resolveFromSidebarItems = (
   const linkIndex = sidebarItems.findIndex((item) => item.link === currentPath);
 
   if (linkIndex !== -1) {
-    const targetItem = sidebarItems[linkIndex + offset];
+    if (!sidebarItems[linkIndex + offset]) return null;
 
-    if (!targetItem) return null;
+    const targetItem = sidebarItems[linkIndex + offset];
 
     if (targetItem.link) return targetItem as AutoLinkOptions;
 
@@ -70,9 +70,9 @@ const resolveFromSidebarItems = (
   );
 
   if (prefixIndex !== -1) {
-    const targetItem = sidebarItems[prefixIndex + offset];
+    if (!sidebarItems[prefixIndex + offset]) return null;
 
-    if (!targetItem) return null;
+    const targetItem = sidebarItems[prefixIndex + offset];
 
     if (targetItem.link) return targetItem as AutoLinkOptions;
 

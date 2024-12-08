@@ -106,6 +106,7 @@ export default defineComponent({
     CategoryInfo,
     DateInfo,
     OriginalInfo,
+    // eslint-disable-next-line @typescript-eslint/no-unnecessary-condition
     PageViewInfo: isSupported ? PageViewInfo : noopComponent,
     ReadingTimeInfo: __VP_READING_TIME__ ? ReadingTimeInfo : noopComponent,
     TagInfo,

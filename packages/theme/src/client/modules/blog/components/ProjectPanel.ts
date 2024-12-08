@@ -81,7 +81,9 @@ export default defineComponent({
                 },
               ],
               ...(background ? { style: background } : {}),
-              onClick: () => navigate(link),
+              onClick: () => {
+                navigate(link);
+              },
             },
             [
               renderIcon(icon, name),

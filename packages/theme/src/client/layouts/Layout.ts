@@ -71,24 +71,12 @@ export default defineComponent({
                       NormalPage,
                       { key: page.value.path },
                       {
-                        top: slots.top
-                          ? (): VNode | VNode[] | null => slots.top!()
-                          : null,
-                        bottom: slots.bottom
-                          ? (): VNode | VNode[] | null => slots.bottom!()
-                          : null,
-                        contentBefore: slots.contentBefore
-                          ? (): VNode | VNode[] | null => slots.contentBefore!()
-                          : null,
-                        contentAfter: slots.contentAfter
-                          ? (): VNode | VNode[] | null => slots.contentAfter!()
-                          : null,
-                        tocBefore: slots.tocBefore
-                          ? (): VNode | VNode[] | null => slots.tocBefore!()
-                          : null,
-                        tocAfter: slots.tocAfter
-                          ? (): VNode | VNode[] | null => slots.tocAfter!()
-                          : null,
+                        top: slots.top,
+                        bottom: slots.bottom,
+                        contentBefore: slots.contentBefore,
+                        contentAfter: slots.contentAfter,
+                        tocBefore: slots.tocBefore,
+                        tocAfter: slots.tocAfter,
                       },
                     ),
                   )),

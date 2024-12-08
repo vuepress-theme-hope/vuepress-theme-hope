@@ -35,20 +35,16 @@ export default defineComponent({
         AutoLink,
         {
           ...props, // Class needs to be merged manually
-          onFocusout: () => emit("focusout"),
+          onFocusout: () => {
+            emit("focusout");
+          },
         },
         {
-          default: slots.default
-            ? (): VNode | VNode[] => slots.default!()
-            : null,
-          before: slots.before
-            ? (): VNode | VNode[] | null => slots.before!()
-            : icon
-              ? (): VNode | null => h(HopeIcon, { icon })
-              : null,
-          after: slots.after
-            ? (): VNode | VNode[] | null => slots.after!()
-            : null,
+          default: slots.default,
+          before:
+            slots.before ??
+            (icon ? (): VNode | null => h(HopeIcon, { icon }) : null),
+          after: slots.after,
         },
       );
     };

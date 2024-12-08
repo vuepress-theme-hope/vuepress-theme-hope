@@ -5,7 +5,7 @@ import { colors } from "vuepress/utils";
 import { isHighlighterPlugin } from "./utils.js";
 import { logger } from "../utils.js";
 
-let prismjsPlugin: (options: PrismjsPluginOptions) => Plugin;
+let prismjsPlugin: ((options: PrismjsPluginOptions) => Plugin) | null = null;
 
 try {
   ({ prismjsPlugin } = await import("@vuepress/plugin-prismjs"));

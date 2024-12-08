@@ -2,6 +2,81 @@ import type { ThemePageFrontmatter } from "./base.js";
 import type { PageInfoType } from "../info.js";
 import type { AutoLinkOptions } from "../nav.js";
 
+export interface StructureSidebarDirOptions {
+  /**
+   * Dir title
+   *
+   * @default title of README.md
+   *
+   * 目录标题
+   *
+   * @default README.md 标题
+   */
+  text?: string;
+
+  /**
+   * Dir icon
+   *
+   * @default icon of README.md
+   *
+   * 目录图标
+   *
+   * @default README.md 图标
+   */
+  icon?: string;
+
+  /**
+   * Whether dir is expanded by default
+   *
+   * 当前目录是否默认展开
+   *
+   * @default false
+   */
+  expanded?: boolean;
+
+  /**
+   * Whether Dir is collapsible
+   *
+   * 目录是否可折叠
+   *
+   * @default true
+   */
+
+  collapsible?: boolean;
+
+  /**
+   * Whether Dir is clickable
+   *
+   * @description Will set group link to link of README.md
+   *
+   * 目录是否可点击
+   *
+   * @description 将会将目录分组的链接设置为 README.md 对应的链接
+   *
+   * @default false
+   */
+
+  link?: boolean;
+
+  /**
+   * Whether index current dir
+   *
+   * 是否索引此目录
+   *
+   * @default true
+   */
+  index?: boolean;
+
+  /**
+   * Dir order in sidebar
+   *
+   * 目录在侧边栏中的顺序
+   *
+   * @default 0
+   */
+  order?: number;
+}
+
 export interface ThemeNormalPageFrontmatter extends ThemePageFrontmatter {
   /**
    * Whether is homepage
@@ -37,80 +112,7 @@ export interface ThemeNormalPageFrontmatter extends ThemePageFrontmatter {
    *
    * @description 仅在 README.md 中可用
    */
-  dir?: {
-    /**
-     * Dir title
-     *
-     * @default title of README.md
-     *
-     * 目录标题
-     *
-     * @default README.md 标题
-     */
-    text?: string;
-
-    /**
-     * Dir icon
-     *
-     * @default icon of README.md
-     *
-     * 目录图标
-     *
-     * @default README.md 图标
-     */
-    icon?: string;
-
-    /**
-     * Whether dir is expanded by default
-     *
-     * 当前目录是否默认展开
-     *
-     * @default false
-     */
-    expanded?: boolean;
-
-    /**
-     * Whether Dir is collapsible
-     *
-     * 目录是否可折叠
-     *
-     * @default true
-     */
-
-    collapsible?: boolean;
-
-    /**
-     * Whether Dir is clickable
-     *
-     * @description Will set group link to link of README.md
-     *
-     * 目录是否可点击
-     *
-     * @description 将会将目录分组的链接设置为 README.md 对应的链接
-     *
-     * @default false
-     */
-
-    link?: boolean;
-
-    /**
-     * Whether index current dir
-     *
-     * 是否索引此目录
-     *
-     * @default true
-     */
-    index?: boolean;
-
-    /**
-     * Dir order in sidebar
-     *
-     * 目录在侧边栏中的顺序
-     *
-     * @default 0
-     */
-    order?: number;
-  };
+  dir?: StructureSidebarDirOptions;
 
   /**
    * A short title used in navbar, sidebar and breadcrumb

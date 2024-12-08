@@ -16,7 +16,7 @@ export default defineComponent({
     const { isSupported, isFullscreen, toggle } = useFullscreen();
 
     return (): VNode | null =>
-      isSupported
+      isSupported.value
         ? h(
             "button",
             {

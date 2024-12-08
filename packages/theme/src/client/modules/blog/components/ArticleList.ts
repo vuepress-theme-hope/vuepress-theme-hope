@@ -79,6 +79,7 @@ export default defineComponent({
         await router.push({ path: route.path, query });
       }
 
+      // eslint-disable-next-line @typescript-eslint/no-unnecessary-condition
       if (isSupported) {
         await nextTick();
         updatePageview({ selector: ".vp-pageview" });
@@ -93,6 +94,7 @@ export default defineComponent({
       watch(currentPage, () => {
         // List top border distance
         const distance =
+          // eslint-disable-next-line @typescript-eslint/no-non-null-assertion
           document.querySelector("#article-list")!.getBoundingClientRect().top +
           window.scrollY;
 

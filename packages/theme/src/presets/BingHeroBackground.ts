@@ -53,17 +53,19 @@ export default defineComponent({
     const showInfo = ref(false);
 
     const currentWallpaper = computed(() => {
-      const info = bingStorage.value.data[bingStorage.value.index];
-      const langCode = lang.value.toLowerCase().split("-").shift();
+      const { index, data } = bingStorage.value;
 
-      if (info) {
-        const { url, wallpaper, downloadable, locales } = info;
+      // eslint-disable-next-line @typescript-eslint/no-non-null-assertion
+      const langCode = lang.value.toLowerCase().split("-").shift()!;
+
+      if (data[index]) {
+        const { url, wallpaper, downloadable, locales } = data[index];
 
         return {
           url,
           wallpaper,
           downloadable,
-          ...(locales[langCode!] ?? locales.en),
+          ...(locales[langCode] ?? locales.en),
         };
       }
 
@@ -143,7 +145,9 @@ export default defineComponent({
                     title: "prev image",
                     type: "button",
                     disabled: bingStorage.value.index === 0,
-                    onClick: () => prev(),
+                    onClick: () => {
+                      prev();
+                    },
                   }),
                   h("button", {
                     class: "bing-switch-next",
@@ -152,7 +156,9 @@ export default defineComponent({
                     disabled:
                       bingStorage.value.index ===
                       bingStorage.value.data.length - 1,
-                    onClick: () => next(),
+                    onClick: () => {
+                      next();
+                    },
                   }),
                 ],
               ),

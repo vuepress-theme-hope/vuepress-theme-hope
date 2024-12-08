@@ -58,14 +58,16 @@ export default defineComponent({
                   { class: "vp-meta-label" },
                   `${metaLocales.contributors}: `,
                 ),
-                contributors.value.map(({ email, name }, index) => [
-                  h(
-                    "span",
-                    { class: "vp-meta-info", title: `email: ${email}` },
-                    name,
-                  ),
-                  index !== contributors.value!.length - 1 ? "," : "",
-                ]),
+                contributors.value.map(
+                  ({ email, name }, index, contributors) => [
+                    h(
+                      "span",
+                      { class: "vp-meta-info", title: `email: ${email}` },
+                      name,
+                    ),
+                    index !== contributors.length - 1 ? "," : "",
+                  ],
+                ),
               ])
             : null,
         ]),

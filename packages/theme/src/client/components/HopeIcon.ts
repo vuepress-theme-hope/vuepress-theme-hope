@@ -12,13 +12,15 @@ export interface IconProps {
 
 const HopeIcon: FunctionalComponent<IconProps> = (props) => {
   const { icon = "", color, size, verticalAlign } = props;
-  const style =
-    color || size || verticalAlign ? ({} as Record<string, string>) : null;
+  let style: Record<string, string> | null = {};
 
-  if (color) style!.color = color;
+  if (color) style.color = color;
   if (size)
-    style!.height = Number.isNaN(Number(size)) ? (size as string) : `${size}px`;
-  if (verticalAlign) style!.verticalAlign = verticalAlign;
+    style.height = Number.isNaN(Number(size)) ? (size as string) : `${size}px`;
+  if (verticalAlign) style.verticalAlign = verticalAlign;
+
+  // Optimized for SSR to avoid rendering empty style attribute
+  if (!Object.keys(style).length) style = null;
 
   return isLinkHttp(icon)
     ? h("img", {

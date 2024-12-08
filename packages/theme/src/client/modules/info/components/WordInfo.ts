@@ -53,7 +53,7 @@ export default defineComponent({
             },
             [
               h(WordIcon),
-              h("span", props.readingTimeLocale?.words),
+              h("span", props.readingTimeLocale.words),
               h("meta", {
                 property: "wordCount",
                 content: props.readingTime?.words,

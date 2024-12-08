@@ -11,7 +11,7 @@ export const kotlinPlayground: PluginSimple = (md) => {
     propsGetter: ({ title = "", key, files, settings }: PlaygroundData) => ({
       title,
       key,
-      settings: encodeURIComponent(JSON.stringify(settings || {})),
+      settings: encodeURIComponent(JSON.stringify(settings)),
       files: encodeData(
         JSON.stringify(entries(files).map(([, { content }]) => content)),
       ),

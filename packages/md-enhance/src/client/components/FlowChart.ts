@@ -46,17 +46,9 @@ export default defineComponent({
     const loading = ref(true);
     const scale = ref(1);
 
-    const preset = computed<Record<string, unknown>>(() => {
-      const preset = flowchartPresets[props.preset];
-
-      if (!preset) {
-        console.warn(`[md-enhance:flowchart] Unknown preset: ${props.preset}`);
-
-        return flowchartPresets.vue;
-      }
-
-      return preset;
-    });
+    const preset = computed<Record<string, unknown>>(
+      () => flowchartPresets[props.preset],
+    );
 
     const getScale = (width: number): number =>
       width < 419 ? 0.8 : width > 1280 ? 1 : 0.9;

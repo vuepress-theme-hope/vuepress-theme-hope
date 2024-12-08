@@ -13,7 +13,9 @@ const ToggleSidebarButton: FunctionalComponent<
       type: "button",
       class: "vp-toggle-sidebar-button",
       title: "Toggle Sidebar",
-      onClick: () => emit("toggle"),
+      onClick: () => {
+        emit("toggle");
+      },
     },
     h("span", { class: "icon" }),
   );

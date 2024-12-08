@@ -61,7 +61,7 @@ export default defineComponent({
             },
             [
               h(TimerIcon),
-              h("span", props.readingTimeLocale?.time),
+              h("span", props.readingTimeLocale.time),
               h("meta", {
                 property: "timeRequired",
                 content: readingTimeMeta.value,

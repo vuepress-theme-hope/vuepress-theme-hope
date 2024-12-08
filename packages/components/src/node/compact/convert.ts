@@ -1,4 +1,4 @@
-import { isPlainObject } from "@vuepress/helper";
+import { isArray, isPlainObject } from "@vuepress/helper";
 import { colors } from "vuepress/utils";
 import { createConverter } from "vuepress-shared/node";
 
@@ -43,21 +43,23 @@ export const convertOptions = (
   });
 
   if (isPlainObject(options.rootComponents)) {
+    const rootComponents = options.rootComponents as Record<string, unknown>;
+
     droppedLogger({
-      options: options.rootComponents as Record<string, unknown>,
+      options: rootComponents,
       old: "addThis",
     });
 
-    if (options.rootComponents.backToTop) {
+    if (rootComponents.backToTop) {
       logger.error(
         `"${colors.magenta(
           "rootComponents.backToTop",
         )}" is removed, please use ${colors.cyan("@vuepress/plugin-back-to-top")} instead.`,
       );
-      delete options.rootComponents.backToTop;
+      delete rootComponents.backToTop;
     }
 
-    if (options.rootComponents.notice) {
+    if (rootComponents.notice) {
       logger.error(
         `"${colors.magenta(
           "rootComponents.notice",
@@ -65,34 +67,36 @@ export const convertOptions = (
           "@vuepress/plugin-notice",
         )} instead.`,
       );
-      delete options.rootComponents.notice;
+      delete rootComponents.notice;
     }
   }
 
-  if ((options.components as unknown[])?.includes("Catalog"))
-    logger.warn(
-      `${colors.cyan(
-        "Catalog",
-      )} component is no longer supported, please use ${colors.magenta(
-        "@vuepress/plugin-catalog",
-      )} instead.`,
-    );
-
-  if ((options.components as unknown[])?.includes("Replit"))
-    logger.warn(
-      `${colors.cyan(
-        "Replit",
-      )} component is deprecated because you can no longer run code in embed mode.`,
-    );
-
-  ["VideoPlayer", "AudioPlayer", "YouTube"].forEach((component) => {
-    if ((options.components as unknown[])?.includes(component))
+  if (isArray(options.components)) {
+    if ((options.components as unknown[]).includes("Catalog"))
       logger.warn(
         `${colors.cyan(
-          component,
-        )} component is deprecated, please use ${colors.cyan(
-          "VidStack",
-        )} component instead.`,
+          "Catalog",
+        )} component is no longer supported, please use ${colors.magenta(
+          "@vuepress/plugin-catalog",
+        )} instead.`,
       );
-  });
+
+    if ((options.components as unknown[]).includes("Replit"))
+      logger.warn(
+        `${colors.cyan(
+          "Replit",
+        )} component is deprecated because you can no longer run code in embed mode.`,
+      );
+
+    ["VideoPlayer", "AudioPlayer", "YouTube"].forEach((component) => {
+      if ((options.components as unknown[]).includes(component))
+        logger.warn(
+          `${colors.cyan(
+            component,
+          )} component is deprecated, please use ${colors.cyan(
+            "VidStack",
+          )} component instead.`,
+        );
+    });
+  }
 };

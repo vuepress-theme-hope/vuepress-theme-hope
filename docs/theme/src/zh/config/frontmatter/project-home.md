@@ -23,9 +23,9 @@ tag:
 ## heroText
 
 - 类型: `string | false`
-- 默认值: `"Hello"`
+- 默认值: 站点标题
 
-主页标题
+主页标题，可通过设置为空字符串来隐藏默认标题。
 
 ## tagline
 

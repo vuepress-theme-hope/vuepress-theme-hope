@@ -18,7 +18,7 @@ const VALID_MARKERS = ["file", "options", "setup"] as const;
 const propsGetter = (sandpackData: SandpackData): Record<string, string> => ({
   title: sandpackData.title ?? "",
   template: sandpackData.template ?? "",
-  files: encodeData(encodeFiles(sandpackData.files ?? {})),
+  files: encodeData(encodeFiles(sandpackData.files)),
   options: encodeData(JSON.stringify(sandpackData.options ?? {})),
   customSetup: encodeData(JSON.stringify(sandpackData.customSetup ?? {})),
 });

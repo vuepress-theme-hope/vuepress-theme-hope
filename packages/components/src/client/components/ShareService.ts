@@ -210,7 +210,9 @@ export default defineComponent({
             class: ["vp-share-button", { plain }],
             "aria-label": name,
             "data-balloon-pos": "up",
-            onClick: () => share(),
+            onClick: () => {
+              share();
+            },
           },
           plain
             ? renderIcon(shape, "plain")

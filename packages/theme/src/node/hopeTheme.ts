@@ -57,9 +57,11 @@ export const hopeTheme = (
       sidebarSorter,
       ...themeOptions
     } = behaviorOptions.compact
-      ? convertThemeOptions(options as ThemeOptions & Record<string, unknown>)
+      ? // eslint-disable-next-line @typescript-eslint/no-deprecated
+        convertThemeOptions(options as ThemeOptions & Record<string, unknown>)
       : options;
 
+    // eslint-disable-next-line @typescript-eslint/no-deprecated
     if (behaviorOptions.compact) checkLegacyStyle(app);
 
     const status = getThemeStatus(app, options);

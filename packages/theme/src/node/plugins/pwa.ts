@@ -5,7 +5,9 @@ import { colors } from "vuepress/utils";
 
 import { logger } from "../utils.js";
 
-let pwaPlugin: (options: PwaPluginOptions, legacy?: boolean) => Plugin;
+let pwaPlugin:
+  | ((options: PwaPluginOptions, legacy?: boolean) => Plugin)
+  | null = null;
 
 try {
   ({ pwaPlugin } = await import("@vuepress/plugin-pwa"));

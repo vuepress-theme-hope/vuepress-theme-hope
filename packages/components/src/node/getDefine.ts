@@ -51,7 +51,7 @@ export const getDefine =
       });
       result.PDFJS_URL =
         typeof componentOptions.pdf?.pdfjs === "string"
-          ? componentOptions.pdf?.pdfjs
+          ? componentOptions.pdf.pdfjs
           : componentOptions.pdf?.pdfjs === false
             ? null
             : "https://theme-hope-assets.vuejs.press/pdfjs/";

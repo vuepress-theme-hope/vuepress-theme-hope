@@ -261,34 +261,14 @@ export default defineComponent({
                     Navbar,
                     { onToggleSidebar: () => toggleMobileSidebar() },
                     {
-                      startBefore: slots.navbarStartBefore
-                        ? (): VNode | VNode[] | null =>
-                            slots.navbarStartBefore!()
-                        : null,
-                      startAfter: slots.navbarStartAfter
-                        ? (): VNode | VNode[] | null =>
-                            slots.navbarStartAfter!()
-                        : null,
-                      centerBefore: slots.navbarCenterBefore
-                        ? (): VNode | VNode[] | null =>
-                            slots.navbarCenterBefore!()
-                        : null,
-                      centerAfter: slots.navbarCenterAfter
-                        ? (): VNode | VNode[] | null =>
-                            slots.navbarCenterAfter!()
-                        : null,
-                      endBefore: slots.navbarEndBefore
-                        ? (): VNode | VNode[] | null => slots.navbarEndBefore!()
-                        : null,
-                      endAfter: slots.navbarEndAfter
-                        ? (): VNode | VNode[] | null => slots.navbarEndAfter!()
-                        : null,
-                      screenTop: slots.navScreenTop
-                        ? (): VNode | VNode[] | null => slots.navScreenTop!()
-                        : null,
-                      screenBottom: slots.navScreenBottom
-                        ? (): VNode | VNode[] | null => slots.navScreenBottom!()
-                        : null,
+                      startBefore: slots.navbarStartBefore,
+                      startAfter: slots.navbarStartAfter,
+                      centerBefore: slots.navbarCenterBefore,
+                      centerAfter: slots.navbarCenterAfter,
+                      endBefore: slots.navbarEndBefore,
+                      endAfter: slots.navbarEndAfter,
+                      screenTop: slots.navScreenTop,
+                      screenBottom: slots.navScreenBottom,
                     },
                   )
                 : null,
@@ -324,15 +304,9 @@ export default defineComponent({
                 Sidebar,
                 {},
                 {
-                  default: slots.sidebar
-                    ? (): VNode | VNode[] | null => slots.sidebar!()
-                    : null,
-                  top: slots.sidebarTop
-                    ? (): VNode | VNode[] | null => slots.sidebarTop!()
-                    : null,
-                  bottom: slots.sidebarBottom
-                    ? (): VNode | VNode[] | null => slots.sidebarBottom!()
-                    : null,
+                  default: slots.sidebar,
+                  top: slots.sidebarTop,
+                  bottom: slots.sidebarBottom,
                 },
               ),
               slots.default(),

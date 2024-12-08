@@ -17,6 +17,7 @@ export const componentsPlugin =
   (app) => {
     // TODO: Remove this in v2 stable
     if (legacy)
+      // eslint-disable-next-line @typescript-eslint/no-deprecated
       convertOptions(
         options as ComponentPluginOptions & Record<string, unknown>,
       );
@@ -31,11 +32,11 @@ export const componentsPlugin =
       define: getDefine(options),
 
       extendsBundlerOptions: (bundlerOptions, app): void => {
-        if (options?.components?.includes("ArtPlayer"))
+        if (options.components?.includes("ArtPlayer"))
           addViteOptimizeDepsInclude(bundlerOptions, app, "artplayer");
-        if (options?.components?.includes("FontIcon"))
+        if (options.components?.includes("FontIcon"))
           addCustomElement(bundlerOptions, app, "iconify-icon");
-        if (options?.components?.includes("VidStack"))
+        if (options.components?.includes("VidStack"))
           addCustomElement(bundlerOptions, app, /^media-/);
 
         addViteSsrNoExternal(bundlerOptions, app, [

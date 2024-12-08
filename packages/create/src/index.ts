@@ -38,24 +38,37 @@ const preAction = async (
   packageManager: PackageManager;
 } | void> => {
   // Ensure targetDir is specified by user
-  if (!targetDir) return cli.outputHelp();
+  if (!targetDir) {
+    cli.outputHelp();
+
+    return;
+  }
 
   // Get language
   const { lang, locale } = await getLanguage();
 
   // Check bundler
-  if (bundler && !supportedBundlers.includes(bundler))
-    return console.log(locale.error.bundler);
+  if (bundler && !supportedBundlers.includes(bundler)) {
+    console.log(locale.error.bundler);
+
+    return;
+  }
 
   // Check presets
-  if (preset && !supportedPresets.includes(preset))
-    return console.log(locale.error.preset);
+  if (preset && !supportedPresets.includes(preset)) {
+    console.log(locale.error.preset);
+
+    return;
+  }
 
   const targetDirPath = resolve(process.cwd(), targetDir);
 
   // Check if the user is trying to cover his files
-  if (existsSync(targetDirPath) && readdirSync(targetDirPath).length)
-    return console.error(locale.error.dirNotEmpty(targetDir));
+  if (existsSync(targetDirPath) && readdirSync(targetDirPath).length) {
+    console.error(locale.error.dirNotEmpty(targetDir));
+
+    return;
+  }
 
   // Get packageManager
   const packageManager = await select({
@@ -67,8 +80,11 @@ const preAction = async (
   });
 
   // Check if the user is a noob and warn him 🤪
-  if (targetDir.startsWith("[") && targetDir.endsWith("]"))
-    return console.log(locale.error.updateDirMissing(packageManager));
+  if (targetDir.startsWith("[") && targetDir.endsWith("]")) {
+    console.log(locale.error.updateDirMissing(packageManager));
+
+    return;
+  }
 
   ensureDirExistSync(targetDirPath);
 

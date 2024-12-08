@@ -3,6 +3,7 @@ import type { App, Page, PluginObject } from "vuepress/core";
 import { injectLocalizedDate } from "vuepress-shared/node";
 
 import type {
+  StructureSidebarDirOptions,
   ThemeBlogHomePageFrontmatter,
   ThemeData,
   ThemeNormalPageFrontmatter,
@@ -40,8 +41,8 @@ export const injectPageInfo = (page: Page<ThemePageData>): void => {
     if (isPlainObject(frontmatter.dir)) {
       if ("order" in frontmatter.dir)
         page.routeMeta[PageInfo.order] = (
-          frontmatter as ThemeNormalPageFrontmatter
-        ).dir!.order;
+          frontmatter.dir as StructureSidebarDirOptions
+        ).order;
 
       if ((frontmatter as ThemeNormalPageFrontmatter).dir?.index === false)
         page.routeMeta[PageInfo.index] = false;
@@ -72,6 +73,7 @@ export const extendsPagePlugin = (
       const { filePathRelative } = page;
 
       if (behavior.compact)
+        // eslint-disable-next-line @typescript-eslint/no-deprecated
         page.frontmatter = convertFrontmatter(
           page.frontmatter,
           filePathRelative ?? "",

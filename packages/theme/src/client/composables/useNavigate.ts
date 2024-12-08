@@ -14,7 +14,7 @@ export const useNavigate = (): ((url: string) => void) => {
         if (route.path !== url) void router.push(url);
       } else if (isLinkWithProtocol(url)) {
         // Outer url
-        if (window) window.open(url);
+        window.open(url);
       } else {
         // Inner relative path
         const loc = route.path.slice(0, route.path.lastIndexOf("/"));

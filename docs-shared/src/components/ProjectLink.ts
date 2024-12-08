@@ -23,7 +23,7 @@ const ProjectLink: FunctionalComponent<
     {
       href: `https://${
         IS_NETLIFY
-          ? `${type ?? "plugin"}-${name}.vuejs.press${ensureLeadingSlash(path)}`
+          ? `${type}-${name}.vuejs.press${ensureLeadingSlash(path)}`
           : `vuepress-theme-hope.${
               IS_GITEE ? "gitee" : "github"
             }.io/v2${base}${ensureLeadingSlash(path)}`

@@ -27,7 +27,9 @@ export class Popup {
     this.popupElements[popupId] = popupWrapperElement;
     popupWrapperElement.className = "popup-wrapper appear";
     popupWrapperElement.appendChild(popupElement);
-    popupWrapperElement.addEventListener("click", () => this.close(popupId));
+    popupWrapperElement.addEventListener("click", () => {
+      this.close(popupId);
+    });
     popupElement.className = "popup-container";
     popupElement.innerHTML = html;
 
@@ -50,7 +52,9 @@ export class Popup {
         delete this.popupElements[popupId];
       });
     } else {
-      keys(this.popupElements).forEach((id) => this.close(Number(id)));
+      keys(this.popupElements).forEach((id) => {
+        this.close(Number(id));
+      });
     }
   }
 

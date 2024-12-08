@@ -30,5 +30,5 @@ export const openPopupWindow = (
         ",",
       )}`,
     )
-    ?.focus?.();
+    ?.focus();
 };

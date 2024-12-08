@@ -1,3 +1,5 @@
+import type { HeadConfig, PageFrontmatter } from "vuepress/shared";
+import { isString } from "vuepress/shared";
 import { colors } from "vuepress/utils";
 
 import { deprecatedLogger, droppedLogger } from "./utils.js";
@@ -32,25 +34,25 @@ const DROPPED_FRONTMATTER_OPTIONS: [string, string][] = [
  * @deprecated You should use V2 standard frontmatter and avoid using it
  */
 export const convertFrontmatter = (
-  frontmatter: Record<string, unknown>,
+  frontmatter: PageFrontmatter & Record<string, unknown>,
   filePathRelative: string,
 ): ThemePageFrontmatter & Record<string, unknown> => {
-  DEPRECATED_FRONTMATTER_OPTIONS.forEach(([deprecatedOption, newOption]) =>
+  DEPRECATED_FRONTMATTER_OPTIONS.forEach(([deprecatedOption, newOption]) => {
     deprecatedLogger({
       options: frontmatter,
       deprecatedOption,
       newOption,
       scope: `${filePathRelative} frontmatter`,
-    }),
-  );
+    });
+  });
 
-  DROPPED_FRONTMATTER_OPTIONS.forEach((item) =>
+  DROPPED_FRONTMATTER_OPTIONS.forEach((item) => {
     droppedLogger(
       frontmatter,
       item[0],
       `${item[1]}${filePathRelative ? ` (found in ${filePathRelative})` : ""}`,
-    ),
-  );
+    );
+  });
 
   if ("meta" in frontmatter) {
     logger.warn(
@@ -62,14 +64,16 @@ export const convertFrontmatter = (
     );
 
     frontmatter.head = [
-      ...((frontmatter.head as unknown[]) ?? []),
-      (frontmatter.meta as unknown[]).map((item) => ["meta", item]),
+      ...(frontmatter.head ?? []),
+      ...(frontmatter.meta as Record<string, string>[]).map<HeadConfig>(
+        (item) => ["meta", item],
+      ),
     ];
 
     delete frontmatter.meta;
   }
 
-  if ("canonicalUrl" in frontmatter) {
+  if ("canonicalUrl" in frontmatter && isString(frontmatter.canonicalUrl)) {
     logger.warn(
       `${colors.magenta(
         "canonicalUrl",
@@ -79,7 +83,7 @@ export const convertFrontmatter = (
     );
 
     frontmatter.head = [
-      ...((frontmatter.head as unknown[]) ?? []),
+      ...(frontmatter.head ?? []),
       ["link", { rel: "canonical", href: frontmatter.canonicalUrl }],
     ];
 
@@ -102,13 +106,14 @@ export const convertFrontmatter = (
     // Check project homepage
     if (!("layout" in frontmatter))
       DEPRECATED_HOME_FRONTMATTER_OPTIONS.forEach(
-        ([deprecatedOption, newOption]) =>
+        ([deprecatedOption, newOption]) => {
           deprecatedLogger({
             options: frontmatter,
             deprecatedOption,
             newOption,
             scope: `${filePathRelative} frontmatter`,
-          }),
+          });
+        },
       );
   }
 

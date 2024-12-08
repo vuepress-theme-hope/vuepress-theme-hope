@@ -28,7 +28,7 @@ export default defineComponent({
   },
 
   slots: Object as SlotsType<{
-    title: () => VNode;
+    title?: () => VNode | VNode[];
   }>,
 
   setup(props, { slots }) {
@@ -73,7 +73,7 @@ export default defineComponent({
             onClick: handleDropdown,
           },
           [
-            slots.title?.() || [
+            slots.title?.() ?? [
               h(HopeIcon, { icon: config.value.icon }),
               props.config.text,
             ],

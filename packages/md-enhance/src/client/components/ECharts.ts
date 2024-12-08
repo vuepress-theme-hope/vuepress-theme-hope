@@ -94,7 +94,9 @@ export default defineComponent({
 
     useEventListener(
       "resize",
-      useDebounceFn(() => chart?.resize(), 100),
+      useDebounceFn(() => {
+        chart.resize();
+      }, 100),
     );
 
     onMounted(() => {
@@ -121,7 +123,7 @@ export default defineComponent({
     });
 
     onUnmounted(() => {
-      chart?.dispose();
+      chart.dispose();
     });
 
     return (): (VNode | null)[] => [

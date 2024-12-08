@@ -62,6 +62,7 @@ export default defineComponent({
           );
 
           markupMap = Markmap.create(
+            // eslint-disable-next-line @typescript-eslint/no-non-null-assertion
             markmapSvg.value!,
             deriveOptions({
               maxWidth: 240,
@@ -78,6 +79,7 @@ export default defineComponent({
           el.style.bottom = "0.5rem";
           el.style.right = "0.5rem";
 
+          // eslint-disable-next-line @typescript-eslint/no-non-null-assertion
           markupWrapper.value!.append(el);
           loading.value = false;
         },

@@ -55,6 +55,7 @@ export const config = (
 
     onInitialized: (app) => {
       if (IS_NETLIFY) {
+        // eslint-disable-next-line @typescript-eslint/no-non-null-assertion
         app.pages.find((page) => page.path === "/")!.frontmatter.footer = `\
 <a href="https://www.netlify.com" target="_blank">
   <img src="https://www.netlify.com/img/global/badges/netlify-light.svg" alt="Deploys by Netlify" data-mode="lightmode-only">
@@ -63,6 +64,7 @@ export const config = (
 <br/>
 Theme by <a href="https://theme-hope.vuejs.press" target="_blank">VuePress Theme Hope</a> | MIT Licensed, Copyright © 2019-present Mr.Hope
 `;
+        // eslint-disable-next-line @typescript-eslint/no-non-null-assertion
         app.pages.find((page) => page.path === "/zh/")!.frontmatter.footer = `\
 <a href="https://www.netlify.com" target="_blank">
   <img src="https://www.netlify.com/img/global/badges/netlify-light.svg" alt="由 Netlify 部署" data-mode="lightmode-only">

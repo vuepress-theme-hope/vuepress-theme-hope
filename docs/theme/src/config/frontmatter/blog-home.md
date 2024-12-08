@@ -36,12 +36,12 @@ Page title, will be used in breadcrumb, seo, etc.
 
 ## heroText
 
-- Type: `string | false`
-- Default: `"Hello"`
+- Type: `string`
+- Default: Site title
 - Details:
   - [Blog → Blog HomePage](../../guide/blog/home.md#blog-style-homepage)
 
-Hero Title
+Hero Title, can be set to an empty string to hide the default title.
 
 ## tagline
 

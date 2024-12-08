@@ -189,6 +189,7 @@ export default defineComponent({
       if (props.embed) {
         await sdk[
           props.type === "github" ? "embedGithubProject" : "embedProjectId"
+          // eslint-disable-next-line @typescript-eslint/no-non-null-assertion
         ](el.value!, props.id, options.value);
         resize();
       }

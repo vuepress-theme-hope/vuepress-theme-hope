@@ -40,18 +40,17 @@ export const useNavbarLanguageDropdown =
 
       const languageDropdown: NavGroup<AutoLinkOptions> = {
         text: "",
-        ariaLabel: navbarLocales?.selectLangAriaLabel,
+        ariaLabel: navbarLocales.selectLangAriaLabel,
         children: [
           ...localePaths.map((targetLocalePath) => {
             // Target locale config of this language link
             const targetSiteLocale =
-              siteData.value.locales?.[targetLocalePath] ?? {};
+              siteData.value.locales[targetLocalePath] ?? {};
             const targetThemeLocale =
-              themeData.value.locales?.[targetLocalePath] ?? {};
+              themeData.value.locales[targetLocalePath] ?? {};
             const targetLang = targetSiteLocale.lang;
 
-            const text =
-              targetThemeLocale.navbarLocales?.langName ?? targetLang;
+            const text = targetThemeLocale.navbarLocales.langName;
             let link;
 
             // If the target language is current language

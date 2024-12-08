@@ -24,9 +24,9 @@ export default defineComponent({
     const skipToMainContent = shallowRef<HTMLSpanElement>();
 
     const focusMainContent = ({ target }: Event): void => {
-      const el: HTMLElement = document.querySelector(
+      const el = document.querySelector<HTMLElement>(
         (target as HTMLAnchorElement).hash,
-      )!;
+      );
 
       if (el) {
         const removeTabIndex = (): void => {
@@ -44,7 +44,10 @@ export default defineComponent({
     onMounted(() => {
       watch(
         () => page.value.path,
-        () => skipToMainContent.value!.focus(),
+        () => {
+          // eslint-disable-next-line @typescript-eslint/no-non-null-assertion
+          skipToMainContent.value!.focus();
+        },
       );
     });
 

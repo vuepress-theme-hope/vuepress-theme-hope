@@ -96,8 +96,10 @@ export default defineComponent({
     const options = computed(() =>
       deepAssign({}, sandpackConfig.options, getSandpackOptions(props.options)),
     );
+    // eslint-disable-next-line @typescript-eslint/no-unnecessary-condition
     const template = computed(() => props.template || sandpackConfig.template);
     const theme = computed(() =>
+      // eslint-disable-next-line @typescript-eslint/no-unnecessary-condition
       props.theme || isDarkmode.value ? "dark" : "light",
     );
     const customSetup = computed(() =>

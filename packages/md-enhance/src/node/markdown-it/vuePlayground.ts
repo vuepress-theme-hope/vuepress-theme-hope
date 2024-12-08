@@ -32,7 +32,7 @@ export const vuePlayground: PluginSimple = (md) => {
     propsGetter: ({ title = "", key, files, settings }: PlaygroundData) => ({
       title,
       key,
-      settings: encodeURIComponent(JSON.stringify(settings || {})),
+      settings: encodeURIComponent(JSON.stringify(settings)),
       files: encodeURIComponent(encodeFiles(files)),
     }),
   });

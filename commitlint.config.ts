@@ -15,7 +15,7 @@ const scopeComplete = execSync("git status --porcelain || true")
   .split("\n")
   .find((r) => ~r.indexOf("M  packages"))
   ?.replace(/\//g, "%%")
-  ?.match(/packages%%((\w|-)*)/)?.[1];
+  .match(/packages%%((\w|-)*)/)?.[1];
 
 export default {
   extends: ["@commitlint/config-conventional"],

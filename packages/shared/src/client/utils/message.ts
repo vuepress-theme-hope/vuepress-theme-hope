@@ -73,7 +73,9 @@ export class Message {
         delete this.messageElements[messageId];
       });
     } else {
-      keys(this.messageElements).forEach((id) => this.close(Number(id)));
+      keys(this.messageElements).forEach((id) => {
+        this.close(Number(id));
+      });
     }
   }
 

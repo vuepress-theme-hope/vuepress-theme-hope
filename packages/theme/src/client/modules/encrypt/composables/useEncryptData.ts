@@ -8,5 +8,5 @@ import type { EncryptConfig } from "../../../../shared/index.js";
 export const useEncryptData = (): ComputedRef<EncryptConfig> => {
   const themeData = useThemeData();
 
-  return computed(() => themeData.value.encrypt || {});
+  return computed(() => themeData.value.encrypt);
 };

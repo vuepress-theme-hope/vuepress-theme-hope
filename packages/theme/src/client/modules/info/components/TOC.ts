@@ -165,9 +165,7 @@ export default defineComponent({
 
       const tocHeaders = props.items.length
         ? renderChildren(props.items, props.headerDepth)
-        : page.value.headers
-          ? renderChildren(page.value.headers, props.headerDepth)
-          : null;
+        : renderChildren(page.value.headers, props.headerDepth);
 
       return tocHeaders
         ? h("div", { class: "vp-toc-placeholder" }, [
