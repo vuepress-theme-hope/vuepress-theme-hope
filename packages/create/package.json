@@ -46,7 +46,7 @@
   "dependencies": {
     "@inquirer/prompts": "^7.1.0",
     "cac": "6.7.14",
-    "execa": "9.5.1"
+    "execa": "9.5.2"
   },
   "devDependencies": {
     "rollup": "4.28.1",
