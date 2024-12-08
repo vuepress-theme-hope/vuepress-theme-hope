@@ -231,8 +231,8 @@ importers:
         specifier: 2.1.0
         version: 2.1.0(echarts@5.5.1)
       katex:
-        specifier: 0.16.11
-        version: 0.16.11
+        specifier: 0.16.12
+        version: 0.16.12
       kotlin-playground:
         specifier: 1.30.0
         version: 1.30.0
@@ -303,8 +303,8 @@ importers:
         specifier: 5.5.1
         version: 5.5.1
       katex:
-        specifier: 0.16.11
-        version: 0.16.11
+        specifier: 0.16.12
+        version: 0.16.12
       kotlin-playground:
         specifier: 1.30.0
         version: 1.30.0
@@ -369,8 +369,8 @@ importers:
         specifier: 5.5.1
         version: 5.5.1
       katex:
-        specifier: 0.16.11
-        version: 0.16.11
+        specifier: 0.16.12
+        version: 0.16.12
       kotlin-playground:
         specifier: 1.30.0
         version: 1.30.0
@@ -550,8 +550,8 @@ importers:
         specifier: 3.0.1
         version: 3.0.1
       katex:
-        specifier: 0.16.11
-        version: 0.16.11
+        specifier: 0.16.12
+        version: 0.16.12
       mermaid:
         specifier: 11.4.1
         version: 11.4.1
@@ -643,8 +643,8 @@ importers:
         specifier: 3.0.1
         version: 3.0.1
       katex:
-        specifier: 0.16.11
-        version: 0.16.11
+        specifier: 0.16.12
+        version: 0.16.12
       kotlin-playground:
         specifier: 1.30.0
         version: 1.30.0
@@ -1000,7 +1000,7 @@ importers:
         version: 2.0.0-rc.63(markdown-it@14.1.0)(typescript@5.7.2)(vuepress@2.0.0-rc.18(@vuepress/bundler-vite@2.0.0-rc.18(@types/node@22.10.1)(jiti@1.21.6)(lightningcss@1.28.2)(sass-embedded@1.82.0)(sass@1.82.0)(terser@5.37.0)(tsx@4.19.2)(typescript@5.7.2)(yaml@2.6.1))(@vuepress/bundler-webpack@2.0.0-rc.18(esbuild@0.23.1)(typescript@5.7.2))(typescript@5.7.2)(vue@3.5.13(typescript@5.7.2)))
       '@vuepress/plugin-markdown-math':
         specifier: 2.0.0-rc.63
-        version: 2.0.0-rc.63(katex@0.16.11)(markdown-it@14.1.0)(mathjax-full@3.2.2)(typescript@5.7.2)(vuepress@2.0.0-rc.18(@vuepress/bundler-vite@2.0.0-rc.18(@types/node@22.10.1)(jiti@1.21.6)(lightningcss@1.28.2)(sass-embedded@1.82.0)(sass@1.82.0)(terser@5.37.0)(tsx@4.19.2)(typescript@5.7.2)(yaml@2.6.1))(@vuepress/bundler-webpack@2.0.0-rc.18(esbuild@0.23.1)(typescript@5.7.2))(typescript@5.7.2)(vue@3.5.13(typescript@5.7.2)))
+        version: 2.0.0-rc.63(katex@0.16.12)(markdown-it@14.1.0)(mathjax-full@3.2.2)(typescript@5.7.2)(vuepress@2.0.0-rc.18(@vuepress/bundler-vite@2.0.0-rc.18(@types/node@22.10.1)(jiti@1.21.6)(lightningcss@1.28.2)(sass-embedded@1.82.0)(sass@1.82.0)(terser@5.37.0)(tsx@4.19.2)(typescript@5.7.2)(yaml@2.6.1))(@vuepress/bundler-webpack@2.0.0-rc.18(esbuild@0.23.1)(typescript@5.7.2))(typescript@5.7.2)(vue@3.5.13(typescript@5.7.2)))
       '@vuepress/plugin-markdown-stylize':
         specifier: 2.0.0-rc.63
         version: 2.0.0-rc.63(markdown-it@14.1.0)(typescript@5.7.2)(vuepress@2.0.0-rc.18(@vuepress/bundler-vite@2.0.0-rc.18(@types/node@22.10.1)(jiti@1.21.6)(lightningcss@1.28.2)(sass-embedded@1.82.0)(sass@1.82.0)(terser@5.37.0)(tsx@4.19.2)(typescript@5.7.2)(yaml@2.6.1))(@vuepress/bundler-webpack@2.0.0-rc.18(esbuild@0.23.1)(typescript@5.7.2))(typescript@5.7.2)(vue@3.5.13(typescript@5.7.2)))
@@ -6575,8 +6575,8 @@ packages:
     resolution: {integrity: sha512-y+8btoc/CK70XqcHqjxiGWBOeIL8upbS0peTPXTvgrh21n1RiWWcIpSWM+4uXq+IAgNh9YYQWdc7LVDPDAEEAg==}
     hasBin: true
 
-  katex@0.16.11:
-    resolution: {integrity: sha512-RQrI8rlHY92OLf3rho/Ts8i/XvjgguEjOkO1BEXcU3N8BqPpSzBNwV/G0Ukr+P/l3ivvJUE/Fa/CwbS6HesGNQ==}
+  katex@0.16.12:
+    resolution: {integrity: sha512-PB5jsdbRVdtAOlGfDmpQTAnofvHb/13/tJMg2m5UOGkLP2gabxvbwoB3IMUXfsYI6iMphFz/gNtYZ5GBEaRthg==}
     hasBin: true
 
   keyv@4.5.4:
@@ -11520,14 +11520,14 @@ snapshots:
     optionalDependencies:
       markdown-it: 14.1.0
 
-  '@mdit/plugin-katex-slim@0.14.0(katex@0.16.11)(markdown-it@14.1.0)':
+  '@mdit/plugin-katex-slim@0.14.0(katex@0.16.12)(markdown-it@14.1.0)':
     dependencies:
       '@mdit/helper': 0.14.0(markdown-it@14.1.0)
       '@mdit/plugin-tex': 0.14.0(markdown-it@14.1.0)
       '@types/katex': 0.16.7
       '@types/markdown-it': 14.1.2
     optionalDependencies:
-      katex: 0.16.11
+      katex: 0.16.12
       markdown-it: 14.1.0
 
   '@mdit/plugin-mark@0.14.0(markdown-it@14.1.0)':
@@ -13017,16 +13017,16 @@ snapshots:
       - markdown-it
       - typescript
 
-  '@vuepress/plugin-markdown-math@2.0.0-rc.63(katex@0.16.11)(markdown-it@14.1.0)(mathjax-full@3.2.2)(typescript@5.7.2)(vuepress@2.0.0-rc.18(@vuepress/bundler-vite@2.0.0-rc.18(@types/node@22.10.1)(jiti@1.21.6)(lightningcss@1.28.2)(sass-embedded@1.82.0)(sass@1.82.0)(terser@5.37.0)(tsx@4.19.2)(typescript@5.7.2)(yaml@2.6.1))(@vuepress/bundler-webpack@2.0.0-rc.18(esbuild@0.23.1)(typescript@5.7.2))(typescript@5.7.2)(vue@3.5.13(typescript@5.7.2)))':
+  '@vuepress/plugin-markdown-math@2.0.0-rc.63(katex@0.16.12)(markdown-it@14.1.0)(mathjax-full@3.2.2)(typescript@5.7.2)(vuepress@2.0.0-rc.18(@vuepress/bundler-vite@2.0.0-rc.18(@types/node@22.10.1)(jiti@1.21.6)(lightningcss@1.28.2)(sass-embedded@1.82.0)(sass@1.82.0)(terser@5.37.0)(tsx@4.19.2)(typescript@5.7.2)(yaml@2.6.1))(@vuepress/bundler-webpack@2.0.0-rc.18(esbuild@0.23.1)(typescript@5.7.2))(typescript@5.7.2)(vue@3.5.13(typescript@5.7.2)))':
     dependencies:
-      '@mdit/plugin-katex-slim': 0.14.0(katex@0.16.11)(markdown-it@14.1.0)
+      '@mdit/plugin-katex-slim': 0.14.0(katex@0.16.12)(markdown-it@14.1.0)
       '@mdit/plugin-mathjax-slim': 0.14.0(markdown-it@14.1.0)(mathjax-full@3.2.2)
       '@types/markdown-it': 14.1.2
       '@vuepress/helper': 2.0.0-rc.63(typescript@5.7.2)(vuepress@2.0.0-rc.18(@vuepress/bundler-vite@2.0.0-rc.18(@types/node@22.10.1)(jiti@1.21.6)(lightningcss@1.28.2)(sass-embedded@1.82.0)(sass@1.82.0)(terser@5.37.0)(tsx@4.19.2)(typescript@5.7.2)(yaml@2.6.1))(@vuepress/bundler-webpack@2.0.0-rc.18(esbuild@0.23.1)(typescript@5.7.2))(typescript@5.7.2)(vue@3.5.13(typescript@5.7.2)))
       vue: 3.5.13(typescript@5.7.2)
       vuepress: 2.0.0-rc.18(@vuepress/bundler-vite@2.0.0-rc.18(@types/node@22.10.1)(jiti@1.21.6)(lightningcss@1.28.2)(sass-embedded@1.82.0)(sass@1.82.0)(terser@5.37.0)(tsx@4.19.2)(typescript@5.7.2)(yaml@2.6.1))(@vuepress/bundler-webpack@2.0.0-rc.18(esbuild@0.23.1)(typescript@5.7.2))(typescript@5.7.2)(vue@3.5.13(typescript@5.7.2))
     optionalDependencies:
-      katex: 0.16.11
+      katex: 0.16.12
       mathjax-full: 3.2.2
     transitivePeerDependencies:
       - markdown-it
@@ -16312,7 +16312,7 @@ snapshots:
     dependencies:
       commander: 2.20.3
 
-  katex@0.16.11:
+  katex@0.16.12:
     dependencies:
       commander: 8.3.0
 
@@ -16663,7 +16663,7 @@ snapshots:
       '@babel/runtime': 7.26.0
       '@iktakahiro/markdown-it-katex': 4.0.1
       highlight.js: 11.10.0
-      katex: 0.16.11
+      katex: 0.16.12
       markdown-it: 14.1.0
       markdown-it-ins: 4.0.0
       markdown-it-mark: 4.0.0
@@ -16758,7 +16758,7 @@ snapshots:
       dagre-d3-es: 7.0.11
       dayjs: 1.11.13
       dompurify: 3.2.2
-      katex: 0.16.11
+      katex: 0.16.12
       khroma: 2.1.0
       lodash-es: 4.17.21
       marked: 13.0.3
