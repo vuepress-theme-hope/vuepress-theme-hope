@@ -45,6 +45,7 @@ export default defineComponent({
       watch(
         () => page.value.path,
         () => {
+          // eslint-disable-next-line @typescript-eslint/no-non-null-assertion
           skipToMainContent.value!.focus();
         },
       );

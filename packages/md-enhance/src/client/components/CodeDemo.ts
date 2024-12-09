@@ -115,6 +115,7 @@ export default defineComponent({
     const initDom = (innerHTML = false): void => {
       // Attach a shadow root to demo
 
+      // eslint-disable-next-line @typescript-eslint/no-non-null-assertion
       const shadowRoot = demoWrapper.value!.attachShadow({ mode: "open" });
       const appElement = document.createElement("div");
 
@@ -179,7 +180,8 @@ export default defineComponent({
                 onClick: () => {
                   height.value = isExpanded.value
                     ? "0"
-                    : `${codeContainer.value!.clientHeight + 13.8}px`;
+                    : // eslint-disable-next-line @typescript-eslint/no-non-null-assertion
+                      `${codeContainer.value!.clientHeight + 13.8}px`;
                   toggleIsExpand();
                 },
               })

@@ -94,7 +94,9 @@ export default defineComponent({
 
     useEventListener(
       "resize",
-      useDebounceFn(() => instance?.resize(), 100),
+      useDebounceFn(() => {
+        instance?.resize();
+      }, 100),
     );
 
     onMounted(() => {
@@ -122,7 +124,6 @@ export default defineComponent({
 
     onUnmounted(() => {
       instance?.dispose();
-      instance = null;
     });
 
     return (): (VNode | null)[] => [

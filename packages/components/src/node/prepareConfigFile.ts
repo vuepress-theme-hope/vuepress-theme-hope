@@ -24,6 +24,7 @@ export const prepareConfigFile = (
   components.forEach((item) => {
     if (
       AVAILABLE_COMPONENTS.includes(item) &&
+      // eslint-disable-next-line @typescript-eslint/no-unnecessary-condition
       (!COMPONENT_PKG[item] ||
         COMPONENT_PKG[item].every((pkg) => isInstalled(pkg)))
     ) {
@@ -55,6 +56,7 @@ import { hasGlobalComponent } from "${getModulePath(
       import.meta,
     )}";
 ${
+  // eslint-disable-next-line @typescript-eslint/no-unnecessary-condition
   shouldImportUseScriptTag
     ? `\
 import { useScriptTag } from "${getModulePath("@vueuse/core/index.mjs", import.meta)}";
@@ -62,6 +64,7 @@ import { useScriptTag } from "${getModulePath("@vueuse/core/index.mjs", import.m
     : ""
 }\
 ${
+  // eslint-disable-next-line @typescript-eslint/no-unnecessary-condition
   shouldImportUseStyleTag
     ? `\
 import { useStyleTag } from "${getModulePath("@vueuse/core/index.mjs", import.meta)}";

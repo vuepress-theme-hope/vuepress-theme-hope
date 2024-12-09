@@ -111,6 +111,7 @@ export default defineComponent({
       ChartJs.defaults.maintainAspectRatio = false;
 
       const data = parseChartConfig(config.value, props.type);
+      // eslint-disable-next-line @typescript-eslint/no-non-null-assertion
       const ctx = chartCanvasElement.value!.getContext("2d")!;
 
       chartjs?.destroy();

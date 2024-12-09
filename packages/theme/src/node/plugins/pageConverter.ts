@@ -73,6 +73,7 @@ export const extendsPagePlugin = (
       const { filePathRelative } = page;
 
       if (behavior.compact)
+        // eslint-disable-next-line @typescript-eslint/no-deprecated
         page.frontmatter = convertFrontmatter(
           page.frontmatter,
           filePathRelative ?? "",

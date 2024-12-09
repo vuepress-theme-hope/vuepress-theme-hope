@@ -31,6 +31,7 @@ export default defineComponent({
 
     const bloggerName = computed(
       () =>
+        // eslint-disable-next-line @typescript-eslint/no-unnecessary-condition
         blogOptions.value.name ??
         getAuthor(themeLocale.value.author)[0]?.name ??
         siteLocale.value.title,
@@ -71,6 +72,7 @@ export default defineComponent({
                     "data-balloon-pos": "down",
                     role: "link",
                     onClick: (): void => {
+                      // eslint-disable-next-line @typescript-eslint/no-non-null-assertion
                       navigate(intro.value!);
                     },
                   }

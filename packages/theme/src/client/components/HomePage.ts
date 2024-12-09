@@ -58,6 +58,7 @@ export default defineComponent({
           ) ??
             (features.value
               ? h(DropTransition, { appear: true, delay: 0.24 }, () =>
+                  // eslint-disable-next-line @typescript-eslint/no-non-null-assertion
                   h(FeaturePanel, { features: features.value! }),
                 )
               : null),

@@ -36,6 +36,7 @@ export default defineComponent({
 
       // Canvas
       const canvas =
+        // eslint-disable-next-line @typescript-eslint/no-non-null-assertion
         document.querySelector<HTMLCanvasElement>("canvas#hero-logo")!;
       // Scene
       const scene = new three.Scene();

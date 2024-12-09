@@ -102,6 +102,7 @@ export const mermaid: PluginSimple = (md) => {
         index,
       );
 
+    // eslint-disable-next-line @typescript-eslint/no-non-null-assertion
     return fence!(...args);
   };
 

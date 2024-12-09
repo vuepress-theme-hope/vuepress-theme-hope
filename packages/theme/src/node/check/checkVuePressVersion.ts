@@ -60,9 +60,11 @@ export const checkVuePressVersion = (): boolean => {
       );
     }
 
+    // eslint-disable-next-line @typescript-eslint/no-unnecessary-condition
     if (foundVuePress || dir === path.dirname(dir)) break;
   } while ((dir = path.dirname(dir)));
 
+  // eslint-disable-next-line @typescript-eslint/no-unnecessary-condition
   if (!foundVuePress) {
     console.error(
       `❌ ${colors.cyan("VuePress")} ${colors.red("package is not found in current project!")} You must manually install it!`,

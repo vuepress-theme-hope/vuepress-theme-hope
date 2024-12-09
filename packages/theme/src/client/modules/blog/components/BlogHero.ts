@@ -177,6 +177,7 @@ export default defineComponent({
                       class: "slide-down-button",
                       onClick: () => {
                         window.scrollTo({
+                          // eslint-disable-next-line @typescript-eslint/no-non-null-assertion
                           top: hero.value!.clientHeight,
                           behavior: "smooth",
                         });

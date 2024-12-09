@@ -131,6 +131,7 @@ export default defineComponent({
     const isFullscreen = ref(false);
 
     onMounted(() => {
+      // eslint-disable-next-line @typescript-eslint/no-non-null-assertion
       viewPDF(getLink(props.url), viewer.value!, {
         title: props.title,
         hint: locales.value.hint,

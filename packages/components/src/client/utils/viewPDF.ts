@@ -90,6 +90,7 @@ const addPDFViewer = (
   const source = `${
     embedType === "pdfjs"
       ? `${ensureEndingSlash(
+          // eslint-disable-next-line @typescript-eslint/no-non-null-assertion
           withBase(PDFJS_URL!),
         )}web/viewer.html?file=${encodeURIComponent(url)}`
       : url
@@ -118,6 +119,7 @@ export const viewPDF = (
   targetSelector: string | HTMLElement | null,
   { title, hint, options = {}, force }: ViewPDFOptions,
 ): HTMLElement | null => {
+  // eslint-disable-next-line @typescript-eslint/no-unnecessary-condition
   if (typeof window === "undefined" || !window?.navigator?.userAgent)
     return null;
 

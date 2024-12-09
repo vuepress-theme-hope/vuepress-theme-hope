@@ -55,6 +55,7 @@ export default defineComponent({
     const currentWallpaper = computed(() => {
       const { index, data } = bingStorage.value;
 
+      // eslint-disable-next-line @typescript-eslint/no-non-null-assertion
       const langCode = lang.value.toLowerCase().split("-").shift()!;
 
       if (data[index]) {

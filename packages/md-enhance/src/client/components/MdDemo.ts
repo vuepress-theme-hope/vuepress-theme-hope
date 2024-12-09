@@ -57,7 +57,8 @@ export default defineComponent({
             onClick: () => {
               height.value = isExpanded.value
                 ? "0"
-                : `${codeContainer.value!.clientHeight + 13.8}px`;
+                : // eslint-disable-next-line @typescript-eslint/no-non-null-assertion
+                  `${codeContainer.value!.clientHeight + 13.8}px`;
               toggleIsExpand();
             },
           }),

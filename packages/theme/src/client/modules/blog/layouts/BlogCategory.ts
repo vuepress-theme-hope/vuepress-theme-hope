@@ -59,6 +59,7 @@ export default defineComponent({
                 ? h(DropTransition, { appear: true, delay: 0.24 }, () =>
                     h(ArticleList, {
                       key: page.value.path,
+                      // eslint-disable-next-line @typescript-eslint/no-non-null-assertion
                       items: items.value!,
                     }),
                   )

@@ -82,6 +82,7 @@ export const mdDemo: PluginSimple = (md) => {
         )
         .join("\n");
 
+      // eslint-disable-next-line @typescript-eslint/no-non-null-assertion
       return `<template #code>\n${self.rules.fence!(
         tokens,
         index,

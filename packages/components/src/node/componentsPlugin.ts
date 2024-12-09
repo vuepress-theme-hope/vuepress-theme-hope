@@ -17,6 +17,7 @@ export const componentsPlugin =
   (app) => {
     // TODO: Remove this in v2 stable
     if (legacy)
+      // eslint-disable-next-line @typescript-eslint/no-deprecated
       convertOptions(
         options as ComponentPluginOptions & Record<string, unknown>,
       );
