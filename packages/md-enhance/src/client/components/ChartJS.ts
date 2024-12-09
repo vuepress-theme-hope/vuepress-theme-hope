@@ -7,6 +7,7 @@ import {
   defineComponent,
   h,
   onMounted,
+  onUnmounted,
   ref,
   shallowRef,
   watch,
@@ -95,26 +96,26 @@ export default defineComponent({
 
     let loaded = false;
 
-    let chart: Chart | null;
+    let chartjs: Chart | null;
 
     const renderChart = async (isDarkmode: boolean): Promise<void> => {
-      const [{ default: Chart }] = await Promise.all([
+      const [{ default: ChartJs }] = await Promise.all([
         import(/* webpackChunkName: "chart" */ "chart.js/auto"),
         loaded
           ? Promise.resolve()
           : ((loaded = true), wait(MARKDOWN_ENHANCE_DELAY)),
       ]);
 
-      Chart.defaults.borderColor = isDarkmode ? "#ccc" : "#36A2EB";
-      Chart.defaults.color = isDarkmode ? "#fff" : "#000";
-      Chart.defaults.maintainAspectRatio = false;
+      ChartJs.defaults.borderColor = isDarkmode ? "#ccc" : "#36A2EB";
+      ChartJs.defaults.color = isDarkmode ? "#fff" : "#000";
+      ChartJs.defaults.maintainAspectRatio = false;
 
       const data = parseChartConfig(config.value, props.type);
       // eslint-disable-next-line @typescript-eslint/no-non-null-assertion
       const ctx = chartCanvasElement.value!.getContext("2d")!;
 
-      chart?.destroy();
-      chart = new Chart(ctx, data);
+      chartjs?.destroy();
+      chartjs = new ChartJs(ctx, data);
 
       loading.value = false;
     };
@@ -135,6 +136,11 @@ export default defineComponent({
       );
 
       watch(isDarkmode, (value) => renderChart(value), { immediate: true });
+    });
+
+    onUnmounted(() => {
+      chartjs?.destroy();
+      chartjs = null;
     });
 
     return (): (VNode | null)[] => [
