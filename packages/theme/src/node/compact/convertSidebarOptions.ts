@@ -29,15 +29,15 @@ const handleArraySidebarOptions = (
           ["collapsable", "collapsible"],
         ];
 
-        convertConfig.forEach(([deprecatedOption, newOption]) =>
+        convertConfig.forEach(([deprecatedOption, newOption]) => {
           deprecatedLogger({
             // @ts-expect-error: Type is too narrow
             options: item,
             deprecatedOption,
             newOption,
             scope: "sidebar",
-          }),
-        );
+          });
+        });
 
         // @ts-expect-error: Type is too narrow
         droppedLogger(item, "sidebarDepth", "Found in sidebar");
@@ -63,7 +63,7 @@ export const convertSidebarOptions = (
   if (isArray(config))
     return handleArraySidebarOptions(config as SidebarArrayOptions);
 
-  if (isPlainObject(config) && config)
+  if (isPlainObject(config))
     return fromEntries(
       entries(config).map<[string, SidebarArrayOptions | "structure" | false]>(
         ([key, value]) => {

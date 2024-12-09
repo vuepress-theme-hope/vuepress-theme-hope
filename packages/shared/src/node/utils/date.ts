@@ -76,7 +76,7 @@ export const injectLocalizedDate = (
         });
     } else if (page.data.git?.createdTime) {
       page.data.localizedDate = timeTransformer(
-        new Date(page.data.git?.createdTime),
+        new Date(page.data.git.createdTime),
         {
           lang: page.lang,
           type: "date",

@@ -46,7 +46,7 @@ export default defineComponent({
           id: "main-content",
           class: "vp-page vp-project-home",
           "aria-labelledby":
-            frontmatter.value.heroText === null ? "" : "main-title",
+            frontmatter.value.heroText === "" ? "" : "main-title",
         },
         [
           slots.top?.(),

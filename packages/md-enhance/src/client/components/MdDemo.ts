@@ -70,7 +70,7 @@ export default defineComponent({
             : null,
         ]),
 
-        h("div", { class: "vp-md-demo-display" }, slots.default?.()),
+        h("div", { class: "vp-md-demo-display" }, slots.default()),
 
         h(
           "div",
@@ -84,7 +84,7 @@ export default defineComponent({
               ref: codeContainer,
               class: "vp-md-demo-codes",
             },
-            slots.code?.(),
+            slots.code(),
           ),
         ),
       ]);

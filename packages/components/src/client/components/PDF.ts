@@ -2,7 +2,15 @@
 import { useLocaleConfig } from "@vuepress/helper/client";
 import { useScrollLock } from "@vueuse/core";
 import type { VNode } from "vue";
-import { defineComponent, h, onMounted, onUnmounted, ref, watch } from "vue";
+import {
+  defineComponent,
+  h,
+  onMounted,
+  onUnmounted,
+  ref,
+  shallowRef,
+  watch,
+} from "vue";
 import {
   CancelFullScreenIcon,
   EnterFullScreenIcon,
@@ -119,7 +127,7 @@ export default defineComponent({
   setup(props) {
     const { el, width, height, resize } = useSize<HTMLDivElement>(props);
     const locales = useLocaleConfig(PDF_LOCALES);
-    const viewer = ref<HTMLElement>();
+    const viewer = shallowRef<HTMLElement>();
     const isFullscreen = ref(false);
 
     onMounted(() => {

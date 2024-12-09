@@ -18,7 +18,6 @@ export const prepareConfigFile = (
   let enhance = "";
   const setups: string[] = [];
   const configRootComponents: string[] = [];
-  const shouldImportH = false;
   let shouldImportUseScriptTag = false;
   let shouldImportUseStyleTag = false;
 
@@ -55,13 +54,6 @@ import { hasGlobalComponent } from "${getModulePath(
       "@vuepress/helper/client",
       import.meta,
     )}";
-${
-  shouldImportH
-    ? `\
-import { h } from "vue";
-`
-    : ""
-}
 ${
   shouldImportUseScriptTag
     ? `\

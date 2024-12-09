@@ -38,7 +38,7 @@ export default defineComponent({
         !window.matchMedia("(prefers-reduced-motion: reduce)").matches &&
         !isPure.value;
 
-      if (!useViewTransition || !event) {
+      if (!useViewTransition) {
         updateDarkmodeStatus();
 
         return;

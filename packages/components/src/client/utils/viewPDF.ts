@@ -50,33 +50,29 @@ const emptyNodeContents = (node: HTMLElement): void => {
 const getTargetElement = (
   targetSelector: string | HTMLElement | null,
 ): HTMLElement | null =>
-  targetSelector === "string"
-    ? document.querySelector(targetSelector)
-    : targetSelector instanceof HTMLElement
-      ? targetSelector
+  targetSelector instanceof HTMLElement
+    ? targetSelector
+    : targetSelector === "string"
+      ? document.querySelector(targetSelector)
       : document.body;
 
 // Create a fragment identifier for using PDF Open parameters when embedding PDF
 const buildURLFragmentString = (
   options: Record<string, string | number | boolean>,
 ): string => {
-  let url = "";
+  let url = entries(options)
+    .map(([key, value]) =>
+      key === "noToolbar"
+        ? `toolbar=${value ? "0" : "1"}`
+        : `${encodeURIComponent(key)}=${encodeURIComponent(value)}`,
+    )
+    .join("&");
 
-  if (options) {
-    url += entries(options)
-      .map(([key, value]) =>
-        key === "noToolbar"
-          ? `toolbar=${value ? 0 : 1}`
-          : `${encodeURIComponent(key)}=${encodeURIComponent(value)}`,
-      )
-      .join("&");
-
-    /*
-     * The string will be empty if no PDF Params found
-     * Remove last ampersand
-     */
-    if (url) url = `#${url.slice(0, url.length - 1)}`;
-  }
+  /*
+   * The string will be empty if no PDF Params found
+   * Remove last ampersand
+   */
+  if (url) url = `#${url.slice(0, url.length - 1)}`;
 
   return url;
 };

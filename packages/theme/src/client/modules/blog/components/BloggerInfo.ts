@@ -70,7 +70,9 @@ export default defineComponent({
                     "aria-label": locale.value.intro,
                     "data-balloon-pos": "down",
                     role: "link",
-                    onClick: () => navigate(intro.value!),
+                    onClick: (): void => {
+                      navigate(intro.value!);
+                    },
                   }
                 : {}),
             },

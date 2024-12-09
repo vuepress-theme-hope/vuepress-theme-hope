@@ -13,8 +13,7 @@ if (typeof HLS_JS_INSTALLED !== "undefined" && HLS_JS_INSTALLED)
 if (typeof MPEGTS_JS_INSTALLED !== "undefined" && MPEGTS_JS_INSTALLED)
   SUPPORTED_VIDEO_TYPES.push("ts", "flv");
 
-export const getTypeByUrl = (url: string): string =>
-  url?.split(".").pop() ?? "";
+export const getTypeByUrl = (url: string): string => url.split(".").pop() ?? "";
 
 export const registerMseDash = async (
   mediaElement: HTMLMediaElement,
@@ -32,7 +31,9 @@ export const registerMseDash = async (
 
       dashPlayer.initialize(mediaElement, src, autoPlay, startTime);
 
-      onDestroy(() => dashPlayer.destroy());
+      onDestroy(() => {
+        dashPlayer.destroy();
+      });
     }
   }
 };
@@ -58,7 +59,9 @@ export const registerMseFlv = async (
       flvPlayer.attachMediaElement(mediaElement);
       flvPlayer.load();
 
-      onDestroy(() => flvPlayer.destroy());
+      onDestroy(() => {
+        flvPlayer.destroy();
+      });
     }
   }
 };
@@ -86,7 +89,9 @@ export const registerMseHls = async (
         hlsInstance.loadSource(src);
       });
 
-      onDestroy(() => hlsInstance.destroy());
+      onDestroy(() => {
+        hlsInstance.destroy();
+      });
     }
   }
 };

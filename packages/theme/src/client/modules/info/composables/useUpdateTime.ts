@@ -27,7 +27,7 @@ export const useUpdateTime = (): ComputedRef<null | string> => {
 
     if (!page.value.git?.updatedTime) return null;
 
-    const updatedDate = new Date(page.value.git?.updatedTime);
+    const updatedDate = new Date(page.value.git.updatedTime);
 
     return updatedDate.toLocaleString(siteLocale.value.lang);
   });

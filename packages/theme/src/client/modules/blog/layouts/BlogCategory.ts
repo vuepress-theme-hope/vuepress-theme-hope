@@ -1,9 +1,6 @@
-import type {
-  BlogCategoryFrontmatterOptions,
-  BlogPluginFrontmatter,
-} from "@vuepress/plugin-blog";
+import type { BlogPluginFrontmatter } from "@vuepress/plugin-blog";
 import type { VNode } from "vue";
-import { defineComponent, h } from "vue";
+import { computed, defineComponent, h } from "vue";
 import { usePageData, usePageFrontmatter } from "vuepress/client";
 
 import { DropTransition } from "@theme-hope/components/transitions/index";
@@ -20,7 +17,7 @@ import {
 import "../styles/page.scss";
 
 export default defineComponent({
-  name: "BlogPage",
+  name: "BlogCategory",
 
   setup() {
     const page = usePageData();
@@ -28,18 +25,23 @@ export default defineComponent({
     const categoryMap = useCategoryMap();
     const tagMap = useTagMap();
 
+    const blogOptions = computed(() => frontmatter.value.blog);
+
+    const items = computed(() => {
+      if (blogOptions.value?.type !== "category") return null;
+
+      const { name, key } = blogOptions.value;
+
+      if (!name) return null;
+
+      return key === "category"
+        ? categoryMap.value.map[name].items
+        : key === "tag"
+          ? tagMap.value.map[name].items
+          : null;
+    });
+
     return (): VNode => {
-      const { key = "", name = "" } =
-        (frontmatter.value.blog as BlogCategoryFrontmatterOptions) || {};
-
-      const items = name
-        ? key === "category"
-          ? categoryMap.value.map[name].items
-          : key === "tag"
-            ? tagMap.value.map[name].items
-            : []
-        : [];
-
       return h(BlogWrapper, () =>
         h(
           "div",
@@ -47,17 +49,17 @@ export default defineComponent({
           h("div", { class: "blog-page-wrapper" }, [
             h("main", { id: "main-content", class: "vp-blog-main" }, [
               h(DropTransition, () =>
-                key === "category"
+                blogOptions.value?.key === "category"
                   ? h(CategoryList)
-                  : key === "tag"
+                  : blogOptions.value?.key === "tag"
                     ? h(TagList)
                     : null,
               ),
-              name
+              items.value
                 ? h(DropTransition, { appear: true, delay: 0.24 }, () =>
                     h(ArticleList, {
                       key: page.value.path,
-                      items,
+                      items: items.value!,
                     }),
                   )
                 : null,

@@ -26,7 +26,7 @@ export const IconBase: FunctionalComponent<
       "aria-label": ariaLabel ?? `${name} icon`,
       ...attrs,
     },
-    slots.default?.(),
+    slots.default(),
   );
 
 IconBase.displayName = "IconBase";

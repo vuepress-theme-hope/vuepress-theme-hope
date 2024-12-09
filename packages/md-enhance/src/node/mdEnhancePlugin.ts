@@ -56,7 +56,7 @@ export const mdEnhancePlugin =
       key: keyof MarkdownEnhancePluginOptions,
       pkgs: string[] = [],
     ): boolean =>
-      Boolean(options?.[key]) &&
+      Boolean(options[key]) &&
       pkgs.every((pkg) => isInstalled(pkg, Boolean(options[key])));
 
     const status = {

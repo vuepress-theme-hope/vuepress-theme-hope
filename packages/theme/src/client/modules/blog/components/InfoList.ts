@@ -91,7 +91,9 @@ export default defineComponent({
                   "div",
                   {
                     class: "title",
-                    onClick: () => navigate(articles.value.path),
+                    onClick: () => {
+                      navigate(articles.value.path);
+                    },
                   },
                   [
                     h(ArticleIcon),
@@ -135,7 +137,9 @@ export default defineComponent({
                           "div",
                           {
                             class: "title",
-                            onClick: () => navigate(categoryMap.value.path),
+                            onClick: () => {
+                              navigate(categoryMap.value.path);
+                            },
                           },
                           [
                             h(CategoryIcon),
@@ -165,7 +169,9 @@ export default defineComponent({
                             "div",
                             {
                               class: "title",
-                              onClick: () => navigate(tagMap.value.path),
+                              onClick: () => {
+                                navigate(tagMap.value.path);
+                              },
                             },
                             [
                               h(TagIcon),

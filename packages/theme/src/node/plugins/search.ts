@@ -21,10 +21,12 @@ import type {
 import { themeLocalesData } from "../locales/index.js";
 import { logger } from "../utils.js";
 
-let docsearchPlugin: (options: DocSearchPluginOptions) => Plugin;
-let searchPlugin: (options: SearchPluginOptions) => Plugin;
-let slimsearchPlugin: (options: SlimSearchPluginOptions) => Plugin;
-let cut: (content: string, strict?: boolean) => string[];
+let docsearchPlugin: ((options: DocSearchPluginOptions) => Plugin) | null =
+  null;
+let searchPlugin: ((options: SearchPluginOptions) => Plugin) | null = null;
+let slimsearchPlugin: ((options: SlimSearchPluginOptions) => Plugin) | null =
+  null;
+let cut: ((content: string, strict?: boolean) => string[]) | null = null;
 
 try {
   ({ docsearchPlugin } = await import("@vuepress/plugin-docsearch"));

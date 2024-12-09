@@ -93,7 +93,9 @@ export default defineComponent({
             {
               type: "button",
               class: "vp-decrypt-submit",
-              onClick: () => verify(),
+              onClick: () => {
+                verify();
+              },
             },
             "OK",
           ),

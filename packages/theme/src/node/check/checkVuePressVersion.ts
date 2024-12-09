@@ -34,27 +34,29 @@ export const checkVuePressVersion = (): boolean => {
   let dir = sourceFolderPath;
   let foundVuePress = false;
 
+  const checkPackage = (pkgName: string): void => {
+    if (pkgName === "vuepress") foundVuePress = true;
+    else if (DEPRECATED_PACKAGES.includes(pkgName))
+      console.error(
+        colors.red(
+          `❌ ${pkgName} is deprecated and you must remove it from deps!`,
+        ),
+      );
+    else if (VUEPRESS_CORE_PACKAGES.includes(pkgName))
+      corePackageNames.push(pkgName);
+    else if (VUEPRESS_BUNDLER.includes(pkgName)) bundlerNames.push(pkgName);
+  };
+
   do {
     if (fs.existsSync(path.resolve(dir, "package.json"))) {
       const content = JSON.parse(
         fs.readFileSync(path.resolve(dir, "package.json"), "utf-8"),
       ) as PackageJSON;
 
-      const checkPackage = (pkgName: string): void => {
-        if (pkgName === "vuepress") foundVuePress = true;
-        else if (DEPRECATED_PACKAGES.includes(pkgName))
-          console.error(
-            colors.red(
-              `❌ ${pkgName} is deprecated and you must remove it from deps!`,
-            ),
-          );
-        else if (VUEPRESS_CORE_PACKAGES.includes(pkgName))
-          corePackageNames.push(pkgName);
-        else if (VUEPRESS_BUNDLER.includes(pkgName)) bundlerNames.push(pkgName);
-      };
-
       keys({ ...content.dependencies, ...content.devDependencies }).forEach(
-        (name) => checkPackage(name),
+        (name) => {
+          checkPackage(name);
+        },
       );
     }
 

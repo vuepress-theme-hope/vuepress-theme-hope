@@ -10,7 +10,13 @@ import type { MediaPlayerElement } from "vidstack/elements";
 import type { VidstackPlayerConfig } from "vidstack/global/player";
 import { VidstackPlayer, VidstackPlayerLayout } from "vidstack/global/player";
 import type { PropType, VNode } from "vue";
-import { defineComponent, h, onBeforeUnmount, onMounted, ref } from "vue";
+import {
+  defineComponent,
+  h,
+  onBeforeUnmount,
+  onMounted,
+  shallowRef,
+} from "vue";
 
 import type { VidstackLocaleConfig } from "../../shared/index.js";
 import { getLink } from "../utils/getLink.js";
@@ -94,7 +100,7 @@ export default defineComponent({
   },
 
   setup(props) {
-    const vidstack = ref<HTMLElement>();
+    const vidstack = shallowRef<HTMLElement>();
     const locale = useLocaleConfig(VIDSTACK_LOCALES);
 
     let player: MediaPlayerElement | null = null;

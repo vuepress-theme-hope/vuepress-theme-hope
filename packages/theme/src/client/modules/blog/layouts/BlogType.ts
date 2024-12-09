@@ -1,7 +1,4 @@
-import type {
-  BlogPluginFrontmatter,
-  BlogTypeFrontmatterOptions,
-} from "@vuepress/plugin-blog/client";
+import type { BlogPluginFrontmatter } from "@vuepress/plugin-blog/client";
 import { useBlogType } from "@vuepress/plugin-blog/client";
 import type { VNode } from "vue";
 import { computed, defineComponent, h } from "vue";
@@ -22,7 +19,7 @@ import type { ArticleInfoData } from "../../../../shared/index.js";
 import "../styles/page.scss";
 
 export default defineComponent({
-  name: "BlogPage",
+  name: "BlogType",
 
   setup() {
     const blogType = useBlogType<ArticleInfoData>();
@@ -32,14 +29,14 @@ export default defineComponent({
     const stars = useStars();
 
     const items = computed(() => {
-      const { key = "", type } =
-        (frontmatter.value.blog as BlogTypeFrontmatterOptions) || {};
+      const blogOptions = frontmatter.value.blog;
 
-      return key === "star"
+      if (blogOptions?.type !== "type" || !blogOptions.key)
+        return articles.value.items;
+
+      return blogOptions.key === "star"
         ? stars.value.items
-        : type === "type" && key
-          ? blogType.value.items
-          : articles.value.items;
+        : blogType.value.items;
     });
 
     return (): VNode =>
