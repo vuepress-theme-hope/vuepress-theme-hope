@@ -86,7 +86,7 @@ export default defineComponent({
      */
     file: {
       type: String,
-      default: () => null,
+      default: "",
     },
 
     /**
@@ -128,7 +128,7 @@ export default defineComponent({
 
       return props.user && props.repl
         ? `https://replit.com/@${props.user}/${props.repl}?embed=true&theme=${props.darkmode ? "dark" : "light"}${
-            props.file.length ? `#${props.file}` : ""
+            props.file ? `#${props.file}` : ""
           }`
         : null;
     });
