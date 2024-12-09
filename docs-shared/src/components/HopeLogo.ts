@@ -93,29 +93,8 @@ export default defineComponent({
       renderer.setSize(width, height);
       renderer.setPixelRatio(Math.min(window.devicePixelRatio, 2));
 
-      // Animations
-      const clock = new three.Clock();
-
-      const tick = (): void => {
-        const elapsedTime = clock.getElapsedTime();
-
-        if (logo1 && logo2) {
-          logo1.rotation.y = 0.5 * elapsedTime;
-          logo2.rotation.y = 0.5 * elapsedTime;
-        }
-
-        // Update controls
-        controls.update();
-        // Render
-        renderer.render(scene, camera);
-        // Call tick again on the next frame
-        window.requestAnimationFrame(tick);
-      };
-
-      tick();
-
       await Promise.all([
-        new Promise<void>((resolve) =>
+        new Promise<void>((resolve) => {
           stlLoader.load(`${ASSETS_SERVER}/model/logo1.stl`, (geometry) => {
             const material = new three.MeshPhysicalMaterial({
               color: 0x284c39,
@@ -136,9 +115,9 @@ export default defineComponent({
             scene.add(logo1);
 
             resolve();
-          }),
-        ),
-        new Promise<void>((resolve) =>
+          });
+        }),
+        new Promise<void>((resolve) => {
           stlLoader.load(`${ASSETS_SERVER}/model/logo2.stl`, (geometry) => {
             const material = new three.MeshPhysicalMaterial({
               color: 0x35495e,
@@ -159,9 +138,28 @@ export default defineComponent({
             scene.add(logo2);
 
             resolve();
-          }),
-        ),
+          });
+        }),
       ]);
+
+      // Animations
+      const clock = new three.Clock();
+
+      const tick = (): void => {
+        const elapsedTime = clock.getElapsedTime();
+
+        logo1.rotation.y = 0.5 * elapsedTime;
+        logo2.rotation.y = 0.5 * elapsedTime;
+
+        // Update controls
+        controls.update();
+        // Render
+        renderer.render(scene, camera);
+        // Call tick again on the next frame
+        window.requestAnimationFrame(tick);
+      };
+
+      tick();
 
       ready.value = true;
     };
