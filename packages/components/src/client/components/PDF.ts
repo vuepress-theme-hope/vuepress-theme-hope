@@ -127,11 +127,12 @@ export default defineComponent({
   setup(props) {
     const { el, width, height, resize } = useSize<HTMLDivElement>(props);
     const locales = useLocaleConfig(PDF_LOCALES);
-    const viewer = shallowRef<HTMLElement | null>(null);
+    const viewer = shallowRef<HTMLElement>();
     const isFullscreen = ref(false);
 
     onMounted(() => {
-      viewPDF(getLink(props.url), viewer.value, {
+      // eslint-disable-next-line @typescript-eslint/no-non-null-assertion
+      viewPDF(getLink(props.url), viewer.value!, {
         title: props.title,
         hint: locales.value.hint,
         options: {
