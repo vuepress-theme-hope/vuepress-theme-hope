@@ -4,6 +4,32 @@ All notable changes to this project will be documented in this file. See [Conven
 
 <!-- #region recent-change -->
 
+## [2.0.0-rc.62](https://github.com/vuepress-theme-hope/vuepress-theme-hope/compare/v2.0.0-rc.61...v2.0.0-rc.62) (2024-12-09)
+
+### ✨ Features
+
+- **lightgallery:** no longer provide config ([7d0e3aa](https://github.com/vuepress-theme-hope/vuepress-theme-hope/commit/7d0e3aabe5cb3a704a62fcdb19fcc7d7023ef7e4))
+- **md-enhance:** check flowchart presets at node side ([4c08555](https://github.com/vuepress-theme-hope/vuepress-theme-hope/commit/4c08555e00876a17ea78a9929740f10705a69b8c))
+- **md-enhance:** clear instance when unMounted ([b89841a](https://github.com/vuepress-theme-hope/vuepress-theme-hope/commit/b89841ab1303dc2b5f72bef75f1b91badeb37e45))
+- **md-enhance:** no longer inject config ([48b5df2](https://github.com/vuepress-theme-hope/vuepress-theme-hope/commit/48b5df2bc5fb6bdd9b91129943ccb8a574aac0b8))
+
+### 🐛 Bug Fixes
+
+- **deps:** update dependency execa to v9.5.2 ([#4618](https://github.com/vuepress-theme-hope/vuepress-theme-hope/issues/4618)) ([ded153a](https://github.com/vuepress-theme-hope/vuepress-theme-hope/commit/ded153a30f632f0169b8383605be6128548c996c))
+- **deps:** update dependency katex to v0.16.12 ([#4620](https://github.com/vuepress-theme-hope/vuepress-theme-hope/issues/4620)) ([4306975](https://github.com/vuepress-theme-hope/vuepress-theme-hope/commit/4306975bb7fcb4e593ae4c65077fc7db414c5d8b))
+- **deps:** update dependency katex to v0.16.14 ([#4622](https://github.com/vuepress-theme-hope/vuepress-theme-hope/issues/4622)) ([e31ef3a](https://github.com/vuepress-theme-hope/vuepress-theme-hope/commit/e31ef3a3115fdee77292d981b315e3d6a8292fda))
+- **md-enhance:** fix codepen button preprocessor settings ([2e99c52](https://github.com/vuepress-theme-hope/vuepress-theme-hope/commit/2e99c52fe608e9ea92b0aa21020a58d8884be6af))
+- **md-enhance:** fix echarts type ([3624fec](https://github.com/vuepress-theme-hope/vuepress-theme-hope/commit/3624feca3acd15a8e559e5509922fbab6608676a))
+- **theme:** add compact about searchPro key ([255319a](https://github.com/vuepress-theme-hope/vuepress-theme-hope/commit/255319aba4537f672cbd735c6cb2b0472fc13b8b))
+- **theme:** fix deprecated meta converting ([8882763](https://github.com/vuepress-theme-hope/vuepress-theme-hope/commit/8882763bd01dac1b60c32dfff5e97f00ff23d271))
+- **theme:** fix fullscreen button on unsupported devices ([a40d477](https://github.com/vuepress-theme-hope/vuepress-theme-hope/commit/a40d477aac196f98bbe8c07ede2c310f95ffdcf6))
+- **theme:** fix heroText handling and improve types ([014e164](https://github.com/vuepress-theme-hope/vuepress-theme-hope/commit/014e164a6c0fff37105fd1f049c74bb7a648e006))
+- **theme:** fix highlighter plugin check ([5fb7503](https://github.com/vuepress-theme-hope/vuepress-theme-hope/commit/5fb7503d9841c2cc54872d9974767159e592df05))
+- **theme:** fix path encrypt ([5ecfb7e](https://github.com/vuepress-theme-hope/vuepress-theme-hope/commit/5ecfb7e456e7318e37453de88060cda61ccf09a9))
+- **theme:** only hide the first h1 heading ([1cade5e](https://github.com/vuepress-theme-hope/vuepress-theme-hope/commit/1cade5ed80675d2e40cb79aa354a3984c6c195df))
+
+<!-- #region recent-change -->
+
 ## [2.0.0-rc.61](https://github.com/vuepress-theme-hope/vuepress-theme-hope/compare/v2.0.0-rc.60...v2.0.0-rc.61) (2024-12-07)
 
 ### 🐛 Bug Fixes

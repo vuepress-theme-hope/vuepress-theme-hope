@@ -4,6 +4,21 @@ All notable changes to this project will be documented in this file. See [Conven
 
 <!-- #region recent-change -->
 
+## [2.0.0-rc.62](https://github.com/vuepress-theme-hope/vuepress-theme-hope/compare/v2.0.0-rc.61...v2.0.0-rc.62) (2024-12-09)
+
+### ✨ Features
+
+- **md-enhance:** check flowchart presets at node side ([4c08555](https://github.com/vuepress-theme-hope/vuepress-theme-hope/commit/4c08555e00876a17ea78a9929740f10705a69b8c))
+- **md-enhance:** clear instance when unMounted ([b89841a](https://github.com/vuepress-theme-hope/vuepress-theme-hope/commit/b89841ab1303dc2b5f72bef75f1b91badeb37e45))
+- **md-enhance:** no longer inject config ([48b5df2](https://github.com/vuepress-theme-hope/vuepress-theme-hope/commit/48b5df2bc5fb6bdd9b91129943ccb8a574aac0b8))
+
+### 🐛 Bug Fixes
+
+- **md-enhance:** fix codepen button preprocessor settings ([2e99c52](https://github.com/vuepress-theme-hope/vuepress-theme-hope/commit/2e99c52fe608e9ea92b0aa21020a58d8884be6af))
+- **md-enhance:** fix echarts type ([3624fec](https://github.com/vuepress-theme-hope/vuepress-theme-hope/commit/3624feca3acd15a8e559e5509922fbab6608676a))
+
+<!-- #region recent-change -->
+
 ## [2.0.0-rc.60](https://github.com/vuepress-theme-hope/vuepress-theme-hope/compare/v2.0.0-rc.59...v2.0.0-rc.60) (2024-12-06)
 
 ### ⚠ BREAKING CHANGES

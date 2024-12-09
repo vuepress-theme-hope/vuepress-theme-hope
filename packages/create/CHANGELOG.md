@@ -4,6 +4,14 @@ All notable changes to this project will be documented in this file. See [Conven
 
 <!-- #region recent-change -->
 
+## [2.0.0-rc.62](https://github.com/vuepress-theme-hope/vuepress-theme-hope/compare/v2.0.0-rc.61...v2.0.0-rc.62) (2024-12-09)
+
+### 🐛 Bug Fixes
+
+- **deps:** update dependency execa to v9.5.2 ([#4618](https://github.com/vuepress-theme-hope/vuepress-theme-hope/issues/4618)) ([ded153a](https://github.com/vuepress-theme-hope/vuepress-theme-hope/commit/ded153a30f632f0169b8383605be6128548c996c))
+
+<!-- #region recent-change -->
+
 ## [2.0.0-rc.61](https://github.com/vuepress-theme-hope/vuepress-theme-hope/compare/v2.0.0-rc.60...v2.0.0-rc.61) (2024-12-07)
 
 **Note:** Version bump only for package create-vuepress-theme-hope
