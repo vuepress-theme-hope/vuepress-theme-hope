@@ -17,7 +17,7 @@ import { hopeTheme } from "vuepress-theme-hope";
 export default defineUserConfig({
   theme: hopeTheme({
     markdown: {
-      chart: true,
+      chartjs: true,
     },
   }),
 });

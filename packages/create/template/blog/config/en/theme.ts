@@ -90,12 +90,14 @@ export default hopeTheme({
     attrs: true,
     codeTabs: true,
     component: true,
+    demo: true,
     figure: true,
     gfm: true,
     imgLazyload: true,
     imgSize: true,
     include: true,
     mark: true,
+    plantuml: true,
     spoiler: true,
     stylize: [
       {
@@ -124,6 +126,28 @@ export default hopeTheme({
     //   type: "mathjax",
     // },
 
+    // install chart.js before enabling it
+    // chartjs: true,
+
+    // install echarts before enabling it
+    // echarts: true,
+
+    // install flowchart.ts before enabling it
+    // flowchart: true,
+
+    // install mermaid before enabling it
+    // mermaid: true,
+
+    // playground: {
+    //   presets: ["ts", "vue"],
+    // },
+
+    // install @vue/repl before enabling it
+    // vuePlayground: true,
+
+    // install sandpack-vue3 before enabling it
+    // sandpack: true,
+
     // install @vuepress/plugin-revealjs and uncomment these if you need slides
     // revealjs: {
     //   plugins: ["highlight", "math", "search", "notes", "zoom"],
@@ -143,34 +167,6 @@ export default hopeTheme({
 
     components: {
       components: ["Badge", "VPCard"],
-    },
-
-    // These features are enabled for demo, only preserve features you need here
-    mdEnhance: {
-      demo: true,
-      plantuml: true,
-
-      // install chart.js before enabling it
-      // chart: true,
-
-      // install echarts before enabling it
-      // echarts: true,
-
-      // install flowchart.ts before enabling it
-      // flowchart: true,
-
-      // install mermaid before enabling it
-      // mermaid: true,
-
-      // playground: {
-      //   presets: ["ts", "vue"],
-      // },
-
-      // install @vue/repl before enabling it
-      // vuePlayground: true,
-
-      // install sandpack-vue3 before enabling it
-      // sandpack: true,
     },
 
     // install @vuepress/plugin-pwa and uncomment these if you want a PWA

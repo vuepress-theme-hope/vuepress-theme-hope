@@ -50,12 +50,14 @@ export default hopeTheme({
     attrs: true,
     codeTabs: true,
     component: true,
+    demo: true,
     figure: true,
     gfm: true,
     imgLazyload: true,
     imgSize: true,
     include: true,
     mark: true,
+    plantuml: true,
     spoiler: true,
     stylize: [
       {
@@ -88,6 +90,30 @@ export default hopeTheme({
     // revealjs: {
     //   plugins: ["highlight", "math", "search", "notes", "zoom"],
     // },
+
+    // 在启用之前安装 chart.js
+    // chartjs: true,
+
+    // insert component easily
+
+    // 在启用之前安装 echarts
+    // echarts: true,
+
+    // 在启用之前安装 flowchart.ts
+    // flowchart: true,
+
+    // 在启用之前安装 mermaid
+    // mermaid: true,
+
+    // playground: {
+    //   presets: ["ts", "vue"],
+    // },
+
+    // 在启用之前安装 @vue/repl
+    // vuePlayground: true,
+
+    // 在启用之前安装 sandpack-vue3
+    // sandpack: true,
   },
 
   // 在这里配置主题提供的插件
@@ -103,36 +129,6 @@ export default hopeTheme({
 
     components: {
       components: ["Badge", "VPCard"],
-    },
-
-    // 此处开启了很多功能用于演示，你应仅保留用到的功能。
-    mdEnhance: {
-      demo: true,
-      plantuml: true,
-
-      // 在启用之前安装 chart.js
-      // chart: true,
-
-      // insert component easily
-
-      // 在启用之前安装 echarts
-      // echarts: true,
-
-      // 在启用之前安装 flowchart.ts
-      // flowchart: true,
-
-      // 在启用之前安装 mermaid
-      // mermaid: true,
-
-      // playground: {
-      //   presets: ["ts", "vue"],
-      // },
-
-      // 在启用之前安装 @vue/repl
-      // vuePlayground: true,
-
-      // install sandpack-vue3 before enabling it
-      // sandpack: true,
     },
 
     // 如果你需要 PWA。安装 @vuepress/plugin-pwa 并取消下方注释
