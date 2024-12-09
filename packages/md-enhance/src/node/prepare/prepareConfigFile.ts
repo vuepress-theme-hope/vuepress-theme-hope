@@ -28,11 +28,7 @@ export const prepareConfigFile = async (
 
   if (status.echarts) {
     imports.add(`import ECharts from "${CLIENT_FOLDER}components/ECharts.js";`);
-    imports.add(
-      `import { injectEChartsConfig } from "${CLIENT_FOLDER}/index.js";`,
-    );
     enhances.add(`app.component("ECharts", ECharts);`);
-    enhances.add(`injectEChartsConfig(app);`);
   }
 
   if (status.flowchart) {
@@ -47,10 +43,6 @@ export const prepareConfigFile = async (
     imports.add(
       `import KotlinPlayground from "${CLIENT_FOLDER}components/KotlinPlayground.js";`,
     );
-    imports.add(
-      `import { injectKotlinPlaygroundConfig } from "${CLIENT_FOLDER}index.js";`,
-    );
-    enhances.add(`injectKotlinPlaygroundConfig(app);`);
     enhances.add(`app.component("KotlinPlayground", KotlinPlayground);`);
   }
 
@@ -61,10 +53,6 @@ export const prepareConfigFile = async (
 
   if (status.mermaid) {
     imports.add(`import Mermaid from "${CLIENT_FOLDER}components/Mermaid.js";`);
-    imports.add(
-      `import { injectMermaidConfig } from "${CLIENT_FOLDER}/index.js";`,
-    );
-    enhances.add(`injectMermaidConfig(app);`);
     enhances.add(`app.component("Mermaid", Mermaid);`);
   }
 
@@ -83,10 +71,6 @@ export const prepareConfigFile = async (
         import.meta,
       )}";`,
     );
-    imports.add(
-      `import { injectSandpackConfig } from "${CLIENT_FOLDER}index.js";`,
-    );
-    enhances.add(`injectSandpackConfig(app);`);
     enhances.add(
       `\
 app.component(
@@ -103,10 +87,6 @@ app.component(
     imports.add(
       `import VuePlayground from "${CLIENT_FOLDER}components/VuePlayground.js";`,
     );
-    imports.add(
-      `import { injectVuePlaygroundConfig } from "${CLIENT_FOLDER}index.js";`,
-    );
-    enhances.add(`injectVuePlaygroundConfig(app);`);
     enhances.add(`app.component("VuePlayground", VuePlayground);`);
   }
 
