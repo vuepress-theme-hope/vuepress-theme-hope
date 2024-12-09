@@ -1,8 +1,8 @@
 import type { HeadConfig, PageFrontmatter } from "vuepress/shared";
 import { isString } from "vuepress/shared";
 import { colors } from "vuepress/utils";
+import { createConverter } from "vuepress-shared";
 
-import { deprecatedLogger, droppedLogger } from "./utils.js";
 import type { ThemePageFrontmatter } from "../../shared/index.js";
 import { logger } from "../utils.js";
 
@@ -37,21 +37,23 @@ export const convertFrontmatter = (
   frontmatter: PageFrontmatter & Record<string, unknown>,
   filePathRelative: string,
 ): ThemePageFrontmatter & Record<string, unknown> => {
-  DEPRECATED_FRONTMATTER_OPTIONS.forEach(([deprecatedOption, newOption]) => {
+  const { deprecatedLogger, droppedLogger } = createConverter("frontmatter");
+
+  DEPRECATED_FRONTMATTER_OPTIONS.forEach(([oldOption, newOption]) => {
     deprecatedLogger({
       options: frontmatter,
-      deprecatedOption,
-      newOption,
-      scope: `${filePathRelative} frontmatter`,
+      old: oldOption,
+      new: newOption,
+      scope: filePathRelative ? `${filePathRelative} frontmatter` : "",
     });
   });
 
-  DROPPED_FRONTMATTER_OPTIONS.forEach((item) => {
-    droppedLogger(
-      frontmatter,
-      item[0],
-      `${item[1]}${filePathRelative ? ` (found in ${filePathRelative})` : ""}`,
-    );
+  DROPPED_FRONTMATTER_OPTIONS.forEach(([old, msg]) => {
+    droppedLogger({
+      options: frontmatter,
+      old,
+      scope: `${filePathRelative ? `${filePathRelative} ` : ""}${msg}`,
+    });
   });
 
   if ("meta" in frontmatter) {
@@ -105,16 +107,14 @@ export const convertFrontmatter = (
 
     // Check project homepage
     if (!("layout" in frontmatter))
-      DEPRECATED_HOME_FRONTMATTER_OPTIONS.forEach(
-        ([deprecatedOption, newOption]) => {
-          deprecatedLogger({
-            options: frontmatter,
-            deprecatedOption,
-            newOption,
-            scope: `${filePathRelative} frontmatter`,
-          });
-        },
-      );
+      DEPRECATED_HOME_FRONTMATTER_OPTIONS.forEach(([oldOption, newOption]) => {
+        deprecatedLogger({
+          options: frontmatter,
+          old: oldOption,
+          new: newOption,
+          scope: filePathRelative,
+        });
+      });
   }
 
   if (frontmatter.layout === "Slides") {

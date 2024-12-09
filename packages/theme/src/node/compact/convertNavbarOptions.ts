@@ -1,7 +1,7 @@
 import { isArray, isPlainObject, isString } from "@vuepress/helper";
 import { colors } from "vuepress/utils";
+import { createConverter } from "vuepress-shared";
 
-import { deprecatedLogger } from "./utils.js";
 import type {
   AutoLinkOptions,
   NavbarGroupOptions,
@@ -16,7 +16,12 @@ type LegacyNavbarOptions = (
   | (NavbarGroupOptions & { items?: (AutoLinkOptions | string)[] })
 )[];
 
-const handleNavbarOptions = (config: LegacyNavbarOptions): NavbarOptions =>
+const { deprecatedLogger } = createConverter("theme navbar");
+
+const handleNavbarOptions = (
+  config: LegacyNavbarOptions,
+  localePath: string,
+): NavbarOptions =>
   config
     .map((item) => {
       if (isString(item)) return item;
@@ -25,13 +30,13 @@ const handleNavbarOptions = (config: LegacyNavbarOptions): NavbarOptions =>
         deprecatedLogger({
           // @ts-expect-error: Type is too narrow
           options: item,
-          deprecatedOption: "items",
-          newOption: "children",
-          scope: "navbar",
+          old: "items",
+          new: "children",
+          scope: localePath,
         });
 
         if ("children" in item && isArray(item.children))
-          handleNavbarOptions(item.children);
+          handleNavbarOptions(item.children, localePath);
 
         return item as NavbarLinkOptions | NavbarGroupOptions;
       }
@@ -48,9 +53,11 @@ const handleNavbarOptions = (config: LegacyNavbarOptions): NavbarOptions =>
  */
 export const convertNavbarOptions = (
   config: unknown,
+  localePath = "",
 ): NavbarOptions | false => {
   if (config === false) return false;
-  if (isArray(config)) return handleNavbarOptions(config as NavbarOptions);
+  if (isArray(config))
+    return handleNavbarOptions(config as NavbarOptions, localePath);
 
   logger.error(`${colors.magenta("navbar")} config should be an array`);
 

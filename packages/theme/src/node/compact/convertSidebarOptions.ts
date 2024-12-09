@@ -6,8 +6,8 @@ import {
   isString,
 } from "@vuepress/helper";
 import { colors } from "vuepress/utils";
+import { createConverter } from "vuepress-shared";
 
-import { deprecatedLogger, droppedLogger } from "./utils.js";
 import type {
   SidebarArrayOptions,
   SidebarItemOptions,
@@ -15,8 +15,11 @@ import type {
 } from "../../shared/index.js";
 import { logger } from "../utils.js";
 
+const { deprecatedLogger, droppedLogger } = createConverter("theme sidebar");
+
 const handleArraySidebarOptions = (
   config: SidebarArrayOptions,
+  localePath: string,
 ): SidebarArrayOptions =>
   config
     .map((item) => {
@@ -29,21 +32,25 @@ const handleArraySidebarOptions = (
           ["collapsable", "collapsible"],
         ];
 
-        convertConfig.forEach(([deprecatedOption, newOption]) => {
+        convertConfig.forEach(([oldOption, newOption]) => {
           deprecatedLogger({
             // @ts-expect-error: Type is too narrow
             options: item,
-            deprecatedOption,
-            newOption,
-            scope: "sidebar",
+            old: oldOption,
+            new: newOption,
+            scope: localePath,
           });
         });
 
-        // @ts-expect-error: Type is too narrow
-        droppedLogger(item, "sidebarDepth", "Found in sidebar");
+        droppedLogger({
+          // @ts-expect-error: Type is too narrow
+          options: item,
+          old: "sidebarDepth",
+          scope: localePath,
+        });
 
         if ("children" in item && isArray(item.children))
-          handleArraySidebarOptions(item.children);
+          handleArraySidebarOptions(item.children, localePath);
 
         return item as SidebarItemOptions;
       }
@@ -57,11 +64,12 @@ const handleArraySidebarOptions = (
  */
 export const convertSidebarOptions = (
   config: unknown,
+  localePath = "",
 ): SidebarOptions | false => {
   if (config === false || config === "structure") return config;
 
   if (isArray(config))
-    return handleArraySidebarOptions(config as SidebarArrayOptions);
+    return handleArraySidebarOptions(config as SidebarArrayOptions, localePath);
 
   if (isPlainObject(config))
     return fromEntries(
@@ -70,7 +78,10 @@ export const convertSidebarOptions = (
           if (isArray(value))
             return [
               key,
-              handleArraySidebarOptions(value as SidebarArrayOptions),
+              handleArraySidebarOptions(
+                value as SidebarArrayOptions,
+                `${localePath} > ${key}`,
+              ),
             ];
 
           if (value === "structure" || value === false)

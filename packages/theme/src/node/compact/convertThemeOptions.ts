@@ -1,13 +1,13 @@
 /* eslint-disable @typescript-eslint/no-deprecated */
 import { entries, isArray, isPlainObject } from "@vuepress/helper";
 import { colors } from "vuepress/utils";
+import { createConverter } from "vuepress-shared";
 
 import {
   convertNavbarLayoutOptions,
   convertNavbarOptions,
 } from "./convertNavbarOptions.js";
 import { convertSidebarOptions } from "./convertSidebarOptions.js";
-import { deprecatedLogger, droppedLogger } from "./utils.js";
 import type { ThemeOptions } from "../../shared/index.js";
 import { logger } from "../utils.js";
 
@@ -105,6 +105,8 @@ const convertFooterOptions = (
  * @deprecated You should use V2 standard options and avoid using it
  */
 const covertPluginOptions = (themeOptions: Record<string, unknown>): void => {
+  const { deprecatedLogger } = createConverter("theme plugin options");
+
   const markdownOptions = (themeOptions.markdown ??= {}) as Record<
     string,
     unknown
@@ -129,8 +131,8 @@ const covertPluginOptions = (themeOptions: Record<string, unknown>): void => {
   if (pluginOptions.linksCheck) {
     deprecatedLogger({
       options: themeOptions,
-      deprecatedOption: "plugins.linksCheck",
-      newOption: "markdown.linksCheck",
+      old: "plugins.linksCheck",
+      new: "markdown.linksCheck",
     });
   }
 
@@ -140,56 +142,56 @@ const covertPluginOptions = (themeOptions: Record<string, unknown>): void => {
     if ("alert" in mdEnhanceOptions) {
       deprecatedLogger({
         options: themeOptions,
-        deprecatedOption: "plugins.mdEnhance.alert",
-        newOption: "markdown.alert",
+        old: "plugins.mdEnhance.alert",
+        new: "markdown.alert",
       });
     }
 
     if ("hint" in mdEnhanceOptions) {
       deprecatedLogger({
         options: themeOptions,
-        deprecatedOption: "plugins.mdEnhance.hint",
-        newOption: "markdown.hint",
+        old: "plugins.mdEnhance.hint",
+        new: "markdown.hint",
       });
     }
 
     if ("figure" in mdEnhanceOptions) {
       deprecatedLogger({
         options: themeOptions,
-        deprecatedOption: "plugins.mdEnhance.figure",
-        newOption: "markdown.figure",
+        old: "plugins.mdEnhance.figure",
+        new: "markdown.figure",
       });
     }
 
     if ("imgLazyload" in mdEnhanceOptions) {
       deprecatedLogger({
         options: themeOptions,
-        deprecatedOption: "plugins.mdEnhance.imgLazyload",
-        newOption: "markdown.imgLazyload",
+        old: "plugins.mdEnhance.imgLazyload",
+        new: "markdown.imgLazyload",
       });
     }
 
     if ("imgSize" in mdEnhanceOptions) {
       deprecatedLogger({
         options: themeOptions,
-        deprecatedOption: "plugins.mdEnhance.imgSize",
-        newOption: "markdown.imgSize",
+        old: "plugins.mdEnhance.imgSize",
+        new: "markdown.imgSize",
       });
     }
 
     if ("imgSize" in mdEnhanceOptions) {
       deprecatedLogger({
         options: themeOptions,
-        deprecatedOption: "plugins.mdEnhance.obsidianImgSize",
-        newOption: "markdown.obsidianImgSize",
+        old: "plugins.mdEnhance.obsidianImgSize",
+        new: "markdown.obsidianImgSize",
       });
     }
 
     if ("imgMark" in mdEnhanceOptions) {
       deprecatedLogger({
         options: themeOptions,
-        deprecatedOption: "plugins.mdEnhance.imgMark",
-        newOption: "markdown.imgMark",
+        old: "plugins.mdEnhance.imgMark",
+        new: "markdown.imgMark",
       });
     }
 
@@ -222,136 +224,140 @@ const covertPluginOptions = (themeOptions: Record<string, unknown>): void => {
     if ("codetabs" in mdEnhanceOptions) {
       deprecatedLogger({
         options: themeOptions,
-        deprecatedOption: "plugins.mdEnhance.codetabs",
-        newOption: "markdown.codeTabs",
+        old: "plugins.mdEnhance.codetabs",
+        new: "markdown.codeTabs",
       });
     }
 
     if ("tabs" in mdEnhanceOptions) {
       deprecatedLogger({
         options: themeOptions,
-        deprecatedOption: "plugins.mdEnhance.tabs",
-        newOption: "markdown.tabs",
+        old: "plugins.mdEnhance.tabs",
+        new: "markdown.tabs",
       });
     }
 
     if ("gfm" in mdEnhanceOptions) {
       deprecatedLogger({
         options: themeOptions,
-        deprecatedOption: "plugins.mdEnhance.gfm",
-        newOption: "markdown.gfm",
+        old: "plugins.mdEnhance.gfm",
+        new: "markdown.gfm",
       });
     }
 
     if ("footnote" in mdEnhanceOptions) {
       deprecatedLogger({
         options: themeOptions,
-        deprecatedOption: "plugins.mdEnhance.footnote",
-        newOption: "markdown.footnote",
+        old: "plugins.mdEnhance.footnote",
+        new: "markdown.footnote",
       });
     }
 
     if ("tasklist" in mdEnhanceOptions) {
       deprecatedLogger({
         options: themeOptions,
-        deprecatedOption: "plugins.mdEnhance.tasklist",
-        newOption: "markdown.tasklist",
+        old: "plugins.mdEnhance.tasklist",
+        new: "markdown.tasklist",
       });
     }
 
     if ("breaks" in mdEnhanceOptions) {
       deprecatedLogger({
         options: themeOptions,
-        deprecatedOption: "plugins.mdEnhance.breaks",
-        newOption: "markdown.breaks",
+        old: "plugins.mdEnhance.breaks",
+        new: "markdown.breaks",
       });
     }
 
     if ("linkify" in mdEnhanceOptions) {
       deprecatedLogger({
         options: themeOptions,
-        deprecatedOption: "plugins.mdEnhance.linkify",
-        newOption: "markdown.linkify",
+        old: "plugins.mdEnhance.linkify",
+        new: "markdown.linkify",
       });
     }
 
     if ("component" in mdEnhanceOptions) {
+      console.log("hit");
+
       deprecatedLogger({
         options: themeOptions,
-        deprecatedOption: "plugins.mdEnhance.component",
-        newOption: "markdown.component",
+        old: "plugins.mdEnhance.component",
+        new: "markdown.component",
       });
+
+      console.log(themeOptions.markdown);
     }
 
     if ("vPre" in mdEnhanceOptions) {
       deprecatedLogger({
         options: themeOptions,
-        deprecatedOption: "plugins.mdEnhance.vPre",
-        newOption: "markdown.vPre",
+        old: "plugins.mdEnhance.vPre",
+        new: "markdown.vPre",
       });
     }
 
     if ("include" in mdEnhanceOptions) {
       deprecatedLogger({
         options: themeOptions,
-        deprecatedOption: "plugins.mdEnhance.include",
-        newOption: "markdown.include",
+        old: "plugins.mdEnhance.include",
+        new: "markdown.include",
       });
     }
 
     if ("align" in mdEnhanceOptions) {
       deprecatedLogger({
         options: themeOptions,
-        deprecatedOption: "plugins.mdEnhance.align",
-        newOption: "markdown.align",
+        old: "plugins.mdEnhance.align",
+        new: "markdown.align",
       });
     }
 
     if ("attrs" in mdEnhanceOptions) {
       deprecatedLogger({
         options: themeOptions,
-        deprecatedOption: "plugins.mdEnhance.attrs",
-        newOption: "markdown.attrs",
+        old: "plugins.mdEnhance.attrs",
+        new: "markdown.attrs",
       });
     }
 
     if ("mark" in mdEnhanceOptions) {
       deprecatedLogger({
         options: themeOptions,
-        deprecatedOption: "plugins.mdEnhance.mark",
-        newOption: "markdown.mark",
+        old: "plugins.mdEnhance.mark",
+        new: "markdown.mark",
       });
     }
 
     if ("spoiler" in mdEnhanceOptions) {
       deprecatedLogger({
         options: themeOptions,
-        deprecatedOption: "plugins.mdEnhance.spoiler",
-        newOption: "markdown.spoiler",
+        old: "plugins.mdEnhance.spoiler",
+        new: "markdown.spoiler",
       });
     }
 
     if ("sup" in mdEnhanceOptions) {
       deprecatedLogger({
         options: themeOptions,
-        deprecatedOption: "plugins.mdEnhance.sup",
-        newOption: "markdown.sup",
+        old: "plugins.mdEnhance.sup",
+        new: "markdown.sup",
       });
     }
 
     if ("sub" in mdEnhanceOptions) {
       deprecatedLogger({
         options: themeOptions,
-        deprecatedOption: "plugins.mdEnhance.sub",
-        newOption: "markdown.sub",
+        old: "plugins.mdEnhance.sub",
+        new: "markdown.sub",
       });
     }
 
     if ("stylize" in mdEnhanceOptions) {
       deprecatedLogger({
         options: themeOptions,
-        deprecatedOption: "plugins.mdEnhance.stylize",
-        newOption: "markdown.stylize",
+        old: "plugins.mdEnhance.stylize",
+        new: "markdown.stylize",
       });
     }
 
@@ -366,88 +372,88 @@ const covertPluginOptions = (themeOptions: Record<string, unknown>): void => {
     if ("chart" in mdEnhanceOptions) {
       deprecatedLogger({
         options: themeOptions,
-        deprecatedOption: "plugins.mdEnhance.chart",
-        newOption: "markdown.chartjs",
+        old: "plugins.mdEnhance.chart",
+        new: "markdown.chartjs",
       });
     }
 
     if ("echarts" in mdEnhanceOptions) {
       deprecatedLogger({
         options: themeOptions,
-        deprecatedOption: "plugins.mdEnhance.echarts",
-        newOption: "markdown.echarts",
+        old: "plugins.mdEnhance.echarts",
+        new: "markdown.echarts",
       });
     }
 
     if ("flowchart" in mdEnhanceOptions) {
       deprecatedLogger({
         options: themeOptions,
-        deprecatedOption: "plugins.mdEnhance.flowchart",
-        newOption: "markdown.flowchart",
+        old: "plugins.mdEnhance.flowchart",
+        new: "markdown.flowchart",
       });
     }
 
     if ("mermaid" in mdEnhanceOptions) {
       deprecatedLogger({
         options: themeOptions,
-        deprecatedOption: "plugins.mdEnhance.mermaid",
-        newOption: "markdown.mermaid",
+        old: "plugins.mdEnhance.mermaid",
+        new: "markdown.mermaid",
       });
     }
 
     if ("markmap" in mdEnhanceOptions) {
       deprecatedLogger({
         options: themeOptions,
-        deprecatedOption: "plugins.mdEnhance.markmap",
-        newOption: "markdown.markmap",
+        old: "plugins.mdEnhance.markmap",
+        new: "markdown.markmap",
       });
     }
 
     if ("plantuml" in mdEnhanceOptions) {
       deprecatedLogger({
         options: themeOptions,
-        deprecatedOption: "plugins.mdEnhance.plantuml",
-        newOption: "markdown.plantuml",
+        old: "plugins.mdEnhance.plantuml",
+        new: "markdown.plantuml",
       });
     }
 
     if ("demo" in mdEnhanceOptions) {
       deprecatedLogger({
         options: themeOptions,
-        deprecatedOption: "plugins.mdEnhance.demo",
-        newOption: "markdown.demo",
+        old: "plugins.mdEnhance.demo",
+        new: "markdown.demo",
       });
     }
 
     if ("vuePlayground" in mdEnhanceOptions) {
       deprecatedLogger({
         options: themeOptions,
-        deprecatedOption: "plugins.mdEnhance.vuePlayground",
-        newOption: "markdown.vuePlayground",
+        old: "plugins.mdEnhance.vuePlayground",
+        new: "markdown.vuePlayground",
       });
     }
 
     if ("kotlinPlayground" in mdEnhanceOptions) {
       deprecatedLogger({
         options: themeOptions,
-        deprecatedOption: "plugins.mdEnhance.kotlinPlayground",
-        newOption: "markdown.kotlinPlayground",
+        old: "plugins.mdEnhance.kotlinPlayground",
+        new: "markdown.kotlinPlayground",
       });
     }
 
     if ("sandpack" in mdEnhanceOptions) {
       deprecatedLogger({
         options: themeOptions,
-        deprecatedOption: "plugins.mdEnhance.sandpack",
-        newOption: "markdown.sandpack",
+        old: "plugins.mdEnhance.sandpack",
+        new: "markdown.sandpack",
       });
     }
 
     if ("playground" in mdEnhanceOptions) {
       deprecatedLogger({
         options: themeOptions,
-        deprecatedOption: "plugins.mdEnhance.playground",
-        newOption: "markdown.playground",
+        old: "plugins.mdEnhance.playground",
+        new: "markdown.playground",
       });
     }
 
@@ -497,17 +503,18 @@ const covertPluginOptions = (themeOptions: Record<string, unknown>): void => {
 export const convertThemeOptions = (
   themeOptions: Record<string, unknown>,
 ): ThemeOptions => {
+  const { deprecatedLogger, droppedLogger } = createConverter("theme options");
+
   // Ensure plugins
   const plugins = (themeOptions.plugins ??= {}) as Record<string, unknown>;
 
   covertPluginOptions(themeOptions);
 
-  DEPRECATED_THEME_OPTIONS.forEach(([deprecatedOption, newOption]) => {
+  DEPRECATED_THEME_OPTIONS.forEach(([oldOption, newOption]) => {
     deprecatedLogger({
       options: themeOptions,
-      deprecatedOption,
-      newOption,
-      scope: "themeConfig",
+      old: oldOption,
+      new: newOption,
     });
   });
 
@@ -523,7 +530,11 @@ export const convertThemeOptions = (
   convertFooterOptions(themeOptions);
 
   // handle addThis
-  if (themeOptions.addThis) droppedLogger(themeOptions, "addThis");
+  if (themeOptions.addThis)
+    droppedLogger({
+      options: themeOptions,
+      old: "addThis",
+    });
 
   // Handle copyright plugin
   if (isPlainObject(themeOptions.copyright) || themeOptions.copyright === true)
@@ -569,22 +580,28 @@ export const convertThemeOptions = (
   if ("locales" in themeOptions && isPlainObject(themeOptions.locales))
     entries(themeOptions.locales).forEach(
       ([localePath, localeConfig]: [string, Record<string, unknown>]) => {
-        DEPRECATED_THEME_OPTIONS.forEach(([deprecatedOption, newOption]) => {
+        DEPRECATED_THEME_OPTIONS.forEach(([oldOption, newOption]) => {
           deprecatedLogger({
             options: localeConfig,
-            deprecatedOption,
-            newOption,
+            old: oldOption,
+            new: newOption,
             scope: "themeConfig.locales",
           });
         });
 
         // Handle navbar
         if ("navbar" in localeConfig)
-          localeConfig.navbar = convertNavbarOptions(localeConfig.navbar);
+          localeConfig.navbar = convertNavbarOptions(
+            localeConfig.navbar,
+            localePath,
+          );
 
         // Handle sidebar
         if ("sidebar" in localeConfig)
-          localeConfig.sidebar = convertSidebarOptions(localeConfig.sidebar);
+          localeConfig.sidebar = convertSidebarOptions(
+            localeConfig.sidebar,
+            localePath,
+          );
 
         convertNavbarLayoutOptions(localeConfig);
         convertBlogOptions(localeConfig, plugins, localePath);
