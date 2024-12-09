@@ -90,11 +90,11 @@ export default defineComponent({
     const loading = ref(true);
     const echartsContainer = shallowRef<HTMLElement>();
 
-    let chart: EChartsType;
+    let instance: EChartsType | null = null;
 
     useEventListener(
       "resize",
-      useDebounceFn(() => chart?.resize(), 100),
+      useDebounceFn(() => instance?.resize(), 100),
     );
 
     onMounted(() => {
@@ -105,23 +105,23 @@ export default defineComponent({
       ]).then(async ([echarts]) => {
         await echartsConfig.setup?.();
 
-        chart = echarts.init(echartsContainer.value);
+        instance = echarts.init(echartsContainer.value);
 
         const { option, ...size } = await parseEChartsConfig(
           decodeData(props.config),
           props.type,
-          chart,
+          instance,
         );
 
-        chart.resize(size);
-        chart.setOption({ ...echartsConfig.option, ...option });
+        instance.resize(size);
+        instance.setOption({ ...echartsConfig.option, ...option });
 
         loading.value = false;
       });
     });
 
     onUnmounted(() => {
-      chart?.dispose();
+      instance?.dispose();
     });
 
     return (): (VNode | null)[] => [
