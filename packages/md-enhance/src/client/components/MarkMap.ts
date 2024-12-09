@@ -86,6 +86,7 @@ export default defineComponent({
 
     onUnmounted(() => {
       markupMap?.destroy();
+      markupMap = null;
     });
 
     return (): VNode =>

@@ -2,7 +2,15 @@ import { LoadingIcon, decodeData, wait } from "@vuepress/helper/client";
 import { useDebounceFn, useEventListener } from "@vueuse/core";
 import type { Chart } from "flowchart.ts";
 import type { PropType, VNode } from "vue";
-import { computed, defineComponent, h, onMounted, ref, shallowRef } from "vue";
+import {
+  computed,
+  defineComponent,
+  h,
+  onMounted,
+  onUnmounted,
+  ref,
+  shallowRef,
+} from "vue";
 
 import { flowchartPresets } from "../utils/index.js";
 
@@ -83,6 +91,11 @@ export default defineComponent({
           }
         }, 100),
       );
+    });
+
+    onUnmounted(() => {
+      flowchart?.clean();
+      flowchart = null;
     });
 
     return (): (VNode | null)[] => [

@@ -122,6 +122,7 @@ export default defineComponent({
 
     onUnmounted(() => {
       instance?.dispose();
+      instance = null;
     });
 
     return (): (VNode | null)[] => [
