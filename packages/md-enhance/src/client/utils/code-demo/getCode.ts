@@ -1,15 +1,8 @@
-import type Babel from "@babel/core";
 import { keys } from "@vuepress/helper/client";
 
 import type { Code, CodeType } from "./typings.js";
 import { getConfig, preProcessorConfig } from "./utils.js";
 import type { CodeDemoOptions } from "../../../shared/index.js";
-
-declare global {
-  interface Window {
-    Babel: typeof Babel;
-  }
-}
 
 const AVAILABLE_LANGUAGES = ["html", "js", "css"] as const;
 
@@ -91,7 +84,7 @@ export const getNormalCode = (
     isLegal: code.isLegal,
     getScript: (): string =>
       codeConfig.useBabel
-        ? (window.Babel.transform(js, { presets: ["es2015"] })?.code ?? "")
+        ? (window.Babel?.transform(js, { presets: ["es2015"] })?.code ?? "")
         : js,
   };
 };
