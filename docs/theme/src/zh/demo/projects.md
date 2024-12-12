@@ -497,6 +497,13 @@ blogs:
     url: https://guoxicheng.top
     repo: https://github.com/GuoXiCheng/guoxicheng.github.io
     preview: /assets/image/guo-s-page-zh.png
+    
+  - name: Warm-Flow
+    desc: Warm-Flow工作流
+    logo: http://www.warm-flow.cn/logo.png
+    url: http://www.warm-flow.cn
+    repo: https://github.com/dromara/warm-flow
+    preview: /assets/image/warm-flow.png  
 ---
 
 ## 使用 VuePress Theme Hope 的文档
