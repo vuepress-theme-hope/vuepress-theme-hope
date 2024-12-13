@@ -503,7 +503,7 @@ blogs:
     logo: http://www.warm-flow.cn/logo.png
     url: http://www.warm-flow.cn
     repo: https://github.com/dromara/warm-flow
-    preview: /assets/image/warm-flow.jpg  
+    preview: /assets/image/warm-flow.png  
 ---
 
 ## 使用 VuePress Theme Hope 的文档
