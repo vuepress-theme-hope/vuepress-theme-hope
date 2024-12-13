@@ -12,6 +12,7 @@ import {
   getBlogTimelineType,
 } from "./type.js";
 import type {
+  ArticleInfoData,
   BlogOptions,
   ThemeData,
   ThemePageData,
@@ -52,7 +53,7 @@ export const getBlogPlugin = (
     ...("slugify" in blogOptions ? { slugify: blogOptions.slugify } : {}),
 
     getInfo: (page: Page<ThemePageData>) => {
-      const info: Record<string, unknown> = {};
+      const info: Partial<ArticleInfoData> = {};
       const isEncrypted = isPageEncrypted(page);
 
       injectBlogBasicInfo(page, info);
@@ -68,7 +69,7 @@ export const getBlogPlugin = (
       )
         info[ArticleInfo.readingTime] = page.data.readingTime;
 
-      return info;
+      return info as Record<string, unknown>;
     },
 
     category: [
