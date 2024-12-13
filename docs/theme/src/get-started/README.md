@@ -13,11 +13,11 @@ category:
 
 ```component VPBanner
 title: Step-by-step tutorial
-content: This section is for newcomers which is not familiar with Frontend, Vue or VuePress.<br> If you already have experience with them, get started with guide.
+content: This section is for newcomers which is not familiar with Frontend, Vue or VuePress.<br> If you already have experience with them, get started with <i>theme intro</i>.
 background: var(--bg-10)
 color: var(--banner-text)
 actions:
-  - text: Guide
+  - text: Theme Intro
     link: ../guide/intro/intro.html
 ```
 
