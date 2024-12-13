@@ -4,6 +4,20 @@ All notable changes to this project will be documented in this file. See [Conven
 
 <!-- #region recent-change -->
 
+## [2.0.0-rc.64](https://github.com/vuepress-theme-hope/vuepress-theme-hope/compare/v2.0.0-rc.63...v2.0.0-rc.64) (2024-12-13)
+
+### ✨ Features
+
+- **theme:** improve compact code ([82f4619](https://github.com/vuepress-theme-hope/vuepress-theme-hope/commit/82f461942c250fe5d128038aa06ee1e75319c781))
+- **theme:** improve styles ([5841987](https://github.com/vuepress-theme-hope/vuepress-theme-hope/commit/5841987c0ecc22686f908861424e6a13ee60b038))
+
+### 🐛 Bug Fixes
+
+- **theme:** fix image icon in catalog ([d2c7f84](https://github.com/vuepress-theme-hope/vuepress-theme-hope/commit/d2c7f8460e7e5b78e28d53398f2a49ce3c910ad5))
+- **theme:** support string in category and tag, close [#4624](https://github.com/vuepress-theme-hope/vuepress-theme-hope/issues/4624) ([324eee3](https://github.com/vuepress-theme-hope/vuepress-theme-hope/commit/324eee3c43edacc9d4b6e9ecaf28da9fa5802d41))
+
+<!-- #region recent-change -->
+
 ## [2.0.0-rc.63](https://github.com/vuepress-theme-hope/vuepress-theme-hope/compare/v2.0.0-rc.62...v2.0.0-rc.63) (2024-12-09)
 
 ### 🐛 Bug Fixes
