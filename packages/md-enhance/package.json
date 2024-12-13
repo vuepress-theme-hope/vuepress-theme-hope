@@ -67,8 +67,8 @@
     "@mdit/plugin-plantuml": "^0.14.0",
     "@mdit/plugin-uml": "^0.14.0",
     "@types/markdown-it": "^14.1.2",
-    "@vuepress/helper": "2.0.0-rc.65",
-    "@vuepress/plugin-sass-palette": "2.0.0-rc.65",
+    "@vuepress/helper": "2.0.0-rc.66",
+    "@vuepress/plugin-sass-palette": "2.0.0-rc.66",
     "@vueuse/core": "^12.0.0",
     "balloon-css": "^1.2.0",
     "js-yaml": "^4.1.0",
@@ -77,7 +77,7 @@
   },
   "devDependencies": {
     "@types/babel__core": "7.20.5",
-    "@vuepress/bundler-vite": "2.0.0-rc.18",
+    "@vuepress/bundler-vite": "2.0.0-rc.19",
     "markdown-it": "14.1.0",
     "rollup": "4.28.1",
     "typescript": "5.7.2"
@@ -96,7 +96,7 @@
     "sass": "^1.81.0",
     "sass-embedded": "^1.81.0",
     "sass-loader": "^16.0.2",
-    "vuepress": "2.0.0-rc.18"
+    "vuepress": "2.0.0-rc.19"
   },
   "peerDependenciesMeta": {
     "@vue/repl": {
