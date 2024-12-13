@@ -1,12 +1,5 @@
 @use "wrapper";
 
-// Fix top boarder of heading1
-.theme-hope-content:not(.custom) {
-  > *:first-child {
-    margin-top: 0;
-  }
-}
-
 .vp-breadcrumb {
   @include wrapper.horizontal-wrapper;
 
