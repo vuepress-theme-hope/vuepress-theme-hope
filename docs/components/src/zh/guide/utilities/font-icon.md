@@ -65,11 +65,11 @@ Icon name
 
 例如，你可以使用 [iconfont.cn](https://www.iconfont.cn/) 和 [fontawesome](https://fontawesome.com) 来生成你自己的资源
 
-为了便于上手，我们添加了内置关键字 `"iconify"`、`"fontawesome"` 和 `"fontawesome-with-brand` 支持。
+为了便于上手，我们添加了内置关键字 `"iconify"`、`"fontawesome"` 和 `"fontawesome-with-brands"` 支持。
 
 ::: caution
 
-如果你将此插件用于商业项目文档，则**不推荐**使用 `iconfont`，因为 iconfont 本身是设计人员和开发人员的学习/共享平台。
+如果你将此插件用于商业项目文档，则**强烈不推荐**使用 iconfont，因为 iconfont 本身是设计人员和开发人员的学习/共享平台。
 
 每个图标都是用户上传的，你必须获得作者的授权才能用于商业用途。上传者也有可能违背用户协议，上传版权在第三方的非原创图标。
 

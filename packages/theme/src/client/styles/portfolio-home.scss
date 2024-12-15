@@ -1,7 +1,7 @@
 @use "sass:color";
 @use "@sass-palette/helper";
 
-.theme-hope-content.vp-portfolio-content {
+[vp-content].vp-portfolio-content {
   --content-width: min(84%, 1200px);
   --header-underline: #{color.change(
       helper.get-color(hope-palette.$vp-c-accent),

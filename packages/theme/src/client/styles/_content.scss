@@ -1,7 +1,7 @@
 @use "@sass-palette/hope-config";
 @use "wrapper";
 
-.theme-hope-content {
+[vp-content] {
   @media print {
     margin: 0 !important;
     padding-inline: 0 !important;
@@ -17,6 +17,11 @@
 
     & {
       padding-top: 0;
+    }
+
+    // Fix top boarder of heading1
+    > *:first-child {
+      margin-top: 0;
     }
 
     > {

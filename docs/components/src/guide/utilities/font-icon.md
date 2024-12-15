@@ -65,11 +65,11 @@ You should set icon related assets to `componentsOptions.fontIcon.assets`, where
 
 For example, you may use [iconfont.cn](https://www.iconfont.cn/?lang=en-us) and [fontawesome](https://fontawesome.com) to generate your own assets.
 
-To keep it simple, we add built-in keywords `"iconify"`, `"fontawesome"` and `"fontawesome-with-brand` support for you to get started easily.
+To keep it simple, we add built-in keywords `"iconify"`, `"fontawesome"` and `"fontawesome-with-brands"` support for you to get started easily.
 
 ::: caution
 
-If you use this plugin for commercial project documentation, `iconfont` is **not recommended** as iconfont itself is a study/share platform for designers and developers.
+If you use this plugin for commercial project documentation, iconfont is **strongly NOT recommended** as iconfont itself is a study/share platform for designers and developers.
 
 Every icon is uploaded by users and you must get authorized from the author for commercial usage. Also, there could be chance where the uploader obeys usage term. And upload icons where its copyright is at 3rd party.
 

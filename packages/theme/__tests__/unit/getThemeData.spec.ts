@@ -1,6 +1,6 @@
 import { describe, expect, it } from "vitest";
 import type { Bundler } from "vuepress/core";
-import { createBaseApp } from "vuepress/core";
+import { createBuildApp } from "vuepress/core";
 import { path } from "vuepress/utils";
 
 import { emptyTheme } from "./__fixtures__/theme/empty.js";
@@ -10,7 +10,7 @@ import type { ThemeOptions } from "../../src/shared/index.js";
 
 describe("should generate themeData correctly", () => {
   it("Should contain basic properties", () => {
-    const app = createBaseApp({
+    const app = createBuildApp({
       locales: {
         "/": {
           lang: "en-US",
@@ -31,7 +31,7 @@ describe("should generate themeData correctly", () => {
   });
 
   it("Should handle single language", () => {
-    const app = createBaseApp({
+    const app = createBuildApp({
       locales: {
         "/": {
           lang: "en-US",
@@ -55,7 +55,7 @@ describe("should generate themeData correctly", () => {
   });
 
   it("locale should have higher property", () => {
-    const app = createBaseApp({
+    const app = createBuildApp({
       locales: {
         "/": {
           lang: "en-US",
@@ -96,7 +96,7 @@ describe("should generate themeData correctly", () => {
   });
 
   it("should fallback to root if locale config is missing", () => {
-    const app = createBaseApp({
+    const app = createBuildApp({
       locales: {
         "/": {
           lang: "en-US",
@@ -131,7 +131,7 @@ describe("should generate themeData correctly", () => {
   });
 
   it("root only option should not appear in locales", () => {
-    const app = createBaseApp({
+    const app = createBuildApp({
       locales: {
         "/": {
           lang: "en-US",

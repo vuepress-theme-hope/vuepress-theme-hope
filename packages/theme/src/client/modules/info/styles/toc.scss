@@ -30,7 +30,7 @@ $headings: (2, 3, 4, 5, 6);
     display: none !important;
   }
 
-  + .theme-hope-content:not(.custom) {
+  + [vp-content]:not(.custom) {
     padding-top: 0;
   }
 

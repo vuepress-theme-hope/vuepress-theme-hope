@@ -25,7 +25,7 @@
     @include external-link-icon;
   }
 
-  .theme-hope-content {
+  [vp-content] {
     a[href*="://"],
     a[target=_blank] {
       &:not(.no-external-link-icon) {

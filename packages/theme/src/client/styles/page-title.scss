@@ -41,22 +41,22 @@
   }
 }
 
-.theme-hope-content:not(.custom) {
-  padding-top: 0 !important;
-
-  h1,
-  h2,
-  h3,
-  h4,
-  h5,
-  h6 {
-    &:first-child {
-      margin-top: calc(0.5rem - var(--navbar-height)) !important;
-      padding-top: var(--navbar-height) !important;
+[vp-content]:not(.custom) {
+  > {
+    h1,
+    h2,
+    h3,
+    h4,
+    h5,
+    h6 {
+      &:first-child {
+        margin-top: calc(0.5rem - var(--navbar-height)) !important;
+        padding-top: var(--navbar-height) !important;
+      }
     }
-  }
 
-  > h1:first-of-type {
-    display: none;
+    h1:first-child {
+      display: none;
+    }
   }
 }

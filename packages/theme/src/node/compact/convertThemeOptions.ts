@@ -464,36 +464,157 @@ const covertPluginOptions = (themeOptions: Record<string, unknown>): void => {
     logger.warn(
       `${colors.magenta("plugins.markdownHint")} is deprecated, you should use ${colors.magenta("markdown.alert")} and ${colors.magenta("markdown.hint")} instead.`,
     );
+
+    if (isPlainObject(pluginOptions.markdownHint)) {
+      const markdownHint = pluginOptions.markdownHint as Record<
+        string,
+        unknown
+      >;
+
+      if ("alert" in markdownHint) {
+        deprecatedLogger({
+          options: themeOptions,
+          old: "plugins.markdownHint.alert",
+          new: "markdown.alert",
+        });
+      }
+
+      if ("hint" in markdownHint) {
+        deprecatedLogger({
+          options: themeOptions,
+          old: "plugins.markdownHint.hint",
+          new: "markdown.hint",
+        });
+      }
+    } else if (pluginOptions.markdownHint === false) {
+      markdownOptions.hint = false;
+    }
+
+    delete pluginOptions.markdownHint;
   }
 
   if (pluginOptions.markdownImg) {
     logger.warn(
       `${colors.magenta("plugins.markdownImg")} is deprecated, you should use ${colors.magenta("markdown.figure")} ${colors.magenta("markdown.imgLazyload")} ${colors.magenta("markdown.imgMark")} ${colors.magenta("markdown.imgSize")} and ${colors.magenta("markdown.obsidianImgSize")} instead.`,
     );
+
+    if (isPlainObject(pluginOptions.markdownImg)) {
+      deprecatedLogger({
+        options: themeOptions,
+        old: "plugins.markdownImg.figure",
+        new: "markdown.figure",
+      });
+
+      deprecatedLogger({
+        options: themeOptions,
+        old: "plugins.markdownImg.lazyload",
+        new: "markdown.imgLazyload",
+      });
+
+      deprecatedLogger({
+        options: themeOptions,
+        old: "plugins.markdownImg.mark",
+        new: "markdown.imgMark",
+      });
+
+      deprecatedLogger({
+        options: themeOptions,
+        old: "plugins.markdownImg.size",
+        new: "markdown.imgSize",
+      });
+
+      deprecatedLogger({
+        options: themeOptions,
+        old: "plugins.markdownImg.obsidian",
+        new: "markdown.obsidianImgSize",
+      });
+    } else if (pluginOptions.markdownImg === true) {
+      markdownOptions.figure = true;
+      markdownOptions.imgLazyload = true;
+    }
+
+    delete pluginOptions.markdownImg;
   }
 
   if (pluginOptions.markdownMath) {
     logger.warn(
       `${colors.magenta("plugins.markdownMath")} is deprecated, you should use ${colors.magenta("markdown.math")} instead.`,
     );
+
+    deprecatedLogger({
+      options: themeOptions,
+      old: "plugins.markdownMath",
+      new: "markdown.math",
+    });
+
+    delete pluginOptions.markdownMath;
   }
 
   if (pluginOptions.markdownTab) {
     logger.warn(
       `${colors.magenta("plugins.markdownTab")} is deprecated, you should use ${colors.magenta("markdown.tabs")} and ${colors.magenta("markdown.codeTabs")} instead.`,
     );
+
+    if (isPlainObject(pluginOptions.markdownTab)) {
+      deprecatedLogger({
+        options: themeOptions,
+        old: "plugins.markdownTab.tabs",
+        new: "markdown.tabs",
+      });
+
+      deprecatedLogger({
+        options: themeOptions,
+        old: "plugins.markdownTab.code",
+        new: "markdown.codeTabs",
+      });
+    } else if (pluginOptions.markdownTab === true) {
+      markdownOptions.codeTabs = true;
+      markdownOptions.tabs = true;
+    }
+
+    delete pluginOptions.markdownTab;
   }
 
   if (pluginOptions.searchPro) {
     logger.warn(
-      `${colors.magenta("plugins.searchPro")} is deprecated, you should replace ${colors.cyan("vuepress-plugin-search-pro")} with ${colors.cyan("@vuepress/plugin-slimsearch")} in ${colors.green("package.json")} and use ${colors.magenta("markdown.slimsearch")} instead.`,
+      `${colors.magenta("plugins.searchPro")} is deprecated, you should replace ${colors.cyan("vuepress-plugin-search-pro")} with ${colors.cyan("@vuepress/plugin-slimsearch")} in ${colors.green("package.json")} and use ${colors.magenta("plugins.slimsearch")} instead.`,
     );
+    pluginOptions.slimsearch = pluginOptions.searchPro;
+    delete pluginOptions.searchPro;
+  }
+
+  if (pluginOptions.prismjs) {
+    logger.warn(
+      `${colors.magenta("plugins.prismjs")} is deprecated, you should use ${colors.magenta("markdown.highlighter")} with ${colors.cyan('{ type: "prismjs", ...other options }')} instead.`,
+    );
+
+    markdownOptions.highlighter = {
+      type: "prismjs",
+      ...(isPlainObject(pluginOptions.prismjs) ? pluginOptions.prismjs : {}),
+    };
+
+    delete pluginOptions.prismjs;
+  }
+
+  if (pluginOptions.shiki) {
+    logger.warn(
+      `${colors.magenta("plugins.shiki")} is deprecated, you should use ${colors.magenta("markdown.highlighter")} with ${colors.cyan('{ type: "shiki", ...other options }')} instead.`,
+    );
+
+    markdownOptions.highlighter = {
+      type: "shiki",
+      ...(isPlainObject(pluginOptions.shiki) ? pluginOptions.shiki : {}),
+    };
+
+    delete pluginOptions.shiki;
   }
 
   if (pluginOptions.revealjs) {
-    logger.warn(
-      `${colors.magenta("plugins.revealjs")} is deprecated, you should use ${colors.magenta("markdown.revealjs")} instead.`,
-    );
+    deprecatedLogger({
+      options: themeOptions,
+      old: "plugins.revealjs",
+      new: "markdown.revealjs",
+    });
   }
 };
 
