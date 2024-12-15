@@ -16,7 +16,10 @@ import HopeIcon from "@theme-hope/components/HopeIcon";
 import { DropTransition } from "@theme-hope/components/transitions/index";
 import { useAuthorInfo } from "@theme-hope/composables/index";
 
-import type { ThemePortfolioFrontmatter } from "../../shared/index.js";
+import type {
+  PortfolioMedia,
+  ThemePortfolioFrontmatter,
+} from "../../shared/index.js";
 
 import "../styles/portfolio-hero.scss";
 
@@ -32,7 +35,7 @@ export interface PortfolioInfo {
   welcome: string;
   title: string;
   titles: string[];
-  medias?: { url: string; name?: string; icon: string }[];
+  medias: PortfolioMedia[] | null;
 }
 
 export interface PortfolioBackground {
@@ -85,14 +88,14 @@ export default defineComponent({
     });
 
     const info = computed(() => {
-      const { welcome, name, titles, medias } = frontmatter.value;
+      const { welcome, name, titles = [], medias } = frontmatter.value;
 
       return {
         name: name ?? authorInfo.value.name,
         welcome: welcome ?? "👋 Hi There, I'm",
         title: title.value,
-        titles: titles ?? [],
-        medias: medias ?? [],
+        titles: titles,
+        medias: medias ?? null,
       };
     });
 
@@ -181,6 +184,7 @@ export default defineComponent({
             h("div", { class: "vp-portfolio-avatar" }, [
               h(DropTransition, { delay: 0.04 }, () => {
                 const {
+                  avatar: avatarLight,
                   avatarDark,
                   name: title,
                   alt,
@@ -188,14 +192,16 @@ export default defineComponent({
                 } = avatar.value;
 
                 return [
-                  h("img", {
-                    key: "light",
-                    class: { light: avatarDark },
-                    src: avatar.value.avatar,
-                    title,
-                    alt,
-                    style,
-                  }),
+                  avatarLight
+                    ? h("img", {
+                        key: "light",
+                        class: { light: avatarDark },
+                        src: avatarLight,
+                        title,
+                        alt,
+                        style,
+                      })
+                    : null,
                   avatarDark
                     ? h("img", {
                         key: "dark",
@@ -233,7 +239,7 @@ export default defineComponent({
                 ),
 
                 h(DropTransition, { appear: true, delay: 0.2 }, () =>
-                  info.value.medias.length
+                  info.value.medias
                     ? h(
                         "div",
                         { class: "vp-portfolio-medias" },
