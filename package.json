@@ -55,7 +55,7 @@
     "@lerna-lite/publish": "3.10.1",
     "@rollup/plugin-alias": "5.1.1",
     "@rollup/plugin-commonjs": "28.0.1",
-    "@rollup/plugin-node-resolve": "15.3.0",
+    "@rollup/plugin-node-resolve": "16.0.0",
     "@rollup/plugin-replace": "6.0.1",
     "@types/node": "22.10.2",
     "@types/webpack-env": "1.18.5",
