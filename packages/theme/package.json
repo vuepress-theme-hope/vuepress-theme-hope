@@ -73,6 +73,7 @@
     "@vuepress/plugin-back-to-top": "2.0.0-rc.66",
     "@vuepress/plugin-blog": "2.0.0-rc.66",
     "@vuepress/plugin-catalog": "2.0.0-rc.67",
+    "@vuepress/plugin-comment": "2.0.0-rc.67",
     "@vuepress/plugin-copy-code": "2.0.0-rc.66",
     "@vuepress/plugin-copyright": "2.0.0-rc.66",
     "@vuepress/plugin-git": "2.0.0-rc.66",
@@ -111,7 +112,6 @@
     "rollup": "4.28.1"
   },
   "peerDependencies": {
-    "@vuepress/plugin-comment": "2.0.0-rc.67",
     "@vuepress/plugin-docsearch": "2.0.0-rc.67",
     "@vuepress/plugin-feed": "2.0.0-rc.66",
     "@vuepress/plugin-prismjs": "2.0.0-rc.66",
@@ -127,9 +127,6 @@
     "vuepress": "2.0.0-rc.19"
   },
   "peerDependenciesMeta": {
-    "@vuepress/plugin-comment": {
-      "optional": true
-    },
     "@vuepress/plugin-docsearch": {
       "optional": true
     },

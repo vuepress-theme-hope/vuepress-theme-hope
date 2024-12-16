@@ -1,18 +1,9 @@
 import type { CommentPluginOptions } from "@vuepress/plugin-comment";
-import type { Plugin, PluginObject } from "vuepress/core";
-import { colors } from "vuepress/utils";
+import { commentPlugin } from "@vuepress/plugin-comment";
+import type { PluginObject } from "vuepress/core";
 
-import { VERSION, logger } from "../utils.js";
+import { VERSION } from "../utils.js";
 
-let commentPlugin:
-  | ((options: CommentPluginOptions, legacy?: boolean) => Plugin)
-  | null = null;
-
-try {
-  ({ commentPlugin } = await import("@vuepress/plugin-comment"));
-} catch {
-  // Do nothing
-}
 /**
  * @private
  *
@@ -21,16 +12,7 @@ try {
 export const getCommentPlugin = (
   options?: Partial<CommentPluginOptions> | false,
 ): PluginObject | null => {
-  if (options === false || !options?.provider || options.provider === "None")
-    return null;
-
-  if (!commentPlugin) {
-    logger.error(
-      `${colors.cyan("@vuepress/plugin-comment")} is not installed!`,
-    );
-
-    return null;
-  }
+  if (options === false || !options?.provider) return null;
 
   return commentPlugin({
     provider: "None",
