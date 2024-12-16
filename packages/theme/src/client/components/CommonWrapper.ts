@@ -72,13 +72,7 @@ export default defineComponent({
   slots: Object as SlotsType<{
     default: () => VNode[] | VNode | null;
 
-    // Navbar
-    navbarStartBefore?: () => VNode[] | VNode | null;
-    navbarStartAfter?: () => VNode[] | VNode | null;
-    navbarCenterBefore?: () => VNode[] | VNode | null;
-    navbarCenterAfter?: () => VNode[] | VNode | null;
-    navbarEndBefore?: () => VNode[] | VNode | null;
-    navbarEndAfter?: () => VNode[] | VNode | null;
+    // Nav Screen
     navScreenTop?: () => VNode[] | VNode | null;
     navScreenBottom?: () => VNode[] | VNode | null;
 
@@ -261,12 +255,6 @@ export default defineComponent({
                     Navbar,
                     { onToggleSidebar: () => toggleMobileSidebar() },
                     {
-                      startBefore: slots.navbarStartBefore,
-                      startAfter: slots.navbarStartAfter,
-                      centerBefore: slots.navbarCenterBefore,
-                      centerAfter: slots.navbarCenterAfter,
-                      endBefore: slots.navbarEndBefore,
-                      endAfter: slots.navbarEndAfter,
                       screenTop: slots.navScreenTop,
                       screenBottom: slots.navScreenBottom,
                     },

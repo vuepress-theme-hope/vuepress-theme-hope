@@ -37,12 +37,6 @@ export default defineComponent({
     default: () => VNode[] | VNode | null;
 
     // Navbar
-    startBefore?: () => VNode[] | VNode | null;
-    startAfter?: () => VNode[] | VNode | null;
-    centerBefore?: () => VNode[] | VNode | null;
-    centerAfter?: () => VNode[] | VNode | null;
-    endBefore?: () => VNode[] | VNode | null;
-    endAfter?: () => VNode[] | VNode | null;
     screenTop?: () => VNode[] | VNode | null;
     screenBottom?: () => VNode[] | VNode | null;
   }>,
@@ -106,7 +100,6 @@ export default defineComponent({
                 emit("toggleSidebar");
               },
             }),
-            slots.startBefore?.(),
             navbarLayout.value.start?.map((item) =>
               h(
                 getNavbarComponent(item) as
@@ -114,11 +107,9 @@ export default defineComponent({
                   | FunctionalComponent,
               ),
             ),
-            slots.startAfter?.(),
           ]),
 
           h("div", { class: "vp-navbar-center" }, [
-            slots.centerBefore?.(),
             navbarLayout.value.center?.map((item) =>
               h(
                 getNavbarComponent(item) as
@@ -126,11 +117,9 @@ export default defineComponent({
                   | FunctionalComponent,
               ),
             ),
-            slots.centerAfter?.(),
           ]),
 
           h("div", { class: "vp-navbar-end" }, [
-            slots.endBefore?.(),
             navbarLayout.value.end?.map((item) =>
               h(
                 getNavbarComponent(item) as
@@ -138,8 +127,6 @@ export default defineComponent({
                   | FunctionalComponent,
               ),
             ),
-            slots.endAfter?.(),
-
             h(ToggleNavbarButton, {
               active: showScreen.value,
               onToggle: () => {

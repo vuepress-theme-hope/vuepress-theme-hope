@@ -37,66 +37,6 @@ import { FadeSlideY } from "@theme-hope/components/transitions/index";
       </NormalPage>
     </FadeSlideY>
 
-    <template #navbarStartBefore>
-      <div
-        class="slot-demo-inline"
-        aria-label="navbarStartBefore Slot"
-        data-balloon-pos="down-left"
-      >
-        ...
-      </div>
-    </template>
-
-    <template #navbarStartAfter>
-      <div
-        class="slot-demo-inline"
-        aria-label="navbarStartAfter Slot"
-        data-balloon-pos="down"
-      >
-        ...
-      </div>
-    </template>
-
-    <template #navbarCenterBefore>
-      <div
-        class="slot-demo-inline"
-        aria-label="navbarCenterBefore Slot"
-        data-balloon-pos="down"
-      >
-        ...
-      </div>
-    </template>
-
-    <template #navbarCenterAfter>
-      <div
-        class="slot-demo-inline"
-        aria-label="navbarCenterAfter Slot"
-        data-balloon-pos="down"
-      >
-        ...
-      </div>
-    </template>
-
-    <template #navbarEndBefore>
-      <div
-        class="slot-demo-inline"
-        aria-label="navbarEndBefore Slot"
-        data-balloon-pos="down"
-      >
-        ...
-      </div>
-    </template>
-
-    <template #navbarEndAfter>
-      <div
-        class="slot-demo-inline"
-        aria-label="navbarEndAfter Slot"
-        data-balloon-pos="down-right"
-      >
-        ...
-      </div>
-    </template>
-
     <template #sidebarTop>
       <div class="slot-demo-block">sidebarTop Slot</div>
     </template>

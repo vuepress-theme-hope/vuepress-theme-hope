@@ -266,7 +266,7 @@ import HopeHomePage from "vuepress-theme-hope/components/HomePage.js";
 **主题**:
 
 - `AutoLink`: `default`, `before`, `after`
-- `CommonWrapper`: `default`, `navbarStartBefore`, `navbarStartAfter`, `navbarCenterBefore`, `navbarCenterAfter`, `navbarEndBefore`, `navbarEndAfter`, `navScreenTop`, `navScreenBottom`, `sidebar`, `sidebarTop`, `sidebarBottom`
+- `CommonWrapper`: `default`, `navScreenTop`, `navScreenBottom`, `sidebar`, `sidebarTop`, `sidebarBottom`
 - `HeroInfo`: `logo`, `info`, `bg`
 
   - `logo` 插槽将接收 `image` `imageDark` `style` `alt` 和 `isFullScreen` 属性。
