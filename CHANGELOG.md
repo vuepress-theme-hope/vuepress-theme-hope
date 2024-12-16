@@ -4,6 +4,14 @@ All notable changes to this project will be documented in this file. See [Conven
 
 <!-- #region recent-change -->
 
+## [2.0.0-rc.66](https://github.com/vuepress-theme-hope/vuepress-theme-hope/compare/v2.0.0-rc.65...v2.0.0-rc.66) (2024-12-16)
+
+### 🐛 Bug Fixes
+
+- **theme:** fix comment plugin issue ([baa7b68](https://github.com/vuepress-theme-hope/vuepress-theme-hope/commit/baa7b6882ab9cae228055327f8d70e97d910bd26))
+
+<!-- #region recent-change -->
+
 ## [2.0.0-rc.65](https://github.com/vuepress-theme-hope/vuepress-theme-hope/compare/v2.0.0-rc.64...v2.0.0-rc.65) (2024-12-16)
 
 ### ⚠ BREAKING CHANGES
