@@ -297,6 +297,13 @@ docs:
     repo: https://wzciot.site
     preview: /assets/image/wwiot-camerasys-home.jpg
 
+  - name: Warm-Flow
+    desc: Warm-Flow工作流
+    logo: http://www.warm-flow.cn/logo.png
+    url: http://www.warm-flow.cn
+    repo: https://github.com/dromara/warm-flow
+    preview: /assets/image/warm-flow.png  
+
 portfolios:
   - name: 尚程
     url: https://cheng-shang.me/zh/
@@ -498,12 +505,6 @@ blogs:
     repo: https://github.com/GuoXiCheng/guoxicheng.github.io
     preview: /assets/image/guo-s-page-zh.png
 
-  - name: Warm-Flow
-    desc: Warm-Flow工作流
-    logo: http://www.warm-flow.cn/logo.png
-    url: http://www.warm-flow.cn
-    repo: https://github.com/dromara/warm-flow
-    preview: /assets/image/warm-flow.png
 ---
 
 ## 使用 VuePress Theme Hope 的文档
