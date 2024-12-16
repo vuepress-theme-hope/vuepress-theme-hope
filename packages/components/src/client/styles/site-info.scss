@@ -105,7 +105,7 @@
     padding-bottom: 4px;
     border-bottom: 1px solid var(--vp-c-text);
 
-    color: var(--black);
+    color: var(--vp-c-black);
 
     font-weight: bold;
     font-size: 20px;
@@ -118,7 +118,7 @@
 
     overflow: hidden;
 
-    color: var(--black);
+    color: var(--vp-c-black);
 
     font-size: 15px;
     line-height: 1.3;
@@ -137,10 +137,10 @@
 
     width: 20px;
     height: 20px;
-    padding: 4px;
+    padding: 3px;
     border-radius: 50%;
 
-    background: var(--black);
+    background: var(--vp-c-black);
 
     transition: transform var(--vp-t-transform);
 

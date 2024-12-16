@@ -115,7 +115,7 @@ export default defineComponent({
               h(
                 "a",
                 {
-                  class: "vp-site-info-source",
+                  class: "vp-site-info-source no-external-link-icon",
                   href: props.repo,
                   // Hint text
                   "aria-label": locale.value.source,
