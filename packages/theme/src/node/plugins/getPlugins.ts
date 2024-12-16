@@ -10,7 +10,6 @@ import { markdownTabPlugin } from "@vuepress/plugin-markdown-tab";
 import { nprogressPlugin } from "@vuepress/plugin-nprogress";
 import { photoSwipePlugin } from "@vuepress/plugin-photo-swipe";
 import { themeDataPlugin } from "@vuepress/plugin-theme-data";
-import { watermarkPlugin } from "@vuepress/plugin-watermark";
 import type { App, PluginConfig } from "vuepress/core";
 
 import { getActiveHeaderLinksPlugin } from "./activeHeaderLinks.js";
@@ -31,6 +30,7 @@ import { getRtlPlugin } from "./rtl.js";
 import { getSearchPlugin } from "./search.js";
 import { getSEOPlugin } from "./seo.js";
 import { getSitemapPlugin } from "./sitemap.js";
+import { getWatermarkPlugin } from "./watermark.js";
 import type { ThemeData, ThemeOptions } from "../../shared/index.js";
 import { checkPluginsOptions } from "../check/index.js";
 
@@ -67,7 +67,7 @@ export const getPlugins = (
     linksCheck,
     math,
   } = markdownOptions;
-  const { backToTop, copyCode, photoSwipe, watermark } = pluginsOptions;
+  const { backToTop, copyCode, photoSwipe } = pluginsOptions;
 
   return [
     /*
@@ -115,10 +115,7 @@ export const getPlugins = (
     photoSwipe === false
       ? null
       : photoSwipePlugin(isPlainObject(photoSwipe) ? photoSwipe : {}),
-    // @vuepress/plugin-watermark
-    watermark
-      ? watermarkPlugin(isPlainObject(watermark) ? watermark : {})
-      : null,
+
     getComponentsPlugin(options, pluginsOptions.components, legacy),
     getActiveHeaderLinksPlugin(pluginsOptions.activeHeaderLinks),
     getCatalogPlugin(pluginsOptions.catalog),
@@ -141,5 +138,6 @@ export const getPlugins = (
     getSitemapPlugin(pluginsOptions.sitemap, options.hostname),
     getRtlPlugin(themeData),
     getRedirectPlugin(pluginsOptions.redirect),
+    getWatermarkPlugin(pluginsOptions.watermark),
   ].filter((item) => item !== null);
 };
