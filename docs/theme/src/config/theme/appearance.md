@@ -95,6 +95,15 @@ Useful when you want to provide "A pure document site".
 
 :::
 
+## focus <Badge text="Root only" type="warning" />
+
+- Type: `number | boolean`
+- Default: value of `pure`
+- Details:
+  - [Interface → Focus mode](../../guide/interface/others.md#focus-mode)
+
+Whether enable focus mode, default when pure mode is enabled. Number value will be the delay time to trigger focus mode.
+
 ## print <Badge text="Root only" type="warning" />
 
 - Type: `boolean`

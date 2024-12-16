@@ -1,0 +1,27 @@
+@use "@sass-palette/hope-config";
+
+.is-focusing {
+  [vp-navbar] > *,
+  [vp-sidebar],
+  [vp-footer],
+  [vp-comment],
+  .vp-breadcrumb,
+  .vp-page-meta,
+  .vp-page-nav {
+    opacity: 0.5;
+    filter: blur(0.095rem);
+    transition:
+      filter 0.35s,
+      opacity 0.35s;
+  }
+
+  [vp-toc] {
+    @media (min-width: hope-config.$pc) {
+      opacity: 0.5;
+      filter: blur(0.095rem);
+      transition:
+        filter 0.35s,
+        opacity 0.35s;
+    }
+  }
+}

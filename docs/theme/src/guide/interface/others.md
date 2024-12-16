@@ -101,6 +101,24 @@ The theme adds full support of accessibility.
 
 This is our support for the visually impaired people around the world! :heart:
 
+## Focus Mode
+
+If you want to focus on reading, you can enable focus mode by setting `focus: true` in theme options.
+
+```js {5} title=".vuepress/config.js"
+import { hopeTheme } from "vuepress-theme-hope";
+
+export default {
+  theme: hopeTheme({
+    focus: true,
+  }),
+};
+```
+
+In this mode, we will blur elements other than the main content, providing a more focused reading experience.
+
+The default delay is 1500ms, and you can customize it by setting a number value.
+
 ## Pure Mode
 
 If your site is a documentation-only site, and you prefer a clean style, you can enable pure mode by setting `pure: true` in theme options.

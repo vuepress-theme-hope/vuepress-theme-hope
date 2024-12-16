@@ -95,6 +95,15 @@ tag:
 
 :::
 
+## focus <Badge text="仅限 Root" type="warning" />
+
+- 类型: `number | boolean`
+- 默认值: `pure` 的值
+- 详情:
+  - [界面 → 专注模式](../../guide/interface/others.md#专注模式)
+
+是否启用专注模式，默认在启用纯净模式时启用。数字值是触发专注模式的延迟时间。
+
 ## print <Badge text="仅限 Root" type="warning" />
 
 - 类型: `boolean`

@@ -16,8 +16,6 @@ const ROOT_DISALLOW_CONFIG = [
   "navbar",
   "sidebar",
   "rtl",
-  "langName",
-  "selectLangAriaLabel",
 
   // Locales
   "metaLocales",

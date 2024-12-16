@@ -100,6 +100,22 @@ export default defineUserConfig({
 
 这是我们为全球视障人群做出的支持! :heart:
 
+## 专注模式
+
+如果你更喜欢专注于内容，你可以在主题选项中设置 `focus: true` 启用专注模式。
+
+```js {5} title=".vuepress/config.js"
+import { hopeTheme } from "vuepress-theme-hope";
+
+export default {
+  theme: hopeTheme({
+    focus: true,
+  }),
+};
+```
+
+在这个模式下，我们会模糊内容之外元素，提供更好的专注体验。
+
 ## 纯净模式
 
 如果你的网站是一个纯文档站点，并且你更喜欢干净的样式，你可以在主题选项中设置 `pure: true` 启用纯净模式。
@@ -115,6 +131,8 @@ export default {
 ```
 
 在这个模式下，我们会禁用一些花哨的动画以及一些色彩，只提供功能。
+
+默认延迟为 1500ms，你可以通过设置为一个数字来自定义延迟时间。
 
 ## RTL 布局
 
