@@ -185,7 +185,7 @@ export const mdEnhancePlugin =
           if (legacy) md.use(chart);
         }
         if (status.echarts) md.use(echarts);
-        if (isArray(options.plantuml)) md.use(plantuml, options);
+        if (isArray(options.plantuml)) md.use(plantuml, options.plantuml);
         else if (options.plantuml) md.use(plantuml);
         if (options.demo) {
           md.use(mdDemo);
