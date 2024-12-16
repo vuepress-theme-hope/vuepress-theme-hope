@@ -6,19 +6,12 @@ category:
   - Demo
 
 docs:
-  - name: Waline
-    desc: A Simple, Safe Comment System.
-    logo: https://waline.js.org/logo.png
-    url: https://waline.js.org/en/
-    repo: https://github.com/walinejs/waline
-    preview: /assets/image/waline.jpg
-
-  - name: zkSync Era
-    desc: A trustless protocol that uses cryptographic validity proofs to provide scalable and low-cost transactions on Ethereum
-    logo: https://docs.zksync.io/zksync_logo_black.svg
-    url: https://docs.zksync.io/
-    repo: https://github.com/matter-labs/zksync-web-era-docs
-    preview: /assets/image/zksync.jpg
+  - name: PvZ2 Gardendless
+    desc: A completely remastered PvZ2 for all desktop platforms.
+    logo: https://pvzge.com/pvz_logo.webp
+    url: https://pvzge.com/en/
+    repo: https://github.com/Gzh0821/pvzg_site
+    preview: /assets/image/pvz2.jpg
 
   - name: SubQuery
     desc: |-
@@ -27,6 +20,48 @@ docs:
     url: https://academy.subquery.network
     repo: https://github.com/subquery/documentation
     preview: /assets/image/subquery.jpg
+
+  - name: Event Store Resources
+    desc: Event-native database for storing immutable facts as events, complex event processing, and event-driven architectures.
+    logo: https://developers.eventstore.com/Kurrent%20Logo%20-%20White.svg
+    url: https://developers.eventstore.com/
+    repo: https://github.com/EventStore/documentation
+    preview: /assets/image/eventstore.jpg
+
+  - name: ZLMediaKit
+    desc: An high-performance, enterprise-level streaming media service framework based on C++11.
+    logo: https://docs.zlmediakit.com/logo.svg
+    url: https://docs.zlmediakit.com/
+    repo: https://github.com/ZLMediaKit/docs
+    preview: /assets/image/zlmediakit.jpg
+
+  - name: Fast Request
+    desc: Born to simplify debugging APIs
+    logo: https://api-buddy.cn/img/fastRequest.svg
+    url: https://api-buddy.cn/en/
+    repo: https://github.com/dromara/fast-request
+    preview: /assets/image/fast-request.jpg
+
+  - name: Nosana
+    desc: Next Gen CI/CD
+    logo: https://nosana.io/img/NOS_logo.png
+    url: https://docs.nosana.io/
+    repo: https://github.com/nosana-ci/docs.nosana.io
+    preview: /assets/image/nosana.jpg
+
+  - name: ct.js
+    desc: Learn ct.js, complete tutorials, and contribute to ct.js documentation
+    logo: https://docs.ctjs.rocks/assets/img/logo.png
+    url: https://docs.ctjs.rocks/
+    repo: https://github.com/ct-js/docs.ctjs.rocks
+    preview: /assets/image/ctjs.jpg
+
+  - name: Waline
+    desc: A Simple, Safe Comment System.
+    logo: https://waline.js.org/logo.png
+    url: https://waline.js.org/en/
+    repo: https://github.com/walinejs/waline
+    preview: /assets/image/waline.jpg
 
   - name: mdit-plugins
     desc: Plugin collections of MarkdownIt
@@ -42,12 +77,6 @@ docs:
     repo: https://github.com/apache/iotdb
     preview: /assets/image/iotdb.jpg
 
-  - name: ZLMediaKit
-    desc: An high-performance, enterprise-level streaming media service framework based on C++11.
-    url: https://docs.zlmediakit.com/
-    repo: https://github.com/ZLMediaKit/docs
-    preview: /assets/image/zlmediakit.jpg
-
   - name: abapGit
     desc: A git client for ABAP developed in ABAP
     logo: https://docs.abapgit.org/logo-dark.svg
@@ -62,13 +91,6 @@ docs:
     repo: https://github.com/bytedance/bitsail
     preview: /assets/image/bitsail.jpg
 
-  - name: Fast Request
-    desc: Born to simplify debugging APIs
-    logo: https://dromara.org/fast-request/img/logo/logo.svg
-    url: https://dromara.org/fast-request/en/
-    repo: https://github.com/dromara/fast-request
-    preview: /assets/image/fast-request.jpg
-
   - name: Crawlab
     desc: A powerful Web Crawler Management Platform (WCMP)
     logo: https://docs.crawlab.cn/logo.svg
@@ -76,12 +98,12 @@ docs:
     repo: https://github.com/crawlab-team/crawlab-docs
     preview: /assets/image/crawlab.jpg
 
-  - name: Nosana
-    desc: Next Gen CI/CD
-    logo: https://nosana.io/img/NOS_logo.png
-    url: https://docs.nosana.io/
-    repo: https://github.com/nosana-ci/docs.nosana.io
-    preview: /assets/image/nosana.jpg
+  - name: ESPnet
+    desc: End-to-end Speech Processing toolkit
+    logo: https://espnet.github.io/espnet/assets/image/espnet_logo1.png
+    url: https://espnet.github.io/espnet/
+    repo: https://github.com/espnet/espnet/tree/master/doc/vuepress
+    preview: /assets/image/espnet.jpg
 
   - name: Pulsar
     desc: A Community-led Hyper-Hackable Text Editor
@@ -96,13 +118,6 @@ docs:
     url: https://freesql.net/en/
     repo: https://github.com/dotnetcore/FreeSql/tree/master/docs
     preview: /assets/image/free-sql.jpg
-
-  - name: ct.js
-    desc: Learn ct.js, complete tutorials, and contribute to ct.js documentation
-    logo: https://docs.ctjs.rocks/assets/img/logo.png
-    url: https://docs.ctjs.rocks/
-    repo: https://github.com/ct-js/docs.ctjs.rocks
-    preview: /assets/image/ctjs.jpg
 
   - name: DXOS
     desc: The Operating System for Decentralized Software
@@ -201,6 +216,13 @@ docs:
     url: https://docs.kaitaku.xyz/en/
     repo: https://github.com/theme-shoka-x/shokaX-docs
     preview: /assets/image/shokax.jpg
+
+  - name: HMPL.js
+    desc: Server-oriented customizable templating for JavaScript
+    url: https://hmpl-lang.dev/
+    logo: https://hmpl-lang.dev/images/logo_new.svg
+    repo: https://github.com/hmpl-language/hmpl/tree/main/www/app
+    preview: /assets/image/hmpl.jpg
 
 portfolios:
   - name: Cheng Shang

@@ -6,12 +6,12 @@ category:
   - 案例
 
 docs:
-  - name: Waline
-    desc: 一款简洁、安全的评论系统。
-    logo: https://waline.js.org/logo.png
-    url: https://waline.js.org/
-    repo: https://github.com/walinejs/waline
-    preview: /assets/image/waline.jpg
+  - name: PvZ2 Gardendless
+    desc: 完全重制的全桌面平台PvZ2.
+    logo: https://pvzge.com/pvz_logo.webp
+    url: https://pvzge.com/
+    repo: https://github.com/Gzh0821/pvzg_site
+    preview: /assets/image/pvz2.jpg
 
   - name: inNENU
     desc: 最全东师新生攻略
@@ -19,6 +19,27 @@ docs:
     url: https://innenu.com
     repo: https://github.com/inNENU/resource/
     preview: /assets/image/innenu.jpg
+
+  - name: UIGF-org
+    desc: 统一标准化的原神数据格式
+    logo: https://uigf.org/uigf-logo128.png
+    url: https://uigf.org/zh/
+    repo: https://github.com/UIGF-org/UIGF-org.github.io
+    preview: /assets/image/uigf.jpg
+
+  - name: Fast Request
+    desc: 为简化调试API而生
+    logo: https://api-buddy.cn/img/fastRequest.svg
+    url: https://api-buddy.cn/
+    repo: https://github.com/dromara/fast-request
+    preview: /assets/image/fast-request.jpg
+
+  - name: Waline
+    desc: 一款简洁、安全的评论系统。
+    logo: https://waline.js.org/logo.png
+    url: https://waline.js.org/
+    repo: https://github.com/walinejs/waline
+    preview: /assets/image/waline.jpg
 
   - name: MaaAssistantArknights
     desc: 一款明日方舟游戏小助手
@@ -76,20 +97,6 @@ docs:
     repo: https://github.com/itwanger/toBeBetterJavaer
     preview: /assets/image/to-be-better-javaer.jpg
 
-  - name: Fast Request
-    desc: 为简化调试API而生
-    logo: https://dromara.org/fast-request/img/logo/logo.svg
-    url: https://dromara.org/fast-request/
-    repo: https://github.com/dromara/fast-request
-    preview: /assets/image/fast-request.jpg
-
-  - name: UIGF-org
-    desc: 统一标准化的原神数据格式
-    logo: https://uigf.org/uigf-logo128.png
-    url: https://uigf.org/zh/
-    repo: https://github.com/UIGF-org/UIGF-org.github.io
-    preview: /assets/image/uigf.jpg
-
   - name: Golang 中文文档
     desc: Go 爱好者驱动的中文学习站
     logo: https://golang.halfiisland.com/logo.png
@@ -132,6 +139,13 @@ docs:
     repo: https://github.com/huiyadanli/bettergi-docs
     preview: /assets/image/better-gi.jpg
 
+  - name: TG Wiki
+    desc: Telegram 知识库
+    logo: https://tgnav.github.io/tgwiki/assets/icon/logo.svg
+    url: https://tgnav.github.io/tgwiki/
+    repo: https://github.com/tgnav/tgwiki
+    preview: /assets/image/tgwiki.jpg
+
   - name: Korepi
     desc: 我们提供高质量且易于使用的 Korepi 便捷工具！
     logo: https://korepi.com/logo2.svg
@@ -141,6 +155,7 @@ docs:
 
   - name: WebGAL
     desc: 全新的网页端视觉小说引擎
+    logo: https://docs.openwebgal.com/favicon.ico
     url: https://docs.openwebgal.com/
     repo: https://github.com/OpenWebGAL/WebGAL_Doc
     preview: /assets/image/webgal.jpg
@@ -267,14 +282,7 @@ docs:
     logo: https://www.codermast.com/logo.png
     url: https://www.codermast.com/
     repo: https://github.com/CoderMast/CoderMast-Notes
-    preview: /assets/image/codermast-notes.png
-
-  - name: AmongUs 模组档案
-    desc: 一个记录所有Among Us模组的网站。
-    logo: https://aumod.site/AuModDocs(50r).png
-    url: https://aumod.site/
-    repo: https://github.com/QingFeng-awa
-    preview: https://aumod.site/AuModDocs-BG.png
+    preview: /assets/image/codermast.png
 
   - name: Hydro
     desc: 高性能在线测评系统
@@ -297,6 +305,19 @@ docs:
     repo: https://wzciot.site
     preview: /assets/image/wwiot-camerasys-home.jpg
 
+  - name: Warm-Flow
+    desc: Warm-Flow工作流
+    logo: http://www.warm-flow.cn/logo.png
+    url: http://www.warm-flow.cn
+    repo: https://github.com/dromara/warm-flow
+    preview: /assets/image/warm-flow.png
+
+  - name: CherryDAP
+    desc: CherryDAP 是一个使用了 CherryUSB 作为协议栈的 DAPLink 实现
+    url: https://cherrydap.cherry-embedded.org/
+    repo: https://github.com/cherry-embedded/CherryDAP/tree/master/docs
+    preview: /assets/image/cherrydap.jpg
+
 portfolios:
   - name: 尚程
     url: https://cheng-shang.me/zh/
@@ -318,17 +339,10 @@ blogs:
     repo: https://github.com/mo7cc/BlogSource.git
     preview: https://file.mo7.cc/disk/blog_preview.png
 
-  - name: 被遗忘的博客
-    desc: 个人博客，记录生活和随想
-    logo: https://wenchao.ren/logo.jpg
-    url: https://wenchao.ren/
-    repo: https://github.com/xkrivzooh/wenchao.ren
-    preview: /assets/image/wenchao_blog_preview.png
-
   - name: 计算机应试全家桶
     desc: 磨刀不误砍柴工、读完硕士再打工...
-    logo: https://408.142vip.cn/assets/408_logo.png
-    url: https://408.142vip.cn/
+    logo: https://142vip.github.io/408CSFamily/408_logo.png
+    url: https://142vip.github.io/408CSFamily/
     repo: https://github.com/142vip/408CSFamily
     preview: /assets/image/cs.jpg
 
@@ -399,13 +413,6 @@ blogs:
     url: https://timpcfan.site/
     repo: https://github.com/timpcfan/timpcfan.github.io
     preview: /assets/image/transtan-lei.jpg
-
-  - name: weiser's blog
-    desc: 一个有纸、笔、橡皮擦并且坚持严格的行为准则的人，实质上就是一台通用图灵机。
-    logo: https://weiser.fun/logo.png
-    url: https://weiser.fun/
-    repo: https://github.com/xwzbupt/personal-site
-    preview: /assets/image/weiser.jpg
 
   - name: White's Blog
     desc: Good good study, Day day up!
@@ -497,13 +504,6 @@ blogs:
     url: https://guoxicheng.top
     repo: https://github.com/GuoXiCheng/guoxicheng.github.io
     preview: /assets/image/guo-s-page-zh.png
-
-  - name: Warm-Flow
-    desc: Warm-Flow工作流
-    logo: http://www.warm-flow.cn/logo.png
-    url: http://www.warm-flow.cn
-    repo: https://github.com/dromara/warm-flow
-    preview: /assets/image/warm-flow.png
 ---
 
 ## 使用 VuePress Theme Hope 的文档
