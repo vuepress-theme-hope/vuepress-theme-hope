@@ -4,6 +4,14 @@ All notable changes to this project will be documented in this file. See [Conven
 
 <!-- #region recent-change -->
 
+## [2.0.0-rc.65](https://github.com/vuepress-theme-hope/vuepress-theme-hope/compare/v2.0.0-rc.64...v2.0.0-rc.65) (2024-12-16)
+
+### 🐛 Bug Fixes
+
+- **components:** fix SiteInfo style ([3dc9c50](https://github.com/vuepress-theme-hope/vuepress-theme-hope/commit/3dc9c50058eeeaa3ffd345c615a112c57ed25df0))
+
+<!-- #region recent-change -->
+
 ## [2.0.0-rc.64](https://github.com/vuepress-theme-hope/vuepress-theme-hope/compare/v2.0.0-rc.63...v2.0.0-rc.64) (2024-12-13)
 
 **Note:** Version bump only for package vuepress-plugin-components

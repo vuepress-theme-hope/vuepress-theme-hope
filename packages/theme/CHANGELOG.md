@@ -4,6 +4,25 @@ All notable changes to this project will be documented in this file. See [Conven
 
 <!-- #region recent-change -->
 
+## [2.0.0-rc.65](https://github.com/vuepress-theme-hope/vuepress-theme-hope/compare/v2.0.0-rc.64...v2.0.0-rc.65) (2024-12-16)
+
+### ⚠ BREAKING CHANGES
+
+- **theme:** remove navbar slots as they can be achieved with navbarLayout option
+
+### ✨ Features
+
+- bump deps ([9683b38](https://github.com/vuepress-theme-hope/vuepress-theme-hope/commit/9683b38c4913135bdf7da9db3d609929c42d961a))
+- **theme:** add focus mode, close [#4478](https://github.com/vuepress-theme-hope/vuepress-theme-hope/issues/4478) ([e6eef4f](https://github.com/vuepress-theme-hope/vuepress-theme-hope/commit/e6eef4f1a96d5f0e4b1214e69feda02652566b03))
+- **theme:** allow empty avatar and media with empty array, close [#4629](https://github.com/vuepress-theme-hope/vuepress-theme-hope/issues/4629) ([87830ec](https://github.com/vuepress-theme-hope/vuepress-theme-hope/commit/87830ec97e0b27186c42ebb453e76031b540b8de))
+- **theme:** remove navbar slots as they can be achieved with navbarLayout option ([f565a9a](https://github.com/vuepress-theme-hope/vuepress-theme-hope/commit/f565a9aee0baf637718c7d232e0247ee054432ce))
+
+### 🐛 Bug Fixes
+
+- **components:** fix SiteInfo style ([3dc9c50](https://github.com/vuepress-theme-hope/vuepress-theme-hope/commit/3dc9c50058eeeaa3ffd345c615a112c57ed25df0))
+
+<!-- #region recent-change -->
+
 ## [2.0.0-rc.64](https://github.com/vuepress-theme-hope/vuepress-theme-hope/compare/v2.0.0-rc.63...v2.0.0-rc.64) (2024-12-13)
 
 ### ✨ Features
