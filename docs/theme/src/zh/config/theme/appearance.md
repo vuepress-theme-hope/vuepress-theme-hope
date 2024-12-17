@@ -62,7 +62,7 @@ tag:
 
 :::
 
-## externalLinkIcon <Badge text="enabled by default" />
+## externalLinkIcon <Badge text="默认启用" />
 
 - 类型: `boolean`
 - 默认值: `true`
