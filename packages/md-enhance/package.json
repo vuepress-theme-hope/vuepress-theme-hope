@@ -90,7 +90,7 @@
     "kotlin-playground": "^1.23.0",
     "markmap-lib": "^0.17.0",
     "markmap-toolbar": "^0.17.0",
-    "markmap-view": "^0.17.0",
+    "markmap-view": "^0.17.0 || ^0.18.0",
     "mermaid": "^11.2.0",
     "sandpack-vue3": "^3.0.0",
     "sass": "^1.81.0",
