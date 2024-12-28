@@ -22,7 +22,7 @@
     "artplayer-plugin-danmuku": "5.1.4",
     "dashjs": "4.7.4",
     "hls.js": "1.5.17",
-    "mpegts.js": "1.7.3",
+    "mpegts.js": "1.8.0",
     "sass-embedded": "1.83.0",
     "sass-loader": "16.0.4",
     "vidstack": "1.12.12",
