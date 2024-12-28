@@ -20,7 +20,7 @@
     "@vuepress/bundler-webpack": "2.0.0-rc.19",
     "@vuepress/theme-default": "2.0.0-rc.66",
     "chart.js": "4.4.7",
-    "echarts": "5.5.1",
+    "echarts": "5.6.0",
     "echarts-wordcloud": "2.1.0",
     "katex": "0.16.15",
     "kotlin-playground": "1.30.0",
