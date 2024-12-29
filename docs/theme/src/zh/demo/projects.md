@@ -6,6 +6,13 @@ category:
   - 案例
 
 docs:
+  - name: Sixflowers
+    desc: Yunzai机器人教程
+    logo: https://sixflowers.icu/4.jpg
+    url: https://sixflowers.icu/
+    repo: https://github.com/dmmdekkd
+    preview: https://sixflowers.icu/4.jpg
+
   - name: PvZ2 Gardendless
     desc: 完全重制的全桌面平台PvZ2.
     logo: https://pvzge.com/pvz_logo.webp
