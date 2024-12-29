@@ -22,7 +22,7 @@
     "@vuepress/plugin-revealjs": "2.0.0-rc.68",
     "chart.js": "4.4.7",
     "echarts": "5.6.0",
-    "katex": "0.16.18",
+    "katex": "0.16.19",
     "kotlin-playground": "1.30.0",
     "markmap-lib": "0.18.4",
     "markmap-toolbar": "0.18.4",
