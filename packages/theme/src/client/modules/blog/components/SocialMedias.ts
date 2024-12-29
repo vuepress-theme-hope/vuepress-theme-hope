@@ -41,7 +41,7 @@ export default defineComponent({
                 "aria-label": name || "",
                 ...(isPure.value ? {} : { "data-balloon-pos": "up" }),
                 innerHTML: isLinkHttp(icon)
-                  ? `<img class="icon ${name}-icon" src="${icon}">`
+                  ? `<img class="vp-social-media-icon ${name}-icon" src="${icon}">`
                   : icon,
               }),
             ),

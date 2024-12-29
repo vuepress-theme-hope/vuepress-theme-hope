@@ -12,7 +12,6 @@ import {
 } from "vue";
 import { usePageFrontmatter, withBase } from "vuepress/client";
 
-import HopeIcon from "@theme-hope/components/HopeIcon";
 import { DropTransition } from "@theme-hope/components/transitions/index";
 import { useAuthorInfo } from "@theme-hope/composables/index";
 
@@ -253,7 +252,7 @@ export default defineComponent({
                               target: "_blank",
                               title: name,
                             },
-                            h(HopeIcon, { icon }),
+                            h(resolveComponent("VPIcon"), { icon }),
                           ),
                         ),
                       )

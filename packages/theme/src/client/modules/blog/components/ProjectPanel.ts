@@ -1,10 +1,7 @@
-import { isLinkAbsolute, isLinkHttp } from "@vuepress/helper/client";
 import type { PropType, VNode } from "vue";
 import { defineComponent, h, resolveComponent } from "vue";
-import { withBase } from "vuepress/client";
 import { generateIndexFromHash } from "vuepress-shared/client";
 
-import HopeIcon from "@theme-hope/components/HopeIcon";
 import { useNavigate, usePure } from "@theme-hope/composables/index";
 import {
   ArticleIcon,
@@ -44,25 +41,15 @@ export default defineComponent({
     const isPure = usePure();
     const navigate = useNavigate();
 
-    const renderIcon = (icon = "", alt = "icon"): VNode | null => {
+    const renderIcon = (icon = ""): VNode | null => {
       // Built in icon
       if (AVAILABLE_PROJECT_TYPES.includes(icon))
-        return h(resolveComponent(`${icon}-icon`));
-
-      // It’s a full image link
-      if (isLinkHttp(icon))
-        return h("img", { class: "vp-project-image", src: icon, alt });
-
-      // It’s an absolute image link
-      if (isLinkAbsolute(icon))
-        return h("img", {
-          class: "vp-project-image",
-          src: withBase(icon),
-          alt,
+        return h(resolveComponent(`${icon}-icon`), {
+          class: "vp-project-icon",
         });
 
-      // Render as icon font
-      return h(HopeIcon, { icon });
+      // Render as icon
+      return h(resolveComponent("VPIcon"), { class: "vp-project-icon", icon });
     };
 
     return (): VNode | null =>
@@ -86,7 +73,7 @@ export default defineComponent({
               },
             },
             [
-              renderIcon(icon, name),
+              renderIcon(icon),
               h("div", { class: "vp-project-name" }, name),
               h("div", { class: "vp-project-desc" }, desc),
             ],

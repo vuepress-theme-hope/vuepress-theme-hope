@@ -6,6 +6,7 @@ import type { CopyrightPluginOptions } from "@vuepress/plugin-copyright";
 import type { DocSearchPluginOptions } from "@vuepress/plugin-docsearch";
 import type { FeedPluginOptions } from "@vuepress/plugin-feed";
 import type { GitPluginOptions } from "@vuepress/plugin-git";
+import type { IconPluginOptions } from "@vuepress/plugin-icon";
 import type {
   NoticeOptions,
   NoticePluginOptions,
@@ -77,11 +78,11 @@ export interface DeprecatedPluginsOptions {
 
 export interface PluginsOptions extends DeprecatedPluginsOptions {
   /**
-   * Enable @vuepress/active-header-links or not
+   * Enable active-header-links plugin or not
    *
    * @see https://ecosystem.vuejs.press/plugins/development/active-header-links.html
    *
-   * 是否启用 @vuepress/active-header-links 插件
+   * 是否启用 active-header-links 插件
    *
    * @see https://ecosystem.vuejs.press/zh/plugins/development/active-header-links.html
    *
@@ -90,13 +91,15 @@ export interface PluginsOptions extends DeprecatedPluginsOptions {
   activeHeaderLinks?: boolean;
 
   /**
-   * Options for @vuepress/back-to-top
+   * Back to top plugin options
    *
    * @see https://ecosystem.vuejs.press/plugins/features/back-to-top.html
    *
    * 返回顶部插件配置
    *
    * @see https://ecosystem.vuejs.press/zh/plugins/features/back-to-top.html
+   *
+   * @default true
    */
   backToTop?: BackToTopPluginOptions | boolean;
 
@@ -110,7 +113,7 @@ export interface PluginsOptions extends DeprecatedPluginsOptions {
   blog?: BlogOptions | boolean;
 
   /**
-   * Options for @vuepress/catalog
+   * Catalog plugin options
    *
    * @see https://ecosystem.vuejs.press/plugins/features/catalog.html
    *
@@ -123,13 +126,13 @@ export interface PluginsOptions extends DeprecatedPluginsOptions {
   catalog?: CatalogPluginOptions | boolean;
 
   /**
-   * Components enabled
+   * Components plugin options
    *
    * @description FontIcon is used internally, so it will be registered anyway.
    *
    * @see https://plugin-components.vuejs.press/config.html
    *
-   * 需要启用的插件
+   * 插件选项配置
    *
    * @description FontIcon 被内部使用，所以它无论如何都会被注册。
    *
@@ -149,7 +152,7 @@ export interface PluginsOptions extends DeprecatedPluginsOptions {
   comment?: CommentPluginOptions | false;
 
   /**
-   * Options for @vuepress/copy-code
+   * Copy code plugin options
    *
    * @see https://ecosystem.vuejs.press/plugins/features/copy-code.html
    *
@@ -160,7 +163,7 @@ export interface PluginsOptions extends DeprecatedPluginsOptions {
   copyCode?: CopyCodePluginOptions | boolean;
 
   /**
-   * Options for @vuepress/copyright
+   * Copyright plugin options
    *
    * @see https://ecosystem.vuejs.press/plugins/features/copyright.html
    *
@@ -173,7 +176,7 @@ export interface PluginsOptions extends DeprecatedPluginsOptions {
   copyright?: CopyrightPluginOptions | boolean;
 
   /**
-   * Options for @vuepress/docsearch
+   * DocSearch plugin options
    *
    * @see https://ecosystem.vuejs.press/plugins/search/docsearch.html
    *
@@ -195,7 +198,7 @@ export interface PluginsOptions extends DeprecatedPluginsOptions {
   feed?: Omit<FeedPluginOptions, "hostname"> | boolean;
 
   /**
-   * Options for @vuepress/git
+   * Git plugin options
    *
    * @description By default this plugin is only enabled in production mode for performance reasons.
    *
@@ -210,6 +213,13 @@ export interface PluginsOptions extends DeprecatedPluginsOptions {
   git?: GitPluginOptions | boolean;
 
   /**
+   * Icon plugin options
+   *
+   * 图标插件选项
+   */
+  icon?: IconPluginOptions;
+
+  /**
    * Notice options
    *
    * 公告选项
@@ -219,18 +229,16 @@ export interface PluginsOptions extends DeprecatedPluginsOptions {
   notice?: NoticeOptions[] | NoticePluginOptions;
 
   /**
-   * Enable @vuepress/nprogress or not
+   * Enable nprogress plugin or not
    *
-   * 是否启用 @vuepress/nprogress 插件
+   * 是否启用 nprogress 插件
    *
    * @default true
    */
   nprogress?: boolean;
 
   /**
-   * @vuepress/photo-swipe options
-   *
-   * @description This plugin is enabled by default
+   * photo-swipe plugin options
    *
    * @see https://ecosystem.vuejs.press/plugins/features/photo-swipe.html
    *
@@ -256,7 +264,7 @@ export interface PluginsOptions extends DeprecatedPluginsOptions {
   pwa?: PwaPluginOptions | boolean;
 
   /**
-   * ReadingTime options
+   * Reading time plugin options
    *
    * @see https://ecosystem.vuejs.press/plugins/development/reading-time.html
    *
@@ -269,7 +277,7 @@ export interface PluginsOptions extends DeprecatedPluginsOptions {
   readingTime?: ReadingTimePluginOptions | boolean;
 
   /**
-   * Redirect options
+   * Redirect plugin options
    *
    * @see https://ecosystem.vuejs.press/plugins/tools/redirect.html
    *
@@ -280,7 +288,7 @@ export interface PluginsOptions extends DeprecatedPluginsOptions {
   redirect?: RedirectPluginOptions | boolean;
 
   /**
-   * @vuepress/search plugin options
+   * Search plugin options
    *
    * @see https://ecosystem.vuejs.press/plugins/search/search.html
    *
@@ -291,7 +299,7 @@ export interface PluginsOptions extends DeprecatedPluginsOptions {
   search?: SearchPluginOptions | boolean;
 
   /**
-   * slimsearch plugin options
+   * Slimsearch plugin options
    *
    * @see https://ecosystem.vuejs.press/zh/plugins/search/slimsearch.html
    *
@@ -302,7 +310,7 @@ export interface PluginsOptions extends DeprecatedPluginsOptions {
   slimsearch?: SlimSearchPluginOptions | boolean;
 
   /**
-   * Options for @vuepress/seo
+   * SEO plugin options
    *
    * @see https://ecosystem.vuejs.press/plugins/seo/seo/config.html
    *
@@ -315,7 +323,7 @@ export interface PluginsOptions extends DeprecatedPluginsOptions {
   seo?: Omit<SeoPluginOptions, "hostname" | "author"> | boolean;
 
   /**
-   * Options for @vuepress/sitemap
+   * Sitemap plugin options
    *
    * @see https://ecosystem.vuejs.press/plugins/seo/sitemap/config.html
    *
@@ -328,7 +336,7 @@ export interface PluginsOptions extends DeprecatedPluginsOptions {
   sitemap?: Omit<SitemapPluginOptions, "hostname"> | boolean;
 
   /**
-   * Options for @vuepress/watermark
+   * Watermark plugin options
    *
    * @see https://ecosystem.vuejs.press/plugins/features/watermark.html
    *

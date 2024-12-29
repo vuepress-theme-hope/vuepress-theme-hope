@@ -35,7 +35,7 @@
 .vp-project-card,// page title
 .vp-page-title h1,
 .vp-project-home .vp-feature-item {
-  &:hover .icon {
+  &:hover .vp-icon {
     animation-name: bounce;
     animation-duration: 1s;
     animation-timing-function: cubic-bezier(0.28, 0.84, 0.42, 1);

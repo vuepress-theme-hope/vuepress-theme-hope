@@ -1,6 +1,6 @@
 import { isString } from "@vuepress/helper/client";
 import type { SlotsType, VNode } from "vue";
-import { computed, defineComponent, h } from "vue";
+import { computed, defineComponent, h, resolveComponent } from "vue";
 import {
   usePageFrontmatter,
   useSiteLocaleData,
@@ -10,7 +10,6 @@ import {
 import AutoLink from "@theme-hope/components/AutoLink";
 import { DropTransition } from "@theme-hope/components/transitions/index";
 
-import HopeIcon from "./HopeIcon.js";
 import type { ThemeProjectHomePageFrontmatter } from "../../shared/index.js";
 
 import "../styles/hero-info.scss";
@@ -180,7 +179,9 @@ export default defineComponent({
                             action.icon
                               ? {
                                   before: () =>
-                                    h(HopeIcon, { icon: action.icon }),
+                                    h(resolveComponent("VPIcon"), {
+                                      icon: action.icon,
+                                    }),
                                 }
                               : {},
                           ),

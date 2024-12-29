@@ -10,6 +10,7 @@ export const PLUGIN_CHECKLIST = [
   ["@vuepress/plugin-docsearch", "docsearch"],
   ["@vuepress/plugin-feed", "feed"],
   ["@vuepress/plugin-git", "git"],
+  ["@vuepress/plugin-icon", "icon"],
   [
     "@vuepress/plugin-links-check",
     "",

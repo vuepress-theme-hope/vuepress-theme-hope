@@ -25,6 +25,7 @@ export const prepareSeparatedConfigFile = (
         import.meta,
       )}"`,
       `import { h } from "vue"`,
+      `import { resolveComponent } from "vue"`,
     );
     actions.push(`\
 defineCatalogInfoGetter((meta) => {
@@ -34,7 +35,7 @@ defineCatalogInfoGetter((meta) => {
 
   return shouldIndex ? {
     title,
-    content: icon ? () =>[h(HopeIcon, { icon }), title] : null,
+    content: icon ? () =>[h(resolveComponent("VPIcon"), { icon }), title] : null,
     order: meta.${PageInfo.order},
     index: meta.${PageInfo.index},
   } : null;
@@ -70,7 +71,7 @@ defineCatalogInfoGetter((meta) => {
   return app.writeTemp(
     `theme-hope/config.js`,
     `\
-import { HopeIcon, Layout, NotFound, injectDarkmode, setupDarkmode, setupSidebarItems, scrollPromise } from "${CLIENT_FOLDER}export.js";
+import { Layout, NotFound, injectDarkmode, setupDarkmode, setupSidebarItems, scrollPromise } from "${CLIENT_FOLDER}export.js";
 
 ${imports.join("\n")}
 
@@ -93,9 +94,6 @@ export default {
 
     // inject global properties
     injectDarkmode(app);
-
-    // provide HopeIcon as global component
-    app.component("HopeIcon", HopeIcon);
 
 ${enhances.map((item) => `    ${item}`).join("\n")}
   },

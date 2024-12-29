@@ -38,12 +38,6 @@ export const theme = (
 
     favicon: "/favicon.ico",
 
-    iconAssets: [
-      "https://theme-hope-assets.vuejs.press/fontawesome/js/fontawesome.min.js",
-      "https://theme-hope-assets.vuejs.press/fontawesome/js/solid.min.js",
-      "https://theme-hope-assets.vuejs.press/fontawesome/js/brands.min.js",
-    ],
-
     repo: `vuepress-theme-hope/vuepress-theme-hope/tree/main/packages/${name}/`,
     docsRepo: "vuepress-theme-hope/vuepress-theme-hope",
     docsDir: `docs/${name}/src`,
@@ -136,6 +130,14 @@ export const theme = (
               },
             ],
           }),
+
+      icon: {
+        assets: [
+          "https://theme-hope-assets.vuejs.press/fontawesome/js/fontawesome.min.js",
+          "https://theme-hope-assets.vuejs.press/fontawesome/js/solid.min.js",
+          "https://theme-hope-assets.vuejs.press/fontawesome/js/brands.min.js",
+        ],
+      },
 
       redirect: { switchLocale: "modal" },
 

@@ -3,7 +3,7 @@
 
 // plugin-catalog
 .vp-catalog-title {
-  img.icon {
+  img.vp-icon {
     vertical-align: baseline;
     height: 1em;
     margin-inline-end: 0.25rem;
@@ -61,6 +61,19 @@
   }
 }
 // stylelint-enable selector-class-pattern
+
+// plugin-icon
+.vp-icon {
+  // fix width for fontawesome
+  /* stylelint-disable-next-line selector-class-pattern */
+  .svg-inline--fa {
+    width: 1em;
+
+    font-size: 0.875em;
+    line-height: 0.0714285718em;
+    vertical-align: -0.0714285705em;
+  }
+}
 
 // plugin-markdown-hint
 .hint-container {

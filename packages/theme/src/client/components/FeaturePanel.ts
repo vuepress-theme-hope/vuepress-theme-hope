@@ -1,9 +1,7 @@
 import { isLinkExternal } from "@vuepress/helper/client";
 import type { FunctionalComponent, VNode } from "vue";
-import { h } from "vue";
+import { h, resolveComponent } from "vue";
 import { RouteLink, withBase } from "vuepress/client";
-
-import HopeIcon from "@theme-hope/components/HopeIcon";
 
 import type {
   ThemeProjectHomeFeatureOptions,
@@ -96,7 +94,7 @@ const FeaturePanel: FunctionalComponent<
                 features.map(({ icon, title, details, link }) => {
                   const children = [
                     h("h3", { class: "vp-feature-title" }, [
-                      h(HopeIcon, { icon }),
+                      h(resolveComponent("VPIcon"), { icon }),
                       h("span", { innerHTML: title }),
                     ]),
                     h("p", {

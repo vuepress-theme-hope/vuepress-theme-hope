@@ -11,8 +11,6 @@ export default hopeTheme({
     url: "https://mister-hope.com",
   },
 
-  iconAssets: "fontawesome-with-brands",
-
   logo: "https://theme-hope-assets.vuejs.press/logo.svg",
 
   repo: "vuepress-theme-hope/vuepress-theme-hope",
@@ -172,6 +170,10 @@ export default hopeTheme({
 
     components: {
       components: ["Badge", "VPCard"],
+    },
+
+    icon: {
+      assets: "fontawesome-with-brands",
     },
 
     // 如果你需要 PWA。安装 @vuepress/plugin-pwa 并取消下方注释

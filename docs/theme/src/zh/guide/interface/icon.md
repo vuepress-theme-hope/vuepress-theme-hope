@@ -43,7 +43,7 @@ head:
 
 ## 在 Markdown 中添加图标
 
-你可以使用 `<HopeIcon />` 组件在 markdown 中添加图标。
+你可以使用 `<VPIcon />` 组件在 markdown 中添加图标。
 
 - `icon` 属性接受与其他 `icon` 选项相同的内容，即：字体类名和图像 url
 - `color` 属性接受一个 css 颜色值，它将用作图标颜色（可选）
@@ -51,12 +51,12 @@ head:
 
 ::: details 案例
 
-- <HopeIcon icon="home" color="red" />
-- <HopeIcon icon="//theme-hope-assets.vuejs.press/logo.svg" size="4rem" vertical-align="middle" />
+- <VPIcon icon="home" color="red" />
+- <VPIcon icon="//theme-hope-assets.vuejs.press/logo.svg" size="4rem" vertical-align="middle" />
 
 ```md
-- <HopeIcon icon="home" color="red" />
-- <HopeIcon icon="//theme-hope-assets.vuejs.press/logo.svg" size="4rem" vertical-align="middle" />
+- <VPIcon icon="home" color="red" />
+- <VPIcon icon="//theme-hope-assets.vuejs.press/logo.svg" size="4rem" vertical-align="middle" />
 ```
 
 :::
@@ -188,7 +188,3 @@ export default {
 所以我们不建议你使用多个 iconfont 链接作为资源，如果你准备这样做，请检查图标以确保每个先前的项目图标都不会被后来的图标覆盖。
 
 :::
-
-<script setup lang="ts">
-import HopeIcon from "@theme-hope/components/HopeIcon";
-</script>

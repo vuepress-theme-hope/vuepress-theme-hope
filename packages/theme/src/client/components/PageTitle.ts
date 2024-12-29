@@ -1,8 +1,7 @@
 import type { VNode } from "vue";
-import { defineComponent, h } from "vue";
+import { defineComponent, h, resolveComponent } from "vue";
 import { usePageData, usePageFrontmatter } from "vuepress/client";
 
-import HopeIcon from "@theme-hope/components/HopeIcon";
 import { usePageInfo, useThemeLocaleData } from "@theme-hope/composables/index";
 import PageInfo from "@theme-hope/modules/info/components/PageInfo";
 
@@ -24,7 +23,7 @@ export default defineComponent({
         h("h1", [
           themeLocale.value.titleIcon === false
             ? null
-            : h(HopeIcon, { icon: frontmatter.value.icon }),
+            : h(resolveComponent("VPIcon"), { icon: frontmatter.value.icon }),
           page.value.title,
         ]),
         h(PageInfo, {

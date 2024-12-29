@@ -17,7 +17,6 @@ export const AVAILABLE_COMPONENTS: (
   "Badge",
   "BiliBili",
   "CodePen",
-  "FontIcon",
   "PDF",
   "Share",
   "SiteInfo",

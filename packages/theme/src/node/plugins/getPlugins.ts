@@ -1,6 +1,7 @@
 import { isPlainObject } from "@vuepress/helper";
 import { backToTopPlugin } from "@vuepress/plugin-back-to-top";
 import { copyCodePlugin } from "@vuepress/plugin-copy-code";
+import { iconPlugin } from "@vuepress/plugin-icon";
 import { linksCheckPlugin } from "@vuepress/plugin-links-check";
 import { markdownExtPlugin } from "@vuepress/plugin-markdown-ext";
 import { markdownHintPlugin } from "@vuepress/plugin-markdown-hint";
@@ -111,12 +112,14 @@ export const getPlugins = (
     copyCode === false
       ? null
       : copyCodePlugin(isPlainObject(copyCode) ? copyCode : {}),
+    // @vuepress/plugin-icon
+    iconPlugin(pluginsOptions.icon ?? {}),
     // @vuepress/plugin-photo-swipe
     photoSwipe === false
       ? null
       : photoSwipePlugin(isPlainObject(photoSwipe) ? photoSwipe : {}),
 
-    getComponentsPlugin(options, pluginsOptions.components, legacy),
+    getComponentsPlugin(pluginsOptions.components, legacy),
     getActiveHeaderLinksPlugin(pluginsOptions.activeHeaderLinks),
     getCatalogPlugin(pluginsOptions.catalog),
     pluginsOptions.nprogress === false ? null : nprogressPlugin(),

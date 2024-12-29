@@ -34,8 +34,6 @@ export const componentsPlugin =
       extendsBundlerOptions: (bundlerOptions, app): void => {
         if (options.components?.includes("ArtPlayer"))
           addViteOptimizeDepsInclude(bundlerOptions, app, "artplayer");
-        if (options.components?.includes("FontIcon"))
-          addCustomElement(bundlerOptions, app, "iconify-icon");
         if (options.components?.includes("VidStack"))
           addCustomElement(bundlerOptions, app, /^media-/);
 

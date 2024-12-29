@@ -650,6 +650,17 @@ export const convertThemeOptions = (
   convertBlogOptions(themeOptions, plugins);
   convertFooterOptions(themeOptions);
 
+  // handle icon options
+  deprecatedLogger({
+    options: themeOptions,
+    old: "iconAssets",
+    new: "plugins.icon.assets",
+  });
+  deprecatedLogger({
+    options: themeOptions,
+    old: "iconPrefix",
+    new: "plugins.icon.prefix",
+  });
   // handle addThis
   if (themeOptions.addThis)
     droppedLogger({

@@ -1,10 +1,9 @@
 import { isString } from "@vuepress/helper/client";
 import type { PropType, VNode } from "vue";
-import { defineComponent, h } from "vue";
+import { defineComponent, h, resolveComponent } from "vue";
 import { useRoute } from "vuepress/client";
 
 import AutoLink from "@theme-hope/components/AutoLink";
-import HopeIcon from "@theme-hope/components/HopeIcon";
 import { isActiveItem } from "@theme-hope/utils/index";
 
 import type { AutoLinkOptions } from "../../../../shared/index.js";
@@ -45,7 +44,7 @@ export default defineComponent({
           })
         : // If the item only has text, render it as `<p>`
           h("p", props, [
-            h(HopeIcon, { icon: props.config.icon }),
+            h(resolveComponent("VPIcon"), { icon: props.config.icon }),
             props.config.text,
           ]);
   },

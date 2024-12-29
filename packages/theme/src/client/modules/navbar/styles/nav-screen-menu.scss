@@ -71,8 +71,13 @@
       color: var(--vp-c-accent);
     }
 
-    .icon {
+    .vp-icon {
       font-size: 1em;
+
+      &:is(img) {
+        vertical-align: -0.125em;
+        height: 1em;
+      }
     }
   }
 }
