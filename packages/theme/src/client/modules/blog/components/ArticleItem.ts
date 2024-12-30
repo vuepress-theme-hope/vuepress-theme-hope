@@ -1,6 +1,6 @@
 import type { PropType, SlotsType, VNode } from "vue";
 import { defineComponent, h, toRef } from "vue";
-import { RouteLink, withBase } from "vuepress/client";
+import { RouteLink, useRouter, withBase } from "vuepress/client";
 
 import {
   SlideIcon,
@@ -59,8 +59,13 @@ export default defineComponent({
   }>,
 
   setup(props, { slots }) {
+    const router = useRouter();
     const articleInfo = toRef(props, "info");
     const { info: pageInfo, items } = useArticleInfo(props);
+
+    const to = async (): Promise<void> => {
+      await router.push(props.path);
+    };
 
     return (): VNode => {
       const {
@@ -75,7 +80,7 @@ export default defineComponent({
 
       return h(
         "div",
-        { class: "vp-article-wrapper" },
+        { class: "vp-article-wrapper", onClick: to },
         h(
           "article",
           {
