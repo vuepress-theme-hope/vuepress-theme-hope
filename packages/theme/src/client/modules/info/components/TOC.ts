@@ -206,7 +206,12 @@ export default defineComponent({
               slots.after?.(),
             ]),
           ])
-        : null;
+        : h("div", { class: "vp-toc-placeholder" }, [
+            h("aside", { id: "toc", "vp-toc": "" }, [
+              slots.before?.(),
+              slots.after?.(),
+            ]),
+          ]);
     };
   },
 });
