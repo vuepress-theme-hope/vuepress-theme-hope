@@ -56,7 +56,6 @@ export default {
 - `@theme-hope/components/HeroInfo` 主页 Logo 及介绍
 - `@theme-hope/components/HighlightPanel`: 主页亮点
 - `@theme-hope/components/HomePage` 主页
-- `@theme-hope/components/HopeIcon` 图标
 - `@theme-hope/components/MarkdownContent` Markdown 内容
 - `@theme-hope/components/NormalPage` 常规页面
 - `@theme-hope/components/PageFooter` 页脚

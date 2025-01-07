@@ -52,8 +52,6 @@ export const hopeTheme = (
       markdown = {},
       plugins = {},
       hostname,
-      iconAssets,
-      iconPrefix,
       sidebarSorter,
       ...themeOptions
     } = behaviorOptions.compact
@@ -145,8 +143,6 @@ export const hopeTheme = (
           plugins,
           hostname,
           hotReload,
-          iconAssets,
-          iconPrefix,
           favicon,
         },
         behaviorOptions.compact,

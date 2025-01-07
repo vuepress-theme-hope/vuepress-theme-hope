@@ -16,8 +16,8 @@ This tutorial introduces VuePress project commands.
 
 ## Common Commands
 
-- `vuepress dev [dir]` will start a development server to allow you to develop your VuePress site locally.
-- `vuepress build [dir]` will build your VuePress site into static files for your subsequent deployment.
+- `vuepress dev <dir>` will start a development server to allow you to develop your VuePress site locally.
+- `vuepress build <dir>` will build your VuePress site into static files for your subsequent deployment.
 
 :::: info Using Template
 

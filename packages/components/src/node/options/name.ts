@@ -10,7 +10,6 @@ export type AvailableComponent =
   | "Badge"
   | "BiliBili"
   | "CodePen"
-  | "FontIcon"
   | "PDF"
   | "Share"
   | "StackBlitz"

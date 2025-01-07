@@ -1,5 +1,3 @@
-import type { FontIconAssets } from "vuepress-plugin-components";
-
 export type DarkmodeOptions =
   | "switch"
   | "auto"
@@ -49,10 +47,22 @@ export interface AppearanceLocaleData {
   };
 }
 
+export interface DeprecatedAppearanceOptions {
+  /**
+   * @deprecated Use `plugins.icon.assets` instead
+   */
+  iconAssets?: never;
+
+  /**
+   * @deprecated Use `plugins.icon.prefix` instead
+   */
+  iconPrefix?: never;
+}
+
 /**
  * @kind root
  */
-export interface AppearanceOptions {
+export interface AppearanceOptions extends DeprecatedAppearanceOptions {
   /**
    * Whether enable pure mode
    *
@@ -132,24 +142,6 @@ export interface AppearanceOptions {
    * @default false
    */
   fullscreen?: boolean;
-
-  /**
-   * Link of font icon asset
-   *
-   * 字体图标资源链接
-   *
-   * @description `"iconify"`, `"fontawesome"` and `"fontawesome-with-brands"` keywords are supported
-   */
-  iconAssets?: FontIconAssets;
-
-  /**
-   * Font Icon class prefix
-   *
-   * 字体图标 class 前缀
-   *
-   * @default ""
-   */
-  iconPrefix?: string;
 }
 
 export type AppearanceConfig = AppearanceOptions;

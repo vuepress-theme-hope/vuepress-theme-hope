@@ -1,9 +1,8 @@
 import type { PropType, VNode } from "vue";
-import { computed, defineComponent, h, ref } from "vue";
+import { computed, defineComponent, h, ref, resolveComponent } from "vue";
 import { useRoute } from "vuepress/client";
 
 import AutoLink from "@theme-hope/components/AutoLink";
-import HopeIcon from "@theme-hope/components/HopeIcon";
 import SidebarLinks from "@theme-hope/modules/sidebar/components/SidebarLinks";
 import { isActiveSidebarItem } from "@theme-hope/modules/sidebar/utils/index";
 import { isActiveItem } from "@theme-hope/utils/index";
@@ -87,7 +86,7 @@ export default defineComponent({
           },
           [
             // Icon
-            h(HopeIcon, { icon }),
+            h(resolveComponent("VPIcon"), { icon }),
             // Title
             link
               ? h(AutoLink, {

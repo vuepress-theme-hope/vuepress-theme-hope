@@ -1,4 +1,5 @@
 /* eslint-disable vue/no-unused-properties */
+import type { ExactLocaleConfig } from "@vuepress/helper/client";
 import { useLocaleConfig } from "@vuepress/helper/client";
 import { useScrollLock } from "@vueuse/core";
 import type { VNode } from "vue";
@@ -16,13 +17,13 @@ import {
   EnterFullScreenIcon,
 } from "vuepress-shared/client";
 
-import type { PDFLocaleConfig } from "../../shared/locales.js";
+import type { PDFLocaleData } from "../../shared/locales.js";
 import { useSize } from "../composables/index.js";
 import { getLink, viewPDF } from "../utils/index.js";
 
 import "../styles/pdf.scss";
 
-declare const PDF_LOCALES: PDFLocaleConfig;
+declare const PDF_LOCALES: ExactLocaleConfig<PDFLocaleData>;
 
 export default defineComponent({
   name: "PDF",

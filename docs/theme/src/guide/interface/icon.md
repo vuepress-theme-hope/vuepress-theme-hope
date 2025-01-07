@@ -43,7 +43,7 @@ You can use icon in multiple places.
 
 ## Adding Icons in Markdown
 
-You can use `<HopeIcon />` component to add icon in markdown.
+You can use `<VPIcon />` component to add icon in markdown.
 
 - `icon` prop accepts the same content as other `icon` options, i.e.: font class and image url
 - `color` prop accepts a css color value, which will be used as the icon color (optional)
@@ -51,12 +51,12 @@ You can use `<HopeIcon />` component to add icon in markdown.
 
 ::: details Demo
 
-- <HopeIcon icon="home" color="red" />
-- <HopeIcon icon="//theme-hope-assets.vuejs.press/logo.svg" size="4rem" verticalAlign="middle" />
+- <VPIcon icon="home" color="red" />
+- <VPIcon icon="//theme-hope-assets.vuejs.press/logo.svg" size="4rem" verticalAlign="middle" />
 
 ```md
-- <HopeIcon icon="home" color="red" />
-- <HopeIcon icon="//theme-hope-assets.vuejs.press/logo.svg" size="4rem" verticalAlign="middle" />
+- <VPIcon icon="home" color="red" />
+- <VPIcon icon="//theme-hope-assets.vuejs.press/logo.svg" size="4rem" verticalAlign="middle" />
 ```
 
 :::
@@ -192,7 +192,3 @@ Iconfont will try to solve conflicts by assigning a new character if a new icon'
 So we do not recommend you to use multiple iconfont links as assets, if you ready want to do so, check the icons to ensure every former project icon is not covered by those in latter ones.
 
 :::
-
-<script setup lang="ts">
-import HopeIcon from "@theme-hope/components/HopeIcon";
-</script>

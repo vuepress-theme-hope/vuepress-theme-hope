@@ -1,4 +1,4 @@
-import { entries, fromEntries, getLocaleConfig } from "@vuepress/helper";
+import { entries, fromEntries, getFullLocaleConfig } from "@vuepress/helper";
 import type { App } from "vuepress/core";
 
 import { getEncryptConfig } from "./getEncryptConfig.js";
@@ -9,7 +9,7 @@ import type {
   ThemeLocaleOptions,
   ThemeOptions,
 } from "../../shared/index.js";
-import { themeLocalesData } from "../locales/index.js";
+import { themeLocaleInfo } from "../locales/index.js";
 import { logger } from "../utils.js";
 
 const ROOT_DISALLOW_CONFIG = [
@@ -47,32 +47,30 @@ export const getThemeData = (
     ),
     locales:
       // Assign locale data to `themeConfig`
-      getLocaleConfig({
+      getFullLocaleConfig({
         app,
         name: "vuepress-theme-hope",
-        default: fromEntries(
-          entries(themeLocalesData).map(
-            ([
-              locale,
-              // Make a copy here to avoid modifying the original data
-              { ...config },
-            ]) => {
-              // Remove locales if their features are not enabled
-              if (!enableBlog) {
-                // @ts-expect-error: The type is not optional
-                delete config.blogLocales;
+        default: themeLocaleInfo.map(
+          ([
+            langs,
+            // Make a copy here to avoid modifying the original data
+            { ...localeData },
+          ]) => {
+            // Remove locales if their features are not enabled
+            if (!enableBlog) {
+              // @ts-expect-error: The type is not optional
+              delete localeData.blogLocales;
 
-                // @ts-expect-error: The type is not optional
-                delete config.paginationLocales;
-              }
+              // @ts-expect-error: The type is not optional
+              delete localeData.paginationLocales;
+            }
 
-              if (!enableEncrypt)
-                // @ts-expect-error: The type is not optional
-                delete config.encryptLocales;
+            if (!enableEncrypt)
+              // @ts-expect-error: The type is not optional
+              delete localeData.encryptLocales;
 
-              return [locale, config as ThemeLocaleConfig];
-            },
-          ),
+            return [langs, localeData as ThemeLocaleConfig];
+          },
         ),
         // Extract localeConfig
         config: fromEntries(

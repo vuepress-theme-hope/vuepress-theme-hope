@@ -44,20 +44,6 @@
     transform: scale(0.98, 0.98);
   }
 
-  .icon {
-    position: relative;
-    z-index: 2;
-
-    float: right;
-
-    width: 20px;
-    height: 20px;
-
-    [dir="rtl"] & {
-      float: left;
-    }
-  }
-
   @each $color in hope-config.$colors {
     $index: list.index(hope-config.$colors, $color) - 1;
 
@@ -102,14 +88,14 @@
   font-size: 13px;
 }
 
-.vp-project-image {
+.vp-project-icon {
   position: relative;
   z-index: 2;
 
   float: right;
 
-  width: 40px;
-  height: 40px;
+  width: 32px;
+  height: 32px;
 
   [dir="rtl"] & {
     float: left;

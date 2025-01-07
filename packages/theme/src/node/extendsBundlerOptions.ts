@@ -22,7 +22,6 @@ export const extendsBundlerOptions = (
   addViteOptimizeDepsExclude(bundlerOptions, app, "@theme-hope");
   addViteSsrNoExternal(bundlerOptions, app, [
     "@vuepress/helper",
-    "@vuepress/plugin-reading-time",
     "vuepress-shared",
   ]);
 };

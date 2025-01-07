@@ -33,7 +33,6 @@ export default defineUserConfig({
         "/demo/plantuml",
         "/demo/playground",
         "/demo/sandpack",
-        "/demo/slide-page",
         "/demo/vue-playground",
       ],
     },
