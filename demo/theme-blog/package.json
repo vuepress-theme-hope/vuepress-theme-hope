@@ -21,7 +21,7 @@
     "@vuepress/helper": "2.0.0-rc.69",
     "@vuepress/plugin-docsearch": "2.0.0-rc.69",
     "@vuepress/plugin-revealjs": "2.0.0-rc.69",
-    "@waline/client": "3.4.2",
+    "@waline/client": "3.4.3",
     "chart.js": "4.4.7",
     "echarts": "5.6.0",
     "katex": "0.16.19",
