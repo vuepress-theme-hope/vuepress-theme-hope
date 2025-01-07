@@ -6,7 +6,14 @@ category:
   - 案例
 
 docs:
-  - name: PvZ2 Gardendless
+  - name: Fast Request
+    desc: 为简化调试API而生
+    logo: https://api-buddy.cn/img/fastRequest.svg
+    url: https://api-buddy.cn/
+    repo: https://github.com/dromara/fast-request
+    preview: /assets/image/fast-request.jpg
+
+  - name: 植物大战僵尸 2 无尽花园
     desc: 完全重制的全桌面平台PvZ2.
     logo: https://pvzge.com/pvz_logo.webp
     url: https://pvzge.com/
@@ -26,13 +33,6 @@ docs:
     url: https://uigf.org/zh/
     repo: https://github.com/UIGF-org/UIGF-org.github.io
     preview: /assets/image/uigf.jpg
-
-  - name: Fast Request
-    desc: 为简化调试API而生
-    logo: https://api-buddy.cn/img/fastRequest.svg
-    url: https://api-buddy.cn/
-    repo: https://github.com/dromara/fast-request
-    preview: /assets/image/fast-request.jpg
 
   - name: Waline
     desc: 一款简洁、安全的评论系统。

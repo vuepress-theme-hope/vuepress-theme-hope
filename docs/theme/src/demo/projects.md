@@ -6,6 +6,13 @@ category:
   - Demo
 
 docs:
+  - name: Fast Request
+    desc: Born to simplify debugging APIs
+    logo: https://api-buddy.cn/img/fastRequest.svg
+    url: https://api-buddy.cn/en/
+    repo: https://github.com/dromara/fast-request
+    preview: /assets/image/fast-request.jpg
+
   - name: PvZ2 Gardendless
     desc: A completely remastered PvZ2 for all desktop platforms.
     logo: https://pvzge.com/pvz_logo.webp
@@ -34,13 +41,6 @@ docs:
     url: https://docs.zlmediakit.com/
     repo: https://github.com/ZLMediaKit/docs
     preview: /assets/image/zlmediakit.jpg
-
-  - name: Fast Request
-    desc: Born to simplify debugging APIs
-    logo: https://api-buddy.cn/img/fastRequest.svg
-    url: https://api-buddy.cn/en/
-    repo: https://github.com/dromara/fast-request
-    preview: /assets/image/fast-request.jpg
 
   - name: Nosana
     desc: Next Gen CI/CD
