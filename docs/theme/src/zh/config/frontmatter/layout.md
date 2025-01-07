@@ -74,7 +74,7 @@ tag:
 - 详情:
   - [布局 → 侧边栏](../../guide/layout/sidebar.md#禁用侧边栏)
 
-填入 `false` 会禁用侧边栏
+填入 `false` 会禁用侧边栏，设置为空数组 `[]` 会只渲染侧边栏的插槽内容。
 
 ## headerDepth
 

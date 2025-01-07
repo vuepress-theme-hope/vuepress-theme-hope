@@ -67,11 +67,11 @@ Setting it to `false` will disable navbar
 
 ## sidebar
 
-- Type: `boolean`
+- Type: `boolean | SidebarArrayOptions`
 - Details:
   - [Layout → Sidebar](../../guide/layout/sidebar.md#disabling-sidebar)
 
-Setting it to `false` will disable sidebar
+Setting it to `false` will disable sidebar, setting it to empty array `[]` will render sidebar slots content only.
 
 ## headerDepth
 

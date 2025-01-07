@@ -1,5 +1,7 @@
 import type { BasePageFrontMatter } from "vuepress-shared";
 
+import type { SidebarArrayOptions } from "../sidebar.js";
+
 export interface ThemePageFrontmatter extends BasePageFrontMatter {
   /**
    * Whether is home page
@@ -25,7 +27,7 @@ export interface ThemePageFrontmatter extends BasePageFrontMatter {
    *
    * 侧边栏配置
    */
-  sidebar?: false;
+  sidebar?: false | SidebarArrayOptions;
 
   /**
    * Additional Class for Page container
