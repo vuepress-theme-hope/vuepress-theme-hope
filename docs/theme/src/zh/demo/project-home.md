@@ -106,20 +106,20 @@ footer: MIT Licensed | Copyright © 2019-present Mr.Hope
 
 ## 🛠 安装
 
-在当前目录下的 `[dir]` 文件夹内创建 vuepress-theme-hope 项目:
+在当前目录下的 `<dir>` 文件夹内创建 vuepress-theme-hope 项目:
 
 ::: code-tabs#shell
 
 @tab pnpm
 
 ```bash
-pnpm create vuepress-theme-hope [dir]
+pnpm create vuepress-theme-hope <dir>
 ```
 
 @tab npm
 
 ```bash
-npm init vuepress-theme-hope@latest [dir]
+npm init vuepress-theme-hope@latest <dir>
 ```
 
 :::
@@ -131,13 +131,13 @@ npm init vuepress-theme-hope@latest [dir]
 @tab pnpm
 
 ```bash
-pnpm create vuepress-theme-hope add [dir]
+pnpm create vuepress-theme-hope add <dir>
 ```
 
 @tab npm
 
 ```bash
-npm init vuepress-theme-hope@latest add [dir]
+npm init vuepress-theme-hope@latest add <dir>
 ```
 
 :::

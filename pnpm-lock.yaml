@@ -757,9 +757,9 @@ importers:
       '@inquirer/prompts':
         specifier: ^7.2.1
         version: 7.2.1(@types/node@22.10.5)
-      cac:
-        specifier: 6.7.14
-        version: 6.7.14
+      commander:
+        specifier: 13.0.0
+        version: 13.0.0
       execa:
         specifier: 9.5.2
         version: 9.5.2
@@ -4633,6 +4633,10 @@ packages:
 
   comma-separated-tokens@2.0.3:
     resolution: {integrity: sha512-Fu4hJdvzeylCfQPp9SGWidpzrMs7tTrlu6Vb8XGaRGck8QSNZJJp538Wrb60Lax4fPwR64ViY468OIUTbRlGZg==}
+
+  commander@13.0.0:
+    resolution: {integrity: sha512-oPYleIY8wmTVzkvQq10AEok6YcTC4sRUBl8F9gVuwchGVUCTbl/vhLTaQqutuuySYOsu8YTgV+OxKc/8Yvx+mQ==}
+    engines: {node: '>=18'}
 
   commander@2.20.3:
     resolution: {integrity: sha512-GpVkmM8vF2vQUkj2LvZmD35JxeJOLCwJ9cUkugyk2nuhbv3+mJvpLYYt+0+USMxE+oj+ey/lJEnhZw75x/OMcQ==}
@@ -14331,6 +14335,8 @@ snapshots:
       wcwidth: 1.0.1
 
   comma-separated-tokens@2.0.3: {}
+
+  commander@13.0.0: {}
 
   commander@2.20.3: {}
 

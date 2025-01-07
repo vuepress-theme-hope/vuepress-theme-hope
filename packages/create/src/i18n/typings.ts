@@ -53,8 +53,8 @@ export interface CreateLocale {
     version: string;
     bundler: string;
     preset: string;
-    outputDirMissing: (packageManager: PackageManager) => string;
-    updateDirMissing: (packageManager: PackageManager) => string;
+    outputDirHint: (packageManager: PackageManager) => string;
+    addDirHint: (packageManager: PackageManager) => string;
     dirNotEmpty: (targetDir: string) => string;
   };
 }

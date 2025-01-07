@@ -106,26 +106,26 @@ footer: MIT Licensed | Copyright © 2019-present Mr.Hope
 
 ## 🛠Install
 
-Create a new vuepress-theme-hope project in `[dir]` directory under the current path:
+Create a new vuepress-theme-hope project in `<dir>` directory under the current path:
 
 ::: code-tabs#shell
 
 @tab pnpm
 
 ```bash
-pnpm create vuepress-theme-hope [dir]
+pnpm create vuepress-theme-hope <dir>
 ```
 
 @tab yarn
 
 ```bash
-yarn create vuepress-theme-hope [dir]
+yarn create vuepress-theme-hope <dir>
 ```
 
 @tab npm
 
 ```bash
-npm init vuepress-theme-hope@latest [dir]
+npm init vuepress-theme-hope@latest <dir>
 ```
 
 :::
@@ -137,19 +137,19 @@ To add vuepress-theme-hope as docs builder to an existing project, run the follo
 @tab pnpm
 
 ```bash
-pnpm create vuepress-theme-hope add [dir]
+pnpm create vuepress-theme-hope add <dir>
 ```
 
 @tab yarn
 
 ```bash
-yarn create vuepress-theme-hope add [dir]
+yarn create vuepress-theme-hope add <dir>
 ```
 
 @tab npm
 
 ```bash
-npm init vuepress-theme-hope@latest add [dir]
+npm init vuepress-theme-hope@latest add <dir>
 ```
 
 :::

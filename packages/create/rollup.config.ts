@@ -3,7 +3,7 @@ import { rollupBundle } from "../../scripts/rollup.js";
 export default rollupBundle("index", {
   dts: false,
   resolve: true,
-  external: ["@inquirer/prompts", "cac", "execa"],
+  external: ["@inquirer/prompts", "commander", "execa"],
   output: {
     format: "esm",
     sourcemap: false,

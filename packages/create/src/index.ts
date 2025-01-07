@@ -3,7 +3,7 @@ import { existsSync, readdirSync } from "node:fs";
 import { resolve } from "node:path";
 
 import { confirm, select } from "@inquirer/prompts";
-import { cac } from "cac";
+import { Command } from "commander";
 import { execaCommand, execaCommandSync } from "execa";
 
 import type {
@@ -24,50 +24,39 @@ import { createPackageJson } from "./packageJson.js";
 import { createTsConfig } from "./tsconfig.js";
 import { ensureDirExistSync, getRegistry } from "./utils/index.js";
 
+const program = new Command("create-vuepress-theme-hope");
+
 interface CreateOptions {
-  bundler?: SupportedBundler | null;
-  preset?: SupportedPreset | null;
+  bundler: SupportedBundler | null;
+  preset: SupportedPreset | null;
 }
 
 const preAction = async (
   targetDir: string,
-  { bundler, preset }: CreateOptions,
+  { bundler, preset, add }: CreateOptions & { add: boolean },
 ): Promise<{
   lang: SupportedLang;
   locale: CreateLocale;
   packageManager: PackageManager;
-} | void> => {
-  // Ensure targetDir is specified by user
-  if (!targetDir) {
-    cli.outputHelp();
-
-    return;
-  }
-
+}> => {
   // Get language
   const { lang, locale } = await getLanguage();
 
   // Check bundler
   if (bundler && !supportedBundlers.includes(bundler)) {
-    console.log(locale.error.bundler);
-
-    return;
+    program.error(locale.error.bundler);
   }
 
   // Check presets
   if (preset && !supportedPresets.includes(preset)) {
-    console.log(locale.error.preset);
-
-    return;
+    program.error(locale.error.preset);
   }
 
   const targetDirPath = resolve(process.cwd(), targetDir);
 
   // Check if the user is trying to cover his files
   if (existsSync(targetDirPath) && readdirSync(targetDirPath).length) {
-    console.error(locale.error.dirNotEmpty(targetDir));
-
-    return;
+    program.error(locale.error.dirNotEmpty(targetDir));
   }
 
   // Get packageManager
@@ -80,10 +69,10 @@ const preAction = async (
   });
 
   // Check if the user is a noob and warn him 🤪
-  if (targetDir.startsWith("[") && targetDir.endsWith("]")) {
-    console.log(locale.error.updateDirMissing(packageManager));
-
-    return;
+  if (targetDir.startsWith("<") && targetDir.endsWith(">")) {
+    program.error(
+      locale.error[add ? "addDirHint" : "outputDirHint"](packageManager),
+    );
   }
 
   ensureDirExistSync(targetDirPath);
@@ -138,109 +127,102 @@ const postAction = async ({
       stdout: "inherit",
     });
   } else {
-    console.log(locale.hint.devServer(packageManager));
+    console.info(locale.hint.devServer(packageManager));
   }
 };
 
-const cli = cac("vuepress-theme-hope");
+program
+  .description(
+    `\
+Generate a new vuepress-theme-hope template
 
-cli
-  .command("[dir]", "Generate a new vuepress-theme-hope project")
-  .option("-p, --preset <preset>", "Choose preset to use")
-  .usage(
-    "pnpm create vuepress-theme-hope [dir] / npm init vuepress-theme-hope@latest [dir] / yarn create vuepress-theme-hope [dir]",
+· pnpm create vuepress-theme-hope <dir>
+· npm init vuepress-theme-hope@latest <dir>
+· yarn create vuepress-theme-hope <dir>
+`,
   )
-  .example("docs")
-  .action(
-    async (
-      targetDir: string,
-      { bundler = null, preset = null }: CreateOptions,
-    ) => {
-      const workingCWD = resolve(process.cwd(), targetDir);
-      const result = await preAction(targetDir, { bundler, preset });
+  .option("-b, --bundler [bundler]", "Choose bundler to use")
+  .option("-p, --preset [preset]", "Choose preset to use")
+  .argument("<dir>", "Dir to create the template in")
+  .action(async (targetDir: string, { bundler, preset }: CreateOptions) => {
+    const workingCWD = resolve(process.cwd(), targetDir);
 
-      if (result) {
-        const { lang, locale, packageManager } = result;
+    const { lang, locale, packageManager } = await preAction(targetDir, {
+      bundler,
+      preset,
+      add: false,
+    });
 
-        await createPackageJson({
-          bundler,
-          locale,
-          packageManager,
-          cwd: targetDir,
-          source: "src",
-        });
-        createTsConfig({ cwd: targetDir, source: "src", locale });
-        await generateTemplate({
-          preset,
-          lang,
-          locale,
-          packageManager,
-          cwd: workingCWD,
-          targetDir: "src",
-        });
-        await postAction({
-          lang,
-          locale,
-          packageManager,
-          cwd: workingCWD,
-        });
-      }
-    },
-  );
+    await createPackageJson({
+      bundler,
+      locale,
+      packageManager,
+      cwd: targetDir,
+      source: "src",
+    });
+    createTsConfig({ cwd: targetDir, source: "src", locale });
+    await generateTemplate({
+      preset,
+      lang,
+      locale,
+      packageManager,
+      cwd: workingCWD,
+      targetDir: "src",
+    });
+    await postAction({
+      lang,
+      locale,
+      packageManager,
+      cwd: workingCWD,
+    });
+  });
 
-cli
-  .command("add [dir]", "Add vuepress template to dir")
+program
+  .command("add")
   .alias("inject")
-  .option("-p, --preset <preset>", "Choose preset to use")
-  .usage(
-    "pnpm create vuepress-theme-hope add [dir] / npm init vuepress-theme-hope@latest add [dir] / yarn create vuepress-theme-hope add [dir]",
+  .summary("Add template to <dir> inside project")
+  .description(
+    `\
+Add vuepress-theme-hope template in <dir> under current project
+
+· pnpm create vuepress-theme-hope add <dir>
+· npm init vuepress-theme-hope@latest add <dir>
+· yarn create vuepress-theme-hope add <dir>
+`,
   )
-  .example("docs")
-  .action(
-    async (
-      targetDir: string,
-      { bundler = null, preset = null }: CreateOptions,
-    ) => {
-      const result = await preAction(targetDir, { bundler, preset });
+  .usage("")
+  .option("-b, --bundler [bundler]", "Choose bundler to use")
+  .option("-p, --preset [preset]", "Choose preset to use")
 
-      if (result) {
-        const { lang, locale, packageManager } = result;
+  .argument("<dir>", "Dir to create the template in")
+  .action(async (targetDir: string, { bundler, preset }: CreateOptions) => {
+    const { lang, locale, packageManager } = await preAction(targetDir, {
+      bundler,
+      preset,
+      add: true,
+    });
 
-        await createPackageJson({
-          bundler,
-          packageManager,
-          locale,
-          source: targetDir,
-        });
+    await createPackageJson({
+      bundler,
+      packageManager,
+      locale,
+      source: targetDir,
+    });
 
-        createTsConfig({ source: targetDir, locale });
+    createTsConfig({ source: targetDir, locale });
 
-        await generateTemplate({
-          packageManager,
-          lang,
-          locale,
-          preset,
-          targetDir,
-        });
+    await generateTemplate({
+      packageManager,
+      lang,
+      locale,
+      preset,
+      targetDir,
+    });
 
-        await postAction({ lang, locale, packageManager });
-      }
-    },
-  );
+    await postAction({ lang, locale, packageManager });
+  });
 
-cli.help(() => [
-  {
-    title:
-      "pnpm create vuepress-theme-hope [dir] / npm init vuepress-theme-hope@latest [dir] / yarn create vuepress-theme-hope [dir]",
-    body: "Create a vuepress-theme-hope template in [dir]",
-  },
-  {
-    title:
-      "pnpm create vuepress-theme-hope inject [dir] / npm init vuepress-theme-hope@latest inject [dir] / yarn create vuepress-theme-hope add [dir]",
-    body: "Add vuepress-theme-hope template in [dir] under current project",
-  },
-]);
+program.version(version);
+program.showHelpAfterError("add --help for additional information");
 
-cli.version(version);
-
-cli.parse();
+await program.parseAsync();

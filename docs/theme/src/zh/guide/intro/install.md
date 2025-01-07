@@ -18,26 +18,26 @@ tag:
 
 ## 安装
 
-在 `[dir]` 文件夹内新建 vuepress-theme-hope 项目:
+在 `<dir>` 文件夹内新建 vuepress-theme-hope 项目:
 
 ::: code-tabs#shell
 
 @tab pnpm
 
 ```bash
-pnpm create vuepress-theme-hope [dir]
+pnpm create vuepress-theme-hope <dir>
 ```
 
 @tab yarn
 
 ```bash
-yarn create vuepress-theme-hope [dir]
+yarn create vuepress-theme-hope <dir>
 ```
 
 @tab npm
 
 ```bash
-npm init vuepress-theme-hope@latest [dir]
+npm init vuepress-theme-hope@latest <dir>
 ```
 
 :::
@@ -49,26 +49,26 @@ npm init vuepress-theme-hope@latest [dir]
 @tab pnpm
 
 ```bash
-pnpm create vuepress-theme-hope add [dir]
+pnpm create vuepress-theme-hope add <dir>
 ```
 
 @tab yarn
 
 ```bash
-yarn create vuepress-theme-hope add [dir]
+yarn create vuepress-theme-hope add <dir>
 ```
 
 @tab npm
 
 ```bash
-npm init vuepress-theme-hope@latest add [dir]
+npm init vuepress-theme-hope@latest add <dir>
 ```
 
 :::
 
 ::: important
 
-这里的 `[dir]` 是一个参数，你需要使用真实的文件夹名称替换它，例如 `docs`、`blog` 或其他你喜欢的名称。
+这里的 `<dir>` 是一个参数，你需要使用真实的文件夹名称替换它，例如 `docs`、`blog` 或其他你喜欢的名称。
 
 :::
 

@@ -53,10 +53,10 @@ export const en: CreateLocale = {
     version: "This version is not a valid one. Version should be like 'x.x.x'",
     bundler: 'bundler (--bundler) only support "vite" or "webpack"',
     preset: 'preset (--preset) only support "docs" or "blog"',
-    outputDirMissing: (packageManager: PackageManager): string =>
-      `The brackets in "[dir]" means it is an argument, you should replace it with folder name you want to use! E.g.: "my-blog", "project-docs"\nFor example: "${packageManager} init vuepress-theme-hope project-docs"`,
-    updateDirMissing: (packageManager: PackageManager): string =>
-      `The brackets in "[dir]" means it is an argument, you should replace it with folder name you want to use! E.g.: "src", "docs"\nFor example: "${packageManager} init vuepress-theme-hope docs"`,
+    outputDirHint: (packageManager: PackageManager): string =>
+      `The angle brackets in "<dir>" means it is a required argument, you should replace it with folder name you want to use! E.g.: "my-blog", "project-docs"\nFor example: "${packageManager} init vuepress-theme-hope project-docs"`,
+    addDirHint: (packageManager: PackageManager): string =>
+      `The brackets in "<dir>" means it is a required argument, you should replace it with folder name you want to use! E.g.: "src", "docs"\nFor example: "${packageManager} init vuepress-theme-hope add docs"`,
     dirNotEmpty: (dir: string) =>
       `Target folder "${dir}" is not empty, please choose an empty folder or delete files in it.`,
   },

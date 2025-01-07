@@ -53,10 +53,10 @@ export const zh: CreateLocale = {
     version: "此版本无效，版本号应为 'x.x.x'",
     bundler: "打包器 (--bundler) 仅支持 vite 或 webpack",
     preset: "预设 (--preset) 仅支持 docs 或 blog",
-    outputDirMissing: (packageManager: PackageManager): string =>
-      `"[dir]" 的方括号表示此处为一个参数，你应该替换为自己想使用的文件夹名称，如 "my-blog", "project-docs" 等!\n例如: "${packageManager} init vuepress-theme-hope project-docs"`,
-    updateDirMissing: (packageManager: PackageManager): string =>
-      `"[dir]" 的方括号表示此处为一个参数，你应该替换为自己想使用的文件夹名称，如 "src", "docs" 等!\n例如: "${packageManager} init vuepress-theme-hope docs"`,
+    outputDirHint: (packageManager: PackageManager): string =>
+      `"<dir>" 的尖括号表示此处为一个必填参数，你应该替换为自己想使用的文件夹名称，如 "my-blog", "project-docs" 等!\n例如: "${packageManager} init vuepress-theme-hope project-docs"`,
+    addDirHint: (packageManager: PackageManager): string =>
+      `"<dir>" 的尖括号表示此处为一个必填参数，你应该替换为自己想使用的文件夹名称，如 "src", "docs" 等!\n例如: "${packageManager} init vuepress-theme-hope add docs"`,
     dirNotEmpty: (dir: string) =>
       `目标文件夹 "${dir}" 不为空，请选择一个空文件夹或者手动删除文件夹中的文件`,
   },

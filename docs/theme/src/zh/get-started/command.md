@@ -16,8 +16,8 @@ tag:
 
 ## 常用命令
 
-- `vuepress dev [dir]` 会启动一个开发服务器，以便让你在本地开发你的 VuePress 站点。
-- `vuepress build [dir]` 会将你的 VuePress 站点构建成静态文件，以便你进行后续部署。
+- `vuepress dev <dir>` 会启动一个开发服务器，以便让你在本地开发你的 VuePress 站点。
+- `vuepress build <dir>` 会将你的 VuePress 站点构建成静态文件，以便你进行后续部署。
 
 :::: info 使用模板
 
