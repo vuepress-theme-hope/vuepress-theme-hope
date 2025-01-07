@@ -72,7 +72,7 @@ export default defineComponent({
 
           const { el } = Toolbar.create(markupMap);
 
-          markupMap.setData(root);
+          await markupMap.setData(root);
           await markupMap.fit();
 
           el.style.position = "absolute";

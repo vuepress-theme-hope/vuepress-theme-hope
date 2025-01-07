@@ -1,4 +1,3 @@
-import type { ExactLocaleConfig } from "@vuepress/helper";
 import type { DefaultLayoutTranslations } from "vidstack";
 
 export interface PDFLocaleData {
@@ -16,8 +15,6 @@ export interface PDFLocaleData {
   hint: string;
 }
 
-export type PDFLocaleConfig = ExactLocaleConfig<PDFLocaleData>;
-
 export interface SiteInfoLocaleData {
   /**
    * Source text
@@ -27,8 +24,4 @@ export interface SiteInfoLocaleData {
   source: string;
 }
 
-export type SiteInfoLocaleConfig = ExactLocaleConfig<SiteInfoLocaleData>;
-
 export type VidstackLocaleData = Partial<DefaultLayoutTranslations>;
-
-export type VidstackLocaleConfig = ExactLocaleConfig<VidstackLocaleData>;

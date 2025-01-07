@@ -1,3 +1,4 @@
+import type { ExactLocaleConfig } from "@vuepress/helper/client";
 import { isArray, isString, useLocaleConfig } from "@vuepress/helper/client";
 import type {
   DASHNamespaceLoader,
@@ -18,7 +19,7 @@ import {
   shallowRef,
 } from "vue";
 
-import type { VidstackLocaleConfig } from "../../shared/index.js";
+import type { VidstackLocaleData } from "../../shared/index.js";
 import { getLink } from "../utils/getLink.js";
 
 import "vidstack/player/styles/default/theme.css";
@@ -28,7 +29,7 @@ import "../styles/vidstack.scss";
 
 declare const DASHJS_INSTALLED: boolean;
 declare const HLS_JS_INSTALLED: boolean;
-declare const VIDSTACK_LOCALES: VidstackLocaleConfig;
+declare const VIDSTACK_LOCALES: ExactLocaleConfig<VidstackLocaleData>;
 
 export default defineComponent({
   name: "VidStack",

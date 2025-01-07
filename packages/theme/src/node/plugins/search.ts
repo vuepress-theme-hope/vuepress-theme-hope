@@ -1,8 +1,6 @@
 import {
-  entries,
-  fromEntries,
-  getLocaleConfig,
-  inferRootLocalePath,
+  getFullLocaleConfig,
+  getRootLang,
   isPlainObject,
   keys,
   startsWith,
@@ -18,7 +16,7 @@ import type {
   ThemeData,
   ThemePageFrontmatter,
 } from "../../shared/index.js";
-import { themeLocalesData } from "../locales/index.js";
+import { themeLocaleInfo } from "../locales/index.js";
 import { logger } from "../utils.js";
 
 let docsearchPlugin: ((options: DocSearchPluginOptions) => Plugin) | null =
@@ -47,52 +45,6 @@ try {
   // Do nothing
 }
 
-const DOCSEARCH_ZH_LOCALES = {
-  placeholder: "搜索文档",
-  translations: {
-    button: {
-      buttonText: "搜索文档",
-      buttonAriaLabel: "搜索文档",
-    },
-    modal: {
-      searchBox: {
-        resetButtonTitle: "清除查询条件",
-        resetButtonAriaLabel: "清除查询条件",
-        cancelButtonText: "取消",
-        cancelButtonAriaLabel: "取消",
-      },
-      startScreen: {
-        recentSearchesTitle: "搜索历史",
-        noRecentSearchesText: "没有搜索历史",
-        saveRecentSearchButtonTitle: "保存至搜索历史",
-        removeRecentSearchButtonTitle: "从搜索历史中移除",
-        favoriteSearchesTitle: "收藏",
-        removeFavoriteSearchButtonTitle: "从收藏中移除",
-      },
-      errorScreen: {
-        titleText: "无法获取结果",
-        helpText: "你可能需要检查你的网络连接",
-      },
-      footer: {
-        selectText: "选择",
-        navigateText: "切换",
-        closeText: "关闭",
-        searchByText: "搜索提供者",
-      },
-      noResultsScreen: {
-        noResultsText: "无法找到相关结果",
-        suggestedQueryText: "你可以尝试查询",
-        reportMissingResultsText: "你认为该查询应该有结果？",
-        reportMissingResultsLinkText: "点击反馈",
-      },
-    },
-  },
-};
-
-const SEARCH_ZH_LOCALES = {
-  placeholder: "搜索",
-};
-
 /**
  * @private
  *
@@ -117,15 +69,7 @@ export const getSearchPlugin = (
       return null;
     }
 
-    return docsearchPlugin({
-      // eslint-disable-next-line @typescript-eslint/no-unnecessary-condition
-      locales: locales["/zh/"]
-        ? { "/zh/": DOCSEARCH_ZH_LOCALES }
-        : inferRootLocalePath(app) === "/zh/"
-          ? { "/": DOCSEARCH_ZH_LOCALES }
-          : {},
-      ...plugins.docsearch,
-    });
+    return docsearchPlugin(plugins.docsearch);
   }
 
   if (plugins.slimsearch) {
@@ -144,29 +88,23 @@ export const getSearchPlugin = (
         {
           getter: (page: Page<Record<never, never>, ThemePageFrontmatter>) =>
             page.frontmatter.category,
-          formatter: getLocaleConfig({
+          formatter: getFullLocaleConfig({
             app,
-            name: "vuepress-theme-hope",
-            default: fromEntries(
-              entries(themeLocalesData).map(([localePath, config]) => [
-                localePath,
-                `${config.blogLocales.category}: $content`,
-              ]),
-            ),
+            default: themeLocaleInfo.map(([langs, { blogLocales }]) => [
+              langs,
+              `${blogLocales.category}: $content`,
+            ]),
           }),
         },
         {
           getter: (page: Page<Record<never, never>, ThemePageFrontmatter>) =>
             page.frontmatter.tag,
-          formatter: getLocaleConfig({
+          formatter: getFullLocaleConfig({
             app,
-            name: "vuepress-theme-hope",
-            default: fromEntries(
-              entries(themeLocalesData).map(([localePath, config]) => [
-                localePath,
-                `${config.blogLocales.tag}: $content`,
-              ]),
-            ),
+            default: themeLocaleInfo.map(([langs, { blogLocales }]) => [
+              langs,
+              `${blogLocales.tag}: $content`,
+            ]),
           }),
         },
       ],
@@ -181,7 +119,8 @@ export const getSearchPlugin = (
                       fieldName === "id" ? [text] : cut(text, true),
                   },
                 }
-              : inferRootLocalePath(app) === "/zh/"
+              : // eslint-disable-next-line @typescript-eslint/no-deprecated
+                getRootLang(app).startsWith("zh")
                 ? {
                     "/": {
                       tokenize: (text, fieldName) =>
@@ -206,12 +145,6 @@ export const getSearchPlugin = (
 
     return searchPlugin({
       isSearchable: (page) => !isPageEncrypted(page),
-      // eslint-disable-next-line @typescript-eslint/no-unnecessary-condition
-      locales: locales["/zh/"]
-        ? { "/zh/": SEARCH_ZH_LOCALES }
-        : inferRootLocalePath(app) === "/zh/"
-          ? { "/": SEARCH_ZH_LOCALES }
-          : {},
       ...(isPlainObject(plugins.search) ? plugins.search : {}),
     });
   }

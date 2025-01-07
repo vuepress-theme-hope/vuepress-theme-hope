@@ -1,11 +1,11 @@
-import { getLocaleConfig } from "@vuepress/helper";
+import { getFullLocaleConfig } from "@vuepress/helper";
 import type { App } from "vuepress/core";
 
 import { getIconInfo, getShareServiceConfig } from "./components/index.js";
 import {
-  pdfLocaleConfig,
-  siteInfoLocaleConfig,
-  vidstackLocales,
+  pdfLocaleInfo,
+  siteInfoLocaleInfo,
+  vidstackLocaleInfo,
 } from "./locales/index.js";
 import type { ComponentPluginOptions } from "./options/index.js";
 import { isInstalled } from "./utils.js";
@@ -43,10 +43,10 @@ export const getDefine =
     }
 
     if (components.includes("PDF")) {
-      result.PDF_LOCALES = getLocaleConfig({
+      result.PDF_LOCALES = getFullLocaleConfig({
         app,
         name: "pdf",
-        default: pdfLocaleConfig,
+        default: pdfLocaleInfo,
         config: locales.pdf,
       });
       result.PDFJS_URL =
@@ -62,18 +62,18 @@ export const getDefine =
     }
 
     if (components.includes("SiteInfo"))
-      result.SITE_INFO_LOCALES = getLocaleConfig({
+      result.SITE_INFO_LOCALES = getFullLocaleConfig({
         app,
         name: "siteInfo",
-        default: siteInfoLocaleConfig,
+        default: siteInfoLocaleInfo,
         config: locales.siteInfo,
       });
 
     if (components.includes("VidStack"))
-      result.VIDSTACK_LOCALES = getLocaleConfig({
+      result.VIDSTACK_LOCALES = getFullLocaleConfig({
         app,
         name: "vidstack",
-        default: vidstackLocales,
+        default: vidstackLocaleInfo,
         config: locales.vidstack,
       });
 

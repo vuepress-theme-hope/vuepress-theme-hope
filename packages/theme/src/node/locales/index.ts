@@ -1,3 +1,5 @@
+import type { DefaultLocaleInfo } from "@vuepress/helper";
+
 import { brLocale } from "./br.js";
 import { deLocale } from "./de.js";
 import { deATLocale } from "./deAT.js";
@@ -20,44 +22,25 @@ import { zhLocale } from "./zh.js";
 import { zhTWLocale } from "./zhTW.js";
 import type { ThemeLocaleData } from "../../shared/index.js";
 
-export const themeLocalesData: Record<string, ThemeLocaleData> = {
-  "/en/": enLocale,
-
-  "/zh/": zhLocale,
-
-  "/zh-tw/": zhTWLocale,
-
-  "/de/": deLocale,
-
-  "/de-at/": deATLocale,
-
-  "/vi/": viLocale,
-
-  "/ru/": ruLocale,
-
-  "/uk/": ukLocale,
-
-  "/br/": brLocale,
-
-  "/sk/": skLocale,
-
-  "/fr/": frLocale,
-
-  "/es/": esLocale,
-
-  "/ja/": jaLocale,
-
-  "/pl/": plLocale,
-
-  "/tr/": trLocale,
-
-  "/ko/": koLocale,
-
-  "/fi/": fiLocale,
-
-  "/hu/": huLocale,
-
-  "/id/": idLocale,
-
-  "/nl/": nlLocale,
-};
+export const themeLocaleInfo: DefaultLocaleInfo<ThemeLocaleData> = [
+  [["en", "en-US"], enLocale],
+  [["zh", "zh-CN", "zh-Hans"], zhLocale],
+  [["zh-tw", "zh-Hant"], zhTWLocale],
+  [["de"], deLocale],
+  [["de-AT"], deATLocale],
+  [["vi"], viLocale],
+  [["uk"], ukLocale],
+  [["ru"], ruLocale],
+  [["br"], brLocale],
+  [["pl"], plLocale],
+  [["sk"], skLocale],
+  [["fr"], frLocale],
+  [["es"], esLocale],
+  [["ja"], jaLocale],
+  [["tr"], trLocale],
+  [["ko"], koLocale],
+  [["fi"], fiLocale],
+  [["hu"], huLocale],
+  [["id"], idLocale],
+  [["nl"], nlLocale],
+];
