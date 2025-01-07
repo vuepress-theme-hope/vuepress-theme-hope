@@ -118,92 +118,99 @@ export default defineComponent({
       });
     });
 
-    return (): VNode | null => {
-      const renderHeader = ({ title, level, slug }: PageHeader): VNode =>
-        h(
-          RouteLink,
-          {
-            to: `#${slug}`,
-            class: ["vp-toc-link", `level${level}`],
-            onClick: () => {
-              toggleExpanded();
-            },
+    const renderHeader = ({ title, level, slug }: PageHeader): VNode =>
+      h(
+        RouteLink,
+        {
+          to: `#${slug}`,
+          class: ["vp-toc-link", `level${level}`],
+          onClick: () => {
+            toggleExpanded();
           },
-          () => title,
-        );
+        },
+        () => title,
+      );
 
-      const renderChildren = (
-        headers: PageHeader[],
-        headerDepth: number,
-      ): VNode | null =>
-        headers.length && headerDepth > 0
-          ? h(
-              "ul",
-              { class: "vp-toc-list" },
-              headers.map((header) => {
-                const children = renderChildren(
-                  header.children,
-                  headerDepth - 1,
-                );
+    const renderChildren = (
+      headers: PageHeader[],
+      headerDepth: number,
+    ): VNode | null =>
+      headers.length && headerDepth > 0
+        ? h(
+            "ul",
+            { class: "vp-toc-list" },
+            headers.map((header) => {
+              const children = renderChildren(header.children, headerDepth - 1);
 
-                return [
-                  h(
-                    "li",
-                    {
-                      class: [
-                        "vp-toc-item",
-                        { active: route.hash === `#${header.slug}` },
-                      ],
-                    },
-                    renderHeader(header),
-                  ),
-                  children ? h("li", children) : null,
-                ];
-              }),
-            )
-          : null;
+              return [
+                h(
+                  "li",
+                  {
+                    class: [
+                      "vp-toc-item",
+                      { active: route.hash === `#${header.slug}` },
+                    ],
+                  },
+                  renderHeader(header),
+                ),
+                children ? h("li", children) : null,
+              ];
+            }),
+          )
+        : null;
 
+    return (): VNode | null => {
       const tocHeaders = props.items.length
         ? renderChildren(props.items, props.headerDepth)
         : renderChildren(page.value.headers, props.headerDepth);
 
-      return tocHeaders
+      const before = slots.before?.();
+      const after = slots.after?.();
+
+      return tocHeaders || before || after
         ? h("div", { class: "vp-toc-placeholder" }, [
             h("aside", { id: "toc", "vp-toc": "" }, [
-              slots.before?.(),
-              h(
-                "div",
-                {
-                  class: "vp-toc-header",
-                  onClick: () => {
-                    toggleExpanded();
-                  },
-                },
-                [
-                  metaLocale.value.toc,
-                  h(PrintButton),
-                  h("div", {
-                    class: ["arrow", isExpanded.value ? "down" : "end"],
-                  }),
-                ],
-              ),
-              h(
-                "div",
-                {
-                  class: ["vp-toc-wrapper", isExpanded.value ? "open" : ""],
-                  ref: toc,
-                },
-                [
-                  tocHeaders,
-                  h("div", {
-                    class: "vp-toc-marker",
-                    style: {
-                      top: tocMarkerTop.value,
-                    },
-                  }),
-                ],
-              ),
-              slots.after?.(),
+              before,
+              tocHeaders
+                ? [
+                    h(
+                      "div",
+                      {
+                        class: "vp-toc-header",
+                        onClick: () => {
+                          toggleExpanded();
+                        },
+                      },
+                      [
+                        metaLocale.value.toc,
+                        h(PrintButton),
+                        h("div", {
+                          class: ["arrow", isExpanded.value ? "down" : "end"],
+                        }),
+                      ],
+                    ),
+                    h(
+                      "div",
+                      {
+                        class: [
+                          "vp-toc-wrapper",
+                          isExpanded.value ? "open" : "",
+                        ],
+                        ref: toc,
+                      },
+                      [
+                        tocHeaders,
+                        h("div", {
+                          class: "vp-toc-marker",
+                          style: {
+                            top: tocMarkerTop.value,
+                          },
+                        }),
+                      ],
+                    ),
+                  ]
+                : null,
+              after,
             ]),
           ])
         : null;
