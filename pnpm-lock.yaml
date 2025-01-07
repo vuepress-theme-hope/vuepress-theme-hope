@@ -238,13 +238,13 @@ importers:
         version: 1.30.0
       markmap-lib:
         specifier: 0.18.5
-        version: 0.18.5(markmap-common@0.17.1)
+        version: 0.18.5(markmap-common@0.18.5)
       markmap-toolbar:
         specifier: 0.18.5
-        version: 0.18.5(markmap-common@0.17.1)
+        version: 0.18.5(markmap-common@0.18.5)
       markmap-view:
         specifier: 0.18.5
-        version: 0.18.5(markmap-common@0.17.1)
+        version: 0.18.5(markmap-common@0.18.5)
       mathjax-full:
         specifier: 3.2.2
         version: 3.2.2
@@ -310,13 +310,13 @@ importers:
         version: 1.30.0
       markmap-lib:
         specifier: 0.18.5
-        version: 0.18.5(markmap-common@0.17.1)
+        version: 0.18.5(markmap-common@0.18.5)
       markmap-toolbar:
         specifier: 0.18.5
-        version: 0.18.5(markmap-common@0.17.1)
+        version: 0.18.5(markmap-common@0.18.5)
       markmap-view:
         specifier: 0.18.5
-        version: 0.18.5(markmap-common@0.17.1)
+        version: 0.18.5(markmap-common@0.18.5)
       mathjax-full:
         specifier: 3.2.2
         version: 3.2.2
@@ -376,13 +376,13 @@ importers:
         version: 1.30.0
       markmap-lib:
         specifier: 0.18.5
-        version: 0.18.5(markmap-common@0.17.1)
+        version: 0.18.5(markmap-common@0.18.5)
       markmap-toolbar:
         specifier: 0.18.5
-        version: 0.18.5(markmap-common@0.17.1)
+        version: 0.18.5(markmap-common@0.18.5)
       markmap-view:
         specifier: 0.18.5
-        version: 0.18.5(markmap-common@0.17.1)
+        version: 0.18.5(markmap-common@0.18.5)
       mathjax-full:
         specifier: 3.2.2
         version: 3.2.2
@@ -650,13 +650,13 @@ importers:
         version: 1.30.0
       markmap-lib:
         specifier: 0.18.5
-        version: 0.18.5(markmap-common@0.17.1)
+        version: 0.18.5(markmap-common@0.18.5)
       markmap-toolbar:
         specifier: 0.18.5
-        version: 0.18.5(markmap-common@0.17.1)
+        version: 0.18.5(markmap-common@0.18.5)
       markmap-view:
         specifier: 0.18.5
-        version: 0.18.5(markmap-common@0.17.1)
+        version: 0.18.5(markmap-common@0.18.5)
       mermaid:
         specifier: 11.4.1
         version: 11.4.1
@@ -850,13 +850,13 @@ importers:
         version: 1.30.0
       markmap-lib:
         specifier: ^0.18.5
-        version: 0.18.5(markmap-common@0.17.1)
+        version: 0.18.5(markmap-common@0.18.5)
       markmap-toolbar:
         specifier: ^0.18.5
-        version: 0.18.5(markmap-common@0.17.1)
+        version: 0.18.5(markmap-common@0.18.5)
       markmap-view:
         specifier: ^0.18.5
-        version: 0.18.5(markmap-common@0.17.1)
+        version: 0.18.5(markmap-common@0.18.5)
       mermaid:
         specifier: ^11.2.0
         version: 11.4.1
@@ -7097,8 +7097,8 @@ packages:
     engines: {node: '>= 18'}
     hasBin: true
 
-  markmap-common@0.17.1:
-    resolution: {integrity: sha512-U1v2+CkdE9OzNgONvBwUW26RMcu27Bqlv/JuAG+l1qRkTduD2aT4cGew6qb4VLjpqhcBwS3mcj0Xd7LVW01QFA==}
+  markmap-common@0.18.5:
+    resolution: {integrity: sha512-/lN5Lc2cfJHRGUtUarfSnHQ0EC0siR/RjM/EOttnMkq+Dk2AZEYaiC1tdcj52MqSETFtH7Ygs1pHzR+HYO8mmA==}
 
   markmap-html-parser@0.18.5:
     resolution: {integrity: sha512-wgLUn666XzZO/U+QpzwZGttPvR+q5b2aNrdUn8+6CFqG/l5GhoMqBG+7juBIBWsAPS28sr9CoRlb0JNCwgCF6A==}
@@ -12787,7 +12787,7 @@ snapshots:
 
   '@types/sax@1.2.7':
     dependencies:
-      '@types/node': 17.0.45
+      '@types/node': 22.10.5
 
   '@types/send@0.17.4':
     dependencies:
@@ -17085,19 +17085,19 @@ snapshots:
 
   marked@15.0.6: {}
 
-  markmap-common@0.17.1:
+  markmap-common@0.18.5:
     dependencies:
       '@babel/runtime': 7.26.0
       '@gera2ld/jsx-dom': 2.2.2
       npm2url: 0.2.4
 
-  markmap-html-parser@0.18.5(markmap-common@0.17.1):
+  markmap-html-parser@0.18.5(markmap-common@0.18.5):
     dependencies:
       '@babel/runtime': 7.26.0
       cheerio: 1.0.0
-      markmap-common: 0.17.1
+      markmap-common: 0.18.5
 
-  markmap-lib@0.18.5(markmap-common@0.17.1):
+  markmap-lib@0.18.5(markmap-common@0.18.5):
     dependencies:
       '@babel/runtime': 7.26.0
       '@vscode/markdown-it-katex': 1.1.1
@@ -17108,26 +17108,26 @@ snapshots:
       markdown-it-mark: 4.0.0
       markdown-it-sub: 2.0.0
       markdown-it-sup: 2.0.0
-      markmap-common: 0.17.1
-      markmap-html-parser: 0.18.5(markmap-common@0.17.1)
-      markmap-view: 0.18.5(markmap-common@0.17.1)
+      markmap-common: 0.18.5
+      markmap-html-parser: 0.18.5(markmap-common@0.18.5)
+      markmap-view: 0.18.5(markmap-common@0.18.5)
       prismjs: 1.29.0
       yaml: 2.7.0
 
-  markmap-toolbar@0.18.5(markmap-common@0.17.1):
+  markmap-toolbar@0.18.5(markmap-common@0.18.5):
     dependencies:
       '@babel/runtime': 7.26.0
       '@gera2ld/jsx-dom': 2.2.2
-      markmap-common: 0.17.1
+      markmap-common: 0.18.5
 
-  markmap-view@0.18.5(markmap-common@0.17.1):
+  markmap-view@0.18.5(markmap-common@0.18.5):
     dependencies:
       '@babel/runtime': 7.26.0
       '@gera2ld/jsx-dom': 2.2.2
       '@types/d3': 7.4.3
       d3: 7.9.0
       d3-flextree: 2.1.2
-      markmap-common: 0.17.1
+      markmap-common: 0.18.5
 
   math-intrinsics@1.1.0: {}
 
