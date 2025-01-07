@@ -8,8 +8,8 @@ import {
 } from "vuepress/client";
 
 import { DropTransition } from "@theme-hope/components/transitions/index";
+import { SlideDownIcon } from "@theme-hope/modules/blog/components/icons/index";
 
-import { SlideDownIcon } from "./icons/icons.js";
 import type { ThemeBlogHomePageFrontmatter } from "../../../../shared/index.js";
 
 import "../styles/blog-hero.scss";

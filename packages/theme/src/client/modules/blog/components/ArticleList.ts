@@ -12,9 +12,9 @@ import {
 import { useRoute, useRouter } from "vuepress/client";
 
 import { DropTransition } from "@theme-hope/components/transitions/index";
+import { useThemeLocaleData } from "@theme-hope/composables/index";
 import ArticleItem from "@theme-hope/modules/blog/components/ArticleItem";
 import Pagination from "@theme-hope/modules/blog/components/Pagination";
-import { EmptyIcon } from "@theme-hope/modules/blog/components/icons/index";
 import { useBlogOptions } from "@theme-hope/modules/blog/composables/index";
 
 import type {
@@ -45,10 +45,13 @@ export default defineComponent({
   setup(props) {
     const route = useRoute();
     const router = useRouter();
+    const themeLocale = useThemeLocaleData();
     const blogOptions = useBlogOptions();
     const updatePageview = usePageview();
 
     const currentPage = ref(1);
+
+    const locale = computed(() => themeLocale.value.blogLocales);
 
     const articlePerPage = computed(
       () => blogOptions.value.articlePerPage ?? 10,
@@ -79,7 +82,6 @@ export default defineComponent({
         await router.push({ path: route.path, query });
       }
 
-      // eslint-disable-next-line @typescript-eslint/no-unnecessary-condition
       if (isSupported) {
         await nextTick();
         updatePageview({ selector: ".vp-pageview" });
@@ -122,7 +124,7 @@ export default defineComponent({
                 onUpdateCurrentPage: updatePage,
               }),
             ]
-          : h(EmptyIcon),
+          : h("h2", { class: "vp-empty-hint" }, locale.value.empty),
       );
   },
 });

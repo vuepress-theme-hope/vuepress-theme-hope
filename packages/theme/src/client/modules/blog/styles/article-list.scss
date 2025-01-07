@@ -6,10 +6,8 @@
   &:first-child {
     margin-top: calc(0rem - var(--navbar-height));
   }
+}
 
-  .empty {
-    max-width: 560px;
-    margin: 0 auto;
-    text-align: center;
-  }
+.vp-empty-hint {
+  text-align: center;
 }
