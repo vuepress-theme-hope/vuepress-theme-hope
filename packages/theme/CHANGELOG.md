@@ -4,6 +4,17 @@ All notable changes to this project will be documented in this file. See [Conven
 
 <!-- #region recent-change -->
 
+## [2.0.0-rc.67](https://github.com/vuepress-theme-hope/vuepress-theme-hope/compare/v2.0.0-rc.66...v2.0.0-rc.67) (2025-01-07)
+
+### ✨ Features
+
+- bump deps ([febfada](https://github.com/vuepress-theme-hope/vuepress-theme-hope/commit/febfadaf2c1c512ce7234b900d1742e97d268290))
+- **theme:** improve icon ([24f3842](https://github.com/vuepress-theme-hope/vuepress-theme-hope/commit/24f38423148c5f82368eb3025897d028bf8ebfb6))
+- **theme:** render toc slots even if no header ([9128fb7](https://github.com/vuepress-theme-hope/vuepress-theme-hope/commit/9128fb7a46098fcdf4f95d34ca55fcaf1a33119b))
+- **theme:** use plugin-icon ([edfd58e](https://github.com/vuepress-theme-hope/vuepress-theme-hope/commit/edfd58edcafa7718203573f1bdcada62d335abfe))
+
+<!-- #region recent-change -->
+
 ## [2.0.0-rc.66](https://github.com/vuepress-theme-hope/vuepress-theme-hope/compare/v2.0.0-rc.65...v2.0.0-rc.66) (2024-12-16)
 
 ### 🐛 Bug Fixes

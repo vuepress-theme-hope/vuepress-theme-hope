@@ -4,6 +4,19 @@ All notable changes to this project will be documented in this file. See [Conven
 
 <!-- #region recent-change -->
 
+## [2.0.0-rc.67](https://github.com/vuepress-theme-hope/vuepress-theme-hope/compare/v2.0.0-rc.66...v2.0.0-rc.67) (2025-01-07)
+
+### ✨ Features
+
+- bump deps ([febfada](https://github.com/vuepress-theme-hope/vuepress-theme-hope/commit/febfadaf2c1c512ce7234b900d1742e97d268290))
+
+### 🐛 Bug Fixes
+
+- **md-enhance:** fix markmap toolbar ([8c84a00](https://github.com/vuepress-theme-hope/vuepress-theme-hope/commit/8c84a0015a0802d38760bfb0af65765bf7654c01))
+- **md-enhance:** fix plantuml ([#4641](https://github.com/vuepress-theme-hope/vuepress-theme-hope/issues/4641)) ([c6f816b](https://github.com/vuepress-theme-hope/vuepress-theme-hope/commit/c6f816bd218ac073684580ee252b0691d94fc9a4))
+
+<!-- #region recent-change -->
+
 ## [2.0.0-rc.64](https://github.com/vuepress-theme-hope/vuepress-theme-hope/compare/v2.0.0-rc.63...v2.0.0-rc.64) (2024-12-13)
 
 **Note:** Version bump only for package vuepress-plugin-md-enhance
