@@ -4,6 +4,7 @@ import {
   defineComponent,
   h,
   onMounted,
+  resolveComponent,
   shallowRef,
   watch,
 } from "vue";
@@ -15,7 +16,6 @@ import {
   useRouteLocale,
 } from "vuepress/client";
 
-import HopeIcon from "@theme-hope/components/HopeIcon";
 import { useThemeLocaleData } from "@theme-hope/composables/index";
 import { getAncestorLinks } from "@theme-hope/utils/index";
 
@@ -114,7 +114,7 @@ export default defineComponent({
                       () => [
                         // Icon
                         enableIcon.value
-                          ? h(HopeIcon, { icon: item.icon })
+                          ? h(resolveComponent("VPIcon"), { icon: item.icon })
                           : null,
                         // Text
                         h(

@@ -1,7 +1,7 @@
 import { getFullLocaleConfig } from "@vuepress/helper";
 import type { App } from "vuepress/core";
 
-import { getIconInfo, getShareServiceConfig } from "./components/index.js";
+import { getShareServiceConfig } from "./components/index.js";
 import {
   pdfLocaleInfo,
   siteInfoLocaleInfo,
@@ -17,15 +17,7 @@ export const getDefine =
     locales = {},
   }: ComponentPluginOptions): ((app: App) => Record<string, unknown>) =>
   (app) => {
-    const { assets, prefix } = componentOptions.fontIcon ?? {};
     const result: Record<string, unknown> = {};
-
-    if (components.includes("FontIcon")) {
-      const { type, prefix: iconPrefix } = getIconInfo(assets, prefix);
-
-      result.FONT_ICON_TYPE = type;
-      result.FONT_ICON_PREFIX = iconPrefix;
-    }
 
     if (components.includes("ArtPlayer") || components.includes("VidStack")) {
       result.DASHJS_INSTALLED = isInstalled("dashjs");

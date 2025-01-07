@@ -1,8 +1,6 @@
 import type { PropType, SlotsType, VNode } from "vue";
-import { defineComponent, h } from "vue";
+import { defineComponent, h, resolveComponent } from "vue";
 import { AutoLink } from "vuepress/client";
-
-import HopeIcon from "@theme-hope/components/HopeIcon";
 
 import type { AutoLinkOptions } from "../../shared/index.js";
 
@@ -43,7 +41,9 @@ export default defineComponent({
           default: slots.default,
           before:
             slots.before ??
-            (icon ? (): VNode | null => h(HopeIcon, { icon }) : null),
+            (icon
+              ? (): VNode | null => h(resolveComponent("VPIcon"), { icon })
+              : null),
           after: slots.after,
         },
       );

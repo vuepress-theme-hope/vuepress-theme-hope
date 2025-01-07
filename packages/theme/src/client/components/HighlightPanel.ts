@@ -1,9 +1,7 @@
 import { isLinkExternal } from "@vuepress/helper/client";
 import type { FunctionalComponent, VNode } from "vue";
-import { h } from "vue";
+import { h, resolveComponent } from "vue";
 import { RouteLink, withBase } from "vuepress/client";
-
-import HopeIcon from "@theme-hope/components/HopeIcon";
 
 import type {
   ThemeProjectHomeHighlightItem,
@@ -105,7 +103,7 @@ const HighlightPanel: FunctionalComponent<
                         { class: "vp-highlight-title" },
                         [
                           icon
-                            ? h(HopeIcon, {
+                            ? h(resolveComponent("VPIcon"), {
                                 class: "vp-highlight-icon",
                                 icon,
                               })

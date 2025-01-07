@@ -1,21 +1,21 @@
-import type { FontIconOptions } from "./font-icon.js";
 import type { ShareOptions } from "./share.js";
 import type { ArtPlayerOptions } from "../../shared/index.js";
 
-export interface ComponentGlobalOptions {
+export interface DeprecatedComponentGlobalOptions {
+  /**
+   * @deprecated Use `@vuepress/plugin-icon` instead
+   */
+  fontIcon?: never;
+}
+
+export interface ComponentGlobalOptions
+  extends DeprecatedComponentGlobalOptions {
   /**
    * ArtPlayer config
    *
    * ArtPlayer 配置
    */
   artPlayer?: ArtPlayerOptions;
-
-  /**
-   * FontIcon config
-   *
-   * 图标配置
-   */
-  fontIcon?: FontIconOptions;
 
   /**
    * PDF viewer config

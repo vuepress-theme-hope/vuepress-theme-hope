@@ -11,16 +11,11 @@ export const convertOptions = (
 ): void => {
   const { deprecatedLogger, droppedLogger } = createConverter("components");
 
-  deprecatedLogger({
+  droppedLogger({
     options,
-    old: "iconAssets",
-    new: "componentOptions.fontIcon.assets",
+    old: "addThis",
   });
-  deprecatedLogger({
-    options,
-    old: "iconPrefix",
-    new: "componentOptions.fontIcon.prefix",
-  });
+
   deprecatedLogger({
     options,
     old: "backToTop",
@@ -31,15 +26,10 @@ export const convertOptions = (
     old: "backToTopLocales",
     new: "locales.backToTop",
   });
-
-  droppedLogger({
+  deprecatedLogger({
     options,
     old: "notice",
     new: "rootComponents.notice",
-  });
-  droppedLogger({
-    options,
-    old: "addThis",
   });
 
   if (isPlainObject(options.rootComponents)) {
@@ -78,6 +68,15 @@ export const convertOptions = (
           "Catalog",
         )} component is no longer supported, please use ${colors.magenta(
           "@vuepress/plugin-catalog",
+        )} instead.`,
+      );
+
+    if ((options.components as unknown[]).includes("FontIcon"))
+      logger.warn(
+        `${colors.cyan(
+          "FontIcon",
+        )} component is no longer supported, please use ${colors.magenta(
+          "@vuepress/plugin-icon",
         )} instead.`,
       );
 

@@ -1,9 +1,8 @@
 import { useEventListener } from "@vueuse/core";
 import type { VNode } from "vue";
-import { defineComponent, h } from "vue";
+import { defineComponent, h, resolveComponent } from "vue";
 
 import AutoLink from "@theme-hope/components/AutoLink";
-import HopeIcon from "@theme-hope/components/HopeIcon";
 import {
   useNavigate,
   useRelatedLinks,
@@ -46,7 +45,7 @@ export default defineComponent({
                     themeLocale.value.metaLocales.prev,
                   ]),
                   h("div", { class: "link" }, [
-                    h(HopeIcon, {
+                    h(resolveComponent("VPIcon"), {
                       icon: prevLink.value?.icon,
                     }),
                     prevLink.value?.text,
@@ -61,7 +60,7 @@ export default defineComponent({
                   ]),
                   h("div", { class: "link" }, [
                     nextLink.value?.text,
-                    h(HopeIcon, {
+                    h(resolveComponent("VPIcon"), {
                       icon: nextLink.value?.icon,
                     }),
                   ]),

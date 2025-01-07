@@ -77,6 +77,7 @@
     "@vuepress/plugin-copy-code": "2.0.0-rc.69",
     "@vuepress/plugin-copyright": "2.0.0-rc.69",
     "@vuepress/plugin-git": "2.0.0-rc.68",
+    "@vuepress/plugin-icon": "2.0.0-rc.69",
     "@vuepress/plugin-links-check": "2.0.0-rc.69",
     "@vuepress/plugin-markdown-ext": "2.0.0-rc.69",
     "@vuepress/plugin-markdown-hint": "2.0.0-rc.69",
