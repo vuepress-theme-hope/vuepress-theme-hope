@@ -57,7 +57,7 @@
     "@vuepress/bundler-webpack": "2.0.0-rc.19",
     "@vuepress/plugin-git": "2.0.0-rc.68",
     "ora": "8.1.1",
-    "rollup": "4.29.1",
+    "rollup": "4.30.1",
     "vite": "6.0.6"
   },
   "peerDependencies": {
