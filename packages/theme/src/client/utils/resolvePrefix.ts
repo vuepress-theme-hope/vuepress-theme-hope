@@ -5,6 +5,6 @@ import {
 } from "@vuepress/helper/client";
 
 export const resolvePrefix = (prefix = "", path = ""): string =>
-  isLinkAbsolute(path) || isLinkWithProtocol(path)
+  isLinkWithProtocol(path) || isLinkAbsolute(path)
     ? path
     : `${ensureEndingSlash(prefix)}${path}`;

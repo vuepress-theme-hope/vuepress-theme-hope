@@ -8,20 +8,25 @@ export const useNavigate = (): ((url: string) => void) => {
   const route = useRoute();
 
   return (url) => {
-    if (url)
-      if (isLinkAbsolute(url)) {
-        // Inner absolute path
-        if (route.path !== url) void router.push(url);
-      } else if (isLinkWithProtocol(url)) {
-        // Outer url
-        window.open(url);
-      } else {
-        // Inner relative path
-        const loc = route.path.slice(0, route.path.lastIndexOf("/"));
+    if (!url) return;
 
-        void router.push(
-          new URL(`${loc}/${encodeURI(url)}`, FAKE_HOST).pathname,
-        );
-      }
+    // Outer url
+    if (isLinkWithProtocol(url)) {
+      return window.open(url);
+    }
+
+    // Inner absolute path
+    if (isLinkAbsolute(url)) {
+      if (route.path === url) return;
+
+      return void router.push(url);
+    }
+
+    // Inner relative path
+    const loc = route.path.slice(0, route.path.lastIndexOf("/"));
+
+    return void router.push(
+      new URL(`${loc}/${encodeURI(url)}`, FAKE_HOST).pathname,
+    );
   };
 };
