@@ -45,8 +45,8 @@
   },
   "dependencies": {
     "@inquirer/prompts": "^7.2.1",
-    "commander": "13.0.0",
-    "execa": "9.5.2"
+    "commander": "^13.0.0",
+    "execa": "^9.5.2"
   },
   "devDependencies": {
     "vuepress": "2.0.0-rc.19",
