@@ -28,7 +28,7 @@ tag:
 
 你可以通过 `@vuepress/plugin-register-components` 插件来自动注册组件。
 
-插件的使用方法详见 [官方文档](https://ecosystem.vuejs.press/zh/plugins/register-components.html)。
+插件的使用方法详见 [官方文档](https://ecosystem.vuejs.press/zh/plugins/tools/register-components.html)。
 
 ### 通过客户端配置文件注册
 
