@@ -3,7 +3,7 @@ import { existsSync, readdirSync } from "node:fs";
 import { resolve } from "node:path";
 
 import { confirm, select } from "@inquirer/prompts";
-import { Command } from "commander";
+import { createCommand } from "commander";
 import { execaCommand, execaCommandSync } from "execa";
 
 import type {
@@ -24,7 +24,7 @@ import { createPackageJson } from "./packageJson.js";
 import { createTsConfig } from "./tsconfig.js";
 import { ensureDirExistSync, getRegistry } from "./utils/index.js";
 
-const program = new Command("create-vuepress-theme-hope");
+const program = createCommand("create-vuepress-theme-hope");
 
 interface CreateOptions {
   bundler: SupportedBundler | null;
@@ -141,8 +141,8 @@ Generate a new vuepress-theme-hope template
 · yarn create vuepress-theme-hope <dir>
 `,
   )
-  .option("-b, --bundler [bundler]", "Choose bundler to use")
-  .option("-p, --preset [preset]", "Choose preset to use")
+  .option("-b, --bundler [bundler]", "Bundler to use, vite or webpack only")
+  .option("-p, --preset [preset]", "Preset to use, docs or blog only")
   .argument("<dir>", "Dir to create the template in")
   .action(async (targetDir: string, { bundler, preset }: CreateOptions) => {
     const workingCWD = resolve(process.cwd(), targetDir);
