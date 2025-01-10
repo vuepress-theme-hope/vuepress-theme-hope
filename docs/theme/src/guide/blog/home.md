@@ -36,8 +36,6 @@ Typically, you might want to display some projects, books, articles, links, frie
 - `desc`: project description
 - `icon`: Icon, you can fill in full path or absolute path image link, also icon FontClass is supported
 
-  We provide these icons as built-in support either: `"link"`, `"project"`, `"book"`, `"article"`, `"friend"`。
-
 ::: info
 
 For complete configuration items, see [Blog Home Frontmatter Configuration](../../config/frontmatter/blog-home.md).

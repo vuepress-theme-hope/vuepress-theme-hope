@@ -36,8 +36,6 @@ tag:
 - `desc`: 项目描述，选填
 - `icon`: 图标，可填入完整路径或绝对路径的图片链接、图标 FontClass 等。
 
-  同时提供了如下内置图标支持: `"link"`、`"project"`、`"book"`、`"article"`、`"friend"`
-
 ::: info
 
 关于完整的配置项目，请参见 [博客主页 Frontmatter 配置](../../config/frontmatter/blog-home.md)。

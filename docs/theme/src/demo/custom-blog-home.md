@@ -8,7 +8,7 @@ heroText: The name of your blog
 tagline: You can put your slogan here
 heroFullScreen: true
 projects:
-  - icon: project
+  - icon: folder-open
     name: project name
     desc: project detailed description
     link: https://your.project.link
@@ -23,12 +23,12 @@ projects:
     desc: Detailed description of the book
     link: https://link.to.your.book
 
-  - icon: article
+  - icon: newspaper
     name: article name
     desc: Detailed description of the article
     link: https://link.to.your.article
 
-  - icon: friend
+  - icon: user-group
     name: friend name
     desc: Detailed description of friend
     link: https://link.to.your.friend
