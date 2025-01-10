@@ -48,6 +48,7 @@ export default config(
       },
     },
     rules: {
+      "import-x/no-absolute-path": "error",
       "import-x/no-restricted-paths": [
         "error",
         {
@@ -145,8 +146,25 @@ export default config(
   },
 
   {
+    files: ["packages/*/src/node/**/*.ts"],
+    rules: {
+      "no-restricted-imports": [
+        "error",
+        "@vuepress/helper/client",
+        "vuepress/client",
+      ],
+    },
+  },
+
+  {
     files: ["packages/*/src/client/**/*.ts"],
     rules: {
+      "no-restricted-imports": [
+        "error",
+        "@vuepress/helper",
+        "vuepress/core",
+        "vuepress/markdown",
+      ],
       // FIXME: Should be error
       "import-x/dynamic-import-chunkname": "off",
     },
