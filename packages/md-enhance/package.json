@@ -62,13 +62,13 @@
     "dev:ts": "tsc -b tsconfig.build.json --watch"
   },
   "dependencies": {
-    "@mdit/plugin-container": "^0.14.0",
+    "@mdit/plugin-container": "^0.16.0",
     "@mdit/plugin-demo": "^0.16.0",
-    "@mdit/plugin-plantuml": "^0.14.0",
+    "@mdit/plugin-plantuml": "^0.16.0",
     "@mdit/plugin-uml": "^0.16.0",
     "@types/markdown-it": "^14.1.2",
-    "@vuepress/helper": "2.0.0-rc.69",
-    "@vuepress/plugin-sass-palette": "2.0.0-rc.69",
+    "@vuepress/helper": "2.0.0-rc.70",
+    "@vuepress/plugin-sass-palette": "2.0.0-rc.70",
     "@vueuse/core": "^12.4.0",
     "balloon-css": "^1.2.0",
     "js-yaml": "^4.1.0",

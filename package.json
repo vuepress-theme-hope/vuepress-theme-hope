@@ -65,7 +65,7 @@
     "cpx2": "8.0.0",
     "cross-env": "7.0.3",
     "cz-git": "1.11.0",
-    "eslint": "9.17.0",
+    "eslint": "9.18.0",
     "eslint-config-mister-hope": "0.4.1",
     "eslint-plugin-vue": "9.32.0",
     "gulp": "5.0.0",
@@ -81,7 +81,7 @@
     "rollup-plugin-dts": "6.1.1",
     "rollup-plugin-esbuild": "6.1.1",
     "rollup-plugin-resolve-shebang": "1.0.1",
-    "sort-package-json": "2.12.0",
+    "sort-package-json": "2.13.0",
     "stylelint": "16.13.0",
     "stylelint-config-hope": "7.0.4",
     "through2": "4.0.2",
@@ -91,8 +91,16 @@
     "vite": "6.0.7",
     "vitest": "3.0.0-beta.4"
   },
-  "packageManager": "pnpm@9.15.3",
+  "packageManager": "pnpm@10.0.0",
   "engines": {
     "node": ">=20"
+  },
+  "pnpm": {
+    "overrides": {
+      "@vuepress/cli>esbuild": "^0.24.2",
+      "esbuild-loader>esbuild": "^0.24.2",
+      "stylelint>ignore": "7.0.0",
+      "tsx>esbuild": "^0.24.2"
+    }
   }
 }

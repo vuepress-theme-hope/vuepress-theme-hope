@@ -7,94 +7,48 @@ category:
 tag:
   - 界面
   - 图标
-head:
-  - - "link"
-    - rel: stylesheet
-      href: //at.alicdn.com/t/c/font_2410206_5vb9zlyghj.css
 ---
 
-整个主题在多处都添加了字体类名与图片格式图标的支持。
-
-目前你可以使用 iconfont、iconify 和 fontawesome 为你的项目添加图标，可以设置自己的图标资源。同时，png/svg 格式的图标也是支持的。你可以使用完整 URL 或路径名来添加图标。
-
-我们推荐使用 iconify 或 fontawesome。
+主题通过 [@vuepress/plugin-icon] 添加了图标支持。
 
 <!-- more -->
 
-## 浏览图标列表
+## 使用
 
-- Iconify: <https://icon-sets.iconify.design/>
-- Iconfont: <https://www.iconfont.cn/>
-- Fontawesome: <https://fontawesome.com/search?o=r&m=free>
+我们支持多种类型的图标：
 
-## 设置图标
+- `iconify` (默认)
+- `fontawesome`
+- `iconfont`
 
-你可以在多个地方使用图标。
+你也可以使用任何图标类型的图像链接（不支持相对链接）。
 
-- 页面: 在 frontmatter 中设置 `icon`
+要指定图标资源，请在主题选项中设置 `plugins.icon.assets`：
 
-  此图标将用于路径导航、页面标题、导航栏生成项、侧边栏生成项、页面导航等。
-
-- 导航栏: 在 NavbarItemConfig 中设置 `icon` 选项
-
-- 侧边栏: 在 SidebarItemConfig 中设置 `icon` 选项
-
-- 主页: 在功能项中设置 `icon` 选项
-
-## 在 Markdown 中添加图标
-
-你可以使用 `<VPIcon />` 组件在 markdown 中添加图标。
-
-- `icon` 属性接受与其他 `icon` 选项相同的内容，即：字体类名和图像 url
-- `color` 属性接受一个 css 颜色值，它将用作图标颜色（可选）
-- `size` 属性接受一个 css 大小值，该值将用作图标大小（可选）
-
-::: details 案例
-
-- <VPIcon icon="home" color="red" />
-- <VPIcon icon="//theme-hope-assets.vuejs.press/logo.svg" size="4rem" vertical-align="middle" />
-
-```md
-- <VPIcon icon="home" color="red" />
-- <VPIcon icon="//theme-hope-assets.vuejs.press/logo.svg" size="4rem" vertical-align="middle" />
-```
-
-:::
-
-## 全局设置
-
-你可以通过 `iconAssets` 和 `iconPrefix` 全局设置图标资源 url 和图标前缀。
-
-### 设置图标资源
-
-你应该将图标相关资源设置为 `iconAssets`，你可以在其中设置：
-
-- 图标资源关键词
-- css 和 js 格式的图标资源
-- 以上项目的数组
-
-```js {6,9,12-16} title=".vuepress/config.js"
+```js {7-21} title=".vuepress/config.js"
 import { hopeTheme } from "vuepress-theme-hope";
 
 export default {
   theme: hopeTheme({
-    // 关键词: "iconify", "fontawesome", "fontawesome-with-brands"
-    iconAssets: "fontawesome",
+    plugins: {
+      icon: {
+        // 关键词: "iconify", "fontawesome", "fontawesome-with-brands"
+        assets: "fontawesome",
 
-    // 你想要的 URL
-    iconAssets: "/base/my/font-icon/resource.js",
+        // 你想要的 URL
+        assets: "/base/my/font-icon/resource.js",
 
-    // 上述内容的数组
-    iconAssets: [
-      "/base/my/font-icon/resource.js",
-      "https://example/my/fonr-icon/resouce.css",
-      "fontawesome",
-    ],
+        // 上述内容的数组
+        assets: [
+          "/base/my/font-icon/resource.js",
+          "https://example/my/fonr-icon/resouce.css",
+          "fontawesome",
+        ],
+      },
+    },
   }),
 };
 ```
-
-例如，你可以使用 [iconfont.cn](https://www.iconfont.cn/) 和 [fontawesome](https://fontawesome.com) 来生成你自己的资源
 
 为了便于上手，我们添加了内置关键字 `"iconify"`、`"fontawesome"` 和 `"fontawesome-with-brands"` 支持。
 
@@ -106,85 +60,209 @@ export default {
 
 :::
 
-### 设置图标前缀
+## 添加图标
 
-`iconPrefix` 是你要设置的图标前缀，
+### 在 Markdown 中
 
-通常，你的图标类应该有一个通用前缀，对于 `iconfont`，图标类名为`iconfont icon-<ICON-NAME>`，对于 fontawesome free，图标类名为 `fas fa-<icon-name>`。 因此，当你使用关键字或从 iconfont 网站、fontawesome kit 或 fontawesome CDN 生成的单个链接设置上述 `asset` 选项时，插件会识别它们并自动为你设置前缀为 `iconfont icon-` 和 `fas fa-`.
+在 markdown 中，你可以使用 `::icon decorators... =size /color key=value complex-key="complex value"...::` 来插入自定义图标。
 
-在你使用自己的 url 或设置多个 url 的其他情况下，你可以自己手动设置此选项。毕竟输入 `icon: apple` 总是比 `icon: iconfont icon-apple`、`icon: mdi:apple` 或 `icon: fa-solid fa-apple` 更好。
+- 以 `=` 开头的字符串将被视为大小定义。
+- 以 `/` 开头的字符串将被视为颜色定义。
+- 任何本身是有效 html 属性的字符串将被解析、标准化并添加到图标元素中。
+- 其余部分将被视为图标名称。
 
-## 高级
+```md
+::icon =16 /red:: <!-- <VPIcon class="icon" color="red" size="16px" -->
 
-### 使用 Fontawesome Kit
+::icon rotate vertical-align=middle:: <!-- <VPIcon icon="icon rotate" vertical-align="middle" -->
+```
 
-你可以在 [fontawesome.com](https://fontawesome.com) 购买使用套件。
+::: md-demo Demo
 
-具有专业功能的 Fontawesome 工具包支持专业图标、更多图标样式和上传你自己的图标。
-
-::: note
-
-详情请关注 [fontawesome 文档](https://fontawesome.com/)。
-
-- [使用说明](https://fontawesome.com/docs/web/add-icons/how-to)
-- [图标列表](https://fontawesome.com/search?o=r&m=free)
+::home /blue::
+::b:apple =2rem vertical-align=text-bottom::
 
 :::
 
-### 生成自己的 Iconfont 资源
+### 在组件中
 
-[Iconfont](https://iconfont.cn) 是阿里妈妈 MUX 倾力打造的矢量图标管理、交流平台。
+你可以使用 `<VPIcon />` 组件在 Vue 组件中添加图标。
 
-设计师将图标上传到 Iconfont 平台，用户可以自定义下载多种格式的 icon，平台也可将图标转换为字体，便于前端工程师自由调整与调用。
+- `icon` 属性接受图标设置，即图标名称或图像链接
+- `color` 属性接受一个 css 颜色值，它将用作图标颜色（可选）
+- `size` 属性接受一个 css 大小值，该值将用作图标大小（可选）
+- `verticalAlign` 属性接受一个 css 垂直对齐值，该值将用作图标垂直对齐（可选）
 
-#### 使用方式
+::: md-demo Demo
 
-首先你需要新建一个项目，对你网站的图标进行设置与管理:
+<VPIcon icon="home" color="red" />
+<VPIcon
+  icon="//theme-hope-assets.vuejs.press/logo.svg"
+  size="4rem"
+  verticalAlign="middle"
+/>
 
-1. 使用 GitHub 或微博登录 Iconfont。
-1. 在网站上方找到 “资源管理 → 我的项目”，点击右上角的 “新建项目” 图标。
-1. 设置可以辨识的项目名称
-1. `FontClass/Symbol 前缀` 填入 `icon-` (你也可以根据自己喜好填写，但需要将此值设置额外前缀 `iconfont` 并设置到在主题选项中的 `iconPrefix`)
-1. Font Family 请保持 `iconfont`
+:::
 
-![新建项目](./assets/iconfont-new.png)
+### 在配置中
 
-#### 导入图标
+你可以在多个选项中设置图标：
 
-1. 请自行在 iconfont 自由搜索寻找你想要使用的图标，并点击图标上的 “添加入库” 按钮
+- 页面: 在 frontmatter 中设置 `icon`
 
-   ![添加入库](./assets/iconfont-add.png)
+  此图标将用于路径导航、页面标题、导航栏生成项、侧边栏生成项、页面导航等。
 
-1. 在寻找完所有图标后，请点击右上角的 “添加入库” 图标，点击下方的 “添加至项目” 并选择你刚刚创建好的项目进行确定。
+- 导航栏: 在导航栏项中设置 `icon` 选项
 
-#### 编辑图标
+- 侧边栏: 在侧边栏项中设置 `icon` 选项
 
-在项目页面，你可以对项目内的图标进行简单的编辑，包括位置、缩放、旋转、颜色以及 Unicode 编号与 Font Class / Symbol 的调整。
+- 首页: 在 `features` 项目中设置 `icon` 选项
+
+### 可用的图标
+
+- Iconify: <https://icon-sets.iconify.design/>
+- Iconfont: <https://www.iconfont.cn/>
+- Fontawesome: <https://fontawesome.com/search?o=r&m=free>
+
+## 图标类型
+
+### Iconify
+
+有关完整的图标列表，请参见 <https://icon-sets.iconify.design/>。要使用图标，请复制选择器中的 `iconify-icon` 的图标名称。
+
+此外，iconify 支持以下属性：
+
+- `mode`：`svg`（默认）`style` `bg` 或 `mask` 以更改渲染图标模式
+- `inline`：`false` 以禁用内联图标
+- `flip`：`horizontal` 或 `vertical` 以翻转图标
+- `rotate`：`90`、`180`、`270` 以旋转图标
+
+如果你主要使用 1 个图标集，可以将前缀设置为图标集名称（例如：`mdi:`），然后你可以使用图标名称而无需前缀。手动声明完整图标名称将覆盖前缀：
+
+```md
+::home:: <!-- mdi:home -->
+::svg-spinners:180-ring:: <!-- svg-spinners:180-ring -->
+```
+
+### Font Awesome
+
+有关免费图标列表，请参见 <https://fontawesome.com/v6/search?o=r&m=free>。要使用图标，请复制选择器中的图标名称。
+
+`fontawesome` 关键字仅包括免费的实心和常规图标。如果要使用品牌图标，则需要使用 `fontawesome-with-brands` 关键字。
+
+实心图标可以直接使用。如果要使用常规或品牌图标，则需要在图标名称前添加 `regular:` 或 `brands:` 前缀：
+
+```md
+::home:: <!-- fas fa-home (实心是默认的) -->
+::solid:home:: <!-- fas fa-home -->
+::regular:heart:: <!-- far fa-heart -->
+::brands:apple:: <!-- fab fa-apple -->
+```
+
+此外，还支持三个字母前缀、第一个字母或完整类名：
+
+```md
+::s:home:: <!-- fas fa-home -->
+::fas:home:: <!-- fas fa-home -->
+::fa-solid:home:: <!-- fa-solid fa-home -->
+
+::b:apple:: <!-- fab fa-apple -->
+::fab:apple:: <!-- fab fa-apple -->
+::fa-brands:apple:: <!-- fa-brands fa-apple -->
+
+::r:heart:: <!-- far fa-heart -->
+::far:heart:: <!-- far fa-heart -->
+::fa-regular:heart:: <!-- fa-regular fa-heart -->
+```
+
+你可以在图标名称后添加其他 fontawesome 支持的类，并用空格分隔，其中 `fa-` 前缀是可选的：
+
+```md
+<!-- 一个小尺寸 icon -->
+
+::home fa-sm:: <!-- fas fa-home fa-sm -->
+
+<!-- 旋转 180° -->
+
+::home rotate-180:: <!-- fas fa-home fa-rotate-180 -->
+```
+
+有关所有可用类的详细信息，请参见 <https://docs.fontawesome.com/web/style/styling>。
+
+::: tip Fontaweome 套件和 Pro 功能
+
+默认情况下，我们使用 jsdelivr CDN 来加载 fontawesome 免费图标的 V6 版本。这对于大多数开源项目来说应该足够了。
+
+此外，你可以在 [fontawesome.com](https://fontawesome.com) 购买套件来使用。
+
+具有专业功能的 fontawesome 套件支持专业图标、更多图标样式和上传自己的图标。
+
+有关详细信息，请参见 [fontawesome 文档](https://docs.fontawesome.com/)。
+
+- [完整图标列表](https://fontawesome.com/search)
+
+:::
+
+### Iconfont
+
+[Iconfont](https://iconfont.cn) 是阿里妈妈 MUX 创建的矢量图标管理和交流平台。
+
+每个设计师都可以将图标上传到 Iconfont 平台，用户可以从这些图标中创建项目。项目可以以各种格式使用。
+
+#### 生成自己的 Iconfont 链接
+
+##### 创建项目
+
+首先，你需要创建一个新项目来设置和管理你网站的图标：
+
+1. 登录 Iconfont。
+1. 在网站顶部找到 "资源管理 → 我的项目"，点击右上角的 "新建项目" 图标。
+1. 设置一个可识别的项目名称。
+1. 使用 `FontClass/Symbol 前缀` 填写 `icon-`。你也可以根据自己的喜好填写，但是你需要在前面加上一个额外的 `"iconfont"` 类手动设置这个值为 `prefix` 选项，例如：`iconfont icon-`。
+
+![新项目](./assets/iconfont-new.png)
+
+##### 导入图标
+
+搜索并找到你想要使用的图标，点击图标上的 "添加到图标库" 按钮。
+
+![添加入库](./assets/iconfont-add.png)
+
+当你完成搜索后，点击右上角的 "添加到图库" 图标，点击下面的 "添加到项目"，选择你创建的项目然后确认。
+
+##### 编辑图标
+
+在项目页面上，你可以编辑项目中的图标，包括调整位置、大小、旋转、颜色、Unicode 编码和字体类/符号。
 
 ![编辑图标](./assets/iconfont-edit.png)
 
-#### 生成图标文件
+##### 生成链接
 
-1. 请点击项目上方的 “Font Class” 按钮，并点击生成。
+点击项目上方的 "字体类" 按钮，然后点击 "生成链接"。
 
-   ![添加入库](./assets/iconfont-generate.png)
+![添加到库](./assets/iconfont-generate.png)
 
-1. 将 css 地址设置到主题选项的 `iconAssets` 中。
-
-#### 提示
+然后使用生成的链接设置 `assets` 选项。
 
 ::: tip
 
-如果你日后添加了新的图标，请重新生成新的 CSS 地址并替换 `iconAssets`。
+你需要每次添加新图标时重新生成和更新链接。
 
 :::
 
-::: warning 私有字符冲突
+### 图片
 
-字体图标将每个图标与 unicode 私有字符范围内的一个字符相关联，iconfont 使用的字符是随机的。
+任何图标类型都支持图像链接（不支持相对链接）。
 
-如果新图标的默认字符已在当前项目中使用，iconfont 将尝试通过分配新字符来解决冲突，但不同的项目可能会发生冲突。
+::: md-demo 案例
 
-所以我们不建议你使用多个 iconfont 链接作为资源，如果你准备这样做，请检查图标以确保每个先前的项目图标都不会被后来的图标覆盖。
+完整链接: ::<https://theme-hope-assets.vuejs.press/logo.svg>::
+
+绝对路径: <VPIcon icon="/favicon.ico" />
+
+<!-- favicon.ico 应该放在 .vuepress/public 文件夹中 -->
+<!-- ::/favicon.ico:: 是不被支持的，因为它会被解析为颜色 -->
 
 :::
+
+[@vuepress/plugin-icon]: https://ecosystem.vuejs.press/zh/plugins/features/icon.html
