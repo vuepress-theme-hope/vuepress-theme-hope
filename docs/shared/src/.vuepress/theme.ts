@@ -16,13 +16,8 @@ export default theme("shared", {
     },
   },
 
-  plugins: {
-    markdownImage: {
-      mark: true,
-    },
-
-    markdownTab: {
-      codeTabs: true,
-    },
+  markdown: {
+    codeTabs: true,
+    imgMark: true,
   },
 });
