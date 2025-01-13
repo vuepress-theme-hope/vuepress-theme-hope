@@ -4,7 +4,7 @@ export interface HopeThemeBehaviorOptions {
    *
    * 是否执行额外检查
    *
-   * @default false
+   * @default true
    */
   check?: boolean;
 
@@ -13,7 +13,7 @@ export interface HopeThemeBehaviorOptions {
    *
    * 是否兼容历史版本
    *
-   * @default false
+   * @default true
    */
   compact?: boolean;
 

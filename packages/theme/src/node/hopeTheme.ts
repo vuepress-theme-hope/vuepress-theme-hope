@@ -37,8 +37,8 @@ export const hopeTheme = (
   checkVuePressVersion();
 
   return (app) => {
-    const behaviorOptions = isPlainObject(behavior)
-      ? behavior
+    const behaviorOptions: HopeThemeBehaviorOptions = isPlainObject(behavior)
+      ? { compact: true, check: true, ...behavior }
       : behavior
         ? { compact: true, check: true }
         : {};
