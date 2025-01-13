@@ -38,9 +38,11 @@ category:
 
 - 如果你有关于 Vue、TypeScript、Sass 的学习与使用问题，或者你不知道如何写你想要的东西，你可能需要在 Vue 论坛、Stack Overflow 等地方提问。
 
-- 如果你有 VuePress 的相关问题，请在 [VuePress 仓库](https://github.com/vuepress/core) 中 [新开一个讨论](https://github.com/vuepress/core/discussions/new)，作为 VuePress 团队成员，Mr.Hope 会在空闲时间尽量给予回答。
+- 如果你有 VuePress 的相关问题，请在 [VuePress Core 仓库](https://github.com/vuepress/core) 中 [新开一个讨论](https://github.com/vuepress/core/discussions/new)
+-
+- 如果你有 VuePress 官方插件的相关问题，请在 [VuePress Ecosystem 仓库](https://github.com/vuepress/ecosystem) 中 [新开一个讨论](https://github.com/vuepress/ecosystem/discussions/new)
 
-请只在主题仓库发起 VuePress Theme Hope 主题与 Mr.Hope 编写的 VuePress 插件的相关讨论。
+请只在主题仓库发起 VuePress Theme Hope 主题与主题仓库内插件的相关讨论。
 
 :::
 
@@ -60,9 +62,9 @@ category:
 
   1. 你不是在问与 VuePress 无关的问题，也不是在寻求“技术支持”。
 
-     对于自定义部分，我们仅提供关于 “怎样去自定义某些内容 (以何种方式)” 的支持，而不提供 “如何自定义某些内容” (如何编写自己的代码) 的相关帮助。 除非你捐赠此项目，否则请不要为该部分寻求帮助。
+     对于自定义部分，我们仅提供关于 “怎样去自定义某些内容 (以何种方式)” 的支持，而不提供 “如何自定义某些内容” (如何编写自己的代码) 的相关帮助。换言之，如果你不知道如何自定义，我们很乐意给你一些想法和方向指导你如何完整这个自定义，但我们不会直接贴给你代码帮你自定义好。除非你捐赠此项目，否则请不要为该部分寻求帮助。
 
-     Mr.Hope 目前理论物理硕士在读、很忙，不想“成为文档提供者”，也不太有时间“教你如何编写代码”。
+     Mr.Hope 很忙，不想“成为文档提供者”，也不太有时间“教你如何编写代码”。
 
 ### 社交渠道
 
