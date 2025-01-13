@@ -4,6 +4,18 @@ All notable changes to this project will be documented in this file. See [Conven
 
 <!-- #region recent-change -->
 
+## [2.0.0-rc.68](https://github.com/vuepress-theme-hope/vuepress-theme-hope/compare/v2.0.0-rc.67...v2.0.0-rc.68) (2025-01-13)
+
+### ⚠ BREAKING CHANGES
+
+- **theme:** remove built-in icons for projects
+
+### ✨ Features
+
+- **theme:** remove built-in icons for projects ([1d97675](https://github.com/vuepress-theme-hope/vuepress-theme-hope/commit/1d976755b0ff9fa7e9ad49759aa14a8bde17214f))
+
+<!-- #region recent-change -->
+
 ## [2.0.0-rc.67](https://github.com/vuepress-theme-hope/vuepress-theme-hope/compare/v2.0.0-rc.66...v2.0.0-rc.67) (2025-01-07)
 
 ### ✨ Features

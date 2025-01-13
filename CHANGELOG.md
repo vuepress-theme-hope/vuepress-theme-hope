@@ -4,6 +4,25 @@ All notable changes to this project will be documented in this file. See [Conven
 
 <!-- #region recent-change -->
 
+## [2.0.0-rc.68](https://github.com/vuepress-theme-hope/vuepress-theme-hope/compare/v2.0.0-rc.67...v2.0.0-rc.68) (2025-01-13)
+
+### ⚠ BREAKING CHANGES
+
+- **theme:** remove built-in icons for projects
+
+### ✨ Features
+
+- **theme:** enable check and compact by default ([28c4937](https://github.com/vuepress-theme-hope/vuepress-theme-hope/commit/28c4937479ecccc1e3697a728a869741bac3cc65))
+- **theme:** remove built-in icons for projects ([1d97675](https://github.com/vuepress-theme-hope/vuepress-theme-hope/commit/1d976755b0ff9fa7e9ad49759aa14a8bde17214f))
+
+### 🐛 Bug Fixes
+
+- **deps:** update dependency @mdit/plugin-demo to ^0.16.0 ([#4686](https://github.com/vuepress-theme-hope/vuepress-theme-hope/issues/4686)) ([b0f45c8](https://github.com/vuepress-theme-hope/vuepress-theme-hope/commit/b0f45c8025e4b3134697765dac7371a9abb2c6b5))
+- **deps:** update dependency @mdit/plugin-uml to ^0.16.0 ([#4688](https://github.com/vuepress-theme-hope/vuepress-theme-hope/issues/4688)) ([d5197fc](https://github.com/vuepress-theme-hope/vuepress-theme-hope/commit/d5197fcdc4122e9adecb08c37f411a5a85f53245))
+- **theme:** focus mode not working with bundle ([996d65a](https://github.com/vuepress-theme-hope/vuepress-theme-hope/commit/996d65ac2719969a1ae03cf1384394fa60d9e3aa))
+
+<!-- #region recent-change -->
+
 ## [2.0.0-rc.67](https://github.com/vuepress-theme-hope/vuepress-theme-hope/compare/v2.0.0-rc.66...v2.0.0-rc.67) (2025-01-07)
 
 ### ✨ Features
