@@ -94,5 +94,10 @@
   "packageManager": "pnpm@9.15.3",
   "engines": {
     "node": ">=20"
+  },
+  "pnpm": {
+    "overrides": {
+      "stylelint>ignore": "7.0.0"
+    }
   }
 }
