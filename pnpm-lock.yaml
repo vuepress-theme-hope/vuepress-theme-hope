@@ -810,8 +810,8 @@ importers:
         specifier: ^0.16.0
         version: 0.16.0(markdown-it@14.1.0)
       '@mdit/plugin-plantuml':
-        specifier: ^0.14.0
-        version: 0.14.0(markdown-it@14.1.0)
+        specifier: ^0.16.0
+        version: 0.16.0(markdown-it@14.1.0)
       '@mdit/plugin-uml':
         specifier: ^0.16.0
         version: 0.16.0(markdown-it@14.1.0)
@@ -2750,8 +2750,8 @@ packages:
       mathjax-full:
         optional: true
 
-  '@mdit/plugin-plantuml@0.14.0':
-    resolution: {integrity: sha512-AZy/o6Uvjd46GWoisYLQBL37ET0T+XscI+E8nUuZGu/ihAhoZU3jxeE97WFPwBa5T3hrNd9L1XfLXTTDM2ZQWw==}
+  '@mdit/plugin-plantuml@0.16.0':
+    resolution: {integrity: sha512-ZjGOWYxPcGFq/TAJ2wOU6vCYH82685ERFQAC+xUsd/f6G41oGmk5i2aNqfNYYPmoQvcPvimGUPky9L6k2IXKXw==}
     peerDependencies:
       markdown-it: ^14.1.0
     peerDependenciesMeta:
@@ -11935,9 +11935,9 @@ snapshots:
       markdown-it: 14.1.0
       mathjax-full: 3.2.2
 
-  '@mdit/plugin-plantuml@0.14.0(markdown-it@14.1.0)':
+  '@mdit/plugin-plantuml@0.16.0(markdown-it@14.1.0)':
     dependencies:
-      '@mdit/plugin-uml': 0.14.0(markdown-it@14.1.0)
+      '@mdit/plugin-uml': 0.16.0(markdown-it@14.1.0)
       '@types/markdown-it': 14.1.2
     optionalDependencies:
       markdown-it: 14.1.0
