@@ -1,6 +1,6 @@
 ---
 title: Markdown 样式化配置
-icon: fab fa-markdown
+icon: b:markdown
 order: 3
 category:
   - 配置

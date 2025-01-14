@@ -1,6 +1,6 @@
 ---
 title: Kotlin Playground
-icon: fab fa-kickstarter
+icon: b:kickstarter
 ---
 
 The plugin provides you kotlin playground support.

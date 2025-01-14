@@ -1,6 +1,6 @@
 ---
 title: Markdown 代码配置
-icon: fab fa-markdown
+icon: b:markdown
 order: 5
 category:
   - 配置

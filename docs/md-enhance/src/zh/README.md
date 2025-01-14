@@ -40,7 +40,7 @@ highlights:
         link: ./guide/chart/flowchart.html
 
       - title: Markmap
-        icon: fab fa-markdown
+        icon: b:markdown
         details: 从 Markdown 生成思维导图
         link: ./guide/chart/markmap.html
 
@@ -70,12 +70,12 @@ highlights:
         link: ./guide/code/playground.html
 
       - title: Kotlin 交互演示
-        icon: fab fa-kickstarter
+        icon: b:kickstarter
         details: 响应式的 Kotlin Playground
         link: ./guide/code/kotlin-playground.html
 
       - title: Vue 交互演示
-        icon: fab fa-vuejs
+        icon: b:vuejs
         details: 在交互演示中展示 Vue 组件
         link: ./guide/code/vue-playground.html
 

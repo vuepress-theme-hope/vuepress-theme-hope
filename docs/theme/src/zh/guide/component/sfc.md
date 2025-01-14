@@ -1,6 +1,6 @@
 ---
 title: Markdown 到 Vue SFC
-icon: fab fa-vuejs
+icon: b:vuejs
 order: 1
 category:
   - 组件

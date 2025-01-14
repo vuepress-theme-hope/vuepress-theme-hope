@@ -1,6 +1,6 @@
 ---
 title: Markdown DEMO
-icon: fab fa-markdown
+icon: b:markdown
 order: 2
 category:
   - Cookbook

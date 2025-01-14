@@ -156,7 +156,7 @@ export default {
 ::home:: <!-- fas fa-home (实心是默认的) -->
 ::solid:home:: <!-- fas fa-home -->
 ::regular:heart:: <!-- far fa-heart -->
-::brands:apple:: <!-- fab fa-apple -->
+::brands:apple:: <!-- b:apple -->
 ```
 
 此外，还支持三个字母前缀、第一个字母或完整类名：
@@ -166,8 +166,8 @@ export default {
 ::fas:home:: <!-- fas fa-home -->
 ::fa-solid:home:: <!-- fa-solid fa-home -->
 
-::b:apple:: <!-- fab fa-apple -->
-::fab:apple:: <!-- fab fa-apple -->
+::b:apple:: <!-- b:apple -->
+::fab:apple:: <!-- b:apple -->
 ::fa-brands:apple:: <!-- fa-brands fa-apple -->
 
 ::r:heart:: <!-- far fa-heart -->

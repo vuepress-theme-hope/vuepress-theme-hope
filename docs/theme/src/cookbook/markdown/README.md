@@ -1,6 +1,6 @@
 ---
 title: Markdown Introduction
-icon: fab fa-markdown
+icon: b:markdown
 dir:
   collapsible: false
   order: 1

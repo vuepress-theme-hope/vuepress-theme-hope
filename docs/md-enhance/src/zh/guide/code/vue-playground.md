@@ -1,6 +1,6 @@
 ---
 title: Vue 交互演示
-icon: fab fa-vuejs
+icon: b:vuejs
 ---
 
 此插件提供 Vue 交互演示支持。

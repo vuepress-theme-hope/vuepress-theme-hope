@@ -1,6 +1,6 @@
 ---
 title: Markmap
-icon: fab fa-markdown
+icon: b:markdown
 category:
   - Markdown
 tag:

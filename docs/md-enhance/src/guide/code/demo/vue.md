@@ -1,6 +1,6 @@
 ---
 title: Vue Code Demo
-icon: fab fa-vuejs
+icon: b:vuejs
 ---
 
 ## Syntax

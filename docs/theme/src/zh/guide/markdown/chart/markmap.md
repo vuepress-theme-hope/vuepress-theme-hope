@@ -1,6 +1,6 @@
 ---
 title: 思维导图
-icon: fab fa-markdown
+icon: b:markdown
 category:
   - Markdown
 tag:

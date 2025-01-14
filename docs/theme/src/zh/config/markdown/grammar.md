@@ -1,6 +1,6 @@
 ---
 title: Markdown 语法配置
-icon: fab fa-markdown
+icon: b:markdown
 order: 2
 category:
   - 配置

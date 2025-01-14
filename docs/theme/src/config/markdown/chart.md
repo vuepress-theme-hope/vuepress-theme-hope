@@ -1,6 +1,6 @@
 ---
 title: Markdown Chart Config
-icon: fab fa-markdown
+icon: b:markdown
 order: 4
 category:
   - Config

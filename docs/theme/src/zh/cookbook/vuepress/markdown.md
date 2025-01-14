@@ -1,6 +1,6 @@
 ---
 title: 内置 Markdown 拓展
-icon: fab fa-markdown
+icon: b:markdown
 order: 2
 category:
   - 教程

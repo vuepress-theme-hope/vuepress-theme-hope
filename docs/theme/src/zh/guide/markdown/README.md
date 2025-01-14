@@ -1,6 +1,6 @@
 ---
 title: Markdown
-icon: fab fa-markdown
+icon: b:markdown
 index: false
 dir:
   order: 4

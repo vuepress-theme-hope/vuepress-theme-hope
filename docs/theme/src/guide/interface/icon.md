@@ -158,7 +158,7 @@ Solid icons can be used directly. if you want to use regular or brand icons, you
 ::home:: <!-- fas fa-home (solid is default) -->
 ::solid:home:: <!-- fas fa-home -->
 ::regular:heart:: <!-- far fa-heart -->
-::brands:apple:: <!-- fab fa-apple -->
+::brands:apple:: <!-- b:apple -->
 ```
 
 Besides, a three letter prefix, first letter or full class name are also supported:
@@ -168,8 +168,8 @@ Besides, a three letter prefix, first letter or full class name are also support
 ::fas:home:: <!-- fas fa-home -->
 ::fa-solid:home:: <!-- fa-solid fa-home -->
 
-::b:apple:: <!-- fab fa-apple -->
-::fab:apple:: <!-- fab fa-apple -->
+::b:apple:: <!-- b:apple -->
+::fab:apple:: <!-- b:apple -->
 ::fa-brands:apple:: <!-- fa-brands fa-apple -->
 
 ::r:heart:: <!-- far fa-heart -->

@@ -142,7 +142,7 @@ highlights:
         link: ./guide/markdown/grammar/math.html
 
       - title: 导入文件支持
-        icon: fab fa-markdown
+        icon: b:markdown
         details: 将你的文档分段，并在 Markdown 中导入
         link: ./guide/markdown/content/include.html
 
@@ -152,12 +152,12 @@ highlights:
         link: ./guide/markdown/code/playground.html
 
       - title: Kotlin 交互演示支持
-        icon: fab fa-kickstarter
+        icon: b:kickstarter
         details: 响应式的 Kotlin 演示
         link: ./guide/markdown/code/kotlin-playground.html
 
       - title: Vue 交互演示支持
-        icon: fab fa-vuejs
+        icon: b:vuejs
         details: 在交互演示中展示 Vue 组件
         link: ./guide/markdown/code/vue-playground.html
 

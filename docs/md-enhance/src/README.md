@@ -40,7 +40,7 @@ highlights:
         link: ./guide/chart/flowchart.html
 
       - title: Markmap Support
-        icon: fab fa-markdown
+        icon: b:markdown
         details: Generate mindmap with Markdown
         link: ./guide/chart/markmap.html
 
@@ -70,12 +70,12 @@ highlights:
         link: ./guide/code/playground.html
 
       - title: Kotlin playground Support
-        icon: fab fa-kickstarter
+        icon: b:kickstarter
         details: Reactive kotlin playground
         link: ./guide/code/kotlin-playground.html
 
       - title: Vue playground Support
-        icon: fab fa-vuejs
+        icon: b:vuejs
         details: Show living vue component in playground
         link: ./guide/code/vue-playground.html
 

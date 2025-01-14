@@ -137,7 +137,7 @@ highlights:
         link: https://theme-hope.vuejs.press/guide/markdown/grammar/math.html
 
       - title: Include snippet Support
-        icon: fab fa-markdown
+        icon: b:markdown
         details: split your docs with different parts and import them in Markdown
         link: https://theme-hope.vuejs.press/guide/markdown/content/include.html
 
@@ -147,12 +147,12 @@ highlights:
         link: https://theme-hope.vuejs.press/guide/markdown/code/playground.html
 
       - title: Kotlin playground Support
-        icon: fab fa-kickstarter
+        icon: b:kickstarter
         details: Reactive kotlin playground
         link: https://theme-hope.vuejs.press/guide/markdown/code/kotlin-playground.html
 
       - title: Vue playground Support
-        icon: fab fa-vuejs
+        icon: b:vuejs
         details: Show living vue component in playground
         link: https://theme-hope.vuejs.press/guide/markdown/code/vue-playground.html
 

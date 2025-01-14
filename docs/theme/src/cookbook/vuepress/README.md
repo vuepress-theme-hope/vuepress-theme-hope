@@ -1,6 +1,6 @@
 ---
 title: About VuePress
-icon: fab fa-vuejs
+icon: b:vuejs
 dir:
   collapsible: false
   order: 2

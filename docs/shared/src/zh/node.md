@@ -1,6 +1,6 @@
 ---
 title: Node
-icon: fab fa-node-js
+icon: b:node-js
 ---
 
 <Catalog />

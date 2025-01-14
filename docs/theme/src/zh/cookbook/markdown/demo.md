@@ -1,6 +1,6 @@
 ---
 title: Markdown 示例
-icon: fab fa-markdown
+icon: b:markdown
 order: 2
 category:
   - 教程

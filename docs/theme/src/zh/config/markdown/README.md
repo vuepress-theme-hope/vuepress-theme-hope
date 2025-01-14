@@ -1,6 +1,6 @@
 ---
 title: Markdown 配置
-icon: fab fa-markdown
+icon: b:markdown
 dir:
   order: 4
 category:

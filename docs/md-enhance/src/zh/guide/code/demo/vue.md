@@ -1,6 +1,6 @@
 ---
 title: Vue 代码演示
-icon: fab fa-vuejs
+icon: b:vuejs
 ---
 
 ## 格式

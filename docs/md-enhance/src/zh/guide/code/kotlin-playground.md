@@ -1,6 +1,6 @@
 ---
 title: Kotlin 交互演示
-icon: fab fa-kickstarter
+icon: b:kickstarter
 ---
 
 此插件提供了 Kotlin 交互演示支持。

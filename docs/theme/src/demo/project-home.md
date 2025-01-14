@@ -21,7 +21,7 @@ actions:
 
 features:
   - title: Markdown Enhance
-    icon: fab fa-markdown
+    icon: b:markdown
     details: Add align, sup/sub script, footnote, tasklist, tex, flowchart, diagram, mark and presentation support in Markdown
     link: /guide/markdown/
 

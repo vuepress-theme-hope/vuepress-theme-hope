@@ -1,6 +1,6 @@
 ---
 title: Markdown Behavior Config
-icon: fab fa-markdown
+icon: b:markdown
 order: 1
 category:
   - Config

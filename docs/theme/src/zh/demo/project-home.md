@@ -21,7 +21,7 @@ actions:
 
 features:
   - title: Markdown 增强
-    icon: fab fa-markdown
+    icon: b:markdown
     details: 新增文字对齐、上下角标、脚注、标记、任务列表、数学公式、流程图、图表与幻灯片支持
     link: /zh/guide/markdown/
 

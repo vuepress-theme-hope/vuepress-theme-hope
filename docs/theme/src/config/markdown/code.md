@@ -1,6 +1,6 @@
 ---
 title: Markdown Code Config
-icon: fab fa-markdown
+icon: b:markdown
 order: 5
 category:
   - Config

@@ -1,6 +1,6 @@
 ---
 title: Kotlin Playground
-icon: fab fa-kickstarter
+icon: b:kickstarter
 category:
   - Markdown
 tag:
