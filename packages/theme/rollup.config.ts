@@ -6,14 +6,19 @@ const __dirname = getDirname(import.meta.url);
 
 export default [
   ...rollupBundle("node/index", {
-    external: ["bcrypt-ts/node", "chokidar", "nodejs-jieba"],
+    external: ["bcrypt-ts/node", "chokidar", "nodejs-jieba", "vuepress-shared"],
     moduleSideEffects: () => false,
   }),
   ...rollupBundle(
     {
       base: "client",
       target: "bundle",
-      files: ["export", "modules/blog/export", "modules/encrypt/export"],
+      files: [
+        "darkmode",
+        "export",
+        "modules/blog/export",
+        "modules/encrypt/export",
+      ],
     },
     {
       alias: [

@@ -45,10 +45,20 @@ Toggle the button to see effects: <ColorModeSwitch />
 
 - In Markdown files or Vue Template, you can access `$isDarkmode` to get darkmode status directly.
 
-- In scripts, you can import `useDarkmode` from `vuepress-theme-hope/client` to get darkmode status:
+- In scripts, you can import `useDarkmode` from `vuepress-theme-hope/darkmode` to get darkmode status:
 
   ```ts
-  import { useDarkmode } from "vuepress-theme-hope/client";
+  import { useDarkmode } from "vuepress-theme-hope/darkmode";
+
+  const { isDarkmode } = useDarkmode();
+
+  console.log(isDarkmode.value); // get darkmode status
+  ```
+
+  If you enable theme alias by setting `{ custom: true}`, you should use `@theme-hope/modules/outlook/composables/index` instead:
+
+  ```ts
+  import { useDarkmode } from "@theme-hope/modules/outlook/composables";
 
   const { isDarkmode } = useDarkmode();
 

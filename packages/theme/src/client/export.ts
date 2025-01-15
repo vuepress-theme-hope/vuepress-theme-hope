@@ -1,6 +1,4 @@
 export {
-  // Note: This api is exposed to users for accessing darkmode status
-  useDarkmode,
   injectDarkmode,
   setupDarkmode,
 } from "@theme-hope/modules/outlook/composables/index";

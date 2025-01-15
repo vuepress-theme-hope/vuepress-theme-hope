@@ -29,6 +29,7 @@
   "type": "module",
   "exports": {
     ".": "./lib/node/index.js",
+    "./darkmode": "./lib/bundle/darkmode.js",
     "./client": "./lib/client/index.js",
     "./client/*": "./lib/client/*",
     "./components/*": "./lib/client/components/*",
@@ -37,6 +38,7 @@
     "./layouts/*": "./lib/client/layouts/*",
     "./modules/*": "./lib/client/modules/*",
     "./styles/*": "./lib/client/styles/*",
+    "./utils": "./lib/client/utils/*",
     "./utils/*": "./lib/client/utils/*",
     "./blog/*": "./lib/client/modules/blog/*",
     "./encrypt/*": "./lib/client/modules/encrypt/*",
