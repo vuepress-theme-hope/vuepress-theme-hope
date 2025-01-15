@@ -2,7 +2,7 @@
 home: true
 portfolio: true
 title: Portfolio Home
-icon: home
+icon: house
 name: Conan Edogawa
 avatar: https://theme-hope-assets.vuejs.press/hero/conan.png
 

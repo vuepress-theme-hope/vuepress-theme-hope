@@ -24,7 +24,7 @@ export default defineComponent({
                 { class: "vp-nav-item hide-in-mobile" },
                 "children" in config
                   ? h(NavbarDropdown, { config })
-                  : h(AutoLink, { config }),
+                  : h(AutoLink, { config, iconSizing: "height" }),
               ),
             ),
           )

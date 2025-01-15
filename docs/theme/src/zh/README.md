@@ -285,12 +285,12 @@ highlights:
         link: ./guide/blog/home.html
 
       - title: 博主信息
-        icon: home
+        icon: circle-info
         details: 自定义名称、头像、座右铭和社交媒体链接
         link: ./guide/blog/blogger.html
 
       - title: 时间线
-        icon: home
+        icon: clock
         details: 在时间线中浏览和通读博文
         link: ./guide/blog/timeline.html
 

@@ -116,7 +116,7 @@ Markdown 将会把它转换为:
 
 <!-- markdownlint-disable MD038 -->
 
-如果你*真的*想要插入 `<br />` 标签的话，在行尾加上两个以上的空格 () 或斜线 (`/`)，然后按 Enter。
+如果你*真的*想要插入 `<br />` 标签的话，在行尾加上两个以上的空格 () 或反斜线 (`\`)，然后按 Enter。
 
 <!-- markdownlint-enable MD038 -->
 

@@ -9,11 +9,19 @@ export default defineComponent({
 
   props: {
     /**
-     * @description Autolink config
+     * Autolink config
      */
     config: {
       type: Object as PropType<AutoLinkOptions>,
       required: true,
+    },
+
+    /**
+     * Whether icon should not fix width
+     */
+    iconSizing: {
+      type: String as PropType<"height" | "width" | "both">,
+      default: "both",
     },
   },
 
@@ -42,7 +50,11 @@ export default defineComponent({
           before:
             slots.before ??
             (icon
-              ? (): VNode | null => h(resolveComponent("VPIcon"), { icon })
+              ? (): VNode | null =>
+                  h(resolveComponent("VPIcon"), {
+                    icon,
+                    sizing: props.iconSizing,
+                  })
               : null),
           after: slots.after,
         },

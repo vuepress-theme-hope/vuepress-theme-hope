@@ -130,7 +130,7 @@ export default hopeTheme({
     },
 
     icon: {
-      assets: "fontawesome-with-brands",
+      prefix: "fa6-solid:",
     },
 
     // 如果你需要 PWA。安装 @vuepress/plugin-pwa 并取消下方注释

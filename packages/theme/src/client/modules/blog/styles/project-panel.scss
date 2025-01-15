@@ -94,10 +94,10 @@
 
   float: right;
 
-  width: 28px;
-  height: 28px;
+  height: 1em;
+  margin: 4px;
 
-  font-size: 28px;
+  font-size: 1.25em;
 
   [dir="rtl"] & {
     float: left;

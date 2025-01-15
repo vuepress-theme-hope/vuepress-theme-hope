@@ -60,18 +60,6 @@
 }
 // stylelint-enable selector-class-pattern
 
-// plugin-icon
-.vp-icon {
-  // fix width for fontawesome
-  /* stylelint-disable-next-line selector-class-pattern */
-  .svg-inline--fa {
-    vertical-align: -0.0714em;
-    width: 1em;
-    font-size: 0.875em;
-    line-height: 0.0714em;
-  }
-}
-
 // plugin-markdown-hint
 .hint-container {
   @media (max-width: hope-config.$mobile) {

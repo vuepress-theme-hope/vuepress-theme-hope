@@ -138,7 +138,7 @@ export default hopeTheme(
       },
 
       icon: {
-        assets: "fontawesome-with-brands",
+        prefix: "fa6-solid:",
       },
 
       pwa: {

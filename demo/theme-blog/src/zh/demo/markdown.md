@@ -1,6 +1,6 @@
 ---
 title: Markdown 展示
-icon: b:markdown
+icon: fa6-brands:markdown
 order: 2
 category:
   - 使用指南

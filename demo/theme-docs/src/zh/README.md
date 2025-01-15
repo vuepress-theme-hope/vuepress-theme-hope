@@ -1,6 +1,6 @@
 ---
 home: true
-icon: home
+icon: house
 title: 项目主页
 heroImage: https://theme-hope-assets.vuejs.press/logo.svg
 bgImage: https://theme-hope-assets.vuejs.press/bg/6-light.svg
@@ -137,7 +137,7 @@ highlights:
         link: https://theme-hope.vuejs.press/zh/guide/markdown/grammar/math.html
 
       - title: 导入文件支持
-        icon: b:markdown
+        icon: fa6-brands:markdown
         details: 将你的文档分段，并在 Markdown 中导入
         link: https://theme-hope.vuejs.press/zh/guide/markdown/content/include.html
 
@@ -147,12 +147,12 @@ highlights:
         link: https://theme-hope.vuejs.press/zh/guide/markdown/code/playground.html
 
       - title: Kotlin 交互演示支持
-        icon: b:kickstarter
+        icon: fa6-brands:kickstarter
         details: 响应式的 Kotlin 演示
         link: https://theme-hope.vuejs.press/zh/guide/markdown/code/kotlin-playground.html
 
       - title: Vue 交互演示支持
-        icon: b:vuejs
+        icon: fa6-brands:vuejs
         details: 在交互演示中展示 Vue 组件
         link: https://theme-hope.vuejs.press/zh/guide/markdown/code/vue-playground.html
 
@@ -275,17 +275,17 @@ highlights:
         link: https://theme-hope.vuejs.press/zh/guide/blog/intro.html
 
       - title: 博客主页
-        icon: home
+        icon: house
         details: 全新博客主页
         link: https://theme-hope.vuejs.press/zh/guide/blog/home.html
 
       - title: 博主信息
-        icon: home
+        icon: house
         details: 自定义名称、头像、座右铭和社交媒体链接
         link: https://theme-hope.vuejs.press/zh/guide/blog/blogger.html
 
       - title: 时间线
-        icon: home
+        icon: house
         details: 在时间线中浏览和通读博文
         link: https://theme-hope.vuejs.press/zh/guide/blog/timeline.html
 
