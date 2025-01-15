@@ -318,6 +318,13 @@ docs:
     repo: https://github.com/cherry-embedded/CherryDAP/tree/master/docs
     preview: /assets/image/cherrydap.jpg
 
+  - name: Sixflowers
+    desc: Yunzai机器人教程
+    logo: https://sixflowers.icu/4.jpg
+    url: https://sixflowers.icu/
+    repo: https://github.com/dmmdekkd
+    preview: https://sixflowers.icu/4.jpg
+
 portfolios:
   - name: 尚程
     url: https://cheng-shang.me/zh/
