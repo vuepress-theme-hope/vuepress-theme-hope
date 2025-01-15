@@ -42,6 +42,16 @@
     color: inherit;
   }
 
+  &.active {
+    background: var(--vp-c-accent-bg);
+    color: var(--vp-c-white);
+
+    .vp-category-count {
+      background: var(--vp-c-white);
+      color: var(--vp-c-accent-bg);
+    }
+  }
+
   .vp-category-count {
     display: inline-block;
 
@@ -87,13 +97,13 @@
           background: color.scale($color, $lightness: -20%);
         }
 
-        .count {
+        .vp-category-count {
           background: var(--vp-c-white);
           color: $color;
         }
       }
 
-      .count {
+      .vp-category-count {
         background: $color;
       }
     }
