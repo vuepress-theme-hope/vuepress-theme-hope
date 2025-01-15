@@ -4,6 +4,18 @@ All notable changes to this project will be documented in this file. See [Conven
 
 <!-- #region recent-change -->
 
+## [2.0.0-rc.69](https://github.com/vuepress-theme-hope/vuepress-theme-hope/compare/v2.0.0-rc.68...v2.0.0-rc.69) (2025-01-15)
+
+### ✨ Features
+
+- **theme:** improve article list, close [#4670](https://github.com/vuepress-theme-hope/vuepress-theme-hope/issues/4670) ([5665878](https://github.com/vuepress-theme-hope/vuepress-theme-hope/commit/5665878db374c8b3e3806ac12e0ffc9b8570a4b9))
+
+### 🐛 Bug Fixes
+
+- **theme:** fix useDarkmode ([9338588](https://github.com/vuepress-theme-hope/vuepress-theme-hope/commit/93385888b4b4b173c37a095bf327cf7b0ad53b5f))
+
+<!-- #region recent-change -->
+
 ## [2.0.0-rc.68](https://github.com/vuepress-theme-hope/vuepress-theme-hope/compare/v2.0.0-rc.67...v2.0.0-rc.68) (2025-01-13)
 
 ### ⚠ BREAKING CHANGES
