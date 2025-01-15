@@ -1,4 +1,4 @@
-import { addViteOptimizeDepsInclude } from "@vuepress/helper";
+import { addViteOptimizeDepsInclude, isFunction } from "@vuepress/helper";
 import type { UserConfig } from "vuepress";
 import { defineUserConfig } from "vuepress";
 import { getDirname, path } from "vuepress/utils";
@@ -31,7 +31,7 @@ export const config = (
 
     plugins,
 
-    alias: {
+    alias: async (app, isServer): Promise<Record<string, unknown>> => ({
       "@theme-hope/components/HeroInfo": path.resolve(
         __dirname,
         "./components/HopeHero.js",
@@ -40,8 +40,8 @@ export const config = (
         __dirname,
         "./components/HopeNotFoundHint.js",
       ),
-      ...alias,
-    },
+      ...(isFunction(alias) ? await alias(app, isServer) : alias),
+    }),
 
     define: () => ({ IS_GITEE, IS_GITHUB, IS_NETLIFY }),
 
