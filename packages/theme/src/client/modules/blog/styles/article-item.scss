@@ -208,6 +208,10 @@
 
   // shrink code block
   div[class*="language-"] {
+    &::before {
+      top: 0;
+    }
+
     pre,
     &.line-numbers-mode .line-numbers {
       line-height: 1.5;
