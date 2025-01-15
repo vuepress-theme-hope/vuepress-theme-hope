@@ -1,6 +1,6 @@
 import type { PropType, SlotsType, VNode } from "vue";
 import { defineComponent, h, toRef } from "vue";
-import { RouteLink, withBase } from "vuepress/client";
+import { useRouter, withBase } from "vuepress/client";
 
 import {
   SlideIcon,
@@ -61,6 +61,7 @@ export default defineComponent({
   setup(props, { slots }) {
     const articleInfo = toRef(props, "info");
     const { info: pageInfo, items } = useArticleInfo(props);
+    const router = useRouter();
 
     return (): VNode => {
       const {
@@ -74,8 +75,18 @@ export default defineComponent({
       const info = pageInfo.value;
 
       return h(
-        "div",
-        { class: "vp-article-wrapper" },
+        "a",
+        {
+          class: "vp-article-wrapper",
+          href: withBase(props.path),
+          onClick: (event: MouseEvent) => {
+            if ((event.target as HTMLElement | undefined)?.matches("summary"))
+              return;
+
+            event.preventDefault();
+            void router.push(props.path);
+          },
+        },
         h(
           "article",
           {
@@ -84,6 +95,7 @@ export default defineComponent({
             typeof: "Article",
           },
           [
+            sticky ? h(StickyIcon) : null,
             slots.cover?.({ cover }) ??
               (cover
                 ? [
@@ -99,18 +111,12 @@ export default defineComponent({
                     }),
                   ]
                 : []),
-            sticky ? h(StickyIcon) : null,
-            h(
-              RouteLink,
-              { to: props.path },
-              () =>
-                slots.title?.({ title, isEncrypted, type }) ??
-                h("header", { class: "vp-article-title" }, [
-                  isEncrypted ? h(LockIcon) : null,
-                  type === PageType.slide ? h(SlideIcon) : null,
-                  h("span", { property: "headline" }, title),
-                ]),
-            ),
+            slots.title?.({ title, isEncrypted, type }) ??
+              h("header", { class: "vp-article-title" }, [
+                isEncrypted ? h(LockIcon) : null,
+                type === PageType.slide ? h(SlideIcon) : null,
+                h("span", { property: "headline" }, title),
+              ]),
             slots.excerpt?.({ excerpt }) ??
               (excerpt
                 ? h("div", {
