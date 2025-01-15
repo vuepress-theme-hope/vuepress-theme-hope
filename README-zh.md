@@ -13,10 +13,6 @@
 
 ## [在线案例](https://stackblitz.com/fork/vuepress-theme-hope)
 
-## 特别捐献者
-
-[![Grey Software](https://vuepress-theme-hope.github.io/grey-software.svg)](https://grey.software/)
-
 ## 联系
 
 我们建议你使用 [issues](https://github.com/vuepress-theme-hope/vuepress-theme-hope/issues) 和 [discussions](https://github.com/vuepress-theme-hope/vuepress-theme-hope/discussions) 联系，但也欢迎你加入我们的 [QQ 群](https://jq.qq.com/?_wv=1027&k=rATJyxGK) (群号: 1003437555)

@@ -2,13 +2,9 @@
 
 All notable changes to this project will be documented in this file. See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
-<!-- #region recent-change -->
-
 ## [2.0.0-rc.69](https://github.com/vuepress-theme-hope/vuepress-theme-hope/compare/v2.0.0-rc.68...v2.0.0-rc.69) (2025-01-15)
 
 **Note:** Version bump only for package vuepress-plugin-md-enhance
-
-<!-- #region recent-change -->
 
 ## [2.0.0-rc.68](https://github.com/vuepress-theme-hope/vuepress-theme-hope/compare/v2.0.0-rc.67...v2.0.0-rc.68) (2025-01-13)
 
@@ -16,8 +12,6 @@ All notable changes to this project will be documented in this file. See [Conven
 
 - **deps:** update dependency @mdit/plugin-demo to ^0.16.0 ([#4686](https://github.com/vuepress-theme-hope/vuepress-theme-hope/issues/4686)) ([b0f45c8](https://github.com/vuepress-theme-hope/vuepress-theme-hope/commit/b0f45c8025e4b3134697765dac7371a9abb2c6b5))
 - **deps:** update dependency @mdit/plugin-uml to ^0.16.0 ([#4688](https://github.com/vuepress-theme-hope/vuepress-theme-hope/issues/4688)) ([d5197fc](https://github.com/vuepress-theme-hope/vuepress-theme-hope/commit/d5197fcdc4122e9adecb08c37f411a5a85f53245))
-
-<!-- #region recent-change -->
 
 ## [2.0.0-rc.67](https://github.com/vuepress-theme-hope/vuepress-theme-hope/compare/v2.0.0-rc.66...v2.0.0-rc.67) (2025-01-07)
 
@@ -30,21 +24,15 @@ All notable changes to this project will be documented in this file. See [Conven
 - **md-enhance:** fix markmap toolbar ([8c84a00](https://github.com/vuepress-theme-hope/vuepress-theme-hope/commit/8c84a0015a0802d38760bfb0af65765bf7654c01))
 - **md-enhance:** fix plantuml ([#4641](https://github.com/vuepress-theme-hope/vuepress-theme-hope/issues/4641)) ([c6f816b](https://github.com/vuepress-theme-hope/vuepress-theme-hope/commit/c6f816bd218ac073684580ee252b0691d94fc9a4))
 
-<!-- #region recent-change -->
-
 ## [2.0.0-rc.64](https://github.com/vuepress-theme-hope/vuepress-theme-hope/compare/v2.0.0-rc.63...v2.0.0-rc.64) (2024-12-13)
 
 **Note:** Version bump only for package vuepress-plugin-md-enhance
-
-<!-- #region recent-change -->
 
 ## [2.0.0-rc.63](https://github.com/vuepress-theme-hope/vuepress-theme-hope/compare/v2.0.0-rc.62...v2.0.0-rc.63) (2024-12-09)
 
 ### 🐛 Bug Fixes
 
 - fix compact code ([5608612](https://github.com/vuepress-theme-hope/vuepress-theme-hope/commit/56086129916ebc09782c7036b36f0d6c059c6710))
-
-<!-- #region recent-change -->
 
 ## [2.0.0-rc.62](https://github.com/vuepress-theme-hope/vuepress-theme-hope/compare/v2.0.0-rc.61...v2.0.0-rc.62) (2024-12-09)
 
@@ -59,8 +47,6 @@ All notable changes to this project will be documented in this file. See [Conven
 - **md-enhance:** fix codepen button preprocessor settings ([2e99c52](https://github.com/vuepress-theme-hope/vuepress-theme-hope/commit/2e99c52fe608e9ea92b0aa21020a58d8884be6af))
 - **md-enhance:** fix echarts type ([3624fec](https://github.com/vuepress-theme-hope/vuepress-theme-hope/commit/3624feca3acd15a8e559e5509922fbab6608676a))
 
-<!-- #region recent-change -->
-
 ## [2.0.0-rc.60](https://github.com/vuepress-theme-hope/vuepress-theme-hope/compare/v2.0.0-rc.59...v2.0.0-rc.60) (2024-12-06)
 
 ### ⚠ BREAKING CHANGES
@@ -71,8 +57,6 @@ All notable changes to this project will be documented in this file. See [Conven
 
 - **md-enhance:** support more diagrams ([124093d](https://github.com/vuepress-theme-hope/vuepress-theme-hope/commit/124093d4374fc113f03e23eea2ebd865d8f16abc))
 - replace plugins with official ones and rebuild markdown options ([#4553](https://github.com/vuepress-theme-hope/vuepress-theme-hope/issues/4553)) ([22787ac](https://github.com/vuepress-theme-hope/vuepress-theme-hope/commit/22787ac127e25c078638b854eec74f2caa44598c))
-
-<!-- #region recent-change -->
 
 ## 2.0.0-rc.59 (2024-10-21)
 

@@ -2,8 +2,6 @@
 
 All notable changes to this project will be documented in this file. See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
-<!-- #region recent-change -->
-
 ## [2.0.0-rc.69](https://github.com/vuepress-theme-hope/vuepress-theme-hope/compare/v2.0.0-rc.68...v2.0.0-rc.69) (2025-01-15)
 
 ### ✨ Features
@@ -13,8 +11,6 @@ All notable changes to this project will be documented in this file. See [Conven
 ### 🐛 Bug Fixes
 
 - **theme:** fix useDarkmode ([9338588](https://github.com/vuepress-theme-hope/vuepress-theme-hope/commit/93385888b4b4b173c37a095bf327cf7b0ad53b5f))
-
-<!-- #region recent-change -->
 
 ## [2.0.0-rc.68](https://github.com/vuepress-theme-hope/vuepress-theme-hope/compare/v2.0.0-rc.67...v2.0.0-rc.68) (2025-01-13)
 
@@ -31,8 +27,6 @@ All notable changes to this project will be documented in this file. See [Conven
 
 - **theme:** focus mode not working with bundle ([996d65a](https://github.com/vuepress-theme-hope/vuepress-theme-hope/commit/996d65ac2719969a1ae03cf1384394fa60d9e3aa))
 
-<!-- #region recent-change -->
-
 ## [2.0.0-rc.67](https://github.com/vuepress-theme-hope/vuepress-theme-hope/compare/v2.0.0-rc.66...v2.0.0-rc.67) (2025-01-07)
 
 ### ✨ Features
@@ -42,15 +36,11 @@ All notable changes to this project will be documented in this file. See [Conven
 - **theme:** render toc slots even if no header ([9128fb7](https://github.com/vuepress-theme-hope/vuepress-theme-hope/commit/9128fb7a46098fcdf4f95d34ca55fcaf1a33119b))
 - **theme:** use plugin-icon ([edfd58e](https://github.com/vuepress-theme-hope/vuepress-theme-hope/commit/edfd58edcafa7718203573f1bdcada62d335abfe))
 
-<!-- #region recent-change -->
-
 ## [2.0.0-rc.66](https://github.com/vuepress-theme-hope/vuepress-theme-hope/compare/v2.0.0-rc.65...v2.0.0-rc.66) (2024-12-16)
 
 ### 🐛 Bug Fixes
 
 - **theme:** fix comment plugin issue ([baa7b68](https://github.com/vuepress-theme-hope/vuepress-theme-hope/commit/baa7b6882ab9cae228055327f8d70e97d910bd26))
-
-<!-- #region recent-change -->
 
 ## [2.0.0-rc.65](https://github.com/vuepress-theme-hope/vuepress-theme-hope/compare/v2.0.0-rc.64...v2.0.0-rc.65) (2024-12-16)
 
@@ -69,8 +59,6 @@ All notable changes to this project will be documented in this file. See [Conven
 
 - **components:** fix SiteInfo style ([3dc9c50](https://github.com/vuepress-theme-hope/vuepress-theme-hope/commit/3dc9c50058eeeaa3ffd345c615a112c57ed25df0))
 
-<!-- #region recent-change -->
-
 ## [2.0.0-rc.64](https://github.com/vuepress-theme-hope/vuepress-theme-hope/compare/v2.0.0-rc.63...v2.0.0-rc.64) (2024-12-13)
 
 ### ✨ Features
@@ -83,15 +71,11 @@ All notable changes to this project will be documented in this file. See [Conven
 - **theme:** fix image icon in catalog ([d2c7f84](https://github.com/vuepress-theme-hope/vuepress-theme-hope/commit/d2c7f8460e7e5b78e28d53398f2a49ce3c910ad5))
 - **theme:** support string in category and tag, close [#4624](https://github.com/vuepress-theme-hope/vuepress-theme-hope/issues/4624) ([324eee3](https://github.com/vuepress-theme-hope/vuepress-theme-hope/commit/324eee3c43edacc9d4b6e9ecaf28da9fa5802d41))
 
-<!-- #region recent-change -->
-
 ## [2.0.0-rc.63](https://github.com/vuepress-theme-hope/vuepress-theme-hope/compare/v2.0.0-rc.62...v2.0.0-rc.63) (2024-12-09)
 
 ### 🐛 Bug Fixes
 
 - fix compact code ([5608612](https://github.com/vuepress-theme-hope/vuepress-theme-hope/commit/56086129916ebc09782c7036b36f0d6c059c6710))
-
-<!-- #region recent-change -->
 
 ## [2.0.0-rc.62](https://github.com/vuepress-theme-hope/vuepress-theme-hope/compare/v2.0.0-rc.61...v2.0.0-rc.62) (2024-12-09)
 
@@ -105,15 +89,11 @@ All notable changes to this project will be documented in this file. See [Conven
 - **theme:** fix path encrypt ([5ecfb7e](https://github.com/vuepress-theme-hope/vuepress-theme-hope/commit/5ecfb7e456e7318e37453de88060cda61ccf09a9))
 - **theme:** only hide the first h1 heading ([1cade5e](https://github.com/vuepress-theme-hope/vuepress-theme-hope/commit/1cade5ed80675d2e40cb79aa354a3984c6c195df))
 
-<!-- #region recent-change -->
-
 ## [2.0.0-rc.61](https://github.com/vuepress-theme-hope/vuepress-theme-hope/compare/v2.0.0-rc.60...v2.0.0-rc.61) (2024-12-07)
 
 ### 🐛 Bug Fixes
 
 - **theme:** fix bundle style ([49d1c97](https://github.com/vuepress-theme-hope/vuepress-theme-hope/commit/49d1c97857805025741a3eaec166bb20acbc13d7))
-
-<!-- #region recent-change -->
 
 ## [2.0.0-rc.60](https://github.com/vuepress-theme-hope/vuepress-theme-hope/compare/v2.0.0-rc.59...v2.0.0-rc.60) (2024-12-06)
 
@@ -134,8 +114,6 @@ All notable changes to this project will be documented in this file. See [Conven
 
 - **theme:** fix styles with social media icons, close [#4584](https://github.com/vuepress-theme-hope/vuepress-theme-hope/issues/4584) ([77676b3](https://github.com/vuepress-theme-hope/vuepress-theme-hope/commit/77676b3d2eb1e4f176b2c798abdfe1a8e7980d25))
 - **theme:** fix toc layout shift on PC, close [#4611](https://github.com/vuepress-theme-hope/vuepress-theme-hope/issues/4611) ([2489301](https://github.com/vuepress-theme-hope/vuepress-theme-hope/commit/248930120bfac3aae6ff4326ca906dfebee3aeb0))
-
-<!-- #region recent-change -->
 
 ## 2.0.0-rc.59 (2024-10-21)
 

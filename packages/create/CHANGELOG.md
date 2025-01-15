@@ -2,13 +2,9 @@
 
 All notable changes to this project will be documented in this file. See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
-<!-- #region recent-change -->
-
 ## [2.0.0-rc.69](https://github.com/vuepress-theme-hope/vuepress-theme-hope/compare/v2.0.0-rc.68...v2.0.0-rc.69) (2025-01-15)
 
 **Note:** Version bump only for package create-vuepress-theme-hope
-
-<!-- #region recent-change -->
 
 ## [2.0.0-rc.68](https://github.com/vuepress-theme-hope/vuepress-theme-hope/compare/v2.0.0-rc.67...v2.0.0-rc.68) (2025-01-13)
 
@@ -20,8 +16,6 @@ All notable changes to this project will be documented in this file. See [Conven
 
 - **theme:** remove built-in icons for projects ([1d97675](https://github.com/vuepress-theme-hope/vuepress-theme-hope/commit/1d976755b0ff9fa7e9ad49759aa14a8bde17214f))
 
-<!-- #region recent-change -->
-
 ## [2.0.0-rc.67](https://github.com/vuepress-theme-hope/vuepress-theme-hope/compare/v2.0.0-rc.66...v2.0.0-rc.67) (2025-01-07)
 
 ### ✨ Features
@@ -30,25 +24,17 @@ All notable changes to this project will be documented in this file. See [Conven
 - **create:** replace cac by commander, close [#4576](https://github.com/vuepress-theme-hope/vuepress-theme-hope/issues/4576) ([8289f5a](https://github.com/vuepress-theme-hope/vuepress-theme-hope/commit/8289f5a45e5c0dfeb9f79940f0ddf3133cc24a1e))
 - **theme:** use plugin-icon ([edfd58e](https://github.com/vuepress-theme-hope/vuepress-theme-hope/commit/edfd58edcafa7718203573f1bdcada62d335abfe))
 
-<!-- #region recent-change -->
-
 ## [2.0.0-rc.66](https://github.com/vuepress-theme-hope/vuepress-theme-hope/compare/v2.0.0-rc.65...v2.0.0-rc.66) (2024-12-16)
 
 **Note:** Version bump only for package create-vuepress-theme-hope
-
-<!-- #region recent-change -->
 
 ## [2.0.0-rc.65](https://github.com/vuepress-theme-hope/vuepress-theme-hope/compare/v2.0.0-rc.64...v2.0.0-rc.65) (2024-12-16)
 
 **Note:** Version bump only for package create-vuepress-theme-hope
 
-<!-- #region recent-change -->
-
 ## [2.0.0-rc.64](https://github.com/vuepress-theme-hope/vuepress-theme-hope/compare/v2.0.0-rc.63...v2.0.0-rc.64) (2024-12-13)
 
 **Note:** Version bump only for package create-vuepress-theme-hope
-
-<!-- #region recent-change -->
 
 ## [2.0.0-rc.63](https://github.com/vuepress-theme-hope/vuepress-theme-hope/compare/v2.0.0-rc.62...v2.0.0-rc.63) (2024-12-09)
 
@@ -56,21 +42,15 @@ All notable changes to this project will be documented in this file. See [Conven
 
 - **create:** fix template ([b748032](https://github.com/vuepress-theme-hope/vuepress-theme-hope/commit/b748032afc5bbbd6b055656d5b308fe26a8ec588))
 
-<!-- #region recent-change -->
-
 ## [2.0.0-rc.62](https://github.com/vuepress-theme-hope/vuepress-theme-hope/compare/v2.0.0-rc.61...v2.0.0-rc.62) (2024-12-09)
 
 ### 🐛 Bug Fixes
 
 - **deps:** update dependency execa to v9.5.2 ([#4618](https://github.com/vuepress-theme-hope/vuepress-theme-hope/issues/4618)) ([ded153a](https://github.com/vuepress-theme-hope/vuepress-theme-hope/commit/ded153a30f632f0169b8383605be6128548c996c))
 
-<!-- #region recent-change -->
-
 ## [2.0.0-rc.61](https://github.com/vuepress-theme-hope/vuepress-theme-hope/compare/v2.0.0-rc.60...v2.0.0-rc.61) (2024-12-07)
 
 **Note:** Version bump only for package create-vuepress-theme-hope
-
-<!-- #region recent-change -->
 
 ## [2.0.0-rc.60](https://github.com/vuepress-theme-hope/vuepress-theme-hope/compare/v2.0.0-rc.59...v2.0.0-rc.60) (2024-12-06)
 
@@ -81,8 +61,6 @@ All notable changes to this project will be documented in this file. See [Conven
 ### ✨ Features
 
 - replace plugins with official ones and rebuild markdown options ([#4553](https://github.com/vuepress-theme-hope/vuepress-theme-hope/issues/4553)) ([22787ac](https://github.com/vuepress-theme-hope/vuepress-theme-hope/commit/22787ac127e25c078638b854eec74f2caa44598c))
-
-<!-- #region recent-change -->
 
 ## 2.0.0-rc.59 (2024-10-21)
 
