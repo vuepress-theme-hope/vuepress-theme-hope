@@ -13,12 +13,7 @@ export default [
     {
       base: "client",
       target: "bundle",
-      files: [
-        "darkmode",
-        "export",
-        "modules/blog/export",
-        "modules/encrypt/export",
-      ],
+      files: ["export", "modules/blog/export", "modules/encrypt/export"],
     },
     {
       alias: [

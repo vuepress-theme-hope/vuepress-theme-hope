@@ -29,7 +29,6 @@
   "type": "module",
   "exports": {
     ".": "./lib/node/index.js",
-    "./darkmode": "./lib/bundle/darkmode.js",
     "./client": "./lib/client/index.js",
     "./client/*": "./lib/client/*",
     "./components/*": "./lib/client/components/*",
