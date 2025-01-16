@@ -4,6 +4,19 @@ All notable changes to this project will be documented in this file. See [Conven
 
 <!-- #region recent-change -->
 
+## [2.0.0-rc.70](https://github.com/vuepress-theme-hope/vuepress-theme-hope/compare/v2.0.0-rc.69...v2.0.0-rc.70) (2025-01-16)
+
+### ✨ Features
+
+- **theme:** support hint for password, close [#4693](https://github.com/vuepress-theme-hope/vuepress-theme-hope/issues/4693) ([07ae433](https://github.com/vuepress-theme-hope/vuepress-theme-hope/commit/07ae433e4c622d6fc07b8b3e79e35d8653b70d2c))
+
+### 🐛 Bug Fixes
+
+- **theme:** fix category list style ([2bf2490](https://github.com/vuepress-theme-hope/vuepress-theme-hope/commit/2bf2490bf45ecf0a1036e2c974d247671f2046b0))
+- **theme:** fix excerpt fence title ([d814600](https://github.com/vuepress-theme-hope/vuepress-theme-hope/commit/d8146004d12dee1cc16fee7ef709acf730be13b9))
+
+<!-- #region recent-change -->
+
 ## [2.0.0-rc.69](https://github.com/vuepress-theme-hope/vuepress-theme-hope/compare/v2.0.0-rc.68...v2.0.0-rc.69) (2025-01-15)
 
 ### ✨ Features

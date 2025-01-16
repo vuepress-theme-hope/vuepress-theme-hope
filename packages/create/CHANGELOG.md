@@ -2,6 +2,14 @@
 
 All notable changes to this project will be documented in this file. See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+<!-- #region recent-change -->
+
+## [2.0.0-rc.70](https://github.com/vuepress-theme-hope/vuepress-theme-hope/compare/v2.0.0-rc.69...v2.0.0-rc.70) (2025-01-16)
+
+### ✨ Features
+
+- **theme:** support hint for password, close [#4693](https://github.com/vuepress-theme-hope/vuepress-theme-hope/issues/4693) ([07ae433](https://github.com/vuepress-theme-hope/vuepress-theme-hope/commit/07ae433e4c622d6fc07b8b3e79e35d8653b70d2c))
+
 ## [2.0.0-rc.69](https://github.com/vuepress-theme-hope/vuepress-theme-hope/compare/v2.0.0-rc.68...v2.0.0-rc.69) (2025-01-15)
 
 **Note:** Version bump only for package create-vuepress-theme-hope
