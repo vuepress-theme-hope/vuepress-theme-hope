@@ -9,7 +9,7 @@ import {
 import { useThemeLocaleData } from "@theme-hope/composables/index";
 
 import type {
-  ThemeHopePageFrontmatter,
+  ThemeHomePageFrontmatter,
   ThemeProjectHomePageFrontmatter,
 } from "../../../../shared/index.js";
 import type { SidebarItem } from "../utils/index.js";
@@ -28,7 +28,7 @@ export const sidebarItemsSymbol: InjectionKey<SidebarItemsRef> = Symbol(
  */
 export const setupSidebarItems = (): void => {
   const frontmatter = usePageFrontmatter<
-    ThemeHopePageFrontmatter | ThemeProjectHomePageFrontmatter
+    ThemeHomePageFrontmatter | ThemeProjectHomePageFrontmatter
   >();
   const themeLocale = useThemeLocaleData();
   const routeLocale = useRouteLocale();
@@ -42,7 +42,7 @@ export const setupSidebarItems = (): void => {
   );
   const headerDepth = computed(
     () =>
-      ((frontmatter.value as ThemeHopePageFrontmatter).headerDepth as
+      ((frontmatter.value as ThemeHomePageFrontmatter).headerDepth as
         | number
         | undefined) ??
       themeLocale.value.headerDepth ??

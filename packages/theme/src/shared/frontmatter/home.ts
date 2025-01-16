@@ -1,6 +1,6 @@
 import type { ThemePageFrontmatter } from "./base.js";
 
-export interface ThemeHopePageFrontmatter extends ThemePageFrontmatter {
+export interface ThemeHomePageFrontmatter extends ThemePageFrontmatter {
   home: true;
 
   /**

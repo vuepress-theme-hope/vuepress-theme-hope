@@ -1,4 +1,4 @@
-import type { ThemeHopePageFrontmatter } from "./home.js";
+import type { ThemeHomePageFrontmatter } from "./home.js";
 
 export interface ThemeBlogHomeProjectOptions {
   /**
@@ -45,7 +45,7 @@ export interface ThemeBlogHomeProjectOptions {
   background?: string;
 }
 
-export interface ThemeBlogHomePageFrontmatter extends ThemeHopePageFrontmatter {
+export interface ThemeBlogHomePageFrontmatter extends ThemeHomePageFrontmatter {
   layout: "BlogHome";
   /**
    * @default true

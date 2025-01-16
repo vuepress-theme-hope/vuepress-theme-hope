@@ -1,6 +1,6 @@
 import type { CSSProperties } from "vue";
 
-import type { ThemeHopePageFrontmatter } from "./home.js";
+import type { ThemeHomePageFrontmatter } from "./home.js";
 
 export interface ThemeProjectHomeActionOptions {
   /**
@@ -218,7 +218,7 @@ export interface ThemeProjectHomeFeatureOptions {
 }
 
 export interface ThemeProjectHomePageFrontmatter
-  extends ThemeHopePageFrontmatter {
+  extends ThemeHomePageFrontmatter {
   actions?: ThemeProjectHomeActionOptions[];
   features?: ThemeProjectHomeFeatureItem[];
   highlights?: (
