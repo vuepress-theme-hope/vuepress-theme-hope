@@ -28,6 +28,14 @@ export interface EncryptLocaleData {
   errorHint: string;
 }
 
+export type PasswordOptions =
+  | string
+  | string[]
+  | {
+      password: string | string[];
+      hint: string;
+    };
+
 /**
  * Encrypt Options
  *
@@ -50,7 +58,7 @@ export interface EncryptOptions {
    *
    * 最高权限密码
    */
-  admin?: string | string[];
+  admin?: PasswordOptions;
   /**
    * Encrypt Configuration
    *
@@ -61,7 +69,10 @@ export interface EncryptOptions {
    *   // This will encrypt the entire guide directory and both passwords will be available
    *   "/guide/": ["1234", "5678"],
    *   // this will only encrypt /config/page.html
-   *   "/config/page.html": "1234"
+   *   "/config/page.html": {
+   *     password: "1234"
+   *     hint: "This is a hint"
+   *   }
    * }
    * ```
    *
@@ -74,11 +85,19 @@ export interface EncryptOptions {
    *   // 这会加密整个 guide 目录，并且两个密码都是可用的
    *   "/guide/": ["1234", "5678"],
    *   // 这只会加密 /config/page.html
-   *   "/config/page.html": "1234"
+   *   "/config/page.html": {
+   *     password: "1234"
+   *     hint: "这是一个提示"
+   *   }
    * }
    * ```
    */
-  config?: Record<string, string | string[]>;
+  config?: Record<string, PasswordOptions>;
+}
+
+export interface PasswordConfig {
+  tokens: string[];
+  hint?: string;
 }
 
 /**
@@ -103,12 +122,12 @@ export interface EncryptConfig {
    *
    * 最高权限密码
    */
-  admin?: string[];
+  admin?: PasswordConfig;
 
   /**
    * Encrypt Configuration
    *
    * 加密配置
    */
-  config?: Record<string, string[]>;
+  config?: Record<string, PasswordConfig>;
 }

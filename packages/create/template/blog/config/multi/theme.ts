@@ -107,8 +107,14 @@ export default hopeTheme({
 
   encrypt: {
     config: {
-      "/demo/encrypt.html": ["1234"],
-      "/zh/demo/encrypt.html": ["1234"],
+      "/demo/encrypt.html": {
+        hint: "Password: 1234",
+        password: "1234",
+      },
+      "/zh/demo/encrypt.html": {
+        hint: "Password: 1234",
+        password: "1234",
+      },
     },
   },
 

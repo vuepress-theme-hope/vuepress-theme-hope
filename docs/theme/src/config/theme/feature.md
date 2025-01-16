@@ -248,26 +248,51 @@ Whether to encrypt globally.
 
 ### encrypt.admin
 
-- Type: `string | string []`
+- Type: `PasswordOptions`
+
+  ```ts
+  type PasswordOptions =
+    | string
+    | string[]
+    | {
+        password: string | string[];
+        hint: string;
+      };
+  ```
+
 - Required: No
 
-Admin password with the highest authority, you can set multiple ones by using array.
+Admin password with the highest authority, you can set multiple ones by using array, or adding hint with object format.
 
 ### encrypt.config
 
-- Type: `Record <string, string | string []>`
+- Type: `Record <string, PasswordOptions>`
+
+  ```ts
+  type PasswordOptions =
+    | string
+    | string[]
+    | {
+        password: string | string[];
+        hint: string;
+      };
+  ```
+
 - Required: No
 
-The encryption configuration is an object with a key name matching the path and a key-value corresponding to a password that accepts a string or an array of strings.
+The encryption configuration is an object with a key name matching the path and a key-value corresponding to a password that accepts a string or an array of strings, or adding hint with object format.
 
 ::: details Example
 
-```js
+```json
 {
   // This will encrypt the entire guide directory and both passwords will be available
   "/guide/": ["1234", "5678"],
   // this will only encrypt /config/page.html
-  "/config/page.html": "1234"
+  "/config/page.html": {
+    "password": "Mister-Hope",
+    "hint": "The password is author's name"
+  }
 }
 ```
 

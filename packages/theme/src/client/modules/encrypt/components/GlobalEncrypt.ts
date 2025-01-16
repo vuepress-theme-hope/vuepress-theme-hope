@@ -15,7 +15,7 @@ export default defineComponent({
   }>,
 
   setup(_props, { slots }) {
-    const { isDecrypted, isEncrypted, validate } = useGlobalEncrypt();
+    const { status, validate } = useGlobalEncrypt();
     const isPure = usePure();
 
     const isMounted = ref(false);
@@ -24,15 +24,22 @@ export default defineComponent({
       isMounted.value = true;
     });
 
-    return (): VNode =>
-      h(isPure.value ? RenderDefault : FadeSlideY, () =>
-        isEncrypted.value
+    return (): VNode => {
+      const { isEncrypted, isLocked, hint } = status.value;
+
+      return h(isPure.value ? RenderDefault : FadeSlideY, () =>
+        isEncrypted
           ? isMounted.value
-            ? isDecrypted.value
-              ? slots.default()
-              : h(PasswordModal, { full: true, onVerify: validate })
+            ? isLocked
+              ? h(PasswordModal, {
+                  full: true,
+                  hint,
+                  onVerify: validate,
+                })
+              : slots.default()
             : null
           : slots.default(),
       );
+    };
   },
 });

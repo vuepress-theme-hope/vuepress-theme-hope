@@ -15,10 +15,10 @@ describe("Should resolve encrypt option correctly", () => {
 
     expect(Object.keys(result1)).toEqual(["admin"]);
 
-    expect(result1.admin!.length).toEqual(1);
+    expect(result1.admin!.tokens.length).toEqual(1);
 
     expect(
-      compareSync(adminSinglePassword, result1.admin!.pop()!),
+      compareSync(adminSinglePassword, result1.admin!.tokens.pop()!),
     ).toBeTruthy();
 
     const result2 = getEncryptConfig({ admin: adminMultiplePassword });
@@ -27,7 +27,7 @@ describe("Should resolve encrypt option correctly", () => {
 
     expect(
       adminMultiplePassword.every((token, index) =>
-        compareSync(token, result2.admin![index]),
+        compareSync(token, result2.admin!.tokens[index]),
       ),
     ).toBeTruthy();
   });
@@ -38,10 +38,10 @@ describe("Should resolve encrypt option correctly", () => {
     expect(Object.keys(result1)).toEqual(["config"]);
     expect(Object.keys(result1.config!)).toEqual(["/"]);
 
-    expect(result1.config!["/"].length).toEqual(1);
+    expect(result1.config!["/"].tokens.length).toEqual(1);
 
     expect(
-      compareSync(userSinglePassword, result1.config!["/"].pop()!),
+      compareSync(userSinglePassword, result1.config!["/"].tokens.pop()!),
     ).toBeTruthy();
 
     const result2 = getEncryptConfig({ config: { "/": userMultiplePassword } });
@@ -51,7 +51,7 @@ describe("Should resolve encrypt option correctly", () => {
 
     expect(
       userMultiplePassword.every((token, index) =>
-        compareSync(token, result2.config!["/"][index]),
+        compareSync(token, result2.config!["/"].tokens[index]),
       ),
     ).toBeTruthy();
   });
@@ -63,7 +63,7 @@ describe("Should resolve encrypt option correctly", () => {
     // @ts-expect-error: number password is not typed
     const result2 = getEncryptConfig({ admin: ["1234", 1234] });
 
-    expect(result2.admin!.length).toEqual(1);
+    expect(result2.admin!.tokens.length).toEqual(1);
 
     // @ts-expect-error: number password is not typed
     const result3 = getEncryptConfig({ config: { "/": 1234, "/zh/": "1234" } });
@@ -73,6 +73,6 @@ describe("Should resolve encrypt option correctly", () => {
     // @ts-expect-error: number password is not typed
     const result4 = getEncryptConfig({ config: { "/": [1234, "1234"] } });
 
-    expect(result4.config!["/"].length).toEqual(1);
+    expect(result4.config!["/"].tokens.length).toEqual(1);
   });
 });

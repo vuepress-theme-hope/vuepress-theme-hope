@@ -96,15 +96,15 @@ export default config(
           leadingUnderscore: "allow",
           trailingUnderscore: "allow",
         },
-        // allow locales path like `/zh/`, alias starting with `@` and css property like `line-width`
+        // allow path like `/zh/demo.html`, alias starting with `@` and css property like `line-width`
         {
           selector: ["property"],
           format: null,
           custom: {
-            regex: "(^/$|^/.*/$|^@|^[a-z]+(?:-[a-z]+)*?$)",
+            regex: "(^/|^@|^[a-z]+(?:-[a-z]+)*?$)",
             match: true,
           },
-          filter: "(^/$|^/.*/$|^@|^[a-z]+(?:-[a-z]+)*?$)",
+          filter: "(^/|^@|^[a-z]+(?:-[a-z]+)*?$)",
         },
         {
           selector: ["property"],

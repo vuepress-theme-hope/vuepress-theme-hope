@@ -250,26 +250,51 @@ tag:
 
 ### encrypt.admin
 
-- 类型: `string | string[]`
+- 类型: `PasswordOptions`
+
+  ```ts
+  type PasswordOptions =
+    | string
+    | string[]
+    | {
+        password: string | string[];
+        hint: string;
+      };
+  ```
+
 - 必填: 否
 
-最高权限密码，可以以数组的形式设置多个。
+最高权限密码，可以以数组的形式设置多个，也可以通过对象形式来添加一个密码提示。
 
 ### encrypt.config
 
-- 类型: `Record<string, string | string[]>`
+- 类型: `Record<string, PasswordOptions>`
+
+  ```ts
+  type PasswordOptions =
+    | string
+    | string[]
+    | {
+        password: string | string[];
+        hint: string;
+      };
+  ```
+
 - 必填: 否
 
-加密配置，为一个对象，键名为匹配的路径，键值为对应的密码，接受字符串或字符串数组。
+加密配置，为一个对象，键名为匹配的路径，键值为对应的密码，接受字符串或字符串数组，也可以通过对象形式来添加一个密码提示。
 
 ::: details 例子
 
-```js
+```json
 {
   // 这会加密整个 guide 目录，并且两个密码都是可用的
   "/guide/": ["1234", "5678"],
   // 这只会加密 /config/page.html
-  "/config/page.html": "1234"
+  "/config/page.html": {
+    "password": "Mister-Hope",
+    "hint": "密码是作者名字"
+  }
 }
 ```
 

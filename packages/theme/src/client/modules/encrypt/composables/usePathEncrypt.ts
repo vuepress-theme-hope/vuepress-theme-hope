@@ -6,14 +6,10 @@ import { usePageData } from "vuepress/client";
 
 import { isTokenMatched } from "@theme-hope/modules/encrypt/utils/index";
 
-import { useEncryptData } from "./useEncryptData.js";
+import type { EncryptStatus } from "./typings.js";
+import { useEncryptConfig } from "./useEncryptConfig.js";
 
 const STORAGE_KEY = "VUEPRESS_HOPE_PATH_TOKEN";
-
-export interface EncryptStatus {
-  isEncrypted: boolean;
-  isDecrypted: boolean;
-}
 
 export interface PathEncrypt {
   status: ComputedRef<EncryptStatus>;
@@ -23,10 +19,10 @@ export interface PathEncrypt {
 
 export const usePathEncrypt = (): PathEncrypt => {
   const page = usePageData();
-  const encryptData = useEncryptData();
+  const encryptData = useEncryptConfig();
 
-  const localToken = useStorage<Record<string, string>>(STORAGE_KEY, {});
-  const sessionToken = useSessionStorage<Record<string, string>>(
+  const localTokenConfig = useStorage<Record<string, string>>(STORAGE_KEY, {});
+  const sessionTokenConfig = useSessionStorage<Record<string, string>>(
     STORAGE_KEY,
     {},
   );
@@ -39,30 +35,39 @@ export const usePathEncrypt = (): PathEncrypt => {
       : [];
 
   const getStatus = (path: string): EncryptStatus => {
+    const { config = {} } = encryptData.value;
+
     const matchedKeys = getPathMatchedKeys(path);
 
     if (matchedKeys.length > 0) {
-      const { config = {} } = encryptData.value;
+      const firstKeyWithHint = matchedKeys.find((key) => config[key].hint);
 
       return {
         isEncrypted: true,
-        isDecrypted: matchedKeys.some(
+        isLocked: matchedKeys.some(
           (key) =>
-            (localToken.value[key] &&
-              config[key].some((token) =>
-                isTokenMatched(localToken.value[key], token),
-              )) ||
-            (sessionToken.value[key] &&
-              config[key].some((token) =>
-                isTokenMatched(sessionToken.value[key], token),
-              )),
+            (localTokenConfig.value[key]
+              ? config[key].tokens.every(
+                  (token) =>
+                    !isTokenMatched(localTokenConfig.value[key], token),
+                )
+              : true) &&
+            (sessionTokenConfig.value[key]
+              ? config[key].tokens.every(
+                  (token) =>
+                    !isTokenMatched(sessionTokenConfig.value[key], token),
+                )
+              : true),
         ),
+        // eslint-disable-next-line @typescript-eslint/no-non-null-assertion
+        hint: firstKeyWithHint ? config[firstKeyWithHint].hint! : "",
       };
     }
 
     return {
-      isDecrypted: false,
       isEncrypted: false,
+      isLocked: false,
+      hint: "",
     };
   };
 
@@ -74,8 +79,11 @@ export const usePathEncrypt = (): PathEncrypt => {
 
     // Some of the tokens matches
     for (const hitKey of matchedKeys)
-      if (config[hitKey].some((token) => isTokenMatched(inputToken, token))) {
-        (keep ? localToken : sessionToken).value[hitKey] = inputToken;
+      if (
+        config[hitKey].tokens.some((token) => isTokenMatched(inputToken, token))
+      ) {
+        (keep ? localTokenConfig : sessionTokenConfig).value[hitKey] =
+          inputToken;
 
         break;
       }

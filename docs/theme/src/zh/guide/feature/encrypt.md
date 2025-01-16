@@ -43,6 +43,27 @@ export default {
 };
 ```
 
+你也可以通过设置 `encrypt.config` 为一个对象来为密码输入框添加提示信息，格式如下：
+
+```js {8,10} title=".vuepress/config.js"
+export default {
+  theme: hopeTheme({
+    encrypt: {
+      config: {
+        "/guide/": {
+          password: ["1234", "5678"],
+          hint: "从 xxx 获取密码",
+        },
+        "/config/page.html": {
+          password: "1234",
+          hint: "从 xxx 获取密码",
+        },
+      },
+    },
+  }),
+};
+```
+
 ::: warning
 
 请注意，你只能使用字符串格式的密码。
@@ -56,6 +77,24 @@ export default {
 有些情况下，你可能想加密整个站点，你可以在主题选项中设置 `encrypt.global: true` 来实现它。
 
 全局加密时，你可以在主题选项中通过 `encrypt.admin` 选项以字符串或字符串数组的格式设置一个或多个密码。
+
+如果你想为密码输入框添加提示信息，你可以设置 `encrypt.admin` 为一个对象，格式如下：
+
+```js {8,10} title=".vuepress/config.js"
+import { hopeTheme } from "vuepress-theme-hope";
+
+export default {
+  theme: hopeTheme({
+    encrypt: {
+      global: true,
+      admin: {
+        password: "Mister-Hope", // 也可以是数组
+        hint: "密码是作者的名字",
+      },
+    },
+  }),
+};
+```
 
 ::: tip
 

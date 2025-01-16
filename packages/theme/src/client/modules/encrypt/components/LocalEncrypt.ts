@@ -21,13 +21,18 @@ export default defineComponent({
     });
 
     return (): VNode[] | VNode | null => {
-      const { isEncrypted, isDecrypted } = status.value;
+      const { isEncrypted, isLocked, hint } = status.value;
 
       return isEncrypted
         ? isMounted.value
-          ? isDecrypted
-            ? slots.default()
-            : h(PasswordModal, { full: true, onVerify: validate })
+          ? isLocked
+            ? h(PasswordModal, {
+                showTitle: true,
+                full: true,
+                hint,
+                onVerify: validate,
+              })
+            : slots.default()
           : null
         : slots.default();
     };

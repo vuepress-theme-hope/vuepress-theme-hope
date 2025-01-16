@@ -1,73 +1,92 @@
-import { entries, fromEntries, isArray, isString } from "@vuepress/helper";
+import {
+  entries,
+  fromEntries,
+  isArray,
+  isPlainObject,
+  isString,
+} from "@vuepress/helper";
 import { hashSync } from "bcrypt-ts/node";
+import { colors } from "vuepress/utils";
 
-import type { EncryptConfig, EncryptOptions } from "../../shared/index.js";
+import type {
+  EncryptConfig,
+  EncryptOptions,
+  PasswordConfig,
+} from "../../shared/index.js";
 import { logger } from "../utils.js";
 
+const hashPasswords = (passwords: unknown, key: string): string[] | null => {
+  if (isString(passwords)) return [hashSync(passwords)];
+
+  if (isArray(passwords))
+    return passwords
+      .map((password) => {
+        if (isString(password)) return hashSync(password);
+
+        logger.error(`\
+${colors.magenta(key)} config is invalid. 
+
+All password MUST be string. But we found one’s type is ${typeof password}. Please fix it!\
+`);
+
+        return null;
+      })
+      .filter((item): item is string => item !== null);
+
+  logger.error(`\
+${colors.magenta(key)} config is invalid. 
+
+All password MUST be string. But we found a ${JSON.stringify(passwords)}. Please fix it!\
+`);
+
+  return null;
+};
+
 /** @private */
-export const getEncryptConfig = (
-  encrypt: EncryptOptions = {},
-): EncryptConfig => {
+export const getEncryptConfig = ({
+  admin,
+  config,
+  global,
+}: EncryptOptions = {}): EncryptConfig => {
   const result: EncryptConfig = {};
 
   // Handle global token
-  if (encrypt.admin) {
-    if (encrypt.global) result.global = true;
+  if (admin) {
+    if (global) result.global = true;
 
-    if (isString(encrypt.admin)) result.admin = [hashSync(encrypt.admin)];
-    else if (isArray(encrypt.admin))
-      result.admin = encrypt.admin
-        .map((globalToken) => {
-          if (isString(globalToken)) return hashSync(globalToken);
+    if (isPlainObject<{ hint: string; password: string[] }>(admin)) {
+      const tokens = hashPasswords(admin.password, "encrypt.admin.password");
 
-          logger.error(`You config "themeConfig.encrypt.admin", but your config is invalid. 
+      if (tokens)
+        result.admin = {
+          tokens,
+          hint: admin.hint,
+        };
+    } else {
+      const tokens = hashPasswords(admin, "encrypt.admin");
 
-          All password MUST be string. But we found one’s type is ${typeof globalToken}. Please fix it!`);
-
-          return null;
-        })
-        .filter((item): item is string => item !== null);
-    else
-      logger.error(
-        `You are asking for global encryption but you provide invalid "admin" config. 
-        
-        Please check "admin" in your "themeConfig.encrypt" config. It can be string or string[], but you are providing ${typeof encrypt.admin}. Please fix it!`,
-      );
+      if (tokens) result.admin = { tokens };
+    }
   }
 
-  if (encrypt.config)
+  if (config)
     result.config = fromEntries(
-      entries(encrypt.config)
-        .map<[string, string[]] | null>(([key, tokens]) => {
-          if (isString(tokens)) return [key, [hashSync(tokens)]];
+      entries(config)
+        .map<[string, PasswordConfig] | null>(([key, options]) => {
+          if (isPlainObject<{ hint: string; password: string[] }>(options)) {
+            const tokens = hashPasswords(
+              options.password,
+              `encrypt.config[${key}].password`,
+            );
 
-          if (isArray(tokens)) {
-            const encryptedTokens = tokens
-              .map((token) => {
-                if (isString(token)) return hashSync(token);
-
-                logger.error(`You config "themeConfig.encrypt.config", but your config is invalid. 
-        
-Key ${key}’s value MUST be string or string[]. But it’s type is ${typeof token}. Please fix it!`);
-
-                return null;
-              })
-              .filter((item): item is string => item !== null);
-
-            if (encryptedTokens.length) return [key, encryptedTokens];
-
-            return null;
+            return tokens ? [key, { tokens, hint: options.hint }] : null;
           }
 
-          logger.error(
-            `You config "themeConfig.encrypt.config", but your config is invalid. 
-        
-        The value of key ${key} MUST be string or string[]. But not it’s ${typeof tokens}. Please fix it!`,
-          );
+          const tokens = hashPasswords(options, `encrypt.config[${key}]`);
 
-          return null;
+          return tokens ? [key, { tokens }] : null;
         })
-        .filter((item): item is [string, string[]] => item !== null),
+        .filter((item): item is [string, PasswordConfig] => item !== null),
     );
 
   return result;

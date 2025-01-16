@@ -34,11 +34,12 @@ const ROOT_DISALLOW_CONFIG = [
  */
 export const getThemeData = (
   app: App,
-  themeOptions: ThemeOptions,
+  { encrypt, ...themeOptions }: ThemeOptions,
   { enableBlog, enableEncrypt }: ThemeStatus,
 ): ThemeData => {
   const themeData: ThemeData = {
-    encrypt: {},
+    // Handle encrypt options
+    encrypt: getEncryptConfig(encrypt),
     ...fromEntries(
       // Only remain root allowed config
       entries(themeOptions).filter(
@@ -94,9 +95,6 @@ export const getThemeData = (
         ),
       }),
   };
-
-  // Handle encrypt options
-  themeData.encrypt = getEncryptConfig(themeData.encrypt);
 
   if (app.env.isDebug) logger.info("Theme config: ", themeData);
 

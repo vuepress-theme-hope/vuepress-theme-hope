@@ -3,57 +3,57 @@ import { compareSync } from "bcrypt-ts/browser";
 import type { ComputedRef } from "vue";
 import { computed } from "vue";
 
-import { useEncryptData } from "./useEncryptData.js";
+import type { EncryptStatus } from "./typings.js";
+import { useEncryptConfig } from "./useEncryptConfig.js";
 
 const STORAGE_KEY = "VUEPRESS_HOPE_GLOBAL_TOKEN";
 
 export interface GlobalEncrypt {
-  isEncrypted: ComputedRef<boolean>;
-  isDecrypted: ComputedRef<boolean>;
+  status: ComputedRef<EncryptStatus>;
   validate: (token: string, keep?: boolean) => void;
 }
 
 export const useGlobalEncrypt = (): GlobalEncrypt => {
-  const encryptData = useEncryptData();
+  const encryptData = useEncryptConfig();
 
-  const localToken = useStorage(STORAGE_KEY, "");
+  const storageToken = useStorage(STORAGE_KEY, "");
   const sessionToken = useSessionStorage(STORAGE_KEY, "");
 
-  // Is globally encrypted
-  const isEncrypted = computed(() => {
-    const { global = false, admin = [] } = encryptData.value;
+  const status = computed(() => {
+    const { global = false, admin } = encryptData.value;
 
-    return global && admin.length > 0;
-  });
+    // Is globally encrypted
+    const isEncrypted = global && Boolean(admin?.tokens.length);
 
-  // Valid token exists
-  const isDecrypted = computed(() => {
-    if (isEncrypted.value) {
-      if (localToken.value)
-        // None of the token matches
-        // eslint-disable-next-line @typescript-eslint/no-non-null-assertion
-        return encryptData.value.admin!.some((hash) =>
-          compareSync(localToken.value, hash),
-        );
+    const isLocked =
+      // Valid token exists
+      isEncrypted
+        ? storageToken.value
+          ? // None of the token matches
+            // eslint-disable-next-line @typescript-eslint/no-non-null-assertion
+            encryptData.value.admin!.tokens.some((hash) =>
+              compareSync(storageToken.value, hash),
+            )
+          : // None of the token matches
+            // eslint-disable-next-line @typescript-eslint/no-non-null-assertion
+            encryptData.value.admin!.tokens.some((hash) =>
+              compareSync(sessionToken.value, hash),
+            )
+        : false;
 
-      if (sessionToken.value)
-        // None of the token matches
-        // eslint-disable-next-line @typescript-eslint/no-non-null-assertion
-        return encryptData.value.admin!.some((hash) =>
-          compareSync(sessionToken.value, hash),
-        );
-    }
-
-    return false;
+    return {
+      isEncrypted,
+      isLocked,
+      hint: admin?.hint ?? "",
+    };
   });
 
   const validate = (inputToken: string, keep = false): void => {
-    (keep ? localToken : sessionToken).value = inputToken;
+    (keep ? storageToken : sessionToken).value = inputToken;
   };
 
   return {
-    isEncrypted,
-    isDecrypted,
+    status,
     validate,
   };
 };
