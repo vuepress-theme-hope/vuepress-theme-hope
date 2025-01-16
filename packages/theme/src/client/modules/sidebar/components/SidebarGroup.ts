@@ -86,7 +86,7 @@ export default defineComponent({
           },
           [
             // Icon
-            h(resolveComponent("VPIcon"), { icon }),
+            h(resolveComponent("VPIcon"), { icon, sizing: "both" }),
             // Title
             link
               ? h(AutoLink, {

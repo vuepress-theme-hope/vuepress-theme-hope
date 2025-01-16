@@ -44,7 +44,10 @@ export default defineComponent({
           })
         : // If the item only has text, render it as `<p>`
           h("p", props, [
-            h(resolveComponent("VPIcon"), { icon: props.config.icon }),
+            h(resolveComponent("VPIcon"), {
+              icon: props.config.icon,
+              sizing: "both",
+            }),
             props.config.text,
           ]);
   },

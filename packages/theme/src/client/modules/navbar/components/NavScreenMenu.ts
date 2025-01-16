@@ -67,7 +67,10 @@ export default defineComponent({
         },
         [
           h("span", { class: "text" }, [
-            h(resolveComponent("VPIcon"), { icon: config.value.icon }),
+            h(resolveComponent("VPIcon"), {
+              icon: config.value.icon,
+              sizing: "both",
+            }),
             props.config.text,
           ]),
           h("span", { class: ["arrow", open.value ? "down" : "end"] }),

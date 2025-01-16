@@ -252,7 +252,10 @@ export default defineComponent({
                               target: "_blank",
                               title: name,
                             },
-                            h(resolveComponent("VPIcon"), { icon }),
+                            h(resolveComponent("VPIcon"), {
+                              icon,
+                              sizing: "both",
+                            }),
                           ),
                         ),
                       )

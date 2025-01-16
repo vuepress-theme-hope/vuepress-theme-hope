@@ -1,6 +1,6 @@
 import { isString } from "@vuepress/helper/client";
 import type { SlotsType, VNode } from "vue";
-import { computed, defineComponent, h, resolveComponent } from "vue";
+import { computed, defineComponent, h } from "vue";
 import {
   usePageFrontmatter,
   useSiteLocaleData,
@@ -166,25 +166,14 @@ export default defineComponent({
                         "p",
                         { class: "vp-hero-actions" },
                         actions.value.map((action) =>
-                          h(
-                            AutoLink,
-                            {
-                              class: [
-                                "vp-hero-action",
-                                action.type ?? "default",
-                                "no-external-link-icon",
-                              ],
-                              config: action,
-                            },
-                            action.icon
-                              ? {
-                                  before: () =>
-                                    h(resolveComponent("VPIcon"), {
-                                      icon: action.icon,
-                                    }),
-                                }
-                              : {},
-                          ),
+                          h(AutoLink, {
+                            class: [
+                              "vp-hero-action",
+                              action.type ?? "default",
+                              "no-external-link-icon",
+                            ],
+                            config: action,
+                          }),
                         ),
                       ),
                     )
