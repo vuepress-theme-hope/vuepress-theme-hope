@@ -40,10 +40,6 @@ export default defineComponent({
       () => frontmatter.value.toc ?? themeLocale.value.toc ?? true,
     );
 
-    const headerDepth = computed(
-      () => frontmatter.value.headerDepth ?? themeLocale.value.headerDepth ?? 2,
-    );
-
     return (): VNode =>
       h(
         "main",
@@ -68,14 +64,7 @@ export default defineComponent({
             h(BreadCrumb),
             h(PageTitle),
             tocEnable.value
-              ? h(
-                  TOC,
-                  { headerDepth: headerDepth.value },
-                  {
-                    before: slots.tocBefore,
-                    after: slots.tocAfter,
-                  },
-                )
+              ? h(TOC, {}, { before: slots.tocBefore, after: slots.tocAfter })
               : null,
             slots.contentBefore?.(),
             h(MarkdownContent),

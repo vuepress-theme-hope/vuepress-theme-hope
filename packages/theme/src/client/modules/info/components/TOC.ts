@@ -1,9 +1,12 @@
+/* eslint-disable vue/require-default-prop */
+import type { HeaderItem } from "@vuepress/helper/client";
 import { useToggle } from "@vueuse/core";
 import type { PropType, SlotsType, VNode } from "vue";
 import { defineComponent, h, onMounted, ref, shallowRef, watch } from "vue";
 import type { PageHeader } from "vuepress/client";
-import { RouteLink, usePageData, useRoute } from "vuepress/client";
+import { RouteLink, useRoute } from "vuepress/client";
 
+import { useHeaders } from "@theme-hope/composables/index";
 import PrintButton from "@theme-hope/modules/info/components/PrintButton";
 import { useMetaLocale } from "@theme-hope/modules/info/composables/index";
 
@@ -18,20 +21,7 @@ export default defineComponent({
      *
      * TOC 项目配置
      */
-    items: {
-      type: Array as PropType<PageHeader[]>,
-      default: () => [],
-    },
-
-    /**
-     * Max header nesting depth
-     *
-     * 最大的标题嵌套深度
-     */
-    headerDepth: {
-      type: Number,
-      default: 2,
-    },
+    items: Array as PropType<PageHeader[]>,
   },
 
   slots: Object as SlotsType<{
@@ -41,7 +31,7 @@ export default defineComponent({
 
   setup(props, { slots }) {
     const route = useRoute();
-    const page = usePageData();
+    const headers = useHeaders();
     const metaLocale = useMetaLocale();
     const [isExpanded, toggleExpanded] = useToggle();
 
@@ -118,7 +108,11 @@ export default defineComponent({
       });
     });
 
-    const renderHeader = ({ title, level, slug }: PageHeader): VNode =>
+    const renderHeader = ({
+      title,
+      level,
+      slug,
+    }: HeaderItem | PageHeader): VNode =>
       h(
         RouteLink,
         {
@@ -132,15 +126,14 @@ export default defineComponent({
       );
 
     const renderChildren = (
-      headers: PageHeader[],
-      headerDepth: number,
+      headers?: PageHeader[] | HeaderItem[],
     ): VNode | null =>
-      headers.length && headerDepth > 0
+      headers?.length
         ? h(
             "ul",
             { class: "vp-toc-list" },
             headers.map((header) => {
-              const children = renderChildren(header.children, headerDepth - 1);
+              const children = renderChildren(header.children);
 
               return [
                 h(
@@ -160,10 +153,7 @@ export default defineComponent({
         : null;
 
     return (): VNode | null => {
-      const tocHeaders = props.items.length
-        ? renderChildren(props.items, props.headerDepth)
-        : renderChildren(page.value.headers, props.headerDepth);
-
+      const tocHeaders = renderChildren(props.items ?? headers.value);
       const before = slots.before?.();
       const after = slots.after?.();
 

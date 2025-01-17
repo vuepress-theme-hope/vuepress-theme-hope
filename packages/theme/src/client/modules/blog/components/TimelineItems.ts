@@ -29,12 +29,13 @@ export default defineComponent({
         themeLocale.value.blogLocales.timelineTitle,
     );
 
-    const items = computed(() =>
+    const items = computed<PageHeader[]>(() =>
       timelines.value.config.map(({ year }) => ({
         title: year.toString(),
         level: 2,
         slug: year.toString(),
         children: [],
+        link: `#${year}`,
       })),
     );
 
@@ -44,7 +45,7 @@ export default defineComponent({
         { class: "timeline-wrapper" },
         h("ul", { class: "timeline-content" }, [
           h(DropTransition, () => h("li", { class: "motto" }, hint.value)),
-          h(TOC, { items: items.value as unknown as PageHeader[] }),
+          h(TOC, { items: items.value }),
           timelines.value.config.map(({ year, items }, index) =>
             h(
               DropTransition,

@@ -53,6 +53,7 @@ export const hopeTheme = (
       plugins = {},
       hostname,
       sidebarSorter,
+      preserveHeader,
       ...themeOptions
     } = behaviorOptions.compact
       ? // eslint-disable-next-line @typescript-eslint/no-deprecated
@@ -93,6 +94,13 @@ export const hopeTheme = (
       extendsMarkdownOptions: (markdownOptions): void => {
         if (behaviorOptions.check)
           checkMarkdownOptions(markdownOptions, themeData);
+      },
+
+      extendsPage: (page): void => {
+        if (!preserveHeader) {
+          // @ts-expect-error: headers exists in original types
+          delete page.data.headers;
+        }
       },
 
       onInitialized: (app): void => {

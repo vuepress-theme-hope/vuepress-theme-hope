@@ -27,6 +27,17 @@ export interface ThemeOptions
    * 主题插件选项
    */
   plugins?: PluginsOptions;
+
+  /**
+   * @experimental
+   *
+   * Whether to preserve header information in page data
+   *
+   * 是否保留页面数据中的 header 信息
+   *
+   * @default false
+   */
+  preserveHeader?: boolean;
 }
 
 export interface ThemeData
