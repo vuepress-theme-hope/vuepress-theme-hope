@@ -49,7 +49,6 @@ export default defineComponent({
           h("button", {
             type: "button",
             title: "toggle",
-            "aria-hidden": true,
             class: [
               "vp-md-demo-toggle-button",
               isExpanded.value ? "down" : "end",
