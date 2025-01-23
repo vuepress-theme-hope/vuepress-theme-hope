@@ -59,7 +59,7 @@
     "@rollup/plugin-replace": "6.0.2",
     "@types/node": "22.10.6",
     "@types/webpack-env": "1.18.5",
-    "@vitest/coverage-istanbul": "3.0.0-beta.4",
+    "@vitest/coverage-istanbul": "3.0.4",
     "concurrently": "9.1.2",
     "conventional-changelog-conventionalcommits": "7.0.2",
     "cpx2": "8.0.0",
@@ -89,7 +89,7 @@
     "tsx": "4.19.2",
     "typescript": "5.7.3",
     "vite": "6.0.7",
-    "vitest": "3.0.0-beta.4"
+    "vitest": "3.0.4"
   },
   "packageManager": "pnpm@10.0.0",
   "engines": {
