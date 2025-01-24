@@ -243,13 +243,13 @@ importers:
         version: 1.30.0
       markmap-lib:
         specifier: 0.18.9
-        version: 0.18.9(markmap-common@0.18.8)
+        version: 0.18.9(markmap-common@0.18.9)
       markmap-toolbar:
         specifier: 0.18.9
-        version: 0.18.9(markmap-common@0.18.8)
+        version: 0.18.9(markmap-common@0.18.9)
       markmap-view:
         specifier: 0.18.9
-        version: 0.18.9(markmap-common@0.18.8)
+        version: 0.18.9(markmap-common@0.18.9)
       mathjax-full:
         specifier: 3.2.2
         version: 3.2.2
@@ -315,13 +315,13 @@ importers:
         version: 1.30.0
       markmap-lib:
         specifier: 0.18.9
-        version: 0.18.9(markmap-common@0.18.8)
+        version: 0.18.9(markmap-common@0.18.9)
       markmap-toolbar:
         specifier: 0.18.9
-        version: 0.18.9(markmap-common@0.18.8)
+        version: 0.18.9(markmap-common@0.18.9)
       markmap-view:
         specifier: 0.18.9
-        version: 0.18.9(markmap-common@0.18.8)
+        version: 0.18.9(markmap-common@0.18.9)
       mathjax-full:
         specifier: 3.2.2
         version: 3.2.2
@@ -381,13 +381,13 @@ importers:
         version: 1.30.0
       markmap-lib:
         specifier: 0.18.9
-        version: 0.18.9(markmap-common@0.18.8)
+        version: 0.18.9(markmap-common@0.18.9)
       markmap-toolbar:
         specifier: 0.18.9
-        version: 0.18.9(markmap-common@0.18.8)
+        version: 0.18.9(markmap-common@0.18.9)
       markmap-view:
         specifier: 0.18.9
-        version: 0.18.9(markmap-common@0.18.8)
+        version: 0.18.9(markmap-common@0.18.9)
       mathjax-full:
         specifier: 3.2.2
         version: 3.2.2
@@ -655,13 +655,13 @@ importers:
         version: 1.30.0
       markmap-lib:
         specifier: 0.18.9
-        version: 0.18.9(markmap-common@0.18.8)
+        version: 0.18.9(markmap-common@0.18.9)
       markmap-toolbar:
         specifier: 0.18.9
-        version: 0.18.9(markmap-common@0.18.8)
+        version: 0.18.9(markmap-common@0.18.9)
       markmap-view:
         specifier: 0.18.9
-        version: 0.18.9(markmap-common@0.18.8)
+        version: 0.18.9(markmap-common@0.18.9)
       mermaid:
         specifier: 11.4.1
         version: 11.4.1
@@ -855,13 +855,13 @@ importers:
         version: 1.30.0
       markmap-lib:
         specifier: ^0.18.5
-        version: 0.18.9(markmap-common@0.18.8)
+        version: 0.18.9(markmap-common@0.18.9)
       markmap-toolbar:
         specifier: ^0.18.5
-        version: 0.18.9(markmap-common@0.18.8)
+        version: 0.18.9(markmap-common@0.18.9)
       markmap-view:
         specifier: ^0.18.5
-        version: 0.18.9(markmap-common@0.18.8)
+        version: 0.18.9(markmap-common@0.18.9)
       mermaid:
         specifier: ^11.2.0
         version: 11.4.1
@@ -1656,8 +1656,8 @@ packages:
     peerDependencies:
       '@babel/core': ^7.0.0-0 || ^8.0.0-0 <8.0.0
 
-  '@babel/runtime@7.26.0':
-    resolution: {integrity: sha512-FDSOghenHTiToteC/QRlv2q3DhPZ/oOXTBoirfWNx1Cx3TMVcGWQtMMmQcSvb/JjpNeGzx8Pq/b4fKEJuWm1sw==}
+  '@babel/runtime@7.26.7':
+    resolution: {integrity: sha512-AOPI3D+a8dXnja+iwsUqGRjr1BbZIe771sXdapOtYI531gSqpi92vXivKcq2asu/DFpdl1ceFAKZyRzK2PCVcQ==}
     engines: {node: '>=6.9.0'}
 
   '@babel/template@7.25.9':
@@ -2711,42 +2711,36 @@ packages:
     engines: {node: '>= 10.0.0'}
     cpu: [arm]
     os: [linux]
-    libc: [glibc]
 
   '@parcel/watcher-linux-arm-musl@2.5.0':
     resolution: {integrity: sha512-6uHywSIzz8+vi2lAzFeltnYbdHsDm3iIB57d4g5oaB9vKwjb6N6dRIgZMujw4nm5r6v9/BQH0noq6DzHrqr2pA==}
     engines: {node: '>= 10.0.0'}
     cpu: [arm]
     os: [linux]
-    libc: [musl]
 
   '@parcel/watcher-linux-arm64-glibc@2.5.0':
     resolution: {integrity: sha512-BfNjXwZKxBy4WibDb/LDCriWSKLz+jJRL3cM/DllnHH5QUyoiUNEp3GmL80ZqxeumoADfCCP19+qiYiC8gUBjA==}
     engines: {node: '>= 10.0.0'}
     cpu: [arm64]
     os: [linux]
-    libc: [glibc]
 
   '@parcel/watcher-linux-arm64-musl@2.5.0':
     resolution: {integrity: sha512-S1qARKOphxfiBEkwLUbHjCY9BWPdWnW9j7f7Hb2jPplu8UZ3nes7zpPOW9bkLbHRvWM0WDTsjdOTUgW0xLBN1Q==}
     engines: {node: '>= 10.0.0'}
     cpu: [arm64]
     os: [linux]
-    libc: [musl]
 
   '@parcel/watcher-linux-x64-glibc@2.5.0':
     resolution: {integrity: sha512-d9AOkusyXARkFD66S6zlGXyzx5RvY+chTP9Jp0ypSTC9d4lzyRs9ovGf/80VCxjKddcUvnsGwCHWuF2EoPgWjw==}
     engines: {node: '>= 10.0.0'}
     cpu: [x64]
     os: [linux]
-    libc: [glibc]
 
   '@parcel/watcher-linux-x64-musl@2.5.0':
     resolution: {integrity: sha512-iqOC+GoTDoFyk/VYSFHwjHhYrk8bljW6zOhPuhi5t9ulqiYq1togGJB5e3PwYVFFfeVgc6pbz3JdQyDoBszVaA==}
     engines: {node: '>= 10.0.0'}
     cpu: [x64]
     os: [linux]
-    libc: [musl]
 
   '@parcel/watcher-win32-arm64@2.5.0':
     resolution: {integrity: sha512-twtft1d+JRNkM5YbmexfcH/N4znDtjgysFaV9zvZmmJezQsKpkfLYJ+JFV3uygugK6AtIM2oADPkB2AdhBrNig==}
@@ -2897,61 +2891,51 @@ packages:
     resolution: {integrity: sha512-3pA7xecItbgOs1A5H58dDvOUEboG5UfpTq3WzAdF54acBbUM+olDJAPkgj1GRJ4ZqE12DZ9/hNS2QZk166v92A==}
     cpu: [arm]
     os: [linux]
-    libc: [glibc]
 
   '@rollup/rollup-linux-arm-musleabihf@4.32.0':
     resolution: {integrity: sha512-Y7XUZEVISGyge51QbYyYAEHwpGgmRrAxQXO3siyYo2kmaj72USSG8LtlQQgAtlGfxYiOwu+2BdbPjzEpcOpRmQ==}
     cpu: [arm]
     os: [linux]
-    libc: [musl]
 
   '@rollup/rollup-linux-arm64-gnu@4.32.0':
     resolution: {integrity: sha512-r7/OTF5MqeBrZo5omPXcTnjvv1GsrdH8a8RerARvDFiDwFpDVDnJyByYM/nX+mvks8XXsgPUxkwe/ltaX2VH7w==}
     cpu: [arm64]
     os: [linux]
-    libc: [glibc]
 
   '@rollup/rollup-linux-arm64-musl@4.32.0':
     resolution: {integrity: sha512-HJbifC9vex9NqnlodV2BHVFNuzKL5OnsV2dvTw6e1dpZKkNjPG6WUq+nhEYV6Hv2Bv++BXkwcyoGlXnPrjAKXw==}
     cpu: [arm64]
     os: [linux]
-    libc: [musl]
 
   '@rollup/rollup-linux-loongarch64-gnu@4.32.0':
     resolution: {integrity: sha512-VAEzZTD63YglFlWwRj3taofmkV1V3xhebDXffon7msNz4b14xKsz7utO6F8F4cqt8K/ktTl9rm88yryvDpsfOw==}
     cpu: [loong64]
     os: [linux]
-    libc: [glibc]
 
   '@rollup/rollup-linux-powerpc64le-gnu@4.32.0':
     resolution: {integrity: sha512-Sts5DST1jXAc9YH/iik1C9QRsLcCoOScf3dfbY5i4kH9RJpKxiTBXqm7qU5O6zTXBTEZry69bGszr3SMgYmMcQ==}
     cpu: [ppc64]
     os: [linux]
-    libc: [glibc]
 
   '@rollup/rollup-linux-riscv64-gnu@4.32.0':
     resolution: {integrity: sha512-qhlXeV9AqxIyY9/R1h1hBD6eMvQCO34ZmdYvry/K+/MBs6d1nRFLm6BOiITLVI+nFAAB9kUB6sdJRKyVHXnqZw==}
     cpu: [riscv64]
     os: [linux]
-    libc: [glibc]
 
   '@rollup/rollup-linux-s390x-gnu@4.32.0':
     resolution: {integrity: sha512-8ZGN7ExnV0qjXa155Rsfi6H8M4iBBwNLBM9lcVS+4NcSzOFaNqmt7djlox8pN1lWrRPMRRQ8NeDlozIGx3Omsw==}
     cpu: [s390x]
     os: [linux]
-    libc: [glibc]
 
   '@rollup/rollup-linux-x64-gnu@4.32.0':
     resolution: {integrity: sha512-VDzNHtLLI5s7xd/VubyS10mq6TxvZBp+4NRWoW+Hi3tgV05RtVm4qK99+dClwTN1McA6PHwob6DEJ6PlXbY83A==}
     cpu: [x64]
     os: [linux]
-    libc: [glibc]
 
   '@rollup/rollup-linux-x64-musl@4.32.0':
     resolution: {integrity: sha512-qcb9qYDlkxz9DxJo7SDhWxTWV1gFuwznjbTiov289pASxlfGbaOD54mgbs9+z94VwrXtKTu+2RqwlSTbiOqxGg==}
     cpu: [x64]
     os: [linux]
-    libc: [musl]
 
   '@rollup/rollup-win32-arm64-msvc@4.32.0':
     resolution: {integrity: sha512-pFDdotFDMXW2AXVbfdUEfidPAk/OtwE/Hd4eYMTNVVaCQ6Yl8et0meDaKNL63L44Haxv4UExpv9ydSf3aSayDg==}
@@ -6597,28 +6581,24 @@ packages:
     engines: {node: '>= 12.0.0'}
     cpu: [arm64]
     os: [linux]
-    libc: [glibc]
 
   lightningcss-linux-arm64-musl@1.29.1:
     resolution: {integrity: sha512-UKMFrG4rL/uHNgelBsDwJcBqVpzNJbzsKkbI3Ja5fg00sgQnHw/VrzUTEc4jhZ+AN2BvQYz/tkHu4vt1kLuJyw==}
     engines: {node: '>= 12.0.0'}
     cpu: [arm64]
     os: [linux]
-    libc: [musl]
 
   lightningcss-linux-x64-gnu@1.29.1:
     resolution: {integrity: sha512-u1S+xdODy/eEtjADqirA774y3jLcm8RPtYztwReEXoZKdzgsHYPl0s5V52Tst+GKzqjebkULT86XMSxejzfISw==}
     engines: {node: '>= 12.0.0'}
     cpu: [x64]
     os: [linux]
-    libc: [glibc]
 
   lightningcss-linux-x64-musl@1.29.1:
     resolution: {integrity: sha512-L0Tx0DtaNUTzXv0lbGCLB/c/qEADanHbu4QdcNOXLIe1i8i22rZRpbT3gpWYsCh9aSL9zFujY/WmEXIatWvXbw==}
     engines: {node: '>= 12.0.0'}
     cpu: [x64]
     os: [linux]
-    libc: [musl]
 
   lightningcss-win32-arm64-msvc@1.29.1:
     resolution: {integrity: sha512-QoOVnkIEFfbW4xPi+dpdft/zAKmgLgsRHfJalEPYuJDOWf7cLQzYg0DEh8/sn737FaeMJxHZRc1oBreiwZCjog==}
@@ -6845,8 +6825,8 @@ packages:
     engines: {node: '>= 18'}
     hasBin: true
 
-  markmap-common@0.18.8:
-    resolution: {integrity: sha512-rPJqRIUK/GHLICChak8YrDTfpGztscI502Txs1LK3yv8eyJo9WH8bdO/Wd5oQQ37DjSRnyknC6p+P7va4h2edg==}
+  markmap-common@0.18.9:
+    resolution: {integrity: sha512-MV2HQO7IGIm3jWEJXSG8vmdpqf4WIDXcEyAEN52lrWR1qD53Zg5l81JwjXoZ2l0rY5mofKYqUFlmdM2fqTGMVg==}
 
   markmap-html-parser@0.18.9:
     resolution: {integrity: sha512-B/Fq3fGn+NN0CQAxV75IVPT6RDzV/voYHzVOeo55ut6D3VymuKXIgY5ondA5NnM8k6VgCDJzns+h/wGuNX/Ceg==}
@@ -10519,7 +10499,7 @@ snapshots:
       '@babel/types': 7.26.7
       esutils: 2.0.3
 
-  '@babel/runtime@7.26.0':
+  '@babel/runtime@7.26.7':
     dependencies:
       regenerator-runtime: 0.14.1
 
@@ -10931,7 +10911,7 @@ snapshots:
 
   '@gera2ld/jsx-dom@2.2.2':
     dependencies:
-      '@babel/runtime': 7.26.0
+      '@babel/runtime': 7.26.7
 
   '@gulpjs/messages@1.1.0': {}
 
@@ -12413,7 +12393,7 @@ snapshots:
 
   '@types/sax@1.2.7':
     dependencies:
-      '@types/node': 17.0.45
+      '@types/node': 22.10.10
 
   '@types/send@0.17.4':
     dependencies:
@@ -16659,21 +16639,21 @@ snapshots:
 
   marked@15.0.6: {}
 
-  markmap-common@0.18.8:
+  markmap-common@0.18.9:
     dependencies:
-      '@babel/runtime': 7.26.0
+      '@babel/runtime': 7.26.7
       '@gera2ld/jsx-dom': 2.2.2
       npm2url: 0.2.4
 
-  markmap-html-parser@0.18.9(markmap-common@0.18.8):
+  markmap-html-parser@0.18.9(markmap-common@0.18.9):
     dependencies:
-      '@babel/runtime': 7.26.0
+      '@babel/runtime': 7.26.7
       cheerio: 1.0.0
-      markmap-common: 0.18.8
+      markmap-common: 0.18.9
 
-  markmap-lib@0.18.9(markmap-common@0.18.8):
+  markmap-lib@0.18.9(markmap-common@0.18.9):
     dependencies:
-      '@babel/runtime': 7.26.0
+      '@babel/runtime': 7.26.7
       '@vscode/markdown-it-katex': 1.1.1
       highlight.js: 11.11.1
       katex: 0.16.21
@@ -16682,23 +16662,23 @@ snapshots:
       markdown-it-mark: 4.0.0
       markdown-it-sub: 2.0.0
       markdown-it-sup: 2.0.0
-      markmap-common: 0.18.8
-      markmap-html-parser: 0.18.9(markmap-common@0.18.8)
-      markmap-view: 0.18.9(markmap-common@0.18.8)
+      markmap-common: 0.18.9
+      markmap-html-parser: 0.18.9(markmap-common@0.18.9)
+      markmap-view: 0.18.9(markmap-common@0.18.9)
       prismjs: 1.29.0
       yaml: 2.7.0
 
-  markmap-toolbar@0.18.9(markmap-common@0.18.8):
+  markmap-toolbar@0.18.9(markmap-common@0.18.9):
     dependencies:
-      '@babel/runtime': 7.26.0
+      '@babel/runtime': 7.26.7
       '@gera2ld/jsx-dom': 2.2.2
-      markmap-common: 0.18.8
+      markmap-common: 0.18.9
 
-  markmap-view@0.18.9(markmap-common@0.18.8):
+  markmap-view@0.18.9(markmap-common@0.18.9):
     dependencies:
-      '@babel/runtime': 7.26.0
+      '@babel/runtime': 7.26.7
       d3: 7.9.0
-      markmap-common: 0.18.8
+      markmap-common: 0.18.9
 
   math-intrinsics@1.1.0: {}
 
@@ -17974,7 +17954,7 @@ snapshots:
 
   regenerator-transform@0.15.2:
     dependencies:
-      '@babel/runtime': 7.26.0
+      '@babel/runtime': 7.26.7
 
   regex-recursion@5.1.1:
     dependencies:
@@ -19733,7 +19713,7 @@ snapshots:
       '@apideck/better-ajv-errors': 0.3.6(ajv@8.17.1)
       '@babel/core': 7.26.7
       '@babel/preset-env': 7.26.7(@babel/core@7.26.7)
-      '@babel/runtime': 7.26.0
+      '@babel/runtime': 7.26.7
       '@rollup/plugin-babel': 5.3.1(@babel/core@7.26.7)(@types/babel__core@7.20.5)(rollup@2.79.2)
       '@rollup/plugin-node-resolve': 15.3.1(rollup@2.79.2)
       '@rollup/plugin-replace': 2.4.2(rollup@2.79.2)
