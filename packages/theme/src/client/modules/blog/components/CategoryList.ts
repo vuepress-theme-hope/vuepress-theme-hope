@@ -27,17 +27,22 @@ export default defineComponent({
           .map(([category, { path, items }]) =>
             h(
               "li",
-              {
-                class: [
-                  "vp-category",
-                  `color${generateIndexFromHash(category, Number(cssVariables.colorNumber))}`,
-                  { active: path === page.value.path },
+              { class: "vp-category-item" },
+              h(
+                RouteLink,
+                {
+                  class: [
+                    "vp-category",
+                    `color${generateIndexFromHash(category, Number(cssVariables.colorNumber))}`,
+                    { active: path === page.value.path },
+                  ],
+                  to: path,
+                },
+                () => [
+                  category,
+                  h("span", { class: "vp-category-count" }, items.length),
                 ],
-              },
-              h(RouteLink, { to: path }, () => [
-                category,
-                h("span", { class: "vp-category-count" }, items.length),
-              ]),
+              ),
             ),
           ),
       );

@@ -31,17 +31,19 @@ export default defineComponent({
           .map(([tag, { path, items }]) =>
             h(
               "li",
-              {
-                class: [
-                  "vp-tag",
-                  `color${generateIndexFromHash(tag, Number(cssVariables.colorNumber))}`,
-                  { active: isActive(tag) },
-                ],
-              },
-              h(RouteLink, { to: path }, () => [
-                tag,
-                h("span", { class: "vp-tag-count" }, items.length),
-              ]),
+              { class: "vp-tag-item" },
+              h(
+                RouteLink,
+                {
+                  class: [
+                    "vp-tag",
+                    `color${generateIndexFromHash(tag, Number(cssVariables.colorNumber))}`,
+                    { active: isActive(tag) },
+                  ],
+                  to: path,
+                },
+                () => [tag, h("span", { class: "vp-tag-count" }, items.length)],
+              ),
             ),
           ),
       );
