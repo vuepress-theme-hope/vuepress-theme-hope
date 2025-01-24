@@ -12,10 +12,12 @@ import {
 import { useRoute, useRouter } from "vuepress/client";
 
 import { DropTransition } from "@theme-hope/components/transitions/index";
-import { useThemeLocaleData } from "@theme-hope/composables/index";
 import ArticleItem from "@theme-hope/modules/blog/components/ArticleItem";
 import Pagination from "@theme-hope/modules/blog/components/Pagination";
-import { useBlogOptions } from "@theme-hope/modules/blog/composables/index";
+import {
+  useBlogLocaleData,
+  useBlogOptions,
+} from "@theme-hope/modules/blog/composables/index";
 
 import type {
   ArticleInfoData,
@@ -45,13 +47,11 @@ export default defineComponent({
   setup(props) {
     const route = useRoute();
     const router = useRouter();
-    const themeLocale = useThemeLocaleData();
+    const blogLocale = useBlogLocaleData();
     const blogOptions = useBlogOptions();
     const updatePageview = usePageview();
 
     const currentPage = ref(1);
-
-    const locale = computed(() => themeLocale.value.blogLocales);
 
     const articlePerPage = computed(
       () => blogOptions.value.articlePerPage ?? 10,
@@ -124,7 +124,7 @@ export default defineComponent({
                 onUpdateCurrentPage: updatePage,
               }),
             ]
-          : h("h2", { class: "vp-empty-hint" }, locale.value.empty),
+          : h("h2", { class: "vp-empty-hint" }, blogLocale.value.empty),
       );
   },
 });

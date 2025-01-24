@@ -131,9 +131,9 @@ export default {
 
 杂项:
 
-- `@theme-hope/modules/blog/components/icons` 信息图标
-- `@theme-hope/modules/blog/composables/index` 信息可组合 API
-- `@theme-hope/modules/blog/utils/index` 信息通用函数
+- `@theme-hope/modules/info/components/icons` 信息图标
+- `@theme-hope/modules/info/composables/index` 信息可组合 API
+- `@theme-hope/modules/info/utils/index` 信息通用函数
 
 :::
 
@@ -144,23 +144,26 @@ export default {
 - `@theme-hope/modules/blog/components/ArticleItem` 文章项
 - `@theme-hope/modules/blog/components/ArticleList` 文章列表
 - `@theme-hope/modules/blog/components/ArticleType` 文章类型
+- `@theme-hope/modules/blog/components/ArticlesInfo`: 文章信息
 - `@theme-hope/modules/blog/components/BloggerInfo` 博主信息
 - `@theme-hope/modules/blog/components/BlogHero` 博客主页 Logo 与介绍
 - `@theme-hope/modules/blog/components/BlogHome` 博客主页
 - `@theme-hope/modules/blog/components/BlogWrapper` 博客常规布局
 - `@theme-hope/modules/blog/components/CategoryList` 分类列表
+- `@theme-hope/modules/blog/components/CategoriesInfo`: 分类信息
 - `@theme-hope/modules/blog/components/InfoList` 博客信息列表
 - `@theme-hope/modules/blog/components/InfoPanel` 博客信息面板
 - `@theme-hope/modules/blog/components/Pagination` 分页组件
 - `@theme-hope/modules/blog/components/ProjectPanel` 博客主页项目面板
 - `@theme-hope/modules/blog/components/SocialMedias` 社交媒体链接
 - `@theme-hope/modules/blog/components/TagList` 标签列表
+- `@theme-hope/modules/blog/components/TagsInfo`: 标签信息
 - `@theme-hope/modules/blog/components/TimelineItems` 时间线项目
 - `@theme-hope/modules/blog/components/TimelineList` 时间线列表
 
 杂项:
 
-- `@theme-hope/modules/blog/components/icons/index` 博客图标
+- `@theme-hope/modules/blog/components/icons` 博客图标
 - `@theme-hope/modules/blog/composables/index` 博客可组合 API
 
 :::

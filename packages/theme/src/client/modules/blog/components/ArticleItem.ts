@@ -5,7 +5,7 @@ import { useRouter, withBase } from "vuepress/client";
 import {
   SlideIcon,
   StickyIcon,
-} from "@theme-hope/modules/blog/components/icons/index";
+} from "@theme-hope/modules/blog/components/icons";
 import { useArticleInfo } from "@theme-hope/modules/blog/composables/index";
 import { LockIcon } from "@theme-hope/modules/encrypt/components/icons";
 import type { PageInfoProps } from "@theme-hope/modules/info/components/PageInfo";

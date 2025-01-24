@@ -8,6 +8,7 @@ import { useNavigate, useThemeLocaleData } from "@theme-hope/composables/index";
 import SocialMedias from "@theme-hope/modules/blog/components/SocialMedias";
 import {
   useArticles,
+  useBlogLocaleData,
   useBlogOptions,
   useCategoryMap,
   useTagMap,
@@ -20,6 +21,7 @@ export default defineComponent({
   name: "BloggerInfo",
 
   setup() {
+    const blogLocale = useBlogLocaleData();
     const blogOptions = useBlogOptions();
     const siteLocale = useSiteLocaleData();
     const themeLocale = useThemeLocaleData();
@@ -41,12 +43,10 @@ export default defineComponent({
       () => blogOptions.value.avatar ?? themeLocale.value.logo,
     );
 
-    const locale = computed(() => themeLocale.value.blogLocales);
-
     const intro = computed(() => blogOptions.value.intro);
 
     return (): VNode => {
-      const { article, category, tag, timeline } = locale.value;
+      const { article, category, tag, timeline } = blogLocale.value;
       const countItems: [string, number, string][] = [
         [articles.value.path, articles.value.items.length, article],
         [categoryMap.value.path, keys(categoryMap.value.map).length, category],
@@ -68,7 +68,7 @@ export default defineComponent({
               class: "vp-blogger",
               ...(intro.value
                 ? {
-                    "aria-label": locale.value.intro,
+                    "aria-label": blogLocale.value.intro,
                     "data-balloon-pos": "down",
                     role: "link",
                     onClick: (): void => {

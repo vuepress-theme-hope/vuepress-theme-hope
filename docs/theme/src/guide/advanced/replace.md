@@ -131,9 +131,9 @@ Components:
 
 Miscellaneous:
 
-- `@theme-hope/modules/blog/components/icons`: info icons
-- `@theme-hope/modules/blog/composables/index`: info Composables API
-- `@theme-hope/modules/blog/utils/index`: info utility functions
+- `@theme-hope/modules/info/components/icons`: info icons
+- `@theme-hope/modules/info/composables/index`: info Composables API
+- `@theme-hope/modules/info/utils/index`: info utility functions
 
 :::
 
@@ -144,23 +144,26 @@ Components:
 - `@theme-hope/modules/blog/components/ArticleItem`: article item
 - `@theme-hope/modules/blog/components/ArticleList`: article list
 - `@theme-hope/modules/blog/components/ArticleType`: article type
+- `@theme-hope/modules/blog/components/ArticlesInfo`: article info
 - `@theme-hope/modules/blog/components/BloggerInfo`: blogger info
 - `@theme-hope/modules/blog/components/BlogHero`: blog homepage logo and introduction
 - `@theme-hope/modules/blog/components/BlogHome`: blog home page
 - `@theme-hope/modules/blog/components/BlogWrapper`: common wrapper for blog page
 - `@theme-hope/modules/blog/components/CategoryList`: Category list
+- `@theme-hope/modules/blog/components/CategoriesInfo`: Category info
 - `@theme-hope/modules/blog/components/InfoList`: blog info list
 - `@theme-hope/modules/blog/components/InfoPanel`: blog info panel
 - `@theme-hope/modules/blog/components/Pagination`: pagination
 - `@theme-hope/modules/blog/components/ProjectPanel`: blog homepage project panel
 - `@theme-hope/modules/blog/components/SocialMedias`: social media links
 - `@theme-hope/modules/blog/components/TagList`: tag list
+- `@theme-hope/modules/blog/components/TagsInfo`: tag info
 - `@theme-hope/modules/blog/components/TimelineItems`: timeline items
 - `@theme-hope/modules/blog/components/TimelineList`: timeline List
 
 Miscellaneous:
 
-- `@theme-hope/modules/blog/components/icons/index`: blog icons
+- `@theme-hope/modules/blog/components/icons`: blog icons
 - `@theme-hope/modules/blog/composables/index`: blog Composables API
 
 :::

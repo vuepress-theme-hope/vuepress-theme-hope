@@ -1,11 +1,14 @@
 import type { VNode } from "vue";
-import { computed, defineComponent, h } from "vue";
+import { defineComponent, h } from "vue";
 import { RouteLink } from "vuepress/client";
 
 import { DropTransition } from "@theme-hope/components/transitions/index";
-import { useNavigate, useThemeLocaleData } from "@theme-hope/composables/index";
-import { TimelineIcon } from "@theme-hope/modules/blog/components/icons/index";
-import { useTimeline } from "@theme-hope/modules/blog/composables/index";
+import { useNavigate } from "@theme-hope/composables/index";
+import { TimelineIcon } from "@theme-hope/modules/blog/components/icons";
+import {
+  useBlogLocaleData,
+  useTimeline,
+} from "@theme-hope/modules/blog/composables/index";
 
 import { PageInfo } from "../../../../shared/index.js";
 
@@ -15,11 +18,9 @@ export default defineComponent({
   name: "TimelineList",
 
   setup() {
-    const themeLocale = useThemeLocaleData();
+    const blogLocale = useBlogLocaleData();
     const timelines = useTimeline();
     const navigate = useNavigate();
-
-    const hint = computed(() => themeLocale.value.blogLocales.timeline);
 
     return (): VNode =>
       h("div", { class: "timeline-list-wrapper" }, [
@@ -34,7 +35,7 @@ export default defineComponent({
           [
             h(TimelineIcon),
             h("span", { class: "num" }, timelines.value.items.length),
-            hint.value,
+            blogLocale.value.timeline,
           ],
         ),
         h("hr"),
