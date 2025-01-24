@@ -2,6 +2,14 @@
 
 All notable changes to this project will be documented in this file. See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+<!-- #region recent-change -->
+
+## [2.0.0-rc.71](https://github.com/vuepress-theme-hope/vuepress-theme-hope/compare/v2.0.0-rc.70...v2.0.0-rc.71) (2025-01-24)
+
+### 🐛 Bug Fixes
+
+- **md-enhance:** fix a11y ([757e99c](https://github.com/vuepress-theme-hope/vuepress-theme-hope/commit/757e99c44ac66b98641670757ed84b7fffdde93e))
+
 ## [2.0.0-rc.69](https://github.com/vuepress-theme-hope/vuepress-theme-hope/compare/v2.0.0-rc.68...v2.0.0-rc.69) (2025-01-15)
 
 **Note:** Version bump only for package vuepress-plugin-md-enhance

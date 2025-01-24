@@ -4,6 +4,27 @@ All notable changes to this project will be documented in this file. See [Conven
 
 <!-- #region recent-change -->
 
+## [2.0.0-rc.71](https://github.com/vuepress-theme-hope/vuepress-theme-hope/compare/v2.0.0-rc.70...v2.0.0-rc.71) (2025-01-24)
+
+### ⚠ BREAKING CHANGES
+
+- **theme:** remove darkmode export
+
+### ✨ Features
+
+- **theme:** remove darkmode export ([ba382cf](https://github.com/vuepress-theme-hope/vuepress-theme-hope/commit/ba382cf6b7d0fb11f6ddfbf5dc35e072f4564af0))
+
+### 🐛 Bug Fixes
+
+- **theme:** fix category and tag style ([88afd31](https://github.com/vuepress-theme-hope/vuepress-theme-hope/commit/88afd31c581d758127242c968a7b8207e6438cb3))
+- **theme:** fix dom structure ([73adf59](https://github.com/vuepress-theme-hope/vuepress-theme-hope/commit/73adf59f2cf6e9c820b8a85691c8a8a64fb99717))
+- **theme:** fix fontawesome icon style ([20cc93e](https://github.com/vuepress-theme-hope/vuepress-theme-hope/commit/20cc93e507d6a45889b424483dbc5ee04f9c6f07))
+- **theme:** fix icon sizing ([d0dde2e](https://github.com/vuepress-theme-hope/vuepress-theme-hope/commit/d0dde2e15ed684df1d755ada720e084fe394e8a2))
+- **theme:** fix InfoPanel animation ([f7910da](https://github.com/vuepress-theme-hope/vuepress-theme-hope/commit/f7910da9fb34643467fe0a31c242a812ebae8460))
+- **theme:** fix type typos ([02ac3f3](https://github.com/vuepress-theme-hope/vuepress-theme-hope/commit/02ac3f37917e15fcb738fcec0cda3e3425ac8718))
+
+<!-- #region recent-change -->
+
 ## [2.0.0-rc.70](https://github.com/vuepress-theme-hope/vuepress-theme-hope/compare/v2.0.0-rc.69...v2.0.0-rc.70) (2025-01-16)
 
 ### ✨ Features
