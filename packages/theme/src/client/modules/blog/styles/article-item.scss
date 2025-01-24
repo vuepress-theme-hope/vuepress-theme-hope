@@ -1,13 +1,9 @@
 .vp-article-wrapper {
   position: relative;
 
-  display: block;
-
   box-sizing: border-box;
   width: 100%;
   margin: 0 auto 1.25rem;
-
-  color: var(--vp-c-text);
 
   text-align: start;
   overflow-wrap: break-word;
@@ -21,7 +17,7 @@
   }
 
   &:hover {
-    span[property="headline"]::after {
+    .vp-article-title::after {
       visibility: visible;
       transform: scaleX(1);
     }
@@ -88,31 +84,33 @@
 }
 
 .vp-article-title {
-  font-size: 1.25em;
+  position: relative;
+
+  display: inline-block;
+
+  color: var(--vp-c-text);
+
+  font-size: 1.25rem;
   font-family: var(--vp-font-heading);
   line-height: 1.6;
+
   cursor: pointer;
 
-  span[property="headline"] {
-    position: relative;
-    display: inline-block;
+  &::after {
+    content: "";
 
-    &::after {
-      content: "";
+    position: absolute;
+    inset: auto 0 0;
 
-      position: absolute;
-      inset: auto 0 0;
+    height: 2px;
 
-      height: 2px;
+    background: var(--vp-c-accent);
 
-      background: var(--vp-c-accent);
+    visibility: hidden;
 
-      visibility: hidden;
+    transition: transform var(--vp-t-transform);
 
-      transition: transform var(--vp-t-transform);
-
-      transform: scaleX(0);
-    }
+    transform: scaleX(0);
   }
 
   a {
