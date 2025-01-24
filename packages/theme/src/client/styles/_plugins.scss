@@ -60,6 +60,11 @@
 }
 // stylelint-enable selector-class-pattern
 
+// plugin-icon
+:root {
+  --fa-fw-width: 1em;
+}
+
 // plugin-markdown-hint
 .hint-container {
   @media (max-width: hope-config.$mobile) {
