@@ -46,8 +46,8 @@
     "dev:ts": "tsc -b tsconfig.build.json --watch"
   },
   "dependencies": {
-    "@vuepress/helper": "2.0.0-rc.71",
-    "@vuepress/plugin-sass-palette": "2.0.0-rc.71",
+    "@vuepress/helper": "2.0.0-rc.73",
+    "@vuepress/plugin-sass-palette": "2.0.0-rc.73",
     "lightgallery": "^2.8.2",
     "vue": "^3.5.13",
     "vuepress-shared": "workspace:*"

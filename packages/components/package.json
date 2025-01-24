@@ -44,9 +44,9 @@
   },
   "dependencies": {
     "@stackblitz/sdk": "^1.11.0",
-    "@vuepress/helper": "2.0.0-rc.71",
-    "@vuepress/plugin-sass-palette": "2.0.0-rc.71",
-    "@vueuse/core": "^12.4.0",
+    "@vuepress/helper": "2.0.0-rc.73",
+    "@vuepress/plugin-sass-palette": "2.0.0-rc.73",
+    "@vueuse/core": "^12.5.0",
     "balloon-css": "^1.2.0",
     "create-codepen": "^2.0.0",
     "qrcode": "^1.5.4",
