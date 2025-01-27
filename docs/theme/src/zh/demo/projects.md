@@ -360,9 +360,9 @@ blogs:
     preview: /assets/image/javascript-collection.jpg
 
   - name: 回归线
-    logo: https://aneot.terrach.net/logo.svg
-    url: https://aneot.terrach.net/
-    repo: https://github.com/Nemo1166/aneot
+    logo: https://aneot.arktca.com/logo.svg
+    url: https://aneot.arktca.com/
+    repo: https://github.com/TCA-Arknights/aneot
     preview: /assets/image/return-line.jpg
 
   - name: CSView
