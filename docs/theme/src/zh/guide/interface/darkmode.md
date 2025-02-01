@@ -45,12 +45,12 @@ export default {
 
 - 在 Markdown 文件或 Vue 模板中，你可以直接获取 `$isDarkmode` 来获取当前是否为深色模式。
 
-- 在脚本中，你可以从 `@vuepress/client/helper` 导入 `useDarkmode` 来获取深色模式状态:
+- 在脚本中，你可以通过 `@pnpm add -D @vuepress/helper@next` 安装插件来获取深色模式状态:
 
   ```ts
-  import { useDarkmode } from "@vuepress/client/helper";
+  import { useDarkmode } from "@vuepress/helper/client";
 
-  const { isDarkmode } = useDarkmode();
+  const isDarkmode = useDarkmode();
 
   console.log(isDarkmode.value); // get darkmode status
   ```
