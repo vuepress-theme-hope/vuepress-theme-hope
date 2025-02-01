@@ -45,12 +45,13 @@ Toggle the button to see effects: <ColorModeSwitch />
 
 - In Markdown files or Vue Template, you can access `$isDarkmode` to get darkmode status directly.
 
-- In scripts, you can import `useDarkmode` from `@vuepress/client/helper` to get darkmode status:
+- In scripts, you can use `pnpm add -D @vuepress/helper@next` to get darkmode status helper:
+
 
   ```ts
-  import { useDarkmode } from "@vuepress/client/helper";
+  import { useDarkmode } from "@vuepress/helper/client";
 
-  const { isDarkmode } = useDarkmode();
+  const isDarkmode = useDarkmode();
 
   console.log(isDarkmode.value); // get darkmode status
   ```
