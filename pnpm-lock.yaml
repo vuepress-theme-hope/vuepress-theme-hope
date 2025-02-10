@@ -20,11 +20,11 @@ importers:
         specifier: 19.6.0
         version: 19.6.0
       '@lerna-lite/cli':
-        specifier: 3.11.0
-        version: 3.11.0(@lerna-lite/publish@3.11.0(@types/node@22.10.10)(typescript@5.7.3))(@lerna-lite/version@3.11.0(@lerna-lite/publish@3.11.0(@types/node@22.10.10)(typescript@5.7.3))(@types/node@22.10.10)(typescript@5.7.3))(@types/node@22.10.10)(typescript@5.7.3)
+        specifier: 3.12.0
+        version: 3.12.0(@lerna-lite/publish@3.12.0(@types/node@22.10.10)(typescript@5.7.3))(@lerna-lite/version@3.12.0(@lerna-lite/publish@3.12.0(@types/node@22.10.10)(typescript@5.7.3))(@types/node@22.10.10)(typescript@5.7.3))(@types/node@22.10.10)(typescript@5.7.3)
       '@lerna-lite/publish':
-        specifier: 3.11.0
-        version: 3.11.0(@types/node@22.10.10)(typescript@5.7.3)
+        specifier: 3.12.0
+        version: 3.12.0(@types/node@22.10.10)(typescript@5.7.3)
       '@rollup/plugin-alias':
         specifier: 5.1.1
         version: 5.1.1(rollup@4.32.0)
@@ -2244,6 +2244,15 @@ packages:
     resolution: {integrity: sha512-5y4/PUJVnRb4bwWY67KLdebWOhOc7xj5IP2J80oWXa64mVag24rwQ1VAdnj7/eDY/odhguW0zQ1Mp1pj6fO/2w==}
     engines: {node: '>=18'}
 
+  '@inquirer/core@10.1.6':
+    resolution: {integrity: sha512-Bwh/Zk6URrHwZnSSzAZAKH7YgGYi0xICIBDFOqBQoXNNAzBHw/bgXgLmChfp+GyR3PnChcTbiCTZGC6YJNJkMA==}
+    engines: {node: '>=18'}
+    peerDependencies:
+      '@types/node': '>=18'
+    peerDependenciesMeta:
+      '@types/node':
+        optional: true
+
   '@inquirer/editor@4.2.3':
     resolution: {integrity: sha512-S9KnIOJuTZpb9upeRSBBhoDZv7aSV3pG9TECrBj0f+ZsFwccz886hzKBrChGrXMJwd4NKY+pOA9Vy72uqnd6Eg==}
     engines: {node: '>=18'}
@@ -2256,6 +2265,19 @@ packages:
     peerDependencies:
       '@types/node': '>=18'
 
+  '@inquirer/expand@4.0.8':
+    resolution: {integrity: sha512-k0ouAC6L+0Yoj/j0ys2bat0fYcyFVtItDB7h+pDFKaDDSFJey/C/YY1rmIOqkmFVZ5rZySeAQuS8zLcKkKRLmg==}
+    engines: {node: '>=18'}
+    peerDependencies:
+      '@types/node': '>=18'
+    peerDependenciesMeta:
+      '@types/node':
+        optional: true
+
+  '@inquirer/figures@1.0.10':
+    resolution: {integrity: sha512-Ey6176gZmeqZuY/W/nZiUyvmb1/qInjcpiZjXWi6nON+nxJpD1bxtSoBxNliGISae32n6OwbY+TSXPZ1CfS4bw==}
+    engines: {node: '>=18'}
+
   '@inquirer/figures@1.0.9':
     resolution: {integrity: sha512-BXvGj0ehzrngHTPTDqUoDT3NXL8U0RxUk2zJm2A66RhCEIWdtU1v6GuUqNAgArW4PQ9CinqIWyHdQgdwOj06zQ==}
     engines: {node: '>=18'}
@@ -2265,6 +2287,15 @@ packages:
     engines: {node: '>=18'}
     peerDependencies:
       '@types/node': '>=18'
+
+  '@inquirer/input@4.1.5':
+    resolution: {integrity: sha512-bB6wR5wBCz5zbIVBPnhp94BHv/G4eKbUEjlpCw676pI2chcvzTx1MuwZSCZ/fgNOdqDlAxkhQ4wagL8BI1D3Zg==}
+    engines: {node: '>=18'}
+    peerDependencies:
+      '@types/node': '>=18'
+    peerDependenciesMeta:
+      '@types/node':
+        optional: true
 
   '@inquirer/number@3.0.6':
     resolution: {integrity: sha512-xO07lftUHk1rs1gR0KbqB+LJPhkUNkyzV/KhH+937hdkMazmAYHLm1OIrNKpPelppeV1FgWrgFDjdUD8mM+XUg==}
@@ -2302,11 +2333,29 @@ packages:
     peerDependencies:
       '@types/node': '>=18'
 
+  '@inquirer/select@4.0.8':
+    resolution: {integrity: sha512-Io2prxFyN2jOCcu4qJbVoilo19caiD3kqkD3WR0q3yDA5HUCo83v4LrRtg55ZwniYACW64z36eV7gyVbOfORjA==}
+    engines: {node: '>=18'}
+    peerDependencies:
+      '@types/node': '>=18'
+    peerDependenciesMeta:
+      '@types/node':
+        optional: true
+
   '@inquirer/type@3.0.2':
     resolution: {integrity: sha512-ZhQ4TvhwHZF+lGhQ2O/rsjo80XoZR5/5qhOY3t6FJuX5XBg5Be8YzYTvaUGJnc12AUGI2nr4QSUE4PhKSigx7g==}
     engines: {node: '>=18'}
     peerDependencies:
       '@types/node': '>=18'
+
+  '@inquirer/type@3.0.4':
+    resolution: {integrity: sha512-2MNFrDY8jkFYc9Il9DgLsHhMzuHnOYM1+CUYVWbzu9oT0hC7V7EcYvdCKeoll/Fcci04A+ERZ9wcc7cQ8lTkIA==}
+    engines: {node: '>=18'}
+    peerDependencies:
+      '@types/node': '>=18'
+    peerDependenciesMeta:
+      '@types/node':
+        optional: true
 
   '@isaacs/cliui@8.0.2':
     resolution: {integrity: sha512-O8jcjabXaleOG9DQ0+ARXWZBTfnP4WNAqzuiJK7ll44AmxGKv/J2M4TPjxjY3znBCfvBXFzucm1twdyFybFqEA==}
@@ -2375,8 +2424,8 @@ packages:
   '@leichtgewicht/ip-codec@2.0.5':
     resolution: {integrity: sha512-Vo+PSpZG2/fmgmiNzYK9qWRh8h/CHrwD0mo1h1DzL4yzHNSfWYujGTYsWGreD000gcgmZ7K4Ys6Tx9TxtsKdDw==}
 
-  '@lerna-lite/cli@3.11.0':
-    resolution: {integrity: sha512-aSCsqqMB+ITVH0iFrhI4aCBkxj7PhL4DRxiUDeBS8to0pl77Lp8jlEVWeBkzXGnMeoHae61kiAqSSWAG8ZJ6mg==}
+  '@lerna-lite/cli@3.12.0':
+    resolution: {integrity: sha512-XvS3+beXmQqjv2XUy7tMFlZVLqdO/7RgQlbhUCqvHN0fFPYTdu3IyCXye0/TpKQVn+1/HvLM4wQcbfxcceBGUA==}
     engines: {node: ^18.0.0 || >=20.0.0}
     hasBin: true
     peerDependencies:
@@ -2400,24 +2449,24 @@ packages:
       '@lerna-lite/watch':
         optional: true
 
-  '@lerna-lite/core@3.11.0':
-    resolution: {integrity: sha512-LI9rCqztF/ydox2VWm3MhSwV6mExB3DoEcYEuQfZ9FXoeXX39DaubSL7WaRM0MQZv7EuzQYFgpXzsfQCF0hFLA==}
+  '@lerna-lite/core@3.12.0':
+    resolution: {integrity: sha512-YW48z2Tys/pC88TVtUtjneLB1iiu/Clas1ucTki5qnRecvjK8h3tjZRfEL8dw/7bZ/mJZbdPtpqTMbecz09Bvg==}
     engines: {node: ^18.0.0 || >=20.0.0}
 
-  '@lerna-lite/init@3.11.0':
-    resolution: {integrity: sha512-t8MVrJqCO2pz2iTKEViYYj9MmQFHktCHlq6KZjp925U18XWiVPlm84T2lDDps/+BYOoZ08uZtDNON/L3GKRLIA==}
+  '@lerna-lite/init@3.12.0':
+    resolution: {integrity: sha512-TcKNeJsAKII/U7qP1UJ0J3yx0PEA3a7kUmZexNkbTSVMZVQx5eKoxfeF+8e8vghEKTd2TPwkmPeXzgHaGxF7zQ==}
     engines: {node: ^18.0.0 || >=20.0.0}
 
-  '@lerna-lite/npmlog@3.11.0':
-    resolution: {integrity: sha512-XXHsLIciXE5h30lQgxajHB5iZZx7W1s7igNfLJNO9AMoPgE2xK8apQUwvNybTgY5Dr9wBYJtPVygJwaiNhI9LQ==}
+  '@lerna-lite/npmlog@3.12.0':
+    resolution: {integrity: sha512-JeoCw4uZVKR6vWA5EAGwlebsv7HPNw8l7gEPjnRnvZwGkx0IyOrG0c2gruX700Ir/7ApeNc9MtHjdAF8JboJVQ==}
     engines: {node: ^18.0.0 || >=20.0.0}
 
-  '@lerna-lite/publish@3.11.0':
-    resolution: {integrity: sha512-nmLSM6IBqNXuJ5kDHUJ7AWdWKT3N600rZMoSYS8Pd3+WlTkxitE0nf4CAdeJRg9JvSj+ejocnrFZBEvwzBZicQ==}
+  '@lerna-lite/publish@3.12.0':
+    resolution: {integrity: sha512-aaCuCV9JLYr2V1RPBYuML8fguW9g8BPJmfLkPOqxGz/BcG2yV4iPVxvcKk+P6F2+z8mhck1PQKHk6usz9o1MsQ==}
     engines: {node: ^18.0.0 || >=20.0.0}
 
-  '@lerna-lite/version@3.11.0':
-    resolution: {integrity: sha512-8GsivndWmYsJRU/bAFGRPLVCwo2uVCFDT3zBelNkZM6YGwFXwuGC4anm94JO7IfCxqddY57L8W7CYSdfbezfjQ==}
+  '@lerna-lite/version@3.12.0':
+    resolution: {integrity: sha512-kxak0jhYwHONx+mcsEVLRz29MAqv8wPXMDrCWtZJc1mim43dwNKzuuOtIfY45cb8ivo4o40IwWqjjEX72m6tMg==}
     engines: {node: ^18.0.0 || >=20.0.0}
 
   '@lezer/common@1.2.3':
@@ -8588,6 +8637,11 @@ packages:
     engines: {node: '>=10'}
     hasBin: true
 
+  semver@7.7.1:
+    resolution: {integrity: sha512-hlq8tAfn0m/61p4BVRcPzIGr6LKiMwo4VM6dGi6pt4qcRkmNzTcWq6eCEjEh+qXjkMDvPlOFFSGwQjoEa6gyMA==}
+    engines: {node: '>=10'}
+    hasBin: true
+
   send@0.19.0:
     resolution: {integrity: sha512-dW41u5VfLXu8SJh5bwRmyYUbAoSB3c9uQh6L8h/KtsFREPWpbX1lrljJo186Jc4nmci/sGUZ9a0a0J2zgfq2hw==}
     engines: {node: '>= 0.8.0'}
@@ -9114,10 +9168,6 @@ packages:
   tinypool@1.0.2:
     resolution: {integrity: sha512-al6n+QEANGFOMf/dmUMsuS5/r9B06uwlyNjZZql/zv8J7ybHCgoihBNORZCY2mzUuAnomQa2JdhyHKzZxPCrFA==}
     engines: {node: ^18.0.0 || >=20.0.0}
-
-  tinyrainbow@1.2.0:
-    resolution: {integrity: sha512-weEDEq7Z5eTHPDh4xjX789+fHfF+P8boiFB+0vbWzpbnbsEr/GRaohi/uMKxg8RZMXnl1ItAi/IUHWMsjDV7kQ==}
-    engines: {node: '>=14.0.0'}
 
   tinyrainbow@2.0.0:
     resolution: {integrity: sha512-op4nsTR47R6p0vMUUoYl/a+ljLFVtlfaXkLQmqfLR1qHma1h/ysYk4hEXZ880bf2CYgTskvTa/e196Vd5dDQXw==}
@@ -11214,6 +11264,19 @@ snapshots:
     transitivePeerDependencies:
       - '@types/node'
 
+  '@inquirer/core@10.1.6(@types/node@22.10.10)':
+    dependencies:
+      '@inquirer/figures': 1.0.10
+      '@inquirer/type': 3.0.4(@types/node@22.10.10)
+      ansi-escapes: 4.3.2
+      cli-width: 4.1.0
+      mute-stream: 2.0.0
+      signal-exit: 4.1.0
+      wrap-ansi: 6.2.0
+      yoctocolors-cjs: 2.1.2
+    optionalDependencies:
+      '@types/node': 22.10.10
+
   '@inquirer/editor@4.2.3(@types/node@22.10.10)':
     dependencies:
       '@inquirer/core': 10.1.4(@types/node@22.10.10)
@@ -11228,12 +11291,29 @@ snapshots:
       '@types/node': 22.10.10
       yoctocolors-cjs: 2.1.2
 
+  '@inquirer/expand@4.0.8(@types/node@22.10.10)':
+    dependencies:
+      '@inquirer/core': 10.1.6(@types/node@22.10.10)
+      '@inquirer/type': 3.0.4(@types/node@22.10.10)
+      yoctocolors-cjs: 2.1.2
+    optionalDependencies:
+      '@types/node': 22.10.10
+
+  '@inquirer/figures@1.0.10': {}
+
   '@inquirer/figures@1.0.9': {}
 
   '@inquirer/input@4.1.3(@types/node@22.10.10)':
     dependencies:
       '@inquirer/core': 10.1.4(@types/node@22.10.10)
       '@inquirer/type': 3.0.2(@types/node@22.10.10)
+      '@types/node': 22.10.10
+
+  '@inquirer/input@4.1.5(@types/node@22.10.10)':
+    dependencies:
+      '@inquirer/core': 10.1.6(@types/node@22.10.10)
+      '@inquirer/type': 3.0.4(@types/node@22.10.10)
+    optionalDependencies:
       '@types/node': 22.10.10
 
   '@inquirer/number@3.0.6(@types/node@22.10.10)':
@@ -11287,8 +11367,22 @@ snapshots:
       ansi-escapes: 4.3.2
       yoctocolors-cjs: 2.1.2
 
+  '@inquirer/select@4.0.8(@types/node@22.10.10)':
+    dependencies:
+      '@inquirer/core': 10.1.6(@types/node@22.10.10)
+      '@inquirer/figures': 1.0.10
+      '@inquirer/type': 3.0.4(@types/node@22.10.10)
+      ansi-escapes: 4.3.2
+      yoctocolors-cjs: 2.1.2
+    optionalDependencies:
+      '@types/node': 22.10.10
+
   '@inquirer/type@3.0.2(@types/node@22.10.10)':
     dependencies:
+      '@types/node': 22.10.10
+
+  '@inquirer/type@3.0.4(@types/node@22.10.10)':
+    optionalDependencies:
       '@types/node': 22.10.10
 
   '@isaacs/cliui@8.0.2':
@@ -11363,19 +11457,19 @@ snapshots:
 
   '@leichtgewicht/ip-codec@2.0.5': {}
 
-  '@lerna-lite/cli@3.11.0(@lerna-lite/publish@3.11.0(@types/node@22.10.10)(typescript@5.7.3))(@lerna-lite/version@3.11.0(@lerna-lite/publish@3.11.0(@types/node@22.10.10)(typescript@5.7.3))(@types/node@22.10.10)(typescript@5.7.3))(@types/node@22.10.10)(typescript@5.7.3)':
+  '@lerna-lite/cli@3.12.0(@lerna-lite/publish@3.12.0(@types/node@22.10.10)(typescript@5.7.3))(@lerna-lite/version@3.12.0(@lerna-lite/publish@3.12.0(@types/node@22.10.10)(typescript@5.7.3))(@types/node@22.10.10)(typescript@5.7.3))(@types/node@22.10.10)(typescript@5.7.3)':
     dependencies:
-      '@lerna-lite/core': 3.11.0(@types/node@22.10.10)(typescript@5.7.3)
-      '@lerna-lite/init': 3.11.0(@types/node@22.10.10)(typescript@5.7.3)
-      '@lerna-lite/npmlog': 3.11.0
+      '@lerna-lite/core': 3.12.0(@types/node@22.10.10)(typescript@5.7.3)
+      '@lerna-lite/init': 3.12.0(@types/node@22.10.10)(typescript@5.7.3)
+      '@lerna-lite/npmlog': 3.12.0
       dedent: 1.5.3
       dotenv: 16.4.7
       import-local: 3.2.0
       load-json-file: 7.0.1
       yargs: 17.7.2
     optionalDependencies:
-      '@lerna-lite/publish': 3.11.0(@types/node@22.10.10)(typescript@5.7.3)
-      '@lerna-lite/version': 3.11.0(@lerna-lite/publish@3.11.0(@types/node@22.10.10)(typescript@5.7.3))(@types/node@22.10.10)(typescript@5.7.3)
+      '@lerna-lite/publish': 3.12.0(@types/node@22.10.10)(typescript@5.7.3)
+      '@lerna-lite/version': 3.12.0(@lerna-lite/publish@3.12.0(@types/node@22.10.10)(typescript@5.7.3))(@types/node@22.10.10)(typescript@5.7.3)
     transitivePeerDependencies:
       - '@types/node'
       - babel-plugin-macros
@@ -11383,12 +11477,12 @@ snapshots:
       - supports-color
       - typescript
 
-  '@lerna-lite/core@3.11.0(@types/node@22.10.10)(typescript@5.7.3)':
+  '@lerna-lite/core@3.12.0(@types/node@22.10.10)(typescript@5.7.3)':
     dependencies:
-      '@inquirer/expand': 4.0.6(@types/node@22.10.10)
-      '@inquirer/input': 4.1.3(@types/node@22.10.10)
-      '@inquirer/select': 4.0.6(@types/node@22.10.10)
-      '@lerna-lite/npmlog': 3.11.0
+      '@inquirer/expand': 4.0.8(@types/node@22.10.10)
+      '@inquirer/input': 4.1.5(@types/node@22.10.10)
+      '@inquirer/select': 4.0.8(@types/node@22.10.10)
+      '@lerna-lite/npmlog': 3.12.0
       '@npmcli/run-script': 8.1.0
       clone-deep: 4.0.1
       config-chain: 1.1.13
@@ -11406,11 +11500,11 @@ snapshots:
       p-map: 7.0.3
       p-queue: 8.1.0
       resolve-from: 5.0.0
-      semver: 7.6.3
+      semver: 7.7.1
       slash: 5.1.0
       strong-log-transformer: 2.1.0
       tinyglobby: 0.2.10
-      tinyrainbow: 1.2.0
+      tinyrainbow: 2.0.0
       write-file-atomic: 5.0.1
       write-json-file: 6.0.0
       write-package: 7.1.0
@@ -11422,9 +11516,9 @@ snapshots:
       - supports-color
       - typescript
 
-  '@lerna-lite/init@3.11.0(@types/node@22.10.10)(typescript@5.7.3)':
+  '@lerna-lite/init@3.12.0(@types/node@22.10.10)(typescript@5.7.3)':
     dependencies:
-      '@lerna-lite/core': 3.11.0(@types/node@22.10.10)(typescript@5.7.3)
+      '@lerna-lite/core': 3.12.0(@types/node@22.10.10)(typescript@5.7.3)
       fs-extra: 11.3.0
       p-map: 7.0.3
       write-json-file: 6.0.0
@@ -11435,7 +11529,7 @@ snapshots:
       - supports-color
       - typescript
 
-  '@lerna-lite/npmlog@3.11.0':
+  '@lerna-lite/npmlog@3.12.0':
     dependencies:
       aproba: 2.0.0
       color-support: 1.1.3
@@ -11446,12 +11540,12 @@ snapshots:
       string-width: 7.2.0
       wide-align: 1.1.5
 
-  '@lerna-lite/publish@3.11.0(@types/node@22.10.10)(typescript@5.7.3)':
+  '@lerna-lite/publish@3.12.0(@types/node@22.10.10)(typescript@5.7.3)':
     dependencies:
-      '@lerna-lite/cli': 3.11.0(@lerna-lite/publish@3.11.0(@types/node@22.10.10)(typescript@5.7.3))(@lerna-lite/version@3.11.0(@lerna-lite/publish@3.11.0(@types/node@22.10.10)(typescript@5.7.3))(@types/node@22.10.10)(typescript@5.7.3))(@types/node@22.10.10)(typescript@5.7.3)
-      '@lerna-lite/core': 3.11.0(@types/node@22.10.10)(typescript@5.7.3)
-      '@lerna-lite/npmlog': 3.11.0
-      '@lerna-lite/version': 3.11.0(@lerna-lite/publish@3.11.0(@types/node@22.10.10)(typescript@5.7.3))(@types/node@22.10.10)(typescript@5.7.3)
+      '@lerna-lite/cli': 3.12.0(@lerna-lite/publish@3.12.0(@types/node@22.10.10)(typescript@5.7.3))(@lerna-lite/version@3.12.0(@lerna-lite/publish@3.12.0(@types/node@22.10.10)(typescript@5.7.3))(@types/node@22.10.10)(typescript@5.7.3))(@types/node@22.10.10)(typescript@5.7.3)
+      '@lerna-lite/core': 3.12.0(@types/node@22.10.10)(typescript@5.7.3)
+      '@lerna-lite/npmlog': 3.12.0
+      '@lerna-lite/version': 3.12.0(@lerna-lite/publish@3.12.0(@types/node@22.10.10)(typescript@5.7.3))(@types/node@22.10.10)(typescript@5.7.3)
       '@npmcli/arborist': 7.5.4
       '@npmcli/package-json': 5.2.1
       byte-size: 9.0.1
@@ -11467,12 +11561,12 @@ snapshots:
       p-map: 7.0.3
       p-pipe: 4.0.0
       pacote: 18.0.6
-      semver: 7.6.3
+      semver: 7.7.1
       ssri: 11.0.0
       tar: 6.2.1
       temp-dir: 3.0.0
       tinyglobby: 0.2.10
-      tinyrainbow: 1.2.0
+      tinyrainbow: 2.0.0
     transitivePeerDependencies:
       - '@75lb/nature'
       - '@lerna-lite/exec'
@@ -11485,11 +11579,11 @@ snapshots:
       - supports-color
       - typescript
 
-  '@lerna-lite/version@3.11.0(@lerna-lite/publish@3.11.0(@types/node@22.10.10)(typescript@5.7.3))(@types/node@22.10.10)(typescript@5.7.3)':
+  '@lerna-lite/version@3.12.0(@lerna-lite/publish@3.12.0(@types/node@22.10.10)(typescript@5.7.3))(@types/node@22.10.10)(typescript@5.7.3)':
     dependencies:
-      '@lerna-lite/cli': 3.11.0(@lerna-lite/publish@3.11.0(@types/node@22.10.10)(typescript@5.7.3))(@lerna-lite/version@3.11.0(@lerna-lite/publish@3.11.0(@types/node@22.10.10)(typescript@5.7.3))(@types/node@22.10.10)(typescript@5.7.3))(@types/node@22.10.10)(typescript@5.7.3)
-      '@lerna-lite/core': 3.11.0(@types/node@22.10.10)(typescript@5.7.3)
-      '@lerna-lite/npmlog': 3.11.0
+      '@lerna-lite/cli': 3.12.0(@lerna-lite/publish@3.12.0(@types/node@22.10.10)(typescript@5.7.3))(@lerna-lite/version@3.12.0(@lerna-lite/publish@3.12.0(@types/node@22.10.10)(typescript@5.7.3))(@types/node@22.10.10)(typescript@5.7.3))(@types/node@22.10.10)(typescript@5.7.3)
+      '@lerna-lite/core': 3.12.0(@types/node@22.10.10)(typescript@5.7.3)
+      '@lerna-lite/npmlog': 3.12.0
       '@octokit/plugin-enterprise-rest': 6.0.1
       '@octokit/rest': 21.1.0
       conventional-changelog-angular: 7.0.0
@@ -11514,10 +11608,10 @@ snapshots:
       p-pipe: 4.0.0
       p-reduce: 3.0.0
       pify: 6.1.0
-      semver: 7.6.3
+      semver: 7.7.1
       slash: 5.1.0
       temp-dir: 3.0.0
-      tinyrainbow: 1.2.0
+      tinyrainbow: 2.0.0
       uuid: 11.0.5
       write-json-file: 6.0.0
     transitivePeerDependencies:
@@ -11856,7 +11950,7 @@ snapshots:
       promise-all-reject-late: 1.0.1
       promise-call-limit: 3.0.2
       read-package-json-fast: 3.0.2
-      semver: 7.6.3
+      semver: 7.7.1
       ssri: 10.0.6
       treeverse: 3.0.0
       walk-up-path: 3.0.1
@@ -11866,7 +11960,7 @@ snapshots:
 
   '@npmcli/fs@3.1.1':
     dependencies:
-      semver: 7.6.3
+      semver: 7.7.1
 
   '@npmcli/git@5.0.8':
     dependencies:
@@ -11877,7 +11971,7 @@ snapshots:
       proc-log: 4.2.0
       promise-inflight: 1.0.1
       promise-retry: 2.0.1
-      semver: 7.6.3
+      semver: 7.7.1
       which: 4.0.0
     transitivePeerDependencies:
       - bluebird
@@ -11900,7 +11994,7 @@ snapshots:
       json-parse-even-better-errors: 3.0.2
       pacote: 18.0.6
       proc-log: 4.2.0
-      semver: 7.6.3
+      semver: 7.7.1
     transitivePeerDependencies:
       - bluebird
       - supports-color
@@ -11917,7 +12011,7 @@ snapshots:
       json-parse-even-better-errors: 3.0.2
       normalize-package-data: 6.0.2
       proc-log: 4.2.0
-      semver: 7.6.3
+      semver: 7.7.1
     transitivePeerDependencies:
       - bluebird
 
@@ -14292,7 +14386,7 @@ snapshots:
       handlebars: 4.7.8
       json-stringify-safe: 5.0.1
       meow: 12.1.1
-      semver: 7.6.3
+      semver: 7.7.1
       split2: 4.2.0
 
   conventional-commits-filter@4.0.0: {}
@@ -15705,7 +15799,7 @@ snapshots:
   git-semver-tags@7.0.1:
     dependencies:
       meow: 12.1.1
-      semver: 7.6.3
+      semver: 7.7.1
 
   git-up@8.0.0:
     dependencies:
@@ -16624,7 +16718,7 @@ snapshots:
       npm-package-arg: 11.0.3
       npm-registry-fetch: 17.1.0
       proc-log: 4.2.0
-      semver: 7.6.3
+      semver: 7.7.1
       sigstore: 2.3.1
       ssri: 10.0.6
     transitivePeerDependencies:
@@ -17413,7 +17507,7 @@ snapshots:
   normalize-package-data@6.0.2:
     dependencies:
       hosted-git-info: 7.0.2
-      semver: 7.6.3
+      semver: 7.7.1
       validate-npm-package-license: 3.0.4
 
   normalize-path@3.0.0: {}
@@ -17430,7 +17524,7 @@ snapshots:
 
   npm-install-checks@6.3.0:
     dependencies:
-      semver: 7.6.3
+      semver: 7.7.1
 
   npm-normalize-package-bin@3.0.1: {}
 
@@ -17438,7 +17532,7 @@ snapshots:
     dependencies:
       hosted-git-info: 7.0.2
       proc-log: 4.2.0
-      semver: 7.6.3
+      semver: 7.7.1
       validate-npm-package-name: 5.0.1
 
   npm-packlist@8.0.2:
@@ -17450,7 +17544,7 @@ snapshots:
       npm-install-checks: 6.3.0
       npm-normalize-package-bin: 3.0.1
       npm-package-arg: 11.0.3
-      semver: 7.6.3
+      semver: 7.7.1
 
   npm-registry-fetch@17.1.0:
     dependencies:
@@ -18610,6 +18704,8 @@ snapshots:
 
   semver@7.6.3: {}
 
+  semver@7.7.1: {}
+
   send@0.19.0:
     dependencies:
       debug: 2.6.9
@@ -19269,8 +19365,6 @@ snapshots:
       picomatch: 4.0.2
 
   tinypool@1.0.2: {}
-
-  tinyrainbow@1.2.0: {}
 
   tinyrainbow@2.0.0: {}
 
