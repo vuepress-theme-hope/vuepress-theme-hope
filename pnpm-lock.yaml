@@ -5,7 +5,7 @@ settings:
   excludeLinksFromLockfile: false
 
 overrides:
-  '@vuepress/cli>esbuild': ^0.24.2
+  '@vuepress/cli>esbuild': ^0.25.0
   esbuild-loader>esbuild: ^0.24.2
   tsx>esbuild: ^0.25.0
 
@@ -13073,7 +13073,7 @@ snapshots:
       cac: 6.7.14
       chokidar: 3.6.0
       envinfo: 7.14.0
-      esbuild: 0.24.2
+      esbuild: 0.25.0
     transitivePeerDependencies:
       - supports-color
       - typescript
