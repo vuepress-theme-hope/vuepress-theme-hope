@@ -1,7 +1,7 @@
 ---
 title: 博客配置
 icon: blog
-order: 3
+order: 4
 category:
   - 配置
 tag:
@@ -20,21 +20,21 @@ tag:
 
 ## 选项
 
-### excerpt
+### plugins.blog.excerpt
 
 - 类型: `boolean`
 - 默认值: `true`
 
 是否生成摘要。
 
-### excerptSeparator
+### plugins.blog.excerptSeparator
 
 - 类型: `string`
 - 默认值: `<!-- more -->`
 
 摘要分隔符。
 
-### excerptLength
+### plugins.blog.excerptLength
 
 - 类型: `number`
 - 默认值: `300`
@@ -47,7 +47,7 @@ tag:
 
 :::
 
-### filter
+### plugins.blog.filter
 
 - 类型: `(page: Page) => boolean`
 - 默认值:
@@ -61,21 +61,21 @@ tag:
 
 默认情况下，所有从 Markdown 源文件中生成的非主页页面，会被作为文章。
 
-### excerptFilter
+### plugins.blog.excerptFilter
 
 - 类型: `(page: Page) => boolean`
 - 默认值: `filter` 选项
 
 页面过滤器，此函数用于鉴别插件是否需要生成摘要。
 
-### slugify
+### plugins.blog.slugify
 
 - 类型: `(name: string) => string`
 - 默认值: `(name) => name.replace(/ _/g, '-').replace(/[:?*|\\/<>]/g, "").toLowerCase()`
 
 Slugify 函数，用于转换 key 在路由中注册的形式。
 
-### type
+### plugins.blog.type
 
 - 类型: `BlogTypeOptions[]`
 
@@ -123,56 +123,56 @@ Slugify 函数，用于转换 key 在路由中注册的形式。
 
 额外的文章类型。
 
-### article
+### plugins.blog.article
 
 - 类型: `string`
 - 默认值: `/article/`
 
 文章列表路由路径。
 
-### category
+### plugins.blog.category
 
 - 类型: `string`
 - 默认值: `/category/`
 
 分类地图路由路径。
 
-### categoryItem
+### plugins.blog.categoryItem
 
 - 类型: `string`
 - 默认值: `/category/:name/`
 
 分类列表路由路径。`:name` 会被自动替换为分类名称。
 
-### tag
+### plugins.blog.tag
 
 - 类型: `string`
 - 默认值: `/tag/`
 
 标签地图路由路径。
 
-### tagItem
+### plugins.blog.tagItem
 
 - 类型: `string`
 - 默认值: `/tag/:name/`
 
 标签列表路由路径。`:name` 会被自动替换为标签名称。
 
-### star
+### plugins.blog.star
 
 - 类型: `string`
 - 默认值: `/star/`
 
 星标文章列表路由路径。
 
-### timeline
+### plugins.blog.timeline
 
 - 类型: `string`
 - 默认值: `/timeline/`
 
 时间线列表路由路径。
 
-### hotReload
+### plugins.blog.hotReload
 
 - 类型: `boolean`
 - 默认值: 是否在使用 `--debug` 标识

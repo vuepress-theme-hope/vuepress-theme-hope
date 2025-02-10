@@ -17,7 +17,6 @@ Available components:
 - Badge: Colorful badge component
 - BiliBili: Embedded BiliBili video
 - CodePen: Embedded CodePen demo
-- FontIcon: Font icon component
 - PDF: Embedded PDF viewer
 - Share: Sharing current page with social medias
 - StackBlitz: Embedded StackBlitz demo
@@ -34,8 +33,6 @@ To enable components, you should set `plugins.components.components` with an arr
 ::: note
 
 By default, `<Badge />` is available to align with `@vuepress/theme-default`.
-
-`<FontIcon />` is enabled anyway, as it's used by the theme internally to provide [Icon feature](../interface/icon.md).
 
 :::
 
@@ -89,14 +86,6 @@ See <ProjectLink name="components" path="/guide/utilities/badge.html">Badge</Pro
 <!-- @include: @components/guide/content/site-info.md#demo -->
 
 See <ProjectLink name="components" path="/guide/content/site-info.html">SiteInfo</ProjectLink> page for available props.
-
-### FontIcon
-
-Component which allows you to display font icons.
-
-<!-- @include: @components/guide/utilities/font-icon.md#demo -->
-
-See <ProjectLink name="components" path="/guide/utilities/font-icon.html">FontIcon</ProjectLink> page for available props.
 
 ### Share
 

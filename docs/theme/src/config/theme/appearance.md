@@ -19,28 +19,6 @@ These options are only valid when setting directly under the theme options, sett
 
 :::
 
-## iconAssets <Badge text="Root only" type="warning" />
-
-- Type: `FontIconAssets`
-
-  ```ts
-  type Link =
-    | `/${string}`
-    | `//${string}`
-    | `http://${string}`
-    | `https://${string}`;
-
-  type BuiltInFontIcon = "iconify" | "fontawesome" | "fontawesome-with-brands";
-
-  type FontIconAssets = BuiltInFontIcon | Link | (BuiltInFontIcon | Link)[];
-  ```
-
-- Required: No
-- Details:
-  - [Interface → Icon](../../guide/interface/icon.md)
-
-Link of font icon asset, `'iconify'` `'fontawesome'` and `'fontawesome-with-brands'` keywords are supported.
-
 ## darkmode <Badge text="Enabled by default" /> <Badge text="Root only" type="warning" />
 
 - Type: `"switch" | "toggle" | "auto" | "enable" | "disable"`
@@ -112,12 +90,3 @@ Whether enable focus mode, default when pure mode is enabled. Number value will 
   - [Interface → Print button](../../guide/interface/others.md#print-button)
 
 Whether display print icon in desktop mode.
-
-## iconPrefix <Badge text="Root only" type="warning" />
-
-- Type: `string`
-- Default: Inferred from iconAssets
-- Details:
-  - [Interface → Icon](../../guide/interface/icon.md)
-
-Prefix of icon FontClass, usually, it can be automatically set by the theme.

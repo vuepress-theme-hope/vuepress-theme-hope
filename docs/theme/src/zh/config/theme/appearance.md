@@ -19,28 +19,6 @@ tag:
 
 :::
 
-## iconAssets <Badge text="仅限 Root" type="warning" />
-
-- 类型: `FontIconAssets`
-
-  ```ts
-  type Link =
-    | `/${string}`
-    | `//${string}`
-    | `http://${string}`
-    | `https://${string}`;
-
-  type BuiltInFontIcon = "iconify" | "fontawesome" | "fontawesome-with-brands";
-
-  type FontIconAssets = BuiltInFontIcon | Link | (BuiltInFontIcon | Link)[];
-  ```
-
-- 必填: 否
-- 详情:
-  - [界面 → 图标](../../guide/interface/icon.md)
-
-字体图标资源链接，支持 `'iconify'` `'fontawesome'` 和 `'fontawesome-with-brands'` 关键字。
-
 ## darkmode <Badge text="默认启用" /> <Badge text="仅限 Root" type="warning" />
 
 - 类型: `"switch" | "toggle" | "auto" | "enable" | "disable"`
@@ -112,12 +90,3 @@ tag:
   - [界面 → 打印按钮](../../guide/interface/others.md#打印按钮)
 
 是否在桌面模式下显示打印按钮。
-
-## iconPrefix <Badge text="仅限 Root" type="warning" />
-
-- 类型: `string`
-- 默认值: 尝试从 iconAssets 推断
-- 详情:
-  - [界面 → 图标](../../guide/interface/icon.md)
-
-通常情况下，它可以识别 iconAssets 并自动设置，如果识别失败，你可以手动设置图标的 FontClass 前缀。

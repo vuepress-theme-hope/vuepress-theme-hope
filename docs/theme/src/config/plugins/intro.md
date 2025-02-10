@@ -56,6 +56,8 @@ The following plugins are enabled by default, and you can disable them:
 
 - [@vuepress/plugin-git][git]: Git-based info plugin
 
+- [@vuepress/plugin-icon][icon]: Icon support
+
 - [@vuepress/plugin-links-check][links-check]: check links in markdown files
 
 - [@vuepress/plugin-markdown-hint][markdown-hint]: Markdown hint containers
@@ -122,6 +124,7 @@ These plugins are supported by theme, but you need to install them manually whil
 [docsearch]: https://ecosystem.vuejs.press/plugins/search/docsearch.html
 [feed]: https://ecosystem.vuejs.press/plugins/blog/feed/
 [git]: https://ecosystem.vuejs.press/plugins/development/git.html
+[icon]: https://ecosystem.vuejs.press/plugins/features/icon.html
 [links-check]: https://ecosystem.vuejs.press/plugins/markdown/links-check.html
 [markdown-hint]: https://ecosystem.vuejs.press/plugins/markdown/markdown-hint.html
 [markdown-image]: https://ecosystem.vuejs.press/plugins/markdown/markdown-image.html

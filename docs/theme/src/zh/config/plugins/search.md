@@ -1,7 +1,7 @@
 ---
 title: 搜索插件配置
 icon: search
-order: 5
+order: 3
 category:
   - 配置
 tag:

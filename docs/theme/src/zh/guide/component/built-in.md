@@ -17,7 +17,6 @@ tag:
 - Badge: 多彩的徽章组件
 - BiliBili: 嵌入 BiliBili 视频
 - CodePen: 嵌入 CodePen 演示
-- FontIcon: 字体图标组件。
 - PDF: 嵌入 PDF 查看器
 - Share: 通过社交媒体分享当前页面
 - StackBlitz: 嵌入 StackBlitz 演示
@@ -34,8 +33,6 @@ tag:
 ::: note
 
 `<Badge />` 是默认可用的，以便与 `@vuepress/theme-default` 行为一致。
-
-`<FontIcon />` 总会被启用，因为它被主题内部用于提供 [图标功能](../interface/icon.md)。
 
 :::
 
@@ -91,14 +88,6 @@ export default {
 <!-- @include: @components/zh/guide/content/site-info.md#demo -->
 
 有关可用属性，请参阅 <ProjectLink name="components" path="/zh/guide/content/site-info.html">SiteInfo</ProjectLink> 页面。
-
-### FontIcon
-
-允许你显示字体图标的组件。
-
-<!-- @include: @components/zh/guide/utilities/font-icon.md#demo -->
-
-有关可用属性，请参阅 <ProjectLink name="components" path="/zh/guide/utilities/font-icon.html">FontIcon</ProjectLink> 页面。
 
 ### Share
 

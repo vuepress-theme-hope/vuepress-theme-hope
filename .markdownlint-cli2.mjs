@@ -27,7 +27,6 @@ export default {
         "Catalog",
         "CodePen",
         "DemoProject",
-        "FontIcon",
         "HighlightPanel",
         "ProjectLink",
         "PDF",

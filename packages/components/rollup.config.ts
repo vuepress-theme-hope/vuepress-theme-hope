@@ -11,7 +11,6 @@ export default [
         "components/Badge",
         "components/BiliBili",
         "components/CodePen",
-        "components/FontIcon",
         "components/PDF",
         "components/Replit",
         "components/Share",

@@ -49,13 +49,7 @@ export const getPlugins = (
     ...options
   }: Pick<
     ThemeOptions,
-    | "hostname"
-    | "hotReload"
-    | "iconAssets"
-    | "iconPrefix"
-    | "favicon"
-    | "plugins"
-    | "markdown"
+    "hostname" | "hotReload" | "favicon" | "plugins" | "markdown"
   >,
   legacy = false,
 ): PluginConfig => {
@@ -113,7 +107,11 @@ export const getPlugins = (
       ? null
       : copyCodePlugin(isPlainObject(copyCode) ? copyCode : {}),
     // @vuepress/plugin-icon
-    iconPlugin(pluginsOptions.icon ?? {}),
+    iconPlugin({
+      ...(pluginsOptions.icon ?? {}),
+      // force to use VPIcon component
+      component: "VPIcon",
+    }),
     // @vuepress/plugin-photo-swipe
     photoSwipe === false
       ? null

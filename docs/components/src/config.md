@@ -14,7 +14,6 @@ icon: gears
     | "Badge"
     | "BiliBili"
     | "CodePen"
-    | "FontIcon"
     | "PDF"
     | "Replit"
     | "Share"
@@ -39,7 +38,6 @@ Available component names:
 - `"Badge"`
 - `"BiliBili"`
 - `"CodePen"`
-- `"FontIcon"`
 - `"PDF"`
 - `"Replit"`
 - `"Share"`
@@ -62,37 +60,6 @@ Global config for components.
 - Required: No
 - Details:
   - [Guide → ArtPlayer](./guide/media/art-player.md#global-config)
-
-### componentsOptions.fontIcon.assets
-
-- Type: `FontIconAssets`
-
-  ```ts
-  type Link =
-    | `/${string}`
-    | `//${string}`
-    | `http://${string}`
-    | `https://${string}`;
-
-  type BuiltInFontIcon = "iconify" | "fontawesome" | "fontawesome-with-brands";
-
-  type FontIconAssets = BuiltInFontIcon | Link | (BuiltInFontIcon | Link)[];
-  ```
-
-- Required: No
-- Details:
-  - [Guide → FontIcon](./guide/utilities/font-icon.md)
-
-Link of font icon asset, `'iconify'` `'fontawesome'` and `'fontawesome-with-brands'` keywords are supported.
-
-### componentsOptions.fontIcon.prefix
-
-- Type: `string`
-- Default: Inferred from assets
-- Details:
-  - [Guide → FontIcon](./guide/utilities/font-icon.md)
-
-Class prefix of font icon
 
 ### componentsOptions.pdf.pdfjs
 

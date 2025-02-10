@@ -9,14 +9,6 @@ tag:
   - Theme Config
 ---
 
-## catalog <Badge text="enabled by default" />
-
-Controls `@vuepress/plugin-catalog` which provides catalog pages generation.
-
-No extra config is required by default. Se it to `false` if you don't need it.
-
-Check [catalog plugin docs][catalog-config] for available plugin options.
-
 ## backToTop <Badge text="enabled by default" />
 
 Controls `@vuepress/plugin-back-to-top` which provides a back to top button.
@@ -24,6 +16,14 @@ Controls `@vuepress/plugin-back-to-top` which provides a back to top button.
 No extra config is required by default. Se it to `false` if you don't need it.
 
 Check [back-to-top plugin docs][back-to-top-config] for available plugin options.
+
+## catalog <Badge text="enabled by default" />
+
+Controls `@vuepress/plugin-catalog` which provides catalog pages generation.
+
+No extra config is required by default. Se it to `false` if you don't need it.
+
+Check [catalog plugin docs][catalog-config] for available plugin options.
 
 ## components
 
@@ -35,7 +35,6 @@ Available component which can be used in markdown files are:
 - Badge: Colorful badge component
 - BiliBili: Embedded BiliBili video
 - CodePen: Embedded CodePen demo
-- FontIcon: Font icon component
 - PDF: Embedded PDF viewer
 - Share: Sharing current page with social medias
 - StackBlitz: Embedded StackBlitz demo

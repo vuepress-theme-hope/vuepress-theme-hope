@@ -1,7 +1,7 @@
 ---
 title: Search Plugin Config
 icon: search
-order: 5
+order: 3
 category:
   - Config
 tag:

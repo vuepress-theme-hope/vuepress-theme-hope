@@ -14,7 +14,6 @@ icon: gears
     | "Badge"
     | "BiliBili"
     | "CodePen"
-    | "FontIcon"
     | "PDF"
     | "Replit"
     | "Share"
@@ -39,7 +38,6 @@ icon: gears
 - `"Badge"`
 - `"BiliBili"`
 - `"CodePen"`
-- `"FontIcon"`
 - `"PDF"`
 - `"Replit"`
 - `"Share"`
@@ -62,37 +60,6 @@ icon: gears
 - 默认值: `{}`
 - 详情:
   - [指南 → ArtPlayer](./guide/media/art-player.md#全局配置)
-
-### componentsOptions.fontIcon.assets
-
-- 类型: `FontIconAssets`
-
-  ```ts
-  type Link =
-    | `/${string}`
-    | `//${string}`
-    | `http://${string}`
-    | `https://${string}`;
-
-  type BuiltInFontIcon = "iconify" | "fontawesome" | "fontawesome-with-brands";
-
-  type FontIconAssets = BuiltInFontIcon | Link | (BuiltInFontIcon | Link)[];
-  ```
-
-- 必填: 否
-- 详情:
-  - [指南 → FontIcon](./guide/utilities/font-icon.md)
-
-字体图标资源链接，支持 `'iconify'` `'fontawesome'` 和 `'fontawesome-with-brands'` 关键字。
-
-### componentsOptions.fontIcon.prefix
-
-- 类型: `string`
-- 默认值: 尝试从 iconAssets 推断
-- 详情:
-  - [指南 → FontIcon](./guide/utilities/font-icon.md)
-
-字体图标的 Class 前缀
 
 ### componentsOptions.pdf.pdfjs
 

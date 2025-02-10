@@ -128,13 +128,9 @@ export interface PluginsOptions extends DeprecatedPluginsOptions {
   /**
    * Components plugin options
    *
-   * @description FontIcon is used internally, so it will be registered anyway.
-   *
    * @see https://plugin-components.vuejs.press/config.html
    *
    * 插件选项配置
-   *
-   * @description FontIcon 被内部使用，所以它无论如何都会被注册。
    *
    * @see https://plugin-components.vuejs.press/zh/config.html
    */
@@ -217,7 +213,7 @@ export interface PluginsOptions extends DeprecatedPluginsOptions {
    *
    * 图标插件选项
    */
-  icon?: IconPluginOptions;
+  icon?: Omit<IconPluginOptions, "component">;
 
   /**
    * Notice options

@@ -10,6 +10,4 @@ index: false
 
 - [Badge](./badge.md): 徽章
 
-- [FontIcon](./font-icon.md): 字体图标
-
 - [Share](share.md): 分享组件

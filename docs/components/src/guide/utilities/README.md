@@ -10,6 +10,4 @@ index: false
 
 - [Badge](./badge.md)
 
-- [FontIcon](./font-icon.md)
-
 - [Share](share.md)

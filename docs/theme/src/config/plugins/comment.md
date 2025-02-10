@@ -1,7 +1,7 @@
 ---
 title: Comment Plugin Config
 icon: comment-dots
-order: 4
+order: 5
 category:
   - Config
 tag:

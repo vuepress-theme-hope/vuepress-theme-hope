@@ -9,14 +9,6 @@ tag:
   - 主题配置
 ---
 
-## catalog <Badge text="默认启用" />
-
-控制 `@vuepress/plugin-catalog`，提供目录的自动生成。
-
-默认不需要任何额外配置。如果你不需要此功能可设置为 `false`。
-
-插件选项请参阅 [catalog 插件文档][catalog-config]。
-
 ## backToTop <Badge text="默认启用" />
 
 控制 `@vuepress/plugin-back-to-top`，提供返回顶部按钮。
@@ -24,6 +16,14 @@ tag:
 默认不需要任何额外配置。如果你不需要此功能可设置为 `false`。
 
 插件选项请参阅 [back-to-top 插件文档][back-to-top-config]。
+
+## catalog <Badge text="默认启用" />
+
+控制 `@vuepress/plugin-catalog`，提供目录的自动生成。
+
+默认不需要任何额外配置。如果你不需要此功能可设置为 `false`。
+
+插件选项请参阅 [catalog 插件文档][catalog-config]。
 
 ## components
 
@@ -35,7 +35,6 @@ tag:
 - Badge: 多彩的徽章组件
 - BiliBili: 嵌入 BiliBili 视频
 - CodePen: 嵌入 CodePen 演示
-- FontIcon: 字体图标组件。
 - PDF: 嵌入 PDF 查看器
 - Share: 通过社交媒体分享当前页面
 - StackBlitz: 嵌入 StackBlitz 演示

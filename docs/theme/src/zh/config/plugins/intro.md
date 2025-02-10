@@ -56,6 +56,8 @@ tag:
 
 - [@vuepress/plugin-git][git]: 基于 Git 的信息插件
 
+- [@vuepress/plugin-icon][icon]: 提供图标
+-
 - [@vuepress/plugin-links-check][links-check]: 检查 Markdown 链接
 
 - [@vuepress/plugin-markdown-hint][markdown-hint]: Markdown 提示容器
@@ -124,6 +126,7 @@ tag:
 [docsearch]: https://ecosystem.vuejs.press/zh/plugins/search/docsearch.html
 [feed]: https://ecosystem.vuejs.press/zh/plugins/blog/feed/
 [git]: https://ecosystem.vuejs.press/zh/plugins/development/git.html
+[icon]: https://ecosystem.vuejs.press/zh/plugins/features/icon.html
 [markdown-hint]: https://ecosystem.vuejs.press/zh/plugins/markdown/markdown-hint.html
 [markdown-image]: https://ecosystem.vuejs.press/zh/plugins/markdown/markdown-image.html
 [markdown-math]: https://ecosystem.vuejs.press/zh/plugins/markdown/markdown-math.html
