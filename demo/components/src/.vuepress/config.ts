@@ -24,9 +24,7 @@ export default defineUserConfig({
       "/demo/badge",
       "/demo/bili-bili",
       "/demo/code-pen",
-      "/demo/font-icon",
       "/demo/pdf",
-      "/demo/repl-it",
       "/demo/share",
       "/demo/site-info",
       "/demo/stack-blitz",
@@ -34,9 +32,6 @@ export default defineUserConfig({
       "/demo/vp-card",
       "/demo/vid-stack",
       "/demo/xi-gua",
-      "/demo/audio-player",
-      "/demo/video-player",
-      "/demo/you-tube",
     ],
   }),
 
@@ -48,29 +43,18 @@ export default defineUserConfig({
     componentsPlugin({
       components: [
         "ArtPlayer",
-        "AudioPlayer",
         "Badge",
         "BiliBili",
         "CodePen",
-        "FontIcon",
         "PDF",
-        "Replit",
         "Share",
         "SiteInfo",
         "StackBlitz",
         "VPBanner",
         "VPCard",
         "VidStack",
-        "VideoPlayer",
         "XiGua",
-        "YouTube",
       ],
-
-      componentOptions: {
-        fontIcon: {
-          assets: "fontawesome",
-        },
-      },
     }),
   ],
 });

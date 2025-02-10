@@ -8,11 +8,7 @@
 
 - [CodePen](code-pen.md)
 
-- [FontIcon](font-icon.md)
-
 - [PDF](pdf.md)
-
-- [Replit](repl-it.md)
 
 - [Share](share.md)
 
@@ -27,9 +23,3 @@
 - [VidStack](vid-stack.md)
 
 - [XiGua](xi-gua.md)
-
-- [AudioPlayer (Deprecated)](audio-player.md)
-
-- [VideoPlayer (Deprecated)](video-player.md)
-
-- [YouTube (Deprecated)](you-tube.md)
