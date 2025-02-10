@@ -1063,7 +1063,7 @@ importers:
         specifier: ^3.6.0
         version: 3.6.0
       nodejs-jieba:
-        specifier: ^0.2.1
+        specifier: ^0.2.1 || ^0.3.0
         version: 0.2.1(encoding@0.1.13)
       sass:
         specifier: ^1.81.0

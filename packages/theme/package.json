@@ -120,7 +120,7 @@
     "@vuepress/plugin-search": "2.0.0-rc.74",
     "@vuepress/plugin-slimsearch": "2.0.0-rc.74",
     "@vuepress/plugin-watermark": "2.0.0-rc.74",
-    "nodejs-jieba": "^0.2.1",
+    "nodejs-jieba": "^0.2.1 || ^0.3.0",
     "sass": "^1.81.0",
     "sass-embedded": "^1.81.0",
     "sass-loader": "^16.0.2",
