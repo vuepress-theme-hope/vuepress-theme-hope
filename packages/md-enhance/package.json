@@ -67,17 +67,17 @@
     "@mdit/plugin-plantuml": "^0.16.0",
     "@mdit/plugin-uml": "^0.16.0",
     "@types/markdown-it": "^14.1.2",
-    "@vuepress/helper": "2.0.0-rc.74",
-    "@vuepress/plugin-sass-palette": "2.0.0-rc.74",
-    "@vueuse/core": "^12.5.0",
-    "balloon-css": "^1.2.0",
+    "@vuepress/helper": "catalog:vuepress",
+    "@vuepress/plugin-sass-palette": "catalog:vuepress",
+    "@vueuse/core": "catalog:range",
+    "balloon-css": "catalog:range",
     "js-yaml": "^4.1.0",
-    "vue": "^3.5.13",
+    "vue": "catalog:range",
     "vuepress-shared": "workspace:*"
   },
   "devDependencies": {
     "@types/babel__core": "7.20.5",
-    "@vuepress/bundler-vite": "2.0.0-rc.19",
+    "@vuepress/bundler-vite": "catalog:vuepress",
     "markdown-it": "14.1.0",
     "typescript": "5.7.3"
   },
@@ -92,10 +92,10 @@
     "markmap-view": "^0.18.5",
     "mermaid": "^11.2.0",
     "sandpack-vue3": "^3.0.0",
-    "sass": "^1.81.0",
-    "sass-embedded": "^1.81.0",
-    "sass-loader": "^16.0.2",
-    "vuepress": "2.0.0-rc.19"
+    "sass": "catalog:range",
+    "sass-embedded": "catalog:range",
+    "sass-loader": "catalog:range",
+    "vuepress": "catalog:vuepress"
   },
   "peerDependenciesMeta": {
     "@vue/repl": {

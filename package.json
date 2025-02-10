@@ -96,6 +96,10 @@
     "node": ">=20"
   },
   "pnpm": {
+    "onlyBuiltDependencies": [
+      "esbuild",
+      "nodejs-jieba"
+    ],
     "overrides": {
       "esbuild": "^0.25.0"
     }
