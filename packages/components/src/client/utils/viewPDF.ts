@@ -158,18 +158,6 @@ export const viewPDF = (
       // Modern versions of Firefox come bundled with PDFJS
       isFirefoxWithPDFJS);
 
-  const pdfLink = isLinkHttp(url)
-    ? url
-    : __VUEPRESS_DEV__
-      ? null
-      : `${window.origin}${url}`;
-
-  if (!pdfLink) {
-    logError("PDF link is not accessible.");
-
-    return null;
-  }
-
   const targetNode = getTargetElement(targetSelector);
 
   if (!targetNode) {
@@ -178,10 +166,20 @@ export const viewPDF = (
     return null;
   }
 
-  const pdfTitle =
-    (title || /\/([^/]+).pdf/.exec(pdfLink)?.[1]) ?? "PDF Viewer";
+  const pdfLink = isLinkHttp(url)
+    ? url
+    : __VUEPRESS_DEV__
+      ? null
+      : `${window.origin}${url}`;
+  const pdfTitle = (title || /\/([^/]+).pdf/.exec(url)?.[1]) ?? "PDF Viewer";
 
   if (force) {
+    if (!pdfLink) {
+      logError("PDF link is not accessible.");
+
+      return null;
+    }
+
     if (!PDFJS_URL) {
       targetNode.innerHTML = hint.replace(/\[url\]/g, pdfLink);
       logError("PDFJS URL is not defined");
@@ -203,7 +201,7 @@ export const viewPDF = (
     return addPDFViewer(embedType, targetNode, url, options, pdfTitle);
   }
 
-  if (PDFJS_URL)
+  if (PDFJS_URL && pdfLink)
     return addPDFViewer("pdfjs", targetNode, url, options, pdfTitle);
 
   targetNode.innerHTML = hint.replace(/\[url\]/g, url);
