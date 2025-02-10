@@ -59,7 +59,7 @@
     "@rollup/plugin-replace": "6.0.2",
     "@types/node": "22.10.10",
     "@types/webpack-env": "1.18.8",
-    "@vitest/coverage-istanbul": "3.0.4",
+    "@vitest/coverage-istanbul": "3.0.5",
     "concurrently": "9.1.2",
     "conventional-changelog-conventionalcommits": "7.0.2",
     "cpx2": "8.0.0",
