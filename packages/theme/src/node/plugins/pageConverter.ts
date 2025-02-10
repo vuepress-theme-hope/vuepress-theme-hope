@@ -89,7 +89,8 @@ export const extendsPagePlugin = (
       }
 
       const enableEditLink =
-        themeData.locales[page.pathLocale].editLink ?? true;
+        // eslint-disable-next-line @typescript-eslint/no-unnecessary-condition
+        themeData.locales[page.pathLocale]?.editLink ?? true;
 
       // Set edit link
       if (enableEditLink)
