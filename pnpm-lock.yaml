@@ -41,8 +41,8 @@ importers:
         specifier: 22.10.10
         version: 22.10.10
       '@types/webpack-env':
-        specifier: 1.18.5
-        version: 1.18.5
+        specifier: 1.18.8
+        version: 1.18.8
       '@vitest/coverage-istanbul':
         specifier: 3.0.4
         version: 3.0.4(vitest@3.0.4(@types/debug@4.1.12)(@types/node@22.10.10)(jiti@2.4.2)(lightningcss@1.29.1)(sass-embedded@1.83.4)(sass@1.83.4)(terser@5.37.0)(tsx@4.19.2)(yaml@2.7.0))
@@ -3475,6 +3475,9 @@ packages:
 
   '@types/webpack-env@1.18.5':
     resolution: {integrity: sha512-wz7kjjRRj8/Lty4B+Kr0LN6Ypc/3SymeCCGSbaXp2leH0ZVg/PriNiOwNj4bD4uphI7A8NXS4b6Gl373sfO5mA==}
+
+  '@types/webpack-env@1.18.8':
+    resolution: {integrity: sha512-G9eAoJRMLjcvN4I08wB5I7YofOb/kaJNd5uoCMX+LbKXTPCF+ZIHuqTnFaK9Jz1rgs035f9JUPUhNFtqgucy/A==}
 
   '@types/webxr@0.5.21':
     resolution: {integrity: sha512-geZIAtLzjGmgY2JUi6VxXdCrTb99A7yP49lxLr2Nm/uIK0PkkxcEi4OGhoGDO4pxCf3JwGz2GiJL2Ej4K2bKaA==}
@@ -12664,6 +12667,8 @@ snapshots:
   '@types/web-bluetooth@0.0.20': {}
 
   '@types/webpack-env@1.18.5': {}
+
+  '@types/webpack-env@1.18.8': {}
 
   '@types/webxr@0.5.21': {}
 
