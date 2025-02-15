@@ -59,7 +59,7 @@
   },
   "peerDependencies": {
     "artplayer": "^5.0.0",
-    "dashjs": "4.7.4",
+    "dashjs": "5.0.0",
     "hls.js": "^1.4.12",
     "mpegts.js": "^1.7.3",
     "sass": "catalog:range",
