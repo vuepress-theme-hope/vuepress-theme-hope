@@ -27,7 +27,7 @@
     "@vuepress/plugin-feed": "2.0.0-rc.74",
     "@vuepress/plugin-revealjs": "catalog:vuepress",
     "@vuepress/shiki-twoslash": "catalog:vuepress",
-    "@vueuse/core": "12.5.0",
+    "@vueuse/core": "12.7.0",
     "artplayer": "5.2.2",
     "docs-shared": "workspace:*",
     "echarts-wordcloud": "2.1.0",
