@@ -7,7 +7,7 @@ packages:
 catalog:
   markmap-lib: 0.18.9
   markmap-toolbar: 0.18.9
-  markmap-view: 0.18.9
+  markmap-view: 0.18.10
   mathjax-full: 3.2.2
   mermaid: 11.4.1
   reveal.js: 5.1.0
