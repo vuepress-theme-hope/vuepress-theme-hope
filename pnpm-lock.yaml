@@ -7,8 +7,8 @@ settings:
 catalogs:
   default:
     markmap-lib:
-      specifier: 0.18.9
-      version: 0.18.9
+      specifier: 0.18.11
+      version: 0.18.11
     markmap-toolbar:
       specifier: 0.18.9
       version: 0.18.9
@@ -417,7 +417,7 @@ importers:
         version: 1.30.0
       markmap-lib:
         specifier: 'catalog:'
-        version: 0.18.9(markmap-common@0.18.9)
+        version: 0.18.11(markmap-common@0.18.9)
       markmap-toolbar:
         specifier: 'catalog:'
         version: 0.18.9(markmap-common@0.18.9)
@@ -489,7 +489,7 @@ importers:
         version: 1.30.0
       markmap-lib:
         specifier: 'catalog:'
-        version: 0.18.9(markmap-common@0.18.9)
+        version: 0.18.11(markmap-common@0.18.9)
       markmap-toolbar:
         specifier: 'catalog:'
         version: 0.18.9(markmap-common@0.18.9)
@@ -555,7 +555,7 @@ importers:
         version: 1.30.0
       markmap-lib:
         specifier: 'catalog:'
-        version: 0.18.9(markmap-common@0.18.9)
+        version: 0.18.11(markmap-common@0.18.9)
       markmap-toolbar:
         specifier: 'catalog:'
         version: 0.18.9(markmap-common@0.18.9)
@@ -832,7 +832,7 @@ importers:
         version: 1.30.0
       markmap-lib:
         specifier: 'catalog:'
-        version: 0.18.9(markmap-common@0.18.9)
+        version: 0.18.11(markmap-common@0.18.9)
       markmap-toolbar:
         specifier: 'catalog:'
         version: 0.18.9(markmap-common@0.18.9)
@@ -7128,8 +7128,18 @@ packages:
   markmap-common@0.18.9:
     resolution: {integrity: sha512-MV2HQO7IGIm3jWEJXSG8vmdpqf4WIDXcEyAEN52lrWR1qD53Zg5l81JwjXoZ2l0rY5mofKYqUFlmdM2fqTGMVg==}
 
+  markmap-html-parser@0.18.11:
+    resolution: {integrity: sha512-+kC5C4sCGntGUhGvTa5VIb5rtM75cSy/VCy3tzZoNAcn2qZGdgYvljN0WvjsOzrEzp+V6XKgwzO0u2TdzNAiOg==}
+    peerDependencies:
+      markmap-common: '*'
+
   markmap-html-parser@0.18.9:
     resolution: {integrity: sha512-B/Fq3fGn+NN0CQAxV75IVPT6RDzV/voYHzVOeo55ut6D3VymuKXIgY5ondA5NnM8k6VgCDJzns+h/wGuNX/Ceg==}
+    peerDependencies:
+      markmap-common: '*'
+
+  markmap-lib@0.18.11:
+    resolution: {integrity: sha512-2mBWrWRdK61W5//FlJ0zN20vi+/oVlPtnydyO3xR+0E2bhiTLNPjFwRi0h2RrdT/hUiiHV98s9iRckwXEhDtJg==}
     peerDependencies:
       markmap-common: '*'
 
@@ -7140,6 +7150,11 @@ packages:
 
   markmap-toolbar@0.18.9:
     resolution: {integrity: sha512-/av64dCJtCUKgQrGk9ksw7AZJq25K75l7enhiulJjKBwTh3LX7hCcF/uRoC0uP3URb9t6isrDAA8wDBGzaSJvg==}
+    peerDependencies:
+      markmap-common: '*'
+
+  markmap-view@0.18.10:
+    resolution: {integrity: sha512-2Wi/HpOHwhDjw+Lj6/CoZzWtxvAF2ymkjCpexJKC1uYQERqMhja8Rr5d5hww7oVAith80Bsr6h+ZIYQGgxnhdQ==}
     peerDependencies:
       markmap-common: '*'
 
@@ -17162,11 +17177,34 @@ snapshots:
       '@gera2ld/jsx-dom': 2.2.2
       npm2url: 0.2.4
 
+  markmap-html-parser@0.18.11(markmap-common@0.18.9):
+    dependencies:
+      '@babel/runtime': 7.26.7
+      cheerio: 1.0.0
+      markmap-common: 0.18.9
+
   markmap-html-parser@0.18.9(markmap-common@0.18.9):
     dependencies:
       '@babel/runtime': 7.26.7
       cheerio: 1.0.0
       markmap-common: 0.18.9
+
+  markmap-lib@0.18.11(markmap-common@0.18.9):
+    dependencies:
+      '@babel/runtime': 7.26.7
+      '@vscode/markdown-it-katex': 1.1.1
+      highlight.js: 11.11.1
+      katex: 0.16.21
+      markdown-it: 14.1.0
+      markdown-it-ins: 4.0.0
+      markdown-it-mark: 4.0.0
+      markdown-it-sub: 2.0.0
+      markdown-it-sup: 2.0.0
+      markmap-common: 0.18.9
+      markmap-html-parser: 0.18.11(markmap-common@0.18.9)
+      markmap-view: 0.18.10(markmap-common@0.18.9)
+      prismjs: 1.29.0
+      yaml: 2.7.0
 
   markmap-lib@0.18.9(markmap-common@0.18.9):
     dependencies:
@@ -17189,6 +17227,12 @@ snapshots:
     dependencies:
       '@babel/runtime': 7.26.7
       '@gera2ld/jsx-dom': 2.2.2
+      markmap-common: 0.18.9
+
+  markmap-view@0.18.10(markmap-common@0.18.9):
+    dependencies:
+      '@babel/runtime': 7.26.7
+      d3: 7.9.0
       markmap-common: 0.18.9
 
   markmap-view@0.18.9(markmap-common@0.18.9):
