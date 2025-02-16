@@ -70,38 +70,6 @@ tag:
 
 插件选项请参阅 [links-check 插件文档][links-check-config]。
 
-## markdownHint <Badge text="默认启用" />
-
-控制 `@vuepress/plugin-markdown-hint`，提供 Markdown 提示容器。你可以手动设置一个布尔值控制插件状态，或提供插件选项。
-
-默认情况下启用提示容器，你可以设置 `false` 禁用插件。
-
-插件选项请参阅 [markdown-hint 插件文档][markdown-hint-config]。
-
-## markdownImage <Badge text="默认启用" />
-
-控制 `@vuepress/plugin-markdown-image`，提供 Markdown 图片增强。你可以手动设置一个布尔值控制插件状态，或提供插件选项。
-
-默认情况下启用懒加载和 figure 转换，你可以设置 `false` 禁用插件。
-
-插件选项请参阅 [markdown-image 插件文档][markdown-image-config]。
-
-## markdownMath
-
-控制 `@vuepress/plugin-markdown-math`，提供 Markdown 中的数学支持。你可以手动设置一个布尔值控制插件状态，或提供插件选项。
-
-设置为 `true` 意味着使用默认配置的 Katex。
-
-插件选项请参阅 [markdown-math 插件文档][markdown-math-config]。
-
-## markdownTab
-
-控制 `@vuepress/plugin-markdown-tab`，提供 Markdown 中的数学支持。你可以手动设置一个布尔值控制插件状态，或提供插件选项。
-
-设置 `true` 意味着启用两个功能。
-
-插件选项请参阅 [markdown-tab 插件文档][markdown-tab-config]。
-
 ## nprogress <Badge text="默认启用" />
 
 控制 `@vuepress/plugin-nprogress`，通过 `nprogress` 提供切换页面时的进度条。
@@ -163,10 +131,6 @@ tag:
 [copy-code-config]: https://ecosystem.vuejs.press/zh/plugins/features/copy-code.html#options
 [git-config]: https://ecosystem.vuejs.press/zh/plugins/development/git.html#options
 [links-check-config]: https://ecosystem.vuejs.press/zh/plugins/markdown/links-check.html#options
-[markdown-hint-config]: https://ecosystem.vuejs.press/zh/plugins/markdown/markdown-hint.html#options
-[markdown-image-config]: https://ecosystem.vuejs.press/zh/plugins/markdown/markdown-image.html#options
-[markdown-math-config]: https://ecosystem.vuejs.press/zh/plugins/markdown/markdown-math.html#options
-[markdown-tab-config]: https://ecosystem.vuejs.press/zh/plugins/markdown/markdown-tab.html#options
 [photo-swipe-config]: https://ecosystem.vuejs.press/zh/plugins/features/photo-swipe.html#options
 [prismjs-config]: https://ecosystem.vuejs.press/zh/plugins/markdown/prismjs.html#options
 [pwa-config]: https://ecosystem.vuejs.press/zh/plugins/pwa/pwa/config.html#options
