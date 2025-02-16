@@ -10,8 +10,8 @@ catalogs:
       specifier: 0.18.9
       version: 0.18.9
     markmap-toolbar:
-      specifier: 0.18.9
-      version: 0.18.9
+      specifier: 0.18.10
+      version: 0.18.10
     markmap-view:
       specifier: 0.18.9
       version: 0.18.9
@@ -420,7 +420,7 @@ importers:
         version: 0.18.9(markmap-common@0.18.9)
       markmap-toolbar:
         specifier: 'catalog:'
-        version: 0.18.9(markmap-common@0.18.9)
+        version: 0.18.10(markmap-common@0.18.9)
       markmap-view:
         specifier: 'catalog:'
         version: 0.18.9(markmap-common@0.18.9)
@@ -492,7 +492,7 @@ importers:
         version: 0.18.9(markmap-common@0.18.9)
       markmap-toolbar:
         specifier: 'catalog:'
-        version: 0.18.9(markmap-common@0.18.9)
+        version: 0.18.10(markmap-common@0.18.9)
       markmap-view:
         specifier: 'catalog:'
         version: 0.18.9(markmap-common@0.18.9)
@@ -558,7 +558,7 @@ importers:
         version: 0.18.9(markmap-common@0.18.9)
       markmap-toolbar:
         specifier: 'catalog:'
-        version: 0.18.9(markmap-common@0.18.9)
+        version: 0.18.10(markmap-common@0.18.9)
       markmap-view:
         specifier: 'catalog:'
         version: 0.18.9(markmap-common@0.18.9)
@@ -835,7 +835,7 @@ importers:
         version: 0.18.9(markmap-common@0.18.9)
       markmap-toolbar:
         specifier: 'catalog:'
-        version: 0.18.9(markmap-common@0.18.9)
+        version: 0.18.10(markmap-common@0.18.9)
       markmap-view:
         specifier: 'catalog:'
         version: 0.18.9(markmap-common@0.18.9)
@@ -7135,6 +7135,11 @@ packages:
 
   markmap-lib@0.18.9:
     resolution: {integrity: sha512-ryFMCGMeMaVPLUi5IsLsuG+534JHjsNZHZVumGTZyjxEGZXRbFqcEdDBKypdR+UnLCLuaqtZtKY0R9lPzNv38w==}
+    peerDependencies:
+      markmap-common: '*'
+
+  markmap-toolbar@0.18.10:
+    resolution: {integrity: sha512-1/ju0NfI0iUGYYTu1FZPdrNcGZGt4oWMNqhF8CJhImvxyM6DnT/RE1zFtTknNLqo077Aif6wZ460IDqzFKrghw==}
     peerDependencies:
       markmap-common: '*'
 
@@ -17184,6 +17189,12 @@ snapshots:
       markmap-view: 0.18.9(markmap-common@0.18.9)
       prismjs: 1.29.0
       yaml: 2.7.0
+
+  markmap-toolbar@0.18.10(markmap-common@0.18.9):
+    dependencies:
+      '@babel/runtime': 7.26.7
+      '@gera2ld/jsx-dom': 2.2.2
+      markmap-common: 0.18.9
 
   markmap-toolbar@0.18.9(markmap-common@0.18.9):
     dependencies:
