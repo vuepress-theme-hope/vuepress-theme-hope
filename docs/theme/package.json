@@ -24,7 +24,7 @@
     "@vuepress/bundler-vite": "catalog:vuepress",
     "@vuepress/bundler-webpack": "catalog:vuepress",
     "@vuepress/helper": "catalog:vuepress",
-    "@vuepress/plugin-feed": "2.0.0-rc.74",
+    "@vuepress/plugin-feed": "2.0.0-rc.78",
     "@vuepress/plugin-revealjs": "catalog:vuepress",
     "@vuepress/shiki-twoslash": "catalog:vuepress",
     "@vueuse/core": "catalog:",
