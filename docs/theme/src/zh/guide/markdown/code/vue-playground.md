@@ -18,7 +18,7 @@ tag:
 
 <!-- @include: @md-enhance/zh/guide/code/vue-playground.md#settings -->
 
-```ts {7} title=".vuepress/config.ts"
+```ts twoslash {7} title=".vuepress/config.ts"
 import { defineUserConfig } from "vuepress";
 import { hopeTheme } from "vuepress-theme-hope";
 

@@ -30,7 +30,7 @@ tag:
 
 配置导航栏最简单的方式，是依次填入需要展示的页面文件的路径，这样导航栏的文字、图标和链接会自动通过对应文件生成。
 
-```ts {6} title=".vuepress/config.ts"
+```ts twoslash {6} title=".vuepress/config.ts"
 import { defineUserConfig } from "vuepress";
 import { hopeTheme } from "vuepress-theme-hope";
 
@@ -317,7 +317,7 @@ export default {
 
 ## 相关助手与类型
 
-`vuepress-theme-hope` 将导航栏的类型导出为 `NavbarConfig`，同时，提供了一个 `navbar` Helper 函数。它们可以在 TS 和 JS 中提供导航栏配置的校验与自动补全。
+`vuepress-theme-hope` 将导航栏的类型导出为 `NavbarOptions`，同时，提供了一个 `navbar` Helper 函数。它们可以在 TS 和 JS 中提供导航栏配置的校验与自动补全。
 
 ::: tip 它们主要应对当你将 VuePress 配置拆分成多个部分的情景。
 
@@ -327,7 +327,7 @@ export default {
 
 @tab TS Helper
 
-```ts title=".vuepress/navbar.ts"
+```ts twoslash title=".vuepress/navbar.ts"
 import { navbar } from "vuepress-theme-hope";
 
 export default navbar([
@@ -337,10 +337,10 @@ export default navbar([
 
 @tab TS 类型
 
-```ts title=".vuepress/navbar.ts"
-import type { NavbarConfig } from "vuepress-theme-hope";
+```ts twoslash title=".vuepress/navbar.ts"
+import type { NavbarOptions } from "vuepress-theme-hope";
 
-const navbarConfig: NavbarConfig = [
+const navbarConfig: NavbarOptions = [
   /* 你的导航栏配置 */
 ];
 

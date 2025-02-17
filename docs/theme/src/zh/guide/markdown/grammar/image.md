@@ -14,7 +14,7 @@ tag:
 
 ## 配置
 
-```ts {8,10,12,14} title=".vuepress/config.ts"
+```ts twoslash {8,10,12,14} title=".vuepress/config.ts"
 import { defineUserConfig } from "vuepress";
 import { hopeTheme } from "vuepress-theme-hope";
 
@@ -55,7 +55,7 @@ export default defineUserConfig({
 
 你可以将对象传递给 `markdown.imgMark` 以配置 ID 标记：
 
-```ts {9,11} title=".vuepress/config.ts"
+```ts twoslash {9,11} title=".vuepress/config.ts"
 import { defineUserConfig } from "vuepress";
 import { hopeTheme } from "vuepress-theme-hope";
 

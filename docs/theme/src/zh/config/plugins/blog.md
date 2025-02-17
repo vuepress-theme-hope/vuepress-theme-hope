@@ -79,7 +79,9 @@ Slugify 函数，用于转换 key 在路由中注册的形式。
 
 - 类型: `BlogTypeOptions[]`
 
-  ```ts
+  ```ts twoslash
+  import type { Page } from "vuepress";
+
   interface BlogTypeOptions {
     /**
      * 唯一的类型名称

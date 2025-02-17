@@ -149,7 +149,7 @@ You can also config your social media links with `blog.medias` option.
 
 ::: details Example
 
-```js title=".vuepress/config.js"
+```ts twoslash title=".vuepress/config.ts"
 import { getDirname, path } from "vuepress/utils";
 import { hopeTheme } from "vuepress-theme-hope";
 

@@ -26,6 +26,15 @@ Whether to enable custom align.
 - Type: `MarkdownItAttrsOptions | boolean`
 
   ```ts
+  type MarkdownItAttrRuleName =
+    | "fence"
+    | "inline"
+    | "table"
+    | "list"
+    | "hr"
+    | "softbreak"
+    | "block";
+
   interface MarkdownItAttrsOptions {
     /**
      * left delimiter

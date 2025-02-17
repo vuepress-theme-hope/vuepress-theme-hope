@@ -14,7 +14,7 @@ You can use custom syntax to add attrs for Markdown content.
 
 ## Settings
 
-```ts {7} title=".vuepress/config.ts"
+```ts twoslash {7} title=".vuepress/config.ts"
 import { defineUserConfig } from "vuepress";
 import { hopeTheme } from "vuepress-theme-hope";
 

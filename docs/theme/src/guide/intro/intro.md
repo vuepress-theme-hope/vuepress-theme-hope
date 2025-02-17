@@ -72,7 +72,7 @@ In short, anyone can enjoy the convenience of Markdown's enhanced syntax.
 
 ### UI Improvements
 
-- [Darkmode Support](../interface/darkmode.md)
+- [Dark mode Support](../interface/darkmode.md)
 
 - [Icon Support](../interface/icon.md)
 

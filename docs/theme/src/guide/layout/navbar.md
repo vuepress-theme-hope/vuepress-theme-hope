@@ -316,7 +316,7 @@ export default {
 
 ## Types and Helpers
 
-`vuepress-theme-hope` exports the type of navbar as `NavbarConfig`, and provides a `navbar` helper function. They can provide validation and autocompletion of navbar configuration in TS and JS.
+`vuepress-theme-hope` exports the type of navbar as `NavbarOptions`, and provides a `navbar` helper function. They can provide validation and autocompletion of navbar configuration in TS and JS.
 
 ::: tip
 
@@ -328,7 +328,7 @@ They mainly deal with scenarios when you split your VuePress configuration into 
 
 @tab TS Helper
 
-```ts title=".vuepress/navbar.ts"
+```ts twoslash title=".vuepress/navbar.ts"
 import { navbar } from "vuepress-theme-hope";
 
 export default navbar([
@@ -338,10 +338,10 @@ export default navbar([
 
 @tab TS Type
 
-```ts title=".vuepress/navbar.ts"
-import type { NavbarConfig } from "vuepress-theme-hope";
+```ts twoslash title=".vuepress/navbar.ts"
+import type { NavbarOptions } from "vuepress-theme-hope";
 
-const navbarConfig: NavbarConfig = [
+const navbarConfig: NavbarOptions = [
   /* Your navbar configuration */
 ];
 

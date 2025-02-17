@@ -193,7 +193,7 @@ root((VuePress))
     Default theme
       Navbar
       Sidebar
-      Darkmode
+      Dark Mode
     I18n
     Search
       Search

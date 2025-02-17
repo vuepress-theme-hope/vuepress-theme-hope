@@ -36,7 +36,7 @@ Avatar image of the portfolio, relative path is not supported.
 - Type: `string`
 - Default: `avatar`
 
-Darkmode avatar image of the portfolio, relative path is not supported.
+Dark mode avatar image of the portfolio, relative path is not supported.
 
 ## titles
 
@@ -71,7 +71,7 @@ Background image of the portfolio, relative path is not supported.
 - Type: `string`
 - Default: `bgImage`
 
-Darkmode background image of the portfolio, relative path is not supported.
+Dark mode background image of the portfolio, relative path is not supported.
 
 ## bgImageStyle
 
@@ -91,7 +91,7 @@ Welcome message of the portfolio.
 
 - Type: `PortfolioMedia[]`
 
-  ```ts
+  ```ts twoslash
   interface PortfolioMedia {
     icon: string;
     name: string;

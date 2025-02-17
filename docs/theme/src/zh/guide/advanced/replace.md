@@ -17,7 +17,7 @@ tag:
 
 你需要在自己的 VuePress 配置文件通过 `alias` 替换主题中使用的组件别名。
 
-```js title=".vuepress/config.js"
+```ts twoslash title=".vuepress/config.ts"
 import { getDirname, path } from "vuepress/utils";
 import { hopeTheme } from "vuepress-theme-hope";
 
@@ -219,7 +219,7 @@ export default {
 
 @tab config.ts
 
-```ts title=".vuepress/config.ts"
+```ts twoslash title=".vuepress/config.ts"
 import { getDirname, path } from "vuepress/utils";
 import { hopeTheme } from "vuepress-theme-hope";
 

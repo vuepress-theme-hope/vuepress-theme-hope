@@ -22,7 +22,7 @@ You can use [Vue Demo](./demo.md#vue) and [Playground Vue Preset](./playground.m
 
 <!-- @include: @md-enhance/guide/code/vue-playground.md#settings -->
 
-```ts {7} title=".vuepress/config.ts"
+```ts twoslash {7} title=".vuepress/config.ts"
 import { defineUserConfig } from "vuepress";
 import { hopeTheme } from "vuepress-theme-hope";
 

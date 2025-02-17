@@ -56,19 +56,15 @@ export default {
 
 你可以在主题选项中设置 `plugins.backToTop: false` 来禁用它，或者用一个对象来设置它来自定义它的阈值距离和进度条显示：
 
-```ts {8,13-26} title=".vuepress/config.ts"
+```ts twoslash {8,13-26} title=".vuepress/config.ts"
 import { defineUserConfig } from "vuepress";
 import { hopeTheme } from "vuepress-theme-hope";
 
 export default defineUserConfig({
   theme: hopeTheme({
     plugins: {
-      // 禁用返回顶部按钮
-      backToTop: false,
-
-      // 或
-
-      // 自定义返回顶部按钮
+      // 通过 `backToTop: false` 禁用返回顶部按钮
+      // 或自定义返回顶部按钮
       backToTop: {
         /**
          * 显示返回顶部按钮的滚动阈值距离（以像素为单位）

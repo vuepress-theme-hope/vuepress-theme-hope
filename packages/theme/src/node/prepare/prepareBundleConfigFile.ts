@@ -73,7 +73,7 @@ defineCatalogInfoGetter((meta) => {
   return app.writeTemp(
     `theme-hope/config.js`,
     `\
-import { Layout, NotFound, injectDarkmode, setupDarkmode, setupSidebarItems, scrollPromise } from "${BUNDLE_FOLDER}export.js";
+import { Layout, NotFound, injectDarkMode, setupDarkMode, setupSidebarItems, scrollPromise } from "${BUNDLE_FOLDER}export.js";
 
 ${imports.join("\n")}
 
@@ -95,12 +95,12 @@ export default {
     };
 
     // inject global properties
-    injectDarkmode(app);
+    injectDarkMode(app);
 
 ${enhances.map((item) => `    ${item}`).join("\n")}
   },
   setup: () => {
-    setupDarkmode();
+    setupDarkMode();
     setupSidebarItems();
 ${setups.map((item) => `    ${item}`).join("\n")}
   },

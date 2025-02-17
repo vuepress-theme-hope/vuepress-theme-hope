@@ -108,8 +108,8 @@ To get start with, we would like to show you some examples.
 
 You shall set the following options:
 
-```ts
-import { compareDate } from "@vuepress/helper";
+```ts twoslash
+import { dateSorter } from "@vuepress/helper";
 import { defineUserConfig } from "vuepress";
 import { hopeTheme } from "vuepress-theme-hope";
 
@@ -133,9 +133,9 @@ export default defineUserConfig({
           },
           {
             key: "original",
-            filter: (page) => page.frontmatter.original,
+            filter: (page) => !!page.frontmatter.original,
             sorter: (pageA, pageB) =>
-              compareDate(pageA.frontmatter.date - pageB.frontmatter.date),
+              dateSorter(pageA.frontmatter.date, pageB.frontmatter.date),
             frontmatter: () => ({ title: "Original" }),
           },
         ],

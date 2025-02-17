@@ -73,7 +73,9 @@ Slugify function, used to convert key name which they are register in routes.
 
 - Type: `BlogTypeOptions[]`
 
-  ```ts
+  ```ts twoslash
+  import type { Page } from "vuepress";
+
   interface BlogTypeOptions {
     /**
      * Unique type name

@@ -25,7 +25,9 @@ Whether to enable tabs support.
 
 - Type: `PlaygroundGlobalOptions`
 
-  ```ts
+  ```ts twoslash
+  import type { CompilerOptions } from "typescript";
+
   interface PlaygroundCodeConfig {
     /**
      * Code block extension

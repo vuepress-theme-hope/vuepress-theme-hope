@@ -14,7 +14,7 @@ tag:
 
 ## 配置
 
-```ts {7} title=".vuepress/config.ts"
+```ts twoslash {7} title=".vuepress/config.ts"
 import { defineUserConfig } from "vuepress";
 import { hopeTheme } from "vuepress-theme-hope";
 
@@ -371,7 +371,7 @@ interface IncludeOptions {
 
 例如: 你可以使用 `@src` 作为源文件夹的别名。
 
-```ts {11-18} title=".vuepress/config.ts"
+```ts twoslash {11-18} title=".vuepress/config.ts"
 import { defineUserConfig } from "vuepress";
 import { getDirname, path } from "vuepress/utils";
 import { hopeTheme } from "vuepress-theme-hope";
@@ -397,7 +397,7 @@ export default defineUserConfig({
 
 此外，如果你想将 Markdown 文件直接放在实际文件旁边，但不希望它们呈现为页面，你可以在 VuePress 配置中设置 `pagePatterns` 选项。有关详细信息，请参阅 [pagePatterns](https://vuejs.press/zh/reference/config.html#pagepatterns)。
 
-```ts {6} title=".vuepress/config.ts"
+```ts twoslash {6} title=".vuepress/config.ts"
 import { defineUserConfig } from "vuepress";
 import { hopeTheme } from "vuepress-theme-hope";
 

@@ -54,7 +54,7 @@ Vite 默认情况下仅支持“现代浏览器”，详见 [Vite 支持](https:
 
 在 VuePress2 中，你在 `index.scss` 中通过 `@import` 导入网络 CSS 是无效的。你可能需要在 VuePress 配置的 `head` 选项中手动导入它们。
 
-```js {5-11}
+```ts twoslash {5-11}
 import { defineUserConfig } from "vuepress";
 
 export default defineUserConfig({

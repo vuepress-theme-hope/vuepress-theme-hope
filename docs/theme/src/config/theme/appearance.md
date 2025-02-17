@@ -24,7 +24,7 @@ These options are only valid when setting directly under the theme options, sett
 - Type: `"switch" | "toggle" | "auto" | "enable" | "disable"`
 - Default: `"switch"`
 - Details:
-  - [Interface → Darkmode](../../guide/interface/darkmode.md)
+  - [Interface → Dark mode](../../guide/interface/darkmode.md)
 
 Dark mode support options:
 

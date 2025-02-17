@@ -491,18 +491,20 @@ export default {
 
 @tab TS Helper
 
-```ts {4} title=".vuepress/sidebar.ts"
+```ts twoslash {4} title=".vuepress/sidebar.ts"
 import { sidebar } from "vuepress-theme-hope";
 
-export default sidebar(/* 你的侧边栏配置 */);
+export default sidebar([
+  /* 你的侧边栏配置 */
+]);
 ```
 
 @tab TS 类型
 
-```ts {4} title=".vuepress/navbar.ts"
-import type { SidebarConfig } from "vuepress-theme-hope";
+```ts twoslash {4} title=".vuepress/navbar.ts"
+import type { SidebarOptions } from "vuepress-theme-hope";
 
-const sidebarConfig: SidebarConfig = [
+const sidebarConfig: SidebarOptions = [
   /* 你的侧边栏配置 */
 ];
 
@@ -514,7 +516,9 @@ export default sidebarConfig;
 ```js title=".vuepress/sidebar.js"
 import { sidebar } from "vuepress-theme-hope";
 
-export default sidebar(/* 你的侧边栏配置 */);
+export default sidebar([
+  /* 你的侧边栏配置 */
+]);
 ```
 
 :::

@@ -24,7 +24,7 @@ Also each page can contain:
 
 The theme also has the following elements:
 
-- [Darkmode button](https://theme-hope.vuejs.press/guide/interface/darkmode.html)
+- [Dark mode button](https://theme-hope.vuejs.press/guide/interface/darkmode.html)
 - [Back to top button](https://theme-hope.vuejs.press/guide/interface/others.html#back-to-top-button)
 - [Print button](https://theme-hope.vuejs.press/guide/interface/others.html#print-button)
 

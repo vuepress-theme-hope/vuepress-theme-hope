@@ -18,7 +18,7 @@ export default defineUserConfig({
   // ...
 
   extendsMarkdown: (md) => {
-    md.use(yourExtension, options);
+    md.use(yourMdItPlugin, options);
   },
 });
 ```
@@ -74,7 +74,7 @@ flowchart LR
 
 你需要在 VuePress 配置文件中配置 [markdown.headers.level](https://vuejs.press/zh/reference/config.html#markdown-headers):
 
-```ts {7-12} title=".vuepress/config.ts"
+```ts twoslash {7-12} title=".vuepress/config.ts"
 import { defineUserConfig } from "vuepress";
 
 export default defineUserConfig({

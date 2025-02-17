@@ -62,9 +62,9 @@ You can also set the following optional keys:
 - `description`: section description, supports HTML string
 - `color`: Text color
 - `image`: Section image
-- `imageDark`: Section image used in darkmode
+- `imageDark`: Section image used in dark mode
 - `bgImage`: Section background image
-- `bgImageDark`: Section background image used in darkmode
+- `bgImageDark`: Section background image used in dark mode
 - `bgImageStyle`: Section background image styles
 
 Highlights also support the following properties:

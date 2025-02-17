@@ -1,18 +1,7 @@
-import { decodeData } from "@vuepress/helper/client";
-import { useMutationObserver } from "@vueuse/core";
+import { decodeData, useDarkMode } from "@vuepress/helper/client";
+import { watchImmediate } from "@vueuse/core";
 import type { VNode } from "vue";
-import {
-  computed,
-  defineComponent,
-  h,
-  nextTick,
-  onMounted,
-  ref,
-  shallowRef,
-  watch,
-} from "vue";
-
-import { getDarkmodeStatus } from "../utils/index.js";
+import { computed, defineComponent, h, onMounted, shallowRef } from "vue";
 
 import "../styles/kotlin-playground.scss";
 
@@ -46,7 +35,7 @@ export default defineComponent({
   },
 
   setup(props) {
-    const isDarkmode = ref(false);
+    const isDarkMode = useDarkMode();
 
     const kotlinPlayground = shallowRef<HTMLDivElement>();
 
@@ -55,7 +44,7 @@ export default defineComponent({
     );
 
     const settings = computed(() => ({
-      theme: isDarkmode.value ? "darcula" : "default",
+      theme: isDarkMode.value ? "darcula" : "default",
       ...(JSON.parse(decodeURIComponent(props.settings)) as Record<
         string,
         string
@@ -72,22 +61,8 @@ export default defineComponent({
     };
 
     onMounted(() => {
-      isDarkmode.value = getDarkmodeStatus();
-
-      // Watch darkmode change
-      useMutationObserver(
-        document.documentElement,
-        () => {
-          isDarkmode.value = getDarkmodeStatus();
-        },
-        {
-          attributeFilter: ["class", "data-theme"],
-          attributes: true,
-        },
-      );
-
-      watch(isDarkmode, () => nextTick().then(() => renderPlayground()), {
-        immediate: true,
+      watchImmediate(isDarkMode, () => renderPlayground(), {
+        flush: "post",
       });
     });
 
@@ -100,7 +75,7 @@ export default defineComponent({
           "div",
           {
             class: "kotlin-playground-container",
-            key: isDarkmode.value ? "dark" : "light",
+            key: isDarkMode.value ? "dark" : "light",
           },
 
           h(

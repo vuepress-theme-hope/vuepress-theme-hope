@@ -17,7 +17,7 @@ title: CodePen
   slug-hash="ZYYQoy"
   title="Solar System animation - Pure CSS"
   :default-tab="['css','result']"
-  :theme="$isDarkmode? 'dark': 'light'"
+  :theme="$isDarkMode? 'dark': 'light'"
 />
 
 :::
@@ -28,7 +28,7 @@ title: CodePen
   link="https://codepen.io/kowlor/pen/ZYYQoy"
   title="Solar System animation - Pure CSS"
   :default-tab="['css','result']"
-  :theme="$isDarkmode? 'dark': 'light'"
+  :theme="$isDarkMode? 'dark': 'light'"
 />
 
 :::
@@ -39,7 +39,7 @@ title: CodePen
   link="https://codepen.io/kowlor/pen/ZYYQoy"
   title="Envelope w/ Hearts"
   status="clicktorun"
-  :theme="$isDarkmode? 'dark': 'light'"
+  :theme="$isDarkMode? 'dark': 'light'"
 />
 
 :::

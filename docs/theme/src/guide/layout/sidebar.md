@@ -498,18 +498,20 @@ To deal with the situation when you split [multi-sidebar configuration](#multipl
 
 @tab TS Helper
 
-```ts {6} title=".vuepress/sidebar.ts"
+```ts twoslash {6} title=".vuepress/sidebar.ts"
 import { sidebar } from "vuepress-theme-hope";
 
-export default sidebar(/* Your sidebar configuration */);
+export default sidebar([
+  /* Your sidebar configuration */
+]);
 ```
 
 @tab TS Types
 
-```ts {4} title=".vuepress/navbar.ts"
-import type { SidebarConfig } from "vuepress-theme-hope";
+```ts twoslash {4} title=".vuepress/navbar.ts"
+import type { SidebarOptions } from "vuepress-theme-hope";
 
-const sidebarConfig: SidebarConfig = [
+const sidebarConfig: SidebarOptions = [
   /* Your sidebar configuration */
 ];
 
@@ -521,7 +523,9 @@ export default sidebarConfig;
 ```js title=".vuepress/sidebar.js"
 import { sidebar } from "vuepress-theme-hope";
 
-export default sidebar(/* Your sidebar configuration */);
+export default sidebar([
+  /* Your sidebar configuration */
+]);
 ```
 
 :::

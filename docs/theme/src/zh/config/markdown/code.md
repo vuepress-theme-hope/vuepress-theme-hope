@@ -25,7 +25,9 @@ tag:
 
 - 类型: `PlaygroundGlobalOptions`
 
-  ```ts
+  ```ts twoslash
+  import type { CompilerOptions } from "typescript";
+
   interface PlaygroundCodeConfig {
     /**
      * 代码块扩展名

@@ -46,7 +46,7 @@ npm i -D mathjax-full
 
 Then enabling via:
 
-```ts {8} title=".vuepress/config.ts"
+```ts twoslash {8} title=".vuepress/config.ts"
 import { defineUserConfig } from "vuepress";
 import { hopeTheme } from "vuepress-theme-hope";
 

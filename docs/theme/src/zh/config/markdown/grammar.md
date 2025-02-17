@@ -138,20 +138,74 @@ The following options adds new markdown grammar, and can be set **under `markdow
 - 类型: `MarkdownMathPluginOptions | boolean`
 
   ```ts
-  interface MarkdownKatexPluginOptions
-    extends Omit<MarkdownItKatexOptions, "transformer"> {
+  interface MarkdownKatexPluginOptions extends KatexOptions {
     type?: "katex";
+
+    /**
+     * 是否允许两端带空格的内联数学
+     *
+     * @description 不建议将此设置为 true，因为它很可能会破坏 $ 的默认使用
+     *
+     * @default false
+     */
+    allowInlineWithSpace?: boolean;
+
     /**
      * 是否启用复制插件
      *
      * @default false
      */
     copy?: boolean;
+
+    /**
+     * 是否启用化学插件
+     *
+     * @default false
+     */
+    mhchem?: boolean;
   }
 
   interface MarkdownMathjaxPluginOptions
     extends Omit<MarkdownItMathjaxOptions, "transformer"> {
     type?: "mathjax";
+
+    /**
+     * 是否允许两端带空格的内联数学
+     *
+     * @description 不建议将此设置为 true，因为它很可能会破坏 $ 的默认使用
+     *
+     * @default false
+     */
+    allowInlineWithSpace?: boolean;
+
+    /**
+     * 输出格式
+     *
+     * @default 'svg'
+     */
+    output?: "chtml" | "svg";
+
+    /**
+     * 是否启用无障碍
+     *
+     * @default true
+     */
+    a11y?: boolean;
+
+    /**
+     * TeX 输入选项
+     */
+    tex?: MathJaxTexInputOptions;
+
+    /**
+     * 通用 HTML 输出选项
+     */
+    chtml?: MathjaxCommonHTMLOutputOptions;
+
+    /**
+     * SVG 输出选项
+     */
+    svg?: MathjaxSVGOutputOptions;
   }
 
   type MarkdownMathPluginOptions =
@@ -168,10 +222,26 @@ The following options adds new markdown grammar, and can be set **under `markdow
 
 ## markdown.revealjs
 
-- 类型: `RevealJsOptions | boolean`
+- 类型: `RevealJsPluginOptions | boolean`
 
   ```ts
-  interface RevealJsOptions {
+  type RevealJsPlugin = "highlight" | "math" | "notes" | "search" | "zoom";
+
+  type RevealJsTheme =
+    | "auto"
+    | "beige"
+    | "black"
+    | "blood"
+    | "league"
+    | "moon"
+    | "night"
+    | "serif"
+    | "simple"
+    | "sky"
+    | "solarized"
+    | "white";
+
+  interface RevealJsPluginOptions {
     /**
      * 幻灯片插件
      *

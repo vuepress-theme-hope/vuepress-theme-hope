@@ -14,7 +14,7 @@ Let the Markdown file in your VuePress site support including other files.
 
 ## Settings
 
-```ts {7} title=".vuepress/config.ts"
+```ts twoslash {7} title=".vuepress/config.ts"
 import { defineUserConfig } from "vuepress";
 import { hopeTheme } from "vuepress-theme-hope";
 
@@ -371,7 +371,7 @@ interface IncludeOptions {
 
 E.g.: you can use `@src` as an alias for your source directory.
 
-```ts {11-18} title=".vuepress/config.ts"
+```ts twoslash {11-18} title=".vuepress/config.ts"
 import { defineUserConfig } from "vuepress";
 import { getDirname, path } from "vuepress/utils";
 import { hopeTheme } from "vuepress-theme-hope";
@@ -397,7 +397,7 @@ export default defineUserConfig({
 
 Also, to place your Markdown files directly besides your actual files, but don't want them rendered as pages, you can set `pagePatterns` options in VuePress config. See [pagePatterns](https://vuejs.press/reference/config.html#pagepatterns) for more details.
 
-```ts {6} title=".vuepress/config.ts"
+```ts twoslash {6} title=".vuepress/config.ts"
 import { defineUserConfig } from "vuepress";
 import { hopeTheme } from "vuepress-theme-hope";
 

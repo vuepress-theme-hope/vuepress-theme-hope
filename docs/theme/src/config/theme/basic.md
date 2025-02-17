@@ -81,7 +81,7 @@ Site favicon.
 
 ## navbar
 
-- Type: `NavbarConfig`
+- Type: `NavbarOptions`
 
   ```ts
   /**
@@ -176,7 +176,7 @@ Navbar config
 
 ## sidebar
 
-- Type: `SidebarConfig`
+- Type: `SidebarOptions`
 
   ```ts
   /**

@@ -219,33 +219,33 @@ You can highlight specified lines of your code blocks by adding line ranges mark
 Input:
 
 ````md
-```ts{1,7-9}
-import { defaultTheme } from '@vuepress/theme-default'
-import { defineUserConfig } from 'vuepress'
+```ts {1,7-9}
+import { defaultTheme } from "@vuepress/theme-default";
+import { defineUserConfig } from "vuepress";
 
 export default defineUserConfig({
-  title: 'Hello, VuePress',
+  title: "Hello, VuePress",
 
   theme: defaultTheme({
-    logo: 'https://vuejs.org/images/logo.png',
+    logo: "https://vuejs.org/images/logo.png",
   }),
-})
+});
 ```
 ````
 
 Output:
 
-```ts{1,7-9}
-import { defaultTheme } from '@vuepress/theme-default'
-import { defineUserConfig } from 'vuepress'
+```ts {1,7-9}
+import { defaultTheme } from "@vuepress/theme-default";
+import { defineUserConfig } from "vuepress";
 
 export default defineUserConfig({
-  title: 'Hello, VuePress',
+  title: "Hello, VuePress",
 
   theme: defaultTheme({
-    logo: 'https://vuejs.org/images/logo.png',
+    logo: "https://vuejs.org/images/logo.png",
   }),
-})
+});
 ```
 
 Examples for line ranges mark:
@@ -279,8 +279,8 @@ const line3 = "This is line 3";
 
 ```ts:no-line-numbers
 // line-numbers is disabled
-const line2 = 'This is line 2'
-const line3 = 'This is line 3'
+const line2 = "This is line 2";
+const line3 = "This is line 3";
 ```
 ````
 
@@ -294,8 +294,8 @@ const line3 = "This is line 3";
 
 ```ts:no-line-numbers
 // line-numbers is disabled
-const line2 = 'This is line 2'
-const line3 = 'This is line 3'
+const line2 = "This is line 2";
+const line3 = "This is line 3";
 ```
 
 ::: tip

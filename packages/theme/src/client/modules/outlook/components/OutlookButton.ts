@@ -9,7 +9,7 @@ import OutlookSettings from "@theme-hope/modules/outlook/components/OutlookSetti
 import { enableThemeColor } from "@theme-hope/modules/outlook/components/ThemeColor";
 import ToggleFullScreen from "@theme-hope/modules/outlook/components/ToggleFullScreen";
 import { OutlookIcon } from "@theme-hope/modules/outlook/components/icons/index";
-import { useDarkmode } from "@theme-hope/modules/outlook/composables/index";
+import { useDarkMode } from "@theme-hope/modules/outlook/composables/index";
 
 import "../styles/outlook-button.scss";
 
@@ -19,7 +19,7 @@ export default defineComponent({
   setup() {
     const themeData = useThemeData();
     const page = usePageData();
-    const { canToggle } = useDarkmode();
+    const { canToggle } = useDarkMode();
     const { isSupported } = useFullscreen();
     const isPure = usePure();
 

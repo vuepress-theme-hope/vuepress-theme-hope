@@ -167,5 +167,5 @@ export type MermaidOptions = Omit<
 > & {
   themeVariables?:
     | MermaidThemeVariables
-    | ((isDarkmode: boolean) => MermaidThemeVariables);
+    | ((isDarkMode: boolean) => MermaidThemeVariables);
 };

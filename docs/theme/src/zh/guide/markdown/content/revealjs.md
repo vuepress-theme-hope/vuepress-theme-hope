@@ -40,7 +40,7 @@ npm i -D @vuepress/plugin-revealjs@next
 
 之后启用它:
 
-```ts {7} title=".vuepress/config.ts"
+```ts twoslash {7} title=".vuepress/config.ts"
 import { defineUserConfig } from "vuepress";
 import { hopeTheme } from "vuepress-theme-hope";
 
@@ -210,7 +210,7 @@ $$
 
 你也可以在[客户端配置文件](../../../cookbook/vuepress/config.md#客户端配置文件) 中导入并调用 `defineRevealJsConfig` 来自定义 reveal.js:
 
-```ts title=".vuepress/client.ts"
+```ts twoslash title=".vuepress/client.ts"
 import { defineRevealJsConfig } from "@vuepress/plugin-revealjs/client";
 
 defineRevealJsConfig({

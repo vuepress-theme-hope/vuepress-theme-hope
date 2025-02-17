@@ -36,7 +36,7 @@ By default, `<Badge />` is available to align with `@vuepress/theme-default`.
 
 :::
 
-```js {8-22} title=".vuepress/config.js"
+```ts twoslash {8-22} title=".vuepress/config.ts"
 import { hopeTheme } from "vuepress-theme-hope";
 
 export default {

@@ -80,7 +80,7 @@ tag:
 
 ## navbar
 
-- 类型: `NavbarConfig`
+- 类型: `NavbarOptions`
 
   ```ts
   /**
@@ -175,7 +175,7 @@ tag:
 
 ## sidebar
 
-- 类型: `SidebarConfig`
+- 类型: `SidebarOptions`
 
   ```ts
   /**

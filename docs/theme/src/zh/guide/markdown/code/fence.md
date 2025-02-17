@@ -13,25 +13,20 @@ tag:
 
 你可以使用 `markdown.highlighter` 来选择你想要使用的高亮器，`shiki` 为 Shiki，`prismjs` 为 Prism.js。你也可以将 `markdown.highlighter` 设置为一个对象，通过 `type` 字段指定高亮器的类型，并将选项传递给高亮器：
 
-```ts {8} title=".vuepress/config.ts"
+```ts twoslash {9} title=".vuepress/config.ts"
 import { defineUserConfig } from "vuepress";
 import { hopeTheme } from "vuepress-theme-hope";
 
 export default defineUserConfig({
   theme: hopeTheme({
     markdown: {
-      highlighter: "shiki",
-
-      // 或
-
-      highlighter: "prismjs",
-
-      // 或
-
+      // 关键词 "shiki" / "prismjs"
+      // 或者拥有 type 字段的对象
       highlighter: {
-        type: "shiki", // 或 "prismjs"
+        type: "shiki", // or "prismjs"
 
-        // shiki 或 prism 选项
+        // shiki 或 prismjs 选项
+        // ...
       },
     },
   }),

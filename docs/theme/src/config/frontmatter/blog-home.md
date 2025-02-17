@@ -70,7 +70,7 @@ Image link used as home hero (logo).
   - [Blog → Blog HomePage](../../guide/blog/home.md#blog-style-homepage)
   - [FAQ → Links in Config](../../faq/common-question.md#links-in-config)
 
-Darkmode Home hero (logo) image link.
+Dark mode Home hero (logo) image link.
 
 ## heroImageStyle
 
@@ -108,7 +108,7 @@ Link of background image, relative path is not supported.
   - [Blog → Blog HomePage](../../guide/blog/home.md#blog-style-homepage)
   - [FAQ → Links in Config](../../faq/common-question.md#links-in-config)
 
-Link of darkmode background image, relative path is not supported.
+Link of dark mode background image, relative path is not supported.
 
 ## bgImageStyle
 

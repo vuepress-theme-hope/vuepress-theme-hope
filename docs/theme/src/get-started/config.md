@@ -34,7 +34,7 @@ You need to set up a config object in the config file `.vuepress/config.ts` (or 
 
 To get correct hints, importing `defineUserConfig` from `vuepress` and wrapping the config object is recommended:
 
-```ts {2,4,6} title=".vuepress/config.ts"
+```ts twoslash {2,4,6} title=".vuepress/config.ts"
 import { defineUserConfig } from "vuepress";
 
 export default defineUserConfig({
@@ -48,7 +48,7 @@ The template extracts theme functions to `.vuepress/theme.ts` and exports them v
 
 `.vuepress/theme.ts`:
 
-```ts
+```ts twoslash
 import { hopeTheme } from "vuepress-theme-hope";
 
 // We export the theme object by default

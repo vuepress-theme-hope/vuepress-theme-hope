@@ -46,7 +46,7 @@ Home hero (logo) image link, relative path is not supported.
 - Type: `string`
 - Default: `heroImage`
 
-Darkmode Home hero (logo) image link, relative path is not supported.
+Dark mode Home hero (logo) image link, relative path is not supported.
 
 ## heroAlt
 
@@ -74,7 +74,7 @@ Link of background image, relative path is not supported.
 - Type: `string`
 - Default: `bgImage`
 
-Link of darkmode background image, relative path is not supported.
+Link of dark mode background image, relative path is not supported.
 
 ## bgImageStyle
 
@@ -171,7 +171,7 @@ Home actions
     image?: string;
 
     /**
-     * Feature section image used in darkmode
+     * Feature section image used in dark mode
      *
      * @default image
      */
@@ -183,7 +183,7 @@ Home actions
     bgImage?: string;
 
     /**
-     * Feature Background image used in darkmode
+     * Feature Background image used in dark mode
      *
      * @default bgImage
      */
@@ -222,7 +222,7 @@ Home actions
     image?: string;
 
     /**
-     * Highlight section image used in darkmode
+     * Highlight section image used in dark mode
      *
      * @default image
      */
@@ -234,7 +234,7 @@ Home actions
     bgImage?: string;
 
     /**
-     * Highlight Background image used in darkmode
+     * Highlight Background image used in dark mode
      *
      * @default bgImage
      */

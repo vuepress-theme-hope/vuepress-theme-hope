@@ -8,7 +8,7 @@ import {
   LightIcon,
 } from "@theme-hope/modules/outlook/components/icons/index";
 import type { DarkmodeStatus } from "@theme-hope/modules/outlook/composables/index";
-import { useDarkmode } from "@theme-hope/modules/outlook/composables/index";
+import { useDarkMode } from "@theme-hope/modules/outlook/composables/index";
 
 import "../styles/color-mode-switch.scss";
 
@@ -16,7 +16,7 @@ export default defineComponent({
   name: "ColorModeSwitch",
 
   setup() {
-    const { config, isDarkmode, status } = useDarkmode();
+    const { config, isDarkMode, status } = useDarkMode();
     const isPure = usePure();
 
     const updateDarkmodeStatus = (): void => {
@@ -53,7 +53,7 @@ export default defineComponent({
         Math.max(y, innerHeight - y),
       );
 
-      const oldStatus = isDarkmode.value;
+      const oldStatus = isDarkMode.value;
 
       const transition = document.startViewTransition(async () => {
         updateDarkmodeStatus();
@@ -62,10 +62,10 @@ export default defineComponent({
 
       await transition.ready;
 
-      if (isDarkmode.value !== oldStatus)
+      if (isDarkMode.value !== oldStatus)
         document.documentElement.animate(
           {
-            clipPath: isDarkmode.value
+            clipPath: isDarkMode.value
               ? [
                   `circle(${endRadius}px at ${x}px ${y}px)`,
                   `circle(0px at ${x}px ${y}px)`,
@@ -77,7 +77,7 @@ export default defineComponent({
           },
           {
             duration: 400,
-            pseudoElement: isDarkmode.value
+            pseudoElement: isDarkMode.value
               ? "::view-transition-old(root)"
               : "::view-transition-new(root)",
           },

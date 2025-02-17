@@ -17,7 +17,7 @@ When setting `{ custom: true }` in [Behavior options](../../config/theme/behavio
 
 You need to replace the component alias used in the theme with `alias` option in your own VuePress config file.
 
-```js title=".vuepress/config.js"
+```ts twoslash title=".vuepress/config.ts"
 import { getDirname, path } from "vuepress/utils";
 import { hopeTheme } from "vuepress-theme-hope";
 
@@ -217,7 +217,7 @@ For example, if your site has strong social attributes, and you want to display 
 
 @tab config.ts
 
-```ts title=".vuepress/config.ts"
+```ts twoslash title=".vuepress/config.ts"
 import { getDirname, path } from "vuepress/utils";
 import { hopeTheme } from "vuepress-theme-hope";
 

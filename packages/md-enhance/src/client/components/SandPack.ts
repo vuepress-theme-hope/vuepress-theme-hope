@@ -1,5 +1,4 @@
-import { decodeData, deepAssign } from "@vuepress/helper/client";
-import { useMutationObserver } from "@vueuse/core";
+import { decodeData, deepAssign, useDarkMode } from "@vuepress/helper/client";
 import type {
   SandpackFiles,
   SandpackOptions,
@@ -9,10 +8,9 @@ import type {
 } from "sandpack-vue3";
 import { Sandpack } from "sandpack-vue3";
 import type { PropType, VNode } from "vue";
-import { computed, defineComponent, h, onMounted, ref } from "vue";
+import { computed, defineComponent, h } from "vue";
 
 import { useSandpackConfig } from "../helpers/index.js";
-import { getDarkmodeStatus } from "../utils/index.js";
 
 import "../styles/sandpack.scss";
 
@@ -89,9 +87,8 @@ export default defineComponent({
   },
 
   setup(props) {
+    const isDarkMode = useDarkMode();
     const sandpackConfig = useSandpackConfig();
-
-    const isDarkmode = ref(false);
 
     const options = computed(() =>
       deepAssign({}, sandpackConfig.options, getSandpackOptions(props.options)),
@@ -100,7 +97,7 @@ export default defineComponent({
     const template = computed(() => props.template || sandpackConfig.template);
     const theme = computed(() =>
       // eslint-disable-next-line @typescript-eslint/no-unnecessary-condition
-      props.theme || isDarkmode.value ? "dark" : "light",
+      props.theme || isDarkMode.value ? "dark" : "light",
     );
     const customSetup = computed(() =>
       deepAssign(
@@ -109,22 +106,6 @@ export default defineComponent({
         getSandpackCustomSetup(props.customSetup),
       ),
     );
-
-    onMounted(() => {
-      isDarkmode.value = getDarkmodeStatus();
-
-      // Watch darkmode change
-      useMutationObserver(
-        document.documentElement,
-        () => {
-          isDarkmode.value = getDarkmodeStatus();
-        },
-        {
-          attributeFilter: ["class", "data-theme"],
-          attributes: true,
-        },
-      );
-    });
 
     return (): (VNode | null)[] => [
       h("div", { class: "vp-container sandpack-wrapper" }, [
