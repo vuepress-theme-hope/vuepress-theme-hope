@@ -25,7 +25,7 @@
     "mpegts.js": "1.8.0",
     "sass-embedded": "catalog:",
     "sass-loader": "catalog:",
-    "vidstack": "1.12.12",
+    "vidstack": "1.12.13",
     "vue": "catalog:",
     "vuepress": "catalog:vuepress",
     "vuepress-plugin-components": "workspace:*"
