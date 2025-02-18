@@ -15,7 +15,7 @@ Stylize inline tokens including changing tags, adding attributes and modifying c
 
 ## Settings
 
-```ts {7-9} title=".vuepress/config.ts"
+```ts twoslash {7-9} title=".vuepress/config.ts"
 import { defineUserConfig } from "vuepress";
 import { hopeTheme } from "vuepress-theme-hope";
 
@@ -40,7 +40,7 @@ The `stylize` receives an array, where each element accepts 2 options:
 
 For example, you can use the following config to transform `*Recommended*` into a Badge `<Badge type="tip">Recommended</Badge>`:
 
-```ts {7-19} title=".vuepress/config.ts"
+```ts twoslash {7-19} title=".vuepress/config.ts"
 import { defineUserConfig } from "vuepress";
 import { hopeTheme } from "vuepress-theme-hope";
 
@@ -67,7 +67,7 @@ export default defineUserConfig({
 
 Another example is you want to set all the emphasis `n't` words to red color, so that `Setting this to a invalid syntax *doesn't* have any effect.` becomes: "Setting this to an invalid syntax <span style="color:red">doesn't</span> have any effect."
 
-```ts {7-19} title=".vuepress/config.ts"
+```ts twoslash {7-19} title=".vuepress/config.ts"
 import { defineUserConfig } from "vuepress";
 import { hopeTheme } from "vuepress-theme-hope";
 

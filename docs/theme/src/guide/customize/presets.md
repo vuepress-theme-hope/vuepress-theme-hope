@@ -33,7 +33,7 @@ Override `@theme-hope/modules/blog/components/BlogHero` and import the above com
 
 ::: details Code Example
 
-```ts title=".vuepress/config.ts"
+```ts twoslash title=".vuepress/config.ts"
 import { getDirname, path } from "vuepress/utils";
 import { defineUserConfig } from "vuepress";
 
@@ -51,7 +51,7 @@ export default defineUserConfig({
 });
 ```
 
-```vue
+```vue twoslash
 <!-- .vuepress/components/BlogHero.vue -->
 <script setup lang="ts">
 import BlogHero from "vuepress-theme-hope/blog/components/BlogHero.js";
@@ -83,7 +83,7 @@ Override `@theme-hope/modules/blog/components/BlogHero`, import the above compon
 
 ::: details Code Example
 
-```ts title=".vuepress/config.ts"
+```ts twoslash title=".vuepress/config.ts"
 import { getDirname, path } from "vuepress/utils";
 import { defineUserConfig } from "vuepress";
 
@@ -101,7 +101,7 @@ export default defineUserConfig({
 });
 ```
 
-```vue
+```vue twoslash
 <!-- .vuepress/components/BlogHero.vue -->
 <script setup lang="ts">
 import BlogHero from "vuepress-theme-hope/blog/components/BlogHero.js";
@@ -126,7 +126,7 @@ import HitokotoBlogHero from "vuepress-theme-hope/presets/HitokotoBlogHero.js";
 Make navbar transparent in certain pages while at page top.
 
 ```ts
-const setupTransparentNavbar: (options?: {
+export declare const setupTransparentNavbar: (options?: {
   /**
    * @default 'blog-homepage'
    */
@@ -140,12 +140,12 @@ const setupTransparentNavbar: (options?: {
   threshold?: number;
 
   /**
-   * Text color in lightmode
+   * Text color in light mode
    */
   light?: string;
 
   /**
-   * Text color in darkmode
+   * Text color in dark mode
    */
   dark?: string;
 }) => void;
@@ -153,7 +153,7 @@ const setupTransparentNavbar: (options?: {
 
 ::: details Code Example
 
-```ts title=".vuepress/client.ts"
+```ts twoslash title=".vuepress/client.ts"
 import { defineClientConfig } from "vuepress/client";
 import { setupTransparentNavbar } from "vuepress-theme-hope/presets/transparentNavbar.js";
 
@@ -171,7 +171,7 @@ export default defineClientConfig({
 Get the running time of the site in footer.
 
 ```ts
-const setupRunningTimeFooter: (
+export declare const setupRunningTimeFooter: (
   /**
    * The date to calculate the running time
    */
@@ -180,22 +180,22 @@ const setupRunningTimeFooter: (
    * The locales of running time
    *
    * @description :day, :hour, :minute, :second will be replaced by the corresponding value
+   *
+   * @default { "/": "Running time: :day days :hour hours :minute minutes :second seconds" }
    */
-  locales: Record<string, string> = {
-    "/": "Running time: :day days :hour hours :minute minutes :second seconds",
-  },
+  locales?: Record<string, string>,
   /**
    * Whether to preserve the original content of the footer
    *
    * @default false
    */
-  preserveContent = false,
+  preserveContent?: boolean,
 ) => void;
 ```
 
 ::: details Code Example
 
-```ts title=".vuepress/client.ts"
+```ts twoslash title=".vuepress/client.ts"
 import { defineClientConfig } from "vuepress/client";
 import { setupRunningTimeFooter } from "vuepress-theme-hope/presets/footerRunningTime.js";
 
@@ -220,7 +220,7 @@ export default defineClientConfig({
 Add snowfall effect to the site.
 
 ```ts
-const setupSnowFall: (options: {
+export declare const setupSnowFall: (options: {
   /**
    * Image of snowflake
    */
@@ -258,9 +258,9 @@ const setupSnowFall: (options: {
 
 ::: details Code Example
 
-```ts title=".vuepress/client.ts"
+```ts twoslash title=".vuepress/client.ts"
 import { defineClientConfig } from "vuepress/client";
-import { setupSnowFall } from "vuepress-theme-hope/presets/setupSnowFall.js";
+import { setupSnowFall } from "vuepress-theme-hope/presets/snowFall.js";
 
 export default defineClientConfig({
   setup() {
@@ -298,15 +298,16 @@ export default defineClientConfig({
     locales?: Record<string, string>;
   }
 
-  export const getRecentUpdatedArticles: (
+  export declare const getRecentUpdatedArticles: (
     options: RecentUpdateArticlesOptions,
   ) => BlogTypeOptions;
   ```
 
   ::: details Code Example
 
-  ```ts
-  import { getRecentUpdatedArticles } from "vuepress-theme-hope/presets/getSlides.js";
+  ```ts twoslash
+  import { hopeTheme } from "vuepress-theme-hope";
+  import { getRecentUpdatedArticles } from "vuepress-theme-hope/presets/getRecentUpdatedArticles.js";
 
   export default {
     theme: hopeTheme({
@@ -351,12 +352,13 @@ export default defineClientConfig({
     locales?: Record<string, string>;
   }
 
-  export const getSlides = (options: SlidesOptions) => BlogTypeOptions;
+  export declare const getSlides = (options: SlidesOptions) => BlogTypeOptions;
   ```
 
   ::: details Code Example
 
-  ```ts
+  ```ts twoslash
+  import { hopeTheme } from "vuepress-theme-hope";
   import { getSlides } from "vuepress-theme-hope/presets/getSlides.js";
 
   export default {

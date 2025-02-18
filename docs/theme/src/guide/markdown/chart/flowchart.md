@@ -10,7 +10,7 @@ tag:
 
 <!-- @include: @md-enhance/guide/chart/flowchart.md#before -->
 
-```ts {7} title=".vuepress/config.ts"
+```ts twoslash {7} title=".vuepress/config.ts"
 import { defineUserConfig } from "vuepress";
 import { hopeTheme } from "vuepress-theme-hope";
 

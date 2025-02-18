@@ -1,28 +1,28 @@
 ---
-title: Darkmode
+title: Dark mode
 icon: circle-half-stroke
 order: 1
 category:
   - Interface
 tag:
-  - Darkmode
+  - Dark mode
   - Interface
 ---
 
-The theme supports darkmode and allows you to customize it.
+The theme supports dark mode and allows you to customize it.
 
 <!-- more -->
 
 ## Options
 
-You can config darkmode through `darkmode` in theme options.
+You can config dark mode through `darkmode` in theme options.
 
-```js {5} title=".vuepress/config.js"
+```ts twoslash {5} title=".vuepress/config.ts"
 import { hopeTheme } from "vuepress-theme-hope";
 
 export default {
   theme: hopeTheme({
-    darkmode: "your option",
+    darkmode: "switch", // or "toggle", "auto", "enable", "disable"
   }),
 };
 ```
@@ -30,7 +30,7 @@ export default {
 Available options:
 
 - `"switch"`: switch between dark, light and auto (default)
-- `"toggle"`: toggle between lightmode and darkmode
+- `"toggle"`: toggle between light mode and dark mode
 - `"auto"`: Automatically decide whether to apply dark mode based on user device's color-scheme or current time
 - `"enable"`: only dark mode
 - `"disable"`: disable dark mode
@@ -43,16 +43,16 @@ Toggle the button to see effects: <ColorModeSwitch />
 
 ## Getting Status
 
-- In Markdown files or Vue Template, you can access `$isDarkmode` to get darkmode status directly.
+- In Markdown files or Vue Template, you can access `$isDarkMode` to get dark mode status directly.
 
-- In scripts, you can import `useDarkmode` from `@vuepress/helper/client` to get darkmode status:
+- In scripts, you can import `useDarkMode` from `@vuepress/helper/client` to get dark mode status:
 
-  ```ts
-  import { useDarkmode } from "@vuepress/client/helper";
+  ```ts twoslash
+  import { useDarkMode } from "@vuepress/helper/client";
 
-  const isDarkmode = useDarkmode();
+  const isDarkMode = useDarkMode();
 
-  console.log(isDarkmode.value); // get darkmode status
+  console.log(isDarkMode.value); // get dark mode status
   ```
 
   If `@vuepress/helper` is not installed, you should install it first:

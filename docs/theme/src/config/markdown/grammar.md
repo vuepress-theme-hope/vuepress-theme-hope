@@ -136,20 +136,74 @@ Whether to enable tasklist format support. You can pass an object to config task
 - Type: `MarkdownMathPluginOptions | boolean`
 
   ```ts
-  interface MarkdownKatexPluginOptions
-    extends Omit<MarkdownItKatexOptions, "transformer"> {
+  interface MarkdownKatexPluginOptions extends KatexOptions {
     type?: "katex";
+
+    /**
+     * Whether to allow inline math with spaces on ends
+     *
+     * @description NOT recommended to set this to true, because it will likely break the default usage of $
+     *
+     * @default false
+     */
+    allowInlineWithSpace?: boolean;
+
     /**
      * Whether enable copy plugin
      *
      * @default false
      */
     copy?: boolean;
+
+    /**
+     * Whether enable mhchem plugin
+     *
+     * @default false
+     */
+    mhchem?: boolean;
   }
 
   interface MarkdownMathjaxPluginOptions
     extends Omit<MarkdownItMathjaxOptions, "transformer"> {
     type?: "mathjax";
+
+    /**
+     * Whether to allow inline math with spaces on ends
+     *
+     * @description NOT recommended to set this to true, because it will likely break the default usage of $
+     *
+     * @default false
+     */
+    allowInlineWithSpace?: boolean;
+
+    /**
+     * Output syntax
+     *
+     * @default 'svg'
+     */
+    output?: "chtml" | "svg";
+
+    /**
+     * Enable A11y
+     *
+     * @default true
+     */
+    a11y?: boolean;
+
+    /**
+     * TeX input options
+     */
+    tex?: MathJaxTexInputOptions;
+
+    /**
+     * Common HTML output options
+     */
+    chtml?: MathjaxCommonHTMLOutputOptions;
+
+    /**
+     * SVG output options
+     */
+    svg?: MathjaxSVGOutputOptions;
   }
 
   type MarkdownMathPluginOptions =
@@ -166,10 +220,26 @@ Whether to enable math formula support. You can set `true` to auto detect the in
 
 ## markdown.revealjs
 
-- Type: `RevealJsOptions | boolean`
+- Type: `RevealJsPluginOptions | boolean`
 
   ```ts
-  interface RevealJsOptions {
+  type RevealJsPlugin = "highlight" | "math" | "notes" | "search" | "zoom";
+
+  type RevealJsTheme =
+    | "auto"
+    | "beige"
+    | "black"
+    | "blood"
+    | "league"
+    | "moon"
+    | "night"
+    | "serif"
+    | "simple"
+    | "sky"
+    | "solarized"
+    | "white";
+
+  interface RevealJsPluginOptions {
     /**
      * Reveal.js plugins
      *

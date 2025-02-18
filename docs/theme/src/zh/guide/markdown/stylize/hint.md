@@ -17,7 +17,7 @@ tag:
 
 提示容器默认启用，你可以禁用它:
 
-```ts {8} title=".vuepress/config.ts"
+```ts twoslash {8} title=".vuepress/config.ts"
 import { defineUserConfig } from "vuepress";
 import { hopeTheme } from "vuepress-theme-hope";
 

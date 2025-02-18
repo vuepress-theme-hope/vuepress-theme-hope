@@ -196,7 +196,7 @@ Previous article link.
 
 ## next
 
-- Type: `AutoLinkConfig |string | false`
+- Type: `AutoLinkConfig | string | false`
 
   ```ts
   interface AutoLinkConfig {

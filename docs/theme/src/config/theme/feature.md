@@ -266,7 +266,7 @@ Admin password with the highest authority, you can set multiple ones by using ar
 
 ### encrypt.config
 
-- Type: `Record <string, PasswordOptions>`
+- Type: `Record<string, PasswordOptions>`
 
   ```ts
   type PasswordOptions =

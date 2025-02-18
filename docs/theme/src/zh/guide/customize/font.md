@@ -80,7 +80,7 @@ font-family: "Noto Serif SC", serif;
 
 那么你需要做的就是在 VuePress 配置文件中添加如下代码导入并使用它们:
 
-```ts title=".vuepress/config.ts"
+```ts twoslash title=".vuepress/config.ts"
 import { defineUserConfig } from "vuepress";
 
 export default defineUserConfig({

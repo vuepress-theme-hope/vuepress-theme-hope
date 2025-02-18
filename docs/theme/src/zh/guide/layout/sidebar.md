@@ -27,7 +27,7 @@ tag:
 
 同导航栏，你可以填入一个包含多个文件链接的数组，作为侧边栏基本的配置:
 
-```js {5} title=".vuepress/config.js"
+```ts twoslash {5} title=".vuepress/config.ts"
 import { hopeTheme } from "vuepress-theme-hope";
 
 export default {
@@ -54,7 +54,7 @@ export default {
 - `icon`: 项目图标 (可选)
 - `activeMatch`: 项目激活匹配 (可选)，支持正则字符串。
 
-```js {5-22} title=".vuepress/config.js"
+```ts twoslash {5-22} title=".vuepress/config.ts"
 import { hopeTheme } from "vuepress-theme-hope";
 
 export default {
@@ -95,26 +95,19 @@ export default {
 
 侧边栏额外支持设置 `collapsible: true` 来使菜单分组可折叠，并且你可以设置 `expanded: true` 来使可折叠的分组默认展开。
 
-```js {18-22,26-30} title=".vuepress/config.js"
+```ts twoslash title=".vuepress/config.ts"
 import { hopeTheme } from "vuepress-theme-hope";
 
 export default {
   theme: hopeTheme({
     sidebar: [
       {
-        // 必要的，分组的标题文字
         text: "分组 1",
-        // 可选的, 分组标题对应的图标
         icon: "tip",
-        // 可选的, 分组标题对应的链接
         link: "/foo/",
-        // 可选的，会添加到每个 item 链接地址之前
         prefix: "/foo/",
-        // 可选的, 设置分组是否可以折叠，默认值是 false,
         collapsible: true,
-        // 可选的。设置分组是否默认展开，默认值是 false
         expanded: true,
-        // 必要的，分组的子项目
         children: [
           "README.md" /* /foo/index.html */,
           /* ... */
@@ -136,7 +129,7 @@ export default {
 
 侧边栏分组也可以进行嵌套:
 
-```js {11-22} title=".vuepress/config.js"
+```ts twoslash {11-22} title=".vuepress/config.ts"
 import { hopeTheme } from "vuepress-theme-hope";
 
 export default {
@@ -188,7 +181,7 @@ export default {
 
 你就可以进行以下配置:
 
-```js title=".vuepress/config.js"
+```ts twoslash title=".vuepress/config.ts"
 import { hopeTheme } from "vuepress-theme-hope";
 
 export default {
@@ -243,7 +236,7 @@ export default {
 
 你就可以遵循以下的侧边栏配置，来为不同路径显示不同的分组:
 
-```js title=".vuepress/config.js"
+```ts twoslash title=".vuepress/config.ts"
 import { hopeTheme } from "vuepress-theme-hope";
 
 export default {
@@ -295,7 +288,7 @@ export default {
 
 你可以将原来的配置改为:
 
-```js {6,8} title=".vuepress/config.js"
+```ts twoslash {6,8} title=".vuepress/config.ts"
 import { hopeTheme } from "vuepress-theme-hope";
 
 export default {
@@ -439,13 +432,12 @@ headerDepth: 2
 
 这个功能是通过插件 `@vuepress/plugin-active-header-links` 实现的，并可以通过以下的配置来禁用:
 
-```js {7} title=".vuepress/config.js"
+```ts twoslash {6} title=".vuepress/config.js"
 import { hopeTheme } from "vuepress-theme-hope";
 
 export default {
   theme: hopeTheme({
     plugins: {
-      // 默认值: true
       activeHeaderLinks: false,
     },
   }),
@@ -456,7 +448,7 @@ export default {
 
 主题的侧边栏支持 [多语言](https://vuejs.press/zh/guide/i18n.html)，所以你可以为每个语言单独设置侧边栏:
 
-```js {7-9,12-14} title=".vuepress/config.js"
+```ts twoslash {7-9,12-14} title=".vuepress/config.js"
 import { hopeTheme } from "vuepress-theme-hope";
 
 export default {
@@ -479,51 +471,27 @@ export default {
 
 ## 相关助手与类型
 
-`vuepress-theme-hope` 将侧边栏的类型导出为 `SideConfig`，同时，提供了一个 `sidebar` Helper 函数。它们可以在 TS 和 JS 中提供侧边栏配置的校验与自动补全。
+`vuepress-theme-hope` 将侧边栏的类型导出为 `SidebarOptions`，同时，提供了一个 `sidebar` 帮助函数。
 
 ::: tip
 
-为了应对当你将 [多侧边栏配置](#多个侧边栏) 拆分成多个部分的情景，我们还针对性的提供了 `SidebarArrayConfig` `SidebarObjectConfig` 类型与 `arraySidebar` 和 `objectSidebar` Helper 函数。
+为了应对当你将 [多侧边栏配置](#多个侧边栏) 拆分成多个部分的情景，我们还针对性的提供了 `SidebarArrayConfig` `SidebarObjectConfig` 类型与 `arraySidebar` 和 `objectSidebar` 帮助函数。
 
 :::
 
-::: code-tabs#language
-
-@tab TS Helper
-
-```ts {4} title=".vuepress/sidebar.ts"
+```ts twoslash {4} title=".vuepress/sidebar.ts"
 import { sidebar } from "vuepress-theme-hope";
 
-export default sidebar(/* 你的侧边栏配置 */);
-```
-
-@tab TS 类型
-
-```ts {4} title=".vuepress/navbar.ts"
-import type { SidebarConfig } from "vuepress-theme-hope";
-
-const sidebarConfig: SidebarConfig = [
+export default sidebar([
   /* 你的侧边栏配置 */
-];
-
-export default sidebarConfig;
+]);
 ```
-
-@tab JS
-
-```js title=".vuepress/sidebar.js"
-import { sidebar } from "vuepress-theme-hope";
-
-export default sidebar(/* 你的侧边栏配置 */);
-```
-
-:::
 
 ## 例子
 
 ::: details 本文档的侧边栏配置
 
-```js
+```ts twoslash title=".vuepress/sidebar/zh.ts"
 import { sidebar } from "vuepress-theme-hope";
 
 <!-- @include: ../../../.vuepress/sidebar/zh.ts#config -->

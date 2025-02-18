@@ -26,6 +26,15 @@ tag:
 - 类型: `MarkdownItAttrsOptions | boolean`
 
   ```ts
+  type MarkdownItAttrRuleName =
+    | "fence"
+    | "inline"
+    | "table"
+    | "list"
+    | "hr"
+    | "softbreak"
+    | "block";
+
   interface MarkdownItAttrsOptions {
     /**
      * 左分隔符

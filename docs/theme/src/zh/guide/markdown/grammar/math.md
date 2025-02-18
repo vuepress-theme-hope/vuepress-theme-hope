@@ -46,7 +46,7 @@ npm i -D mathjax-full
 
 之后启用它:
 
-```ts {7,9,11,13} title=".vuepress/config.ts"
+```ts twoslash {7,9,11,13} title=".vuepress/config.ts"
 import { defineUserConfig } from "vuepress";
 import { hopeTheme } from "vuepress-theme-hope";
 

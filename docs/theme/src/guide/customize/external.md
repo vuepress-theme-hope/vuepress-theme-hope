@@ -19,7 +19,7 @@ If you need to add global CSS and JS, please set `head` option in VuePress [conf
 
 ::: tip Example
 
-```ts title=".vuepress/config.ts"
+```ts twoslash title=".vuepress/config.ts"
 import { defineUserConfig } from "vuepress";
 
 export default defineUserConfig({

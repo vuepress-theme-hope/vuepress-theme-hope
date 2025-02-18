@@ -15,7 +15,7 @@ tag:
 
 ## 配置
 
-```ts {7} title=".vuepress/config.ts"
+```ts twoslash {7} title=".vuepress/config.ts"
 import { defineUserConfig } from "vuepress";
 import { hopeTheme } from "vuepress-theme-hope";
 

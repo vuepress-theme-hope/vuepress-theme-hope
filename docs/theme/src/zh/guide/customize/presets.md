@@ -32,7 +32,7 @@ tag:
 
 ::: details 代码示例
 
-```ts title=".vuepress/config.ts"
+```ts twoslash title=".vuepress/config.ts"
 import { getDirname, path } from "vuepress/utils";
 import { defineUserConfig } from "vuepress";
 
@@ -50,7 +50,7 @@ export default defineUserConfig({
 });
 ```
 
-```vue
+```vue twoslash
 <!-- .vuepress/components/BlogHero.vue -->
 <script setup lang="ts">
 import BlogHero from "vuepress-theme-hope/blog/components/BlogHero.js";
@@ -82,7 +82,7 @@ import BingHeroBackground from "vuepress-theme-hope/presets/BingHeroBackground.j
 
 ::: details 示例
 
-```ts title=".vuepress/config.ts"
+```ts twoslash title=".vuepress/config.ts"
 import { getDirname, path } from "vuepress/utils";
 import { defineUserConfig } from "vuepress";
 
@@ -100,7 +100,7 @@ export default defineUserConfig({
 });
 ```
 
-```vue
+```vue twoslash
 <!-- .vuepress/components/BlogHero.vue -->
 <script setup lang="ts">
 import BlogHero from "vuepress-theme-hope/blog/components/BlogHero.js";
@@ -125,7 +125,7 @@ import HitokotoBlogHero from "vuepress-theme-hope/presets/HitokotoBlogHero.js";
 让导航栏在特定页面中，位于页面顶部时透明。
 
 ```ts
-const setupTransparentNavbar: (options?: {
+export declare const setupTransparentNavbar: (options?: {
   /**
    * @default 'blog-homepage'
    */
@@ -152,7 +152,7 @@ const setupTransparentNavbar: (options?: {
 
 ::: details 代码示例
 
-```ts title=".vuepress/client.ts"
+```ts twoslash title=".vuepress/client.ts"
 import { defineClientConfig } from "vuepress/client";
 import { setupTransparentNavbar } from "vuepress-theme-hope/presets/transparentNavbar.js";
 
@@ -170,7 +170,7 @@ export default defineClientConfig({
 获取站点的运行时间。
 
 ```ts
-const setupRunningTimeFooter: (
+export declare const setupRunningTimeFooter: (
   /**
    * 计算运行时间的日期
    */
@@ -179,22 +179,23 @@ const setupRunningTimeFooter: (
    * 运行时间的本地化文字
    *
    * @description :day, :hour, :minute, :second 会被对应的值替换
+   *
+   * @default { "/": "Running time: :day days :hour hours :minute minutes :second seconds" }
    */
-  locales: Record<string, string> = {
-    "/": "Running time: :day days :hour hours :minute minutes :second seconds",
-  },
+  locales?: Record<string, string>,
+
   /**
    * 是否保留页脚的原有内容
    *
    * @default false
    */
-  preserveContent = false,
+  preserveContent?: boolean,
 ) => void;
 ```
 
 ::: details 代码示例
 
-```ts title=".vuepress/client.ts"
+```ts twoslash title=".vuepress/client.ts"
 import { defineClientConfig } from "vuepress/client";
 import { setupRunningTimeFooter } from "vuepress-theme-hope/presets/footerRunningTime.js";
 
@@ -219,7 +220,7 @@ export default defineClientConfig({
 为站点添加下雪效果。
 
 ```ts
-const setupSnowFall: (options: {
+export declare const setupSnowFall: (options: {
   /**
    * 雪花的图片文件
    */
@@ -257,9 +258,9 @@ const setupSnowFall: (options: {
 
 ::: details 代码示例
 
-```ts title=".vuepress/client.ts"
+```ts twoslash title=".vuepress/client.ts"
 import { defineClientConfig } from "vuepress/client";
-import { setupSnowFall } from "vuepress-theme-hope/presets/setupSnowFall.js";
+import { setupSnowFall } from "vuepress-theme-hope/presets/snowFall.js";
 
 export default defineClientConfig({
   setup() {
@@ -297,15 +298,16 @@ export default defineClientConfig({
     locales?: Record<string, string>;
   }
 
-  export const getRecentUpdatedArticles: (
+  export declare const getRecentUpdatedArticles: (
     options: RecentUpdateArticlesOptions,
   ) => BlogTypeOptions;
   ```
 
   ::: details 代码示例
 
-  ```ts
-  import { getRecentUpdatedArticles } from "vuepress-theme-hope/presets/getSlides.js";
+  ```ts twoslash
+  import { hopeTheme } from "vuepress-theme-hope";
+  import { getRecentUpdatedArticles } from "vuepress-theme-hope/presets/getRecentUpdatedArticles.js";
 
   export default {
     theme: hopeTheme({
@@ -351,12 +353,13 @@ export default defineClientConfig({
     locales?: Record<string, string>;
   }
 
-  export const getSlides = (options: SlidesOptions) => BlogTypeOptions;
+  export declare const getSlides: (options: SlidesOptions) => BlogTypeOptions;
   ```
 
   ::: details 代码示例
 
-  ```ts
+  ```ts twoslash
+  import { hopeTheme } from "vuepress-theme-hope";
   import { getSlides } from "vuepress-theme-hope/presets/getSlides.js";
 
   export default {

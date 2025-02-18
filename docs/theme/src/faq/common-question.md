@@ -18,7 +18,7 @@ export default defineUserConfig({
   // ...
 
   extendsMarkdown: (md) => {
-    md.use(yourExtension, options);
+    md.use(yourMdItPlugin, options);
   },
 });
 ```
@@ -74,7 +74,7 @@ By default, VuePress only extracts h2 and h3 titles from Markdown, so you will n
 
 You need to configure [markdown.headers.level](https://vuejs.press/reference/config/#markdown-headers) in the VuePress configuration file:
 
-```ts {7-12} title=".vuepress/config.ts"
+```ts twoslash {7-12} title=".vuepress/config.ts"
 import { defineUserConfig } from "vuepress";
 
 export default defineUserConfig({

@@ -17,7 +17,7 @@ The following options control theme layout.
 
 ### navbar <Badge text="Recommended" type="tip" />
 
-- Type: `NavbarConfig | false`
+- Type: `NavbarOptions | false`
 - Default: `false`
 - Details:
   - [Layout → Navbar → Navbar links](../../guide/layout/navbar.md#navbar-links)
@@ -69,7 +69,7 @@ Navbar logo, should be absolute path relative to `.vuepress/public` folder.
 - Type: `string`
 - Default: `logo`
 
-Navbar logo in darkmode, should be absolute path relative to `.vuepress/public` folder.
+Navbar logo in dark mode, should be absolute path relative to `.vuepress/public` folder.
 
 ### navbarTitle
 
@@ -125,7 +125,7 @@ For guide, see [Layout → Sidebar](../../guide/layout/sidebar.md).
 
 ### sidebar <Badge text="Recommended" type="tip" />
 
-- Type: `SidebarConfig | "structure" | false`
+- Type: `SSidebarOptions`
 - Default: `"structure"`
 
 Sidebar Config.
@@ -134,7 +134,12 @@ Sidebar Config.
 
 - Type: `SidebarSorter`
 
-  ```ts
+  ```ts twoslash
+  import type {
+    ThemeNormalPageFrontmatter,
+    ThemePageData,
+  } from "vuepress-theme-hope";
+
   interface SidebarFileInfo {
     type: "file";
     filename: string;

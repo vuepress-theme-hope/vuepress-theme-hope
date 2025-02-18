@@ -14,7 +14,7 @@ tag:
 
 ## 配置
 
-```ts {7} title=".vuepress/config.ts"
+```ts twoslash {7} title=".vuepress/config.ts"
 import { defineUserConfig } from "vuepress";
 import { hopeTheme } from "vuepress-theme-hope";
 
@@ -43,7 +43,7 @@ export default defineUserConfig({
 
 除了设置 `markdown.tasklist: true` 之外，你还可以将对象作为选项传递:
 
-```ts {7-21} title=".vuepress/config.ts"
+```ts twoslash {7-21} title=".vuepress/config.ts"
 import { defineUserConfig } from "vuepress";
 import { hopeTheme } from "vuepress-theme-hope";
 

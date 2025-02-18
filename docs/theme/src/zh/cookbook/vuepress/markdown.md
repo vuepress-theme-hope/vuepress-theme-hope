@@ -220,33 +220,33 @@ export default defineUserConfig({
 输入:
 
 ````md
-```ts{1,7-9}
-import { defaultTheme } from '@vuepress/theme-default'
-import { defineUserConfig } from 'vuepress'
+```ts {1,7-9}
+import { defaultTheme } from "@vuepress/theme-default";
+import { defineUserConfig } from "vuepress";
 
 export default defineUserConfig({
-  title: '你好， VuePress',
+  title: "你好， VuePress",
 
   theme: defaultTheme({
-    logo: 'https://vuejs.org/images/logo.png',
+    logo: "https://vuejs.org/images/logo.png",
   }),
-})
+});
 ```
 ````
 
 输出:
 
-```ts{1,7-9}
-import { defaultTheme } from '@vuepress/theme-default'
-import { defineUserConfig } from 'vuepress'
+```ts {1,7-9}
+import { defaultTheme } from "@vuepress/theme-default";
+import { defineUserConfig } from "vuepress";
 
 export default defineUserConfig({
-  title: '你好， VuePress',
+  title: "你好， VuePress",
 
   theme: defaultTheme({
-    logo: 'https://vuejs.org/images/logo.png',
+    logo: "https://vuejs.org/images/logo.png",
   }),
-})
+});
 ```
 
 行数范围标记的例子:
@@ -280,8 +280,8 @@ const line3 = "This is line 3";
 
 ```ts:no-line-numbers
 // 行号被禁用
-const line2 = 'This is line 2'
-const line3 = 'This is line 3'
+const line2 = "This is line 2";
+const line3 = "This is line 3";
 ```
 ````
 
@@ -295,8 +295,8 @@ const line3 = "This is line 3";
 
 ```ts:no-line-numbers
 // 行号被禁用
-const line2 = 'This is line 2'
-const line3 = 'This is line 3'
+const line2 = "This is line 2";
+const line3 = "This is line 3";
 ```
 
 ::: tip

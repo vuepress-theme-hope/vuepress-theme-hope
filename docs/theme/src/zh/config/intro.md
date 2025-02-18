@@ -26,7 +26,7 @@ VuePress 主要通过目录下的 `.vuepress/` 文件夹存放配置和需要的
 
 ## 使用主题
 
-```ts title=".vuepress/config.ts"
+```ts twoslash title=".vuepress/config.ts"
 import { defineUserConfig } from "vuepress";
 import { hopeTheme } from "vuepress-theme-hope";
 

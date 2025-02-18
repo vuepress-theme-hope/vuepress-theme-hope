@@ -14,7 +14,7 @@ Let the Markdown file support playground in your VuePress site.
 
 ## Settings
 
-```ts {8-34} title=".vuepress/config.ts"
+```ts twoslash {8-34} title=".vuepress/config.ts"
 import { defineUserConfig } from "vuepress";
 import { hopeTheme } from "vuepress-theme-hope";
 

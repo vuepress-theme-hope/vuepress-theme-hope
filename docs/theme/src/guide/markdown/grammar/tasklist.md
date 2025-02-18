@@ -14,7 +14,7 @@ Let the Markdown file in your VuePress site support task list.
 
 ## Settings
 
-```ts {7} title=".vuepress/config.ts"
+```ts twoslash {7} title=".vuepress/config.ts"
 import { defineUserConfig } from "vuepress";
 import { hopeTheme } from "vuepress-theme-hope";
 
@@ -43,7 +43,7 @@ export default defineUserConfig({
 
 Besides setting `markdown.tasklist: true` in theme options, you can also pass objects as options:
 
-```ts {7-21} title=".vuepress/config.ts"
+```ts twoslash {7-21} title=".vuepress/config.ts"
 import { defineUserConfig } from "vuepress";
 import { hopeTheme } from "vuepress-theme-hope";
 

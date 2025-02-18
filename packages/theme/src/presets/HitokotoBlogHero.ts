@@ -45,10 +45,16 @@ export default defineComponent({
     },
 
     /** Hero image */
-    image: { type: String, default: null },
+    image: {
+      type: [String, null],
+      default: null,
+    },
 
     /** Hero image dark */
-    imageDark: { type: String, default: null },
+    imageDark: {
+      type: [String, null],
+      default: null,
+    },
 
     /** Hero image alt */
     alt: { type: String, required: true },

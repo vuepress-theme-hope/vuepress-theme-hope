@@ -17,7 +17,7 @@ tag:
 
 ### navbar <Badge text="建议配置" type="tip" />
 
-- 类型: `NavbarConfig | false`
+- 类型: `NavbarOptions | false`
 - 默认值: `false`
 - 详情:
   - [布局 → 导航栏 → 导航栏链接](../../guide/layout/navbar.md#导航栏链接)
@@ -125,7 +125,7 @@ tag:
 
 ### sidebar <Badge text="建议配置" type="tip" />
 
-- 类型: `SidebarConfig | "structure" | false`
+- 类型: `SidebarOptions`
 - 默认值: `"structure"`
 
 侧边栏配置。
@@ -134,7 +134,12 @@ tag:
 
 - 类型: `SidebarSorter`
 
-  ```ts
+  ```ts twoslash
+  import type {
+    ThemeNormalPageFrontmatter,
+    ThemePageData,
+  } from "vuepress-theme-hope";
+
   interface SidebarFileInfo {
     type: "file";
     filename: string;

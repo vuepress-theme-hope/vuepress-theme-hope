@@ -14,7 +14,7 @@ Improve image syntax in Markdown to support color scheme and size.
 
 ## Settings
 
-```ts {8,10,12,14} title=".vuepress/config.ts"
+```ts twoslash {8,10,12,14} title=".vuepress/config.ts"
 import { defineUserConfig } from "vuepress";
 import { hopeTheme } from "vuepress-theme-hope";
 
@@ -55,7 +55,7 @@ This feature allows you to mark images with `#light` and `#dark` suffix to displ
 
 You can pass an object to `markdown.imgMark` to config ID marks:
 
-```ts {9,11} title=".vuepress/config.ts"
+```ts twoslash {9,11} title=".vuepress/config.ts"
 import { defineUserConfig } from "vuepress";
 import { hopeTheme } from "vuepress-theme-hope";
 
@@ -63,9 +63,9 @@ export default defineUserConfig({
   theme: hopeTheme({
     markdown: {
       imgMark: {
-        /** lightmode only IDs */
+        /** light mode only IDs */
         light: ["light"],
-        /** darkmode only IDs */
+        /** dark mode only IDs */
         dark: ["dark"],
       },
     },

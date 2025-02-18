@@ -15,7 +15,7 @@ tag:
 
 ## 配置
 
-```ts {7-9} title=".vuepress/config.ts"
+```ts twoslash {7-9} title=".vuepress/config.ts"
 import { defineUserConfig } from "vuepress";
 import { hopeTheme } from "vuepress-theme-hope";
 
@@ -40,7 +40,7 @@ export default defineUserConfig({
 
 例如，你可以使用以下配置将 `*Recommended*` 转换为徽章 `<Badge type="tip">Recommended</Badge>`：
 
-```ts {7-19} title=".vuepress/config.ts"
+```ts twoslash {7-19} title=".vuepress/config.ts"
 import { defineUserConfig } from "vuepress";
 import { hopeTheme } from "vuepress-theme-hope";
 
@@ -67,7 +67,7 @@ export default defineUserConfig({
 
 另一个例子是你想要将所有的“不或者没”开头的强调词设置为红色，这样 `设置它*没有*任何效果，请*不要*这样使用。`变成：“设置它<span style="color:red">没有</span>任何效果，请<span style="color:red">不要</span>这样使用。"
 
-```ts {7-19} title=".vuepress/config.ts"
+```ts twoslash {7-19} title=".vuepress/config.ts"
 import { defineUserConfig } from "vuepress";
 import { hopeTheme } from "vuepress-theme-hope";
 

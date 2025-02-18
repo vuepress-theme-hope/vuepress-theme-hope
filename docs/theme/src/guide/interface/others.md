@@ -62,12 +62,8 @@ import { hopeTheme } from "vuepress-theme-hope";
 export default {
   theme: hopeTheme({
     plugins: {
-      // disable back to top button
-      backToTop: false,
-
-      // or
-
-      // customize back to top button
+      // disable back to top button with `backToTop: false`
+      // or  customize back to top button
       backToTop: {
         /**
          * Scroll threshold distance to display back to top button (in pixels)

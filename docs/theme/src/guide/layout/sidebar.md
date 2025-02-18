@@ -27,7 +27,7 @@ You should use `sidebar` in theme options to control sidebar.
 
 Just like navbar, you can fill in an array of multiple file links as the basic configuration of the sidebar:
 
-```js {5} title=".vuepress/config.js"
+```ts twoslash {5} title=".vuepress/config.ts"
 import { hopeTheme } from "vuepress-theme-hope";
 
 export default {
@@ -54,7 +54,7 @@ Just like navbar, if you are not satisfied with the page's icon or feel that the
 - `icon`: item icon (optional)
 - `activeMatch`: item active math (optional), support regexp strings
 
-```js {5-22} title=".vuepress/config.js"
+```ts twoslash {5-22} title=".vuepress/config.ts"
 import { hopeTheme } from "vuepress-theme-hope";
 
 export default {
@@ -72,7 +72,7 @@ export default {
         icon: "circle-question",
         // active in path starting with `/faq`
         // so it will active in path like `/faq/xxx.html`
-        activeMatch: "^/zh/faq/",
+        activeMatch: "^/faq/",
       },
     ],
   }),
@@ -95,7 +95,7 @@ Like navbar, you can use `prefix` in the sidebar to add a default path prefix to
 
 The sidebar additionally supports setting `collapsible: true` to make the menu group collapsible, and you can se `expanded: true` to make the menu group default expanded.
 
-```js {18-22,26-30} title=".vuepress/config.js"
+```ts twoslash {18-22,26-30} title=".vuepress/config.ts"
 import { hopeTheme } from "vuepress-theme-hope";
 
 export default {
@@ -107,7 +107,7 @@ export default {
         // optional, icon of group
         icon: "tip",
         // optional, link of group title
-        path: "/foo/",
+        link: "/foo/",
         // optional, will be appended to each item link
         prefix: "/foo/",
         // optional, defaults to false
@@ -137,7 +137,7 @@ export default {
 
 You can also nest Sidebar grouping:
 
-```js {11-22} title=".vuepress/config.js"
+```ts twoslash {11-22} title=".vuepress/config.ts"
 import { hopeTheme } from "vuepress-theme-hope";
 
 export default {
@@ -189,7 +189,7 @@ For example, suppose you have a following directory structure:
 
 Then you can use the following config:
 
-```js title=".vuepress/config.js"
+```ts twoslash title=".vuepress/config.ts"
 import { hopeTheme } from "vuepress-theme-hope";
 
 export default {
@@ -244,7 +244,7 @@ For example, if you have the following structure:
 
 You can define your sidebar for each section using below configuration:
 
-```js title=".vuepress/config.js"
+```ts twoslash title=".vuepress/config.ts"
 import { hopeTheme } from "vuepress-theme-hope";
 
 export default {
@@ -304,7 +304,7 @@ For example, for the following example mentioned earlier in [multiple sidebars](
 
 You can change the original config to:
 
-```js {6,8} title=".vuepress/config.js"
+```ts twoslash {6,8} title=".vuepress/config.ts"
 import { hopeTheme } from "vuepress-theme-hope";
 
 export default {
@@ -446,13 +446,12 @@ Since the default value of [markdown.headers.level](https://vuejs.press/referenc
 
 By default, the nested header links and the hash in the URL are updated as the user scrolls to view the different sections of the page. This behavior can be disabled with the following theme config:
 
-```js {7} title=".vuepress/config.js"
+```ts twoslash {6} title=".vuepress/config.ts"
 import { hopeTheme } from "vuepress-theme-hope";
 
 export default {
   theme: hopeTheme({
     plugins: {
-      // Default: true
       activeHeaderLinks: false,
     },
   }),
@@ -463,7 +462,7 @@ export default {
 
 The theme's navbar supports [I18n](https://vuejs.press/guide/i18n.html), so you can set sidebar individually in each language:
 
-```js {7-9,12-14} title=".vuepress/config.js"
+```ts twoslash {7-9,12-14} title=".vuepress/config.ts"
 import { hopeTheme } from "vuepress-theme-hope";
 
 export default {
@@ -486,51 +485,27 @@ export default {
 
 ## Types and Helpers
 
-`vuepress-theme-hope` exports the type of sidebar as `SideConfig`, and provides a `sidebar` helper function. They can provide validation and autocompletion of sidebar configuration in TS and JS.
+`vuepress-theme-hope` exports the type of sidebar as `SidebarOptions`, and provides a `sidebar` helper function.
 
 ::: tip
 
-To deal with the situation when you split [multi-sidebar configuration](#multiple-sidebars) into multiple parts, we also provide `SidebarArrayConfig` `SidebarObjectConfig` type and `arraySidebar` and `objectSidebar` Helper function.
+To deal with the situation when you split [multi-sidebar configuration](#multiple-sidebars) into multiple parts, we also provide `SidebarArrayOptions` `SidebarObjectOptions` type and `arraySidebar` and `objectSidebar` helper functions.
 
 :::
 
-::: code-tabs#language
-
-@tab TS Helper
-
-```ts {6} title=".vuepress/sidebar.ts"
+```ts twoslash {6} title=".vuepress/sidebar.ts"
 import { sidebar } from "vuepress-theme-hope";
 
-export default sidebar(/* Your sidebar configuration */);
-```
-
-@tab TS Types
-
-```ts {4} title=".vuepress/navbar.ts"
-import type { SidebarConfig } from "vuepress-theme-hope";
-
-const sidebarConfig: SidebarConfig = [
+export default sidebar([
   /* Your sidebar configuration */
-];
-
-export default sidebarConfig;
+]);
 ```
-
-@tab JS
-
-```js title=".vuepress/sidebar.js"
-import { sidebar } from "vuepress-theme-hope";
-
-export default sidebar(/* Your sidebar configuration */);
-```
-
-:::
 
 ## Demo
 
 ::: details Configuration of this documentation
 
-```js
+```ts twoslash
 import { sidebar } from "vuepress-theme-hope";
 
 <!-- @include: ../../.vuepress/sidebar/en.ts#config -->

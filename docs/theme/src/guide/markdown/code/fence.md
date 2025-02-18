@@ -13,25 +13,20 @@ tag:
 
 You can use `markdown.highlighter` to choose the highlighter you want to use, `shiki` for shiki, `prismjs` for prism.js. You can also set `markdown.highlighter` to an object to pass options to the highlighter, while specifying the type of highlighter with the `type` field:
 
-```ts {8} title=".vuepress/config.ts"
+```ts twoslash {9} title=".vuepress/config.ts"
 import { defineUserConfig } from "vuepress";
 import { hopeTheme } from "vuepress-theme-hope";
 
 export default defineUserConfig({
   theme: hopeTheme({
     markdown: {
-      highlighter: "shiki",
-
-      // or
-
-      highlighter: "prismjs",
-
-      // or
-
+      // keyword "shiki" / "prismjs"
+      // or an object format with type field
       highlighter: {
         type: "shiki", // or "prismjs"
 
         // shiki or prism options
+        // ...
       },
     },
   }),

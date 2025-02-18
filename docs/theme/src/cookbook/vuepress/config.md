@@ -86,7 +86,7 @@ In most cases, the config file is sufficient to configure your VuePress site. Ho
 
 A basic client config file looks like this:
 
-```ts
+```ts twoslash
 import { defineClientConfig } from "vuepress/client";
 
 export default defineClientConfig({

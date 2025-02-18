@@ -27,14 +27,14 @@ tag:
 
 @tab TS
 
-```ts title=".vuepress/theme/index.ts"
+```ts twoslash title=".vuepress/theme/index.ts"
 import { getDirname, path } from "vuepress/utils";
 import { hopeTheme } from "vuepress-theme-hope";
 import type { ThemeOptions } from "vuepress-theme-hope";
 
 const __dirname = getDirname(import.meta.url);
 
-export default (options) => ({
+export default (options: ThemeOptions) => ({
   name: "vuepress-theme-local",
 
   extends: hopeTheme(options, { custom: true }),

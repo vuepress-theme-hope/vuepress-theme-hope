@@ -1,5 +1,5 @@
 import { isString } from "@vuepress/helper/client";
-import type { SlotsType, VNode } from "vue";
+import type { CSSProperties, SlotsType, VNode } from "vue";
 import { computed, defineComponent, h, shallowRef } from "vue";
 import {
   usePageFrontmatter,
@@ -15,18 +15,18 @@ import type { ThemeBlogHomePageFrontmatter } from "../../../../shared/index.js";
 import "../styles/blog-hero.scss";
 
 export interface HeroInfoData {
-  text: string | null;
+  text: string;
   tagline: string | null;
   image: string | null;
   imageDark: string | null;
   alt: string;
-  imageStyle: string | Record<string, string> | undefined;
+  imageStyle: string | CSSProperties | undefined;
   isFullScreen: boolean;
 }
 
 export interface HeroBackgroundData {
   image: string | null;
-  bgStyle: string | Record<string, string> | undefined;
+  bgStyle: string | CSSProperties | undefined;
   isFullScreen: boolean;
 }
 

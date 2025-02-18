@@ -172,6 +172,13 @@ export default theme(
           light: "one-light",
           dark: "one-dark-pro",
         },
+        twoslash: {
+          twoslashOptions: {
+            compilerOptions: {
+              moduleResolution: /* bundler */ 100,
+            },
+          },
+        },
       },
 
       chartjs: true,

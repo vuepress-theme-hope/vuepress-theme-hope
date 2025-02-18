@@ -72,7 +72,7 @@ font-family: "Lora", serif;
 
 Then all you need to do is import and use them by adding the following code in the VuePress configuration file:
 
-```ts title=".vuepress/config.ts"
+```ts twoslash title=".vuepress/config.ts"
 import { defineUserConfig } from "vuepress";
 
 export default defineUserConfig({

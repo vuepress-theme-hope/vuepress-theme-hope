@@ -52,7 +52,7 @@ don't worry, the above extra overhead mainly exists in code boot. Due to the lar
 
 In VuePress2, importing web CSS via `@import` in `index.scss` has no effect. You may need to manually import it in the `head` option of your VuePress configuration.
 
-```js {5-11}
+```ts twoslash {5-11}
 import { defineUserConfig } from "vuepress";
 
 export default defineUserConfig({

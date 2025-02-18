@@ -87,7 +87,7 @@ export default defineUserConfig({
 
 一个基础的客户端配置文件是这样的：
 
-```ts
+```ts twoslash
 import { defineClientConfig } from "vuepress/client";
 
 export default defineClientConfig({

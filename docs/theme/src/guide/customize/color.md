@@ -20,7 +20,7 @@ The theme controls the color through config file and palette file. These files a
 You may need to set colors under two situations:
 
 1. This color remains the same in day mode and night mode, e.g.: theme color.
-1. This color is different in lightmode and darkmode, such as background color, font color, border color, etc.
+1. This color is different in light mode and dark mode, such as background color, font color, border color, etc.
 
 For the former, you need to write variable values directly, e.g.:
 
