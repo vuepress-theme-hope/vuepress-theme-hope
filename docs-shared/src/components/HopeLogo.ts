@@ -5,7 +5,7 @@ import type { VNode } from "vue";
 import { computed, defineComponent, h, onMounted, ref, watch } from "vue";
 
 import { useWindowSize } from "@theme-hope/composables/index";
-import { useDarkmode } from "@theme-hope/modules/outlook/composables/index";
+import { useDarkMode } from "@theme-hope/modules/outlook/composables/index";
 
 import "../styles/hope-logo.scss";
 
@@ -15,7 +15,7 @@ export default defineComponent({
   name: "HopeLogo",
 
   setup() {
-    const { isDarkmode } = useDarkmode();
+    const { isDarkMode } = useDarkMode();
     const { isMobile } = useWindowSize();
 
     const ready = ref(false);
@@ -52,7 +52,7 @@ export default defineComponent({
       // Lights
       const ambientLight = new three.AmbientLight(
         0xffffff,
-        isDarkmode.value ? 5 : 15,
+        isDarkMode.value ? 5 : 15,
       );
       const directionalLight = new three.DirectionalLight(0xffffff, 3);
       const directionalLight2 = new three.DirectionalLight(0xffffff, 3);
@@ -167,7 +167,7 @@ export default defineComponent({
 
     onMounted(() => {
       watch(
-        [isDarkmode, isMobile],
+        [isDarkMode, isMobile],
         () =>
           Promise.all([
             import(/* webpackChunkName: "hope-logo" */ "three").then((m) => m),

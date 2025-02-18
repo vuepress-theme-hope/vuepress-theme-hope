@@ -29,6 +29,12 @@ import type { HopeThemeBehaviorOptions } from "./typings/index.js";
 import { TEMPLATE_FOLDER, VERSION } from "./utils.js";
 import type { ThemeOptions } from "../shared/index.js";
 
+/**
+ * VuePress Theme Hope
+ *
+ * @param options - theme options
+ * @param behavior - theme behavior options
+ */
 export const hopeTheme = (
   options: ThemeOptions,
   // TODO: Change default value in v2 stable

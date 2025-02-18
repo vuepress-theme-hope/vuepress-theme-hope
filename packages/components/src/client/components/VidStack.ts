@@ -95,7 +95,7 @@ export default defineComponent({
     },
 
     /**
-     * Darkmode
+     * Dark mode
      */
     darkmode: Boolean,
   },

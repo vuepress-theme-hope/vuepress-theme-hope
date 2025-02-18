@@ -1,5 +1,10 @@
-import { LoadingIcon, decodeData, wait } from "@vuepress/helper/client";
-import { useMutationObserver } from "@vueuse/core";
+import {
+  LoadingIcon,
+  decodeData,
+  useDarkMode,
+  wait,
+} from "@vuepress/helper/client";
+import { watchImmediate } from "@vueuse/core";
 import type { Chart, ChartConfiguration } from "chart.js";
 import type { PropType, VNode } from "vue";
 import {
@@ -10,10 +15,7 @@ import {
   onUnmounted,
   ref,
   shallowRef,
-  watch,
 } from "vue";
-
-import { getDarkmodeStatus } from "../utils/index.js";
 
 import "../styles/chartjs.scss";
 
@@ -86,10 +88,10 @@ export default defineComponent({
   },
 
   setup(props) {
+    const isDarkMode = useDarkMode();
     const chartElement = shallowRef<HTMLElement>();
     const chartCanvasElement = shallowRef<HTMLCanvasElement>();
 
-    const isDarkmode = ref(false);
     const loading = ref(true);
 
     const config = computed(() => decodeData(props.config));
@@ -98,7 +100,7 @@ export default defineComponent({
 
     let chartjs: Chart | null;
 
-    const renderChart = async (isDarkmode: boolean): Promise<void> => {
+    const renderChart = async (): Promise<void> => {
       const [{ default: ChartJs }] = await Promise.all([
         import(/* webpackChunkName: "chart" */ "chart.js/auto"),
         loaded
@@ -106,8 +108,8 @@ export default defineComponent({
           : ((loaded = true), wait(MARKDOWN_ENHANCE_DELAY)),
       ]);
 
-      ChartJs.defaults.borderColor = isDarkmode ? "#ccc" : "#36A2EB";
-      ChartJs.defaults.color = isDarkmode ? "#fff" : "#000";
+      ChartJs.defaults.borderColor = isDarkMode.value ? "#ccc" : "#36A2EB";
+      ChartJs.defaults.color = isDarkMode.value ? "#fff" : "#000";
       ChartJs.defaults.maintainAspectRatio = false;
 
       const data = parseChartConfig(config.value, props.type);
@@ -121,21 +123,9 @@ export default defineComponent({
     };
 
     onMounted(() => {
-      isDarkmode.value = getDarkmodeStatus();
-
-      // Watch darkmode change
-      useMutationObserver(
-        document.documentElement,
-        () => {
-          isDarkmode.value = getDarkmodeStatus();
-        },
-        {
-          attributeFilter: ["class", "data-theme"],
-          attributes: true,
-        },
-      );
-
-      watch(isDarkmode, (value) => renderChart(value), { immediate: true });
+      watchImmediate(isDarkMode, () => renderChart(), {
+        flush: "post",
+      });
     });
 
     onUnmounted(() => {

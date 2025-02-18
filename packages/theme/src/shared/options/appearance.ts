@@ -1,4 +1,4 @@
-export type DarkmodeOptions =
+export type DarkModeOptions =
   | "switch"
   | "auto"
   | "toggle"
@@ -87,7 +87,7 @@ export interface AppearanceOptions extends DeprecatedAppearanceOptions {
   focus?: number | boolean;
 
   /**
-   * Dark mode support options:
+   * Dark mode options
    *
    * - `"switch"`: switch between dark, light and auto (default)
    * - `"toggle"`: toggle between lightmode and darkmode
@@ -95,7 +95,7 @@ export interface AppearanceOptions extends DeprecatedAppearanceOptions {
    * - `"enable"`: only dark mode
    * - `"disable"`: disable dark mode
    *
-   * 深色模式支持选项:
+   * 深色模式选项
    *
    * - `"switch"`: 在深色模式，浅色模式和自动之间切换 (默认)
    * - `"toggle"`: 在深色模式和浅色模式之间切换
@@ -105,7 +105,7 @@ export interface AppearanceOptions extends DeprecatedAppearanceOptions {
    *
    * @default "auto-switch"
    */
-  darkmode?: DarkmodeOptions;
+  darkmode?: DarkModeOptions;
 
   /**
    * Whether show external link icon

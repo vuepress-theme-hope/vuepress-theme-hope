@@ -17,7 +17,7 @@ Embed CodePen demos in your markdown.
   slug-hash="ZYYQoy"
   title="Solar System animation - Pure CSS"
   :default-tab="['css','result']"
-  :theme="$isDarkmode? 'dark': 'light'"
+  :theme="$isDarkMode? 'dark': 'light'"
 />
 
 :::
@@ -28,7 +28,7 @@ Embed CodePen demos in your markdown.
   link="https://codepen.io/kowlor/pen/ZYYQoy"
   title="Solar System animation - Pure CSS"
   :default-tab="['css','result']"
-  :theme="$isDarkmode? 'dark': 'light'"
+  :theme="$isDarkMode? 'dark': 'light'"
 />
 
 :::
@@ -40,7 +40,7 @@ Embed CodePen demos in your markdown.
   title="Envelope w/ Hearts"
   status="clicktorun"
   :default-tab="['css','result']"
-  :theme="$isDarkmode? 'dark': 'light'"
+  :theme="$isDarkMode? 'dark': 'light'"
 />
 
 :::

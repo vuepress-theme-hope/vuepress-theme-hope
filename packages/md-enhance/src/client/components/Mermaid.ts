@@ -2,23 +2,15 @@ import {
   LoadingIcon,
   decodeData,
   isFunction,
+  useDarkMode,
   wait,
 } from "@vuepress/helper/client";
-import { useMutationObserver } from "@vueuse/core";
+import { watchImmediate } from "@vueuse/core";
 import type { VNode } from "vue";
-import {
-  computed,
-  defineComponent,
-  h,
-  onMounted,
-  ref,
-  shallowRef,
-  watch,
-} from "vue";
+import { computed, defineComponent, h, onMounted, ref, shallowRef } from "vue";
 
 import { useMermaidOptions } from "../helpers/index.js";
 import type { MermaidThemeVariables } from "../typings/index.js";
-import { getDarkmodeStatus } from "../utils/index.js";
 
 import "../styles/mermaid.scss";
 
@@ -26,40 +18,40 @@ declare const MARKDOWN_ENHANCE_DELAY: number;
 
 const DEFAULT_CHART_OPTIONS = { useMaxWidth: false };
 
-const getThemeVariables = (isDarkmode: boolean): MermaidThemeVariables => ({
-  dark: isDarkmode,
-  background: isDarkmode ? "#1e1e1e" : "#fff",
+const getThemeVariables = (isDarkMode: boolean): MermaidThemeVariables => ({
+  dark: isDarkMode,
+  background: isDarkMode ? "#1e1e1e" : "#fff",
 
-  primaryColor: isDarkmode ? "#389d70" : "#4abf8a",
-  primaryBorderColor: isDarkmode ? "#389d70" : "#4abf8a",
-  primaryTextColor: isDarkmode ? "#fff" : "#000",
+  primaryColor: isDarkMode ? "#389d70" : "#4abf8a",
+  primaryBorderColor: isDarkMode ? "#389d70" : "#4abf8a",
+  primaryTextColor: isDarkMode ? "#fff" : "#000",
 
   secondaryColor: "#ffb500",
-  secondaryBorderColor: isDarkmode ? "#fff" : "#000",
-  secondaryTextColor: isDarkmode ? "#ddd" : "#333",
+  secondaryBorderColor: isDarkMode ? "#fff" : "#000",
+  secondaryTextColor: isDarkMode ? "#ddd" : "#333",
 
-  tertiaryColor: isDarkmode ? "#282828" : "#efeef4",
-  tertiaryBorderColor: isDarkmode ? "#bbb" : "#242424",
-  tertiaryTextColor: isDarkmode ? "#ddd" : "#333",
+  tertiaryColor: isDarkMode ? "#282828" : "#efeef4",
+  tertiaryBorderColor: isDarkMode ? "#bbb" : "#242424",
+  tertiaryTextColor: isDarkMode ? "#ddd" : "#333",
 
   // Note
-  noteBkgColor: isDarkmode ? "#f6d365" : "#fff5ad",
+  noteBkgColor: isDarkMode ? "#f6d365" : "#fff5ad",
   noteTextColor: "#242424",
-  noteBorderColor: isDarkmode ? "#f6d365" : "#333",
+  noteBorderColor: isDarkMode ? "#f6d365" : "#333",
 
-  lineColor: isDarkmode ? "#d3d3d3" : "#333",
-  textColor: isDarkmode ? "#fff" : "#242424",
+  lineColor: isDarkMode ? "#d3d3d3" : "#333",
+  textColor: isDarkMode ? "#fff" : "#242424",
 
-  mainBkg: isDarkmode ? "#389d70" : "#4abf8a",
+  mainBkg: isDarkMode ? "#389d70" : "#4abf8a",
   errorBkgColor: "#eb4d5d",
   errorTextColor: "#fff",
 
   // Flowchart
-  nodeBorder: isDarkmode ? "#389d70" : "#4abf8a",
-  nodeTextColor: isDarkmode ? "#fff" : "#242424",
+  nodeBorder: isDarkMode ? "#389d70" : "#4abf8a",
+  nodeTextColor: isDarkMode ? "#fff" : "#242424",
 
   // Sequence
-  signalTextColor: isDarkmode ? "#9e9e9e" : "#242424",
+  signalTextColor: isDarkMode ? "#9e9e9e" : "#242424",
 
   // Class
   classText: "#fff",
@@ -67,11 +59,11 @@ const getThemeVariables = (isDarkmode: boolean): MermaidThemeVariables => ({
   // State
   labelColor: "#fff",
 
-  attributeBackgroundColorEven: isDarkmode ? "#0d1117" : "#fff",
-  attributeBackgroundColorOdd: isDarkmode ? "#161b22" : "#f8f8f8",
+  attributeBackgroundColorEven: isDarkMode ? "#0d1117" : "#fff",
+  attributeBackgroundColorOdd: isDarkMode ? "#161b22" : "#f8f8f8",
 
   // Colors
-  fillType0: isDarkmode ? "#cf1322" : "#f1636e",
+  fillType0: isDarkMode ? "#cf1322" : "#f1636e",
   fillType1: "#f39c12",
   fillType2: "#2ecc71",
   fillType3: "#fa541c",
@@ -107,13 +99,13 @@ export default defineComponent({
   },
 
   setup(props) {
+    const isDarkMode = useDarkMode();
     const { themeVariables, ...mermaidOptions } = useMermaidOptions();
     const mermaidElement = shallowRef<HTMLElement>();
 
     const code = computed(() => decodeData(props.code));
 
     const svgCode = ref("");
-    const isDarkmode = ref(false);
     let loaded = false;
 
     const renderMermaid = async (): Promise<void> => {
@@ -129,9 +121,9 @@ export default defineComponent({
       mermaid.initialize({
         theme: "base",
         themeVariables: {
-          ...getThemeVariables(isDarkmode.value),
+          ...getThemeVariables(isDarkMode.value),
           ...(isFunction(themeVariables)
-            ? themeVariables(isDarkmode.value)
+            ? themeVariables(isDarkMode.value)
             : themeVariables),
         },
         flowchart: DEFAULT_CHART_OPTIONS,
@@ -185,23 +177,9 @@ export default defineComponent({
     };
 
     onMounted(() => {
-      isDarkmode.value = getDarkmodeStatus();
-
-      void renderMermaid();
-
-      // Watch darkmode change
-      useMutationObserver(
-        document.documentElement,
-        () => {
-          isDarkmode.value = getDarkmodeStatus();
-        },
-        {
-          attributeFilter: ["class", "data-theme"],
-          attributes: true,
-        },
-      );
-
-      watch(isDarkmode, () => renderMermaid());
+      watchImmediate(isDarkMode, () => renderMermaid(), {
+        flush: "post",
+      });
     });
 
     return (): VNode[] => [
