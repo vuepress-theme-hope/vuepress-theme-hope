@@ -1,4 +1,3 @@
-/* eslint-disable vue/no-unused-properties */
 import type { ExactLocaleConfig } from "@vuepress/helper/client";
 import { useLocaleConfig } from "@vuepress/helper/client";
 import { useScrollLock } from "@vueuse/core";

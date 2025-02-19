@@ -242,8 +242,8 @@ importers:
         specifier: 9.20.1
         version: 9.20.1(jiti@2.4.2)
       eslint-config-mister-hope:
-        specifier: 0.6.4
-        version: 0.6.4(eslint-plugin-vue@9.32.0(eslint@9.20.1(jiti@2.4.2)))(eslint@9.20.1(jiti@2.4.2))(typescript@5.7.3)(vitest@3.0.5(@types/debug@4.1.12)(@types/node@22.13.4)(jiti@2.4.2)(lightningcss@1.29.1)(sass-embedded@1.85.0)(sass@1.85.0)(terser@5.39.0)(tsx@4.19.2)(yaml@2.7.0))(vue-eslint-parser@9.4.3(eslint@9.20.1(jiti@2.4.2)))
+        specifier: 0.7.1
+        version: 0.7.1(eslint-plugin-vue@9.32.0(eslint@9.20.1(jiti@2.4.2)))(eslint@9.20.1(jiti@2.4.2))(typescript@5.7.3)(vitest@3.0.5(@types/debug@4.1.12)(@types/node@22.13.4)(jiti@2.4.2)(lightningcss@1.29.1)(sass-embedded@1.85.0)(sass@1.85.0)(terser@5.39.0)(tsx@4.19.2)(yaml@2.7.0))(vue-eslint-parser@9.4.3(eslint@9.20.1(jiti@2.4.2)))
       eslint-plugin-vue:
         specifier: 9.32.0
         version: 9.32.0(eslint@9.20.1(jiti@2.4.2))
@@ -5472,8 +5472,8 @@ packages:
     resolution: {integrity: sha512-/veY75JbMK4j1yjvuUxuVsiS/hr/4iHs9FTT6cgTexxdE0Ly/glccBAkloH/DofkjRbZU3bnoj38mOmhkZ0lHw==}
     engines: {node: '>=12'}
 
-  eslint-config-mister-hope@0.6.4:
-    resolution: {integrity: sha512-v5sNEcG6ACakolyrVcrr7W5tbl5ezNtS7ODzIGLCOrkrRkudGqi8zu4AYH+LNgielL6ECwujTv8OWjVbbgw8QQ==}
+  eslint-config-mister-hope@0.7.1:
+    resolution: {integrity: sha512-T8Tm3T0r+uKfSYKOXi0+Hfl9vsYflZSbq7VokYfeD1l6mCpLQ0NnkKzfHBTpDSxiX9l9u9Jvn1U3PO4i+richg==}
     peerDependencies:
       eslint: ^9.17.0
       eslint-plugin-vue: ^9.32.0
@@ -15343,7 +15343,7 @@ snapshots:
 
   escape-string-regexp@5.0.0: {}
 
-  eslint-config-mister-hope@0.6.4(eslint-plugin-vue@9.32.0(eslint@9.20.1(jiti@2.4.2)))(eslint@9.20.1(jiti@2.4.2))(typescript@5.7.3)(vitest@3.0.5(@types/debug@4.1.12)(@types/node@22.13.4)(jiti@2.4.2)(lightningcss@1.29.1)(sass-embedded@1.85.0)(sass@1.85.0)(terser@5.39.0)(tsx@4.19.2)(yaml@2.7.0))(vue-eslint-parser@9.4.3(eslint@9.20.1(jiti@2.4.2))):
+  eslint-config-mister-hope@0.7.1(eslint-plugin-vue@9.32.0(eslint@9.20.1(jiti@2.4.2)))(eslint@9.20.1(jiti@2.4.2))(typescript@5.7.3)(vitest@3.0.5(@types/debug@4.1.12)(@types/node@22.13.4)(jiti@2.4.2)(lightningcss@1.29.1)(sass-embedded@1.85.0)(sass@1.85.0)(terser@5.39.0)(tsx@4.19.2)(yaml@2.7.0))(vue-eslint-parser@9.4.3(eslint@9.20.1(jiti@2.4.2))):
     dependencies:
       '@eslint-community/eslint-plugin-eslint-comments': 4.4.1(eslint@9.20.1(jiti@2.4.2))
       '@eslint/js': 9.20.0

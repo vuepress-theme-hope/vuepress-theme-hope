@@ -1,4 +1,3 @@
-/* eslint-disable vue/no-unused-properties */
 import { LoadingIcon } from "@vuepress/helper/client";
 import type { VNode } from "vue";
 import { computed, defineComponent, h, ref } from "vue";

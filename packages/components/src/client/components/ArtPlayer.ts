@@ -1,4 +1,3 @@
-/* eslint-disable vue/no-unused-properties */
 import { LoadingIcon, keys } from "@vuepress/helper/client";
 import type Artplayer from "artplayer";
 import type { Option as ArtPlayerInitOptions } from "artplayer/types/option.js";

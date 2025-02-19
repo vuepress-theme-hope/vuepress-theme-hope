@@ -1,8 +1,15 @@
-import { globals, hope, tsParser } from "eslint-config-mister-hope";
-import { vue, vueParser } from "eslint-config-mister-hope/vue";
+import { globals, hope } from "eslint-config-mister-hope";
+import { vue } from "eslint-config-mister-hope/vue";
 
 export default hope(
   {
+    languageOptions: {
+      parserOptions: {
+        project: "./tsconfig.eslint.json",
+        extraFileExtensions: [".vue"],
+      },
+    },
+
     ignores: [
       "docs-shared/lib/**",
       "packages/*/assets/**",
@@ -37,19 +44,6 @@ export default hope(
             ],
           },
         ],
-      },
-    },
-  },
-  {
-    languageOptions: {
-      ecmaVersion: "latest",
-      sourceType: "module",
-      parser: vueParser,
-      parserOptions: {
-        parser: tsParser,
-        tsconfigDirName: import.meta.dirname,
-        project: "./tsconfig.eslint.json",
-        extraFileExtensions: [".vue"],
       },
     },
   },

@@ -24,14 +24,20 @@ export default defineComponent({
      *
      * 图表 id
      */
-    id: { type: String, required: true },
+    id: {
+      type: String,
+      required: true,
+    },
 
     /**
      * Markmap content
      *
      * Markmap
      */
-    content: { type: String, required: true },
+    content: {
+      type: String,
+      required: true,
+    },
   },
 
   setup(props) {
@@ -39,29 +45,29 @@ export default defineComponent({
     const markupWrapper = shallowRef<HTMLElement>();
     const markmapSvg = shallowRef<SVGElement>();
 
-    let markupMap: Markmap | null = null;
+    let markmap: Markmap | null = null;
 
     useEventListener(
       "resize",
       useDebounceFn(() => {
-        void markupMap?.fit();
+        void markmap?.fit();
       }, 100),
     );
 
     onMounted(() => {
       void Promise.all([
         import(/* webpackChunkName: "markmap" */ "markmap-lib"),
-        import(/* webpackChunkName: "markmap" */ "markmap-toolbar"),
         import(/* webpackChunkName: "markmap" */ "markmap-view"),
+        import(/* webpackChunkName: "markmap" */ "markmap-toolbar"),
         wait(MARKDOWN_ENHANCE_DELAY),
       ]).then(
-        async ([{ Transformer }, { Toolbar }, { Markmap, deriveOptions }]) => {
+        async ([{ Transformer }, { Markmap, deriveOptions }, { Toolbar }]) => {
           const transformer = new Transformer();
           const { frontmatter, root } = transformer.transform(
             decodeData(props.content),
           );
 
-          markupMap = Markmap.create(
+          markmap = Markmap.create(
             // eslint-disable-next-line @typescript-eslint/no-non-null-assertion
             markmapSvg.value!,
             deriveOptions({
@@ -70,10 +76,10 @@ export default defineComponent({
             }),
           );
 
-          const { el } = Toolbar.create(markupMap);
+          const { el } = Toolbar.create(markmap);
 
-          await markupMap.setData(root);
-          await markupMap.fit();
+          await markmap.setData(root);
+          await markmap.fit();
 
           el.style.position = "absolute";
           el.style.bottom = "0.5rem";
@@ -87,8 +93,8 @@ export default defineComponent({
     });
 
     onUnmounted(() => {
-      markupMap?.destroy();
-      markupMap = null;
+      markmap?.destroy();
+      markmap = null;
     });
 
     return (): VNode =>

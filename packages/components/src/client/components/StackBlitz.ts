@@ -1,4 +1,3 @@
-/* eslint-disable vue/no-unused-properties */
 /**
  * @see https://developer.stackblitz.com/platform/api/javascript-sdk
  */
