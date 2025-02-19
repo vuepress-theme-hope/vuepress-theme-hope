@@ -1,13 +1,16 @@
 import { container } from "@mdit/plugin-container";
 import { encodeData } from "@vuepress/helper";
 import type { PluginSimple } from "markdown-it";
+import type { MarkdownEnv } from "vuepress/markdown";
+
+import { logger } from "../utils";
 
 export const chart: PluginSimple = (md) => {
   container(md, {
     name: "chart",
-    openRender: (tokens, index) => {
-      console.warn(
-        "chart container is deprecated, use chartjs container instead.",
+    openRender: (tokens, index, _options, env: MarkdownEnv) => {
+      logger.warn(
+        `chart container is deprecated, use chartjs container instead${env.filePathRelative ? ` found in ${env.filePathRelative}` : ""}.`,
       );
 
       const title = tokens[index].info
