@@ -26,7 +26,7 @@ import {
   prepareSocialMediaIcons,
 } from "./prepare/index.js";
 import type { HopeThemeBehaviorOptions } from "./typings/index.js";
-import { TEMPLATE_FOLDER, VERSION } from "./utils.js";
+import { TEMPLATE_FOLDER, VERSION, logger } from "./utils.js";
 import type { ThemeOptions } from "../shared/index.js";
 
 /**
@@ -74,7 +74,7 @@ export const hopeTheme = (
 
     usePlugins(app, themeData, markdown, plugins, hotReload, behaviorOptions);
 
-    if (isDebug) console.log("Theme plugin options:", plugins);
+    if (isDebug) logger.info("Plugin options:", plugins);
 
     return {
       name: "vuepress-theme-hope",

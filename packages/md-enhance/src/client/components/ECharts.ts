@@ -31,7 +31,7 @@ const parseEChartsConfig = (
   myChart: EChartsType,
 ): Promise<EChartsConfig> => {
   if (type === "js") {
-    // eslint-disable-next-line
+    // eslint-disable-next-line @typescript-eslint/no-unsafe-assignment, @typescript-eslint/no-unsafe-call
     const runner = AsyncFunction(
       "myChart",
       `\

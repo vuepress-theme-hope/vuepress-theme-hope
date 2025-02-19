@@ -1,4 +1,3 @@
-/* eslint-disable */
 /**
  * Shimmed from https://github.com/pieroxy/lz-string
  */

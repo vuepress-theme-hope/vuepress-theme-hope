@@ -106,7 +106,8 @@ export const resolveMultiSidebarItems = ({
       });
     }
 
-  console.warn(`${decodeURI(routePath)} is missing sidebar config.`);
+  // eslint-disable-next-line no-console
+  console.warn(`${decodeURI(routePath)} is missing it's sidebar config.`);
 
   return [];
 };

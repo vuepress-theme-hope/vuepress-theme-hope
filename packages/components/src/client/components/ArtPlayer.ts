@@ -263,6 +263,7 @@ export default defineComponent({
             default:
           }
         else
+          // eslint-disable-next-line no-console
           console.warn(
             `[components]: ArtPlayer does not support current file type ${initOptions.type}!`,
           );

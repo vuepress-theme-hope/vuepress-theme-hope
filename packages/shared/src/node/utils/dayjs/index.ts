@@ -3,6 +3,7 @@ import localizedFormat from "dayjs/plugin/localizedFormat.js";
 import objectSupport from "dayjs/plugin/objectSupport.js";
 import timezone from "dayjs/plugin/timezone.js";
 import utc from "dayjs/plugin/utc.js";
+import { logger } from "vuepress/utils";
 
 import { loadDeAtLocale } from "./de-at.js";
 import { loadDeLocale } from "./de.js";
@@ -94,7 +95,7 @@ export const getLocale = (lang = "en"): string => {
   if (langCode === "tr-tr") return "tr";
   if (langCode === "ko-kr") return "ko";
 
-  console.warn(`${lang} locale missing in config`);
+  logger.warn(`${lang} locale missing in config`);
 
   return "en";
 };

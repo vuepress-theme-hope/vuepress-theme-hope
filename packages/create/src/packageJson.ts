@@ -67,8 +67,8 @@ export const createPackageJson = async ({
   if (existsSync(packageJsonPath)) {
     console.log(locale.flow.updatePackage);
 
-    // eslint-disable-next-line
-    const packageContent: any = JSON.parse(
+    // eslint-disable-next-line @typescript-eslint/no-unsafe-assignment
+    const packageContent: Record<string, unknown> = JSON.parse(
       readFileSync(packageJsonPath, { encoding: "utf-8" }),
     );
 

@@ -101,8 +101,6 @@ describe("createConverter", () => {
         old: "old.nested",
       });
 
-      console.log(options);
-
       expect(options.old).not.toHaveProperty("nested");
     });
   });

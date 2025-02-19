@@ -76,7 +76,8 @@ export default defineComponent({
             scale: scale.value,
           });
         } catch (err) {
-          console.log(err);
+          // eslint-disable-next-line no-console
+          console.error(err);
         }
       });
 
@@ -98,7 +99,8 @@ export default defineComponent({
               scale: scale.value,
             });
           } catch (err) {
-            console.log(err);
+            // eslint-disable-next-line no-console
+            console.error(err);
           }
       });
 

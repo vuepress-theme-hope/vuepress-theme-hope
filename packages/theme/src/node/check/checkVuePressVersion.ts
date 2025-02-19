@@ -1,3 +1,4 @@
+/* eslint-disable no-console */
 import { createRequire } from "node:module";
 
 import { keys } from "@vuepress/helper";

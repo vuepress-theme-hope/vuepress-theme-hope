@@ -278,15 +278,11 @@ const covertPluginOptions = (themeOptions: Record<string, unknown>): void => {
     }
 
     if ("component" in mdEnhanceOptions) {
-      console.log("hit");
-
       deprecatedLogger({
         options: themeOptions,
         old: "plugins.mdEnhance.component",
         new: "markdown.component",
       });
-
-      console.log(themeOptions.markdown);
     }
 
     if ("vPre" in mdEnhanceOptions) {

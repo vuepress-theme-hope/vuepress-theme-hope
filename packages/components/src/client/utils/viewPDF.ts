@@ -40,6 +40,7 @@ export interface ViewPDFOptions {
 }
 
 const logError = (msg: string): void => {
+  // eslint-disable-next-line no-console
   console.error(`[PDF]: ${msg}`);
 };
 

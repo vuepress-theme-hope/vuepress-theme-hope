@@ -1,7 +1,7 @@
 import { endsWith, fromEntries } from "@vuepress/helper";
 import { fs, path } from "vuepress/utils";
 
-import { CLIENT_FOLDER } from "./utils.js";
+import { CLIENT_FOLDER, logger } from "./utils.js";
 
 const getDirAlias = (dir: string): [string, string][] => {
   const dirPath = path.resolve(CLIENT_FOLDER, dir);
@@ -67,7 +67,7 @@ export const getAlias = (isDebug: boolean): Record<string, string> => {
       .flat(),
   ]);
 
-  if (isDebug) console.log("Theme alias config:", alias);
+  if (isDebug) logger.info("Alias:", alias);
 
   return alias;
 };

@@ -1,27 +1,45 @@
-import hopeConfig, {
-  config,
-  globals,
-  tsParser,
-} from "eslint-config-mister-hope";
+import { globals, hope, tsParser } from "eslint-config-mister-hope";
 import { vue, vueParser } from "eslint-config-mister-hope/vue";
 
-export default config(
-  ...vue,
-  ...hopeConfig,
-
+export default hope(
   {
     ignores: [
-      "**/dist/**",
-      "**/node_modules/**",
-      "coverage/**",
       "docs-shared/lib/**",
       "packages/*/assets/**",
       "packages/*/lib/**",
-      "**/.vuepress/.cache/",
-      "**/.vuepress/.temp/",
+      "**/ventors/lzstring.ts",
     ],
-  },
 
+    tsImport: {
+      settings: {
+        "import-x/internal-regex": "^@(?:internal|temp|theme-hope)/",
+        "import-x/resolver": {
+          typescript: {
+            alwaysTryTypes: true,
+            project: "tsconfig.json",
+          },
+        },
+      },
+      rules: {
+        "import-x/no-absolute-path": "error",
+        "import-x/no-restricted-paths": [
+          "error",
+          {
+            zones: [
+              {
+                target: "packages/*/src/client/**",
+                from: "packages/*/src/node/**",
+              },
+              {
+                target: "packages/*/src/node/**",
+                from: "packages/*/src/client/**",
+              },
+            ],
+          },
+        ],
+      },
+    },
+  },
   {
     languageOptions: {
       ecmaVersion: "latest",
@@ -36,114 +54,72 @@ export default config(
     },
   },
 
-  {
-    files: ["**/*.ts"],
-    settings: {
-      "import-x/internal-regex": "^@(?:internal|temp|theme-hope)/",
-      "import-x/resolver": {
-        typescript: {
-          alwaysTryTypes: true,
-          project: "tsconfig.json",
-        },
+  ...vue({
+    "@typescript-eslint/prefer-nullish-coalescing": [
+      "warn",
+      {
+        ignoreConditionalTests: true,
       },
-    },
-    rules: {
-      "import-x/no-absolute-path": "error",
-      "import-x/no-restricted-paths": [
-        "error",
-        {
-          zones: [
-            {
-              target: "packages/*/src/client/**",
-              from: "packages/*/src/node/**",
-            },
-            {
-              target: "packages/*/src/node/**",
-              from: "packages/*/src/client/**",
-            },
-          ],
+    ],
+    "@typescript-eslint/naming-convention": [
+      "warn",
+      {
+        selector: "default",
+        format: ["camelCase"],
+        leadingUnderscore: "allowSingleOrDouble",
+        trailingUnderscore: "allow",
+      },
+      {
+        selector: ["variable"],
+        format: ["camelCase", "PascalCase", "UPPER_CASE"],
+        leadingUnderscore: "allowSingleOrDouble",
+        trailingUnderscore: "allowSingleOrDouble",
+      },
+      {
+        selector: ["parameter"],
+        format: ["camelCase", "PascalCase"],
+        leadingUnderscore: "allow",
+        trailingUnderscore: "allow",
+      },
+      // allow path like `/zh/demo.html`, alias starting with `@` and css property like `line-width`
+      {
+        selector: ["property"],
+        format: null,
+        custom: {
+          regex: "(^/|^@|^[a-z]+(?:-[a-z]+)*?$)",
+          match: true,
         },
-      ],
-    },
-  },
-
-  {
-    files: ["**/*.{ts,vue}"],
-    rules: {
-      "@typescript-eslint/prefer-nullish-coalescing": [
-        "warn",
-        {
-          ignoreConditionalTests: true,
-        },
-      ],
-      "@typescript-eslint/naming-convention": [
-        "warn",
-        {
-          selector: "default",
-          format: ["camelCase"],
-          leadingUnderscore: "allowSingleOrDouble",
-          trailingUnderscore: "allow",
-        },
-        {
-          selector: ["variable"],
-          format: ["camelCase", "PascalCase", "UPPER_CASE"],
-          leadingUnderscore: "allowSingleOrDouble",
-          trailingUnderscore: "allowSingleOrDouble",
-        },
-        {
-          selector: ["parameter"],
-          format: ["camelCase", "PascalCase"],
-          leadingUnderscore: "allow",
-          trailingUnderscore: "allow",
-        },
-        // allow path like `/zh/demo.html`, alias starting with `@` and css property like `line-width`
-        {
-          selector: ["property"],
-          format: null,
-          custom: {
-            regex: "(^/|^@|^[a-z]+(?:-[a-z]+)*?$)",
-            match: true,
-          },
-          filter: "(^/|^@|^[a-z]+(?:-[a-z]+)*?$)",
-        },
-        {
-          selector: ["property"],
-          format: ["camelCase", "PascalCase", "UPPER_CASE"],
-          leadingUnderscore: "allow",
-          trailingUnderscore: "allow",
-        },
-        {
-          selector: "import",
-          format: ["PascalCase", "camelCase"],
-        },
-        {
-          selector: "typeLike",
-          format: ["PascalCase"],
-        },
-      ],
-      "import-x/no-unresolved": [
-        "error",
-        {
-          ignore: [
-            "^@temp\\/",
-            "^@theme-hope\\/",
-            "^vuepress/client",
-            "^vuepress-theme-hope\\/blog\\/",
-            "^vuepress-theme-hope\\/client\\/",
-            "^vuepress-theme-hope\\/presets\\/",
-          ],
-        },
-      ],
-    },
-  },
-
-  {
-    files: ["packages/create/template/**/*.ts"],
-    rules: {
-      "@typescript-eslint/naming-convention": "off",
-      "@typescript-eslint/explicit-function-return-type": "off",
-    },
-  },
+        filter: "(^/|^@|^[a-z]+(?:-[a-z]+)*?$)",
+      },
+      {
+        selector: ["property"],
+        format: ["camelCase", "PascalCase", "UPPER_CASE"],
+        leadingUnderscore: "allow",
+        trailingUnderscore: "allow",
+      },
+      {
+        selector: "import",
+        format: ["PascalCase", "camelCase"],
+      },
+      {
+        selector: "typeLike",
+        format: ["PascalCase"],
+      },
+    ],
+    "import-x/no-unresolved": [
+      "error",
+      {
+        ignore: [
+          "^@temp\\/",
+          "^@theme-hope\\/",
+          "^vuepress/client",
+          "^vuepress-theme-hope\\/blog\\/",
+          "^vuepress-theme-hope\\/client\\/",
+          "^vuepress-theme-hope\\/presets\\/",
+        ],
+      },
+    ],
+  }),
 
   {
     files: ["packages/*/src/node/**/*.ts"],
@@ -162,8 +138,10 @@ export default config(
       "no-restricted-imports": [
         "error",
         "@vuepress/helper",
+        "@vuepress/helper/node",
         "vuepress/core",
         "vuepress/markdown",
+        "vuepress/utils",
       ],
       // FIXME: Should be error
       "import-x/dynamic-import-chunkname": "off",
@@ -175,6 +153,21 @@ export default config(
     files: ["packages/*/src/presets/**/*.ts"],
     rules: {
       "vue/require-default-prop": "off",
+    },
+  },
+
+  {
+    files: ["packages/create/src/**/*.ts"],
+    rules: {
+      "no-console": "off",
+    },
+  },
+
+  {
+    files: ["packages/create/template/**/*.ts"],
+    rules: {
+      "@typescript-eslint/naming-convention": "off",
+      "@typescript-eslint/explicit-function-return-type": "off",
     },
   },
 
