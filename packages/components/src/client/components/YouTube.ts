@@ -18,10 +18,7 @@ export default defineComponent({
      *
      * YouTube 视频 id
      */
-    id: {
-      type: String,
-      default: "",
-    },
+    id: String,
 
     /**
      * Youtube video title
@@ -48,10 +45,7 @@ export default defineComponent({
      *
      * 组件高度
      */
-    height: {
-      type: [String, Number],
-      default: undefined,
-    },
+    height: [String, Number],
 
     /**
      * Component width / height ratio
@@ -96,70 +90,49 @@ export default defineComponent({
      *
      * 视频开始时间 (秒)
      */
-    start: {
-      type: [String, Number],
-      default: undefined,
-    },
+    start: [String, Number],
 
     /**
      * Video end time in seconds
      *
      * 视频结束时间 (秒)
      */
-    end: {
-      type: [String, Number],
-      default: undefined,
-    },
+    end: [String, Number],
 
     /**
      * Default cc lang
      *
      * 默认字幕语言
      */
-    defaultCcLang: {
-      type: String,
-      default: "",
-    },
+    defaultCcLang: String,
 
     /**
      * UI language
      *
      * UI 语言
      */
-    uiLang: {
-      type: String,
-      default: "",
-    },
+    uiLang: String,
 
     /**
      * List type
      *
      * 列表类型
      */
-    listType: {
-      type: String,
-      default: "",
-    },
+    listType: String,
 
     /**
      * List
      *
      * 列表
      */
-    list: {
-      type: String,
-      default: "",
-    },
+    list: String,
 
     /**
      * Playlist id
      *
      * 播放列表 id
      */
-    playlist: {
-      type: String,
-      default: "",
-    },
+    playlist: String,
 
     /**
      * Whether to disable controls
@@ -210,7 +183,9 @@ export default defineComponent({
       if (props.start) params.set("start", props.start.toString());
       if (props.end) params.set("end", props.end.toString());
 
+      // eslint-disable-next-line @typescript-eslint/prefer-nullish-coalescing
       params.set("hl", props.uiLang || lang.value);
+      // eslint-disable-next-line @typescript-eslint/prefer-nullish-coalescing
       params.set("cc_lang_pref", props.defaultCcLang || lang.value);
       params.set("color", "white");
 

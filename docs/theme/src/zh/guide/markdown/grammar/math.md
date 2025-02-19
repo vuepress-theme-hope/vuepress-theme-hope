@@ -134,3 +134,9 @@ Mathjax:
 - `output`：`'svg'`（默认）或 `'chtml'` 来更改输出格式为 SVG 或 HTML。
 - `chtml`：传递给通用 HTML 输出解析器的选项
 - `svg`：传递给 SVG 输出解析器的选项
+
+<script setup lang="ts">
+import { defineAsyncComponent } from 'vue';
+
+const KatexPlayground = defineAsyncComponent(()=> import('@KatexPlayground'));
+</script>

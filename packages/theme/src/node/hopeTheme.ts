@@ -143,7 +143,6 @@ export const hopeTheme = (
         app,
         themeData,
 
-        // @ts-expect-error: hostname might not exist
         {
           markdown,
           plugins,

@@ -71,10 +71,7 @@ export default defineComponent({
      *
      * 图表标题
      */
-    title: {
-      type: String,
-      default: "",
-    },
+    title: String,
 
     /**
      * Chart config type

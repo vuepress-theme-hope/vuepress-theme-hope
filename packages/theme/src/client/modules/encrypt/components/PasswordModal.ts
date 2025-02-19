@@ -16,10 +16,7 @@ export default defineComponent({
     /**
      * Password hint
      */
-    hint: {
-      type: String,
-      default: "",
-    },
+    hint: String,
 
     /**
      * Whether is fullscreen

@@ -81,21 +81,27 @@ export default defineComponent({
     /**
      * Mermaid id
      */
-    id: { type: String, required: true },
+    id: {
+      type: String,
+      required: true,
+    },
 
     /**
      * Mermaid config
      *
      * Mermaid 配置
      */
-    code: { type: String, required: true },
+    code: {
+      type: String,
+      required: true,
+    },
 
     /**
      * Mermaid title
      *
      * Mermaid 标题
      */
-    title: { type: String, default: "" },
+    title: String,
   },
 
   setup(props) {

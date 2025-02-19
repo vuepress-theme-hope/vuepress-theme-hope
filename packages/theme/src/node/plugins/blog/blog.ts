@@ -27,30 +27,30 @@ export const getBlogPlugin = (
 ): Plugin | null => {
   if (!options) return null;
 
-  const blogOptions = options === true ? {} : options;
+  const {
+    excerpt = true,
+    excerptLength,
+    excerptSeparator,
+    filter = blogFilter,
+    slugify,
+    ...blogOptions
+  } = options === true ? {} : options;
   const encryptedPaths = keys(themeData.encrypt.config ?? {});
   const isPageEncrypted = ({ path }: Page): boolean =>
     encryptedPaths.some((key) => startsWith(decodeURI(path), key));
 
   return blogPlugin({
-    excerpt: blogOptions.excerpt ?? true,
-
-    ...("excerptLength" in blogOptions
-      ? { excerptLength: blogOptions.excerptLength }
-      : {}),
-    ...("excerptSeparator" in blogOptions
-      ? { excerptSeparator: blogOptions.excerptSeparator }
-      : {}),
+    excerpt,
+    excerptLength,
+    excerptSeparator,
+    filter,
+    slugify,
 
     excerptFilter: (page) => {
       const isEncrypted = isPageEncrypted(page);
 
       return !isEncrypted && !page.frontmatter.excerpt;
     },
-
-    filter: blogOptions.filter ?? blogFilter,
-
-    ...("slugify" in blogOptions ? { slugify: blogOptions.slugify } : {}),
 
     getInfo: (page: Page<ThemePageData>) => {
       const info: Partial<ArticleInfoData> = {};

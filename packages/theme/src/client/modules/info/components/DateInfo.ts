@@ -17,20 +17,14 @@ export default defineComponent({
      *
      * 日期信息
      */
-    date: {
-      type: Object as PropType<Date | null>,
-      default: null,
-    },
+    date: Object as PropType<Date | null>,
 
     /**
      * Localized date text
      *
      * 本地化的日期文字
      */
-    localizedDate: {
-      type: String,
-      default: "",
-    },
+    localizedDate: String,
   },
 
   setup(props) {
@@ -52,7 +46,7 @@ export default defineComponent({
               h(
                 "span",
                 { "data-allow-mismatch": "text" },
-                props.localizedDate ||
+                props.localizedDate ??
                   props.date.toLocaleDateString(lang.value),
               ),
               h("meta", {

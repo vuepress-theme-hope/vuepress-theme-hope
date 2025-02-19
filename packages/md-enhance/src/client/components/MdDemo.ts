@@ -23,10 +23,7 @@ export default defineComponent({
      *
      * Markdown 演示标题
      */
-    title: {
-      type: String,
-      default: "",
-    },
+    title: String,
   },
 
   slots: Object as SlotsType<{

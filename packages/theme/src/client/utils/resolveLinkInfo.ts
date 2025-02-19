@@ -25,6 +25,6 @@ export const resolveLinkInfo = (
             ? meta[PageInfo.shortTitle]
             : meta[PageInfo.title] || path,
         link: path,
-        ...(meta[PageInfo.icon] ? { icon: meta[PageInfo.icon] } : {}),
+        icon: meta[PageInfo.icon],
       };
 };

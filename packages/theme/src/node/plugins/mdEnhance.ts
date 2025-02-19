@@ -38,16 +38,16 @@ export const getMdEnhancePlugin = (
   return mdEnhancePlugin(
     {
       chartjs,
+      demo,
       echarts,
       flowchart,
+      kotlinPlayground,
       markmap,
       mermaid,
       plantuml,
-      demo,
+      playground,
       sandpack,
       vuePlayground,
-      kotlinPlayground,
-      ...(playground ? { playground } : {}),
     },
     legacy,
   );

@@ -31,20 +31,14 @@ export default defineComponent({
      *
      * 站点描述
      */
-    desc: {
-      type: String,
-      default: "",
-    },
+    desc: String,
 
     /**
      * Site logo
      *
      * 站点图标
      */
-    logo: {
-      type: String,
-      default: "",
-    },
+    logo: String,
 
     /**
      * Site link
@@ -71,10 +65,7 @@ export default defineComponent({
      *
      * 站点仓库
      */
-    repo: {
-      type: String,
-      default: "",
-    },
+    repo: String,
   },
 
   setup(props) {
@@ -107,7 +98,9 @@ export default defineComponent({
               })
             : null,
           h("div", { class: "vp-site-info-name" }, props.name),
-          h("div", { class: "vp-site-info-desc" }, props.desc),
+          props.desc
+            ? h("div", { class: "vp-site-info-desc" }, props.desc)
+            : null,
         ]),
         props.repo
           ? h(

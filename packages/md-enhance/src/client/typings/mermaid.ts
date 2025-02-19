@@ -158,7 +158,7 @@ export interface MermaidThemeVariables {
   actorTextColor?: string;
   actorLineColor?: string;
 
-  [props: string]: string | boolean;
+  [props: string]: string | boolean | undefined;
 }
 
 export type MermaidOptions = Omit<

@@ -47,7 +47,7 @@ export default defineComponent({
      *
      * 容器额外类名
      */
-    containerClass: { type: String, default: "" },
+    containerClass: String,
 
     /**
      * Whether disable navbar
@@ -241,7 +241,7 @@ export default defineComponent({
                   // toc
                   "has-toc": enableToc.value,
                 },
-                props.containerClass,
+                props.containerClass ?? "",
                 frontmatter.value.containerClass ?? "",
               ],
               "vp-container": "",

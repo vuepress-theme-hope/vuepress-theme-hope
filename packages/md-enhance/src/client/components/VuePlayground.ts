@@ -27,28 +27,28 @@ export default defineComponent({
 
   props: {
     /**
-     * Playground title
-     *
-     * 演示标题
-     */
-    title: {
-      type: String,
-      default: "",
-    },
-
-    /**
      * Playground file data
      *
      * 演示文件数据
      */
-    files: { type: String, required: true },
+    files: {
+      type: String,
+      required: true,
+    },
+
+    /**
+     * Playground title
+     *
+     * 演示标题
+     */
+    title: String,
 
     /**
      * Playground settings
      *
      * 演示设置
      */
-    settings: { type: String, default: "{}" },
+    settings: String,
   },
 
   setup(props) {
@@ -68,7 +68,7 @@ export default defineComponent({
       deepAssign(
         {},
         vuePlaygroundOptions,
-        getVuePlaygroundSettings(props.settings),
+        getVuePlaygroundSettings(props.settings ?? "{}"),
       ),
     );
 

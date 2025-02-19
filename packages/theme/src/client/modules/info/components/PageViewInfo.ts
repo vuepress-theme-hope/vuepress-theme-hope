@@ -19,10 +19,7 @@ export default defineComponent({
      *
      * 是否显示浏览量以及其路径
      */
-    pageview: {
-      type: [Boolean, String],
-      default: false,
-    },
+    pageview: [Boolean, String],
   },
 
   setup(props) {

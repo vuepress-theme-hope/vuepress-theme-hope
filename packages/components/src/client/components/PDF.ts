@@ -44,10 +44,7 @@ export default defineComponent({
      *
      * PDF 标题
      */
-    title: {
-      type: String,
-      default: "",
-    },
+    title: String,
 
     /**
      * Component width
@@ -64,10 +61,7 @@ export default defineComponent({
      *
      * 组件高度
      */
-    height: {
-      type: [String, Number],
-      default: undefined,
-    },
+    height: [String, Number],
 
     /**
      * Component width / height ratio
@@ -112,10 +106,7 @@ export default defineComponent({
      *
      * 初始缩放比率 (百分比)
      */
-    zoom: {
-      type: [String, Number],
-      default: 100,
-    },
+    zoom: [String, Number],
 
     /**
      * Whether use pdfjs viewer by force
@@ -139,7 +130,9 @@ export default defineComponent({
         options: {
           page: props.page,
           noToolbar: props.noToolbar,
-          ...(props.zoom.toString() === "100" ? {} : { zoom: props.zoom }),
+          ...(props.zoom && props.zoom.toString() !== "100"
+            ? { zoom: props.zoom }
+            : {}),
         },
         force: props.viewer,
       });

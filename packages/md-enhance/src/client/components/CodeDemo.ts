@@ -49,20 +49,14 @@ export default defineComponent({
      *
      * 代码演示标题
      */
-    title: {
-      type: String,
-      default: "",
-    },
+    title: String,
 
     /**
      * Code demo config
      *
      * 代码演示配置
      */
-    config: {
-      type: String,
-      default: "",
-    },
+    config: String,
 
     /**
      * Code demo code content

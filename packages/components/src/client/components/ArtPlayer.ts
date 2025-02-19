@@ -121,30 +121,21 @@ export default defineComponent({
      *
      * 视频类型
      */
-    type: {
-      type: String,
-      default: "",
-    },
+    type: String,
 
     /**
      * Video poster
      *
      * 视频封面
      */
-    poster: {
-      type: String,
-      default: "",
-    },
+    poster: String,
 
     /**
      * Video title
      *
      * 视频标题
      */
-    title: {
-      type: String,
-      default: "",
-    },
+    title: String,
 
     /**
      * Component width
@@ -161,10 +152,7 @@ export default defineComponent({
      *
      * 组件高度
      */
-    height: {
-      type: [String, Number],
-      default: undefined,
-    },
+    height: [String, Number],
 
     /**
      * Component width / height ratio
@@ -181,25 +169,18 @@ export default defineComponent({
      *
      * ArtPlayer 配置
      */
-    config: {
-      type: Object as PropType<Omit<ArtPlayerOptions, "container">>,
-      default: null,
-    },
+    config: Object as PropType<Omit<ArtPlayerOptions, "container">>,
 
     /**
      * Customize Artplayer
      *
      * 对 Artplayer 进行自定义
      */
-    customPlayer: {
-      type: Function as PropType<
-        (
-          player: Artplayer,
-        ) => Artplayer | void | Promise<Artplayer> | Promise<void>
-      >,
-
-      default: (player: Artplayer) => player,
-    },
+    customPlayer: Function as PropType<
+      (
+        player: Artplayer,
+      ) => Artplayer | void | Promise<Artplayer> | Promise<void>
+    >,
   },
 
   setup(props, { attrs }) {
@@ -217,7 +198,7 @@ export default defineComponent({
         container: el.value!,
         poster: props.poster,
         url: getLink(props.src),
-        type: props.type || getTypeByUrl(props.src),
+        type: props.type ?? getTypeByUrl(props.src),
         lang: getLang(lang.value),
         ...props.config,
         // This option must be set false to avoid problems
@@ -296,7 +277,7 @@ export default defineComponent({
       );
       const player = new Artplayer(getInitOptions());
 
-      artPlayerInstance = (await props.customPlayer(player)) || player;
+      artPlayerInstance = (await props.customPlayer?.(player)) ?? player;
       loaded.value = true;
       resize();
     });

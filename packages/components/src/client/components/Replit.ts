@@ -17,30 +17,21 @@ export default defineComponent({
      *
      * Replit 链接
      */
-    link: {
-      type: String,
-      default: "",
-    },
+    link: String,
 
     /**
      * Replit username
      *
      * Replit 用户名
      */
-    user: {
-      type: String,
-      default: "",
-    },
+    user: String,
 
     /**
      * Replit repl name
      *
      * Replit repl 名
      */
-    repl: {
-      type: String,
-      default: "",
-    },
+    repl: String,
 
     /**
      * Component width
@@ -57,10 +48,7 @@ export default defineComponent({
      *
      * 组件高度
      */
-    height: {
-      type: [String, Number],
-      default: undefined,
-    },
+    height: [String, Number],
 
     /**
      * Component width / height ratio
@@ -84,10 +72,7 @@ export default defineComponent({
      *
      * 默认打开的文件
      */
-    file: {
-      type: String,
-      default: "",
-    },
+    file: String,
 
     /**
      * Loading status

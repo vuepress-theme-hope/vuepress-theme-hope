@@ -18,10 +18,7 @@ export default defineComponent({
      *
      * TOC 项目配置
      */
-    items: {
-      type: Array as PropType<PageHeader[]>,
-      default: () => [],
-    },
+    items: Array as PropType<PageHeader[]>,
 
     /**
      * Max header nesting depth
@@ -160,7 +157,7 @@ export default defineComponent({
         : null;
 
     return (): VNode | null => {
-      const tocHeaders = props.items.length
+      const tocHeaders = props.items?.length
         ? renderChildren(props.items, props.headerDepth)
         : renderChildren(page.value.headers, props.headerDepth);
 

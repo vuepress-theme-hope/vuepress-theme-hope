@@ -32,7 +32,7 @@ export const getPwaPlugin = (
   }
 
   return pwaPlugin({
-    ...(favicon ? { favicon } : {}),
+    favicon,
     ...(isPlainObject(options) ? options : {}),
   });
 };

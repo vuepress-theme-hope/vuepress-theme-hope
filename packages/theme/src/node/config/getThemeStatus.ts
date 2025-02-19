@@ -26,7 +26,8 @@ export const getThemeStatus = (
     enableBlog: Boolean(plugins.blog),
     enableEncrypt:
       isPlainObject(themeOptions.encrypt) &&
-      ("admin" in themeOptions.encrypt || "config" in themeOptions.encrypt),
+      (Boolean(themeOptions.encrypt.admin) ||
+        Boolean(themeOptions.encrypt.config)),
     enableReadingTime: plugins.readingTime !== false,
     blogType: isPlainObject(plugins.blog)
       ? (plugins.blog.type
@@ -38,7 +39,7 @@ export const getThemeStatus = (
       : [],
     hasMultipleLanguages: keys(locales).length > 1,
     hasRepo:
-      "repo" in themeOptions ||
+      Boolean(themeOptions.repo) ||
       values(themeLocales).some(({ repo }) => Boolean(repo)),
   };
 };

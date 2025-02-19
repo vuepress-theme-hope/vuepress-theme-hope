@@ -20,20 +20,14 @@ export default defineComponent({
      *
      * 阅读时间信息
      */
-    readingTime: {
-      type: Object as PropType<ReadingTime | null>,
-      default: () => null,
-    },
+    readingTime: Object as PropType<ReadingTime | null>,
 
     /**
      * Reading time locale
      *
      * 阅读时间语言环境
      */
-    readingTimeLocale: {
-      type: Object as PropType<ReadingTimeLocale | null>,
-      default: () => null,
-    },
+    readingTimeLocale: Object as PropType<ReadingTimeLocale | null>,
   },
 
   setup(props) {

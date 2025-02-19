@@ -1,4 +1,3 @@
-/* eslint-disable vue/require-default-prop */
 import {
   endsWith,
   isArray,
@@ -50,7 +49,7 @@ export default defineComponent({
      */
     config: {
       type: Object as PropType<ShareServiceOptions>,
-      default: () => ({}),
+      required: true,
     },
 
     /**
@@ -61,50 +60,32 @@ export default defineComponent({
     /**
      * Share title
      */
-    title: {
-      type: String,
-      required: false,
-    },
+    title: String,
 
     /**
      * Share description
      */
-    description: {
-      type: String,
-      required: false,
-    },
+    description: String,
 
     /**
      * Share url
      */
-    url: {
-      type: String,
-      required: false,
-    },
+    url: String,
 
     /**
      * Share summary
      */
-    summary: {
-      type: String,
-      required: false,
-    },
+    summary: String,
 
     /**
      * Share image
      */
-    cover: {
-      type: String,
-      required: false,
-    },
+    cover: String,
 
     /**
      * Share tag
      */
-    tag: {
-      type: [Array, String] as PropType<string | string[]>,
-      required: false,
-    },
+    tag: [Array, String] as PropType<string | string[]>,
   },
 
   setup(props) {

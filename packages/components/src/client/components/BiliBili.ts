@@ -19,30 +19,21 @@ export default defineComponent({
      *
      * B 站视频 ID
      */
-    bvid: {
-      type: String,
-      default: "",
-    },
+    bvid: String,
 
     /**
      * BiliBili video aid
      *
      * B 站视频 a ID
      */
-    aid: {
-      type: String,
-      default: "",
-    },
+    aid: String,
 
     /**
      * BiliBili video cid
      *
      * B 站视频 CID
      */
-    cid: {
-      type: String,
-      default: "",
-    },
+    cid: String,
 
     /**
      * BiliBili video title
@@ -79,10 +70,7 @@ export default defineComponent({
      *
      * 组件高度
      */
-    height: {
-      type: [String, Number],
-      default: undefined,
-    },
+    height: [String, Number],
 
     /**
      * Component width / height ratio

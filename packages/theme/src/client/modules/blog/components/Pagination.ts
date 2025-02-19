@@ -19,20 +19,30 @@ export default defineComponent({
      *
      * 项目总数
      */
-    total: { type: Number, default: 10 },
+    total: {
+      type: Number,
+      default: 10,
+    },
+
     /**
      * Items per page
      *
      * 每页项目数
      */
-    perPage: { type: Number, default: 10 },
+    perPage: {
+      type: Number,
+      default: 10,
+    },
 
     /**
      * Current page number
      *
      * 当前页面
      */
-    current: { type: Number, default: 1 },
+    current: {
+      type: Number,
+      default: 1,
+    },
   },
 
   emits: ["updateCurrentPage"],

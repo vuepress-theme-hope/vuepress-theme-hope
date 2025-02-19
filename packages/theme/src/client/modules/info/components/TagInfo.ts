@@ -22,10 +22,7 @@ export default defineComponent({
      *
      * 标签信息
      */
-    tag: {
-      type: Array as PropType<PageTag[]>,
-      default: () => [],
-    },
+    tag: Array as PropType<PageTag[]>,
   },
 
   setup(props) {
@@ -34,7 +31,7 @@ export default defineComponent({
     const isPure = usePure();
 
     return (): VNode | null =>
-      props.tag.length
+      props.tag?.length
         ? h(
             "span",
             {

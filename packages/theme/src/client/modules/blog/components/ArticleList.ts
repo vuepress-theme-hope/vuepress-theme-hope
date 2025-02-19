@@ -40,7 +40,7 @@ export default defineComponent({
         { path: string; info: PageInfoData & ArticleInfoData }[]
       >,
 
-      default: () => [],
+      required: true,
     },
   },
 

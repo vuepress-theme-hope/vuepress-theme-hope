@@ -45,25 +45,16 @@ export default defineComponent({
     },
 
     /** Hero image */
-    image: {
-      type: [String, null],
-      default: null,
-    },
+    image: [String, null],
 
     /** Hero image dark */
-    imageDark: {
-      type: [String, null],
-      default: null,
-    },
+    imageDark: [String, null],
 
     /** Hero image alt */
-    alt: { type: String, required: true },
+    alt: String,
 
     /** Hero image style */
-    imageStyle: {
-      type: [String, Object] as PropType<string | CSSProperties>,
-      default: null,
-    },
+    imageStyle: [String, Object] as PropType<string | CSSProperties>,
   },
 
   setup(props) {
@@ -121,7 +112,7 @@ export default defineComponent({
               class: ["vp-blog-hero-image", { light: props.imageDark }],
               style: props.imageStyle,
               src: props.image,
-              alt: props.alt,
+              alt: props.alt ?? props.text,
             })
           : null,
         props.imageDark
@@ -130,7 +121,7 @@ export default defineComponent({
               class: "vp-blog-hero-image dark",
               style: props.imageStyle,
               src: props.imageDark,
-              alt: props.alt,
+              alt: props.alt ?? props.text,
             })
           : null,
       ]),

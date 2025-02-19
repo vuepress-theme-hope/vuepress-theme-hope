@@ -29,7 +29,7 @@ export const usePlugins = (
   behavior: HopeThemeBehaviorOptions,
 ): void => {
   // Respect git options
-  if ("git" in plugins) useGitPlugin(app, plugins.git);
+  if (plugins.git) useGitPlugin(app, plugins.git);
   // Only use git plugin in production or debug mode
   else if (hotReload || app.env.isBuild) useGitPlugin(app, true);
 

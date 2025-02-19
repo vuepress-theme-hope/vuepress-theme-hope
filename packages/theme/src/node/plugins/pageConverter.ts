@@ -30,11 +30,11 @@ export const injectPageInfo = (page: Page<ThemePageData>): void => {
   page.routeMeta[PageInfo.title] = page.title;
 
   // Set short title
-  if ("shortTitle" in frontmatter)
+  if (frontmatter.shortTitle)
     page.routeMeta[PageInfo.shortTitle] = frontmatter.shortTitle;
 
   // Set icon
-  if ("icon" in frontmatter) page.routeMeta[PageInfo.icon] = frontmatter.icon;
+  if (frontmatter.icon) page.routeMeta[PageInfo.icon] = frontmatter.icon;
 
   // Catalog related
   if (endsWith(page.path, "/")) {

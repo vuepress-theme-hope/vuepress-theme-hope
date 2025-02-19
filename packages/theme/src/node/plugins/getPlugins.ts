@@ -108,7 +108,7 @@ export const getPlugins = (
       : copyCodePlugin(isPlainObject(copyCode) ? copyCode : {}),
     // @vuepress/plugin-icon
     iconPlugin({
-      ...(pluginsOptions.icon ?? {}),
+      ...pluginsOptions.icon,
       // force to use VPIcon component
       component: "VPIcon",
     }),

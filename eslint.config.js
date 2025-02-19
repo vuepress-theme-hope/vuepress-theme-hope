@@ -167,6 +167,14 @@ export default config(
       ],
       // FIXME: Should be error
       "import-x/dynamic-import-chunkname": "off",
+      "vue/require-default-prop": "off",
+    },
+  },
+
+  {
+    files: ["packages/*/src/presets/**/*.ts"],
+    rules: {
+      "vue/require-default-prop": "off",
     },
   },
 

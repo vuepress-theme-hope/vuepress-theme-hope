@@ -39,10 +39,10 @@ export const injectBlogBasicInfo = (
         : PageType.page;
 
   // Resolve author
-  if ("author" in frontmatter) info[ArticleInfo.author] = frontmatter.author;
+  if (frontmatter.author) info[ArticleInfo.author] = frontmatter.author;
 
   // Resolve date
-  if ("date" in frontmatter) {
+  if (frontmatter.date) {
     const date = getDate(page.frontmatter.date);
 
     if (date) {
@@ -59,29 +59,29 @@ export const injectBlogBasicInfo = (
   }
 
   // Resolve category
-  if ("category" in frontmatter)
+  if (frontmatter.category)
     info[ArticleInfo.category] = isArray(frontmatter.category)
       ? frontmatter.category
       : [frontmatter.category];
-  else if ("categories" in frontmatter)
+  else if (frontmatter.categories)
     info[ArticleInfo.category] = frontmatter.categories;
 
   // Resolve tag
-  if ("tag" in frontmatter)
+  if (frontmatter.tag)
     info[ArticleInfo.tag] = isArray(frontmatter.tag)
       ? frontmatter.tag
       : [frontmatter.tag];
-  else if ("tags" in frontmatter) info[ArticleInfo.tag] = frontmatter.tags;
+  else if (frontmatter.tags) info[ArticleInfo.tag] = frontmatter.tags;
 
   // Resolve sticky
   if ("sticky" in frontmatter)
     info[ArticleInfo.sticky] = frontmatter.sticky as number | boolean;
 
   // Resolve image
-  if ("cover" in frontmatter) info[ArticleInfo.cover] = frontmatter.cover;
+  if (frontmatter.cover) info[ArticleInfo.cover] = frontmatter.cover;
 
   // Resolve isOriginal
-  if ("isOriginal" in frontmatter && frontmatter.isOriginal)
+  if (frontmatter.isOriginal)
     info[ArticleInfo.isOriginal] = frontmatter.isOriginal;
 
   // Save page excerpt to routeMeta

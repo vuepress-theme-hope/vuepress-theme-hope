@@ -51,26 +51,17 @@ export default defineComponent({
     /**
      * poster
      */
-    poster: {
-      type: String,
-      default: "",
-    },
+    poster: String,
 
     /**
      * thumbnails
      */
-    thumbnails: {
-      type: String,
-      default: "",
-    },
+    thumbnails: String,
 
     /**
      * title
      */
-    title: {
-      type: String,
-      default: "",
-    },
+    title: String,
 
     /**
      * VidStack player options
@@ -82,8 +73,6 @@ export default defineComponent({
           "target" | "src" | "sources" | "tracks" | "title" | "poster"
         >
       >,
-
-      default: () => ({}),
     },
 
     /**
@@ -91,7 +80,6 @@ export default defineComponent({
      */
     layout: {
       type: Object as PropType<Partial<DefaultLayoutProps>>,
-      default: () => ({}),
     },
 
     /**

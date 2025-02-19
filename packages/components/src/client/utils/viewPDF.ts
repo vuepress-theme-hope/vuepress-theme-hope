@@ -30,7 +30,7 @@ export interface ViewPDFOptions {
   /**
    * Title of pdf
    */
-  title: string;
+  title?: string;
   hint: string;
   options: Record<string, string | number | boolean> | undefined;
   /**
@@ -171,7 +171,7 @@ export const viewPDF = (
     : __VUEPRESS_DEV__
       ? null
       : `${window.origin}${url}`;
-  const pdfTitle = (title || /\/([^/]+).pdf/.exec(url)?.[1]) ?? "PDF Viewer";
+  const pdfTitle = title ?? /\/([^/]+).pdf/.exec(url)?.[1] ?? "PDF Viewer";
 
   if (force) {
     if (!pdfLink) {

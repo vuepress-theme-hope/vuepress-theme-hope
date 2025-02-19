@@ -28,55 +28,49 @@ export default defineComponent({
 
   props: {
     /**
+     * Sandpack file data
+     *
+     * 演示文件数据
+     */
+    files: {
+      type: String,
+      required: true,
+    },
+
+    /**
      * Sandpack title
      *
      * 演示标题
      */
-    title: {
-      type: String,
-      default: "",
-    },
+    title: String,
 
     /**
      * Sandpack template
      *
      * 演示工程模板
      */
-    template: {
-      type: String as PropType<SandpackPredefinedTemplate>,
-      default: "",
-    },
-
-    /**
-     * Sandpack file data
-     *
-     * 演示文件数据
-     */
-    files: { type: String, required: true },
+    template: String as PropType<SandpackPredefinedTemplate | undefined>,
 
     /**
      * Sandpack options
      *
      * 演示设置
      */
-    options: { type: String, default: "{}" },
+    options: String,
 
     /**
      * Sandpack customSetup
      *
      * 自定义设置
      */
-    customSetup: { type: String, default: "{}" },
+    customSetup: String,
 
     /**
      * Theme
      *
      * 主题
      */
-    theme: {
-      type: String as PropType<SandpackThemeProp>,
-      default: "",
-    },
+    theme: String as PropType<SandpackThemeProp | undefined>,
 
     /**
      * RTL layout
@@ -91,20 +85,21 @@ export default defineComponent({
     const sandpackConfig = useSandpackConfig();
 
     const options = computed(() =>
-      deepAssign({}, sandpackConfig.options, getSandpackOptions(props.options)),
+      deepAssign(
+        {},
+        sandpackConfig.options,
+        getSandpackOptions(props.options ?? "{}"),
+      ),
     );
-    // eslint-disable-next-line @typescript-eslint/no-unnecessary-condition
-    const template = computed(() => props.template || sandpackConfig.template);
+    const template = computed(() => props.template ?? sandpackConfig.template);
     const theme = computed(
-      () =>
-        // eslint-disable-next-line @typescript-eslint/no-unnecessary-condition
-        props.theme || (isDarkMode.value ? "dark" : "light"),
+      () => props.theme ?? (isDarkMode.value ? "dark" : "light"),
     );
     const customSetup = computed(() =>
       deepAssign(
         {},
         sandpackConfig.customSetup,
-        getSandpackCustomSetup(props.customSetup),
+        getSandpackCustomSetup(props.customSetup ?? "{}"),
       ),
     );
 

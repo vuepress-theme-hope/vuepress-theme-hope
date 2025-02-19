@@ -91,12 +91,12 @@ export default defineComponent({
   setup(props) {
     const page = usePageData();
 
-    const service = computed(() => {
-      const services = isString(props.services)
+    const services = computed(() => {
+      const serviceOptions = isString(props.services)
         ? props.services.split(",")
         : props.services;
 
-      return services
+      return serviceOptions
         .map((item) =>
           isPlainObject(item)
             ? item.name && item.link
@@ -136,7 +136,7 @@ export default defineComponent({
           class: "vp-share-buttons",
           style: props.inline ? { display: "inline-block" } : {},
         },
-        service.value.map((item) =>
+        services.value.map((item) =>
           h(ShareService, {
             config: item,
             ...shareData.value,

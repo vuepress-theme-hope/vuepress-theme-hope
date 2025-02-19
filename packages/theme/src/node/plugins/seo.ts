@@ -25,7 +25,7 @@ export const getSEOPlugin = (
 
   return seoPlugin({
     hostname,
-    ...(author ? { author } : {}),
+    author,
     isArticle: ({ filePathRelative, frontmatter }: Page): boolean =>
       (frontmatter.article as boolean | undefined) ??
       (Boolean(filePathRelative) && !frontmatter.home),

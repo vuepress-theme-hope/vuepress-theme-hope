@@ -7,6 +7,6 @@ export const isActiveItem = (
   route: RouteLocationNormalizedLoaded,
   item: Partial<AutoLinkOptions>,
 ): boolean =>
-  "activeMatch" in item
+  item.activeMatch
     ? new RegExp(item.activeMatch, "u").test(route.path)
     : isActiveLink(route, item.link);

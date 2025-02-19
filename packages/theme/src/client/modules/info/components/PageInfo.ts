@@ -119,7 +119,10 @@ export default defineComponent({
      * 待展示的文章信息
      */
     items: {
-      type: [Array, Boolean] as PropType<PageInfoType[] | false>,
+      type: [Array, Boolean] as PropType<
+        PageInfoType[] | false | undefined | null
+      >,
+
       default: (): PageInfoType[] => [
         "Author",
         "Original",

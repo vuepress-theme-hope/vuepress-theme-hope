@@ -83,8 +83,10 @@ const VPBanner: FunctionalComponent<BannerProps> = ({
     h("div", { class: "vp-banner-body" }, [
       h("div", { class: "vp-banner-title", innerHTML: title }),
       h("p", { class: "vp-banner-content", innerHTML: content }),
-      h("div", { class: "vp-banner-actions" }, [
-        ...actions.map(({ link, text, type = "primary" }) =>
+      h(
+        "div",
+        { class: "vp-banner-actions" },
+        actions.map(({ link, text, type = "primary" }) =>
           isLinkExternal(link)
             ? h(
                 "a",
@@ -104,7 +106,7 @@ const VPBanner: FunctionalComponent<BannerProps> = ({
                 () => text,
               ),
         ),
-      ]),
+      ),
     ]),
   ]);
 };

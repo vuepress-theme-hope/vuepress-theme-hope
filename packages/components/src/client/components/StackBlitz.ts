@@ -54,10 +54,7 @@ export default defineComponent({
      *
      * 组件高度
      */
-    height: {
-      type: [String, Number],
-      default: undefined,
-    },
+    height: [String, Number],
 
     /**
      * Component width / height ratio
@@ -74,20 +71,14 @@ export default defineComponent({
      *
      * 默认打开的文件
      */
-    file: {
-      type: [String, Array] as PropType<string | string[]>,
-      default: "",
-    },
+    file: [String, Array] as PropType<string | string[]>,
 
     /**
      * The initial URL path the preview should open
      *
      * 预览的初始 URL 路径
      */
-    initialPath: {
-      type: String,
-      default: "",
-    },
+    initialPath: String,
 
     /**
      * Embed editor
