@@ -511,6 +511,13 @@ blogs:
     url: https://guoxicheng.top
     repo: https://github.com/GuoXiCheng/guoxicheng.github.io
     preview: /assets/image/guo-s-page-zh.png
+    
+  - name: ToLiucyLinux
+    desc: 享运维人生，探技术奥秘。ToLiucyLinux，Linux学习优质指南，助你构筑知识体系。
+    logo: https://www.liuchenyang.top/picture.jpg
+    url: https://liuchenyang.top
+    repo: https://github.com/liuchenyang0703/ToLiucyLinux
+    preview: /assets/image/ToLiucyLinux.png
 ---
 
 ## 使用 VuePress Theme Hope 的文档
