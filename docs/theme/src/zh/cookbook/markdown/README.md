@@ -36,91 +36,17 @@ Markdown 的语法简洁明了、学习容易，而且功能比纯文本更强�
 
 除此之外，我们还可以快速将 Markdown 转化为演讲 PPT、Word 产品文档、LaTex 论文甚至是用非常少量的代码完成最小可用原型。在数据科学领域，Markdown 已经广泛使用，极大地推进了动态可重复性研究的历史进程。
 
-### 行内 HTML
-
-不在 Markdown 涵盖范围之外的标签，都可以直接在文件里面用 HTML 撰写。不需要额外标注这是 HTML 或是 Markdown；只要直接加标签就可以了。
-
-只有块元素 ── 比如 `<div>`、`<table>`、`<pre>`、`<p>` 等标签，必须在前后加上空行，以利与内容区隔。而且这些 (元素) 的开始与结尾标签，不可以用 tab 或是空白来缩进。Markdown 的解析器有智慧型判断，可以避免在块标签前后加上没有必要的 `<p>` 标签。
-
-举例来说，在 Markdown 文件里加上一段 HTML 表格:
-
-```md
-This is a regular paragraph.
-
-<table>
-    <tr>
-        <td>Foo</td>
-    </tr>
-</table>
-
-This is another regular paragraph.
-```
-
-请注意，Markdown 语法在 HTML 块标签中将不会被进行处理。例如，你无法在 HTML 块内使用 Markdown 形式的 `*强调*`。
-
-### 特殊字元自动转换
-
-在 HTML 文件中，有两个字元需要特殊处理: `<` 和 `&` 。 `<` 符号用于起始标签，`&` 符号则用于标记 HTML 实体，如果你只是想要使用这些符号，你必须要使用实体的形式，像是 `&lt;` 和 `&amp;`。
-
-`&` 符号其实很容易让写作网络文件的人感到困扰，如果你要打「AT&T」 ，你必须要写成「`AT&amp;T`」 ，还得转换网址内的 `&` 符号，如果你要链接到 `http://images.google.com/images?num=30&q=larry+bird`
-
-你必须要把网址转成:
-
-```html
-http://images.google.com/images?num=30&amp;q=larry+bird
-```
-
-才能放到链接标签的 `href` 属性里。不用说也知道这很容易忘记，这也可能是 HTML 标准检查所检查到的错误中，数量最多的。
-
-Markdown 允许你直接使用这些符号，但是你要小心跳脱字元的使用，如果你是在 HTML 实体中使用 `&` 符号的话，它不会被转换，而在其它情形下，它则会被转换成 `&amp;`。所以你如果要在文件中插入一个著作权的符号，你可以这样写:
-
-```md
-&copy;
-```
-
-Markdown 将不会对这段文字做修改，但是如果你这样写:
-
-```md
-AT&T
-```
-
-Markdown 就会将它转为:
-
-```html
-AT&amp;T
-```
-
-类似的状况也会发生在 `<` 符号上，因为 Markdown 支持 [行内 HTML](#行内-html) ，如果你是使用 `<` 符号作为 HTML 标签使用，那 Markdown 也不会对它做任何转换，但是如果你是写:
-
-```md
-4 < 5
-```
-
-Markdown 将会把它转换为:
-
-```html
-4 &lt; 5
-```
-
-不过需要注意的是，code 范围内，不论是行内还是块， `<` 和 `&` 两个符号都*一定*会被转换成 HTML 实体，这项特性让你可以很容易地用 Markdown 写 HTML code (和 HTML 相对而言， HTML 语法中，你要把所有的 `<` 和 `&` 都转换为 HTML 实体，才能在 HTML 文件里面写出 HTML code。)
-
----
-
 ## 块元素
 
 ### 段落和换行
 
 一个段落是由一个以上相连接的行句组成，而一个以上的空行则会切分出不同的段落 (空行的定义是显示上看起来像是空行，便会被视为空行。比方说，若某一行只包含空白和 tab，则该行也会被视为空行) ，一般的段落不需要用空白或断行缩进。
 
-「一个以上相连接的行句组成」这句话其实暗示了 Markdown 允许段落内的强迫断行，这个特性和其他大部分的 text-to-HTML 格式不一样 (包括 MovableType 的「Convert Line Breaks」选项) ，其它的格式会把每个断行都转成 `<br />` 标签。
+「一个以上相连接的行句组成」这句话其实暗示了 Markdown 允许段落内的强迫断行，这个特性和其他大部分的 text-to-HTML 格式不一样 (包括 MovableType 的「Convert Line Breaks」选项) ，其它的格式会把每个断行都转成 `<br>` 标签。
 
-<!-- markdownlint-disable MD038 -->
+如果你*真的*想要插入 `<br>` 标签的话，在行尾加上两个以上的空格或反斜线 (`\`)，然后按 Enter。
 
-如果你*真的*想要插入 `<br />` 标签的话，在行尾加上两个以上的空格 () 或反斜线 (`\`)，然后按 Enter。
-
-<!-- markdownlint-enable MD038 -->
-
-是的，这确实需要花比较多功夫来插入 `<br />` ，但是「每个换行都转换为 `<br />`」的方法在 Markdown 中并不适合， Markdown 中 email 式的 [块引言][bq] 和多段落的 [列表][l] 在使用换行来排版的时候，不但更好用，还更好阅读。
+是的，这确实需要花比较多功夫来插入 `<br>` ，但是「每个换行都转换为 `<br>` 的方法在 Markdown 中并不适合， Markdown 中电子邮件式的 [块引言](#块引言) 和多段落的 [列表](列表) 在使用换行来排版的时候，不但更好用，还更好阅读。
 
 ### 标题
 
@@ -128,17 +54,7 @@ Markdown 将会把它转换为:
 
 Markdown 支持两种标题的语法，[Setext][1] 和 [atx][2] 形式。
 
-Setext 形式是用底线的形式，利用 `=` (最高阶标题) 和 `-` (第二阶标题) ，例如:
-
-```md
-# This is an H1
-
-## This is an H2
-```
-
-任何数量的 `=` 和 `-` 都可以有效果。
-
-Atx (推荐)形式则是在行首插入 1 到 6 个 `#` ，对应到标题 1 到 6 阶，例如:
+Atx 形式则是在行首插入 1 到 6 个 `#` ，对应到标题 1 到 6 阶，例如:
 
 - H1: `# Header 1`
 - H2: `## Header 2`
@@ -147,9 +63,9 @@ Atx (推荐)形式则是在行首插入 1 到 6 个 `#` ，对应到标题 1 到
 - H5: `##### Header 5`
 - H6: `###### Header 6`
 
-### Blockquotes
+### 块引言
 
-Markdown 使用 email 形式的块引言，如果你很熟悉如何在 email 信件中引言，你就知道怎么在 Markdown 文件中建立一个块引言，那会看起来像是你强迫断行，然后在每行的最前面加上 `>` :
+Markdown 使用电子邮件形式的块引言，如果你很熟悉如何在电子信件中引言，你就知道怎么在 Markdown 文件中建立一个块引言，那会看起来像是你强迫断行，然后在每行的最前面加上 `>` :
 
 ```md
 > This is a blockquote with two paragraphs. Lorem ipsum dolor sit amet,
@@ -160,16 +76,7 @@ Markdown 使用 email 形式的块引言，如果你很熟悉如何在 email 信
 > id sem consectetuer libero luctus adipiscing.
 ```
 
-Markdown 也允许你只在整个段落的第一行最前面加上 `>` :
-
-```md
-> This is a blockquote with two paragraphs. Lorem ipsum dolor sit amet,
-> consectetuer adipiscing elit. Aliquam hendrerit mi posuere lectus.
-> Vestibulum enim wisi, viverra nec, fringilla in, laoreet vitae, risus.
-
-> Donec sit amet nisl. Aliquam semper ipsum sit amet velit. Suspendisse
-> id sem consectetuer libero luctus adipiscing.
-```
+Markdown 也允许你只在整个段落的第一行最前面加上 `>`。
 
 块引言可以有阶层 (例如: 引言内的引言) ，只要根据层数加上不同数量的 `>` :
 
@@ -194,7 +101,7 @@ Markdown 也允许你只在整个段落的第一行最前面加上 `>` :
 > plain return shell_exec("echo $input | $markdown_script");
 ```
 
-任何标准的文字编辑器都能简单地建立 email 样式的引言，例如 BBEdit ，你可以选取文字后然后从选单中选择*增加引言阶层*。
+任何标准的文字编辑器都能简单地建立电子邮件样式的引言，例如 BBEdit ，你可以选取文字后然后从选单中选择*增加引言阶层*。
 
 ### 列表
 
@@ -210,6 +117,8 @@ Markdown 支持有序列表和无序列表。
 
 也可以(不建议):
 
+<!-- prettier-disable -->
+
 ```md
 - Red
 - Green
@@ -220,12 +129,14 @@ Markdown 支持有序列表和无序列表。
 * Blue
 ```
 
+<!-- prettier-enable -->
+
 有序列表则使用数字接着一个英文句点:
 
 ```md
-1.  Bird
-2.  McHale
-3.  Parish
+1. Bird
+2. McHale
+3. Parish
 ```
 
 很重要的一点是，你在列表标记上使用的数字并不会影响输出的 HTML 结果，上面的列表所产生的 HTML 标记为:
@@ -260,15 +171,7 @@ Markdown 支持有序列表和无序列表。
   Suspendisse id sem consectetuer libero luctus adipiscing.
 ```
 
-但是如果你很懒，那也不一定需要:
-
-```md
-- Lorem ipsum dolor sit amet, consectetuer adipiscing elit.
-  Aliquam hendrerit mi posuere lectus. Vestibulum enim wisi,
-  viverra nec, fringilla in, laoreet vitae, risus.
-- Donec sit amet nisl. Aliquam semper ipsum sit amet velit.
-  Suspendisse id sem consectetuer libero luctus adipiscing.
-```
+但是如果你很懒，那也不一定需要。
 
 如果列表项目间用空行分开， Markdown 会把项目的内容在输出时用 `<p>` 标签包起来，举例来说:
 
@@ -303,31 +206,21 @@ Markdown 支持有序列表和无序列表。
 </ul>
 ```
 
-列表项目可以包含多个段落，每个项目下的段落都必须缩进 4 个空白或是一个 tab :
+列表项目可以包含多个段落，每个项目下的段落都必须缩进 3 个空白或是一个 tab :
 
 ```md
-1.  This is a list item with two paragraphs. Lorem ipsum dolor
-    sit amet, consectetuer adipiscing elit. Aliquam hendrerit
-    mi posuere lectus.
+1. This is a list item with two paragraphs. Lorem ipsum dolor
+   sit amet, consectetuer adipiscing elit. Aliquam hendrerit
+   mi posuere lectus.
 
-    Vestibulum enim wisi, viverra nec, fringilla in, laoreet
-    vitae, risus. Donec sit amet nisl. Aliquam semper ipsum
-    sit amet velit.
+   Vestibulum enim wisi, viverra nec, fringilla in, laoreet
+   vitae, risus. Donec sit amet nisl. Aliquam semper ipsum
+   sit amet velit.
 
-2.  Suspendisse id sem consectetuer libero luctus adipiscing.
+2. Suspendisse id sem consectetuer libero luctus adipiscing.
 ```
 
-如果你每行都有缩进，看起来会看好很多，当然，再次地，如果你很懒惰，Markdown 也允许:
-
-```md
-- This is a list item with two paragraphs.
-
-  This is the second paragraph in the list item. You're
-  only required to indent the first line. Lorem ipsum dolor
-  sit amet, consectetuer adipiscing elit.
-
-- Another item in the same list.
-```
+如果你每行都有缩进，看起来会看好很多，当然，再次地，如果你很懒惰，Markdown 也允许只有段落首行缩进。
 
 如果要在列表项目内放进引言，那 `>` 就需要缩进:
 
@@ -359,7 +252,7 @@ Markdown 支持有序列表和无序列表。
 ```md
 This is a normal paragraph:
 
-This is a code block.
+    This is a code block.
 ```
 
 Markdown 会转换成:
@@ -375,11 +268,11 @@ Markdown 会转换成:
 这里的缩进 (4 个空白或是 1 个 tab) ，都会被移除，例如:
 
 ```md
-Here is an example of AppleScript:
+    Here is an example of AppleScript:
 
-tell application "Foo"
-beep
-end tell
+    tell application "Foo"
+    beep
+    end tell
 ```
 
 会被转换为:
@@ -397,13 +290,11 @@ end tell
 
 在代码块里面， `&` 、 `<` 和 `>` 会自动转成 HTML 实体，这样的方式让你非常容易使用 Markdown 插入范例用的 HTML 原始码，只需要复制粘贴，再加上缩进就可以了，剩下的 Markdown 都会帮你处理，例如:
 
-````md
-```plain
-<div class="footer">
-  &copy; 2004 Foo Corporation
-</div>
 ```
-````
+    <div class="footer">
+      &copy; 2004 Foo Corporation
+    </div>
+```
 
 会被转换为:
 
@@ -437,10 +328,14 @@ const a = 1;
 
 ### 分隔线
 
-你可以在一行中用三个或以上的星号、减号、底线来建立一个分隔线，行内不能有其他东西。你也可以在星号中间插入空白。下面每种写法都可以建立分隔线:
+你可以在一行中用三个或以上的星号、减号、底线来建立一个分隔线，行内不能有其他东西。
 
-```html
----(建议) * * * *** ***** - - - ---------------------------------------
+```md
+一些内容
+
+---
+
+另一些内容
 ```
 
 ## 行内元素
@@ -833,6 +728,74 @@ Example: `:smile:` :smile:
 
 你可以在 [Emoji 列表](./emoji/README.md) 找到所有可用的 Emoji。
 
+### 行内 HTML
+
+不在 Markdown 涵盖范围之外的标签，都可以直接在文件里面用 HTML 撰写。不需要额外标注这是 HTML 或是 Markdown；只要直接加标签就可以了。
+
+只有块元素 ── 比如 `<div>`、`<table>`、`<pre>`、`<p>` 等标签，必须在前后加上空行，以利与内容区隔。而且这些 (元素) 的开始与结尾标签，不可以用 tab 或是空白来缩进。Markdown 的解析器有智慧型判断，可以避免在块标签前后加上没有必要的 `<p>` 标签。
+
+举例来说，在 Markdown 文件里加上一段 HTML 表格:
+
+```md
+This is a regular paragraph.
+
+<table>
+    <tr>
+        <td>Foo</td>
+    </tr>
+</table>
+
+This is another regular paragraph.
+```
+
+请注意，Markdown 语法在 HTML 块标签中将不会被进行处理。例如，你无法在 HTML 块内使用 Markdown 形式的 `*强调*`。
+
+### 特殊字元自动转换
+
+在 HTML 文件中，有两个字元需要特殊处理: `<` 和 `&` 。 `<` 符号用于起始标签，`&` 符号则用于标记 HTML 实体，如果你只是想要使用这些符号，你必须要使用实体的形式，像是 `&lt;` 和 `&amp;`。
+
+`&` 符号其实很容易让写作网络文件的人感到困扰，如果你要打「AT&T」 ，你必须要写成「`AT&amp;T`」 ，还得转换网址内的 `&` 符号，如果你要链接到 `http://images.google.com/images?num=30&q=larry+bird`
+
+你必须要把网址转成:
+
+```html
+http://images.google.com/images?num=30&amp;q=larry+bird
+```
+
+才能放到链接标签的 `href` 属性里。不用说也知道这很容易忘记，这也可能是 HTML 标准检查所检查到的错误中，数量最多的。
+
+Markdown 允许你直接使用这些符号，但是你要小心跳脱字元的使用，如果你是在 HTML 实体中使用 `&` 符号的话，它不会被转换，而在其它情形下，它则会被转换成 `&amp;`。所以你如果要在文件中插入一个著作权的符号，你可以这样写:
+
+```md
+&copy;
+```
+
+Markdown 将不会对这段文字做修改，但是如果你这样写:
+
+```md
+AT&T
+```
+
+Markdown 就会将它转为:
+
+```html
+AT&amp;T
+```
+
+类似的状况也会发生在 `<` 符号上，因为 Markdown 支持 [行内 HTML](#行内-html) ，如果你是使用 `<` 符号作为 HTML 标签使用，那 Markdown 也不会对它做任何转换，但是如果你是写:
+
+```md
+4 < 5
+```
+
+Markdown 将会把它转换为:
+
+```html
+4 &lt; 5
+```
+
+不过需要注意的是，code 范围内，不论是行内还是块， `<` 和 `&` 两个符号都*一定*会被转换成 HTML 实体，这项特性让你可以很容易地用 Markdown 写 HTML code (和 HTML 相对而言， HTML 语法中，你要把所有的 `<` 和 `&` 都转换为 HTML 实体，才能在 HTML 文件里面写出 HTML code。)
+
 ## Markdown 效果演示
 
 - [查看详情](demo.md)
@@ -843,5 +806,3 @@ Example: `:smile:` :smile:
 [4]: http://docutils.sourceforge.net/rst.html
 [5]: http://www.triptico.com/software/grutatxt.html
 [6]: http://ettext.taint.org/doc/
-[bq]: #blockquotes
-[l]: #列表
