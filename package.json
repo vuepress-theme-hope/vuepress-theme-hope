@@ -65,7 +65,7 @@
     "cross-env": "7.0.3",
     "cz-git": "1.11.0",
     "eslint": "9.20.1",
-    "eslint-config-mister-hope": "0.7.1",
+    "eslint-config-mister-hope": "0.7.5",
     "eslint-plugin-vue": "9.32.0",
     "gulp": "5.0.0",
     "http-server": "14.1.1",
