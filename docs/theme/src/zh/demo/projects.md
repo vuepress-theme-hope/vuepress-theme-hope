@@ -346,6 +346,13 @@ blogs:
     repo: https://github.com/mo7cc/BlogSource.git
     preview: https://file.mo7.cc/disk/blog_preview.png
 
+  - name: ToLiucyLinux
+    desc: 享运维人生，探技术奥秘。ToLiucyLinux，Linux学习优质指南，助你构筑知识体系。
+    logo: https://www.liuchenyang.top/picture.jpg
+    url: https://liuchenyang.top
+    repo: https://github.com/liuchenyang0703/ToLiucyLinux
+    preview: /assets/image/ToLiucyLinux.png
+
   - name: 计算机应试全家桶
     desc: 磨刀不误砍柴工、读完硕士再打工...
     logo: https://142vip.github.io/408CSFamily/408_logo.png
