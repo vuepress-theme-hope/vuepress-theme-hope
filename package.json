@@ -73,7 +73,7 @@
     "markdownlint-cli2": "0.17.2",
     "nano-staged": "0.8.0",
     "ora": "8.2.0",
-    "prettier": "3.5.1",
+    "prettier": "3.5.2",
     "rimraf": "6.0.1",
     "rollup": "4.34.8",
     "rollup-plugin-copy": "3.5.0",
