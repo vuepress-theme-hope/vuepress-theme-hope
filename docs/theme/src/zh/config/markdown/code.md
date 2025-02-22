@@ -11,7 +11,7 @@ tag:
 
 以下选项在 markdown 中添加了新的代码功能，可以在主题选项的 `markdown` 属性下进行设置。
 
-## markdown.markdown.codeTabs
+## markdown.codeTabs
 
 - 类型: `boolean`
 - 默认值: `false`
