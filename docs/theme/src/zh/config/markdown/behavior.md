@@ -13,7 +13,7 @@ tag:
 
 <!-- more -->
 
-## markdown.markdown.gfm
+## markdown.gfm
 
 - 类型: `boolean`
 - 默认值: `false`
@@ -31,7 +31,7 @@ tag:
 
 :::
 
-## markdown.markdown.vPre
+## markdown.vPre
 
 - 类型: `boolean`
 - 默认值: `false`
@@ -39,7 +39,7 @@ tag:
   - [v-pre 容器](../../guide/markdown/others.md#v-pre)
   - [@vuepress/plugin-markdown-ext → vPre][vPre]
 
-## markdown.markdown.breaks
+## markdown.breaks
 
 - 类型: `boolean`
 - 默认值: `false`
@@ -49,7 +49,7 @@ tag:
 
 是否将段落中的 `\n` 转换为 `<br>`。
 
-## markdown.markdown.linkify
+## markdown.linkify
 
 - 类型: `boolean`
 - 默认值: `false`
@@ -59,7 +59,7 @@ tag:
 
 是否将文本中的 URL 转换为链接。
 
-## markdown.markdown.figure
+## markdown.figure
 
 - 类型: `boolean`
 - 默认值: `false`
@@ -69,7 +69,7 @@ tag:
 
 是否将独立的 `<img>` 转换为 `<figure>`。
 
-## markdown.markdown.imgLazyload
+## markdown.imgLazyload
 
 - 类型: `boolean`
 - 默认值: `false`
@@ -79,7 +79,7 @@ tag:
 
 是否启用图片懒加载。
 
-## markdown.markdown.highlighter
+## markdown.highlighter
 
 - 类型: `MarkdownHighlighterOptions | "prismjs" | "shiki" | false`
 
@@ -111,11 +111,11 @@ Markdown 代码块高亮器。可以选择 `"prismjs"`、`"shiki"`、`false` 或
 是否启用 `@vuepress/plugin-links-check` 插件，提供 Markdown 链接检查。您可以手动设置一个布尔值来控制插件状态，或提供插件选项。
 
 [links-check]: https://ecosystem.vuejs.press/zh/plugins/markdown/links-check.html#options
-[breaks]: https://ecosystem.vuejs.press/zh/plugins/markdown/markdown-ext.html#breaks
-[linkify]: https://ecosystem.vuejs.press/zh/plugins/markdown/markdown-ext.html#linkify
-[gfm]: https://ecosystem.vuejs.press/zh/plugins/markdown/markdown-ext.html#gfm
-[figure]: https://ecosystem.vuejs.press/zh/plugins/markdown/markdown-image.html#figure
-[lazyload]: https://ecosystem.vuejs.press/zh/plugins/markdown/markdown-image.html#lazyload
-[vPre]: https://ecosystem.vuejs.press/zh/plugins/markdown/markdown-ext.html#vPre
+[breaks]: https://ecosystem.vuejs.press/zh/plugins/markdown.ext.html#breaks
+[linkify]: https://ecosystem.vuejs.press/zh/plugins/markdown.ext.html#linkify
+[gfm]: https://ecosystem.vuejs.press/zh/plugins/markdown.ext.html#gfm
+[figure]: https://ecosystem.vuejs.press/zh/plugins/markdown.image.html#figure
+[lazyload]: https://ecosystem.vuejs.press/zh/plugins/markdown.image.html#lazyload
+[vPre]: https://ecosystem.vuejs.press/zh/plugins/markdown.ext.html#vPre
 [prismjs]: https://ecosystem.vuejs.press/zh/plugins/markdown/prismjs.html
 [shiki]: https://ecosystem.vuejs.press/zh/plugins/markdown/shiki.html
