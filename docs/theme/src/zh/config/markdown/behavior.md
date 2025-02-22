@@ -13,7 +13,7 @@ tag:
 
 <!-- more -->
 
-## markdown.markdown.gfm
+## markdown.gfm
 
 - 类型: `boolean`
 - 默认值: `false`
@@ -31,7 +31,7 @@ tag:
 
 :::
 
-## markdown.markdown.vPre
+## markdown.vPre
 
 - 类型: `boolean`
 - 默认值: `false`
@@ -39,7 +39,7 @@ tag:
   - [v-pre 容器](../../guide/markdown/others.md#v-pre)
   - [@vuepress/plugin-markdown-ext → vPre][vPre]
 
-## markdown.markdown.breaks
+## markdown.breaks
 
 - 类型: `boolean`
 - 默认值: `false`
@@ -49,7 +49,7 @@ tag:
 
 是否将段落中的 `\n` 转换为 `<br>`。
 
-## markdown.markdown.linkify
+## markdown.linkify
 
 - 类型: `boolean`
 - 默认值: `false`
@@ -59,7 +59,7 @@ tag:
 
 是否将文本中的 URL 转换为链接。
 
-## markdown.markdown.figure
+## markdown.figure
 
 - 类型: `boolean`
 - 默认值: `false`
@@ -69,7 +69,7 @@ tag:
 
 是否将独立的 `<img>` 转换为 `<figure>`。
 
-## markdown.markdown.imgLazyload
+## markdown.imgLazyload
 
 - 类型: `boolean`
 - 默认值: `false`
@@ -79,7 +79,7 @@ tag:
 
 是否启用图片懒加载。
 
-## markdown.markdown.highlighter
+## markdown.highlighter
 
 - 类型: `MarkdownHighlighterOptions | "prismjs" | "shiki" | false`
 
