@@ -15,7 +15,7 @@
     "demo:webpack-dev": "vuepress-webpack dev src"
   },
   "devDependencies": {
-    "@vue/repl": "4.5.0",
+    "@vue/repl": "4.5.1",
     "@vuepress/bundler-vite": "catalog:vuepress",
     "@vuepress/bundler-webpack": "catalog:vuepress",
     "@vuepress/plugin-docsearch": "catalog:vuepress",
