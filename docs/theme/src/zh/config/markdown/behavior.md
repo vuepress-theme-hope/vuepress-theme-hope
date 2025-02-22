@@ -111,11 +111,11 @@ Markdown 代码块高亮器。可以选择 `"prismjs"`、`"shiki"`、`false` 或
 是否启用 `@vuepress/plugin-links-check` 插件，提供 Markdown 链接检查。您可以手动设置一个布尔值来控制插件状态，或提供插件选项。
 
 [links-check]: https://ecosystem.vuejs.press/zh/plugins/markdown/links-check.html#options
-[breaks]: https://ecosystem.vuejs.press/zh/plugins/markdown.ext.html#breaks
-[linkify]: https://ecosystem.vuejs.press/zh/plugins/markdown.ext.html#linkify
-[gfm]: https://ecosystem.vuejs.press/zh/plugins/markdown.ext.html#gfm
-[figure]: https://ecosystem.vuejs.press/zh/plugins/markdown.image.html#figure
-[lazyload]: https://ecosystem.vuejs.press/zh/plugins/markdown.image.html#lazyload
-[vPre]: https://ecosystem.vuejs.press/zh/plugins/markdown.ext.html#vPre
+[breaks]: https://ecosystem.vuejs.press/zh/plugins/markdown/markdown-ext.html#breaks
+[linkify]: https://ecosystem.vuejs.press/zh/plugins/markdown/markdown-ext.html#linkify
+[gfm]: https://ecosystem.vuejs.press/zh/plugins/markdown/markdown-ext.html#gfm
+[figure]: https://ecosystem.vuejs.press/zh/plugins/markdown/markdown-image.html#figure
+[lazyload]: https://ecosystem.vuejs.press/zh/plugins/markdown/markdown-image.html#lazyload
+[vPre]: https://ecosystem.vuejs.press/zh/plugins/markdown/markdown-ext.html#vPre
 [prismjs]: https://ecosystem.vuejs.press/zh/plugins/markdown/prismjs.html
 [shiki]: https://ecosystem.vuejs.press/zh/plugins/markdown/shiki.html
