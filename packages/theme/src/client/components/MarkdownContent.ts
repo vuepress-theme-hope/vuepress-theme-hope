@@ -1,7 +1,7 @@
 import { isNumber } from "@vuepress/helper/client";
-import { useElementHover } from "@vueuse/core";
+import { useElementHover, watchImmediate } from "@vueuse/core";
 import type { VNode } from "vue";
-import { computed, defineComponent, h, onMounted, ref, watch } from "vue";
+import { computed, defineComponent, h, onMounted, ref } from "vue";
 import { Content } from "vuepress/client";
 
 import { useThemeData } from "@theme-hope/composables/index";
@@ -37,17 +37,13 @@ export default defineComponent({
     onMounted(() => {
       const html = document.documentElement;
 
-      watch(
-        enableFocus,
-        (value) => {
-          if (value) {
-            html.classList.add("is-focusing");
-          } else {
-            html.classList.remove("is-focusing");
-          }
-        },
-        { immediate: true },
-      );
+      watchImmediate(enableFocus, (value) => {
+        if (value) {
+          html.classList.add("is-focusing");
+        } else {
+          html.classList.remove("is-focusing");
+        }
+      });
     });
 
     return (): VNode =>

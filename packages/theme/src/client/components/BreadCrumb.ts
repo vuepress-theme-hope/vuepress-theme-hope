@@ -1,3 +1,4 @@
+import { watchImmediate } from "@vueuse/core";
 import type { VNode } from "vue";
 import {
   computed,
@@ -6,7 +7,6 @@ import {
   onMounted,
   resolveComponent,
   shallowRef,
-  watch,
 } from "vue";
 import {
   RouteLink,
@@ -14,6 +14,7 @@ import {
   usePageData,
   usePageFrontmatter,
   useRouteLocale,
+  useRoutePath,
 } from "vuepress/client";
 
 import { useThemeLocaleData } from "@theme-hope/composables/index";
@@ -39,9 +40,9 @@ export default defineComponent({
   setup() {
     const page = usePageData();
     const routeLocale = useRouteLocale();
+    const routePath = useRoutePath();
     const frontmatter = usePageFrontmatter<ThemeNormalPageFrontmatter>();
     const themeLocale = useThemeLocaleData();
-
     const config = shallowRef<BreadCrumbConfig[]>([]);
 
     const enable = computed(
@@ -81,7 +82,7 @@ export default defineComponent({
     };
 
     onMounted(() => {
-      watch(() => page.value.path, getBreadCrumbConfig, { immediate: true });
+      watchImmediate(routePath, getBreadCrumbConfig);
     });
 
     return (): VNode =>

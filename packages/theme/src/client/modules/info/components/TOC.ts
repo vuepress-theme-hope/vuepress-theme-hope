@@ -1,6 +1,6 @@
-import { useToggle } from "@vueuse/core";
+import { useToggle, watchImmediate } from "@vueuse/core";
 import type { PropType, SlotsType, VNode } from "vue";
-import { defineComponent, h, onMounted, ref, shallowRef, watch } from "vue";
+import { defineComponent, h, onMounted, ref, shallowRef } from "vue";
 import type { PageHeader } from "vuepress/client";
 import { RouteLink, usePageData, useRoute } from "vuepress/client";
 
@@ -70,7 +70,7 @@ export default defineComponent({
 
     onMounted(() => {
       // Scroll to active toc item
-      watch(
+      watchImmediate(
         () => route.hash,
         (hash): void => {
           if (toc.value) {
@@ -107,11 +107,11 @@ export default defineComponent({
               );
           }
         },
+        { flush: "post" },
       );
 
-      watch(() => route.fullPath, updateTocMarker, {
+      watchImmediate(() => route.fullPath, updateTocMarker, {
         flush: "post",
-        immediate: true,
       });
     });
 

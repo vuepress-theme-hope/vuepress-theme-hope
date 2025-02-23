@@ -1,6 +1,10 @@
-import { useEventListener, useStyleTag } from "@vueuse/core";
-import { computed, nextTick, onMounted, watch } from "vue";
-import { usePageFrontmatter, useRoute, useRouteLocale } from "vuepress/client";
+import { useEventListener, useStyleTag, watchImmediate } from "@vueuse/core";
+import { computed, onMounted } from "vue";
+import {
+  usePageFrontmatter,
+  useRouteLocale,
+  useRoutePath,
+} from "vuepress/client";
 
 import "./transparent-navbar.scss";
 
@@ -117,7 +121,7 @@ export const setupTransparentNavbar = ({
   light,
   dark,
 }: TransparentNavbarOptions = {}): void => {
-  const route = useRoute();
+  const routePath = useRoutePath();
   const routeLocale = useRouteLocale();
   const frontmatter = usePageFrontmatter();
 
@@ -127,7 +131,7 @@ export const setupTransparentNavbar = ({
       : type === "homepage"
         ? (): boolean =>
             (frontmatter.value.home as boolean | undefined) ??
-            route.path === routeLocale.value
+            routePath.value === routeLocale.value
         : (): boolean =>
             (frontmatter.value.portfolio as boolean | undefined) ??
             frontmatter.value.layout === "BlogHome",
@@ -148,12 +152,7 @@ export const setupTransparentNavbar = ({
   );
   useEventListener("scroll", transparentNavbar);
 
-  watch(
-    () => route.path,
-    () => nextTick().then(transparentNavbar),
-  );
-
   onMounted(() => {
-    transparentNavbar();
+    watchImmediate(routePath, () => transparentNavbar, { flush: "post" });
   });
 };

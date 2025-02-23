@@ -1,7 +1,8 @@
 import { useLocaleConfig } from "@vuepress/helper/client";
+import { watchImmediate } from "@vueuse/core";
 import katex from "katex";
 import type { VNode } from "vue";
-import { defineComponent, h, ref, watch } from "vue";
+import { defineComponent, h, ref } from "vue";
 
 import "katex/dist/katex.css";
 import "./katex-playground.scss";
@@ -29,23 +30,19 @@ export default defineComponent({
     const result = ref("");
     const inError = ref(false);
 
-    watch(
-      input,
-      () => {
-        try {
-          // eslint-disable-next-line import-x/no-named-as-default-member
-          result.value = katex.renderToString(input.value, {
-            displayMode: true,
-            throwOnError: true,
-          });
-          inError.value = false;
-        } catch (err) {
-          result.value = (err as Error).toString();
-          inError.value = true;
-        }
-      },
-      { immediate: true },
-    );
+    watchImmediate(input, () => {
+      try {
+        // eslint-disable-next-line import-x/no-named-as-default-member
+        result.value = katex.renderToString(input.value, {
+          displayMode: true,
+          throwOnError: true,
+        });
+        inError.value = false;
+      } catch (err) {
+        result.value = (err as Error).toString();
+        inError.value = true;
+      }
+    });
 
     return (): VNode =>
       h("div", { class: "katex-playground" }, [
