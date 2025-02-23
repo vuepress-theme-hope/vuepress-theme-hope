@@ -1,4 +1,4 @@
-import { LoadingIcon, decodeData, wait } from "@vuepress/helper/client";
+import { LoadingIcon, decodeData } from "@vuepress/helper/client";
 import { useDebounceFn, useEventListener } from "@vueuse/core";
 import type { EChartsOption, EChartsType } from "echarts";
 import type { PropType, VNode } from "vue";
@@ -13,8 +13,6 @@ import {
 
 import { useEChartsConfig } from "../helpers/index.js";
 import "../styles/echarts.scss";
-
-declare const MARKDOWN_ENHANCE_DELAY: number;
 
 interface EChartsConfig {
   width?: number;
@@ -108,27 +106,23 @@ export default defineComponent({
       }, 100),
     );
 
-    onMounted(() => {
-      void Promise.all([
-        import(/* webpackChunkName: "echarts" */ "echarts"),
-        // Delay
-        wait(MARKDOWN_ENHANCE_DELAY),
-      ]).then(async ([echarts]) => {
-        await echartsConfig.setup?.();
+    onMounted(async () => {
+      const echarts = await import(/* webpackChunkName: "echarts" */ "echarts");
 
-        instance = echarts.init(echartsContainer.value);
+      await echartsConfig.setup?.();
 
-        const { option, ...size } = await parseEChartsConfig(
-          decodeData(props.config),
-          props.type,
-          instance,
-        );
+      instance = echarts.init(echartsContainer.value);
 
-        instance.resize(size);
-        instance.setOption({ ...echartsConfig.option, ...option });
+      const { option, ...size } = await parseEChartsConfig(
+        decodeData(props.config),
+        props.type,
+        instance,
+      );
 
-        loading.value = false;
-      });
+      instance.resize(size);
+      instance.setOption({ ...echartsConfig.option, ...option });
+
+      loading.value = false;
     });
 
     onUnmounted(() => {

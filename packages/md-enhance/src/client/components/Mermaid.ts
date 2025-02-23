@@ -3,7 +3,6 @@ import {
   decodeData,
   isFunction,
   useDarkMode,
-  wait,
 } from "@vuepress/helper/client";
 import { watchImmediate } from "@vueuse/core";
 import type { VNode } from "vue";
@@ -13,8 +12,6 @@ import { useMermaidOptions } from "../helpers/index.js";
 import type { MermaidThemeVariables } from "../typings/index.js";
 
 import "../styles/mermaid.scss";
-
-declare const MARKDOWN_ENHANCE_DELAY: number;
 
 const DEFAULT_CHART_OPTIONS = { useMaxWidth: false };
 
@@ -112,17 +109,11 @@ export default defineComponent({
     const code = computed(() => decodeData(props.code));
 
     const svgCode = ref("");
-    let loaded = false;
 
     const renderMermaid = async (): Promise<void> => {
-      const [{ default: mermaid }] = await Promise.all([
-        import(
-          /* webpackChunkName: "mermaid" */ "mermaid/dist/mermaid.esm.min.mjs"
-        ),
-        loaded
-          ? Promise.resolve()
-          : ((loaded = true), wait(MARKDOWN_ENHANCE_DELAY)),
-      ]);
+      const { default: mermaid } = await import(
+        /* webpackChunkName: "mermaid" */ "mermaid/dist/mermaid.esm.min.mjs"
+      );
 
       mermaid.initialize({
         theme: "base",

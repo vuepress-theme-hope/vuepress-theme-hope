@@ -15,14 +15,14 @@
     "demo:webpack-dev": "vuepress-webpack dev src"
   },
   "devDependencies": {
-    "@vue/repl": "4.5.0",
+    "@vue/repl": "4.5.1",
     "@vuepress/bundler-vite": "catalog:vuepress",
     "@vuepress/bundler-webpack": "catalog:vuepress",
     "@vuepress/helper": "catalog:vuepress",
     "@vuepress/plugin-docsearch": "catalog:vuepress",
     "@vuepress/plugin-revealjs": "catalog:vuepress",
-    "@waline/client": "3.5.2",
-    "chart.js": "4.4.7",
+    "@waline/client": "3.5.5",
+    "chart.js": "4.4.8",
     "echarts": "5.6.0",
     "katex": "0.16.21",
     "kotlin-playground": "1.30.0",

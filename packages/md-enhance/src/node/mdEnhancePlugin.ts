@@ -82,7 +82,6 @@ export const mdEnhancePlugin =
       name: PLUGIN_NAME,
 
       define: (): Record<string, unknown> => ({
-        MARKDOWN_ENHANCE_DELAY: options.delay ?? 800,
         CODE_DEMO_OPTIONS: {
           ...CODE_DEMO_DEFAULT_SETTING,
           ...(isPlainObject(options.demo) ? options.demo : {}),

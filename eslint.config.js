@@ -1,4 +1,8 @@
-import { globals, hope } from "eslint-config-mister-hope";
+import {
+  defaultNamingConventionRules,
+  globals,
+  hope,
+} from "eslint-config-mister-hope";
 import { vue } from "eslint-config-mister-hope/vue";
 
 export default hope(
@@ -49,70 +53,43 @@ export default hope(
   },
 
   ...vue({
-    "@typescript-eslint/prefer-nullish-coalescing": [
-      "warn",
-      {
-        ignoreConditionalTests: true,
-      },
-    ],
-    "@typescript-eslint/naming-convention": [
-      "warn",
-      {
-        selector: "default",
-        format: ["camelCase"],
-        leadingUnderscore: "allowSingleOrDouble",
-        trailingUnderscore: "allow",
-      },
-      {
-        selector: ["variable"],
-        format: ["camelCase", "PascalCase", "UPPER_CASE"],
-        leadingUnderscore: "allowSingleOrDouble",
-        trailingUnderscore: "allowSingleOrDouble",
-      },
-      {
-        selector: ["parameter"],
-        format: ["camelCase", "PascalCase"],
-        leadingUnderscore: "allow",
-        trailingUnderscore: "allow",
-      },
-      // allow path like `/zh/demo.html`, alias starting with `@` and css property like `line-width`
-      {
-        selector: ["property"],
-        format: null,
-        custom: {
-          regex: "(^/|^@|^[a-z]+(?:-[a-z]+)*?$)",
-          match: true,
+    all: {
+      "@typescript-eslint/prefer-nullish-coalescing": [
+        "warn",
+        { ignoreConditionalTests: true },
+      ],
+      "@typescript-eslint/naming-convention": [
+        "warn",
+
+        // allow path like `/zh/demo.html`, alias starting with `@` and css property like `line-width`
+        {
+          selector: "property",
+          format: null,
+          filter: {
+            regex: "(^/|^@|^[a-z]+(?:-[a-z]+)*?$)",
+            match: true,
+          },
         },
-        filter: "(^/|^@|^[a-z]+(?:-[a-z]+)*?$)",
-      },
-      {
-        selector: ["property"],
-        format: ["camelCase", "PascalCase", "UPPER_CASE"],
-        leadingUnderscore: "allow",
-        trailingUnderscore: "allow",
-      },
-      {
-        selector: "import",
-        format: ["PascalCase", "camelCase"],
-      },
-      {
-        selector: "typeLike",
-        format: ["PascalCase"],
-      },
-    ],
-    "import-x/no-unresolved": [
-      "error",
-      {
-        ignore: [
-          "^@temp\\/",
-          "^@theme-hope\\/",
-          "^vuepress/client",
-          "^vuepress-theme-hope\\/blog\\/",
-          "^vuepress-theme-hope\\/client\\/",
-          "^vuepress-theme-hope\\/presets\\/",
-        ],
-      },
-    ],
+        {
+          selector: "enumMember",
+          format: ["PascalCase", "camelCase"],
+        },
+        ...defaultNamingConventionRules,
+      ],
+      "import-x/no-unresolved": [
+        "error",
+        {
+          ignore: [
+            "^@temp\\/",
+            "^@theme-hope\\/",
+            "^vuepress/client",
+            "^vuepress-theme-hope\\/blog\\/",
+            "^vuepress-theme-hope\\/client\\/",
+            "^vuepress-theme-hope\\/presets\\/",
+          ],
+        },
+      ],
+    },
   }),
 
   {
