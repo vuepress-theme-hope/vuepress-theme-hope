@@ -3,7 +3,7 @@ import { encodeData } from "@vuepress/helper";
 import type { PluginSimple } from "markdown-it";
 import type { MarkdownEnv } from "vuepress/markdown";
 
-import { logger } from "../utils";
+import { logger } from "../utils.js";
 
 export const chart: PluginSimple = (md) => {
   container(md, {
