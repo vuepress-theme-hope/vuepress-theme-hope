@@ -1,4 +1,4 @@
-import { LoadingIcon, decodeData, wait } from "@vuepress/helper/client";
+import { LoadingIcon, decodeData } from "@vuepress/helper/client";
 import { useDebounceFn, useEventListener } from "@vueuse/core";
 import type { Markmap } from "markmap-view";
 import type { VNode } from "vue";
@@ -12,8 +12,6 @@ import {
 } from "vue";
 
 import "../styles/markmap.scss";
-
-declare const MARKDOWN_ENHANCE_DELAY: number;
 
 export default defineComponent({
   name: "MarkMap",
@@ -54,42 +52,40 @@ export default defineComponent({
       }, 100),
     );
 
-    onMounted(() => {
-      void Promise.all([
-        import(/* webpackChunkName: "markmap" */ "markmap-lib"),
-        import(/* webpackChunkName: "markmap" */ "markmap-view"),
-        import(/* webpackChunkName: "markmap" */ "markmap-toolbar"),
-        wait(MARKDOWN_ENHANCE_DELAY),
-      ]).then(
-        async ([{ Transformer }, { Markmap, deriveOptions }, { Toolbar }]) => {
-          const transformer = new Transformer();
-          const { frontmatter, root } = transformer.transform(
-            decodeData(props.content),
-          );
+    onMounted(async () => {
+      const [{ Transformer }, { Markmap, deriveOptions }, { Toolbar }] =
+        await Promise.all([
+          import(/* webpackChunkName: "markmap" */ "markmap-lib"),
+          import(/* webpackChunkName: "markmap" */ "markmap-view"),
+          import(/* webpackChunkName: "markmap" */ "markmap-toolbar"),
+        ]);
 
-          markmap = Markmap.create(
-            // eslint-disable-next-line @typescript-eslint/no-non-null-assertion
-            markmapSvg.value!,
-            deriveOptions({
-              maxWidth: 240,
-              ...frontmatter?.markmap,
-            }),
-          );
-
-          const { el } = Toolbar.create(markmap);
-
-          await markmap.setData(root);
-          await markmap.fit();
-
-          el.style.position = "absolute";
-          el.style.bottom = "0.5rem";
-          el.style.right = "0.5rem";
-
-          // eslint-disable-next-line @typescript-eslint/no-non-null-assertion
-          markupWrapper.value!.append(el);
-          loading.value = false;
-        },
+      const transformer = new Transformer();
+      const { frontmatter, root } = transformer.transform(
+        decodeData(props.content),
       );
+
+      markmap = Markmap.create(
+        // eslint-disable-next-line @typescript-eslint/no-non-null-assertion
+        markmapSvg.value!,
+        deriveOptions({
+          maxWidth: 240,
+          ...frontmatter?.markmap,
+        }),
+      );
+
+      const { el } = Toolbar.create(markmap);
+
+      await markmap.setData(root);
+      await markmap.fit();
+
+      el.style.position = "absolute";
+      el.style.bottom = "0.5rem";
+      el.style.right = "0.5rem";
+
+      // eslint-disable-next-line @typescript-eslint/no-non-null-assertion
+      markupWrapper.value!.append(el);
+      loading.value = false;
     });
 
     onUnmounted(() => {

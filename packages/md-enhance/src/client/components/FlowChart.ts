@@ -1,4 +1,4 @@
-import { LoadingIcon, decodeData, wait } from "@vuepress/helper/client";
+import { LoadingIcon, decodeData } from "@vuepress/helper/client";
 import { useDebounceFn, useEventListener } from "@vueuse/core";
 import type { Chart } from "flowchart.ts";
 import type { PropType, VNode } from "vue";
@@ -15,8 +15,6 @@ import {
 import { flowchartPresets } from "../utils/index.js";
 
 import "../styles/flowchart.scss";
-
-declare const MARKDOWN_ENHANCE_DELAY: number;
 
 export default defineComponent({
   name: "FlowChart",
@@ -61,36 +59,35 @@ export default defineComponent({
     const getScale = (width: number): number =>
       width < 419 ? 0.8 : width > 1280 ? 1 : 0.9;
 
-    onMounted(() => {
-      void Promise.all([
-        import(/* webpackChunkName: "flowchart" */ "flowchart.ts"),
-        wait(MARKDOWN_ENHANCE_DELAY),
-      ]).then(([{ parse }]) => {
-        flowchart = parse(decodeData(props.code));
+    useEventListener(
+      "resize",
+      useDebounceFn(() => {
+        if (flowchart) {
+          const newScale = getScale(window.innerWidth);
 
-        // Update scale
-        scale.value = getScale(window.innerWidth);
+          if (scale.value !== newScale) {
+            scale.value = newScale;
 
-        loading.value = false;
-
-        // Draw svg to #id
-        flowchart.draw(props.id, { ...preset.value, scale: scale.value });
-      });
-
-      useEventListener(
-        "resize",
-        useDebounceFn(() => {
-          if (flowchart) {
-            const newScale = getScale(window.innerWidth);
-
-            if (scale.value !== newScale) {
-              scale.value = newScale;
-
-              flowchart.draw(props.id, { ...preset.value, scale: newScale });
-            }
+            flowchart.draw(props.id, { ...preset.value, scale: newScale });
           }
-        }, 100),
+        }
+      }, 100),
+    );
+
+    onMounted(async () => {
+      const { parse } = await import(
+        /* webpackChunkName: "flowchart" */ "flowchart.ts"
       );
+
+      flowchart = parse(decodeData(props.code));
+
+      // Update scale
+      scale.value = getScale(window.innerWidth);
+
+      loading.value = false;
+
+      // Draw svg to #id
+      flowchart.draw(props.id, { ...preset.value, scale: scale.value });
     });
 
     onUnmounted(() => {

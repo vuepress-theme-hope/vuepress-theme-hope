@@ -15,9 +15,10 @@ import {
   onUnmounted,
   ref,
   resolveComponent,
+  shallowRef,
   watch,
 } from "vue";
-import { usePageFrontmatter, useRouter } from "vuepress/client";
+import { onContentUpdated, usePageFrontmatter } from "vuepress/client";
 import { RenderDefault } from "vuepress-shared/client";
 
 import PageFooter from "@theme-hope/components/PageFooter";
@@ -83,7 +84,6 @@ export default defineComponent({
   }>,
 
   setup(props, { slots }) {
-    const router = useRouter();
     const frontmatter = usePageFrontmatter<
       ThemeProjectHomePageFrontmatter | ThemeNormalPageFrontmatter
     >();
@@ -96,6 +96,9 @@ export default defineComponent({
     const [isDesktopSidebarCollapsed, toggleDesktopSidebar] = useToggle(false);
 
     const sidebarItems = useSidebarItems();
+
+    const body = shallowRef<HTMLElement>();
+    const isLocked = useScrollLock(document.body);
 
     // Navbar
     const hideNavbar = ref(false);
@@ -182,25 +185,24 @@ export default defineComponent({
       ),
     );
 
+    onContentUpdated(() => {
+      toggleMobileSidebar(false);
+    });
+
     watch(isMobile, (value) => {
       if (!value) toggleMobileSidebar(false);
     });
 
+    watch(isMobileSidebarOpen, (value) => {
+      isLocked.value = value;
+    });
+
     onMounted(() => {
-      const isLocked = useScrollLock(document.body);
+      body.value = document.body;
+    });
 
-      watch(isMobileSidebarOpen, (value) => {
-        isLocked.value = value;
-      });
-
-      const unregisterRouterHook = router.afterEach((): void => {
-        toggleMobileSidebar(false);
-      });
-
-      onUnmounted(() => {
-        isLocked.value = false;
-        unregisterRouterHook();
-      });
+    onUnmounted(() => {
+      isLocked.value = false;
     });
 
     return (): VNode =>

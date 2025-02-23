@@ -1,9 +1,4 @@
-import {
-  LoadingIcon,
-  decodeData,
-  useDarkMode,
-  wait,
-} from "@vuepress/helper/client";
+import { LoadingIcon, decodeData, useDarkMode } from "@vuepress/helper/client";
 import { watchImmediate } from "@vueuse/core";
 import type { Chart, ChartConfiguration } from "chart.js";
 import type { PropType, VNode } from "vue";
@@ -18,8 +13,6 @@ import {
 } from "vue";
 
 import "../styles/chartjs.scss";
-
-declare const MARKDOWN_ENHANCE_DELAY: number;
 
 const parseChartConfig = (
   config: string,
@@ -93,16 +86,11 @@ export default defineComponent({
 
     const config = computed(() => decodeData(props.config));
 
-    let loaded = false;
-
     let chartjs: Chart | null;
 
     const renderChart = async (): Promise<void> => {
       const [{ default: ChartJs }] = await Promise.all([
         import(/* webpackChunkName: "chart" */ "chart.js/auto"),
-        loaded
-          ? Promise.resolve()
-          : ((loaded = true), wait(MARKDOWN_ENHANCE_DELAY)),
       ]);
 
       ChartJs.defaults.borderColor = isDarkMode.value ? "#ccc" : "#36A2EB";

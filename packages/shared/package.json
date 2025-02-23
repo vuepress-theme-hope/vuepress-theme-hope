@@ -57,7 +57,7 @@
     "@vuepress/bundler-webpack": "catalog:vuepress",
     "@vuepress/plugin-git": "catalog:vuepress",
     "ora": "8.2.0",
-    "vite": "6.0.11"
+    "vite": "6.1.1"
   },
   "peerDependencies": {
     "vuepress": "catalog:vuepress"

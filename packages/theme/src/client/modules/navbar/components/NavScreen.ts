@@ -9,7 +9,7 @@ import {
   shallowRef,
   watch,
 } from "vue";
-import { usePageData } from "vuepress/client";
+import { onContentUpdated } from "vuepress/client";
 
 import { useWindowSize } from "@theme-hope/composables/index";
 import NavScreenLinks from "@theme-hope/modules/navbar/components/NavScreenLinks";
@@ -29,36 +29,27 @@ export default defineComponent({
     show: Boolean,
   },
 
-  emits: ["close"],
-
   slots: Object as SlotsType<{
     before?: () => VNode[] | VNode | null;
     after?: () => VNode[] | VNode | null;
   }>,
 
-  setup(props, { emit, slots }) {
-    const page = usePageData();
+  setup(props, { slots }) {
     const { isMobile } = useWindowSize();
 
     const body = shallowRef<HTMLElement>();
     const isLocked = useScrollLock(body);
 
+    onContentUpdated(() => {
+      isLocked.value = false;
+    });
+
+    watch(isMobile, (value) => {
+      if (!value && props.show) isLocked.value = false;
+    });
+
     onMounted(() => {
       body.value = document.body;
-
-      watch(isMobile, (value) => {
-        if (!value && props.show) {
-          isLocked.value = false;
-          emit("close");
-        }
-      });
-      watch(
-        () => page.value.path,
-        () => {
-          isLocked.value = false;
-          emit("close");
-        },
-      );
     });
 
     onUnmounted(() => {

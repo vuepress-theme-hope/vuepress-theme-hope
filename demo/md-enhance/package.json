@@ -15,11 +15,11 @@
     "demo:webpack-dev": "vuepress-webpack dev src"
   },
   "devDependencies": {
-    "@vue/repl": "4.5.0",
+    "@vue/repl": "4.5.1",
     "@vuepress/bundler-vite": "catalog:vuepress",
     "@vuepress/bundler-webpack": "catalog:vuepress",
     "@vuepress/theme-default": "catalog:vuepress",
-    "chart.js": "4.4.7",
+    "chart.js": "4.4.8",
     "echarts": "5.6.0",
     "echarts-wordcloud": "2.1.0",
     "katex": "0.16.21",

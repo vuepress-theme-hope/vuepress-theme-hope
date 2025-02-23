@@ -290,19 +290,6 @@ Default value: `"https://unpkg.com/react-dom/umd/react-dom.production.min.js"`
 
 Whether to enable sandpack playground support.
 
-### delay
-
-- Type: `number`
-- Default: `800`
-
-The delay of operating dom, in ms.
-
-::: tip
-
-If the theme you are using has a switching animation, it is recommended to configure this option to `Switch animation duration + 200`.
-
-:::
-
 ## Client Config
 
 ### defineEChartsConfig

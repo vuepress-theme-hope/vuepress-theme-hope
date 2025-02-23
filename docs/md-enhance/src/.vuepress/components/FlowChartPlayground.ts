@@ -1,4 +1,4 @@
-import { useLocaleConfig, wait } from "@vuepress/helper/client";
+import { useLocaleConfig } from "@vuepress/helper/client";
 import { useDebounceFn, useEventListener } from "@vueuse/core";
 import type { Chart } from "flowchart.ts";
 import type { VNode } from "vue";
@@ -6,8 +6,6 @@ import { defineComponent, h, onMounted, ref, shallowRef, watch } from "vue";
 import { flowchartPresets } from "vuepress-plugin-md-enhance/client";
 
 import "./flowchart-playground.scss";
-
-declare const MARKDOWN_ENHANCE_DELAY: number;
 
 const id = "flowchart-playground";
 const DEFAULT_FLOWCHART = `\
@@ -58,10 +56,7 @@ export default defineComponent({
     onMounted(() => {
       let parseAction: ((input?: string) => Chart) | null = null;
 
-      void Promise.all([
-        import("flowchart.ts"),
-        wait(MARKDOWN_ENHANCE_DELAY),
-      ]).then(([{ parse }]) => {
+      void import("flowchart.ts").then(({ parse }) => {
         parseAction = parse;
         try {
           flowchart = parse(config.value);
