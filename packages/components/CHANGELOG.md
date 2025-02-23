@@ -4,6 +4,23 @@ All notable changes to this project will be documented in this file. See [Conven
 
 <!-- #region recent-change -->
 
+## [2.0.0-rc.72](https://github.com/vuepress-theme-hope/vuepress-theme-hope/compare/v2.0.0-rc.71...v2.0.0-rc.72) (2025-02-23)
+
+### ⚠ BREAKING CHANGES
+
+- unify Darkmode to DarkMode
+
+### ✨ Features
+
+- unify Darkmode to DarkMode ([66d77ce](https://github.com/vuepress-theme-hope/vuepress-theme-hope/commit/66d77ce6125e61b7674d438ea1c1254ccaf10511))
+
+### 🐛 Bug Fixes
+
+- **components:** support embedded in devServer, close [#4726](https://github.com/vuepress-theme-hope/vuepress-theme-hope/issues/4726) ([f2bad79](https://github.com/vuepress-theme-hope/vuepress-theme-hope/commit/f2bad7916de596edfe5b7cf2ebb9aabf21a75995))
+- **theme:** fix icon plugin support ([dd4a894](https://github.com/vuepress-theme-hope/vuepress-theme-hope/commit/dd4a894b10f01e01af9414c2682f26ac08bc9747))
+
+<!-- #region recent-change -->
+
 ## [2.0.0-rc.71](https://github.com/vuepress-theme-hope/vuepress-theme-hope/compare/v2.0.0-rc.70...v2.0.0-rc.71) (2025-01-24)
 
 **Note:** Version bump only for package vuepress-plugin-components
