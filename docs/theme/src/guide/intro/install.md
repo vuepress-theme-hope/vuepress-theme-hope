@@ -76,7 +76,7 @@ npm init vuepress-theme-hope@latest add <dir>
 
 Please import and use `hopeTheme` to use `vuepress-theme-hope`, the first argument accepted by `hopeTheme` will be used as the theme config:
 
-```js {5} title=".vuepress/config.js"
+```ts twoslash {5} title=".vuepress/config.ts"
 import { hopeTheme } from "vuepress-theme-hope";
 
 export default {

@@ -144,7 +144,7 @@ npm init vuepress-theme-hope@latest add <dir>
 
 ## 🚀 使用
 
-```js title=".vuepress/config.js"
+```ts twoslash title=".vuepress/config.ts"
 import { hopeTheme } from "vuepress-theme-hope";
 
 export default {

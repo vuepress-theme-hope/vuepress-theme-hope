@@ -16,7 +16,7 @@ The theme fully optimize style for print, and there will be a print button at to
 
 To hide print button, you should set `print: false` in theme options.
 
-```js {5} title=".vuepress/config.js"
+```ts twoslash {5} title=".vuepress/config.ts"
 import { hopeTheme } from "vuepress-theme-hope";
 
 export default {
@@ -34,7 +34,7 @@ Try it:
 
 If you need it, you can enable it by setting `fullscreen: true` in theme options.
 
-```js {5} title=".vuepress/config.js"
+```ts twoslash {5} title=".vuepress/config.ts"
 import { hopeTheme } from "vuepress-theme-hope";
 
 export default {
@@ -56,7 +56,7 @@ If the current browser does not support full screen, the full screen button is a
 
 You can set `plugins.backToTop: false` in theme options to disable it, or set it with an object to customize its threshold distance and progress bar display:
 
-```js {8,13-26} title=".vuepress/config.js"
+```ts twoslash {8,13-26} title=".vuepress/config.ts"
 import { hopeTheme } from "vuepress-theme-hope";
 
 export default {
@@ -101,7 +101,7 @@ This is our support for the visually impaired people around the world! :heart:
 
 If you want to focus on reading, you can enable focus mode by setting `focus: true` in theme options.
 
-```js {5} title=".vuepress/config.js"
+```ts twoslash {5} title=".vuepress/config.ts"
 import { hopeTheme } from "vuepress-theme-hope";
 
 export default {
@@ -119,7 +119,7 @@ The default delay is 1500ms, and you can customize it by setting a number value.
 
 If your site is a documentation-only site, and you prefer a clean style, you can enable pure mode by setting `pure: true` in theme options.
 
-```js {5} title=".vuepress/config.js"
+```ts twoslash {5} title=".vuepress/config.ts"
 import { hopeTheme } from "vuepress-theme-hope";
 
 export default {
@@ -137,7 +137,7 @@ In this mode, we disable some fancy animations and some colors and just provide 
 
 Try it: <ToggleRTLButton />
 
-```js {9} title=".vuepress/config.js"
+```ts twoslash {9} title=".vuepress/config.ts"
 import { hopeTheme } from "vuepress-theme-hope";
 
 export default {

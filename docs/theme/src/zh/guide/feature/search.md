@@ -186,7 +186,7 @@ tag:
 
 1. 通过 `plugins.docsearch` 选项配置插件
 
-   ```js {7-10} title=".vuepress/config.js"
+   ```ts twoslash {7-10} title=".vuepress/config.ts"
    import { hopeTheme } from "vuepress-theme-hope";
 
    export default {
@@ -237,19 +237,17 @@ tag:
 
    你可以将 `plugins.slimsearch` 设置为 `true` 来直接启用它，或者将其设置为一个对象来自定义插件。
 
-   ```js title=".vuepress/config.js"
+   ```ts twoslash title=".vuepress/config.ts"
    import { hopeTheme } from "vuepress-theme-hope";
 
    export default {
      theme: hopeTheme({
        plugins: {
-         slimsearch: true,
-
-         // 或
-
+         // 插件选项
          slimsearch: {
-           // 插件选项
+           // ...
          },
+         // 或 slimsearch: true,
        },
      }),
    };
@@ -291,16 +289,17 @@ tag:
 
 1. 在主题选项中配置 `plugins.search`。
 
-   ```js title=".vuepress/config.js"
+   ```ts twoslash title=".vuepress/config.ts"
    import { hopeTheme } from "vuepress-theme-hope";
 
    export default {
      theme: hopeTheme({
        plugins: {
-         search: true,
-         // search: {
-         //   插件选项
-         // },
+         // 插件选项
+         search: {
+           // ...
+         },
+         // 或 search: true,
        },
      }),
    };

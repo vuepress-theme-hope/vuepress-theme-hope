@@ -21,7 +21,7 @@ If you don't specify the theme to use, the default theme will be used automatica
 To configure the default theme, you need to import and use it in your config file via the [theme](https://vuejs.press/reference/config.html#theme) option:
 
 ```js
-import { defaultTheme } from "vuepress";
+import { defaultTheme } from "@vuepress/theme-default";
 
 export default {
   theme: defaultTheme({

@@ -26,7 +26,7 @@ tag:
 
 字段的键名是路径，值支持填入一个或多个数组格式的密码。
 
-```js {8,10} title=".vuepress/config.js"
+```ts twoslash {8,10} title=".vuepress/config.ts"
 import { hopeTheme } from "vuepress-theme-hope";
 
 export default {
@@ -45,7 +45,9 @@ export default {
 
 你也可以通过设置 `encrypt.config` 为一个对象来为密码输入框添加提示信息，格式如下：
 
-```js {8,10} title=".vuepress/config.js"
+```ts twoslash {8-13} title=".vuepress/config.ts"
+import { hopeTheme } from "vuepress-theme-hope";
+
 export default {
   theme: hopeTheme({
     encrypt: {
@@ -80,7 +82,7 @@ export default {
 
 如果你想为密码输入框添加提示信息，你可以设置 `encrypt.admin` 为一个对象，格式如下：
 
-```js {8,10} title=".vuepress/config.js"
+```ts twoslash {8,10} title=".vuepress/config.ts"
 import { hopeTheme } from "vuepress-theme-hope";
 
 export default {

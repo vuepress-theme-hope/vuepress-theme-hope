@@ -20,7 +20,7 @@ tag:
 
 ## 启用 <Badge text="支持页面配置" />
 
-```js {8,11} title=".vuepress/config.js"
+```ts twoslash {8,11} title=".vuepress/config.ts"
 import { hopeTheme } from "vuepress-theme-hope";
 
 export default {
@@ -112,7 +112,7 @@ npm i -D @waline/client
 
 设置好环境变量后，点击 `Deploy` 部署，一两分钟即可部署完成。之后在主题设置中设置 vercel 地址:
 
-```js {7,8} title=".vuepress/config.js"
+```ts twoslash {7,8} title=".vuepress/config.ts"
 import { hopeTheme } from "vuepress-theme-hope";
 
 export default {
@@ -181,7 +181,7 @@ Vercel 默认域名 `*.vercel.app` 在中国大陆访问速度较慢甚至无法
 1. 进入 Overview，点击 Domains 下方的链接，如果环境配置正确，可以看到 “Twikoo 云函数运行正常” 的提示
 1. Vercel Domains (包含 `https://` 前缀，例如 `https://xxx.vercel.app`) 即为你的环境 ID
 
-```js {7,8} title=".vuepress/config.js"
+```ts twoslash {7,8} title=".vuepress/config.ts"
 import { hopeTheme } from "vuepress-theme-hope";
 
 export default {

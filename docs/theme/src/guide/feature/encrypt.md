@@ -24,7 +24,7 @@ Please **DO NOT USE** this encryption function for any sensitive and confidentia
 
 You can configure encryption options through the `encrypt.config` options in theme options.
 
-```js {8,10} title=".vuepress/config.js"
+```ts twoslash {8,10} title=".vuepress/config.ts"
 import { hopeTheme } from "vuepress-theme-hope";
 
 export default {
@@ -43,7 +43,7 @@ export default {
 
 You can also add hints to the password input box by setting `encrypt.config` to an object with the following format:
 
-```js {8,10} title=".vuepress/config.js"
+```ts twoslash {8-13} title=".vuepress/config.ts"
 import { hopeTheme } from "vuepress-theme-hope";
 
 export default {
@@ -80,7 +80,7 @@ For global encryption, you can set one or more passwords in the format of string
 
 If you want to add hints to the password input box, you can set `encrypt.admin` to an object with the following format:
 
-```js {8,10} title=".vuepress/config.js"
+```ts twoslash {8,10} title=".vuepress/config.ts"
 import { hopeTheme } from "vuepress-theme-hope";
 
 export default {

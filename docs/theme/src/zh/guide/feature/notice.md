@@ -37,7 +37,7 @@ VuePress Theme Hope 允许你通过 [`@vuepress/plugin-notice`][notice] 添加�
 
 这是一个例子:
 
-```js {8,10} title=".vuepress/config.js"
+```ts twoslash {8,10} title=".vuepress/config.ts"
 import { hopeTheme } from "vuepress-theme-hope";
 
 export default {

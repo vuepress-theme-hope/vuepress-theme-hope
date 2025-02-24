@@ -27,7 +27,7 @@ VuePress 站点的基本配置文件是 `.vuepress/config.js` ，但也同样支
 
 一个基础的配置文件是这样的:
 
-```js
+```ts twoslash title=".vuepress/config.ts"
 import { defineUserConfig } from "vuepress";
 import { hopeTheme } from "vuepress-theme-hope";
 

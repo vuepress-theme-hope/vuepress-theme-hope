@@ -20,7 +20,7 @@ tag:
 
 ## Enable <Badge text="Support page config" />
 
-```js {8,11} title=".vuepress/config.js"
+```ts twoslash {8,11} title=".vuepress/config.ts"
 import { hopeTheme } from "vuepress-theme-hope";
 
 export default {
@@ -110,7 +110,7 @@ Then input your new GitHub repo name and set `LEAN_ID`, `LEAN_KEY` and `LEAN_MAS
 
 Click `Deploy` button to deploy. It will show you deploy successfully after some time. Then config the vercel link in your theme options:
 
-```js {7,8} title=".vuepress/config.js"
+```ts twoslash {7,8} title=".vuepress/config.ts"
 import { hopeTheme } from "vuepress-theme-hope";
 
 export default {
@@ -171,7 +171,7 @@ npm i -D twikoo
 1. Go to Overview, click the link under Domains, if the environment configuration is correct, you can see the prompt "Twikoo cloud function is running normally"
 1. Vercel Domains (with `https://` prefix, for example `https://xxx.vercel.app`) is your environment ID
 
-```js {7,8} title=".vuepress/config.js"
+```ts twoslash {7,8} title=".vuepress/config.ts"
 import { hopeTheme } from "vuepress-theme-hope";
 
 export default {

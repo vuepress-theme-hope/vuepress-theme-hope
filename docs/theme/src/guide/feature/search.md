@@ -187,7 +187,7 @@ The theme adds built-in support for [`@vuepress/plugin-docsearch`][docsearch], [
 
 1. Customize the plugin with `plugins.docsearch` in theme options.
 
-   ```js {7-10} title=".vuepress/config.js"
+   ```ts twoslash {7-10} title=".vuepress/config.ts"
    import { hopeTheme } from "vuepress-theme-hope";
 
    export default {
@@ -238,19 +238,17 @@ See [plugin docs][docsearch] for how to use docsearch plugin and its available o
 
    You can set `plugins.slimsearch` to `true` to enable it directly, or set it to an object to customize the plugin.
 
-   ```js title=".vuepress/config.js"
+   ```ts twoslash title=".vuepress/config.ts"
    import { hopeTheme } from "vuepress-theme-hope";
 
    export default {
      theme: hopeTheme({
        plugins: {
-         slimsearch: true,
-
-         // 或
-
+         // plugin options
          slimsearch: {
-           // 插件选项
+           // ...
          },
+         // or slimsearch: true,
        },
      }),
    };
@@ -290,16 +288,16 @@ See [plugin docs][slimsearch] for available options.
 
 1. Customize `plugins.search` in theme options.
 
-   ```js title=".vuepress/config.js"
+   ```ts twoslash title=".vuepress/config.ts"
    import { hopeTheme } from "vuepress-theme-hope";
 
    export default {
      theme: hopeTheme({
        plugins: {
-         search: true,
-         // search: {
-         //   plugin options here
-         // },
+         search: {
+           // plugin options here
+         },
+         // or search: true,
        },
      }),
    };

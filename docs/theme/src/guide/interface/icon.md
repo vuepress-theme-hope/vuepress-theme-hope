@@ -25,7 +25,7 @@ Also, you can use images links with any icon types (relative links are NOT suppo
 
 To specify icon assets, set `plugins.icon.assets` in theme options:
 
-```js {7-21} title=".vuepress/config.js"
+```ts twoslash {7-8} title=".vuepress/config.ts"
 import { hopeTheme } from "vuepress-theme-hope";
 
 export default {
@@ -34,13 +34,37 @@ export default {
       icon: {
         // keywords: "iconify", "fontawesome", "fontawesome-with-brands"
         assets: "fontawesome",
+      },
+    },
+  }),
+};
+```
 
+```ts twoslash {7-11} title=".vuepress/config.ts"
+import { hopeTheme } from "vuepress-theme-hope";
+
+export default {
+  theme: hopeTheme({
+    plugins: {
+      icon: {
         // an url you like
         // for example, these websites allows you to generate your own assets:
         // - a css assets link in [iconfont.cn](https://www.iconfont.cn/?lang=en-us)
         // - a kit link in [fontawesome](https://fontawesome.com)
         assets: "/base/my/font-icon/resource.js",
+      },
+    },
+  }),
+};
+```
 
+```ts twoslash {7-12} title=".vuepress/config.ts"
+import { hopeTheme } from "vuepress-theme-hope";
+
+export default {
+  theme: hopeTheme({
+    plugins: {
+      icon: {
         // an array of above
         assets: [
           "/base/my/font-icon/resource.js",

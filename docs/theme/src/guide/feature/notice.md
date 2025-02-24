@@ -37,7 +37,7 @@ A notice configuration item includes:
 
 Here is an example:
 
-```js {8,10} title=".vuepress/config.js"
+```ts twoslash {8,10} title=".vuepress/config.ts"
 import { hopeTheme } from "vuepress-theme-hope";
 
 export default {

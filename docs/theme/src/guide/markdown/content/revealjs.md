@@ -210,7 +210,7 @@ You can enable built-in plugins in reveal.js via `plugins` in plugin options. It
 
 You can also import and call `defineRevealJsConfig` in [client config file](../../../cookbook/vuepress/config.md#client-config-file) to customize reveal.js:
 
-```js title=".vuepress/client.js"
+```ts title=".vuepress/client.ts"
 import { defineRevealJsConfig } from "@vuepress/plugin-revealjs/client";
 
 defineRevealJsConfig({

@@ -25,7 +25,7 @@ tag:
 
 要指定图标资源，请在主题选项中设置 `plugins.icon.assets`：
 
-```js {7-21} title=".vuepress/config.js"
+```ts twoslash {7-8} title=".vuepress/config.ts"
 import { hopeTheme } from "vuepress-theme-hope";
 
 export default {
@@ -34,10 +34,37 @@ export default {
       icon: {
         // 关键词: "iconify", "fontawesome", "fontawesome-with-brands"
         assets: "fontawesome",
+      },
+    },
+  }),
+};
+```
 
+```ts twoslash {7-11} title=".vuepress/config.ts"
+import { hopeTheme } from "vuepress-theme-hope";
+
+export default {
+  theme: hopeTheme({
+    plugins: {
+      icon: {
         // 你想要的 URL
+        // 例如，这些网站允许你声称自己的资源:
+        // - [iconfont.cn](https://www.iconfont.cn/) 的 CSS 链接
+        // - [fontawesome](https://fontawesome.com) 中的 Kit 链接
         assets: "/base/my/font-icon/resource.js",
+      },
+    },
+  }),
+};
+```
 
+```ts twoslash {7-12} title=".vuepress/config.ts"
+import { hopeTheme } from "vuepress-theme-hope";
+
+export default {
+  theme: hopeTheme({
+    plugins: {
+      icon: {
         // 上述内容的数组
         assets: [
           "/base/my/font-icon/resource.js",

@@ -16,7 +16,7 @@ tag:
 
 要隐藏打印按钮，你应该在主题选项中设置 `print: false`。
 
-```js {5} title=".vuepress/config.js"
+```ts twoslash {5} title=".vuepress/config.ts"
 import { hopeTheme } from "vuepress-theme-hope";
 
 export default {
@@ -34,7 +34,7 @@ export default {
 
 如果你需要这个功能，你可以在主题选项中设置 `fullscreen: true`。
 
-```js {5} title=".vuepress/config.js"
+```ts twoslash {5} title=".vuepress/config.ts"
 import { hopeTheme } from "vuepress-theme-hope";
 
 export default {
@@ -100,7 +100,7 @@ export default defineUserConfig({
 
 如果你更喜欢专注于内容，你可以在主题选项中设置 `focus: true` 启用专注模式。
 
-```js {5} title=".vuepress/config.js"
+```ts twoslash {5} title=".vuepress/config.ts"
 import { hopeTheme } from "vuepress-theme-hope";
 
 export default {
@@ -116,7 +116,7 @@ export default {
 
 如果你的网站是一个纯文档站点，并且你更喜欢干净的样式，你可以在主题选项中设置 `pure: true` 启用纯净模式。
 
-```js {5} title=".vuepress/config.js"
+```ts twoslash {5} title=".vuepress/config.ts"
 import { hopeTheme } from "vuepress-theme-hope";
 
 export default {
@@ -136,7 +136,7 @@ export default {
 
 试一试: <ToggleRTLButton />
 
-```js {9} title=".vuepress/config.js"
+```ts twoslash {9} title=".vuepress/config.ts"
 import { hopeTheme } from "vuepress-theme-hope";
 
 export default {
