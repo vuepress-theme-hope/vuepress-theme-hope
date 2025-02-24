@@ -1,7 +1,7 @@
 import { useFullscreen } from "@vueuse/core";
 import type { VNode } from "vue";
-import { computed, defineComponent, h, ref, watch } from "vue";
-import { usePageData } from "vuepress/client";
+import { computed, defineComponent, h, ref } from "vue";
+import { onContentUpdated } from "vuepress/client";
 
 import { usePure, useThemeData } from "@theme-hope/composables/index";
 import ColorModeSwitch from "@theme-hope/modules/outlook/components/ColorModeSwitch";
@@ -18,7 +18,6 @@ export default defineComponent({
 
   setup() {
     const themeData = useThemeData();
-    const page = usePageData();
     const { canToggle } = useDarkMode();
     const { isSupported } = useFullscreen();
     const isPure = usePure();
@@ -33,12 +32,9 @@ export default defineComponent({
       () => enableThemeColor || canToggle.value || enableFullScreen.value,
     );
 
-    watch(
-      () => page.value.path,
-      () => {
-        open.value = false;
-      },
-    );
+    onContentUpdated(() => {
+      open.value = false;
+    });
 
     return (): VNode | null =>
       enabled.value

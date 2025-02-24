@@ -6,9 +6,8 @@ import {
   ref,
   resolveComponent,
   toRef,
-  watch,
 } from "vue";
-import { usePageData } from "vuepress/client";
+import { onContentUpdated } from "vuepress/client";
 
 import AutoLink from "@theme-hope/components/AutoLink";
 
@@ -39,7 +38,6 @@ export default defineComponent({
   }>,
 
   setup(props, { slots }) {
-    const page = usePageData();
     const config = toRef(props, "config");
 
     const dropdownAriaLabel = computed(
@@ -47,13 +45,6 @@ export default defineComponent({
     );
 
     const open = ref(false);
-
-    watch(
-      () => page.value.path,
-      () => {
-        open.value = false;
-      },
-    );
 
     /**
      * Open the dropdown when user tab and click from keyboard.
@@ -68,6 +59,10 @@ export default defineComponent({
 
       if (isTriggerByTab) open.value = !open.value;
     };
+
+    onContentUpdated(() => {
+      open.value = false;
+    });
 
     return (): VNode =>
       h("div", { class: ["vp-dropdown-wrapper", { open: open.value }] }, [

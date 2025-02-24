@@ -1,6 +1,7 @@
+import { watchImmediate } from "@vueuse/core";
 import type { PropType, VNode } from "vue";
-import { defineComponent, h, ref, watch } from "vue";
-import { useRoute } from "vuepress/client";
+import { defineComponent, h, ref } from "vue";
+import { useRoute, useRoutePath } from "vuepress/client";
 
 import SidebarChild from "@theme-hope/modules/sidebar/components/SidebarChild";
 import SidebarGroup from "@theme-hope/modules/sidebar/components/SidebarGroup";
@@ -27,14 +28,15 @@ export default defineComponent({
 
   setup(props) {
     const route = useRoute();
+    const routePath = useRoutePath();
     const openGroupIndex = ref(-1);
 
     const toggleGroup = (index: number): void => {
       openGroupIndex.value = index === openGroupIndex.value ? -1 : index;
     };
 
-    watch(
-      () => route.path,
+    watchImmediate(
+      routePath,
       (): void => {
         const index = props.config.findIndex((item) =>
           isActiveSidebarItem(route, item),
@@ -42,7 +44,7 @@ export default defineComponent({
 
         openGroupIndex.value = index;
       },
-      { immediate: true, flush: "post" },
+      { flush: "post" },
     );
 
     return (): VNode | null =>

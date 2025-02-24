@@ -4,6 +4,28 @@ All notable changes to this project will be documented in this file. See [Conven
 
 <!-- #region recent-change -->
 
+## [2.0.0-rc.72](https://github.com/vuepress-theme-hope/vuepress-theme-hope/compare/v2.0.0-rc.71...v2.0.0-rc.72) (2025-02-23)
+
+### ⚠ BREAKING CHANGES
+
+- unify Darkmode to DarkMode
+
+### ✨ Features
+
+- **md-enhance:** improve deprecated logger ([ff014d8](https://github.com/vuepress-theme-hope/vuepress-theme-hope/commit/ff014d871965c26b27749d5d9c99b6a83e9ee200))
+- support latest vuepress ([7069276](https://github.com/vuepress-theme-hope/vuepress-theme-hope/commit/70692760f734fa54e223e353cb8a5294f5960d11))
+- **theme:** avoid throwing when root locale is absent, close [#4717](https://github.com/vuepress-theme-hope/vuepress-theme-hope/issues/4717) ([93f3bca](https://github.com/vuepress-theme-hope/vuepress-theme-hope/commit/93f3bca7e9110e1eb709d374aa70153d0a678389))
+- unify Darkmode to DarkMode ([66d77ce](https://github.com/vuepress-theme-hope/vuepress-theme-hope/commit/66d77ce6125e61b7674d438ea1c1254ccaf10511))
+
+### 🐛 Bug Fixes
+
+- **components:** support embedded in devServer, close [#4726](https://github.com/vuepress-theme-hope/vuepress-theme-hope/issues/4726) ([f2bad79](https://github.com/vuepress-theme-hope/vuepress-theme-hope/commit/f2bad7916de596edfe5b7cf2ebb9aabf21a75995))
+- **deps:** update dependency @vue/repl to v4.5.0 ([#4731](https://github.com/vuepress-theme-hope/vuepress-theme-hope/issues/4731)) ([1393eb7](https://github.com/vuepress-theme-hope/vuepress-theme-hope/commit/1393eb7761592443d3d8f2a9844e8bcf8053fce1))
+- **md-enhance:** fix SandPack theme ([4427a36](https://github.com/vuepress-theme-hope/vuepress-theme-hope/commit/4427a36a8f4bbd803b0c1d426961860d92d92505))
+- **theme:** fix icon plugin support ([dd4a894](https://github.com/vuepress-theme-hope/vuepress-theme-hope/commit/dd4a894b10f01e01af9414c2682f26ac08bc9747))
+
+<!-- #region recent-change -->
+
 ## [2.0.0-rc.71](https://github.com/vuepress-theme-hope/vuepress-theme-hope/compare/v2.0.0-rc.70...v2.0.0-rc.71) (2025-01-24)
 
 ### ⚠ BREAKING CHANGES

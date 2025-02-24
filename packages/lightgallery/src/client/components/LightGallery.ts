@@ -1,18 +1,9 @@
-import { wait } from "@vuepress/helper/client";
 import type { GalleryItem } from "lightgallery/lg-utils.js";
 import lightGallery from "lightgallery/lightgallery.es5.js";
 import type { LightGallery } from "lightgallery/lightgallery.js";
 import type { VNode } from "vue";
-import {
-  defineComponent,
-  h,
-  nextTick,
-  onMounted,
-  onUnmounted,
-  shallowRef,
-  watch,
-} from "vue";
-import { usePageData } from "vuepress/client";
+import { defineComponent, h, onUnmounted, shallowRef } from "vue";
+import { onContentUpdated } from "vuepress/client";
 
 import { useLightGalleryPlugins } from "@temp/lightgallery/plugins.js";
 
@@ -21,7 +12,6 @@ import { useLightGalleryOptions } from "../helpers/index.js";
 import "lightgallery/scss/lightgallery.scss";
 
 declare const __LG_SELECTOR__: string;
-declare const __LG_DELAY__: number;
 
 const getImages = (images: HTMLImageElement[]): GalleryItem[] =>
   images.map(
@@ -40,7 +30,6 @@ export default defineComponent({
 
   setup() {
     const lightGalleryOptions = useLightGalleryOptions();
-    const page = usePageData();
 
     const container = shallowRef<HTMLElement>();
 
@@ -50,10 +39,7 @@ export default defineComponent({
     const initLightGallery = async (): Promise<void> => {
       const timeID = (id = new Date().getTime());
 
-      const [lightGalleryPlugins] = await Promise.all([
-        useLightGalleryPlugins(),
-        nextTick().then(() => wait(__LG_DELAY__)),
-      ]);
+      const lightGalleryPlugins = await useLightGalleryPlugins();
 
       if (timeID === id) {
         instance?.destroy();
@@ -80,8 +66,8 @@ export default defineComponent({
       }
     };
 
-    onMounted(() => {
-      watch(() => page.value.path, initLightGallery, { immediate: true });
+    onContentUpdated(async (reason) => {
+      if (reason !== "beforeUnmount") await initLightGallery();
     });
 
     onUnmounted(() => instance?.destroy());

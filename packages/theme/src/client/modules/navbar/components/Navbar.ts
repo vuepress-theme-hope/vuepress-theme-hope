@@ -7,7 +7,15 @@ import type {
   SlotsType,
   VNode,
 } from "vue";
-import { computed, defineComponent, h, ref, resolveComponent } from "vue";
+import {
+  computed,
+  defineComponent,
+  h,
+  ref,
+  resolveComponent,
+  watch,
+} from "vue";
+import { onContentUpdated } from "vuepress/client";
 
 import {
   useThemeLocaleData,
@@ -83,6 +91,14 @@ export default defineComponent({
         ? resolveComponent(component)
         : noopComponent);
 
+    onContentUpdated(() => {
+      showScreen.value = false;
+    });
+
+    watch(isMobile, (value) => {
+      if (!value) showScreen.value = false;
+    });
+
     return (): VNode[] => [
       h(
         "header",
@@ -138,12 +154,7 @@ export default defineComponent({
       ),
       h(
         NavScreen,
-        {
-          show: showScreen.value,
-          onClose: () => {
-            showScreen.value = false;
-          },
-        },
+        { show: showScreen.value },
         {
           before: slots.screenTop,
           after: slots.screenBottom,

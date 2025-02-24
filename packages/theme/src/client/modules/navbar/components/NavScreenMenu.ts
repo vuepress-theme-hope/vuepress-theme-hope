@@ -6,9 +6,8 @@ import {
   ref,
   resolveComponent,
   toRef,
-  watch,
 } from "vue";
-import { usePageData } from "vuepress/client";
+import { onContentUpdated } from "vuepress/client";
 
 import AutoLink from "@theme-hope/components/AutoLink";
 
@@ -35,7 +34,6 @@ export default defineComponent({
   },
 
   setup(props) {
-    const page = usePageData();
     const config = toRef(props, "config");
 
     const ariaLabel = computed(
@@ -44,15 +42,12 @@ export default defineComponent({
 
     const open = ref(false);
 
-    watch(
-      () => page.value.path,
-      () => {
-        open.value = false;
-      },
-    );
-
     const isLastItemOfArray = <T>(item: T, arr: T[]): boolean =>
       arr[arr.length - 1] === item;
+
+    onContentUpdated(() => {
+      open.value = false;
+    });
 
     return (): VNode[] => [
       h(

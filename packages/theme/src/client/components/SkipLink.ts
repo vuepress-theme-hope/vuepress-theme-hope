@@ -1,6 +1,6 @@
 import type { VNode } from "vue";
-import { defineComponent, h, onMounted, shallowRef, watch } from "vue";
-import { usePageData } from "vuepress/client";
+import { defineComponent, h, shallowRef } from "vue";
+import { onContentUpdated } from "vuepress/client";
 
 import { useThemeLocaleData } from "@theme-hope/composables/index";
 
@@ -18,7 +18,6 @@ export default defineComponent({
   },
 
   setup(props) {
-    const page = usePageData();
     const themeLocale = useThemeLocaleData();
 
     const skipToMainContent = shallowRef<HTMLSpanElement>();
@@ -41,14 +40,8 @@ export default defineComponent({
       }
     };
 
-    onMounted(() => {
-      watch(
-        () => page.value.path,
-        () => {
-          // eslint-disable-next-line @typescript-eslint/no-non-null-assertion
-          skipToMainContent.value!.focus();
-        },
-      );
+    onContentUpdated(() => {
+      skipToMainContent.value?.focus();
     });
 
     return (): VNode[] => [

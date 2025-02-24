@@ -1,6 +1,6 @@
 {
   "name": "vuepress-theme-hope",
-  "version": "2.0.0-rc.71",
+  "version": "2.0.0-rc.72",
   "description": "A light vuepress theme with tons of features",
   "keywords": [
     "vuepress",
@@ -100,7 +100,7 @@
     "@vuepress/plugin-theme-data": "catalog:vuepress",
     "@vueuse/core": "catalog:range",
     "balloon-css": "catalog:range",
-    "bcrypt-ts": "^5.0.3",
+    "bcrypt-ts": "^6.0.0",
     "chokidar": "^3.6.0",
     "vue": "catalog:range",
     "vuepress-plugin-components": "workspace:*",

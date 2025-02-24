@@ -1,6 +1,6 @@
-import { usePreferredDark, useStorage } from "@vueuse/core";
+import { usePreferredDark, useStorage, watchImmediate } from "@vueuse/core";
 import type { App, ComputedRef, InjectionKey, Ref } from "vue";
-import { computed, inject, onMounted, watch, watchEffect } from "vue";
+import { computed, inject, onMounted, watchEffect } from "vue";
 
 import { useThemeData } from "@theme-hope/composables/index";
 
@@ -96,16 +96,12 @@ export const setupDarkMode = (): void => {
   });
 
   onMounted(() => {
-    watch(
-      isDarkMode,
-      (isDarkMode) => {
-        document.documentElement.setAttribute(
-          "data-theme",
-          isDarkMode ? "dark" : "light",
-        );
-      },
-      { immediate: true },
-    );
+    watchImmediate(isDarkMode, (isDarkMode) => {
+      document.documentElement.setAttribute(
+        "data-theme",
+        isDarkMode ? "dark" : "light",
+      );
+    });
   });
 };
 

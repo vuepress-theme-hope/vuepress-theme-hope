@@ -4,6 +4,24 @@ All notable changes to this project will be documented in this file. See [Conven
 
 <!-- #region recent-change -->
 
+## [2.0.0-rc.72](https://github.com/vuepress-theme-hope/vuepress-theme-hope/compare/v2.0.0-rc.71...v2.0.0-rc.72) (2025-02-23)
+
+### ⚠ BREAKING CHANGES
+
+- unify Darkmode to DarkMode
+
+### ✨ Features
+
+- **md-enhance:** improve deprecated logger ([ff014d8](https://github.com/vuepress-theme-hope/vuepress-theme-hope/commit/ff014d871965c26b27749d5d9c99b6a83e9ee200))
+- support latest vuepress ([7069276](https://github.com/vuepress-theme-hope/vuepress-theme-hope/commit/70692760f734fa54e223e353cb8a5294f5960d11))
+- unify Darkmode to DarkMode ([66d77ce](https://github.com/vuepress-theme-hope/vuepress-theme-hope/commit/66d77ce6125e61b7674d438ea1c1254ccaf10511))
+
+### 🐛 Bug Fixes
+
+- **md-enhance:** fix SandPack theme ([4427a36](https://github.com/vuepress-theme-hope/vuepress-theme-hope/commit/4427a36a8f4bbd803b0c1d426961860d92d92505))
+
+<!-- #region recent-change -->
+
 ## [2.0.0-rc.71](https://github.com/vuepress-theme-hope/vuepress-theme-hope/compare/v2.0.0-rc.70...v2.0.0-rc.71) (2025-01-24)
 
 ### 🐛 Bug Fixes

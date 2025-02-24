@@ -26,8 +26,6 @@ export const lightgalleryPlugin =
         // eslint-disable-next-line @typescript-eslint/naming-convention
         __LG_SELECTOR__:
           options.selector ?? "[vp-content] :not(a) > img:not([no-view])",
-        // eslint-disable-next-line @typescript-eslint/naming-convention
-        __LG_DELAY__: options.delay ?? 800,
       }),
 
       extendsBundlerOptions: (bundlerOptions: unknown, app): void => {

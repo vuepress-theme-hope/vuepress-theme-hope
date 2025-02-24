@@ -1,6 +1,6 @@
-import { useNow } from "@vueuse/core";
-import { computed, onMounted, watch } from "vue";
-import { usePageData, useRouteLocale } from "vuepress/client";
+import { useNow, watchImmediate } from "@vueuse/core";
+import { computed, onMounted } from "vue";
+import { useRouteLocale, useRoutePath } from "vuepress/client";
 
 const millisecondPerDay = 1000 * 60 * 60 * 24;
 
@@ -26,7 +26,7 @@ export const setupRunningTimeFooter = (
   ).getTime();
   let prevTimeText = "";
 
-  const page = usePageData();
+  const routePath = useRoutePath();
   const now = useNow();
   const routeLocale = useRouteLocale();
 
@@ -43,8 +43,8 @@ export const setupRunningTimeFooter = (
   });
 
   onMounted(() => {
-    watch(
-      () => [page.value.path, pastedTime.value],
+    watchImmediate(
+      [routePath, pastedTime],
       () => {
         const footer = document.querySelector(".vp-footer");
 
@@ -64,10 +64,7 @@ export const setupRunningTimeFooter = (
           prevTimeText = localeText;
         }
       },
-      {
-        flush: "post",
-        immediate: true,
-      },
+      { flush: "post" },
     );
   });
 };

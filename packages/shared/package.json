@@ -1,6 +1,6 @@
 {
   "name": "vuepress-shared",
-  "version": "2.0.0-rc.71",
+  "version": "2.0.0-rc.72",
   "description": "Shared files for vuepress2",
   "keywords": [
     "vuepress",
@@ -57,7 +57,7 @@
     "@vuepress/bundler-webpack": "catalog:vuepress",
     "@vuepress/plugin-git": "catalog:vuepress",
     "ora": "8.2.0",
-    "vite": "6.0.11"
+    "vite": "6.1.1"
   },
   "peerDependencies": {
     "vuepress": "catalog:vuepress"

@@ -4,7 +4,7 @@ import { resolve } from "node:path";
 import { input, select } from "@inquirer/prompts";
 
 import type { PackageManager, SupportedBundler } from "./config/index.js";
-import { supportedBundlers, version } from "./config/index.js";
+import { supportedBundlers, version, vuepressVersion } from "./config/index.js";
 import type { CreateLocale } from "./i18n/typings.js";
 import { PACKAGE_NAME_REG, VERSION_REG, deepAssign } from "./utils/index.js";
 
@@ -55,10 +55,10 @@ export const createPackageJson = async ({
   const packageJsonPath = resolve(cwd, "package.json");
   const scripts = getScript(packageManager, bundler, source);
   const devDependencies = {
-    [`@vuepress/bundler-${bundler}`]: "2.0.0-rc.19",
+    [`@vuepress/bundler-${bundler}`]: vuepressVersion,
     "sass-embedded": "^1.85.0",
     vue: "^3.5.13",
-    vuepress: "2.0.0-rc.19",
+    vuepress: vuepressVersion,
     "vuepress-theme-hope": version,
   };
 

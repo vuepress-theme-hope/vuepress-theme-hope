@@ -118,10 +118,20 @@ export default defineComponent({
   setup(props) {
     const { el, width, height, resize } = useSize<HTMLDivElement>(props);
     const locales = useLocaleConfig(PDF_LOCALES);
+
+    const body = shallowRef<HTMLElement>();
     const viewer = shallowRef<HTMLElement>();
+    const isLocked = useScrollLock(body);
+
     const isFullscreen = ref(false);
 
+    watch(isFullscreen, (value) => {
+      isLocked.value = value;
+    });
+
     onMounted(() => {
+      body.value = document.body;
+
       // eslint-disable-next-line @typescript-eslint/no-non-null-assertion
       viewPDF(getLink(props.url), viewer.value!, {
         title: props.title,
@@ -136,16 +146,10 @@ export default defineComponent({
         force: props.viewer,
       });
       resize();
+    });
 
-      const isLocked = useScrollLock(document.body);
-
-      watch(isFullscreen, (value) => {
-        isLocked.value = value;
-      });
-
-      onUnmounted(() => {
-        isLocked.value = false;
-      });
+    onUnmounted(() => {
+      isLocked.value = false;
     });
 
     return (): VNode =>

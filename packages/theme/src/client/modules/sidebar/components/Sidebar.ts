@@ -1,5 +1,6 @@
+import { watchImmediate } from "@vueuse/core";
 import type { SlotsType, VNode } from "vue";
-import { defineComponent, h, onMounted, shallowRef, watch } from "vue";
+import { defineComponent, h, onMounted, shallowRef } from "vue";
 import { useRoute } from "vuepress/client";
 
 import SidebarLinks from "@theme-hope/modules/sidebar/components/SidebarLinks";
@@ -24,7 +25,7 @@ export default defineComponent({
 
     onMounted(() => {
       // Scroll to active sidebar item
-      watch(
+      watchImmediate(
         () => route.hash,
         (hash): void => {
           // Get the active sidebar item DOM, whose href equals to the current route
@@ -54,7 +55,6 @@ export default defineComponent({
             // Scroll to the bottom edge of sidebar
             activeSidebarItem.scrollIntoView(false);
         },
-        { immediate: true },
       );
     });
 

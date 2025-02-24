@@ -1,4 +1,5 @@
 import { hasGlobalComponent, isString } from "@vuepress/helper/client";
+import { watchImmediate } from "@vueuse/core";
 import type { SlotsType, VNode } from "vue";
 import {
   computed,
@@ -8,7 +9,6 @@ import {
   onMounted,
   ref,
   resolveComponent,
-  watch,
 } from "vue";
 import { usePageFrontmatter, withBase } from "vuepress/client";
 
@@ -137,14 +137,10 @@ export default defineComponent({
     let stop: (() => void) | null;
 
     onMounted(() => {
-      watch(
-        currentTitle,
-        () => {
-          stop?.();
-          stop = startTyping();
-        },
-        { immediate: true },
-      );
+      watchImmediate(currentTitle, () => {
+        stop?.();
+        stop = startTyping();
+      });
     });
 
     return (): VNode =>
