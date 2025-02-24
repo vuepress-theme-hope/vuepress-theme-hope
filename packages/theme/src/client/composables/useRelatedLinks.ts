@@ -1,7 +1,11 @@
 import { isPlainObject, isString } from "@vuepress/helper/client";
 import type { ComputedRef } from "vue";
 import { computed } from "vue";
-import { resolveRoute, usePageFrontmatter, useRoute } from "vuepress/client";
+import {
+  resolveRoute,
+  usePageFrontmatter,
+  useRoutePath,
+} from "vuepress/client";
 
 import { useSidebarItems } from "@theme-hope/modules/sidebar/composables/index";
 import type { SidebarItem } from "@theme-hope/modules/sidebar/utils/index";
@@ -97,12 +101,12 @@ export const useRelatedLinks = (): RelatedLinks => {
   const frontmatter = usePageFrontmatter<ThemeNormalPageFrontmatter>();
   const themeLocale = useThemeLocaleData();
   const sidebarItems = useSidebarItems();
-  const route = useRoute();
+  const routePath = useRoutePath();
 
   const prevLink = computed(() => {
     const prevConfig = resolveFromFrontmatterConfig(
       frontmatter.value.prev,
-      route.path,
+      routePath.value,
     );
 
     return prevConfig === false
@@ -110,13 +114,17 @@ export const useRelatedLinks = (): RelatedLinks => {
       : (prevConfig ??
           (themeLocale.value.prevLink === false
             ? null
-            : resolveFromSidebarItems(sidebarItems.value, route.path, -1)));
+            : resolveFromSidebarItems(
+                sidebarItems.value,
+                routePath.value,
+                -1,
+              )));
   });
 
   const nextLink = computed(() => {
     const nextConfig = resolveFromFrontmatterConfig(
       frontmatter.value.next,
-      route.path,
+      routePath.value,
     );
 
     return nextConfig === false
@@ -124,7 +132,7 @@ export const useRelatedLinks = (): RelatedLinks => {
       : (nextConfig ??
           (themeLocale.value.nextLink === false
             ? null
-            : resolveFromSidebarItems(sidebarItems.value, route.path, 1)));
+            : resolveFromSidebarItems(sidebarItems.value, routePath.value, 1)));
   });
 
   return {

@@ -2,7 +2,7 @@ import { isString } from "@vuepress/helper/client";
 import { useMutationObserver } from "@vueuse/core";
 import type { VNode } from "vue";
 import { defineComponent, h, ref, shallowRef } from "vue";
-import { useRoute } from "vuepress/client";
+import { useRoutePath } from "vuepress/client";
 
 import { usePure } from "@theme-hope/composables/index";
 import { EyeIcon, FireIcon } from "@theme-hope/modules/info/components/icons";
@@ -23,7 +23,7 @@ export default defineComponent({
   },
 
   setup(props) {
-    const route = useRoute();
+    const routePath = useRoutePath();
     const metaLocale = useMetaLocale();
     const isPure = usePure();
 
@@ -62,10 +62,10 @@ export default defineComponent({
                   class: "vp-pageview waline-pageview-count",
                   "data-path": isString(props.pageview)
                     ? props.pageview
-                    : route.path,
+                    : routePath.value,
                   "data-page-key": isString(props.pageview)
                     ? props.pageview
-                    : route.path,
+                    : routePath.value,
                 },
                 "...",
               ),
