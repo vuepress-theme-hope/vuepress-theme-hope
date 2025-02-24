@@ -4,6 +4,23 @@ All notable changes to this project will be documented in this file. See [Conven
 
 <!-- #region recent-change -->
 
+## [2.0.0-rc.73](https://github.com/vuepress-theme-hope/vuepress-theme-hope/compare/v2.0.0-rc.72...v2.0.0-rc.73) (2025-02-24)
+
+### ⚠ BREAKING CHANGES
+
+- **theme:** remove enums
+
+### ✨ Features
+
+- **theme:** prefer useHeaders and remove headers from page data ([f91f0cb](https://github.com/vuepress-theme-hope/vuepress-theme-hope/commit/f91f0cbfbac0796ae102550d1abc35501577d21e))
+- **theme:** remove enums ([5d9d629](https://github.com/vuepress-theme-hope/vuepress-theme-hope/commit/5d9d6291bcb8777001370a3927f215bde1ac4356))
+
+### 🐛 Bug Fixes
+
+- **theme:** fix navigate with hash and query ([233d320](https://github.com/vuepress-theme-hope/vuepress-theme-hope/commit/233d320134787d1479f17ad71a7dc8b8521acb60))
+
+<!-- #region recent-change -->
+
 ## [2.0.0-rc.72](https://github.com/vuepress-theme-hope/vuepress-theme-hope/compare/v2.0.0-rc.71...v2.0.0-rc.72) (2025-02-23)
 
 ### ⚠ BREAKING CHANGES

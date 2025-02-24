@@ -4,6 +4,14 @@ All notable changes to this project will be documented in this file. See [Conven
 
 <!-- #region recent-change -->
 
+## [2.0.0-rc.73](https://github.com/vuepress-theme-hope/vuepress-theme-hope/compare/v2.0.0-rc.72...v2.0.0-rc.73) (2025-02-24)
+
+### 🐛 Bug Fixes
+
+- **create:** fix package.json reading ([e98eb87](https://github.com/vuepress-theme-hope/vuepress-theme-hope/commit/e98eb875c142c71e803d0fdef602f9f0a87f58c6))
+
+<!-- #region recent-change -->
+
 ## [2.0.0-rc.72](https://github.com/vuepress-theme-hope/vuepress-theme-hope/compare/v2.0.0-rc.71...v2.0.0-rc.72) (2025-02-23)
 
 ### ✨ Features
