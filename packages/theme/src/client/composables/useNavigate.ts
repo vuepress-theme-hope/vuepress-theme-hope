@@ -17,7 +17,7 @@ export const useNavigate = (): ((url: string) => void) => {
 
     // Inner absolute path
     if (isLinkAbsolute(url)) {
-      if (route.path === url) return;
+      if (route.fullPath === url) return;
 
       return void router.push(url);
     }
