@@ -24,7 +24,6 @@ import type {
   PageInfoData,
   ThemeNormalPageFrontmatter,
 } from "../../shared/index.js";
-import { PageInfo } from "../../shared/index.js";
 
 import "../styles/breadcrumb.scss";
 
@@ -68,11 +67,11 @@ export default defineComponent({
         .map<BreadCrumbConfig | null>(({ link, name }) => {
           const { path, meta, notFound } = resolveRoute<PageInfoData>(link);
 
-          if (notFound || meta[PageInfo.breadcrumbExclude]) return null;
+          if (notFound || meta.breadcrumbExclude) return null;
 
           return {
-            title: meta[PageInfo.shortTitle] || meta[PageInfo.title] || name,
-            icon: meta[PageInfo.icon],
+            title: meta.shortTitle || meta.title || name,
+            icon: meta.icon,
             path,
           };
         })

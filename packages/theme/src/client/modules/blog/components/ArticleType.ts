@@ -13,8 +13,6 @@ import {
   useStars,
 } from "@theme-hope/modules/blog/composables/index";
 
-import { PageInfo } from "../../../../shared/index.js";
-
 import "../styles/article-type.scss";
 
 declare const __VP_BLOG_TYPES__: { key: string; path: string }[];
@@ -43,7 +41,7 @@ export default defineComponent({
             text:
               // eslint-disable-next-line @typescript-eslint/no-unnecessary-condition
               blogLocale.value[key] ??
-              resolveRoute(routePath).meta[PageInfo.title] ??
+              resolveRoute(routePath).meta.title ??
               key,
             path: routePath,
           };

@@ -6,7 +6,6 @@ import { computed, inject, provide } from "vue";
 import { usePageLang } from "vuepress/client";
 
 import type { ArticleInfoData } from "../../../../shared/index.js";
-import { ArticleInfo } from "../../../../shared/index.js";
 
 declare const __VUEPRESS_DEV__: boolean;
 
@@ -48,7 +47,7 @@ export const setupTimeline = (): void => {
 
     // Filter before sort
     timeline.value.items.forEach(({ info, path }) => {
-      const result = getDate(info[ArticleInfo.date]);
+      const result = getDate(info.date);
 
       if (result) {
         const year = result.getFullYear();

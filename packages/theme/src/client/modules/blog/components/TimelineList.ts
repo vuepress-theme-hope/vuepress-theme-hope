@@ -10,8 +10,6 @@ import {
   useTimeline,
 } from "@theme-hope/modules/blog/composables/index";
 
-import { PageInfo } from "../../../../shared/index.js";
-
 import "../styles/timeline-list.scss";
 
 export default defineComponent({
@@ -61,7 +59,7 @@ export default defineComponent({
                           h(
                             RouteLink,
                             { class: "timeline-title", to: path },
-                            () => info[PageInfo.title],
+                            () => info.title,
                           ),
                         ]),
                       ),

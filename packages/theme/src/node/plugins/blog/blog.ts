@@ -17,7 +17,6 @@ import type {
   ThemeData,
   ThemePageData,
 } from "../../../shared/index.js";
-import { ArticleInfo } from "../../../shared/index.js";
 
 /** @private */
 export const getBlogPlugin = (
@@ -59,7 +58,7 @@ export const getBlogPlugin = (
       injectBlogBasicInfo(page, info);
 
       // Resolve encrypted
-      if (isEncrypted) info[ArticleInfo.isEncrypted] = true;
+      if (isEncrypted) info.isEncrypted = true;
 
       // Resolve reading-time
       if (
@@ -67,7 +66,7 @@ export const getBlogPlugin = (
         page.data.readingTime &&
         page.data.readingTime.words !== 0
       )
-        info[ArticleInfo.readingTime] = page.data.readingTime;
+        info.readingTime = page.data.readingTime;
 
       return info as Record<string, unknown>;
     },

@@ -9,7 +9,6 @@ import type {
   ThemeData,
   ThemeNormalPageFrontmatter,
 } from "../../../shared/index.js";
-import { ArticleInfo } from "../../../shared/index.js";
 
 /** @private */
 export const getBlogArticleType = (
@@ -70,10 +69,7 @@ export const getBlogStarType = (
       if (prevKey && !nextKey) return -1;
       if (!prevKey && nextKey) return 1;
 
-      return dateSorter(
-        pageA.routeMeta[ArticleInfo.date],
-        pageB.routeMeta[ArticleInfo.date],
-      );
+      return dateSorter(pageA.routeMeta.date, pageB.routeMeta.date);
     },
 
     path: options.star,
@@ -105,13 +101,10 @@ export const getBlogTimelineType = (
     key: "timeline",
 
     filter: ({ frontmatter, routeMeta }) =>
-      ArticleInfo.date in routeMeta && frontmatter.timeline !== false,
+      "date" in routeMeta && frontmatter.timeline !== false,
 
     sorter: (pageA, pageB) =>
-      dateSorter(
-        pageA.routeMeta[ArticleInfo.date],
-        pageB.routeMeta[ArticleInfo.date],
-      ),
+      dateSorter(pageA.routeMeta.date, pageB.routeMeta.date),
 
     path: options.timeline,
     layout: "Timeline",

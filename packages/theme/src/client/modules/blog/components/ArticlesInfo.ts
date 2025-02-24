@@ -11,8 +11,6 @@ import {
   useStars,
 } from "@theme-hope/modules/blog/composables/index";
 
-import { PageInfo } from "../../../../shared/index.js";
-
 export default defineComponent({
   name: "ArticlesInfo",
 
@@ -55,7 +53,7 @@ export default defineComponent({
                       h(
                         "li",
                         { class: "vp-star-article" },
-                        h(RouteLink, { to: path }, () => info[PageInfo.title]),
+                        h(RouteLink, { to: path }, () => info.title),
                       ),
                   ),
                 ),

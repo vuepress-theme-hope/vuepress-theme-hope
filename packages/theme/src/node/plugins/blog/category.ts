@@ -9,7 +9,6 @@ import type {
   ThemeData,
   ThemeNormalPageFrontmatter,
 } from "../../../shared/index.js";
-import { ArticleInfo } from "../../../shared/index.js";
 
 /** @private */
 export const getBlogCategoryCategory = (
@@ -23,7 +22,7 @@ export const getBlogCategoryCategory = (
   ({
     key: "category",
     getter: ({ routeMeta }) => {
-      const category = routeMeta[ArticleInfo.category];
+      const category = routeMeta.category;
 
       return isArray(category) ? category : [];
     },
@@ -64,7 +63,7 @@ export const getBlogTagCategory = (
   ({
     key: "tag",
     getter: ({ routeMeta }) => {
-      const tag = routeMeta[ArticleInfo.tag];
+      const tag = routeMeta.tag;
 
       return isArray(tag) ? tag : [];
     },

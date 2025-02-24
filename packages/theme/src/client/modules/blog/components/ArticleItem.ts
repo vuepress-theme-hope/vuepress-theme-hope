@@ -15,11 +15,6 @@ import type {
   ArticleInfoData,
   PageInfoData,
 } from "../../../../shared/index.js";
-import {
-  ArticleInfo,
-  PageInfo as PageInfoEnum,
-  PageType,
-} from "../../../../shared/index.js";
 
 import "../styles/article-item.scss";
 
@@ -65,12 +60,12 @@ export default defineComponent({
 
     return (): VNode => {
       const {
-        [PageInfoEnum.title]: title,
-        [ArticleInfo.type]: type,
-        [ArticleInfo.isEncrypted]: isEncrypted = false,
-        [ArticleInfo.cover]: cover,
-        [ArticleInfo.excerpt]: excerpt,
-        [ArticleInfo.sticky]: sticky,
+        title,
+        ["type"]: type,
+        ["isEncrypted"]: isEncrypted = false,
+        ["cover"]: cover,
+        ["excerpt"]: excerpt,
+        ["sticky"]: sticky,
       } = articleInfo.value;
       const info = pageInfo.value;
 
@@ -117,7 +112,7 @@ export default defineComponent({
                 slots.title?.({ title, isEncrypted, type }) ??
                 h("header", { class: "vp-article-title" }, [
                   isEncrypted ? h(LockIcon) : null,
-                  type === PageType.slide ? h(SlideIcon) : null,
+                  type === "slide" ? h(SlideIcon) : null,
                   h("span", { property: "headline" }, title),
                 ]),
             ),

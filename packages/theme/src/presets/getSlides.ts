@@ -7,7 +7,6 @@ import type {
   ArticleInfoData,
   ThemeNormalPageFrontmatter,
 } from "../shared/index.js";
-import { ArticleInfo } from "../shared/index.js";
 
 export interface SlidesOptions {
   /**
@@ -62,10 +61,7 @@ export const getSlides = ({
       if (prevKey && !nextKey) return -1;
       if (!prevKey && nextKey) return 1;
 
-      return dateSorter(
-        pageA.routeMeta[ArticleInfo.date],
-        pageB.routeMeta[ArticleInfo.date],
-      );
+      return dateSorter(pageA.routeMeta.date, pageB.routeMeta.date);
     },
 
     path,

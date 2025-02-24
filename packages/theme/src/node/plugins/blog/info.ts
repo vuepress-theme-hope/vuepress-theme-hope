@@ -9,7 +9,6 @@ import type {
   ThemePageData,
   ThemeProjectHomePageFrontmatter,
 } from "../../../shared/index.js";
-import { ArticleInfo, PageType } from "../../../shared/index.js";
 
 /** @private */
 export const injectBlogBasicInfo = (
@@ -30,65 +29,60 @@ export const injectBlogBasicInfo = (
   const isSlide = frontmatter.layout === "SlidePage";
 
   // Save page type to routeMeta
-  page.routeMeta[ArticleInfo.type] = frontmatter.home
-    ? PageType.home
+  page.routeMeta.type = frontmatter.home
+    ? "home"
     : isSlide
-      ? PageType.slide
+      ? "slide"
       : isArticle
-        ? PageType.article
-        : PageType.page;
+        ? "article"
+        : "page";
 
   // Resolve author
-  if (frontmatter.author) info[ArticleInfo.author] = frontmatter.author;
+  if (frontmatter.author) info.author = frontmatter.author;
 
   // Resolve date
   if (frontmatter.date) {
     const date = getDate(page.frontmatter.date);
 
     if (date) {
-      info[ArticleInfo.date] = date.getTime();
+      info.date = date.getTime();
 
       // eslint-disable-next-line @typescript-eslint/no-non-null-assertion
-      info[ArticleInfo.localizedDate] = timeTransformer(date, {
+      info.localizedDate = timeTransformer(date, {
         lang: page.lang,
         type: "date",
       })!;
     }
   } else if (createdTime) {
-    info[ArticleInfo.date] = createdTime;
+    info.date = createdTime;
   }
 
   // Resolve category
   if (frontmatter.category)
-    info[ArticleInfo.category] = isArray(frontmatter.category)
+    info.category = isArray(frontmatter.category)
       ? frontmatter.category
       : [frontmatter.category];
-  else if (frontmatter.categories)
-    info[ArticleInfo.category] = frontmatter.categories;
+  else if (frontmatter.categories) info.category = frontmatter.categories;
 
   // Resolve tag
   if (frontmatter.tag)
-    info[ArticleInfo.tag] = isArray(frontmatter.tag)
-      ? frontmatter.tag
-      : [frontmatter.tag];
-  else if (frontmatter.tags) info[ArticleInfo.tag] = frontmatter.tags;
+    info.tag = isArray(frontmatter.tag) ? frontmatter.tag : [frontmatter.tag];
+  else if (frontmatter.tags) info.tag = frontmatter.tags;
 
   // Resolve sticky
   if ("sticky" in frontmatter)
-    info[ArticleInfo.sticky] = frontmatter.sticky as number | boolean;
+    info.sticky = frontmatter.sticky as number | boolean;
 
   // Resolve image
-  if (frontmatter.cover) info[ArticleInfo.cover] = frontmatter.cover;
+  if (frontmatter.cover) info.cover = frontmatter.cover;
 
   // Resolve isOriginal
-  if (frontmatter.isOriginal)
-    info[ArticleInfo.isOriginal] = frontmatter.isOriginal;
+  if (frontmatter.isOriginal) info.isOriginal = frontmatter.isOriginal;
 
   // Save page excerpt to routeMeta
-  if (frontmatter.excerpt)
-    info[ArticleInfo.excerpt] = frontmatter.excerpt as string;
-  else if (page.data.excerpt) info[ArticleInfo.excerpt] = page.data.excerpt;
+  if (frontmatter.excerpt) info.excerpt = frontmatter.excerpt as string;
+  else if (page.data.excerpt) info.excerpt = page.data.excerpt;
   // Fallback to user-defined description
   else if (frontmatter.description && !page.data.autoDesc)
-    info[ArticleInfo.excerpt] = frontmatter.description;
+    info.excerpt = frontmatter.description;
 };

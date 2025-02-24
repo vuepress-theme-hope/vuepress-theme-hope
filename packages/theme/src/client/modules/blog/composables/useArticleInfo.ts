@@ -22,7 +22,6 @@ import type {
   ArticleInfoData,
   PageInfoType,
 } from "../../../../shared/index.js";
-import { ArticleInfo } from "../../../../shared/index.js";
 
 export type AuthorRef = ComputedRef<AuthorInfo[]>;
 
@@ -30,7 +29,7 @@ export const useArticleAuthor = (info: Ref<ArticleInfoData>): AuthorRef => {
   const themeLocale = useThemeLocaleData();
 
   return computed(() => {
-    const { [ArticleInfo.author]: author } = info.value;
+    const { ["author"]: author } = info.value;
 
     if (author) return getAuthor(author);
     if (author === false) return [];
@@ -45,7 +44,7 @@ export const useArticleCategory = (info: Ref<ArticleInfoData>): CategoryRef => {
   const categoryMap = useCategoryMap();
 
   return computed(() =>
-    getCategory(info.value[ArticleInfo.category]).map((name) => ({
+    getCategory(info.value.category).map((name) => ({
       name,
       path: categoryMap.value.map[name].path,
     })),
@@ -58,7 +57,7 @@ export const useArticleTag = (info: Ref<ArticleInfoData>): TagRef => {
   const tagMap = useTagMap();
 
   return computed(() =>
-    getTag(info.value[ArticleInfo.tag]).map((name) => ({
+    getTag(info.value.tag).map((name) => ({
       name,
       path: tagMap.value.map[name].path,
     })),
@@ -69,7 +68,7 @@ export type DateRef = ComputedRef<Date | null>;
 
 export const useArticleDate = (info: Ref<ArticleInfoData>): DateRef =>
   computed(() => {
-    const { [ArticleInfo.date]: timestamp } = info.value;
+    const { ["date"]: timestamp } = info.value;
 
     return getDate(timestamp);
   });
@@ -93,15 +92,14 @@ export const useArticleInfo = (props: {
     author: author.value,
     category: category.value,
     date: date.value,
-    localizedDate: articleInfo.value[ArticleInfo.localizedDate] ?? "",
+    localizedDate: articleInfo.value.localizedDate ?? "",
     tag: tag.value,
-    isOriginal: articleInfo.value[ArticleInfo.isOriginal] ?? false,
-    readingTime: articleInfo.value[ArticleInfo.readingTime] ?? null,
+    isOriginal: articleInfo.value.isOriginal ?? false,
+    readingTime: articleInfo.value.readingTime ?? null,
     readingTimeLocale:
-      articleInfo.value[ArticleInfo.readingTime] &&
-      readingTimeLocaleConfig.value
+      articleInfo.value.readingTime && readingTimeLocaleConfig.value
         ? getReadingTimeLocale(
-            articleInfo.value[ArticleInfo.readingTime],
+            articleInfo.value.readingTime,
             readingTimeLocaleConfig.value,
           )
         : null,

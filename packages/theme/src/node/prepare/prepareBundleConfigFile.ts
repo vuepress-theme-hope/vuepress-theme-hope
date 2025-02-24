@@ -1,7 +1,6 @@
 import { getModulePath } from "@vuepress/helper";
 import type { App } from "vuepress/core";
 
-import { PageInfo } from "../../shared/index.js";
 import type { ThemeStatus } from "../config/index.js";
 import { BUNDLE_FOLDER } from "../utils.js";
 
@@ -29,15 +28,15 @@ export const prepareBundleConfigFile = (
     );
     actions.push(`\
 defineCatalogInfoGetter((meta) => {
-  const title = meta.${PageInfo.title};
-  const shouldIndex = meta.${PageInfo.index} !== false;
-  const icon = meta.${PageInfo.icon};
+  const title = meta.title;
+  const shouldIndex = meta.index !== false;
+  const icon = meta.icon;
 
   return shouldIndex ? {
     title,
     content: icon ? () =>[h(resolveComponent("VPIcon"), { icon }), title] : null,
-    order: meta.${PageInfo.order},
-    index: meta.${PageInfo.index},
+    order: meta.order,
+    index: meta.index,
   } : null;
 });`);
   }
