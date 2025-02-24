@@ -68,30 +68,6 @@ For example:
 
 Of course, if you are expect enough, you can achieve the layout you want by overriding the theme's CSS styles. This may be difficult, but it is technically feasible.
 
-## Display h4 or deeper level titles
-
-By default, VuePress only extracts h2 and h3 titles from Markdown, so you will never see h4 titles by configuring the theme alone.
-
-You need to configure [markdown.headers.level](https://vuejs.press/reference/config/#markdown-headers) in the VuePress configuration file:
-
-```ts twoslash {7-12} title=".vuepress/config.ts"
-import { defineUserConfig } from "vuepress";
-
-export default defineUserConfig({
-  // other site config
-  // ...
-
-  markdown: {
-    headers: {
-      // extract levels you need
-      level: [2, 3, 4, 5, 6],
-    },
-  },
-});
-```
-
-After extracting deeper level titles above, you can display more titles by increasing the value of `headerDepth` in [theme config](../config/theme/layout.md#headerdepth) or [page Frontmatter](../config/frontmatter/layout.md#headerdepth).
-
 ## Adjust content width
 
 If you are not satisfied with the default content width, you can adjust the content width by setting the `$content-width` variable in the [palette file](../config/style.md#layout-config).

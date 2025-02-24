@@ -1,8 +1,10 @@
+import type { GetHeadersOptions } from "@vuepress/helper/client";
+import { useHeaders } from "@vuepress/helper/client";
 import { useToggle, watchImmediate } from "@vueuse/core";
 import type { PropType, SlotsType, VNode } from "vue";
-import { defineComponent, h, onMounted, ref, shallowRef } from "vue";
+import { defineComponent, h, onMounted, ref, shallowRef, toRef } from "vue";
 import type { PageHeader } from "vuepress/client";
-import { RouteLink, usePageData, useRoute } from "vuepress/client";
+import { ClientOnly, RouteLink, useRoute } from "vuepress/client";
 
 import PrintButton from "@theme-hope/modules/info/components/PrintButton";
 import { useMetaLocale } from "@theme-hope/modules/info/composables/index";
@@ -21,14 +23,9 @@ export default defineComponent({
     items: Array as PropType<PageHeader[]>,
 
     /**
-     * Max header nesting depth
-     *
-     * 最大的标题嵌套深度
+     * Header options
      */
-    headerDepth: {
-      type: Number,
-      default: 2,
-    },
+    options: Object as PropType<GetHeadersOptions>,
   },
 
   slots: Object as SlotsType<{
@@ -37,8 +34,9 @@ export default defineComponent({
   }>,
 
   setup(props, { slots }) {
+    const headerOptions = toRef(props, "options");
+    const headers = useHeaders(headerOptions);
     const route = useRoute();
-    const page = usePageData();
     const metaLocale = useMetaLocale();
     const [isExpanded, toggleExpanded] = useToggle();
 
@@ -128,16 +126,13 @@ export default defineComponent({
         () => title,
       );
 
-    const renderChildren = (
-      headers: PageHeader[],
-      headerDepth: number,
-    ): VNode | null =>
-      headers.length && headerDepth > 0
+    const renderChildren = (headers: PageHeader[]): VNode | null =>
+      headers.length
         ? h(
             "ul",
             { class: "vp-toc-list" },
             headers.map((header) => {
-              const children = renderChildren(header.children, headerDepth - 1);
+              const children = renderChildren(header.children);
 
               return [
                 h(
@@ -158,59 +153,62 @@ export default defineComponent({
 
     return (): VNode | null => {
       const tocHeaders = props.items?.length
-        ? renderChildren(props.items, props.headerDepth)
-        : renderChildren(page.value.headers, props.headerDepth);
+        ? renderChildren(props.items)
+        : renderChildren(headers.value);
 
       const before = slots.before?.();
       const after = slots.after?.();
 
-      return tocHeaders || before || after
-        ? h("div", { class: "vp-toc-placeholder" }, [
-            h("aside", { id: "toc", "vp-toc": "" }, [
-              before,
-              tocHeaders
-                ? [
-                    h(
-                      "div",
-                      {
-                        class: "vp-toc-header",
-                        onClick: () => {
-                          toggleExpanded();
-                        },
-                      },
-                      [
-                        metaLocale.value.toc,
-                        h(PrintButton),
-                        h("div", {
-                          class: ["arrow", isExpanded.value ? "down" : "end"],
-                        }),
-                      ],
-                    ),
-                    h(
-                      "div",
-                      {
-                        class: [
-                          "vp-toc-wrapper",
-                          isExpanded.value ? "open" : "",
-                        ],
-                        ref: toc,
-                      },
-                      [
-                        tocHeaders,
-                        h("div", {
-                          class: "vp-toc-marker",
-                          style: {
-                            top: tocMarkerTop.value,
+      return h(ClientOnly, () =>
+        // headers can not be accessed during SSR, so we need to wrap it with ClientOnly
+        tocHeaders || before || after
+          ? h("div", { class: "vp-toc-placeholder" }, [
+              h("aside", { id: "toc", "vp-toc": "" }, [
+                before,
+                tocHeaders
+                  ? [
+                      h(
+                        "div",
+                        {
+                          class: "vp-toc-header",
+                          onClick: () => {
+                            toggleExpanded();
                           },
-                        }),
-                      ],
-                    ),
-                  ]
-                : null,
-              after,
-            ]),
-          ])
-        : null;
+                        },
+                        [
+                          metaLocale.value.toc,
+                          h(PrintButton),
+                          h("div", {
+                            class: ["arrow", isExpanded.value ? "down" : "end"],
+                          }),
+                        ],
+                      ),
+                      h(
+                        "div",
+                        {
+                          class: [
+                            "vp-toc-wrapper",
+                            isExpanded.value ? "open" : "",
+                          ],
+                          ref: toc,
+                        },
+                        [
+                          tocHeaders,
+                          h("div", {
+                            class: "vp-toc-marker",
+                            style: {
+                              top: tocMarkerTop.value,
+                            },
+                          }),
+                        ],
+                      ),
+                    ]
+                  : null,
+                after,
+              ]),
+            ])
+          : null,
+      );
     };
   },
 });

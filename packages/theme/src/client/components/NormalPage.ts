@@ -1,3 +1,4 @@
+import type { HeaderLevels } from "@vuepress/helper/client";
 import { hasGlobalComponent } from "@vuepress/helper/client";
 import type { ComponentOptions, SlotsType, VNode } from "vue";
 import { computed, defineComponent, h, resolveComponent } from "vue";
@@ -40,9 +41,10 @@ export default defineComponent({
       () => frontmatter.value.toc ?? themeLocale.value.toc ?? true,
     );
 
-    const headerDepth = computed(
-      () => frontmatter.value.headerDepth ?? themeLocale.value.headerDepth ?? 2,
-    );
+    const headerLevels = computed<HeaderLevels>(() => [
+      2,
+      (frontmatter.value.headerDepth ?? themeLocale.value.headerDepth ?? 2) + 1,
+    ]);
 
     return (): VNode =>
       h(
@@ -70,7 +72,7 @@ export default defineComponent({
             tocEnable.value
               ? h(
                   TOC,
-                  { headerDepth: headerDepth.value },
+                  { options: { levels: headerLevels.value } },
                   {
                     before: slots.tocBefore,
                     after: slots.tocAfter,

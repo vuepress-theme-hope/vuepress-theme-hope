@@ -434,14 +434,6 @@ headerDepth: 2
 ---
 ```
 
-::: note
-
-The valid maximum value depends on which levels of headers you have extracted via [markdown.headers.level](https://vuejs.press/reference/config.html#markdown-headers).
-
-Since the default value of [markdown.headers.level](https://vuejs.press/reference/config.html#markdown-headers) is `[2, 3]`, so The default maximum value for `headerDepth` is `2`.
-
-:::
-
 ### Active Header Links
 
 By default, the nested header links and the hash in the URL are updated as the user scrolls to view the different sections of the page. This behavior can be disabled with the following theme config:

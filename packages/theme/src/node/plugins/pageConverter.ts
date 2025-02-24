@@ -97,6 +97,10 @@ export const extendsPagePlugin = (
         // Save relative file path into page data to generate edit link
         (page as Page<ThemePageData>).data.filePathRelative = filePathRelative;
 
+      // remove page headers
+      // @ts-expect-error: header are required in vuepress/core
+      if (!themeData.preserveHeaders) delete page.data.headers;
+
       injectPageInfo(page as Page<ThemePageData>);
       injectLocalizedDate(page);
     },

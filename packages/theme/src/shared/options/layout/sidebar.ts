@@ -76,21 +76,12 @@ export interface SidebarLocaleOptions {
    * - Set to `2` to include `<h2>` and `<h3>`
    * - ...
    *
-   * The max value depends on which headers you have extracted
-   * via `markdown.headers.level`.
-   *
-   * The default value of `markdown.headers.level` is `[2, 3]`,
-   * so the default max value of `headerDepth` is `2`
-   *
    * 侧边栏和页面目录的标题深度
    *
    * - 设置 `0` 来禁用所有级别的标题
    * - 设置 `1` 来包含 `<h2>`
    * - 设置 `2` 来包含 `<h2>` 和 `<h3>`
    * - ...
-   *
-   * `markdown.headers.level` 的默认值是 `[2, 3]`,
-   * 所以 `headerDepth` 的默认最大值是 `2`
    *
    * @default 2
    */

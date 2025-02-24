@@ -68,30 +68,6 @@ flowchart LR
 
 当然，如果你足够强，你可以自行通过覆盖主题的 CSS 样式来通过这份 DOM 实现你想要的布局。这可能会很困难，但技术上绝对是可行的。
 
-## 显示四级或更多级的标题
-
-默认情况下，VuePress 只会从 Markdown 提取 h2 和 h3 标题，所以仅靠配置主题，你永远也看不见 h4 标题。
-
-你需要在 VuePress 配置文件中配置 [markdown.headers.level](https://vuejs.press/zh/reference/config.html#markdown-headers):
-
-```ts twoslash {7-12} title=".vuepress/config.ts"
-import { defineUserConfig } from "vuepress";
-
-export default defineUserConfig({
-  // 其他站点配置
-  // ...
-
-  markdown: {
-    headers: {
-      // 用到哪一级就提取哪一级
-      level: [2, 3, 4, 5, 6],
-    },
-  },
-});
-```
-
-在上方提取更深层级的标题后，你就能在 [主题选项](../config/theme/layout.md#headerdepth) 或 [页面 Frontmatter](../config/frontmatter/layout.md#headerdepth) 中通过增加 `headerDepth` 的数值来展示更多标题了。
-
 ## 调整内容宽度
 
 如果你对默认的内容宽度不满意，你可以通过在 [调色板文件](../config/style.md#布局设置) 中设置 `$content-width` 变量来调整内容宽度。

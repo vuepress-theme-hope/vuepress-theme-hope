@@ -27,6 +27,11 @@ export interface ThemeOptions
    * 主题插件选项
    */
   plugins?: PluginsOptions;
+
+  /**
+   * @experimental Headers are forced removed by theme, while you can use this option to preserve them
+   */
+  preserveHeaders?: boolean;
 }
 
 export interface ThemeData
@@ -34,4 +39,9 @@ export interface ThemeData
     FeatureConfig,
     InfoOptions {
   locales: Record<string, ThemeLocaleConfig>;
+
+  /**
+   * @experimental Headers are forced removed by theme, while you can use this option to preserve them
+   */
+  preserveHeaders?: boolean;
 }

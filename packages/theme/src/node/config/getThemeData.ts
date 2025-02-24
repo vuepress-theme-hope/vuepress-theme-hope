@@ -41,7 +41,7 @@ export const getThemeData = (
     // Handle encrypt options
     encrypt: getEncryptConfig(encrypt),
     ...fromEntries(
-      // Only remain root allowed config
+      //remove root disallowed config
       entries(themeOptions).filter(
         ([key]) => !ROOT_DISALLOW_CONFIG.includes(key),
       ),

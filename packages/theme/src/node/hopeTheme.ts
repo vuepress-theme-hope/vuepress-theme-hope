@@ -3,11 +3,7 @@ import { watch } from "chokidar";
 import type { ThemeFunction } from "vuepress/core";
 import { TEMPLATE_RENDERER_OUTLETS } from "vuepress/utils";
 
-import {
-  checkMarkdownOptions,
-  checkUserPlugins,
-  checkVuePressVersion,
-} from "./check/index.js";
+import { checkUserPlugins, checkVuePressVersion } from "./check/index.js";
 import { checkLegacyStyle, convertThemeOptions } from "./compact/index.js";
 import {
   getSocialMediaIcons,
@@ -95,11 +91,6 @@ export const hopeTheme = (
       }),
 
       extendsBundlerOptions,
-
-      extendsMarkdownOptions: (markdownOptions): void => {
-        if (behaviorOptions.check)
-          checkMarkdownOptions(markdownOptions, themeData);
-      },
 
       onInitialized: (app): void => {
         if (favicon) addFavicon(app, favicon);

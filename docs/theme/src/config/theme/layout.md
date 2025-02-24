@@ -215,6 +215,8 @@ Available keywords are:
 
 - Type: `number`
 - Default: `2`
+- Details:
+  - [Layout → Page](../../guide/layout/page.md#setting-header-depth)
 
 Nested headings depth
 
