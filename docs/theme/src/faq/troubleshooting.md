@@ -8,11 +8,11 @@ category:
 
 ## Ensure running under correct environment
 
-`vuepress-theme-hope` only supports node version of `>=18.19.0`.
+`vuepress-theme-hope` only supports node version of `^18.19.0 || >= 20.6.0`.
 
 If the output of `node -v` does not satisfy the requirement, you should [download and install the LTS version of Node.js](../get-started/env.md#nodejs).
 
-Also, you should use a package manager satisfying the following requirements (`pnpm@v9` recommended):
+Also, you should use a package manager satisfying the following requirements (`pnpm@v10` recommended):
 
 - pnpm: >= 7
 

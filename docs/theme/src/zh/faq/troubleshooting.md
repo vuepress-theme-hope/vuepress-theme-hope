@@ -8,11 +8,11 @@ category:
 
 ## 确认使用正确的环境
 
-`vuepress-theme-hope` 仅支持 `>=18.19.0` 版本的 Node.js。
+`vuepress-theme-hope` 仅支持 `^18.19.0 || >= 20.6.0` 版本的 Node.js。
 
 你可以通过 `node -v` 查看它的版本，如果不满足要求，请 [下载并安装 LTS 版本的 Node.js](../get-started/env.md#nodejs)。
 
-同时，你应该使用满足下方要求的包管理器 (推荐 `pnpm@9`):
+同时，你应该使用满足下方要求的包管理器 (推荐 `pnpm@10`):
 
 - pnpm: >= 7
 
