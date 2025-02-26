@@ -72,7 +72,12 @@ export default defineComponent({
             tocEnable.value
               ? h(
                   TOC,
-                  { options: { levels: headerLevels.value } },
+                  {
+                    options: {
+                      levels: headerLevels.value,
+                      ignore: [".vp-badge"],
+                    },
+                  },
                   {
                     before: slots.tocBefore,
                     after: slots.tocAfter,
