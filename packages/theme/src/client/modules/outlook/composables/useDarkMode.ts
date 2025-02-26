@@ -1,4 +1,9 @@
-import { usePreferredDark, useStorage, watchImmediate } from "@vueuse/core";
+import {
+  useEventListener,
+  usePreferredDark,
+  useStorage,
+  watchImmediate,
+} from "@vueuse/core";
 import type { App, ComputedRef, InjectionKey, Ref } from "vue";
 import { computed, inject, onMounted, watchEffect } from "vue";
 
@@ -93,6 +98,16 @@ export const setupDarkMode = (): void => {
     else if (config.value === "enable") status.value = "dark";
     else if (config.value === "toggle" && status.value === "auto")
       status.value = "light";
+  });
+
+  useEventListener("beforeprint", () => {
+    if (isDarkMode.value)
+      document.documentElement.setAttribute("data-theme", "light");
+  });
+
+  useEventListener("afterprint", () => {
+    if (isDarkMode.value)
+      document.documentElement.setAttribute("data-theme", "dark");
   });
 
   onMounted(() => {
