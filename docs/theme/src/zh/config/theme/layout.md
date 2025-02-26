@@ -61,6 +61,8 @@ tag:
 
 - 类型: `string`
 - 必填: 否
+- 详情:
+  - [布局 → 导航栏 → 站点图标](../../guide/layout/navbar.md#站点图标)
 
 导航栏图标，应为基于 `.vuepress/public` 文件夹的绝对路径。
 
@@ -68,6 +70,8 @@ tag:
 
 - 类型: `string`
 - 默认值: `logo`
+- 详情:
+  - [布局 → 导航栏 → 站点图标](../../guide/layout/navbar.md#站点图标)
 
 夜间模式下导航栏图标，应为基于 `.vuepress/public` 文件夹的绝对路径。
 
@@ -82,6 +86,8 @@ tag:
 
 - 类型: `string`
 - 必填: 否
+- 详情:
+  - [布局 → 导航栏 → Git 仓库和编辑链接](../../guide/layout/navbar.md#git-仓库和编辑链接)
 
 仓库配置，用于在导航栏中显示仓库链接。
 
@@ -89,6 +95,8 @@ tag:
 
 - 类型: `boolean`
 - 默认值: `true`
+- 详情:
+  - [布局 → 导航栏 → Git 仓库和编辑链接](../../guide/layout/navbar.md#git-仓库和编辑链接)
 
 是否在导航栏显示仓库链接。
 
@@ -96,6 +104,8 @@ tag:
 
 - 类型: `string`
 - 必填: 否
+- 详情:
+  - [布局 → 导航栏 → Git 仓库和编辑链接](../../guide/layout/navbar.md#git-仓库和编辑链接)
 
 用于导航栏仓库按钮的无障碍标签。
 
@@ -211,6 +221,8 @@ tag:
 - `title`: 按标题字母顺序排序
 - `filename`: 按文件名字母顺序排序
 
+## 标题
+
 ### headerDepth
 
 - 类型: `number`
@@ -250,7 +262,7 @@ tag:
 
 是否在页面底部显示下一篇链接。
 
-## 标题
+## 页面标题
 
 ### titleIcon
 
