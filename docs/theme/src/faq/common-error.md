@@ -68,7 +68,7 @@ This means you are calling a theme-bundled plugin yourself in VuePress config fi
 - In most cases, when you use some plugins with theme, the theme automatically handles some plugin options for you,
 - Some plugins are required by the theme. If you do not enable the features used by theme, the theme will throw errors.
 
-So when you want to customize these plugins, you should set their options in `plugins.PLUGIN_NAME` under theme options and let the theme call these plugins for you.
+So when you want to customize these plugins, you should set their options in `plugins.<PLUGIN_SHORT_NAME>` under theme options and let the theme call these plugins for you.
 
 For details on all plugins of the theme, please see [Theme Plugins](../config/plugins/intro.md).
 
@@ -81,7 +81,7 @@ This means that your `max_old_space_size` setting of Node.js is too small to bui
 This value can be greater than the actual memory size of your machine.
 
 - For small projects, usually it won't take more than 2 GB (2048 MB).
-- For large projects, usually it won't take more than 4 GB (4048 MB)
+- For large projects, usually it won't take more than 4 GB (4096 MB)
 - If you are enabling blog feature together with lots of markdown enhance features on large sites, usually it won't take more than 8 GB (8192 MB)
 
 ::: details Ways of increasing
