@@ -596,8 +596,8 @@ importers:
   docs-shared:
     dependencies:
       '@types/three':
-        specifier: 0.173.0
-        version: 0.173.0
+        specifier: 0.174.0
+        version: 0.174.0
       '@vuepress/bundler-vite':
         specifier: catalog:vuepress
         version: 2.0.0-rc.20(@types/node@22.13.5)(jiti@2.4.2)(lightningcss@1.29.1)(sass-embedded@1.85.0)(sass@1.85.0)(terser@5.39.0)(tsx@4.19.3)(typescript@5.7.3)(yaml@2.7.0)
@@ -611,8 +611,8 @@ importers:
         specifier: catalog:vuepress
         version: 2.0.0-rc.80(@algolia/client-search@5.20.3)(search-insights@2.17.3)(typescript@5.7.3)(vuepress@2.0.0-rc.20(@vuepress/bundler-vite@2.0.0-rc.20(@types/node@22.13.5)(jiti@2.4.2)(lightningcss@1.29.1)(sass-embedded@1.85.0)(sass@1.85.0)(terser@5.39.0)(tsx@4.19.3)(typescript@5.7.3)(yaml@2.7.0))(@vuepress/bundler-webpack@2.0.0-rc.20(esbuild@0.25.0)(typescript@5.7.3))(typescript@5.7.3)(vue@3.5.13(typescript@5.7.3)))
       three:
-        specifier: 0.173.0
-        version: 0.173.0
+        specifier: 0.174.0
+        version: 0.174.0
       vue:
         specifier: 'catalog:'
         version: 3.5.13(typescript@5.7.3)
@@ -3557,8 +3557,8 @@ packages:
   '@types/stats.js@0.17.3':
     resolution: {integrity: sha512-pXNfAD3KHOdif9EQXZ9deK82HVNaXP5ZIF5RP2QG6OQFNTaY2YIetfrE9t528vEreGQvEPRDDc8muaoYeK0SxQ==}
 
-  '@types/three@0.173.0':
-    resolution: {integrity: sha512-KtNjfI/CRB6JVKIVeZM1R3GYDX2wkoV2itNcQu2j4d7qkhjGOuB+s2oF6jl9mztycDLGMtrAnJQYxInC8Bb20A==}
+  '@types/three@0.174.0':
+    resolution: {integrity: sha512-De/+vZnfg2aVWNiuy1Ldu+n2ydgw1osinmiZTAn0necE++eOfsygL8JpZgFjR2uHmAPo89MkxBj3JJ+2BMe+Uw==}
 
   '@types/trusted-types@2.0.7':
     resolution: {integrity: sha512-ScaPdn1dQczgbl0QFTeTOmVHFULt394XJgOQNoyVhZ6r2vLnMLJfBPd53SB52T/3G36VI1/g2MZaX0cwDuXsfw==}
@@ -9262,8 +9262,8 @@ packages:
     peerDependencies:
       tslib: ^2
 
-  three@0.173.0:
-    resolution: {integrity: sha512-AUwVmViIEUgBwxJJ7stnF0NkPpZxx1aZ6WiAbQ/Qq61h6I9UR4grXtZDmO8mnlaNORhHnIBlXJ1uBxILEKuVyw==}
+  three@0.174.0:
+    resolution: {integrity: sha512-p+WG3W6Ov74alh3geCMkGK9NWuT62ee21cV3jEnun201zodVF4tCE5aZa2U122/mkLRmhJJUQmLLW1BH00uQJQ==}
 
   through2@4.0.2:
     resolution: {integrity: sha512-iOqSav00cVxEEICeD7TjLB1sueEL+81Wpzp2bY17uZjZN0pWZPuo4suZ/61VujxmqSGFfgOcNuTZ85QJwNZQpw==}
@@ -12827,7 +12827,7 @@ snapshots:
 
   '@types/stats.js@0.17.3': {}
 
-  '@types/three@0.173.0':
+  '@types/three@0.174.0':
     dependencies:
       '@tweenjs/tween.js': 23.1.3
       '@types/stats.js': 0.17.3
@@ -19583,7 +19583,7 @@ snapshots:
     dependencies:
       tslib: 2.8.1
 
-  three@0.173.0: {}
+  three@0.174.0: {}
 
   through2@4.0.2:
     dependencies:
