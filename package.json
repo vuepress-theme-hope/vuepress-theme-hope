@@ -51,7 +51,7 @@
     "@commitlint/cli": "19.7.1",
     "@commitlint/config-conventional": "19.7.1",
     "@lerna-lite/cli": "3.12.1",
-    "@lerna-lite/publish": "3.12.1",
+    "@lerna-lite/publish": "3.12.2",
     "@rollup/plugin-alias": "5.1.1",
     "@rollup/plugin-commonjs": "28.0.2",
     "@rollup/plugin-node-resolve": "16.0.0",
