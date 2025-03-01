@@ -78,7 +78,7 @@
     "rollup": "4.34.8",
     "rollup-plugin-copy": "3.5.0",
     "rollup-plugin-dts": "6.1.1",
-    "rollup-plugin-esbuild": "6.2.0",
+    "rollup-plugin-esbuild": "6.2.1",
     "rollup-plugin-resolve-shebang": "1.0.1",
     "sort-package-json": "2.15.1",
     "stylelint": "16.14.1",
