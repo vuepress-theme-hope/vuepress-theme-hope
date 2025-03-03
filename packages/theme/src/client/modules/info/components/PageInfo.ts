@@ -118,21 +118,9 @@ export default defineComponent({
      *
      * 待展示的文章信息
      */
-    items: {
-      type: [Array, Boolean] as PropType<
-        PageInfoType[] | false | undefined | null
-      >,
-
-      default: (): PageInfoType[] => [
-        "Author",
-        "Original",
-        "Date",
-        "PageView",
-        "ReadingTime",
-        "Category",
-        "Tag",
-      ],
-    },
+    items: [Boolean, Array] as PropType<
+      PageInfoType[] | false | undefined | null
+    >,
 
     /**
      * Article information
@@ -148,12 +136,22 @@ export default defineComponent({
   setup(props) {
     const isPure = usePure();
 
-    return (): VNode | null =>
-      props.items
+    return (): VNode | null => {
+      const items = props.items ?? [
+        "Author",
+        "Original",
+        "Date",
+        "PageView",
+        "ReadingTime",
+        "Category",
+        "Tag",
+      ];
+
+      return items
         ? h(
             "div",
             { class: "page-info" },
-            props.items.map((item) =>
+            items.map((item) =>
               h(resolveComponent(`${item}Info`), {
                 ...props.info,
                 isPure: isPure.value,
@@ -161,5 +159,6 @@ export default defineComponent({
             ),
           )
         : null;
+    };
   },
 });
