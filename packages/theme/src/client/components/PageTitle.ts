@@ -28,7 +28,7 @@ export default defineComponent({
         ]),
         h(PageInfo, {
           info: info.value,
-          items: items.value,
+          items: items.value ?? undefined,
         }),
         h("hr"),
       ]);
