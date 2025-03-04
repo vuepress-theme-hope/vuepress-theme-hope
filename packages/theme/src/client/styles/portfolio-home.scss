@@ -88,12 +88,12 @@
     }
 
     &::before {
-      left: -0.1em;
+      inset-inline-start: -0.1em;
       border-radius: 0.2em 0 0 0.2em;
     }
 
     &::after {
-      right: -0.1em;
+      inset-inline-end: -0.1em;
       border-radius: 0 0.2em 0.2em 0;
     }
   }

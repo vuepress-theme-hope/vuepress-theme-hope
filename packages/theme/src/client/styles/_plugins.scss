@@ -34,7 +34,8 @@
 
   .DocSearch-Button-Placeholder {
     display: inline-block;
-    padding: 4px 12px 4px 6px;
+    padding-block: 4px;
+    padding-inline: 6px 12px;
     font-size: 14px;
 
     @media (max-width: 719px) {

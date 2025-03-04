@@ -25,8 +25,8 @@
       content: "";
 
       position: absolute;
+      inset-inline-start: -200px;
       top: -200px;
-      left: -200px;
       z-index: -1;
 
       width: 1000px;
@@ -78,9 +78,9 @@
 
   &-avatar {
     position: absolute;
+    inset-inline-start: 0;
     top: 0;
     bottom: 0;
-    left: 0;
 
     display: flex;
     align-items: end;
@@ -271,7 +271,7 @@
     }
 
     + a {
-      margin-left: 5px;
+      margin-inline-start: 5px;
     }
   }
 }

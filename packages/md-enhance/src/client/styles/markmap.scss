@@ -70,6 +70,7 @@
   background: var(--vp-c-control);
 
   line-height: 1;
+  direction: ltr;
 
   user-select: none;
 
@@ -91,8 +92,7 @@
   }
 
   > span {
-    padding-right: 0.25rem;
-    padding-left: 0.25rem;
+    padding-inline: 0.25rem;
   }
 }
 

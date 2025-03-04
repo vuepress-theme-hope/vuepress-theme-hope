@@ -145,8 +145,11 @@
 
 .vp-highlight-item-wrapper {
   position: relative;
-  padding: 0.5em 0.5em 0.5em 1.75em;
+
+  padding-block: 0.5em;
+  padding-inline: 0.5em 1.75em;
   border-radius: 0.5rem;
+
   list-style: none;
 
   &.link {

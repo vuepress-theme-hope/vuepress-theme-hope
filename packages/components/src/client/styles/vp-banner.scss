@@ -24,6 +24,10 @@
     height: 6rem;
     margin-bottom: 12px;
     margin-inline-start: 12px;
+
+    [dir="rtl"] & {
+      float: left;
+    }
   }
 
   &-title {

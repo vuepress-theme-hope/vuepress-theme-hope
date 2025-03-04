@@ -11,7 +11,8 @@
 
     display: block;
 
-    padding: 12px 4px 11px 0;
+    padding-block: 12px;
+    padding-inline-end: 4px;
     border-bottom: 1px solid var(--vp-c-border);
 
     font-size: 16px;
