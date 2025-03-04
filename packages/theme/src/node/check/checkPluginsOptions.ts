@@ -5,9 +5,9 @@ import { PLUGIN_CHECKLIST } from "./utils.js";
 import type { PluginsOptions } from "../../shared/index.js";
 import { logger } from "../utils.js";
 
-const KNOWN_THEME_PLUGIN_KEYS = PLUGIN_CHECKLIST.map(([, key]) => key)
-  .filter(Boolean)
-  .flat();
+const KNOWN_THEME_PLUGIN_KEYS = PLUGIN_CHECKLIST.flatMap(([, key]) => key)
+  .filter((key) => key.startsWith("plugins."))
+  .map((key) => key.split(".")[1]);
 
 /**
  * @private

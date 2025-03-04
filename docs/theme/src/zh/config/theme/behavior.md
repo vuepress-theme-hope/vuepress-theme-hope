@@ -13,7 +13,7 @@ tag:
 行为选项也可接受一个布尔值:
 
 - `false`: 意味着所有选项都设置为 `false`
-- `true`: 意味着 `{ check: true, compact:true, custom: false, debug: false }`
+- `true`: 意味着 `{ check: true, compact: true, custom: false, debug: false }`
 
 <!-- more -->
 

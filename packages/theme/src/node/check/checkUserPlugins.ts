@@ -1,3 +1,4 @@
+import { isString } from "@vuepress/helper";
 import type { App } from "vuepress/core";
 import { colors } from "vuepress/utils";
 
@@ -23,7 +24,7 @@ export const checkUserPlugins = (app: App): void => {
         )}" yourself in ${colors.cyan("vuepress config file")}. ${
           hint ||
           (optionName
-            ? `Set "${colors.magenta(`plugins.${optionName}`)}" in ${colors.cyan(
+            ? `Set "${colors.magenta(isString(optionName) ? optionName : optionName.join(","))}" in ${colors.cyan(
                 "theme options",
               )} to customize it.`
             : "")
