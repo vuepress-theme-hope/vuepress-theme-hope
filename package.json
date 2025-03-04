@@ -12,7 +12,6 @@
     "build": "cross-env NODE_ENV=production pnpm run --stream -r build",
     "build:no-bundle": "concurrently \"tsc -b tsconfig.build.json\" \"pnpm run copy\"",
     "clean": "pnpm run --stream -r clean",
-    "commit": "pnpm git-cz",
     "copy": "pnpm run --parallel -r copy",
     "dev": "concurrently \"tsc -b tsconfig.build.json --watch\" \"pnpm run dev:copy\"",
     "dev:copy": "pnpm run --parallel -r dev:copy",
@@ -42,11 +41,6 @@
     "*.scss": "stylelint --fix",
     "package.json": "sort-package-json"
   },
-  "config": {
-    "commitizen": {
-      "path": "./node_modules/cz-git"
-    }
-  },
   "devDependencies": {
     "@commitlint/cli": "19.7.1",
     "@commitlint/config-conventional": "19.7.1",
@@ -56,14 +50,13 @@
     "@rollup/plugin-commonjs": "28.0.2",
     "@rollup/plugin-node-resolve": "16.0.0",
     "@rollup/plugin-replace": "6.0.2",
-    "@types/node": "22.13.8",
+    "@types/node": "22.13.9",
     "@types/webpack-env": "1.18.8",
     "@vitest/coverage-istanbul": "3.0.7",
     "concurrently": "9.1.2",
     "conventional-changelog-conventionalcommits": "7.0.2",
     "cpx2": "8.0.0",
     "cross-env": "7.0.3",
-    "cz-git": "1.11.0",
     "eslint": "9.21.0",
     "eslint-config-mister-hope": "0.7.5",
     "eslint-plugin-vue": "9.32.0",
