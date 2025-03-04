@@ -324,10 +324,19 @@ const defineEChartsConfig: (config: EChartsConfig) => void;
 ### defineMermaidConfig
 
 ```ts
-const defineMermaidConfig: (options: MermaidConfig) => void;
+export type MermaidOptions = Omit<
+  MermaidConfig,
+  "startOnLoad" | "themeVariables"
+> & {
+  themeVariables?:
+    | MermaidThemeVariables
+    | ((isDarkMode: boolean) => MermaidThemeVariables);
+};
+
+const defineMermaidConfig: (options: MermaidOptions) => void;
 ```
 
-定义需要传递给 Mermaid 的配置选项。
+定义需要传递给 Mermaid 的配置选项。额外地，你可以通过 `themeVariables` 选项来设置主题变量。
 
 ### defineKotlinPlaygroundConfig
 

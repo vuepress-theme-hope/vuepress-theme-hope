@@ -315,10 +315,19 @@ Define global options and setup for ECharts.
 ### defineMermaidConfig
 
 ```ts
-const defineMermaidConfig: (options: MermaidConfig) => void;
+export type MermaidOptions = Omit<
+  MermaidConfig,
+  "startOnLoad" | "themeVariables"
+> & {
+  themeVariables?:
+    | MermaidThemeVariables
+    | ((isDarkMode: boolean) => MermaidThemeVariables);
+};
+
+const defineMermaidConfig: (options: MermaidOptions) => void;
 ```
 
-Define config which you want to pass to mermaid.
+Define config which you want to pass to mermaid. Additionally, you can use `themeVariables` to define colors of mermaid.
 
 ### defineKotlinPlaygroundConfig
 
