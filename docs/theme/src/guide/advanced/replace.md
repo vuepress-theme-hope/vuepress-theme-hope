@@ -244,7 +244,7 @@ export default {
 
 @tab HomePage.vue
 
-```vue twoslash
+```vue
 <template>
   <HopeHomePage>
     <!-- Introduce comment component using bottom slot -->

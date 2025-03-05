@@ -247,7 +247,7 @@ export default {
 
 @tab HomePage.vue
 
-```vue twoslash
+```vue
 <script setup lang="ts">
 import HopeHomePage from "vuepress-theme-hope/components/HomePage.js";
 </script>

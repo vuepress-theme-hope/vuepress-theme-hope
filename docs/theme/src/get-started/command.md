@@ -27,7 +27,7 @@ If you are using the VuePress Theme Hope template, you can find the following th
 {
   "scripts": {
     "docs:build": "vuepress build src",
-    "docs:clean-dev": "vuepress dev src --clean-cache",
+    "docs:clean-dev": "vuepress dev src --clean-cache --clean-temp",
     "docs:dev": "vuepress dev src"
   }
 }
