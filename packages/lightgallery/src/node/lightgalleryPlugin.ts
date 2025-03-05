@@ -1,4 +1,8 @@
-import { addViteOptimizeDepsExclude } from "@vuepress/helper";
+import {
+  addViteConfig,
+  addViteOptimizeDepsExclude,
+  chainWebpack,
+} from "@vuepress/helper";
 import { useSassPalettePlugin } from "@vuepress/plugin-sass-palette";
 import type { PluginFunction } from "vuepress/core";
 
@@ -36,6 +40,30 @@ export const lightgalleryPlugin =
           ),
         ]);
         addViteOptimizeDepsExclude(bundlerOptions, app, ["lightgallery"]);
+
+        // FIXME: This is a workaround for https://github.com/sachinchoolur/lightGallery/issues/1677
+        addViteConfig(bundlerOptions, app, {
+          css: {
+            preprocessorOptions: {
+              scss: {
+                quietDeps: true,
+              },
+            },
+          },
+        });
+        chainWebpack(bundlerOptions, app, (config) => {
+          config.module
+            .rule("scss")
+            .use("sass-loader")
+            .tap((options) => ({
+              ...options,
+              // eslint-disable-next-line @typescript-eslint/no-unsafe-assignment
+              sassOptions: {
+                quietDeps: true,
+                ...options.sassOptions,
+              },
+            }));
+        });
       },
 
       onPrepared: (app): Promise<void> =>
