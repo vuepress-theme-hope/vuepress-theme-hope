@@ -12,10 +12,10 @@
   "scripts": {
     "docs:serve": "http-server -a localhost dist -o",
     "docs:vite-build": "vuepress-vite build src",
-    "docs:vite-clean-dev": "vuepress-vite dev src --clean-cache",
+    "docs:vite-clean-dev": "vuepress-vite dev src --clean-cache --clean-temp",
     "docs:vite-dev": "vuepress-vite dev src",
     "docs:webpack-build": "vuepress-webpack build src",
-    "docs:webpack-clean-dev": "vuepress-webpack dev src --clean-cache",
+    "docs:webpack-clean-dev": "vuepress-webpack dev src --clean-cache --clean-temp",
     "docs:webpack-dev": "vuepress-webpack dev src"
   },
   "dependencies": {

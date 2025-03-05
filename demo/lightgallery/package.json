@@ -7,10 +7,10 @@
   "scripts": {
     "demo:serve": "http-server -a localhost src/.vuepress/dist -o",
     "demo:vite-build": "vuepress-vite build src",
-    "demo:vite-clean-dev": "vuepress-vite dev src --clean-cache",
+    "demo:vite-clean-dev": "vuepress-vite dev src --clean-cache --clean-temp",
     "demo:vite-dev": "vuepress-vite dev src",
     "demo:webpack-build": "vuepress-webpack build src",
-    "demo:webpack-clean-dev": "vuepress-webpack dev src --clean-cache",
+    "demo:webpack-clean-dev": "vuepress-webpack dev src --clean-cache --clean-temp",
     "demo:webpack-dev": "vuepress-webpack dev src"
   },
   "devDependencies": {
