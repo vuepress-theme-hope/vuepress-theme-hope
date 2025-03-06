@@ -35,3 +35,25 @@ Site info with more properties:
   preview="https://theme-hope.vuejs.press/assets/image/mrhope.jpg"
 />
 ```
+
+Site info with multiple repos:
+
+<SiteInfo
+  name="VuePress Theme Hope"
+  desc="A powerful VuePress Theme"
+  url="https://theme-hope.vuejs.press"
+  logo="https://theme-hope-assets.vuejs.press/logo.svg"
+  :repo="['https://github.com/vuepress-theme-hope/vuepress-theme-hope', 'https://gitee.com/vuepress-theme-hope/vuepress-theme-hope']"
+  preview="https://theme-hope.vuejs.press/assets/image/mrhope.jpg"
+/>
+
+```md
+<SiteInfo
+  name="VuePress Theme Hope"
+  desc="A powerful VuePress Theme"
+  url="https://theme-hope.vuejs.press"
+  logo="https://theme-hope-assets.vuejs.press/logo.svg"
+  :repo="['https://github.com/vuepress-theme-hope/vuepress-theme-hope', 'https://gitee.com/vuepress-theme-hope/vuepress-theme-hope']"
+  preview="https://theme-hope.vuejs.press/assets/image/mrhope.jpg"
+/>
+```

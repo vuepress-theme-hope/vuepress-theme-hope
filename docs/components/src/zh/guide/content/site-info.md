@@ -63,7 +63,7 @@ title: SiteInfo
 
 ### repo
 
-- 类型: `string`
+- 类型: `string | string []`
 - 必填: 否
 
 站点源代码仓库。

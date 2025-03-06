@@ -63,7 +63,7 @@ Site logo
 
 ### repo
 
-- Type: `string`
+- Type: `string | string[]`
 - Required: No
 
 Site repository
