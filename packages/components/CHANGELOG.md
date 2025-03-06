@@ -4,6 +4,15 @@ All notable changes to this project will be documented in this file. See [Conven
 
 <!-- #region recent-change -->
 
+## [2.0.0-rc.74](https://github.com/vuepress-theme-hope/vuepress-theme-hope/compare/v2.0.0-rc.73...v2.0.0-rc.74) (2025-03-06)
+
+### ✨ Features
+
+- **components:** support multiple repos ([ac7cf65](https://github.com/vuepress-theme-hope/vuepress-theme-hope/commit/ac7cf657a615b31380cee1a978ade3c02b9b8509))
+- improve rtl ([31c8ac7](https://github.com/vuepress-theme-hope/vuepress-theme-hope/commit/31c8ac7bc546a36ff758160d66c460e7c89b60c0))
+
+<!-- #region recent-change -->
+
 ## [2.0.0-rc.72](https://github.com/vuepress-theme-hope/vuepress-theme-hope/compare/v2.0.0-rc.71...v2.0.0-rc.72) (2025-02-23)
 
 ### ⚠ BREAKING CHANGES

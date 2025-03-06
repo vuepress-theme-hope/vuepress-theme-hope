@@ -4,6 +4,25 @@ All notable changes to this project will be documented in this file. See [Conven
 
 <!-- #region recent-change -->
 
+## [2.0.0-rc.74](https://github.com/vuepress-theme-hope/vuepress-theme-hope/compare/v2.0.0-rc.73...v2.0.0-rc.74) (2025-03-06)
+
+### ✨ Features
+
+- **components:** support multiple repos ([ac7cf65](https://github.com/vuepress-theme-hope/vuepress-theme-hope/commit/ac7cf657a615b31380cee1a978ade3c02b9b8509))
+- improve rtl ([31c8ac7](https://github.com/vuepress-theme-hope/vuepress-theme-hope/commit/31c8ac7bc546a36ff758160d66c460e7c89b60c0))
+- **lightgallery:** hide sass warnings ([230c460](https://github.com/vuepress-theme-hope/vuepress-theme-hope/commit/230c460b91ade288856164156f3cbf3e0f33f80d))
+- **md-enhance:** update ts declarations ([0e920b6](https://github.com/vuepress-theme-hope/vuepress-theme-hope/commit/0e920b69fd33f9d213dd041fbd60600de7ef1562))
+- **theme:** disable darkmode while print ([cfa4dab](https://github.com/vuepress-theme-hope/vuepress-theme-hope/commit/cfa4dabf2996d4f40d19b1ccdbc294f9e03176c3))
+- **theme:** improve option check ([0e4e3c7](https://github.com/vuepress-theme-hope/vuepress-theme-hope/commit/0e4e3c79478b55da0903a0ca5ddb30797d26cbe2))
+
+### 🐛 Bug Fixes
+
+- **deps:** update dependency three to v0.174.0 ([#4770](https://github.com/vuepress-theme-hope/vuepress-theme-hope/issues/4770)) ([12f75fb](https://github.com/vuepress-theme-hope/vuepress-theme-hope/commit/12f75fb9a21c5b106af873b2eba2b2894b4f8185))
+- **theme:** fix PageInfo ,close [#4772](https://github.com/vuepress-theme-hope/vuepress-theme-hope/issues/4772) ([4ce1c21](https://github.com/vuepress-theme-hope/vuepress-theme-hope/commit/4ce1c211ea4dda20c42e0002c6632f4b26c84ebd))
+- **theme:** ignore badge in toc ([4af4c76](https://github.com/vuepress-theme-hope/vuepress-theme-hope/commit/4af4c767ca82d00391c3e3edabee4a0ee2e36204))
+
+<!-- #region recent-change -->
+
 ## [2.0.0-rc.73](https://github.com/vuepress-theme-hope/vuepress-theme-hope/compare/v2.0.0-rc.72...v2.0.0-rc.73) (2025-02-24)
 
 ### ⚠ BREAKING CHANGES

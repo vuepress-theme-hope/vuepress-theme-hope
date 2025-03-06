@@ -4,6 +4,21 @@ All notable changes to this project will be documented in this file. See [Conven
 
 <!-- #region recent-change -->
 
+## [2.0.0-rc.74](https://github.com/vuepress-theme-hope/vuepress-theme-hope/compare/v2.0.0-rc.73...v2.0.0-rc.74) (2025-03-06)
+
+### ✨ Features
+
+- improve rtl ([31c8ac7](https://github.com/vuepress-theme-hope/vuepress-theme-hope/commit/31c8ac7bc546a36ff758160d66c460e7c89b60c0))
+- **theme:** disable darkmode while print ([cfa4dab](https://github.com/vuepress-theme-hope/vuepress-theme-hope/commit/cfa4dabf2996d4f40d19b1ccdbc294f9e03176c3))
+- **theme:** improve option check ([0e4e3c7](https://github.com/vuepress-theme-hope/vuepress-theme-hope/commit/0e4e3c79478b55da0903a0ca5ddb30797d26cbe2))
+
+### 🐛 Bug Fixes
+
+- **theme:** fix PageInfo ,close [#4772](https://github.com/vuepress-theme-hope/vuepress-theme-hope/issues/4772) ([4ce1c21](https://github.com/vuepress-theme-hope/vuepress-theme-hope/commit/4ce1c211ea4dda20c42e0002c6632f4b26c84ebd))
+- **theme:** ignore badge in toc ([4af4c76](https://github.com/vuepress-theme-hope/vuepress-theme-hope/commit/4af4c767ca82d00391c3e3edabee4a0ee2e36204))
+
+<!-- #region recent-change -->
+
 ## [2.0.0-rc.73](https://github.com/vuepress-theme-hope/vuepress-theme-hope/compare/v2.0.0-rc.72...v2.0.0-rc.73) (2025-02-24)
 
 ### ⚠ BREAKING CHANGES
