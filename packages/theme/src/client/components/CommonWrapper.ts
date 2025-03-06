@@ -123,7 +123,7 @@ export default defineComponent({
       if (props.noSidebar) return false;
 
       return (
-        frontmatter.value.sidebar !== false &&
+        (frontmatter.value.sidebar ?? true) &&
         sidebarItems.value.length !== 0 &&
         !frontmatter.value.home
       );

@@ -101,7 +101,7 @@ export const getBlogTimelineType = (
     key: "timeline",
 
     filter: ({ frontmatter, routeMeta }) =>
-      "date" in routeMeta && frontmatter.timeline !== false,
+      "date" in routeMeta && (frontmatter.timeline ?? true),
 
     sorter: (pageA, pageB) =>
       dateSorter(pageA.routeMeta.date, pageB.routeMeta.date),

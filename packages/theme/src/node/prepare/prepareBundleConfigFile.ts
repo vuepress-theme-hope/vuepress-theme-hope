@@ -29,7 +29,7 @@ export const prepareBundleConfigFile = (
     actions.push(`\
 defineCatalogInfoGetter((meta) => {
   const title = meta.title;
-  const shouldIndex = meta.index !== false;
+  const shouldIndex = meta.index ?? true;
   const icon = meta.icon;
 
   return shouldIndex ? {

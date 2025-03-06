@@ -23,23 +23,23 @@ export default defineComponent({
     const author = usePageAuthor();
 
     const enable = computed(() => {
-      const { copyright, footer } = frontmatter.value;
+      const { copyright, footer = true } = frontmatter.value;
 
       return (
-        footer !== false &&
+        footer &&
         // eslint-disable-next-line @typescript-eslint/prefer-nullish-coalescing
         Boolean(copyright || footer || themeLocale.value.displayFooter)
       );
     });
 
     const content = computed(() => {
-      const { footer } = frontmatter.value;
+      const { footer = true } = frontmatter.value;
 
-      return footer === false
-        ? false
-        : isString(footer)
-          ? footer
-          : (themeLocale.value.footer ?? "");
+      return isString(footer)
+        ? footer
+        : footer
+          ? (themeLocale.value.footer ?? "")
+          : null;
     });
 
     const authorText = computed(() =>

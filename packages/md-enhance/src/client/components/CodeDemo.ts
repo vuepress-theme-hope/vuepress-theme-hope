@@ -184,7 +184,7 @@ export default defineComponent({
               )
             : null,
 
-          code.value.isLegal && code.value.jsfiddle !== false
+          code.value.isLegal && (code.value.jsfiddle ?? true)
             ? h(
                 "form",
                 {
@@ -229,7 +229,7 @@ export default defineComponent({
               )
             : null,
 
-          !code.value.isLegal || code.value.codepen !== false
+          !code.value.isLegal || (code.value.codepen ?? true)
             ? h(
                 "form",
                 {
