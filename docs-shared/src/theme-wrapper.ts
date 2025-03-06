@@ -86,17 +86,47 @@ export const theme = (
 
       git: IS_PROD
         ? {
-            // merge contributors
-            transformContributors: (contributors) =>
-              Object.values(
-                Object.fromEntries(
-                  contributors
-                    .reverse()
-                    .map<
-                      [string, GitContributor]
-                    >((contributor) => [contributor.name, contributor]),
-                ),
-              ),
+            changelog: true,
+            contributors: {
+              avatar: true,
+              // merge contributors
+              transform: (contributors): GitContributor[] => {
+                const filtered: GitContributor[] = [];
+
+                contributors.forEach((contributor) => {
+                  if (["Mr.Hope", "Mister-Hope"].includes(contributor.name)) {
+                    const index = filtered.findIndex(
+                      (item) => item.name === "Mister-Hope",
+                    );
+
+                    if (index === -1) {
+                      filtered.push({
+                        name: "Mister-Hope",
+                        email: "mister-hope@outlook.com",
+                        avatar: `https://avatars.githubusercontent.com/Mister-Hope?v=4`,
+                        username: "Mister-Hope",
+                        url: "https://github.com/Mister-Hope",
+                        commits: contributor.commits,
+                      });
+                    } else {
+                      filtered[index].commits += contributor.commits;
+                    }
+                  } else {
+                    const index = filtered.findIndex(
+                      (item) => item.name === contributor.name,
+                    );
+
+                    if (index === -1) {
+                      filtered.push(contributor);
+                    } else {
+                      filtered[index].commits += contributor.commits;
+                    }
+                  }
+                });
+
+                return filtered;
+              },
+            },
           }
         : false,
 
