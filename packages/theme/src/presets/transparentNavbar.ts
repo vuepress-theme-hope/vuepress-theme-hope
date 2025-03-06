@@ -153,6 +153,6 @@ export const setupTransparentNavbar = ({
   useEventListener("scroll", transparentNavbar);
 
   onMounted(() => {
-    watchImmediate(routePath, () => transparentNavbar, { flush: "post" });
+    watchImmediate(routePath, transparentNavbar, { flush: "post" });
   });
 };
