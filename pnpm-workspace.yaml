@@ -10,7 +10,7 @@ catalog:
   markmap-toolbar: 0.18.10
   markmap-view: 0.18.10
   mathjax-full: 3.2.2
-  mermaid: 11.4.1
+  mermaid: 11.5.0
   reveal.js: 5.1.0
   sass-embedded: 1.85.1
   sass-loader: 16.0.5
