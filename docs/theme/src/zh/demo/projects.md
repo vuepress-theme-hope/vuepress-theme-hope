@@ -518,6 +518,13 @@ blogs:
     url: https://guoxicheng.top
     repo: https://github.com/GuoXiCheng/guoxicheng.github.io
     preview: /assets/image/guo-s-page-zh.png
+
+  - name: RichELF
+    desc: 给机器以生命，给岁月以文明。
+    logo: https://richelf.tech/favicon.ico
+    url: https://richelf.tech/
+    repo: https://github.com/Vang-z/RichELF2
+    preview: https://richelf.tech/assets/images/background.avif
 ---
 
 ## 使用 VuePress Theme Hope 的文档
