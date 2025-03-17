@@ -1,4 +1,4 @@
-import type { GitContributor } from "@vuepress/plugin-git";
+import type { GitContributorInfo } from "@vuepress/plugin-git";
 import type { ThemeFunction } from "vuepress/core";
 import type { ThemeOptions } from "vuepress-theme-hope";
 import { hopeTheme } from "vuepress-theme-hope";
@@ -93,7 +93,7 @@ export const theme = (
                   contributors
                     .reverse()
                     .map<
-                      [string, GitContributor]
+                      [string, GitContributorInfo]
                     >((contributor) => [contributor.name, contributor]),
                 ),
               ),

@@ -1,19 +1,17 @@
-import type { GitContributor } from "@vuepress/plugin-git";
+import type { GitContributorInfo } from "@vuepress/plugin-git";
+import { useContributors as _useContributors } from "@vuepress/plugin-git/client";
 import type { ComputedRef } from "vue";
 import { computed } from "vue";
-import { usePageData, usePageFrontmatter } from "vuepress/client";
+import { usePageFrontmatter } from "vuepress/client";
 
 import { useThemeLocaleData } from "@theme-hope/composables/index";
 
-import type {
-  ThemeNormalPageFrontmatter,
-  ThemePageData,
-} from "../../../../shared/index.js";
+import type { ThemeNormalPageFrontmatter } from "../../../../shared/index.js";
 
-export const useContributors = (): ComputedRef<null | GitContributor[]> => {
-  const themeLocale = useThemeLocaleData();
-  const page = usePageData<ThemePageData>();
+export const useContributors = (): ComputedRef<null | GitContributorInfo[]> => {
   const frontmatter = usePageFrontmatter<ThemeNormalPageFrontmatter>();
+  const contributors = _useContributors();
+  const themeLocale = useThemeLocaleData();
 
   return computed(() => {
     const showContributors =
@@ -21,6 +19,6 @@ export const useContributors = (): ComputedRef<null | GitContributor[]> => {
 
     if (!showContributors) return null;
 
-    return page.value.git?.contributors ?? null;
+    return contributors.value;
   });
 };
