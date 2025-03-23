@@ -164,7 +164,7 @@ Whether to enable comments on the current page.
 - Type: `boolean`
 - Default: value in theme options
 
-Whether display lastUpdated time.
+Whether to display lastUpdated time.
 
 ## editLink
 
@@ -179,6 +179,13 @@ Whether to show edit link.
 - Default: value in theme options
 
 Whether to show contributors.
+
+## changelog
+
+- Type: `boolean`
+- Default: value in theme options
+
+Whether to display changelog.
 
 ## prev
 

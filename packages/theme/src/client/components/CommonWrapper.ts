@@ -87,7 +87,7 @@ export default defineComponent({
     const frontmatter = usePageFrontmatter<
       ThemeProjectHomePageFrontmatter | ThemeNormalPageFrontmatter
     >();
-    const themeData = useThemeData();
+    const theme = useThemeData();
     const themeLocale = useThemeLocaleData();
     const { isMobile, isPC } = useWindowSize();
     const isPure = usePure();
@@ -133,7 +133,7 @@ export default defineComponent({
     const enableExternalLinkIcon = computed(
       () =>
         frontmatter.value.externalLinkIcon ??
-        themeData.value.externalLinkIcon ??
+        theme.value.externalLinkIcon ??
         true,
     );
 

@@ -20,7 +20,6 @@ export const trLocale: ThemeLocaleData = {
     toc: "Bu sayfada",
     prev: "Önceki",
     next: "Sonraki",
-    lastUpdated: "Son Güncelleme",
     contributors: "Katkıda Bulunanlar",
     editLink: "Bu sayfayı düzenle",
     print: "Yazdır",

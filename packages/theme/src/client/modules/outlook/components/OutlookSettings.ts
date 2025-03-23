@@ -13,11 +13,11 @@ export default defineComponent({
   name: "OutlookSettings",
 
   setup() {
-    const themeData = useThemeData();
+    const theme = useThemeData();
     const isPure = usePure();
 
     const enableFullScreen = computed(
-      () => !isPure.value && themeData.value.fullscreen,
+      () => !isPure.value && theme.value.fullscreen,
     );
 
     return (): VNode =>

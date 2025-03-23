@@ -1,9 +1,8 @@
-import type { GitContributorInfo } from "@vuepress/plugin-git";
 import type { ThemeFunction } from "vuepress/core";
 import type { ThemeOptions } from "vuepress-theme-hope";
 import { hopeTheme } from "vuepress-theme-hope";
 
-const IS_PROD = process.env.NODE_ENV === "production";
+// const IS_PROD = process.env.NODE_ENV === "production";
 const IS_GITEE = "GITEE" in process.env;
 const IS_NETLIFY = "NETLIFY" in process.env;
 const IS_GITHUB = !IS_GITEE && !IS_NETLIFY;
@@ -54,6 +53,7 @@ export const theme = (
     displayFooter: true,
 
     pageInfo: ["ReadingTime", "Category", "Tag"],
+    changelog: true,
 
     markdown: {
       highlighter: {
@@ -84,21 +84,18 @@ export const theme = (
         indexBase: base ? `/v2/${base}/` : "/v2/",
       },
 
-      git: IS_PROD
-        ? {
-            // merge contributors
-            transformContributors: (contributors) =>
-              Object.values(
-                Object.fromEntries(
-                  contributors
-                    .reverse()
-                    .map<
-                      [string, GitContributorInfo]
-                    >((contributor) => [contributor.name, contributor]),
-                ),
-              ),
-          }
-        : false,
+      git: {
+        contributors: {
+          avatar: true,
+          info: [
+            {
+              username: "Mister-Hope",
+              name: "Mr.Hope",
+              alias: "Mr.Hope",
+            },
+          ],
+        },
+      },
 
       ...(IS_NETLIFY
         ? {}

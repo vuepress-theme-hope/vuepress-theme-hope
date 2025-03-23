@@ -20,7 +20,6 @@ export const nlLocale: ThemeLocaleData = {
     toc: "Op Deze Pagina",
     prev: "Vorige",
     next: "Volgende",
-    lastUpdated: "Laatst geüpdate",
     contributors: "Bijdragers",
     editLink: "Bewerk deze pagina",
     print: "Printen",

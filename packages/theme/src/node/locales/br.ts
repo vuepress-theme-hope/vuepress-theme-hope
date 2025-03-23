@@ -20,7 +20,6 @@ export const brLocale: ThemeLocaleData = {
     toc: "On This Page",
     prev: "Prev",
     next: "Next",
-    lastUpdated: "Última atualização",
     editLink: "Editar esta página",
     contributors: "Contribuidores",
     print: "Imprimir",

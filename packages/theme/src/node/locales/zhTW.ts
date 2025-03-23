@@ -20,7 +20,6 @@ export const zhTWLocale: ThemeLocaleData = {
     toc: "此頁內容",
     prev: "上一頁",
     next: "下一頁",
-    lastUpdated: "上次編輯於",
     contributors: "貢獻者",
     editLink: "編輯此頁",
     print: "打印",

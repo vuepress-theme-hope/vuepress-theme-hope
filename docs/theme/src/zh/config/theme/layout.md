@@ -305,6 +305,13 @@ tag:
 
 是否显示页面贡献者
 
+### changelog
+
+- 类型: `boolean`
+- 默认值: `true`
+
+是否显示变更日志
+
 ### editLink
 
 - 类型: `boolean`

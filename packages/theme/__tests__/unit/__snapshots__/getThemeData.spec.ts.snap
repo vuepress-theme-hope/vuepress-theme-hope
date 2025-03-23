@@ -12,7 +12,6 @@ exports[`should generate themeData correctly > Should contain basic properties 1
         "contributors": "Contributors",
         "date": "Writing Date",
         "editLink": "Edit this page",
-        "lastUpdated": "Last update",
         "next": "Next",
         "origin": "Original",
         "prev": "Prev",

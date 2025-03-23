@@ -39,7 +39,7 @@ export default defineComponent({
   }>,
 
   setup(_props, { slots }) {
-    const themeData = useThemeData();
+    const theme = useThemeData();
     const themeLocale = useThemeLocaleData();
     const page = usePageData();
     const frontmatter = usePageFrontmatter<ThemePageFrontmatter>();
@@ -49,7 +49,7 @@ export default defineComponent({
     const sidebarDisplay = computed(() =>
       __VP_BLOG__
         ? (themeLocale.value.blog?.sidebarDisplay ??
-          themeData.value.blog?.sidebarDisplay ??
+          theme.value.blog?.sidebarDisplay ??
           "mobile")
         : "none",
     );

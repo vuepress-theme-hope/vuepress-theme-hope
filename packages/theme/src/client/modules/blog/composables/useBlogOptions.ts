@@ -9,11 +9,11 @@ import {
 import type { BlogLocaleConfig } from "../../../../shared/index.js";
 
 export const useBlogOptions = (): ComputedRef<BlogLocaleConfig> => {
-  const themeData = useThemeData();
+  const theme = useThemeData();
   const themeLocale = useThemeLocaleData();
 
   return computed(() => ({
-    ...themeData.value.blog,
+    ...theme.value.blog,
     ...themeLocale.value.blog,
   }));
 };

@@ -20,7 +20,6 @@ export const ruLocale: ThemeLocaleData = {
     toc: "На этой странице",
     prev: "Предыдущая",
     next: "Следующая",
-    lastUpdated: "Последнее обновление",
     contributors: "Контрибьюторы",
     editLink: "Редактировать эту страницу",
     print: "Печать",

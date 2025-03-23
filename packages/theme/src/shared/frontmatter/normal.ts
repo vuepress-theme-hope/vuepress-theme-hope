@@ -133,15 +133,21 @@ export interface ThemeNormalPageFrontmatter extends ThemePageFrontmatter {
    *
    * 是否显示最后更新事件
    */
-
   lastUpdated?: boolean;
+
+  /**
+   * Whether display changelog
+   *
+   * 是否显示变更历史
+   */
+  changelog?: boolean;
 
   /**
    * Whether display contributors
    *
    * 是否显示贡献者
    */
-  contributors?: boolean;
+  contributors?: boolean | string[];
 
   /**
    * Whether show Edit link

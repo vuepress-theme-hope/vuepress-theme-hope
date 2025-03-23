@@ -23,14 +23,14 @@ export const useNavbarLanguageDropdown =
     const routePaths = useRoutePaths();
     const route = useRoute();
     const routeLocale = useRouteLocale();
-    const siteData = useSiteData();
+    const site = useSiteData();
     const siteLocale = useSiteLocaleData();
-    const themeData = useThemeData();
+    const theme = useThemeData();
     const themeLocale = useThemeLocaleData();
 
     return computed(() => {
-      const localePaths = keys(siteData.value.locales);
-      const extraLocales = entries(themeData.value.extraLocales ?? {});
+      const localePaths = keys(site.value.locales);
+      const extraLocales = entries(theme.value.extraLocales ?? {});
 
       // Do not display language selection dropdown if there is only one language
       if (localePaths.length < 2 && !extraLocales.length) return null;
@@ -44,10 +44,9 @@ export const useNavbarLanguageDropdown =
         children: [
           ...localePaths.map((targetLocalePath) => {
             // Target locale config of this language link
-            const targetSiteLocale =
-              siteData.value.locales[targetLocalePath] ?? {};
+            const targetSiteLocale = site.value.locales[targetLocalePath] ?? {};
             const targetThemeLocale =
-              themeData.value.locales[targetLocalePath] ?? {};
+              theme.value.locales[targetLocalePath] ?? {};
             const targetLang = targetSiteLocale.lang;
 
             const text = targetThemeLocale.navbarLocales.langName;

@@ -20,7 +20,6 @@ export const idLocale: ThemeLocaleData = {
     toc: "Pada Halaman Ini",
     prev: "Sebelumnya",
     next: "Selanjutnya",
-    lastUpdated: "Terakhir diperbarui",
     contributors: "Kontributor",
     editLink: "Edit halaman ini",
     print: "Cetak",

@@ -183,6 +183,13 @@ tag:
 
 是否显示贡献者。
 
+## changelog
+
+- 类型: `boolean`
+- 默认值: 主题选项中的值
+
+是否显示变更日志。
+
 ## prev
 
 - 类型: `AutoLinkConfig | string | false`

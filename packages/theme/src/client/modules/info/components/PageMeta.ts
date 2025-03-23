@@ -1,14 +1,15 @@
+import { hasGlobalComponent } from "@vuepress/helper/client";
+import { useLastUpdated } from "@vuepress/plugin-git/client";
 import type { VNode } from "vue";
 import { defineComponent, h } from "vue";
+import { usePageFrontmatter } from "vuepress/client";
 
 import AutoLink from "@theme-hope/components/AutoLink";
 import { EditIcon } from "@theme-hope/components/icons/index";
 import { useThemeLocaleData } from "@theme-hope/composables/index";
-import {
-  useContributors,
-  useEditLink,
-  useUpdateTime,
-} from "@theme-hope/modules/info/composables/index";
+import { useEditLink } from "@theme-hope/modules/info/composables/index";
+
+import type { ThemeNormalPageFrontmatter } from "../../../../shared/index.js";
 
 import "../styles/page-meta.scss";
 
@@ -16,13 +17,15 @@ export default defineComponent({
   name: "PageMeta",
 
   setup() {
+    const frontmatter = usePageFrontmatter<ThemeNormalPageFrontmatter>();
     const themeLocale = useThemeLocaleData();
     const editLink = useEditLink();
-    const updateTime = useUpdateTime();
-    const contributors = useContributors();
+    const lastUpdated = useLastUpdated();
 
     return (): VNode => {
-      const { metaLocales } = themeLocale.value;
+      const showChangelog =
+        (frontmatter.value.changelog ?? themeLocale.value.changelog ?? true) &&
+        hasGlobalComponent("GitChangelog");
 
       return h("footer", { class: "vp-page-meta" }, [
         editLink.value
@@ -36,41 +39,24 @@ export default defineComponent({
               ),
             )
           : null,
-        h("div", { class: "vp-meta-item git-info" }, [
-          updateTime.value
+        h(
+          "div",
+          { class: "vp-meta-item git-info" },
+          !showChangelog && lastUpdated.value
             ? h("div", { class: "update-time" }, [
+                h("span", { class: "vp-meta-label" }, lastUpdated.value.locale),
                 h(
-                  "span",
-                  { class: "vp-meta-label" },
-                  `${metaLocales.lastUpdated}: `,
-                ),
-                h(
-                  "span",
-                  { class: "vp-meta-info", "data-allow-mismatch": "text" },
-                  updateTime.value,
+                  "time",
+                  {
+                    class: "vp-meta-info",
+                    datetime: lastUpdated.value.iso,
+                    "data-allow-mismatch": "",
+                  },
+                  lastUpdated.value.text,
                 ),
               ])
-            : null,
-          contributors.value?.length
-            ? h("div", { class: "contributors" }, [
-                h(
-                  "span",
-                  { class: "vp-meta-label" },
-                  `${metaLocales.contributors}: `,
-                ),
-                contributors.value.map(
-                  ({ email, name }, index, contributors) => [
-                    h(
-                      "span",
-                      { class: "vp-meta-info", title: `email: ${email}` },
-                      name,
-                    ),
-                    index !== contributors.length - 1 ? "," : "",
-                  ],
-                ),
-              ])
-            : null,
-        ]),
+            : [],
+        ),
       ]);
     };
   },

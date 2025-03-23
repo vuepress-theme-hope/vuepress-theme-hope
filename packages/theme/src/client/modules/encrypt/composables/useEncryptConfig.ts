@@ -6,7 +6,7 @@ import { useThemeData } from "@theme-hope/composables/index";
 import type { EncryptConfig } from "../../../../shared/index.js";
 
 export const useEncryptConfig = (): ComputedRef<EncryptConfig> => {
-  const themeData = useThemeData();
+  const theme = useThemeData();
 
-  return computed(() => themeData.value.encrypt);
+  return computed(() => theme.value.encrypt);
 };

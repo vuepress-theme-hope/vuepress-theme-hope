@@ -84,9 +84,14 @@ export default defineComponent({
                   },
                 )
               : null,
-            slots.contentBefore?.(),
-            h(MarkdownContent),
-            slots.contentAfter?.(),
+            h(
+              MarkdownContent,
+              {},
+              {
+                before: slots.contentBefore,
+                after: slots.contentAfter,
+              },
+            ),
             h(PageMeta),
             h(PageNav),
             hasGlobalComponent("CommentService")

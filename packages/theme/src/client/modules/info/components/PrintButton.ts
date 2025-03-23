@@ -13,11 +13,11 @@ export default defineComponent({
   name: "PrintButton",
 
   setup() {
-    const themeData = useThemeData();
+    const theme = useThemeData();
     const themeLocale = useThemeLocaleData();
 
     return (): VNode | null =>
-      themeData.value.print === false
+      theme.value.print === false
         ? null
         : h(
             "button",

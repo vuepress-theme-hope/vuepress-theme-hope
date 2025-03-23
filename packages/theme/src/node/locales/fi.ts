@@ -20,7 +20,6 @@ export const fiLocale: ThemeLocaleData = {
     toc: "Sisällys",
     prev: "Edellinen",
     next: "Seuraava",
-    lastUpdated: "Päivitetty",
     contributors: "Osallistujat",
     editLink: "Muokkaa tätä sivua",
     print: "Tulosta",

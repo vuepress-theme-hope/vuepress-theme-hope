@@ -32,7 +32,6 @@ export default defineComponent({
             ? null
             : h(
                 "div",
-                {},
                 h(DropTransition, { appear: true, delay: 0.24 }, () =>
                   h(MarkdownContent, {
                     class: {

@@ -83,6 +83,7 @@ describe("should generate themeData correctly", () => {
 
     const result = getThemeData(app, themeOptions, getThemeStatus(app, {}));
 
+    expect(result).not.toHaveProperty("navbar");
     expect(result.locales).toBeTypeOf("object");
     expect(new Set(Object.keys(result.locales))).toEqual(
       new Set(["/", "/zh/"]),

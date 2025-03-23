@@ -20,7 +20,6 @@ export const koLocale: ThemeLocaleData = {
     toc: "이 페이지에서",
     prev: "이전",
     next: "다음",
-    lastUpdated: "마지막 수정",
     contributors: "기여자",
     editLink: "이 페이지 수정",
     print: "인쇄",

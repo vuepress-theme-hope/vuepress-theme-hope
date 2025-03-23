@@ -20,7 +20,6 @@ export const enLocale: ThemeLocaleData = {
     toc: "On This Page",
     prev: "Prev",
     next: "Next",
-    lastUpdated: "Last update",
     contributors: "Contributors",
     editLink: "Edit this page",
     print: "Print",

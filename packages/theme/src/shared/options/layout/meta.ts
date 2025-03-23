@@ -77,13 +77,6 @@ export interface MetaLocateData {
   next: string;
 
   /**
-   * Last updated Text
-   *
-   * 最后更新时间
-   */
-  lastUpdated: string;
-
-  /**
    * Contributors text
    *
    * 贡献者
@@ -114,6 +107,15 @@ export interface MetaLocaleOptions {
    * @default true
    */
   lastUpdated?: boolean;
+
+  /**
+   * Whether to show "changelog" or not
+   *
+   * 是否显示页面变更历史
+   *
+   * @default false
+   */
+  changelog?: boolean;
 
   /**
    * Whether to show "Contributors" or not

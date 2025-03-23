@@ -20,7 +20,6 @@ export const viLocale: ThemeLocaleData = {
     toc: "On This Page",
     prev: "Prev",
     next: "Next",
-    lastUpdated: "Cập nhật gần nhất lúc",
     contributors: "Người đóng góp",
     editLink: "Chỉnh sửa trang này",
     print: "In",

@@ -20,7 +20,6 @@ export const ukLocale: ThemeLocaleData = {
     toc: "На сторінці",
     prev: "Попередня",
     next: "Наступна",
-    lastUpdated: "Останнє оновлення",
     contributors: "Автори",
     editLink: "Редагувати цю сторінку",
     print: "Друк",

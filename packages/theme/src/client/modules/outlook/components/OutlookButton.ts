@@ -17,7 +17,7 @@ export default defineComponent({
   name: "OutlookButton",
 
   setup() {
-    const themeData = useThemeData();
+    const theme = useThemeData();
     const { canToggle } = useDarkMode();
     const { isSupported } = useFullscreen();
     const isPure = usePure();
@@ -25,7 +25,7 @@ export default defineComponent({
     const open = ref(false);
 
     const enableFullScreen = computed(
-      () => !isPure.value && themeData.value.fullscreen && isSupported,
+      () => !isPure.value && theme.value.fullscreen && isSupported,
     );
 
     const enabled = computed(

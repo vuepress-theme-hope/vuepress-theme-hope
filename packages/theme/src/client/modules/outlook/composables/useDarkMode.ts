@@ -42,9 +42,9 @@ export const useDarkMode = (): DarkMode => {
 };
 
 export const injectDarkMode = (app: App): void => {
-  const themeData = useThemeData();
   const isDarkPreferred = usePreferredDark();
-  const config = computed(() => themeData.value.darkmode ?? "switch");
+  const theme = useThemeData();
+  const config = computed(() => theme.value.darkmode ?? "switch");
 
   const status = useStorage<DarkmodeStatus>(
     "vuepress-theme-hope-scheme",

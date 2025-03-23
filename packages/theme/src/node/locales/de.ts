@@ -20,7 +20,6 @@ export const deLocale: ThemeLocaleData = {
     toc: "Auf dieser Seite",
     prev: "Vorherige",
     next: "Nächste",
-    lastUpdated: "Zuletzt geändert",
     contributors: "Mitwirkende",
     editLink: "Diese Seite barbeiten",
     print: "Drucken",

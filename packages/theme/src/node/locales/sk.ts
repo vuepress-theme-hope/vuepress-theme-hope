@@ -20,7 +20,6 @@ export const skLocale: ThemeLocaleData = {
     toc: "Na tejto stránke",
     prev: "Predchádzajúci",
     next: "Ďalší",
-    lastUpdated: "Posledná aktualizácia",
     contributors: "Prispievatelia",
     editLink: "Uprav túto stránku",
     print: "Tlač",

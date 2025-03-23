@@ -22,12 +22,6 @@ The plugin will automatically generate the page creation time and last update ti
 
 The theme will display last update time in the appropriate date format, along with all page contributors at the bottom of the page.
 
-::: tip
-
-The theme will use `Date.toLocaleString(pageLang)` to automatically localize the text of last update time according to the current language.
-
-:::
-
 ::: warning Limitations
 
 1. Since the contributors, last update time, and file creation time information are based on `git`, you can only enable it in a `git` based project.
@@ -52,5 +46,6 @@ To hide these items globally, set the corresponding items below to `false` in th
 - `lastUpdated`: whether to display last update time of the page
 - `contributors`: whether to show page contributors
 - `editLink`: whether to display "edit page" link
+- `changelog`: whether to show changelog
 
 [git]: https://ecosystem.vuejs.press/plugins/development/git.html

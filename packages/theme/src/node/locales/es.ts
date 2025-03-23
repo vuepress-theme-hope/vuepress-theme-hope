@@ -20,7 +20,6 @@ export const esLocale: ThemeLocaleData = {
     toc: "En esta página",
     prev: "Anterior",
     next: "Siguiente",
-    lastUpdated: "Última actualización",
     contributors: "Contribuidores",
     editLink: "Editar esta página",
     print: "Imprimir",

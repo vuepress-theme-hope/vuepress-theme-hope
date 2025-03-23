@@ -305,6 +305,13 @@ Whether to show "Last Updated" or not.
 
 Whether to show "Contributors" or not.
 
+### changelog
+
+- Type: `boolean`
+- Default: `true`
+
+Whether to show changelog.
+
 ### editLink
 
 - Type: `boolean`

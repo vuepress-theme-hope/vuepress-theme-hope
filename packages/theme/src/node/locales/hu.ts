@@ -20,7 +20,6 @@ export const huLocale: ThemeLocaleData = {
     toc: "Tartalom",
     prev: "Előző",
     next: "Következő",
-    lastUpdated: "Utoljára frissítve",
     contributors: "Közreműködők",
     editLink: "Oldal szerkesztése",
     print: "Nyomtatás",

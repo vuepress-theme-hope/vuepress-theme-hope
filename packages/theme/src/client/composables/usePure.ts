@@ -4,7 +4,7 @@ import { computed } from "vue";
 import { useThemeData } from "./useThemeData.js";
 
 export const usePure = (): ComputedRef<boolean> => {
-  const themeData = useThemeData();
+  const theme = useThemeData();
 
-  return computed(() => Boolean(themeData.value.pure));
+  return computed(() => Boolean(theme.value.pure));
 };

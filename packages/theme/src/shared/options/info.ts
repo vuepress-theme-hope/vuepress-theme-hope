@@ -9,6 +9,13 @@ export interface InfoOptions {
   favicon?: string;
 
   /**
+   * Domain which to be deployed to
+   *
+   * 网站部署域名
+   */
+  hostname?: string;
+
+  /**
    * Global default author
    *
    * 全局默认作者
@@ -23,13 +30,6 @@ export interface InfoOptions {
   license?: string;
 
   /**
-   * Domain which to be deployed to
-   *
-   * 网站部署域名
-   */
-  hostname?: string;
-
-  /**
    * Extra i18n sites
    *
    * @description key is the name of language, and value is the path of site, `:route` will be replaced by current route
@@ -40,3 +40,5 @@ export interface InfoOptions {
    */
   extraLocales?: Record<string, string>;
 }
+
+export type InfoConfig = Omit<InfoOptions, "favicon" | "hostname">;

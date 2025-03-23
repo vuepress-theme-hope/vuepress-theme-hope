@@ -22,12 +22,6 @@ tag:
 
 主题将以合适的日期格式将最后更新时间显示在每一页的底部，同时显示该页面所有贡献者。
 
-::: tip
-
-主题会使用 `Date.toLocaleString(pageLang)` 自动根据当前语言，本地化最后更新时间的表述文字。
-
-:::
-
 ::: warning 使用限制
 
 1. 由于贡献者、最后更新时间以及文件创建日期基于 `git`，所以你只能在一个基于 `git` 的项目中启用它。
@@ -52,5 +46,6 @@ tag:
 - `lastUpdated`: 是否显示页面最后更新时间
 - `contributors`: 是否显示页面贡献者
 - `editLink`: 是否展示编辑此页链接
+- `changelog`: 是否显示变更日志
 
 [git]: https://ecosystem.vuejs.press/zh/plugins/development/git.html
