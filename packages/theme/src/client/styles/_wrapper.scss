@@ -1,7 +1,7 @@
 @use "@sass-palette/hope-config";
 
 @mixin wrapper($pad: hope-config.$pad, $mobile: hope-config.$mobile) {
-  max-width: var(--content-width, 740px);
+  max-width: var(--content-width);
   margin: 0 auto;
   padding: 2rem 2.5rem;
 
@@ -19,7 +19,7 @@
 }
 
 @mixin horizontal-wrapper($pad: hope-config.$pad) {
-  max-width: var(--content-width, 740px);
+  max-width: var(--content-width);
   margin-inline: auto;
   padding-inline: 2.5rem;
 

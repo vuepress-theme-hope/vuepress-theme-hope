@@ -13,7 +13,7 @@ $headings: (2, 3, 4, 5, 6);
 
     display: none;
 
-    max-width: var(--content-width, 740px);
+    max-width: var(--content-width);
   }
 
   @media (max-width: hope-config.$tablet) {
