@@ -2,7 +2,8 @@
 @use "wrapper";
 
 // plugin-catalog
-.vp-catalog-title {
+.vp-catalog-title,
+.vp-catalog-sub-title {
   .vp-icon {
     margin-inline-end: 0.25rem;
   }
