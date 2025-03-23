@@ -4,6 +4,25 @@ All notable changes to this project will be documented in this file. See [Conven
 
 <!-- #region recent-change -->
 
+## [2.0.0-rc.75](https://github.com/vuepress-theme-hope/vuepress-theme-hope/compare/v2.0.0-rc.74...v2.0.0-rc.75) (2025-03-23)
+
+### ✨ Features
+
+- **create:** improve version handling ([35a701c](https://github.com/vuepress-theme-hope/vuepress-theme-hope/commit/35a701c6a00abb4a5ad268cc5d15969b31e20865))
+- **theme:** add $pc-content-width ([5591fc1](https://github.com/vuepress-theme-hope/vuepress-theme-hope/commit/5591fc1beca7fa4870c5963ccc964c61bd51c64f))
+- **theme:** add support for changelog and contributor components ([76d917b](https://github.com/vuepress-theme-hope/vuepress-theme-hope/commit/76d917b2a03c0f215dd14c13a87686bd93671048))
+
+### 🐛 Bug Fixes
+
+- **theme:** fix article info, close [#4800](https://github.com/vuepress-theme-hope/vuepress-theme-hope/issues/4800) ([0081122](https://github.com/vuepress-theme-hope/vuepress-theme-hope/commit/008112258a0ac527fdc39c0af8c65da251cc6c99))
+- **theme:** fix catalog icon ([91dd0b5](https://github.com/vuepress-theme-hope/vuepress-theme-hope/commit/91dd0b54c82b3b408f76c44028bf4a79233808f9))
+- **theme:** fix displayFooter option ([e72bd52](https://github.com/vuepress-theme-hope/vuepress-theme-hope/commit/e72bd52a27718a09dd73696fcde404c199b14941))
+- **theme:** fix git plugin ([1b54351](https://github.com/vuepress-theme-hope/vuepress-theme-hope/commit/1b543518aea70ee6f500741ab64b833a3e98d8e8))
+- **theme:** fix global encrypt, close [#4803](https://github.com/vuepress-theme-hope/vuepress-theme-hope/issues/4803) ([8f67d52](https://github.com/vuepress-theme-hope/vuepress-theme-hope/commit/8f67d529d51dc15cc83ddeacde6091d8fbb1843c))
+- **theme:** fix setupTransparentNavbar ([4bfb1ab](https://github.com/vuepress-theme-hope/vuepress-theme-hope/commit/4bfb1ab195e8701831cbfcd3014c7376184ad6fa))
+
+<!-- #region recent-change -->
+
 ## [2.0.0-rc.74](https://github.com/vuepress-theme-hope/vuepress-theme-hope/compare/v2.0.0-rc.73...v2.0.0-rc.74) (2025-03-06)
 
 ### ✨ Features
