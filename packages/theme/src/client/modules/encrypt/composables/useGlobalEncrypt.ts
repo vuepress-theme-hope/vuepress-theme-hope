@@ -41,8 +41,6 @@ export const useGlobalEncrypt = (): GlobalEncrypt => {
             )
         : false;
 
-    console.log(isLocked);
-
     return {
       isEncrypted,
       isLocked,
