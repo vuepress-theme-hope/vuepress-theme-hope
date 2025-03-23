@@ -6,6 +6,10 @@
   @media (prefers-reduced-motion: no-preference) {
     scroll-behavior: smooth;
   }
+
+  @media (min-width: hope-config.$pc) {
+    --content-width: var(--pc-content-width);
+  }
 }
 
 ::-webkit-scrollbar {

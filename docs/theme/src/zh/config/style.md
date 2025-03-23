@@ -165,6 +165,7 @@ $vp-c-border: (
 内容:
 
 - `$content-width`: 主要内容的宽度
+- `$pc-content-width`: PC 上主要内容的宽度
 - `$home-page-width`: 主页内容的宽度
 
 ::: details 例子

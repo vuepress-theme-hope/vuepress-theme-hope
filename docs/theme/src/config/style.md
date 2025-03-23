@@ -165,6 +165,7 @@ Sidebar:
 Content:
 
 - `$content-width`: width of main content
+- `$pc-content-width`: width of main content in pc
 - `$home-page-width`: width of homepage content
 
 ::: details Demo
