@@ -946,6 +946,15 @@ importers:
         specifier: ^9.5.2
         version: 9.5.2
     devDependencies:
+      sass-embedded:
+        specifier: catalog:range
+        version: 1.85.1
+      sass-loader:
+        specifier: catalog:range
+        version: 16.0.5(sass-embedded@1.85.1)(sass@1.85.1)(webpack@5.98.0(esbuild@0.25.1))
+      vue:
+        specifier: catalog:range
+        version: 3.5.13(typescript@5.8.2)
       vuepress:
         specifier: catalog:vuepress
         version: 2.0.0-rc.20(@vuepress/bundler-vite@2.0.0-rc.20(@types/node@22.13.10)(jiti@2.4.2)(lightningcss@1.29.3)(sass-embedded@1.85.1)(sass@1.85.1)(terser@5.39.0)(tsx@4.19.3)(typescript@5.8.2)(yaml@2.7.0))(@vuepress/bundler-webpack@2.0.0-rc.20(esbuild@0.25.1)(typescript@5.8.2))(typescript@5.8.2)(vue@3.5.13(typescript@5.8.2))
