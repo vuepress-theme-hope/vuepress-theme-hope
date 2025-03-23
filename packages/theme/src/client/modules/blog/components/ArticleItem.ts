@@ -61,11 +61,11 @@ export default defineComponent({
     return (): VNode => {
       const {
         title,
-        ["type"]: type,
-        ["isEncrypted"]: isEncrypted = false,
-        ["cover"]: cover,
-        ["excerpt"]: excerpt,
-        ["sticky"]: sticky,
+        type: type,
+        isEncrypted: isEncrypted = false,
+        cover: cover,
+        excerpt: excerpt,
+        sticky: sticky,
       } = articleInfo.value;
       const info = pageInfo.value;
 
@@ -127,7 +127,7 @@ export default defineComponent({
             slots.info?.({ info }) ??
               h(PageInfo, {
                 info,
-                ...(items.value ? { items: items.value } : {}),
+                items: items.value,
               }),
           ],
         ),

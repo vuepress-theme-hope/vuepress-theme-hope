@@ -78,7 +78,7 @@ export const useArticleInfo = (props: {
   path: string;
 }): {
   info: ComputedRef<PageInfoProps>;
-  items: ComputedRef<PageInfoType[] | false | undefined>;
+  items: ComputedRef<PageInfoType[] | false | null>;
 } => {
   const articleInfo = toRef(props, "info");
   const blogOptions = useBlogOptions();
@@ -106,7 +106,7 @@ export const useArticleInfo = (props: {
     pageview: props.path,
   }));
 
-  const items = computed(() => blogOptions.value.articleInfo);
+  const items = computed(() => blogOptions.value.articleInfo ?? null);
 
   return { info, items };
 };
