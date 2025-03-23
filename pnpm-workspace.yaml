@@ -63,7 +63,7 @@ catalogs:
     "@vuepress/plugin-shiki": 2.0.0-rc.86
     "@vuepress/plugin-slimsearch": 2.0.0-rc.86
     "@vuepress/plugin-sitemap": 2.0.0-rc.86
-    "@vuepress/plugin-theme-data": 2.0.0-rc.79
+    "@vuepress/plugin-theme-data": 2.0.0-rc.86
     "@vuepress/plugin-watermark": 2.0.0-rc.86
     "@vuepress/shiki-twoslash": 2.0.0-rc.86
     "@vuepress/theme-default": 2.0.0-rc.86
