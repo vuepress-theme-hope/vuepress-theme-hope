@@ -14,9 +14,9 @@ import type {
 import {
   availablePackageManagers,
   generateTemplate,
+  packageJSON,
   supportedBundlers,
   supportedPresets,
-  version,
 } from "./config/index.js";
 import type { CreateLocale, SupportedLang } from "./i18n/index.js";
 import { getLanguage } from "./i18n/index.js";
@@ -222,7 +222,7 @@ Add vuepress-theme-hope template in <dir> under current project
     await postAction({ lang, locale, packageManager });
   });
 
-program.version(version);
+program.version(packageJSON.version);
 program.showHelpAfterError("add --help for additional information");
 
 await program.parseAsync();
