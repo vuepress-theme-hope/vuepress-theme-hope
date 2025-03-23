@@ -525,7 +525,7 @@ blogs:
     url: https://richelf.tech/
     repo: https://github.com/Vang-z/RichELF2
     preview: https://richelf.tech/assets/images/background.avif
-    
+
   - name: 耳朵同的博客
     desc: 耳朵同的博客和笔记
     logo: https://blog.erduotong.com/logo.png
