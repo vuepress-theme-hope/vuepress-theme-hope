@@ -37,7 +37,7 @@ export default defineComponent({
 
       return isString(footer)
         ? footer
-        : footer
+        : footer && themeLocale.value.displayFooter
           ? (themeLocale.value.footer ?? "")
           : null;
     });
