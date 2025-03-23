@@ -75,6 +75,7 @@ export const createConverter = (name: string): Converter => {
               temp[key] = deprecatedOptionValue;
             } else {
               // Ensure level exists
+              // eslint-disable-next-line @typescript-eslint/prefer-nullish-coalescing
               temp[key] ||= {};
               temp = temp[key] as Record<string, unknown>;
             }
