@@ -26,6 +26,7 @@ export default [
         "@vuepress/helper/noopComponent",
         "@vuepress/plugin-blog/client",
         "@vuepress/plugin-comment/pageview",
+        "@vuepress/plugin-git/client",
         "@vuepress/plugin-reading-time/client",
         "@vuepress/plugin-theme-data/client",
         "bcrypt-ts/browser",

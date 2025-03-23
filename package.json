@@ -50,14 +50,14 @@
     "@rollup/plugin-commonjs": "28.0.3",
     "@rollup/plugin-node-resolve": "16.0.1",
     "@rollup/plugin-replace": "6.0.2",
-    "@types/node": "22.13.10",
+    "@types/node": "22.13.11",
     "@types/webpack-env": "1.18.8",
-    "@vitest/coverage-istanbul": "3.0.8",
+    "@vitest/coverage-istanbul": "3.0.9",
     "concurrently": "9.1.2",
     "conventional-changelog-conventionalcommits": "7.0.2",
     "cpx2": "8.0.0",
     "cross-env": "7.0.3",
-    "eslint": "9.22.0",
+    "eslint": "9.23.0",
     "eslint-config-mister-hope": "0.8.1",
     "eslint-plugin-vue": "10.0.0",
     "gulp": "5.0.0",
@@ -70,7 +70,7 @@
     "rimraf": "6.0.1",
     "rollup": "4.36.0",
     "rollup-plugin-copy": "3.5.0",
-    "rollup-plugin-dts": "6.1.1",
+    "rollup-plugin-dts": "6.2.1",
     "rollup-plugin-esbuild": "6.2.1",
     "rollup-plugin-resolve-shebang": "1.0.1",
     "sort-package-json": "3.0.0",
@@ -81,9 +81,9 @@
     "tsx": "4.19.3",
     "typescript": "5.8.2",
     "vite": "6.1.1",
-    "vitest": "3.0.8"
+    "vitest": "3.0.9"
   },
-  "packageManager": "pnpm@10.6.3",
+  "packageManager": "pnpm@10.6.5",
   "engines": {
     "node": ">=20"
   },

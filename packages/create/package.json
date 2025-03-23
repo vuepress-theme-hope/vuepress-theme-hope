@@ -49,6 +49,9 @@
     "execa": "^9.5.2"
   },
   "devDependencies": {
+    "sass-embedded": "catalog:range",
+    "sass-loader": "catalog:range",
+    "vue": "catalog:range",
     "vuepress": "catalog:vuepress",
     "vuepress-theme-hope": "workspace:*"
   },
