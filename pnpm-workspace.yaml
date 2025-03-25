@@ -59,7 +59,7 @@ catalogs:
     "@vuepress/plugin-rtl": 2.0.0-rc.86
     "@vuepress/plugin-sass-palette": 2.0.0-rc.86
     "@vuepress/plugin-search": 2.0.0-rc.87
-    "@vuepress/plugin-seo": 2.0.0-rc.86
+    "@vuepress/plugin-seo": 2.0.0-rc.87
     "@vuepress/plugin-shiki": 2.0.0-rc.86
     "@vuepress/plugin-slimsearch": 2.0.0-rc.86
     "@vuepress/plugin-sitemap": 2.0.0-rc.87
