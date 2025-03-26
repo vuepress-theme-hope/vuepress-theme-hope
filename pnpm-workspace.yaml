@@ -37,9 +37,9 @@ catalogs:
     "@vuepress/plugin-copy-code": 2.0.0-rc.86
     "@vuepress/plugin-copyright": 2.0.0-rc.86
     "@vuepress/plugin-docsearch": 2.0.0-rc.86
-    "@vuepress/plugin-feed": 2.0.0-rc.87
-    "@vuepress/plugin-git": 2.0.0-rc.87
-    "@vuepress/plugin-icon": 2.0.0-rc.86
+    "@vuepress/plugin-feed": 2.0.0-rc.88
+    "@vuepress/plugin-git": 2.0.0-rc.88
+    "@vuepress/plugin-icon": 2.0.0-rc.88
     "@vuepress/plugin-links-check": 2.0.0-rc.86
     "@vuepress/plugin-markdown-ext": 2.0.0-rc.86
     "@vuepress/plugin-markdown-hint": 2.0.0-rc.86
@@ -59,12 +59,12 @@ catalogs:
     "@vuepress/plugin-rtl": 2.0.0-rc.86
     "@vuepress/plugin-sass-palette": 2.0.0-rc.86
     "@vuepress/plugin-search": 2.0.0-rc.87
-    "@vuepress/plugin-seo": 2.0.0-rc.87
+    "@vuepress/plugin-seo": 2.0.0-rc.88
     "@vuepress/plugin-shiki": 2.0.0-rc.86
     "@vuepress/plugin-slimsearch": 2.0.0-rc.86
-    "@vuepress/plugin-sitemap": 2.0.0-rc.87
+    "@vuepress/plugin-sitemap": 2.0.0-rc.88
     "@vuepress/plugin-theme-data": 2.0.0-rc.86
     "@vuepress/plugin-watermark": 2.0.0-rc.86
     "@vuepress/shiki-twoslash": 2.0.0-rc.86
-    "@vuepress/theme-default": 2.0.0-rc.87
+    "@vuepress/theme-default": 2.0.0-rc.88
     vuepress: 2.0.0-rc.20
