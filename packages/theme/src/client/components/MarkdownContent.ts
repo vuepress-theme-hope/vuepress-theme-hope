@@ -50,14 +50,15 @@ export default defineComponent({
     );
 
     const showChangelog = computed(
-      () => frontmatter.value.changelog ?? themeLocale.value.changelog ?? false,
+      () =>
+        frontmatter.value.changelog ??
+        ((themeLocale.value.changelog ?? false) && !frontmatter.value.home),
     );
 
     const showContributors = computed(
       () =>
         frontmatter.value.contributors ??
-        themeLocale.value.contributors ??
-        true,
+        ((themeLocale.value.contributors ?? true) && !frontmatter.value.home),
     );
 
     onMounted(() => {
@@ -77,7 +78,7 @@ export default defineComponent({
         slots.before?.(),
         h(Content, {
           ref: contentElement,
-          class: ["markdown-content"],
+          id: "markdown-content",
         }),
         slots.after?.(),
         showChangelog.value && hasGlobalComponent("GitChangelog")
