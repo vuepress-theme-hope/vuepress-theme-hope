@@ -1,5 +1,13 @@
 @use "vuepress-shared/styles/reset";
 
+:root {
+  --mermaid-preview-bg: rgb(255 255 255 / 80%);
+}
+
+[data-theme="dark"] {
+  --mermaid-preview-bg: rgb(0 0 0 / 80%);
+}
+
 .mermaid-preview,
 .mermaid-wrapper {
   // mermaid style fix
@@ -56,11 +64,7 @@
   align-items: center;
   justify-content: center;
 
-  background-color: rgb(255 255 255 / 80%);
-
-  [data-theme="dark"] & {
-    background-color: rgb(0 0 0 / 80%);
-  }
+  background-color: var(--mermaid-preview-bg);
 
   svg {
     max-width: 100%;
