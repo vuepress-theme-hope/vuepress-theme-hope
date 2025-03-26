@@ -38,14 +38,13 @@ export const generateTemplate = async ({
   preset,
   packageManager,
 }: TemplateOptions): Promise<void> => {
-  if (!preset)
-    preset = await select<SupportedPreset>({
-      message: locale.question.preset,
-      choices: supportedPresets.map((preset) => ({
-        name: preset,
-        value: preset,
-      })),
-    });
+  preset ??= await select<SupportedPreset>({
+    message: locale.question.preset,
+    choices: supportedPresets.map((preset) => ({
+      name: preset,
+      value: preset,
+    })),
+  });
 
   const enableI18n = await confirm({
     message: locale.question.i18n,

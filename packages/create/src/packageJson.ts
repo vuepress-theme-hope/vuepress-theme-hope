@@ -40,14 +40,13 @@ export const createPackageJson = async ({
   bundler,
   cwd = process.cwd(),
 }: CreatePackageJsonOptions): Promise<void> => {
-  if (!bundler)
-    bundler = await select<SupportedBundler>({
-      message: locale.question.bundler,
-      choices: supportedBundlers.map((bundler) => ({
-        name: bundler,
-        value: bundler,
-      })),
-    });
+  bundler ??= await select<SupportedBundler>({
+    message: locale.question.bundler,
+    choices: supportedBundlers.map((bundler) => ({
+      name: bundler,
+      value: bundler,
+    })),
+  });
 
   /**
    * Generate package.json

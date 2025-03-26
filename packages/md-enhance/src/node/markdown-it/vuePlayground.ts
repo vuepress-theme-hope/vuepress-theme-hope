@@ -1,8 +1,8 @@
 import { entries, fromEntries } from "@vuepress/helper";
 import type { PluginSimple } from "markdown-it";
 
-import { playground } from "./playground/index.js";
 import type { PlaygroundData } from "../typings/index.js";
+import { playground } from "./playground/index.js";
 
 const VUE_SUPPORTED_EXTENSIONS = [
   "html",
