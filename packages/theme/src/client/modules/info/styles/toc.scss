@@ -1,3 +1,4 @@
+@use "sass:math";
 @use "vuepress-shared/styles/arrow";
 @use "../../../styles/wrapper";
 
@@ -195,8 +196,8 @@ $headings: (2, 3, 4, 5, 6);
 
   @each $heading in $headings {
     &.level#{$heading} {
-      padding-inline-start: ($heading * 8 - 16) * 1px;
-      font-size: (16 - $heading) * 1px;
+      padding-inline-start: ($heading * 0.5 - 1) * 1rem;
+      font-size: (1 - math.div($heading, 8)) * 1rem;
     }
   }
 }

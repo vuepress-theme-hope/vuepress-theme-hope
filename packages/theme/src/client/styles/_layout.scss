@@ -7,8 +7,8 @@
     scroll-behavior: smooth;
   }
 
-  @media (min-width: hope-config.$pc) {
-    --content-width: var(--pc-content-width);
+  @media (min-width: 1920px) {
+    --content-width: var(--wide-content-width);
   }
 }
 

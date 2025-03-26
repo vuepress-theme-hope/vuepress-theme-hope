@@ -7,10 +7,6 @@
 
 body {
   font-family: var(--vp-font);
-
-  @media (min-width: hope-config.$pc) {
-    font-size: 17px;
-  }
 }
 
 h1,

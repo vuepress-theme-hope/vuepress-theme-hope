@@ -165,7 +165,7 @@ $vp-c-border: (
 内容:
 
 - `$content-width`: 主要内容的宽度
-- `$pc-content-width`: PC 上主要内容的宽度
+- `$wide-content-width`: 宽屏上主要内容的宽度 (屏幕宽度 >= 1920px)
 - `$home-page-width`: 主页内容的宽度
 
 ::: details 例子

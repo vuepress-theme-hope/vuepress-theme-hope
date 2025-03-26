@@ -165,7 +165,7 @@ Sidebar:
 Content:
 
 - `$content-width`: width of main content
-- `$pc-content-width`: width of main content in pc
+- `$wide-content-width`: width of main content in wide screens (screen width >= 1920px)
 - `$home-page-width`: width of homepage content
 
 ::: details Demo
