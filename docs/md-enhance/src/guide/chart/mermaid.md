@@ -83,6 +83,7 @@ Besides using mermaid, you can also use the following code blocks:
 - architecture: `architecture-beta`
 - block: `block-beta`
 - packet: `packet-beta`
+- radar: `radar-beta`
 - sankey: `sankey-beta`
 - xy: `xychart-beta`
 
@@ -543,6 +544,44 @@ classDef front fill:#696,stroke:#333;
 classDef back fill:#969,stroke:#333;
 class Frontend front
 class Backend,Database back
+```
+
+:::
+
+::: md-demo Packet Chart
+
+```packet
+title UDP Packet
+0-15: "Source Port"
+16-31: "Destination Port"
+32-47: "Length"
+48-63: "Checksum"
+64-95: "Data (variable length)"
+```
+
+:::
+
+::: md-demo Radar Chart
+
+```radar
+---
+config:
+  radar:
+    axisScaleFactor: 0.25
+    curveTension: 0.1
+  theme: base
+  themeVariables:
+    cScale0: "#FF0000"
+    cScale1: "#00FF00"
+    cScale2: "#0000FF"
+    radar:
+      curveOpacity: 0
+---
+
+axis A, B, C, D, E
+curve c1{1,2,3,4,5}
+curve c2{5,4,3,2,1}
+curve c3{3,3,3,3,3}
 ```
 
 :::

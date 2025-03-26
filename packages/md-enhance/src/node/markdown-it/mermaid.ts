@@ -19,12 +19,26 @@ export const getMermaidContent = ({
   content,
   title = "",
   indent = diagram !== "mermaid",
-}: MermaidOptions): string => `\
+}: MermaidOptions): string => {
+  const [, originalFrontmatter, rest] =
+    /^\s*---\n([^]*?)\n---\n\n([\s\S]*)\s*$/m.exec(content) ?? [
+      null,
+      "",
+      content,
+    ];
+
+  const frontmatter = (
+    !title || /^title:\s*(.*)/m.test(originalFrontmatter)
+      ? originalFrontmatter
+      : `title: ${title}\n${originalFrontmatter}`
+  ).trim();
+
+  return `\
 ${
-  title
+  frontmatter
     ? `\
 ---
-title: ${title}
+${frontmatter}
 ---
 
 `
@@ -39,13 +53,14 @@ ${diagram}
 }\
 ${
   indent
-    ? content
+    ? rest
         .split("\n")
         .map((line) => (line ? `  ${line}` : ""))
         .join("\n")
-    : content
+    : rest
 }\
 `;
+};
 
 const getMermaid = (options: MermaidOptions, index: number): string =>
   `<Mermaid id="mermaid-${index}" code="${encodeData(getMermaidContent(options))}"${
@@ -74,6 +89,7 @@ const DIAGRAM_MAP: Record<string, [diagramName: string, indent?: boolean]> = {
   packet: ["packet-beta", false],
   sankey: ["sankey-beta", false],
   xy: ["xychart-beta", false],
+  radar: ["radar-beta"],
 };
 
 export const mermaid: PluginSimple = (md) => {
