@@ -13,7 +13,7 @@ The following options control theme layout.
 
 <!-- more  -->
 
-## Navbar Config
+## Navbar Related
 
 ### navbar <Badge text="Recommended" type="tip" />
 
@@ -129,7 +129,7 @@ Whether to hide navbar when scrolling down.
 
 Whether hide site title on mobile.
 
-## Sidebar Config
+## Sidebar Related
 
 For guide, see [Layout → Sidebar](../../guide/layout/sidebar.md).
 
@@ -221,17 +221,6 @@ Available keywords are:
 - `title`: alphabetically sort by title
 - `filename`: alphabetically sort by filename
 
-## Headings
-
-### headerDepth
-
-- Type: `number`
-- Default: `2`
-- Details:
-  - [Layout → Page](../../guide/layout/page.md#setting-header-depth)
-
-Nested headings depth.
-
 ## Route Navigation
 
 ### breadcrumb
@@ -262,14 +251,23 @@ Whether show prevLink in bottom.
 
 Whether show nextLink in bottom.
 
-## Title
+## Page Meta
+
+### headerDepth
+
+- Type: `number`
+- Default: `2`
+- Details:
+  - [Layout → Page](../../guide/layout/page.md#setting-header-depth)
+
+Header nesting depth inside sidebar and TOC.
 
 ### titleIcon
 
 - Type: `boolean`
 - Default: `true`
 
-Whether display icon besides page title
+Whether to display an icon beside the page title.
 
 ### pageInfo
 
@@ -288,8 +286,6 @@ Available items in `ArticleInfo`:
 - `"ReadingTime"`: expect reading time
 - `"Word"`: word number for the article
 - `"PageView"`: pageviews
-
-## Meta
 
 ### lastUpdated
 

@@ -13,7 +13,7 @@ tag:
 
 <!-- more -->
 
-## 导航栏
+## 导航栏相关
 
 ### navbar <Badge text="建议配置" type="tip" />
 
@@ -129,7 +129,7 @@ tag:
 
 是否在移动视图下隐藏站点名称。
 
-## 侧边栏
+## 侧边栏相关
 
 关于配置指南，详见 [布局 → 侧边栏](../../guide/layout/sidebar.md)。
 
@@ -221,18 +221,7 @@ tag:
 - `title`: 按标题字母顺序排序
 - `filename`: 按文件名字母顺序排序
 
-## 标题
-
-### headerDepth
-
-- 类型: `number`
-- 默认值: `2`
-- 详情:
-  - [布局 → 页面](../../guide/layout/page.md#设置标题深度)
-
-侧边栏嵌套的标题深度。
-
-## 路径导航
+## 导航相关
 
 ### breadcrumb
 
@@ -262,14 +251,16 @@ tag:
 
 是否在页面底部显示下一篇链接。
 
-## 页面标题
+## 页面元数据
 
-### titleIcon
+### headerDepth
 
-- 类型: `boolean`
-- 默认值: `true`
+- 类型: `number`
+- 默认值: `2`
+- 详情:
+  - [布局 → 页面](../../guide/layout/page.md#设置标题深度)
 
-是否在页面标题旁显示图标。
+侧边栏和 TOC 中的标题深度。
 
 ### pageInfo
 
@@ -289,7 +280,12 @@ tag:
 - `"Word"`: 字数
 - `"PageView"`: 页面浏览量
 
-## Meta
+### titleIcon
+
+- 类型: `boolean`
+- 默认值: `true`
+
+是否在页面标题旁显示图标。
 
 ### lastUpdated
 
