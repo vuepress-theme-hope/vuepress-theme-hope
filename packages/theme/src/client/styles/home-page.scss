@@ -23,7 +23,7 @@
   [vp-content] {
     padding-bottom: 1.5rem !important;
 
-    &:empty {
+    &:has(#markdown-content:only-child:empty) {
       padding: 0 !important;
     }
   }

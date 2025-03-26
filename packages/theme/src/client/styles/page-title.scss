@@ -19,9 +19,9 @@
   }
 
   h1 {
-    margin-top: calc(0px - var(--navbar-height)) !important;
+    margin-top: calc(0px - var(--header-offset)) !important;
     margin-bottom: 1rem;
-    padding-top: var(--navbar-height) !important;
+    padding-top: var(--header-offset) !important;
     font-size: 2.2rem;
 
     @media (max-width: hope-config.$pad) {
@@ -35,22 +35,12 @@
   }
 }
 
-[vp-content]:not(.custom) {
-  > {
-    h1,
-    h2,
-    h3,
-    h4,
-    h5,
-    h6 {
-      &:first-child {
-        margin-top: calc(0.5rem - var(--navbar-height)) !important;
-        padding-top: var(--navbar-height) !important;
-      }
-    }
+[vp-content]:not(.custom) #markdown-content > {
+  h1:first-child {
+    display: none;
+  }
 
-    h1:first-child {
-      display: none;
-    }
+  h2:first-child {
+    padding-top: var(--header-offset) !important;
   }
 }

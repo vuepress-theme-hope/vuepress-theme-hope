@@ -19,12 +19,7 @@
       padding-top: 0;
     }
 
-    // Fix top boarder of heading1
-    > *:first-child {
-      margin-top: 0;
-    }
-
-    > {
+    #markdown-content > {
       // heading fix
       h1,
       h2,

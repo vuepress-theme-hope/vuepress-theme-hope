@@ -5,7 +5,7 @@
     max-width: 780px;
   }
 
-  [vp-content]:empty {
+  [vp-content]:has(#markdown-content:only-child:empty) {
     padding: 0;
   }
 }
