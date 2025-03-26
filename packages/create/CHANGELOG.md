@@ -2,21 +2,15 @@
 
 All notable changes to this project will be documented in this file. See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
-<!-- #region recent-change -->
-
 ## [2.0.0-rc.75](https://github.com/vuepress-theme-hope/vuepress-theme-hope/compare/v2.0.0-rc.74...v2.0.0-rc.75) (2025-03-23)
 
 ### ✨ Features
 
 - **create:** improve version handling ([35a701c](https://github.com/vuepress-theme-hope/vuepress-theme-hope/commit/35a701c6a00abb4a5ad268cc5d15969b31e20865))
 
-<!-- #region recent-change -->
-
 ## [2.0.0-rc.74](https://github.com/vuepress-theme-hope/vuepress-theme-hope/compare/v2.0.0-rc.73...v2.0.0-rc.74) (2025-03-06)
 
 **Note:** Version bump only for package create-vuepress-theme-hope
-
-<!-- #region recent-change -->
 
 ## [2.0.0-rc.73](https://github.com/vuepress-theme-hope/vuepress-theme-hope/compare/v2.0.0-rc.72...v2.0.0-rc.73) (2025-02-24)
 
@@ -24,21 +18,15 @@ All notable changes to this project will be documented in this file. See [Conven
 
 - **create:** fix package.json reading ([e98eb87](https://github.com/vuepress-theme-hope/vuepress-theme-hope/commit/e98eb875c142c71e803d0fdef602f9f0a87f58c6))
 
-<!-- #region recent-change -->
-
 ## [2.0.0-rc.72](https://github.com/vuepress-theme-hope/vuepress-theme-hope/compare/v2.0.0-rc.71...v2.0.0-rc.72) (2025-02-23)
 
 ### ✨ Features
 
 - support latest vuepress ([7069276](https://github.com/vuepress-theme-hope/vuepress-theme-hope/commit/70692760f734fa54e223e353cb8a5294f5960d11))
 
-<!-- #region recent-change -->
-
 ## [2.0.0-rc.71](https://github.com/vuepress-theme-hope/vuepress-theme-hope/compare/v2.0.0-rc.70...v2.0.0-rc.71) (2025-01-24)
 
 **Note:** Version bump only for package create-vuepress-theme-hope
-
-<!-- #region recent-change -->
 
 ## [2.0.0-rc.70](https://github.com/vuepress-theme-hope/vuepress-theme-hope/compare/v2.0.0-rc.69...v2.0.0-rc.70) (2025-01-16)
 

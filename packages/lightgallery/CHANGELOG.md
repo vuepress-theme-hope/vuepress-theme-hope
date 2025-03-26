@@ -2,13 +2,9 @@
 
 All notable changes to this project will be documented in this file. See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
-<!-- #region recent-change -->
-
 ## [2.0.0-rc.75](https://github.com/vuepress-theme-hope/vuepress-theme-hope/compare/v2.0.0-rc.74...v2.0.0-rc.75) (2025-03-23)
 
 **Note:** Version bump only for package vuepress-plugin-lightgallery
-
-<!-- #region recent-change -->
 
 ## [2.0.0-rc.74](https://github.com/vuepress-theme-hope/vuepress-theme-hope/compare/v2.0.0-rc.73...v2.0.0-rc.74) (2025-03-06)
 
@@ -16,15 +12,11 @@ All notable changes to this project will be documented in this file. See [Conven
 
 - **lightgallery:** hide sass warnings ([230c460](https://github.com/vuepress-theme-hope/vuepress-theme-hope/commit/230c460b91ade288856164156f3cbf3e0f33f80d))
 
-<!-- #region recent-change -->
-
 ## [2.0.0-rc.72](https://github.com/vuepress-theme-hope/vuepress-theme-hope/compare/v2.0.0-rc.71...v2.0.0-rc.72) (2025-02-23)
 
 ### ✨ Features
 
 - support latest vuepress ([7069276](https://github.com/vuepress-theme-hope/vuepress-theme-hope/commit/70692760f734fa54e223e353cb8a5294f5960d11))
-
-<!-- #region recent-change -->
 
 ## [2.0.0-rc.71](https://github.com/vuepress-theme-hope/vuepress-theme-hope/compare/v2.0.0-rc.70...v2.0.0-rc.71) (2025-01-24)
 
