@@ -64,6 +64,18 @@ export const createPackageJson = async ({
     "vuepress-theme-hope": packageJSON.devDependencies["vuepress-theme-hope"],
   };
 
+  const newContent = {
+    scripts,
+    devDependencies,
+    ...(packageManager === "pnpm"
+      ? {
+          pnpm: {
+            onlyBuiltDependencies: ["esbuild"],
+          },
+        }
+      : {}),
+  };
+
   if (existsSync(packageJsonPath)) {
     console.log(locale.flow.updatePackage);
 
@@ -72,7 +84,7 @@ export const createPackageJson = async ({
       readFileSync(packageJsonPath, { encoding: "utf-8" }),
     );
 
-    deepAssign(packageContent, { scripts, devDependencies });
+    deepAssign(packageContent, newContent);
 
     writeFileSync(
       packageJsonPath,
@@ -112,8 +124,7 @@ export const createPackageJson = async ({
       version,
       license,
       type: "module",
-      scripts,
-      devDependencies,
+      ...newContent,
     };
 
     writeFileSync(
