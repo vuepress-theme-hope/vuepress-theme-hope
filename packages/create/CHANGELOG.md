@@ -2,6 +2,14 @@
 
 All notable changes to this project will be documented in this file. See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+<!-- #region recent-change -->
+
+## [2.0.0-rc.76](https://github.com/vuepress-theme-hope/vuepress-theme-hope/compare/v2.0.0-rc.75...v2.0.0-rc.76) (2025-03-27)
+
+### ✨ Features
+
+- **create:** support pnpm 10 ([f8ee87e](https://github.com/vuepress-theme-hope/vuepress-theme-hope/commit/f8ee87e77ab82364fab7d4b31e84b68056798c2f))
+
 ## [2.0.0-rc.75](https://github.com/vuepress-theme-hope/vuepress-theme-hope/compare/v2.0.0-rc.74...v2.0.0-rc.75) (2025-03-23)
 
 ### ✨ Features

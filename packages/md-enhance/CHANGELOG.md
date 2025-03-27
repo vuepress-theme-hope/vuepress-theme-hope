@@ -2,6 +2,15 @@
 
 All notable changes to this project will be documented in this file. See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+<!-- #region recent-change -->
+
+## [2.0.0-rc.76](https://github.com/vuepress-theme-hope/vuepress-theme-hope/compare/v2.0.0-rc.75...v2.0.0-rc.76) (2025-03-27)
+
+### ✨ Features
+
+- **md-enhance:** add css variables to bg color ([15d87a4](https://github.com/vuepress-theme-hope/vuepress-theme-hope/commit/15d87a4fa0909043a0701f058b15c3a1aba465ff))
+- **md-enhance:** support radar chart in mermaid ([1c15972](https://github.com/vuepress-theme-hope/vuepress-theme-hope/commit/1c1597260712986ccc08fcf09fdec196248557e2))
+
 ## [2.0.0-rc.75](https://github.com/vuepress-theme-hope/vuepress-theme-hope/compare/v2.0.0-rc.74...v2.0.0-rc.75) (2025-03-23)
 
 **Note:** Version bump only for package vuepress-plugin-md-enhance

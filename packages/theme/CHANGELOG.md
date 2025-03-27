@@ -2,6 +2,17 @@
 
 All notable changes to this project will be documented in this file. See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+<!-- #region recent-change -->
+
+## [2.0.0-rc.76](https://github.com/vuepress-theme-hope/vuepress-theme-hope/compare/v2.0.0-rc.75...v2.0.0-rc.76) (2025-03-27)
+
+### 🐛 Bug Fixes
+
+- **theme:** disable changelog and contributors on home page by default ([56d595a](https://github.com/vuepress-theme-hope/vuepress-theme-hope/commit/56d595adef8479d1d1150b6b4c0cd1d75a870c5b))
+- **theme:** fix footer ([e7789d2](https://github.com/vuepress-theme-hope/vuepress-theme-hope/commit/e7789d28cbed8bcfa5dcc21cef063d2292dd7702))
+- **theme:** fix markdown-content style ([5fc7639](https://github.com/vuepress-theme-hope/vuepress-theme-hope/commit/5fc7639fbe007606df051ed98adfc29d8ace8883))
+- **theme:** fix wide screen appearance ([31ebb5e](https://github.com/vuepress-theme-hope/vuepress-theme-hope/commit/31ebb5e0ee9747cbc9f3ebdf41475c9e5280de21))
+
 ## [2.0.0-rc.75](https://github.com/vuepress-theme-hope/vuepress-theme-hope/compare/v2.0.0-rc.74...v2.0.0-rc.75) (2025-03-23)
 
 ### ✨ Features

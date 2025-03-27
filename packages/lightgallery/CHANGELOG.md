@@ -2,6 +2,12 @@
 
 All notable changes to this project will be documented in this file. See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+<!-- #region recent-change -->
+
+## [2.0.0-rc.76](https://github.com/vuepress-theme-hope/vuepress-theme-hope/compare/v2.0.0-rc.75...v2.0.0-rc.76) (2025-03-27)
+
+**Note:** Version bump only for package vuepress-plugin-lightgallery
+
 ## [2.0.0-rc.75](https://github.com/vuepress-theme-hope/vuepress-theme-hope/compare/v2.0.0-rc.74...v2.0.0-rc.75) (2025-03-23)
 
 **Note:** Version bump only for package vuepress-plugin-lightgallery

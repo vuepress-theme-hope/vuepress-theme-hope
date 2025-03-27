@@ -4,6 +4,23 @@ All notable changes to this project will be documented in this file. See [Conven
 
 <!-- #region recent-change -->
 
+## [2.0.0-rc.76](https://github.com/vuepress-theme-hope/vuepress-theme-hope/compare/v2.0.0-rc.75...v2.0.0-rc.76) (2025-03-27)
+
+### ✨ Features
+
+- **create:** support pnpm 10 ([f8ee87e](https://github.com/vuepress-theme-hope/vuepress-theme-hope/commit/f8ee87e77ab82364fab7d4b31e84b68056798c2f))
+- **md-enhance:** add css variables to bg color ([15d87a4](https://github.com/vuepress-theme-hope/vuepress-theme-hope/commit/15d87a4fa0909043a0701f058b15c3a1aba465ff))
+- **md-enhance:** support radar chart in mermaid ([1c15972](https://github.com/vuepress-theme-hope/vuepress-theme-hope/commit/1c1597260712986ccc08fcf09fdec196248557e2))
+
+### 🐛 Bug Fixes
+
+- **theme:** disable changelog and contributors on home page by default ([56d595a](https://github.com/vuepress-theme-hope/vuepress-theme-hope/commit/56d595adef8479d1d1150b6b4c0cd1d75a870c5b))
+- **theme:** fix footer ([e7789d2](https://github.com/vuepress-theme-hope/vuepress-theme-hope/commit/e7789d28cbed8bcfa5dcc21cef063d2292dd7702))
+- **theme:** fix markdown-content style ([5fc7639](https://github.com/vuepress-theme-hope/vuepress-theme-hope/commit/5fc7639fbe007606df051ed98adfc29d8ace8883))
+- **theme:** fix wide screen appearance ([31ebb5e](https://github.com/vuepress-theme-hope/vuepress-theme-hope/commit/31ebb5e0ee9747cbc9f3ebdf41475c9e5280de21))
+
+<!-- #region recent-change -->
+
 ## [2.0.0-rc.75](https://github.com/vuepress-theme-hope/vuepress-theme-hope/compare/v2.0.0-rc.74...v2.0.0-rc.75) (2025-03-23)
 
 ### ✨ Features
