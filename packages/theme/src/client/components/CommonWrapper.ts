@@ -37,6 +37,7 @@ import type {
   ThemeProjectHomePageFrontmatter,
 } from "../../shared/index.js";
 
+import "@vuepress/helper/transition/fade-in.css";
 import "../styles/common-wrapper.scss";
 
 export default defineComponent({
@@ -263,7 +264,7 @@ export default defineComponent({
                   )
                 : null,
               // Sidebar mask
-              h(Transition, { name: "fade" }, () =>
+              h(Transition, { name: "fade-in" }, () =>
                 isMobileSidebarOpen.value
                   ? h("div", {
                       class: "vp-sidebar-mask",
@@ -272,7 +273,7 @@ export default defineComponent({
                   : null,
               ),
               // Toggle sidebar button
-              h(Transition, { name: "fade" }, () =>
+              h(Transition, { name: "fade-in" }, () =>
                 isMobile.value
                   ? null
                   : h(

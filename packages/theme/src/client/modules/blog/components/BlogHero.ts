@@ -129,7 +129,7 @@ export default defineComponent({
               slots.info?.(info.value) ?? [
                 h(
                   DropTransition,
-                  { appear: true, type: "group", delay: 0.04 },
+                  { appear: true, group: true, delay: 0.04 },
                   () => {
                     const { image, imageDark, imageStyle, alt } = info.value;
 

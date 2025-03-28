@@ -73,14 +73,4 @@
   inset: 0;
   z-index: 100;
   background: rgb(0 0 0 / 15%);
-
-  &.fade-enter-active,
-  &.fade-leave-active {
-    transition: opacity 0.25s;
-  }
-
-  &.fade-enter-from,
-  &.fade-leave-to {
-    opacity: 0;
-  }
 }
