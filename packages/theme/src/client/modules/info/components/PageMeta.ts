@@ -20,7 +20,10 @@ export default defineComponent({
     const frontmatter = usePageFrontmatter<ThemeNormalPageFrontmatter>();
     const themeLocale = useThemeLocaleData();
     const editLink = useEditLink();
-    const lastUpdated = useLastUpdated();
+    const lastUpdated = useLastUpdated(
+      () =>
+        frontmatter.value.lastUpdated ?? themeLocale.value.lastUpdated ?? true,
+    );
 
     return (): VNode => {
       const showChangelog =
