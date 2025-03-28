@@ -3,19 +3,40 @@
 @use "sass:meta";
 @use "@sass-palette/hope-config";
 
-$enable-theme-color: map.has-key(
-  meta.module-variables("hope-config"),
-  "theme-colors"
-);
+$has-multiple-theme-colors: meta.type-of(
+    map.get(meta.module-variables("hope-config"), "theme-color")
+  )
+  == list;
 
 :export {
   mobileBreakPoint: hope-config.$tablet;
   pcBreakPoint: hope-config.$pc;
-  enableThemeColor: $enable-theme-color;
-  @if ($enable-theme-color) {
-    @each $color in hope-config.$theme-colors {
-      theme-#{list.index(hope-config.$theme-colors, $color)}: $color;
+  colorNumber: list.length(hope-config.$colors);
+  hasMultipleThemeColors: $has-multiple-theme-colors;
+  @if ($has-multiple-theme-colors) {
+    // omit the first color as it's the primary color
+    @for $index from 2 through list.length(hope-config.$theme-color) {
+      $current-theme-color: list.nth(hope-config.$theme-color, $index);
+
+      @if meta.type-of($current-theme-color) == color {
+        theme-#{$index}: $current-theme-color;
+      } @else if meta.type-of($current-theme-color) == map {
+        $light-color: map.get($current-theme-color, "light");
+        $dark-color: map.get($current-theme-color, "dark");
+
+        @if $light-color and $dark-color {
+          @if $light-color == $dark-color {
+            theme-#{$index}: $light-color;
+          } @else {
+            theme-light-#{$index}: $light-color;
+            theme-dark-#{$index}: $dark-color;
+          }
+        } @else {
+          @debug "Invalid theme color: #{$current-theme-color}";
+        }
+      } @else {
+        @debug "Invalid theme color: #{$current-theme-color}";
+      }
     }
   }
-  colorNumber: list.length(hope-config.$colors);
 }

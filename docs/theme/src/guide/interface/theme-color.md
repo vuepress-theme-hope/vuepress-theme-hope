@@ -18,22 +18,41 @@ The theme allows you to customize theme color and even provide a picker.
 You should set the default theme color of your site in `.vuepress/styles/config.scss` through `$theme-color`:
 
 ```scss
-$theme-color: #f00;
+$theme-color: #3eaf7c;
 ```
 
-## Theme Color Picker {#theme-color-picker-title}
-
-To use it, set a list of theme colors you want to use in `.vuepress/styles/config.scss` with `$theme-colors`:
+You can set different colors for light mode and dark mode:
 
 ```scss
-$theme-colors: #2196f3, #f26d6d, #3eaf7c, #fb9b5f;
+$theme-color: (
+  light: rgb(59, 186, 129),
+  dark: rgb(30, 140, 90),
+);
 ```
 
-The default theme color above will always be the first one in picker.
+If you set multiple theme colors, the first color will become the default theme color, and the theme will provide a theme color picker:
+
+```scss
+$theme-color: #3eaf7c, #2196f3, #f26d6d, #fb9b5f;
+```
+
+You can also explicitly specify the colors for light mode and dark mode for one or more theme colors at the same time:
+
+```scss
+$theme-color: (
+  (
+    light: rgb(59, 186, 129),
+    dark: rgb(30, 140, 90),
+  ),
+  #2196f3,
+  #f26d6d,
+  #fb9b5f
+);
+```
 
 ### Try it
 
-<ThemeColorPicker :themeColor="themeColor" />
+<ThemeColorPicker :themeColors="themeColors" />
 
 <script setup lang="ts">
 import { computed } from "vue";
@@ -42,7 +61,7 @@ import cssVariables from "vuepress-theme-hope/styles/variables.module.scss";
 
 import ThemeColorPicker from "@theme-hope/modules/outlook/components/ThemeColorPicker";
 
-const themeColor = fromEntries(
+const themeColors = fromEntries(
   entries(cssVariables).filter(([key]) => key.startsWith("theme-"))
 )
 </script>

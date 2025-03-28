@@ -6,7 +6,7 @@ import { onContentUpdated } from "vuepress/client";
 import { usePure, useThemeData } from "@theme-hope/composables/index";
 import ColorModeSwitch from "@theme-hope/modules/outlook/components/ColorModeSwitch";
 import OutlookSettings from "@theme-hope/modules/outlook/components/OutlookSettings";
-import { enableThemeColor } from "@theme-hope/modules/outlook/components/ThemeColor";
+import { hasMultipleThemeColors } from "@theme-hope/modules/outlook/components/ThemeColor";
 import ToggleFullScreen from "@theme-hope/modules/outlook/components/ToggleFullScreen";
 import { OutlookIcon } from "@theme-hope/modules/outlook/components/icons/index";
 import { useDarkMode } from "@theme-hope/modules/outlook/composables/index";
@@ -29,7 +29,7 @@ export default defineComponent({
     );
 
     const enabled = computed(
-      () => enableThemeColor || canToggle.value || enableFullScreen.value,
+      () => hasMultipleThemeColors || canToggle.value || enableFullScreen.value,
     );
 
     onContentUpdated(() => {
@@ -42,10 +42,14 @@ export default defineComponent({
             "div",
             { class: "vp-nav-item hide-in-mobile" },
             // Only ColorModeSwitch is enabled
-            canToggle.value && !enableFullScreen.value && !enableThemeColor
+            canToggle.value &&
+              !enableFullScreen.value &&
+              !hasMultipleThemeColors
               ? h(ColorModeSwitch)
               : // Only FullScreen is enabled
-                enableFullScreen.value && !canToggle.value && !enableThemeColor
+                enableFullScreen.value &&
+                  !canToggle.value &&
+                  !hasMultipleThemeColors
                 ? h(ToggleFullScreen)
                 : h(
                     "button",

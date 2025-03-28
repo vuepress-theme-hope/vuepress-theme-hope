@@ -2,12 +2,18 @@
 @use "sass:color";
 @use "sass:list";
 @use "sass:map";
+@use "sass:meta";
 @use "@sass-palette/helper";
 @use "@sass-palette/hope-config";
 
-// getting config values
-$_theme_color_light: helper.get-color(hope-config.$theme-color);
-$_theme_color_dark: helper.get-dark-color(hope-config.$theme-color);
+$_primary_theme_color: hope-config.$theme-color;
+
+@if meta.type-of(hope-config.$theme-color) == list {
+  $_primary_theme_color: list.nth(hope-config.$theme-color, 1);
+}
+
+$_theme_color_light: helper.get-color($_primary_theme_color);
+$_theme_color_dark: helper.get-dark-color($_primary_theme_color);
 
 // accent color
 $vp-c-accent: (

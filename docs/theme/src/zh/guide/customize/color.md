@@ -61,7 +61,7 @@ $vp-c-bg: (
 ```scss title=".vuepress/styles/index.scss"
 // 覆盖代码块语言字体颜色
 pre[class*="language-"]::before {
-  color: #fff !important;
+  background-color: #fff !important;
 
   [data-theme="dark"] & {
     background-color: #222 !important;

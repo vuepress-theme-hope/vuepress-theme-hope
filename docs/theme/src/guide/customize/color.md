@@ -61,7 +61,7 @@ If not, write your own selectors to override them:
 ```scss title=".vuepress/styles/index.scss"
 // override code block background color
 pre[class*="language-"] {
-  color: #fff !important;
+  background-color: #fff !important;
 
   [data-theme="dark"] & {
     background-color: #222 !important;

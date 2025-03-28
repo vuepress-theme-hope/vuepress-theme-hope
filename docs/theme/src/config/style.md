@@ -27,10 +27,9 @@ Responsive breakpoints:
 - `$tablet`
 - `$mobile`
 
-Theme Colors:
+Theme Color:
 
-- `$theme-color`: primary theme color
-- `$theme-colors`: theme colors you want to use besides primary theme color
+- `$theme-color`: theme color, multiple colors and even light/dark maps are supported.
 
 Code block (Only available with shiki):
 

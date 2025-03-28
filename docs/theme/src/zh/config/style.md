@@ -29,8 +29,7 @@ tag:
 
 主题色:
 
-- `$theme-color`: 主要主题色
-- `$theme-colors`: 除了主要主题色之外，你想使用的其他主题颜色
+- `$theme-color`: 主题色，支持多个主题色甚至指定 light/dark 颜色。
 
 代码块 (仅限 shiki 高亮器):
 
