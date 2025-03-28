@@ -4,6 +4,19 @@ All notable changes to this project will be documented in this file. See [Conven
 
 <!-- #region recent-change -->
 
+## [2.0.0-rc.77](https://github.com/vuepress-theme-hope/vuepress-theme-hope/compare/v2.0.0-rc.76...v2.0.0-rc.77) (2025-03-28)
+
+### ✨ Features
+
+- **theme:** remove $theme-colors ([0266670](https://github.com/vuepress-theme-hope/vuepress-theme-hope/commit/02666704c3e6e61562dc05e0a86472c2c93951ad))
+
+### 🐛 Bug Fixes
+
+- **theme:** fix lastUpdated, close [#4816](https://github.com/vuepress-theme-hope/vuepress-theme-hope/issues/4816) ([d671081](https://github.com/vuepress-theme-hope/vuepress-theme-hope/commit/d67108100690d3448638d8d31598df4be96b1aec))
+- **theme:** fix toc style ([a514ed0](https://github.com/vuepress-theme-hope/vuepress-theme-hope/commit/a514ed0cec124478fbf1cb1cbe51f8ccdf7c148e))
+
+<!-- #region recent-change -->
+
 ## [2.0.0-rc.76](https://github.com/vuepress-theme-hope/vuepress-theme-hope/compare/v2.0.0-rc.75...v2.0.0-rc.76) (2025-03-27)
 
 ### 🐛 Bug Fixes
