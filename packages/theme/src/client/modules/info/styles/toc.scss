@@ -90,7 +90,7 @@ $headings: (2, 3, 4, 5, 6);
   overflow: hidden auto;
 
   height: 0;
-  max-height: 8rem;
+  max-height: 12rem;
   margin: 0 0.5rem;
 
   text-overflow: ellipsis;
@@ -168,7 +168,7 @@ $headings: (2, 3, 4, 5, 6);
   display: none;
 
   width: 2px;
-  height: 1.7rem;
+  height: 2rem;
 
   background: var(--vp-c-accent-bg);
 
@@ -197,7 +197,7 @@ $headings: (2, 3, 4, 5, 6);
   @each $heading in $headings {
     &.level#{$heading} {
       padding-inline-start: ($heading * 0.5 - 1) * 1rem;
-      font-size: (1 - math.div($heading, 8)) * 1rem;
+      font-size: 0.875rem;
     }
   }
 }
@@ -206,11 +206,11 @@ $headings: (2, 3, 4, 5, 6);
   position: relative;
 
   box-sizing: border-box;
-  height: 1.7rem;
+  height: 2rem;
 
   list-style: none;
 
-  line-height: 1.7rem;
+  line-height: 2rem;
 
   @media (min-width: hope-config.$pc) {
     padding: 0 0.5rem;

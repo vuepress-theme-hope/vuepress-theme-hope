@@ -41,7 +41,7 @@ export default defineComponent({
     const [isExpanded, toggleExpanded] = useToggle();
 
     const toc = shallowRef<HTMLElement>();
-    const tocMarkerTop = ref("-1.7rem");
+    const tocMarkerTop = ref("-2rem");
 
     const scrollTo = (top: number): void => {
       toc.value?.scrollTo({ top, behavior: "smooth" });
@@ -60,9 +60,9 @@ export default defineComponent({
             // Toc scroll top
             toc.value.scrollTop
           }px`;
-        else tocMarkerTop.value = "-1.7rem";
+        else tocMarkerTop.value = "-2rem";
       } else {
-        tocMarkerTop.value = "-1.7rem";
+        tocMarkerTop.value = "-2rem";
       }
     };
 
