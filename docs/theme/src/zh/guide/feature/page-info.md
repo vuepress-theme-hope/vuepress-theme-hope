@@ -65,7 +65,9 @@ tag:
 
   ```md
   ---
-  author: Mr.Hope
+  author:
+    - Mr.Hope
+    - Mrs.Hope
   ---
   ```
 
