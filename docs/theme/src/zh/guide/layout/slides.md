@@ -19,10 +19,6 @@ tag:
 
 :::
 
-你应该在主题选项中通过设置 `plugins.mdEnhance.revealjs` 在 `vuepress-plugin-md-enhance` 中启用幻灯片功能，否则幻灯片无法被正确渲染。
-
-:::
-
 为渲染幻灯片页面，你应该在相应页面的 frontmatter 中设置 `layout: SlidePage`。
 
 在使用此布局的页面中，你应该只包含单个幻灯片语法，不包含其他内容，以避免渲染问题:
