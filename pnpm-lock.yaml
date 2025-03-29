@@ -25,8 +25,8 @@ catalogs:
       specifier: 11.6.0
       version: 11.6.0
     reveal.js:
-      specifier: 5.2.0
-      version: 5.2.0
+      specifier: 5.2.1
+      version: 5.2.1
     sass-embedded:
       specifier: 1.86.0
       version: 1.86.0
@@ -432,7 +432,7 @@ importers:
         version: 11.6.0
       reveal.js:
         specifier: 'catalog:'
-        version: 5.2.0
+        version: 5.2.1
       sandpack-vue3:
         specifier: 3.1.12
         version: 3.1.12(vue@3.5.13(typescript@5.8.2))
@@ -504,7 +504,7 @@ importers:
         version: 11.6.0
       reveal.js:
         specifier: 'catalog:'
-        version: 5.2.0
+        version: 5.2.1
       sandpack-vue3:
         specifier: 3.1.12
         version: 3.1.12(vue@3.5.13(typescript@5.8.2))
@@ -570,7 +570,7 @@ importers:
         version: 11.6.0
       reveal.js:
         specifier: 'catalog:'
-        version: 5.2.0
+        version: 5.2.1
       sandpack-vue3:
         specifier: 3.1.12
         version: 3.1.12(vue@3.5.13(typescript@5.8.2))
@@ -8563,8 +8563,8 @@ packages:
     resolution: {integrity: sha512-g6QUff04oZpHs0eG5p83rFLhHeV00ug/Yf9nZM6fLeUrPguBTkTQOdpAWWspMh55TZfVQDPaN3NQJfbVRAxdIw==}
     engines: {iojs: '>=1.0.0', node: '>=0.10.0'}
 
-  reveal.js@5.2.0:
-    resolution: {integrity: sha512-TWd9VVYZZW/MGlm5arVPbN5ne49GXrTpil8KFOBOOfHWS4GjSCpSaHfj3iB+Rh0rJTQGbkrQr66l6R3bnElXBw==}
+  reveal.js@5.2.1:
+    resolution: {integrity: sha512-r7//6mIM5p34hFiDMvYfXgyjXqGRta+/psd9YtytsgRlrpRzFv4RbH76TXd2qD+7ZPZEbpBDhdRhJaFgfQ7zNQ==}
     engines: {node: '>=18.0.0'}
 
   rfdc@1.4.1:
@@ -13716,7 +13716,7 @@ snapshots:
       '@types/reveal.js': 5.0.5
       '@vuepress/helper': 2.0.0-rc.90(typescript@5.8.2)(vuepress@2.0.0-rc.20(@vuepress/bundler-vite@2.0.0-rc.20(@types/node@22.13.14)(jiti@2.4.2)(lightningcss@1.29.3)(sass-embedded@1.86.0)(sass@1.86.0)(terser@5.39.0)(tsx@4.19.3)(typescript@5.8.2)(yaml@2.7.0))(@vuepress/bundler-webpack@2.0.0-rc.20(esbuild@0.25.1)(typescript@5.8.2))(typescript@5.8.2)(vue@3.5.13(typescript@5.8.2)))
       '@vueuse/core': 13.0.0(vue@3.5.13(typescript@5.8.2))
-      reveal.js: 5.2.0
+      reveal.js: 5.2.1
       vue: 3.5.13(typescript@5.8.2)
       vuepress: 2.0.0-rc.20(@vuepress/bundler-vite@2.0.0-rc.20(@types/node@22.13.14)(jiti@2.4.2)(lightningcss@1.29.3)(sass-embedded@1.86.0)(sass@1.86.0)(terser@5.39.0)(tsx@4.19.3)(typescript@5.8.2)(yaml@2.7.0))(@vuepress/bundler-webpack@2.0.0-rc.20(esbuild@0.25.1)(typescript@5.8.2))(typescript@5.8.2)(vue@3.5.13(typescript@5.8.2))
     transitivePeerDependencies:
@@ -18763,7 +18763,7 @@ snapshots:
 
   reusify@1.1.0: {}
 
-  reveal.js@5.2.0: {}
+  reveal.js@5.2.1: {}
 
   rfdc@1.4.1: {}
 
