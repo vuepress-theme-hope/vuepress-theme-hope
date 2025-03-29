@@ -31,7 +31,7 @@
     "dev:ts": "tsc -b tsconfig.build.json --watch"
   },
   "dependencies": {
-    "@types/three": "0.174.0",
+    "@types/three": "0.175.0",
     "@vuepress/bundler-vite": "catalog:vuepress",
     "@vuepress/bundler-webpack": "catalog:vuepress",
     "@vuepress/helper": "catalog:vuepress",
