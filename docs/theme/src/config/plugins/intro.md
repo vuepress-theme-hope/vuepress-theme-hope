@@ -70,6 +70,8 @@ The following plugins are enabled by default, and you can disable them:
 
 - [@vuepress/plugin-reading-time][reading-time]: Reading time and word count
 
+- [@vuepress/plugin-redirect][redirect]: Redirect pages
+
 - [@vuepress/plugin-seo][seo]: SEO enhancement plugin
 
 - [@vuepress/plugin-shiki][shiki]: Code highlighting plugin using Shiki
@@ -111,8 +113,6 @@ These plugins are supported by theme, but you need to install them manually whil
 - [@vuepress/plugin-prismjs][prismjs]: Code highlighting plugin using Prism.js
 
 - [@vuepress/plugin-pwa][pwa]: PWA support
-
-- [@vuepress/plugin-redirect][redirect]: Redirect pages
 
 [active-header-links]: https://ecosystem.vuejs.press/plugins/development/active-header-links.html
 [back-to-top]: https://ecosystem.vuejs.press/plugins/features/back-to-top.html

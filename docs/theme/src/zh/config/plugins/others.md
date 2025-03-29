@@ -108,6 +108,14 @@ tag:
 
 插件选项请参阅 [revealjs 插件文档][revealjs-config]。
 
+## redirect <Badge text="默认启用" />
+
+控制 `@vuepress/plugin-redirect`，提供重定向支持。
+
+主题的默认选项为 `{ switchLocale: 'modal' }`，你可以设置 `false` 禁用它。
+
+插件选项请参阅 [redirect 插件文档][redirect-config]。
+
 ## seo <Badge text="默认启用" />
 
 控制 `@vuepress/plugin-seo`，提供搜索引擎增强。默认情况选无需额外配置。如果你不需要此功能可设置为 `false`。
@@ -126,16 +134,17 @@ tag:
 
 插件选项请参阅 [watermark 插件文档][watermark-config]。
 
-[back-to-top-config]: https://ecosystem.vuejs.press/zh/plugins/back-to-top.html#options
-[catalog-config]: https://ecosystem.vuejs.press/zh/plugins/features/catalog.html#options
-[copy-code-config]: https://ecosystem.vuejs.press/zh/plugins/features/copy-code.html#options
-[git-config]: https://ecosystem.vuejs.press/zh/plugins/development/git.html#options
-[links-check-config]: https://ecosystem.vuejs.press/zh/plugins/markdown/links-check.html#options
-[photo-swipe-config]: https://ecosystem.vuejs.press/zh/plugins/features/photo-swipe.html#options
-[prismjs-config]: https://ecosystem.vuejs.press/zh/plugins/markdown/prismjs.html#options
-[pwa-config]: https://ecosystem.vuejs.press/zh/plugins/pwa/pwa/config.html#options
-[reading-time-config]: https://ecosystem.vuejs.press/zh/plugins/development/reading-time.html#options
-[revealjs-config]: https://ecosystem.vuejs.press/zh/plugins/markdown/revealjs/#options
+[back-to-top-config]: https://ecosystem.vuejs.press/zh/plugins/back-to-top.html#选项
+[catalog-config]: https://ecosystem.vuejs.press/zh/plugins/features/catalog.html#选项
+[copy-code-config]: https://ecosystem.vuejs.press/zh/plugins/features/copy-code.html#选项
+[git-config]: https://ecosystem.vuejs.press/zh/plugins/development/git.html#选项
+[links-check-config]: https://ecosystem.vuejs.press/zh/plugins/markdown/links-check.html#选项
+[photo-swipe-config]: https://ecosystem.vuejs.press/zh/plugins/features/photo-swipe.html#选项
+[prismjs-config]: https://ecosystem.vuejs.press/zh/plugins/markdown/prismjs.html#选项
+[pwa-config]: https://ecosystem.vuejs.press/zh/plugins/pwa/pwa/config.html#选项
+[reading-time-config]: https://ecosystem.vuejs.press/zh/plugins/development/reading-time.html#选项
+[redirect-config]: https://ecosystem.vuejs.press/zh/plugins/tools/redirect.html#选项
+[revealjs-config]: https://ecosystem.vuejs.press/zh/plugins/markdown/revealjs/#选项
 [seo-config]: https://ecosystem.vuejs.press/zh/plugins/seo/seo/config.html
 [sitemap-config]: https://ecosystem.vuejs.press/zh/plugins/seo/sitemap/config.html
 [watermark-config]: https://ecosystem.vuejs.press/zh/plugins/features/watermark.html

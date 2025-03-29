@@ -57,7 +57,7 @@ tag:
 - [@vuepress/plugin-git][git]: 基于 Git 的信息插件
 
 - [@vuepress/plugin-icon][icon]: 提供图标
--
+
 - [@vuepress/plugin-links-check][links-check]: 检查 Markdown 链接
 
 - [@vuepress/plugin-markdown-hint][markdown-hint]: Markdown 提示容器
@@ -69,6 +69,8 @@ tag:
 - [@vuepress/plugin-photo-swipe][photo-swipe]: 基于 Photo Swipe 的图片浏览插件
 
 - [@vuepress/plugin-reading-time][reading-time]: 阅读时间与字数统计
+
+- [@vuepress/plugin-redirect][redirect]: 重定向插件
 
 - [@vuepress/plugin-seo][seo]: SEO 增强插件
 
@@ -109,8 +111,6 @@ tag:
 - [@vuepress/plugin-feed][feed]: Feed 支持
 
 - [@vuepress/plugin-prismjs][prismjs]: 基于 prism.js 的代码高亮插件
-
-- [@vuepress/plugin-redirect][redirect]: 重定向插件
 
 - [@vuepress/plugin-pwa][pwa]: PWA 支持
 

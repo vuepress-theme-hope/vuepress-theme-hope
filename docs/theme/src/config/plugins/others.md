@@ -101,6 +101,14 @@ Reading speed (words per minute)
 
 Check [reading-time plugin docs][reading-time-config] for available plugin options.
 
+## redirect <Badge text="enabled by default" />
+
+Controls `@vuepress/plugin-redirect` which provides redirect support.
+
+The default option of theme is `{ switchLocale: 'modal' }`, set it to `false` if you don't need it.
+
+Check [redirect plugin docs][redirect-config] for available plugin options.
+
 ## seo <Badge text="enabled by default" />
 
 Controls `@vuepress/plugin-seo` which provides search engine enhancements.
@@ -130,6 +138,7 @@ Check [watermark plugin docs][watermark-config] for available plugin options.
 [photo-swipe-config]: https://ecosystem.vuejs.press/plugins/features/photo-swipe.html#options
 [pwa-config]: https://ecosystem.vuejs.press/plugins/pwa/pwa/config.html#options
 [reading-time-config]: https://ecosystem.vuejs.press/plugins/development/reading-time.html#options
+[redirect-config]: https://ecosystem.vuejs.press/plugins/tools/redirect.html#options
 [seo-config]: https://ecosystem.vuejs.press/plugins/seo/seo/config.html
 [sitemap-config]: https://ecosystem.vuejs.press/plugins/seo/sitemap/config.html
 [watermark-config]: https://ecosystem.vuejs.press/plugins/features/watermark.html
