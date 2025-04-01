@@ -3,9 +3,9 @@ import { Transition, h } from "vue";
 
 import { scrollPromise } from "@theme-hope/utils/index";
 
-import "../../styles/fade-slide-y.scss";
+import "@vuepress/helper/transition/fade-in-up.css";
 
-export const FadeSlideY: FunctionalComponent<
+export const FadeInUpTransition: FunctionalComponent<
   Record<never, never>,
   Record<never, never>,
   { default: () => VNode }
@@ -13,7 +13,7 @@ export const FadeSlideY: FunctionalComponent<
   h(
     Transition,
     {
-      name: "fade-slide-y",
+      name: "fade-in-up",
       mode: "out-in",
       // Handle scrollBehavior with transition
       onBeforeEnter: scrollPromise.resolve,
@@ -22,4 +22,4 @@ export const FadeSlideY: FunctionalComponent<
     () => slots.default(),
   );
 
-FadeSlideY.displayName = "FadeSlideY";
+FadeInUpTransition.displayName = "FadeInUpTransition";

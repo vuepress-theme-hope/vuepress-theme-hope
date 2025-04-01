@@ -105,7 +105,7 @@ export default defineComponent({
     });
 
     return (): VNode[] => [
-      h(DropTransition, { appear: true, type: "group", delay: 0.04 }, () => [
+      h(DropTransition, { appear: true, group: true, delay: 0.04 }, () => [
         props.image
           ? h("img", {
               key: "light",

@@ -1,4 +1,4 @@
-import type { PropType, SlotsType, VNode } from "vue";
+import type { SlotsType, VNode } from "vue";
 import { Transition, TransitionGroup, defineComponent, h } from "vue";
 
 export const DropTransition = defineComponent({
@@ -6,25 +6,22 @@ export const DropTransition = defineComponent({
 
   props: {
     /**
-     * @description Transition type
-     */
-    type: {
-      type: String as PropType<"single" | "group">,
-      default: "single",
-    },
-
-    /**
-     * @description Transition delay
+     * Transition delay
      */
     delay: { type: Number, default: 0 },
 
     /**
-     * @description Transition duration
+     * Transition duration
      */
     duration: { type: Number, default: 0.25 },
 
     /**
-     * @description appear
+     * Whether to use TransitionGroup
+     */
+    group: Boolean,
+
+    /**
+     * Whether to use appear
      */
     appear: Boolean,
   },
@@ -58,7 +55,7 @@ export const DropTransition = defineComponent({
       };
       const children = (): VNode | VNode[] => slots.default();
 
-      return props.type === "group"
+      return props.group
         ? h(TransitionGroup, attrs, children)
         : h(Transition, attrs, children);
     };

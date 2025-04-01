@@ -15,6 +15,7 @@ import { useWindowSize } from "@theme-hope/composables/index";
 import NavScreenLinks from "@theme-hope/modules/navbar/components/NavScreenLinks";
 import OutlookSettings from "@theme-hope/modules/outlook/components/OutlookSettings";
 
+import "@vuepress/helper/transition/fade-in-down.css";
 import "../styles/nav-screen.scss";
 
 export default defineComponent({
@@ -60,7 +61,7 @@ export default defineComponent({
       h(
         Transition,
         {
-          name: "fade",
+          name: "fade-in-down",
           onEnter: () => {
             isLocked.value = true;
           },

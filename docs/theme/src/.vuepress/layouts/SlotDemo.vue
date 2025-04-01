@@ -2,14 +2,14 @@
 import CommonWrapper from "@theme-hope/components/CommonWrapper";
 import NormalPage from "@theme-hope/components/NormalPage";
 import SkipLink from "@theme-hope/components/SkipLink";
-import { FadeSlideY } from "@theme-hope/components/transitions/index";
+import { FadeInUpTransition } from "@theme-hope/components/transitions/index";
 </script>
 
 <template>
   <SkipLink />
 
   <CommonWrapper>
-    <FadeSlideY>
+    <FadeInUpTransition>
       <NormalPage>
         <template #contentBefore>
           <div class="slot-demo-block">contentBefore Slot</div>
@@ -35,7 +35,7 @@ import { FadeSlideY } from "@theme-hope/components/transitions/index";
           <div class="slot-demo-block">tocAfter Slot</div>
         </template>
       </NormalPage>
-    </FadeSlideY>
+    </FadeInUpTransition>
 
     <template #sidebarTop>
       <div class="slot-demo-block">sidebarTop Slot</div>

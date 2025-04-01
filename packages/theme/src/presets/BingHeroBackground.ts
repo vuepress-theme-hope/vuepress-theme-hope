@@ -11,6 +11,7 @@ import {
 } from "vue";
 import { ClientOnly, usePageLang } from "vuepress/client";
 
+import "@vuepress/helper/transition/fade-in.css";
 import "./bing-hero-background.scss";
 
 interface BingWallpaperInfo {
@@ -117,7 +118,7 @@ export default defineComponent({
                   },
                 },
                 [
-                  h(Transition, { name: "fade" }, () =>
+                  h(Transition, { name: "fade-in" }, () =>
                     showInfo.value
                       ? h("div", { class: "bing-info", ref: bingInfo }, [
                           h(

@@ -117,7 +117,7 @@ export default defineComponent({
 
           h("div", { class: "vp-hero-info" }, [
             slots.logo?.(logo.value) ??
-              h(DropTransition, { appear: true, type: "group" }, () => {
+              h(DropTransition, { appear: true, group: true }, () => {
                 const { image, imageDark, imageStyle, alt } = logo.value;
 
                 return [
