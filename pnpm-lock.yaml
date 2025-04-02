@@ -25,8 +25,8 @@ catalogs:
       specifier: 11.6.0
       version: 11.6.0
     reveal.js:
-      specifier: 5.2.0
-      version: 5.2.0
+      specifier: 5.2.1
+      version: 5.2.1
     sass-embedded:
       specifier: 1.86.0
       version: 1.86.0
@@ -432,7 +432,7 @@ importers:
         version: 11.6.0
       reveal.js:
         specifier: 'catalog:'
-        version: 5.2.0
+        version: 5.2.1
       sandpack-vue3:
         specifier: 3.1.12
         version: 3.1.12(vue@3.5.13(typescript@5.8.2))
@@ -504,7 +504,7 @@ importers:
         version: 11.6.0
       reveal.js:
         specifier: 'catalog:'
-        version: 5.2.0
+        version: 5.2.1
       sandpack-vue3:
         specifier: 3.1.12
         version: 3.1.12(vue@3.5.13(typescript@5.8.2))
@@ -570,7 +570,7 @@ importers:
         version: 11.6.0
       reveal.js:
         specifier: 'catalog:'
-        version: 5.2.0
+        version: 5.2.1
       sandpack-vue3:
         specifier: 3.1.12
         version: 3.1.12(vue@3.5.13(typescript@5.8.2))
@@ -8820,10 +8820,6 @@ packages:
   reusify@1.1.0:
     resolution: {integrity: sha512-g6QUff04oZpHs0eG5p83rFLhHeV00ug/Yf9nZM6fLeUrPguBTkTQOdpAWWspMh55TZfVQDPaN3NQJfbVRAxdIw==}
     engines: {iojs: '>=1.0.0', node: '>=0.10.0'}
-
-  reveal.js@5.2.0:
-    resolution: {integrity: sha512-TWd9VVYZZW/MGlm5arVPbN5ne49GXrTpil8KFOBOOfHWS4GjSCpSaHfj3iB+Rh0rJTQGbkrQr66l6R3bnElXBw==}
-    engines: {node: '>=18.0.0'}
 
   reveal.js@5.2.1:
     resolution: {integrity: sha512-r7//6mIM5p34hFiDMvYfXgyjXqGRta+/psd9YtytsgRlrpRzFv4RbH76TXd2qD+7ZPZEbpBDhdRhJaFgfQ7zNQ==}
@@ -19236,8 +19232,6 @@ snapshots:
   retry@0.13.1: {}
 
   reusify@1.1.0: {}
-
-  reveal.js@5.2.0: {}
 
   reveal.js@5.2.1: {}
 
