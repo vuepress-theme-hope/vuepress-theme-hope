@@ -4,6 +4,14 @@ All notable changes to this project will be documented in this file. See [Conven
 
 <!-- #region recent-change -->
 
+## [2.0.0-rc.78](https://github.com/vuepress-theme-hope/vuepress-theme-hope/compare/v2.0.0-rc.77...v2.0.0-rc.78) (2025-04-02)
+
+### ✨ Features
+
+- **theme:** use Message from helper ([b3b3ccf](https://github.com/vuepress-theme-hope/vuepress-theme-hope/commit/b3b3ccf895d27f744a24342ab71a130cf52cde3e))
+
+<!-- #region recent-change -->
+
 ## [2.0.0-rc.76](https://github.com/vuepress-theme-hope/vuepress-theme-hope/compare/v2.0.0-rc.75...v2.0.0-rc.76) (2025-03-27)
 
 **Note:** Version bump only for package vuepress-shared

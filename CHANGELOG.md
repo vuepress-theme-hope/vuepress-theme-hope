@@ -4,6 +4,15 @@ All notable changes to this project will be documented in this file. See [Conven
 
 <!-- #region recent-change -->
 
+## [2.0.0-rc.78](https://github.com/vuepress-theme-hope/vuepress-theme-hope/compare/v2.0.0-rc.77...v2.0.0-rc.78) (2025-04-02)
+
+### ✨ Features
+
+- **theme:** use Message from helper ([b3b3ccf](https://github.com/vuepress-theme-hope/vuepress-theme-hope/commit/b3b3ccf895d27f744a24342ab71a130cf52cde3e))
+- use transition style from helper ([e23908e](https://github.com/vuepress-theme-hope/vuepress-theme-hope/commit/e23908e49f369e8acf4d53a17e6ec91d22049ab0))
+
+<!-- #region recent-change -->
+
 ## [2.0.0-rc.77](https://github.com/vuepress-theme-hope/vuepress-theme-hope/compare/v2.0.0-rc.76...v2.0.0-rc.77) (2025-03-28)
 
 ### ✨ Features
