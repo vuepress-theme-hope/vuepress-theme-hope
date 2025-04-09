@@ -7,7 +7,7 @@ import { usePure, useThemeData } from "@theme-hope/composables/index";
 import ColorModeSwitch from "@theme-hope/modules/outlook/components/ColorModeSwitch";
 import OutlookSettings from "@theme-hope/modules/outlook/components/OutlookSettings";
 import { hasMultipleThemeColors } from "@theme-hope/modules/outlook/components/ThemeColor";
-import ToggleFullScreen from "@theme-hope/modules/outlook/components/ToggleFullScreen";
+import ToggleFullScreenButton from "@theme-hope/modules/outlook/components/ToggleFullScreenButton";
 import { OutlookIcon } from "@theme-hope/modules/outlook/components/icons/index";
 import { useDarkMode } from "@theme-hope/modules/outlook/composables/index";
 
@@ -50,7 +50,7 @@ export default defineComponent({
                 enableFullScreen.value &&
                   !canToggle.value &&
                   !hasMultipleThemeColors
-                ? h(ToggleFullScreen)
+                ? h(ToggleFullScreenButton)
                 : h(
                     "button",
                     {
