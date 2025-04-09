@@ -1,0 +1,38 @@
+@use "vuepress-shared/styles/reset";
+
+.vp-hero-slide-down-button {
+  @include reset.button;
+
+  position: absolute;
+  bottom: 0;
+  left: calc(50vw - 30px);
+
+  display: none;
+
+  width: 60px;
+  height: 60px;
+  padding: 10px;
+
+  .hero-fullscreen & {
+    display: block;
+  }
+
+  .slide-down-icon {
+    width: 30px;
+    margin: -15px 0;
+
+    animation-name: bounce-down;
+    animation-duration: 1.5s;
+    animation-timing-function: linear;
+    animation-direction: alternate;
+    animation-iteration-count: infinite;
+
+    &:first-child {
+      color: rgb(255 255 255 / 15%);
+    }
+
+    &:last-child {
+      color: rgb(255 255 255 / 50%);
+    }
+  }
+}

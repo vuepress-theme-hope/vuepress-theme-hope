@@ -54,6 +54,7 @@ export default {
 - `@theme-hope/components/CommonWrapper` 基本布局整合
 - `@theme-hope/components/FeaturePanel` 主页特性
 - `@theme-hope/components/HeroInfo` 主页 Logo 及介绍
+- `@theme-hope/components/HeroSlideDownButton`: Hero 下滑按钮
 - `@theme-hope/components/HighlightPanel`: 主页亮点
 - `@theme-hope/components/HomePage` 主页
 - `@theme-hope/components/MarkdownContent` Markdown 内容

@@ -13,7 +13,7 @@ const BLOG_HOMEPAGE_STYLE = `\
 .theme-container .vp-page.vp-blog-home {
   padding-top: 0;
 }
-.vp-blog-hero.fullscreen {
+.vp-blog-hero.hero-fullscreen {
   height: 100vh;
 }
 `;

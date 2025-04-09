@@ -8,6 +8,7 @@ import {
 } from "vuepress/client";
 
 import AutoLink from "@theme-hope/components/AutoLink";
+import { HeroSlideDownButton } from "@theme-hope/components/HeroSlideDownButton";
 import { DropTransition } from "@theme-hope/components/transitions/index";
 
 import type { ThemeProjectHomePageFrontmatter } from "../../shared/index.js";
@@ -17,7 +18,6 @@ import "../styles/hero-info.scss";
 export interface HeroInfoData {
   text: string | null;
   tagline: string | null;
-  isFullScreen: boolean;
 }
 
 export interface HeroImageData {
@@ -25,13 +25,11 @@ export interface HeroImageData {
   imageDark: string | null;
   imageStyle: string | Record<string, string> | undefined;
   alt: string;
-  isFullScreen: boolean;
 }
 
 export interface HeroBackgroundData {
   image: string | null;
   bgStyle: string | Record<string, string> | undefined;
-  isFullScreen: boolean;
 }
 
 export default defineComponent({
@@ -47,17 +45,12 @@ export default defineComponent({
     const frontmatter = usePageFrontmatter<ThemeProjectHomePageFrontmatter>();
     const siteLocale = useSiteLocaleData();
 
-    const isFullScreen = computed(
-      () => frontmatter.value.heroFullScreen ?? false,
-    );
-
     const info = computed(() => {
       const { heroText, tagline } = frontmatter.value;
 
       return {
         text: heroText ?? (siteLocale.value.title || "Hello"),
         tagline: tagline ?? siteLocale.value.description,
-        isFullScreen: isFullScreen.value,
       };
     });
 
@@ -70,7 +63,6 @@ export default defineComponent({
         imageDark: heroImageDark ? withBase(heroImageDark) : null,
         imageStyle: heroImageStyle,
         alt: heroAlt ?? heroText ?? "",
-        isFullScreen: isFullScreen.value,
       };
     });
 
@@ -81,16 +73,23 @@ export default defineComponent({
         image: isString(bgImage) ? withBase(bgImage) : null,
         imageDark: isString(bgImageDark) ? withBase(bgImageDark) : null,
         bgStyle: bgImageStyle,
-        isFullScreen: isFullScreen.value,
       };
     });
 
     const actions = computed(() => frontmatter.value.actions ?? []);
 
-    return (): VNode =>
-      h(
+    return (): VNode => {
+      const { heroFullScreen, heroHeight } = frontmatter.value;
+
+      return h(
         "header",
-        { class: ["vp-hero-info-wrapper", { fullscreen: isFullScreen.value }] },
+        {
+          class: [
+            "vp-hero-info-wrapper",
+            { "hero-fullscreen": heroFullScreen },
+          ],
+          style: !heroFullScreen && heroHeight ? { height: heroHeight } : null,
+        },
         [
           slots.bg?.(bg.value) ?? [
             bg.value.image
@@ -180,7 +179,21 @@ export default defineComponent({
                   : null,
               ]),
           ]),
+
+          heroFullScreen
+            ? h(HeroSlideDownButton, {
+                onClick: () =>
+                  window.scrollTo({
+                    top:
+                      window.innerHeight -
+                      (document.querySelector("[vp-navbar]")?.clientHeight ??
+                        0),
+                    behavior: "smooth",
+                  }),
+              })
+            : null,
         ],
       );
+    };
   },
 });

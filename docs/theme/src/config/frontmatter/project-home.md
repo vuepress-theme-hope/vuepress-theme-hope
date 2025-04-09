@@ -83,6 +83,13 @@ Link of dark mode background image, relative path is not supported.
 
 The CSS style of the background image.
 
+## heroHeight
+
+- Type: `string`
+- Required: No
+
+Hero height, effective when `heroFullScreen` is `false`.
+
 ## heroFullScreen
 
 - Type: `boolean`

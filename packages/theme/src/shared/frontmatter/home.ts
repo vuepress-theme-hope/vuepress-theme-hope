@@ -7,6 +7,7 @@ export interface ThemeHomePageFrontmatter extends ThemePageFrontmatter {
    * @default false
    */
   heroFullScreen?: boolean;
+  heroHeight?: string;
 
   heroImage?: string;
   heroImageDark?: string;

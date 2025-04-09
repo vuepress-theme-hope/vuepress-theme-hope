@@ -1,14 +1,14 @@
 import { isString } from "@vuepress/helper/client";
 import type { CSSProperties, SlotsType, VNode } from "vue";
-import { computed, defineComponent, h, shallowRef } from "vue";
+import { computed, defineComponent, h } from "vue";
 import {
   usePageFrontmatter,
   useSiteLocaleData,
   withBase,
 } from "vuepress/client";
 
+import { HeroSlideDownButton } from "@theme-hope/components/HeroSlideDownButton";
 import { DropTransition } from "@theme-hope/components/transitions/index";
-import { SlideDownIcon } from "@theme-hope/modules/blog/components/icons";
 
 import type { ThemeBlogHomePageFrontmatter } from "../../../../shared/index.js";
 
@@ -21,13 +21,11 @@ export interface HeroInfoData {
   imageDark: string | null;
   alt: string;
   imageStyle: string | CSSProperties | undefined;
-  isFullScreen: boolean;
 }
 
 export interface HeroBackgroundData {
   image: string | null;
   bgStyle: string | CSSProperties | undefined;
-  isFullScreen: boolean;
 }
 
 const DEFAULT_HERO = "//theme-hope-assets.vuejs.press/hero/default.jpg";
@@ -43,12 +41,6 @@ export default defineComponent({
   setup(_props, { slots }) {
     const frontmatter = usePageFrontmatter<ThemeBlogHomePageFrontmatter>();
     const siteLocale = useSiteLocaleData();
-
-    const hero = shallowRef<HTMLElement>();
-
-    const isFullScreen = computed(
-      () => frontmatter.value.heroFullScreen ?? false,
-    );
 
     const info = computed(() => {
       const {
@@ -67,7 +59,6 @@ export default defineComponent({
         imageDark: heroImageDark ? withBase(heroImageDark) : null,
         alt: heroAlt ?? heroText ?? "",
         imageStyle: heroImageStyle,
-        isFullScreen: isFullScreen.value,
       };
     });
 
@@ -82,7 +73,6 @@ export default defineComponent({
             : DEFAULT_HERO,
         imageDark: isString(bgImageDark) ? withBase(bgImageDark) : null,
         bgStyle: bgImageStyle,
-        isFullScreen: isFullScreen.value,
       };
     });
 
@@ -92,11 +82,10 @@ export default defineComponent({
         : h(
             "div",
             {
-              ref: hero,
               class: [
                 "vp-blog-hero",
                 {
-                  fullscreen: isFullScreen.value,
+                  "hero-fullscreen": frontmatter.value.heroFullScreen,
                   "no-bg": !bg.value.image,
                 },
               ],
@@ -169,22 +158,17 @@ export default defineComponent({
                     : null,
                 ),
               ],
-              info.value.isFullScreen
-                ? h(
-                    "button",
-                    {
-                      type: "button",
-                      class: "slide-down-button",
-                      onClick: () => {
-                        window.scrollTo({
-                          // eslint-disable-next-line @typescript-eslint/no-non-null-assertion
-                          top: hero.value!.clientHeight,
-                          behavior: "smooth",
-                        });
-                      },
-                    },
-                    [h(SlideDownIcon), h(SlideDownIcon)],
-                  )
+              frontmatter.value.heroFullScreen
+                ? h(HeroSlideDownButton, {
+                    onClick: () =>
+                      window.scrollTo({
+                        top:
+                          window.innerHeight -
+                          (document.querySelector("[vp-navbar]")
+                            ?.clientHeight ?? 0),
+                        behavior: "smooth",
+                      }),
+                  })
                 : null,
             ],
           );

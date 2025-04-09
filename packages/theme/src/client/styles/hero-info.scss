@@ -13,7 +13,7 @@
 
     margin-inline: auto;
 
-    &.fullscreen {
+    &.hero-fullscreen {
       height: calc(100vh - var(--navbar-height)) !important;
     }
   }
