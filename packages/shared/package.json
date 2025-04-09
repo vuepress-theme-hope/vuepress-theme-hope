@@ -48,7 +48,6 @@
   "dependencies": {
     "@vuepress/helper": "catalog:vuepress",
     "@vueuse/core": "catalog:range",
-    "dayjs": "^1.11.13",
     "vue": "catalog:range"
   },
   "devDependencies": {

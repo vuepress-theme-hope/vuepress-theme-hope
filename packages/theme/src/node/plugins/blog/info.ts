@@ -1,6 +1,5 @@
 import { getDate, isArray } from "@vuepress/helper";
 import type { Page } from "vuepress/core";
-import { timeTransformer } from "vuepress-shared/node";
 
 import type {
   ArticleInfoData,
@@ -46,12 +45,6 @@ export const injectBlogBasicInfo = (
 
     if (date) {
       info.date = date.getTime();
-
-      // eslint-disable-next-line @typescript-eslint/no-non-null-assertion
-      info.localizedDate = timeTransformer(date, {
-        lang: page.lang,
-        type: "date",
-      })!;
     }
   } else if (createdTime) {
     info.date = createdTime;

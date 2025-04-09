@@ -1,6 +1,5 @@
 import { endsWith, isPlainObject, keys, startsWith } from "@vuepress/helper";
 import type { App, Page, PluginObject } from "vuepress/core";
-import { injectLocalizedDate } from "vuepress-shared/node";
 
 import type {
   StructureSidebarDirOptions,
@@ -99,7 +98,6 @@ export const extendsPagePlugin = (
       if (!themeData.preserveHeaders) delete page.data.headers;
 
       injectPageInfo(page as Page<ThemePageData>);
-      injectLocalizedDate(page);
     },
   };
 };

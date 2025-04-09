@@ -28,14 +28,14 @@
     "release:publish": "lerna publish from-package --yes",
     "release:sync": "cross-env NODE_OPTIONS=\"--experimental-json-modules\" tsx scripts/sync.ts",
     "release:version": "lerna version",
-    "test": "cross-env TZ=Etc/UTC vitest --coverage"
+    "test": "vitest --coverage"
   },
   "nano-staged": {
     "**/*": "prettier --write -u",
     "*.vue": "eslint --fix",
     "*.{cjs,mjs,js,ts}": [
       "eslint --fix",
-      "cross-env TZ=Etc/UTC vitest related --run"
+      "vitest related --run"
     ],
     "*.md": "markdownlint-cli2 --fix",
     "*.scss": "stylelint --fix",

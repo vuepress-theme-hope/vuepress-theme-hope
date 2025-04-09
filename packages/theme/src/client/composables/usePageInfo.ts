@@ -1,6 +1,5 @@
 import { getDate } from "@vuepress/helper/client";
 import type { GitData } from "@vuepress/plugin-git";
-import type { ReadingTime } from "@vuepress/plugin-reading-time/client";
 import {
   useReadingTimeData,
   useReadingTimeLocale,
@@ -94,11 +93,6 @@ export const usePageInfo = (): {
   items: ComputedRef<PageInfoType[] | false | null>;
 } => {
   const themeLocale = useThemeLocaleData();
-  const page = usePageData<{
-    git?: GitData;
-    localizedDate: string;
-    readingTime?: ReadingTime;
-  }>();
   const frontmatter = usePageFrontmatter<ThemeNormalPageFrontmatter>();
   const author = usePageAuthor();
   const category = usePageCategory();
@@ -113,7 +107,6 @@ export const usePageInfo = (): {
         author: author.value,
         category: category.value,
         date: date.value,
-        localizedDate: page.value.localizedDate,
         tag: tag.value,
         isOriginal: frontmatter.value.isOriginal ?? false,
         readingTime: readingTimeData.value,

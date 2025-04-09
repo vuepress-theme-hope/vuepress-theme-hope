@@ -49,11 +49,6 @@ export interface ArticleInfoData extends PageInfoData {
   date?: number;
 
   /**
-   * Writing date info in current language
-   */
-  localizedDate?: string;
-
-  /**
    * Article category
    */
   category?: string[];

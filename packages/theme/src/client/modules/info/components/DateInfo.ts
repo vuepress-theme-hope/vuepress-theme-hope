@@ -1,5 +1,5 @@
 import type { PropType, VNode } from "vue";
-import { defineComponent, h } from "vue";
+import { computed, defineComponent, h } from "vue";
 import { usePageLang } from "vuepress/client";
 
 import { usePure } from "@theme-hope/composables/index";
@@ -18,19 +18,20 @@ export default defineComponent({
      * 日期信息
      */
     date: Object as PropType<Date | null>,
-
-    /**
-     * Localized date text
-     *
-     * 本地化的日期文字
-     */
-    localizedDate: String,
   },
 
   setup(props) {
     const lang = usePageLang();
     const metaLocale = useMetaLocale();
     const isPure = usePure();
+
+    const formattedDate = computed(() => {
+      const formatter = new Intl.DateTimeFormat(lang.value, {
+        dateStyle: "short",
+      });
+
+      return props.date ? formatter.format(props.date) : null;
+    });
 
     return (): VNode | null =>
       props.date
@@ -46,8 +47,8 @@ export default defineComponent({
               h(
                 "span",
                 { "data-allow-mismatch": "text" },
-                props.localizedDate ??
-                  props.date.toLocaleDateString(lang.value),
+                // eslint-disable-next-line @typescript-eslint/no-non-null-assertion
+                formattedDate.value!,
               ),
               h("meta", {
                 property: "datePublished",
