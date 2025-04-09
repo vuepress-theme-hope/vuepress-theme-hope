@@ -1,7 +1,7 @@
+import { isPlainObject } from "@vuepress/helper";
 import type { GitPluginOptions } from "@vuepress/plugin-git";
 import { gitPlugin } from "@vuepress/plugin-git";
 import type { App } from "vuepress/core";
-import { isPlainObject } from "vuepress/shared";
 
 import type { ThemeData } from "../../shared/index.js";
 

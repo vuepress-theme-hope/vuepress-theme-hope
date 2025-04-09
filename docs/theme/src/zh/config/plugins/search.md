@@ -36,23 +36,11 @@ tag:
 
 更多详情，请参阅 [SlimSearch 插件文档][slimsearch]。
 
-::: note
-
-你需要手动安装 `@vuepress/plugin-slimsearch`。
-
-:::
-
 ## plugins.search
 
 你可以将其设置为 `true` 来直接启用它，或者将其设置为将传递给 `@vuepress/plugin-search` 的配置对象。
 
 详情请参阅 [search 插件文档][search]。
-
-::: note
-
-你需要手动安装 `@vuepress/plugin-search`。
-
-:::
 
 [docsearch]: https://ecosystem.vuejs.press/zh/plugins/search/docsearch.html
 [search]: https://ecosystem.vuejs.press/zh/plugins/search/search.html

@@ -134,7 +134,7 @@ export interface PluginsOptions extends DeprecatedPluginsOptions {
    *
    * @see https://plugin-components.vuejs.press/zh/config.html
    */
-  components?: ComponentPluginOptions;
+  components?: ComponentPluginOptions | false;
 
   /**
    * Comment plugin options

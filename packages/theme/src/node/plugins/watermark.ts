@@ -1,6 +1,6 @@
+import { isPlainObject } from "@vuepress/helper";
 import type { WatermarkPluginOptions } from "@vuepress/plugin-watermark";
 import type { Plugin, PluginObject } from "vuepress/core";
-import { isPlainObject } from "vuepress/shared";
 import { colors } from "vuepress/utils";
 
 import { logger } from "../utils.js";

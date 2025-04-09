@@ -1,5 +1,5 @@
+import { isString } from "@vuepress/helper";
 import type { HeadConfig, PageFrontmatter } from "vuepress/shared";
-import { isString } from "vuepress/shared";
 import { colors } from "vuepress/utils";
 import { createConverter } from "vuepress-shared";
 

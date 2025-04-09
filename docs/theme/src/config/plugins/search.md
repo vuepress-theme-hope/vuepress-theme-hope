@@ -28,7 +28,7 @@ Only 1 of the 3 search plugins can be enabled at the same time, and the priority
 
 ## plugins.docsearch
 
-Options which will be passed to `@vuepress/plugin-docsearch`, for details, see [DocSearch plugin documentation][docsearch].
+Options which will be passed to `@vuepress/plugin-docsearch`. For details, see [DocSearch plugin documentation][docsearch].
 
 ## plugins.slimsearch
 
