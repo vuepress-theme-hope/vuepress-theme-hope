@@ -1,3 +1,5 @@
+import type { GetHeadersOptions } from "@vuepress/helper/shared";
+
 import type { FooterLocaleOptions } from "./footer.js";
 import type { DocsRepoLocaleOptions } from "./info.js";
 import type { MetaLocaleOptions, MetaLocateData } from "./meta.js";
@@ -22,6 +24,13 @@ export interface LayoutLocaleData {
    * Router related i18n config
    */
   routeLocales: RouteLocaleData;
+}
+
+export interface DeprecatedLayoutOptions {
+  /**
+   * @deprecated Use toc.levels instead
+   */
+  headerDepth?: number;
 }
 
 export interface LayoutLocaleOptions
@@ -84,11 +93,23 @@ export interface LayoutLocaleOptions
   /**
    * Whether show toc list in desktop mode
    *
+   * An object with the following properties can be set:
+   *
+   * - `selector`: The selector of the headers.
+   * - `ignore`: Ignore specific elements within the header.
+   * - `levels`: The levels of the headers.
+   *
    * 是否在桌面模式下展示标题列表
+   *
+   * 可以设置一个对象，包含以下属性：
+   *
+   * - `selector`: 选择器
+   * - `ignore`: 忽略特定元素
+   * - `levels`: 标题的级别
    *
    * @default true
    */
-  toc?: boolean;
+  toc?: GetHeadersOptions | boolean;
 
   /**
    * Whether rtl layout should be used

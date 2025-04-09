@@ -10,7 +10,6 @@ const DEPRECATED_FRONTMATTER_OPTIONS: [string, string][] = [
   ["authors", "author"],
   ["time", "date"],
   ["visitor", "pageview"],
-  ["sidebarDepth", "headerDepth"],
   ["copyrightText", "copyright"],
   ["anchorDisplay", "toc"],
   ["updateTime", "lastUpdated"],
@@ -127,6 +126,36 @@ export const convertFrontmatter = (
     );
 
     frontmatter.layout = "SlidePage";
+  }
+
+  if (typeof frontmatter.sidebarDepth === "number") {
+    logger.warn(
+      `${colors.magenta(
+        "sidebarDepth",
+      )} in frontmatter is deprecated, please use ${colors.magenta(
+        "toc.levels",
+      )} instead.${filePathRelative ? `Found in ${filePathRelative}` : ""}`,
+    );
+
+    if (frontmatter.toc !== false)
+      frontmatter.toc = {
+        levels: [2, frontmatter.sidebarDepth + 2],
+      };
+  }
+
+  if (typeof frontmatter.headerDepth === "number") {
+    logger.warn(
+      `${colors.magenta(
+        "headerDepth",
+      )} in frontmatter is deprecated, please use ${colors.magenta(
+        "toc.levels",
+      )} instead.${filePathRelative ? `Found in ${filePathRelative}` : ""}`,
+    );
+
+    if (frontmatter.toc !== false)
+      frontmatter.toc = {
+        levels: [2, frontmatter.headerDepth + 2],
+      };
   }
 
   return frontmatter;

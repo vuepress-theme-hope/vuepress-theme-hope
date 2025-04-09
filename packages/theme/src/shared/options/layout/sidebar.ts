@@ -67,23 +67,4 @@ export interface SidebarLocaleOptions {
    * @see https://theme-hope.vuejs.press/zh/guide/layout/sidebar.html
    */
   sidebar?: SidebarOptions;
-
-  /**
-   * Heading depth for sidebar and toc
-   *
-   * - Set to `0` to disable all levels
-   * - Set to `1` to include `<h2>`
-   * - Set to `2` to include `<h2>` and `<h3>`
-   * - ...
-   *
-   * 侧边栏和页面目录的标题深度
-   *
-   * - 设置 `0` 来禁用所有级别的标题
-   * - 设置 `1` 来包含 `<h2>`
-   * - 设置 `2` 来包含 `<h2>` 和 `<h3>`
-   * - ...
-   *
-   * @default 2
-   */
-  headerDepth?: number;
 }

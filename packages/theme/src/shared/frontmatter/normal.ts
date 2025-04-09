@@ -1,3 +1,5 @@
+import type { GetHeadersOptions } from "@vuepress/helper/shared";
+
 import type { ThemePageFrontmatter } from "./base.js";
 import type { PageInfoType } from "../info.js";
 import type { AutoLinkOptions } from "../nav.js";
@@ -122,13 +124,6 @@ export interface ThemeNormalPageFrontmatter extends ThemePageFrontmatter {
   shortTitle?: string;
 
   /**
-   * Page Heading depth
-   *
-   * 页面标题深度
-   */
-  headerDepth?: number;
-
-  /**
    * Whether display lastUpdated time
    *
    * 是否显示最后更新事件
@@ -175,7 +170,7 @@ export interface ThemeNormalPageFrontmatter extends ThemePageFrontmatter {
    *
    * 是否在桌面模式下展示标题列表
    */
-  toc?: boolean;
+  toc?: GetHeadersOptions | boolean;
 
   /**
    * PageInfo items

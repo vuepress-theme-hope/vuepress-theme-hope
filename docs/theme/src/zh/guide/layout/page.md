@@ -53,9 +53,26 @@ icon: home
 
 你也可以在特定页面的 Frontmatter 中通过 `toc` 来指定它。
 
-### 设置标题深度
+::: tip 自定义 TOC 标题
 
-你可以通过在主题选项和页面 Frontmatter 中设置 `headerDepth` 来自定义标题列表的深度。
+你可以通过在主题选项和页面 Frontmatter 中设置一个对象 `toc` 来自定义 TOC 标题，该对象可能包含以下属性：
+
+- `selector`: 选择器的标题。
+
+  默认值为 `"#markdown-content >  h1, #markdown-content > h2, #markdown-content > h3, #markdown-content > h4, #markdown-content > h5, #markdown-content > h6, [vp-content] > h2"`。
+
+- `depth`: 标题的级别。
+
+  `1` 到 `6` 对应 `<h1>` 到 `<h6>`
+
+  - `false`: 没有标题。
+  - `number`: 仅显示该级别的标题。
+  - `[number, number]`: 标题级别元组，第一个数字应该小于第二个数字，例如 `[2, 4]`，表示将显示所有从 `<h2>` 到 `<h4>` 的标题。
+  - `deep` (默认): 同 `[2, 6]`，表示将显示所有从 `<h2>` 到 `<h6>` 的标题。
+
+- `ignore`: 忽略标题中的特定元素，应该是一个字符串数组，默认值为 `[".vp-badge", ".vp-icon"]`。
+
+:::
 
 ## 贡献者与最后更新时间
 

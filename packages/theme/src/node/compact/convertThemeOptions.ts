@@ -15,7 +15,6 @@ const DEPRECATED_THEME_OPTIONS: [string, string][] = [
   // v2
   ["hideSiteNameonMobile", "hideSiteNameOnMobile"],
   ["fullScreen", "fullscreen"],
-  ["headingDepth", "headerDepth"],
   ["wideBreakPoint", "pcBreakPoint"],
 ];
 
@@ -730,6 +729,36 @@ export const convertThemeOptions = (
             localeConfig.sidebar,
             localePath,
           );
+
+        if (typeof localeConfig.headingDepth === "number") {
+          logger.warn(
+            `${colors.magenta(
+              "headingDepth",
+            )} is deprecated, please use ${colors.magenta(
+              "toc.levels",
+            )} instead.`,
+          );
+
+          if (localeConfig.toc !== false)
+            localeConfig.toc = {
+              levels: [2, localeConfig.headingDepth + 2],
+            };
+        }
+
+        if (typeof localeConfig.headerDepth === "number") {
+          logger.warn(
+            `${colors.magenta(
+              "headerDepth",
+            )} is deprecated, please use ${colors.magenta(
+              "toc.levels",
+            )} instead.`,
+          );
+
+          if (localeConfig.toc !== false)
+            localeConfig.toc = {
+              levels: [2, localeConfig.headerDepth + 2],
+            };
+        }
 
         convertNavbarLayoutOptions(localeConfig);
         convertBlogOptions(localeConfig, plugins, localePath);

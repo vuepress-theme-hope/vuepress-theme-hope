@@ -40,19 +40,10 @@ export const setupSidebarItems = (): void => {
       ? false
       : (frontmatter.value.sidebar ?? themeLocale.value.sidebar ?? "structure"),
   );
-  const headerDepth = computed(
-    () =>
-      ((frontmatter.value as ThemeHomePageFrontmatter).headerDepth as
-        | number
-        | undefined) ??
-      themeLocale.value.headerDepth ??
-      2,
-  );
 
   const sidebarItems = computed(() =>
     resolveSidebarItems({
       config: sidebarOptions.value,
-      headerDepth: headerDepth.value,
       routeLocale: routeLocale.value,
       routePath: routePath.value,
     }),

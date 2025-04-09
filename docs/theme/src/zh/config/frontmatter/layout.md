@@ -76,15 +76,6 @@ tag:
 
 填入 `false` 会禁用侧边栏，设置为空数组 `[]` 会只渲染侧边栏的插槽内容。
 
-## headerDepth
-
-- 类型: `number`
-- 默认值: `2`
-- 详情:
-  - [布局 → 页面](../../guide/layout/page.md#设置标题深度)
-
-标题渲染深度。
-
 ## index
 
 - 类型: `boolean`
@@ -248,7 +239,38 @@ tag:
 
 ## toc {#toc-heading}
 
-- 类型: `boolean`
+- 类型: `GetHeadersOptions | boolean`
+
+  ```ts
+  export interface GetHeadersOptions {
+    /**
+     * 标题的选择器
+     *
+     * @default "#markdown-content >  h1, #markdown-content > h2, #markdown-content > h3, #markdown-content > h4, #markdown-content > h5, #markdown-content > h6, [vp-content] > h2"
+     */
+    selector?: string;
+    /**
+     * 忽略标题中的特定元素，应是一个 CSS 选择器数组
+     *
+     * @default [".vp-badge", ".vp-icon"]
+     */
+    ignore?: string[];
+    /**
+     * 标题的级别
+     *
+     * `1` 到 `6` 对应 `<h1>` 到 `<h6>`
+     *
+     * - `false`: 不显示标题列表
+     * - `number`: 仅显示该级别的标题
+     * - `[number, number]: 标题级别元组，第一个数字应小于第二个数字，例如 `[2, 4]`，表示显示所有 `<h2>` 到 `<h4>` 的标题。
+     * - `deep`: 和 `[2, 6]` 相同，表示显示所有 `<h2>` 到 `<h6>` 的标题。
+     *
+     * @default "deep"
+     */
+    levels?: HeaderLevels;
+  }
+  ```
+
 - 默认值: 主题选项中的值
 
 是否显示标题列表。

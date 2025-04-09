@@ -53,9 +53,26 @@ If you don't want to display the title list on the right in desktop mode, please
 
 You can also set it through `toc` in page frontmatter.
 
-### Setting header depth
+::: tip Customizing TOC headers
 
-You can customize the depth of the header list by setting `headerDepth` in theme options and page frontmatter.
+You can customize TOC headers by setting an object `toc` in theme options and page frontmatter, the object might contain the following properties:
+
+- `selector`: The selector of the headers.
+
+  The default value is `"#markdown-content >  h1, #markdown-content > h2, #markdown-content > h3, #markdown-content > h4, #markdown-content > h5, #markdown-content > h6, [vp-content] > h2"`.
+
+- `depth`: The levels of the headers.
+
+  `1` to `6` for `<h1>` to `<h6>`
+
+  - `false`: No headers.
+  - `number`: only headings of that level will be displayed.
+  - `[number, number]`: headings level tuple, where the first number should be less than the second number, for example, `[2, 4]`which means all headings from`<h2>`to`<h4>` will be displayed.
+  - `deep`(default): same as `[2, 6]`, which means all headings from `<h2>` to `<h6>` will be displayed.
+
+- `ignore`: Ignore specific elements within the header, should be an array of strings, the default value is `[".vp-badge", ".vp-icon"]`.
+
+:::
 
 ## Contributors and Last Updated Time
 

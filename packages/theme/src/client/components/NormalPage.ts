@@ -1,5 +1,5 @@
-import type { HeaderLevels } from "@vuepress/helper/client";
-import { hasGlobalComponent } from "@vuepress/helper/client";
+import type { GetHeadersOptions } from "@vuepress/helper/client";
+import { hasGlobalComponent, isPlainObject } from "@vuepress/helper/client";
 import type { ComponentOptions, SlotsType, VNode } from "vue";
 import { computed, defineComponent, h, resolveComponent } from "vue";
 import { usePageFrontmatter, withBase } from "vuepress/client";
@@ -17,6 +17,15 @@ import { useDarkMode } from "@theme-hope/modules/outlook/composables/index";
 import type { ThemeNormalPageFrontmatter } from "../../shared/index.js";
 
 import "../styles/normal-page.scss";
+
+const DEFAULT_TOC_OPTIONS: GetHeadersOptions = {
+  selector: [
+    ...Array.from({ length: 6 }).map((_, i) => `#markdown-content > h${i + 1}`),
+    "[vp-content] > h2",
+  ].join(", "),
+  levels: "deep",
+  ignore: [".vp-badge", ".vp-icon"],
+};
 
 export default defineComponent({
   name: "NormalPage",
@@ -37,14 +46,15 @@ export default defineComponent({
     const { isDarkMode } = useDarkMode();
     const themeLocale = useThemeLocaleData();
 
-    const tocEnable = computed(
-      () => frontmatter.value.toc ?? themeLocale.value.toc ?? true,
-    );
+    const tocOptions = computed(() => {
+      const config = frontmatter.value.toc ?? themeLocale.value.toc;
 
-    const headerLevels = computed<HeaderLevels>(() => [
-      2,
-      (frontmatter.value.headerDepth ?? themeLocale.value.headerDepth ?? 2) + 1,
-    ]);
+      if (isPlainObject(config)) {
+        return { ...DEFAULT_TOC_OPTIONS, ...config };
+      }
+
+      return (config ?? true) ? DEFAULT_TOC_OPTIONS : null;
+    });
 
     return (): VNode =>
       h(
@@ -69,15 +79,10 @@ export default defineComponent({
               : null,
             h(BreadCrumb),
             h(PageTitle),
-            tocEnable.value
+            tocOptions.value
               ? h(
                   TOC,
-                  {
-                    options: {
-                      levels: headerLevels.value,
-                      ignore: [".vp-badge"],
-                    },
-                  },
+                  { options: tocOptions.value },
                   {
                     before: slots.tocBefore,
                     after: slots.tocAfter,

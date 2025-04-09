@@ -422,18 +422,6 @@ Sidebar is disabled by default in home page.
 
 :::
 
-## Header Links Depths
-
-The sidebar automatically displays links for headers in the current active page, nested under the link for the page itself. You can customize this behavior using `headerDepth` in theme options. The default depth(the max value) is `2`, which extracts both `h2` and `h3` headers. Setting it to `0` disables the header links.
-
-A page can also override this value via frontmatter:
-
-```md
----
-headerDepth: 2
----
-```
-
 ### Active Header Links
 
 By default, the nested header links and the hash in the URL are updated as the user scrolls to view the different sections of the page. This behavior can be disabled with the following theme config:

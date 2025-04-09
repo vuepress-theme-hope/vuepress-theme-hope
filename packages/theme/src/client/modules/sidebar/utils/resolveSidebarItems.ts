@@ -28,7 +28,6 @@ import type {
 
 export interface SidebarArrayItem {
   config: SidebarArrayOptions;
-  headerDepth: number;
   prefix?: string;
 }
 
@@ -81,7 +80,6 @@ export const resolveArraySidebarItems = ({
 export interface ResolveMultiSidebarOptions {
   config: SidebarObjectOptions;
   routePath: string;
-  headerDepth: number;
 }
 
 /**
@@ -90,7 +88,6 @@ export interface ResolveMultiSidebarOptions {
 export const resolveMultiSidebarItems = ({
   config,
   routePath,
-  headerDepth,
 }: ResolveMultiSidebarOptions): SidebarItem[] => {
   const sidebarRoutes = keys(config).sort((x, y) => y.length - x.length);
 
@@ -101,7 +98,6 @@ export const resolveMultiSidebarItems = ({
 
       return resolveArraySidebarItems({
         config: matched === "structure" ? sidebarData[base] : matched || [],
-        headerDepth,
         prefix: base,
       });
     }
@@ -114,7 +110,6 @@ export const resolveMultiSidebarItems = ({
 
 export interface ResolveSidebarOptions {
   config: SidebarOptions;
-  headerDepth: number;
   routeLocale: string;
   routePath: string;
 }
@@ -126,7 +121,6 @@ export interface ResolveSidebarOptions {
  */
 export const resolveSidebarItems = ({
   config,
-  headerDepth,
   routeLocale,
   routePath,
 }: ResolveSidebarOptions): SidebarItem[] =>
@@ -134,11 +128,10 @@ export const resolveSidebarItems = ({
   config === "structure"
     ? resolveArraySidebarItems({
         config: sidebarData[routeLocale],
-        headerDepth,
         prefix: routeLocale,
       })
     : isArray(config)
-      ? resolveArraySidebarItems({ config, headerDepth })
+      ? resolveArraySidebarItems({ config })
       : isPlainObject(config)
-        ? resolveMultiSidebarItems({ config, routePath, headerDepth })
+        ? resolveMultiSidebarItems({ config, routePath })
         : [];
