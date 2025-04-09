@@ -4,6 +4,20 @@ All notable changes to this project will be documented in this file. See [Conven
 
 <!-- #region recent-change -->
 
+## [2.0.0-rc.79](https://github.com/vuepress-theme-hope/vuepress-theme-hope/compare/v2.0.0-rc.78...v2.0.0-rc.79) (2025-04-09)
+
+### ✨ Features
+
+- **theme:** add heroHeight ([329aef2](https://github.com/vuepress-theme-hope/vuepress-theme-hope/commit/329aef221978aa88e58692d8582e3b83aa30573d))
+- **theme:** rebuild toc options ([9f5ef7f](https://github.com/vuepress-theme-hope/vuepress-theme-hope/commit/9f5ef7fb0da1cdda27b7aa81ae7e9fcee13726e8))
+
+### 🐛 Bug Fixes
+
+- **theme:** fix fullscreen button ([7898c6d](https://github.com/vuepress-theme-hope/vuepress-theme-hope/commit/7898c6d228133126c685c686462543439fce18c2))
+- **theme:** fix timeline item style ([2088135](https://github.com/vuepress-theme-hope/vuepress-theme-hope/commit/208813504583f1cdfdcca09036ab4eec8015c152))
+
+<!-- #region recent-change -->
+
 ## [2.0.0-rc.78](https://github.com/vuepress-theme-hope/vuepress-theme-hope/compare/v2.0.0-rc.77...v2.0.0-rc.78) (2025-04-02)
 
 ### ✨ Features
