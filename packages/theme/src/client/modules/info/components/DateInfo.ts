@@ -25,12 +25,16 @@ export default defineComponent({
     const metaLocale = useMetaLocale();
     const isPure = usePure();
 
+    const formatter = computed(
+      () =>
+        new Intl.DateTimeFormat(lang.value, {
+          dateStyle: "short",
+        }),
+    );
     const formattedDate = computed(() => {
-      const formatter = new Intl.DateTimeFormat(lang.value, {
-        dateStyle: "short",
-      });
+      if (!props.date) return null;
 
-      return props.date ? formatter.format(props.date) : null;
+      return formatter.value.format(props.date);
     });
 
     return (): VNode | null =>
