@@ -1,5 +1,6 @@
 import type { ReadingTime } from "@vuepress/plugin-reading-time";
-import type { Author } from "vuepress-shared";
+
+import type { Author } from "./author.js";
 
 export type PageType = "article" | "home" | "slide" | "page";
 

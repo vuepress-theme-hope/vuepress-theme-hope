@@ -1,4 +1,4 @@
-import type { Author } from "vuepress-shared";
+import type { Author } from "../author.js";
 
 export interface InfoOptions {
   /**

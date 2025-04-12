@@ -7,9 +7,9 @@ import {
 import type { FeedPluginOptions } from "@vuepress/plugin-feed";
 import type { Plugin } from "vuepress/core";
 import { colors } from "vuepress/utils";
-import { getAuthor } from "vuepress-shared/node";
 
 import type { ThemeData } from "../../shared/index.js";
+import { getAuthor } from "../../shared/index.js";
 import { logger } from "../utils.js";
 
 let feedPlugin:

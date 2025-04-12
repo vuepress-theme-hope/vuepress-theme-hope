@@ -1,8 +1,9 @@
 import type { ComputedRef } from "vue";
 import { computed } from "vue";
-import type { AuthorInfo } from "vuepress-shared/client";
 
 import { useThemeLocaleData } from "@theme-hope/composables/index";
+
+import type { AuthorInfo } from "../../shared/index.js";
 
 export const useAuthorInfo = (): ComputedRef<AuthorInfo> => {
   const themeLocale = useThemeLocaleData();

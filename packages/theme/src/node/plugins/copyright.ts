@@ -2,12 +2,12 @@ import { isPlainObject } from "@vuepress/helper";
 import type { CopyrightPluginOptions } from "@vuepress/plugin-copyright";
 import { copyrightPlugin } from "@vuepress/plugin-copyright";
 import type { Page, Plugin } from "vuepress/core";
-import { getAuthor } from "vuepress-shared/node";
 
 import type {
   ThemeData,
   ThemeNormalPageFrontmatter,
 } from "../../shared/index.js";
+import { getAuthor } from "../../shared/index.js";
 
 /**
  * @private

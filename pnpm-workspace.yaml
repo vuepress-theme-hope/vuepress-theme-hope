@@ -5,7 +5,7 @@ packages:
   - packages/*
 
 catalog:
-  "@vueuse/core": 13.0.0
+  "@vueuse/core": 13.1.0
   markmap-lib: 0.18.11
   markmap-toolbar: 0.18.10
   markmap-view: 0.18.10
@@ -18,7 +18,7 @@ catalog:
 
 catalogs:
   range:
-    "@vueuse/core": ^13.0.0
+    "@vueuse/core": ^13.1.0
     balloon-css: ^1.2.0
     sass: ^1.86.3
     sass-embedded: ^1.86.3
@@ -26,45 +26,45 @@ catalogs:
     vue: ^3.5.13
 
   vuepress:
-    "@vuepress/bundler-vite": 2.0.0-rc.20
-    "@vuepress/bundler-webpack": 2.0.0-rc.20
-    "@vuepress/helper": ^2.0.0-rc.92
-    "@vuepress/plugin-active-header-links": 2.0.0-rc.86
-    "@vuepress/plugin-back-to-top": 2.0.0-rc.92
-    "@vuepress/plugin-blog": 2.0.0-rc.92
-    "@vuepress/plugin-catalog": 2.0.0-rc.92
-    "@vuepress/plugin-comment": 2.0.0-rc.92
-    "@vuepress/plugin-copy-code": 2.0.0-rc.92
-    "@vuepress/plugin-copyright": 2.0.0-rc.92
-    "@vuepress/plugin-docsearch": 2.0.0-rc.92
-    "@vuepress/plugin-feed": 2.0.0-rc.92
-    "@vuepress/plugin-git": 2.0.0-rc.92
-    "@vuepress/plugin-icon": 2.0.0-rc.92
-    "@vuepress/plugin-links-check": 2.0.0-rc.92
-    "@vuepress/plugin-markdown-ext": 2.0.0-rc.92
-    "@vuepress/plugin-markdown-hint": 2.0.0-rc.92
-    "@vuepress/plugin-markdown-image": 2.0.0-rc.92
-    "@vuepress/plugin-markdown-include": 2.0.0-rc.92
-    "@vuepress/plugin-markdown-math": 2.0.0-rc.92
-    "@vuepress/plugin-markdown-stylize": 2.0.0-rc.92
-    "@vuepress/plugin-markdown-tab": 2.0.0-rc.92
-    "@vuepress/plugin-notice": 2.0.0-rc.92
-    "@vuepress/plugin-nprogress": 2.0.0-rc.92
-    "@vuepress/plugin-photo-swipe": 2.0.0-rc.92
-    "@vuepress/plugin-prismjs": 2.0.0-rc.92
-    "@vuepress/plugin-pwa": 2.0.0-rc.92
-    "@vuepress/plugin-reading-time": 2.0.0-rc.92
-    "@vuepress/plugin-redirect": 2.0.0-rc.92
-    "@vuepress/plugin-revealjs": 2.0.0-rc.92
-    "@vuepress/plugin-rtl": 2.0.0-rc.92
-    "@vuepress/plugin-sass-palette": 2.0.0-rc.92
-    "@vuepress/plugin-search": 2.0.0-rc.92
-    "@vuepress/plugin-seo": 2.0.0-rc.92
-    "@vuepress/plugin-shiki": 2.0.0-rc.92
-    "@vuepress/plugin-slimsearch": 2.0.0-rc.92
-    "@vuepress/plugin-sitemap": 2.0.0-rc.92
-    "@vuepress/plugin-theme-data": 2.0.0-rc.86
-    "@vuepress/plugin-watermark": 2.0.0-rc.92
-    "@vuepress/shiki-twoslash": 2.0.0-rc.92
-    "@vuepress/theme-default": 2.0.0-rc.92
-    vuepress: 2.0.0-rc.20
+    "@vuepress/bundler-vite": 2.0.0-rc.21
+    "@vuepress/bundler-webpack": 2.0.0-rc.21
+    "@vuepress/helper": ^2.0.0-rc.94
+    "@vuepress/plugin-active-header-links": 2.0.0-rc.94
+    "@vuepress/plugin-back-to-top": 2.0.0-rc.94
+    "@vuepress/plugin-blog": 2.0.0-rc.94
+    "@vuepress/plugin-catalog": 2.0.0-rc.94
+    "@vuepress/plugin-comment": 2.0.0-rc.94
+    "@vuepress/plugin-copy-code": 2.0.0-rc.94
+    "@vuepress/plugin-copyright": 2.0.0-rc.94
+    "@vuepress/plugin-docsearch": 2.0.0-rc.94
+    "@vuepress/plugin-feed": 2.0.0-rc.94
+    "@vuepress/plugin-git": 2.0.0-rc.94
+    "@vuepress/plugin-icon": 2.0.0-rc.94
+    "@vuepress/plugin-links-check": 2.0.0-rc.94
+    "@vuepress/plugin-markdown-ext": 2.0.0-rc.94
+    "@vuepress/plugin-markdown-hint": 2.0.0-rc.94
+    "@vuepress/plugin-markdown-image": 2.0.0-rc.94
+    "@vuepress/plugin-markdown-include": 2.0.0-rc.94
+    "@vuepress/plugin-markdown-math": 2.0.0-rc.94
+    "@vuepress/plugin-markdown-stylize": 2.0.0-rc.94
+    "@vuepress/plugin-markdown-tab": 2.0.0-rc.94
+    "@vuepress/plugin-notice": 2.0.0-rc.94
+    "@vuepress/plugin-nprogress": 2.0.0-rc.94
+    "@vuepress/plugin-photo-swipe": 2.0.0-rc.94
+    "@vuepress/plugin-prismjs": 2.0.0-rc.94
+    "@vuepress/plugin-pwa": 2.0.0-rc.94
+    "@vuepress/plugin-reading-time": 2.0.0-rc.94
+    "@vuepress/plugin-redirect": 2.0.0-rc.94
+    "@vuepress/plugin-revealjs": 2.0.0-rc.94
+    "@vuepress/plugin-rtl": 2.0.0-rc.94
+    "@vuepress/plugin-sass-palette": 2.0.0-rc.94
+    "@vuepress/plugin-search": 2.0.0-rc.94
+    "@vuepress/plugin-seo": 2.0.0-rc.94
+    "@vuepress/plugin-shiki": 2.0.0-rc.94
+    "@vuepress/plugin-slimsearch": 2.0.0-rc.94
+    "@vuepress/plugin-sitemap": 2.0.0-rc.94
+    "@vuepress/plugin-theme-data": 2.0.0-rc.94
+    "@vuepress/plugin-watermark": 2.0.0-rc.94
+    "@vuepress/shiki-twoslash": 2.0.0-rc.94
+    "@vuepress/theme-default": 2.0.0-rc.94
+    vuepress: 2.0.0-rc.21

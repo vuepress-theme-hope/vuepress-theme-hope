@@ -1,4 +1,4 @@
-import { hasGlobalComponent } from "@vuepress/helper/client";
+import { RenderDefault, hasGlobalComponent } from "@vuepress/helper/client";
 import {
   useEventListener,
   useScrollLock,
@@ -19,7 +19,6 @@ import {
   watch,
 } from "vue";
 import { onContentUpdated, usePageFrontmatter } from "vuepress/client";
-import { RenderDefault } from "vuepress-shared/client";
 
 import PageFooter from "@theme-hope/components/PageFooter";
 import {
@@ -142,7 +141,7 @@ export default defineComponent({
       () =>
         !props.noToc &&
         !frontmatter.value.home &&
-        (frontmatter.value.toc ?? themeLocale.value.toc ?? true),
+        Boolean(frontmatter.value.toc ?? themeLocale.value.toc ?? true),
     );
 
     const touchStart = { x: 0, y: 0 };

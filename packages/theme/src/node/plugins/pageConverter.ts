@@ -42,8 +42,7 @@ export const injectPageInfo = (page: Page<ThemePageData>): void => {
           frontmatter.dir as StructureSidebarDirOptions
         ).order;
 
-      if ((frontmatter as ThemeNormalPageFrontmatter).dir?.index === false)
-        page.routeMeta.index = false;
+      if (frontmatter.dir.index === false) page.routeMeta.index = false;
     }
   } else {
     if ("order" in frontmatter) page.routeMeta.order = frontmatter.order;
@@ -92,10 +91,6 @@ export const extendsPagePlugin = (
       if (enableEditLink)
         // Save relative file path into page data to generate edit link
         (page as Page<ThemePageData>).data.filePathRelative = filePathRelative;
-
-      // remove page headers
-      // @ts-expect-error: header are required in vuepress/core
-      if (!themeData.preserveHeaders) delete page.data.headers;
 
       injectPageInfo(page as Page<ThemePageData>);
     },

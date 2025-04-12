@@ -6,7 +6,6 @@ import type {
 } from "@vuepress/plugin-reading-time/client";
 import type { PropType, VNode } from "vue";
 import { defineComponent, h, resolveComponent } from "vue";
-import type { AuthorInfo as AuthorInfoType } from "vuepress-shared/client";
 
 import { usePure } from "@theme-hope/composables/index";
 import AuthorInfo from "@theme-hope/modules/info/components/AuthorInfo";
@@ -22,7 +21,10 @@ import type {
   PageTag,
 } from "@theme-hope/modules/info/utils/index";
 
-import type { PageInfoType } from "../../../../shared/index.js";
+import type {
+  AuthorInfo as AuthorInfoType,
+  PageInfoType,
+} from "../../../../shared/index.js";
 
 import "balloon-css/balloon.css";
 import "../styles/page-info.scss";

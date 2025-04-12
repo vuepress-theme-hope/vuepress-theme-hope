@@ -80,7 +80,6 @@ export const checkFrontmatter = (page: Page): void => {
   [
     "home",
     "navbar",
-    "toc",
     "index",
     "lastUpdated",
     "contributors",

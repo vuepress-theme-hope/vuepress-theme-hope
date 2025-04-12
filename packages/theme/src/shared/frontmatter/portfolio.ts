@@ -1,4 +1,4 @@
-import type { ThemePageFrontmatter } from "./base.js";
+import type { ThemeBasePageFrontmatter } from "./base.js";
 
 export interface PortfolioMedia {
   name?: string;
@@ -6,7 +6,7 @@ export interface PortfolioMedia {
   url: string;
 }
 
-export interface ThemePortfolioFrontmatter extends ThemePageFrontmatter {
+export interface ThemePortfolioFrontmatter extends ThemeBasePageFrontmatter {
   portfolio: true;
   home?: boolean;
   name?: string;

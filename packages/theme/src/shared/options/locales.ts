@@ -1,6 +1,6 @@
 import type { LocaleData } from "vuepress/shared";
-import type { Author } from "vuepress-shared";
 
+import type { Author } from "../author.js";
 import type { AppearanceLocaleData } from "./appearance.js";
 import type {
   FeatureLocaleConfig,

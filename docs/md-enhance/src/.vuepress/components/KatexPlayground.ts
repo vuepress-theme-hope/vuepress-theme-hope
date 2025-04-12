@@ -32,7 +32,6 @@ export default defineComponent({
 
     watchImmediate(input, () => {
       try {
-        // eslint-disable-next-line import-x/no-named-as-default-member
         result.value = katex.renderToString(input.value, {
           displayMode: true,
           throwOnError: true,

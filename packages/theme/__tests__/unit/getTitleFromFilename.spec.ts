@@ -1,6 +1,6 @@
 import { describe, expect, it } from "vitest";
 
-import { getTitleFromFilename } from "../../src/node/utils/title.js";
+import { getTitleFromFilename } from "../../src/node/prepare/sidebar/getTitleFromFilename.js";
 
 describe("should get correct title from filename", () => {
   it("Should convert underscore and minus to spaces", () => {
