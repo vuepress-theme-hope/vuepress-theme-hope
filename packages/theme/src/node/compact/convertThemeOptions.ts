@@ -455,7 +455,7 @@ const covertPluginOptions = (themeOptions: Record<string, unknown>): void => {
     delete pluginOptions.mdEnhance;
   }
 
-  if (pluginOptions.markdownHint) {
+  if ("markdownHint" in pluginOptions) {
     logger.warn(
       `${colors.magenta("plugins.markdownHint")} is deprecated, you should use ${colors.magenta("markdown.alert")} and ${colors.magenta("markdown.hint")} instead.`,
     );
