@@ -128,6 +128,9 @@ export default defineComponent({
               h(PageInfo, {
                 info,
                 items: items.value,
+                onClick: (event: MouseEvent) => {
+                  event.stopPropagation();
+                },
               }),
           ],
         ),
