@@ -4,6 +4,15 @@ All notable changes to this project will be documented in this file. See [Conven
 
 <!-- #region recent-change -->
 
+## [2.0.0-rc.80](https://github.com/vuepress-theme-hope/vuepress-theme-hope/compare/v2.0.0-rc.79...v2.0.0-rc.80) (2025-04-12)
+
+### ✨ Features
+
+- remove dayjs ([32f8c75](https://github.com/vuepress-theme-hope/vuepress-theme-hope/commit/32f8c7513723b92b0130610775e86819123a42e9))
+- support vuepress rc21 ([#4844](https://github.com/vuepress-theme-hope/vuepress-theme-hope/issues/4844)) ([a0bb74f](https://github.com/vuepress-theme-hope/vuepress-theme-hope/commit/a0bb74ff49f8e0a437ea7bc6bc8dac96e9c51af0))
+
+<!-- #region recent-change -->
+
 ## [2.0.0-rc.79](https://github.com/vuepress-theme-hope/vuepress-theme-hope/compare/v2.0.0-rc.78...v2.0.0-rc.79) (2025-04-09)
 
 **Note:** Version bump only for package vuepress-shared
