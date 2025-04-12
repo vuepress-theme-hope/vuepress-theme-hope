@@ -42,8 +42,7 @@ export const injectPageInfo = (page: Page<ThemePageData>): void => {
           frontmatter.dir as StructureSidebarDirOptions
         ).order;
 
-      if ((frontmatter as ThemeNormalPageFrontmatter).dir?.index === false)
-        page.routeMeta.index = false;
+      if (frontmatter.dir.index === false) page.routeMeta.index = false;
     }
   } else {
     if ("order" in frontmatter) page.routeMeta.order = frontmatter.order;
