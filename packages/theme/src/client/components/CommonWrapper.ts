@@ -141,7 +141,7 @@ export default defineComponent({
       () =>
         !props.noToc &&
         !frontmatter.value.home &&
-        (frontmatter.value.toc ?? themeLocale.value.toc ?? true),
+        Boolean(frontmatter.value.toc ?? themeLocale.value.toc ?? true),
     );
 
     const touchStart = { x: 0, y: 0 };
