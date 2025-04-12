@@ -24,7 +24,7 @@
     "@waline/client": "3.5.6",
     "chart.js": "4.4.8",
     "echarts": "5.6.0",
-    "katex": "0.16.21",
+    "katex": "0.16.22",
     "kotlin-playground": "1.30.0",
     "markmap-lib": "catalog:",
     "markmap-toolbar": "catalog:",
