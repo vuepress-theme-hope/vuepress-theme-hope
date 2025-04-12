@@ -1,10 +1,10 @@
 import { startsWith } from "@vuepress/helper";
 import type { Page } from "vuepress/core";
 import { sanitizeFileName } from "vuepress/utils";
-import { getTitleFromFilename } from "vuepress-shared/node";
 
 import type { StructureInfo } from "./getStructureInfo.js";
 import { getStructureInfo } from "./getStructureInfo.js";
+import { getTitleFromFilename } from "./getTitleFromFilename.js";
 import type {
   SidebarDirInfo,
   SidebarFileInfo,
@@ -13,19 +13,6 @@ import type {
   ThemeNormalPageFrontmatter,
   ThemePageData,
 } from "../../../shared/index.js";
-
-export interface FileInfo {
-  type: "file";
-  filename: string;
-  path: string;
-}
-
-export interface DirInfo {
-  type: "dir";
-  dirname: string;
-  path: string;
-  items: (DirInfo | FileInfo)[];
-}
 
 export interface ThemeSidebarInfoOptions {
   pages: Page[];

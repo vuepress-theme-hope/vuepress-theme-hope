@@ -32,11 +32,7 @@ export default [
         "bcrypt-ts/browser",
       ],
       dts: false,
-      moduleSideEffects: (id) =>
-        [
-          "balloon-css/balloon.css",
-          "vuepress-shared/client/styles/message.scss",
-        ].includes(id),
+      moduleSideEffects: (id) => id.endsWith("css"),
     },
   ),
 ];

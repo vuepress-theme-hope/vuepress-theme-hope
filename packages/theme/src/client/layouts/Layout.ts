@@ -1,8 +1,7 @@
-import { hasGlobalComponent } from "@vuepress/helper/client";
+import { RenderDefault, hasGlobalComponent } from "@vuepress/helper/client";
 import type { SlotsType, VNode } from "vue";
 import { computed, defineComponent, h, resolveComponent } from "vue";
 import { usePageData, usePageFrontmatter } from "vuepress/client";
-import { RenderDefault } from "vuepress-shared/client";
 
 import CommonWrapper from "@theme-hope/components/CommonWrapper";
 import HomePage from "@theme-hope/components/HomePage";
@@ -17,7 +16,7 @@ import {
   useWindowSize,
 } from "@theme-hope/composables/index";
 
-import type { ThemePageFrontmatter } from "../../shared/index.js";
+import type { ThemeBasePageFrontmatter } from "../../shared/index.js";
 
 declare const __VP_BLOG__: boolean;
 
@@ -42,7 +41,7 @@ export default defineComponent({
     const theme = useThemeData();
     const themeLocale = useThemeLocaleData();
     const page = usePageData();
-    const frontmatter = usePageFrontmatter<ThemePageFrontmatter>();
+    const frontmatter = usePageFrontmatter<ThemeBasePageFrontmatter>();
     const isPure = usePure();
     const { isMobile } = useWindowSize();
 

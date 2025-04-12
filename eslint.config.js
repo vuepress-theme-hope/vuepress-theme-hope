@@ -24,12 +24,6 @@ export default hope(
     tsImport: {
       settings: {
         "import-x/internal-regex": "^@(?:internal|temp|theme-hope)/",
-        "import-x/resolver": {
-          typescript: {
-            alwaysTryTypes: true,
-            project: "tsconfig.json",
-          },
-        },
       },
       rules: {
         "import-x/no-absolute-path": "error",
@@ -79,14 +73,7 @@ export default hope(
       "import-x/no-unresolved": [
         "error",
         {
-          ignore: [
-            "^@temp\\/",
-            "^@theme-hope\\/",
-            "^vuepress/client",
-            "^vuepress-theme-hope\\/blog\\/",
-            "^vuepress-theme-hope\\/client\\/",
-            "^vuepress-theme-hope\\/presets\\/",
-          ],
+          ignore: ["^@temp\\/"],
         },
       ],
     },

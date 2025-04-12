@@ -1,6 +1,6 @@
-import type { ThemePageFrontmatter } from "./base.js";
+import type { ThemeBasePageFrontmatter } from "./base.js";
 
-export interface ThemeHomePageFrontmatter extends ThemePageFrontmatter {
+export interface ThemeHomePageFrontmatter extends ThemeBasePageFrontmatter {
   home: true;
 
   /**

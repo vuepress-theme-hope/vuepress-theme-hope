@@ -66,15 +66,6 @@ jobs:
           token: ${{ secrets.ACCESS_TOKEN }}
           single-commit: true
 
-      - name: Deploy shared docs
-        uses: JamesIves/github-pages-deploy-action@v4
-        with:
-          repository-name: vuepress-theme-hope/shared-docs
-          branch: netlify
-          folder: docs/shared/dist
-          token: ${{ secrets.ACCESS_TOKEN }}
-          single-commit: true
-
       - name: Deploy theme docs
         uses: JamesIves/github-pages-deploy-action@v4
         with:
@@ -121,7 +112,6 @@ jobs:
           pnpm cpx "docs/components/dist/**" dist/components
           pnpm cpx "docs/lightgallery/dist/**" dist/lightgallery
           pnpm cpx "docs/md-enhance/dist/**" dist/md-enhance
-          pnpm cpx "docs/shared/dist/**" dist/shared
           pnpm cpx "docs/theme/dist/**" dist
 
       - name: Deploy

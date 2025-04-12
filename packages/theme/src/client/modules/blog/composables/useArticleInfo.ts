@@ -5,8 +5,6 @@ import {
 } from "@vuepress/plugin-reading-time/client";
 import type { ComputedRef, Ref } from "vue";
 import { computed, toRef } from "vue";
-import type { AuthorInfo } from "vuepress-shared/client";
-import { getAuthor, getCategory, getTag } from "vuepress-shared/client";
 
 import { useThemeLocaleData } from "@theme-hope/composables/index";
 import type { PageInfoProps } from "@theme-hope/modules/info/components/PageInfo";
@@ -20,8 +18,10 @@ import { useCategoryMap } from "./useCategoryMap.js";
 import { useTagMap } from "./useTagMap.js";
 import type {
   ArticleInfoData,
+  AuthorInfo,
   PageInfoType,
 } from "../../../../shared/index.js";
+import { getAuthor, getCategory, getTag } from "../../../../shared/index.js";
 
 export type AuthorRef = ComputedRef<AuthorInfo[]>;
 

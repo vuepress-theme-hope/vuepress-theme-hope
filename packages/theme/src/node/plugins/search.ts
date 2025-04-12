@@ -13,8 +13,8 @@ import { colors } from "vuepress/utils";
 
 import type {
   PluginsOptions,
+  ThemeBasePageFrontmatter,
   ThemeData,
-  ThemePageFrontmatter,
 } from "../../shared/index.js";
 import { themeLocaleInfo } from "../locales/index.js";
 import { logger } from "../utils.js";
@@ -86,8 +86,9 @@ export const getSearchPlugin = (
       // Add supports for category and tags
       customFields: [
         {
-          getter: (page: Page<Record<never, never>, ThemePageFrontmatter>) =>
-            page.frontmatter.category,
+          getter: (
+            page: Page<Record<never, never>, ThemeBasePageFrontmatter>,
+          ) => page.frontmatter.category,
           formatter: getFullLocaleConfig({
             app,
             default: themeLocaleInfo.map(([langs, { blogLocales }]) => [
@@ -97,8 +98,9 @@ export const getSearchPlugin = (
           }),
         },
         {
-          getter: (page: Page<Record<never, never>, ThemePageFrontmatter>) =>
-            page.frontmatter.tag,
+          getter: (
+            page: Page<Record<never, never>, ThemeBasePageFrontmatter>,
+          ) => page.frontmatter.tag,
           formatter: getFullLocaleConfig({
             app,
             default: themeLocaleInfo.map(([langs, { blogLocales }]) => [

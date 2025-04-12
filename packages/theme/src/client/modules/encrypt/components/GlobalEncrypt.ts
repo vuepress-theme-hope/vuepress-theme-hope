@@ -1,6 +1,6 @@
+import { RenderDefault } from "@vuepress/helper/client";
 import type { SlotsType, VNode } from "vue";
 import { defineComponent, h, onMounted, ref } from "vue";
-import { RenderDefault } from "vuepress-shared/client";
 
 import { FadeInUpTransition } from "@theme-hope/components/transitions/index";
 import { usePure } from "@theme-hope/composables/index";

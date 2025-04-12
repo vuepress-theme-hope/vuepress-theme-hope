@@ -1,6 +1,6 @@
 import type { GetHeadersOptions } from "@vuepress/helper/shared";
 
-import type { ThemePageFrontmatter } from "./base.js";
+import type { ThemeBasePageFrontmatter } from "./base.js";
 import type { PageInfoType } from "../info.js";
 import type { AutoLinkOptions } from "../nav.js";
 
@@ -79,7 +79,7 @@ export interface StructureSidebarDirOptions {
   order?: number;
 }
 
-export interface ThemeNormalPageFrontmatter extends ThemePageFrontmatter {
+export interface ThemeNormalPageFrontmatter extends ThemeBasePageFrontmatter {
   /**
    * Whether is homepage
    *

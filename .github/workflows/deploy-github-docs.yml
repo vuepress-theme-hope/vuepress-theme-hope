@@ -44,7 +44,6 @@ jobs:
           pnpm cpx "docs/components/dist/**" dist/components
           pnpm cpx "docs/lightgallery/dist/**" dist/lightgallery
           pnpm cpx "docs/md-enhance/dist/**" dist/md-enhance
-          pnpm cpx "docs/shared/dist/**" dist/shared
           pnpm cpx "docs/theme/dist/**" dist
 
       - name: Deploy

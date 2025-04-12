@@ -3,7 +3,7 @@ import type { HeadConfig, PageFrontmatter } from "vuepress/shared";
 import { colors } from "vuepress/utils";
 import { createConverter } from "vuepress-shared";
 
-import type { ThemePageFrontmatter } from "../../shared/index.js";
+import type { ThemeBasePageFrontmatter } from "../../shared/index.js";
 import { logger } from "../utils.js";
 
 const DEPRECATED_FRONTMATTER_OPTIONS: [string, string][] = [
@@ -35,7 +35,7 @@ const DROPPED_FRONTMATTER_OPTIONS: [string, string][] = [
 export const convertFrontmatter = (
   frontmatter: PageFrontmatter & Record<string, unknown>,
   filePathRelative: string,
-): ThemePageFrontmatter & Record<string, unknown> => {
+): ThemeBasePageFrontmatter & Record<string, unknown> => {
   const { deprecatedLogger, droppedLogger } = createConverter("frontmatter");
 
   DEPRECATED_FRONTMATTER_OPTIONS.forEach(([oldOption, newOption]) => {

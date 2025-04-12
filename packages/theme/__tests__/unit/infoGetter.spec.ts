@@ -1,6 +1,6 @@
 import { expect, it } from "vitest";
 
-import { getAuthor, getCategory, getTag } from "../../src/shared/utils/info.js";
+import { getAuthor, getCategory, getTag } from "../../src/shared/infoGetter.js";
 
 const authorName = "Mr.Hope";
 const authorNames = [authorName, "Mrs.Hope"];
