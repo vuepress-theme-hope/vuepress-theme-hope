@@ -1,6 +1,6 @@
 import { describe, expect, it } from "vitest";
 
-import { createConverter } from "../../src/node/utils/createConverter.js";
+import { createConverter } from "../../src/node/createConverter.js";
 
 describe("createConverter", () => {
   const converter = createConverter("test");
