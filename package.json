@@ -81,7 +81,8 @@
     "tsx": "4.19.3",
     "typescript": "5.8.3",
     "vite": "6.2.6",
-    "vitest": "3.1.1"
+    "vitest": "3.1.1",
+    "vuepress": "catalog:vuepress"
   },
   "packageManager": "pnpm@10.8.0",
   "engines": {
@@ -94,7 +95,7 @@
       "nodejs-jieba"
     ],
     "overrides": {
-      "esbuild": "^0.25.0"
+      "esbuild": "^0.25.2"
     }
   }
 }
