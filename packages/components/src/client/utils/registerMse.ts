@@ -22,6 +22,8 @@ export const registerMseDash = async (
   autoPlay = false,
   startTime = 0,
 ): Promise<void> => {
+  if (__VUEPRESS_SSR__) return;
+
   if (typeof DASHJS_INSTALLED !== "undefined" && DASHJS_INSTALLED) {
     const dashjs = (await import(/* webpackChunkName: "dashjs" */ "dashjs"))
       .default;
@@ -43,6 +45,8 @@ export const registerMseFlv = async (
   src: string,
   onDestroy: (destroy: () => void) => void,
 ): Promise<void> => {
+  if (__VUEPRESS_SSR__) return;
+
   if (typeof MPEGTS_JS_INSTALLED !== "undefined" && MPEGTS_JS_INSTALLED) {
     const mpegts = (
       await import(
@@ -71,6 +75,8 @@ export const registerMseHls = async (
   src: string,
   onDestroy: (destroy: () => void) => void,
 ): Promise<void> => {
+  if (__VUEPRESS_SSR__) return;
+
   if (
     mediaElement.canPlayType("application/x-mpegURL") ||
     mediaElement.canPlayType("application/vnd.apple.mpegURL")

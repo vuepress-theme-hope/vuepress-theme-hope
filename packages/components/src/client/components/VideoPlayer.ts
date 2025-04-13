@@ -85,6 +85,8 @@ export default defineComponent({
     let player: MediaPlayerElement | null = null;
 
     onMounted(async () => {
+      if (__VUEPRESS_SSR__) return;
+
       const options: VidstackPlayerConfig = {
         // eslint-disable-next-line @typescript-eslint/no-non-null-assertion
         target: video.value!,

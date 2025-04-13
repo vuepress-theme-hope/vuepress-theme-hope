@@ -1,4 +1,3 @@
-import { getModulePath } from "@vuepress/helper";
 import type { App } from "vuepress/core";
 
 import type { MarkdownEnhancePluginOptions } from "../options.js";
@@ -64,23 +63,11 @@ export const prepareConfigFile = async (
   }
 
   if (status.sandpack) {
-    imports.add(`import { defineAsyncComponent } from "vue";`);
     imports.add(
-      `import { LoadingIcon } from "${getModulePath(
-        "@vuepress/helper/client",
-        import.meta,
-      )}";`,
+      `import SandPack from "${CLIENT_FOLDER}components/SandPack.js";`,
     );
-    enhances.add(
-      `\
-app.component(
-  "SandPack",
-  defineAsyncComponent({
-    loader: () => import("${CLIENT_FOLDER}components/SandPack.js"),
-    loadingComponent: LoadingIcon,
-  })
-);`,
-    );
+
+    enhances.add(`app.component("SandPack", SandPack);`);
   }
 
   if (status.vuePlayground) {

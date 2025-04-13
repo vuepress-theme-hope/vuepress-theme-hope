@@ -111,6 +111,8 @@ export default defineComponent({
     const svgCode = ref("");
 
     const renderMermaid = async (): Promise<void> => {
+      if (__VUEPRESS_SSR__) return;
+
       const { default: mermaid } = await import(
         /* webpackChunkName: "mermaid" */ "mermaid/dist/mermaid.esm.min.mjs"
       );

@@ -4,7 +4,8 @@
     "baseUrl": "./",
     "paths": {
       "@theme-hope/*": ["../packages/theme/src/client/*.js"]
-    }
+    },
+    "types": ["vuepress/client-types", "vite/client", "webpack-env"]
   },
   "include": ["./src"]
 }

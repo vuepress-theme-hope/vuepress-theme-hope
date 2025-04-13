@@ -272,6 +272,8 @@ export default defineComponent({
     };
 
     onMounted(async () => {
+      if (__VUEPRESS_SSR__) return;
+
       const { default: Artplayer } = await import(
         /* webpackChunkName: "artplayer" */ "artplayer"
       );

@@ -1,8 +1,7 @@
+import { watchImmediate } from "@vueuse/core";
 import type { Mesh } from "three";
-import type { OrbitControls } from "three/examples/jsm/controls/OrbitControls.js";
-import type { STLLoader } from "three/examples/jsm/loaders/STLLoader.js";
 import type { VNode } from "vue";
-import { computed, defineComponent, h, onMounted, ref, watch } from "vue";
+import { computed, defineComponent, h, onMounted, ref } from "vue";
 
 import { useWindowSize } from "@theme-hope/composables/index";
 import { useDarkMode } from "@theme-hope/modules/outlook/composables/index";
@@ -26,12 +25,34 @@ export default defineComponent({
         : { width: 300, height: 300 },
     );
 
-    const renderLogo = async (
-      // eslint-disable-next-line @typescript-eslint/consistent-type-imports
-      three: typeof import("three"),
-      STLLoaderConstructor: typeof STLLoader,
-      OrbitControlsConstructor: typeof OrbitControls,
-    ): Promise<void> => {
+    const renderLogo = async (): Promise<void> => {
+      if (__VUEPRESS_SSR__) return;
+
+      const [
+        {
+          AmbientLight,
+          Clock,
+          DirectionalLight,
+          PCFSoftShadowMap,
+          PerspectiveCamera,
+          Scene,
+          Mesh,
+          MeshPhysicalMaterial,
+          TextureLoader,
+          WebGLRenderer,
+        },
+        { OrbitControls },
+        { STLLoader },
+      ] = await Promise.all([
+        import(/* webpackChunkName: "hope-logo" */ "three").then((m) => m),
+        import(
+          /* webpackChunkName: "hope-logo" */ "three/examples/jsm/controls/OrbitControls.js"
+        ).then((m) => m),
+        import(
+          /* webpackChunkName: "hope-logo" */ "three/examples/jsm/loaders/STLLoader.js"
+        ).then((m) => m),
+      ]);
+
       const { width, height } = sizes.value;
 
       // Canvas
@@ -39,9 +60,9 @@ export default defineComponent({
         // eslint-disable-next-line @typescript-eslint/no-non-null-assertion
         document.querySelector<HTMLCanvasElement>("canvas#hero-logo")!;
       // Scene
-      const scene = new three.Scene();
-      const stlLoader = new STLLoaderConstructor();
-      const textureLoader = new three.TextureLoader();
+      const scene = new Scene();
+      const stlLoader = new STLLoader();
+      const textureLoader = new TextureLoader();
       const roughnessTexture = textureLoader.load(
         `${ASSETS_SERVER}/model/roughness.jpeg`,
       );
@@ -50,12 +71,12 @@ export default defineComponent({
       let logo2: Mesh;
 
       // Lights
-      const ambientLight = new three.AmbientLight(
+      const ambientLight = new AmbientLight(
         0xffffff,
         isDarkMode.value ? 5 : 15,
       );
-      const directionalLight = new three.DirectionalLight(0xffffff, 3);
-      const directionalLight2 = new three.DirectionalLight(0xffffff, 3);
+      const directionalLight = new DirectionalLight(0xffffff, 3);
+      const directionalLight2 = new DirectionalLight(0xffffff, 3);
 
       directionalLight.position.set(3, 3, 3);
       directionalLight2.position.set(-3, -3, -3);
@@ -65,13 +86,13 @@ export default defineComponent({
       scene.add(directionalLight2);
 
       // Base camera
-      const camera = new three.PerspectiveCamera(45, width / height, 1, 2000);
+      const camera = new PerspectiveCamera(45, width / height, 1, 2000);
 
       camera.position.set(0, 0, 20);
       scene.add(camera);
 
       // Controls
-      const controls = new OrbitControlsConstructor(camera, canvas);
+      const controls = new OrbitControls(camera, canvas);
 
       controls.enableZoom = false;
       controls.target.set(0, 0.75, 0);
@@ -82,7 +103,7 @@ export default defineComponent({
       controls.maxPolarAngle = Math.PI / 2;
 
       // Render
-      const renderer = new three.WebGLRenderer({
+      const renderer = new WebGLRenderer({
         alpha: true,
         antialias: true,
         canvas,
@@ -90,14 +111,14 @@ export default defineComponent({
 
       renderer.setClearColor(0x000000, 0);
       renderer.shadowMap.enabled = true;
-      renderer.shadowMap.type = three.PCFSoftShadowMap;
+      renderer.shadowMap.type = PCFSoftShadowMap;
       renderer.setSize(width, height);
       renderer.setPixelRatio(Math.min(window.devicePixelRatio, 2));
 
       await Promise.all([
         new Promise<void>((resolve) => {
           stlLoader.load(`${ASSETS_SERVER}/model/logo1.stl`, (geometry) => {
-            const material = new three.MeshPhysicalMaterial({
+            const material = new MeshPhysicalMaterial({
               color: 0x284c39,
               metalness: 0.3,
               roughness: 0.5,
@@ -107,7 +128,7 @@ export default defineComponent({
               reflectivity: 1,
             });
 
-            logo1 = new three.Mesh(geometry, material);
+            logo1 = new Mesh(geometry, material);
             logo1.castShadow = true;
             logo1.receiveShadow = true;
             logo1.rotation.z = 0;
@@ -120,7 +141,7 @@ export default defineComponent({
         }),
         new Promise<void>((resolve) => {
           stlLoader.load(`${ASSETS_SERVER}/model/logo2.stl`, (geometry) => {
-            const material = new three.MeshPhysicalMaterial({
+            const material = new MeshPhysicalMaterial({
               color: 0x35495e,
               metalness: 0.7,
               roughness: 0.5,
@@ -130,7 +151,7 @@ export default defineComponent({
               reflectivity: 1,
             });
 
-            logo2 = new three.Mesh(geometry, material);
+            logo2 = new Mesh(geometry, material);
             logo2.castShadow = true;
             logo2.receiveShadow = true;
             logo2.rotation.z = 0;
@@ -144,7 +165,7 @@ export default defineComponent({
       ]);
 
       // Animations
-      const clock = new three.Clock();
+      const clock = new Clock();
 
       const tick = (): void => {
         const elapsedTime = clock.getElapsedTime();
@@ -166,22 +187,7 @@ export default defineComponent({
     };
 
     onMounted(() => {
-      watch(
-        [isDarkMode, isMobile],
-        () =>
-          Promise.all([
-            import(/* webpackChunkName: "hope-logo" */ "three").then((m) => m),
-            import(
-              /* webpackChunkName: "hope-logo" */ "three/examples/jsm/controls/OrbitControls.js"
-            ).then((m) => m),
-            import(
-              /* webpackChunkName: "hope-logo" */ "three/examples/jsm/loaders/STLLoader.js"
-            ).then((m) => m),
-          ]).then(([THREE, { OrbitControls }, { STLLoader }]) =>
-            renderLogo(THREE, STLLoader, OrbitControls),
-          ),
-        { immediate: true },
-      );
+      watchImmediate([isDarkMode, isMobile], () => renderLogo());
     });
 
     return (): (VNode | null)[] => [
