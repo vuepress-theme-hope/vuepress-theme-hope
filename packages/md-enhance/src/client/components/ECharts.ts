@@ -107,6 +107,8 @@ export default defineComponent({
     );
 
     onMounted(async () => {
+      if (__VUEPRESS_SSR__) return;
+
       const echarts = await import(/* webpackChunkName: "echarts" */ "echarts");
 
       await echartsConfig.setup?.();
