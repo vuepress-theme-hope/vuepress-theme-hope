@@ -14,43 +14,40 @@ Let the Markdown file support playground in your VuePress site.
 
 ## Settings
 
-```ts twoslash {8-34} title=".vuepress/config.ts"
-import { defineUserConfig } from "vuepress";
+```ts twoslash {6-32} title=".vuepress/theme.ts"
 import { hopeTheme } from "vuepress-theme-hope";
 
-export default defineUserConfig({
-  theme: hopeTheme({
-    markdown: {
-      // playground config here
-      playground: {
-        // add presets here
-        presets: [
-          "ts",
-          "vue",
-          "unocss",
-          {
-            name: "playground#language",
-            component: "PlaygroundComponent",
-            propsGetter: (playgroundData) => ({
-              // playground props
-            }),
-          },
-        ],
-        // configure built-in presets (optional)
-        config: {
-          ts: {
-            // ...
-          },
-          vue: {
-            // ...
-          },
-          unocss: {
-            // ...
-          },
+export default hopeTheme({
+  markdown: {
+    // playground config here
+    playground: {
+      // add presets here
+      presets: [
+        "ts",
+        "vue",
+        "unocss",
+        {
+          name: "playground#language",
+          component: "PlaygroundComponent",
+          propsGetter: (playgroundData) => ({
+            // playground props
+          }),
+        },
+      ],
+      // configure built-in presets (optional)
+      config: {
+        ts: {
+          // ...
+        },
+        vue: {
+          // ...
+        },
+        unocss: {
+          // ...
         },
       },
     },
-  }),
+  },
 });
 ```
 

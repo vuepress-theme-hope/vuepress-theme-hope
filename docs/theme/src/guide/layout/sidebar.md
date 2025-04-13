@@ -27,14 +27,15 @@ You should use `sidebar` in theme options to control sidebar.
 
 Just like navbar, you can fill in an array of multiple file links as the basic configuration of the sidebar:
 
-```ts twoslash {5} title=".vuepress/config.ts"
+```ts twoslash {4,6-7} title=".vuepress/theme.ts"
 import { hopeTheme } from "vuepress-theme-hope";
 
-export default {
-  theme: hopeTheme({
-    sidebar: ["/README.md", "/guide/README.md", "/config/README.md"],
-  }),
-};
+export default hopeTheme({
+  sidebar: ["/README.md", "/guide/README.md", "/config/README.md"],
+
+  // equivalent to:
+  // sidebar: ["/", "/guide/", "/config/"],
+});
 ```
 
 Each item of the array will be rendered as a sidebar item.
@@ -54,29 +55,27 @@ Just like navbar, if you are not satisfied with the page's icon or feel that the
 - `icon`: item icon (optional)
 - `activeMatch`: item active math (optional), support regexp strings
 
-```ts twoslash {5-22} title=".vuepress/config.ts"
+```ts twoslash {4-19} title=".vuepress/theme.ts"
 import { hopeTheme } from "vuepress-theme-hope";
 
-export default {
-  theme: hopeTheme({
-    sidebar: [
-      {
-        text: "Guide",
-        link: "/guide/README.md",
-        icon: "lightbulb",
-      },
-      { text: "Config", link: "/config/README.md", icon: "config" },
-      {
-        text: "FAQ",
-        link: "/faq.md",
-        icon: "circle-question",
-        // active in path starting with `/faq`
-        // so it will active in path like `/faq/xxx.html`
-        activeMatch: "^/faq/",
-      },
-    ],
-  }),
-};
+export default hopeTheme({
+  sidebar: [
+    {
+      text: "Guide",
+      link: "/guide/README.md",
+      icon: "lightbulb",
+    },
+    { text: "Config", link: "/config/README.md", icon: "config" },
+    {
+      text: "FAQ",
+      link: "/faq.md",
+      icon: "circle-question",
+      // active in path starting with `/faq`
+      // so it will active in path like `/faq/xxx.html`
+      activeMatch: "^/faq/",
+    },
+  ],
+});
 ```
 
 ::: tip Advanced usage of activeMatch
@@ -95,77 +94,73 @@ Like navbar, you can use `prefix` in the sidebar to add a default path prefix to
 
 The sidebar additionally supports setting `collapsible: true` to make the menu group collapsible, and you can se `expanded: true` to make the menu group default expanded.
 
-```ts twoslash {18-22,26-30} title=".vuepress/config.ts"
+```ts twoslash title=".vuepress/theme.ts"
 import { hopeTheme } from "vuepress-theme-hope";
 
-export default {
-  theme: hopeTheme({
-    sidebar: [
-      {
-        // required, title of group
-        text: "Group 1",
-        // optional, icon of group
-        icon: "tip",
-        // optional, link of group title
-        link: "/foo/",
-        // optional, will be appended to each item link
-        prefix: "/foo/",
-        // optional, defaults to false
-        collapsible: true,
-        // optional, representing the original state of a collapsible sidebar group,
-        // defaults to false
-        expanded: true,
-        // required, items of group
-        children: [
-          "README.md" /* /foo/index.html */,
-          /* ... */
-          "geo.md" /* /foo/geo.html */,
-        ],
-      },
-      {
-        text: "Group 2",
-        children: [
-          /* ... */
-          "bar.md" /* /ray/bar.html */,
-          "baz.md" /* /ray/baz.html */,
-        ],
-      },
-    ],
-  }),
-};
+export default hopeTheme({
+  sidebar: [
+    {
+      // required, title of group
+      text: "Group 1",
+      // optional, icon of group
+      icon: "tip",
+      // optional, link of group title
+      link: "/foo/",
+      // optional, will be appended to each item link
+      prefix: "/foo/",
+      // optional, defaults to false
+      collapsible: true,
+      // optional, representing the original state of a collapsible sidebar group,
+      // defaults to false
+      expanded: true,
+      // required, items of group
+      children: [
+        "README.md" /* /foo/index.html */,
+        /* ... */
+        "geo.md" /* /foo/geo.html */,
+      ],
+    },
+    {
+      text: "Group 2",
+      children: [
+        "bar.md" /* /ray/bar.html */,
+        "baz.md" /* /ray/baz.html */,
+        // ...
+      ],
+    },
+  ],
+});
 ```
 
-You can also nest Sidebar grouping:
+You can also nest sidebar grouping:
 
-```ts twoslash {11-22} title=".vuepress/config.ts"
+```ts twoslash {11-22} title=".vuepress/theme.ts"
 import { hopeTheme } from "vuepress-theme-hope";
 
-export default {
-  theme: hopeTheme({
-    sidebar: [
-      {
-        text: "Group",
-        prefix: "/",
-        children: [
-          "baz" /* /baz.html */,
-          {
-            text: "Sub Group 1",
-            children: ["quz" /* /quz.html */, "xyzzy" /* /xyzzy.html */],
-          },
-          {
-            text: "Sub Group 2",
-            prefix: "corge/",
-            children: [
-              "fred" /* /corge/fred.html */,
-              "grault" /* /corge/grault.html */,
-            ],
-          },
-          "foo" /* /foo.html */,
-        ],
-      },
-    ],
-  }),
-};
+export default hopeTheme({
+  sidebar: [
+    {
+      text: "Group",
+      prefix: "/",
+      children: [
+        "baz" /* /baz.html */,
+        {
+          text: "Sub Group 1",
+          children: ["quz" /* /quz.html */, "xyzzy" /* /xyzzy.html */],
+        },
+        {
+          text: "Sub Group 2",
+          prefix: "corge/",
+          children: [
+            "fred" /* /corge/fred.html */,
+            "grault" /* /corge/grault.html */,
+          ],
+        },
+        "foo" /* /foo.html */,
+      ],
+    },
+  ],
+});
 ```
 
 You may want to use it with `prefix` to restore the structure of the document easily.
@@ -189,7 +184,7 @@ For example, suppose you have a following directory structure:
 
 Then you can use the following config:
 
-```ts twoslash title=".vuepress/config.ts"
+```ts twoslash title=".vuepress/theme.ts"
 import { hopeTheme } from "vuepress-theme-hope";
 
 export default {
@@ -244,33 +239,27 @@ For example, if you have the following structure:
 
 You can define your sidebar for each section using below configuration:
 
-```ts twoslash title=".vuepress/config.ts"
+```ts twoslash title=".vuepress/theme.ts"
 import { hopeTheme } from "vuepress-theme-hope";
 
-export default {
-  theme: hopeTheme({
-    sidebar: {
-      "/foo/": [
-        "" /* /foo/ */,
-        "one" /* /foo/one.html */,
-        "two" /* /foo/two.html */,
-      ],
+export default hopeTheme({
+  sidebar: {
+    "/foo/": [
+      "" /* /foo/ */,
+      "one" /* /foo/one.html */,
+      "two" /* /foo/two.html */,
+    ],
 
-      "/bar/": [
-        "" /* /bar/ */,
-        "three" /* /bar/three.html */,
-        "four" /* /bar/four.html */,
-      ],
+    "/bar/": [
+      "" /* /bar/ */,
+      "three" /* /bar/three.html */,
+      "four" /* /bar/four.html */,
+    ],
 
-      // fallback
-      "/": [
-        "" /* / */,
-        "contact" /* /contact.html */,
-        "about" /* /about.html */,
-      ],
-    },
-  }),
-};
+    // fallback
+    "/": ["" /* / */, "contact" /* /contact.html */, "about" /* /about.html */],
+  },
+});
 ```
 
 ::: warning
@@ -304,25 +293,19 @@ For example, for the following example mentioned earlier in [multiple sidebars](
 
 You can change the original config to:
 
-```ts twoslash {6,8} title=".vuepress/config.ts"
+```ts twoslash {5,7} title=".vuepress/theme.ts"
 import { hopeTheme } from "vuepress-theme-hope";
 
-export default {
-  theme: hopeTheme({
-    sidebar: {
-      "/foo/": "structure",
+export default hopeTheme({
+  sidebar: {
+    "/foo/": "structure",
 
-      "/bar/": "structure",
+    "/bar/": "structure",
 
-      // fallback
-      "/": [
-        "" /* / */,
-        "contact" /* /contact.html */,
-        "about" /* /about.html */,
-      ],
-    },
-  }),
-};
+    // fallback
+    "/": ["" /* / */, "contact" /* /contact.html */, "about" /* /about.html */],
+  },
+});
 ```
 
 In the above modification, since the original sidebar array is all files under the relevant path, you can easily replace it with the `"structure"` keyword.
@@ -426,41 +409,37 @@ Sidebar is disabled by default in home page.
 
 By default, the nested header links and the hash in the URL are updated as the user scrolls to view the different sections of the page. This behavior can be disabled with the following theme config:
 
-```ts twoslash {6} title=".vuepress/config.ts"
+```ts twoslash {5} title=".vuepress/theme.ts"
 import { hopeTheme } from "vuepress-theme-hope";
 
-export default {
-  theme: hopeTheme({
-    plugins: {
-      activeHeaderLinks: false,
-    },
-  }),
-};
+export default hopeTheme({
+  plugins: {
+    activeHeaderLinks: false,
+  },
+});
 ```
 
 ## I18n Support
 
 The theme's navbar supports [I18n](https://vuejs.press/guide/i18n.html), so you can set sidebar individually in each language:
 
-```ts twoslash {7-9,12-14} title=".vuepress/config.ts"
+```ts twoslash {6-8,11-13} title=".vuepress/theme.ts"
 import { hopeTheme } from "vuepress-theme-hope";
 
-export default {
-  theme: hopeTheme({
-    locales: {
-      "/": {
-        sidebar: [
-          /* English config under root */
-        ],
-      },
-      "/zh/": {
-        sidebar: [
-          /* Chinese config under zh folder */
-        ],
-      },
+export default hopeTheme({
+  locales: {
+    "/": {
+      sidebar: [
+        /* English config under root */
+      ],
     },
-  }),
-};
+    "/zh/": {
+      sidebar: [
+        /* Chinese config under zh folder */
+      ],
+    },
+  },
+});
 ```
 
 ## Types and Helpers

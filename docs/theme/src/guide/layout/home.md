@@ -1,7 +1,7 @@
 ---
 title: Home Page
 icon: home
-order: 7
+order: 3
 category:
   - Layout
 tag:
@@ -18,6 +18,14 @@ To use it, set `home: true` in page frontmatter. Any extra content after frontma
 ## Site Information
 
 You can use `heroText` to set the main title and `tagline` to set the subtitle.
+
+```md title="README.md"
+---
+home: true
+heroText: My Project
+tagline: A powerful project
+---
+```
 
 If you have a logo, you can place it in the `public` folder and set it via `heroImage`, if you want to display another logo in night mode, you can use `heroImageDark`. For better A11y, we recommend that you set the description of Logo to `heroAlt`.
 

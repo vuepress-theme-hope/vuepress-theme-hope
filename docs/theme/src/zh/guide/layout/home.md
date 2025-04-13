@@ -1,7 +1,7 @@
 ---
 title: 主页
 icon: home
-order: 7
+order: 3
 category:
   - 布局
 tag:
@@ -18,6 +18,14 @@ tag:
 ## 站点信息
 
 你可以使用 `heroText` 设置主标题，并通过 `tagline` 设置副标题。
+
+```md title="README.md"
+---
+home: true
+heroText: 我的项目
+tagline: 一个强大的项目
+---
+```
 
 如果你有一个 Logo，你可以将其放置在 `public` 文件夹中，并通过 `heroImage` 设置它，如果你在夜间模式希望展示另一个 Logo， 可以使用 `heroImageDark`。为了更好的 A11y，我们建议你设置 Logo 的描述到 `heroAlt`。
 
