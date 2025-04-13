@@ -536,7 +536,7 @@ blogs:
   - name: Pysio's Home
     desc: 熊猫的小窝
     logo: https://www.pysio.online/assets/imgs/avast.svg
-    url: 	https://www.pysio.online/
+    url: https://www.pysio.online/
     repo: https://github.com/pysio2007/Vue-blog
     preview: http://s3.pysio.online/pysioimages/blog_preview.png
 ---
