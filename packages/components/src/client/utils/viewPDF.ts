@@ -23,7 +23,6 @@ import {
 } from "@vuepress/helper/client";
 import { withBase } from "vuepress/client";
 
-declare const __VUEPRESS_DEV__: boolean;
 declare const PDFJS_URL: string | null;
 
 export interface ViewPDFOptions {

@@ -7,8 +7,6 @@ import { usePageLang } from "vuepress/client";
 
 import type { ArticleInfoData } from "../../../../shared/index.js";
 
-declare const __VUEPRESS_DEV__: boolean;
-
 export interface TimelineItem {
   year: number;
   items: { date: string; path: string; info: ArticleInfoData }[];

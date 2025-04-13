@@ -11,8 +11,6 @@ import { useThemeData } from "@theme-hope/composables/index";
 
 import type { DarkModeOptions } from "../../../../shared/index.js";
 
-declare const __VUEPRESS_DEV__: boolean;
-
 export type DarkmodeStatus = "light" | "dark" | "auto";
 
 export type DarkModeRef = ComputedRef<boolean>;

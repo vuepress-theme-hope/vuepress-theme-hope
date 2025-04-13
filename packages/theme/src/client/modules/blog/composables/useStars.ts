@@ -5,8 +5,6 @@ import { inject, provide } from "vue";
 
 import type { ArticleInfoData } from "../../../../shared/index.js";
 
-declare const __VUEPRESS_DEV__: boolean;
-
 export type StarsRef = ComputedRef<BlogTypeData<ArticleInfoData>>;
 
 export const starsSymbol: InjectionKey<StarsRef> = Symbol(

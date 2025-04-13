@@ -15,8 +15,6 @@ import type {
 import type { SidebarItem } from "../utils/index.js";
 import { resolveSidebarItems } from "../utils/index.js";
 
-declare const __VUEPRESS_DEV__: boolean;
-
 export type SidebarItemsRef = ComputedRef<SidebarItem[]>;
 
 export const sidebarItemsSymbol: InjectionKey<SidebarItemsRef> = Symbol(

@@ -3,7 +3,8 @@
   "compilerOptions": {
     "lib": ["DOM", "ESNext"],
     "rootDir": "./src",
-    "outDir": "./lib"
+    "outDir": "./lib",
+    "types": ["vuepress/client-types", "vite/client", "webpack-env"]
   },
   "include": ["./src", "./src/*.d.ts"],
   "references": [{ "path": "../shared/tsconfig.build.json" }]
