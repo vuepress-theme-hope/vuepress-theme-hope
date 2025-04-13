@@ -23,7 +23,7 @@ tag:
 
 你可以通过 `bgImage` 和 `bgImageDark` 设置背景图片，但需要注意必须填入完整 URL 或绝对路径。
 
-你可以通过 `heroHeight` 设置 Hero 的高度，默认值为 `400px`。如果你希望信息全屏展示，你可以设置 `heroFullScreen: true`。
+如果你希望信息全屏展示，你可以设置 `heroFullScreen: true`，同时你可以通过 `heroStyle` 设置 Hero 的样式。
 
 如果你需要定制一些样式，你可以通过 `heroImageStyle` 和 `bgImageStyle` 设置 Logo 与背景图片的样式。
 

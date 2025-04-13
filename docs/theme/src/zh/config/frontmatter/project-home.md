@@ -83,12 +83,12 @@ tag:
 
 背景图片的 CSS 样式。
 
-## heroHeight
+## heroStyle
 
 - 类型: `string`
 - 必填: 否
 
-Hero 高度，当 `heroFullScreen` 为 `false` 时生效。
+Hero 样式。
 
 ## heroFullScreen
 

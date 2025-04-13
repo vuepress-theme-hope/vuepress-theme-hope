@@ -18,6 +18,8 @@ import "../styles/hero-info.scss";
 export interface HeroInfoData {
   text: string | null;
   tagline: string | null;
+  style: string | Record<string, string> | null;
+  isFullScreen: boolean;
 }
 
 export interface HeroImageData {
@@ -29,7 +31,8 @@ export interface HeroImageData {
 
 export interface HeroBackgroundData {
   image: string | null;
-  bgStyle: string | Record<string, string> | undefined;
+  imageDark: string | null;
+  style: string | Record<string, string> | undefined;
 }
 
 export default defineComponent({
@@ -45,16 +48,23 @@ export default defineComponent({
     const frontmatter = usePageFrontmatter<ThemeProjectHomePageFrontmatter>();
     const siteLocale = useSiteLocaleData();
 
-    const info = computed(() => {
-      const { heroText, tagline } = frontmatter.value;
+    const info = computed<HeroInfoData>(() => {
+      const {
+        heroText,
+        tagline,
+        heroStyle,
+        heroFullScreen = false,
+      } = frontmatter.value;
 
       return {
         text: heroText ?? (siteLocale.value.title || "Hello"),
         tagline: tagline ?? siteLocale.value.description,
+        style: heroStyle ?? null,
+        isFullScreen: heroFullScreen,
       };
     });
 
-    const logo = computed(() => {
+    const image = computed<HeroImageData>(() => {
       const { heroText, heroImage, heroImageDark, heroAlt, heroImageStyle } =
         frontmatter.value;
 
@@ -66,29 +76,27 @@ export default defineComponent({
       };
     });
 
-    const bg = computed(() => {
+    const bg = computed<HeroBackgroundData>(() => {
       const { bgImage, bgImageDark, bgImageStyle } = frontmatter.value;
 
       return {
         image: isString(bgImage) ? withBase(bgImage) : null,
         imageDark: isString(bgImageDark) ? withBase(bgImageDark) : null,
-        bgStyle: bgImageStyle,
+        style: bgImageStyle,
       };
     });
 
     const actions = computed(() => frontmatter.value.actions ?? []);
 
     return (): VNode => {
-      const { heroFullScreen, heroHeight } = frontmatter.value;
-
       return h(
         "header",
         {
           class: [
             "vp-hero-info-wrapper",
-            { "hero-fullscreen": heroFullScreen },
+            { "hero-fullscreen": info.value.isFullScreen },
           ],
-          style: !heroFullScreen && heroHeight ? { height: heroHeight } : null,
+          style: info.value.style,
         },
         [
           slots.bg?.(bg.value) ?? [
@@ -97,7 +105,7 @@ export default defineComponent({
                   class: ["vp-hero-mask", { light: bg.value.imageDark }],
                   style: [
                     { "background-image": `url(${bg.value.image})` },
-                    bg.value.bgStyle,
+                    bg.value.style,
                   ],
                 })
               : null,
@@ -108,24 +116,29 @@ export default defineComponent({
                     {
                       "background-image": `url(${bg.value.imageDark})`,
                     },
-                    bg.value.bgStyle,
+                    bg.value.style,
                   ],
                 })
               : null,
           ],
 
           h("div", { class: "vp-hero-info" }, [
-            slots.logo?.(logo.value) ??
+            slots.logo?.(image.value) ??
               h(DropTransition, { appear: true, group: true }, () => {
-                const { image, imageDark, imageStyle, alt } = logo.value;
+                const {
+                  image: imageLight,
+                  imageDark,
+                  imageStyle,
+                  alt,
+                } = image.value;
 
                 return [
-                  image
+                  imageLight
                     ? h("img", {
                         key: "light",
                         class: ["vp-hero-image", { light: imageDark }],
                         style: imageStyle,
-                        src: image,
+                        src: imageLight,
                         alt: alt,
                       })
                     : null,
@@ -147,7 +160,7 @@ export default defineComponent({
                       h(
                         "h1",
                         { id: "main-title", class: "vp-hero-title" },
-                        info.value.text,
+                        info.value.text!,
                       ),
                     )
                   : null,
@@ -180,7 +193,7 @@ export default defineComponent({
               ]),
           ]),
 
-          heroFullScreen
+          info.value.isFullScreen
             ? h(HeroSlideDownButton, {
                 onClick: () =>
                   window.scrollTo({

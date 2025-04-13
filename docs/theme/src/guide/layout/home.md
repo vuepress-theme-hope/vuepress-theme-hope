@@ -23,7 +23,7 @@ If you have a logo, you can place it in the `public` folder and set it via `hero
 
 You can set the background image through `bgImage` and `bgImageDark`, but you need to pay attention that you must fill in the full URL or absolute path.
 
-Hero height can be customized through `heroHeight`, and if you want the information to be displayed in full screen, you can set `heroFullScreen: true`.
+If you want the information to be displayed in full screen, you can set `heroFullScreen: true`. Besides, minimal height of hero can be customized through `heroHeight`.
 
 If you need to customize some styles, you can set the style of the logo and background image through `heroImageStyle` and `bgImageStyle`.
 

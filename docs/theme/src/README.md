@@ -1,14 +1,15 @@
 ---
-containerClass: home
 home: true
 icon: home
 title: Home
+heroText: VuePress Theme Hope
+tagline: A VuePress theme with tons of features✨
+heroStyle:
+  min-height: 600px
 bgImage: https://theme-hope-assets.vuejs.press/bg/6-light.svg
 bgImageDark: https://theme-hope-assets.vuejs.press/bg/6-dark.svg
 bgImageStyle:
   background-attachment: fixed
-heroText: VuePress Theme Hope
-tagline: A VuePress theme with tons of features✨
 actions:
   - text: Get Started
     link: ./get-started/
