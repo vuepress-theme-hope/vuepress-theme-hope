@@ -15,18 +15,15 @@ tag:
 
 ## 配置
 
-```ts twoslash {7-9} title=".vuepress/config.ts"
-import { defineUserConfig } from "vuepress";
+```ts twoslash {5-7} title=".vuepress/theme.ts"
 import { hopeTheme } from "vuepress-theme-hope";
 
-export default defineUserConfig({
-  theme: hopeTheme({
-    markdown: {
-      stylize: [
-        // options
-      ],
-    },
-  }),
+export default hopeTheme({
+  markdown: {
+    stylize: [
+      // 你的选项...
+    ],
+  },
 });
 ```
 
@@ -40,55 +37,49 @@ export default defineUserConfig({
 
 例如，你可以使用以下配置将 `*Recommended*` 转换为徽章 `<Badge type="tip">Recommended</Badge>`：
 
-```ts twoslash {7-19} title=".vuepress/config.ts"
-import { defineUserConfig } from "vuepress";
+```ts twoslash {5-17} title=".vuepress/theme.ts"
 import { hopeTheme } from "vuepress-theme-hope";
 
-export default defineUserConfig({
-  theme: hopeTheme({
-    markdown: {
-      stylize: [
-        {
-          matcher: "Recommended",
-          replacer: ({ tag }) => {
-            if (tag === "em")
-              return {
-                tag: "Badge",
-                attrs: { type: "tip" },
-                content: "Recommended",
-              };
-          },
+export default hopeTheme({
+  markdown: {
+    stylize: [
+      {
+        matcher: "Recommended",
+        replacer: ({ tag }) => {
+          if (tag === "em")
+            return {
+              tag: "Badge",
+              attrs: { type: "tip" },
+              content: "Recommended",
+            };
         },
-      ],
-    },
-  }),
+      },
+    ],
+  },
 });
 ```
 
 另一个例子是你想要将所有的“不或者没”开头的强调词设置为红色，这样 `设置它*没有*任何效果，请*不要*这样使用。`变成：“设置它<span style="color:red">没有</span>任何效果，请<span style="color:red">不要</span>这样使用。"
 
-```ts twoslash {7-19} title=".vuepress/config.ts"
-import { defineUserConfig } from "vuepress";
+```ts twoslash {5-17} title=".vuepress/theme.ts"
 import { hopeTheme } from "vuepress-theme-hope";
 
-export default defineUserConfig({
-  theme: hopeTheme({
-    markdown: {
-      stylize: [
-        {
-          matcher: /n't$/,
-          replacer: ({ tag, attrs, content }) => {
-            if (tag === "em")
-              return {
-                tag: "span",
-                attrs: { ...attrs, style: "color: red" },
-                content,
-              };
-          },
+export default hopeTheme({
+  markdown: {
+    stylize: [
+      {
+        matcher: /n't$/,
+        replacer: ({ tag, attrs, content }) => {
+          if (tag === "em")
+            return {
+              tag: "span",
+              attrs: { ...attrs, style: "color: red" },
+              content,
+            };
         },
-      ],
-    },
-  }),
+      },
+    ],
+  },
 });
 ```
 

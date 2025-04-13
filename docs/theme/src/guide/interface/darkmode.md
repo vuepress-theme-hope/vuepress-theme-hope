@@ -17,14 +17,14 @@ The theme supports dark mode and allows you to customize it.
 
 You can config dark mode through `darkmode` in theme options.
 
-```ts twoslash {5} title=".vuepress/config.ts"
+```ts twoslash {4} title=".vuepress/theme.ts"
 import { hopeTheme } from "vuepress-theme-hope";
 
-export default {
-  theme: hopeTheme({
-    darkmode: "switch", // or "toggle", "auto", "enable", "disable"
-  }),
-};
+export default hopeTheme({
+  darkmode: "switch", // or "toggle", "auto", "enable", "disable"
+
+  // other options...
+});
 ```
 
 Available options:
@@ -43,16 +43,27 @@ Toggle the button to see effects: <ColorModeSwitch />
 
 ## Getting Status
 
-- In Markdown files or Vue Template, you can access `$isDarkMode` to get dark mode status directly.
+- In Markdown files or Vue Template, you can access `$isDarkMode` to get dark mode status directly:
+
+  ```md
+  Darkmode enabled: {{ $isDarkMode }}
+
+  <img v-if="$isDarkMode" src="/dark.png" alt="dark" />
+  <img v-else src="/light.png" alt="light" />
+  ```
 
 - In scripts, you can import `useDarkMode` from `@vuepress/helper/client` to get dark mode status:
 
   ```ts twoslash
   import { useDarkMode } from "@vuepress/helper/client";
 
-  const isDarkMode = useDarkMode();
+  export default {
+    setup() {
+      const isDarkMode = useDarkMode();
 
-  console.log(isDarkMode.value); // get dark mode status
+      console.log(isDarkMode.value); // get dark mode status
+    },
+  };
   ```
 
   If `@vuepress/helper` is not installed, you should install it first:

@@ -14,16 +14,13 @@ Let the Markdown file in your VuePress site support including other files.
 
 ## Settings
 
-```ts twoslash {7} title=".vuepress/config.ts"
-import { defineUserConfig } from "vuepress";
+```ts twoslash {5} title=".vuepress/theme.ts"
 import { hopeTheme } from "vuepress-theme-hope";
 
-export default defineUserConfig({
-  theme: hopeTheme({
-    markdown: {
-      include: true,
-    },
-  }),
+export default hopeTheme({
+  markdown: {
+    include: true,
+  },
 });
 ```
 

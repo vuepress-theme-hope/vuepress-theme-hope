@@ -36,32 +36,30 @@ By default, `<Badge />` is available to align with `@vuepress/theme-default`.
 
 :::
 
-```ts twoslash {8-22} title=".vuepress/config.ts"
+```ts twoslash {7-20} title=".vuepress/theme.ts"
 import { hopeTheme } from "vuepress-theme-hope";
 
-export default {
-  theme: hopeTheme({
-    plugins: {
-      components: {
-        // components you want
-        components: [
-          "ArtPlayer",
-          "Badge",
-          "BiliBili",
-          "CodePen",
-          "PDF",
-          "Share",
-          "SiteInfo",
-          "StackBlitz",
-          "VPBanner",
-          "VPCard",
-          "VidStack",
-          "XiGua",
-        ],
-      },
+export default hopeTheme({
+  plugins: {
+    components: {
+      // components you want
+      components: [
+        "ArtPlayer",
+        "Badge",
+        "BiliBili",
+        "CodePen",
+        "PDF",
+        "Share",
+        "SiteInfo",
+        "StackBlitz",
+        "VPBanner",
+        "VPCard",
+        "VidStack",
+        "XiGua",
+      ],
     },
-  }),
-};
+  },
+});
 ```
 
 ## Utilities

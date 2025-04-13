@@ -14,23 +14,20 @@ tag:
 
 ## 配置
 
-```ts twoslash {8,10,12,14} title=".vuepress/config.ts"
-import { defineUserConfig } from "vuepress";
+```ts twoslash {6,8,10,12} title=".vuepress/theme.ts"
 import { hopeTheme } from "vuepress-theme-hope";
 
-export default defineUserConfig({
-  theme: hopeTheme({
-    markdown: {
-      // 启用 figure
-      figure: true,
-      // 启用图片懒加载
-      imgLazyload: true,
-      // 启用图片标记
-      imgMark: true,
-      // 启用图片大小
-      imgSize: true,
-    },
-  }),
+export default hopeTheme({
+  markdown: {
+    // 启用 figure
+    figure: true,
+    // 启用图片懒加载
+    imgLazyload: true,
+    // 启用图片标记
+    imgMark: true,
+    // 启用图片大小
+    imgSize: true,
+  },
 });
 ```
 
@@ -55,21 +52,18 @@ export default defineUserConfig({
 
 你可以将对象传递给 `markdown.imgMark` 以配置 ID 标记：
 
-```ts twoslash {9,11} title=".vuepress/config.ts"
-import { defineUserConfig } from "vuepress";
+```ts twoslash {7,9} title=".vuepress/theme.ts"
 import { hopeTheme } from "vuepress-theme-hope";
 
-export default defineUserConfig({
-  theme: hopeTheme({
-    markdown: {
-      imgMark: {
-        /** 仅限日间模式的 ID */
-        light: ["light"],
-        /** 仅限夜间模式的 ID */
-        dark: ["dark"],
-      },
+export default hopeTheme({
+  markdown: {
+    imgMark: {
+      /** 仅限日间模式的 ID */
+      light: ["light"],
+      /** 仅限夜间模式的 ID */
+      dark: ["dark"],
     },
-  }),
+  },
 });
 ```
 

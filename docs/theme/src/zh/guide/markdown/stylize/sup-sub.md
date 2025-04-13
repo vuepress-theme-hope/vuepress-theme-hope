@@ -14,19 +14,16 @@ tag:
 
 ## 配置
 
-```ts twoslash {8,10} title=".vuepress/config.ts"
-import { defineUserConfig } from "vuepress";
+```ts twoslash {6,8} title=".vuepress/theme.ts"
 import { hopeTheme } from "vuepress-theme-hope";
 
-export default defineUserConfig({
-  theme: hopeTheme({
-    markdown: {
-      // 启用下角标
-      sub: true,
-      // 启用上角标
-      sup: true,
-    },
-  }),
+export default hopeTheme({
+  markdown: {
+    // 启用下角标
+    sub: true,
+    // 启用上角标
+    sup: true,
+  },
 });
 ```
 

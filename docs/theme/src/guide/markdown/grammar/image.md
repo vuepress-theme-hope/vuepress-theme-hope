@@ -14,23 +14,20 @@ Improve image syntax in Markdown to support color scheme and size.
 
 ## Settings
 
-```ts twoslash {8,10,12,14} title=".vuepress/config.ts"
-import { defineUserConfig } from "vuepress";
+```ts twoslash {6,8,10,12} title=".vuepress/theme.ts"
 import { hopeTheme } from "vuepress-theme-hope";
 
-export default defineUserConfig({
-  theme: hopeTheme({
-    markdown: {
-      // Enable figure
-      figure: true,
-      // Enable image lazyload
-      imgLazyload: true,
-      // Enable image mark
-      imgMark: true,
-      // Enable image size
-      imgSize: true,
-    },
-  }),
+export default hopeTheme({
+  markdown: {
+    // Enable figure
+    figure: true,
+    // Enable image lazyload
+    imgLazyload: true,
+    // Enable image mark
+    imgMark: true,
+    // Enable image size
+    imgSize: true,
+  },
 });
 ```
 
@@ -55,21 +52,18 @@ This feature allows you to mark images with `#light` and `#dark` suffix to displ
 
 You can pass an object to `markdown.imgMark` to config ID marks:
 
-```ts twoslash {9,11} title=".vuepress/config.ts"
-import { defineUserConfig } from "vuepress";
+```ts twoslash {7,9} title=".vuepress/theme.ts"
 import { hopeTheme } from "vuepress-theme-hope";
 
-export default defineUserConfig({
-  theme: hopeTheme({
-    markdown: {
-      imgMark: {
-        /** light mode only IDs */
-        light: ["light"],
-        /** dark mode only IDs */
-        dark: ["dark"],
-      },
+export default hopeTheme({
+  markdown: {
+    imgMark: {
+      /** light mode only IDs */
+      light: ["light"],
+      /** dark mode only IDs */
+      dark: ["dark"],
     },
-  }),
+  },
 });
 ```
 

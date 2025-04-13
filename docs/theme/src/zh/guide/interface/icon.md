@@ -25,56 +25,50 @@ tag:
 
 要指定图标资源，请在主题选项中设置 `plugins.icon.assets`：
 
-```ts twoslash {7-8} title=".vuepress/config.ts"
+```ts twoslash {7-8} title=".vuepress/theme.ts"
 import { hopeTheme } from "vuepress-theme-hope";
 
-export default {
-  theme: hopeTheme({
-    plugins: {
-      icon: {
-        // 关键词: "iconify", "fontawesome", "fontawesome-with-brands"
-        assets: "fontawesome",
-      },
+export default hopeTheme({
+  plugins: {
+    icon: {
+      // 关键词: "iconify", "fontawesome", "fontawesome-with-brands"
+      assets: "fontawesome",
     },
-  }),
-};
+  },
+});
 ```
 
-```ts twoslash {7-11} title=".vuepress/config.ts"
+```ts twoslash {6-10} title=".vuepress/theme.ts"
 import { hopeTheme } from "vuepress-theme-hope";
 
-export default {
-  theme: hopeTheme({
-    plugins: {
-      icon: {
-        // 你想要的 URL
-        // 例如，这些网站允许你声称自己的资源:
-        // - [iconfont.cn](https://www.iconfont.cn/) 的 CSS 链接
-        // - [fontawesome](https://fontawesome.com) 中的 Kit 链接
-        assets: "/base/my/font-icon/resource.js",
-      },
+export default hopeTheme({
+  plugins: {
+    icon: {
+      // 你想要的 URL
+      // 例如，这些网站允许你声称自己的资源:
+      // - [iconfont.cn](https://www.iconfont.cn/) 的 CSS 链接
+      // - [fontawesome](https://fontawesome.com) 中的 Kit 链接
+      assets: "/base/my/font-icon/resource.js",
     },
-  }),
-};
+  },
+});
 ```
 
-```ts twoslash {7-12} title=".vuepress/config.ts"
+```ts twoslash {6-11} title=".vuepress/theme.ts"
 import { hopeTheme } from "vuepress-theme-hope";
 
-export default {
-  theme: hopeTheme({
-    plugins: {
-      icon: {
-        // 上述内容的数组
-        assets: [
-          "/base/my/font-icon/resource.js",
-          "https://example/my/fonr-icon/resouce.css",
-          "fontawesome",
-        ],
-      },
+export default hopeTheme({
+  plugins: {
+    icon: {
+      // 上述内容的数组
+      assets: [
+        "/base/my/font-icon/resource.js",
+        "https://example/my/fonr-icon/resouce.css",
+        "fontawesome",
+      ],
     },
-  }),
-};
+  },
+});
 ```
 
 为了便于上手，我们添加了内置关键字 `"iconify"`、`"fontawesome"` 和 `"fontawesome-with-brands"` 支持。
@@ -281,9 +275,11 @@ export default {
 
 任何图标类型都支持图像链接（不支持相对链接）。
 
+<!-- markdownlint-disable MD034 -->
+
 ::: md-demo 案例
 
-完整链接: ::<https://theme-hope-assets.vuejs.press/logo.svg>::
+完整链接: ::https://theme-hope-assets.vuejs.press/logo.svg::
 
 绝对路径: <VPIcon icon="/favicon.ico" />
 
@@ -291,5 +287,7 @@ export default {
 <!-- ::/favicon.ico:: 是不被支持的，因为它会被解析为颜色 -->
 
 :::
+
+<!-- markdownlint-enable MD034 -->
 
 [@vuepress/plugin-icon]: https://ecosystem.vuejs.press/zh/plugins/features/icon.html

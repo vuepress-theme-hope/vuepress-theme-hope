@@ -15,18 +15,15 @@ Stylize inline tokens including changing tags, adding attributes and modifying c
 
 ## Settings
 
-```ts twoslash {7-9} title=".vuepress/config.ts"
-import { defineUserConfig } from "vuepress";
+```ts twoslash {5-7} title=".vuepress/theme.ts"
 import { hopeTheme } from "vuepress-theme-hope";
 
-export default defineUserConfig({
-  theme: hopeTheme({
-    markdown: {
-      stylize: [
-        // options
-      ],
-    },
-  }),
+export default hopeTheme({
+  markdown: {
+    stylize: [
+      // your options...
+    ],
+  },
 });
 ```
 
@@ -40,55 +37,49 @@ The `stylize` receives an array, where each element accepts 2 options:
 
 For example, you can use the following config to transform `*Recommended*` into a Badge `<Badge type="tip">Recommended</Badge>`:
 
-```ts twoslash {7-19} title=".vuepress/config.ts"
-import { defineUserConfig } from "vuepress";
+```ts twoslash {5-17} title=".vuepress/theme.ts"
 import { hopeTheme } from "vuepress-theme-hope";
 
-export default defineUserConfig({
-  theme: hopeTheme({
-    markdown: {
-      stylize: [
-        {
-          matcher: "Recommended",
-          replacer: ({ tag }) => {
-            if (tag === "em")
-              return {
-                tag: "Badge",
-                attrs: { type: "tip" },
-                content: "Recommended",
-              };
-          },
+export default hopeTheme({
+  markdown: {
+    stylize: [
+      {
+        matcher: "Recommended",
+        replacer: ({ tag }) => {
+          if (tag === "em")
+            return {
+              tag: "Badge",
+              attrs: { type: "tip" },
+              content: "Recommended",
+            };
         },
-      ],
-    },
-  }),
+      },
+    ],
+  },
 });
 ```
 
 Another example is you want to set all the emphasis `n't` words to red color, so that `Setting this to a invalid syntax *doesn't* have any effect.` becomes: "Setting this to an invalid syntax <span style="color:red">doesn't</span> have any effect."
 
-```ts twoslash {7-19} title=".vuepress/config.ts"
-import { defineUserConfig } from "vuepress";
+```ts twoslash {5-17} title=".vuepress/theme.ts"
 import { hopeTheme } from "vuepress-theme-hope";
 
-export default defineUserConfig({
-  theme: hopeTheme({
-    markdown: {
-      stylize: [
-        {
-          matcher: /n't$/,
-          replacer: ({ tag, attrs, content }) => {
-            if (tag === "em")
-              return {
-                tag: "span",
-                attrs: { ...attrs, style: "color: red" },
-                content,
-              };
-          },
+export default hopeTheme({
+  markdown: {
+    stylize: [
+      {
+        matcher: /n't$/,
+        replacer: ({ tag, attrs, content }) => {
+          if (tag === "em")
+            return {
+              tag: "span",
+              attrs: { ...attrs, style: "color: red" },
+              content,
+            };
         },
-      ],
-    },
-  }),
+      },
+    ],
+  },
 });
 ```
 

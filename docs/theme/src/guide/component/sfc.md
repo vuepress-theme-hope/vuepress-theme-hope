@@ -53,7 +53,7 @@ Since Markdown will be converted to Vue single-file components in the cache dire
   └── ...
   ```
 
-  ```md
+  ```md title="Markdown file"
   <MyComponent />
 
   <script setup>
@@ -77,18 +77,19 @@ Since Markdown will be converted to Vue single-file components in the cache dire
   ```
 
   ```ts twoslash title=".vuepress/config.ts"
+  import { defineUserConfig } from "vuepress";
   import { getDirname, path } from "vuepress/utils";
 
   const __dirname = getDirname(import.meta.url);
 
-  export default {
+  export default defineUserConfig({
     alias: {
       "@MyComponent": path.resolve(__dirname, "components/MyComponent.vue"),
     },
-  };
+  });
   ```
 
-  ```md
+  ```md title="README.md"
   <MyComponent />
 
   <script setup>

@@ -36,32 +36,30 @@ tag:
 
 :::
 
-```ts twoslash {8-22} title=".vuepress/config.ts"
+```ts twoslash {7-20} title=".vuepress/theme.ts"
 import { hopeTheme } from "vuepress-theme-hope";
 
-export default {
-  theme: hopeTheme({
-    plugins: {
-      components: {
-        // 你想使用的组件
-        components: [
-          "ArtPlayer",
-          "Badge",
-          "BiliBili",
-          "CodePen",
-          "PDF",
-          "Share",
-          "SiteInfo",
-          "StackBlitz",
-          "VPBanner",
-          "VPCard",
-          "VidStack",
-          "XiGua",
-        ],
-      },
+export default hopeTheme({
+  plugins: {
+    components: {
+      // 你想使用的组件
+      components: [
+        "ArtPlayer",
+        "Badge",
+        "BiliBili",
+        "CodePen",
+        "PDF",
+        "Share",
+        "SiteInfo",
+        "StackBlitz",
+        "VPBanner",
+        "VPCard",
+        "VidStack",
+        "XiGua",
+      ],
     },
-  }),
-};
+  },
+});
 ```
 
 ## 杂项

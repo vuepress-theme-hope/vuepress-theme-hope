@@ -53,14 +53,13 @@ Assume that you have registered `MyComponent` globally, then you can use it like
 
 - Markdown:
 
-  ```md
+  ```md title="example.md"
   <MyComponent />
   ```
 
 - Component:
 
-  ```vue
-  <!-- .vuepress/components/Example.vue -->
+  ```vue title=".vuepress/components/Example.vue"
   <template>
     <p>Example Component</p>
     <MyComponent />
@@ -69,8 +68,7 @@ Assume that you have registered `MyComponent` globally, then you can use it like
 
 - Layout:
 
-  ```vue
-  <!-- .vuepress/layouts/Custom.vue -->
+  ```vue title=".vuepress/layouts/Custom.vue"
   <template>
     <p>Example Layout</p>
     <MyComponent />

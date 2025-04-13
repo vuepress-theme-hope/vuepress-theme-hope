@@ -16,14 +16,14 @@ tag:
 
 要隐藏打印按钮，你应该在主题选项中设置 `print: false`。
 
-```ts twoslash {5} title=".vuepress/config.ts"
+```ts twoslash {4} title=".vuepress/theme.ts"
 import { hopeTheme } from "vuepress-theme-hope";
 
-export default {
-  theme: hopeTheme({
-    print: false,
-  }),
-};
+export default hopeTheme({
+  print: false,
+
+  // 其他选项..
+});
 ```
 
 ## 全屏按钮
@@ -34,14 +34,14 @@ export default {
 
 如果你需要这个功能，你可以在主题选项中设置 `fullscreen: true`。
 
-```ts twoslash {5} title=".vuepress/config.ts"
+```ts twoslash {4} title=".vuepress/theme.ts"
 import { hopeTheme } from "vuepress-theme-hope";
 
-export default {
-  theme: hopeTheme({
-    fullscreen: true,
-  }),
-};
+export default hopeTheme({
+  fullscreen: true,
+
+  // 其他选项..
+});
 ```
 
 ::: tip
@@ -56,31 +56,29 @@ export default {
 
 你可以在主题选项中设置 `plugins.backToTop: false` 来禁用它，或者用一个对象来设置它来自定义它的阈值距离和进度条显示：
 
-```ts twoslash {8,13-26} title=".vuepress/config.ts"
-import { defineUserConfig } from "vuepress";
+```ts twoslash {5,7-21} title=".vuepress/theme.ts"
 import { hopeTheme } from "vuepress-theme-hope";
 
-export default defineUserConfig({
-  theme: hopeTheme({
-    plugins: {
-      // 通过 `backToTop: false` 禁用返回顶部按钮
-      // 或自定义返回顶部按钮
-      backToTop: {
-        /**
-         * 显示返回顶部按钮的滚动阈值距离（以像素为单位）
-         *
-         * @default 100
-         */
-        threshold: 500,
-        /**
-         * 是否显示滚动进度
-         *
-         * @default true
-         */
-        progress: false,
-      },
+export default hopeTheme({
+  plugins: {
+    // 通过 `backToTop: false` 禁用返回顶部按钮
+
+    // 或自定义返回顶部按钮
+    backToTop: {
+      /**
+       * 显示返回顶部按钮的滚动阈值距离（以像素为单位）
+       *
+       * @default 100
+       */
+      threshold: 500,
+      /**
+       * 是否显示滚动进度
+       *
+       * @default true
+       */
+      progress: false,
     },
-  }),
+  },
 });
 ```
 
@@ -100,14 +98,14 @@ export default defineUserConfig({
 
 如果你更喜欢专注于内容，你可以在主题选项中设置 `focus: true` 启用专注模式。
 
-```ts twoslash {5} title=".vuepress/config.ts"
+```ts twoslash {4} title=".vuepress/theme.ts"
 import { hopeTheme } from "vuepress-theme-hope";
 
-export default {
-  theme: hopeTheme({
-    focus: true,
-  }),
-};
+export default hopeTheme({
+  focus: true,
+
+  // 其他选项..
+});
 ```
 
 在这个模式下，我们会模糊内容之外元素，提供更好的专注体验。
@@ -116,14 +114,14 @@ export default {
 
 如果你的网站是一个纯文档站点，并且你更喜欢干净的样式，你可以在主题选项中设置 `pure: true` 启用纯净模式。
 
-```ts twoslash {5} title=".vuepress/config.ts"
+```ts twoslash {4} title=".vuepress/theme.ts"
 import { hopeTheme } from "vuepress-theme-hope";
 
-export default {
-  theme: hopeTheme({
-    pure: true,
-  }),
-};
+export default hopeTheme({
+  pure: true,
+
+  // 其他选项..
+});
 ```
 
 在这个模式下，我们会禁用一些花哨的动画以及一些色彩，只提供功能。
@@ -136,20 +134,19 @@ export default {
 
 试一试: <ToggleRTLButton />
 
-```ts twoslash {9} title=".vuepress/config.ts"
+```ts twoslash {9} title=".vuepress/theme.ts"
 import { hopeTheme } from "vuepress-theme-hope";
 
-export default {
-  theme: hopeTheme({
-    locales: {
-      // ...
-      "/ar/": {
-        // enable RTL layout
-        rtl: true,
-      },
+export default hopeTheme({
+  locales: {
+    // ...
+
+    "/ar/": {
+      // enable RTL layout
+      rtl: true,
     },
-  }),
-};
+  },
+});
 ```
 
 <script setup lang="ts">

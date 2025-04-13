@@ -53,14 +53,13 @@ export default defineClientConfig({
 
 - Markdown:
 
-  ```md
+  ```md title="example.md"
   <MyComponent />
   ```
 
 - 组件:
 
-  ```vue
-  <!-- .vuepress/components/Example.vue -->
+  ```vue title=".vuepress/components/Example.vue"
   <template>
     <p>组件案例</p>
     <MyComponent />
@@ -69,8 +68,7 @@ export default defineClientConfig({
 
 - 布局:
 
-  ```vue
-  <!-- .vuepress/layouts/Custom.vue -->
+  ```vue title=".vuepress/layouts/Custom.vue"
   <template>
     <p>布局案例</p>
     <MyComponent />

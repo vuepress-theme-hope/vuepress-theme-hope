@@ -46,18 +46,15 @@ npm i -D mathjax-full
 
 Then enabling via:
 
-```ts twoslash {8} title=".vuepress/config.ts"
-import { defineUserConfig } from "vuepress";
+```ts twoslash {6} title=".vuepress/theme.ts"
 import { hopeTheme } from "vuepress-theme-hope";
 
-export default defineUserConfig({
-  theme: hopeTheme({
-    markdown: {
-      math: {
-        type: "katex", // or 'mathjax'
-      },
+export default hopeTheme({
+  markdown: {
+    math: {
+      type: "katex", // or 'mathjax'
     },
-  }),
+  },
 });
 ```
 

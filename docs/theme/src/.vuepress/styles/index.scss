@@ -29,3 +29,48 @@
 
   overflow-wrap: break-word;
 }
+
+.code-block-title-bar {
+  &[data-title=".vuepress/config.ts"],
+  &[data-title=".vuepress/theme.ts"],
+  &[data-title$=".scss"],
+  &[data-title$=".md"],
+  &[data-title$=".vue"] {
+    display: flex;
+    align-items: center;
+
+    &::before {
+      content: " ";
+
+      display: inline-block;
+
+      width: 1.5em;
+      height: 1.5em;
+      margin-inline-end: 0.5em;
+
+      background-position: center;
+      background-size: contain;
+      background-repeat: no-repeat;
+    }
+  }
+}
+
+.code-block-title-bar[data-title=".vuepress/config.ts"]::before {
+  background-image: url("https://ecosystem.vuejs.press/images/hero.png");
+}
+
+.code-block-title-bar[data-title=".vuepress/theme.ts"]::before {
+  background-image: url("https://theme-hope-assets.vuejs.press/logo.svg");
+}
+
+.code-block-title-bar[data-title$=".scss"]::before {
+  background-image: url("https://sass-lang.com/assets/img/logos/logo.svg");
+}
+
+.code-block-title-bar[data-title$=".md"]::before {
+  background-image: url("https://theme-hope.vuejs.press/assets/image/markdown.svg");
+}
+
+.code-block-title-bar[data-title$=".vue"]::before {
+  background-image: url("https://theme-hope.vuejs.press/assets/image/vue.svg");
+}
