@@ -52,6 +52,8 @@ export default defineComponent({
     }));
 
     const renderPlayground = async (): Promise<void> => {
+      if (__VUEPRESS_SSR__) return;
+
       const { default: playground } = await import(
         /* webpackChunkName: "kotlin-playground" */ "kotlin-playground"
       );

@@ -73,6 +73,8 @@ export default defineComponent({
     );
 
     const setupRepl = async (): Promise<void> => {
+      if (__VUEPRESS_SSR__) return;
+
       const [
         { useStore, useVueImportMap, Repl },
         { default: editorComponent },

@@ -73,7 +73,7 @@ export default defineComponent({
       return null;
     });
 
-    const getImage = (): Promise<BingWallpaperInfo[]> =>
+    const getBingWallpapers = (): Promise<BingWallpaperInfo[]> =>
       fetch("https://bing-wallpaper.vuejs.press/api/wallpaper").then(
         (response) => response.json() as Promise<BingWallpaperInfo[]>,
       );
@@ -90,10 +90,8 @@ export default defineComponent({
       showInfo.value = false;
     });
 
-    onMounted(() => {
-      void getImage().then((res) => {
-        bingStorage.value.data = res;
-      });
+    onMounted(async () => {
+      bingStorage.value.data = await getBingWallpapers();
     });
 
     return (): VNode => {

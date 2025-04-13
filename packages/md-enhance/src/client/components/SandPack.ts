@@ -1,4 +1,10 @@
-import { decodeData, deepAssign, useDarkMode } from "@vuepress/helper/client";
+import {
+  LoadingIcon,
+  decodeData,
+  deepAssign,
+  useDarkMode,
+} from "@vuepress/helper/client";
+import NoopComponent from "@vuepress/helper/noopComponent";
 import type {
   SandpackFiles,
   SandpackOptions,
@@ -6,9 +12,8 @@ import type {
   SandpackSetup,
   SandpackThemeProp,
 } from "sandpack-vue3";
-import { Sandpack } from "sandpack-vue3";
 import type { PropType, VNode } from "vue";
-import { computed, defineComponent, h } from "vue";
+import { computed, defineAsyncComponent, defineComponent, h } from "vue";
 
 import { useSandpackConfig } from "../helpers/index.js";
 
@@ -22,6 +27,14 @@ const getSandpackOptions = (options: string): SandpackOptions =>
 
 const getSandpackCustomSetup = (customSetup: string): SandpackSetup =>
   JSON.parse(decodeData(customSetup)) as SandpackSetup;
+
+const SandPackVue3 = defineAsyncComponent({
+  loader: () =>
+    __VUEPRESS_SSR__
+      ? Promise.resolve(NoopComponent)
+      : import("sandpack-vue3").then(({ Sandpack }) => Sandpack),
+  loadingComponent: LoadingIcon,
+});
 
 export default defineComponent({
   name: "SandPack",
@@ -119,7 +132,7 @@ export default defineComponent({
         h(
           "div",
           { class: "sandpack-container" },
-          h(Sandpack, {
+          h(SandPackVue3, {
             template: template.value,
             theme: theme.value,
             files: getSandpackFiles(props.files),

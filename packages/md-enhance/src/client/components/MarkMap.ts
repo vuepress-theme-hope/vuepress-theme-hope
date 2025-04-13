@@ -53,6 +53,8 @@ export default defineComponent({
     );
 
     onMounted(async () => {
+      if (__VUEPRESS_SSR__) return;
+
       const [{ Transformer }, { Markmap, deriveOptions }, { Toolbar }] =
         await Promise.all([
           import(/* webpackChunkName: "markmap" */ "markmap-lib"),

@@ -89,6 +89,8 @@ export default defineComponent({
     let chartjs: Chart | null;
 
     const renderChart = async (): Promise<void> => {
+      if (__VUEPRESS_SSR__) return;
+
       const [{ default: ChartJs }] = await Promise.all([
         import(/* webpackChunkName: "chart" */ "chart.js/auto"),
       ]);
