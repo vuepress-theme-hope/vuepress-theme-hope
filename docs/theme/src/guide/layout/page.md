@@ -1,7 +1,7 @@
 ---
 title: Page
 icon: file
-order: 5
+order: 4
 category:
   - Layout
 tag:
@@ -11,7 +11,7 @@ tag:
 
 ## Icon Support
 
-You can configure the `icon` field in the frontmatter of the page, and fill in the FontClass of the corresponding icon to bind the icon to the page.
+You can set `icon` in page frontmatter to set icon for a page, see [Icon Support](../interface/icon.md) for details.
 
 This icon is used in navbar, sidebar, breadcrumb and page title.
 
@@ -25,16 +25,6 @@ icon: home
 
 :::
 
-::: info
-
-For icon settings, please see [Icon Support](../interface/icon.md)
-
-:::
-
-## Page Info Display
-
-Please see [Page Info Section](../feature/page-info.md)
-
 ## Breadcrumb
 
 The theme provides out-of-the-box support for breadcrumb navigation.
@@ -44,6 +34,10 @@ You can control the display of breadcrumb globally and on specific pages by sett
 The icon of the breadcrumb is also configurable. You can control the behavior of the global and specific pages by setting a boolean value through `breadcrumbIcon` in theme options and page frontmatter.
 
 If you don't want a page to be added to the breadcrumb (e.g., the homepage), you can set `breadcrumbExclude: true` in frontmatter of that page.
+
+## Page Info Display
+
+Please see [Page Info Section](../feature/page-info.md)
 
 ## Header List
 

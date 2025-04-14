@@ -1,7 +1,7 @@
 ---
 title: Footer
 icon: fas fa-window-maximize fa-rotate-180
-order: 4
+order: 5
 category:
   - Layout
 tag:

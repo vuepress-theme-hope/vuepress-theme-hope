@@ -65,14 +65,14 @@ export default defineComponent({
     });
 
     const image = computed<HeroImageData>(() => {
-      const { heroText, heroImage, heroImageDark, heroAlt, heroImageStyle } =
+      const { heroImage, heroImageDark, heroAlt, heroImageStyle } =
         frontmatter.value;
 
       return {
         image: heroImage ? withBase(heroImage) : null,
         imageDark: heroImageDark ? withBase(heroImageDark) : null,
         imageStyle: heroImageStyle,
-        alt: heroAlt ?? heroText ?? "",
+        alt: heroAlt ?? "",
       };
     });
 

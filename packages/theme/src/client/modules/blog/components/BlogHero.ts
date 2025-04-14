@@ -57,7 +57,7 @@ export default defineComponent({
         tagline: tagline ?? "",
         image: heroImage ? withBase(heroImage) : null,
         imageDark: heroImageDark ? withBase(heroImageDark) : null,
-        alt: heroAlt ?? heroText ?? "",
+        alt: heroAlt ?? "",
         imageStyle: heroImageStyle,
       };
     });

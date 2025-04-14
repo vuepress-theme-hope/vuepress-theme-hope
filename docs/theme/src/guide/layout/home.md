@@ -19,6 +19,8 @@ To use it, set `home: true` in page frontmatter. Any extra content after frontma
 
 You can use `heroText` to set the main title and `tagline` to set the subtitle.
 
+::: details Example
+
 ```md title="README.md"
 ---
 home: true
@@ -27,13 +29,65 @@ tagline: A powerful project
 ---
 ```
 
+:::
+
 If you have a logo, you can place it in the `public` folder and set it via `heroImage`, if you want to display another logo in night mode, you can use `heroImageDark`. For better A11y, we recommend that you set the description of Logo to `heroAlt`.
 
-You can set the background image through `bgImage` and `bgImageDark`, but you need to pay attention that you must fill in the full URL or absolute path.
+::: details Example
 
-If you want the information to be displayed in full screen, you can set `heroFullScreen: true`. Besides, minimal height of hero can be customized through `heroHeight`.
+```md title="README.md"
+---
+home: true
+heroImage: /logo.png
+heroImageDark: /logo-dark.png
+heroAlt: My Project
+---
+```
 
-If you need to customize some styles, you can set the style of the logo and background image through `heroImageStyle` and `bgImageStyle`.
+:::
+
+::: important
+
+Medias in frontmatter should only use absolute path or full URL. These medias can not be tracked by bundlers, so relative path will not work.
+
+:::
+
+You can set the background image through `bgImage` and `bgImageDark`.
+
+::: details Example
+
+```md title="README.md"
+---
+home: true
+bgImage: /bg.png
+# defaults to bgImage
+bgImageDark: /bg-dark.png
+---
+```
+
+:::
+
+If you want the information to be displayed in full screen, you can set `heroFullScreen: true`.
+
+If you need to customize some styles, you can set the style of hero, hero image and background image through `heroStyle`, `heroImageStyle` and `bgImageStyle`. Both CSS string and object are supported.
+
+::: details Example
+
+```md title="README.md"
+---
+home: true
+# set hero to fullscreen
+heroFullScreen: true
+# CSS string
+heroStyle: "background-color: #000"
+# CSS object
+heroImageStyle:
+  width: 100px
+  height: 100px
+---
+```
+
+:::
 
 ## Home button
 
@@ -43,8 +97,27 @@ You can set them via `actions` which is an array where each element is an object
 
 - `text`: button text
 - `link`: button link
-- `type`: button type (only `"primary"` and `"default"` (default) are supported)
-- `icon` (optional): can be filled with full path or absolute path image link, or FontClass
+- `type`: button type (only `"primary"` and `"default"` are supported)
+- `icon` (optional): support [all formats of Icon](../interface/icon.md)
+
+::: details Example
+
+```md title="README.md"
+---
+home: true
+actions:
+  - text: Get Started
+    link: /get-started/
+    icon: signs-post
+    type: primary
+
+  - text: Guide
+    icon: lightbulb
+    link: /guide/
+---
+```
+
+:::
 
 ## Project features (legacy)
 
@@ -54,6 +127,26 @@ You can set and display item features through `features`, which is an array, eac
 - `details`: details
 - `icon` (optional): can be filled with full path or absolute path image link, or FontClass
 - `link` (optional): link address
+
+::: details Example
+
+```md title="README.md"
+---
+home: true
+features:
+  - title: Pageviews and Comments
+    icon: comment-dots
+    details: Start pageview statistics and comment support with Waline
+    link: /guide/feature/comment.html
+
+  - title: Search
+    icon: search
+    details: Support docsearch and client search
+    link: /guide/feature/search.html
+---
+```
+
+:::
 
 ## Project Highlights and features
 
@@ -81,13 +174,50 @@ Highlights also support the following properties:
 
 - `type`: `"order"`, `"un-order"`(default) or `"no-order"`
 
+::: details Example
+
+```md title="README.md"
+---
+home: true
+highlights:
+  - header: Easy to install
+    image: /assets/image/box.svg
+    bgImage: https://theme-hope-assets.vuejs.press/bg/3-light.svg
+    bgImageDark: https://theme-hope-assets.vuejs.press/bg/3-dark.svg
+    highlights:
+      - title: Run <code>pnpm create vuepress-theme-hope hope-project</code> to create a new project with this theme.
+      - title: Run <code>pnpm create vuepress-theme-hope add .</code> in your project root to create a new project with this theme.
+
+  - header: Add things you want in markdown
+    description: We extended the standard commonMark specification and added tons of new features for you.
+    image: /assets/image/markdown.svg
+    bgImage: https://theme-hope-assets.vuejs.press/bg/2-light.svg
+    bgImageDark: https://theme-hope-assets.vuejs.press/bg/2-dark.svg
+    bgImageStyle:
+      background-repeat: repeat
+      background-size: initial
+    features:
+      - title: Links Check
+        icon: clipboard-check
+        details: Check markdown links
+        link: ./guide/markdown/others.html#link-check
+
+      - title: Hint box
+        icon: box-archive
+        details: Decorate Markdown content with styles
+        link: ./guide/markdown/stylize/hint.html
+---
+```
+
+:::
+
+## Demo
+
 ::: info
 
 For complete configuration items, see [Home Frontmatter Configuration](../../config/frontmatter/project-home.md).
 
 :::
-
-## Demo
 
 - [Project HomePage with features](../../demo/project-home.md)
 
