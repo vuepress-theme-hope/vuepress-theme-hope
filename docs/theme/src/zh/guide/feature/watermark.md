@@ -57,7 +57,7 @@ The simplest way is to set it to `true` to get a site name watermark:
       watermark: {
         watermarkOptions: {
           content: "自定义内容",
-          opacity: 0.75,
+          movable: true,
           // 其他选项
         },
       },

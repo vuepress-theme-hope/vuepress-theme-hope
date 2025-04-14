@@ -167,7 +167,13 @@ export default theme(
       highlighter: {
         type: "shiki",
         lineNumbers: 15,
+        collapsedLines: 20,
         notationDiff: true,
+        notationErrorLevel: true,
+        notationFocus: true,
+        notationHighlight: true,
+        // notationWordHighlight: true,
+        whitespace: true,
         themes: {
           light: "one-light",
           dark: "one-dark-pro",

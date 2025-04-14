@@ -51,7 +51,7 @@ You can also fully customize the watermark:
       watermark: {
         watermarkOptions: {
           content: "Customized Content",
-          opacity: 0.75,
+          movable: true,
           // other options
         },
       },
