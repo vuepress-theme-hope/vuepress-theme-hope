@@ -79,15 +79,10 @@ export default {
 你可以在[客户端配置文件][client-config]中导入并使用 `defineVuePlaygroundConfig` 来自定义 Vue Playground 的默认配置:
 
 ```ts title=".vuepress/client.ts"
-import { defineClientConfig } from "vuepress/client";
 import { defineVuePlaygroundConfig } from "vuepress-plugin-md-enhance/client";
 
 defineVuePlaygroundConfig({
   // 在此设置 @vue/repl 选项
-});
-
-export default defineClientConfig({
-  // ...
 });
 ```
 

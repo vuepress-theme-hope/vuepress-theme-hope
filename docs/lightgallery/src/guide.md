@@ -26,15 +26,10 @@ If you are worried about this, please consider using [@vuepress/plugin-photo-swi
 You can pass options to [`lightgallery`](https://www.lightgalleryjs.com/) by importing and calling `defineLightGalleryConfig` in [client config file][client-config]:
 
 ```ts title=".vuepress/client.ts"
-import { defineClientConfig } from "vuepress/client";
 import { defineLightGalleryConfig } from "vuepress-plugin-lightgallery/client";
 
 defineLightGalleryConfig({
   // lightgallery options here
-});
-
-export default defineClientConfig({
-  // ...
 });
 ```
 

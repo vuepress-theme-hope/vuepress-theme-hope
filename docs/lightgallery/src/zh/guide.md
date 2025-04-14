@@ -24,15 +24,10 @@ icon: lightbulb
 你可以通过在[客户端配置文件][client-config]中导入和调用 `defineLightGalleryConfig` 来将选项传递给 [`lightgallery`](https://www.lightgalleryjs.com/)：
 
 ```ts title=".vuepress/client.ts"
-import { defineClientConfig } from "vuepress/client";
 import { defineLightGalleryConfig } from "vuepress-plugin-lightgallery/client";
 
 defineLightGalleryConfig({
   // 在此设置 lightgallery 选项
-});
-
-export default defineClientConfig({
-  // ...
 });
 ```
 

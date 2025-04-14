@@ -101,7 +101,6 @@ const option = {
 你可以在[客户端配置文件][client-config]中导入并使用 `defineEChartsConfig` 来自定义 ECharts:
 
 ```ts title=".vuepress/client.ts"
-import { defineClientConfig } from "vuepress/client";
 import { defineEChartsConfig } from "vuepress-plugin-md-enhance/client";
 
 defineEChartsConfig({
@@ -112,10 +111,6 @@ defineEChartsConfig({
     // ECharts 设置
     // 例如: await import("echarts-wordcloud")
   },
-});
-
-export default defineClientConfig({
-  // ...
 });
 ```
 

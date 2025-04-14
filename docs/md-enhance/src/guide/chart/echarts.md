@@ -103,7 +103,6 @@ You can use top-level await and `fetch` to get data from network requests.
 You can import and call `defineEChartsConfig` in [client config file][client-config] to customize echarts.
 
 ```ts title=".vuepress/client.ts"
-import { defineClientConfig } from "vuepress/client";
 import { defineEChartsConfig } from "vuepress-plugin-md-enhance/client";
 
 defineEChartsConfig({
@@ -114,10 +113,6 @@ defineEChartsConfig({
     // echarts setup
     // e.g.: await import("echarts-wordcloud")
   },
-});
-
-export default defineClientConfig({
-  // ...
 });
 ```
 

@@ -97,15 +97,10 @@ export default {
 你可以在[客户端配置文件][client-config]中导入并调用 `defineKotlinPlaygroundConfig` 来自定义 `kotlin-playground`:
 
 ```ts title=".vuepress/client.ts"
-import { defineClientConfig } from "vuepress/client";
 import { defineKotlinPlaygroundConfig } from "vuepress-plugin-md-enhance/client";
 
 defineKotlinPlaygroundConfig({
   // `kotlin-playground` options here
-});
-
-export default defineClientConfig({
-  // ...
 });
 ```
 

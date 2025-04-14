@@ -75,15 +75,10 @@ You can see the below demos to see more details.
 You can import and call `defineSandpackConfig` in client config file to customize `sandpack-vue3`:
 
 ```ts title=".vuepress/client.ts"
-import { defineClientConfig } from "vuepress/client";
 import { defineSandpackConfig } from "vuepress-plugin-md-enhance/client";
 
 defineSandpackConfig({
   // sandpack config here
-});
-
-export default defineClientConfig({
-  // ...
 });
 ```
 

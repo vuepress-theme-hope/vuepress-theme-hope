@@ -108,15 +108,10 @@ In it, you can use 2 directives:
 You can import and call `defineKotlinPlaygroundConfig` in [client config file][client-config] to customize `kotlin-playground`:
 
 ```ts title=".vuepress/client.ts"
-import { defineClientConfig } from "vuepress/client";
 import { defineKotlinPlaygroundConfig } from "vuepress-plugin-md-enhance/client";
 
 defineKotlinPlaygroundConfig({
   // `kotlin-playground` options here
-});
-
-export default defineClientConfig({
-  // ...
 });
 ```
 
