@@ -125,6 +125,7 @@ export const rollupBundle = (
           ? [
               /^@temp/,
               "@vuepress/helper/client",
+              "@vuepress/helper/shared",
               "@vueuse/core",
               "vue",
               "vuepress/client",
@@ -141,6 +142,7 @@ export const rollupBundle = (
             ? [
                 /^node:/,
                 "@vuepress/helper",
+                "@vuepress/helper/shared",
                 /^@vuepress\/plugin-/,
                 "vuepress/cli",
                 "vuepress/core",
@@ -204,6 +206,8 @@ export const rollupBundle = (
                   )
                 ? [
                     /^@temp/,
+                    "@vuepress/helper/client",
+                    "@vuepress/helper/shared",
                     "vuepress/client",
                     "vuepress/shared",
                     "vuepress-shared/client",
@@ -216,6 +220,8 @@ export const rollupBundle = (
                     )
                   ? [
                       /^node:/,
+                      "@vuepress/helper",
+                      "@vuepress/helper/shared",
                       "vuepress/cli",
                       "vuepress/core",
                       "vuepress/shared",
