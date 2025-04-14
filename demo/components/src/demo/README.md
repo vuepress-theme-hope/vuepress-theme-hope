@@ -21,5 +21,3 @@
 - [VPCard](vp-card.md)
 
 - [VidStack](vid-stack.md)
-
-- [XiGua](xi-gua.md)

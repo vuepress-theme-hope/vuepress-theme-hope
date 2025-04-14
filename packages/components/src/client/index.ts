@@ -10,5 +10,4 @@ export { default as StackBlitz } from "./components/StackBlitz.js";
 export { default as VidStack } from "./components/VidStack.js";
 export { default as VPBanner } from "./components/VPBanner.js";
 export { default as VPCard } from "./components/VPCard.js";
-export { default as XiGua } from "./components/XiGua.js";
 export { default as YouTube } from "./components/YouTube.js";

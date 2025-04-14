@@ -83,7 +83,6 @@ export default theme("components", {
         "VidStack",
         // @ts-expect-error: This component is deprecated
         "VideoPlayer",
-        "XiGua",
         // @ts-expect-error: This component is deprecated
         "YouTube",
       ],

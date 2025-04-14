@@ -24,7 +24,6 @@ tag:
 - VPBanner: 一个横幅组件
 - VPCard: 一个卡片组件
 - VidStack: 由 VidStack 驱动的音频/视频播放器
-- XiGua: 嵌入 XiGua 视频
 
 为了启用组件，你需要将 `plugins.components.components` 设置为一个组件名的数组。
 
@@ -55,7 +54,6 @@ export default hopeTheme({
         "VPBanner",
         "VPCard",
         "VidStack",
-        "XiGua",
       ],
     },
   },
