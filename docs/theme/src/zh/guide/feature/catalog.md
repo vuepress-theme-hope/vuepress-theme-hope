@@ -16,10 +16,37 @@ VuePress Theme Hope 通过 [`@vuepress/plugin-catalog`][catalog] 提供目录组
 
 该功能是默认启用的，如果文件夹下没有 `README.md`，主题会为自动为它生成一个目录页。如需禁用，请将 `plugins.catalog` 设置为 `false`。
 
+```ts twoslash {7,10} title=".vuepress/theme.ts"
+import { hopeTheme } from "vuepress-theme-hope";
+
+export default hopeTheme({
+  plugins: {
+    catalog: false,
+  },
+});
+```
+
 你可以在主题选项中通过 `plugins.catalog` 来控制它，比如:
 
 - 通过 `plugins.catalog.exclude` 从目录生成中排除一些文件夹
 - 通过 `plugins.catalog.frontmatter` 来控制 frontmatter 的生成。
+
+```ts twoslash {7,10} title=".vuepress/theme.ts"
+import { hopeTheme } from "vuepress-theme-hope";
+
+export default hopeTheme({
+  plugins: {
+    catalog: {
+      frontmatter: (path) => {
+        if (path.startsWith("/zh/")) return { title: "目录" };
+
+        return { title: "Catalog" };
+      },
+      exclude: ["/api/", "/zh/api/"],
+    },
+  },
+});
+```
 
 有关详细配置，请参阅 [目录插件文档][catalog-config]。
 

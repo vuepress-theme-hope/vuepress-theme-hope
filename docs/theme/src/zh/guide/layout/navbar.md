@@ -139,33 +139,31 @@ export default hopeTheme({
 
 此外，你还可以通过嵌套的 `children` 来在下拉列表中设置分组:
 
-```ts twoslash {12-14,18-20} title=".vuepress/theme.ts"
+```ts twoslash {11-13,17-19} title=".vuepress/theme.ts"
 import { hopeTheme } from "vuepress-theme-hope";
 
-export default {
-  theme: hopeTheme({
-    navbar: [
-      {
-        text: "插件列表",
-        icon: "puzzle-piece",
-        children: [
-          {
-            text: "内置插件",
-            children: [
-              /* 一些子项目 */
-            ],
-          },
-          {
-            text: "外部插件",
-            children: [
-              /* 一些子项目 */
-            ],
-          },
-        ],
-      },
-    ],
-  }),
-};
+export default hopeTheme({
+  navbar: [
+    {
+      text: "插件列表",
+      icon: "puzzle-piece",
+      children: [
+        {
+          text: "内置插件",
+          children: [
+            /* 一些子项目 */
+          ],
+        },
+        {
+          text: "外部插件",
+          children: [
+            /* 一些子项目 */
+          ],
+        },
+      ],
+    },
+  ],
+});
 ```
 
 ## 禁用导航栏

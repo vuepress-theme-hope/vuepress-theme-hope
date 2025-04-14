@@ -10,9 +10,35 @@ tag:
 
 By using [@vuepress/plugin-photo-swipe][photo-swipe], clicking images in pages will enter preview mode.
 
-If you don't need this feature, you can set `plugins.photoSwipe: false` in theme options to disable it.
-
 <!-- more -->
+
+## Disable Feature
+
+If you don't need this feature, you can set `plugins.photoSwipe: false` in theme options to disable it:
+
+```ts twoslash {5} title=".vuepress/theme.ts"
+import { hopeTheme } from "vuepress-theme-hope";
+
+export default hopeTheme({
+  plugins: {
+    photoSwipe: false,
+  },
+});
+```
+
+If you want to disable it in specific pages, you can set `photoSwipe: false` in the page's frontmatter.
+
+```md
+---
+photoSwipe: false
+---
+```
+
+If you want to exclude specific images, you can add the `no-view` attribute to the image:
+
+```md
+<img src="https://vuejs.org/images/logo.png" no-view />
+```
 
 ## Browse Mode
 

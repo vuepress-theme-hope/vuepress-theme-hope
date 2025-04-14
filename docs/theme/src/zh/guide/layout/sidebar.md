@@ -186,33 +186,31 @@ export default hopeTheme({
 ```ts twoslash title=".vuepress/theme.ts"
 import { hopeTheme } from "vuepress-theme-hope";
 
-export default {
-  theme: hopeTheme({
-    sidebar: [
-      "/" /* / */,
-      {
-        text: "Foo",
-        prefix: "/foo/",
-        children: [
-          "" /* /foo/ */,
-          "one" /* /foo/one.html */,
-          "two" /* /foo/two.html */,
-        ],
-      },
-      {
-        text: "Bar",
-        prefix: "/bar/",
-        children: [
-          "" /* /bar/ */,
-          "three" /* /bar/three.html */,
-          "four" /* /bar/four.html */,
-        ],
-      },
-      "/contact" /* /contact.html */,
-      "/about" /* /about.html */,
-    ],
-  }),
-};
+export default hopeTheme({
+  sidebar: [
+    "/" /* / */,
+    {
+      text: "Foo",
+      prefix: "/foo/",
+      children: [
+        "" /* /foo/ */,
+        "one" /* /foo/one.html */,
+        "two" /* /foo/two.html */,
+      ],
+    },
+    {
+      text: "Bar",
+      prefix: "/bar/",
+      children: [
+        "" /* /bar/ */,
+        "three" /* /bar/three.html */,
+        "four" /* /bar/four.html */,
+      ],
+    },
+    "/contact" /* /contact.html */,
+    "/about" /* /about.html */,
+  ],
+});
 ```
 
 ### 多个侧边栏

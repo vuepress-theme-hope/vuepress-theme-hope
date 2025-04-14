@@ -139,33 +139,31 @@ export default hopeTheme({
 
 You can also have subgroups inside a dropdown by having nested `children`:
 
-```ts twoslash {12-14,18-20} title=".vuepress/theme.ts"
+```ts twoslash {11-13,17-19} title=".vuepress/theme.ts"
 import { hopeTheme } from "vuepress-theme-hope";
 
-export default {
-  theme: hopeTheme({
-    navbar: [
-      {
-        text: "Project",
-        icon: "circle-info",
-        children: [
-          {
-            text: "Built in Plugins",
-            children: [
-              /* Some items */
-            ],
-          },
-          {
-            text: "Third party Plugins",
-            children: [
-              /* Some items */
-            ],
-          },
-        ],
-      },
-    ],
-  }),
-};
+export default hopeTheme({
+  navbar: [
+    {
+      text: "Project",
+      icon: "circle-info",
+      children: [
+        {
+          text: "Built in Plugins",
+          children: [
+            /* Some items */
+          ],
+        },
+        {
+          text: "Third party Plugins",
+          children: [
+            /* Some items */
+          ],
+        },
+      ],
+    },
+  ],
+});
 ```
 
 ## Disabling Navbar

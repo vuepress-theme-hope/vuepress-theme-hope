@@ -39,6 +39,16 @@ You can automatically generate edit links for each page by setting the following
 - `docsDir`: the directory of docs in the repository, defaults to root directory
 - `docsBranch`: docs branch, defaults to `"main"`
 
+```ts twoslash {4-6} title=".vuepress/theme.ts"
+import { hopeTheme } from "vuepress-theme-hope";
+
+export default hopeTheme({
+  docsRepo: "vuepress/docs",
+  docsDir: "docs",
+  docsBranch: "next",
+});
+```
+
 ## Display Control
 
 To hide these items globally, set the corresponding items below to `false` in theme options. You can also enable/disable specific pages by setting these items in page frontmatter:
@@ -47,5 +57,27 @@ To hide these items globally, set the corresponding items below to `false` in th
 - `contributors`: whether to show page contributors
 - `editLink`: whether to display "edit page" link
 - `changelog`: whether to show changelog
+
+::: details Example
+
+Disable contributors globally:
+
+```ts twoslash {4} title=".vuepress/theme.ts"
+import { hopeTheme } from "vuepress-theme-hope";
+
+export default hopeTheme({
+  contributors: false,
+});
+```
+
+Disable changelog in `example.md` page:
+
+```md title="example.md"
+---
+changelog: false
+---
+```
+
+:::
 
 [git]: https://ecosystem.vuejs.press/plugins/development/git.html
