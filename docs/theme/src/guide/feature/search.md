@@ -187,19 +187,17 @@ The theme adds built-in support for [`@vuepress/plugin-docsearch`][docsearch], [
 
 1. Customize the plugin with `plugins.docsearch` in theme options.
 
-   ```ts twoslash {7-10} title=".vuepress/config.ts"
+   ```ts twoslash {5-8} title=".vuepress/theme.ts"
    import { hopeTheme } from "vuepress-theme-hope";
 
-   export default {
-     theme: hopeTheme({
-       plugins: {
-         docsearch: {
-           // plugin options here
-           // appId, apiKey and indexName are required
-         },
+   export default hopeTheme({
+     plugins: {
+       docsearch: {
+         // plugin options here
+         // appId, apiKey and indexName are required
        },
-     }),
-   };
+     },
+   });
    ```
 
 ::: info More
@@ -238,20 +236,17 @@ See [plugin docs][docsearch] for how to use docsearch plugin and its available o
 
    You can set `plugins.slimsearch` to `true` to enable it directly, or set it to an object to customize the plugin.
 
-   ```ts twoslash title=".vuepress/config.ts"
+   ```ts twoslash {5-8} title=".vuepress/theme.ts"
    import { hopeTheme } from "vuepress-theme-hope";
 
-   export default {
-     theme: hopeTheme({
-       plugins: {
-         // plugin options
-         slimsearch: {
-           // ...
-         },
-         // or slimsearch: true,
+   export default hopeTheme({
+     plugins: {
+       slimsearch: {
+         // plugin options here
        },
-     }),
-   };
+       // or slimsearch: true,
+     },
+   });
    ```
 
 ::: info More
@@ -288,19 +283,17 @@ See [plugin docs][slimsearch] for available options.
 
 1. Customize `plugins.search` in theme options.
 
-   ```ts twoslash title=".vuepress/config.ts"
+   ```ts twoslash {5-8} title=".vuepress/theme.ts"
    import { hopeTheme } from "vuepress-theme-hope";
 
-   export default {
-     theme: hopeTheme({
-       plugins: {
-         search: {
-           // plugin options here
-         },
-         // or search: true,
+   export default hopeTheme({
+     plugins: {
+       search: {
+         // plugin options here
        },
-     }),
-   };
+       // or search: true,
+     },
+   });
    ```
 
 ::: info More

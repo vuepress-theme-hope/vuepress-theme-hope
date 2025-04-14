@@ -186,19 +186,17 @@ tag:
 
 1. 通过 `plugins.docsearch` 选项配置插件
 
-   ```ts twoslash {7-10} title=".vuepress/config.ts"
+   ```ts twoslash {5-8} title=".vuepress/theme.ts"
    import { hopeTheme } from "vuepress-theme-hope";
 
-   export default {
-     theme: hopeTheme({
-       plugins: {
-         docsearch: {
-           // 你的选项
-           // appId, apiKey 和 indexName 是必填的
-         },
+   export default hopeTheme({
+     plugins: {
+       docsearch: {
+         // 你的选项
+         // appId, apiKey 和 indexName 是必填的
        },
-     }),
-   };
+     },
+   });
    ```
 
 ::: info 更多
@@ -237,20 +235,17 @@ tag:
 
    你可以将 `plugins.slimsearch` 设置为 `true` 来直接启用它，或者将其设置为一个对象来自定义插件。
 
-   ```ts twoslash title=".vuepress/config.ts"
+   ```ts twoslash {5-8} title=".vuepress/theme.ts"
    import { hopeTheme } from "vuepress-theme-hope";
 
-   export default {
-     theme: hopeTheme({
-       plugins: {
+   export default hopeTheme({
+     plugins: {
+       slimsearch: {
          // 插件选项
-         slimsearch: {
-           // ...
-         },
-         // 或 slimsearch: true,
        },
-     }),
-   };
+       // 或 slimsearch: true,
+     },
+   });
    ```
 
 ::: info 更多
@@ -289,20 +284,18 @@ tag:
 
 1. 在主题选项中配置 `plugins.search`。
 
-   ```ts twoslash title=".vuepress/config.ts"
+   ```ts twoslash {5-8} title=".vuepress/theme.ts"
    import { hopeTheme } from "vuepress-theme-hope";
 
-   export default {
-     theme: hopeTheme({
-       plugins: {
-         // 插件选项
-         search: {
-           // ...
-         },
-         // 或 search: true,
+   export default hopeTheme({
+     plugins: {
+       // 插件选项
+       search: {
+         // ...
        },
-     }),
-   };
+       // 或 search: true,
+     },
+   });
    ```
 
 ::: info 更多

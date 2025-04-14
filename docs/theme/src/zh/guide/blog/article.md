@@ -117,38 +117,32 @@ tag:
 
 你应设置以下选项：
 
-```ts twoslash
+```ts twoslash title=".vuepress/theme.ts"
 import { dateSorter } from "@vuepress/helper";
-import { defineUserConfig } from "vuepress";
 import { hopeTheme } from "vuepress-theme-hope";
 
-export default defineUserConfig({
-  // other config
-  // ...
+export default hopeTheme({
+  blogLocales: {
+    slide: "幻灯片",
+    original: "原创",
+  },
 
-  theme: hopeTheme({
-    blogLocales: {
-      slide: "幻灯片",
-      original: "原创",
+  plugins: {
+    blog: {
+      type: [
+        {
+          key: "slide",
+          filter: (page) => page.frontmatter.layout === "Slide",
+        },
+        {
+          key: "original",
+          filter: (page) => !!page.frontmatter.original,
+          sorter: (pageA, pageB) =>
+            dateSorter(pageA.frontmatter.date, pageB.frontmatter.date),
+        },
+      ],
     },
-
-    plugins: {
-      blog: {
-        type: [
-          {
-            key: "slide",
-            filter: (page) => page.frontmatter.layout === "Slide",
-          },
-          {
-            key: "original",
-            filter: (page) => !!page.frontmatter.original,
-            sorter: (pageA, pageB) =>
-              dateSorter(pageA.frontmatter.date, pageB.frontmatter.date),
-          },
-        ],
-      },
-    },
-  }),
+  },
 });
 ```
 
