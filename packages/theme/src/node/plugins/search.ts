@@ -6,6 +6,7 @@ import {
   startsWith,
 } from "@vuepress/helper";
 import type { DocSearchPluginOptions } from "@vuepress/plugin-docsearch";
+import type { MeiliSearchPluginOptions } from "@vuepress/plugin-meilisearch";
 import type { SearchPluginOptions } from "@vuepress/plugin-search";
 import type { SlimSearchPluginOptions } from "@vuepress/plugin-slimsearch";
 import type { App, Page, Plugin } from "vuepress/core";
@@ -21,6 +22,8 @@ import { logger } from "../utils.js";
 
 let docsearchPlugin: ((options: DocSearchPluginOptions) => Plugin) | null =
   null;
+let meilisearchPlugin: ((options: MeiliSearchPluginOptions) => Plugin) | null =
+  null;
 let searchPlugin: ((options: SearchPluginOptions) => Plugin) | null = null;
 let slimsearchPlugin: ((options: SlimSearchPluginOptions) => Plugin) | null =
   null;
@@ -28,6 +31,12 @@ let cut: ((content: string, strict?: boolean) => string[]) | null = null;
 
 try {
   ({ docsearchPlugin } = await import("@vuepress/plugin-docsearch"));
+} catch {
+  // Do nothing
+}
+
+try {
+  ({ meilisearchPlugin } = await import("@vuepress/plugin-meilisearch"));
 } catch {
   // Do nothing
 }
@@ -70,6 +79,18 @@ export const getSearchPlugin = (
     }
 
     return docsearchPlugin(plugins.docsearch);
+  }
+
+  if (isPlainObject(plugins.meilisearch)) {
+    if (!meilisearchPlugin) {
+      logger.error(
+        `${colors.cyan("@vuepress/plugin-meilisearch")} is not installed!`,
+      );
+
+      return null;
+    }
+
+    return meilisearchPlugin(plugins.meilisearch);
   }
 
   if (plugins.slimsearch) {
