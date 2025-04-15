@@ -34,7 +34,6 @@ export default {
         "Share",
         "SiteInfo",
         "StackBlitz",
-        "XiGua",
         "VPBanner",
         "VPCard",
         "VidStack",

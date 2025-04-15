@@ -24,7 +24,6 @@ Available components:
 - VPBanner: A banner component
 - VPCard: A card component
 - VidStack: Audio/Video player powered by VidStack
-- XiGua: Embedded XiGua video
 
 To enable components, you should set `plugins.components.components` with an array of components names.
 
@@ -55,7 +54,6 @@ export default hopeTheme({
         "VPBanner",
         "VPCard",
         "VidStack",
-        "XiGua",
       ],
     },
   },

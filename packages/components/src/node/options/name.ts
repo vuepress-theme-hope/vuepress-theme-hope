@@ -16,5 +16,4 @@ export type AvailableComponent =
   | "SiteInfo"
   | "VPBanner"
   | "VPCard"
-  | "VidStack"
-  | "XiGua";
+  | "VidStack";

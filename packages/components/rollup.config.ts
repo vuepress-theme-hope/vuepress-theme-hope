@@ -20,7 +20,6 @@ export default [
         "components/VPCard",
         "components/VidStack",
         "components/VideoPlayer",
-        "components/XiGua",
         "components/YouTube",
         "index",
       ],
