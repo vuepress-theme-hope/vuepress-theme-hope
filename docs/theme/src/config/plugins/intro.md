@@ -104,6 +104,8 @@ These plugins are supported by theme, but you need to install them manually whil
 
 - [@vuepress/plugin-docsearch][docsearch]: Crawler based search plugin with DocSearch
 
+- [@vuepress/plugin-meilisearch][meilisearch]: Open source search plugin with MeiliSearch
+
 - [@vuepress/plugin-search][search]: Simple client search plugin
 
 - [@vuepress/plugin-slimsearch][slimsearch]: Client search plugin using SlimSearch
@@ -129,6 +131,7 @@ These plugins are supported by theme, but you need to install them manually whil
 [markdown-hint]: https://ecosystem.vuejs.press/plugins/markdown/markdown-hint.html
 [markdown-image]: https://ecosystem.vuejs.press/plugins/markdown/markdown-image.html
 [markdown-math]: https://ecosystem.vuejs.press/plugins/markdown/markdown-math.html
+[meilisearch]: https://ecosystem.vuejs.press/plugins/search/meilisearch.html
 [notice]: https://ecosystem.vuejs.press/plugins/features/notice.html
 [nprogress]: https://ecosystem.vuejs.press/plugins/features/nprogress.html
 [photo-swipe]: https://ecosystem.vuejs.press/plugins/features/photo-swipe.html

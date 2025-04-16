@@ -114,6 +114,7 @@
   "peerDependencies": {
     "@vuepress/plugin-docsearch": "catalog:vuepress",
     "@vuepress/plugin-feed": "catalog:vuepress",
+    "@vuepress/plugin-meilisearch": "catalog:vuepress",
     "@vuepress/plugin-prismjs": "catalog:vuepress",
     "@vuepress/plugin-pwa": "catalog:vuepress",
     "@vuepress/plugin-revealjs": "catalog:vuepress",
@@ -132,6 +133,9 @@
       "optional": true
     },
     "@vuepress/plugin-feed": {
+      "optional": true
+    },
+    "@vuepress/plugin-meilisearch": {
       "optional": true
     },
     "@vuepress/plugin-prismjs": {
