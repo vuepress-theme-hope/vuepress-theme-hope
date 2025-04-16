@@ -4,6 +4,14 @@ All notable changes to this project will be documented in this file. See [Conven
 
 <!-- #region recent-change -->
 
+## [2.0.0-rc.82](https://github.com/vuepress-theme-hope/vuepress-theme-hope/compare/v2.0.0-rc.81...v2.0.0-rc.82) (2025-04-16)
+
+### ✨ Features
+
+- **theme:** add built-in support for meilisearch ([efb508d](https://github.com/vuepress-theme-hope/vuepress-theme-hope/commit/efb508d2e3589aa8a5feb1ca67697adf0bf2e9b0))
+
+<!-- #region recent-change -->
+
 ## [2.0.0-rc.81](https://github.com/vuepress-theme-hope/vuepress-theme-hope/compare/v2.0.0-rc.80...v2.0.0-rc.81) (2025-04-14)
 
 ### ⚠ BREAKING CHANGES
