@@ -17,17 +17,14 @@ The theme adds tip, note, info, warning, danger and detail hint box.
 
 Hint box is enabled by default, and we allow you to disable it:
 
-```ts twoslash {8} title=".vuepress/config.ts"
-import { defineUserConfig } from "vuepress";
+```ts twoslash {6} title=".vuepress/theme.ts"
 import { hopeTheme } from "vuepress-theme-hope";
 
-export default defineUserConfig({
-  theme: hopeTheme({
-    markdown: {
-      // disable hint box
-      hint: false,
-    },
-  }),
+export default hopeTheme({
+  markdown: {
+    // disable hint box
+    hint: false,
+  },
 });
 ```
 

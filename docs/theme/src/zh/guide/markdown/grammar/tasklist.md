@@ -14,16 +14,13 @@ tag:
 
 ## 配置
 
-```ts twoslash {7} title=".vuepress/config.ts"
-import { defineUserConfig } from "vuepress";
+```ts twoslash {6} title=".vuepress/theme.ts"
 import { hopeTheme } from "vuepress-theme-hope";
 
-export default defineUserConfig({
-  theme: hopeTheme({
-    markdown: {
-      tasklist: true,
-    },
-  }),
+export default hopeTheme({
+  markdown: {
+    tasklist: true,
+  },
 });
 ```
 
@@ -43,29 +40,26 @@ export default defineUserConfig({
 
 除了设置 `markdown.tasklist: true` 之外，你还可以将对象作为选项传递:
 
-```ts twoslash {7-21} title=".vuepress/config.ts"
-import { defineUserConfig } from "vuepress";
+```ts twoslash {5-19} title=".vuepress/theme.ts"
 import { hopeTheme } from "vuepress-theme-hope";
 
-export default defineUserConfig({
-  theme: hopeTheme({
-    markdown: {
-      tasklist: {
-        /**
-         * 是否禁用 checkbox
-         *
-         * @default true
-         */
-        disabled: false,
+export default hopeTheme({
+  markdown: {
+    tasklist: {
+      /**
+       * 是否禁用 checkbox
+       *
+       * @default true
+       */
+      disabled: false,
 
-        /**
-         * 是否使用 `<label>` 来包裹文字
-         *
-         * @default true
-         */
-        label: false,
-      },
+      /**
+       * 是否使用 `<label>` 来包裹文字
+       *
+       * @default true
+       */
+      label: false,
     },
-  }),
+  },
 });
 ```

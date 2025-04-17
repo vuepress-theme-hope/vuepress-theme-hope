@@ -8,35 +8,44 @@ category:
 
 ## 确认使用正确的环境
 
-`vuepress-theme-hope` 仅支持 `^18.19.0 || >= 20.6.0` 版本的 Node.js。
+`vuepress-theme-hope` 仅支持当前的环境：
 
-你可以通过 `node -v` 查看它的版本，如果不满足要求，请 [下载并安装 LTS 版本的 Node.js](../get-started/env.md#nodejs)。
+| 环境    | 版本要求                  | 检查版本的方法 | 额外要求                                      |
+| ------- | ------------------------- | -------------- | --------------------------------------------- |
+| Node.js | `^18.19.0 \|\| >= 20.6.0` | `node -v`      |                                               |
+| pnpm    | `>= 7`                    | `pnpm -v`      |                                               |
+| npm     | `>= 8`                    | `npm -v`       |                                               |
+| yarn    | `>= 2`                    | `yarn -v`      | `nodeLinker: 'node-modules'` in `.yarnrc.yml` |
 
-同时，你应该使用满足下方要求的包管理器 (推荐 `pnpm@10`):
+如果你的 Node.js 版本不满足要求，你应该 [下载并安装 LTS 版本的 Node.js](../get-started/env.md#nodejs)。
 
-- pnpm: >= 7
+要使用正确的包管理器，请运行 `corepack enable` (在 Windows 上需要以管理员身份运行)，然后运行以下命令之一：
 
-  检查: `pnpm -v`
-
-- npm: >= 8
-
-  检查: `npm -v`
-
-- yarn: >= 2
-
-  检查: `yarn -v` (同时需要在 `.yarnrc.yml` 中设置 `nodeLinker: 'node-modules'`)
-
-想要使用正确的包管理器，运行 `corepack enable` (在 Windows 上可能需要以管理员身份运行)，然后运行下列命令之一:
-
-- npm: `corepack use npm@10`
+- npm: `corepack use npm@11`
 - yarn: `corepack use yarn@4`
-- pnpm: `corepack use pnpm@9`
+- pnpm: `corepack use pnpm@10`
+
+## 检查浏览器是否受支持
+
+`vuepress-theme-hope` 官方承诺：
+
+- 完全支持：最新 3 年版本的 Chrome、Firefox、Safari 和 Edge
+- 可以被 polyfill：最新 5 年版本的上述浏览器
+
+目前，默认支持以下浏览器：
+
+- Chrome >= 87 (发布于 2020.11.17)
+- Edge >= 88 (发布于 2021.01.22)
+- Firefox >= 78 (发布于 2020.06.30)
+- Safari >= 14.1 (发布于 2021.04.26)
 
 ## 确定使用最新版本与正确的依赖树
 
-请确保你在使用最新的 `vuepress` ，插件以及 `vuepress-theme-hope` V2 版本，因为一些你遇到的 bug 可能已经在新版本中修复。
+请确保你在使用最新的 VuePress V2 ，VuePress V2 插件以及 `vuepress-theme-hope` V2 版本，因为一些你遇到的 bug 可能已经在新版本中修复。
 
-另外在一些情况下，你可能会在升级某些依赖后生成错误的依赖树。为了让 VuePress 正确工作，在整个项目中，应该只能存在一个版本的 `vue` 和 `vuepress`。多个版本的包会导致应用的不同部分在使用不同的包，进而引发如 `useXXX() is called without provider` 之类的错误。
+另外在一些情况下，你可能会在升级某些依赖后生成错误的依赖树。
+
+为了让 VuePress 正确工作，在整个项目中，应该只能存在一个版本的 `vue` 和 `vuepress`。多个版本的包会导致应用的不同部分在使用不同的包，进而引发如 `useXXX() is called without provider` 之类的错误。
 
 你可以通过执行下列命令来更新到最新版本。
 

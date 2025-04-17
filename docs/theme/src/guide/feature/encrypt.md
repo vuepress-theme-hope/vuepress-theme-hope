@@ -24,44 +24,40 @@ Please **DO NOT USE** this encryption function for any sensitive and confidentia
 
 You can configure encryption options through the `encrypt.config` options in theme options.
 
-```ts twoslash {8,10} title=".vuepress/config.ts"
+```ts twoslash {7,9} title=".vuepress/theme.ts"
 import { hopeTheme } from "vuepress-theme-hope";
 
-export default {
-  theme: hopeTheme({
-    encrypt: {
-      config: {
-        // This will encrypt the entire guide directory, and both passwords are available
-        "/guide/": ["1234", "5678"],
-        // This will only encrypt /config/page.html
-        "/config/page.html": "1234",
-      },
+export default hopeTheme({
+  encrypt: {
+    config: {
+      // This will encrypt the entire guide directory, and both passwords are available
+      "/guide/": ["1234", "5678"],
+      // This will only encrypt /config/page.html
+      "/config/page.html": "1234",
     },
-  }),
-};
+  },
+});
 ```
 
 You can also add hints to the password input box by setting `encrypt.config` to an object with the following format:
 
-```ts twoslash {8-13} title=".vuepress/config.ts"
+```ts twoslash {6-13} title=".vuepress/theme.ts"
 import { hopeTheme } from "vuepress-theme-hope";
 
-export default {
-  theme: hopeTheme({
-    encrypt: {
-      config: {
-        "/guide/": {
-          password: ["1234", "5678"],
-          hint: "Get password from xxx",
-        },
-        "/config/page.html": {
-          password: "1234",
-          hint: "Get password from xxx",
-        },
+export default hopeTheme({
+  encrypt: {
+    config: {
+      "/guide/": {
+        password: ["1234", "5678"],
+        hint: "Get password from xxx",
+      },
+      "/config/page.html": {
+        password: "1234",
+        hint: "Get password from xxx",
       },
     },
-  }),
-};
+  },
+});
 ```
 
 ::: warning
@@ -80,20 +76,18 @@ For global encryption, you can set one or more passwords in the format of string
 
 If you want to add hints to the password input box, you can set `encrypt.admin` to an object with the following format:
 
-```ts twoslash {8,10} title=".vuepress/config.ts"
+```ts twoslash {5-9} title=".vuepress/theme.ts"
 import { hopeTheme } from "vuepress-theme-hope";
 
-export default {
-  theme: hopeTheme({
-    encrypt: {
-      global: true,
-      admin: {
-        password: "Mister-Hope", // can also be an array
-        hint: "The password is author's name",
-      },
+export default hopeTheme({
+  encrypt: {
+    global: true,
+    admin: {
+      password: "Mister-Hope", // can also be an array
+      hint: "The password is author's name",
     },
-  }),
-};
+  },
+});
 ```
 
 ::: tip

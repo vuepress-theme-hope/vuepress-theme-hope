@@ -75,15 +75,10 @@ export default {
 你可以在客户端配置文件中引入并调用 `defineSandpackConfig` 来自定义 `sandpack-vue3` ：
 
 ```ts title=".vuepress/client.ts"
-import { defineClientConfig } from "vuepress/client";
 import { defineSandpackConfig } from "vuepress-plugin-md-enhance/client";
 
 defineSandpackConfig({
   // 这里是 sandpack 配置
-});
-
-export default defineClientConfig({
-  // ...
 });
 ```
 

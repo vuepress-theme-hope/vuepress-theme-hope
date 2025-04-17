@@ -14,16 +14,13 @@ Let the Markdown file in your VuePress site support task list.
 
 ## Settings
 
-```ts twoslash {7} title=".vuepress/config.ts"
-import { defineUserConfig } from "vuepress";
+```ts twoslash {6} title=".vuepress/theme.ts"
 import { hopeTheme } from "vuepress-theme-hope";
 
-export default defineUserConfig({
-  theme: hopeTheme({
-    markdown: {
-      tasklist: true,
-    },
-  }),
+export default hopeTheme({
+  markdown: {
+    tasklist: true,
+  },
 });
 ```
 
@@ -43,29 +40,26 @@ export default defineUserConfig({
 
 Besides setting `markdown.tasklist: true` in theme options, you can also pass objects as options:
 
-```ts twoslash {7-21} title=".vuepress/config.ts"
-import { defineUserConfig } from "vuepress";
+```ts twoslash {5-19} title=".vuepress/theme.ts"
 import { hopeTheme } from "vuepress-theme-hope";
 
-export default defineUserConfig({
-  theme: hopeTheme({
-    markdown: {
-      tasklist: {
-        /**
-         * Whether disable checkbox
-         *
-         * @default true
-         */
-        disabled: false,
+export default hopeTheme({
+  markdown: {
+    tasklist: {
+      /**
+       * Whether disable checkbox
+       *
+       * @default true
+       */
+      disabled: false,
 
-        /**
-         * Whether use `<label>` to wrap text
-         *
-         * @default true
-         */
-        label: false,
-      },
+      /**
+       * Whether use `<label>` to wrap text
+       *
+       * @default true
+       */
+      label: false,
     },
-  }),
+  },
 });
 ```

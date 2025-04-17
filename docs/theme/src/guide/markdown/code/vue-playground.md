@@ -22,16 +22,13 @@ You can use [Vue Demo](./demo.md#vue) and [Playground Vue Preset](./playground.m
 
 <!-- @include: @md-enhance/guide/code/vue-playground.md#settings -->
 
-```ts twoslash {7} title=".vuepress/config.ts"
-import { defineUserConfig } from "vuepress";
+```ts twoslash {5} title=".vuepress/theme.ts"
 import { hopeTheme } from "vuepress-theme-hope";
 
-export default defineUserConfig({
-  theme: hopeTheme({
-    markdown: {
-      vuePlayground: true,
-    },
-  }),
+export default hopeTheme({
+  markdown: {
+    vuePlayground: true,
+  },
 });
 ```
 

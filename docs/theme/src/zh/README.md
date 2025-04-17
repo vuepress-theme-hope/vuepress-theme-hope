@@ -1,14 +1,15 @@
 ---
-containerClass: home
 home: true
 title: 主页
 icon: home
+heroText: VuePress Theme Hope
+tagline: 一个具有强大功能的 vuepress 主题✨
+heroStyle:
+  min-height: 600px
 bgImage: https://theme-hope-assets.vuejs.press/bg/6-light.svg
 bgImageDark: https://theme-hope-assets.vuejs.press/bg/6-dark.svg
 bgImageStyle:
   background-attachment: fixed
-heroText: VuePress Theme Hope
-tagline: 一个具有强大功能的 vuepress 主题✨
 actions:
   - text: 快速上手
     link: ./get-started/

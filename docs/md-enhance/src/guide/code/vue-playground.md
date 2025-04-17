@@ -77,15 +77,10 @@ You can see the below demos to see more details.
 You can import and call `defineVuePlaygroundConfig` in [client config file][client-config] to customize `@vue/repl`:
 
 ```ts title=".vuepress/client.ts"
-import { defineClientConfig } from "vuepress/client";
 import { defineVuePlaygroundConfig } from "vuepress-plugin-md-enhance/client";
 
 defineVuePlaygroundConfig({
   // `@vue/repl` options here
-});
-
-export default defineClientConfig({
-  // ...
 });
 ```
 

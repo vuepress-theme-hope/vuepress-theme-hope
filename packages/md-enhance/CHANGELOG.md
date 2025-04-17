@@ -4,6 +4,14 @@ All notable changes to this project will be documented in this file. See [Conven
 
 <!-- #region recent-change -->
 
+## [2.0.0-rc.81](https://github.com/vuepress-theme-hope/vuepress-theme-hope/compare/v2.0.0-rc.80...v2.0.0-rc.81) (2025-04-14)
+
+### 🚀 Performance Improvements
+
+- improve webpack perf ([#4845](https://github.com/vuepress-theme-hope/vuepress-theme-hope/issues/4845)) ([abe3134](https://github.com/vuepress-theme-hope/vuepress-theme-hope/commit/abe31343abd2cfd117692591e1658af7a07cbcec))
+
+<!-- #region recent-change -->
+
 ## [2.0.0-rc.80](https://github.com/vuepress-theme-hope/vuepress-theme-hope/compare/v2.0.0-rc.79...v2.0.0-rc.80) (2025-04-12)
 
 ### ✨ Features

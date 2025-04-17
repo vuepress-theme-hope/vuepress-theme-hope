@@ -39,6 +39,16 @@ tag:
 - `docsDir`: 文档在仓库中的目录，默认为根目录
 - `docsBranch`: 文档存放的分支，默认为 `"main"`
 
+```ts twoslash {4-6} title=".vuepress/theme.ts"
+import { hopeTheme } from "vuepress-theme-hope";
+
+export default hopeTheme({
+  docsRepo: "vuepress/docs",
+  docsDir: "docs",
+  docsBranch: "next",
+});
+```
+
 ## 显示控制
 
 如果你想要全局禁用这些项目的显示，请在主题选项中，将以下对应项目设置为 `false`。你也可以在 Frontmatter 中设置这些项目来启用/禁用指定页面:
@@ -47,5 +57,27 @@ tag:
 - `contributors`: 是否显示页面贡献者
 - `editLink`: 是否展示编辑此页链接
 - `changelog`: 是否显示变更日志
+
+::: details 示例
+
+全局禁用贡献者:
+
+```ts twoslash {4} title=".vuepress/theme.ts"
+import { hopeTheme } from "vuepress-theme-hope";
+
+export default hopeTheme({
+  contributors: false,
+});
+```
+
+在当前 `example.md` 中禁用变更日志:
+
+```md title="example.md"
+---
+changelog: false
+---
+```
+
+:::
 
 [git]: https://ecosystem.vuejs.press/zh/plugins/development/git.html

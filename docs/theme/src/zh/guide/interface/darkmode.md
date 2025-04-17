@@ -17,14 +17,14 @@ tag:
 
 你可以在主题选项中通过 `darkmode` 来配置深色模式。
 
-```ts twoslash {5} title=".vuepress/config.ts"
+```ts twoslash {4} title=".vuepress/theme.ts"
 import { hopeTheme } from "vuepress-theme-hope";
 
-export default {
-  theme: hopeTheme({
-    darkmode: "switch", // 或 "toggle", "auto", "enable", "disable"
-  }),
-};
+export default hopeTheme({
+  darkmode: "switch", // 或 "toggle", "auto", "enable", "disable"
+
+  // 其他选项...
+});
 ```
 
 可选的值:
@@ -45,14 +45,25 @@ export default {
 
 - 在 Markdown 文件或 Vue 模板中，你可以直接获取 `$isDarkMode` 来获取当前是否为深色模式。
 
+  ```md
+  Darkmode enabled: {{ $isDarkMode }}
+
+  <img v-if="$isDarkMode" src="/dark.png" alt="dark" />
+  <img v-else src="/light.png" alt="light" />
+  ```
+
 - 在脚本中，你可以从 `@vuepress/helper/client` 导入 `useDarkMode` 来获取深色模式状态:
 
   ```ts twoslash
   import { useDarkMode } from "@vuepress/helper/client";
 
-  const isDarkMode = useDarkMode();
+  export default {
+    setup() {
+      const isDarkMode = useDarkMode();
 
-  console.log(isDarkMode.value); // get darkmode status
+      console.log(isDarkMode.value); // 获取深色模式状态
+    },
+  };
   ```
 
   如果 `@vuepress/helper` 没有安装，你应该先安装它:

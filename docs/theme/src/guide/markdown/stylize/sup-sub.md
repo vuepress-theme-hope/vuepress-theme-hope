@@ -15,19 +15,16 @@ Let the Markdown file in your VuePress site support Subscript and Superscript.
 
 ## Settings
 
-```ts twoslash {8,10} title=".vuepress/config.ts"
-import { defineUserConfig } from "vuepress";
+```ts twoslash {6,8} title=".vuepress/theme.ts"
 import { hopeTheme } from "vuepress-theme-hope";
 
-export default defineUserConfig({
-  theme: hopeTheme({
-    markdown: {
-      // Enable Subscript
-      sub: true,
-      // Enable  Superscript
-      sup: true,
-    },
-  }),
+export default hopeTheme({
+  markdown: {
+    // Enable Subscript
+    sub: true,
+    // Enable Superscript
+    sup: true,
+  },
 });
 ```
 

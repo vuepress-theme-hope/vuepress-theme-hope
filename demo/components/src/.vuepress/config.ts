@@ -31,7 +31,6 @@ export default defineUserConfig({
       "/demo/vp-banner",
       "/demo/vp-card",
       "/demo/vid-stack",
-      "/demo/xi-gua",
     ],
   }),
 
@@ -53,7 +52,6 @@ export default defineUserConfig({
         "VPBanner",
         "VPCard",
         "VidStack",
-        "XiGua",
       ],
     }),
   ],

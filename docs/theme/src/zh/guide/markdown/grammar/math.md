@@ -46,18 +46,15 @@ npm i -D mathjax-full
 
 之后启用它:
 
-```ts twoslash {7,9,11,13} title=".vuepress/config.ts"
-import { defineUserConfig } from "vuepress";
+```ts twoslash {6} title=".vuepress/theme.ts"
 import { hopeTheme } from "vuepress-theme-hope";
 
-export default defineUserConfig({
-  theme: hopeTheme({
-    markdown: {
-      math: {
-        type: "katex", // 或 'mathjax'
-      },
+export default hopeTheme({
+  markdown: {
+    math: {
+      type: "katex", // 或 'mathjax'
     },
-  }),
+  },
 });
 ```
 

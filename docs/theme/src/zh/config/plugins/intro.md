@@ -104,6 +104,8 @@ tag:
 
 - [@vuepress/plugin-docsearch][docsearch]: 基于 DocSearch 的搜索插件
 
+- [@vuepress/plugin-meilisearch][meilisearch]: 基于 MeiliSearch 的开源搜索插件
+
 - [@vuepress/plugin-search][search]: 简单的客户端搜索插件
 
 - [@vuepress/plugin-slimsearch][slimsearch]: 基于 SlimSearch 的客户端搜索插件
@@ -131,6 +133,7 @@ tag:
 [markdown-image]: https://ecosystem.vuejs.press/zh/plugins/markdown/markdown-image.html
 [markdown-math]: https://ecosystem.vuejs.press/zh/plugins/markdown/markdown-math.html
 [links-check]: https://ecosystem.vuejs.press/zh/plugins/markdown/links-check.html
+[meilisearch]: https://ecosystem.vuejs.press/zh/plugins/search/meilisearch.html
 [notice]: https://ecosystem.vuejs.press/zh/plugins/features/notice.html
 [nprogress]: https://ecosystem.vuejs.press/zh/plugins/features/nprogress.html
 [photo-swipe]: https://ecosystem.vuejs.press/zh/plugins/features/photo-swipe.html

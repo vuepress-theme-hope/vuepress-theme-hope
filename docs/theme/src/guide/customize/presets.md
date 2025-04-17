@@ -51,8 +51,7 @@ export default defineUserConfig({
 });
 ```
 
-```vue
-<!-- .vuepress/components/BlogHero.vue -->
+```vue title=".vuepress/components/BlogHero.vue"
 <script setup lang="ts">
 import BlogHero from "vuepress-theme-hope/blog/components/BlogHero.js";
 import BingHeroBackground from "vuepress-theme-hope/presets/BingHeroBackground.js";
@@ -101,8 +100,7 @@ export default defineUserConfig({
 });
 ```
 
-```vue
-<!-- .vuepress/components/BlogHero.vue -->
+```vue title=".vuepress/components/BlogHero.vue"
 <script setup lang="ts">
 import BlogHero from "vuepress-theme-hope/blog/components/BlogHero.js";
 import HitokotoBlogHero from "vuepress-theme-hope/presets/HitokotoBlogHero.js";
@@ -305,26 +303,24 @@ export default defineClientConfig({
 
   ::: details Code Example
 
-  ```ts twoslash
+  ```ts twoslash title=".vuepress/theme.ts"
   import { hopeTheme } from "vuepress-theme-hope";
   import { getRecentUpdatedArticles } from "vuepress-theme-hope/presets/getRecentUpdatedArticles.js";
 
-  export default {
-    theme: hopeTheme({
-      plugins: {
-        blog: {
-          type: [
-            getRecentUpdatedArticles({
-              locales: {
-                "/": "Recent Updated",
-                "/zh/": "最近更新",
-              },
-            }),
-          ],
-        },
+  export default hopeTheme({
+    plugins: {
+      blog: {
+        type: [
+          getRecentUpdatedArticles({
+            locales: {
+              "/": "Recent Updated",
+              "/zh/": "最近更新",
+            },
+          }),
+        ],
       },
-    }),
-  };
+    },
+  });
   ```
 
   :::
@@ -357,26 +353,24 @@ export default defineClientConfig({
 
   ::: details Code Example
 
-  ```ts twoslash
+  ```ts twoslash title=".vuepress/theme.ts"
   import { hopeTheme } from "vuepress-theme-hope";
   import { getSlides } from "vuepress-theme-hope/presets/getSlides.js";
 
-  export default {
-    theme: hopeTheme({
-      plugins: {
-        blog: {
-          type: [
-            getSlides({
-              locales: {
-                "/": "Slides",
-                "/zh/": "幻灯片",
-              },
-            }),
-          ],
-        },
+  export default hopeTheme({
+    plugins: {
+      blog: {
+        type: [
+          getSlides({
+            locales: {
+              "/": "Slides",
+              "/zh/": "幻灯片",
+            },
+          }),
+        ],
       },
-    }),
-  };
+    },
+  });
   ```
 
   :::

@@ -3,7 +3,7 @@ title: Content
 icon: pen
 dir:
   collapsible: false
-  order: 2
+  order: 3
   link: true
 index: false
 category:

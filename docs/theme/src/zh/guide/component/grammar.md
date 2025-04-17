@@ -15,16 +15,16 @@ tag:
 
 ## 配置
 
-```ts twoslash {7} title=".vuepress/config.ts"
+```ts twoslash {5} title=".vuepress/theme.ts"
 import { defineUserConfig } from "vuepress";
 import { hopeTheme } from "vuepress-theme-hope";
 
-export default defineUserConfig({
-  theme: hopeTheme({
-    markdown: {
-      component: true,
-    },
-  }),
+export default hopeTheme({
+  markdown: {
+    component: true,
+
+    // 其他选项...
+  },
 });
 ```
 

@@ -27,14 +27,15 @@ tag:
 
 同导航栏，你可以填入一个包含多个文件链接的数组，作为侧边栏基本的配置:
 
-```ts twoslash {5} title=".vuepress/config.ts"
+```ts twoslash {4,6-7} title=".vuepress/theme.ts"
 import { hopeTheme } from "vuepress-theme-hope";
 
-export default {
-  theme: hopeTheme({
-    sidebar: ["/zh/README.md", "/zh/guide/README.md", "/zh/config/README.md"],
-  }),
-};
+export default hopeTheme({
+  sidebar: ["/zh/README.md", "/zh/guide/README.md", "/zh/config/README.md"],
+
+  // 等价于:
+  // sidebar: ["/zh/", "/zh/guide/", "/zh/config/"],
+});
 ```
 
 数组的每一项会自动提取对应文件的图标与标题，渲染为一个侧边栏项目。
@@ -54,29 +55,27 @@ export default {
 - `icon`: 项目图标 (可选)
 - `activeMatch`: 项目激活匹配 (可选)，支持正则字符串。
 
-```ts twoslash {5-22} title=".vuepress/config.ts"
+```ts twoslash {4-19} title=".vuepress/theme.ts"
 import { hopeTheme } from "vuepress-theme-hope";
 
-export default {
-  theme: hopeTheme({
-    sidebar: [
-      {
-        text: "指南",
-        link: "/zh/guide/README.md",
-        icon: "lightbulb",
-      },
-      { text: "配置", link: "/zh/config/README.md", icon: "config" },
-      {
-        text: "常见问题",
-        link: "/zh/faq.md",
-        icon: "circle-question",
-        // 会在 `/zh/faq` 开头的路径激活
-        // 所以当你前往 `/zh/faq/xxx.html` 时也会激活
-        activeMatch: "^/zh/faq",
-      },
-    ],
-  }),
-};
+export default hopeTheme({
+  sidebar: [
+    {
+      text: "指南",
+      link: "/zh/guide/README.md",
+      icon: "lightbulb",
+    },
+    { text: "配置", link: "/zh/config/README.md", icon: "config" },
+    {
+      text: "常见问题",
+      link: "/zh/faq.md",
+      icon: "circle-question",
+      // 会在 `/zh/faq` 开头的路径激活
+      // 所以当你前往 `/zh/faq/xxx.html` 时也会激活
+      activeMatch: "^/zh/faq",
+    },
+  ],
+});
 ```
 
 ::: tip activeMatch 的高级用法
@@ -95,72 +94,75 @@ export default {
 
 侧边栏额外支持设置 `collapsible: true` 来使菜单分组可折叠，并且你可以设置 `expanded: true` 来使可折叠的分组默认展开。
 
-```ts twoslash title=".vuepress/config.ts"
+```ts twoslash title=".vuepress/theme.ts"
 import { hopeTheme } from "vuepress-theme-hope";
 
-export default {
-  theme: hopeTheme({
-    sidebar: [
-      {
-        text: "分组 1",
-        icon: "tip",
-        link: "/foo/",
-        prefix: "/foo/",
-        collapsible: true,
-        expanded: true,
-        children: [
-          "README.md" /* /foo/index.html */,
-          /* ... */
-          "geo.md" /* /foo/geo.html */,
-        ],
-      },
-      {
-        text: "分组 2",
-        children: [
-          /* ... */
-          "bar.md" /* /ray/bar.html */,
-          "baz.md" /* /ray/baz.html */,
-        ],
-      },
-    ],
-  }),
-};
+export default hopeTheme({
+  sidebar: [
+    {
+      // 必填，分组标题
+      text: "分组 1",
+      // 可选，分组图标
+      icon: "tip",
+      // 可选，分组链接
+      link: "/foo/",
+      // 可选，分组路径前缀
+      prefix: "/foo/",
+      // 可选，默认为 false
+      collapsible: true,
+      // 可选，表达分可折叠侧边栏组的原始状态，默认为 false
+      expanded: true,
+      // 必填，分组链接列表
+      children: [
+        "README.md" /* /foo/index.html */,
+        /* ... */
+        "geo.md" /* /foo/geo.html */,
+      ],
+    },
+    {
+      text: "分组 2",
+      children: [
+        "bar.md" /* /ray/bar.html */,
+        "baz.md" /* /ray/baz.html */,
+        // ...
+      ],
+    },
+  ],
+});
 ```
 
 侧边栏分组也可以进行嵌套:
 
-```ts twoslash {11-22} title=".vuepress/config.ts"
+```ts twoslash {11-22} title=".vuepress/theme.ts"
 import { hopeTheme } from "vuepress-theme-hope";
 
-export default {
-  theme: hopeTheme({
-    sidebar: [
-      {
-        text: "Group",
-        prefix: "/",
-        children: [
-          "baz" /* /baz.html */,
-          {
-            text: "Sub Group 1",
-            children: ["quz" /* /quz.html */, "xyzzy" /* /xyzzy.html */],
-          },
-          {
-            text: "Sub Group 2",
-            prefix: "corge/",
-            children: [
-              "fred" /* /corge/fred.html */,
-              "grault" /* /corge/grault.html */,
-            ],
-          },
-          "foo" /* /foo.html */,
-        ],
-      },
-    ],
-  }),
-};
+export default hopeTheme({
+  sidebar: [
+    {
+      text: "Group",
+      prefix: "/",
+      children: [
+        "baz" /* /baz.html */,
+        {
+          text: "Sub Group 1",
+          children: ["quz" /* /quz.html */, "xyzzy" /* /xyzzy.html */],
+        },
+        {
+          text: "Sub Group 2",
+          prefix: "corge/",
+          children: [
+            "fred" /* /corge/fred.html */,
+            "grault" /* /corge/grault.html */,
+          ],
+        },
+        "foo" /* /foo.html */,
+      ],
+    },
+  ],
+});
 ```
 
-通常情况下，你可能希望搭配 `prefix` 使用来快速还原文档的结构。
+通常情况下，你可能希望搭配 `prefix` 来快速还原文档的结构。
 
 比如，将你的页面文件为下述的目录结构:
 
@@ -181,36 +183,34 @@ export default {
 
 你就可以进行以下配置:
 
-```ts twoslash title=".vuepress/config.ts"
+```ts twoslash title=".vuepress/theme.ts"
 import { hopeTheme } from "vuepress-theme-hope";
 
-export default {
-  theme: hopeTheme({
-    sidebar: [
-      "/" /* / */,
-      {
-        text: "Foo",
-        prefix: "/foo/",
-        children: [
-          "" /* /foo/ */,
-          "one" /* /foo/one.html */,
-          "two" /* /foo/two.html */,
-        ],
-      },
-      {
-        text: "Bar",
-        prefix: "/bar/",
-        children: [
-          "" /* /bar/ */,
-          "three" /* /bar/three.html */,
-          "four" /* /bar/four.html */,
-        ],
-      },
-      "/contact" /* /contact.html */,
-      "/about" /* /about.html */,
-    ],
-  }),
-};
+export default hopeTheme({
+  sidebar: [
+    "/" /* / */,
+    {
+      text: "Foo",
+      prefix: "/foo/",
+      children: [
+        "" /* /foo/ */,
+        "one" /* /foo/one.html */,
+        "two" /* /foo/two.html */,
+      ],
+    },
+    {
+      text: "Bar",
+      prefix: "/bar/",
+      children: [
+        "" /* /bar/ */,
+        "three" /* /bar/three.html */,
+        "four" /* /bar/four.html */,
+      ],
+    },
+    "/contact" /* /contact.html */,
+    "/about" /* /about.html */,
+  ],
+});
 ```
 
 ### 多个侧边栏
@@ -236,34 +236,36 @@ export default {
 
 你就可以遵循以下的侧边栏配置，来为不同路径显示不同的分组:
 
-```ts twoslash title=".vuepress/config.ts"
+```ts twoslash title=".vuepress/theme.ts"
 import { hopeTheme } from "vuepress-theme-hope";
 
-export default {
-  theme: hopeTheme({
-    sidebar: {
-      "/foo/": [
-        "" /* /foo/ */,
-        "one" /* /foo/one.html */,
-        "two" /* /foo/two.html */,
-      ],
+export default hopeTheme({
+  sidebar: {
+    "/foo/": [
+      "" /* /foo/ */,
+      "one" /* /foo/one.html */,
+      "two" /* /foo/two.html */,
+    ],
 
-      "/bar/": [
-        "" /* /bar/ */,
-        "three" /* /bar/three.html */,
-        "four" /* /bar/four.html */,
-      ],
+    "/bar/": [
+      "" /* /bar/ */,
+      "three" /* /bar/three.html */,
+      "four" /* /bar/four.html */,
+    ],
 
-      // fallback
-      "/": [
-        "" /* / */,
-        "contact" /* /contact.html */,
-        "about" /* /about.html */,
-      ],
-    },
-  }),
-};
+    // 回退
+    "/": ["" /* / */, "contact" /* /contact.html */, "about" /* /about.html */],
+  },
+});
 ```
+
+::: warning
+
+你需要注意对象键声明的顺序。一般来说，你应该将更精确的路径放在前面，因为 VuePress 会遍历侧边栏配置的键名来寻找匹配的配置。一旦成功匹配到当前路径的键名，就会显示对应的侧边栏配置。
+
+在这种情况下，回退侧边栏必须最后定义。
+
+:::
 
 ## 通过文件结构自动生成侧边栏 <Badge text="新增" type="tip" />
 
@@ -288,25 +290,19 @@ export default {
 
 你可以将原来的配置改为:
 
-```ts twoslash {6,8} title=".vuepress/config.ts"
+```ts twoslash {5,7} title=".vuepress/theme.ts"
 import { hopeTheme } from "vuepress-theme-hope";
 
-export default {
-  theme: hopeTheme({
-    sidebar: {
-      "/foo/": "structure",
+export default hopeTheme({
+  sidebar: {
+    "/foo/": "structure",
 
-      "/bar/": "structure",
+    "/bar/": "structure",
 
-      // fallback
-      "/": [
-        "" /* / */,
-        "contact" /* /contact.html */,
-        "about" /* /about.html */,
-      ],
-    },
-  }),
-};
+    // fallback
+    "/": ["" /* / */, "contact" /* /contact.html */, "about" /* /about.html */],
+  },
+});
 ```
 
 在上述的修改中，由于原侧边栏数组即为相关路径下的全部文件，你可以轻松将其替换为 `"structure"` 关键词。
@@ -412,41 +408,37 @@ sidebar: false
 
 这个功能是通过插件 `@vuepress/plugin-active-header-links` 实现的，并可以通过以下的配置来禁用:
 
-```ts twoslash {6} title=".vuepress/config.js"
+```ts twoslash {5} title=".vuepress/theme.ts"
 import { hopeTheme } from "vuepress-theme-hope";
 
-export default {
-  theme: hopeTheme({
-    plugins: {
-      activeHeaderLinks: false,
-    },
-  }),
-};
+export default hopeTheme({
+  plugins: {
+    activeHeaderLinks: false,
+  },
+});
 ```
 
 ## 多语言
 
 主题的侧边栏支持 [多语言](https://vuejs.press/zh/guide/i18n.html)，所以你可以为每个语言单独设置侧边栏:
 
-```ts twoslash {7-9,12-14} title=".vuepress/config.js"
+```ts twoslash {6-8,11-13} title=".vuepress/theme.ts"
 import { hopeTheme } from "vuepress-theme-hope";
 
-export default {
-  theme: hopeTheme({
-    locales: {
-      "/": {
-        sidebar: [
-          /* 根目录下的英文配置 */
-        ],
-      },
-      "/zh/": {
-        sidebar: [
-          /* 中文目录下的中文配置 */
-        ],
-      },
+export default hopeTheme({
+  locales: {
+    "/": {
+      sidebar: [
+        /* 根目录下的英文配置 */
+      ],
     },
-  }),
-};
+    "/zh/": {
+      sidebar: [
+        /* 中文目录下的中文配置 */
+      ],
+    },
+  },
+});
 ```
 
 ## 相关助手与类型

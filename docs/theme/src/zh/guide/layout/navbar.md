@@ -30,14 +30,14 @@ tag:
 
 配置导航栏最简单的方式，是依次填入需要展示的页面文件的路径，这样导航栏的文字、图标和链接会自动通过对应文件生成。
 
-```ts twoslash {6} title=".vuepress/config.ts"
-import { defineUserConfig } from "vuepress";
+```ts twoslash {4,6-7} title=".vuepress/theme.ts"
 import { hopeTheme } from "vuepress-theme-hope";
 
-export default defineUserConfig({
-  theme: hopeTheme({
-    navbar: ["/guide/README.md", "/config/README.md", "/faq.md"],
-  }),
+export default hopeTheme({
+  navbar: ["/zh/guide/README.md", "/zh/config/README.md", "/zh/faq.md"],
+
+  // 等价于:
+  // navbar: ["/zh/guide/", "/zh/config/", "/zh/faq"],
 });
 ```
 
@@ -56,31 +56,29 @@ export default defineUserConfig({
 - `icon`: 项目图标 (可选)
 - `activeMatch`: 项目激活匹配 (可选)，支持正则字符串。
 
-```ts twoslash {5-22} title=".vuepress/config.ts"
+```ts twoslash {4-21} title=".vuepress/theme.ts"
 import { hopeTheme } from "vuepress-theme-hope";
 
-export default {
-  theme: hopeTheme({
-    navbar: [
-      {
-        text: "指南",
-        link: "/zh/guide/README.md",
-        icon: "lightbulb",
-        // 仅在 `/zh/guide/` 激活
-        activeMatch: "^/zh/guide/$",
-      },
-      { text: "配置", link: "/zh/config/README.md", icon: "config" },
-      {
-        text: "常见问题",
-        link: "/zh/faq.md",
-        icon: "circle-question",
-        // 会在 `/zh/faq` 开头的路径激活
-        // 所以当你前往 `/zh/faq/xxx.html` 时也会激活
-        activeMatch: "^/zh/faq",
-      },
-    ],
-  }),
-};
+export default hopeTheme({
+  navbar: [
+    {
+      text: "指南",
+      link: "/zh/guide/README.md",
+      icon: "lightbulb",
+      // 仅在 `/zh/guide/` 激活
+      activeMatch: "^/zh/guide/$",
+    },
+    { text: "配置", link: "/zh/config/README.md", icon: "config" },
+    {
+      text: "常见问题",
+      link: "/zh/faq.md",
+      icon: "circle-question",
+      // 会在 `/zh/faq` 开头的路径激活
+      // 所以当你前往 `/zh/faq/xxx.html` 时也会激活
+      activeMatch: "^/zh/faq",
+    },
+  ],
+});
 ```
 
 ::: tip activeMatch 的高级用法
@@ -103,86 +101,81 @@ export default {
 
 你需要设置对象式导航栏配置项，并提供额外的 `children` 选项设置链接列表:
 
-```ts twoslash {6-10} title=".vuepress/config.ts"
+```ts twoslash {5-9} title=".vuepress/theme.ts"
 import { hopeTheme } from "vuepress-theme-hope";
 
-export default {
-  theme: hopeTheme({
-    navbar: [
-      {
-        text: "基础",
-        icon: "circle-info",
-        children: ["/zh/basic/markdown.md", "/zh/basic/vuepress.md"],
-      },
-    ],
-  }),
-};
+export default hopeTheme({
+  navbar: [
+    {
+      text: "基础",
+      icon: "circle-info",
+      children: ["/zh/basic/markdown.md", "/zh/basic/vuepress.md"],
+    },
+  ],
+});
 ```
 
 由于大多数情况下，导航栏的分组项目都属于同一类别，会放在同一个子目录下，它们具有相同的路径前缀。
 
 为了简化配置，你可以添加 `prefix` 字段为分组的每一个子链接添加一个前缀:
 
-```ts twoslash {9,10} title=".vuepress/config.ts"
+```ts twoslash {8-12} title=".vuepress/theme.ts"
 import { hopeTheme } from "vuepress-theme-hope";
 
-export default {
-  theme: hopeTheme({
-    navbar: [
-      {
-        text: "基础",
-        icon: "circle-info",
-        prefix: "/zh/basic/",
-        children: ["markdown.md", "vuepress.md"],
-      },
-    ],
-  }),
-};
+export default hopeTheme({
+  navbar: [
+    {
+      text: "基础",
+      icon: "circle-info",
+      prefix: "/zh/basic/",
+      children: [
+        "markdown.md", // /zh/basic/markdown.md
+        "vuepress.md", // /zh/basic/vuepress.md
+      ],
+    },
+  ],
+});
 ```
 
 此外，你还可以通过嵌套的 `children` 来在下拉列表中设置分组:
 
-```ts twoslash {12-14,18-20} title=".vuepress/config.ts"
+```ts twoslash {11-13,17-19} title=".vuepress/theme.ts"
 import { hopeTheme } from "vuepress-theme-hope";
 
-export default {
-  theme: hopeTheme({
-    navbar: [
-      {
-        text: "插件列表",
-        icon: "puzzle-piece",
-        children: [
-          {
-            text: "内置插件",
-            children: [
-              /* 一些子项目 */
-            ],
-          },
-          {
-            text: "外部插件",
-            children: [
-              /* 一些子项目 */
-            ],
-          },
-        ],
-      },
-    ],
-  }),
-};
+export default hopeTheme({
+  navbar: [
+    {
+      text: "插件列表",
+      icon: "puzzle-piece",
+      children: [
+        {
+          text: "内置插件",
+          children: [
+            /* 一些子项目 */
+          ],
+        },
+        {
+          text: "外部插件",
+          children: [
+            /* 一些子项目 */
+          ],
+        },
+      ],
+    },
+  ],
+});
 ```
 
 ## 禁用导航栏
 
 你可以在主题选项中设置 `navbar: false` 以全局禁用导航栏:
 
-```ts twoslash {5} title=".vuepress/config.ts"
+```ts twoslash {4} title=".vuepress/theme.ts"
 import { hopeTheme } from "vuepress-theme-hope";
 
-export default {
-  theme: hopeTheme({
-    navbar: false,
-  }),
-};
+export default hopeTheme({
+  navbar: false,
+});
 ```
 
 你也可以通过 Frontmatter 来禁用某个指定页面的导航栏:
@@ -205,14 +198,12 @@ navbar: false
 
 配置图标后，图标将移动设备上取代先前的站点名称显示在导航栏上。
 
-```ts twoslash {5} title=".vuepress/config.ts"
+```ts twoslash {4} title=".vuepress/theme.ts"
 import { hopeTheme } from "vuepress-theme-hope";
 
-export default {
-  theme: hopeTheme({
-    logo: "/logo.png",
-  }),
-};
+export default hopeTheme({
+  logo: "/logo.png",
+});
 ```
 
 ::: tip
@@ -225,27 +216,27 @@ export default {
 
 主题的导航栏支持 [多语言](https://vuejs.press/zh/guide/i18n.html)，所以你可以为每个语言单独设置上面提到的导航栏选项:
 
-```ts twoslash {7-10,13-16} title=".vuepress/config.ts"
+```ts twoslash {5,7-10,13,15-18} title=".vuepress/theme.ts"
 import { hopeTheme } from "vuepress-theme-hope";
 
-export default {
-  theme: hopeTheme({
-    locales: {
-      "/": {
-        logo: "/logo.svg",
-        navbar: [
-          /* 根目录下的英文配置 */
-        ],
-      },
-      "/zh/": {
-        logo: "/zh-logo.svg",
-        navbar: [
-          /* 中文目录下的中文配置 */
-        ],
-      },
+export default hopeTheme({
+  locales: {
+    "/": {
+      logo: "/logo.svg",
+
+      navbar: [
+        /* 根目录下的英文配置 */
+      ],
     },
-  }),
-};
+    "/zh/": {
+      logo: "/zh-logo.svg",
+
+      navbar: [
+        /* 中文目录下的中文配置 */
+      ],
+    },
+  },
+});
 ```
 
 ## 搜索框
@@ -260,19 +251,17 @@ export default {
 
 你可以在主题选项中通过 `repoDisplay` 控制是否显示仓库按钮。
 
-```ts twoslash {6,9,10} title=".vuepress/config.ts"
+```ts twoslash {5,7,8} title=".vuepress/theme.ts"
 import { hopeTheme } from "vuepress-theme-hope";
 
-export default {
-  theme: hopeTheme({
-    // 支持简写仓库名称，会解析到 GitHub 上，同时也可以是一个完整的 URL
-    repo: "vuepress-theme-hope/vuepress-theme-hope",
-    // 默认从 `repo` 内容中推断为以下之一：
-    // "GitHub" / "GitLab" / "Gitee" / "Bitbucket" / "Source"
-    repoLabel: "GitHub",
-    repoDisplay: true,
-  }),
-};
+export default hopeTheme({
+  // 支持简写仓库名称，会解析到 GitHub 上，同时也可以是一个完整的 URL
+  repo: "vuepress-theme-hope/vuepress-theme-hope",
+  // 默认从 `repo` 内容中推断为以下之一：
+  // "GitHub" / "GitLab" / "Gitee" / "Bitbucket" / "Source"
+  repoLabel: "GitHub",
+  repoDisplay: true,
+});
 ```
 
 ## 外观弹窗
@@ -300,18 +289,16 @@ export default {
 
 我们默认使用以下选项:
 
-```ts twoslash {5-9} title=".vuepress/config.ts"
+```ts twoslash {4-8} title=".vuepress/theme.ts"
 import { hopeTheme } from "vuepress-theme-hope";
 
-export default {
-  theme: hopeTheme({
-    navbarLayout: {
-      start: ["Brand"],
-      center: ["Links"],
-      end: ["Language", "Repo", "Outlook", "Search"],
-    },
-  }),
-};
+export default hopeTheme({
+  navbarLayout: {
+    start: ["Brand"],
+    center: ["Links"],
+    end: ["Language", "Repo", "Outlook", "Search"],
+  },
+});
 ```
 
 ## 相关助手与类型

@@ -3,7 +3,7 @@ title: Stylize
 icon: code
 dir:
   collapsible: false
-  order: 3
+  order: 4
   link: true
 category:
   - Markdown

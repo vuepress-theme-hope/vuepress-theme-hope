@@ -16,14 +16,14 @@ The theme fully optimize style for print, and there will be a print button at to
 
 To hide print button, you should set `print: false` in theme options.
 
-```ts twoslash {5} title=".vuepress/config.ts"
+```ts twoslash {4} title=".vuepress/theme.ts"
 import { hopeTheme } from "vuepress-theme-hope";
 
-export default {
-  theme: hopeTheme({
-    print: false,
-  }),
-};
+export default hopeTheme({
+  print: false,
+
+  // other options..
+});
 ```
 
 ## Fullscreen Button
@@ -34,14 +34,14 @@ Try it:
 
 If you need it, you can enable it by setting `fullscreen: true` in theme options.
 
-```ts twoslash {5} title=".vuepress/config.ts"
+```ts twoslash {4} title=".vuepress/theme.ts"
 import { hopeTheme } from "vuepress-theme-hope";
 
-export default {
-  theme: hopeTheme({
-    fullscreen: true,
-  }),
-};
+export default hopeTheme({
+  fullscreen: true,
+
+  // other options..
+});
 ```
 
 ::: tip
@@ -56,30 +56,29 @@ If the current browser does not support full screen, the full screen button is a
 
 You can set `plugins.backToTop: false` in theme options to disable it, or set it with an object to customize its threshold distance and progress bar display:
 
-```ts twoslash {8,13-26} title=".vuepress/config.ts"
+```ts twoslash {5,7-21} title=".vuepress/theme.ts"
 import { hopeTheme } from "vuepress-theme-hope";
 
 export default {
-  theme: hopeTheme({
-    plugins: {
-      // disable back to top button with `backToTop: false`
-      // or  customize back to top button
-      backToTop: {
-        /**
-         * Scroll threshold distance to display back to top button (in pixels)
-         *
-         * @default 100
-         */
-        threshold: 500,
-        /**
-         * Whether display scroll progress
-         *
-         * @default true
-         */
-        progress: false,
-      },
+  plugins: {
+    // disable back to top button with `backToTop: false`
+
+    // or customize back to top button
+    backToTop: {
+      /**
+       * Scroll threshold distance to display back to top button (in pixels)
+       *
+       * @default 100
+       */
+      threshold: 500,
+      /**
+       * Whether display scroll progress
+       *
+       * @default true
+       */
+      progress: false,
     },
-  }),
+  },
 };
 ```
 
@@ -101,14 +100,14 @@ This is our support for the visually impaired people around the world! :heart:
 
 If you want to focus on reading, you can enable focus mode by setting `focus: true` in theme options.
 
-```ts twoslash {5} title=".vuepress/config.ts"
+```ts twoslash {4} title=".vuepress/theme.ts"
 import { hopeTheme } from "vuepress-theme-hope";
 
-export default {
-  theme: hopeTheme({
-    focus: true,
-  }),
-};
+export default hopeTheme({
+  focus: true,
+
+  // other options..
+});
 ```
 
 In this mode, we will blur elements other than the main content, providing a more focused reading experience.
@@ -119,14 +118,14 @@ The default delay is 1500ms, and you can customize it by setting a number value.
 
 If your site is a documentation-only site, and you prefer a clean style, you can enable pure mode by setting `pure: true` in theme options.
 
-```ts twoslash {5} title=".vuepress/config.ts"
+```ts twoslash {4} title=".vuepress/theme.ts"
 import { hopeTheme } from "vuepress-theme-hope";
 
-export default {
-  theme: hopeTheme({
-    pure: true,
-  }),
-};
+export default hopeTheme({
+  pure: true,
+
+  // other options..
+});
 ```
 
 In this mode, we disable some fancy animations and some colors and just provide functionality.
@@ -137,20 +136,19 @@ In this mode, we disable some fancy animations and some colors and just provide 
 
 Try it: <ToggleRTLButton />
 
-```ts twoslash {9} title=".vuepress/config.ts"
+```ts twoslash {9} title=".vuepress/theme.ts"
 import { hopeTheme } from "vuepress-theme-hope";
 
-export default {
-  theme: hopeTheme({
-    locales: {
-      // ...
-      "/ar/": {
-        // enable RTL layout
-        rtl: true,
-      },
+export default hopeTheme({
+  locales: {
+    // ...
+
+    "/ar/": {
+      // enable RTL layout
+      rtl: true,
     },
-  }),
-};
+  },
+});
 ```
 
 <script setup lang="ts">

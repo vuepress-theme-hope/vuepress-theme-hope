@@ -7,6 +7,7 @@ import type { DocSearchPluginOptions } from "@vuepress/plugin-docsearch";
 import type { FeedPluginOptions } from "@vuepress/plugin-feed";
 import type { GitPluginOptions } from "@vuepress/plugin-git";
 import type { IconPluginOptions } from "@vuepress/plugin-icon";
+import type { MeiliSearchPluginOptions } from "@vuepress/plugin-meilisearch";
 import type {
   NoticeOptions,
   NoticePluginOptions,
@@ -214,6 +215,17 @@ export interface PluginsOptions extends DeprecatedPluginsOptions {
    * 图标插件选项
    */
   icon?: Omit<IconPluginOptions, "component">;
+
+  /**
+   * MeiliSearch plugin options
+   *
+   * @see https://ecosystem.vuejs.press/plugins/search/meilisearch.html
+   *
+   * meilisearch 插件配置
+   *
+   * @see https://ecosystem.vuejs.press/zh/plugins/search/meilisearch.html
+   */
+  meilisearch?: MeiliSearchPluginOptions;
 
   /**
    * Notice options

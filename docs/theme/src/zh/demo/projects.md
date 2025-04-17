@@ -325,6 +325,13 @@ docs:
     repo: https://github.com/dmmdekkd
     preview: https://sixflowers.icu/4.jpg
 
+  - name: 鹰歌游戏引擎文档
+    desc: 一款具有强大功能的开放式游戏制作引擎
+    logo: https://docs-mf.tasaed.top/assets/image/logo.png
+    url: https://docs-mf.tasaed.top/
+    repo: https://github.com/TASA-Ed/MakerFrameDocs
+    preview: /assets/image/docs-makerf.png
+
 portfolios:
   - name: 尚程
     url: https://cheng-shang.me/zh/

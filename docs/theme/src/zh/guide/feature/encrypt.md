@@ -26,44 +26,40 @@ tag:
 
 字段的键名是路径，值支持填入一个或多个数组格式的密码。
 
-```ts twoslash {8,10} title=".vuepress/config.ts"
+```ts twoslash {7,9} title=".vuepress/theme.ts"
 import { hopeTheme } from "vuepress-theme-hope";
 
-export default {
-  theme: hopeTheme({
-    encrypt: {
-      config: {
-        // 这会加密整个 guide 目录，并且两个密码都是可用的
-        "/guide/": ["1234", "5678"],
-        // 这只会加密 /config/page.html
-        "/config/page.html": "1234",
-      },
+export default hopeTheme({
+  encrypt: {
+    config: {
+      // 这会加密整个 guide 目录，并且两个密码都是可用的
+      "/guide/": ["1234", "5678"],
+      // 这只会加密 /config/page.html
+      "/config/page.html": "1234",
     },
-  }),
-};
+  },
+});
 ```
 
 你也可以通过设置 `encrypt.config` 为一个对象来为密码输入框添加提示信息，格式如下：
 
-```ts twoslash {8-13} title=".vuepress/config.ts"
+```ts twoslash {6-13} title=".vuepress/theme.ts"
 import { hopeTheme } from "vuepress-theme-hope";
 
-export default {
-  theme: hopeTheme({
-    encrypt: {
-      config: {
-        "/guide/": {
-          password: ["1234", "5678"],
-          hint: "从 xxx 获取密码",
-        },
-        "/config/page.html": {
-          password: "1234",
-          hint: "从 xxx 获取密码",
-        },
+export default hopeTheme({
+  encrypt: {
+    config: {
+      "/guide/": {
+        password: ["1234", "5678"],
+        hint: "从 xxx 获取密码",
+      },
+      "/config/page.html": {
+        password: "1234",
+        hint: "从 xxx 获取密码",
       },
     },
-  }),
-};
+  },
+});
 ```
 
 ::: warning
@@ -82,20 +78,18 @@ export default {
 
 如果你想为密码输入框添加提示信息，你可以设置 `encrypt.admin` 为一个对象，格式如下：
 
-```ts twoslash {8,10} title=".vuepress/config.ts"
+```ts twoslash {5-9} title=".vuepress/theme.ts"
 import { hopeTheme } from "vuepress-theme-hope";
 
-export default {
-  theme: hopeTheme({
-    encrypt: {
-      global: true,
-      admin: {
-        password: "Mister-Hope", // 也可以是数组
-        hint: "密码是作者的名字",
-      },
+export default hopeTheme({
+  encrypt: {
+    global: true,
+    admin: {
+      password: "Mister-Hope", // 也可以是数组
+      hint: "密码是作者的名字",
     },
-  }),
-};
+  },
+});
 ```
 
 ::: tip

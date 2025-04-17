@@ -37,43 +37,41 @@ VuePress Theme Hope 允许你通过 [`@vuepress/plugin-notice`][notice] 添加�
 
 这是一个例子:
 
-```ts twoslash {8,10} title=".vuepress/config.ts"
+```ts twoslash {5-32} title=".vuepress/theme.ts"
 import { hopeTheme } from "vuepress-theme-hope";
 
-export default {
-  theme: hopeTheme({
-    plugins: {
-      notice: [
-        {
-          path: "/",
-          title: "Notice Title",
-          content: "Notice Content",
-          actions: [
-            {
-              text: "Primary Action",
-              link: "https://theme-hope.vuejs.press/",
-              type: "primary",
-            },
-            { text: "Default Action" },
-          ],
-        },
-        {
-          path: "/zh/",
-          title: "Notice Title",
-          content: "Notice Content",
-          actions: [
-            {
-              text: "Primary Action",
-              link: "https://theme-hope.vuejs.press/",
-              type: "primary",
-            },
-            { text: "Default Action" },
-          ],
-        },
-      ],
-    },
-  }),
-};
+export default hopeTheme({
+  plugins: {
+    notice: [
+      {
+        path: "/",
+        title: "Notice Title",
+        content: "Notice Content",
+        actions: [
+          {
+            text: "Primary Action",
+            link: "https://theme-hope.vuejs.press/",
+            type: "primary",
+          },
+          { text: "Default Action" },
+        ],
+      },
+      {
+        path: "/zh/",
+        title: "Notice Title",
+        content: "Notice Content",
+        actions: [
+          {
+            text: "Primary Action",
+            link: "https://theme-hope.vuejs.press/",
+            type: "primary",
+          },
+          { text: "Default Action" },
+        ],
+      },
+    ],
+  },
+});
 ```
 
 此外，我们还为你提供了一些高级选项来控制通知显示。

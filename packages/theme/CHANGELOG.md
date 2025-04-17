@@ -4,6 +4,35 @@ All notable changes to this project will be documented in this file. See [Conven
 
 <!-- #region recent-change -->
 
+## [2.0.0-rc.82](https://github.com/vuepress-theme-hope/vuepress-theme-hope/compare/v2.0.0-rc.81...v2.0.0-rc.82) (2025-04-16)
+
+### ✨ Features
+
+- **theme:** add built-in support for meilisearch ([efb508d](https://github.com/vuepress-theme-hope/vuepress-theme-hope/commit/efb508d2e3589aa8a5feb1ca67697adf0bf2e9b0))
+
+<!-- #region recent-change -->
+
+## [2.0.0-rc.81](https://github.com/vuepress-theme-hope/vuepress-theme-hope/compare/v2.0.0-rc.80...v2.0.0-rc.81) (2025-04-14)
+
+### ⚠ BREAKING CHANGES
+
+- **theme:** rebuild heroHeight as heroStyle
+
+### ✨ Features
+
+- **theme:** rebuild heroHeight as heroStyle ([98fc712](https://github.com/vuepress-theme-hope/vuepress-theme-hope/commit/98fc7122db01330f48f993fdb84563f78afabbdc))
+
+### 🐛 Bug Fixes
+
+- **theme:** fix article item clicking ([771acb7](https://github.com/vuepress-theme-hope/vuepress-theme-hope/commit/771acb7201683c00659e01c4aded6486e0a52d28))
+
+### 🚀 Performance Improvements
+
+- improve webpack perf ([#4845](https://github.com/vuepress-theme-hope/vuepress-theme-hope/issues/4845)) ([abe3134](https://github.com/vuepress-theme-hope/vuepress-theme-hope/commit/abe31343abd2cfd117692591e1658af7a07cbcec))
+- **theme:** tweaks ([91f8f2e](https://github.com/vuepress-theme-hope/vuepress-theme-hope/commit/91f8f2e4aee1de01cfeafba3be20e4c9203414a3))
+
+<!-- #region recent-change -->
+
 ## [2.0.0-rc.80](https://github.com/vuepress-theme-hope/vuepress-theme-hope/compare/v2.0.0-rc.79...v2.0.0-rc.80) (2025-04-12)
 
 ### ✨ Features

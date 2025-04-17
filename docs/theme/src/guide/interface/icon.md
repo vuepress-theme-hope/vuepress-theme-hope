@@ -25,56 +25,50 @@ When using any type of icon, you can also use any image link (relative links are
 
 To specify icon assets, set `plugins.icon.assets` in theme options:
 
-```ts twoslash {7-8} title=".vuepress/config.ts"
+```ts twoslash {6-7} title=".vuepress/theme.ts"
 import { hopeTheme } from "vuepress-theme-hope";
 
-export default {
-  theme: hopeTheme({
-    plugins: {
-      icon: {
-        // keywords: "iconify", "fontawesome", "fontawesome-with-brands"
-        assets: "fontawesome",
-      },
+export default hopeTheme({
+  plugins: {
+    icon: {
+      // keywords: "iconify", "fontawesome", "fontawesome-with-brands"
+      assets: "fontawesome",
     },
-  }),
-};
+  },
+});
 ```
 
-```ts twoslash {7-11} title=".vuepress/config.ts"
+```ts twoslash {6-10} title=".vuepress/theme.ts"
 import { hopeTheme } from "vuepress-theme-hope";
 
-export default {
-  theme: hopeTheme({
-    plugins: {
-      icon: {
-        // an url you like
-        // for example, these websites allows you to generate your own assets:
-        // - a css assets link in [iconfont.cn](https://www.iconfont.cn/?lang=en-us)
-        // - a kit link in [fontawesome](https://fontawesome.com)
-        assets: "/base/my/font-icon/resource.js",
-      },
+export default hopeTheme({
+  plugins: {
+    icon: {
+      // an url you like
+      // for example, these websites allows you to generate your own assets:
+      // - a css assets link in [iconfont.cn](https://www.iconfont.cn/?lang=en-us)
+      // - a kit link in [fontawesome](https://fontawesome.com)
+      assets: "/base/my/font-icon/resource.js",
     },
-  }),
-};
+  },
+});
 ```
 
-```ts twoslash {7-12} title=".vuepress/config.ts"
+```ts twoslash {6-11} title=".vuepress/theme.ts"
 import { hopeTheme } from "vuepress-theme-hope";
 
-export default {
-  theme: hopeTheme({
-    plugins: {
-      icon: {
-        // an array of above
-        assets: [
-          "/base/my/font-icon/resource.js",
-          "https://example/my/fonr-icon/resouce.css",
-          "fontawesome",
-        ],
-      },
+export default hopeTheme({
+  plugins: {
+    icon: {
+      // an array of above
+      assets: [
+        "/base/my/font-icon/resource.js",
+        "https://example/my/fonr-icon/resouce.css",
+        "fontawesome",
+      ],
     },
-  }),
-};
+  },
+});
 ```
 
 To keep simple, we add built-in keywords `"iconify"`, `"fontawesome"` and `"fontawesome-with-brands"` support for you to get started easily.
@@ -280,9 +274,11 @@ You need to regenerate and update the link every time you add a new icon.
 
 Images links are supported with any icon types (relative links are NOT supported).
 
+<!-- markdownlint-disable MD034 -->
+
 ::: md-demo Demo
 
-A full link: ::<https://theme-hope-assets.vuejs.press/logo.svg>::
+A full link: ::https://theme-hope-assets.vuejs.press/logo.svg::
 
 Absolute link: <VPIcon icon="/favicon.ico" />
 
@@ -290,5 +286,7 @@ Absolute link: <VPIcon icon="/favicon.ico" />
 <!-- ::/favicon.ico:: is NOT supported as it will be parsed as color -->
 
 :::
+
+<!-- markdownlint-enable MD034 -->
 
 [@vuepress/plugin-icon]: https://ecosystem.vuejs.press/plugins/features/icon.html

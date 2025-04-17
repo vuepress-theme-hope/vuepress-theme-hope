@@ -37,43 +37,41 @@ A notice configuration item includes:
 
 Here is an example:
 
-```ts twoslash {8,10} title=".vuepress/config.ts"
+```ts twoslash {5-32} title=".vuepress/theme.ts"
 import { hopeTheme } from "vuepress-theme-hope";
 
-export default {
-  theme: hopeTheme({
-    plugins: {
-      notice: [
-        {
-          path: "/",
-          title: "Notice Title",
-          content: "Notice Content",
-          actions: [
-            {
-              text: "Primary Action",
-              link: "https://theme-hope.vuejs.press/",
-              type: "primary",
-            },
-            { text: "Default Action" },
-          ],
-        },
-        {
-          path: "/zh/",
-          title: "Notice Title",
-          content: "Notice Content",
-          actions: [
-            {
-              text: "Primary Action",
-              link: "https://theme-hope.vuejs.press/",
-              type: "primary",
-            },
-            { text: "Default Action" },
-          ],
-        },
-      ],
-    },
-  }),
-};
+export default hopeTheme({
+  plugins: {
+    notice: [
+      {
+        path: "/",
+        title: "Notice Title",
+        content: "Notice Content",
+        actions: [
+          {
+            text: "Primary Action",
+            link: "https://theme-hope.vuejs.press/",
+            type: "primary",
+          },
+          { text: "Default Action" },
+        ],
+      },
+      {
+        path: "/zh/",
+        title: "Notice Title",
+        content: "Notice Content",
+        actions: [
+          {
+            text: "Primary Action",
+            link: "https://theme-hope.vuejs.press/",
+            type: "primary",
+          },
+          { text: "Default Action" },
+        ],
+      },
+    ],
+  },
+});
 ```
 
 Also, we provide some advanced option for you to control notice display.

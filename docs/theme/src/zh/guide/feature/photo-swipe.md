@@ -10,9 +10,35 @@ tag:
 
 通过内置 [@vuepress/plugin-photo-swipe][photo-swipe], 点击页面正文内的图片会进入浏览模式。
 
-如果你不需要此功能，请在主题选项中设置 `plugins.photoSwipe: false`。
-
 <!-- more -->
+
+## 禁用功能
+
+如果你不需要此功能，请在主题选项中设置 `plugins.photoSwipe: false`:
+
+```ts twoslash {5} title=".vuepress/theme.ts"
+import { hopeTheme } from "vuepress-theme-hope";
+
+export default hopeTheme({
+  plugins: {
+    photoSwipe: false,
+  },
+});
+```
+
+如果你想在特定页面中禁用它，你可以在页面的 frontmatter 中设置 `photoSwipe: false`。
+
+```md
+---
+photoSwipe: false
+---
+```
+
+如果你想要排除特定图片，你可以为图片添加 `no-view` 属性:
+
+```md
+<img src="https://vuejs.org/images/logo.png" no-view />
+```
 
 ## 浏览模式
 
@@ -36,7 +62,7 @@ tag:
 
 `vuepress-theme-hope` 将主题选项中的 `plugins.photoSwipe` 选项作为插件选项提供给 `@vuepress/plugin-photo-swipe`。
 
-你可以查看 [photo-swipe 插件文档][photo-swipe] 来来进行高级配置。
+你可以查看 [photo-swipe 插件文档][photo-swipe] 来进行高级配置。
 
 ## 演示
 

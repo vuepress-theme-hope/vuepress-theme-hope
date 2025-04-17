@@ -3,7 +3,7 @@ title: Chart
 icon: chart-simple
 dir:
   collapsible: false
-  order: 4
+  order: 5
   link: true
 category:
   - Markdown

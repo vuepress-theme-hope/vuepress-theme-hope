@@ -16,10 +16,37 @@ VuePress Theme Hope provides catalog component and auto catalog generation using
 
 This feature is enabled by default. If there is no `README.md` in the folder, the theme will automatically generate a directory page for it. To disable, set `plugins.catalog` to `false`.
 
-You can control this via `plugins.catalog` in the theme options, for example:
+```ts twoslash {5} title=".vuepress/theme.ts"
+import { hopeTheme } from "vuepress-theme-hope";
+
+export default hopeTheme({
+  plugins: {
+    catalog: false,
+  },
+});
+```
+
+You can control catalog behavior via `plugins.catalog` in the theme options, for example:
 
 - Exclude some folders from catalog generation via `plugins.catalog.exclude`
 - Control frontmatter generation through `plugins.catalog.frontmatter`.
+
+```ts twoslash {5-12} title=".vuepress/theme.ts"
+import { hopeTheme } from "vuepress-theme-hope";
+
+export default hopeTheme({
+  plugins: {
+    catalog: {
+      frontmatter: (path) => {
+        if (path.startsWith("/zh/")) return { title: "目录" };
+
+        return { title: "Catalog" };
+      },
+      exclude: ["/api/", "/zh/api/"],
+    },
+  },
+});
+```
 
 For detailed configuration, see [Catalog plugin docs][catalog-config].
 

@@ -1,7 +1,7 @@
 ---
 title: 页面
 icon: file
-order: 5
+order: 4
 category:
   - 布局
 tag:
@@ -11,7 +11,7 @@ tag:
 
 ## 图标支持
 
-你可以在页面的 frontmatter 中配置 `icon` 字段，填入对应图标的 FontClass 即可绑定图标到页面。
+你可以在页面 Frontmatter 中设置 `icon` 来为页面设置图标，详见 [图标支持](../interface/icon.md)。
 
 该图标会在导航栏，侧边栏，路径导航和标题中使用。
 
@@ -22,12 +22,6 @@ tag:
 icon: home
 ---
 ```
-
-:::
-
-::: info
-
-图标的相关设置，详见 [图标支持](../interface/icon.md)
 
 :::
 

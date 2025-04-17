@@ -29,6 +29,7 @@ export default [
         "@vue/repl",
         "@vue/repl/codemirror-editor",
         "@vue/repl/monaco-editor",
+        "@vuepress/helper/noopComponent",
         "balloon-css/balloon.css",
         "chart.js/auto",
         "echarts",

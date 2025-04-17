@@ -42,7 +42,6 @@ tag:
 - VPBanner: 一个横幅组件
 - VPCard: 一个卡片组件
 - VidStack: 由 VidStack 驱动的音频/视频播放器
-- XiGua: 嵌入 XiGua 视频
 
 你可以将 `plugins.components.components` 设置为需要的组件数组，默认情况下为 `["Badge"]`。
 

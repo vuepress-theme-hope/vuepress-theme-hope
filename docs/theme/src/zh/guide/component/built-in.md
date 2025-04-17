@@ -24,7 +24,6 @@ tag:
 - VPBanner: 一个横幅组件
 - VPCard: 一个卡片组件
 - VidStack: 由 VidStack 驱动的音频/视频播放器
-- XiGua: 嵌入 XiGua 视频
 
 为了启用组件，你需要将 `plugins.components.components` 设置为一个组件名的数组。
 
@@ -36,32 +35,29 @@ tag:
 
 :::
 
-```ts twoslash {8-22} title=".vuepress/config.ts"
+```ts twoslash {7-20} title=".vuepress/theme.ts"
 import { hopeTheme } from "vuepress-theme-hope";
 
-export default {
-  theme: hopeTheme({
-    plugins: {
-      components: {
-        // 你想使用的组件
-        components: [
-          "ArtPlayer",
-          "Badge",
-          "BiliBili",
-          "CodePen",
-          "PDF",
-          "Share",
-          "SiteInfo",
-          "StackBlitz",
-          "VPBanner",
-          "VPCard",
-          "VidStack",
-          "XiGua",
-        ],
-      },
+export default hopeTheme({
+  plugins: {
+    components: {
+      // 你想使用的组件
+      components: [
+        "ArtPlayer",
+        "Badge",
+        "BiliBili",
+        "CodePen",
+        "PDF",
+        "Share",
+        "SiteInfo",
+        "StackBlitz",
+        "VPBanner",
+        "VPCard",
+        "VidStack",
+      ],
     },
-  }),
-};
+  },
+});
 ```
 
 ## 杂项

@@ -54,7 +54,7 @@ tag:
   └── ...
   ```
 
-  ```md
+  ```md title="Markdown 文件"
   <MyComponent />
 
   <script setup>
@@ -78,18 +78,19 @@ tag:
   ```
 
   ```ts twoslash title=".vuepress/config.ts"
+  import { defineUserConfig } from "vuepress";
   import { getDirname, path } from "vuepress/utils";
 
   const __dirname = getDirname(import.meta.url);
 
-  export default {
+  export default defineUserConfig({
     alias: {
       "@MyComponent": path.resolve(__dirname, "components/MyComponent.vue"),
     },
-  };
+  });
   ```
 
-  ```md
+  ```md title="README.md"
   <MyComponent />
 
   <script setup>

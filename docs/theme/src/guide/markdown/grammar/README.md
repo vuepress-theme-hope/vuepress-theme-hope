@@ -3,7 +3,7 @@ title: Grammar
 icon: code
 dir:
   collapsible: false
-  order: 1
+  order: 2
   link: true
 category:
   - Markdown

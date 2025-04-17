@@ -23,7 +23,6 @@ icon: gears
     | "VPCard"
     | "VidStack"
     | "VideoPlayer"
-    | "XiGua"
     | "YouTube";
   ```
 
@@ -47,7 +46,6 @@ Available component names:
 - `"VPCard"`
 - `"VidStack"`
 - `"VideoPlayer"`
-- `"XiGua"`
 - `"YouTube"`
 
 ## componentsOptions

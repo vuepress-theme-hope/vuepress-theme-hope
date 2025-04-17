@@ -20,22 +20,20 @@ tag:
 
 ## Enable <Badge text="Support page config" />
 
-```ts twoslash {8,11} title=".vuepress/config.ts"
+```ts twoslash {7,10} title=".vuepress/theme.ts"
 import { hopeTheme } from "vuepress-theme-hope";
 
-export default {
-  theme: hopeTheme({
-    plugins: {
-      comment: {
-        // choose a comment provider
-        provider: "Waline",
+export default hopeTheme({
+  plugins: {
+    comment: {
+      // choose a comment provider
+      provider: "Waline",
 
-        // provider options
-        serverURL: "...", // your serverURL
-      },
+      // provider options
+      serverURL: "...", // your serverURL
     },
-  }),
-};
+  },
+});
 ```
 
 Comment feature is enabled globally by default, controlled by `plugins.comment.comment` options.
@@ -110,19 +108,17 @@ Then input your new GitHub repo name and set `LEAN_ID`, `LEAN_KEY` and `LEAN_MAS
 
 Click `Deploy` button to deploy. It will show you deploy successfully after some time. Then config the vercel link in your theme options:
 
-```ts twoslash {7,8} title=".vuepress/config.ts"
+```ts twoslash {6,7} title=".vuepress/theme.ts"
 import { hopeTheme } from "vuepress-theme-hope";
 
-export default {
-  theme: hopeTheme({
-    plugins: {
-      comment: {
-        provider: "Waline",
-        serverURL: "YOUR_SERVER_URL", // your server url
-      },
+export default hopeTheme({
+  plugins: {
+    comment: {
+      provider: "Waline",
+      serverURL: "YOUR_SERVER_URL", // your server url
     },
-  }),
-};
+  },
+});
 ```
 
 ::: tip
@@ -171,19 +167,17 @@ npm i -D twikoo
 1. Go to Overview, click the link under Domains, if the environment configuration is correct, you can see the prompt "Twikoo cloud function is running normally"
 1. Vercel Domains (with `https://` prefix, for example `https://xxx.vercel.app`) is your environment ID
 
-```ts twoslash {7,8} title=".vuepress/config.ts"
+```ts twoslash {6,7} title=".vuepress/theme.ts"
 import { hopeTheme } from "vuepress-theme-hope";
 
-export default {
-  theme: hopeTheme({
-    plugins: {
-      comment: {
-        provider: "Twikoo",
-        envId: "YOUR_SERVER_URL", // your server url
-      },
+export default hopeTheme({
+  plugins: {
+    comment: {
+      provider: "Twikoo",
+      envId: "YOUR_SERVER_URL", // your server url
     },
-  }),
-};
+  },
+});
 ```
 
 ::: note

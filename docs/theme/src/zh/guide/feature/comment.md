@@ -20,22 +20,20 @@ tag:
 
 ## 启用 <Badge text="支持页面配置" />
 
-```ts twoslash {8,11} title=".vuepress/config.ts"
+```ts twoslash {7,10} title=".vuepress/theme.ts"
 import { hopeTheme } from "vuepress-theme-hope";
 
-export default {
-  theme: hopeTheme({
-    plugins: {
-      comment: {
-        // 选择一个评论服务
-        provider: "Waline",
+export default hopeTheme({
+  plugins: {
+    comment: {
+      // 选择一个评论服务
+      provider: "Waline",
 
-        // 服务选项
-        serverURL: "...", // your serverURL
-      },
+      // 服务选项
+      serverURL: "...", // your serverURL
     },
-  }),
-};
+  },
+});
 ```
 
 评论功能默认全局启用，通过主题选项中的 `plugins.comment.comment` 控制。
@@ -112,19 +110,17 @@ npm i -D @waline/client
 
 设置好环境变量后，点击 `Deploy` 部署，一两分钟即可部署完成。之后在主题设置中设置 vercel 地址:
 
-```ts twoslash {7,8} title=".vuepress/config.ts"
+```ts twoslash {6,7} title=".vuepress/theme.ts"
 import { hopeTheme } from "vuepress-theme-hope";
 
-export default {
-  theme: hopeTheme({
-    plugins: {
-      comment: {
-        provider: "Waline",
-        serverURL: "YOUR_SERVER_URL", // your server url
-      },
+export default hopeTheme({
+  plugins: {
+    comment: {
+      provider: "Waline",
+      serverURL: "YOUR_SERVER_URL", // your server url
     },
-  }),
-};
+  },
+});
 ```
 
 Waline 评论的其他配置将在 [Waline 配置][waline-config] 中列出。
@@ -181,19 +177,17 @@ Vercel 默认域名 `*.vercel.app` 在中国大陆访问速度较慢甚至无法
 1. 进入 Overview，点击 Domains 下方的链接，如果环境配置正确，可以看到 “Twikoo 云函数运行正常” 的提示
 1. Vercel Domains (包含 `https://` 前缀，例如 `https://xxx.vercel.app`) 即为你的环境 ID
 
-```ts twoslash {7,8} title=".vuepress/config.ts"
+```ts twoslash {6,7} title=".vuepress/theme.ts"
 import { hopeTheme } from "vuepress-theme-hope";
 
-export default {
-  theme: hopeTheme({
-    plugins: {
-      comment: {
-        provider: "Twikoo",
-        envId: "YOUR_SERVER_URL", // your server url
-      },
+export default hopeTheme({
+  plugins: {
+    comment: {
+      provider: "Twikoo",
+      envId: "YOUR_SERVER_URL", // your server url
     },
-  }),
-};
+  },
+});
 ```
 
 ::: tip
