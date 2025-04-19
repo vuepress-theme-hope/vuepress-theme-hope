@@ -54,7 +54,7 @@ export default hopeTheme({
 如果你想要全局禁用这些项目的显示，请在主题选项中，将以下对应项目设置为 `false`。你也可以在 Frontmatter 中设置这些项目来启用/禁用指定页面:
 
 - `lastUpdated`: 是否显示页面最后更新时间
-- `contributors`: 是否显示页面贡献者
+- `contributors`: 是否显示页面贡献者，支持 `as-content`、`as-meta` 和 `boolean`
 - `editLink`: 是否展示编辑此页链接
 - `changelog`: 是否显示变更日志
 

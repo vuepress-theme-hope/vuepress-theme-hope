@@ -120,11 +120,15 @@ export interface MetaLocaleOptions {
   /**
    * Whether to show "Contributors" or not
    *
+   * @description `true` means `as-meta`
+   *
    * 是否显示页面贡献者
    *
-   * @default true
+   * @description `true` 表示 `as-meta`
+   *
+   * @default "as-meta"
    */
-  contributors?: boolean;
+  contributors?: "as-content" | "as-meta" | boolean;
 
   /**
    * Whether to show "Edit this page" or not

@@ -287,15 +287,20 @@ Whether to show "Last Updated" or not.
 
 ### contributors
 
-- Type: `boolean`
-- Default: `true`
+- Type: `"as-content" | "as-meta" | boolean`
+- Default: `"as-meta"`
 
 Whether to show "Contributors" or not.
+
+- `"as-content"`: show as content in main text
+- `"as-meta"`: show as meta info at the bottom of content
+- `true`: same as `"as-meta"`
+- `false`: disable it
 
 ### changelog
 
 - Type: `boolean`
-- Default: `true`
+- Default: `false`
 
 Whether to show changelog.
 
