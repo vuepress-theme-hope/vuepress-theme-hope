@@ -335,8 +335,8 @@ importers:
         specifier: 5.2.2
         version: 5.2.2
       artplayer-plugin-danmuku:
-        specifier: 5.1.5
-        version: 5.1.5
+        specifier: 5.1.6
+        version: 5.1.6
       dashjs:
         specifier: 4.7.4
         version: 4.7.4
@@ -648,8 +648,8 @@ importers:
         specifier: 5.2.2
         version: 5.2.2
       artplayer-plugin-danmuku:
-        specifier: 5.1.5
-        version: 5.1.5
+        specifier: 5.1.6
+        version: 5.1.6
       dashjs:
         specifier: 4.7.4
         version: 4.7.4
@@ -4387,8 +4387,8 @@ packages:
     resolution: {integrity: sha512-BNoCY6SXXPQ7gF2opIP4GBE+Xw7U+pHMYKuzjgCN3GwiaIR09UUeKfheyIry77QtrCBlC0KK0q5/TER/tYh3PQ==}
     engines: {node: '>= 0.4'}
 
-  artplayer-plugin-danmuku@5.1.5:
-    resolution: {integrity: sha512-iFjdXVbkw5FbkB98SOwMPQEFJp7k6Io4nHfehpSdCc7Eo1gkmjNShOT6dAtAH1kLMHjh38vRnf/oYwCvTKkVOw==}
+  artplayer-plugin-danmuku@5.1.6:
+    resolution: {integrity: sha512-3JufaEvxI0bTR74vxLU7K9F9OLmR3yrDFqeflV0T0QWedabassX5hsl0AyNNcjVkfdm3A5s1YC0icdtiFZA1Ig==}
 
   artplayer@5.2.2:
     resolution: {integrity: sha512-JsPRA9e+7KyWTh5KBeKLTcCigzGhpZulRFXvOeiFMbxnpPz9kZ/1STp1LZONqQXHkxX9wHTO6JhGOvzrduH2Lw==}
@@ -9077,6 +9077,7 @@ packages:
 
   speech-rule-engine@4.1.1:
     resolution: {integrity: sha512-r30kdFJZa/hvmy13eldwjrnMeW74zQGP1++t7xyKQxbsdVVNbhKzfrvY0u2ecIXy0riBSLsl2KbzWevPPJogvw==}
+    deprecated: breaking change
     hasBin: true
 
   split2@4.2.0:
@@ -14195,7 +14196,7 @@ snapshots:
       get-intrinsic: 1.3.0
       is-array-buffer: 3.0.5
 
-  artplayer-plugin-danmuku@5.1.5: {}
+  artplayer-plugin-danmuku@5.1.6: {}
 
   artplayer@5.2.2:
     dependencies:
