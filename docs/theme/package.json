@@ -28,7 +28,7 @@
     "@vuepress/plugin-revealjs": "catalog:vuepress",
     "@vuepress/shiki-twoslash": "catalog:vuepress",
     "@vueuse/core": "catalog:",
-    "artplayer": "5.2.2",
+    "artplayer": "5.2.3",
     "docs-shared": "workspace:*",
     "echarts-wordcloud": "2.1.0",
     "flowchart.ts": "3.0.1",
