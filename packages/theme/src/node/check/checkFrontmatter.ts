@@ -82,7 +82,6 @@ export const checkFrontmatter = (page: Page): void => {
     "navbar",
     "index",
     "lastUpdated",
-    "contributors",
     "editLink",
     "breadcrumb",
     "breadcrumbIcon",

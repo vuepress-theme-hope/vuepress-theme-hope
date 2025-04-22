@@ -1,4 +1,5 @@
 export * from "./useAuthorInfo.js";
+export * from "./useMetaInfo.js";
 export * from "./useNavigate.js";
 export * from "./usePageInfo.js";
 export * from "./usePure.js";

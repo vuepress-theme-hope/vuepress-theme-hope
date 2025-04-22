@@ -9,14 +9,9 @@ import {
   ref,
   resolveComponent,
 } from "vue";
-import { Content, usePageFrontmatter } from "vuepress/client";
+import { Content } from "vuepress/client";
 
-import {
-  useThemeData,
-  useThemeLocaleData,
-} from "@theme-hope/composables/index";
-
-import type { ThemeNormalPageFrontmatter } from "../../shared/index.js";
+import { useMetaInfo, useThemeData } from "@theme-hope/composables/index";
 
 import "../styles/markdown-content.scss";
 
@@ -34,9 +29,8 @@ export default defineComponent({
   }>,
 
   setup(props, { slots }) {
-    const frontmatter = usePageFrontmatter<ThemeNormalPageFrontmatter>();
     const theme = useThemeData();
-    const themeLocale = useThemeLocaleData();
+    const { changelog, contributors } = useMetaInfo();
 
     const contentElement = ref<HTMLElement>();
 
@@ -47,18 +41,6 @@ export default defineComponent({
 
     const enableFocus = computed(
       () => Boolean(theme.value.focus ?? theme.value.pure) && isHovered.value,
-    );
-
-    const showChangelog = computed(
-      () =>
-        frontmatter.value.changelog ??
-        ((themeLocale.value.changelog ?? false) && !frontmatter.value.home),
-    );
-
-    const showContributors = computed(
-      () =>
-        frontmatter.value.contributors ??
-        ((themeLocale.value.contributors ?? true) && !frontmatter.value.home),
     );
 
     onMounted(() => {
@@ -81,10 +63,11 @@ export default defineComponent({
           id: "markdown-content",
         }),
         slots.after?.(),
-        showChangelog.value && hasGlobalComponent("GitChangelog")
+        changelog.value && hasGlobalComponent("GitChangelog")
           ? h(resolveComponent("GitChangelog"))
           : null,
-        showContributors.value && hasGlobalComponent("GitContributors")
+        contributors.value === "as-content" &&
+        hasGlobalComponent("GitContributors")
           ? h(resolveComponent("GitContributors"))
           : null,
       ]);
