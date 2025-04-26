@@ -52,7 +52,7 @@
     "@rollup/plugin-replace": "6.0.2",
     "@types/node": "22.14.1",
     "@types/webpack-env": "1.18.8",
-    "@vitest/coverage-istanbul": "3.1.1",
+    "@vitest/coverage-istanbul": "3.1.2",
     "concurrently": "9.1.2",
     "conventional-changelog-conventionalcommits": "8.0.0",
     "cpx2": "8.0.0",
@@ -81,7 +81,7 @@
     "tsx": "4.19.3",
     "typescript": "5.8.3",
     "vite": "6.3.2",
-    "vitest": "3.1.1",
+    "vitest": "3.1.2",
     "vuepress": "catalog:vuepress"
   },
   "packageManager": "pnpm@10.8.1",
