@@ -10,12 +10,12 @@ category:
 
 `vuepress-theme-hope` only supports the current environment:
 
-| Environment | Version Requirement       | Ways to Check Version | Additional Requirement                        |
-| ----------- | ------------------------- | --------------------- | --------------------------------------------- |
-| Node.js     | `^18.19.0 \|\| >= 20.6.0` | `node -v`             |                                               |
-| pnpm        | `>= 7`                    | `pnpm -v`             |                                               |
-| npm         | `>= 8`                    | `npm -v`              |                                               |
-| yarn        | `>= 2`                    | `yarn -v`             | `nodeLinker: 'node-modules'` in `.yarnrc.yml` |
+| Environment | Version Requirement | Ways to Check Version | Additional Requirement                        |
+| ----------- | ------------------- | --------------------- | --------------------------------------------- |
+| Node.js     | `>= 20.6.0`         | `node -v`             |                                               |
+| pnpm        | `>= 7`              | `pnpm -v`             |                                               |
+| npm         | `>= 8`              | `npm -v`              |                                               |
+| yarn        | `>= 2`              | `yarn -v`             | `nodeLinker: 'node-modules'` in `.yarnrc.yml` |
 
 If your Node.js version does not satisfy the requirement, you should [download and install the LTS version of Node.js](../get-started/env.md#nodejs).
 
