@@ -31,13 +31,13 @@
     "dev:ts": "tsc -b tsconfig.build.json --watch"
   },
   "dependencies": {
-    "@types/three": "0.175.0",
+    "@types/three": "0.176.0",
     "@vueuse/core": "catalog:",
     "@vuepress/bundler-vite": "catalog:vuepress",
     "@vuepress/bundler-webpack": "catalog:vuepress",
     "@vuepress/helper": "catalog:vuepress",
     "@vuepress/plugin-docsearch": "catalog:vuepress",
-    "three": "0.175.0",
+    "three": "0.176.0",
     "vue": "catalog:",
     "vuepress": "catalog:vuepress",
     "vuepress-theme-hope": "workspace:*"

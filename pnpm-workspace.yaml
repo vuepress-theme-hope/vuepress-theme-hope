@@ -4,6 +4,15 @@ packages:
   - docs-shared/
   - packages/*
 
+overrides:
+  esbuild: ^0.25.2
+
+onlyBuiltDependencies:
+  - "@parcel/watcher"
+  - esbuild
+  - nodejs-jieba
+  - unrs-resolver
+
 catalog:
   "@vueuse/core": 13.1.0
   markmap-lib: 0.18.11
