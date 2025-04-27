@@ -287,14 +287,14 @@ Whether to show "Last Updated" or not.
 
 ### contributors
 
-- Type: `"as-content" | "as-meta" | boolean`
-- Default: `"as-meta"`
+- Type: `"content" | "meta" | boolean`
+- Default: `"meta"`
 
 Whether to show "Contributors" or not.
 
-- `"as-content"`: show as content in main text
-- `"as-meta"`: show as meta info at the bottom of content
-- `true`: same as `"as-meta"`
+- `"content"`: show as content in main text
+- `"meta"`: show as meta info at the bottom of content
+- `true`: same as `"meta"`
 - `false`: disable it
 
 ### changelog

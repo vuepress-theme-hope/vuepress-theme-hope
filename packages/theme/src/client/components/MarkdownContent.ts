@@ -66,7 +66,7 @@ export default defineComponent({
         changelog.value && hasGlobalComponent("GitChangelog")
           ? h(resolveComponent("GitChangelog"))
           : null,
-        contributors.value === "as-content" &&
+        contributors.value === "content" &&
         hasGlobalComponent("GitContributors")
           ? h(resolveComponent("GitContributors"))
           : null,

@@ -287,14 +287,14 @@ tag:
 
 ### contributors
 
-- 类型: `"as-content" | "as-meta" | boolean`
-- 默认值: `"as-meta"`
+- 类型: `"content" | "meta" | boolean`
+- 默认值: `"meta"`
 
 是否显示页面贡献者
 
-- `"as-content"`: 显示在页面内容中
-- `"as-meta"`: 显示在页面底部的元信息中
-- `true`: 和 `"as-meta"` 相同
+- `"content"`: 显示在页面内容中
+- `"meta"`: 显示在页面底部的元信息中
+- `true`: 和 `"meta"` 相同
 - `false`: 不显示
 
 ### changelog

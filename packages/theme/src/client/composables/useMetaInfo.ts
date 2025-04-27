@@ -12,7 +12,7 @@ export interface MetaInfo {
   changelog: ComputedRef<boolean>;
 
   /** Whether to show "Contributors" or not */
-  contributors: ComputedRef<"as-content" | "as-meta" | boolean>;
+  contributors: ComputedRef<"content" | "meta" | boolean>;
   /** Whether to show "Last updated" or not */
   lastUpdated: ComputedRef<boolean>;
 }

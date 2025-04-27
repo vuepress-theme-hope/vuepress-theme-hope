@@ -54,7 +54,7 @@ export const theme = (
 
     pageInfo: ["ReadingTime", "Category", "Tag"],
     changelog: true,
-    contributors: "as-content",
+    contributors: "content",
 
     markdown: {
       highlighter: {

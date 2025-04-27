@@ -50,7 +50,7 @@ export default defineComponent({
               ])
             : null,
           metaInfo.contributors.value &&
-          metaInfo.contributors.value !== "as-content" &&
+          metaInfo.contributors.value !== "content" &&
           contributors.value.length
             ? h("div", { class: "contributors" }, [
                 h(
