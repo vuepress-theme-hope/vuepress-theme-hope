@@ -4,6 +4,18 @@ All notable changes to this project will be documented in this file. See [Conven
 
 <!-- #region recent-change -->
 
+## [2.0.0-rc.83](https://github.com/vuepress-theme-hope/vuepress-theme-hope/compare/v2.0.0-rc.82...v2.0.0-rc.83) (2025-04-28)
+
+### ⚠ BREAKING CHANGES
+
+- drop node18 support
+
+### ✨ Features
+
+- drop node18 support ([c611b59](https://github.com/vuepress-theme-hope/vuepress-theme-hope/commit/c611b59ab8a74dc641f8949c43c5f7ed4c6dd381))
+
+<!-- #region recent-change -->
+
 ## [2.0.0-rc.81](https://github.com/vuepress-theme-hope/vuepress-theme-hope/compare/v2.0.0-rc.80...v2.0.0-rc.81) (2025-04-14)
 
 ### 🚀 Performance Improvements
