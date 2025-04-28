@@ -1,6 +1,6 @@
 {
   "name": "vuepress-theme-hope",
-  "version": "2.0.0-rc.82",
+  "version": "2.0.0-rc.83",
   "description": "A light vuepress theme with tons of features",
   "keywords": [
     "vuepress",
@@ -173,7 +173,7 @@
     }
   },
   "engines": {
-    "node": "^18.19.0 || >= 20.6.0",
+    "node": ">= 20.6.0",
     "npm": ">=8",
     "pnpm": ">=7",
     "yarn": ">=2"

@@ -10,12 +10,12 @@ category:
 
 `vuepress-theme-hope` 仅支持当前的环境：
 
-| 环境    | 版本要求                  | 检查版本的方法 | 额外要求                                      |
-| ------- | ------------------------- | -------------- | --------------------------------------------- |
-| Node.js | `^18.19.0 \|\| >= 20.6.0` | `node -v`      |                                               |
-| pnpm    | `>= 7`                    | `pnpm -v`      |                                               |
-| npm     | `>= 8`                    | `npm -v`       |                                               |
-| yarn    | `>= 2`                    | `yarn -v`      | `nodeLinker: 'node-modules'` in `.yarnrc.yml` |
+| 环境    | 版本要求    | 检查版本的方法 | 额外要求                                      |
+| ------- | ----------- | -------------- | --------------------------------------------- |
+| Node.js | `>= 20.6.0` | `node -v`      |                                               |
+| pnpm    | `>= 7`      | `pnpm -v`      |                                               |
+| npm     | `>= 8`      | `npm -v`       |                                               |
+| yarn    | `>= 2`      | `yarn -v`      | `nodeLinker: 'node-modules'` in `.yarnrc.yml` |
 
 如果你的 Node.js 版本不满足要求，你应该 [下载并安装 LTS 版本的 Node.js](../get-started/env.md#nodejs)。
 

@@ -50,15 +50,15 @@
     "@rollup/plugin-commonjs": "28.0.3",
     "@rollup/plugin-node-resolve": "16.0.1",
     "@rollup/plugin-replace": "6.0.2",
-    "@types/node": "22.14.1",
+    "@types/node": "22.15.3",
     "@types/webpack-env": "1.18.8",
-    "@vitest/coverage-istanbul": "3.1.1",
+    "@vitest/coverage-istanbul": "3.1.2",
     "concurrently": "9.1.2",
     "conventional-changelog-conventionalcommits": "8.0.0",
     "cpx2": "8.0.0",
     "cross-env": "7.0.3",
-    "eslint": "9.25.0",
-    "eslint-config-mister-hope": "0.9.0",
+    "eslint": "9.25.1",
+    "eslint-config-mister-hope": "0.9.1",
     "eslint-plugin-vue": "10.0.0",
     "gulp": "5.0.0",
     "http-server": "14.1.1",
@@ -68,34 +68,24 @@
     "ora": "8.2.0",
     "prettier": "3.5.3",
     "rimraf": "6.0.1",
-    "rollup": "4.40.0",
+    "rollup": "4.40.1",
     "rollup-plugin-copy": "3.5.0",
     "rollup-plugin-dts": "6.2.1",
     "rollup-plugin-esbuild": "6.2.1",
     "rollup-plugin-resolve-shebang": "1.0.1",
     "sort-package-json": "3.0.0",
-    "stylelint": "16.18.0",
-    "stylelint-config-hope": "8.0.0",
+    "stylelint": "16.19.1",
+    "stylelint-config-hope": "9.0.0",
     "through2": "4.0.2",
     "tslib": "2.8.1",
     "tsx": "4.19.3",
     "typescript": "5.8.3",
-    "vite": "6.3.2",
-    "vitest": "3.1.1",
+    "vite": "6.3.3",
+    "vitest": "3.1.2",
     "vuepress": "catalog:vuepress"
   },
-  "packageManager": "pnpm@10.8.1",
+  "packageManager": "pnpm@10.10.0",
   "engines": {
-    "node": ">=20"
-  },
-  "pnpm": {
-    "onlyBuiltDependencies": [
-      "@parcel/watcher",
-      "esbuild",
-      "nodejs-jieba"
-    ],
-    "overrides": {
-      "esbuild": "^0.25.2"
-    }
+    "node": ">=20.6.0"
   }
 }
