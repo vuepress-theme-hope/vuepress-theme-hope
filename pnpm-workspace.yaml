@@ -11,7 +11,7 @@ catalog:
   mathjax-full: 3.2.2
   mermaid: 11.6.0
   reveal.js: 5.2.1
-  sass-embedded: 1.86.3
+  sass-embedded: 1.87.0
   sass-loader: 16.0.5
   vue: 3.5.13
 catalogs:
