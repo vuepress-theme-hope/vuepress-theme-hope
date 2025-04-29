@@ -4,6 +4,25 @@ All notable changes to this project will be documented in this file. See [Conven
 
 <!-- #region recent-change -->
 
+## [2.0.0-rc.100](https://github.com/vuepress-theme-hope/vuepress-theme-hope/compare/v2.0.0-rc.82...v2.0.0-rc.100) (2025-04-29)
+
+### ⚠ BREAKING CHANGES
+
+- drop node18 support
+
+### ✨ Features
+
+- drop node18 support ([c611b59](https://github.com/vuepress-theme-hope/vuepress-theme-hope/commit/c611b59ab8a74dc641f8949c43c5f7ed4c6dd381))
+- **theme:** rebuild contributors option, close [#4853](https://github.com/vuepress-theme-hope/vuepress-theme-hope/issues/4853) ([12a7bd1](https://github.com/vuepress-theme-hope/vuepress-theme-hope/commit/12a7bd1c88b392d983b069e6381177daa15cad23))
+- **theme:** update words ([9a0047a](https://github.com/vuepress-theme-hope/vuepress-theme-hope/commit/9a0047a7d7c42495f38e2fb8b5e393b5914a6c9f))
+
+### 🐛 Bug Fixes
+
+- **deps:** update dependency artplayer-plugin-danmuku to v5.1.6 ([#4857](https://github.com/vuepress-theme-hope/vuepress-theme-hope/issues/4857)) ([989d91d](https://github.com/vuepress-theme-hope/vuepress-theme-hope/commit/989d91da0c445ca2d5e99c1e0d1ab882e63d9197))
+- fix broken links ([832db84](https://github.com/vuepress-theme-hope/vuepress-theme-hope/commit/832db84a51341fd62b3bddf50f24c390a955cb11))
+
+<!-- #region recent-change -->
+
 ## [2.0.0-rc.82](https://github.com/vuepress-theme-hope/vuepress-theme-hope/compare/v2.0.0-rc.81...v2.0.0-rc.82) (2025-04-16)
 
 ### ✨ Features
