@@ -105,7 +105,7 @@ In markdown, you can use `::icon decorators... =size /color key=value complex-ke
 
 :::
 
-## In Components
+### In Components
 
 You can use `<VPIcon />` component to add icon in Vue components.
 
