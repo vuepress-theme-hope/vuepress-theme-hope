@@ -27,6 +27,7 @@ export const PLUGIN_CHECKLIST: [
   ],
   ["@vuepress/plugin-markdown-math", "markdown.math"],
   ["@vuepress/plugin-markdown-tab", ["markdown.tabs", "markdown.codeTabs"]],
+  ["@vuepress/plugin-meilisearch", "plugins.meilisearch"],
   ["@vuepress/plugin-notice", "plugins.notice"],
   ["@vuepress/plugin-nprogress", "plugins.nprogress"],
   ["@vuepress/plugin-photo-swipe", "plugins.photoSwipe"],
