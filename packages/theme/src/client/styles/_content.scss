@@ -39,6 +39,10 @@
         }
       }
 
+      .theme-container.no-navbar & h2:first-child {
+        padding-top: 0 !important;
+      }
+
       // paragraph fix
       p,
       ul p,
