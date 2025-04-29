@@ -57,7 +57,7 @@ Whether show icons in breadcrumb.
 
 Whether to exclude the current page from the breadcrumb.
 
-## navbar
+## navbar {#navbar-header}
 
 - Type: `boolean`
 - Details:
@@ -65,7 +65,7 @@ Whether to exclude the current page from the breadcrumb.
 
 Setting it to `false` will disable navbar
 
-## sidebar
+## sidebar {#sidebar-header}
 
 - Type: `boolean | SidebarArrayOptions`
 - Details:

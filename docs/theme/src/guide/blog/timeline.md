@@ -21,7 +21,7 @@ By default, all articles which has a writing date will be displayed in timeline.
 
 We allow you to customize the top text of the timeline, you can configure it through `blog.timeline` in theme options.
 
-## Sidebar
+## Sidebar {#sidebar-header}
 
 We have added a timeline tab in the sidebar of blog-related pages for users to quickly preview the timeline.
 

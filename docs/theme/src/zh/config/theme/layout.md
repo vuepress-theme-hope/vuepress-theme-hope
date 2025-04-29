@@ -15,7 +15,7 @@ tag:
 
 ## 导航栏相关
 
-### navbar <Badge text="建议配置" type="tip" />
+### navbar <Badge text="建议配置" type="tip" /> {#navbar-header}
 
 - 类型: `NavbarOptions | false`
 - 默认值: `false`
@@ -133,7 +133,7 @@ tag:
 
 关于配置指南，详见 [布局 → 侧边栏](../../guide/layout/sidebar.md)。
 
-### sidebar <Badge text="建议配置" type="tip" />
+### sidebar <Badge text="建议配置" type="tip" /> {#sidebar-header}
 
 - 类型: `SidebarOptions`
 - 默认值: `"structure"`

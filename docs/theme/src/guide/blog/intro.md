@@ -31,7 +31,7 @@ The theme adds support for i18n in blog system. You can set different blog confi
 
 When you have multiple languages, the article list, timeline, etc. under each language will remain independent.
 
-## Sidebar
+## Sidebar {#sidebar-header}
 
 The theme provides a blog info sidebar. The sidebar will be displayed on the blog-related page (it will be displayed on the right side on the desktop, and retracted into the sidebar in mobile view)
 

@@ -15,7 +15,7 @@ The following options control theme layout.
 
 ## Navbar Related
 
-### navbar <Badge text="Recommended" type="tip" />
+### navbar <Badge text="Recommended" type="tip" /> {#navbar-header}
 
 - Type: `NavbarOptions | false`
 - Default: `false`
@@ -133,7 +133,7 @@ Whether hide site title on mobile.
 
 For guide, see [Layout → Sidebar](../../guide/layout/sidebar.md).
 
-### sidebar <Badge text="Recommended" type="tip" />
+### sidebar <Badge text="Recommended" type="tip" /> {#sidebar-header}
 
 - Type: `SSidebarOptions`
 - Default: `"structure"`

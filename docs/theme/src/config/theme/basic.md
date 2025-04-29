@@ -79,7 +79,7 @@ The default license of site.
 
 Site favicon.
 
-## navbar
+## navbar {#navbar-header}
 
 - Type: `NavbarOptions`
 
@@ -174,7 +174,7 @@ Site favicon.
 
 Navbar config
 
-## sidebar
+## sidebar {#sidebar-header}
 
 - Type: `SidebarOptions`
 

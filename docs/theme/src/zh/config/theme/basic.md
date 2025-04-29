@@ -78,7 +78,7 @@ tag:
 
 站点图标
 
-## navbar
+## navbar {#navbar-header}
 
 - 类型: `NavbarOptions`
 
@@ -173,7 +173,7 @@ tag:
 
 导航栏配置
 
-## sidebar
+## sidebar {#sidebar-header}
 
 - 类型: `SidebarOptions`
 

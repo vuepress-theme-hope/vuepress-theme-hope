@@ -60,7 +60,7 @@ tag:
 
 当前页面是否被路径导航排除。
 
-## navbar
+## navbar {#navbar-header}
 
 - 类型: `boolean`
 - 详情:
@@ -68,7 +68,7 @@ tag:
 
 填入 `false` 会禁用导航栏
 
-## sidebar
+## sidebar {#sidebar-header}
 
 - 类型: `boolean`
 - 详情:
