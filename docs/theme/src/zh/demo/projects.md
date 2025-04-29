@@ -539,6 +539,13 @@ blogs:
     url: https://blog.erduotong.com/
     repo: https://github.com/erduotong/erduotong.github.io
     preview: https://blog.erduotong.com/blog_preview.png
+
+  - name: Pysio's Home
+    desc: 熊猫的小窝
+    logo: https://www.pysio.online/assets/imgs/avast.svg
+    url: https://www.pysio.online/
+    repo: https://github.com/pysio2007/Vue-blog
+    preview: http://s3.pysio.online/pysioimages/blog_preview.png
 ---
 
 ## 使用 VuePress Theme Hope 的文档
