@@ -4,6 +4,15 @@ All notable changes to this project will be documented in this file. See [Conven
 
 <!-- #region recent-change -->
 
+## [2.0.0-rc.84](https://github.com/vuepress-theme-hope/vuepress-theme-hope/compare/v2.0.0-rc.83...v2.0.0-rc.84) (2025-04-29)
+
+### 🐛 Bug Fixes
+
+- **theme:** add meilisearch plugin to known plugin list ([4b715a2](https://github.com/vuepress-theme-hope/vuepress-theme-hope/commit/4b715a289d539135746aba154973188f5ee73f12))
+- **theme:** fix h2 with no-navbar style ([73294e6](https://github.com/vuepress-theme-hope/vuepress-theme-hope/commit/73294e6eb2294d198cc896040ee227788b1f5e53))
+
+<!-- #region recent-change -->
+
 ## [2.0.0-rc.83](https://github.com/vuepress-theme-hope/vuepress-theme-hope/compare/v2.0.0-rc.82...v2.0.0-rc.83) (2025-04-28)
 
 ### ⚠ BREAKING CHANGES
