@@ -28,7 +28,7 @@ export interface LayoutLocaleData {
 
 export interface DeprecatedLayoutOptions {
   /**
-   * @deprecated Use toc.levels instead
+   * @deprecated Use `toc.levels` instead
    */
   headerDepth?: number;
 }
