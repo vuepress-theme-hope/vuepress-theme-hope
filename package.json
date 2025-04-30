@@ -80,7 +80,7 @@
     "tslib": "2.8.1",
     "tsx": "4.19.3",
     "typescript": "5.8.3",
-    "vite": "6.3.3",
+    "vite": "6.3.4",
     "vitest": "3.1.2",
     "vuepress": "catalog:vuepress"
   },
