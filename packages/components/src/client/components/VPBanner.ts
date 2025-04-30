@@ -82,7 +82,7 @@ const VPBanner: FunctionalComponent<BannerProps> = ({
       : null,
     h("div", { class: "vp-banner-body" }, [
       h("div", { class: "vp-banner-title", innerHTML: title }),
-      h("p", { class: "vp-banner-content", innerHTML: content }),
+      h("div", { class: "vp-banner-content", innerHTML: content }),
       h(
         "div",
         { class: "vp-banner-actions" },

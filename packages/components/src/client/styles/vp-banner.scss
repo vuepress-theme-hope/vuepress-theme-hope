@@ -20,10 +20,10 @@
   &-logo {
     float: right;
 
-    width: 6rem;
-    height: 6rem;
-    margin-bottom: 12px;
-    margin-inline-start: 12px;
+    width: 5rem;
+    height: 5rem;
+    margin-bottom: 0.75rem;
+    margin-inline-start: 0.75rem;
 
     [dir="rtl"] & {
       float: left;
@@ -31,6 +31,7 @@
   }
 
   &-title {
+    margin-bottom: 0.5rem;
     font-weight: 500;
     font-size: 2rem;
     line-height: 1.5;
@@ -42,6 +43,7 @@
 
   &-content {
     max-width: 80%;
+    margin-bottom: 1rem;
     font-size: 1.125rem;
 
     @media (max-width: hope-config.$tablet) {
@@ -55,16 +57,16 @@
   }
 
   &-action {
-    height: 3rem;
+    height: 2.75rem;
     margin: 0.25rem 0.5rem;
-    padding: 0 1.75rem;
-    border-radius: 1.5rem;
+    padding: 0 1.5rem;
+    border-radius: 1rem;
 
     background-color: var(--vp-c-control);
     color: inherit;
 
     font-size: 1rem;
-    line-height: 3;
+    line-height: 2.75;
     text-decoration: none !important;
 
     transition: transform var(--vp-t-transform);
@@ -72,6 +74,10 @@
     @media (max-width: hope-config.$tablet) {
       height: 2.5rem;
       line-height: 2.5;
+    }
+
+    &:first-child {
+      margin-inline-start: 0;
     }
 
     &:hover {
