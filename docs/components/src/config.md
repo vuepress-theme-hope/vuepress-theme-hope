@@ -15,7 +15,6 @@ icon: gears
     | "BiliBili"
     | "CodePen"
     | "PDF"
-    | "Replit"
     | "Share"
     | "StackBlitz"
     | "SiteInfo"
@@ -38,7 +37,6 @@ Available component names:
 - `"BiliBili"`
 - `"CodePen"`
 - `"PDF"`
-- `"Replit"`
 - `"Share"`
 - `"StackBlitz"`
 - `"SiteInfo"`

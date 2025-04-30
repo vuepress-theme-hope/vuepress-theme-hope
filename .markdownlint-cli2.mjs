@@ -30,7 +30,6 @@ export default {
         "HighlightPanel",
         "ProjectLink",
         "PDF",
-        "Replit",
         "Share",
         "SiteInfo",
         "StackBlitz",

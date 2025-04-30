@@ -3,7 +3,6 @@ export { default as Badge } from "./components/Badge.js";
 export { default as BiliBili } from "./components/BiliBili.js";
 export { default as CodePen } from "./components/CodePen.js";
 export { default as PDF } from "./components/PDF.js";
-export { default as Replit } from "./components/Replit.js";
 export { default as Share } from "./components/Share.js";
 export { default as SiteInfo } from "./components/SiteInfo.js";
 export { default as StackBlitz } from "./components/StackBlitz.js";

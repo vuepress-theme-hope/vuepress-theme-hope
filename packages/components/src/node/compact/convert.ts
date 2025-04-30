@@ -71,6 +71,16 @@ export const convertOptions = (
         )} instead.`,
       );
 
+    if ((options.components as unknown[]).includes("Replit"))
+      logger.error(
+        `${colors.cyan("Replit")} component is no longer supported because it no longer supports embed mode.`,
+      );
+
+    if ((options.components as unknown[]).includes("XiGua"))
+      logger.error(
+        `Since XiGua is merging in to DouYin (TikTok in China), ${colors.cyan("XiGua")} component is no longer supported.`,
+      );
+
     if ((options.components as unknown[]).includes("FontIcon"))
       logger.warn(
         `${colors.cyan(
@@ -78,13 +88,6 @@ export const convertOptions = (
         )} component is no longer supported, please use ${colors.magenta(
           "@vuepress/plugin-icon",
         )} instead.`,
-      );
-
-    if ((options.components as unknown[]).includes("Replit"))
-      logger.warn(
-        `${colors.cyan(
-          "Replit",
-        )} component is deprecated because you can no longer run code in embed mode.`,
       );
 
     ["VideoPlayer", "AudioPlayer", "YouTube"].forEach((component) => {

@@ -12,7 +12,6 @@ export default [
         "components/BiliBili",
         "components/CodePen",
         "components/PDF",
-        "components/Replit",
         "components/Share",
         "components/SiteInfo",
         "components/StackBlitz",

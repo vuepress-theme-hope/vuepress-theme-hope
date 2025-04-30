@@ -27,7 +27,6 @@ export const AVAILABLE_COMPONENTS: (
 
   // deprecated
   "AudioPlayer",
-  "Replit",
   "VideoPlayer",
   "YouTube",
 ];

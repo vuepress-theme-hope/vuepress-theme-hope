@@ -73,8 +73,6 @@ export default theme("components", {
         "BiliBili",
         "CodePen",
         "PDF",
-        // @ts-expect-error: This component is deprecated
-        "Replit",
         "Share",
         "SiteInfo",
         "StackBlitz",
