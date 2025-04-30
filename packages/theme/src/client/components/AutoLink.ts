@@ -1,64 +1,60 @@
-import type { PropType, SlotsType, VNode } from "vue";
-import { defineComponent, h, resolveComponent } from "vue";
-import { AutoLink } from "vuepress/client";
+import type { FunctionalComponent, VNode } from "vue";
+import { h, resolveComponent } from "vue";
+import { AutoLink as _AutoLink } from "vuepress/client";
 
 import type { AutoLinkOptions } from "../../shared/index.js";
 
-export default defineComponent({
-  name: "AutoLink",
+export interface AutoLinkProps {
+  /**
+   * Autolink config
+   */
+  config: AutoLinkOptions;
 
-  props: {
-    /**
-     * Autolink config
-     */
-    config: {
-      type: Object as PropType<AutoLinkOptions>,
-      required: true,
-    },
+  /**
+   * Icon sizing
+   *
+   * @default "both"
+   */
+  iconSizing?: "height" | "width" | "both";
+}
 
-    /**
-     * Whether icon should not fix width
-     */
-    iconSizing: {
-      type: String as PropType<"height" | "width" | "both">,
-      default: "both",
-    },
-  },
-
-  emits: ["focusout"],
-
-  slots: Object as SlotsType<{
+const AutoLink: FunctionalComponent<
+  AutoLinkProps,
+  ["focusout"],
+  {
     before?: () => VNode[] | VNode | null;
     after?: () => VNode[] | VNode | null;
     default?: () => VNode[] | VNode;
-  }>,
+  }
+> = ({ config, iconSizing = "both" }, { emit, slots }) => {
+  const { icon } = config;
 
-  setup(props, { emit, slots }) {
-    return (): VNode => {
-      const { icon } = props.config;
+  return () => {
+    return h(
+      _AutoLink,
+      {
+        config,
+        onFocusout: () => {
+          emit("focusout");
+        },
+      },
+      {
+        default: slots.default,
+        before:
+          slots.before ??
+          (icon
+            ? (): VNode =>
+                h(resolveComponent("VPIcon"), {
+                  icon,
+                  sizing: iconSizing,
+                })
+            : null),
+        after: slots.after,
+      },
+    );
+  };
+};
 
-      return h(
-        AutoLink,
-        {
-          ...props, // Class needs to be merged manually
-          onFocusout: () => {
-            emit("focusout");
-          },
-        },
-        {
-          default: slots.default,
-          before:
-            slots.before ??
-            (icon
-              ? (): VNode | null =>
-                  h(resolveComponent("VPIcon"), {
-                    icon,
-                    sizing: props.iconSizing,
-                  })
-              : null),
-          after: slots.after,
-        },
-      );
-    };
-  },
-});
+AutoLink.displayName = "AutoLink";
+
+export default AutoLink;
