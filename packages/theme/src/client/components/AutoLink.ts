@@ -29,30 +29,28 @@ const AutoLink: FunctionalComponent<
 > = ({ config, iconSizing = "both" }, { emit, slots }) => {
   const { icon } = config;
 
-  return () => {
-    return h(
-      _AutoLink,
-      {
-        config,
-        onFocusout: () => {
-          emit("focusout");
-        },
+  return h(
+    _AutoLink,
+    {
+      config,
+      onFocusout: () => {
+        emit("focusout");
       },
-      {
-        default: slots.default,
-        before:
-          slots.before ??
-          (icon
-            ? (): VNode =>
-                h(resolveComponent("VPIcon"), {
-                  icon,
-                  sizing: iconSizing,
-                })
-            : null),
-        after: slots.after,
-      },
-    );
-  };
+    },
+    {
+      default: slots.default,
+      before:
+        slots.before ??
+        (icon
+          ? (): VNode =>
+              h(resolveComponent("VPIcon"), {
+                icon,
+                sizing: iconSizing,
+              })
+          : null),
+      after: slots.after,
+    },
+  );
 };
 
 AutoLink.displayName = "AutoLink";
