@@ -58,7 +58,7 @@ export default defineComponent({
                       { active: activeType.value === key },
                     ],
                     "aria-label": blogLocale.value[key],
-                    "data-balloon-pos": "up",
+                    "data-balloon-pos": "down",
                   },
                   h(Icon),
                 ),
