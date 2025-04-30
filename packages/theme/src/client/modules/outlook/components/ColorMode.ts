@@ -1,7 +1,7 @@
 import type { VNode } from "vue";
 import { computed, defineComponent, h } from "vue";
 
-import { useThemeLocaleData } from "@theme-hope/composables/index";
+import { useThemeLocale } from "@theme-hope/composables/index";
 import ColorModeSwitch from "@theme-hope/modules/outlook/components/ColorModeSwitch";
 import { useDarkMode } from "@theme-hope/modules/outlook/composables/index";
 
@@ -11,7 +11,7 @@ export default defineComponent({
   name: "ColorMode",
 
   setup() {
-    const themeLocale = useThemeLocaleData();
+    const themeLocale = useThemeLocale();
     const { canToggle } = useDarkMode();
 
     const locale = computed(() => themeLocale.value.outlookLocales.darkmode);

@@ -1,12 +1,7 @@
 import type { ComputedRef, InjectionKey } from "vue";
 import { computed, inject, provide } from "vue";
-import {
-  usePageFrontmatter,
-  useRouteLocale,
-  useRoutePath,
-} from "vuepress/client";
 
-import { useThemeLocaleData } from "@theme-hope/composables/index";
+import { useData } from "@theme-hope/composables/index";
 
 import type {
   ThemeHomePageFrontmatter,
@@ -25,12 +20,9 @@ export const sidebarItemsSymbol: InjectionKey<SidebarItemsRef> = Symbol(
  * Create sidebar items ref and provide as global computed in setup
  */
 export const setupSidebarItems = (): void => {
-  const frontmatter = usePageFrontmatter<
+  const { frontmatter, routeLocale, routePath, themeLocale } = useData<
     ThemeHomePageFrontmatter | ThemeProjectHomePageFrontmatter
   >();
-  const themeLocale = useThemeLocaleData();
-  const routeLocale = useRouteLocale();
-  const routePath = useRoutePath();
 
   // Get sidebar options from frontmatter > themeConfig
   const sidebarOptions = computed(() =>

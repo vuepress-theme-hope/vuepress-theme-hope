@@ -1,9 +1,9 @@
 import { keys } from "@vuepress/helper/client";
 import type { VNode } from "vue";
 import { computed, defineComponent, h } from "vue";
-import { RouteLink, useSiteLocaleData, withBase } from "vuepress/client";
+import { RouteLink, withBase } from "vuepress/client";
 
-import { useNavigate, useThemeLocaleData } from "@theme-hope/composables/index";
+import { useData, useNavigate } from "@theme-hope/composables/index";
 import SocialMedias from "@theme-hope/modules/blog/components/SocialMedias";
 import {
   useArticles,
@@ -24,8 +24,7 @@ export default defineComponent({
   setup() {
     const blogLocale = useBlogLocaleData();
     const blogOptions = useBlogOptions();
-    const siteLocale = useSiteLocaleData();
-    const themeLocale = useThemeLocaleData();
+    const { siteLocale, themeLocale } = useData();
     const articles = useArticles();
     const categoryMap = useCategoryMap();
     const tagMap = useTagMap();

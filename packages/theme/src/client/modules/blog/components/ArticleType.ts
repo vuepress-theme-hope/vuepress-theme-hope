@@ -1,12 +1,8 @@
 import type { VNode } from "vue";
 import { computed, defineComponent, h } from "vue";
-import {
-  RouteLink,
-  resolveRoute,
-  usePageData,
-  useRouteLocale,
-} from "vuepress/client";
+import { RouteLink, resolveRoute } from "vuepress/client";
 
+import { useData } from "@theme-hope/composables/index";
 import {
   useArticles,
   useBlogLocaleData,
@@ -21,8 +17,7 @@ export default defineComponent({
   name: "ArticleType",
 
   setup() {
-    const page = usePageData();
-    const localePath = useRouteLocale();
+    const { page, routeLocale } = useData();
     const articles = useArticles();
     const stars = useStars();
     const blogLocale = useBlogLocaleData();
@@ -35,7 +30,7 @@ export default defineComponent({
         },
         { text: blogLocale.value.star, path: stars.value.path },
         ...__VP_BLOG_TYPES__.map(({ key, path }) => {
-          const routePath = path.replace(/^\//, localePath.value);
+          const routePath = path.replace(/^\//, routeLocale.value);
 
           return {
             text:

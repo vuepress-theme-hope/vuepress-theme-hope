@@ -1,6 +1,7 @@
 import { useNow, watchImmediate } from "@vueuse/core";
 import { computed, onMounted } from "vue";
-import { useRouteLocale, useRoutePath } from "vuepress/client";
+
+import { useData } from "@theme-hope/composables/index";
 
 const millisecondPerDay = 1000 * 60 * 60 * 24;
 
@@ -21,14 +22,14 @@ export const setupRunningTimeFooter = (
   },
   preserveContent = false,
 ): void => {
+  const { routeLocale, routePath } = useData();
+  const now = useNow();
+
+  let prevTimeText = "";
+
   const initialTimeStamp = (
     date instanceof Date ? date : new Date(date)
   ).getTime();
-  let prevTimeText = "";
-
-  const routePath = useRoutePath();
-  const now = useNow();
-  const routeLocale = useRouteLocale();
 
   const pastedTime = computed(() => {
     const passedTime = now.value.getTime() - initialTimeStamp;

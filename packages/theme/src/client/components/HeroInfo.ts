@@ -1,15 +1,12 @@
 import { isString } from "@vuepress/helper/client";
 import type { SlotsType, VNode } from "vue";
 import { computed, defineComponent, h } from "vue";
-import {
-  usePageFrontmatter,
-  useSiteLocaleData,
-  withBase,
-} from "vuepress/client";
+import { withBase } from "vuepress/client";
 
 import AutoLink from "@theme-hope/components/AutoLink";
 import { HeroSlideDownButton } from "@theme-hope/components/HeroSlideDownButton";
 import { DropTransition } from "@theme-hope/components/transitions/index";
+import { useData } from "@theme-hope/composables/index";
 
 import type { ThemeProjectHomePageFrontmatter } from "../../shared/index.js";
 
@@ -45,8 +42,8 @@ export default defineComponent({
   }>,
 
   setup(_props, { slots }) {
-    const frontmatter = usePageFrontmatter<ThemeProjectHomePageFrontmatter>();
-    const siteLocale = useSiteLocaleData();
+    const { frontmatter, siteLocale } =
+      useData<ThemeProjectHomePageFrontmatter>();
 
     const info = computed<HeroInfoData>(() => {
       const {
@@ -88,8 +85,8 @@ export default defineComponent({
 
     const actions = computed(() => frontmatter.value.actions ?? []);
 
-    return (): VNode => {
-      return h(
+    return (): VNode =>
+      h(
         "header",
         {
           class: [
@@ -207,6 +204,5 @@ export default defineComponent({
             : null,
         ],
       );
-    };
   },
 });

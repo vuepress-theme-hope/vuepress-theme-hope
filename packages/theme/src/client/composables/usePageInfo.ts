@@ -6,8 +6,9 @@ import {
 } from "@vuepress/plugin-reading-time/client";
 import type { ComputedRef } from "vue";
 import { computed, inject } from "vue";
-import { usePageData, usePageFrontmatter } from "vuepress/client";
+import { useFrontmatter } from "vuepress/client";
 
+import { useData } from "@theme-hope/composables/index";
 import type {
   CategoryMapRef,
   TagMapRef,
@@ -19,19 +20,17 @@ import type {
 } from "@theme-hope/modules/info/utils/index";
 
 import { useAuthorInfo } from "./useAuthorInfo.js";
-import { useThemeLocaleData } from "./useThemeData.js";
 import type {
   AuthorInfo,
   PageInfoType,
   ThemeBasePageFrontmatter,
-  ThemeNormalPageFrontmatter,
 } from "../../shared/index.js";
 import { getAuthor, getCategory, getTag } from "../../shared/index.js";
 
 declare const __VP_BLOG__: boolean;
 
 export const usePageAuthor = (): ComputedRef<AuthorInfo[]> => {
-  const frontmatter = usePageFrontmatter<ThemeBasePageFrontmatter>();
+  const frontmatter = useFrontmatter<ThemeBasePageFrontmatter>();
   const authorInfo = useAuthorInfo();
 
   return computed(() => {
@@ -45,7 +44,7 @@ export const usePageAuthor = (): ComputedRef<AuthorInfo[]> => {
 };
 
 export const usePageCategory = (): ComputedRef<PageCategory[]> => {
-  const frontmatter = usePageFrontmatter<ThemeBasePageFrontmatter>();
+  const frontmatter = useFrontmatter<ThemeBasePageFrontmatter>();
   const categoryMap = __VP_BLOG__
     ? inject<CategoryMapRef>(Symbol.for("categoryMap"))
     : null;
@@ -61,7 +60,7 @@ export const usePageCategory = (): ComputedRef<PageCategory[]> => {
 };
 
 export const usePageTag = (): ComputedRef<PageTag[]> => {
-  const frontmatter = usePageFrontmatter<ThemeBasePageFrontmatter>();
+  const frontmatter = useFrontmatter<ThemeBasePageFrontmatter>();
   const tagMap = __VP_BLOG__ ? inject<TagMapRef>(Symbol.for("tagMap")) : null;
 
   return computed(() =>
@@ -73,8 +72,10 @@ export const usePageTag = (): ComputedRef<PageTag[]> => {
 };
 
 export const usePageDate = (): ComputedRef<Date | null> => {
-  const frontmatter = usePageFrontmatter<ThemeBasePageFrontmatter>();
-  const page = usePageData<{ git?: GitData }>();
+  const { frontmatter, page } = useData<
+    ThemeBasePageFrontmatter,
+    { git?: GitData }
+  >();
 
   return computed(() => {
     const date = getDate(frontmatter.value.date);
@@ -93,8 +94,7 @@ export const usePageInfo = (): {
   info: ComputedRef<PageInfoProps>;
   items: ComputedRef<PageInfoType[] | false | null>;
 } => {
-  const themeLocale = useThemeLocaleData();
-  const frontmatter = usePageFrontmatter<ThemeNormalPageFrontmatter>();
+  const { frontmatter, themeLocale } = useData();
   const author = usePageAuthor();
   const category = usePageCategory();
   const tag = usePageTag();

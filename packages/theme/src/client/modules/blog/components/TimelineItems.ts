@@ -4,7 +4,7 @@ import type { PageHeader } from "vuepress/client";
 import { RouteLink } from "vuepress/client";
 
 import { DropTransition } from "@theme-hope/components/transitions/index";
-import { useThemeLocaleData } from "@theme-hope/composables/index";
+import { useThemeLocale } from "@theme-hope/composables/index";
 import {
   useBlogOptions,
   useTimeline,
@@ -18,7 +18,7 @@ export default defineComponent({
 
   setup() {
     const blogOptions = useBlogOptions();
-    const themeLocale = useThemeLocaleData();
+    const themeLocale = useThemeLocale();
     const timelines = useTimeline();
 
     const hint = computed(

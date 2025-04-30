@@ -6,18 +6,16 @@ import {
 } from "@vuepress/helper/client";
 import type { ComponentOptions, SlotsType, VNode } from "vue";
 import { computed, defineComponent, h, resolveComponent } from "vue";
-import { usePageFrontmatter, withBase } from "vuepress/client";
+import { withBase } from "vuepress/client";
 
 import BreadCrumb from "@theme-hope/components/BreadCrumb";
 import MarkdownContent from "@theme-hope/components/MarkdownContent";
 import PageNav from "@theme-hope/components/PageNav";
 import PageTitle from "@theme-hope/components/PageTitle";
-import { useThemeLocaleData } from "@theme-hope/composables/index";
+import { useData } from "@theme-hope/composables/index";
 import PageMeta from "@theme-hope/modules/info/components/PageMeta";
 import TOC from "@theme-hope/modules/info/components/TOC";
 import { useDarkMode } from "@theme-hope/modules/outlook/composables/index";
-
-import type { ThemeNormalPageFrontmatter } from "../../shared/index.js";
 
 import "../styles/normal-page.scss";
 
@@ -45,18 +43,17 @@ export default defineComponent({
   }>,
 
   setup(_props, { slots }) {
-    const frontmatter = usePageFrontmatter<ThemeNormalPageFrontmatter>();
+    const { frontmatter, themeLocale } = useData();
     const { isDarkMode } = useDarkMode();
-    const themeLocale = useThemeLocaleData();
 
     const tocOptions = computed(() => {
       const config = frontmatter.value.toc ?? themeLocale.value.toc;
 
-      if (isPlainObject(config)) {
-        return { ...DEFAULT_TOC_OPTIONS, ...config };
-      }
-
-      return (config ?? true) ? DEFAULT_TOC_OPTIONS : null;
+      return isPlainObject(config)
+        ? { ...DEFAULT_TOC_OPTIONS, ...config }
+        : (config ?? true)
+          ? DEFAULT_TOC_OPTIONS
+          : null;
     });
 
     return (): VNode =>

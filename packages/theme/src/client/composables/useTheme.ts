@@ -9,8 +9,8 @@ import {
 
 import type { ThemeData, ThemeLocaleConfig } from "../../shared/index.js";
 
-export const useThemeData = (): ThemeDataRef<ThemeData> =>
+export const useTheme = (): ThemeDataRef<ThemeData> =>
   _useThemeData<ThemeData>();
 
-export const useThemeLocaleData = (): ThemeLocaleDataRef<ThemeLocaleConfig> =>
+export const useThemeLocale = (): ThemeLocaleDataRef<ThemeLocaleConfig> =>
   _useThemeLocaleData<ThemeLocaleConfig>();

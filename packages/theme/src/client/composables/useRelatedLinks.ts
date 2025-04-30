@@ -1,21 +1,14 @@
 import { isPlainObject, isString } from "@vuepress/helper/client";
 import type { ComputedRef } from "vue";
 import { computed } from "vue";
-import {
-  resolveRoute,
-  usePageFrontmatter,
-  useRoutePath,
-} from "vuepress/client";
+import { resolveRoute } from "vuepress/client";
 
+import { useData } from "@theme-hope/composables/index";
 import { useSidebarItems } from "@theme-hope/modules/sidebar/composables/index";
 import type { SidebarItem } from "@theme-hope/modules/sidebar/utils/index";
 import { resolveLinkInfo } from "@theme-hope/utils/index";
 
-import { useThemeLocaleData } from "./useThemeData.js";
-import type {
-  AutoLinkOptions,
-  ThemeNormalPageFrontmatter,
-} from "../../shared/index.js";
+import type { AutoLinkOptions } from "../../shared/index.js";
 
 const resolveFromFrontmatterConfig = (
   config: unknown,
@@ -98,10 +91,8 @@ interface RelatedLinks {
 }
 
 export const useRelatedLinks = (): RelatedLinks => {
-  const frontmatter = usePageFrontmatter<ThemeNormalPageFrontmatter>();
-  const themeLocale = useThemeLocaleData();
+  const { frontmatter, routePath, themeLocale } = useData();
   const sidebarItems = useSidebarItems();
-  const routePath = useRoutePath();
 
   const prevLink = computed(() => {
     const prevConfig = resolveFromFrontmatterConfig(

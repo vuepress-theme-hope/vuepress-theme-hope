@@ -1,10 +1,6 @@
 import { useEventListener, useStyleTag, watchImmediate } from "@vueuse/core";
 import { computed, onMounted } from "vue";
-import {
-  usePageFrontmatter,
-  useRouteLocale,
-  useRoutePath,
-} from "vuepress/client";
+import { useFrontmatter, useRouteLocale, useRoutePath } from "vuepress/client";
 
 import "./transparent-navbar.scss";
 
@@ -121,9 +117,9 @@ export const setupTransparentNavbar = ({
   light,
   dark,
 }: TransparentNavbarOptions = {}): void => {
+  const frontmatter = useFrontmatter();
   const routePath = useRoutePath();
   const routeLocale = useRouteLocale();
-  const frontmatter = usePageFrontmatter();
 
   const shouldTransparent = computed(
     type === "all"

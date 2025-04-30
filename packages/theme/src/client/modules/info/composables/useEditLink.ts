@@ -1,20 +1,13 @@
 import type { ComputedRef } from "vue";
 import { computed } from "vue";
-import { usePageData, usePageFrontmatter } from "vuepress/client";
 
-import { useThemeLocaleData } from "@theme-hope/composables/index";
+import { useData } from "@theme-hope/composables/index";
 import { resolveEditLink } from "@theme-hope/modules/info/utils/index";
 
-import type {
-  AutoLinkOptions,
-  ThemeNormalPageFrontmatter,
-  ThemePageData,
-} from "../../../../shared/index.js";
+import type { AutoLinkOptions } from "../../../../shared/index.js";
 
 export const useEditLink = (): ComputedRef<null | AutoLinkOptions> => {
-  const themeLocale = useThemeLocaleData();
-  const page = usePageData<ThemePageData>();
-  const frontmatter = usePageFrontmatter<ThemeNormalPageFrontmatter>();
+  const { frontmatter, page, themeLocale } = useData();
 
   return computed(() => {
     const {

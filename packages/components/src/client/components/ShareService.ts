@@ -8,7 +8,7 @@ import {
 } from "@vuepress/helper/client";
 import type { PropType, VNode } from "vue";
 import { defineComponent, h, onMounted, ref } from "vue";
-import { usePageData, usePageFrontmatter } from "vuepress/client";
+import { useData } from "vuepress/client";
 import { Popup, openPopupWindow } from "vuepress-shared/client";
 
 import type { ShareServiceOptions } from "../../shared/share.js";
@@ -90,8 +90,7 @@ export default defineComponent({
 
   setup(props) {
     let popup: Popup;
-    const page = usePageData();
-    const frontmatter = usePageFrontmatter();
+    const { frontmatter, page } = useData();
 
     const showPopup = ref(false);
 

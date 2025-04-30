@@ -5,7 +5,7 @@ import { defineComponent, h } from "vue";
 
 import AutoLink from "@theme-hope/components/AutoLink";
 import { EditIcon } from "@theme-hope/components/icons/index";
-import { useMetaInfo, useThemeLocaleData } from "@theme-hope/composables/index";
+import { useMetaInfo, useThemeLocale } from "@theme-hope/composables/index";
 import { useEditLink } from "@theme-hope/modules/info/composables/index";
 
 import "../styles/page-meta.scss";
@@ -14,7 +14,7 @@ export default defineComponent({
   name: "PageMeta",
 
   setup() {
-    const themeLocale = useThemeLocaleData();
+    const themeLocale = useThemeLocale();
     const metaInfo = useMetaInfo();
     const contributors = useContributors();
     const editLink = useEditLink();

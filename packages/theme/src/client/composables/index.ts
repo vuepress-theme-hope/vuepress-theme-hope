@@ -5,5 +5,5 @@ export * from "./useNavigate.js";
 export * from "./usePageInfo.js";
 export * from "./usePure.js";
 export * from "./useRelatedLinks.js";
-export * from "./useThemeData.js";
+export * from "./useTheme.js";
 export * from "./useWindowSize.js";

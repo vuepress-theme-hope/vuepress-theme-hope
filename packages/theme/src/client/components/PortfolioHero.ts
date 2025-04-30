@@ -10,7 +10,7 @@ import {
   ref,
   resolveComponent,
 } from "vue";
-import { usePageFrontmatter, withBase } from "vuepress/client";
+import { useFrontmatter, withBase } from "vuepress/client";
 
 import { DropTransition } from "@theme-hope/components/transitions/index";
 import { useAuthorInfo } from "@theme-hope/composables/index";
@@ -54,7 +54,7 @@ export default defineComponent({
 
   setup(_props, { slots }) {
     const authorInfo = useAuthorInfo();
-    const frontmatter = usePageFrontmatter<ThemePortfolioFrontmatter>();
+    const frontmatter = useFrontmatter<ThemePortfolioFrontmatter>();
 
     const index = ref(0);
     const currentTitle = computed(

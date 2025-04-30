@@ -1,6 +1,6 @@
 import type { VNode } from "vue";
 import { computed, defineComponent, h } from "vue";
-import { usePageFrontmatter } from "vuepress/client";
+import { useFrontmatter } from "vuepress/client";
 
 import MarkdownContent from "@theme-hope/components/MarkdownContent";
 import { DropTransition } from "@theme-hope/components/transitions/index";
@@ -19,7 +19,7 @@ export default defineComponent({
 
   setup() {
     const articles = useArticles();
-    const frontmatter = usePageFrontmatter<ThemeBlogHomePageFrontmatter>();
+    const frontmatter = useFrontmatter<ThemeBlogHomePageFrontmatter>();
 
     const projects = computed(() => frontmatter.value.projects ?? []);
 

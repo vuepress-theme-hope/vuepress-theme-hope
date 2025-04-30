@@ -1,6 +1,6 @@
 <script setup lang="ts">
 import { computed } from "vue";
-import { usePageFrontmatter } from "vuepress/client";
+import { useFrontmatter } from "vuepress/client";
 import type { ThemeBlogHomePageFrontmatter } from "vuepress-theme-hope/client";
 import BingHeroBackground from "vuepress-theme-hope/presets/BingHeroBackground.js";
 import HitokotoBlogHero from "vuepress-theme-hope/presets/HitokotoBlogHero.js";
@@ -17,7 +17,7 @@ import { useArticles } from "@theme-hope/modules/blog/composables/index";
 import "vuepress-theme-hope/blog/styles/home.scss";
 
 const articles = useArticles();
-const frontmatter = usePageFrontmatter<ThemeBlogHomePageFrontmatter>();
+const frontmatter = useFrontmatter<ThemeBlogHomePageFrontmatter>();
 const projects = computed(() => frontmatter.value.projects ?? []);
 </script>
 

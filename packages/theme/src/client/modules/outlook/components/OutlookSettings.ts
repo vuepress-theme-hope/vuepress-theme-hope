@@ -2,7 +2,7 @@ import type { VNode } from "vue";
 import { computed, defineComponent, h } from "vue";
 import { ClientOnly } from "vuepress/client";
 
-import { usePure, useThemeData } from "@theme-hope/composables/index";
+import { usePure, useTheme } from "@theme-hope/composables/index";
 import ColorMode from "@theme-hope/modules/outlook/components/ColorMode";
 import ThemeColor, {
   hasMultipleThemeColors,
@@ -13,7 +13,7 @@ export default defineComponent({
   name: "OutlookSettings",
 
   setup() {
-    const theme = useThemeData();
+    const theme = useTheme();
     const isPure = usePure();
 
     const enableFullScreen = computed(

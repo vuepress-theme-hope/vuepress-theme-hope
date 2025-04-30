@@ -1,7 +1,7 @@
 import type { VNode } from "vue";
 import { defineComponent, h } from "vue";
 
-import { useThemeLocaleData } from "@theme-hope/composables/index";
+import { useThemeLocale } from "@theme-hope/composables/index";
 
 import "../styles/not-found-hint.scss";
 
@@ -9,7 +9,7 @@ export default defineComponent({
   name: "NotFoundHint",
 
   setup() {
-    const themeLocale = useThemeLocaleData();
+    const themeLocale = useThemeLocale();
 
     const getMsg = (): string => {
       const messages = themeLocale.value.routeLocales.notFoundMsg;

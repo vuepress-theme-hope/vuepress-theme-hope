@@ -9,7 +9,7 @@ import {
   ref,
   shallowRef,
 } from "vue";
-import { ClientOnly, usePageLang } from "vuepress/client";
+import { ClientOnly, useLang } from "vuepress/client";
 
 import "@vuepress/helper/transition/fade-in.css";
 import "./bing-hero-background.scss";
@@ -49,7 +49,7 @@ export default defineComponent({
    */
 
   setup() {
-    const lang = usePageLang();
+    const lang = useLang();
     const bingInfo = shallowRef<HTMLElement>();
     const showInfo = ref(false);
 

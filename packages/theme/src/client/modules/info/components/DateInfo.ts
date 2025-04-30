@@ -1,6 +1,6 @@
 import type { PropType, VNode } from "vue";
 import { computed, defineComponent, h } from "vue";
-import { usePageLang } from "vuepress/client";
+import { useLang } from "vuepress/client";
 
 import { usePure } from "@theme-hope/composables/index";
 import { CalendarIcon } from "@theme-hope/modules/info/components/icons";
@@ -21,7 +21,7 @@ export default defineComponent({
   },
 
   setup(props) {
-    const lang = usePageLang();
+    const lang = useLang();
     const metaLocale = useMetaLocale();
     const isPure = usePure();
 

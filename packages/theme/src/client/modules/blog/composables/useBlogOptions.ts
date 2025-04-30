@@ -1,16 +1,12 @@
 import type { ComputedRef } from "vue";
 import { computed } from "vue";
 
-import {
-  useThemeData,
-  useThemeLocaleData,
-} from "@theme-hope/composables/index";
+import { useData } from "@theme-hope/composables/index";
 
 import type { BlogLocaleConfig } from "../../../../shared/index.js";
 
 export const useBlogOptions = (): ComputedRef<BlogLocaleConfig> => {
-  const theme = useThemeData();
-  const themeLocale = useThemeLocaleData();
+  const { theme, themeLocale } = useData();
 
   return computed(() => ({
     ...theme.value.blog,

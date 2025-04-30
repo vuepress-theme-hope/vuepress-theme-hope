@@ -1,7 +1,6 @@
 import { RenderDefault, hasGlobalComponent } from "@vuepress/helper/client";
 import type { SlotsType, VNode } from "vue";
 import { computed, defineComponent, h, resolveComponent } from "vue";
-import { usePageData, usePageFrontmatter } from "vuepress/client";
 
 import CommonWrapper from "@theme-hope/components/CommonWrapper";
 import HomePage from "@theme-hope/components/HomePage";
@@ -9,12 +8,7 @@ import NormalPage from "@theme-hope/components/NormalPage";
 import PortfolioHome from "@theme-hope/components/PortfolioHome";
 import SkipLink from "@theme-hope/components/SkipLink";
 import { FadeInUpTransition } from "@theme-hope/components/transitions/index";
-import {
-  usePure,
-  useThemeData,
-  useThemeLocaleData,
-  useWindowSize,
-} from "@theme-hope/composables/index";
+import { useData, usePure, useWindowSize } from "@theme-hope/composables/index";
 
 import type { ThemeBasePageFrontmatter } from "../../shared/index.js";
 
@@ -43,10 +37,8 @@ export default defineComponent({
   }>,
 
   setup(_props, { slots }) {
-    const theme = useThemeData();
-    const themeLocale = useThemeLocaleData();
-    const page = usePageData();
-    const frontmatter = usePageFrontmatter<ThemeBasePageFrontmatter>();
+    const { frontmatter, page, theme, themeLocale } =
+      useData<ThemeBasePageFrontmatter>();
     const isPure = usePure();
     const { isMobile } = useWindowSize();
 

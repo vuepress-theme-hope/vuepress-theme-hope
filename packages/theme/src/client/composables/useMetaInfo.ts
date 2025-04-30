@@ -1,11 +1,8 @@
 import { isArray } from "@vuepress/helper/client";
 import type { ComputedRef } from "vue";
 import { computed } from "vue";
-import { usePageFrontmatter } from "vuepress/client";
 
-import { useThemeLocaleData } from "@theme-hope/composables/index";
-
-import type { ThemeNormalPageFrontmatter } from "../../shared/index.js";
+import { useData } from "@theme-hope/composables/index";
 
 export interface MetaInfo {
   /** Whether to show "changelog" or not */
@@ -18,8 +15,7 @@ export interface MetaInfo {
 }
 
 export const useMetaInfo = (): MetaInfo => {
-  const frontmatter = usePageFrontmatter<ThemeNormalPageFrontmatter>();
-  const themeLocale = useThemeLocaleData();
+  const { frontmatter, themeLocale } = useData();
 
   const changelog = computed(
     () =>

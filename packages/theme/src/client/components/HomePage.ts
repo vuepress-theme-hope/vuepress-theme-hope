@@ -1,7 +1,7 @@
 import { isArray } from "@vuepress/helper/client";
 import type { SlotsType, VNode } from "vue";
 import { defineComponent, h } from "vue";
-import { usePageFrontmatter } from "vuepress/client";
+import { useFrontmatter } from "vuepress/client";
 
 import FeaturePanel from "@theme-hope/components/FeaturePanel";
 import HeroInfo from "@theme-hope/components/HeroInfo";
@@ -23,7 +23,7 @@ export default defineComponent({
   }>,
 
   setup(_props, { slots }) {
-    const frontmatter = usePageFrontmatter<ThemeProjectHomePageFrontmatter>();
+    const frontmatter = useFrontmatter<ThemeProjectHomePageFrontmatter>();
 
     return (): VNode => {
       const { features, highlights } = frontmatter.value;

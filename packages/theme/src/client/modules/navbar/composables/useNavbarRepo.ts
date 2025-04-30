@@ -3,7 +3,7 @@ import { computed } from "vue";
 import type { RepoType } from "vuepress-shared/client";
 import { resolveRepoLink, resolveRepoType } from "vuepress-shared/client";
 
-import { useThemeLocaleData } from "@theme-hope/composables/index";
+import { useThemeLocale } from "@theme-hope/composables/index";
 
 export interface RepoConfig {
   type: Exclude<RepoType, null> | "Source";
@@ -15,7 +15,7 @@ export interface RepoConfig {
  * Get navbar config of repository link
  */
 export const useNavbarRepo = (): ComputedRef<RepoConfig | null> => {
-  const themeLocale = useThemeLocaleData();
+  const themeLocale = useThemeLocale();
 
   const repo = computed(() => themeLocale.value.repo);
 

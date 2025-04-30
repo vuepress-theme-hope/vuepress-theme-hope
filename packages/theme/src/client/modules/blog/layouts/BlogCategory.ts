@@ -1,7 +1,7 @@
 import type { BlogPluginFrontmatter } from "@vuepress/plugin-blog";
 import type { VNode } from "vue";
 import { computed, defineComponent, h } from "vue";
-import { usePageData, usePageFrontmatter } from "vuepress/client";
+import { useFrontmatter, usePage } from "vuepress/client";
 
 import { DropTransition } from "@theme-hope/components/transitions/index";
 import ArticleList from "@theme-hope/modules/blog/components/ArticleList";
@@ -20,17 +20,17 @@ export default defineComponent({
   name: "BlogCategory",
 
   setup() {
-    const page = usePageData();
-    const frontmatter = usePageFrontmatter<BlogPluginFrontmatter>();
+    const page = usePage();
+    const frontmatter = useFrontmatter<BlogPluginFrontmatter>();
     const categoryMap = useCategoryMap();
     const tagMap = useTagMap();
 
-    const blogOptions = computed(() => frontmatter.value.blog);
+    const blogConfig = computed(() => frontmatter.value.blog);
 
     const items = computed(() => {
-      if (blogOptions.value?.type !== "category") return null;
+      if (blogConfig.value?.type !== "category") return null;
 
-      const { name, key } = blogOptions.value;
+      const { name, key } = blogConfig.value;
 
       if (!name) return null;
 
@@ -49,9 +49,9 @@ export default defineComponent({
           h("div", { class: "blog-page-wrapper" }, [
             h("main", { id: "main-content", class: "vp-blog-main" }, [
               h(DropTransition, () =>
-                blogOptions.value?.key === "category"
+                blogConfig.value?.key === "category"
                   ? h(CategoryList)
-                  : blogOptions.value?.key === "tag"
+                  : blogConfig.value?.key === "tag"
                     ? h(TagList)
                     : null,
               ),

@@ -3,7 +3,7 @@ import type { ComputedRef } from "vue";
 import { computed } from "vue";
 import { resolveRoute } from "vuepress/client";
 
-import { useThemeLocaleData } from "@theme-hope/composables/index";
+import { useThemeLocale } from "@theme-hope/composables/index";
 import {
   isLinkInternal,
   resolveLinkInfo,
@@ -47,7 +47,7 @@ export const resolveNavbarItem = (
 };
 
 export const useNavbarItems = (): ComputedRef<NavbarItem[]> => {
-  const themeLocaleData = useThemeLocaleData();
+  const themeLocaleData = useThemeLocale();
 
   return computed(() =>
     // eslint-disable-next-line @typescript-eslint/prefer-nullish-coalescing

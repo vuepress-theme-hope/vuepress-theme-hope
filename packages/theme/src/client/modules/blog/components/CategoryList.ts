@@ -1,7 +1,7 @@
 import { entries } from "@vuepress/helper/client";
 import type { VNode } from "vue";
 import { defineComponent, h } from "vue";
-import { RouteLink, usePageData } from "vuepress/client";
+import { RouteLink, usePage } from "vuepress/client";
 import { generateIndexFromHash } from "vuepress-shared/client";
 
 import { useCategoryMap } from "@theme-hope/modules/blog/composables/index";
@@ -14,7 +14,7 @@ export default defineComponent({
   name: "CategoryList",
 
   setup() {
-    const page = usePageData();
+    const page = usePage();
     const categoryMap = useCategoryMap();
 
     return (): VNode =>

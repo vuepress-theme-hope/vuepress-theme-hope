@@ -1,17 +1,9 @@
 import { entries, keys, useRoutePaths } from "@vuepress/helper/client";
 import type { ComputedRef } from "vue";
 import { computed } from "vue";
-import {
-  useRoute,
-  useRouteLocale,
-  useSiteData,
-  useSiteLocaleData,
-} from "vuepress/client";
+import { useRoute } from "vuepress/client";
 
-import {
-  useThemeData,
-  useThemeLocaleData,
-} from "@theme-hope/composables/index";
+import { useData } from "@theme-hope/composables/index";
 
 import type { AutoLinkOptions, NavGroup } from "../../../../shared/index.js";
 
@@ -20,13 +12,9 @@ import type { AutoLinkOptions, NavGroup } from "../../../../shared/index.js";
  */
 export const useNavbarLanguageDropdown =
   (): ComputedRef<NavGroup<AutoLinkOptions> | null> => {
+    const { routeLocale, site, siteLocale, theme, themeLocale } = useData();
     const routePaths = useRoutePaths();
     const route = useRoute();
-    const routeLocale = useRouteLocale();
-    const site = useSiteData();
-    const siteLocale = useSiteLocaleData();
-    const theme = useThemeData();
-    const themeLocale = useThemeLocaleData();
 
     return computed(() => {
       const localePaths = keys(site.value.locales);

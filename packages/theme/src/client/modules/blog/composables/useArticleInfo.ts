@@ -6,7 +6,7 @@ import {
 import type { ComputedRef, Ref } from "vue";
 import { computed, toRef } from "vue";
 
-import { useThemeLocaleData } from "@theme-hope/composables/index";
+import { useThemeLocale } from "@theme-hope/composables/index";
 import type { PageInfoProps } from "@theme-hope/modules/info/components/PageInfo";
 import type {
   PageCategory,
@@ -26,7 +26,7 @@ import { getAuthor, getCategory, getTag } from "../../../../shared/index.js";
 export type AuthorRef = ComputedRef<AuthorInfo[]>;
 
 export const useArticleAuthor = (info: Ref<ArticleInfoData>): AuthorRef => {
-  const themeLocale = useThemeLocaleData();
+  const themeLocale = useThemeLocale();
 
   return computed(() => {
     const { ["author"]: author } = info.value;

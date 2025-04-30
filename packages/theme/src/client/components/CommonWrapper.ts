@@ -18,15 +18,10 @@ import {
   shallowRef,
   watch,
 } from "vue";
-import { onContentUpdated, usePageFrontmatter } from "vuepress/client";
+import { onContentUpdated } from "vuepress/client";
 
 import PageFooter from "@theme-hope/components/PageFooter";
-import {
-  usePure,
-  useThemeData,
-  useThemeLocaleData,
-  useWindowSize,
-} from "@theme-hope/composables/index";
+import { useData, usePure, useWindowSize } from "@theme-hope/composables/index";
 import Navbar from "@theme-hope/modules/navbar/components/Navbar";
 import Sidebar from "@theme-hope/modules/sidebar/components/Sidebar";
 import { useSidebarItems } from "@theme-hope/modules/sidebar/composables/index";
@@ -84,11 +79,9 @@ export default defineComponent({
   }>,
 
   setup(props, { slots }) {
-    const frontmatter = usePageFrontmatter<
+    const { frontmatter, theme, themeLocale } = useData<
       ThemeProjectHomePageFrontmatter | ThemeNormalPageFrontmatter
     >();
-    const theme = useThemeData();
-    const themeLocale = useThemeLocaleData();
     const { isMobile, isPC } = useWindowSize();
     const isPure = usePure();
 
@@ -185,16 +178,16 @@ export default defineComponent({
       ),
     );
 
-    onContentUpdated(() => {
-      toggleMobileSidebar(false);
-    });
-
     watch(isMobile, (value) => {
       if (!value) toggleMobileSidebar(false);
     });
 
     watch(isMobileSidebarOpen, (value) => {
       isLocked.value = value;
+    });
+
+    onContentUpdated(() => {
+      toggleMobileSidebar(false);
     });
 
     onMounted(() => {

@@ -8,22 +8,12 @@ import {
   resolveComponent,
   shallowRef,
 } from "vue";
-import {
-  RouteLink,
-  resolveRoute,
-  usePageData,
-  usePageFrontmatter,
-  useRouteLocale,
-  useRoutePath,
-} from "vuepress/client";
+import { RouteLink, resolveRoute } from "vuepress/client";
 
-import { useThemeLocaleData } from "@theme-hope/composables/index";
+import { useData } from "@theme-hope/composables/index";
 import { getAncestorLinks } from "@theme-hope/utils/index";
 
-import type {
-  PageInfoData,
-  ThemeNormalPageFrontmatter,
-} from "../../shared/index.js";
+import type { PageInfoData } from "../../shared/index.js";
 
 import "../styles/breadcrumb.scss";
 
@@ -37,11 +27,9 @@ export default defineComponent({
   name: "BreadCrumb",
 
   setup() {
-    const page = usePageData();
-    const routeLocale = useRouteLocale();
-    const routePath = useRoutePath();
-    const frontmatter = usePageFrontmatter<ThemeNormalPageFrontmatter>();
-    const themeLocale = useThemeLocaleData();
+    const { frontmatter, page, routeLocale, routePath, themeLocale } =
+      useData();
+
     const config = shallowRef<BreadCrumbConfig[]>([]);
 
     const enable = computed(

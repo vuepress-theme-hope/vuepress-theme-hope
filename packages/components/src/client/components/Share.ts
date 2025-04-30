@@ -2,7 +2,7 @@ import { isFunction, isPlainObject, isString } from "@vuepress/helper/client";
 import type { PropType, VNode } from "vue";
 import { computed, defineComponent, h } from "vue";
 import type { PageData } from "vuepress/client";
-import { usePageData } from "vuepress/client";
+import { usePage } from "vuepress/client";
 
 import ShareService from "./ShareService.js";
 import type { ShareServiceOptions } from "../../shared/share.js";
@@ -89,7 +89,7 @@ export default defineComponent({
   },
 
   setup(props) {
-    const page = usePageData();
+    const page = usePage();
 
     const services = computed(() => {
       const serviceOptions = isString(props.services)

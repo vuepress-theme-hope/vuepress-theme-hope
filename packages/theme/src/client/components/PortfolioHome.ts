@@ -1,6 +1,6 @@
 import type { VNode } from "vue";
 import { defineComponent, h } from "vue";
-import { usePageFrontmatter } from "vuepress/client";
+import { useFrontmatter } from "vuepress/client";
 
 import MarkdownContent from "@theme-hope/components/MarkdownContent";
 import PortfolioHero from "@theme-hope/components/PortfolioHero";
@@ -14,7 +14,7 @@ export default defineComponent({
   name: "PortfolioHome",
 
   setup() {
-    const frontmatter = usePageFrontmatter<ThemePortfolioFrontmatter>();
+    const frontmatter = useFrontmatter<ThemePortfolioFrontmatter>();
 
     return (): VNode => {
       const content = frontmatter.value.content ?? "portfolio";

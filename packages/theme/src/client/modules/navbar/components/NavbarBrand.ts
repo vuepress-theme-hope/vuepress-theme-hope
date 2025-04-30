@@ -1,13 +1,8 @@
 import type { VNode } from "vue";
 import { computed, defineComponent, h } from "vue";
-import {
-  RouteLink,
-  useRouteLocale,
-  useSiteLocaleData,
-  withBase,
-} from "vuepress/client";
+import { RouteLink, withBase } from "vuepress/client";
 
-import { useThemeLocaleData } from "@theme-hope/composables/index";
+import { useData } from "@theme-hope/composables/index";
 
 import "../styles/navbar-brand.scss";
 
@@ -15,9 +10,7 @@ export default defineComponent({
   name: "NavbarBrand",
 
   setup() {
-    const routeLocale = useRouteLocale();
-    const siteLocale = useSiteLocaleData();
-    const themeLocale = useThemeLocaleData();
+    const { routeLocale, siteLocale, themeLocale } = useData();
 
     const siteBrandLink = computed(
       () => themeLocale.value.home ?? routeLocale.value,

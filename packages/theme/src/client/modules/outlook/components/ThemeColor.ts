@@ -2,7 +2,7 @@ import { entries, fromEntries } from "@vuepress/helper/client";
 import type { VNode } from "vue";
 import { computed, defineComponent, h } from "vue";
 
-import { useThemeLocaleData } from "@theme-hope/composables/index";
+import { useThemeLocale } from "@theme-hope/composables/index";
 import ThemeColorPicker from "@theme-hope/modules/outlook/components/ThemeColorPicker";
 
 import cssVariables from "../../../styles/variables.module.scss";
@@ -21,7 +21,7 @@ export default defineComponent({
   name: "ThemeColor",
 
   setup() {
-    const themeLocale = useThemeLocaleData();
+    const themeLocale = useThemeLocale();
 
     const locale = computed(() => themeLocale.value.outlookLocales.themeColor);
 

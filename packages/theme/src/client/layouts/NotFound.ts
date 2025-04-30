@@ -1,11 +1,11 @@
 import type { SlotsType, VNode } from "vue";
 import { defineComponent, h } from "vue";
-import { useRouteLocale, useRouter } from "vuepress/client";
+import { useRouter } from "vuepress/client";
 
 import CommonWrapper from "@theme-hope/components/CommonWrapper";
 import NotFoundHint from "@theme-hope/components/NotFoundHint";
 import SkipLink from "@theme-hope/components/SkipLink";
-import { useThemeLocaleData } from "@theme-hope/composables/index";
+import { useData } from "@theme-hope/composables/index";
 
 import "../styles/not-found.scss";
 
@@ -17,9 +17,8 @@ export default defineComponent({
   }>,
 
   setup(_props, { slots }) {
+    const { routeLocale, themeLocale } = useData();
     const router = useRouter();
-    const routeLocale = useRouteLocale();
-    const themeLocale = useThemeLocaleData();
 
     return (): VNode[] => [
       h(SkipLink),

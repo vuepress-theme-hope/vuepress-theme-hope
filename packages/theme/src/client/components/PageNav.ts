@@ -6,7 +6,7 @@ import AutoLink from "@theme-hope/components/AutoLink";
 import {
   useNavigate,
   useRelatedLinks,
-  useThemeLocaleData,
+  useThemeLocale,
 } from "@theme-hope/composables/index";
 
 import "../styles/page-nav.scss";
@@ -15,9 +15,8 @@ export default defineComponent({
   name: "PageNav",
 
   setup() {
-    const themeLocale = useThemeLocaleData();
+    const themeLocale = useThemeLocale();
     const navigate = useNavigate();
-
     const { prevLink, nextLink } = useRelatedLinks();
 
     useEventListener("keydown", (event): void => {

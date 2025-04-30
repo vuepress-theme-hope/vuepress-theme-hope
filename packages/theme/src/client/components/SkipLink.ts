@@ -2,7 +2,7 @@ import type { VNode } from "vue";
 import { defineComponent, h, shallowRef } from "vue";
 import { onContentUpdated } from "vuepress/client";
 
-import { useThemeLocaleData } from "@theme-hope/composables/index";
+import { useThemeLocale } from "@theme-hope/composables/index";
 
 import "../styles/skip-link.scss";
 
@@ -18,7 +18,7 @@ export default defineComponent({
   },
 
   setup(props) {
-    const themeLocale = useThemeLocaleData();
+    const themeLocale = useThemeLocale();
 
     const skipToMainContent = shallowRef<HTMLSpanElement>();
 

@@ -1,14 +1,11 @@
 import { isString } from "@vuepress/helper/client";
 import type { CSSProperties, SlotsType, VNode } from "vue";
 import { computed, defineComponent, h } from "vue";
-import {
-  usePageFrontmatter,
-  useSiteLocaleData,
-  withBase,
-} from "vuepress/client";
+import { withBase } from "vuepress/client";
 
 import { HeroSlideDownButton } from "@theme-hope/components/HeroSlideDownButton";
 import { DropTransition } from "@theme-hope/components/transitions/index";
+import { useData } from "@theme-hope/composables/index";
 
 import type { ThemeBlogHomePageFrontmatter } from "../../../../shared/index.js";
 
@@ -39,8 +36,7 @@ export default defineComponent({
   }>,
 
   setup(_props, { slots }) {
-    const frontmatter = usePageFrontmatter<ThemeBlogHomePageFrontmatter>();
-    const siteLocale = useSiteLocaleData();
+    const { frontmatter, siteLocale } = useData<ThemeBlogHomePageFrontmatter>();
 
     const info = computed(() => {
       const {

@@ -3,7 +3,7 @@ import type Artplayer from "artplayer";
 import type { Option as ArtPlayerInitOptions } from "artplayer/types/option.js";
 import type { PropType, VNode } from "vue";
 import { camelize, defineComponent, h, onMounted, onUnmounted, ref } from "vue";
-import { usePageLang } from "vuepress/client";
+import { useLang } from "vuepress/client";
 
 import type { ArtPlayerOptions } from "../../shared/index.js";
 import { useSize } from "../composables/index.js";
@@ -183,7 +183,7 @@ export default defineComponent({
   },
 
   setup(props, { attrs }) {
-    const lang = usePageLang();
+    const lang = useLang();
     const { el, width, height, resize } = useSize<HTMLDivElement>(props, 0);
 
     const loaded = ref(false);

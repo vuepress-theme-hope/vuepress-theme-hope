@@ -2,7 +2,7 @@ import { isPlainObject, keys, startsWith } from "@vuepress/helper/client";
 import { useSessionStorage, useStorage } from "@vueuse/core";
 import type { ComputedRef } from "vue";
 import { computed } from "vue";
-import { usePageData } from "vuepress/client";
+import { usePage } from "vuepress/client";
 
 import { isTokenMatched } from "@theme-hope/modules/encrypt/utils/index";
 
@@ -18,7 +18,7 @@ export interface PathEncrypt {
 }
 
 export const usePathEncrypt = (): PathEncrypt => {
-  const page = usePageData();
+  const page = usePage();
   const encryptData = useEncryptConfig();
 
   const localTokenConfig = useStorage<Record<string, string>>(STORAGE_KEY, {});

@@ -2,7 +2,7 @@ import { Message } from "@vuepress/helper/client";
 import type { VNode } from "vue";
 import { computed, defineComponent, h, ref } from "vue";
 
-import { useThemeLocaleData } from "@theme-hope/composables/index";
+import { useThemeLocale } from "@theme-hope/composables/index";
 
 import "@vuepress/helper/message.css";
 import "../styles/pagination.scss";
@@ -49,7 +49,7 @@ export default defineComponent({
 
   setup(props, { emit }) {
     const message = new Message();
-    const themeLocale = useThemeLocaleData();
+    const themeLocale = useThemeLocale();
 
     const input = ref("");
 

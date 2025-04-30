@@ -7,7 +7,7 @@ import {
 import type { App, ComputedRef, InjectionKey, Ref } from "vue";
 import { computed, inject, onMounted, watchEffect } from "vue";
 
-import { useThemeData } from "@theme-hope/composables/index";
+import { useTheme } from "@theme-hope/composables/index";
 
 import type { DarkModeOptions } from "../../../../shared/index.js";
 
@@ -41,7 +41,7 @@ export const useDarkMode = (): DarkMode => {
 
 export const injectDarkMode = (app: App): void => {
   const isDarkPreferred = usePreferredDark();
-  const theme = useThemeData();
+  const theme = useTheme();
   const config = computed(() => theme.value.darkmode ?? "switch");
 
   const status = useStorage<DarkmodeStatus>(

@@ -1,9 +1,8 @@
 import type { VNode } from "vue";
 import { computed, defineComponent, h, nextTick, ref } from "vue";
-import { usePageFrontmatter } from "vuepress/client";
 
 import PageTitle from "@theme-hope/components/PageTitle";
-import { useThemeLocaleData } from "@theme-hope/composables/index";
+import { useData } from "@theme-hope/composables/index";
 
 import { LockIcon } from "./icons.js";
 
@@ -36,8 +35,7 @@ export default defineComponent({
   emits: ["verify"],
 
   setup(props, { emit }) {
-    const frontmatter = usePageFrontmatter();
-    const themeLocale = useThemeLocaleData();
+    const { frontmatter, themeLocale } = useData();
     const password = ref("");
     const hasTried = ref(false);
     const remember = ref(false);

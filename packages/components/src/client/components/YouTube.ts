@@ -1,7 +1,7 @@
 import { LoadingIcon, startsWith } from "@vuepress/helper/client";
 import type { VNode } from "vue";
 import { computed, defineComponent, h, ref } from "vue";
-import { usePageLang } from "vuepress/client";
+import { useLang } from "vuepress/client";
 
 import { useSize } from "../composables/index.js";
 import { videoIframeAllow } from "../utils/index.js";
@@ -156,7 +156,7 @@ export default defineComponent({
   },
 
   setup(props) {
-    const lang = usePageLang();
+    const lang = useLang();
     const { el, width, height, resize } = useSize<HTMLIFrameElement>(props);
 
     const loaded = ref(false);

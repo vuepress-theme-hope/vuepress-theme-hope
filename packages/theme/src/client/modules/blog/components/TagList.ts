@@ -2,7 +2,7 @@ import { entries } from "@vuepress/helper/client";
 import type { BlogPluginCategoryFrontmatter } from "@vuepress/plugin-blog";
 import type { VNode } from "vue";
 import { defineComponent, h } from "vue";
-import { RouteLink, usePageFrontmatter } from "vuepress/client";
+import { RouteLink, useFrontmatter } from "vuepress/client";
 import { generateIndexFromHash } from "vuepress-shared/client";
 
 import { useTagMap } from "@theme-hope/modules/blog/composables/index";
@@ -15,7 +15,7 @@ export default defineComponent({
   name: "TagList",
 
   setup() {
-    const frontmatter = usePageFrontmatter<BlogPluginCategoryFrontmatter>();
+    const frontmatter = useFrontmatter<BlogPluginCategoryFrontmatter>();
     const tagMap = useTagMap();
 
     const isActive = (name: string): boolean =>

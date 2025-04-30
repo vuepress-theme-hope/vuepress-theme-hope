@@ -11,7 +11,7 @@ import {
 } from "vue";
 import { Content } from "vuepress/client";
 
-import { useMetaInfo, useThemeData } from "@theme-hope/composables/index";
+import { useMetaInfo, useTheme } from "@theme-hope/composables/index";
 
 import "../styles/markdown-content.scss";
 
@@ -29,7 +29,7 @@ export default defineComponent({
   }>,
 
   setup(props, { slots }) {
-    const theme = useThemeData();
+    const theme = useTheme();
     const { changelog, contributors } = useMetaInfo();
 
     const contentElement = ref<HTMLElement>();

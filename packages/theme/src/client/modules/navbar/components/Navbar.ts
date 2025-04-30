@@ -17,10 +17,7 @@ import {
 } from "vue";
 import { onContentUpdated } from "vuepress/client";
 
-import {
-  useThemeLocaleData,
-  useWindowSize,
-} from "@theme-hope/composables/index";
+import { useThemeLocale, useWindowSize } from "@theme-hope/composables/index";
 import LanguageDropdown from "@theme-hope/modules/navbar/components/LanguageDropdown";
 import NavScreen from "@theme-hope/modules/navbar/components/NavScreen";
 import NavbarBrand from "@theme-hope/modules/navbar/components/NavbarBrand";
@@ -50,7 +47,7 @@ export default defineComponent({
   }>,
 
   setup(_props, { emit, slots }) {
-    const themeLocale = useThemeLocaleData();
+    const themeLocale = useThemeLocale();
     const { isMobile } = useWindowSize();
 
     const showScreen = ref(false);

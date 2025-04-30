@@ -3,7 +3,7 @@ import type { Article } from "@vuepress/plugin-blog/client";
 import { useBlogType } from "@vuepress/plugin-blog/client";
 import type { ComputedRef, InjectionKey } from "vue";
 import { computed, inject, provide } from "vue";
-import { usePageLang } from "vuepress/client";
+import { useLang } from "vuepress/client";
 
 import type { ArticleInfoData } from "../../../../shared/index.js";
 
@@ -38,7 +38,7 @@ export const useTimeline = (): TimelineRef => {
  */
 export const setupTimeline = (): void => {
   const timeline = useBlogType<ArticleInfoData>("timeline");
-  const pageLang = usePageLang();
+  const pageLang = useLang();
 
   const timelineItems = computed(() => {
     const timelineItems: TimelineItem[] = [];
