@@ -1,6 +1,6 @@
 import { isArray } from "@vuepress/helper/client";
 import type { SlotsType, VNode } from "vue";
-import { computed, defineComponent, h } from "vue";
+import { defineComponent, h } from "vue";
 import { usePageFrontmatter } from "vuepress/client";
 
 import FeaturePanel from "@theme-hope/components/FeaturePanel";
@@ -25,22 +25,10 @@ export default defineComponent({
   setup(_props, { slots }) {
     const frontmatter = usePageFrontmatter<ThemeProjectHomePageFrontmatter>();
 
-    const features = computed(() => {
-      const { features } = frontmatter.value;
+    return (): VNode => {
+      const { features, highlights } = frontmatter.value;
 
-      return isArray(features) ? features : null;
-    });
-
-    const highlights = computed(() => {
-      const { highlights } = frontmatter.value;
-
-      if (isArray(highlights)) return highlights;
-
-      return null;
-    });
-
-    return (): VNode =>
-      h(
+      return h(
         "main",
         {
           id: "main-content",
@@ -51,28 +39,24 @@ export default defineComponent({
         [
           slots.top?.(),
           h(HeroInfo),
-          highlights.value?.map((highlight) =>
-            "features" in highlight
-              ? h(FeaturePanel, highlight)
-              : h(HighlightPanel, highlight),
-          ) ??
-            (features.value
+          isArray(highlights)
+            ? highlights.map((highlight) =>
+                "features" in highlight
+                  ? h(FeaturePanel, highlight)
+                  : h(HighlightPanel, highlight),
+              )
+            : isArray(features)
               ? h(DropTransition, { appear: true, delay: 0.24 }, () =>
-                  // eslint-disable-next-line @typescript-eslint/no-non-null-assertion
-                  h(FeaturePanel, { features: features.value! }),
+                  h(FeaturePanel, { features }),
                 )
-              : null),
+              : null,
           slots.center?.(),
-          h(
-            DropTransition,
-            {
-              appear: true,
-              delay: 0.32,
-            },
-            () => h(MarkdownContent),
+          h(DropTransition, { appear: true, delay: 0.32 }, () =>
+            h(MarkdownContent),
           ),
           slots.bottom?.(),
         ],
       );
+    };
   },
 });
