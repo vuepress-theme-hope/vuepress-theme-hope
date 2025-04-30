@@ -1,5 +1,5 @@
 import type { VNode } from "vue";
-import { computed, defineComponent, h } from "vue";
+import { defineComponent, h } from "vue";
 import { usePageFrontmatter } from "vuepress/client";
 
 import MarkdownContent from "@theme-hope/components/MarkdownContent";
@@ -16,10 +16,10 @@ export default defineComponent({
   setup() {
     const frontmatter = usePageFrontmatter<ThemePortfolioFrontmatter>();
 
-    const content = computed(() => frontmatter.value.content ?? "portfolio");
+    return (): VNode => {
+      const content = frontmatter.value.content ?? "portfolio";
 
-    return (): VNode =>
-      h(
+      return h(
         "main",
         {
           id: "main-content",
@@ -28,19 +28,20 @@ export default defineComponent({
         },
         [
           h(PortfolioHero),
-          content.value === "none"
+          content === "none"
             ? null
             : h(
                 "div",
                 h(DropTransition, { appear: true, delay: 0.24 }, () =>
                   h(MarkdownContent, {
                     class: {
-                      "vp-portfolio-content": content.value === "portfolio",
+                      "vp-portfolio-content": content === "portfolio",
                     },
                   }),
                 ),
               ),
         ],
       );
+    };
   },
 });
