@@ -1,7 +1,7 @@
 import { watchImmediate } from "@vueuse/core";
 import type { Mesh } from "three";
 import type { VNode } from "vue";
-import { computed, defineComponent, h, onMounted, ref } from "vue";
+import { defineComponent, h, onMounted, ref } from "vue";
 
 import { useWindowSize } from "@theme-hope/composables/index";
 import { useDarkMode } from "@theme-hope/modules/outlook/composables/index";
@@ -18,12 +18,6 @@ export default defineComponent({
     const { isMobile } = useWindowSize();
 
     const ready = ref(false);
-
-    const sizes = computed(() =>
-      isMobile.value
-        ? { width: 220, height: 220 }
-        : { width: 300, height: 300 },
-    );
 
     const renderLogo = async (): Promise<void> => {
       if (__VUEPRESS_SSR__) return;
@@ -53,7 +47,9 @@ export default defineComponent({
         ).then((m) => m),
       ]);
 
-      const { width, height } = sizes.value;
+      const { width, height } = isMobile.value
+        ? { width: 220, height: 220 }
+        : { width: 300, height: 300 };
 
       // Canvas
       const canvas =
