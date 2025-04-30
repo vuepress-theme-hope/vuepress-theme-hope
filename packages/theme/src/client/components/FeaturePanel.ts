@@ -81,7 +81,7 @@ const FeaturePanel: FunctionalComponent<
           slots.info?.(props) ?? [
             header ? h("h2", { class: "vp-feature-header" }, header) : null,
             description
-              ? h("p", {
+              ? h("div", {
                   class: "vp-feature-description",
                   innerHTML: description,
                 })
@@ -97,7 +97,7 @@ const FeaturePanel: FunctionalComponent<
                       h(resolveComponent("VPIcon"), { icon }),
                       h("span", { innerHTML: title }),
                     ]),
-                    h("p", {
+                    h("div", {
                       class: "vp-feature-details",
                       innerHTML: details,
                     }),

@@ -163,7 +163,7 @@ export default defineComponent({
                   : null,
                 info.value.tagline
                   ? h(DropTransition, { appear: true, delay: 0.08 }, () =>
-                      h("p", {
+                      h("div", {
                         id: "main-description",
                         innerHTML: info.value.tagline,
                       }),

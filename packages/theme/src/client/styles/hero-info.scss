@@ -233,6 +233,14 @@
     text-decoration: none;
   }
 
+  &:first-child {
+    margin-inline-start: 0;
+
+    @media (max-width: hope-config.$pad) {
+      margin-inline-start: 0.5rem;
+    }
+  }
+
   &:hover {
     background: var(--vp-c-control-hover);
   }

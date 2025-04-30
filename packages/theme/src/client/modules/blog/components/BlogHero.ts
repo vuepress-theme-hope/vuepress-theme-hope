@@ -147,7 +147,7 @@ export default defineComponent({
                 ),
                 h(DropTransition, { appear: true, delay: 0.12 }, () =>
                   info.value.tagline
-                    ? h("p", {
+                    ? h("div", {
                         class: "vp-blog-hero-description",
                         innerHTML: info.value.tagline,
                       })

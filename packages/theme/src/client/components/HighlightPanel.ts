@@ -87,7 +87,7 @@ const HighlightPanel: FunctionalComponent<
                   })
                 : null,
               description
-                ? h("p", {
+                ? h("div", {
                     class: "vp-highlight-description",
                     innerHTML: description,
                   })
@@ -112,7 +112,7 @@ const HighlightPanel: FunctionalComponent<
                         ],
                       ),
                       details
-                        ? h(type === "no-order" ? "dd" : "p", {
+                        ? h(type === "no-order" ? "dd" : "div", {
                             class: "vp-highlight-details",
                             innerHTML: details,
                           })
