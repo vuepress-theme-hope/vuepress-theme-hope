@@ -35,6 +35,11 @@ export default defineComponent({
 
     tocBefore?: () => VNode[] | VNode | null;
     tocAfter?: () => VNode[] | VNode | null;
+
+    // home only
+    heroBefore?: () => VNode[] | VNode | null;
+    heroAfter?: () => VNode[] | VNode | null;
+    homeContent?: () => VNode[] | VNode | null;
   }>,
 
   setup(_props, { slots }) {
@@ -64,7 +69,15 @@ export default defineComponent({
             (frontmatter.value.portfolio
               ? h(PortfolioHome)
               : frontmatter.value.home
-                ? h(HomePage)
+                ? h(
+                    HomePage,
+                    {},
+                    {
+                      heroBefore: slots.heroBefore,
+                      heroAfter: slots.heroAfter,
+                      homeContent: slots.homeContent,
+                    },
+                  )
                 : h(isPure.value ? RenderDefault : FadeInUpTransition, () =>
                     h(
                       NormalPage,

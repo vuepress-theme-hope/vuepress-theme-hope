@@ -91,6 +91,12 @@ export default defineClientConfig({
   - `tocBefore`: 页面 TOC 前插槽
   - `tocAfter`: 页面 TOC 后插槽
 
+  同时主页也支持以下插槽：
+
+  - `heroBefore`: 英雄组件前插槽
+  - `heroAfter`: 英雄组件后插槽
+  - `homeContent`: 主页内容插槽
+
 - NotFound
 
   404 页面布局，具有以下插槽：

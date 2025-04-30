@@ -91,6 +91,12 @@ The theme provides the following layouts:
   - `tocBefore`: Slot before page TOC
   - `tocAfter`: Slot after page TOC
 
+  Also these slots are supported for home page:
+
+  - `heroBefore`: Slot before hero
+  - `heroAfter`: Slot after hero
+  - `homeContent`: Slot for home page content
+
 - NotFound
 
   404 page layout, having the following slots:

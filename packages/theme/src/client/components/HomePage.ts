@@ -17,9 +17,9 @@ export default defineComponent({
   name: "HomePage",
 
   slots: Object as SlotsType<{
-    top?: () => VNode[] | VNode | null;
-    center?: () => VNode[] | VNode | null;
-    bottom?: () => VNode[] | VNode | null;
+    heroBefore?: () => VNode[] | VNode | null;
+    heroAfter?: () => VNode[] | VNode | null;
+    homeContent?: () => VNode[] | VNode | null;
   }>,
 
   setup(_props, { slots }) {
@@ -37,8 +37,9 @@ export default defineComponent({
             frontmatter.value.heroText === "" ? "" : "main-title",
         },
         [
-          slots.top?.(),
+          slots.heroBefore?.(),
           h(HeroInfo),
+          slots.heroAfter?.(),
           isArray(highlights)
             ? highlights.map((highlight) =>
                 "features" in highlight
@@ -50,11 +51,10 @@ export default defineComponent({
                   h(FeaturePanel, { features }),
                 )
               : null,
-          slots.center?.(),
-          h(DropTransition, { appear: true, delay: 0.32 }, () =>
-            h(MarkdownContent),
-          ),
-          slots.bottom?.(),
+          slots.homeContent?.() ??
+            h(DropTransition, { appear: true, delay: 0.32 }, () =>
+              h(MarkdownContent),
+            ),
         ],
       );
     };
