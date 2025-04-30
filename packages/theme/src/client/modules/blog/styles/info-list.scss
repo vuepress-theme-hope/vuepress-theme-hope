@@ -99,13 +99,18 @@
 
 .vp-star-articles {
   overflow-y: auto;
+
   max-height: 80vh;
   margin: 8px auto;
+  padding-inline-start: 0;
+
+  list-style: none;
+
   line-height: 1.5;
 }
 
 .vp-star-article {
-  padding: 12px 8px 4px;
+  padding: 8px 8px 4px;
   border-bottom: 1px dashed var(--vp-c-border-hard);
   transition:
     border-color var(--vp-t-color),
