@@ -81,7 +81,7 @@ export default hopeTheme({
 ![Logo|200x0](/example.jpg)
 ![Logo|0x300](/example.bmp)
 
-<!-- These won't work when `strict: true` as obsidian does not support them -->
+<!-- 这些在 `size: 'strict'` 下无法使用因为 Obsidian 不支持它们 -->
 
 ![Logo|200](/example.jpg)
 ![Logo|200x](/example.jpg)

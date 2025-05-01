@@ -81,7 +81,7 @@ If you want the same behavior as Obsidian, you can set `markdown.imgSize: 'stric
 ![Logo|200x0](/example.jpg)
 ![Logo|0x300](/example.bmp)
 
-<!-- These won't work when `strict: true` as obsidian does not support them -->
+<!-- These won't work with `size: 'strict'` as obsidian does not support them -->
 
 ![Logo|200](/example.jpg)
 ![Logo|200x](/example.jpg)
