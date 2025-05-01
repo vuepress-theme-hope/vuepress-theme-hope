@@ -25,7 +25,11 @@ export default defineComponent({
           { class: "error-title" },
           themeLocale.value.routeLocales.notFoundTitle,
         ),
-        h("p", { class: "error-hint" }, getMsg()),
+        h(
+          "p",
+          { class: "error-hint", "data-allow-mismatch": "text" },
+          getMsg(),
+        ),
       ]);
   },
 });
