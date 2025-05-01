@@ -74,13 +74,13 @@ export interface MarkdownOptions
   imgSize?: MarkdownImagePluginOptions["size"];
 
   /**
-   * Whether to enable obsidian image size mark support
+   * Whether to enable legacy image size mark support
    *
-   * 是否启用 obsidian 图片大小标记支持。
+   * 是否启用旧版图片大小标记支持。
    *
    * @default false
    */
-  obsidianImgSize?: MarkdownImagePluginOptions["obsidianSize"];
+  legacyImgSize?: MarkdownImagePluginOptions["legacySize"];
 
   /**
    * Whether to enable markdown include support

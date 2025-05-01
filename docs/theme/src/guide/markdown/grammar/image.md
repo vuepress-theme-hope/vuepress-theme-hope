@@ -69,7 +69,64 @@ export default hopeTheme({
 
 ## Image Size
 
-You can use `=widthxheight` to specify the image size with this feature.
+You can use `|widthxheight` to specify the image size at the end of image alt.
+
+Both `width` and `height` should be number which means size in pixels, and both of them are optional (set `0` to indicate ignore).
+
+If you want the same behavior as Obsidian, you can set `markdown.imgSize: 'strict'` in theme options, so `width` and `height` are both required to be set (one of them can be `0` to scale with radio according to the other).
+
+```md
+![Logo|200x200](/example.png)
+
+![Logo|200x0](/example.jpg)
+![Logo|0x300](/example.bmp)
+
+<!-- These won't work when `strict: true` as obsidian does not support them -->
+
+![Logo|200](/example.jpg)
+![Logo|200x](/example.jpg)
+![Logo|x300](/example.bmp)
+```
+
+will be parsed as:
+
+```html
+<img src="/example.png" width="200" height="300" />
+
+<img src="/example.jpg" width="200" />
+<img src="/example.bmp" height="300" />
+
+<img src="/example.jpg" width="200" />
+<img src="/example.jpg" width="200" />
+<img src="/example.bmp" height="300" />
+```
+
+### Image Size (legacy)
+
+::: tip
+
+You shall prefer the new grammar, as it's not breaking backward compatibility.
+
+The legacy grammar will break image rendering in environment that doesn't support it, such as GitHub.
+
+:::
+
+You can use `=widthxheight` to specify the image size at the end of the link when setting `markdown.legacyImgSize: true` in theme options.
+
+```md
+![Alt](/example.png =200x300)
+
+![Alt](/example.jpg "Image title" =200x)
+![Alt](/example.bmp =x300)
+```
+
+The above Markdown will be parsed as:
+
+```html
+<img src="/example.png" width="200" height="300" />
+<img src="/example.jpg" title="Image title" width="200" />
+<img src="/example.bmp" height="300" />
+```
 
 ```md
 ![Alt](/example.png =200x300)

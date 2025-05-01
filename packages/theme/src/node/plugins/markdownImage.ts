@@ -16,5 +16,5 @@ export const getMarkdownImagePlugin = (
     lazyload: options.imgLazyload ?? false,
     mark: options.imgMark ?? false,
     size: options.imgSize ?? false,
-    obsidianSize: options.obsidianImgSize ?? false,
+    legacySize: options.legacyImgSize ?? false,
   });
