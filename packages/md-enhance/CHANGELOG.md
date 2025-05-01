@@ -4,6 +4,18 @@ All notable changes to this project will be documented in this file. See [Conven
 
 <!-- #region recent-change -->
 
+## [2.0.0-rc.85](https://github.com/vuepress-theme-hope/vuepress-theme-hope/compare/v2.0.0-rc.84...v2.0.0-rc.85) (2025-05-01)
+
+### ⚠ BREAKING CHANGES
+
+- **theme:** rebuild image size feature
+
+### ✨ Features
+
+- **theme:** rebuild image size feature ([06ef855](https://github.com/vuepress-theme-hope/vuepress-theme-hope/commit/06ef855ed3185aa5a0ea8172f3eabc3cce30f418))
+
+<!-- #region recent-change -->
+
 ## [2.0.0-rc.84](https://github.com/vuepress-theme-hope/vuepress-theme-hope/compare/v2.0.0-rc.83...v2.0.0-rc.84) (2025-04-29)
 
 **Note:** Version bump only for package vuepress-plugin-md-enhance

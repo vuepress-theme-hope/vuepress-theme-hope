@@ -4,6 +4,20 @@ All notable changes to this project will be documented in this file. See [Conven
 
 <!-- #region recent-change -->
 
+## [2.0.0-rc.85](https://github.com/vuepress-theme-hope/vuepress-theme-hope/compare/v2.0.0-rc.84...v2.0.0-rc.85) (2025-05-01)
+
+### ⚠ BREAKING CHANGES
+
+- **components:** remove replit
+
+### ✨ Features
+
+- **components:** improve banner outlook ([dcc142a](https://github.com/vuepress-theme-hope/vuepress-theme-hope/commit/dcc142a6ee4ca2512c64797b63cbbb78e7a512d4))
+- **components:** improve VPBanner appearance ([a6dd390](https://github.com/vuepress-theme-hope/vuepress-theme-hope/commit/a6dd390ec1cd62f1e24953ed6bf6c2f071624af8))
+- **components:** remove replit ([b331cf1](https://github.com/vuepress-theme-hope/vuepress-theme-hope/commit/b331cf19aabf899ce196f091aae75631fd97efee))
+
+<!-- #region recent-change -->
+
 ## [2.0.0-rc.84](https://github.com/vuepress-theme-hope/vuepress-theme-hope/compare/v2.0.0-rc.83...v2.0.0-rc.84) (2025-04-29)
 
 **Note:** Version bump only for package vuepress-plugin-components

@@ -4,6 +4,29 @@ All notable changes to this project will be documented in this file. See [Conven
 
 <!-- #region recent-change -->
 
+## [2.0.0-rc.85](https://github.com/vuepress-theme-hope/vuepress-theme-hope/compare/v2.0.0-rc.84...v2.0.0-rc.85) (2025-05-01)
+
+### ⚠ BREAKING CHANGES
+
+- **theme:** rebuild image size feature
+
+### ✨ Features
+
+- **theme:** add slots for homepage ([66c6928](https://github.com/vuepress-theme-hope/vuepress-theme-hope/commit/66c6928cfecc89a9239fd99c2dcd2e637572e397))
+- **theme:** add useData ([76a3e0b](https://github.com/vuepress-theme-hope/vuepress-theme-hope/commit/76a3e0b896b9b88b4ddfea89412a866c9cbd92ba))
+- **theme:** improve start article list ([973aed8](https://github.com/vuepress-theme-hope/vuepress-theme-hope/commit/973aed82e82c27a1bd59d64619336c220e8157a5))
+- **theme:** rebuild image size feature ([06ef855](https://github.com/vuepress-theme-hope/vuepress-theme-hope/commit/06ef855ed3185aa5a0ea8172f3eabc3cce30f418))
+- **theme:** use div for all innerHTML ([0bd6a1f](https://github.com/vuepress-theme-hope/vuepress-theme-hope/commit/0bd6a1f395a79b21dbcf9c9d860bac945c49cb6f))
+
+### 🐛 Bug Fixes
+
+- **theme:** fix AutoLink ([54ffa53](https://github.com/vuepress-theme-hope/vuepress-theme-hope/commit/54ffa532ee09edd5cb6d59ed66932776018d0db0))
+- **theme:** fix navscreen issue ([9995a80](https://github.com/vuepress-theme-hope/vuepress-theme-hope/commit/9995a80c96bab1e2042086c19cb2a2e45be0470f))
+- **theme:** fix timeline style ([1f6a2e9](https://github.com/vuepress-theme-hope/vuepress-theme-hope/commit/1f6a2e91246ca04d98422f0d17f66449703e610a))
+- **theme:** set InfoList label to down position, close [#2031](https://github.com/vuepress-theme-hope/vuepress-theme-hope/issues/2031) ([43d60b5](https://github.com/vuepress-theme-hope/vuepress-theme-hope/commit/43d60b53e9f401ade8a7e8a1320207e3071fbfa1))
+
+<!-- #region recent-change -->
+
 ## [2.0.0-rc.84](https://github.com/vuepress-theme-hope/vuepress-theme-hope/compare/v2.0.0-rc.83...v2.0.0-rc.84) (2025-04-29)
 
 ### 🐛 Bug Fixes
