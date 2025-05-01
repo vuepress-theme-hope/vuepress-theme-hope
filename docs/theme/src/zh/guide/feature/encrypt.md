@@ -97,3 +97,36 @@ export default hopeTheme({
 多个密码的考虑是权限分离，这样你可以在日后部署中，废除或更新部分的全局密码，使得拥有密码的部分用户失去访问权限。
 
 :::
+
+## 安全地存储你的密码
+
+如果你希望在公共代码托管平台（例如 GitHub 或 GitLab）上部署 VuePress 站点，请**不要**在 `.veupress/theme.ts` 中直接写入你的密码，尤其是在公共代码仓库中。
+
+为了避免这导致的风险，你可以使用 [dotenv](https://www.npmjs.com/package/dotenv) 从 `.env` 文件中加载密码配置，并阻止它上传到代码库中。
+
+首先你需要在根目录创建 `.env` 文件来存储密码等敏感信息：
+
+```ini title=".env"
+PASSWORD=123456
+```
+
+然后,你可以在 `.vuepress/theme.ts` 中导入：
+
+```ts twoslash{2,8} title=".vuepress/theme.ts"
+import { hopeTheme } from "vuepress-theme-hope";
+import 'dotenv/config'
+
+export default hopeTheme({
+  encrypt: {
+    global: true,
+    admin: {
+      password: process.env.PASSWORD,
+      hint: "The password you specified.",
+    },
+  },
+});
+```
+
+最后，如果你正在使用基于 Git 的托管平台，记得在 `.gitignore` 中添加 `.env` 以阻止 `.env` 上传到远程代码仓库中。
+
+值得一提的是，如果你选择这种方式，你可能无法使用 Github Workflows 来自动化部署你的 VuePress 站点。在大多数情况下，你只需要将源代码放在私有代码库中，然后编辑默认的 `.github/workflows/deploy-docs.yml` 文件来使 Github Actions 将站点部署到一个启用了 GitHub Pages 的公共代码仓库中。总的来说，在一定程度上，GitHub 在部署安全方面还是值得信任的。
