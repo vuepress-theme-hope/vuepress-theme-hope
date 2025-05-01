@@ -1,6 +1,6 @@
-export * from "./base.js";
-export * from "./blogHome.js";
-export * from "./home.js";
-export * from "./normal.js";
-export * from "./portfolio.js";
-export * from "./projectHome.js";
+export type * from "./base.js";
+export type * from "./blogHome.js";
+export type * from "./home.js";
+export type * from "./normal.js";
+export type * from "./portfolio.js";
+export type * from "./projectHome.js";

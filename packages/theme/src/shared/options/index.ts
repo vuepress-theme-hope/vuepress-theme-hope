@@ -1,8 +1,8 @@
-export * from "./appearance.js";
-export * from "./feature/index.js";
-export * from "./layout/index.js";
-export * from "./info.js";
-export * from "./locales.js";
-export * from "./markdown.js";
-export * from "./options.js";
-export * from "./plugins/index.js";
+export type * from "./appearance.js";
+export type * from "./feature/index.js";
+export type * from "./layout/index.js";
+export type * from "./info.js";
+export type * from "./locales.js";
+export type * from "./markdown.js";
+export type * from "./options.js";
+export type * from "./plugins/index.js";

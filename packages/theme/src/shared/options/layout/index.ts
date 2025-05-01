@@ -1,7 +1,7 @@
-export * from "./footer.js";
-export * from "./info.js";
-export * from "./meta.js";
-export * from "./navbar.js";
-export * from "./options.js";
-export * from "./route.js";
-export * from "./sidebar.js";
+export type * from "./footer.js";
+export type * from "./info.js";
+export type * from "./meta.js";
+export type * from "./navbar.js";
+export type * from "./options.js";
+export type * from "./route.js";
+export type * from "./sidebar.js";

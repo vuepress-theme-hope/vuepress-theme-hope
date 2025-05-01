@@ -1,10 +1,11 @@
-export * from "./author.js";
-export * from "./blog.js";
-export * from "./frontmatter/index.js";
-export * from "./info.js";
 export * from "./infoGetter.js";
-export * from "./nav.js";
-export * from "./navbar.js";
-export * from "./options/index.js";
-export * from "./page.js";
-export * from "./sidebar.js";
+
+export type * from "./author.js";
+export type * from "./blog.js";
+export type * from "./frontmatter/index.js";
+export type * from "./info.js";
+export type * from "./nav.js";
+export type * from "./navbar.js";
+export type * from "./options/index.js";
+export type * from "./page.js";
+export type * from "./sidebar.js";
