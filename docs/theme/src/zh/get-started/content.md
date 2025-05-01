@@ -41,7 +41,7 @@ VuePress 是以 Markdown 为中心的。你项目中的每一个 Markdown 文件
 | `/demo/README.md` | `/demo/`          |
 | `/demo/page.md`   | `/demo/page.html` |
 
-::: tip README.md
+::: tip README\.md
 
 `README.md` 是特例，在 Markdown 中，按照约定俗成，它会作为所在文件夹的主页。所以在渲染为网页时，它的对应路径为网页中的主页路径 `index.html`。
 

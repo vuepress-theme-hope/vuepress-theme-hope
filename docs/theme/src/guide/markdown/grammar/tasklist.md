@@ -14,7 +14,7 @@ Let the Markdown file in your VuePress site support task list.
 
 ## Settings
 
-```ts twoslash {6} title=".vuepress/theme.ts"
+```ts twoslash {5} title=".vuepress/theme.ts"
 import { hopeTheme } from "vuepress-theme-hope";
 
 export default hopeTheme({

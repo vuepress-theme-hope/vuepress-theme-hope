@@ -14,7 +14,7 @@ tag:
 
 ## 配置
 
-```ts twoslash {6} title=".vuepress/theme.ts"
+```ts twoslash {5} title=".vuepress/theme.ts"
 import { hopeTheme } from "vuepress-theme-hope";
 
 export default hopeTheme({

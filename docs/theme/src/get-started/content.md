@@ -41,7 +41,7 @@ The route path of your Markdown files are:
 | `/demo/README.md` | `/demo/`          |
 | `/demo/page.md`   | `/demo/page.html` |
 
-::: tip README.md
+::: tip README\.md
 
 `README.md` is a special case. In Markdown, by convention, it will be used as the home page of the folder where it is located. So when it is rendered as a web page, its corresponding path is the home page path `index.html` in the web page.
 

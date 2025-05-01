@@ -50,7 +50,7 @@ tag:
 
 你需要下载并安装最新的长期维护版。
 
-1. 点击 [下载地址](https://nodejs.org/zh-cn/) 左侧的绿色按钮 (LTS)。
+1. 点击 [官网](https://nodejs.org/zh-cn/) 中的下载按钮。
 1. 运行安装包，保持所有的默认设置，一路下一步即可。
 
 ::: warning
@@ -63,7 +63,7 @@ Node.js 本身只会占据几十 M 的空间!
 
 ## pnpm
 
-在你安装 Node.js 之后，在终端中输入下列命令启用 corepack:
+在你安装 Node.js 之后，在终端中输入下列命令启用 corepack (Windows 用户需要使用管理员权限):
 
 ```bash
 corepack enable

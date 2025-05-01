@@ -40,7 +40,7 @@ You need an editor to edit your project, and we recommend using VSCode to write 
 
 You need to download and install the latest long-term maintenance release.
 
-1. Click the green button (LTS) on the left of [Download page](https://nodejs.org/en/).
+1. Click the download button on the [official website](https://nodejs.org/en/).
 1. Run the installer, keep all the default settings and go all the way from next step to finish.
 
 ::: warning
@@ -51,7 +51,11 @@ Node.js itself will only take up a few dozen megabytes of space!
 
 :::
 
-After you install Node.js, enable corepack with `corepack enable`.
+After you install Node.js, enable corepack with the following command (Windows users need to run with administrator privileges):
+
+```bash
+corepack enable
+```
 
 ::: tip
 
@@ -60,3 +64,7 @@ We recommend you to choose pnpm as package manager, because VuePress and VuePres
 Some features of pnpm ensure that you have the correct dependencies, also it can speed up your installation.
 
 :::
+
+```
+
+```

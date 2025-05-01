@@ -41,9 +41,3 @@ tag:
 ## 其他部署方式
 
 关于其他部署方式，请参阅 [VuePress → 部署](https://vuejs.press/zh/guide/deployment.html)。
-
-::: tip Gitee
-
-如果你在使用码云，你需要注意码云的特殊仓库是 `https://gitee.com/<USERNAME>/<USERNAME>`。如果你推送到这个仓库，你的文档将会发布在 `https://<USERNAME>.gitee.io` 上。
-
-:::

@@ -34,7 +34,7 @@ tag:
 
 ::: code-tabs#shell
 
-@tab pnpm
+@tab pnpm (推荐)#pnpm
 
 ```bash
 pnpm create vuepress-theme-hope my-docs

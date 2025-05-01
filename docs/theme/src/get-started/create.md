@@ -34,7 +34,7 @@ Execute one of the following command in terminal:
 
 ::: code-tabs#shell
 
-@tab pnpm
+@tab pnpm (Recommended)#pnpm
 
 ```bash
 pnpm create vuepress-theme-hope my-docs
