@@ -26,6 +26,9 @@
     "email": "mister-hope@outlook.com",
     "url": "https://mister-hope.com"
   },
+  "sideEffects": [
+    "**/*.scss"
+  ],
   "type": "module",
   "exports": {
     ".": "./lib/node/index.js",

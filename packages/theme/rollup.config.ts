@@ -32,7 +32,7 @@ export default [
         "bcrypt-ts/browser",
       ],
       dts: false,
-      moduleSideEffects: (id) => id.endsWith("css"),
+      moduleSideEffects: (id) => id.endsWith(".css"),
     },
   ),
 ];
