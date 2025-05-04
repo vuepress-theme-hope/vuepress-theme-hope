@@ -73,7 +73,7 @@
     "rollup-plugin-dts": "6.2.1",
     "rollup-plugin-esbuild": "6.2.1",
     "rollup-plugin-resolve-shebang": "1.0.1",
-    "sort-package-json": "3.1.0",
+    "sort-package-json": "3.2.0",
     "stylelint": "16.19.1",
     "stylelint-config-hope": "9.0.0",
     "through2": "4.0.2",
