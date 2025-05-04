@@ -983,8 +983,8 @@ importers:
         specifier: ^0.17.0
         version: 0.17.0(markdown-it@14.1.0)
       '@mdit/plugin-demo':
-        specifier: ^0.17.0
-        version: 0.17.0(markdown-it@14.1.0)
+        specifier: ^0.18.0
+        version: 0.18.0(markdown-it@14.1.0)
       '@mdit/plugin-plantuml':
         specifier: ^0.17.0
         version: 0.17.0(markdown-it@14.1.0)
@@ -2638,8 +2638,8 @@ packages:
       markdown-it:
         optional: true
 
-  '@mdit/plugin-demo@0.17.0':
-    resolution: {integrity: sha512-pDYDrfXvRRZM4Idu6XlkFm6sJgAmqkXD22qnF0BCoeEZ2BwzzpvEL85M0NWVXR6OuxgqfDW5KSXhFiyTN0Rz2g==}
+  '@mdit/plugin-demo@0.18.0':
+    resolution: {integrity: sha512-oWrADUZmkFm0YTFKg8NT/YRDekL5I+xreryiwyFldVo7WyXDUxLJ7ae4TLHwU4KV2heCm3A1jTtPNORzQewUmA==}
     peerDependencies:
       markdown-it: ^14.1.0
     peerDependenciesMeta:
@@ -12034,7 +12034,7 @@ snapshots:
     optionalDependencies:
       markdown-it: 14.1.0
 
-  '@mdit/plugin-demo@0.17.0(markdown-it@14.1.0)':
+  '@mdit/plugin-demo@0.18.0(markdown-it@14.1.0)':
     dependencies:
       '@types/markdown-it': 14.1.2
     optionalDependencies:
