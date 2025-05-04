@@ -65,7 +65,7 @@
     "@mdit/plugin-container": "^0.17.0",
     "@mdit/plugin-demo": "^0.18.0",
     "@mdit/plugin-plantuml": "^0.17.0",
-    "@mdit/plugin-uml": "^0.17.0",
+    "@mdit/plugin-uml": "^0.18.0",
     "@types/markdown-it": "^14.1.2",
     "@vuepress/helper": "catalog:vuepress",
     "@vuepress/plugin-sass-palette": "catalog:vuepress",
