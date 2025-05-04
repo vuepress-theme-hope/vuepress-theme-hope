@@ -1231,8 +1231,8 @@ importers:
         specifier: catalog:range
         version: 1.2.0
       bcrypt-ts:
-        specifier: ^6.0.0
-        version: 6.0.0
+        specifier: ^7.0.0
+        version: 7.0.0
       chokidar:
         specifier: ^3.6.0
         version: 3.6.0
@@ -4497,9 +4497,9 @@ packages:
   bcp-47@1.0.8:
     resolution: {integrity: sha512-Y9y1QNBBtYtv7hcmoX0tR+tUNSFZGZ6OL6vKPObq8BbOhkCoyayF6ogfLTgAli/KuAEbsYHYUNq2AQuY6IuLag==}
 
-  bcrypt-ts@6.0.0:
-    resolution: {integrity: sha512-P6B36krzeMDEIzG2o2SiDxHCSHeWF2Fvj/Kvmr5gAMBs6jpKfU/9LPXkrd4Ztp3reeq9nNZEU3DQq/e0xZ1T9w==}
-    engines: {node: '>=18'}
+  bcrypt-ts@7.0.0:
+    resolution: {integrity: sha512-JMr30sbKPwF+2TccaNOYJuDx+nCmnTvHGB2rwkj+To/xZhBTX9f8zpTqGy3kpkS26KWOEYPsQlOJ5MVD00RHQQ==}
+    engines: {node: '>=20'}
 
   before-after-hook@3.0.2:
     resolution: {integrity: sha512-Nik3Sc0ncrMK4UUdXQmAnRtzmNQTAAXmXIopizwZ1W1t8QmfJj+zL4OA2I7XPTPW5z5TDqv4hRo/JzouDJnX3A==}
@@ -14269,7 +14269,7 @@ snapshots:
       is-alphanumerical: 1.0.4
       is-decimal: 1.0.4
 
-  bcrypt-ts@6.0.0: {}
+  bcrypt-ts@7.0.0: {}
 
   before-after-hook@3.0.2: {}
 
