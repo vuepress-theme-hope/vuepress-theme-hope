@@ -43,6 +43,7 @@ export const KNOWN_THEME_MARKDOWN_OPTIONS = [
   "imgLazyload",
   "imgMark",
   "imgSize",
+  "legacyImgSize",
   "obsidianImgSize",
 
   // plugin-markdown-include

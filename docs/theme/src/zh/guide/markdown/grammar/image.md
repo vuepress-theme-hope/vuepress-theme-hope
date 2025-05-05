@@ -69,63 +69,73 @@ export default hopeTheme({
 
 ## 图片尺寸
 
-你可以在图片链接末尾使用 `|widthxheight` 来指定图片尺寸。
+当你在插件选项中设置 `size: true` 时，你可以在图片替代文字后面添加 `=widthxheight`，并用空格分隔。
 
-`width` 和 `height` 都应该为数字并意味着像素单位的尺寸，并且它们两者都是可选的（设置 `0` 来表示忽略）。
-
-如果你想要与 Obsidian 相同的行为，你可以在主题选项中设置 `imgSize: 'strict'`，这样 `width` 和 `height` 都必须被设置（其中一个可以是 `0` 来根据另一个按比例缩放）。
+`width` 和 `height` 都应该是数字，单位为像素，并且都是可选的。
 
 ```md
-![Logo|200x200](/example.png)
-
-![Logo|200x0](/example.jpg)
-![Logo|0x300](/example.bmp)
-
-<!-- 这些在 `size: 'strict'` 下无法使用因为 Obsidian 不支持它们 -->
-
-![Logo|200](/example.jpg)
-![Logo|200x](/example.jpg)
-![Logo|x300](/example.bmp)
+![替代文字 =200x300](/example.png)
+![替代文字 =200x](/example.jpg "标题")
+![替代文字 =x300](/example.bmp)
 ```
 
-会被解析为:
+渲染为 ↓
 
 ```html
-<img src="/example.png" width="200" height="300" />
-
-<img src="/example.jpg" width="200" />
-<img src="/example.bmp" height="300" />
-
-<img src="/example.jpg" width="200" />
-<img src="/example.jpg" width="200" />
-<img src="/example.bmp" height="300" />
+<img src="/example.png" alt="替代文字" width="200" height="300" />
+<img src="/example.jpg" alt="替代文字" title="标题" width="200" />
+<img src="/example.bmp" alt="替代文字" height="300" />
 ```
 
-### 图片尺寸 (旧版)
+### Obsidian 语法
 
-::: tip
+当你在主题选项中设置 `markdown.obsidianImgSize: true` 时，你可以在图片替代文字后面添加 `widthxheight`，并用 `|` 分隔。
 
-你应该选择新语法，因为它不会破坏向后兼容性。
+`width` 和 `height` 都应该是数字，单位为像素，并且都是必需的。设置其中一个为 `0` 以按比例缩放另一个。
 
-旧语法会在不支持的环境中破坏图片渲染，例如 GitHub。
+```md
+![替代文字|200x200](/example.png)
+![替代文字|200x0](/example.jpg)
+![替代文字|0x300](/example.bmp)
+```
+
+渲染为 ↓
+
+```html
+<img src="/example.png" alt="替代文字" width="200" height="300" />
+<img src="/example.jpg" alt="替代文字" width="200" />
+<img src="/example.bmp" alt="替代文字" height="300" />
+```
+
+::: tip 在三种语法之间选择
+
+- 旧语法在不支持的环境中会导致图片渲染问题（例如：GitHub）
+- 新语法和 Obsidian 语法都与 Markdown 标准兼容，但新语法更自然。
 
 :::
 
-当你在主题选项中设置 `markdown.legacyImgSize: true` 时，可以在链接末尾使用 `=widthxheight` 指定图像大小。
+### 旧语法 (已废弃)
+
+::: warning 这种语法可能会在 GitHub 等平台上导致渲染问题。
+
+:::
+
+当你在主题选项中设置 `markdown.legacyImgSize: true` 时，你可以在图片链接部分的末尾添加 `=widthxheight`，并用空格分隔。
+
+`width` 和 `height` 都应该是数字，单位为像素，并且都是可选的。
 
 ```md
-![Alt](/example.png =200x300)
-
-![Alt](/example.jpg "图片标题" =200x)
-![Alt](/example.bmp =x300)
+![替代文字](/example.png =200x300)
+![替代文字](/example.jpg "标题" =200x)
+![替代文字](/example.bmp =x300)
 ```
 
-上面的 Markdown 将被解析为:
+渲染为 ↓
 
 ```html
-<img src="/example.png" width="200" height="300" />
-<img src="/example.jpg" title="图片标题" width="200" />
-<img src="/example.bmp" height="300" />
+<img src="/example.png" alt="替代文字" width="200" height="300" />
+<img src="/example.jpg" alt="替代文字" title="标题" width="200" />
+<img src="/example.bmp" alt="替代文字" height="300" />
 ```
 
 ## 图片展示
