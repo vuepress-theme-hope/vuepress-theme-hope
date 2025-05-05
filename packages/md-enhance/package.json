@@ -62,7 +62,7 @@
     "dev:ts": "tsc -b tsconfig.build.json --watch"
   },
   "dependencies": {
-    "@mdit/plugin-container": "^0.17.0",
+    "@mdit/plugin-container": "^0.18.0",
     "@mdit/plugin-demo": "^0.18.0",
     "@mdit/plugin-plantuml": "^0.18.0",
     "@mdit/plugin-uml": "^0.18.0",
