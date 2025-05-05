@@ -36,15 +36,15 @@ catalogs:
     "@vuepress/plugin-docsearch": 2.0.0-rc.99
     "@vuepress/plugin-feed": 2.0.0-rc.99
     "@vuepress/plugin-git": 2.0.0-rc.99
-    "@vuepress/plugin-icon": 2.0.0-rc.99
+    "@vuepress/plugin-icon": 2.0.0-rc.101
     "@vuepress/plugin-links-check": 2.0.0-rc.99
-    "@vuepress/plugin-markdown-ext": 2.0.0-rc.99
-    "@vuepress/plugin-markdown-hint": 2.0.0-rc.99
-    "@vuepress/plugin-markdown-image": 2.0.0-rc.100
-    "@vuepress/plugin-markdown-include": 2.0.0-rc.99
-    "@vuepress/plugin-markdown-math": 2.0.0-rc.99
-    "@vuepress/plugin-markdown-stylize": 2.0.0-rc.99
-    "@vuepress/plugin-markdown-tab": 2.0.0-rc.99
+    "@vuepress/plugin-markdown-ext": 2.0.0-rc.101
+    "@vuepress/plugin-markdown-hint": 2.0.0-rc.101
+    "@vuepress/plugin-markdown-image": 2.0.0-rc.101
+    "@vuepress/plugin-markdown-include": 2.0.0-rc.101
+    "@vuepress/plugin-markdown-math": 2.0.0-rc.101
+    "@vuepress/plugin-markdown-stylize": 2.0.0-rc.101
+    "@vuepress/plugin-markdown-tab": 2.0.0-rc.101
     "@vuepress/plugin-meilisearch": 2.0.0-rc.99
     "@vuepress/plugin-notice": 2.0.0-rc.99
     "@vuepress/plugin-nprogress": 2.0.0-rc.99
@@ -53,7 +53,7 @@ catalogs:
     "@vuepress/plugin-pwa": 2.0.0-rc.99
     "@vuepress/plugin-reading-time": 2.0.0-rc.99
     "@vuepress/plugin-redirect": 2.0.0-rc.99
-    "@vuepress/plugin-revealjs": 2.0.0-rc.99
+    "@vuepress/plugin-revealjs": 2.0.0-rc.101
     "@vuepress/plugin-rtl": 2.0.0-rc.99
     "@vuepress/plugin-sass-palette": 2.0.0-rc.99
     "@vuepress/plugin-search": 2.0.0-rc.99
@@ -64,7 +64,7 @@ catalogs:
     "@vuepress/plugin-theme-data": 2.0.0-rc.99
     "@vuepress/plugin-watermark": 2.0.0-rc.99
     "@vuepress/shiki-twoslash": 2.0.0-rc.99
-    "@vuepress/theme-default": 2.0.0-rc.99
+    "@vuepress/theme-default": 2.0.0-rc.101
     vuepress: 2.0.0-rc.22
 onlyBuiltDependencies:
   - "@parcel/watcher"
