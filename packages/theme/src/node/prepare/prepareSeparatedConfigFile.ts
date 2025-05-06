@@ -34,7 +34,7 @@ defineCatalogInfoGetter((meta) => {
 
   return shouldIndex ? {
     title,
-    content: icon ? () =>[h(resolveComponent("VPIcon"), { icon }), title] : null,
+    content: icon ? () =>[h(resolveComponent("VPIcon"), { icon, sizing: "both" }), title] : null,
     order: meta.order,
     index: meta.index,
   } : null;
