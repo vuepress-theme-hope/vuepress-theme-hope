@@ -44,6 +44,38 @@ jobs:
         run: |
           pnpm run -r demo:${{ matrix.bundler }}-build
 
+  test-docs:
+    name: Test docs
+    runs-on: ubuntu-latest
+    if: inputs.strict-checking == true
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+
+      - name: Restore Build Result
+        uses: actions/download-artifact@v4
+        with:
+          name: build-result
+
+      - name: Install pnpm
+        uses: pnpm/action-setup@v4
+
+      - name: Setup Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: 22
+          cache: pnpm
+
+      - name: Install deps
+        run: pnpm install --frozen-lockfile
+
+      - name: Docs build
+        env:
+          NODE_OPTIONS: --max_old_space_size=8192
+        run: pnpm run docs:vite-build
+
   strict-test-demos:
     strategy:
       fail-fast: false
