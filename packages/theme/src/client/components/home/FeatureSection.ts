@@ -1,5 +1,6 @@
+import type { SlotContent } from "@vuepress/helper/client";
 import { isLinkExternal } from "@vuepress/helper/client";
-import type { FunctionalComponent, VNode } from "vue";
+import type { FunctionalComponent } from "vue";
 import { h, resolveComponent } from "vue";
 import { RouteLink, withBase } from "vuepress/client";
 
@@ -14,11 +15,9 @@ const FeatureSection: FunctionalComponent<
   ThemeProjectHomeFeatureOptions,
   Record<never, never>,
   {
-    image?: (props: ThemeProjectHomeFeatureOptions) => VNode[] | VNode | null;
-    info?: (props: ThemeProjectHomeFeatureOptions) => VNode[] | VNode | null;
-    highlights?: (
-      props: ThemeProjectHomeHighlightItem[],
-    ) => VNode[] | VNode | null;
+    image?: (props: ThemeProjectHomeFeatureOptions) => SlotContent;
+    info?: (props: ThemeProjectHomeFeatureOptions) => SlotContent;
+    highlights?: (props: ThemeProjectHomeHighlightItem[]) => SlotContent;
   }
 > = (props, { slots }) => {
   const {

@@ -25,6 +25,21 @@ You can add new layouts or override existing layouts via `layouts` option in [cl
 
 <!-- #region layout -->
 
+```vue title=".vuepress/layout/Home.vue"
+<script setup lang="ts">
+import { Layout } from "vuepress-theme-hope/client";
+</script>
+
+<template>
+  <Layout>
+    <!-- Overriding default hero logo to advanced ones, like home page of theme docs -->
+    <template #heroLogo>
+      <div>A 3D logo</div>
+    </template>
+  </Layout>
+</template>
+```
+
 ```vue title=".vuepress/layout/Layout.vue"
 <script setup lang="ts">
 import { Layout } from "vuepress-theme-hope/client";
@@ -34,7 +49,7 @@ import { Layout } from "vuepress-theme-hope/client";
   <Layout>
     <!-- Adding ADs before markdown content with contentBefore slot -->
     <template #contentBefore>
-      <div>Advertisement contents</div>
+      <div>AD contents</div>
     </template>
   </Layout>
 </template>
@@ -48,7 +63,9 @@ import Layout from "./layouts/Changelog.vue";
 export default defineClientConfig({
   // You can override or add layouts here
   layouts: {
-    // For example, here we change the default layout of vuepress-theme-hope to layouts/Layout.vue
+    // a home page layout with customized hero logo
+    Home,
+    // For example, here we change the default layout of vuepress-theme-hope to layouts/Layout.vue with ADs
     Layout,
     // Also we added a Changelog layout
     Changelog,
@@ -69,14 +86,6 @@ export default defineClientConfig({
   Overriding the slot will override the whole page content (only navbar and sidebar are preserved).
 
   If you have some pages that is wholely built by Vue Components instead of markdown, you can override this slot to build your own page.
-
-- `pageTop`
-
-  A slot at the top of the page, before breadcrumbs, page title and toc.
-
-- `pageBottom`
-
-  A slot at the bottom of the page, after page meta, page nav and comment box.
 
 - `content`
 
@@ -110,8 +119,6 @@ export default defineClientConfig({
 
   A slot for sidebar items.
 
-  This slot will override the default sidebar items element. You can use this slot to build your own sidebar items.
-
 - `sidebarTop`
 
   A slot at the top of sidebar.
@@ -121,6 +128,14 @@ export default defineClientConfig({
   A slot at the bottom of sidebar.
 
 ### Slots Available in Content Page
+
+- `pageTop`
+
+  A slot at the top of the page content.
+
+- `pageBottom`
+
+  A slot at the bottom of the page content.
 
 - `toc`
 
@@ -138,12 +153,154 @@ export default defineClientConfig({
 
 These slots are supported for default home page only (normal page does not have these slots):
 
+### Slots Available in Home Page
+
 - `heroInfo`
 
   A slot for hero info.
 
-  This slot will override the default hero info element. You can use this slot to build your own hero info.
+- `heroLogo`
+
+  A slot for hero logo.
+
+- `heroBg`
+
+  A slot for hero background.
+
+- `heroBefore`
+
+  A slot before homepage hero.
+
+- `heroAfter`
+
+  A slot after homepage hero.
+
+### Slots Available in Portfolio Page
+
+- `portfolioInfo`
+
+  A slot for portfolio info.
+
+- `portfolioAvatar`
+
+  A slot for portfolio avatar.
+
+- `portfolioBg`
+
+  A slot for portfolio background.
 
 ## Slots of `<NotFound>`
 
 - `default`: 404 content slot
+
+- `navScreenTop`
+
+  A slot at the top of nav screen.
+
+  The nav screen is the popup screen when you click the top right menu button in mobile view.
+
+- `navScreenBottom`
+
+  A slot at the bottom of nav screen.
+
+  The nav screen is the popup screen when you click the top right menu button in mobile view.
+
+## Slots of `<Blog>`
+
+### Slots Available in all Blog Page
+
+- `default`: Blog content slot
+
+  The slot of page content, which is the main slot of the layout.
+
+  Overriding the slot will override the whole page content (only navbar and sidebar are preserved).
+
+  If you have some pages that is wholely built by Vue Components instead of markdown, you can override this slot to build your own page.
+
+- `navScreenTop`
+
+  A slot at the top of nav screen.
+
+  The nav screen is the popup screen when you click the top right menu button in mobile view.
+
+- `navScreenBottom`
+
+  A slot at the bottom of nav screen.
+
+  The nav screen is the popup screen when you click the top right menu button in mobile view.
+
+- `articlesBefore`
+
+  A slot before articles list.
+
+- `articlesAfter`
+
+  A slot after articles list.
+
+- `bloggerInfo`
+
+  A slot for blogger info.
+
+- `infoBefore`
+
+  A slot before blog info panel.
+
+- `infoAfter`
+
+  A slot after blog info panel.
+
+### Slots Available in Home, Category, Tag Page
+
+- `articleCover`
+
+  A slot for article cover.
+
+- `articleTitle`
+
+  A slot for article title.
+
+- `articleInfo`
+
+  A slot for article info.
+
+- `articleExcerpt`
+
+  A slot for article excerpt.
+
+### Slots Available in Blog Home Page
+
+- `content`
+
+  A slot for page content, this replaces all content generated from markdown, including contents coming from `contentBefore` and `contentAfter`.
+
+- `contentBefore`
+
+  A slot before content generated from markdown, and after the page title and toc.
+
+  Note: This slot won't work' when `content` slot is set.
+
+- `contentAfter`
+
+  A slot after content generated from markdown, and before page meta and page nav.
+
+  Note: This slot won't work' when `content` slot is set.
+
+- `heroInfo`
+
+  A slot for hero info.
+
+- `heroLogo`
+
+  A slot for hero logo.
+
+- `heroBg`
+
+  A slot for hero background.
+
+- `heroBefore`
+
+  A slot before homepage hero.
+
+- `heroAfter`
+
+  A slot after homepage hero.

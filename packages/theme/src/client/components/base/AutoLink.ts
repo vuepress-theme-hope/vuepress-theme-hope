@@ -1,3 +1,4 @@
+import type { NonNullableSlotContent, Slot } from "@vuepress/helper/client";
 import type { FunctionalComponent, VNode } from "vue";
 import { h, resolveComponent } from "vue";
 import { AutoLink as _AutoLink } from "vuepress/client";
@@ -22,9 +23,9 @@ const AutoLink: FunctionalComponent<
   AutoLinkProps,
   ["focusout"],
   {
-    before?: () => VNode[] | VNode | null;
-    after?: () => VNode[] | VNode | null;
-    default?: () => VNode[] | VNode;
+    before?: Slot;
+    after?: Slot;
+    default?: () => NonNullableSlotContent;
   }
 > = ({ config, iconSizing = "both" }, { emit, slots }) => {
   const { icon } = config;

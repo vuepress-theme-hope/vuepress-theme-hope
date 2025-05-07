@@ -15,6 +15,7 @@ import type {
   ArticleExcerptSlotData,
   ArticleInfoSlotData,
   ArticleTitleSlotData,
+  BloggerInfoSlotData,
   HeroBackgroundSlotData,
   HeroImageSlotData,
   HeroInfoSlotData,
@@ -48,6 +49,7 @@ export default defineComponent({
     articlesAfter?: Slot;
 
     // info
+    bloggerInfo?: (bloggerInfo: BloggerInfoSlotData) => SlotContent;
     infoBefore?: Slot;
     infoAfter?: Slot;
 

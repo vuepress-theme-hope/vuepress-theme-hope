@@ -1,3 +1,4 @@
+import type { SlotContent } from "@vuepress/helper/client";
 import { isLinkExternal } from "@vuepress/helper/client";
 import type { FunctionalComponent, VNode } from "vue";
 import { h, resolveComponent } from "vue";
@@ -14,11 +15,9 @@ const HighlightSection: FunctionalComponent<
   ThemeProjectHomeHighlightOptions,
   Record<never, never>,
   {
-    image?: (props: ThemeProjectHomeHighlightOptions) => VNode[] | VNode | null;
-    info?: (props: ThemeProjectHomeHighlightOptions) => VNode[] | VNode | null;
-    highlights?: (
-      props: ThemeProjectHomeHighlightItem[],
-    ) => VNode[] | VNode | null;
+    image?: (props: ThemeProjectHomeHighlightOptions) => SlotContent;
+    info?: (props: ThemeProjectHomeHighlightOptions) => SlotContent;
+    highlights?: (props: ThemeProjectHomeHighlightItem[]) => SlotContent;
   }
 > = (props, { slots }): VNode => {
   const {

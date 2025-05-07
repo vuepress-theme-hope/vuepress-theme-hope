@@ -1,3 +1,4 @@
+import type { Slot, SlotContent } from "@vuepress/helper/client";
 import { watchImmediate } from "@vueuse/core";
 import type { SlotsType, VNode } from "vue";
 import { defineComponent, h, onMounted, shallowRef } from "vue";
@@ -5,7 +6,7 @@ import { useRoute } from "vuepress/client";
 
 import SidebarLinks from "@theme-hope/components/sidebar/SidebarLinks";
 import { useSidebarItems } from "@theme-hope/composables/sidebar/useSidebarItems";
-import type { SidebarSlotData } from "@theme-hope/typings/slots";
+import type { SidebarItemsSlotData } from "@theme-hope/typings/slots";
 
 import "../../styles/sidebar/sidebar.scss";
 
@@ -13,9 +14,9 @@ export default defineComponent({
   name: "SideBar",
 
   slots: Object as SlotsType<{
-    sidebarItems?: (sideItems: SidebarSlotData) => VNode[] | VNode | null;
-    sidebarTop?: () => VNode[] | VNode | null;
-    sidebarBottom?: () => VNode[] | VNode | null;
+    sidebarItems?: (sideItems: SidebarItemsSlotData) => SlotContent;
+    sidebarTop?: Slot;
+    sidebarBottom?: Slot;
   }>,
 
   setup(_props, { slots }) {

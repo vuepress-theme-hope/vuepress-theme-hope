@@ -12,6 +12,10 @@ export default defineComponent({
 
   slots: Object as SlotsType<{
     default?: Slot;
+
+    // navbar
+    navScreenTop?: Slot;
+    navScreenBottom?: Slot;
   }>,
 
   setup(_props, { slots }) {
@@ -26,52 +30,58 @@ export default defineComponent({
 
     return (): VNode[] => [
       h(SkipLink),
-      h(MainLayout, { noSidebar: true }, () =>
-        h(
-          "main",
-          { id: "main-content", class: "vp-page not-found" },
-          slots.default?.() ?? [
-            h("div", { class: "not-found-hint" }, [
-              h("p", { class: "error-code" }, "404"),
-              h(
-                "h1",
-                { class: "error-title" },
-                themeLocale.value.routeLocales.notFoundTitle,
-              ),
-              h(
-                "p",
-                { class: "error-hint", "data-allow-mismatch": "text" },
-                getMsg(),
-              ),
-            ]),
-            h("div", { class: "actions" }, [
-              h(
-                "button",
-                {
-                  type: "button",
-                  class: "action-button",
-                  onClick: () => {
-                    window.history.go(-1);
-                  },
-                },
-                themeLocale.value.routeLocales.back,
-              ),
-              h(
-                "button",
-                {
-                  type: "button",
-                  class: "action-button",
-                  onClick: () => {
-                    void router.push(
-                      themeLocale.value.home ?? routeLocale.value,
-                    );
-                  },
-                },
-                themeLocale.value.routeLocales.home,
-              ),
-            ]),
-          ],
-        ),
+      h(
+        MainLayout,
+        { noSidebar: true },
+        {
+          ...slots,
+          default: () =>
+            h(
+              "main",
+              { id: "main-content", class: "vp-page not-found" },
+              slots.default?.() ?? [
+                h("div", { class: "not-found-hint" }, [
+                  h("p", { class: "error-code" }, "404"),
+                  h(
+                    "h1",
+                    { class: "error-title" },
+                    themeLocale.value.routeLocales.notFoundTitle,
+                  ),
+                  h(
+                    "p",
+                    { class: "error-hint", "data-allow-mismatch": "text" },
+                    getMsg(),
+                  ),
+                ]),
+                h("div", { class: "actions" }, [
+                  h(
+                    "button",
+                    {
+                      type: "button",
+                      class: "action-button",
+                      onClick: () => {
+                        window.history.go(-1);
+                      },
+                    },
+                    themeLocale.value.routeLocales.back,
+                  ),
+                  h(
+                    "button",
+                    {
+                      type: "button",
+                      class: "action-button",
+                      onClick: () => {
+                        void router.push(
+                          themeLocale.value.home ?? routeLocale.value,
+                        );
+                      },
+                    },
+                    themeLocale.value.routeLocales.home,
+                  ),
+                ]),
+              ],
+            ),
+        },
       ),
     ];
   },

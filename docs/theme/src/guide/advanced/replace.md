@@ -54,31 +54,33 @@ Here are list of aliases.
 
 - `@theme-hope/components/base/EditIcon`: edit icon
 
+- `@theme-hope/components/base/MainFadeInUpTransition`: main layout fade in up transition component
+
+  Slots: `default`
+
+- `@theme-hope/components/base/MainLayout`: main layout
+
+  Slots: `default`, `navScreenTop`, `navScreenBottom`, `sidebarItems`, `sidebarTop`, `sidebarBottom`
+
+  - `navScreenTop` slot is piped to `navScreenTop` slot of `NavBar` component.
+  - `navScreenBottom` slot is piped to `navScreenBottom` slot of `NavBar` component.
+  - `sidebarItems` slot is piped to `sidebarItems` slot of `Sidebar` component.
+  - `sidebarTop` slot is piped to `sidebarTop` slot of `Sidebar` component.
+  - `sidebarBottom` slot is piped to `sidebarBottom` slot of `Sidebar` component.
+
+- `@theme-hope/components/base/MarkdownContent`: Markdown content
+
+  Slots: `contentBefore`, `contentAfter`
+
 - `@theme-hope/components/base/PageContent`: main page content
 
-  Slots: `top`, `bottom`, `content`, `contentBefore`, `contentAfter`, `toc`, `tocBefore`, `tocAfter`
+  Slots: `pageTop`, `pageBottom`, `content`, `contentBefore`, `contentAfter`, `toc`, `tocBefore`, `tocAfter`
 
   - `contentBefore` slot is piped to `contentBefore` slot of `MarkdownContent` component.
   - `contentAfter` slot is piped to `contentAfter` slot of `MarkdownContent` component.
   - `toc` slot is piped to `toc` slot of `TOC` component.
   - `tocBefore` slot is piped to `tocBefore` slot of `TOC` component.
   - `tocAfter` slot is piped to `tocAfter` slot of `TOC` component.
-
-- `@theme-hope/components/base/MainFadeInUpTransition`: main layout fade in up transition component
-
-- `@theme-hope/components/base/MainLayout`: main layout
-
-  Slots: `default`, `navScreenTop`, `navScreenBottom`, `sidebar`, `sidebarTop`, `sidebarBottom`
-
-  - `navScreenTop` slot is piped to `screenTop` slot of `NavBar` component.
-  - `navScreenBottom` slot is piped to `screenBottom` slot of `NavBar` component.
-  - `sidebar` slot is piped to `default` slot of `Sidebar` component.
-  - `sidebarTop` slot is piped to `top` slot of `Sidebar` component.
-  - `sidebarBottom` slot is piped to `bottom` slot of `Sidebar` component.
-
-- `@theme-hope/components/base/MarkdownContent`: Markdown content
-
-  Slots: `contentBefore`, `contentAfter`
 
 - `@theme-hope/components/base/PageFooter`: page footer
 
@@ -144,10 +146,10 @@ Here are list of aliases.
 
 - `@theme-hope/components/navbar/Navbar`: navbar component
 
-  Slots: `screenTop`, `screenBottom`
+  Slots: `navScreenTop`, `navScreenBottom`
 
-  - `screenTop` slot is piped to `before` slot of `NavScreen` component.
-  - `screenBottom` slot is piped to `after` slot of `NavScreen` component.
+  - `navScreenTop` slot is piped to `before` slot of `NavScreen` component.
+  - `navScreenBottom` slot is piped to `after` slot of `NavScreen` component.
 
 - `@theme-hope/components/navbar/NavbarBrand`: navbar brand information
 
@@ -188,25 +190,15 @@ Here are list of aliases.
 ### Info Components
 
 - `@theme-hope/components/info/AuthorInfo`: author information
-
 - `@theme-hope/components/info/CategoryInfo`: category information
-
 - `@theme-hope/components/info/DateInfo`: date information
-
 - `@theme-hope/components/info/OriginalInfo`: original mark
-
 - `@theme-hope/components/info/PageInfo`: page information
-
 - `@theme-hope/components/info/PageMeta`: page meta information
-
 - `@theme-hope/components/info/PageViewInfo`: page views information
-
 - `@theme-hope/components/info/ReadingTimeInfo`: reading time information
-
 - `@theme-hope/components/info/TagInfo`: tag information
-
 - `@theme-hope/components/info/WordInfo`: word information
-
 - `@theme-hope/components/info/icons`: info icons
 
 ### Appearance Components
@@ -253,17 +245,21 @@ Here are list of aliases.
 
 - `@theme-hope/components/blog/BloggerInfo`: blogger info
 
+  Slots: `bloggerInfo`
+
+  - `bloggerInfo` slot receives `name` `avatar` and `description` props.
+
 - `@theme-hope/components/blog/BlogHero`: blog homepage logo and introduction
 
   Slots: `heroInfo`, `heroLogo`, `heroBg`,
 
   - `heroBg` slot receives `text` `tagline` `isFullScreen` and `style` props.
-  - `logo` slot receives `image` `imageDark` `alt` and `style` props.
+  - `heroLogo` slot receives `image` `imageDark` `alt` and `style` props.
   - `heroBg` slot receives `image` `imageDark` and `style` props.
 
 - `@theme-hope/components/blog/BlogHome`: blog home
 
-  Slots: `heroInfo`, `heroLogo`, `heroBg`, `heroBefore`, `heroAfter`, `articleCover`, `articleTitle`, `articleInfo`, `articleExcerpt`, `content`, `contentBefore`, `contentAfter`
+  Slots: `heroInfo`, `heroLogo`, `heroBg`, `heroBefore`, `heroAfter`, `articleCover`, `articleTitle`, `articleInfo`, `articleExcerpt`, `bloggerInfo`, `infoBefore`, `infoAfter`, `content`, `contentBefore`, `contentAfter`
 
   - `heroInfo` slot is piped to `info` slot of `BlogHero` component.
   - `heroLogo` slot is piped to `heroLogo` slot of `BlogHero` component.
@@ -272,12 +268,18 @@ Here are list of aliases.
   - `articleTitle` slot is piped to `articleTitle` slot of `ArticleList` component.
   - `articleInfo` slot is piped to `articleInfo` slot of `ArticleList` component.
   - `articleExcerpt` slot is piped to `articleExcerpt` slot of `ArticleList` component.
+  - `bloggerInfo` slot is piped to `bloggerInfo` slot of `BloggerInfo` component.
+  - `infoBefore` slot is piped to `infoBefore` slot of `InfoPanel` component.
+  - `infoAfter` slot is piped to `infoAfter` slot of `InfoPanel` component.
   - `contentBefore` slot is piped to `before` slot of `MarkdownContent` component.
   - `contentAfter` slot is piped to `after` slot of `MarkdownContent` component.
 
 - `@theme-hope/components/blog/BlogMainLayout`: blog main layout
 
-  Slots: `default`
+  Slots: `default`, `navScreenTop`, `navScreenBottom`, `sidebarItems`, `sidebarTop`, `sidebarBottom`, `bloggerInfo`
+
+  - `navScreenTop` slot is piped to `navScreenTop` slot of `NavBar` component.
+  - `navScreenBottom` slot is piped to `navScreenBottom` slot of `NavBar` component.
 
 - `@theme-hope/components/blog/CategoriesInfo`: Category info
 
@@ -285,9 +287,23 @@ Here are list of aliases.
 
 - `@theme-hope/components/blog/CategoryPage`: category page
 
+  Slots: `default`, `articleTitle`, `articleCover`, `articleInfo`, `articleExcerpt`, `articleBefore`, `articleAfter`, `bloggerInfo`, `infoBefore`, `infoAfter`
+
+  - `articleCover` slot is piped to `articleCover` slot of `ArticleList` component.
+  - `articleTitle` slot is piped to `articleTitle` slot of `ArticleList` component.
+  - `articleInfo` slot is piped to `articleInfo` slot of `ArticleList` component.
+  - `articleExcerpt` slot is piped to `articleExcerpt` slot of `ArticleList` component.
+  - `bloggerInfo` slot is piped to `bloggerInfo` slot of `BloggerInfo` component.
+  - `infoBefore` slot is piped to `infoBefore` slot of `InfoPanel` component.
+  - `infoAfter` slot is piped to `infoAfter` slot of `InfoPanel` component.
+
 - `@theme-hope/components/blog/InfoList`: blog info list
 
+  Slots: `bloggerInfo`, `infoBefore`, `infoAfter`
+
 - `@theme-hope/components/blog/InfoPanel`: blog info panel
+
+  - `bloggerInfo` slot is piped to `bloggerInfo` slot of `BloggerInfo` component.
 
 - `@theme-hope/components/blog/Pagination`: pagination
 
@@ -307,7 +323,23 @@ Here are list of aliases.
 
 - `@theme-hope/components/blog/TimelinePage`: timeline page
 
+  Slots: `articleBefore`, `articleAfter`, `bloggerInfo`, `infoBefore`, `infoAfter`
+
+  - `bloggerInfo` slot is piped to `bloggerInfo` slot of `BloggerInfo` component.
+  - `infoBefore` slot is piped to `infoBefore` slot of `InfoPanel` component.
+  - `infoAfter` slot is piped to `infoAfter` slot of `InfoPanel` component.
+
 - `@theme-hope/components/blog/TypePage`: type page
+
+  Slots: `default`, `articleTitle`, `articleCover`, `articleInfo`, `articleExcerpt`, `articleBefore`, `articleAfter`, `bloggerInfo`, `infoBefore`, `infoAfter`
+
+  - `articleCover` slot is piped to `articleCover` slot of `ArticleList` component.
+  - `articleTitle` slot is piped to `articleTitle` slot of `ArticleList` component.
+  - `articleInfo` slot is piped to `articleInfo` slot of `ArticleList` component.
+  - `articleExcerpt` slot is piped to `articleExcerpt` slot of `ArticleList` component.
+  - `bloggerInfo` slot is piped to `bloggerInfo` slot of `BloggerInfo` component.
+  - `infoBefore` slot is piped to `infoBefore` slot of `InfoPanel` component.
+  - `infoAfter` slot is piped to `infoAfter` slot of `InfoPanel` component.
 
 - `@theme-hope/components/blog/icons`: blog icons
 
@@ -335,7 +367,7 @@ For demo of common slots, please check:
 
 - [Page Slot demo](../../demo/page-slot.md)。
 - [Home Slot demo](../../demo/home-slot.md)。
-- [B.og Slot demo](../../demo/blog-slot.md)。
+- [Blog Slot demo](../../demo/blog-slot.md)。
 
 :::
 

@@ -28,15 +28,6 @@ export default defineComponent({
   slots: Object as SlotsType<{
     default?: Slot;
 
-    // page
-    pageTop?: Slot;
-    pageBottom?: Slot;
-
-    // content
-    content?: Slot;
-    contentBefore?: Slot;
-    contentAfter?: Slot;
-
     // navbar
     navScreenTop?: Slot;
     navScreenBottom?: Slot;
@@ -45,6 +36,15 @@ export default defineComponent({
     sidebarItems?: (sidebarItems: SidebarItem[]) => SlotContent;
     sidebarTop?: Slot;
     sidebarBottom?: Slot;
+
+    // page
+    pageTop?: Slot;
+    pageBottom?: Slot;
+
+    // content
+    content?: Slot;
+    contentBefore?: Slot;
+    contentAfter?: Slot;
 
     // toc
     toc?: (headers: HeaderItem[]) => SlotContent;

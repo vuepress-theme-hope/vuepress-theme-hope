@@ -28,7 +28,7 @@ export default defineComponent({
   },
 
   slots: Object as SlotsType<{
-    default: () => VNode[] | VNode;
+    default: () => NonNullableSlotContent;
   }>,
 
   setup(props, { slots }) {
@@ -54,11 +54,10 @@ export default defineComponent({
         onAfterEnter: unsetStyle,
         onBeforeLeave: setStyle,
       };
-      const children = (): NonNullableSlotContent => slots.default();
 
       return props.group
-        ? h(TransitionGroup, attrs, children)
-        : h(Transition, attrs, children);
+        ? h(TransitionGroup, attrs, slots.default)
+        : h(Transition, attrs, slots.default);
     };
   },
 });

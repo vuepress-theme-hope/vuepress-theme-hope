@@ -1,5 +1,5 @@
-import type { SlotContent } from "@vuepress/helper/client";
-import type { Slot, SlotsType, VNode } from "vue";
+import type { Slot, SlotContent } from "@vuepress/helper/client";
+import type { SlotsType, VNode } from "vue";
 import { defineComponent, h } from "vue";
 import { useFrontmatter } from "vuepress/client";
 
@@ -44,15 +44,7 @@ export default defineComponent({
           "aria-labelledby": "main-title",
         },
         [
-          h(
-            PortfolioHero,
-            {},
-            {
-              info: slots.portfolioInfo,
-              avatar: slots.portfolioAvatar,
-              bg: slots.portfolioBg,
-            },
-          ),
+          h(PortfolioHero, {}, slots),
           content === "none"
             ? null
             : (slots.content?.() ??

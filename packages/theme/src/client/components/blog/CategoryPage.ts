@@ -16,6 +16,7 @@ import type {
   ArticleExcerptSlotData,
   ArticleInfoSlotData,
   ArticleTitleSlotData,
+  BloggerInfoSlotData,
 } from "@theme-hope/typings/slots";
 
 export default defineComponent({
@@ -35,6 +36,7 @@ export default defineComponent({
     articlesAfter?: Slot;
 
     // info
+    bloggerInfo?: (bloggerInfo: BloggerInfoSlotData) => SlotContent;
     infoBefore?: Slot;
     infoAfter?: Slot;
   }>,

@@ -77,7 +77,7 @@ export default defineComponent({
     navScreenBottom?: Slot;
 
     // Sidebar
-    sidebarItems?: (sidebarItem: SidebarItem[]) => NonNullableSlotContent;
+    sidebarItems?: (sidebarItems: SidebarItem[]) => NonNullableSlotContent;
     sidebarTop?: Slot;
     sidebarBottom?: Slot;
   }>,

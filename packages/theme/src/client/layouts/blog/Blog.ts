@@ -1,4 +1,4 @@
-import type { HeaderItem, Slot, SlotContent } from "@vuepress/helper/client";
+import type { Slot, SlotContent } from "@vuepress/helper/client";
 import type { BlogPluginFrontmatter } from "@vuepress/plugin-blog";
 import type { SlotsType, VNode } from "vue";
 import { defineComponent, h } from "vue";
@@ -14,10 +14,11 @@ import type {
   ArticleExcerptSlotData,
   ArticleInfoSlotData,
   ArticleTitleSlotData,
+  BloggerInfoSlotData,
   HeroBackgroundSlotData,
   HeroImageSlotData,
   HeroInfoSlotData,
-  SidebarSlotData,
+  SidebarItemsSlotData,
 } from "@theme-hope/typings/slots";
 
 export default defineComponent({
@@ -29,7 +30,7 @@ export default defineComponent({
     navScreenTop?: Slot;
     navScreenBottom?: Slot;
 
-    sidebarItems?: (sidebarItems: SidebarSlotData) => SlotContent;
+    sidebarItems?: (sidebarItems: SidebarItemsSlotData) => SlotContent;
     sidebarTop?: Slot;
     sidebarBottom?: Slot;
 
@@ -44,6 +45,7 @@ export default defineComponent({
     articlesAfter?: Slot;
 
     // info
+    bloggerInfo?: (bloggerInfo: BloggerInfoSlotData) => SlotContent;
     infoBefore?: Slot;
     infoAfter?: Slot;
 
@@ -51,11 +53,6 @@ export default defineComponent({
     content?: Slot;
     contentBefore?: Slot;
     contentAfter?: Slot;
-
-    // toc
-    toc?: (headers: HeaderItem[]) => SlotContent;
-    tocBefore?: Slot;
-    tocAfter?: Slot;
 
     // home only
     heroInfo?: (props: HeroInfoSlotData) => SlotContent;

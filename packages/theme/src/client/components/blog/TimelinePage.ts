@@ -1,21 +1,24 @@
-import type { FunctionalComponent, VNode } from "vue";
+import type { SlotContent } from "@vuepress/helper/client";
+import type { FunctionalComponent, Slot } from "vue";
 import { h } from "vue";
 
 import InfoPanel from "@theme-hope/components/blog/InfoPanel";
 import TimelineItems from "@theme-hope/components/blog/TimelineItems";
 import DropTransition from "@theme-hope/components/transitions/DropTransition";
+import type { BloggerInfoSlotData } from "@theme-hope/typings/slots";
 
 const TimelinePage: FunctionalComponent<
   Record<never, never>,
   [],
   {
     // articles
-    articlesBefore?: () => VNode[] | VNode | null;
-    articlesAfter?: () => VNode[] | VNode | null;
+    articlesBefore?: Slot;
+    articlesAfter?: Slot;
 
     // info
-    infoBefore?: () => VNode[] | VNode | null;
-    infoAfter?: () => VNode[] | VNode | null;
+    bloggerInfo?: (bloggerInfo: BloggerInfoSlotData) => SlotContent;
+    infoBefore?: Slot;
+    infoAfter?: Slot;
   }
 > = (_props, { slots }) =>
   h(

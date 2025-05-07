@@ -1,5 +1,6 @@
+import type { SlotContent } from "@vuepress/helper/client";
 import { keys } from "@vuepress/helper/client";
-import type { VNode } from "vue";
+import type { SlotsType, VNode } from "vue";
 import { computed, defineComponent, h } from "vue";
 import { RouteLink, withBase } from "vuepress/client";
 
@@ -12,6 +13,7 @@ import { useTagMap } from "@theme-hope/composables/blog/useTagMap";
 import { useTimeline } from "@theme-hope/composables/blog/useTimeline";
 import { useData } from "@theme-hope/composables/useData";
 import { useNavigate } from "@theme-hope/composables/useNavigate";
+import type { BloggerInfoSlotData } from "@theme-hope/typings/slots";
 
 import { getAuthor } from "../../../shared/index.js";
 
@@ -20,7 +22,11 @@ import "../../styles/blog/blogger-info.scss";
 export default defineComponent({
   name: "BloggerInfo",
 
-  setup() {
+  slots: Object as SlotsType<{
+    bloggerInfo?: (bloggerInfo: BloggerInfoSlotData) => SlotContent;
+  }>,
+
+  setup(_props, { slots }) {
     const blogLocale = useBlogLocaleData();
     const blogOptions = useBlogOptions();
     const { siteLocale, themeLocale } = useData();
@@ -30,17 +36,15 @@ export default defineComponent({
     const timelines = useTimeline();
     const navigate = useNavigate();
 
-    const bloggerName = computed(
-      () =>
+    const bloggerInfo = computed(() => ({
+      name:
         // eslint-disable-next-line @typescript-eslint/no-unnecessary-condition
         blogOptions.value.name ??
         getAuthor(themeLocale.value.author)[0]?.name ??
         siteLocale.value.title,
-    );
-
-    const bloggerAvatar = computed(
-      () => blogOptions.value.avatar ?? themeLocale.value.logo,
-    );
+      avatar: blogOptions.value.avatar ?? themeLocale.value.logo ?? null,
+      description: blogOptions.value.description ?? null,
+    }));
 
     const intro = computed(() => blogOptions.value.intro);
 
@@ -60,7 +64,7 @@ export default defineComponent({
           vocab: "https://schema.org/",
           typeof: "Person",
         },
-        [
+        slots.bloggerInfo?.(bloggerInfo.value) ?? [
           h(
             "div",
             {
@@ -78,26 +82,26 @@ export default defineComponent({
                 : {}),
             },
             [
-              bloggerAvatar.value
+              bloggerInfo.value.avatar
                 ? h("img", {
                     class: "vp-blogger-avatar",
-                    src: withBase(bloggerAvatar.value),
+                    src: withBase(bloggerInfo.value.avatar),
                     property: "image",
                     alt: "Blogger Avatar",
                     loading: "lazy",
                   })
                 : null,
-              bloggerName.value
+              bloggerInfo.value.name
                 ? h(
                     "div",
                     { class: "vp-blogger-name", property: "name" },
-                    bloggerName.value,
+                    bloggerInfo.value.name,
                   )
                 : null,
-              blogOptions.value.description
+              bloggerInfo.value.description
                 ? h("div", {
                     class: "vp-blogger-description",
-                    innerHTML: blogOptions.value.description,
+                    innerHTML: bloggerInfo.value.description,
                   })
                 : null,
               intro.value

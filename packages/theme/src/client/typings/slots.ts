@@ -5,7 +5,7 @@ import type { SidebarItem } from "@theme-hope/typings/sidebar";
 
 import type { PortfolioMedia } from "../../shared/index.js";
 
-export type SidebarSlotData = SidebarItem[];
+export type SidebarItemsSlotData = SidebarItem[];
 
 export type TocSlotData = HeaderItem[];
 
@@ -67,3 +67,9 @@ export interface ArticleExcerptSlotData {
 }
 
 export type ArticleInfoSlotData = PageInfoProps;
+
+export interface BloggerInfoSlotData {
+  name: string;
+  avatar: string | null;
+  description: string | null;
+}
