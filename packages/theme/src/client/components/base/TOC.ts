@@ -3,18 +3,28 @@ import type {
   Slot,
   SlotContent,
 } from "@vuepress/helper/client";
-import { useHeaders } from "@vuepress/helper/client";
+import { isPlainObject, useHeaders } from "@vuepress/helper/client";
 import { useToggle, watchImmediate } from "@vueuse/core";
 import type { PropType, SlotsType, VNode } from "vue";
-import { defineComponent, h, onMounted, ref, shallowRef, toRef } from "vue";
+import { computed, defineComponent, h, onMounted, ref, shallowRef } from "vue";
 import type { PageHeader } from "vuepress/client";
 import { ClientOnly, RouteLink, useRoute } from "vuepress/client";
 
 import PrintButton from "@theme-hope/components/base/PrintButton";
 import { useMetaLocale } from "@theme-hope/composables/info/useMetaLocale";
+import { useData } from "@theme-hope/composables/useData";
 import type { TocSlotData } from "@theme-hope/typings/slots";
 
 import "../../styles/info/toc.scss";
+
+const DEFAULT_TOC_OPTIONS: GetHeadersOptions = {
+  selector: [
+    ...Array.from({ length: 6 }).map((_, i) => `#markdown-content > h${i + 1}`),
+    "[vp-content] > h2",
+  ].join(", "),
+  levels: "deep",
+  ignore: [".vp-badge", ".vp-icon"],
+};
 
 export default defineComponent({
   name: "TOC",
@@ -26,11 +36,6 @@ export default defineComponent({
      * TOC 项目配置
      */
     items: Array as PropType<PageHeader[]>,
-
-    /**
-     * Header options
-     */
-    options: Object as PropType<GetHeadersOptions>,
   },
 
   slots: Object as SlotsType<{
@@ -40,8 +45,19 @@ export default defineComponent({
   }>,
 
   setup(props, { slots }) {
-    const headerOptions = toRef(props, "options");
-    const headers = useHeaders(headerOptions);
+    const { frontmatter, themeLocale } = useData();
+
+    const tocOptions = computed(() => {
+      const config = frontmatter.value.toc ?? themeLocale.value.toc;
+
+      return isPlainObject(config)
+        ? { ...DEFAULT_TOC_OPTIONS, ...config }
+        : (config ?? true)
+          ? DEFAULT_TOC_OPTIONS
+          : undefined;
+    });
+
+    const headers = useHeaders(tocOptions);
     const route = useRoute();
     const metaLocale = useMetaLocale();
     const [isExpanded, toggleExpanded] = useToggle();
@@ -158,62 +174,67 @@ export default defineComponent({
         : null;
 
     return (): VNode | null =>
-      h(ClientOnly, () => {
-        const tocHeaders = props.items?.length
-          ? renderChildren(props.items)
-          : renderChildren(headers.value);
+      tocOptions.value || props.items?.length
+        ? h(ClientOnly, () => {
+            const tocHeaders = props.items?.length
+              ? renderChildren(props.items)
+              : renderChildren(headers.value);
 
-        const defaultContent =
-          slots.toc?.(headers.value) ??
-          (tocHeaders
-            ? [
-                h(
-                  "div",
-                  {
-                    class: "vp-toc-header",
-                    onClick: () => {
-                      toggleExpanded();
-                    },
-                  },
-                  [
-                    metaLocale.value.toc,
-                    h(PrintButton),
-                    h("div", {
-                      class: ["arrow", isExpanded.value ? "down" : "end"],
-                    }),
-                  ],
-                ),
-                h(
-                  "div",
-                  {
-                    class: ["vp-toc-wrapper", isExpanded.value ? "open" : ""],
-                    ref: toc,
-                  },
-                  [
-                    tocHeaders,
-                    h("div", {
-                      class: "vp-toc-marker",
-                      style: {
-                        top: tocMarkerTop.value,
+            const defaultContent =
+              slots.toc?.(headers.value) ??
+              (tocHeaders
+                ? [
+                    h(
+                      "div",
+                      {
+                        class: "vp-toc-header",
+                        onClick: () => {
+                          toggleExpanded();
+                        },
                       },
-                    }),
-                  ],
-                ),
-              ]
-            : null);
-        const beforeContent = slots.tocBefore?.();
-        const afterContent = slots.tocAfter?.();
+                      [
+                        metaLocale.value.toc,
+                        h(PrintButton),
+                        h("div", {
+                          class: ["arrow", isExpanded.value ? "down" : "end"],
+                        }),
+                      ],
+                    ),
+                    h(
+                      "div",
+                      {
+                        class: [
+                          "vp-toc-wrapper",
+                          isExpanded.value ? "open" : "",
+                        ],
+                        ref: toc,
+                      },
+                      [
+                        tocHeaders,
+                        h("div", {
+                          class: "vp-toc-marker",
+                          style: {
+                            top: tocMarkerTop.value,
+                          },
+                        }),
+                      ],
+                    ),
+                  ]
+                : null);
+            const beforeContent = slots.tocBefore?.();
+            const afterContent = slots.tocAfter?.();
 
-        // headers can not be accessed during SSR, so we need to wrap it with ClientOnly
-        return defaultContent || beforeContent || afterContent
-          ? h("div", { class: "vp-toc-placeholder" }, [
-              h("aside", { id: "toc", "vp-toc": "" }, [
-                beforeContent,
-                defaultContent,
-                afterContent,
-              ]),
-            ])
-          : null;
-      });
+            // headers can not be accessed during SSR, so we need to wrap it with ClientOnly
+            return defaultContent || beforeContent || afterContent
+              ? h("div", { class: "vp-toc-placeholder" }, [
+                  h("aside", { id: "toc", "vp-toc": "" }, [
+                    beforeContent,
+                    defaultContent,
+                    afterContent,
+                  ]),
+                ])
+              : null;
+          })
+        : null;
   },
 });

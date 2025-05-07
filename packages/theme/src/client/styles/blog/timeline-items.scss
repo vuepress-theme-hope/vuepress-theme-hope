@@ -36,16 +36,6 @@
     --dot-border-color: #555;
   }
 
-  #toc {
-    inset-inline: unset 0;
-    min-width: 0;
-  }
-
-  .toc-wrapper {
-    position: relative;
-    z-index: 10;
-  }
-
   .timeline-content {
     position: relative;
     box-sizing: border-box;

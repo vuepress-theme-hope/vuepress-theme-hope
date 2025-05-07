@@ -1,15 +1,7 @@
-import type {
-  GetHeadersOptions,
-  Slot,
-  SlotContent,
-} from "@vuepress/helper/client";
-import {
-  RenderDefault,
-  hasGlobalComponent,
-  isPlainObject,
-} from "@vuepress/helper/client";
+import type { Slot, SlotContent } from "@vuepress/helper/client";
+import { RenderDefault, hasGlobalComponent } from "@vuepress/helper/client";
 import type { ComponentOptions, SlotsType, VNode } from "vue";
-import { computed, defineComponent, h, resolveComponent } from "vue";
+import { defineComponent, h, resolveComponent } from "vue";
 import { withBase } from "vuepress/client";
 
 import BreadCrumb from "@theme-hope/components/base/BreadCrumb";
@@ -23,15 +15,6 @@ import { useData } from "@theme-hope/composables/useData";
 import type { TocSlotData } from "@theme-hope/typings/slots";
 
 import "../../styles/base/page-content.scss";
-
-const DEFAULT_TOC_OPTIONS: GetHeadersOptions = {
-  selector: [
-    ...Array.from({ length: 6 }).map((_, i) => `#markdown-content > h${i + 1}`),
-    "[vp-content] > h2",
-  ].join(", "),
-  levels: "deep",
-  ignore: [".vp-badge", ".vp-icon"],
-};
 
 export default defineComponent({
   name: "PageContent",
@@ -52,18 +35,8 @@ export default defineComponent({
   }>,
 
   setup(_props, { slots }) {
-    const { frontmatter, themeLocale } = useData();
+    const { frontmatter } = useData();
     const { isDarkMode } = useDarkMode();
-
-    const tocOptions = computed(() => {
-      const config = frontmatter.value.toc ?? themeLocale.value.toc;
-
-      return isPlainObject(config)
-        ? { ...DEFAULT_TOC_OPTIONS, ...config }
-        : (config ?? true)
-          ? DEFAULT_TOC_OPTIONS
-          : null;
-    });
 
     return (): VNode =>
       h(
@@ -88,9 +61,7 @@ export default defineComponent({
               : null,
             h(BreadCrumb),
             h(PageTitle),
-            tocOptions.value
-              ? h(TOC, { options: tocOptions.value }, slots)
-              : null,
+            h(TOC, {}, slots),
             slots.content?.() ?? h(MarkdownContent, {}, slots),
             h(PageMeta),
             h(PageNav),
