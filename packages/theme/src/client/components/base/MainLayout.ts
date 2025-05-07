@@ -203,6 +203,7 @@ export default defineComponent({
         // sidebar is disabled via frontmatter
         frontmatter.value.sidebar === false ||
         // (is home page / no sidebar items) && no contents in sidebar slots
+        // eslint-disable-next-line @typescript-eslint/prefer-nullish-coalescing
         ((frontmatter.value.home || sidebarItems.value.length === 0) &&
           !sidebarTopContent &&
           !sidebarItemsContent &&
