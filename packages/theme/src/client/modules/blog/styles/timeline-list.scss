@@ -1,54 +1,9 @@
-@mixin dot() {
-  content: " ";
-
-  position: absolute;
-  z-index: 2;
-
-  border: 1px solid var(--dot-border-color);
-  border-radius: 50%;
-
-  background: var(--dot-color);
-
-  transition:
-    background var(--vp-t-color),
-    border-color var(--vp-t-color);
-}
-
 .timeline-list-wrapper {
-  --dot-color: #fff;
-  --dot-bar-color: #eaecef;
-  --dot-border-color: #ddd;
-
   padding: 8px 0;
-
-  [data-theme="dark"] & {
-    --dot-color: #444;
-    --dot-bar-color: #333;
-    --dot-border-color: #555;
-  }
-
-  .timeline-list-title {
-    cursor: pointer;
-
-    .icon {
-      position: relative;
-      bottom: -0.125rem;
-
-      width: 16px;
-      height: 16px;
-      margin: 0 6px;
-    }
-
-    .num {
-      position: relative;
-      margin: 0 2px;
-      font-size: 22px;
-    }
-  }
 
   .timeline-content {
     overflow-y: auto;
-    max-height: 80vh;
+    max-height: 75vh;
 
     &::-webkit-scrollbar-track-piece {
       background: transparent;
@@ -57,48 +12,23 @@
 
   .timeline-list {
     position: relative;
+
     box-sizing: border-box;
-    margin: 0 8px;
+    margin: 0 0.5rem;
+    padding-inline-start: 0;
+
     list-style: none;
-
-    &::after {
-      content: " ";
-
-      position: absolute;
-      inset-inline-start: 0;
-      top: 14px;
-      z-index: -1;
-
-      width: 4px;
-      height: calc(100% - 14px);
-      margin-inline-start: -2px;
-
-      background: var(--dot-bar-color);
-
-      transition: background var(--vp-t-color);
-    }
   }
 
   .timeline-year {
     position: relative;
 
-    margin: 20px 0 0;
+    margin: 1.25rem 0 0;
 
     color: var(--vp-c-text);
 
     font-weight: 700;
-    font-size: 20px;
-
-    &::before {
-      @include dot;
-      inset-inline-start: -20px;
-      top: 50%;
-
-      width: 8px;
-      height: 8px;
-      margin-top: -4px;
-      margin-inline-start: -4px;
-    }
+    font-size: 1.25rem;
   }
 
   .timeline-year-wrapper {
@@ -109,29 +39,19 @@
     display: inline-block;
     vertical-align: bottom;
 
-    min-width: 36px;
+    min-width: 2.5rem;
 
-    font-size: 12px;
-    line-height: 32px;
+    font-size: 0.75rem;
+    line-height: 1.5rem;
 
     transition: color var(--vp-t-color);
-
-    &::before {
-      @include dot;
-      inset-inline-start: -19px;
-      top: 24px;
-
-      width: 6px;
-      height: 6px;
-      margin-inline-start: -4px;
-    }
   }
 
   .timeline-title {
     color: inherit;
 
-    font-size: 14px;
-    line-height: 32px;
+    font-size: 0.875rem;
+    line-height: 1.5rem;
 
     cursor: pointer;
 
@@ -143,10 +63,12 @@
 
     display: flex;
 
-    padding: 12px 0 4px;
+    padding: 8px 0 0;
     border-bottom: 1px dashed var(--vp-c-border);
 
     list-style: none;
+
+    line-height: 1.5;
 
     transition: border-color var(--vp-t-color);
 
@@ -156,7 +78,6 @@
 
         // stylelint-disable-next-line max-nesting-depth
         &::before {
-          border-color: var(--dot-color);
           background: var(--vp-c-accent);
         }
       }
