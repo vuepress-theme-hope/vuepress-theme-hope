@@ -34,4 +34,13 @@ export interface HopeThemeBehaviorOptions {
    * @default false
    */
   debug?: boolean;
+
+  /**
+   * Whether check VuePress version
+   *
+   * 是否检查VuePress版本
+   *
+   * @default true
+   */
+  checkVuePress?: boolean;
 }
