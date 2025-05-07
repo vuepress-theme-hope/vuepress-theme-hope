@@ -4,7 +4,7 @@ import type { SlotsType, VNode } from "vue";
 import { computed, defineComponent, h } from "vue";
 import { withBase } from "vuepress/client";
 
-import { HeroSlideDownButton } from "@theme-hope/components/home/HeroSlideDownButton";
+import HeroSlideDownButton from "@theme-hope/components/home/HeroSlideDownButton";
 import DropTransition from "@theme-hope/components/transitions/DropTransition";
 import { useData } from "@theme-hope/composables/useData";
 import type {

@@ -1,7 +1,7 @@
 import type { VNode } from "vue";
 import { defineComponent, h } from "vue";
 
-import { I18nIcon } from "@theme-hope/components/navbar/I18nIcon";
+import I18nIcon from "@theme-hope/components/navbar/I18nIcon";
 import NavbarDropdown from "@theme-hope/components/navbar/NavbarDropdown";
 import { useNavbarLanguageDropdown } from "@theme-hope/composables/navbar/useNavbarLanguageDropdown";
 

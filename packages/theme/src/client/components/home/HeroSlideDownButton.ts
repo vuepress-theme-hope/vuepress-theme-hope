@@ -13,7 +13,7 @@ const SlideDownIcon: FunctionalComponent = () =>
 
 SlideDownIcon.displayName = "SlideDownIcon";
 
-export const HeroSlideDownButton: FunctionalComponent<
+const HeroSlideDownButton: FunctionalComponent<
   Record<never, never>,
   { click: () => void }
 > = (_props, { emit }) =>
@@ -28,3 +28,5 @@ export const HeroSlideDownButton: FunctionalComponent<
   );
 
 HeroSlideDownButton.displayName = "HeroSlideDownButton";
+
+export default HeroSlideDownButton;
