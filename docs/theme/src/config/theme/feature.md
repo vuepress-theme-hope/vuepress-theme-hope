@@ -181,17 +181,6 @@ The following social medias has built-in icons:
 
 ::::
 
-### blog.sidebarDisplay
-
-- Type: `"mobile" | "none" | "always"`
-- Default: `"mobile"`
-
-Whether to show blogger information in the sidebar
-
-- `"mobile"`: Show in sidebar in mobile view
-- `"always"`: Always show in the sidebar
-- `"none"`: Never show in the sidebar
-
 ### blog.timeline
 
 - Type: `string`

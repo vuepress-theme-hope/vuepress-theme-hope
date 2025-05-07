@@ -140,15 +140,6 @@ export interface BlogLocaleOptions extends DeprecatedBlogLocaleData {
   medias?: Record<string, { icon: string; link: string } | string>;
 
   /**
-   * Whether to display blogger info in sidebar
-   *
-   * 是否在侧边栏展示博主信息
-   *
-   * @default "mobile"
-   */
-  sidebarDisplay?: "mobile" | "none" | "always";
-
-  /**
    * Custom text for timeline
    *
    * 时间轴自定义文字
