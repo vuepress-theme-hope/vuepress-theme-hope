@@ -122,7 +122,7 @@ export default hopeTheme({
   encrypt: {
     global: true,
     admin: {
-      password: process.env.PASSWORD,
+      password: process.env.PASSWORD!,
       hint: "The password you specified.",
     },
   },
