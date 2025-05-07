@@ -18,11 +18,11 @@ tag:
 
 ## layout
 
-- 类型: `"BlogHome"`
+- 类型: `"Blog"`
 - 详情:
   - [博客 → 博客主页](../../guide/blog/home.md#博客类型主页)
 
-必须设置为 `BlogHome` 以使用博客主页布局。
+必须设置为 `Blog` 以使用博客主页布局。
 
 ## hero
 

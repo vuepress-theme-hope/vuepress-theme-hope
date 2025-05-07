@@ -10,6 +10,5 @@ export * from "../shared/index.js";
 // Internal methods
 export * from "./config/index.js";
 export * from "./extendsBundlerOptions.js";
-export * from "./getAlias.js";
 export * from "./plugins/index.js";
 export * from "./prepare/index.js";

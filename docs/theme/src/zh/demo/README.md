@@ -34,4 +34,8 @@ actions:
 
 - [幻灯片页面](https://ecosystem.vuejs.press/zh/plugins/markdown/revealjs/demo.html)
 
-- [插槽演示](./slot.md)
+- [页面插槽演示](./page-slot.md)
+
+- [主页插槽演示](./home-slot.md)
+
+- [博客插槽演示](./blog-slot.md)

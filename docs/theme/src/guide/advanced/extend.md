@@ -40,7 +40,7 @@ export default (options: ThemeOptions) => ({
   alias: {
     // You can override or add aliases here
     // For example, here we change the vuepress-theme-hope HomePage component to components/HomePage.vue under our own theme
-    "@theme-hope/components/HomePage": path.resolve(
+    "@theme-hope/components/home/HomePage": path.resolve(
       __dirname,
       "./components/HomePage.vue",
     ),
@@ -64,7 +64,7 @@ export default (options) => ({
   alias: {
     // You can override or add aliases here
     // For example, here we change the vuepress-theme-hope HomePage component to components/HomePage.vue under our own theme
-    "@theme-hope/components/HomePage": path.resolve(
+    "@theme-hope/components/home/HomePage": path.resolve(
       __dirname,
       "./components/HomePage.vue",
     ),
@@ -74,6 +74,8 @@ export default (options) => ({
 
 :::
 
-Also, you can add or override layout provided by `vuepress-theme-hope` via `layouts` in your theme client config file.
+Also, you can add or override layout provided by `vuepress-theme-hope` via `layouts` with slots in your theme client config file.
 
-<!-- @include: ../customize/layout.md#layout -->
+<!-- @include: ../customize/slots.md#layout -->
+
+For details see [Customize Layout with Slots](../customize/slots.md).

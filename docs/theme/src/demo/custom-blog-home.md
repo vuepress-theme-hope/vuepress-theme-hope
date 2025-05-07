@@ -41,8 +41,10 @@ projects:
 footer: customize your footer text
 ---
 
-This is a blog home page demo.
+This is a customized blog home page demo.
 
-To use this layout, you should set both `layout: BlogHome` and `home: true` in the page front matter.
+To use this layout, you should set both `layout: Blog` and `home: true` in the page front matter.
 
 For related configuration docs, please see [blog homepage](../guide/blog/home.md#blog-style-homepage).
+
+The source code is available on [GitHub](https://github.com/vuepress-theme-hope/vuepress-theme-hope/blob/main/docs/theme/src/.vuepress/layouts/CustomBlogHome.vue)。

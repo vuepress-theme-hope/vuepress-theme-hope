@@ -1,0 +1,22 @@
+// For bundle mode only
+
+// contents from index.scss
+@use "vars";
+@use "normalize";
+@use "code";
+@use "external-link-icon";
+@use "content";
+@use "layout";
+@use "not-found";
+@use "plugins";
+
+// component styles
+@use "appearance/bundle" as appearance;
+@use "base/bundle" as base;
+@use "home/bundle" as home;
+@use "info/bundle" as info;
+@use "navbar/bundle" as navbar;
+@use "sidebar/bundle" as sidebar;
+
+// user styles
+@use "@sass-palette/hope-style";

@@ -1,0 +1,46 @@
+@use "../wrapper";
+
+.vp-page-title {
+  @include wrapper.horizontal-wrapper;
+
+  & {
+    position: relative;
+    z-index: 1;
+    padding-top: 1rem;
+    padding-bottom: 0;
+  }
+
+  @media print {
+    padding-inline: 0 !important;
+  }
+
+  @media (max-width: hope-config.$pad) {
+    padding-top: 0.5rem;
+  }
+
+  h1 {
+    margin-top: calc(0px - var(--header-offset)) !important;
+    margin-bottom: 1rem;
+    padding-top: var(--header-offset) !important;
+    font-size: 2.2rem;
+
+    @media (max-width: hope-config.$pad) {
+      margin-bottom: 0.5rem;
+    }
+
+    .vp-icon {
+      margin-inline-end: 0.25em;
+      color: var(--vp-c-accent);
+    }
+  }
+}
+
+[vp-content]:not(.custom) #markdown-content > {
+  h1:first-child {
+    display: none;
+  }
+
+  h2:first-child {
+    padding-top: var(--header-offset) !important;
+  }
+}

@@ -1,7 +1,7 @@
 ---
 title: Theme Presets
 icon: palette
-order: 6
+order: 7
 category:
   - Customize
 tag:
@@ -29,7 +29,7 @@ Components:
 
 Usage:
 
-Override `@theme-hope/modules/blog/components/BlogHero` and import the above component into the `bg` slot of the original `BlogHero`.
+Override `@theme-hope/components/blog/BlogHero` and import the above component into the `bg` slot of the original `BlogHero`.
 
 ::: details Code Example
 
@@ -43,7 +43,7 @@ export default defineUserConfig({
   //...
 
   alias: {
-    "@theme-hope/modules/blog/components/BlogHero": path.resolve(
+    "@theme-hope/components/blog/BlogHero": path.resolve(
       __dirname,
       "./components/BlogHero.vue",
     ),
@@ -78,7 +78,7 @@ Components:
 
 Usage:
 
-Override `@theme-hope/modules/blog/components/BlogHero`, import the above component into the `info` slot of the original `BlogHero`, and pass in the slot properties as they are.
+Override `@theme-hope/components/blog/BlogHero`, import the above component into the `info` slot of the original `BlogHero`, and pass in the slot properties as they are.
 
 ::: details Code Example
 
@@ -92,7 +92,7 @@ export default defineUserConfig({
   //...
 
   alias: {
-    "@theme-hope/modules/blog/components/BlogHero": path.resolve(
+    "@theme-hope/components/blog/BlogHero": path.resolve(
       __dirname,
       "./components/BlogHero.vue",
     ),

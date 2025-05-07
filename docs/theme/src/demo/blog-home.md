@@ -1,6 +1,6 @@
 ---
 home: true
-layout: BlogHome
+layout: Blog
 icon: blog
 title: Blog Home
 heroImage: https://theme-hope-assets.vuejs.press/logo.svg
@@ -43,6 +43,6 @@ footer: customize your footer text
 
 This is a blog home page demo.
 
-To use this layout, you should set both `layout: BlogHome` and `home: true` in the page front matter.
+To use this layout, you should set both `layout: Blog` and `home: true` in the page front matter.
 
 For related configuration docs, please see [blog homepage](../guide/blog/home.md#blog-style-homepage).

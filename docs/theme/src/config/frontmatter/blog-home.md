@@ -19,11 +19,11 @@ Must be `true` to use blog home layout.
 
 ## layout
 
-- Type: `"BlogHome"`
+- Type: `"Blog"`
 - Details:
   - [Blog → Blog HomePage](../../guide/blog/home.md#blog-style-homepage)
 
-Must be `BlogHome` to use blog home layout.
+Must be `Blog` to use blog home layout.
 
 ## title
 

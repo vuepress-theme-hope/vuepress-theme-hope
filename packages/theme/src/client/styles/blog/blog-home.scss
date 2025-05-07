@@ -1,0 +1,3 @@
+.vp-blog-home [vp-content]:has(#markdown-content:only-child:empty) {
+  padding: 0;
+}

@@ -140,6 +140,7 @@
     "weibo",
     "zhihu"
   ],
+  "eslint.execArgv": ["--max-old-space-size=8192"],
   "markdown.validate.enabled": true,
   "search.exclude": {
     "**/node_modules": true,

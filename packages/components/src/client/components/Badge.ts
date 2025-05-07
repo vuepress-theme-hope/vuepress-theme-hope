@@ -1,4 +1,5 @@
-import type { FunctionalComponent, VNode } from "vue";
+import type { Slot } from "@vuepress/helper/client";
+import type { FunctionalComponent } from "vue";
 import { h } from "vue";
 
 import "../styles/badge.scss";
@@ -48,7 +49,7 @@ export interface BadgeProps {
 const Badge: FunctionalComponent<
   BadgeProps,
   Record<never, never>,
-  { default?: () => VNode | VNode[] | undefined }
+  { default?: Slot }
 > = ({ type = "info", text = "", vertical, color, bgColor }, { slots }) =>
   h(
     "span",

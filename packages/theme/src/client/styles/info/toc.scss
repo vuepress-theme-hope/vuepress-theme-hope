@@ -1,0 +1,231 @@
+@use "sass:math";
+@use "vuepress-shared/styles/arrow";
+@use "../wrapper";
+
+$headings: (2, 3, 4, 5, 6);
+
+.vp-toc-placeholder {
+  @include wrapper.horizontal-wrapper;
+
+  & {
+    position: sticky;
+    top: calc(var(--navbar-height) + 0.5rem);
+    z-index: 99;
+
+    display: none;
+
+    max-width: var(--content-width);
+  }
+
+  @media (max-width: hope-config.$tablet) {
+    .hide-navbar & {
+      top: 0.5rem;
+    }
+  }
+
+  @media (min-width: hope-config.$pc) {
+    top: calc(var(--navbar-height) + 2rem);
+  }
+
+  @media print {
+    display: none !important;
+  }
+
+  + [vp-content]:not(.custom) {
+    padding-top: 0;
+  }
+
+  .has-toc & {
+    display: block;
+  }
+}
+
+#toc {
+  margin-bottom: 1rem;
+  border-radius: 8px;
+  background: var(--vp-c-bg-alt);
+
+  @media (min-width: hope-config.$pc) {
+    position: absolute;
+    inset-inline-start: calc(100% + 1rem);
+
+    min-width: 10rem;
+    max-width: 15rem;
+    margin-bottom: 0;
+    border-radius: 0;
+
+    background: transparent;
+  }
+}
+
+.vp-toc-header {
+  padding: 0.5rem 1rem;
+  font-weight: 600;
+
+  @media (min-width: hope-config.$pc) {
+    padding-top: 0;
+    font-size: 0.875rem;
+  }
+
+  .arrow {
+    @include arrow.arrow;
+
+    @media (min-width: hope-config.$pc) {
+      display: none;
+    }
+  }
+
+  .print-button {
+    display: none;
+
+    @media (min-width: hope-config.$pc) {
+      display: inline-block;
+    }
+  }
+}
+
+.vp-toc-wrapper {
+  position: relative;
+
+  overflow: hidden auto;
+
+  height: 0;
+  max-height: 12rem;
+  margin: 0 0.5rem;
+
+  text-overflow: ellipsis;
+  white-space: nowrap;
+
+  scroll-behavior: smooth;
+
+  transition: height 0.5s;
+
+  @media (min-width: hope-config.$pc) {
+    height: auto;
+    max-height: 75vh;
+  }
+
+  &.open {
+    height: auto;
+    margin-top: 0.5rem;
+    padding-bottom: 0.5rem;
+
+    @media (min-width: hope-config.$pc) {
+      margin-top: 0;
+      padding-bottom: 0;
+    }
+  }
+
+  &::-webkit-scrollbar-track-piece {
+    background: transparent;
+  }
+
+  &::-webkit-scrollbar {
+    width: 3px;
+  }
+
+  &::-webkit-scrollbar-thumb:vertical {
+    background: var(--vp-c-border);
+  }
+
+  > .vp-toc-list {
+    padding-inline-start: 8px;
+
+    @media (min-width: hope-config.$pc) {
+      &::before {
+        content: " ";
+
+        position: absolute;
+        inset-inline-start: 4px;
+        top: 0;
+        bottom: 0;
+        z-index: -1;
+
+        width: 2px;
+
+        background: var(--vp-c-border);
+      }
+    }
+  }
+}
+
+.vp-toc-list {
+  position: relative;
+
+  // override ul default margin
+  margin: 0;
+
+  // override ul default padding
+  padding: 0;
+}
+
+.vp-toc-marker {
+  position: absolute;
+  inset-inline-start: 4px;
+  top: 0;
+  z-index: 2;
+
+  display: none;
+
+  width: 2px;
+  height: 2rem;
+
+  background: var(--vp-c-accent-bg);
+
+  transition: top var(--vp-t-transform);
+
+  @media (min-width: hope-config.$pc) {
+    display: block;
+  }
+}
+
+.vp-toc-link {
+  position: relative;
+
+  display: block;
+
+  overflow: hidden;
+
+  max-width: 100%;
+
+  color: var(--vp-c-text-mute);
+
+  line-height: inherit;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+
+  @each $heading in $headings {
+    &.level#{$heading} {
+      padding-inline-start: ($heading * 0.5 - 1) * 1rem;
+      font-size: 0.875rem;
+    }
+  }
+}
+
+.vp-toc-item {
+  position: relative;
+
+  box-sizing: border-box;
+  height: 2rem;
+
+  list-style: none;
+
+  line-height: 2rem;
+
+  @media (min-width: hope-config.$pc) {
+    padding: 0 0.5rem;
+  }
+
+  &:hover {
+    > .vp-toc-link {
+      color: var(--vp-c-accent);
+    }
+  }
+
+  &.active {
+    > .vp-toc-link {
+      color: var(--vp-c-accent);
+      font-weight: bold;
+    }
+  }
+}
