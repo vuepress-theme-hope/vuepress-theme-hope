@@ -25,7 +25,7 @@ export default defineComponent({
         h(
           "div",
           {
-            class: "timeline-list-title",
+            class: "title",
             onClick: () => {
               navigate(timelines.value.path);
             },
