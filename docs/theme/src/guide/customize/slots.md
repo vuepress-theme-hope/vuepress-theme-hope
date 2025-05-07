@@ -1,6 +1,6 @@
 ---
 title: Customize Layouts with Slots
-icon: clone
+icon: boxes-packing
 order: 6
 category:
   - Customize

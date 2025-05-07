@@ -1,6 +1,6 @@
 ---
 title: 通过插槽自定义布局
-icon: clone
+icon: boxes-packing
 order: 6
 category:
   - 自定义
