@@ -1,7 +1,7 @@
 ---
 title: External Scripts and Styles
 icon: wand-magic-sparkles
-order: 7
+order: 8
 category:
   - Cookbook
   - Customize

@@ -22,7 +22,7 @@ import { useDarkMode } from "@theme-hope/composables/useDarkMode";
 import { useData } from "@theme-hope/composables/useData";
 import type { TocSlotData } from "@theme-hope/typings/slots";
 
-import "../../styles/base/vp-page.scss";
+import "../../styles/base/page-content.scss";
 
 const DEFAULT_TOC_OPTIONS: GetHeadersOptions = {
   selector: [
@@ -34,7 +34,7 @@ const DEFAULT_TOC_OPTIONS: GetHeadersOptions = {
 };
 
 export default defineComponent({
-  name: "VPPage",
+  name: "PageContent",
 
   slots: Object as SlotsType<{
     pageTop?: Slot;

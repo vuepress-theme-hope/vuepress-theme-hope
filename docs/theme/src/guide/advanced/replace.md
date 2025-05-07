@@ -54,7 +54,7 @@ Here are list of aliases.
 
 - `@theme-hope/components/base/EditIcon`: edit icon
 
-- `@theme-hope/components/base/VPPage`: main content of a page
+- `@theme-hope/components/base/PageContent`: main page content
 
   Slots: `top`, `bottom`, `content`, `contentBefore`, `contentAfter`, `toc`, `tocBefore`, `tocAfter`
 

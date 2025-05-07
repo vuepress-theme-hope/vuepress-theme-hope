@@ -5,8 +5,8 @@ import { defineComponent, h, resolveComponent } from "vue";
 
 import MainFadeInUpTransition from "@theme-hope/components/base/MainFadeInUpTransition";
 import MainLayout from "@theme-hope/components/base/MainLayout";
+import PageContent from "@theme-hope/components/base/PageContent";
 import SkipLink from "@theme-hope/components/base/SkipLink";
-import VPPage from "@theme-hope/components/base/VPPage";
 import HomePage from "@theme-hope/components/home/HomePage";
 import PortfolioHome from "@theme-hope/components/home/PortfolioHome";
 import { useData } from "@theme-hope/composables/useData";
@@ -82,7 +82,7 @@ export default defineComponent({
                 : frontmatter.value.home
                   ? h(HomePage, {}, slots)
                   : h(MainFadeInUpTransition, () =>
-                      h(VPPage, { key: page.value.path }, slots),
+                      h(PageContent, { key: page.value.path }, slots),
                     )),
 
           navScreenBottom:

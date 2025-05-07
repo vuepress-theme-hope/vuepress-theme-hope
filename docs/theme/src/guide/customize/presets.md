@@ -1,7 +1,7 @@
 ---
 title: Theme Presets
 icon: palette
-order: 6
+order: 7
 category:
   - Customize
 tag:

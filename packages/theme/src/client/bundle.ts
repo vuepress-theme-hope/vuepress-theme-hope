@@ -2,7 +2,7 @@ export { default as ColorModeSwitch } from "@theme-hope/components/appearance/Co
 export { default as ThemeColorPicker } from "@theme-hope/components/appearance/ThemeColorPicker";
 export { default as ToggleFullScreenButton } from "@theme-hope/components/appearance/ToggleFullScreenButton";
 export { default as AutoLink } from "@theme-hope/components/base/AutoLink";
-export { default as VPPage } from "@theme-hope/components/base/VPPage";
+export { default as PageContent } from "@theme-hope/components/base/PageContent";
 export { default as MainFadeInUpTransition } from "@theme-hope/components/base/MainFadeInUpTransition";
 export { default as MainLayout } from "@theme-hope/components/base/MainLayout";
 export { default as MarkdownContent } from "@theme-hope/components/base/MarkdownContent";
