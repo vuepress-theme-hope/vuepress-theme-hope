@@ -41,7 +41,7 @@ export const hopeTheme = (
   // TODO: Change default value in v2 stable
   behavior: HopeThemeBehaviorOptions | boolean = true,
 ): ThemeFunction => {
-  if (typeof behavior === "object" && behavior.checkVuePress) {
+  if (isPlainObject(behavior) && behavior.checkVuePress) {
     checkVuePressVersion();
   }
 
