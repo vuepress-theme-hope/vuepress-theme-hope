@@ -27,13 +27,15 @@ For the complete config list supported by the above files, see [Config → Style
 
 ## Basic Tutorials
 
-- [Customizing colors](color.md)
+- [Customizing Colors](color.md)
 
-- [Customizing fonts](font.md)
+- [Customizing Fonts](font.md)
 
-- [Customizing effects](effect.md)
+- [Customizing Effects](effect.md)
 
 - [Customize Layouts](layout.md)
+
+- [Customize Layouts with Slots](slots.md)
 
 - [Using Presets](presets.md)
 

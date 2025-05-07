@@ -36,6 +36,10 @@ import { Layout } from "vuepress-theme-hope/client";
     <template #heroLogo>
       <div>A 3D logo</div>
     </template>
+    <!-- Introduce comment component using pageBottom slot -->
+    <template #pageBottom>
+      <CommentService />
+    </template>
   </Layout>
 </template>
 ```
@@ -58,6 +62,7 @@ import { Layout } from "vuepress-theme-hope/client";
 ```ts title=".vuepress/client.ts"
 import { defineClientConfig } from "vuepress/client";
 import Changelog from "./layouts/Changelog.vue";
+import Home from "./layouts/Home.vue";
 import Layout from "./layouts/Changelog.vue";
 
 export default defineClientConfig({
@@ -75,6 +80,16 @@ export default defineClientConfig({
 
 <!-- #endregion layout -->
 
+::: tip
+
+For demo of common slots, please check:
+
+- [Page Slot demo](../../demo/page-slot.md)。
+- [Home Slot demo](../../demo/home-slot.md)。
+- [Blog Slot demo](../../demo/blog-slot.md)。
+
+:::
+
 ## Slots of `<Layout>`
 
 ### Slots Available in All Type of Pages
@@ -85,21 +100,21 @@ export default defineClientConfig({
 
   Overriding the slot will override the whole page content (only navbar and sidebar are preserved).
 
-  If you have some pages that is wholely built by Vue Components instead of markdown, you can override this slot to build your own page.
+  If you have some pages that is wholely built by Vue Components instead of Markdown, you can override this slot to build your own page.
 
 - `content`
 
-  A slot for page content, this replaces all content generated from markdown, including contents coming from `contentBefore` and `contentAfter`.
+  A slot for page content, this replaces all content generated from Markdown, including contents coming from `contentBefore` and `contentAfter`.
 
 - `contentBefore`
 
-  A slot before content generated from markdown, and after the page title and toc.
+  A slot before content generated from Markdown, and after the page title and toc.
 
   Note: This slot won't work' when `content` slot is set.
 
 - `contentAfter`
 
-  A slot after content generated from markdown, and before page meta and page nav.
+  A slot after content generated from Markdown, and before page meta and page nav.
 
   Note: This slot won't work' when `content` slot is set.
 
@@ -151,43 +166,25 @@ export default defineClientConfig({
 
   A slot in page toc, after the actual table of contents. Useful for adding sponsor links or ads.
 
-These slots are supported for default home page only (normal page does not have these slots):
-
 ### Slots Available in Home Page
 
-- `heroInfo`
+- `heroInfo`: A slot for hero info.
 
-  A slot for hero info.
+- `heroLogo`: A slot for hero logo.
 
-- `heroLogo`
+- `heroBg`: A slot for hero background.
 
-  A slot for hero logo.
+- `heroBefore`: A slot before homepage hero.
 
-- `heroBg`
-
-  A slot for hero background.
-
-- `heroBefore`
-
-  A slot before homepage hero.
-
-- `heroAfter`
-
-  A slot after homepage hero.
+- `heroAfter`: A slot after homepage hero.
 
 ### Slots Available in Portfolio Page
 
-- `portfolioInfo`
+- `portfolioInfo`: A slot for portfolio info.
 
-  A slot for portfolio info.
+- `portfolioAvatar`: A slot for portfolio avatar.
 
-- `portfolioAvatar`
-
-  A slot for portfolio avatar.
-
-- `portfolioBg`
-
-  A slot for portfolio background.
+- `portfolioBg`: A slot for portfolio background.
 
 ## Slots of `<NotFound>`
 
@@ -215,7 +212,7 @@ These slots are supported for default home page only (normal page does not have 
 
   Overriding the slot will override the whole page content (only navbar and sidebar are preserved).
 
-  If you have some pages that is wholely built by Vue Components instead of markdown, you can override this slot to build your own page.
+  If you have some pages that is wholely built by Vue Components instead of Markdown, you can override this slot to build your own page.
 
 - `navScreenTop`
 
@@ -229,78 +226,50 @@ These slots are supported for default home page only (normal page does not have 
 
   The nav screen is the popup screen when you click the top right menu button in mobile view.
 
-- `articlesBefore`
+- `articlesBefore`: A slot before articles list.
 
-  A slot before articles list.
+- `articlesAfter`: A slot after articles list.
 
-- `articlesAfter`
+- `bloggerInfo`: A slot for blogger info.
 
-  A slot after articles list.
+- `infoBefore`: A slot before blog info panel.
 
-- `bloggerInfo`
-
-  A slot for blogger info.
-
-- `infoBefore`
-
-  A slot before blog info panel.
-
-- `infoAfter`
-
-  A slot after blog info panel.
+- `infoAfter`: A slot after blog info panel.
 
 ### Slots Available in Home, Category, Tag Page
 
-- `articleCover`
+- `articleCover`: A slot for article cover.
 
-  A slot for article cover.
+- `articleTitle`: A slot for article title.
 
-- `articleTitle`
+- `articleInfo`: A slot for article info.
 
-  A slot for article title.
-
-- `articleInfo`
-
-  A slot for article info.
-
-- `articleExcerpt`
-
-  A slot for article excerpt.
+- `articleExcerpt`: A slot for article excerpt.
 
 ### Slots Available in Blog Home Page
 
 - `content`
 
-  A slot for page content, this replaces all content generated from markdown, including contents coming from `contentBefore` and `contentAfter`.
+  A slot for page content, this replaces all content generated from Markdown, including contents coming from `contentBefore` and `contentAfter`.
 
 - `contentBefore`
 
-  A slot before content generated from markdown, and after the page title and toc.
+  A slot before content generated from Markdown, and after the page title and toc.
 
   Note: This slot won't work' when `content` slot is set.
 
 - `contentAfter`
 
-  A slot after content generated from markdown, and before page meta and page nav.
+  A slot after content generated from Markdown, and before page meta and page nav.
 
   Note: This slot won't work' when `content` slot is set.
 
-- `heroInfo`
+- `heroInfo`: A slot for hero info.
 
-  A slot for hero info.
+- `heroLogo`: A slot for hero logo.
 
-- `heroLogo`
+- `heroBg`: A slot for hero background.
 
-  A slot for hero logo.
+- `heroBefore`: A slot before homepage hero.
 
-- `heroBg`
-
-  A slot for hero background.
-
-- `heroBefore`
-
-  A slot before homepage hero.
-
-- `heroAfter`
-
-  A slot after homepage hero.
+- `heroAfter`: A slot after homepage hero.

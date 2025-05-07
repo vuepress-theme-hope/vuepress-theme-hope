@@ -43,288 +43,288 @@ export default {
 };
 ```
 
-可以支持的别名如下。
-
-::: details 主题组件别名
-
-组件:
-
-- `@theme-hope/components/AutoLink` 基础链接
-- `@theme-hope/components/BreadCrumb` 路径导航
-- `@theme-hope/components/CommonWrapper` 基本布局整合
-- `@theme-hope/components/FeaturePanel` 主页特性
-- `@theme-hope/components/HeroInfo` 主页 Logo 及介绍
-- `@theme-hope/components/HeroSlideDownButton`: Hero 下滑按钮
-- `@theme-hope/components/HighlightPanel`: 主页亮点
-- `@theme-hope/components/home/HomePage` 主页
-- `@theme-hope/components/MarkdownContent` Markdown 内容
-- `@theme-hope/components/NormalPage` 常规页面
-- `@theme-hope/components/PageFooter` 页脚
-- `@theme-hope/components/PageNav` 页面导航
-- `@theme-hope/components/PageTitle` 页面标题
-- `@theme-hope/components/PortfolioHero` 档案主页
-- `@theme-hope/components/SkipLink` 跳转到主内容
-
-杂项:
-
-- `@theme-hope/components/transitions/index`: 主题动画
-- `@theme-hope/components/icons/index` 主题图标
-- `@theme-hope/composables/index` 主题可组合 API
-- `@theme-hope/utils/index` 主题通用函数
-
-:::
-
-::: details 导航栏组件别名
-
-组件:
-
-- `@theme-hope/modules/navbar/components/NavbarDropdown` 下拉列表
-- `@theme-hope/modules/navbar/components/LanguageDropdown` 语言下拉列表
-- `@theme-hope/modules/navbar/components/NavActions` 导航栏功能
-- `@theme-hope/modules/navbar/components/Navbar` 导航栏
-- `@theme-hope/modules/navbar/components/NavbarBr和` 导航栏品牌信息
-- `@theme-hope/modules/navbar/components/NavbarLinks` 导航栏链接
-- `@theme-hope/modules/navbar/components/NavScreen` 移动视图下的导航屏
-- `@theme-hope/modules/navbar/components/NavScreenMenu` 移动视图下导航栏下拉菜单
-- `@theme-hope/modules/navbar/components/NavScreenLinks` 移动式视图下导航栏链接
-- `@theme-hope/modules/navbar/components/RepoLink` 仓库链接
-- `@theme-hope/modules/navbar/components/ToggleNavbarButton` 导航栏切换按钮
-- `@theme-hope/modules/navbar/components/ToggleSidebarButton` 侧边栏切换按钮
-
-杂项:
-
-- `@theme-hope/modules/navbar/components/icons/index` 导航栏图标
-- `@theme-hope/modules/navbar/composables/index` 导航栏可组合 API
-
-:::
-
-::: details 侧边栏组件别名
-
-组件:
-
-- `@theme-hope/modules/sidebar/components/Sidebar` 侧边栏
-- `@theme-hope/modules/sidebar/components/SidebarChild` 侧边栏链接子项
-- `@theme-hope/modules/sidebar/components/SidebarGroup` 侧边栏分组链接
-- `@theme-hope/modules/sidebar/components/SidebarLinks` 侧边栏链接
-
-杂项:
-
-- `@theme-hope/modules/sidebar/composables/index` 侧边栏可组合 API
-- `@theme-hope/modules/sidebar/utils/index` 侧边栏通用函数
-
-:::
-
-::: details 信息组件别名
-
-组件:
-
-- `@theme-hope/modules/info/components/AuthorInfo` 作者信息
-- `@theme-hope/modules/info/components/CategoryInfo` 分类信息
-- `@theme-hope/modules/info/components/DateInfo` 写作日期信息
-- `@theme-hope/modules/info/components/OriginalInfo` 原创标识
-- `@theme-hope/modules/info/components/PageInfo` 页面信息
-- `@theme-hope/modules/info/components/PageMeta` 页面元数据 information
-- `@theme-hope/modules/info/components/PageViewInfo` 浏览量信息 information
-- `@theme-hope/modules/info/components/ReadingTimeInfo` 阅读时间信息 time information
-- `@theme-hope/modules/info/components/TagInfo` 标签信息
-- `@theme-hope/modules/info/components/TOC` 内容列表
-- `@theme-hope/modules/info/components/WordInfo` 字数信息
-
-杂项:
-
-- `@theme-hope/modules/info/components/icons` 信息图标
-- `@theme-hope/modules/info/composables/index` 信息可组合 API
-- `@theme-hope/modules/info/utils/index` 信息通用函数
-
-:::
-
-::: details 博客组件别名
-
-组件:
-
-- `@theme-hope/components/blog/ArticleItem` 文章项
-- `@theme-hope/components/blog/ArticleList` 文章列表
-- `@theme-hope/components/blog/ArticleType` 文章类型
-- `@theme-hope/components/blog/ArticlesInfo`: 文章信息
-- `@theme-hope/components/blog/BloggerInfo` 博主信息
-- `@theme-hope/components/blog/BlogHero` 博客主页 Logo 与介绍
-- `@theme-hope/components/blog/BlogHome` 博客主页
-- `@theme-hope/components/blog/BlogWrapper` 博客常规布局
-- `@theme-hope/components/blog/CategoryList` 分类列表
-- `@theme-hope/components/blog/CategoriesInfo`: 分类信息
-- `@theme-hope/components/blog/InfoList` 博客信息列表
-- `@theme-hope/components/blog/InfoPanel` 博客信息面板
-- `@theme-hope/components/blog/Pagination` 分页组件
-- `@theme-hope/components/blog/ProjectPanel` 博客主页项目面板
-- `@theme-hope/components/blog/SocialMedias` 社交媒体链接
-- `@theme-hope/components/blog/TagList` 标签列表
-- `@theme-hope/components/blog/TagsInfo`: 标签信息
-- `@theme-hope/components/blog/TimelineItems` 时间线项目
-- `@theme-hope/components/blog/TimelineList` 时间线列表
-
-杂项:
-
-- `@theme-hope/components/blog/icons` 博客图标
-- `@theme-hope/modules/blog/composables/index` 博客可组合 API
-
-:::
-
-::: details 加密组件别名
-
-组件:
-
-- `@theme-hope/modules/encrypt/components/GlobalEncrypt` 全局加密
-- `@theme-hope/modules/encrypt/components/LocalEncrypt` 本地加密
-- `@theme-hope/modules/encrypt/components/PasswordModal` 密码输入框
-
-杂项:
-
-- `@theme-hope/modules/encrypt/composables/index` 加密可组合 API
-- `@theme-hope/modules/encrypt/utils/index` 加密通用函数
-
-:::
-
-::: details 外观模块组件别名
-
-组件:
-
-- `@theme-hope/modules/outlook/components/ColorMode` 主题颜色模式
-- `@theme-hope/modules/outlook/components/ColorModeSwitch` 主题颜色开关
-- `@theme-hope/modules/outlook/components/OutlookButton` 外观按钮
-- `@theme-hope/modules/outlook/components/OutlookSettings` 外观设置
-- `@theme-hope/modules/outlook/components/ThemeColor` 主题色
-- `@theme-hope/modules/outlook/components/ThemeColorPicker` 主题色选择器
-- `@theme-hope/modules/outlook/components/ToggleFullScreen` 全屏切换
-- `@theme-hope/modules/outlook/components/ToggleFullScreenButton` 全屏切换按钮
-
-杂项:
-
-- `@theme-hope/modules/outlook/components/icons/index` 外观图标
-- `@theme-hope/modules/outlook/composables/index` 外观可组合 API
-
-:::
-
-## 插槽利用
-
 有些组件提供了插槽，在这种情况下，你可以在覆盖组件时直接引入原组件，并通过插槽传入你需要的内容。
 
-::: tip
+## 主题别名
 
-常用插槽位置示例，详见:
+### 基础组件
 
-- [页面插槽演示](../../demo/page-slot.md)
+- `@theme-hope/components/base/AutoLink`: 基础链接
 
-- [主页插槽演示](../../demo/home-slot.md)
+  插槽: `default`, `before`, `after`
 
-- [博客插槽演示](../../demo/blog-slot.md)
+- `@theme-hope/components/base/BreadCrumb`: 面包屑导航
 
-:::
+- `@theme-hope/components/base/EditIcon`: 编辑图标
 
-比如你的网站社交属性很强，你希望在主页也显示评论框的话，你可以这样引入:
+- `@theme-hope/components/base/MainFadeInUpTransition`: 主布局过渡
 
-::: code-tabs
+  插槽: `default`
 
-@tab config.ts
+- `@theme-hope/components/base/MainLayout`: 主布局
 
-```ts twoslash title=".vuepress/config.ts"
-import { getDirname, path } from "vuepress/utils";
-import { hopeTheme } from "vuepress-theme-hope";
+  插槽: `default`, `navScreenTop`, `navScreenBottom`, `sidebarItems`, `sidebarTop`, `sidebarBottom`
 
-const __dirname = getDirname(import.meta.url);
+  - `navScreenTop` `navScreenBottom` 插槽被传递到 `NavBar` 组件。
+  - `sidebarItems`, `sidebarTop`, `sidebarBottom` 插槽被传递到 `Sidebar` 组件。
 
-export default {
-  theme: hopeTheme(
-    {
-      // 主题选项
-      // ...
-    },
-    { custom: true },
-  ),
+- `@theme-hope/components/base/MarkdownContent`: Markdown 内容
 
-  alias: {
-    // 你可以在这里将别名定向到自己的组件
-    // 比如这里我们将主题的主页组件改为用户 .vuepress/components 下的 HomePage.vue
-    "@theme-hope/components/home/HomePage": path.resolve(
-      __dirname,
-      "./components/HomePage.vue",
-    ),
-  },
-};
-```
+  插槽: `contentBefore`, `contentAfter`
 
-@tab HomePage.vue
+- `@theme-hope/components/base/PageContent`: 主要页面内容
 
-```vue
-<script setup lang="ts">
-import HopeHomePage from "vuepress-theme-hope/components/HomePage.js";
-</script>
+  插槽: `pageTop`, `pageBottom`, `content`, `contentBefore`, `contentAfter`, `toc`, `tocBefore`, `tocAfter`
 
-<template>
-  <HopeHomePage>
-    <!-- 使用 bottom 插槽引入评论组件 -->
-    <template #bottom>
-      <CommentService />
-    </template>
-  </HopeHomePage>
-</template>
-```
+  - `contentBefore`, `contentAfter` 插槽被传递到 `MarkdownContent` 组件。
+  - `toc`, `tocBefore`, `tocAfter` 插槽被传递到 `TOC` 组件。
 
-:::
+- `@theme-hope/components/base/PageFooter`: 页脚
 
-提供插槽的组件如下:
+- `@theme-hope/components/base/PrintButton`: 打印按钮
 
-**主题**:
+- `@theme-hope/components/base/PageNav`: 页面导航
 
-- `AutoLink`: `default`, `before`, `after`
-- `CommonWrapper`: `default`, `navScreenTop`, `navScreenBottom`, `sidebar`, `sidebarTop`, `sidebarBottom`
-- `HeroInfo`: `logo`, `info`, `bg`
+- `@theme-hope/components/base/PageTitle`: 页面标题
 
-  - `info` 插槽将接收 `text` `tagline` `isFullScreen` 和 `style` 属性。
-  - `logo` 插槽将接收 `image` `imageDark` `alt` 和 `style` 属性。
-  - `bg` 插槽将接收 `image` `imageDark` 和 `style` 属性。
+- `@theme-hope/components/base/SkipLink`: 指向主要内容的链接
 
-- `HomePage`: `top`, `center`, `bottom`
-- `NormalPage`: `top`, `contentBefore`, `contentAfter`, `bottom`, `tocBefore`, `tocAfter`
+- `@theme-hope/components/base/TOC`: 页面目录
 
-**博客**：
+  插槽: `toc` `tocBefore`, `tocAfter`
 
-- `ArticleItem`: `title`, `cover`, `info`, `excerpt`
+### 主页组件
 
-  - `title` 插槽将接收 `title` `isEncrypted` 和 `type` 属性。
-  - `excerpt` 插槽将接收 `excerpt` 属性。
-  - `cover` 插槽将接收 `cover` 属性。
-  - `info` 插槽将接收 `info` 属性。
+- `@theme-hope/components/home/FeatureSection`: 主页特色部分
 
-- `BlogHero`: `bg`, `info`
+- `@theme-hope/components/home/HighlightSection`: 主页高亮部分
 
-  - `info` 插槽将接收 `text` `tagline` `image` `imageDark` `style` `alt` 和 `isFullScreen` 属性。
-  - `bg` 插槽将接收 `image` `bgStyle` 和 `isFullScreen` 属性。
+- `@theme-hope/components/home/HeroInfo`: 主页英雄信息
 
-- `PortfolioHero`: `avatar` `bg`, `info`
+  插槽: `heroInfo`, `heroLogo`, `heroBg`
 
-  - `avatar` 插槽将接收 `avatar` `avatarDark` `avatarStyle` 和 `alt` 属性。
-  - `info` 插槽将接收 `name` `welcome` `title` `titles` 和 `links` 属性。
-  - `bg` 插槽将接收 `image` `imageDark` 和 `bgStyle` 属性。
+  - `heroInfo` 插槽接收 `text` `tagline` `isFullScreen` 和 `style` 属性。
+  - `heroLogo` 插槽接收 `image` `imageDark` `alt` 和 `style` 属性。
+  - `heroBg` 插槽接收 `image` `imageDark` 和 `style` 属性。
 
-**导航栏**:
+- `@theme-hope/components/home/HeroSlideDownButton`: 主页英雄滑动按钮
 
-- `NavbarDropdown`: `title`
-- `NavActions`: `before`, `after`
-- `Navbar`: `startBefore`, `startAfter`, `centerBefore`, `centerAfter`, `endBefore`, `endAfter`
-- `NavbarBrand`: `default`
-- `NavScreen`: `before`, `after`
-- `NavScreenMenu`: `before`, `after`
+- `@theme-hope/components/home/HomePage`: 默认主页 (项目主页)
 
-**侧边栏**:
+  插槽: `heroInfo`, `heroLogo`, `heroBg`, `heroBefore`, `heroAfter`, `content`, `contentBefore`, `contentAfter`
 
-- `Sidebar`: `top`, `default`, `bottom`
+  - `heroInfo`, `heroLogo`, `heroBg` 插槽被传递到 `HeroInfo` 组件。
+  - `heroBefore`, `heroAfter` 插槽被传递到 `MainFadeInUpTransition` 组件。
 
-**TOC**:
+- `@theme-hope/components/home/PortfolioHero`: 作品集英雄信息
 
-- `TOC`: `before`, `after`
+  插槽: `portfolioInfo`, `portfolioAvatar`, `portfolioBg`
 
-::: tip
+  - `portfolioInfo` 插槽接收 `name` `welcome` `title` `titles` 和 `links` 属性。
+  - `portfolioAvatar` 插槽接收 `avatar` `avatarDark` `style` 和 `alt` 属性。
+  - `portfolioBg` 插槽接收 `image` `imageDark` 和 `style` 属性。
 
-对于每个插槽的对应位置和功能，请详见 [主题源码](https://github.com/vuepress-theme-hope/vuepress-theme-hope/tree/main/packages/theme/src/client/)。
+- `@theme-hope/components/home/PortfolioHome`: 作品集主页
 
-:::
+  插槽: `portfolioInfo`, `portfolioAvatar`, `portfolioBg`
+
+  - `portfolioInfo`, `portfolioAvatar`, `portfolioBg` 插槽被传递到 `PortfolioHero` 组件。
+
+### 导航栏组件
+
+- `@theme-hope/components/navbar/I18nIcon`: 多语言图标
+
+- `@theme-hope/components/navbar/LanguageDropdown`: 语言下拉菜单
+
+- `@theme-hope/components/navbar/Navbar`: 导航栏组件
+
+  插槽: `navScreenTop`, `navScreenBottom`
+
+  - `navScreenTop` `navScreenBottom` 插槽被传递到 `NavBar` 组件。
+
+- `@theme-hope/components/navbar/NavbarBrand`: 导航栏品牌信息
+
+- `@theme-hope/components/navbar/NavbarDropdown`: 下拉列表
+
+  插槽: `title`
+
+- `@theme-hope/components/navbar/NavbarLinks`: 导航栏链接
+
+- `@theme-hope/components/navbar/NavScreen`: 移动视图导航页面
+
+  插槽: `navScreenTop`, `navScreenBottom`
+
+- `@theme-hope/components/navbar/NavScreenLinks`: 导航页面链接
+
+- `@theme-hope/components/navbar/NavScreenMenu`: 导航页面菜单
+
+- `@theme-hope/components/navbar/RepoLink`: 仓库链接
+
+- `@theme-hope/components/navbar/ToggleNavbarButton`: 导航栏切换按钮
+
+- `@theme-hope/components/navbar/ToggleSidebarButton`: 侧边栏切换按钮
+
+### 侧边栏组件
+
+- `@theme-hope/components/sidebar/Sidebar`: 侧边栏
+
+  插槽: `sidebarItems`, `sidebarTop`, `sidebarBottom`
+
+  - `sidebarItems` 插槽接收 `sidebarItems` 属性。
+
+- `@theme-hope/components/sidebar/SidebarChild`: 侧边栏子项
+
+- `@theme-hope/components/sidebar/SidebarGroup`: 侧边栏组
+
+- `@theme-hope/components/sidebar/SidebarLinks`: 侧边栏链接
+
+### 信息组件
+
+- `@theme-hope/components/info/AuthorInfo`: 作者信息
+- `@theme-hope/components/info/CategoryInfo`: 分类信息
+- `@theme-hope/components/info/DateInfo`: 日期信息
+- `@theme-hope/components/info/OriginalInfo`: 原创标记
+- `@theme-hope/components/info/PageInfo`: 页面信息
+- `@theme-hope/components/info/PageMeta`: 页面元信息
+- `@theme-hope/components/info/PageViewInfo`: 页面浏览量信息
+- `@theme-hope/components/info/ReadingTimeInfo`: 阅读时间信息
+- `@theme-hope/components/info/TagInfo`: 标签信息
+- `@theme-hope/components/info/WordInfo`: 字数信息
+- `@theme-hope/components/info/icons`: 信息图标
+
+### 外观组件
+
+- `@theme-hope/components/appearance/AppearanceButton`: 外观按钮
+- `@theme-hope/components/appearance/AppearanceIcon`: 外观图标
+- `@theme-hope/components/appearance/AppearanceSettings`: 外观设置
+- `@theme-hope/components/appearance/ColorMode`: 颜色模式
+- `@theme-hope/components/appearance/ColorModeSwitch`: 颜色模式开关
+- `@theme-hope/components/appearance/ThemeColor`: 主题颜色
+- `@theme-hope/components/appearance/ThemeColorPicker`: 主题颜色选择器
+- `@theme-hope/components/appearance/ToggleFullScreen`: 全屏切换
+- `@theme-hope/components/appearance/ToggleFullScreenButton`: 全屏切换按钮
+
+### 过渡组件
+
+- `@theme-hope/components/transition/DropTransition`: 下落过渡组件
+  插槽: `default`
+
+### 博客组件
+
+- `@theme-hope/components/blog/ArticleItem`: 文章项目
+
+  插槽: `articleTitle`, `articleCover`, `articleInfo`, `articleExcerpt`
+
+  - `articleTitle` 插槽接收 `title` `isEncrypted` 和 `type` 属性。
+  - `articleCover` 插槽接收 `cover` 属性。
+  - `articleInfo` 插槽接收 `author` `category` `tag` `date` `isOriginal` `pageview` `readingTime` 和 `readingTimeLocale` 属性。
+  - `articleExcerpt` 插槽接收 `excerpt` 属性。
+
+- `@theme-hope/components/blog/ArticleList`: 文章列表
+
+  插槽: `articleTitle`, `articleCover`, `articleInfo`, `articleExcerpt`
+
+  - `articleTitle`, `articleCover`, `articleInfo`, `articleExcerpt` 插槽被传递到 `ArticleItem` 组件。
+
+- `@theme-hope/components/blog/ArticlesInfo`: 文章信息
+
+- `@theme-hope/components/blog/ArticleType`: 文章类型
+
+- `@theme-hope/components/blog/BloggerInfo`: 博主信息
+
+  插槽: `bloggerInfo`
+
+  - `bloggerInfo` 插槽接收 `name` `avatar` 和 `description` 属性。
+
+- `@theme-hope/components/blog/BlogHero`: 博客英雄信息
+
+  插槽: `heroInfo`, `heroLogo`, `heroBg`
+
+  - `heroInfo` 插槽接收 `text` `tagline` `isFullScreen` 和 `style` 属性。
+  - `heroLogo` 插槽接收 `image` `imageDark` `alt` 和 `style` 属性。
+  - `heroBg` 插槽接收 `image` `imageDark` 和 `style` 属性。
+
+- `@theme-hope/components/blog/BlogHome`: 博客主页
+
+  插槽: `heroInfo`, `heroLogo`, `heroBg`, `heroBefore`, `heroAfter`, `articleCover`, `articleTitle`, `articleInfo`, `articleExcerpt`, `bloggerInfo`, `infoBefore`, `infoAfter`, `content`, `contentBefore`, `contentAfter`
+
+  - `heroInfo`, `heroLogo`, `heroBg` 插槽被传递到 `BlogHero` 组件。
+  - `articleTitle`, `articleCover`, `articleInfo`, `articleExcerpt` 插槽被传递到 `ArticleList` 组件。
+  - `bloggerInfo` 插槽被传递到 `BloggerInfo` 组件。
+  - `infoBefore`, `infoAfter` 插槽被传递到 `InfoPanel` 组件。
+  - `contentBefore`, `contentAfter` 插槽被传递到 `MarkdownContent` 组件。
+
+- `@theme-hope/components/blog/BlogMainLayout`: 博客主布局
+
+  插槽: `default`, `navScreenTop`, `navScreenBottom`, `sidebarItems`, `sidebarTop`, `sidebarBottom`, `bloggerInfo`
+
+  - `navScreenTop` `navScreenBottom` 插槽被传递到 `NavBar` 组件。
+
+- `@theme-hope/components/blog/CategoriesInfo`: 分类信息
+
+- `@theme-hope/components/blog/CategoryList`: 分类列表
+
+- `@theme-hope/components/blog/CategoryPage`: 分类页面
+
+  插槽: `default`, `articleTitle`, `articleCover`, `articleInfo`, `articleExcerpt`, `articleBefore`, `articleAfter`, `bloggerInfo`, `infoBefore`, `infoAfter`
+
+  - `articleTitle`, `articleCover`, `articleInfo`, `articleExcerpt` 插槽被传递到 `ArticleList` 组件。
+  - `bloggerInfo` 插槽被传递到 `BloggerInfo` 组件。
+  - `infoBefore`, `infoAfter` 插槽被传递到 `InfoPanel` 组件。
+
+- `@theme-hope/components/blog/InfoList`: 信息列表
+
+  插槽: `bloggerInfo`, `infoBefore`, `infoAfter`
+
+- `@theme-hope/components/blog/InfoPanel`: 信息面板
+
+  - `bloggerInfo` 插槽被传递到 `BloggerInfo` 组件。
+
+- `@theme-hope/components/blog/Pagination`: 分页导航
+
+- `@theme-hope/components/blog/ProjectPanel`: 博客项目面板
+
+- `@theme-hope/components/blog/SocialMedias`: 社交媒体链接
+
+- `@theme-hope/components/blog/TagList`: 标签列表
+
+- `@theme-hope/components/blog/TagPage`: 标签页面
+
+- `@theme-hope/components/blog/TagsInfo`: 标签信息
+
+- `@theme-hope/components/blog/TimelineItems`: 时间线项目
+
+- `@theme-hope/components/blog/TimelineList`: 时间线列表
+
+- `@theme-hope/components/blog/TimelinePage`: 时间线页面
+
+  插槽: `articleBefore`, `articleAfter`, `bloggerInfo`, `infoBefore`, `infoAfter`
+
+  - `bloggerInfo` 插槽被传递到 `BloggerInfo` 组件。
+  - `infoBefore`, `infoAfter` 插槽被传递到 `InfoPanel` 组件。
+
+- `@theme-hope/components/blog/TypePage`: type page
+
+  插槽: `default`, `articleTitle`, `articleCover`, `articleInfo`, `articleExcerpt`, `articleBefore`, `articleAfter`, `bloggerInfo`, `infoBefore`, `infoAfter`
+
+  - `articleTitle`, `articleCover`, `articleInfo`, `articleExcerpt` 插槽被传递到 `ArticleList` 组件。
+  - `bloggerInfo` 插槽被传递到 `BloggerInfo` 组件。
+  - `infoBefore`, `infoAfter` 插槽被传递到 `InfoPanel` 组件。
+
+- `@theme-hope/components/blog/icons`: 博客图标
+
+### 加密组件
+
+- `@theme-hope/modules/encrypt/components/GlobalEncrypt`: 全局加密
+
+  插槽: `default`
+
+- `@theme-hope/modules/encrypt/components/LocalEncrypt`: 局部加密
+
+  插槽: `default`
+
+- `@theme-hope/modules/encrypt/components/PasswordModal`: 密码输入
+
+### 其他别名
+
+主题的可组合式 API，布局和工具函数也提供了别名。详见 [主题源代码](https://github.com/vuepress-theme-hope/vuepress-theme-hope/tree/main/packages/theme/src/client/)。

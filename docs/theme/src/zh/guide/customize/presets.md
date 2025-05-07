@@ -1,6 +1,7 @@
 ---
 title: 主题预设
 icon: palette
+order: 7
 category:
   - 自定义
 tag:

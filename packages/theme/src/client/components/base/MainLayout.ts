@@ -203,7 +203,7 @@ export default defineComponent({
         // sidebar is disabled via frontmatter
         frontmatter.value.sidebar === false ||
         // (is home page / no sidebar items) && no contents in sidebar slots
-        ((!frontmatter.value.home || sidebarItems.value.length === 0) &&
+        ((frontmatter.value.home || sidebarItems.value.length === 0) &&
           !sidebarTopContent &&
           !sidebarItemsContent &&
           !sidebarBottomContent);

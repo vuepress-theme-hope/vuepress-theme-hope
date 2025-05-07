@@ -1,5 +1,5 @@
 ---
-title: Customize Layouts
+title: Customize Theme Layout
 icon: clone
 order: 5
 category:
@@ -53,75 +53,12 @@ The [style file](../../config/style.md#indexscss) is `.vuepress/styles/index.scs
 
 - If you want to remove some features, you can hide related dom elements by `display: none` in the [style file](../../config/style.md#indexscss).
 
-## Adding / Overriding Layouts
+## Via Adding / Overriding Layouts
 
 You can add new layouts or override existing layouts via `layouts` option in [client config file](../../cookbook/vuepress/config.md#client-config-file).
 
-<!-- #region layout -->
+See [Customize Layouts with Slots](slots.md) for how to add or override layouts.
 
-```vue title=".vuepress/layout/Layout.vue"
-<script setup lang="ts">
-import { Layout } from "vuepress-theme-hope/client";
-</script>
+## Via Overriding Components
 
-<template>
-  <Layout>
-    <!-- Adding ADs before markdown content with contentBefore slot -->
-    <template #contentBefore>
-      <div>Advertisement contents</div>
-    </template>
-  </Layout>
-</template>
-```
-
-```ts title=".vuepress/client.ts"
-import { defineClientConfig } from "vuepress/client";
-import Changelog from "./layouts/Changelog.vue";
-import Layout from "./layouts/Changelog.vue";
-
-export default defineClientConfig({
-  // You can override or add layouts here
-  layouts: {
-    // For example, here we change the default layout of vuepress-theme-hope to layouts/Layout.vue
-    Layout,
-    // Also we added a Changelog layout
-    Changelog,
-  },
-});
-```
-
-<!-- #endregion layout -->
-
-The theme provides the following layouts:
-
-- Layout
-
-  Basic layout, having the following slots:
-
-  - `default`: Page content slot
-  - `top`: Page top slot
-  - `bottom`: Page bottom slot
-  - `contentBefore`: Slot before page content
-  - `contentAfter`: Slot after page content
-  - `tocBefore`: Slot before page TOC
-  - `tocAfter`: Slot after page TOC
-
-  Also these slots are supported for home page:
-
-  - `heroBefore`: Slot before hero
-  - `heroAfter`: Slot after hero
-  - `homeContent`: Slot for home page content
-
-- NotFound
-
-  404 page layout, having the following slots:
-
-  - `default`: 404 content slot
-
-- Slides (Only available when reveal.js is enabled)
-
-- Blog (Only available when blog is enabled)
-
-## By Overriding Components
-
-See [Replace theme components](../advanced/replace.md) .
+See [Replace theme components](../advanced/replace.md).

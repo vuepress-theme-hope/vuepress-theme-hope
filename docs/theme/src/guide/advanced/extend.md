@@ -76,6 +76,6 @@ export default (options) => ({
 
 Also, you can add or override layout provided by `vuepress-theme-hope` via `layouts` with slots in your theme client config file.
 
-<!-- @include: ../customize/layout.md#layout -->
+<!-- @include: ../customize/slots.md#layout -->
 
 For details see [Customize Layout with Slots](../customize/slots.md).
