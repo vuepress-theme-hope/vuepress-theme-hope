@@ -26,6 +26,9 @@
     "email": "mister-hope@outlook.com",
     "url": "https://mister-hope.com"
   },
+  "sideEffects": [
+    "**/*.scss"
+  ],
   "type": "module",
   "exports": {
     ".": "./lib/node/index.js",
@@ -100,7 +103,7 @@
     "@vuepress/plugin-theme-data": "catalog:vuepress",
     "@vueuse/core": "catalog:range",
     "balloon-css": "catalog:range",
-    "bcrypt-ts": "^6.0.0",
+    "bcrypt-ts": "^7.0.0",
     "chokidar": "^3.6.0",
     "vue": "catalog:range",
     "vuepress-plugin-components": "workspace:*",

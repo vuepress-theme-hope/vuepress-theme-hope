@@ -60,7 +60,15 @@ Whether to enable image size.
   - [Markdown → Image Size](../../guide/markdown/grammar/image.md#image-size)
   - [@vuepress/plugin-markdown-image → obsidianSize][obsidianSize]
 
-Whether to enable obsidian image size.
+## markdown.legacyImgSize (Deprecated)
+
+- Type: `boolean`
+- Default: `false`
+- Details:
+  - [Markdown → Image Size](../../guide/markdown/grammar/image.md#image-size)
+  - [@vuepress/plugin-markdown-image → legacySize][legacySize]
+
+Whether to enable legacy image size.
 
 ## markdown.include
 
@@ -266,8 +274,9 @@ Controls `@vuepress/plugin-revealjs` which provides presentation support. You ca
 [footnote]: https://ecosystem.vuejs.press/plugins/markdown/markdown-ext.html#footenote
 [tasklist]: https://ecosystem.vuejs.press/plugins/markdown/markdown-ext.html#tasklist
 [mark]: https://ecosystem.vuejs.press/plugins/markdown/markdown-image.html#mark
-[obsidianSize]: https://ecosystem.vuejs.press/plugins/markdown/markdown-image.html#obsidianSize
 [size]: https://ecosystem.vuejs.press/plugins/markdown/markdown-image.html#size
+[obsidianSize]: https://ecosystem.vuejs.press/plugins/markdown/markdown-image.html#obsidianSize
+[legacySize]: https://ecosystem.vuejs.press/plugins/markdown/markdown-image.html#legacySize
 [include]: https://ecosystem.vuejs.press/plugins/markdown/markdown-include.html
 [math]: https://ecosystem.vuejs.press/plugins/markdown/markdown-math.html
 [revealjs]: https://ecosystem.vuejs.press/plugins/markdown/revealjs/#options

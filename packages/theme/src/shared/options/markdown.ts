@@ -74,6 +74,18 @@ export interface MarkdownOptions
   imgSize?: MarkdownImagePluginOptions["size"];
 
   /**
+   *
+   * Whether to enable obsidian image size mark support
+   *
+   * 是否启用 Obsidian 图片大小标记支持。
+   *
+   * @default false
+   */
+  obsidianImgSize?: MarkdownImagePluginOptions["obsidianSize"];
+
+  /**
+   * @deprecated
+   *
    * Whether to enable legacy image size mark support
    *
    * 是否启用旧版图片大小标记支持。

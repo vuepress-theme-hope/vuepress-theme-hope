@@ -64,6 +64,16 @@ The following options adds new markdown grammar, and can be set **under `markdow
 
 是否启用 Obsidian 图片大小。
 
+## markdown.legacyImgSize (已弃用)
+
+- 类型: `boolean`
+- 默认值: `false`
+- 详情:
+  - [Markdown → 图片大小](../../guide/markdown/grammar/image.md#image-size)
+  - [@vuepress/plugin-markdown-image → legacySize][legacySize]
+
+是否启用旧版图片大小。
+
 ## markdown.include
 
 - 类型: `MarkdownIncludePluginOptions | boolean`
@@ -268,8 +278,9 @@ The following options adds new markdown grammar, and can be set **under `markdow
 [footnote]: https://ecosystem.vuejs.press/zh/plugins/markdown/markdown-ext.html#footenote
 [tasklist]: https://ecosystem.vuejs.press/zh/plugins/markdown/markdown-ext.html#tasklist
 [mark]: https://ecosystem.vuejs.press/zh/plugins/markdown/markdown-image.html#mark
-[obsidianSize]: https://ecosystem.vuejs.press/zh/plugins/markdown/markdown-image.html#obsidianSize
 [size]: https://ecosystem.vuejs.press/zh/plugins/markdown/markdown-image.html#size
+[obsidianSize]: https://ecosystem.vuejs.press/zh/plugins/markdown/markdown-image.html#obsidianSize
+[legacySize]: https://ecosystem.vuejs.press/zh/plugins/markdown/markdown-image.html#legacySize
 [include]: https://ecosystem.vuejs.press/zh/plugins/markdown/markdown-include.html
 [math]: https://ecosystem.vuejs.press/zh/plugins/markdown/markdown-math.html
 [revealjs]: https://ecosystem.vuejs.press/zh/plugins/markdown/revealjs/#options
