@@ -64,7 +64,3 @@ We recommend you to choose pnpm as package manager, because VuePress and VuePres
 Some features of pnpm ensure that you have the correct dependencies, also it can speed up your installation.
 
 :::
-
-```
-
-```
