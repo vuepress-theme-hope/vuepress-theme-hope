@@ -1,3 +1,4 @@
+import type { NonNullableSlotContent } from "@vuepress/helper/client";
 import type { SlotsType, VNode } from "vue";
 import { Transition, TransitionGroup, defineComponent, h } from "vue";
 
@@ -53,7 +54,7 @@ export default defineComponent({
         onAfterEnter: unsetStyle,
         onBeforeLeave: setStyle,
       };
-      const children = (): VNode | VNode[] => slots.default();
+      const children = (): NonNullableSlotContent => slots.default();
 
       return props.group
         ? h(TransitionGroup, attrs, children)

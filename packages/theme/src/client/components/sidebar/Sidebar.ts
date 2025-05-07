@@ -5,7 +5,7 @@ import { useRoute } from "vuepress/client";
 
 import SidebarLinks from "@theme-hope/components/sidebar/SidebarLinks";
 import { useSidebarItems } from "@theme-hope/composables/sidebar/useSidebarItems";
-import type { SidebarItem } from "@theme-hope/utils/sidebar/typings";
+import type { SidebarSlotData } from "@theme-hope/typings/slots";
 
 import "../../styles/sidebar/sidebar.scss";
 
@@ -13,7 +13,7 @@ export default defineComponent({
   name: "SideBar",
 
   slots: Object as SlotsType<{
-    sidebarItems?: (sideItems: SidebarItem[]) => VNode[] | VNode | null;
+    sidebarItems?: (sideItems: SidebarSlotData) => VNode[] | VNode | null;
     sidebarTop?: () => VNode[] | VNode | null;
     sidebarBottom?: () => VNode[] | VNode | null;
   }>,

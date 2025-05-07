@@ -4,8 +4,8 @@ import { computed } from "vue";
 import { resolveRoute } from "vuepress/client";
 
 import { useThemeLocale } from "@theme-hope/composables/useTheme";
+import type { NavbarItem } from "@theme-hope/typings/navbar";
 import { isLinkInternal } from "@theme-hope/utils/isLinkInternal";
-import type { NavbarItem } from "@theme-hope/utils/navbar";
 import { resolveLinkInfo } from "@theme-hope/utils/resolveLinkInfo";
 import { resolvePrefix } from "@theme-hope/utils/resolvePrefix";
 

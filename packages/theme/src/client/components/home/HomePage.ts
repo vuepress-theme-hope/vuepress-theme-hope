@@ -1,3 +1,4 @@
+import type { Slot, SlotContent } from "@vuepress/helper/client";
 import { isArray } from "@vuepress/helper/client";
 import type { SlotsType, VNode } from "vue";
 import { defineComponent, h } from "vue";
@@ -5,14 +6,14 @@ import { useFrontmatter } from "vuepress/client";
 
 import MarkdownContent from "@theme-hope/components/base/MarkdownContent";
 import FeatureSection from "@theme-hope/components/home/FeatureSection";
-import type {
-  HeroBackgroundData,
-  HeroImageData,
-  HeroInfoData,
-} from "@theme-hope/components/home/HeroInfo";
 import HeroInfo from "@theme-hope/components/home/HeroInfo";
 import HighlightPanel from "@theme-hope/components/home/HighlightSection";
 import DropTransition from "@theme-hope/components/transitions/DropTransition";
+import type {
+  HeroBackgroundSlotData,
+  HeroImageSlotData,
+  HeroInfoSlotData,
+} from "@theme-hope/typings/slots";
 
 import type { ThemeProjectHomePageFrontmatter } from "../../../shared/index.js";
 
@@ -22,16 +23,16 @@ export default defineComponent({
   name: "HomePage",
 
   slots: Object as SlotsType<{
-    heroInfo?: (props: HeroInfoData) => VNode[] | VNode | null;
-    heroLogo?: (props: HeroImageData) => VNode[] | VNode | null;
-    heroBg?: (props: HeroBackgroundData) => VNode[] | VNode | null;
-    heroBefore?: () => VNode[] | VNode | null;
-    heroAfter?: () => VNode[] | VNode | null;
+    heroInfo?: (props: HeroInfoSlotData) => SlotContent;
+    heroLogo?: (props: HeroImageSlotData) => SlotContent;
+    heroBg?: (props: HeroBackgroundSlotData) => SlotContent;
+    heroBefore?: Slot;
+    heroAfter?: Slot;
 
     // content
-    content?: () => VNode[] | VNode | null;
-    contentBefore?: () => VNode[] | VNode | null;
-    contentAfter?: () => VNode[] | VNode | null;
+    content?: Slot;
+    contentBefore?: Slot;
+    contentAfter?: Slot;
   }>,
 
   setup(_props, { slots }) {

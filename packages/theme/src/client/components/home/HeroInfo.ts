@@ -1,3 +1,4 @@
+import type { SlotContent } from "@vuepress/helper/client";
 import { isString } from "@vuepress/helper/client";
 import type { SlotsType, VNode } from "vue";
 import { computed, defineComponent, h } from "vue";
@@ -7,6 +8,11 @@ import AutoLink from "@theme-hope/components/base/AutoLink";
 import { HeroSlideDownButton } from "@theme-hope/components/home/HeroSlideDownButton";
 import DropTransition from "@theme-hope/components/transitions/DropTransition";
 import { useData } from "@theme-hope/composables/useData";
+import type {
+  HeroBackgroundSlotData,
+  HeroImageSlotData,
+  HeroInfoSlotData,
+} from "@theme-hope/typings/slots";
 
 import type { ThemeProjectHomePageFrontmatter } from "../../../shared/index.js";
 
@@ -14,40 +20,20 @@ import "../../styles/home/hero-info.scss";
 
 export type Style = string | Record<string, string>;
 
-export interface HeroInfoData {
-  text: string | null;
-  tagline: string | null;
-  isFullScreen: boolean;
-  style: Style | null;
-}
-
-export interface HeroImageData {
-  image: string | null;
-  imageDark: string | null;
-  alt: string;
-  style: Style | null;
-}
-
-export interface HeroBackgroundData {
-  image: string | null;
-  imageDark: string | null;
-  style: Style | null;
-}
-
 export default defineComponent({
   name: "HeroInfo",
 
   slots: Object as SlotsType<{
-    heroInfo?: (props: HeroInfoData) => VNode[] | VNode | null;
-    heroLogo?: (props: HeroImageData) => VNode[] | VNode | null;
-    heroBg?: (props: HeroBackgroundData) => VNode[] | VNode | null;
+    heroInfo?: (props: HeroInfoSlotData) => SlotContent;
+    heroLogo?: (props: HeroImageSlotData) => SlotContent;
+    heroBg?: (props: HeroBackgroundSlotData) => SlotContent;
   }>,
 
   setup(_props, { slots }) {
     const { frontmatter, siteLocale } =
       useData<ThemeProjectHomePageFrontmatter>();
 
-    const info = computed<HeroInfoData>(() => {
+    const info = computed(() => {
       const {
         heroText,
         tagline,
@@ -63,7 +49,7 @@ export default defineComponent({
       };
     });
 
-    const image = computed<HeroImageData>(() => {
+    const image = computed(() => {
       const { heroImage, heroImageDark, heroAlt, heroImageStyle } =
         frontmatter.value;
 
@@ -75,7 +61,7 @@ export default defineComponent({
       };
     });
 
-    const bg = computed<HeroBackgroundData>(() => {
+    const bg = computed(() => {
       const { bgImage, bgImageDark, bgImageStyle } = frontmatter.value;
 
       return {
@@ -159,8 +145,8 @@ export default defineComponent({
                       h(
                         "h1",
                         { id: "main-title", class: "vp-hero-title" },
-                        // eslint-disable-next-line @typescript-eslint/no-non-null-assertion
-                        info.value.text!,
+
+                        info.value.text,
                       ),
                     )
                   : null,

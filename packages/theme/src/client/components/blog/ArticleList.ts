@@ -1,3 +1,4 @@
+import type { SlotContent } from "@vuepress/helper/client";
 import { isSupported, usePageview } from "@vuepress/plugin-comment/pageview";
 import type { PropType, SlotsType, VNode } from "vue";
 import {
@@ -11,17 +12,17 @@ import {
 } from "vue";
 import { useRoute, useRouter } from "vuepress/client";
 
-import type {
-  ArticleCoverData,
-  ArticleExcerptData,
-  ArticleTitleData,
-} from "@theme-hope/components/blog/ArticleItem";
 import ArticleItem from "@theme-hope/components/blog/ArticleItem";
 import Pagination from "@theme-hope/components/blog/Pagination";
-import type { PageInfoProps } from "@theme-hope/components/info/PageInfo";
 import DropTransition from "@theme-hope/components/transitions/DropTransition";
 import { useBlogLocaleData } from "@theme-hope/composables/blog/useBlogLocale";
 import { useBlogOptions } from "@theme-hope/composables/blog/useBlogOptions";
+import type {
+  ArticleCoverSlotData,
+  ArticleExcerptSlotData,
+  ArticleInfoSlotData,
+  ArticleTitleSlotData,
+} from "@theme-hope/typings/slots";
 
 import type { ArticleInfoData, PageInfoData } from "../../../shared/index.js";
 
@@ -46,10 +47,10 @@ export default defineComponent({
   },
 
   slots: Object as SlotsType<{
-    articleCover?: (props: ArticleCoverData) => VNode[] | VNode | null;
-    articleTitle?: (props: ArticleTitleData) => VNode[] | VNode | null;
-    articleInfo?: (props: PageInfoProps) => VNode[] | VNode | null;
-    articleExcerpt?: (props: ArticleExcerptData) => VNode[] | VNode | null;
+    articleCover?: (props: ArticleCoverSlotData) => SlotContent;
+    articleTitle?: (props: ArticleTitleSlotData) => SlotContent;
+    articleInfo?: (props: ArticleInfoSlotData) => SlotContent;
+    articleExcerpt?: (props: ArticleExcerptSlotData) => SlotContent;
   }>,
 
   setup(props, { slots }) {

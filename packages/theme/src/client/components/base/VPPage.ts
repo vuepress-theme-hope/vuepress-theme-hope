@@ -1,4 +1,8 @@
-import type { GetHeadersOptions, HeaderItem } from "@vuepress/helper/client";
+import type {
+  GetHeadersOptions,
+  Slot,
+  SlotContent,
+} from "@vuepress/helper/client";
 import {
   RenderDefault,
   hasGlobalComponent,
@@ -16,6 +20,7 @@ import TOC from "@theme-hope/components/base/TOC";
 import PageMeta from "@theme-hope/components/info/PageMeta";
 import { useDarkMode } from "@theme-hope/composables/useDarkMode";
 import { useData } from "@theme-hope/composables/useData";
+import type { TocSlotData } from "@theme-hope/typings/slots";
 
 import "../../styles/base/vp-page.scss";
 
@@ -32,18 +37,18 @@ export default defineComponent({
   name: "VPPage",
 
   slots: Object as SlotsType<{
-    pageTop?: () => VNode[] | VNode | null;
-    pageBottom?: () => VNode[] | VNode | null;
+    pageTop?: Slot;
+    pageBottom?: Slot;
 
     // content
-    content?: () => VNode[] | VNode | null;
-    contentBefore?: () => VNode[] | VNode | null;
-    contentAfter?: () => VNode[] | VNode | null;
+    content?: Slot;
+    contentBefore?: Slot;
+    contentAfter?: Slot;
 
     // toc
-    toc?: (headers: HeaderItem[]) => VNode[] | VNode | null;
-    tocBefore?: () => VNode[] | VNode | null;
-    tocAfter?: () => VNode[] | VNode | null;
+    toc?: (headers: TocSlotData) => SlotContent;
+    tocBefore?: Slot;
+    tocAfter?: Slot;
   }>,
 
   setup(_props, { slots }) {

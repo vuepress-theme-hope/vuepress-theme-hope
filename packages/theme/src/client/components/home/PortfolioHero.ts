@@ -1,3 +1,4 @@
+import type { SlotContent } from "@vuepress/helper/client";
 import { hasGlobalComponent, isString } from "@vuepress/helper/client";
 import { watchImmediate } from "@vueuse/core";
 import type { SlotsType, VNode } from "vue";
@@ -12,45 +13,25 @@ import {
 } from "vue";
 import { useFrontmatter, withBase } from "vuepress/client";
 
-import type { Style } from "@theme-hope/components/home/HeroInfo";
 import DropTransition from "@theme-hope/components/transitions/DropTransition";
 import { useAuthorInfo } from "@theme-hope/composables/useAuthorInfo";
-
 import type {
-  PortfolioMedia,
-  ThemePortfolioFrontmatter,
-} from "../../../shared/index.js";
+  PortfolioAvatarSlotData,
+  PortfolioBackgroundSlotData,
+  PortfolioInfoSlotData,
+} from "@theme-hope/typings/slots";
+
+import type { ThemePortfolioFrontmatter } from "../../../shared/index.js";
 
 import "../../styles/home/portfolio-hero.scss";
-
-export interface PortfolioAvatar {
-  avatar: string | null;
-  avatarDark: string | null;
-  alt: string;
-  style: Style | null;
-}
-
-export interface PortfolioInfo {
-  name: string;
-  welcome: string;
-  title: string;
-  titles: string[];
-  medias: PortfolioMedia[] | null;
-}
-
-export interface PortfolioBackground {
-  image: string | null;
-  imageDark: string | null;
-  style: Style | null;
-}
 
 export default defineComponent({
   name: "PortfolioHero",
 
   slots: Object as SlotsType<{
-    portfolioInfo?: (props: PortfolioInfo) => VNode[] | VNode | null;
-    portfolioAvatar?: (props: PortfolioAvatar) => VNode[] | VNode | null;
-    portfolioBg?: (props: PortfolioBackground) => VNode[] | VNode | null;
+    portfolioInfo?: (props: PortfolioInfoSlotData) => SlotContent;
+    portfolioAvatar?: (props: PortfolioAvatarSlotData) => SlotContent;
+    portfolioBg?: (props: PortfolioBackgroundSlotData) => SlotContent;
   }>,
 
   setup(_props, { slots }) {

@@ -2,8 +2,8 @@ import type { ComputedRef, InjectionKey } from "vue";
 import { computed, inject, provide } from "vue";
 
 import { useData } from "@theme-hope/composables/useData";
+import type { SidebarItem } from "@theme-hope/typings/sidebar";
 import { resolveSidebarItems } from "@theme-hope/utils/sidebar/resolveSidebarItems";
-import type { SidebarItem } from "@theme-hope/utils/sidebar/typings";
 
 import type {
   ThemeHomePageFrontmatter,

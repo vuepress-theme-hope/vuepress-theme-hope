@@ -1,3 +1,4 @@
+import type { Slot } from "@vuepress/helper/client";
 import { hasGlobalComponent } from "@vuepress/helper/client";
 import noopComponent from "@vuepress/helper/noopComponent";
 import type {
@@ -41,8 +42,8 @@ export default defineComponent({
 
   slots: Object as SlotsType<{
     // NavScreen
-    navScreenTop?: () => VNode[] | VNode | null;
-    navScreenBottom?: () => VNode[] | VNode | null;
+    navScreenTop?: Slot;
+    navScreenBottom?: Slot;
   }>,
 
   setup(_props, { emit, slots }) {

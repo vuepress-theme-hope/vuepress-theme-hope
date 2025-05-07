@@ -1,70 +1,68 @@
-import type { HeaderItem } from "@vuepress/helper/client";
+import type { HeaderItem, Slot, SlotContent } from "@vuepress/helper/client";
 import type { BlogPluginFrontmatter } from "@vuepress/plugin-blog";
 import type { SlotsType, VNode } from "vue";
 import { defineComponent, h } from "vue";
 import { useFrontmatter } from "vuepress/client";
 
-import type {
-  ArticleCoverData,
-  ArticleExcerptData,
-  ArticleTitleData,
-} from "@theme-hope/components/blog/ArticleItem";
 import BlogHome from "@theme-hope/components/blog/BlogHome";
 import BlogMainLayout from "@theme-hope/components/blog/BlogMainLayout";
 import CategoryPage from "@theme-hope/components/blog/CategoryPage";
 import TimelinePage from "@theme-hope/components/blog/TimelinePage";
 import TypePage from "@theme-hope/components/blog/TypePage";
 import type {
-  HeroBackgroundData,
-  HeroImageData,
-  HeroInfoData,
-} from "@theme-hope/components/home/HeroInfo";
-import type { PageInfoProps } from "@theme-hope/components/info/PageInfo";
-import type { SidebarItem } from "@theme-hope/utils/sidebar/typings";
+  ArticleCoverSlotData,
+  ArticleExcerptSlotData,
+  ArticleInfoSlotData,
+  ArticleTitleSlotData,
+  HeroBackgroundSlotData,
+  HeroImageSlotData,
+  HeroInfoSlotData,
+  SidebarSlotData,
+} from "@theme-hope/typings/slots";
 
 export default defineComponent({
   name: "Blog",
 
   slots: Object as SlotsType<{
-    default?: () => VNode | VNode[] | null;
+    default?: Slot;
 
-    navScreenTop?: () => VNode | VNode[] | null;
-    navScreenBottom?: () => VNode | VNode[] | null;
+    navScreenTop?: Slot;
+    navScreenBottom?: Slot;
 
-    sidebarItems?: (sidebarItems: SidebarItem[]) => VNode | VNode[] | null;
-    sidebarTop?: () => VNode | VNode[] | null;
-    sidebarBottom?: () => VNode | VNode[] | null;
+    sidebarItems?: (sidebarItems: SidebarSlotData) => SlotContent;
+    sidebarTop?: Slot;
+    sidebarBottom?: Slot;
 
     // article
-    articleCover?: (props: ArticleCoverData) => VNode[] | VNode | null;
-    articleTitle?: (props: ArticleTitleData) => VNode[] | VNode | null;
-    articleInfo?: (props: PageInfoProps) => VNode[] | VNode | null;
-    articleExcerpt?: (props: ArticleExcerptData) => VNode[] | VNode | null;
+    articleCover?: (props: ArticleCoverSlotData) => SlotContent;
+    articleTitle?: (props: ArticleTitleSlotData) => SlotContent;
+    articleInfo?: (props: ArticleInfoSlotData) => SlotContent;
+    articleExcerpt?: (props: ArticleExcerptSlotData) => SlotContent;
 
     // articles
-    articlesBefore?: () => VNode[] | VNode | null;
-    articlesAfter?: () => VNode[] | VNode | null;
+    articlesBefore?: Slot;
+    articlesAfter?: Slot;
 
     // info
-    infoBefore?: () => VNode[] | VNode | null;
-    infoAfter?: () => VNode[] | VNode | null;
+    infoBefore?: Slot;
+    infoAfter?: Slot;
 
     // content
-    content?: () => VNode[] | VNode | null;
-    contentBefore?: () => VNode[] | VNode | null;
-    contentAfter?: () => VNode[] | VNode | null;
+    content?: Slot;
+    contentBefore?: Slot;
+    contentAfter?: Slot;
 
     // toc
-    toc?: (headers: HeaderItem[]) => VNode[] | VNode | null;
-    tocBefore?: () => VNode[] | VNode | null;
-    tocAfter?: () => VNode[] | VNode | null;
+    toc?: (headers: HeaderItem[]) => SlotContent;
+    tocBefore?: Slot;
+    tocAfter?: Slot;
 
     // home only
-    heroInfo?: (props: HeroInfoData) => VNode[] | VNode | null;
-    heroLogo?: (props: HeroImageData) => VNode[] | VNode | null;
-    heroBg?: (props: HeroBackgroundData) => VNode[] | VNode | null;
-    heroBefore?: () => VNode[] | VNode | null;
-    heroAfter?: () => VNode[] | VNode | null;
+    heroInfo?: (props: HeroInfoSlotData) => SlotContent;
+    heroLogo?: (props: HeroImageSlotData) => SlotContent;
+    heroBg?: (props: HeroBackgroundSlotData) => SlotContent;
+    heroBefore?: Slot;
+    heroAfter?: Slot;
   }>,
 
   setup(_props, { slots }) {

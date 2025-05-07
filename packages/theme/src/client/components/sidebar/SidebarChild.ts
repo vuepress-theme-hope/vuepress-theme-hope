@@ -4,8 +4,8 @@ import { defineComponent, h, resolveComponent } from "vue";
 import { useRoute } from "vuepress/client";
 
 import AutoLink from "@theme-hope/components/base/AutoLink";
+import type { SidebarLinkItem } from "@theme-hope/typings/sidebar";
 import { isActiveItem } from "@theme-hope/utils/isActiveItem";
-import type { SidebarLinkItem } from "@theme-hope/utils/sidebar/typings";
 
 import type { AutoLinkOptions } from "../../../shared/index.js";
 

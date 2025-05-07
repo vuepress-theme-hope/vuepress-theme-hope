@@ -1,3 +1,4 @@
+import type { Slot } from "@vuepress/helper/client";
 import { useScrollLock } from "@vueuse/core";
 import type { SlotsType, VNode } from "vue";
 import {
@@ -31,8 +32,8 @@ export default defineComponent({
   },
 
   slots: Object as SlotsType<{
-    navScreenTop?: () => VNode[] | VNode | null;
-    navScreenBottom?: () => VNode[] | VNode | null;
+    navScreenTop?: Slot;
+    navScreenBottom?: Slot;
   }>,
 
   setup(props, { slots }) {

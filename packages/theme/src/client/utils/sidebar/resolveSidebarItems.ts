@@ -8,14 +8,14 @@ import {
 import { resolveRoute } from "vuepress/client";
 
 import { sidebarData } from "@temp/theme-hope/sidebar.js";
-import { isLinkInternal } from "@theme-hope/utils/isLinkInternal";
-import { resolveLinkInfo } from "@theme-hope/utils/resolveLinkInfo";
-import { resolvePrefix } from "@theme-hope/utils/resolvePrefix";
 import type {
   SidebarGroupItem,
   SidebarItem,
   SidebarLinkItem,
-} from "@theme-hope/utils/sidebar/typings";
+} from "@theme-hope/typings/sidebar";
+import { isLinkInternal } from "@theme-hope/utils/isLinkInternal";
+import { resolveLinkInfo } from "@theme-hope/utils/resolveLinkInfo";
+import { resolvePrefix } from "@theme-hope/utils/resolvePrefix";
 
 import type {
   SidebarArrayOptions,

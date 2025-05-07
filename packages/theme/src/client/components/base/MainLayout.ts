@@ -1,3 +1,4 @@
+import type { NonNullableSlotContent, Slot } from "@vuepress/helper/client";
 import { RenderDefault, hasGlobalComponent } from "@vuepress/helper/client";
 import {
   useEventListener,
@@ -27,7 +28,7 @@ import { useSidebarItems } from "@theme-hope/composables/sidebar/useSidebarItems
 import { useData } from "@theme-hope/composables/useData";
 import { usePure } from "@theme-hope/composables/usePure";
 import { useWindowSize } from "@theme-hope/composables/useWindowSize";
-import type { SidebarItem } from "@theme-hope/utils/sidebar/typings";
+import type { SidebarItem } from "@theme-hope/typings/sidebar";
 
 import type {
   ThemeNormalPageFrontmatter,
@@ -69,16 +70,16 @@ export default defineComponent({
   },
 
   slots: Object as SlotsType<{
-    default: () => VNode[] | VNode | null;
+    default: Slot;
 
     // Nav Screen
-    navScreenTop?: () => VNode[] | VNode | null;
-    navScreenBottom?: () => VNode[] | VNode | null;
+    navScreenTop?: Slot;
+    navScreenBottom?: Slot;
 
     // Sidebar
-    sidebarItems?: (sidebarItem: SidebarItem[]) => VNode[] | VNode;
-    sidebarTop?: () => VNode[] | VNode | null;
-    sidebarBottom?: () => VNode[] | VNode | null;
+    sidebarItems?: (sidebarItem: SidebarItem[]) => NonNullableSlotContent;
+    sidebarTop?: Slot;
+    sidebarBottom?: Slot;
   }>,
 
   setup(props, { slots }) {
@@ -112,16 +113,6 @@ export default defineComponent({
         themeLocale.value.logo ??
           themeLocale.value.repo ??
           themeLocale.value.navbar,
-      );
-    });
-
-    const enableSidebar = computed(() => {
-      if (props.noSidebar) return false;
-
-      return (
-        (frontmatter.value.sidebar ?? true) &&
-        sidebarItems.value.length !== 0 &&
-        !frontmatter.value.home
       );
     });
 
@@ -201,8 +192,23 @@ export default defineComponent({
       isLocked.value = false;
     });
 
-    return (): VNode =>
-      h(
+    return (): VNode => {
+      const sidebarTopContent = slots.sidebarTop?.();
+      const sidebarItemsContent = slots.sidebarItems?.(sidebarItems.value);
+      const sidebarBottomContent = slots.sidebarBottom?.();
+
+      const noSidebar =
+        // sidebar is disabled via props
+        props.noSidebar ||
+        // sidebar is disabled via frontmatter
+        frontmatter.value.sidebar === false ||
+        // (is home page / no sidebar items) && no contents in sidebar slots
+        ((!frontmatter.value.home || sidebarItems.value.length === 0) &&
+          !sidebarTopContent &&
+          !sidebarItemsContent &&
+          !sidebarBottomContent);
+
+      return h(
         hasGlobalComponent("GlobalEncrypt")
           ? (resolveComponent("GlobalEncrypt") as ComponentOptions)
           : RenderDefault,
@@ -224,11 +230,7 @@ export default defineComponent({
                     !isPC.value &&
                     isDesktopSidebarCollapsed.value,
                   "sidebar-open": isMobile.value && isMobileSidebarOpen.value,
-                  "no-sidebar":
-                    !enableSidebar.value &&
-                    !slots.sidebarItems &&
-                    !slots.sidebarTop &&
-                    !slots.sidebarBottom,
+                  "no-sidebar": noSidebar,
 
                   // external-link-icon
                   "external-link-icon": enableExternalLinkIcon.value,
@@ -289,5 +291,6 @@ export default defineComponent({
             ],
           ),
       );
+    };
   },
 });

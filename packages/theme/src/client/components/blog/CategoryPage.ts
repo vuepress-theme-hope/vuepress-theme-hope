@@ -1,41 +1,42 @@
+import type { Slot, SlotContent } from "@vuepress/helper/client";
 import type { BlogPluginFrontmatter } from "@vuepress/plugin-blog";
 import type { SlotsType, VNode } from "vue";
 import { computed, defineComponent, h } from "vue";
 import { useFrontmatter, usePage } from "vuepress/client";
 
-import type {
-  ArticleCoverData,
-  ArticleExcerptData,
-  ArticleTitleData,
-} from "@theme-hope/components/blog/ArticleItem";
 import ArticleList from "@theme-hope/components/blog/ArticleList";
 import CategoryList from "@theme-hope/components/blog/CategoryList";
 import InfoPanel from "@theme-hope/components/blog/InfoPanel";
 import TagList from "@theme-hope/components/blog/TagList";
-import type { PageInfoProps } from "@theme-hope/components/info/PageInfo";
 import DropTransition from "@theme-hope/components/transitions/DropTransition";
 import { useCategoryMap } from "@theme-hope/composables/blog/useCategoryMap";
 import { useTagMap } from "@theme-hope/composables/blog/useTagMap";
+import type {
+  ArticleCoverSlotData,
+  ArticleExcerptSlotData,
+  ArticleInfoSlotData,
+  ArticleTitleSlotData,
+} from "@theme-hope/typings/slots";
 
 export default defineComponent({
   name: "CategoryPage",
 
   slots: Object as SlotsType<{
-    default?: () => VNode[] | VNode | null;
+    default?: Slot;
 
     // article
-    articleCover?: (props: ArticleCoverData) => VNode[] | VNode | null;
-    articleTitle?: (props: ArticleTitleData) => VNode[] | VNode | null;
-    articleInfo?: (props: PageInfoProps) => VNode[] | VNode | null;
-    articleExcerpt?: (props: ArticleExcerptData) => VNode[] | VNode | null;
+    articleCover?: (props: ArticleCoverSlotData) => SlotContent;
+    articleTitle?: (props: ArticleTitleSlotData) => SlotContent;
+    articleInfo?: (props: ArticleInfoSlotData) => SlotContent;
+    articleExcerpt?: (props: ArticleExcerptSlotData) => SlotContent;
 
     // articles
-    articlesBefore?: () => VNode[] | VNode | null;
-    articlesAfter?: () => VNode[] | VNode | null;
+    articlesBefore?: Slot;
+    articlesAfter?: Slot;
 
     // info
-    infoBefore?: () => VNode[] | VNode | null;
-    infoAfter?: () => VNode[] | VNode | null;
+    infoBefore?: Slot;
+    infoAfter?: Slot;
   }>,
 
   setup(_props, { slots }) {

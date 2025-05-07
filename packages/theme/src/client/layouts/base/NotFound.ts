@@ -1,3 +1,4 @@
+import type { Slot } from "@vuepress/helper/client";
 import type { SlotsType, VNode } from "vue";
 import { defineComponent, h } from "vue";
 import { useRouter } from "vuepress/client";
@@ -10,7 +11,7 @@ export default defineComponent({
   name: "NotFound",
 
   slots: Object as SlotsType<{
-    default?: () => VNode[] | VNode | null;
+    default?: Slot;
   }>,
 
   setup(_props, { slots }) {

@@ -1,3 +1,4 @@
+import type { Slot } from "@vuepress/helper/client";
 import { hasGlobalComponent, isNumber } from "@vuepress/helper/client";
 import { useElementHover, watchImmediate } from "@vueuse/core";
 import type { SlotsType, VNode } from "vue";
@@ -25,8 +26,8 @@ export default defineComponent({
   },
 
   slots: Object as SlotsType<{
-    contentBefore?: () => VNode[] | VNode | null;
-    contentAfter?: () => VNode[] | VNode | null;
+    contentBefore?: Slot;
+    contentAfter?: Slot;
   }>,
 
   setup(props, { slots }) {

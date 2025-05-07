@@ -1,30 +1,22 @@
+import type { SlotContent } from "@vuepress/helper/client";
 import type { PropType, SlotsType, VNode } from "vue";
 import { defineComponent, h, toRef } from "vue";
 import { RouteLink, useRouter, withBase } from "vuepress/client";
 
 import { SlideIcon, StickyIcon } from "@theme-hope/components/blog/icons";
 import LockIcon from "@theme-hope/components/encrypt/LockIcon";
-import type { PageInfoProps } from "@theme-hope/components/info/PageInfo";
 import PageInfo from "@theme-hope/components/info/PageInfo";
 import { useArticleInfo } from "@theme-hope/composables/blog/useArticleInfo";
+import type {
+  ArticleCoverSlotData,
+  ArticleExcerptSlotData,
+  ArticleInfoSlotData,
+  ArticleTitleSlotData,
+} from "@theme-hope/typings/slots";
 
 import type { ArticleInfoData, PageInfoData } from "../../../shared/index.js";
 
 import "../../styles/blog/article-item.scss";
-
-export interface ArticleTitleData {
-  title: string;
-  isEncrypted: boolean;
-  type: string;
-}
-
-export interface ArticleCoverData {
-  cover: string | null;
-}
-
-export interface ArticleExcerptData {
-  excerpt: string | null;
-}
 
 export default defineComponent({
   name: "ArticleItem",
@@ -49,10 +41,10 @@ export default defineComponent({
   },
 
   slots: Object as SlotsType<{
-    articleCover?: (props: ArticleCoverData) => VNode[] | VNode | null;
-    articleTitle?: (props: ArticleTitleData) => VNode[] | VNode | null;
-    articleInfo?: (props: PageInfoProps) => VNode[] | VNode | null;
-    articleExcerpt?: (props: ArticleExcerptData) => VNode[] | VNode | null;
+    articleCover?: (props: ArticleCoverSlotData) => SlotContent;
+    articleTitle?: (props: ArticleTitleSlotData) => SlotContent;
+    articleInfo?: (props: ArticleInfoSlotData) => SlotContent;
+    articleExcerpt?: (props: ArticleExcerptSlotData) => SlotContent;
   }>,
 
   setup(props, { slots }) {

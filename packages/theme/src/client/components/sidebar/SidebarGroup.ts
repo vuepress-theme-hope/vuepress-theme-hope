@@ -4,9 +4,9 @@ import { useRoute } from "vuepress/client";
 
 import AutoLink from "@theme-hope/components/base/AutoLink";
 import SidebarLinks from "@theme-hope/components/sidebar/SidebarLinks";
+import type { SidebarGroupItem } from "@theme-hope/typings/sidebar";
 import { isActiveItem } from "@theme-hope/utils/isActiveItem";
 import { isActiveSidebarItem } from "@theme-hope/utils/sidebar/isActiveSidebarItem";
-import type { SidebarGroupItem } from "@theme-hope/utils/sidebar/typings";
 
 import "../../styles/sidebar/sidebar-group.scss";
 

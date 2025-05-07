@@ -5,8 +5,8 @@ import { resolveRoute } from "vuepress/client";
 
 import { useSidebarItems } from "@theme-hope/composables/sidebar/useSidebarItems";
 import { useData } from "@theme-hope/composables/useData";
+import type { SidebarItem } from "@theme-hope/typings/sidebar";
 import { resolveLinkInfo } from "@theme-hope/utils/resolveLinkInfo";
-import type { SidebarItem } from "@theme-hope/utils/sidebar/typings";
 
 import type { AutoLinkOptions } from "../../shared/index.js";
 

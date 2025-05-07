@@ -1,4 +1,8 @@
-import type { GetHeadersOptions, HeaderItem } from "@vuepress/helper/client";
+import type {
+  GetHeadersOptions,
+  Slot,
+  SlotContent,
+} from "@vuepress/helper/client";
 import { useHeaders } from "@vuepress/helper/client";
 import { useToggle, watchImmediate } from "@vueuse/core";
 import type { PropType, SlotsType, VNode } from "vue";
@@ -8,6 +12,7 @@ import { ClientOnly, RouteLink, useRoute } from "vuepress/client";
 
 import PrintButton from "@theme-hope/components/base/PrintButton";
 import { useMetaLocale } from "@theme-hope/composables/info/useMetaLocale";
+import type { TocSlotData } from "@theme-hope/typings/slots";
 
 import "../../styles/info/toc.scss";
 
@@ -29,9 +34,9 @@ export default defineComponent({
   },
 
   slots: Object as SlotsType<{
-    toc?: (headers: HeaderItem[]) => VNode[] | VNode | null;
-    tocBefore?: () => VNode[] | VNode | null;
-    tocAfter?: () => VNode[] | VNode | null;
+    toc?: (headers: TocSlotData) => SlotContent;
+    tocBefore?: Slot;
+    tocAfter?: Slot;
   }>,
 
   setup(props, { slots }) {

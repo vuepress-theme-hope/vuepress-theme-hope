@@ -1,3 +1,4 @@
+import type { NonNullableSlotContent } from "@vuepress/helper/client";
 import type { SlotsType, VNode } from "vue";
 import { defineComponent, h, onMounted, ref } from "vue";
 
@@ -9,7 +10,7 @@ export default defineComponent({
   name: "GlobalEncrypt",
 
   slots: Object as SlotsType<{
-    default: () => VNode[] | VNode | null;
+    default: () => NonNullableSlotContent;
   }>,
 
   setup(_props, { slots }) {

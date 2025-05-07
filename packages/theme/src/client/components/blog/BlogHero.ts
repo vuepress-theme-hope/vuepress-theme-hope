@@ -1,16 +1,17 @@
+import type { SlotContent } from "@vuepress/helper/client";
 import { isString } from "@vuepress/helper/client";
 import type { SlotsType, VNode } from "vue";
 import { computed, defineComponent, h } from "vue";
 import { withBase } from "vuepress/client";
 
-import type {
-  HeroBackgroundData,
-  HeroImageData,
-  HeroInfoData,
-} from "@theme-hope/components/home/HeroInfo";
 import { HeroSlideDownButton } from "@theme-hope/components/home/HeroSlideDownButton";
 import DropTransition from "@theme-hope/components/transitions/DropTransition";
 import { useData } from "@theme-hope/composables/useData";
+import type {
+  HeroBackgroundSlotData,
+  HeroImageSlotData,
+  HeroInfoSlotData,
+} from "@theme-hope/typings/slots";
 
 import type { ThemeBlogHomePageFrontmatter } from "../../../shared/index.js";
 
@@ -22,9 +23,9 @@ export default defineComponent({
   name: "BlogHero",
 
   slots: Object as SlotsType<{
-    heroInfo?: (props: HeroInfoData) => VNode[] | VNode | null;
-    heroLogo?: (props: HeroImageData) => VNode[] | VNode | null;
-    heroBg?: (props: HeroBackgroundData) => VNode[] | VNode | null;
+    heroInfo?: (props: HeroInfoSlotData) => SlotContent;
+    heroLogo?: (props: HeroImageSlotData) => SlotContent;
+    heroBg?: (props: HeroBackgroundSlotData) => SlotContent;
   }>,
 
   setup(_props, { slots }) {
@@ -46,7 +47,7 @@ export default defineComponent({
       };
     });
 
-    const image = computed<HeroImageData>(() => {
+    const image = computed(() => {
       const { heroImage, heroImageDark, heroAlt, heroImageStyle } =
         frontmatter.value;
 
@@ -58,7 +59,7 @@ export default defineComponent({
       };
     });
 
-    const bg = computed<HeroBackgroundData>(() => {
+    const bg = computed(() => {
       const { bgImage, bgImageDark, bgImageStyle } = frontmatter.value;
 
       return {

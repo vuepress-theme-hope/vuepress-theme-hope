@@ -1,3 +1,4 @@
+import type { Slot } from "@vuepress/helper/client";
 import { RenderDefault } from "@vuepress/helper/client";
 import type { SlotsType, VNode } from "vue";
 import { Transition, defineComponent, h } from "vue";
@@ -11,7 +12,7 @@ export default defineComponent({
   name: "MainFadeInUpTransition",
 
   slots: Object as SlotsType<{
-    default?: () => VNode | VNode[] | null;
+    default?: Slot;
   }>,
 
   setup(_props, { slots }) {

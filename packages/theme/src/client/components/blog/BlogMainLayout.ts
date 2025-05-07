@@ -1,3 +1,4 @@
+import type { SlotContent } from "@vuepress/helper/client";
 import type { SlotsType, VNode } from "vue";
 import { defineComponent, h } from "vue";
 
@@ -6,7 +7,7 @@ import SkipLink from "@theme-hope/components/base/SkipLink";
 import BloggerInfo from "@theme-hope/components/blog/BloggerInfo";
 import InfoList from "@theme-hope/components/blog/InfoList";
 import { useWindowSize } from "@theme-hope/composables/useWindowSize";
-import type { SidebarItem } from "@theme-hope/utils/sidebar/typings";
+import type { SidebarSlotData } from "@theme-hope/typings/slots";
 
 import "../../styles/blog/blog-main-layout.scss";
 
@@ -21,7 +22,7 @@ export default defineComponent({
     navScreenBottom?: () => VNode[] | VNode | null;
 
     // Sidebar
-    sidebarItems?: (sidebarItem: SidebarItem[]) => VNode[] | VNode;
+    sidebarItems?: (sidebarItem: SidebarSlotData) => VNode[] | VNode;
     sidebarTop?: () => VNode[] | VNode | null;
     sidebarBottom?: () => VNode[] | VNode | null;
   }>,
@@ -40,7 +41,7 @@ export default defineComponent({
             slots.navScreenBottom ?? ((): VNode => h(BloggerInfo)),
           sidebarItems:
             slots.sidebarItems ??
-            (isMobile.value ? (): VNode | VNode[] | null => h(InfoList) : null),
+            (isMobile.value ? (): SlotContent => h(InfoList) : null),
         },
       ),
     ];

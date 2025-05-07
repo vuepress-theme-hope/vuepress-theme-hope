@@ -1,15 +1,16 @@
-import type { SlotsType, VNode } from "vue";
+import type { SlotContent } from "@vuepress/helper/client";
+import type { Slot, SlotsType, VNode } from "vue";
 import { defineComponent, h } from "vue";
 import { useFrontmatter } from "vuepress/client";
 
 import MarkdownContent from "@theme-hope/components/base/MarkdownContent";
-import type {
-  PortfolioAvatar,
-  PortfolioBackground,
-  PortfolioInfo,
-} from "@theme-hope/components/home/PortfolioHero";
 import PortfolioHero from "@theme-hope/components/home/PortfolioHero";
 import DropTransition from "@theme-hope/components/transitions/DropTransition";
+import type {
+  PortfolioAvatarSlotData,
+  PortfolioBackgroundSlotData,
+  PortfolioInfoSlotData,
+} from "@theme-hope/typings/slots";
 
 import type { ThemePortfolioFrontmatter } from "../../../shared/index.js";
 
@@ -19,14 +20,14 @@ export default defineComponent({
   name: "PortfolioHome",
 
   slots: Object as SlotsType<{
-    portfolioInfo?: (props: PortfolioInfo) => VNode[] | VNode | null;
-    portfolioAvatar?: (props: PortfolioAvatar) => VNode[] | VNode | null;
-    portfolioBg?: (props: PortfolioBackground) => VNode[] | VNode | null;
+    portfolioInfo?: (props: PortfolioInfoSlotData) => SlotContent;
+    portfolioAvatar?: (props: PortfolioAvatarSlotData) => SlotContent;
+    portfolioBg?: (props: PortfolioBackgroundSlotData) => SlotContent;
 
     // content
-    content?: () => VNode[] | VNode | null;
-    contentBefore?: () => VNode[] | VNode | null;
-    contentAfter?: () => VNode[] | VNode | null;
+    content?: Slot;
+    contentBefore?: Slot;
+    contentAfter?: Slot;
   }>,
 
   setup(_props, { slots }) {

@@ -1,3 +1,4 @@
+import type { Slot } from "@vuepress/helper/client";
 import type { PropType, SlotsType, VNode } from "vue";
 import {
   computed,
@@ -34,7 +35,7 @@ export default defineComponent({
   },
 
   slots: Object as SlotsType<{
-    title?: () => VNode | VNode[];
+    title?: Slot;
   }>,
 
   setup(props, { slots }) {

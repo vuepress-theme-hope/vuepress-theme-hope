@@ -1,3 +1,4 @@
+import type { NonNullableSlotContent } from "@vuepress/helper/client";
 import type { SlotsType, VNode } from "vue";
 import { defineComponent, h, onMounted, ref } from "vue";
 
@@ -8,7 +9,7 @@ export default defineComponent({
   name: "LocalEncrypt",
 
   slots: Object as SlotsType<{
-    default: () => VNode[] | VNode | null;
+    default: () => NonNullableSlotContent;
   }>,
 
   setup(_props, { slots }) {
@@ -20,7 +21,7 @@ export default defineComponent({
       isMounted.value = true;
     });
 
-    return (): VNode[] | VNode | null => {
+    return (): VNode[] | VNode | string | null => {
       const { isEncrypted, isLocked, hint } = status.value;
 
       return isEncrypted
