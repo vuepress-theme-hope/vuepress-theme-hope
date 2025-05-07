@@ -16,7 +16,7 @@ tag:
 
 ## Blog Style Homepage
 
-Set `layout: BlogHome` and `home: true` in the frontmatter of homepage.
+Set `layout: Blog` and `home: true` in the frontmatter of homepage.
 
 ![Homepage screenshot](./assets/blog-light.jpg#light)
 ![Homepage screenshot](./assets/blog-dark.jpg#dark)

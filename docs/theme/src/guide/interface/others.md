@@ -152,8 +152,7 @@ export default hopeTheme({
 ```
 
 <script setup lang="ts">
-import ToggleFullScreenButton from "@theme-hope/modules/outlook/components/ToggleFullScreenButton";
-import PrintButton from "@theme-hope/modules/info/components/PrintButton";
+import { PrintButton, ToggleFullScreenButton } from "vuepress-theme-hope/client";
 import ToggleRTLButton from "@ToggleRTLButton";
 </script>
 

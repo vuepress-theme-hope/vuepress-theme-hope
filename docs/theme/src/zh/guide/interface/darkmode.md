@@ -91,5 +91,5 @@ export default hopeTheme({
   :::
 
 <script setup lang="ts">
-import ColorModeSwitch from "@theme-hope/modules/outlook/components/ColorModeSwitch"
+import { ColorModeSwitch } from "vuepress-theme-hope/client";
 </script>

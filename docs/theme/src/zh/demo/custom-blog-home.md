@@ -41,8 +41,10 @@ projects:
 footer: 自定义你的页脚文字
 ---
 
-这是一个博客主页的案例。
+这是一个自定义博客主页的案例。
 
-要使用此布局，你应该在页面前端设置 `layout: BlogHome` 和 `home: true`。
+要使用此布局，你应该在页面前端设置 `layout: Blog` 和 `home: true`。
 
 相关配置文档请见 [博客主页](../guide/blog/home.md#博客类型主页)。
+
+源代码详见 [GitHub](https://github.com/vuepress-theme-hope/vuepress-theme-hope/blob/main/docs/theme/src/.vuepress/layouts/CustomBlogHome.vue)。

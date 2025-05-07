@@ -40,7 +40,7 @@ export default (options: ThemeOptions) => ({
   alias: {
     // You can override or add aliases here
     // For example, here we change the vuepress-theme-hope HomePage component to components/HomePage.vue under our own theme
-    "@theme-hope/components/HomePage": path.resolve(
+    "@theme-hope/components/home/HomePage": path.resolve(
       __dirname,
       "./components/HomePage.vue",
     ),
@@ -64,7 +64,7 @@ export default (options) => ({
   alias: {
     // You can override or add aliases here
     // For example, here we change the vuepress-theme-hope HomePage component to components/HomePage.vue under our own theme
-    "@theme-hope/components/HomePage": path.resolve(
+    "@theme-hope/components/home/HomePage": path.resolve(
       __dirname,
       "./components/HomePage.vue",
     ),

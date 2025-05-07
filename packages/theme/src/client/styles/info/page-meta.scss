@@ -1,0 +1,78 @@
+@use "../wrapper";
+
+.vp-page-meta {
+  @include wrapper.horizontal-wrapper;
+
+  & {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+
+    overflow: auto;
+
+    padding-top: 0.75rem;
+    padding-bottom: 0.75rem;
+  }
+
+  @media print {
+    margin: 0 !important;
+    padding-inline: 0 !important;
+  }
+
+  @media (max-width: hope-config.$tablet) {
+    display: block;
+  }
+
+  .vp-meta-item {
+    flex-grow: 1;
+
+    .vp-meta-label {
+      font-weight: 500;
+
+      &:not(a) {
+        color: var(--vp-c-text);
+      }
+    }
+
+    .vp-meta-info {
+      color: var(--vp-c-text-mute);
+      font-weight: 400;
+    }
+  }
+
+  .git-info {
+    text-align: end;
+  }
+
+  .edit-link {
+    margin-top: 0.25rem;
+    margin-bottom: 0.25rem;
+    margin-inline-end: 0.5rem;
+    font-size: 14px;
+
+    @media print {
+      display: none;
+    }
+
+    .icon {
+      position: relative;
+      bottom: -0.125em;
+
+      width: 1em;
+      height: 1em;
+      margin-inline-end: 0.25em;
+    }
+  }
+
+  .update-time,
+  .contributors {
+    margin-top: 0.25rem;
+    margin-bottom: 0.25rem;
+    font-size: 14px;
+
+    @media (max-width: hope-config.$tablet) {
+      font-size: 13px;
+      text-align: start;
+    }
+  }
+}

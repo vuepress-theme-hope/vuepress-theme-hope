@@ -198,7 +198,7 @@ export default hopeTheme(
               Boolean(page.filePathRelative?.includes("demo/")),
             sorter: (pageA, pageB): number =>
               dateSorter(pageA.frontmatter.date, pageB.frontmatter.date),
-            layout: "BlogType",
+            layout: "Blog",
           },
         ],
       },
@@ -275,5 +275,5 @@ export default hopeTheme(
           : { canonical: "https://theme-hope-blog-demo.vuejs.press" },
     },
   },
-  { custom: true },
+  { custom: Boolean(process.env.THEME_CUSTOM) },
 );

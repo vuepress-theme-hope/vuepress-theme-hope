@@ -38,8 +38,7 @@ export const getSlides = ({
   ({
     key: "slides",
 
-    filter: ({ frontmatter }: Page): boolean =>
-      frontmatter.layout === "SlidePage",
+    filter: ({ frontmatter }: Page): boolean => frontmatter.layout === "Slides",
 
     sorter: (
       pageA: Page<
@@ -65,7 +64,7 @@ export const getSlides = ({
     },
 
     path,
-    layout: "BlogType",
+    layout: "Blog",
 
     frontmatter: (localePath: string) => ({
       title: locales[localePath] ?? "Slides",

@@ -33,6 +33,6 @@ export const getRevealJsPlugin = (
 
   return revealJsPlugin({
     ...(isPlainObject(options) ? options : {}),
-    layout: "SlidePage",
+    layout: "Slides",
   });
 };

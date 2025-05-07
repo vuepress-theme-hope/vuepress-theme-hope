@@ -108,7 +108,7 @@ Slugify 函数，用于转换 key 在路由中注册的形式。
     /**
      * 页面布局组件名称
      *
-     * @default 'BlogType'
+     * @default 'Blog'
      */
     layout?: string;
 

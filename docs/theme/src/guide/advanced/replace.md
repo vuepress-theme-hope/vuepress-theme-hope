@@ -34,7 +34,7 @@ export default {
   alias: {
     // Here you can redirect aliases to your own components
     // For example, here we change the theme's home page component to HomePage.vue under user .vuepress/components
-    "@theme-hope/components/HomePage": path.resolve(
+    "@theme-hope/components/home/HomePage": path.resolve(
       __dirname,
       "./components/HomePage.vue",
     ),
@@ -44,171 +44,298 @@ export default {
 
 Here are list of aliases.
 
-::: details Theme components alias
+### Base Components
 
-Components:
+- `@theme-hope/components/base/AutoLink`: basic link
 
-- `@theme-hope/components/AutoLink`: basic link
-- `@theme-hope/components/BreadCrumb`: breadcrumb
-- `@theme-hope/components/CommonWrapper`: basic layout integration
-- `@theme-hope/components/FeaturePanel`: homepage features
-- `@theme-hope/components/HeroInfo`: homepage logo and introduction
-- `@theme-hope/components/HeroSlideDownButton`: hero slide down button
-- `@theme-hope/components/HighlightPanel`: homepage highlights
-- `@theme-hope/components/HomePage`: home page
-- `@theme-hope/components/MarkdownContent`: Markdown content
-- `@theme-hope/components/NormalPage`: normal page
-- `@theme-hope/components/PageFooter`: page footer
-- `@theme-hope/components/PageNav`: page navigation
-- `@theme-hope/components/PageTitle`: page title
-- `@theme-hope/components/PortfolioHero`: portfolio hero
-- `@theme-hope/components/SkipLink`: skip to main content
-- `@theme-hope/components/transitions`: drop transition component
+  Slots: `default`, `before`, `after`
 
-Miscellaneous:
+- `@theme-hope/components/base/BreadCrumb`: breadcrumb
 
-- `@theme-hope/components/transitions/index`: theme transitions
-- `@theme-hope/components/icons/index`: theme icons
-- `@theme-hope/composables/index`: theme Composition API
-- `@theme-hope/utils/index`: theme utility functions
+- `@theme-hope/components/base/EditIcon`: edit icon
 
-:::
+- `@theme-hope/components/base/VPPage`: main content of a page
 
-::: details Navbar component alias
+  Slots: `top`, `bottom`, `content`, `contentBefore`, `contentAfter`, `toc`, `tocBefore`, `tocAfter`
 
-Components:
+  - `contentBefore` slot is piped to `contentBefore` slot of `MarkdownContent` component.
+  - `contentAfter` slot is piped to `contentAfter` slot of `MarkdownContent` component.
+  - `toc` slot is piped to `toc` slot of `TOC` component.
+  - `tocBefore` slot is piped to `tocBefore` slot of `TOC` component.
+  - `tocAfter` slot is piped to `tocAfter` slot of `TOC` component.
 
-- `@theme-hope/modules/navbar/components/NavbarDropdown`: dropdown list
-- `@theme-hope/modules/navbar/components/LanguageDropdown`: language dropdown
-- `@theme-hope/modules/navbar/components/NavActions`: navbar functions
-- `@theme-hope/modules/navbar/components/Navbar`: navbar
-- `@theme-hope/modules/navbar/components/NavbarBrand`: navbar brand information
-- `@theme-hope/modules/navbar/components/NavbarLinks`: navbar links
-- `@theme-hope/modules/navbar/components/NavScreen`: navigation screen in mobile view
-- `@theme-hope/modules/navbar/components/NavScreenMenu`: mobile view navbar dropdown menu
-- `@theme-hope/modules/navbar/components/NavScreenLinks`: mobile view navbar links
-- `@theme-hope/modules/navbar/components/RepoLink`: repository link
-- `@theme-hope/modules/navbar/components/ToggleNavbarButton`: navbar toggle button
-- `@theme-hope/modules/navbar/components/ToggleSidebarButton`: sidebar toggle button
+- `@theme-hope/components/base/MainFadeInUpTransition`: main layout fade in up transition component
 
-Miscellaneous:
+- `@theme-hope/components/base/MainLayout`: main layout
 
-- `@theme-hope/modules/navbar/components/icons/index`: navbar icons
-- `@theme-hope/modules/navbar/composables/index`: navbar Composition API
+  Slots: `default`, `navScreenTop`, `navScreenBottom`, `sidebar`, `sidebarTop`, `sidebarBottom`
 
-:::
+  - `navScreenTop` slot is piped to `screenTop` slot of `NavBar` component.
+  - `navScreenBottom` slot is piped to `screenBottom` slot of `NavBar` component.
+  - `sidebar` slot is piped to `default` slot of `Sidebar` component.
+  - `sidebarTop` slot is piped to `top` slot of `Sidebar` component.
+  - `sidebarBottom` slot is piped to `bottom` slot of `Sidebar` component.
 
-::: details Sidebar component alias
+- `@theme-hope/components/base/MarkdownContent`: Markdown content
 
-Components:
+  Slots: `contentBefore`, `contentAfter`
 
-- `@theme-hope/modules/sidebar/components/Sidebar`: sidebar
-- `@theme-hope/modules/sidebar/components/SidebarChild`: sidebar link item
-- `@theme-hope/modules/sidebar/components/SidebarGroup`: sidebar grouping links
-- `@theme-hope/modules/sidebar/components/SidebarLinks`: sidebar links
+- `@theme-hope/components/base/PageFooter`: page footer
 
-Miscellaneous:
+- `@theme-hope/components/base/PrintButton`: print button
 
-- `@theme-hope/modules/sidebar/composables/index`: sidebar Composition API
-- `@theme-hope/modules/sidebar/utils/index`: sidebar utility functions
+- `@theme-hope/components/base/PageNav`: page navigation
 
-:::
+- `@theme-hope/components/base/PageTitle`: page title
 
-::: details Info module component alias
+- `@theme-hope/components/base/SkipLink`: link pointing to main content
 
-Components:
+- `@theme-hope/components/base/TOC`: table of contents
 
-- `@theme-hope/modules/info/components/AuthorInfo`: author information
-- `@theme-hope/modules/info/components/CategoryInfo`: category information
-- `@theme-hope/modules/info/components/DateInfo`: date information
-- `@theme-hope/modules/info/components/OriginalInfo`: original mark
-- `@theme-hope/modules/info/components/PageInfo`: page information
-- `@theme-hope/modules/info/components/PageMeta`: page meta information
-- `@theme-hope/modules/info/components/PageViewInfo`: page views information
-- `@theme-hope/modules/info/components/ReadingTimeInfo`: reading time information
-- `@theme-hope/modules/info/components/TagInfo`: tag information
-- `@theme-hope/modules/info/components/TOC`: table of contents
-- `@theme-hope/modules/info/components/WordInfo`: word information
+  Slots: `toc` `tocBefore`, `tocAfter`
 
-Miscellaneous:
+### Home Page Components
 
-- `@theme-hope/modules/info/components/icons`: info icons
-- `@theme-hope/modules/info/composables/index`: info Composables API
-- `@theme-hope/modules/info/utils/index`: info utility functions
+- `@theme-hope/components/home/FeatureSection`: homepage feature section
 
-:::
+- `@theme-hope/components/home/HighlightSection`: homepage highlight section
 
-::: details Blog module component alias
+- `@theme-hope/components/home/HeroInfo`: homepage logo and introduction
 
-Components:
+  Slots: `heroInfo`, `heroLogo`, `heroBg`
 
-- `@theme-hope/modules/blog/components/ArticleItem`: article item
-- `@theme-hope/modules/blog/components/ArticleList`: article list
-- `@theme-hope/modules/blog/components/ArticleType`: article type
-- `@theme-hope/modules/blog/components/ArticlesInfo`: article info
-- `@theme-hope/modules/blog/components/BloggerInfo`: blogger info
-- `@theme-hope/modules/blog/components/BlogHero`: blog homepage logo and introduction
-- `@theme-hope/modules/blog/components/BlogHome`: blog home page
-- `@theme-hope/modules/blog/components/BlogWrapper`: common wrapper for blog page
-- `@theme-hope/modules/blog/components/CategoryList`: Category list
-- `@theme-hope/modules/blog/components/CategoriesInfo`: Category info
-- `@theme-hope/modules/blog/components/InfoList`: blog info list
-- `@theme-hope/modules/blog/components/InfoPanel`: blog info panel
-- `@theme-hope/modules/blog/components/Pagination`: pagination
-- `@theme-hope/modules/blog/components/ProjectPanel`: blog homepage project panel
-- `@theme-hope/modules/blog/components/SocialMedias`: social media links
-- `@theme-hope/modules/blog/components/TagList`: tag list
-- `@theme-hope/modules/blog/components/TagsInfo`: tag info
-- `@theme-hope/modules/blog/components/TimelineItems`: timeline items
-- `@theme-hope/modules/blog/components/TimelineList`: timeline List
+  - `heroInfo` slot receives `text` `tagline` `isFullScreen` and `style` props.
+  - `heroLogo` slot receives `image` `imageDark` `alt` and `style` props.
+  - `heroBg` slot receives `image` `imageDark` and `style` props.
 
-Miscellaneous:
+- `@theme-hope/components/home/HeroSlideDownButton`: hero slide down button
 
-- `@theme-hope/modules/blog/components/icons`: blog icons
-- `@theme-hope/modules/blog/composables/index`: blog Composables API
+- `@theme-hope/components/home/HomePage`: default home page (project home page)
 
-:::
+  Slots: `heroInfo`, `heroLogo`, `heroBg`, `heroBefore`, `heroAfter`, `content`, `contentBefore`, `contentAfter`
 
-::: details Encryption module component alias
+  - `heroInfo` slot is piped to `heroInfo` slot of `HeroInfo` component.
+  - `heroLogo` slot is piped to `heroLogo` slot of `HeroInfo` component.
+  - `heroBg` slot is piped to `heroBg` slot of `HeroInfo` component.
+  - `contentBefore` slot is piped to `contentBefore` slot of `MarkdownContent` component.
+  - `contentAfter` slot is piped to `contentAfter` slot of `MarkdownContent` component.
 
-Components:
+- `@theme-hope/components/home/PortfolioHero`: portfolio hero
+
+  Slots: `portfolioInfo`, `portfolioAvatar`, `portfolioBg`
+
+  - `portfolioInfo` slot receives `name` `welcome` `title` `titles` and `links` props.
+  - `portfolioAvatar` slot receives `avatar` `avatarDark` `style` and `alt` props.
+  - `portfolioBg` slot receives `image` `imageDark` and `style` props.
+
+- `@theme-hope/components/home/PortfolioHome`: portfolio home page
+
+  Slots: `portfolioInfo`, `portfolioAvatar`, `portfolioBg`
+
+  - `portfolioInfo` slot is piped to `portfolioInfo` slot of `PortfolioHero` component.
+  - `portfolioAvatar` slot is piped to `portfolioAvatar` slot of `PortfolioHero` component.
+  - `portfolioBg` slot is piped to `portfolioBg` slot of `PortfolioHero` component.
+
+### Navbar Components
+
+- `@theme-hope/components/navbar/I18nIcon`: i18n icon
+
+- `@theme-hope/components/navbar/LanguageDropdown`: language dropdown
+
+- `@theme-hope/components/navbar/Navbar`: navbar component
+
+  Slots: `screenTop`, `screenBottom`
+
+  - `screenTop` slot is piped to `before` slot of `NavScreen` component.
+  - `screenBottom` slot is piped to `after` slot of `NavScreen` component.
+
+- `@theme-hope/components/navbar/NavbarBrand`: navbar brand information
+
+- `@theme-hope/components/navbar/NavbarDropdown`: dropdown list
+
+  Slots: `title`
+
+- `@theme-hope/components/navbar/NavbarLinks`: navbar links
+
+- `@theme-hope/components/navbar/NavScreen`: navigation screen in mobile view
+
+  Slots: `before`, `after`
+
+- `@theme-hope/components/navbar/NavScreenLinks`: mobile view navbar links
+
+- `@theme-hope/components/navbar/NavScreenMenu`: mobile view navbar dropdown menu
+
+- `@theme-hope/components/navbar/RepoLink`: repository link
+
+- `@theme-hope/components/navbar/ToggleNavbarButton`: navbar toggle button
+
+- `@theme-hope/components/navbar/ToggleSidebarButton`: sidebar toggle button
+
+### Sidebar Components
+
+- `@theme-hope/components/sidebar/Sidebar`: sidebar
+
+  Slots: `default`, `top`, `bottom`
+
+  - `default` slot receives `sidebarItems` prop.
+
+- `@theme-hope/components/sidebar/SidebarChild`: sidebar link item
+
+- `@theme-hope/components/sidebar/SidebarGroup`: sidebar grouping links
+
+- `@theme-hope/components/sidebar/SidebarLinks`: sidebar links
+
+### Info Components
+
+- `@theme-hope/components/info/AuthorInfo`: author information
+
+- `@theme-hope/components/info/CategoryInfo`: category information
+
+- `@theme-hope/components/info/DateInfo`: date information
+
+- `@theme-hope/components/info/OriginalInfo`: original mark
+
+- `@theme-hope/components/info/PageInfo`: page information
+
+- `@theme-hope/components/info/PageMeta`: page meta information
+
+- `@theme-hope/components/info/PageViewInfo`: page views information
+
+- `@theme-hope/components/info/ReadingTimeInfo`: reading time information
+
+- `@theme-hope/components/info/TagInfo`: tag information
+
+- `@theme-hope/components/info/WordInfo`: word information
+
+- `@theme-hope/components/info/icons`: info icons
+
+### Appearance Components
+
+- `@theme-hope/components/appearance/AppearanceButton`: appearance button
+- `@theme-hope/components/appearance/AppearanceIcon`: appearance icon
+- `@theme-hope/components/appearance/AppearanceSettings`: appearance settings
+- `@theme-hope/components/appearance/ColorMode`: color mode
+- `@theme-hope/components/appearance/ColorModeSwitch`: color mode switch
+- `@theme-hope/components/appearance/ThemeColor`: theme color
+- `@theme-hope/components/appearance/ThemeColorPicker`: theme color picker
+- `@theme-hope/components/appearance/ToggleFullScreen`: fullscreen toggle
+- `@theme-hope/components/appearance/ToggleFullScreenButton`: fullscreen toggle button
+
+### Transition Components
+
+- `@theme-hope/components/transition/DropTransition`: drop transition component
+
+  Slots: `default`
+
+### Blog Components
+
+- `@theme-hope/components/blog/ArticleItem`: article item
+
+  Slots: `articleTitle`, `articleCover`, `articleInfo`, `articleExcerpt`
+
+  - `articleTitle` slot receives `title` `isEncrypted` and `type` props.
+  - `articleCover` slot receives `cover` props.
+  - `articleInfo` slot receives `author` `category` `tag` `date` `isOriginal` `pageview` `readingTime` and `readingTimeLocale` props.
+  - `articleExcerpt` slot receives `excerpt` props.
+
+- `@theme-hope/components/blog/ArticleList`: article list
+
+  Slots: `articleTitle`, `articleCover`, `articleInfo`, `articleExcerpt`
+
+  - `articleTitle` slot is piped to `articleTitle` slot of `ArticleItem` component.
+  - `articleCover` slot is piped to `articleCover` slot of `ArticleItem` component.
+  - `articleInfo` slot is piped to `articleInfo` slot of `ArticleItem` component.
+  - `articleExcerpt` slot is piped to `articleExcerpt` slot of `ArticleItem` component.
+
+- `@theme-hope/components/blog/ArticlesInfo`: article info
+
+- `@theme-hope/components/blog/ArticleType`: article type
+
+- `@theme-hope/components/blog/BloggerInfo`: blogger info
+
+- `@theme-hope/components/blog/BlogHero`: blog homepage logo and introduction
+
+  Slots: `heroInfo`, `heroLogo`, `heroBg`,
+
+  - `heroBg` slot receives `text` `tagline` `isFullScreen` and `style` props.
+  - `logo` slot receives `image` `imageDark` `alt` and `style` props.
+  - `heroBg` slot receives `image` `imageDark` and `style` props.
+
+- `@theme-hope/components/blog/BlogHome`: blog home
+
+  Slots: `heroInfo`, `heroLogo`, `heroBg`, `heroBefore`, `heroAfter`, `articleCover`, `articleTitle`, `articleInfo`, `articleExcerpt`, `content`, `contentBefore`, `contentAfter`
+
+  - `heroInfo` slot is piped to `info` slot of `BlogHero` component.
+  - `heroLogo` slot is piped to `heroLogo` slot of `BlogHero` component.
+  - `heroBg` slot is piped to `heroBg` slot of `BlogHero` component.
+  - `articleCover` slot is piped to `articleCover` slot of `ArticleList` component.
+  - `articleTitle` slot is piped to `articleTitle` slot of `ArticleList` component.
+  - `articleInfo` slot is piped to `articleInfo` slot of `ArticleList` component.
+  - `articleExcerpt` slot is piped to `articleExcerpt` slot of `ArticleList` component.
+  - `contentBefore` slot is piped to `before` slot of `MarkdownContent` component.
+  - `contentAfter` slot is piped to `after` slot of `MarkdownContent` component.
+
+- `@theme-hope/components/blog/BlogMainLayout`: blog main layout
+
+  Slots: `default`
+
+- `@theme-hope/components/blog/CategoriesInfo`: Category info
+
+- `@theme-hope/components/blog/CategoryList`: Category list
+
+- `@theme-hope/components/blog/CategoryPage`: category page
+
+- `@theme-hope/components/blog/InfoList`: blog info list
+
+- `@theme-hope/components/blog/InfoPanel`: blog info panel
+
+- `@theme-hope/components/blog/Pagination`: pagination
+
+- `@theme-hope/components/blog/ProjectPanel`: blog homepage project panel
+
+- `@theme-hope/components/blog/SocialMedias`: social media links
+
+- `@theme-hope/components/blog/TagList`: tag list
+
+- `@theme-hope/components/blog/TagPage`: tag page
+
+- `@theme-hope/components/blog/TagsInfo`: tag info
+
+- `@theme-hope/components/blog/TimelineItems`: timeline items
+
+- `@theme-hope/components/blog/TimelineList`: timeline List
+
+- `@theme-hope/components/blog/TimelinePage`: timeline page
+
+- `@theme-hope/components/blog/TypePage`: type page
+
+- `@theme-hope/components/blog/icons`: blog icons
+
+### Encryption Components
 
 - `@theme-hope/modules/encrypt/components/GlobalEncrypt`: global encrypt wrapper
+
+  Slots: `default`
+
 - `@theme-hope/modules/encrypt/components/LocalEncrypt`: local encrypt wrapper
+
+  Slots: `default`
+
 - `@theme-hope/modules/encrypt/components/PasswordModal`: password input box
 
-Miscellaneous:
-
-- `@theme-hope/modules/encrypt/composables/index`: encryption Composition API
-- `@theme-hope/modules/encrypt/utils/index`: encryption utility functions
-
-:::
-
-::: details Appearance module component alias
-
-- `@theme-hope/modules/outlook/components/ColorMode`: theme color mode
-- `@theme-hope/modules/outlook/components/ColorModeSwitch`: theme color mode switch
-- `@theme-hope/modules/outlook/components/OutlookButton`: appearance button
-- `@theme-hope/modules/outlook/components/OutlookSettings`: appearance settings
-- `@theme-hope/modules/outlook/components/ThemeColor`: theme color
-- `@theme-hope/modules/outlook/components/ThemeColorPicker`: theme color picker
-- `@theme-hope/modules/outlook/components/ToggleFullScreen`: fullscreen
-- `@theme-hope/modules/outlook/components/ToggleFullScreenButton`: fullscreen toggle button
-
-Miscellaneous:
-
-- `@theme-hope/modules/outlook/components/icons/index`: appearance icons
-- `@theme-hope/modules/outlook/composables/index`: appearance Composition API
-
-:::
-
-## Using Slots
+## Overriding Components
 
 Some components provide slots, in this case, you can directly import the original component when overriding the component, and pass in the content you need through the slot.
 
+For details of each slot, please check [theme source code](https://github.com/vuepress-theme-hope/vuepress-theme-hope/tree/main/packages/theme/src/client/).
+
 ::: tip
 
-For demo of common slots, please refer [Main Layout Slot demo](../../demo/slot.md)。
+For demo of common slots, please check:
+
+- [Page Slot demo](../../demo/page-slot.md)。
+- [Home Slot demo](../../demo/home-slot.md)。
+- [B.og Slot demo](../../demo/blog-slot.md)。
 
 :::
 
@@ -235,7 +362,7 @@ export default {
   alias: {
     // Here you can direct aliases to your own components
     // For example, here we change the theme's home page component to HomePage.vue under user .vuepress/components
-    "@theme-hope/components/HomePage": path.resolve(
+    "@theme-hope/components/home/HomePage": path.resolve(
       __dirname,
       "./components/HomePage.vue",
     ),
@@ -258,63 +385,5 @@ export default {
 import HopeHomePage from "vuepress-theme-hope/components/HomePage.js";
 </script>
 ```
-
-:::
-
-Components that provide slots are as follows:
-
-**Theme**:
-
-- `AutoLink`: `default`, `before`, `after`
-- `CommonWrapper`: `default`, `navScreenTop`, `navScreenBottom`, `sidebar`, `sidebarTop`, `sidebarBottom`
-- `HeroInfo`: `logo`, `info`, `bg`
-
-  - `info` slot will receive `text` `tagline` `isFullScreen` and `style` props.
-  - `logo` slot will receive `image` `imageDark` `alt` and `style` props.
-  - `bg` slot will receive `image` `imageDark` and `style` props.
-
-- `HomePage`: `top`, `center`, `bottom`
-- `NormalPage`: `top`, `contentBefore`, `contentAfter`, `bottom`, `tocBefore`, `tocAfter`
-
-**Blog**:
-
-- `ArticleItem`: `title`, `cover`, `info`, `excerpt`
-
-  - `title` slot will receive `title` `isEncrypted` and `type` props.
-  - `excerpt` slot will receive `excerpt` props.
-  - `cover` slot will receive `cover` props.
-  - `info` slot will receive `info` props.
-
-- `BlogHero`: `bg`, `info`
-
-  - `info` slot will receive `text` `tagline` `image` `imageDark` `style` `alt` and `isFullScreen` props.
-  - `bg` slot will receive `image` `bgStyle` and `isFullScreen` props.
-
-- `PortfolioHero`: `avatar` `bg`, `info`
-
-  - `avatar` slot will receive `avatar` `avatarDark` `avatarStyle` and `alt` props.
-  - `info` slot will receive `name` `welcome` `title` `titles` and `links` props.
-  - `bg` slot will receive `image` `imageDark` and `bgStyle` props.
-
-**NavBar**:
-
-- `NavbarDropdown`: `title`
-- `NavActions`: `before`, `after`
-- `Navbar`: `startBefore`, `startAfter`, `centerBefore`, `centerAfter`, `endBefore`, `endAfter`
-- `NavbarBrand`: `default`
-- `NavScreen`: `before`, `after`
-- `NavScreenMenu`: `before`, `after`
-
-**SideBar**:
-
-- `Sidebar`: `top`, `default`, `bottom`
-
-**TOC**:
-
-- `TOC`: `before`, `after`
-
-::: tip
-
-For the corresponding location and function of each slot, please refer to [theme source code](https://github.com/vuepress-theme-hope/vuepress-theme-hope/tree/main/packages/theme/src/client/).
 
 :::

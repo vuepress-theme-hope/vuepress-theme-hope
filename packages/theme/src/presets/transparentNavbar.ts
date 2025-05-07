@@ -35,7 +35,7 @@ const COLOR_SELECTORS = [
   ".vp-navbar .auto-link.route-link-active",
   ".vp-action-link",
   ".vp-color-mode-switch",
-  ".vp-outlook-button",
+  ".vp-appearance-button",
   // search icons
   ".slimsearch-button",
   ".DocSearch-Button",
@@ -130,7 +130,7 @@ export const setupTransparentNavbar = ({
             routePath.value === routeLocale.value
         : (): boolean =>
             (frontmatter.value.portfolio as boolean | undefined) ??
-            frontmatter.value.layout === "BlogHome",
+            frontmatter.value.layout === "Blog",
   );
 
   const transparentNavbar = (): void => {

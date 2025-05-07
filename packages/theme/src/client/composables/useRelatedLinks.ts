@@ -3,10 +3,10 @@ import type { ComputedRef } from "vue";
 import { computed } from "vue";
 import { resolveRoute } from "vuepress/client";
 
-import { useData } from "@theme-hope/composables/index";
-import { useSidebarItems } from "@theme-hope/modules/sidebar/composables/index";
-import type { SidebarItem } from "@theme-hope/modules/sidebar/utils/index";
-import { resolveLinkInfo } from "@theme-hope/utils/index";
+import { useSidebarItems } from "@theme-hope/composables/sidebar/useSidebarItems";
+import { useData } from "@theme-hope/composables/useData";
+import { resolveLinkInfo } from "@theme-hope/utils/resolveLinkInfo";
+import type { SidebarItem } from "@theme-hope/utils/sidebar/typings";
 
 import type { AutoLinkOptions } from "../../shared/index.js";
 

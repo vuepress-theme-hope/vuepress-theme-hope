@@ -185,11 +185,7 @@ export const rollupBundle = (
             },
           ],
           plugins: [
-            entries
-              ? alias({
-                  entries,
-                })
-              : null,
+            entries ? alias({ entries }) : null,
             dts({
               compilerOptions: {
                 preserveSymlinks: false,

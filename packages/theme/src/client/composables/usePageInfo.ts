@@ -8,16 +8,11 @@ import type { ComputedRef } from "vue";
 import { computed, inject } from "vue";
 import { useFrontmatter } from "vuepress/client";
 
-import { useData } from "@theme-hope/composables/index";
-import type {
-  CategoryMapRef,
-  TagMapRef,
-} from "@theme-hope/modules/blog/composables/index";
-import type { PageInfoProps } from "@theme-hope/modules/info/components/PageInfo";
-import type {
-  PageCategory,
-  PageTag,
-} from "@theme-hope/modules/info/utils/index";
+import type { PageInfoProps } from "@theme-hope/components/info/PageInfo";
+import type { CategoryMapRef } from "@theme-hope/composables/blog/useCategoryMap";
+import type { TagMapRef } from "@theme-hope/composables/blog/useTagMap";
+import { useData } from "@theme-hope/composables/useData";
+import type { PageCategory, PageTag } from "@theme-hope/utils/info/typings";
 
 import { useAuthorInfo } from "./useAuthorInfo.js";
 import type {

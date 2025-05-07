@@ -59,10 +59,25 @@ You can add new layouts or override existing layouts via `layouts` option in [cl
 
 <!-- #region layout -->
 
-```js title=".vuepress/client.js"
+```vue title=".vuepress/layout/Layout.vue"
+<script setup lang="ts">
+import { Layout } from "vuepress-theme-hope/client";
+</script>
+
+<template>
+  <Layout>
+    <!-- Adding ADs before markdown content with contentBefore slot -->
+    <template #contentBefore>
+      <div>Advertisement contents</div>
+    </template>
+  </Layout>
+</template>
+```
+
+```ts title=".vuepress/client.ts"
 import { defineClientConfig } from "vuepress/client";
 import Changelog from "./layouts/Changelog.vue";
-import Layout from "./layouts/Layout.vue";
+import Layout from "./layouts/Changelog.vue";
 
 export default defineClientConfig({
   // You can override or add layouts here
@@ -103,11 +118,89 @@ The theme provides the following layouts:
 
   - `default`: 404 content slot
 
-- Slide (Only available when reveal.js is enabled)
-- BlogCategory (Only available when blog is enabled)
-- BlogHome (Only available when blog is enabled)
-- BlogType (Only available when blog is enabled)
-- Timeline (Only available when blog is enabled)
+- Slides (Only available when reveal.js is enabled)
+
+- Blog (Only available when blog is enabled)
+
+### Layout Slots
+
+- `default`
+
+  The slot of page content, which is the main slot of the layout.
+
+  Overriding the slot will override the whole page content (only navbar and sidebar are preserved).
+
+  If you have some pages that is wholely built by Vue Components instead of markdown, you can override this slot to build your own page.
+
+- `pageTop`
+
+  A slot at the top of the page, before breadcrumbs, page title and toc.
+
+- `pageBottom`
+
+  A slot at the bottom of the page, after page meta, page nav and comment box.
+
+- `content`
+
+  A slot for page content, this replaces all content generated from markdown, including contents coming from `contentBefore` and `contentAfter`.
+
+- `contentBefore`
+
+  A slot before content generated from markdown, and after the page title and toc.
+
+  Note: This slot won't work' when `content` slot is set.
+
+- `contentAfter`
+
+  A slot after content generated from markdown, and before page meta and page nav.
+
+  Note: This slot won't work' when `content` slot is set.
+
+- `toc`
+
+  A slot for table of contents, receiving a array of headings.
+
+  This will override the default table of contents element. You can use this slot to build your own table of contents.
+
+- `tocBefore`
+
+  A slot in page toc, before the actual table of contents. Useful for adding sponsor links or ads.
+
+- `tocAfter`
+
+  A slot in page toc, after the actual table of contents. Useful for adding sponsor links or ads.
+
+- `navScreenTop`
+
+  A slot at the top of nav screen.
+
+  The nav screen is the popup screen when you click the top right menu button in mobile view.
+
+- `navScreenBottom`
+
+  A slot at the bottom of nav screen.
+
+  The nav screen is the popup screen when you click the top right menu button in mobile view.
+
+- `sidebarItems`
+
+  A slot for sidebar items.
+
+  This slot will override the default sidebar items element. You can use this slot to build your own sidebar items.
+
+- `sidebarTop`
+
+  A slot at the top of sidebar.
+
+- `sidebarBottom`
+
+  A slot at the bottom of sidebar.
+
+- `heroInfo`
+
+  A slot for hero info.
+
+  This slot will override the default hero info element. You can use this slot to build your own hero info.
 
 ## By Overriding Components
 

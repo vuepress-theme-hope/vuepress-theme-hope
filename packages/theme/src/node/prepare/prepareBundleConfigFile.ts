@@ -43,24 +43,21 @@ defineCatalogInfoGetter((meta) => {
 
   if (enableBlog) {
     imports.push(
-      `import { BlogCategory, BlogHome, BlogType, BloggerInfo, SocialMedias, Timeline, setupBlog } from "${BUNDLE_FOLDER}modules/blog/export.js";`,
-      `import "${BUNDLE_FOLDER}modules/blog/styles/all.scss";`,
+      `import { Blog, BloggerInfo, SocialMedias, setupBlog } from "${BUNDLE_FOLDER}/exports/blog.js";`,
+      `import "${BUNDLE_FOLDER}/styles/blog/bundle.scss";`,
     );
-
     enhances.push(
       `app.component("BloggerInfo", BloggerInfo);`,
       `app.component("SocialMedias", SocialMedias);`,
     );
-
     setups.push("setupBlog();");
-
-    layouts.push("BlogCategory", "BlogHome", "BlogType", "Timeline");
+    layouts.push("Blog");
   }
 
   if (enableEncrypt) {
     imports.push(
-      `import { GlobalEncrypt, LocalEncrypt } from "${BUNDLE_FOLDER}modules/encrypt/export.js";`,
-      `import "${BUNDLE_FOLDER}modules/encrypt/styles/all.scss"`,
+      `import { GlobalEncrypt, LocalEncrypt } from "${BUNDLE_FOLDER}/exports/encrypt.js";`,
+      `import "${BUNDLE_FOLDER}/styles/encrypt/bundle.scss"`,
     );
 
     enhances.push(
@@ -72,14 +69,14 @@ defineCatalogInfoGetter((meta) => {
   return app.writeTemp(
     `theme-hope/config.js`,
     `\
-import { Layout, NotFound, injectDarkMode, setupDarkMode, setupSidebarItems, scrollPromise } from "${BUNDLE_FOLDER}export.js";
+import { Layout, NotFound, injectDarkMode, setupDarkMode, setupSidebarItems, scrollPromise } from "${BUNDLE_FOLDER}/exports/base.js";
 
 ${imports.join("\n")}
 
 import "${getModulePath("@vuepress/helper/colors.css", import.meta)}";
 import "${getModulePath("@vuepress/helper/normalize.css", import.meta)}";
 import "${getModulePath("@vuepress/helper/sr-only.css", import.meta)}";
-import "${BUNDLE_FOLDER}styles/all.scss";
+import "${BUNDLE_FOLDER}/styles/bundle.scss";
 
 ${actions.join("\n")}
 

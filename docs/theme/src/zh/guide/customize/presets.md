@@ -28,7 +28,7 @@ tag:
 
 使用:
 
-覆盖 `@theme-hope/modules/blog/components/BlogHero`，将上方组件导入原 `BlogHero` 的 `bg` 插槽。
+覆盖 `@theme-hope/components/blog/BlogHero`，将上方组件导入原 `BlogHero` 的 `bg` 插槽。
 
 ::: details 代码示例
 
@@ -42,7 +42,7 @@ export default defineUserConfig({
   // ...
 
   alias: {
-    "@theme-hope/modules/blog/components/BlogHero": path.resolve(
+    "@theme-hope/components/blog/BlogHero": path.resolve(
       __dirname,
       "./components/BlogHero.vue",
     ),
@@ -77,7 +77,7 @@ import BingHeroBackground from "vuepress-theme-hope/presets/BingHeroBackground.j
 
 使用:
 
-覆盖 `@theme-hope/modules/blog/components/BlogHero`，将上方组件导入原 `BlogHero` 的 `info` 插槽，同时原样传入插槽属性。
+覆盖 `@theme-hope/components/blog/BlogHero`，将上方组件导入原 `BlogHero` 的 `info` 插槽，同时原样传入插槽属性。
 
 ::: details 示例
 
@@ -91,7 +91,7 @@ export default defineUserConfig({
   // ...
 
   alias: {
-    "@theme-hope/modules/blog/components/BlogHero": path.resolve(
+    "@theme-hope/components/blog/BlogHero": path.resolve(
       __dirname,
       "./components/BlogHero.vue",
     ),

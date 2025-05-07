@@ -35,7 +35,7 @@ export default {
   alias: {
     // 你可以在这里将别名定向到自己的组件
     // 比如这里我们将主题的主页组件改为用户 .vuepress/components 下的 HomePage.vue
-    "@theme-hope/components/HomePage": path.resolve(
+    "@theme-hope/components/home/HomePage": path.resolve(
       __dirname,
       "./components/HomePage.vue",
     ),
@@ -56,7 +56,7 @@ export default {
 - `@theme-hope/components/HeroInfo` 主页 Logo 及介绍
 - `@theme-hope/components/HeroSlideDownButton`: Hero 下滑按钮
 - `@theme-hope/components/HighlightPanel`: 主页亮点
-- `@theme-hope/components/HomePage` 主页
+- `@theme-hope/components/home/HomePage` 主页
 - `@theme-hope/components/MarkdownContent` Markdown 内容
 - `@theme-hope/components/NormalPage` 常规页面
 - `@theme-hope/components/PageFooter` 页脚
@@ -142,29 +142,29 @@ export default {
 
 组件:
 
-- `@theme-hope/modules/blog/components/ArticleItem` 文章项
-- `@theme-hope/modules/blog/components/ArticleList` 文章列表
-- `@theme-hope/modules/blog/components/ArticleType` 文章类型
-- `@theme-hope/modules/blog/components/ArticlesInfo`: 文章信息
-- `@theme-hope/modules/blog/components/BloggerInfo` 博主信息
-- `@theme-hope/modules/blog/components/BlogHero` 博客主页 Logo 与介绍
-- `@theme-hope/modules/blog/components/BlogHome` 博客主页
-- `@theme-hope/modules/blog/components/BlogWrapper` 博客常规布局
-- `@theme-hope/modules/blog/components/CategoryList` 分类列表
-- `@theme-hope/modules/blog/components/CategoriesInfo`: 分类信息
-- `@theme-hope/modules/blog/components/InfoList` 博客信息列表
-- `@theme-hope/modules/blog/components/InfoPanel` 博客信息面板
-- `@theme-hope/modules/blog/components/Pagination` 分页组件
-- `@theme-hope/modules/blog/components/ProjectPanel` 博客主页项目面板
-- `@theme-hope/modules/blog/components/SocialMedias` 社交媒体链接
-- `@theme-hope/modules/blog/components/TagList` 标签列表
-- `@theme-hope/modules/blog/components/TagsInfo`: 标签信息
-- `@theme-hope/modules/blog/components/TimelineItems` 时间线项目
-- `@theme-hope/modules/blog/components/TimelineList` 时间线列表
+- `@theme-hope/components/blog/ArticleItem` 文章项
+- `@theme-hope/components/blog/ArticleList` 文章列表
+- `@theme-hope/components/blog/ArticleType` 文章类型
+- `@theme-hope/components/blog/ArticlesInfo`: 文章信息
+- `@theme-hope/components/blog/BloggerInfo` 博主信息
+- `@theme-hope/components/blog/BlogHero` 博客主页 Logo 与介绍
+- `@theme-hope/components/blog/BlogHome` 博客主页
+- `@theme-hope/components/blog/BlogWrapper` 博客常规布局
+- `@theme-hope/components/blog/CategoryList` 分类列表
+- `@theme-hope/components/blog/CategoriesInfo`: 分类信息
+- `@theme-hope/components/blog/InfoList` 博客信息列表
+- `@theme-hope/components/blog/InfoPanel` 博客信息面板
+- `@theme-hope/components/blog/Pagination` 分页组件
+- `@theme-hope/components/blog/ProjectPanel` 博客主页项目面板
+- `@theme-hope/components/blog/SocialMedias` 社交媒体链接
+- `@theme-hope/components/blog/TagList` 标签列表
+- `@theme-hope/components/blog/TagsInfo`: 标签信息
+- `@theme-hope/components/blog/TimelineItems` 时间线项目
+- `@theme-hope/components/blog/TimelineList` 时间线列表
 
 杂项:
 
-- `@theme-hope/modules/blog/components/icons` 博客图标
+- `@theme-hope/components/blog/icons` 博客图标
 - `@theme-hope/modules/blog/composables/index` 博客可组合 API
 
 :::
@@ -210,7 +210,13 @@ export default {
 
 ::: tip
 
-常用插槽位置示例，详见 [主布局插槽演示](../../demo/slot.md)。
+常用插槽位置示例，详见:
+
+- [页面插槽演示](../../demo/page-slot.md)
+
+- [主页插槽演示](../../demo/home-slot.md)
+
+- [博客插槽演示](../../demo/blog-slot.md)
 
 :::
 
@@ -238,7 +244,7 @@ export default {
   alias: {
     // 你可以在这里将别名定向到自己的组件
     // 比如这里我们将主题的主页组件改为用户 .vuepress/components 下的 HomePage.vue
-    "@theme-hope/components/HomePage": path.resolve(
+    "@theme-hope/components/home/HomePage": path.resolve(
       __dirname,
       "./components/HomePage.vue",
     ),

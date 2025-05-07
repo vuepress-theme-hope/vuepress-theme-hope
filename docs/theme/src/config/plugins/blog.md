@@ -107,7 +107,7 @@ Slugify function, used to convert key name which they are register in routes.
     /**
      * Layout name
      *
-     * @default 'BlogType'
+     * @default 'Blog'
      */
     layout?: string;
   }

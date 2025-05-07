@@ -32,4 +32,8 @@ actions:
 
 - [Slide Page](https://ecosystem.vuejs.press/plugins/markdown/revealjs/demo.html)
 
-- [Slot Demo](./slot.md)
+- [Page Slot Demo](./page-slot.md)
+
+- [Home Slot Demo](./home-slot.md)
+
+- [Blog Slot Demo](./blog-slot.md)

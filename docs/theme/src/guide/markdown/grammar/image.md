@@ -162,5 +162,5 @@ If the image is standalone in a line, wrapped or not wrapped by link, it will be
 <!-- markdownlint-enable MD034 -->
 
 <script setup lang="ts">
-import ColorModeSwitch from "@theme-hope/modules/outlook/components/ColorModeSwitch";
+import { ColorModeSwitch } from "vuepress-theme-hope/client";
 </script>

@@ -66,7 +66,7 @@ export const getRecentUpdatedArticles = ({
       dateSorter(pageA.data.git?.updatedTime, pageB.data.git?.updatedTime),
 
     path,
-    layout: "BlogType",
+    layout: "Blog",
     frontmatter: (localePath: string) => ({
       title: locales[localePath] ?? "Recent Updated",
       dir: { index: false },

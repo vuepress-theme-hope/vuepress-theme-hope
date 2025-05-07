@@ -46,7 +46,7 @@ export interface ThemeBlogHomeProjectOptions {
 }
 
 export interface ThemeBlogHomePageFrontmatter extends ThemeHomePageFrontmatter {
-  layout: "BlogHome";
+  layout: "Blog";
   /**
    * @default true
    */

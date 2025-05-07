@@ -1,7 +1,7 @@
 import type { SlotsType, VNode } from "vue";
 import { Transition, TransitionGroup, defineComponent, h } from "vue";
 
-export const DropTransition = defineComponent({
+export default defineComponent({
   name: "DropTransition",
 
   props: {
