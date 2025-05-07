@@ -73,7 +73,8 @@
 
 .vp-star-article-wrapper,
 .vp-category-wrapper,
-.vp-tag-wrapper {
+.vp-tag-wrapper,
+.timeline-list-wrapper {
   padding: 8px 0;
 
   .title {
@@ -83,16 +84,19 @@
       position: relative;
       bottom: -0.125rem;
 
-      width: 16px;
-      height: 16px;
+      width: 1em;
+      height: 1em;
       margin: 0 6px;
     }
 
     .num {
       position: relative;
-      margin: 0 2px;
-      font-size: 22px;
+
+      margin-inline-end: 0.25rem;
+
+      font-size: 1.5rem;
       font-family: var(--vp-font-heading);
+      letter-spacing: -1px;
     }
   }
 }
@@ -100,7 +104,7 @@
 .vp-star-articles {
   overflow-y: auto;
 
-  max-height: 80vh;
+  max-height: 75vh;
   margin: 8px auto;
   padding-inline-start: 0;
 
@@ -132,7 +136,7 @@
 .vp-category-wrapper {
   .vp-category-list {
     overflow-y: auto;
-    max-height: 80vh;
+    max-height: 75vh;
     margin: 8px auto;
   }
 }
@@ -140,7 +144,7 @@
 .vp-tag-wrapper {
   .vp-tag-list {
     overflow-y: auto;
-    max-height: 80vh;
+    max-height: 75vh;
     margin: 8px auto;
   }
 }

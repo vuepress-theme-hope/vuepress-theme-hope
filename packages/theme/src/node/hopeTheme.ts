@@ -87,8 +87,6 @@ export const hopeTheme = (
 
       define: () => ({
         // eslint-disable-next-line @typescript-eslint/naming-convention
-        __VP_BLOG__: status.enableBlog,
-        // eslint-disable-next-line @typescript-eslint/naming-convention
         __VP_BLOG_TYPES__: status.blogType,
         // eslint-disable-next-line @typescript-eslint/naming-convention
         __VP_MULTI_LANGUAGES__: status.hasMultipleLanguages,

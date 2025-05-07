@@ -27,8 +27,6 @@ import type {
 } from "../../shared/index.js";
 import { getAuthor, getCategory, getTag } from "../../shared/index.js";
 
-declare const __VP_BLOG__: boolean;
-
 export const usePageAuthor = (): ComputedRef<AuthorInfo[]> => {
   const frontmatter = useFrontmatter<ThemeBasePageFrontmatter>();
   const authorInfo = useAuthorInfo();
@@ -45,9 +43,10 @@ export const usePageAuthor = (): ComputedRef<AuthorInfo[]> => {
 
 export const usePageCategory = (): ComputedRef<PageCategory[]> => {
   const frontmatter = useFrontmatter<ThemeBasePageFrontmatter>();
-  const categoryMap = __VP_BLOG__
-    ? inject<CategoryMapRef>(Symbol.for("categoryMap"))
-    : null;
+  const categoryMap = inject<CategoryMapRef | null>(
+    Symbol.for("categoryMap"),
+    null,
+  );
 
   return computed(() =>
     getCategory(frontmatter.value.category ?? frontmatter.value.categories).map(
@@ -61,7 +60,7 @@ export const usePageCategory = (): ComputedRef<PageCategory[]> => {
 
 export const usePageTag = (): ComputedRef<PageTag[]> => {
   const frontmatter = useFrontmatter<ThemeBasePageFrontmatter>();
-  const tagMap = __VP_BLOG__ ? inject<TagMapRef>(Symbol.for("tagMap")) : null;
+  const tagMap = inject<TagMapRef | null>(Symbol.for("tagMap"), null);
 
   return computed(() =>
     getTag(frontmatter.value.tag ?? frontmatter.value.tags).map((name) => ({

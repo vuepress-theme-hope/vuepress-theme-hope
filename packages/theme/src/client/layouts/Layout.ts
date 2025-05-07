@@ -1,6 +1,6 @@
 import { RenderDefault, hasGlobalComponent } from "@vuepress/helper/client";
 import type { SlotsType, VNode } from "vue";
-import { computed, defineComponent, h, resolveComponent } from "vue";
+import { defineComponent, h, resolveComponent } from "vue";
 
 import CommonWrapper from "@theme-hope/components/CommonWrapper";
 import HomePage from "@theme-hope/components/HomePage";
@@ -8,11 +8,9 @@ import NormalPage from "@theme-hope/components/NormalPage";
 import PortfolioHome from "@theme-hope/components/PortfolioHome";
 import SkipLink from "@theme-hope/components/SkipLink";
 import { FadeInUpTransition } from "@theme-hope/components/transitions/index";
-import { useData, usePure, useWindowSize } from "@theme-hope/composables/index";
+import { useData, usePure } from "@theme-hope/composables/index";
 
 import type { ThemeBasePageFrontmatter } from "../../shared/index.js";
-
-declare const __VP_BLOG__: boolean;
 
 export default defineComponent({
   // eslint-disable-next-line vue/multi-word-component-names
@@ -37,18 +35,8 @@ export default defineComponent({
   }>,
 
   setup(_props, { slots }) {
-    const { frontmatter, page, theme, themeLocale } =
-      useData<ThemeBasePageFrontmatter>();
+    const { frontmatter, page } = useData<ThemeBasePageFrontmatter>();
     const isPure = usePure();
-    const { isMobile } = useWindowSize();
-
-    const sidebarDisplay = computed(() =>
-      __VP_BLOG__
-        ? (themeLocale.value.blog?.sidebarDisplay ??
-          theme.value.blog?.sidebarDisplay ??
-          "mobile")
-        : "none",
-    );
 
     return (): VNode[] => [
       h(SkipLink),
@@ -85,17 +73,9 @@ export default defineComponent({
                     ),
                   )),
 
-          navScreenBottom:
-            sidebarDisplay.value === "none" && hasGlobalComponent("BloggerInfo")
-              ? (): VNode | VNode[] | null => h(resolveComponent("BloggerInfo"))
-              : null,
-
-          sidebar:
-            !isMobile.value &&
-            sidebarDisplay.value === "always" &&
-            hasGlobalComponent("BloggerInfo")
-              ? (): VNode | VNode[] | null => h(resolveComponent("BloggerInfo"))
-              : null,
+          navScreenBottom: hasGlobalComponent("BloggerInfo")
+            ? (): VNode | VNode[] | null => h(resolveComponent("BloggerInfo"))
+            : null,
         },
       ),
     ];

@@ -183,17 +183,6 @@ tag:
 
 ::::
 
-### blog.sidebarDisplay
-
-- 类型: `"mobile" | "none" | "always"`
-- 默认值: `"mobile"`
-
-是否在侧边栏展示博主信息。
-
-- `"mobile"`: 在移动视图中显示在侧边栏中
-- `"always"`: 总是展示在侧边栏中
-- `"none"`: 永远不在侧边栏展示
-
 ### blog.timeline
 
 - 类型: `string`

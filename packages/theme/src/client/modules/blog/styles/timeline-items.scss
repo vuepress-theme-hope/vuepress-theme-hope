@@ -52,13 +52,12 @@
     padding-inline-start: 76px;
     list-style: none;
 
-    &::after {
+    &::before {
       content: " ";
 
       position: absolute;
       inset-inline-start: 64px;
       top: 14px;
-      z-index: 1;
 
       width: 4px;
       height: calc(100% - 38px);
@@ -135,6 +134,9 @@
       inset-inline-end: -19px;
       width: 6px;
       height: 6px;
+      transition:
+        background-color var(--vp-t-color),
+        border-color var(--vp-t-color);
     }
   }
 
@@ -173,12 +175,6 @@
       cursor: pointer;
 
       .timeline-date {
-        font-size: 16px;
-        transition:
-          border-color var(--vp-t-color),
-          color var(--vp-t-color),
-          font-size var(--vp-t-transform);
-
         // stylelint-disable-next-line max-nesting-depth
         &::before {
           border-color: var(--vp-c-accent-bg);
