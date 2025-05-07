@@ -98,21 +98,21 @@ The consideration of multiple passwords is separation of permissions. This allow
 
 ## Store your Passwords Securely
 
-If you want to manage your VuePress site on public hosting services such as GitHub or GitLab, it's important **not to expose** your passwords in `.vuepress/theme.ts`, especially in public repositories.
+If you want to publish source code to git providers, especially in public repositories, it's important **NOT to expose** your passwords in source code.
 
-To avoid this, you can use [dotenv](https://www.npmjs.com/package/dotenv) to load the passwords configuration from a `.env` file, and prevent it from being uploaded to the repositories.
+To achieve this, you can use [dotenv](https://www.npmjs.com/package/dotenv) to load the passwords configuration from a `.env` file.
 
-First you need to create a file `.env` in the root of your package to store passwords and other things you want to keep private.
+Create a file `.env` in the root of your package to store passwords and other things you want to keep private and add it to your `.gitignore` file.
 
 ```ini title=".env"
 PASSWORD=123456
 ```
 
-Then you can import the configuration in `.vuepress/theme.ts` like this:
+Then, load the env file with `dotenv/config` and set password using environment variables in `.vuepress/theme.ts` like this:
 
 ```ts twoslash{2,8} title=".vuepress/theme.ts"
 import { hopeTheme } from "vuepress-theme-hope";
-import 'dotenv/config'
+import "dotenv/config";
 
 export default hopeTheme({
   encrypt: {
@@ -125,6 +125,18 @@ export default hopeTheme({
 });
 ```
 
-Finally, add the `.env` to your `.gitignore` if you're using Git-powered hosting services. This prevents the file containing your secrets from being uploaded to the remote repositories. 
+To build with GitHub Actions, you can set passwords as secrets in your repository settings and load it with `env` in your workflow file.
 
-However, if you choose this approach, you probably won't be able to use GitHub Workflows to deploy your VuePress site. In most cases, you can simply keep your source code in a private repository, and then edit the default `.github/workflows/deploy-docs.yml` file to make GitHub Actions deploy the site to a public repository with Github Pages enabled. Generally speaking, GitHub is trustworthy for handling your deployments securely.
+```yaml title=".github/workflows/deploy-docs.yml"
+# ...
+jobs:
+  deploy-gh-pages:
+    # ...
+    steps:
+      # ...
+      - name: Build Docs
+        env:
+          PASSWORD: ${{secrets.PASSWORD}}
+        run: pnpm docs:build
+      # ...
+```
