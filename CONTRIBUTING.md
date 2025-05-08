@@ -76,7 +76,7 @@ After ensuring that the `pnpm lint` and `pnpm lint:md` commands emit no errors, 
 
 Since the docs are using local themes and plugins, you need to build the local project through `pnpm build` first.
 
-To start previewing, cd to the right project under `docs` directory, then run `pnpm docs:vite-dev` (using vite) or `pnpm docs:webpack-dev` (using webpack).
+To start previewing, cd to the right project under `docs` directory, then run `pnpm docs:vite-dev` (using Vite) or `pnpm docs:webpack-dev` (using Webpack).
 
 ## Project Modification
 

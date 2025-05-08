@@ -10,6 +10,6 @@ tag:
   - Theme Config
 ---
 
-You can customize markdown via `markdown` in theme options.
+You can customize Markdown via `markdown` in theme options.
 
 <Catalog />

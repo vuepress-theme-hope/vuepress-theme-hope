@@ -34,8 +34,6 @@ copyright: 无版权
 
 ## 页面标题
 
-The first H1 title in Markdown will be regarded as page title.
-
 Markdown 中的第一个 H1 标题会被视为页面标题。
 
 你可以在 Markdown 的 Frontmatter 中设置页面标题。

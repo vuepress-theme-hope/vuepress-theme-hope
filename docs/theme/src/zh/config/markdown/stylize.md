@@ -9,7 +9,7 @@ tag:
   - 主题配置
 ---
 
-以下选项在 markdown 中添加了新的样式化功能，可以在主题选项的 `markdown` 属性下进行设置。
+以下选项在 Markdown 中添加了新的样式化功能，可以在主题选项的 `markdown` 属性下进行设置。
 
 ## markdown.align
 

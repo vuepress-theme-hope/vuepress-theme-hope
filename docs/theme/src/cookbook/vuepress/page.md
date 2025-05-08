@@ -10,7 +10,7 @@ tag:
   - VuePress
 ---
 
-VuePress is markdown-centered. Each Markdown file inside your project is a standalone page.
+VuePress is Markdown-Centered. Each Markdown file inside your project is a standalone page.
 
 ## Routing
 

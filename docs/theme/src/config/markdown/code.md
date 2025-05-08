@@ -9,7 +9,7 @@ tag:
   - Theme Config
 ---
 
-The following options adds new code feature in markdown, and can be set **under `markdown` property** in theme options.
+The following options adds new code feature in Markdown, and can be set **under `markdown` property** in theme options.
 
 ## markdown.markdown.codeTabs
 

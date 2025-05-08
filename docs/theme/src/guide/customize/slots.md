@@ -51,7 +51,7 @@ import { Layout } from "vuepress-theme-hope/client";
 
 <template>
   <Layout>
-    <!-- Adding ADs before markdown content with contentBefore slot -->
+    <!-- Adding ADs before Markdown content with contentBefore slot -->
     <template #contentBefore>
       <div>AD contents</div>
     </template>

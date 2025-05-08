@@ -78,9 +78,7 @@ export default hopeTheme({
 });
 ```
 
-::: tip activeMatch 的高级用法
-
-`activeMatch` 给予你通过正则表达式控制路径是否激活的能力。
+::: tip `activeMatch` 给予你通过正则表达式控制路径是否激活的能力。
 
 :::
 

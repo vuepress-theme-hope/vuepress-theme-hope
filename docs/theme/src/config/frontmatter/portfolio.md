@@ -110,6 +110,6 @@ Social media links of the portfolio.
 
 Content type of the portfolio.
 
-- `portfolio` means display markdown content as portfolio style
-- `doc` means display markdown content as document style
-- `none` means hide markdown content
+- `portfolio` means display Markdown content as portfolio style
+- `doc` means display Markdown content as document style
+- `none` means hide Markdown content

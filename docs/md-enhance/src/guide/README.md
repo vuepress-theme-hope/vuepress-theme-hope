@@ -9,7 +9,7 @@ By installing and enabling this plugin, you can use more syntax in your Markdown
 
 ::: note Built-in enhancements by VuePress
 
-VuePress itself adds additional markdown features. See [official docs](https://vuejs.press/guide/markdown.html) for more information.
+VuePress itself adds additional Markdown features. See [official docs](https://vuejs.press/guide/markdown.html) for more information.
 
 :::
 

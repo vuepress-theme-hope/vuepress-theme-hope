@@ -16,7 +16,7 @@ This tutorial guides you on how to generate page in a VuePress project.
 
 ## Generating Pages
 
-VuePress is markdown-centered. Each Markdown file inside your project is a standalone page.
+VuePress is Markdown-Centered. Each Markdown file inside your project is a standalone page.
 
 By default, the route path of a page is determined by the relative path of your Markdown file.
 
