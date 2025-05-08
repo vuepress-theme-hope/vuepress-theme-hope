@@ -36,8 +36,18 @@ export default defineComponent({
     const codeContainer = shallowRef<HTMLDivElement>();
     const height = ref("0");
 
+    let previousState: boolean | null = null;
+
     useEventListener("beforeprint", () => {
       toggleIsExpand(true);
+    });
+
+    useEventListener("afterprint", () => {
+      if (previousState !== null) {
+        toggleIsExpand(previousState);
+      }
+
+      previousState = null;
     });
 
     return (): VNode =>

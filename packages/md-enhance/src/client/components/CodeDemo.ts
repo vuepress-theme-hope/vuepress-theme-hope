@@ -148,8 +148,18 @@ export default defineComponent({
       }
     };
 
+    let previousState: boolean | null = null;
+
     useEventListener("beforeprint", () => {
       toggleIsExpand(true);
+    });
+
+    useEventListener("afterprint", () => {
+      if (previousState !== null) {
+        toggleIsExpand(previousState);
+      }
+
+      previousState = null;
     });
 
     onMounted(async () => {
