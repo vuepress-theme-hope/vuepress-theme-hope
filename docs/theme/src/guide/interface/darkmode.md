@@ -52,43 +52,19 @@ Toggle the button to see effects: <ColorModeSwitch />
   <img v-else src="/light.png" alt="light" />
   ```
 
-- In scripts, you can import `useDarkMode` from `@vuepress/helper/client` to get dark mode status:
+- In scripts, you can import `useDarkMode` from `vuepress-theme-hope/client` to get dark mode status:
 
   ```ts twoslash
-  import { useDarkMode } from "@vuepress/helper/client";
+  import { useDarkMode } from "vuepress-theme-hope/client";
 
   export default {
     setup() {
-      const isDarkMode = useDarkMode();
+      const { isDarkMode } = useDarkMode();
 
       console.log(isDarkMode.value); // get dark mode status
     },
   };
   ```
-
-  If `@vuepress/helper` is not installed, you should install it first:
-
-  ::: code-tabs#shell
-
-  @tab pnpm
-
-  ```bash
-  pnpm add -D @vuepress/helper@next
-  ```
-
-  @tab yarn
-
-  ```bash
-  yarn add -D @vuepress/helper@next
-  ```
-
-  @tab npm
-
-  ```bash
-  npm i -D @vuepress/helper@next
-  ```
-
-  :::
 
 <script setup lang="ts">
 import { ColorModeSwitch } from "vuepress-theme-hope/client";
