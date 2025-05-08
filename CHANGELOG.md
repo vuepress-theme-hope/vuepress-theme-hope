@@ -4,6 +4,24 @@ All notable changes to this project will be documented in this file. See [Conven
 
 <!-- #region recent-change -->
 
+## [2.0.0-rc.87](https://github.com/vuepress-theme-hope/vuepress-theme-hope/compare/v2.0.0-rc.86...v2.0.0-rc.87) (2025-05-08)
+
+### ✨ Features
+
+- **md-enhance:** preserve state while printing ([84033e7](https://github.com/vuepress-theme-hope/vuepress-theme-hope/commit/84033e70c325c0f7aab09ffb37a6620e522fb190))
+
+### 🐛 Bug Fixes
+
+- **md-enhance:** resize properly for folded content ([7d03746](https://github.com/vuepress-theme-hope/vuepress-theme-hope/commit/7d037469302e94e4859113ea9d146eb0f83cd5a8))
+- **theme:** add missing style in bundle mode ([9c76adb](https://github.com/vuepress-theme-hope/vuepress-theme-hope/commit/9c76adbbd262409b8e2b5dc2d35fdc74b9491d85))
+- **theme:** add missing types ([caa9c59](https://github.com/vuepress-theme-hope/vuepress-theme-hope/commit/caa9c59182fc7a9727c5bc6bf9559a388161f819))
+- **theme:** fix blog hero info align ([f20482d](https://github.com/vuepress-theme-hope/vuepress-theme-hope/commit/f20482def26849369cc4487c185a1859c03256e4))
+- **theme:** fix CategoryPage ([a6fc5d3](https://github.com/vuepress-theme-hope/vuepress-theme-hope/commit/a6fc5d379b8715ec827da0ec785ef94249688d29))
+- **theme:** fix empty string issue in sidebar ([9684575](https://github.com/vuepress-theme-hope/vuepress-theme-hope/commit/968457582b5f145a8d8ace9770cbc576d2aece96))
+- **theme:** fix navbar slots ([1216ac8](https://github.com/vuepress-theme-hope/vuepress-theme-hope/commit/1216ac82c5c854e8f88a4f8f3f2afed42f6fada7))
+
+<!-- #region recent-change -->
+
 ## [2.0.0-rc.86](https://github.com/vuepress-theme-hope/vuepress-theme-hope/compare/v2.0.0-rc.85...v2.0.0-rc.86) (2025-05-07)
 
 ### ⚠ BREAKING CHANGES

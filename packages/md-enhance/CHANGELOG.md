@@ -4,6 +4,18 @@ All notable changes to this project will be documented in this file. See [Conven
 
 <!-- #region recent-change -->
 
+## [2.0.0-rc.87](https://github.com/vuepress-theme-hope/vuepress-theme-hope/compare/v2.0.0-rc.86...v2.0.0-rc.87) (2025-05-08)
+
+### ✨ Features
+
+- **md-enhance:** preserve state while printing ([84033e7](https://github.com/vuepress-theme-hope/vuepress-theme-hope/commit/84033e70c325c0f7aab09ffb37a6620e522fb190))
+
+### 🐛 Bug Fixes
+
+- **md-enhance:** resize properly for folded content ([7d03746](https://github.com/vuepress-theme-hope/vuepress-theme-hope/commit/7d037469302e94e4859113ea9d146eb0f83cd5a8))
+
+<!-- #region recent-change -->
+
 ## [2.0.0-rc.86](https://github.com/vuepress-theme-hope/vuepress-theme-hope/compare/v2.0.0-rc.85...v2.0.0-rc.86) (2025-05-07)
 
 ### 🐛 Bug Fixes
