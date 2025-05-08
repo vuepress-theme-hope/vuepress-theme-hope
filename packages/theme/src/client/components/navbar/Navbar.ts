@@ -149,14 +149,7 @@ export default defineComponent({
           ]),
         ],
       ),
-      h(
-        NavScreen,
-        { show: showScreen.value },
-        {
-          before: slots.navScreenTop,
-          after: slots.navScreenBottom,
-        },
-      ),
+      h(NavScreen, { show: showScreen.value }, slots),
     ];
   },
 });
