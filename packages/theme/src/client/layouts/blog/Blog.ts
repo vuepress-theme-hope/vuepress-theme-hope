@@ -1,4 +1,8 @@
-import type { Slot, SlotContent } from "@vuepress/helper/client";
+import type {
+  NonNullableSlotContent,
+  Slot,
+  SlotContent,
+} from "@vuepress/helper/client";
 import type { BlogPluginFrontmatter } from "@vuepress/plugin-blog";
 import type { SlotsType, VNode } from "vue";
 import { defineComponent, h } from "vue";
@@ -73,16 +77,15 @@ export default defineComponent({
         {},
         {
           ...slots,
-          default:
-            slots.default ??
-            ((): VNode =>
-              type === "category"
-                ? h(CategoryPage, {}, slots)
-                : type === "type"
-                  ? key === "timeline"
-                    ? h(TimelinePage, {}, slots)
-                    : h(TypePage, {}, slots)
-                  : h(BlogHome, {}, slots)),
+          default: (): NonNullableSlotContent =>
+            slots.default?.() ??
+            (type === "category"
+              ? h(CategoryPage, {}, slots)
+              : type === "type"
+                ? key === "timeline"
+                  ? h(TimelinePage, {}, slots)
+                  : h(TypePage, {}, slots)
+                : h(BlogHome, {}, slots)),
         },
       );
     };

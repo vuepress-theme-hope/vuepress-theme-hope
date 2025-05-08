@@ -54,12 +54,16 @@ export default defineComponent({
 
       const { name, key } = blogConfig;
 
-      if (!name) return null;
-
       return key === "category"
-        ? { component: CategoryList, items: categoryMap.value.map[name].items }
+        ? {
+            component: CategoryList,
+            items: name ? categoryMap.value.map[name].items : null,
+          }
         : key === "tag"
-          ? { component: TagList, item: tagMap.value.map[name].items }
+          ? {
+              component: TagList,
+              items: name ? tagMap.value.map[name].items : null,
+            }
           : null;
     });
 
@@ -77,7 +81,7 @@ export default defineComponent({
               ),
               slots.articlesBefore?.(),
               blogData.value?.items
-                ? h(DropTransition, { appear: true, delay: 0.08 }, () =>
+                ? h(DropTransition, { appear: true, delay: 0.08 }, () => [
                     h(
                       ArticleList,
                       {
@@ -87,7 +91,7 @@ export default defineComponent({
                       },
                       slots,
                     ),
-                  )
+                  ])
                 : null,
               slots.articlesAfter?.(),
             ],
