@@ -150,10 +150,10 @@ const a = 1;
 ::: tip 自定义提示
 :::
 
-::: warning 自定义警告
+::: warning 自定义注意
 :::
 
-::: caution 自定义危险
+::: caution 自定义警告
 :::
 
 ::::
