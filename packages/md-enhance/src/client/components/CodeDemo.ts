@@ -1,5 +1,5 @@
 import { LoadingIcon, decodeData } from "@vuepress/helper/client";
-import { useEventListener, useToggle } from "@vueuse/core";
+import { useEventListener, useResizeObserver, useToggle } from "@vueuse/core";
 import type { PropType, SlotsType, VNode } from "vue";
 import { computed, defineComponent, h, onMounted, ref, shallowRef } from "vue";
 
@@ -162,6 +162,13 @@ export default defineComponent({
       previousState = null;
     });
 
+    useResizeObserver(codeContainer, () => {
+      if (isExpanded.value) {
+        // eslint-disable-next-line @typescript-eslint/no-non-null-assertion
+        height.value = `${codeContainer.value!.clientHeight + 14}px`;
+      }
+    });
+
     onMounted(async () => {
       await loadDemo();
     });
@@ -181,7 +188,7 @@ export default defineComponent({
                   height.value = isExpanded.value
                     ? "0"
                     : // eslint-disable-next-line @typescript-eslint/no-non-null-assertion
-                      `${codeContainer.value!.clientHeight + 13.8}px`;
+                      `${codeContainer.value!.clientHeight + 14}px`;
                   toggleIsExpand();
                 },
               })
