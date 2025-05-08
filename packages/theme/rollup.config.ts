@@ -19,7 +19,7 @@ export default [
         "exports/encrypt",
         "exports/noop",
         "blog",
-        "bundle",
+        "index",
       ],
     },
     {
@@ -42,7 +42,6 @@ export default [
         "@vuepress/plugin-theme-data/client",
         "bcrypt-ts/browser",
       ],
-      dts: false,
       moduleSideEffects: (id) =>
         id.endsWith(".css") || id.includes("runTimeCheck"),
     },

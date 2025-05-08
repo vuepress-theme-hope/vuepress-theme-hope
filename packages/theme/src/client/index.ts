@@ -1,5 +1,15 @@
+export { default as ColorModeSwitch } from "@theme-hope/components/appearance/ColorModeSwitch";
+export { default as ThemeColorPicker } from "@theme-hope/components/appearance/ThemeColorPicker";
+export { default as ToggleFullScreenButton } from "@theme-hope/components/appearance/ToggleFullScreenButton";
+export { default as AutoLink } from "@theme-hope/components/base/AutoLink";
+export { default as PageContent } from "@theme-hope/components/base/PageContent";
+export { default as MainFadeInUpTransition } from "@theme-hope/components/base/MainFadeInUpTransition";
+export { default as MainLayout } from "@theme-hope/components/base/MainLayout";
+export { default as MarkdownContent } from "@theme-hope/components/base/MarkdownContent";
+export { default as PrintButton } from "@theme-hope/components/base/PrintButton";
+export { default as SkipLink } from "@theme-hope/components/base/SkipLink";
 export { default as DropTransition } from "@theme-hope/components/transitions/DropTransition";
-export { useDarkMode } from "@theme-hope/composables/useDarkMode";
-export { useData } from "@theme-hope/composables/useData";
+export * from "@theme-hope/composables/index";
 export * from "@theme-hope/layouts/base/index";
+export type * from "@theme-hope/typings/index";
 export * from "../shared/index.js";

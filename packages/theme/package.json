@@ -33,21 +33,21 @@
   "exports": {
     ".": "./lib/node/index.js",
     "./blog": {
-      "types": "./lib/client/blog.d.ts",
+      "types": "./lib/bundle/blog.d.ts",
       "custom": "./lib/client/blog.js",
       "default": "./lib/bundle/blog.js"
     },
     "./client": {
-      "types": "./lib/client/bundle.d.ts",
-      "custom": "./lib/client/index.js",
-      "default": "./lib/bundle/bundle.js"
+      "types": "./lib/bundle/index.d.ts",
+      "custom": "./lib/client/custom.js",
+      "default": "./lib/bundle/index.js"
     },
-    "./components/*.js": {
-      "types": "./lib/client/components/*.d.ts",
+    "./components/*": {
+      "types": "./lib/bundle/components/*.d.ts",
       "custom": "./lib/client/components/*.js",
       "default": "./lib/bundle/exports/noop.js"
     },
-    "./composables/*.js": {
+    "./composables/*": {
       "types": "./lib/client/composables/*.d.ts",
       "custom": "./lib/client/composables/*.js",
       "default": "./lib/bundle/exports/noop.js"
