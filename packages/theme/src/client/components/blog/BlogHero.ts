@@ -147,7 +147,7 @@ export default defineComponent({
                   },
                 ),
               slots.heroInfo?.(info.value) ??
-                h("div", { class: "vp-blog-hero-infos" }, [
+                h("div", { class: "vp-blog-hero-info" }, [
                   h(DropTransition, { appear: true, delay: 0.08 }, () =>
                     info.value.text
                       ? h(
