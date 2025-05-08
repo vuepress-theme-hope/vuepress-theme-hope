@@ -262,7 +262,7 @@ highlights:
       - title: 代码块
         icon: code
         details: 自定义代码块主题、行号、行高亮、复制按钮等
-        link: ./guide/markdown/code/fence.html.html
+        link: ./guide/markdown/code/fence.html
 
       - title: 图片预览
         icon: image
