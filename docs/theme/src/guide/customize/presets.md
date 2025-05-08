@@ -13,57 +13,43 @@ In order to meet the needs of different users, the theme provides some presets, 
 
 ## Component related
 
-::: tip
-
-To replace component using alias, you need to set `{ custom: true }` as second argument to `hopeTheme`.
-
-:::
-
 ### Bing Wallpapers
 
 Replace the background of your blog's homepage with daily Bing wallpaper.
 
-Components:
-
-- `"vuepress-theme-hope/presets/BingHeroBackground.js"`: Daily Bing wallpaper component
-
 Usage:
 
-Override `@theme-hope/components/blog/BlogHero` and import the above component into the `bg` slot of the original `BlogHero`.
+Override `heroBg` slot of `<Blog>` with the component from `"vuepress-theme-hope/presets/BingHeroBackground.js"`.
 
 ::: details Code Example
 
-```ts twoslash title=".vuepress/config.ts"
-import { getDirname, path } from "vuepress/utils";
-import { defineUserConfig } from "vuepress";
-
-const __dirname = getDirname(import.meta.url);
-
-export default defineUserConfig({
-  //...
-
-  alias: {
-    "@theme-hope/components/blog/BlogHero": path.resolve(
-      __dirname,
-      "./components/BlogHero.vue",
-    ),
-  },
-});
-```
-
-```vue title=".vuepress/components/BlogHero.vue"
+```vue title=".vuepress/layouts/Blog.vue"
 <script setup lang="ts">
-import BlogHero from "vuepress-theme-hope/blog/components/BlogHero.js";
+import { Blog } from "vuepress-theme-hope/blog";
 import BingHeroBackground from "vuepress-theme-hope/presets/BingHeroBackground.js";
 </script>
 
 <template>
-  <BlogHero>
-    <template #bg>
+  <Blog>
+    <template #heroBg>
       <BingHeroBackground />
     </template>
-  </BlogHero>
+  </Blog>
 </template>
+```
+
+```ts title=".vuepress/client.ts"
+import { defineClientConfig } from "vuepress/client";
+import Blog from "./layouts/Blog.vue";
+
+export default defineClientConfig({
+  //...
+
+  layouts: {
+    // ...
+    Blog,
+  },
+});
 ```
 
 :::
@@ -72,47 +58,39 @@ import BingHeroBackground from "vuepress-theme-hope/presets/BingHeroBackground.j
 
 Replace the description of the blog's home page with a random Hitokoto sentence (Chinese only).
 
-Components:
-
-- `"vuepress-theme-hope/presets/HitokotoBlogHero.js"`: A sentence component
-
 Usage:
 
-Override `@theme-hope/components/blog/BlogHero`, import the above component into the `info` slot of the original `BlogHero`, and pass in the slot properties as they are.
+Override `heroInfo` slot of `<Blog>` with the component from `"vuepress-theme-hope/presets/HitokotoBlogHero.js"`.
 
 ::: details Code Example
 
-```ts twoslash title=".vuepress/config.ts"
-import { getDirname, path } from "vuepress/utils";
-import { defineUserConfig } from "vuepress";
-
-const __dirname = getDirname(import.meta.url);
-
-export default defineUserConfig({
-  //...
-
-  alias: {
-    "@theme-hope/components/blog/BlogHero": path.resolve(
-      __dirname,
-      "./components/BlogHero.vue",
-    ),
-  },
-});
-```
-
-```vue title=".vuepress/components/BlogHero.vue"
+```vue title=".vuepress/layouts/Blog.vue"
 <script setup lang="ts">
-import BlogHero from "vuepress-theme-hope/blog/components/BlogHero.js";
+import { Blog } from "vuepress-theme-hope/blog";
 import HitokotoBlogHero from "vuepress-theme-hope/presets/HitokotoBlogHero.js";
 </script>
 
 <template>
-  <BlogHero>
-    <template #info="info">
-      <HitokotoBlogHero v-bind="info" />
+  <Blog>
+    <template #heroInfo="data">
+      <HitokotoBlogHero v-bind="data" />
     </template>
-  </BlogHero>
+  </Blog>
 </template>
+```
+
+```ts title=".vuepress/client.ts"
+import { defineClientConfig } from "vuepress/client";
+import Blog from "./layouts/Blog.vue";
+
+export default defineClientConfig({
+  //...
+
+  layouts: {
+    // ...
+    Blog,
+  },
+});
 ```
 
 :::
