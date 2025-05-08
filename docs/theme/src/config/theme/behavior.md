@@ -93,3 +93,10 @@ This is just a hack by setting `app.env.isDebug` to `true`.
 You can also add `--debug` flag while running `vuepress dev` or `vuepress build` to enable debug mode. (Recommended)
 
 :::
+
+## checkVuePress
+
+- 类型: `boolean`
+- 默认值: `true`
+
+Whether check VuePress version.

@@ -93,3 +93,10 @@ export default defineUserConfig({
 你还可以在运行 `vuepress dev` 或 `vuepress build` 时添加 `--debug` 标志以启用调试模式。(推荐)
 
 :::
+
+## checkVuePress
+
+- 类型: `boolean`
+- 默认值: `true`
+
+是否检查VuePress版本。
