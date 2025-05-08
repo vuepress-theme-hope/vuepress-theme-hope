@@ -38,7 +38,7 @@ export const resolveSidebarItem = (
 ): SidebarLinkItem | SidebarGroupItem => {
   const config = isString(item)
     ? resolveLinkInfo(resolvePrefix(pathPrefix, item))
-    : item.link
+    : isString(item.link)
       ? {
           ...item,
           link: isLinkInternal(item.link)
