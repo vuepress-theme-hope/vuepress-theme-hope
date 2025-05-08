@@ -80,6 +80,24 @@ export default defineClientConfig({
 
 <!-- #endregion layout -->
 
+基础布局可以从 `vuepress-theme-hope/client` 导入：
+
+```ts
+import { Layout, NotFound } from "vuepress-theme-hope/client";
+```
+
+博客布局可以从 `vuepress-theme-hope/blog` 导入：
+
+```ts
+import { Blog } from "vuepress-theme-hope/blog";
+```
+
+幻灯片布局可以从 `@vuepress/plugin-revealjs/layouts` 导入：
+
+```ts
+import { SlidePage } from "@vuepress/plugin-revealjs/layouts";
+```
+
 ::: tip
 
 常用插槽位置示例，详见:

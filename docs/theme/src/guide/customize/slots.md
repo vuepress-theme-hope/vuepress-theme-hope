@@ -80,13 +80,31 @@ export default defineClientConfig({
 
 <!-- #endregion layout -->
 
+The basic layouts can be imported from `vuepress-theme-hope/client`:
+
+```ts
+import { Layout, NotFound } from "vuepress-theme-hope/client";
+```
+
+The Blog layout can be imported from `vuepress-theme-hope/blog`:
+
+```ts
+import { Blog } from "vuepress-theme-hope/blog";
+```
+
+The Slides layout can be imported from `@vuepress/plugin-revealjs/layouts`:
+
+```ts
+import { SlidePage } from "@vuepress/plugin-revealjs/layouts";
+```
+
 ::: tip
 
 For demo of common slots, please check:
 
-- [Page Slot demo](../../demo/page-slot.md)。
-- [Home Slot demo](../../demo/home-slot.md)。
-- [Blog Slot demo](../../demo/blog-slot.md)。
+- [Page Slot demo](../../demo/page-slot.md)
+- [Home Slot demo](../../demo/home-slot.md)
+- [Blog Slot demo](../../demo/blog-slot.md)
 
 :::
 

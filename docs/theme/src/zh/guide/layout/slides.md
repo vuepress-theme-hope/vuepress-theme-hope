@@ -25,7 +25,7 @@ tag:
 
 ```md
 ---
-layout: SlideSlidesPage
+layout: Slides
 ---
 
 @slidestart
