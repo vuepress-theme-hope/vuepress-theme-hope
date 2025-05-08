@@ -97,6 +97,6 @@ You can also add `--debug` flag while running `vuepress dev` or `vuepress build`
 ## checkVuePress
 
 - 类型: `boolean`
-- 默认值: `true`
+- 默认值: `false`
 
 Whether check VuePress version.
