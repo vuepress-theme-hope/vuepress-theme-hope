@@ -97,6 +97,6 @@ export default defineUserConfig({
 ## checkVuePress
 
 - 类型: `boolean`
-- 默认值: `false`
+- 默认值: `true`
 
 是否检查VuePress版本。
