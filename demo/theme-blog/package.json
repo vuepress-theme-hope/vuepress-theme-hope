@@ -29,7 +29,7 @@
     "@vuepress/helper": "catalog:vuepress",
     "@vuepress/plugin-docsearch": "catalog:vuepress",
     "@vuepress/plugin-revealjs": "catalog:vuepress",
-    "@waline/client": "3.5.6",
+    "@waline/client": "3.5.7",
     "chart.js": "4.4.9",
     "echarts": "5.6.0",
     "katex": "0.16.22",
