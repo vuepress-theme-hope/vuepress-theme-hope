@@ -1,4 +1,4 @@
-import type { Slot, SlotContent } from "@vuepress/helper/client";
+import type { Slot } from "@vuepress/helper/client";
 import type { FunctionalComponent, VNode } from "vue";
 import { h } from "vue";
 
@@ -13,7 +13,7 @@ const InfoPanel: FunctionalComponent<
   Record<never, never>,
   [],
   {
-    bloggerInfo?: (bloggerInfo: BloggerInfoSlotData) => SlotContent;
+    bloggerInfo?: Slot<BloggerInfoSlotData>;
     infoBefore?: Slot;
     infoAfter?: Slot;
   }

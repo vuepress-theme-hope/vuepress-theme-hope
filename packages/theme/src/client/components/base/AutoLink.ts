@@ -1,4 +1,4 @@
-import type { NonNullableSlotContent, Slot } from "@vuepress/helper/client";
+import type { RequiredSlot, Slot } from "@vuepress/helper/client";
 import type { FunctionalComponent, VNode } from "vue";
 import { h, resolveComponent } from "vue";
 import { AutoLink as _AutoLink } from "vuepress/client";
@@ -25,7 +25,7 @@ const AutoLink: FunctionalComponent<
   {
     before?: Slot;
     after?: Slot;
-    default?: () => NonNullableSlotContent;
+    default?: RequiredSlot;
   }
 > = ({ config, iconSizing = "both" }, { emit, slots }) => {
   const { icon } = config;

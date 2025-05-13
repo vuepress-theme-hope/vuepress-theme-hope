@@ -1,4 +1,4 @@
-import type { Slot, SlotContent } from "@vuepress/helper/client";
+import type { Slot } from "@vuepress/helper/client";
 import { watchImmediate } from "@vueuse/core";
 import type { SlotsType, VNode } from "vue";
 import { defineComponent, h, onMounted, shallowRef } from "vue";
@@ -14,7 +14,7 @@ export default defineComponent({
   name: "SideBar",
 
   slots: Object as SlotsType<{
-    sidebarItems?: (sideItems: SidebarItemsSlotData) => SlotContent;
+    sidebarItems?: Slot<SidebarItemsSlotData>;
     sidebarTop?: Slot;
     sidebarBottom?: Slot;
   }>,

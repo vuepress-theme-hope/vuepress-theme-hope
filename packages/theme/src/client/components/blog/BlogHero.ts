@@ -1,4 +1,4 @@
-import type { SlotContent } from "@vuepress/helper/client";
+import type { Slot } from "@vuepress/helper/client";
 import { isString } from "@vuepress/helper/client";
 import type { SlotsType, VNode } from "vue";
 import { computed, defineComponent, h } from "vue";
@@ -9,8 +9,8 @@ import DropTransition from "@theme-hope/components/transitions/DropTransition";
 import { useData } from "@theme-hope/composables/useData";
 import type {
   HeroBackgroundSlotData,
-  HeroImageSlotData,
   HeroInfoSlotData,
+  HeroLogoSlotData,
 } from "@theme-hope/typings/slots";
 
 import type { ThemeBlogHomePageFrontmatter } from "../../../shared/index.js";
@@ -23,9 +23,9 @@ export default defineComponent({
   name: "BlogHero",
 
   slots: Object as SlotsType<{
-    heroInfo?: (props: HeroInfoSlotData) => SlotContent;
-    heroLogo?: (props: HeroImageSlotData) => SlotContent;
-    heroBg?: (props: HeroBackgroundSlotData) => SlotContent;
+    heroInfo?: Slot<HeroInfoSlotData>;
+    heroLogo?: Slot<HeroLogoSlotData>;
+    heroBg?: Slot<HeroBackgroundSlotData>;
   }>,
 
   setup(_props, { slots }) {

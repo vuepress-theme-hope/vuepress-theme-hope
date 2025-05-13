@@ -1,8 +1,4 @@
-import type {
-  NonNullableSlotContent,
-  Slot,
-  SlotContent,
-} from "@vuepress/helper/client";
+import type { RequiredSlotContent, Slot } from "@vuepress/helper/client";
 import type { BlogPluginFrontmatter } from "@vuepress/plugin-blog";
 import type { SlotsType, VNode } from "vue";
 import { defineComponent, h } from "vue";
@@ -20,8 +16,8 @@ import type {
   ArticleTitleSlotData,
   BloggerInfoSlotData,
   HeroBackgroundSlotData,
-  HeroImageSlotData,
   HeroInfoSlotData,
+  HeroLogoSlotData,
   SidebarItemsSlotData,
 } from "@theme-hope/typings/slots";
 
@@ -34,22 +30,22 @@ export default defineComponent({
     navScreenTop?: Slot;
     navScreenBottom?: Slot;
 
-    sidebarItems?: (sidebarItems: SidebarItemsSlotData) => SlotContent;
+    sidebarItems?: Slot<SidebarItemsSlotData>;
     sidebarTop?: Slot;
     sidebarBottom?: Slot;
 
     // article
-    articleCover?: (props: ArticleCoverSlotData) => SlotContent;
-    articleTitle?: (props: ArticleTitleSlotData) => SlotContent;
-    articleInfo?: (props: ArticleInfoSlotData) => SlotContent;
-    articleExcerpt?: (props: ArticleExcerptSlotData) => SlotContent;
+    articleCover?: Slot<ArticleCoverSlotData>;
+    articleTitle?: Slot<ArticleTitleSlotData>;
+    articleInfo?: Slot<ArticleInfoSlotData>;
+    articleExcerpt?: Slot<ArticleExcerptSlotData>;
 
     // articles
     articlesBefore?: Slot;
     articlesAfter?: Slot;
 
     // info
-    bloggerInfo?: (bloggerInfo: BloggerInfoSlotData) => SlotContent;
+    bloggerInfo?: Slot<BloggerInfoSlotData>;
     infoBefore?: Slot;
     infoAfter?: Slot;
 
@@ -59,9 +55,9 @@ export default defineComponent({
     contentAfter?: Slot;
 
     // home only
-    heroInfo?: (props: HeroInfoSlotData) => SlotContent;
-    heroLogo?: (props: HeroImageSlotData) => SlotContent;
-    heroBg?: (props: HeroBackgroundSlotData) => SlotContent;
+    heroInfo?: Slot<HeroInfoSlotData>;
+    heroLogo?: Slot<HeroLogoSlotData>;
+    heroBg?: Slot<HeroBackgroundSlotData>;
     heroBefore?: Slot;
     heroAfter?: Slot;
   }>,
@@ -77,7 +73,7 @@ export default defineComponent({
         {},
         {
           ...slots,
-          default: (): NonNullableSlotContent =>
+          default: (): RequiredSlotContent =>
             slots.default?.() ??
             (type === "category"
               ? h(CategoryPage, {}, slots)

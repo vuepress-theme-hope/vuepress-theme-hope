@@ -1,8 +1,4 @@
-import type {
-  NonNullableSlotContent,
-  Slot,
-  SlotContent,
-} from "@vuepress/helper/client";
+import type { Slot } from "@vuepress/helper/client";
 import type { SlotsType, VNode } from "vue";
 import { defineComponent, h } from "vue";
 
@@ -29,13 +25,11 @@ export default defineComponent({
     navScreenBottom?: Slot;
 
     // Sidebar
-    sidebarItems?: (
-      sidebarItems: SidebarItemsSlotData,
-    ) => NonNullableSlotContent;
+    sidebarItems?: Slot<SidebarItemsSlotData>;
     sidebarTop?: Slot;
     sidebarBottom?: Slot;
 
-    bloggerInfo?: (bloggerInfo: BloggerInfoSlotData) => SlotContent;
+    bloggerInfo?: Slot<BloggerInfoSlotData>;
   }>,
 
   setup(_props, { slots }) {

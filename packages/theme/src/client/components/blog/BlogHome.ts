@@ -1,4 +1,4 @@
-import type { Slot, SlotContent } from "@vuepress/helper/client";
+import type { Slot } from "@vuepress/helper/client";
 import type { SlotsType, VNode } from "vue";
 import { computed, defineComponent, h } from "vue";
 import { useFrontmatter } from "vuepress/client";
@@ -17,8 +17,8 @@ import type {
   ArticleTitleSlotData,
   BloggerInfoSlotData,
   HeroBackgroundSlotData,
-  HeroImageSlotData,
   HeroInfoSlotData,
+  HeroLogoSlotData,
 } from "@theme-hope/typings/slots";
 
 import type { ThemeBlogHomePageFrontmatter } from "../../../shared/index.js";
@@ -30,26 +30,26 @@ export default defineComponent({
 
   slots: Object as SlotsType<{
     // hero
-    heroInfo?: (props: HeroInfoSlotData) => SlotContent;
-    heroLogo?: (props: HeroImageSlotData) => SlotContent;
-    heroBg?: (props: HeroBackgroundSlotData) => SlotContent;
+    heroInfo?: Slot<HeroInfoSlotData>;
+    heroLogo?: Slot<HeroLogoSlotData>;
+    heroBg?: Slot<HeroBackgroundSlotData>;
 
     // hero before & after
     heroBefore?: Slot;
     heroAfter?: Slot;
 
     // article
-    articleCover?: (props: ArticleCoverSlotData) => SlotContent;
-    articleTitle?: (props: ArticleTitleSlotData) => SlotContent;
-    articleInfo?: (props: ArticleInfoSlotData) => SlotContent;
-    articleExcerpt?: (props: ArticleExcerptSlotData) => SlotContent;
+    articleCover?: Slot<ArticleCoverSlotData>;
+    articleTitle?: Slot<ArticleTitleSlotData>;
+    articleInfo?: Slot<ArticleInfoSlotData>;
+    articleExcerpt?: Slot<ArticleExcerptSlotData>;
 
     // articles
     articlesBefore?: Slot;
     articlesAfter?: Slot;
 
     // info
-    bloggerInfo?: (bloggerInfo: BloggerInfoSlotData) => SlotContent;
+    bloggerInfo?: Slot<BloggerInfoSlotData>;
     infoBefore?: Slot;
     infoAfter?: Slot;
 

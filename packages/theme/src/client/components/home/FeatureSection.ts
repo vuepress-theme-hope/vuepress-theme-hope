@@ -1,4 +1,4 @@
-import type { SlotContent } from "@vuepress/helper/client";
+import type { Slot } from "@vuepress/helper/client";
 import { isLinkExternal } from "@vuepress/helper/client";
 import type { FunctionalComponent } from "vue";
 import { h, resolveComponent } from "vue";
@@ -15,9 +15,9 @@ const FeatureSection: FunctionalComponent<
   ThemeProjectHomeFeatureOptions,
   Record<never, never>,
   {
-    image?: (props: ThemeProjectHomeFeatureOptions) => SlotContent;
-    info?: (props: ThemeProjectHomeFeatureOptions) => SlotContent;
-    highlights?: (props: ThemeProjectHomeHighlightItem[]) => SlotContent;
+    image?: Slot<ThemeProjectHomeFeatureOptions>;
+    info?: Slot<ThemeProjectHomeFeatureOptions>;
+    highlights?: Slot<ThemeProjectHomeHighlightItem[]>;
   }
 > = (props, { slots }) => {
   const {

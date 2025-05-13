@@ -51,11 +51,13 @@ export const extendsBundlerOptions = (
     }
 
     chainWebpack(bundlerOptions, app, (config) => {
-      const conditionNames =
-        (config.resolve.get("conditionNames") as string[] | undefined) ??
-        WEBPACK_DEFAULT_CONDITION_NAMES;
-
-      config.resolve.set("conditionNames", ["custom", ...conditionNames]);
+      if (config.resolve.conditionNames.values().length)
+        config.resolve.conditionNames.prepend("custom");
+      else
+        config.resolve.conditionNames.merge([
+          "custom",
+          ...WEBPACK_DEFAULT_CONDITION_NAMES,
+        ]);
     });
   }
 

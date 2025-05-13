@@ -1,4 +1,3 @@
-import type { SlotContent } from "@vuepress/helper/client";
 import type { FunctionalComponent, Slot } from "vue";
 import { h } from "vue";
 
@@ -16,7 +15,7 @@ const TimelinePage: FunctionalComponent<
     articlesAfter?: Slot;
 
     // info
-    bloggerInfo?: (bloggerInfo: BloggerInfoSlotData) => SlotContent;
+    bloggerInfo?: Slot<BloggerInfoSlotData>;
     infoBefore?: Slot;
     infoAfter?: Slot;
   }

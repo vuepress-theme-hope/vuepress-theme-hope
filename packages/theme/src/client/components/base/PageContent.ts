@@ -1,4 +1,4 @@
-import type { Slot, SlotContent } from "@vuepress/helper/client";
+import type { Slot } from "@vuepress/helper/client";
 import { RenderDefault, hasGlobalComponent } from "@vuepress/helper/client";
 import type { ComponentOptions, SlotsType, VNode } from "vue";
 import { defineComponent, h, resolveComponent } from "vue";
@@ -29,7 +29,7 @@ export default defineComponent({
     contentAfter?: Slot;
 
     // toc
-    toc?: (headers: TocSlotData) => SlotContent;
+    toc?: Slot<TocSlotData>;
     tocBefore?: Slot;
     tocAfter?: Slot;
   }>,

@@ -1,0 +1,19 @@
+diff --git a/lib/client/typings/slot.d.ts b/lib/client/typings/slot.d.ts
+index 7dead3f810bd16317cfc62eebbef97953e482820..480fa7950cbf0fca10b3cdc562fdcef4a8c679e8 100644
+--- a/lib/client/typings/slot.d.ts
++++ b/lib/client/typings/slot.d.ts
+@@ -1,7 +1,10 @@
+ import type { VNode } from 'vue';
++declare const NO_PROPS_MARKER: unique symbol;
++type NoPropsMarker = typeof NO_PROPS_MARKER;
+ export type SlotContent = VNode | VNode[] | string | null | undefined;
+-export type NonNullableSlotContent = NonNullable<SlotContent>;
++export type RequiredSlotContent = NonNullable<SlotContent>;
+ export type SingleSlotContent = VNode | string | null | undefined;
+-export type Slot<Props = Record<never, never>> = (props: Props) => SlotContent;
+-export type RequiredSlot<Props = Record<never, never>> = (props: Props) => NonNullableSlotContent;
+-export type SingleSlot<Props = Record<never, never>> = (props: Props) => SingleSlotContent;
++export type Slot<Props = NoPropsMarker> = Props extends NoPropsMarker ? () => SlotContent : (props: Props) => SlotContent;
++export type RequiredSlot<Props = NoPropsMarker> = Props extends NoPropsMarker ? () => RequiredSlotContent : (props: Props) => RequiredSlotContent;
++export type SingleSlot<Props = NoPropsMarker> = Props extends NoPropsMarker ? () => SingleSlotContent : (props: Props) => SingleSlotContent;
++export {};

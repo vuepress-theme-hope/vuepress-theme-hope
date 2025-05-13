@@ -1,4 +1,4 @@
-import type { NonNullableSlotContent, Slot } from "@vuepress/helper/client";
+import type { Slot } from "@vuepress/helper/client";
 import { RenderDefault, hasGlobalComponent } from "@vuepress/helper/client";
 import {
   useEventListener,
@@ -28,7 +28,7 @@ import { useSidebarItems } from "@theme-hope/composables/sidebar/useSidebarItems
 import { useData } from "@theme-hope/composables/useData";
 import { usePure } from "@theme-hope/composables/usePure";
 import { useWindowSize } from "@theme-hope/composables/useWindowSize";
-import type { SidebarItem } from "@theme-hope/typings/sidebar";
+import type { SidebarItemsSlotData } from "@theme-hope/typings/slots";
 
 import type {
   ThemeNormalPageFrontmatter,
@@ -77,7 +77,7 @@ export default defineComponent({
     navScreenBottom?: Slot;
 
     // Sidebar
-    sidebarItems?: (sidebarItems: SidebarItem[]) => NonNullableSlotContent;
+    sidebarItems?: Slot<SidebarItemsSlotData>;
     sidebarTop?: Slot;
     sidebarBottom?: Slot;
   }>,

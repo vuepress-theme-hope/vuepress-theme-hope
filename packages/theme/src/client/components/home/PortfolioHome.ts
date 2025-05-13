@@ -1,4 +1,4 @@
-import type { Slot, SlotContent } from "@vuepress/helper/client";
+import type { Slot } from "@vuepress/helper/client";
 import type { SlotsType, VNode } from "vue";
 import { defineComponent, h } from "vue";
 import { useFrontmatter } from "vuepress/client";
@@ -20,9 +20,9 @@ export default defineComponent({
   name: "PortfolioHome",
 
   slots: Object as SlotsType<{
-    portfolioInfo?: (props: PortfolioInfoSlotData) => SlotContent;
-    portfolioAvatar?: (props: PortfolioAvatarSlotData) => SlotContent;
-    portfolioBg?: (props: PortfolioBackgroundSlotData) => SlotContent;
+    portfolioInfo?: Slot<PortfolioInfoSlotData>;
+    portfolioAvatar?: Slot<PortfolioAvatarSlotData>;
+    portfolioBg?: Slot<PortfolioBackgroundSlotData>;
 
     // content
     content?: Slot;
