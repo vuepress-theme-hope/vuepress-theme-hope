@@ -1,6 +1,6 @@
 import { entries, keys, useRoutePaths } from "@vuepress/helper/client";
 import type { ComputedRef } from "vue";
-import { computed } from "vue";
+import { computed, onMounted, ref } from "vue";
 import { useRoute } from "vuepress/client";
 
 import { useData } from "@theme-hope/composables/useData";
@@ -15,6 +15,11 @@ export const useNavbarLanguageDropdown =
     const { routeLocale, site, siteLocale, theme, themeLocale } = useData();
     const routePaths = useRoutePaths();
     const route = useRoute();
+    const isMounted = ref(false);
+
+    onMounted(() => {
+      isMounted.value = true;
+    });
 
     return computed(() => {
       const localePaths = keys(site.value.locales);
@@ -54,8 +59,11 @@ export const useNavbarLanguageDropdown =
 
               // try to link to the corresponding page of current page
               link = routePaths.value.some((item) => item === targetLocalePage)
-                ? // try to keep current hash and query across languages
-                  fullPath.replace(path, targetLocalePage)
+                ? isMounted.value
+                  ? // try to keep current hash and query across languages
+                    fullPath.replace(path, targetLocalePage)
+                  : // avoid ssr mismatch
+                    targetLocalePage
                 : // Or fallback to homepage
                   (targetThemeLocale.home ?? targetLocalePath);
             }
@@ -69,7 +77,10 @@ export const useNavbarLanguageDropdown =
             text,
             link: path.replace(
               ":route",
-              route.fullPath.replace(routeLocale.value, ""),
+              (isMounted.value ? fullPath : path).replace(
+                routeLocale.value,
+                "",
+              ),
             ),
           })),
         ],
