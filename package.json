@@ -42,8 +42,8 @@
     "package.json": "sort-package-json"
   },
   "devDependencies": {
-    "@commitlint/cli": "19.8.0",
-    "@commitlint/config-conventional": "19.8.0",
+    "@commitlint/cli": "19.8.1",
+    "@commitlint/config-conventional": "19.8.1",
     "@lerna-lite/cli": "4.1.1",
     "@lerna-lite/publish": "4.1.1",
     "@rollup/plugin-alias": "5.1.1",
