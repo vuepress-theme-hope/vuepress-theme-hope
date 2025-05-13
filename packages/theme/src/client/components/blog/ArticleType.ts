@@ -3,7 +3,7 @@ import { computed, defineComponent, h } from "vue";
 import { RouteLink, resolveRoute } from "vuepress/client";
 
 import { useArticles } from "@theme-hope/composables/blog/useArticles";
-import { useBlogLocaleData } from "@theme-hope/composables/blog/useBlogLocale";
+import { useBlogLocale } from "@theme-hope/composables/blog/useBlogLocale";
 import { useStars } from "@theme-hope/composables/blog/useStars";
 import { useData } from "@theme-hope/composables/useData";
 
@@ -18,7 +18,7 @@ export default defineComponent({
     const { page, routeLocale } = useData();
     const articles = useArticles();
     const stars = useStars();
-    const blogLocale = useBlogLocaleData();
+    const blogLocale = useBlogLocale();
 
     const types = computed(() => {
       return [

@@ -59,7 +59,7 @@ export const frLocale: ThemeLocaleData = {
     errorHint: "Merci d'entrer un mot de passe valide !",
   },
 
-  routeLocales: {
+  routerLocales: {
     skipToContent: "Aller au contenu principal",
     notFoundTitle: "Page non trouvée",
     notFoundMsg: [

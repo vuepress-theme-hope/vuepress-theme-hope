@@ -56,7 +56,7 @@ export default defineComponent({
           class: "vp-skip-link sr-only",
           onClick: focusMainContent,
         },
-        themeLocale.value.routeLocales.skipToContent,
+        themeLocale.value.routerLocales.skipToContent,
       ),
     ];
   },

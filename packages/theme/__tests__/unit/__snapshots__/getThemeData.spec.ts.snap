@@ -31,7 +31,7 @@ exports[`should generate themeData correctly > Should contain basic properties 1
         "fullscreen": "Full Screen",
         "themeColor": "Theme Color",
       },
-      "routeLocales": {
+      "routerLocales": {
         "back": "Go back",
         "home": "Take me home",
         "notFoundMsg": [

@@ -1,3 +1,4 @@
+@use "@vuepress/highlighter-helper/scss/code-title-icon";
 @use "vuepress-theme-hope/presets/shinning-feature-panel";
 
 :root {
@@ -30,53 +31,35 @@
   overflow-wrap: break-word;
 }
 
-.code-block-title-bar {
-  &[data-title=".vuepress/config.ts"],
-  &[data-title=".vuepress/client.ts"],
-  &[data-title=".vuepress/theme.ts"],
-  &[data-title$=".scss"],
-  &[data-title$=".md"],
-  &[data-title$=".vue"] {
-    display: flex;
-    align-items: center;
-
-    &::before {
-      content: " ";
-
-      display: inline-block;
-
-      width: 1.5em;
-      height: 1.5em;
-      margin-inline-end: 0.5em;
-
-      background-position: center;
-      background-size: contain;
-      background-repeat: no-repeat;
-    }
-  }
-}
-
-.code-block-title-bar {
-  &[data-title=".vuepress/config.ts"],
-  &[data-title=".vuepress/client.ts"] {
-    &::before {
-      background-image: url("https://ecosystem.vuejs.press/images/hero.png");
-    }
-  }
-}
-
-.code-block-title-bar[data-title=".vuepress/theme.ts"]::before {
-  background-image: url("https://theme-hope-assets.vuejs.press/logo.svg");
-}
-
-.code-block-title-bar[data-title$=".scss"]::before {
-  background-image: url("https://sass-lang.com/assets/img/logos/logo.svg");
-}
-
-.code-block-title-bar[data-title$=".md"]::before {
-  background-image: url("https://theme-hope.vuejs.press/assets/image/markdown.svg");
-}
-
-.code-block-title-bar[data-title$=".vue"]::before {
-  background-image: url("https://theme-hope.vuejs.press/assets/image/vue.svg");
-}
+@include code-title-icon.style(
+  (
+    title: ".vuepress/config.ts",
+    match: "equals",
+    icon: "https://ecosystem.vuejs.press/images/hero.png",
+  ),
+  (
+    title: ".vuepress/client.ts",
+    match: "equals",
+    icon: "https://ecosystem.vuejs.press/images/hero.png",
+  ),
+  (
+    title: ".vuepress/theme.ts",
+    match: "equals",
+    icon: "https://theme-hope-assets.vuejs.press/logo.svg",
+  ),
+  (
+    title: ".scss",
+    match: "endsWith",
+    icon: "https://sass-lang.com/assets/img/logos/logo.svg",
+  ),
+  (
+    title: ".md",
+    match: "endsWith",
+    icon: "https://theme-hope.vuejs.press/assets/image/markdown.svg",
+  ),
+  (
+    title: ".vue",
+    match: "endsWith",
+    icon: "https://theme-hope.vuejs.press/assets/image/vue.svg",
+  )
+);

@@ -1,4 +1,4 @@
-import type { SlotContent } from "@vuepress/helper/client";
+import type { Slot } from "@vuepress/helper/client";
 import { hasGlobalComponent, isString } from "@vuepress/helper/client";
 import { watchImmediate } from "@vueuse/core";
 import type { SlotsType, VNode } from "vue";
@@ -29,9 +29,9 @@ export default defineComponent({
   name: "PortfolioHero",
 
   slots: Object as SlotsType<{
-    portfolioInfo?: (props: PortfolioInfoSlotData) => SlotContent;
-    portfolioAvatar?: (props: PortfolioAvatarSlotData) => SlotContent;
-    portfolioBg?: (props: PortfolioBackgroundSlotData) => SlotContent;
+    portfolioInfo?: Slot<PortfolioInfoSlotData>;
+    portfolioAvatar?: Slot<PortfolioAvatarSlotData>;
+    portfolioBg?: Slot<PortfolioBackgroundSlotData>;
   }>,
 
   setup(_props, { slots }) {

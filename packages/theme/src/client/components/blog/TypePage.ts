@@ -1,4 +1,4 @@
-import type { Slot, SlotContent } from "@vuepress/helper/client";
+import type { Slot } from "@vuepress/helper/client";
 import type { BlogPluginFrontmatter } from "@vuepress/plugin-blog/client";
 import { useBlogType } from "@vuepress/plugin-blog/client";
 import type { SlotsType, VNode } from "vue";
@@ -28,17 +28,17 @@ export default defineComponent({
     default?: Slot;
 
     // article
-    articleCover?: (props: ArticleCoverSlotData) => SlotContent;
-    articleTitle?: (props: ArticleTitleSlotData) => SlotContent;
-    articleInfo?: (props: ArticleInfoSlotData) => SlotContent;
-    articleExcerpt?: (props: ArticleExcerptSlotData) => SlotContent;
+    articleCover?: Slot<ArticleCoverSlotData>;
+    articleTitle?: Slot<ArticleTitleSlotData>;
+    articleInfo?: Slot<ArticleInfoSlotData>;
+    articleExcerpt?: Slot<ArticleExcerptSlotData>;
 
     // articles
     articlesBefore?: Slot;
     articlesAfter?: Slot;
 
     // info
-    bloggerInfo?: (bloggerInfo: BloggerInfoSlotData) => SlotContent;
+    bloggerInfo?: Slot<BloggerInfoSlotData>;
     infoBefore?: Slot;
     infoAfter?: Slot;
   }>,

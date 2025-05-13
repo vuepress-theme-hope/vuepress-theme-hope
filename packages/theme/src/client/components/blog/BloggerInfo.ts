@@ -1,4 +1,4 @@
-import type { SlotContent } from "@vuepress/helper/client";
+import type { Slot } from "@vuepress/helper/client";
 import { keys } from "@vuepress/helper/client";
 import type { SlotsType, VNode } from "vue";
 import { computed, defineComponent, h } from "vue";
@@ -6,7 +6,7 @@ import { RouteLink, withBase } from "vuepress/client";
 
 import SocialMedias from "@theme-hope/components/blog/SocialMedias";
 import { useArticles } from "@theme-hope/composables/blog/useArticles";
-import { useBlogLocaleData } from "@theme-hope/composables/blog/useBlogLocale";
+import { useBlogLocale } from "@theme-hope/composables/blog/useBlogLocale";
 import { useBlogOptions } from "@theme-hope/composables/blog/useBlogOptions";
 import { useCategoryMap } from "@theme-hope/composables/blog/useCategoryMap";
 import { useTagMap } from "@theme-hope/composables/blog/useTagMap";
@@ -23,11 +23,11 @@ export default defineComponent({
   name: "BloggerInfo",
 
   slots: Object as SlotsType<{
-    bloggerInfo?: (bloggerInfo: BloggerInfoSlotData) => SlotContent;
+    bloggerInfo?: Slot<BloggerInfoSlotData>;
   }>,
 
   setup(_props, { slots }) {
-    const blogLocale = useBlogLocaleData();
+    const blogLocale = useBlogLocale();
     const blogOptions = useBlogOptions();
     const { siteLocale, themeLocale } = useData();
     const articles = useArticles();

@@ -5,7 +5,7 @@ import { computed, defineComponent, h } from "vue";
 import TagList from "@theme-hope/components/blog/TagList";
 import { TagIcon } from "@theme-hope/components/blog/icons";
 import DropTransition from "@theme-hope/components/transitions/DropTransition";
-import { useBlogLocaleData } from "@theme-hope/composables/blog/useBlogLocale";
+import { useBlogLocale } from "@theme-hope/composables/blog/useBlogLocale";
 import { useTagMap } from "@theme-hope/composables/blog/useTagMap";
 import { useNavigate } from "@theme-hope/composables/useNavigate";
 
@@ -13,7 +13,7 @@ export default defineComponent({
   name: "TagsInfo",
 
   setup() {
-    const blogLocale = useBlogLocaleData();
+    const blogLocale = useBlogLocale();
     const tagMap = useTagMap();
     const navigate = useNavigate();
 

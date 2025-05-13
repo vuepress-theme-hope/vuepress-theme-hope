@@ -82,7 +82,7 @@ export const hopeTheme = (
 
       alias: behavior.custom
         ? { "@theme-hope": path.resolve(CLIENT_FOLDER) }
-        : {},
+        : undefined,
 
       define: () => ({
         // eslint-disable-next-line @typescript-eslint/naming-convention

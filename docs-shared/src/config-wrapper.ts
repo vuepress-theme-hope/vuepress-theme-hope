@@ -1,3 +1,5 @@
+import { viteBundler } from "@vuepress/bundler-vite";
+import { webpackBundler } from "@vuepress/bundler-webpack";
 import { addViteOptimizeDepsInclude } from "@vuepress/helper";
 import type { UserConfig } from "vuepress";
 import { defineUserConfig } from "vuepress";
@@ -26,7 +28,14 @@ export const config = (name: string, config: UserConfig): UserConfig => {
 
     head: pwaHead,
 
-    define: () => ({ IS_GITEE, IS_GITHUB, IS_NETLIFY }),
+    bundler:
+      process.env.BUNDLER === "webpack" ? webpackBundler() : viteBundler(),
+
+    define: () => ({
+      IS_GITEE,
+      IS_GITHUB,
+      IS_NETLIFY,
+    }),
 
     extendsBundlerOptions: (bundlerOptions: unknown, app): void => {
       addViteOptimizeDepsInclude(bundlerOptions, app, [

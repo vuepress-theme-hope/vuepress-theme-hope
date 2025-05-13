@@ -1,4 +1,4 @@
-import type { SlotContent } from "@vuepress/helper/client";
+import type { Slot } from "@vuepress/helper/client";
 import { isSupported, usePageview } from "@vuepress/plugin-comment/pageview";
 import type { PropType, SlotsType, VNode } from "vue";
 import {
@@ -15,7 +15,7 @@ import { useRoute, useRouter } from "vuepress/client";
 import ArticleItem from "@theme-hope/components/blog/ArticleItem";
 import Pagination from "@theme-hope/components/blog/Pagination";
 import DropTransition from "@theme-hope/components/transitions/DropTransition";
-import { useBlogLocaleData } from "@theme-hope/composables/blog/useBlogLocale";
+import { useBlogLocale } from "@theme-hope/composables/blog/useBlogLocale";
 import { useBlogOptions } from "@theme-hope/composables/blog/useBlogOptions";
 import type {
   ArticleCoverSlotData,
@@ -47,16 +47,16 @@ export default defineComponent({
   },
 
   slots: Object as SlotsType<{
-    articleCover?: (props: ArticleCoverSlotData) => SlotContent;
-    articleTitle?: (props: ArticleTitleSlotData) => SlotContent;
-    articleInfo?: (props: ArticleInfoSlotData) => SlotContent;
-    articleExcerpt?: (props: ArticleExcerptSlotData) => SlotContent;
+    articleCover?: Slot<ArticleCoverSlotData>;
+    articleTitle?: Slot<ArticleTitleSlotData>;
+    articleInfo?: Slot<ArticleInfoSlotData>;
+    articleExcerpt?: Slot<ArticleExcerptSlotData>;
   }>,
 
   setup(props, { slots }) {
     const route = useRoute();
     const router = useRouter();
-    const blogLocale = useBlogLocaleData();
+    const blogLocale = useBlogLocale();
     const blogOptions = useBlogOptions();
     const updatePageview = usePageview();
 

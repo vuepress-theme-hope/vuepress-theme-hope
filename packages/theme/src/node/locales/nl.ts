@@ -59,7 +59,7 @@ export const nlLocale: ThemeLocaleData = {
     errorHint: "Geliebe het juiste paswoord in te vullen!",
   },
 
-  routeLocales: {
+  routerLocales: {
     skipToContent: "Ga naar de hoofdinhoud",
     notFoundTitle: "Pagina niet gevonden",
     notFoundMsg: [

@@ -2,7 +2,8 @@ import type { VNode } from "vue";
 import { defineComponent, h } from "vue";
 
 import { PrintIcon } from "@theme-hope/components/info/icons";
-import { useData } from "@theme-hope/composables/useData";
+import { useMetaLocale } from "@theme-hope/composables/info/useMetaLocale";
+import { useTheme } from "@theme-hope/composables/useTheme";
 
 import "../../styles/info/print-button.scss";
 
@@ -10,7 +11,8 @@ export default defineComponent({
   name: "PrintButton",
 
   setup() {
-    const { theme, themeLocale } = useData();
+    const metaLocale = useMetaLocale();
+    const theme = useTheme();
 
     return (): VNode | null =>
       theme.value.print === false
@@ -20,7 +22,7 @@ export default defineComponent({
             {
               type: "button",
               class: "print-button",
-              title: themeLocale.value.metaLocales.print,
+              title: metaLocale.value.print,
               onClick: () => {
                 window.print();
               },

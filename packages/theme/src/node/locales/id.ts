@@ -59,7 +59,7 @@ export const idLocale: ThemeLocaleData = {
     errorHint: "Mohon masukkan kata sandi yang benar!",
   },
 
-  routeLocales: {
+  routerLocales: {
     skipToContent: "Langsung ke konten utama",
     notFoundTitle: "Halaman tidak ditemukan",
     notFoundMsg: [

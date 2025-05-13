@@ -59,7 +59,7 @@ export const ruLocale: ThemeLocaleData = {
     errorHint: "Пожалуйста, введите правильный пароль!",
   },
 
-  routeLocales: {
+  routerLocales: {
     skipToContent: "Перейти к основному содержанию",
     notFoundTitle: "Страница не найдена",
     notFoundMsg: [

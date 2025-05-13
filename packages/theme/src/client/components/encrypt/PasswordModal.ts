@@ -39,7 +39,7 @@ export default defineComponent({
     const hasTried = ref(false);
     const remember = ref(false);
 
-    const locale = computed(() => themeLocale.value.encryptLocales);
+    const encryptLocale = computed(() => themeLocale.value.encryptLocales);
 
     let hintHandler: number | null = null;
 
@@ -75,8 +75,8 @@ export default defineComponent({
               "div",
               { class: ["vp-decrypt-hint", { tried: hasTried.value }] },
               hasTried.value
-                ? locale.value.errorHint
-                : h(LockIcon, { "aria-label": locale.value.iconLabel }),
+                ? encryptLocale.value.errorHint
+                : h(LockIcon, { "aria-label": encryptLocale.value.iconLabel }),
             ),
             props.hint
               ? h("div", { class: "vp-decrypt-hint" }, props.hint)
@@ -85,7 +85,7 @@ export default defineComponent({
               h("input", {
                 type: "password",
                 value: password.value,
-                placeholder: locale.value.placeholder,
+                placeholder: encryptLocale.value.placeholder,
                 onInput: ({ target }: InputEvent) => {
                   password.value = (target as HTMLInputElement).value;
                 },
@@ -103,7 +103,11 @@ export default defineComponent({
                   remember.value = !remember.value;
                 },
               }),
-              h("label", { for: "remember-password" }, locale.value.remember),
+              h(
+                "label",
+                { for: "remember-password" },
+                encryptLocale.value.remember,
+              ),
             ]),
             h(
               "button",

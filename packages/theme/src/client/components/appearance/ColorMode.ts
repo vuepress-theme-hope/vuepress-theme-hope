@@ -1,9 +1,9 @@
 import type { VNode } from "vue";
-import { computed, defineComponent, h } from "vue";
+import { defineComponent, h } from "vue";
 
 import ColorModeSwitch from "@theme-hope/components/appearance/ColorModeSwitch";
+import { useAppearanceLocale } from "@theme-hope/composables/appearance/useAppearanceLocale";
 import { useDarkMode } from "@theme-hope/composables/useDarkMode";
-import { useThemeLocale } from "@theme-hope/composables/useTheme";
 
 import "../../styles/appearance/color-mode.scss";
 
@@ -11,10 +11,8 @@ export default defineComponent({
   name: "ColorMode",
 
   setup() {
-    const themeLocale = useThemeLocale();
+    const appearanceLocale = useAppearanceLocale();
     const { canToggle } = useDarkMode();
-
-    const locale = computed(() => themeLocale.value.outlookLocales.darkmode);
 
     return (): VNode | null =>
       canToggle.value
@@ -22,7 +20,7 @@ export default defineComponent({
             h(
               "label",
               { class: "vp-color-mode-title", for: "color-mode-switch" },
-              locale.value,
+              appearanceLocale.value.darkmode,
             ),
             h(ColorModeSwitch),
           ])

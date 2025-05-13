@@ -59,7 +59,7 @@ export const fiLocale: ThemeLocaleData = {
     errorHint: "Anna oikea salasana!",
   },
 
-  routeLocales: {
+  routerLocales: {
     skipToContent: "Hyppää sisältöön",
     notFoundTitle: "Sivua ei löytynyt",
     notFoundMsg: [

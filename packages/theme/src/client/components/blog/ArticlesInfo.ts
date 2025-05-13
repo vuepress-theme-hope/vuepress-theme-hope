@@ -5,7 +5,7 @@ import { RouteLink } from "vuepress/client";
 import { ArticleIcon } from "@theme-hope/components/blog/icons";
 import DropTransition from "@theme-hope/components/transitions/DropTransition";
 import { useArticles } from "@theme-hope/composables/blog/useArticles";
-import { useBlogLocaleData } from "@theme-hope/composables/blog/useBlogLocale";
+import { useBlogLocale } from "@theme-hope/composables/blog/useBlogLocale";
 import { useStars } from "@theme-hope/composables/blog/useStars";
 import { useNavigate } from "@theme-hope/composables/useNavigate";
 
@@ -14,7 +14,7 @@ export default defineComponent({
 
   setup() {
     const articles = useArticles();
-    const blogLocale = useBlogLocaleData();
+    const blogLocale = useBlogLocale();
     const stars = useStars();
     const navigate = useNavigate();
 

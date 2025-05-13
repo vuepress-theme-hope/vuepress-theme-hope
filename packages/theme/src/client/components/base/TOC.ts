@@ -1,8 +1,4 @@
-import type {
-  GetHeadersOptions,
-  Slot,
-  SlotContent,
-} from "@vuepress/helper/client";
+import type { GetHeadersOptions, Slot } from "@vuepress/helper/client";
 import { isPlainObject, useHeaders } from "@vuepress/helper/client";
 import { useToggle, watchImmediate } from "@vueuse/core";
 import type { PropType, SlotsType, VNode } from "vue";
@@ -39,7 +35,7 @@ export default defineComponent({
   },
 
   slots: Object as SlotsType<{
-    toc?: (headers: TocSlotData) => SlotContent;
+    toc?: Slot<TocSlotData>;
     tocBefore?: Slot;
     tocAfter?: Slot;
   }>,

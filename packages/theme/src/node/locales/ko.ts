@@ -59,7 +59,7 @@ export const koLocale: ThemeLocaleData = {
     errorHint: "정확한 비밀번호를 입력해주세요!",
   },
 
-  routeLocales: {
+  routerLocales: {
     skipToContent: "본문으로 건너뛰기",
     notFoundTitle: "페이지를 찾을 수 없습니다.",
     notFoundMsg: [

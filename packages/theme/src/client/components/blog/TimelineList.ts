@@ -4,7 +4,7 @@ import { RouteLink } from "vuepress/client";
 
 import { TimelineIcon } from "@theme-hope/components/blog/icons";
 import DropTransition from "@theme-hope/components/transitions/DropTransition";
-import { useBlogLocaleData } from "@theme-hope/composables/blog/useBlogLocale";
+import { useBlogLocale } from "@theme-hope/composables/blog/useBlogLocale";
 import { useTimeline } from "@theme-hope/composables/blog/useTimeline";
 import { useNavigate } from "@theme-hope/composables/useNavigate";
 
@@ -14,7 +14,7 @@ export default defineComponent({
   name: "TimelineList",
 
   setup() {
-    const blogLocale = useBlogLocaleData();
+    const blogLocale = useBlogLocale();
     const timelines = useTimeline();
     const navigate = useNavigate();
 

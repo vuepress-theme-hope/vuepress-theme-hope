@@ -6,8 +6,8 @@ import { defineComponent, h } from "vue";
 import AutoLink from "@theme-hope/components/base/AutoLink";
 import EditIcon from "@theme-hope/components/base/EditIcon";
 import { useEditLink } from "@theme-hope/composables/info/useEditLink";
+import { useMetaLocale } from "@theme-hope/composables/info/useMetaLocale";
 import { useMetaInfo } from "@theme-hope/composables/useMetaInfo";
-import { useThemeLocale } from "@theme-hope/composables/useTheme";
 
 import "../../styles/info/page-meta.scss";
 
@@ -15,11 +15,11 @@ export default defineComponent({
   name: "PageMeta",
 
   setup() {
-    const themeLocale = useThemeLocale();
     const metaInfo = useMetaInfo();
     const contributors = useContributors();
     const editLink = useEditLink();
     const lastUpdated = useLastUpdated(metaInfo.lastUpdated);
+    const metaLocale = useMetaLocale();
 
     return (): VNode =>
       h("footer", { class: "vp-page-meta" }, [
@@ -57,7 +57,7 @@ export default defineComponent({
                 h(
                   "span",
                   { class: "vp-meta-label" },
-                  `${themeLocale.value.metaLocales.contributors}: `,
+                  `${metaLocale.value.contributors}: `,
                 ),
                 contributors.value.map(
                   ({ email, name }, index, contributors) => [

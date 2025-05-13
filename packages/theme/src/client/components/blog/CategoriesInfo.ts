@@ -5,7 +5,7 @@ import { computed, defineComponent, h } from "vue";
 import CategoryList from "@theme-hope/components/blog/CategoryList";
 import { CategoryIcon } from "@theme-hope/components/blog/icons";
 import DropTransition from "@theme-hope/components/transitions/DropTransition";
-import { useBlogLocaleData } from "@theme-hope/composables/blog/useBlogLocale";
+import { useBlogLocale } from "@theme-hope/composables/blog/useBlogLocale";
 import { useCategoryMap } from "@theme-hope/composables/blog/useCategoryMap";
 import { useNavigate } from "@theme-hope/composables/useNavigate";
 
@@ -13,7 +13,7 @@ export default defineComponent({
   name: "CategoriesInfo",
 
   setup() {
-    const blogLocale = useBlogLocaleData();
+    const blogLocale = useBlogLocale();
     const categoryMap = useCategoryMap();
     const navigate = useNavigate();
 

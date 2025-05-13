@@ -3,9 +3,9 @@ import type { VNode } from "vue";
 import { defineComponent, h, resolveComponent } from "vue";
 
 import AutoLink from "@theme-hope/components/base/AutoLink";
+import { useMetaLocale } from "@theme-hope/composables/info/useMetaLocale";
 import { useNavigate } from "@theme-hope/composables/useNavigate";
 import { useRelatedLinks } from "@theme-hope/composables/useRelatedLinks";
-import { useThemeLocale } from "@theme-hope/composables/useTheme";
 
 import "../../styles/base/page-nav.scss";
 
@@ -13,7 +13,7 @@ export default defineComponent({
   name: "PageNav",
 
   setup() {
-    const themeLocale = useThemeLocale();
+    const metaLocale = useMetaLocale();
     const navigate = useNavigate();
     const { prevLink, nextLink } = useRelatedLinks();
 
@@ -39,7 +39,7 @@ export default defineComponent({
               ? h(AutoLink, { class: "prev", config: prevLink.value }, () => [
                   h("div", { class: "hint" }, [
                     h("span", { class: "arrow start" }),
-                    themeLocale.value.metaLocales.prev,
+                    metaLocale.value.prev,
                   ]),
                   h("div", { class: "link" }, [
                     h(resolveComponent("VPIcon"), {
@@ -52,7 +52,7 @@ export default defineComponent({
             nextLink.value
               ? h(AutoLink, { class: "next", config: nextLink.value }, () => [
                   h("div", { class: "hint" }, [
-                    themeLocale.value.metaLocales.next,
+                    metaLocale.value.next,
                     h("span", { class: "arrow end" }),
                   ]),
                   h("div", { class: "link" }, [

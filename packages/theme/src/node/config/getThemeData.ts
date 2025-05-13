@@ -21,7 +21,7 @@ const ROOT_DISALLOW_CONFIG = [
   "metaLocales",
   "navbarLocales",
   "outlookLocales",
-  "routeLocales",
+  "routerLocales",
   "blogLocales",
   "encryptLocales",
   "paginationLocales",

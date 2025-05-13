@@ -1,9 +1,9 @@
 import { entries, fromEntries } from "@vuepress/helper/client";
 import type { VNode } from "vue";
-import { computed, defineComponent, h } from "vue";
+import { defineComponent, h } from "vue";
 
 import ThemeColorPicker from "@theme-hope/components/appearance/ThemeColorPicker";
-import { useThemeLocale } from "@theme-hope/composables/useTheme";
+import { useAppearanceLocale } from "@theme-hope/composables/appearance/useAppearanceLocale";
 
 import cssVariables from "../../styles/variables.module.scss";
 import "../../styles/appearance/theme-color.scss";
@@ -21,9 +21,7 @@ export default defineComponent({
   name: "ThemeColor",
 
   setup() {
-    const themeLocale = useThemeLocale();
-
-    const locale = computed(() => themeLocale.value.outlookLocales.themeColor);
+    const appearanceLocale = useAppearanceLocale();
 
     return (): VNode | null =>
       hasMultipleThemeColors
@@ -31,7 +29,7 @@ export default defineComponent({
             h(
               "label",
               { class: "vp-theme-color-title", for: "theme-color-picker" },
-              locale.value,
+              appearanceLocale.value.themeColor,
             ),
             h(ThemeColorPicker, { themeColors }),
           ])

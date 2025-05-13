@@ -59,7 +59,7 @@ export const esLocale: ThemeLocaleData = {
     errorHint: "Por favor ingrese la contraseña correcta!",
   },
 
-  routeLocales: {
+  routerLocales: {
     skipToContent: "Saltar al contenido principal",
     notFoundTitle: "Página no encontrada",
     notFoundMsg: [

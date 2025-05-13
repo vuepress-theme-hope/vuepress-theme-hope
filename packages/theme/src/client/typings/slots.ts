@@ -18,7 +18,7 @@ export interface HeroInfoSlotData {
   style: Style | null;
 }
 
-export interface HeroImageSlotData {
+export interface HeroLogoSlotData {
   image: string | null;
   imageDark: string | null;
   alt: string;

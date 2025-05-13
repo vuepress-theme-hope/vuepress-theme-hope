@@ -1,6 +1,7 @@
 import type { ComputedRef } from "vue";
 import { computed } from "vue";
 
+import { useMetaLocale } from "@theme-hope/composables/info/useMetaLocale";
 import { useData } from "@theme-hope/composables/useData";
 import { resolveEditLink } from "@theme-hope/utils/info/resolveEditLink";
 
@@ -8,6 +9,7 @@ import type { AutoLinkOptions } from "../../../shared/index.js";
 
 export const useEditLink = (): ComputedRef<null | AutoLinkOptions> => {
   const { frontmatter, page, themeLocale } = useData();
+  const metaLocale = useMetaLocale();
 
   return computed(() => {
     const {
@@ -36,7 +38,7 @@ export const useEditLink = (): ComputedRef<null | AutoLinkOptions> => {
     if (!link) return null;
 
     return {
-      text: themeLocale.value.metaLocales.editLink,
+      text: metaLocale.value.editLink,
       link,
     };
   });

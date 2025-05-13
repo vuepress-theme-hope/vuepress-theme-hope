@@ -1,4 +1,4 @@
-import type { NonNullableSlotContent } from "@vuepress/helper/client";
+import type { RequiredSlot } from "@vuepress/helper/client";
 import type { FunctionalComponent } from "vue";
 import { h } from "vue";
 
@@ -15,7 +15,7 @@ export interface IconBaseProps {
 export const IconBase: FunctionalComponent<
   IconBaseProps,
   Record<never, never>,
-  { default: () => NonNullableSlotContent }
+  { default: RequiredSlot }
 > = ({ name = "", color = "currentColor", ariaLabel }, { attrs, slots }) =>
   h(
     "svg",

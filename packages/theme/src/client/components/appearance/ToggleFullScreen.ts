@@ -1,9 +1,9 @@
 import { useFullscreen } from "@vueuse/core";
 import type { VNode } from "vue";
-import { computed, defineComponent, h } from "vue";
+import { defineComponent, h } from "vue";
 
 import ToggleFullScreenButton from "@theme-hope/components/appearance/ToggleFullScreenButton";
-import { useThemeLocale } from "@theme-hope/composables/useTheme";
+import { useAppearanceLocale } from "@theme-hope/composables/appearance/useAppearanceLocale";
 
 import "../../styles/appearance/toggle-full-screen.scss";
 
@@ -11,12 +11,8 @@ export default defineComponent({
   name: "ToggleFullScreenButton",
 
   setup() {
-    const themeLocale = useThemeLocale();
+    const appearanceLocale = useAppearanceLocale();
     const { isSupported } = useFullscreen();
-
-    const fullscreenLocale = computed(
-      () => themeLocale.value.outlookLocales.fullscreen,
-    );
 
     return (): VNode | null =>
       isSupported.value
@@ -24,7 +20,7 @@ export default defineComponent({
             h(
               "label",
               { class: "full-screen-title", for: "full-screen-switch" },
-              fullscreenLocale.value,
+              appearanceLocale.value.fullscreen,
             ),
             h(ToggleFullScreenButton),
           ])

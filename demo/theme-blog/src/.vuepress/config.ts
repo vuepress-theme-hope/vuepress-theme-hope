@@ -1,3 +1,5 @@
+import { viteBundler } from "@vuepress/bundler-vite";
+import { webpackBundler } from "@vuepress/bundler-webpack";
 import { defineUserConfig } from "vuepress";
 
 import theme from "./theme.js";
@@ -21,6 +23,8 @@ export default defineUserConfig({
       description: "vuepress-theme-hope 的博客演示",
     },
   },
+
+  bundler: process.env.BUNDLER === "webpack" ? webpackBundler() : viteBundler(),
 
   theme,
 

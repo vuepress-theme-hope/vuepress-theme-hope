@@ -13,7 +13,7 @@ import {
   TimelineIcon,
 } from "@theme-hope/components/blog/icons";
 import DropTransition from "@theme-hope/components/transitions/DropTransition";
-import { useBlogLocaleData } from "@theme-hope/composables/blog/useBlogLocale";
+import { useBlogLocale } from "@theme-hope/composables/blog/useBlogLocale";
 
 import "../../styles/blog/info-list.scss";
 
@@ -30,7 +30,7 @@ export default defineComponent({
   name: "InfoList",
 
   setup() {
-    const blogLocale = useBlogLocaleData();
+    const blogLocale = useBlogLocale();
 
     const activeType = ref<InfoType>("article");
 

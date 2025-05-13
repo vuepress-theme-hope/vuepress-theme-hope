@@ -3,9 +3,9 @@ import { computed, defineComponent, h } from "vue";
 import { RouteLink } from "vuepress/client";
 
 import DropTransition from "@theme-hope/components/transitions/DropTransition";
+import { useBlogLocale } from "@theme-hope/composables/blog/useBlogLocale";
 import { useBlogOptions } from "@theme-hope/composables/blog/useBlogOptions";
 import { useTimeline } from "@theme-hope/composables/blog/useTimeline";
-import { useThemeLocale } from "@theme-hope/composables/useTheme";
 
 import "../../styles/blog/timeline-items.scss";
 
@@ -14,13 +14,11 @@ export default defineComponent({
 
   setup() {
     const blogOptions = useBlogOptions();
-    const themeLocale = useThemeLocale();
+    const blogLocale = useBlogLocale();
     const timelines = useTimeline();
 
     const hint = computed(
-      () =>
-        blogOptions.value.timeline ??
-        themeLocale.value.blogLocales.timelineTitle,
+      () => blogOptions.value.timeline ?? blogLocale.value.timelineTitle,
     );
 
     return (): VNode =>

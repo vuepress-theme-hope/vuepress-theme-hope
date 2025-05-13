@@ -59,7 +59,7 @@ export const skLocale: ThemeLocaleData = {
     errorHint: "Prosím, zadaj správne heslo!",
   },
 
-  routeLocales: {
+  routerLocales: {
     skipToContent: "Preskočiť na hlavný obsah",
     notFoundTitle: "Stránka nenájdená",
     notFoundMsg: [

@@ -1,4 +1,4 @@
-import type { NonNullableSlotContent } from "@vuepress/helper/client";
+import type { RequiredSlot } from "@vuepress/helper/client";
 import type { SlotsType, VNode } from "vue";
 import { Transition, TransitionGroup, defineComponent, h } from "vue";
 
@@ -28,7 +28,7 @@ export default defineComponent({
   },
 
   slots: Object as SlotsType<{
-    default: () => NonNullableSlotContent;
+    default: RequiredSlot;
   }>,
 
   setup(props, { slots }) {

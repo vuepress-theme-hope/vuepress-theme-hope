@@ -53,7 +53,9 @@ export default defineComponent({
 
     const input = ref("");
 
-    const locale = computed(() => themeLocale.value.paginationLocales);
+    const paginationLocale = computed(
+      () => themeLocale.value.paginationLocales,
+    );
 
     const totalPages = computed(() => Math.ceil(props.total / props.perPage));
 
@@ -109,7 +111,7 @@ export default defineComponent({
       if (pageNum <= totalPages.value && pageNum > 0) navigate(pageNum);
       else
         message.pop(
-          `${ERROR_SVG}${locale.value.errorText.replace(
+          `${ERROR_SVG}${paginationLocale.value.errorText.replace(
             /\$page/gu,
             totalPages.value.toString(),
           )}`,
@@ -135,7 +137,7 @@ export default defineComponent({
                           navigate(props.current - 1);
                         },
                       },
-                      locale.value.prev,
+                      paginationLocale.value.prev,
                     )
                   : null,
 
@@ -199,7 +201,7 @@ export default defineComponent({
                           navigate(props.current + 1);
                         },
                       },
-                      locale.value.next,
+                      paginationLocale.value.next,
                     )
                   : null,
               ]),
@@ -207,7 +209,7 @@ export default defineComponent({
                 h(
                   "label",
                   { for: "navigation-text" },
-                  `${locale.value.navigate}: `,
+                  `${paginationLocale.value.navigate}: `,
                 ),
                 h("input", {
                   id: "navigation-text",
@@ -228,12 +230,12 @@ export default defineComponent({
                     class: "vp-pagination-button",
                     type: "button",
                     role: "navigation",
-                    title: locale.value.action,
+                    title: paginationLocale.value.action,
                     onClick: () => {
                       jumpPage(input.value);
                     },
                   },
-                  locale.value.action,
+                  paginationLocale.value.action,
                 ),
               ]),
             ])

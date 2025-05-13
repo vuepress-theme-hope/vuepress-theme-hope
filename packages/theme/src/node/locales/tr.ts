@@ -59,7 +59,7 @@ export const trLocale: ThemeLocaleData = {
     errorHint: "Lütfen doğru şifreyi girin!",
   },
 
-  routeLocales: {
+  routerLocales: {
     skipToContent: "Ana içeriğe atla",
     notFoundTitle: "Sayfa bulunamadı",
     notFoundMsg: [
