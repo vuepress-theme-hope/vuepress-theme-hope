@@ -59,7 +59,7 @@ export const brLocale: ThemeLocaleData = {
     errorHint: "Por favor, entre a senha correta!",
   },
 
-  routeLocales: {
+  routerLocales: {
     notFoundTitle: "Não Encontrado",
     skipToContent: "Pular para o conteúdo",
     notFoundMsg: [

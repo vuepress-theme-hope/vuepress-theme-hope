@@ -59,7 +59,7 @@ export const huLocale: ThemeLocaleData = {
     errorHint: "Kérjük, add meg a helyes jelszót!",
   },
 
-  routeLocales: {
+  routerLocales: {
     skipToContent: "Ugrás a fő tartalomhoz",
     notFoundTitle: "Az oldal nem található",
     notFoundMsg: [

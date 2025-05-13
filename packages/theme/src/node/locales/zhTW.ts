@@ -59,7 +59,7 @@ export const zhTWLocale: ThemeLocaleData = {
     errorHint: "請輸入正確密碼",
   },
 
-  routeLocales: {
+  routerLocales: {
     skipToContent: "跳至主要內容",
     notFoundTitle: "頁面不存在",
     notFoundMsg: [

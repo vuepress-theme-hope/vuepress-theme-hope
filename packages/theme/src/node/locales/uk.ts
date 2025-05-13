@@ -59,7 +59,7 @@ export const ukLocale: ThemeLocaleData = {
     errorHint: "Будь ласка, введіть правильний пароль!",
   },
 
-  routeLocales: {
+  routerLocales: {
     skipToContent: "Перейти до основного вмісту",
     notFoundTitle: "Сторінка не знайдена",
     notFoundMsg: [

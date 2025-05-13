@@ -1,5 +1,5 @@
 import type { VNode } from "vue";
-import { defineComponent, h } from "vue";
+import { computed, defineComponent, h, onMounted, ref } from "vue";
 import { useRouter } from "vuepress/client";
 import { useData } from "vuepress-theme-hope/client";
 
@@ -12,14 +12,28 @@ export default defineComponent({
   name: "HopeNotFoundHint",
 
   setup() {
-    const { routeLocale, themeLocale } = useData();
+    const { routeLocale, theme, themeLocale } = useData();
     const router = useRouter();
 
+    const isMounted = ref(false);
+
+    const expectedRouterLocale = computed(
+      () =>
+        theme.value.locales[isMounted.value ? routeLocale.value : "/"]
+          .routerLocales,
+    );
+
     const getMsg = (): string => {
-      const messages = themeLocale.value.routeLocales.notFoundMsg;
+      if (!isMounted.value) return expectedRouterLocale.value.notFoundMsg[0];
+
+      const messages = expectedRouterLocale.value.notFoundMsg;
 
       return messages[Math.floor(Math.random() * messages.length)];
     };
+
+    onMounted(() => {
+      isMounted.value = true;
+    });
 
     return (): VNode[] => [
       h("div", { class: "not-found-hint" }, [
@@ -34,7 +48,7 @@ export default defineComponent({
         h(
           "h1",
           { class: "error-title" },
-          themeLocale.value.routeLocales.notFoundTitle,
+          expectedRouterLocale.value.notFoundTitle,
         ),
         h("p", { class: "error-hint" }, getMsg()),
       ]),
@@ -48,7 +62,7 @@ export default defineComponent({
               window.history.go(-1);
             },
           },
-          themeLocale.value.routeLocales.back,
+          expectedRouterLocale.value.back,
         ),
         h(
           "button",
@@ -59,7 +73,7 @@ export default defineComponent({
               void router.push(themeLocale.value.home ?? routeLocale.value);
             },
           },
-          themeLocale.value.routeLocales.home,
+          expectedRouterLocale.value.home,
         ),
       ]),
     ];
