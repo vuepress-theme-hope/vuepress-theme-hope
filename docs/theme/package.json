@@ -11,18 +11,19 @@
   "type": "module",
   "scripts": {
     "docs:serve": "http-server -a localhost dist -o",
-    "docs:vite-build": "vuepress-vite build src",
-    "docs:vite-clean-dev": "vuepress-vite dev src --clean-cache --clean-temp",
-    "docs:vite-dev": "vuepress-vite dev src",
-    "docs:webpack-build": "vuepress-webpack build src",
-    "docs:webpack-clean-dev": "vuepress-webpack dev src --clean-cache --clean-temp",
-    "docs:webpack-dev": "vuepress-webpack dev src"
+    "docs:vite-build": "vuepress build src",
+    "docs:vite-clean-dev": "vuepress dev src --clean-cache --clean-temp",
+    "docs:vite-dev": "vuepress dev src",
+    "docs:webpack-build": "cross-env BUNDLER=webpack vuepress build src",
+    "docs:webpack-clean-dev": "cross-env BUNDLER=webpack vuepress dev src --clean-cache --clean-temp",
+    "docs:webpack-dev": "cross-env BUNDLER=webpack vuepress dev src"
   },
   "dependencies": {
     "@types/katex": "0.16.7",
     "@vue/repl": "4.5.1",
     "@vuepress/bundler-vite": "catalog:vuepress",
     "@vuepress/bundler-webpack": "catalog:vuepress",
+    "@vuepress/highlighter-helper": "catalog:vuepress",
     "@vuepress/helper": "catalog:vuepress",
     "@vuepress/plugin-feed": "catalog:vuepress",
     "@vuepress/plugin-revealjs": "catalog:vuepress",
