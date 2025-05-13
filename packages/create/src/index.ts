@@ -1,10 +1,10 @@
 #!/usr/bin/env node
+import { execSync, spawn } from "node:child_process";
 import { existsSync, readdirSync } from "node:fs";
 import { resolve } from "node:path";
 
 import { confirm, select } from "@inquirer/prompts";
 import { createCommand } from "commander";
-import { execaCommand, execaCommandSync } from "execa";
 
 import type {
   PackageManager,
@@ -22,7 +22,7 @@ import type { CreateLocale, SupportedLang } from "./i18n/index.js";
 import { getLanguage } from "./i18n/index.js";
 import { createPackageJson } from "./packageJson.js";
 import { createTsConfig } from "./tsconfig.js";
-import { ensureDirExistSync, getRegistry } from "./utils/index.js";
+import { ensureDirExistSync, getRegistry } from "./utils/index.js"; // Assuming utils use execSync if needed
 
 const program = createCommand("create-vuepress-theme-hope");
 
@@ -103,9 +103,9 @@ const postAction = async ({
   console.log(locale.flow.install);
   console.warn(locale.hint.install);
 
-  execaCommandSync(
+  execSync(
     `${packageManager} install ${registry ? `--registry ${registry}` : ""}`,
-    { cwd, stdout: "inherit" },
+    { cwd, stdio: "inherit" },
   );
 
   console.log(locale.hint.finish);
@@ -122,9 +122,24 @@ const postAction = async ({
   ) {
     console.log(locale.flow.devServer);
 
-    await execaCommand(`${packageManager} run docs:dev`, {
-      cwd,
-      stdout: "inherit",
+    await new Promise<void>((res, rej) => {
+      const child = spawn(`${packageManager} run docs:dev`, [], {
+        cwd,
+        stdio: "inherit",
+        shell: true,
+      });
+
+      child.on("close", (code) => {
+        if (code === 0) {
+          res();
+        } else {
+          rej(new Error(`code: ${code}`));
+        }
+      });
+
+      child.on("error", (err) => {
+        rej(new Error(`commandError: ${err}`));
+      });
     });
   } else {
     console.info(locale.hint.devServer(packageManager));

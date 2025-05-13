@@ -1,8 +1,11 @@
-import { execaCommandSync } from "execa";
+import { execSync } from "node:child_process";
 
 export const checkGitRepo = (cwd = process.cwd()): boolean => {
   try {
-    execaCommandSync("git status", { cwd });
+    execSync("git status", {
+      cwd,
+      stdio: "ignore",
+    });
 
     return true;
   } catch {
@@ -12,7 +15,7 @@ export const checkGitRepo = (cwd = process.cwd()): boolean => {
 
 export const checkGitInstalled = (): boolean => {
   try {
-    execaCommandSync("git --version");
+    execSync("git --version", { stdio: "ignore" });
 
     return true;
   } catch {

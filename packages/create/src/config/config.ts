@@ -1,4 +1,4 @@
-import { execaCommandSync } from "execa";
+import { spawnSync } from "node:child_process";
 
 export type SupportedBundler = "vite" | "webpack";
 export const supportedBundlers: SupportedBundler[] = ["vite", "webpack"];
@@ -11,7 +11,10 @@ export type PackageManager = "npm" | "yarn" | "pnpm";
 const checkPnpmInstalled = (): boolean => {
   try {
     return (
-      execaCommandSync("pnpm --version", { stdio: "ignore" }).exitCode === 0
+      spawnSync("pnpm --version", [], {
+        stdio: "ignore",
+        shell: true,
+      }).status === 0
     );
   } catch {
     return false;
@@ -21,7 +24,10 @@ const checkPnpmInstalled = (): boolean => {
 const checkYarnInstalled = (): boolean => {
   try {
     return (
-      execaCommandSync("yarn --version", { stdio: "ignore" }).exitCode === 0
+      spawnSync("yarn --version", [], {
+        stdio: "ignore",
+        shell: true,
+      }).status === 0
     );
   } catch {
     return false;
