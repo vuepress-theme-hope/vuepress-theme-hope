@@ -29,6 +29,12 @@ import type { HopeThemeBehaviorOptions } from "./typings/index.js";
 import { CLIENT_FOLDER, TEMPLATE_FOLDER, VERSION, logger } from "./utils.js";
 import type { ThemeOptions } from "../shared/index.js";
 
+const BEHAVIOR_DEFAULTS = {
+  check: true,
+  compact: true,
+  checkVuePress: true,
+};
+
 /**
  * VuePress Theme Hope
  *
@@ -40,14 +46,15 @@ export const hopeTheme = (
   // TODO: Change default value in v2 stable
   behaviorOptions: HopeThemeBehaviorOptions | boolean = true,
 ): ThemeFunction => {
-  checkVuePressVersion();
+  const behavior: HopeThemeBehaviorOptions = isPlainObject(behaviorOptions)
+    ? { ...BEHAVIOR_DEFAULTS, ...behaviorOptions }
+    : behaviorOptions
+      ? BEHAVIOR_DEFAULTS
+      : {};
+
+  if (behavior.checkVuePress) checkVuePressVersion();
 
   return (app) => {
-    const behavior: HopeThemeBehaviorOptions = isPlainObject(behaviorOptions)
-      ? { compact: true, check: true, ...behaviorOptions }
-      : behaviorOptions
-        ? { compact: true, check: true }
-        : {};
     const isDebug = behavior.debug ? (app.env.isDebug = true) : app.env.isDebug;
 
     const {
