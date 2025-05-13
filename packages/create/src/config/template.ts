@@ -1,9 +1,9 @@
+import { execSync } from "node:child_process";
 import { writeFileSync } from "node:fs";
 import { dirname, resolve } from "node:path";
 import { fileURLToPath } from "node:url";
 
 import { confirm, select } from "@inquirer/prompts";
-import { execaCommandSync } from "execa";
 
 import type { PackageManager, SupportedPreset } from "./config.js";
 import { supportedPresets } from "./config.js";
@@ -111,7 +111,10 @@ export const generateTemplate = async ({
         default: true,
       })
     ) {
-      execaCommandSync("git init -b main", { cwd });
+      execSync("git init -b main", {
+        cwd,
+        stdio: "ignore",
+      });
       updateGitIgnore(targetDir, cwd);
       isGitRepo = true;
     }

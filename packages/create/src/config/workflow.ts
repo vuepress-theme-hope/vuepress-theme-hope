@@ -1,6 +1,5 @@
+import { execSync } from "node:child_process";
 import { join } from "node:path";
-
-import { execaCommandSync } from "execa";
 
 import type { PackageManager } from "../config/index.js";
 import type { CreateLocale } from "../i18n/index.js";
@@ -10,14 +9,19 @@ export const getWorkflowContent = (
   cwd: string,
   dir: string,
   { workflow }: CreateLocale,
-): string =>
-  `
+): string => {
+  const currentBranch = execSync("git branch --show-current", {
+    cwd,
+    encoding: "utf8",
+  }).trim();
+
+  return `
 name: ${workflow.name}
 
 on:
   push:
     branches:
-      - ${execaCommandSync("git branch --show-current", { cwd }).stdout.trim()}
+      - ${currentBranch}
 
 permissions:
   contents: write
@@ -71,3 +75,4 @@ ${
           branch: gh-pages
           folder: ${join(dir, ".vuepress/dist").replace(/\\/g, "/")}
 `;
+};

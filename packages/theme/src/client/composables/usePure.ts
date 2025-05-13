@@ -1,7 +1,7 @@
 import type { ComputedRef } from "vue";
 import { computed } from "vue";
 
-import { useTheme } from "@theme-hope/composables/index";
+import { useTheme } from "@theme-hope/composables/useTheme";
 
 export const usePure = (): ComputedRef<boolean> => {
   const theme = useTheme();

@@ -251,7 +251,7 @@ highlights:
       - title: Code Block
         icon: code
         details: Customize code block themes, line number, highlight lines, copy button, etc.
-        link: https://theme-hope.vuejs.press/guide/markdown/code/fence.html.html
+        link: https://theme-hope.vuejs.press/guide/markdown/code/fence.html
 
       - title: Image Preview
         icon: image

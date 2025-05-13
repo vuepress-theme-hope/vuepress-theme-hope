@@ -1,6 +1,6 @@
 {
   "name": "vuepress-theme-hope",
-  "version": "2.0.0-rc.85",
+  "version": "2.0.0-rc.87",
   "description": "A light vuepress theme with tons of features",
   "keywords": [
     "vuepress",
@@ -32,23 +32,39 @@
   "type": "module",
   "exports": {
     ".": "./lib/node/index.js",
-    "./client": "./lib/client/index.js",
-    "./client/*": "./lib/client/*",
-    "./components/*": "./lib/client/components/*",
-    "./composables": "./lib/client/composables/index.js",
-    "./composables/*": "./lib/client/composables/*",
-    "./layouts/*": "./lib/client/layouts/*",
-    "./modules/*": "./lib/client/modules/*",
+    "./blog": {
+      "types": "./lib/bundle/blog.d.ts",
+      "custom": "./lib/client/blog.js",
+      "default": "./lib/bundle/blog.js"
+    },
+    "./client": {
+      "types": "./lib/bundle/index.d.ts",
+      "custom": "./lib/client/custom.js",
+      "default": "./lib/bundle/index.js"
+    },
+    "./components/*": {
+      "types": "./lib/bundle/components/*.d.ts",
+      "custom": "./lib/client/components/*.js",
+      "default": "./lib/bundle/exports/noop.js"
+    },
+    "./composables/*": {
+      "types": "./lib/client/composables/*.d.ts",
+      "custom": "./lib/client/composables/*.js",
+      "default": "./lib/bundle/exports/noop.js"
+    },
+    "./layouts/*": {
+      "types": "./lib/client/layouts/*",
+      "custom": "./lib/client/layouts/*",
+      "default": "./lib/bundle/exports/noop.js"
+    },
     "./styles/*": "./lib/client/styles/*",
-    "./utils": "./lib/client/utils/*",
-    "./utils/*": "./lib/client/utils/*",
-    "./blog/*": "./lib/client/modules/blog/*",
-    "./encrypt/*": "./lib/client/modules/encrypt/*",
-    "./info/*": "./lib/client/modules/info/*",
-    "./navbar/*": "./lib/client/modules/navbar/*",
-    "./outlook/*": "./lib/client/modules/outlook/*",
-    "./sidebar/*": "./lib/client/modules/sidebar/*",
+    "./utils/*": {
+      "types": "./lib/client/utils/*",
+      "custom": "./lib/client/utils/*",
+      "default": "./lib/bundle/exports/noop.js"
+    },
     "./presets/*": "./lib/presets/*",
+    "./shared": "./lib/shared/index.js",
     "./templates/*": "./templates/*",
     "./package.json": "./package.json"
   },

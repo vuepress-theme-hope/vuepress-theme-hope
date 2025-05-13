@@ -85,7 +85,7 @@ Every icon is uploaded by users, and you must get authorized from the author for
 
 ### In Markdown
 
-In markdown, you can use `::icon decorators... =size /color key=value complex-key="complex value"...::` to insert custom icons.
+Use `::icon decorators... =size /color key=value complex-key="complex value"...::` to insert custom icons.
 
 - A string starting with `=` will be treated as a size definition.
 - A string starting with `/` will be treated as a color definition.
@@ -107,11 +107,12 @@ In markdown, you can use `::icon decorators... =size /color key=value complex-ke
 
 ### In Components
 
-You can use `<VPIcon />` component to add icon in Vue components.
+Use `<VPIcon />` component to add icon in Vue components.
 
 - `icon` prop accepts the icon settings, i.e. icon name or image link
 - `color` prop accepts a css color value, which will be used as the icon color (optional)
 - `size` prop accepts a css size value, which will be used as the icon size (optional)
+- `vertical-align` prop accepts a css value, which will be used as the icon vertical-align (optional)
 
 ::: md-demo Demo
 
@@ -119,7 +120,7 @@ You can use `<VPIcon />` component to add icon in Vue components.
 <VPIcon
   icon="//theme-hope-assets.vuejs.press/logo.svg"
   size="4rem"
-  verticalAlign="middle"
+  vertical-align="middle"
 />
 
 :::

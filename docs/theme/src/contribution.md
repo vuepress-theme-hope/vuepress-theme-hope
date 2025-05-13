@@ -71,7 +71,7 @@ After ensuring that the `pnpm lint` and `pnpm lint:md` commands emit no errors, 
 
 Since the docs are using local themes and plugins, you need to build the local project through `pnpm build` first.
 
-To start previewing, cd to the right project under `docs` directory, then run `pnpm docs:vite-dev` (using vite) or `pnpm docs:webpack-dev` (using webpack).
+To start previewing, cd to the right project under `docs` directory, then run `pnpm docs:vite-dev` (using Vite) or `pnpm docs:webpack-dev` (using Webpack).
 
 :::
 
@@ -134,7 +134,7 @@ You may need to execute the `pnpm clean` command to clear previous command resul
 
 The project uses `husky` to add Git Hooks for verification:
 
-- In `precommit` stage: we use `lint-staged` to check the changed code with the corresponding Linter
+- In `precommit` stage: we use `nano-staged` to check the changed code with the corresponding Linter
 
   This means that you need to ensure that your code is formatted by the project requirements and can pass Linter tests.
 

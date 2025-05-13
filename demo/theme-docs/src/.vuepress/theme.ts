@@ -205,5 +205,5 @@ export default hopeTheme(
           : { canonical: "https://theme-hope-docs-demo.vuejs.press" },
     },
   },
-  { custom: true },
+  { custom: Boolean(process.env.THEME_CUSTOM) },
 );

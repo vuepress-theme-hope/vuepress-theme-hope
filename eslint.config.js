@@ -55,12 +55,24 @@ export default hope(
       "@typescript-eslint/naming-convention": [
         "warn",
 
-        // allow path like `/zh/demo.html`, alias starting with `@` and css property like `line-width`
+        // allows
+        // - path like `/zh/demo.html`
+        // - alias starting with `@`
+        // - css property like `line-width`
         {
           selector: "property",
           format: null,
           filter: {
             regex: "(^/|^@|^[a-z]+(?:-[a-z]+)*?$)",
+            match: true,
+          },
+        },
+        // Layout and NotFound
+        {
+          selector: ["objectLiteralMethod"],
+          format: null,
+          filter: {
+            regex: "^(?:Layout|NotFound|Blog)$",
             match: true,
           },
         },
@@ -75,6 +87,10 @@ export default hope(
         {
           ignore: ["^@temp\\/"],
         },
+      ],
+      "vue/multi-word-component-names": [
+        "error",
+        { ignores: ["Blog", "Layout", "Slides"] },
       ],
     },
   }),

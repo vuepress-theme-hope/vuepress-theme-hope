@@ -1,4 +1,5 @@
-import type { FunctionalComponent, VNode } from "vue";
+import type { RequiredSlot } from "@vuepress/helper/client";
+import type { FunctionalComponent } from "vue";
 import { h } from "vue";
 
 export interface IconBaseProps {
@@ -14,7 +15,7 @@ export interface IconBaseProps {
 export const IconBase: FunctionalComponent<
   IconBaseProps,
   Record<never, never>,
-  { default: () => VNode | VNode[] }
+  { default: RequiredSlot }
 > = ({ name = "", color = "currentColor", ariaLabel }, { attrs, slots }) =>
   h(
     "svg",

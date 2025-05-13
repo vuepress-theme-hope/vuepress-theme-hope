@@ -26,11 +26,11 @@ Dude, you can't expect to have the full power of tree-shaking support and still 
 
 In order to make component styles binding with component, we split the styles according to the component hierarchy and imported them in components, which greatly slowed down the speed.
 
-- `@vuepress/theme-default` is placing all the styles together at `styles` folder and importing them entirely, so that `sass` will only need to compile once and vite only need to send 1 extra web request. That's why it's fast.
+- `@vuepress/theme-default` is placing all the styles together at `styles` folder and importing them entirely, so that `sass` will only need to compile once and Vite only need to send 1 extra web request. That's why it's fast.
 
   But this will let style unbind with components, and they will be injected anyway. So that when you override a component or a layout, you have to override old styles to build styles you want.
 
-- `vuepress-theme-hope` is binding styles with components, but that means `sass` has to compile styles for each component, and vite need to send an extra request for each component. Due to `vuepress-theme-hope` has 2× to 6× components (depending on whether you enable blog features or not) comparing with `@vuepress/theme-default`, it will take extra time of `2.4s - 4s` for that.
+- `vuepress-theme-hope` is binding styles with components, but that means `sass` has to compile styles for each component, and Vite need to send an extra request for each component. Due to `vuepress-theme-hope` has 2× to 6× components (depending on whether you enable blog features or not) comparing with `@vuepress/theme-default`, it will take extra time of `2.4s - 4s` for that.
 
   But, you can easily override a component together with its styles in this way.
 
@@ -75,7 +75,7 @@ export default defineUserConfig({
 1. CSS imported via `@import` in Sass will be compiled into standard CSS `@import` syntax.
 1. The CSS `@import` syntax only works at the top of css file.
 1. To give user styles a higher priority, we will import user styles after theme and plugin styles.
-1. During vite builds VuePress2 app, all styles are compressed into a single CSS file.
+1. During Vite builds VuePress2 app, all styles are compressed into a single CSS file.
 
 The above results in the user's CSS `@import` imports in Sass appearing in the middle of the final CSS file and thus invalid.
 

@@ -19,13 +19,13 @@ tag:
 
 :::
 
-为渲染幻灯片页面，你应该在相应页面的 frontmatter 中设置 `layout: SlidePage`。
+为渲染幻灯片页面，你应该在相应页面的 frontmatter 中设置 `layout: Slides`。
 
 在使用此布局的页面中，你应该只包含单个幻灯片语法，不包含其他内容，以避免渲染问题:
 
 ```md
 ---
-layout: SlidePage
+layout: Slides
 ---
 
 @slidestart

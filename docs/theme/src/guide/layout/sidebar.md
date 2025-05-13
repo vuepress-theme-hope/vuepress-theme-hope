@@ -78,9 +78,7 @@ export default hopeTheme({
 });
 ```
 
-::: tip Advanced usage of activeMatch
-
-`activeMatch` gives you the ability to control whether the path is active through RegExps.
+::: tip `activeMatch` gives you the ability to control whether the path is active through RegExps.
 
 :::
 
@@ -312,7 +310,7 @@ If you use the structure to generate a folder with other folders nested under it
 
 ::: warning Limitations
 
-Since structure sidebar is depending on file structure and markdown frontmatter, any changes in markdown may update the structure sidebar. (E.g: setting `index: false` in frontmatter as described below)
+Since structure sidebar is depending on file structure and Markdown frontmatter, any changes in Markdown may update the structure sidebar. (E.g: setting `index: false` in frontmatter as described below)
 
 However, recalculating the sidebar could be expensive for large sites, so the theme will only recalculate with [`hotReload` enabled](../../config/theme/basic.md#hotreload).
 

@@ -1,0 +1,74 @@
+@use "../wrapper";
+
+.vp-breadcrumb {
+  @include wrapper.horizontal-wrapper;
+
+  & {
+    position: relative;
+    z-index: 2;
+    padding-top: 1rem;
+    font-size: 15px;
+  }
+
+  @media (max-width: hope-config.$pad) {
+    font-size: 14px;
+  }
+
+  @media (max-width: hope-config.$mobile) {
+    padding-top: 0.5rem;
+    font-size: 12.8px;
+  }
+
+  @media print {
+    display: none;
+  }
+
+  .vp-icon {
+    margin-inline-end: 0.25em;
+  }
+
+  a {
+    display: inline-block;
+    padding: 0 0.5em;
+
+    &::before {
+      position: relative;
+      bottom: 0.125rem;
+      margin-inline-end: 0.25em;
+    }
+
+    &:hover {
+      color: var(--vp-c-accent);
+    }
+  }
+
+  ol {
+    margin: 0;
+    padding-inline-start: 0;
+    list-style: none;
+  }
+
+  li {
+    display: inline-block;
+    line-height: 1.5;
+
+    &:first-child a {
+      padding-inline-start: 0;
+    }
+
+    &:last-child a {
+      padding-inline-end: 0;
+    }
+
+    &.is-active a {
+      color: var(--vp-c-text-mute);
+      cursor: default;
+      pointer-events: none;
+    }
+  }
+
+  li + li::before {
+    content: "/";
+    color: var(--vp-c-text-mute);
+  }
+}

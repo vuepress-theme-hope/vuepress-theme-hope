@@ -29,7 +29,7 @@ Check [catalog plugin docs][catalog-config] for available plugin options.
 
 Controls `vuepress-plugin-components`, providing a set of components for Markdown.
 
-Available component which can be used in markdown files are:
+Available component which can be used in Markdown files are:
 
 - ArtPlayer: A video player powered by ArtPlayer
 - Badge: Colorful badge component

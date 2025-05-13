@@ -13,7 +13,14 @@ export default [
     {
       base: "client",
       target: "bundle",
-      files: ["export", "modules/blog/export", "modules/encrypt/export"],
+      files: [
+        "exports/base",
+        "exports/blog",
+        "exports/encrypt",
+        "exports/noop",
+        "blog",
+        "index",
+      ],
     },
     {
       alias: [
@@ -22,6 +29,10 @@ export default [
           replacement: path.resolve(__dirname, "./src/client/$1.ts"),
         },
       ],
+      replace: {
+        // eslint-disable-next-line @typescript-eslint/naming-convention
+        __IS_BUNDLED__: "true",
+      },
       external: [
         "@vuepress/helper/noopComponent",
         "@vuepress/plugin-blog/client",
@@ -31,8 +42,8 @@ export default [
         "@vuepress/plugin-theme-data/client",
         "bcrypt-ts/browser",
       ],
-      dts: false,
-      moduleSideEffects: (id) => id.endsWith(".css"),
+      moduleSideEffects: (id) =>
+        id.endsWith(".css") || id.includes("runTimeCheck"),
     },
   ),
 ];

@@ -1,7 +1,7 @@
 import { isPlainObject } from "@vuepress/helper";
 import { watch } from "chokidar";
 import type { ThemeFunction } from "vuepress/core";
-import { TEMPLATE_RENDERER_OUTLETS } from "vuepress/utils";
+import { TEMPLATE_RENDERER_OUTLETS, path } from "vuepress/utils";
 
 import {
   checkThemeMarkdownOptions,
@@ -16,30 +16,29 @@ import {
   getThemeStatus,
 } from "./config/index.js";
 import { extendsBundlerOptions } from "./extendsBundlerOptions.js";
-import { getAlias } from "./getAlias.js";
 import { addFavicon } from "./init/index.js";
 import { getPlugins, usePlugins } from "./plugins/index.js";
 import {
   prepareBundleConfigFile,
+  prepareCustomConfigFile,
   prepareHighLighterScss,
-  prepareSeparatedConfigFile,
   prepareSidebarData,
   prepareSocialMediaIcons,
 } from "./prepare/index.js";
 import type { HopeThemeBehaviorOptions } from "./typings/index.js";
-import { TEMPLATE_FOLDER, VERSION, logger } from "./utils.js";
+import { CLIENT_FOLDER, TEMPLATE_FOLDER, VERSION, logger } from "./utils.js";
 import type { ThemeOptions } from "../shared/index.js";
 
 /**
  * VuePress Theme Hope
  *
- * @param options - theme options
- * @param behavior - theme behavior options
+ * @param themeOptions - theme options
+ * @param behaviorOptions - theme behavior options
  */
 export const hopeTheme = (
-  options: ThemeOptions,
+  themeOptions: ThemeOptions,
   // TODO: Change default value in v2 stable
-  behavior: HopeThemeBehaviorOptions | boolean = true,
+  behaviorOptions: HopeThemeBehaviorOptions | boolean = true,
 ): ThemeFunction => {
   // default to check
   if (
@@ -50,14 +49,12 @@ export const hopeTheme = (
   }
 
   return (app) => {
-    const behaviorOptions: HopeThemeBehaviorOptions = isPlainObject(behavior)
-      ? { compact: true, check: true, ...behavior }
-      : behavior
+    const behavior: HopeThemeBehaviorOptions = isPlainObject(behaviorOptions)
+      ? { compact: true, check: true, ...behaviorOptions }
+      : behaviorOptions
         ? { compact: true, check: true }
         : {};
-    const isDebug = behaviorOptions.debug
-      ? (app.env.isDebug = true)
-      : app.env.isDebug;
+    const isDebug = behavior.debug ? (app.env.isDebug = true) : app.env.isDebug;
 
     const {
       favicon,
@@ -66,41 +63,48 @@ export const hopeTheme = (
       plugins = {},
       hostname,
       sidebarSorter,
-      ...themeOptions
-    } = behaviorOptions.compact
+      ...mainThemeOptions
+    } = behavior.compact
       ? // eslint-disable-next-line @typescript-eslint/no-deprecated
-        convertThemeOptions(options as ThemeOptions & Record<string, unknown>)
-      : options;
+        convertThemeOptions(
+          themeOptions as ThemeOptions & Record<string, unknown>,
+        )
+      : themeOptions;
 
     // eslint-disable-next-line @typescript-eslint/no-deprecated
-    if (behaviorOptions.compact) checkLegacyStyle(app);
+    if (behavior.compact) checkLegacyStyle(app);
 
-    const status = getThemeStatus(app, options);
-    const themeData = getThemeData(app, themeOptions, status);
+    const status = getThemeStatus(app, themeOptions);
+    const themeData = getThemeData(app, mainThemeOptions, status);
     const icons = status.enableBlog ? getSocialMediaIcons(themeData) : null;
 
     checkVuePressMarkdownOptions(app.options.markdown, markdown);
-    usePlugins(app, themeData, markdown, plugins, hotReload, behaviorOptions);
+    usePlugins(app, themeData, markdown, plugins, hotReload, behavior);
 
     if (isDebug) logger.info("Plugin options:", plugins);
 
     return {
       name: "vuepress-theme-hope",
 
-      alias: behaviorOptions.custom ? getAlias(isDebug) : {},
+      alias: behavior.custom
+        ? { "@theme-hope": path.resolve(CLIENT_FOLDER) }
+        : undefined,
 
       define: () => ({
         // eslint-disable-next-line @typescript-eslint/naming-convention
-        __VP_BLOG_TYPES__: status.blogType,
+        __VP_CUSTOM__: behavior.custom ?? false,
         // eslint-disable-next-line @typescript-eslint/naming-convention
-        __VP_MULTI_LANGUAGES__: status.hasMultipleLanguages,
+        __VP_BLOG_TYPES__: status.blogTypes,
+        // eslint-disable-next-line @typescript-eslint/naming-convention
+        __VP_I18N__: status.isI18nProject,
         // eslint-disable-next-line @typescript-eslint/naming-convention
         __VP_READING_TIME__: status.enableReadingTime,
         // eslint-disable-next-line @typescript-eslint/naming-convention
         __VP_REPO__: status.hasRepo,
       }),
 
-      extendsBundlerOptions,
+      extendsBundlerOptions: (bundlerConfig, app) =>
+        extendsBundlerOptions(bundlerConfig, app, behavior.custom),
 
       extendsMarkdownOptions: (markdownOptions): void => {
         checkThemeMarkdownOptions(markdownOptions, markdown);
@@ -108,7 +112,7 @@ export const hopeTheme = (
 
       onInitialized: (app): void => {
         if (favicon) addFavicon(app, favicon);
-        if (behaviorOptions.check) checkUserPlugins(app);
+        if (behavior.check) checkUserPlugins(app);
       },
 
       onPrepared: async (app): Promise<void> => {
@@ -155,10 +159,10 @@ export const hopeTheme = (
           hotReload,
           favicon,
         },
-        behaviorOptions.compact,
+        behavior.compact,
       ),
 
-      templateBuild: `${TEMPLATE_FOLDER}index.build.html`,
+      templateBuild: `${TEMPLATE_FOLDER}/index.build.html`,
 
       templateBuildRenderer: (
         template: string,
@@ -170,7 +174,7 @@ export const hopeTheme = (
           .replace("{{ themeVersion }}", VERSION)
           .replace(
             "{{ themeMode }}",
-            themeOptions.darkmode === "enable" ? "dark" : "light",
+            mainThemeOptions.darkmode === "enable" ? "dark" : "light",
           )
           .replace(TEMPLATE_RENDERER_OUTLETS.LANG, lang)
           .replace(TEMPLATE_RENDERER_OUTLETS.PREFETCH, prefetch)
@@ -180,9 +184,10 @@ export const hopeTheme = (
           .replace(TEMPLATE_RENDERER_OUTLETS.VERSION, version),
 
       clientConfigFile: (app) =>
-        behaviorOptions.custom
-          ? prepareSeparatedConfigFile(app, status)
-          : prepareBundleConfigFile(app, status),
+        (behavior.custom ? prepareCustomConfigFile : prepareBundleConfigFile)(
+          app,
+          status,
+        ),
     };
   };
 };

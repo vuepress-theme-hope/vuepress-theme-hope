@@ -59,7 +59,7 @@ export const jaLocale: ThemeLocaleData = {
     errorHint: "正しいパスワードを入力してください!",
   },
 
-  routeLocales: {
+  routerLocales: {
     skipToContent: "メインコンテンツへスキップ",
     notFoundTitle: "ページが見つかりません",
     notFoundMsg: [

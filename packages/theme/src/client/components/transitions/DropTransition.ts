@@ -1,7 +1,8 @@
+import type { RequiredSlot } from "@vuepress/helper/client";
 import type { SlotsType, VNode } from "vue";
 import { Transition, TransitionGroup, defineComponent, h } from "vue";
 
-export const DropTransition = defineComponent({
+export default defineComponent({
   name: "DropTransition",
 
   props: {
@@ -27,7 +28,7 @@ export const DropTransition = defineComponent({
   },
 
   slots: Object as SlotsType<{
-    default: () => VNode[] | VNode;
+    default: RequiredSlot;
   }>,
 
   setup(props, { slots }) {
@@ -53,11 +54,10 @@ export const DropTransition = defineComponent({
         onAfterEnter: unsetStyle,
         onBeforeLeave: setStyle,
       };
-      const children = (): VNode | VNode[] => slots.default();
 
       return props.group
-        ? h(TransitionGroup, attrs, children)
-        : h(Transition, attrs, children);
+        ? h(TransitionGroup, attrs, slots.default)
+        : h(Transition, attrs, slots.default);
     };
   },
 });

@@ -9,7 +9,7 @@ import {
   watch,
 } from "vue";
 
-import { DropTransition } from "@theme-hope/components/transitions/index";
+import { DropTransition } from "vuepress-theme-hope/client";
 
 import "./hitokoto-blog-hero.scss";
 

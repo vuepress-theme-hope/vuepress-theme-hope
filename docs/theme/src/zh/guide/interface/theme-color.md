@@ -61,9 +61,8 @@ $theme-color: (
 <script setup lang="ts">
 import { computed } from "vue";
 import { entries, fromEntries } from '@vuepress/helper/client';
+import { ThemeColorPicker } from "vuepress-theme-hope/client";
 import cssVariables from "vuepress-theme-hope/styles/variables.module.scss";
-
-import ThemeColorPicker from "@theme-hope/modules/outlook/components/ThemeColorPicker";
 
 const themeColors = fromEntries(
   entries(cssVariables).filter(([key]) => key.startsWith("theme-"))

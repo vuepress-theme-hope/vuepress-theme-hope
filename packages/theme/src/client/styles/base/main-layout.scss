@@ -1,0 +1,157 @@
+@use "vuepress-shared/styles/arrow";
+@use "../wrapper";
+
+.toggle-sidebar-wrapper {
+  position: fixed;
+  inset-inline-start: var(--sidebar-space);
+  top: var(--navbar-height);
+  bottom: 0;
+  z-index: 100;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  font-size: 2rem;
+
+  transition: inset-inline-start var(--vp-t-transform);
+
+  @media (max-width: hope-config.$tablet) {
+    display: none;
+  }
+
+  @media (min-width: hope-config.$pc) {
+    display: none;
+  }
+
+  @media print {
+    display: none;
+  }
+
+  &:hover {
+    background: rgb(127 127 127 / 5%);
+    cursor: pointer;
+  }
+
+  .arrow {
+    @include arrow.arrow;
+  }
+}
+
+.theme-container {
+  display: flex;
+  flex-flow: column;
+  justify-content: space-between;
+  min-height: 100vh;
+
+  .vp-page {
+    // leave space for navbar
+    padding-top: var(--navbar-height);
+
+    // leave space for sidebar
+    padding-inline-start: calc(var(--sidebar-space) + 2rem);
+
+    // do not leave space for sidebar on wide mobile
+    @media (max-width: hope-config.$tablet) {
+      padding-inline: 0;
+    }
+
+    @media (min-width: hope-config.$pc) {
+      padding-inline-end: calc(
+        100vw - var(--content-width) - var(--sidebar-space) - 6rem
+      );
+    }
+  }
+
+  .vp-sidebar {
+    // add space for navbar
+    top: var(--navbar-height);
+  }
+
+  &.no-navbar {
+    .vp-page {
+      // clear space for navbar
+      padding-top: 0;
+    }
+
+    .vp-sidebar {
+      // clear space for navbar
+      top: 0;
+
+      @media (max-width: hope-config.$tablet) {
+        // clear space for navbar
+        top: 0;
+      }
+    }
+  }
+
+  &.hide-navbar {
+    .vp-sidebar {
+      @media (max-width: hope-config.$tablet) {
+        // clear space for navbar
+        top: 0;
+      }
+    }
+  }
+
+  // close state on desktop
+  &.sidebar-collapsed {
+    .vp-page {
+      padding-inline-start: 0;
+    }
+
+    .vp-sidebar {
+      // hide box shadow
+      box-shadow: none;
+
+      // collapse sidebar
+      transform: translateX(-100%);
+
+      [dir="rtl"] & {
+        transform: translateX(100%);
+      }
+    }
+
+    .toggle-sidebar-wrapper {
+      inset-inline-start: 0;
+    }
+  }
+
+  // sidebar is disabled
+  &.no-sidebar {
+    .vp-page {
+      padding-inline: 0;
+    }
+
+    &.has-toc {
+      .vp-page {
+        // add padding for anchor
+        @media (min-width: hope-config.$pc) {
+          padding-inline-end: 16rem;
+        }
+      }
+    }
+
+    // hide toggle button
+    .vp-toggle-sidebar-button,
+    .toggle-sidebar-wrapper {
+      display: none;
+    }
+
+    // hide sidebar
+    .vp-sidebar {
+      display: none;
+    }
+  }
+
+  // open state on mobile
+  &.sidebar-open {
+    .vp-sidebar {
+      // show box shadow
+      box-shadow: 2px 0 8px var(--vp-c-shadow);
+
+      // show sidebar
+      transform: translateX(0);
+    }
+  }
+}

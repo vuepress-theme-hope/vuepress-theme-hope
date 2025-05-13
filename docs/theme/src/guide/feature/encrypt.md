@@ -68,7 +68,7 @@ The salted hash value of the number `1234` and the string `"1234"` is different!
 
 :::
 
-## Global encryption
+## Global Encryption
 
 In some cases, you may want to encrypt the entire site, you can set `encrypt.global: true` in theme options to do that.
 
@@ -95,3 +95,48 @@ export default hopeTheme({
 The consideration of multiple passwords is separation of permissions. This allows you to deprecate or update some of the global passwords in future deployments, so that some users with certain password will lose access.
 
 :::
+
+## Store your Passwords Securely
+
+If you want to publish source code to git providers, especially in public repositories, it's important **NOT to expose** your passwords in source code.
+
+To achieve this, you can use [dotenv](https://www.npmjs.com/package/dotenv) to load the passwords configuration from a `.env` file.
+
+Create a file `.env` in the root of your package to store passwords and other things you want to keep private and add it to your `.gitignore` file.
+
+```ini title=".env"
+PASSWORD=123456
+```
+
+Then, load the env file with `dotenv/config` and set password using environment variables in `.vuepress/theme.ts` like this:
+
+```ts twoslash{2,8} title=".vuepress/theme.ts"
+import { hopeTheme } from "vuepress-theme-hope";
+import "dotenv/config";
+
+export default hopeTheme({
+  encrypt: {
+    global: true,
+    admin: {
+      password: process.env.PASSWORD!,
+      hint: "The password you specified.",
+    },
+  },
+});
+```
+
+To build with GitHub Actions, you can set passwords as secrets in your repository settings and load it with `env` in your workflow file.
+
+```yaml title=".github/workflows/deploy-docs.yml"
+# ...
+jobs:
+  deploy-gh-pages:
+    # ...
+    steps:
+      # ...
+      - name: Build Docs
+        env:
+          PASSWORD: ${{secrets.PASSWORD}}
+        run: pnpm docs:build
+      # ...
+```

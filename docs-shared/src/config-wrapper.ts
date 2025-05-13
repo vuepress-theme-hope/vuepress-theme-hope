@@ -1,4 +1,6 @@
-import { addViteOptimizeDepsInclude, isFunction } from "@vuepress/helper";
+import { viteBundler } from "@vuepress/bundler-vite";
+import { webpackBundler } from "@vuepress/bundler-webpack";
+import { addViteOptimizeDepsInclude } from "@vuepress/helper";
 import type { UserConfig } from "vuepress";
 import { defineUserConfig } from "vuepress";
 import { getDirname, path } from "vuepress/utils";
@@ -11,10 +13,7 @@ const IS_GITEE = "GITEE" in process.env;
 const IS_NETLIFY = "NETLIFY" in process.env;
 const IS_GITHUB = !IS_GITEE && !IS_NETLIFY;
 
-export const config = (
-  name: string,
-  { alias = {}, plugins = [], ...config }: UserConfig,
-): UserConfig => {
+export const config = (name: string, config: UserConfig): UserConfig => {
   const base = name.replace(/\d+$/, "");
   const docsBase = IS_NETLIFY
     ? "/"
@@ -29,21 +28,14 @@ export const config = (
 
     head: pwaHead,
 
-    plugins,
+    bundler:
+      process.env.BUNDLER === "webpack" ? webpackBundler() : viteBundler(),
 
-    alias: async (app, isServer): Promise<Record<string, unknown>> => ({
-      "@theme-hope/components/HeroInfo": path.resolve(
-        __dirname,
-        "./components/HopeHero.js",
-      ),
-      "@theme-hope/components/NotFoundHint": path.resolve(
-        __dirname,
-        "./components/HopeNotFoundHint.js",
-      ),
-      ...(isFunction(alias) ? await alias(app, isServer) : alias),
+    define: () => ({
+      IS_GITEE,
+      IS_GITHUB,
+      IS_NETLIFY,
     }),
-
-    define: () => ({ IS_GITEE, IS_GITHUB, IS_NETLIFY }),
 
     extendsBundlerOptions: (bundlerOptions: unknown, app): void => {
       addViteOptimizeDepsInclude(bundlerOptions, app, [

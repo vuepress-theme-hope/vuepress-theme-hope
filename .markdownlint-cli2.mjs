@@ -56,6 +56,7 @@ export default {
     MD040: false,
     MD046: false,
     MD049: false,
+    MD059: false,
   },
   ignores: [
     "**/node_modules/**",

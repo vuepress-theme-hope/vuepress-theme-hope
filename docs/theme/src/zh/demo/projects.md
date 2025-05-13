@@ -307,8 +307,8 @@ docs:
 
   - name: Warm-Flow
     desc: Warm-Flow工作流
-    logo: http://www.warm-flow.cn/logo.png
-    url: http://www.warm-flow.cn
+    logo: https://warm-flow.dromara.org/logo.png
+    url: https://warm-flow.dromara.org
     repo: https://github.com/dromara/warm-flow
     preview: /assets/image/warm-flow.png
 

@@ -2,7 +2,11 @@ import { dateSorter } from "@vuepress/helper";
 import type { BlogTypeOptions } from "@vuepress/plugin-blog";
 import type { GitData } from "@vuepress/plugin-git";
 
-import { defaultPageSorter } from "./utils.js";
+import {
+  BLOG_LAYOUT,
+  DEFAULT_BLOG_FRONTMATTER,
+  defaultPageSorter,
+} from "./utils.js";
 import type {
   ArticleInfoData,
   BlogOptions,
@@ -31,14 +35,11 @@ export const getBlogArticleType = (
     sorter: defaultPageSorter,
 
     path: options.article,
-    layout: "BlogType",
+    layout: BLOG_LAYOUT,
 
     frontmatter: (localePath) => ({
+      ...DEFAULT_BLOG_FRONTMATTER,
       title: themeData.locales[localePath].blogLocales.article,
-      dir: { index: false },
-      index: false,
-      feed: false,
-      sitemap: false,
     }),
   }) as BlogTypeOptions<
     { git: GitData },
@@ -73,14 +74,11 @@ export const getBlogStarType = (
     },
 
     path: options.star,
-    layout: "BlogType",
+    layout: BLOG_LAYOUT,
 
     frontmatter: (localePath) => ({
+      ...DEFAULT_BLOG_FRONTMATTER,
       title: themeData.locales[localePath].blogLocales.star,
-      dir: { index: false },
-      index: false,
-      feed: false,
-      sitemap: false,
     }),
   }) as BlogTypeOptions<
     { git: GitData },
@@ -107,14 +105,11 @@ export const getBlogTimelineType = (
       dateSorter(pageA.routeMeta.date, pageB.routeMeta.date),
 
     path: options.timeline,
-    layout: "Timeline",
+    layout: BLOG_LAYOUT,
 
     frontmatter: (localePath) => ({
+      ...DEFAULT_BLOG_FRONTMATTER,
       title: themeData.locales[localePath].blogLocales.timeline,
-      dir: { index: false },
-      index: false,
-      feed: false,
-      sitemap: false,
     }),
   }) as BlogTypeOptions<
     { git: GitData },

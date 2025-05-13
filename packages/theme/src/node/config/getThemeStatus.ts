@@ -1,15 +1,20 @@
-import { isPlainObject, keys, values } from "@vuepress/helper";
+import { isPlainObject, isString, keys, values } from "@vuepress/helper";
 import type { App } from "vuepress/core";
 
 import type { ThemeOptions } from "../../shared/index.js";
+
+export interface BlogTypeInfo {
+  key: string;
+  path: string;
+}
 
 export interface ThemeStatus {
   enableBlog: boolean;
   enableCatalog: boolean;
   enableEncrypt: boolean;
   enableReadingTime: boolean;
-  blogType: { key: string; path: string | false }[];
-  hasMultipleLanguages: boolean;
+  blogTypes: BlogTypeInfo[];
+  isI18nProject: boolean;
   hasRepo: boolean;
 }
 
@@ -29,15 +34,17 @@ export const getThemeStatus = (
       (Boolean(themeOptions.encrypt.admin) ||
         Boolean(themeOptions.encrypt.config)),
     enableReadingTime: plugins.readingTime !== false,
-    blogType: isPlainObject(plugins.blog)
+    blogTypes: isPlainObject(plugins.blog)
       ? (plugins.blog.type
           ?.map(({ key, path = `/${key}/` }) => ({
             key,
             path,
           }))
-          .filter(({ path }) => Boolean(path)) ?? [])
+          .filter<BlogTypeInfo>((item): item is BlogTypeInfo =>
+            isString(item.path),
+          ) ?? [])
       : [],
-    hasMultipleLanguages: keys(locales).length > 1,
+    isI18nProject: keys(locales).length > 1,
     hasRepo:
       Boolean(themeOptions.repo) ||
       values(themeLocales).some(({ repo }) => Boolean(repo)),

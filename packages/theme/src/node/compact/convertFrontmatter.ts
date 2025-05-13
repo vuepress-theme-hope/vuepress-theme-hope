@@ -92,16 +92,16 @@ export const convertFrontmatter = (
   }
 
   if (frontmatter.home === true) {
-    if (frontmatter.layout === "Blog") {
+    if (frontmatter.layout === "BlogHome") {
       logger.warn(
         `${colors.magenta(
-          "layout: Blog",
-        )} in frontmatter is deprecated, please use ${colors.magenta(
           "layout: BlogHome",
+        )} in frontmatter is deprecated, please use ${colors.magenta(
+          "layout: Blog",
         )} instead.${filePathRelative ? `Found in ${filePathRelative}` : ""}`,
       );
 
-      frontmatter.layout = "BlogHome";
+      frontmatter.layout = "Blog";
     }
 
     // Check project homepage
@@ -116,16 +116,16 @@ export const convertFrontmatter = (
       });
   }
 
-  if (frontmatter.layout === "Slides") {
+  if (frontmatter.layout === "SlidePage") {
     logger.warn(
       `${colors.magenta(
-        "layout: Slides",
-      )} in frontmatter is deprecated, please use ${colors.magenta(
         "layout: SlidePage",
+      )} in frontmatter is deprecated, please use ${colors.magenta(
+        "layout: Slides",
       )} instead.${filePathRelative ? `Found in ${filePathRelative}` : ""}`,
     );
 
-    frontmatter.layout = "SlidePage";
+    frontmatter.layout = "Slides";
   }
 
   if (typeof frontmatter.sidebarDepth === "number") {

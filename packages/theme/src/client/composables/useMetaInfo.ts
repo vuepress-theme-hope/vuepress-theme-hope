@@ -2,7 +2,7 @@ import { isArray } from "@vuepress/helper/client";
 import type { ComputedRef } from "vue";
 import { computed } from "vue";
 
-import { useData } from "@theme-hope/composables/index";
+import { useData } from "@theme-hope/composables/useData";
 
 export interface MetaInfo {
   /** Whether to show "changelog" or not */

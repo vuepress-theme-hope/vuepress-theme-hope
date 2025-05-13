@@ -1,0 +1,181 @@
+@mixin dot() {
+  content: " ";
+
+  position: absolute;
+  top: 50%;
+  z-index: 2;
+
+  margin-top: -6px;
+  margin-inline-start: -6px;
+  border: 2px solid var(--dot-border-color);
+  border-radius: 50%;
+
+  background: var(--dot-color);
+
+  transition:
+    background var(--vp-t-color),
+    border-color var(--vp-t-color);
+}
+
+.timeline-wrapper {
+  --dot-color: #fff;
+  --dot-bar-color: #eaecef;
+  --dot-border-color: #ddd;
+
+  max-width: 740px;
+  margin: 0 auto;
+  padding: 40px 0;
+
+  @media (max-width: hope-config.$tablet) {
+    margin: 0 1.2rem;
+  }
+
+  [data-theme="dark"] & {
+    --dot-color: #444;
+    --dot-bar-color: #333;
+    --dot-border-color: #555;
+  }
+
+  .timeline-content {
+    position: relative;
+    box-sizing: border-box;
+    padding-inline-start: 76px;
+    list-style: none;
+
+    &::before {
+      content: " ";
+
+      position: absolute;
+      inset-inline-start: 64px;
+      top: 14px;
+
+      width: 4px;
+      height: calc(100% - 38px);
+      margin-inline-end: -2px;
+
+      background: var(--dot-bar-color);
+
+      transition: background var(--vp-t-color);
+    }
+  }
+
+  .motto {
+    position: relative;
+    color: var(--vp-c-text);
+    font-size: 18px;
+    transition: color var(--vp-t-color);
+
+    @media (min-width: hope-config.$laptop) {
+      font-size: 20px;
+    }
+
+    &::before {
+      @include dot;
+
+      inset-inline-start: -10px;
+      width: 8px;
+      height: 8px;
+    }
+  }
+
+  .timeline-year-title {
+    margin-top: calc(3rem - var(--navbar-height));
+    margin-bottom: 0.5rem;
+    padding-top: var(--navbar-height);
+
+    color: var(--vp-c-text);
+
+    font-weight: 700;
+    font-size: 26px;
+    font-family: var(--vp-font-heading);
+
+    transition: color var(--vp-t-color);
+
+    span {
+      position: relative;
+
+      &::before {
+        @include dot;
+
+        inset-inline-start: -10px;
+        width: 8px;
+        height: 8px;
+      }
+    }
+  }
+
+  .timeline-year-wrapper {
+    padding-inline-start: 0 !important;
+  }
+
+  .timeline-date {
+    position: absolute;
+    inset-inline-end: calc(100% + 24px);
+
+    width: 50px;
+
+    font-size: 14px;
+    line-height: 30px;
+    text-align: end;
+
+    &::before {
+      @include dot;
+
+      inset-inline-end: -19px;
+      width: 6px;
+      height: 6px;
+      transition:
+        background-color var(--vp-t-color),
+        border-color var(--vp-t-color);
+    }
+  }
+
+  .timeline-title {
+    position: relative;
+
+    display: block;
+
+    color: inherit;
+
+    font-size: 16px;
+    line-height: 30px;
+
+    transition:
+      color var(--vp-t-color),
+      font-size var(--vp-t-transform);
+  }
+
+  .timeline-item {
+    position: relative;
+
+    // make sure it won’t be covered by year heading
+    z-index: 3;
+
+    display: flex;
+
+    // make sure dot is aligned
+    padding: 30px 0 10px;
+    border-bottom: 1px dashed var(--vp-c-border);
+
+    list-style: none;
+
+    transition: border-color var(--vp-t-color);
+
+    &:hover {
+      cursor: pointer;
+
+      .timeline-date {
+        // stylelint-disable-next-line max-nesting-depth
+        &::before {
+          border-color: var(--vp-c-accent-bg);
+          background: var(--vp-c-bg-alt);
+        }
+      }
+
+      .timeline-title {
+        color: var(--vp-c-accent);
+        font-size: 18px;
+      }
+    }
+  }
+}

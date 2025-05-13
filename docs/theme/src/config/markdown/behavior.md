@@ -9,7 +9,7 @@ tag:
   - Theme Config
 ---
 
-The following options change markdown renderer behaviors, and can be set **under `markdown` property** in theme options.
+The following options change Markdown renderer behaviors, and can be set **under `markdown` property** in theme options.
 
 <!-- more -->
 
@@ -80,7 +80,7 @@ Whether to convert standalone `<img>` into `<figure>`.
   - [Markdown → Image Lazy Loading](../../guide/markdown/grammar/image.md#image-lazyload)
   - [@vuepress/plugin-markdown-image → lazyload][lazyload]
 
-Whether to enable lazy loading for images in markdown.
+Whether to enable lazy loading for images in Markdown.
 
 ## markdown.highlighter
 
@@ -97,7 +97,7 @@ Whether to enable lazy loading for images in markdown.
 - Details:
   - [Feature → Code Block](../../guide/markdown/code/fence.md)
 
-The markdown code block highlighter. You can choose `"prismjs"`, `"shiki"`, `false` or an object with `type` field declaring the highlighter name and other plugin options.
+Controls Markdown code block highlighter. You can choose `"prismjs"`, `"shiki"`, `false` or an object with `type` field declaring the highlighter name and other plugin options.
 
 - `"prismjs"`: Use [@vuepress/plugin-prismjs][prismjs].
 - `"shiki"`: Use [@vuepress/plugin-shiki][shiki].

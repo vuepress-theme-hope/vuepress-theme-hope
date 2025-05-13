@@ -9,7 +9,7 @@ tag:
   - Theme Config
 ---
 
-The following options adds new markdown grammar, and can be set **under `markdown` property** in theme options.
+The following options adds new Markdown grammar, and can be set **under `markdown` property** in theme options.
 
 ## markdown.component
 

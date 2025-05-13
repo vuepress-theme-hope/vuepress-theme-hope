@@ -52,44 +52,20 @@ export default hopeTheme({
   <img v-else src="/light.png" alt="light" />
   ```
 
-- 在脚本中，你可以从 `@vuepress/helper/client` 导入 `useDarkMode` 来获取深色模式状态:
+- 在脚本中，你可以从 `vuepress-theme-hope/client` 导入 `useDarkMode` 来获取深色模式状态:
 
   ```ts twoslash
-  import { useDarkMode } from "@vuepress/helper/client";
+  import { useDarkMode } from "vuepress-theme-hope/client";
 
   export default {
     setup() {
-      const isDarkMode = useDarkMode();
+      const { isDarkMode } = useDarkMode();
 
       console.log(isDarkMode.value); // 获取深色模式状态
     },
   };
   ```
 
-  如果 `@vuepress/helper` 没有安装，你应该先安装它:
-
-  ::: code-tabs#shell
-
-  @tab pnpm
-
-  ```bash
-  pnpm add -D @vuepress/helper@next
-  ```
-
-  @tab yarn
-
-  ```bash
-  yarn add -D @vuepress/helper@next
-  ```
-
-  @tab npm
-
-  ```bash
-  npm i -D @vuepress/helper@next
-  ```
-
-  :::
-
 <script setup lang="ts">
-import ColorModeSwitch from "@theme-hope/modules/outlook/components/ColorModeSwitch"
+import { ColorModeSwitch } from "vuepress-theme-hope/client";
 </script>

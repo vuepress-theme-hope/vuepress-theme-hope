@@ -64,7 +64,7 @@ You are free to write your Markdown here.
 
 ## Components
 
-Each markdown page is converted into a Vue component, which means you can use Vue syntax in Markdown:
+Each Markdown page is converted into a Vue component, which means you can use Vue syntax in Markdown:
 
 {{ 1 + 1 }}
 

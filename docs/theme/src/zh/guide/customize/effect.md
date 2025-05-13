@@ -1,6 +1,7 @@
 ---
 title: 修改特效
 icon: wand-magic-sparkles
+order: 3
 category:
   - 教程
   - 自定义

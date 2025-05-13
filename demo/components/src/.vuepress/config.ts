@@ -1,3 +1,5 @@
+import { viteBundler } from "@vuepress/bundler-vite";
+import { webpackBundler } from "@vuepress/bundler-webpack";
 import { addViteSsrNoExternal } from "@vuepress/helper";
 import { defaultTheme } from "@vuepress/theme-default";
 import { defineUserConfig } from "vuepress";
@@ -10,6 +12,8 @@ export default defineUserConfig({
 
   title: "Components Lib",
   description: "Components library for VuePress2",
+
+  bundler: process.env.BUNDLER === "webpack" ? webpackBundler() : viteBundler(),
 
   theme: defaultTheme({
     logo: "https://theme-hope-assets.vuejs.press/logo.svg",

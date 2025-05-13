@@ -1,7 +1,7 @@
 ---
 title: 外部脚本与样式
 icon: wand-magic-sparkles
-order: 7
+order: 8
 category:
   - 教程
   - 自定义

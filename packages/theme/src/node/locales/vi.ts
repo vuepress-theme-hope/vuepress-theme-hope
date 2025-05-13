@@ -59,7 +59,7 @@ export const viLocale: ThemeLocaleData = {
     errorHint: "Vui lòng nhập đúng mật khẩu",
   },
 
-  routeLocales: {
+  routerLocales: {
     skipToContent: "Bỏ qua nội dung chính",
     notFoundTitle: "Trang không tìm thấy",
     notFoundMsg: [

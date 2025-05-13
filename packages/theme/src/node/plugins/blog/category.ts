@@ -2,7 +2,11 @@ import { isArray } from "@vuepress/helper";
 import type { BlogCategoryOptions } from "@vuepress/plugin-blog";
 import type { GitData } from "@vuepress/plugin-git";
 
-import { defaultPageSorter } from "./utils.js";
+import {
+  BLOG_LAYOUT,
+  DEFAULT_BLOG_FRONTMATTER,
+  defaultPageSorter,
+} from "./utils.js";
 import type {
   ArticleInfoData,
   BlogOptions,
@@ -28,23 +32,17 @@ export const getBlogCategoryCategory = (
     },
     sorter: defaultPageSorter,
     path: options.category,
-    layout: "BlogCategory",
+    layout: BLOG_LAYOUT,
     frontmatter: (localePath) => ({
+      ...DEFAULT_BLOG_FRONTMATTER,
       title: themeData.locales[localePath].blogLocales.category,
-      dir: { index: false },
-      index: false,
-      feed: false,
-      sitemap: false,
     }),
     itemPath: options.categoryItem,
     itemFrontmatter: (name, localePath) => ({
+      ...DEFAULT_BLOG_FRONTMATTER,
       title: `${name} ${themeData.locales[localePath].blogLocales.category}`,
-      dir: { index: false },
-      index: false,
-      feed: false,
-      sitemap: false,
     }),
-    itemLayout: "BlogCategory",
+    itemLayout: BLOG_LAYOUT,
   }) as BlogCategoryOptions<
     { git: GitData },
     ThemeNormalPageFrontmatter,
@@ -69,22 +67,16 @@ export const getBlogTagCategory = (
     },
     sorter: defaultPageSorter,
     path: options.tag,
-    layout: "BlogCategory",
+    layout: BLOG_LAYOUT,
     frontmatter: (localePath) => ({
+      ...DEFAULT_BLOG_FRONTMATTER,
       title: themeData.locales[localePath].blogLocales.tag,
-      dir: { index: false },
-      index: false,
-      feed: false,
-      sitemap: false,
     }),
     itemPath: options.tagItem,
-    itemLayout: "BlogCategory",
+    itemLayout: BLOG_LAYOUT,
     itemFrontmatter: (name, localePath) => ({
+      ...DEFAULT_BLOG_FRONTMATTER,
       title: `${themeData.locales[localePath].blogLocales.tag}: ${name}`,
-      dir: { index: false },
-      index: false,
-      feed: false,
-      sitemap: false,
     }),
   }) as BlogCategoryOptions<
     { git: GitData },

@@ -1,0 +1,30 @@
+@use "../wrapper";
+
+.vp-project-home {
+  --content-width: var(--home-page-width);
+  display: block;
+  flex: 1;
+  padding-top: var(--navbar-height);
+
+  .vp-hero-info-wrapper:not(.fullscreen) {
+    .vp-hero-info {
+      @media screen {
+        max-width: var(--home-page-width);
+      }
+    }
+  }
+
+  .vp-feature {
+    @media screen {
+      max-width: var(--home-page-width);
+    }
+  }
+
+  [vp-content] {
+    padding-bottom: 1.5rem !important;
+
+    &:has(#markdown-content:only-child:empty) {
+      padding: 0 !important;
+    }
+  }
+}

@@ -96,7 +96,7 @@ tag:
 
 ::: note
 
-`layout` 是布局名称，默认为 `BlogType`，是一个 `vuepress-theme-hope` 注册的布局。 仅当你为类型列表构建自定义布局时，才应将此选项设置为你的布局值。
+`layout` 是布局名称，默认为 `Blog`，是一个 `vuepress-theme-hope` 注册的布局。 仅当你为类型列表构建自定义布局时，才应将此选项设置为你的布局值。
 
 :::
 
@@ -111,7 +111,7 @@ tag:
 
 1. 增加了一种幻灯片页面。
 
-   所有幻灯片页面都应在 frontmatter 中包含 `layout: SlidePage`。 并且顺序无关紧要。
+   所有幻灯片页面都应在 frontmatter 中包含 `layout: Slides`。 并且顺序无关紧要。
 
 1. 添加原创类型。
 

@@ -19,13 +19,13 @@ To use this feature, you should enable [presentation feature](../markdown/conten
 
 :::
 
-To render a slide page, set `layout: SlidePage` in the frontmatter of the corresponding page.
+To render a slide page, set `layout: Slides` in the frontmatter of the corresponding page.
 
 In these pages, you should only include a single slide syntax and no other contents to avoid rendering problems.
 
 ```md
 ---
-layout: SlidePage
+layout: Slides
 ---
 
 @slidestart

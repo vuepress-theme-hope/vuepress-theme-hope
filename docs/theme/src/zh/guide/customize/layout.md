@@ -1,6 +1,7 @@
 ---
 title: 自定义布局
 icon: clone
+order: 5
 category:
   - 教程
   - 自定义
@@ -53,62 +54,12 @@ $navbar-height = 80px;
 
 - 如果你希望去掉一些功能，你可以在样式文件中通过 `display: none` 隐藏相关元素。
 
-### 通过添加/覆盖布局
+## 通过添加/覆盖布局
 
-你可以通过 [客户端配置文件](../../cookbook/vuepress/config.md#客户端配置文件) 中的“layouts”选项添加新布局或覆盖现有布局。
+你可以添加新布局或覆盖现有布局，方法是通过 [客户端配置文件](../../cookbook/vuepress/config.md#客户端配置文件) 中的 `layouts` 选项。
 
-<!-- #region layout -->
-
-```js title=".vuepress/client.js"
-import { defineClientConfig } from "vuepress/client";
-import Changelog from "./layouts/Changelog.vue";
-import Layout from "./layouts/Layout.vue";
-
-export default defineClientConfig({
-  // 你可以在这里添加或覆盖布局
-  layouts: {
-    // 例如，在这里我们将 vuepress-theme-hope 的默认布局更改为 layouts/Layout.vue
-    Layout,
-    // 我们还添加了一个 Changelog 布局
-    Changelog,
-  },
-});
-```
-
-<!-- #endregion layout -->
-
-主题提供了如下布局:
-
-- Layout
-
-  基础布局，具有以下插槽：
-
-  - `default`: 页面内容插槽
-  - `top`: 页面顶部插槽
-  - `bottom`: 页面底部插槽
-  - `contentBefore`: 页面内容前插槽
-  - `contentAfter`: 页面内容后插槽
-  - `tocBefore`: 页面 TOC 前插槽
-  - `tocAfter`: 页面 TOC 后插槽
-
-  同时主页也支持以下插槽：
-
-  - `heroBefore`: 英雄组件前插槽
-  - `heroAfter`: 英雄组件后插槽
-  - `homeContent`: 主页内容插槽
-
-- NotFound
-
-  404 页面布局，具有以下插槽：
-
-  - `default`: 404 内容插槽
-
-- Slide: 仅当幻灯片启用时有效
-- BlogCategory: 仅当博客启用时有效
-- BlogHome: 仅当博客启用时有效
-- BlogType: 仅当博客启用时有效
-- Timeline: 仅当博客启用时有效
+查看 [使用插槽自定义布局](slots.md) 了解如何添加或覆盖布局。
 
 ### 通过覆盖组件
 
-请参见[替换主题组件](../advanced/replace.md) 。
+参见 [替换主题组件](../advanced/replace.md)。

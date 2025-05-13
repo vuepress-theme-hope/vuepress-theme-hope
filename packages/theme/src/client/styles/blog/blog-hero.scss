@@ -1,0 +1,147 @@
+@use "vuepress-shared/styles/reset";
+
+.vp-blog-hero {
+  position: relative;
+
+  display: flex;
+  flex-flow: column;
+  align-items: center;
+  justify-content: center;
+
+  height: 450px;
+  margin-bottom: 1rem;
+
+  color: #eee;
+
+  font-family: var(--vp-font-heading);
+
+  @media (max-width: hope-config.$tablet) {
+    height: 350px;
+  }
+
+  @media (max-width: hope-config.$mobile) {
+    margin: 0 0 1rem;
+  }
+
+  &.no-bg {
+    color: var(--vp-c-text);
+  }
+
+  > :not(.vp-blog-mask) {
+    position: relative;
+    z-index: 2;
+  }
+
+  &.hero-fullscreen {
+    height: calc(100vh - var(--navbar-height));
+
+    .vp-blog-mask {
+      background-position-y: top;
+    }
+
+    .vp-hero-slide-down-button {
+      position: absolute;
+    }
+  }
+}
+
+.vp-blog-mask {
+  position: absolute;
+  inset: 0;
+
+  &::after {
+    content: " ";
+
+    position: absolute;
+    inset: 0;
+    z-index: 1;
+
+    display: block;
+
+    background: var(--vp-c-grey-soft);
+  }
+
+  &.light {
+    display: block;
+
+    [data-theme="dark"] & {
+      display: none;
+    }
+  }
+
+  &.dark {
+    display: none;
+
+    [data-theme="dark"] & {
+      display: block;
+    }
+  }
+}
+
+.vp-blog-hero-info {
+  text-align: center;
+}
+
+.vp-blog-hero-title {
+  margin: 0.5rem auto;
+  font-weight: bold;
+  font-size: 2rem;
+
+  @media (min-width: hope-config.$pc) {
+    font-size: 2.25rem;
+  }
+
+  @media (max-width: hope-config.$tablet) {
+    font-size: 1.75rem;
+  }
+}
+
+.vp-blog-hero-image {
+  display: block;
+  max-width: 100%;
+  max-height: 15rem;
+  margin: 1.5rem auto;
+
+  @media (max-width: hope-config.$tablet) {
+    max-height: 12rem;
+  }
+
+  &.light {
+    display: block;
+
+    [data-theme="dark"] & {
+      display: none;
+    }
+  }
+
+  &.dark {
+    display: none;
+
+    [data-theme="dark"] & {
+      display: block;
+    }
+  }
+
+  + .vp-blog-hero-title {
+    margin: 0 auto;
+  }
+}
+
+.vp-blog-hero-description {
+  margin: 1.2rem auto 0;
+  font-size: 1.5rem;
+
+  @media (max-width: hope-config.$tablet) {
+    font-size: 1.25rem;
+  }
+}
+
+@keyframes bounce-down {
+  from {
+    transform: translateY(-5px);
+  }
+
+  to {
+    transform: translateY(5px);
+  }
+}

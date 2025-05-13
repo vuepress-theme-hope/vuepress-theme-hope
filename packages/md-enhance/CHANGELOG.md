@@ -4,6 +4,29 @@ All notable changes to this project will be documented in this file. See [Conven
 
 <!-- #region recent-change -->
 
+## [2.0.0-rc.87](https://github.com/vuepress-theme-hope/vuepress-theme-hope/compare/v2.0.0-rc.86...v2.0.0-rc.87) (2025-05-08)
+
+### ✨ Features
+
+- **md-enhance:** preserve state while printing ([84033e7](https://github.com/vuepress-theme-hope/vuepress-theme-hope/commit/84033e70c325c0f7aab09ffb37a6620e522fb190))
+
+### 🐛 Bug Fixes
+
+- **md-enhance:** resize properly for folded content ([7d03746](https://github.com/vuepress-theme-hope/vuepress-theme-hope/commit/7d037469302e94e4859113ea9d146eb0f83cd5a8))
+
+<!-- #region recent-change -->
+
+## [2.0.0-rc.86](https://github.com/vuepress-theme-hope/vuepress-theme-hope/compare/v2.0.0-rc.85...v2.0.0-rc.86) (2025-05-07)
+
+### 🐛 Bug Fixes
+
+- **deps:** update dependency @mdit/plugin-container to ^0.18.0 ([#4877](https://github.com/vuepress-theme-hope/vuepress-theme-hope/issues/4877)) ([c8bac8b](https://github.com/vuepress-theme-hope/vuepress-theme-hope/commit/c8bac8bb5989cff56f07abb42a9859f7c9de6cae))
+- **deps:** update dependency @mdit/plugin-demo to ^0.18.0 ([#4878](https://github.com/vuepress-theme-hope/vuepress-theme-hope/issues/4878)) ([7327d25](https://github.com/vuepress-theme-hope/vuepress-theme-hope/commit/7327d2596d0a3e5b5aeefe82c8aef02010d3e0c7))
+- **deps:** update dependency @mdit/plugin-plantuml to ^0.18.0 ([#4879](https://github.com/vuepress-theme-hope/vuepress-theme-hope/issues/4879)) ([d5b14a4](https://github.com/vuepress-theme-hope/vuepress-theme-hope/commit/d5b14a46c0733df63118674257b253e924c7c82b))
+- **deps:** update dependency @mdit/plugin-uml to ^0.18.0 ([#4880](https://github.com/vuepress-theme-hope/vuepress-theme-hope/issues/4880)) ([ee4d744](https://github.com/vuepress-theme-hope/vuepress-theme-hope/commit/ee4d744c874fad9a8e4624f4ae623c7a62077c04))
+
+<!-- #region recent-change -->
+
 ## [2.0.0-rc.85](https://github.com/vuepress-theme-hope/vuepress-theme-hope/compare/v2.0.0-rc.84...v2.0.0-rc.85) (2025-05-01)
 
 ### ⚠ BREAKING CHANGES

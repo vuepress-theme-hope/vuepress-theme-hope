@@ -2,9 +2,7 @@ import { watchImmediate } from "@vueuse/core";
 import type { Mesh } from "three";
 import type { VNode } from "vue";
 import { defineComponent, h, onMounted, ref } from "vue";
-
-import { useWindowSize } from "@theme-hope/composables/index";
-import { useDarkMode } from "@theme-hope/modules/outlook/composables/index";
+import { useDarkMode, useWindowSize } from "vuepress-theme-hope/client";
 
 import "../styles/hope-logo.scss";
 

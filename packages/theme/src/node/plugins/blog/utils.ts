@@ -7,6 +7,15 @@ import type {
   ThemeNormalPageFrontmatter,
 } from "../../../shared/index.js";
 
+export const BLOG_LAYOUT = "Blog";
+
+export const DEFAULT_BLOG_FRONTMATTER = {
+  dir: { index: false },
+  index: false,
+  feed: false,
+  sitemap: false,
+};
+
 /** @private */
 export const defaultPageSorter = (
   pageA: Page<

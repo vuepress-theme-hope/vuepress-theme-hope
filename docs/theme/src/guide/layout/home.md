@@ -188,7 +188,7 @@ highlights:
       - title: Run <code>pnpm create vuepress-theme-hope hope-project</code> to create a new project with this theme.
       - title: Run <code>pnpm create vuepress-theme-hope add .</code> in your project root to create a new project with this theme.
 
-  - header: Add things you want in markdown
+  - header: Add things you want in Markdown
     description: We extended the standard commonMark specification and added tons of new features for you.
     image: /assets/image/markdown.svg
     bgImage: https://theme-hope-assets.vuejs.press/bg/2-light.svg
@@ -199,7 +199,7 @@ highlights:
     features:
       - title: Links Check
         icon: clipboard-check
-        details: Check markdown links
+        details: Check Markdown links
         link: ./guide/markdown/others.html#link-check
 
       - title: Hint box

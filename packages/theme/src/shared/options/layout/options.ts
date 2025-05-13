@@ -23,7 +23,7 @@ export interface LayoutLocaleData {
   /**
    * Router related i18n config
    */
-  routeLocales: RouteLocaleData;
+  routerLocales: RouteLocaleData;
 }
 
 export interface DeprecatedLayoutOptions {

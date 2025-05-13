@@ -9,8 +9,6 @@ tag:
   - 主题配置
 ---
 
-The following options adds new markdown grammar, and can be set **under `markdown` property** in theme options.
-
 以下选项在 markdown 中添加了新的语法，可以在主题选项的 `markdown` 属性下进行设置。
 
 ## markdown.component

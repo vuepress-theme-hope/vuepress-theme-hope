@@ -1,4 +1,4 @@
-import { useEventListener, useToggle } from "@vueuse/core";
+import { useEventListener, useResizeObserver, useToggle } from "@vueuse/core";
 import type { SlotsType, VNode } from "vue";
 import { defineComponent, h, ref, shallowRef } from "vue";
 
@@ -36,8 +36,25 @@ export default defineComponent({
     const codeContainer = shallowRef<HTMLDivElement>();
     const height = ref("0");
 
+    let previousState: boolean | null = null;
+
     useEventListener("beforeprint", () => {
       toggleIsExpand(true);
+    });
+
+    useEventListener("afterprint", () => {
+      if (previousState !== null) {
+        toggleIsExpand(previousState);
+      }
+
+      previousState = null;
+    });
+
+    useResizeObserver(codeContainer, () => {
+      if (isExpanded.value) {
+        // eslint-disable-next-line @typescript-eslint/no-non-null-assertion
+        height.value = `${codeContainer.value!.clientHeight + 14}px`;
+      }
     });
 
     return (): VNode =>
@@ -54,7 +71,7 @@ export default defineComponent({
               height.value = isExpanded.value
                 ? "0"
                 : // eslint-disable-next-line @typescript-eslint/no-non-null-assertion
-                  `${codeContainer.value!.clientHeight + 13.8}px`;
+                  `${codeContainer.value!.clientHeight + 14}px`;
               toggleIsExpand();
             },
           }),

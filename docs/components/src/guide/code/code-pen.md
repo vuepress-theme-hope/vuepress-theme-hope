@@ -2,7 +2,7 @@
 title: CodePen
 ---
 
-Embed CodePen demos in your markdown.
+Embed CodePen demos in your Markdown.
 
 <!-- more -->
 

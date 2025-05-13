@@ -1,0 +1,34 @@
+.vp-nav-screen {
+  position: fixed;
+  inset: var(--navbar-height) 0 0 0;
+  z-index: 150;
+
+  display: none;
+
+  overflow-y: auto;
+
+  padding: 0 2rem;
+
+  background: var(--vp-c-bg);
+
+  transition: background var(--vp-t-color);
+
+  @media (max-width: hope-config.$tablet) {
+    display: block;
+  }
+
+  .vp-icon {
+    margin-inline-end: 0.25em;
+  }
+}
+
+.vp-nav-screen-container {
+  max-width: 320px;
+  margin: 0 auto;
+  padding: 2rem 0 4rem;
+}
+
+.vp-appearance-wrapper {
+  display: flex;
+  justify-content: space-around;
+}

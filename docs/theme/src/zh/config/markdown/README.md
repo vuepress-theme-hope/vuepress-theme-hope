@@ -10,6 +10,6 @@ tag:
   - 主题配置
 ---
 
-你可以通过主题选项中的 `markdown` 来自定义 markdown。
+你可以通过主题选项中的 `markdown` 来自定义 Markdown。
 
 <Catalog />

@@ -1,5 +1,6 @@
+import { execSync, spawnSync } from "node:child_process";
+
 import { select } from "@inquirer/prompts";
-import { execaCommandSync } from "execa";
 
 import type { PackageManager } from "../config/index.js";
 import type { SupportedLang } from "../i18n/index.js";
@@ -10,11 +11,12 @@ const getUserRegistry = (
   packageManager: PackageManager,
   isYarnModern: boolean,
 ): string =>
-  execaCommandSync(
+  execSync(
     `${packageManager} config get ${
       isYarnModern ? "npmRegistryServer" : "registry"
     }`,
-  ).stdout;
+    { encoding: "utf8" },
+  ).trim();
 
 export const getRegistry = async (
   packageManager: PackageManager,
@@ -22,21 +24,13 @@ export const getRegistry = async (
 ): Promise<string> => {
   const isYarnModern =
     packageManager === "yarn" &&
-    !execaCommandSync("yarn --version").stdout.startsWith("1");
+    !spawnSync(`${packageManager} --version`, {
+      shell: true,
+    })
+      .stdout.toString()
+      .startsWith("1");
 
   const userRegistry = getUserRegistry(packageManager, isYarnModern);
-
-  if (/https:\/\/registry\.npm\.taobao\.org\/?/.test(userRegistry)) {
-    console.error(
-      "npm.taobao.org is no longer available, resetting it to npmmirror.com",
-    );
-
-    execaCommandSync(
-      `${packageManager} config set ${
-        isYarnModern ? "npmRegistryServer" : "registry"
-      } ${NPM_MIRROR_REGISTRY}`,
-    );
-  }
 
   if (lang === "zh") {
     const registry = await select({

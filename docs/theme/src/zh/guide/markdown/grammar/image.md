@@ -69,7 +69,7 @@ export default hopeTheme({
 
 ## 图片尺寸
 
-当你在插件选项中设置 `size: true` 时，你可以在图片替代文字后面添加 `=widthxheight`，并用空格分隔。
+当你在插件选项中设置 `imgSize: true` 时，你可以在图片替代文字后面添加 `=widthxheight`，并用空格分隔。
 
 `width` 和 `height` 都应该是数字，单位为像素，并且都是可选的。
 
@@ -163,5 +163,5 @@ export default hopeTheme({
 <!-- markdownlint-enable MD034 -->
 
 <script setup lang="ts">
-import ColorModeSwitch from "@theme-hope/modules/outlook/components/ColorModeSwitch";
+import { ColorModeSwitch } from "vuepress-theme-hope/client";
 </script>

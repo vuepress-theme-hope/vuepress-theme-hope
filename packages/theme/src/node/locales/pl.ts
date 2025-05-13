@@ -59,7 +59,7 @@ export const plLocale: ThemeLocaleData = {
     errorHint: "Podaj poprawne hasło!",
   },
 
-  routeLocales: {
+  routerLocales: {
     skipToContent: "Przejdź do głównej treści",
     notFoundTitle: "Nie znaleziono strony",
     notFoundMsg: [
