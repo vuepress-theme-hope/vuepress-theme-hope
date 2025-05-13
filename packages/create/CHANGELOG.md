@@ -4,6 +4,15 @@ All notable changes to this project will be documented in this file. See [Conven
 
 <!-- #region recent-change -->
 
+## [2.0.0-rc.88](https://github.com/vuepress-theme-hope/vuepress-theme-hope/compare/v2.0.0-rc.87...v2.0.0-rc.88) (2025-05-13)
+
+### ✨ Features
+
+- **create:** remove execa ([d5ef321](https://github.com/vuepress-theme-hope/vuepress-theme-hope/commit/d5ef32113e299fa73ee1fb2da39f9dbc5c91beae))
+- support new VuePress ([327d099](https://github.com/vuepress-theme-hope/vuepress-theme-hope/commit/327d099214ff3f93f3557af465ea5f1690b08f18))
+
+<!-- #region recent-change -->
+
 ## [2.0.0-rc.87](https://github.com/vuepress-theme-hope/vuepress-theme-hope/compare/v2.0.0-rc.86...v2.0.0-rc.87) (2025-05-08)
 
 **Note:** Version bump only for package create-vuepress-theme-hope

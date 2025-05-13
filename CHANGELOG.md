@@ -4,6 +4,21 @@ All notable changes to this project will be documented in this file. See [Conven
 
 <!-- #region recent-change -->
 
+## [2.0.0-rc.88](https://github.com/vuepress-theme-hope/vuepress-theme-hope/compare/v2.0.0-rc.87...v2.0.0-rc.88) (2025-05-13)
+
+### ✨ Features
+
+- **create:** remove execa ([d5ef321](https://github.com/vuepress-theme-hope/vuepress-theme-hope/commit/d5ef32113e299fa73ee1fb2da39f9dbc5c91beae))
+- support new VuePress ([327d099](https://github.com/vuepress-theme-hope/vuepress-theme-hope/commit/327d099214ff3f93f3557af465ea5f1690b08f18))
+- **theme:** support checkVuePress in behavior options, close [#4892](https://github.com/vuepress-theme-hope/vuepress-theme-hope/issues/4892) ([11306e6](https://github.com/vuepress-theme-hope/vuepress-theme-hope/commit/11306e6feb2ad347351aba8ac357fee8092818dd))
+
+### 🐛 Bug Fixes
+
+- **theme:** fix darkmode spoiler ([e5a82b8](https://github.com/vuepress-theme-hope/vuepress-theme-hope/commit/e5a82b80c5d7ae5677ac607b3f3ab966e574e66f))
+- **theme:** fix ssr mismatch with navbar ([dbd1acc](https://github.com/vuepress-theme-hope/vuepress-theme-hope/commit/dbd1accff4585677128c6e15c7c680421ba30db9))
+
+<!-- #region recent-change -->
+
 ## [2.0.0-rc.87](https://github.com/vuepress-theme-hope/vuepress-theme-hope/compare/v2.0.0-rc.86...v2.0.0-rc.87) (2025-05-08)
 
 ### ✨ Features
