@@ -2,13 +2,9 @@
 
 All notable changes to this project will be documented in this file. See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
-<!-- #region recent-change -->
-
 ## [2.0.0-rc.88](https://github.com/vuepress-theme-hope/vuepress-theme-hope/compare/v2.0.0-rc.87...v2.0.0-rc.88) (2025-05-13)
 
 **Note:** Version bump only for package vuepress-plugin-md-enhance
-
-<!-- #region recent-change -->
 
 ## [2.0.0-rc.87](https://github.com/vuepress-theme-hope/vuepress-theme-hope/compare/v2.0.0-rc.86...v2.0.0-rc.87) (2025-05-08)
 
@@ -20,8 +16,6 @@ All notable changes to this project will be documented in this file. See [Conven
 
 - **md-enhance:** resize properly for folded content ([7d03746](https://github.com/vuepress-theme-hope/vuepress-theme-hope/commit/7d037469302e94e4859113ea9d146eb0f83cd5a8))
 
-<!-- #region recent-change -->
-
 ## [2.0.0-rc.86](https://github.com/vuepress-theme-hope/vuepress-theme-hope/compare/v2.0.0-rc.85...v2.0.0-rc.86) (2025-05-07)
 
 ### 🐛 Bug Fixes
@@ -30,8 +24,6 @@ All notable changes to this project will be documented in this file. See [Conven
 - **deps:** update dependency @mdit/plugin-demo to ^0.18.0 ([#4878](https://github.com/vuepress-theme-hope/vuepress-theme-hope/issues/4878)) ([7327d25](https://github.com/vuepress-theme-hope/vuepress-theme-hope/commit/7327d2596d0a3e5b5aeefe82c8aef02010d3e0c7))
 - **deps:** update dependency @mdit/plugin-plantuml to ^0.18.0 ([#4879](https://github.com/vuepress-theme-hope/vuepress-theme-hope/issues/4879)) ([d5b14a4](https://github.com/vuepress-theme-hope/vuepress-theme-hope/commit/d5b14a46c0733df63118674257b253e924c7c82b))
 - **deps:** update dependency @mdit/plugin-uml to ^0.18.0 ([#4880](https://github.com/vuepress-theme-hope/vuepress-theme-hope/issues/4880)) ([ee4d744](https://github.com/vuepress-theme-hope/vuepress-theme-hope/commit/ee4d744c874fad9a8e4624f4ae623c7a62077c04))
-
-<!-- #region recent-change -->
 
 ## [2.0.0-rc.85](https://github.com/vuepress-theme-hope/vuepress-theme-hope/compare/v2.0.0-rc.84...v2.0.0-rc.85) (2025-05-01)
 
@@ -43,13 +35,9 @@ All notable changes to this project will be documented in this file. See [Conven
 
 - **theme:** rebuild image size feature ([06ef855](https://github.com/vuepress-theme-hope/vuepress-theme-hope/commit/06ef855ed3185aa5a0ea8172f3eabc3cce30f418))
 
-<!-- #region recent-change -->
-
 ## [2.0.0-rc.84](https://github.com/vuepress-theme-hope/vuepress-theme-hope/compare/v2.0.0-rc.83...v2.0.0-rc.84) (2025-04-29)
 
 **Note:** Version bump only for package vuepress-plugin-md-enhance
-
-<!-- #region recent-change -->
 
 ## [2.0.0-rc.83](https://github.com/vuepress-theme-hope/vuepress-theme-hope/compare/v2.0.0-rc.82...v2.0.0-rc.83) (2025-04-28)
 
@@ -61,15 +49,11 @@ All notable changes to this project will be documented in this file. See [Conven
 
 - drop node18 support ([c611b59](https://github.com/vuepress-theme-hope/vuepress-theme-hope/commit/c611b59ab8a74dc641f8949c43c5f7ed4c6dd381))
 
-<!-- #region recent-change -->
-
 ## [2.0.0-rc.81](https://github.com/vuepress-theme-hope/vuepress-theme-hope/compare/v2.0.0-rc.80...v2.0.0-rc.81) (2025-04-14)
 
 ### 🚀 Performance Improvements
 
 - improve webpack perf ([#4845](https://github.com/vuepress-theme-hope/vuepress-theme-hope/issues/4845)) ([abe3134](https://github.com/vuepress-theme-hope/vuepress-theme-hope/commit/abe31343abd2cfd117692591e1658af7a07cbcec))
-
-<!-- #region recent-change -->
 
 ## [2.0.0-rc.80](https://github.com/vuepress-theme-hope/vuepress-theme-hope/compare/v2.0.0-rc.79...v2.0.0-rc.80) (2025-04-12)
 
@@ -77,19 +61,13 @@ All notable changes to this project will be documented in this file. See [Conven
 
 - support vuepress rc21 ([#4844](https://github.com/vuepress-theme-hope/vuepress-theme-hope/issues/4844)) ([a0bb74f](https://github.com/vuepress-theme-hope/vuepress-theme-hope/commit/a0bb74ff49f8e0a437ea7bc6bc8dac96e9c51af0))
 
-<!-- #region recent-change -->
-
 ## [2.0.0-rc.79](https://github.com/vuepress-theme-hope/vuepress-theme-hope/compare/v2.0.0-rc.78...v2.0.0-rc.79) (2025-04-09)
 
 **Note:** Version bump only for package vuepress-plugin-md-enhance
 
-<!-- #region recent-change -->
-
 ## [2.0.0-rc.78](https://github.com/vuepress-theme-hope/vuepress-theme-hope/compare/v2.0.0-rc.77...v2.0.0-rc.78) (2025-04-02)
 
 **Note:** Version bump only for package vuepress-plugin-md-enhance
-
-<!-- #region recent-change -->
 
 ## [2.0.0-rc.76](https://github.com/vuepress-theme-hope/vuepress-theme-hope/compare/v2.0.0-rc.75...v2.0.0-rc.76) (2025-03-27)
 

@@ -17,8 +17,6 @@ All notable changes to this project will be documented in this file. See [Conven
 - **theme:** fix darkmode spoiler ([e5a82b8](https://github.com/vuepress-theme-hope/vuepress-theme-hope/commit/e5a82b80c5d7ae5677ac607b3f3ab966e574e66f))
 - **theme:** fix ssr mismatch with navbar ([dbd1acc](https://github.com/vuepress-theme-hope/vuepress-theme-hope/commit/dbd1accff4585677128c6e15c7c680421ba30db9))
 
-<!-- #region recent-change -->
-
 ## [2.0.0-rc.87](https://github.com/vuepress-theme-hope/vuepress-theme-hope/compare/v2.0.0-rc.86...v2.0.0-rc.87) (2025-05-08)
 
 ### ✨ Features
@@ -34,8 +32,6 @@ All notable changes to this project will be documented in this file. See [Conven
 - **theme:** fix CategoryPage ([a6fc5d3](https://github.com/vuepress-theme-hope/vuepress-theme-hope/commit/a6fc5d379b8715ec827da0ec785ef94249688d29))
 - **theme:** fix empty string issue in sidebar ([9684575](https://github.com/vuepress-theme-hope/vuepress-theme-hope/commit/968457582b5f145a8d8ace9770cbc576d2aece96))
 - **theme:** fix navbar slots ([1216ac8](https://github.com/vuepress-theme-hope/vuepress-theme-hope/commit/1216ac82c5c854e8f88a4f8f3f2afed42f6fada7))
-
-<!-- #region recent-change -->
 
 ## [2.0.0-rc.86](https://github.com/vuepress-theme-hope/vuepress-theme-hope/compare/v2.0.0-rc.85...v2.0.0-rc.86) (2025-05-07)
 
@@ -60,8 +56,6 @@ All notable changes to this project will be documented in this file. See [Conven
 - **theme:** fix catalog icon sizing ([9be72ac](https://github.com/vuepress-theme-hope/vuepress-theme-hope/commit/9be72ac7cd6666abdf6996e1d94a288579804422))
 - **theme:** fix ssr mismatch with 404 page ([9c8cd02](https://github.com/vuepress-theme-hope/vuepress-theme-hope/commit/9c8cd025e025facaa479a646c8992d6e700a054b))
 - **theme:** fix timeline style and improve styles ([8201d5d](https://github.com/vuepress-theme-hope/vuepress-theme-hope/commit/8201d5dde6711ea41f16a0987689ce235776d110))
-
-<!-- #region recent-change -->
 
 ## [2.0.0-rc.85](https://github.com/vuepress-theme-hope/vuepress-theme-hope/compare/v2.0.0-rc.84...v2.0.0-rc.85) (2025-05-01)
 
@@ -88,16 +82,12 @@ All notable changes to this project will be documented in this file. See [Conven
 - **theme:** fix timeline style ([1f6a2e9](https://github.com/vuepress-theme-hope/vuepress-theme-hope/commit/1f6a2e91246ca04d98422f0d17f66449703e610a))
 - **theme:** set InfoList label to down position, close [#2031](https://github.com/vuepress-theme-hope/vuepress-theme-hope/issues/2031) ([43d60b5](https://github.com/vuepress-theme-hope/vuepress-theme-hope/commit/43d60b53e9f401ade8a7e8a1320207e3071fbfa1))
 
-<!-- #region recent-change -->
-
 ## [2.0.0-rc.84](https://github.com/vuepress-theme-hope/vuepress-theme-hope/compare/v2.0.0-rc.83...v2.0.0-rc.84) (2025-04-29)
 
 ### 🐛 Bug Fixes
 
 - **theme:** add meilisearch plugin to known plugin list ([4b715a2](https://github.com/vuepress-theme-hope/vuepress-theme-hope/commit/4b715a289d539135746aba154973188f5ee73f12))
 - **theme:** fix h2 with no-navbar style ([73294e6](https://github.com/vuepress-theme-hope/vuepress-theme-hope/commit/73294e6eb2294d198cc896040ee227788b1f5e53))
-
-<!-- #region recent-change -->
 
 ## [2.0.0-rc.83](https://github.com/vuepress-theme-hope/vuepress-theme-hope/compare/v2.0.0-rc.82...v2.0.0-rc.83) (2025-04-28)
 
@@ -116,15 +106,11 @@ All notable changes to this project will be documented in this file. See [Conven
 - **deps:** update dependency artplayer-plugin-danmuku to v5.1.6 ([#4857](https://github.com/vuepress-theme-hope/vuepress-theme-hope/issues/4857)) ([989d91d](https://github.com/vuepress-theme-hope/vuepress-theme-hope/commit/989d91da0c445ca2d5e99c1e0d1ab882e63d9197))
 - fix broken links ([832db84](https://github.com/vuepress-theme-hope/vuepress-theme-hope/commit/832db84a51341fd62b3bddf50f24c390a955cb11))
 
-<!-- #region recent-change -->
-
 ## [2.0.0-rc.82](https://github.com/vuepress-theme-hope/vuepress-theme-hope/compare/v2.0.0-rc.81...v2.0.0-rc.82) (2025-04-16)
 
 ### ✨ Features
 
 - **theme:** add built-in support for meilisearch ([efb508d](https://github.com/vuepress-theme-hope/vuepress-theme-hope/commit/efb508d2e3589aa8a5feb1ca67697adf0bf2e9b0))
-
-<!-- #region recent-change -->
 
 ## [2.0.0-rc.81](https://github.com/vuepress-theme-hope/vuepress-theme-hope/compare/v2.0.0-rc.80...v2.0.0-rc.81) (2025-04-14)
 
@@ -147,16 +133,12 @@ All notable changes to this project will be documented in this file. See [Conven
 - improve webpack perf ([#4845](https://github.com/vuepress-theme-hope/vuepress-theme-hope/issues/4845)) ([abe3134](https://github.com/vuepress-theme-hope/vuepress-theme-hope/commit/abe31343abd2cfd117692591e1658af7a07cbcec))
 - **theme:** tweaks ([91f8f2e](https://github.com/vuepress-theme-hope/vuepress-theme-hope/commit/91f8f2e4aee1de01cfeafba3be20e4c9203414a3))
 
-<!-- #region recent-change -->
-
 ## [2.0.0-rc.80](https://github.com/vuepress-theme-hope/vuepress-theme-hope/compare/v2.0.0-rc.79...v2.0.0-rc.80) (2025-04-12)
 
 ### ✨ Features
 
 - remove dayjs ([32f8c75](https://github.com/vuepress-theme-hope/vuepress-theme-hope/commit/32f8c7513723b92b0130610775e86819123a42e9))
 - support vuepress rc21 ([#4844](https://github.com/vuepress-theme-hope/vuepress-theme-hope/issues/4844)) ([a0bb74f](https://github.com/vuepress-theme-hope/vuepress-theme-hope/commit/a0bb74ff49f8e0a437ea7bc6bc8dac96e9c51af0))
-
-<!-- #region recent-change -->
 
 ## [2.0.0-rc.79](https://github.com/vuepress-theme-hope/vuepress-theme-hope/compare/v2.0.0-rc.78...v2.0.0-rc.79) (2025-04-09)
 
@@ -170,16 +152,12 @@ All notable changes to this project will be documented in this file. See [Conven
 - **theme:** fix fullscreen button ([7898c6d](https://github.com/vuepress-theme-hope/vuepress-theme-hope/commit/7898c6d228133126c685c686462543439fce18c2))
 - **theme:** fix timeline item style ([2088135](https://github.com/vuepress-theme-hope/vuepress-theme-hope/commit/208813504583f1cdfdcca09036ab4eec8015c152))
 
-<!-- #region recent-change -->
-
 ## [2.0.0-rc.78](https://github.com/vuepress-theme-hope/vuepress-theme-hope/compare/v2.0.0-rc.77...v2.0.0-rc.78) (2025-04-02)
 
 ### ✨ Features
 
 - **theme:** use Message from helper ([b3b3ccf](https://github.com/vuepress-theme-hope/vuepress-theme-hope/commit/b3b3ccf895d27f744a24342ab71a130cf52cde3e))
 - use transition style from helper ([e23908e](https://github.com/vuepress-theme-hope/vuepress-theme-hope/commit/e23908e49f369e8acf4d53a17e6ec91d22049ab0))
-
-<!-- #region recent-change -->
 
 ## [2.0.0-rc.77](https://github.com/vuepress-theme-hope/vuepress-theme-hope/compare/v2.0.0-rc.76...v2.0.0-rc.77) (2025-03-28)
 
@@ -191,8 +169,6 @@ All notable changes to this project will be documented in this file. See [Conven
 
 - **theme:** fix lastUpdated, close [#4816](https://github.com/vuepress-theme-hope/vuepress-theme-hope/issues/4816) ([d671081](https://github.com/vuepress-theme-hope/vuepress-theme-hope/commit/d67108100690d3448638d8d31598df4be96b1aec))
 - **theme:** fix toc style ([a514ed0](https://github.com/vuepress-theme-hope/vuepress-theme-hope/commit/a514ed0cec124478fbf1cb1cbe51f8ccdf7c148e))
-
-<!-- #region recent-change -->
 
 ## [2.0.0-rc.76](https://github.com/vuepress-theme-hope/vuepress-theme-hope/compare/v2.0.0-rc.75...v2.0.0-rc.76) (2025-03-27)
 
@@ -208,8 +184,6 @@ All notable changes to this project will be documented in this file. See [Conven
 - **theme:** fix footer ([e7789d2](https://github.com/vuepress-theme-hope/vuepress-theme-hope/commit/e7789d28cbed8bcfa5dcc21cef063d2292dd7702))
 - **theme:** fix markdown-content style ([5fc7639](https://github.com/vuepress-theme-hope/vuepress-theme-hope/commit/5fc7639fbe007606df051ed98adfc29d8ace8883))
 - **theme:** fix wide screen appearance ([31ebb5e](https://github.com/vuepress-theme-hope/vuepress-theme-hope/commit/31ebb5e0ee9747cbc9f3ebdf41475c9e5280de21))
-
-<!-- #region recent-change -->
 
 ## [2.0.0-rc.75](https://github.com/vuepress-theme-hope/vuepress-theme-hope/compare/v2.0.0-rc.74...v2.0.0-rc.75) (2025-03-23)
 
