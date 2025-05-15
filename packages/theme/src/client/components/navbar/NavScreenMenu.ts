@@ -6,8 +6,9 @@ import {
   ref,
   resolveComponent,
   toRef,
+  watch,
 } from "vue";
-import { onContentUpdated } from "vuepress/client";
+import { onContentUpdated, useRoute } from "vuepress/client";
 
 import AutoLink from "@theme-hope/components/base/AutoLink";
 
@@ -35,6 +36,7 @@ export default defineComponent({
 
   setup(props) {
     const config = toRef(props, "config");
+    const route = useRoute();
 
     const ariaLabel = computed(
       () => config.value.ariaLabel ?? config.value.text,
@@ -48,6 +50,14 @@ export default defineComponent({
     onContentUpdated(() => {
       open.value = false;
     });
+
+    // hide screen when route changes
+    watch(
+      () => route.fullPath,
+      () => {
+        open.value = false;
+      },
+    );
 
     return (): VNode[] => [
       h(

@@ -10,7 +10,7 @@ import {
   shallowRef,
   watch,
 } from "vue";
-import { onContentUpdated, useRoute } from "vuepress/client";
+import { onContentUpdated } from "vuepress/client";
 
 import AppearanceSettings from "@theme-hope/components/appearance/AppearanceSettings";
 import NavScreenLinks from "@theme-hope/components/navbar/NavScreenLinks";
@@ -38,7 +38,6 @@ export default defineComponent({
 
   setup(props, { slots }) {
     const { isMobile } = useWindowSize();
-    const route = useRoute();
     const body = shallowRef<HTMLElement>();
     const isLocked = useScrollLock(body);
 
@@ -49,15 +48,6 @@ export default defineComponent({
     watch(isMobile, (value) => {
       if (!value && props.show) isLocked.value = false;
     });
-
-    // unlock the screen when route changes
-    // this prevents NavScreen block contents when navbar has links within one route.
-    watch(
-      () => route.fullPath,
-      () => {
-        isLocked.value = false;
-      },
-    );
 
     onMounted(() => {
       body.value = document.body;
