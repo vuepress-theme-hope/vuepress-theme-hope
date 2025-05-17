@@ -4,7 +4,7 @@ packages:
   - docs-shared/
   - packages/*
 catalog:
-  "@vueuse/core": 13.1.0
+  "@vueuse/core": 13.2.0
   markmap-lib: 0.18.11
   markmap-toolbar: 0.18.10
   markmap-view: 0.18.10
