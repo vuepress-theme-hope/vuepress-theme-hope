@@ -29,6 +29,7 @@ import { useData } from "@theme-hope/composables/useData";
 import { usePure } from "@theme-hope/composables/usePure";
 import { useWindowSize } from "@theme-hope/composables/useWindowSize";
 import type { SidebarItemsSlotData } from "@theme-hope/typings/slots";
+import { isSlotResultEmpty } from "@theme-hope/utils/isSlotResultEmpty";
 
 import type {
   ThemeNormalPageFrontmatter,
@@ -197,6 +198,11 @@ export default defineComponent({
       const sidebarItemsContent = slots.sidebarItems?.(sidebarItems.value);
       const sidebarBottomContent = slots.sidebarBottom?.();
 
+      const areSlotsEmpty =
+        isSlotResultEmpty(sidebarTopContent) &&
+        isSlotResultEmpty(sidebarItemsContent) &&
+        isSlotResultEmpty(sidebarBottomContent);
+
       const noSidebar =
         // sidebar is disabled via props
         props.noSidebar ||
@@ -205,9 +211,7 @@ export default defineComponent({
         // (is home page / no sidebar items) && no contents in sidebar slots
         // eslint-disable-next-line @typescript-eslint/prefer-nullish-coalescing
         ((frontmatter.value.home || sidebarItems.value.length === 0) &&
-          !sidebarTopContent &&
-          !sidebarItemsContent &&
-          !sidebarBottomContent);
+          areSlotsEmpty);
 
       return h(
         hasGlobalComponent("GlobalEncrypt")

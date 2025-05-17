@@ -10,6 +10,7 @@ import PrintButton from "@theme-hope/components/base/PrintButton";
 import { useMetaLocale } from "@theme-hope/composables/info/useMetaLocale";
 import { useData } from "@theme-hope/composables/useData";
 import type { TocSlotData } from "@theme-hope/typings/slots";
+import { isSlotResultEmpty } from "@theme-hope/utils/isSlotResultEmpty";
 
 import "../../styles/info/toc.scss";
 
@@ -220,16 +221,20 @@ export default defineComponent({
             const beforeContent = slots.tocBefore?.();
             const afterContent = slots.tocAfter?.();
 
-            // headers can not be accessed during SSR, so we need to wrap it with ClientOnly
-            return defaultContent || beforeContent || afterContent
-              ? h("div", { class: "vp-toc-placeholder" }, [
+            const isTOCEmpty =
+              isSlotResultEmpty(defaultContent) &&
+              isSlotResultEmpty(beforeContent) &&
+              isSlotResultEmpty(afterContent);
+
+            return isTOCEmpty
+              ? null
+              : h("div", { class: "vp-toc-placeholder" }, [
                   h("aside", { id: "toc", "vp-toc": "" }, [
                     beforeContent,
                     defaultContent,
                     afterContent,
                   ]),
-                ])
-              : null;
+                ]);
           })
         : null;
   },
