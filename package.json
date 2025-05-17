@@ -63,7 +63,7 @@
     "gulp": "5.0.0",
     "http-server": "14.1.1",
     "husky": "9.1.7",
-    "markdownlint-cli2": "0.18.0",
+    "markdownlint-cli2": "0.18.1",
     "nano-staged": "0.8.0",
     "ora": "8.2.0",
     "prettier": "3.5.3",
