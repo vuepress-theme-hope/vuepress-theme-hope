@@ -61,8 +61,8 @@ export default defineComponent({
               : null,
             h(BreadCrumb),
             h(PageTitle),
-            h(TOC, {}, slots),
-            slots.content?.() ?? h(MarkdownContent, {}, slots),
+            h(TOC, null, slots),
+            slots.content?.() ?? h(MarkdownContent, null, slots),
             h(PageMeta),
             h(PageNav),
             hasGlobalComponent("CommentService")

@@ -44,7 +44,7 @@ export default defineComponent({
           "aria-labelledby": "main-title",
         },
         [
-          h(PortfolioHero, {}, slots),
+          h(PortfolioHero, null, slots),
           content === "none"
             ? null
             : (slots.content?.() ??

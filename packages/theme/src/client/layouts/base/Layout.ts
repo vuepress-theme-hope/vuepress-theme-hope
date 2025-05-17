@@ -70,29 +70,25 @@ export default defineComponent({
 
     return (): VNode[] => [
       h(SkipLink),
-      h(
-        MainLayout,
-        {},
-        {
-          ...slots,
-          default:
-            slots.default ??
-            ((): VNode =>
-              frontmatter.value.portfolio
-                ? h(PortfolioHome, {}, slots)
-                : frontmatter.value.home
-                  ? h(HomePage, {}, slots)
-                  : h(MainFadeInUpTransition, () =>
-                      h(PageContent, { key: page.value.path }, slots),
-                    )),
+      h(MainLayout, null, {
+        ...slots,
+        default:
+          slots.default ??
+          ((): VNode =>
+            frontmatter.value.portfolio
+              ? h(PortfolioHome, null, slots)
+              : frontmatter.value.home
+                ? h(HomePage, null, slots)
+                : h(MainFadeInUpTransition, () =>
+                    h(PageContent, { key: page.value.path }, slots),
+                  )),
 
-          navScreenBottom:
-            slots.navScreenBottom ??
-            (hasGlobalComponent("BloggerInfo")
-              ? (): SlotContent => h(resolveComponent("BloggerInfo"))
-              : null),
-        },
-      ),
+        navScreenBottom:
+          slots.navScreenBottom ??
+          (hasGlobalComponent("BloggerInfo")
+            ? (): SlotContent => h(resolveComponent("BloggerInfo"))
+            : null),
+      }),
     ];
   },
 });

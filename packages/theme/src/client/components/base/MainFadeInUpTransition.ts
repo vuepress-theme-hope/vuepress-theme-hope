@@ -20,7 +20,7 @@ export default defineComponent({
 
     return (): VNode =>
       pure.value
-        ? h(RenderDefault, {}, slots.default)
+        ? h(RenderDefault, slots.default)
         : h(
             Transition,
             {

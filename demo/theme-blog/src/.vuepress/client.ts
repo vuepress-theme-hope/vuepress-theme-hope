@@ -21,13 +21,9 @@ export default defineClientConfig({
 
   layouts: {
     Blog: () =>
-      h(
-        Blog,
-        {},
-        {
-          heroInfo: (info: { text: string }) => h(HitokotoBlogHero, info),
-          heroBg: () => h(BingHeroBackground),
-        },
-      ),
+      h(Blog, null, {
+        heroInfo: (info: { text: string }) => h(HitokotoBlogHero, info),
+        heroBg: () => h(BingHeroBackground),
+      }),
   },
 });

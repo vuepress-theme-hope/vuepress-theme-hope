@@ -29,8 +29,8 @@ export default defineClientConfig({
   },
 
   layouts: {
-    Layout: () => h(Layout, {}, { heroLogo: () => h(HopeLogo) }),
-    NotFound: () => h(NotFound, {}, () => h(HopeNotFoundHint)),
+    Layout: () => h(Layout, null, { heroLogo: () => h(HopeLogo) }),
+    NotFound: () => h(NotFound, () => h(HopeNotFoundHint)),
     CustomBlogHome,
     BlogSlotDemo,
     LayoutSlotDemo,

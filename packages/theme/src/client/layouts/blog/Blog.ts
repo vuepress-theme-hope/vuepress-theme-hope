@@ -68,22 +68,18 @@ export default defineComponent({
     return (): VNode => {
       const { type, key } = frontmatter.value.blog ?? {};
 
-      return h(
-        BlogMainLayout,
-        {},
-        {
-          ...slots,
-          default: (): RequiredSlotContent =>
-            slots.default?.() ??
-            (type === "category"
-              ? h(CategoryPage, {}, slots)
-              : type === "type"
-                ? key === "timeline"
-                  ? h(TimelinePage, {}, slots)
-                  : h(TypePage, {}, slots)
-                : h(BlogHome, {}, slots)),
-        },
-      );
+      return h(BlogMainLayout, null, {
+        ...slots,
+        default: (): RequiredSlotContent =>
+          slots.default?.() ??
+          (type === "category"
+            ? h(CategoryPage, null, slots)
+            : type === "type"
+              ? key === "timeline"
+                ? h(TimelinePage, null, slots)
+                : h(TypePage, null, slots)
+              : h(BlogHome, null, slots)),
+      });
     };
   },
 });

@@ -51,7 +51,7 @@ export default defineComponent({
         },
         [
           slots.heroBefore?.(),
-          h(HeroInfo, {}, slots),
+          h(HeroInfo, null, slots),
           slots.heroAfter?.(),
           isArray(highlights)
             ? highlights.map((highlight) =>
@@ -66,7 +66,7 @@ export default defineComponent({
               : null,
           slots.content?.() ??
             h(DropTransition, { appear: true, delay: 0.32 }, () =>
-              h(MarkdownContent, {}, slots),
+              h(MarkdownContent, null, slots),
             ),
         ],
       );
