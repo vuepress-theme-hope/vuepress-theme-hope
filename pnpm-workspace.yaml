@@ -13,7 +13,7 @@ catalog:
   reveal.js: 5.2.1
   sass-embedded: 1.88.0
   sass-loader: 16.0.5
-  vue: 3.5.13
+  vue: 3.5.14
 catalogs:
   range:
     "@vueuse/core": ^13.1.0
