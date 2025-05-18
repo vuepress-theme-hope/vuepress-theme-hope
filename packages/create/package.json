@@ -45,7 +45,7 @@
   },
   "dependencies": {
     "@inquirer/prompts": "^7.5.1",
-    "commander": "^13.1.0"
+    "commander": "^14.0.0"
   },
   "devDependencies": {
     "sass-embedded": "catalog:range",
