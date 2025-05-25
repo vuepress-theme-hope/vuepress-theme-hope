@@ -1,16 +1,18 @@
 import { LoadingIcon, decodeData, useDarkMode } from "@vuepress/helper/client";
-import { watchImmediate } from "@vueuse/core";
 import type { Chart, ChartConfiguration } from "chart.js";
 import type { PropType, VNode } from "vue";
 import {
-  computed,
   defineComponent,
   h,
+  nextTick,
   onMounted,
   onUnmounted,
   ref,
   shallowRef,
+  toRefs,
+  watch,
 } from "vue";
+import { onContentUpdated } from "vuepress/client";
 
 import "../styles/chartjs.scss";
 
@@ -78,55 +80,70 @@ export default defineComponent({
   },
 
   setup(props) {
+    const { config, id } = toRefs(props);
     const isDarkMode = useDarkMode();
     const chartElement = shallowRef<HTMLElement>();
     const chartCanvasElement = shallowRef<HTMLCanvasElement>();
 
-    const loading = ref(true);
-
-    const config = computed(() => decodeData(props.config));
+    const loaded = ref(false);
 
     let chartjs: Chart | null;
+
+    const destroyChart = (): void => {
+      chartjs?.destroy();
+      chartjs = null;
+    };
 
     const renderChart = async (): Promise<void> => {
       if (__VUEPRESS_SSR__) return;
 
-      const [{ default: ChartJs }] = await Promise.all([
-        import(/* webpackChunkName: "chart" */ "chart.js/auto"),
-      ]);
+      const { default: ChartJs } = await import(
+        /* webpackChunkName: "chart" */ "chart.js/auto"
+      );
 
       ChartJs.defaults.borderColor = isDarkMode.value ? "#ccc" : "#36A2EB";
       ChartJs.defaults.color = isDarkMode.value ? "#fff" : "#000";
       ChartJs.defaults.maintainAspectRatio = false;
 
-      const data = parseChartConfig(config.value, props.type);
+      const chartConfig = decodeData(props.config);
+      const data = parseChartConfig(chartConfig, props.type);
       // eslint-disable-next-line @typescript-eslint/no-non-null-assertion
       const ctx = chartCanvasElement.value!.getContext("2d")!;
 
-      chartjs?.destroy();
       chartjs = new ChartJs(ctx, data);
-
-      loading.value = false;
     };
 
-    onMounted(() => {
-      watchImmediate(isDarkMode, () => renderChart(), {
-        flush: "post",
-      });
+    onContentUpdated(async (reason) => {
+      if (reason === "mounted") {
+        await renderChart();
+        loaded.value = true;
+      }
     });
 
-    onUnmounted(() => {
-      chartjs?.destroy();
-      chartjs = null;
+    onMounted(() => {
+      watch(
+        __VUEPRESS_DEV__
+          ? // config must be changed if type is changed, so no need to watch type
+            [config, id, isDarkMode]
+          : isDarkMode,
+        async () => {
+          destroyChart();
+          await nextTick();
+          await renderChart();
+        },
+        { flush: "post" },
+      );
     });
+
+    onUnmounted(destroyChart);
 
     return (): (VNode | null)[] => [
       props.title
         ? h("div", { class: "chartjs-title" }, decodeURIComponent(props.title))
         : null,
-      loading.value
-        ? h(LoadingIcon, { class: "chartjs-loading", height: 192 })
-        : null,
+      loaded.value
+        ? null
+        : h(LoadingIcon, { class: "chartjs-loading", height: 192 }),
       h(
         "div",
         {
@@ -134,7 +151,7 @@ export default defineComponent({
           class: "chartjs-wrapper",
           id: props.id,
           style: {
-            display: loading.value ? "none" : "block",
+            display: loaded.value ? "block" : "none",
           },
         },
         h("canvas", {

@@ -78,7 +78,7 @@ If you can generate your chart data easily, you can just provide echarts config 
 
 If you need to use script to get the data, you can use `js` or `javascript` code block.
 
-We will expose the echarts instance as `myChart` in the script, and you are expected to assign the echarts option object to `option` variable. Also, you can assign `width` and `height` variable to set the chart size.
+We will expose the echarts instance as `echarts` in the script, and you are expected to assign the echarts option object to `option` variable. Also, you can assign `width` and `height` variable to set the chart size.
 
 ````md
 ::: echarts Title

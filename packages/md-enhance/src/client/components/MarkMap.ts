@@ -5,11 +5,15 @@ import type { VNode } from "vue";
 import {
   defineComponent,
   h,
+  nextTick,
   onMounted,
   onUnmounted,
   ref,
   shallowRef,
+  toRefs,
+  watch,
 } from "vue";
+import { onContentUpdated } from "vuepress/client";
 
 import "../styles/markmap.scss";
 
@@ -39,9 +43,11 @@ export default defineComponent({
   },
 
   setup(props) {
-    const loading = ref(true);
+    const { content, id } = toRefs(props);
     const markupWrapper = shallowRef<HTMLElement>();
-    const markmapSvg = shallowRef<SVGElement>();
+    const markmapSVG = shallowRef<SVGElement>();
+
+    const loaded = ref(false);
 
     let markmap: Markmap | null = null;
 
@@ -52,7 +58,12 @@ export default defineComponent({
       }, 100),
     );
 
-    onMounted(async () => {
+    const destroyMarkmap = (): void => {
+      markmap?.destroy();
+      markmap = null;
+    };
+
+    const renderMarkmap = async (): Promise<void> => {
       if (__VUEPRESS_SSR__) return;
 
       const [{ Transformer }, { Markmap, deriveOptions }, { Toolbar }] =
@@ -69,7 +80,7 @@ export default defineComponent({
 
       markmap = Markmap.create(
         // eslint-disable-next-line @typescript-eslint/no-non-null-assertion
-        markmapSvg.value!,
+        markmapSVG.value!,
         deriveOptions({
           maxWidth: 240,
           ...frontmatter?.markmap,
@@ -87,24 +98,42 @@ export default defineComponent({
 
       // eslint-disable-next-line @typescript-eslint/no-non-null-assertion
       markupWrapper.value!.append(el);
-      loading.value = false;
+    };
+
+    onContentUpdated(async (reason) => {
+      if (reason === "mounted") {
+        await renderMarkmap();
+        loaded.value = true;
+      }
     });
 
-    onUnmounted(() => {
-      markmap?.destroy();
-      markmap = null;
+    onMounted(() => {
+      if (!__VUEPRESS_DEV__) return;
+
+      // config must be changed if type is changed, so no need to watch it
+      watch(
+        [content, id],
+        async () => {
+          destroyMarkmap();
+          await nextTick();
+          await renderMarkmap();
+        },
+        { flush: "post" },
+      );
     });
+
+    onUnmounted(destroyMarkmap);
 
     return (): VNode =>
       h("div", { class: "markmap-wrapper", ref: markupWrapper }, [
         h("svg", {
-          ref: markmapSvg,
+          ref: markmapSVG,
           class: "markmap-svg",
           id: props.id,
         }),
-        loading.value
-          ? h(LoadingIcon, { class: "markmap-loading", height: 360 })
-          : null,
+        loaded.value
+          ? null
+          : h(LoadingIcon, { class: "markmap-loading", height: 360 }),
       ]);
   },
 });

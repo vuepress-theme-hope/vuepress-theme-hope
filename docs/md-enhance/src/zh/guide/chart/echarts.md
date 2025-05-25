@@ -76,7 +76,7 @@ export default {
 
 如果你需要通过脚本来获取数据，你可以使用 `js` 和 `javascript` 的代码块。
 
-我们将通过 `myChart` 变量暴露 ECharts 实例，并且你应该将 Echart 配置赋值给 `option` 变量。同时，你也可以赋值 `width` 和 `height` 来设置图表大小。
+我们将通过 `echarts` 变量暴露 ECharts 实例，并且你应该将 Echart 配置赋值给 `option` 变量。同时，你也可以赋值 `width` 和 `height` 来设置图表大小。
 
 ````md
 ::: echarts Title

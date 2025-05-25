@@ -3,14 +3,17 @@ import { useDebounceFn, useEventListener } from "@vueuse/core";
 import type { Chart } from "flowchart.ts";
 import type { PropType, VNode } from "vue";
 import {
-  computed,
   defineComponent,
   h,
+  nextTick,
   onMounted,
   onUnmounted,
   ref,
   shallowRef,
+  toRefs,
+  watch,
 } from "vue";
+import { onContentUpdated } from "vuepress/client";
 
 import { flowchartPresets } from "../utils/index.js";
 
@@ -46,15 +49,13 @@ export default defineComponent({
   },
 
   setup(props) {
-    let flowchart: Chart | null = null;
+    const { code, id, preset } = toRefs(props);
     const element = shallowRef<HTMLDivElement>();
 
-    const loading = ref(true);
+    const loaded = ref(false);
     const scale = ref(1);
 
-    const preset = computed<Record<string, unknown>>(
-      () => flowchartPresets[props.preset],
-    );
+    let flowchart: Chart | null = null;
 
     const getScale = (width: number): number =>
       width < 419 ? 0.8 : width > 1280 ? 1 : 0.9;
@@ -68,43 +69,71 @@ export default defineComponent({
           if (scale.value !== newScale) {
             scale.value = newScale;
 
-            flowchart.draw(props.id, { ...preset.value, scale: newScale });
+            flowchart.draw(props.id, {
+              ...flowchartPresets[props.preset],
+              scale: newScale,
+            });
           }
         }
       }, 100),
     );
 
-    onMounted(async () => {
+    const destroyFlowChart = (): void => {
+      flowchart?.clean();
+      flowchart = null;
+    };
+
+    const renderFlowChart = async (): Promise<void> => {
+      if (__VUEPRESS_SSR__) return;
+
       const { parse } = await import(
         /* webpackChunkName: "flowchart" */ "flowchart.ts"
       );
 
-      flowchart = parse(decodeData(props.code));
+      flowchart = parse(decodeData(code.value));
 
       // Update scale
       scale.value = getScale(window.innerWidth);
 
-      loading.value = false;
+      loaded.value = true;
 
       // Draw svg to #id
-      flowchart.draw(props.id, { ...preset.value, scale: scale.value });
+      flowchart.draw(props.id, {
+        ...flowchartPresets[props.preset],
+        scale: scale.value,
+      });
+    };
+
+    onContentUpdated(async (reason) => {
+      if (reason === "mounted") await renderFlowChart();
     });
 
-    onUnmounted(() => {
-      flowchart?.clean();
-      flowchart = null;
+    onMounted(() => {
+      if (!__VUEPRESS_DEV__) return;
+
+      watch(
+        [code, id, preset],
+        async () => {
+          destroyFlowChart();
+          await nextTick();
+          await renderFlowChart();
+        },
+        { flush: "post" },
+      );
     });
+
+    onUnmounted(destroyFlowChart);
 
     return (): (VNode | null)[] => [
-      loading.value
-        ? h(LoadingIcon, { class: "flowchart-loading", height: 192 })
-        : null,
+      loaded.value
+        ? null
+        : h(LoadingIcon, { class: "flowchart-loading", height: 192 }),
       h("div", {
         ref: element,
         class: ["flowchart-wrapper", props.preset],
         id: props.id,
         style: {
-          display: loading.value ? "none" : "block",
+          display: loaded.value ? "block" : "none",
         },
       }),
     ];

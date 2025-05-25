@@ -135,13 +135,13 @@ const option = {
   ],
 };
 const timeId = setInterval(() => {
-  if (myChart._disposed) return clearInterval(timeId);
+  if (echarts._disposed) return clearInterval(timeId);
 
   for (let i = 0; i < 5; i++) {
     data.shift();
     data.push(randomData());
   }
-  myChart.setOption({
+  echarts.setOption({
     series: [
       {
         data: data,
@@ -217,12 +217,12 @@ const run = () => {
   for (let i = 0; i < data.length; i++)
     data[i] += Math.round(Math.random() * Math.random() > 0.9 ? 2000 : 200);
 
-  myChart.setOption({
+  echarts.setOption({
     series: [{ type: "bar", data }],
   });
 };
 const timeId = setInterval(() => {
-  if (myChart._disposed) return clearInterval(timeId);
+  if (echarts._disposed) return clearInterval(timeId);
 
   run();
 }, 3000);
