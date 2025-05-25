@@ -13,18 +13,18 @@
   @media (max-width: hope-config.$tablet) {
     margin: 0 -1rem;
   }
+}
 
-  .echarts-container {
-    min-height: 360px;
+.echarts-container {
+  min-height: 360px;
 
-    @media print {
-      page-break-inside: avoid;
-    }
+  @media print {
+    page-break-inside: avoid;
   }
+}
 
-  .echarts-loading {
-    position: absolute;
-    inset: 0 0 auto;
-    color: var(--vp-c-accent-bg);
-  }
+.echarts-loading {
+  position: absolute;
+  inset: 0 0 auto;
+  color: var(--vp-c-accent-bg);
 }

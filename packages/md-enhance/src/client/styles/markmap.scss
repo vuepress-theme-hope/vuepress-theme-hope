@@ -24,22 +24,6 @@
     margin: 0 -1rem;
   }
 
-  .markmap-svg {
-    width: 100%;
-    min-height: 360px;
-    color: var(--vp-c-text);
-
-    @media print {
-      page-break-inside: avoid;
-    }
-  }
-
-  .markmap-loading {
-    position: absolute;
-    inset: 0 0 auto;
-    color: var(--vp-c-accent-bg);
-  }
-
   pre {
     padding: 0 !important;
     line-height: inherit !important;
@@ -55,6 +39,22 @@
   .katex-html {
     display: none;
   }
+}
+
+.markmap-svg {
+  width: 100%;
+  min-height: 360px;
+  color: var(--vp-c-text);
+
+  @media print {
+    page-break-inside: avoid;
+  }
+}
+
+.markmap-loading {
+  position: absolute;
+  inset: 0 0 auto;
+  color: var(--vp-c-accent-bg);
 }
 
 .mm-toolbar {
