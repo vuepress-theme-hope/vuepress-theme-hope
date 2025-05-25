@@ -11,17 +11,17 @@ catalog:
   mathjax-full: 3.2.2
   mermaid: 11.6.0
   reveal.js: 5.2.1
-  sass-embedded: 1.88.0
+  sass-embedded: 1.89.0
   sass-loader: 16.0.5
-  vue: 3.5.13
+  vue: 3.5.14
 catalogs:
   range:
     "@vueuse/core": ^13.1.0
     balloon-css: ^1.2.0
-    sass: ^1.88.0
-    sass-embedded: ^1.88.0
+    sass: ^1.89.0
+    sass-embedded: ^1.89.0
     sass-loader: ^16.0.5
-    vue: ^3.5.13
+    vue: ^3.5.14
   vuepress:
     "@vuepress/bundler-vite": 2.0.0-rc.23
     "@vuepress/bundler-webpack": 2.0.0-rc.23
@@ -73,4 +73,4 @@ onlyBuiltDependencies:
   - nodejs-jieba
   - unrs-resolver
 overrides:
-  esbuild: ^0.25.2
+  esbuild: ^0.25.4
