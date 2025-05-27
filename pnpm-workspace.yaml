@@ -4,7 +4,7 @@ packages:
   - docs-shared/
   - packages/*
 catalog:
-  "@vueuse/core": 13.2.0
+  "@vueuse/core": 13.3.0
   markmap-lib: 0.18.11
   markmap-toolbar: 0.18.10
   markmap-view: 0.18.10
@@ -13,20 +13,20 @@ catalog:
   reveal.js: 5.2.1
   sass-embedded: 1.89.0
   sass-loader: 16.0.5
-  vue: 3.5.14
+  vue: 3.5.15
 catalogs:
   range:
-    "@vueuse/core": ^13.1.0
+    "@vueuse/core": ^13.3.0
     balloon-css: ^1.2.0
     sass: ^1.89.0
     sass-embedded: ^1.89.0
     sass-loader: ^16.0.5
-    vue: ^3.5.14
+    vue: ^3.5.15
   vuepress:
     "@vuepress/bundler-vite": 2.0.0-rc.23
     "@vuepress/bundler-webpack": 2.0.0-rc.23
     "@vuepress/highlighter-helper": 2.0.0-rc.106
-    "@vuepress/helper": ^2.0.0-rc.104
+    "@vuepress/helper": ^2.0.0-rc.106
     "@vuepress/plugin-active-header-links": 2.0.0-rc.106
     "@vuepress/plugin-back-to-top": 2.0.0-rc.106
     "@vuepress/plugin-blog": 2.0.0-rc.106

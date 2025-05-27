@@ -1,5 +1,9 @@
 import type { GetHeadersOptions, Slot } from "@vuepress/helper/client";
-import { isPlainObject, useHeaders } from "@vuepress/helper/client";
+import {
+  isPlainObject,
+  isSlotContentEmpty,
+  useHeaders,
+} from "@vuepress/helper/client";
 import { useToggle, watchImmediate } from "@vueuse/core";
 import type { PropType, SlotsType, VNode } from "vue";
 import { computed, defineComponent, h, onMounted, ref, shallowRef } from "vue";
@@ -10,7 +14,6 @@ import PrintButton from "@theme-hope/components/base/PrintButton";
 import { useMetaLocale } from "@theme-hope/composables/info/useMetaLocale";
 import { useData } from "@theme-hope/composables/useData";
 import type { TocSlotData } from "@theme-hope/typings/slots";
-import { isSlotResultEmpty } from "@theme-hope/utils/isSlotResultEmpty";
 
 import "../../styles/info/toc.scss";
 
@@ -222,9 +225,9 @@ export default defineComponent({
             const afterContent = slots.tocAfter?.();
 
             const isTOCEmpty =
-              isSlotResultEmpty(defaultContent) &&
-              isSlotResultEmpty(beforeContent) &&
-              isSlotResultEmpty(afterContent);
+              isSlotContentEmpty(defaultContent) &&
+              isSlotContentEmpty(beforeContent) &&
+              isSlotContentEmpty(afterContent);
 
             return isTOCEmpty
               ? null

@@ -13,13 +13,13 @@
  */
 
 import {
-  checkIsMobile,
-  checkIsSafari,
-  checkIsiPad,
   ensureEndingSlash,
   entries,
   isDef,
   isLinkHttp,
+  isMobile,
+  isSafari,
+  isiPad,
 } from "@vuepress/helper/client";
 import { withBase } from "vuepress/client";
 
@@ -136,10 +136,10 @@ export const viewPDF = (
   const isModernBrowser = isDef(window.Promise);
 
   // Quick test for mobile devices.
-  const isMobileDevice = checkIsiPad(userAgent) || checkIsMobile(userAgent);
+  const isMobileDevice = isiPad(userAgent) || isMobile(userAgent);
 
   // Safari desktop requires special handling
-  const isSafariDesktop = !isMobileDevice && checkIsSafari(userAgent);
+  const isSafariDesktop = !isMobileDevice && isSafari(userAgent);
 
   // Firefox started shipping PDF.js in Firefox 19. If this is Firefox 19 or greater, assume PDF.js is available
   const isFirefoxWithPDFJS =
