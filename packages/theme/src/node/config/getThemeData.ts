@@ -7,9 +7,9 @@ import type {
   ThemeData,
   ThemeLocaleConfig,
   ThemeLocaleOptions,
-  ThemeOptions,
 } from "../../shared/index.js";
 import { themeLocaleInfo } from "../locales/index.js";
+import type { ThemeOptions } from "../typings/index.js";
 import { logger } from "../utils.js";
 
 const ROOT_DISALLOW_CONFIG = [

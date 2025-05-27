@@ -12,7 +12,7 @@ import type {
   PluginsOptions,
   ThemeData,
 } from "../../shared/index.js";
-import type { HopeThemeBehaviorOptions } from "../typings/index.js";
+import type { ThemeBehaviorOptions } from "../typings/index.js";
 import { TEMPLATE_FOLDER } from "../utils.js";
 
 /**
@@ -26,7 +26,7 @@ export const usePlugins = (
   { highlighter }: MarkdownOptions,
   plugins: PluginsOptions,
   hotReload: boolean,
-  behavior: HopeThemeBehaviorOptions,
+  behavior: ThemeBehaviorOptions,
 ): void => {
   // Respect git options
   if (plugins.git) useGitPlugin(app, plugins.git, themeData);

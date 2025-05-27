@@ -11,7 +11,7 @@ import type {
 } from "../../shared/index.js";
 import { checkFrontmatter } from "../check/index.js";
 import { convertFrontmatter } from "../compact/index.js";
-import type { HopeThemeBehaviorOptions } from "../typings/index.js";
+import type { ThemeBehaviorOptions } from "../typings/index.js";
 
 /**
  * @private
@@ -55,7 +55,7 @@ export const injectPageInfo = (page: Page<ThemePageData>): void => {
 
 export const extendsPagePlugin = (
   themeData: ThemeData,
-  behavior: HopeThemeBehaviorOptions,
+  behavior: ThemeBehaviorOptions,
 ): PluginObject => {
   const encryptedPaths = keys(themeData.encrypt.config ?? {});
   const isPageEncrypted = ({ path }: Page): boolean =>
@@ -100,7 +100,7 @@ export const extendsPagePlugin = (
 export const useExtendsPagePlugin = (
   app: App,
   themeData: ThemeData,
-  behavior: HopeThemeBehaviorOptions,
+  behavior: ThemeBehaviorOptions,
 ): void => {
   app.use(extendsPagePlugin(themeData, behavior));
 };

@@ -1,7 +1,7 @@
 import { isPlainObject, isString, keys, values } from "@vuepress/helper";
 import type { App } from "vuepress/core";
 
-import type { ThemeOptions } from "../../shared/index.js";
+import type { ThemeOptions } from "../typings/index.js";
 
 export interface BlogTypeInfo {
   key: string;

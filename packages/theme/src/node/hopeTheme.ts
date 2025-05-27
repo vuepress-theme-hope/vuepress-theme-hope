@@ -25,9 +25,8 @@ import {
   prepareSidebarData,
   prepareSocialMediaIcons,
 } from "./prepare/index.js";
-import type { HopeThemeBehaviorOptions } from "./typings/index.js";
+import type { ThemeBehaviorOptions, ThemeOptions } from "./typings/index.js";
 import { CLIENT_FOLDER, TEMPLATE_FOLDER, VERSION, logger } from "./utils.js";
-import type { ThemeOptions } from "../shared/index.js";
 
 const BEHAVIOR_DEFAULTS = {
   check: true,
@@ -44,9 +43,9 @@ const BEHAVIOR_DEFAULTS = {
 export const hopeTheme = (
   themeOptions: ThemeOptions,
   // TODO: Change default value in v2 stable
-  behaviorOptions: HopeThemeBehaviorOptions | boolean = true,
+  behaviorOptions: ThemeBehaviorOptions | boolean = true,
 ): ThemeFunction => {
-  const behavior: HopeThemeBehaviorOptions = isPlainObject(behaviorOptions)
+  const behavior: ThemeBehaviorOptions = isPlainObject(behaviorOptions)
     ? { ...BEHAVIOR_DEFAULTS, ...behaviorOptions }
     : behaviorOptions
       ? BEHAVIOR_DEFAULTS

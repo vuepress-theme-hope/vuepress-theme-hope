@@ -8,7 +8,7 @@ import {
   convertNavbarOptions,
 } from "./convertNavbarOptions.js";
 import { convertSidebarOptions } from "./convertSidebarOptions.js";
-import type { ThemeOptions } from "../../shared/index.js";
+import type { ThemeOptions } from "../typings/index.js";
 import { logger } from "../utils.js";
 
 const DEPRECATED_THEME_OPTIONS: [string, string][] = [

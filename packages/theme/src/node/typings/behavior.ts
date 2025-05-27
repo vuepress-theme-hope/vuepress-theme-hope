@@ -1,4 +1,4 @@
-export interface HopeThemeBehaviorOptions {
+export interface ThemeBehaviorOptions {
   /**
    * Whether to perform extra checks
    *

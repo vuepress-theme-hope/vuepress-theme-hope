@@ -32,8 +32,9 @@ import { getSearchPlugin } from "./search.js";
 import { getSEOPlugin } from "./seo.js";
 import { getSitemapPlugin } from "./sitemap.js";
 import { getWatermarkPlugin } from "./watermark.js";
-import type { ThemeData, ThemeOptions } from "../../shared/index.js";
+import type { ThemeData } from "../../shared/index.js";
 import { checkPluginsOptions } from "../check/index.js";
+import type { ThemeOptions } from "../typings/index.js";
 
 /**
  * @private

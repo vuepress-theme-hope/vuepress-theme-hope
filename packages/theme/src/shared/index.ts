@@ -2,6 +2,7 @@ export * from "./infoGetter.js";
 
 export type * from "./author.js";
 export type * from "./blog.js";
+export type * from "./data.js";
 export type * from "./frontmatter/index.js";
 export type * from "./info.js";
 export type * from "./nav.js";
