@@ -2,6 +2,14 @@
 
 All notable changes to this project will be documented in this file. See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+<!-- #region recent-change -->
+
+## [2.0.0-rc.89](https://github.com/vuepress-theme-hope/vuepress-theme-hope/compare/v2.0.0-rc.88...v2.0.0-rc.89) (2025-05-28)
+
+### 🐛 Bug Fixes
+
+- **deps:** update dependency commander to v14 ([#4911](https://github.com/vuepress-theme-hope/vuepress-theme-hope/issues/4911)) ([1bad92a](https://github.com/vuepress-theme-hope/vuepress-theme-hope/commit/1bad92a796faa424f74d9a87c6fe28f5da653c53))
+
 ## [2.0.0-rc.88](https://github.com/vuepress-theme-hope/vuepress-theme-hope/compare/v2.0.0-rc.87...v2.0.0-rc.88) (2025-05-13)
 
 ### ✨ Features

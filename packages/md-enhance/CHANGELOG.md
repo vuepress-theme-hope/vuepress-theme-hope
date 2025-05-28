@@ -2,6 +2,19 @@
 
 All notable changes to this project will be documented in this file. See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+<!-- #region recent-change -->
+
+## [2.0.0-rc.89](https://github.com/vuepress-theme-hope/vuepress-theme-hope/compare/v2.0.0-rc.88...v2.0.0-rc.89) (2025-05-28)
+
+### ✨ Features
+
+- **md-enhance:** improve HMR ([b72fba4](https://github.com/vuepress-theme-hope/vuepress-theme-hope/commit/b72fba40a5f68b288d4cfb2c08f0c819f123897d))
+
+### 🐛 Bug Fixes
+
+- **deps:** update dependency @mdit/plugin-demo to ^0.19.0 ([#4918](https://github.com/vuepress-theme-hope/vuepress-theme-hope/issues/4918)) ([7d5c3cd](https://github.com/vuepress-theme-hope/vuepress-theme-hope/commit/7d5c3cdbfbb28fb4ad3acdc6d8e1e4deb1a5dfeb))
+- **deps:** update dependency @mdit/plugin-uml to ^0.19.0 ([#4920](https://github.com/vuepress-theme-hope/vuepress-theme-hope/issues/4920)) ([22cace3](https://github.com/vuepress-theme-hope/vuepress-theme-hope/commit/22cace38a133df031d7452cae9399297b2168f08))
+
 ## [2.0.0-rc.88](https://github.com/vuepress-theme-hope/vuepress-theme-hope/compare/v2.0.0-rc.87...v2.0.0-rc.88) (2025-05-13)
 
 **Note:** Version bump only for package vuepress-plugin-md-enhance

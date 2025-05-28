@@ -4,6 +4,23 @@ All notable changes to this project will be documented in this file. See [Conven
 
 <!-- #region recent-change -->
 
+## [2.0.0-rc.89](https://github.com/vuepress-theme-hope/vuepress-theme-hope/compare/v2.0.0-rc.88...v2.0.0-rc.89) (2025-05-28)
+
+### ✨ Features
+
+- **md-enhance:** improve HMR ([b72fba4](https://github.com/vuepress-theme-hope/vuepress-theme-hope/commit/b72fba40a5f68b288d4cfb2c08f0c819f123897d))
+- **theme:** improve slot checking ([87c6d2a](https://github.com/vuepress-theme-hope/vuepress-theme-hope/commit/87c6d2a9d842260b0ce2600aedc84d5f6bab2882))
+
+### 🐛 Bug Fixes
+
+- **deps:** update dependency @mdit/plugin-demo to ^0.19.0 ([#4918](https://github.com/vuepress-theme-hope/vuepress-theme-hope/issues/4918)) ([7d5c3cd](https://github.com/vuepress-theme-hope/vuepress-theme-hope/commit/7d5c3cdbfbb28fb4ad3acdc6d8e1e4deb1a5dfeb))
+- **deps:** update dependency @mdit/plugin-uml to ^0.19.0 ([#4920](https://github.com/vuepress-theme-hope/vuepress-theme-hope/issues/4920)) ([22cace3](https://github.com/vuepress-theme-hope/vuepress-theme-hope/commit/22cace38a133df031d7452cae9399297b2168f08))
+- **deps:** update dependency commander to v14 ([#4911](https://github.com/vuepress-theme-hope/vuepress-theme-hope/issues/4911)) ([1bad92a](https://github.com/vuepress-theme-hope/vuepress-theme-hope/commit/1bad92a796faa424f74d9a87c6fe28f5da653c53))
+- **theme:** fix nav screen not closing when path changes ([f52aeda](https://github.com/vuepress-theme-hope/vuepress-theme-hope/commit/f52aedaaaeb413f4b90e2c6b42143f7cb151e8bb))
+- **theme:** update styles ([a54fbd4](https://github.com/vuepress-theme-hope/vuepress-theme-hope/commit/a54fbd410f08635c05774e1741324358d054bbc6))
+
+<!-- #region recent-change -->
+
 ## [2.0.0-rc.88](https://github.com/vuepress-theme-hope/vuepress-theme-hope/compare/v2.0.0-rc.87...v2.0.0-rc.88) (2025-05-13)
 
 ### ✨ Features

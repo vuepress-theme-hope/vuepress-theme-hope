@@ -2,6 +2,19 @@
 
 All notable changes to this project will be documented in this file. See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+<!-- #region recent-change -->
+
+## [2.0.0-rc.89](https://github.com/vuepress-theme-hope/vuepress-theme-hope/compare/v2.0.0-rc.88...v2.0.0-rc.89) (2025-05-28)
+
+### ✨ Features
+
+- **theme:** improve slot checking ([87c6d2a](https://github.com/vuepress-theme-hope/vuepress-theme-hope/commit/87c6d2a9d842260b0ce2600aedc84d5f6bab2882))
+
+### 🐛 Bug Fixes
+
+- **theme:** fix nav screen not closing when path changes ([f52aeda](https://github.com/vuepress-theme-hope/vuepress-theme-hope/commit/f52aedaaaeb413f4b90e2c6b42143f7cb151e8bb))
+- **theme:** update styles ([a54fbd4](https://github.com/vuepress-theme-hope/vuepress-theme-hope/commit/a54fbd410f08635c05774e1741324358d054bbc6))
+
 ## [2.0.0-rc.88](https://github.com/vuepress-theme-hope/vuepress-theme-hope/compare/v2.0.0-rc.87...v2.0.0-rc.88) (2025-05-13)
 
 ### ✨ Features
